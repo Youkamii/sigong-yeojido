@@ -214,19 +214,21 @@ const state = {
 };
 
 // ── 투영 (메르카토르) ──
+// x·y 를 같은 단위(라디안)로 재야 한다. 경도를 도(度)로 두고 y만 메르카토르
+// 라디안으로 재면 축척이 어긋나 지형이 한 줄로 눌린다.
 const merc = lat => Math.log(Math.tan(Math.PI/4 + lat*Math.PI/360));
+const rad = lon => lon * Math.PI / 180;
+const MX0 = rad(BOX.lon0), MX1 = rad(BOX.lon1);
 const MY0 = merc(BOX.lat0), MY1 = merc(BOX.lat1);
+const SPAN_X = MX1 - MX0, SPAN_Y = MY1 - MY0;
 
 function view(w, h){
   const pad = 26;
-  const sx = (w - pad*2) / (BOX.lon1 - BOX.lon0);
-  const sy = (h - pad*2 - 54) / (MY1 - MY0);
-  const s = Math.min(sx, sy);
-  const cw = (BOX.lon1-BOX.lon0)*s, ch = (MY1-MY0)*s;
-  return {s, ox:(w-cw)/2, oy:(h-ch)/2 - 18};
+  const s = Math.min((w - pad*2) / SPAN_X, (h - pad*2 - 54) / SPAN_Y);
+  return {s, ox:(w - SPAN_X*s)/2, oy:(h - SPAN_Y*s)/2 - 18};
 }
 function proj(lon, lat, v){
-  return [ v.ox + (lon-BOX.lon0)*v.s, v.oy + (MY1-merc(lat))*v.s ];
+  return [ v.ox + (rad(lon)-MX0)*v.s, v.oy + (MY1-merc(lat))*v.s ];
 }
 
 // ── 데이터 ──
@@ -296,6 +298,7 @@ function draw(){
   ctx.clearRect(0,0,w,h);
   const v = view(w,h);
   hits = [];
+  const labels = [];
 
   // 바다 격자
   ctx.strokeStyle = 'rgba(232,227,212,.035)'; ctx.lineWidth = 1;
@@ -361,13 +364,32 @@ function draw(){
       hits.push({x:q[0], y:q[1], r:r+8, id:p.id});
     });
 
-    if(live){
-      const [x,y] = pts[0];
-      ctx.font = '500 12px "Noto Sans KR", sans-serif';
-      ctx.fillStyle = state.sel===p.id ? '#E8E3D4' : 'rgba(232,227,212,.72)';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(p.labelKo, x + 12, y);
+    if(live) labels.push({p, x:pts[0][0], y:pts[0][1]});
+  }
+
+  // 라벨 — 겹치면 자리를 옮긴다
+  ctx.font = '500 12px "Noto Sans KR", sans-serif';
+  ctx.textBaseline = 'middle';
+  const placed = [];
+  const OFFS = [[13,0],[13,-15],[13,15],[-13,0],[-13,-15],[-13,15],[0,-17],[0,17]];
+  for(const L of labels){
+    const tw = ctx.measureText(L.p.labelKo).width;
+    let spot = null;
+    for(const [dx,dy] of OFFS){
+      const left = dx < 0 ? L.x + dx - tw : L.x + dx;
+      const box = {x:left-3, y:L.y+dy-8, w:tw+6, h:16};
+      if(!placed.some(b => !(box.x+box.w < b.x || b.x+b.w < box.x ||
+                             box.y+box.h < b.y || b.y+b.h < box.y))){
+        spot = {left, top:L.y+dy, box}; break;
+      }
     }
+    if(!spot) continue;              // 자리가 없으면 라벨을 접는다
+    placed.push(spot.box);
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = 'rgba(18,16,12,.85)';
+    ctx.strokeText(L.p.labelKo, spot.left, spot.top);
+    ctx.fillStyle = state.sel===L.p.id ? '#E8E3D4' : 'rgba(232,227,212,.78)';
+    ctx.fillText(L.p.labelKo, spot.left, spot.top);
   }
 }
 
@@ -465,22 +487,26 @@ async function init3d(){
   const cvs = document.getElementById('three');
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x12100C);
-  scene.fog = new THREE.Fog(0x12100C, 60, 200);
+  scene.fog = new THREE.Fog(0x12100C, 180, 480);
 
-  const cam = new THREE.PerspectiveCamera(42, 1, .1, 800);
-  cam.position.set(0, 58, 62);
+  const cam = new THREE.PerspectiveCamera(42, 1, .5, 2000);
+  cam.position.set(0, 120, 135);
   const rn = new THREE.WebGLRenderer({canvas:cvs, antialias:true});
   rn.setPixelRatio(Math.min(devicePixelRatio||1, 2));
   const ctl = new OrbitControls(cam, cvs);
   ctl.enableDamping = true; ctl.dampingFactor = .08;
-  ctl.maxPolarAngle = Math.PI/2.15; ctl.minDistance = 20; ctl.maxDistance = 190;
+  ctl.maxPolarAngle = Math.PI/2.15; ctl.minDistance = 40; ctl.maxDistance = 420;
 
   scene.add(new THREE.AmbientLight(0x8899aa, 1.1));
   const key = new THREE.DirectionalLight(0xffeacc, 1.5);
   key.position.set(-40, 70, 30); scene.add(key);
 
-  const SC = 2.4;
-  const to3 = (lon,lat) => [ (lon-(BOX.lon0+BOX.lon1)/2)*SC, ((merc(lat)-(MY0+MY1)/2))*SC*57.3 ];
+  // 2D와 같은 투영을 쓴다 — 라디안 기준, 중심을 원점으로
+  const SC = 150;
+  const to3 = (lon,lat) => [
+    (rad(lon) - (MX0+MX1)/2) * SC,
+    (merc(lat) - (MY0+MY1)/2) * SC,
+  ];
 
   // 육지 압출
   const land = new THREE.Group();
@@ -489,19 +515,19 @@ async function init3d(){
     const polys = f.geometry.type==='Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
     for(const poly of polys){
       const shape = new THREE.Shape();
-      poly[0].forEach((pt,i)=>{ const [x,z]=to3(pt[0],pt[1]); i?shape.lineTo(x,-z):shape.moveTo(x,-z); });
+      poly[0].forEach((pt,i)=>{ const [x,z]=to3(pt[0],pt[1]); i?shape.lineTo(x,z):shape.moveTo(x,z); });
       for(let i=1;i<poly.length;i++){
         const hole = new THREE.Path();
-        poly[i].forEach((pt,j)=>{ const [x,z]=to3(pt[0],pt[1]); j?hole.lineTo(x,-z):hole.moveTo(x,-z); });
+        poly[i].forEach((pt,j)=>{ const [x,z]=to3(pt[0],pt[1]); j?hole.lineTo(x,z):hole.moveTo(x,z); });
         shape.holes.push(hole);
       }
-      const geo = new THREE.ExtrudeGeometry(shape, {depth:1.1, bevelEnabled:false});
+      const geo = new THREE.ExtrudeGeometry(shape, {depth:2.4, bevelEnabled:false});
       geo.rotateX(-Math.PI/2);
-      const mesh = new THREE.Mesh(geo, new THREE.MeshLambertMaterial({color:0x2A2419}));
+      const mesh = new THREE.Mesh(geo, new THREE.MeshLambertMaterial({color:0x3A3225}));
       land.add(mesh);
       const edge = new THREE.LineSegments(
         new THREE.EdgesGeometry(geo, 25),
-        new THREE.LineBasicMaterial({color:0x4A4232}));
+        new THREE.LineBasicMaterial({color:0x6A6047}));
       land.add(edge);
     }
   }
@@ -509,7 +535,7 @@ async function init3d(){
 
   // 바다면
   const sea = new THREE.Mesh(
-    new THREE.PlaneGeometry(400,400),
+    new THREE.PlaneGeometry(900,900),
     new THREE.MeshBasicMaterial({color:0x0E0C09}));
   sea.rotation.x = -Math.PI/2; sea.position.y = -0.05; scene.add(sea);
 
@@ -520,13 +546,13 @@ async function init3d(){
     p.candidates.forEach((c,i) => {
       const [x,z] = to3(c.lon, c.lat);
       const col = new THREE.Color(COLOR[p.status]||'#8B8474');
-      const g = new THREE.CylinderGeometry(.35,.35,14,10);
+      const g = new THREE.CylinderGeometry(.7,.7,26,10);
       const m = new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:.85});
       const cyl = new THREE.Mesh(g,m);
-      cyl.position.set(x, 7, -z);
-      const cap = new THREE.Mesh(new THREE.SphereGeometry(.75,14,12),
+      cyl.position.set(x, 13, -z);
+      const cap = new THREE.Mesh(new THREE.SphereGeometry(1.5,14,12),
         new THREE.MeshBasicMaterial({color:col}));
-      cap.position.set(x, 14, -z);
+      cap.position.set(x, 26, -z);
       const grp = new THREE.Group(); grp.add(cyl); grp.add(cap);
       grp.userData = {id:p.id, first:i===0};
       pillars.add(grp);
