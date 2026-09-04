@@ -2,5 +2,14 @@
 # (scripts/fetch_datago_bulk.py 로 다시 받는다. 실록은 853MB다)
 data/bulk/*.zip
 data/bulk/*/
+
+# 대동여지도 원본 스캔 99MB — scripts/fetch_daedong.py 로 다시 받는다.
+# 웹용으로 줄인 daedong-*.jpg 만 저장소에 둔다.
+services/host/assets/Daedongyeojido-full.jpg
+services/host/assets/Daedongyeojido-small.png
+
+# 자산 준비용 가상환경 (Pillow) — 실행에는 필요 없다
+.venv-build/
+
 __pycache__/
 *.pyc
