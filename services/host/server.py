@@ -15,6 +15,7 @@ API는 전부 읽기 전용이다 — 이 서버는 아무것도 쓰지 않는�
   GET /api/mentions?names=平穰,平壤&sources=src-a,src-b&limit=120
                     이름 문자열이 들어간 원문 조각 — 서버가 찾는다(원문 전체를 브라우저로 보내지 않는다).
                     응답 {chunks, total, bySource}. 자동 문자열 일치이므로 화면에 '자동'이라고 붙인다.
+  GET /api/entities  엔티티 껍데기 목록 (data/entities/**/*.md 머리말: type·id·label·labelHanja) — 찾기 상자용
   GET /api/claims?subject=<entity id>[&about=1]
                     그 엔티티가 subject 인 Claim(about=1 이면 object 에 나오는 것도) — data/claims/<src>/*.md 의 claims-json.
                     quote·citesChunk·origin(human|ai)·status 를 그대로 준다. 판정하지 않는다 — 서로 어긋나는 주장도 나란히.
@@ -112,7 +113,7 @@ def collect_chunks() -> list[dict]:
 
 
 # ── 색인 (읽기 전용 캐시) ──
-_IDX: dict = {"sig": None, "chunks": [], "sources": [], "places": None, "claims": []}
+_IDX: dict = {"sig": None, "chunks": [], "sources": [], "places": None, "claims": [], "entities": []}
 _IDX_LOCK = threading.Lock()
 
 
@@ -125,6 +126,9 @@ def _signature() -> tuple:
     cdir = DATA / "claims"
     if cdir.is_dir():
         files += sorted(cdir.glob("**/*.md"))
+    edir = DATA / "entities"
+    if edir.is_dir():
+        files += sorted(edir.glob("**/*.md"))
     for f in files:
         if f.exists():
             st = f.stat()
@@ -140,6 +144,7 @@ def index() -> dict:
             _IDX["sources"] = collect_sources()
             _IDX["places"] = None
             _IDX["claims"] = collect_claims()
+            _IDX["entities"] = collect_entities()
             _IDX["sig"] = sig
         return _IDX
 
@@ -168,6 +173,21 @@ def places_with_mentions() -> dict:
     with _IDX_LOCK:
         idx["places"] = data
     return data
+
+
+def collect_entities() -> list[dict]:
+    """엔티티 껍데기(data/entities/<class>/<id>.md) 의 머리말만 — 속성은 전부 Claim 이므로 여기엔 이름뿐이다."""
+    out: list[dict] = []
+    edir = DATA / "entities"
+    if not edir.is_dir():
+        return out
+    for md in sorted(edir.glob("**/*.md")):
+        fm = parse_frontmatter(md)
+        if not fm.get("id"):
+            continue
+        out.append({"id": fm["id"], "type": fm.get("type"), "label": fm.get("label"), "labelHanja": fm.get("labelHanja"),
+                    "_file": md.relative_to(ROOT).as_posix()})
+    return out
 
 
 def collect_claims() -> list[dict]:
@@ -308,6 +328,9 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/places":
             self._json(places_with_mentions())
             return
+        if path == "/api/entities":
+            self._json({"entities": index()["entities"]})
+            return
         if path == "/api/claims":
             ent = (q.get("subject", [""])[0] or "").strip()
             about = q.get("about", ["0"])[0] not in ("0", "", "false")
@@ -364,7 +387,11 @@ def main(argv: list[str]) -> int:
     srv = ThreadingHTTPServer((a.host, a.port), Handler)
     print(f"sigong-yeojido viewer  http://{a.host}:{a.port}")
     print(f"  root={HERE}")
-    print(f"  sources={len(collect_sources())}  chunks={len(collect_chunks())}")
+    # 색인을 미리 데운다 — 첫 요청이 수십 MB 원문을 읽고 지명별 mentions 를 세느라 몇 초 걸리면 첫 화면이 비어 보인다
+    idx = index()
+    pl = places_with_mentions()
+    n_src, n_ch, n_cl, n_en, n_pl = len(idx["sources"]), len(idx["chunks"]), len(idx["claims"]), len(idx["entities"]), len(pl.get("places", []))
+    print(f"  sources={n_src}  chunks={n_ch}  claims={n_cl}  entities={n_en}  places={n_pl}")
     try:
         srv.serve_forever()
     except KeyboardInterrupt:

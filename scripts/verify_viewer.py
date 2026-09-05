@@ -14,12 +14,13 @@
   01-gate.png      진입 화면
   02-map.png       2D 지도
   03-map-pick.png  지명 클릭 후 (근거 패널 열림)
+  03b-entity.png   찾기로 인물을 골라 주장(Claim)이 열린 화면
   04-3d.png        3D 프레임 (composer 직접 렌더 → toDataURL)
   05-3d-pick.png   3D 에서 지명 클릭 후
   report.json      씬 통계 · 콘솔 에러 · 검사 결과
 
 검사 (report.json 의 checks):
-  gate_visible, map_land_drawn, map_pick_opens_evidence, timeline_mounted,
+  gate_visible, map_land_drawn, map_pick_opens_evidence, entity_search_shows_claims, timeline_mounted,
   timeline_click_changes_year, three_loaded, three_draws, three_pick_opens_evidence, console_errors_zero
 실패가 하나라도 있으면 exit 1.
 """
@@ -138,6 +139,22 @@ async def run(url: str, out: Path) -> int:
         report["scene"]["mapPick"] = pick
         await pg.screenshot(path=str(out / "03-map-pick.png"))
         check("map_pick_opens_evidence", pick.get("label") == "평양", json.dumps(pick, ensure_ascii=False))
+
+        # 3a. 찾기 — 인물을 검색해 고르면 주장(Claim)이 열린다
+        ent = await pg.evaluate(
+            """async () => { const q=document.getElementById('q'); if(!q) return {found:false, reason:'no #q'};
+               q.value='광개토'; q.dispatchEvent(new Event('input',{bubbles:true}));
+               await new Promise(r=>setTimeout(r,100));
+               const bs=[...document.querySelectorAll('#qList button')];
+               const hit=bs.find(b=>b.dataset.id==='person-gwanggaeto');
+               if(!hit) return {found:false, n:bs.length, ids:bs.map(b=>b.dataset.id)};
+               hit.click(); await new Promise(r=>setTimeout(r,1500));
+               const h3=document.querySelector('#evi h3');
+               return {found:true, label:h3&&h3.textContent, claims:document.querySelectorAll('#evi .claim').length}; }"""
+        )
+        report["scene"]["entitySearch"] = ent
+        await pg.screenshot(path=str(out / "03b-entity.png"))
+        check("entity_search_shows_claims", ent.get("found") and (ent.get("claims") or 0) > 0, json.dumps(ent, ensure_ascii=False))
 
         # 3b. 타임라인 — 사료 수만큼 트랙, 커서를 누르면 연도가 바뀐다
         tl = await pg.evaluate(
