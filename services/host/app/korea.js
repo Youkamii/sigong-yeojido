@@ -388,6 +388,7 @@ export const STATUS_COLOR = {
 };
 
 const COLUMN_H = 30;
+const LABEL_BUDGET = 24;   // 한 번에 보이는 라벨 수 — 60개가 넘으면 글자가 서로를 가린다. 나머지는 고르면 보인다
 
 function buildColumn(place, cand, index, heightAt = null) {
   const color = STATUS_COLOR[place.status] || PALETTE.SECOND_SLATE;
@@ -577,7 +578,17 @@ export class KoreaWorld {
     return year >= from && year <= to;
   }
 
+  /** 라벨을 줄 지명 — 선택된 것 먼저, 그다음 사료에서 많이 언급된 순으로 LABEL_BUDGET 개 */
+  _labelBudget() {
+    const score = (p) => Object.values(p.mentions || {}).reduce((n, v) => n + (+v || 0), 0);
+    const live = this.places.filter((p) => this.byPlace.has(p.id) && this._isLive(p)
+      && (!p.candidates?.length || p.candidates.some((c) => this._candActive(c))));
+    live.sort((a, b) => (b.id === this._selected) - (a.id === this._selected) || score(b) - score(a) || a.id.localeCompare(b.id));
+    return new Set(live.slice(0, LABEL_BUDGET).map((p) => p.id));
+  }
+
   _applyLive() {
+    const budget = this._labelBudget();
     for (const p of this.places) {
       const objs = this.byPlace.get(p.id);
       if (!objs) continue;
@@ -588,7 +599,7 @@ export class KoreaWorld {
         if (o.userData?.cand) live = placeLive && this._candActive(o.userData.cand);
         else if (o.userData?.linkCands) live = placeLive && o.userData.linkCands.every((c) => this._candActive(c));
         if (o.userData?.label) {
-          o.userData.label.visible = live && !labelShown;
+          o.userData.label.visible = live && !labelShown && budget.has(p.id);
           if (live) labelShown = true;
         }
         o.traverse((m) => {
@@ -607,6 +618,8 @@ export class KoreaWorld {
   }
 
   setSelected(placeId) {
+    this._selected = placeId;
+    this._applyLive();          // 선택된 지명은 라벨 예산과 상관없이 보인다
     for (const [id, objs] of this.byPlace) {
       const on = id === placeId;
       for (const o of objs) {
