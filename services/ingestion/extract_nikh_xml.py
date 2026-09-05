@@ -35,6 +35,7 @@ import argparse
 import collections
 import hashlib
 import io
+import re
 import json
 import sys
 import zipfile
@@ -246,16 +247,20 @@ def level1_label(level1: ET.Element) -> str:
 
 
 def extract_article(
-    level3: ET.Element, source: str, l1_label: str, l2_label: str, chunk_type: str = "article"
+    level: ET.Element, source: str, labels: list[str], chunk_type: str = "article"
 ) -> tuple[dict, Article]:
-    """level3 기사(article) 또는 level3 없이 본문을 직접 갖는 level2 절(section)을 chunk 하나로."""
-    level_id = level3.get("id")
+    """<text> 를 직접 가진 level 요소 하나를 chunk 하나로.
+
+    labels 는 level1 부터 이 요소까지의 제목 경로(이 요소의 제목 포함) — locator 가 된다.
+    chunk_type: article = 아래에 하위 level 이 없는 잎(기사), section = 하위 level 을 거느리면서 본문도 가진 절.
+    """
+    level_id = level.get("id")
     if not level_id:
-        raise ExtractError(f"id 없는 {level3.tag}")
+        raise ExtractError(f"id 없는 {level.tag}")
 
     art = Article()
     tb = TextBuilder()
-    content = level3.find("text/content")
+    content = level.find("text/content")
     if content is not None:
         for para in content:
             if para.tag == "paragraph":
@@ -265,32 +270,33 @@ def extract_article(
             tb.newline()
     text = tb.result()
 
-    if "<" in text or ">" in text:
+    if re.search(r"</?[A-Za-z]", text):   # 원문에 든 낱글자 < > 는 허용, 태그처럼 생긴 것만 잡는다
         raise ExtractError(f"{level_id}: 태그 잔재")
 
-    title = level_title(level3)
-    date_el = level3.find("front/biblioData/date/dateOccured")
+    title = level_title(level)
+    date_el = level.find("front/biblioData/date/dateOccured")
     date = None
     if date_el is not None:
         date = {"raw": date_el.get("date"), "label": plain(date_el) or None}
 
-    subjects = [plain(s) for s in level3.findall("front/biblioData/subjectClass")]
-    subjects = [s for s in subjects if s]
+    subjects = [plain(x) for x in level.findall("front/biblioData/subjectClass")]
+    subjects = [x for x in subjects if x]
 
     chunk = {
         "id": f"chunk_{source}_{level_id}",
         "sourceId": f"src-{source}",
         "chunkType": chunk_type,
+        "level": len(labels),
         "levelId": level_id,
         "permalink": PERMALINK.format(level_id=level_id),
-        "locator": " › ".join(p for p in (l1_label, l2_label, title) if p),
+        "locator": " › ".join(x for x in labels if x),
         "title": title,
         "lang": "hanmun",
         "text": text,
         "date": date,
         "subjectClasses": subjects,
         "indexTerms": [dict(t) for t in art.index_terms],
-        "annotations": [dict(a) for a in art.annotations],
+        "annotations": [dict(x) for x in art.annotations],
         "newChars": [dict(n) for n in art.new_chars],
         "charCount": len(text),
         "hanjaCount": sum(1 for ch in text if is_hanja(ch)),
@@ -301,6 +307,11 @@ def extract_article(
 
 
 def extract(source: str, zpath: Path) -> tuple[list[dict], dict]:
+    """계층(level1 › level2 › level3 › level4 …)을 재귀로 내려가며 <text> 를 가진 요소마다 chunk 를 만든다.
+
+    삼국사기는 level3 가 기사이고 일부 level2 가 본문을 직접 갖는다(section). 삼국유사·고려사는 level3 가 조목/월이고
+    그 아래 level4 가 기사다 — 층 번호를 못 박지 않고 '본문을 가진 요소'를 chunk 로 삼으면 셋을 같은 규칙으로 읽는다.
+    """
     if not zpath.exists():
         raise ExtractError(f"벌크가 없다: {zpath}  (먼저 scripts/fetch_datago_bulk.py 실행)")
 
@@ -310,47 +321,46 @@ def extract(source: str, zpath: Path) -> tuple[list[dict], dict]:
     ann_types: collections.Counter = collections.Counter()
     idx_types: collections.Counter = collections.Counter()
 
+    def take(chunk: dict, art: Article, key: str) -> None:
+        chunks.append(chunk)
+        unknown.update(art.unknown_tags)
+        for x in art.annotations:
+            ann_types[x["type"]] += 1
+        for t in art.index_terms:
+            idx_types[t["type"]] += 1
+        stats[key] += 1
+        stats["dated"] += 1 if chunk["date"] else 0
+        stats["newChars"] += len(chunk["newChars"])
+
+    def walk(level: ET.Element, path: list[str], depth: int) -> None:
+        label = level1_label(level) if depth == 1 else level_title(level)
+        labels = path + [label]
+        stats[f"level{depth}"] += 1
+        kids = [k for k in level if isinstance(k.tag, str) and k.tag.startswith("level")]
+        if level.find("text") is not None:
+            if level.get("id"):
+                ctype = "section" if kids else "article"
+                chunk, art = extract_article(level, source, labels, ctype)
+                take(chunk, art, "sections" if kids else "articles")
+            else:
+                stats["textNoId"] += 1
+        for k in kids:
+            walk(k, labels, depth + 1)
+
     with zipfile.ZipFile(zpath) as z:
         names = sorted(n for n in z.namelist() if n.lower().endswith(".xml"))
         for name in names:
             root = ET.fromstring(z.read(name))
             stats["xmlFiles"] += 1
             for level1 in root.iter("level1"):
-                stats["level1"] += 1
-                l1_label = level1_label(level1)
-                for level2 in level1.findall("level2"):
-                    stats["level2"] += 1
-                    l2_label = level_title(level2)
-                    def take(chunk: dict, art: Article, key: str) -> None:
-                        chunks.append(chunk)
-                        unknown.update(art.unknown_tags)
-                        for a in art.annotations:
-                            ann_types[a["type"]] += 1
-                        for t in art.index_terms:
-                            idx_types[t["type"]] += 1
-                        stats[key] += 1
-                        stats["dated"] += 1 if chunk["date"] else 0
-                        stats["newChars"] += len(chunk["newChars"])
+                walk(level1, [], 1)
 
-                    if level2.find("text") is not None:
-                        # 宣撰·目錄·年表·跋文·志의 총론 — level3 없이 본문을 직접 갖는 절.
-                        # 2026-09-05 결정: chunkType=section 으로 chunk 화한다 (여기 붙은 주석·색인어를 버리지 않기 위해).
-                        # 같은 level2 에 level3 가 함께 있으면 절 chunk 가 먼저 온다.
-                        if level2.get("id"):
-                            chunk, art = extract_article(level2, source, l1_label, "", "section")
-                            take(chunk, art, "level2Section")
-                        else:
-                            stats["level2DirectNoId"] += 1
-                    for level3 in level2.findall("level3"):
-                        chunk, art = extract_article(level3, source, l1_label, l2_label)
-                        take(chunk, art, "level3")
-
-    ids = [c["id"] for c in chunks]
+    ids = [x["id"] for x in chunks]
     if len(ids) != len(set(ids)):
         dupes = [i for i, n in collections.Counter(ids).items() if n > 1]
         raise ExtractError(f"chunk id 중복: {dupes[:5]}")
     if not chunks:
-        raise ExtractError("level3 기사가 하나도 없다 — 계층이 다른 데이터셋인가?")
+        raise ExtractError("본문(<text>)을 가진 level 요소가 하나도 없다 — 계층이 다른 데이터셋인가?")
 
     summary = {
         "stats": dict(stats),
@@ -417,16 +427,16 @@ def main(argv: list[str]) -> int:
     ann_total = sum(summary["annotationTypes"].values())
     idx_total = sum(summary["indexTypes"].values())
     print(f"source        : {a.source}  (dataset {dataset or '-'}, {zpath.name})")
-    print(f"xml files     : {st.get('xmlFiles', 0)}   level1 {st.get('level1', 0)}  level2 {st.get('level2', 0)}  level3 {st.get('level3', 0)}")
-    print(f"chunks        : {len(chunks)}")
+    levels = "  ".join(f"L{d} {st.get(f'level{d}', 0)}" for d in range(1, 7) if st.get(f"level{d}"))
+    print(f"xml files     : {st.get('xmlFiles', 0)}   {levels}")
+    print(f"chunks        : {len(chunks)}  (articles {st.get('articles', 0)}, sections {st.get('sections', 0)}"
+          + (f", text 있으나 id 없음 {st['textNoId']}" if st.get("textNoId") else "") + ")")
+    empty = sum(1 for c in chunks if not c["text"])
+    print(f"empty text    : {empty}")
     print(f"dated chunks  : {st.get('dated', 0)}")
     print(f"annotations   : {ann_total}  {summary['annotationTypes']}")
     print(f"index terms   : {idx_total}  {summary['indexTypes']}")
     print(f"newChar marks : {st.get('newChars', 0)}")
-    print(
-        f"level2 section: {st.get('level2Section', 0)} chunked as chunkType=section"
-        + (f"  (id 없어 건너뜀 {st['level2DirectNoId']})" if st.get('level2DirectNoId') else "")
-    )
     if summary["unknownTags"]:
         print(f"UNKNOWN TAGS  : {summary['unknownTags']}  <- check before trusting text")
     for k, p in paths.items():

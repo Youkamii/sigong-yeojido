@@ -125,6 +125,7 @@ chunk id 는 `chunk_samguksagi_{level3 id}` (예 `chunk_samguksagi_sg_001_0020_0
 
 처음 추출은 level3 기사 5,170개만 chunk 로 만들고, level3 없이 본문을 직접 갖는 level2 절 67개
 (권마다 붙은 宣撰 표제 50 · 目錄 2 · 年表 권29~31 의 표 14 · 跋文 1)는 건너뛰었다. 그 절에 붙은 주석 424건·색인어 780건이
-같이 빠져 총계가 국편 실측치(주석 3,339 · 색인어 14,667)에 못 미쳤다. 이제 그 절들도 `chunkType: section` 으로 chunk 다
-(id `chunk_samguksagi_{level2Id}`, 예 `chunk_samguksagi_sg_001_0010` = 권1 宣撰). 합 5,237 chunk, 주석 3,339, 색인어 14,667.
-年表는 XML 표(table)라 행마다 줄바꿈으로 펴 놓았다 — 열 구조는 원본 XML 에만 있다.
+같이 빠져 총계가 국편 실측치(주석 3,339 · 색인어 14,667)에 못 미쳤다. 추출기는 이제 층 번호를 못 박지 않고
+**본문(`<text>`)을 가진 요소마다** chunk 를 만든다(`level` 필드에 층 번호, `chunkType` 은 잎이면 article). 그래서 그 절들도
+chunk 다(id `chunk_samguksagi_{level2Id}`, 예 `chunk_samguksagi_sg_001_0010` = 권1 宣撰). 합 5,237 chunk, 주석 3,339, 색인어 14,667.
+年表·目錄은 XML 표(table)·목록(ul/li)이라 행·항목마다 줄바꿈으로 펴 놓았다 — 열 구조는 원본 XML 에만 있다.
