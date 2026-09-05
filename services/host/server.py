@@ -307,7 +307,7 @@ def _mentions_id(obj, entity_id: str) -> bool:
     return isinstance(obj, str) and obj == entity_id
 
 
-def claims_for(entity_id: str, about: bool) -> dict:
+def claims_for(entity_id: str, about: bool, sources: set[str] | None = None) -> dict:
     idx = index()
     chunks = {c["id"]: c for c in idx["chunks"] if isinstance(c.get("id"), str)}
     out = []
@@ -319,6 +319,9 @@ def claims_for(entity_id: str, about: bool) -> dict:
         rec = dict(c)
         rec["role"] = "subject" if as_subject else "object"
         ch = chunks.get(c.get("citesChunk"))
+        source_id = ch.get("sourceId") if ch else c.get("fromSource")
+        if sources is not None and source_id not in sources:
+            continue
         rec["chunk"] = {"id": ch["id"], "sourceId": ch.get("sourceId"), "locator": ch.get("locator"), "permalink": ch.get("permalink")} if ch else None
         out.append(rec)
     out.sort(key=lambda r: (r["role"] != "subject", str(r.get("predicate")), str(r.get("id"))))
@@ -439,7 +442,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         u = urlparse(self.path)
         path = u.path
-        q = parse_qs(u.query)
+        q = parse_qs(u.query, keep_blank_values=True)
 
         if path == "/api/places":
             self._json(places_with_mentions())
@@ -471,7 +474,9 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/claims":
             ent = (q.get("subject", [""])[0] or "").strip()
             about = q.get("about", ["0"])[0] not in ("0", "", "false")
-            self._json(claims_for(ent, about) if ent else {"entity": None, "claims": [], "total": 0})
+            srcs = q.get("sources", [None])[0]
+            sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
+            self._json(claims_for(ent, about, sources) if ent else {"entity": None, "claims": [], "total": 0})
             return
         if path == "/api/mentions":
             names = [n for n in (q.get("names", [""])[0]).split(",") if n]

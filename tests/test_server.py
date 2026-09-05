@@ -2,8 +2,10 @@ import importlib.util
 import json
 from pathlib import Path
 import tempfile
+import threading
 import unittest
 from unittest.mock import patch
+from urllib.request import urlopen
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,6 +46,42 @@ class NameMatchingTests(unittest.TestCase):
             (source / "index-terms.jsonl").write_text("\n".join(json.dumps(r) for r in rows), encoding="utf-8")
             with patch.object(server, "DATA", Path(tmp)):
                 self.assertEqual(server.collect_country_terms(), {"b": {"陳"}})
+
+
+class ApiTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.httpd = server.ThreadingHTTPServer(("127.0.0.1", 0), server.Handler)
+        cls.thread = threading.Thread(target=cls.httpd.serve_forever, kwargs={"poll_interval": 0.01}, daemon=True)
+        cls.thread.start()
+        cls.url = f"http://127.0.0.1:{cls.httpd.server_port}"
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.httpd.shutdown()
+        cls.httpd.server_close()
+        cls.thread.join()
+
+    def get(self, path):
+        with urlopen(self.url + path, timeout=5) as response:
+            return json.load(response)
+
+    def test_empty_source_selection_is_distinct_from_no_filter(self):
+        idx = {"chunks": [{"id": "c", "sourceId": "src-a", "text": "place", "date": "0918"}],
+               "countryTerms": {}, "byYear": {918: [0]},
+               "claims": [{"id": "cl", "subject": "p", "citesChunk": "c", "fromSource": "src-a"}]}
+        with patch.object(server, "index", return_value=idx):
+            for endpoint in ["/api/mentions?names=place", "/api/year?y=918", "/api/claims?subject=p"]:
+                with self.subTest(endpoint=endpoint):
+                    self.assertEqual(self.get(endpoint)["total"], 1)
+                    self.assertEqual(self.get(endpoint + "&sources=")["total"], 0)
+                    self.assertEqual(self.get(endpoint + "&sources=src-a")["total"], 1)
+                    self.assertEqual(self.get(endpoint + "&sources=src-b")["total"], 0)
+
+    def test_claim_without_chunk_still_obeys_source_filter(self):
+        idx = {"chunks": [], "claims": [{"id": "cl", "subject": "p", "fromSource": "src-a"}]}
+        with patch.object(server, "index", return_value=idx):
+            self.assertEqual(self.get("/api/claims?subject=p&sources=")["total"], 0)
 
 
 class PlaceMergeTests(unittest.TestCase):

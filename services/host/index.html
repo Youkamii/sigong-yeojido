@@ -264,7 +264,7 @@ const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
 
 const state = {
   places: [], geo: null, chunks: [], sources: [], entities: [],
-  on: new Set(), year: 414, sel: null, hot: null, mode: '2d'
+  on: new Set(), year: 414, sel: null, hot: null, mode: '2d', panel: null
 };
 
 // ── 투영 (메르카토르) ──
@@ -353,7 +353,7 @@ function mountTimeline(){
     onYear(y){ state.year = y; setYearUI(y); draw(); if(state.mode==='3d') draw3d(); scheduleYearCount(); },
     onToggle(id, on){
       on ? state.on.add(id) : state.on.delete(id);
-      renderRail(); draw(); if(state.mode==='3d') draw3d(); if(state.sel) select(state.sel); scheduleYearCount();
+      renderRail(); draw(); if(state.mode==='3d') draw3d(); refreshEvidence(); scheduleYearCount();
     },
   });
   window.__timeline = tl;   // 검증 하네스용
@@ -364,7 +364,11 @@ function mountTimeline(){
 const yearText = y => y < 0 ? `기원전 ${-y}년` : `서기 ${y}년`;
 const escH = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
 const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
-let yearSeq = 0, yearTimer = 0;
+let yearSeq = 0, yearTimer = 0, yearPanelSeq = 0;
+function refreshEvidence(){
+  if(state.sel) select(state.sel);
+  else if(state.panel === 'year') showYear();
+}
 async function refreshYearCount(){
   const y = state.year, seq = ++yearSeq;
   try{
@@ -375,14 +379,15 @@ async function refreshYearCount(){
 }
 function scheduleYearCount(){ clearTimeout(yearTimer); yearTimer = setTimeout(refreshYearCount, 250); }
 async function showYear(){
-  const y = state.year;
+  const y = state.year, seq = ++yearPanelSeq;
+  state.panel = 'year';
   state.sel = null; draw(); if(state.mode==='3d') draw3d();
   const el = document.getElementById('evi');
   el.innerHTML = `<h3>${yearText(y)}</h3><p class="empty" style="margin-top:12px">찾는 중…</p>`;
   let r = {chunks:[], total:0, bySource:{}};
   try{ r = await fetch(`/api/year?y=${y}&sources=${encodeURIComponent([...state.on].join(','))}&limit=150`).then(r=>r.json()); }
   catch(e){ console.warn('[이 해] 조회 실패', e); }
-  if(state.year !== y || state.sel) return;
+  if(seq !== yearPanelSeq || state.year !== y || state.sel || state.panel !== 'year') return;
   const by = Object.entries(r.bySource||{}).map(([sid,n]) => `${srcLabelOf(sid)} ${n}`).join(' · ');
   el.innerHTML = `
     <h3>${yearText(y)}</h3>
@@ -436,7 +441,7 @@ function renderRail(){
       state.on.has(s.id) ? state.on.delete(s.id) : state.on.add(s.id);
       renderRail(); draw(); if(state.mode==='3d') draw3d();
       if(tl) tl.setOn(state.on);
-      if(state.sel) select(state.sel);
+      refreshEvidence();
       scheduleYearCount();
     };
     row.appendChild(b); row.appendChild(cb);
@@ -477,6 +482,7 @@ function mdLite(md){
   return out.join('');
 }
 async function showSource(id){
+  state.panel = 'source';
   const el = document.getElementById('evi');
   state.sel = null; draw(); if(state.mode==='3d') draw3d();
   el.innerHTML = `<p class="empty">카드를 여는 중…</p>`;
@@ -662,6 +668,7 @@ cv.addEventListener('click', e => {
 // 근거는 서버가 찾는다(/api/mentions) — 이름 문자열 일치(자동). 원문 전체를 브라우저로 보내지 않는다.
 let selSeq = 0;
 async function select(id){
+  state.panel = 'place';
   state.sel = id; draw(); if(state.mode==='3d') draw3d();
   let p = state.places.find(x=>x.id===id);
   const ent = !p && state.entities.find(x=>x.id===id);
@@ -701,7 +708,7 @@ async function select(id){
     const u = `/api/mentions?names=${encodeURIComponent(names.join(','))}&sources=${encodeURIComponent(on.join(','))}&limit=120`;
     [res, cl] = await Promise.all([
       fetch(u).then(r=>r.json()),
-      fetch(`/api/claims?subject=${encodeURIComponent(id)}&about=1`).then(r=>r.json()).catch(()=>({claims:[],total:0})),
+      fetch(`/api/claims?subject=${encodeURIComponent(id)}&about=1&sources=${encodeURIComponent(on.join(','))}`).then(r=>r.json()).catch(()=>({claims:[],total:0})),
     ]);
   }catch(e){ console.warn('[근거] 조회 실패', e); }
   if(seq !== selSeq || state.sel !== id) return;   // 그 사이 다른 지명을 골랐다
@@ -722,7 +729,7 @@ async function select(id){
     if(o.kind === 'entity' || o.kind === 'ref' || o.id) return `<b>${esc1(labelOf(o.id || o.value))}</b>`;
     return esc1(JSON.stringify(o));
   };
-  const claimsOn = (cl.claims || []).filter(c => !c.chunk || state.on.has(c.chunk.sourceId));
+  const claimsOn = cl.claims || [];
   // 충돌 — 한 값만 가질 술어(때·나이·계보·자리…)에 서로 다른 값이 있으면 그 술어의 주장 전부에 표시한다.
   // 언급·서술·지시처럼 여러 값이 자연스러운 술어는 세지 않는다. 어느 쪽이 맞는지는 말하지 않는다.
   const MULTI = new Set(['syj:mentionedIn','syj:describedAs','syj:instructs','syj:hasTitle','syj:hasOutcome','syj:subjectToRule']);
