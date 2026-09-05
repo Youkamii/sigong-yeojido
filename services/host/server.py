@@ -459,7 +459,10 @@ class Handler(BaseHTTPRequestHandler):
             self._json(claims_for(ent, about, sources) if ent else {"entity": None, "claims": [], "total": 0})
             return
         if path == "/api/mentions":
-            names = [n for n in (q.get("names", [""])[0]).split(",") if n]
+            names = [n for value in q.get("names", []) for n in value.split(",") if n]
+            if len(names) > 8 or any(len(n) > 32 for n in names):
+                self._json({"error": "names must contain at most 8 names, each at most 32 characters"}, 400)
+                return
             srcs = q.get("sources", [None])[0]
             sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
             try:

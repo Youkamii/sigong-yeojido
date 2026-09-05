@@ -6,6 +6,8 @@ import threading
 import unittest
 from unittest.mock import patch
 from urllib.request import urlopen
+from urllib.error import HTTPError
+from urllib.parse import urlencode
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -82,6 +84,24 @@ class ApiTests(unittest.TestCase):
         idx = {"chunks": [], "claims": [{"id": "cl", "subject": "p", "fromSource": "src-a"}]}
         with patch.object(server, "index", return_value=idx):
             self.assertEqual(self.get("/api/claims?subject=p&sources=")["total"], 0)
+
+    def test_oversized_names_rejected_before_indexing(self):
+        with patch.object(server, "index", side_effect=AssertionError("must not scan")):
+            for query in (urlencode({"names": ",".join(["name"] * 9)}),
+                          urlencode({"names": "字" * 33}),
+                          urlencode([("names", "name")] * 9)):
+                with self.subTest(query=query), self.assertRaises(HTTPError) as error:
+                    self.get("/api/mentions?" + query)
+                self.assertEqual(error.exception.code, 400)
+                error.exception.close()
+
+    def test_name_and_result_limits_accept_boundary(self):
+        names = ["a" * 32] + [f"name{i}" for i in range(7)]
+        idx = {"chunks": [{"id": str(i), "sourceId": "src-a", "text": names[0]} for i in range(501)], "countryTerms": {}}
+        with patch.object(server, "index", return_value=idx):
+            result = self.get("/api/mentions?" + urlencode({"names": ",".join(names), "limit": 999999}))
+        self.assertEqual(result["total"], 501)
+        self.assertEqual(len(result["chunks"]), 500)
 
 
 class PlaceMergeTests(unittest.TestCase):
