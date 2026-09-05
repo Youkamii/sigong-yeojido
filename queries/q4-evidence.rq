@@ -1,0 +1,9 @@
+PREFIX syj: <https://sigong-yeojido.kr/ns#>
+# RDF에는 chunk 원문 전체를 넣지 않는다. 인용문·locator·원문 링크로 추적한다.
+SELECT ?claim ?quote ?chunk ?source ?locator ?permalink
+WHERE {
+  VALUES ?claim { syj:claim-gwanggaeto-1-09-sinmyo-hae }
+  ?claim syj:quote ?quote ; syj:citesChunk ?chunk ; syj:fromSource ?source .
+  OPTIONAL { ?chunk syj:locator ?locator }
+  OPTIONAL { ?chunk syj:permalink ?permalink }
+}

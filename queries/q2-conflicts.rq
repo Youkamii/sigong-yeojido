@@ -1,0 +1,15 @@
+PREFIX syj: <https://sigong-yeojido.kr/ns#>
+# 사료별로 서로 다른 값을 함께 보여 준다. 어느 쪽이 맞는지는 고르지 않는다.
+SELECT ?conflict ?subject ?predicate ?claim ?source ?value
+WHERE {
+  ?conflict a syj:Conflict ; syj:aboutSubject ?subject ;
+            syj:aboutPredicate ?predicate ; syj:involvesClaim ?claim .
+  ?claim syj:fromSource ?source .
+  OPTIONAL { ?claim syj:objectLiteral ?literal }
+  OPTIONAL { ?claim syj:objectYear ?year }
+  OPTIONAL { ?claim syj:objectEntity ?entity }
+  OPTIONAL { ?claim syj:objectTime ?time }
+  OPTIONAL { ?claim syj:objectLocation ?location }
+  BIND(COALESCE(?literal, ?year, ?entity, ?time, ?location) AS ?value)
+}
+ORDER BY ?conflict ?claim

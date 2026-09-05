@@ -1,0 +1,9 @@
+PREFIX syj: <https://sigong-yeojido.kr/ns#>
+# VALUES 안의 사료만 켠다. 현재 주장이 있는 광개토왕릉비를 실행 예로 쓴다.
+SELECT ?claim ?subject ?predicate ?chunk ?source
+WHERE {
+  VALUES ?source { syj:src-gwanggaeto }
+  ?claim a syj:Claim ; syj:subject ?subject ; syj:predicate ?predicate ;
+         syj:citesChunk ?chunk ; syj:fromSource ?source .
+}
+ORDER BY ?claim
