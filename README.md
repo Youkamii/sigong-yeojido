@@ -33,7 +33,15 @@ scripts/                      fetch_datago_bulk.py(공공데이터포털 벌크)
 python3 services/host/server.py --port 8870      # 뷰어 http://127.0.0.1:8870  (시작 때 색인을 만든다)
 python3 services/validate.py                     # claims 검증 (--write-digests 로 .digests.json 기록)
 scripts/fuseki.sh install && scripts/fuseki.sh start   # Fuseki 포터블(.fuseki/), 127.0.0.1:3030, 데이터셋 /sigong
+python3 scripts/sync_fuseki.py                        # 검증·TTL 빌드 → 기본 그래프 교체 → 개수 대조
+python3 scripts/sync_fuseki.py --watch                # 5초마다 데이터 변경·인메모리 데이터 소실을 확인하고 재적재
 ```
+
+c2에서 자동 재적재를 계속 실행하려면 저장소 루트에서
+`setsid nohup python3 -u scripts/sync_fuseki.py --watch > /tmp/sigong-sync.log 2>&1 < /dev/null &`를 쓴다.
+검증에 실패하면 기존 Fuseki 그래프를 유지하고 다음 확인 때 재시도한다. 일반 실행은 digest를 기록하지 않는다.
+Fuseki 저장 방식은 인메모리를 유지한다. 서버나 감시 명령을 다시 띄우면 데이터에서 재적재한다.
+빌더 코드를 변경했을 때는 감시 명령도 다시 시작한다. 재부팅 후 자동 기동은 아직 설정하지 않았다.
 
 API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,平穰` `/api/claims?subject=<id>&about=1`
 `/api/year?y=918` `/api/density` `/api/elevation` `/api/geo`
