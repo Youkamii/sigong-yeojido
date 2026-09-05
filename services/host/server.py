@@ -11,6 +11,12 @@ API는 전부 읽기 전용이다 — 이 서버는 아무것도 쓰지 않는�
   GET /api/chunks   사료 원문 조각 (data/sources/*/chunks.jsonl)
   GET /api/sources  사료 카드 머리말 (data/sources/*.md)
   GET /api/geo      해안선·하천 (data/geo/east-asia.geojson)
+  GET /api/elevation 고도 격자 (data/geo/korea-elevation.json)
+  GET /api/mentions?names=平穰,平壤&sources=src-a,src-b&limit=120
+                    이름 문자열이 들어간 원문 조각 — 서버가 찾는다(원문 전체를 브라우저로 보내지 않는다).
+                    응답 {chunks, total, bySource}. 자동 문자열 일치이므로 화면에 '자동'이라고 붙인다.
+  /api/places 의 각 지명에는 mentions {sourceId: 조각 수} 가 붙는다 (label + aliases 기준).
+  색인은 data/sources 파일의 mtime·size 서명이 바뀔 때만 다시 만든다.
 """
 from __future__ import annotations
 
@@ -20,9 +26,10 @@ import json
 import mimetypes
 import re
 import sys
+import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -94,6 +101,77 @@ def collect_chunks() -> list[dict]:
     return out
 
 
+# ── 색인 (읽기 전용 캐시) ──
+_IDX: dict = {"sig": None, "chunks": [], "sources": [], "places": None}
+_IDX_LOCK = threading.Lock()
+
+
+def _signature() -> tuple:
+    parts = []
+    src = DATA / "sources"
+    files = sorted(src.glob("*.md")) + sorted(src.glob("*/chunks.jsonl")) if src.exists() else []
+    files.append(DATA / "places.json")
+    for f in files:
+        if f.exists():
+            st = f.stat()
+            parts.append((str(f), st.st_mtime_ns, st.st_size))
+    return tuple(parts)
+
+
+def index() -> dict:
+    sig = _signature()
+    with _IDX_LOCK:
+        if _IDX["sig"] != sig:
+            _IDX["chunks"] = collect_chunks()
+            _IDX["sources"] = collect_sources()
+            _IDX["places"] = None
+            _IDX["sig"] = sig
+        return _IDX
+
+
+def place_names(p: dict) -> list[str]:
+    names = [p.get("label")] + list(p.get("aliases") or [])
+    return [n for n in names if isinstance(n, str) and n]
+
+
+def places_with_mentions() -> dict:
+    idx = index()
+    with _IDX_LOCK:
+        if idx["places"] is not None:
+            return idx["places"]
+    pj = DATA / "places.json"
+    data = json.loads(io.open(pj, encoding="utf-8").read()) if pj.exists() else {"places": []}
+    for pl in data.get("places", []):
+        names = place_names(pl)
+        m: dict[str, int] = {}
+        if names:
+            for c in idx["chunks"]:
+                t = c.get("text") or ""
+                if any(n in t for n in names):
+                    sid = c.get("sourceId") or "?"
+                    m[sid] = m.get(sid, 0) + 1
+        pl["mentions"] = m
+    with _IDX_LOCK:
+        idx["places"] = data
+    return data
+
+
+def mentions(names: list[str], sources: set[str] | None, limit: int) -> dict:
+    idx = index()
+    out, by, total = [], {}, 0
+    for c in idx["chunks"]:
+        sid = c.get("sourceId")
+        if sources is not None and sid not in sources:
+            continue
+        t = c.get("text") or ""
+        if any(n in t for n in names):
+            total += 1
+            by[sid] = by.get(sid, 0) + 1
+            if len(out) < limit:
+                out.append(c)
+    return {"chunks": out, "total": total, "bySource": by, "names": names}
+
+
 class Handler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
 
@@ -120,11 +198,22 @@ class Handler(BaseHTTPRequestHandler):
         self.do_GET()
 
     def do_GET(self):
-        path = urlparse(self.path).path
+        u = urlparse(self.path)
+        path = u.path
+        q = parse_qs(u.query)
 
         if path == "/api/places":
-            p = DATA / "places.json"
-            self._json(json.loads(io.open(p, encoding="utf-8").read()) if p.exists() else {"places": []})
+            self._json(places_with_mentions())
+            return
+        if path == "/api/mentions":
+            names = [n for n in (q.get("names", [""])[0]).split(",") if n]
+            srcs = q.get("sources", [None])[0]
+            sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
+            try:
+                limit = max(1, min(500, int(q.get("limit", ["120"])[0])))
+            except ValueError:
+                limit = 120
+            self._json(mentions(names, sources, limit) if names else {"chunks": [], "total": 0, "bySource": {}, "names": []})
             return
         if path == "/api/chunks":
             self._json({"chunks": collect_chunks()})

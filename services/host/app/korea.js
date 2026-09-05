@@ -549,12 +549,31 @@ export class KoreaWorld {
 
   /** 연대에 따라 살고 죽는다 — 2D 지도와 같은 규칙 */
   setYear(year) {
+    this._year = year;
+    this._applyLive();
+  }
+
+  /** 켜진 사료 집합 — 그 지명을 말하는 사료(mentions)가 전부 꺼지면 지명도 흐려진다 */
+  setSourcesOn(on) {
+    this._on = on ? new Set(on) : null;
+    this._applyLive();
+  }
+
+  _isLive(p) {
+    const year = this._year == null ? 0 : this._year;
+    const from = p.validFrom == null ? -9999 : p.validFrom;
+    const to = p.validTo == null ? 9999 : p.validTo;
+    const inTime = year >= from && year <= to;
+    const srcs = Object.keys(p.mentions || {});
+    const srcOk = !this._on || !srcs.length || srcs.some((s) => this._on.has(s));
+    return inTime && srcOk;
+  }
+
+  _applyLive() {
     for (const p of this.places) {
       const objs = this.byPlace.get(p.id);
       if (!objs) continue;
-      const from = p.validFrom == null ? -9999 : p.validFrom;
-      const to = p.validTo == null ? 9999 : p.validTo;
-      const live = year >= from && year <= to;
+      const live = this._isLive(p);
       for (const o of objs) {
         o.traverse((m) => {
           if (!m.material) return;

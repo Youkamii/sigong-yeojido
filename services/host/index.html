@@ -125,6 +125,9 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .badge.disputed{background:#7A4433;color:#F0DED6}
 .badge.unlocated{background:var(--ink-3);color:var(--paper-3);border:1px solid var(--line-2)}
 .cand{border-left:2px solid var(--line-2);padding:2px 0 2px 11px;margin-top:12px}
+.evi .auto{font-family:var(--mono);font-size:10px;color:var(--paper-3);margin-top:5px;letter-spacing:.04em;line-height:1.6}
+.evi .srcname{font-family:var(--mono);font-size:10px;color:var(--celadon);letter-spacing:.08em;margin-bottom:4px}
+.evi .srcline a{color:var(--celadon);text-decoration:none;border-bottom:1px dotted var(--celadon-dim)}
 .cand .co{font-family:var(--mono);font-size:11px;color:var(--celadon)}
 .cand .bs{font-size:12.5px;color:var(--paper-2);line-height:1.55;margin-top:3px}
 .evi .note{font-size:12.5px;line-height:1.65;color:var(--paper-2);margin-top:14px;
@@ -234,16 +237,16 @@ function proj(lon, lat, v){
 
 // ── 데이터 ──
 async function load(){
-  const [p, g, c, s] = await Promise.all([
+  // 원문 조각은 여기서 받지 않는다 — 근거는 지명을 골랐을 때 서버가 찾아 준다(/api/mentions).
+  const [p, g, s] = await Promise.all([
     fetch('/api/places').then(r=>r.json()),
     fetch('/api/geo').then(r=>r.json()),
-    fetch('/api/chunks').then(r=>r.json()),
     fetch('/api/sources').then(r=>r.json()),
   ]);
   state.places = p.places || [];
   state.geo = g;
-  state.chunks = c.chunks || [];
   state.sources = s.sources || [];
+  state.chunkTotal = state.sources.reduce((n, x) => n + (x.chunkCount || 0), 0);
   state.sources.forEach(x => state.on.add(x.id));
   renderRail();
   renderStats();
@@ -268,7 +271,7 @@ function mountTimeline(){
     onYear(y){ state.year = y; setYearUI(y); draw(); if(state.mode==='3d') draw3d(); },
     onToggle(id, on){
       on ? state.on.add(id) : state.on.delete(id);
-      renderRail(); draw(); if(state.sel) select(state.sel);
+      renderRail(); draw(); if(state.mode==='3d') draw3d(); if(state.sel) select(state.sel);
     },
   });
   window.__timeline = tl;   // 검증 하네스용
@@ -285,7 +288,7 @@ function renderRail(){
       <em>${s.composedYear!=null?s.composedYear+'년 편찬':''} · chunk ${s.chunkCount||0}</em></span>`;
     b.onclick = () => {
       state.on.has(s.id) ? state.on.delete(s.id) : state.on.add(s.id);
-      renderRail(); draw();
+      renderRail(); draw(); if(state.mode==='3d') draw3d();
       if(tl) tl.setOn(state.on);
       if(state.sel) select(state.sel);
     };
@@ -301,7 +304,7 @@ function renderStats(){
     `<div><i style="background:#7FBBA8"></i>지명 ${n}</div>
      <div><i style="background:#D2836A"></i>비정 갈림 ${dis}</div>
      <div><i style="background:#4A443A"></i>위치 미정 ${un}</div>
-     <div><i style="background:#8B8474"></i>원문 조각 ${state.chunks.length}</div>`;
+     <div><i style="background:#8B8474"></i>원문 조각 ${state.chunkTotal || 0}</div>`;
 }
 
 const COLOR = {established:'#7FBBA8', majority:'#8FBF74', disputed:'#D2836A', unlocated:'#4A443A'};
@@ -309,7 +312,11 @@ const COLOR = {established:'#7FBBA8', majority:'#8FBF74', disputed:'#D2836A', un
 function activeAt(p){
   const f = p.validFrom==null ? -9999 : p.validFrom;
   const t = p.validTo==null ? 9999 : p.validTo;
-  return state.year >= f && state.year <= t;
+  const inTime = state.year >= f && state.year <= t;
+  // 그 지명을 말하는 사료(mentions, 서버가 이름 일치로 센 것)가 전부 꺼져 있으면 흐려진다.
+  const srcs = Object.keys(p.mentions || {});
+  const srcOk = !srcs.length || srcs.some(s => state.on.has(s));
+  return inTime && srcOk;
 }
 
 // ── 2D 지도 ──
@@ -436,16 +443,16 @@ cv.addEventListener('click', e => {
 });
 
 // ── 근거 패널 ──
-function select(id){
-  state.sel = id; draw();
+// 근거는 서버가 찾는다(/api/mentions) — 이름 문자열 일치(자동). 원문 전체를 브라우저로 보내지 않는다.
+let selSeq = 0;
+async function select(id){
+  state.sel = id; draw(); if(state.mode==='3d') draw3d();
   const p = state.places.find(x=>x.id===id);
   const el = document.getElementById('evi');
   if(!p){ el.innerHTML = ''; return; }
 
   // 이름 변형(aliases)까지 본다 — 비문은 平穰, 삼국사기는 平壤. 표기가 달라도 같은 자리를 말한다.
   const names = [p.label, ...(p.aliases || [])].filter(Boolean);
-  const hits = state.chunks.filter(c =>
-    state.on.has(c.sourceId) && names.some(n => c.text.includes(n)));
 
   const cands = p.candidates.length
     ? p.candidates.map(c => `<div class="cand">
@@ -454,26 +461,54 @@ function select(id){
     : `<p class="unloc" style="margin-top:12px"><b>위치가 정해지지 않았다.</b>
        비정안이 여럿이거나 확정된 것이 없다. 이 시스템은 판정하지 않으므로 지도에 점을 찍지 않는다.</p>`;
 
-  const ev = hits.length
-    ? hits.map(c => {
-        let t = c.text.replace(/□/g,'<span class="gap">□</span>');
-        for(const n of names) t = t.replaceAll(n, `<span class="hit">${n}</span>`);
-        return `<div style="margin-top:14px">
-          <div class="quote">${t}</div>
-          <div class="srcline">${c.locator} · <code>${c.id}</code><br>
-            결자 ${c.missingCount} · 한자 ${c.hanjaCount}</div></div>`;
-      }).join('')
-    : `<p class="empty" style="margin-top:12px">켜진 사료의 원문에서 이 이름을 찾지 못했다.</p>`;
-
-  el.innerHTML = `
+  const head = `
     <h3>${p.labelKo}</h3>
-    <div class="han">${p.label}</div>
+    <div class="han">${names.join(' · ')}</div>
     <span class="badge ${p.status}">${
       {established:'위치 확정',majority:'통설',disputed:'비정이 갈림',unlocated:'위치 미정'}[p.status]||p.status}</span>
     ${cands}
-    ${p.note ? `<p class="note">${p.note}</p>` : ''}
-    <div class="sect" style="margin-top:20px">원문 근거 ${hits.length}</div>
-    ${ev}`;
+    ${p.note ? `<p class="note">${p.note}</p>` : ''}`;
+  el.innerHTML = head + `<div class="sect" style="margin-top:20px">원문 근거</div><p class="empty" style="margin-top:12px">찾는 중…</p>`;
+
+  const seq = ++selSeq;
+  const on = [...state.on];
+  let res = {chunks:[], total:0, bySource:{}};
+  try{
+    const u = `/api/mentions?names=${encodeURIComponent(names.join(','))}&sources=${encodeURIComponent(on.join(','))}&limit=120`;
+    res = await fetch(u).then(r=>r.json());
+  }catch(e){ console.warn('[근거] 조회 실패', e); }
+  if(seq !== selSeq || state.sel !== id) return;   // 그 사이 다른 지명을 골랐다
+
+  const srcLabel = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
+  const by = Object.entries(res.bySource||{}).map(([sid,n]) => `${srcLabel(sid)} ${n}`).join(' · ');
+  const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const ev = res.chunks.length
+    ? res.chunks.map(c => {
+        let t = esc(c.text).replace(/□/g,'<span class="gap">□</span>');
+        for(const n of names) t = t.replaceAll(n, `<span class="hit">${n}</span>`);
+        const meta = [
+          c.title ? esc(c.title) : '',
+          c.date ? esc(c.date) : '',
+          c.locator ? esc(c.locator) : '',
+        ].filter(Boolean).join(' · ');
+        const counts = [
+          c.missingCount!=null ? `결자 ${c.missingCount}` : '',
+          c.hanjaCount!=null ? `한자 ${c.hanjaCount}` : '',
+        ].filter(Boolean).join(' · ');
+        const link = c.permalink ? ` · <a href="${esc(c.permalink)}" target="_blank" rel="noopener">원문 보기</a>` : '';
+        return `<div style="margin-top:14px">
+          <div class="srcname">${srcLabel(c.sourceId)}</div>
+          <div class="quote">${t}</div>
+          <div class="srcline">${meta}<br><code>${esc(c.id)}</code>${counts ? ' · ' + counts : ''}${link}</div></div>`;
+      }).join('')
+    : `<p class="empty" style="margin-top:12px">켜진 사료의 원문에서 이 이름을 찾지 못했다.</p>`;
+  const more = res.total > res.chunks.length
+    ? `<p class="empty" style="margin-top:10px">${res.total}건 중 앞 ${res.chunks.length}건만 보인다.</p>` : '';
+
+  el.innerHTML = head + `
+    <div class="sect" style="margin-top:20px">원문 근거 ${res.total}</div>
+    <div class="auto">이름 문자열 일치로 찾음(자동) · 사람이 확인한 연결 아님${by ? ' · ' + by : ''}</div>
+    ${ev}${more}`;
 }
 
 // ── 전환 ──
@@ -534,6 +569,7 @@ async function init3d(){
   R = { engine, world };
   window.__sigong = R;   // 디버그 훅
   world.setYear(state.year);
+  if(world.setSourcesOn) world.setSourcesOn(state.on);
   if(state.sel) world.setSelected(state.sel);
 
   if(engine.frameWorld) engine.frameWorld(world.maxRim);
@@ -553,6 +589,7 @@ function resize3d(){ if(R) R.engine.resize(); }
 function draw3d(){
   if(!R) return;
   R.world.setYear(state.year);
+  if(R.world.setSourcesOn) R.world.setSourcesOn(state.on);
   R.world.setSelected(state.sel);
 }
 
