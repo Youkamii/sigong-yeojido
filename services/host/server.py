@@ -31,6 +31,7 @@ from __future__ import annotations
 import argparse
 import io
 import json
+import logging
 import mimetypes
 import re
 import sys
@@ -327,26 +328,56 @@ def claims_for(entity_id: str, about: bool) -> dict:
 def merged_places() -> dict:
     """data/places.json(손질한 것) + data/places-candidates.json(#11 조사, 후보마다 validFrom/validTo).
 
-    같은 id 가 양쪽에 있으면 places.json 이 이긴다(조사본은 candidatesAlsoIn 으로만 표시).
+    같은 id·이름은 후보를 합친다. 이름이 다르면 조사본에 파일명 접미사를 붙여 별개로 보존한다.
     notAPlace 항목은 뺀다. variantOf 항목(이체자·이표기)은 원 항목의 aliases 로 접는다.
     """
     pj = DATA / "places.json"
-    base = json.loads(io.open(pj, encoding="utf-8").read()) if pj.exists() else {"places": []}
+    base = json.loads(pj.read_text(encoding="utf-8")) if pj.exists() else {"places": []}
     places: list[dict] = list(base.get("places", []))
     by_id = {pl["id"]: pl for pl in places}
     extra: list[dict] = []
     for cj in sorted(DATA.glob("places-candidates*.json")):   # #11 1라운드 + 사료별 2라운드 파일들
-        cand = json.loads(io.open(cj, encoding="utf-8").read())
+        cand = json.loads(cj.read_text(encoding="utf-8"))
         extra += [dict(pl, _from=cj.name) for pl in cand.get("places", []) if not pl.get("notAPlace")]
     if extra:
+        renamed = {}
+        used_ids = set(by_id) | {pl["id"] for pl in extra}
+        labels = {key: pl.get("label") for key, pl in by_id.items()}
+        for pl in extra:
+            if pl.get("variantOf"):
+                continue
+            old_id = pl["id"]
+            if old_id in labels and labels[old_id] != pl.get("label"):
+                new_id = f"{old_id}-{Path(pl['_from']).stem}"
+                suffix = 2
+                while new_id in used_ids:
+                    new_id = f"{old_id}-{Path(pl['_from']).stem}-{suffix}"
+                    suffix += 1
+                logging.warning("place id collision: %s (%s / %s); keeping %s as %s",
+                                old_id, labels[old_id], pl.get("label"), pl["_from"], new_id)
+                renamed[(pl["_from"], old_id)] = new_id
+                pl["id"] = new_id
+                used_ids.add(new_id)
+            labels[pl["id"]] = pl.get("label")
+        for pl in extra:
+            if pl.get("variantOf"):
+                pl["variantOf"] = renamed.get((pl["_from"], pl["variantOf"]), pl["variantOf"])
+            if pl.get("relatedTo"):
+                pl["relatedTo"] = [renamed.get((pl["_from"], pid), pid) for pid in pl["relatedTo"]]
         variants = [pl for pl in extra if pl.get("variantOf")]
         for pl in extra:
             if pl.get("variantOf"):
                 continue
             if pl["id"] in by_id:
-                by_id[pl["id"]]["candidatesAlsoIn"] = pl.get("_from")
+                target = by_id[pl["id"]]
+                for candidate in pl.get("candidates", []):
+                    if candidate not in target.setdefault("candidates", []):
+                        target["candidates"].append(candidate)
+                for name in pl.get("aliases", []):
+                    if name != target.get("label") and name not in target.setdefault("aliases", []):
+                        target["aliases"].append(name)
                 continue
-            rec = {k: pl[k] for k in ("id", "label", "labelKo", "kind", "status", "candidates", "note", "confidence", "count", "indexType", "relatedTo", "references") if k in pl}
+            rec = {k: pl[k] for k in ("id", "label", "labelKo", "kind", "status", "candidates", "note", "confidence", "count", "indexType", "relatedTo", "references", "validFrom", "validTo") if k in pl}
             rec["origin"] = "ai"          # 조사 에이전트가 모아 검증자가 대조한 것 — 사람이 확인한 연결 아님
             rec["from"] = pl.get("_from")
             rec["aliases"] = list(pl.get("aliases") or [])

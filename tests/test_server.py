@@ -46,5 +46,35 @@ class NameMatchingTests(unittest.TestCase):
                 self.assertEqual(server.collect_country_terms(), {"b": {"陳"}})
 
 
+class PlaceMergeTests(unittest.TestCase):
+    def test_different_concepts_keep_candidates_and_local_variant_links(self):
+        base = {"id": "p", "label": "百殘國城", "candidates": [{"lat": 37, "lon": 127}]}
+        extra = {"id": "p", "label": "漢城", "candidates": [{"lat": 38, "lon": 125, "validFrom": 475}]}
+        variant = {"id": "variant", "label": "漢忽", "variantOf": "p"}
+        with tempfile.TemporaryDirectory() as tmp:
+            data = Path(tmp)
+            (data / "places.json").write_text(json.dumps({"places": [base]}), encoding="utf-8")
+            (data / "places-candidates-a.json").write_text(json.dumps({"places": [extra, variant]}), encoding="utf-8")
+            with patch.object(server, "DATA", data), self.assertLogs(level="WARNING"):
+                places = server.merged_places()["places"]
+        self.assertEqual(len(places), 2)
+        self.assertNotEqual(places[0]["id"], places[1]["id"])
+        self.assertEqual(places[0]["candidates"], base["candidates"])
+        self.assertEqual(places[1]["candidates"], extra["candidates"])
+        self.assertEqual(places[1]["aliases"], ["漢忽"])
+
+    def test_same_label_unions_candidates_without_losing_provenance(self):
+        first = {"lat": 37, "lon": 127, "sourceUrl": "https://example.org/a"}
+        second = dict(first, sourceUrl="https://example.org/b")
+        with tempfile.TemporaryDirectory() as tmp:
+            data = Path(tmp)
+            for filename, candidates in [("places.json", [first]), ("places-candidates-a.json", [first, second])]:
+                (data / filename).write_text(json.dumps({"places": [{"id": "p", "label": "漢城", "candidates": candidates}]}), encoding="utf-8")
+            with patch.object(server, "DATA", data):
+                places = server.merged_places()["places"]
+        self.assertEqual(len(places), 1)
+        self.assertEqual(places[0]["candidates"], [first, second])
+
+
 if __name__ == "__main__":
     unittest.main()
