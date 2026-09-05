@@ -13,7 +13,7 @@
 // 모르는 자리에 기둥을 꽂으면 그게 판정이다.
 
 import * as THREE from 'three';
-import { PALETTE, hexNum } from './artbible.js';
+import { PALETTE, hexNum, mix } from './artbible.js';
 import { makeMaterial } from './materials.js';
 import { makeGlow } from './style.js';
 import { canvasTexture } from './util.js';
@@ -113,8 +113,8 @@ function buildLand(geo) {
 
   // §1.1 — 지면은 BASE_STONE/EARTH 가 면적을 갖는다. 채도는 억제.
   const top = makeMaterial('MAT_STONE', {
-    color: PALETTE.BASE_EARTH,
-    roughness: 0.94,
+    color: mix(PALETTE.BASE_STONE, PALETTE.BASE_VERDANT, 0.38),
+    roughness: 0.9,
     metalness: 0.0,
   });
   const side = makeMaterial('MAT_STONE', {
@@ -190,7 +190,13 @@ function buildSea(rim) {
   const r = rim * 1.9;
   const mesh = new THREE.Mesh(
     new THREE.CircleGeometry(r, 96),
-    makeMaterial('MAT_WATER', { color: PALETTE.BASE_WATER })
+    // 판톨로지 MAT_WATER 는 transmission 0.6 — 밑에 지형이 있을 때의 설정이다.
+    // 우리 디오라마 밑은 허공이라 투과하면 검게 보이므로 끈다. 반사·거칠기는 프리셋을 따른다.
+    makeMaterial('MAT_WATER', {
+      color: PALETTE.BASE_WATER, transmission: 0,
+      roughness: 0.42, envMapIntensity: 0.7,          // 거울면(0.06)은 위에서 볼 때 검은 환경만 비춘다
+      emissive: '#0a161c', emissiveIntensity: 0.35,   // 어떤 각도에서도 허공처럼 죽지 않게
+    })
   );
   mesh.rotation.x = -Math.PI / 2;
   mesh.position.y = SEA_Y;
@@ -219,7 +225,7 @@ function buildColumn(place, cand, index) {
   const primary = index === 0;
   const g = new THREE.Group();
   g.name = `place:${place.id}:${index}`;
-  g.userData = { placeId: place.id, candIndex: index, primary };
+  g.userData = { placeId: place.id, candIndex: index, primary, fanNodeId: place.id };
   g.position.set(x, LAND_DEPTH, z);
 
   // 광주 — MAT_HOLO 로 세운다 (§홀로그램 물질화)
@@ -245,7 +251,7 @@ function buildColumn(place, cand, index) {
     makeMaterial('MAT_GLASS_ARCANE', { color, emissive: color })
   );
   head.position.y = COLUMN_H;
-  head.userData = { placeId: place.id };
+  head.userData = { placeId: place.id, fanNodeId: place.id };
   g.add(head);
   g.userData.head = head;
   g.userData.shaft = shaft;

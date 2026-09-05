@@ -514,6 +514,14 @@ async function init3d(){
   if(state.sel) world.setSelected(state.sel);
 
   if(engine.frameWorld) engine.frameWorld(world.maxRim);
+  // 판톨로지 기본 프레이밍은 고도 약 25° — 디오라마 섬을 옆에서 보는 구도다.
+  // 지도는 위에서 내려다봐야 읽힌다. 같은 거리에서 고도만 55° 로 세운다.
+  { const r = world.maxRim; const d = Math.hypot(r*1.15, r*0.86, r*1.45);
+    const el = 55*Math.PI/180, az = -28*Math.PI/180;
+    engine.camera.position.set(Math.sin(az)*Math.cos(el)*d, Math.sin(el)*d + 14, Math.cos(az)*Math.cos(el)*d);
+    engine.controls.update(); }
+  const q = new URLSearchParams(location.search).get('q');
+  if(q && engine.setQuality) engine.setQuality(q);   // 검증·저사양용 ?q=low
   engine.start((dt, t) => world.update(t));
   }catch(e){ console.error('[3D] init 실패', e); window.__sigongErr = String(e && e.stack || e); }
 }
