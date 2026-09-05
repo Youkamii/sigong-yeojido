@@ -129,6 +129,14 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .cand .bs a{color:var(--celadon);text-decoration:none;border-bottom:1px dotted var(--celadon-dim);margin-left:4px}
 .badge.ai{background:transparent;color:var(--paper-3);border:1px solid var(--line-2);margin-left:6px}
 .evi .auto{font-family:var(--mono);font-size:10px;color:var(--paper-3);margin-top:5px;letter-spacing:.04em;line-height:1.6}
+.claim{border-left:2px solid var(--celadon-dim);padding:4px 0 4px 11px;margin-top:12px}
+.claim .cl-head{font-size:13px;line-height:1.6}
+.claim .pred{font-family:var(--mono);font-size:10.5px;color:var(--celadon);letter-spacing:.06em;margin-right:6px}
+.claim .role{font-family:var(--mono);font-size:10px;color:var(--paper-3)}
+.claim .quote.small{font-size:13px;padding:8px 10px;margin-top:6px}
+.claim .cl-note{color:var(--paper-3)}
+.badge.human{background:var(--celadon-dim);color:#0E1512;margin-left:6px}
+.badge.st{background:transparent;color:var(--paper-3);border:1px solid var(--line-2);margin-left:4px}
 .evi .srcname{font-family:var(--mono);font-size:10px;color:var(--celadon);letter-spacing:.08em;margin-bottom:4px}
 .evi .srcline a{color:var(--celadon);text-decoration:none;border-bottom:1px dotted var(--celadon-dim)}
 .cand .co{font-family:var(--mono);font-size:11px;color:var(--celadon)}
@@ -488,13 +496,43 @@ async function select(id){
   const seq = ++selSeq;
   const on = [...state.on];
   let res = {chunks:[], total:0, bySource:{}};
+  let cl = {claims:[], total:0};
   try{
     const u = `/api/mentions?names=${encodeURIComponent(names.join(','))}&sources=${encodeURIComponent(on.join(','))}&limit=120`;
-    res = await fetch(u).then(r=>r.json());
+    [res, cl] = await Promise.all([
+      fetch(u).then(r=>r.json()),
+      fetch(`/api/claims?subject=${encodeURIComponent(id)}&about=1`).then(r=>r.json()).catch(()=>({claims:[],total:0})),
+    ]);
   }catch(e){ console.warn('[근거] 조회 실패', e); }
   if(seq !== selSeq || state.sel !== id) return;   // 그 사이 다른 지명을 골랐다
 
   const srcLabel = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
+  // ── 주장(Claim) — 온톨로지 층. 어긋나는 주장도 나란히, 판정하지 않는다 ──
+  const esc1 = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const labelOf = eid => { const q = state.places.find(x=>x.id===eid); return q ? q.labelKo : eid; };
+  const objText = o => {
+    if(o == null) return '';
+    if(typeof o !== 'object') return esc1(o);
+    if(o.kind === 'literal') return `“${esc1(o.value)}”`;
+    if(o.kind === 'year') return `<b>${o.value < 0 ? '기원전 ' + (-o.value) : o.value}년</b>`;
+    if(o.kind === 'time') return `<b>${esc1(o.verbatim || o.id)}</b>${o.precision ? ` <span class="role">${esc1(o.precision)}</span>` : ''}`;
+    if(o.kind === 'entity' || o.kind === 'ref' || o.id) return `<b>${esc1(labelOf(o.id || o.value))}</b>`;
+    return esc1(JSON.stringify(o));
+  };
+  const claimsOn = (cl.claims || []).filter(c => !c.chunk || state.on.has(c.chunk.sourceId));
+  const claimsHtml = claimsOn.length ? claimsOn.map(c => {
+      const pred = String(c.predicate || '').replace(/^syj:/,'');
+      const q = c.quote ? `<div class="quote small">${esc1(c.quote)}</div>` : '';
+      const where = c.chunk ? `${srcLabel(c.chunk.sourceId)} · ${esc1(c.chunk.locator || c.chunk.id)}` : esc1(c.citesChunk || '');
+      return `<div class="claim">
+        <div class="cl-head"><span class="pred">${esc1(pred)}</span> ${c.role === 'object' ? `<span class="role">이 지명이 목적어</span> ` : ''}${objText(c.object)}
+          <span class="badge ${c.origin === 'ai' ? 'ai' : 'human'}">${c.origin === 'ai' ? 'AI 추출' : '사람'}</span>
+          ${c.status && c.status !== 'draft' ? `<span class="badge st">${esc1(c.status)}</span>` : ''}</div>
+        ${q}
+        <div class="srcline">${where}${c.note ? `<br><span class="cl-note">${esc1(c.note)}</span>` : ''}</div>
+      </div>`;
+    }).join('') : `<p class="empty" style="margin-top:10px">이 지명을 두고 세운 주장이 아직 없다${cl.allClaims ? ` (전체 주장 ${cl.allClaims}건)` : ''}.</p>`;
+
   const by = Object.entries(res.bySource||{}).map(([sid,n]) => `${srcLabel(sid)} ${n}`).join(' · ');
   const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
   const ev = res.chunks.length
@@ -524,6 +562,9 @@ async function select(id){
     ? `<p class="empty" style="margin-top:10px">${res.total}건 중 앞 ${res.chunks.length}건만 보인다.</p>` : '';
 
   el.innerHTML = head + `
+    <div class="sect" style="margin-top:20px">주장 ${claimsOn.length}</div>
+    <div class="auto">사료 한 대목에서 세운 주장(Claim). 인용문은 그 대목의 글자 그대로이고, 누가(사람/AI) 세웠는지 딱지가 붙는다.</div>
+    ${claimsHtml}
     <div class="sect" style="margin-top:20px">원문 근거 ${res.total}</div>
     <div class="auto">이름 문자열 일치로 찾음(자동) · 사람이 확인한 연결 아님${by ? ' · ' + by : ''}</div>
     ${ev}${more}`;
