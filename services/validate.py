@@ -11,7 +11,7 @@
   data/entities/<type>/<id>.md    엔티티 껍데기 — 파일 이름이 id 다
 
 검사 (docs/02-schema.md §7.1 · §7.2 · §11):
-  parse            머리말이 평평한 key: value 이고, claims-json 펜스가 하나이며 JSON 배열이다
+  parse            공용 머리말 규칙을 따르고, claims-json 펜스가 하나이며 JSON 배열이다
   shape            필수 필드 · object.kind · origin · status 가 규약대로다. claim id 중복 금지
   no-evidence      citesChunk 가 비었다                                        -> 실패
   dead-chunk       citesChunk 가 어느 chunks.jsonl 에도 없다                   -> 실패
@@ -48,6 +48,8 @@ import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from frontmatter import ParseError, parse_front_matter
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 FIXTURES_DIR = ROOT / "tests" / "fixtures"
@@ -70,17 +72,12 @@ REQUIRED_TEXT_FIELDS = (
     "status",
 )
 
-FRONT_MATTER_LINE_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):[ \t]*(.*)$")
 FENCE_OPEN_RE = re.compile(r"^```claims-json[ \t]*$", re.MULTILINE)
 FENCE_RE = re.compile(r"^```claims-json[ \t]*\n(.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL)
 WS_RE = re.compile(r"\s+")
 STEMS = "甲乙丙丁戊己庚辛壬癸"
 BRANCHES = "子丑寅卯辰巳午未申酉戌亥"
 GANZHI_RE = re.compile(f"[{STEMS}][{BRANCHES}]")
-
-
-class ParseError(ValueError):
-    """파일 하나를 통째로 거부해야 하는 문제."""
 
 
 @dataclass
@@ -102,7 +99,7 @@ class ClaimsDoc:
     path: Path
     label: str
     source_key: str  # data/claims/<source_key>/ — digests 파일을 고르는 키
-    meta: dict[str, str]
+    meta: dict
     claims: list
     expected_chunk: str | None = None  # 파일 이름에서 온 chunk id (경고용)
     expected_source: str | None = None  # 디렉터리에서 온 source id (경고용)
@@ -210,33 +207,7 @@ def load_digests(path: Path) -> dict[str, str] | None:
 # ----------------------------------------------------------------------------
 
 
-def parse_front_matter(text: str) -> tuple[dict[str, str], str]:
-    """`---` 사이의 평평한 key: value 만 받는다. 목록·중첩은 거부한다."""
-    if text.startswith("\ufeff"):  # BOM
-        text = text[1:]
-    lines = text.split("\n")
-    if not lines or lines[0].strip() != "---":
-        raise ParseError("front matter must open with '---' on line 1")
-    meta: dict[str, str] = {}
-    for lineno in range(1, len(lines)):
-        line = lines[lineno]
-        if line.strip() == "---":
-            return meta, "\n".join(lines[lineno + 1 :])
-        if not line.strip():
-            continue
-        m = FRONT_MATTER_LINE_RE.match(line)
-        if m is None:
-            raise ParseError(
-                f"front matter line {lineno + 1} is not a flat 'key: value' scalar: {line.strip()!r}"
-            )
-        key, value = m.group(1), m.group(2).strip()
-        if key in meta:
-            raise ParseError(f"front matter key repeated: {key}")
-        meta[key] = value
-    raise ParseError("front matter is not closed with '---'")
-
-
-def parse_claims_text(text: str) -> tuple[dict[str, str], list]:
+def parse_claims_text(text: str) -> tuple[dict, list]:
     meta, body = parse_front_matter(text)
     if meta.get("type") != "Claims":
         raise ParseError(f"front matter 'type' must be 'Claims' (got {meta.get('type')!r})")

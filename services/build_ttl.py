@@ -103,7 +103,6 @@ PREDICATE_RE = re.compile(r"^syj:([A-Za-z][A-Za-z0-9]*)$")
 PN_LOCAL_SAFE_RE = re.compile(r"^[A-Za-z0-9_][A-Za-z0-9_.:-]*$")
 DATE_RE = re.compile(r"^-?\d{4}-\d{2}-\d{2}$")
 INT_RE = re.compile(r"^-?\d+$")
-KEY_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):(?:[ \t]+(.*))?$")
 
 
 class BuildError(ValueError):
@@ -242,105 +241,12 @@ class Graph:
 
 # ----------------------------------------------------------------------------
 # 사료 카드 머리말 — 평평한 key: value + 한 단계 중첩(generated: by/at) + 매핑 목록(sources: - id: …)
-# (claims 머리말과 달리 카드는 중첩을 쓴다. validate.parse_front_matter 는 평평한 것만 받는다)
+# 사료·주장·엔티티 모두 services/frontmatter.py 를 사용한다.
 # ----------------------------------------------------------------------------
 
 
-def _indent(line: str) -> int:
-    return len(line) - len(line.lstrip(" "))
-
-
-def _scalar(value: str):
-    value = value.strip()
-    if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
-        return value[1:-1]
-    if value in ("null", "~", ""):
-        return None
-    return value
-
-
-def _parse_mapping(lines: list[str], start: int, indent: int) -> tuple[dict, int]:
-    out: dict = {}
-    i = start
-    while i < len(lines):
-        line = lines[i]
-        if not line.strip() or line.lstrip().startswith("#"):
-            i += 1
-            continue
-        ind = _indent(line)
-        if ind < indent:
-            break
-        if ind > indent:
-            raise V.ParseError(f"front matter line {i + 1}: unexpected indent")
-        m = KEY_RE.match(line.strip())
-        if not m:
-            raise V.ParseError(f"front matter line {i + 1}: not a 'key: value' line: {line.strip()!r}")
-        key, val = m.group(1), m.group(2)
-        if key in out:
-            raise V.ParseError(f"front matter line {i + 1}: key repeated: {key}")
-        i += 1
-        if val is None or not val.strip():
-            j = i
-            while j < len(lines) and not lines[j].strip():
-                j += 1
-            if j < len(lines) and _indent(lines[j]) > indent:
-                if lines[j].lstrip().startswith("- "):
-                    value, i = _parse_list(lines, j, _indent(lines[j]))
-                else:
-                    value, i = _parse_mapping(lines, j, _indent(lines[j]))
-            else:
-                value = None
-        else:
-            value = _scalar(val)
-        out[key] = value
-    return out, i
-
-
-def _parse_list(lines: list[str], start: int, indent: int) -> tuple[list, int]:
-    items: list = []
-    i = start
-    while i < len(lines):
-        line = lines[i]
-        if not line.strip():
-            i += 1
-            continue
-        ind = _indent(line)
-        if ind < indent:
-            break
-        if ind > indent:
-            raise V.ParseError(f"front matter line {i + 1}: unexpected indent in list")
-        stripped = line.strip()
-        if not stripped.startswith("- "):
-            break
-        rest = stripped[2:]
-        if KEY_RE.match(rest):
-            item_indent = ind + 2
-            sub = [" " * item_indent + rest]
-            i += 1
-            while i < len(lines) and (not lines[i].strip() or _indent(lines[i]) >= item_indent):
-                sub.append(lines[i])
-                i += 1
-            item, _ = _parse_mapping(sub, 0, item_indent)
-            items.append(item)
-        else:
-            items.append(_scalar(rest))
-            i += 1
-    return items, i
-
-
 def parse_card_front_matter(text: str) -> dict:
-    if text.startswith("﻿"):
-        text = text[1:]
-    lines = text.split("\n")
-    if not lines or lines[0].strip() != "---":
-        raise V.ParseError("front matter must open with '---' on line 1")
-    body: list[str] = []
-    for line in lines[1:]:
-        if line.strip() == "---":
-            meta, _ = _parse_mapping(body, 0, 0)
-            return meta
-        body.append(line)
-    raise V.ParseError("front matter is not closed with '---'")
+    return V.parse_front_matter(text)[0]
 
 
 # ----------------------------------------------------------------------------

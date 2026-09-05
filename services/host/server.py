@@ -46,6 +46,7 @@ DATA = ROOT / "data"
 
 # claims 파서는 services/validate.py 의 것을 그대로 쓴다 — 파서를 두 벌 두지 않는다
 sys.path.insert(0, str(ROOT / "services"))
+from frontmatter import parse_front_matter
 try:
     from validate import parse_claims_text  # noqa: E402
 except Exception:  # validate.py 가 없거나 깨졌어도 뷰어는 뜬다 (claims 만 비어 보인다)
@@ -68,30 +69,9 @@ def read_jsonl(p: Path) -> list[dict]:
 
 
 def parse_frontmatter(md: Path) -> dict:
-    """사료 카드 머리말을 얕게 읽는다 (YAML 파서 없이 — 스칼라만)."""
     if not md.exists():
         return {}
-    text = io.open(md, encoding="utf-8").read()
-    m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
-    if not m:
-        return {}
-    out: dict = {}
-    for line in m.group(1).splitlines():
-        if not line.strip() or line.startswith((" ", "\t", "-", "#")):
-            continue
-        if ":" not in line:
-            continue
-        k, v = line.split(":", 1)
-        v = v.strip()
-        if v in ("", "null"):
-            continue
-        if re.fullmatch(r"-?\d+", v):
-            out[k.strip()] = int(v)
-        elif v in ("true", "false"):
-            out[k.strip()] = v == "true"
-        else:
-            out[k.strip()] = v.strip("\"'")
-    return out
+    return parse_front_matter(md.read_text(encoding="utf-8"))[0]
 
 
 def collect_sources() -> list[dict]:
@@ -251,9 +231,9 @@ def source_card(sid: str) -> dict:
             continue
         if (fm.get("id") or f"src-{md.stem}") != sid:
             continue
-        text = io.open(md, encoding="utf-8").read()
+        text = md.read_text(encoding="utf-8").lstrip("\ufeff")
         m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
-        body = text[m.end():] if m else text
+        _, body = parse_front_matter(text)
         fm = dict(fm)
         fm["id"] = sid
         fm["chunkCount"] = next((x.get("chunkCount", 0) for x in index()["sources"] if x.get("id") == sid), 0)
