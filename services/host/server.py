@@ -121,7 +121,7 @@ def _signature() -> tuple:
     src = DATA / "sources"
     files = sorted(src.glob("*.md")) + sorted(src.glob("*/chunks.jsonl")) if src.exists() else []
     files.append(DATA / "places.json")
-    files.append(DATA / "places-candidates.json")
+    files += sorted(DATA.glob("places-candidates*.json"))
     cdir = DATA / "claims"
     if cdir.is_dir():
         files += sorted(cdir.glob("**/*.md"))
@@ -228,20 +228,21 @@ def merged_places() -> dict:
     base = json.loads(io.open(pj, encoding="utf-8").read()) if pj.exists() else {"places": []}
     places: list[dict] = list(base.get("places", []))
     by_id = {pl["id"]: pl for pl in places}
-    cj = DATA / "places-candidates.json"
-    if cj.exists():
+    extra: list[dict] = []
+    for cj in sorted(DATA.glob("places-candidates*.json")):   # #11 1라운드 + 사료별 2라운드 파일들
         cand = json.loads(io.open(cj, encoding="utf-8").read())
-        extra = [pl for pl in cand.get("places", []) if not pl.get("notAPlace")]
+        extra += [dict(pl, _from=cj.name) for pl in cand.get("places", []) if not pl.get("notAPlace")]
+    if extra:
         variants = [pl for pl in extra if pl.get("variantOf")]
         for pl in extra:
             if pl.get("variantOf"):
                 continue
             if pl["id"] in by_id:
-                by_id[pl["id"]]["candidatesAlsoIn"] = "places-candidates.json"
+                by_id[pl["id"]]["candidatesAlsoIn"] = pl.get("_from")
                 continue
             rec = {k: pl[k] for k in ("id", "label", "labelKo", "kind", "status", "candidates", "note", "confidence", "count", "indexType", "relatedTo", "references") if k in pl}
             rec["origin"] = "ai"          # 조사 에이전트가 모아 검증자가 대조한 것 — 사람이 확인한 연결 아님
-            rec["from"] = "places-candidates.json"
+            rec["from"] = pl.get("_from")
             rec["aliases"] = list(pl.get("aliases") or [])
             places.append(rec)
             by_id[rec["id"]] = rec
