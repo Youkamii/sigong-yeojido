@@ -184,7 +184,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 
     <div class="canvasWrap">
       <canvas id="map"></canvas>
-      <canvas id="three"></canvas>
+      <div id="three"></div>
       <div class="hint" id="hint">지명을 클릭하면 근거가 열린다</div>
       <div class="timebar">
         <div class="row">
@@ -478,110 +478,51 @@ b3d.onclick = () => { state.mode='3d'; document.body.classList.add('mode3d');
 
 addEventListener('resize', () => { draw(); if(state.mode==='3d') resize3d(); });
 
-// ── 3D ──
+// ── 3D — 판톨로지 렌더링 코어 계승 ──
+// engine.js · artbible.js · materials.js · style.js 는 fantology 에서 가져온 것을
+// 손대지 않고 쓴다. 갈아끼운 것은 지형 하나뿐이다 — 절차 생성 판타지 대륙 대신
+// 실측 한반도(korea.js). 직교 카메라 · 라이팅 리그 · 톤매핑 · 후처리는 그쪽 정본을 따른다.
 let R = null;
+
 async function init3d(){
-  if(R){ resize3d(); draw3d(); return; }
-  const THREE = await import('three');
-  const {OrbitControls} = await import('./vendor/OrbitControls.js');
-  const cvs = document.getElementById('three');
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x12100C);
-  scene.fog = new THREE.Fog(0x12100C, 180, 480);
+  if(R){ R.engine.resize(); draw3d(); return; }
+  const host = document.getElementById('three');
+  host.innerHTML = '';
 
-  const cam = new THREE.PerspectiveCamera(42, 1, .5, 2000);
-  cam.position.set(0, 120, 135);
-  const rn = new THREE.WebGLRenderer({canvas:cvs, antialias:true});
-  rn.setPixelRatio(Math.min(devicePixelRatio||1, 2));
-  const ctl = new OrbitControls(cam, cvs);
-  ctl.enableDamping = true; ctl.dampingFactor = .08;
-  ctl.maxPolarAngle = Math.PI/2.15; ctl.minDistance = 40; ctl.maxDistance = 420;
+  try{
+  const [{ Engine }, { DEFAULT_STYLE }, { KoreaWorld }] = await Promise.all([
+    import('./app/engine.js'),
+    import('./app/style.js'),
+    import('./app/korea.js'),
+  ]);
 
-  scene.add(new THREE.AmbientLight(0x8899aa, 1.1));
-  const key = new THREE.DirectionalLight(0xffeacc, 1.5);
-  key.position.set(-40, 70, 30); scene.add(key);
+  const engine = new Engine(host);
+  // 시공여지도의 분위기 — 판톨로지 기본은 '황금빛 오후의 브리튼'이다.
+  // 우리는 낮으로 올려 지형이 읽히게 하고, 안개는 아트 바이블 값을 따른다.
+  const mood = { ...DEFAULT_STYLE.mood, timeOfDay: 'day', ambient: (DEFAULT_STYLE.mood.ambient || 1) * 1.25 };
+  engine.applyMood(mood);
+  if(engine.bakeEnvironment) engine.bakeEnvironment(mood);
 
-  // 2D와 같은 투영을 쓴다 — 라디안 기준, 중심을 원점으로
-  const SC = 150;
-  const to3 = (lon,lat) => [
-    (rad(lon) - (MX0+MX1)/2) * SC,
-    (merc(lat) - (MY0+MY1)/2) * SC,
-  ];
+  const world = new KoreaWorld(state.geo, state.places);
+  engine.add(world.group);
+  engine.setPickTargets(world.pickTargets);
+  engine.onPick = (id) => { if(id) select(id); };
 
-  // 육지 압출
-  const land = new THREE.Group();
-  for(const f of state.geo.features){
-    if(f.properties.kind !== 'land') continue;
-    const polys = f.geometry.type==='Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
-    for(const poly of polys){
-      const shape = new THREE.Shape();
-      poly[0].forEach((pt,i)=>{ const [x,z]=to3(pt[0],pt[1]); i?shape.lineTo(x,z):shape.moveTo(x,z); });
-      for(let i=1;i<poly.length;i++){
-        const hole = new THREE.Path();
-        poly[i].forEach((pt,j)=>{ const [x,z]=to3(pt[0],pt[1]); j?hole.lineTo(x,z):hole.moveTo(x,z); });
-        shape.holes.push(hole);
-      }
-      const geo = new THREE.ExtrudeGeometry(shape, {depth:2.4, bevelEnabled:false});
-      geo.rotateX(-Math.PI/2);
-      const mesh = new THREE.Mesh(geo, new THREE.MeshLambertMaterial({color:0x3A3225}));
-      land.add(mesh);
-      const edge = new THREE.LineSegments(
-        new THREE.EdgesGeometry(geo, 25),
-        new THREE.LineBasicMaterial({color:0x6A6047}));
-      land.add(edge);
-    }
-  }
-  scene.add(land);
+  R = { engine, world };
+  window.__sigong = R;   // 디버그 훅
+  world.setYear(state.year);
+  if(state.sel) world.setSelected(state.sel);
 
-  // 바다면
-  const sea = new THREE.Mesh(
-    new THREE.PlaneGeometry(900,900),
-    new THREE.MeshBasicMaterial({color:0x0E0C09}));
-  sea.rotation.x = -Math.PI/2; sea.position.y = -0.05; scene.add(sea);
-
-  // 지명 기둥
-  const pillars = new THREE.Group(); scene.add(pillars);
-  const mk = {};
-  for(const p of state.places){
-    p.candidates.forEach((c,i) => {
-      const [x,z] = to3(c.lon, c.lat);
-      const col = new THREE.Color(COLOR[p.status]||'#8B8474');
-      const g = new THREE.CylinderGeometry(.7,.7,26,10);
-      const m = new THREE.MeshBasicMaterial({color:col, transparent:true, opacity:.85});
-      const cyl = new THREE.Mesh(g,m);
-      cyl.position.set(x, 13, -z);
-      const cap = new THREE.Mesh(new THREE.SphereGeometry(1.5,14,12),
-        new THREE.MeshBasicMaterial({color:col}));
-      cap.position.set(x, 26, -z);
-      const grp = new THREE.Group(); grp.add(cyl); grp.add(cap);
-      grp.userData = {id:p.id, first:i===0};
-      pillars.add(grp);
-      (mk[p.id] = mk[p.id]||[]).push(grp);
-    });
-  }
-
-  R = {THREE, scene, cam, rn, ctl, pillars, mk};
-  resize3d(); draw3d();
-  (function loop(){ requestAnimationFrame(loop); ctl.update(); rn.render(scene, cam); })();
+  if(engine.frameWorld) engine.frameWorld(world.maxRim);
+  engine.start((dt, t) => world.update(t));
+  }catch(e){ console.error('[3D] init 실패', e); window.__sigongErr = String(e && e.stack || e); }
 }
-function resize3d(){
-  if(!R) return;
-  const c = document.getElementById('three');
-  const w = c.clientWidth, h = c.clientHeight;
-  R.cam.aspect = w/h; R.cam.updateProjectionMatrix(); R.rn.setSize(w,h,false);
-}
+
+function resize3d(){ if(R) R.engine.resize(); }
 function draw3d(){
   if(!R) return;
-  for(const p of state.places){
-    const live = activeAt(p);
-    (R.mk[p.id]||[]).forEach(g => {
-      g.visible = true;
-      g.children.forEach(ch => {
-        ch.material.transparent = true;
-        ch.material.opacity = live ? (g.userData.first?.9:.6) : .12;
-      });
-    });
-  }
+  R.world.setYear(state.year);
+  R.world.setSelected(state.sel);
 }
 
 load();
