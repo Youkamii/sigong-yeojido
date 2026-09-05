@@ -395,7 +395,7 @@ function buildColumn(place, cand, index, heightAt = null) {
   const primary = index === 0;
   const g = new THREE.Group();
   g.name = `place:${place.id}:${index}`;
-  g.userData = { placeId: place.id, candIndex: index, primary, fanNodeId: place.id };
+  g.userData = { placeId: place.id, candIndex: index, primary, fanNodeId: place.id, cand };
   g.position.set(x, heightAt ? terrainY(Math.max(0, heightAt(cand.lon, cand.lat))) : LAND_DEPTH, z);
 
   // 광주 — MAT_HOLO 로 세운다 (§홀로그램 물질화)
@@ -427,12 +427,12 @@ function buildColumn(place, cand, index, heightAt = null) {
   g.userData.shaft = shaft;
   g.userData.ring = ring;
 
-  if (primary) {
-    const label = makeLabel(place.labelKo, color);
-    label.position.y = COLUMN_H + 7;
-    g.add(label);
-    g.userData.label = label;
-  }
+  // 라벨은 후보마다 두되 _applyLive 가 그 연도에 유효한 첫 후보에만 켠다 (도읍이 옮겨 가면 라벨도 따라간다)
+  const label = makeLabel(place.labelKo, color);
+  label.position.y = COLUMN_H + 7;
+  label.visible = primary;
+  g.add(label);
+  g.userData.label = label;
   return g;
 }
 
@@ -536,6 +536,7 @@ export class KoreaWorld {
           const b = toWorld(cands[i].lon, cands[i].lat);
           const link = buildDisputeLink(a, b, color);
           link.computeLineDistances();
+          link.userData = { placeId: p.id, linkCands: [cands[0], cands[i]] };
           marks.add(link);
           cols.push(link);
         }
@@ -569,12 +570,27 @@ export class KoreaWorld {
     return inTime && srcOk;
   }
 
+  _candActive(c) {
+    const year = this._year == null ? 0 : this._year;
+    const from = c.validFrom == null ? -9999 : c.validFrom;
+    const to = c.validTo == null ? 9999 : c.validTo;
+    return year >= from && year <= to;
+  }
+
   _applyLive() {
     for (const p of this.places) {
       const objs = this.byPlace.get(p.id);
       if (!objs) continue;
-      const live = this._isLive(p);
+      const placeLive = this._isLive(p) && (!p.candidates?.length || p.candidates.some((c) => this._candActive(c)));
+      let labelShown = false;
       for (const o of objs) {
+        let live = placeLive;
+        if (o.userData?.cand) live = placeLive && this._candActive(o.userData.cand);
+        else if (o.userData?.linkCands) live = placeLive && o.userData.linkCands.every((c) => this._candActive(c));
+        if (o.userData?.label) {
+          o.userData.label.visible = live && !labelShown;
+          if (live) labelShown = true;
+        }
         o.traverse((m) => {
           if (!m.material) return;
           const mats = Array.isArray(m.material) ? m.material : [m.material];

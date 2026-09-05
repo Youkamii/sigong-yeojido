@@ -125,6 +125,9 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .badge.disputed{background:#7A4433;color:#F0DED6}
 .badge.unlocated{background:var(--ink-3);color:var(--paper-3);border:1px solid var(--line-2)}
 .cand{border-left:2px solid var(--line-2);padding:2px 0 2px 11px;margin-top:12px}
+.cand.off{opacity:.45}
+.cand .bs a{color:var(--celadon);text-decoration:none;border-bottom:1px dotted var(--celadon-dim);margin-left:4px}
+.badge.ai{background:transparent;color:var(--paper-3);border:1px solid var(--line-2);margin-left:6px}
 .evi .auto{font-family:var(--mono);font-size:10px;color:var(--paper-3);margin-top:5px;letter-spacing:.04em;line-height:1.6}
 .evi .srcname{font-family:var(--mono);font-size:10px;color:var(--celadon);letter-spacing:.08em;margin-bottom:4px}
 .evi .srcline a{color:var(--celadon);text-decoration:none;border-bottom:1px dotted var(--celadon-dim)}
@@ -309,10 +312,16 @@ function renderStats(){
 
 const COLOR = {established:'#7FBBA8', majority:'#8FBF74', disputed:'#D2836A', unlocated:'#4A443A'};
 
+// 후보(좌표) 하나가 그 연도에 유효한가 — 도읍이 옮겨 다니는 나라는 후보마다 기간이 있다
+function candActive(c){
+  const f = c.validFrom==null ? -9999 : c.validFrom;
+  const t = c.validTo==null ? 9999 : c.validTo;
+  return state.year >= f && state.year <= t;
+}
 function activeAt(p){
   const f = p.validFrom==null ? -9999 : p.validFrom;
   const t = p.validTo==null ? 9999 : p.validTo;
-  const inTime = state.year >= f && state.year <= t;
+  const inTime = state.year >= f && state.year <= t && (!p.candidates.length || p.candidates.some(candActive));
   // 그 지명을 말하는 사료(mentions, 서버가 이름 일치로 센 것)가 전부 꺼져 있으면 흐려진다.
   const srcs = Object.keys(p.mentions || {});
   const srcOk = !srcs.length || srcs.some(s => state.on.has(s));
@@ -371,7 +380,9 @@ function draw(){
     if(!p.candidates.length) continue;
     const live = activeAt(p);
     const col = COLOR[p.status] || '#8B8474';
-    const pts = p.candidates.map(c => proj(c.lon, c.lat, v));
+    // 살아 있으면 그 연도에 유효한 후보만, 죽어 있으면 전부(흐리게)
+    const shown = live ? p.candidates.filter(candActive) : p.candidates;
+    const pts = shown.map(c => proj(c.lon, c.lat, v));
 
     if(pts.length > 1){
       ctx.save(); ctx.setLineDash([3,4]);
@@ -382,7 +393,7 @@ function draw(){
     }
 
     pts.forEach((q,i) => {
-      const first = i === 0;
+      const first = shown[i] === p.candidates[0] || (live && i === 0);
       const r = first ? 6 : 5;
       const a = live ? 1 : .22;
       ctx.globalAlpha = a;
@@ -454,10 +465,13 @@ async function select(id){
   // 이름 변형(aliases)까지 본다 — 비문은 平穰, 삼국사기는 平壤. 표기가 달라도 같은 자리를 말한다.
   const names = [p.label, ...(p.aliases || [])].filter(Boolean);
 
+  const esc0 = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const span = c => (c.validFrom==null && c.validTo==null) ? '' :
+    ` · ${c.validFrom==null ? '' : (c.validFrom < 0 ? '기원전 '+(-c.validFrom) : c.validFrom)}~${c.validTo==null ? '' : (c.validTo < 0 ? '기원전 '+(-c.validTo) : c.validTo)}`;
   const cands = p.candidates.length
-    ? p.candidates.map(c => `<div class="cand">
-        <div class="co">${c.lat.toFixed(4)}, ${c.lon.toFixed(4)} · ${c.precision}</div>
-        <div class="bs">${c.basis}</div></div>`).join('')
+    ? p.candidates.map(c => `<div class="cand${candActive(c) ? '' : ' off'}">
+        <div class="co">${c.lat.toFixed(4)}, ${c.lon.toFixed(4)} · ${esc0(c.precision)}${c.view ? ' · ' + esc0(c.view) : ''}${span(c)}</div>
+        <div class="bs">${esc0(c.basis)}${c.sourceUrl ? ` <a href="${esc0(c.sourceUrl)}" target="_blank" rel="noopener">출처</a>` : ''}</div></div>`).join('')
     : `<p class="unloc" style="margin-top:12px"><b>위치가 정해지지 않았다.</b>
        비정안이 여럿이거나 확정된 것이 없다. 이 시스템은 판정하지 않으므로 지도에 점을 찍지 않는다.</p>`;
 
@@ -465,7 +479,8 @@ async function select(id){
     <h3>${p.labelKo}</h3>
     <div class="han">${names.join(' · ')}</div>
     <span class="badge ${p.status}">${
-      {established:'위치 확정',majority:'통설',disputed:'비정이 갈림',unlocated:'위치 미정'}[p.status]||p.status}</span>
+      {established:'위치 확정',majority:'통설',disputed:'비정이 갈림',unlocated:'위치 미정'}[p.status]||p.status}</span>${
+      p.origin === 'ai' ? '<span class="badge ai">조사(자동) · 미확인</span>' : ''}
     ${cands}
     ${p.note ? `<p class="note">${p.note}</p>` : ''}`;
   el.innerHTML = head + `<div class="sect" style="margin-top:20px">원문 근거</div><p class="empty" style="margin-top:12px">찾는 중…</p>`;
@@ -486,10 +501,13 @@ async function select(id){
     ? res.chunks.map(c => {
         let t = esc(c.text).replace(/□/g,'<span class="gap">□</span>');
         for(const n of names) t = t.replaceAll(n, `<span class="hit">${n}</span>`);
+        // 국편 chunk 의 date 는 {raw:"0919-09-99L0", label:"919년 9월 미상"} 꼴, 비문 chunk 는 없다
+        const dateText = c.date == null ? '' : (typeof c.date === 'object' ? (c.date.label || c.date.raw || '') : String(c.date));
+        const loc = c.locator || '';
         const meta = [
-          c.title ? esc(c.title) : '',
-          c.date ? esc(c.date) : '',
-          c.locator ? esc(c.locator) : '',
+          c.title && !loc.endsWith(c.title) ? esc(c.title) : '',
+          dateText ? esc(dateText) : '',
+          loc ? esc(loc) : '',
         ].filter(Boolean).join(' · ');
         const counts = [
           c.missingCount!=null ? `결자 ${c.missingCount}` : '',

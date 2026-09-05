@@ -15,7 +15,7 @@ API는 전부 읽기 전용이다 — 이 서버는 아무것도 쓰지 않는�
   GET /api/mentions?names=平穰,平壤&sources=src-a,src-b&limit=120
                     이름 문자열이 들어간 원문 조각 — 서버가 찾는다(원문 전체를 브라우저로 보내지 않는다).
                     응답 {chunks, total, bySource}. 자동 문자열 일치이므로 화면에 '자동'이라고 붙인다.
-  /api/places 의 각 지명에는 mentions {sourceId: 조각 수} 가 붙는다 (label + aliases 기준).
+  /api/places 는 places.json + places-candidates.json(#11) 을 합친다. 각 지명에 mentions {sourceId: 조각 수} 가 붙는다 (label + aliases 기준).
   색인은 data/sources 파일의 mtime·size 서명이 바뀔 때만 다시 만든다.
 """
 from __future__ import annotations
@@ -139,8 +139,7 @@ def places_with_mentions() -> dict:
     with _IDX_LOCK:
         if idx["places"] is not None:
             return idx["places"]
-    pj = DATA / "places.json"
-    data = json.loads(io.open(pj, encoding="utf-8").read()) if pj.exists() else {"places": []}
+    data = merged_places()
     for pl in data.get("places", []):
         names = place_names(pl)
         m: dict[str, int] = {}
@@ -154,6 +153,46 @@ def places_with_mentions() -> dict:
     with _IDX_LOCK:
         idx["places"] = data
     return data
+
+
+def merged_places() -> dict:
+    """data/places.json(손질한 것) + data/places-candidates.json(#11 조사, 후보마다 validFrom/validTo).
+
+    같은 id 가 양쪽에 있으면 places.json 이 이긴다(조사본은 candidatesAlsoIn 으로만 표시).
+    notAPlace 항목은 뺀다. variantOf 항목(이체자·이표기)은 원 항목의 aliases 로 접는다.
+    """
+    pj = DATA / "places.json"
+    base = json.loads(io.open(pj, encoding="utf-8").read()) if pj.exists() else {"places": []}
+    places: list[dict] = list(base.get("places", []))
+    by_id = {pl["id"]: pl for pl in places}
+    cj = DATA / "places-candidates.json"
+    if cj.exists():
+        cand = json.loads(io.open(cj, encoding="utf-8").read())
+        extra = [pl for pl in cand.get("places", []) if not pl.get("notAPlace")]
+        variants = [pl for pl in extra if pl.get("variantOf")]
+        for pl in extra:
+            if pl.get("variantOf"):
+                continue
+            if pl["id"] in by_id:
+                by_id[pl["id"]]["candidatesAlsoIn"] = "places-candidates.json"
+                continue
+            rec = {k: pl[k] for k in ("id", "label", "labelKo", "kind", "status", "candidates", "note", "confidence", "count", "indexType", "relatedTo", "references") if k in pl}
+            rec["origin"] = "ai"          # 조사 에이전트가 모아 검증자가 대조한 것 — 사람이 확인한 연결 아님
+            rec["from"] = "places-candidates.json"
+            rec["aliases"] = list(pl.get("aliases") or [])
+            places.append(rec)
+            by_id[rec["id"]] = rec
+        for v in variants:
+            tgt = by_id.get(v["variantOf"])
+            if tgt is not None:
+                al = tgt.setdefault("aliases", [])
+                for name in [v.get("label")] + list(v.get("aliases") or []):
+                    if name and name != tgt.get("label") and name not in al:
+                        al.append(name)
+                # 이표기 항목이 제 좌표 후보를 따로 들고 있어도 원 항목의 후보로 합치지 않는다 — 같은 자리라는 판정은 Claim 몫
+    out = dict(base)
+    out["places"] = places
+    return out
 
 
 def mentions(names: list[str], sources: set[str] | None, limit: int) -> dict:
