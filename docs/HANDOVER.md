@@ -5,6 +5,50 @@
 
 ---
 
+## 최신 진행 — Codex, 2026-09-06
+
+**§7의 1~3 완료. 다음은 4(사료 3라운드).** 아래 과거 기록의 수치는 당시 상태이고, 현재 확인값은 이 절을 따른다.
+
+| 기능 | 이슈 | 커밋 |
+|---|---|---|
+| 한 글자 국명은 국명 색인 정확 일치, 다자 별칭 검색은 유지 | #19 | `7088c9d` |
+| 한성·대방 id 충돌 보존, 기존 평양 별칭 유지, 조사 후보 표시 | #20 | `9eef464`, `5f33d08` |
+| 빈 사료 선택을 mentions·year·claims 및 열린 패널에 반영 | #21 | `6b79a7b` |
+| 검증 명령 통합, 명시적 옵션 없이 digest 생성·수정 금지 | #22 | `6cd824d` |
+| 사료·주장·엔티티 머리말 공용 파서 | #23 | `014afb9` |
+| 검색 이름 8개·각 32자 제한, 반복 파라미터도 검사 | #24 | `4adbaad` |
+| HTML 이스케이프·HTTP(S) 링크·원문 강조, 브라우저 주입 검사 | #25 | `292bff3`, `66b7917` |
+| 2D·3D 연도와 사료 활성 조건 공용화 | #26 | `d988a74` |
+| 다치 술어 제외, 실제 판독 차이 1건 유지 | #27 | `686856b` |
+| 데이터 변경·Fuseki 재시작 뒤 자동 빌드·교체 적재·개수 대조 | #28 | `83c7133` |
+| F6 사료 선택·충돌·근거 추적 질의 파일 | #6 | `b0a9dc2` |
+
+현재 확인값:
+
+- 사료 4종, chunks 37,003, claims 85, digest 85/85 일치. 지명 **60개**, 모든 id 유일.
+- `漢城` 조사 후보 5개, `帶方` 조사 후보 1개를 별도 지명으로 보존. `平穰/平壤`은 기존 aliases에 따라 한 항목이며 후보 5개.
+- Conflict **1건**: 신묘년조 `readsCharacterAs`의 海/每. 기존 12건 중 11건이 다치 술어였다.
+- TTL **1,675 triples**, 82,436 bytes. SHA256 `ef0e572768cb0b8dfb23ba74eb8a7f3b592eef4f2a2dc1b35d9e63100540ed55`. c2 Fuseki에 교체 적재·COUNT 대조 완료.
+- Python tests **44개**, JavaScript tests **6개**, validate self-test **8 fixtures + e2e** 통과.
+- c2 :8870 화면 하네스 **12/12**, 실제 API fixture HTML 주입 검사, 지명 60개의 근거 수 대조, 전체 사료 해제 패널, 연도·사료 조합 16개의 3D 상태 대조 통과.
+- 2D·3D·HTML 검사 PNG를 내려받아 직접 확인. 증거: c2 `/tmp/sigong-major-final/`, 로컬 `%TEMP%/sigong-major-final/`.
+- 자동 적재의 실제 Fuseki 재시작 검사는 **별도 :3032**에서 수행. 초기 적재·사료 수정 반영·인메모리 소실 복구·잘못된 claim 거부 및 기존 그래프 보존 통과. 증거: `/tmp/sigong-sync-live-_aqhci5o/`.
+- 운영 감시: `python3 -u scripts/sync_fuseki.py --watch`, 시작 시 pid **184430**, 로그 `/tmp/sigong-sync.log`, pid 파일 `/tmp/sigong-sync.pid`. 기본 확인 간격 5초. **재부팅 자동 기동은 아직 없음.** 빌더 코드를 바꾸면 감시 명령을 다시 시작한다.
+- `queries/q1-source-toggle.rq` 85행, `q2-conflicts.rq` 2행(하나의 판독 충돌), `q4-evidence.rq` 1행을 c2에서 실행 확인.
+- 판톨로지 이식 코어·vendor 변경 없음. FinBridge :8891 리스너를 배포 전후 대조하여 동일함을 확인. 시험 뷰어 :8872와 시험 Fuseki :3032는 종료함.
+- #5 #6 및 #19~#28 닫음. GitHub Actions 실행 기록은 없음.
+
+사료 3라운드 재개 전에 확인한 것:
+
+- 실록 ZIP `~/work/corpus-joseon-sillok/data/bulk/15053647.zip`: **143,263,188 bytes**, XML **673개**, 압축 해제 약 **814 MiB**.
+- 실록은 첫 총서 파일의 루트가 `level1`, 뒤의 연차 파일은 `level2`다. 기존 추출기의 `root.iter("level1")`만으로는 뒤 파일의 기사가 빠진다. **먼저 파일 루트부터 순회하도록 고치고 fixture 및 XML 기사 수로 대조해야 한다.**
+- 예: `2nd_waa_000.xml`은 太祖實錄 총서, `2nd_waa_101.xml`은 태조 원년. 실록마다 Source를 나누고, 완성 연도는 별도 근거로 확인한다.
+- 금석문 ZIP은 XML 10개·약 13 MiB, 집성은 XML 92개·약 20 MiB. 기존 `corpus-*`의 미커밋 추출기와 부분 산출물은 보존했다. 아직 main에 합치지 않았다.
+- 큰 산출물은 README의 45 MB 규칙을 따른다. 실제 추출량과 뷰어 메모리 사용량을 측정한 뒤 운영 데이터에 반영한다.
+- 이 세션에는 Fable 5.1 호출 기능이 없어서 하위 에이전트·워크플로를 사용하지 않았다.
+
+---
+
 ## 0. 한 줄 요약
 
 한반도 중심 역사 온톨로지. 사료 원문 → chunk(JSONL) → 주장(Claim, 마크다운) → TTL → Fuseki. 화면은 대동여지도 진입 →
@@ -159,9 +203,9 @@
 
 ## 7. 남은 일 (우선순위)
 
-1. §6 major 1~8 수정 → 하네스 12/12 → 커밋(#7 #4).
-2. Conflict 규칙: `validate.py` 에 `MULTI_VALUED_PREDICATES = {mentionedIn, describedAs, instructs, hasTitle, hasOutcome, subjectToRule}` 를 두고 (f) 충돌 집계에서 제외, `build_ttl.py` 도 같은 목록 import, `docs/02-schema.md` §11 에 명시. 뷰어 `index.html` 의 MULTI 와 같은 목록. `tests/fixtures/valid-conflict.md` 는 readsCharacterAs 라 영향 없음. **재검증 정정:** 기존 12건 중 11건이 다치 술어다. `chunk_gwanggaeto_1-09`의 `readsCharacterAs`(海/每) 1건은 유지한다(#27).
-3. F5→F6 파이프라인 자동화: 데이터가 바뀌면 `build_ttl.py` → `fuseki.sh load`(또는 `fuseki_load.py --replace`). Fuseki 인메모리라 재시작하면 재적재 필요 — TDB2(`--tdb2 --loc .fuseki/db`) 로 바꿀지는 사용자 결정(§13 미결).
+1. **완료** — §6 major 1~8 수정 → 하네스 12/12. 기능별 #19~#26, 커밋과 검증은 최신 진행 절.
+2. **완료(#27)** — `validate.py`의 `MULTI_VALUED_PREDICATES`를 충돌 집계에서 제외하고, `build_ttl.py`도 같은 목록을 import한다. 스키마 §11과 뷰어 `MULTI` 목록도 일치한다. **재검증 정정:** 기존 12건 중 11건이 다치 술어다. `chunk_gwanggaeto_1-09`의 `readsCharacterAs`(海/每) 1건은 유지한다.
+3. **완료(#28)** — `scripts/sync_fuseki.py --watch`: 데이터 변경 또는 Fuseki 인메모리 데이터 소실 시 빌드·교체 적재·개수 대조. 인메모리를 유지했고, TDB2(`--tdb2 --loc .fuseki/db`) 전환은 여전히 사용자 결정(§13 미결).
 4. 사료 3라운드 재개(#15 #16 #17) — c2 `~/work/corpus-*` 상태에서. 실록은 실록마다 Source 로 나누는 규칙표(왕대·완성 연도·출처) 필요. 45 MB 넘는 jsonl 은 커밋하지 않고 c2 작업본에만(README 규칙).
 5. 지명 2라운드(#18) 재실행. 결과는 `data/places-candidates-<src>.json`(서버가 병합).
 6. 타임라인 행이 30개를 넘으면(실록) 사료 종류별 묶기·접기 — `timeline.js` 에 group 개념.
@@ -171,7 +215,7 @@
 10. 라이선스 기관 문의 여부는 사용자 결정(국편 웹은 저작권법 24조의2 학술·개인 한정, 벌크는 데이터셋별 확인 완료).
 11. 승정원일기(15064218)·비변사등록(15053636)·고순종실록(15053646)은 대용량 저장 전략(git 밖, 재현 스크립트) 정한 뒤.
 
-열린 이슈: #3 #4 #5 #6 #7 #8 #12 #15 #16 #17 #18. 닫힌 이슈: #1 #2 #9 #10 #11 #13 #14. #5 #6 은 81a8c8b·fb52ed0 + 적재 검증 PASS 로 닫아도 된다(코멘트 남기고).
+열린 개발 이슈: #3 #4 #7 #8 #12 #15 #16 #17 #18. #5 #6은 현재 빌드·적재·질의 재검증 코멘트를 남기고 닫았다. 주요 수정 #19~#28도 닫았다. 최신 진행 문서 갱신은 #29.
 
 ## 8. 규칙·함정
 
@@ -196,6 +240,6 @@ curl -s http://127.0.0.1:8870/api/sources | head -c 300           # 뷰어 살�
 .venv-build/bin/python scripts/verify_viewer.py --url "http://127.0.0.1:8870/?q=low" --out /tmp/verify   # 12/12
 python3 services/validate.py                                        # OK
 python3 services/build_ttl.py && scripts/fuseki.sh status           # TTL 빌드, Fuseki 상태
-scripts/fuseki.sh query 'SELECT (COUNT(*) AS ?n) WHERE {?s ?p ?o}'  # 1711
+scripts/fuseki.sh query 'SELECT (COUNT(*) AS ?n) WHERE {?s ?p ?o}'  # 현재 데이터: 1675
 ```
 PNG 는 `scp lia-c2:/tmp/verify/04-3d.png .` 로 받아 눈으로 본다.

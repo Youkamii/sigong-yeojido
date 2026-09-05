@@ -57,7 +57,7 @@ API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,�
 
 ## 검증
 
-- 뷰어: `scripts/verify_viewer.py --url "http://127.0.0.1:8870/?q=low" --out /tmp/verify` — 진입·지도·근거·찾기·타임라인·연력·3D·콘솔 11항목, PNG 를 사람이 본다. WebGL 은 헤드리스 스크린샷이 검게 나오므로 composer.render → toDataURL 로 뽑는다.
+- 뷰어: `scripts/verify_viewer.py --url "http://127.0.0.1:8870/?q=low" --out /tmp/verify` — 진입·지도·근거·찾기·사료 카드·타임라인·연력·3D·콘솔 12항목, PNG 를 사람이 본다. WebGL 은 헤드리스 스크린샷이 검게 나오므로 composer.render → toDataURL 로 뽑는다.
 - 3D 진단: `scripts/diag_3d.py` (컴포저/직접 렌더 비교, 픽셀 샘플).
 - 데이터: `services/validate.py --self-test`, 추출기 두 번 실행 해시 비교.
 
