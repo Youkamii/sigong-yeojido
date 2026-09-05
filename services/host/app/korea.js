@@ -196,6 +196,11 @@ function buildSea(rim) {
       color: PALETTE.BASE_WATER, transmission: 0,
       roughness: 0.42, envMapIntensity: 0.7,          // 거울면(0.06)은 위에서 볼 때 검은 환경만 비춘다
       emissive: '#0a161c', emissiveIntensity: 0.35,   // 어떤 각도에서도 허공처럼 죽지 않게
+      // MAT_WATER 프리셋엔 bumpScale 이 없다 → makeMaterial 이 undefined 를 넣는다.
+      // three 는 uniform 캐시가 비어 있을 땐 업로드를 건너뛰지만, 같은 프로그램을 쓰는 다른 재질
+      // (MAT_STONE 등)이 먼저 숫자를 올린 뒤엔 undefined → NaN 으로 올라가 바다 전체가 NaN(검정)이 된다.
+      // 바다 위에 놓인 라벨이 흰 막대로 깨진 것도 이 NaN 을 물려받은 것. 값을 명시해서 막는다.
+      bumpScale: 0.02,
     })
   );
   mesh.rotation.x = -Math.PI / 2;
