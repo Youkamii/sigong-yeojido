@@ -326,11 +326,12 @@ def merged_places() -> dict:
         renamed = {}
         used_ids = set(by_id) | {pl["id"] for pl in extra}
         labels = {key: pl.get("label") for key, pl in by_id.items()}
+        known_names = {key: set(place_names(pl)) for key, pl in by_id.items()}
         for pl in extra:
             if pl.get("variantOf"):
                 continue
             old_id = pl["id"]
-            if old_id in labels and labels[old_id] != pl.get("label"):
+            if old_id in known_names and not known_names[old_id].intersection(place_names(pl)):
                 new_id = f"{old_id}-{Path(pl['_from']).stem}"
                 suffix = 2
                 while new_id in used_ids:
@@ -342,6 +343,7 @@ def merged_places() -> dict:
                 pl["id"] = new_id
                 used_ids.add(new_id)
             labels[pl["id"]] = pl.get("label")
+            known_names.setdefault(pl["id"], set()).update(place_names(pl))
         for pl in extra:
             if pl.get("variantOf"):
                 pl["variantOf"] = renamed.get((pl["_from"], pl["variantOf"]), pl["variantOf"])
@@ -355,7 +357,9 @@ def merged_places() -> dict:
                 target = by_id[pl["id"]]
                 for candidate in pl.get("candidates", []):
                     if candidate not in target.setdefault("candidates", []):
-                        target["candidates"].append(candidate)
+                        recorded = dict(candidate, origin="ai", **{"from": pl["_from"]})
+                        if recorded not in target["candidates"]:
+                            target["candidates"].append(recorded)
                 for name in pl.get("aliases", []):
                     if name != target.get("label") and name not in target.setdefault("aliases", []):
                         target["aliases"].append(name)

@@ -126,12 +126,12 @@ class PlaceMergeTests(unittest.TestCase):
         second = dict(first, sourceUrl="https://example.org/b")
         with tempfile.TemporaryDirectory() as tmp:
             data = Path(tmp)
-            for filename, candidates in [("places.json", [first]), ("places-candidates-a.json", [first, second])]:
-                (data / filename).write_text(json.dumps({"places": [{"id": "p", "label": "漢城", "candidates": candidates}]}), encoding="utf-8")
+            for filename, label, candidates in [("places.json", "平穰", [first]), ("places-candidates-a.json", "平壤", [first, second])]:
+                (data / filename).write_text(json.dumps({"places": [{"id": "p", "label": label, "aliases": ["平壤"], "candidates": candidates}]}), encoding="utf-8")
             with patch.object(server, "DATA", data):
                 places = server.merged_places()["places"]
         self.assertEqual(len(places), 1)
-        self.assertEqual(places[0]["candidates"], [first, second])
+        self.assertEqual(places[0]["candidates"], [first, dict(second, origin="ai", **{"from": "places-candidates-a.json"})])
 
 
 if __name__ == "__main__":
