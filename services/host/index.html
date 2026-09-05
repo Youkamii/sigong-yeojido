@@ -759,7 +759,8 @@ async function select(id){
       conflictPreds.size ? ' 붉은 줄은 같은 술어에 값이 갈리는 주장 — 어느 쪽이 맞는지는 판정하지 않는다.' : ''}</div>
     ${claimsHtml}
     <div class="sect" style="margin-top:20px">원문 근거 ${res.total}</div>
-    <div class="auto">이름 문자열 일치로 찾음(자동) · 사람이 확인한 연결 아님${by ? ' · ' + by : ''}</div>
+    <div class="auto">두 글자 이상 이름 또는 국명 색인의 정확 일치로 찾음(자동) · 사람이 확인한 연결 아님${by ? ' · ' + by : ''}</div>
+    ${names.some(n => n.length === 1) ? '<div class="auto">한 글자 이름은 원문 자동 검색 안 함 · 국명 색인이 있는 사료에서 정확히 같은 국명만 찾는다.</div>' : ''}
     ${ev}${more}`;
 }
 

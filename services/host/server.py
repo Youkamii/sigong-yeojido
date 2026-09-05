@@ -58,10 +58,11 @@ def read_jsonl(p: Path) -> list[dict]:
     if not p.exists():
         return []
     out = []
-    for line in io.open(p, encoding="utf-8"):
-        line = line.strip()
-        if line:
-            out.append(json.loads(line))
+    with io.open(p, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if line:
+                out.append(json.loads(line))
     return out
 
 
@@ -125,6 +126,7 @@ def _signature() -> tuple:
     parts = []
     src = DATA / "sources"
     files = sorted(src.glob("*.md")) + sorted(src.glob("*/chunks.jsonl")) if src.exists() else []
+    files += sorted(src.glob("*/index-terms.jsonl"))
     files.append(DATA / "places.json")
     files += sorted(DATA.glob("places-candidates*.json"))
     cdir = DATA / "claims"
@@ -145,6 +147,7 @@ def index() -> dict:
     with _IDX_LOCK:
         if _IDX["sig"] != sig:
             _IDX["chunks"] = collect_chunks()
+            _IDX["countryTerms"] = collect_country_terms()
             _IDX["sources"] = collect_sources()
             _IDX["places"] = None
             _IDX["claims"] = collect_claims()
@@ -159,6 +162,21 @@ def place_names(p: dict) -> list[str]:
     return [n for n in names if isinstance(n, str) and n]
 
 
+def collect_country_terms() -> dict[str, set[str]]:
+    terms: dict[str, set[str]] = {}
+    for path in sorted((DATA / "sources").glob("*/index-terms.jsonl")):
+        for row in read_jsonl(path):
+            if row.get("type") == "국명" and row.get("chunkId") and row.get("text"):
+                terms.setdefault(row["chunkId"], set()).add(row["text"])
+    return terms
+
+
+def matches_names(chunk: dict, names: list[str], country_terms: dict[str, set[str]]) -> bool:
+    text = chunk.get("text") or ""
+    exact = country_terms.get(chunk.get("id"), set())
+    return any((len(name) >= 2 and name in text) or (len(name) == 1 and name in exact) for name in names)
+
+
 def places_with_mentions() -> dict:
     idx = index()
     with _IDX_LOCK:
@@ -170,8 +188,7 @@ def places_with_mentions() -> dict:
         m: dict[str, int] = {}
         if names:
             for c in idx["chunks"]:
-                t = c.get("text") or ""
-                if any(n in t for n in names):
+                if matches_names(c, names, idx["countryTerms"]):
                     sid = c.get("sourceId") or "?"
                     m[sid] = m.get(sid, 0) + 1
         pl["mentions"] = m
@@ -355,8 +372,7 @@ def mentions(names: list[str], sources: set[str] | None, limit: int) -> dict:
         sid = c.get("sourceId")
         if sources is not None and sid not in sources:
             continue
-        t = c.get("text") or ""
-        if any(n in t for n in names):
+        if matches_names(c, names, idx["countryTerms"]):
             total += 1
             by[sid] = by.get(sid, 0) + 1
             if len(out) < limit:
