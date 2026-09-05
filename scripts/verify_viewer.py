@@ -16,12 +16,13 @@
   03-map-pick.png  지명 클릭 후 (근거 패널 열림)
   03b-entity.png   찾기로 인물을 골라 주장(Claim)이 열린 화면
   03c-year.png     918년 '이 해의 기록'
+  03d-source.png   사료 카드(삼국사기)
   04-3d.png        3D 프레임 (composer 직접 렌더 → toDataURL)
   05-3d-pick.png   3D 에서 지명 클릭 후
   report.json      씬 통계 · 콘솔 에러 · 검사 결과
 
 검사 (report.json 의 checks):
-  gate_visible, map_land_drawn, map_pick_opens_evidence, entity_search_shows_claims, timeline_mounted,
+  gate_visible, map_land_drawn, map_pick_opens_evidence, entity_search_shows_claims, source_card_opens, timeline_mounted,
   timeline_click_changes_year, year_records_open, three_loaded, three_draws, three_pick_opens_evidence, console_errors_zero
 실패가 하나라도 있으면 exit 1.
 """
@@ -156,6 +157,18 @@ async def run(url: str, out: Path) -> int:
         report["scene"]["entitySearch"] = ent
         await pg.screenshot(path=str(out / "03b-entity.png"))
         check("entity_search_shows_claims", ent.get("found") and (ent.get("claims") or 0) > 0, json.dumps(ent, ensure_ascii=False))
+
+        # 3a2. 사료 카드 — 레일의 '카드' 버튼을 누르면 라이선스·연도 근거가 열린다
+        card = await pg.evaluate(
+            """async () => { const b=document.querySelector('.card-btn[data-id="src-samguksagi"]'); if(!b) return {found:false};
+               b.click(); await new Promise(r=>setTimeout(r,1200));
+               const h3=document.querySelector('#evi h3'); const facts=document.querySelectorAll('#evi table.facts tr').length;
+               const txt=document.getElementById('evi').innerText;
+               return {found:true, label:h3&&h3.textContent, facts, hasLicense:/이용허락/.test(txt), hasYears:/연도를 이렇게 잡은 이유|담고 있는 것/.test(txt)}; }"""
+        )
+        report["scene"]["sourceCard"] = card
+        check("source_card_opens", card.get("found") and card.get("label") == "삼국사기" and card.get("hasLicense") and card.get("hasYears"), json.dumps(card, ensure_ascii=False))
+        await pg.screenshot(path=str(out / "03d-source.png"))
 
         # 3b. 타임라인 — 사료 수만큼 트랙, 커서를 누르면 연도가 바뀐다
         tl = await pg.evaluate(

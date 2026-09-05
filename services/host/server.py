@@ -18,6 +18,7 @@ API는 전부 읽기 전용이다 — 이 서버는 아무것도 쓰지 않는�
   GET /api/year?y=918[&sources=a,b][&limit=150]
                     국편이 연대(dateOccured)를 붙인 기사 중 그 해의 것. 연·월·일 순. {chunks, total, bySource}
   GET /api/density   사료별 {연도: 기사 수} — 타임라인 막대 안의 밀도 띠
+  GET /api/source?id=src-samguksagi   사료 카드 — 머리말(스칼라) + 본문 마크다운 그대로
   GET /api/entities  엔티티 껍데기 목록 (data/entities/**/*.md 머리말: type·id·label·labelHanja) — 찾기 상자용
   GET /api/claims?subject=<entity id>[&about=1]
                     그 엔티티가 subject 인 Claim(about=1 이면 object 에 나오는 것도) — data/claims/<src>/*.md 의 claims-json.
@@ -221,6 +222,28 @@ def year_records(y: int, sources: set[str] | None, limit: int) -> dict:
     return {"year": y, "chunks": rows[:limit], "total": len(rows), "bySource": by}
 
 
+def source_card(sid: str) -> dict:
+    """data/sources/<x>.md 중 id 가 맞는 카드의 머리말과 본문(마크다운 원문). 화면이 라이선스·연도 근거를 그대로 보여 준다."""
+    src_dir = DATA / "sources"
+    if not sid or not src_dir.exists():
+        return {"id": sid, "found": False}
+    for md in sorted(src_dir.glob("*.md")):
+        fm = parse_frontmatter(md)
+        if not fm:
+            continue
+        if (fm.get("id") or f"src-{md.stem}") != sid:
+            continue
+        text = io.open(md, encoding="utf-8").read()
+        m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
+        body = text[m.end():] if m else text
+        fm = dict(fm)
+        fm["id"] = sid
+        fm["chunkCount"] = len(read_jsonl(src_dir / md.stem / "chunks.jsonl"))
+        return {"id": sid, "found": True, "file": md.relative_to(ROOT).as_posix(), "frontmatter": fm,
+                "frontmatterRaw": m.group(1) if m else "", "body": body}
+    return {"id": sid, "found": False}
+
+
 def collect_entities() -> list[dict]:
     """엔티티 껍데기(data/entities/<class>/<id>.md) 의 머리말만 — 속성은 전부 Claim 이므로 여기엔 이름뿐이다."""
     out: list[dict] = []
@@ -391,6 +414,9 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/density":
             dens = index()["density"]
             self._json({"sources": {sid: {str(y): n for y, n in sorted(m.items())} for sid, m in dens.items()}})
+            return
+        if path == "/api/source":
+            self._json(source_card((q.get("id", [""])[0] or "").strip()))
             return
         if path == "/api/entities":
             self._json({"entities": index()["entities"]})

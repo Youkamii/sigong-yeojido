@@ -81,6 +81,27 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .qlist button:hover{background:var(--ink-3)}
 .qlist small{font-family:var(--mono);font-size:10px;color:var(--paper-3);margin-left:6px}
 .badge.ent{background:var(--ink-3);color:var(--paper-2);border:1px solid var(--line-2)}
+.srcrow{display:flex;align-items:flex-start;gap:4px}
+.srcrow .src{flex:1;min-width:0}
+.card-btn{flex:0 0 auto;margin-top:8px;background:none;border:1px solid var(--line-2);color:var(--paper-3);font:inherit;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;padding:2px 6px;border-radius:2px;cursor:pointer}
+.card-btn:hover{color:var(--celadon);border-color:var(--celadon-dim)}
+.evi table.facts{border-collapse:collapse;margin-top:14px;font-size:12.5px;width:100%}
+.evi table.facts th{text-align:left;color:var(--paper-3);font-weight:400;font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+  padding:4px 10px 4px 0;white-space:nowrap;vertical-align:top;width:1%}
+.evi table.facts td{padding:4px 0;color:var(--paper-2);line-height:1.5}
+.evi table.facts a,.evi .card a{color:var(--celadon);text-decoration:none;border-bottom:1px dotted var(--celadon-dim)}
+.evi .card{margin-top:16px;font-size:13px;line-height:1.7;color:var(--paper-2)}
+.evi .card h3,.evi .card h4,.evi .card h5{font-family:var(--serif);color:var(--paper);margin:18px 0 6px}
+.evi .card h3{font-size:17px}.evi .card h4{font-size:14.5px}.evi .card h5{font-size:13px}
+.evi .card p{margin:8px 0}
+.evi .card ul{padding-left:18px;margin:6px 0}
+.evi .card li{margin:3px 0}
+.evi .card code{font-family:var(--mono);font-size:11px;color:var(--celadon)}
+.evi .card table{border-collapse:collapse;margin:8px 0;font-size:12px}
+.evi .card th,.evi .card td{border:1px solid var(--line-2);padding:3px 8px;text-align:left}
+.evi .card th{color:var(--paper-3);font-weight:400}
+.evi .card blockquote{border-left:2px solid var(--line-2);margin:8px 0;padding:2px 10px;color:var(--paper-3)}
 .evi{border-left:1px solid var(--line);background:var(--ink-2);overflow-y:auto;padding:16px 15px 28px}
 .sect{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--paper-3);margin:20px 0 9px}
@@ -399,10 +420,16 @@ function renderRail(){
   el.innerHTML = '';
   if(!state.sources.length){ el.innerHTML = '<p class="empty">사료 없음</p>'; return; }
   for(const s of state.sources){
+    const row = document.createElement('div');
+    row.className = 'srcrow';
     const b = document.createElement('button');
     b.className = 'src' + (state.on.has(s.id) ? ' on' : '');
     b.innerHTML = `<span class="dot"></span><span class="t">${s.label||s.id}
       <em>${s.composedYear!=null?s.composedYear+'년 편찬':''} · chunk ${s.chunkCount||0}</em></span>`;
+    const cb = document.createElement('button');
+    cb.className = 'card-btn'; cb.type = 'button'; cb.dataset.id = s.id; cb.title = '사료 카드 — 출처·라이선스·연도 근거';
+    cb.textContent = '카드';
+    cb.onclick = (e) => { e.stopPropagation(); showSource(s.id); };
     b.onclick = () => {
       state.on.has(s.id) ? state.on.delete(s.id) : state.on.add(s.id);
       renderRail(); draw(); if(state.mode==='3d') draw3d();
@@ -410,9 +437,70 @@ function renderRail(){
       if(state.sel) select(state.sel);
       scheduleYearCount();
     };
-    el.appendChild(b);
+    row.appendChild(b); row.appendChild(cb);
+    el.appendChild(row);
   }
 }
+
+// ── 사료 카드 — 머리말(연도·라이선스·편찬자)과 본문(연도를 이렇게 잡은 이유, 담고 있는 것, 조심할 것) ──
+function mdLite(md){
+  const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const inline = t => esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`([^`]+)`/g,'<code>$1</code>');
+  const lines = String(md).replace(/<!--[\s\S]*?-->/g,'').split('\n');
+  const out = []; let para = [], list = null, table = null;
+  const renderTable = rows => {
+    if(!rows.length) return '';
+    const [h, ...rest] = rows;
+    return `<table><thead><tr>${h.map(c=>`<th>${inline(c)}</th>`).join('')}</tr></thead><tbody>${
+      rest.map(r=>`<tr>${r.map(c=>`<td>${inline(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  };
+  const flush = () => {
+    if(para.length){ out.push('<p>'+inline(para.join(' '))+'</p>'); para = []; }
+    if(list){ out.push('<ul>'+list.map(x=>'<li>'+inline(x)+'</li>').join('')+'</ul>'); list = null; }
+    if(table){ out.push(renderTable(table)); table = null; }
+  };
+  for(const raw of lines){
+    const l = raw.trimEnd();
+    if(/^\|/.test(l)){ if(para.length||list) flush(); table = table||[]; if(!/^\|\s*:?-/.test(l)) table.push(l.split('|').slice(1,-1).map(c=>c.trim())); continue; }
+    if(table) flush();
+    const h = /^(#{1,3})\s+(.*)/.exec(l);
+    if(h){ flush(); const lv = Math.min(5, h[1].length + 2); out.push(`<h${lv}>${inline(h[2])}</h${lv}>`); continue; }
+    if(/^[-*]\s+/.test(l)){ if(para.length) flush(); list = list||[]; list.push(l.replace(/^[-*]\s+/,'')); continue; }
+    if(list && /^\s{2,}\S/.test(raw)){ list[list.length-1] += ' ' + l.trim(); continue; }
+    if(/^>\s?/.test(l)){ flush(); out.push('<blockquote>'+inline(l.replace(/^>\s?/,''))+'</blockquote>'); continue; }
+    if(!l.trim()){ flush(); continue; }
+    para.push(l.trim());
+  }
+  flush();
+  return out.join('');
+}
+async function showSource(id){
+  const el = document.getElementById('evi');
+  state.sel = null; draw(); if(state.mode==='3d') draw3d();
+  el.innerHTML = `<p class="empty">카드를 여는 중…</p>`;
+  let r = null;
+  try{ r = await fetch(`/api/source?id=${encodeURIComponent(id)}`).then(x=>x.json()); }catch(e){}
+  if(!r || !r.found){ el.innerHTML = `<p class="empty">카드가 없다: ${escH(id)}</p>`; return; }
+  const f = r.frontmatter || {};
+  const yr = v => v == null ? '?' : (v < 0 ? `기원전 ${-v}` : v);
+  const facts = [
+    ['다루는 기간', (f.coversFrom != null || f.coversTo != null) ? `${yr(f.coversFrom)} ~ ${yr(f.coversTo)}` : '미상'],
+    ['쓰인 때', f.composedYear != null ? yr(f.composedYear) : '미상'],
+    ['엮은이', f.compiler || '미상'],
+    ['원문 조각', (f.chunkCount || 0).toLocaleString('ko-KR')],
+    ['이용허락', f.licenseDetail || f.license || '미확인'],
+    ['확인', f.licenseVerifiedAt ? `${escH(f.licenseVerifiedAt)}${f.licenseVerifiedVia ? ` · <a href="${escH(f.licenseVerifiedVia)}" target="_blank" rel="noopener">페이지</a>` : ''}` : '미확인'],
+    ['상태', `${escH(f.status || '')}${f.defaultLens ? ' · 기본 렌즈' : ''}`],
+  ];
+  el.innerHTML = `
+    <h3>${escH(f.label || id)}</h3>
+    <div class="han">${escH(f.labelHanja || '')}${f.sourceKind ? ` · ${escH(f.sourceKind)}` : ''}</div>
+    <span class="badge ent">사료 카드</span>
+    <table class="facts">${facts.map(([k,v]) => `<tr><th>${k}</th><td>${typeof v === 'string' && /<a /.test(v) ? v : escH(v)}</td></tr>`).join('')}</table>
+    <div class="auto">${escH(r.file)}</div>
+    <div class="card">${mdLite(r.body || '')}</div>`;
+}
+
 
 function renderStats(){
   const n = state.places.length;
