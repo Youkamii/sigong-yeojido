@@ -1,3 +1,4 @@
+import { activeAt, candActive } from './place-state.js';
 // app/korea.js — 실제 한반도를 판톨로지 아트 바이블의 언어로 세운다.
 //
 // 판톨로지의 terrain.js 는 절차 생성 판타지 대륙이다. 우리는 지형이 실측이므로
@@ -562,27 +563,17 @@ export class KoreaWorld {
   }
 
   _isLive(p) {
-    const year = this._year == null ? 0 : this._year;
-    const from = p.validFrom == null ? -9999 : p.validFrom;
-    const to = p.validTo == null ? 9999 : p.validTo;
-    const inTime = year >= from && year <= to;
-    const srcs = Object.keys(p.mentions || {});
-    const srcOk = !this._on || !srcs.length || srcs.some((s) => this._on.has(s));
-    return inTime && srcOk;
+    return activeAt(p, this._year ?? 0, this._on ?? null);
   }
 
   _candActive(c) {
-    const year = this._year == null ? 0 : this._year;
-    const from = c.validFrom == null ? -9999 : c.validFrom;
-    const to = c.validTo == null ? 9999 : c.validTo;
-    return year >= from && year <= to;
+    return candActive(c, this._year ?? 0);
   }
 
   /** 라벨을 줄 지명 — 선택된 것 먼저, 그다음 사료에서 많이 언급된 순으로 LABEL_BUDGET 개 */
   _labelBudget() {
     const score = (p) => Object.values(p.mentions || {}).reduce((n, v) => n + (+v || 0), 0);
-    const live = this.places.filter((p) => this.byPlace.has(p.id) && this._isLive(p)
-      && (!p.candidates?.length || p.candidates.some((c) => this._candActive(c))));
+    const live = this.places.filter((p) => this.byPlace.has(p.id) && this._isLive(p));
     live.sort((a, b) => (b.id === this._selected) - (a.id === this._selected) || score(b) - score(a) || a.id.localeCompare(b.id));
     return new Set(live.slice(0, LABEL_BUDGET).map((p) => p.id));
   }
@@ -592,7 +583,7 @@ export class KoreaWorld {
     for (const p of this.places) {
       const objs = this.byPlace.get(p.id);
       if (!objs) continue;
-      const placeLive = this._isLive(p) && (!p.candidates?.length || p.candidates.some((c) => this._candActive(c)));
+      const placeLive = this._isLive(p);
       let labelShown = false;
       for (const o of objs) {
         let live = placeLive;

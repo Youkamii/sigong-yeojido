@@ -1,0 +1,27 @@
+import { strict as assert } from 'node:assert';
+import { test } from 'node:test';
+import { activeAt, candActive } from '../services/host/app/place-state.js';
+
+test('date boundaries and undated candidates are shared', () => {
+  assert.equal(candActive({validFrom:-18, validTo:475}, -18), true);
+  assert.equal(candActive({validFrom:-18, validTo:475}, 475), true);
+  assert.equal(candActive({validFrom:-18, validTo:475}, 476), false);
+  assert.equal(candActive({}, 414), true);
+});
+
+test('place and candidate periods must both contain the year', () => {
+  const p = {validFrom:1, validTo:668, candidates:[{validFrom:200, validTo:314}, {validFrom:475, validTo:668}]};
+  for(const [year, expected] of [[0,false],[200,true],[314,true],[400,false],[475,true],[669,false]])
+    assert.equal(activeAt(p, year), expected, String(year));
+  assert.equal(activeAt({candidates:[]}, 414), true);
+});
+
+test('source omission, all-off and matching selection have distinct behavior', () => {
+  const p = {mentions:{a:2}, candidates:[]};
+  assert.equal(activeAt(p, 414, null), true);
+  assert.equal(activeAt(p, 414, new Set()), false);
+  assert.equal(activeAt(p, 414, new Set(['b'])), false);
+  assert.equal(activeAt(p, 414, new Set(['a'])), true);
+  assert.equal(activeAt({candidates:[]}, 414, new Set()), false);
+  assert.equal(activeAt({candidates:[]}, 414, new Set(['a'])), true);
+});

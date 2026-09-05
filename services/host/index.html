@@ -261,6 +261,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 <script type="module">
 import { Timeline } from './app/timeline.js';
 import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
+import { activeAt as placeActiveAt, candActive as candidateActive } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
 
 const state = {
@@ -524,18 +525,10 @@ const COLOR = {established:'#7FBBA8', majority:'#8FBF74', disputed:'#D2836A', un
 
 // 후보(좌표) 하나가 그 연도에 유효한가 — 도읍이 옮겨 다니는 나라는 후보마다 기간이 있다
 function candActive(c){
-  const f = c.validFrom==null ? -9999 : c.validFrom;
-  const t = c.validTo==null ? 9999 : c.validTo;
-  return state.year >= f && state.year <= t;
+  return candidateActive(c, state.year);
 }
 function activeAt(p){
-  const f = p.validFrom==null ? -9999 : p.validFrom;
-  const t = p.validTo==null ? 9999 : p.validTo;
-  const inTime = state.year >= f && state.year <= t && (!p.candidates.length || p.candidates.some(candActive));
-  // 그 지명을 말하는 사료(mentions, 서버가 이름 일치로 센 것)가 전부 꺼져 있으면 흐려진다.
-  const srcs = Object.keys(p.mentions || {});
-  const srcOk = !srcs.length || srcs.some(s => state.on.has(s));
-  return inTime && srcOk;
+  return placeActiveAt(p, state.year, state.on);
 }
 
 // ── 2D 지도 ──
