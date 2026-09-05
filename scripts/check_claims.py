@@ -35,6 +35,7 @@ ENTITIES_DIR = ROOT / "data" / "entities"
 SOURCES_DIR = ROOT / "data" / "sources"
 PLACES_JSON = ROOT / "data" / "places.json"
 DIGEST_FILE = ".digests.json"
+DIGEST_ALGO = "sha256(id|subject|predicate|json.dumps(object,sort_keys=True,ensure_ascii=False)|citesChunk)"  # services/validate.py 와 같은 식·같은 파일
 
 # 엔티티 타입 → 디렉터리 (docs/02-schema.md §4 · §12)
 ENTITY_TYPES = {
@@ -471,8 +472,16 @@ def check_digests(files: list[dict], update: bool) -> tuple[list[str], list[str]
     for source_id, current in sorted(by_source.items()):
         path = CLAIMS_DIR / source_id / DIGEST_FILE
         recorded: dict[str, str] = {}
+        wrapper: dict = {"algorithm": DIGEST_ALGO, "version": 1}
         if path.exists():
-            recorded = json.loads(io.open(path, encoding="utf-8").read())
+            raw = json.loads(io.open(path, encoding="utf-8").read())
+            # services/validate.py(F4) 와 같은 파일을 쓴다 — {"algorithm", "claims": {id: sha}, "version"}.
+            # 옛 평면 형식({id: sha})도 읽는다.
+            if isinstance(raw, dict) and isinstance(raw.get("claims"), dict):
+                wrapper = {k: v for k, v in raw.items() if k != "claims"}
+                recorded = raw["claims"]
+            else:
+                recorded = raw if isinstance(raw, dict) else {}
         changed = sorted(k for k in recorded if k in current and recorded[k] != current[k])
         removed = sorted(k for k in recorded if k not in current)
         added = sorted(k for k in current if k not in recorded)
@@ -484,8 +493,9 @@ def check_digests(files: list[dict], update: bool) -> tuple[list[str], list[str]
             (notes if update else errors).append(("dropped: " if update else "") + msg)
         if update or (not changed and not removed):
             if added or changed or removed or not path.exists():
+                wrapper["claims"] = current
                 io.open(path, "w", encoding="utf-8", newline="\n").write(
-                    json.dumps(current, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+                    json.dumps(wrapper, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
                 )
             notes.append(
                 f"digests {source_id}: {len(current)} recorded (new {len(added)}) -> {rel(path)}"
