@@ -6,7 +6,7 @@
            python services/validate.py --self-test
 
 입력:
-  data/sources/*/chunks.jsonl     원문 조각 (id · sourceId · text)
+  data/sources/*/chunks.jsonl     원문 조각 (id · sourceId · text · locator · lang · permalink)
   data/claims/<src>/<chunk>.md    주장 파일 — 머리말 + ```claims-json 펜스 하나
   data/entities/<type>/<id>.md    엔티티 껍데기 — 파일 이름이 id 다
 
@@ -23,6 +23,7 @@
 digest:
   sha256(id | subject | predicate | json.dumps(object, sort_keys=True, ensure_ascii=False) | citesChunk)
   claims 파일에는 쓰지 않는다. 검증기가 계산해 data/claims/<src>/.digests.json 에 기록·대조한다.
+  - 읽을 때는 두 배치를 받는다: {"claims": {id: sha}} 와 평평한 {id: sha} (scripts/check_claims.py 형태)
   - 파일이 없으면: 만들고 전부 new 로 보고한다
   - 파일에 없는 id: new (정보). --write-digests 로만 기록된다 — 사람이 검토한 뒤 명시적으로
   - 파일과 다른 id: 실패. --write-digests 가 있으면 갱신(refreshed)
@@ -181,13 +182,18 @@ def render_digests(computed: dict[str, str]) -> str:
 
 
 def load_digests(path: Path) -> dict[str, str] | None:
+    """두 배치를 읽는다: {"claims": {id: sha}} (이 파일이 쓰는 형태) 와
+    평평한 {id: sha} (scripts/check_claims.py 가 F3 에서 쓴 형태). 같은 digest 알고리즘이다."""
     if not path.is_file():
         return None
     try:
         data = json.loads(read_text(path))
     except json.JSONDecodeError as exc:
         raise ParseError(f"not valid JSON: {exc.msg} (line {exc.lineno})") from None
-    claims = data.get("claims") if isinstance(data, dict) else None
+    if isinstance(data, dict) and "claims" not in data and all(isinstance(v, str) for v in data.values()):
+        claims: dict | None = data  # 평평한 배치
+    else:
+        claims = data.get("claims") if isinstance(data, dict) else None
     if not isinstance(claims, dict):
         raise ParseError("expected an object with a 'claims' map of id -> sha256")
     for cid, digest in claims.items():
@@ -304,6 +310,10 @@ def load_chunks_file(path: Path, chunks: dict[str, dict], failures: list[Failure
                 "text": text,
                 "norm": norm_ws(text),
                 "file": where,
+                # 빌더(build_ttl.py)가 Chunk 노드에 쓰는 메타데이터 — 원문이 아닌 것만 (translation 은 두지 않는다)
+                "locator": row.get("locator"),
+                "lang": row.get("lang"),
+                "permalink": row.get("permalink"),
             }
 
 
