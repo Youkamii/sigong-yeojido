@@ -1,0 +1,11 @@
+@prefix syj:  <https://sigong-yeojido.kr/ns#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Fuseki 적재 확인용 표본 — 트리플 3개.
+# docs/02-schema.md §9 의 Place 껍데기(타입 + 라벨) 하나와 Source 라벨 하나. 원문 text 는 넣지 않는다.
+
+syj:place-wiryeseong a syj:Place ;
+    rdfs:label "위례성"@ko .
+
+syj:src-samguksagi rdfs:label "삼국사기"@ko .
