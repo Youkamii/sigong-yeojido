@@ -33,7 +33,7 @@ async def run(url, out):
         errors = []
         page.on("pageerror", lambda e: errors.append(str(e)))
         for endpoint, response in responses.items():
-            async def reply(route, response=response):
+            async def reply(route, request, response=response):
                 await route.fulfill(content_type="application/json", body=json.dumps(response))
             await page.route("**/api/" + endpoint + "?*" if endpoint in ("year", "mentions", "claims", "source") else "**/api/" + endpoint, reply)
         await page.goto(url)
