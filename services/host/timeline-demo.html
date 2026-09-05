@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시공여지도 — 사료 타임라인 데모</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* index.html 의 :root 토큰을 그대로 복사했다 — timeline.js 는 이 토큰만 쓴다 */
+:root{
+  --ink:#12100C; --ink-2:#1B1813; --ink-3:#24201A;
+  --paper:#E8E3D4; --paper-2:#B9B2A0; --paper-3:#8B8474;
+  --line:#332E24; --line-2:#453E30;
+  --celadon:#7FBBA8; --celadon-dim:#3E6A5D;
+  --brick:#D2836A; --gardenia:#D8B463;
+  --serif:"Nanum Myeongjo",Batang,serif;
+  --sans:"Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{background:var(--ink);color:var(--paper);font-family:var(--sans);font-weight:300;
+  -webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--celadon);outline-offset:2px}
+
+.wrap{max-width:1120px;margin:0 auto;padding:28px 22px 44px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--paper-3);text-transform:uppercase}
+h1{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.02em;margin-top:8px}
+h1 small{font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.12em;color:var(--paper-3);margin-left:10px}
+
+/* 현재 연도 — 슬라이더 없이 타임라인 커서만으로 바뀐다 */
+.year{margin-top:22px;font-family:var(--mono);font-variant-numeric:tabular-nums;line-height:1}
+.year b{font-weight:500;font-size:clamp(56px,10vw,104px);letter-spacing:-.02em}
+.year span{display:block;font-size:12px;letter-spacing:.22em;color:var(--brick);margin-top:8px}
+
+.panel{margin-top:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--ink-2);padding:10px 0 6px}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;font-size:12px;color:var(--paper-2)}
+.legend div{display:flex;align-items:center;gap:7px}
+.legend i{display:inline-block;flex:0 0 auto}
+.legend .bar{width:22px;height:8px;border-radius:2px;background:var(--celadon)}
+.legend .bar.dim{background:var(--celadon-dim)}
+.legend .dot{width:8px;height:8px;border-radius:50%;background:var(--gardenia)}
+.legend .guide{width:22px;border-top:1px dashed var(--gardenia)}
+.legend .cur{width:2px;height:14px;background:var(--brick)}
+
+.status{margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--paper-3);letter-spacing:.06em;line-height:1.6}
+.note{margin-top:18px;font-family:var(--serif);font-size:14px;line-height:1.8;color:var(--paper-2);max-width:62ch}
+.note b{color:var(--paper);font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="eyebrow">Sigong Yeojido · Timeline demo</div>
+  <h1>사료별 시간 막대<small>services/host/app/timeline.js</small></h1>
+
+  <div class="year"><b id="yearV">414</b><span id="yearL">서기</span></div>
+
+  <div class="panel"><div id="tl"></div></div>
+
+  <div class="legend">
+    <div><i class="bar"></i>다루는 기간 · 기본 렌즈</div>
+    <div><i class="bar dim"></i>다루는 기간</div>
+    <div><i class="dot"></i>쓰여진 때</div>
+    <div><i class="guide"></i>기록과 편찬 사이</div>
+    <div><i class="cur"></i>현재 연도 — 끌거나 눈금자를 누른다</div>
+  </div>
+  <div class="status" id="status"></div>
+
+  <p class="note">삼국유사 단군 기록은 막대가 <b>기원전 2333년</b>까지 뻗는데 점은 <b>1281년</b>에 찍힌다.
+    3천 년 뒤에 쓴 기록이라는 게 눈으로 보인다. 왼쪽 체크박스로 사료를 끄면 그 줄이 흐려진다.
+    커서는 방향키로도 움직인다 (Shift 로 10년, PageUp/Down 으로 100년).</p>
+</div>
+
+<script type="module">
+import { Timeline } from './app/timeline.js';
+
+// 모의 사료 6개 — 연도는 docs/01-sources.md 의 통설, chunkCount 는 데모용 임의 값이다.
+const sources = [
+  { id: 'src-samguksagi',    label: '삼국사기',     coversFrom: -57,   coversTo: 935,  composedYear: 1145, chunkCount: 5170, defaultLens: false },
+  { id: 'src-samgukyusa',    label: '삼국유사',     coversFrom: -2333, coversTo: 935,  composedYear: 1281, chunkCount: 1200, defaultLens: false },
+  { id: 'src-gwanggaeto',    label: '광개토왕릉비', coversFrom: -37,   coversTo: 414,  composedYear: 414,  chunkCount: 4,    defaultLens: false },
+  { id: 'src-nihonshoki',    label: '일본서기',     coversFrom: -660,  coversTo: 697,  composedYear: 720,  chunkCount: 1800, defaultLens: false },
+  { id: 'src-goryeosa',      label: '고려사',       coversFrom: 918,   coversTo: 1392, composedYear: 1451, chunkCount: 3200, defaultLens: false },
+  { id: 'src-nikh-hanguksa', label: '국편 한국사',  coversFrom: -2333, coversTo: 1990, composedYear: 2003, chunkCount: 640,  defaultLens: true },
+];
+
+const state = { year: 414, on: new Set(sources.map(s => s.id)) };
+
+const yearV = document.getElementById('yearV');
+const yearL = document.getElementById('yearL');
+function showYear(y){
+  yearV.textContent = String(Math.abs(y));
+  yearL.textContent = y < 0 ? '기원전' : '서기';
+}
+function showStatus(){
+  const names = sources.filter(s => state.on.has(s.id)).map(s => s.label);
+  document.getElementById('status').textContent =
+    `켜진 사료 ${state.on.size}/${sources.length} · ${names.length ? names.join(' · ') : '없음'}`;
+}
+
+const tl = new Timeline(document.getElementById('tl'), {
+  sources,
+  year: state.year,
+  on: state.on,
+  onYear(y){ state.year = y; showYear(y); },
+  onToggle(id, on){
+    if (on) state.on.add(id); else state.on.delete(id);
+    tl.setOn(state.on);
+    showStatus();
+  },
+});
+showYear(state.year);
+showStatus();
+
+// 검증용 훅 — 콘솔에서 __tl.setYear(-2333) 처럼 부른다
+window.__tl = tl;
+window.__state = state;
+</script>
+</body>
+</html>
