@@ -19,8 +19,8 @@
   report.json      씬 통계 · 콘솔 에러 · 검사 결과
 
 검사 (report.json 의 checks):
-  gate_visible, map_land_drawn, map_pick_opens_evidence, three_loaded, three_draws,
-  three_pick_opens_evidence, console_errors_zero
+  gate_visible, map_land_drawn, map_pick_opens_evidence, timeline_mounted,
+  timeline_click_changes_year, three_loaded, three_draws, three_pick_opens_evidence, console_errors_zero
 실패가 하나라도 있으면 exit 1.
 """
 from __future__ import annotations
@@ -138,6 +138,24 @@ async def run(url: str, out: Path) -> int:
         report["scene"]["mapPick"] = pick
         await pg.screenshot(path=str(out / "03-map-pick.png"))
         check("map_pick_opens_evidence", pick.get("label") == "평양", json.dumps(pick, ensure_ascii=False))
+
+        # 3b. 타임라인 — 사료 수만큼 트랙, 커서를 누르면 연도가 바뀐다
+        tl = await pg.evaluate(
+            """async () => { const tl=window.__timeline; if(!tl) return {mounted:false};
+               const tracks=tl.svg.querySelectorAll('.tl-track').length;
+               const srcs=(await fetch('/api/sources').then(r=>r.json())).sources.length;
+               const before=document.getElementById('yearV').textContent;
+               const plot=tl.svg.querySelector('.tl-plot'); const r=plot.getBoundingClientRect();
+               const x=r.left+r.width*0.25, y=r.top+r.height/2;
+               tl.svg.dispatchEvent(new PointerEvent('pointerdown',{clientX:x,clientY:y,bubbles:true,pointerId:1,button:0,isPrimary:true}));
+               window.dispatchEvent(new PointerEvent('pointerup',{clientX:x,clientY:y,bubbles:true,pointerId:1}));
+               await new Promise(r=>setTimeout(r,120));
+               const after=document.getElementById('yearV').textContent;
+               return {mounted:true, tracks, srcs, before, after}; }"""
+        )
+        report["scene"]["timeline"] = tl
+        check("timeline_mounted", tl.get("mounted") and tl.get("tracks") == tl.get("srcs"), json.dumps(tl, ensure_ascii=False))
+        check("timeline_click_changes_year", tl.get("mounted") and tl.get("after") != tl.get("before"), f"{tl.get('before')} -> {tl.get('after')}")
 
         # 4. 3D
         await pg.click("#b3d")
