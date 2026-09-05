@@ -163,6 +163,8 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .badge.ai{background:transparent;color:var(--paper-3);border:1px solid var(--line-2);margin-left:6px}
 .evi .auto{font-family:var(--mono);font-size:10px;color:var(--paper-3);margin-top:5px;letter-spacing:.04em;line-height:1.6}
 .claim{border-left:2px solid var(--celadon-dim);padding:4px 0 4px 11px;margin-top:12px}
+.claim.conflict{border-left-color:var(--brick, #a83a3a)}
+.badge.cf{background:transparent;color:var(--brick, #d2836a);border:1px solid var(--brick, #a83a3a);margin-left:6px}
 .claim .cl-head{font-size:13px;line-height:1.6}
 .claim .pred{font-family:var(--mono);font-size:10.5px;color:var(--celadon);letter-spacing:.06em;margin-right:6px}
 .claim .role{font-family:var(--mono);font-size:10px;color:var(--paper-3)}
@@ -721,12 +723,21 @@ async function select(id){
     return esc1(JSON.stringify(o));
   };
   const claimsOn = (cl.claims || []).filter(c => !c.chunk || state.on.has(c.chunk.sourceId));
+  // 충돌 — 한 값만 가질 술어(때·나이·계보·자리…)에 서로 다른 값이 있으면 그 술어의 주장 전부에 표시한다.
+  // 언급·서술·지시처럼 여러 값이 자연스러운 술어는 세지 않는다. 어느 쪽이 맞는지는 말하지 않는다.
+  const MULTI = new Set(['syj:mentionedIn','syj:describedAs','syj:instructs','syj:hasTitle','syj:hasOutcome','syj:subjectToRule']);
+  const byPred = new Map();
+  for(const c of claimsOn){ if(c.role !== 'subject' || MULTI.has(c.predicate)) continue;
+    const k = c.predicate; const v = JSON.stringify(c.object); if(!byPred.has(k)) byPred.set(k, new Set()); byPred.get(k).add(v); }
+  const conflictPreds = new Set([...byPred].filter(([k, vs]) => vs.size > 1).map(([k]) => k));
   const claimsHtml = claimsOn.length ? claimsOn.map(c => {
       const pred = String(c.predicate || '').replace(/^syj:/,'');
+      const conflict = c.role === 'subject' && conflictPreds.has(c.predicate);
       const q = c.quote ? `<div class="quote small">${esc1(c.quote)}</div>` : '';
       const where = c.chunk ? `${srcLabel(c.chunk.sourceId)} · ${esc1(c.chunk.locator || c.chunk.id)}` : esc1(c.citesChunk || '');
-      return `<div class="claim">
-        <div class="cl-head"><span class="pred">${esc1(pred)}</span> ${c.role === 'object' ? `<span class="role">이 지명이 목적어</span> ` : ''}${objText(c.object)}
+      return `<div class="claim${conflict ? ' conflict' : ''}">
+        <div class="cl-head"><span class="pred">${esc1(pred)}</span> ${c.role === 'object' ? `<span class="role">이 지명이 목적어</span> ` : ''}${objText(c.object)}${
+          conflict ? ' <span class="badge cf">값이 갈림</span>' : ''}
           <span class="badge ${c.origin === 'ai' ? 'ai' : 'human'}">${c.origin === 'ai' ? 'AI 추출' : '사람'}</span>
           ${c.status && c.status !== 'draft' ? `<span class="badge st">${esc1(c.status)}</span>` : ''}</div>
         ${q}
@@ -743,8 +754,9 @@ async function select(id){
     ? `<p class="empty" style="margin-top:10px">${res.total}건 중 앞 ${res.chunks.length}건만 보인다.</p>` : '';
 
   el.innerHTML = head + `
-    <div class="sect" style="margin-top:20px">주장 ${claimsOn.length}</div>
-    <div class="auto">사료 한 대목에서 세운 주장(Claim). 인용문은 그 대목의 글자 그대로이고, 누가(사람/AI) 세웠는지 딱지가 붙는다.</div>
+    <div class="sect" style="margin-top:20px">주장 ${claimsOn.length}${conflictPreds.size ? ` · 갈리는 술어 ${conflictPreds.size}` : ''}</div>
+    <div class="auto">사료 한 대목에서 세운 주장(Claim). 인용문은 그 대목의 글자 그대로이고, 누가(사람/AI) 세웠는지 딱지가 붙는다.${
+      conflictPreds.size ? ' 붉은 줄은 같은 술어에 값이 갈리는 주장 — 어느 쪽이 맞는지는 판정하지 않는다.' : ''}</div>
     ${claimsHtml}
     <div class="sect" style="margin-top:20px">원문 근거 ${res.total}</div>
     <div class="auto">이름 문자열 일치로 찾음(자동) · 사람이 확인한 연결 아님${by ? ' · ' + by : ''}</div>
