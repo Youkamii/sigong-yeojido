@@ -15,6 +15,9 @@ API는 전부 읽기 전용이다 — 이 서버는 아무것도 쓰지 않는�
   GET /api/mentions?names=平穰,平壤&sources=src-a,src-b&limit=120
                     이름 문자열이 들어간 원문 조각 — 서버가 찾는다(원문 전체를 브라우저로 보내지 않는다).
                     응답 {chunks, total, bySource}. 자동 문자열 일치이므로 화면에 '자동'이라고 붙인다.
+  GET /api/year?y=918[&sources=a,b][&limit=150]
+                    국편이 연대(dateOccured)를 붙인 기사 중 그 해의 것. 연·월·일 순. {chunks, total, bySource}
+  GET /api/density   사료별 {연도: 기사 수} — 타임라인 막대 안의 밀도 띠
   GET /api/entities  엔티티 껍데기 목록 (data/entities/**/*.md 머리말: type·id·label·labelHanja) — 찾기 상자용
   GET /api/claims?subject=<entity id>[&about=1]
                     그 엔티티가 subject 인 Claim(about=1 이면 object 에 나오는 것도) — data/claims/<src>/*.md 의 claims-json.
@@ -113,7 +116,7 @@ def collect_chunks() -> list[dict]:
 
 
 # ── 색인 (읽기 전용 캐시) ──
-_IDX: dict = {"sig": None, "chunks": [], "sources": [], "places": None, "claims": [], "entities": []}
+_IDX: dict = {"sig": None, "chunks": [], "sources": [], "places": None, "claims": [], "entities": [], "byYear": {}, "density": {}}
 _IDX_LOCK = threading.Lock()
 
 
@@ -145,6 +148,7 @@ def index() -> dict:
             _IDX["places"] = None
             _IDX["claims"] = collect_claims()
             _IDX["entities"] = collect_entities()
+            _IDX["byYear"], _IDX["density"] = build_year_index(_IDX["chunks"])
             _IDX["sig"] = sig
         return _IDX
 
@@ -173,6 +177,48 @@ def places_with_mentions() -> dict:
     with _IDX_LOCK:
         idx["places"] = data
     return data
+
+
+_YEAR_RE = re.compile(r"^(-?\d{4})")
+
+
+def year_of(raw) -> int | None:
+    """국편 dateOccured raw('0919-09-99L0', '-0057-04-15L0', '03**-99-99L0', '9999-…' = 미상) → 서기 연도. 미상은 None."""
+    if not isinstance(raw, str):
+        return None
+    m = _YEAR_RE.match(raw)
+    if not m:
+        return None
+    y = int(m.group(1))
+    return None if y >= 9999 else y
+
+
+def build_year_index(chunks: list[dict]) -> tuple[dict[int, list[int]], dict[str, dict[int, int]]]:
+    by_year: dict[int, list[int]] = {}
+    density: dict[str, dict[int, int]] = {}
+    for i, c in enumerate(chunks):
+        d = c.get("date")
+        raw = d.get("raw") if isinstance(d, dict) else d
+        y = year_of(raw)
+        if y is None:
+            continue
+        by_year.setdefault(y, []).append(i)
+        sid = c.get("sourceId") or "?"
+        density.setdefault(sid, {})
+        density[sid][y] = density[sid].get(y, 0) + 1
+    return by_year, density
+
+
+def year_records(y: int, sources: set[str] | None, limit: int) -> dict:
+    idx = index()
+    rows = [idx["chunks"][i] for i in idx["byYear"].get(y, [])]
+    if sources is not None:
+        rows = [c for c in rows if c.get("sourceId") in sources]
+    rows.sort(key=lambda c: (str((c.get("date") or {}).get("raw") if isinstance(c.get("date"), dict) else c.get("date")), c.get("id") or ""))
+    by: dict[str, int] = {}
+    for c in rows:
+        by[c.get("sourceId") or "?"] = by.get(c.get("sourceId") or "?", 0) + 1
+    return {"year": y, "chunks": rows[:limit], "total": len(rows), "bySource": by}
 
 
 def collect_entities() -> list[dict]:
@@ -327,6 +373,24 @@ class Handler(BaseHTTPRequestHandler):
 
         if path == "/api/places":
             self._json(places_with_mentions())
+            return
+        if path == "/api/year":
+            try:
+                y = int(q.get("y", [""])[0])
+            except ValueError:
+                self._json({"error": "y must be an integer year (negative = BC)"}, 400)
+                return
+            srcs = q.get("sources", [None])[0]
+            sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
+            try:
+                limit = max(0, min(500, int(q.get("limit", ["150"])[0])))
+            except ValueError:
+                limit = 150
+            self._json(year_records(y, sources, limit))
+            return
+        if path == "/api/density":
+            dens = index()["density"]
+            self._json({"sources": {sid: {str(y): n for y, n in sorted(m.items())} for sid, m in dens.items()}})
             return
         if path == "/api/entities":
             self._json({"entities": index()["entities"]})

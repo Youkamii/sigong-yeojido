@@ -53,6 +53,7 @@ const CSS = `
 .tl-grid{stroke:var(--line);stroke-width:1}
 .tl-zero{stroke:var(--line-2);stroke-width:1;stroke-dasharray:2 3}
 .tl-row-bg{fill:transparent}
+.tl-dens{fill:var(--paper-2);pointer-events:auto}
 .tl-track:hover .tl-row-bg{fill:var(--ink-3)}
 .tl-label{cursor:pointer;outline:none}
 .tl-label-hit{fill:transparent}
@@ -410,6 +411,25 @@ export class Timeline {
       const bar = el('rect', { class: 'tl-bar', x: x0, y: cy - 5, width: Math.max(2, x1 - x0), height: 10, rx: 2 });
       bar.appendChild(el('title', null, `${label} · 다루는 기간 ${fmtYear(a)} ~ ${fmtYear(b)}`));
       body.appendChild(bar);
+      // 밀도 띠 — 연대가 붙은 기사가 어느 해에 몰려 있나 (source.density = {연도: 기사 수}). 막대 위에 밝기로 얹는다
+      if (s.density && typeof s.density === 'object') {
+        const span = this._geom.d1 - this._geom.d0;
+        const bucket = span > 1500 ? 50 : (span > 600 ? 20 : 10);
+        const agg = new Map();
+        for (const [yy, c] of Object.entries(s.density)) {
+          const y = +yy; if (!isFinite(y)) continue;
+          const k = Math.floor(y / bucket) * bucket;
+          agg.set(k, (agg.get(k) || 0) + (+c || 0));
+        }
+        let max = 0; for (const v of agg.values()) if (v > max) max = v;
+        if (max > 0) for (const [k, v] of agg) {
+          const bx0 = Math.max(x0, xs(k)), bx1 = Math.min(x1, xs(k + bucket));
+          if (bx1 - bx0 < 0.5) continue;
+          const d = el('rect', { class: 'tl-dens', x: bx0, y: cy - 5, width: bx1 - bx0, height: 10, opacity: 0.12 + 0.78 * Math.sqrt(v / max) });
+          d.appendChild(el('title', null, `${label} · ${fmtYear(k)}~${fmtYear(k + bucket - 1)} 기사 ${v.toLocaleString('ko-KR')}건`));
+          body.appendChild(d);
+        }
+      }
     }
     if (hasDot) {
       const xd = xs(s.composedYear);

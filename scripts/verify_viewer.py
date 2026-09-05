@@ -15,13 +15,14 @@
   02-map.png       2D 지도
   03-map-pick.png  지명 클릭 후 (근거 패널 열림)
   03b-entity.png   찾기로 인물을 골라 주장(Claim)이 열린 화면
+  03c-year.png     918년 '이 해의 기록'
   04-3d.png        3D 프레임 (composer 직접 렌더 → toDataURL)
   05-3d-pick.png   3D 에서 지명 클릭 후
   report.json      씬 통계 · 콘솔 에러 · 검사 결과
 
 검사 (report.json 의 checks):
   gate_visible, map_land_drawn, map_pick_opens_evidence, entity_search_shows_claims, timeline_mounted,
-  timeline_click_changes_year, three_loaded, three_draws, three_pick_opens_evidence, console_errors_zero
+  timeline_click_changes_year, year_records_open, three_loaded, three_draws, three_pick_opens_evidence, console_errors_zero
 실패가 하나라도 있으면 exit 1.
 """
 from __future__ import annotations
@@ -173,6 +174,23 @@ async def run(url: str, out: Path) -> int:
         report["scene"]["timeline"] = tl
         check("timeline_mounted", tl.get("mounted") and tl.get("tracks") == tl.get("srcs"), json.dumps(tl, ensure_ascii=False))
         check("timeline_click_changes_year", tl.get("mounted") and tl.get("after") != tl.get("before"), f"{tl.get('before')} -> {tl.get('after')}")
+
+        # 3c. 이 해의 기록 — 918년(태조 즉위)으로 옮기고 버튼을 누르면 그 해 기사가 열린다
+        yr = await pg.evaluate(
+            """async () => { const tl=window.__timeline; if(!tl||!tl._geom) return {ok:false, reason:'no timeline'};
+               const r=tl.svg.getBoundingClientRect(); const x=r.left+tl._geom.xs(918), y=r.top+tl._geom.H/2;
+               tl.svg.dispatchEvent(new PointerEvent('pointerdown',{clientX:x,clientY:y,bubbles:true,pointerId:1,button:0,isPrimary:true}));
+               window.dispatchEvent(new PointerEvent('pointerup',{clientX:x,clientY:y,bubbles:true,pointerId:1}));
+               await new Promise(r=>setTimeout(r,500));
+               const yv=document.getElementById('yearV').textContent;
+               document.getElementById('yearBtn').click();
+               await new Promise(r=>setTimeout(r,1500));
+               const h3=document.querySelector('#evi h3');
+               return {ok:true, year:yv, h3:h3&&h3.textContent, cards:document.querySelectorAll('#evi .quote').length, btn:document.getElementById('yearBtn').textContent}; }"""
+        )
+        report["scene"]["yearPanel"] = yr
+        check("year_records_open", yr.get("ok") and "918" in str(yr.get("h3")) and (yr.get("cards") or 0) > 0, json.dumps(yr, ensure_ascii=False))
+        await pg.screenshot(path=str(out / "03c-year.png"))
 
         # 4. 3D
         await pg.click("#b3d")

@@ -113,6 +113,9 @@ body.mode3d #map{display:none}
   letter-spacing:-.01em}
 .year b{font-weight:500}
 .year span{font-size:11px;color:var(--paper-3);letter-spacing:.14em;display:block;margin-top:-2px}
+.yearbtn{display:block;margin-top:7px;background:none;border:1px solid var(--line-2);color:var(--celadon);font:inherit;
+  font-family:var(--mono);font-size:10px;letter-spacing:.06em;padding:3px 7px;border-radius:2px;cursor:pointer;white-space:nowrap}
+.yearbtn:hover{border-color:var(--celadon-dim)}
 input[type=range]{flex:1;appearance:none;height:3px;background:var(--line-2);border-radius:2px;outline:none}
 input[type=range]::-webkit-slider-thumb{appearance:none;width:15px;height:15px;border-radius:50%;
   background:var(--celadon);cursor:pointer;border:2px solid var(--ink)}
@@ -215,7 +218,8 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div class="hint" id="hint">지명을 클릭하면 근거가 열린다</div>
       <div class="timebar">
         <div class="row">
-          <span class="year"><b id="yearV">414</b><span id="yearL">서기</span></span>
+          <span class="year"><b id="yearV">414</b><span id="yearL">서기</span>
+            <button id="yearBtn" class="yearbtn" type="button" title="이 해로 연대가 붙은 기사를 본다">이 해의 기록</button></span>
           <div id="tl" class="tlhost" aria-label="사료별 시간 막대"></div>
         </div>
       </div>
@@ -271,6 +275,9 @@ async function load(){
   state.geo = g;
   state.sources = s.sources || [];
   state.entities = en.entities || [];
+  // 사료별 연도 밀도 — 타임라인 막대 안 띠. 없어도 화면은 뜬다
+  try{ const dn = await fetch('/api/density').then(r=>r.json()); state.density = dn.sources || {}; }catch(e){ state.density = {}; }
+  state.sources.forEach(src => { src.density = state.density[src.id] || null; });
   state.chunkTotal = state.sources.reduce((n, x) => n + (x.chunkCount || 0), 0);
   state.sources.forEach(x => state.on.add(x.id));
   renderRail();
@@ -320,13 +327,71 @@ function mountTimeline(){
   if(tl){ tl.setSources(state.sources); tl.setOn(state.on); tl.setYear(state.year); return; }
   tl = new Timeline(host, {
     sources: state.sources, year: state.year, on: state.on,
-    onYear(y){ state.year = y; setYearUI(y); draw(); if(state.mode==='3d') draw3d(); },
+    onYear(y){ state.year = y; setYearUI(y); draw(); if(state.mode==='3d') draw3d(); scheduleYearCount(); },
     onToggle(id, on){
       on ? state.on.add(id) : state.on.delete(id);
-      renderRail(); draw(); if(state.mode==='3d') draw3d(); if(state.sel) select(state.sel);
+      renderRail(); draw(); if(state.mode==='3d') draw3d(); if(state.sel) select(state.sel); scheduleYearCount();
     },
   });
   window.__timeline = tl;   // 검증 하네스용
+  refreshYearCount();
+}
+
+// ── 이 해의 기록 — 국편이 연대를 붙인 기사(dateOccured) 중 현재 연도의 것 ──
+const yearText = y => y < 0 ? `기원전 ${-y}년` : `서기 ${y}년`;
+const escH = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
+let yearSeq = 0, yearTimer = 0;
+async function refreshYearCount(){
+  const y = state.year, seq = ++yearSeq;
+  try{
+    const r = await fetch(`/api/year?y=${y}&sources=${encodeURIComponent([...state.on].join(','))}&limit=0`).then(r=>r.json());
+    if(seq !== yearSeq) return;
+    document.getElementById('yearBtn').textContent = `이 해의 기록 ${r.total}`;
+  }catch(e){ /* 조용히 */ }
+}
+function scheduleYearCount(){ clearTimeout(yearTimer); yearTimer = setTimeout(refreshYearCount, 250); }
+async function showYear(){
+  const y = state.year;
+  state.sel = null; draw(); if(state.mode==='3d') draw3d();
+  const el = document.getElementById('evi');
+  el.innerHTML = `<h3>${yearText(y)}</h3><p class="empty" style="margin-top:12px">찾는 중…</p>`;
+  let r = {chunks:[], total:0, bySource:{}};
+  try{ r = await fetch(`/api/year?y=${y}&sources=${encodeURIComponent([...state.on].join(','))}&limit=150`).then(r=>r.json()); }
+  catch(e){ console.warn('[이 해] 조회 실패', e); }
+  if(state.year !== y || state.sel) return;
+  const by = Object.entries(r.bySource||{}).map(([sid,n]) => `${srcLabelOf(sid)} ${n}`).join(' · ');
+  el.innerHTML = `
+    <h3>${yearText(y)}</h3>
+    <div class="han">이 해로 연대가 붙은 기사 — 국편 dateOccured 기준. 연대가 없는 기사(비문·삼국유사 대부분)는 여기 없다.</div>
+    <div class="sect" style="margin-top:20px">기록 ${r.total}</div>
+    <div class="auto">${by || '켜진 사료에 이 해의 기사가 없다'}</div>
+    ${r.chunks.map(c => chunkCard(c, [])).join('')}
+    ${r.total > r.chunks.length ? `<p class="empty" style="margin-top:10px">${r.total}건 중 앞 ${r.chunks.length}건만 보인다.</p>` : ''}`;
+}
+document.getElementById('yearBtn').addEventListener('click', showYear);
+
+/** 원문 조각 카드 — 근거 패널과 '이 해의 기록'이 같이 쓴다. names 는 강조할 이름들 */
+function chunkCard(c, names){
+  let t = escH(c.text).replace(/□/g,'<span class="gap">□</span>');
+  for(const n of names) t = t.replaceAll(n, `<span class="hit">${n}</span>`);
+  // 국편 chunk 의 date 는 {raw:"0919-09-99L0", label:"919년 9월 미상"} 꼴, 비문 chunk 는 없다
+  const dateText = c.date == null ? '' : (typeof c.date === 'object' ? (c.date.label || c.date.raw || '') : String(c.date));
+  const loc = c.locator || '';
+  const meta = [
+    c.title && !loc.endsWith(c.title) ? escH(c.title) : '',
+    dateText ? escH(dateText) : '',
+    loc ? escH(loc) : '',
+  ].filter(Boolean).join(' · ');
+  const counts = [
+    c.missingCount!=null ? `결자 ${c.missingCount}` : '',
+    c.hanjaCount!=null ? `한자 ${c.hanjaCount}` : '',
+  ].filter(Boolean).join(' · ');
+  const link = c.permalink ? ` · <a href="${escH(c.permalink)}" target="_blank" rel="noopener">원문 보기</a>` : '';
+  return `<div style="margin-top:14px">
+    <div class="srcname">${escH(srcLabelOf(c.sourceId))}</div>
+    <div class="quote">${t}</div>
+    <div class="srcline">${meta}<br><code>${escH(c.id)}</code>${counts ? ' · ' + counts : ''}${link}</div></div>`;
 }
 
 function renderRail(){
@@ -343,6 +408,7 @@ function renderRail(){
       renderRail(); draw(); if(state.mode==='3d') draw3d();
       if(tl) tl.setOn(state.on);
       if(state.sel) select(state.sel);
+      scheduleYearCount();
     };
     el.appendChild(b);
   }
@@ -553,7 +619,10 @@ async function select(id){
   const srcLabel = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
   // ── 주장(Claim) — 온톨로지 층. 어긋나는 주장도 나란히, 판정하지 않는다 ──
   const esc1 = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
-  const labelOf = eid => { const q = state.places.find(x=>x.id===eid); return q ? q.labelKo : eid; };
+  const labelOf = eid => {
+    const q = state.places.find(x=>x.id===eid); if(q) return q.labelKo;
+    const e = state.entities.find(x=>x.id===eid); return e ? `${e.label}${e.labelHanja ? ' ' + e.labelHanja : ''}` : eid;
+  };
   const objText = o => {
     if(o == null) return '';
     if(typeof o !== 'object') return esc1(o);
@@ -580,27 +649,7 @@ async function select(id){
   const by = Object.entries(res.bySource||{}).map(([sid,n]) => `${srcLabel(sid)} ${n}`).join(' · ');
   const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
   const ev = res.chunks.length
-    ? res.chunks.map(c => {
-        let t = esc(c.text).replace(/□/g,'<span class="gap">□</span>');
-        for(const n of names) t = t.replaceAll(n, `<span class="hit">${n}</span>`);
-        // 국편 chunk 의 date 는 {raw:"0919-09-99L0", label:"919년 9월 미상"} 꼴, 비문 chunk 는 없다
-        const dateText = c.date == null ? '' : (typeof c.date === 'object' ? (c.date.label || c.date.raw || '') : String(c.date));
-        const loc = c.locator || '';
-        const meta = [
-          c.title && !loc.endsWith(c.title) ? esc(c.title) : '',
-          dateText ? esc(dateText) : '',
-          loc ? esc(loc) : '',
-        ].filter(Boolean).join(' · ');
-        const counts = [
-          c.missingCount!=null ? `결자 ${c.missingCount}` : '',
-          c.hanjaCount!=null ? `한자 ${c.hanjaCount}` : '',
-        ].filter(Boolean).join(' · ');
-        const link = c.permalink ? ` · <a href="${esc(c.permalink)}" target="_blank" rel="noopener">원문 보기</a>` : '';
-        return `<div style="margin-top:14px">
-          <div class="srcname">${srcLabel(c.sourceId)}</div>
-          <div class="quote">${t}</div>
-          <div class="srcline">${meta}<br><code>${esc(c.id)}</code>${counts ? ' · ' + counts : ''}${link}</div></div>`;
-      }).join('')
+    ? res.chunks.map(c => chunkCard(c, names)).join('')
     : `<p class="empty" style="margin-top:12px">켜진 사료의 원문에서 이 이름을 찾지 못했다.</p>`;
   const more = res.total > res.chunks.length
     ? `<p class="empty" style="margin-top:10px">${res.total}건 중 앞 ${res.chunks.length}건만 보인다.</p>` : '';
