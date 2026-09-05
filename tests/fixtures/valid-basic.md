@@ -50,6 +50,17 @@ tests/fixtures/entities/ 에 껍데기가 있다. 기대: 실패 0 · 충돌 0 �
     "origin": "ai",
     "status": "draft",
     "note": "영락 6년 병신 = 396년. 역법 변환도 Claim 이다 (§8.1). self-test 의 변조 대상이 이 value 다"
+  },
+  {
+    "id": "claim-gwanggaeto-1-09-yeongnak-6-time",
+    "subject": "person-gwanggaeto",
+    "predicate": "syj:mentionedAt",
+    "object": {"kind": "time", "id": "ts-yeongnak-6", "verbatim": "六年丙申", "precision": "year"},
+    "citesChunk": "chunk_gwanggaeto_1-09",
+    "quote": "以六年丙申",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft"
   }
 ]
 ```

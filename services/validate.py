@@ -24,7 +24,7 @@ digest:
   sha256(id | subject | predicate | json.dumps(object, sort_keys=True, ensure_ascii=False) | citesChunk)
   claims 파일에는 쓰지 않는다. 검증기가 계산해 data/claims/<src>/.digests.json 에 기록·대조한다.
   - 읽을 때는 두 배치를 받는다: {"claims": {id: sha}} 와 평평한 {id: sha} (scripts/check_claims.py 형태)
-  - 파일이 없으면: 만들고 전부 new 로 보고한다
+  - 파일이 없으면: 전부 new 로 보고한다. --write-digests 로만 만든다
   - 파일에 없는 id: new (정보). --write-digests 로만 기록된다 — 사람이 검토한 뒤 명시적으로
   - 파일과 다른 id: 실패. --write-digests 가 있으면 갱신(refreshed)
   - 파일에만 있는 id: stale (정보). --write-digests 가 지운다
@@ -74,6 +74,9 @@ FRONT_MATTER_LINE_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):[ \t]*(.*)$")
 FENCE_OPEN_RE = re.compile(r"^```claims-json[ \t]*$", re.MULTILINE)
 FENCE_RE = re.compile(r"^```claims-json[ \t]*\n(.*?)^```[ \t]*$", re.MULTILINE | re.DOTALL)
 WS_RE = re.compile(r"\s+")
+STEMS = "甲乙丙丁戊己庚辛壬癸"
+BRANCHES = "子丑寅卯辰巳午未申酉戌亥"
+GANZHI_RE = re.compile(f"[{STEMS}][{BRANCHES}]")
 
 
 class ParseError(ValueError):
@@ -314,6 +317,7 @@ def load_chunks_file(path: Path, chunks: dict[str, dict], failures: list[Failure
                 "locator": row.get("locator"),
                 "lang": row.get("lang"),
                 "permalink": row.get("permalink"),
+                "editorNotes": row.get("editorNotes", []),
             }
 
 
@@ -419,6 +423,16 @@ def check_shape(claim, index: int, where: str, failures: list[Failure]) -> bool:
             isinstance(obj.get("value"), bool) or not isinstance(obj.get("value"), int)
         ):
             bad("object.kind=year needs an integer 'value'")
+        if obj["kind"] == "literal" and not (isinstance(obj.get("value"), str) and obj["value"].strip()):
+            bad("object.kind=literal needs a non-empty 'value'")
+        if obj["kind"] == "time":
+            for key in ("id", "verbatim", "precision"):
+                if not (isinstance(obj.get(key), str) and obj[key].strip()):
+                    bad(f"object.kind=time needs a non-empty '{key}'")
+        if obj["kind"] == "location":
+            for key in ("lat", "lon"):
+                if isinstance(obj.get(key), bool) or not isinstance(obj.get(key), (int, float)):
+                    bad(f"object.kind=location needs a numeric '{key}'")
 
     origin = claim.get("origin")
     if isinstance(origin, str) and origin not in ORIGINS:
@@ -442,6 +456,12 @@ def validate(
     warnings = report.warnings
     seen_ids: dict[str, str] = {}
     by_key: dict[tuple[str, str], dict[str, list[str]]] = {}
+    timespans = {}
+    for doc in docs:
+        for claim in doc.claims:
+            obj = claim.get("object") if isinstance(claim, dict) else None
+            if isinstance(obj, dict) and obj.get("kind") == "time" and isinstance(obj.get("id"), str):
+                timespans[obj["id"]] = obj
 
     for doc in sorted(docs, key=lambda d: (d.source_key, d.path.as_posix())):
         where = doc.label
@@ -491,6 +511,13 @@ def validate(
 
             # (d) entity 객체는 껍데기 파일이 있어야 한다
             obj = claim["object"]
+            check_reading_and_calendar(claim, chunk, timespans, where, failures)
+            if claim["subject"] != chunk_id and claim["subject"] not in entities and claim["subject"] not in chunks and claim["subject"] not in timespans:
+                failures.append(Failure("missing-entity", where, cid, "subject is not an entity, chunk or defined TimeSpan"))
+            if obj["kind"] == "time" and chunk is not None:
+                verbatim = norm_ws(obj["verbatim"])
+                if verbatim not in chunk["norm"] or verbatim not in norm_ws(claim["quote"]):
+                    failures.append(Failure("time", where, cid, "time.verbatim must occur in the cited text and quote"))
             if obj["kind"] == "entity" and obj["id"] not in entities:
                 failures.append(
                     Failure("missing-entity", where, cid, f"object entity {obj['id']!r} has no file under entities/")
@@ -542,6 +569,38 @@ def validate(
 # ----------------------------------------------------------------------------
 
 
+def check_reading_and_calendar(claim: dict, chunk: dict | None, timespans: dict,
+                               where: str, failures: list[Failure]) -> None:
+    """F3 보조 검증기의 판독·간지 검사를 빌드와 일반 검증에도 적용한다."""
+    obj = claim["object"]
+
+    def bad(code, message):
+        failures.append(Failure(code, where, claim["id"], message))
+
+    if claim["predicate"] == "syj:readsCharacterAs":
+        if obj["kind"] != "literal" or not all(isinstance(obj.get(k), str) and obj[k].strip() for k in ("position", "value")):
+            bad("reading", "readsCharacterAs needs literal position and value")
+        elif chunk is not None:
+            position, value = norm_ws(obj["position"]), norm_ws(obj["value"])
+            if claim["subject"] != claim["citesChunk"]:
+                bad("reading", "readsCharacterAs subject must be the cited chunk")
+            if position not in chunk["norm"]:
+                bad("reading", "position not found in chunk text")
+            notes = [norm_ws(n) for n in chunk.get("editorNotes", []) if isinstance(n, str)]
+            if value not in position and not any(value in n for n in notes):
+                bad("reading", "reading is neither at the text position nor in editorNotes")
+    if claim["predicate"] == "syj:convertsTo":
+        span = timespans.get(claim["subject"])
+        if obj["kind"] != "year" or span is None:
+            bad("calendar", "convertsTo needs a year object and a defined TimeSpan subject")
+        else:
+            match = GANZHI_RE.search(str(span.get("verbatim", "")))
+            cycle = (obj["value"] - 4) % 60
+            expected = STEMS[cycle % 10] + BRANCHES[cycle % 12]
+            if match and match.group() != expected:
+                bad("calendar", f"year {obj['value']} is {expected}, but verbatim says {match.group()}")
+
+
 def digest_totals(report: Report) -> dict[str, int]:
     totals = {"ok": 0, "new": 0, "changed": 0, "refreshed": 0, "stale": 0}
     for sd in report.digests.values():
@@ -591,8 +650,10 @@ def print_report(report: Report, inputs: Inputs, refresh: bool, out) -> None:
 
 
 def write_digest_files(claims_dir: Path, report: Report, refresh: bool) -> list[tuple[Path, str]]:
-    """실패가 없을 때만 불린다. 없던 파일은 만들고, --write-digests 면 갱신한다."""
+    """실패가 없고 --write-digests 를 명시했을 때만 기록한다."""
     actions: list[tuple[Path, str]] = []
+    if not refresh:
+        return actions
     for key in sorted(report.digests):
         sd = report.digests[key]
         path = claims_dir / key / DIGESTS_FILENAME
@@ -741,9 +802,11 @@ def self_test_end_to_end(out) -> list[str]:
         code, r1 = run(tmp, write_digests=False, out=sink)
         sd = r1.digests.get("gwanggaeto")
         check(code == 0 and sd is not None, "run1 valid claims exit 0")
-        check(digests_path.is_file(), "run1 creates .digests.json when absent")
-        check(sd is not None and set(sd.status.values()) == {"new"} and len(sd.status) == 3, "run1 reports every claim as new")
+        check(not digests_path.exists(), "run1 does not create .digests.json without approval flag")
+        check(sd is not None and set(sd.status.values()) == {"new"} and len(sd.status) == 4, "run1 reports every claim as new")
         check(not r1.warnings, "run1 emits no warnings for a well-placed file")
+        code, _ = run(tmp, write_digests=True, out=sink)
+        check(code == 0 and digests_path.is_file(), "explicit --write-digests records reviewed claims")
         bytes1 = digests_path.read_bytes() if digests_path.is_file() else b""
 
         code, r2 = run(tmp, write_digests=False, out=sink)
@@ -754,7 +817,7 @@ def self_test_end_to_end(out) -> list[str]:
         text = read_text(claim_file)
         check('"value": 396' in text, "tamper target present in valid-basic")
         with io.open(claim_file, "w", encoding="utf-8", newline="\n") as fh:
-            fh.write(text.replace('"value": 396', '"value": 397'))
+            fh.write(text.replace('"value": 396', '"value": 456'))
         code, r3 = run(tmp, write_digests=False, out=sink)
         check(
             code == 1 and [f.code for f in r3.failures] == ["digest-mismatch"],

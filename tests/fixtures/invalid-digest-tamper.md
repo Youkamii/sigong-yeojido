@@ -27,6 +27,17 @@ status: draft
     "origin": "ai",
     "status": "draft",
     "note": "digests 는 391 로 기록됐다. 파일만 451 로 고쳤다"
+  },
+  {
+    "id": "claim-gwanggaeto-1-09-sinmyo-time",
+    "subject": "polity-wa",
+    "predicate": "syj:mentionedAt",
+    "object": {"kind": "time", "id": "ts-sinmyo-gwanggaeto", "verbatim": "辛卯年", "precision": "year"},
+    "citesChunk": "chunk_gwanggaeto_1-09",
+    "quote": "辛卯年",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft"
   }
 ]
 ```
