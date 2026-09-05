@@ -1,0 +1,1881 @@
+{
+  "_fields": {
+    "candidate.sourceUrl": "basis 문장을 확인한 페이지. coordSourceUrl은 lat/lon을 읽은 Wikidata 항목(없으면 sourceUrl 본문에 좌표가 있음)",
+    "candidate.view": "그 후보를 누가 어떻게 부르는지(통설·요서설 등)",
+    "confidence": "confirmed=후보의 근거 문장과 좌표 출처를 모두 실제 페이지에서 확인 / probable=근거 페이지는 확인했으나 좌표가 지역 참조점이거나 시대 구분이 근사 / unverified=근거를 직접 확인하지 못함",
+    "indexType/count": "국편 색인의 type과 태깅 횟수(data/research/samguksagi-index-terms.json). 표기 단위라 개체 단위가 아님",
+    "precision": "site=유적·성곽 등 특정 지점 / approx=현대 도시 중심 등 근사 지점 / region=지역·강·세력권의 참조점(면·선을 점으로 대신함)",
+    "status": "established=이견 없음 / majority=통설이 있고 이설은 출처 미확인 또는 소수 / disputed=출처가 확인된 후보가 둘 이상 갈림 / unlocated=후보 없음",
+    "variantOf/relatedTo": "이체자·이표기(variantOf) 또는 같은 자리를 가리키는 다른 항목(relatedTo)"
+  },
+  "_note": "삼국사기(국편 벌크 15053635) 색인어 중 지명 빈도 상위 40개와 국명 상위 15개의 좌표 후보. 판정하지 않는다 — '누가 어디로 보는가'만 적는다. 좌표는 현대 참조점이지 비정 결과가 아니며, 출처 URL이 없는 좌표는 넣지 않았다. 후보를 못 찾은 항목은 status=unlocated, candidates=[].",
+  "_provenance": {
+    "date": "2026-09-05",
+    "indexTermsFile": "data/research/samguksagi-index-terms.json",
+    "method": "WebFetch로 위키백과(ko/en)·한국민족문화대백과 항목을 열어 위치 서술 문장을 확인, 좌표는 Wikidata P625를 SPARQL로 조회. 우리역사넷(contents.history.go.kr)은 robots.txt가 검색봇 외 전면 Disallow라 열지 않음(db.history.go.kr에 적용한 프로젝트 기준과 동일)."
+  },
+  "_schema": "docs/02-schema.md §9 — 좌표는 Claim이다. 여기 lat/lon은 화면용 임시 형태이며 TTL 빌드 시 후보마다 locatedAt Claim으로 승격한다. §9.1의 validFrom/validTo를 후보 단위로 붙였다.",
+  "places": [
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '평양성 (고구려)': \"주류 학계에서는 평양성이 지금의 조선민주주의인민공화국 평양직할시 시가지에 위치했다고 추정하고 있다.\" 586년 옮긴 장안성(후기 평양성) 자리.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q3078431",
+          "lat": 39.0235,
+          "lon": 125.757,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/평양성_(고구려)",
+          "validFrom": 586,
+          "validTo": null,
+          "view": "주류 학계"
+        },
+        {
+          "basis": "위키백과 '안학궁': \"장수왕이 국내성에서 평양으로 천도한 장수왕 15년(427년)에 건립되었다.\" 평양직할시 대성구역 안학동, 북쪽에 대성산. 같은 항목이 안학궁을 고려 궁전으로 보는 이견도 적음.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q3361202",
+          "lat": 39.0618,
+          "lon": 125.834,
+          "precision": "site",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/안학궁",
+          "validFrom": 427,
+          "validTo": 586,
+          "view": "427년 천도지(안학궁·대성산성)"
+        },
+        {
+          "basis": "위키백과 '평양성 (고구려)': \"일부 학자들은 평양성이 지금의 중화인민공화국 랴오양시에 위치했다고 주장한다.\" 참조점은 랴오양 시가지.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "lat": 41.2643,
+          "lon": 123.1772,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/평양성_(고구려)",
+          "validFrom": null,
+          "validTo": null,
+          "view": "일부 학자(요동설)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 91,
+      "id": "place-pyongyang",
+      "indexType": "지명",
+      "kind": "capital",
+      "label": "平壤",
+      "labelKo": "평양",
+      "note": "삼국사기 색인 1위(91회). 문무왕대 신라본기·고구려본기의 平壤이 대부분. 동천왕 21년(247) 평양성 등 427년 이전 平壤의 위치(강계설 등)와 고려 서경으로서의 평양은 이번 조사에서 별도 출처를 확인하지 못해 후보에 넣지 않음. 기존 places.json의 place-pyongyang(平穰)과 같은 id.",
+      "status": "disputed"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '요동성': \"지금의 랴오닝성 랴오양시의 근방에 위치해 있었다\" (요동성 = 요동 지역의 중심 성). 위키백과 '랴오허': 랴오허가 랴오닝성을 랴오둥('랴오 동쪽')과 랴오시로 나누는 경계라고 서술. 참조점은 요동성 자리인 랴오양.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "lat": 41.2643,
+          "lon": 123.1772,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/요동성",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 83,
+      "id": "place-yodong",
+      "indexType": "지명",
+      "kind": "region",
+      "label": "遼東",
+      "labelKo": "요동",
+      "note": "지역명이므로 점 하나로 찍을 수 없다. 색인 83회 대부분이 고구려본기·수당 원정 기사. 요동을 오늘날 랴오허 동쪽이 아닌 다른 곳으로 보는 이설은 이번 조사에서 출처를 확인하지 못함.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/랴오허"
+      ],
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '웅진': \"475년부터 538년까지 백제의 수도였던 곳\", \"오늘날 충청남도 공주시에 해당한다\". 민백 '웅진천도'(E0071958)도 \"웅진(熊津, 충청남도 공주)\"로 적음. 좌표는 공주 공산성.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12584692",
+          "lat": 36.4619,
+          "lon": 127.1272,
+          "precision": "site",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/웅진",
+          "validFrom": 475,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 49,
+      "id": "place-ungjin",
+      "indexType": "지명",
+      "kind": "capital",
+      "label": "熊津",
+      "labelKo": "웅진",
+      "note": "위치 이견 없음. 538년 사비 천도 뒤에도 웅진성·웅진도독부 등으로 계속 쓰인 지명.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0071958"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "민백 '한강'(E0060950): \"대체로 한강 남쪽의 몽촌토성 · 춘궁리 · 교촌 일대가 백제의 중심지였을 것임은 틀림없는 사실이다.\" 위키백과 '한산주': \"주치(州治)는 백제 한성(漢城) 근처인 지금의 경기도 하남시(광주 고읍)로 추정되고\". 참조점은 하남 춘궁동 이성산성.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q16094945",
+          "lat": 37.5247,
+          "lon": 127.1839,
+          "precision": "site",
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0060950",
+          "validFrom": null,
+          "validTo": null,
+          "view": "하남(광주 고읍)설"
+        },
+        {
+          "basis": "위키백과 '남한산': \"고주몽의 셋째 아들인 온조(溫祚)가 남하하여 백제국을 일으킨 곳으로도 유명하다\", \"원래 온조는 현재의 서울 풍납동에 토성을 쌓고 위례성이라 하여 백제국을 세웠으나 지세가 불안하고 협소하여 이곳으로 천도했다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q10856095",
+          "lat": 37.4711,
+          "lon": 127.1822,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/남한산",
+          "validFrom": null,
+          "validTo": null,
+          "view": "남한산설"
+        },
+        {
+          "basis": "위키백과 '북한산': \"삼국시대 백제에서는 '한산(漢山)'이라 불렸고 인수봉은 '부아악(負兒嶽)'이라 불렸으며 시조 비류와 온조 형제가 올랐다는 기록이 남아있다.\"",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q494652",
+          "lat": 37.6608,
+          "lon": 126.9933,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/북한산",
+          "validFrom": null,
+          "validTo": null,
+          "view": "북한산설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 39,
+      "id": "place-hansan",
+      "indexType": "지명",
+      "kind": "place",
+      "label": "漢山",
+      "labelKo": "한산",
+      "note": "신라본기의 漢山은 대개 한산주(漢山州)의 약칭이고(place-hansanju 참조), 백제본기의 漢山(온조 13년 移都, 근초고왕 26년 移都漢山 등)은 남한산·북한산·하남 일대로 비정이 갈린다. 판정하지 않고 세 후보를 모두 둔다.",
+      "relatedTo": [
+        "place-hansanju",
+        "place-hanseong"
+      ],
+      "status": "disputed"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '한산주': \"주치(州治)는 백제 한성(漢城) 근처인 지금의 경기도 하남시(광주 고읍)로 추정되고\", \"604년(진평왕 26년)에 다시 한산정(漢山停, 현 경기도 하남시 일대)을 설치하였다.\"",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42159",
+          "lat": 37.5392,
+          "lon": 127.2147,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/한산주",
+          "validFrom": 604,
+          "validTo": null,
+          "view": "통설(하남)"
+        },
+        {
+          "basis": "위키백과 '한산주': \"557년(진흥왕 18년) 신주를 북한산(北漢山, 현 서울의 한강 이북 지역)으로 옮겼는데\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q494652",
+          "lat": 37.6608,
+          "lon": 126.9933,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/한산주",
+          "validFrom": 557,
+          "validTo": 568,
+          "view": "치소 변천(북한산)"
+        },
+        {
+          "basis": "위키백과 '한산주': \"568년(진흥왕 29년)에는 남한강의 남천(현 경기도 이천시)으로 옮겼다가\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42136",
+          "lat": 37.2792,
+          "lon": 127.4425,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/한산주",
+          "validFrom": 568,
+          "validTo": 604,
+          "view": "치소 변천(남천)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 28,
+      "id": "place-hansanju",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "漢山州",
+      "labelKo": "한산주",
+      "note": "위키백과 '한산주': \"757년(경덕왕 16년)에 전국의 행정구역 명칭을 중국식 한자어로 고치면서 '한산주'도 '한주'로 개칭되었다.\" 치소 변천 연대(557·568·604)의 원문을 재확인함(2026-09-05).",
+      "relatedTo": [
+        "place-hansan"
+      ],
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '완산주': \"주치(州治)는 지금의 전주시이고\", \"757년 전국의 행정구역명칭에 대한 개혁이 이루어지자 완산주도 전주(全州)로 개명했다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42140",
+          "lat": 35.8239,
+          "lon": 127.1475,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/완산주",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 24,
+      "id": "place-wansan",
+      "indexType": "지명",
+      "kind": "place",
+      "label": "完山",
+      "labelKo": "완산",
+      "note": "완산주(685년 설치)의 약칭 겸 完山停 군단명. place-wansanju와 같은 자리.",
+      "relatedTo": [
+        "place-wansanju"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '낙랑군': \"대부분의 역사학계는 각종 문헌 자료와 고고학 발굴 결과를 토대로 낙랑군이 평양 일대를 중심으로 한반도 북부에 존속하였다고 보고 있다\"; 낙랑토성은 평양직할시 낙랑구역 토성동. 위키백과 '한사군': \"낙랑의 위치는 평양시 대동강 남안의 낙랑토성 일대임이 확증되었다\"(주류 학설 서술). 참조점은 평양시.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+          "lat": 39.0167,
+          "lon": 125.7475,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/낙랑군",
+          "validFrom": -108,
+          "validTo": 313,
+          "view": "평양설(한·중·일 주류)"
+        },
+        {
+          "basis": "위키백과 '낙랑군': 요서설 — 윤내현·복기대 등이 낙랑군을 요서 지역으로 봄. 참조점은 요서의 중심 도시 차오양(구체 지점은 출처에 없음).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75336",
+          "lat": 41.5757,
+          "lon": 120.4486,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/낙랑군",
+          "validFrom": -108,
+          "validTo": 313,
+          "view": "요서설(윤내현·복기대)"
+        },
+        {
+          "basis": "위키백과 '낙랑군': 요동설 — 북한 학계와 일부 남한 연구자는 \"낙랑군은 한반도가 아니라 요동 지역에 있었다고 주장한다\"; 평양 유물은 낙랑국의 것이라고 봄. 참조점은 랴오양.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "lat": 41.2643,
+          "lon": 123.1772,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/낙랑군",
+          "validFrom": -108,
+          "validTo": 313,
+          "view": "요동설(북한 학계)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 24,
+      "id": "place-nangnang",
+      "indexType": "지명",
+      "kind": "place",
+      "label": "樂浪",
+      "labelKo": "낙랑",
+      "note": "신라본기 초기의 樂浪이 낙랑군인지 별개의 낙랑국인지도 논쟁. 허베이성설도 언급되나 참조점을 잡을 근거가 없어 제외. 스키마 §9의 예시 지명.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/한사군"
+      ],
+      "status": "disputed"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '청주 (9주)': \"685년 신문왕 5년에 거타주를 개명해 청주를 설치하였다\", \"주치(州治)는 지금의 진주시이고\", \"757년(경덕왕 16년)에 전국의 행정구역 명칭을 개혁하면서 청주도 강주로 개칭되었다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42144",
+          "lat": 35.1928,
+          "lon": 128.0847,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/청주_(9주)",
+          "validFrom": 685,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 22,
+      "id": "place-cheongju-silla",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "菁州",
+      "labelKo": "청주(강주)",
+      "note": "오늘날의 충북 청주가 아니라 경남 진주. place-gangju(康州)와 같은 자리.",
+      "relatedTo": [
+        "place-gangju"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '웅천주': 671년 설치, \"주치(州治)는 지금의 공주시이고\", 757년 \"웅주로 바뀌었지만 웅천주라는 명칭도 계속 사용되었다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42062",
+          "lat": 36.4556,
+          "lon": 127.1247,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/웅천주",
+          "validFrom": 671,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 21,
+      "id": "place-ungcheonju",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "熊川州",
+      "labelKo": "웅천주",
+      "note": "place-ungjin(熊津)과 같은 자리의 신라 주 이름.",
+      "relatedTo": [
+        "place-ungjin"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '우수주': \"637년(선덕여왕 6년)에 우수주(牛首州)가 설치되었으며\", \"주치(州治)는 지금의 춘천시였고\". 673년 수약주, 757년 삭주로 개칭.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42148",
+          "lat": 37.8747,
+          "lon": 127.7342,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/우수주",
+          "validFrom": 637,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 20,
+      "id": "place-usu",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "牛首",
+      "labelKo": "우수",
+      "note": "우수주의 약칭 겸 牛首停 군단명. 우두(牛頭)로도 적힘.",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '신성 (요동)': \"신성(新城)은 고구려의 옛 성으로 지금의 랴오닝성 푸순 시 순청 구 고이산 고이산성에 있었다.\" 좌표는 푸순시 참조점(고이산성은 시가지 북쪽).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75026",
+          "lat": 41.8709,
+          "lon": 123.8917,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/신성_(요동)",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설(푸순 고이산성)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 19,
+      "id": "place-sinseong",
+      "indexType": "지명",
+      "kind": "fortress",
+      "label": "新城",
+      "labelKo": "신성",
+      "note": "고구려본기 서천왕 7년조 주석 '新城國之東北大鎮也'(sg_017_0040_0100). 다른 비정은 이번 조사에서 확인하지 못함.",
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '완산주': \"신문왕 5년(685)에 완산주를 설치했고\", \"주치(州治)는 지금의 전주시이고\", 757년 전주로 개명.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42140",
+          "lat": 35.8239,
+          "lon": 127.1475,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/완산주",
+          "validFrom": 685,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 18,
+      "id": "place-wansanju",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "完山州",
+      "labelKo": "완산주",
+      "note": "place-wansan(完山)과 같은 자리.",
+      "relatedTo": [
+        "place-wansan"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "민백 '위례성'(E0041135): \"1997년부터 서울 풍납동 토성 내부와 성벽에 대한 발굴 조사가 이루어져 현재는 대체로 서울 풍납동 토성을 하남위례성으로 보고 있다.\" 위키백과 '위례성': \"국립박물관을 비롯한 고고학계는 풍납토성과 몽촌토성을 위례성으로 비정하고 있다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q11282530",
+          "lat": 37.5303,
+          "lon": 127.1162,
+          "precision": "site",
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0041135",
+          "validFrom": -18,
+          "validTo": 475,
+          "view": "백제 한성 — 통설(풍납토성)"
+        },
+        {
+          "basis": "민백 '서울 몽촌토성'(E0018833): \"서울특별시 송파구에 있는 삼국시대 백제의 성곽\", 북쪽 1km에 풍납토성. 민백 '위례성'(E0041135): \"몽촌토성의 발굴이 시작되면서는 하남위례성을 몽촌토성으로 비정하였으나\" (이후 풍납토성으로 무게 이동). 위키백과 '위례성'은 풍납·몽촌을 한성백제의 남·북성으로 서술.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q6899474",
+          "lat": 37.5207,
+          "lon": 127.1188,
+          "precision": "site",
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0018833",
+          "validFrom": -18,
+          "validTo": 475,
+          "view": "백제 한성 — 통설(몽촌토성)"
+        },
+        {
+          "basis": "민백 '위례성'(E0041135): \"일찍이 충청남도 천안시 서북구 직산읍으로 비정되어 왔으나, 정약용이 고증학적인 방법론을 도입하여 한강 유역설을 주장한 이후 한강 유역이 주목되어 왔다.\" 위키백과 '위례성': \"충청남도의 향토사학자들을 비롯한 충청권 일부에서는 여전히 천안 위례성설을 주장하고 있다\". 참조점은 천안시.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42146",
+          "lat": 36.81,
+          "lon": 127.1475,
+          "precision": "region",
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0041135",
+          "validFrom": -18,
+          "validTo": 475,
+          "view": "천안 직산설(전통설·향토사학)"
+        },
+        {
+          "basis": "민백 '고구려 삼경'(E0003330): \"재령의 지명이 일명 '한성(漢城)' 또는 '한홀(漢忽)'이었다는 것을 알 수 있다\". 위키백과 '한성 (고구려)': \"황해남도 재령군에 위치했다는 설\". 고구려 3경의 하나.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q705265",
+          "lat": 38.4014,
+          "lon": 125.62,
+          "precision": "region",
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0003330",
+          "validFrom": 475,
+          "validTo": 668,
+          "view": "고구려 한성 — 재령설"
+        },
+        {
+          "basis": "위키백과 '한성 (고구려)': \"지금의 서울 부근의 북한산성에 위치했다는 설\". 민백 '고구려 삼경'도 북한산성 별호설을 소개.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q494652",
+          "lat": 37.6608,
+          "lon": 126.9933,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/한성_(고구려)",
+          "validFrom": 475,
+          "validTo": 668,
+          "view": "고구려 한성 — 북한산성설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 18,
+      "id": "place-hanseong",
+      "indexType": "지명",
+      "kind": "capital",
+      "label": "漢城",
+      "labelKo": "한성",
+      "note": "신라본기 문무왕 8년(668) '王發漢城指平壤' 등의 漢城은 고구려 한성 또는 신라 한산주 쪽 한성으로 해석이 갈림(place-hansanju 참조). 하북위례성(중랑천 일대)은 위키백과 '위례성'이 언급하나 참조점이 없어 제외. 기존 places.json의 place-hanseong(百殘國城)과 같은 id.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/위례성",
+        "https://encykorea.aks.ac.kr/Article/E0060950"
+      ],
+      "relatedTo": [
+        "place-hansan",
+        "place-hansanju"
+      ],
+      "status": "disputed"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '무진주': \"685년 문무왕5년에 전국의 행정구역을 9주로 재정비하면서 백제의 남부지방에 설치했던 발라주의 치소를 광주광역시일원으로 이전해 무진주로 개명했다.\" 757년 무주(武州)로 개명.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q41283",
+          "lat": 35.1667,
+          "lon": 126.9167,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/무진주",
+          "validFrom": 685,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 15,
+      "id": "place-mujinju",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "武珍州",
+      "labelKo": "무진주",
+      "note": "place-muju(武州)와 같은 자리.",
+      "relatedTo": [
+        "place-muju"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '하서주': \"주치(州治)는 지금의 강릉시이고 9개 군 25개 현이 소속되어 있으며\", \"757년(경덕왕 16) 12월 전국의 행정구역명칭에 대한 개혁이 이루어지자 명주(溟州)로 개칭되었으나\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42056",
+          "lat": 37.7556,
+          "lon": 128.8961,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/하서주",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 15,
+      "id": "place-haseo",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "河西",
+      "labelKo": "하서",
+      "note": "지리지 '一云河西良, 一云河西'(sg_037). 河西停 군단명. place-haseoju와 같은 자리.",
+      "relatedTo": [
+        "place-haseoju"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '사비': 538~660년 백제 수도, \"오늘날 대한민국 충청남도 부여군에 해당하며\". 좌표는 부여 부소산성.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12598898",
+          "lat": 36.2913,
+          "lon": 126.9132,
+          "precision": "site",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/사비",
+          "validFrom": 538,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 15,
+      "id": "place-sabi",
+      "indexType": "지명",
+      "kind": "capital",
+      "label": "泗沘",
+      "labelKo": "사비",
+      "note": "위치 이견 없음.",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '패강진': \"패강(浿江, 통일신라의 경우 대동강)\". 위키백과 '살수 대첩': \"패수(지금의 대동강이라고 주류 학계에서는 얘기하고 있으나 일부 다른 의견도 존재함)\". 좌표는 대동강(Wikidata 대표점).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q330618",
+          "lat": 38.6861,
+          "lon": 125.2642,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/패강진",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설(통일신라 패강=대동강)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 15,
+      "id": "place-paegang",
+      "indexType": "지명",
+      "kind": "river",
+      "label": "浿江",
+      "labelKo": "패강",
+      "note": "삼국사기의 浿江은 패강진·패강 장성 등 통일신라 기사가 대부분. 고조선·한대 浿水의 비정(청천강·압록강·요하·난하 등)과 신라 패강 예성강설은 이번 조사에서 출처 문장을 확인하지 못해 후보에 넣지 않음.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/살수_대첩"
+      ],
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '사벌주': 525년 \"군주(軍主)를 임명하고 상주(上州)로 고쳤다\", \"주치(州治)는 지금의 상주시이고\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42163",
+          "lat": 36.4153,
+          "lon": 128.1606,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/사벌주",
+          "validFrom": 525,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 14,
+      "id": "place-sangju-silla",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "上州",
+      "labelKo": "상주(上州)",
+      "note": "주 이름이자 上州停·上州將軍 등 군단명. place-sabeolju와 같은 자리.",
+      "relatedTo": [
+        "place-sabeolju"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '경주시': \"기원전 57년 신라의 건국부터 시작해서 935년 신라 멸망까지 992년 동안 신라의 수도였고\", \"고려를 세운 태조 왕건은 도시 이름을 경주(慶州)로 바꾸었는데\". 삼국사기 신라본기 경순왕 9년(935) '攺新羅爲慶州'(sg_012_0060_0280).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42097",
+          "lat": 35.85,
+          "lon": 129.2167,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/경주시",
+          "validFrom": 935,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 14,
+      "id": "place-gyeongju",
+      "indexType": "지명",
+      "kind": "capital",
+      "label": "慶州",
+      "labelKo": "경주",
+      "note": "고려 지명. 위키백과는 개칭을 940년으로, 삼국사기는 935년 기사에 적음 — 연대 불일치는 그대로 둠. 기존 place-silla-capital(新羅城)과 같은 자리.",
+      "relatedTo": [
+        "place-silla-capital"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '삽량주': \"665년(문무왕 5년)에 상주(上州)와 하주(下州)의 땅 가운데 일부를 분할하여 삽량주를 설치하였다고 한다\", \"주치(州治)는 지금의 양산시이고\". 757년 양주(良州)로 개칭.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42123",
+          "lat": 35.3386,
+          "lon": 129.0386,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/삽량주",
+          "validFrom": 665,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 14,
+      "id": "place-sapryangju",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "歃良州",
+      "labelKo": "삽량주",
+      "note": "",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '청주 (9주)': \"757년(경덕왕 16년)에 전국의 행정구역 명칭을 개혁하면서 청주도 강주로 개칭되었다\", \"주치(州治)는 지금의 진주시이고\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42144",
+          "lat": 35.1928,
+          "lon": 128.0847,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/청주_(9주)",
+          "validFrom": 757,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 13,
+      "id": "place-gangju",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "康州",
+      "labelKo": "강주",
+      "note": "place-cheongju-silla(菁州)와 같은 자리.",
+      "relatedTo": [
+        "place-cheongju-silla"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '부여': \"부여의 영토는 지금의 창춘시 이퉁강 유역을 중심으로\", \"오늘날 지린성 창춘 시의 눙안 현·중심지·솽양 구 ... 일대를 중심으로 존재했다는 설\". 영문 위키백과 'Buyeo': \"Buyeo moved southwestward to Nong'an\". 좌표는 Wikidata 부여 항목 대표점(눙안 부근).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q28511",
+          "lat": 44.435,
+          "lon": 125.175,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/부여",
+          "validFrom": null,
+          "validTo": 494,
+          "view": "눙안·창춘설"
+        },
+        {
+          "basis": "영문 위키백과 'Buyeo': \"Having lost its stronghold on the Ashi River (within modern Harbin), Buyeo moved southwestward to Nong'an.\" 4세기 이전 중심지를 하얼빈 아시허 유역으로 보는 서술. 참조점은 하얼빈.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42956",
+          "lat": 45.75,
+          "lon": 126.6333,
+          "precision": "region",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Buyeo",
+          "validFrom": null,
+          "validTo": null,
+          "view": "초기 중심지 하얼빈(아시허)설"
+        }
+      ],
+      "confidence": "probable",
+      "count": 13,
+      "id": "place-buyeo",
+      "indexType": "지명",
+      "kind": "region",
+      "label": "扶餘",
+      "labelKo": "부여(부여 지역·부여성)",
+      "note": "XML 문맥 확인: 지명 색인 扶餘 13회는 고구려본기의 부여 지역, 수·당 원정군의 扶餘道, 고구려 扶餘城(668년 함락), 지리지의 扶餘府 등 만주의 부여이며 충남 부여(사비)가 아님. 지린시 동단산·남성자설은 이번 조사에서 출처를 확인하지 못함. 기존 place-dongbuyeo(東夫餘)와는 다른 항목.",
+      "relatedTo": [
+        "polity-buyeo"
+      ],
+      "status": "disputed"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '졸본': \"현재의 중화인민공화국 랴오닝성 번시 시 환런 현 오녀산성으로 비정된다\", \"성은 압록강의 지류인 혼강 유역에 위치하였다\". 위키백과 '고구려': \"기원전 37년 주몽은 졸본중 오녀산성을 도읍으로 삼고\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q3322194",
+          "lat": 41.3267,
+          "lon": 125.4117,
+          "precision": "site",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/졸본",
+          "validFrom": -37,
+          "validTo": null,
+          "view": "통설(환런 오녀산성)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 12,
+      "id": "place-jolbon",
+      "indexType": "지명",
+      "kind": "capital",
+      "label": "卒本",
+      "labelKo": "졸본",
+      "note": "환런 분지 안의 다른 후보(하고성자 등)는 이번 조사에서 출처를 확인하지 못함. 색인 이체 표기 卒夲(9회)도 같은 지명.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/고구려"
+      ],
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '대방군': \"대방군의 치소는 황해북도 사리원시에 있는 속칭 당토성(唐土城)으로 추정되고 있다.\" 3세기 초 공손강 설치, 314년 고구려에 멸망.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q505807",
+          "lat": 38.502,
+          "lon": 125.7587,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/대방군",
+          "validFrom": 204,
+          "validTo": 314,
+          "view": "통설(사리원 당토성)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 12,
+      "id": "place-daebang",
+      "indexType": "지명",
+      "kind": "place",
+      "label": "帶方",
+      "labelKo": "대방",
+      "note": "기존 places.json의 place-daebang(帶方界)은 요동 방면설 후보를 출처 없이 두었으나, 이번 조사에서는 출처 문장을 확인한 사리원설만 넣는다. 위키백과 '낙랑군'의 요동설(북한 학계)이 대방에도 이어지는지는 그 항목에 명시돼 있지 않음.",
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '하서주': \"주치(州治)는 지금의 강릉시이고\". 실직주(505)→하슬라주→하서주→명주(757).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42056",
+          "lat": 37.7556,
+          "lon": 128.8961,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/하서주",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 12,
+      "id": "place-haseoju",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "河西州",
+      "labelKo": "하서주",
+      "note": "place-haseo(河西)와 같은 자리.",
+      "relatedTo": [
+        "place-haseo"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '한수': \"한수(漢水)는 한국의 한강을 부르던 옛 이름 중 하나이다.\" 좌표는 한강(Wikidata 대표점).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q55500",
+          "lat": 37.5267,
+          "lon": 127.3106,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/한수",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 12,
+      "id": "place-hansu",
+      "indexType": "지명",
+      "kind": "river",
+      "label": "漢水",
+      "labelKo": "한수",
+      "note": "기존 place-arisu(阿利水)와 같은 강.",
+      "relatedTo": [
+        "place-arisu"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '랴오허': \"랴오허는 현대 랴오닝성을 랴오둥('랴오 동쪽')과 랴오시('랴오 서쪽')라는 두 개의 넓은 지역으로 나누는 중요한 지리적 경계선이기도 하다\". XML 문맥의 용례는 '渡遼'·'到遼'·'遼左'(sg_020)로 요하 도하·요동 도착을 뜻함. 좌표는 랴오허 하구.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q559661",
+          "lat": 40.6692,
+          "lon": 122.1489,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/랴오허",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "probable",
+      "count": 12,
+      "id": "place-yo",
+      "indexType": "지명",
+      "kind": "region",
+      "label": "遼",
+      "labelKo": "요(요하·요동)",
+      "note": "한 글자 지명이라 강(요수)과 지역(요동)을 겸함. 점이 아니라 선·면으로 그릴 대상.",
+      "relatedTo": [
+        "place-yosu",
+        "place-yodong"
+      ],
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '요수': \"요수(遼水)는 중화인민공화국 북동부의 강이다\" → 랴오허 항목으로 연결. 좌표는 랴오허 하구.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q559661",
+          "lat": 40.6692,
+          "lon": 122.1489,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/요수",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 12,
+      "id": "place-yosu",
+      "indexType": "지명",
+      "kind": "river",
+      "label": "遼水",
+      "labelKo": "요수",
+      "note": "요수를 난하 등 다른 강으로 보는 이설은 이번 조사에서 출처를 확인하지 못함.",
+      "relatedTo": [
+        "place-yo"
+      ],
+      "status": "majority"
+    },
+    {
+      "candidates": [],
+      "confidence": "confirmed",
+      "count": 11,
+      "id": "place-samnyeon-mistag",
+      "indexType": "지명",
+      "kind": "place",
+      "label": "三年",
+      "labelKo": "삼년(색인 오태깅)",
+      "notAPlace": true,
+      "note": "지명이 아니다. XML 문맥 확인 결과 '三年, 春二月, 親祀始祖廟'(sg_003_0020_0040)처럼 재위 연차의 三年(十三年·三十三年의 일부 포함)이 국편 색인에서 지명으로 태깅된 것. 보은 三年山城과 혼동하지 말 것. 좌표 없음.",
+      "status": "unlocated"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '무진주': \"757년 전국의 행정구역명칭에 대한 개혁이 이루어지자 무진주도 무주(武州)로 개명했다\"; 치소는 광주광역시 일원.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q41283",
+          "lat": 35.1667,
+          "lon": 126.9167,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/무진주",
+          "validFrom": 757,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 11,
+      "id": "place-muju",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "武州",
+      "labelKo": "무주",
+      "note": "place-mujinju(武珍州)와 같은 자리. 오늘날의 전북 무주와 무관.",
+      "relatedTo": [
+        "place-mujinju"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '사벌주': \"685년(신문왕 5년)에 비로소 전국에 9주가 정비되었는데, 이때는 일선주였으나 687년에 사벌주로 옮겼다\", \"주치(州治)는 지금의 상주시이고\", 757년 상주(尙州)로 개칭.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42163",
+          "lat": 36.4153,
+          "lon": 128.1606,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/사벌주",
+          "validFrom": 687,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 11,
+      "id": "place-sabeolju",
+      "indexType": "지명",
+      "kind": "province",
+      "label": "沙伐州",
+      "labelKo": "사벌주",
+      "note": "place-sangju-silla(上州)와 같은 자리.",
+      "relatedTo": [
+        "place-sangju-silla"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '한사군': \"기원전 75년(전한 소제 원봉 6년)에는 토착민의 반발로 현도군이 요동 방면(지금의 혼하(渾河) 상류의 흥경(興京) 노성(老城) 지방)으로 옮겨졌다.\" 위키백과 '현도군'도 혼하 상류 흥경 일대로 서술. 참조점은 신빈 만족자치현.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q1366676",
+          "lat": 41.7287,
+          "lon": 125.0308,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/한사군",
+          "validFrom": -75,
+          "validTo": 100,
+          "view": "제2현도군(흥경·신빈) — 통설"
+        },
+        {
+          "basis": "위키백과 '현도군': \"1세기 무렵부터 고구려가 성장하면서 현도군을 압박했고, 현도군은 다시 무순(撫順) 방면으로 이치되었다.\" validFrom 100은 '1세기 무렵' 서술을 근사한 값.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75026",
+          "lat": 41.8709,
+          "lon": 123.8917,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/현도군",
+          "validFrom": 100,
+          "validTo": null,
+          "view": "제3현도군(무순) — 통설"
+        },
+        {
+          "basis": "위키백과 '한사군'(제1현도군, 기원전 107~75): \"그 위치는 한반도 내에 있었다는 주장보다 유물과 사료로 볼 때, 요서와 요동일부 지역이라는 학설이 유력하다.\" 참조점은 요동의 랴오양(출처에 구체 지점 없음).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "lat": 41.2643,
+          "lon": 123.1772,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/한사군",
+          "validFrom": -107,
+          "validTo": -75,
+          "view": "제1현도군 — 요서·요동 일부설"
+        }
+      ],
+      "confidence": "probable",
+      "count": 11,
+      "id": "place-hyeondo-var",
+      "indexType": "지명",
+      "kind": "place",
+      "label": "玄莬",
+      "labelKo": "현도(이체자)",
+      "note": "설치(기원전 107)→이치(기원전 75)→재이치(1~2세기)로 세 번 자리를 옮긴 군. 제1현도군을 한반도 안(옥저 지역)으로 보는 주장은 위키백과 '한사군'이 언급만 하고 지점을 적지 않아 후보에서 뺌. 玄莬(11회)와 玄菟(10회)는 같은 지명의 이체 표기이며 후보를 공유.",
+      "status": "disputed",
+      "variantOf": "place-hyeondo"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '북천 (경주시)': \"《신증동국여지승람》에는 북천의 다른 이름이 알천(閼川)이라고 기록하고 있다.\" 위키백과 '신라 6부': \"「알천제방수개기(閼川堤防修改記)」가 경주시 동천동의 북천 북안에 남아 있어 현재의 북천이 오랜 기간 알천으로 불렸음을 확인할 수 있다.\" 참조점은 경주시.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42097",
+          "lat": 35.85,
+          "lon": 129.2167,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/북천_(경주시)",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설(경주 북천)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 11,
+      "id": "place-alcheon",
+      "indexType": "지명",
+      "kind": "river",
+      "label": "閼川",
+      "labelKo": "알천",
+      "note": "신라본기 초기의 閼川(알천 양산촌·알천에서 군사 사열 등). 경주 북천이 시가지 북쪽을 지나므로 참조점은 경주 시내로 둠.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/신라_6부"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '압록강': 송대 기록 \"色若鴨頭 號鴨淥水\"(물빛이 오리 머리 같아 압록수라 함)를 인용. 좌표는 압록강(Wikidata 대표점, 하구 쪽).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q55498",
+          "lat": 39.8342,
+          "lon": 124.3161,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/압록강",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 11,
+      "id": "place-amnok",
+      "indexType": "지명",
+      "kind": "river",
+      "label": "鴨渌",
+      "labelKo": "압록",
+      "note": "삼국사기 표기는 鴨渌(渌). 고대 압록수를 오늘날의 압록강이 아닌 강으로 보는 이설은 이번 조사에서 출처를 확인하지 못함. 鴨渌水(10회)와 같은 강.",
+      "relatedTo": [
+        "place-amnok-su"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '북원경': \"678년(문무왕 18년)에 북원소경을 설치하였다.\", \"지금의 원주시이다.\" 757년 북원경으로 개칭.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42131",
+          "lat": 37.3211,
+          "lon": 127.9214,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/북원경",
+          "validFrom": 678,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 10,
+      "id": "place-bugwon",
+      "indexType": "지명",
+      "kind": "capital",
+      "label": "北原",
+      "labelKo": "북원",
+      "note": "신라 5소경의 하나.",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '이천시': \"551년 신라 제24대 진흥왕 때 남천주로 군주(오늘날 도청소재지)를 두었다.\", 고구려 장수왕 63년에 남천현이라 불렸다고 서술. 위키백과 '한산주': \"568년(진흥왕 29년)에는 남한강의 남천(현 경기도 이천시)으로 옮겼다가\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42136",
+          "lat": 37.2792,
+          "lon": 127.4425,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/이천시",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 10,
+      "id": "place-namcheon",
+      "indexType": "지명",
+      "kind": "place",
+      "label": "南川",
+      "labelKo": "남천",
+      "note": "南川停 군단명으로도 쓰임(sg_040).",
+      "references": [
+        "https://ko.wikipedia.org/wiki/한산주"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '한사군': \"기원전 75년(전한 소제 원봉 6년)에는 토착민의 반발로 현도군이 요동 방면(지금의 혼하(渾河) 상류의 흥경(興京) 노성(老城) 지방)으로 옮겨졌다.\" 위키백과 '현도군'도 혼하 상류 흥경 일대로 서술. 참조점은 신빈 만족자치현.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q1366676",
+          "lat": 41.7287,
+          "lon": 125.0308,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/한사군",
+          "validFrom": -75,
+          "validTo": 100,
+          "view": "제2현도군(흥경·신빈) — 통설"
+        },
+        {
+          "basis": "위키백과 '현도군': \"1세기 무렵부터 고구려가 성장하면서 현도군을 압박했고, 현도군은 다시 무순(撫順) 방면으로 이치되었다.\" validFrom 100은 '1세기 무렵' 서술을 근사한 값.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75026",
+          "lat": 41.8709,
+          "lon": 123.8917,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/현도군",
+          "validFrom": 100,
+          "validTo": null,
+          "view": "제3현도군(무순) — 통설"
+        },
+        {
+          "basis": "위키백과 '한사군'(제1현도군, 기원전 107~75): \"그 위치는 한반도 내에 있었다는 주장보다 유물과 사료로 볼 때, 요서와 요동일부 지역이라는 학설이 유력하다.\" 참조점은 요동의 랴오양(출처에 구체 지점 없음).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "lat": 41.2643,
+          "lon": 123.1772,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/한사군",
+          "validFrom": -107,
+          "validTo": -75,
+          "view": "제1현도군 — 요서·요동 일부설"
+        }
+      ],
+      "confidence": "probable",
+      "count": 10,
+      "id": "place-hyeondo",
+      "indexType": "지명",
+      "kind": "place",
+      "label": "玄菟",
+      "labelKo": "현도",
+      "note": "설치(기원전 107)→이치(기원전 75)→재이치(1~2세기)로 세 번 자리를 옮긴 군. 제1현도군을 한반도 안(옥저 지역)으로 보는 주장은 위키백과 '한사군'이 언급만 하고 지점을 적지 않아 후보에서 뺌. 玄莬(11회)와 玄菟(10회)는 같은 지명의 이체 표기이며 후보를 공유.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/현도군",
+        "https://ko.wikipedia.org/wiki/한사군"
+      ],
+      "status": "disputed"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '죽령': \"충청북도 단양군 대강면과 경상북도 영주시 풍기읍 경계에 위치한 백두대간과 소백산맥의 고개이다.\" 좌표는 같은 항목 본문(36.9023368, 128.4353755).",
+          "lat": 36.9023,
+          "lon": 128.4354,
+          "precision": "site",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/죽령",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 10,
+      "id": "place-jukryeong",
+      "indexType": "지명",
+      "kind": "pass",
+      "label": "竹嶺",
+      "labelKo": "죽령",
+      "note": "신라본기 아달라왕 5년(158) 개통 기사가 있으나 위키백과 항목에는 그 연대가 없음.",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '청천강': \"옛 이름은 살수(薩水)이다.\" 위키백과 '살수 대첩': \"살수(지금의 청천강)를 건너 회군하던 중\". 좌표는 청천강(Wikidata 대표점).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q499266",
+          "lat": 39.5764,
+          "lon": 125.4522,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/청천강",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설(청천강)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 10,
+      "id": "place-salsu",
+      "indexType": "지명",
+      "kind": "river",
+      "label": "薩水",
+      "labelKo": "살수",
+      "note": "청천강 이외의 비정은 이번 조사에서 출처를 확인하지 못함.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/살수_대첩"
+      ],
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '압록강': \"色若鴨頭 號鴨淥水\" 인용. 鴨渌(11회)와 같은 강.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q55498",
+          "lat": 39.8342,
+          "lon": 124.3161,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/압록강",
+          "validFrom": null,
+          "validTo": null,
+          "view": "통설"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 10,
+      "id": "place-amnok-su",
+      "indexType": "지명",
+      "kind": "river",
+      "label": "鴨渌水",
+      "labelKo": "압록수",
+      "note": "place-amnok(鴨渌)의 이표기.",
+      "status": "established",
+      "variantOf": "place-amnok"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '당나라': \"수도: 장안(618년 ~ 904년)\", \"수도는 오늘날의 시안인 장안이었다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q5826",
+          "lat": 34.2611,
+          "lon": 108.9422,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/당나라",
+          "validFrom": 618,
+          "validTo": 904,
+          "view": "도읍 장안"
+        },
+        {
+          "basis": "위키백과 '당나라': \"낙양(904년 ~ 907년)\"; 동도(東都).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q187136",
+          "lat": 34.6587,
+          "lon": 112.4245,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/당나라",
+          "validFrom": 904,
+          "validTo": 907,
+          "view": "도읍 낙양"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 432,
+      "id": "polity-tang",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "唐",
+      "labelKo": "당",
+      "note": "국명 색인 1위(432회). 나라는 면이므로 도읍을 참조점으로 둔다. 大唐(36회)은 같은 나라.",
+      "relatedTo": [
+        "polity-tang-daetang"
+      ],
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '고구려': \"기원전 37년 주몽은 졸본중 오녀산성을 도읍으로 삼고 나라이름을 고구려라 개칭하였다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q3322194",
+          "lat": 41.3267,
+          "lon": 125.4117,
+          "precision": "site",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/고구려",
+          "validFrom": -37,
+          "validTo": 3,
+          "view": "도읍 졸본(오녀산성)"
+        },
+        {
+          "basis": "위키백과 '고구려': \"유리명왕은 3년 압록강 근처의 국내성으로 도읍을 천도하였다\". 위키백과 '국내성': \"중국 지린성 지안에 있는 통구성(通溝城)으로 보는 것이 통설이다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q711386",
+          "lat": 41.1208,
+          "lon": 126.1786,
+          "precision": "site",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/국내성",
+          "validFrom": 3,
+          "validTo": 427,
+          "view": "도읍 국내성(지안)"
+        },
+        {
+          "basis": "위키백과 '고구려': \"427년 종묘사직을 평양성으로 천도하였다\". 위키백과 '안학궁': 장수왕 15년(427) 건립, 평양직할시 대성구역.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q3361202",
+          "lat": 39.0618,
+          "lon": 125.834,
+          "precision": "site",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/안학궁",
+          "validFrom": 427,
+          "validTo": 586,
+          "view": "도읍 평양(안학궁·대성산성)"
+        },
+        {
+          "basis": "위키백과 '평양성 (고구려)': 586년 장안성으로 이전, \"주류 학계에서는 평양성이 지금의 ... 평양직할시 시가지에 위치했다고 추정\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q3078431",
+          "lat": 39.0235,
+          "lon": 125.757,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/평양성_(고구려)",
+          "validFrom": 586,
+          "validTo": 668,
+          "view": "도읍 장안성(평양 시가지)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 150,
+      "id": "polity-goguryeo",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "髙句麗",
+      "labelKo": "고구려",
+      "note": "도읍 이동을 시대 구분으로 붙였다. 국내성은 기존 place-gungnae와 같은 자리. 졸본·평양의 이설은 place-jolbon·place-pyongyang 참조.",
+      "relatedTo": [
+        "place-jolbon",
+        "place-gungnae",
+        "place-pyongyang"
+      ],
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '조위': \"220년~265년\", 수도 \"허창 (220년 ~ 226년)\", \"낙양 (226년 ~ 265년)\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q187136",
+          "lat": 34.6587,
+          "lon": 112.4245,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/조위",
+          "validFrom": 226,
+          "validTo": 265,
+          "view": "조위 도읍 낙양"
+        },
+        {
+          "basis": "위키백과 '북위 (북조)': \"398년에 수도를 평성(平城, 지금의 산서성 대동시)으로 옮겼고\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q72877",
+          "lat": 40.0936,
+          "lon": 113.2914,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/북위_(북조)",
+          "validFrom": 398,
+          "validTo": 493,
+          "view": "북위 도읍 평성(대동)"
+        },
+        {
+          "basis": "위키백과 '북위 (북조)': \"493년에 수도를 평성에서 낙양으로 천도하였다\"; 386년~534년.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q187136",
+          "lat": 34.6587,
+          "lon": 112.4245,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/북위_(북조)",
+          "validFrom": 493,
+          "validTo": 534,
+          "view": "북위 도읍 낙양"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 136,
+      "id": "polity-wei",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "魏",
+      "labelKo": "위(조위·북위)",
+      "note": "XML 문맥: 고구려본기 권17(동천왕대 관구검 등)의 魏는 조위, 권18~19(장수왕·문자명왕대 조공)의 魏는 북위. 조위 초기 허창(220~226)과 북위 초기 성락(386~398)은 좌표를 확보하지 못해 제외.",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '전한': \"기원전 202년\" 건국, \"기원후 8년\" 멸망, 수도 \"장안\"(시안).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q5826",
+          "lat": 34.2611,
+          "lon": 108.9422,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/전한",
+          "validFrom": -202,
+          "validTo": 8,
+          "view": "전한 도읍 장안"
+        },
+        {
+          "basis": "위키백과 '후한': \"기원후 25년~220년\", \"수도: 낙양→장안→허창\", \"수도를 낙양에 두었는데\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q187136",
+          "lat": 34.6587,
+          "lon": 112.4245,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/후한",
+          "validFrom": 25,
+          "validTo": 220,
+          "view": "후한 도읍 낙양"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 90,
+      "id": "polity-han",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "漢",
+      "labelKo": "한(전한·후한)",
+      "note": "XML 문맥: 신라본기 권7 문무왕 답설인귀서의 '漢兵'은 당군을 가리키는 용례라 국명 색인 漢이 전부 한나라는 아님.",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "민백 '말갈'(E0017802): \"말갈의 거주 지역은 만주 동북부의 송화강과 목단강, 흑룡강 일대에 넓게 분포하였는데\". 위키백과 '말갈': 속말말갈은 지린시 일대. 참조점은 지린시.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q92277",
+          "lat": 43.8461,
+          "lon": 126.5616,
+          "precision": "region",
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0017802",
+          "validFrom": null,
+          "validTo": null,
+          "view": "속말부(송화강 상류)"
+        },
+        {
+          "basis": "위키백과 '말갈' 7부 서술: 철리말갈은 하얼빈 지역. 참조점은 하얼빈.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42956",
+          "lat": 45.75,
+          "lon": 126.6333,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/말갈",
+          "validFrom": null,
+          "validTo": null,
+          "view": "철리부"
+        },
+        {
+          "basis": "위키백과 '말갈' 7부 서술: 불열말갈은 헤이룽장성(지시시·무단장시) 일대. 참조점은 무단장.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q217646",
+          "lat": 44.5861,
+          "lon": 129.5997,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/말갈",
+          "validFrom": null,
+          "validTo": null,
+          "view": "불열부"
+        }
+      ],
+      "confidence": "probable",
+      "count": 89,
+      "id": "polity-malgal",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "靺鞨",
+      "labelKo": "말갈",
+      "note": "백제본기(19회)·신라본기 초기의 말갈(장령·실직 침입 등)을 만주의 말갈이 아닌 예(濊) 계통 세력으로 보는 견해(이른바 위말갈설)가 있으나, 이번 조사에서 그 출처 문장을 확인하지 못해 후보에 넣지 않음. 백산부·흑수부는 참조점 근거가 약해 제외.",
+      "status": "disputed"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '야마토 왕권': \"나라 분지(奈良盆地) 등의 긴키 지방(近畿地方) 중앙부를 지배한 정권\", \"왜국(倭國)의 수장을 중심으로\", 3세기~701년. 참조점은 나라현.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q131287",
+          "lat": 34.6852,
+          "lon": 135.8329,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/야마토_왕권",
+          "validFrom": 200,
+          "validTo": 701,
+          "view": "야마토 정권(기나이)"
+        },
+        {
+          "basis": "위키백과 '왜': \"왜(倭)/왜국은 중국 등지에서 일본 열도 남서부에 위치했던 고대의 부족국가들을 일컫던 말이다.\" 참조점은 규슈.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q13987",
+          "lat": 33.0,
+          "lon": 131.0,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/왜",
+          "validFrom": null,
+          "validTo": null,
+          "view": "일본 열도 남서부(총칭)"
+        }
+      ],
+      "confidence": "probable",
+      "count": 83,
+      "id": "polity-wae",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "倭",
+      "labelKo": "왜",
+      "note": "신라본기 권1~3에 집중된 초기 왜의 실체(규슈 세력설 등)는 논쟁이 있으나 이번 조사에서 출처를 확인하지 못함. validFrom 200은 '3세기부터'를 근사한 값.",
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '수나라': 수도 \"대흥\"(시안) \"581년 ~ 605년\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q5826",
+          "lat": 34.2611,
+          "lon": 108.9422,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/수나라",
+          "validFrom": 581,
+          "validTo": 605,
+          "view": "도읍 대흥(장안)"
+        },
+        {
+          "basis": "위키백과 '수나라': \"동도\"(뤄양) \"605년 ~ 619년\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q187136",
+          "lat": 34.6587,
+          "lon": 112.4245,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/수나라",
+          "validFrom": 605,
+          "validTo": 619,
+          "view": "도읍 동도(낙양)"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 67,
+      "id": "polity-sui",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "隋",
+      "labelKo": "수",
+      "note": "",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '부여': \"부여(扶餘,夫餘, 기원전 4세기~494년)\", \"부여의 영토는 지금의 창춘시 이퉁강 유역을 중심으로\". 영문 위키백과 'Buyeo': \"Buyeo moved southwestward to Nong'an\". 좌표는 Wikidata 부여 항목 대표점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q28511",
+          "lat": 44.435,
+          "lon": 125.175,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/부여",
+          "validFrom": null,
+          "validTo": 494,
+          "view": "눙안·창춘설"
+        },
+        {
+          "basis": "영문 위키백과 'Buyeo': \"Having lost its stronghold on the Ashi River (within modern Harbin), Buyeo moved southwestward to Nong'an.\" 참조점은 하얼빈.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42956",
+          "lat": 45.75,
+          "lon": 126.6333,
+          "precision": "region",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Buyeo",
+          "validFrom": null,
+          "validTo": null,
+          "view": "초기 중심지 하얼빈(아시허)설"
+        }
+      ],
+      "confidence": "probable",
+      "count": 52,
+      "id": "polity-buyeo",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "扶餘",
+      "labelKo": "부여",
+      "note": "지린시 동단산·남성자를 왕성으로 보는 설은 이번 조사에서 출처를 확인하지 못함. 기존 place-dongbuyeo(東夫餘)와는 다른 항목. 지명 색인 扶餘(place-buyeo)와 후보 공유.",
+      "relatedTo": [
+        "place-buyeo",
+        "place-dongbuyeo"
+      ],
+      "status": "disputed"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '당나라': \"수도: 장안(618년 ~ 904년)\", \"수도는 오늘날의 시안인 장안이었다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q5826",
+          "lat": 34.2611,
+          "lon": 108.9422,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/당나라",
+          "validFrom": 618,
+          "validTo": 904,
+          "view": "도읍 장안"
+        },
+        {
+          "basis": "위키백과 '당나라': \"낙양(904년 ~ 907년)\"; 동도(東都).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q187136",
+          "lat": 34.6587,
+          "lon": 112.4245,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/당나라",
+          "validFrom": 904,
+          "validTo": 907,
+          "view": "도읍 낙양"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 36,
+      "id": "polity-tang-daetang",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "大唐",
+      "labelKo": "대당",
+      "note": "唐(polity-tang)의 존칭 표기.",
+      "status": "established",
+      "variantOf": "polity-tang"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '연 (춘추 전국)': \"기원전 11세기~기원전 222년\", 수도 \"계(薊) (베이징(北京) 팡산 구(房山區))\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q956",
+          "lat": 39.904,
+          "lon": 116.4075,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/연_(춘추_전국)",
+          "validFrom": -1100,
+          "validTo": -222,
+          "view": "전국 연 도읍 계"
+        },
+        {
+          "basis": "위키백과 '전연': \"337년~370년\", \"341년에는 용성으로 수도를 정했다\"(룽청구, 차오양시).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75336",
+          "lat": 41.5757,
+          "lon": 120.4486,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/전연",
+          "validFrom": 341,
+          "validTo": 353,
+          "view": "전연 도읍 용성"
+        },
+        {
+          "basis": "위키백과 '전연': \"353년에는 업으로 천도하였다\". 업은 오늘날 한단시 관할(린장현); 참조점은 한단.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q58570",
+          "lat": 36.6116,
+          "lon": 114.4894,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/전연",
+          "validFrom": 353,
+          "validTo": 370,
+          "view": "전연 도읍 업"
+        },
+        {
+          "basis": "위키백과 '후연': \"중산(384년 ~ 397년)\". 중산은 오늘날 딩저우; 참조점은 딩저우.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q645183",
+          "lat": 38.5158,
+          "lon": 114.9845,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/후연",
+          "validFrom": 384,
+          "validTo": 397,
+          "view": "후연 도읍 중산"
+        },
+        {
+          "basis": "위키백과 '후연': \"용성(397년 ~ 407년)\"(룽청구, 차오양시).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75336",
+          "lat": 41.5757,
+          "lon": 120.4486,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/후연",
+          "validFrom": 397,
+          "validTo": 407,
+          "view": "후연 도읍 용성"
+        },
+        {
+          "basis": "위키백과 '북연': \"407년~436년\", 수도 용성(룽청구, 차오양시); \"고구려의 귀족 출신인 고운이 후연을 멸망시키고 건국한 국가\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75336",
+          "lat": 41.5757,
+          "lon": 120.4486,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/북연",
+          "validFrom": 407,
+          "validTo": 436,
+          "view": "북연 도읍 용성"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 35,
+      "id": "polity-yan",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "燕",
+      "labelKo": "연(전국 연·전연·후연·북연)",
+      "note": "XML 문맥: 고구려본기 권18(32회)의 燕은 전연(모용황·모용준)과 후연. 전연 건국(337)~341년 사이의 도읍은 위키백과 항목에서 확인하지 못해 제외.",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '양 (남조)': \"양(梁, 502년 ~ 557년)은 중국 남북조 시대 강남에 건국된 남조의 3번째 왕조이다\", 수도 건강(난징시).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q16666",
+          "lat": 32.0608,
+          "lon": 118.7789,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/양_(남조)",
+          "validFrom": 502,
+          "validTo": 557,
+          "view": "도읍 건강"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 32,
+      "id": "polity-liang",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "梁",
+      "labelKo": "양(남조)",
+      "note": "",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '가야': \"현재 김해시에 위치했던 변한의 금관가야\"; 전기 가야연맹 중심. 민백 '가야토기'(E0000283): \"4세기에는 김해 금관가야(金官加耶)양식\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42082",
+          "lat": 35.2342,
+          "lon": 128.8811,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/가야",
+          "validFrom": 42,
+          "validTo": 532,
+          "view": "금관가야(김해) — 전기"
+        },
+        {
+          "basis": "위키백과 '가야': \"고령지방의 대가야가 이후 후기 가야연맹의 주도권을 갖게 된다\"; 민백 '가야토기': \"5세기에는 ... 고령 대가야(大加耶)양식\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q50207",
+          "lat": 35.7303,
+          "lon": 128.2689,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/가야",
+          "validFrom": 400,
+          "validTo": 562,
+          "view": "대가야(고령) — 후기"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 29,
+      "id": "polity-gaya",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "加耶",
+      "labelKo": "가야",
+      "note": "연맹체라 중심이 둘. 함안(아라가야)·고성(소가야)은 언급되나 좌표를 확보하지 않음. validFrom 400은 '400년경'을 근사한 값.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0000283"
+      ],
+      "status": "majority"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '진 (남조)': \"진(陳, 557년 ~ 589년)은 중국 남북조 시대 강남 지방에 건국된 남조 최후의 왕조이다\", 수도 건강.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q16666",
+          "lat": 32.0608,
+          "lon": 118.7789,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/진_(남조)",
+          "validFrom": 557,
+          "validTo": 589,
+          "view": "도읍 건강"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 26,
+      "id": "polity-chen",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "陳",
+      "labelKo": "진(남조)",
+      "note": "",
+      "status": "established"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '마한': \"목지국의 위치는 충청남도 직산·성환·아산만 일대 또는 공주, 전라북도 익산 등지에 비정되고 있으나 정확한 위치는 알 수 없다.\" 참조점은 천안(직산).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42146",
+          "lat": 36.81,
+          "lon": 127.1475,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/마한",
+          "validFrom": null,
+          "validTo": null,
+          "view": "목지국 직산설"
+        },
+        {
+          "basis": "위키백과 '마한': 목지국을 공주에 비정하는 견해. 참조점은 공주.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42062",
+          "lat": 36.4556,
+          "lon": 127.1247,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/마한",
+          "validFrom": null,
+          "validTo": null,
+          "view": "목지국 공주설"
+        },
+        {
+          "basis": "위키백과 '마한': 목지국을 전라북도 익산에 비정하는 견해. 참조점은 익산.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42137",
+          "lat": 35.9439,
+          "lon": 126.9544,
+          "precision": "region",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/마한",
+          "validFrom": null,
+          "validTo": null,
+          "view": "목지국 익산설"
+        }
+      ],
+      "confidence": "probable",
+      "count": 23,
+      "id": "polity-mahan",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "馬韓",
+      "labelKo": "마한",
+      "note": "세력권은 \"임진강(또는 예성강) 이남의 경기도로부터 충청도·전라도\"(위키백과 '마한')라 면으로 그릴 대상이고, 점은 맹주국 목지국 후보만 둔다.",
+      "status": "disputed"
+    },
+    {
+      "candidates": [
+        {
+          "basis": "위키백과 '송 (남조)': \"420년~479년\", \"수도: 건강\"(난징).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q16666",
+          "lat": 32.0608,
+          "lon": 118.7789,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/송_(남조)",
+          "validFrom": 420,
+          "validTo": 479,
+          "view": "유송 도읍 건강"
+        },
+        {
+          "basis": "위키백과 '송나라': 북송 \"960년~1127년\", 수도 개봉(카이펑).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q208471",
+          "lat": 34.795,
+          "lon": 114.345,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/송나라",
+          "validFrom": 960,
+          "validTo": 1127,
+          "view": "북송 도읍 개봉"
+        },
+        {
+          "basis": "위키백과 '송나라': 남송 \"1127년~1279년\", \"임안(臨安)(지금의 항저우)로 도읍을 세웠다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q4970",
+          "lat": 30.25,
+          "lon": 120.1675,
+          "precision": "approx",
+          "sourceUrl": "https://ko.wikipedia.org/wiki/송나라",
+          "validFrom": 1127,
+          "validTo": 1279,
+          "view": "남송 도읍 임안"
+        }
+      ],
+      "confidence": "confirmed",
+      "count": 21,
+      "id": "polity-song",
+      "indexType": "국명",
+      "kind": "polity",
+      "label": "宋",
+      "labelKo": "송(유송·북송·남송)",
+      "note": "XML 문맥: 고구려본기 권18·백제본기 권25~26의 宋은 유송(조공 기사), 신라본기 권12(김부식이 정화 연간 입송)·잡지의 宋은 북송.",
+      "status": "established"
+    }
+  ]
+}
