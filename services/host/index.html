@@ -260,6 +260,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 
 <script type="module">
 import { Timeline } from './app/timeline.js';
+import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
 
 const state = {
@@ -328,7 +329,7 @@ function searchAll(text){
 }
 {
   const qEl = document.getElementById('q'), qList = document.getElementById('qList');
-  const escq = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+  const escq = escH;
   qEl.addEventListener('input', () => {
     const hits = searchAll(qEl.value);
     qList.innerHTML = hits.map(h => `<button type="button" data-id="${escq(h.id)}">${escq(h.label)}<small>${escq(h.han||'')} · ${TYPE_KO[h.type]||escq(h.type||'')}</small></button>`).join('');
@@ -362,7 +363,6 @@ function mountTimeline(){
 
 // ── 이 해의 기록 — 국편이 연대를 붙인 기사(dateOccured) 중 현재 연도의 것 ──
 const yearText = y => y < 0 ? `기원전 ${-y}년` : `서기 ${y}년`;
-const escH = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
 const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
 let yearSeq = 0, yearTimer = 0, yearPanelSeq = 0;
 function refreshEvidence(){
@@ -393,7 +393,7 @@ async function showYear(){
     <h3>${yearText(y)}</h3>
     <div class="han">이 해로 연대가 붙은 기사 — 국편 dateOccured 기준. 연대가 없는 기사(비문·삼국유사 대부분)는 여기 없다.</div>
     <div class="sect" style="margin-top:20px">기록 ${r.total}</div>
-    <div class="auto">${by || '켜진 사료에 이 해의 기사가 없다'}</div>
+    <div class="auto">${escH(by) || '켜진 사료에 이 해의 기사가 없다'}</div>
     ${r.chunks.map(c => chunkCard(c, [])).join('')}
     ${r.total > r.chunks.length ? `<p class="empty" style="margin-top:10px">${r.total}건 중 앞 ${r.chunks.length}건만 보인다.</p>` : ''}`;
 }
@@ -401,8 +401,7 @@ document.getElementById('yearBtn').addEventListener('click', showYear);
 
 /** 원문 조각 카드 — 근거 패널과 '이 해의 기록'이 같이 쓴다. names 는 강조할 이름들 */
 function chunkCard(c, names){
-  let t = escH(c.text).replace(/□/g,'<span class="gap">□</span>');
-  for(const n of names) t = t.replaceAll(n, `<span class="hit">${n}</span>`);
+  const t = highlightText(c.text, names);
   // 국편 chunk 의 date 는 {raw:"0919-09-99L0", label:"919년 9월 미상"} 꼴, 비문 chunk 는 없다
   const dateText = c.date == null ? '' : (typeof c.date === 'object' ? (c.date.label || c.date.raw || '') : String(c.date));
   const loc = c.locator || '';
@@ -412,14 +411,14 @@ function chunkCard(c, names){
     loc ? escH(loc) : '',
   ].filter(Boolean).join(' · ');
   const counts = [
-    c.missingCount!=null ? `결자 ${c.missingCount}` : '',
-    c.hanjaCount!=null ? `한자 ${c.hanjaCount}` : '',
+    c.missingCount!=null ? `결자 ${escH(c.missingCount)}` : '',
+    c.hanjaCount!=null ? `한자 ${escH(c.hanjaCount)}` : '',
   ].filter(Boolean).join(' · ');
-  const link = c.permalink ? ` · <a href="${escH(c.permalink)}" target="_blank" rel="noopener">원문 보기</a>` : '';
+  const link = externalLink(c.permalink, '원문 보기');
   return `<div style="margin-top:14px">
     <div class="srcname">${escH(srcLabelOf(c.sourceId))}</div>
     <div class="quote">${t}</div>
-    <div class="srcline">${meta}<br><code>${escH(c.id)}</code>${counts ? ' · ' + counts : ''}${link}</div></div>`;
+    <div class="srcline">${meta}<br><code>${escH(c.id)}</code>${counts ? ' · ' + counts : ''}${link ? ' · ' + link : ''}</div></div>`;
 }
 
 function renderRail(){
@@ -431,8 +430,8 @@ function renderRail(){
     row.className = 'srcrow';
     const b = document.createElement('button');
     b.className = 'src' + (state.on.has(s.id) ? ' on' : '');
-    b.innerHTML = `<span class="dot"></span><span class="t">${s.label||s.id}
-      <em>${s.composedYear!=null?s.composedYear+'년 편찬':''} · chunk ${s.chunkCount||0}</em></span>`;
+    b.innerHTML = `<span class="dot"></span><span class="t">${escH(s.label||s.id)}
+      <em>${s.composedYear!=null?escH(s.composedYear)+'년 편찬':''} · chunk ${escH(s.chunkCount||0)}</em></span>`;
     const cb = document.createElement('button');
     cb.className = 'card-btn'; cb.type = 'button'; cb.dataset.id = s.id; cb.title = '사료 카드 — 출처·라이선스·연도 근거';
     cb.textContent = '카드';
@@ -451,7 +450,7 @@ function renderRail(){
 
 // ── 사료 카드 — 머리말(연도·라이선스·편찬자)과 본문(연도를 이렇게 잡은 이유, 담고 있는 것, 조심할 것) ──
 function mdLite(md){
-  const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const esc = escH;
   const inline = t => esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`([^`]+)`/g,'<code>$1</code>');
   const lines = String(md).replace(/<!--[\s\S]*?-->/g,'').split('\n');
   const out = []; let para = [], list = null, table = null;
@@ -497,14 +496,14 @@ async function showSource(id){
     ['엮은이', f.compiler || '미상'],
     ['원문 조각', (f.chunkCount || 0).toLocaleString('ko-KR')],
     ['이용허락', f.licenseDetail || f.license || '미확인'],
-    ['확인', f.licenseVerifiedAt ? `${escH(f.licenseVerifiedAt)}${f.licenseVerifiedVia ? ` · <a href="${escH(f.licenseVerifiedVia)}" target="_blank" rel="noopener">페이지</a>` : ''}` : '미확인'],
-    ['상태', `${escH(f.status || '')}${f.defaultLens ? ' · 기본 렌즈' : ''}`],
+    ['확인', f.licenseVerifiedAt || '미확인'],
+    ['상태', `${f.status || ''}${f.defaultLens ? ' · 기본 렌즈' : ''}`],
   ];
   el.innerHTML = `
     <h3>${escH(f.label || id)}</h3>
     <div class="han">${escH(f.labelHanja || '')}${f.sourceKind ? ` · ${escH(f.sourceKind)}` : ''}</div>
     <span class="badge ent">사료 카드</span>
-    <table class="facts">${facts.map(([k,v]) => `<tr><th>${k}</th><td>${typeof v === 'string' && /<a /.test(v) ? v : escH(v)}</td></tr>`).join('')}</table>
+    <table class="facts">${facts.map(([k,v]) => `<tr><th>${k}</th><td>${escH(v)}${k === '확인' ? ' ' + externalLink(f.licenseVerifiedVia, '페이지') : ''}</td></tr>`).join('')}</table>
     <div class="auto">${escH(r.file)}</div>
     <div class="card">${mdLite(r.body || '')}</div>`;
 }
@@ -679,25 +678,25 @@ async function select(id){
   // 이름 변형(aliases)까지 본다 — 비문은 平穰, 삼국사기는 平壤. 표기가 달라도 같은 자리를 말한다.
   const names = [p.label, ...(p.aliases || [])].filter(Boolean);
 
-  const esc0 = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const esc0 = escH;
   const span = c => (c.validFrom==null && c.validTo==null) ? '' :
     ` · ${c.validFrom==null ? '' : (c.validFrom < 0 ? '기원전 '+(-c.validFrom) : c.validFrom)}~${c.validTo==null ? '' : (c.validTo < 0 ? '기원전 '+(-c.validTo) : c.validTo)}`;
   const cands = p.entityType ? '' : p.candidates.length
     ? p.candidates.map(c => `<div class="cand${candActive(c) ? '' : ' off'}">
-        <div class="co">${c.lat.toFixed(4)}, ${c.lon.toFixed(4)} · ${esc0(c.precision)}${c.view ? ' · ' + esc0(c.view) : ''}${span(c)}</div>
-        <div class="bs">${esc0(c.basis)}${c.sourceUrl ? ` <a href="${esc0(c.sourceUrl)}" target="_blank" rel="noopener">출처</a>` : ''}</div></div>`).join('')
+        <div class="co">${c.lat.toFixed(4)}, ${c.lon.toFixed(4)} · ${esc0(c.precision)}${c.view ? ' · ' + esc0(c.view) : ''}${escH(span(c))}</div>
+        <div class="bs">${esc0(c.basis)} ${externalLink(c.sourceUrl, '출처')}</div></div>`).join('')
     : `<p class="unloc" style="margin-top:12px"><b>위치가 정해지지 않았다.</b>
        비정안이 여럿이거나 확정된 것이 없다. 이 시스템은 판정하지 않으므로 지도에 점을 찍지 않는다.</p>`;
 
   const head = `
-    <h3>${p.labelKo}</h3>
-    <div class="han">${names.join(' · ')}</div>
-    <span class="badge ${p.status}">${
+    <h3>${escH(p.labelKo)}</h3>
+    <div class="han">${escH(names.join(' · '))}</div>
+    <span class="badge ${escH(p.status)}">${escH(
       p.entityType ? (TYPE_KO[p.entityType]||p.entityType) :
-      ({established:'위치 확정',majority:'통설',disputed:'비정이 갈림',unlocated:'위치 미정'}[p.status]||p.status)}</span>${
+      ({established:'위치 확정',majority:'통설',disputed:'비정이 갈림',unlocated:'위치 미정'}[p.status]||p.status))}</span>${
       p.origin === 'ai' ? '<span class="badge ai">조사(자동) · 미확인</span>' : ''}
     ${cands}
-    ${p.note ? `<p class="note">${p.note}</p>` : ''}`;
+    ${p.note ? `<p class="note">${escH(p.note)}</p>` : ''}`;
   el.innerHTML = head + `<div class="sect" style="margin-top:20px">원문 근거</div><p class="empty" style="margin-top:12px">찾는 중…</p>`;
 
   const seq = ++selSeq;
@@ -715,7 +714,7 @@ async function select(id){
 
   const srcLabel = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
   // ── 주장(Claim) — 온톨로지 층. 어긋나는 주장도 나란히, 판정하지 않는다 ──
-  const esc1 = t => String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const esc1 = escH;
   const labelOf = eid => {
     const q = state.places.find(x=>x.id===eid); if(q) return q.labelKo;
     const e = state.entities.find(x=>x.id===eid); return e ? `${e.label}${e.labelHanja ? ' ' + e.labelHanja : ''}` : eid;
@@ -724,7 +723,7 @@ async function select(id){
     if(o == null) return '';
     if(typeof o !== 'object') return esc1(o);
     if(o.kind === 'literal') return `“${esc1(o.value)}”`;
-    if(o.kind === 'year') return `<b>${o.value < 0 ? '기원전 ' + (-o.value) : o.value}년</b>`;
+    if(o.kind === 'year') return `<b>${escH(o.value < 0 ? '기원전 ' + (-o.value) : o.value)}년</b>`;
     if(o.kind === 'time') return `<b>${esc1(o.verbatim || o.id)}</b>${o.precision ? ` <span class="role">${esc1(o.precision)}</span>` : ''}`;
     if(o.kind === 'entity' || o.kind === 'ref' || o.id) return `<b>${esc1(labelOf(o.id || o.value))}</b>`;
     return esc1(JSON.stringify(o));
@@ -741,7 +740,7 @@ async function select(id){
       const pred = String(c.predicate || '').replace(/^syj:/,'');
       const conflict = c.role === 'subject' && conflictPreds.has(c.predicate);
       const q = c.quote ? `<div class="quote small">${esc1(c.quote)}</div>` : '';
-      const where = c.chunk ? `${srcLabel(c.chunk.sourceId)} · ${esc1(c.chunk.locator || c.chunk.id)}` : esc1(c.citesChunk || '');
+      const where = c.chunk ? `${escH(srcLabel(c.chunk.sourceId))} · ${esc1(c.chunk.locator || c.chunk.id)}` : esc1(c.citesChunk || '');
       return `<div class="claim${conflict ? ' conflict' : ''}">
         <div class="cl-head"><span class="pred">${esc1(pred)}</span> ${c.role === 'object' ? `<span class="role">이 지명이 목적어</span> ` : ''}${objText(c.object)}${
           conflict ? ' <span class="badge cf">값이 갈림</span>' : ''}
@@ -753,7 +752,6 @@ async function select(id){
     }).join('') : `<p class="empty" style="margin-top:10px">이 지명을 두고 세운 주장이 아직 없다${cl.allClaims ? ` (전체 주장 ${cl.allClaims}건)` : ''}.</p>`;
 
   const by = Object.entries(res.bySource||{}).map(([sid,n]) => `${srcLabel(sid)} ${n}`).join(' · ');
-  const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
   const ev = res.chunks.length
     ? res.chunks.map(c => chunkCard(c, names)).join('')
     : `<p class="empty" style="margin-top:12px">켜진 사료의 원문에서 이 이름을 찾지 못했다.</p>`;
@@ -766,7 +764,7 @@ async function select(id){
       conflictPreds.size ? ' 붉은 줄은 같은 술어에 값이 갈리는 주장 — 어느 쪽이 맞는지는 판정하지 않는다.' : ''}</div>
     ${claimsHtml}
     <div class="sect" style="margin-top:20px">원문 근거 ${res.total}</div>
-    <div class="auto">두 글자 이상 이름 또는 국명 색인의 정확 일치로 찾음(자동) · 사람이 확인한 연결 아님${by ? ' · ' + by : ''}</div>
+    <div class="auto">두 글자 이상 이름 또는 국명 색인의 정확 일치로 찾음(자동) · 사람이 확인한 연결 아님${by ? ' · ' + escH(by) : ''}</div>
     ${names.some(n => n.length === 1) ? '<div class="auto">한 글자 이름은 원문 자동 검색 안 함 · 국명 색인이 있는 사료에서 정확히 같은 국명만 찾는다.</div>' : ''}
     ${ev}${more}`;
 }
