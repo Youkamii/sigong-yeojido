@@ -13,7 +13,7 @@
 // 모르는 자리에 기둥을 꽂으면 그게 판정이다.
 
 import * as THREE from 'three';
-import { PALETTE, hexNum, mix } from './artbible.js';
+import { PALETTE, WHITE, hexNum, mix } from './artbible.js';
 import { makeMaterial } from './materials.js';
 import { makeGlow } from './style.js';
 import { canvasTexture } from './util.js';
@@ -161,7 +161,7 @@ function buildLand(geo) {
   return { group, rim };
 }
 
-function buildRivers(geo) {
+function buildRivers(geo, heightAt = null) {
   const group = new THREE.Group();
   group.name = 'rivers';
   const mat = new THREE.LineBasicMaterial({
@@ -178,7 +178,8 @@ function buildRivers(geo) {
     for (const line of lines) {
       const pts = line.map((pt) => {
         const [x, z] = toWorld(pt[0], pt[1]);
-        return new THREE.Vector3(x, LAND_DEPTH + 0.12, z);
+        const y = heightAt ? terrainY(Math.max(0, heightAt(pt[0], pt[1]))) + 0.15 : LAND_DEPTH + 0.12;
+        return new THREE.Vector3(x, y, z);
       });
       if (pts.length > 1) group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), mat));
     }
@@ -211,6 +212,170 @@ function buildSea(rim) {
 }
 
 /* ══════════════════════════════════════════════════════════════════
+   지형 — 실측 고도 격자 (NOAA ETOPO 2022 CC0 · data/geo/korea-elevation.json, #9)
+   폴리곤 클리핑 판 대신 격자로 땅을 세운다. 해수면(0 m)이 BASE_Y, 산은 그 위로 솟고
+   해저는 판 두께 안으로 눌러 넣는다. 디오라마는 BOX 에서 잘려 치마(skirt)로 막는다.
+   ══════════════════════════════════════════════════════════════════ */
+const BASE_Y = LAND_DEPTH;          // 해수면의 월드 높이 — 기존 부유판 두께와 같은 눈금
+const H_LAND = 10 / 2446;           // 백두산(격자값 2,446 m) → 10 유닛. 디오라마 과장
+const H_SEA = 0.0012;               // 해저 3,000 m → 3.6 유닛 아래. 판 두께 안에서만
+const SEABED_MIN_Y = 0.8;
+const SEABED_DROP = 0.3;              // 해저는 수면보다 최소 이만큼 아래 — 서해 갯벌(-1~-20 m)이 수면 위로 삐져나오지 않게
+const SEA_SURFACE_Y = BASE_Y - 0.02;
+
+/** 격자 쌍선형 보간 — (lon, lat) → 고도 m. 박스 밖은 0 */
+export function makeHeightAt(elev) {
+  const { cols, rows, lon0, lat0, step, heights } = elev;
+  return (lon, lat) => {
+    const fx = (lon - lon0) / step, fy = (lat - lat0) / step;
+    if (!(fx >= 0 && fy >= 0 && fx <= cols - 1 && fy <= rows - 1)) return 0;
+    const x0 = Math.min(cols - 2, Math.floor(fx)), y0 = Math.min(rows - 2, Math.floor(fy));
+    const tx = fx - x0, ty = fy - y0;
+    const h00 = heights[y0 * cols + x0], h10 = heights[y0 * cols + x0 + 1];
+    const h01 = heights[(y0 + 1) * cols + x0], h11 = heights[(y0 + 1) * cols + x0 + 1];
+    return (h00 * (1 - tx) + h10 * tx) * (1 - ty) + (h01 * (1 - tx) + h11 * tx) * ty;
+  };
+}
+
+/** 고도 m → 월드 y */
+export function terrainY(h) {
+  return h > 0 ? BASE_Y + h * H_LAND : Math.max(SEABED_MIN_Y, BASE_Y - SEABED_DROP + h * H_SEA);
+}
+
+// 고도별 정점색 — 전부 팔레트 혼합 (§1.1). 저지대는 식생 쪽, 산지는 흙·암반, 고봉은 밝은 뼈색.
+const C_SEABED = new THREE.Color(mix(PALETTE.NEUTRAL_INK, PALETTE.BASE_WATER, 0.35));
+const C_LOW = new THREE.Color(mix(PALETTE.BASE_STONE, PALETTE.BASE_VERDANT, 0.55));
+const C_MID = new THREE.Color(mix(PALETTE.BASE_STONE, PALETTE.BASE_VERDANT, 0.30));
+const C_HIGH = new THREE.Color(mix(PALETTE.BASE_STONE, PALETTE.BASE_EARTH, 0.40));
+const C_PEAK = new THREE.Color(mix(PALETTE.BASE_STONE, PALETTE.NEUTRAL_BONE, 0.45));
+function landColor(h, out) {
+  if (h <= 0) return out.copy(C_SEABED);
+  if (h < 150) return out.copy(C_LOW).lerp(C_MID, h / 150);
+  if (h < 700) return out.copy(C_MID).lerp(C_HIGH, (h - 150) / 550);
+  return out.copy(C_HIGH).lerp(C_PEAK, Math.min(1, (h - 700) / 1200));
+}
+
+/**
+ * 격자 → 지형 메시 + 치마 + 바닥 + 바다면. sub 는 격자 솎음(1 = 전부, 3 = 1/3).
+ * 반환 { group, rim } — rim 은 박스 모서리 거리(카메라 프레이밍용).
+ */
+function buildTerrain(elev, sub = 1) {
+  const group = new THREE.Group();
+  group.name = 'terrain';
+  const { cols, rows, step, lon0, lat0 } = elev;
+  sub = Math.max(1, Math.floor(sub));
+  const nx = Math.floor((cols - 1) / sub) + 1, nz = Math.floor((rows - 1) / sub) + 1;
+  const pos = new Float32Array(nx * nz * 3);
+  const col = new Float32Array(nx * nz * 3);
+  const uv = new Float32Array(nx * nz * 2);
+  const c = new THREE.Color();
+  for (let j = 0; j < nz; j++) {                    // j: 남 → 북
+    const r = Math.min(rows - 1, j * sub);
+    const lat = lat0 + r * step;
+    for (let i = 0; i < nx; i++) {
+      const ci = Math.min(cols - 1, i * sub);
+      const lon = lon0 + ci * step;
+      const h = elev.heights[r * cols + ci];
+      const [x, z] = toWorld(lon, lat);
+      const k = j * nx + i;
+      pos[k * 3] = x; pos[k * 3 + 1] = terrainY(h); pos[k * 3 + 2] = z;
+      landColor(h, c); col[k * 3] = c.r; col[k * 3 + 1] = c.g; col[k * 3 + 2] = c.b;
+      uv[k * 2] = x / 20; uv[k * 2 + 1] = z / 20;   // 디테일 범프 — 월드 20 유닛마다 한 바퀴
+    }
+  }
+  // 위에서 봤을 때 반시계(법선 +y) — 북쪽이 -z 이므로 (a, b, c)·(b, d, c)
+  const idx = new Uint32Array((nx - 1) * (nz - 1) * 6);
+  let q = 0;
+  for (let j = 0; j < nz - 1; j++) {
+    for (let i = 0; i < nx - 1; i++) {
+      const a = j * nx + i, b = a + 1, cc = a + nx, d = cc + 1;
+      idx[q++] = a; idx[q++] = b; idx[q++] = cc;
+      idx[q++] = b; idx[q++] = d; idx[q++] = cc;
+    }
+  }
+  const geom = new THREE.BufferGeometry();
+  geom.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  geom.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  geom.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+  geom.setIndex(new THREE.BufferAttribute(idx, 1));
+  geom.computeVertexNormals();
+  geom.computeBoundingSphere();
+
+  // §1.1 — 땅은 MAT_STONE. 정점색이 고도를 말하므로 재질색은 항등원(WHITE).
+  const land = new THREE.Mesh(
+    geom,
+    makeMaterial('MAT_STONE', { color: WHITE, vertexColors: true, roughness: 0.92, metalness: 0.0 })
+  );
+  land.name = 'land';
+  land.receiveShadow = true;
+  land.userData.fanGround = true;           // 받기만 한다 (engine._tagShadows)
+  group.add(land);
+
+  // 치마 — 박스 네 변을 y=0 까지 내려 막는다. 바닥도 덮는다.
+  const ring = [];
+  for (let i = 0; i < nx; i++) ring.push(0 * nx + i);                    // 남변 서→동
+  for (let j = 1; j < nz; j++) ring.push(j * nx + (nx - 1));             // 동변 남→북
+  for (let i = nx - 2; i >= 0; i--) ring.push((nz - 1) * nx + i);        // 북변 동→서
+  for (let j = nz - 2; j >= 1; j--) ring.push(j * nx + 0);               // 서변 북→남
+  const n = ring.length;
+  const spos = new Float32Array(n * 2 * 3);
+  for (let t = 0; t < n; t++) {
+    const k = ring[t];
+    spos[(t * 2) * 3] = pos[k * 3]; spos[(t * 2) * 3 + 1] = pos[k * 3 + 1]; spos[(t * 2) * 3 + 2] = pos[k * 3 + 2];
+    spos[(t * 2 + 1) * 3] = pos[k * 3]; spos[(t * 2 + 1) * 3 + 1] = 0; spos[(t * 2 + 1) * 3 + 2] = pos[k * 3 + 2];
+  }
+  const sidx = new Uint32Array(n * 6);
+  q = 0;
+  for (let t = 0; t < n; t++) {
+    const a = t * 2, b = ((t + 1) % n) * 2;
+    sidx[q++] = a; sidx[q++] = b; sidx[q++] = a + 1;
+    sidx[q++] = b; sidx[q++] = b + 1; sidx[q++] = a + 1;
+  }
+  const sgeom = new THREE.BufferGeometry();
+  sgeom.setAttribute('position', new THREE.BufferAttribute(spos, 3));
+  sgeom.setIndex(new THREE.BufferAttribute(sidx, 1));
+  sgeom.computeVertexNormals();
+  const skirtMat = makeMaterial('MAT_STONE', {
+    color: PALETTE.NEUTRAL_INK, roughness: 0.99, metalness: 0.0, side: THREE.DoubleSide, detail: false,
+  });
+  const skirt = new THREE.Mesh(sgeom, skirtMat);
+  skirt.name = 'skirt';
+  skirt.userData.fanNoShadow = true;
+  group.add(skirt);
+
+  // 바닥 (아래에서 올려다볼 때만 보인다)
+  const [wx0, wz0] = toWorld(elev.lon0, elev.lat1 != null ? elev.lat1 : lat0 + (rows - 1) * step);
+  const [wx1, wz1] = toWorld(elev.lon1 != null ? elev.lon1 : lon0 + (cols - 1) * step, lat0);
+  const bw = wx1 - wx0, bh = wz1 - wz0;
+  const bottom = new THREE.Mesh(new THREE.PlaneGeometry(bw, bh), skirtMat);
+  bottom.rotation.x = Math.PI / 2;          // 법선 -y
+  bottom.position.set((wx0 + wx1) / 2, 0, (wz0 + wz1) / 2);
+  bottom.name = 'bottom';
+  bottom.userData.fanNoShadow = true;
+  group.add(bottom);
+
+  // 바다면 — 박스 안에서만. 해수면 0 m 자리에서 해안선이 생긴다.
+  const sea = new THREE.Mesh(
+    new THREE.PlaneGeometry(bw, bh, 1, 1),
+    makeMaterial('MAT_WATER', {
+      color: PALETTE.BASE_WATER, transmission: 0,
+      roughness: 0.42, envMapIntensity: 0.7,
+      emissive: '#0a161c', emissiveIntensity: 0.35,
+      bumpScale: 0.02,                          // 프리셋에 없다 → undefined 면 NaN (buildSea 참고)
+    })
+  );
+  sea.rotation.x = -Math.PI / 2;
+  sea.position.set((wx0 + wx1) / 2, SEA_SURFACE_Y, (wz0 + wz1) / 2);
+  sea.receiveShadow = true;
+  sea.name = 'sea';
+  group.add(sea);
+
+  const rim = Math.max(Math.hypot(wx0, wz0), Math.hypot(wx1, wz1), Math.hypot(wx0, wz1), Math.hypot(wx1, wz0));
+  return { group, rim };
+}
+
+
+/* ══════════════════════════════════════════════════════════════════
    지명 — 홀로그램 광주
    ══════════════════════════════════════════════════════════════════ */
 
@@ -224,14 +389,14 @@ export const STATUS_COLOR = {
 
 const COLUMN_H = 30;
 
-function buildColumn(place, cand, index) {
+function buildColumn(place, cand, index, heightAt = null) {
   const color = STATUS_COLOR[place.status] || PALETTE.SECOND_SLATE;
   const [x, z] = toWorld(cand.lon, cand.lat);
   const primary = index === 0;
   const g = new THREE.Group();
   g.name = `place:${place.id}:${index}`;
   g.userData = { placeId: place.id, candIndex: index, primary, fanNodeId: place.id };
-  g.position.set(x, LAND_DEPTH, z);
+  g.position.set(x, heightAt ? terrainY(Math.max(0, heightAt(cand.lon, cand.lat))) : LAND_DEPTH, z);
 
   // 광주 — MAT_HOLO 로 세운다 (§홀로그램 물질화)
   const shaft = new THREE.Mesh(
@@ -320,34 +485,55 @@ function buildDisputeLink(a, b, color) {
    ══════════════════════════════════════════════════════════════════ */
 
 export class KoreaWorld {
-  constructor(geo, places) {
+  /**
+   * @param geo    Natural Earth 육지·하천 (하천은 지형 위에 얹는다; 육지 폴리곤은 고도 격자가 없을 때만)
+   * @param places 지명
+   * @param opts   { elev: data/geo/korea-elevation.json 내용, sub: 격자 솎음(1|2|3) }
+   */
+  constructor(geo, places, opts = {}) {
     this.group = new THREE.Group();
     this.group.name = 'korea';
     this.places = places;
     this.byPlace = new Map();
     this.pickTargets = [];
 
-    const land = buildLand(geo);
-    this.maxRim = Math.max(land.rim, 60);
-    this.group.add(land.group);
-    this.group.add(buildRivers(geo));
-    this.group.add(buildSea(this.maxRim));
+    const elev = opts.elev && Array.isArray(opts.elev.heights) ? opts.elev : null;
+    this.heightAt = elev ? makeHeightAt(elev) : null;
+    if (elev) {
+      const t = buildTerrain(elev, opts.sub || 1);
+      this.maxRim = Math.max(t.rim, 60);
+      this.group.add(t.group);
+    } else {
+      // 고도 격자가 없으면 예전 폴리곤 판 (클리핑 부산물이 남는다)
+      const land = buildLand(geo);
+      this.maxRim = Math.max(land.rim, 60);
+      this.group.add(land.group);
+      this.group.add(buildSea(this.maxRim));
+    }
+    this.group.add(buildRivers(geo, this.heightAt));
 
     const marks = new THREE.Group();
     marks.name = 'places';
+    // 디오라마 틀(BOX) 밖의 후보는 세우지 않는다 — 허공에 뜬 기둥은 거짓 위치처럼 읽힌다.
+    // 2D 지도와 근거 패널에는 그대로 나온다. 몇 개를 숨겼는지는 hiddenOutside 에 남긴다.
+    const inBox = (c) => c.lon >= BOX.lon0 && c.lon <= BOX.lon1 && c.lat >= BOX.lat0 && c.lat <= BOX.lat1;
+    this.hiddenOutside = [];
     for (const p of places) {
       if (!p.candidates?.length) continue;      // 미정은 세우지 않는다
-      const cols = p.candidates.map((c, i) => {
-        const col = buildColumn(p, c, i);
+      const cands = p.candidates.filter(inBox);
+      if (cands.length < p.candidates.length) this.hiddenOutside.push([p.id, p.candidates.length - cands.length]);
+      if (!cands.length) continue;
+      const cols = cands.map((c, i) => {
+        const col = buildColumn(p, c, i, this.heightAt);
         marks.add(col);
         this.pickTargets.push(col.userData.head);
         return col;
       });
       if (cols.length > 1) {
         const color = STATUS_COLOR[p.status] || PALETTE.SECOND_SLATE;
-        for (let i = 1; i < p.candidates.length; i++) {
-          const a = toWorld(p.candidates[0].lon, p.candidates[0].lat);
-          const b = toWorld(p.candidates[i].lon, p.candidates[i].lat);
+        for (let i = 1; i < cands.length; i++) {
+          const a = toWorld(cands[0].lon, cands[0].lat);
+          const b = toWorld(cands[i].lon, cands[i].lat);
           const link = buildDisputeLink(a, b, color);
           link.computeLineDistances();
           marks.add(link);
@@ -358,6 +544,7 @@ export class KoreaWorld {
     }
     this.group.add(marks);
     this.marks = marks;
+    if (this.hiddenOutside.length) console.info("[korea] 틀 밖이라 세우지 않은 후보:", this.hiddenOutside);
   }
 
   /** 연대에 따라 살고 죽는다 — 2D 지도와 같은 규칙 */

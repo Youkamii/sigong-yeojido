@@ -132,6 +132,13 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/sources":
             self._json({"sources": collect_sources()})
             return
+        if path == "/api/elevation":
+            p = DATA / "geo" / "korea-elevation.json"
+            if not p.exists():
+                self._json({"error": "no elevation grid"}, 404)
+                return
+            self._send(p.read_bytes(), "application/json; charset=utf-8")
+            return
         if path == "/api/geo":
             p = DATA / "geo" / "east-asia.geojson"
             if not p.exists():

@@ -503,7 +503,12 @@ async function init3d(){
   engine.applyMood(mood);
   if(engine.bakeEnvironment) engine.bakeEnvironment(mood);
 
-  const world = new KoreaWorld(state.geo, state.places);
+  // 실측 고도 격자(#9) — 없으면 폴리곤 판으로 떨어진다. ?q=low 는 격자를 1/3 로 솎는다(검증·저사양).
+  const q = new URLSearchParams(location.search).get('q');
+  let elev = null;
+  try{ elev = await fetch('/api/elevation').then(r => r.ok ? r.json() : null); }
+  catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
+  const world = new KoreaWorld(state.geo, state.places, { elev, sub: q === 'low' ? 3 : 1 });
   engine.add(world.group);
   engine.setPickTargets(world.pickTargets);
   engine.onPick = (id) => { if(id) select(id); };
@@ -516,11 +521,11 @@ async function init3d(){
   if(engine.frameWorld) engine.frameWorld(world.maxRim);
   // 판톨로지 기본 프레이밍은 고도 약 25° — 디오라마 섬을 옆에서 보는 구도다.
   // 지도는 위에서 내려다봐야 읽힌다. 같은 거리에서 고도만 55° 로 세운다.
-  { const r = world.maxRim; const d = Math.hypot(r*1.15, r*0.86, r*1.45);
+  // 직교 카메라의 배율은 거리 하나가 정한다 — 박스 모서리(maxRim)가 다 들어오게 1.3배 물린다.
+  { const r = world.maxRim; const d = Math.hypot(r*1.15, r*0.86, r*1.45) * 1.3;
     const el = 55*Math.PI/180, az = -28*Math.PI/180;
     engine.camera.position.set(Math.sin(az)*Math.cos(el)*d, Math.sin(el)*d + 14, Math.cos(az)*Math.cos(el)*d);
     engine.controls.update(); }
-  const q = new URLSearchParams(location.search).get('q');
   if(q && engine.setQuality) engine.setQuality(q);   // 검증·저사양용 ?q=low
   engine.start((dt, t) => world.update(t));
   }catch(e){ console.error('[3D] init 실패', e); window.__sigongErr = String(e && e.stack || e); }
