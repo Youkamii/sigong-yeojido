@@ -238,7 +238,7 @@ def source_card(sid: str) -> dict:
         body = text[m.end():] if m else text
         fm = dict(fm)
         fm["id"] = sid
-        fm["chunkCount"] = len(read_jsonl(src_dir / md.stem / "chunks.jsonl"))
+        fm["chunkCount"] = next((x.get("chunkCount", 0) for x in index()["sources"] if x.get("id") == sid), 0)
         return {"id": sid, "found": True, "file": md.relative_to(ROOT).as_posix(), "frontmatter": fm,
                 "frontmatterRaw": m.group(1) if m else "", "body": body}
     return {"id": sid, "found": False}
@@ -437,10 +437,10 @@ class Handler(BaseHTTPRequestHandler):
             self._json(mentions(names, sources, limit) if names else {"chunks": [], "total": 0, "bySource": {}, "names": []})
             return
         if path == "/api/chunks":
-            self._json({"chunks": collect_chunks()})
+            self._json({"chunks": index()["chunks"]})     # 색인 캐시 — 파일 서명이 바뀔 때만 다시 읽는다
             return
         if path == "/api/sources":
-            self._json({"sources": collect_sources()})
+            self._json({"sources": index()["sources"]})
             return
         if path == "/api/elevation":
             p = DATA / "geo" / "korea-elevation.json"
