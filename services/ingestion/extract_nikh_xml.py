@@ -52,12 +52,16 @@ COLLAPSIBLE_WS = " \t\r\n\f\v"  # ASCII 공백만 접는다. 전각 공백(U+300
 # 검증한 데이터셋만 등록한다. 다른 국편 데이터셋은 --dataset 으로 직접 지정할 수 있다 (같은 DTD).
 SOURCES: dict[str, dict] = {
     "samguksagi": {"dataset": "15053635", "label": "삼국사기"},
+    "samgukyusa": {"dataset": "15053634", "label": "삼국유사"},   # 2026-09-05 검증: 153 조목, 王曆 은 표
+    "goryeosa": {"dataset": "15053637", "label": "고려사"},       # 2026-09-05 검증: 5,389 기사 + 73 절
 }
 
 # 본문에서 통째로 버리는 요소 — 원문이 아니라 국편의 편집 장치다
 DROP_TAGS = {"reference", "link", "illustration", "image", "caption"}
 # 태그만 벗기고 글자는 살리는 요소 (index 는 색인어로도 기록한다)
-INLINE_TAGS = {"index", "paragraph", "noteContent"}
+INLINE_TAGS = {"index", "paragraph", "noteContent", "noteTitle", "td"}
+# 표 — 행(tr)마다 줄바꿈, 셀(td) 사이는 공백. 열 구조는 원본 XML 로 돌아가야 한다 (삼국유사 王曆, 고려사 表)
+TABLE_BLOCK_TAGS = {"tableGroup", "table", "tr", "ul", "li"}   # 목록(ul/li)도 항목마다 줄바꿈 (삼국사기 目錄)
 
 
 def is_hanja(ch: str) -> bool:
@@ -164,6 +168,13 @@ class Article:
         elif tag == "index":
             self.index_terms.append({"type": el.get("type"), "text": term_text(el)})
             self.render(el, tb, parent_seq)
+        elif tag in TABLE_BLOCK_TAGS:
+            tb.newline()
+            self.render(el, tb, parent_seq)
+            tb.newline()
+        elif tag == "td":
+            self.render(el, tb, parent_seq)
+            tb.text(" ")
         else:
             if tag not in INLINE_TAGS:
                 self.unknown_tags[tag] += 1
@@ -235,11 +246,12 @@ def level1_label(level1: ET.Element) -> str:
 
 
 def extract_article(
-    level3: ET.Element, source: str, l1_label: str, l2_label: str
+    level3: ET.Element, source: str, l1_label: str, l2_label: str, chunk_type: str = "article"
 ) -> tuple[dict, Article]:
+    """level3 기사(article) 또는 level3 없이 본문을 직접 갖는 level2 절(section)을 chunk 하나로."""
     level_id = level3.get("id")
     if not level_id:
-        raise ExtractError("id 없는 level3")
+        raise ExtractError(f"id 없는 {level3.tag}")
 
     art = Article()
     tb = TextBuilder()
@@ -268,6 +280,7 @@ def extract_article(
     chunk = {
         "id": f"chunk_{source}_{level_id}",
         "sourceId": f"src-{source}",
+        "chunkType": chunk_type,
         "levelId": level_id,
         "permalink": PERMALINK.format(level_id=level_id),
         "locator": " › ".join(p for p in (l1_label, l2_label, title) if p),
@@ -308,26 +321,29 @@ def extract(source: str, zpath: Path) -> tuple[list[dict], dict]:
                 for level2 in level1.findall("level2"):
                     stats["level2"] += 1
                     l2_label = level_title(level2)
-                    if level2.find("text") is not None:
-                        # 宣撰·目錄·年表·跋文 — level3 없이 본문을 직접 갖는 절. chunk 로 만들지 않는다
-                        stats["level2DirectText"] += 1
-                        stats["annotationsOutsideLevel3"] += sum(
-                            1 for _ in level2.find("text").iter("annotation")
-                        )
-                        stats["indexTermsOutsideLevel3"] += sum(
-                            1 for _ in level2.find("text").iter("index")
-                        )
-                    for level3 in level2.findall("level3"):
-                        chunk, art = extract_article(level3, source, l1_label, l2_label)
+                    def take(chunk: dict, art: Article, key: str) -> None:
                         chunks.append(chunk)
                         unknown.update(art.unknown_tags)
                         for a in art.annotations:
                             ann_types[a["type"]] += 1
                         for t in art.index_terms:
                             idx_types[t["type"]] += 1
-                        stats["level3"] += 1
+                        stats[key] += 1
                         stats["dated"] += 1 if chunk["date"] else 0
                         stats["newChars"] += len(chunk["newChars"])
+
+                    if level2.find("text") is not None:
+                        # 宣撰·目錄·年表·跋文·志의 총론 — level3 없이 본문을 직접 갖는 절.
+                        # 2026-09-05 결정: chunkType=section 으로 chunk 화한다 (여기 붙은 주석·색인어를 버리지 않기 위해).
+                        # 같은 level2 에 level3 가 함께 있으면 절 chunk 가 먼저 온다.
+                        if level2.get("id"):
+                            chunk, art = extract_article(level2, source, l1_label, "", "section")
+                            take(chunk, art, "level2Section")
+                        else:
+                            stats["level2DirectNoId"] += 1
+                    for level3 in level2.findall("level3"):
+                        chunk, art = extract_article(level3, source, l1_label, l2_label)
+                        take(chunk, art, "level3")
 
     ids = [c["id"] for c in chunks]
     if len(ids) != len(set(ids)):
@@ -408,8 +424,8 @@ def main(argv: list[str]) -> int:
     print(f"index terms   : {idx_total}  {summary['indexTypes']}")
     print(f"newChar marks : {st.get('newChars', 0)}")
     print(
-        f"level2 direct : {st.get('level2DirectText', 0)} sections not chunked "
-        f"(annotations {st.get('annotationsOutsideLevel3', 0)}, index terms {st.get('indexTermsOutsideLevel3', 0)} left there)"
+        f"level2 section: {st.get('level2Section', 0)} chunked as chunkType=section"
+        + (f"  (id 없어 건너뜀 {st['level2DirectNoId']})" if st.get('level2DirectNoId') else "")
     )
     if summary["unknownTags"]:
         print(f"UNKNOWN TAGS  : {summary['unknownTags']}  <- check before trusting text")

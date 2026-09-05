@@ -120,3 +120,11 @@ chunk id 는 `chunk_samguksagi_{level3 id}` (예 `chunk_samguksagi_sg_001_0020_0
 폴백하므로, 링크를 검증할 때는 페이지 안의 `hoiLevelId` 와 기사 제목을 대조해야 한다.
 
 원본 zip 은 **손대지 않는다.** 가공은 전부 추출 단계에서 한다.
+
+## 2026-09-05 추가 — level2 절도 chunk 가 됐다
+
+처음 추출은 level3 기사 5,170개만 chunk 로 만들고, level3 없이 본문을 직접 갖는 level2 절 67개
+(권마다 붙은 宣撰 표제 50 · 目錄 2 · 年表 권29~31 의 표 14 · 跋文 1)는 건너뛰었다. 그 절에 붙은 주석 424건·색인어 780건이
+같이 빠져 총계가 국편 실측치(주석 3,339 · 색인어 14,667)에 못 미쳤다. 이제 그 절들도 `chunkType: section` 으로 chunk 다
+(id `chunk_samguksagi_{level2Id}`, 예 `chunk_samguksagi_sg_001_0010` = 권1 宣撰). 합 5,237 chunk, 주석 3,339, 색인어 14,667.
+年表는 XML 표(table)라 행마다 줄바꿈으로 펴 놓았다 — 열 구조는 원본 XML 에만 있다.
