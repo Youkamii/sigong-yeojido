@@ -160,7 +160,7 @@
 ## 7. 남은 일 (우선순위)
 
 1. §6 major 1~8 수정 → 하네스 12/12 → 커밋(#7 #4).
-2. Conflict 규칙: `validate.py` 에 `MULTI_VALUED_PREDICATES = {mentionedIn, describedAs, instructs, hasTitle, hasOutcome, subjectToRule}` 를 두고 (f) 충돌 집계에서 제외, `build_ttl.py` 도 같은 목록 import, `docs/02-schema.md` §11 에 명시. 뷰어 `index.html` 의 MULTI 와 같은 목록. `tests/fixtures/valid-conflict.md` 는 readsCharacterAs 라 영향 없음. 현재 12건 충돌은 전부 다치 술어라 0 이 된다.
+2. Conflict 규칙: `validate.py` 에 `MULTI_VALUED_PREDICATES = {mentionedIn, describedAs, instructs, hasTitle, hasOutcome, subjectToRule}` 를 두고 (f) 충돌 집계에서 제외, `build_ttl.py` 도 같은 목록 import, `docs/02-schema.md` §11 에 명시. 뷰어 `index.html` 의 MULTI 와 같은 목록. `tests/fixtures/valid-conflict.md` 는 readsCharacterAs 라 영향 없음. **재검증 정정:** 기존 12건 중 11건이 다치 술어다. `chunk_gwanggaeto_1-09`의 `readsCharacterAs`(海/每) 1건은 유지한다(#27).
 3. F5→F6 파이프라인 자동화: 데이터가 바뀌면 `build_ttl.py` → `fuseki.sh load`(또는 `fuseki_load.py --replace`). Fuseki 인메모리라 재시작하면 재적재 필요 — TDB2(`--tdb2 --loc .fuseki/db`) 로 바꿀지는 사용자 결정(§13 미결).
 4. 사료 3라운드 재개(#15 #16 #17) — c2 `~/work/corpus-*` 상태에서. 실록은 실록마다 Source 로 나누는 규칙표(왕대·완성 연도·출처) 필요. 45 MB 넘는 jsonl 은 커밋하지 않고 c2 작업본에만(README 규칙).
 5. 지명 2라운드(#18) 재실행. 결과는 `data/places-candidates-<src>.json`(서버가 병합).

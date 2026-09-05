@@ -61,6 +61,10 @@ DIGEST_ALGORITHM = (
 OBJECT_KINDS = ("entity", "literal", "year", "time", "location")
 ORIGINS = ("human", "ai")
 STATUSES = ("draft", "stable", "deprecated")
+MULTI_VALUED_PREDICATES = frozenset({
+    "syj:mentionedIn", "syj:describedAs", "syj:instructs",
+    "syj:hasTitle", "syj:hasOutcome", "syj:subjectToRule",
+})
 REQUIRED_TEXT_FIELDS = (
     "id",
     "subject",
@@ -516,8 +520,9 @@ def validate(
                 )
 
             # (f) 충돌 후보 — 같은 (subject, predicate)
-            canon = json.dumps(obj, sort_keys=True, ensure_ascii=False)
-            by_key.setdefault((claim["subject"], claim["predicate"]), {}).setdefault(canon, []).append(cid)
+            if claim["predicate"] not in MULTI_VALUED_PREDICATES:
+                canon = json.dumps(obj, sort_keys=True, ensure_ascii=False)
+                by_key.setdefault((claim["subject"], claim["predicate"]), {}).setdefault(canon, []).append(cid)
 
     for sd in report.digests.values():
         if sd.recorded:

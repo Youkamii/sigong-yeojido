@@ -54,6 +54,7 @@ from urllib.parse import quote as url_quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import validate as V  # noqa: E402  — services/validate.py: 주장 파서 · 검사 · 충돌 규칙
+from validate import MULTI_VALUED_PREDICATES
 
 ROOT = V.ROOT
 DATA_DIR = V.DATA_DIR
@@ -631,6 +632,8 @@ def check_references(graph: Graph, stats: ClaimStats, shells: dict[str, Shell], 
 def add_conflicts(graph: Graph, conflicts: list[dict]) -> None:
     for conflict in conflicts:
         subject, predicate = conflict["subject"], conflict["predicate"]
+        if predicate in MULTI_VALUED_PREDICATES:
+            continue
         m = PREDICATE_RE.match(predicate)
         local = m.group(1) if m else re.sub(r"[^A-Za-z0-9_-]", "_", predicate)
         n = graph.node("Conflict", f"conflict-{subject}-{local}")

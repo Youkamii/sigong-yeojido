@@ -259,6 +259,11 @@ syj:claim-identity-geunchogo a syj:Claim ;
 같은 `(subject, predicate)`에 서로 다른 값의 Claim이 둘 이상이면 빌드가 표시를 방출한다.
 사람이 손으로 적지 않는다.
 
+여러 값을 함께 가질 수 있는 `syj:mentionedIn`, `syj:describedAs`, `syj:instructs`,
+`syj:hasTitle`, `syj:hasOutcome`, `syj:subjectToRule`은 이 집계에서 제외한다.
+목록은 `services/validate.py`의 `MULTI_VALUED_PREDICATES`가 정본이고 TTL 빌더도 가져다 쓴다.
+뷰어의 `MULTI`도 같은 목록을 쓴다. `readsCharacterAs`처럼 판독이 다른 주장은 계속 나란히 표시한다.
+
 ```turtle
 syj:conflict-baekje-founding a syj:Conflict ;
     syj:aboutSubject syj:polity-baekje ;

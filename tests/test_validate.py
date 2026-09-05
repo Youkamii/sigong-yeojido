@@ -39,6 +39,24 @@ class DigestPolicyTests(unittest.TestCase):
             self.assertEqual(before, {p.relative_to(data): p.read_bytes() for p in data.rglob("*") if p.is_file()})
 
 
+class ConflictRulesTests(unittest.TestCase):
+    def test_multiple_values_are_allowed_but_reading_conflicts_remain(self):
+        chunks, failures = {}, []
+        V.load_chunks_file(ROOT / "tests/fixtures/chunks.jsonl", chunks, failures)
+        meta, claims = V.parse_claims_text((ROOT / "tests/fixtures/valid-conflict.md").read_text(encoding="utf-8"))
+        doc = V.ClaimsDoc(Path("fixture.md"), "fixture", "test", meta, claims)
+        report = V.validate(chunks, {}, [doc], {"test": None})
+        self.assertEqual(len(report.conflicts), 1)
+        self.assertFalse(report.failures)
+        for predicate in V.MULTI_VALUED_PREDICATES:
+            changed = copy.deepcopy(doc)
+            for claim in changed.claims:
+                claim["predicate"] = predicate
+            report = V.validate(chunks, {}, [changed], {"test": None})
+            self.assertEqual(report.conflicts, [], predicate)
+            self.assertFalse(report.failures)
+
+
 class ReadingCalendarTests(unittest.TestCase):
     def test_editor_note_reading_and_calendar_mismatch(self):
         from test_build_ttl import assemble
