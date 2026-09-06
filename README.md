@@ -13,10 +13,10 @@
 
 사료 적재·주장 검증·Fuseki, 2D·3D 지도, 그래프 탐색과 Claude Max 근거 챗봇이 동작한다.
 현대 연구 기본 렌즈·AI 제외·인물 검색·사료 비교·시간 환산·역사 경계 표시도 구현했다.
-주장 뼈대는 260개이며, 통사 자료의 빈 구간·한사군 위치 근거·고대 경계·역로·지리적 불가능 검사 등은 남아 있다.
+Claim 1,086개는 경계 레코드 연결 758개와 그 밖의 관계 328개이며, 통사 자료의 빈 구간·한사군 위치 근거·고대 경계·역로·지리적 불가능 검사 등은 남아 있다.
 전체 작업과 미검증 범위는 [TASKS.md](docs/TASKS.md)를 따른다.
 
-## 현재 데이터 (2026-09-06)
+## 현재 데이터 (2026-09-07)
 
 | 사료 묶음 | Source | chunk | 재현·검증 |
 |---|---:|---:|---|
@@ -28,20 +28,20 @@
 | 승정원일기 | 1 | 2,001,115 | [승정원일기 적재](docs/research/seungjeongwon-ilgi-ingestion.md) |
 | 비변사등록 | 1 | 93,801 | [비변사등록 적재](docs/research/bibyeonsa-deungnok-ingestion.md) |
 | 고종실록·순종실록·순종실록부록 | 3 | 33,633 | [고순종실록 적재](docs/research/gosunjong-sillok-ingestion.md) |
-| 추가 위치·인물·연대·근현대 발췌·역사 경계 | 41 | 104 | [전체 작업·근거](docs/TASKS.md) |
-| **c2 합계** | **996** | **2,567,024** | [운영 기록](docs/research/core-implementation-deployed.json) |
+| 추가 위치·인물·연대·근현대 발췌·역사 경계 | 44 | 837 | [전체 작업·근거](docs/TASKS.md) |
+| **c2 합계** | **999** | **2,567,757** | [운영 기록](docs/research/continued-deployed.json) |
 
-**새 Git 클론에는 카드 996개와 chunks 49,003개가 있다.** 실록 30종과 후대 사료의 전체 JSONL은 Git 밖의 c2
+**새 Git 클론에는 카드 999개와 chunks 49,754개가 있다.** 실록 30종과 후대 사료의 전체 JSONL은 Git 밖의 c2
 `data/sources/sillok-*/`, `seungjeongwon-ilgi/`, `bibyeonsa-deungnok/`에 보관한다.
 새 환경에서는 각 적재 문서의 명령으로 생성한다. 파일별 SHA256·독립 XML 집계·두 번 추출한 결과는 Git에 있다.
 금석문·집성의 원문 JSONL은 Git에 있다.
 집성은 ZIP에 있는 92종의 한국 관련 기사 발췌이며 원 사서 전체가 아니다. 포털 설명의 95종과 차이는 적재 문서에 기록했다.
-실록에서 실제 인용한 11개 JSON 객체는 `citation-chunks.jsonl`로 Git에 넣어 새 클론에서도 검증한다.
-전체 적재본이 있으면 모든 필드가 같은지 대조하고 한 번만 센다. [실제 새 복사본 검사](docs/research/citation-clean-clone-68.json)
+실록에서 실제 인용한 29개 JSON 객체는 `citation-chunks.jsonl`로 Git에 넣어 새 클론에서도 검증한다.
+전체 적재본이 있으면 모든 필드가 같은지 대조하고 한 번만 센다. [실제 새 복사본 검사](docs/research/citation-clean-clone-continued.json)
 
-Claim 260개·인용 chunk 177개·Location 221개·Conflict 6개다. 모두 AI 초안이며 사람 검토 완료 기록은 없다.
-직접 유적 좌표와 현대 지역 대표점, 근거가 부족한 조사 후보를 구별한다. 이름이 같다고 엔티티를 자동으로 합치지 않는다.
-역사 경계는 HGIS의 1910~1945년 도 경계 32개이며, 고대 국경이나 역로까지 확보한 것은 아니다.
+Claim 1,086개·인용 chunk 927개·Location 225개·Conflict 6개다. 모두 AI 초안이며 사람 검토 완료 기록은 없다.
+직접 유적 좌표·현대 대표점·CHGIS 학술 재구성 점·근거가 부족한 조사 후보를 구별한다. 이름이 같다고 엔티티를 자동으로 합치지 않는다.
+역사 경계는 HGIS의 도 32개·군·부 등 726개다. 행정 단계 선택과 이름 검색을 지원한다. 고대 국경·읍면 세부·역로는 남아 있다.
 근현대 자료는 문서 전사·연설·기관 해설·북한 작성 보고서의 짧은 발췌다. 전문 수집과 구별한다.
 
 ## 구조
@@ -91,7 +91,7 @@ API 준비를 확인한 뒤 접속한다. 검증·TTL 빌더는 인용된 원문
 API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,平穰` `/api/claims?subject=<id>&about=1`
 `/api/year?y=918` `/api/density` `/api/elevation` `/api/geo`
 `/api/chunk?id=<id>` `/api/graph?entity=<id>` `/api/time` `/api/people` `/api/locations`
-`/api/lenses` `/api/comparisons` `/api/compare?id=<id>` `/api/comparison-differences` `/api/history-map`.
+`/api/lenses` `/api/comparisons` `/api/compare?id=<id>` `/api/comparison-differences` `/api/history-map?level=1`(도)·`level=2`(군·부 등).
 근거 챗봇은 `POST /api/chat`에서 Claude CLI의 Max 구독을 사용한다.
 
 원문 목록은 `/api/chunks?offset=0&limit=120`으로 나눠 읽는다(`limit` 최대 500).
@@ -115,8 +115,8 @@ API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,�
 - 후대 사료: `scripts/verify_later_corpus.py` — 신규 5개 카드·사료 선택·연도별 원문·상위 날짜 보존 검사.
 - 패널 응답: `scripts/verify_panel_responses.py` — 원문 검색 응답을 늦춰도 실제 주장은 먼저 뜨고, 늦은 카드 응답이 최신 선택을 덮지 않는지 검사.
 - 전체 질의: `scripts/verify_core_questions.py --out /tmp/core-questions.json` — 실제 API·Fuseki, 모든 인용·사료 대조. 현재 8 PASS·Q6 PARTIAL.
-- 사료 비교·인물·시간·위치·역사 지도: `verify_comparison_discovery.py`, `verify_people.py`, `verify_time.py`, `verify_location_filters.py`, `verify_historical_map.py`.
+- 사료 비교·인물·시간·위치·역사 지도: `verify_comparison_discovery.py`, `verify_people.py`, `verify_time.py`, `verify_location_filters.py`, `verify_historical_map.py`, `verify_historical_districts.py`, `verify_hansagun_sites.py`.
 
 ## 작업 규약
 
-기능마다 GitHub 이슈 → 실행으로 검증 → 이슈 번호 붙인 커밋 → 푸시 전 적대 리뷰. 커밋 메시지는 다음 세션이 그것만 읽고 무엇을/왜 했는지 알 수 있게 쓴다.
+기능마다 GitHub 이슈를 연결하고 구현·필요한 검사·이슈 번호를 붙인 커밋·서버 반영을 진행한다. 개발·총괄은 Codex, 조사·수집은 Claude Opus 5 / Max effort이며 터미널 창을 열지 않는다. 커밋 메시지는 다음 세션이 그것만 읽고 무엇을/왜 했는지 알 수 있게 쓴다.

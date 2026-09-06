@@ -1,11 +1,50 @@
-# 인수인계 — 시공여지도 (2026-09-06, 그래프·챗봇·비교·시간·역사 지도 반영)
+# 인수인계 — 시공여지도 (2026-09-07, 군·부 지도·실록 관계·한사군 자료 반영)
 
 이 문서는 Claude 세션(2026-09-04~06)의 작업과 Codex가 이어서 반영한 결과를 적는다.
 하위 에이전트(워크플로)가 만든 것까지 포함한다. 사실은 **확인됨**(실행·화면으로 검증) / **미확인** 으로 나눠 적는다.
 
 ---
 
-## 최신 진행 — Codex, 기능·데이터 기준 `b52760b`
+## 최신 진행 — Codex, 기능·데이터 기준 `2fee775`
+
+군·부 등 경계 726개와 행정 단계 선택·이름 검색을 추가했다. 조선왕조실록 10종의 관계 90개,
+한사군 학술 GIS 재구성 점 4개와 지점 서술을 반영했다. 전체 범위와 남은 우선순위는 [TASKS.md](TASKS.md)에 있다.
+
+| 이번 구현·데이터 | 이슈 | 커밋 |
+|---|---|---|
+| HGIS 군·부 등 726개, 도/군·부 선택, 이름 검색, 원 도형 상태 | #72 | `81dbd8c` |
+| 실록 10종의 인물·관직·계보 90개, 원문 객체 18개 | #51 | `d21d112` |
+| CHGIS 재구성 4점·낙랑토성·푸순시 지점 서술 10개 Claim | #49 | `2cecd1e` |
+| 오래된 전체 빌드 검사의 인용·본문·OWL·충돌 판정 | #73 | `0d158b6` |
+| 검색 중 카드·연도 원문 파일 읽기 지연 | #74 | `2fee775` |
+
+- Source **999**, c2 chunk **2,567,757**, Git 추적 chunk **49,754**, Claim **1,086**.
+  이 중 HGIS 경계 레코드 연결 **758**, 그 밖의 관계 **328**이다. 인용 chunk **927**,
+  RDF Place **953**, Location **225**, Conflict **6**. 실제 Claim이 있는 Source **60**, 원문만 있는 Source **939**.
+- [현재 배포](research/continued-deployed.json)와 [운영 검사](research/continued-production-acceptance.json):
+  뷰어 **12/12**, 도 경계 **7개**, 군·부 등 **9개**, 한사군 지점·실록 관계·위치 필터 검사 통과.
+  Q1~Q9는 **8 PASS·Q6 PARTIAL**이며 1,086 Claim·927 인용 chunk를 실제 API에서 대조했다.
+- Python **94개**, JavaScript **13개**, 전체 TTL 검사 실패 **0**. 두 빌드 바이트 일치,
+  rdflib 재파싱 **44,188 트리플**, 4,845개 참조·digest·충돌 검사를 확인했다.
+  GitHub Actions와 별도 riot 검사는 **NOT_RUN**이다.
+- 새 빈 디렉터리에 Git 추적 파일만 풀어 검증했다. 실록 인용 복사본은 누적 **29개**이며
+  신규 **18개**도 c2 전체 JSON 객체와 대조했다. [새 복사본 검사](research/citation-clean-clone-continued.json)
+- c2와 로컬 TTL은 대용량 원문의 Source chunkCount 35개만 다르며 나머지는 일치한다.
+  [대조](research/continued-ttl-comparison.json). c2 TTL SHA256·PID·준비 시간은 배포 JSON을 따른다.
+- 조사 3건을 Claude Opus 5 / Max effort로 숨겨 실행했다. 실록 호출은 세션 한도로 종료됐으나
+  그 전에 저장한 10종의 초안 26개를 전수 대조해 90개 관계로 나눴다. [중단·반영 기록](research/joseon-coverage-51.md)
+- HGIS는 새 스크래핑 없이 기존 벌크 파일을 사용했다. 원 도형 4개의 자기 교차를 표시하고
+  좌표 해시를 보존했다. 1914년의 군·부 등 560개는 그해 변경 전·후 기록을 모두 포함한다.
+- CHGIS는 학술 재구성 점이며 유적의 실측점으로 표시하지 않는다. 음수 연도와 기간 코드가
+  미확인이라 원값을 보존한다. OSM 검색은 robots 제한으로 재대조하지 않아 공원 좌표를 넣지 않았다.
+  출처 미기재 옛 좌표의 잔여 노출은 #49의 출처 보완 범위에 남겼다.
+- c2 FinBridge :8891과 판톨로지 이식 코어·vendor를 유지했다. 터미널 창은 열지 않았다.
+  개발 경로는 `C:\Users\gkfkd\Git\sigong-yeojido`, 운영은 c2 `~/sigong-yeojido`다.
+
+#1~#74는 닫힘 64개·열림 10개다. #49·#51·#57의 전체 범위와 Q6은 여전히 부분 상태이며,
+기관 문의는 발송하지 않았다. 원래 §7의 11개는 8개 완료·2개 부분·1개 결정 대기다.
+
+## 이전 진행 — Codex, 기능·데이터 기준 `b52760b`
 
 **그래프·Claude Max 근거 챗봇·현대 연구 렌즈·AI 제외·인물 검색·사료 비교·시간 환산·역사 경계 표시를 구현했다.**
 F1~F6만 끝난 상태에서 범위를 넓혔으며, 전체 #1~#71과 남은 요구는 [TASKS.md](TASKS.md)에 있다.
@@ -205,7 +244,7 @@ PowerShell 입력 인코딩이 깨진 벌크 조사 시도 1건은 해당 프로
 
 한반도 중심 역사 온톨로지. 사료 원문 → chunk(JSONL) → 주장(Claim, 마크다운) → TTL → Fuseki. 화면은 대동여지도 진입 →
 2D 시간축 지도 + 판톨로지(fantology) 렌더링 코어를 그대로 이식한 3D 디오라마 + 사료별 시간 막대 타임라인 + 근거/주장 패널.
-c2에는 Source 996개·2,567,024 chunk·260 Claim이 있다. 2D·3D·그래프·근거 챗봇·사료 비교·시간·인물 검색이 동작하며 전체 남은 범위는 TASKS.md를 따른다.
+c2에는 Source 999개·2,567,757 chunk·1,086 Claim이 있다. 2D·3D·그래프·근거 챗봇·사료 비교·시간·인물 검색이 동작하며 전체 남은 범위는 TASKS.md를 따른다.
 
 ## 1. 사용자 요구사항 — 바뀌지 않는 것
 
@@ -228,8 +267,8 @@ c2에는 Source 996개·2,567,024 chunk·260 Claim이 있다. 2D·3D·그래프�
 | 옛 저장소 | `C:\Users\gkfkd\Git\Map-of-the-Great-East` — 비어 있음. `.claude/worktrees/` 에 워크플로 워크트리 13개(전부 GitHub 브랜치로 백업됨). 세션 끝나면 지워도 됨 |
 | 뷰어 서버 | c2 `:8870` — 저장소 루트에서 `python3 -u services/host/server.py --port 8870`. 백그라운드 실행, 로그 `/tmp/sigong-server.log`, pid 파일 `/tmp/sigong-server.pid`. 시작 시 전체 색인을 만드므로 API 준비까지 기다린다 |
 | 외부 URL | cloudflared 터널 `https://undertaken-coleman-interests-bruce.trycloudflare.com` (c2 pid 146152, 로그 /tmp/sigong-tunnel.log — 재시작하면 URL 이 바뀐다) |
-| Fuseki | c2 `~/sigong-yeojido/.fuseki/` (Temurin JRE 21 + Fuseki 6.2.0 포터블, sudo 없이). `scripts/fuseki.sh`로 시작·종료·상태·적재·질의. 127.0.0.1:3030, 데이터셋 `/sigong`, **인메모리(멈추면 데이터 사라짐)**. 17,136 트리플, pid 167737. `sync_fuseki.py --watch`가 소실 시 재적재 |
-| TTL | `python3 services/build_ttl.py` → `data/build/sigong.ttl` (gitignore). c2 전체 자료 802,750 B·17,136 트리플, SHA256은 최신 진행 절. 시험 빌드 94.81초·최대 RSS 571,784 KiB 관측 |
+| Fuseki | c2 `~/sigong-yeojido/.fuseki/` (Temurin JRE 21 + Fuseki 6.2.0 포터블, sudo 없이). `scripts/fuseki.sh`로 시작·종료·상태·적재·질의. 127.0.0.1:3030, 데이터셋 `/sigong`, **인메모리(멈추면 데이터 사라짐)**. 44,188 트리플, pid 167737. `sync_fuseki.py --watch`가 소실 시 재적재 |
+| TTL | `python3 services/build_ttl.py` → `data/build/sigong.ttl` (gitignore). c2 전체 자료 3,096,958 B·44,188 트리플, SHA256은 최신 진행 절. 시험 빌드 94.81초·최대 RSS 571,784 KiB 관측 |
 | 검증 하네스 | c2 `~/sigong-yeojido/.venv-build/bin/python scripts/verify_viewer.py --url "http://127.0.0.1:8870/?q=low" --out /tmp/verify` → 12항목 + PNG (`/tmp/verify/*.png`, scp 로 받아 눈으로 본다) |
 | 3D 진단 | `scripts/diag_3d.py` (컴포저/직접 렌더 비교, 픽셀 RGBA 샘플) |
 | 벌크 zip | c2 `~/sigong-yeojido/data/bulk/1505363{4,5,7}.zip` (gitignore). 에이전트 클론 `~/work/corpus-*/data/bulk/` 에 15053630·15053631·15053647 도 받아 둠 |
