@@ -22,6 +22,7 @@ class NameMatchingTests(unittest.TestCase):
         self.assertEqual(server.year_of("-0041-99-99"), -41)
         self.assertIsNone(server.year_of("05##-99-99"))
         self.assertIsNone(server.year_of("9999-99-99"))
+        self.assertIsNone(server.year_of("0000-01-10"))
         self.assertIsNone(server.year_of("12345-01-01"))
 
     def setUp(self):

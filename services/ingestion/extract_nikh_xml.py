@@ -57,6 +57,7 @@ SOURCES: dict[str, dict] = {
     "samgukyusa": {"dataset": "15053634", "label": "삼국유사"},   # 2026-09-05 검증: 153 조목, 王曆 은 표
     "goryeosa": {"dataset": "15053637", "label": "고려사"},       # 2026-09-05 검증: 5,389 기사 + 73 절
     "goryeosa-jeolyo": {"dataset": "15115521", "label": "고려사절요", "dateContext": True},
+    "korean-independence": {"dataset": "15115618", "label": "한국독립운동사자료", "dateContext": True},
     "joseon-sillok": {"dataset": "15053647", "label": "조선왕조실록"},
     "seungjeongwon-ilgi": {"dataset": "15064218", "label": "승정원일기", "dateContext": True},
     "bibyeonsa-deungnok": {"dataset": "15053636", "label": "비변사등록", "dateContext": True, "frontMatter": True},
@@ -69,6 +70,7 @@ DROP_TAGS = {"reference", "link", "illustration", "image", "caption"}
 INLINE_TAGS = {"index", "paragraph", "noteContent", "noteTitle", "td", "quotation", "postScript", "emph", "sup"}
 # 표 — 행(tr)마다 줄바꿈, 셀(td) 사이는 공백. 열 구조는 원본 XML 로 돌아가야 한다 (삼국유사 王曆, 고려사 表)
 TABLE_BLOCK_TAGS = {"tableGroup", "table", "tr", "ul", "li", "pTitle", "explanation"}
+DOCUMENT_INLINE_TAGS = {"name", "seal", "point", "qna", "단체", "sub", "number"}
 
 
 def is_hanja(ch: str) -> bool:
@@ -148,6 +150,7 @@ class Article:
         self.new_chars: list[dict] = []
         self.proofreadings: list[dict] = []
         self.paragraph_dates: list[dict] = []
+        self.document_markup: list[dict] = []
         self.unknown_tags: collections.Counter = collections.Counter()
 
     def render(self, el: ET.Element, tb: TextBuilder, parent_seq: int | None) -> None:
@@ -186,6 +189,12 @@ class Article:
             self.proofreadings.append({"type": el.get("type"), "offset": start,
                                       "end": tb.offset(), "parentSeq": parent_seq,
                                       "text": "".join(tb.parts[start:tb.offset()])})
+        elif tag in DOCUMENT_INLINE_TAGS:
+            start = tb.offset()
+            self.render(el, tb, parent_seq)
+            self.document_markup.append({'tag': tag, 'attributes': dict(el.attrib), 'offset': start,
+                                         'end': tb.offset(), 'parentSeq': parent_seq,
+                                         'text': ''.join(tb.parts[start:tb.offset()])})
         elif tag in TABLE_BLOCK_TAGS:
             tb.newline()
             self.render(el, tb, parent_seq)
@@ -354,6 +363,8 @@ def extract_article(
     }
     if art.paragraph_dates:
         chunk["paragraphDates"] = art.paragraph_dates
+    if art.document_markup:
+        chunk['documentMarkup'] = art.document_markup
     if source.startswith("sillok-"):
         chunk["permalink"] = f"https://sillok.history.go.kr/id/{level_id}"
         chunk["editionReferences"] = edition_references(level)

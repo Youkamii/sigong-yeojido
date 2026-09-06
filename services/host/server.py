@@ -241,7 +241,7 @@ def year_of(raw) -> int | None:
     if not m:
         return None
     y = int(m.group(1))
-    return None if y >= 9999 else y
+    return None if y == 0 or y >= 9999 else y
 
 
 def build_year_index(chunks: list[dict]) -> tuple[dict[int, list[int]], dict[str, dict[int, int]]]:

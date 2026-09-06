@@ -12,6 +12,26 @@ spec.loader.exec_module(extractor)
 
 
 class ExtractionTests(unittest.TestCase):
+    def test_document_questions_seals_names_and_nested_notes_preserve_text_and_markup(self):
+        xml = '''<level3 id="kd_001_001"><text><content><paragraph>甲<qna type="문">(問)</qna>
+        <name lang="kor">乙</name><seal>印</seal><point type="비점">丙</point><단체>丁</단체>
+        <sub>戊</sub><number type="1">己</number><annotation type="註"><noteContent>
+        <qna type="답">(答)</qna>庚</noteContent></annotation>辛</paragraph></content></text></level3>'''
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/'documents.zip'
+            with zipfile.ZipFile(path, 'w') as z:
+                z.writestr('one.xml', xml)
+            chunks, report = extractor.extract('korean-independence', path)
+        row = chunks[0]
+        self.assertEqual(row['text'], '甲(問) 乙印丙丁 戊己辛')
+        self.assertEqual(row['annotations'][0]['text'], '(答)庚')
+        self.assertEqual(report['unknownTags'], {})
+        self.assertEqual(len(row['documentMarkup']), 8)
+        for mark in row['documentMarkup']:
+            content = row['text'] if mark['parentSeq'] is None else row['annotations'][mark['parentSeq']-1]['text']
+            self.assertEqual(content[mark['offset']:mark['end']], mark['text'])
+        self.assertEqual(row['documentMarkup'][0]['attributes'], {'type': '문'})
+
     def test_later_annals_separate_three_series_and_preserve_parent_date_forms(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp)/'later.zip'
