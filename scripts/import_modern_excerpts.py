@@ -114,12 +114,15 @@ def main():
               'edition':'미확정 · 제3자 전사' if args.group=='dprk' else '기관 원문 발췌' if args.group=='presidential' else source['kind'],
               'generated_by':'claude-opus-5','translationStatus':'별도 번역본 미수록'}
         if args.group=='presidential':meta['license']='restricted'
-        if args.group=='dprk':meta['composedYear']=None
+        if args.group=='dprk':
+            meta['composedYear']=None
+            meta['sourceKind']='북한 헌법 발췌 (판본 미확정 제3자 전사)'
         if sid=='src-rok-constitution-1987':
             meta['sourceKind']='헌법 전사 발췌 (위키문헌)'
             meta['edition']='위키문헌 전사 · 기관 메타데이터 미포함'
         if sid=='src-armistice-1953':meta['narrativeVoice']='UN-command-and-korean-peoples-army-and-chinese-peoples-volunteers'
-        body='# '+label+'\n\n'+source['publisher']+'\n\n'
+        publisher='위키문헌 · 제3자 전사. 통일법제 데이터베이스의 연혁 메타데이터는 이번 발췌에 포함하지 않았다.' if args.group=='dprk' else source['publisher']
+        body='# '+label+'\n\n'+publisher+'\n\n'
         body+=f'[수록처]({resource}) · 열람 2026-09-06\n\n'
         body+=f'짧은 발췌·메타데이터 {len(chunks)}개를 현재 HTML과 대조했다. 전문 적재가 아니다.\n\n'
         if args.group=='wikisource':body+='기관이 소장한 원본과 대조한 전사본은 아니다. 원문·편집 메타데이터를 chunk 종류와 인용에서 구별한다.\n\n'
