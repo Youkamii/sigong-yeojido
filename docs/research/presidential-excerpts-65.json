@@ -1,0 +1,40 @@
+{
+  "group": "presidential",
+  "issue": 65,
+  "sourceIds": [
+    "src-pa-speech-records"
+  ],
+  "claims": [
+    "claim-rhee-oath-1948-07-24",
+    "claim-rhee-war-3rd-anniversary-1953-06-25"
+  ],
+  "withheld": [
+    {
+      "id": "ex-pa-rhee-transfer-1948",
+      "reason": "original HTML quote mismatch"
+    },
+    {
+      "id": "claim-rhee-transfer-statement-1948-09-04",
+      "reason": "no verified excerpt for this claim; metadata sources are not reassigned"
+    }
+  ],
+  "normalizations": [
+    {
+      "id": "claim-rhee-oath-1948-07-24",
+      "change": "date citation moved to the exact separately identified editorial metadata"
+    },
+    {
+      "id": "claim-rhee-war-3rd-anniversary-1953-06-25",
+      "change": "date citation moved to the exact separately identified editorial metadata"
+    }
+  ],
+  "files": [
+    "data\\sources\\pa-speech-records.md",
+    "data\\sources\\pa-speech-records\\chunks.jsonl",
+    "data\\entities\\event\\event-rok-first-president-oath.md",
+    "data\\entities\\event\\event-korean-war-3rd-anniversary-address.md",
+    "data\\claims\\pa-speech-records\\chunk_ex-pa-rhee-oath-1948-metadata.md",
+    "data\\claims\\pa-speech-records\\chunk_ex-pa-rhee-war3rd-1953-metadata.md"
+  ],
+  "humanReviewed": false
+}
