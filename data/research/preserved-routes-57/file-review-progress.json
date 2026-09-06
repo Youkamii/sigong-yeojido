@@ -1,0 +1,86 @@
+{
+  "task": "daegwallyeong-file-review-57",
+  "relatedGoals": ["sigong-goal #57", "route-rendering #86"],
+  "model": "claude-opus-5 (effort max)",
+  "role": "research only. No development, no integration. Codex owns implementation.",
+  "startedAt": "2026-09-07",
+  "scope": "ONE real file: 9900000003_대관령숲길/대관령숲길_0000000008.gpx (copied here as daegwallyeong-old-road-0008.gpx). No new candidate search.",
+  "constraints": {
+    "restricted": "Read only files inside this working folder.",
+    "noNewWindow": true,
+    "noBash": true,
+    "noSubagents": true,
+    "noContactingInstitutions": true,
+    "noTlsVerificationDisable": true,
+    "noAlternateHostForBlockedSite": "daegwallyeongsupgil.kr stays blocked; will not proxy or retry over another host.",
+    "robotsFirst": true,
+    "maxOfficialDocuments": 4,
+    "quoteLimitPerSource": "25 words",
+    "forbiddenDomains": [
+      "db.history.go.kr", "contents.history.go.kr", "hgis.history.go.kr",
+      "www.history.go.kr", "sillok.history.go.kr", "db.itkc.or.kr",
+      "KCI", "KISS", "Nominatim", "OpenHistoricalMap", "Pleiades",
+      "durunubi.kr/download"
+    ],
+    "noGeometryFabrication": [
+      "no road reconstruction",
+      "no polygon centerline extraction",
+      "no extrapolation",
+      "no estimated coordinates"
+    ]
+  },
+  "step0_localVerification": {
+    "status": "DONE",
+    "note": "File acquisition is already verified by Codex; not repeated and not scored as 0.",
+    "checked": [
+      {
+        "what": "15108080.meta.json",
+        "found": "pageUrl https://www.data.go.kr/data/15108080/fileData.do, licenseOnPage '이용허락범위 제한 없음', bytes 1142834, sha256 53cd9e50...4a9950"
+      },
+      {
+        "what": "inventory.json",
+        "found": "57 ZIP entries. 9900000003_대관령숲길/대관령숲길_0000000008.gpx = 273056 bytes, matches the local copy size."
+      },
+      {
+        "what": "gpx-inspection.json courseLegend",
+        "found": "Row ['', '대관령옛길', '0000000008'] under 국가숲길명 '대관령숲길'. Legend contains NO row named '옛길 순환코스'."
+      },
+      {
+        "what": "daegwallyeong-old-road-0008.gpx head/tail read directly",
+        "found": "gpx version=1.1, xmlns=http://www.topografix.com/GPX/1/1, creator='Tranggle Track 1.1.0', metadata time 2022-10-21 09:13:29, bounds maxlat 37.710518 maxlon 128.795471 minlat 37.695892 minlon 128.754517, one <trk> with one <trkseg> closing at line 7468, trailing <extensions><rtsc ept=\"932\" .../> with name CDATA '기타'."
+      },
+      {
+        "what": "point-level scan",
+        "found": "932 <trkpt>. ALL 932 have <ele>0.000</ele> and ALL 932 have identical <time>2022-10-07 16:27:19</time>. All <rtcd> empty. No <name>/<desc>/<cmt>/<copyright>/<author> anywhere in the file."
+      }
+    ],
+    "identification": "CONFIRMED as an ordered single-segment track for the course the official legend calls 대관령옛길 (CRSE_ID 0000000008). Course name lives in the XLSX legend + filename, NOT inside the GPX itself.",
+    "correctionsToPriorFindings": [
+      "prior-result.json C1 'reallyDownloadable: false' / 'downloadBlocker' is SUPERSEDED. The file was downloaded anonymously through the official page's own fn_fileDataDown → selectFileDataDownload.do → fileDownload.do flow, status true, no login/cookie/key/alternate host/robots bypass. The earlier WebFetch failure was a tool limitation, not evidence the file is private or login-walled.",
+      "prior-result.json C1 crs '미표기 ... 파일로 확인한 사실이 아니므로 미확인' is SUPERSEDED for the GPX version fact: the real file declares GPX 1.1 namespace. WGS84 still needs the schema document (item 3).",
+      "prior-report.md line 56 '명승 대관령 옛길과 이  옛길 순환코스가 같은 선인지 확인 못함' is REFRAMED: the dataset does not ship an '옛길 순환코스'; it ships a separately named course 대관령옛길. Same-line equivalence with the 명승 remains unproven and is what this review must test.",
+      "prior-result.json/report 울진 십이령 보부상길·화전민옛길 quotes belong to 울진금강소나무숲길 ONLY. They must NOT be carried over to 대관령옛길."
+    ]
+  },
+  "plannedOfficialDocuments": [
+    {"slot": 1, "purpose": "supplier/산림청 or 국가유산청 official text that DIRECTLY explains the historical origin of this '대관령옛길'", "candidateHost": "www.heritage.go.kr (국가유산포털)"},
+    {"slot": 2, "purpose": "official text that ties that description to the exact course name / segment endpoints", "candidateHost": "www.komount.or.kr or www.forest.go.kr"},
+    {"slot": 3, "purpose": "GPX 1.1 official schema — WGS84 statement", "candidateHost": "www.topografix.com/GPX/1/1/"},
+    {"slot": 4, "purpose": "data.go.kr 15108080 license '이용허락범위 제한 없음' + any separate restriction inside the delivered file", "candidateHost": "www.data.go.kr"}
+  ],
+  "fourLayersToKeepSeparate": [
+    "L1 currently-supplied 대관령옛길 track (the file)",
+    "L2 historical origin as DIRECTLY stated by an official source",
+    "L3 evidence that the designated/protected 옛길 extent and this track coincide",
+    "L4 whether the line is valid for any specific past year"
+  ],
+  "hardRules": [
+    "Do NOT convert the 2023-08-25 dataset base date into a Joseon-era validity period.",
+    "Do NOT promote this to a Joseon 역로 survey line or a full historic route.",
+    "If evidence for a past-era line is absent, write NOT_READY explicitly.",
+    "If geometry Source != history Source, record that BOTH are required."
+  ],
+  "robotsChecks": "pending — will fetch /robots.txt for every host before its content page",
+  "outputs": ["progress.json (this file)", "result.json", "report.md"],
+  "willNotWrite": ["prior-result.json", "prior-report.md", "gpx-inspection.json", "inventory.json", "15108080.meta.json", "daegwallyeong-old-road-0008.gpx", "prompt.txt", "run.json", "events.jsonl", "stderr.log"]
+}

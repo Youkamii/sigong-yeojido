@@ -1,0 +1,252 @@
+{
+  "task": "daegwallyeong-file-review-57",
+  "relatedGoals": ["sigong-goal #57", "route-rendering #86"],
+  "model": "claude-opus-5 (effort max)",
+  "role": "research only; Codex owns development and integration",
+  "generatedAt": "2026-09-07",
+  "scope": "ONE real file: 대관령숲길_0000000008.gpx (local copy daegwallyeong-old-road-0008.gpx). No new candidate search performed.",
+
+  "fileAcquisition": {
+    "status": "ALREADY VERIFIED BY CODEX — not re-scored, not repeated, NOT counted as 0",
+    "zipBytes": 1142834,
+    "zipSha256": "53cd9e503b5f4d564516bfd8d39c0c9b0d9dc62d56ecb5d4ca015efc554a9950",
+    "method": "Official page's own public button flow fn_fileDataDown → selectFileDataDownload.do → fileDownload.do, anonymous, status true",
+    "noLogin": true, "noCookie": true, "noApiKey": true, "noAlternateHost": true, "noRobotsBypass": true
+  },
+
+  "correctionsToPriorFindings": [
+    {
+      "priorClaim": "prior-result.json C1 reallyDownloadable=false, downloadBlocker='포털 자바스크립트 흐름 … 파일을 얻지 못했다'",
+      "status": "SUPERSEDED",
+      "reasonForCorrection": "Codex retrieved the ZIP anonymously through the official page's own public JavaScript download flow, status true, byte count and SHA256 fixed. The earlier WebFetch failure was a limitation of that tool's rendering of the portal's JS flow. It was NEVER evidence that the file is private, login-walled, or policy-blocked. Raw evidence is preserved separately."
+    },
+    {
+      "priorClaim": "prior-result.json C1 crs='미표기 … GPX는 관례상 WGS84이지만 파일로 확인한 사실이 아니므로 미확인으로 둔다'",
+      "status": "SUPERSEDED",
+      "reasonForCorrection": "The real file declares xmlns=http://www.topografix.com/GPX/1/1, version=1.1 and xsi:schemaLocation to gpx.xsd. The official GPX 1.1 schema page states the WGS84 datum outright. CRS is now VERIFIED, not assumed."
+    },
+    {
+      "priorClaim": "prior-report.md §C1 '명승 대관령 옛길과 이 옛길 순환코스가 같은 선인지…' framing",
+      "status": "REFRAMED (the underlying negative still holds)",
+      "reasonForCorrection": "The distribution ships no course called '옛길 순환코스'. '옛길' is one of four press-release THEME words. The legend ships a distinctly named course 대관령옛길 (CRSE_ID 0000000008). The equivalence question is therefore between 국가숲길 course '대관령옛길' and 명승 '대관령 옛길' — and it remains UNPROVEN, now for a concrete reason: KHS publishes an area and an address, never a line."
+    },
+    {
+      "priorClaim": "prior-result/report 울진 십이령 보부상길 · 화전민옛길 quotes",
+      "status": "MUST NOT BE TRANSFERRED",
+      "reasonForCorrection": "Those sentences describe 울진금강소나무숲길 only. They carry zero evidentiary weight for 대관령옛길 and were not reused here."
+    },
+    {
+      "priorClaim": "(new this round) 명승 대관령 옛길 ownership/management was unknown",
+      "status": "NEW FACT",
+      "reasonForCorrection": "KHS record shows 소유자 '산림청 외', 관리자 '강릉시'. 산림청 both owns the designated heritage land and (via 한국등산트레킹지원센터) publishes this GPX. That is an INSTITUTIONAL overlap only. It is not geometric evidence and does not join the two records."
+    }
+  ],
+
+  "layer1_currentSuppliedTrack": {
+    "verdict": "VERIFIED — strong",
+    "localFile": "daegwallyeong-old-road-0008.gpx",
+    "originalPathInZip": "9900000003_대관령숲길/대관령숲길_0000000008.gpx",
+    "bytes": 273056,
+    "bytesMatchInventory": true,
+    "gpxVersion": "1.1",
+    "namespace": "http://www.topografix.com/GPX/1/1",
+    "schemaLocation": "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd",
+    "creator": "Tranggle Track 1.1.0 - http://www.tranggle.com",
+    "metadataTime": "2022-10-21 09:13:29",
+    "structure": "1 <trk> → 1 <trkseg> → 932 <trkpt>, closing at line 7468 of 7478",
+    "declaredBounds": {"minlat": 37.695892, "maxlat": 37.710518, "minlon": 128.754517, "maxlon": 128.795471},
+    "firstPoint": {"lat": 37.695892, "lon": 128.754517},
+    "lastPoint": {"lat": 37.710453, "lon": 128.795471},
+    "boundingBoxExtentComputed": {
+      "northSouthKm": 1.63,
+      "eastWestKm": 3.61,
+      "bboxAreaKm2": 5.87,
+      "note": "Arithmetic on the file's OWN <bounds> values only. No new coordinates were created, estimated, or extrapolated."
+    },
+    "elevation": "ALL 932 points carry <ele>0.000</ele>. There is NO usable elevation in this file; 0.000 is a filler value, not a measurement.",
+    "timestamps": "ALL 932 points carry the IDENTICAL <time>2022-10-07 16:27:19</time>.",
+    "timestampMeaning": "This is NOT a per-point GPS recording. It is an authored/exported ordered route geometry with a single stamped time. The vertex ORDER is genuine and supplied; the per-point times are not observations.",
+    "extensions": "Every <rtcd> empty. Trailing <rtsc ept=\"932\" fin=\"1\" rtcd=\"0\" scid=\"1\" spt=\"1\"> with <name><![CDATA[기타]]></name>, stime/etime 2022-10-07 16:38:39.",
+    "namingInsideFile": "NONE. No <name>, <desc>, <cmt>, <type>, <keywords>, <author> or <copyright> anywhere in the file. The course name is carried ONLY by the filename and the shipped XLSX legend.",
+    "notFabricated": "Confirmed: this is a provided ordered track, not waypoints joined by an inference engine."
+  },
+
+  "layer2_historicalOrigin": {
+    "verdict": "NOT DIRECTLY VERIFIED",
+    "supplierSaysAnythingHistorical": false,
+    "supplierEvidence": "data.go.kr 15108080 describes the payload purely as course information. No historical wording exists in the dataset description at all.",
+    "khsRecognisesTheName": true,
+    "khsVerifiedFields": "종목 명승, 분류 자연유산/명승/자연경관, 지정일 2010.11.15, 소재지 강릉시 성산면 어흘리, 면적 519,156㎡, 소유자 산림청 외, 관리자 강릉시",
+    "khsOriginNarrativeVerified": false,
+    "whyNot": "The KHS detail page's 내용/설명 paragraph did not render through this tool across THREE different URL forms (pageNo form, VdkVgwKey form, sngl=Y single-view form). Only the basic-info block returned each time.",
+    "importantDistinction": "This is a RENDERING limitation of this session's fetch tool. It is NOT evidence that KHS lacks a historical description, and it is NOT a policy block. No TLS bypass and no alternate host were used.",
+    "searchSnippetsNotAdopted": "Web-search summaries did paraphrase a historical narrative (삼국시대 기록, 영동-영서 교통로, 강릉단오제). These were NOT confirmed on the official page in this session and are therefore NOT quoted, NOT cited, and NOT relied upon.",
+    "consequence": "There is currently NO directly-verified official sentence explaining the historical origin of this specific course. Layer 2 must stay empty rather than be filled from prior 울진 text or from search summaries."
+  },
+
+  "layer3_designatedExtentVsTrack": {
+    "verdict": "NO EVIDENCE — NOT_READY",
+    "khsPublishesGeometry": false,
+    "khsGeometryForm": "An AREA (수량/면적 519,156㎡ ≈ 0.519 km²) plus a street address. No coordinates, no GPX/KML/SHP download, no start point, no end point, no centreline.",
+    "datasetPublishesHeritageKey": false,
+    "sharedIdentifier": "NONE. No 국가유산 번호 in the GPX or legend; no CRSE_ID or file reference in the KHS record.",
+    "crossReferenceEitherDirection": "NONE found in any document read.",
+    "magnitudeObservation": "Designated area 0.519 km² vs track bounding box ≈ 5.87 km² (≈11×). This does NOT prove non-overlap — a line's bbox is not its footprint — but it does show the two records describe different objects at different scales and cannot be assumed coextensive.",
+    "endpointComparison": "IMPOSSIBLE. Neither side publishes named endpoints for the other to match.",
+    "conclusion": "The join between the 국가숲길 course and the 명승 designation is by NAME STRING ONLY. Nothing verified in this session shows the supplied track coincides with, or stays inside, the protected extent."
+  },
+
+  "layer4_validityForAPastYear": {
+    "verdict": "NO — NOT_READY as a historic route",
+    "everyPeriodMarkerFound": [
+      {"marker": "2022-10-07", "source": "all 932 trkpt <time> in the file"},
+      {"marker": "2022-10-21", "source": "GPX <metadata><time>"},
+      {"marker": "2023년 8월 25일", "source": "data.go.kr 기준일자 + dataset title suffix 20230825"},
+      {"marker": "2022-11-16 / 2025-09-03", "source": "data.go.kr 등록일 / 수정일"},
+      {"marker": "2021-05-01", "source": "국가숲길 designation date (산림청, prior round)"},
+      {"marker": "2010.11.15", "source": "KHS 명승 지정일"}
+    ],
+    "preModernDateVerified": "NONE. Zero reign year, era name, or pre-modern date was directly verified in ANY document in this session.",
+    "periodAsWritten": "2023년 8월 25일",
+    "periodAsWrittenRule": "This is the supplier's 기준일자 for the CURRENT geometry. It MUST be recorded verbatim and MUST NOT be rewritten, widened, or reinterpreted as a Joseon-era validity range.",
+    "routeMayChange": "Forest trails are re-routed for safety, restoration and forestry operations. Validity is the file's base date, nothing earlier."
+  },
+
+  "reviewItems": {
+    "item1_officialHistoricalExplanation": {
+      "question": "Does an official 공급기관/산림청/국가유산청 document DIRECTLY explain the historical relation of this '대관령옛길'?",
+      "answer": "PARTIAL → effectively NO",
+      "detail": "Supplier: no historical wording whatsoever. 산림청 국가숲길 listing page: 대관령숲길 appears under the 2021.5.1 designation group with no descriptive or historical text. KHS: officially recognises a 명승 bearing this exact name and records its designation, area, owner and manager — but the origin narrative paragraph never rendered, so no origin sentence was directly verified."
+    },
+    "item2_documentToCourseNameLinkage": {
+      "question": "Does that document connect to the exact course name / segment?",
+      "answer": "SPLIT — file↔course name YES, course↔heritage document NO",
+      "fileToCourseName": "VERIFIED. The official in-distribution legend row [대관령숲길, 대관령옛길, 0000000008] maps deterministically to 9900000003_대관령숲길/대관령숲길_0000000008.gpx via the CRSE_ID in the filename.",
+      "courseToHeritage": "NOT VERIFIED. The match to 명승 '대관령 옛길' is a name-string match only. No segment, no endpoint, and no identifier is shared. Neither document cites the other."
+    },
+    "item3_gpx11WGS84": {
+      "question": "Does the official GPX 1.1 schema confirm WGS84?",
+      "answer": "YES — VERIFIED",
+      "detail": "The official schema documentation states the WGS84 datum explicitly, and defines latitude/longitude as decimal degrees on that datum. The file declares the GPX 1.1 namespace, version 1.1 and schemaLocation to gpx.xsd, so its coordinates are WGS84 / EPSG:4326 by spec conformance.",
+      "caveat": "The <ele> element is defined by the spec as a real elevation value; here all 932 are 0.000, so elevation must be treated as ABSENT, not as sea level."
+    },
+    "item4_licenseAndFileLevelRestriction": {
+      "question": "data.go.kr '이용허락범위 제한 없음' plus any separate restriction inside the raw file?",
+      "answer": "License confirmed on page; NO separate restriction inside the file",
+      "pageLicense": "이용허락범위 '제한 없음', 비용 '무료'",
+      "thirdPartyRightsStatement": "None returned in the page content fetched.",
+      "inFileLicenseElements": "NONE. Direct scan of all 7,478 lines found no <copyright>, no <author>, and no license text.",
+      "inFileThirdPartyArtifact": "The file DOES embed vendor attribution: creator=\"Tranggle Track 1.1.0 - http://www.tranggle.com\" and <metadata><link href=\"http://www.tranggle.com\"><text>Tranggle 3.14.0</text></link>.",
+      "flagForCodex": "That vendor string is an attribution artifact of the export toolchain, not a licence grant and not a restriction. Preserve it rather than stripping it, and do not read it as an additional permission."
+    }
+  },
+
+  "officialDocumentsReviewed": [
+    {
+      "id": "D1",
+      "role": "geometry source · licence · period as written",
+      "title": "한국등산트레킹지원센터_국가숲길 코스_20230825",
+      "url": "https://www.data.go.kr/data/15108080/fileData.do",
+      "publisher": "한국등산트레킹지원센터 (산림청 위탁)",
+      "robots": "ALLOWED — robots.txt contains only a Googlebot group; no User-agent:* rules. /data/ path not listed.",
+      "quotesVerbatimUnder25Words": [
+        "이용허락범위 제한 없음",
+        "무료",
+        "2023년 8월 25일",
+        "한국등산·트레킹지원센터에서 제공한 국가숲길의 코스정보(트랙 및 트랙포인트)를 GPX 파일 포맷 형태로 … 2023년 8월 25일 기준으로 등록된 자료입니다"
+      ],
+      "fields": {"등록일": "2022-11-16", "수정일": "2025-09-03", "확장자": "GPX", "기준일자": "2023년 8월 25일"},
+      "whatItDoesNotSay": "It never calls this line an old road, a preserved road surface, a 역로, or a historic route. It calls it 코스정보."
+    },
+    {
+      "id": "D2",
+      "role": "file ↔ course-name identification",
+      "title": "국가숲길_숲길별 코스 범례.xlsx",
+      "url": "shipped inside the official ZIP from https://www.data.go.kr/data/15108080/fileData.do (sha256 53cd9e50…4a9950), 10,803 bytes",
+      "publisher": "한국등산트레킹지원센터",
+      "robots": "N/A — obtained inside the official distribution, not by crawling",
+      "quotesVerbatimUnder25Words": ["국가숲길명 / 코스명 / 코스식별자 (CRSE_ID)", "대관령숲길 · 대관령옛길 · 0000000008"],
+      "whyItMatters": "This is the ONLY authoritative artifact that names the file. It is an official supplier document delivered in the official distribution.",
+      "whatItDoesNotSay": "It carries no history, no endpoints, no length, no heritage identifier — only name and ID."
+    },
+    {
+      "id": "D3",
+      "role": "heritage identity of the NAME (not of the line)",
+      "title": "명승 대관령 옛길 (大關嶺 옛길)",
+      "url": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1353200740000",
+      "publisher": "국가유산청 (KHS) 국가유산포털",
+      "robots": "ALLOWED — User-agent:* disallows only /heri/unified/. This page is /heri/cul/.",
+      "quotesVerbatimUnder25Words": [
+        "자연유산 / 명승 / 자연경관",
+        "519,156㎡",
+        "2010.11.15",
+        "강원 강릉시 성산면 삼포암길 133, 등 (어흘리)",
+        "산림청 외",
+        "강릉시",
+        "대관령 옛길 하제민원구간 계곡"
+      ],
+      "whatItDoesNotProvide": "No coordinates, no GPX/KML/SHP, no start or end point, no centreline, and no reference to the 국가숲길 dataset.",
+      "descriptionParagraph": "NOT RETRIEVED after three URL forms — tool rendering limitation, disclosed, not bypassed."
+    },
+    {
+      "id": "D4",
+      "role": "CRS authority",
+      "title": "GPX 1.1 Schema Documentation",
+      "url": "https://www.topografix.com/GPX/1/1/",
+      "publisher": "TopoGrafix (official GPX 1.1 schema host, matching the file's own schemaLocation)",
+      "robots": "ALLOWED — User-agent:* disallows only /cgi-bin/.",
+      "quotesVerbatimUnder25Words": [
+        "all coordinates are relative to the WGS84 datum. All measurements are in metric units.",
+        "The latitude of the point. Decimal degrees, WGS84 datum."
+      ]
+    }
+  ],
+
+  "additionalPagesChecked": [
+    {
+      "url": "https://komount.or.kr/html/index.do?html=forest_way2",
+      "robots": "ALLOWED — /html/ is not in the disallow list (/documents/, /images/, /search/, /common/, /include/, /admin/* are).",
+      "outcome": "Lists the 국가숲길 including 대관령숲길 under the 2021.5.1 designation group. Returned NO course list, NO endpoints and NO historical text. Not cited as a review document because it contributed no usable content for this file."
+    }
+  ],
+
+  "blockedNotBypassed": [
+    {"target": "https://trekking.komount.or.kr/custom/place_detail.do?wr_id=172 (supplier's own trail detail page)", "reason": "TLS: certificate has expired", "bypassed": false, "note": "Would have been the strongest candidate for course endpoints. Not retried with verification disabled and not fetched through any other host."},
+    {"target": "daegwallyeongsupgil.kr (대관령 숲길안내센터)", "reason": "Already blocked in the prior round; per instruction not retried at all", "bypassed": false},
+    {"target": "KHS 내용/설명 paragraph", "reason": "Portal detail body did not render through this tool in three URL forms", "bypassed": false},
+    {"target": "db.history.go.kr, contents.history.go.kr, hgis.history.go.kr, www.history.go.kr, sillok.history.go.kr, db.itkc.or.kr, KCI/KISS, Nominatim, OHM/Pleiades, durunubi /download", "reason": "Forbidden by instruction", "bypassed": false, "accessed": false}
+  ],
+
+  "twoSourceRequirement": {
+    "geometrySource": "D1 + D2 — data.go.kr 15108080 / 한국등산트레킹지원센터",
+    "historySource": "D3 — 국가유산청 국가유산포털 명승 대관령 옛길",
+    "areDifferent": true,
+    "bothRequired": true,
+    "criticalCaveat": "Citing both is necessary but NOT sufficient. The history source has not been shown to describe the same line as the geometry source. Displaying them together must not imply the KHS record documents this track.",
+    "alsoRequired": "If Layer 2 is ever filled, the origin quote and its URL must be attached to the history source, never to the GPX."
+  },
+
+  "integrationReadyCurrentReference": false,
+  "integrationReadyCurrentReferenceReason": "The gate is NAME confirmed AND historical origin DIRECTLY confirmed. Name is confirmed (legend + filename + exact KHS name match). Historical origin is NOT directly confirmed — the KHS description paragraph never rendered, and search summaries were refused as evidence. One missing item, precisely identified.",
+  "integrationReadyCurrentReferenceUnblockCondition": "A single directly-quoted official sentence of historical origin for 대관령 옛길, read off the KHS record (or another allowed official page), with its URL. Everything else for a current-reference record — geometry, ordering, CRS, licence, base date, name linkage — is already verified.",
+
+  "integrationReadyHistoricalRoute": false,
+  "integrationReadyHistoricalRouteReason": "NOT_READY. Hard negative with no path from this file. (a) Zero pre-modern date verified anywhere. (b) The only timestamps in the geometry are 2022. (c) The supplier calls it 코스정보, never a preserved road surface. (d) KHS publishes an area and an address, never a line, so coincidence with the protected extent is untestable from these documents. (e) The link between the course and the 명승 is a name string only.",
+
+  "mustNotDo": [
+    "Do NOT promote this track to a Joseon 역로 survey line or to a full historic route.",
+    "Do NOT convert 기준일자 2023-08-25 into a Joseon validity period.",
+    "Do NOT copy the 울진 십이령 보부상길 / 화전민옛길 sentences onto 대관령옛길.",
+    "Do NOT treat 산림청 ownership of the 명승 land as geometric proof that the track equals the designated extent.",
+    "Do NOT treat <ele>0.000</ele> as sea-level elevation; treat elevation as absent.",
+    "Do NOT treat the identical 2022-10-07 timestamps as a survey or a walk record.",
+    "Do NOT reconstruct roads, derive centrelines from polygons, extrapolate, or estimate new coordinates.",
+    "Do NOT quote the web-search paraphrase of the KHS history as if it were verified."
+  ],
+
+  "handoffForCodex": {
+    "whatIsSolid": "A licence-clean (제한 없음, 무료), WGS84, single-segment, 932-vertex ordered track, deterministically identified as the course the official supplier legend calls 대관령옛길, with a supplier base date of 2023-08-25.",
+    "whatIsMissing": "One directly-quoted official sentence of historical origin, and any evidence at all that this line coincides with the 명승 protected extent.",
+    "recommendation": "Hold as a CURRENT trail geometry only. It is admissible as a current 대관령옛길 reference record the moment Layer 2 is closed with one verified quote; it is NOT admissible as a historic route under any circumstances reachable from this file."
+  }
+}

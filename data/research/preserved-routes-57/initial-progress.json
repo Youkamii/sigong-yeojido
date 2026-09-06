@@ -1,0 +1,103 @@
+{
+  "task": "routes-preserved-57 (follow-up, narrow: officially preserved historic old-road lines)",
+  "model": "claude-opus-5 / effort max",
+  "role": "research only (no code, no repo change, no bash, no browser window, no sub-agent, no outbound message)",
+  "startedAt": "2026-09-07",
+  "finishedAt": "2026-09-07",
+  "status": "done",
+  "outcome": "0 lines secured. 0 files downloaded or read. Stop-on-first-real-file never triggered.",
+  "scopeThisRun": "Only checking whether 산림청 / 국가유산청 / 국립공원공단 / 지자체 (and the national walking-trail platform) publish an official GPX/KML/GeoJSON/SHP LINE for a currently preserved-and-managed historic old road (문경새재, 대관령 옛길, 죽령 옛길, 십이령 보부상길 등). Max 4 candidates.",
+  "priorFilesRead": ["prior-result.json", "prior-report.md", "route-rendering-86.md", "prompt.txt"],
+  "hardRules": [
+    "A modern hiking/walking trail is NOT accepted as a 역로 by inference. The official provider must itself identify the line as an 옛길 / preserved old-road segment and state the historical relation.",
+    "Designation polygons, waypoint points and 역참 lists must not be turned into road centrelines.",
+    "No modern routing engine to connect points.",
+    "If a file could not actually be read, it does NOT count as downloaded/geometry-verified.",
+    "Login / API key / payment / contacting staff = stop and record as not obtained."
+  ],
+  "candidatesChecked": [
+    {
+      "n": 1,
+      "branch": "산림청 계열",
+      "candidate": "한국등산트레킹지원센터_국가숲길 코스_20230825 (data.go.kr 15108080)",
+      "officialPage": "https://www.data.go.kr/data/15108080/fileData.do",
+      "format": "GPX (+ 코스범례 Excel)",
+      "license": "이용허락범위 '제한 없음', 비용 '무료' (dataset page, read directly)",
+      "covers": "DMZ펀치볼둘레길, 내포문화숲길, 대관령숲길, 백두대간트레일, 울진금강소나무숲길, 지리산둘레길",
+      "historicalStatementFound": true,
+      "historicalStatementSource": "https://www.komount.or.kr/html/index.do?html=rev_sonamu (same operator)",
+      "historicalQuote": "옛날 보부상들이 울진 흥부장에서부터 봉화, 영주, 안동 등 내륙 지방으로 행상을 할 때 넘나들던 십이령(열두고개) 중 네 고개가 있는 탐방로",
+      "daegwallyeongCheck": "동부지방산림청 보도자료 직접 확인 (2021-05-01 지정, 12개 노선 102.96km). 인용 가능한 문장은 '대표 테마 4개 순환코스(목장,소나무,옛길,구름)를 새롭게 선보였다' 뿐이고 역사 설명이 없다. 명승 '대관령 옛길'과 동일 선인지 확인 불가. 운영기관 사이트 daegwallyeongsupgil.kr 는 self-signed certificate 로 열지 못함(우회 안 함).",
+      "fileObtained": false,
+      "fileBlocker": "data.go.kr 파일데이터 다운로드가 JS 흐름. 상세 페이지·DCAT/JSON 어디에도 accessURL/downloadURL 없음, .rdf 카탈로그 404, 헤더에 로그인/회원가입. 추측·우회 안 함.",
+      "crs": "미표기 (파일 미확인)",
+      "geometryVerified": false,
+      "integrationReady": false
+    },
+    {
+      "n": 2,
+      "branch": "국립공원공단",
+      "candidate": "국립공원공단_국립공원 선형시설_20181231 (data.go.kr 15091972)",
+      "officialPage": "https://www.data.go.kr/data/15091972/fileData.do",
+      "format": "SHP",
+      "license": "이용허락범위 '제한 없음' (dataset page, read directly)",
+      "descriptionQuote": "탐방로, 진입도로 등 국립공원 내 주요 이동 경로의 정확한 위치 좌표와 경로 정보",
+      "historicalStatementFound": false,
+      "why": "제공기관이 현재 시설(탐방로·진입도로)로만 서술. 소백산국립공원 공식 코스 페이지에는 '죽령코스'만 있고 '죽령옛길'이라는 이름도 역사 설명도 없다. 옛길을 뽑으려면 추측이 필요 → 금지.",
+      "fileObtained": false,
+      "geometryVerified": false,
+      "integrationReady": false
+    },
+    {
+      "n": 3,
+      "branch": "지자체",
+      "candidate": "경기옛길 (경기도·경기문화재단 경기옛길센터) + 지자체 개방데이터 일괄",
+      "officialPage": "https://ggcr.kr/",
+      "format": "공개 경로 파일 없음",
+      "license": "'Copyright (C) 경기옛길 All rights reserved.' (footer). 공공누리 표시 없음",
+      "historicalStatementFound": true,
+      "historicalQuote": "조선시대 간선도로망을 기반으로 하여 조성된",
+      "historicalQuoteSource": "경기문화재단 『경기학광장』 Vol.1, 지지씨 ggc.ggcf.kr (삼남길). 사료 원표기 신경준 『도로고(道路攷)』 제5로 제주로(해남로)",
+      "keyNuance": "제공기관 스스로 '기반으로 하여 조성된'이라고 씀 = 현대에 새로 만든 도보길. 보존 노면이 아님.",
+      "bulkChecks": {
+        "경기데이터드림 '옛길'": "0건",
+        "data.go.kr '경기옛길'": "0건",
+        "data.go.kr '문경새재'": "0건",
+        "전국길관광정보표준데이터 15017321": "선형 좌표 컬럼 없음. 길명·길소개·총길이·총소요시간·시작/종료 지점명·주소·경로정보(텍스트)·관리기관명. '경로정보'는 서술 텍스트.",
+        "문경시 gbmg.go.kr": "TLS 'unable to verify the first certificate' → 미열람, 우회 안 함",
+        "ggcr.kr 옛길자료실": "게시물 목록 미렌더링 → 첨부 유무 미확인, 문의 금지로 연락 안 함"
+      },
+      "fileObtained": false,
+      "integrationReady": false
+    },
+    {
+      "n": 4,
+      "branch": "국가 걷기여행길 플랫폼 (한국관광공사)",
+      "candidate": "두루누비 '새재넘어 소조령길 1코스 문경새재길' GPX",
+      "officialPage": "https://www.durunubi.kr/4-2-1-1-walk-mobility-view-detail.do?crs_idx=T_CRS_MNG0000000847&brd_div=DNWW",
+      "courseFacts": "8.9km, 3시간 30분, 난이도 보통, 비순환형",
+      "courseQuote": "옛길박물관에서 제 1, 2, 3 관문을 통하고 고사리마을에 이르는 구간",
+      "fileUrlExists": "/download?filePath=/data/koreamobility/file/manual/2018gpx/310_01_PartGPX_GPX_01.gpx&...",
+      "fileObtained": false,
+      "fileBlocker": "durunubi.kr/robots.txt 의 'User-agent: *' 그룹에 'Disallow: /download'. 받지 않았고 /editImgUp.do 등 다른 엔드포인트로 우회하지도 않음.",
+      "license": "'© Copyright by KTO. ALL RIGHTS RESERVED.' 재배포 근거 없음",
+      "historicalStatementFound": false,
+      "note": "검색 요약의 '태종 14년(1414년)'은 공식 페이지에서 직접 확인하지 못해 채택하지 않음",
+      "integrationReady": false
+    }
+  ],
+  "notReChecked": [
+    "국가유산청 gis-heritage / data.go.kr 15089320·15148507 — 이전 조사에서 지정구역 폴리곤으로 결론. 폴리곤→중심선 변환 금지 + 동일 검색 반복 금지에 따라 재검색 안 함.",
+    "공공데이터포털 키워드 '옛길' — 이전 조사에서 이미 수행(5건)."
+  ],
+  "blockedNotBypassed": [
+    "durunubi.kr /download (robots)",
+    "data.go.kr 파일 실물 다운로드 (JS 흐름 / 로그인 안내)",
+    "daegwallyeongsupgil.kr (self-signed certificate)",
+    "gbmg.go.kr (TLS chain verification failure)",
+    "ggcr.kr 옛길자료실 (미렌더링)",
+    "db.history.go.kr, contents.history.go.kr, hgis.history.go.kr, www.history.go.kr, sillok.history.go.kr, db.itkc.or.kr, KCI/KISS, Nominatim, OHM, Pleiades (정책상 접속 안 함)"
+  ],
+  "coordinatesSecured": 0,
+  "finalOutputs": ["result.json", "report.md"]
+}

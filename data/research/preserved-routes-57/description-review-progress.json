@@ -1,0 +1,37 @@
+{
+  "task": "daegwallyeong-description-57",
+  "model": "claude-opus-5 (effort max)",
+  "role": "research only; Codex owns development and integration",
+  "startedFrom": {
+    "priorSession": "017d1703-0d5d-4144-8883-7a563828a66c",
+    "priorTask": "daegwallyeong-file-review-57"
+  },
+  "constraints": {
+    "newWindow": false,
+    "bash": false,
+    "extraAgents": false,
+    "institutionContact": false,
+    "newSearch": false,
+    "readOnlyWorkFolder": true
+  },
+  "steps": [
+    {"id": "s1", "what": "작업 폴더 파일 목록 확인", "status": "done"},
+    {"id": "s2", "what": "khs-daegwallyeong-description.meta.json 읽기 (URL·linkedFrom·해시·robots)", "status": "done"},
+    {"id": "s3", "what": "khs-daegwallyeong-description.html 전체 읽기, p.hide_exp.krExp 본문 직접 확인", "status": "done"},
+    {"id": "s4", "what": "hidden textarea(homeRochRst, homeRochDt=2014-02-28) 확인", "status": "done"},
+    {"id": "s5", "what": "file-inspection.json 읽기 (범례 대관령숲길/대관령옛길/0000000008 ↔ 932점 트랙)", "status": "done"},
+    {"id": "s6", "what": "heritage-robots.txt 확인 (User-agent:* → Disallow /heri/unified/ 만)", "status": "done"},
+    {"id": "s7", "what": "prior-result.json / prior-report.md / prior-run.json 재확인 후 L2 판정 재평가", "status": "done"},
+    {"id": "s8", "what": "인용 예산 산정 (총 21어절, 상한 25)", "status": "done"},
+    {"id": "s9", "what": "result.json 작성", "status": "done"},
+    {"id": "s10", "what": "report.md 작성", "status": "done"}
+  ],
+  "reevaluated": {
+    "priorClaim": "layer2_historicalOrigin.khsOriginNarrativeVerified = false ('역사 유래 직접 확인 안 됨')",
+    "now": "SUPERSEDED — 폴더 내 실제 HTML 파일에서 국문 설명 문단을 직접 읽음. 이전 미확인은 도구 렌더링 한계였고 우회가 아님.",
+    "doNotRepeat": ["파일 확보 0", "본문 미확인 0"]
+  },
+  "outputs": ["progress.json", "result.json", "report.md"],
+  "filesModified": "이 세 파일만 생성. 기존 파일 미수정.",
+  "generatedAt": "2026-09-07"
+}
