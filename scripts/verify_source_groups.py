@@ -22,9 +22,10 @@ async def run(url, out):
         open_button = group.locator('.tl-group-open')
         assert await open_button.get_attribute('aria-expanded') == 'false'
         before = await page.evaluate('({ids:[...window.__timeline.on], domain:[window.__timeline._geom.d0,window.__timeline._geom.d1]})')
+        group_ids = await page.evaluate('window.__timeline.groups.find(g=>g.label==="조선왕조실록").sources.map(s=>s.id)')
         await toggle.click()
         assert await toggle.get_attribute('aria-checked') == 'false'
-        assert await page.evaluate('[...window.__timeline.on].every(id => !id.startsWith("src-sillok-"))')
+        assert await page.evaluate('(ids)=>ids.every(id=>!window.__timeline.on.has(id))', group_ids)
         await open_button.click()
         assert await page.locator('.tl-track[data-id^="src-sillok-"]').count() == 30
         await page.locator('.tl-track[data-id="src-sillok-waa"] .tl-label').click()

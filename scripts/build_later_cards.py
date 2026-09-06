@@ -31,6 +31,7 @@ def build_cards(directory, report, audit, dataset):
         evidence = '\n'.join(f'- [{title}]({url})' for title, url in source['evidence'])
         gaps = ', '.join(str(y) for y in stats['yearsMissingInsideRange']) or '없음'
         metadata_line = f"| 서지·해제 | {stats['types']['source-metadata']:,} |\n" if stats['types'].get('source-metadata') else ''
+        ingestion_doc = source.get('ingestionDoc', f'{name}-ingestion.md')
         text = f'''---
 {header}
 generated:
@@ -77,7 +78,7 @@ XML 날짜에서 읽은 연도 범위는 {stats['yearRange'][0]}~{stats['yearRan
 - [공공데이터포털 벌크 XML]({portal})
 
 원문 웹페이지를 수집한 자료가 아니다. ZIP과 생성 JSONL은 c2의 Git 밖에 두고,
-추출 명령·파일별 SHA256·독립 XML 수 대조는 `docs/research/{name}-ingestion.md`에 기록한다.
+추출 명령·파일별 SHA256·독립 XML 수 대조는 `docs/research/{ingestion_doc}`에 기록한다.
 라이선스 확인은 이 데이터셋 배포본에 관한 것으로 다른 웹 서비스 전체에 적용하지 않는다.
 '''
         (directory/f'{name}.md').write_text(text, encoding='utf-8', newline='\n')

@@ -59,6 +59,7 @@ SOURCES: dict[str, dict] = {
     "joseon-sillok": {"dataset": "15053647", "label": "조선왕조실록"},
     "seungjeongwon-ilgi": {"dataset": "15064218", "label": "승정원일기", "dateContext": True},
     "bibyeonsa-deungnok": {"dataset": "15053636", "label": "비변사등록", "dateContext": True, "frontMatter": True},
+    "gosunjong-sillok": {"dataset": "15053646", "label": "고종·순종실록", "dateContext": True},
 }
 
 # 본문에서 통째로 버리는 요소 — 원문이 아니라 국편의 편집 장치다
@@ -377,6 +378,9 @@ def extract(source: str, zpath: Path, *, emit=None) -> tuple[list[dict], dict]:
     catalog = {}
     if source == "joseon-sillok":
         catalog = json.loads(Path(__file__).with_name("sillok-catalog.json").read_text(encoding="utf-8"))["sources"]
+    elif source == "gosunjong-sillok":
+        later = json.loads(Path(__file__).with_name("later-catalog.json").read_text(encoding="utf-8"))["sources"]
+        catalog = {key.removeprefix("sillok-"): value for key, value in later.items() if value["dataset"] == "15053646"}
     stats: collections.Counter = collections.Counter()
     unknown: collections.Counter = collections.Counter()
     ann_types: collections.Counter = collections.Counter()

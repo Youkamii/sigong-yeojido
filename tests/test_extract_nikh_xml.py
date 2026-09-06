@@ -12,6 +12,24 @@ spec.loader.exec_module(extractor)
 
 
 class ExtractionTests(unittest.TestCase):
+    def test_later_annals_separate_three_series_and_preserve_parent_date_forms(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/'later.zip'
+            with zipfile.ZipFile(path, 'w') as archive:
+                for prefix in ['wza', 'wzb', 'wzc']:
+                    archive.writestr(prefix+'.xml', f'''<level2 id="{prefix}_101"><level4 id="{prefix}_day">
+                    <front><biblioData><date><dateOccured type="서기" date="1910-01-01L0"/>
+                    <dateOccured type="간지">陽曆</dateOccured></date></biblioData></front>
+                    <level5 id="{prefix}_article"><front><biblioData><date>
+                    <dateOccured type="서기" date="1910-01-01L0"/></date></biblioData></front>
+                    <text><content>正文</content></text></level5></level4></level2>''')
+            chunks, _ = extractor.extract('gosunjong-sillok', path)
+        self.assertEqual([c['sourceId'] for c in chunks], ['src-sillok-wza', 'src-sillok-wzb', 'src-sillok-wzc'])
+        for chunk in chunks:
+            self.assertEqual(chunk['dateContext']['forms'][1]['label'], '陽曆')
+            self.assertNotIn('dateInheritedFrom', chunk)
+            self.assertEqual(chunk['dateForms'][0]['raw'], '1910-01-01L0')
+
     def test_register_preserves_front_matter_without_treating_print_year_as_event(self):
         xml = '''<level1 id="bb_001"><front><biblioData><title><mainTitle>一冊</mainTitle></title>
         <publication><dateIssued date="1959-04-05"/></publication></biblioData>

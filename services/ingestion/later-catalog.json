@@ -1,6 +1,59 @@
 {
   "checkedAt": "2026-09-06",
   "sources": {
+    "sillok-wza": {
+      "ingestionDoc": "gosunjong-sillok-ingestion.md",
+      "dataset": "15053646",
+      "label": "고종실록",
+      "sourceKind": "실록",
+      "sourceGroup": "고종·순종실록",
+      "compiler": "이왕직 실록편찬위원회",
+      "coversFrom": 1863,
+      "coversTo": 1907,
+      "composedYear": 1935,
+      "notes": [
+        "이왕직이 일제강점기인 1927~1935년에 편찬한 실록이다. 태조~철종실록과 편찬 배경이 달라 별도 묶음으로 표시한다.",
+        "XML의 wza 계열을 한 Source로 둔다. 첫 기사는 고종 즉위년인 1863년 12월 8일로 기록되어 있다. 원문의 역사 연도 표기를 유지하며 양력 환산 연도로 바꾸지 않는다.",
+        "연·월의 본문 구획도 남기고 간지·재위연도 등 병기된 날짜는 dateForms와 dateContext에 보존한다. L 접미사만으로 음양력을 판정하지 않는다."
+      ],
+      "evidence": [
+        ["한국학중앙연구원 고종실록 해설", "https://encykorea.aks.ac.kr/Article/E0003942"],
+        ["고종실록 편찬 배경·과정 연구", "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002830190"]
+      ]
+    },
+    "sillok-wzb": {
+      "ingestionDoc": "gosunjong-sillok-ingestion.md",
+      "dataset": "15053646",
+      "label": "순종실록",
+      "sourceKind": "실록",
+      "sourceGroup": "고종·순종실록",
+      "compiler": "이왕직 실록편찬위원회",
+      "coversFrom": 1907,
+      "coversTo": 1910,
+      "composedYear": 1935,
+      "notes": [
+        "고종실록과 같은 1927~1935년 편찬 사업의 산물이다. 순종 재위 기간의 본문인 wzb 계열만 이 Source에 넣는다.",
+        "퇴위 이후를 다루는 wzc 계열 부록은 별도 Source다. 부록을 본문과 합쳐 재위 기간을 늘리지 않는다."
+      ],
+      "evidence": [["한국학중앙연구원 순종실록 해설", "https://encykorea.aks.ac.kr/Article/E0031948"]]
+    },
+    "sillok-wzc": {
+      "ingestionDoc": "gosunjong-sillok-ingestion.md",
+      "dataset": "15053646",
+      "label": "순종실록 부록",
+      "sourceKind": "실록부록",
+      "sourceGroup": "고종·순종실록",
+      "compiler": "이왕직 실록편찬위원회",
+      "coversFrom": 1910,
+      "coversTo": 1928,
+      "composedYear": 1935,
+      "notes": [
+        "순종 퇴위 뒤 이왕가와 이왕직 관련 기사를 다루는 wzc 계열이다. 순종의 재위 기록과 성격이 달라 독립 Source로 둔다.",
+        "해설의 퇴위 뒤 17년(1910~1926) 설명과 달리 배포 XML에는 1928년 5월 3일·7월 6일 기사까지 있다. 마지막 파일은 2nd_wzc_121.xml이다. 실제 수록 범위에 따라 1928년까지 표시한다.",
+        "편찬 종료 시점은 본문과 같은 1935년이다. 편찬 시점과 기사가 다루는 기간을 구별한다."
+      ],
+      "evidence": [["한국학중앙연구원 순종실록·부록 해설", "https://encykorea.aks.ac.kr/Article/E0031948"]]
+    },
     "bibyeonsa-deungnok": {
       "dataset": "15053636",
       "label": "비변사등록",
