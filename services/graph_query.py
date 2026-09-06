@@ -42,7 +42,7 @@ def neighborhood(entity, sources=None, origin='all', limit=30, offset=0, *, unat
     result={'entity':entity,'nodes':[],'edges':[],'claims':[],'hasMore':False,'offset':offset,'limit':limit,'origin':origin}
     if sources is not None and not sources:
         return result
-    selected = '' if sources is None else 'VALUES ?source { '+' '.join(identifier(s) for s in sorted(sources))+' }'
+    selected = '' if sources is None else 'FILTER(?source IN ('+', '.join(identifier(s) for s in sorted(sources))+'))'
     authors = '' if origin=='all' else 'FILTER(?origin = '+json.dumps(origin)+')'
     query = f'''
 SELECT DISTINCT ?claim ?subject ?predicate ?objectKind ?object ?source ?chunk ?quote ?origin ?status

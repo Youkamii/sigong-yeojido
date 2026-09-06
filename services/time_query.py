@@ -5,7 +5,7 @@ from graph_query import NS, identifier, query_rows
 
 
 def selected_filter(sources, origin, source='source', author='origin'):
-    selection='' if sources is None else f'VALUES ?{source} {{ '+ ' '.join(identifier(s) for s in sorted(sources))+' }'
+    selection='' if sources is None else f'FILTER(?{source} IN ('+', '.join(identifier(s) for s in sorted(sources))+'))'
     return selection+('' if origin=='all' else f' FILTER(?{author} = '+json.dumps(origin)+')')
 
 
