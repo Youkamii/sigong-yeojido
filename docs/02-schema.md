@@ -207,11 +207,30 @@ syj:claim-sinmyo-reading-a a syj:Claim ;
 syj:claim-sinmyo-reading-b a syj:Claim ;
     syj:subject syj:ts-nihongi-sinmyo ;
     syj:predicate syj:convertsTo ;
-    syj:objectYear 451 ;                    # 2주갑 = 120년 이동
+    syj:objectYear 451 ;                    # 391년에서 1주갑 = 60년 이동 (설명용 예시)
     syj:fromSource syj:src-modern-scholarship .
 ```
 
 렌즈를 바꾸면 **연표 전체가 밀린다.** 이게 제대로 작동하면 이 프로젝트는 성공이다.
+
+### 8.2 현재 저장·조회 계약 (#55)
+
+`object.kind=time`은 `id`, 원문의 연속 문자열인 `verbatim`, `precision`을 필수로 받는다.
+`year`, `earliest`, `latest`는 정수 연도 또는 null이다. 음수는 기원전이며 0년은 쓰지 않는다.
+한쪽 범위만 알면 다른 쪽은 null로 남긴다. 양 끝이 있으면 earliest ≤ latest여야 하고,
+year도 있으면 그 범위 안에 있어야 한다. `calendar`는 출처가 명시한 역법 이름만 적는다.
+원문이 서기 연도를 주지 않으면 `convertsTo` 주장의 값과 근거를 따로 남긴다.
+같은 TimeSpan ID를 다른 원표기·정밀도·범위로 재정의하면 빌드가 거부한다.
+
+위의 Turtle은 관계를 설명하는 축약 예시다. 실제 `before`/`after`도 subject·objectEntity와
+fromSource·citesChunk·quote가 있는 Claim으로 적으며, 대상은 Event 또는 정의된 TimeSpan이다.
+환산의 간지 검사는 명시된 연도 간지에만 적용한다. 월 뒤의 일진을 연도 간지로 검사하지 않는다.
+기원전 계산은 역사 연도를 천문학적 연도에 대응시킨 뒤 60년 주기를 계산한다.
+
+`GET /api/time?sources=...&origin=all|human|ai`는 원표기·범위, 선택한 사료의 환산 주장,
+상대 순서 주장을 구분해 준다. `entity`로 대상을 좁힐 수 있다. 화면의 연대 주장 목록과
+시간 막대의 작은 표식에서 원문·환산 근거를 열 수 있다. 서기 환산이 없으면 목록에 미상으로 남긴다.
+서로 다른 사료가 붙인 환산값을 한 숫자로 덮어쓰지 않는다. 국편 `L0/L1/99` 코드의 뜻은 여전히 미확인이다.
 
 ## 9. 장소 — 좌표도 Claim이다
 

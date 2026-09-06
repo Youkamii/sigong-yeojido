@@ -303,7 +303,8 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div class="timebar">
         <div class="row">
           <span class="year"><b id="yearV">414</b><span id="yearL">서기</span>
-            <button id="yearBtn" class="yearbtn" type="button" title="이 해로 연대가 붙은 기사를 본다">이 해의 기록</button></span>
+            <button id="yearBtn" class="yearbtn" type="button" title="이 해로 연대가 붙은 기사를 본다">이 해의 기록</button>
+            <button id="timeClaimsBtn" class="yearbtn" type="button">연대 주장</button></span>
           <div id="tl" class="tlhost" aria-label="사료별 시간 막대"></div>
         </div>
       </div>
@@ -379,7 +380,7 @@ function showGraphClaim(claim){
     object.kind==='time'?object.verbatim:object.kind==='location'?`${object.lat}, ${object.lon}`:
     object.kind==='year'?`${object.value<0?'기원전 '+(-object.value):object.value}년`:object.value;
   el.innerHTML=`<h3>${escH(claim.subjectLabel)}</h3><div class="sect">${escH(claim.predicate.replace('syj:',''))}</div>
-    <p>${escH(value)}</p>
+    <p>${escH(value)}</p>${object.kind==='time'?`<p class="empty">${escH(object.precision)} · ${object.calendar?escH(object.calendar)+' · ':''}${object.earliest??object.year??'시작 미상'} ~ ${object.latest??object.year??'끝 미상'}</p>`:''}
     <span class="badge ${claim.origin==='ai'?'ai':'human'}">${claim.origin==='ai'?'AI 추출':'사람'}</span>
     <div class="quote">${escH(claim.quote)}</div><div class="srcline">${escH(claim.sourceLabel)} · ${escH(claim.chunk.locator||claim.citesChunk)}</div>
     <button class="card-btn" data-evidence-action="chunk">인용한 원문 열기</button><button class="card-btn" data-evidence-action="source">사료 카드</button>`;
@@ -480,6 +481,7 @@ async function load(){
   renderStats();
   draw();
   mountTimeline();
+  refreshTimeClaims();
 }
 
 // ── 찾기 — 지명은 지도에서, 인물·나라·사건·관직은 주장(Claim)으로 이어진다 ──
@@ -522,6 +524,7 @@ function mountTimeline(){
   if(!host) return;
   if(tl){ tl.setSources(state.sources); tl.setOn(state.on); tl.setYear(state.year); return; }
   tl = new Timeline(host, {
+    onTimeClaim:openTimeProjection,
     sources: state.sources, year: state.year, on: state.on,
     onYear(y){ state.year = y; setYearUI(y); draw(); if(state.mode==='3d') draw3d(); scheduleYearCount(); },
     onToggle(id, on){
@@ -543,6 +546,7 @@ const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
 let yearSeq = 0, yearTimer = 0, panelSeq = 0;
 function refreshEvidence(){
   chatView?.filtersChanged();
+  refreshTimeClaims();
   if(state.sel) select(state.sel, false);
   else{
     if(state.mode==='graph') graph().show(graphView.entity);
@@ -550,6 +554,46 @@ function refreshEvidence(){
     else if(state.panel === 'chunk') showChunk(state.chunkId);
   }
 }
+let timeData={events:[],relations:[]},timeSeq=0;
+async function refreshTimeClaims(){
+  const seq=++timeSeq;
+  tl?.setTimeClaims([]);
+  timeData={events:[],relations:[]};
+  try{
+    const response=await fetch('/api/time?'+new URLSearchParams({sources:[...state.on].join(','),origin:state.origin}));
+    const data=await response.json();
+    if(seq!==timeSeq)return;
+    if(!response.ok)throw new Error(data.error||'연대 조회 실패');
+    timeData=data;tl?.setTimeClaims(data.events);
+    document.getElementById('timeClaimsBtn').textContent=`연대 주장 ${data.events.length}${data.hasMore?'+':''}`;
+    if(state.panel==='times')showTimeClaims(false);
+  }catch(error){if(seq===timeSeq)document.getElementById('timeClaimsBtn').textContent=error.message;}
+}
+function openTimeProjection(claim,projection){
+  const year=projection.earliest??projection.latest;
+  if(year!=null){state.year=year;setYearUI(year);tl.setYear(year);draw();if(state.mode==='3d')draw3d();scheduleYearCount();}
+  showGraphClaim(claim.conversions.find(c=>c.id===projection.claimId)||claim);
+}
+function showTimeClaims(reveal=true){
+  if(reveal)openEvidence();
+  ++panelSeq;state.panel='times';state.sel=null;
+  const el=document.getElementById('evi');el.innerHTML='<h3>선택한 사료의 연대 주장</h3><p class="empty">원표기와 환산 주장은 별도로 남긴다. 연도 버튼은 그 환산의 근거와 시간축을 함께 연다. 범위가 없는 날짜는 미상이다.</p>';
+  for(const claim of [...timeData.events,...timeData.relations]){
+    const card=document.createElement('div');card.className='claim';
+    const raw=claim.object.verbatim||claim.object.id;
+    card.innerHTML=`<div class="sect">${escH(claim.subjectLabel)} · ${escH(claim.sourceLabel)}</div><button class="card-btn time-original">${escH(raw)} · 원표기 근거</button>`;
+    card.querySelector('button').onclick=()=>showGraphClaim(claim);
+    for(const projection of claim.projections||[]){
+      const button=document.createElement('button');button.className='card-btn time-projection';button.dataset.claim=projection.claimId;
+      button.textContent=`${projection.earliest??'시작 미상'} ~ ${projection.latest??'끝 미상'} · ${srcLabelOf(projection.fromSource)}`;
+      button.onclick=()=>openTimeProjection(claim,projection);card.append(button);
+    }
+    if(claim.object.kind==='time'&&!claim.projections.length)card.insertAdjacentHTML('beforeend','<p class="empty">선택한 조건의 서기 환산 없음</p>');
+    el.append(card);
+  }
+  if(!timeData.events.length&&!timeData.relations.length)el.insertAdjacentHTML('beforeend','<p class="empty">선택한 조건의 연대 주장이 없다.</p>');
+}
+document.getElementById('timeClaimsBtn').onclick=()=>showTimeClaims();
 async function refreshYearCount(){
   const y = state.year, seq = ++yearSeq;
   try{

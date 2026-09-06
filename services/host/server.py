@@ -49,6 +49,7 @@ sys.path.insert(0, str(ROOT / "services"))
 from frontmatter import parse_front_matter
 from graph_query import neighborhood, GraphUnavailable
 from chat import answer as chat_answer, ChatUnavailable
+from time_query import time_claims
 try:
     from validate import parse_claims_text  # noqa: E402
 except Exception:  # validate.py 가 없거나 깨졌어도 뷰어는 뜬다 (claims 만 비어 보인다)
@@ -535,6 +536,17 @@ class Handler(BaseHTTPRequestHandler):
                 self._json({"error":str(exc)},503)
                 return
             self._json(result)
+            return
+        if path == '/api/time':
+            srcs=q.get('sources',[None])[0]
+            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            try:
+                result=time_claims(sources,q.get('origin',['all'])[0],q.get('entity',[None])[0],q.get('limit',[500])[0])
+                self._json(result)
+            except ValueError as exc:
+                self._json({'error':str(exc)},400)
+            except GraphUnavailable as exc:
+                self._json({'error':str(exc)},503)
             return
         if path == "/api/chunk":
             cid = q.get("id", [""])[0]

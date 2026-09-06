@@ -447,6 +447,20 @@ def check_shape(claim, index: int, where: str, failures: list[Failure]) -> bool:
             for key in ("id", "verbatim", "precision"):
                 if not (isinstance(obj.get(key), str) and obj[key].strip()):
                     bad(f"object.kind=time needs a non-empty '{key}'")
+            bounds={key:obj.get(key) for key in ('year','earliest','latest')}
+            numeric=True
+            for key,value in bounds.items():
+                if value is not None and (isinstance(value,bool) or not isinstance(value,int) or value==0):
+                    bad(f'time.{key} must be a nonzero integer year or null (negative = BC)')
+                    numeric=False
+            if numeric:
+                year,earliest,latest=(bounds[key] for key in ('year','earliest','latest'))
+                if earliest is not None and latest is not None and earliest>latest:
+                    bad('time.earliest must not be later than time.latest')
+                if year is not None and ((earliest is not None and year<earliest) or (latest is not None and year>latest)):
+                    bad('time.year must fall within earliest/latest')
+            if obj.get('calendar') is not None and not (isinstance(obj['calendar'],str) and obj['calendar'].strip()):
+                bad('time.calendar must be a non-empty string or null')
         if obj["kind"] == "location":
             for key in ("lat", "lon"):
                 if isinstance(obj.get(key), bool) or not isinstance(obj.get(key), (int, float)):
@@ -536,9 +550,9 @@ def validate(
                 verbatim = norm_ws(obj["verbatim"])
                 if verbatim not in chunk["norm"] or verbatim not in norm_ws(claim["quote"]):
                     failures.append(Failure("time", where, cid, "time.verbatim must occur in the cited text and quote"))
-            if obj["kind"] == "entity" and obj["id"] not in entities:
+            if obj["kind"] == "entity" and obj["id"] not in entities and obj["id"] not in timespans:
                 failures.append(
-                    Failure("missing-entity", where, cid, f"object entity {obj['id']!r} has no file under entities/")
+                    Failure("missing-entity", where, cid, f"object entity {obj['id']!r} has no entity file or TimeSpan definition")
                 )
 
             # (e) digest — 근거를 달아둔 뒤 주장이 바뀌지 않았는가
@@ -613,8 +627,19 @@ def check_reading_and_calendar(claim: dict, chunk: dict | None, timespans: dict,
         if obj["kind"] != "year" or span is None:
             bad("calendar", "convertsTo needs a year object and a defined TimeSpan subject")
         else:
-            match = GANZHI_RE.search(str(span.get("verbatim", "")))
-            cycle = (obj["value"] - 4) % 60
+            raw=str(span.get('verbatim',''))
+            # Only an explicit year ganji is checked; a day ganji after a month is not a year.
+            match=None
+            for candidate in GANZHI_RE.finditer(raw):
+                before,after=raw[:candidate.start()],raw[candidate.end():]
+                if after.startswith(('年','歲','歳')) or before.endswith(('歲在','歳在','年')) or span.get('precision')=='year':
+                    match=candidate
+                    break
+            year=obj['value']
+            if year==0:
+                bad('calendar','historical years have no year zero')
+            astronomical=year if year>0 else year+1
+            cycle = (astronomical - 4) % 60
             expected = STEMS[cycle % 10] + BRANCHES[cycle % 12]
             if match and match.group() != expected:
                 bad("calendar", f"year {obj['value']} is {expected}, but verbatim says {match.group()}")

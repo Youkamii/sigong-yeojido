@@ -56,6 +56,8 @@ const CSS = `
 .tl-zero{stroke:var(--line-2);stroke-width:1;stroke-dasharray:2 3}
 .tl-row-bg{fill:transparent}
 .tl-dens{fill:var(--paper-2);pointer-events:auto}
+.tl-time-claim{fill:var(--brick);stroke:var(--paper-2);stroke-width:.6;cursor:pointer}
+.tl-time-claim.uncertain{fill:none;stroke:var(--brick);stroke-width:2;stroke-dasharray:2 2}
 .tl-track:hover .tl-row-bg{fill:var(--ink-3)}
 .tl-label{cursor:pointer;outline:none}
 .tl-label-hit{fill:transparent}
@@ -173,6 +175,8 @@ export class Timeline {
     this.host = host;
     this.sources = Array.isArray(opts.sources) ? opts.sources.slice() : [];
     this.year = isNum(opts.year) ? Math.round(opts.year) : 0;
+    this.timeClaims=[];
+    this.onTimeClaim=opts.onTimeClaim||(()=>{});
     this.on = new Set(opts.on ?? this.sources.map(s => s.id));
     this.onYear = typeof opts.onYear === 'function' ? opts.onYear : () => {};
     this.onToggle = typeof opts.onToggle === 'function' ? opts.onToggle : () => {};
@@ -358,6 +362,11 @@ export class Timeline {
     this._applyOn();
   }
 
+  setTimeClaims(claims){
+    this.timeClaims=claims;
+    this.render();
+  }
+
   _group(group, i){
     const { labelW, plotL, xs } = this._geom;
     const yTop = RULER_H + i * ROW_H, cy = yTop + ROW_H / 2;
@@ -514,6 +523,20 @@ export class Timeline {
     if (!hasBar && !hasDot) {
       body.appendChild(el('text', { class: 'tl-gap', x: plotL + 4, y: cy, dy: '.36em' }, '기간 미상'));
     }
+    for(const claim of this.timeClaims) for(const projection of claim.projections) {
+      if(projection.fromSource!==s.id)continue;
+      const lo=projection.earliest,hi=projection.latest;
+      if(lo==null&&hi==null)continue;
+      const x0=xs(lo??hi),x1=xs(hi??lo);
+      const uncertain=lo==null||hi==null||lo!==hi;
+      const mark=el('rect',{class:'tl-time-claim'+(uncertain?' uncertain':''),x:x0-3,y:cy+6,
+        width:Math.max(6,x1-x0),height:6,role:'button',tabindex:0,'data-claim':projection.claimId});
+      mark.appendChild(el('title',null,`${claim.subjectLabel} · ${claim.object.verbatim} · ${lo==null?'시작 미상':fmtYearFull(lo)} ~ ${hi==null?'끝 미상':fmtYearFull(hi)}`));
+      const open=()=>this.onTimeClaim(claim,projection);
+      mark.addEventListener('click',event=>{event.stopPropagation();open();});
+      mark.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open();}});
+      body.appendChild(mark);
+    }
     g.appendChild(body);
     return g;
   }
@@ -598,7 +621,7 @@ export class Timeline {
   _pointerDown(e){
     if (!this._geom) return;
     if (e.pointerType === 'mouse' && e.button !== 0) return;
-    if (e.target && typeof e.target.closest === 'function' && e.target.closest('.tl-label,.tl-group-open,.tl-group-toggle')) return;
+    if (e.target && typeof e.target.closest === 'function' && e.target.closest('.tl-label,.tl-group-open,.tl-group-toggle,.tl-time-claim')) return;
     const r = this.svg.getBoundingClientRect();
     if (e.clientX - r.left < this._geom.plotL - 8) return;   // 라벨 칸
     e.preventDefault();

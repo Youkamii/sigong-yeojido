@@ -25,7 +25,7 @@
   - 인용 이중 기록 (§7): syj:citesChunk <chunk URI> (그래프 탐색용) + syj:isSupportedBy "chunk_…" (규칙 엔진용 리터럴)
   - provenance 1급: Claim 마다 origin(human|ai) · generatedBy/At · (verifiedBy/At) · claimDigest.
     빈 노드(익명 노드)는 쓰지 않는다 — 모든 노드가 URI 를 갖는다
-  - 시간 (§8): time 객체 -> syj:TimeSpan (verbatim · precision 만). 연도 환산은 convertsTo Claim 의 syj:objectYear (§8.1)
+  - 시간 (§8): time 객체 -> syj:TimeSpan (원표기 · 정밀도 · 명시된 범위). 환산은 별도 convertsTo Claim (§8.1)
   - 좌표 (§9): location 객체 -> syj:objectLocation 으로 syj:Location 노드를 갖는 Claim. validFrom/validTo 는 Claim 에 붙는다 (§9.1)
     data/places.json 의 candidate 는 근거 세 필드(citesChunk · quote · fromSource)를 다 가진 것만 syj:locatedAt Claim 으로
     승격한다 — claims 파일의 claim 과 같은 모양으로 만들어 같은 검사(validate.validate)를 통과해야 한다.
@@ -513,7 +513,7 @@ class ClaimStats:
     claims: int = 0
     kinds: dict[str, int] = field(default_factory=dict)
     cited: set[str] = field(default_factory=set)
-    timespans: dict[str, tuple[str, str]] = field(default_factory=dict)  # ts id -> (verbatim, precision)
+    timespans: dict[str, dict] = field(default_factory=dict)
     refs: dict[str, str] = field(default_factory=dict)  # 참조된 id -> 처음 본 자리 (매달린 참조 검사용)
     locations_from_claims: int = 0
     locations_promoted: int = 0
@@ -557,14 +557,20 @@ def add_claim(graph: Graph, claim: dict, doc: V.ClaimsDoc, chunks: dict, cards: 
         if not (isinstance(ts_id, str) and ts_id and isinstance(verbatim, str) and verbatim and isinstance(precision, str)):
             raise BuildError(f"{where}: time object needs string 'id', 'verbatim', 'precision'")
         previous = stats.timespans.get(ts_id)
-        if previous is not None and previous != (verbatim, precision):
+        definition={key:obj[key] for key in ('verbatim','precision','year','earliest','latest','calendar') if obj.get(key) is not None}
+        if previous is not None and previous != definition:
             raise BuildError(
-                f"{where}: TimeSpan {ts_id!r} redefined with a different verbatim/precision ({previous} vs {(verbatim, precision)})"
+                f"{where}: TimeSpan {ts_id!r} redefined with a different time definition ({previous} vs {definition})"
             )
-        stats.timespans[ts_id] = (verbatim, precision)
+        stats.timespans[ts_id] = definition
         ts = graph.node("TimeSpan", ts_id)
         ts.add("syj:verbatim", lit(verbatim))
         ts.add("syj:precision", lit(precision))
+        for key in ('year','earliest','latest'):
+            if obj.get(key) is not None:
+                ts.add('syj:'+key,integer(obj[key]))
+        if obj.get('calendar') is not None:
+            ts.add('syj:calendar',lit(obj['calendar']))
         ts.add("syj:definedBy", qname(cid))
         n.add("syj:objectTime", qname(ts_id))
     elif kind == "location":

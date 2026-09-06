@@ -47,7 +47,7 @@ def neighborhood(entity, sources=None, origin='all', limit=30, offset=0):
     query = f'''
 SELECT DISTINCT ?claim ?subject ?predicate ?objectKind ?object ?source ?chunk ?quote ?origin ?status
        ?subjectLabel ?subjectType ?objectLabel ?objectType ?sourceLabel ?locator ?permalink
-       ?verbatim ?precision ?lat ?lon ?validFrom ?validTo
+       ?verbatim ?precision ?year ?earliest ?latest ?calendar ?lat ?lon ?validFrom ?validTo
 WHERE {{
   ?claim a syj:Claim; syj:subject ?subject; syj:predicate ?predicate; syj:fromSource ?source;
          syj:citesChunk ?chunk; syj:quote ?quote; syj:origin ?origin; syj:status ?status;
@@ -64,6 +64,8 @@ WHERE {{
   OPTIONAL {{?chunk syj:permalink ?permalink}}
   OPTIONAL {{?object syj:verbatim ?verbatim}}
   OPTIONAL {{?object syj:precision ?precision}}
+  OPTIONAL {{?object syj:year ?year}} OPTIONAL {{?object syj:earliest ?earliest}}
+  OPTIONAL {{?object syj:latest ?latest}} OPTIONAL {{?object syj:calendar ?calendar}}
   OPTIONAL {{?object syj:lat ?lat; syj:lon ?lon}}
   OPTIONAL {{?claim syj:validFrom ?validFrom}}
   OPTIONAL {{?claim syj:validTo ?validTo}}
@@ -84,7 +86,11 @@ WHERE {{
         if kind=='entity': obj['id']=target
         elif kind=='year': obj['value']=int(row['object'])
         elif kind=='literal': obj['value']=row['object']
-        elif kind=='time': obj.update(id=target,verbatim=row.get('verbatim',''),precision=row.get('precision','unknown'))
+        elif kind=='time':
+            obj.update(id=target,verbatim=row.get('verbatim',''),precision=row.get('precision','unknown'))
+            for key in ('year','earliest','latest'):
+                if key in row:obj[key]=int(row[key])
+            if 'calendar' in row:obj['calendar']=row['calendar']
         elif kind=='location':
             obj.update(lat=float(row['lat']),lon=float(row['lon']),precision=row.get('precision'))
             label=f"{obj['lat']}, {obj['lon']}"
