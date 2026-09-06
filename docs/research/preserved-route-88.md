@@ -32,4 +32,14 @@ python scripts/verify_preserved_route.py --base http://127.0.0.1:8870 --out /tmp
 
 추출은 공개 설명의 기록된 원 응답 해시와 완료된 조사 결과를 확인한다. 설명 HTML 전체는 Git으로 재배포하지 않는다.
 기준 판본이 바뀌면 그 새 파일을 검토해야 하며 기존 해시에 맞는 것처럼 수록하지 않는다.
-실제 c2 배포와 운영 주소 수용은 후속 실행 기록을 따른다.
+`bea1929e`로 [c2 배포](preserved-route-deployed-88.json)를 마쳤다. 준비 시간 465.55초,
+Source 1,075개·chunk 2,601,351개·Claim 9,418개·RDF 245,018트리플이다. FinBridge PID 222676은 그대로다.
+[실제 외부 주소의 옛길 검사 9개](preserved-route-production-88.json)와
+[기존 뷰어 12항목](year-records-viewer-89.json)을 통과했다. 기존 뷰어의 연도 기록 검사는
+응답 전 판정 오류가 두 번 나와 [별도 #89에서 수정](year-records-wait-89.md)하고 다시 확인했다.
+이 두 실패를 옛길 검사 자체의 실패나 수정 전 통과로 바꾸지 않았다.
+
+[새 Git 복사본](goal-clean-clone.json) 검증도 실패·경고 0이다.
+[전체 RDF 대조](preserved-route-ttl-comparison-88.json)는 로컬과 c2의 대용량 Source chunkCount 35개만 다르고 나머지는 일치한다.
+Q1~Q9는 8 PASS·Q6 PARTIAL, 실제 Claim이 있는 Source 85개·없는 Source 990개다.
+과거 역로 미확보와 국편 확인 대기는 유지하며, #88의 현재 참고선 수록으로 이를 완료 처리하지 않는다.
