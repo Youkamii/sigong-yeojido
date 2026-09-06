@@ -1,0 +1,62 @@
+{
+  "claims": [
+    "claim-rhee-transfer-conditions-text-r2",
+    "claim-rhee-states-usamgik-abolished-from-aug-16",
+    "claim-rhee-transfer-statement-date-metadata"
+  ],
+  "newChunks": 3,
+  "source": "src-pa-speech-records",
+  "quotedCharacter": "U+F978 preserved",
+  "checks": [
+    {
+      "id": "ex-pa-rhee-transfer-1948-fix",
+      "sourceId": "src-pa-speech-records",
+      "url": "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02062&artid=1310446",
+      "exact": true,
+      "whitespaceOnlyMatch": true,
+      "accepted": true,
+      "quote": "군정과 민국정부 사이에 이양하고 접수(接受)하는 조건이 양편(兩便)에 충분하게 작성되어서",
+      "pageSha256": "c8ccc6d7a00b5a0dc97e8bf27cc9a611155bc53e17b285f4da64a912074e7cf5",
+      "error": null
+    },
+    {
+      "id": "ex-pa-rhee-transfer-1948-vacuum",
+      "sourceId": "src-pa-speech-records",
+      "url": "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02062&artid=1310446",
+      "exact": true,
+      "whitespaceOnlyMatch": true,
+      "accepted": true,
+      "quote": "미군정이 8월 16일부터 폐지된 이후 민국정부는 정령(政令)을 발행하지 않고",
+      "pageSha256": "c8ccc6d7a00b5a0dc97e8bf27cc9a611155bc53e17b285f4da64a912074e7cf5",
+      "error": null
+    }
+  ],
+  "dateMetadataChecked": true,
+  "run": {
+    "task": "modern-provenance-65-66",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788693021.6471336,
+    "pid": 14876,
+    "exitCode": 0,
+    "seconds": 1728.3,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "1cf8a2aa-bd0c-4a0b-920e-d7abbbb1cd14",
+    "permissionDenials": [
+      {
+        "tool_name": "Glob",
+        "tool_use_id": "toolu_01C4tB9ggamx3A8WU8SZytC4",
+        "tool_input": {
+          "pattern": "**/*.json",
+          "path": "C:\\Users\\gkfkd\\AppData\\Local\\Temp\\sigong-core-followup-opus5"
+        }
+      }
+    ]
+  },
+  "humanReviewed": false
+}
