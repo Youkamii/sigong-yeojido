@@ -17,6 +17,13 @@ spec.loader.exec_module(server)
 
 
 class NameMatchingTests(unittest.TestCase):
+    def test_three_digit_inscription_years_and_unknown_dates(self):
+        self.assertEqual(server.year_of("798-99-99"), 798)
+        self.assertEqual(server.year_of("-0041-99-99"), -41)
+        self.assertIsNone(server.year_of("05##-99-99"))
+        self.assertIsNone(server.year_of("9999-99-99"))
+        self.assertIsNone(server.year_of("12345-01-01"))
+
     def setUp(self):
         self.chunks = [
             {"id": "false", "sourceId": "src-a", "text": "陳設於漢山"},

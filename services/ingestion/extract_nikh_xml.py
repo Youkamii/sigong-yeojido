@@ -62,9 +62,9 @@ SOURCES: dict[str, dict] = {
 # 본문에서 통째로 버리는 요소 — 원문이 아니라 국편의 편집 장치다
 DROP_TAGS = {"reference", "link", "illustration", "image", "caption"}
 # 태그만 벗기고 글자는 살리는 요소 (index 는 색인어로도 기록한다)
-INLINE_TAGS = {"index", "paragraph", "noteContent", "noteTitle", "td", "quotation", "postScript"}
+INLINE_TAGS = {"index", "paragraph", "noteContent", "noteTitle", "td", "quotation", "postScript", "emph", "sup"}
 # 표 — 행(tr)마다 줄바꿈, 셀(td) 사이는 공백. 열 구조는 원본 XML 로 돌아가야 한다 (삼국유사 王曆, 고려사 表)
-TABLE_BLOCK_TAGS = {"tableGroup", "table", "tr", "ul", "li"}   # 목록(ul/li)도 항목마다 줄바꿈 (삼국사기 目錄)
+TABLE_BLOCK_TAGS = {"tableGroup", "table", "tr", "ul", "li", "pTitle", "explanation"}
 
 
 def is_hanja(ch: str) -> bool:

@@ -204,7 +204,7 @@ def places_with_mentions() -> dict:
     return data
 
 
-_YEAR_RE = re.compile(r"^(-?\d{4})")
+_YEAR_RE = re.compile(r"^(-?\d{3,4})(?=-|$)")
 
 
 def year_of(raw) -> int | None:
