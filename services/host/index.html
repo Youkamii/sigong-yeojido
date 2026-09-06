@@ -67,9 +67,26 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .bar .back{font-family:var(--mono);font-size:11px;color:var(--paper-3);letter-spacing:.1em}
 .bar .back:hover{color:var(--celadon)}
 
-.stage{display:grid;grid-template-columns:236px 1fr 320px;min-height:0}
-@media (max-width:1080px){.stage{grid-template-columns:200px 1fr}.evi{display:none}}
-@media (max-width:720px){.stage{grid-template-columns:1fr}.rail{display:none}}
+.stage{position:relative;display:grid;grid-template-columns:236px minmax(0,1fr) 320px;min-height:0}
+.panel-btn{display:none;border:1px solid var(--line-2);border-radius:2px;padding:6px 9px;font-size:12px}
+.origin-filter{display:flex;align-items:center;gap:5px;font-size:12px;white-space:nowrap}
+@media (max-width:1080px){
+  .stage{grid-template-columns:200px minmax(0,1fr)}
+  .evi{display:none}
+  #evidenceBtn{display:block}
+  .stage.evidence-open .evi{display:block;position:absolute;inset:0 0 0 auto;width:min(100%,420px);z-index:20;box-shadow:-8px 0 25px #0008}
+}
+@media (max-width:720px){
+  .stage{grid-template-columns:minmax(0,1fr)}
+  .rail{display:none}
+  #sourcesBtn{display:block}
+  .stage.sources-open .rail{display:block;position:absolute;inset:0 auto 0 0;width:min(100%,340px);z-index:20;box-shadow:8px 0 25px #0008}
+  .bar{flex-wrap:wrap;gap:8px;padding:8px 10px}
+  .bar .brand{font-size:15px}
+  .bar .brand small,.bar .back{display:none}
+  .bar .spacer{display:none}
+  .bar .origin-filter{margin-left:auto}
+}
 
 .rail{border-right:1px solid var(--line);background:var(--ink-2);overflow-y:auto;padding:16px 15px 28px}
 .q{width:100%;box-sizing:border-box;background:var(--ink-3);border:1px solid var(--line-2);color:inherit;font:inherit;font-size:13px;
@@ -216,12 +233,14 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <button id="b3d">3D</button>
     </div>
     <span class="spacer"></span>
+    <button id="sourcesBtn" class="panel-btn" aria-controls="sourceRail" aria-expanded="false">찾기·사료</button>
+    <button id="evidenceBtn" class="panel-btn" aria-controls="evi" aria-expanded="false">근거 열기</button>
     <label class="origin-filter" title="작성자가 사람으로 기록된 연결만 표시한다. 원문은 그대로 볼 수 있다."><input id="humanOnly" type="checkbox"> AI 연결 제외</label>
     <span class="back" id="toGate">← 대동여지도</span>
   </div>
 
   <div class="stage">
-    <aside class="rail">
+    <aside class="rail" id="sourceRail">
       <div class="sect">찾기</div>
       <input id="q" class="q" type="search" placeholder="지명 · 인물 · 나라 · 사건" autocomplete="off" aria-label="찾기">
       <div id="qList" class="qlist"></div>
@@ -251,7 +270,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       </div>
     </div>
 
-    <aside class="evi" id="evi">
+    <aside class="evi" id="evi" tabindex="-1" aria-label="사료와 주장 근거">
       <p class="empty">지도에서 지명을 고르면 그 지명이 어느 사료 어느 대목에서 나왔는지, 위치를 무엇으로 보는지가 여기 열린다.</p>
     </aside>
   </div>
@@ -281,6 +300,30 @@ document.getElementById('humanOnly').addEventListener('change', event => {
 });
 
 const visibleCandidates = p => p.candidates.filter(c => originMatches(c, state.origin, p));
+
+function setDrawer(kind){
+  const stage = document.querySelector('.stage');
+  stage.classList.toggle('evidence-open', kind === 'evidence');
+  stage.classList.toggle('sources-open', kind === 'sources');
+  document.getElementById('evidenceBtn').setAttribute('aria-expanded', String(kind === 'evidence'));
+  document.getElementById('sourcesBtn').setAttribute('aria-expanded', String(kind === 'sources'));
+  document.getElementById('evidenceBtn').textContent = kind === 'evidence' ? '근거 닫기' : '근거 열기';
+  document.getElementById('sourcesBtn').textContent = kind === 'sources' ? '목록 닫기' : '찾기·사료';
+}
+function openEvidence(){
+  if(innerWidth <= 1080){
+    setDrawer('evidence');
+    document.getElementById('evi').focus({preventScroll:true});
+  }
+}
+for(const [id, kind] of [['evidenceBtn','evidence'], ['sourcesBtn','sources']]){
+  document.getElementById(id).onclick = () => {
+    const open = document.getElementById(id).getAttribute('aria-expanded') === 'true';
+    setDrawer(open ? null : kind);
+    if(!open && kind === 'sources') document.getElementById('q').focus();
+  };
+}
+addEventListener('keydown', event => { if(event.key === 'Escape') setDrawer(null); });
 
 // ── 투영 (메르카토르) ──
 // x·y 를 같은 단위(라디안)로 재야 한다. 경도를 도(度)로 두고 y만 메르카토르
@@ -384,8 +427,8 @@ const yearText = y => y < 0 ? `기원전 ${-y}년` : `서기 ${y}년`;
 const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
 let yearSeq = 0, yearTimer = 0, panelSeq = 0;
 function refreshEvidence(){
-  if(state.sel) select(state.sel);
-  else if(state.panel === 'year') showYear();
+  if(state.sel) select(state.sel, false);
+  else if(state.panel === 'year') showYear(false);
 }
 async function refreshYearCount(){
   const y = state.year, seq = ++yearSeq;
@@ -396,7 +439,8 @@ async function refreshYearCount(){
   }catch(e){ /* 조용히 */ }
 }
 function scheduleYearCount(){ clearTimeout(yearTimer); yearTimer = setTimeout(refreshYearCount, 250); }
-async function showYear(){
+async function showYear(reveal = true){
+  if(reveal) openEvidence();
   const y = state.year, seq = ++panelSeq;
   state.panel = 'year';
   state.sel = null; draw(); if(state.mode==='3d') draw3d();
@@ -516,6 +560,7 @@ function mdLite(md){
   return out.join('');
 }
 async function showSource(id){
+  openEvidence();
   const seq = ++panelSeq;
   state.panel = 'source';
   const el = document.getElementById('evi');
@@ -695,7 +740,8 @@ cv.addEventListener('click', e => {
 
 // ── 근거 패널 ──
 // 근거는 서버가 찾는다(/api/mentions) — 이름 문자열 일치(자동). 원문 전체를 브라우저로 보내지 않는다.
-async function select(id){
+async function select(id, reveal = true){
+  if(reveal) openEvidence();
   const seq = ++panelSeq;
   state.panel = 'place';
   state.sel = id; draw(); if(state.mode==='3d') draw3d();
