@@ -1,13 +1,45 @@
-# 인수인계 — 시공여지도 (2026-09-06 새벽 기준)
+# 인수인계 — 시공여지도 (2026-09-06, 사료 3라운드 반영)
 
-이 문서는 Claude 세션(2026-09-04~06)이 한 일 전부와, 다음 작업자(Codex)가 이어받을 때 알아야 할 것을 적는다.
+이 문서는 Claude 세션(2026-09-04~06)의 작업과 Codex가 이어서 반영한 결과를 적는다.
 하위 에이전트(워크플로)가 만든 것까지 포함한다. 사실은 **확인됨**(실행·화면으로 검증) / **미확인** 으로 나눠 적는다.
 
 ---
 
 ## 최신 진행 — Codex, 2026-09-06
 
-**§7의 1~3 완료. 다음은 4(사료 3라운드).** 아래 과거 기록의 수치는 당시 상태이고, 현재 확인값은 이 절을 따른다.
+**§7의 1~4·6 완료. 다음은 5, 고려사·삼국유사 지명 후보 조사(#18).** 사료 증가에 필요한 6(묶기·접기)은 4와 함께 처리했다.
+
+| 기능 | 이슈 | 커밋 |
+|---|---|---|
+| 상세 원문을 응답할 때만 읽고, 검색 색인 메모리·원문 응답 크기 제한 | #30 | `9b4d95f` |
+| 30개 초과 사료를 종류별로 묶기·접기, 개별 선택 보존 | #31 | `fd876ee` |
+| 실록 30종 Source·기사 추출, 독립 XML 수 대조, 재현 기록 | #15 | `26e3456` |
+| 금석문 823개 Source, 판독문·개관·번역·참고문헌 구분 | #16 | `115484a` |
+| 집성 원 사서 92개 Source, 서지·날짜 원표기 보존 | #17 | `ad1c903` |
+| 하네스가 비동기 주장 표시를 기다리도록 수정 | #31 | `ef04d11` |
+| 현재 운영 결과와 인수인계 갱신 | #32 | 이 문서 커밋 |
+
+현재 확인값:
+
+- **Source 949개, c2 chunks 438,370개.** 기존 4개·37,003 + 실록 30개·389,483 + 금석문 823개·3,195 + 집성 92개·8,689.
+- **새 Git 클론은 카드 949개·chunks 48,887개**다. 실록 JSONL **840,174,964 bytes(약 801 MiB)**는 Git 밖의 c2 `data/sources/sillok-*/`에 있다. [실록 재현 방법](research/sillok-ingestion.md)과 파일별 해시는 Git에 있다. 금석문·집성 JSONL은 모두 Git에 있다.
+- claims **85**, digest **85/85**, 엔티티 껍데기 **30**, 지명 **60**(id 전부 유일), Conflict **1**(海/每 판독 차이). 신규 사료에서 자동으로 주장을 만들지는 않았다.
+- TTL **17,008 triples**, **796,716 bytes**, SHA256 `5d54dcddef70b33141fe8dc70cc6ca7f969894c2ab8d7e6a0ac29abd5692a885`. c2 Fuseki 교체 적재와 COUNT 대조 완료. `place-gungnae` 엔티티 껍데기 누락으로 후보를 건너뛰는 기존 경고는 남아 있다.
+- 세 신규 사료를 두 번 추출해 모든 JSONL·카드의 바이트 일치를 확인했다. 운영 JSONL도 보고서의 SHA256과 전수 대조했다. 기존 삼국사기·삼국유사·고려사 JSONL 9개는 수정된 공용 추출기로 재생성해도 바이트가 같다.
+- Python tests **53개**, JavaScript tests **8개**, validate self-test와 실제 claims 검증 통과. c2 운영 :8870 화면 하네스 **12/12**, 콘솔 오류 **0**. 운영 2D·3D PNG를 내려받아 직접 확인했다.
+- 실록 30개 접기·부분 선택·전체 해제·시간 범위 유지·태조 카드, 금석문 광개토왕릉비 카드와 414년 판독문 14개, 집성 92개 펼침·三國志 카드도 운영 브라우저/API에서 확인했다. 증거: c2 `/tmp/sigong-source-groups-production/`, `/tmp/sigong-new-corpus-ui-production/`, `/tmp/sigong-corpus-production/`. 운영 화면 PNG는 로컬 `%TEMP%/sigong-corpus-production/`에도 있다.
+- 운영 뷰어 RSS **643,008 KiB** 관측. 전체 사료를 넣은 시험본에서 캐시 후 `/api/sources` **99ms**, 전체 `平壤` 검색 **832ms**(각 1회). 전체 사료 선택 파라미터 33,035 bytes는 외부 터널에서도 HTTP 200이었다. 수치는 부하에 따라 달라진다.
+- 뷰어: `python3 -u services/host/server.py --port 8870`, 배포 때 pid **192372**, 로그 `/tmp/sigong-server.log`, pid 파일 `/tmp/sigong-server.pid`.
+- 자동 적재: `python3 -u scripts/sync_fuseki.py --watch`, 배포 때 pid **192373**, 로그 `/tmp/sigong-sync.log`, pid 파일 `/tmp/sigong-sync.pid`. Fuseki pid **167737**은 유지했다. **재부팅 자동 기동은 아직 없다.**
+- 외부 터널에서 Source **949개** 확인. FinBridge :8891 리스너는 배포 전후 동일(pid **100364**). 시험용 뷰어 :8872는 종료했다. 판톨로지 이식 코어·vendor 변경 없음.
+- #15 #16 #17 #30 #31은 검증 코멘트를 남기고 닫았다. GitHub Actions 실행 기록은 없다. 이 작업도 하위 에이전트·워크플로·새 터미널 창 없이 진행했다.
+
+집성 포털 설명의 95종과 ZIP의 92개 XML 차이, 불확실한 편찬 시점 42개는 [집성 적재 기록](research/jipseong-ingestion.md)에 남겼다.
+없는 원문이나 정확한 연도를 만들어 채우지 않는다. 금석문은 [적재·기존 광개토왕릉비 대조 기록](research/geumseokmun-ingestion.md)을 따른다.
+
+## 이전 진행 — Codex, §7의 1~3
+
+아래 수치는 사료 3라운드 전의 검증 기록이다. 현재 확인값은 위 최신 진행 절을 따른다.
 
 | 기능 | 이슈 | 커밋 |
 |---|---|---|
@@ -53,7 +85,7 @@
 
 한반도 중심 역사 온톨로지. 사료 원문 → chunk(JSONL) → 주장(Claim, 마크다운) → TTL → Fuseki. 화면은 대동여지도 진입 →
 2D 시간축 지도 + 판톨로지(fantology) 렌더링 코어를 그대로 이식한 3D 디오라마 + 사료별 시간 막대 타임라인 + 근거/주장 패널.
-사료 4종(광개토왕릉비·삼국사기·삼국유사·고려사, 37,003 chunk)까지 들어갔고, 뷰어는 c2 에서 돌며 12항목 자동 검증을 통과한다.
+기존 사료 4종에 실록·금석문·집성을 더해 c2에는 Source 949개·438,370 chunk가 있다. 뷰어는 c2에서 돌며 12항목 자동 검증을 통과한다.
 
 ## 1. 사용자 요구사항 — 바뀌지 않는 것
 
@@ -74,14 +106,15 @@
 | c2 작업본 | `ssh lia-c2` → `~/sigong-yeojido` (remote `git@github-sigong:Youkamii/sigong-yeojido.git`, 배포키 `~/.ssh/id_sigong`, git user Youkamii) |
 | 로컬 클론 | `C:\Users\gkfkd\Git\sigong-yeojido` |
 | 옛 저장소 | `C:\Users\gkfkd\Git\Map-of-the-Great-East` — 비어 있음. `.claude/worktrees/` 에 워크플로 워크트리 13개(전부 GitHub 브랜치로 백업됨). 세션 끝나면 지워도 됨 |
-| 뷰어 서버 | c2 `:8870` — `cd ~/sigong-yeojido && setsid nohup python3 services/host/server.py --port 8870 > /tmp/sigong-server.log 2>&1 < /dev/null &` (시작 때 색인을 만드느라 ~8초) |
+| 뷰어 서버 | c2 `:8870` — 저장소 루트에서 `python3 -u services/host/server.py --port 8870`. 백그라운드 실행, 로그 `/tmp/sigong-server.log`, pid 파일 `/tmp/sigong-server.pid`. 시작 시 전체 색인을 만드므로 API 준비까지 기다린다 |
 | 외부 URL | cloudflared 터널 `https://undertaken-coleman-interests-bruce.trycloudflare.com` (c2 pid 146152, 로그 /tmp/sigong-tunnel.log — 재시작하면 URL 이 바뀐다) |
-| Fuseki | c2 `~/sigong-yeojido/.fuseki/` (Temurin JRE 21 + Fuseki 6.2.0 포터블, sudo 없이). `scripts/fuseki.sh start|stop|status|load <ttl>|query '<sparql>'`. 127.0.0.1:3030, 데이터셋 `/sigong`, **인메모리(멈추면 데이터 사라짐)**. 지금 떠 있고 1,711 트리플 적재됨(pid 167737) |
-| TTL | `python3 services/build_ttl.py` → `data/build/sigong.ttl` (gitignore). c2 에는 에이전트가 만든 84,548 B 판이 있고, 로컬 main 빌드는 86,219 B (사료 4종 반영) |
+| Fuseki | c2 `~/sigong-yeojido/.fuseki/` (Temurin JRE 21 + Fuseki 6.2.0 포터블, sudo 없이). `scripts/fuseki.sh`로 시작·종료·상태·적재·질의. 127.0.0.1:3030, 데이터셋 `/sigong`, **인메모리(멈추면 데이터 사라짐)**. 17,008 트리플 적재 확인(pid 167737). `sync_fuseki.py --watch`가 소실 시 재적재 |
+| TTL | `python3 services/build_ttl.py` → `data/build/sigong.ttl` (gitignore). c2 빌드 796,716 B·17,008 트리플, SHA256은 최신 진행 절. 전체 c2 데이터에서 빌드 26.33초·최대 RSS 747,988 KiB 관측 |
 | 검증 하네스 | c2 `~/sigong-yeojido/.venv-build/bin/python scripts/verify_viewer.py --url "http://127.0.0.1:8870/?q=low" --out /tmp/verify` → 12항목 + PNG (`/tmp/verify/*.png`, scp 로 받아 눈으로 본다) |
 | 3D 진단 | `scripts/diag_3d.py` (컴포저/직접 렌더 비교, 픽셀 RGBA 샘플) |
 | 벌크 zip | c2 `~/sigong-yeojido/data/bulk/1505363{4,5,7}.zip` (gitignore). 에이전트 클론 `~/work/corpus-*/data/bulk/` 에 15053630·15053631·15053647 도 받아 둠 |
-| 문서 | `docs/00-vision.md` 원칙, `docs/01-sources.md` 사료 목록(확인된 것 절), `docs/02-schema.md` 스키마 정본, `docs/research/` 조사·교차검증·벌크 XML 구조, `README.md` |
+| 실록 Git 밖 원문 | c2 `~/sigong-yeojido/data/sources/sillok-*/` (30개 폴더), `docs/research/sillok-ingestion.md` 재현 명령, `sillok-extraction.json` 파일별 SHA256 |
+| 문서 | `docs/00-vision.md` 원칙, `docs/01-sources.md` 사료 목록(확인된 것 절), `docs/02-schema.md` 스키마 정본, `docs/research/` 조사·교차검증·벌크 XML 구조·신규 3종 적재 기록, `README.md` |
 
 ## 3. 지금까지 된 것 (main, 커밋 순)
 
@@ -134,8 +167,12 @@
 | 삼국사기 | 15053635 | 제한 없음 (09-05) | 5,237 | 3,948 | 3,339 | 14,667 | level3 기사 + level2 절 67 |
 | 삼국유사 | 15053634 | 제한 없음 (09-05) | 517 | 196 | 1,903 | 5,690 | level4 기사, 王曆 은 표, 檀君=壇君 |
 | 고려사 | 15053637 | 제한 없음 (09-05) | 31,207 | 27,470 | 735 | 124,396 | 세가 "왕N년›월›기사"(level5), 고려세계 id 에 `$` |
+| 조선왕조실록 | 15053647 | 제한 없음 (09-06) | 389,483 | 380,785 | 68,209 | 2,040,834 | 30 Source, 기사 381,672·절 7,811, JSONL은 c2만 |
+| 한국고대금석문 | 15053630 | 제한 없음 (09-06) | 3,195 | 판독문만 조성 시점 상속 | 10,505 | 6,842 | 823 Source, 판독·개관·번역·참고문헌 분리 |
+| 한국고대사료집성 | 15053631 | 제한 없음 (09-06) | 8,689 | 3,439 | 8,924 | 187,760 | 92 Source, 원 사서별 발췌 |
 
-지명 58(손질본 10 + 조사본 48, 후보 90), 엔티티 껍데기 30, claims 85(전부 광개토왕비, origin ai, status draft), Conflict(validate.py 규칙) 12, TTL 1,711 트리플(c2 적재본; 로컬 main 빌드는 사료 4종 반영으로 더 큼).
+합계 **949 Source, c2 438,370 chunks**. Git에는 실록 JSONL을 뺀 **48,887 chunks**를 수록했다.
+지명 **60**, 엔티티 껍데기 **30**, claims **85**(전부 광개토왕비, origin ai, status draft), Conflict **1**, TTL **17,008** 트리플.
 
 ## 5. 하위 에이전트(워크플로) 산출물 — 전부
 
@@ -165,7 +202,8 @@
 ### 5.3 `wf_6ada6fe6-175` 적대 리뷰 (34 에이전트) — 확인된 결함은 §6.
 
 ### 5.4 `wf_668890c6-ba3` 사료 3라운드 (#15 실록·#16 금석문·#17 집성) — **세션 한도로 셋 다 도중 사망**
-남은 상태(c2, 미커밋):
+이 절은 당시 중단 기록이다. **Codex가 ZIP을 재사용해 새로 전체 추출·검증했고 세 건 모두 main/c2에 반영했다.** 이전 미커밋 시도본은 보존했다.
+당시 남은 상태(c2, 미커밋):
 - `~/work/corpus-joseon-sillok/` — 15053647.zip 받아 둠(추출 전).
 - `~/work/corpus-godae-geumseokmun/` — 15053630.zip, `data/sources/godae-geumseokmun/` 추출 시도본, `extract_nikh_xml.py` 수정본(미커밋).
 - `~/work/corpus-godae-saryo-jipseong/` — 15053631.zip, 원 사서별 분할 시도본(`data/sources/jipseong-beiqishu/`, `jipseong-beishi/`, `jipseong-cefuyuangui/`), 추출기 수정본.
@@ -174,9 +212,10 @@
 ### 5.5 `wf_e37d2b0e-000` 지명 2라운드 (#18 고려사·삼국유사 색인 지명 좌표) — **세션 한도로 사망, 산출물 없음**
 워크트리 `Map-of-the-Great-East/.claude/worktrees/wf_e37d2b0e-000-{1,2}` 에 부분 파일이 있을 수 있음(미확인).
 
-## 6. 적대 리뷰에서 **확인된** 결함 (고쳐야 할 것)
+## 6. 적대 리뷰에서 **확인된** 결함 (당시 기록)
 
 리뷰어 3(정합성·보안·단순화) → 발견 31건 → 반박 검증에서 확인된 것. 줄 번호는 리뷰 시점(3525274 전후) 기준이라 지금과 다를 수 있다.
+아래 major 1~9는 모두 수정됐다. medium·minor는 개별 코드의 현재 상태를 확인한 뒤 진행한다.
 
 ### major (먼저)
 1. **한 글자 라벨의 부분 문자열 일치가 근거 수·사료 토글을 오염** — `server.py` `places_with_mentions()`·`mentions()` 의 `any(n in t for n in names)`. 조사본 한 글자 국명 10개(遼 唐 魏 漢 倭 隋 燕 梁 陳 宋)가 陳設·漢山·거란 遼 등을 잡아 전체 mentions 의 72.5% 를 차지. 고침: 이름 길이 ≥ 2 조건, 한 글자는 다자 alias(大唐·後漢 …)로만, 삼국사기·삼국유사는 index-terms type=국명 정확 일치 활용(고려사 index-terms 엔 국명 type 없음). 화면엔 "한 글자라 자동 검색 안 함" 표시.
@@ -206,16 +245,16 @@
 1. **완료** — §6 major 1~8 수정 → 하네스 12/12. 기능별 #19~#26, 커밋과 검증은 최신 진행 절.
 2. **완료(#27)** — `validate.py`의 `MULTI_VALUED_PREDICATES`를 충돌 집계에서 제외하고, `build_ttl.py`도 같은 목록을 import한다. 스키마 §11과 뷰어 `MULTI` 목록도 일치한다. **재검증 정정:** 기존 12건 중 11건이 다치 술어다. `chunk_gwanggaeto_1-09`의 `readsCharacterAs`(海/每) 1건은 유지한다.
 3. **완료(#28)** — `scripts/sync_fuseki.py --watch`: 데이터 변경 또는 Fuseki 인메모리 데이터 소실 시 빌드·교체 적재·개수 대조. 인메모리를 유지했고, TDB2(`--tdb2 --loc .fuseki/db`) 전환은 여전히 사용자 결정(§13 미결).
-4. 사료 3라운드 재개(#15 #16 #17) — c2 `~/work/corpus-*` 상태에서. 실록은 실록마다 Source 로 나누는 규칙표(왕대·완성 연도·출처) 필요. 45 MB 넘는 jsonl 은 커밋하지 않고 c2 작업본에만(README 규칙).
+4. **완료(#15 #16 #17)** — 실록 30·금석문 823·집성 92 Source. 금석문·집성 어댑터와 실록 추출은 공용 본문 추출기를 쓴다. 각 두 번 추출한 바이트·XML 수·운영 SHA256 대조, 뷰어 12/12 통과. 실록 JSONL은 c2에만 두고 규칙표·재현 명령·해시를 Git에 기록했다.
 5. 지명 2라운드(#18) 재실행. 결과는 `data/places-candidates-<src>.json`(서버가 병합).
-6. 타임라인 행이 30개를 넘으면(실록) 사료 종류별 묶기·접기 — `timeline.js` 에 group 개념.
+6. **완료(#31)** — 30개 초과 시 `sourceGroup`으로 시간축·왼쪽 목록 묶기·접기. 현재 12묶음, 펼치기·전체/부분 선택·선택 복원·전체 시간 범위·카드 표시를 브라우저에서 검증했다.
 7. 이름 표기 변형(壇君/檀君, 平穰/平壤) → `sameEntityAs` Claim 으로 승격(§8), 지금은 places.json aliases 임시.
 8. 판톨로지 물질화 연출(엔진에 있음: `patchFanMaterial`·`uMaterialize`), 3D 라벨 겹침 개선.
 9. 국편 `dateOccured` 'L' 접미사 의미 확인, 삼국사기 웹/벌크 글자 차이.
 10. 라이선스 기관 문의 여부는 사용자 결정(국편 웹은 저작권법 24조의2 학술·개인 한정, 벌크는 데이터셋별 확인 완료).
 11. 승정원일기(15064218)·비변사등록(15053636)·고순종실록(15053646)은 대용량 저장 전략(git 밖, 재현 스크립트) 정한 뒤.
 
-열린 개발 이슈: #3 #4 #7 #8 #12 #15 #16 #17 #18. #5 #6은 현재 빌드·적재·질의 재검증 코멘트를 남기고 닫았다. 주요 수정 #19~#28도 닫았다. 최신 진행 문서 갱신은 #29.
+열린 개발 이슈: #3 #4 #7 #8 #12 #18. #5 #6 및 #15~#17·#19~#31은 검증 코멘트를 남기고 닫았다. 최신 문서 갱신은 #32.
 
 ## 8. 규칙·함정
 
@@ -223,7 +262,7 @@
 - 푸시 전 적대 리뷰 1회가 규칙(이번엔 §6 결과가 그것).
 - 새 콘솔 창 금지(Start-Process/start/wt). 백그라운드는 `setsid nohup … &`.
 - **ssh 한 줄 명령 안에 작은따옴표·`<span` 같은 문자를 넣지 말 것** — 두 번 서버를 죽였다. 패치는 파일로 만들어 scp 후 실행.
-- 서버 재시작은 `old=$(pgrep -f "^python3 services/host/server.py"); kill $old` — `pkill -f services/host/server.py` 는 ssh 셸 자신을 죽인다.
+- 서버 재시작은 `/tmp/sigong-server.pid`의 PID를 읽고 `/proc/<pid>/cmdline`이 `python3 -u services/host/server.py --port 8870`, `/proc/<pid>/cwd`가 실제 저장소인지 확인한 뒤 그 PID에만 SIGTERM을 보낸다. 재기동 뒤 pid 파일을 갱신하고 API 준비를 확인한다. `pkill -f services/host/server.py`는 ssh 셸도 죽이므로 쓰지 않는다. 감시 명령도 별도 pid 파일과 명령·cwd를 대조한다.
 - 국편 사이트(db.history.go.kr, contents.history.go.kr)는 robots.txt 전면 Disallow — 긁지 않는다. 벌크 다운로드는 한 번만(캡차 경로 있음).
 - 판톨로지 이식 파일은 건드리지 않는다. 팔레트는 artbible PALETTE 만.
 - WebGL 헤드리스 캡처는 `composer.render()` → `toDataURL` (뷰포트 스크린샷은 검게 나옴). gstack /browse 는 WebGL 에서 죽어서 c2 Playwright 하네스로 대체.
@@ -236,10 +275,10 @@
 ```bash
 ssh lia-c2
 cd ~/sigong-yeojido && git pull --ff-only
-curl -s http://127.0.0.1:8870/api/sources | head -c 300           # 뷰어 살아 있나
+curl -fsS http://127.0.0.1:8870/api/sources | python3 -c 'import json,sys; print(len(json.load(sys.stdin)))'  # 949
 .venv-build/bin/python scripts/verify_viewer.py --url "http://127.0.0.1:8870/?q=low" --out /tmp/verify   # 12/12
 python3 services/validate.py                                        # OK
 python3 services/build_ttl.py && scripts/fuseki.sh status           # TTL 빌드, Fuseki 상태
-scripts/fuseki.sh query 'SELECT (COUNT(*) AS ?n) WHERE {?s ?p ?o}'  # 현재 데이터: 1675
+scripts/fuseki.sh query 'SELECT (COUNT(*) AS ?n) WHERE {?s ?p ?o}'  # 현재 데이터: 17008
 ```
 PNG 는 `scp lia-c2:/tmp/verify/04-3d.png .` 로 받아 눈으로 본다.

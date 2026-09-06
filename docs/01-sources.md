@@ -2,9 +2,9 @@
 
 > 아래 초안의 "미확인" 표시는 처음 쓸 때의 것이다. 실제로 확인·수집한 사료는 바로 아래 절에 있다.
 
-## 확인된 것 (2026-09-05)
+## 확인된 것 (2026-09-06)
 
-수집 경로는 **공공데이터포털(data.go.kr)의 국사편찬위원회 벌크 XML** 하나다. 국편 사이트(db.history.go.kr)는 robots.txt 로
+국편 사료의 수집 경로는 **공공데이터포털(data.go.kr)의 국사편찬위원회 벌크 XML**이다. 국편 사이트(db.history.go.kr)는 robots.txt 로
 수집을 막고 있어 긁지 않는다. 데이터셋마다 이용허락범위를 상세 페이지에서 직접 읽어 카드에 적었다.
 
 | 사료 | 데이터셋 | 이용허락범위(페이지 확인일) | chunk | 카드 |
@@ -13,8 +13,14 @@
 | 삼국사기 | 15053635 | 제한 없음 (2026-09-05) | 5,237 | `data/sources/samguksagi.md` |
 | 삼국유사 | 15053634 | 제한 없음 (2026-09-05) | 517 | `data/sources/samgukyusa.md` |
 | 고려사 | 15053637 | 제한 없음 (2026-09-05) | 31,207 | `data/sources/goryeosa.md` |
+| 조선왕조실록 | [15053647](https://www.data.go.kr/data/15053647/fileData.do) | 제한 없음 (2026-09-06) | 389,483 | `data/sources/sillok-*.md` 30개 |
+| 한국고대금석문 | [15053630](https://www.data.go.kr/data/15053630/fileData.do) | 제한 없음 (2026-09-06) | 3,195 | `data/sources/geumseok-*.md` 823개 |
+| 한국고대사료집성 | [15053631](https://www.data.go.kr/data/15053631/fileData.do) | 제한 없음 (2026-09-06) | 8,689 | `data/sources/jipseong-*.md` 92개 |
 
-진행 중(이슈): 조선왕조실록 15053647(#15, 실록마다 Source), 한국고대금석문 15053630(#16), 한국고대사료집성 15053631(#17).
+c2 합계 949 Source·438,370 chunks. 실록 JSONL은 Git 밖에 있어 새 Git 클론은 48,887 chunks다.
+신규 3종은 각각 [실록](research/sillok-ingestion.md), [금석문](research/geumseokmun-ingestion.md),
+[집성](research/jipseong-ingestion.md) 적재 기록에 분할 기준·날짜 처리·재현 명령·SHA256을 적었다.
+집성은 원 사서의 발췌이며 ZIP의 92종과 포털 설명의 95종 차이를 남겼다. 알 수 없는 편찬 시점은 미상으로 표시한다.
 다음 후보: 고순종실록 15053646, 비변사등록 15053636, 승정원일기 15064218(대용량 — 저장 전략 먼저).
 벌크 XML 의 구조·계층 차이는 `docs/research/bulk-xml-findings.md`.
 

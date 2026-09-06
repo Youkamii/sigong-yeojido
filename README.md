@@ -8,6 +8,22 @@
 - 사료 목록·라이선스: `docs/01-sources.md`, 사료 카드 `data/sources/*.md`
 - 스키마 정본(3층: 엔티티 / Claim / Source·chunk): `docs/02-schema.md`
 - 조사 기록(사료 조사 1·2차, codex 교차검증, 국편 벌크 XML 구조): `docs/research/`
+- 현재 운영 상태·완료 이슈·다음 작업: [인수인계](docs/HANDOVER.md)
+
+## 현재 데이터 (2026-09-06)
+
+| 사료 묶음 | Source | chunk | 재현·검증 |
+|---|---:|---:|---|
+| 광개토왕릉비·삼국사기·삼국유사·고려사 | 4 | 37,003 | [사료 목록](docs/01-sources.md) |
+| 조선왕조실록 | 30 | 389,483 | [실록 적재](docs/research/sillok-ingestion.md) |
+| 한국고대금석문 | 823 | 3,195 | [금석문 적재](docs/research/geumseokmun-ingestion.md) |
+| 한국고대사료집성 | 92 | 8,689 | [집성 적재](docs/research/jipseong-ingestion.md) |
+| **c2 합계** | **949** | **438,370** | |
+
+**새 Git 클론에는 카드 949개와 chunks 48,887개가 있다.** 실록 JSONL 약 801 MiB는 Git 밖의 c2
+`data/sources/sillok-*/`에 보관한다. 새 환경에서는 위 실록 재현 명령으로 생성한다. 금석문·집성의 원문 JSONL은 Git에 있다.
+집성은 ZIP에 있는 92종의 한국 관련 기사 발췌이며 원 사서 전체가 아니다. 포털 설명의 95종과 차이는 적재 문서에 기록했다.
+claims 85개·지명 60개·Conflict 1건, c2 Fuseki 17,008 triples를 검증했다.
 
 ## 구조
 
@@ -29,6 +45,8 @@ scripts/                      fetch_datago_bulk.py(공공데이터포털 벌크)
 
 ## 실행
 
+Python 3.11 이상. 뷰어·추출기는 표준 라이브러리를 사용한다.
+
 ```bash
 python3 services/host/server.py --port 8870      # 뷰어 http://127.0.0.1:8870  (시작 때 색인을 만든다)
 python3 services/validate.py                     # claims 검증 (--write-digests 로 .digests.json 기록)
@@ -45,6 +63,10 @@ Fuseki 저장 방식은 인메모리를 유지한다. 서버나 감시 명령을
 
 API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,平穰` `/api/claims?subject=<id>&about=1`
 `/api/year?y=918` `/api/density` `/api/elevation` `/api/geo`
+
+원문 목록은 `/api/chunks?offset=0&limit=120`으로 나눠 읽는다(`limit` 최대 500).
+사료를 고르는 API에는 `sources=src-samguksagi,src-goryeosa`를 붙인다. `sources`를 생략하면 전체,
+`sources=`는 전체 해제다. 화면의 사료가 30개를 넘으면 종류별로 접고, 묶음을 펼쳐 개별 사료를 고를 수 있다.
 
 ## 사료를 더 넣는 순서
 
