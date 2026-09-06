@@ -18,7 +18,7 @@ generated_by: claude-opus-5
     },
     "fromSource": "src-samguksagi",
     "citesChunk": "chunk_samguksagi_sg_004_0020_0060",
-    "quote": "始祖創業已來, 國名未定, 或稱斯羅, 或稱斯盧, 或言新羅.",
+    "quote": "四年, 冬十月, 羣臣上言, “始祖創業已來, 國名未定, 或稱斯羅, 或稱斯盧, 或言新羅. 臣等以爲新者德業日新, 羅者網羅四方之義, 則其爲國號宜矣. 又觀自古有國家者, 皆稱帝稱王. 自我始祖立國, 至今二十二丗, 伹稱方言, 未正尊號, 今羣臣一意, 謹上號新羅國王.” 王從之.",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
