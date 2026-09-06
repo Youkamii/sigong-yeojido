@@ -45,6 +45,8 @@ import re
 import shutil
 import sys
 import tempfile
+from collections import Counter
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -126,9 +128,45 @@ class Report:
     digests: dict[str, SourceDigests] = field(default_factory=dict)
 
 
+class ChunkIndex(Mapping):
+    """전체 ID는 검사하고, 원문·정규화 문자열은 참조한 조각만 읽는다."""
+    def __init__(self):
+        self.positions = {}
+        self.source_counts = Counter()
+
+    def add(self, cid, path, offset, source_id):
+        self.positions[cid] = (path, offset)
+        if isinstance(source_id, str):
+            self.source_counts[source_id] += 1
+
+    def __len__(self):
+        return len(self.positions)
+
+    def __iter__(self):
+        return iter(self.positions)
+
+    def __contains__(self, cid):
+        return cid in self.positions
+
+    def __getitem__(self, cid):
+        path, offset = self.positions[cid]
+        with path.open('rb') as handle:
+            handle.seek(offset)
+            row = json.loads(handle.readline().decode('utf-8').strip())
+        if row.get('id') != cid:
+            raise ValueError(f'chunk changed while reading: {cid}')
+        return chunk_value(row, rel(path))
+
+
+def chunk_value(row, where):
+    return {"sourceId": row.get("sourceId"), "text": row["text"], "norm": norm_ws(row["text"]),
+            "file": where, "locator": row.get("locator"), "lang": row.get("lang"),
+            "permalink": row.get("permalink"), "editorNotes": row.get("editorNotes", [])}
+
+
 @dataclass
 class Inputs:
-    chunks: dict[str, dict] = field(default_factory=dict)
+    chunks: Mapping[str, dict] = field(default_factory=ChunkIndex)
     entities: dict[str, str] = field(default_factory=dict)
     docs: list[ClaimsDoc] = field(default_factory=list)
     digests: dict[str, dict[str, str] | None] = field(default_factory=dict)
@@ -138,7 +176,13 @@ class Inputs:
 
     @property
     def sources(self) -> list[str]:
-        return sorted({c["sourceId"] for c in self.chunks.values() if isinstance(c["sourceId"], str)})
+        return sorted(self.chunk_counts)
+
+    @property
+    def chunk_counts(self) -> dict[str, int]:
+        if isinstance(self.chunks, ChunkIndex):
+            return dict(self.chunks.source_counts)
+        return dict(Counter(c['sourceId'] for c in self.chunks.values() if isinstance(c['sourceId'], str)))
 
 
 # ----------------------------------------------------------------------------
@@ -261,17 +305,23 @@ def load_claims_doc(
 # ----------------------------------------------------------------------------
 
 
-def load_chunks_file(path: Path, chunks: dict[str, dict], failures: list[Failure]) -> None:
+def load_chunks_file(path: Path, chunks: dict[str, dict] | ChunkIndex, failures: list[Failure]) -> None:
     where = rel(path)
-    with io.open(path, encoding="utf-8") as fh:
-        for lineno, raw in enumerate(fh, 1):
-            line = raw.strip()
-            if not line:
-                continue
+    with path.open("rb") as fh:
+        lineno = 0
+        while True:
+            offset = fh.tell()
+            raw = fh.readline()
+            if not raw:
+                break
+            lineno += 1
             try:
+                line = raw.decode('utf-8').strip()
+                if not line:
+                    continue
                 row = json.loads(line)
-            except json.JSONDecodeError as exc:
-                failures.append(Failure("chunks", where, None, f"line {lineno}: invalid JSON ({exc.msg})"))
+            except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+                failures.append(Failure("chunks", where, None, f"line {lineno}: invalid JSON ({getattr(exc, 'msg', str(exc))})"))
                 continue
             cid = row.get("id") if isinstance(row, dict) else None
             text = row.get("text") if isinstance(row, dict) else None
@@ -283,17 +333,10 @@ def load_chunks_file(path: Path, chunks: dict[str, dict], failures: list[Failure
                     Failure("chunks", where, None, f"line {lineno}: duplicate chunk id {cid} (also in {chunks[cid]['file']})")
                 )
                 continue
-            chunks[cid] = {
-                "sourceId": row.get("sourceId"),
-                "text": text,
-                "norm": norm_ws(text),
-                "file": where,
-                # 빌더(build_ttl.py)가 Chunk 노드에 쓰는 메타데이터 — 원문이 아닌 것만 (translation 은 두지 않는다)
-                "locator": row.get("locator"),
-                "lang": row.get("lang"),
-                "permalink": row.get("permalink"),
-                "editorNotes": row.get("editorNotes", []),
-            }
+            if isinstance(chunks, ChunkIndex):
+                chunks.add(cid, path, offset, row.get("sourceId"))
+            else:
+                chunks[cid] = chunk_value(row, where)
 
 
 def load_entities(entities_dir: Path, warnings: list[str]) -> dict[str, str]:

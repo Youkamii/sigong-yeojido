@@ -769,11 +769,7 @@ def build(data_dir: Path, out_path: Path | None, out=None) -> tuple[int, BuildRe
     by_class: dict[str, int] = {}
     if not failures:
         try:
-            chunk_counts: dict[str, int] = {}
-            for chunk in inputs.chunks.values():
-                sid = chunk.get("sourceId")
-                if isinstance(sid, str):
-                    chunk_counts[sid] = chunk_counts.get(sid, 0) + 1
+            chunk_counts = inputs.chunk_counts
             for sid in sorted(cards):
                 meta, path = cards[sid]
                 if sid != f"src-{path.stem}":
