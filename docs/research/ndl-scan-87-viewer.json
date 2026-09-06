@@ -1,0 +1,144 @@
+{
+  "url": "http://127.0.0.1:8870/?q=low",
+  "checks": {
+    "gate_visible": {
+      "passed": true,
+      "evidence": "url(\"http://127.0.0.1:8870/assets/daedong-2400.jpg\")"
+    },
+    "map_land_drawn": {
+      "passed": true,
+      "evidence": "lit 36593/74753"
+    },
+    "map_pick_opens_evidence": {
+      "passed": true,
+      "evidence": "{\"label\": \"평양\", \"len\": 709}"
+    },
+    "entity_search_shows_claims": {
+      "passed": true,
+      "evidence": "{\"found\": true, \"label\": \"광개토왕\", \"claims\": 13}"
+    },
+    "source_card_opens": {
+      "passed": true,
+      "evidence": "{\"found\": true, \"label\": \"삼국사기\", \"facts\": 7, \"hasLicense\": true, \"hasYears\": true}"
+    },
+    "timeline_mounted": {
+      "passed": true,
+      "evidence": "{\"mounted\": true, \"tracks\": 4, \"hidden\": 1069, \"groupRows\": 33, \"groups\": 33, \"srcs\": 1073, \"before\": \"414\", \"after\": \"1361\"}"
+    },
+    "timeline_click_changes_year": {
+      "passed": true,
+      "evidence": "414 -> 1361"
+    },
+    "year_records_open": {
+      "passed": true,
+      "evidence": "{\"ok\": true, \"year\": \"918\", \"h3\": \"서기 918년\", \"cards\": 92, \"btn\": \"이 해의 기록 92\"}"
+    },
+    "three_loaded": {
+      "passed": true,
+      "evidence": "loaded"
+    },
+    "three_draws": {
+      "passed": true,
+      "evidence": "calls 1210 tris 95967"
+    },
+    "three_pick_opens_evidence": {
+      "passed": true,
+      "evidence": "국내성 @ [528, 186]"
+    },
+    "console_errors_zero": {
+      "passed": true,
+      "evidence": "0"
+    }
+  },
+  "console": [],
+  "scene": {
+    "map": {
+      "w": 724,
+      "h": 413,
+      "litSamples": 36593,
+      "samples": 74753
+    },
+    "mapPick": {
+      "label": "평양",
+      "len": 709
+    },
+    "entitySearch": {
+      "found": true,
+      "label": "광개토왕",
+      "claims": 13
+    },
+    "sourceCard": {
+      "found": true,
+      "label": "삼국사기",
+      "facts": 7,
+      "hasLicense": true,
+      "hasYears": true
+    },
+    "timeline": {
+      "mounted": true,
+      "tracks": 4,
+      "hidden": 1069,
+      "groupRows": 33,
+      "groups": 33,
+      "srcs": 1073,
+      "before": "414",
+      "after": "1361"
+    },
+    "yearPanel": {
+      "ok": true,
+      "year": "918",
+      "h3": "서기 918년",
+      "cards": 92,
+      "btn": "이 해의 기록 92"
+    },
+    "three": {
+      "quality": "low",
+      "cam": [
+        -86,
+        276,
+        162
+      ],
+      "zoom": 0.98,
+      "rim": 120,
+      "calls": 1210,
+      "tris": 95967,
+      "lights": [
+        [
+          "DirectionalLight",
+          3.3
+        ],
+        [
+          "HemisphereLight",
+          1.15
+        ],
+        [
+          "DirectionalLight",
+          0.25
+        ]
+      ],
+      "env": true,
+      "picks": 188,
+      "label": {
+        "hasMap": true,
+        "img": [
+          512,
+          128
+        ],
+        "scale": [
+          30,
+          7.5,
+          1
+        ]
+      },
+      "sea": null
+    },
+    "threePick": {
+      "screen": [
+        528,
+        186
+      ],
+      "expected": "국내성",
+      "label": "국내성"
+    }
+  }
+}

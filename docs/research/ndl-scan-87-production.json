@@ -1,0 +1,39 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com",
+  "source": "src-ndl-gyeongguk-1934",
+  "checks": [
+    {
+      "check": "all 319 archived images match recorded full-file hashes",
+      "status": "PASS",
+      "bytes": 956756379
+    },
+    {
+      "check": "actual API preserves all image records and empty text/date",
+      "status": "PASS"
+    },
+    {
+      "check": "real first, intermediate and last images load; previous/next/jump are correct",
+      "status": "PASS",
+      "originalWidth": 5658
+    },
+    {
+      "check": "clearing sources removes the scan and selecting the source restores the same page",
+      "status": "PASS"
+    },
+    {
+      "check": "480px screen keeps the scan within the evidence panel",
+      "status": "PASS",
+      "imageBounds": {
+        "x": 76,
+        "y": 337.875,
+        "width": 389,
+        "height": 271.5625
+      }
+    }
+  ],
+  "passed": 5,
+  "transcribedPages": 0,
+  "translatedPages": 0,
+  "newClaims": 0,
+  "browserErrors": []
+}

@@ -26,4 +26,10 @@ python scripts/verify_ndl_scan.py --base http://127.0.0.1:8870 --out /tmp/ndl-ch
 
 제공처가 잠시 뒤 재접속하라고 응답한 경우 실패 기록을 확인하고 충분히 기다린 뒤 `--retry-missing`으로 같은 주소에서 이어받을 수 있다. 결손이 남으면 수집 명령은 실패 종료한다.
 
-수록 후 전체 검증은 Claim 9,416개·실패 0·경고 0, TTL 244,954트리플 반복 생성·재파싱·인용·digest 검사 실패 0이다. Source 1,073개·로컬 chunk 83,346개이며 이 중 319개가 새 스캔 참조다. 운영 반영·수용 기록은 배포 후 별도로 남긴다.
+수록 후 전체 검증은 Claim 9,416개·실패 0·경고 0, TTL 244,954트리플 반복 생성·재파싱·인용·digest 검사 실패 0이다. Source 1,073개·로컬 chunk 83,346개이며 이 중 319개가 새 스캔 참조다.
+
+`a2387fd0`으로 [c2 배포](ndl-scan-87-deployed.json)를 마쳤다. Source 1,073개·chunk 2,601,349개, 준비 시간 464.82초다. 319장 전체를 c2에 보관했고 원해상도 파일의 전체 해시가 일치했다.
+[실제 외부 주소의 스캔 검사 5개](ndl-scan-87-production.json), [기존 뷰어 12개](ndl-scan-87-viewer.json),
+[근거 없는 답변을 만들지 않는 실제 챗봇 응답 2개](ndl-scan-87-chat.json)를 통과했다. 스캔 사료만 켜거나 모두 끄면 다른 사료의 주장을 가져오지 않았고 모델도 호출하지 않았다.
+[원문을 추가한 새 클론](goal-clean-clone.json)의 검증 실패·경고는 0이다. 큰 원 이미지의 새 클론 재다운로드는 별도 NOT_RUN으로 적었다.
+[로컬·c2 전체 RDF 차이](ndl-scan-87-ttl-comparison.json)는 기존 대용량 Source의 chunkCount 35개뿐이며 다른 트리플은 같다. Q1~Q9는 8개 PASS·Q6 PARTIAL을 유지한다.
