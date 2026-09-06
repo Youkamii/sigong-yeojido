@@ -26,7 +26,7 @@ def main():
         assert all(f['properties']['begin'].startswith('1883') for f in early)
         for suffix in ('&sources=','&sources=src-samguksagi','&origin=human','&year=1882','&year=1946'):
             assert get('?level=3'+suffix).json()['features']==[],suffix
-        assert get('?level=4').status==400
+        assert get('?level=5').status==400
         rows=[f for f in all_rows if f['properties']['validFrom']<=1914<=f['properties']['validTo']]
         assert len(rows)==6882
         page.goto(args.base+'/?q=low',wait_until='networkidle',timeout=180000);page.locator('#enter').click()

@@ -56,7 +56,7 @@ class HistoricalMapTests(unittest.TestCase):
         self.ids(level=2)
         self.write('districts',[self.feature('replacement-record','src-a',1911,1912)])
         self.assertEqual(self.ids(level=2),['replacement-record'])
-        for level in (-1,4,'unknown'):
+        for level in (-1,5,'unknown'):
             with self.assertRaises(ValueError):self.ids(level=level)
 
     def test_townships_keep_earlier_dates_and_do_not_replace_other_levels(self):
@@ -75,3 +75,14 @@ class HistoricalMapTests(unittest.TestCase):
         self.assertEqual(self.ids(level=0,year=500,sources={'src-a'}),[])
         self.assertEqual(self.ids(level=0,year=500,origin='human'),[])
         self.assertEqual(self.ids(),['province'])
+
+    def test_event_point_requires_both_coordinate_and_date_sources(self):
+        feature=self.feature('event','src-a',1919,1919)
+        feature['geometry']={'type':'Point','coordinates':[126.89,37.12]}
+        feature['properties']['requiredSources']=['src-a','src-date']
+        (self.data/'maps/khs-events.geojson.gz').write_bytes(gzip.compress(json.dumps({'features':[feature]}).encode()))
+        self.assertEqual(self.ids(level=4,year=1919),['event'])
+        self.assertEqual(self.ids(level=4,year=1920),[])
+        self.assertEqual(self.ids(level=4,sources={'src-a'}),[])
+        self.assertEqual(self.ids(level=4,sources={'src-a','src-date'}),['event'])
+        self.assertEqual(self.ids(level=4,origin='human'),[])
