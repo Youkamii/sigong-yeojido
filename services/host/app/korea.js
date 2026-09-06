@@ -1,5 +1,5 @@
 import { activeAt, candActive, originMatches, sourceMatches, lensStrength, DIORAMA_BOUNDS, inDiorama } from './place-state.js';
-import {featureRings} from './history-map.js';
+import {featureLines} from './history-map.js';
 // app/korea.js — 실제 한반도를 판톨로지 아트 바이블의 언어로 세운다.
 //
 // 판톨로지의 terrain.js 는 절차 생성 판타지 대륙이다. 우리는 지형이 실측이므로
@@ -587,8 +587,8 @@ export class KoreaWorld {
         const [x,z]=toWorld(...point),y=this.heightAt?terrainY(Math.max(0,this.heightAt(...point)))+.4:LAND_DEPTH+.4;
         positions.push(x-1.2,y,z,x+1.2,y,z,x,y,z-1.2,x,y,z+1.2,x,y,z,x,y+4,z);
       }
-      for(const ring of featureRings(feature))for(let i=1;i<ring.length;i++){
-        const a=ring[i-1],b=ring[i];
+      for(const line of featureLines(feature))for(let i=1;i<line.length;i++){
+        const a=line[i-1],b=line[i];
         if(!inDiorama({lon:a[0],lat:a[1]})||!inDiorama({lon:b[0],lat:b[1]}))continue;
         for(const point of [a,b]){
           const [x,z]=toWorld(...point);

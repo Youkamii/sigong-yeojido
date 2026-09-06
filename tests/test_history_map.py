@@ -56,7 +56,7 @@ class HistoricalMapTests(unittest.TestCase):
         self.ids(level=2)
         self.write('districts',[self.feature('replacement-record','src-a',1911,1912)])
         self.assertEqual(self.ids(level=2),['replacement-record'])
-        for level in (-1,5,'unknown'):
+        for level in (-1,99,'unknown'):
             with self.assertRaises(ValueError):self.ids(level=level)
 
     def test_townships_keep_earlier_dates_and_do_not_replace_other_levels(self):
@@ -86,3 +86,18 @@ class HistoricalMapTests(unittest.TestCase):
         self.assertEqual(self.ids(level=4,sources={'src-a'}),[])
         self.assertEqual(self.ids(level=4,sources={'src-a','src-date'}),['event'])
         self.assertEqual(self.ids(level=4,origin='human'),[])
+
+    def test_route_keeps_disconnected_lines_and_both_required_sources(self):
+        self.assertEqual(self.ids(level=5),[])
+        feature=self.feature('synthetic-route','src-a',1890,1895)
+        feature['geometry']={'type':'MultiLineString','coordinates':[
+            [[126,36],[126.5,36]],[[127,37],[127.5,37]]]}
+        feature['properties']['requiredSources']=['src-a','src-date']
+        (self.data/'maps/historical-routes.geojson.gz').write_bytes(gzip.compress(json.dumps({'features':[feature]}).encode()))
+        for year in (1890,1895):
+            self.assertEqual(historical_features(self.data,level=5,year=year)['features'],[feature])
+        for year in (1889,1896):self.assertEqual(self.ids(level=5,year=year),[])
+        self.assertEqual(self.ids(level=5,sources={'src-a'}),[])
+        self.assertEqual(self.ids(level=5,sources={'src-a','src-date'}),['synthetic-route'])
+        self.assertEqual(self.ids(level=5,origin='human'),[])
+        self.assertEqual(self.ids(level=1),['province'])

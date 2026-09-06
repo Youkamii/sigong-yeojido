@@ -1,0 +1,46 @@
+{
+  "base": "http://127.0.0.1:8873",
+  "mode": "synthetic browser responses; no production records written",
+  "historicalDataAcceptance": "NOT_RUN",
+  "measuredCanvas": {
+    "commands": [
+      [
+        "M",
+        "L",
+        "L"
+      ],
+      [
+        "M",
+        "L",
+        "M",
+        "L"
+      ]
+    ],
+    "closingHit": false,
+    "gapHit": false,
+    "click": {
+      "x": 308.38308611247396,
+      "y": 396.7416358299656
+    }
+  },
+  "threeGeometry": [
+    {
+      "id": "synthetic-route-open",
+      "vertices": 4
+    },
+    {
+      "id": "synthetic-route-disconnected",
+      "vertices": 4
+    }
+  ],
+  "checks": {
+    "open_line_stays_open": true,
+    "gap_stays_empty": true,
+    "real_canvas_pick": true,
+    "source_record_button": true,
+    "three_segments": true,
+    "source_year_origin_filters": true,
+    "mobile": true
+  },
+  "pageErrors": []
+}

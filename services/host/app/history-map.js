@@ -1,15 +1,17 @@
 import {lensStrength} from './place-state.js';
 
-export function featureRings(feature){
+export function featureLines(feature){
   const geometry=feature.geometry;
-  return geometry.type==='Polygon'?geometry.coordinates:geometry.type==='MultiPolygon'?geometry.coordinates.flat():[];
+  if(geometry.type==='Polygon'||geometry.type==='MultiLineString')return geometry.coordinates;
+  if(geometry.type==='MultiPolygon')return geometry.coordinates.flat();
+  return geometry.type==='LineString'?[geometry.coordinates]:[];
 }
 
 export class HistoricalMap {
   constructor(button,callbacks){this.button=button;this.callbacks=callbacks;this.features=[];this.paths=[];this.sequence=0;button.onclick=()=>callbacks.list();}
   async refresh(filters){
     const seq=++this.sequence;this.features=[];this.paths=[];this.callbacks.changed([]);
-    const label=Number(filters.level)===4?'사건 장소':'역사 경계';
+    const label=Number(filters.level)===5?'역로':Number(filters.level)===4?'사건 장소':'역사 경계';
     this.button.textContent=label+' 조회 중…';
     try{
       const response=await fetch('/api/history-map?'+new URLSearchParams({year:filters.year,sources:[...filters.sources].join(','),origin:filters.origin,level:filters.level}));
@@ -26,7 +28,7 @@ export class HistoricalMap {
       if(feature.geometry.type==='Point'){
         const [x,y]=project(...feature.geometry.coordinates);path.arc(x,y,6,0,Math.PI*2);
       }
-      for(const ring of featureRings(feature))ring.forEach(([lon,lat],i)=>{const [x,y]=project(lon,lat);i?path.lineTo(x,y):path.moveTo(x,y);});
+      for(const line of featureLines(feature))line.forEach(([lon,lat],i)=>{const [x,y]=project(lon,lat);i?path.lineTo(x,y):path.moveTo(x,y);});
       ctx.save();ctx.globalAlpha=lensStrength(feature.properties,null,primary);
       ctx.strokeStyle='#D8B463';ctx.lineWidth=1.4;ctx.stroke(path);ctx.restore();
       this.paths.push({feature,path});
