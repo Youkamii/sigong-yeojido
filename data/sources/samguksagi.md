@@ -40,27 +40,27 @@ sources:
 
 ## 담고 있는 것
 
-| 권 | 내용 | 기사(chunk) 수 |
+| 권 | 내용 | 원문 조각(chunk) 수 |
 |---|---|---:|
-| 1~12 | 新羅本紀 | 2,009 |
-| 13~22 | 髙句麗本紀 | 816 |
-| 23~28 | 百濟本紀 | 623 |
-| 29~31 | 年表 | 0 (표라서 기사 단위가 없다 — 아래 참고) |
-| 32~40 | 雜志 (제사·악·색복·거기·기용·옥사·지리·직관) | 986 |
-| 41~50 | 列傳 | 736 |
-| 0 · 51 | 目錄 · 跋文 | 0 |
+| 1~12 | 新羅本紀 | 2,021 |
+| 13~22 | 髙句麗本紀 | 826 |
+| 23~28 | 百濟本紀 | 629 |
+| 29~31 | 年表 | 17 (표 14개·표제 3개) |
+| 32~40 | 雜志 (제사·악·색복·거기·기용·옥사·지리·직관) | 995 |
+| 41~50 | 列傳 | 746 |
+| 0 · 51 | 目錄 · 跋文 | 3 |
 
-XML 은 `item > level1(권) > level2(편·왕대) > level3(기사)` 계층이고, **기사(level3) 5,170건**이 chunk 가 된다.
-기사 안에는 국편이 붙인 구조가 이미 들어 있다.
+XML 은 `item > level1(권) > level2(편·왕대) > level3(기사)` 계층이다. **기사(level3) 5,170개와 절(level2) 67개, 합계 5,237개**가 chunk다.
+아래는 현재 수록한 전체 chunk를 2026-09-06 다시 집계한 값이다. 국편이 붙인 구조도 보존한다.
 
-| 국편 XML 요소 | 건수 (기사 안) | 우리가 두는 자리 |
+| 국편 XML 요소 | 건수 (전체 chunk) | 우리가 두는 자리 |
 |---|---:|---|
-| `paragraph` 원문 (표점 포함) | 5,170 기사 | `chunks.jsonl` → `text` |
-| `annotation type="교감주"` 판본 이문 | 2,354 | `annotations.jsonl` (Claim 층 재료) |
-| `annotation type="원주"` 원문의 세주(細註) | 561 | `annotations.jsonl` |
-| `index` 색인어 (이름·지명·국명·관서·서명) | 13,887 | `index-terms.jsonl` (Entity 층 재료) |
+| 원문·표·목록 (표점 포함) | 5,237 조각 | `chunks.jsonl` → `text` |
+| `annotation type="교감주"` 판본 이문 | 2,741 | `annotations.jsonl` (Claim 층 재료) |
+| `annotation type="원주"` 원문의 세주 | 598 | `annotations.jsonl` |
+| `index` 색인어 (이름·지명·국명·관서·서명) | 14,667 | `index-terms.jsonl` (Entity 층 재료) |
 | `dateOccured` 서기 환산 날짜 | 3,948 기사 (520건은 표시문자열 없음) | `date.raw` / `date.label` |
-| `subjectClass` 주제분류 | 8,665 | `subjectClasses` |
+| `subjectClass` 주제분류 | 8,704 | `subjectClasses` |
 | `newChar` 유니코드에 없는 글자 | 24 | 본문엔 `〓`, 코드는 `newChars` |
 
 ## 조심할 것
@@ -81,9 +81,9 @@ XML 은 `item > level1(권) > level2(편·왕대) > level3(기사)` 계층이고
 **신라 중심 시각.** 고려가 신라 계승을 표방한 시기의 관찬이라 신라 기록이 가장 상세하고, 삼국 초기 기록의
 연대 신빙성은 학계 논쟁 대상이다(초기 기록 불신론·수정론). 연표 기준연도(coversFrom -57)는 삼국사기 자신의 주장이다.
 
-**chunk 로 만들지 않은 부분이 있다.** level3 없이 본문을 직접 갖는 level2 절 67개 — 권마다 붙은 宣撰 표제(50),
-目錄(2), 年表 3권의 표(14), 跋文(1) — 는 기사 단위가 아니라서 chunk 를 만들지 않았다. 여기 붙은 교감주·원주
-424건과 색인어 780건은 산출물에 들어 있지 않다. 연표는 그 자체가 구조화된 연대기이므로 별도 추출이 필요하다.
+**level2 절도 포함한다.** 권마다 붙은 宣撰 표제 50개, 目錄 2개, 年表의 표 14개, 跋文 1개와
+여기에 붙은 주석 424개·색인어 780개를 현재 산출물에 포함했다. 표·목록은 줄바꿈으로 읽을 수 있으나
+원래 열 구조를 복원하려면 벌크 XML을 봐야 한다. 처음 추출에서 빠졌던 경위는 아래 이력에 남겼다.
 
 **기사 셋은 본문 전체가 원주다** (`sg_032_0020_0390`·`0400`·`0410`, 제사지의 백제 시조 세주). 원주를 본문에서
 떼는 규칙을 그대로 적용해 `text` 가 비어 있고 내용은 `annotations` 에 있다.
@@ -111,11 +111,11 @@ XML 은 `item > level1(권) > level2(편·왕대) > level3(기사)` 계층이고
 |---|---|
 | `data/bulk/15053635.zip` | 국편 벌크 원본 (gitignore. `scripts/fetch_datago_bulk.py --dataset 15053635` 로 다시 받는다) |
 | `data/bulk/15053635.meta.json` | 수집 출처·라이선스 문자열·파일 크기 |
-| `samguksagi/chunks.jsonl` | 기사 5,170건. `services/ingestion/extract_nikh_xml.py --source samguksagi` 산출 |
-| `samguksagi/annotations.jsonl` | 교감주·원주 2,915건 (`chunkId`·`seq`·`offset`·`parentSeq` 포함) |
-| `samguksagi/index-terms.jsonl` | 색인어 13,887건 (`chunkId`·`type`·`text`) |
+| `samguksagi/chunks.jsonl` | 기사·절 합계 5,237개. `services/ingestion/extract_nikh_xml.py --source samguksagi` 산출 |
+| `samguksagi/annotations.jsonl` | 교감주·원주 3,339개 (`chunkId`·`seq`·`offset`·`parentSeq` 포함) |
+| `samguksagi/index-terms.jsonl` | 색인어 14,667개 (`chunkId`·`type`·`text`) |
 
-chunk id 는 `chunk_samguksagi_{level3 id}` (예 `chunk_samguksagi_sg_001_0020_0010`) 이고, level3 id 가 곧
+chunk id 는 `chunk_samguksagi_{levelId}` (예 `chunk_samguksagi_sg_001_0020_0010`) 이고, 해당 levelId가 곧
 국편 웹 퍼머링크 `https://db.history.go.kr/id/{levelId}` 다. 없는 id 를 요청하면 404 가 아니라 200 + 상위 페이지로
 폴백하므로, 링크를 검증할 때는 페이지 안의 `hoiLevelId` 와 기사 제목을 대조해야 한다.
 
