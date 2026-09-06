@@ -150,7 +150,11 @@ async def run(url: str, out: Path) -> int:
                const bs=[...document.querySelectorAll('#qList button')];
                const hit=bs.find(b=>b.dataset.id==='person-gwanggaeto');
                if(!hit) return {found:false, n:bs.length, ids:bs.map(b=>b.dataset.id)};
-               hit.click(); await new Promise(r=>setTimeout(r,1500));
+               hit.click();
+               const started=performance.now();
+               while(!document.querySelector('#evi .claim') && performance.now()-started<5000) {
+                 await new Promise(r=>setTimeout(r,50));
+               }
                const h3=document.querySelector('#evi h3');
                return {found:true, label:h3&&h3.textContent, claims:document.querySelectorAll('#evi .claim').length}; }"""
         )
