@@ -22,6 +22,7 @@ db.history.go.kr의 robots.txt는 검색봇 4종 외 전면 Disallow다(2026-09 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import io
 import json
 import os
@@ -79,6 +80,10 @@ def _post(url: str, data: dict, referer: str) -> bytes:
 
 
 def fetch(dataset: str) -> Path:
+    out = OUT_DIR / f"{dataset}.zip"
+    if out.exists():
+        print(f"기존 벌크 사용: {out}")
+        return out
     page_url = f"{BASE}/data/{dataset}/fileData.do"
     html = _get(page_url).decode("utf-8", "replace")
 
@@ -114,15 +119,22 @@ def fetch(dataset: str) -> Path:
         raise SystemExit(f"[{dataset}] 다운로드 거부: {info.get('error')}")
 
     atch_id, file_sn = info["atchFileId"], info["fileDetailSn"]
-    blob = _get(
-        f"{BASE}/cmm/cmm/fileDownload.do"
-        f"?atchFileId={atch_id}&fileDetailSn={file_sn}&dataNm={dataset}",
-        referer=page_url,
-    )
-
+    url = (f"{BASE}/cmm/cmm/fileDownload.do"
+           f"?atchFileId={atch_id}&fileDetailSn={file_sn}&dataNm={dataset}")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUT_DIR / f"{dataset}.zip"
-    out.write_bytes(blob)
+    partial = out.with_suffix(".zip.part")
+    digest = hashlib.sha256()
+    size = 0
+    request = urllib.request.Request(url, headers={"User-Agent": UA, "Referer": page_url})
+    with urllib.request.urlopen(request, timeout=180) as response, partial.open("wb") as handle:
+        while block := response.read(1024 * 1024):
+            handle.write(block)
+            digest.update(block)
+            size += len(block)
+        expected = response.headers.get("Content-Length")
+        if expected is not None and size != int(expected):
+            raise IOError(f"다운로드 중단: {size}/{expected} bytes, {partial}")
+    partial.replace(out)
 
     meta = {
         "dataset": dataset,
@@ -131,12 +143,13 @@ def fetch(dataset: str) -> Path:
         "licenseOnPage": lic.group(1).strip() if lic else "못 찾음",
         "atchFileId": atch_id,
         "fileDetailSn": file_sn,
-        "bytes": len(blob),
+        "bytes": size,
+        "sha256": digest.hexdigest(),
     }
     (OUT_DIR / f"{dataset}.meta.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    print(f"저장        : {out.relative_to(ROOT)}  ({len(blob):,} bytes)")
+    print(f"저장        : {out.relative_to(ROOT)}  ({size:,} bytes)")
     return out
 
 

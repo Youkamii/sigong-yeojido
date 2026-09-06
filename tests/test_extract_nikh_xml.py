@@ -12,6 +12,30 @@ spec.loader.exec_module(extractor)
 
 
 class ExtractionTests(unittest.TestCase):
+    def test_journal_keeps_parallel_dates_and_inherits_day_without_crossing_siblings(self):
+        xml = '''<level2 id="SJW-A01"><front><biblioData><date>
+        <dateOccured type="간지">계해</dateOccured><dateOccured type="서기" date="1623"/>
+        </date></biblioData></front><level4 id="SJW-A01030120"><front><biblioData><date>
+        <dateOccured type="간지">임인</dateOccured><dateOccured type="재위연도">인조 01-03-12L0</dateOccured>
+        <dateOccured type="서기" date="1623-03-12L0"/></date></biblioData></front>
+        <text><content/></text><level5 id="SJW-A01030120-00100" type="기사"><text><content>甲</content></text></level5>
+        </level4><level5 id="SJW-A01-other"><text><content>乙</content></text></level5></level2>'''
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "journal.zip"
+            with zipfile.ZipFile(path, "w") as archive:
+                archive.writestr("year.xml", xml)
+            chunks, _ = extractor.extract("seungjeongwon-ilgi", path)
+        day, article, sibling = chunks
+        self.assertEqual(day["date"]["raw"], "1623-03-12L0")
+        self.assertEqual(len(day["dateForms"]), 3)
+        self.assertEqual(article["dateInheritedFrom"], "SJW-A01030120")
+        self.assertEqual(article["dateContext"]["forms"], day["dateForms"])
+        self.assertEqual(article["date"]["raw"], "1623-03-12L0")
+        self.assertEqual(article["recordType"], "기사")
+        self.assertEqual(sibling["date"]["raw"], "1623")
+        self.assertEqual(sibling["dateInheritedFrom"], "SJW-A01")
+        self.assertEqual(article["permalink"], "https://sjw.history.go.kr/id/SJW-A01030120-00100")
+
     def test_root_level2_and_wrapper_keep_depth_sections_and_editions(self):
         xml = '<level2 id="waa_101"><front><biblioData><title><mainTitle>元年</mainTitle></title></biblioData></front><text><content><paragraph>序</paragraph></content></text><level5 id="waa_101_001"><text><content><paragraph>甲<annotation type="校"><noteContent>乙</noteContent></annotation><index type="지명">漢城</index></paragraph></content></text></level5></level2>'
         with tempfile.TemporaryDirectory() as tmp:

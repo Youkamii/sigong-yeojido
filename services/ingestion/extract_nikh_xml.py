@@ -57,6 +57,7 @@ SOURCES: dict[str, dict] = {
     "samgukyusa": {"dataset": "15053634", "label": "삼국유사"},   # 2026-09-05 검증: 153 조목, 王曆 은 표
     "goryeosa": {"dataset": "15053637", "label": "고려사"},       # 2026-09-05 검증: 5,389 기사 + 73 절
     "joseon-sillok": {"dataset": "15053647", "label": "조선왕조실록"},
+    "seungjeongwon-ilgi": {"dataset": "15064218", "label": "승정원일기", "dateContext": True},
 }
 
 # 본문에서 통째로 버리는 요소 — 원문이 아니라 국편의 편집 장치다
@@ -259,6 +260,36 @@ def level1_label(level1: ET.Element) -> str:
     return " ".join(p for p in (series, main) if p)
 
 
+def date_forms(level: ET.Element) -> list[dict]:
+    return [{"type": d.get("type"), "raw": d.get("date"), "label": plain(d) or None}
+            for d in level.findall("front/biblioData/date/dateOccured")]
+
+
+def date_value(forms: list[dict]) -> dict | None:
+    western = next((d for d in forms if d["type"] == "서기" and d["raw"]), None)
+    return western or next((d for d in forms if d["type"] is None and d["raw"]), None)
+
+
+def add_date_context(chunk: dict, forms: list[dict], inherited: dict | None) -> None:
+    """서기 환산은 하지 않는다. XML의 서기 값과 다른 날짜 형식을 함께 보존한다."""
+    chunk["dateForms"] = forms
+    chosen = date_value(forms)
+    if inherited:
+        chunk["dateContext"] = inherited
+        if chosen is None:
+            chosen = date_value(inherited["forms"])
+            if chosen:
+                chunk["dateInheritedFrom"] = inherited["levelId"]
+    if chosen:
+        chunk["date"] = {"raw": chosen["raw"], "label": chosen["label"]}
+
+
+def edition_references(level: ET.Element) -> list[dict]:
+    return [{"edition": x.find("mainTitle").get("type"), "title": plain(x.find("mainTitle")),
+             "pages": [dict(p.attrib) for p in x.findall("page")]}
+            for x in level.findall("front/biblioData/source") if x.find("mainTitle") is not None]
+
+
 def extract_article(
     level: ET.Element, source: str, labels: list[str], chunk_type: str = "article"
 ) -> tuple[dict, Article]:
@@ -322,12 +353,12 @@ def extract_article(
         chunk["paragraphDates"] = art.paragraph_dates
     if source.startswith("sillok-"):
         chunk["permalink"] = f"https://sillok.history.go.kr/id/{level_id}"
-        chunk["editionReferences"] = [
-            {"edition": x.find("mainTitle").get("type"), "title": plain(x.find("mainTitle")),
-             "pages": [dict(p.attrib) for p in x.findall("page")]}
-            for x in level.findall("front/biblioData/source") if x.find("mainTitle") is not None
-        ]
+        chunk["editionReferences"] = edition_references(level)
         chunk["proofreadings"] = art.proofreadings
+    if source == "seungjeongwon-ilgi":
+        chunk["permalink"] = f"https://sjw.history.go.kr/id/{level_id}"
+        chunk["editionReferences"] = edition_references(level)
+        chunk["recordType"] = level.get("type")
     return chunk, art
 
 
@@ -349,6 +380,7 @@ def extract(source: str, zpath: Path, *, emit=None) -> tuple[list[dict], dict]:
     unknown: collections.Counter = collections.Counter()
     ann_types: collections.Counter = collections.Counter()
     idx_types: collections.Counter = collections.Counter()
+    preserve_dates = SOURCES.get(source, {}).get("dateContext", False)
 
     def take(chunk: dict, art: Article, key: str) -> None:
         if chunk["id"] in seen:
@@ -365,21 +397,25 @@ def extract(source: str, zpath: Path, *, emit=None) -> tuple[list[dict], dict]:
         stats["newChars"] += len(chunk["newChars"])
         stats["empty"] += not chunk["text"]
 
-    def walk(level: ET.Element, path: list[str], chunk_source: str) -> None:
+    def walk(level: ET.Element, path: list[str], chunk_source: str, inherited: dict | None = None) -> None:
         depth = int(level.tag.removeprefix("level"))
         label = level1_label(level) if depth == 1 else level_title(level)
         labels = path + [label]
         stats[f"level{depth}"] += 1
         kids = [k for k in level if isinstance(k.tag, str) and re.fullmatch(r"level\d+", k.tag)]
+        forms = date_forms(level) if preserve_dates else []
         if level.find("text") is not None:
             if level.get("id"):
                 ctype = "section" if kids else "article"
                 chunk, art = extract_article(level, chunk_source, labels, ctype)
+                if preserve_dates:
+                    add_date_context(chunk, forms, inherited)
                 take(chunk, art, "sections" if kids else "articles")
             else:
                 stats["textNoId"] += 1
+        context = {"levelId": level.get("id"), "forms": forms} if date_value(forms) else inherited
         for k in kids:
-            walk(k, labels, chunk_source)
+            walk(k, labels, chunk_source, context)
 
     def walk_root(node: ET.Element) -> None:
         if isinstance(node.tag, str) and re.fullmatch(r"level\d+", node.tag):

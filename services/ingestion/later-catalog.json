@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-06",
+  "sources": {
+    "seungjeongwon-ilgi": {
+      "dataset": "15064218",
+      "label": "승정원일기",
+      "sourceKind": "관청일기",
+      "sourceGroup": "관청 일기·등록",
+      "compiler": "승정원 및 승선원·궁내부·비서감·비서원·규장각",
+      "coversFrom": 1623,
+      "coversTo": 1910,
+      "composedYear": null,
+      "notes": [
+        "국왕 비서기관이 날마다 이어 쓴 기록이다. 현존본의 시작과 끝은 저작물 전체의 편찬 연도가 아니므로 단일 편찬 연도를 두지 않는다.",
+        "화재·전란으로 원본 일부가 소실되고 뒤에 개수되었다. 현존 기록 전체가 당일 작성 원본으로 남았다는 뜻은 아니다. 1894년 이후에는 관청과 일기 표제가 여러 차례 바뀌었다.",
+        "벌크는 한문 탈초 원문을 담고 있다. 기사와 좌목, 본문이 빈 날짜 구획도 보존한다. 각 기사의 recordType과 원본·탈초본 책/면수는 별도 필드에 남긴다.",
+        "기사에 자체 날짜가 없으면 XML의 상위 일자가 제공한 서기 값을 읽고 dateInheritedFrom에 그 id를 남긴다. 간지·재위연도·중국연호 등 다른 날짜 표기도 dateForms와 dateContext에 보존한다."
+      ],
+      "evidence": [
+        ["한국학중앙연구원 승정원일기 해설", "https://encykorea.aks.ac.kr/Article/E0032244"],
+        ["국가유산포털 현존 기록 지정 정보", "http://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1111103030000"],
+        ["UNESCO 기록 복원·등재 설명", "https://www.unesco.org/en/memory-world/seungjeongwon-ilgi-diaries-royal-secretariat"],
+        ["한국학중앙연구원 기사 인용 링크 형식", "https://dh.aks.ac.kr/hanyang2/wiki/index.php/인용전거"]
+      ]
+    }
+  }
+}
