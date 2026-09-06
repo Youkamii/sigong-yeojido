@@ -1,0 +1,59 @@
+{
+  "source": "src-hgis-admin-1910-1945",
+  "zipSha256": "368bae9d3dec5dab929258a52ba7aa6dbd66c10e6cd7aba694a5199a46176af0",
+  "gpkgMember": "19100510-19450814행정구역_GIS_데이터.gpkg",
+  "gpkgSha256": "2e2fab2d5acf4a7b0264a3d02a87c71124633538e384cec6e3e929c5e2dd898c",
+  "level": 3,
+  "features": 8176,
+  "allLevelCounts": {
+    "1": 32,
+    "2": 726,
+    "3": 8176
+  },
+  "typeCounts": {
+    "面": 7909,
+    "邑": 162,
+    "部": 5,
+    "區": 9,
+    "居留地": 11,
+    "社": 42,
+    "坊": 38
+  },
+  "crs": "EPSG:4326 from gpkg_geometry_columns and every binary header",
+  "simplification": {
+    "shapely": "2.1.2",
+    "toleranceDegrees": 0.002,
+    "preserveTopology": true
+  },
+  "originalVertices": 7756503,
+  "displayVertices": 337792,
+  "invalidOriginalGeometryIds": [
+    47023,
+    47144,
+    55177,
+    23375,
+    26358,
+    36529,
+    20235,
+    20243,
+    20323,
+    10685,
+    142965,
+    56579,
+    67563,
+    56441
+  ],
+  "invalidDisplayGeometryIds": [
+    55177,
+    142965
+  ],
+  "displayGeoJsonSha256": "03163c903eafa4de75b63721fa44a6fcf43dba446e83380f404eec1bc575d1b2",
+  "gzipBytes": 3944581,
+  "rawBytes": 25255315,
+  "humanReviewed": false,
+  "limitations": [
+    "Published modern-era administrative records only. Level 3 includes records beginning in 1883. No ancient borders or post-road reconstruction.",
+    "Date overlap is evaluated by year; the original day boundaries remain in each record.",
+    "Original reference strings can be truncated and contain replacement characters. They are preserved."
+  ]
+}

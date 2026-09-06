@@ -1,5 +1,6 @@
 """Audit Q1-Q9 with real data, distinguishing missing evidence from working queries."""
 import argparse
+from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 import json
 from pathlib import Path
@@ -19,8 +20,25 @@ def main():
         claims=[{k:v['value'] for k,v in row.items()} for row in json.load(r)['results']['bindings']]
     local=lambda value:value.removeprefix('https://sigong-yeojido.kr/ns#')
     ids=sorted({local(c['chunk']) for c in claims})
+    sources=get('/api/sources')['sources']
+    source_counts={s['id']:s['chunkCount'] for s in sources}
+    by_source=defaultdict(set)
+    for claim in claims:by_source[local(claim['source'])].add(local(claim['chunk']))
+    chunks={};paged_sources={}
+    for source,cited in by_source.items():
+        count=source_counts.get(source,0)
+        if not count or (count+499)//500>=len(cited):continue
+        pages=0
+        for offset in range(0,count,500):
+            page=get('/api/chunks',sources=source,offset=offset,limit=500)
+            assert page['total']==count and page['offset']==offset
+            for row in page['chunks']:
+                if row['id'] in cited:chunks[row['id']]={'found':True,'chunk':row}
+            pages+=1
+        paged_sources[source]=pages
+    remaining=sorted(set(ids)-chunks.keys())
     def read_chunk(cid):return cid,get('/api/chunk',id=cid)
-    with ThreadPoolExecutor(max_workers=4) as pool:chunks=dict(pool.map(read_chunk,ids))
+    with ThreadPoolExecutor(max_workers=4) as pool:chunks.update(pool.map(read_chunk,remaining))
     bad=[]
     for claim in claims:
         cid=local(claim['chunk']);result=chunks[cid];row=result.get('chunk',{})
@@ -53,7 +71,7 @@ def main():
         ('/api/comparison-differences',{},'comparisons'),('/api/compare',{'id':'asin-ahwa-death'},'rows')]
     human={path:len(get(path,origin='human',**params)[field]) for path,params,field in human_paths}
     assert all(count==0 for count in human.values()),human
-    sources=get('/api/sources')['sources'];sg=next(s for s in sources if s['id']=='src-samguksagi')
+    sg=next(s for s in sources if s['id']=='src-samguksagi')
     assert sg['composedYear']==1145 and sg['coversFrom']==-57 and sg['coversTo']==935
     identity=get('/api/graph',entity='person-encykorea-sammaekjong',sources='src-encykorea-jinheung')
     same=[c for c in identity['claims'] if c['predicate']=='syj:sameEntityAs']
@@ -64,7 +82,8 @@ def main():
               'boundary':'지도 표시 후보의 기간·선택 검사. 좌표의 역사적 확정을 뜻하지 않는다.'},
         'Q2':{'status':'PASS','rawRows':3,'projectedYears':sorted(years),'unconvertedRows':1,'boundary':'3차 자료의 환산표를 별도로 표시한다.'},
         'Q3':{'status':'PASS','recordedPeople':len(people['people']),'boundary':'소속과 활동 기간이 수록된 인물. 당시 인물 전수 수집은 미완료다.'},
-        'Q4':{'status':'PASS','claimsChecked':len(claims),'uniqueChunksChecked':len(chunks),'quoteOrSourceMismatches':bad},
+        'Q4':{'status':'PASS','claimsChecked':len(claims),'uniqueChunksChecked':len(chunks),'quoteOrSourceMismatches':bad,
+              'pagedSources':paged_sources,'individualChunkRequests':len(remaining)},
         'Q5':{'status':'PASS','discoveredPairs':len(differences['comparisons']),'boundary':'직접 사건 동일성 연결과 연도 근거가 있는 전체 수록 쌍을 조회한다.'},
         'Q6':{'status':'PASS' if q6_complete else 'PARTIAL','counties':counties,
               'boundary':'좌표가 없는 군·직접 근거가 없는 옛 후보가 남았다. 표시 기능과 위치 근거 완성을 구별한다.'},

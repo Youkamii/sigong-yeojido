@@ -1,0 +1,31 @@
+---
+type: "Claims"
+source: "src-hgis-admin-1910-1945"
+chunk: "chunk_hgis-admin-92766"
+status: "draft"
+generated_by: "codex"
+---
+
+```claims-json
+[
+  {
+    "id": "claim-hgis-admin-92766-boundary",
+    "subject": "place-hgis-admin-92766",
+    "predicate": "syj:hasBoundaryRecord",
+    "object": {
+      "kind": "literal",
+      "value": "hgis-townships-1883-1945.geojson#hgis-admin-92766"
+    },
+    "fromSource": "src-hgis-admin-1910-1945",
+    "citesChunk": "chunk_hgis-admin-92766",
+    "quote": "{\n  \"alias\": null,\n  \"begin\": \"19100510\",\n  \"begin_sour\": \"民籍統計表\",\n  \"end\": \"19140228\",\n  \"end_source\": \"朝鮮總督府令第111號(1913-12-29);平安南道令第2號(1914-03-01);平安南道告示第56號(1917-06-28)\",\n  \"fid\": 6240,\n  \"fullname\": \"평안남도/덕천군/금성면\",\n  \"fullname_c\": \"平安南道/德川郡/金城面\",\n  \"geom_ref\": \"중앙\",\n  \"id\": 92766,\n  \"key\": \"9/503/5597\",\n  \"lv\": 3,\n  \"name\": \"금성면\",\n  \"name_cn\": \"金城面\",\n  \"reference\": \"1914년 3월 1일 기존 덕천군이 덕천군으로 설정되었다(부령111호). 4월 1일 덕천군 내 면의 구획, 명칭이 정리되었다(도령2호).  17년 8월 1일 덕천군 내 동리의 구획, 명칭이 정리되었다(고시56호). ��\",\n  \"trust\": 2,\n  \"type\": \"面\",\n  \"up_key\": \"9/503\",\n  \"work_date\": \"20220627\",\n  \"worker\": \"2022국편GIS사업팀\"\n}",
+    "origin": "ai",
+    "status": "draft",
+    "validFrom": 1910,
+    "validTo": 1914,
+    "generatedBy": "codex",
+    "generatedAt": "2026-09-07",
+    "note": "기관이 구축한 역사 행정구역 레코드와 표시용 도형의 연결이다. 경계선은 원본 EPSG:4326 좌표를 Shapely 2.1.2, tolerance 0.002도로 단순화했다. 날짜는 레코드 begin/end 원값을 보존한다. 신뢰도 코드·추정 표기는 확정값으로 바꾸지 않았다."
+  }
+]
+```

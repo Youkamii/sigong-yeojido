@@ -17,13 +17,16 @@ class HistoricalMapTests(unittest.TestCase):
         self.write('districts',[self.feature('district-before','src-a',1910,1914),
                                 self.feature('district-after','src-a',1914,1945),
                                 self.feature('human-district','src-b',1920,1930,'human')])
+        self.write('townships',[self.feature('early-settlement','src-a',1883,1914),
+                                self.feature('later-township','src-a',1914,1945)])
 
     def feature(self,id,source,start,end,origin='ai'):
         return {'type':'Feature','id':id,'geometry':{'type':'Polygon','coordinates':[]},
                 'properties':{'fromSource':source,'origin':origin,'validFrom':start,'validTo':end}}
 
     def write(self,name,features):
-        path=self.data/f'maps/hgis-{name}-1910-1945.geojson.gz'
+        period='1883-1945' if name=='townships' else '1910-1945'
+        path=self.data/f'maps/hgis-{name}-{period}.geojson.gz'
         path.write_bytes(gzip.compress(json.dumps({'features':features}).encode()))
 
     def ids(self,**kwargs):
@@ -41,7 +44,7 @@ class HistoricalMapTests(unittest.TestCase):
         for year in (1909,1946):self.assertEqual(self.ids(level=2,year=year),[])
 
     def test_source_and_authorship_filters_apply_to_each_level(self):
-        for level in (1,2):self.assertEqual(self.ids(level=level,sources=set()),[])
+        for level in (1,2,3):self.assertEqual(self.ids(level=level,sources=set()),[])
         self.assertEqual(self.ids(level=2,sources={'src-b'},origin='human'),['human-district'])
         self.assertEqual(self.ids(level=2,sources={'src-b'},origin='ai'),[])
         self.assertEqual(self.ids(level=1,origin='human'),[])
@@ -50,5 +53,14 @@ class HistoricalMapTests(unittest.TestCase):
         self.ids(level=2)
         self.write('districts',[self.feature('replacement-record','src-a',1911,1912)])
         self.assertEqual(self.ids(level=2),['replacement-record'])
-        for level in (0,3,'unknown'):
+        for level in (0,4,'unknown'):
             with self.assertRaises(ValueError):self.ids(level=level)
+
+    def test_townships_keep_earlier_dates_and_do_not_replace_other_levels(self):
+        self.assertEqual(self.ids(level=3,year=1883),['early-settlement'])
+        self.assertEqual(self.ids(level=3,year=1882),[])
+        self.assertEqual(self.ids(level=3,year=1914),['early-settlement','later-township'])
+        self.assertEqual(self.ids(level=3,origin='human'),[])
+        self.assertEqual(self.ids(level=3,sources={'src-b'}),[])
+        self.assertEqual(self.ids(level=1),['province'])
+        self.assertEqual(len(self.ids(level=2)),3)

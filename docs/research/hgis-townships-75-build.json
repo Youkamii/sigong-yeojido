@@ -1,0 +1,101 @@
+{
+  "byClass": {
+    "Chunk": 9103,
+    "Claim": 9262,
+    "Conflict": 6,
+    "Event": 48,
+    "Location": 225,
+    "Office": 40,
+    "Organization": 2,
+    "Person": 116,
+    "Place": 9129,
+    "Polity": 13,
+    "Source": 999,
+    "TimeSpan": 44
+  },
+  "checks": {
+    "1 build exit 0 (twice)": {
+      "detail": "exit codes [0, 0]",
+      "ok": true
+    },
+    "2 no chunk text in TTL": {
+      "detail": "9103 Chunk nodes checked against original metadata; unexpected fields or values: []",
+      "ok": true
+    },
+    "3 every Claim cites one existing chunk (URI edge + literal)": {
+      "detail": "9262 claims, 9103 chunk nodes; problems: []",
+      "ok": true
+    },
+    "4 claimDigest == .digests.json": {
+      "detail": "9262 recorded, 0 mismatched, 0 claims without a record (promoted from places.json): []",
+      "ok": true
+    },
+    "5 deterministic (byte-identical)": {
+      "detail": "two builds identical: True; sha256 1c94856b078c73fdbd34da855204cdda7507e53f8e691b202cf4652a647503c9; matches C:/Users/gkfkd/Git/sigong-yeojido/data/build/sigong.ttl: True",
+      "ok": true
+    },
+    "6 rdflib parse": {
+      "detail": "rdflib 7.6.0: 240412 triples (ours 240412)",
+      "ok": true
+    },
+    "6 riot --validate": {
+      "detail": "riot (Apache Jena) not in PATH",
+      "ok": true,
+      "skipped": true
+    },
+    "6 triple count agrees with builder": {
+      "detail": "parser 240412 vs builder 240412",
+      "ok": true
+    },
+    "6 turtle syntax (ttl_check.py)": {
+      "detail": "errors=[] prefixes=['rdf', 'rdfs', 'syj', 'xsd'] triples=240412 blank_nodes=False owl=False",
+      "ok": true
+    },
+    "7 every link resolves to a typed node": {
+      "detail": "37549 link triples; dangling: []",
+      "ok": true
+    },
+    "8 Conflict nodes == recomputed conflicts": {
+      "detail": "6 Conflict nodes, 6 recomputed groups; equal=True",
+      "ok": true
+    },
+    "9 provenance on every Claim": {
+      "detail": "origins {'ai': 9262}; problems: []",
+      "ok": true
+    }
+  },
+  "checksFailed": 0,
+  "chunksCited": 9103,
+  "chunksInCorpus": 57930,
+  "citations": 9262,
+  "claims": 9262,
+  "conflicts": 6,
+  "digests": {
+    "changed": 0,
+    "new": 0,
+    "ok": 9262,
+    "refreshed": 0,
+    "stale": 0
+  },
+  "entities": 9348,
+  "failures": 0,
+  "locations": {
+    "candidatesInFile": 213,
+    "fromClaimFiles": 12,
+    "placesInFile": 150,
+    "promotedFromPlaces": 0,
+    "ungroundedCandidates": 213
+  },
+  "objectKinds": {
+    "entity": 171,
+    "literal": 9018,
+    "location": 12,
+    "time": 47,
+    "year": 14
+  },
+  "sha256": "1c94856b078c73fdbd34da855204cdda7507e53f8e691b202cf4652a647503c9",
+  "sources": 999,
+  "timespans": 44,
+  "triples": 240412,
+  "warnings": 0
+}

@@ -20,7 +20,7 @@ def main():
         assert {f['properties']['sourceRecord']['lv'] for f in all_rows}=={2}
         invalid=[f for f in all_rows if not f['properties']['originalGeometryValid']]
         assert len(invalid)==4
-        assert get('?level=3').status==400
+        assert get('?level=4').status==400
         for suffix in ('&sources=','&sources=src-samguksagi','&origin=human','&year=1909','&year=1946'):
             assert get('?level=2'+suffix).json()['features']==[],suffix
         rows=get('?level=2&year=1914&sources=src-hgis-admin-1910-1945').json()['features'];assert len(rows)==560
