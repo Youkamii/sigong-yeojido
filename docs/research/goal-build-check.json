@@ -1,16 +1,16 @@
 {
   "byClass": {
-    "Chunk": 9240,
-    "Claim": 9416,
+    "Chunk": 9242,
+    "Claim": 9418,
     "Conflict": 6,
     "Event": 63,
     "Location": 230,
     "Office": 41,
     "Organization": 2,
     "Person": 125,
-    "Place": 9230,
+    "Place": 9232,
     "Polity": 22,
-    "Source": 1073,
+    "Source": 1075,
     "TimeSpan": 71
   },
   "checks": {
@@ -19,23 +19,23 @@
       "ok": true
     },
     "2 no chunk text in TTL": {
-      "detail": "9240 Chunk nodes checked against original metadata; unexpected fields or values: []",
+      "detail": "9242 Chunk nodes checked against original metadata; unexpected fields or values: []",
       "ok": true
     },
     "3 every Claim cites one existing chunk (URI edge + literal)": {
-      "detail": "9416 claims, 9240 chunk nodes; problems: []",
+      "detail": "9418 claims, 9242 chunk nodes; problems: []",
       "ok": true
     },
     "4 claimDigest == .digests.json": {
-      "detail": "9416 recorded, 0 mismatched, 0 claims without a record (promoted from places.json): []",
+      "detail": "9418 recorded, 0 mismatched, 0 claims without a record (promoted from places.json): []",
       "ok": true
     },
     "5 deterministic (byte-identical)": {
-      "detail": "two builds identical: True; sha256 24aa4dc8329e9b51b529f517a6508a2a08ca2bea42c855e34561360b68593377; matches C:/Users/gkfkd/Git/sigong-yeojido/data/build/sigong.ttl: True",
+      "detail": "two builds identical: True; sha256 0eb6ece1de71752164325e98c799ae7cdd988512b661e76a1b7008bff35e5fe5; matches C:/Users/gkfkd/Git/sigong-yeojido/data/build/sigong.ttl: True",
       "ok": true
     },
     "6 rdflib parse": {
-      "detail": "rdflib 7.6.0: 244954 triples (ours 244954)",
+      "detail": "rdflib 7.6.0: 245018 triples (ours 245018)",
       "ok": true
     },
     "6 riot --validate": {
@@ -44,15 +44,15 @@
       "skipped": true
     },
     "6 triple count agrees with builder": {
-      "detail": "parser 244954 vs builder 244954",
+      "detail": "parser 245018 vs builder 245018",
       "ok": true
     },
     "6 turtle syntax (ttl_check.py)": {
-      "detail": "errors=[] prefixes=['rdf', 'rdfs', 'syj', 'xsd'] triples=244954 blank_nodes=False owl=False",
+      "detail": "errors=[] prefixes=['rdf', 'rdfs', 'syj', 'xsd'] triples=245018 blank_nodes=False owl=False",
       "ok": true
     },
     "7 every link resolves to a typed node": {
-      "detail": "38241 link triples; dangling: []",
+      "detail": "38249 link triples; dangling: []",
       "ok": true
     },
     "8 Conflict nodes == recomputed conflicts": {
@@ -60,24 +60,24 @@
       "ok": true
     },
     "9 provenance on every Claim": {
-      "detail": "origins {'ai': 9416}; problems: []",
+      "detail": "origins {'ai': 9418}; problems: []",
       "ok": true
     }
   },
   "checksFailed": 0,
-  "chunksCited": 9240,
-  "chunksInCorpus": 83346,
-  "citations": 9416,
-  "claims": 9416,
+  "chunksCited": 9242,
+  "chunksInCorpus": 83348,
+  "citations": 9418,
+  "claims": 9418,
   "conflicts": 6,
   "digests": {
     "changed": 0,
     "new": 0,
-    "ok": 9416,
+    "ok": 9418,
     "refreshed": 0,
     "stale": 0
   },
-  "entities": 9483,
+  "entities": 9485,
   "failures": 0,
   "locations": {
     "candidatesInFile": 213,
@@ -88,14 +88,14 @@
   },
   "objectKinds": {
     "entity": 191,
-    "literal": 9120,
+    "literal": 9122,
     "location": 17,
     "time": 74,
     "year": 14
   },
-  "sha256": "24aa4dc8329e9b51b529f517a6508a2a08ca2bea42c855e34561360b68593377",
-  "sources": 1073,
+  "sha256": "0eb6ece1de71752164325e98c799ae7cdd988512b661e76a1b7008bff35e5fe5",
+  "sources": 1075,
   "timespans": 71,
-  "triples": 244954,
+  "triples": 245018,
   "warnings": 0
 }
