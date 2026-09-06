@@ -143,6 +143,7 @@ class Article:
         self.index_terms: list[dict] = []
         self.new_chars: list[dict] = []
         self.proofreadings: list[dict] = []
+        self.paragraph_dates: list[dict] = []
         self.unknown_tags: collections.Counter = collections.Counter()
 
     def render(self, el: ET.Element, tb: TextBuilder, parent_seq: int | None) -> None:
@@ -159,6 +160,9 @@ class Article:
             self.take_annotation(el, tb, parent_seq)
         elif tag == "br":
             tb.newline()
+        elif tag == "pDate":
+            tb.detach()
+            self.paragraph_dates.append({"raw": plain(el), "type": el.get("type"), "offset": tb.offset()})
         elif tag == "newChar":
             tb.detach()
             self.new_chars.append(
@@ -314,6 +318,8 @@ def extract_article(
         "translation": None,
         "translationSource": None,
     }
+    if art.paragraph_dates:
+        chunk["paragraphDates"] = art.paragraph_dates
     if source.startswith("sillok-"):
         chunk["permalink"] = f"https://sillok.history.go.kr/id/{level_id}"
         chunk["editionReferences"] = [
