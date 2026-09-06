@@ -51,6 +51,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from frontmatter import ParseError, parse_front_matter
+from history_rules import check as check_history
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -66,6 +67,8 @@ STATUSES = ("draft", "stable", "deprecated")
 MULTI_VALUED_PREDICATES = frozenset({
     "syj:mentionedIn", "syj:describedAs", "syj:instructs",
     "syj:hasTitle", "syj:hasOutcome", "syj:subjectToRule",
+    "syj:hasParent", "syj:childOf", "syj:descendantOf", "syj:parentOf", "syj:fatherOf", "syj:motherOf",
+    "syj:appearsIn", "syj:before", "syj:after",
 })
 REQUIRED_TEXT_FIELDS = (
     "id",
@@ -489,6 +492,7 @@ def validate(
     seen_ids: dict[str, str] = {}
     by_key: dict[tuple[str, str], dict[str, list[str]]] = {}
     timespans = {}
+    shaped_claims=[]
     for doc in docs:
         for claim in doc.claims:
             obj = claim.get("object") if isinstance(claim, dict) else None
@@ -515,6 +519,7 @@ def validate(
                 failures.append(Failure("shape", where, cid, f"duplicate claim id (also in {seen_ids[cid]})"))
                 continue
             seen_ids[cid] = where
+            shaped_claims.append(claim)
 
             # (b) 근거가 있고, 살아 있는 chunk 인가
             chunk_id = claim["citesChunk"]
@@ -580,6 +585,9 @@ def validate(
             if claim["predicate"] not in MULTI_VALUED_PREDICATES:
                 canon = json.dumps(obj, sort_keys=True, ensure_ascii=False)
                 by_key.setdefault((claim["subject"], claim["predicate"]), {}).setdefault(canon, []).append(cid)
+
+    for code,cid,message in check_history(shaped_claims):
+        failures.append(Failure(code,seen_ids[cid],cid,message))
 
     for sd in report.digests.values():
         if sd.recorded:

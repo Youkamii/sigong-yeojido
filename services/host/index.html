@@ -977,7 +977,7 @@ async function select(id, reveal = true, graphNode = null){
   const claimsOn = cl.claims || [];
   // 충돌 — 한 값만 가질 술어(때·나이·계보·자리…)에 서로 다른 값이 있으면 그 술어의 주장 전부에 표시한다.
   // 언급·서술·지시처럼 여러 값이 자연스러운 술어는 세지 않는다. 어느 쪽이 맞는지는 말하지 않는다.
-  const MULTI = new Set(['syj:mentionedIn','syj:describedAs','syj:instructs','syj:hasTitle','syj:hasOutcome','syj:subjectToRule']);
+  const MULTI = new Set(cl.multiValuedPredicates||[]);
   const byPred = new Map();
   for(const c of claimsOn){ if(c.role !== 'subject' || MULTI.has(c.predicate)) continue;
     const k = c.predicate; const v = JSON.stringify(c.object); if(!byPred.has(k)) byPred.set(k, new Set()); byPred.get(k).add(v); }

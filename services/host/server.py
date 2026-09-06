@@ -51,9 +51,10 @@ from graph_query import neighborhood, GraphUnavailable
 from chat import answer as chat_answer, ChatUnavailable
 from time_query import time_claims
 try:
-    from validate import parse_claims_text  # noqa: E402
+    from validate import parse_claims_text, MULTI_VALUED_PREDICATES  # noqa: E402
 except Exception:  # validate.py 가 없거나 깨졌어도 뷰어는 뜬다 (claims 만 비어 보인다)
     parse_claims_text = None
+    MULTI_VALUED_PREDICATES = frozenset()
 
 mimetypes.add_type("application/javascript", ".js")
 mimetypes.add_type("application/json", ".json")
@@ -347,7 +348,8 @@ def claims_for(entity_id: str, about: bool, sources: set[str] | None = None, ori
         out.append(rec)
     out.sort(key=lambda r: (r["role"] != "subject", str(r.get("predicate")), str(r.get("id"))))
     return {"entity": entity_id, "claims": out, "total": len(out),
-            "allClaims": sum(matches_origin(c, origin) for c in idx["claims"]), "origin": origin}
+            "allClaims": sum(matches_origin(c, origin) for c in idx["claims"]), "origin": origin,
+            "multiValuedPredicates":sorted(MULTI_VALUED_PREDICATES)}
 
 
 def merged_places() -> dict:
