@@ -77,6 +77,21 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 #resetMap{position:absolute;top:40px;left:14px;z-index:5;padding:6px 10px;background:var(--ink-2);border:1px solid var(--line-2);font-size:12px}
 .mode3d #resetMap{display:none}
 .cand.focused{outline:1px solid var(--gardenia);outline-offset:4px}
+#graph{display:none;position:absolute;inset:0 0 42% 0;background:var(--ink);z-index:4;grid-template-rows:auto minmax(0,1fr)}
+.modegraph #graph{display:grid}
+.modegraph #three,.modegraph #map,.modegraph #outside3d,.modegraph #resetMap,.modegraph #hint{display:none}
+.graph-tools{display:flex;align-items:center;gap:8px;padding:12px;border-bottom:1px solid var(--line);font-size:12px}
+.graph-tools [role=status]{flex:1}
+.graph-tools button{border:1px solid var(--line-2);padding:4px 8px}
+.graph-tools button:disabled{opacity:.3;cursor:default}
+.graph-scroll{overflow:auto;padding:8px}
+.graph-node{cursor:pointer}
+.graph-node rect{fill:var(--ink-2);stroke:var(--line-2)}
+.graph-node:hover rect,.graph-node.selected rect,.graph-node:focus rect{stroke:var(--celadon)}
+.graph-node text{fill:var(--paper);font:12px var(--sans)}
+.graph-node .graph-kind{fill:var(--paper-3);font-size:10px}
+.graph-column{fill:var(--celadon);font:12px var(--sans)}
+.graph-edges path{fill:none;stroke:var(--celadon-dim);stroke-width:1;opacity:.7}
 @media (max-width:1080px){
   .stage{grid-template-columns:200px minmax(0,1fr)}
   .evi{display:none}
@@ -238,6 +253,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
     <div class="seg">
       <button id="b2d" class="on">지도</button>
       <button id="b3d">3D</button>
+      <button id="bgraph">그래프</button>
     </div>
     <span class="spacer"></span>
     <button id="sourcesBtn" class="panel-btn" aria-controls="sourceRail" aria-expanded="false">찾기·사료</button>
@@ -267,6 +283,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
     <div class="canvasWrap">
       <canvas id="map"></canvas>
       <div id="three"></div>
+      <div id="graph" aria-label="근거 그래프"></div>
       <div class="hint" id="hint">지명을 클릭하면 근거가 열린다</div>
       <button id="resetMap" hidden>전체 지도</button>
       <details id="outside3d" hidden><summary></summary><div></div></details>
@@ -292,6 +309,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 <script type="module">
 import { Timeline } from './app/timeline.js';
 import { groupSources } from './app/source-groups.js';
+import { GraphExplorer } from './app/graph.js';
 import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
 import { activeAt as placeActiveAt, candActive as candidateActive, originMatches, outsideCandidates } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
@@ -309,6 +327,46 @@ document.getElementById('humanOnly').addEventListener('change', event => {
 });
 
 const visibleCandidates = p => p.candidates.filter(c => originMatches(c, state.origin, p));
+let graphView = null;
+function graph(){
+  return graphView ||= new GraphExplorer(document.getElementById('graph'),{
+    filters:()=>({sources:state.on,origin:state.origin}),
+    entity:(id,node)=>select(id,true,node), source:showSource, chunk:showChunk, claim:showGraphClaim
+  });
+}
+
+async function showChunk(id){
+  openEvidence();
+  const seq=++panelSeq;
+  state.panel='chunk';state.chunkId=id;state.sel=null;
+  const el=document.getElementById('evi');
+  el.innerHTML='<p class="empty">원문을 불러오는 중…</p>';
+  try{
+    const response=await fetch('/api/chunk?'+new URLSearchParams({id,sources:[...state.on].join(',')}));
+    if(!response.ok)throw new Error('원문 조회 실패');
+    const data=await response.json();
+    if(seq!==panelSeq)return;
+    el.innerHTML=data.found?`<h3>인용한 원문</h3>${chunkCard(data.chunk,[])}`:'<p class="empty">현재 사료 선택에서 원문을 찾지 못했다.</p>';
+  }catch(error){if(seq===panelSeq)el.textContent=error.message;}
+}
+
+function showGraphClaim(claim){
+  if(!claim)return;
+  openEvidence();++panelSeq;
+  state.panel='graph-claim';state.sel=claim.subject;
+  const el=document.getElementById('evi');
+  const object=claim.object;
+  const value=object.kind==='entity'?(graphView.nodes.get(object.id)?.label||object.id):
+    object.kind==='time'?object.verbatim:object.kind==='location'?`${object.lat}, ${object.lon}`:
+    object.kind==='year'?`${object.value<0?'기원전 '+(-object.value):object.value}년`:object.value;
+  el.innerHTML=`<h3>${escH(claim.subjectLabel)}</h3><div class="sect">${escH(claim.predicate.replace('syj:',''))}</div>
+    <p>${escH(value)}</p>
+    <span class="badge ${claim.origin==='ai'?'ai':'human'}">${claim.origin==='ai'?'AI 추출':'사람'}</span>
+    <div class="quote">${escH(claim.quote)}</div><div class="srcline">${escH(claim.sourceLabel)} · ${escH(claim.chunk.locator||claim.citesChunk)}</div>
+    <button class="card-btn" data-evidence-action="chunk">인용한 원문 열기</button><button class="card-btn" data-evidence-action="source">사료 카드</button>`;
+  el.querySelector('[data-evidence-action=chunk]').onclick=()=>showChunk(claim.citesChunk);
+  el.querySelector('[data-evidence-action=source]').onclick=()=>showSource(claim.fromSource);
+}
 
 function setDrawer(kind){
   const stage = document.querySelector('.stage');
@@ -466,7 +524,11 @@ const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
 let yearSeq = 0, yearTimer = 0, panelSeq = 0;
 function refreshEvidence(){
   if(state.sel) select(state.sel, false);
-  else if(state.panel === 'year') showYear(false);
+  else{
+    if(state.mode==='graph') graph().show(graphView.entity);
+    if(state.panel === 'year') showYear(false);
+    else if(state.panel === 'chunk') showChunk(state.chunkId);
+  }
 }
 async function refreshYearCount(){
   const y = state.year, seq = ++yearSeq;
@@ -778,13 +840,15 @@ cv.addEventListener('click', e => {
 
 // ── 근거 패널 ──
 // 근거는 서버가 찾는다(/api/mentions) — 이름 문자열 일치(자동). 원문 전체를 브라우저로 보내지 않는다.
-async function select(id, reveal = true){
+async function select(id, reveal = true, graphNode = null){
   if(reveal) openEvidence();
+  graphNode ||= graphView?.nodes.get(id);
+  if(state.mode==='graph') graph().show(id);
   const seq = ++panelSeq;
   state.panel = 'place';
   state.sel = id; draw(); if(state.mode==='3d') draw3d();
   let p = state.places.find(x=>x.id===id);
-  const ent = !p && state.entities.find(x=>x.id===id);
+  const ent = !p && (state.entities.find(x=>x.id===id) || graphNode);
   if(!p && ent) p = { id, label: ent.labelHanja, labelKo: ent.label, kind: ent.type, status: 'entity', candidates: [], aliases: [], entityType: ent.type };
   const el = document.getElementById('evi');
   if(!p){ el.innerHTML = ''; return; }
@@ -906,13 +970,20 @@ document.getElementById('toGate').onclick = () => {
   document.getElementById('app').classList.remove('in');
 };
 const b2d = document.getElementById('b2d'), b3d = document.getElementById('b3d');
-b2d.onclick = () => { state.mode='2d'; document.body.classList.remove('mode3d');
+b2d.onclick = () => { state.mode='2d'; document.body.classList.remove('mode3d','modegraph');
+  document.getElementById('bgraph').classList.remove('on');
   b2d.classList.add('on'); b3d.classList.remove('on'); draw();
   document.getElementById('hint').textContent='지명을 클릭하면 근거가 열린다'; };
 b3d.onclick = () => { state.mode='3d'; document.body.classList.add('mode3d');
+  document.body.classList.remove('modegraph');document.getElementById('bgraph').classList.remove('on');
   b3d.classList.add('on'); b2d.classList.remove('on'); init3d();
   renderOutside();
   document.getElementById('hint').textContent='드래그로 회전 · 휠로 확대'; };
+document.getElementById('bgraph').onclick=()=>{
+  state.mode='graph';document.body.classList.remove('mode3d');document.body.classList.add('modegraph');
+  b2d.classList.remove('on');b3d.classList.remove('on');document.getElementById('bgraph').classList.add('on');
+  select(state.sel||'person-gwanggaeto');
+};
 
 addEventListener('resize', () => { draw(); if(state.mode==='3d') resize3d(); });
 

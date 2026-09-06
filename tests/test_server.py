@@ -98,6 +98,23 @@ class ApiTests(unittest.TestCase):
         with patch.object(server, "index", return_value=idx):
             self.assertEqual(self.get("/api/claims?subject=p&sources=")["total"], 0)
 
+    def test_graph_empty_selection_and_failures_are_distinct(self):
+        with patch.object(server, "index", side_effect=AssertionError("graph must use Fuseki")):
+            self.assertEqual(self.get('/api/graph?entity=person-gwanggaeto&sources=')['claims'],[])
+        with patch.object(server, "neighborhood", side_effect=server.GraphUnavailable('unavailable')):
+            with self.assertRaises(HTTPError) as error:
+                self.get('/api/graph?entity=person-gwanggaeto')
+            self.assertEqual(error.exception.code,503)
+            self.assertEqual(json.load(error.exception),{'error':'unavailable'})
+            error.exception.close()
+
+    def test_graph_chunk_opening_obeys_source_selection(self):
+        row={'id':'chunk-a','sourceId':'src-a','text':'actual text','locator':'first'}
+        with patch.object(server,'index',return_value={'chunkById':{'chunk-a':row}}):
+            self.assertEqual(self.get('/api/chunk?id=chunk-a')['chunk'],row)
+            self.assertFalse(self.get('/api/chunk?id=chunk-a&sources=')['found'])
+            self.assertFalse(self.get('/api/chunk?id=missing')['found'])
+
     def test_origin_filter_keeps_human_claims_and_intersects_sources(self):
         claims = [dict(id=origin or "unknown", subject="p", origin=origin, fromSource="src-a")
                   for origin in ("ai", "human", None)]

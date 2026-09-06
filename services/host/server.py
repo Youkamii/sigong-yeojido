@@ -47,6 +47,7 @@ DATA = ROOT / "data"
 # claims 파서는 services/validate.py 의 것을 그대로 쓴다 — 파서를 두 벌 두지 않는다
 sys.path.insert(0, str(ROOT / "services"))
 from frontmatter import parse_front_matter
+from graph_query import neighborhood, GraphUnavailable
 try:
     from validate import parse_claims_text  # noqa: E402
 except Exception:  # validate.py 가 없거나 깨졌어도 뷰어는 뜬다 (claims 만 비어 보인다)
@@ -493,6 +494,30 @@ class Handler(BaseHTTPRequestHandler):
             return
         if path == "/api/entities":
             self._json({"entities": index()["entities"]})
+            return
+        if path == "/api/graph":
+            srcs = q.get("sources", [None])[0]
+            sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
+            try:
+                result = neighborhood(q.get("entity", ["person-gwanggaeto"])[0], sources,
+                                      q.get("origin", ["all"])[0], q.get("limit", ["30"])[0], q.get("offset", ["0"])[0])
+            except ValueError as exc:
+                self._json({"error":str(exc)},400)
+                return
+            except GraphUnavailable as exc:
+                self._json({"error":str(exc)},503)
+                return
+            self._json(result)
+            return
+        if path == "/api/chunk":
+            cid = q.get("id", [""])[0]
+            idx = index()
+            row = idx["chunkById"].get(cid)
+            srcs = q.get("sources", [None])[0]
+            if row and (srcs is None or row.get("sourceId") in srcs.split(",")):
+                self._json({"found":True,"chunk":full_chunk(row)})
+            else:
+                self._json({"found":False,"id":cid})
             return
         if path == "/api/claims":
             origin = q.get("origin", ["all"])[0]
