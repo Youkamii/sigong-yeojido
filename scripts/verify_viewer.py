@@ -209,9 +209,12 @@ async def run(url: str, out: Path) -> int:
                await new Promise(r=>setTimeout(r,500));
                const yv=document.getElementById('yearV').textContent;
                document.getElementById('yearBtn').click();
-               await new Promise(r=>setTimeout(r,1500));
+               const started=performance.now();
+               while(document.querySelector('#evi .empty')?.textContent==='찾는 중…' && performance.now()-started<10000) {
+                 await new Promise(r=>setTimeout(r,50));
+               }
                const h3=document.querySelector('#evi h3');
-               return {ok:true, year:yv, h3:h3&&h3.textContent, cards:document.querySelectorAll('#evi .quote').length, btn:document.getElementById('yearBtn').textContent}; }"""
+               return {ok:true, year:yv, h3:h3&&h3.textContent, cards:document.querySelectorAll('#evi .quote').length, btn:document.getElementById('yearBtn').textContent, waitMs:Math.round(performance.now()-started)}; }"""
         )
         report["scene"]["yearPanel"] = yr
         check("year_records_open", yr.get("ok") and "918" in str(yr.get("h3")) and (yr.get("cards") or 0) > 0, json.dumps(yr, ensure_ascii=False))
