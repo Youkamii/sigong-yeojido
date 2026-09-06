@@ -83,6 +83,8 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .badge.ent{background:var(--ink-3);color:var(--paper-2);border:1px solid var(--line-2)}
 .srcrow{display:flex;align-items:flex-start;gap:4px}
 .srcrow .src{flex:1;min-width:0}
+.srcgroup>summary{cursor:pointer;color:var(--paper-2);font-size:12px;padding:9px 0}
+#tl{max-height:38vh;overflow-y:auto;pointer-events:auto}
 .card-btn{flex:0 0 auto;margin-top:8px;background:none;border:1px solid var(--line-2);color:var(--paper-3);font:inherit;
   font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;padding:2px 6px;border-radius:2px;cursor:pointer}
 .card-btn:hover{color:var(--celadon);border-color:var(--celadon-dim)}
@@ -260,6 +262,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 
 <script type="module">
 import { Timeline } from './app/timeline.js';
+import { groupSources } from './app/source-groups.js';
 import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
 import { activeAt as placeActiveAt, candActive as candidateActive } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
@@ -357,6 +360,10 @@ function mountTimeline(){
       on ? state.on.add(id) : state.on.delete(id);
       renderRail(); draw(); if(state.mode==='3d') draw3d(); refreshEvidence(); scheduleYearCount();
     },
+    onToggleGroup(ids, on){
+      ids.forEach(id => on ? state.on.add(id) : state.on.delete(id));
+      renderRail(); draw(); if(state.mode==='3d') draw3d(); refreshEvidence(); scheduleYearCount();
+    },
   });
   window.__timeline = tl;   // 검증 하네스용
   refreshYearCount();
@@ -422,11 +429,27 @@ function chunkCard(c, names){
     <div class="srcline">${meta}<br><code>${escH(c.id)}</code>${counts ? ' · ' + counts : ''}${link ? ' · ' + link : ''}</div></div>`;
 }
 
+const openSourceGroups = new Set();
 function renderRail(){
   const el = document.getElementById('srcList');
   el.innerHTML = '';
   if(!state.sources.length){ el.innerHTML = '<p class="empty">사료 없음</p>'; return; }
-  for(const s of state.sources){
+  for(const group of groupSources(state.sources)){
+    let container = el;
+    if(group.label){
+      const details = document.createElement('details');
+      details.className = 'srcgroup';
+      details.open = openSourceGroups.has(group.label);
+      const summary = document.createElement('summary');
+      summary.textContent = `${group.label} (${group.sources.length})`;
+      details.appendChild(summary);
+      details.ontoggle = () => {
+        if(details.isConnected) details.open ? openSourceGroups.add(group.label) : openSourceGroups.delete(group.label);
+      };
+      el.appendChild(details);
+      container = details;
+    }
+    for(const s of group.sources){
     const row = document.createElement('div');
     row.className = 'srcrow';
     const b = document.createElement('button');
@@ -445,7 +468,8 @@ function renderRail(){
       scheduleYearCount();
     };
     row.appendChild(b); row.appendChild(cb);
-    el.appendChild(row);
+    container.appendChild(row);
+    }
   }
 }
 

@@ -26,6 +26,8 @@
 //   연도는 정수. 없으면 null — 그 부분(막대·점)은 그리지 않는다.
 //   defaultLens 가 참인 사료는 진한 막대(기본 렌즈), 나머지는 옅은 막대. 꺼진 사료는 흐리게.
 
+import { groupSources, selectionOf } from './source-groups.js';
+
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const STYLE_ID = 'syj-timeline-style';
 const STEPS = [100, 500, 1000];   // 눈금 단위 후보 — 라벨이 겹치지 않는 가장 촘촘한 것을 고른다
@@ -79,6 +81,10 @@ const CSS = `
 .tl-cursor:focus-visible .tl-flag-bg{stroke-width:2}
 .tl-flag-text{fill:var(--paper);font-family:var(--mono);font-size:10.5px;letter-spacing:.02em}
 .tl-hit{fill:transparent;cursor:ew-resize}
+.tl-group-open,.tl-group-toggle{cursor:pointer;outline:none}
+.tl-group-open:focus-visible text,.tl-group-toggle:focus-visible text{fill:var(--gardenia)}
+.tl-group-title{fill:var(--paper-2);font-size:11px}
+.tl-group-bar{fill:var(--celadon-dim);opacity:.45}
 `;
 
 const isNum = v => typeof v === 'number' && Number.isFinite(v);
@@ -170,6 +176,9 @@ export class Timeline {
     this.on = new Set(opts.on ?? this.sources.map(s => s.id));
     this.onYear = typeof opts.onYear === 'function' ? opts.onYear : () => {};
     this.onToggle = typeof opts.onToggle === 'function' ? opts.onToggle : () => {};
+    this.onToggleGroup = typeof opts.onToggleGroup === 'function' ? opts.onToggleGroup
+      : (ids, on) => ids.forEach(id => this.onToggle(id, on));
+    this.expanded = new Set();
     this.labelWidth = isNum(opts.labelWidth) ? opts.labelWidth : null;
 
     this.host.classList.add('tl-host');
@@ -256,7 +265,11 @@ export class Timeline {
     const w = this.host.clientWidth;
     if (w < 40) return;   // 숨겨진 상태(display:none 등). 보이게 되면 ResizeObserver 가 다시 부른다
 
-    const n = this.sources.length;
+    this.groups = groupSources(this.sources);
+    const rows = this.groups.flatMap(group => group.label
+      ? [{group}, ...(this.expanded.has(group.label) ? group.sources.map(source => ({source})) : [])]
+      : group.sources.map(source => ({source})));
+    const n = rows.length;
     const narrow = w < NARROW;
     this.host.classList.toggle('tl-narrow', narrow);
     const labelW = this.labelWidth ?? (narrow ? 112 : 152);
@@ -320,7 +333,7 @@ export class Timeline {
     if (!n) {
       gTracks.appendChild(el('text', { class: 'tl-empty', x: plotL, y: RULER_H + ROW_H / 2, dy: '.36em' }, '사료 없음'));
     }
-    this.sources.forEach((s, i) => gTracks.appendChild(this._track(s, i)));
+    rows.forEach((row, i) => gTracks.appendChild(row.group ? this._group(row.group, i) : this._track(row.source, i)));
     svg.appendChild(gTracks);
 
     // 현재 연도 커서 — 세로선 + 눈금자 위의 깃발. 맨 위에 올린다
@@ -342,6 +355,55 @@ export class Timeline {
     this._thinTickLabels(tickLabels);
     this._trimLabels(labelW - 36);
     this._placeCursor();
+    this._applyOn();
+  }
+
+  _group(group, i){
+    const { labelW, plotL, xs } = this._geom;
+    const yTop = RULER_H + i * ROW_H, cy = yTop + ROW_H / 2;
+    const g = el('g', {class: 'tl-group', 'data-group': group.label});
+    const open = el('g', {class: 'tl-group-open', role: 'button', tabindex: 0,
+      'aria-label': `${group.label} ${group.sources.length}개`, 'aria-expanded': this.expanded.has(group.label)});
+    open.appendChild(el('rect', {class: 'tl-label-hit', x: 0, y: yTop, width: labelW - 27, height: ROW_H}));
+    open.appendChild(el('text', {class: 'tl-group-title tl-label-text', x: 8, y: cy, dy: '.36em'},
+      `${this.expanded.has(group.label) ? '▾' : '▸'} ${group.label} (${group.sources.length})`));
+    open.appendChild(el('title', null, `${group.label} · ${group.sources.length}개 사료 펼치기/접기`));
+    const expand = () => {
+      this.expanded.has(group.label) ? this.expanded.delete(group.label) : this.expanded.add(group.label);
+      this.render();
+    };
+    open.addEventListener('click', e => { e.stopPropagation(); expand(); });
+    open.addEventListener('keydown', e => {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); expand(); }
+    });
+    g.appendChild(open);
+    const toggle = el('g', {class: 'tl-group-toggle', role: 'checkbox', tabindex: 0,
+      'data-group': group.label, 'aria-label': `${group.label} 전체 선택`});
+    toggle.appendChild(el('rect', {class: 'tl-label-hit', x: labelW - 25, y: yTop, width: 25, height: ROW_H}));
+    toggle.appendChild(el('rect', {class: 'tl-box', x: labelW - 21, y: cy - 6, width: 13, height: 13, rx: 1}));
+    toggle.appendChild(el('text', {class: 'tl-group-title', x: labelW - 20, y: cy, dy: '.36em'}));
+    const change = () => {
+      const on = selectionOf(group.sources, this.on) !== 'true';
+      const ids = group.sources.map(s => s.id);
+      ids.forEach(id => on ? this.on.add(id) : this.on.delete(id));
+      this._applyOn();
+      this.onToggleGroup(ids, on);
+    };
+    toggle.addEventListener('click', e => { e.stopPropagation(); change(); });
+    toggle.addEventListener('keydown', e => {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); change(); }
+    });
+    g.appendChild(toggle);
+    const dates = group.sources.flatMap(s => [s.coversFrom, s.coversTo]).filter(isNum);
+    if (dates.length) {
+      const from = Math.min(...dates), to = Math.max(...dates);
+      const bar = el('rect', {class: 'tl-group-bar', x: xs(from), y: cy - 3, width: Math.max(2, xs(to) - xs(from)), height: 6});
+      bar.appendChild(el('title', null, `다루는 기간 전체 ${fmtYear(from)} ~ ${fmtYear(to)} · 개별 판본은 펼쳐서 보기`));
+      g.appendChild(bar);
+    } else {
+      g.appendChild(el('text', {class: 'tl-gap', x: plotL + 4, y: cy, dy: '.36em'}, '기간 미상'));
+    }
+    return g;
   }
 
   /** 그려진 뒤 실제 폭을 재서 겹치는 눈금 라벨을 뺀다. 안쪽으로 밀어 넣은 양끝 라벨은 제자리 라벨에 진다. */
@@ -500,6 +562,12 @@ export class Timeline {
       const lab = g.querySelector('.tl-label');
       if (lab) lab.setAttribute('aria-checked', on ? 'true' : 'false');
     }
+    for (const toggle of this.svg.querySelectorAll('.tl-group-toggle')) {
+      const group = this.groups.find(g => g.label === toggle.dataset.group);
+      const selected = selectionOf(group.sources, this.on);
+      toggle.setAttribute('aria-checked', selected);
+      toggle.querySelector('text').textContent = selected === 'true' ? '✓' : selected === 'mixed' ? '−' : '';
+    }
   }
 
   // ── 입력 ──
@@ -530,7 +598,7 @@ export class Timeline {
   _pointerDown(e){
     if (!this._geom) return;
     if (e.pointerType === 'mouse' && e.button !== 0) return;
-    if (e.target && typeof e.target.closest === 'function' && e.target.closest('.tl-label')) return;   // 체크박스는 제 일을 한다
+    if (e.target && typeof e.target.closest === 'function' && e.target.closest('.tl-label,.tl-group-open,.tl-group-toggle')) return;
     const r = this.svg.getBoundingClientRect();
     if (e.clientX - r.left < this._geom.plotL - 8) return;   // 라벨 칸
     e.preventDefault();

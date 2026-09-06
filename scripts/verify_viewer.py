@@ -170,10 +170,13 @@ async def run(url: str, out: Path) -> int:
         check("source_card_opens", card.get("found") and card.get("label") == "삼국사기" and card.get("hasLicense") and card.get("hasYears"), json.dumps(card, ensure_ascii=False))
         await pg.screenshot(path=str(out / "03d-source.png"))
 
-        # 3b. 타임라인 — 사료 수만큼 트랙, 커서를 누르면 연도가 바뀐다
+        # 3b. 타임라인 — 보이는 트랙 + 접힌 사료가 전체 수와 같고, 커서를 누르면 연도가 바뀐다
         tl = await pg.evaluate(
             """async () => { const tl=window.__timeline; if(!tl) return {mounted:false};
                const tracks=tl.svg.querySelectorAll('.tl-track').length;
+               const groups=(tl.groups||[]).filter(g=>g.label);
+               const hidden=groups.filter(g=>!tl.expanded.has(g.label)).reduce((n,g)=>n+g.sources.length,0);
+               const groupRows=tl.svg.querySelectorAll('.tl-group').length;
                const srcs=(await fetch('/api/sources').then(r=>r.json())).sources.length;
                const before=document.getElementById('yearV').textContent;
                const plot=tl.svg.querySelector('.tl-plot'); const r=plot.getBoundingClientRect();
@@ -182,10 +185,11 @@ async def run(url: str, out: Path) -> int:
                window.dispatchEvent(new PointerEvent('pointerup',{clientX:x,clientY:y,bubbles:true,pointerId:1}));
                await new Promise(r=>setTimeout(r,120));
                const after=document.getElementById('yearV').textContent;
-               return {mounted:true, tracks, srcs, before, after}; }"""
+               return {mounted:true, tracks, hidden, groupRows, groups:groups.length, srcs, before, after}; }"""
         )
         report["scene"]["timeline"] = tl
-        check("timeline_mounted", tl.get("mounted") and tl.get("tracks") == tl.get("srcs"), json.dumps(tl, ensure_ascii=False))
+        check("timeline_mounted", tl.get("mounted") and tl.get("tracks", 0) + tl.get("hidden", 0) == tl.get("srcs")
+              and tl.get("groups") == tl.get("groupRows"), json.dumps(tl, ensure_ascii=False))
         check("timeline_click_changes_year", tl.get("mounted") and tl.get("after") != tl.get("before"), f"{tl.get('before')} -> {tl.get('after')}")
 
         # 3c. 이 해의 기록 — 918년(태조 즉위)으로 옮기고 버튼을 누르면 그 해 기사가 열린다
