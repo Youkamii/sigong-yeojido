@@ -38,12 +38,14 @@ Claim 9,416개는 경계 레코드 연결 9,028개와 그 밖의 관계 388개�
 | HGIS 읍·면 등(기존 Source 확장) | 0 | 8,176 | [원 기간·도형·반복 대조](docs/research/hgis-townships-75.md) |
 | Cliopatria 한국사 국가 경계 | 1 | 94 | [원 기록·기간·표시 한계](docs/research/cliopatria-79.md) |
 | 시대별 해설·평양 견해·사건 장소 | 22 | 43 | [시대별 범위](docs/research/claim-periods-51.md) |
-| **c2 합계** | **1,072** | **2,601,030** | [운영 기록](docs/research/route-deployed-86.json) |
+| 경국대전 1934년판 원해상도 스캔 | 1 | 319 | [319코마·전사문 0](docs/research/ndl-scan-87.md) |
+| **c2 합계** | **1,073** | **2,601,349** | [운영 기록](docs/research/ndl-scan-87-deployed.json) |
 
-**새 Git 클론에는 카드 1,072개와 chunks 83,027개가 있다.** 실록 30종과 후대 사료의 전체 JSONL은 Git 밖의 c2
+**새 Git 클론에는 카드 1,073개와 chunks 83,346개가 있다.** 실록 30종과 후대 사료의 전체 JSONL은 Git 밖의 c2
 `data/sources/sillok-*/`, `seungjeongwon-ilgi/`, `bibyeonsa-deungnok/`에 보관한다.
 새 환경에서는 각 적재 문서의 명령으로 생성한다. 파일별 SHA256·독립 XML 집계·두 번 추출한 결과는 Git에 있다.
 금석문·집성의 원문 JSONL은 Git에 있다.
+경국대전은 텍스트가 빈 이미지 참조 319개다. 원 스캔 319장(956,756,379바이트)은 c2 `data/scans/ndl-gyeongguk-1934/`에 보관하고, 사료 카드에서 면별로 열람한다. 전사문·OCR·번역은 수록하지 않았다.
 집성은 ZIP에 있는 92종의 한국 관련 기사 발췌이며 원 사서 전체가 아니다. 포털 설명의 95종과 차이는 적재 문서에 기록했다.
 실록에서 실제 인용한 29개 JSON 객체는 `citation-chunks.jsonl`로 Git에 넣어 새 클론에서도 검증한다.
 전체 적재본이 있으면 모든 필드가 같은지 대조하고 한 번만 센다. [실제 새 복사본 검사](docs/research/goal-clean-clone.json)
@@ -129,7 +131,8 @@ API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,�
 - 전체 질의: `scripts/verify_core_questions.py --out /tmp/core-questions.json` — 실제 API·Fuseki, 모든 인용·사료 대조. 현재 8 PASS·Q6 PARTIAL.
 - 사료 비교·인물·시간·위치·역사 지도: `verify_comparison_discovery.py`, `verify_people.py`, `verify_time.py`, `verify_location_filters.py`, `verify_historical_map.py`, `verify_historical_districts.py`, `verify_hansagun_sites.py`.
 - 새 역사 지도·초기 선택·인용: `verify_historical_townships.py`, `verify_cliopatria.py`, `verify_khs_events.py`, `verify_initial_source_selection.py`, `verify_name_claims.py`, `verify_goal_data.py`.
-- [실제 c2 운영 수용](docs/research/goal-production-acceptance.json), [이름·인용 수정 검사](docs/research/name-quotes-production-84-85.json), [역로 표시의 인공 시험 범위](docs/research/route-rendering-86.md). Python 111개·JavaScript 13개와 전체 TTL 검사 통과, GitHub Actions·별도 riot는 NOT_RUN.
+- 스캔 열람: `verify_ndl_scan.py` — 원 스캔 319장 해시·실제 API·면 이동·사료 해제/복구·480px 검사 5개. [현재 외부 주소 검사](docs/research/ndl-scan-87-production.json).
+- [실제 c2 운영 수용](docs/research/goal-production-acceptance.json), [이름·인용 수정 검사](docs/research/name-quotes-production-84-85.json), [역로 표시의 인공 시험 범위](docs/research/route-rendering-86.md). Python 111개·JavaScript 14개와 전체 TTL 검사 통과, GitHub Actions·별도 riot는 NOT_RUN.
 
 ## 작업 규약
 

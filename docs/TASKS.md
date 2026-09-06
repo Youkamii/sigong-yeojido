@@ -1,7 +1,7 @@
 # 전체 작업 목록과 누락 점검
 
-2026-09-07 갱신. #45 감사 이후 실제 구현과 이슈 #1~#86을 함께 대조했다.
-데이터 기준은 `a7c291ce`, 역로 표시 코드는 `24b02746`이며, 운영의 마지막 확인값은 [배포 기록](research/route-deployed-86.json)을 따른다.
+2026-09-07 갱신. #45 감사 이후 실제 구현과 이슈 #1~#87을 함께 대조했다.
+데이터·스캔 열람 기준은 `a2387fd0`, 운영 검증은 `bcb9c375`다. 운영의 마지막 확인값은 [배포 기록](research/ndl-scan-87-deployed.json)을 따른다.
 
 **그래프·챗봇·렌즈·AI 제외·인물 검색·사료 비교·시간 변환·역사 경계 표시가 구현됐다.**
 원문과 연결된 주장은 9,416개다. 경계 레코드 연결 9,028개와 그 밖의 관계 388개를 구분한다.
@@ -14,25 +14,27 @@
 **부분**은 남은 요구가 있고, **미검증**은 실제 확인이 없으며, **결정 대기**는 사용자 결정이나 외부 답변이 필요하다.
 닫힌 이슈 수를 제품 완성률로 계산하지 않는다.
 
-GitHub 이슈는 **86개: 닫힘 77개·열림 9개**다. 번호 누락·중복과 문서 링크를 [실제 이슈 목록](research/task-completion-audit.json)에 대조했다.
+GitHub 이슈는 **87개: 닫힘 78개·열림 9개**다. 번호 누락·중복과 문서 링크를 [실제 이슈 목록](research/task-completion-audit.json)에 대조했다.
 
 ## 1. 현재 데이터와 실행 확인
 
 | 항목 | 확인값과 범위 |
 |---|---|
-| c2 원문 | Source 1,072개·chunk 2,601,030개. 금석문·발췌·메타데이터의 별도 분할을 포함한다 |
-| Git 추적 원문 | Source 카드 1,072개·chunk 83,027개. 대용량 실록·승정원일기·비변사등록 전체는 c2에 보관한다 |
-| 인용·주장 | Claim 9,416개, 인용 chunk 9,240개, 모두 AI 초안·사람 작성 0. 인용·출처·digest 실패 0. 실제 Claim이 있는 Source는 83개, 원문만 있는 Source는 989개 [분포](research/claim-coverage-goal.json) |
+| c2 원문 | Source 1,073개·chunk 2,601,349개. 금석문·발췌·메타데이터의 별도 분할을 포함한다 |
+| Git 추적 원문 | Source 카드 1,073개·chunk 83,346개. 대용량 실록·승정원일기·비변사등록 전체는 c2에 보관한다 |
+| 인용·주장 | Claim 9,416개, 인용 chunk 9,240개, 모두 AI 초안·사람 작성 0. 인용·출처·digest 실패 0. 실제 Claim이 있는 Source는 83개, Claim이 없는 Source는 990개 [분포](research/claim-coverage-goal.json) |
 | 지명과 좌표 | Location 230개. 직접 locatedAt 17개는 현대 대표점 7개·국내성 지도 좌표 1개·CHGIS 재구성 점 4개·국가유산청 현재 목록 점 5개. 옛 조사 후보 213개는 직접 근거 미비 |
+| 경국대전 스캔 | NDL 1934년판 319코마 원해상도 이미지 전체 보관·열람. 이미지 참조 chunk이며 전사·OCR·번역·새 Claim은 0개. [실행 근거](research/ndl-scan-87.md) |
 | 역사 지도 | HGIS 도 32개·군·부 등 726개·읍면 등 8,176개, Cliopatria 국가 경계 기록 94개, 사건 관련 장소 5개. 종류·행정 단계·이름·사료·연도·AI 선택 |
 | 역사 규칙 | 계보·순서 순환, 연도 역전, 생몰 범위 밖 등장, 출처 있는 이동 조건의 불가능 검사. 이동 조건은 인공 사례·실제 별도 Fuseki로 검증했으며 역사 사례는 0개 |
 | 실제 기능 검사 | 운영 뷰어 12/12, 도 7개·군부 9개·읍면 11개·국가 경계 9개·사건 장소 11개, 초기 사료 선택 4경우 통과. 기존 그래프·실제 Claude Max 답변·렌즈·모바일 검증 기록 보존 |
-| 자동 검사 | Python 111개·JavaScript 13개 통과. 244,941트리플 반복 바이트·rdflib 재파싱·9,240 Chunk 메타데이터·38,241 참조·digest·충돌 6개 대조, 실패 0 |
+| 자동 검사 | Python 111개·JavaScript 14개 통과. 244,954트리플 반복 바이트·rdflib 재파싱·9,240 Chunk 메타데이터·38,241 참조·digest·충돌 6개 대조, 실패 0 |
 | Q1~Q9 | 8개 PASS, Q6 PARTIAL. [검사 내용과 한계](research/core-questions-56.md) |
 | 새 클론 | 실제 `git archive`의 추적 파일만으로 9,416 Claim 검증. 실록 원문 29개 보존. 새 원문 138개 JSONL 전체의 Git blob과 c2 바이트 및 50개 Source의 첫/끝 API 객체 대조 |
 | CI | GitHub Actions 워크플로·실행 기록 없음, NOT_RUN |
 
 실제 운영 수용 검사의 커밋·종료 코드·결과 파일은 [통합 실행 기록](research/goal-production-acceptance.json)에 있다.
+현재 외부 주소의 [스캔 5개 검사](research/ndl-scan-87-production.json)·[기존 뷰어 12개](research/ndl-scan-87-viewer.json)·[사료가 없을 때의 챗봇 2개 응답](research/ndl-scan-87-chat.json)도 통과했다.
 신라 인용·국호 판정의 후속 변경은 [실제 화면·RDF 검사](research/name-quotes-production-84-85.json)를 따른다.
 역로 선 표시는 [인공 자료 7개 검사와 기존 경계 9개 재검사](research/route-rendering-86.md)를 통과했다.
 실제 역사 역로 자료는 0개이며 이를 수집·운영 수용 완료로 세지 않는다.
@@ -53,7 +55,7 @@ GitHub 이슈는 **86개: 닫힘 77개·열림 9개**다. 번호 누락·중복�
 | 7 | 이름 표기 동일성 | 완료 | 단군 #35, 평양 #61. 평양은 Miao Wei(2011)의 직접 견해 3개를 별도 장소 사이에 연결하며 확정 통설로 표시하지 않음 |
 | 8 | 3D 물질화·라벨 겹침 | 완료 | #37 #44 |
 | 9 | 날짜 코드·글자 차이 확인 | 부분 | 집계·보존·공식 DTD 1.4 확인, 기관 소장 판본 이미지 3지점 대조. DTD에 코드 정의가 없고 국편 웹 3건은 차단 상태 |
-| 10 | 기관 라이선스 문의 | 결정 대기 | #12. 초안만 있으며 발송하지 않음 |
+| 10 | 기관 라이선스 문의 | 결정 대기 | #12. 공식 담당 부서·02-500-8387 확인. 문의 초안 2개는 미발송 |
 | 11 | 승정원일기·비변사등록·고순종실록 | 완료 | #38~#40, 메모리 #41, 응답 분리 #43 |
 
 9개 완료·1개 부분·1개 결정 대기다. 이 단기 목록만으로 비전 전체의 완성을 판정하지 않는다.
@@ -156,6 +158,7 @@ GitHub 이슈는 **86개: 닫힘 77개·열림 9개**다. 번호 누락·중복�
 | #84 | 여러 이름·시대별 국호의 거짓 충돌 | 완료 `c7fc96de`. 공용 다중 값 규칙 보완, 이름 2그룹 제외·판독 차이 유지 [내역](research/name-conflicts-84.md) | 서로 다른 인물의 동일성을 이름으로 확정하지 않음 |
 | #85 | 신라 주장 3개의 직접 인용 | 완료 `a7c291ce`. 채택·개명 문장까지 인용, 경주를 국호 별칭으로 세던 술어 수정 [내역](research/silla-quotes-85.md) | 인용 문자열 검사만으로 모든 역사 해석이 검토됐다고 하지 않음 |
 | #86 | 역로 선의 2D·3D 표시 | 부분 `24b02746`. 열린 선·떨어진 선·클릭·근거·필터·480px 인공 검사 7개, 기존 실제 국가 경계 9개 재검사 [범위](research/route-rendering-86.md) | 실제 공개 조건·직접 근거를 갖춘 한국사 역로 선은 0개 |
+| #87 | 경국대전 1934년판 스캔 수록·면별 열람 | 완료 `a2387fd0`, 검증 `bcb9c375`. 원 스캔 319장·실제 외부 열람 5개·뷰어 12개·챗봇 2개 검사 [내역](research/ndl-scan-87.md) | 전사문·OCR·번역은 0개이며 상위 #52의 전문 수집과 구별 |
 
 ## 5. Q1~Q9: 동작과 자료 범위
 
@@ -183,7 +186,7 @@ GitHub 이슈는 **86개: 닫힘 77개·열림 9개**다. 번호 누락·중복�
 | 4 | 지리적 불가능의 실제 역사 입력 | #54 검사 구현 완료. 출처 있는 이동 조건과 시간·좌표 정밀도를 모두 갖춘 자료는 #51 #52에 남음 |
 | 5 | 원문·번역·현대 연구·북한 자체 서술 확대 | #52 #12. 발췌와 전문 적재를 계속 구별 |
 | 6 | 국편 L0/L1/LO/99 코드 정의·웹 3건 대조 | #62 #8. 공식 DTD도 값을 정의하지 않음. 기관 소장 판본 이미지 3지점은 확인, 국편 웹은 NOT_RUN |
-| 7 | 기관의 이용 조건·번역문 제공 문의 | #12. [구체적 이용 범위 문의](research/nikh-license-inquiry-12.md)는 미발송. 접수 경로·발신/회신 정보·사용자 결정이 남음 |
+| 7 | 기관의 이용 조건·번역문 제공 문의 | #12. [구체적 이용 범위 문의](research/nikh-license-inquiry-12.md)는 미발송. [공식 연락처](research/nikh-contact-12.md) 확인. 전화 발신 도구가 없고 사용자 회신·결정 대기 |
 
 아래는 기능 구현과 구별해 남긴 운영·정리 항목이다. 미검증 지적을 확정 결함이나 새 필수 기능으로 계산하지 않는다.
 
@@ -219,6 +222,7 @@ python3 scripts/verify_core_questions.py --out /tmp/sigong-core-questions.json
 .venv-build/bin/python scripts/verify_khs_events.py --out /tmp/sigong-events
 .venv-build/bin/python scripts/verify_initial_source_selection.py --out /tmp/sigong-initial-sources.json
 .venv-build/bin/python scripts/verify_name_claims.py --out /tmp/sigong-name-claims
+python3 scripts/verify_ndl_scan.py --base http://127.0.0.1:8870 --out /tmp/sigong-ndl-scan
 python3 scripts/verify_goal_data.py --out /tmp/sigong-new-data.json
 python3 scripts/verify_joseon_coverage.py --out /tmp/sigong-joseon-coverage.json
 ```

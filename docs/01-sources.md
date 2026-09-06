@@ -4,7 +4,7 @@
 
 ## 현재 수집 상태 (2026-09-07)
 
-c2 Source **1,072개·chunk 2,601,030개**, Git 추적 chunk **83,027개**다.
+c2 Source **1,073개·chunk 2,601,349개**, Git 추적 chunk **83,346개**다.
 [시대별 전체 대조표](research/corpus-gaps-52.md)에 전문·발췌·번역·저본·결손을 구분했다.
 아래 표는 직전 999 Source·2,567,757 chunks에서 늘어난 실제 자료다.
 
@@ -17,7 +17,8 @@ c2 Source **1,072개·chunk 2,601,030개**, Git 추적 chunk **83,027개**다.
 | HGIS 읍·면 등 | 0, 기존 Source 확장 | 8,176 | [#75](research/hgis-townships-75.md) |
 | Cliopatria 국가·정치집단 경계 | 1 | 94 | [#79](research/cliopatria-79.md) |
 | 시대별 해설·평양 동일성·사건 장소 | 22 | 43 | [#51](research/era-spine-51.md), [#61](research/pyongyang-direct-61.md), [#81](research/khs-events-81.md) |
-| 합계 | 73 | 33,273 | 각 자료의 이슈·반복 추출·원 파일 대조를 따름 |
+| 경국대전 1934년판 스캔 | 1 | 319 | 원 스캔 전체·이미지 참조. 전사문 0 [#87](research/ndl-scan-87.md) |
+| 합계 | 74 | 33,592 | 각 자료의 이슈·반복 추출·원 파일 대조를 따름 |
 
 주장은 9,416개이며 경계 레코드 9,028개와 그 밖의 관계 388개를 구분한다.
 [실제 연대·사료 분포와 남은 연결](research/claim-periods-51.md)을 함께 본다.
