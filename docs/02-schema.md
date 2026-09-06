@@ -3,6 +3,9 @@
 > 이 문서가 정본이다. 구현이 이 문서와 어긋나면 **문서를 먼저 고치고** 코드를 맞춘다.
 > 비전은 `00-vision.md`, 사료 목록은 `01-sources.md`.
 
+아래 Turtle는 관계를 설명하는 축약 예시다. quote·digest·출처가 생략된 예시는 실제 근거 데이터가 아니다.
+실제 입력은 `data/claims/`의 검증된 `claims-json` 형식과 `services/validate.py`를 따른다.
+
 ## 0. 설계 원칙 다섯 개
 
 1. **엔티티는 껍데기다.** 인물 노드는 id와 타입만 갖는다. 이름도, 생몰년도, 아버지도 전부 Claim으로 붙는다.
@@ -196,7 +199,8 @@ syj:event-a syj:before syj:event-b .
 
 ### 8.1 역법 변환 자체가 Claim일 수 있다
 
-일본서기 연대 논쟁(이주갑인상)이 정확히 이 문제다 — 같은 간지를 **60년 다르게 읽는다.**
+같은 간지는 60년마다 돌아오므로 환산 근거를 별도로 남긴다. 아래는 **1주갑, 60년** 차이의 설명용 예시다.
+일본서기의 이주갑인상 논의는 **2주갑, 120년** 이동이며 이 예시와 구별한다.
 그래서 변환은 데이터에 박는 게 아니라 Claim으로 둘 수 있어야 한다.
 
 ```turtle
@@ -351,7 +355,7 @@ data/
     place/<id>.md
     polity/<id>.md
     event/<id>.md
-  ontology/
+  build/
     sigong.ttl                   빌드 산출물
 ```
 
@@ -365,19 +369,19 @@ data/
 
 | 순서 | 명령 | 산출물 |
 |---|---|---|
-| 1 | `extract_chunks.py` | `chunks.jsonl` |
+| 1 | `services/ingestion/extract_nikh_xml.py` 또는 사료별 적재 스크립트 | `data/sources/<source>/chunks.jsonl` |
 | 2 | (AI) 주장 추출 | `claims/**/*.md` |
-| 3 | `validate.py` | 근거 · quote · digest 검사 (실패 시 중단) |
-| 4 | `build_graph.py` | `sigong.ttl` + 노드 · 인용 카운트 로그 |
-| 5 | Fuseki 적재 | SPARQL 엔드포인트 |
+| 3 | `python3 services/validate.py` | 근거 · quote · digest 검사 (실패 시 중단) |
+| 4 | `python3 services/build_ttl.py` | `data/build/sigong.ttl` + 노드 · 인용 카운트 로그 |
+| 5 | `python3 scripts/sync_fuseki.py` | 검증·빌드 후 Fuseki 교체 적재·개수 대조 |
 | 6 | 뷰어 | 지도 · 3D · 그래프 · 챗봇 |
 
 Fuseki는 로컬이 아니라 **사용자 서버(c2)에서 돈다.** (2026-09-05: c2 `~/sigong-yeojido/.fuseki/` 에 Temurin 21 + Fuseki 6.2.0 포터블 설치, `scripts/fuseki.sh start|load|query`, 127.0.0.1:3030, 인메모리 데이터셋 /sigong. c3 는 사용자의 개인비서 서버라 쓰지 않는다.)
 
-## 14. 아직 안 정한 것
+## 14. 현재 결정과 남은 선택
 
-- 엔티티 id 체계 (`person-geunchogo` 같은 사람이 읽는 id냐, 해시냐)
+- 엔티티는 `person-geunchogo`처럼 뜻을 읽을 수 있는 ID를 쓰고 사료별 구별이 필요하면 별도 ID를 둔다.
 - Fuseki를 인메모리로 둘지 TDB2로 디스크에 둘지 — 규모를 보고 정한다
 - 사료 토글 상태를 어디에 저장할지 (URL 파라미터 / 로컬 저장)
-- 3D 뷰어가 그래프에서 무엇을 읽을지
-- c2 사양(RAM 7.8 GB, 디스크 92 GB 여유) · 재부팅 자동 시작 여부
+- 2D·3D·RDF는 `services/places.py`의 같은 후보 목록과 사료·시간 조건을 쓴다. 역사 경계도 같은 원 레코드에서 나온다.
+- c2 RAM 7.8 GB. 재부팅 자동 시작은 미설정이며 현재 감시 프로세스의 자동 재적재와 구별한다.
