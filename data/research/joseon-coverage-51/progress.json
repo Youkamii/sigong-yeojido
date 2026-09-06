@@ -1,0 +1,25 @@
+{
+  "task": "joseon-coverage-51",
+  "role": "조사·추출 전용 (개발/통합은 Codex)",
+  "startedAt": "2026-09-06",
+  "status": "running",
+  "step": "input.json 판독 시작",
+  "plan": [
+    "1. input.json의 Source 카드 10종 + 각 사료 chunks 6행 판독",
+    "2. 주석(annotations)/현대 기사 title/원문 text/기관 date.raw 구분",
+    "3. 각 사료당 1~3개 직접 인용 근거 주장 추출 (총 10~25)",
+    "4. 동명이인 비병합, 대명사(上/王/公) 식별 근거·한계 note 기재",
+    "5. result.json 누적 저장, sourceCoverage/uncertainties 마감"
+  ],
+  "rules": [
+    "quote는 chunk.text의 정확한 연속 부분 문자열",
+    "원 한자/호환문자/괄호/공백 정규화 금지",
+    "기관 date.raw를 원문 본문 날짜로 인용 금지",
+    "원문에 없는 생몰/재위/서기연도/관직명 기억 보충 금지",
+    "새 날짜 환산 금지, 애매하면 관계만 제안",
+    "폴더 밖 쓰기·외부 연락 금지, 웹 신규 수집 없음"
+  ],
+  "sourcesSeen": [],
+  "resultWrites": 0,
+  "updatedAt": "2026-09-06"
+}
