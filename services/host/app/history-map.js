@@ -11,7 +11,7 @@ export class HistoricalMap {
     const seq=++this.sequence;this.features=[];this.paths=[];this.callbacks.changed([]);
     this.button.textContent='역사 경계 조회 중…';
     try{
-      const response=await fetch('/api/history-map?'+new URLSearchParams({year:filters.year,sources:[...filters.sources].join(','),origin:filters.origin}));
+      const response=await fetch('/api/history-map?'+new URLSearchParams({year:filters.year,sources:[...filters.sources].join(','),origin:filters.origin,level:filters.level}));
       if(!response.ok)throw Error('역사 경계 조회 실패');
       const data=await response.json();if(seq!==this.sequence)return;
       this.features=data.features;this.button.textContent=`역사 경계 ${this.features.length}개 · 근거`;

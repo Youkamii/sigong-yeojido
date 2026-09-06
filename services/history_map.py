@@ -4,17 +4,20 @@ import gzip
 import json
 
 
-@lru_cache(maxsize=1)
+@lru_cache(maxsize=2)
 def _catalog(path,mtime,size):
     with gzip.open(path,'rt',encoding='utf-8') as stream:return json.load(stream)
 
 
-def historical_features(data,sources=None,origin='all',year=None):
+def historical_features(data,sources=None,origin='all',year=None,level=1):
     if origin not in ('all','human','ai'):raise ValueError('origin must be all, human or ai')
+    level=int(level)
+    if level not in (1,2):raise ValueError('level must be 1 (province) or 2 (district)')
     year=None if year is None else int(year)
-    out={'type':'FeatureCollection','features':[],'periodRule':'overlaps-selected-year'}
+    out={'type':'FeatureCollection','features':[],'level':level,'periodRule':'overlaps-selected-year'}
     if sources is not None and not sources:return out
-    path=data/'maps/hgis-provinces-1910-1945.geojson.gz'
+    name='provinces' if level==1 else 'districts'
+    path=data/f'maps/hgis-{name}-1910-1945.geojson.gz'
     if not path.exists():return out
     stat=path.stat();catalog=_catalog(path,stat.st_mtime_ns,stat.st_size)
     for feature in catalog['features']:

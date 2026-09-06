@@ -485,7 +485,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/history-map':
             srcs=q.get('sources',[None])[0]
             sources=None if srcs is None else set(filter(None,srcs.split(',')))
-            try:self._json(historical_features(DATA,sources,q.get('origin',['all'])[0],q.get('year',[None])[0]))
+            try:self._json(historical_features(DATA,sources,q.get('origin',['all'])[0],q.get('year',[None])[0],q.get('level',['1'])[0]))
             except ValueError as exc:self._json({'error':str(exc)},400)
             return
         if path == "/api/year":

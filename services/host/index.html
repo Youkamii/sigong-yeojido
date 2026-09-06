@@ -294,6 +294,8 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div class="sect">주 렌즈</div>
       <select id="lensSelect" class="q" aria-label="주 렌즈"></select>
       <p id="lensNote" class="empty"></p>
+      <label class="empty" for="historyLevel">역사 행정 구역</label>
+      <select id="historyLevel" class="q" aria-label="역사 행정 구역 단계"><option value="1">도 경계</option><option value="2">군·부 등 경계</option></select>
       <button id="historyMapBtn" class="card-btn">역사 경계 0개 · 근거</button>
       <p class="empty">주 렌즈는 진하게, 추가로 켠 비교 사료는 옅게 겹쳐 보인다.</p>
       <button id="allSources" class="card-btn">모든 사료 켜기</button>
@@ -378,13 +380,20 @@ const historyMap=new HistoricalMap(document.getElementById('historyMapBtn'),{
   list:showHistoricalList,
   changed:features=>{R?.world.setHistoricalFeatures(features);draw();if(R)draw3d();if(['history','history-feature'].includes(state.panel))showHistoricalList(false);}
 });
-function refreshHistoryMap(){historyMap.refresh({sources:state.on,origin:state.origin,year:state.year});}
+const historyLevel=document.getElementById('historyLevel');
+historyLevel.onchange=()=>refreshHistoryMap();
+function refreshHistoryMap(){historyMap.refresh({sources:state.on,origin:state.origin,year:state.year,level:historyLevel.value});}
 function showHistoricalList(reveal=true){
   if(reveal)openEvidence();++panelSeq;state.panel='history';state.sel=null;
   const el=document.getElementById('evi');
-  el.innerHTML='<h3>선택한 해의 역사 경계</h3><p class="empty">1910~1945년 도 경계 32개 레코드를 수록했다. 선택한 해에 존재한 경계를 모두 표시한다. 같은 해에 바뀐 경계는 함께 보이며, 변경일과 기관의 추정 표기는 각 근거에 남아 있다.</p>';
-  for(const feature of historyMap.features){const button=document.createElement('button');button.className='card-btn';button.dataset.feature=feature.id;
-    const p=feature.properties;button.textContent=`${p.label} · ${p.begin}~${p.end} · 근거`;button.onclick=()=>showHistoricalFeature(feature);el.append(button);}
+  el.innerHTML=`<h3>선택한 해의 ${historyLevel.value==='2'?'군·부 등':'도'} 경계</h3><p class="empty">1910~1945년 기관 레코드 중 선택한 해와 기간이 겹치는 경계를 표시한다. 같은 해에 바뀐 경계는 함께 보이며, 변경일과 기관의 추정 표기는 각 근거에 남아 있다.</p>`;
+  const search=document.createElement('input');search.className='q';search.placeholder='행정 구역 이름 찾기';search.setAttribute('aria-label','역사 경계 이름 찾기');
+  el.append(search);const list=document.createElement('div');el.append(list);
+  const render=()=>{list.replaceChildren();for(const feature of historyMap.features){
+    const p=feature.properties;if(!p.label.includes(search.value.trim()))continue;
+    const button=document.createElement('button');button.className='card-btn';button.dataset.feature=feature.id;
+    button.textContent=`${p.label} · ${p.begin}~${p.end} · 근거`;button.onclick=()=>showHistoricalFeature(feature);list.append(button);}};
+  search.oninput=render;render();
   if(!historyMap.features.length)el.insertAdjacentHTML('beforeend','<p class="empty">현재 연도·사료·작성자 선택에서 역사 경계가 없다. 주 렌즈에서 역사지리정보DB를 선택할 수 있다.</p>');
 }
 function showHistoricalFeature(feature){
@@ -392,6 +401,8 @@ function showHistoricalFeature(feature){
   const p=feature.properties,r=p.sourceRecord,el=document.getElementById('evi');
   el.innerHTML=`<h3>${escH(p.label)} · 역사 행정 경계</h3><p>${escH(p.begin)} ~ ${escH(p.end)}</p>
     <p class="empty">${escH(srcLabelOf(p.fromSource))} · AI 변환 · 표시용 경계 단순화</p>
+    <p class="empty">원 호칭 ${escH(r.type||'미기재')} · 상위 구역 코드 ${escH(r.up_key||'없음')}</p>
+    ${p.originalGeometryValid===false?'<p class="empty">원 도형에 자기 교차가 있다. 원 좌표 해시와 표시용 단순화 결과를 함께 보존한다.</p>':''}
     <div class="quote">${escH(r.begin_sour||'시작 근거 미기재')} → ${escH(r.end_source||'종료 근거 미기재')}</div>
     <p>기관 표기: ${escH(r.geom_ref||'미기재')} · 신뢰도 코드 ${escH(r.trust??'미기재')}</p><p class="empty">${escH(r.reference||'')}</p>
     <button class="card-btn" data-history-chunk>원 레코드</button><button class="card-btn" data-history-source>사료 카드</button><button class="card-btn" data-history-list>경계 목록</button>`;

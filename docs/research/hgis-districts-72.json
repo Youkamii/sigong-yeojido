@@ -1,0 +1,42 @@
+{
+  "source": "src-hgis-admin-1910-1945",
+  "zipSha256": "368bae9d3dec5dab929258a52ba7aa6dbd66c10e6cd7aba694a5199a46176af0",
+  "gpkgMember": "19100510-19450814행정구역_GIS_데이터.gpkg",
+  "gpkgSha256": "2e2fab2d5acf4a7b0264a3d02a87c71124633538e384cec6e3e929c5e2dd898c",
+  "level": 2,
+  "features": 726,
+  "allLevelCounts": {
+    "1": 32,
+    "2": 726
+  },
+  "typeCounts": {
+    "郡": 652,
+    "府": 68,
+    "島": 1,
+    "部": 5
+  },
+  "crs": "EPSG:4326 from gpkg_geometry_columns and every binary header",
+  "simplification": {
+    "shapely": "2.1.2",
+    "toleranceDegrees": 0.002,
+    "preserveTopology": true
+  },
+  "originalVertices": 5815534,
+  "displayVertices": 180827,
+  "invalidOriginalGeometryIds": [
+    46760,
+    45988,
+    67446,
+    66824
+  ],
+  "invalidDisplayGeometryIds": [],
+  "displayGeoJsonSha256": "04301984851d7e641b9b5a43ba2d6aefaaa64671297b9ed92eec58dea283d0f2",
+  "gzipBytes": 1991927,
+  "rawBytes": 8093795,
+  "humanReviewed": false,
+  "limitations": [
+    "Only published administrative records for 1910–1945. No ancient borders or post-road reconstruction.",
+    "Date overlap is evaluated by year; the original day boundaries remain in each record.",
+    "Original reference strings can be truncated and contain replacement characters. They are preserved."
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "meta": {
+    "mode": "research-only",
+    "humanReviewCompleted": false,
+    "generatedAt": "2026-09-06",
+    "provenanceTags": {
+      "dataValue": "제공된 input-gpkg.json 안의 실측값만",
+      "institutional": "기관/포털 공개 설명문",
+      "inference": "위 둘에서 끌어낸 해석(원문 진술 아님)",
+      "unconfirmed": "근거 문서를 찾지 못한 항목"
+    },
+    "note": "새 경계 추정·자료 변경 없음. 외부 문의 없음. 원 한자·호환문자·공백·원표기 날짜 보존."
+  },
+
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://hgis.history.go.kr/robots.txt",
+      "host": "hgis.history.go.kr",
+      "kind": "robots",
+      "accessed": "2026-09-06",
+      "verbatim": "User-agent: *\nDisallow: /",
+      "note": "Googlebot·bingbot·NaverBot·Kakaobot만 Allow. 그 외 전체 Disallow."
+    },
+    {
+      "id": "S2",
+      "url": "https://hgis.history.go.kr/pro_g1/intro/intro01.do",
+      "host": "hgis.history.go.kr",
+      "kind": "institutional-intro",
+      "accessed": "2026-09-06",
+      "robotsStatus": "이 호스트는 User-agent:* 에 대해 Disallow:/ 이다. robots 확인 요청과 병렬로 1회 요청이 나갔고, 확인 직후 이 호스트에 추가 요청을 보내지 않았다.",
+      "reliability": "낮음-보류. 사람이 브라우저로 직접 재확인 필요.",
+      "quotedShort": "한국의 역사적 행정구역의 데이터베이스이자 각 역사적 행정구역의 경계를 복원한 지리정보시스템",
+      "reportedPoints": [
+        "대상 시기 1910년 5월~1945년 8월",
+        "계층: 도-부·군-읍·면-동리",
+        "벡터 신뢰도 등급 구분이 존재한다는 서술",
+        "1910~1945 폴리곤 9,015개 / 포인트 163,557개 (재확인 필요)"
+      ]
+    },
+    {
+      "id": "S3",
+      "url": "https://www.data.go.kr/data/15080854/fileData.do",
+      "host": "www.data.go.kr",
+      "kind": "open-data-portal-dataset",
+      "accessed": "2026-09-06",
+      "robotsStatus": "허용. robots.txt에 Googlebot 대상 Disallow 목록만 있고 User-agent:* 그룹 없음. 이 경로는 Disallow 목록에 없음.",
+      "datasetName": "교육부 국사편찬위원회_한국사데이터베이스 정보_역사적 행정구역_20240215",
+      "provider": "교육부 국사편찬위원회",
+      "license": "이용허락범위 제한 없음",
+      "registered": "2022-02-18",
+      "modified": "2025-05-30",
+      "reportedPoints": [
+        "1910~1945년 및 1970년대 행정구역·지리정보 공간데이터 제공",
+        "QGIS, ArcGIS 등 공간정보 소프트웨어로 이용",
+        "시기별 행정구역 레이어(벡터)",
+        "UTM-K 좌표계(GRS80, EPSG:5179), UTF8",
+        "원 출처 URL로 https://hgis.history.go.kr/pro_g1/dataset.do 안내"
+      ],
+      "reliability": "중간-높음. 제공기관·이용허락범위 근거로 사용 가능. 라이선스 문구의 공공누리 유형 표기는 사람 확인 권장."
+    },
+    {
+      "id": "S4",
+      "url": "https://www.hisgeo.info/wiki/%EC%A1%B0%EC%84%A0_%ED%96%89%EC%A0%95%EA%B5%AC%EC%97%AD_DB",
+      "host": "www.hisgeo.info",
+      "kind": "related-but-different-dataset (조선 행정구역 DB)",
+      "accessed": "2026-09-06",
+      "robotsStatus": "허용. robots.txt에 User-agent:* 그룹 없음(Amazonbot만 Disallow).",
+      "quotedShort": [
+        "adm_level : 행정구역 단계(lv1~lv4)",
+        "loc_rank : 현위치 비정 신뢰도",
+        "time_begin : 시작 시간 / time_end : 종료 시간"
+      ],
+      "reportedPoints": [
+        "loc_rank 등급값으로 확실, 유력, 추정, 불가 4단계가 열거됨",
+        "읍격 코드 테이블에 府, 留後司, 道, 留守府, 牧, 郡, 縣 등 열거",
+        "id 계열은 admid_pt(읍치), admid_pg(영역)로 표기"
+      ],
+      "caution": "★ 이것은 조선시대 DB 스키마이며 필드명이 다르다(adm_level/time_begin/loc_rank). 본 GeoPackage(lv/begin/trust)와 동일 스키마로 단정하면 안 된다. 유사 설계의 방증으로만 사용."
+    },
+    {
+      "id": "S5",
+      "url": "https://www.hisgeo.info/wiki/index.php/%EB%8C%80%EB%AC%B8",
+      "host": "www.hisgeo.info",
+      "kind": "wiki-index",
+      "accessed": "2026-09-06",
+      "reportedPoints": [
+        "'근대_행정구역_DB' 항목이 국사편찬위원회 역사지리정보DB(1910~1945)를 가리키며 링크는 hgis.history.go.kr/pro_g1/dataset.do",
+        "'현대_행정구역_DB'는 1955~1975년",
+        "'근대_행정구역_1917_전후비교_DB' 항목 존재"
+      ],
+      "note": "위키 문서 '근대_행정구역_DB' 본문은 /wiki/ 및 /wiki/index.php/ 두 경로 모두 404. 필드 사전 미확보."
+    },
+    {
+      "id": "S6",
+      "kind": "bibliographic-lead-only",
+      "citation": "정요근·김현종, 「역사 GIS 기반 1910년 기준 面 단위 행정구역의 복원」, 『한국사연구』 197, 2022, 69~112쪽",
+      "foundVia": "검색결과 서지사항",
+      "fullTextAccessed": false,
+      "robotsStatus": "www.kci.go.kr robots.txt는 User-agent:* Disallow:/ → 본문 미열람. dbpia/riss 미열람.",
+      "note": "면 단위 경계 복원 방법론 1차 근거로 사람이 직접 확인할 것. 본 결과에는 이 논문 내용을 반영하지 않았다."
+    },
+    {
+      "id": "S7",
+      "kind": "robots-check-only",
+      "hosts": {
+        "www.history.go.kr": "User-agent:* Disallow:/ → 열람하지 않음",
+        "www.kci.go.kr": "User-agent:* Disallow:/ → 열람하지 않음",
+        "db.history.go.kr": "지시에 따라 열람하지 않음",
+        "contents.history.go.kr": "지시에 따라 열람하지 않음"
+      }
+    }
+  ],
+
+  "fieldFindings": [
+    {
+      "field": "lv",
+      "dataValue": "INTEGER. 집계상 lv=1(n=32), lv=2(n=726), lv=3(n=8176) 3개 값만 확인. 샘플에서 lv=1↔type=道, lv=2↔type=郡, lv=3↔type=面 동반.",
+      "institutional": "S2가 계층을 '도-부·군-읍·면-동리'로 서술. S4(다른 DB)는 'adm_level : 행정구역 단계(lv1~lv4)'.",
+      "inference": "lv=2는 '부·군' 단계(府·郡 등 도 아래 1차 행정단위)로 읽힌다. lv=3은 '읍·면' 단계. 본 폴리곤 레이어에는 동리(lv=4 상당)가 없다.",
+      "confidence": "중간",
+      "unconfirmed": [
+        "lv 코드값↔단계명 대응표를 기관 문서에서 직접 확인하지 못함",
+        "lv=4(동리)가 별도 레이어(포인트)로만 존재하는지 여부",
+        "lv=2 안에 府/郡/島 등이 함께 들어가는지(집계에 type 분포가 없어 확인 불가)"
+      ],
+      "codexCheck": "SELECT lv, type, COUNT(*) FROM 행정구역_GIS_폴리곤 GROUP BY lv, type; 로 lv별 type 분포를 실측할 것."
+    },
+    {
+      "field": "type",
+      "dataValue": "TEXT(10). 샘플 실측값: 道, 郡, 面 (한자 원표기).",
+      "institutional": "S4(조선 DB)의 읍격 코드에 府, 郡, 道 등이 열거됨 — 다른 DB임.",
+      "inference": "행정구역 호칭(읍격)을 한자 원표기로 담는 필드. lv이 계층 깊이라면 type은 그 계층에서의 실제 명칭 종류.",
+      "confidence": "중간",
+      "unconfirmed": [
+        "府, 島, 邑, 出張所 등 다른 값의 존재 여부와 전체 값 목록",
+        "1930년대 邑 승격이 type 값으로 반영되는지"
+      ],
+      "codexCheck": "SELECT DISTINCT type FROM 행정구역_GIS_폴리곤 ORDER BY type; 로 값 목록 확정 후 UI 라벨 매핑."
+    },
+    {
+      "field": "key / up_key",
+      "dataValue": "TEXT(20). 실측: lv1 key='1'(강원도), '2'(경기도), up_key=null. lv2 key='1/429'(간성군), up_key='1'. lv3 key='1/429/4058'(간성면), up_key='1/429'. 즉 key = up_key + '/' + 자체코드.",
+      "institutional": "미확보",
+      "inference": "key는 슬래시 구분 계층 경로 식별자이고 up_key는 부모의 key. 조인은 child.up_key = parent.key. 코드 조각(429, 4058)은 행정구역 단위 고유번호로 보인다.",
+      "confidence": "높음(구조), 낮음(코드 채번 규칙)",
+      "unconfirmed": [
+        "429, 4058 등 코드의 채번 체계·안정성",
+        "같은 key가 시기가 달라도 동일 실체를 뜻한다는 보장 여부"
+      ],
+      "codexCheckNote": "샘플에서 강원도 간성군(1/429)과 강원도 고성군(1/76)이 1914년에 통합되는데, 통합 후 key는 1/429 쪽이 유지된다(실측). 통합·분리 시 key 승계 규칙을 전수 검증할 것."
+    },
+    {
+      "field": "fid vs id",
+      "dataValue": "fid INTEGER PK(1,2,3,4,5,6,...) — GeoPackage 테이블 내 순번. id INTEGER — 56138, 46756, 156701, 46626 등 비순차·범위가 넓음. 같은 key의 시기별 레코드마다 id가 다름.",
+      "institutional": "미확보. S4(다른 DB)는 admid_pg 등 별도 GIS id 개념을 둠.",
+      "inference": "fid는 GeoPackage 자체의 행 식별자(재배포·재생성 시 바뀔 수 있음), id는 원 데이터베이스 쪽 레코드 식별자로 읽힌다. 영속 키로는 id가, 계층 조인에는 key/up_key가 적절하다.",
+      "confidence": "중간",
+      "unconfirmed": [
+        "id가 hgis 웹 서비스의 상세 조회 파라미터와 같은 값인지",
+        "id의 전역 유일성(레벨 간 중복 여부)"
+      ],
+      "codexCheck": "SELECT COUNT(*), COUNT(DISTINCT id) FROM 행정구역_GIS_폴리곤; 으로 유일성 확인."
+    },
+    {
+      "field": "name / name_cn / fullname / fullname_c",
+      "dataValue": "name='간성군', name_cn='杆城郡', fullname='강원도/간성군', fullname_c='江原道/杆城郡'. fullname은 슬래시로 이은 상위 경로 표기, _cn/_c는 한자 표기.",
+      "inference": "표시용 한글/한자 쌍. UI에서 한자 원표기를 그대로 보여줄 수 있다.",
+      "confidence": "높음",
+      "unconfirmed": ["fullname_c 컬럼명이 TEXT(50) 길이 제한으로 잘리는 사례가 있는지(하위 레벨일수록 위험)"]
+    },
+    {
+      "field": "alias",
+      "dataValue": "TEXT(254). 샘플 15건 모두 null.",
+      "inference": "이표기/별칭 보관용으로 보이나 표본에서 값 미관측.",
+      "confidence": "낮음",
+      "unconfirmed": ["실제 사용 여부와 구분자 형식"],
+      "codexCheck": "SELECT COUNT(*) FROM 행정구역_GIS_폴리곤 WHERE alias IS NOT NULL;"
+    },
+    {
+      "field": "begin / end",
+      "dataValue": "TEXT(8) YYYYMMDD 원표기. 실측 연속쌍: 강원도 (19100510~19140228) → (19140301~19170331) → (19170401~19450814). 간성군 (19100510~19140228) → (19140301~19190514).",
+      "inference": "구간은 양끝 포함(closed) 유효기간이다. 한 레코드의 end 다음 날이 다음 레코드의 begin이므로 중복일이 없다. 따라서 시점 T의 지도는 begin <= T <= end 로 뽑는다.",
+      "confidence": "높음(구조), 중간(전수 무결성)",
+      "unconfirmed": ["전 레코드에서 구간 겹침·구멍이 없는지 전수 검증 안 됨"],
+      "codexCheck": "같은 key 안에서 begin/end 정렬 후 겹침·공백 검사."
+    },
+    {
+      "field": "begin_sour / end_source",
+      "dataValue": "TEXT(254). 실측값: '民籍統計表', '朝鮮總督府令第111號(1913-12-29)', '朝鮮總督府江原道令第2號(1914-03-11)', '江原道告示第55號 正誤(1916-09-01)', '기준시점:해방'. 여러 근거는 세미콜론(;)으로 이어짐. 254자를 넘으면 잘림(아래 limitations 참조).",
+      "inference": "구간 시작·종료의 법령/자료 근거. 개별 항목은 '법령명第N號(YYYY-MM-DD)' 꼴이며 괄호 안 날짜는 법령 일자(시행일과 다를 수 있음).",
+      "confidence": "높음(문면), 중간(해석)",
+      "unconfirmed": ["'기준시점:해방' 외에 '기준시점:...' 계열 값이 더 있는지"]
+    },
+    {
+      "field": "trust",
+      "dataValue": "INTEGER. 샘플 실측 관측값: 1, 2, 3, 4. 동반 geom_ref 관측: trust=1↔'기호', trust=2↔'추정' 또는 '중앙', trust=3↔'기호', trust=4↔'기호'.",
+      "institutional": "S2는 폴리곤 신뢰도를 3등급으로 서술(1: 정확히 파악 가능 / 2: 여러 자료로 매우 유력 / 3: 소속 정보로 추정) — robots 제약 호스트라 재확인 필요. S4(조선 DB)의 loc_rank는 확실·유력·추정·불가 4단계.",
+      "inference": "낮은 숫자가 더 확실한 방향으로 읽히나, 데이터에 4가 존재하므로 3등급 설명과 그대로 맞지 않는다. 샘플에서 trust=2가 geom_ref='추정'과 붙어 나오는 반면 trust=3, 4가 '기호'와 붙는 사례가 있어 단순 서열 해석은 위험하다.",
+      "confidence": "낮음",
+      "unconfirmed": [
+        "★ trust 정수값 1~4(또는 그 이상)의 공식 대응 라벨",
+        "3등급 설명과 4개 값의 불일치 원인(레벨별 상이한 척도 가능성)"
+      ],
+      "codexCheck": "SELECT lv, trust, geom_ref, COUNT(*) FROM 행정구역_GIS_폴리곤 GROUP BY 1,2,3; 로 분포를 뽑고, 확인 전까지 UI에 등급 라벨을 붙이지 말고 원값만 노출할 것."
+    },
+    {
+      "field": "geom_ref",
+      "dataValue": "TEXT(254). 샘플 실측값 3종: '추정', '기호', '중앙'.",
+      "institutional": "미확보",
+      "inference": "도형(경계) 확정 근거의 종류를 나타내는 코드형 텍스트로 읽힌다. 문자열 자체가 이미 한국어 라벨이므로 UI에 원값 노출이 안전하다.",
+      "confidence": "낮음",
+      "unconfirmed": [
+        "★ '기호', '중앙'의 정확한 정의",
+        "전체 값 목록"
+      ],
+      "codexCheck": "SELECT DISTINCT geom_ref FROM 행정구역_GIS_폴리곤; 전수 확인 후에도 정의는 기관 문서로 확인 필요."
+    },
+    {
+      "field": "reference",
+      "dataValue": "TEXT(254). 개별 레코드의 연혁 설명. 상위 레코드의 설명이 하위 레코드에 반복 복사된 사례가 있다(간성군·고성면·군내면·대대면이 동일 문구 공유).",
+      "inference": "레코드 단위 주석. UI 툴팁/상세 패널용으로 적합하나, 같은 문구가 여러 폴리곤에 중복 노출될 수 있다.",
+      "confidence": "높음"
+    },
+    {
+      "field": "worker / work_date",
+      "dataValue": "worker TEXT(100) 실측: '2020국편GIS사업팀', '2021국편GIS사업팀', '2021국편GIS담당', '2022국편GIS담당'. work_date TEXT(8) 실측: 20201231, 20210820, 20210830, 20220913.",
+      "inference": "구축 연차·담당 주체와 작업일. 같은 레이어 안에 연차가 다른 작업분이 섞여 있음 → 품질이 균일하지 않을 수 있다.",
+      "confidence": "높음(문면)"
+    },
+    {
+      "field": "layer / srs_id",
+      "dataValue": "table_name='행정구역_GIS_폴리곤', geometry_type_name='MULTIPOLYGON', srs_id=4326, z=0, m=0.",
+      "institutional": "S3(data.go.kr)는 'UTM-K 좌표계(GRS80, EPSG:5179), UTF8'로 안내.",
+      "inference": "★ 제공 파일의 srs_id는 4326(WGS84 경위도)로 포털 안내(EPSG:5179)와 다르다. 배포본이 이미 변환되었거나 포털 설명이 지도 서비스 기준일 수 있다. 자료를 바꾸지 말고 4326 그대로 읽되, 이 차이를 기록해 둘 것.",
+      "confidence": "높음(불일치 사실), 낮음(원인)"
+    }
+  ],
+
+  "supportedLabels": [
+    {
+      "context": "레벨 선택 UI",
+      "ko": "레벨 2는 도 아래 부·군 단계입니다.",
+      "basis": "inference (데이터: lv=2 레코드의 type=郡 / 기관: 계층을 도-부·군-읍·면-동리로 서술)",
+      "status": "잠정 — lv별 type 분포 실측 후 확정"
+    },
+    {
+      "context": "레벨 선택 UI",
+      "ko": "레벨 3은 읍·면 단계입니다. 동·리 경계는 이 폴리곤 자료에 없습니다.",
+      "basis": "inference (데이터: lv=3 type=面, 폴리곤 레이어에 lv=4 없음)",
+      "status": "잠정"
+    },
+    {
+      "context": "시점 슬라이더",
+      "ko": "선택한 날짜에 유효한 경계만 표시합니다.",
+      "basis": "inference (begin/end가 양끝 포함 구간이고 인접 레코드가 하루 간격으로 이어짐)",
+      "status": "사용 가능"
+    },
+    {
+      "context": "1914년 개편 안내",
+      "ko": "1914년은 한 해 안에서 경계가 바뀝니다. 2월 28일까지와 3월 1일부터가 서로 다른 구역이므로, 연도가 아니라 날짜로 선택하세요.",
+      "basis": "dataValue (강원도·간성군 등 다수 레코드가 …19140228 / 19140301… 로 끊김)",
+      "status": "사용 가능"
+    },
+    {
+      "context": "1914년 개편 주석(원문 인용)",
+      "ko": "자료 설명: “1914년 행정구역 대개편과 관련하여 법령 상 도 및 부군의 개편 시점은 1914년 3월 1일이나 실제로는 1913년부터 1917년에 걸쳐 도에서 동리 단위까지 세부적 정리가 이루어졌다.”",
+      "basis": "제공 파일 원문(reference, fid=1·fid=2)",
+      "status": "사용 가능 — 원문 인용임을 UI에 표시할 것"
+    },
+    {
+      "context": "기초 레벨 변동 안내",
+      "ko": "면 단위는 시기에 따라 통폐합·개칭이 잦아, 같은 이름이라도 날짜가 다르면 경계가 다를 수 있습니다.",
+      "basis": "dataValue (lv=3이 8,176건으로 lv=2의 11배 이상이고, 간성군 군내면이 19140301~19170930 / 19171001~ 로 나뉨)",
+      "status": "사용 가능"
+    },
+    {
+      "context": "통폐합 안내",
+      "ko": "1914년 3월 1일 통합으로 사라진 군은 그 이전 시점에서만 표시됩니다.",
+      "basis": "dataValue (고성군 1/76이 19100510~19140228 로 끝나고, 이후 간성군 1/429가 이어짐)",
+      "status": "사용 가능"
+    },
+    {
+      "context": "신뢰도 표시",
+      "ko": "이 경계의 신뢰도 값은 원자료 그대로 표시합니다(등급 정의는 확인 중).",
+      "basis": "trust 라벨 미확인",
+      "status": "권장 — 확인 전까지 '1등급/확실' 같은 해석 라벨을 붙이지 말 것"
+    },
+    {
+      "context": "경계 근거 표시",
+      "ko": "경계 근거: {geom_ref} · 시작 근거: {begin_sour} · 종료 근거: {end_source}",
+      "basis": "dataValue (필드 원값을 그대로 노출)",
+      "status": "사용 가능 — 한자 원표기 그대로 출력"
+    },
+    {
+      "context": "자료 절단 안내",
+      "ko": "일부 설명·근거 문구는 원자료에서 길이 제한으로 끊겨 있습니다.",
+      "basis": "dataValue (reference/end_source가 254자에서 잘리고 다중바이트 문자가 깨진 사례 관측)",
+      "status": "사용 가능"
+    },
+    {
+      "context": "출처 표시",
+      "ko": "자료: 국사편찬위원회 역사지리정보DB(역사적 행정구역, 1910~1945)",
+      "basis": "institutional (S3 제공기관 표기)",
+      "status": "사용 가능"
+    },
+    {
+      "context": "범위 밖 레코드",
+      "ko": "1910년 5월 이전에 시작되는 레코드가 일부 있습니다. 시기 범위 밖 자료로 표시합니다.",
+      "basis": "dataValue (lv=3 firstBegin=18830830)",
+      "status": "잠정 — 해당 레코드 실물 확인 후 문구 확정"
+    }
+  ],
+
+  "dateFindings": [
+    {
+      "topic": "전체 시기 경계",
+      "dataValue": "lv=1, lv=2의 firstBegin=19100510, lastEnd=19450814. end_source에 '기준시점:해방' 값 관측.",
+      "institutional": "S2·S3 모두 1910년 5월 ~ 1945년 8월을 대상 시기로 서술.",
+      "inference": "19100510이 자료 시작 기준(민적통계표 시점), 19450814가 종료 기준(해방 직전)."
+    },
+    {
+      "topic": "1910–1945 범위 밖 레코드",
+      "dataValue": "lv=3의 firstBegin='18830830' — 1910-05-10보다 앞선다. lv=1, lv=2에는 범위 밖 시작이 없다. lastEnd는 세 레벨 모두 19450814로 범위 밖 종료는 없다.",
+      "inference": "면 이하 레벨에만 1883년으로 소급 표기된 레코드가 있다. 원인은 확인되지 않았다(개항장·거류지 등 특수 구역 가능성은 추정일 뿐이며 근거 없음).",
+      "unconfirmed": [
+        "★ begin < 19100510 인 레코드의 건수·이름·type·begin_sour",
+        "1883-08-30이 어떤 근거 문서의 날짜인지"
+      ],
+      "codexCheck": "SELECT lv, name, name_cn, type, begin, end, begin_sour, fullname FROM 행정구역_GIS_폴리곤 WHERE begin < '19100510' ORDER BY begin; — 건수가 적으면 UI에서 개별 주석 처리, 많으면 기본 시기 범위 밖으로 필터.",
+      "uiRule": "기본 시점 범위를 19100510~19450814로 두고, 그 밖 레코드는 숨기거나 '시기 범위 밖' 배지로 구분한다. 값 자체는 수정하지 않는다."
+    },
+    {
+      "topic": "1914년 개편의 연도 중복",
+      "dataValue": "동일 key가 …~19140228 과 19140301~… 두 레코드로 갈린다(강원도 1, 간성군 1/429, 강릉군 1/430, 고성면 1/429/4059 등). 고성군 1/76은 19140228에서 끝난다.",
+      "inference": "1914년을 '연도'로 필터하면 같은 key가 2건 잡혀 폴리곤이 겹쳐 보인다. 날짜 기준 필터(begin <= T <= end)를 써야 한다. 개편일 자체는 1914-03-01이고 그 전날이 1914-02-28이다.",
+      "sourceQuoteFromProvidedFile": "법령 상 도 및 부군의 개편 시점은 1914년 3월 1일이나 실제로는 1913년부터 1917년에 걸쳐 도에서 동리 단위까지 세부적 정리가 이루어졌다",
+      "uiRule": "연도 슬라이더를 쓰더라도 내부적으로는 '해당 연도의 특정 기준일'(예: 12월 31일 또는 사용자가 고른 날짜)로 환산해 한 시점만 그린다."
+    },
+    {
+      "topic": "기초 레벨(면)의 시기별 변동",
+      "dataValue": "lv=3 8,176건. 간성군 군내면(1/429/4060)이 19100510~19140228, 19140301~19170930 두 구간으로, 간성면(1/429/4058)은 19171001에 시작한다. 강릉군(1/430)은 19140301~19450814 한 구간으로 유지된다.",
+      "inference": "면 단위는 1914년 이후에도 1917년 등 추가 정리가 있어 구간이 여러 개로 쪼개진다. 반면 군 단위는 1914년 이후 장기간 유지되는 경우가 많다.",
+      "uiRule": "하위 레벨일수록 시점 변화에 민감하다는 안내를 레벨 전환 시 1회 노출한다."
+    },
+    {
+      "topic": "구간 경계 규칙",
+      "dataValue": "앞 레코드 end=19140228, 뒤 레코드 begin=19140301 (연속). end=19170331 / begin=19170401, end=19170930 / begin=19171001 도 동일 패턴.",
+      "inference": "end는 '마지막 유효일'이며 반열림 구간이 아니다. 질의는 begin <= T <= end.",
+      "confidence": "높음"
+    }
+  ],
+
+  "limitations": [
+    "★ 기관의 필드 사전(데이터 사전)을 확보하지 못했다. hgis.history.go.kr은 robots.txt에서 User-agent:* 에 Disallow:/ 이고, 원 출처로 안내된 /pro_g1/dataset.do 를 열람하지 않았다. db.history.go.kr·contents.history.go.kr는 지시에 따라 열지 않았다. www.history.go.kr, www.kci.go.kr도 robots가 * 를 차단해 열지 않았다.",
+    "따라서 lv 코드값, type 값 목록, trust 등급 라벨, geom_ref 값 정의는 모두 기관 문서로 확인되지 않은 상태다. 이 넷은 UI에 해석 라벨을 붙이지 말고 원값을 노출할 것을 권한다.",
+    "S2(hgis intro)는 robots가 * 를 차단하는 호스트에서 1회 요청으로 얻은 요약이다. 확인 직후 그 호스트에 더 요청하지 않았다. 이 항목의 수치(폴리곤 9,015개 등)와 등급 서술은 사람이 브라우저로 재확인해야 한다.",
+    "S2 요약에 '읍면 폴리곤은 8개 도'라는 취지의 서술이 있었으나 확실하지 않다. 제공된 lv=3 8,176건이 13개 도 전체를 덮는지 일부 도만 덮는지 확인되지 않았다. → 하위 레벨 추가 작업의 커버리지 전제이므로 반드시 실측할 것.",
+    "제공된 input-gpkg.json은 집계와 15건 표본뿐이다. type/trust/geom_ref 값 분포, 도별 건수, 구간 무결성은 표본에서 일반화할 수 없다.",
+    "원자료의 reference·end_source가 TEXT(254) 길이에서 잘려 있다. 표본에서 '…자료 정리 및 활용�'(fid=1), '…朝鮮總督府令第133號(19'(fid=561)처럼 문장·괄호가 끊기고 다중바이트 문자가 깨진 사례가 관측된다. 이는 원 데이터 상태이며 보정하지 않는다.",
+    "srs_id 불일치: 제공 파일은 4326, data.go.kr 안내는 UTM-K(EPSG:5179). 어느 쪽이 원본인지 확인되지 않았다.",
+    "라이선스는 data.go.kr 데이터셋 페이지의 '이용허락범위 제한 없음' 표기에 근거한다. 공공누리 유형 표기와 hgis 사이트 자체 이용조건은 사람이 확인해야 한다.",
+    "정요근·김현종(2022) 논문은 서지사항만 확보했고 본문을 열람하지 않았다. 본 결과에 반영되지 않았다.",
+    "외부 문의를 보내지 않았다. 저장소를 수정하지 않았다. 사람 검토 미완료."
+  ],
+
+  "recommendedScope": {
+    "phase1": {
+      "target": "lv=2 (부·군 단계) 폴리곤 726건 전량 추가",
+      "why": [
+        "시기 범위가 1910-05-10~1945-08-14로 온전히 들어와 범위 밖 예외 처리가 필요 없다(데이터 집계로 확인)",
+        "건수가 lv=1의 23배 수준으로 렌더링·검수 부담이 크지 않다",
+        "key/up_key로 기존 32건 lv=1에 결정적으로 붙는다(child.up_key = parent.key)"
+      ],
+      "acceptance": [
+        "726건 전부 up_key가 lv=1의 key 집합에 매칭될 것",
+        "같은 key 안에서 begin/end 구간이 겹치지 않고 하루 간격으로 이어질 것",
+        "type 값 목록을 실측해 UI 라벨 매핑을 확정할 것"
+      ]
+    },
+    "phase2": {
+      "target": "lv=3 (읍·면 단계) 8,176건",
+      "preconditions": [
+        "도별·연도별 건수 실측으로 전국 커버리지 확인",
+        "begin < 19100510 레코드(최소 1건, 18830830) 실물 확인과 표시 정책 확정",
+        "타일링/단순화 없이 원 지오메트리를 유지할 수 있는 전달 방식 결정(강원도 lv=1 한 건이 약 0.69MB, 경기도는 약 7.9MB)"
+      ]
+    },
+    "excluded": [
+      "동·리 단계 — 이 폴리곤 레이어에 없다(별도 포인트 자료 여부는 미확인)",
+      "새 경계 추정·보간·좌표 변환·값 보정 — 하지 않는다"
+    ],
+    "timeModel": {
+      "query": "begin <= T <= end (양끝 포함)",
+      "defaultRange": "19100510 ~ 19450814",
+      "yearFilter": "쓰지 말 것. 1914년에 같은 key가 중복 반환된다.",
+      "outOfRange": "숨김 또는 '시기 범위 밖' 배지. 값 수정 금지."
+    },
+    "uiUnknownsToKeepRaw": ["lv", "type", "trust", "geom_ref"],
+    "attribution": "국사편찬위원회 역사지리정보DB(역사적 행정구역, 1910~1945) 출처 표시. 이용허락범위는 data.go.kr 표기 기준 '제한 없음'이나 사람 확인 필요.",
+    "nextResearchIfResumed": [
+      "hgis.history.go.kr/pro_g1/dataset.do 의 데이터 설명·필드 사전을 사람이 직접 열람",
+      "정요근·김현종(2022) 『한국사연구』 197 본문에서 신뢰도·경계 근거 분류 확인",
+      "다운로드 번들 안의 설명 문서(readme/안내 pdf) 유무 확인"
+    ]
+  }
+}
