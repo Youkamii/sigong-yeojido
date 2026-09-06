@@ -1,0 +1,37 @@
+{
+  "task": "국사편찬위원회 문의 #12 제출 창구 확인 (조사 전용, 발송 금지)",
+  "status": "in_progress",
+  "updatedAt": "2026-09-07",
+  "steps": [
+    {
+      "step": 1,
+      "action": "로컬 초안 2건 확인",
+      "files": ["nikh-license-inquiry-12.md", "nikh-inquiry-draft.md"],
+      "result": "제출 대상 초안 2건 확인. 둘 다 미발송 상태이며 수신 창구 미확정."
+    },
+    {
+      "step": 2,
+      "action": "공식 HTML 3건의 공개 연락처 필드 대조",
+      "files": ["data-15053635.html", "data-15115521.html", "data-15115618.html"],
+      "result": "3건 모두 관리부서명=연구편찬정보화실, 관리부서 전화번호 원본값=025008387 로 일치. 페이지 스크립트의 포맷 규칙 적용 시 02-500-8387 로 표시됨.",
+      "confidence": "직접 확인"
+    }
+  ],
+  "interim": {
+    "department": "교육부 국사편찬위원회 연구편찬정보화실",
+    "phoneRaw": "025008387",
+    "phoneFormatted": "02-500-8387",
+    "phoneSource": "data.go.kr fileData.do 페이지의 '관리부서 전화번호' 필드 (로그인 불필요, 3개 데이터셋 동일)",
+    "nikhEmail": "미확인",
+    "notNikh": {
+      "opendata_help@nia.or.kr": "NIA 운영 포털 운영자 메일 상담 (국편 직통 아님)",
+      "1566-0025": "NIA 포털 콜센터 (국편 직통 아님)"
+    }
+  },
+  "pending": [
+    "데이터셋 페이지 내 '오류신고 및 문의' / '데이터 개선요청' 창구의 로그인 필요 여부",
+    "공공데이터 제공신청 메뉴의 정확한 URL 및 로그인 필요 여부",
+    "국편 자체 문의 창구(공식 홈페이지 문의 URL 또는 공개 업무 메일) 존재 여부"
+  ],
+  "sent": false
+}

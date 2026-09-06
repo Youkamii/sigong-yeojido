@@ -1,0 +1,98 @@
+{
+  "task": "국사편찬위원회 문의 #12 제출 창구 확인",
+  "resolvedAt": "2026-09-07",
+  "drafts": ["nikh-license-inquiry-12.md", "nikh-inquiry-draft.md"],
+
+  "exactOfficialUrl": "https://www.data.go.kr/data/15053635/fileData.do",
+  "department": "교육부 국사편찬위원회 연구편찬정보화실",
+  "channelType": "phone",
+  "publicAddressOrNumber": "02-500-8387",
+  "loginRequired": false,
+  "evidenceQuote": "<strong class=\"key\">관리부서명</strong>\n          <div class=\"value\">연구편찬정보화실</div>\n        </li>\n        <li class=\"half\">\n          <strong class=\"key\">관리부서 전화번호</strong>\n          <div class=\"value\">\n            <span id=\"telNo\"></span>\n            <script>\n              let telNo = \"025008387\";",
+
+  "evidenceNotes": {
+    "sourceFile": "data-15053635.html:2677-2685",
+    "corroboration": "data-15115521.html:2675-2683, data-15115618.html:2675-2683 에서 관리부서명·전화번호 원본값이 완전히 동일 (연구편찬정보화실 / 025008387).",
+    "formatting": "표시값 02-500-8387 은 같은 페이지의 포맷 스크립트 telNo.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,\"$1-$2-$3\") 규칙을 원본값 025008387 에 적용한 결과다. 추정이 아니라 페이지 자체의 표기 규칙이다.",
+    "loginBasis": "해당 필드는 fileData.do 공개 응답 HTML 본문에 로그인 없이 포함되어 있었다."
+  },
+
+  "channelsConsideredAndRejected": [
+    {
+      "channel": "opendata_help@nia.or.kr",
+      "foundAt": "data-15053635.html:3122 (푸터 '운영자 메일 상담')",
+      "reason": "NIA(한국지능정보사회진흥원) 포털 운영자 창구. 국편 직통 아님."
+    },
+    {
+      "channel": "1566-0025",
+      "foundAt": "https://www.data.go.kr/tcs/dor/insertDataOfferReqstProcssView.do",
+      "reason": "NIA 포털 콜센터. 국편 직통 아님."
+    },
+    {
+      "channel": "odmc@nia.or.kr",
+      "foundAt": "https://www.data.go.kr/tcs/dor/insertDataOfferReqstProcssView.do",
+      "reason": "NIA 제공신청 운영 창구. 국편 직통 아님."
+    },
+    {
+      "channel": "https://www.data.go.kr/bbs/faq/selectFaqList.do",
+      "foundAt": "data-15053635.html:720, 2372, 3130 ('문의하기' 메뉴)",
+      "reason": "포털 일반 문의/FAQ 메뉴. 국편 부서로 가는 창구가 아님."
+    },
+    {
+      "channel": "https://www.data.go.kr/tcs/dor/insertDataOfferReqstProcssView.do (공공데이터 제공신청)",
+      "reason": "포털에 '제공되지 않는' 데이터를 새로 신청하는 절차이며 NIA가 중개한다. 이번 초안 2건은 이미 공개 배포 중인 자료의 이용범위·규격 문의여서 해당 창구의 목적과 맞지 않는다. 안내 페이지는 로그인 없이 열람되나 실제 신청서 작성은 로그인이 필요하다."
+    }
+  ],
+
+  "loginRequiredFindings": [
+    {
+      "url": "https://www.data.go.kr/tcs/dor/insertDataOfferReqstProcssView.do",
+      "loginRequired": false,
+      "note": "제공신청 안내(절차 4단계) 페이지는 로그인 없이 열람됨."
+    },
+    {
+      "url": "https://www.data.go.kr/tcs/dor/insertDataOfferReqstDocView.do",
+      "loginRequired": true,
+      "note": "302 Found → https://www.data.go.kr/uim/login/loginView.do?login_error=2 → auth.data.go.kr SSO. 우회하지 않고 '로그인 필요'로 기록함."
+    },
+    {
+      "url": "데이터셋 페이지의 '오류신고 및 문의' / '데이터 개선요청' 팝업",
+      "loginRequired": "미확인",
+      "note": "fn_callErrorReportPopup / fn_callDataImproveReportPopup 은 외부 JS 함수로, 요청 엔드포인트가 HTML에 없다. 엔드포인트를 추측하거나 숨은 API를 호출하지 않았다."
+    }
+  ],
+
+  "checkedUrls": [
+    "https://www.data.go.kr/data/15053635/fileData.do (로컬 사본 data-15053635.html 로 확인)",
+    "https://www.data.go.kr/data/15115521/fileData.do (로컬 사본 data-15115521.html 로 확인)",
+    "https://www.data.go.kr/data/15115618/fileData.do (로컬 사본 data-15115618.html 로 확인)",
+    "https://www.data.go.kr/robots.txt",
+    "https://www.data.go.kr/tcs/dor/insertDataOfferReqstProcssView.do",
+    "https://www.data.go.kr/tcs/dor/insertDataOfferReqstDocView.do"
+  ],
+
+  "robotsCheck": {
+    "domain": "www.data.go.kr",
+    "result": "Googlebot 전용 규칙만 존재. Disallow: /tcs/dss/selectDataSetList.do, /tcs/vas/, /tcs/lms/mpm/, /bbs/dnb/, /bbs/dsb/, /bbs/qna/selectQna.do",
+    "note": "조회한 경로는 모두 Googlebot 대상 Disallow 목록에도 포함되지 않는다.",
+    "notOpened": [
+      "db.history.go.kr", "contents.history.go.kr", "hgis.history.go.kr",
+      "www.history.go.kr", "sillok.history.go.kr", "db.itkc.or.kr"
+    ]
+  },
+
+  "unresolved": [
+    "국편 연구편찬정보화실의 공개 업무 이메일: 미확인. 공식 HTML 3건 어디에도 국편 도메인 메일 주소가 없다.",
+    "국편 자체 홈페이지(www.history.go.kr)의 문의 URL: 미확인. 해당 도메인이 robots 금지 목록에 있어 열지 않았다.",
+    "'오류신고 및 문의' 팝업의 실제 접수 경로와 로그인 필요 여부: 미확인.",
+    "확인된 창구가 전화 1종뿐이라, 초안 2건(각 4개·8개 문항의 장문 서면 질의)을 그대로 접수할 서면 창구는 아직 확정되지 않았다."
+  ],
+
+  "assumptionsNotMade": [
+    "국편 이메일 주소를 도메인 패턴으로 추정하지 않았다.",
+    "'오류신고 및 문의' 팝업 엔드포인트를 추측하지 않았다.",
+    "로그인 뒤 공개되는 폼을 우회하지 않았다."
+  ],
+
+  "sent": false
+}
