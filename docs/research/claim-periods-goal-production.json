@@ -1,0 +1,625 @@
+{
+  "query": "http://127.0.0.1:3030/sigong/query",
+  "claims": 9416,
+  "boundaryRecordClaims": 9028,
+  "otherClaims": 388,
+  "sourcesWithClaims": 83,
+  "byPredicate": {
+    "accededIn": 1,
+    "adoptedEraName": 2,
+    "adoptsAsSon": 1,
+    "affiliatedWith": 3,
+    "appointedTo": 9,
+    "ascendedAtAge": 1,
+    "assignedOfficeNear": 1,
+    "associatesWith": 2,
+    "before": 3,
+    "besieged": 1,
+    "capitalMovedTo": 1,
+    "capitalSetAt": 1,
+    "childOf": 10,
+    "comesFrom": 1,
+    "confined": 1,
+    "conspiresWith": 6,
+    "convertsTo": 14,
+    "created": 1,
+    "dated": 5,
+    "deathOf": 2,
+    "delegatesStateAffairsTo": 1,
+    "deposedAndExiledTo": 1,
+    "descendantOf": 1,
+    "described": 1,
+    "describedAs": 22,
+    "describesObstacle": 1,
+    "describesTransferConditions": 1,
+    "diedAtAge": 1,
+    "diedIn": 2,
+    "differentSiteFrom": 1,
+    "dispatchesEnvoyToRequestHeirStatus": 1,
+    "drawnUpOn": 1,
+    "endedIn": 2,
+    "enthronedAt": 2,
+    "erectedSteleAt": 1,
+    "establishedCapitalAt": 1,
+    "exiled": 1,
+    "existedIn": 4,
+    "foundedBy": 5,
+    "foundedIn": 7,
+    "grantedOffice": 1,
+    "hasAppointee": 6,
+    "hasBoundaryRecord": 9028,
+    "hasCapital": 2,
+    "hasEventSite": 5,
+    "hasFatherByCommandedSuccession": 1,
+    "hasHouseholdCount": 1,
+    "hasLocationOpinion": 1,
+    "hasName": 4,
+    "hasOutcome": 4,
+    "hasParent": 2,
+    "hasParticipant": 27,
+    "hasReconstructionPeriod": 4,
+    "hasReferenceDate": 5,
+    "hasStateName": 4,
+    "hasTitle": 29,
+    "heirOf": 1,
+    "heldOffice": 4,
+    "initiatedBy": 2,
+    "institutedSystem": 1,
+    "instructs": 2,
+    "investedAs": 1,
+    "isFriendOf": 1,
+    "isKingOf": 6,
+    "locatedAt": 17,
+    "locatedIn": 15,
+    "mentionedIn": 33,
+    "movedSeatTo": 2,
+    "northOf": 1,
+    "occurredAt": 10,
+    "occurredIn": 19,
+    "orderedAppointmentTo": 1,
+    "parentOf": 2,
+    "participatedIn": 1,
+    "proposed": 1,
+    "proposedPost": 1,
+    "readsCharacterAs": 2,
+    "rebelledAt": 1,
+    "receivedDirective": 1,
+    "recordsDistributionDate": 1,
+    "recordsEffectiveDate": 2,
+    "recordsSpeechDate": 3,
+    "refersToConstitutionArticle": 1,
+    "reignedIn": 6,
+    "reported": 1,
+    "reportedRetirement": 1,
+    "requested": 1,
+    "returnedTo": 1,
+    "sameEntityAs": 6,
+    "sameEventAs": 4,
+    "seatLocatedIn": 1,
+    "sentAsEnvoyTo": 2,
+    "signedOn": 1,
+    "southeastOf": 1,
+    "stated": 1,
+    "statesMutualRecognitionOfSystems": 1,
+    "statesOfficialNameAs": 1,
+    "statesTerritoryAs": 1,
+    "statesTransferOfSovereignty": 1,
+    "statesUsamgikAbolishedFrom": 1,
+    "subjectToRule": 3,
+    "surrounds": 1,
+    "traveledTo": 2
+  },
+  "bySource": {
+    "src-3-1-declaration-1919": 1,
+    "src-aks-nangnang-toseong": 1,
+    "src-archives-koreaofrecord-constitution": 1,
+    "src-armistice-1953": 1,
+    "src-chgis-hansagun": 8,
+    "src-cliopatria-korea-v013": 94,
+    "src-dprk-socialist-constitution": 1,
+    "src-dprk-upr3-national-report-2019": 3,
+    "src-encykorea-anhakgung": 1,
+    "src-encykorea-balhae": 4,
+    "src-encykorea-beopheung": 2,
+    "src-encykorea-bukhan": 2,
+    "src-encykorea-buyeo": 2,
+    "src-encykorea-daebang-gun": 1,
+    "src-encykorea-daegaya": 4,
+    "src-encykorea-dangun": 1,
+    "src-encykorea-everready": 1,
+    "src-encykorea-ganghwado-treaty": 2,
+    "src-encykorea-gaya": 1,
+    "src-encykorea-geumgwangaya": 4,
+    "src-encykorea-gungnaeseong": 1,
+    "src-encykorea-gungye": 4,
+    "src-encykorea-gwangmu": 4,
+    "src-encykorea-gyeonhwon": 4,
+    "src-encykorea-husamguk": 2,
+    "src-encykorea-hyeondogun": 2,
+    "src-encykorea-imdungun": 2,
+    "src-encykorea-jijeung": 2,
+    "src-encykorea-jinbeongun": 2,
+    "src-encykorea-jinheung": 3,
+    "src-encykorea-joseon-dynasty": 3,
+    "src-encykorea-kpg-anniversary": 2,
+    "src-encykorea-munmu": 2,
+    "src-encykorea-nangnang-toseong": 2,
+    "src-encykorea-nangnanggun": 2,
+    "src-encykorea-pyongyangseong": 2,
+    "src-fushun-gov-history": 1,
+    "src-geonames": 6,
+    "src-geonames-hamgyongnamdo": 1,
+    "src-goryeosa": 20,
+    "src-gwanggaeto": 85,
+    "src-hgis-admin-1910-1945": 8934,
+    "src-imsi-heonjang-1919": 1,
+    "src-inter-korean-basic-agreement-1991": 2,
+    "src-jawp-285nen": 1,
+    "src-jawp-hongga-calendar": 2,
+    "src-kci-bok-2020-gungnae": 1,
+    "src-kci-gong-2020-daebang": 1,
+    "src-kci-kwon2019": 1,
+    "src-kci-lee-2017-joseonhyeon": 1,
+    "src-khs-haengju": 3,
+    "src-khs-jeamri": 2,
+    "src-khs-jeonnam-office": 3,
+    "src-khs-namhansanseong": 3,
+    "src-khs-yongjang": 3,
+    "src-law-rok-constitution-1987": 2,
+    "src-miao2011-pyeongyang": 3,
+    "src-much-jeamri": 1,
+    "src-nahf-goguryeo-pyongyang": 3,
+    "src-nahf-ismy-gungnaeseong": 1,
+    "src-pa-speech-records": 5,
+    "src-panmunjom-declaration-2018": 1,
+    "src-rok-constitution-1948": 2,
+    "src-samguksagi": 23,
+    "src-samgukyusa": 21,
+    "src-sillok-waa": 3,
+    "src-sillok-wca": 5,
+    "src-sillok-wda": 3,
+    "src-sillok-wea": 18,
+    "src-sillok-wfa": 14,
+    "src-sillok-wga": 8,
+    "src-sillok-wia": 19,
+    "src-sillok-wka": 7,
+    "src-sillok-wna": 3,
+    "src-sillok-wpa": 9,
+    "src-sillok-wua": 2,
+    "src-sillok-wva": 6,
+    "src-sillok-wwa": 2,
+    "src-sillok-wza": 3,
+    "src-treaty-annexation-1910": 2,
+    "src-web-encykorea-asinwang": 1,
+    "src-web-jawikipedia-asinwang": 2,
+    "src-web-seisaku-nihonshoki-10": 2
+  },
+  "boundedYearOrTimeObjects": 48,
+  "unboundedYearOrTimeObjects": 40,
+  "withoutYearOrTimeObject": 9328,
+  "boundedClaims": [
+    {
+      "claim": "claim-ahwa-death-to-285-jawp",
+      "source": "src-jawp-285nen",
+      "earliest": 285,
+      "latest": 285
+    },
+    {
+      "claim": "claim-armistice-drawn-1953-07-27-panmunjom",
+      "source": "src-armistice-1953",
+      "earliest": 1953,
+      "latest": 1953
+    },
+    {
+      "claim": "claim-asin-death-to-405-encykorea",
+      "source": "src-web-encykorea-asinwang",
+      "earliest": 405,
+      "latest": 405
+    },
+    {
+      "claim": "claim-basic-agreement-dated-1991-12-13",
+      "source": "src-inter-korean-basic-agreement-1991",
+      "earliest": 1991,
+      "latest": 1991
+    },
+    {
+      "claim": "claim-dprk-upr3-distribution-date",
+      "source": "src-dprk-upr3-national-report-2019",
+      "earliest": 2019,
+      "latest": 2019
+    },
+    {
+      "claim": "claim-encykorea-balhae-ended-926",
+      "source": "src-encykorea-balhae",
+      "earliest": 926,
+      "latest": 926
+    },
+    {
+      "claim": "claim-encykorea-balhae-founded-698",
+      "source": "src-encykorea-balhae",
+      "earliest": 698,
+      "latest": 698
+    },
+    {
+      "claim": "claim-encykorea-beopheung-reign",
+      "source": "src-encykorea-beopheung",
+      "earliest": 514,
+      "latest": 540
+    },
+    {
+      "claim": "claim-encykorea-buyeo-ended-494",
+      "source": "src-encykorea-buyeo",
+      "earliest": 494,
+      "latest": 494
+    },
+    {
+      "claim": "claim-encykorea-daegaya-fall-562",
+      "source": "src-encykorea-daegaya",
+      "earliest": 562,
+      "latest": 562
+    },
+    {
+      "claim": "claim-encykorea-ganghwado-treaty-1876",
+      "source": "src-encykorea-ganghwado-treaty",
+      "earliest": 1876,
+      "latest": 1876
+    },
+    {
+      "claim": "claim-encykorea-geumgwangaya-surrender-532",
+      "source": "src-encykorea-geumgwangaya",
+      "earliest": 532,
+      "latest": 532
+    },
+    {
+      "claim": "claim-encykorea-gojong-enthronement-1897",
+      "source": "src-encykorea-gwangmu",
+      "earliest": 1897,
+      "latest": 1897
+    },
+    {
+      "claim": "claim-encykorea-gungye-reign",
+      "source": "src-encykorea-gungye",
+      "earliest": 901,
+      "latest": 918
+    },
+    {
+      "claim": "claim-encykorea-gyeonhwon-baekjewang-900",
+      "source": "src-encykorea-husamguk",
+      "earliest": 900,
+      "latest": 900
+    },
+    {
+      "claim": "claim-encykorea-gyeonhwon-died-936",
+      "source": "src-encykorea-gyeonhwon",
+      "earliest": 936,
+      "latest": 936
+    },
+    {
+      "claim": "claim-encykorea-gyeonhwon-mujinju-892",
+      "source": "src-encykorea-gyeonhwon",
+      "earliest": 892,
+      "latest": 892
+    },
+    {
+      "claim": "claim-encykorea-gyeonhwon-reign",
+      "source": "src-encykorea-gyeonhwon",
+      "earliest": 892,
+      "latest": 935
+    },
+    {
+      "claim": "claim-encykorea-jijeung-reign",
+      "source": "src-encykorea-jijeung",
+      "earliest": 500,
+      "latest": 514
+    },
+    {
+      "claim": "claim-encykorea-jinheung-reign",
+      "source": "src-encykorea-jinheung",
+      "earliest": 540,
+      "latest": 576
+    },
+    {
+      "claim": "claim-encykorea-joseon-existed",
+      "source": "src-encykorea-joseon-dynasty",
+      "earliest": 1392,
+      "latest": 1910
+    },
+    {
+      "claim": "claim-encykorea-joseon-founding-1392",
+      "source": "src-encykorea-joseon-dynasty",
+      "earliest": 1392,
+      "latest": 1392
+    },
+    {
+      "claim": "claim-encykorea-kpg-established-1919",
+      "source": "src-encykorea-kpg-anniversary",
+      "earliest": 1919,
+      "latest": 1919
+    },
+    {
+      "claim": "claim-encykorea-munmu-reign",
+      "source": "src-encykorea-munmu",
+      "earliest": 661,
+      "latest": 681
+    },
+    {
+      "claim": "claim-gwanggaeto-1-06-gapin-converts-414",
+      "source": "src-gwanggaeto",
+      "earliest": 414,
+      "latest": 414
+    },
+    {
+      "claim": "claim-gwanggaeto-1-07-yeongnak-5-converts-395",
+      "source": "src-gwanggaeto",
+      "earliest": 395,
+      "latest": 395
+    },
+    {
+      "claim": "claim-gwanggaeto-1-09-sinmyo-converts-391",
+      "source": "src-gwanggaeto",
+      "earliest": 391,
+      "latest": 391
+    },
+    {
+      "claim": "claim-gwanggaeto-1-09-yeongnak-6-converts-396",
+      "source": "src-gwanggaeto",
+      "earliest": 396,
+      "latest": 396
+    },
+    {
+      "claim": "claim-gwanggaeto-2-05-yeongnak-8-converts-398",
+      "source": "src-gwanggaeto",
+      "earliest": 398,
+      "latest": 398
+    },
+    {
+      "claim": "claim-gwanggaeto-2-06-yeongnak-9-converts-399",
+      "source": "src-gwanggaeto",
+      "earliest": 399,
+      "latest": 399
+    },
+    {
+      "claim": "claim-gwanggaeto-2-08-yeongnak-10-converts-400",
+      "source": "src-gwanggaeto",
+      "earliest": 400,
+      "latest": 400
+    },
+    {
+      "claim": "claim-gwanggaeto-3-03-yeongnak-14-converts-404",
+      "source": "src-gwanggaeto",
+      "earliest": 404,
+      "latest": 404
+    },
+    {
+      "claim": "claim-gwanggaeto-3-04-yeongnak-17-converts-407",
+      "source": "src-gwanggaeto",
+      "earliest": 407,
+      "latest": 407
+    },
+    {
+      "claim": "claim-gwanggaeto-3-06-yeongnak-20-converts-410",
+      "source": "src-gwanggaeto",
+      "earliest": 410,
+      "latest": 410
+    },
+    {
+      "claim": "claim-hongga-fourth-conversion-jawp",
+      "source": "src-jawp-hongga-calendar",
+      "earliest": -17,
+      "latest": -17
+    },
+    {
+      "claim": "claim-hongga-third-conversion-jawp",
+      "source": "src-jawp-hongga-calendar",
+      "earliest": -18,
+      "latest": -18
+    },
+    {
+      "claim": "claim-khs-haengju-reference-date",
+      "source": "src-khs-haengju",
+      "earliest": 1593,
+      "latest": 1593
+    },
+    {
+      "claim": "claim-khs-jeamri-reference-date",
+      "source": "src-much-jeamri",
+      "earliest": 1919,
+      "latest": 1919
+    },
+    {
+      "claim": "claim-khs-jeonnam-office-reference-date",
+      "source": "src-khs-jeonnam-office",
+      "earliest": 1980,
+      "latest": 1980
+    },
+    {
+      "claim": "claim-khs-namhansanseong-reference-date",
+      "source": "src-khs-namhansanseong",
+      "earliest": 1636,
+      "latest": 1636
+    },
+    {
+      "claim": "claim-khs-yongjang-reference-date",
+      "source": "src-khs-yongjang",
+      "earliest": 1270,
+      "latest": 1270
+    },
+    {
+      "claim": "claim-law-rok-constitution-1987-effective",
+      "source": "src-law-rok-constitution-1987",
+      "earliest": 1988,
+      "latest": 1988
+    },
+    {
+      "claim": "claim-law-rok-constitution-1987-promulgated",
+      "source": "src-law-rok-constitution-1987",
+      "earliest": 1987,
+      "latest": 1987
+    },
+    {
+      "claim": "claim-panmunjom-declaration-dated-2018-04-27",
+      "source": "src-panmunjom-declaration-2018",
+      "earliest": 2018,
+      "latest": 2018
+    },
+    {
+      "claim": "claim-rhee-oath-1948-07-24",
+      "source": "src-pa-speech-records",
+      "earliest": 1948,
+      "latest": 1948
+    },
+    {
+      "claim": "claim-rhee-transfer-statement-date-metadata",
+      "source": "src-pa-speech-records",
+      "earliest": 1948,
+      "latest": 1948
+    },
+    {
+      "claim": "claim-rhee-war-3rd-anniversary-1953-06-25",
+      "source": "src-pa-speech-records",
+      "earliest": 1953,
+      "latest": 1953
+    },
+    {
+      "claim": "claim-rok-constitution-effective-1948-07-17",
+      "source": "src-rok-constitution-1948",
+      "earliest": 1948,
+      "latest": 1948
+    }
+  ],
+  "unboundedClaims": [
+    "claim-ahwa-death-ns-date",
+    "claim-annexation-treaty-dated-1910-08-22",
+    "claim-asin-death-sg-date",
+    "claim-baekje-founded-hongga3-samguksagi",
+    "claim-baekje-founding-sg-date",
+    "claim-baekje-founding-sy-byeonhan-date",
+    "claim-baekje-founding-sy-nambuyeo-date",
+    "claim-baekje-onjo-hongga4-samgukyusa",
+    "claim-baekje-onjo-samgukyusa",
+    "claim-byeonhan-submission-hyeokgeose-19",
+    "claim-chgis-hvd-112638-period",
+    "claim-chgis-hvd-112640-period",
+    "claim-chgis-hvd-112641-period",
+    "claim-chgis-hvd-112642-period",
+    "claim-encykorea-buyeo-existed",
+    "claim-encykorea-dprk-government-established",
+    "claim-encykorea-gaya-period",
+    "claim-encykorea-geumgwangaya-period",
+    "claim-goguryeo-founded-samguksagi",
+    "claim-goguryeo-founded-samgukyusa",
+    "claim-gojoseon-gogi-pyongyang-founding",
+    "claim-gwanggaeto-1-06-stele-erected-time",
+    "claim-gwanggaeto-1-07-yeongnak-5-time",
+    "claim-gwanggaeto-1-09-sinmyo-time",
+    "claim-gwanggaeto-1-09-yeongnak-6-time",
+    "claim-gwanggaeto-2-05-yeongnak-8-time",
+    "claim-gwanggaeto-2-06-yeongnak-9-time",
+    "claim-gwanggaeto-2-08-yeongnak-10-time",
+    "claim-gwanggaeto-3-03-yeongnak-14-time",
+    "claim-gwanggaeto-3-04-yeongnak-17-time",
+    "claim-gwanggaeto-3-06-yeongnak-20-time",
+    "claim-gyeongsun-surrender-935",
+    "claim-imsi-heonjang-dated-1919-04",
+    "claim-rhee-states-usamgik-abolished-from-aug-16",
+    "claim-sabi-transfer-sg-date",
+    "claim-sabi-transfer-sy-date",
+    "claim-samil-declaration-dated-1919-03-01",
+    "claim-silla-buddhism-samguksagi",
+    "claim-silla-buddhism-samgukyusa",
+    "claim-silla-hyeokgeose-accession-samguksagi"
+  ],
+  "bands": {
+    "기원전": {
+      "claims": 2,
+      "ids": [
+        "claim-hongga-fourth-conversion-jawp",
+        "claim-hongga-third-conversion-jawp"
+      ]
+    },
+    "1~699": {
+      "claims": 20,
+      "ids": [
+        "claim-ahwa-death-to-285-jawp",
+        "claim-asin-death-to-405-encykorea",
+        "claim-encykorea-balhae-founded-698",
+        "claim-encykorea-beopheung-reign",
+        "claim-encykorea-buyeo-ended-494",
+        "claim-encykorea-daegaya-fall-562",
+        "claim-encykorea-geumgwangaya-surrender-532",
+        "claim-encykorea-jijeung-reign",
+        "claim-encykorea-jinheung-reign",
+        "claim-encykorea-munmu-reign",
+        "claim-gwanggaeto-1-06-gapin-converts-414",
+        "claim-gwanggaeto-1-07-yeongnak-5-converts-395",
+        "claim-gwanggaeto-1-09-sinmyo-converts-391",
+        "claim-gwanggaeto-1-09-yeongnak-6-converts-396",
+        "claim-gwanggaeto-2-05-yeongnak-8-converts-398",
+        "claim-gwanggaeto-2-06-yeongnak-9-converts-399",
+        "claim-gwanggaeto-2-08-yeongnak-10-converts-400",
+        "claim-gwanggaeto-3-03-yeongnak-14-converts-404",
+        "claim-gwanggaeto-3-04-yeongnak-17-converts-407",
+        "claim-gwanggaeto-3-06-yeongnak-20-converts-410"
+      ]
+    },
+    "700~934": {
+      "claims": 5,
+      "ids": [
+        "claim-encykorea-balhae-ended-926",
+        "claim-encykorea-gungye-reign",
+        "claim-encykorea-gyeonhwon-baekjewang-900",
+        "claim-encykorea-gyeonhwon-mujinju-892",
+        "claim-encykorea-gyeonhwon-reign"
+      ]
+    },
+    "935~1391": {
+      "claims": 3,
+      "ids": [
+        "claim-encykorea-gyeonhwon-died-936",
+        "claim-encykorea-gyeonhwon-reign",
+        "claim-khs-yongjang-reference-date"
+      ]
+    },
+    "1392~1875": {
+      "claims": 4,
+      "ids": [
+        "claim-encykorea-joseon-existed",
+        "claim-encykorea-joseon-founding-1392",
+        "claim-khs-haengju-reference-date",
+        "claim-khs-namhansanseong-reference-date"
+      ]
+    },
+    "1876~1944": {
+      "claims": 5,
+      "ids": [
+        "claim-encykorea-ganghwado-treaty-1876",
+        "claim-encykorea-gojong-enthronement-1897",
+        "claim-encykorea-joseon-existed",
+        "claim-encykorea-kpg-established-1919",
+        "claim-khs-jeamri-reference-date"
+      ]
+    },
+    "1945 이후": {
+      "claims": 11,
+      "ids": [
+        "claim-armistice-drawn-1953-07-27-panmunjom",
+        "claim-basic-agreement-dated-1991-12-13",
+        "claim-dprk-upr3-distribution-date",
+        "claim-khs-jeonnam-office-reference-date",
+        "claim-law-rok-constitution-1987-effective",
+        "claim-law-rok-constitution-1987-promulgated",
+        "claim-panmunjom-declaration-dated-2018-04-27",
+        "claim-rhee-oath-1948-07-24",
+        "claim-rhee-transfer-statement-date-metadata",
+        "claim-rhee-war-3rd-anniversary-1953-06-25",
+        "claim-rok-constitution-effective-1948-07-17"
+      ]
+    }
+  },
+  "limits": [
+    "연대 목적어가 있는 주장을 집계한다. 인물·사건의 전수 수집 수가 아니다.",
+    "여러 구간을 걸친 범위는 각 구간에 중복 집계한다. 구간 합계를 전체 주장 수로 쓰지 않는다.",
+    "사료의 대상 기간·편찬 연도나 지도 원 레코드의 기간을 다른 주장의 시각으로 추정하지 않는다.",
+    "원표기만 있고 정규화 연도가 없는 시간 주장은 별도로 센다."
+  ]
+}

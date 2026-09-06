@@ -65,7 +65,7 @@ def main():
             candidates=[c for c in all_locations if c['place']==place['id']]
             counties[name].append({'id':place['id'],'label':place.get('labelKo'),'candidates':len(candidates),
                 'directlyGrounded':sum(bool(c['grounded']) for c in candidates),'withSource':sum(bool(c.get('fromSource')) for c in candidates)})
-    q6_complete=all(any(p['candidates'] and p['directlyGrounded']==p['candidates'] for p in ps) for ps in counties.values())
+    q6_complete=all(ps and all(p['candidates'] and p['directlyGrounded']==p['candidates'] for p in ps) for ps in counties.values())
     human_paths=[('/api/graph',{'entity':'person-gwanggaeto'},'claims'),('/api/time',{},'events'),
         ('/api/people',{},'people'),('/api/history-map',{},'features'),('/api/locations',{},'locations'),
         ('/api/comparison-differences',{},'comparisons'),('/api/compare',{'id':'asin-ahwa-death'},'rows')]

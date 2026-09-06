@@ -1,0 +1,46 @@
+{
+  "head": "90583f278a0de31821fb5817b089917468b9a65e",
+  "base": "http://127.0.0.1:8870",
+  "results": [
+    {
+      "script": "scripts/verify_viewer.py",
+      "exitCode": 0,
+      "seconds": 31.93,
+      "log": "/tmp/sigong-goal-acceptance-after-83/verify_viewer.log"
+    },
+    {
+      "script": "scripts/verify_historical_townships.py",
+      "exitCode": 0,
+      "seconds": 97.68,
+      "log": "/tmp/sigong-goal-acceptance-after-83/verify_historical_townships.log"
+    },
+    {
+      "script": "scripts/verify_cliopatria.py",
+      "exitCode": 0,
+      "seconds": 39.34,
+      "log": "/tmp/sigong-goal-acceptance-after-83/verify_cliopatria.log"
+    },
+    {
+      "script": "scripts/verify_khs_events.py",
+      "exitCode": 0,
+      "seconds": 67.24,
+      "log": "/tmp/sigong-goal-acceptance-after-83/verify_khs_events.log"
+    },
+    {
+      "script": "scripts/verify_initial_source_selection.py",
+      "exitCode": 0,
+      "seconds": 18.03,
+      "log": "/tmp/sigong-goal-acceptance-after-83/verify_initial_source_selection.log"
+    },
+    {
+      "script": "scripts/verify_historical_districts.py",
+      "exitCode": 1,
+      "seconds": 4.13,
+      "log": "/tmp/sigong-goal-acceptance-after-83/verify_historical_districts.log"
+    }
+  ],
+  "limits": [
+    "Q6 remains partial; direct evidence for all candidate coordinates is missing.",
+    "The previous real Claude subscription acceptance is retained; no extra model invocation."
+  ]
+}

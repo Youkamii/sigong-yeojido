@@ -1,0 +1,58 @@
+{
+  "head": "723c95ff135de2ce58930b5be350759a0b5f29be",
+  "base": "http://127.0.0.1:8870",
+  "results": [
+    {
+      "script": "scripts/verify_historical_districts.py",
+      "exitCode": 0,
+      "seconds": 52.5,
+      "log": "/tmp/sigong-goal-acceptance-rest/verify_historical_districts.log"
+    },
+    {
+      "script": "scripts/verify_historical_map.py",
+      "exitCode": 0,
+      "seconds": 35.6,
+      "log": "/tmp/sigong-goal-acceptance-rest/verify_historical_map.log"
+    },
+    {
+      "script": "scripts/verify_hansagun_sites.py",
+      "exitCode": 0,
+      "seconds": 35.01,
+      "log": "/tmp/sigong-goal-acceptance-rest/verify_hansagun_sites.log"
+    },
+    {
+      "script": "scripts/verify_joseon_coverage.py",
+      "exitCode": 0,
+      "seconds": 29.48,
+      "log": "/tmp/sigong-goal-acceptance-rest/verify_joseon_coverage.log"
+    },
+    {
+      "script": "scripts/verify_location_filters.py",
+      "exitCode": 0,
+      "seconds": 6.84,
+      "log": "/tmp/sigong-goal-acceptance-rest/verify_location_filters.log"
+    },
+    {
+      "script": "scripts/verify_core_questions.py",
+      "exitCode": 0,
+      "seconds": 61.62,
+      "log": "/tmp/sigong-goal-acceptance-rest/verify_core_questions.log"
+    },
+    {
+      "script": "scripts/report_claim_coverage.py",
+      "exitCode": 0,
+      "seconds": 0.42,
+      "log": "/tmp/sigong-goal-acceptance-rest/report_claim_coverage.log"
+    },
+    {
+      "script": "scripts/report_claim_periods.py",
+      "exitCode": 0,
+      "seconds": 0.52,
+      "log": "/tmp/sigong-goal-acceptance-rest/report_claim_periods.log"
+    }
+  ],
+  "limits": [
+    "Q6 remains partial; direct evidence for all candidate coordinates is missing.",
+    "The previous real Claude subscription acceptance is retained; no extra model invocation."
+  ]
+}
