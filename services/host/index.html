@@ -229,6 +229,16 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .empty{font-size:13px;color:var(--paper-3);line-height:1.7}
 .unloc{font-size:12.5px;color:var(--paper-2);line-height:1.7}
 .unloc b{color:var(--brick);font-weight:500}
+#compare{display:none;position:absolute;inset:0 0 calc(var(--timeline-height,120px) + 4px);overflow:auto;padding:18px;background:var(--ink)}
+.modecompare #compare{display:block}
+.modecompare #map,.modecompare #three,.modecompare #graph,.modecompare #chat,.modecompare #hint,.modecompare #outside3d,.modecompare #resetMap{display:none}
+.compare-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.compare-tools select{max-width:100%;background:var(--ink-2);color:var(--paper);padding:6px;border:1px solid var(--line-2)}
+.compare-description,#compare [role=status]{font-size:12px;line-height:1.7;color:var(--paper-3)}
+.compare-rows{display:flex;gap:12px;overflow-x:auto;padding-bottom:12px;align-items:stretch}
+.comparison-card{flex:0 0 290px;max-width:90%;border:1px solid var(--line-2);padding:14px;overflow-wrap:anywhere}
+.comparison-card h3,.compare-links h3{font-size:15px;font-weight:500}.comparison-card p{font-size:12px;line-height:1.8}
+.comparison-card .compare-raw{font-size:19px;color:var(--paper)}.comparison-card .quote,.compare-link .quote{font-size:14px;line-height:1.9;white-space:pre-wrap}
+.compare-link{padding:12px 0;border-top:1px solid var(--line)}
 </style>
 <style>
 #chat{display:none;position:absolute;inset:0 0 var(--timeline-height,42%);overflow:auto;padding:24px;color:var(--paper-2)}
@@ -266,6 +276,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <button id="b3d">3D</button>
       <button id="bgraph">그래프</button>
       <button id="bchat">질문</button>
+      <button id="bcompare">비교</button>
     </div>
     <span class="spacer"></span>
     <button id="sourcesBtn" class="panel-btn" aria-controls="sourceRail" aria-expanded="false">찾기·사료</button>
@@ -303,6 +314,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div id="three"></div>
       <div id="graph" aria-label="근거 그래프"></div>
       <div id="chat" aria-label="사료 근거 챗봇"></div>
+      <div id="compare" aria-label="사료별 사건 비교"></div>
       <div class="hint" id="hint">지명을 클릭하면 근거가 열린다</div>
       <button id="resetMap" hidden>전체 지도</button>
       <details id="outside3d" hidden><summary></summary><div></div></details>
@@ -331,6 +343,7 @@ import { Timeline } from './app/timeline.js';
 import { groupSources } from './app/source-groups.js';
 import { GraphExplorer } from './app/graph.js';
 import { EvidenceChat } from './app/chat.js';
+import { SourceComparison } from './app/compare.js';
 import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
 import { activeAt as placeActiveAt, candActive as candidateActive, originMatches, sourceMatches, lensStrength, outsideCandidates } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
@@ -354,6 +367,7 @@ document.getElementById('humanOnly').addEventListener('change', event => {
 const visibleCandidates = p => p.candidates.filter(c => originMatches(c, state.origin, p) && sourceMatches(c,p,state.on));
 let graphView = null;
 let chatView = null;
+let compareView = null;
 function graph(){
   return graphView ||= new GraphExplorer(document.getElementById('graph'),{
     filters:()=>({sources:state.on,origin:state.origin}),
@@ -581,6 +595,7 @@ const yearText = y => y < 0 ? `기원전 ${-y}년` : `서기 ${y}년`;
 const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
 let yearSeq = 0, yearTimer = 0, panelSeq = 0;
 function refreshEvidence(){
+  if(state.mode==='compare')compareView?.show();
   chatView?.filtersChanged();
   refreshTimeClaims();
   if(state.sel) select(state.sel, false);
@@ -1105,6 +1120,19 @@ document.getElementById('bchat').onclick=()=>{
   chatView ||= new EvidenceChat(document.getElementById('chat'),{
     filters:()=>({sources:state.on,origin:state.origin,entity:state.sel}),citation:showGraphClaim
   });
+};
+
+for(const id of ['b2d','b3d','bgraph','bchat'])document.getElementById(id).addEventListener('click',()=>{
+  document.body.classList.remove('modecompare');document.getElementById('bcompare').classList.remove('on');
+});
+document.getElementById('bcompare').onclick=()=>{
+  state.mode='compare';document.body.classList.remove('mode3d','modegraph','modechat');document.body.classList.add('modecompare');
+  document.querySelectorAll('.seg button').forEach(b=>b.classList.toggle('on',b.id==='bcompare'));
+  compareView ||= new SourceComparison(document.getElementById('compare'),{
+    filters:()=>({sources:state.on,origin:state.origin}),claim:showGraphClaim,chunk:showChunk,source:showSource,time:openTimeProjection,
+    selectSources:ids=>{ids.forEach(id=>selectSource(id,true));sourceSelectionChanged();}
+  });
+  compareView.show();
 };
 
 addEventListener('resize', () => { draw(); if(state.mode==='3d') resize3d(); });

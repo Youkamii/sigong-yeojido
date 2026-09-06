@@ -9,7 +9,7 @@ def selected_filter(sources, origin, source='source', author='origin'):
     return selection+('' if origin=='all' else f' FILTER(?{author} = '+json.dumps(origin)+')')
 
 
-def time_claims(sources=None, origin='all', entity=None, limit=500):
+def time_claims(sources=None, origin='all', entity=None, limit=500, claim_ids=None):
     if origin not in ('all','ai','human'):
         raise ValueError('origin must be all, human or ai')
     limit=max(1,min(1000,int(limit)))
@@ -17,6 +17,9 @@ def time_claims(sources=None, origin='all', entity=None, limit=500):
     if sources is not None and not sources:
         return result
     focus='' if not entity else f'FILTER(?subject = {identifier(entity)})'
+    if claim_ids is not None:
+        if not claim_ids:return result
+        focus+=' VALUES ?claim { '+' '.join(identifier(cid) for cid in sorted(claim_ids))+' }'
     rows=query_rows(f'''
 SELECT DISTINCT ?claim ?subject ?label ?predicate ?span ?verbatim ?precision ?year ?earliest ?latest ?calendar
        ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink

@@ -1,0 +1,309 @@
+{
+  "base": "http://127.0.0.1:8873",
+  "cases": [
+    {
+      "case": {
+        "id": "baekje-founding",
+        "label": "백제 건국 · 삼국사기와 삼국유사 두 조목",
+        "description": "같은 온조 건국을 가리키는 본기 인용과 문맥을 근거로 비교한다. 鴻嘉三年·鴻佳三年·鴻嘉四年甲辰을 그대로 남긴다.",
+        "rows": [
+          "claim-baekje-founding-sg-date",
+          "claim-baekje-founding-sy-nambuyeo-date",
+          "claim-baekje-founding-sy-byeonhan-date"
+        ],
+        "links": [
+          {
+            "id": "claim-baekje-founding-sy-nambuyeo-quotes-sg",
+            "subject": "event-baekje-founding-sy-nambuyeo"
+          },
+          {
+            "id": "claim-baekje-founding-sy-byeonhan-refers-sg",
+            "subject": "event-baekje-founding-sy-byeonhan"
+          }
+        ],
+        "sources": [
+          "src-samguksagi",
+          "src-samgukyusa"
+        ],
+        "research": "se-baekje-founding-cross-source"
+      },
+      "rows": [
+        {
+          "id": "claim-baekje-founding-sg-date",
+          "subject": "event-baekje-founding-sg",
+          "subjectLabel": "백제 건국 (삼국사기 온조왕조)",
+          "predicate": "syj:occurredIn",
+          "object": {
+            "kind": "time",
+            "id": "ts-baekje-founded-hongga3-samguksagi",
+            "verbatim": "前漢 成帝鴻嘉三年",
+            "precision": "year"
+          },
+          "fromSource": "src-samguksagi",
+          "sourceLabel": "삼국사기",
+          "citesChunk": "chunk_samguksagi_sg_023_0020_0010",
+          "quote": "國號十濟. 是前漢 成帝鴻嘉三年也.",
+          "origin": "ai",
+          "status": "draft",
+          "chunk": {
+            "id": "chunk_samguksagi_sg_023_0020_0010",
+            "sourceId": "src-samguksagi",
+            "locator": "卷第二十三 百濟本紀 第一 › 溫祚王 › 백제가 건국되고 온조왕이 즉위하다",
+            "permalink": "https://db.history.go.kr/id/sg_023_0020_0010"
+          },
+          "conversions": [],
+          "projections": [],
+          "edition": {
+            "compiler": "김부식",
+            "composedYear": 1145,
+            "sourceKind": "관찬사서"
+          }
+        },
+        {
+          "id": "claim-baekje-founding-sy-nambuyeo-date",
+          "subject": "event-baekje-founding-sy-nambuyeo",
+          "subjectLabel": "백제 건국 (삼국유사 남부여조)",
+          "predicate": "syj:occurredIn",
+          "object": {
+            "kind": "time",
+            "id": "ts-baekje-onjo-samgukyusa",
+            "verbatim": "漢成帝鴻佳三年",
+            "precision": "year"
+          },
+          "fromSource": "src-samgukyusa",
+          "sourceLabel": "삼국유사",
+          "citesChunk": "chunk_samgukyusa_sy_002_0010_0200_0020",
+          "quote": "温祚都河南 慰禮城, 以十臣為輔翼國號十濟. 是漢成帝鴻佳三年也.",
+          "origin": "ai",
+          "status": "draft",
+          "chunk": {
+            "id": "chunk_samgukyusa_sy_002_0010_0200_0020",
+            "sourceId": "src-samgukyusa",
+            "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 온조가 백제를 건국하다",
+            "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0020"
+          },
+          "conversions": [],
+          "projections": [],
+          "edition": {
+            "compiler": "일연",
+            "composedYear": 1281,
+            "sourceKind": "사찬사서"
+          }
+        },
+        {
+          "id": "claim-baekje-founding-sy-byeonhan-date",
+          "subject": "event-baekje-founding-sy-byeonhan",
+          "subjectLabel": "백제 건국 (삼국유사 변한백제조)",
+          "predicate": "syj:occurredIn",
+          "object": {
+            "kind": "time",
+            "id": "ts-baekje-onjo-hongga4-samgukyusa",
+            "verbatim": "鴻嘉四年甲辰",
+            "precision": "year"
+          },
+          "fromSource": "src-samgukyusa",
+          "sourceLabel": "삼국유사",
+          "citesChunk": "chunk_samgukyusa_sy_001_0020_0160_0010",
+          "quote": "按夲紀, 温祚之起在鴻嘉四年甲辰, 則後於赫居世·東明之世四十餘年.",
+          "origin": "ai",
+          "status": "draft",
+          "chunk": {
+            "id": "chunk_samgukyusa_sy_001_0020_0160_0010",
+            "sourceId": "src-samgukyusa",
+            "locator": "卷 第一 › 紀異第一 › 卞韓 百濟 › 변한 사람이 항복하다",
+            "permalink": "https://db.history.go.kr/id/sy_001_0020_0160_0010"
+          },
+          "conversions": [],
+          "projections": [],
+          "edition": {
+            "compiler": "일연",
+            "composedYear": 1281,
+            "sourceKind": "사찬사서"
+          }
+        }
+      ],
+      "links": [
+        {
+          "id": "claim-baekje-founding-sy-byeonhan-refers-sg",
+          "subject": "event-baekje-founding-sy-byeonhan",
+          "predicate": "syj:sameEventAs",
+          "object": {
+            "kind": "entity",
+            "id": "event-baekje-founding-sg"
+          },
+          "fromSource": "src-samgukyusa",
+          "citesChunk": "chunk_samgukyusa_sy_001_0020_0160_0010",
+          "quote": "按夲紀, 温祚之起在鴻嘉四年甲辰, 則後於赫居世·東明之世四十餘年.",
+          "origin": "ai",
+          "status": "draft",
+          "sourceLabel": "삼국유사",
+          "subjectLabel": "백제 건국 (삼국유사 변한백제조)",
+          "chunk": {
+            "id": "chunk_samgukyusa_sy_001_0020_0160_0010",
+            "sourceId": "src-samgukyusa",
+            "locator": "卷 第一 › 紀異第一 › 卞韓 百濟 › 변한 사람이 항복하다",
+            "permalink": "https://db.history.go.kr/id/sy_001_0020_0160_0010"
+          }
+        },
+        {
+          "id": "claim-baekje-founding-sy-nambuyeo-quotes-sg",
+          "subject": "event-baekje-founding-sy-nambuyeo",
+          "predicate": "syj:sameEventAs",
+          "object": {
+            "kind": "entity",
+            "id": "event-baekje-founding-sg"
+          },
+          "fromSource": "src-samgukyusa",
+          "citesChunk": "chunk_samgukyusa_sy_002_0010_0200_0020",
+          "quote": "史本記云. “百濟始祖 温祚, 其父雛牟王, 或云朱蒙.",
+          "origin": "ai",
+          "status": "draft",
+          "sourceLabel": "삼국유사",
+          "subjectLabel": "백제 건국 (삼국유사 남부여조)",
+          "chunk": {
+            "id": "chunk_samgukyusa_sy_002_0010_0200_0020",
+            "sourceId": "src-samgukyusa",
+            "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 온조가 백제를 건국하다",
+            "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0020"
+          }
+        }
+      ],
+      "sourceCount": 2,
+      "differentRawDates": true,
+      "differentProjectedYears": false,
+      "hasMore": false,
+      "origin": "all",
+      "groupingOrigin": "ai",
+      "automaticMerge": false
+    },
+    {
+      "case": {
+        "id": "sabi-transfer",
+        "label": "사비 천도 · 성왕 16년과 26년",
+        "description": "삼국유사는 삼국사기를 인용한다고 밝히지만 기년을 다르게 적는다. 원문의 차이를 현재 서기 연도로 맞추지 않는다.",
+        "rows": [
+          "claim-sabi-transfer-sg-date",
+          "claim-sabi-transfer-sy-date"
+        ],
+        "links": [
+          {
+            "id": "claim-sabi-transfer-sy-quotes-sg",
+            "subject": "event-sabi-transfer-sy"
+          }
+        ],
+        "sources": [
+          "src-samguksagi",
+          "src-samgukyusa"
+        ],
+        "research": "se-sabi-transfer"
+      },
+      "rows": [
+        {
+          "id": "claim-sabi-transfer-sg-date",
+          "subject": "event-sabi-transfer-sg",
+          "subjectLabel": "사비 천도 (삼국사기 성왕조)",
+          "predicate": "syj:occurredIn",
+          "object": {
+            "kind": "time",
+            "id": "ts-sabi-transfer-sg",
+            "verbatim": "十六年, 春",
+            "precision": "year"
+          },
+          "fromSource": "src-samguksagi",
+          "sourceLabel": "삼국사기",
+          "citesChunk": "chunk_samguksagi_sg_026_0060_0100",
+          "quote": "十六年, 春, 移都於泗沘, 國號南扶餘.",
+          "origin": "ai",
+          "status": "draft",
+          "chunk": {
+            "id": "chunk_samguksagi_sg_026_0060_0100",
+            "sourceId": "src-samguksagi",
+            "locator": "卷第二十六 百濟本紀 第四 › 聖王 › 도읍을 사비로 옮기고 국호를 남부여라 칭하다",
+            "permalink": "https://db.history.go.kr/id/sg_026_0060_0100"
+          },
+          "conversions": [],
+          "projections": [],
+          "edition": {
+            "compiler": "김부식",
+            "composedYear": 1145,
+            "sourceKind": "관찬사서"
+          }
+        },
+        {
+          "id": "claim-sabi-transfer-sy-date",
+          "subject": "event-sabi-transfer-sy",
+          "subjectLabel": "사비 천도 (삼국유사의 삼국사기 인용)",
+          "predicate": "syj:occurredIn",
+          "object": {
+            "kind": "time",
+            "id": "ts-sabi-transfer-sy",
+            "verbatim": "百濟聖王二十六年戊午春",
+            "precision": "year"
+          },
+          "fromSource": "src-samgukyusa",
+          "sourceLabel": "삼국유사",
+          "citesChunk": "chunk_samgukyusa_sy_002_0010_0200_0010",
+          "quote": "按三國史記, “百濟聖王二十六年戊午春, 移都扵泗泚, 國號南扶餘.”",
+          "origin": "ai",
+          "status": "draft",
+          "chunk": {
+            "id": "chunk_samgukyusa_sy_002_0010_0200_0010",
+            "sourceId": "src-samgukyusa",
+            "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 백제에 대한 기록들",
+            "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0010"
+          },
+          "conversions": [],
+          "projections": [],
+          "edition": {
+            "compiler": "일연",
+            "composedYear": 1281,
+            "sourceKind": "사찬사서"
+          }
+        }
+      ],
+      "links": [
+        {
+          "id": "claim-sabi-transfer-sy-quotes-sg",
+          "subject": "event-sabi-transfer-sy",
+          "predicate": "syj:sameEventAs",
+          "object": {
+            "kind": "entity",
+            "id": "event-sabi-transfer-sg"
+          },
+          "fromSource": "src-samgukyusa",
+          "citesChunk": "chunk_samgukyusa_sy_002_0010_0200_0010",
+          "quote": "按三國史記, “百濟聖王二十六年戊午春, 移都扵泗泚, 國號南扶餘.”",
+          "origin": "ai",
+          "status": "draft",
+          "sourceLabel": "삼국유사",
+          "subjectLabel": "사비 천도 (삼국유사의 삼국사기 인용)",
+          "chunk": {
+            "id": "chunk_samgukyusa_sy_002_0010_0200_0010",
+            "sourceId": "src-samgukyusa",
+            "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 백제에 대한 기록들",
+            "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0010"
+          }
+        }
+      ],
+      "sourceCount": 2,
+      "differentRawDates": true,
+      "differentProjectedYears": false,
+      "hasMore": false,
+      "origin": "all",
+      "groupingOrigin": "ai",
+      "automaticMerge": false
+    }
+  ],
+  "pageErrors": [],
+  "checks": {
+    "real_cross_source_quotes": true,
+    "explicit_link_evidence": true,
+    "distinct_dates_preserved": true,
+    "quote_original_navigation": true,
+    "source_and_ai_filters": true,
+    "narrow_layout": true
+  },
+  "limits": [
+    "삼국사기·일본서기 사례는 별도 조사 후 추가한다."
+  ]
+}

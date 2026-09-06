@@ -50,6 +50,7 @@ from frontmatter import parse_front_matter
 from graph_query import neighborhood, locations, GraphUnavailable
 from chat import answer as chat_answer, ChatUnavailable
 from time_query import time_claims
+from comparison_query import comparison
 from places import load_places, with_locations, place_names
 try:
     from validate import parse_claims_text, MULTI_VALUED_PREDICATES  # noqa: E402
@@ -425,6 +426,22 @@ class Handler(BaseHTTPRequestHandler):
         path = u.path
         q = parse_qs(u.query, keep_blank_values=True)
 
+        if path in ('/api/comparisons','/api/compare'):
+            file=DATA/'comparisons.json'
+            config=json.loads(file.read_text(encoding='utf-8')) if file.exists() else {'cases':[]}
+            if path=='/api/comparisons':
+                self._json(config)
+                return
+            case=next((c for c in config['cases'] if c['id']==q.get('id',[''])[0]),None)
+            if case is None:
+                self._json({'error':'비교 사례를 찾지 못했다.'},404)
+                return
+            srcs=q.get('sources',[None])[0]
+            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            try:self._json(comparison(case,sources,q.get('origin',['all'])[0],{s['id']:s for s in index()['sources']}))
+            except ValueError as exc:self._json({'error':str(exc)},400)
+            except GraphUnavailable as exc:self._json({'error':str(exc)},503)
+            return
         if path == '/api/lenses':
             file=DATA/'lenses.json'
             self._json(json.loads(file.read_text(encoding='utf-8')) if file.exists() else {'default':None,'lenses':[]})
