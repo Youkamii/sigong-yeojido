@@ -1,10 +1,10 @@
 # 전체 작업 목록과 누락 점검
 
-2026-09-07 갱신. #45 감사 이후 실제 구현과 이슈 #1~#87을 함께 대조했다.
-데이터·스캔 열람 기준은 `a2387fd0`, 운영 검증은 `bcb9c375`다. 운영의 마지막 확인값은 [배포 기록](research/ndl-scan-87-deployed.json)을 따른다.
+2026-09-07 갱신. #45 감사 이후 실제 구현과 이슈 #1~#89를 함께 대조했다.
+데이터·현재 옛길 표시는 `bea1929e`다. 운영의 마지막 확인값은 [배포 기록](research/preserved-route-deployed-88.json)을 따른다.
 
 **그래프·챗봇·렌즈·AI 제외·인물 검색·사료 비교·시간 변환·역사 경계 표시가 구현됐다.**
-원문과 연결된 주장은 9,416개다. 경계 레코드 연결 9,028개와 그 밖의 관계 388개를 구분한다.
+원문과 연결된 주장은 9,418개다. 경계 레코드 연결 9,028개·현재 코스 기록 1개·그 밖의 관계 389개를 구분한다.
 읍·면·국가 경계와 사건 장소, 출처 있는 이동 조건 검사도 구현했다. 남은 일은 한사군 후보의 직접 위치 근거,
 통사 자료·주장의 빈 구간, 실제 역사 역로, 공식 날짜 코드·웹 대조·기관 문의다.
 수록한 사례의 검사 통과와 통사 전면 수집 완료를 구별한다.
@@ -14,30 +14,30 @@
 **부분**은 남은 요구가 있고, **미검증**은 실제 확인이 없으며, **결정 대기**는 사용자 결정이나 외부 답변이 필요하다.
 닫힌 이슈 수를 제품 완성률로 계산하지 않는다.
 
-GitHub 이슈는 **87개: 닫힘 78개·열림 9개**다. 번호 누락·중복과 문서 링크를 [실제 이슈 목록](research/task-completion-audit.json)에 대조했다.
+GitHub 이슈는 **89개: 닫힘 80개·열림 9개**다. 번호 누락·중복과 문서 링크를 [실제 이슈 목록](research/task-completion-audit.json)에 대조했다.
 
 ## 1. 현재 데이터와 실행 확인
 
 | 항목 | 확인값과 범위 |
 |---|---|
-| c2 원문 | Source 1,073개·chunk 2,601,349개. 금석문·발췌·메타데이터의 별도 분할을 포함한다 |
-| Git 추적 원문 | Source 카드 1,073개·chunk 83,346개. 대용량 실록·승정원일기·비변사등록 전체는 c2에 보관한다 |
-| 인용·주장 | Claim 9,416개, 인용 chunk 9,240개, 모두 AI 초안·사람 작성 0. 인용·출처·digest 실패 0. 실제 Claim이 있는 Source는 83개, Claim이 없는 Source는 990개 [분포](research/claim-coverage-goal.json) |
+| c2 원문 | Source 1,075개·chunk 2,601,351개. 금석문·발췌·메타데이터의 별도 분할을 포함한다 |
+| Git 추적 원문 | Source 카드 1,075개·chunk 83,348개. 대용량 실록·승정원일기·비변사등록 전체는 c2에 보관한다 |
+| 인용·주장 | Claim 9,418개, 인용 chunk 9,242개, 모두 AI 초안·사람 작성 0. 인용·출처·digest 실패 0. 실제 Claim이 있는 Source는 85개, Claim이 없는 Source는 990개 [분포](research/claim-coverage-goal.json) |
 | 지명과 좌표 | Location 230개. 직접 locatedAt 17개는 현대 대표점 7개·국내성 지도 좌표 1개·CHGIS 재구성 점 4개·국가유산청 현재 목록 점 5개. 옛 조사 후보 213개는 직접 근거 미비 |
 | 경국대전 스캔 | NDL 1934년판 319코마 원해상도 이미지 전체 보관·열람. 이미지 참조 chunk이며 전사·OCR·번역·새 Claim은 0개. [실행 근거](research/ndl-scan-87.md) |
 | 역사 지도 | HGIS 도 32개·군·부 등 726개·읍면 등 8,176개, Cliopatria 국가 경계 기록 94개, 사건 관련 장소 5개. 종류·행정 단계·이름·사료·연도·AI 선택 |
 | 역사 규칙 | 계보·순서 순환, 연도 역전, 생몰 범위 밖 등장, 출처 있는 이동 조건의 불가능 검사. 이동 조건은 인공 사례·실제 별도 Fuseki로 검증했으며 역사 사례는 0개 |
 | 실제 기능 검사 | 운영 뷰어 12/12, 도 7개·군부 9개·읍면 11개·국가 경계 9개·사건 장소 11개, 초기 사료 선택 4경우 통과. 기존 그래프·실제 Claude Max 답변·렌즈·모바일 검증 기록 보존 |
-| 자동 검사 | Python 111개·JavaScript 14개 통과. 244,954트리플 반복 바이트·rdflib 재파싱·9,240 Chunk 메타데이터·38,241 참조·digest·충돌 6개 대조, 실패 0 |
+| 자동 검사 | Python 111개·JavaScript 14개 통과. 245,018트리플 반복 바이트·rdflib 재파싱·9,242 Chunk 메타데이터·38,249 참조·digest·충돌 6개 대조, 실패 0 |
 | Q1~Q9 | 8개 PASS, Q6 PARTIAL. [검사 내용과 한계](research/core-questions-56.md) |
-| 새 클론 | 실제 `git archive`의 추적 파일만으로 9,416 Claim 검증. 실록 원문 29개 보존. 새 원문 138개 JSONL 전체의 Git blob과 c2 바이트 및 50개 Source의 첫/끝 API 객체 대조 |
+| 새 클론 | 실제 `git archive`의 추적 파일만으로 9,418 Claim 검증. 실록 원문 29개 보존. 새 원문 138개 JSONL 전체의 Git blob과 c2 바이트 및 50개 Source의 첫/끝 API 객체 대조 |
 | CI | GitHub Actions 워크플로·실행 기록 없음, NOT_RUN |
 
 실제 운영 수용 검사의 커밋·종료 코드·결과 파일은 [통합 실행 기록](research/goal-production-acceptance.json)에 있다.
 현재 외부 주소의 [스캔 5개 검사](research/ndl-scan-87-production.json)·[기존 뷰어 12개](research/ndl-scan-87-viewer.json)·[사료가 없을 때의 챗봇 2개 응답](research/ndl-scan-87-chat.json)도 통과했다.
 신라 인용·국호 판정의 후속 변경은 [실제 화면·RDF 검사](research/name-quotes-production-84-85.json)를 따른다.
 역로 선 표시는 [인공 자료 7개 검사와 기존 경계 9개 재검사](research/route-rendering-86.md)를 통과했다.
-실제 역사 역로 자료는 0개이며 이를 수집·운영 수용 완료로 세지 않는다.
+현재 옛길 참고선은 실제 GPX 1개·932점을 수록하고 [운영 검사](research/preserved-route-production-88.json)를 거쳤다. 과거에 유효한 역사 역로는 여전히 0개다.
 
 처음 빠진 기능을 찾았던 [API·RDF 감사](research/task-coverage-audit.json)와
 [화면 감사](research/viewer-coverage-audit.json)는 `484f907` 당시 기록이다. 그때의 955 Source·86 Claim·404 응답은 현재 상태가 아니다.
@@ -112,11 +112,11 @@ GitHub 이슈는 **87개: 닫힘 78개·열림 9개**다. 번호 누락·중복�
 | #44 | 3D 연출 시작 관측 시점 | 완료 | `ee99c8a` |
 
 
-## 4. 누락 감사 이후 전체 작업 (#45~#86)
+## 4. 누락 감사 이후 전체 작업 (#45~#89)
 
 | 이슈 | 작업 | 상태·실행 근거 | 남은 범위 |
 |---|---|---|---|
-| #45 | 전체 요구·이슈·완료 범위 대조 | 완료. 이 문서와 실행 JSON, #46~#86 추적 | 새 작업은 해당 기능 이슈에 연결 |
+| #45 | 전체 요구·이슈·완료 범위 대조 | 완료. 이 문서와 실행 JSON, #46~#89 추적 | 새 작업은 해당 기능 이슈에 연결 |
 | #46 | 실제 RDF 그래프 탐색 | 완료 `1029baa`. 엔티티→주장→원문·사료, 페이지 이동·필터 [운영 검사](research/graph-46-production.json) | 자료 범위 확대는 #51 #52 |
 | #47 | Claude Max 근거 챗봇 | 완료 `3b1580e`, `5cf9859`, `e5204a7`. 실제 구독 답변·각주·원문·근거 부족·480px [검사](research/chat-47-production.json) | 근거가 수록된 범위에 한정 |
 | #48 | 현대 연구 기본 렌즈·겹침 | 완료 `4cbe112`, `6408f3b`. 기본 8개 Source, 2D/3D/연표 진하기 [검사](research/lenses-48-production.json) | 현대 연구 전면 수집은 #52 |
@@ -127,7 +127,7 @@ GitHub 이슈는 **87개: 닫힘 78개·열림 9개**다. 번호 누락·중복�
 | #53 | 사료 간 사건·연대 비교 | 완료 `7dbef01`, `7227d6f`, `ab2a064`. 백제 건국·사비 천도·아신/아화 사망 3사례, RDF에서 연도 차이 자동 검색 [운영 검사](research/comparison-discovery-53-production.json) | 연결·연도 근거가 없는 기록은 자동 검색 밖 |
 | #54 | 역사 일관성 검사 | 완료 `23099a6`, `7172c415`, `b6870b00`. 계보/순서·생몰과 [출처 있는 이동 조건](research/geography-rules-54.md), 실제 별도 Fuseki에서 실패 시 기존 그래프 보존 | 측정 조건을 모두 갖춘 실제 역사 사례는 0개. 자료 확보는 #51 #52 |
 | #55 | 시간 범위·상대 순서·환산 | 완료 `8ab68aa`, `fb1fe92`. 원표기·불확실 범위·환산 출처·기원전·전후 순서, 실제 -18/-17·405/285 [운영 검사](research/time-55-production.json) | 역법표의 기관·학술 독립 대조, 미상은 미상으로 보존 |
-| #56 | Q1~Q9 실제 수용·인물 검색 | 부분 `4885b08`, `7fbd333`, `8446510`, `46e72661`. 9,416 Claim·9,240 인용 대조, 8 PASS. 한 군의 한 후보만으로 전체를 통과시키지 않음 [검사](research/core-questions-goal.json) | Q6 위치 근거 부족. Q3은 수록된 인물 대상이며 전수 수집은 별도 |
+| #56 | Q1~Q9 실제 수용·인물 검색 | 부분 `4885b08`, `7fbd333`, `8446510`, `46e72661`. 9,418 Claim·9,242 인용 대조, 8 PASS. 한 군의 한 후보만으로 전체를 통과시키지 않음 [검사](research/core-questions-goal.json) | Q6 위치 근거 부족. Q3은 수록된 인물 대상이며 전수 수집은 별도 |
 | #57 | 시대별 경계·군현·역로·사건 지도 | 부분. HGIS 도32·군부726·읍면8176, 국가 경계94·사건 장소5, 실제 2D/3D·원 레코드·필터 검사 [수용](research/goal-production-acceptance.json) | 실제 역사 역로 선·확보되지 않은 시기의 도형, 사건의 실제 교전 범위는 남음 |
 | #58 | 좁은 화면 근거 패널 | 완료 `66f5347`. 480/1000/1440px [검사](research/responsive-58.json) | 신규 화면도 480px 확인 |
 | #59 | 3D 범위 밖 후보 안내 | 완료 `5d39491`. 목록→2D·근거, 사료·연도·AI 필터 [검사](research/outside-candidates-59.json) | 후보 자체의 근거는 #49 |
@@ -159,6 +159,8 @@ GitHub 이슈는 **87개: 닫힘 78개·열림 9개**다. 번호 누락·중복�
 | #85 | 신라 주장 3개의 직접 인용 | 완료 `a7c291ce`. 채택·개명 문장까지 인용, 경주를 국호 별칭으로 세던 술어 수정 [내역](research/silla-quotes-85.md) | 인용 문자열 검사만으로 모든 역사 해석이 검토됐다고 하지 않음 |
 | #86 | 역로 선의 2D·3D 표시 | 부분 `24b02746`. 열린 선·떨어진 선·클릭·근거·필터·480px 인공 검사 7개, 기존 실제 국가 경계 9개 재검사 [범위](research/route-rendering-86.md) | 실제 공개 조건·직접 근거를 갖춘 한국사 역로 선은 0개 |
 | #87 | 경국대전 1934년판 스캔 수록·면별 열람 | 완료 `a2387fd0`, 검증 `bcb9c375`. 원 스캔 319장·실제 외부 열람 5개·뷰어 12개·챗봇 2개 검사 [내역](research/ndl-scan-87.md) | 전사문·OCR·번역은 0개이며 상위 #52의 전문 수집과 구별 |
+| #88 | 대관령옛길 현재 트랙·별도 역사 설명 | 완료 `bea1929e`. 실제 932점 원 좌표·별도 Source/엔티티·2D/3D·사료/날짜/AI·480px 검사 [내역](research/preserved-route-88.md) | 2023년 기준 안내 코스다. 지정구역·고려 또는 조선 노선의 동일성은 미확인 |
+| #89 | 연도 기록의 비동기 응답을 기다리는 뷰어 검사 | 완료 `4facf431`. 두 초기 실패·정상 API 응답을 확인하고 실제 외부 주소 12개 통과 [내역](research/year-records-wait-89.md) | 제품 코드·타임아웃 변경 없음. 고정 1.5초의 성능 보장으로 해석하지 않음 |
 
 ## 5. Q1~Q9: 동작과 자료 범위
 
@@ -167,7 +169,7 @@ GitHub 이슈는 **87개: 닫힘 78개·열림 9개**다. 번호 누락·중복�
 | Q1 삼국사기·500년 지도 | PASS. 조건에 맞는 후보 40개, 전체 해제 0 | 지도 후보의 역사적 확정을 뜻하지 않음 |
 | Q2 백제 건국 연도 | PASS. 3개 원표기, -18/-17 환산과 미환산 1개 | 3차 역법표와 기관·학술 자료의 독립 대조 |
 | Q3 6세기 신라 인물 | PASS. 소속·재위가 수록된 지증왕·법흥왕·진흥왕, 빈 기간·사료·AI 필터 | 당시 인물 전수·생몰 전체 자료 |
-| Q4 주장의 근거 | PASS. 9,416 Claim·9,240 인용 chunk의 원문·Source 일치 | 사람의 역사 해석 검토는 별도 |
+| Q4 주장의 근거 | PASS. 9,418 Claim·9,242 인용 chunk의 원문·Source 일치 | 사람의 역사 해석 검토는 별도 |
 | Q5 삼국사기·일본서기 연도 차이 | PASS. 선택 사료와 RDF 연결로 1쌍 자동 검색, 405/285의 환산 방식 설명 | 사건 동일성·연도 근거가 없는 쌍 |
 | Q6 한사군 후보 전부와 근거 | PARTIAL. 네 군의 자료·기존 후보·현대 대표점·CHGIS 재구성 4점을 구별 | 모든 후보의 직접 위치 근거·진번 등의 좌표가 미상 |
 | Q7 AI 연결 제외 | PASS. 전체 질의 경로에서 human 결과 0, 지도·3D 별도 검사 | 현재 사람 작성 Claim 0 |
@@ -222,6 +224,7 @@ python3 scripts/verify_core_questions.py --out /tmp/sigong-core-questions.json
 .venv-build/bin/python scripts/verify_khs_events.py --out /tmp/sigong-events
 .venv-build/bin/python scripts/verify_initial_source_selection.py --out /tmp/sigong-initial-sources.json
 .venv-build/bin/python scripts/verify_name_claims.py --out /tmp/sigong-name-claims
+python3 scripts/verify_preserved_route.py --base http://127.0.0.1:8870 --out /tmp/sigong-current-route
 python3 scripts/verify_ndl_scan.py --base http://127.0.0.1:8870 --out /tmp/sigong-ndl-scan
 python3 scripts/verify_goal_data.py --out /tmp/sigong-new-data.json
 python3 scripts/verify_joseon_coverage.py --out /tmp/sigong-joseon-coverage.json

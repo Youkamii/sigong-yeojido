@@ -14,7 +14,7 @@
 
 사료 적재·주장 검증·Fuseki, 2D·3D 지도, 그래프 탐색과 Claude Max 근거 챗봇이 동작한다.
 현대 연구 기본 렌즈·AI 제외·인물 검색·사료 비교·시간 환산·역사 경계 표시도 구현했다.
-Claim 9,416개는 경계 레코드 연결 9,028개와 그 밖의 관계 388개다. 읍·면·국가 경계·사건 장소와 출처 있는 이동 조건 검사까지 구현했다.
+Claim 9,418개는 경계 레코드 연결 9,028개·현재 코스 기록 1개·그 밖의 관계 389개다. 읍·면·국가 경계·사건 장소와 출처 있는 이동 조건 검사까지 구현했다.
 통사 자료의 빈 구간·한사군 위치 근거·실제 역로·공식 날짜 코드 확인은 남아 있다.
 전체 작업과 미검증 범위는 [TASKS.md](docs/TASKS.md)를 따른다.
 
@@ -39,9 +39,10 @@ Claim 9,416개는 경계 레코드 연결 9,028개와 그 밖의 관계 388개�
 | Cliopatria 한국사 국가 경계 | 1 | 94 | [원 기록·기간·표시 한계](docs/research/cliopatria-79.md) |
 | 시대별 해설·평양 견해·사건 장소 | 22 | 43 | [시대별 범위](docs/research/claim-periods-51.md) |
 | 경국대전 1934년판 원해상도 스캔 | 1 | 319 | [319코마·전사문 0](docs/research/ndl-scan-87.md) |
-| **c2 합계** | **1,073** | **2,601,349** | [운영 기록](docs/research/ndl-scan-87-deployed.json) |
+| 현재 대관령옛길·별도 기관 설명 | 2 | 2 | [932점의 현재 코스·과거 노선 미확인](docs/research/preserved-route-88.md) |
+| **c2 합계** | **1,075** | **2,601,351** | [운영 기록](docs/research/preserved-route-deployed-88.json) |
 
-**새 Git 클론에는 카드 1,073개와 chunks 83,346개가 있다.** 실록 30종과 후대 사료의 전체 JSONL은 Git 밖의 c2
+**새 Git 클론에는 카드 1,075개와 chunks 83,348개가 있다.** 실록 30종과 후대 사료의 전체 JSONL은 Git 밖의 c2
 `data/sources/sillok-*/`, `seungjeongwon-ilgi/`, `bibyeonsa-deungnok/`에 보관한다.
 새 환경에서는 각 적재 문서의 명령으로 생성한다. 파일별 SHA256·독립 XML 집계·두 번 추출한 결과는 Git에 있다.
 금석문·집성의 원문 JSONL은 Git에 있다.
@@ -50,11 +51,11 @@ Claim 9,416개는 경계 레코드 연결 9,028개와 그 밖의 관계 388개�
 실록에서 실제 인용한 29개 JSON 객체는 `citation-chunks.jsonl`로 Git에 넣어 새 클론에서도 검증한다.
 전체 적재본이 있으면 모든 필드가 같은지 대조하고 한 번만 센다. [실제 새 복사본 검사](docs/research/goal-clean-clone.json)
 
-Claim 9,416개·인용 chunk 9,240개·Location 230개·Conflict 6개다. 모두 AI 초안이며 사람 검토 완료 기록은 없다.
+Claim 9,418개·인용 chunk 9,242개·Location 230개·Conflict 6개다. 모두 AI 초안이며 사람 검토 완료 기록은 없다.
 직접 유적 좌표·현대 대표점·CHGIS 학술 재구성 점·근거가 부족한 조사 후보를 구별한다. 이름이 같다고 엔티티를 자동으로 합치지 않는다.
 역사 지도는 HGIS 도 32개·군·부 등 726개·읍면 등 8,176개, Cliopatria 국가 경계 기록 94개, 사건 관련 장소 5개다.
 종류·행정 단계 선택과 이름 검색을 지원한다. 데이터셋의 재구성 경계와 기관의 현재 좌표를 역사적 확정 위치·전투 범위로 바꾸지 않는다.
-열린 역로·떨어진 선을 그리는 경로도 구현했으나, 원 선 자료에 근거한 한국사 역로는 아직 확보하지 못했다.
+열린 역로·떨어진 선을 그리는 경로도 구현했으나, 대관령옛길의 현재 안내 트랙 1개를 수록했다. 2023년 기준 자료이며 과거 노선과의 동일성은 미확인이다.
 근현대 자료는 문서 전사·연설·기관 해설·북한 작성 보고서의 짧은 발췌다. 전문 수집과 구별한다.
 
 ## 구조
@@ -105,7 +106,7 @@ API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,�
 `/api/year?y=918` `/api/density` `/api/elevation` `/api/geo`
 `/api/chunk?id=<id>` `/api/graph?entity=<id>` `/api/time` `/api/people` `/api/locations`
 `/api/lenses` `/api/comparisons` `/api/compare?id=<id>` `/api/comparison-differences`
-`/api/history-map?level=0`(국가 경계)·`level=1`(도)·`level=2`(군·부 등)·`level=3`(읍면 등)·`level=4`(사건 장소)·`level=5`(역로, 실제 자료 미확보).
+`/api/history-map?level=0`(국가 경계)·`level=1`(도)·`level=2`(군·부 등)·`level=3`(읍면 등)·`level=4`(사건 장소)·`level=5`(역로·현재 옛길, 과거 노선 미확보).
 근거 챗봇은 `POST /api/chat`에서 Claude CLI의 Max 구독을 사용한다.
 
 원문 목록은 `/api/chunks?offset=0&limit=120`으로 나눠 읽는다(`limit` 최대 500).
@@ -131,6 +132,7 @@ API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,�
 - 전체 질의: `scripts/verify_core_questions.py --out /tmp/core-questions.json` — 실제 API·Fuseki, 모든 인용·사료 대조. 현재 8 PASS·Q6 PARTIAL.
 - 사료 비교·인물·시간·위치·역사 지도: `verify_comparison_discovery.py`, `verify_people.py`, `verify_time.py`, `verify_location_filters.py`, `verify_historical_map.py`, `verify_historical_districts.py`, `verify_hansagun_sites.py`.
 - 새 역사 지도·초기 선택·인용: `verify_historical_townships.py`, `verify_cliopatria.py`, `verify_khs_events.py`, `verify_initial_source_selection.py`, `verify_name_claims.py`, `verify_goal_data.py`.
+- 현재 옛길: `verify_preserved_route.py` — 실제 932점·2D/3D·두 근거·기간/사료/AI·480px 검사. [범위](docs/research/preserved-route-88.md).
 - 스캔 열람: `verify_ndl_scan.py` — 원 스캔 319장 해시·실제 API·면 이동·사료 해제/복구·480px 검사 5개. [현재 외부 주소 검사](docs/research/ndl-scan-87-production.json).
 - [실제 c2 운영 수용](docs/research/goal-production-acceptance.json), [이름·인용 수정 검사](docs/research/name-quotes-production-84-85.json), [역로 표시의 인공 시험 범위](docs/research/route-rendering-86.md). Python 111개·JavaScript 14개와 전체 TTL 검사 통과, GitHub Actions·별도 riot는 NOT_RUN.
 
