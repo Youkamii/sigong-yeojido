@@ -70,6 +70,13 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .stage{position:relative;display:grid;grid-template-columns:236px minmax(0,1fr) 320px;min-height:0}
 .panel-btn{display:none;border:1px solid var(--line-2);border-radius:2px;padding:6px 9px;font-size:12px}
 .origin-filter{display:flex;align-items:center;gap:5px;font-size:12px;white-space:nowrap}
+#outside3d{display:none;position:absolute;top:45px;right:12px;z-index:10;max-width:min(360px,calc(100% - 24px));max-height:38%;overflow:auto;padding:9px 12px;background:var(--ink-2);border:1px solid var(--line-2);font-size:12px}
+.mode3d #outside3d:not([hidden]){display:block}
+#outside3d summary{cursor:pointer;color:var(--gardenia)}
+#outside3d button{display:block;text-align:left;padding:8px 0;border-bottom:1px solid var(--line);width:100%;line-height:1.6}
+#resetMap{position:absolute;top:40px;left:14px;z-index:5;padding:6px 10px;background:var(--ink-2);border:1px solid var(--line-2);font-size:12px}
+.mode3d #resetMap{display:none}
+.cand.focused{outline:1px solid var(--gardenia);outline-offset:4px}
 @media (max-width:1080px){
   .stage{grid-template-columns:200px minmax(0,1fr)}
   .evi{display:none}
@@ -261,6 +268,8 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <canvas id="map"></canvas>
       <div id="three"></div>
       <div class="hint" id="hint">지명을 클릭하면 근거가 열린다</div>
+      <button id="resetMap" hidden>전체 지도</button>
+      <details id="outside3d" hidden><summary></summary><div></div></details>
       <div class="timebar">
         <div class="row">
           <span class="year"><b id="yearV">414</b><span id="yearL">서기</span>
@@ -284,12 +293,12 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 import { Timeline } from './app/timeline.js';
 import { groupSources } from './app/source-groups.js';
 import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
-import { activeAt as placeActiveAt, candActive as candidateActive, originMatches } from './app/place-state.js';
+import { activeAt as placeActiveAt, candActive as candidateActive, originMatches, outsideCandidates } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
 
 const state = {
   places: [], geo: null, chunks: [], sources: [], entities: [],
-  on: new Set(), year: 414, sel: null, hot: null, mode: '2d', panel: null, origin: 'all'
+  on: new Set(), year: 414, sel: null, hot: null, mode: '2d', panel: null, origin: 'all', mapFocus: null
 };
 
 document.getElementById('humanOnly').addEventListener('change', event => {
@@ -337,7 +346,36 @@ const SPAN_X = MX1 - MX0, SPAN_Y = MY1 - MY0;
 function view(w, h){
   const pad = 26;
   const s = Math.min((w - pad*2) / SPAN_X, (h - pad*2 - 54) / SPAN_Y);
+  if(state.mapFocus) return {s, ox:w/2-(rad(state.mapFocus.lon)-MX0)*s,
+    oy:(h-54)/2-(MY1-merc(state.mapFocus.lat))*s};
   return {s, ox:(w - SPAN_X*s)/2, oy:(h - SPAN_Y*s)/2 - 18};
+}
+document.getElementById('resetMap').onclick = () => {
+  state.mapFocus = null;
+  document.getElementById('resetMap').hidden = true;
+  document.querySelector('#evi .cand.focused')?.classList.remove('focused');
+  draw();
+};
+
+function renderOutside(){
+  const el = document.getElementById('outside3d');
+  const rows = outsideCandidates(state.places, state.year, state.on, state.origin);
+  el.hidden = !rows.length;
+  el.querySelector('summary').textContent = `3D 틀 밖의 위치 후보 ${rows.length}개`;
+  const list = el.querySelector('div');
+  list.replaceChildren();
+  for(const {place, candidate} of rows){
+    const button = document.createElement('button');
+    button.dataset.place = place.id;
+    button.textContent = `${place.labelKo || place.label} · ${candidate.view || candidate.basis || '위치 후보'} (${candidate.lat.toFixed(4)}, ${candidate.lon.toFixed(4)}) → 지도·근거`;
+    button.onclick = () => {
+      state.mapFocus = candidate;
+      document.getElementById('resetMap').hidden = false;
+      b2d.click();
+      select(place.id);
+    };
+    list.append(button);
+  }
 }
 function proj(lon, lat, v){
   return [ v.ox + (rad(lon)-MX0)*v.s, v.oy + (MY1-merc(lat))*v.s ];
@@ -760,7 +798,7 @@ async function select(id, reveal = true){
     ` · ${c.validFrom==null ? '' : (c.validFrom < 0 ? '기원전 '+(-c.validFrom) : c.validFrom)}~${c.validTo==null ? '' : (c.validTo < 0 ? '기원전 '+(-c.validTo) : c.validTo)}`;
   const candidates = visibleCandidates(p);
   const cands = p.entityType ? '' : candidates.length
-    ? candidates.map(c => `<div class="cand${candActive(c) ? '' : ' off'}">
+    ? candidates.map(c => `<div class="cand${candActive(c) ? '' : ' off'}${c === state.mapFocus ? ' focused' : ''}">
         <div class="co">${c.lat.toFixed(4)}, ${c.lon.toFixed(4)} · ${esc0(c.precision)}${c.view ? ' · ' + esc0(c.view) : ''}${escH(span(c))}</div>
         <div class="bs">${esc0(c.basis)} ${externalLink(c.sourceUrl, '출처')}${c.origin === 'ai' ? ' <span class="badge ai">조사(자동) · 미확인</span>' : ''}</div></div>`).join('')
     : state.origin !== 'all' && p.candidates.length ? '<p class="empty">현재 작성자 필터에 맞는 좌표 연결이 없다.</p>'
@@ -873,6 +911,7 @@ b2d.onclick = () => { state.mode='2d'; document.body.classList.remove('mode3d');
   document.getElementById('hint').textContent='지명을 클릭하면 근거가 열린다'; };
 b3d.onclick = () => { state.mode='3d'; document.body.classList.add('mode3d');
   b3d.classList.add('on'); b2d.classList.remove('on'); init3d();
+  renderOutside();
   document.getElementById('hint').textContent='드래그로 회전 · 휠로 확대'; };
 
 addEventListener('resize', () => { draw(); if(state.mode==='3d') resize3d(); });
@@ -944,6 +983,7 @@ async function init3d(){
 
 function resize3d(){ if(R) R.engine.resize(); }
 function draw3d(){
+  renderOutside();
   if(!R) return;
   R.world.setYear(state.year);
   R.world.setOrigin(state.origin);

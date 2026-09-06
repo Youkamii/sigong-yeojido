@@ -1,6 +1,6 @@
 import { strict as assert } from 'node:assert';
 import { test } from 'node:test';
-import { activeAt, candActive, originMatches } from '../services/host/app/place-state.js';
+import { activeAt, candActive, originMatches, outsideCandidates, inDiorama } from '../services/host/app/place-state.js';
 
 test('date boundaries and undated candidates are shared', () => {
   assert.equal(candActive({validFrom:-18, validTo:475}, -18), true);
@@ -42,4 +42,17 @@ test('origin filter inherits provenance without treating missing authorship as h
   assert.equal(activeAt(p, 550, null, 'human'), true);
   assert.equal(activeAt(p, 550, new Set(), 'human'), false);
   assert.equal(activeAt(p, 414, null, 'all'), true);
+});
+
+test('outside candidates retain dates, sources and authorship instead of vanishing', () => {
+  const p = {id:'nangnang',sourceId:'s',origin:'ai',candidates:[
+    {lon:125.75,lat:39.02}, {lon:120.5,lat:41.5,validFrom:-108,validTo:313}
+  ]};
+  assert.equal(inDiorama({lon:123,lat:43.5}), true);
+  const rows = outsideCandidates([p],100,new Set(['s']));
+  assert.equal(rows.length,1);
+  assert.equal(rows[0].candidate,p.candidates[1]);
+  assert.equal(outsideCandidates([p],414,new Set(['s'])).length,0);
+  assert.equal(outsideCandidates([p],100,new Set()).length,0);
+  assert.equal(outsideCandidates([p],100,new Set(['s']),'human').length,0);
 });

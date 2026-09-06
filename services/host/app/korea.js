@@ -1,4 +1,4 @@
-import { activeAt, candActive, originMatches } from './place-state.js';
+import { activeAt, candActive, originMatches, DIORAMA_BOUNDS, inDiorama } from './place-state.js';
 // app/korea.js — 실제 한반도를 판톨로지 아트 바이블의 언어로 세운다.
 //
 // 판톨로지의 terrain.js 는 절차 생성 판타지 대륙이다. 우리는 지형이 실측이므로
@@ -20,7 +20,7 @@ import { makeGlow, patchFanMaterial } from './style.js';
 import { canvasTexture } from './util.js';
 
 /* ── 디오라마 범위 — 한반도 + 지안(국내성) + 일본 서안 한 자락 ── */
-export const BOX = { lon0: 123.0, lon1: 132.0, lat0: 33.0, lat1: 43.5 };
+export const BOX = DIORAMA_BOUNDS;
 
 const merc = (lat) => Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360));
 const rad = (lon) => (lon * Math.PI) / 180;
@@ -537,11 +537,10 @@ export class KoreaWorld {
     marks.name = 'places';
     // 디오라마 틀(BOX) 밖의 후보는 세우지 않는다 — 허공에 뜬 기둥은 거짓 위치처럼 읽힌다.
     // 2D 지도와 근거 패널에는 그대로 나온다. 몇 개를 숨겼는지는 hiddenOutside 에 남긴다.
-    const inBox = (c) => c.lon >= BOX.lon0 && c.lon <= BOX.lon1 && c.lat >= BOX.lat0 && c.lat <= BOX.lat1;
     this.hiddenOutside = [];
     for (const p of places) {
       if (!p.candidates?.length) continue;      // 미정은 세우지 않는다
-      const cands = p.candidates.filter(inBox);
+      const cands = p.candidates.filter(inDiorama);
       if (cands.length < p.candidates.length) this.hiddenOutside.push([p.id, p.candidates.length - cands.length]);
       if (!cands.length) continue;
       const cols = cands.map((c, i) => {
