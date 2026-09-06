@@ -9,6 +9,14 @@
 
 **§7의 1~4·6 완료. 다음은 5, 고려사·삼국유사 지명 후보 조사(#18).** 사료 증가에 필요한 6(묶기·접기)은 4와 함께 처리했다.
 
+**현재 역할 분담(#33, 이후 사용자 지시): 개발·통합·총괄은 Codex, 조사·수집은 Claude Opus 5 / Max effort.**
+필요하면 조사 에이전트 10~20개 병렬 호출도 허용하지만, 아래 과거 워크플로를 일괄 재실행하라는 뜻은 아니다. 기능별 이슈·커밋은 유지한다.
+별도 터미널 창을 열지 않는다. 로컬 Claude Code 2.1.261의 `claude.exe --print --model claude-opus-5 --effort max`를
+`CREATE_NO_WINDOW`로 실행하고 입출력은 파일로 받는다. 사용자 훅·플러그인이 창을 열지 않도록 이 호출에는 `--safe-mode`를 쓴다.
+실제 응답의 모델 `claude-opus-5`를 확인했다. 호출 확인 기록: 로컬 `%TEMP%/sigong-opus-probe/run.json`.
+#18은 고려사·삼국유사 각 상위 40개를 10개씩 8건으로 나눠 진행 중이다. 입력·진척·산출물은 `%TEMP%/sigong-places-opus5/`에 있다.
+조사 초안은 아직 운영 반영 결과가 아니며, 원문·좌표 대조와 별도 조사 검증 후 반영한다.
+
 | 기능 | 이슈 | 커밋 |
 |---|---|---|
 | 상세 원문을 응답할 때만 읽고, 검색 색인 메모리·원문 응답 크기 제한 | #30 | `9b4d95f` |
@@ -96,7 +104,7 @@
 - 사료는 "전부, 모조리" 수집. 고조선~현대 통사, 뼈대 먼저.
 - 구축·배포는 **c2**(lia-c2). c3 는 개인비서 서버라 쓰지 않는다. c2 의 FinBridge(:8891) 등 다른 서비스를 건드리지 않는다.
 - 기능마다 GitHub 이슈, 이슈 번호 붙인 기능별 커밋. **화면을 직접 보기 전에 "된다"고 말하지 않는다.** 말은 짧고 쉽게.
-- 2026-09-06 지시: **개발용 하위 에이전트는 Fable 5.1 effort high 로만**(max 금지). 토큰을 너무 썼다. 이후 작업은 Codex 로.
+- 2026-09-06 최신 지시: **개발·총괄은 Codex, 조사·수집은 Claude Opus 5 / Max effort**. 필요한 조사 병렬 호출 10~20개도 허용. 이전 개발용 하위 에이전트의 Fable 5.1 high 제한을 조사에 적용하지 않는다. 새 터미널 창은 열지 않는다.
 
 ## 2. 어디에 무엇이 있나
 
@@ -266,7 +274,7 @@
 - 국편 사이트(db.history.go.kr, contents.history.go.kr)는 robots.txt 전면 Disallow — 긁지 않는다. 벌크 다운로드는 한 번만(캡차 경로 있음).
 - 판톨로지 이식 파일은 건드리지 않는다. 팔레트는 artbible PALETTE 만.
 - WebGL 헤드리스 캡처는 `composer.render()` → `toDataURL` (뷰포트 스크린샷은 검게 나옴). gstack /browse 는 WebGL 에서 죽어서 c2 Playwright 하네스로 대체.
-- 하위 에이전트 세션 한도: "resets HH:MM" 이 뜨면 그 뒤 `Workflow({scriptPath, resumeFromRunId})` 로 재개(완료분은 캐시). **effort 는 high 까지.**
+- 하위 에이전트 세션 한도: "resets HH:MM"이 뜨면 중간 산출물과 로그를 남기고 해제 뒤 재개한다. 과거 Workflow 기록은 `resumeFromRunId`를 썼다. **현재 조사 호출은 Claude Opus 5 / Max effort**이므로 과거 스크립트의 모델 설정을 그대로 재사용하지 않는다.
 - 워크플로 워크트리는 `Map-of-the-Great-East` 저장소의 `origin/main` 에서 갈라진다 — 새 워크플로 전에 거기서 `git fetch origin`.
 - 메모리(Claude): `C:\Users\gkfkd\.claude\projects\C--Users-gkfkd-Git-Map-of-the-Great-East\memory\` — `sigong-resume-point.md`, `feedback-verify-and-plain.md`, `feedback-subagent-model-tokens.md`.
 
