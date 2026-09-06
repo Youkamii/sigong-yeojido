@@ -1,0 +1,83 @@
+{
+  "group": "wikisource",
+  "issue": 64,
+  "sourceIds": [
+    "src-treaty-annexation-1910",
+    "src-3-1-declaration-1919",
+    "src-imsi-heonjang-1919",
+    "src-rok-constitution-1948",
+    "src-armistice-1953",
+    "src-rok-constitution-1987",
+    "src-inter-korean-basic-agreement-1991",
+    "src-panmunjom-declaration-2018"
+  ],
+  "claims": [
+    "claim-annexation-treaty-dated-1910-08-22",
+    "claim-annexation-treaty-art1-content",
+    "claim-samil-declaration-dated-1919-03-01",
+    "claim-imsi-heonjang-dated-1919-04",
+    "claim-rok-constitution-effective-1948-07-17",
+    "claim-rok1948-territory-clause",
+    "claim-armistice-drawn-1953-07-27-panmunjom",
+    "claim-basic-agreement-dated-1991-12-13",
+    "claim-basic-agreement-mutual-system-recognition",
+    "claim-panmunjom-declaration-dated-2018-04-27"
+  ],
+  "withheld": [
+    {
+      "id": "claim-rok-constitution-1987-promulgated",
+      "reason": "no verified excerpt for this claim; metadata sources are not reassigned"
+    },
+    {
+      "id": "claim-rok-constitution-1987-effective",
+      "reason": "no verified excerpt for this claim; metadata sources are not reassigned"
+    }
+  ],
+  "normalizations": [
+    {
+      "id": "claim-rok-constitution-effective-1948-07-17",
+      "change": "date citation moved to the exact separately identified editorial metadata"
+    },
+    {
+      "id": "claim-armistice-drawn-1953-07-27-panmunjom",
+      "change": "작성한다 supports document preparation, not a separate signing act"
+    }
+  ],
+  "files": [
+    "data\\sources\\treaty-annexation-1910.md",
+    "data\\sources\\treaty-annexation-1910\\chunks.jsonl",
+    "data\\entities\\event\\event-korea-japan-annexation-treaty.md",
+    "data\\claims\\treaty-annexation-1910\\chunk_ex-annex1910-date.md",
+    "data\\claims\\treaty-annexation-1910\\chunk_ex-annex1910-art1.md",
+    "data\\sources\\3-1-declaration-1919.md",
+    "data\\sources\\3-1-declaration-1919\\chunks.jsonl",
+    "data\\entities\\event\\event-samil-declaration.md",
+    "data\\claims\\3-1-declaration-1919\\chunk_ex-3-1-decl-date.md",
+    "data\\sources\\imsi-heonjang-1919.md",
+    "data\\sources\\imsi-heonjang-1919\\chunks.jsonl",
+    "data\\entities\\event\\event-imsi-heonjang-proclaimed.md",
+    "data\\claims\\imsi-heonjang-1919\\chunk_ex-imsi-date.md",
+    "data\\sources\\rok-constitution-1948.md",
+    "data\\sources\\rok-constitution-1948\\chunks.jsonl",
+    "data\\entities\\event\\event-rok-constitution-enacted.md",
+    "data\\entities\\polity\\polity-rok.md",
+    "data\\claims\\rok-constitution-1948\\chunk_ex-rok1948-art99-metadata.md",
+    "data\\claims\\rok-constitution-1948\\chunk_ex-rok1948-art4.md",
+    "data\\sources\\armistice-1953.md",
+    "data\\sources\\armistice-1953\\chunks.jsonl",
+    "data\\entities\\event\\event-korean-armistice.md",
+    "data\\claims\\armistice-1953\\chunk_ex-armistice-signing-line.md",
+    "data\\sources\\rok-constitution-1987.md",
+    "data\\sources\\rok-constitution-1987\\chunks.jsonl",
+    "data\\sources\\inter-korean-basic-agreement-1991.md",
+    "data\\sources\\inter-korean-basic-agreement-1991\\chunks.jsonl",
+    "data\\entities\\event\\event-inter-korean-basic-agreement.md",
+    "data\\claims\\inter-korean-basic-agreement-1991\\chunk_ex-basic-agreement-date.md",
+    "data\\claims\\inter-korean-basic-agreement-1991\\chunk_ex-basic-agreement-art1.md",
+    "data\\sources\\panmunjom-declaration-2018.md",
+    "data\\sources\\panmunjom-declaration-2018\\chunks.jsonl",
+    "data\\entities\\event\\event-panmunjom-declaration.md",
+    "data\\claims\\panmunjom-declaration-2018\\chunk_ex-panmunjom-2018-date-signatories.md"
+  ],
+  "humanReviewed": false
+}

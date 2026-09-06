@@ -1,0 +1,908 @@
+{
+  "task": "modern-sources-52",
+  "generatedAt": "2026-09-06",
+  "status": "final",
+  "producedBy": "claude-opus-5 (AI). 사람이 검토하지 않았다.",
+  "readme": {
+    "scope": "근대·현대(1945년 이후 포함)와 북한 자체 서술의 원자료 공백을 메울 공개 원문 조사. 대통령기록관·법제처·통일법제데이터베이스·국가기록원 등 기관 원문을 우선 시도했고, 기관 페이지가 JS 렌더링/이미지/PDF 로 본문 텍스트를 주지 않는 경우에만 전사(轉寫) 사이트를 쓰고 kind 와 institutionalOriginal 필드로 구분했다.",
+    "quoteVerification": "excerpts[].text 는 WebFetch 의 HTML→텍스트 변환을 거쳐 추출한 것이다. schema.md §7.1 의 substring 검증을 통과시키려면 적재 전에 excerpts[].url 을 다시 받아 문자 단위로 대조해야 한다. 대조 전 상태는 각 excerpt 의 verbatim 필드에 적었다. 사람이 확인한 것은 없다.",
+    "quotaPolicy": "웹페이지 1건당 직접 인용 합계 25어절 이하를 지켰다(perPageQuotedWords 참고). 현대 저작물(기관 해설문·백과사전)은 quote 와 summary 를 분리했다.",
+    "narrativeSeparation": "narrativeVoice 로 구분한다: rok-official(대한민국 공식) / dprk-official(북한 자체) / inter-korean-joint(남북 공동 명의) / colonial-era-korean(식민지기 조선인 당사자) / imperial-japan-and-korean-empire(1910 조약 당사자) / modern-institution(현대 기관 해설) / modern-scholarship(현대 연구자).",
+    "confidence": "confirmed = 읽은 원문 문면 또는 기관 페이지 메타데이터가 직접 뒷받침. inferred = 원문에서 따라오지만 문면에 없음. unverified = 확인하지 못함.",
+    "normalization": "원문 내부 한문·이두식 표기·북한 표기(두음법칙 미적용, '우리 나라' 띄어쓰기)·1950년대 구철자('안저서','결정했든')는 번역하거나 정규화하지 않았다.",
+    "sourceCount": 12,
+    "eventYearClaimCount": 14,
+    "supportingTextualClaimCount": 5,
+    "totalClaimCount": 19,
+    "claimCountNote": "요구 범위(사건·연도 Claim 8~15개)에 해당하는 것은 objectTime 을 가진 14개다. 나머지 5개는 같은 증거로 세운 문면 내용 Claim 이며 연도를 주장하지 않는다."
+  },
+  "sources": [
+    {
+      "id": "src-treaty-annexation-1910",
+      "title": "한일병합조약 (韓國併合에 關한 條約)",
+      "publisher": "위키문헌 (Wikimedia Foundation)",
+      "url": "https://ko.wikisource.org/wiki/%ED%95%9C%EC%9D%BC%EB%B3%91%ED%95%A9%EC%A1%B0%EC%95%BD",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "public-domain",
+      "licenseNote": "페이지 표시: 저작자 사후 70년 경과 관할권에서 퍼블릭 도메인. 조약문은 대한민국 저작권법 제7조(보호받지 못하는 저작물)에도 해당한다. 위키 편집물 자체는 CC BY-SA 4.0.",
+      "licenseUrl": "https://ko.wikisource.org/wiki/%EC%9C%84%ED%82%A4%EB%AC%B8%ED%97%8C:%EC%A0%80%EC%9E%91%EA%B6%8C",
+      "coversFrom": 1910,
+      "coversTo": 1910,
+      "compiledFrom": 1910,
+      "compiledTo": 1910,
+      "kind": "조약 원문(전사)",
+      "originalLanguage": "kokanmun",
+      "narrativeVoice": "imperial-japan-and-korean-empire",
+      "perPageQuotedWords": 3,
+      "institutionalOriginal": {
+        "status": "unavailable",
+        "note": "일본 국립공문서관·아시아역사자료센터 및 대한민국 국가기록원의 조약 원본 이미지가 존재할 것으로 보이나 이번에 텍스트를 확인하지 못했다. 국사편찬위 contents.history.go.kr 는 프로젝트 robots 제한으로 열지 않았다."
+      },
+      "excerpts": [
+        {
+          "id": "ex-annex1910-art1",
+          "text": "韓國皇帝陛下ᄂᆞᆫ韓國全部에關ᄒᆞᆫ一切統治權을完全且永久히日本國皇帝陛下에게讓與ᄒᆞᆷ",
+          "locator": "제1조",
+          "url": "https://ko.wikisource.org/wiki/%ED%95%9C%EC%9D%BC%EB%B3%91%ED%95%A9%EC%A1%B0%EC%95%BD",
+          "lang": "kokanmun",
+          "verbatim": "webfetch-extracted; 원본 대조 필요. 아래아(ᄂᆞᆫ, ᄒᆞᆫ, ᄒᆞᆷ) 표기를 현대 철자로 고치지 말 것."
+        },
+        {
+          "id": "ex-annex1910-date",
+          "text": "隆熙四年八月二十二日",
+          "locator": "말미 일자 행 (한국 측 연호)",
+          "url": "https://ko.wikisource.org/wiki/%ED%95%9C%EC%9D%BC%EB%B3%91%ED%95%A9%EC%A1%B0%EC%95%BD",
+          "lang": "hanmun",
+          "verbatim": "webfetch-extracted; 원본 대조 필요",
+          "parallelText": "明治四十三年八月二十二日 (일본 측 연호, 같은 행에 병기)"
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-annexation-treaty-dated-1910-08-22",
+          "claimKind": "event-year",
+          "subject": "event-korea-japan-annexation-treaty",
+          "predicate": "dated",
+          "objectTime": {
+            "verbatim": "隆熙四年八月二十二日",
+            "verbatimAlt": "明治四十三年八月二十二日",
+            "year": 1910,
+            "month": 8,
+            "day": 22,
+            "precision": "day",
+            "eraNote": "隆熙(대한제국) 4년과 明治 43년이 나란히 적혀 있다. 두 연호 표기를 모두 보존한다."
+          },
+          "citesExcerpt": "ex-annex1910-date",
+          "quote": "隆熙四年八月二十二日",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "문서에 적힌 일자다. 통설의 공포일(1910-08-29)은 이 문면에 없으므로 별도 근거 없이 넣지 않았다. 조약의 효력·유효성 자체는 남북·일본이 서로 다르게 서술하는 쟁점이므로 이 Claim 은 '문서에 이 날짜가 적혀 있다'만 말한다."
+        },
+        {
+          "id": "claim-annexation-treaty-art1-content",
+          "claimKind": "textual",
+          "subject": "event-korea-japan-annexation-treaty",
+          "predicate": "statesTransferOfSovereignty",
+          "objectValue": "韓國全部에關ᄒᆞᆫ一切統治權 → 日本國皇帝陛下",
+          "citesExcerpt": "ex-annex1910-art1",
+          "quote": "韓國皇帝陛下ᄂᆞᆫ韓國全部에關ᄒᆞᆫ一切統治權을完全且永久히日本國皇帝陛下에게讓與ᄒᆞᆷ",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "조약 문면이 무엇을 규정했는지에 대한 Claim 이다. 조약의 성립·유효 여부에 대한 판정이 아니다."
+        }
+      ]
+    },
+    {
+      "id": "src-3-1-declaration-1919",
+      "title": "3·1독립선언서 (己未獨立宣言書)",
+      "publisher": "위키문헌 (Wikimedia Foundation)",
+      "url": "https://ko.wikisource.org/wiki/3%C2%B71%EB%8F%85%EB%A6%BD%EC%84%A0%EC%96%B8%EC%84%9C",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "public-domain",
+      "licenseNote": "페이지 표시: 원문은 저작자 사후 100년 경과로 퍼블릭 도메인. 같은 문서에 병기된 현대어 풀이는 공공누리 제1유형(출처표시)으로 별도 표시되어 있으며 원문과 이용조건이 다르다. 원문만 쓰고 풀이는 인용하지 않았다.",
+      "licenseUrl": "https://ko.wikisource.org/wiki/%EC%9C%84%ED%82%A4%EB%AC%B8%ED%97%8C:%EC%A0%80%EC%9E%91%EA%B6%8C",
+      "coversFrom": 1919,
+      "coversTo": 1919,
+      "compiledFrom": 1919,
+      "compiledTo": 1919,
+      "kind": "선언문 원문(전사)",
+      "originalLanguage": "kokanmun",
+      "narrativeVoice": "colonial-era-korean",
+      "perPageQuotedWords": 15,
+      "institutionalOriginal": {
+        "status": "unavailable",
+        "note": "원본은 독립기념관 소장, 국가지정기록물 제12호로 알려져 있으나 해당 기관의 전문 텍스트 페이지를 확인하지 못했다."
+      },
+      "excerpts": [
+        {
+          "id": "ex-3-1-decl-open",
+          "text": "吾等은 玆에 我 朝鮮의 獨立國임과 朝鮮人의 自主民임을 宣言하노라",
+          "locator": "본문 첫 문장",
+          "url": "https://ko.wikisource.org/wiki/3%C2%B71%EB%8F%85%EB%A6%BD%EC%84%A0%EC%96%B8%EC%84%9C",
+          "lang": "kokanmun",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        },
+        {
+          "id": "ex-3-1-decl-date",
+          "text": "朝鮮建國 四千二百五十二年 三月 一日 朝鮮民族代表",
+          "locator": "말미 일자·서명 행",
+          "url": "https://ko.wikisource.org/wiki/3%C2%B71%EB%8F%85%EB%A6%BD%EC%84%A0%EC%96%B8%EC%84%9C",
+          "lang": "kokanmun",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-samil-declaration-dated-1919-03-01",
+          "claimKind": "event-year",
+          "subject": "event-samil-declaration",
+          "predicate": "dated",
+          "objectTime": {
+            "verbatim": "朝鮮建國 四千二百五十二年 三月 一日",
+            "year": 1919,
+            "month": 3,
+            "day": 1,
+            "precision": "day",
+            "eraNote": "檀紀(조선건국) 4252년 표기. 서기 환산값을 병기하되 원표기를 버리지 않는다."
+          },
+          "citesExcerpt": "ex-3-1-decl-date",
+          "quote": "朝鮮建國 四千二百五十二年 三月 一日",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "檀紀 4252 → 서기 1919 환산은 관례적 환산이고 문면에 서기 연도는 없다. schema.md §8.1 에 따라 환산 자체를 별도 Claim 으로 분리할 수 있다."
+        }
+      ]
+    },
+    {
+      "id": "src-imsi-heonjang-1919",
+      "title": "대한민국임시헌장 (제1호)",
+      "publisher": "위키문헌 (Wikimedia Foundation)",
+      "url": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9E%84%EC%8B%9C%ED%97%8C%EC%9E%A5_(%EC%A0%9C1%ED%98%B8)",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "public-domain",
+      "licenseNote": "페이지 표시: 대한민국 저작권법 제7조(헌법·법률·조약·명령 등 보호받지 못하는 저작물)에 따른 퍼블릭 도메인.",
+      "licenseUrl": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A0%80%EC%9E%91%EA%B6%8C%EB%B2%95/%EC%A0%9C7%EC%A1%B0",
+      "coversFrom": 1919,
+      "coversTo": 1919,
+      "compiledFrom": 1919,
+      "compiledTo": 1919,
+      "kind": "헌법 원문(전사)",
+      "originalLanguage": "kokanmun",
+      "narrativeVoice": "colonial-era-korean",
+      "perPageQuotedWords": 16,
+      "excerpts": [
+        {
+          "id": "ex-imsi-art1",
+          "text": "大韓民國은 民主共和制로 함.",
+          "locator": "제1조",
+          "url": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9E%84%EC%8B%9C%ED%97%8C%EC%9E%A5_(%EC%A0%9C1%ED%98%B8)",
+          "lang": "kokanmun",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        },
+        {
+          "id": "ex-imsi-art2",
+          "text": "大韓民國은 臨時政府가 臨時議政院의 決議에 依하야 此를 統治함.",
+          "locator": "제2조",
+          "url": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9E%84%EC%8B%9C%ED%97%8C%EC%9E%A5_(%EC%A0%9C1%ED%98%B8)",
+          "lang": "kokanmun",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        },
+        {
+          "id": "ex-imsi-date",
+          "text": "大韓民國 元年 四月 日",
+          "locator": "말미 일자 행",
+          "url": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9E%84%EC%8B%9C%ED%97%8C%EC%9E%A5_(%EC%A0%9C1%ED%98%B8)",
+          "lang": "kokanmun",
+          "verbatim": "webfetch-extracted; 원본 대조 필요. 일(日) 앞 숫자가 비어 있는 상태 그대로다."
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-imsi-heonjang-dated-1919-04",
+          "claimKind": "event-year",
+          "subject": "event-imsi-heonjang-proclaimed",
+          "predicate": "dated",
+          "objectTime": {
+            "verbatim": "大韓民國 元年 四月 日",
+            "year": 1919,
+            "month": 4,
+            "day": null,
+            "precision": "month",
+            "eraNote": "「大韓民國 元年」 연호. 임시정부 자체 기년이다."
+          },
+          "citesExcerpt": "ex-imsi-date",
+          "quote": "大韓民國 元年 四月 日",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "통설의 1919-04-11 공포일은 이 문면에 없다. 원문에 일자 숫자가 비어 있으므로 precision 을 month 로 둔다. 같은 사료의 제1조 「大韓民國은 民主共和制로 함」은 정체(政體) Claim 으로 따로 세울 수 있다(ex-imsi-art1)."
+        }
+      ]
+    },
+    {
+      "id": "src-rok-constitution-1948",
+      "title": "대한민국헌법 (헌법 제1호, 제헌헌법)",
+      "publisher": "위키문헌 (Wikimedia Foundation)",
+      "url": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%ED%97%8C%EB%B2%95_(%EC%A0%9C1%ED%98%B8)",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "public-domain",
+      "licenseNote": "페이지 표시: 저작권법 제7조에 따른 퍼블릭 도메인.",
+      "licenseUrl": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A0%80%EC%9E%91%EA%B6%8C%EB%B2%95/%EC%A0%9C7%EC%A1%B0",
+      "coversFrom": 1948,
+      "coversTo": 1952,
+      "coversToConfidence": "unverified",
+      "compiledFrom": 1948,
+      "compiledTo": 1948,
+      "kind": "헌법 원문(전사)",
+      "originalLanguage": "ko",
+      "narrativeVoice": "rok-official",
+      "perPageQuotedWords": 18,
+      "institutionalOriginal": {
+        "status": "partial",
+        "note": "국회기록원(nara.go.kr)이 국회법률정보시스템 출력본 PDF(9쪽)를 공개한다. 이번 실행 환경에 PDF 렌더러(pdftoppm)가 없어 본문 판독에 실패했다. 법제처 국가법령정보센터(law.go.kr) 조문 본문은 JS 렌더링이라 텍스트를 얻지 못했다.",
+        "pdfUrl": "https://www.nara.go.kr/upload/namo/files/000006/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%ED%97%8C%EB%B2%95(%ED%97%8C%EB%B2%95%EC%A0%9C1%ED%98%B8).pdf",
+        "pdfPublisher": "국회기록원 (National Assembly Records and Archives, www.nara.go.kr)",
+        "pdfHeaderPerSearchSnippet": "「국회법률정보시스템 대한민국헌법 [시행 1948.7.17.][헌법 제1호, 1948.7.17., 제정]」 — 검색 결과 스니펫에서 본 문자열이며 PDF 본문으로 직접 확인하지 못했다."
+      },
+      "excerpts": [
+        {
+          "id": "ex-rok1948-art1",
+          "text": "대한민국은 민주공화국이다.",
+          "locator": "제1장 총강 제1조",
+          "url": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%ED%97%8C%EB%B2%95_(%EC%A0%9C1%ED%98%B8)",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        },
+        {
+          "id": "ex-rok1948-art4",
+          "text": "대한민국의 영토는 한반도와 그 부속도서로 한다.",
+          "locator": "제1장 총강 제4조",
+          "url": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%ED%97%8C%EB%B2%95_(%EC%A0%9C1%ED%98%B8)",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        },
+        {
+          "id": "ex-rok1948-art99",
+          "text": "이 헌법은 이 헌법을 제정한 국회의 의장이 공포한 날로부터 시행한다.",
+          "locator": "제10장 부칙 제99조 (첫 문장만 인용)",
+          "url": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%ED%97%8C%EB%B2%95_(%EC%A0%9C1%ED%98%B8)",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-rok-constitution-effective-1948-07-17",
+          "claimKind": "event-year",
+          "subject": "event-rok-constitution-enacted",
+          "predicate": "effectiveFrom",
+          "objectTime": { "verbatim": "시행 1948.7.17", "year": 1948, "month": 7, "day": 17, "precision": "day" },
+          "citesExcerpt": "ex-rok1948-art99",
+          "citesMetadata": "위키문헌 문서 머리: 제정일 1948.7.12 / 시행일 1948.7.17",
+          "quote": "이 헌법은 이 헌법을 제정한 국회의 의장이 공포한 날로부터 시행한다.",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "두 층위를 섞지 말 것. 인용한 부칙 문장은 '공포한 날로부터 시행'이라는 규정만 말하고, 1948-07-17 이라는 날짜는 전사 사이트의 머리 메타데이터에서 왔다. 같은 메타데이터가 제정일을 1948-07-12 로 적는데, 이는 아직 기관 원문(관보 제1호 또는 법제처)으로 재확인하지 못했으므로 inferred 로 취급할 것."
+        },
+        {
+          "id": "claim-rok1948-territory-clause",
+          "claimKind": "textual",
+          "subject": "polity-rok",
+          "predicate": "statesTerritoryAs",
+          "objectValue": "한반도와 그 부속도서",
+          "citesExcerpt": "ex-rok1948-art4",
+          "quote": "대한민국의 영토는 한반도와 그 부속도서로 한다.",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "헌법 문면의 영토 규정이며 실효 지배 범위에 대한 판정이 아니다. 북측 헌법의 대응 규정과 나란히 놓으면 남북 서술 대조 렌즈가 된다."
+        }
+      ]
+    },
+    {
+      "id": "src-pa-speech-records",
+      "title": "대통령기록관 연설기록 (제1대 이승만 대통령 기록 3건)",
+      "publisher": "대통령기록관 (Presidential Archives of Korea, 행정안전부)",
+      "url": "https://www.pa.go.kr/research/contents/speech/index.jsp",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "open",
+      "licenseNote": "각 기록 페이지에 공공누리 '출처표시 + 변경금지' 표시가 붙어 있다(유형 번호는 페이지에서 확정하지 못함, 제3유형으로 추정). 변경금지 조건이므로 구철자·띄어쓰기를 고치지 말고 그대로 적재해야 한다. 푸터는 'COPYRIGHT 2019 ⓒ PRESIDENTIAL ARCHIVES. ALL RIGHTS RESERVED.'",
+      "licenseUrl": "https://www.pa.go.kr/",
+      "licenseConfidence": "unverified",
+      "coversFrom": 1948,
+      "coversTo": 1953,
+      "compiledFrom": 1948,
+      "compiledTo": 1953,
+      "kind": "대통령 연설·담화 기록(기관 원문, HTML 전문 제공)",
+      "originalLanguage": "ko",
+      "narrativeVoice": "rok-official",
+      "perPageQuotedWords": "페이지(artid)별로 각각 17 / 11 / 21 어절",
+      "collectionNote": "전체 컬렉션은 제1대~제20대 약 9,600여 건으로 안내되어 있다. 여기 수록한 것은 이번에 실제로 열어본 3건뿐이다.",
+      "excerpts": [
+        {
+          "id": "ex-pa-rhee-oath-1948",
+          "text": "나 이승만은 국헌을 준수하며 국민의 복리를 증진하며 국가를 보호하여 대통령의 직책을 성실히 수행할 것을 국민에게 엄숙히 선언합니다.",
+          "locator": "연설기록 artid=1311382 / 이승만 / 1948.07.24 / 취임선서",
+          "url": "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02064&artid=1311382",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        },
+        {
+          "id": "ex-pa-rhee-transfer-1948",
+          "text": "군정과 민국정부 사이에 이양하고 접수하는 조건이 양편에 충분하게 작성되어야 한다",
+          "locator": "연설기록 artid=1310446 / 이승만 / 1948.09.04 / 성명·담화문 「정권 이양문제에 대하여」",
+          "url": "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&catid=c_pa02062&artid=1310446",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        },
+        {
+          "id": "ex-pa-rhee-war3rd-1953",
+          "text": "우리 청년들의 애국충심으로 우리 반도를 가만히 안저서 남에게 뺏길 수 없다는 용감심으로 전국이 일어나서 죽기로 싸우기를 결정했든 것이다.",
+          "locator": "연설기록 artid=1310833 / 이승만 / 1953.06.25 / 기념사 「6·25 사변 제3주년 기념사」",
+          "url": "https://www.pa.go.kr/research/contents/speech/index.jsp?spMode=view&artid=1310833&catid=c_pa02062",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요. 1950년대 구철자('안저서','결정했든')를 정규화하지 말 것."
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-rhee-oath-1948-07-24",
+          "claimKind": "event-year",
+          "subject": "event-rok-first-president-oath",
+          "predicate": "occurredOn",
+          "objectTime": { "verbatim": "1948.07.24", "year": 1948, "month": 7, "day": 24, "precision": "day" },
+          "citesExcerpt": "ex-pa-rhee-oath-1948",
+          "citesMetadata": "대통령기록관 연설기록 메타데이터: 대통령 이승만 / 연설일자 1948.07.24 / 유형 취임선서",
+          "quote": "나 이승만은 국헌을 준수하며",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "정부수립 선포(1948-08-15)와는 다른 사건이므로 분리해 적재할 것. '제1대'라는 서수는 문면에 없고 컬렉션 분류에서 온 정보다."
+        },
+        {
+          "id": "claim-rhee-transfer-statement-1948-09-04",
+          "claimKind": "event-year",
+          "subject": "event-usamgik-to-rok-transfer-statement",
+          "predicate": "occurredOn",
+          "objectTime": { "verbatim": "1948.09.04", "year": 1948, "month": 9, "day": 4, "precision": "day" },
+          "citesExcerpt": "ex-pa-rhee-transfer-1948",
+          "citesMetadata": "대통령기록관 연설기록 메타데이터: 이승만 / 1948.09.04 / 성명·담화문 / 제목 「정권 이양문제에 대하여」",
+          "quote": "군정과 민국정부 사이에 이양하고 접수하는 조건이 양편에 충분하게 작성되어야 한다",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "미군정(군정)에서 대한민국 정부(민국정부)로의 권한 이양이 1948년 9월 초에도 협의 중이었음을 당대 공식 발언으로 뒷받침한다. 이양 완료일에 대한 Claim 은 아니다."
+        },
+        {
+          "id": "claim-rhee-war-3rd-anniversary-1953-06-25",
+          "claimKind": "event-year",
+          "subject": "event-korean-war-3rd-anniversary-address",
+          "predicate": "occurredOn",
+          "objectTime": { "verbatim": "1953.06.25", "year": 1953, "month": 6, "day": 25, "precision": "day" },
+          "citesExcerpt": "ex-pa-rhee-war3rd-1953",
+          "citesMetadata": "대통령기록관 연설기록 메타데이터: 이승만 / 1953.06.25 / 기념사 / 제목 「6·25 사변 제3주년 기념사」",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "제목의 '제3주년'과 1953-06-25 라는 일자가 함께 있으므로 기산점이 1950-06-25 임이 따라 나오지만, 전쟁 개시일 자체는 이 기록의 문면이 아니라 제목 해석에서 나오는 inferred 사항이다. 개시일 Claim 은 별도 사료로 세울 것."
+        }
+      ]
+    },
+    {
+      "id": "src-armistice-1953",
+      "title": "국제연합군 총사령관을 일방으로 하고 조선인민군 최고사령관 및 중국인민지원군 사령관을 다른 일방으로 하는 한국 군사정전에 관한 협정",
+      "publisher": "위키문헌 (Wikimedia Foundation)",
+      "url": "https://ko.wikisource.org/wiki/%ED%95%9C%EA%B5%AD%EC%A0%84%EC%9F%81_%EC%A0%95%EC%A0%84%ED%98%91%EC%A0%95%EB%AC%B8",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "public-domain",
+      "licenseNote": "페이지 표시: 조약·공문서로서 대한민국 저작권법 제7조에 따른 퍼블릭 도메인.",
+      "licenseUrl": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A0%80%EC%9E%91%EA%B6%8C%EB%B2%95/%EC%A0%9C7%EC%A1%B0",
+      "coversFrom": 1953,
+      "coversTo": 1953,
+      "compiledFrom": 1953,
+      "compiledTo": 1953,
+      "kind": "협정 원문(전사)",
+      "originalLanguage": "ko",
+      "narrativeVoice": "inter-korean-joint",
+      "narrativeVoiceNote": "서명 당사자가 국제연합군·조선인민군·중국인민지원군이다. 대한민국은 서명 당사자가 아니라는 점이 남북 서술 차이의 핵심 쟁점이므로 렌즈 설계 때 분리할 것.",
+      "perPageQuotedWords": 10,
+      "excerpts": [
+        {
+          "id": "ex-armistice-signing-line",
+          "text": "1953년 7월 27일 10:00시에 한국 판문점에서 영문, 한국문 및 중국문으로써 작성한다.",
+          "locator": "말미 작성 일시·장소·언어 조항",
+          "url": "https://ko.wikisource.org/wiki/%ED%95%9C%EA%B5%AD%EC%A0%84%EC%9F%81_%EC%A0%95%EC%A0%84%ED%98%91%EC%A0%95%EB%AC%B8",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-armistice-drawn-1953-07-27-panmunjom",
+          "claimKind": "event-year",
+          "subject": "event-korean-armistice",
+          "predicate": "signedAt",
+          "objectTime": { "verbatim": "1953년 7월 27일 10:00시", "year": 1953, "month": 7, "day": 27, "precision": "day" },
+          "objectPlaceLabel": "한국 판문점",
+          "citesExcerpt": "ex-armistice-signing-line",
+          "quote": "1953년 7월 27일 10:00시에 한국 판문점에서 영문, 한국문 및 중국문으로써 작성한다.",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "판문점의 좌표는 붙이지 않는다(schema.md §9: 좌표는 별도 Claim). 협정문이 영문·한국문·중국문 3개 정본으로 작성된다고 스스로 밝히므로, 언어별 판본 차이를 별개 chunk 로 둘 근거가 된다."
+        }
+      ]
+    },
+    {
+      "id": "src-dprk-socialist-constitution",
+      "title": "조선민주주의인민공화국 사회주의헌법",
+      "publisher": "위키문헌 (본문 전사) / 통일법제 데이터베이스 unilaw.go.kr — 통일부·법무부·법제처 공동 운영 (연혁 메타데이터)",
+      "url": "https://ko.wikisource.org/wiki/%EC%A1%B0%EC%84%A0%EB%AF%BC%EC%A3%BC%EC%A3%BC%EC%9D%98%EC%9D%B8%EB%AF%BC%EA%B3%B5%ED%99%94%EA%B5%AD_%EC%82%AC%ED%9A%8C%EC%A3%BC%EC%9D%98%ED%97%8C%EB%B2%95",
+      "metadataUrl": "https://www.unilaw.go.kr/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000021&nttId=235&bbsTyCode=BBST01&bbsAttrbCode=BBSA02&authFlag=Y&menuNo=3010000&upperMenuId=3000000",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "partial",
+      "accessNote": "unilaw.go.kr 게시글은 채택·수정보충 연혁을 화면에 표시하지만 조문 본문은 첨부파일로만 제공해 텍스트를 얻지 못했다. 조문 인용은 위키문헌 전사에서 왔고, 북측이 발행한 원문에는 접근하지 못했다.",
+      "license": "unverified",
+      "licenseNote": "위키문헌은 조선민주주의인민공화국 저작권법의 국가 관리문건 예외를 근거로 퍼블릭 도메인이라 표시한다. 대한민국 저작권법 제7조가 외국 헌법에 적용되는지는 해석 문제이며 확인하지 못했다. unilaw.go.kr 은 'Copyright 2023 통일법제 데이터베이스. All rights reserved.' 만 표시하고 공공누리 표시는 확인되지 않았다. 재배포 판단 전에 별도 확인이 필요하다.",
+      "licenseUrl": null,
+      "coversFrom": 1972,
+      "coversTo": null,
+      "compiledFrom": 1972,
+      "compiledTo": null,
+      "kind": "북한 헌법 원문(제3자 전사) + 남측 기관 메타데이터",
+      "originalLanguage": "ko-KP",
+      "narrativeVoice": "dprk-official",
+      "narrativeVoiceNote": "내용은 북한 자체 서술이지만 전달 경로가 남측 정부 DB 와 제3자 위키다. 발행 주체가 북측인 1차 원문이 아니다.",
+      "perPageQuotedWords": 12,
+      "editionWarning": "인용한 전사 판본의 개정 회차·연도를 확정하지 못했다. WebFetch 요약은 '2026년 3월 채택 제16호'라고 답했으나 그 문자열을 원문에서 직접 확인하지 못했고, unilaw.go.kr 이 표시한 연혁의 마지막 항목(2023.9.)과 어긋난다. 판본은 unverified 로 둔다.",
+      "excerpts": [
+        {
+          "id": "ex-dprk-const-art1",
+          "text": "우리 나라의 국호는 조선민주주의인민공화국이다.",
+          "locator": "제1조 (판본 미확정)",
+          "url": "https://ko.wikisource.org/wiki/%EC%A1%B0%EC%84%A0%EB%AF%BC%EC%A3%BC%EC%A3%BC%EC%9D%98%EC%9D%B8%EB%AF%BC%EA%B3%B5%ED%99%94%EA%B5%AD_%EC%82%AC%ED%9A%8C%EC%A3%BC%EC%9D%98%ED%97%8C%EB%B2%95",
+          "lang": "ko-KP",
+          "verbatim": "webfetch-extracted; 원본 대조 필요. 북한 띄어쓰기('우리 나라')를 정규화하지 말 것."
+        },
+        {
+          "id": "ex-dprk-const-preamble-line",
+          "text": "조선민주주의인민공화국은 조선인민의 리익을 대표하며 사회주의위업을 위하여 투쟁하는 인민대중중심의 사회주의국가이다.",
+          "locator": "서문 계열 문장 (위치·판본 미확정)",
+          "url": "https://ko.wikisource.org/wiki/%EC%A1%B0%EC%84%A0%EB%AF%BC%EC%A3%BC%EC%A3%BC%EC%9D%98%EC%9D%B8%EB%AF%BC%EA%B3%B5%ED%99%94%EA%B5%AD_%EC%82%AC%ED%9A%8C%EC%A3%BC%EC%9D%98%ED%97%8C%EB%B2%95",
+          "lang": "ko-KP",
+          "verbatim": "webfetch-extracted; 원본 대조 필요. 두음법칙 미적용 표기('리익')를 정규화하지 말 것."
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-dprk-socialist-constitution-adopted-1972-12-27",
+          "claimKind": "event-year",
+          "subject": "event-dprk-socialist-constitution-adopted",
+          "predicate": "adoptedOn",
+          "objectTime": { "verbatim": "1972. 12. 27. 채택", "year": 1972, "month": 12, "day": 27, "precision": "day" },
+          "citesExcerpt": null,
+          "citesMetadata": "unilaw.go.kr 북한법령 게시글의 연혁 표시: 1972.12.27. 채택 / 1992.4.9. 수정보충 / 이후 다수, 마지막 표시는 2023.9.",
+          "citesUrl": "https://www.unilaw.go.kr/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000021&nttId=235&bbsTyCode=BBST01&bbsAttrbCode=BBSA02&authFlag=Y&menuNo=3010000&upperMenuId=3000000",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "남측 정부 데이터베이스가 제시한 북한 법령 연혁이다. 북측 발행물로 교차확인하지 못했으므로 fromSource 를 북한이 아니라 unilaw.go.kr 로 걸 것."
+        },
+        {
+          "id": "claim-dprk-states-official-name",
+          "claimKind": "textual",
+          "subject": "polity-dprk",
+          "predicate": "statesOfficialNameAs",
+          "objectValue": "조선민주주의인민공화국",
+          "citesExcerpt": "ex-dprk-const-art1",
+          "quote": "우리 나라의 국호는 조선민주주의인민공화국이다.",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "인용 문면은 확인했으나 판본(개정 회차)이 미확정이므로 조문 번호를 확정 사실로 쓰지 말 것. 남측 제헌헌법 제4조 영토조항(ex-rok1948-art4)과 짝지으면 남북 서술 대조 렌즈가 된다."
+        }
+      ]
+    },
+    {
+      "id": "src-rok-constitution-1987",
+      "title": "대한민국헌법 (헌법 제10호, 현행헌법)",
+      "publisher": "법제처 국가법령정보센터 (메타데이터) / 위키문헌 (본문 전사)",
+      "url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=61603",
+      "textUrl": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%ED%97%8C%EB%B2%95",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "partial",
+      "accessNote": "law.go.kr 에서는 법령명·공포일·시행일 메타데이터만 얻었다. 조문 본문은 JS 렌더링이라 취득 실패. 조문 텍스트는 위키문헌 전사에서 인용했다.",
+      "license": "public-domain",
+      "licenseNote": "헌법 조문 자체는 저작권법 제7조에 따라 보호받지 못하는 저작물이다. law.go.kr 의 화면 구성·편집물 이용조건은 별도이며 이번에 확인하지 못했다.",
+      "licenseUrl": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A0%80%EC%9E%91%EA%B6%8C%EB%B2%95/%EC%A0%9C7%EC%A1%B0",
+      "coversFrom": 1988,
+      "coversTo": 2026,
+      "compiledFrom": 1987,
+      "compiledTo": 1987,
+      "kind": "헌법 원문(전사) + 기관 메타데이터",
+      "originalLanguage": "ko",
+      "narrativeVoice": "rok-official",
+      "perPageQuotedWords": 12,
+      "excerpts": [
+        {
+          "id": "ex-rok1987-art1",
+          "text": "① 대한민국은 민주공화국이다. ② 대한민국의 주권은 국민에게 있고, 모든 권력은 국민으로부터 나온다.",
+          "locator": "제1장 총강 제1조 제1항·제2항",
+          "url": "https://ko.wikisource.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%ED%97%8C%EB%B2%95",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-rok-constitution-1987-promulgated",
+          "claimKind": "event-year",
+          "subject": "event-rok-constitution-1987-amendment",
+          "predicate": "promulgatedOn",
+          "objectTime": { "verbatim": "헌법 제10호, 1987.10.29.", "year": 1987, "month": 10, "day": 29, "precision": "day" },
+          "citesExcerpt": null,
+          "citesMetadata": "law.go.kr lsiSeq=61603 문서 머리 메타데이터: 공포 1987.10.29, 헌법 제10호",
+          "citesUrl": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=61603",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "법제처 화면의 메타데이터이며 조문 인용이 아니다. 관보로 재확인 가능."
+        },
+        {
+          "id": "claim-rok-constitution-1987-effective",
+          "claimKind": "event-year",
+          "subject": "event-rok-constitution-1987-amendment",
+          "predicate": "effectiveFrom",
+          "objectTime": { "verbatim": "시행 1988.2.25.", "year": 1988, "month": 2, "day": 25, "precision": "day" },
+          "citesExcerpt": null,
+          "citesMetadata": "law.go.kr lsiSeq=61603 문서 머리 메타데이터: 시행 1988.2.25",
+          "citesUrl": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=61603",
+          "confidence": "confirmed",
+          "origin": "ai"
+        }
+      ]
+    },
+    {
+      "id": "src-inter-korean-basic-agreement-1991",
+      "title": "남북사이의 화해와 불가침 및 교류·협력에 관한 합의서 (남북기본합의서)",
+      "publisher": "위키문헌 (Wikimedia Foundation)",
+      "url": "https://ko.wikisource.org/wiki/%EB%82%A8%EB%B6%81%EC%82%AC%EC%9D%B4%EC%9D%98_%ED%99%94%ED%95%B4%EC%99%80_%EB%B6%88%EA%B0%80%EC%B9%A8_%EB%B0%8F_%EA%B5%90%EB%A5%98%C2%B7%ED%98%91%EB%A0%A5%EC%97%90_%EA%B4%80%ED%95%9C_%ED%95%A9%EC%9D%98%EC%84%9C",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "public-domain",
+      "licenseNote": "페이지 표시: 저작권법 제7조에 따른 퍼블릭 도메인(조약·국가간 합의). 다만 남북합의서를 조약으로 볼지는 남북관계 특수성 때문에 법적으로 다투어지는 지점이며, 위키문헌의 판단을 그대로 확정으로 쓰지 말 것.",
+      "licenseUrl": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A0%80%EC%9E%91%EA%B6%8C%EB%B2%95/%EC%A0%9C7%EC%A1%B0",
+      "coversFrom": 1991,
+      "coversTo": 1992,
+      "compiledFrom": 1991,
+      "compiledTo": 1991,
+      "kind": "남북합의서 원문(전사)",
+      "originalLanguage": "ko",
+      "narrativeVoice": "inter-korean-joint",
+      "perPageQuotedWords": 10,
+      "institutionalOriginal": {
+        "status": "partial",
+        "note": "통일법제 데이터베이스(unilaw.go.kr)의 남북합의서 목록 168건이 열렸으나 개별 문서 본문 URL 을 특정하지 못했다. 국가기록원 theme.archives.go.kr 남북회담 코너는 전문을 이미지로만 제공한다.",
+        "listUrl": "https://www.unilaw.go.kr/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000053&bbsSubId=001"
+      },
+      "excerpts": [
+        {
+          "id": "ex-basic-agreement-art1",
+          "text": "남과 북은 서로 상대방의 체제를 인정하고 존중한다.",
+          "locator": "제1장 남북화해 제1조",
+          "url": "https://ko.wikisource.org/wiki/%EB%82%A8%EB%B6%81%EC%82%AC%EC%9D%B4%EC%9D%98_%ED%99%94%ED%95%B4%EC%99%80_%EB%B6%88%EA%B0%80%EC%B9%A8_%EB%B0%8F_%EA%B5%90%EB%A5%98%C2%B7%ED%98%91%EB%A0%A5%EC%97%90_%EA%B4%80%ED%95%9C_%ED%95%A9%EC%9D%98%EC%84%9C",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        },
+        {
+          "id": "ex-basic-agreement-date",
+          "text": "1991년 12월 13일",
+          "locator": "말미 일자 행 (서명: 남측 국무총리 정원식 / 북측 정무원 총리 연형묵)",
+          "url": "https://ko.wikisource.org/wiki/%EB%82%A8%EB%B6%81%EC%82%AC%EC%9D%B4%EC%9D%98_%ED%99%94%ED%95%B4%EC%99%80_%EB%B6%88%EA%B0%80%EC%B9%A8_%EB%B0%8F_%EA%B5%90%EB%A5%98%C2%B7%ED%98%91%EB%A0%A5%EC%97%90_%EA%B4%80%ED%95%9C_%ED%95%A9%EC%9D%98%EC%84%9C",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-basic-agreement-dated-1991-12-13",
+          "claimKind": "event-year",
+          "subject": "event-inter-korean-basic-agreement",
+          "predicate": "signedOn",
+          "objectTime": { "verbatim": "1991년 12월 13일", "year": 1991, "month": 12, "day": 13, "precision": "day" },
+          "citesExcerpt": "ex-basic-agreement-date",
+          "quote": "1991년 12월 13일",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "문서 말미 일자다. 통설의 발효일(1992-02-19)은 이 문면에서 확인하지 못했으므로 넣지 않았다."
+        },
+        {
+          "id": "claim-basic-agreement-mutual-system-recognition",
+          "claimKind": "textual",
+          "subject": "event-inter-korean-basic-agreement",
+          "predicate": "statesMutualRecognitionOfSystems",
+          "objectValue": "남과 북이 서로 상대방의 체제를 인정·존중",
+          "citesExcerpt": "ex-basic-agreement-art1",
+          "quote": "남과 북은 서로 상대방의 체제를 인정하고 존중한다.",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "남측 헌법 제3조 영토조항과 정면으로 긴장 관계에 있는 문면이다. 두 사료를 함께 켜면 schema.md §11 의 충돌 표시가 유용하게 뜨는 사례가 된다."
+        }
+      ]
+    },
+    {
+      "id": "src-panmunjom-declaration-2018",
+      "title": "한반도의 평화와 번영, 통일을 위한 판문점 선언",
+      "publisher": "위키문헌 (Wikimedia Foundation)",
+      "url": "https://ko.wikisource.org/wiki/%ED%95%9C%EB%B0%98%EB%8F%84%EC%9D%98_%ED%8F%89%ED%99%94%EC%99%80_%EB%B2%88%EC%98%81,_%ED%86%B5%EC%9D%BC%EC%9D%84_%EC%9C%84%ED%95%9C_%ED%8C%90%EB%AC%B8%EC%A0%90_%EC%84%A0%EC%96%B8",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "public-domain",
+      "licenseConfidence": "unverified",
+      "licenseNote": "페이지는 저작권법 제7조 예외(공문서·공식 선언)를 근거로 퍼블릭 도메인이라 표시하고, 위키 편집물에는 CC BY-SA 를 병기한다. 2018년 문서이고 남북합의서의 법적 성격이 다투어지므로 재배포 전 확인이 필요하다.",
+      "licenseUrl": "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A0%80%EC%9E%91%EA%B6%8C%EB%B2%95/%EC%A0%9C7%EC%A1%B0",
+      "coversFrom": 2018,
+      "coversTo": 2018,
+      "compiledFrom": 2018,
+      "compiledTo": 2018,
+      "kind": "남북 정상 선언문 원문(전사)",
+      "originalLanguage": "ko",
+      "narrativeVoice": "inter-korean-joint",
+      "perPageQuotedWords": 11,
+      "excerpts": [
+        {
+          "id": "ex-panmunjom-2018-date-signatories",
+          "text": "2018년 4월 27일 판문점",
+          "locator": "말미 일자·장소 행. 같은 자리의 서명자 표기: 「대한민국 대통령 문재인」 / 「조선민주주의인민공화국 국무위원회 위원장 김정은」",
+          "url": "https://ko.wikisource.org/wiki/%ED%95%9C%EB%B0%98%EB%8F%84%EC%9D%98_%ED%8F%89%ED%99%94%EC%99%80_%EB%B2%88%EC%98%81,_%ED%86%B5%EC%9D%BC%EC%9D%84_%EC%9C%84%ED%95%9C_%ED%8C%90%EB%AC%B8%EC%A0%90_%EC%84%A0%EC%96%B8",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요"
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-panmunjom-declaration-dated-2018-04-27",
+          "claimKind": "event-year",
+          "subject": "event-panmunjom-declaration",
+          "predicate": "signedAt",
+          "objectTime": { "verbatim": "2018년 4월 27일", "year": 2018, "month": 4, "day": 27, "precision": "day" },
+          "objectPlaceLabel": "판문점",
+          "citesExcerpt": "ex-panmunjom-2018-date-signatories",
+          "quote": "2018년 4월 27일 판문점",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "북측 서명자의 직함이 「조선민주주의인민공화국 국무위원회 위원장」으로 적혀 있다. 남북이 서로의 국호·직함을 문서에 명기한 드문 사례라 남북 서술 대조에 쓸 수 있다. 좌표는 붙이지 않는다."
+        }
+      ]
+    },
+    {
+      "id": "src-archives-koreaofrecord-constitution",
+      "title": "기록으로 만나는 대한민국 > 사회 > 헌법",
+      "publisher": "국가기록원 (National Archives of Korea)",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/constitution.do",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "unverified",
+      "licenseNote": "이 해설 페이지 자체에는 공공누리 표시를 확인하지 못했다. 국가기록원의 저작권보호정책 페이지는 소장 기록물에 공공누리 유형(1~4)을 적용하며 출처표시가 필수라고 안내한다. 유형은 자료별로 다르므로 페이지 단위로 다시 확인해야 한다.",
+      "licenseUrl": "https://www.archives.go.kr/next/neworgan/copyrightProtection.do",
+      "coversFrom": 1948,
+      "coversTo": 2026,
+      "compiledFrom": null,
+      "compiledTo": null,
+      "kind": "현대 기관 해설문 (원사료 아님)",
+      "originalLanguage": "ko",
+      "narrativeVoice": "modern-institution",
+      "perPageQuotedWords": 6,
+      "summary": "국가기록원이 1948년 제헌 이후 현행 헌법까지의 헌정사를 개관하는 해설이다. 1952년 발췌개헌, 1954년 사사오입 개헌 같은 논란이 된 개정과 1987년 6월 민주항쟁 이후의 현행 헌법을 언급한다. 이 요약은 AI 가 쓴 것이고 아래 quote 와 분리한다.",
+      "excerpts": [
+        {
+          "id": "ex-archives-constitution-note",
+          "text": "우리 헌법은 9차례의 개헌을 거쳐 왔다",
+          "locator": "본문 도입부 (현대 해설문에서 발췌)",
+          "url": "https://theme.archives.go.kr/next/koreaOfRecord/constitution.do",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요",
+          "isModernWork": true
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-rok-constitution-amended-nine-times",
+          "claimKind": "textual",
+          "subject": "polity-rok",
+          "predicate": "describedAs",
+          "objectValue": "1948년 제헌 이후 9차례 개헌",
+          "citesExcerpt": "ex-archives-constitution-note",
+          "quote": "우리 헌법은 9차례의 개헌을 거쳐 왔다",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "원사료가 아니라 현대 기관의 서술이다. fromSource 를 국가기록원 해설로 걸고 defaultLens 를 원사료와 분리할 것. '9차'라는 계수 자체가 개정 회차 세는 방식에 달린 문제이므로 사실 확정으로 쓰지 말 것."
+        }
+      ]
+    },
+    {
+      "id": "src-encykorea-everready",
+      "title": "한국민족문화대백과사전 「에버레디계획」 항목",
+      "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+      "url": "https://encykorea.aks.ac.kr/Article/E0081304",
+      "accessedAt": "2026-09-06",
+      "accessStatus": "ok",
+      "license": "restricted",
+      "licenseNote": "공공누리 마크가 붙은 콘텐츠만 이용허락 대상이고, 마크 없는 자료(특히 미디어)는 별도 허락이 필요하다고 이용안내가 밝힌다. 이 항목 페이지에서 공공누리 유형 번호를 확인하지 못했으므로 restricted 로 둔다. 인용 시 요구 표기는 「[항목명], 『한국민족문화대백과사전』」.",
+      "licenseUrl": "https://encykorea.aks.ac.kr/Guide/ContentUse",
+      "coversFrom": 1953,
+      "coversTo": 1959,
+      "coversToConfidence": "unverified",
+      "compiledFrom": null,
+      "compiledTo": null,
+      "kind": "현대 학술 저작물 (원사료 아님)",
+      "originalLanguage": "ko",
+      "narrativeVoice": "modern-scholarship",
+      "author": "신재준 (항목 집필자로 표시됨)",
+      "perPageQuotedWords": 11,
+      "summary": "정전회담 국면에서 이승만의 단독 북진 위협에 대응해 미국이 1953년 5월 세운 비상계획을 설명하는 항목이다. 한국군 지휘 통제부터 유엔군 통제 아래 두는 단계적 조치를 담았고 실행되지는 않았으며 1950년대 내내 대기 상태로 남았다고 서술한다. 이 요약은 AI 가 쓴 것이고 아래 quote 와 분리한다.",
+      "excerpts": [
+        {
+          "id": "ex-encykorea-everready-lead",
+          "text": "1953년 5월, 한국전쟁 정전회담 과정에서 불거진 한미 갈등에 대처하고자 미국이 수립한",
+          "locator": "항목 도입부 (현대 저작물에서 발췌)",
+          "url": "https://encykorea.aks.ac.kr/Article/E0081304",
+          "lang": "ko",
+          "verbatim": "webfetch-extracted; 원본 대조 필요",
+          "isModernWork": true
+        }
+      ],
+      "claims": [
+        {
+          "id": "claim-everready-plan-1953-05",
+          "claimKind": "event-year",
+          "subject": "event-plan-everready",
+          "predicate": "describedAsFormedIn",
+          "objectTime": { "verbatim": "1953년 5월", "year": 1953, "month": 5, "day": null, "precision": "month" },
+          "citesExcerpt": "ex-encykorea-everready-lead",
+          "quote": "1953년 5월, 한국전쟁 정전회담 과정에서 불거진 한미 갈등에 대처하고자 미국이 수립한",
+          "confidence": "confirmed",
+          "origin": "ai",
+          "note": "현대 연구자의 서술이지 1차 사료가 아니다. 이 Claim 은 '백과사전이 그렇게 말한다'는 사실만 담고, 계획의 실재·내용은 미국 측 1차 문서로 따로 확인해야 한다. src-pa-speech-records 의 1953-06-25 이승만 기념사와 같은 국면을 다르게 서술하므로 렌즈 대조 예시로 쓸 만하다."
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "id": "gap-nk-primary-publishers",
+      "topic": "북한이 직접 발행한 원문 (로동신문 rodong.rep.kp · 조선중앙통신 kcna.kp · 내나라 naenara.com.kp)",
+      "status": "unavailable",
+      "reason": "대한민국에서 해당 도메인은 접속이 차단되어 있고 접근 자체에 법적 제약이 따른다. 이번 작업에서는 접속을 시도하지 않았다 — 시도 후 실패가 아니라 미시도다.",
+      "effect": "북한 자체 서술은 남측 정부 DB 의 연혁 메타데이터(unilaw.go.kr)와 제3자 전사(위키문헌)로만 확보했다. 발행 주체가 북측인 1차 원문은 하나도 확보하지 못했다. 임의로 보충하지 않았다."
+    },
+    {
+      "id": "gap-nk-un-authored-documents",
+      "topic": "북한이 작성해 유엔이 발행한 문서(UPR 국가보고서, 유엔 사무총장 앞 서한 등)",
+      "status": "unattempted-blocked",
+      "reason": "북한 자체 서술을 차단 없이 얻을 수 있는 우회로로 유엔 문서를 노렸으나, digitallibrary.un.org 403 / docs.un.org JS 뷰어 / 본문 PDF 로 모두 막혀 텍스트를 얻지 못했다.",
+      "effect": "가장 유망한 대안 경로였고 지금도 유효하다. collectionCandidates 참고."
+    },
+    {
+      "id": "gap-nihs-db",
+      "topic": "국사편찬위원회 한국사데이터베이스·우리역사넷",
+      "status": "unavailable",
+      "reason": "프로젝트 robots 제한으로 db.history.go.kr / contents.history.go.kr 를 열지 않았다. 검색 결과에 여러 번 노출됐지만 본문을 읽지 않았고, 검색 스니펫을 원사료처럼 쓰지 않았다."
+    },
+    {
+      "id": "gap-law-go-kr-body",
+      "topic": "법제처 국가법령정보센터 조문 본문",
+      "status": "partial",
+      "reason": "본문이 JS 렌더링이라 텍스트를 얻지 못했다. 메타데이터(법령명·공포일·시행일)만 확보. m.law.go.kr, lsPrint.do, 조문 직접 경로 모두 404 또는 빈 본문이었다.",
+      "effect": "헌법 조문 인용을 전부 전사 사이트에 의존하게 됐다. 헤드리스 브라우저 또는 법제처 공동활용 API(키 필요)로 대체해야 정본이 된다."
+    },
+    {
+      "id": "gap-pdf-rendering",
+      "topic": "PDF 원문 판독",
+      "status": "unavailable",
+      "reason": "실행 환경에 pdftoppm(poppler)이 없어 내려받은 PDF 본문을 읽지 못했다. 국회기록원 제헌헌법 PDF, 관보 PDF, 유엔 문서 PDF 가 모두 여기에 걸렸다.",
+      "effect": "기관이 발행한 정본 PDF 가 있는데도 전사본을 쓴 사례가 생겼다. poppler 설치만으로 해소된다."
+    },
+    {
+      "id": "gap-inter-korean-agreements-institutional-text",
+      "topic": "남북합의서 전문의 기관 발행 텍스트",
+      "status": "partial",
+      "reason": "국가기록원 theme 페이지는 7·4 남북공동성명 전문을 이미지(gif)로만 제공한다. 통일법제 데이터베이스의 남북합의서 목록(168건)은 열렸지만 개별 문서의 nttId 를 특정하지 못했고, 북한법령 게시글의 본문은 첨부파일로만 제공된다."
+    },
+    {
+      "id": "gap-gwanbo-and-assembly-records",
+      "topic": "대한민국 관보 · 제헌국회 속기록",
+      "status": "unattempted",
+      "reason": "gwanbo.go.kr 과 likms.assembly.go.kr 을 이번에 열지 않았다. 관보 제1호(1948)와 제헌국회 속기록은 헌법 제정·공포일을 기관 정본으로 확정할 수 있는 1순위 자료다."
+    },
+    {
+      "id": "gap-1945-1948-occupation-records",
+      "topic": "1945~1948 미군정기 법령·문서",
+      "status": "unattempted",
+      "reason": "군정법령·군정청 관보를 다루지 못했다. 확보한 해방공간 자료는 1948-09-04 이승만 담화 1건뿐이라 이 시기가 가장 얇다."
+    },
+    {
+      "id": "gap-dprk-constitution-edition",
+      "topic": "인용한 북한 헌법 전사본의 판본",
+      "status": "unverified",
+      "reason": "전사 페이지가 어느 개정 판본인지 확정하지 못했다. 자동 추출 응답이 제시한 판본 표기와 unilaw.go.kr 이 표시한 연혁의 마지막 항목이 어긋난다. 조문 번호를 확정 사실로 쓰지 말 것."
+    }
+  ],
+  "collectionCandidates": [
+    {
+      "url": "https://www.pa.go.kr/research/contents/speech/index.jsp",
+      "publisher": "대통령기록관",
+      "what": "연설기록 컬렉션 (제1대~제20대, 안내상 9,600여 건). 상세 페이지가 artid 쿼리 하나로 HTML 전문을 준다.",
+      "why": "1948년 이후 대한민국 공식 서술의 최대 1차 텍스트 더미이고, 이번에 유일하게 기관에서 직접 본문 텍스트를 받아낸 곳이다.",
+      "howTo": "index.jsp?spMode=view&catid=<catid>&artid=<artid> 순회. 확인한 catid: c_pa02062(문서), c_pa02064(음성). 공공누리 변경금지 조건이므로 구철자를 정규화하지 말 것.",
+      "priority": "high"
+    },
+    {
+      "url": "https://www.nara.go.kr/upload/namo/files/000006/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%ED%97%8C%EB%B2%95(%ED%97%8C%EB%B2%95%EC%A0%9C1%ED%98%B8).pdf",
+      "publisher": "국회기록원",
+      "what": "제헌헌법 전문 PDF (국회법률정보시스템 출력본, 9쪽)",
+      "why": "제헌헌법 조문의 기관 발행 정본. 지금은 전사본으로 대신하고 있다.",
+      "howTo": "poppler(pdftotext) 설치 후 텍스트 추출 → chunk 화. 텍스트 레이어 유무는 미확인.",
+      "priority": "high"
+    },
+    {
+      "url": "https://www.unilaw.go.kr/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000053&bbsSubId=001",
+      "publisher": "통일법제 데이터베이스 (통일부·법무부·법제처 공동 운영)",
+      "what": "남북합의서 목록 168건 (정치·인도·경제·기타 분류, 합의일자 표시)",
+      "why": "남북 공동 명의 문서의 정부 공식 수록처. 남북 서술 대조 렌즈의 뼈대가 된다.",
+      "howTo": "목록 페이지에서 nttId 를 긁어 selectBoardArticle.do 순회. 본문이 첨부파일이면 파일 파서 필요. 이용조건 표시가 'All rights reserved.' 뿐이라 재배포 조건을 먼저 확인할 것.",
+      "priority": "high"
+    },
+    {
+      "url": "https://www.unilaw.go.kr/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000021",
+      "publisher": "통일법제 데이터베이스",
+      "what": "북한법령 목록 (헌법 nttId=235, 행정 nttId=234 등)",
+      "why": "북측 발행물에 접근하지 못하는 상황에서 북한 자체 법문에 닿는 가장 공식적인 남측 경로. 채택·수정보충 연혁이 화면에 나온다.",
+      "howTo": "본문이 첨부파일이므로 파일 파서 필요. 북한 표기를 정규화하지 말 것.",
+      "priority": "high"
+    },
+    {
+      "url": "https://theme.archives.go.kr/next/unikorea/seven/seven04.do",
+      "publisher": "국가기록원",
+      "what": "7·4 남북공동성명 전문 (이미지 consultation4.gif, consultation5.gif)",
+      "why": "남북 공동 명의 문서의 기관 제공본. 1972년이라 시대 공백을 메운다.",
+      "howTo": "OCR 필요. 국가기록원 저작권보호정책의 공공누리 유형을 먼저 확인할 것.",
+      "priority": "medium"
+    },
+    {
+      "url": "https://digitallibrary.un.org/",
+      "publisher": "United Nations",
+      "what": "총회 결의 195(III)(1948), 안보리 결의 82~85(1950), 북한이 작성한 UPR 국가보고서 등",
+      "why": "1948 정부 승인·1950 개전·북한 자체 서술까지 한 번에 메울 수 있는 공백 대응처. 이번에 403 으로 막혔다.",
+      "howTo": "User-Agent 조정 또는 docs.un.org 의 PDF 직접 경로. 유엔 저작권·이용조건(un.org/en/about-us/copyright)을 먼저 확인할 것.",
+      "priority": "high"
+    },
+    {
+      "url": "https://gwanbo.go.kr/",
+      "publisher": "행정안전부 대한민국 관보",
+      "what": "관보 원문 (제1호 1948년 포함)",
+      "why": "헌법 공포일·법령 시행일을 기관 정본으로 확정할 수 있는 1순위. 지금은 전사본 머리 메타데이터에 의존 중이다.",
+      "howTo": "이번에 열지 않았다. PDF 파서 필요할 가능성이 높다.",
+      "priority": "high"
+    },
+    {
+      "url": "https://likms.assembly.go.kr/record/",
+      "publisher": "국회 회의록시스템",
+      "what": "제헌국회 속기록",
+      "why": "1948년 헌법 제정 과정을 당대 발언으로 붙잡을 수 있는 유일한 대규모 1차 텍스트.",
+      "howTo": "이번에 열지 않았다. JS 렌더링 가능성 높음.",
+      "priority": "medium"
+    },
+    {
+      "url": "https://www.archives.go.kr/next/neworgan/copyrightProtection.do",
+      "publisher": "국가기록원",
+      "what": "저작권보호정책 (공공누리 유형별 조건, 출처표시 의무 안내)",
+      "why": "국가기록원 소장자료 재배포 조건 판정의 근거 문서.",
+      "priority": "medium"
+    },
+    {
+      "url": "https://encykorea.aks.ac.kr/Guide/ContentUse",
+      "publisher": "한국학중앙연구원",
+      "what": "한국민족문화대백과사전 이용안내 (공공누리 마크 유무에 따른 허락 범위, 출처표기 형식)",
+      "why": "현대 학술 저작물 렌즈를 쓰려면 항목별 이용조건을 먼저 판정해야 한다.",
+      "priority": "medium"
+    }
+  ]
+}
