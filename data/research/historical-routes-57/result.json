@@ -1,0 +1,214 @@
+{
+  "task": "reset-roads-57",
+  "objective": "Secure a Korean-history real postal-road / old-road LineString (original line coordinates), or a redistributable genuinely georeferenced historical map of the Korean peninsula.",
+  "completed": false,
+  "completionNote": "The investigation itself is finished and a documented negative was reached, but the primary objective (securing one usable resource) was NOT achieved. No record has integrationReady=true. Setting completed=false to avoid a false completion.",
+  "generatedAt": "2026-09-07",
+  "toolLimits": [
+    "File tools were confined to the working directory, so C:\\Users\\gkfkd\\Git\\sigong-yeojido could not be read at all (tool message: '--restricted confines the file tools to the working directory'). No repository context informed this research.",
+    "Only WebSearch/WebFetch/Read/Write were used. No terminal, no browser window, no institutional contact was made.",
+    "No proxy, no user-agent change, no alternative-API workaround. Bot-verification walls, 403s and HTTPS-only fetching were left as-is."
+  ],
+  "records": [
+    {
+      "url": "https://journal.caa-international.org/articles/10.5334/jcaa.97",
+      "primaryPublisher": "Journal of Computer Applications in Archaeology (CAA International / Ubiquity Press)",
+      "exactTitle": "'Benefit Maximizing Routes': Development and Evaluation Using the Historical Roads of Korea's Joseon Dynasty (1392–1910)",
+      "checkedContent": "Article page fetched and read directly. Authors: Woo Jin Shim, Ilhong Ko, Soo Jin Park; published 19 Aug 2022; DOI 10.5334/jcaa.97. The paper evaluates modelled routes against historically established Joseon routes. There is NO Data Accessibility Statement, NO supplementary file section and NO GIS attachment on the article page. Documentary sources named for the historical routes: Yeojidoseo (輿地圖書), Daedongjiji (大東地志), Kim (2004), plus vector data obtained from an Academy of Korean Studies 2014–2017 reconstruction project.",
+      "shortQuote": "were fortunate enough to obtain vector data for eight of the Main Roads",
+      "licenseEvidence": "Article page displays 'CC BY 4.0' (Creative Commons Attribution 4.0 International). This covers the article text only; the third-party Joseon Main Road vectors are not covered and are not distributed with the article.",
+      "period": "Joseon Dynasty, 1392–1910",
+      "uncertainty": "The route vectors are third-party and unpublished, so their provenance, accuracy and redistribution terms are unknown from this source. The paper's own stated limitation is that both HPMS routes and slope-based least-cost paths are less reliable in non-mountainous terrain due to DEM error and resolution.",
+      "downloadableUrl": null,
+      "integrationReady": false
+    },
+    {
+      "url": "https://www.nature.com/articles/s40494-025-01689-9",
+      "primaryPublisher": "npj Heritage Science (Springer Nature)",
+      "exactTitle": "Digital reconstruction and representation of the Sino-Korean Tribute Routes using Geographic Information Systems",
+      "checkedContent": "Article body read directly after following Nature's own idp.nature.com cookie redirect chain back to the article URL. Authors: Liquan Gong, Kelly Greenop, Cathy Keys, Chris Landorf; published 13 May 2025. The Data availability section lists ONLY base maps and environmental inputs (Mappi.net political map, Harvard-Yenching IIIF manifest, Wikimedia Commons relief map, ALOS 12.5 m DEM, China Land Cover Dataset, ERA5-Land, OpenStreetMap). No shapefile, GeoJSON or KML of the reconstructed route is deposited. The reconstructed segment is the ~210 km 'Liaodong Eight Courier Stations' section from Jiuliancheng to Liaoyang in Liaoning, China; Seoul is named only as the routes' origin and the Korean-peninsula portion is not reconstructed.",
+      "shortQuote": "Terrain and environmental data used are derived from modern geographical information, which may differ from actual Qing Dynasty conditions",
+      "licenseEvidence": "Not confirmed. No verbatim licence statement was present in the page body returned to the tool, so the CC status was NOT verified and must not be assumed.",
+      "period": "Qing Dynasty, 1616–1912",
+      "uncertainty": "No route geometry is published at all. Even if geometry were obtained, the reconstructed extent lies in Liaoning, China, i.e. outside the Korean peninsula requirement. Authors also state that >1000 tribute missions took divergent paths, so one line cannot represent individual trajectories.",
+      "downloadableUrl": null,
+      "integrationReady": false
+    },
+    {
+      "url": "https://www.data.go.kr/data/15089320/fileData.do",
+      "primaryPublisher": "국가유산청 (Korea Heritage Service), via 공공데이터포털 data.go.kr",
+      "exactTitle": "국가유산청_문화재 공간정보 서비스_20090101",
+      "checkedContent": "data.go.kr dataset page read directly: 제공기관 국가유산청, 확장자 SHP, 이용허락범위 '제한 없음', 등록일 2021-09-23, 수정일 2025-06-26, 키워드 문화유산·국가유산·공간·GIS·공간 정보 서비스·위치정보, 제공형태 기관 자체 다운로드. The download page https://gis-heritage.go.kr/newMain/heritageDownload.do was also read directly: it offers 지정유산 공간정보 and 현상변경허용기준 공간정보, coordinate system UTM-K (WMS example EPSG:9020203), categories 국보·보물·사적·명승·천연기념물·국가무형유산·국가민속문화유산·등록문화유산, and carries a 공공누리(KOGL) notice. The content is heritage designated-AREA geometry, not road centrelines.",
+      "shortQuote": "문화재 공간 정보 서비스는 문화재 정보와 지도 정보가 결합한 공간 정보 활용체계입니다",
+      "licenseEvidence": "data.go.kr page states 이용허락범위 '제한 없음'. The gis-heritage.go.kr download page displays the 공공저작물 자유이용허락표시기준(공공누리, KOGL) marking, but the specific 유형 number applying to the SHP download was not shown on the page I read.",
+      "period": "Not a period dataset. It is a current-status designation layer; the historical date of each 명승 옛길 (e.g. 문경새재, opened 1414) lives in the heritage description text, not in the spatial file.",
+      "uncertainty": "Geometry is designated-zone polygons, not a 역로 network of lines. Only a handful of 옛길 are covered as 명승, and a protection-zone boundary is not the road centreline. The provider states no reconstruction method or limits. Actual geometry type, CRS and item list could not be verified because the file cannot be downloaded and opened with the available tools.",
+      "downloadableUrl": "https://gis-heritage.go.kr/newMain/heritageDownload.do",
+      "integrationReady": false
+    },
+    {
+      "url": "https://www.data.go.kr/data/15148507/fileData.do",
+      "primaryPublisher": "국가유산청 (Korea Heritage Service), via 공공데이터포털 data.go.kr",
+      "exactTitle": "국가유산청_지정유산 지도다운로드_20250831",
+      "checkedContent": "Dataset page read directly: 제공기관 국가유산청, 확장자 SHP, 이용허락범위 '제한 없음', 등록일 2025-09-04, 수정일 2025-09-22, 제공형태 '기관자체에서 다운로드(제공데이터URL기재)', download link identical to the sibling dataset. Description mentions 문화재·사적지·명승지 as included categories. Geometry type (점/선/면) and coordinate system are NOT stated on the page; 옛길 is not mentioned as a category.",
+      "shortQuote": "대한민국 전역에 걸쳐 지정된 국가유산의 위치 정보를 지도 기반으로 제공하는 개방형 데이터",
+      "licenseEvidence": "data.go.kr page states 이용허락범위 '제한 없음'; no explicit 공공누리 유형 number is displayed on this dataset page.",
+      "period": "Not a period dataset (current designation status, file dated 2025-08-31).",
+      "uncertainty": "Same as the sibling dataset: designation locations/areas, not historical route lines. No period or reconstruction-limit statement. File contents unverified.",
+      "downloadableUrl": "https://gis-heritage.go.kr/newMain/heritageDownload.do",
+      "integrationReady": false
+    },
+    {
+      "url": "https://zenodo.org/api/records?q=%22historical%20road%22%20OR%20%22historical%20routes%22%20Korea&size=20",
+      "primaryPublisher": "Zenodo (CERN)",
+      "exactTitle": "Zenodo REST API record search: \"historical road\" OR \"historical routes\" Korea (size=20)",
+      "checkedContent": "17 records returned and reviewed one by one. None is a Korean historical road/route geospatial dataset. Closest thematic hits were Malatya-Hekimhan (Turkey) historical road network, Safranbolu (Turkey) road network from Western historical maps, Voronezh (Russia) historical routes, and a Tokyo street point cloud. The rest were false positives on the author surname 'Korea'. A parallel OSF/figshare search for a deposit of the Joseon Main Road vectors also returned nothing.",
+      "shortQuote": "No records describe shapefile, GeoJSON, or GPKG formats about Korean historical roads",
+      "licenseEvidence": "Not applicable - nothing relevant found. (The unrelated records were mostly CC-BY-4.0.)",
+      "period": "n/a",
+      "uncertainty": "This is a genuine absence for this query, not an access block. A differently-worded Korean-language query might surface something, but Zenodo metadata for such a deposit would almost certainly carry the English words searched.",
+      "downloadableUrl": null,
+      "integrationReady": false
+    },
+    {
+      "url": "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EC%98%9B%EA%B8%B8",
+      "primaryPublisher": "공공데이터포털 (data.go.kr), 행정안전부",
+      "exactTitle": "공공데이터포털 데이터셋 검색 결과: 키워드 '옛길'",
+      "checkedContent": "Search results read directly. Five datasets: 경상북도 문경시_옛길박물관 전시물현황 (CSV/JSON/XML, museum inventory); 대구광역시 북구_관광지도 (PDF); 대구광역시 북구_관광코스정보 (CSV/JSON/XML, tourist course text); 산림청_국가숲길 노선도 데이터(속리산둘레길) (SHP, but a present-day forest trail, not a historic road); 한국문화원연합회_'성과 옛도로와 지역이야기' (CSV, 연계데이터, narrative text). None contains historical route line geometry.",
+      "shortQuote": "산림청_국가숲길 노선도 데이터(속리산둘레길)",
+      "licenseEvidence": "Not evaluated per dataset - none of the results met the content requirement, so licence checking was not pursued.",
+      "period": "n/a",
+      "uncertainty": "The only SHP result is a modern forest trail; using it would be exactly the 'substitute a modern road' failure mode the task forbids, so it was rejected rather than licence-checked.",
+      "downloadableUrl": null,
+      "integrationReady": false
+    },
+    {
+      "url": "https://www.davidrumsey.com/about",
+      "primaryPublisher": "David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries",
+      "exactTitle": "David Rumsey Historical Map Collection — About / copyright and licensing page (www.davidrumsey.com/about). Note: the page's exact <title> string was not captured by the fetch, so this is a descriptive label, not a verbatim title.",
+      "checkedContent": "Copyright/licensing page read directly. Licence: Creative Commons Attribution-NonCommercial-ShareAlike 3.0. Non-commercial reproduction permitted in print or digital with the credit line 'David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries'. Commercial republication requires permission via carto@davidrumsey.com. Scans are 300–800 ppi; Georeferencer v4 is referenced. The page does not discuss IIIF or GeoTIFF export terms. CRITICAL GAP: the Korea catalogue browse (LUNA) returned a 'Verify Access' bot-verification screen and davidrumsey.georeferencer.com returned HTTP 403, so no specific georeferenced Korea map sheet was confirmed to exist.",
+      "shortQuote": "This work is licensed under a Creative Commons License. By downloading any images from this site, you agree to the terms",
+      "licenseEvidence": "Directly read on the About page: CC BY-NC-SA 3.0 with the stated attribution string and the commercial-use carve-out. This is a licence for the collection generally; it was NOT verified against any individual Korea item record.",
+      "period": "Not determined — no Korea item record could be opened.",
+      "uncertainty": "Everything about the actual Korea holdings is unverified: whether any Korea sheet is georeferenced, its date, whether it depicts routes, and whether the georeference (GCPs) is exportable. The blockers are a bot-verification wall and a 403, both of which were left unbypassed per the rules.",
+      "downloadableUrl": null,
+      "integrationReady": false
+    },
+    {
+      "url": "https://warper.wmflabs.org/maps?field=title&query=korea&show_warped=1",
+      "primaryPublisher": "Wikimaps Warper (Wikimedia Cloud Services)",
+      "exactTitle": "Wikimaps Warper — map title search 'korea', warped maps",
+      "checkedContent": "Results page read directly. Exactly 5 warped maps: id 6212 'Shinpo (Sinpo) from Admiralty Chart No 898' (1933, 6 GCPs); id 6211 'Urusan Wan (Ulsan Man) from Admiralty Chart No 898' (1933, 4 GCPs); id 5793 'Japan - Nipon, Kiusiu and Sikok, and part of Korea' (undated, 9 GCPs); id 5714 'Admiralty Chart No 358 Korea Strait' (1962, 14 GCPs); id 5125 'Admiralty Chart No 2347 Japan and part of Korea' (1855, 4 GCPs). All are marine/hydrographic charts covering coastline and anchorages.",
+      "shortQuote": "Admiralty Chart No 2347 Japan and part of Korea",
+      "licenseEvidence": "Not checked per item, because none of the five maps meets the content requirement (no inland road or route depiction).",
+      "period": "1855–1962 for the items found",
+      "uncertainty": "Nautical charts show no 역로 or inland road network, so they cannot serve the goal regardless of licence. MapWarper.net (the other public warper) could not be checked at all: it returned an hCaptcha challenge, which was not bypassed.",
+      "downloadableUrl": null,
+      "integrationReady": false
+    }
+  ],
+  "failedAttempts": [
+    {
+      "target": "C:\\Users\\gkfkd\\Git\\sigong-yeojido",
+      "reason": "File tools are confined to the working directory. Glob returned: '--restricted confines the file tools to the working directory'. The repository was never read, so no existing-output context was available.",
+      "bypassed": false
+    },
+    {
+      "target": "https://www.nature.com/articles/s40494-025-01689-9",
+      "reason": "First fetch returned 303 to idp.nature.com, then 302 back to the article with ?error=cookies_not_supported. Nature's own cookie-bootstrap chain was followed to the publisher's own article URL; the body was obtained. No licence block was rendered, so the licence remains unverified.",
+      "bypassed": false
+    },
+    {
+      "target": "https://zenodo.org/search?q=Korea%20historical%20road%20route%20GIS",
+      "reason": "Search UI is client-side rendered; the HTML contained no results. Worked around using Zenodo's own public REST API (zenodo.org/api/records), which is the same provider, not a third-party mirror.",
+      "bypassed": false
+    },
+    {
+      "target": "https://www.davidrumsey.com/luna/servlet/view/all/where/Korea/",
+      "reason": "Returned a 'Verify Access' / 'Verifying your access...' bot-verification interstitial instead of catalogue results. Not bypassed.",
+      "bypassed": false
+    },
+    {
+      "target": "https://davidrumsey.georeferencer.com/maps?query=korea",
+      "reason": "HTTP 403 Forbidden, no body returned. Not bypassed.",
+      "bypassed": false
+    },
+    {
+      "target": "https://mapwarper.net/maps?field=title&query=korea&show_warped=1&format=json",
+      "reason": "Returned an hCaptcha human-verification page instead of JSON. Not bypassed.",
+      "bypassed": false
+    },
+    {
+      "target": "http://waks.aks.ac.kr/dir/search.aspx?sWord=%EA%B5%90%ED%86%B5%EB%A1%9C and http://waks.aks.ac.kr/etc/about.aspx",
+      "reason": "The AKS 한국학진흥사업 성과포털 is HTTP-only. WebFetch upgrades HTTP to HTTPS, and port 443 refused the connection (connect ECONNREFUSED 223.194.62.69:443). The portal could not be read, so the provision terms of the 2014–2017 project outputs remain UNVERIFIED. Search-engine summaries about this portal were deliberately not treated as direct verification.",
+      "bypassed": false
+    },
+    {
+      "target": "https://isprs-archives.copernicus.org/articles/XLVIII-M-9-2025/285/2025/isprs-archives-XLVIII-M-9-2025-285-2025.pdf",
+      "reason": "PDF text could not be extracted by the tool (binary font data returned). Not pursued further in order to stay within the 6-candidate budget; logged as an open lead instead.",
+      "bypassed": false
+    },
+    {
+      "target": "db.history.go.kr, contents.history.go.kr, hgis.history.go.kr, www.history.go.kr, sillok.history.go.kr, db.itkc.or.kr, KCI, KISS, Nominatim, OpenHistoricalMap, Pleiades",
+      "reason": "Confirmed robots-disallowed / policy-blocked. Never fetched. Note in particular that 국사편찬위원회 한국근대지리정보 (hgis.history.go.kr, db.history.go.kr/hgis) appeared repeatedly in search results as the most likely holder of Joseon transport-route layers, and it could not be checked at all.",
+      "bypassed": false
+    },
+    {
+      "target": "Hisgeo Joseon DB",
+      "reason": "Not treated as permitted. Per instruction, a footer CC notice alone is not sufficient evidence of redistribution rights when the database itself carries external-disclosure restrictions. No permission determination was made.",
+      "bypassed": false
+    }
+  ],
+  "remaining": [
+    {
+      "item": "한국학중앙연구원 한국학진흥사업 성과포털 (waks.aks.ac.kr) — 2014–2017 기초연구 과제 '조선시대 행정구역 및 수륙교통로 복원'의 성과물",
+      "why": "JCAA 논문이 '여덟 개 대로의 벡터 데이터'를 얻은 출처로 지목한 프로젝트. 한반도 역로 LineString이 실재한다면 가장 유력한 곳.",
+      "needed": "성과물 목록에 교통로/역로 GIS 레이어가 포함되는지, 파일 포맷, 이용조건(공공누리·CC 여부), 다운로드 또는 신청 절차.",
+      "blocker": "포털이 HTTP 전용이라 이 도구(HTTPS 강제)로는 접속 불가. 검색 요약에 연구책임자로 성신여대 양보경 교수와 한국학진흥사업단이 언급되었으나 이는 검색 요약일 뿐 직접 확인한 사실이 아님.",
+      "action": "HTTP 접속이 가능한 환경에서 waks.aks.ac.kr 직접 확인, 또는 한국학진흥사업단에 이용조건 문의."
+    },
+    {
+      "item": "JCAA 논문 저자 (Woo Jin Shim, Ilhong Ko, Soo Jin Park)",
+      "why": "조선 8대로 벡터 데이터를 실제로 보유하고 사용한 당사자.",
+      "needed": "해당 벡터의 원 제공자, 재배포 허용 여부, 좌표계, 복원 기준연도와 한계 서술.",
+      "blocker": "없음. 다만 이 세션에서는 기관·개인 연락이 금지되어 수행하지 않음.",
+      "action": "논문 교신저자 이메일로 데이터 제공·재배포 가능 여부 문의."
+    },
+    {
+      "item": "국사편찬위원회 한국근대지리정보 / HGIS (hgis.history.go.kr, db.history.go.kr/hgis)",
+      "why": "검색 결과상 조선~근대 교통로 레이어를 보유할 가능성이 가장 높은 국내 공공 제공처.",
+      "needed": "교통로 레이어 존재 여부, 제공 포맷, 이용조건.",
+      "blocker": "robots 금지 확정 도메인으로 이번 조사에서 접속하지 않음. 존재 여부·조건 모두 미검증.",
+      "action": "robots 제약이 없는 경로(공식 공문·오프라인 자료실 등)로 확인 필요."
+    },
+    {
+      "item": "Hisgeo Joseon DB",
+      "why": "AKS 복원 성과의 공개 창구로 알려짐.",
+      "needed": "외부 공개 범위와 재배포 허용 근거를 footer 문구가 아닌 명시적 이용약관·서면으로 확인.",
+      "blocker": "외부 공개 제한. 지시에 따라 허용 판단을 보류함.",
+      "action": "운영 주체에 서면으로 재배포 가능 범위 확인."
+    },
+    {
+      "item": "David Rumsey Map Collection 한국 도엽",
+      "why": "컬렉션 라이선스(CC BY-NC-SA 3.0)는 직접 확인됨. 한국 관련 georeferenced 고지도가 있다면 '재배포 가능한 실제 지리참조 역사 지도' 대안이 성립.",
+      "needed": "한국/조선 관련 도엽 목록, 각 도엽의 georeference 여부와 GCP·GeoTIFF 내보내기 가능 여부, 개별 아이템의 권리 표시.",
+      "blocker": "카탈로그(LUNA) 봇 검증 화면, georeferencer 서브도메인 403. 우회하지 않음.",
+      "action": "정상 브라우저 환경에서 카탈로그 검색, 필요 시 carto@davidrumsey.com 문의."
+    },
+    {
+      "item": "국가유산청 gis-heritage.go.kr SHP 실물 검증",
+      "why": "이번 조사에서 라이선스가 가장 명확하고(이용허락범위 제한 없음 + 공공누리 표시) 좌표를 실제로 담고 있는 유일한 공공 데이터.",
+      "needed": "지오메트리 타입(면/선), 좌표계(UTM-K 확인), 명승 옛길(문경새재·문경 토끼비리·대관령 옛길·죽령 옛길 등) 포함 여부, 공공누리 유형 번호.",
+      "blocker": "파일 다운로드·열람이 이 세션의 도구로 불가.",
+      "action": "Codex가 파일을 내려받아 속성 확인. 다만 지정구역 면 데이터이므로 역로 LineString 대체재로는 부적합하다는 점을 전제로 판단할 것."
+    },
+    {
+      "item": "미추적 리드: ISPRS Archives XLVIII-M-9-2025, 285 (Jeonju/Wanju 역사유산 매핑, CC BY) 및 The Professional Geographer 76(1) '원주 분지 역사 경로 모델링'",
+      "why": "한반도 역사 경로를 다루는 최근 논문으로 부록 데이터 가능성이 있음.",
+      "needed": "데이터 가용성 문구와 부록 GIS 파일 유무.",
+      "blocker": "ISPRS PDF는 텍스트 추출 실패, Professional Geographer는 유료. 후보 6개 상한을 지키기 위해 추가 추적하지 않음.",
+      "action": "다음 조사에서 우선 확인."
+    }
+  ],
+  "conclusionForIntegration": "결론: 좌표가 있는 한반도 역사 역로/옛 도로 LineString은 이번 조사 범위에서 공개·재배포 가능한 형태로 존재하지 않는다. 유일하게 실재가 확인된 조선 8대로 벡터는 미공개 제3자 데이터이며 제공조건을 확인할 수 없었다. Codex는 이 지도 종류를 #57에서 '자료 없음'으로 처리하고, 역참 점 직선 연결이나 현대 도로·현대 둘레길 대체를 하지 않아야 한다."
+}

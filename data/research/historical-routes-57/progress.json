@@ -1,0 +1,63 @@
+{
+  "task": "reset-roads-57",
+  "goal": "Korean historical route / old-road LineString with real coordinates, redistributable, provider-stated period + reconstruction limits",
+  "updated": "2026-09-07",
+  "status": "investigation finished - documented negative result",
+  "notes": [
+    "Repository C:\\Users\\gkfkd\\Git\\sigong-yeojido could NOT be read: file tools are restricted to the working directory (tool returned '--restricted confines the file tools to the working directory'). No repo context was used.",
+    "Policy-blocked domains never fetched: db.history.go.kr, contents.history.go.kr, hgis.history.go.kr, www.history.go.kr, sillok.history.go.kr, db.itkc.or.kr, KCI, KISS, Nominatim, OpenHistoricalMap, Pleiades.",
+    "No proxy, no UA change, no alternative-API workaround was used. Bot-verification walls and 403s were left unbypassed.",
+    "Candidate budget 6, used 6: C1 JCAA article, C2 npj Heritage Science article, C3 Korea Heritage Service spatial data, C4 open-repository sweep (Zenodo/OSF/figshare), C5 David Rumsey georeferenced collection, C6 Wikimaps Warper / MapWarper."
+  ],
+  "candidates": [
+    {
+      "id": "C1",
+      "name": "JCAA - 'Benefit Maximizing Routes' (Shim, Ko, Park 2022)",
+      "status": "checked - article open, underlying route vectors NOT published",
+      "url": "https://journal.caa-international.org/articles/10.5334/jcaa.97",
+      "finding": "Article is CC BY 4.0. It USES vector data for eight Joseon Main Roads but does not publish it; no Data Accessibility Statement and no supplementary GIS files on the article page. Named sources: Yeojidoseo, Daedongjiji, Kim (2004), and the Academy of Korean Studies 2014-2017 reconstruction project.",
+      "integrationReady": false
+    },
+    {
+      "id": "C2",
+      "name": "npj Heritage Science - Sino-Korean Tribute Routes (Gong, Greenop, Keys, Landorf, 13 May 2025)",
+      "status": "checked - no geometry published, reconstructed segment is in China",
+      "url": "https://www.nature.com/articles/s40494-025-01689-9",
+      "finding": "Body read after Nature's idp cookie redirect chain. Data availability lists only base maps and environmental inputs (ALOS DEM, China Land Cover, ERA5-Land, OSM). No shapefile/GeoJSON/KML of the route. The reconstructed ~210 km segment is the Liaodong Eight Courier Stations section in Liaoning, China; the Korean-peninsula portion is not reconstructed. Limitations are explicitly stated.",
+      "integrationReady": false
+    },
+    {
+      "id": "C3",
+      "name": "Korea Heritage Service spatial data (data.go.kr 15089320 + 15148507, gis-heritage.go.kr)",
+      "status": "checked - open licence confirmed, but wrong geometry semantics",
+      "url": "https://www.data.go.kr/data/15089320/fileData.do",
+      "finding": "Both datasets: 제공기관 국가유산청, 확장자 SHP, 이용허락범위 '제한 없음', download via gis-heritage.go.kr (UTM-K, KOGL/공공누리 marking on the download page). Content is heritage DESIGNATED-AREA polygons (국보/보물/사적/명승/천연기념물...), not route centrelines; no period or reconstruction-limit statement. Related to 옛길 only through a handful of 명승 designations (문경새재, 대관령 옛길 등). Actual geometry type / CRS / item list not verifiable without opening the file.",
+      "integrationReady": false
+    },
+    {
+      "id": "C4",
+      "name": "Open research-repository sweep (Zenodo API, OSF, figshare)",
+      "status": "checked - absent",
+      "url": "https://zenodo.org/api/records?q=%22historical%20road%22%20OR%20%22historical%20routes%22%20Korea&size=20",
+      "finding": "Zenodo returned 17 records, none a Korean historical road/route geospatial dataset (hits were Turkey, Russia, a Tokyo point cloud, and false positives on the surname 'Korea'). OSF/figshare search found no deposit for the Joseon road-network vectors either. Genuine absence, not a block.",
+      "integrationReady": false
+    },
+    {
+      "id": "C5",
+      "name": "David Rumsey Historical Map Collection (georeferenced IIIF maps)",
+      "status": "partially checked - licence verified, catalogue inaccessible",
+      "url": "https://www.davidrumsey.com/about",
+      "finding": "Copyright page read directly: CC BY-NC-SA 3.0, attribution 'David Rumsey Map Collection, David Rumsey Map Center, Stanford Libraries', commercial use requires permission (carto@davidrumsey.com). BUT the LUNA catalogue browse for Korea returned a 'Verify Access' bot-verification screen and davidrumsey.georeferencer.com returned HTTP 403, so NO specific georeferenced Korea sheet could be confirmed. Not bypassed.",
+      "integrationReady": false
+    },
+    {
+      "id": "C6",
+      "name": "Open georeferencing platforms (Wikimaps Warper, MapWarper.net)",
+      "status": "checked - nothing relevant / blocked",
+      "url": "https://warper.wmflabs.org/maps?field=title&query=korea&show_warped=1",
+      "finding": "Wikimaps Warper: only 5 warped maps match 'korea', all Admiralty nautical charts (1855-1962: Sinpo, Ulsan Man, Korea Strait, Japan and part of Korea). Coastal hydrography only, no inland roads or 역로. MapWarper.net returned an hCaptcha challenge instead of results; not bypassed.",
+      "integrationReady": false
+    }
+  ],
+  "conclusion": "No publicly redistributable LineString dataset of Korean historical postal roads / old roads was found, and no confirmed redistributable georeferenced historical map of the Korean peninsula showing routes. The only known vector reconstruction of Joseon main roads is unpublished third-party data from the AKS 2014-2017 project; its distribution terms could not be verified with the available tools (waks.aks.ac.kr is HTTP-only and refused HTTPS; 국편 HGIS and Hisgeo are policy-restricted)."
+}
