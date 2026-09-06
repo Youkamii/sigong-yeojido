@@ -56,6 +56,7 @@ SOURCES: dict[str, dict] = {
     "samguksagi": {"dataset": "15053635", "label": "삼국사기"},
     "samgukyusa": {"dataset": "15053634", "label": "삼국유사"},   # 2026-09-05 검증: 153 조목, 王曆 은 표
     "goryeosa": {"dataset": "15053637", "label": "고려사"},       # 2026-09-05 검증: 5,389 기사 + 73 절
+    "goryeosa-jeolyo": {"dataset": "15115521", "label": "고려사절요", "dateContext": True},
     "joseon-sillok": {"dataset": "15053647", "label": "조선왕조실록"},
     "seungjeongwon-ilgi": {"dataset": "15064218", "label": "승정원일기", "dateContext": True},
     "bibyeonsa-deungnok": {"dataset": "15053636", "label": "비변사등록", "dateContext": True, "frontMatter": True},
