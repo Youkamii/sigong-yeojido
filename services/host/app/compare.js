@@ -41,7 +41,9 @@ export class SourceComparison {
         card.querySelector('[data-action=source]').onclick=()=>this.callbacks.source(claim.fromSource);
         for(const projection of claim.projections){
           const button=document.createElement('button');button.className='card-btn compare-year';
-          button.textContent=`${projection.earliest??'미상'} ~ ${projection.latest??'미상'} · 환산 근거`;
+          const year=value=>value==null?'미상':value<0?`기원전 ${-value}년`:`서기 ${value}년`;
+          const source=claim.conversions.find(c=>c.id===projection.claimId)?.sourceLabel||claim.sourceLabel;
+          button.textContent=`${year(projection.earliest)}${projection.latest===projection.earliest?'':' ~ '+year(projection.latest)} · ${source} · 연도 근거`;
           button.onclick=()=>this.callbacks.time(claim,projection);card.append(button);
         }
         rows.append(card);

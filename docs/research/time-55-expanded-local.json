@@ -1,0 +1,754 @@
+{
+  "base": "http://127.0.0.1:8873",
+  "events": {
+    "events": [
+      {
+        "id": "claim-gwanggaeto-1-06-stele-erected-time",
+        "subject": "event-gwanggaeto-stele-erected",
+        "subjectLabel": "광개토왕 산릉 이장·입비",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-gapin-9-29",
+          "verbatim": "甲寅年九月廿九日乙酉",
+          "precision": "day"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_1-06",
+        "quote": "以甲寅年九月廿九日乙酉遷就山陵於是立碑銘記勳績",
+        "origin": "ai",
+        "status": "draft",
+        "note": "遷就山陵(산릉으로 옮김)과 立碑 가 한 문장에 있어 한 event 로 묶었다. 날짜 간지 乙酉 는 검증하지 않고 표기대로 보존한다.",
+        "chunk": {
+          "id": "chunk_gwanggaeto_1-06",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 1면 6번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-1-06-gapin-converts-414",
+            "subject": "ts-gwanggaeto-gapin-9-29",
+            "subjectLabel": "ts-gwanggaeto-gapin-9-29",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 414
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_1-06",
+            "quote": "以甲寅年九月廿九日乙酉",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문은 서기 연도를 말하지 않는다. 서기 414년이라는 값은 永樂五年=乙未 를 395년으로 놓는 통상 기년과 간지 60년 주기에 의존한 환산이다(비문 내부 산술로는 甲寅 = 永樂 廿四年 상당). 현대 연구서 Source 가 들어오면 그쪽 convertsTo 와 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_1-06",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 1면 6번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 414,
+            "latest": 414,
+            "claimId": "claim-gwanggaeto-1-06-gapin-converts-414",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      },
+      {
+        "id": "claim-gwanggaeto-1-07-yeongnak-5-time",
+        "subject": "event-gwanggaeto-yeongnak-5",
+        "subjectLabel": "영락 5년 기사 (비려 정벌)",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-yeongnak-5",
+          "verbatim": "永樂五年，歲在乙未",
+          "precision": "year"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_1-07",
+        "quote": "永樂五年，歲在乙未，王以碑麗不息",
+        "origin": "ai",
+        "status": "draft",
+        "note": "",
+        "chunk": {
+          "id": "chunk_gwanggaeto_1-07",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 1면 7번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-1-07-yeongnak-5-converts-395",
+            "subject": "ts-gwanggaeto-yeongnak-5",
+            "subjectLabel": "ts-gwanggaeto-yeongnak-5",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 395
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_1-07",
+            "quote": "永樂五年，歲在乙未",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문은 서기 연도를 말하지 않는다. 서기 395년이라는 값은 永樂 원년을 391년(辛卯)으로 놓는 통상 기년과 간지 60년 주기에 의존한 환산이다. 간지와 연도의 대응은 check_claims.py 가 60갑자 산술로 검증한다. 다른 환산이 있으면 별도 convertsTo claim 으로 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_1-07",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 1면 7번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 395,
+            "latest": 395,
+            "claimId": "claim-gwanggaeto-1-07-yeongnak-5-converts-395",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      },
+      {
+        "id": "claim-gwanggaeto-1-09-sinmyo-time",
+        "subject": "event-gwanggaeto-sinmyo",
+        "subjectLabel": "신묘년 기사",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-sinmyo",
+          "verbatim": "辛卯年",
+          "precision": "year"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_1-09",
+        "quote": "而倭以辛卯年來渡海破百殘",
+        "origin": "ai",
+        "status": "draft",
+        "note": "이 event 는 '신묘년 기사' 라는 대목 자체다. 문장의 주어가 倭 인지 고구려인지, 누가 무엇을 했는지는 원문에 없는 해석이므로 claim 으로 만들지 않았다.",
+        "chunk": {
+          "id": "chunk_gwanggaeto_1-09",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 1면 9번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-1-09-sinmyo-converts-391",
+            "subject": "ts-gwanggaeto-sinmyo",
+            "subjectLabel": "ts-gwanggaeto-sinmyo",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 391
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_1-09",
+            "quote": "辛卯年",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문 내부 산술로 辛卯 는 永樂五年=乙未 의 4년 전, 곧 永樂 원년에 해당한다. 서기 391 은 그 원년을 391 로 놓는 통상 기년에 의존한다. 다른 환산이 있으면 별도 claim 으로 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_1-09",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 1면 9번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 391,
+            "latest": 391,
+            "claimId": "claim-gwanggaeto-1-09-sinmyo-converts-391",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      },
+      {
+        "id": "claim-gwanggaeto-1-09-yeongnak-6-time",
+        "subject": "event-gwanggaeto-yeongnak-6",
+        "subjectLabel": "영락 6년 기사 (백잔 정벌)",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-yeongnak-6",
+          "verbatim": "六年丙申",
+          "precision": "year"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_1-09",
+        "quote": "以六年丙申，王躬率水軍討科殘國",
+        "origin": "ai",
+        "status": "draft",
+        "note": "永樂 두 자는 이 줄에 없고 앞 기사(五年)의 연호가 이어지는 것으로 읽는다. verbatim 은 글자 그대로 六年丙申 만 보존한다.",
+        "chunk": {
+          "id": "chunk_gwanggaeto_1-09",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 1면 9번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-1-09-yeongnak-6-converts-396",
+            "subject": "ts-gwanggaeto-yeongnak-6",
+            "subjectLabel": "ts-gwanggaeto-yeongnak-6",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 396
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_1-09",
+            "quote": "以六年丙申",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문은 서기 연도를 말하지 않는다. 서기 396년이라는 값은 永樂 원년을 391년(辛卯)으로 놓는 통상 기년과 간지 60년 주기에 의존한 환산이다. 간지와 연도의 대응은 check_claims.py 가 60갑자 산술로 검증한다. 다른 환산이 있으면 별도 convertsTo claim 으로 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_1-09",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 1면 9번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 396,
+            "latest": 396,
+            "claimId": "claim-gwanggaeto-1-09-yeongnak-6-converts-396",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      },
+      {
+        "id": "claim-gwanggaeto-2-05-yeongnak-8-time",
+        "subject": "event-gwanggaeto-yeongnak-8",
+        "subjectLabel": "영락 8년 기사 (백신토곡)",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-yeongnak-8",
+          "verbatim": "八年戊戌",
+          "precision": "year"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_2-05",
+        "quote": "八年戊戌，教遣偏師觀",
+        "origin": "ai",
+        "status": "draft",
+        "note": "대상 帛慎土谷 은 다음 줄(2면 6줄)에 이어진다.",
+        "chunk": {
+          "id": "chunk_gwanggaeto_2-05",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 2면 5번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-2-05-yeongnak-8-converts-398",
+            "subject": "ts-gwanggaeto-yeongnak-8",
+            "subjectLabel": "ts-gwanggaeto-yeongnak-8",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 398
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_2-05",
+            "quote": "八年戊戌",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문은 서기 연도를 말하지 않는다. 서기 398년이라는 값은 永樂 원년을 391년(辛卯)으로 놓는 통상 기년과 간지 60년 주기에 의존한 환산이다. 간지와 연도의 대응은 check_claims.py 가 60갑자 산술로 검증한다. 다른 환산이 있으면 별도 convertsTo claim 으로 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_2-05",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 2면 5번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 398,
+            "latest": 398,
+            "claimId": "claim-gwanggaeto-2-05-yeongnak-8-converts-398",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      },
+      {
+        "id": "claim-gwanggaeto-2-06-yeongnak-9-time",
+        "subject": "event-gwanggaeto-yeongnak-9",
+        "subjectLabel": "영락 9년 기사 (백잔·왜 화통)",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-yeongnak-9",
+          "verbatim": "九年己亥",
+          "precision": "year"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_2-06",
+        "quote": "九年己亥，百殘違誓與倭和",
+        "origin": "ai",
+        "status": "draft",
+        "note": "和通 의 通 은 다음 줄 첫 글자다.",
+        "chunk": {
+          "id": "chunk_gwanggaeto_2-06",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 2면 6번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-2-06-yeongnak-9-converts-399",
+            "subject": "ts-gwanggaeto-yeongnak-9",
+            "subjectLabel": "ts-gwanggaeto-yeongnak-9",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 399
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_2-06",
+            "quote": "九年己亥",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문은 서기 연도를 말하지 않는다. 서기 399년이라는 값은 永樂 원년을 391년(辛卯)으로 놓는 통상 기년과 간지 60년 주기에 의존한 환산이다. 간지와 연도의 대응은 check_claims.py 가 60갑자 산술로 검증한다. 다른 환산이 있으면 별도 convertsTo claim 으로 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_2-06",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 2면 6번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 399,
+            "latest": 399,
+            "claimId": "claim-gwanggaeto-2-06-yeongnak-9-converts-399",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      },
+      {
+        "id": "claim-gwanggaeto-2-08-yeongnak-10-time",
+        "subject": "event-gwanggaeto-yeongnak-10",
+        "subjectLabel": "영락 10년 기사 (신라 구원)",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-yeongnak-10",
+          "verbatim": "十年庚子",
+          "precision": "year"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_2-08",
+        "quote": "十年庚子，教遣步騎五萬，往救新羅",
+        "origin": "ai",
+        "status": "draft",
+        "note": "",
+        "chunk": {
+          "id": "chunk_gwanggaeto_2-08",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 2면 8번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-2-08-yeongnak-10-converts-400",
+            "subject": "ts-gwanggaeto-yeongnak-10",
+            "subjectLabel": "ts-gwanggaeto-yeongnak-10",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 400
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_2-08",
+            "quote": "十年庚子",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문은 서기 연도를 말하지 않는다. 서기 400년이라는 값은 永樂 원년을 391년(辛卯)으로 놓는 통상 기년과 간지 60년 주기에 의존한 환산이다. 간지와 연도의 대응은 check_claims.py 가 60갑자 산술로 검증한다. 다른 환산이 있으면 별도 convertsTo claim 으로 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_2-08",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 2면 8번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 400,
+            "latest": 400,
+            "claimId": "claim-gwanggaeto-2-08-yeongnak-10-converts-400",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      },
+      {
+        "id": "claim-gwanggaeto-3-03-yeongnak-14-time",
+        "subject": "event-gwanggaeto-yeongnak-14",
+        "subjectLabel": "영락 14년 기사 (대방계)",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-yeongnak-14",
+          "verbatim": "十四年甲辰",
+          "precision": "year"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_3-03",
+        "quote": "十四年甲辰而倭不軌，侵入帶方界",
+        "origin": "ai",
+        "status": "draft",
+        "note": "",
+        "chunk": {
+          "id": "chunk_gwanggaeto_3-03",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 3면 3번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-3-03-yeongnak-14-converts-404",
+            "subject": "ts-gwanggaeto-yeongnak-14",
+            "subjectLabel": "ts-gwanggaeto-yeongnak-14",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 404
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_3-03",
+            "quote": "十四年甲辰",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문은 서기 연도를 말하지 않는다. 서기 404년이라는 값은 永樂 원년을 391년(辛卯)으로 놓는 통상 기년과 간지 60년 주기에 의존한 환산이다. 간지와 연도의 대응은 check_claims.py 가 60갑자 산술로 검증한다. 다른 환산이 있으면 별도 convertsTo claim 으로 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_3-03",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 3면 3번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 404,
+            "latest": 404,
+            "claimId": "claim-gwanggaeto-3-03-yeongnak-14-converts-404",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      },
+      {
+        "id": "claim-gwanggaeto-3-04-yeongnak-17-time",
+        "subject": "event-gwanggaeto-yeongnak-17",
+        "subjectLabel": "영락 17년 기사",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-yeongnak-17",
+          "verbatim": "十七年丁未",
+          "precision": "year"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_3-04",
+        "quote": "十七年丁未，教遣步騎五萬",
+        "origin": "ai",
+        "status": "draft",
+        "note": "정벌 대상은 결자(□□□□□□□□□城)라 알 수 없다. 대상을 추정해 넣지 않았다.",
+        "chunk": {
+          "id": "chunk_gwanggaeto_3-04",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 3면 4번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-3-04-yeongnak-17-converts-407",
+            "subject": "ts-gwanggaeto-yeongnak-17",
+            "subjectLabel": "ts-gwanggaeto-yeongnak-17",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 407
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_3-04",
+            "quote": "十七年丁未",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문은 서기 연도를 말하지 않는다. 서기 407년이라는 값은 永樂 원년을 391년(辛卯)으로 놓는 통상 기년과 간지 60년 주기에 의존한 환산이다. 간지와 연도의 대응은 check_claims.py 가 60갑자 산술로 검증한다. 다른 환산이 있으면 별도 convertsTo claim 으로 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_3-04",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 3면 4번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 407,
+            "latest": 407,
+            "claimId": "claim-gwanggaeto-3-04-yeongnak-17-converts-407",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      },
+      {
+        "id": "claim-gwanggaeto-3-06-yeongnak-20-time",
+        "subject": "event-gwanggaeto-yeongnak-20",
+        "subjectLabel": "영락 20년 기사 (동부여 정벌)",
+        "predicate": "syj:occurredAt",
+        "object": {
+          "kind": "time",
+          "id": "ts-gwanggaeto-yeongnak-20",
+          "verbatim": "廿年庚戌",
+          "precision": "year"
+        },
+        "fromSource": "src-gwanggaeto",
+        "sourceLabel": "광개토왕릉비",
+        "citesChunk": "chunk_gwanggaeto_3-06",
+        "quote": "廿年庚戌，東夫餘舊是鄒牟王屬民中叛不貢，王躬率往討",
+        "origin": "ai",
+        "status": "draft",
+        "note": "",
+        "chunk": {
+          "id": "chunk_gwanggaeto_3-06",
+          "sourceId": "src-gwanggaeto",
+          "locator": "전사본 3면 6번째 줄",
+          "permalink": null
+        },
+        "conversions": [
+          {
+            "id": "claim-gwanggaeto-3-06-yeongnak-20-converts-410",
+            "subject": "ts-gwanggaeto-yeongnak-20",
+            "subjectLabel": "ts-gwanggaeto-yeongnak-20",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": 410
+            },
+            "fromSource": "src-gwanggaeto",
+            "sourceLabel": "광개토왕릉비",
+            "citesChunk": "chunk_gwanggaeto_3-06",
+            "quote": "廿年庚戌",
+            "origin": "ai",
+            "status": "draft",
+            "note": "비문은 서기 연도를 말하지 않는다. 서기 410년이라는 값은 永樂 원년을 391년(辛卯)으로 놓는 통상 기년과 간지 60년 주기에 의존한 환산이다. 간지와 연도의 대응은 check_claims.py 가 60갑자 산술로 검증한다. 다른 환산이 있으면 별도 convertsTo claim 으로 병존시킨다.",
+            "chunk": {
+              "id": "chunk_gwanggaeto_3-06",
+              "sourceId": "src-gwanggaeto",
+              "locator": "전사본 3면 6번째 줄",
+              "permalink": null
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": 410,
+            "latest": 410,
+            "claimId": "claim-gwanggaeto-3-06-yeongnak-20-converts-410",
+            "fromSource": "src-gwanggaeto"
+          }
+        ]
+      }
+    ],
+    "relations": [],
+    "hasMore": false,
+    "origin": "all"
+  },
+  "baekje": {
+    "events": [
+      {
+        "id": "claim-baekje-founded-hongga3-samguksagi",
+        "subject": "polity-baekje",
+        "subjectLabel": "백제",
+        "predicate": "syj:foundedIn",
+        "object": {
+          "kind": "time",
+          "id": "ts-baekje-founded-hongga3-samguksagi",
+          "verbatim": "前漢 成帝鴻嘉三年",
+          "precision": "year"
+        },
+        "fromSource": "src-samguksagi",
+        "sourceLabel": "삼국사기",
+        "citesChunk": "chunk_samguksagi_sg_023_0020_0010",
+        "quote": "國號十濟. 是前漢 成帝鴻嘉三年也.",
+        "origin": "ai",
+        "status": "draft",
+        "note": "같은 chunk 의 원주(annotation)는 시조를 沸流王 으로 보는 다른 계통을 싣는다 — claim-baekje-biryu-variant 참조. 삼국유사 변한백제 조는 鴻嘉四年甲辰 이라 적는다 — claim-baekje-onjo-hongga4-samgukyusa 참조. 두 값을 합치지 않았다. 국호 十濟 → 百濟 변경은 별도 Claim(claim-baekje-rename). 조사 초안의 추가 문맥: {\"conversionNote\": \"국편 date.raw 가 -0018 이고 본문 연호도 鴻嘉三年 이라 두 값이 맞물린다. 그래도 환산 자체를 Claim 으로 둘 것(schema §8.1).\", \"conversionStatus\": \"candidate\", \"year\": -18}",
+        "chunk": {
+          "id": "chunk_samguksagi_sg_023_0020_0010",
+          "sourceId": "src-samguksagi",
+          "locator": "卷第二十三 百濟本紀 第一 › 溫祚王 › 백제가 건국되고 온조왕이 즉위하다",
+          "permalink": "https://db.history.go.kr/id/sg_023_0020_0010"
+        },
+        "conversions": [
+          {
+            "id": "claim-hongga-third-conversion-jawp",
+            "subject": "ts-baekje-founded-hongga3-samguksagi",
+            "subjectLabel": "ts-baekje-founded-hongga3-samguksagi",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": -18
+            },
+            "fromSource": "src-jawp-hongga-calendar",
+            "sourceLabel": "홍가 연호·서기 대조표 · 일본어 위키백과",
+            "citesChunk": "chunk_jawp-hongga-calendar_table",
+            "quote": "鴻嘉\t元年\t2年\t3年\t4年\n西暦\t前20年\t前19年\t前18年\t前17年\n干支\t辛丑\t壬寅\t癸卯\t甲辰",
+            "origin": "ai",
+            "status": "draft",
+            "note": "3차 자료인 위키백과 대조표의 4번째 열: 3年 / 前18年 / 癸卯. 원표기와 환산을 분리했다. 당시 사건의 사실 여부나 월·일은 판정하지 않는다. 기관·학술 자료의 독립 대조는 미완료다.",
+            "chunk": {
+              "id": "chunk_jawp-hongga-calendar_table",
+              "sourceId": "src-jawp-hongga-calendar",
+              "locator": "鴻嘉 › 西暦との対照表 · 原行列順",
+              "permalink": "https://ja.wikipedia.org/wiki/%E9%B4%BB%E5%98%89"
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": -18,
+            "latest": -18,
+            "claimId": "claim-hongga-third-conversion-jawp",
+            "fromSource": "src-jawp-hongga-calendar"
+          }
+        ]
+      },
+      {
+        "id": "claim-baekje-onjo-hongga4-samgukyusa",
+        "subject": "polity-baekje",
+        "subjectLabel": "백제",
+        "predicate": "syj:foundedIn",
+        "object": {
+          "kind": "time",
+          "id": "ts-baekje-onjo-hongga4-samgukyusa",
+          "verbatim": "鴻嘉四年甲辰",
+          "precision": "year"
+        },
+        "fromSource": "src-samgukyusa",
+        "sourceLabel": "삼국유사",
+        "citesChunk": "chunk_samgukyusa_sy_001_0020_0160_0010",
+        "quote": "按夲紀, 温祚之起在鴻嘉四年甲辰, 則後於赫居世·東明之世四十餘年.",
+        "origin": "ai",
+        "status": "draft",
+        "note": "이것이 Q2(백제 건국 연도를 사료별로)의 핵심 충돌이다. 삼국사기 鴻嘉三年 / 삼국유사 남부여조 鴻佳三年 / 삼국유사 변한백제조 鴻嘉四年 — 세 값을 그대로 병존시킨다. 삼국유사가 가리키는 '夲紀'가 현전 삼국사기와 같은 판본인지 확인할 수 없다. '四十餘年'이라는 상대 서술도 함께 있으므로 절대연도 확정 근거로 삼지 않는다. 조사 초안의 추가 문맥: {\"conversionNote\": \"鴻嘉四年 과 간지 甲辰 이 함께 적혀 있다. 삼국사기의 鴻嘉三年 과 값이 다르므로 환산을 확정하지 않고 충돌로 남긴다.\", \"conversionStatus\": \"not-converted\", \"year\": null}",
+        "chunk": {
+          "id": "chunk_samgukyusa_sy_001_0020_0160_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 卞韓 百濟 › 변한 사람이 항복하다",
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0160_0010"
+        },
+        "conversions": [
+          {
+            "id": "claim-hongga-fourth-conversion-jawp",
+            "subject": "ts-baekje-onjo-hongga4-samgukyusa",
+            "subjectLabel": "ts-baekje-onjo-hongga4-samgukyusa",
+            "predicate": "syj:convertsTo",
+            "object": {
+              "kind": "year",
+              "value": -17
+            },
+            "fromSource": "src-jawp-hongga-calendar",
+            "sourceLabel": "홍가 연호·서기 대조표 · 일본어 위키백과",
+            "citesChunk": "chunk_jawp-hongga-calendar_table",
+            "quote": "鴻嘉\t元年\t2年\t3年\t4年\n西暦\t前20年\t前19年\t前18年\t前17年\n干支\t辛丑\t壬寅\t癸卯\t甲辰",
+            "origin": "ai",
+            "status": "draft",
+            "note": "3차 자료인 위키백과 대조표의 5번째 열: 4年 / 前17年 / 甲辰. 원표기와 환산을 분리했다. 당시 사건의 사실 여부나 월·일은 판정하지 않는다. 기관·학술 자료의 독립 대조는 미완료다.",
+            "chunk": {
+              "id": "chunk_jawp-hongga-calendar_table",
+              "sourceId": "src-jawp-hongga-calendar",
+              "locator": "鴻嘉 › 西暦との対照表 · 原行列順",
+              "permalink": "https://ja.wikipedia.org/wiki/%E9%B4%BB%E5%98%89"
+            }
+          }
+        ],
+        "projections": [
+          {
+            "earliest": -17,
+            "latest": -17,
+            "claimId": "claim-hongga-fourth-conversion-jawp",
+            "fromSource": "src-jawp-hongga-calendar"
+          }
+        ]
+      },
+      {
+        "id": "claim-baekje-onjo-samgukyusa",
+        "subject": "polity-baekje",
+        "subjectLabel": "백제",
+        "predicate": "syj:foundedIn",
+        "object": {
+          "kind": "time",
+          "id": "ts-baekje-onjo-samgukyusa",
+          "verbatim": "漢成帝鴻佳三年",
+          "precision": "year"
+        },
+        "fromSource": "src-samgukyusa",
+        "sourceLabel": "삼국유사",
+        "citesChunk": "chunk_samgukyusa_sy_002_0010_0200_0020",
+        "quote": "温祚都河南 慰禮城, 以十臣為輔翼國號十濟. 是漢成帝鴻佳三年也.",
+        "origin": "ai",
+        "status": "draft",
+        "note": "삼국유사 자신의 독립 주장이 아니라 명시적 인용이다. 그래서 삼국사기와 같은 값이 나오는 것을 '두 사료의 독립 일치'로 보면 안 된다. 글자 차이가 여럿이다: 雛牟王(유사) vs 鄒牟(사기), 鴻佳(유사) vs 鴻嘉(사기), 弥雛忽(유사) vs 彌鄒忽(사기). 정규화하지 않았다. 같은 삼국유사 안의 변한백제 조는 鴻嘉四年 이라 적는다 — 사료 내부 불일치. 조사 초안의 추가 문맥: {\"conversionNote\": \"鴻佳 는 鴻嘉 의 이체/오각으로 보이나 본문 글자를 고치지 않았다. 국편 date.raw 는 -0018.\", \"conversionStatus\": \"candidate\", \"year\": -18}",
+        "chunk": {
+          "id": "chunk_samgukyusa_sy_002_0010_0200_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 온조가 백제를 건국하다",
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0020"
+        },
+        "conversions": [],
+        "projections": []
+      }
+    ],
+    "relations": [],
+    "hasMore": false,
+    "origin": "all"
+  },
+  "checks": {
+    "rdf_original_and_conversions": true,
+    "empty_sources": true,
+    "conversion_moves_timeline_and_opens_citation": true,
+    "human_filter": true,
+    "graph_timeline_layout": true,
+    "different_bc_years": true,
+    "unsupported_spelling_withheld": true,
+    "conversion_source_toggle": true
+  },
+  "pageErrors": [],
+  "limits": [
+    "홍가 환산 표는 위키백과 3차 자료다. 기관·학술 원서와의 독립 대조는 미완료다."
+  ]
+}

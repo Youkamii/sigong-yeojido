@@ -438,6 +438,7 @@ function showGraphClaim(claim){
     <p>${escH(value)}</p>${object.kind==='time'?`<p class="empty">${escH(object.precision)} · ${object.calendar?escH(object.calendar)+' · ':''}${object.earliest??object.year??'시작 미상'} ~ ${object.latest??object.year??'끝 미상'}</p>`:''}
     <span class="badge ${claim.origin==='ai'?'ai':'human'}">${claim.origin==='ai'?'AI 추출':'사람'}</span>
     <div class="quote">${escH(claim.quote)}</div><div class="srcline">${escH(claim.sourceLabel)} · ${escH(claim.chunk.locator||claim.citesChunk)}</div>
+    ${claim.note?`<p class="empty">${escH(claim.note)}</p>`:''}
     <button class="card-btn" data-evidence-action="chunk">인용한 원문 열기</button><button class="card-btn" data-evidence-action="source">사료 카드</button>`;
   el.querySelector('[data-evidence-action=chunk]').onclick=()=>showChunk(claim.citesChunk);
   el.querySelector('[data-evidence-action=source]').onclick=()=>showSource(claim.fromSource);

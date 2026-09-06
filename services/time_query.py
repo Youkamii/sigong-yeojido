@@ -22,13 +22,14 @@ def time_claims(sources=None, origin='all', entity=None, limit=500, claim_ids=No
         focus+=' VALUES ?claim { '+' '.join(identifier(cid) for cid in sorted(claim_ids))+' }'
     rows=query_rows(f'''
 SELECT DISTINCT ?claim ?subject ?label ?predicate ?span ?verbatim ?precision ?year ?earliest ?latest ?calendar
-       ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink
+       ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink ?note
 WHERE {{
   ?claim a syj:Claim; syj:subject ?subject; syj:predicate ?predicate; syj:objectTime ?span;
          syj:fromSource ?source; syj:citesChunk ?chunk; syj:quote ?quote; syj:origin ?origin; syj:status ?status.
   ?span syj:verbatim ?verbatim; syj:precision ?precision.
   {selected_filter(sources,origin)} {focus}
   OPTIONAL {{?subject rdfs:label ?label}} OPTIONAL {{?source rdfs:label ?sourceLabel}}
+  OPTIONAL {{?claim syj:note ?note}}
   OPTIONAL {{?chunk syj:locator ?locator}} OPTIONAL {{?chunk syj:permalink ?permalink}}
   OPTIONAL {{?span syj:year ?year}} OPTIONAL {{?span syj:earliest ?earliest}}
   OPTIONAL {{?span syj:latest ?latest}} OPTIONAL {{?span syj:calendar ?calendar}}
@@ -41,12 +42,13 @@ WHERE {{
     if spans:
         values=' '.join(identifier(span) for span in sorted(spans))
         converted=query_rows(f'''
-SELECT DISTINCT ?claim ?span ?year ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink
+SELECT DISTINCT ?claim ?span ?year ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink ?note
 WHERE {{
  VALUES ?span {{ {values} }}
  ?claim a syj:Claim; syj:subject ?span; syj:predicate syj:convertsTo; syj:objectYear ?year;
         syj:fromSource ?source; syj:citesChunk ?chunk; syj:quote ?quote; syj:origin ?origin; syj:status ?status.
  {selected_filter(sources,origin)}
+ OPTIONAL {{?claim syj:note ?note}}
  OPTIONAL {{?source rdfs:label ?sourceLabel}} OPTIONAL {{?chunk syj:locator ?locator}}
  OPTIONAL {{?chunk syj:permalink ?permalink}}
 }} ORDER BY ?span ?year ?claim LIMIT 2001
@@ -73,12 +75,13 @@ WHERE {{
             event['projections'].append({'earliest':year,'latest':year,'claimId':conversion['id'],'fromSource':conversion['fromSource']})
         result['events'].append(event)
     relations=query_rows(f'''
-SELECT DISTINCT ?claim ?subject ?predicate ?target ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink
+SELECT DISTINCT ?claim ?subject ?predicate ?target ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink ?note
 WHERE {{
  VALUES ?predicate {{syj:before syj:after}}
  ?claim a syj:Claim; syj:subject ?subject; syj:predicate ?predicate; syj:objectEntity ?target;
         syj:fromSource ?source; syj:citesChunk ?chunk; syj:quote ?quote; syj:origin ?origin; syj:status ?status.
  {selected_filter(sources,origin)} {focus}
+ OPTIONAL {{?claim syj:note ?note}}
  OPTIONAL {{?source rdfs:label ?sourceLabel}} OPTIONAL {{?chunk syj:locator ?locator}}
  OPTIONAL {{?chunk syj:permalink ?permalink}}
 }} ORDER BY ?claim LIMIT {limit+1}
@@ -92,5 +95,5 @@ def _claim(row,subject,predicate,obj):
     local=lambda key:row[key].removeprefix(NS)
     return {'id':local('claim'),'subject':subject,'subjectLabel':subject,'predicate':predicate,'object':obj,
             'fromSource':local('source'),'sourceLabel':row.get('sourceLabel',local('source')),
-            'citesChunk':local('chunk'),'quote':row['quote'],'origin':row['origin'],'status':row['status'],
+            'citesChunk':local('chunk'),'quote':row['quote'],'origin':row['origin'],'status':row['status'],'note':row.get('note',''),
             'chunk':{'id':local('chunk'),'sourceId':local('source'),'locator':row.get('locator'),'permalink':row.get('permalink')}}
