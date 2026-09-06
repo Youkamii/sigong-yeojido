@@ -1,0 +1,35 @@
+{
+  "base": "http://127.0.0.1:8873",
+  "realSourceResponseDelayed": true,
+  "cases": [
+    {
+      "case": "default",
+      "selected": 8,
+      "expected": 8,
+      "yearRecordCount": 0,
+      "pageErrors": []
+    },
+    {
+      "case": "all",
+      "selected": 1072,
+      "expected": 1072,
+      "yearRecordCount": 19,
+      "pageErrors": []
+    },
+    {
+      "case": "none",
+      "selected": 0,
+      "expected": 0,
+      "yearRecordCount": 0,
+      "pageErrors": []
+    },
+    {
+      "case": "last_choice",
+      "selected": 1072,
+      "expected": 1072,
+      "yearRecordCount": 19,
+      "pageErrors": []
+    }
+  ],
+  "passed": 4
+}

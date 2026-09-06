@@ -355,7 +355,7 @@ import { activeAt as placeActiveAt, candActive as candidateActive, originMatches
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
 
 const state = {
-  places: [], geo: null, chunks: [], sources: [], entities: [],
+  places: [], geo: null, chunks: [], sources: [], entities: [], sourcesReady: false, pendingSourceSelection: null,
   on: new Set(), primary: new Set(), lenses: [], year: 414, sel: null, hot: null, mode: '2d', panel: null, origin: 'all', mapFocus: null
 };
 new ResizeObserver(entries=>{
@@ -565,12 +565,14 @@ async function load(){
   for(const lens of state.lenses){const option=document.createElement('option');option.value=lens.id;option.textContent=lens.label;lensSelect.append(option);}
   const initial=state.lenses.find(l=>l.id===lenses.default);
   state.primary=new Set(initial?.sources||state.sources.filter(s=>s.defaultLens).map(s=>s.id));
-  state.on=new Set(state.primary);
+  state.on=new Set(state.pendingSourceSelection===true?state.sources.map(s=>s.id):state.pendingSourceSelection===false?[]:state.primary);
+  state.sourcesReady=true;state.pendingSourceSelection=null;
   if(initial){lensSelect.value=initial.id;document.getElementById('lensNote').textContent=initial.description;if(initial.historyLevel!=null)historyLevel.value=String(initial.historyLevel);}
   renderRail();
   renderStats();
   draw();
   mountTimeline();
+  scheduleYearCount();
   refreshTimeClaims();
   refreshHistoryMap();
 }
@@ -596,8 +598,12 @@ function useLens(lens){
   sourceSelectionChanged();
 }
 document.getElementById('lensSelect').onchange=event=>useLens(state.lenses.find(l=>l.id===event.target.value));
-document.getElementById('allSources').onclick=()=>{state.on=new Set(state.sources.map(s=>s.id));sourceSelectionChanged();};
-document.getElementById('noSources').onclick=()=>{state.on.clear();sourceSelectionChanged();};
+function selectAllSources(selected){
+  if(!state.sourcesReady)state.pendingSourceSelection=selected;
+  state.on=new Set(selected?state.sources.map(s=>s.id):[]);sourceSelectionChanged();
+}
+document.getElementById('allSources').onclick=()=>selectAllSources(true);
+document.getElementById('noSources').onclick=()=>selectAllSources(false);
 
 // ── 찾기 — 지명은 지도에서, 인물·나라·사건·관직은 주장(Claim)으로 이어진다 ──
 const TYPE_KO = {Place:'지명', Person:'인물', Polity:'나라', Event:'사건', Office:'관직', Organization:'관서·조직', TimeSpan:'시점', Location:'좌표', Conflict:'충돌'};
