@@ -1,4 +1,5 @@
 import { activeAt, candActive, originMatches, sourceMatches, lensStrength, DIORAMA_BOUNDS, inDiorama } from './place-state.js';
+import {featureRings} from './history-map.js';
 // app/korea.js — 실제 한반도를 판톨로지 아트 바이블의 언어로 세운다.
 //
 // 판톨로지의 terrain.js 는 절차 생성 판타지 대륙이다. 우리는 지형이 실측이므로
@@ -517,6 +518,10 @@ export class KoreaWorld {
     this.places = places;
     this.byPlace = new Map();
     this.pickTargets = [];
+    this.historyTargets = [];
+    this.history = new THREE.Group();
+    this.history.name='historical-boundaries';
+    this.group.add(this.history);
 
     const elev = opts.elev && Array.isArray(opts.elev.heights) ? opts.elev : null;
     this.heightAt = elev ? makeHeightAt(elev) : null;
@@ -569,6 +574,33 @@ export class KoreaWorld {
   }
 
   /** 연대에 따라 살고 죽는다 — 2D 지도와 같은 규칙 */
+  setHistoricalFeatures(features){
+    for(const line of [...this.history.children]){
+      this.history.remove(line);line.geometry.dispose();line.material.dispose();
+    }
+    this.historyTargets=[];
+    for(const feature of features){
+      const positions=[];
+      for(const ring of featureRings(feature))for(let i=1;i<ring.length;i++){
+        const a=ring[i-1],b=ring[i];
+        if(!inDiorama({lon:a[0],lat:a[1]})||!inDiorama({lon:b[0],lat:b[1]}))continue;
+        for(const point of [a,b]){
+          const [x,z]=toWorld(...point);
+          const y=this.heightAt?terrainY(Math.max(0,this.heightAt(...point)))+.4:LAND_DEPTH+.4;
+          positions.push(x,y,z);
+        }
+      }
+      const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
+      const line=new THREE.LineSegments(geometry,new THREE.LineBasicMaterial({color:0xD8B463,transparent:true}));
+      line.userData={fanNodeId:feature.id,feature};this.history.add(line);this.historyTargets.push(line);
+    }
+    this.setHistoricalStrength(this._primary||new Set());
+  }
+
+  setHistoricalStrength(primary){
+    for(const line of this.history.children)line.material.opacity=lensStrength(line.userData.feature.properties,null,primary);
+  }
+
   setYear(year) {
     this._year = year;
     this._applyLive();
@@ -582,6 +614,7 @@ export class KoreaWorld {
 
   setPrimarySources(sources) {
     this._primary = new Set(sources);
+    this.setHistoricalStrength(this._primary);
     this._applyLive();
   }
 

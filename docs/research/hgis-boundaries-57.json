@@ -1,0 +1,25 @@
+{
+  "source": "src-hgis-admin-1910-1945",
+  "zipSha256": "368bae9d3dec5dab929258a52ba7aa6dbd66c10e6cd7aba694a5199a46176af0",
+  "gpkgMember": "19100510-19450814행정구역_GIS_데이터.gpkg",
+  "gpkgSha256": "2e2fab2d5acf4a7b0264a3d02a87c71124633538e384cec6e3e929c5e2dd898c",
+  "features": 32,
+  "crs": "EPSG:4326 from gpkg_geometry_columns and every binary header",
+  "simplification": {
+    "shapely": "2.1.2",
+    "toleranceDegrees": 0.002,
+    "preserveTopology": true
+  },
+  "originalVertices": 4536177,
+  "displayVertices": 96782,
+  "invalidOriginalGeometryIds": [],
+  "displayGeoJsonSha256": "8f56415b093f67330bcda0b1c95e46618b430a6f68b8d86249238d9a4944e9b0",
+  "gzipBytes": 1209144,
+  "rawBytes": 3862952,
+  "humanReviewed": false,
+  "limitations": [
+    "Only published province records for 1910–1945. No ancient borders or post-road reconstruction.",
+    "Date overlap is evaluated by year; the original day boundaries remain in each record.",
+    "Original reference strings can be truncated and contain replacement characters. They are preserved."
+  ]
+}

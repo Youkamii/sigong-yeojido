@@ -51,6 +51,7 @@ from graph_query import neighborhood, locations, GraphUnavailable
 from chat import answer as chat_answer, ChatUnavailable
 from time_query import time_claims
 from comparison_query import comparison
+from history_map import historical_features
 from places import load_places, with_locations, place_names
 try:
     from validate import parse_claims_text, MULTI_VALUED_PREDICATES  # noqa: E402
@@ -456,6 +457,12 @@ class Handler(BaseHTTPRequestHandler):
             return
         if path == "/api/places":
             self._json(places_with_mentions())
+            return
+        if path == '/api/history-map':
+            srcs=q.get('sources',[None])[0]
+            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            try:self._json(historical_features(DATA,sources,q.get('origin',['all'])[0],q.get('year',[None])[0]))
+            except ValueError as exc:self._json({'error':str(exc)},400)
             return
         if path == "/api/year":
             try:

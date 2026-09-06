@@ -162,7 +162,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .legend i{width:10px;height:10px;border-radius:50%;flex:0 0 auto}
 
 .canvasWrap{position:relative;min-width:0;background:var(--ink)}
-#map,#three{position:absolute;inset:0;width:100%;height:100%;display:block}
+#map,#three{position:absolute;inset:0;width:100%;height:calc(100% - var(--timeline-height,0px));display:block}
 #three{display:none}
 body.mode3d #three{display:block}
 body.mode3d #map{display:none}
@@ -293,6 +293,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div class="sect">주 렌즈</div>
       <select id="lensSelect" class="q" aria-label="주 렌즈"></select>
       <p id="lensNote" class="empty"></p>
+      <button id="historyMapBtn" class="card-btn">역사 경계 0개 · 근거</button>
       <p class="empty">주 렌즈는 진하게, 추가로 켠 비교 사료는 옅게 겹쳐 보인다.</p>
       <button id="allSources" class="card-btn">모든 사료 켜기</button>
       <button id="noSources" class="card-btn">모두 끄기</button>
@@ -344,6 +345,7 @@ import { groupSources } from './app/source-groups.js';
 import { GraphExplorer } from './app/graph.js';
 import { EvidenceChat } from './app/chat.js';
 import { SourceComparison } from './app/compare.js';
+import { HistoricalMap } from './app/history-map.js';
 import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
 import { activeAt as placeActiveAt, candActive as candidateActive, originMatches, sourceMatches, lensStrength, outsideCandidates } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
@@ -355,6 +357,7 @@ const state = {
 new ResizeObserver(entries=>{
   const height=entries[0].target.getBoundingClientRect().height;
   document.querySelector('.canvasWrap').style.setProperty('--timeline-height',height+'px');
+  draw();if(R)resize3d();
 }).observe(document.querySelector('.timebar'));
 
 document.getElementById('humanOnly').addEventListener('change', event => {
@@ -362,12 +365,38 @@ document.getElementById('humanOnly').addEventListener('change', event => {
   draw();
   if(state.mode === '3d') draw3d();
   refreshEvidence();
+  refreshHistoryMap();
 });
 
 const visibleCandidates = p => p.candidates.filter(c => originMatches(c, state.origin, p) && sourceMatches(c,p,state.on));
 let graphView = null;
 let chatView = null;
 let compareView = null;
+const historyMap=new HistoricalMap(document.getElementById('historyMapBtn'),{
+  list:showHistoricalList,
+  changed:features=>{R?.world.setHistoricalFeatures(features);draw();if(R)draw3d();if(['history','history-feature'].includes(state.panel))showHistoricalList(false);}
+});
+function refreshHistoryMap(){historyMap.refresh({sources:state.on,origin:state.origin,year:state.year});}
+function showHistoricalList(reveal=true){
+  if(reveal)openEvidence();++panelSeq;state.panel='history';state.sel=null;
+  const el=document.getElementById('evi');
+  el.innerHTML='<h3>선택한 해의 역사 경계</h3><p class="empty">1910~1945년 도 경계 32개 레코드를 수록했다. 선택한 해에 존재한 경계를 모두 표시한다. 같은 해에 바뀐 경계는 함께 보이며, 변경일과 기관의 추정 표기는 각 근거에 남아 있다.</p>';
+  for(const feature of historyMap.features){const button=document.createElement('button');button.className='card-btn';button.dataset.feature=feature.id;
+    const p=feature.properties;button.textContent=`${p.label} · ${p.begin}~${p.end} · 근거`;button.onclick=()=>showHistoricalFeature(feature);el.append(button);}
+  if(!historyMap.features.length)el.insertAdjacentHTML('beforeend','<p class="empty">현재 연도·사료·작성자 선택에서 역사 경계가 없다. 주 렌즈에서 역사지리정보DB를 선택할 수 있다.</p>');
+}
+function showHistoricalFeature(feature){
+  openEvidence();++panelSeq;state.panel='history-feature';state.sel=null;
+  const p=feature.properties,r=p.sourceRecord,el=document.getElementById('evi');
+  el.innerHTML=`<h3>${escH(p.label)} · 역사 행정 경계</h3><p>${escH(p.begin)} ~ ${escH(p.end)}</p>
+    <p class="empty">${escH(srcLabelOf(p.fromSource))} · AI 변환 · 표시용 경계 단순화</p>
+    <div class="quote">${escH(r.begin_sour||'시작 근거 미기재')} → ${escH(r.end_source||'종료 근거 미기재')}</div>
+    <p>기관 표기: ${escH(r.geom_ref||'미기재')} · 신뢰도 코드 ${escH(r.trust??'미기재')}</p><p class="empty">${escH(r.reference||'')}</p>
+    <button class="card-btn" data-history-chunk>원 레코드</button><button class="card-btn" data-history-source>사료 카드</button><button class="card-btn" data-history-list>경계 목록</button>`;
+  el.querySelector('[data-history-chunk]').onclick=()=>showChunk(p.citesChunk);
+  el.querySelector('[data-history-source]').onclick=()=>showSource(p.fromSource);
+  el.querySelector('[data-history-list]').onclick=()=>showHistoricalList();
+}
 function graph(){
   return graphView ||= new GraphExplorer(document.getElementById('graph'),{
     filters:()=>({sources:state.on,origin:state.origin}),
@@ -513,6 +542,7 @@ async function load(){
   draw();
   mountTimeline();
   refreshTimeClaims();
+  refreshHistoryMap();
 }
 
 function selectSource(id,on){
@@ -522,6 +552,7 @@ function selectSource(id,on){
     if(candidate.fromSource===id)for(const dependency of candidate.requiredSources||[])state.on.add(dependency);
 }
 function sourceSelectionChanged(){
+  refreshHistoryMap();
   renderRail();draw();if(state.mode==='3d')draw3d();
   if(tl){tl.setSources(state.sources.map(s=>({...s,defaultLens:state.primary.has(s.id)})));tl.setOn(state.on);}
   refreshEvidence();scheduleYearCount();
@@ -530,6 +561,7 @@ function useLens(lens){
   state.primary=new Set(lens.sources);state.on=new Set();
   lens.sources.forEach(id=>selectSource(id,true));
   document.getElementById('lensNote').textContent=lens.description||lens.label;
+  if(lens.year!=null){state.year=lens.year;setYearUI(state.year);tl?.setYear(state.year);}
   sourceSelectionChanged();
 }
 document.getElementById('lensSelect').onchange=event=>useLens(state.lenses.find(l=>l.id===event.target.value));
@@ -578,7 +610,7 @@ function mountTimeline(){
   tl = new Timeline(host, {
     onTimeClaim:openTimeProjection,
     sources: state.sources.map(s=>({...s,defaultLens:state.primary.has(s.id)})), year: state.year, on: state.on,
-    onYear(y){ state.year = y; setYearUI(y); draw(); if(state.mode==='3d') draw3d(); scheduleYearCount(); },
+    onYear(y){ state.year = y; setYearUI(y); draw(); if(state.mode==='3d') draw3d(); scheduleYearCount(); refreshHistoryMap(); },
     onToggle(id, on){
       selectSource(id,on);sourceSelectionChanged();
     },
@@ -623,6 +655,7 @@ async function refreshTimeClaims(){
 function openTimeProjection(claim,projection){
   const year=projection.earliest??projection.latest;
   if(year!=null){state.year=year;setYearUI(year);tl.setYear(year);draw();if(state.mode==='3d')draw3d();scheduleYearCount();}
+  refreshHistoryMap();
   showGraphClaim(claim.conversions.find(c=>c.id===projection.claimId)||claim);
 }
 function showTimeClaims(reveal=true){
@@ -875,6 +908,8 @@ function draw(){
     }
   }
 
+  historyMap.draw(ctx,(lon,lat)=>proj(lon,lat,v),state.primary);
+
   // 지명
   for(const p of state.places){
     const candidates = visibleCandidates(p);
@@ -952,6 +987,7 @@ cv.addEventListener('click', e => {
   const mx = e.clientX-r.left, my = e.clientY-r.top;
   const h = hits.find(t => (t.x-mx)**2 + (t.y-my)**2 < t.r**2);
   if(h){ select(h.id); }
+  else{const feature=historyMap.pick(ctx,mx,my);if(feature)showHistoricalFeature(feature);}
 });
 
 // ── 근거 패널 ──
@@ -1169,16 +1205,17 @@ async function init3d(){
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
   const world = new KoreaWorld(state.geo, state.places, { elev, sub: q === 'low' ? 3 : 1 });
   engine.add(world.group);
-  engine.onPick = (id) => { if(id) select(id); };
+  engine.onPick = (id) => { const feature=historyMap.features.find(f=>f.id===id);if(feature)showHistoricalFeature(feature);else if(id)select(id); };
 
   R = { engine, world };
   window.__sigong = R;   // 디버그 훅
+  world.setHistoricalFeatures(historyMap.features);
   world.setYear(state.year);
   world.setOrigin(state.origin);
   world.setPrimarySources(state.primary);
   if(world.setSourcesOn) world.setSourcesOn(state.on);
   if(state.sel) world.setSelected(state.sel);
-  engine.setPickTargets(world.pickTargets.filter(target => target.parent.visible));
+  engine.setPickTargets([...world.pickTargets.filter(target => target.parent.visible),...world.historyTargets]);
 
   if(engine.frameWorld) engine.frameWorld(world.maxRim);
   // 판톨로지 기본 프레이밍은 고도 약 25° — 디오라마 섬을 옆에서 보는 구도다.
@@ -1212,7 +1249,7 @@ function draw3d(){
   R.world.setPrimarySources(state.primary);
   if(R.world.setSourcesOn) R.world.setSourcesOn(state.on);
   R.world.setSelected(state.sel);
-  R.engine.setPickTargets(R.world.pickTargets.filter(target => target.parent.visible));
+  R.engine.setPickTargets([...R.world.pickTargets.filter(target => target.parent.visible),...R.world.historyTargets]);
 }
 
 load();

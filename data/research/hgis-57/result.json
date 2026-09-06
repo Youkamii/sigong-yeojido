@@ -1,0 +1,684 @@
+{
+  "task": "historical-geometry-57",
+  "issues": ["#57"],
+  "generatedAt": "2026-09-06",
+  "generatedBy": "claude-opus-5 (조사·수집 전용. 사람 검토 없음)",
+  "status": "complete-for-this-pass",
+
+  "headline": "재배포 가능성이 문서로 확인된 한국사 역사 공간 자료 1건을 특정했다: 국사편찬위원회 「행정구역 GIS 데이터 (1910~1945년)」 — 도-부군-면 폴리곤 Shapefile, UTM-K(GRS80, EPSG:5179), 공공데이터포털 등록 15080854, 이용허락범위 '제한 없음'. 다만 이 세션에서 파일 실물은 취득하지 못했고, 고대(한사군) 경계면은 확보하지 못했다.",
+
+  "scopeNote": {
+    "target": "재배포 가능한 실제 한국사 역사 공간 자료 1건 (국경/군현 경계/역로 중 1종, 1시기·1지역)",
+    "primaryFind": {
+      "type": "군현 경계 (행정구역 폴리곤)",
+      "periodRegion": "1910년 5월 ~ 1945년 8월, 한반도 전역 (도-부군-면)",
+      "datasetEntity": "dataset-nikh-hgis-admin-gis-1910-1945",
+      "why": "기관(국사편찬위원회) 제작 Shapefile이고, 공공데이터포털에 '이용허락범위 제한 없음'으로 등록돼 있으며, 좌표계·시기·형식이 메타데이터에 표기돼 있다."
+    },
+    "secondaryFind": {
+      "type": "한사군 위치 후보 점(point). 경계가 아니다.",
+      "datasetEntity": "dataset-chgis-tgaz",
+      "why": "낙랑군·현도군의 시기별 좌표를 학술 프로젝트가 직접 제공하고, 서비스 응답에 CC BY-NC 4.0 표기가 있다."
+    },
+    "notFound": "고대(한사군·고구려) 행정 경계면(polygon)을 담은 재배포 가능 공간 자료는 확보하지 못했다. 위 주 자료는 식민지기 경계이며 고대 경계가 아니다. 이 자료를 낙랑군·대방군 경계로 쓰면 안 된다.",
+    "notCreated": "이 조사는 경계선이나 경로 좌표를 하나도 만들지 않았다. 기록된 좌표는 전부 기관/프로젝트가 제공한 값이다.",
+    "toolLimitation": "이 세션의 도구 목록은 Read, Write, Glob, Grep, WebFetch, WebSearch뿐이다. 셸 실행·임의 URL의 바이트 저장·해시 계산 도구가 없다. 그래서 shp/zip 실물을 이 폴더에 저장하거나 해시를 계산하지 못했다. 이는 원격 서버의 접속 제한 추정이 아니라 세션 도구 구성에 대한 사실이다.",
+    "webFetchCaveat": "WebFetch는 페이지를 마크다운으로 바꾼 뒤 작은 모델이 답하는 방식이다. 그래서 좌표·숫자는 서로 다른 질문으로 두 번 이상 읽어 일치할 때만 confirmed로 적었고, 대용량 좌표 배열은 옮겨 적지 않았다."
+  },
+
+  "artifacts": [
+    {
+      "file": "provenance.json",
+      "what": "대상 데이터셋의 배포 메타데이터, 막힌 조건, Codex 취득 절차, 인용문"
+    },
+    {
+      "file": "chgis-tgaz-han-commandery-points.json",
+      "what": "TGAZ 응답에서 옮겨 적은 낙랑군 3건·현도군 2건 점 레코드",
+      "isByteForByteDownload": false,
+      "mustVerify": "사용 전 원본 URL 재호출로 대조할 것"
+    },
+    {
+      "file": "progress.json",
+      "what": "진행 기록"
+    }
+  ],
+
+  "sources": [
+    {
+      "id": "src-datagokr-15080854",
+      "title": "교육부 국사편찬위원회_한국사데이터베이스 정보_역사적 행정구역_20240215",
+      "institution": "공공데이터포털 (data.go.kr) / 제공기관: 교육부 국사편찬위원회",
+      "managingDept": "연구편찬정보화실",
+      "url": "https://www.data.go.kr/data/15080854/fileData.do",
+      "datasetId": "15080854",
+      "accessed": "2026-09-06",
+      "kind": "government-open-data-catalog-entry",
+      "registered": "2022-02-18",
+      "modified": "2025-05-30",
+      "format": "SHP",
+      "cost": "무료",
+      "updateCycle": "수시 (1회성 데이터)",
+      "distribution": "기관자체에서 다운로드(제공데이터URL기재) → https://hgis.history.go.kr/pro_g1/dataset.do",
+      "license": "이용허락범위 제한 없음 (페이지 표기 그대로)",
+      "licenseInterpretationLimit": "'제한 없음'은 공공데이터포털 메타데이터 항목의 표기다. 공공누리 유형 번호는 이 페이지에서 확인하지 못했다. 재배포 가능 판단의 근거로 이 문구를 쓰되, 유형 번호를 확인한 것처럼 적으면 안 된다.",
+      "readStatus": "confirmed",
+      "readVerification": "같은 URL을 세 번 서로 다른 질문으로 읽었다. 이용허락범위·제공기관·확장자·등록일/수정일이 매번 일치했고, 'UTM-K(GRS80, EPSG:5179)' 문자열이 '기타 유의사항' 항목에 있음을 3차 열람에서 특정했다.",
+      "quoteWordCount": 18,
+      "excerpts": [
+        {
+          "id": "ex-datagokr-title",
+          "text": "교육부 국사편찬위원회_한국사데이터베이스 정보_역사적 행정구역_20240215",
+          "locator": "데이터셋 상세 페이지 제목",
+          "url": "https://www.data.go.kr/data/15080854/fileData.do",
+          "lang": "ko"
+        },
+        {
+          "id": "ex-datagokr-license",
+          "text": "이용허락범위 제한 없음",
+          "locator": "메타데이터 표 · 이용허락범위 항목",
+          "url": "https://www.data.go.kr/data/15080854/fileData.do",
+          "lang": "ko"
+        },
+        {
+          "id": "ex-datagokr-distribution",
+          "text": "기관자체에서 다운로드(제공데이터URL기재)",
+          "locator": "메타데이터 표 · 제공형태 항목",
+          "url": "https://www.data.go.kr/data/15080854/fileData.do",
+          "lang": "ko"
+        },
+        {
+          "id": "ex-datagokr-crs",
+          "text": "시기별 행정구역 레이어(벡터), 도엽인덱스 : UTM-K(GRS80, EPSG:5179), UTF8",
+          "locator": "파일데이터 정보 · 기타 유의사항 항목",
+          "url": "https://www.data.go.kr/data/15080854/fileData.do",
+          "lang": "ko"
+        },
+        {
+          "id": "ex-datagokr-updatecycle",
+          "text": "수시 (1회성 데이터)",
+          "locator": "메타데이터 표 · 업데이트 주기 항목",
+          "url": "https://www.data.go.kr/data/15080854/fileData.do",
+          "lang": "ko"
+        }
+      ],
+      "paraphraseNotSource": "설명(요약) 본문은 25단어 인용 한도 때문에 인용하지 않았다. 요지는 '1910~1945년과 1970년대 행정구역 데이터를 바탕으로 공간데이터를 구축해 제공하며 QGIS/ArcGIS로 활용한다'는 것이다. 이 문장은 조사자의 요약이고 인용이 아니다."
+    },
+    {
+      "id": "src-hgis-dataset-page",
+      "title": "개방데이터셋 — 역사지리정보DB",
+      "institution": "국사편찬위원회",
+      "url": "https://hgis.history.go.kr/pro_g1/dataset.do",
+      "accessed": "2026-09-06",
+      "kind": "institution-dataset-index",
+      "license": "이 페이지에는 이용조건·공공누리 문구가 없었다(세 번 열람). 라이선스 근거는 src-datagokr-15080854를 쓴다.",
+      "readStatus": "confirmed",
+      "readVerification": "같은 URL을 세 번 서로 다른 질문으로 읽음. 목록 항목과 설명 문구가 일치.",
+      "quoteWordCount": 21,
+      "listedItemsObserved": [
+        "행정구역 데이터 (1910~1945년) — XLS, TXT",
+        "행정구역 데이터 (1955~1975년) — XLS, TXT",
+        "행정구역 변경이력 데이터 (1910~1945년) — XLS, TXT",
+        "행정구역 변경이력 데이터 (1955~1975년) — XLS, TXT",
+        "행정구역 GIS 데이터 (1910~1945년) — ZIP",
+        "행정구역 GIS 데이터 (1955~1975년) — ZIP",
+        "행정구역 데이터(1975년) — XLS, TXT",
+        "행정구역 GIS 데이터(1975년) — ZIP",
+        "근대지리정보 심볼 포인트 — ZIP",
+        "일제시기 지형도 도엽 목록 — XLS",
+        "1970년대 지형도 도엽 정보 — ZIP",
+        "한양역사지리정보 역사지명데이터 — XLS, TXT",
+        "철도망 라인정보 주제도 데이터 — XLS, TXT",
+        "철도망 라인정보 공간 데이터 — ZIP"
+      ],
+      "excerpts": [
+        {
+          "id": "ex-hgis-gis-title",
+          "text": "행정구역 GIS 데이터 (1910~1945년)",
+          "locator": "개방데이터셋 목록 항목 제목",
+          "url": "https://hgis.history.go.kr/pro_g1/dataset.do",
+          "lang": "ko"
+        },
+        {
+          "id": "ex-hgis-gis-desc",
+          "text": "1910년 5월~1945년 8월 전국 역사적 행정구역 GIS 정보 : 도-부군-면 폴리곤 데이터. 동리 및 행정구역사무소 포인트 데이터.",
+          "locator": "개방데이터셋 목록 · '행정구역 GIS 데이터 (1910~1945년)' 항목 설명",
+          "url": "https://hgis.history.go.kr/pro_g1/dataset.do",
+          "lang": "ko"
+        }
+      ],
+      "itemMetadataObserved": {
+        "수정일": "2025.04.24",
+        "기관": "국사편찬위원회",
+        "제공형태": "Download LINK",
+        "형식": "ZIP"
+      },
+      "blocked": "다운로드 버튼의 실제 파일 URL을 얻지 못했다. 페이지에서 추출한 URL 목록에 .zip/.xls 경로나 down/file/atch 계열 경로가 없었고, 자료받기 앵커는 모두 '#download'였다."
+    },
+    {
+      "id": "src-hgis-robots",
+      "title": "robots.txt — hgis.history.go.kr",
+      "institution": "국사편찬위원회",
+      "url": "https://hgis.history.go.kr/robots.txt",
+      "accessed": "2026-09-06",
+      "kind": "site-policy-file",
+      "readStatus": "confirmed",
+      "readVerification": "1회 열람.",
+      "contentAsRead": "Googlebot, bingbot, NaverBot, Kakaobot 각각에 'Allow: /', 그리고 'User-agent: *'에 'Disallow: /'",
+      "timingNote": "나는 이 robots.txt를 확인하기 전에 같은 호스트의 페이지 6개(mainPage.do, dataset.do, intro01.do, gisPage.do, notice_list.do, api/intro.do)를 WebFetch로 열었다. 확인한 뒤로는 이 호스트에 추가 요청을 하지 않았다.",
+      "consequence": "이 호스트에 대한 자동 수집을 멈췄다. 사람이 브라우저로 내려받는 것과 자동 수집을 같게 다루지 않는다. 취득 방법 선택은 이용자 판단이며 이 조사는 법적 판단을 하지 않는다."
+    },
+    {
+      "id": "src-hgis-gispage",
+      "title": "역사적 행정구역 DB (지도서비스) — 역사지리정보DB",
+      "institution": "국사편찬위원회",
+      "url": "https://hgis.history.go.kr/pro_g1/gis/gisPage.do",
+      "accessed": "2026-09-06",
+      "kind": "institution-map-service",
+      "readStatus": "confirmed",
+      "readVerification": "1회 열람. 재확인 안 함.",
+      "quoteWordCount": 10,
+      "excerpts": [
+        {
+          "id": "ex-hgis-disclaimer",
+          "text": "※ 역사지리정보DB에서 제공하는 모든 정보는 연구 참고용이며 법적 효력이 없습니다",
+          "locator": "지도서비스 페이지 안내 문구",
+          "url": "https://hgis.history.go.kr/pro_g1/gis/gisPage.do",
+          "lang": "ko"
+        }
+      ],
+      "observedNotQuoted": {
+        "layers": "도·군·면·동리 행정구역, 근대지리정보 포인트, 대동여지도 포인트, 1872년 지방지도 포인트",
+        "timeSnapshots": "1910.05.10 ~ 1975.10.01 사이 여러 시점 (예: 1912.01.01, 1914.02.28, 1920.10.01, 1930.10.01, 1940.10.01, 1945.08.14)",
+        "sourcesForBoundaries": "민적통계표(民籍統計表), 조선총독부 도령·고시류",
+        "note": "이 목록은 조사자가 읽은 내용의 요약이며 인용이 아니다. 이 페이지에는 좌표계(EPSG) 표기가 없었다."
+      }
+    },
+    {
+      "id": "src-hgis-api-intro",
+      "title": "OPEN API 소개 — 역사지리정보DB",
+      "institution": "국사편찬위원회",
+      "url": "https://hgis.history.go.kr/api/intro.do",
+      "accessed": "2026-09-06",
+      "kind": "institution-api-doc",
+      "readStatus": "confirmed",
+      "readVerification": "1회 열람. 재확인 안 함.",
+      "quoteWordCount": 2,
+      "excerpts": [
+        {
+          "id": "ex-hgis-api-epsg",
+          "text": "EPSG:5179",
+          "locator": "OPEN API 예제 코드 (proj4.defs 정의)",
+          "url": "https://hgis.history.go.kr/api/intro.do",
+          "lang": "en"
+        }
+      ],
+      "observedNotQuoted": {
+        "service": "WMTS 타일 서비스 (image/png). 인증키(apiKey) 필요.",
+        "layers": "map1919, map1919_index, map1970, map1970_index",
+        "proj4Def": "+proj=tmerc +lat_0=38 +lon_0=127.5 +k=0.9996 +x_0=1000000 +y_0=2000000 +ellps=GRS80 +units=m +no_defs",
+        "limit": "이 EPSG:5179는 WMTS 배경지도 타일 서비스의 좌표계다. 개방데이터셋 shp의 좌표계 근거는 src-datagokr-15080854의 '기타 유의사항' 문구다.",
+        "license": "이 페이지에 이용조건 문구는 없었다."
+      }
+    },
+    {
+      "id": "src-nikh-copyright-policy",
+      "title": "저작권정책 — 국사편찬위원회",
+      "institution": "국사편찬위원회",
+      "url": "https://www.history.go.kr/contents/contentsPage.do?groupId=000000000571&menuId=000000000572&pageId=000000000213",
+      "accessed": "2026-09-06",
+      "kind": "institution-policy-page",
+      "readStatus": "confirmed",
+      "readVerification": "1회 열람. 재확인 안 함.",
+      "quoteWordCount": 8,
+      "excerpts": [
+        {
+          "id": "ex-nikh-attribution",
+          "text": "국사편찬위원회 명칭 및 홈페이지 URL, 저작자 성명, 발행연도",
+          "locator": "저작권정책 · 출처 표시 요건 문장 안",
+          "url": "https://www.history.go.kr/contents/contentsPage.do?groupId=000000000571&menuId=000000000572&pageId=000000000213",
+          "lang": "ko"
+        }
+      ],
+      "observedNotQuoted": {
+        "koglType": "이 페이지는 공공누리 유형 번호를 명시하지 않았다.",
+        "scope": "담당 부서 목록에 전자도서관/전자사료관, 한국사데이터베이스, 조선왕조실록·승정원일기, 우리역사넷이 있었고 역사지리정보DB(hgis.history.go.kr)는 없었다.",
+        "tension": "이 페이지에는 '학술·연구 등 개인적인 목적'으로 자유이용을 한정하는 취지의 문장이 있었다. 공공데이터포털의 '이용허락범위 제한 없음'과 문면이 다르다. 다만 이 정책 페이지가 역사지리정보DB를 포함하는지 확인되지 않았으므로 두 문구의 우열을 판정하지 않는다."
+      }
+    },
+    {
+      "id": "src-chgis-tgaz",
+      "title": "Temporal Gazetteer (TGAZ) — CHGIS placename service",
+      "institution": "Center for Geographic Analysis, Harvard University (서비스). 데이터: China Historical GIS [Harvard University and Fudan University]",
+      "url": "https://chgis.hudci.org/tgaz/",
+      "recordUrlPattern": "https://chgis.hudci.org/tgaz/placename/{sys_id}?fmt=json",
+      "queryUrlPattern": "https://chgis.hudci.org/tgaz/placename?n={한자}&fmt=json",
+      "accessed": "2026-09-06",
+      "kind": "academic-gazetteer-api",
+      "license": "CC BY-NC 4.0 (서비스 응답에 표기)",
+      "licenseConflictNote": "previous-location.json에 기록된 CHGIS v6 배포 페이지 문구는 재배포 금지 취지였다. TGAZ 응답의 표기는 CC BY-NC 4.0이다. 두 문면이 다르다. 이 조사는 어느 쪽이 우선하는지 판정하지 않는다. CHGIS v6 벌크 데이터 파일은 저장소에 싣지 않는다.",
+      "outputFormats": "기본 XML, 그리고 JSON/RDF/HTML. fmt=geojson은 지원되지 않았다(HTML이 돌아왔다).",
+      "resolvedFromPreviousUnverified": "previous-location.json의 unverified 항목 'tgaz-api'(질의 경로 4가지 404)를 이번에 해결했다. 올바른 호스트·경로는 https://chgis.hudci.org/tgaz/placename?n=...&fmt=json 이다. 문서 페이지가 안내하는 maps.cga.harvard.edu 경로는 이번에 시도하지 않았다.",
+      "readStatus": "confirmed",
+      "readVerification": "樂浪 질의를 두 번, 개별 레코드(hvd_112642)를 두 번 서로 다른 질문으로 읽었다. 좌표·연대·라이선스 문구가 일치했다.",
+      "quoteWordCount": 21,
+      "excerpts": [
+        {
+          "id": "ex-tgaz-license",
+          "text": "Copyright: 2026 © CHGIS, License: CC BY-NC 4.0",
+          "locator": "레코드 페이지 하단 저작권 줄 (hvd_112642)",
+          "url": "https://chgis.hudci.org/tgaz/placename/hvd_112642",
+          "lang": "en"
+        },
+        {
+          "id": "ex-tgaz-publisher",
+          "text": "China Historical GIS [Harvard University and Fudan University]",
+          "locator": "레코드 페이지 publisher 항목 (hvd_112642)",
+          "url": "https://chgis.hudci.org/tgaz/placename/hvd_112642",
+          "lang": "en"
+        },
+        {
+          "id": "ex-tgaz-point",
+          "text": "POINT point N 39.03258 E 125.75502",
+          "locator": "레코드 hvd_112642의 spatial 항목",
+          "url": "https://chgis.hudci.org/tgaz/placename/hvd_112642",
+          "lang": "en"
+        }
+      ],
+      "recordsRead": [
+        {"sys_id": "hvd_112642", "name": "樂浪郡 / 乐浪郡", "transcription": "Lelang Jun", "featureType": "郡 (jun)", "parent": "西汉 Xihan", "beginYear": -108, "endYear": -83, "x_lon": 125.75502, "y_lat": 39.03258},
+        {"sys_id": "hvd_112643", "name": "乐浪郡", "transcription": "Lelang Jun", "featureType": "郡 (jun)", "parent": "西汉 Xihan", "beginYear": -82, "endYear": 0, "x_lon": 125.75502, "y_lat": 39.03258},
+        {"sys_id": "hvd_112645", "name": "乐浪郡", "transcription": "Lelang Jun", "featureType": "郡 (jun)", "parent": "东汉 Donghan", "beginYear": 24, "endYear": 0, "x_lon": 125.75502, "y_lat": 39.03258},
+        {"sys_id": "hvd_112640", "name": "玄菟郡", "transcription": "Xuantu Jun", "featureType": "郡 (jun)", "parent": "西汉 Xihan", "beginYear": -108, "endYear": -83, "x_lon": 127.42076, "y_lat": 39.85064},
+        {"sys_id": "hvd_112641", "name": "玄菟郡", "transcription": "Xuantu Jun", "featureType": "郡 (jun)", "parent": "西汉 Xihan", "beginYear": -82, "endYear": 0, "x_lon": 124.85729, "y_lat": 41.70123}
+      ],
+      "recordsReadNote": "위 값은 API 응답의 필드 값이며 산문 인용이 아니다. 앞 3건은 樂浪 질의, 뒤 2건은 玄菟 질의 결과다. 玄菟郡 두 레코드는 좌표가 서로 다르다. endYear 0은 응답에 그대로 있던 값이며 의미(서기 0년인지 미상 표시인지)를 확인하지 못했다.",
+      "negativeResults": [
+        {"query": "帶方%", "url": "https://chgis.hudci.org/tgaz/placename?n=%E5%B8%B6%E6%96%B9&fmt=json", "result": "0건"},
+        {"query": "带方%", "url": "https://chgis.hudci.org/tgaz/placename?n=%E5%B8%A6%E6%96%B9&fmt=json", "result": "0건"}
+      ],
+      "datumNote": "TGAZ 응답에서 측지계(datum) 표기를 확인하지 못했다. 확정하지 않는다."
+    },
+    {
+      "id": "src-hisgeo-joseon-db",
+      "title": "조선 행정구역 DB — 역지사지(歷地思之) 역사지리정보(HGIS) 위키",
+      "institution": "역지사지 (hisgeo.info) · 제작자 표기: 김현종, 김종혁 외",
+      "url": "https://www.hisgeo.info/wiki/%EC%A1%B0%EC%84%A0_%ED%96%89%EC%A0%95%EA%B5%AC%EC%97%AD_DB",
+      "accessed": "2026-09-06",
+      "kind": "project-wiki-dataset-page",
+      "readStatus": "confirmed",
+      "readVerification": "1회 열람. 재확인 안 함.",
+      "quoteWordCount": 20,
+      "license": "재배포 제한 있음 — 이 과제의 '재배포 가능' 요건을 충족하지 못한다.",
+      "verdict": "제외 (저장소 적재 대상 아님). 다만 조선시대 경계를 다루므로 참조 후보로 남긴다.",
+      "excerpts": [
+        {
+          "id": "ex-hisgeo-geometry",
+          "text": "조선시대 시계열 경계(line), 1단계~3단계 행정구역(polygon), 읍치(point), 월경지 중심지(point)",
+          "locator": "공간 DB 구성 설명",
+          "url": "https://www.hisgeo.info/wiki/%EC%A1%B0%EC%84%A0_%ED%96%89%EC%A0%95%EA%B5%AC%EC%97%AD_DB",
+          "lang": "ko"
+        },
+        {
+          "id": "ex-hisgeo-redistribution",
+          "text": "전체 자료를 다른 곳에서 서비스하는 것은 제한",
+          "locator": "이용 조건 설명",
+          "url": "https://www.hisgeo.info/wiki/%EC%A1%B0%EC%84%A0_%ED%96%89%EC%A0%95%EA%B5%AC%EC%97%AD_DB",
+          "lang": "ko"
+        },
+        {
+          "id": "ex-hisgeo-citation",
+          "text": "「조선시대 행정구역 DB」, 202X년 X월 기준, 역지사지(https://www.hisgeo.info)",
+          "locator": "인용 표기 안내",
+          "url": "https://www.hisgeo.info/wiki/%EC%A1%B0%EC%84%A0_%ED%96%89%EC%A0%95%EA%B5%AC%EC%97%AD_DB",
+          "lang": "ko"
+        }
+      ],
+      "observedNotQuoted": {
+        "temporal": "lv1~lv2 1392~1910년, lv3 1392~1945년(1914년 이후 일단위)이라고 페이지가 적고 있다",
+        "formats": "행정구역·읍치 이력은 xlsx, 공간 DB는 zip→shp",
+        "crs": "이 페이지에서 좌표계 표기를 찾지 못했다"
+      }
+    },
+    {
+      "id": "src-whg-public-data",
+      "title": "Public Data — World Historical Gazetteer",
+      "institution": "World Historical Gazetteer (University of Pittsburgh)",
+      "url": "https://whgazetteer.org/public_data/",
+      "accessed": "2026-09-06",
+      "kind": "academic-gazetteer-catalog",
+      "license": "CC BY 4.0 (페이지 표기)",
+      "readStatus": "confirmed",
+      "readVerification": "1회 열람. 재확인 안 함.",
+      "quoteWordCount": 16,
+      "verdict": "제외 — 이 페이지의 데이터셋·컬렉션 목록에서 한국사 관련 항목을 찾지 못했다.",
+      "resolvedFromPreviousUnverified": "previous-location.json의 geometrySources 'whg'는 라이선스가 unverified였다. 이번에 CC BY 4.0 문장을 확인했다.",
+      "excerpts": [
+        {
+          "id": "ex-whg-license",
+          "text": "All such public data are made available under a Creative Commons Attribution 4.0 International (CC BY 4.0) License",
+          "locator": "Public Data 페이지 라이선스 문장",
+          "url": "https://whgazetteer.org/public_data/",
+          "lang": "en"
+        }
+      ],
+      "observedNotQuoted": "목록에 중국 관련(1911년 성·부·현·진) 항목은 있었으나 Korea/Joseon/Goguryeo 항목은 보이지 않았다. 이는 이 목록 페이지 1회 열람 결과이며 WHG 전체 검색 결과가 아니다."
+    }
+  ],
+
+  "entities": [
+    {
+      "id": "dataset-nikh-hgis-admin-gis-1910-1945",
+      "type": "Dataset",
+      "label": "행정구역 GIS 데이터 (1910~1945년)",
+      "labelHanja": null,
+      "note": "역사적 실체가 아니라 자료다. entities.json의 역사 노드와 병합하지 않는다."
+    },
+    {
+      "id": "dataset-chgis-tgaz",
+      "type": "Dataset",
+      "label": "CHGIS Temporal Gazetteer (TGAZ)",
+      "labelHanja": null,
+      "note": "자료 노드. 점 좌표 색인이며 경계면이 아니다."
+    },
+    {
+      "id": "dataset-hisgeo-joseon-admin-db",
+      "type": "Dataset",
+      "label": "조선시대 행정구역 DB (역지사지)",
+      "labelHanja": null,
+      "note": "조선시대 경계를 담지만 전체 재배포가 제한된다."
+    },
+    {
+      "id": "org-nikh",
+      "type": "Organization",
+      "label": "국사편찬위원회",
+      "labelHanja": "國史編纂委員會",
+      "note": "자료 제작·배포 기관. 역사 행위자 노드가 아니다."
+    },
+    {
+      "id": "place-nangnang",
+      "type": "Place",
+      "label": "낙랑군",
+      "labelHanja": "樂浪郡",
+      "note": "entities.json에 없다. previous-location.json의 proposedPlaces가 쓰던 id를 그대로 쓴다. entities.json의 place-nangnang-toseong(낙랑토성 유적)·place-joseonhyeon(조선현)과 별개 노드로 둔다."
+    },
+    {
+      "id": "place-hyeondo-gun",
+      "type": "Place",
+      "label": "현도군",
+      "labelHanja": "玄菟郡",
+      "note": "새 노드. entities.json에 없다. 낙랑군과 합치지 않는다."
+    }
+  ],
+
+  "claims": [
+    {
+      "id": "clm-hgis-gis-polygons",
+      "subject": "dataset-nikh-hgis-admin-gis-1910-1945",
+      "predicate": "containsGeometry",
+      "object": "도-부군-면 폴리곤 + 동리·행정구역사무소 포인트",
+      "sourceId": "src-hgis-dataset-page",
+      "chunkId": null,
+      "citesExcerpt": "ex-hgis-gis-desc",
+      "quote": "1910년 5월~1945년 8월 전국 역사적 행정구역 GIS 정보 : 도-부군-면 폴리곤 데이터. 동리 및 행정구역사무소 포인트 데이터.",
+      "limits": "설명문 기준이다. 실제 shp를 열어 레이어·필드를 확인하지 못했다(다운로드 도구 없음). '부군'은 부(府)·군(郡)이며 조선시대 군현과 같은 단위가 아니다."
+    },
+    {
+      "id": "clm-hgis-gis-period",
+      "subject": "dataset-nikh-hgis-admin-gis-1910-1945",
+      "predicate": "coversPeriod",
+      "object": "1910년 5월 ~ 1945년 8월",
+      "sourceId": "src-hgis-dataset-page",
+      "chunkId": null,
+      "citesExcerpt": "ex-hgis-gis-desc",
+      "quote": "1910년 5월~1945년 8월 전국 역사적 행정구역 GIS 정보 : 도-부군-면 폴리곤 데이터. 동리 및 행정구역사무소 포인트 데이터.",
+      "limits": "식민지기다. 고대·조선시대 경계가 아니다."
+    },
+    {
+      "id": "clm-datagokr-license",
+      "subject": "dataset-nikh-hgis-admin-gis-1910-1945",
+      "predicate": "hasLicenseStatement",
+      "object": "이용허락범위 제한 없음",
+      "sourceId": "src-datagokr-15080854",
+      "chunkId": null,
+      "citesExcerpt": "ex-datagokr-license",
+      "quote": "이용허락범위 제한 없음",
+      "limits": "공공데이터포털 메타데이터 항목 표기다. 공공누리 유형 번호는 확인하지 못했다. 국사편찬위원회 hgis 사이트 자체에는 이용조건 문구가 없었고, 별도 저작권정책 페이지(src-nikh-copyright-policy)에는 개인적 학술·연구 목적으로 한정하는 취지의 문장이 있었다. 두 문면의 우열은 판정하지 않는다."
+    },
+    {
+      "id": "clm-datagokr-format",
+      "subject": "dataset-nikh-hgis-admin-gis-1910-1945",
+      "predicate": "hasFormat",
+      "object": "SHP (배포는 ZIP)",
+      "sourceId": "src-datagokr-15080854",
+      "chunkId": null,
+      "citesExcerpt": "ex-datagokr-distribution",
+      "quote": "기관자체에서 다운로드(제공데이터URL기재)",
+      "limits": "확장자 'SHP'는 공공데이터포털 메타데이터 표에 있었고, hgis 개방데이터셋 목록에서는 형식이 ZIP으로 표기된다. 압축 여부 차이로 보이나 실물 확인은 못 했다."
+    },
+    {
+      "id": "clm-crs-5179",
+      "subject": "dataset-nikh-hgis-admin-gis-1910-1945",
+      "predicate": "hasCRS",
+      "object": "UTM-K (GRS80), EPSG:5179, 문자 인코딩 UTF8",
+      "sourceId": "src-datagokr-15080854",
+      "chunkId": null,
+      "citesExcerpt": "ex-datagokr-crs",
+      "quote": "시기별 행정구역 레이어(벡터), 도엽인덱스 : UTM-K(GRS80, EPSG:5179), UTF8",
+      "limits": "공공데이터포털 '기타 유의사항' 항목의 표기다. shp의 .prj 파일을 직접 열어 확인하지 못했다. hgis OPEN API 문서의 EPSG:5179는 WMTS 타일용이며 이 claim의 근거가 아니다."
+    },
+    {
+      "id": "clm-hgis-version-conflict",
+      "subject": "dataset-nikh-hgis-admin-gis-1910-1945",
+      "predicate": "hasConflictingVersionMarkers",
+      "object": "카탈로그 제목 20240215 / hgis 항목 수정일 2025.04.24 / 카탈로그 수정일 2025-05-30",
+      "sourceId": "src-datagokr-15080854",
+      "chunkId": null,
+      "citesExcerpt": "ex-datagokr-title",
+      "quote": "교육부 국사편찬위원회_한국사데이터베이스 정보_역사적 행정구역_20240215",
+      "limits": "세 값이 서로 다르다. 하나를 '판본'으로 단정하지 말 것. 내려받은 시점과 세 값을 함께 기록해야 한다."
+    },
+    {
+      "id": "clm-hgis-disclaimer",
+      "subject": "org-nikh",
+      "predicate": "statesAbout",
+      "object": "역사지리정보DB 제공 정보는 연구 참고용",
+      "sourceId": "src-hgis-gispage",
+      "chunkId": null,
+      "citesExcerpt": "ex-hgis-disclaimer",
+      "quote": "※ 역사지리정보DB에서 제공하는 모든 정보는 연구 참고용이며 법적 효력이 없습니다",
+      "limits": "법적 효력 부인 문구이며 저작권·재배포 조건 문구가 아니다."
+    },
+    {
+      "id": "clm-hgis-robots",
+      "subject": "org-nikh",
+      "predicate": "hostRobotsPolicy",
+      "object": "hgis.history.go.kr robots.txt는 Googlebot·bingbot·NaverBot·Kakaobot에 Allow: /, User-agent: * 에 Disallow: /",
+      "sourceId": "src-hgis-robots",
+      "chunkId": null,
+      "citesExcerpt": null,
+      "quote": null,
+      "limits": "robots.txt 파일 내용을 실제로 읽은 결과다. 인용문 필드는 비워 둔다(산문이 아니라 설정 파일). 이 사실은 자동 수집 계획에만 관계된다. 법적 판단이나 사람이 브라우저로 받는 경우에 대한 판단이 아니다."
+    },
+    {
+      "id": "clm-hisgeo-redistribution-limited",
+      "subject": "dataset-hisgeo-joseon-admin-db",
+      "predicate": "hasRedistributionRestriction",
+      "object": "전체 자료의 타 사이트 서비스 제한",
+      "sourceId": "src-hisgeo-joseon-db",
+      "chunkId": null,
+      "citesExcerpt": "ex-hisgeo-redistribution",
+      "quote": "전체 자료를 다른 곳에서 서비스하는 것은 제한",
+      "limits": "조선시대(1392~1910) 경계 line/polygon을 담아 시기 목표에 더 가깝지만 재배포 요건을 충족하지 못하므로 저장소 적재 대상에서 제외한다."
+    },
+    {
+      "id": "clm-tgaz-license",
+      "subject": "dataset-chgis-tgaz",
+      "predicate": "hasLicenseStatement",
+      "object": "CC BY-NC 4.0",
+      "sourceId": "src-chgis-tgaz",
+      "chunkId": null,
+      "citesExcerpt": "ex-tgaz-license",
+      "quote": "Copyright: 2026 © CHGIS, License: CC BY-NC 4.0",
+      "limits": "TGAZ 레코드 페이지의 표기다. CHGIS v6 벌크 배포 페이지의 재배포 금지 취지 문구와 문면이 다르다. 이 조사는 우열을 판정하지 않는다. 비영리 조건이므로 상업적 이용을 허용하는 저장소 정책과 충돌할 수 있다."
+    },
+    {
+      "id": "clm-tgaz-nangnang-point-1",
+      "subject": "place-nangnang",
+      "predicate": "hasCoordinateInDataset",
+      "object": "lon 125.75502, lat 39.03258 (기간 -108 ~ -83, parent 西汉, sys_id hvd_112642)",
+      "sourceId": "src-chgis-tgaz",
+      "chunkId": null,
+      "citesExcerpt": "ex-tgaz-point",
+      "quote": "POINT point N 39.03258 E 125.75502",
+      "limits": "CHGIS라는 한 프로젝트의 비정이다. 낙랑군의 확정 위치가 아니다. 점(대표점)이며 군의 경계가 아니다. 측지계 표기를 응답에서 확인하지 못했다. 이덕일 2017의 하북성 노룡현설(previous-location.json lc-nangnang-lulong-lee)과 같은 노드에 좌표로 섞지 말 것."
+    },
+    {
+      "id": "clm-tgaz-nangnang-timeseries",
+      "subject": "place-nangnang",
+      "predicate": "hasTimeSlicedRecordsInDataset",
+      "object": "hvd_112642 (-108~-83), hvd_112643 (-82~0), hvd_112645 (24~0) — 세 레코드 모두 lon 125.75502 / lat 39.03258",
+      "sourceId": "src-chgis-tgaz",
+      "chunkId": null,
+      "citesExcerpt": "ex-tgaz-point",
+      "quote": "POINT point N 39.03258 E 125.75502",
+      "limits": "좌표는 API 응답의 필드 값이고 산문 인용이 아니다. hvd_112642 좌표는 레코드 페이지에서 두 번, 나머지 둘은 질의 결과에서 두 번 읽어 일치했다. endYear 0의 의미는 확인하지 못했다. 세 레코드의 좌표가 같으므로 CHGIS는 이 시기 낙랑군 치소 이동을 표현하지 않는다고 읽히나, 그렇게 말하는 문장을 읽은 것은 아니다."
+    },
+    {
+      "id": "clm-tgaz-hyeondo-points",
+      "subject": "place-hyeondo-gun",
+      "predicate": "hasTimeSlicedRecordsInDataset",
+      "object": "hvd_112640 (-108~-83) lon 127.42076 / lat 39.85064 ; hvd_112641 (-82~0) lon 124.85729 / lat 41.70123",
+      "sourceId": "src-chgis-tgaz",
+      "chunkId": null,
+      "citesExcerpt": null,
+      "quote": null,
+      "limits": "인용문 없음 — 값은 JSON 질의 응답의 필드 값이다. 玄菟 질의는 1회만 수행했고 재확인하지 않았다(낙랑과 달리 교차 확인 없음). 두 레코드의 좌표가 다른 것을 '현도군 이동'으로 해석할 수 있으나 그 해석을 뒷받침하는 문장은 읽지 못했다. 경계가 아니라 점이다."
+    },
+    {
+      "id": "clm-tgaz-daebang-absent",
+      "subject": "dataset-chgis-tgaz",
+      "predicate": "returnedNoRecordFor",
+      "object": "帶方 / 带方",
+      "sourceId": "src-chgis-tgaz",
+      "chunkId": null,
+      "citesExcerpt": null,
+      "quote": null,
+      "limits": "번체·간체 두 표기로 질의해 각각 0건이었다. 'CHGIS에 대방군이 없다'는 결론이 아니라 '이 두 질의로는 나오지 않았다'는 사실이다."
+    },
+    {
+      "id": "clm-whg-license",
+      "subject": "src-whg-public-data",
+      "predicate": "hasLicenseStatement",
+      "object": "CC BY 4.0",
+      "sourceId": "src-whg-public-data",
+      "chunkId": null,
+      "citesExcerpt": "ex-whg-license",
+      "quote": "All such public data are made available under a Creative Commons Attribution 4.0 International (CC BY 4.0) License",
+      "limits": "라이선스는 확인했으나 이 목록 페이지에서 한국사 관련 데이터셋을 찾지 못해 이번 목표에는 쓰지 못했다. WHG 전체 검색을 수행한 것은 아니다."
+    }
+  ],
+
+  "uncertainties": [
+    {
+      "id": "unc-download-url",
+      "what": "행정구역 GIS 데이터 (1910~1945년) ZIP의 직접 다운로드 URL",
+      "status": "미확인",
+      "reason": "개방데이터셋 페이지에서 추출한 URL 목록에 파일 경로가 없었고 자료받기 앵커는 모두 '#download'였다. 파일 요청이 자바스크립트로 처리되는 것으로 보인다. 그 뒤 이 호스트의 robots.txt에서 'User-agent: * / Disallow: /'를 확인하고 추가 탐색을 멈췄다."
+    },
+    {
+      "id": "unc-file-hash",
+      "what": "파일 해시·크기·실제 레이어/필드/.prj 내용",
+      "status": "미확인",
+      "reason": "이 세션의 도구 목록에 셸/다운로드 도구가 없어 파일을 받지 못했다. 원격 서버 응답을 근거로 한 판단이 아니다."
+    },
+    {
+      "id": "unc-kogl-type",
+      "what": "공공누리 유형 번호",
+      "status": "미확인",
+      "reason": "공공데이터포털은 '이용허락범위 제한 없음'만 표기했고, hgis 사이트 4개 페이지와 국사편찬위원회 저작권정책 페이지에서 유형 번호를 찾지 못했다."
+    },
+    {
+      "id": "unc-license-tension",
+      "what": "공공데이터포털 '제한 없음'과 국사편찬위원회 저작권정책의 '개인적 학술·연구 목적' 한정 문구의 관계",
+      "status": "미확인",
+      "reason": "저작권정책 페이지의 적용 대상 목록에 역사지리정보DB가 없었다. 어느 문구가 이 데이터셋에 적용되는지 확인할 근거를 찾지 못했다."
+    },
+    {
+      "id": "unc-ancient-boundary-polygon",
+      "what": "한사군·고구려 시기 행정 경계면(polygon)의 재배포 가능 공간 자료",
+      "status": "미확인",
+      "reason": "이번 조사에서 확보하지 못했다. CHGIS/TGAZ는 점만 반환했고, 조선시대 경계를 가진 역지사지 DB는 재배포가 제한된다. 경계면을 만들어 채우지 않았다."
+    },
+    {
+      "id": "unc-post-roads",
+      "what": "전근대 역로(역참) 공간 자료",
+      "status": "미확인 (previous-location.json에서 이어짐)",
+      "reason": "국사편찬위원회 개방데이터셋에 '철도망 라인정보 공간 데이터'(1910~1945)가 있으나 철도이며 전근대 역로가 아니다. 전근대 역로 GIS 배포본은 찾지 못했다."
+    },
+    {
+      "id": "unc-tgaz-datum",
+      "what": "TGAZ 좌표의 측지계(datum)",
+      "status": "미확인",
+      "reason": "응답에서 datum 표기를 확인하지 못했다."
+    },
+    {
+      "id": "unc-tgaz-endyear-zero",
+      "what": "TGAZ endYear 값 0의 의미",
+      "status": "미확인",
+      "reason": "응답에 0이 그대로 있었고 스키마 설명을 읽지 못했다."
+    },
+    {
+      "id": "unc-not-attempted",
+      "what": "미시도 목록",
+      "status": "미시도",
+      "reason": "다음은 이번에 열지 않았다: hgis.history.go.kr/pro_g1/intro/intro02.do (robots 확인 후 중단), UNESCO whc.unesco.org (previous-location.json에서 403이었고 이번에 재시도하지 않음), 국토정보플랫폼, OpenHistoricalMap, aourednik/historical-basemaps, 中央研究院 CCTS 레이어 목록. 접속이 막혔다는 뜻이 아니라 시도하지 않았다는 뜻이다."
+    }
+  ],
+
+  "reproduction": {
+    "date": "2026-09-06",
+    "agent": "claude-opus-5, 도구: Read/Write/Glob/Grep/WebFetch/WebSearch",
+    "howToRedo": [
+      "1. https://www.data.go.kr/data/15080854/fileData.do 를 열고 '이용허락범위', '기타 유의사항', '확장자', '제공형태', '수정일'을 읽는다.",
+      "2. https://hgis.history.go.kr/pro_g1/dataset.do 에서 '행정구역 GIS 데이터 (1910~1945년)' 항목의 설명·형식·수정일을 읽는다. (이 호스트의 robots.txt는 User-agent:* 에 Disallow:/ 다. 자동 수집 여부는 이용자가 정한다.)",
+      "3. https://chgis.hudci.org/tgaz/placename?n=<한자 URL인코딩>&fmt=json 으로 질의하고, https://chgis.hudci.org/tgaz/placename/<sys_id>?fmt=json 으로 개별 레코드를 확인한다.",
+      "4. 숫자·좌표는 서로 다른 질문으로 두 번 이상 읽어 일치할 때만 채택한다."
+    ],
+    "urlsRead": [
+      "https://hgis.history.go.kr/pro_g1/mainPage.do",
+      "https://hgis.history.go.kr/pro_g1/dataset.do",
+      "https://hgis.history.go.kr/pro_g1/intro/intro01.do",
+      "https://hgis.history.go.kr/pro_g1/gis/gisPage.do",
+      "https://hgis.history.go.kr/pro_g1/notice/notice_list.do",
+      "https://hgis.history.go.kr/api/intro.do",
+      "https://hgis.history.go.kr/robots.txt",
+      "https://www.data.go.kr/data/15080854/fileData.do",
+      "https://www.history.go.kr/contents/contentsPage.do?groupId=000000000571&menuId=000000000572&pageId=000000000213",
+      "https://www.hisgeo.info/wiki/조선_행정구역_DB",
+      "https://whgazetteer.org/public_data/",
+      "https://chgis.hudci.org/tgaz/",
+      "https://chgis.hudci.org/tgaz/placename/hvd_112642?fmt=json",
+      "https://chgis.hudci.org/tgaz/placename/hvd_112642?fmt=geojson",
+      "https://chgis.hudci.org/tgaz/placename?n=%E6%A8%82%E6%B5%AA&fmt=json",
+      "https://chgis.hudci.org/tgaz/placename?n=%E5%B8%B6%E6%96%B9&fmt=json",
+      "https://chgis.hudci.org/tgaz/placename?n=%E5%B8%A6%E6%96%B9&fmt=json",
+      "https://chgis.hudci.org/tgaz/placename?n=%E7%8E%84%E8%8F%9F&fmt=json"
+    ],
+    "notOpened": [
+      "db.history.go.kr, contents.history.go.kr — 지시에 따라 시도하지 않았다. 검색 결과에 contents.history.go.kr/front/about/use.do 링크가 나왔으나 열지 않았다."
+    ],
+    "materialsChecked": 8,
+    "materialsCheckedList": [
+      "국사편찬위원회 역사지리정보DB 개방데이터셋",
+      "공공데이터포털 15080854 (같은 자료의 카탈로그 등록)",
+      "국사편찬위원회 역사지리정보DB OPEN API (WMTS)",
+      "국사편찬위원회 저작권정책",
+      "hgis.history.go.kr robots.txt",
+      "역지사지 조선 행정구역 DB",
+      "World Historical Gazetteer public data",
+      "CHGIS Temporal Gazetteer (TGAZ)"
+    ],
+    "quotaCompliance": "웹페이지 1개당 직접 인용 합계 25단어 이하를 지켰다. 페이지별 인용 단어 수는 각 source의 quoteWordCount에 적었다. 한자·중국어 원표기는 정규화하지 않았다.",
+    "noExternalContact": "기관 문의나 외부 연락을 하지 않았다."
+  }
+}
