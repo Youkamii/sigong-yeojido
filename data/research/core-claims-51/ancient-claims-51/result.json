@@ -1,0 +1,1631 @@
+{
+  "meta": {
+    "task": "ancient-claims-51",
+    "producedBy": "claude-opus-5 (조사·수집 담당). 사람 검토 없음.",
+    "producedAt": "2026-09-06",
+    "scope": "삼국사기·삼국유사 chunk 텍스트에서 고조선/삼한/삼국/통일신라/발해 얕은 주장 뼈대 추출",
+    "claimCount": 35,
+    "schemaRef": "schema.md (§7 Claim, §8 시간, §10 동일성, §11 충돌)",
+    "originForAllClaims": "ai",
+    "statusForAllClaims": "draft",
+    "notes": [
+      "모든 quote 는 작업 폴더의 samguksagi-chunks.jsonl / samgukyusa-chunks.jsonl 에서 직접 읽은 문자열이다.",
+      "한문·중국어는 번역·정규화하지 않았다. 이체자(髙/高, 泗沘/泗泚, 何瑟羅/阿瑟羅 등)를 원문대로 둔다.",
+      "permalink 은 chunk 레코드에 들어 있던 값을 옮겨 적은 것이다. db.history.go.kr 는 프로젝트 robots 제한으로 열지 않았다.",
+      "quote 는 각 chunk 의 text 필드 부분문자열이다. 예외는 quoteIn 이 'chunk.annotations' 인 항목 하나(claim-baekje-biryu-variant)뿐이며, 이는 schema §7.1 검증을 그대로 통과하지 못한다.",
+      "긴 chunk(sg_013_0020_0010, sg_023_0020_0010, sy_003_0010_0040_0010 등)는 겹치는 창(window)으로 나눠 읽어 연속성을 확인했다.",
+      "두 사료의 서로 다른 기록은 합치지 않고 각각 별도 Claim 으로 두었다. 충돌 판정은 schema §11 대로 빌드가 하도록 남긴다."
+    ]
+  },
+
+  "sources": [
+    {
+      "sourceId": "src-samguksagi",
+      "label": "삼국사기",
+      "localFile": "samguksagi-chunks.jsonl",
+      "provider": "교육부 국사편찬위원회",
+      "datasetTitle": "교육부 국사편찬위원회_한국사데이터베이스 정보_삼국사기 원문_20221103",
+      "licenseTermsUrl": "https://www.data.go.kr/data/15053635/fileData.do",
+      "licenseScopeString": "이용허락범위 제한 없음",
+      "licenseCheckedAt": "2026-09-06",
+      "licenseCheckedHow": "공공데이터포털 상세 페이지 본문에서 데이터셋명·제공기관·이용허락범위를 직접 읽음",
+      "rightsSplit": {
+        "원사료(1145년 한문 본문)": "저작권 보호기간 만료 (공공영역)",
+        "국편 교감본문·표점·주석·색인·환산날짜": "위 공공데이터포털 이용허락범위 문자열에 따름. 국편의 편집 판단물이므로 사실로 확정하지 않는다.",
+        "현대 번역문": "본 산출물에 없음. chunks 의 translation 필드는 전부 null."
+      }
+    },
+    {
+      "sourceId": "src-samgukyusa",
+      "label": "삼국유사",
+      "localFile": "samgukyusa-chunks.jsonl",
+      "provider": "교육부 국사편찬위원회",
+      "datasetTitle": "교육부 국사편찬위원회_한국사데이터베이스 정보_삼국유사 원문_20221103",
+      "licenseTermsUrl": "https://www.data.go.kr/data/15053634/fileData.do",
+      "licenseScopeString": "이용허락범위 제한 없음",
+      "licenseCheckedAt": "2026-09-06",
+      "licenseCheckedHow": "공공데이터포털 상세 페이지 본문에서 데이터셋명·제공기관·이용허락범위를 직접 읽음",
+      "rightsSplit": {
+        "원사료(1281년경 한문 본문)": "저작권 보호기간 만료 (공공영역)",
+        "국편 교감본문·표점·주석·색인·환산날짜": "위 이용허락범위 문자열에 따름. 국편의 편집 판단물이므로 사실로 확정하지 않는다.",
+        "현대 번역문": "본 산출물에 없음."
+      }
+    }
+  ],
+
+  "claims": [
+    {
+      "id": "claim-gojoseon-wiseo-dangun-asadal",
+      "era": "고조선",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0020_0010",
+      "locator": "卷 第一 › 紀異第一 › 古朝鮮王儉朝鮮 › 단군왕검이 아사달에 도읍하다",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0020_0010",
+      "quoteIn": "chunk.text",
+      "quote": "魏書云, “乃徃二千載有壇君王倹立都阿斯逹.開國號朝鮮, 與髙同時.”",
+      "subject": "person-dangun-samgukyusa",
+      "predicate": "syj:describedAs",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "literal",
+        "value": "阿斯逹에 도읍하고 나라를 열어 朝鮮이라 이름했다는 『魏書』 인용",
+        "relatedEntities": ["place-asadal", "polity-gojoseon"]
+      },
+      "entitiesProposed": ["person-dangun-samgukyusa", "place-asadal", "polity-gojoseon"],
+      "dateFromChunk": null,
+      "certainty": "confirmed",
+      "confirms": "chunk.text 에 이 문자열이 그대로 있다는 것",
+      "limits": [
+        "삼국유사는 이것을 자기 주장이 아니라 『魏書』 인용으로 제시한다. 인용 대상 『魏書』 원본과의 대조는 하지 않았다.",
+        "연도가 없다. '乃徃二千載'는 일연 시점 기준 상대 표현이고 chunk.date 도 null 이라 절대연도를 세울 근거가 없다.",
+        "'與髙同時'의 髙 를 堯 로 읽는 통설이 있으나 본 chunk 텍스트는 髙 이므로 고치지 않았다. 판독은 별도 readsCharacterAs Claim 감이다.",
+        "阿斯逹의 위치를 좌표로 확정하지 않는다."
+      ]
+    },
+    {
+      "id": "claim-gojoseon-gogi-hwanung-dangun-birth",
+      "era": "고조선",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0020_0020",
+      "locator": "卷 第一 › 紀異第一 › 古朝鮮王儉朝鮮 (고기 인용 기사)",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0020_0020",
+      "quoteIn": "chunk.text",
+      "quote": "熊女者無與爲婚故每於壇樹下呪願有孕. 雄乃假化而㛰之. 孕生子號曰壇君王倹.",
+      "supportingQuotes": ["古記云, “昔有桓𡆮庻子桓雄數意天下貪求人世.", "雄率徒三千降於太伯山頂神壇樹下謂之神市, 是謂桓雄天王也."],
+      "subject": "person-dangun-samgukyusa",
+      "predicate": "syj:hasParent",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "person-hwanung",
+        "note": "桓雄. 熊女는 이름이 없어 별도 엔티티를 세우지 않았다."
+      },
+      "entitiesProposed": ["person-dangun-samgukyusa", "person-hwanung", "place-taebaeksan"],
+      "dateFromChunk": null,
+      "certainty": "confirmed",
+      "confirms": "이 chunk 가 『古記』 인용 형식으로 桓雄→壇君王倹 계보를 적는다는 것",
+      "limits": [
+        "삼국유사가 『古記』를 인용한 형태다. 『古記』 자체는 현전하지 않아 대조 불가.",
+        "桓𡆮(제석 표기)은 이체자 그대로 두었다.",
+        "설화 서술을 계보 사실로 확정하지 않는다. predicate 는 제안이며 Codex 가 hasParent 대신 describedAs 로 낮춰도 무방하다."
+      ]
+    },
+    {
+      "id": "claim-gojoseon-gogi-pyongyang-founding",
+      "era": "고조선",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0020_0020",
+      "locator": "卷 第一 › 紀異第一 › 古朝鮮王儉朝鮮 (고기 인용 기사)",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0020_0020",
+      "quoteIn": "chunk.text",
+      "quote": "以唐髙即位五十年庚寅, 都平壤城始稱朝鮮. 又移都於白岳山阿斯逹",
+      "subject": "polity-gojoseon",
+      "predicate": "syj:foundedIn",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "唐髙即位五十年庚寅",
+        "year": null,
+        "precision": "unknown",
+        "conversionStatus": "not-converted",
+        "conversionNote": "요(唐堯) 즉위 50년 경인을 서기로 환산하는 값은 사료가 주지 않는다. 삼국유사 카드가 적은 기원전 2333 은 『동국통감』 계통의 후대 관행이며 이 사료의 주장이 아니다."
+      },
+      "entitiesProposed": ["polity-gojoseon", "place-pyongyangseong", "place-asadal", "place-baegaksan"],
+      "dateFromChunk": null,
+      "certainty": "confirmed",
+      "confirms": "본문이 '평양성에 도읍하고 처음 조선이라 일컬었다'와 '백악산 아사달로 도읍을 옮겼다'를 적는다는 것",
+      "limits": [
+        "chunk.date 가 null 이라 국편도 이 기사에 서기 환산값을 붙이지 않았다.",
+        "唐髙 표기를 唐堯 로 고치지 않았다.",
+        "平壤城·白岳山阿斯逹의 위치를 좌표로 확정하지 않는다.",
+        "같은 chunk 안에서 도읍이 두 번 나오므로 locatedAt Claim 을 세울 때 시간 범위를 붙여야 한다(schema §9.1)."
+      ]
+    },
+    {
+      "id": "claim-gojoseon-reign-1500-and-gija",
+      "era": "고조선",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0020_0020",
+      "locator": "卷 第一 › 紀異第一 › 古朝鮮王儉朝鮮 (고기 인용 기사)",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0020_0020",
+      "quoteIn": "chunk.text",
+      "quote": "御國一千五百年. 周虎王即位己卯封箕子於朝鮮",
+      "subject": "person-dangun-samgukyusa",
+      "predicate": "syj:describedAs",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "literal",
+        "value": "나라를 다스린 기간 1500년, 그 뒤 周 虎王 기묘년에 箕子가 조선에 봉해졌다는 서술"
+      },
+      "entitiesProposed": ["person-dangun-samgukyusa", "person-gija", "polity-gojoseon"],
+      "dateFromChunk": null,
+      "certainty": "confirmed",
+      "confirms": "본문의 문자열",
+      "limits": [
+        "'虎王'은 고려 혜종 이름 武 를 피휘한 표기다(같은 사료의 다른 기사에 국편 교감주가 붙어 있음). 武王 으로 정규화하지 않았다.",
+        "1500년·기묘년을 절대연대로 환산하지 않는다.",
+        "箕子 관련 서술의 사실성은 학설 대상이다. 여기서는 '삼국유사가 그렇게 적었다'만 주장한다."
+      ]
+    },
+
+    {
+      "id": "claim-mahan-jun-founding",
+      "era": "삼한",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0040_0010",
+      "locator": "卷 第一 › 紀異第一 › 馬韓 › 나라를 건국하고 이름을 마한이라고 하다",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0040_0010",
+      "quoteIn": "chunk.text",
+      "quote": "魏志云, “魏滿擊朝鮮, 朝鮮王凖率宫人左右越海而南至韓地開國號馬韓.”",
+      "subject": "polity-mahan",
+      "predicate": "syj:foundedBy",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "person-joseonwang-jun",
+        "note": "朝鮮王凖"
+      },
+      "entitiesProposed": ["polity-mahan", "person-joseonwang-jun", "person-wiman-samgukyusa", "polity-gojoseon"],
+      "dateFromChunk": null,
+      "certainty": "confirmed",
+      "confirms": "삼국유사 마한 조가 『魏志』 인용으로 준왕 남천·마한 건국을 적는다는 것",
+      "limits": [
+        "인용문이다. 『魏志』 원본 대조는 하지 않았다.",
+        "본문 표기는 魏滿 이다. 衛滿 으로 고치지 않았다. 두 표기의 동일성은 별도 sameEntityAs Claim 이어야 한다.",
+        "연도가 없고 chunk.date 도 null 이다."
+      ]
+    },
+    {
+      "id": "claim-jinhan-twelve-states",
+      "era": "삼한",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0170_0010",
+      "locator": "卷 第一 › 紀異第一 › 辰韓 › 진한은 열두 개 작은 나라가 있어 각각 1만 호로 나라를 일컫다",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0170_0010",
+      "quoteIn": "chunk.text",
+      "quote": "有十二小國, 各萬户稱國.",
+      "supportingQuotes": ["又崔致逺云 “辰韓夲燕人避之者, 故取涿水之名稱所居之邑里云沙涿·漸涿等.”"],
+      "subject": "polity-jinhan",
+      "predicate": "syj:describedAs",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "literal",
+        "value": "12개 소국, 각 1만 호"
+      },
+      "entitiesProposed": ["polity-jinhan", "person-choechiwon"],
+      "dateFromChunk": null,
+      "certainty": "confirmed",
+      "confirms": "본문 문자열",
+      "limits": [
+        "『後漢書』 인용 안의 서술이다.",
+        "같은 chunk 가 崔致逺의 '燕人' 기원설을 나란히 싣는다 — 한 chunk 안에 서로 다른 기원 설명이 공존하므로 하나로 합치지 않았다.",
+        "秦/䄅 표기(䄅之亡人)는 원문 글자 그대로 두었다."
+      ]
+    },
+    {
+      "id": "claim-byeonhan-submission-hyeokgeose-19",
+      "era": "삼한",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0160_0010",
+      "locator": "卷 第一 › 紀異第一 › 卞韓 百濟 › 변한 사람이 항복하다",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0160_0010",
+      "quoteIn": "chunk.text",
+      "quote": "新羅始祖赫居世即位十九年壬午, 卞韓人以國来降.",
+      "subject": "event-byeonhan-submission",
+      "predicate": "syj:occurredIn",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "赫居世即位十九年壬午",
+        "year": null,
+        "precision": "year",
+        "conversionStatus": "not-converted",
+        "conversionNote": "즉위년 기준과 간지 壬午 를 어떻게 맞출지가 판단이다. 확정하지 않는다."
+      },
+      "entitiesProposed": ["polity-byeonhan", "polity-silla", "person-hyeokgeose", "event-byeonhan-submission"],
+      "dateFromChunk": {
+        "raw": "0039-99-99L0",
+        "label": null,
+        "presentInQuote": false,
+        "basisNote": "인용문에는 서기 연도가 없다. 국편 date.raw 는 0039 (양수)로 붙어 있으나 본문의 '赫居世即位十九年壬午'는 기원전 연대를 가리킨다. 부호가 빠졌는지 국편이 다른 해로 본 것인지 확인하지 못했다. unverified 항목 uv-samgukyusa-bc-sign 참조.",
+        "conversionStatus": "disputed-not-resolved"
+      },
+      "certainty": "confirmed",
+      "confirms": "본문 문자열. 서기 환산은 확정하지 않음",
+      "limits": [
+        "삼국사기 권1 혁거세조에도 '변한이 항복하다' 기사가 따로 있다(chunk_samguksagi_sg_001_0020_0080). 같은 사건인지는 sameEventEvidence 에 별도로 적었고 여기서 합치지 않았다.",
+        "卞韓 표기를 弁韓 으로 고치지 않았다."
+      ]
+    },
+
+    {
+      "id": "claim-baekje-onjo-father-samguksagi",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_023_0020_0010",
+      "locator": "卷第二十三 百濟本紀 第一 › 溫祚王 › 백제가 건국되고 온조왕이 즉위하다",
+      "permalink": "https://db.history.go.kr/id/sg_023_0020_0010",
+      "quoteIn": "chunk.text",
+      "quote": "百濟始祖温祚王, 其父鄒牟, 或云朱蒙.",
+      "supportingQuotes": ["生二子, 長曰沸流, 次曰温祚."],
+      "subject": "person-onjo",
+      "predicate": "syj:hasParent",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "person-jumong",
+        "note": "본문은 鄒牟 를 앞세우고 或云朱蒙 을 붙인다. 두 표기를 하나로 합치지 않는다."
+      },
+      "entitiesProposed": ["person-onjo", "person-biryu", "person-jumong", "polity-baekje"],
+      "dateFromChunk": {
+        "raw": "-0018-99-99L0",
+        "label": "원년",
+        "presentInQuote": false,
+        "basisNote": "이 quote 자체에는 연도가 없다. 같은 chunk 의 다른 문장(國號十濟…鴻嘉三年也)에 연호가 있다.",
+        "conversionStatus": "chunk-level-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "본문이 온조의 아버지를 鄒牟(或云朱蒙)로 적는다는 것",
+      "limits": [
+        "기존 entities.json 의 person-chumo(鄒牟王)는 광개토왕릉비 표기로 만들어진 껍데기다. 여기 鄒牟 와 같은 인물인지는 sameEntityAs Claim 으로 따로 세워야 하며 자동 병합하면 안 된다(schema §10).",
+        "삼국유사 남부여 조는 같은 대목을 인용하면서 雛牟王 으로 적는다 — claim-baekje-onjo-samgukyusa 참조."
+      ]
+    },
+    {
+      "id": "claim-baekje-founded-hongga3-samguksagi",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_023_0020_0010",
+      "locator": "卷第二十三 百濟本紀 第一 › 溫祚王 › 백제가 건국되고 온조왕이 즉위하다",
+      "permalink": "https://db.history.go.kr/id/sg_023_0020_0010",
+      "quoteIn": "chunk.text",
+      "quote": "國號十濟. 是前漢 成帝鴻嘉三年也.",
+      "subject": "polity-baekje",
+      "predicate": "syj:foundedIn",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "前漢 成帝鴻嘉三年",
+        "year": -18,
+        "precision": "year",
+        "conversionStatus": "candidate",
+        "conversionNote": "국편 date.raw 가 -0018 이고 본문 연호도 鴻嘉三年 이라 두 값이 맞물린다. 그래도 환산 자체를 Claim 으로 둘 것(schema §8.1)."
+      },
+      "entitiesProposed": ["polity-baekje", "person-onjo", "place-wiryeseong"],
+      "dateFromChunk": {
+        "raw": "-0018-99-99L0",
+        "label": "원년",
+        "presentInQuote": true,
+        "basisNote": "인용에 연호(鴻嘉三年)가 있고 chunk.date 와도 어긋나지 않는다.",
+        "conversionStatus": "quote-and-chunk-agree"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국사기 본기가 국호를 十濟 로 적고 그 해를 鴻嘉三年 이라 한다는 것",
+      "limits": [
+        "같은 chunk 의 원주(annotation)는 시조를 沸流王 으로 보는 다른 계통을 싣는다 — claim-baekje-biryu-variant 참조.",
+        "삼국유사 변한백제 조는 鴻嘉四年甲辰 이라 적는다 — claim-baekje-onjo-hongga4-samgukyusa 참조. 두 값을 합치지 않았다.",
+        "국호 十濟 → 百濟 변경은 별도 Claim(claim-baekje-rename)."
+      ]
+    },
+    {
+      "id": "claim-baekje-rename-and-buyeo-surname",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_023_0020_0010",
+      "locator": "卷第二十三 百濟本紀 第一 › 溫祚王 › 백제가 건국되고 온조왕이 즉위하다",
+      "permalink": "https://db.history.go.kr/id/sg_023_0020_0010",
+      "quoteIn": "chunk.text",
+      "quote": "後以來時, 百姓樂從, 攺號百濟. 其世系, 與髙句麗同出扶餘, 故以扶餘爲氏.",
+      "subject": "polity-baekje",
+      "predicate": "syj:hasName",
+      "predicateStatus": "existing-multivalued",
+      "object": {
+        "kind": "literal",
+        "value": "百濟 (十濟 에서 고침). 왕실 성은 扶餘, 세계는 고구려와 함께 扶餘에서 나왔다고 함"
+      },
+      "entitiesProposed": ["polity-baekje", "polity-goguryeo", "polity-buyeo"],
+      "dateFromChunk": {
+        "raw": "-0018-99-99L0",
+        "label": "원년",
+        "presentInQuote": false,
+        "basisNote": "국호 변경 시점이 인용에 없다. chunk 는 즉위년 기사이지만 '後以來時'라 시점이 열려 있다.",
+        "conversionStatus": "chunk-level-only-and-vague"
+      },
+      "certainty": "confirmed",
+      "confirms": "본문 문자열",
+      "limits": [
+        "국호 변경 연도를 확정하지 않는다. 본문이 시점을 특정하지 않는다.",
+        "hasName 은 schema §11 의 다중값 술어이므로 十濟/百濟가 함께 있어도 충돌로 세지 않는다.",
+        "기존 entities.json 에 polity-buk-buyeo(北夫餘)가 있으나 여기 扶餘 와 같은 대상인지 판정하지 않았다."
+      ]
+    },
+    {
+      "id": "claim-baekje-biryu-variant",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_023_0020_0010",
+      "locator": "卷第二十三 百濟本紀 第一 › 溫祚王 › 백제가 건국되고 온조왕이 즉위하다 (원주)",
+      "permalink": "https://db.history.go.kr/id/sg_023_0020_0010",
+      "quoteIn": "chunk.annotations",
+      "quoteAnnotation": { "seq": 3, "type": "원주", "id": null },
+      "quote": "一云, 始祖沸流王, 其父優台, 北扶餘王觧扶婁庻孫, 母召西奴, 卒夲人延陁勃之女.",
+      "subject": "polity-baekje",
+      "predicate": "syj:foundedBy",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "person-biryu",
+        "note": "沸流王 을 시조로 두는 다른 계통. 아버지는 優台."
+      },
+      "entitiesProposed": ["person-biryu", "person-utae", "person-soseono", "person-haeburu", "polity-buk-buyeo", "polity-baekje"],
+      "dateFromChunk": {
+        "raw": "-0018-99-99L0",
+        "label": "원년",
+        "presentInQuote": false,
+        "basisNote": "원주 안에 前漢 建昭二年(주몽 남분)은 있으나 백제 건국 연도는 없다. chunk.date 는 본기 기사 기준값이라 이 원주에 그대로 적용할 수 없다.",
+        "conversionStatus": "not-applicable"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국사기 온조왕 즉위조에 沸流王 시조설이 원주로 병기되어 있다는 것",
+      "limits": [
+        "빌드 주의: 이 quote 는 chunk.text 의 부분문자열이 아니다. 국편 XML 의 원주가 본문에서 분리돼 annotations 로 빠졌기 때문이다. schema §7.1 quote 검증을 그대로 걸면 이 Claim 은 실패한다 — annotation 을 가리키는 인용 경로가 필요하다. unverified 항목 uv-annotation-quote-path 참조.",
+        "같은 원주 뒤에 『北史』·『隋書』의 仇台 건국설과 '未知孰是'가 이어진다. 즉 사료 자신이 판정을 유보한다.",
+        "沸流 를 온조의 형으로 적는 본문 서술과 沸流王 시조설은 서로 다른 계통이다. 합치지 않았다."
+      ]
+    },
+    {
+      "id": "claim-baekje-onjo-samgukyusa",
+      "era": "삼국",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_002_0010_0200_0020",
+      "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 온조가 백제를 건국하다",
+      "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0020",
+      "quoteIn": "chunk.text",
+      "quote": "温祚都河南 慰禮城, 以十臣為輔翼國號十濟. 是漢成帝鴻佳三年也.",
+      "supportingQuotes": ["史本記云. “百濟始祖 温祚, 其父雛牟王, 或云朱蒙."],
+      "subject": "polity-baekje",
+      "predicate": "syj:foundedIn",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "漢成帝鴻佳三年",
+        "year": -18,
+        "precision": "year",
+        "conversionStatus": "candidate",
+        "conversionNote": "鴻佳 는 鴻嘉 의 이체/오각으로 보이나 본문 글자를 고치지 않았다. 국편 date.raw 는 -0018."
+      },
+      "entitiesProposed": ["polity-baekje", "person-onjo", "place-wiryeseong"],
+      "dateFromChunk": {
+        "raw": "-0018-99-99L0",
+        "label": null,
+        "presentInQuote": true,
+        "basisNote": "인용에 연호가 있고 chunk.date 와 부호·값이 맞는다.",
+        "conversionStatus": "quote-and-chunk-agree"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국유사가 '史本記云'이라 밝히고 삼국사기 계통 기사를 옮기면서 鴻佳三年·河南 慰禮城 을 적는다는 것",
+      "limits": [
+        "삼국유사 자신의 독립 주장이 아니라 명시적 인용이다. 그래서 삼국사기와 같은 값이 나오는 것을 '두 사료의 독립 일치'로 보면 안 된다.",
+        "글자 차이가 여럿이다: 雛牟王(유사) vs 鄒牟(사기), 鴻佳(유사) vs 鴻嘉(사기), 弥雛忽(유사) vs 彌鄒忽(사기). 정규화하지 않았다.",
+        "같은 삼국유사 안의 변한백제 조는 鴻嘉四年 이라 적는다 — 사료 내부 불일치."
+      ]
+    },
+    {
+      "id": "claim-baekje-onjo-hongga4-samgukyusa",
+      "era": "삼국",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0160_0010",
+      "locator": "卷 第一 › 紀異第一 › 卞韓 百濟 › 변한 사람이 항복하다",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0160_0010",
+      "quoteIn": "chunk.text",
+      "quote": "按夲紀, 温祚之起在鴻嘉四年甲辰, 則後於赫居世·東明之世四十餘年.",
+      "subject": "polity-baekje",
+      "predicate": "syj:foundedIn",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "鴻嘉四年甲辰",
+        "year": null,
+        "precision": "year",
+        "conversionStatus": "not-converted",
+        "conversionNote": "鴻嘉四年 과 간지 甲辰 이 함께 적혀 있다. 삼국사기의 鴻嘉三年 과 값이 다르므로 환산을 확정하지 않고 충돌로 남긴다."
+      },
+      "entitiesProposed": ["polity-baekje", "person-onjo"],
+      "dateFromChunk": {
+        "raw": "0039-99-99L0",
+        "label": null,
+        "presentInQuote": true,
+        "basisNote": "국편 date.raw(0039)는 이 chunk 의 머리 기사(변한 항복)에 대한 값으로 보이며 이 문장(온조 건국)과는 다른 사건이다. 이 Claim 의 연도 근거로 쓰지 않는다.",
+        "conversionStatus": "chunk-date-not-applicable"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국유사 변한백제 조가 '本紀를 살피니 온조가 일어난 것은 鴻嘉四年 甲辰'이라 적는다는 것",
+      "limits": [
+        "이것이 Q2(백제 건국 연도를 사료별로)의 핵심 충돌이다. 삼국사기 鴻嘉三年 / 삼국유사 남부여조 鴻佳三年 / 삼국유사 변한백제조 鴻嘉四年 — 세 값을 그대로 병존시킨다.",
+        "삼국유사가 가리키는 '夲紀'가 현전 삼국사기와 같은 판본인지 확인할 수 없다.",
+        "'四十餘年'이라는 상대 서술도 함께 있으므로 절대연도 확정 근거로 삼지 않는다."
+      ]
+    },
+    {
+      "id": "claim-baekje-sabi-move-samguksagi",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_026_0060_0100",
+      "locator": "卷第二十六 百濟本紀 第四 › 聖王 › 도읍을 사비로 옮기고 국호를 남부여라 칭하다",
+      "permalink": "https://db.history.go.kr/id/sg_026_0060_0100",
+      "quoteIn": "chunk.text",
+      "quote": "十六年, 春, 移都於泗沘, 國號南扶餘.",
+      "subject": "polity-baekje",
+      "predicate": "syj:hasCapital",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "place-sabi",
+        "validFromVerbatim": "聖王 十六年 春"
+      },
+      "entitiesProposed": ["polity-baekje", "place-sabi", "polity-nambuyeo", "person-seongwang", "event-sabi-transfer"],
+      "dateFromChunk": {
+        "raw": "0538-99-99L0",
+        "label": "16년",
+        "presentInQuote": false,
+        "basisNote": "인용에는 즉위기년 '十六年'만 있고 절대연도가 없다. 538 은 국편 date.raw 에서만 온다. 성왕 즉위년 기준을 어디로 잡느냐가 전제이며 사료가 그 전제를 적지 않는다.",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국사기 성왕 16년조가 사비 천도와 국호 南扶餘 를 적는다는 것",
+      "limits": [
+        "삼국유사는 같은 대목을 인용하면서 '聖王二十六年'이라 적는다 — claim-baekje-sabi-move-samgukyusa. 기년이 다르므로 합치지 않았다.",
+        "표기 泗沘(사기) / 泗泚(유사) 를 정규화하지 않았다.",
+        "사비 위치를 좌표로 확정하지 않는다."
+      ]
+    },
+    {
+      "id": "claim-baekje-sabi-move-samgukyusa",
+      "era": "삼국",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_002_0010_0200_0010",
+      "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 백제에 대한 기록들",
+      "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0010",
+      "quoteIn": "chunk.text",
+      "quote": "按三國史記, “百濟聖王二十六年戊午春, 移都扵泗泚, 國號南扶餘.”",
+      "supportingQuotes": ["扶餘郡者前百濟王都也. 或稱所夫里郡.", "百濟王姓扶氏故稱之."],
+      "subject": "polity-baekje",
+      "predicate": "syj:hasCapital",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "place-sabi",
+        "validFromVerbatim": "聖王 二十六年 戊午 春"
+      },
+      "entitiesProposed": ["polity-baekje", "place-sabi", "polity-nambuyeo", "person-seongwang"],
+      "dateFromChunk": {
+        "raw": "0538-99-99L0",
+        "label": null,
+        "presentInQuote": false,
+        "basisNote": "인용에는 즉위기년 二十六年 과 간지 戊午 가 있고 절대연도는 없다. 국편 date.raw 0538 은 간지 戊午 쪽(=삼국사기 十六年)과 맞물리고 二十六年 과는 어긋난다. 어느 쪽을 택할지 판정하지 않는다.",
+        "conversionStatus": "chunk-date-conflicts-with-quote"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국유사가 '按三國史記'라 밝히고 二十六年戊午 로 인용한다는 것",
+      "limits": [
+        "삼국유사가 인용한 삼국사기 문면(二十六年)이 현전 삼국사기 문면(十六年)과 다르다. 전승 과정의 차이인지 판본 차이인지 확정하지 않는다.",
+        "이 chunk 는 국편 date.raw 가 인용문의 기년이 아니라 간지 쪽을 따른 사례로 보이며, 날짜 필드를 사실로 박으면 안 되는 근거가 된다."
+      ]
+    },
+
+    {
+      "id": "claim-goguryeo-founded-samguksagi",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_013_0020_0010",
+      "locator": "卷第十三 髙句麗本紀 第一 › 東明聖王 › 주몽이 고구려를 건국하다",
+      "permalink": "https://db.history.go.kr/id/sg_013_0020_0010",
+      "quoteIn": "chunk.text",
+      "quote": "國號髙句麗, 因以髙爲氏. 時朱蒙年二十二歳, 是漢 孝元帝建昭二年, 新羅始祖赫居丗二十一年, 甲申歳也.",
+      "supportingQuotes": ["始祖東明聖王, 姓髙氏, 諱朱蒙."],
+      "subject": "polity-goguryeo",
+      "predicate": "syj:foundedIn",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "漢 孝元帝建昭二年 … 甲申歳",
+        "year": -37,
+        "precision": "year",
+        "conversionStatus": "candidate",
+        "conversionNote": "연호(建昭二年) + 간지(甲申) + 신라 기년(赫居丗二十一年) 세 개가 함께 적혀 상호 검증된다. 국편 date.raw 도 -0037."
+      },
+      "entitiesProposed": ["polity-goguryeo", "person-jumong", "place-jolbon", "event-goguryeo-founding"],
+      "dateFromChunk": {
+        "raw": "-0037-99-99L0",
+        "label": "원년",
+        "presentInQuote": true,
+        "basisNote": "인용에 연호·간지가 다 있고 chunk.date 부호도 음수로 일치.",
+        "conversionStatus": "quote-and-chunk-agree"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국사기가 고구려 건국을 建昭二年 甲申, 주몽 나이 22세로 적는다는 것",
+      "limits": [
+        "삼국유사 고구려 조는 같은 해에 대해 나이를 '十二歳'로 적는다 — 값이 다르므로 합치지 않았다.",
+        "같은 chunk 안에 '行至淹淲水'가 있다. 사료 카드가 적어둔 벌크(淲)/웹(㴲) 글자 차이 지점이며, 글자 단위 주장을 세울 때는 재대조가 필요하다(웹은 열지 않았다).",
+        "기존 person-chumo(鄒牟王, 광개토왕릉비) 와의 동일성은 판정하지 않았다."
+      ]
+    },
+    {
+      "id": "claim-goguryeo-founded-samgukyusa",
+      "era": "삼국",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0150_0050",
+      "locator": "卷 第一 › 紀異第一 › 高句麗 › 나라 이름을 고구려라 하고 고씨로 성을 삼다",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0150_0050",
+      "quoteIn": "chunk.text",
+      "quote": "國號髙句麗, 因以高爲氏, 時年十二歳, 漢 孝元帝建昭二年甲申歳即位稱王.",
+      "supportingQuotes": ["至卒夲州遂都焉.", "高麗全盛之日二十一万五百八户."],
+      "subject": "polity-goguryeo",
+      "predicate": "syj:foundedIn",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "漢 孝元帝建昭二年甲申歳",
+        "year": null,
+        "precision": "year",
+        "conversionStatus": "not-converted",
+        "conversionNote": "연호·간지는 삼국사기와 같으나 국편 date.raw 가 0037(양수)로 붙어 있어 부호가 어긋난다. 환산을 확정하지 않는다."
+      },
+      "entitiesProposed": ["polity-goguryeo", "person-jumong", "place-jolbon"],
+      "dateFromChunk": {
+        "raw": "0037-99-99L0",
+        "label": null,
+        "presentInQuote": true,
+        "basisNote": "인용의 建昭二年甲申 은 기원전 연대를 가리키는데 국편 date.raw 는 양수 0037 이다. 삼국사기 같은 사건 chunk 는 -0037 이다. 부호 누락으로 보이나 확인하지 못했다.",
+        "conversionStatus": "sign-anomaly-unresolved"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국유사가 고구려 건국 연도를 建昭二年 甲申 으로, 주몽 나이를 12세로 적는다는 것",
+      "limits": [
+        "나이(十二歳)가 삼국사기(二十二歳)와 다르다. 사료별로 나란히 둔다.",
+        "성씨 글자가 高(유사)/髙(사기)로 다르다. 정규화하지 않았다.",
+        "'高麗全盛之日' 호구수는 시점이 특정되지 않은 서술이라 연대 Claim 으로 쓰지 않았다."
+      ]
+    },
+
+    {
+      "id": "claim-silla-hyeokgeose-accession-samguksagi",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_001_0020_0010",
+      "locator": "卷第一 新羅本紀 第一 › 赫居世 居西干 › 시조 혁거세가 즉위하다",
+      "permalink": "https://db.history.go.kr/id/sg_001_0020_0010",
+      "quoteIn": "chunk.text",
+      "quote": "始祖姓朴氏, 諱赫居世. 前漢 孝宣帝五鳳元年甲子, 四月丙辰即位, 號居西干.",
+      "supportingQuotes": ["時年十三, 囯號徐那伐.", "居西干 辰言王."],
+      "subject": "person-hyeokgeose",
+      "predicate": "syj:accededIn",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "前漢 孝宣帝五鳳元年甲子 四月丙辰",
+        "year": -57,
+        "precision": "day",
+        "conversionStatus": "candidate",
+        "conversionNote": "연호+간지가 본문에 있고 국편 date.raw 도 -0057-04-15L0. 다만 raw 의 04-15 는 '四月丙辰'을 국편이 환산한 값이지 본문 값이 아니다."
+      },
+      "entitiesProposed": ["person-hyeokgeose", "polity-silla", "office-geoseogan", "event-silla-founding"],
+      "dateFromChunk": {
+        "raw": "-0057-04-15L0",
+        "label": "1년 4월 15일",
+        "presentInQuote": true,
+        "basisNote": "연/월은 인용에 있고 '15일'은 인용에 없다. 본문은 간지일(丙辰)만 적는다. 일자는 국편 환산값이며 L·끝자리 숫자의 뜻은 미확인이다(schema §8).",
+        "conversionStatus": "year-from-quote-day-from-chunk"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국사기가 혁거세 즉위를 五鳳元年 甲子 四月丙辰, 칭호 居西干, 국호 徐那伐 로 적는다는 것",
+      "limits": [
+        "삼국유사는 칭호를 居瑟邯, 국호를 徐羅伐/徐伐 계열로 적는다 — 표기가 다르므로 합치지 않았다.",
+        "初期 기록의 연대 신빙성은 학계 논쟁 대상이다(사료 카드). 여기서는 사료의 주장만 옮긴다.",
+        "일자 15 를 실제 양력 날짜로 쓰지 않는다."
+      ]
+    },
+    {
+      "id": "claim-silla-six-villages-joseon-refugees",
+      "era": "삼한",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_001_0020_0010",
+      "locator": "卷第一 新羅本紀 第一 › 赫居世 居西干 › 시조 혁거세가 즉위하다",
+      "permalink": "https://db.history.go.kr/id/sg_001_0020_0010",
+      "quoteIn": "chunk.text",
+      "quote": "先是, 朝鮮遺民分居山谷之間, 爲六村",
+      "supportingQuotes": ["是爲辰韓六部."],
+      "subject": "polity-jinhan",
+      "predicate": "syj:describedAs",
+      "predicateStatus": "existing",
+      "object": {
+        "kind": "literal",
+        "value": "조선 유민이 산곡에 나뉘어 살며 이룬 六村이 곧 辰韓六部라는 서술"
+      },
+      "entitiesProposed": ["polity-jinhan", "polity-gojoseon", "polity-silla"],
+      "dateFromChunk": {
+        "raw": "-0057-04-15L0",
+        "label": "1년 4월 15일",
+        "presentInQuote": false,
+        "basisNote": "본문이 '先是'(이보다 앞서)라고만 하여 시점을 열어 둔다. chunk.date 는 즉위 기사에 붙은 값이므로 이 서술의 연대로 쓰면 안 된다.",
+        "conversionStatus": "chunk-date-not-applicable"
+      },
+      "certainty": "confirmed",
+      "confirms": "본문 문자열",
+      "limits": [
+        "고조선 유민과 진한 6부를 잇는 것은 삼국사기의 서술이다. 역사적 계승 관계로 확정하지 않는다.",
+        "여섯 마을 이름은 삼국유사 신라시조 조와 표기·설명이 다르다. 대조는 하지 않았다.",
+        "era 를 '삼한'으로 붙였으나 chunk 자체는 신라본기다. coverage 분류의 편의값이다."
+      ]
+    },
+    {
+      "id": "claim-silla-name-samgukyusa",
+      "era": "삼국",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0190_0050",
+      "locator": "卷 第一 › 紀異第一 › 新羅 始祖 赫居世王 › 나라 이름을 서라벌 또는 서벌이라 하다",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0190_0050",
+      "quoteIn": "chunk.text",
+      "quote": "國號徐羅伐又徐伐, 或云斯羅又斯盧.",
+      "supportingQuotes": ["一說脫解王時得金閼智而雞鳴於林中, 乃攺國號爲雞林.", "後世遂定新羅之號."],
+      "subject": "polity-silla",
+      "predicate": "syj:hasName",
+      "predicateStatus": "existing-multivalued",
+      "object": {
+        "kind": "literal",
+        "value": "徐羅伐 · 徐伐 · 斯羅 · 斯盧 (뒤에 雞林, 後世에 新羅)"
+      },
+      "entitiesProposed": ["polity-silla", "person-hyeokgeose", "person-talhae"],
+      "dateFromChunk": {
+        "raw": null,
+        "label": null,
+        "presentInQuote": false,
+        "basisNote": "chunk.date 가 null 이다. '後世遂定新羅之號'는 시점을 특정하지 않는다.",
+        "conversionStatus": "no-date"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국유사가 신라 국호 이표기를 나열하고 '後世遂定新羅之號'로 맺는다는 것",
+      "limits": [
+        "삼국사기 지증마립간 4년조는 국호 확정을 특정 해(연호 없는 '四年')로 못박는다 — claim-silla-name-fixed-jijeung. 삼국유사는 시점을 열어 둔다. 두 서술을 합치지 않았다.",
+        "hasName 은 다중값 술어라 여러 표기 공존이 충돌이 아니다."
+      ]
+    },
+
+    {
+      "id": "claim-jijeung-accession",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_004_0020_0010",
+      "locator": "卷第四 新羅本紀 第四 › 智證 麻立干 › 지증마립간이 왕위에 오르다",
+      "permalink": "https://db.history.go.kr/id/sg_004_0020_0010",
+      "quoteIn": "chunk.text",
+      "quote": "智證麻立干立. 姓金氏, 諱智大路.",
+      "supportingQuotes": ["前王薨, 無子, 故繼位, 時年六十四歲."],
+      "subject": "person-jijeung",
+      "predicate": "syj:affiliatedWith",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "polity-silla",
+        "roleVerbatim": "麻立干",
+        "activeFromChunkDate": 500
+      },
+      "entitiesProposed": ["person-jijeung", "polity-silla", "office-maripgan"],
+      "dateFromChunk": {
+        "raw": "0500-99-99L0",
+        "label": "원년",
+        "presentInQuote": false,
+        "basisNote": "인용에 연도가 전혀 없다. 500 은 국편 date.raw 에서만 온다. 즉위년칭원/유년칭원 전제에 따라 달라질 수 있고 삼국사기 자신이 칭원법 사론을 따로 싣는다(chunk_samguksagi_sg_001_0030_0020).",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "본문이 지증마립간의 성·휘와 즉위를 적는다는 것. 소속(신라)은 본기 편제와 왕호에서 나온다",
+      "limits": [
+        "Q3(6세기 신라 소속 인물) 질의를 위한 시간 앵커는 quote 가 아니라 chunk.date 에서 온다 — 이 점을 데이터에 남겨야 한다.",
+        "'6세기'라는 구간 자체가 환산 결과에 딸린 판단이다."
+      ]
+    },
+    {
+      "id": "claim-silla-name-fixed-jijeung",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_004_0020_0060",
+      "locator": "卷第四 新羅本紀 第四 › 智證 麻立干 › 국호를 신라로 획정하고 임금을 왕이라고 부르다",
+      "permalink": "https://db.history.go.kr/id/sg_004_0020_0060",
+      "quoteIn": "chunk.text",
+      "quote": "始祖創業已來, 國名未定, 或稱斯羅, 或稱斯盧, 或言新羅.",
+      "supportingQuotes": ["今羣臣一意, 謹上號新羅國王.” 王從之.", "自我始祖立國, 至今二十二丗, 伹稱方言, 未正尊號"],
+      "subject": "polity-silla",
+      "predicate": "syj:hasName",
+      "predicateStatus": "existing-multivalued",
+      "object": {
+        "kind": "literal",
+        "value": "新羅 (지증 4년 겨울 10월, 신하들이 '新羅國王' 호를 올리고 왕이 따름)"
+      },
+      "entitiesProposed": ["polity-silla", "person-jijeung", "event-silla-name-fixed"],
+      "dateFromChunk": {
+        "raw": "0503-10-99L0",
+        "label": "4년 10월",
+        "presentInQuote": false,
+        "basisNote": "인용에는 연호도 간지도 없고 '四年, 冬十月'이라는 즉위기년만 있다. 503 은 국편 date.raw 에서만 온다. 월 표기 99 는 실제 월이 아니라 자리채움으로 보이며 뜻은 미확인(schema §8).",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국사기가 국호가 정해지지 않았던 상태와 新羅國王 호 확정을 지증 4년 겨울 10월조에 적는다는 것",
+      "limits": [
+        "삼국유사는 국호 확정 시점을 '後世'로만 적는다. 두 사료의 서술을 합치지 않았다.",
+        "'至今二十二丗'는 세계(世系) 계산의 근거가 될 수 있으나 여기서 계보 판정을 하지 않는다."
+      ]
+    },
+    {
+      "id": "claim-isabu-usanguk-bongi",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_004_0020_0180",
+      "locator": "卷第四 新羅本紀 第四 › 智證 麻立干 › 이사부가 우산국을 정벌하다",
+      "permalink": "https://db.history.go.kr/id/sg_004_0020_0180",
+      "quoteIn": "chunk.text",
+      "quote": "十三年, 夏六月, 于山國歸服, 歲以土宜爲貢.",
+      "supportingQuotes": ["伊湌異斯夫爲何瑟羅州軍主", "于山國在溟州正東海島, 或名鬱陵島."],
+      "subject": "person-isabu",
+      "predicate": "syj:heldOffice",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "office-gunju",
+        "placeVerbatim": "何瑟羅州",
+        "rankVerbatim": "伊湌",
+        "affiliation": "polity-silla"
+      },
+      "entitiesProposed": ["person-isabu", "polity-silla", "polity-usanguk", "place-haseulla", "place-ulleungdo", "office-gunju", "office-ichan", "event-usanguk-submission"],
+      "dateFromChunk": {
+        "raw": "0512-06-99L0",
+        "label": "13년 6월",
+        "presentInQuote": false,
+        "basisNote": "인용에는 '十三年, 夏六月'이라는 즉위기년만 있다. 512 는 국편 date.raw 에서만 온다.",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "본기가 우산국 귀복과 이사부의 何瑟羅州軍主 직을 적는다는 것. 이사부의 신라 소속은 관등(伊湌)·관직(軍主)과 신라본기 편제에서 나온다",
+      "limits": [
+        "Q3 질의에 쓸 시간값이 quote 가 아니라 chunk.date 에서 온다.",
+        "何瑟羅 표기가 열전(阿瑟羅)과 다르다. 같은 곳인지 판정하지 않았다.",
+        "우산국을 울릉도로 보는 것은 본문의 '或名鬱陵島' 서술이며 좌표로 확정하지 않는다."
+      ]
+    },
+    {
+      "id": "claim-isabu-usanguk-yeoljeon",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_044_0050_0030",
+      "locator": "卷第四十四 列傳 第四 › 異斯夫 › 아슬라주 군주가 되어 우산국을 점령하다",
+      "permalink": "https://db.history.go.kr/id/sg_044_0050_0030",
+      "quoteIn": "chunk.text",
+      "quote": "至十三年壬辰, 爲阿瑟羅州軍主, 謀并于山國.",
+      "subject": "person-isabu",
+      "predicate": "syj:heldOffice",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "office-gunju",
+        "placeVerbatim": "阿瑟羅州",
+        "affiliation": "polity-silla"
+      },
+      "entitiesProposed": ["person-isabu", "polity-silla", "polity-usanguk", "place-aseulla", "office-gunju"],
+      "dateFromChunk": {
+        "raw": "0512-99-99L0",
+        "label": null,
+        "presentInQuote": false,
+        "basisNote": "인용에는 즉위기년 '十三年'과 간지 '壬辰'만 있다. 512 는 국편 date.raw 에서만 온다. 간지 壬辰 은 환산 후보를 좁히지만 여기서 확정하지 않는다.",
+        "conversionStatus": "chunk-date-only-with-ganji-in-quote"
+      },
+      "certainty": "confirmed",
+      "confirms": "열전이 이사부의 阿瑟羅州軍主 임명과 우산국 병합 계획을 적는다는 것",
+      "limits": [
+        "본기(何瑟羅州)와 열전(阿瑟羅州)의 지명 표기가 다르다. 정규화하지 않았다.",
+        "본기와 열전이 같은 사건인지는 sameEventEvidence 항목에 근거를 적었고, 여기서 하나로 합치지 않았다.",
+        "열전 기사에는 왕대 이름이 없어 '十三年'이 어느 왕의 13년인지는 앞 기사에 딸린 문맥이다."
+      ]
+    },
+    {
+      "id": "claim-beopheung-accession",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_004_0030_0010",
+      "locator": "卷第四 新羅本紀 第四 › 法興王 › 법흥왕이 왕위에 오르다",
+      "permalink": "https://db.history.go.kr/id/sg_004_0030_0010",
+      "quoteIn": "chunk.text",
+      "quote": "法興王立. 諱原宗, 智證王元子.",
+      "subject": "person-beopheung",
+      "predicate": "syj:affiliatedWith",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "polity-silla",
+        "roleVerbatim": "王",
+        "activeFromChunkDate": 514
+      },
+      "entitiesProposed": ["person-beopheung", "person-jijeung", "polity-silla"],
+      "dateFromChunk": {
+        "raw": "0514-99-99L0",
+        "label": "원년",
+        "presentInQuote": false,
+        "basisNote": "인용에 연도가 없다. 514 는 국편 date.raw 에서만 온다.",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "본문이 법흥왕의 휘를 原宗, 지증왕의 元子로 적는다는 것",
+      "limits": [
+        "諱原宗 은 삼국유사 조목명 '原宗興法 猒髑滅身'의 原宗 과 표기가 같다. 동일 인물 판정은 sameEntityAs Claim 으로 따로 세워야 하며 자동 병합하지 않는다.",
+        "6세기 소속 질의용 시간값이 chunk.date 에서 온다."
+      ]
+    },
+    {
+      "id": "claim-silla-buddhism-samguksagi",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_004_0030_0110",
+      "locator": "卷第四 新羅本紀 第四 › 法興王 › 불교가 비로소 널리 퍼지다",
+      "permalink": "https://db.history.go.kr/id/sg_004_0030_0110",
+      "quoteIn": "chunk.text",
+      "quote": "十五年, 肇行佛法.",
+      "supportingQuotes": ["初訥祇王時, 沙門墨胡子自高句麗至一善郡, 郡人毛禮於家中作窟室安置."],
+      "subject": "event-silla-buddhism-official",
+      "predicate": "syj:occurredIn",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "法興王 十五年",
+        "year": null,
+        "precision": "year",
+        "conversionStatus": "not-converted",
+        "conversionNote": "인용에 절대연도가 없다. 국편 raw 는 0528."
+      },
+      "entitiesProposed": ["event-silla-buddhism-official", "person-beopheung", "polity-silla", "person-mukhoja", "person-morye"],
+      "dateFromChunk": {
+        "raw": "0528-99-99L0",
+        "label": "15년",
+        "presentInQuote": false,
+        "basisNote": "인용은 즉위기년 '十五年'만 적는다. 528 은 국편 date.raw 에서만 온다.",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국사기가 불법의 시행을 법흥왕 15년조에 둔다는 것",
+      "limits": [
+        "삼국유사는 같은 일을 '法興大王即位十四年'으로 적고 '蕭梁普通八年丁未'를 덧붙인다 — 기년이 다르다. 합치지 않았다.",
+        "이 chunk 의 본문에는 異次頓 이름이 나오지 않는다(내가 읽은 앞부분 기준). 묵호자·아도 서술이 이어진다.",
+        "'肇行佛法'을 공인(公認)으로 해석하는 것은 후대 용어다. 원문 표현을 그대로 둔다."
+      ]
+    },
+    {
+      "id": "claim-silla-buddhism-samgukyusa",
+      "era": "삼국",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_003_0010_0040_0010",
+      "locator": "卷 第三 › 興法第三 › 原宗興法 厭髑滅身 › 법흥왕이 불도를 도울 사람을 구하자, 염촉이 내양하다",
+      "permalink": "https://db.history.go.kr/id/sy_003_0010_0040_0010",
+      "quoteIn": "chunk.text",
+      "quote": "新羅夲記, “法興大王即位十四年, 小臣異次頓爲法滅身.” 即蕭梁普通八年丁未",
+      "supportingQuotes": ["粤有内養者姓朴, 字猒髑."],
+      "subject": "person-ichadon",
+      "predicate": "syj:diedIn",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "法興大王即位十四年 … 蕭梁普通八年丁未",
+        "year": null,
+        "precision": "year",
+        "conversionStatus": "not-converted",
+        "conversionNote": "인용 안에 중국 연호(普通八年)와 간지(丁未)가 있어 환산 후보가 좁지만 확정하지 않는다. 국편 raw 는 0527."
+      },
+      "entitiesProposed": ["person-ichadon", "person-yeomchok", "person-beopheung", "polity-silla"],
+      "dateFromChunk": {
+        "raw": "0527-99-99L0",
+        "label": null,
+        "presentInQuote": true,
+        "basisNote": "인용에 연호·간지가 있고 chunk.date 와 어긋나지 않는다.",
+        "conversionStatus": "quote-and-chunk-agree"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국유사가 『新羅本記』 인용으로 '법흥대왕 즉위 14년, 異次頓이 법을 위해 몸을 버렸다'를 적고 이를 普通八年 丁未 로 맞춘다는 것",
+      "limits": [
+        "삼국유사가 인용한 『新羅夲記』 문면(即位十四年)이 현전 삼국사기 문면(十五年, 肇行佛法)과 다르다. 두 값을 병존시킨다.",
+        "같은 chunk 에 異次頓 과 猒髑 이 함께 나오지만, 두 이름이 같은 사람이라는 문장을 이 chunk 본문에서 확인하지는 못했다. 동일성은 inferred 로 별도 취급한다(unverified 목록 참조).",
+        "조목명은 厭髑, 본문은 猒髑 이다. 글자를 통일하지 않았다."
+      ]
+    },
+    {
+      "id": "claim-guksa-compilation-bongi",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_004_0040_0090",
+      "locator": "卷第四 新羅本紀 第四 › 眞興王 › 국사를 편찬하다",
+      "permalink": "https://db.history.go.kr/id/sg_004_0040_0090",
+      "quoteIn": "chunk.text",
+      "quote": "六年, 秋七月, 伊湌異斯夫奏曰, “國史者, 記君臣之善惡, 示褒貶於萬代.",
+      "supportingQuotes": ["王深然之, 命大阿湌居柒夫等, 廣集文士, 俾之修撰."],
+      "subject": "person-geochilbu",
+      "predicate": "syj:affiliatedWith",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "polity-silla",
+        "rankVerbatim": "大阿湌",
+        "roleVerbatim": "國史 修撰 명을 받음"
+      },
+      "entitiesProposed": ["person-geochilbu", "person-isabu", "person-jinheung", "polity-silla", "office-daeachan", "office-ichan", "event-guksa-compilation"],
+      "dateFromChunk": {
+        "raw": "0545-07-99L0",
+        "label": "6년 7월",
+        "presentInQuote": false,
+        "basisNote": "인용은 즉위기년 '六年, 秋七月'만 적는다. 545 는 국편 date.raw 에서만 온다.",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "본기가 이사부의 건의와 거칠부 등에 대한 수찬 명령을 진흥왕 6년 7월조에 적는다는 것",
+      "limits": [
+        "이 기사는 6세기 신라 소속 인물 두 명(異斯夫·居柒夫)을 관등과 함께 한 chunk 에 담아 Q3 질의에 바로 쓰인다. 다만 시간값은 chunk.date 에서 온다.",
+        "편찬된 『國史』의 완성 여부·현전 여부는 이 기사에 없다."
+      ]
+    },
+    {
+      "id": "claim-guksa-compilation-yeoljeon",
+      "era": "삼국",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_044_0030_0050",
+      "locator": "卷第四十四 列傳 第四 › 居柒夫 › 국사를 편찬하다",
+      "permalink": "https://db.history.go.kr/id/sg_044_0030_0050",
+      "quoteIn": "chunk.text",
+      "quote": "眞興大王六年乙丑, 承朝㫖, 集諸文士, 修撰國史. 加官波珍湌.",
+      "subject": "person-geochilbu",
+      "predicate": "syj:heldOffice",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "office-pajinchan",
+        "affiliation": "polity-silla",
+        "note": "국사 수찬의 공으로 波珍湌 으로 가관"
+      },
+      "entitiesProposed": ["person-geochilbu", "person-jinheung", "polity-silla", "office-pajinchan"],
+      "dateFromChunk": {
+        "raw": "0545-99-99L0",
+        "label": null,
+        "presentInQuote": false,
+        "basisNote": "인용에 왕대(眞興大王)·즉위기년(六年)·간지(乙丑)는 있으나 절대연도는 없다. 545 는 국편 date.raw 에서만 온다.",
+        "conversionStatus": "chunk-date-only-with-ganji-in-quote"
+      },
+      "certainty": "confirmed",
+      "confirms": "열전이 진흥대왕 6년 을축에 거칠부가 국사를 수찬하고 파진찬으로 가관됐다고 적는다는 것",
+      "limits": [
+        "본기(6년 7월)와 열전(6년 乙丑)이 같은 사건인지는 sameEventEvidence 에 근거를 적었다. 합치지 않았다.",
+        "열전은 이사부의 건의를 적지 않는다. 본기와 서술 범위가 다르다."
+      ]
+    },
+
+    {
+      "id": "claim-muyeol-samhan-unification",
+      "era": "통일신라",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0030",
+      "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 무열왕은 유신공과 함께 삼한을 통일하였기에 묘호를 태종이라 한다",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0030",
+      "quoteIn": "chunk.text",
+      "quote": "王與庾信神謀戮力一統三韓有大㓛於社稷. 故廟號太宗.",
+      "supportingQuotes": ["以永徽五年甲寅即位.", "御國八年龍朔元年辛酉崩壽五十九歳"],
+      "subject": "person-muyeol",
+      "predicate": "syj:hasTitle",
+      "predicateStatus": "existing-multivalued",
+      "object": {
+        "kind": "literal",
+        "value": "太宗 (삼한을 통일한 공으로 붙인 묘호라는 서술)"
+      },
+      "entitiesProposed": ["person-muyeol", "person-kimyusin", "polity-silla", "event-samhan-unification"],
+      "dateFromChunk": {
+        "raw": "0654-99-99L0",
+        "label": null,
+        "presentInQuote": true,
+        "basisNote": "즉위 연호(永徽五年甲寅)가 인용에 있고 chunk.date 와 어긋나지 않는다. 다만 chunk.date 는 즉위 기준값이지 '삼한 통일' 시점이 아니다.",
+        "conversionStatus": "quote-and-chunk-agree-for-accession-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국유사가 무열왕의 태종 묘호 근거를 '유신과 함께 삼한을 통일한 공'으로 적는다는 것",
+      "limits": [
+        "'一統三韓'의 시점·범위를 이 기사가 특정하지 않는다. 통일 완성 연도를 여기서 세우지 않는다.",
+        "묘호 태종을 둘러싼 당과의 논란은 같은 조목의 다른 기사(sy_001_0020_0360_0220)에 있다. 이 Claim 에 섞지 않았다.",
+        "'三韓'이 가리키는 범위가 앞선 삼한 조목의 三韓 과 같은지 판정하지 않는다."
+      ]
+    },
+    {
+      "id": "claim-gyeongsun-surrender-935",
+      "era": "통일신라",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_012_0060_0270",
+      "locator": "卷第十二 新羅本紀 第十二 › 敬順王 › 왕이 왕도에서 나와 태조에게 귀순하다",
+      "permalink": "https://db.history.go.kr/id/sg_012_0060_0270",
+      "quoteIn": "chunk.text",
+      "quote": "十一月, 太祖受王書, 送大相王鐡等迎之. 王率百寮, 發自王都, 歸于太祖",
+      "subject": "event-silla-surrender",
+      "predicate": "syj:occurredIn",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "timespan",
+        "verbatim": "十一月",
+        "year": null,
+        "precision": "month",
+        "conversionStatus": "not-converted",
+        "conversionNote": "인용에는 달만 있다. 935 는 국편 date.raw 에서만 온다."
+      },
+      "entitiesProposed": ["person-gyeongsun", "person-goryeo-taejo", "polity-silla", "polity-goryeo", "event-silla-surrender"],
+      "dateFromChunk": {
+        "raw": "0935-11-99L0",
+        "label": "9년 11월",
+        "presentInQuote": false,
+        "basisNote": "인용에 연도가 없다. 935 와 '9년'은 국편 date 필드에서만 온다.",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "본문이 경순왕이 백료를 거느리고 왕도를 떠나 태조에게 귀순했다고 적는다는 것",
+      "limits": [
+        "'太祖'는 이 문맥에서 고려 태조를 가리키지만 본문이 국명을 적지 않는다. polity-goryeo 연결은 추론이다.",
+        "사료 카드의 coversTo 935 는 이 계열 기사에 근거한 삼국사기 자신의 범위다."
+      ]
+    },
+    {
+      "id": "claim-silla-renamed-gyeongju",
+      "era": "통일신라",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_012_0060_0280",
+      "locator": "卷第十二 新羅本紀 第十二 › 敬順王 › 왕을 정승공으로 봉하고 신라를 경주로 고쳐 식읍으로 삼다",
+      "permalink": "https://db.history.go.kr/id/sg_012_0060_0280",
+      "quoteIn": "chunk.text",
+      "quote": "十二月, 封爲正承公, 位在太子之上, 給禄一千石.",
+      "supportingQuotes": ["攺新羅爲慶州, 以爲公之食邑."],
+      "subject": "polity-silla",
+      "predicate": "syj:hasName",
+      "predicateStatus": "existing-multivalued",
+      "object": {
+        "kind": "literal",
+        "value": "慶州 (신라를 고쳐 경주로 삼고 식읍으로 줌)"
+      },
+      "entitiesProposed": ["person-gyeongsun", "polity-silla", "place-gyeongju", "office-jeongseunggong"],
+      "dateFromChunk": {
+        "raw": "0935-12-99L0",
+        "label": "9년 12월",
+        "presentInQuote": false,
+        "basisNote": "인용에 연도가 없다. 935 는 국편 date.raw 에서만 온다.",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "본문 문자열",
+      "limits": [
+        "여기서 新羅 는 나라 이름이자 지역 이름으로 쓰인다. polity 와 place 중 어디에 걸지는 Codex 판단이 필요하다.",
+        "정승공(正承公)이 관직인지 봉작인지 이 기사만으로 정하지 않았다."
+      ]
+    },
+
+    {
+      "id": "claim-balhae-origin-tongjeon",
+      "era": "발해",
+      "sourceId": "src-samgukyusa",
+      "chunkId": "chunk_samgukyusa_sy_001_0020_0100_0010",
+      "locator": "卷 第一 › 紀異第一 › 靺鞨· 渤海 › 발해라 부르다",
+      "permalink": "https://db.history.go.kr/id/sy_001_0020_0100_0010",
+      "quoteIn": "chunk.text",
+      "quote": "通典云 “渤海夲栗末靺鞨至其酋祚榮立國自號震旦, 先天中始去靺鞨號專稱渤海.",
+      "supportingQuotes": ["私攺年號遂爲海東盛國. 地有五亰十五府六十二州.", "開元七年 祚榮死謚爲髙王."],
+      "subject": "polity-balhae",
+      "predicate": "syj:foundedBy",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "person-daejoyeong",
+        "note": "본문 표기는 祚榮. 大祚榮 으로 확장하지 않았다."
+      },
+      "entitiesProposed": ["polity-balhae", "person-daejoyeong", "polity-malgal", "polity-jindan"],
+      "dateFromChunk": {
+        "raw": "0712-99-99L0",
+        "label": null,
+        "presentInQuote": false,
+        "basisNote": "인용에는 중국 연호(先天, 開元七年)만 있고 서기 연도가 없다. 712 는 국편 date.raw 에서만 온다. '先天中'은 특정 해가 아니라 연호 기간을 가리키는 표현이라 국편이 어떤 해를 골랐는지 확인하지 못했다.",
+        "conversionStatus": "chunk-date-only-era-range-in-quote"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국유사가 『通典』 인용으로 발해의 유래(속말말갈 → 震旦 → 渤海)와 海東盛國·5경15부62주를 적는다는 것",
+      "limits": [
+        "인용문이다. 『通典』 원본 대조는 하지 않았다.",
+        "같은 조목의 다른 기사(sy_001_0020_0100_0020 '고[구]려의 자손들이 나라 이름을 발해라 하다')는 chunk.text 가 비어 있다 — 본문 전체가 원주로 빠진 사례로 보인다. 그 계통 주장은 여기 넣지 않았다.",
+        "발해와 고구려의 계승 관계는 이 인용이 다루지 않는다. 다른 기사와 합치지 않았다."
+      ]
+    },
+    {
+      "id": "claim-balhae-deungju-raid-733",
+      "era": "발해",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_008_0040_1560",
+      "locator": "卷第八 新羅本紀 第八 › 聖德王 › 당나라 현종이 발해 공격을 요청하다",
+      "permalink": "https://db.history.go.kr/id/sg_008_0040_1560",
+      "quoteIn": "chunk.text",
+      "quote": "三十二年, 秋七月, 唐 玄宗以渤海 靺鞨越海入寇登州, 遣太僕貟外卿 金思蘭歸囯",
+      "supportingQuotes": ["發兵擊靺鞨南鄙. 㑹大雪丈餘, 山路阻隘, 士卒死者過半, 無㓛而還.", "金思蘭夲王族, 先因入朝, 恭而有禮, 因留宿衛."],
+      "subject": "event-balhae-deungju-raid",
+      "predicate": "syj:hasOutcome",
+      "predicateStatus": "existing-multivalued",
+      "object": {
+        "kind": "literal",
+        "value": "신라가 말갈 남쪽 변경을 쳤으나 큰 눈으로 절반 넘는 사졸을 잃고 공 없이 돌아옴"
+      },
+      "entitiesProposed": ["polity-balhae", "polity-malgal", "polity-silla", "person-kimsaran", "person-seongdeok", "place-deungju", "event-balhae-deungju-raid"],
+      "dateFromChunk": {
+        "raw": "0733-07-99L0",
+        "label": "32년 07월",
+        "presentInQuote": false,
+        "basisNote": "인용은 즉위기년 '三十二年, 秋七月'만 적는다. 733 은 국편 date.raw 에서만 온다.",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "삼국사기 신라본기가 발해·말갈의 등주 침입과 당의 요청, 김사란 귀국, 원정 실패를 적는다는 것",
+      "limits": [
+        "이 기사는 삼국사기가 '渤海 靺鞨'을 붙여 쓴 사례다. 발해와 말갈을 별개 엔티티로 나눌지 하나로 볼지 판정하지 않았다.",
+        "통일신라·발해가 같은 기사 안에서 만나는 드문 대목이라 두 시대 coverage 에 함께 걸린다."
+      ]
+    },
+    {
+      "id": "claim-silla-envoy-bukguk-790",
+      "era": "발해",
+      "sourceId": "src-samguksagi",
+      "chunkId": "chunk_samguksagi_sg_010_0020_0310",
+      "locator": "卷第十 新羅本紀 第十 › 元聖王 › 발해에 사신 백어를 보내고 가뭄이 들다",
+      "permalink": "https://db.history.go.kr/id/sg_010_0020_0310",
+      "quoteIn": "chunk.text",
+      "quote": "三月, 以一吉湌伯魚使北國.",
+      "subject": "person-baegeo",
+      "predicate": "syj:sentAsEnvoyTo",
+      "predicateStatus": "proposed",
+      "object": {
+        "kind": "entity",
+        "value": "polity-bukguk",
+        "note": "본문 표기는 北國 이다. 渤海 로 바꾸지 않았다."
+      },
+      "entitiesProposed": ["person-baegeo", "polity-silla", "polity-bukguk", "office-ilgilchan"],
+      "dateFromChunk": {
+        "raw": "0790-03-99L0",
+        "label": "6년 3월",
+        "presentInQuote": false,
+        "basisNote": "인용에는 달(三月)만 있다. 790 은 국편 date.raw 에서만 온다.",
+        "conversionStatus": "chunk-date-only"
+      },
+      "certainty": "confirmed",
+      "confirms": "본문이 일길찬 백어를 北國에 사신으로 보냈다고 적는다는 것",
+      "limits": [
+        "국편이 붙인 기사 제목은 '발해에 사신 백어를 보내고…'이지만 본문 글자는 北國 이다. 北國=渤海 동정은 국편의 판단이며 사료 본문의 주장이 아니다. 이 동정은 별도 sameEntityAs Claim(origin=ai, inferred)으로만 둘 것.",
+        "발해 시대 coverage 에 넣었지만 chunk 자체는 신라본기다."
+      ]
+    }
+  ],
+
+  "sameEventEvidence": [
+    {
+      "id": "se-usanguk-512",
+      "candidateClaims": ["claim-isabu-usanguk-bongi", "claim-isabu-usanguk-yeoljeon"],
+      "sameSource": true,
+      "sourceIds": ["src-samguksagi"],
+      "evidence": [
+        "두 chunk 모두 '十三年'을 쓴다 (본기 '十三年, 夏六月' / 열전 '至十三年壬辰').",
+        "두 chunk 모두 異斯夫가 州軍主가 되어 于山國을 상대한다고 적는다.",
+        "두 chunk 모두 같은 계략을 적는다: 본기 '乃多造木偶師子, 分載戰舩', 열전 '乃多造木偶師子, 分載戰舡'.",
+        "두 chunk 모두 같은 협박 대사를 적는다: '汝若不服, 則放此猛獸' (본기 '踏殺之', 열전 '踏殺之').",
+        "국편 date.raw 가 둘 다 0512."
+      ],
+      "counterEvidence": [
+        "지명 표기가 다르다: 본기 何瑟羅州, 열전 阿瑟羅州.",
+        "배 글자가 다르다: 본기 戰舩, 열전 戰舡.",
+        "열전에는 왕대 이름이 없다."
+      ],
+      "verdict": "inferred",
+      "verdictNote": "본기·열전 사이의 중복 서술로 보는 것이 자연스럽지만 확정 판정하지 않는다. sameEventAs Claim 으로 세우되 origin=ai 로 둔다."
+    },
+    {
+      "id": "se-guksa-545",
+      "candidateClaims": ["claim-guksa-compilation-bongi", "claim-guksa-compilation-yeoljeon"],
+      "sameSource": true,
+      "sourceIds": ["src-samguksagi"],
+      "evidence": [
+        "두 chunk 모두 진흥왕 '六年'을 쓴다 (본기 '六年, 秋七月' / 열전 '眞興大王六年乙丑').",
+        "두 chunk 모두 居柒夫가 문사를 모아 國史를 수찬한다고 적는다 (본기 '命大阿湌居柒夫等, 廣集文士, 俾之修撰' / 열전 '集諸文士, 修撰國史').",
+        "국편 date.raw 가 둘 다 0545."
+      ],
+      "counterEvidence": [
+        "관등이 다르게 적힌다: 본기 大阿湌, 열전은 수찬 뒤 波珍湌 으로 加官.",
+        "열전에는 異斯夫의 건의가 없다."
+      ],
+      "verdict": "inferred",
+      "verdictNote": "관등 차이는 시점 차이로 설명될 수도 있으나 여기서 정하지 않는다."
+    },
+    {
+      "id": "se-baekje-founding-cross-source",
+      "candidateClaims": ["claim-baekje-founded-hongga3-samguksagi", "claim-baekje-onjo-samgukyusa", "claim-baekje-onjo-hongga4-samgukyusa"],
+      "sameSource": false,
+      "sourceIds": ["src-samguksagi", "src-samgukyusa"],
+      "evidence": [
+        "삼국유사 남부여 조가 '史本記云'이라고 출처를 밝히고 삼국사기 온조왕조와 거의 같은 문면을 옮긴다 — 인용 관계가 본문에 명시돼 있다.",
+        "삼국유사 변한백제 조도 '按夲紀'라 하여 같은 계통 기록을 가리킨다.",
+        "세 곳 모두 溫祚·十濟·鴻嘉(鴻佳) 연호를 공유한다."
+      ],
+      "counterEvidence": [
+        "연도가 갈린다: 삼국사기 鴻嘉三年 / 삼국유사 남부여조 鴻佳三年 / 삼국유사 변한백제조 鴻嘉四年甲辰.",
+        "인명 표기가 갈린다: 鄒牟(사기) / 雛牟王(유사).",
+        "삼국유사 두 조목이 서로 다른 값을 적으므로 사료 내부에서도 일치하지 않는다."
+      ],
+      "verdict": "confirmed-same-referent-conflicting-values",
+      "verdictNote": "같은 사건을 가리킨다는 근거는 본문의 명시적 인용 표현이다. 연도 값은 합치지 않고 schema §11 충돌로 남긴다. 이것이 Q2 질의의 표본이 된다."
+    },
+    {
+      "id": "se-sabi-transfer",
+      "candidateClaims": ["claim-baekje-sabi-move-samguksagi", "claim-baekje-sabi-move-samgukyusa"],
+      "sameSource": false,
+      "sourceIds": ["src-samguksagi", "src-samgukyusa"],
+      "evidence": [
+        "삼국유사가 '按三國史記'라고 출처를 명시하고 같은 문장 구조를 옮긴다.",
+        "두 곳 모두 '移都…國號南扶餘' 를 적는다.",
+        "국편 date.raw 가 둘 다 0538."
+      ],
+      "counterEvidence": [
+        "기년이 다르다: 삼국사기 十六年 / 삼국유사 인용 二十六年戊午.",
+        "지명 글자가 다르다: 泗沘 / 泗泚."
+      ],
+      "verdict": "confirmed-same-referent-conflicting-values",
+      "verdictNote": "인용 관계는 명시적이지만 기년 값이 다르다. 국편 date.raw 는 간지 쪽을 따른 것으로 보이며 이 역시 판단이다."
+    },
+    {
+      "id": "se-silla-buddhism",
+      "candidateClaims": ["claim-silla-buddhism-samguksagi", "claim-silla-buddhism-samgukyusa"],
+      "sameSource": false,
+      "sourceIds": ["src-samguksagi", "src-samgukyusa"],
+      "evidence": [
+        "삼국유사가 '新羅夲記'를 명시 인용하며 법흥왕대 불법 관련 사건을 가리킨다.",
+        "두 사료 모두 法興王(法興大王) 재위 중의 일로 둔다.",
+        "국편 date.raw 가 0528(사기) / 0527(유사)로 인접한다."
+      ],
+      "counterEvidence": [
+        "기년이 다르다: 十五年(사기) / 即位十四年(유사).",
+        "서술 내용이 다르다: 사기는 '肇行佛法'과 묵호자·아도 전승, 유사는 異次頓의 순교.",
+        "사기 본문(내가 읽은 앞부분)에는 異次頓 이름이 없다."
+      ],
+      "verdict": "inferred",
+      "verdictNote": "같은 사건 계열로 보이지만 두 사료가 서술 대상을 완전히 같게 잡는지는 확인하지 못했다. 합치지 않는다."
+    },
+    {
+      "id": "se-byeonhan-submission",
+      "candidateClaims": ["claim-byeonhan-submission-hyeokgeose-19"],
+      "relatedChunks": ["chunk_samguksagi_sg_001_0020_0080"],
+      "sameSource": false,
+      "sourceIds": ["src-samgukyusa", "src-samguksagi"],
+      "evidence": [
+        "삼국사기 권1 혁거세조에 국편이 '변한이 항복하다'라는 제목을 붙인 기사가 따로 있다(sg_001_0020_0080).",
+        "삼국유사 변한백제 조가 '新羅始祖赫居世即位十九年壬午'라며 신라 기년으로 적는다."
+      ],
+      "counterEvidence": [
+        "삼국사기 쪽 chunk 의 본문은 이번 조사에서 읽지 않았다 — 제목(국편 부여)만 확인했다.",
+        "따라서 문면 대조 근거가 없다."
+      ],
+      "verdict": "unverified",
+      "verdictNote": "국편이 붙인 기사 제목만으로 같은 사건이라 하지 않는다. 삼국사기 sg_001_0020_0080 본문을 읽어야 판정 가능."
+    }
+  ],
+
+  "entities": [
+    {"id": "polity-gojoseon", "type": "Polity", "label": "조선(고조선)", "labelHanja": "朝鮮", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0020_0010", "chunk_samgukyusa_sy_001_0020_0020_0020", "chunk_samgukyusa_sy_001_0020_0040_0010"], "note": "사료 표기는 朝鮮. '고조선'은 조목명(古朝鮮王儉朝鮮)에서 온다."},
+    {"id": "polity-mahan", "type": "Polity", "label": "마한", "labelHanja": "馬韓", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0040_0010", "chunk_samgukyusa_sy_001_0020_0160_0010"]},
+    {"id": "polity-jinhan", "type": "Polity", "label": "진한", "labelHanja": "辰韓", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0170_0010", "chunk_samguksagi_sg_001_0020_0010"]},
+    {"id": "polity-byeonhan", "type": "Polity", "label": "변한", "labelHanja": "卞韓", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0160_0010"], "note": "弁韓 으로 고치지 않았다."},
+    {"id": "polity-baekje", "type": "Polity", "label": "백제", "labelHanja": "百濟", "statusInRepo": "existing", "attestedIn": ["chunk_samguksagi_sg_023_0020_0010", "chunk_samgukyusa_sy_002_0010_0200_0020"]},
+    {"id": "polity-goguryeo", "type": "Polity", "label": "고구려", "labelHanja": "高句麗", "statusInRepo": "existing", "attestedIn": ["chunk_samguksagi_sg_013_0020_0010", "chunk_samgukyusa_sy_001_0020_0150_0050"], "note": "본문 글자는 髙句麗(사기)·髙句麗/高(유사)로 갈린다."},
+    {"id": "polity-silla", "type": "Polity", "label": "신라", "labelHanja": "新羅", "statusInRepo": "existing", "attestedIn": ["chunk_samguksagi_sg_001_0020_0010", "chunk_samguksagi_sg_004_0020_0060"]},
+    {"id": "polity-nambuyeo", "type": "Polity", "label": "남부여", "labelHanja": "南扶餘", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_026_0060_0100", "chunk_samgukyusa_sy_002_0010_0200_0010"], "note": "백제의 개칭 국호. polity-baekje 와 병합하지 않았다."},
+    {"id": "polity-balhae", "type": "Polity", "label": "발해", "labelHanja": "渤海", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0100_0010", "chunk_samguksagi_sg_008_0040_1560"]},
+    {"id": "polity-malgal", "type": "Polity", "label": "말갈", "labelHanja": "靺鞨", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0100_0010", "chunk_samguksagi_sg_008_0040_1560"]},
+    {"id": "polity-jindan", "type": "Polity", "label": "진단", "labelHanja": "震旦", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0100_0010"], "note": "조영이 처음 자칭한 국호. polity-balhae 와 자동 병합하지 않는다."},
+    {"id": "polity-bukguk", "type": "Polity", "label": "북국", "labelHanja": "北國", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_010_0020_0310"], "note": "국편 기사 제목은 발해라 하지만 본문 글자는 北國 이다. 별도 껍데기로 두고 동정은 Claim 으로."},
+    {"id": "polity-usanguk", "type": "Polity", "label": "우산국", "labelHanja": "于山國", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0180", "chunk_samguksagi_sg_044_0050_0030"]},
+    {"id": "polity-goryeo", "type": "Polity", "label": "고려", "labelHanja": "髙麗", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_012_0060_0270"], "note": "해당 기사 본문에는 '太祖'만 나온다. 국명 연결은 추론."},
+    {"id": "polity-buyeo", "type": "Polity", "label": "부여", "labelHanja": "扶餘", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_023_0020_0010"], "note": "기존 polity-buk-buyeo(北夫餘)와의 관계는 판정하지 않음."},
+
+    {"id": "person-dangun-samgukyusa", "type": "Person", "label": "단군(삼국유사)", "labelHanja": "壇君王倹", "statusInRepo": "existing", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0020_0010", "chunk_samgukyusa_sy_001_0020_0020_0020"]},
+    {"id": "person-hwanung", "type": "Person", "label": "환웅", "labelHanja": "桓雄", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0020_0020"]},
+    {"id": "person-gija", "type": "Person", "label": "기자", "labelHanja": "箕子", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0020_0020"]},
+    {"id": "person-joseonwang-jun", "type": "Person", "label": "조선왕 준", "labelHanja": "朝鮮王凖", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0040_0010"]},
+    {"id": "person-wiman-samgukyusa", "type": "Person", "label": "위만(삼국유사 표기)", "labelHanja": "魏滿", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0040_0010"], "note": "衛滿 표기와의 동일성은 Claim 으로."},
+    {"id": "person-choechiwon", "type": "Person", "label": "최치원", "labelHanja": "崔致逺", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0040_0010", "chunk_samgukyusa_sy_001_0020_0170_0010"]},
+    {"id": "person-hyeokgeose", "type": "Person", "label": "혁거세", "labelHanja": "赫居世", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_001_0020_0010", "chunk_samgukyusa_sy_001_0020_0190_0030"]},
+    {"id": "person-jumong", "type": "Person", "label": "주몽", "labelHanja": "朱蒙", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_013_0020_0010", "chunk_samgukyusa_sy_001_0020_0150_0050"], "note": "기존 person-chumo(鄒牟王, 광개토왕릉비)와 병합하지 않는다."},
+    {"id": "person-onjo", "type": "Person", "label": "온조왕", "labelHanja": "温祚王", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_023_0020_0010", "chunk_samgukyusa_sy_002_0010_0200_0020"]},
+    {"id": "person-biryu", "type": "Person", "label": "비류", "labelHanja": "沸流", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_023_0020_0010"], "note": "본문의 沸流(온조의 형)와 원주의 沸流王(시조)이 같은 지시인지 판정하지 않았다."},
+    {"id": "person-utae", "type": "Person", "label": "우태", "labelHanja": "優台", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_023_0020_0010 (annotation seq 3)"]},
+    {"id": "person-soseono", "type": "Person", "label": "소서노", "labelHanja": "召西奴", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_023_0020_0010 (annotation seq 3)"]},
+    {"id": "person-haeburu", "type": "Person", "label": "해부루", "labelHanja": "觧扶婁", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_023_0020_0010 (annotation seq 3)"], "note": "본기 본문은 解夫婁, 원주는 觧扶婁 로 글자가 다르다."},
+    {"id": "person-seongwang", "type": "Person", "label": "성왕", "labelHanja": "聖王", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_026_0060_0100", "chunk_samgukyusa_sy_002_0010_0200_0010"]},
+    {"id": "person-jijeung", "type": "Person", "label": "지증마립간", "labelHanja": "智證麻立干", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0010"], "affiliation6c": "polity-silla"},
+    {"id": "person-beopheung", "type": "Person", "label": "법흥왕", "labelHanja": "法興王", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0030_0010", "chunk_samgukyusa_sy_003_0010_0040_0010"], "affiliation6c": "polity-silla", "note": "휘 原宗. 삼국유사 조목명 原宗興法 과 표기가 같으나 동일성은 Claim 으로."},
+    {"id": "person-jinheung", "type": "Person", "label": "진흥왕", "labelHanja": "眞興王", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0040_0090", "chunk_samguksagi_sg_044_0030_0050"], "affiliation6c": "polity-silla"},
+    {"id": "person-isabu", "type": "Person", "label": "이사부", "labelHanja": "異斯夫", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0180", "chunk_samguksagi_sg_004_0040_0090", "chunk_samguksagi_sg_044_0050_0030"], "affiliation6c": "polity-silla"},
+    {"id": "person-geochilbu", "type": "Person", "label": "거칠부", "labelHanja": "居柒夫", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0040_0090", "chunk_samguksagi_sg_044_0030_0050"], "affiliation6c": "polity-silla"},
+    {"id": "person-ichadon", "type": "Person", "label": "이차돈", "labelHanja": "異次頓", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_003_0010_0040_0010"], "affiliation6c": "polity-silla"},
+    {"id": "person-yeomchok", "type": "Person", "label": "염촉", "labelHanja": "猒髑", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_003_0010_0040_0010"], "note": "異次頓 과 같은 사람인지 본문에서 확인하지 못했다. 별도 껍데기로 둔다."},
+    {"id": "person-mukhoja", "type": "Person", "label": "묵호자", "labelHanja": "墨胡子", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0030_0110"]},
+    {"id": "person-morye", "type": "Person", "label": "모례", "labelHanja": "毛禮", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0030_0110"]},
+    {"id": "person-muyeol", "type": "Person", "label": "태종 춘추공", "labelHanja": "太宗春秋公", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0360_0030"]},
+    {"id": "person-kimyusin", "type": "Person", "label": "유신", "labelHanja": "庾信", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0360_0030"]},
+    {"id": "person-daejoyeong", "type": "Person", "label": "조영", "labelHanja": "祚榮", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0100_0010"], "note": "大祚榮 으로 확장하지 않았다."},
+    {"id": "person-kimsaran", "type": "Person", "label": "김사란", "labelHanja": "金思蘭", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_008_0040_1560"]},
+    {"id": "person-baegeo", "type": "Person", "label": "백어", "labelHanja": "伯魚", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_010_0020_0310"]},
+    {"id": "person-gyeongsun", "type": "Person", "label": "경순왕", "labelHanja": "敬順王", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_012_0060_0270"], "note": "해당 chunk 본문은 '王'으로만 적는다. 왕 이름은 locator(국편 편제)에서 온다."},
+    {"id": "person-goryeo-taejo", "type": "Person", "label": "태조", "labelHanja": "太祖", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_012_0060_0270"]},
+    {"id": "person-talhae", "type": "Person", "label": "탈해왕", "labelHanja": "脫解王", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0190_0050"]},
+
+    {"id": "place-asadal", "type": "Place", "label": "아사달", "labelHanja": "阿斯逹", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0020_0010", "chunk_samgukyusa_sy_001_0020_0020_0020"], "note": "좌표 없음. 白岳山阿斯逹 과 같은 곳인지 판정하지 않음."},
+    {"id": "place-pyongyangseong", "type": "Place", "label": "평양성(삼국유사 표기)", "labelHanja": "平壤城", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0020_0020"], "note": "기존 place-pyongyang(平穰, 광개토왕릉비 표기)과 병합하지 않는다."},
+    {"id": "place-taebaeksan", "type": "Place", "label": "태백산", "labelHanja": "太伯山", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0020_0020"]},
+    {"id": "place-baegaksan", "type": "Place", "label": "백악산", "labelHanja": "白岳山", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0020_0020"]},
+    {"id": "place-wiryeseong", "type": "Place", "label": "위례성", "labelHanja": "慰禮城", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_002_0010_0200_0020", "chunk_samguksagi_sg_023_0020_0010"], "note": "기존 place-hanseong(百殘國城, 광개토왕릉비 표기)과 병합하지 않는다."},
+    {"id": "place-sabi", "type": "Place", "label": "사비", "labelHanja": "泗沘", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_026_0060_0100"], "altHanja": ["泗泚 (삼국유사)"]},
+    {"id": "place-jolbon", "type": "Place", "label": "졸본", "labelHanja": "卒夲", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_013_0020_0010", "chunk_samgukyusa_sy_001_0020_0150_0050"], "note": "기존 place-holbon(忽本, 광개토왕릉비)과 병합하지 않는다."},
+    {"id": "place-haseulla", "type": "Place", "label": "하슬라주", "labelHanja": "何瑟羅州", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0180"]},
+    {"id": "place-aseulla", "type": "Place", "label": "아슬라주", "labelHanja": "阿瑟羅州", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_044_0050_0030"], "note": "何瑟羅州 와 같은 곳인지 판정하지 않았다."},
+    {"id": "place-ulleungdo", "type": "Place", "label": "울릉도", "labelHanja": "鬱陵島", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0180"], "note": "본문은 '于山國在溟州正東海島, 或名鬱陵島'. 좌표 확정하지 않음."},
+    {"id": "place-deungju", "type": "Place", "label": "등주", "labelHanja": "登州", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_008_0040_1560"]},
+    {"id": "place-gyeongju", "type": "Place", "label": "경주", "labelHanja": "慶州", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_012_0060_0280"]},
+
+    {"id": "office-gunju", "type": "Office", "label": "군주", "labelHanja": "軍主", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0180", "chunk_samguksagi_sg_044_0050_0030"]},
+    {"id": "office-ichan", "type": "Office", "label": "이찬", "labelHanja": "伊湌", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0180", "chunk_samguksagi_sg_004_0040_0090"]},
+    {"id": "office-daeachan", "type": "Office", "label": "대아찬", "labelHanja": "大阿湌", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0040_0090"]},
+    {"id": "office-pajinchan", "type": "Office", "label": "파진찬", "labelHanja": "波珍湌", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_044_0030_0050"]},
+    {"id": "office-ilgilchan", "type": "Office", "label": "일길찬", "labelHanja": "一吉湌", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_010_0020_0310"]},
+    {"id": "office-geoseogan", "type": "Office", "label": "거서간", "labelHanja": "居西干", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_001_0020_0010"], "altHanja": ["居瑟邯 (삼국유사)"]},
+    {"id": "office-maripgan", "type": "Office", "label": "마립간", "labelHanja": "麻立干", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0010"]},
+    {"id": "office-jeongseunggong", "type": "Office", "label": "정승공", "labelHanja": "正承公", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_012_0060_0280"], "note": "관직인지 봉작인지 정하지 않음."},
+
+    {"id": "event-silla-founding", "type": "Event", "label": "신라 시조 혁거세 즉위", "labelHanja": "始祖赫居世即位", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_001_0020_0010"]},
+    {"id": "event-goguryeo-founding", "type": "Event", "label": "고구려 건국", "labelHanja": "國號髙句麗", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_013_0020_0010", "chunk_samgukyusa_sy_001_0020_0150_0050"]},
+    {"id": "event-baekje-founding", "type": "Event", "label": "백제 건국(십제)", "labelHanja": "國號十濟", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_023_0020_0010", "chunk_samgukyusa_sy_002_0010_0200_0020"]},
+    {"id": "event-byeonhan-submission", "type": "Event", "label": "변한 항복", "labelHanja": "卞韓人以國来降", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0160_0010"]},
+    {"id": "event-silla-name-fixed", "type": "Event", "label": "국호 신라 확정·왕호 채택", "labelHanja": "謹上號新羅國王", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0060"]},
+    {"id": "event-usanguk-submission", "type": "Event", "label": "우산국 귀복", "labelHanja": "于山國歸服", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0020_0180", "chunk_samguksagi_sg_044_0050_0030"]},
+    {"id": "event-silla-buddhism-official", "type": "Event", "label": "신라 불법 시행", "labelHanja": "肇行佛法", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0030_0110", "chunk_samgukyusa_sy_003_0010_0040_0010"]},
+    {"id": "event-guksa-compilation", "type": "Event", "label": "국사 수찬", "labelHanja": "修撰國史", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_004_0040_0090", "chunk_samguksagi_sg_044_0030_0050"]},
+    {"id": "event-sabi-transfer", "type": "Event", "label": "사비 천도·국호 남부여", "labelHanja": "移都於泗沘 國號南扶餘", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_026_0060_0100", "chunk_samgukyusa_sy_002_0010_0200_0010"]},
+    {"id": "event-samhan-unification", "type": "Event", "label": "삼한 통일", "labelHanja": "一統三韓", "statusInRepo": "new", "attestedIn": ["chunk_samgukyusa_sy_001_0020_0360_0030"]},
+    {"id": "event-balhae-deungju-raid", "type": "Event", "label": "발해·말갈의 등주 침입과 신라 출병", "labelHanja": "渤海 靺鞨越海入寇登州", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_008_0040_1560"]},
+    {"id": "event-silla-surrender", "type": "Event", "label": "신라 왕의 태조 귀순", "labelHanja": "歸于太祖", "statusInRepo": "new", "attestedIn": ["chunk_samguksagi_sg_012_0060_0270"]}
+  ],
+
+  "coverage": [
+    {
+      "era": "고조선",
+      "claimIds": ["claim-gojoseon-wiseo-dangun-asadal", "claim-gojoseon-gogi-hwanung-dangun-birth", "claim-gojoseon-gogi-pyongyang-founding", "claim-gojoseon-reign-1500-and-gija"],
+      "claimCount": 4,
+      "sourcesUsed": ["src-samgukyusa"],
+      "axisMix": {"사건": 2, "인물": 2, "나라": 2, "연대": 1, "소속": 0},
+      "gaps": [
+        "삼국사기에는 고조선 조목이 없다 — 이 시대는 삼국유사 단일 사료다. 사료 토글을 끄면 시대 전체가 사라진다.",
+        "서기 연도로 환산 가능한 주장이 없다. 이 시대의 모든 연대는 상대·전거 표현뿐이다.",
+        "삼국유사 고조선 조의 나머지 기사(藏唐京·山神 등)는 읽지 않았다."
+      ]
+    },
+    {
+      "era": "삼한",
+      "claimIds": ["claim-mahan-jun-founding", "claim-jinhan-twelve-states", "claim-byeonhan-submission-hyeokgeose-19", "claim-silla-six-villages-joseon-refugees"],
+      "claimCount": 4,
+      "sourcesUsed": ["src-samgukyusa", "src-samguksagi"],
+      "axisMix": {"사건": 2, "인물": 2, "나라": 4, "연대": 1, "소속": 0},
+      "gaps": [
+        "삼한 조목은 대부분 『魏志』·『後漢書』·최치원 인용이다. 삼국유사 자신의 주장과 인용을 구분하는 필드가 스키마에 없다 — quotedFrom 같은 필드가 필요할 수 있다.",
+        "삼국사기 쪽 삼한 서술(권34 지리지 등)은 이번에 읽지 않았다."
+      ]
+    },
+    {
+      "era": "삼국",
+      "claimIds": ["claim-baekje-onjo-father-samguksagi", "claim-baekje-founded-hongga3-samguksagi", "claim-baekje-rename-and-buyeo-surname", "claim-baekje-biryu-variant", "claim-baekje-onjo-samgukyusa", "claim-baekje-onjo-hongga4-samgukyusa", "claim-baekje-sabi-move-samguksagi", "claim-baekje-sabi-move-samgukyusa", "claim-goguryeo-founded-samguksagi", "claim-goguryeo-founded-samgukyusa", "claim-silla-hyeokgeose-accession-samguksagi", "claim-silla-name-samgukyusa", "claim-jijeung-accession", "claim-silla-name-fixed-jijeung", "claim-isabu-usanguk-bongi", "claim-isabu-usanguk-yeoljeon", "claim-beopheung-accession", "claim-silla-buddhism-samguksagi", "claim-silla-buddhism-samgukyusa", "claim-guksa-compilation-bongi", "claim-guksa-compilation-yeoljeon"],
+      "claimCount": 21,
+      "sourcesUsed": ["src-samguksagi", "src-samgukyusa"],
+      "axisMix": {"사건": 9, "인물": 11, "나라": 6, "연대": 12, "소속": 7},
+      "q2Baekje": {
+        "질문": "백제 건국 연도를 사료별로 다 보여줘",
+        "값": [
+          {"claim": "claim-baekje-founded-hongga3-samguksagi", "source": "src-samguksagi", "verbatim": "前漢 成帝鴻嘉三年"},
+          {"claim": "claim-baekje-onjo-samgukyusa", "source": "src-samgukyusa", "verbatim": "漢成帝鴻佳三年", "note": "삼국사기를 명시 인용한 것"},
+          {"claim": "claim-baekje-onjo-hongga4-samgukyusa", "source": "src-samgukyusa", "verbatim": "鴻嘉四年甲辰"},
+          {"claim": "claim-baekje-biryu-variant", "source": "src-samguksagi", "verbatim": null, "note": "沸流王 시조설. 건국 연도를 적지 않는다"}
+        ],
+        "결론": "합치지 않고 네 값을 병존시킨다. 충돌 표시는 빌드가 만든다."
+      },
+      "q3Silla6c": {
+        "질문": "6세기에 살았고 신라 소속인 인물 전부",
+        "후보": [
+          {"person": "person-jijeung", "affiliationEvidence": "신라본기 편제 + 麻立干 왕호", "timeEvidence": "chunk.date 0500 (quote 아님)"},
+          {"person": "person-beopheung", "affiliationEvidence": "신라본기 편제 + 王", "timeEvidence": "chunk.date 0514 (quote 아님)"},
+          {"person": "person-jinheung", "affiliationEvidence": "眞興大王 (열전 quote 안에 왕호)", "timeEvidence": "chunk.date 0545 / quote 의 六年乙丑"},
+          {"person": "person-isabu", "affiliationEvidence": "quote 안의 관등 伊湌 + 관직 何瑟羅州軍主 / 阿瑟羅州軍主", "timeEvidence": "chunk.date 0512·0545 (quote 에 절대연도 없음)"},
+          {"person": "person-geochilbu", "affiliationEvidence": "quote 안의 관등 大阿湌·波珍湌 + 국사 수찬 명", "timeEvidence": "chunk.date 0545 / quote 의 六年乙丑"},
+          {"person": "person-ichadon", "affiliationEvidence": "quote 안의 '小臣' + 法興大王 조정", "timeEvidence": "quote 안의 蕭梁普通八年丁未 + chunk.date 0527"}
+        ],
+        "주의": "여섯 명 중 절대연도가 quote 안에 있는 것은 person-ichadon 뿐이다. 나머지는 시간축이 국편 date.raw 에 의존한다 — 이 의존을 데이터에 남겨야 Q3 결과의 근거가 정확해진다."
+      },
+      "gaps": [
+        "고구려·백제 중기 이후(장수왕·근초고왕 등)는 다루지 않았다.",
+        "가야(駕洛)는 별도 시대 축이 없어 이번 추출에서 뺐다. 삼국유사 왕력에 駕洛 열이 있다.",
+        "삼국사기 권23 온조왕조 본문 중간부(위례성 정도 대목)는 창을 나눠 읽었고 일부 구간은 인용에 쓰지 않았다."
+      ]
+    },
+    {
+      "era": "통일신라",
+      "claimIds": ["claim-muyeol-samhan-unification", "claim-gyeongsun-surrender-935", "claim-silla-renamed-gyeongju"],
+      "claimCount": 3,
+      "sourcesUsed": ["src-samgukyusa", "src-samguksagi"],
+      "axisMix": {"사건": 3, "인물": 4, "나라": 3, "연대": 3, "소속": 1},
+      "gaps": [
+        "문무왕·신문왕대 기사를 넣지 못했다. 삼국유사 권2 文武王法敏 조와 삼국사기 권6~7 문무왕 본기가 다음 후보다.",
+        "통일 완성 시점을 다루는 직접 구절이 없다. 태종 묘호 기사는 '一統三韓'을 소급 평가로 적을 뿐이다.",
+        "935년 기사 두 건이 모두 삼국사기 단일 사료다."
+      ]
+    },
+    {
+      "era": "발해",
+      "claimIds": ["claim-balhae-origin-tongjeon", "claim-balhae-deungju-raid-733", "claim-silla-envoy-bukguk-790"],
+      "claimCount": 3,
+      "sourcesUsed": ["src-samgukyusa", "src-samguksagi"],
+      "axisMix": {"사건": 2, "인물": 3, "나라": 4, "연대": 2, "소속": 1},
+      "gaps": [
+        "삼국유사 靺鞨·渤海 조의 핵심 기사 하나(sy_001_0020_0100_0020 '고[구]려의 자손들이 나라 이름을 발해라 하다')는 chunk.text 가 비어 있어 인용할 수 없었다. 내용이 annotations 에 있는지 확인이 필요하다.",
+        "삼국사기에는 발해 본기가 없다. 발해는 신라본기·열전의 언급으로만 나타난다 — 이 사료 구조 자체가 편향이다.",
+        "삼국사기 권46 최치원전의 나·당 발해 공격 대목, 권43 김윤중 대목은 읽지 않았다."
+      ]
+    }
+  ],
+
+  "unverified": [
+    {
+      "id": "uv-annotation-quote-path",
+      "kind": "스키마·빌드",
+      "what": "claim-baekje-biryu-variant 의 quote 는 chunk.text 가 아니라 chunk.annotations[seq=3](원주)에 있다.",
+      "why": "국편 XML 의 원주가 본문에서 분리돼 annotations 로 빠지는 규칙 때문이다(사료 카드에 명시).",
+      "impact": "schema §7.1 의 'quote 는 chunk 원문의 부분문자열' 검증을 그대로 적용하면 이 Claim 이 빌드에서 거부된다. 백제 건국의 주요 이설이 통째로 빠진다.",
+      "suggestedNext": "citesAnnotation(chunkId, seq) 같은 인용 경로를 스키마에 추가할지 Codex 가 결정. 결정 전에는 이 Claim 을 적재하지 말 것.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-samgukyusa-bc-sign",
+      "kind": "날짜 데이터",
+      "what": "삼국유사 chunk 의 date.raw 에서 기원전 연도의 음수 부호가 일관되지 않는다.",
+      "observed": [
+        {"chunkId": "chunk_samgukyusa_sy_002_0010_0200_0020", "raw": "-0018-99-99L0", "textYear": "漢成帝鴻佳三年", "sign": "음수"},
+        {"chunkId": "chunk_samgukyusa_sy_001_0020_0150_0050", "raw": "0037-99-99L0", "textYear": "漢 孝元帝建昭二年甲申歳", "sign": "양수"},
+        {"chunkId": "chunk_samgukyusa_sy_001_0020_0160_0010", "raw": "0039-99-99L0", "textYear": "赫居世即位十九年壬午", "sign": "양수"},
+        {"chunkId": "chunk_samguksagi_sg_013_0020_0010", "raw": "-0037-99-99L0", "textYear": "漢 孝元帝建昭二年", "sign": "음수", "note": "같은 사건을 다루는 삼국사기 chunk 는 음수다"}
+      ],
+      "why": "부호 누락인지 국편이 다른 해로 본 것인지 확인할 방법이 없다. 국편 웹은 열지 않았다.",
+      "impact": "date.raw 를 그대로 연도로 쓰면 고구려 건국이 서기 37년으로, 변한 항복이 서기 39년으로 들어간다 — 타임라인이 74년~96년 밀린다.",
+      "suggestedNext": "적재 전 삼국유사 chunks.jsonl 전체에서 raw 부호 분포를 세어 볼 것. 부호를 코드로 보정하지 말고 원값을 보존한 채 플래그를 달 것.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-nikh-title-inference",
+      "kind": "국편 편집물",
+      "what": "국편이 붙인 기사 제목(locator 끝부분)이 본문에 없는 동정을 담는 경우가 있다.",
+      "example": {"chunkId": "chunk_samguksagi_sg_010_0020_0310", "title": "발해에 사신 백어를 보내고 가뭄이 들다", "textSays": "以一吉湌伯魚使北國"},
+      "why": "제목은 국편의 판단이며 사료의 주장이 아니다(사료 카드: '교감주·색인·날짜·주제분류는 전부 국편의 판단이다').",
+      "impact": "제목을 근거로 엔티티를 잇는 파이프라인은 학설 하나를 조용히 채택하게 된다.",
+      "suggestedNext": "locator 를 Claim 근거로 쓰지 말 것. 北國=渤海 는 별도 sameEntityAs Claim(origin=ai)으로만.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-ichadon-yeomchok-identity",
+      "kind": "동일성",
+      "what": "삼국유사 sy_003_0010_0040_0010 한 chunk 안에 異次頓 과 猒髑 이 함께 나오지만, 두 이름이 같은 사람이라는 문장을 본문에서 확인하지 못했다.",
+      "why": "조목명(原宗興法 猒髑滅身)과 인용문(小臣異次頓爲法滅身)이 같은 구조를 이루지만 그것은 배치이지 진술이 아니다. 또 chunk 뒷부분을 끝까지 읽지 않았다.",
+      "impact": "자동 병합하면 학설 하나를 몰래 채택하는 것이 된다(schema §10).",
+      "suggestedNext": "같은 조목의 뒤 기사(sy_003_0010_0040_0020 등)를 읽어 명시 진술이 있는지 확인.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-chumo-jumong-identity",
+      "kind": "동일성",
+      "what": "鄒牟(삼국사기 백제본기)·朱蒙(삼국사기 고구려본기·삼국유사)·雛牟王(삼국유사 남부여조)·기존 person-chumo(광개토왕릉비 鄒牟王)가 같은 인물인지 판정하지 않았다.",
+      "why": "삼국사기 온조왕조는 '其父鄒牟, 或云朱蒙'이라 하여 사료 자신이 두 표기를 병기한다. 비문 표기와의 관계는 다른 문제다.",
+      "impact": "엔티티를 미리 합치면 사료 토글이 무의미해진다.",
+      "suggestedNext": "표기별 껍데기를 따로 두고 sameEntityAs Claim 으로만 연결.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-empty-balhae-chunk",
+      "kind": "데이터 결손",
+      "what": "chunk_samgukyusa_sy_001_0020_0100_0020 (제목: 고[구]려의 자손들이 나라 이름을 발해라 하다) 의 text 가 빈 문자열이다.",
+      "why": "사료 카드가 적은 '기사 본문 전체가 원주인 경우 text 가 비어 있을 수 있다'에 해당하는 것으로 보이나 annotations 내용을 확인하지 않았다.",
+      "impact": "발해와 고구려의 계승을 말하는 대목이 인용 불가 상태다. 발해 coverage 가 인용(通典) 기사에 치우친다.",
+      "suggestedNext": "해당 chunk 의 annotations 배열을 확인할 것.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-wanglyeok-table-columns",
+      "kind": "데이터 구조",
+      "what": "삼국유사 왕력 chunk(예: chunk_samgukyusa_sy_001_0010_0010)는 표를 줄바꿈으로 편 것이라 열 경계가 사라졌다.",
+      "observed": "BC 16년 행의 '第一溫祚王'이 신라/고구려/백제 중 어느 열인지 평문에서 복원되지 않는다.",
+      "why": "추출기가 행마다 줄바꿈으로 폈고 셀 경계는 공백뿐이다(사료 카드에 명시).",
+      "impact": "왕력을 근거로 즉위 연도 Claim 을 세우면 열을 잘못 읽을 수 있다. 이번 추출에서 왕력 기반 Claim 은 하나도 만들지 않았다.",
+      "suggestedNext": "왕력을 쓰려면 원본 XML 의 table 구조로 돌아가야 한다.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-date-raw-format",
+      "kind": "날짜 데이터",
+      "what": "date.raw 의 '99' 자리와 'L0' 접미의 공식 뜻을 확인하지 못했다.",
+      "why": "DTD 에 설명이 없다(사료 카드). 국편 웹은 열지 않았다.",
+      "impact": "월·일 정밀도를 잘못 부여할 수 있다. 예: 0503-10-99L0 을 10월 99일로 읽으면 안 된다.",
+      "suggestedNext": "99 를 실제 월·일로 변환하지 말 것. precision 을 year/month 로 낮춰 둘 것.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-baekje-sabi-regnal-year",
+      "kind": "사료 간 불일치",
+      "what": "삼국유사가 삼국사기를 인용하며 '聖王二十六年戊午'라 적는데 현전 삼국사기 본문은 '十六年'이다.",
+      "why": "판본 차이인지 전승 오류인지 알 수 없다.",
+      "impact": "인용 관계가 명시적이라 '같은 사건'은 확실한데 값이 다르다. 자동 병합하면 한쪽이 지워진다.",
+      "suggestedNext": "두 Claim 을 그대로 두고 빌드가 Conflict 를 방출하게 할 것.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-character-variants",
+      "kind": "글자",
+      "what": "번역·정규화하지 않은 채 남긴 이표기 목록.",
+      "items": [
+        "髙/高 (고구려·성씨)", "鴻嘉/鴻佳", "泗沘/泗泚", "何瑟羅/阿瑟羅", "彌鄒忽/弥雛忽", "鄒牟/雛牟", "厭髑/猒髑", "居西干/居瑟邯", "魏滿(삼국유사 표기)", "唐髙(堯로 읽는 통설 있음)", "虎王(武 피휘)", "戰舩/戰舡"
+      ],
+      "why": "지시가 원문 한문의 번역·정규화를 금한다. 또 판독 차이는 그 자체가 Claim 감이다(schema readsCharacterAs).",
+      "impact": "문자열 일치 기반 엔티티 연결이 실패한다 — 이건 정상이며, 연결은 Claim 으로 해야 한다.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-bulk-vs-web-char",
+      "kind": "판본",
+      "what": "사료 카드가 기록한 벌크(淲)/국편 웹(㴲) 글자 차이 지점이 이번에 인용한 chunk 안에 있다(sg_013_0020_0010, '行至淹淲水').",
+      "why": "웹은 robots 제한으로 열지 않았으므로 재대조하지 못했다.",
+      "impact": "이번 산출물은 벌크를 따른다. 글자 단위 주장을 세울 때는 재대조가 필요하다.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-quoted-vs-own-voice",
+      "kind": "스키마",
+      "what": "삼국유사 기이편 다수 기사는 사료 자신의 진술이 아니라 『魏書』·『魏志』·『後漢書』·『通典』·최치원 등의 인용이다.",
+      "why": "현재 스키마의 Claim 은 fromSource 하나만 갖는다 — '삼국유사가 통전을 인용해 말한다'를 표현할 자리가 없다.",
+      "impact": "사료 토글을 켜면 통전의 주장이 삼국유사의 주장으로 보인다.",
+      "suggestedNext": "quotedFrom 같은 리터럴 필드를 Claim 에 붙일지 검토. 이번 산출물에서는 limits 문장으로만 남겼다.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-samguksagi-byeonhan-chunk",
+      "kind": "미열람",
+      "what": "삼국사기 chunk_samguksagi_sg_001_0020_0080 (국편 제목 '변한이 항복하다') 본문을 읽지 않았다.",
+      "impact": "삼국유사 변한 항복 기사와의 동일 사건 판정을 할 수 없다(sameEventEvidence se-byeonhan-submission 참조).",
+      "status": "unverified"
+    }
+  ]
+}
