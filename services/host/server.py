@@ -48,6 +48,7 @@ DATA = ROOT / "data"
 sys.path.insert(0, str(ROOT / "services"))
 from frontmatter import parse_front_matter
 from graph_query import neighborhood, GraphUnavailable
+from chat import answer as chat_answer, ChatUnavailable
 try:
     from validate import parse_claims_text  # noqa: E402
 except Exception:  # validate.py 가 없거나 깨졌어도 뷰어는 뜬다 (claims 만 비어 보인다)
@@ -462,6 +463,32 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_HEAD(self):
         self.do_GET()
+
+    def do_POST(self):
+        if urlparse(self.path).path != '/api/chat':
+            self._json({'error':'not found'},404)
+            return
+        try:
+            size=int(self.headers.get('Content-Length','0'))
+            if not 0<size<=100000:
+                raise ValueError('질문 요청의 크기가 올바르지 않다.')
+            body=json.loads(self.rfile.read(size))
+            if not isinstance(body,dict):
+                raise ValueError('JSON 객체로 질문을 보낸다.')
+            sources=body.get('sources')
+            if sources is not None and (not isinstance(sources,list) or any(not isinstance(s,str) for s in sources)):
+                raise ValueError('sources must be a list of source identifiers')
+            idx=index()
+            def read_chunk(cid):
+                row=idx['chunkById'].get(cid)
+                return full_chunk(row) if row else None
+            result=chat_answer(body.get('question'),idx['entities'],read_chunk,
+                               None if sources is None else set(sources),body.get('origin','all'),body.get('entity'))
+            self._json(result)
+        except (ValueError,UnicodeDecodeError) as exc:
+            self._json({'error':str(exc)},400)
+        except (GraphUnavailable,ChatUnavailable) as exc:
+            self._json({'error':str(exc)},503)
 
     def do_GET(self):
         u = urlparse(self.path)

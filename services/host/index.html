@@ -230,6 +230,17 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .unloc{font-size:12.5px;color:var(--paper-2);line-height:1.7}
 .unloc b{color:var(--brick);font-weight:500}
 </style>
+<style>
+#chat{display:none;position:absolute;inset:0 0 126px;overflow:auto;padding:24px;color:var(--paper-2)}
+.modechat #chat{display:block}.modechat #map,.modechat #three,.modechat #graph,.modechat #hint,.modechat #outside3d,.modechat #resetMap{display:none}
+#chat h2{font:500 22px var(--serif);color:var(--paper)}
+#chat form{display:flex;flex-direction:column;gap:8px;max-width:680px}
+#chat textarea{resize:vertical;box-sizing:border-box;width:100%;background:var(--ink);color:var(--paper);border:1px solid var(--line-2);padding:10px;font:14px/1.6 var(--sans)}
+#chat button{align-self:flex-start;background:var(--ink);color:var(--celadon);border:1px solid var(--line-2);padding:6px 10px;cursor:pointer}
+#chat button:disabled{opacity:.5;cursor:wait}.chat-status,.chat-note{font-size:12px;line-height:1.7;color:var(--paper-3)}
+.chat-status{margin-top:18px}.chat-sentence{line-height:1.9;font-size:14px}.chat-citation{font-size:11px;margin:2px}
+@media(max-width:600px){#chat{padding:12px}.bar .brand small{display:none}}
+</style>
 </head>
 <body>
 
@@ -254,6 +265,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <button id="b2d" class="on">지도</button>
       <button id="b3d">3D</button>
       <button id="bgraph">그래프</button>
+      <button id="bchat">질문</button>
     </div>
     <span class="spacer"></span>
     <button id="sourcesBtn" class="panel-btn" aria-controls="sourceRail" aria-expanded="false">찾기·사료</button>
@@ -284,6 +296,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <canvas id="map"></canvas>
       <div id="three"></div>
       <div id="graph" aria-label="근거 그래프"></div>
+      <div id="chat" aria-label="사료 근거 챗봇"></div>
       <div class="hint" id="hint">지명을 클릭하면 근거가 열린다</div>
       <button id="resetMap" hidden>전체 지도</button>
       <details id="outside3d" hidden><summary></summary><div></div></details>
@@ -310,6 +323,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 import { Timeline } from './app/timeline.js';
 import { groupSources } from './app/source-groups.js';
 import { GraphExplorer } from './app/graph.js';
+import { EvidenceChat } from './app/chat.js';
 import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
 import { activeAt as placeActiveAt, candActive as candidateActive, originMatches, outsideCandidates } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
@@ -328,6 +342,7 @@ document.getElementById('humanOnly').addEventListener('change', event => {
 
 const visibleCandidates = p => p.candidates.filter(c => originMatches(c, state.origin, p));
 let graphView = null;
+let chatView = null;
 function graph(){
   return graphView ||= new GraphExplorer(document.getElementById('graph'),{
     filters:()=>({sources:state.on,origin:state.origin}),
@@ -356,7 +371,7 @@ function showGraphClaim(claim){
   state.panel='graph-claim';state.sel=claim.subject;
   const el=document.getElementById('evi');
   const object=claim.object;
-  const value=object.kind==='entity'?(graphView.nodes.get(object.id)?.label||object.id):
+  const value=object.kind==='entity'?(graphView?.nodes.get(object.id)?.label||object.id):
     object.kind==='time'?object.verbatim:object.kind==='location'?`${object.lat}, ${object.lon}`:
     object.kind==='year'?`${object.value<0?'기원전 '+(-object.value):object.value}년`:object.value;
   el.innerHTML=`<h3>${escH(claim.subjectLabel)}</h3><div class="sect">${escH(claim.predicate.replace('syj:',''))}</div>
@@ -523,6 +538,7 @@ const yearText = y => y < 0 ? `기원전 ${-y}년` : `서기 ${y}년`;
 const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
 let yearSeq = 0, yearTimer = 0, panelSeq = 0;
 function refreshEvidence(){
+  chatView?.filtersChanged();
   if(state.sel) select(state.sel, false);
   else{
     if(state.mode==='graph') graph().show(graphView.entity);
@@ -970,19 +986,30 @@ document.getElementById('toGate').onclick = () => {
   document.getElementById('app').classList.remove('in');
 };
 const b2d = document.getElementById('b2d'), b3d = document.getElementById('b3d');
-b2d.onclick = () => { state.mode='2d'; document.body.classList.remove('mode3d','modegraph');
+b2d.onclick = () => { state.mode='2d'; document.body.classList.remove('mode3d','modegraph','modechat');
+  document.getElementById('bchat').classList.remove('on');
   document.getElementById('bgraph').classList.remove('on');
   b2d.classList.add('on'); b3d.classList.remove('on'); draw();
   document.getElementById('hint').textContent='지명을 클릭하면 근거가 열린다'; };
 b3d.onclick = () => { state.mode='3d'; document.body.classList.add('mode3d');
+  document.body.classList.remove('modechat');document.getElementById('bchat').classList.remove('on');
   document.body.classList.remove('modegraph');document.getElementById('bgraph').classList.remove('on');
   b3d.classList.add('on'); b2d.classList.remove('on'); init3d();
   renderOutside();
   document.getElementById('hint').textContent='드래그로 회전 · 휠로 확대'; };
 document.getElementById('bgraph').onclick=()=>{
+  document.body.classList.remove('modechat');document.getElementById('bchat').classList.remove('on');
   state.mode='graph';document.body.classList.remove('mode3d');document.body.classList.add('modegraph');
   b2d.classList.remove('on');b3d.classList.remove('on');document.getElementById('bgraph').classList.add('on');
   select(state.sel||'person-gwanggaeto');
+};
+document.getElementById('bchat').onclick=()=>{
+  state.mode='chat';document.body.classList.remove('mode3d','modegraph');document.body.classList.add('modechat');
+  for(const button of [b2d,b3d,document.getElementById('bgraph')])button.classList.remove('on');
+  document.getElementById('bchat').classList.add('on');
+  chatView ||= new EvidenceChat(document.getElementById('chat'),{
+    filters:()=>({sources:state.on,origin:state.origin,entity:state.sel}),citation:showGraphClaim
+  });
 };
 
 addEventListener('resize', () => { draw(); if(state.mode==='3d') resize3d(); });
