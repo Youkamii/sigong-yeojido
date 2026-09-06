@@ -1,0 +1,48 @@
+{
+  "base": "http://127.0.0.1:8870",
+  "head": "a7c291cec036fa3a93c02dd95b52943f86ba4984",
+  "claims": [
+    "claim-silla-name-fixed-jijeung",
+    "claim-silla-renamed-gyeongju",
+    "claim-silla-name-samgukyusa"
+  ],
+  "conflicts": [
+    [
+      "https://sigong-yeojido.kr/ns#chunk_gwanggaeto_1-09",
+      "https://sigong-yeojido.kr/ns#readsCharacterAs"
+    ],
+    [
+      "https://sigong-yeojido.kr/ns#polity-goguryeo",
+      "https://sigong-yeojido.kr/ns#foundedIn"
+    ],
+    [
+      "https://sigong-yeojido.kr/ns#place-encykorea-imdungun",
+      "https://sigong-yeojido.kr/ns#locatedIn"
+    ],
+    [
+      "https://sigong-yeojido.kr/ns#polity-balhae",
+      "https://sigong-yeojido.kr/ns#foundedBy"
+    ],
+    [
+      "https://sigong-yeojido.kr/ns#place-gungnae",
+      "https://sigong-yeojido.kr/ns#locatedIn"
+    ],
+    [
+      "https://sigong-yeojido.kr/ns#polity-baekje",
+      "https://sigong-yeojido.kr/ns#foundedIn"
+    ]
+  ],
+  "uiNameCounts": {
+    "polity-silla": 2,
+    "polity-taebong": 2
+  },
+  "checks": {
+    "graph_matches_corrected_claims": true,
+    "direct_full_chunk_quotes": true,
+    "rdf_names_not_conflicts": true,
+    "reading_and_founder_differences_retained": true,
+    "shared_api_rule": true,
+    "real_ui_no_name_conflict_badges": true
+  },
+  "pageErrors": []
+}
