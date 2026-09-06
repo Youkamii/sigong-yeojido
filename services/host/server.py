@@ -8,7 +8,7 @@
 API는 전부 읽기 전용이다 — 이 서버는 아무것도 쓰지 않는다.
 
   GET /api/places   지명 + 좌표 후보 (data/places.json)
-  GET /api/chunks   사료 원문 조각 (data/sources/*/chunks.jsonl)
+  GET /api/chunks?offset=0&limit=120[&sources=a,b]   사료 원문 조각과 전체 수
   GET /api/sources  사료 카드 머리말 (data/sources/*.md)
   GET /api/geo      해안선·하천 (data/geo/east-asia.geojson)
   GET /api/elevation 고도 격자 (data/geo/korea-elevation.json)
@@ -56,16 +56,18 @@ mimetypes.add_type("application/javascript", ".js")
 mimetypes.add_type("application/json", ".json")
 
 
-def read_jsonl(p: Path) -> list[dict]:
+def iter_jsonl(p: Path):
     if not p.exists():
-        return []
-    out = []
+        return
     with io.open(p, encoding="utf-8") as fh:
         for line in fh:
             line = line.strip()
             if line:
-                out.append(json.loads(line))
-    return out
+                yield json.loads(line)
+
+
+def read_jsonl(p: Path) -> list[dict]:
+    return list(iter_jsonl(p))
 
 
 def parse_frontmatter(md: Path) -> dict:
@@ -74,7 +76,7 @@ def parse_frontmatter(md: Path) -> dict:
     return parse_front_matter(md.read_text(encoding="utf-8"))[0]
 
 
-def collect_sources() -> list[dict]:
+def collect_sources(counts: dict[str, int]) -> list[dict]:
     src_dir = DATA / "sources"
     out = []
     if not src_dir.exists():
@@ -84,9 +86,8 @@ def collect_sources() -> list[dict]:
         if not fm:
             continue
         sid = fm.get("id") or f"src-{md.stem}"
-        chunks = read_jsonl(src_dir / md.stem / "chunks.jsonl")
         fm["id"] = sid
-        fm["chunkCount"] = len(chunks)
+        fm["chunkCount"] = counts.get(sid, 0)
         out.append(fm)
     return out
 
@@ -94,8 +95,30 @@ def collect_sources() -> list[dict]:
 def collect_chunks() -> list[dict]:
     out = []
     for jl in sorted((DATA / "sources").glob("*/chunks.jsonl")):
-        out += read_jsonl(jl)
+        with jl.open("rb") as fh:
+            while True:
+                offset = fh.tell()
+                line = fh.readline()
+                if not line:
+                    break
+                if not line.strip():
+                    continue
+                row = json.loads(line)
+                out.append({"id": row["id"], "sourceId": sys.intern(row["sourceId"]),
+                            "text": row.get("text") or "", "date": row.get("date"),
+                            "_path": jl, "_offset": offset})
     return out
+
+
+def full_chunk(row: dict) -> dict:
+    if "_path" not in row:
+        return row
+    with row["_path"].open("rb") as fh:
+        fh.seek(row["_offset"])
+        chunk = json.loads(fh.readline())
+    if chunk.get("id") != row["id"]:
+        raise ValueError(f"chunk changed while reading: {row['id']}")
+    return chunk
 
 
 # ── 색인 (읽기 전용 캐시) ──
@@ -124,17 +147,20 @@ def _signature() -> tuple:
 
 
 def index() -> dict:
+    global _IDX
     sig = _signature()
     with _IDX_LOCK:
         if _IDX["sig"] != sig:
-            _IDX["chunks"] = collect_chunks()
-            _IDX["countryTerms"] = collect_country_terms()
-            _IDX["sources"] = collect_sources()
-            _IDX["places"] = None
-            _IDX["claims"] = collect_claims()
-            _IDX["entities"] = collect_entities()
-            _IDX["byYear"], _IDX["density"] = build_year_index(_IDX["chunks"])
-            _IDX["sig"] = sig
+            chunks = collect_chunks()
+            counts = {}
+            for chunk in chunks:
+                sid = chunk["sourceId"]
+                counts[sid] = counts.get(sid, 0) + 1
+            by_year, density = build_year_index(chunks)
+            _IDX = {"chunks": chunks, "chunkById": {c["id"]: c for c in chunks},
+                    "countryTerms": collect_country_terms(), "sources": collect_sources(counts),
+                    "places": None, "claims": collect_claims(), "entities": collect_entities(),
+                    "byYear": by_year, "density": density, "sig": sig}
         return _IDX
 
 
@@ -146,7 +172,7 @@ def place_names(p: dict) -> list[str]:
 def collect_country_terms() -> dict[str, set[str]]:
     terms: dict[str, set[str]] = {}
     for path in sorted((DATA / "sources").glob("*/index-terms.jsonl")):
-        for row in read_jsonl(path):
+        for row in iter_jsonl(path):
             if row.get("type") == "국명" and row.get("chunkId") and row.get("text"):
                 terms.setdefault(row["chunkId"], set()).add(row["text"])
     return terms
@@ -217,7 +243,7 @@ def year_records(y: int, sources: set[str] | None, limit: int) -> dict:
     by: dict[str, int] = {}
     for c in rows:
         by[c.get("sourceId") or "?"] = by.get(c.get("sourceId") or "?", 0) + 1
-    return {"year": y, "chunks": rows[:limit], "total": len(rows), "bySource": by}
+    return {"year": y, "chunks": [full_chunk(c) for c in rows[:limit]], "total": len(rows), "bySource": by}
 
 
 def source_card(sid: str) -> dict:
@@ -289,7 +315,9 @@ def _mentions_id(obj, entity_id: str) -> bool:
 
 def claims_for(entity_id: str, about: bool, sources: set[str] | None = None) -> dict:
     idx = index()
-    chunks = {c["id"]: c for c in idx["chunks"] if isinstance(c.get("id"), str)}
+    chunks = idx.get("chunkById")
+    if chunks is None:
+        chunks = {c["id"]: c for c in idx["chunks"] if isinstance(c.get("id"), str)}
     out = []
     for c in idx["claims"]:
         as_subject = c.get("subject") == entity_id
@@ -302,6 +330,8 @@ def claims_for(entity_id: str, about: bool, sources: set[str] | None = None) -> 
         source_id = ch.get("sourceId") if ch else c.get("fromSource")
         if sources is not None and source_id not in sources:
             continue
+        if ch:
+            ch = full_chunk(ch)
         rec["chunk"] = {"id": ch["id"], "sourceId": ch.get("sourceId"), "locator": ch.get("locator"), "permalink": ch.get("permalink")} if ch else None
         out.append(rec)
     out.sort(key=lambda r: (r["role"] != "subject", str(r.get("predicate")), str(r.get("id"))))
@@ -394,7 +424,7 @@ def mentions(names: list[str], sources: set[str] | None, limit: int) -> dict:
             total += 1
             by[sid] = by.get(sid, 0) + 1
             if len(out) < limit:
-                out.append(c)
+                out.append(full_chunk(c))
     return {"chunks": out, "total": total, "bySource": by, "names": names}
 
 
@@ -476,7 +506,19 @@ class Handler(BaseHTTPRequestHandler):
             self._json(mentions(names, sources, limit) if names else {"chunks": [], "total": 0, "bySource": {}, "names": []})
             return
         if path == "/api/chunks":
-            self._json({"chunks": index()["chunks"]})     # 색인 캐시 — 파일 서명이 바뀔 때만 다시 읽는다
+            try:
+                offset = max(0, int(q.get("offset", ["0"])[0]))
+                limit = max(1, min(500, int(q.get("limit", ["120"])[0])))
+            except ValueError:
+                self._json({"error": "offset and limit must be integers"}, 400)
+                return
+            srcs = q.get("sources", [None])[0]
+            sources = set(srcs.split(",")) if srcs is not None else None
+            rows = index()["chunks"]
+            if sources is not None:
+                rows = [c for c in rows if c.get("sourceId") in sources]
+            self._json({"chunks": [full_chunk(c) for c in rows[offset:offset + limit]],
+                        "total": len(rows), "offset": offset, "limit": limit})
             return
         if path == "/api/sources":
             self._json({"sources": index()["sources"]})

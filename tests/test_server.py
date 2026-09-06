@@ -103,6 +103,25 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(result["total"], 501)
         self.assertEqual(len(result["chunks"]), 500)
 
+    def test_chunk_pages_return_complete_rows_without_internal_file_positions(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp) / "sources/a"
+            directory.mkdir(parents=True)
+            rows = [{"id": str(i), "sourceId": "src-a", "text": "漢城", "annotations": [{"text": "校勘"}],
+                     "locator": "卷一", "date": {"raw": "1392"}} for i in range(3)]
+            (directory / "chunks.jsonl").write_text("\n".join(json.dumps(x, ensure_ascii=False) for x in rows) + "\n", encoding="utf-8")
+            with patch.object(server, "DATA", Path(tmp)):
+                compact = server.collect_chunks()
+            self.assertNotIn("annotations", compact[0])
+            idx = {"chunks": compact, "countryTerms": {}, "byYear": {1392: [0, 1, 2]}}
+            with patch.object(server, "index", return_value=idx):
+                page = self.get("/api/chunks?offset=1&limit=1")
+                self.assertEqual(page["total"], 3)
+                self.assertEqual(page["chunks"], rows[1:2])
+                self.assertEqual(self.get("/api/chunks?sources=")["total"], 0)
+                self.assertEqual(self.get("/api/year?y=1392&limit=1")["chunks"], rows[:1])
+                self.assertEqual(self.get("/api/mentions?" + urlencode({"names": "漢城", "limit": 1}))["chunks"], rows[:1])
+
 
 class PlaceMergeTests(unittest.TestCase):
     def test_different_concepts_keep_candidates_and_local_variant_links(self):
