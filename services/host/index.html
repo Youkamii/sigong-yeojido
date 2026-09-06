@@ -948,7 +948,6 @@ async function init3d(){
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
   const world = new KoreaWorld(state.geo, state.places, { elev, sub: q === 'low' ? 3 : 1 });
   engine.add(world.group);
-  engine.setPickTargets(world.pickTargets);
   engine.onPick = (id) => { if(id) select(id); };
 
   R = { engine, world };
@@ -957,6 +956,7 @@ async function init3d(){
   world.setOrigin(state.origin);
   if(world.setSourcesOn) world.setSourcesOn(state.on);
   if(state.sel) world.setSelected(state.sel);
+  engine.setPickTargets(world.pickTargets.filter(target => target.parent.visible));
 
   if(engine.frameWorld) engine.frameWorld(world.maxRim);
   // 판톨로지 기본 프레이밍은 고도 약 25° — 디오라마 섬을 옆에서 보는 구도다.
@@ -989,6 +989,7 @@ function draw3d(){
   R.world.setOrigin(state.origin);
   if(R.world.setSourcesOn) R.world.setSourcesOn(state.on);
   R.world.setSelected(state.sel);
+  R.engine.setPickTargets(R.world.pickTargets.filter(target => target.parent.visible));
 }
 
 load();
