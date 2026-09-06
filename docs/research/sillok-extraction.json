@@ -1,0 +1,426 @@
+{
+  "annotationTypes": {
+    "교감주": 27851,
+    "번역주": 120,
+    "소자쌍행": 222,
+    "악보": 904,
+    "원주": 39112
+  },
+  "bulkSha256": "9d3b908e14853d1540d8286dc7e397b5d5f3eb472ffffee137dcbd2efa2b740c",
+  "indexTypes": {
+    "관직": 2,
+    "서명": 49506,
+    "연호": 5964,
+    "이름": 1495199,
+    "지명": 490163
+  },
+  "outputs": {
+    "sillok-waa/annotations.jsonl": {
+      "bytes": 26725,
+      "sha256": "9b9d8905cca455b56f036053c60aec3d143fbad068d65534db4ae737a9506b2b"
+    },
+    "sillok-waa/chunks.jsonl": {
+      "bytes": 3550436,
+      "sha256": "3eee063fb0eb70a3a6a91a532955c96da44c0606e67187b2b15cab55cf819548"
+    },
+    "sillok-waa/index-terms.jsonl": {
+      "bytes": 1048938,
+      "sha256": "5a78916f143d435e1016f0561648876f49d35ac1fde4356421e2339444a5ac13"
+    },
+    "sillok-wba/annotations.jsonl": {
+      "bytes": 9072,
+      "sha256": "9afbb8260af03a02d62c3cedec4a4fcf62fd685a1611d8bbde2db73d6b17ddf5"
+    },
+    "sillok-wba/chunks.jsonl": {
+      "bytes": 989891,
+      "sha256": "a5af38cc88771e84dfb98e8389fba91e64fe20db3ca587218bf0321010daff5f"
+    },
+    "sillok-wba/index-terms.jsonl": {
+      "bytes": 264732,
+      "sha256": "f8c4a8bc0499e8285ffbd22d37df856c071dc619d6babefe64467c1621c259fc"
+    },
+    "sillok-wca/annotations.jsonl": {
+      "bytes": 119334,
+      "sha256": "021b3a81f2a2a657c7133f68a2bec6fe940ffbccef154cefdc7016fa62227e38"
+    },
+    "sillok-wca/chunks.jsonl": {
+      "bytes": 16349866,
+      "sha256": "a832a8e47004df0b6564b1696e1302dc813d9dd804a2fa8c9872aad28f6c716b"
+    },
+    "sillok-wca/index-terms.jsonl": {
+      "bytes": 4895799,
+      "sha256": "2171c372af2fc195eb7a1e7df57259fc65165c630de0ffb70b2051cb1029e1c2"
+    },
+    "sillok-wda/annotations.jsonl": {
+      "bytes": 2793113,
+      "sha256": "cc6d4a87e1d11f4553814226d008edd794954092035f0bc5acca535040f079f4"
+    },
+    "sillok-wda/chunks.jsonl": {
+      "bytes": 53927308,
+      "sha256": "b5849064be5b88301a3701ee243b8db6f6a9730a04cf65cec48652495c4fbb71"
+    },
+    "sillok-wda/index-terms.jsonl": {
+      "bytes": 14814824,
+      "sha256": "a0fc7a875fe8a0d3d2fb10f797faf73143fd2534a7eedab882d69dc736cbb988"
+    },
+    "sillok-wea/annotations.jsonl": {
+      "bytes": 79188,
+      "sha256": "69f7023ee26161835106e3f9546a4ccc866de5ce01d783056b62d8138346cf55"
+    },
+    "sillok-wea/chunks.jsonl": {
+      "bytes": 4747446,
+      "sha256": "d5a0eedbbe904ba9768eb999950495a32a14afff0ac67138c7562faae4726c14"
+    },
+    "sillok-wea/index-terms.jsonl": {
+      "bytes": 1365843,
+      "sha256": "300f08abb655291809fe9f95e890540a3693dd4bc178b09edf50bca7c41bf500"
+    },
+    "sillok-wfa/annotations.jsonl": {
+      "bytes": 130886,
+      "sha256": "c4ab06a654ef7b4d45143cb41707a88b973f897df13b74f14531355985306681"
+    },
+    "sillok-wfa/chunks.jsonl": {
+      "bytes": 4808756,
+      "sha256": "7cac897e4801e09003670099d774ff00188c3cd8dd1e8e996f8e66000866de35"
+    },
+    "sillok-wfa/index-terms.jsonl": {
+      "bytes": 1835591,
+      "sha256": "135a42eb5c8f3ed19aff8321dc51aacb02a5d1d675274d5d8090413e3654189e"
+    },
+    "sillok-wga/annotations.jsonl": {
+      "bytes": 322256,
+      "sha256": "848400d27d39e0685ac130e4b91e718fc2226e8beb233c96ddedd09a57bb6d5b"
+    },
+    "sillok-wga/chunks.jsonl": {
+      "bytes": 18859438,
+      "sha256": "df0b6fdcc31789acc80fd2cc29975b9c7c4894cf259b2b53b7915989b24b3488"
+    },
+    "sillok-wga/index-terms.jsonl": {
+      "bytes": 7275276,
+      "sha256": "405838c7f60b6922a25fc2350eed8d55c3aa5cdff2330e3d8fd97bb2a9aa64d0"
+    },
+    "sillok-wha/annotations.jsonl": {
+      "bytes": 70259,
+      "sha256": "db3c12dcc82a29560d3c05e7a5fee143d0a236d357f628ea4d08cf188d1f6bcf"
+    },
+    "sillok-wha/chunks.jsonl": {
+      "bytes": 2928884,
+      "sha256": "260edb00f07592d553ddf440b2bf0895857e9b1d6bfa7e1beff18a09bd2c6c55"
+    },
+    "sillok-wha/index-terms.jsonl": {
+      "bytes": 1171387,
+      "sha256": "3781c7643ff0bb92e17ecb9bf600490f804ada108a42a7c3085a0cc61711874a"
+    },
+    "sillok-wia/annotations.jsonl": {
+      "bytes": 509349,
+      "sha256": "3d00619a5cc600aa2d772ffaaabf6c922a967d096c873c678c36a168980e7dea"
+    },
+    "sillok-wia/chunks.jsonl": {
+      "bytes": 55221024,
+      "sha256": "765723af80ca54e63068dbd521a77077f1679bc85832d89c91662d2457831df2"
+    },
+    "sillok-wia/index-terms.jsonl": {
+      "bytes": 17490911,
+      "sha256": "f88045c4eaa30ae02c0293a81fd70a11231f215c83c96ff28070b1229eb3144c"
+    },
+    "sillok-wja/annotations.jsonl": {
+      "bytes": 242853,
+      "sha256": "fa337dc6b891347627389e2f4fe849109ab670b018d7e8224eb519b99fe29be6"
+    },
+    "sillok-wja/chunks.jsonl": {
+      "bytes": 19788974,
+      "sha256": "e5d9b7350ffba08132c2b415ea1735509925655a326d78738d7d7d80974b821c"
+    },
+    "sillok-wja/index-terms.jsonl": {
+      "bytes": 5358484,
+      "sha256": "d2da28608d396cdc7fb4ed331fc31e68697877066b1526790764bb912b5acf40"
+    },
+    "sillok-wka/annotations.jsonl": {
+      "bytes": 1832313,
+      "sha256": "08d6757c7834001f704479cd0b34f6ab2c9a7bd09607adbddf3012ca9fe487ed"
+    },
+    "sillok-wka/chunks.jsonl": {
+      "bytes": 69474576,
+      "sha256": "4e0d9c0093a995ba6b4b48b6975085c7f7cf70b266dbbfd3ad2494d828b34c39"
+    },
+    "sillok-wka/index-terms.jsonl": {
+      "bytes": 17723743,
+      "sha256": "2074b384efcae0f803f446caa3eda6f29a5a84765d1b1dada17b3909553e5b45"
+    },
+    "sillok-wla/annotations.jsonl": {
+      "bytes": 54332,
+      "sha256": "19201d2f6af3058d0c031b37835b10b4abe8254a9a66f9a70948f98ec29d0de0"
+    },
+    "sillok-wla/chunks.jsonl": {
+      "bytes": 1206458,
+      "sha256": "5f0ce11b38fc8e6ea6060aed1ed9c4b02338ca2559fed7bd61bbd0f1463710f2"
+    },
+    "sillok-wla/index-terms.jsonl": {
+      "bytes": 262265,
+      "sha256": "a9d3a8506484dfb350d730e3101f51f6ae595e0c799b2e2dd8553efcaf430d0d"
+    },
+    "sillok-wma/annotations.jsonl": {
+      "bytes": 1485228,
+      "sha256": "257506c991f0472a118ac85a5eafdd5be0b3154c7e9835fb68589f7cbdd72623"
+    },
+    "sillok-wma/chunks.jsonl": {
+      "bytes": 24557271,
+      "sha256": "eef173e3e3e625249ee5e5d68d2d9037b40dd6352be78da411d42a454d09335e"
+    },
+    "sillok-wma/index-terms.jsonl": {
+      "bytes": 5726373,
+      "sha256": "98ca9bbf823288f82f4ef69fad8a184009921714d0b734d767bcae84a40543ce"
+    },
+    "sillok-wna/annotations.jsonl": {
+      "bytes": 1755508,
+      "sha256": "9f3382e1fdef09502838a0f756d675f20302535fd452a5d71daea5e5667a9508"
+    },
+    "sillok-wna/chunks.jsonl": {
+      "bytes": 50855552,
+      "sha256": "74451e63dddd4449d5eac3a331ee70239389ecb5037e9d958f0de99d91a0b181"
+    },
+    "sillok-wna/index-terms.jsonl": {
+      "bytes": 14294112,
+      "sha256": "dd1e82964db581691ca7bad3f196f51d903b9d316af552989d841227ce2457ef"
+    },
+    "sillok-wnb/annotations.jsonl": {
+      "bytes": 115706,
+      "sha256": "336e3ce871851a58ff3c461e19123cff6dff1c189c37cfba4bc0b00781faba02"
+    },
+    "sillok-wnb/chunks.jsonl": {
+      "bytes": 4684213,
+      "sha256": "5d870d582359dc94c5cd95e35cd59e4aef57d98e71b86ec850c73ac2cbe29214"
+    },
+    "sillok-wnb/index-terms.jsonl": {
+      "bytes": 1904477,
+      "sha256": "cfaafb4df7a3a5d569d4d771213d4a7a0af2dd9cb386fe28598241840384d101"
+    },
+    "sillok-woa/annotations.jsonl": {
+      "bytes": 123399,
+      "sha256": "736cd58f58ce4ec73c7185fecd1dcf2e901865b561650d287421bd31881c9a85"
+    },
+    "sillok-woa/chunks.jsonl": {
+      "bytes": 43084702,
+      "sha256": "7f121749b595f9223be4f1b178a796314702a360e72e63bfbe9e089704e59f7b"
+    },
+    "sillok-woa/index-terms.jsonl": {
+      "bytes": 8494474,
+      "sha256": "794f782426a2c2c98e01bf31e14c907a6c0c86ef7e172ecd0a962f8b6fefb582"
+    },
+    "sillok-wob/annotations.jsonl": {
+      "bytes": 638756,
+      "sha256": "f799c902da3bb43b1ee1d7bdcb17aa8a284e3f3cd324caaa60a3e21121ed436d"
+    },
+    "sillok-wob/chunks.jsonl": {
+      "bytes": 31690600,
+      "sha256": "9a1ac10d6b63c85656cb0149c1b46aeec41d1f54a4c2f96957c2aa965c89f2d4"
+    },
+    "sillok-wob/index-terms.jsonl": {
+      "bytes": 6928931,
+      "sha256": "7b5333dd6ff6c73f67f6b8519f6264825f52773e428eae40550cee4785ccc047"
+    },
+    "sillok-wpa/annotations.jsonl": {
+      "bytes": 104272,
+      "sha256": "9910d26eb985521537a8ada6d48a7fd589dbfb5b0dd8304e315e0e6109145d7d"
+    },
+    "sillok-wpa/chunks.jsonl": {
+      "bytes": 27377077,
+      "sha256": "2faacd92f8994c6da9fe98c5186e78d098c4a475d612f01c74977194c01a6b78"
+    },
+    "sillok-wpa/index-terms.jsonl": {
+      "bytes": 7465221,
+      "sha256": "19c5b23e8d91ede6d83a26eb7e95674fdbed30ed70e275089c133fd12e70094e"
+    },
+    "sillok-wqa/annotations.jsonl": {
+      "bytes": 107603,
+      "sha256": "80a038fba53914dac283c88aca636f582b6200a766803dba430f233506b3fce3"
+    },
+    "sillok-wqa/chunks.jsonl": {
+      "bytes": 9956331,
+      "sha256": "f6887a87075a481155bd8c4fc165109a8e281491d297d655b8127e4f9efc03ef"
+    },
+    "sillok-wqa/index-terms.jsonl": {
+      "bytes": 2681305,
+      "sha256": "df00e4113ee9072f1cd9ef0d60d0706999e2aaa2b21cd68c1181b708fda5ef87"
+    },
+    "sillok-wra/annotations.jsonl": {
+      "bytes": 74402,
+      "sha256": "dbf6a4c42f8190a56c2582a1ece04c0495e1e12a6dc1fe61761563391f5eedb5"
+    },
+    "sillok-wra/chunks.jsonl": {
+      "bytes": 14717163,
+      "sha256": "80a00a05e8d79147e3630010eecb4ca2c4ebe0b9f4a4bf33e2466af01bb7ec24"
+    },
+    "sillok-wra/index-terms.jsonl": {
+      "bytes": 3962488,
+      "sha256": "29e0bb4574be098b97764f543aa9b6a0d43e23330f888cba8a402b48037371fe"
+    },
+    "sillok-wrb/annotations.jsonl": {
+      "bytes": 181105,
+      "sha256": "d355ba924c0a21ed31f897d94886da5552affb471868adcd731e414a3370ffd5"
+    },
+    "sillok-wrb/chunks.jsonl": {
+      "bytes": 17915374,
+      "sha256": "6aadf10db133e0d6dc47cf9f9daf554c80f61b3d1f3b8b42c0db1ba16724acb0"
+    },
+    "sillok-wrb/index-terms.jsonl": {
+      "bytes": 4809000,
+      "sha256": "e1bceb05137d5bf070ead3b2334c2bc511854537db356004e921f41735d7b0e7"
+    },
+    "sillok-wsa/annotations.jsonl": {
+      "bytes": 368948,
+      "sha256": "7bdd3b0ed3820d73c8a54e6acd65a95db27b8d23149966c6f8ebfb9bf1622180"
+    },
+    "sillok-wsa/chunks.jsonl": {
+      "bytes": 42038632,
+      "sha256": "91a253dce7dee21801affcfca31a720d34989d0b1ec811ab49f6654d229736e4"
+    },
+    "sillok-wsa/index-terms.jsonl": {
+      "bytes": 12851255,
+      "sha256": "ecbda4e5a5b1b01fb1c354293a9a577baf13d167e4a629e44efcc014c8085f3c"
+    },
+    "sillok-wsb/annotations.jsonl": {
+      "bytes": 66589,
+      "sha256": "8caf68f9e6ff7edc6582b45a51e25dc54b1cfab8b9e55736f15c184efcdf388c"
+    },
+    "sillok-wsb/chunks.jsonl": {
+      "bytes": 2103233,
+      "sha256": "ebadbe47225901a4bff921f6bc0c2603931da6de60ee588fb7e9c1e62df74107"
+    },
+    "sillok-wsb/index-terms.jsonl": {
+      "bytes": 700750,
+      "sha256": "2dacbfa45c1b0ff8962fe94eeb6f1c44bda92b7682f750dd2edca66629336c46"
+    },
+    "sillok-wta/annotations.jsonl": {
+      "bytes": 54940,
+      "sha256": "1a3e9fe210e96b0069205ce04b06c0b6e8136276e1996cee6beefccb19b665d3"
+    },
+    "sillok-wta/chunks.jsonl": {
+      "bytes": 4622989,
+      "sha256": "8253489607b1d14b63d0531bed4d5c931e423a519e9cdf43525000eac70ed3c9"
+    },
+    "sillok-wta/index-terms.jsonl": {
+      "bytes": 1451707,
+      "sha256": "801fa74746241583d2558cc1d74b41eb1ea34c30a151b73e2115142a3588636d"
+    },
+    "sillok-wtb/annotations.jsonl": {
+      "bytes": 13306,
+      "sha256": "5923cd6aa476de6933435315933e5c89e7de0b211142e723ecf212199175fb07"
+    },
+    "sillok-wtb/chunks.jsonl": {
+      "bytes": 1100785,
+      "sha256": "4ce18b0821aaa777ccaba404901d77955540ef97871095a03ecb61ea4c0594c8"
+    },
+    "sillok-wtb/index-terms.jsonl": {
+      "bytes": 462958,
+      "sha256": "0ff194596c60ebe864a39a28e609eb22eb5c7c5c9bf1a3b805e413164c47072e"
+    },
+    "sillok-wua/annotations.jsonl": {
+      "bytes": 447747,
+      "sha256": "d2f7edb90833fcdffe35a24c3646d36155e5b3fc0abd513a3f3f747aeee7e2cd"
+    },
+    "sillok-wua/chunks.jsonl": {
+      "bytes": 57691232,
+      "sha256": "f7ae457cee671c485859ae8da27a58cea0e4cae6f34078f1878e2bfd21e0dc58"
+    },
+    "sillok-wua/index-terms.jsonl": {
+      "bytes": 15240064,
+      "sha256": "abd4daf649762a9178f15ba8143ddcb9b23fcd8f2822f890ab6339b59cf2724b"
+    },
+    "sillok-wva/annotations.jsonl": {
+      "bytes": 640428,
+      "sha256": "3fc1ecc3f4fd12728c94880013b415aad43679efed629515a4c5317cea7b6f42"
+    },
+    "sillok-wva/chunks.jsonl": {
+      "bytes": 33380506,
+      "sha256": "d3bd4cf0addf46ade820f76631dfdc36f7f064a32b3d7ae1269d0cc39b9fb6e7"
+    },
+    "sillok-wva/index-terms.jsonl": {
+      "bytes": 8924391,
+      "sha256": "7a7fcd89c596ddcb2bd8b973830d864337d0f7fbb763ec67f3294fa76d68d2cc"
+    },
+    "sillok-wwa/annotations.jsonl": {
+      "bytes": 529075,
+      "sha256": "22639c8734f399183e1b079743c72a17610386cac5bbb78510959d18e09c869c"
+    },
+    "sillok-wwa/chunks.jsonl": {
+      "bytes": 22249672,
+      "sha256": "c154bd14b6718d30721168b6f65ba185645ed706c05fb3978380d0f664251eb9"
+    },
+    "sillok-wwa/index-terms.jsonl": {
+      "bytes": 4642340,
+      "sha256": "320cec197db7fab5fd4e6b2f4513354371d5a7ba8856600d7ea2b08a74fad87a"
+    },
+    "sillok-wxa/annotations.jsonl": {
+      "bytes": 41004,
+      "sha256": "f60d69b7179cd2744b63b3f0b712e2853e74684f0f514aa69a291c1d069ef600"
+    },
+    "sillok-wxa/chunks.jsonl": {
+      "bytes": 4822964,
+      "sha256": "40cadda5a5f5dcb60eb3886b608c676db7eb654ba4f22fe438486058437aef1d"
+    },
+    "sillok-wxa/index-terms.jsonl": {
+      "bytes": 785048,
+      "sha256": "25f7d3ae04199897f43bbfcd8088c7f8001468e069fe9eb0b3924eed6e934975"
+    },
+    "sillok-wya/annotations.jsonl": {
+      "bytes": 48392,
+      "sha256": "95034abfa250e2a742f15faa64003c8227014bd5d42d1f8176064db4d961cb95"
+    },
+    "sillok-wya/chunks.jsonl": {
+      "bytes": 6628972,
+      "sha256": "347f98f74bcaddb4d72616e990bfb3eacc54314c8693b3f760a6a58ced9e78cd"
+    },
+    "sillok-wya/index-terms.jsonl": {
+      "bytes": 1025864,
+      "sha256": "46c863d6d6a70a8ce3ea767326432d794fc5e7a2fd3263d10819a1a877805e4c"
+    }
+  },
+  "sourceCounts": {
+    "sillok-waa": 2477,
+    "sillok-wba": 652,
+    "sillok-wca": 10576,
+    "sillok-wda": 32844,
+    "sillok-wea": 2702,
+    "sillok-wfa": 2592,
+    "sillok-wga": 11090,
+    "sillok-wha": 1524,
+    "sillok-wia": 32782,
+    "sillok-wja": 12169,
+    "sillok-wka": 40173,
+    "sillok-wla": 682,
+    "sillok-wma": 15341,
+    "sillok-wna": 27207,
+    "sillok-wnb": 2350,
+    "sillok-woa": 22324,
+    "sillok-wob": 19008,
+    "sillok-wpa": 16400,
+    "sillok-wqa": 5570,
+    "sillok-wra": 9502,
+    "sillok-wrb": 10712,
+    "sillok-wsa": 24825,
+    "sillok-wsb": 1107,
+    "sillok-wta": 2804,
+    "sillok-wtb": 489,
+    "sillok-wua": 37425,
+    "sillok-wva": 18011,
+    "sillok-wwa": 15991,
+    "sillok-wxa": 4186,
+    "sillok-wya": 5968
+  },
+  "stats": {
+    "articles": 381672,
+    "dated": 380785,
+    "empty": 0,
+    "level1": 22,
+    "level2": 673,
+    "level3": 7314,
+    "level4": 143423,
+    "level5": 380974,
+    "level6": 165,
+    "newChars": 1872,
+    "sections": 7811,
+    "xmlFiles": 673
+  },
+  "unknownTags": {}
+}

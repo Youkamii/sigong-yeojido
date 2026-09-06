@@ -5,12 +5,12 @@
 실행:      python3 services/ingestion/extract_nikh_xml.py --source samguksagi
 
 입력은 공공데이터포털 벌크 zip(data/bulk/{dataset}.zip, scripts/fetch_datago_bulk.py 로 받는다).
-zip 안의 XML 계층은 item > level1(권) > level2(편) > level3(기사) 이고, 기사 안에
+zip 안의 XML 계층은 사료마다 다르며 파일 루트가 level2인 실록도 있다. 본문 안에
 paragraph · dateOccured · index · annotation · subjectClass 가 들어 있다
 (docs/research/bulk-xml-findings.md 참고).
 
 설계 (docs/02-schema.md §6):
-  - chunk 단위 = level3 기사. id = chunk_{source}_{level3 id}. level3 id 가 곧 국편 웹 퍼머링크
+  - chunk 단위 = text를 직접 가진 level 요소. id = chunk_{source}_{level id}. level id 가 국편 웹 퍼머링크
     (https://db.history.go.kr/id/{levelId}) 라서 chunk 마다 공개 근거 링크가 붙는다.
   - 원문(text)은 이 JSONL 에만 산다. 인라인 태그(index 등)는 벗기되 글자는 보존한다.
   - annotation(교감주·원주)은 본문에서 떼어 annotations 로 뺀다 — 국편의 판단(교감)과 원문을 섞지 않는다.
@@ -27,7 +27,7 @@ paragraph · dateOccured · index · annotation · subjectClass 가 들어 있�
   - 국편 교차링크(reference/link)·판본 이미지(illustration/image)는 원문이 아니므로 버린다.
   - 유니코드에 없는 글자(newChar)는 〓 로 자리를 지키고 국편 코드(KC…)를 newChars 에 남긴다.
   - 공백 처리는 국편 웹 표시와 같게 한다 — 연속 공백(태그 사이 줄바꿈·들여쓰기 포함)은 공백 하나로.
-  - level2 가 level3 없이 본문을 직접 갖는 절(宣撰·目錄·年表·跋文)은 chunk 로 만들지 않고 건수만 보고한다.
+  - 하위 level이 있는 본문은 section, 없는 본문은 article로 보존한다. 파일별로 읽고 한 줄씩 쓴다.
 """
 from __future__ import annotations
 
@@ -39,6 +39,7 @@ import re
 import json
 import sys
 import zipfile
+from contextlib import AbstractContextManager
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
@@ -55,12 +56,13 @@ SOURCES: dict[str, dict] = {
     "samguksagi": {"dataset": "15053635", "label": "삼국사기"},
     "samgukyusa": {"dataset": "15053634", "label": "삼국유사"},   # 2026-09-05 검증: 153 조목, 王曆 은 표
     "goryeosa": {"dataset": "15053637", "label": "고려사"},       # 2026-09-05 검증: 5,389 기사 + 73 절
+    "joseon-sillok": {"dataset": "15053647", "label": "조선왕조실록"},
 }
 
 # 본문에서 통째로 버리는 요소 — 원문이 아니라 국편의 편집 장치다
 DROP_TAGS = {"reference", "link", "illustration", "image", "caption"}
 # 태그만 벗기고 글자는 살리는 요소 (index 는 색인어로도 기록한다)
-INLINE_TAGS = {"index", "paragraph", "noteContent", "noteTitle", "td"}
+INLINE_TAGS = {"index", "paragraph", "noteContent", "noteTitle", "td", "quotation", "postScript"}
 # 표 — 행(tr)마다 줄바꿈, 셀(td) 사이는 공백. 열 구조는 원본 XML 로 돌아가야 한다 (삼국유사 王曆, 고려사 表)
 TABLE_BLOCK_TAGS = {"tableGroup", "table", "tr", "ul", "li"}   # 목록(ul/li)도 항목마다 줄바꿈 (삼국사기 目錄)
 
@@ -140,6 +142,7 @@ class Article:
         self.annotations: list[dict] = []
         self.index_terms: list[dict] = []
         self.new_chars: list[dict] = []
+        self.proofreadings: list[dict] = []
         self.unknown_tags: collections.Counter = collections.Counter()
 
     def render(self, el: ET.Element, tb: TextBuilder, parent_seq: int | None) -> None:
@@ -169,6 +172,12 @@ class Article:
         elif tag == "index":
             self.index_terms.append({"type": el.get("type"), "text": term_text(el)})
             self.render(el, tb, parent_seq)
+        elif tag == "proofreading":
+            start = tb.offset()
+            self.render(el, tb, parent_seq)
+            self.proofreadings.append({"type": el.get("type"), "offset": start,
+                                      "end": tb.offset(), "parentSeq": parent_seq,
+                                      "text": "".join(tb.parts[start:tb.offset()])})
         elif tag in TABLE_BLOCK_TAGS:
             tb.newline()
             self.render(el, tb, parent_seq)
@@ -262,12 +271,14 @@ def extract_article(
     tb = TextBuilder()
     content = level.find("text/content")
     if content is not None:
+        tb.text(content.text)
         for para in content:
             if para.tag == "paragraph":
                 art.render(para, tb, None)
             else:
                 art.render_element(para, tb, None)
             tb.newline()
+            tb.text(para.tail)
     text = tb.result()
 
     if re.search(r"</?[A-Za-z]", text):   # 원문에 든 낱글자 < > 는 허용, 태그처럼 생긴 것만 잡는다
@@ -286,7 +297,7 @@ def extract_article(
         "id": f"chunk_{source}_{level_id}",
         "sourceId": f"src-{source}",
         "chunkType": chunk_type,
-        "level": len(labels),
+        "level": int(level.tag.removeprefix("level")),
         "levelId": level_id,
         "permalink": PERMALINK.format(level_id=level_id),
         "locator": " › ".join(x for x in labels if x),
@@ -303,10 +314,18 @@ def extract_article(
         "translation": None,
         "translationSource": None,
     }
+    if source.startswith("sillok-"):
+        chunk["permalink"] = f"https://sillok.history.go.kr/id/{level_id}"
+        chunk["editionReferences"] = [
+            {"edition": x.find("mainTitle").get("type"), "title": plain(x.find("mainTitle")),
+             "pages": [dict(p.attrib) for p in x.findall("page")]}
+            for x in level.findall("front/biblioData/source") if x.find("mainTitle") is not None
+        ]
+        chunk["proofreadings"] = art.proofreadings
     return chunk, art
 
 
-def extract(source: str, zpath: Path) -> tuple[list[dict], dict]:
+def extract(source: str, zpath: Path, *, emit=None) -> tuple[list[dict], dict]:
     """계층(level1 › level2 › level3 › level4 …)을 재귀로 내려가며 <text> 를 가진 요소마다 chunk 를 만든다.
 
     삼국사기는 level3 가 기사이고 일부 level2 가 본문을 직접 갖는다(section). 삼국유사·고려사는 level3 가 조목/월이고
@@ -316,13 +335,20 @@ def extract(source: str, zpath: Path) -> tuple[list[dict], dict]:
         raise ExtractError(f"벌크가 없다: {zpath}  (먼저 scripts/fetch_datago_bulk.py 실행)")
 
     chunks: list[dict] = []
+    seen: set[str] = set()
+    catalog = {}
+    if source == "joseon-sillok":
+        catalog = json.loads(Path(__file__).with_name("sillok-catalog.json").read_text(encoding="utf-8"))["sources"]
     stats: collections.Counter = collections.Counter()
     unknown: collections.Counter = collections.Counter()
     ann_types: collections.Counter = collections.Counter()
     idx_types: collections.Counter = collections.Counter()
 
     def take(chunk: dict, art: Article, key: str) -> None:
-        chunks.append(chunk)
+        if chunk["id"] in seen:
+            raise ExtractError(f"chunk id 중복: {chunk['id']}")
+        seen.add(chunk["id"])
+        (emit or chunks.append)(chunk)
         unknown.update(art.unknown_tags)
         for x in art.annotations:
             ann_types[x["type"]] += 1
@@ -331,35 +357,45 @@ def extract(source: str, zpath: Path) -> tuple[list[dict], dict]:
         stats[key] += 1
         stats["dated"] += 1 if chunk["date"] else 0
         stats["newChars"] += len(chunk["newChars"])
+        stats["empty"] += not chunk["text"]
 
-    def walk(level: ET.Element, path: list[str], depth: int) -> None:
+    def walk(level: ET.Element, path: list[str], chunk_source: str) -> None:
+        depth = int(level.tag.removeprefix("level"))
         label = level1_label(level) if depth == 1 else level_title(level)
         labels = path + [label]
         stats[f"level{depth}"] += 1
-        kids = [k for k in level if isinstance(k.tag, str) and k.tag.startswith("level")]
+        kids = [k for k in level if isinstance(k.tag, str) and re.fullmatch(r"level\d+", k.tag)]
         if level.find("text") is not None:
             if level.get("id"):
                 ctype = "section" if kids else "article"
-                chunk, art = extract_article(level, source, labels, ctype)
+                chunk, art = extract_article(level, chunk_source, labels, ctype)
                 take(chunk, art, "sections" if kids else "articles")
             else:
                 stats["textNoId"] += 1
         for k in kids:
-            walk(k, labels, depth + 1)
+            walk(k, labels, chunk_source)
+
+    def walk_root(node: ET.Element) -> None:
+        if isinstance(node.tag, str) and re.fullmatch(r"level\d+", node.tag):
+            chunk_source = source
+            if catalog:
+                prefix = (node.get("id") or "").split("_")[0]
+                if prefix not in catalog:
+                    raise ExtractError(f"실록 규칙표에 없는 id: {node.get('id')}")
+                chunk_source = f"sillok-{prefix}"
+            walk(node, [], chunk_source)
+        else:
+            for child in node:
+                walk_root(child)
 
     with zipfile.ZipFile(zpath) as z:
         names = sorted(n for n in z.namelist() if n.lower().endswith(".xml"))
         for name in names:
             root = ET.fromstring(z.read(name))
             stats["xmlFiles"] += 1
-            for level1 in root.iter("level1"):
-                walk(level1, [], 1)
+            walk_root(root)
 
-    ids = [x["id"] for x in chunks]
-    if len(ids) != len(set(ids)):
-        dupes = [i for i, n in collections.Counter(ids).items() if n > 1]
-        raise ExtractError(f"chunk id 중복: {dupes[:5]}")
-    if not chunks:
+    if not seen:
         raise ExtractError("본문(<text>)을 가진 level 요소가 하나도 없다 — 계층이 다른 데이터셋인가?")
 
     summary = {
@@ -400,7 +436,43 @@ def write_outputs(source: str, chunks: list[dict]) -> dict[str, Path]:
 
 
 def sha256_of(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    with path.open("rb") as fh:
+        return hashlib.file_digest(fh, "sha256").hexdigest()
+
+
+class OutputWriter(AbstractContextManager):
+    """Source별 JSONL. 동시에 여는 파일을 제한하고 원문 목록을 메모리에 쌓지 않는다."""
+    def __init__(self, directory: Path):
+        self.directory = directory
+        self.handles = collections.OrderedDict()
+        self.paths = set()
+        self.counts = collections.Counter()
+
+    def write(self, path: Path, row: dict) -> None:
+        if path not in self.handles:
+            if len(self.handles) >= 24:
+                self.handles.popitem(last=False)[1].close()
+            path.parent.mkdir(parents=True, exist_ok=True)
+            self.handles[path] = path.open("a" if path in self.paths else "w", encoding="utf-8", newline="\n")
+            self.paths.add(path)
+        self.handles.move_to_end(path)
+        if row is not None:
+            self.handles[path].write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+
+    def __call__(self, chunk: dict) -> None:
+        source = chunk["sourceId"].removeprefix("src-")
+        directory = self.directory / source
+        self.write(directory / "chunks.jsonl", chunk)
+        for key, field in [("annotations", "annotations"), ("index-terms", "indexTerms")]:
+            path = directory / f"{key}.jsonl"
+            self.write(path, None)
+            for row in chunk[field]:
+                self.write(path, {"chunkId": chunk["id"], **row})
+        self.counts[source] += 1
+
+    def __exit__(self, *args):
+        for handle in self.handles.values():
+            handle.close()
 
 
 def main(argv: list[str]) -> int:
@@ -408,6 +480,8 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--source", default="samguksagi", help=f"등록된 것: {sorted(SOURCES)}")
     ap.add_argument("--dataset", help="공공데이터포털 데이터셋 번호 (등록되지 않은 source 에 필요)")
     ap.add_argument("--bulk", help="zip 경로 직접 지정 (기본 data/bulk/{dataset}.zip)")
+    ap.add_argument("--out", type=Path, default=SOURCES_DIR, help="출력 sources 디렉터리; 큰 사료는 별도 작업 폴더에서 검증 후 반영")
+    ap.add_argument("--report", type=Path, help="추출 수치·파일 크기·전체 SHA256을 JSON으로 저장")
     a = ap.parse_args(argv)
 
     dataset = a.dataset or SOURCES.get(a.source, {}).get("dataset")
@@ -417,11 +491,18 @@ def main(argv: list[str]) -> int:
     zpath = Path(a.bulk) if a.bulk else BULK_DIR / f"{dataset}.zip"
 
     try:
-        chunks, summary = extract(a.source, zpath)
+        with OutputWriter(a.out) as writer:
+            _, summary = extract(a.source, zpath, emit=writer)
     except ExtractError as e:
         print(f"추출 실패: {e}")
         return 1
-    paths = write_outputs(a.source, chunks)
+    paths = sorted(writer.paths)
+    summary["sourceCounts"] = dict(sorted(writer.counts.items()))
+    summary["bulkSha256"] = sha256_of(zpath)
+    summary["outputs"] = {p.relative_to(a.out).as_posix(): {"bytes": p.stat().st_size, "sha256": sha256_of(p)} for p in paths}
+    if a.report:
+        a.report.parent.mkdir(parents=True, exist_ok=True)
+        a.report.write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     st = summary["stats"]
     ann_total = sum(summary["annotationTypes"].values())
@@ -429,9 +510,9 @@ def main(argv: list[str]) -> int:
     print(f"source        : {a.source}  (dataset {dataset or '-'}, {zpath.name})")
     levels = "  ".join(f"L{d} {st.get(f'level{d}', 0)}" for d in range(1, 7) if st.get(f"level{d}"))
     print(f"xml files     : {st.get('xmlFiles', 0)}   {levels}")
-    print(f"chunks        : {len(chunks)}  (articles {st.get('articles', 0)}, sections {st.get('sections', 0)}"
+    print(f"chunks        : {sum(writer.counts.values())}  (articles {st.get('articles', 0)}, sections {st.get('sections', 0)}"
           + (f", text 있으나 id 없음 {st['textNoId']}" if st.get("textNoId") else "") + ")")
-    empty = sum(1 for c in chunks if not c["text"])
+    empty = st.get("empty", 0)
     print(f"empty text    : {empty}")
     print(f"dated chunks  : {st.get('dated', 0)}")
     print(f"annotations   : {ann_total}  {summary['annotationTypes']}")
@@ -439,8 +520,7 @@ def main(argv: list[str]) -> int:
     print(f"newChar marks : {st.get('newChars', 0)}")
     if summary["unknownTags"]:
         print(f"UNKNOWN TAGS  : {summary['unknownTags']}  <- check before trusting text")
-    for k, p in paths.items():
-        print(f"{k:<14}: {p.relative_to(ROOT).as_posix()}  sha256 {sha256_of(p)[:16]}")
+    print(f"sources       : {len(writer.counts)}  output {a.out}")
     return 0
 
 
