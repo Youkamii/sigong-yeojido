@@ -7,6 +7,7 @@ export function activeAt(place, year, sources = null){
   if(place.candidates?.length && !place.candidates.some(c => candActive(c, year))) return false;
   if(sources === null) return true;
   if(sources.size === 0) return false;
+  if(place.sourceId && !sources.has(place.sourceId)) return false;
   const mentionedBy = Object.keys(place.mentions || {});
   return !mentionedBy.length || mentionedBy.some(id => sources.has(id));
 }

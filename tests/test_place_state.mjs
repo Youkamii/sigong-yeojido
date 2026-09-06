@@ -25,3 +25,10 @@ test('source omission, all-off and matching selection have distinct behavior', (
   assert.equal(activeAt({candidates:[]}, 414, new Set()), false);
   assert.equal(activeAt({candidates:[]}, 414, new Set(['a'])), true);
 });
+
+test('a researched place remains scoped to its source even without text matches', () => {
+  const p = {sourceId:'src-goryeosa', mentions:{}, candidates:[]};
+  assert.equal(activeAt(p, 918, new Set(['src-samgukyusa'])), false);
+  assert.equal(activeAt(p, 918, new Set(['src-goryeosa'])), true);
+  assert.equal(activeAt(p, 918, new Set()), false);
+});

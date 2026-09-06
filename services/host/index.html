@@ -694,6 +694,7 @@ async function select(id){
 
   // 이름 변형(aliases)까지 본다 — 비문은 平穰, 삼국사기는 平壤. 표기가 달라도 같은 자리를 말한다.
   const names = [p.label, ...(p.aliases || [])].filter(Boolean);
+  const sourceName = p.sourceId && (state.sources.find(s => s.id === p.sourceId)?.label || p.sourceId);
 
   const esc0 = escH;
   const span = c => (c.validFrom==null && c.validTo==null) ? '' :
@@ -708,6 +709,7 @@ async function select(id){
   const head = `
     <h3>${escH(p.labelKo)}</h3>
     <div class="han">${escH(names.join(' · '))}</div>
+    ${sourceName ? `<div class="auto">${escH(sourceName)}에 나온 지명 · 이 사료 안에서 원문을 찾는다.</div>` : ''}
     <span class="badge ${escH(p.status)}">${escH(
       p.entityType ? (TYPE_KO[p.entityType]||p.entityType) :
       p.origin === 'ai' ? (p.candidates.length ? '좌표 후보' : '위치 미정') :
@@ -718,7 +720,7 @@ async function select(id){
   el.innerHTML = head + `<div class="sect" style="margin-top:20px">원문 근거</div><p class="empty" style="margin-top:12px">찾는 중…</p>`;
 
   const seq = ++selSeq;
-  const on = [...state.on];
+  const on = [...state.on].filter(sid => !p.sourceId || sid === p.sourceId);
   let res = {chunks:[], total:0, bySource:{}};
   let cl = {claims:[], total:0};
   try{

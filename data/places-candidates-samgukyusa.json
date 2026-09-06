@@ -1,0 +1,3079 @@
+{
+  "_provenance": {
+    "source": "samgukyusa",
+    "date": "2026-09-06",
+    "status": "ai-research-reviewed-not-approved",
+    "indexTermsFile": "data/research/samgukyusa-place-index.json",
+    "agents": [
+      {
+        "task": "samgukyusa-1",
+        "sessionId": "b212d6d4-c858-42b5-9f13-577068551794",
+        "model": "claude-opus-5",
+        "effort": "max"
+      },
+      {
+        "task": "samgukyusa-2",
+        "sessionId": "2df2c909-396a-40b1-852c-1c762afa8240",
+        "model": "claude-opus-5",
+        "effort": "max"
+      },
+      {
+        "task": "samgukyusa-3",
+        "sessionId": "bfede448-6651-4771-8a96-861db3e438c8",
+        "model": "claude-opus-5",
+        "effort": "max"
+      },
+      {
+        "task": "samgukyusa-4",
+        "sessionId": "785bf032-dc82-4a24-a29d-a07e2c8966d7",
+        "model": "claude-opus-5",
+        "effort": "max"
+      }
+    ],
+    "independentHistoricalSample": 16
+  },
+  "_note": "사료의 지명 표기별 조사 후보. sourceId 범위에서만 원문을 찾으며 같은 표기라는 이유로 기존 지명과 합치지 않는다. 현대 참조 좌표는 역사적 위치 확정이나 Claim 승격이 아니다.",
+  "places": [
+    {
+      "id": "place-samgukyusa-001",
+      "label": "南山",
+      "labelKo": "남산(경주 남산)",
+      "kind": "mountain",
+      "count": 21,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "삼국유사의 南山은 경주 시가지 남쪽의 경주 남산(금오산)이다. 사례가 육촌·남산부, 혁거세의 궁실을 지은 南山西麓, 避村 관련 분주로 모두 경주 안이다. 서울 남산 등 동명 지명과는 다르다. 세 번째 sample은 본문에 南山이 없고(termInBody=false) 분주에서 색인된 것으로 보여 그대로 두되 근거로 강하게 쓰지 않았다. 좌표는 산 한 점이며 남북 약 8㎞·동서 약 4㎞ 산괴 전체나 개별 유적(나정·창림사지·포석정 등)의 위치가 아니다. 남산 서록 궁실터를 창림사지로 보는 견해는 민백·국가유산 출처로 확인하지 못해 후보에 넣지 않았다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0002852",
+        "https://www.wikidata.org/wiki/Q489229"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0190_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 新羅 始祖 赫居世王 › 진한 땅에는 옛날 여섯 마을이 있었다",
+          "date": {
+            "label": null,
+            "raw": "0032-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0190_0010",
+          "quote": "韓之地古有六村. 一曰閼川 楊山村, 南今曇嚴寺. 長曰謁平初降于瓢嵓峯是為及梁部李氏祖. 二曰突山高墟村, 長曰蘇伐都利初降于兄山, 是為沙梁部鄭氏祖. 今曰南山部, 仇良伐·麻等烏·道北·迴徳等南村属焉.三曰茂山大樹村, 長曰俱 禮馬, 初降于伊山是為漸梁部又牟梁部孫氏之祖. 今云長福部, 朴谷村等西村屬焉. 四曰觜山珎支村, 長曰智伯虎初降于花山是爲夲彼部崔氏祖. 今曰通仙部, 柴巴等東南村屬焉",
+          "quoteStart": 10,
+          "quoteEnd": 212,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0190_0040",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 新羅 始祖 赫居世王 › 나이가 열세 살이 되자 남자는 왕이 되고 여자는 왕후가 되다",
+          "date": {
+            "label": null,
+            "raw": "0057-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0190_0040",
+          "quote": "是日沙梁里 閼英井邉有雞龍現, 而左脇誕生童女姿容殊麗. 然而唇似雞觜將浴於月城北川其觜撥落, 因名其川曰撥川. 營宮室於南山西麓奉飬二聖兒. 男以卵生卵如瓠, 郷人以瓠爲朴故因姓朴. 女以所出井名名之. 二聖年至十三歳, 以五鳯元年甲子男立爲王, 仍以女爲后.",
+          "quoteStart": 0,
+          "quoteEnd": 131,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0280_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 射琴匣 › 비처왕이 금갑에서 사통하던 궁주와 분수승을 죽이다",
+          "date": {
+            "label": null,
+            "raw": "0488-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0280_0010",
+          "quote": "射琴匣\n第二十一毗處王即位十年戊辰幸於天泉亭. 時有烏與鼠來鳴, 鼠作人語云 “此烏去䖏尋之.” 王命騎士追之南至避村, 兩猪相闘留連見之忽失烏所在. 徘徊路旁時有老翁自池中出奉書. 外靣題云 ‘開見二人死, 不開一人死.’ 使來獻之, 王曰 ",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.768056,
+          "lon": 129.225556,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0002852",
+          "basis": "민백 '경주 남산 일원'은 이 산을 \"경주시의 남쪽에 솟아오른 산\"(금오산)이라 하고, 남북 약 8㎞·동서 약 4㎞ 범위에 신라 절터·석불·석탑이 밀집한다고 설명한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q489229",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(경주 남산 일원)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "confirmed",
+          "historySourceTitle": "한국민족문화대백과사전 「경주 남산 일원」",
+          "dateBasis": null,
+          "coordLabel": "Namsan(경주 남산), 경주시",
+          "wikidataId": "Q489229"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-002",
+      "label": "溟州",
+      "labelKo": "명주",
+      "kind": "region",
+      "count": 16,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 757,
+      "validTo": null,
+      "note": "민백 '명주'·'아슬라'에 따르면 강릉 지역의 이름이 512년 아슬라주 → 658년 주 복치 → 757년(경덕왕 16) 명주로 바뀌었다. 삼국유사의 '溟州古穢國'은 일연 당대(고려)의 지명으로 옛 예국 자리를 가리키는 서술이다. sample 2·3은 본문 표기가 阿瑟羅州로, 같은 곳의 이전 이름이라 함께 두었다(termInBody=false). 고려 때 동원경·하서부·명주도독부·목으로 계속 개편되어 명칭 사용 종료 시점은 특정하지 않았다. 좌표는 현대 강릉시 참조점이며 신라 명주 치소나 관아 터의 정확한 위치가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0018372",
+        "https://encykorea.aks.ac.kr/Article/E0034356",
+        "https://www.wikidata.org/wiki/Q42056"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0040_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 馬韓 › 4이는 9이와 9한과 예와 맥이다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0040_0020",
+          "quote": "四夷九夷·九韓·穢·貊. 周禮 ‘職方氏掌四夷九貊’者, 東夷之種即九夷也. 三國史云 “溟州古穢國. 野人耕田得穢王印献之.” 又 “春州古牛首州古貊國.” 又或云 “今朔州是貊國, 或平壌城爲貊國.” 淮南子注云 “東方之夷九種.” 論語正義云 “九夷者一玄菟·二樂浪·三高麗·四滿餙·五鳬臾·六素家·七東屠·八倭人·九天鄙.” ",
+          "quoteStart": 0,
+          "quoteEnd": 167,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0290_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 智哲老王 › 박이종이 나무 사자를 만들어 울릉도를 복속시키다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0290_0020",
+          "quote": "又阿瑟羅州東海中便風二日程有亐陵島. 周迴二万六千七百三十歩, 島夷恃其水深憍慠不臣. 王命伊喰朴伊宗将兵討之. 宗作木偶師子載於大艦之上, 威之云 “不降則放此獸.” 島夷畏而降. 賞伊宗爲州伯.",
+          "quoteStart": 0,
+          "quoteEnd": 99,
+          "termInBody": false
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0010_0060",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 文武王法敏 › 거득공 설화",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0010_0060",
+          "quote": "王一日召庻弟車得公曰, “汝爲冡宰均理百官平章四海.” 公曰 “陛下若以小臣爲宰, 則臣願潛行國内, 示民問徭役之勞逸·租賦之軽重·官吏之清濁然後就聀.” 王聽之. 公著緇衣把琵琶爲居士形出京師. 経由阿瑟羅州·牛首州·北原京, 至扵武珎州廵行",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.755556,
+          "lon": 128.896111,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0018372",
+          "basis": "민백 '명주'는 강릉 지역을 가리키며 \"757년(경덕왕 16)에 명주로 개명\"했다고 한다. '아슬라' 항목도 아슬라/하슬라가 강릉이고 757년 명주로 바뀌었다고 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42056",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(명주·아슬라) - 현대 강릉 참조점",
+          "validFrom": 757,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「명주(溟州)」·「아슬라(阿瑟羅)」",
+          "dateBasis": "민백 '명주'·'아슬라': 757년(경덕왕 16) 명주로 개칭",
+          "coordLabel": "Gangneung(강릉시)",
+          "wikidataId": "Q42056"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-003",
+      "label": "海東",
+      "labelKo": "해동",
+      "kind": "region",
+      "count": 14,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "해동은 특정 지점이 아닌 우리나라의 별칭이다. 한국민족문화대백과사전은 삼국유사의 해동 표현 대부분이 고려시대 일연 자신의 표현으로 보인다고 설명한다. 이를 삼국시대의 특정 장소·연도로 확정하지 않고 기간을 비워 둔다. 한반도 좌표는 광역 참조점이다.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/%ED%95%B4%EB%8F%99_(%EB%B3%84%EC%B9%AD)",
+        "https://www.wikidata.org/wiki/Q483134",
+        "https://encykorea.aks.ac.kr/Article/E0062492"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0030_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 孝昭王代竹㫖郎 › 익선의 어리석음으로 모량리민들이 벼슬에서 쫓겨나다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0030_0020",
+          "quote": "浴洗扵城内池中仍合凍死. 大王聞之, 勑牟梁里人從官者並合黜遣更不接公署, 不著黒衣, 若爲僧者不合入鍾皷寺中. 勑史上偘珎子孫爲枰定户孫標異之. 時园測法師是海東髙徳, 以牟梁里人故不授僧職.",
+          "quoteStart": 176,
+          "quoteEnd": 273,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0030_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 金官城婆娑石塔 › 허황후가 아유타국에서 파사석탑을 가져오다",
+          "date": {
+            "label": null,
+            "raw": "0048-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0030_0010",
+          "quote": "命載兹塔, 乃獲利渉來泊南涯. 有緋㠶茜旗珠玉之羙, 今云主浦. 初解綾袴於岡上處曰綾峴, 茜旗初入海涯曰旗出邊. 首露王聘迎之, 同御國一百五十餘年. 然于時海東未有創寺奉法之事. 蓋像敎未至而圡人不信伏, 故本記無創寺之文. 逮第八代銍知王二年壬辰置寺於其地. 又創王后寺至今奉福焉, 兼以鎮南倭, 具見本國本記. 塔方四面五層, 其彫𨩐甚竒. 石微赤班色其質良脆, 非此方類也. 本草所云, 㸃雞冠",
+          "quoteStart": 100,
+          "quoteEnd": 302,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0120_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 三所觀音 衆生寺 › 장승요라는 화공이 황제의 진상을 그리다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0120_0010",
+          "quote": "三所觀音衆生寺\n新羅古傳云, “中華天子有寵姬美艶無雙. 謂古今啚畫尠有如此者, 乃命善畫者寫真其人奉勑圗 成, 誤落筆汚赤毁於臍下. 欲攺之而不能, 心疑赤誌必自天生. 㓛畢献之, 帝目之曰 “形則逼真矣, 其臍下之誌乃所内秘, 何得知之并寫",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.5,
+          "lon": 127.0,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0062492",
+          "basis": "백과는 해동을 우리나라의 별칭으로 설명하며 발해 동쪽 나라라는 어원을 제시한다. 좌표는 한반도의 광역 참조점이며 특정 도시나 유적이 아니다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q483134",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(해동)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「해동」",
+          "dateBasis": null,
+          "coordLabel": "Korean Peninsula(한반도) 광역 참조점",
+          "wikidataId": "Q483134"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-004",
+      "label": "雞林",
+      "labelKo": "계림",
+      "kind": "capital",
+      "count": 13,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "雞林은 두 층위로 쓰인다. (1) 경주 교동의 숲(사적 '경주 계림'), (2) 신라라는 나라와 그 수도를 가리키는 이름. 입력 3사례는 모두 (2)로, 雞林東(계림 곧 신라의 동쪽), 雞林王, 雞林之臣이다. 두 후보 모두 경주 안이며 중국 구이린(桂林)과는 무관하다. 계림 명칭 유래(탈해왕대 김알지 탄생)는 설화 서술이라 후보의 사용 시작 연도로 쓰지 않았다. 경주시 좌표는 신라 왕경 전체를 대표하는 참조점이지 월성 등 특정 유적 위치가 아니다.",
+      "references": [
+        "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1333700190000&pageNo=1_1_1_1",
+        "https://ko.wikipedia.org/wiki/%EA%B3%84%EB%A6%BC",
+        "https://www.wikidata.org/wiki/Q491088",
+        "https://www.wikidata.org/wiki/Q42097"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0220_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 第四 脫解王 › 탈해가 아진포에 도착하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0220_0010",
+          "quote": "第四脫解王\n脫解齒叱今. 南解王時 駕洛國海中有舩來泊. 其國首露王與臣民鼓譟而迎将欲留之, 而舡乃飛走至於雞林東下西知村阿珎浦. 時浦邉有一嫗名阿珎義先, 乃赫居王之海尺之母. 望之謂曰 “此海中元無石嵓何因鵲集而鳴” 拏舡尋之, 鵲集一舡上舡中有一樻子. 長二十尺廣十三尺. 曳其舩置於一樹林下而未知凶乎吉乎向天而誓爾. 俄而乃開見有端正男子, 并",
+          "quoteStart": 0,
+          "quoteEnd": 176,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0260_0070",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 奈勿王金堤上 › 제상이 일본에 들어가 미해를 귀국시키다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0260_0070",
+          "quote": "行至倭國詐言曰, “雞林王以不罪殺我父兄故逃來至此矣.” 倭王信之賜室家而安之. 時堤上常陪羙海遊海濵, 逐捕魚鳥以其所獲每獻扵倭王. 王甚喜之而無疑焉. 適曉霧濛晦. 堤上曰 “可行矣” 羙侮曰 “然則偕行” 堤上曰 “臣若行恐倭人覺而追之. 願臣留而止其追也.",
+          "quoteStart": 0,
+          "quoteEnd": 132,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0260_0080",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 奈勿王金堤上 › 제상이 왜왕의 회유를 거절하고 죽음을 선택하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0260_0080",
+          "quote": "於是囚堤上問曰, “汝何竊遣汝國王子耶.” 對曰 “臣是雞林之臣非倭國之臣. 今欲成吾君之志耳. 何敢言於君乎.” 倭王怒曰 “今汝已爲我臣, 而言雞林之臣則必具五刑, 若言倭國之臣者必賞重禄.” 對曰 “寕爲雞林之犬㹠, 不爲倭國之臣子. 寧受雞林之箠楚, 不受倭國之爵禄.” 王怒命屠剥堤上脚下之",
+          "quoteStart": 0,
+          "quoteEnd": 150,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.8675,
+          "lon": 129.223,
+          "sourceUrl": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1333700190000&pageNo=1_1_1_1",
+          "basis": "국가유산포털 사적 '경주 계림'은 소재지를 \"경북 경주시 교동 1번지\"로 적고, 탈해왕대 김알지 설화와 신라 국명 유래에 얽힌 숲이라고 설명한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q491088",
+          "precision": "site",
+          "view": "국가유산포털(사적 경주 계림) - 계림 숲 자체",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "confirmed",
+          "historySourceTitle": "국가유산포털 「사적 경주 계림(慶州 鷄林)」",
+          "dateBasis": null,
+          "coordLabel": "Gyerim(경주 계림 숲), 경주시 교동",
+          "wikidataId": "Q491088"
+        },
+        {
+          "lat": 35.85,
+          "lon": 129.216667,
+          "sourceUrl": "https://ko.wikipedia.org/wiki/%EA%B3%84%EB%A6%BC",
+          "basis": "위키백과 '계림' 동음이의 문서는 계림을 신라의 별칭이자 경주의 옛 이름으로 든다. 입력 사례의 雞林王·雞林之臣이 이 용법이라 경주를 신라 왕경 참조점으로 둔다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42097",
+          "precision": "approx",
+          "view": "위키백과 「계림」 - 신라·경주를 가리키는 이름일 때의 참조점",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "위키백과 「계림」(동음이의)",
+          "dateBasis": null,
+          "coordLabel": "Gyeongju(경주시)",
+          "wikidataId": "Q42097"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-005",
+      "label": "三韓",
+      "labelKo": "삼한",
+      "kind": "region",
+      "count": 11,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "입력 3사례(一統三韓, 鎭護三韓, 三韓兵乱)는 마한·진한·변한 자체가 아니라 삼국통일 이후 '삼국/전국'을 뜻하는 후대 용법이다. 민백 '한(韓)'은 삼국통일 이후 삼한이 요하 동쪽 지역을, 나말여초에는 전국을 가리키는 말로 쓰였다고 한다. 원래 의미의 삼한은 민백 '삼한'에 따라 마한=경기·충청·전라, 진한·변한=경상도로 비정되지만, 위키데이터 삼한(Q1376093)·마한(Q704278)에 P625가 없어 그 영역 좌표는 넣지 못했다. 후보는 한반도 광역 참조점 하나뿐이며 어떤 소국·유적의 위치도 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0026922",
+        "https://encykorea.aks.ac.kr/Article/E0060942",
+        "https://www.wikidata.org/wiki/Q1376093",
+        "https://www.wikidata.org/wiki/Q704278",
+        "https://www.wikidata.org/wiki/Q483134"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 무열왕은 유신공과 함께 삼한을 통일하였기에 묘호를 태종이라 한다",
+          "date": {
+            "label": null,
+            "raw": "0654-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0030",
+          "quote": "真徳王薨, 以永徽五年甲寅即位. 御國八年龍朔元年辛酉崩壽五十九歳, 葬於哀公寺東有碑. 王與庾信神謀戮力一統三韓有大㓛於社稷. 故廟號太宗.",
+          "quoteStart": 0,
+          "quoteEnd": 71,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0020_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 万波息笛 › 신문왕이 감은사에 가다",
+          "date": {
+            "label": null,
+            "raw": "0682-05-01L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0020_0020",
+          "quote": "明年壬午五月朔, 海官波珎喰 朴夙清奏曰, “東海中有小山浮來向感恩寺, 隨波徃來.” 王異之, 命日官金春質占之. 曰 “聖考今爲海龍鎮護三韓. 抑又金公庾信乃三十三天之一子今降爲大臣. 二聖同徳欲出守城之寳, 若陛下行幸海过必得無價大寳.” 王喜以其月七日駕幸利見臺, 望其山遣使審之, 山勢如龜頭, 上有一竿竹, 晝爲二夜合一.使來奏之, 王御感恩寺宿.",
+          "quoteStart": 0,
+          "quoteEnd": 180,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0030_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 孝昭王代竹㫖郎 › 죽지랑의 신이한 탄생담",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0030_0030",
+          "quote": "初述宗公爲朔州都督使将歸理所, 時三韓兵乱以騎兵三千護送之. 行至竹㫖嶺, 有一居士平理其嶺路. 公見之歎羙, 居士亦善公之威勢赫甚相感扵心. 公赴州理隔一朔夢見居士入于房中, 室家同夢. 驚恠尤甚翌日使人同其居士安否. 人曰 “居士死有日矣.” 使來还告, 其死與夢同日矣. ",
+          "quoteStart": 0,
+          "quoteEnd": 139,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.5,
+          "lon": 127.0,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0060942",
+          "basis": "민백 '한(韓)'은 삼한이 \"삼국통일 이후부터는 요하 동쪽의 지역\"을, 나말여초에는 전국을 가리키는 말로 쓰였다고 한다. 좌표는 한반도 광역 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q483134",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 「한(韓)」 - 통일 이후 전국을 뜻하는 용법",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「한(韓)」·「삼한(三韓)」",
+          "dateBasis": "민백은 '삼국통일 이후', '나말여초'라고만 하여 연도를 특정하지 않음",
+          "coordLabel": "Korean Peninsula(한반도) 광역 참조점",
+          "wikidataId": "Q483134"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-006",
+      "label": "泗泚",
+      "labelKo": "사비",
+      "kind": "capital",
+      "count": 11,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 538,
+      "validTo": 660,
+      "note": "泗泚(사비)는 충청남도 부여로, 538년(성왕 16) 웅진에서 천도해 660년 백제 멸망까지 도성이었다(민백 '사비천도'·'사비성'). 후보 좌표는 부소산성 한 점이며, 사비 도성은 부소산성과 나성을 포함해 훨씬 넓다. 泗泚岸·泗泚水는 도성 곁 금강 구간(백마강, 민백에 따르면 부여읍 정동리~현북리 약 16㎞)을 가리키는 강 표기지만, 위키데이터 백마강 항목(Q16178545)에 P625가 없어 강 후보는 넣지 않았다. sample 1(왕력 연표)·sample 2(변한 백제)는 제시된 인용문에 泗泚 표기가 보이지 않아(termInBody=false) 색인 근거를 확인하지 못했다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0071959",
+        "https://encykorea.aks.ac.kr/Article/E0025675",
+        "https://encykorea.aks.ac.kr/Article/E0022106",
+        "https://www.wikidata.org/wiki/Q12598898",
+        "https://www.wikidata.org/wiki/Q16178545"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0010_0080",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 王曆 › 송(宋) 후폐제(後廢帝) 원휘(元徽) 사년(四年) ~ 양(梁) 고조(高祖) 인청(大淸) 삼년(三年)(473~547년)",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0010_0080",
+          "quote": "西曆 中國 新羅 高句麗 百濟 駕洛\n　 後廢帝 　 　 　\n473년 元徽四 　 　 　 　\n　 順帝 　 　 第二十二文周王 　\n477년 昇明二 　 　 　\n　 　 　 　 第二十三三斤王 　\n　 齊大祖 第二十一毗䖏麻立干 　 　\n47",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0160_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 卞韓 百濟 › 변한 사람이 항복하다",
+          "date": {
+            "label": null,
+            "raw": "0039-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0160_0010",
+          "quote": "卞韓 百濟\n新羅始祖赫居世即位十九年壬午, 卞韓人以國来降. 新·舊唐書云 “卞韓苗裔在樂浪之地.” 後漢書云 “卞韓在南馬韓在西辰韓在東.” 致逺云 “卞韓 百濟也.” 按夲紀, 温祚之起在鴻嘉四年甲辰, 則後於赫居世·東明之世四十餘年. 而",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0080",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 의자왕 말기 백제 멸망을 암시하는 흉조가 이어진다",
+          "date": {
+            "label": null,
+            "raw": "0659-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0080",
+          "quote": "現慶四年己未百濟烏㑹寺有大赤馬晝夜六時遶寺行道, 二月衆狐入義慈宫中, 一白狐坐佐平書案上. 四月太子宫雌雞與小雀交婚, 五月泗泚岸大魚岀死長三丈, 人食之者皆死. 九月宫中槐樹鳴如人哭, 夜鬼哭宫南路上. 五年庚申春二月王都井水血色, 西海邊小魚岀死百姓食之不盡, 泗泚水血色. 四月蝦蟆數萬集於樹上, 王都市人無故驚走如有捕捉, 驚什死者百餘, 亡失財物者無數. 六",
+          "quoteStart": 0,
+          "quoteEnd": 185,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.291286,
+          "lon": 126.913159,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0025675",
+          "basis": "민백 '사비성'은 \"충청남도 부여군 부여읍에 있었던 삼국시대 백제의 성곽\"이자 도성으로, 부소산을 감싸고 백마강 쪽으로 반월형을 이룬다고 설명한다. 좌표는 그 부소산성 지점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12598898",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(사비성·사비천도) - 부소산성을 도성 참조점으로",
+          "validFrom": 538,
+          "validTo": 660,
+          "confidence": "confirmed",
+          "historySourceTitle": "한국민족문화대백과사전 「사비성(泗沘城)」·「사비천도」",
+          "dateBasis": "민백 '사비천도': 538년(성왕 16) 웅진에서 사비로 천도 / '사비성': 660년 백제 멸망까지 약 122년간 도성",
+          "coordLabel": "Busosanseong(부소산성), 부여군 부여읍",
+          "wikidataId": "Q12598898"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-007",
+      "label": "帶方",
+      "labelKo": "대방",
+      "kind": "region",
+      "count": 10,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "당토성의 봉산군·사리원 표기는 같은 성터를 가리켜 두 지도 후보로 나누지 않았다. 봉산군 참조점만 남기며 치소 비정은 추정이다. 대방군 소멸 연도는 출처에 따라 313·314년으로 갈려 기간을 정하지 않았다. 남대방에는 디지털남원문화대전이 소개하는 남원 비정과 그에 대한 반론이 있다. 이 조사의 원문 표본은 북대방 등 일부 용례이므로 남대방의 점을 덧붙이지 않았다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0023889",
+        "https://ko.wikipedia.org/wiki/%EB%8C%80%EB%B0%A9%EA%B5%B0",
+        "https://www.wikidata.org/wiki/Q705524",
+        "https://www.wikidata.org/wiki/Q505807",
+        "https://encykorea.aks.ac.kr/Article/E0014398",
+        "https://namwon.grandculture.net/namwon/toc/GC00600663"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0020_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 古朝鮮王儉朝鮮 › 주가 기자를 봉하고 조선이라 하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0020_0030",
+          "quote": "唐 裵矩傳云, “高麗本孤竹國, 周以封箕子爲朝鮮. 漢分置三郡謂玄菟·樂浪·帶方.” 通典亦同此說.",
+          "quoteStart": 0,
+          "quoteEnd": 51,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0070_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 樂浪國 › 전한 때에 처음으로 낙랑군을 설치하다",
+          "date": {
+            "label": null,
+            "raw": "0028-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0070_0010",
+          "quote": " 應邵曰 ‘故朝鮮國也’. 新唐書注云 “平壌城古漢之樂浪郡也”. 國史云 “赫居世三十年樂浪人来投”, 又第三弩禮王四年 髙麗第三無恤王伐樂浪滅之, 其國人與帶方投于羅. 又無恤王二十七年光虎帝遣使伐樂浪取其地爲郡縣, 薩水已南屬漢. 又百濟 温祚之言曰, ‘東有樂浪北有靺鞨’, 則殆古漢時樂浪郡之屬縣之地也. 新羅人亦以稱樂浪故今本朝亦因之而稱樂浪郡夫人, 又太祖降女於金傅亦曰樂浪公主.",
+          "quoteStart": 13,
+          "quoteEnd": 210,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0080_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 北帶方 › 북대방은 본래 죽담성이다",
+          "date": {
+            "label": null,
+            "raw": "0027-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0080_0010",
+          "quote": "北帶方\n北帶方夲竹覃城. 新羅弩禮王四年 帶方人與樂浪人投于羅.",
+          "quoteStart": 0,
+          "quoteEnd": 32,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 38.494719,
+          "lon": 125.967781,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0023889",
+          "basis": "백과 「봉산 대방토성」과 「대방군」은 봉산군 문정면, 사리원 동남의 당토성을 같은 성터로 설명하며 대방군 치소로 추정한다. 이 좌표는 봉산군 참조점이고 성터 위치가 아니다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q705524",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 「봉산 대방토성」 - 봉산군 당토성 치소 추정설",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「봉산 대방토성(鳳山 帶方土城)」",
+          "dateBasis": "대방군 소멸을 민족문화대백과사전은 313년, 위키백과는 314년으로 적으므로 여기서는 종료 연도를 확정하지 않는다. 원문에는 설치 연혁보다 이른 27년 용례도 있어 시작을 비워 둔다.",
+          "coordLabel": "Pongsan County(봉산군) 참조점",
+          "wikidataId": "Q705524"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-008",
+      "label": "五䑓山",
+      "labelKo": "오대산",
+      "kind": "mountain",
+      "count": 9,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "같은 표기가 문맥에 따라 다른 산을 가리키므로 후보를 나눴다. 자장이 유학 중 문수 진신을 보려 간 '中國五䑓山'은 중국 산시성의 우타이산이고, 보천·효명 형제가 하서부를 거쳐 숨어든 五䑓山은 강원의 오대산이다. 신라 오대산 신앙이 중국 오대산 신앙을 옮겨온 것이라 이름이 같다. 두 좌표 모두 산 전체를 대표하는 한 점이며 월정사·중대 등 개별 사찰 위치가 아니다. 중국 오대산 쪽은 민백 '자장' 항목에 오대산·문수 친견 서술이 없어 위키백과에 의존했다. 디지털강릉문화대전 「오대산신앙」이 자장의 중국 오대산과 강원 오대산 순례·보천 신앙의 연결을 설명한다. 두 산은 별개 대상이다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0038150",
+        "https://ko.wikipedia.org/wiki/%EC%9A%B0%ED%83%80%EC%9D%B4%EC%82%B0",
+        "https://encykorea.aks.ac.kr/Article/E0048060",
+        "https://www.wikidata.org/wiki/Q491028",
+        "https://www.wikidata.org/wiki/Q120314",
+        "https://gangneung.grandculture.net/gangneung/toc/GC00302613"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0050_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 皇龍寺丈六 › 아육왕의 황금황철로 장육상을 조성하다",
+          "date": {
+            "label": null,
+            "raw": "0574-03-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0050_0020",
+          "quote": " 南閻浮提十六大國, 五百中國, 十千小國, 八萬聚落靡不周旋皆鑄不成. 最後到新羅國, 真興王鑄之於文仍林, 像成相好畢備. 阿育此飜無憂. 後大徳慈藏西學到五䑓山, 感文殊現身授訣仍囑云, “汝國皇龍寺乃釋迦與迦葉佛講演之地, 宴坐石猶在. 故天笁 無憂王聚黄䥫若干斤泛海, 歴一千三百餘年然後乃到而國, 成安其寺. 蓋威縁使然也.”像成後, 東笁寺三尊亦移安寺中. 寺記云, “真平五年甲辰金堂造成,",
+          "quoteStart": 348,
+          "quoteEnd": 551,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0210_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 臺山五萬眞身 › 선덕왕대 자장법사가 문수보살의 진신을 보려고 당으로 가다",
+          "date": {
+            "label": null,
+            "raw": "0636-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0210_0010",
+          "quote": "䑓山五萬真身\n桉山中古傳, 此山之署名真聖住䖏者始自慈藏法師. 初法師欲見中國五䑓山文殊真身, 以善徳王代貞觀十年丙申入唐. 初至中國太和池邉石文殊䖏, 虔祈七日, 忽夢大聖授四句偈. 覺而記憶然皆梵語罔然不解. 明旦忽有一僧将緋羅金㸃袈娑一領佛鉢一具佛頭骨一片到于師邉問, “何以無聊.” 師荅 “以夢所受四句偈梵音不解爲",
+          "quoteStart": 0,
+          "quoteEnd": 162,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0210_0040",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 臺山五萬眞身 › 보천, 효명의 두 태자가 오대산으로 들어가다",
+          "date": {
+            "label": null,
+            "raw": "0648-08-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0210_0040",
+          "quote": "藏師之返新羅淨神大王太子寳川·孝明二昆弟到河西府, 世献角干之家留一宿. 翌日過大嶺各領千徒到省烏坪遊覽累日, 忽一夕昆弟二人宻約方外之志, 不令人知逃隱入五䑓山.侍衛不知所歸於是還國",
+          "quoteStart": 0,
+          "quoteEnd": 92,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.798056,
+          "lon": 128.543056,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0038150",
+          "basis": "민백 '오대산'은 \"강원특별자치도 강릉시와 평창군·홍천군에 걸쳐 있는 산\"(1,563m급)으로, 자장율사가 수도하고 1만 문수보살이 상주한다는 불교 성지라고 설명한다. 보천·효명 기사의 오대산이 이곳.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q491028",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전 「오대산」 - 신라 오대산(강원)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "confirmed",
+          "historySourceTitle": "한국민족문화대백과사전 「오대산(五臺山)」",
+          "dateBasis": null,
+          "coordLabel": "Odaesan(오대산), 평창·강릉·홍천",
+          "wikidataId": "Q491028"
+        },
+        {
+          "lat": 39.081389,
+          "lon": 113.566944,
+          "sourceUrl": "https://gangneung.grandculture.net/gangneung/toc/GC00302613",
+          "basis": "디지털강릉문화대전은 자장이 중국 오대산에서 문수 신앙을 접한 뒤 643년 귀국하여 강원 오대산을 순례했다고 전한다. 이 후보는 중국 오대산 참조점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q120314",
+          "precision": "approx",
+          "view": "디지털강릉문화대전(중국 오대산 신앙)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "디지털강릉문화대전 「오대산신앙」",
+          "dateBasis": null,
+          "coordLabel": "Mount Wutai(우타이산), 산시성 신저우",
+          "wikidataId": "Q120314"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-009",
+      "label": "平壤",
+      "labelKo": "평양",
+      "kind": "capital",
+      "count": 9,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "현 평양시와 안학궁의 참조점을 둔다. 평양 지명의 시작을 586년 천도로 제한하지 않는다. 안학궁은 조성·사용 시기에 고려시대설을 포함한 여러 견해가 있어 기간을 정하지 않았다. 단군 기사나 413년 平壤州大橋의 위치를 이 좌표로 확정하지 않는다. 근거 학자가 특정되지 않은 위키백과 랴오양설은 지도 후보에서 제외했다.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%84%B1_(%EA%B3%A0%EA%B5%AC%EB%A0%A4)",
+        "https://ko.wikipedia.org/wiki/%EC%95%88%ED%95%99%EA%B6%81",
+        "https://encykorea.aks.ac.kr/Article/E0060024",
+        "https://www.wikidata.org/wiki/Q18808",
+        "https://www.wikidata.org/wiki/Q3361202",
+        "https://www.wikidata.org/wiki/Q75203",
+        "https://encykorea.aks.ac.kr/Article/E0035088"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0020_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 古朝鮮王儉朝鮮 › 환웅이 천하에 자주 뜻을 두어 인간세상을 구하고자 하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0020_0020",
+          "quote": " 熊虎得而食之忌三七日熊得女身, 虎不能忌而不得人身. 熊女者無與爲婚故每於壇樹下呪願有孕. 雄乃假化而㛰之. 孕生子號曰壇君王倹. 以唐髙即位五十年庚寅, 都平壤城始稱朝鮮. 又移都於白岳山阿斯逹, 又名弓 忽山又今旀逹. 御國一千五百年. 周虎王即位己卯封箕子於朝鮮, 壇君乃移於藏唐亰後還隠於阿斯逹爲山神, 壽一千九百八歳.”",
+          "quoteStart": 186,
+          "quoteEnd": 352,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0250_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 未鄒王 竹葉軍 › 혜공왕대 유신공이 원통함을 미추왕에게 호소하다",
+          "date": {
+            "label": null,
+            "raw": "0779-04-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0250_0030",
+          "quote": "與公不護此邦其如民庻何. 公復努力如前.” 三請三不許旋風乃還. 王聞之懼, 乃遣工臣金敬信就金公陵謝過焉, 為公立㓛徳寳田三十結于鷲仙寺以資冥福. 寺乃金公討平壤後植福所置故也. 非末鄒之霊無以遏金公之怒, 王之護國不爲不大矣. 是以邦人懐徳與三山同祀而不墜, 躋秩于五陵之上稱大廟云.",
+          "quoteStart": 175,
+          "quoteEnd": 319,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0270_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 第十八代 實聖王 › 평양주에 큰 다리가 완성되다",
+          "date": {
+            "label": null,
+            "raw": "0413-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0270_0010",
+          "quote": "苐十八實聖王\n義熈九年癸丑平壤州大橋成.",
+          "quoteStart": 0,
+          "quoteEnd": 20,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.016667,
+          "lon": 125.7475,
+          "sourceUrl": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%84%B1_(%EA%B3%A0%EA%B5%AC%EB%A0%A4)",
+          "basis": "위키백과 '평양성 (고구려)'는 \"주류 학계에서는 평양성이 지금의 ... 평양직할시 시가지에 위치했다고 추정\"한다고 하며, 586년 장안성으로 옮겨 고구려 멸망까지 수도였다고 서술한다. 좌표는 현 평양시 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+          "precision": "approx",
+          "view": "현대 평양시 참조점(개별 원문 용례의 위치 확정이 아님)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "위키백과 「평양성 (고구려)」",
+          "dateBasis": "586년은 장안성 천도 연도이므로 平壤 지명의 시작으로 쓰지 않는다. 413년 원문 표본도 있으며 개별 용례의 위치는 별도 검토 대상이다.",
+          "coordLabel": "Pyongyang(평양직할시)",
+          "wikidataId": "Q18808"
+        },
+        {
+          "lat": 39.0618,
+          "lon": 125.834,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0035088",
+          "basis": "백과는 안학궁을 평양 대성구역 대성산 남쪽의 도성 유적으로 설명한다. 427~567년 사용설과 고려시대 조성설 등 여러 견해를 소개하므로 특정 원문의 왕궁으로 확정하지 않는다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q3361202",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(안학궁, 조성 시기 이견 있음)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「안학궁」",
+          "dateBasis": "안학궁 조성·사용 시기에 여러 견해가 있고 장안성 천도 연도도 567·586년으로 출처가 달라 기간을 정하지 않는다.",
+          "coordLabel": "Anhak Palace(안학궁), 평양 대성구역",
+          "wikidataId": "Q3361202"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-010",
+      "label": "遼東",
+      "labelKo": "요동",
+      "kind": "region",
+      "count": 9,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "遼東은 요하 동쪽 일대를 뜻하는 광역 지역명이라 점 하나로 찍을 수 없다. 후보는 한대 요동군·고구려 요동성의 중심지로 비정되는 랴오양(민백 '요동성': 중국 요령성 요양시 부근) 참조점 하나뿐이며, 위만조선 조의 '遼東外徼·遼東故塞', '卒本州在遼東界'가 가리키는 범위 자체는 아니다. 시기(한·연 → 고구려)에 따라 관할 범위가 달라지지만 이번 조사에서 시기별 경계를 정한 출처는 확인하지 못했다. 위키백과 '랴오둥'은 랴오둥반도 문서로 연결되어 요동 광역 정의로는 쓰지 않았다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0039299",
+        "https://ko.wikipedia.org/wiki/%EB%9E%B4%EC%98%A4%EB%91%A5",
+        "https://www.wikidata.org/wiki/Q75203"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0030_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 衛滿朝鮮 › 연나라 사람 위만이 망명하여 왕검에 도읍하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0030_0010",
+          "quote": "魏滿朝鮮\n前漢 朝鮮傳云, “自始燕時常畧得真畨·朝鮮爲置吏築障. 秦滅燕屬遼東外徼. 漢興爲逺難守, 復修遼東故塞至浿水爲界屬燕. 燕王盧綰反入凶奴, 燕人衛滿亡命聚黨千餘人, 東走出塞渡浿水居秦故空地上下障. 稍伇屬真畨·朝鮮蠻夷及故燕·齊亡命者, 王之都王儉. 以兵威侵降其旁小邑, 真畨·臨屯皆来服屬方數千里.",
+          "quoteStart": 0,
+          "quoteEnd": 159,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0030_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 衛滿朝鮮 › 손자 우거는 천자의 명령 받들기를 거부하다",
+          "date": {
+            "label": null,
+            "raw": "0111-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0030_0020",
+          "quote": "右渠, 真畨·辰國欲上書見天子雍閼不通. 元封二年漢使渉何諭右渠, 終不肯奉詔. 何去至界臨浿水, 使馭刺殺送何者朝鮮裨王長, 即渡水馭入塞遂歸報. 天子拜何爲遼東之部都尉. 朝鮮㤪何襲攻殺何. 天子遣楼舡將軍楊僕從齊浮渤海兵五万. 左將軍荀彘岀遼討右渠, 右渠發兵距嶮. 樓舡將軍將齊七千人先到王倹. 右渠城守䂓知樓舡軍小即出擊樓舡, 樓舡敗走. 僕失衆遁山中獲免. 左將軍擊朝鮮 浿水西軍未能破.",
+          "quoteStart": 4,
+          "quoteEnd": 204,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0150_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 高句麗 › 고구려는 곧 졸본부여이다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0150_0010",
+          "quote": "髙句麗\n髙句麗即卒夲扶餘也. 或云 “今和州又成州䓁”, 皆誤矣. 卒夲州在遼東界.",
+          "quoteStart": 0,
+          "quoteEnd": 42,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 41.26432,
+          "lon": 123.1772,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0039299",
+          "basis": "민백 '요동성'은 요동성을 \"중국 요령성 요양시(遼陽市) 부근에 있었던 삼국시대 고구려의 성곽\"이라 한다. 요동 지역의 중심 성 자리를 광역 참조점으로 삼았다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 「요동성」 - 요동 중심지(랴오양) 참조점",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「요동성(遼東城)」",
+          "dateBasis": null,
+          "coordLabel": "Liaoyang(랴오양시), 랴오닝성",
+          "wikidataId": "Q75203"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-011",
+      "label": "浿水",
+      "labelKo": "패수",
+      "kind": "river",
+      "count": 8,
+      "indexType": "지명",
+      "status": "disputed",
+      "confidence": "unverified",
+      "validFrom": null,
+      "validTo": null,
+      "note": "민백 '패수'는 패수를 고대 조선어에서 강을 뜻하는 보통명사로 보고, 시대에 따라 다른 강을 가리켰다고 서술한다(삼국시대 패하·패강은 예성강·대동강). 이 표제의 sample 3건은 모두 위만조선–한 경계 문맥(渡浿水, 至界臨浿水, 破浿水上軍)이므로 청천강·압록강 두 후보만 두었고, 대동강·예성강 용례는 시기가 달라 후보에서 제외했다. 좌표는 강 전체의 참조점이며 경계 지점이나 위만이 건넌 지점이 아니다. 어느 설도 정설로 확정되지 않았다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0059801"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0030_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 衛滿朝鮮 › 연나라 사람 위만이 망명하여 왕검에 도읍하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0030_0010",
+          "quote": "魏滿朝鮮\n前漢 朝鮮傳云, “自始燕時常畧得真畨·朝鮮爲置吏築障. 秦滅燕屬遼東外徼. 漢興爲逺難守, 復修遼東故塞至浿水爲界屬燕. 燕王盧綰反入凶奴, 燕人衛滿亡命聚黨千餘人, 東走出塞渡浿水居秦故空地上下障. 稍伇屬真畨·朝鮮蠻夷及故燕·齊亡命者, 王之都王儉. 以兵威侵降其旁小邑, 真畨·臨屯皆来服屬方數千里.",
+          "quoteStart": 0,
+          "quoteEnd": 159,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0030_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 衛滿朝鮮 › 손자 우거는 천자의 명령 받들기를 거부하다",
+          "date": {
+            "label": null,
+            "raw": "0111-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0030_0020",
+          "quote": "傳子至孫右渠, 真畨·辰國欲上書見天子雍閼不通. 元封二年漢使渉何諭右渠, 終不肯奉詔. 何去至界臨浿水, 使馭刺殺送何者朝鮮裨王長, 即渡水馭入塞遂歸報. 天子拜何爲遼東之部都尉. 朝鮮㤪何襲攻殺何. 天子遣楼舡將軍楊僕從齊浮渤海兵五万. 左將軍荀彘岀遼討右渠, 右渠發兵距嶮. 樓舡將軍將齊七千人先到王倹. 右渠城守䂓知樓舡軍小即出擊樓舡,",
+          "quoteStart": 0,
+          "quoteEnd": 172,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0030_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 衛滿朝鮮 › 우거가 항복을 청하고 태자를 보내어 말을 바치게 하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0030_0030",
+          "quote": "天子爲兩將未有利, 乃使衛山因兵威徃諭右渠, 右渠請降遣太子獻馬. 人衆万餘持兵方渡浿水, 使者及左將軍疑其爲變謂太子, ‘已服冝毋持兵.’ 太子亦疑使者詐之遂不渡浿水復引歸. 報天子誅山. 左將軍破浿水上軍, 迺前至城下圍其西北. 樓舡亦徃㑹居城南. 右渠堅守數月未能下.",
+          "quoteStart": 0,
+          "quoteEnd": 137,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.6,
+          "lon": 125.41666666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0059801",
+          "basis": "민백 '패수'는 청천강설의 근거로 \"명도전이나 철기 등 중국 계통 유물과 세형동검 등 조선 계통 유물의 출토지가 청천강을 경계로 뚜렷이 구분되고 있다\"는 고고학적 분포를 든다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q499266",
+          "coordLabel": "청천강",
+          "wikidataId": "Q499266",
+          "historySourceTitle": "한국민족문화대백과사전 '패수'",
+          "precision": "region",
+          "view": "청천강설(한국민족문화대백과사전)",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 39.834193,
+          "lon": 124.316082,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0059801",
+          "basis": "백과는 고조선·위만조선기 패수를 청천강이나 압록강으로 보는 견해를 나란히 소개한다. 고고학 논거는 청천강설에 붙어 있다. 이 점은 압록강 전체의 참조점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q55498",
+          "coordLabel": "압록강(하구 지점 좌표)",
+          "wikidataId": "Q55498",
+          "historySourceTitle": "한국민족문화대백과사전 '패수'",
+          "precision": "region",
+          "view": "압록강설(한국민족문화대백과사전이 병기한 견해)",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-012",
+      "label": "牟梁里",
+      "labelKo": "모량리",
+      "kind": "site",
+      "count": 8,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "경주시 공식 지명유래는 건천읍 모량리를 설명한다. 더 넓은 모량부는 위키백과에서 건천읍·현곡면·서면·산내면에 걸친 지역으로 설명한다. 부와 리를 같은 범위로 다루지 않는다. 위키백과는 모량·방내리 도시유적과 월성 해자 목간을 근거로 들지만 이 조사는 발굴 보고서까지 직접 대조하지 않았다. 좌표는 건천읍 참조점이며 마을·유적 위치가 아니다.",
+      "references": [
+        "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=300",
+        "https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%9F%89%EB%B6%80"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0030_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 孝昭王代竹㫖郎 › 익선의 어리석음으로 모량리민들이 벼슬에서 쫓겨나다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0030_0020",
+          "quote": "猶不許又以珎節舎知騎馬鞍具貽之乃許. 朝廷花主聞之, 遣使取益宣将洗浴其垢醜, 宣逃隠掠其長子而去. 時仲冬極寒之日, 浴洗扵城内池中仍合凍死. 大王聞之, 勑牟梁里人從官者並合黜遣更不接公署, 不著黒衣, 若爲僧者不合入鍾皷寺中. 勑史上偘珎子孫爲枰定户孫標異之. 時园測法師是海東髙徳, 以牟梁里人故不授僧職.",
+          "quoteStart": 116,
+          "quoteEnd": 273,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0010_0040_0040",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 興法第三 › 原宗興法 厭髑滅身 › 법흥왕과 진흥왕이 출가한 것에 대한 논",
+          "date": {
+            "label": null,
+            "raw": "0614-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0010_0040_0040",
+          "quote": "之遺風同王落彩爲尼名妙法, 亦住永興寺, 有年而終.” 國史云 “建福三十一年永興寺塑像自壞, 未幾真興王妃比丘尼卒.” 按真興乃法興之姪子, 妃思刀夫人朴氏 牟梁里 英失角干之女. 亦出家爲尼而非永興寺之創主也. 則恐真字當作法. 謂法興之妃巴刁夫人爲尼者之卒也, 乃創寺立像之主故也. 二興捨位岀家史不書非經世之訓也.",
+          "quoteStart": 53,
+          "quoteEnd": 214,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.84899,
+          "lon": 129.10257,
+          "sourceUrl": "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=300",
+          "basis": "경주시 건천읍 지명유래는 모량리가 \"신라 六部村 중 세번째 茂山大樹村에 속했으며 '점량부(漸梁部)','모량부(牟梁部)' 라 불리었고\" 일연 당시에는 장복부로도 불렸다고 설명한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q498516",
+          "coordLabel": "경주시 건천읍",
+          "wikidataId": "Q498516",
+          "historySourceTitle": "경주시 '건천읍 지명유래'",
+          "precision": "region",
+          "view": "경주시 지명유래(모량리)·위키백과(더 넓은 모량부의 범위)",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-013",
+      "label": "五䑓",
+      "labelKo": "오대(오대산)",
+      "kind": "mountain",
+      "count": 7,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "五䑓는 五臺의 이체자로, 삼국유사 안에서 서로 다른 두 산을 가리킨다. 황룡사구층탑조의 \"慈藏法師西學 乃於五䑓感文殊授法\"는 자장의 당 유학지인 산서성 오대산이고, 溟州 五臺山寶叱徒太子傳記조의 五䑓·中䑓·北䑓는 강원 오대산의 다섯 대이다. 두 곳을 후보로 분리했다. 좌표는 각 산의 참조점(강원 오대산은 비로봉 부근)이며 중대·북대 등 개별 대(臺)나 진여원·상원사 위치가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0038155",
+        "https://encykorea.aks.ac.kr/Article/E0038150"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0060_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 皇龍寺九層塔 › 자장이 태화지에서 9층탑 건립의 연유를 받다",
+          "date": {
+            "label": null,
+            "raw": "0636-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0060_0010",
+          "quote": "皇龍寺九層塔\n新羅第二十七善徳王即位五年, 貞觀十年丙申慈藏法師西學, 乃於五䑓感文殊授法.文殊又云, “汝國王是天笁刹利種王, 預受佛記故别有因縁, 不同東夷共工之族. 然以山川崎嶮故, 人性麁悖多信邪見, 而時或天神降禍. 然有多聞比丘在於國中, 是以君臣安泰萬庻和平矣.” 言已不現. 藏知是大聖變化泣血而退. 経",
+          "quoteStart": 0,
+          "quoteEnd": 160,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0060_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 皇龍寺九層塔 › 9층탑의 영험",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0060_0030",
+          "quote": "刹柱記云, “䥫盤已上髙四十二尺, 已下一百八十三尺.” 慈藏以五䑓所授舎利百粒分安於柱中并通度寺戒壇及大和寺塔, 以副池龍之請.樹塔之後天地開泰三韓爲一, 豈非塔之霊䕃乎. 後髙䴡王将謀伐羅, 乃曰 “新羅有三寳不可犯也, 何謂也.” “皇龍丈六并九層塔與真平王天賜玉帶”, 遂寢其謀. 周有九鼎楚人不敢北",
+          "quoteStart": 0,
+          "quoteEnd": 154,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0220_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 溟州 五臺山寶叱徒太子傳記 › 두 태자는 항상 염불하고 오대산 문수전에 예배하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0220_0020",
+          "quote": "兄太子見中䑓南下真如院〓下山末青蓮開, 其地結草菴而居. 弟孝明見北䑓南山末青蓮開, 亦結草菴而居. 兄弟二人禮念修行, 五䑓進敬禮拜.",
+          "quoteStart": 0,
+          "quoteEnd": 68,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.081388888889,
+          "lon": 113.56694444444,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0038155",
+          "basis": "민백 '오대산 오만 진신 설화'는 자장이 636년 당나라 산서성 오대산에서 문수보살의 진신을 만나 가사와 사리를 받았고, 문수가 신라 명주 오대산을 찾으라 지시했다고 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q120314",
+          "coordLabel": "우타이산(五臺山, 중국 산시성)",
+          "wikidataId": "Q120314",
+          "historySourceTitle": "한국민족문화대백과사전 '오대산 오만 진신 설화'",
+          "precision": "region",
+          "view": "황룡사구층탑조 '자장 서학' 문맥의 중국 오대산",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 37.798055555556,
+          "lon": 128.54305555556,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0038150",
+          "basis": "민백 '오대산'은 강원 평창군·홍천군·강릉시에 걸친 높이 1,565.4m 산으로, \"오대산의 중심에 중대를 비롯하여 북대·남대·동대·서대\"가 원을 이룬 데서 이름이 왔다고 설명한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q491028",
+          "coordLabel": "오대산(강원)",
+          "wikidataId": "Q491028",
+          "historySourceTitle": "한국민족문화대백과사전 '오대산'",
+          "precision": "region",
+          "view": "명주 오대산보질도태자전기조 문맥의 강원 오대산",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-014",
+      "label": "洛山",
+      "labelKo": "낙산",
+      "kind": "mountain",
+      "count": 7,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "낙산이대성조는 洛山이 서역 補陀洛伽山(보타락가산)에서 온 이름이며 동해 바닷가 굴이 있는 곳이라고 스스로 밝힌다. 민백 '낙산 홍련암'은 그 자리를 강원 양양군 강현면 전진리로, 위키백과 '낙산사'는 오봉산으로 적는다. 좌표는 낙산사 경내 참조점이므로 관음굴(홍련암)이나 낙산 산체 범위의 정확한 위치가 아니다. 창건 연도는 위키백과가 671년, 민백 홍련암이 672년으로 달라 place 수준 validFrom은 비워 두었다. 첫 번째 sample(흥륜사 관련)은 인용 구간에 洛山이 없어 evidence에서 제외했다. 인용한 백과의 표제 한자는 駱山 紅蓮庵으로 원문의 洛山과 다르다. 양양 낙산 일대를 설명하는 항목이며 서울 낙산과 혼동하지 않는다. 洛山의 보타락가산 유래는 위키백과 낙산사에서 확인한 설명이다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0064043",
+        "https://ko.wikipedia.org/wiki/%EB%82%99%EC%82%B0%EC%82%AC"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0150_0150",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 前後所藏舍利 › 의상전과 부석본비를 비교해서 살펴보다",
+          "date": {
+            "label": null,
+            "raw": "0650-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0150_0150",
+          "quote": "岀都前, 於大内集諸宗名徳乞佛牙舎利精勤雖切, 而不得一枚則七日限滿上天者㡬矣. 二十一年甲申修補國清寺金塔, 國主與莊穆王后幸妙覺寺, 集衆慶讃訖, 右佛牙與洛山水精念珠如意珠君臣與大衆皆瞻奉頂戴後并納金塔内. 予亦預斯㑹而親見所謂佛牙者, 長三寸許而無舎利焉. 無極記.",
+          "quoteStart": 282,
+          "quoteEnd": 419,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0190_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 洛山二大聖 觀音 正趣 調信 › 의상법사와 원효법사가 관음보살을 견신하고자 하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0190_0010",
+          "quote": "洛山二大聖觀音正趣調信\n昔義湘法師始自唐来還, 聞大悲真身住此海邊崛内, 故因名洛山, 盖西域寳陁洛伽山. 此云小白華乃白衣大士真身住䖏故借此名之. 齋戒七日浮座具晨水上, 龍天八部侍從引入崛内. 叅禮空中出水精念珠一貫給之湘領受而退. 東海龍",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 38.125,
+          "lon": 128.62861111,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0064043",
+          "basis": "민백 '낙산 홍련암'은 강원 양양군 강현면 전진리 소재로, 의상이 관음보살 진신을 친견하고 대나무가 솟은 곳에 지은 불전이라 전한다고 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q562760",
+          "coordLabel": "낙산사",
+          "wikidataId": "Q562760",
+          "historySourceTitle": "한국민족문화대백과사전 '낙산 홍련암'",
+          "precision": "approx",
+          "view": "민백·위키백과(강원 양양군 강현면 오봉산 낙산사·홍련암 일대)",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-015",
+      "label": "熊津",
+      "labelKo": "웅진",
+      "kind": "capital",
+      "count": 7,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 475,
+      "validTo": null,
+      "note": "민백 '웅진천도'가 \"웅진(熊津, 충청남도 공주)\"이라 명시하고 공주시 문화관광도 웅진성이 공산성을 배후 산성으로 두었다고 설명해, 웅진=공주라는 데는 읽은 자료 사이에 이견이 없다. 다만 이 표제의 sample은 660년 당이 설치한 熊津都督府와 665년 회맹 기사의 熊津城 문맥이어서 475~538년 백제 수도 웅진과 시기가 다르다. 또 위키백과 '웅진도독부'는 677년 축출 뒤 도독부가 고구려 건안성(요동)으로 옮겨졌다고 적으므로, 후기 熊津都督府 용례는 공주가 아닐 수 있다. 좌표는 공산성 참조점이며 웅진성 성벽·왕궁의 확정 위치는 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0071958",
+        "https://www.gongju.go.kr/tour/sub03_04_01_06.do",
+        "https://ko.wikipedia.org/wiki/%EC%9B%85%EC%A7%84%EB%8F%84%EB%8F%85%EB%B6%80"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0140",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 백제에 5도독부가 설치되고 의자왕은 당으로 끌려가 세상을 뜨다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0140",
+          "quote": "定方以王義慈及太子隆·王子泰·王子演及大臣将士八十八人, 百姓一万二千八百七人送京師. 其國本有五部三十七郡二百城七十六万户, 至是析置熊津·馬韓·東明·金漣·徳安等五都督府, 擢渠長爲都督刺史以理之. 命郎将劉仁願守都城, 又左衛郎将王文度爲熊津都督撫其餘衆. 定方以所俘見上責而宥之. 王病死贈金紫光禄大夫衛尉卿, 許舊臣赴臨. 詔葬孫皓 陳叔寳墓側並爲竪碑.",
+          "quoteStart": 0,
+          "quoteEnd": 182,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0160",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 문무왕이 웅진도독 부여융과 회맹하다",
+          "date": {
+            "label": null,
+            "raw": "0665-08-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0160",
+          "quote": "新羅別記云, “文虎王即位五年乙丑秋八月庚子王親統大兵幸熊津城㑹假王扶餘隆作壇刑白馬而盟. 先祀天神及山川之霊然後歃血爲文而盟曰, “徃者百濟先王迷於逆順不敢隣好不睦親姻, 結托句䴡交通倭國共爲殘暴, 侵削新羅破邑屠城略無寧歳. 天子憫一物之失所憐百姓之被毒頻命行人諭其和好, 負険恃逺侮慢天經. 皇",
+          "quoteStart": 0,
+          "quoteEnd": 150,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0200_0040",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 백제의 멸망",
+          "date": {
+            "label": null,
+            "raw": "0660-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0040",
+          "quote": "至唐顯慶五年, 是義慈王在位二十年, 新羅 金庾信與蘇定方討平之. 百濟國舊有五部, 分統三十七郡二百濟城七十六万户. 唐以地分置熊津·馬韓·東明·金漣·徳安等五都督府, 仍其酋長為都督府刺史. 未㡬新羅盡并其地, 置熊·全·武三州及諸郡縣.",
+          "quoteStart": 0,
+          "quoteEnd": 121,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.46194444,
+          "lon": 127.12722222,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0071958",
+          "basis": "민백 '웅진천도'는 475년 한성 함락 뒤 \"웅진(熊津, 충청남도 공주)으로 도읍지를 옮긴 사건\"이라 정의한다. 공주시 문화관광 '웅진시대의 공주'는 웅진성이 공산성을 배후 산성으로 두었다고 설명한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12584692",
+          "coordLabel": "공주 공산성",
+          "wikidataId": "Q12584692",
+          "historySourceTitle": "한국민족문화대백과사전 '웅진천도' · 공주시 '웅진시대의 공주'",
+          "precision": "site",
+          "view": "민백·공주시(웅진=충남 공주, 웅진성=공산성 일대)",
+          "validFrom": 475,
+          "validTo": null,
+          "dateBasis": "민백 '웅진천도': 475년 9월 한성 함락, 같은 해 10월 웅진 천도. 공주시 자료는 538년 사비 천도까지 64년간 공주 도읍이라 함.",
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-016",
+      "label": "蔚州",
+      "labelKo": "울주",
+      "kind": "region",
+      "count": 7,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1014,
+      "validTo": 1413,
+      "note": "蔚州는 일연 당대(고려)의 행정지명으로, 삼국유사에서는 개운포·하곡현 절포 등 신라 지명에 붙인 주석에 쓰인다. 민백 '울주군'은 신라 굴아화현→757년 하곡현→1014년 울주 개칭→1413년 울산군 개편으로 적는데, 위키백과 '울산광역시의 역사'는 1018년 방어사 설치로 적어 연도가 다르다. 제시된 sample 3건은 모두 인용 구간에 蔚州가 없어(termInBody=false) 해당 조목 본문의 주석에 있을 가능성이 크며, 이 표제의 문맥 확인은 인용문만으로는 불완전하다. 좌표는 현대 울산광역시 광역 참조점이며 고려 울주 치소의 위치가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0040496",
+        "https://encykorea.aks.ac.kr/Article/E0066972",
+        "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%EC%9D%98_%EC%97%AD%EC%82%AC"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0140_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 處容郞 望海寺 › 헌강왕, 용의 아들인 처용을 얻다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0140_0020",
+          "quote": "扵是大王逰開雲浦王将還駕. 畫歇扵汀过, 忽雲霧冥曀迷失道路. 恠問左右, 日官奏云, “此東海龍所變也, 冝行勝事以解之.” 扵是勑有司為龍刱佛寺近境. 施令已出雲開霧散. 因名開雲浦. 東海龍喜乃率七子現扵駕前, 讃徳獻舞奏樂. 其一子隨駕",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0220_0050",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 後百濟·甄萱 › 견훤이 신라를 침범하고 경순왕을 세우다",
+          "date": {
+            "label": null,
+            "raw": "0927-09-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0220_0050",
+          "quote": "四年真虎暴卒, 疑故殺即囚王信, 使人請還前年所送驄馬, 太祖笑還之. 天成二年丁亥九月, 萱攻取近品城燒之, 新羅王求救於太祖. 太祖将出帥, 萱襲取髙鬱府, 進軍族始林卒入新羅王都. 新羅王與夫人出遊鮑石亭時, 由是甚敗. 萱強引夫人乱之,",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0050_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 皇龍寺丈六 › 아육왕의 황금황철로 장육상을 조성하다",
+          "date": {
+            "label": null,
+            "raw": "0574-03-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0050_0020",
+          "quote": "未㡬海南有一巨舫來泊於河曲縣之絲浦. 撿看有牒丈云, “西笁 阿育王聚黄䥫五萬七千斤黃金三萬分, 將鑄釋迦三尊像未就, 載舡泛海而祝曰, ‘願到有縁國圡成丈六尊容.’ 并載模様一佛二菩薩像.” 縣吏具狀上聞, 勑使卜其縣之城東爽塏之地, 創東笁",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.55,
+          "lon": 129.31666666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0040496",
+          "basis": "민백 '울주군' 연혁은 신라가 굴아화현을 두었고 757년 하곡현으로 고쳤으며 1014년 \"울주로 개칭하고 방어사를 두었\"다가 1413년 울산군으로 개편되었다고 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q41278",
+          "coordLabel": "울산광역시",
+          "wikidataId": "Q41278",
+          "historySourceTitle": "한국민족문화대백과사전 '울주군(울산광역시)'",
+          "precision": "region",
+          "view": "민백 울주군 연혁(고려 울주 = 오늘날 울산 일대)",
+          "validFrom": 1014,
+          "validTo": 1413,
+          "dateBasis": "민백 '울주군': 1014년(현종) 울주 개칭, 1413년 울산군 개편. 위키백과 '울산광역시의 역사'는 1018년 방어사 설치로 적어 시작 연도에 차이가 있음.",
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-017",
+      "label": "太伯山",
+      "labelKo": "태백산",
+      "kind": "mountain",
+      "count": 6,
+      "indexType": "지명",
+      "status": "disputed",
+      "confidence": "unverified",
+      "validFrom": null,
+      "validTo": null,
+      "note": "자장정률·의상전교 원문에 해당하는 태백산 권역과 부석사 지점을 각각 참고로 표시한다. 부석사 창건 676년을 산 지명의 시작으로 쓰지 않는다. 백과 부석사 항목은 소재지를 영주 봉황산으로 적고 太伯山과의 연결을 설명하지 않으므로 절 좌표는 문맥의 근사 참조점이다. 신화 문맥이 없는 이 표제에서 백두산 후보를 빼고, 고조선조 인용이 있는 太伯 표제에 경쟁 견해로 옮겼다. 말갈·발해 표본은 본문에서 표기를 확인하지 못해 인용에서 제외했다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0050538",
+        "https://encykorea.aks.ac.kr/Article/E0024295",
+        "https://encykorea.aks.ac.kr/Article/E0058920",
+        "https://encykorea.aks.ac.kr/Article/E0013553"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0060_0060",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 慈藏定律 › 만년에 문수보살에게 버림받고 죽다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0060_0060",
+          "quote": "創水多寺居焉. 復夢異僧状北臺所見来告曰, “明日見汝於大松汀.” 驚悸而起早行至松汀果感文殊来格, 諮詢法要乃曰, “重期於太伯 葛蟠地”, 遂隠不現. 藏徃太伯山尋之見巨蟒蟠結樹下謂侍者曰, “此所謂葛蟠地.” 乃創石南院以候聖䧏. 粤有老居士方袍襤縷荷葛簣盛死狗児来謂侍者曰, “欲見慈藏来爾.” 門者曰, “自奉山箒未見忤犯吾師諱者, 汝何人斯爾狂言乎.” 居士曰, “但告汝師.” 遂入告藏不之覺",
+          "quoteStart": 10,
+          "quoteEnd": 213,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0080_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 義湘傳敎  › 의상이 귀국하여 국난을 면하게 하다",
+          "date": {
+            "label": null,
+            "raw": "0670-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0080_0020",
+          "quote": "欽純一作仁問, 良啚䓁徃囚於唐, 髙宗将大舉東征. 欽純䓁宻遣湘誘而先之. 以咸享元年庚午還國聞事於朝. 命神印大徳明朗假設宻壇法禳之, 國乃免. 儀鳳元年湘歸太伯山, 奉朝旨創浮石寺敷敞大乗霊感頗著.",
+          "quoteStart": 7,
+          "quoteEnd": 108,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.095730555556,
+          "lon": 128.91523888889,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0050538",
+          "basis": "민백 '정암사'는 절이 강원도 정선군 고한읍 태백산에 있고, 문수가 자장에게 \"태백산 갈반지에서 만나자\"고 한 뒤 자장이 그곳에 창건해 석남원이라 했다고 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q625254",
+          "coordLabel": "태백산",
+          "wikidataId": "Q625254",
+          "historySourceTitle": "한국민족문화대백과사전 '정암사'",
+          "precision": "region",
+          "view": "자장정률조 갈반지·석남원 문맥의 태백산 권역(강원·경북 경계)",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 36.998853,
+          "lon": 128.687497,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0024295",
+          "basis": "민백 '봉황산 부석사'는 경북 영주시 부석면 봉황산에 있는 절로 676년(문무왕 16) 의상이 왕명으로 창건했다고 서술한다. 다만 이 항목은 '태백산'을 언급하지 않아 삼국유사의 산 이름과 다르다. 이 좌표는 의상전교조 문맥의 절 지점을 참고로 표시하며 산 자체의 위치를 확정하지 않는다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q3540839",
+          "coordLabel": "부석사(영주)",
+          "wikidataId": "Q3540839",
+          "historySourceTitle": "한국민족문화대백과사전 '봉황산 부석사'",
+          "precision": "approx",
+          "view": "의상전교조 '歸太伯山 創浮石寺' 문맥의 영주 부석사",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": "676년은 부석사 창건 연도이며 산 지명의 시작이 아니므로 기간에 쓰지 않는다.",
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-018",
+      "label": "尚州",
+      "labelKo": "상주",
+      "kind": "region",
+      "count": 6,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 757,
+      "validTo": null,
+      "note": "민백 '사벌주'는 757년 경덕왕 때 사벌주를 상주(尙州)로 고쳤고 \"주치(州治)는 현재의 상주이다\"라고 적어, 尚州=오늘날 경북 상주 지역이라는 데는 읽은 자료에 이견이 없다. 다만 sample의 용례는 시기가 다르다. 견훤 조의 \"甄萱 尚州 加恩縣人\"은 주(州) 단위 광역 지명이고(가은현의 현재 위치는 이번 조사에서 별도 확인하지 않음), \"今尚州界有唐橋\"는 일연 당대 고려 상주의 경계를 가리킨다. 좌표는 현대 상주시 중심 참조점이며 신라 사벌주 주치성이나 당교(唐橋)의 위치가 아니다. 세 번째 sample(태조 답서)은 인용 구간에 尚州가 없어 evidence에서 제외했다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0025639"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0190",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 신라 김유신이 소정방과 당군을 죽이고 구덩이에 묻었다고 하지만 믿기 어렵다",
+          "date": {
+            "label": null,
+            "raw": "0662-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0190",
+          "quote": "又新羅古傳云 “定方旣討䴡濟二國又謀伐新羅而留連. 於是庾信知其謀饗唐兵鴆之皆死坑之.” 今尚州界有唐橋, 是其坑地.",
+          "quoteStart": 0,
+          "quoteEnd": 59,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0220_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 後百濟·甄萱 › 견훤의 출생과 계보",
+          "date": {
+            "label": null,
+            "raw": "0867-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0220_0010",
+          "quote": "後百濟 甄萱\n三國史本傳云, “甄萱 尚州 加恩縣人也, 咸通八年丁亥生. 本姓李, 後以甄為氏. 父阿慈个以農自活, 光啓中㨿沙弗城自稱将軍. 有四子皆知名扵世. 萱號傑出多智略.” 李碑家記云, “真興大王妃思刀謚曰白𪀚夫人. 第三子仇輪公之子, 波珎干善品之子角干酌珎妻王咬巴",
+          "quoteStart": 0,
+          "quoteEnd": 141,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.415277777778,
+          "lon": 128.16055555556,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0025639",
+          "basis": "민백 '사벌주'는 757년 구주의 이름을 모두 바꿀 때 사벌주가 상주(尙州)로 개칭되었고 \"주치(州治)는 현재의 상주이다\"라고 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42163",
+          "coordLabel": "상주시",
+          "wikidataId": "Q42163",
+          "historySourceTitle": "한국민족문화대백과사전 '사벌주'",
+          "precision": "region",
+          "view": "민백 사벌주(상주 주치 = 현재의 경북 상주)",
+          "validFrom": 757,
+          "validTo": null,
+          "dateBasis": "민백 '사벌주': 757년(경덕왕 16) 사벌주를 상주로 개칭.",
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-019",
+      "label": "樂浪郡",
+      "labelKo": "낙랑군",
+      "kind": "region",
+      "count": 6,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": -108,
+      "validTo": 313,
+      "note": "삼국유사 낙랑국조 자체가 신당서 주를 인용해 \"平壌城古漢之樂浪郡也\"라 적는다. 민백 '한사군'·'낙랑고분'은 평양 대동강 유역(토성리 일대)을 낙랑군 중심지로 보고 고고학적 분포를 근거로 든다. 위키백과 '낙랑군'은 요서·랴오닝설을 북한 학계와 일부 재야의 소수설로 소개하므로 이견이 전혀 없다고는 할 수 없다. 위키데이터에 '낙랑토성' 항목이 없어 좌표는 평양 락랑구역의 현대 행정구역 참조점을 썼고, 낙랑토성 발굴 지점 좌표가 아니다. 위만조선조 sample은 인용 구간에 樂浪郡이 없어 evidence에서 제외했다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0011573",
+        "https://encykorea.aks.ac.kr/Article/E0061664",
+        "https://ko.wikipedia.org/wiki/%EB%82%99%EB%9E%91%EA%B5%B0"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0070_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 樂浪國 › 전한 때에 처음으로 낙랑군을 설치하다",
+          "date": {
+            "label": null,
+            "raw": "0028-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0070_0010",
+          "quote": "樂浪國\n前漢時始置樂浪郡, 應邵曰 ‘故朝鮮國也’. 新唐書注云 “平壌城古漢之樂浪郡也”. 國史云 “赫居世三十年樂浪人来投”, 又第三弩禮王四年 髙麗第三無恤王伐樂浪滅之, 其國人與帶方投于羅. 又無恤王二十七年光虎帝遣使伐樂浪取其地爲郡縣, 薩水已南屬漢. ",
+          "quoteStart": 0,
+          "quoteEnd": 132,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 38.96,
+          "lon": 125.69,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0011573",
+          "basis": "민백 '낙랑고분'은 \"평양 근교 토성리에는 남북 10여 리, 동서 수십 리에 이르는 넓은 지역에 1,300여 개의 낙랑고분이 산재해 있고\"라며 대동강 유역 평양을 낙랑군 중심지로 본다. 민백 '한사군'도 낙랑계 고분이 평양 근처에 집중된다는 점을 근거로 든다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q195896",
+          "coordLabel": "평양 락랑구역",
+          "wikidataId": "Q195896",
+          "historySourceTitle": "한국민족문화대백과사전 '낙랑고분' · '한사군'",
+          "precision": "region",
+          "view": "평양 대동강 유역설(민백 낙랑고분·한사군; 위키백과는 이를 통설로 소개)",
+          "validFrom": -108,
+          "validTo": 313,
+          "dateBasis": "민백 '한사군': 기원전 108년 한사군 설치, 313년 고구려 미천왕의 공격으로 낙랑군 소멸.",
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-020",
+      "label": "漢山",
+      "labelKo": "한산",
+      "kind": "region",
+      "count": 6,
+      "indexType": "지명",
+      "status": "disputed",
+      "confidence": "unverified",
+      "validFrom": null,
+      "validTo": null,
+      "note": "이 표제의 sample에서 漢山은 산 이름이 아니라 성·주 이름으로 쓰인다. ① 661년 고구려·말갈이 포위한 漢山城(위키백과 '북한산성 전투'는 삼국유사가 이 성을 한산성으로 적는다고 하고, 그 성을 서울 광진구 아차산성으로 비정한다) ② 장의사를 세운 漢山州(신라 9주)이다. 민백 '한산주'는 \"주치(州治)는 현재의 광주(廣州)이다\"라 하고, 민백 '하남 이성산성'은 이성산성을 신주·한산주의 치소성으로 본다. 두 비정은 서로 다른 지점을 가리키므로 후보를 분리했다. 백제 도읍과 관련된 漢山(남한산설·북한산설)은 이번 sample 문맥에 나타나지 않아 기존 리드를 그대로 재사용하지 않고 후보에서 뺐다. 王曆 sample은 인용 구간에 漢山이 없어 evidence에서 제외했다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0061691",
+        "https://encykorea.aks.ac.kr/Article/E0044732",
+        "https://encykorea.aks.ac.kr/Article/E0034421",
+        "https://ko.wikipedia.org/wiki/%EB%B6%81%ED%95%9C%EC%82%B0%EC%84%B1_%EC%A0%84%ED%88%AC"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0200",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 고구려의 침략으로 한산성이 위태로울 때 김유신이 신술을 써서 고구려군을 물리치다",
+          "date": {
+            "label": null,
+            "raw": "0661-05-11L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0200",
+          "quote": "王師定百濟既還之後, 羅王命諸将追捕百濟殘賤屯次于漢山城, 髙䴡·靺鞨二國兵來圍之相擊. 未解自五月十一日至六月二十二日我兵危甚. 王聞之議群臣曰 “計将何岀” 猶豫未决. 庾信馳奏曰 “事急矣, 人力不可及唯神術可救.” 乃於星浮山設壇修神術, 忽有光耀如大瓮從壇上而岀乃星飛南北去. 漢山城",
+          "quoteStart": 0,
+          "quoteEnd": 147,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0370_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 長春郞 罷郞 › 국가를 위해 황산에서 전사한 장춘랑과 파랑을 위해 왕이 사찰을 세워 명복을 빌다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0370_0010",
+          "quote": "昔者爲國亡身至於白骨, 庻欲完護邦國故随從軍行無怠而已. 然迫於唐帥定方之威逐於人後爾. 願王加我以小勢.” 大王驚恠之爲二魂說經一日於牟山亭, 又爲創壮義寺於漢山州以資冥援.",
+          "quoteStart": 45,
+          "quoteEnd": 133,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.524722,
+          "lon": 127.183889,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0044732",
+          "basis": "민백 '하남 이성산성'은 경기 하남시 춘궁동 소재로, 신라가 한강 유역을 점령한 뒤 신주의 치소성으로 세웠고 이후 한산주(漢山州)의 치소성으로 활용되었다고 서술한다. '남한성(南漢城)' 명문 목간이 출토되었다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q16094945",
+          "coordLabel": "하남 이성산성",
+          "wikidataId": "Q16094945",
+          "historySourceTitle": "한국민족문화대백과사전 '하남 이성산성' · '한산주'",
+          "precision": "site",
+          "view": "한산주 치소설(민백 하남 이성산성; 민백 한산주는 주치를 현재의 광주(廣州)로 적음)",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 37.556177777778,
+          "lon": 127.10470555556,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0034421",
+          "basis": "민백 '아차산성'은 서울 광진구 광장동 소재로, 성내에서 '북한산성(北漢山城)' 명문 기와가 출토되어 신라 북한산주의 치소로 밝혀졌다고 한다. 위키백과 '북한산성 전투'는 삼국유사가 661년의 이 성을 漢山城으로 적는다며 아차산성으로 비정한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q4673559",
+          "coordLabel": "아차산성",
+          "wikidataId": "Q4673559",
+          "historySourceTitle": "한국민족문화대백과사전 '아차산성' · 위키백과 '북한산성 전투'",
+          "precision": "site",
+          "view": "661년 한산성=북한산성=아차산성설(위키백과 북한산성 전투). 민백 아차산성 항목 자체는 661년 포위 기사를 언급하지 않음",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-021",
+      "label": "金剛山",
+      "labelKo": "금강산(경주)",
+      "kind": "mountain",
+      "count": 6,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "강원도·북한의 금강산(Q495501)과 동명이지. 이 사료의 두 용례(진한 6촌장 호진의 강림지, 진덕왕대 사령지의 '北金剛山')는 모두 신라 왕경의 북악, 즉 경주 시내 북쪽 산이다. 국가유산청은 이 산을 사적 '경주 금강산 표암봉 일원'으로 지정하며 소재지를 경상북도 경주시 동천동 산 7-6 일원으로 밝혔다. Wikidata에는 경주 금강산(오늘날 흔히 소금강산으로 불린다는 서술은 이번 조사에서 기관 출처로 확인하지 못함) 항목이 없고 백률사(Q4841261)·굴불사지 석조사면불상(Q16092388)에도 P625가 없어 산 자체의 좌표는 읽지 못했다. 그래서 후보 좌표는 산 정상이 아니라 사적 소재지가 속한 행정동 대표점이며 광역 참조점으로만 써야 한다. 세 번째 표본(원종흥법 염촉멸신)은 인용문에 표기가 없어 evidence에서 제외했다.",
+      "references": [
+        "https://heritage.go.kr/heri/cul/culGuidePostDetail.do?ccbaCpno=1333705640000&ccgbGbtype=UNI&ccgbGbtypeNo=1&pageNo=1_5_0_0",
+        "https://www.cha.go.kr/newsBbz/selectNewsBbzView.do?newsItemId=155703425&sectionId=b_sec_1&mn=NS_01_02_01",
+        "https://encykorea.aks.ac.kr/Article/E0022101",
+        "https://encykorea.aks.ac.kr/Article/E0032848",
+        "https://encykorea.aks.ac.kr/Article/E0025819"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0190_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 新羅 始祖 赫居世王 › 진한 땅에는 옛날 여섯 마을이 있었다",
+          "date": {
+            "label": null,
+            "raw": "0032-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0190_0010",
+          "quote": " 殆明矣. 五曰金山加里村, 長曰祗沱初降于明活山. 是爲漢歧部又作韓歧部裴氏祖. 今云加徳部上·下西知·乃兒等東村屬焉. 六曰明活山 髙耶村, 長曰虎珎初降于金剛山是爲習比部薛氏祖. 今臨川部, 勿伊村·仍仇旀村·闕谷等東北村屬焉.",
+          "quoteStart": 246,
+          "quoteEnd": 363,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0340_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 眞德王 › 신라의 사령지",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0340_0030",
+          "quote": "新羅有四霊地, 将議大事則大臣必㑹其地謀之則其事必成. 一東曰 青松山, 二曰南亐知山, 三曰西皮田, 四曰北金剛山, 是王代始行正旦禮, 始行侍郎号.",
+          "quoteStart": 0,
+          "quoteEnd": 76,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.85059,
+          "lon": 129.23123,
+          "sourceUrl": "https://heritage.go.kr/heri/cul/culGuidePostDetail.do?ccbaCpno=1333705640000&ccgbGbtype=UNI&ccgbGbtypeNo=1&pageNo=1_5_0_0",
+          "basis": "국가유산청 안내판은 사적 '경주 금강산 표암봉 일원'의 소재지를 \"경상북도 경주시 동천동 산 7-6 일원\"으로 적고, 경주 금강산을 사령지·왕경 오악의 하나로 설명한다. 좌표는 산 정상이 아니라 그 소재 행정동의 대표점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q485423",
+          "coordLabel": "동천동(경주시) 행정동 대표점",
+          "wikidataId": "Q485423",
+          "precision": "region",
+          "view": "국가유산청(사적 지정·안내판), 한국민족문화대백과사전(백률사·신라 오악)",
+          "historySourceTitle": "국가유산청 국가유산 안내판 '경주 금강산 표암봉 일원'",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-022",
+      "label": "俗離山",
+      "labelKo": "속리산",
+      "kind": "mountain",
+      "count": 5,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "진표·영심·심지 관련 기사에 나오는 산으로, 법주사가 있는 오늘날의 속리산과 같은 대상으로 본다. 민백은 충청북도 보은군·괴산군과 경상북도 상주시에 걸친 산이라 하고 신라 때 '속리악'이라 불렀다고 적는다. Wikidata P625는 산 전체의 대표점이며 좌표 정밀도 값 자체가 약 0.017°(≒1.8km)로 거칠어 정상 위치로 쓸 수 없다. 표본에 보이는 금산(금산사)·발연수 등 다른 지명은 이 표제의 범위가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0030401"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0110_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 關東楓岳鉢淵藪石記 › 발연수를 창건하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0110_0030",
+          "quote": "師出金山向俗離山, 路逢駕牛乗車者. 其牛䓁向師前跪膝而泣. 乗車人下問, “何故此牛䓁見和尚泣耶. 和尚従何而来.” 師曰, “我是金山藪 真表僧, 予曽入邉山不思議房於弥勒·地藏两聖前親受戒法真栍, 欲覔創寺鎮長修道之䖏故来爾. 此牛䓁外愚内明, 知我",
+          "quoteStart": 0,
+          "quoteEnd": 128,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0110_0040",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 關東楓岳鉢淵藪石記 › 제자 영심에게 간자를 전하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0110_0040",
+          "quote": "師出鉢淵復到不思議房, 然後徃詣家邑謁父, 或到真門大徳房居住. 時俗離山大徳永深與大徳融宗·佛陁等同詣律師所伸請曰. “我等不逺千里來求戒法. 願授法門.” 師默然不荅. 三人者乗桃樹上倒墮於地勇猛懴悔. 師乃傳教灌頂, 遂與袈裟及鉢·供飬次第秘法一卷·日察善惡業報経二卷·一百八十九栍. 復與弥勒真栍九者八者,",
+          "quoteStart": 0,
+          "quoteEnd": 157,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0130_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 心地繼祖 › 영심에게서 진표의 간자를 받다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0130_0010",
+          "quote": "心地継祖\n釋心地 辰韓第 四十一主憲徳大王金氏之子也. 生而孝悌天性冲睿. 志學之年落采従師拳懃于道. 寓止中岳, 適聞俗離山 深公傳表律師佛骨簡子設果訂法㑹决意披尋, 旣至後期不許叅例. 乃席地扣庭隨衆禮懴. 経七日天大雨雪, 所立地方十尺許雪飄不下. 衆見其神異許引入堂. 地撝謙稱恙退處房中向堂潜禮, 肘顙俱血類表公之仙溪山也, 地藏菩薩日来問慰. 洎席罷還山",
+          "quoteStart": 0,
+          "quoteEnd": 183,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.533333333333,
+          "lon": 127.9,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0030401",
+          "basis": "민백 '속리산': \"충청북도 보은군, 괴산군과 경상북도 상주시에 걸쳐 있는 산\", 최고봉 천왕봉 1,058m, 신라 때 속리악이라 불렀고 진흥왕 때 의신조사가 법주사를 창건했다고 적는다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q482720",
+          "coordLabel": "속리산(Songnisan) 대표점",
+          "wikidataId": "Q482720",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전",
+          "historySourceTitle": "한국민족문화대백과사전 '속리산(俗離山)'",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-023",
+      "label": "太伯",
+      "labelKo": "태백",
+      "kind": "mountain",
+      "count": 5,
+      "indexType": "지명",
+      "status": "disputed",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "고조선조 신화, 자장정률의 태백산 권역, 의상전교의 문학적 대구는 서로 다른 문맥이다. 자장 문맥에는 정암사가 있는 태백산 산체의 참조점을 둔다. 신화 문맥에는 백과가 소개한 일연 주석의 묘향산과 백두산 해석을 나란히 표시하며 신화 속 장소를 확정하지 않는다. 終南太伯이 신라의 산인지 중국 친링의 산인지는 출처로 가리지 못해 그 문맥에 해당하는 점을 추가하지 않았다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0050538",
+        "https://ko.wikipedia.org/wiki/%ED%83%9C%EB%B0%B1%EC%82%B0_(%EA%B3%A0%EC%A1%B0%EC%84%A0)",
+        "https://encykorea.aks.ac.kr/Article/E0058920"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0020_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 古朝鮮王儉朝鮮 › 환웅이 천하에 자주 뜻을 두어 인간세상을 구하고자 하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0020_0020",
+          "quote": "古記云, “昔有桓𡆮庻子桓雄數意天下貪求人世. 父知子意下視三危太伯可以弘益人間, 乃授天符印三箇遣徃理之. 雄率徒三千降於太伯山頂神壇樹下謂之神市, 是謂桓雄天王也. 將風伯·雨師·雲師, 而主糓·主命·主病·主刑·主善惡凡主人間三百六十餘事在世理化. 時有一熊一虎同穴而居, 常祈, 于神雄願化爲人. 時",
+          "quoteStart": 0,
+          "quoteEnd": 154,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0060_0060",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 慈藏定律 › 만년에 문수보살에게 버림받고 죽다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0060_0060",
+          "quote": "暮年謝辝亰輦於江陵郡創水多寺居焉. 復夢異僧状北臺所見来告曰, “明日見汝於大松汀.” 驚悸而起早行至松汀果感文殊来格, 諮詢法要乃曰, “重期於太伯 葛蟠地”, 遂隠不現. 藏徃太伯山尋之見巨蟒蟠結樹下謂侍者曰, “此所謂葛蟠地.” 乃創石南院以候聖䧏. 粤有老居士方袍襤縷荷葛簣盛死狗児来謂侍者曰, “欲見慈藏来爾.” 門者曰, “自奉山箒未見忤犯吾師諱者, 汝何人斯爾狂言乎.” 居士",
+          "quoteStart": 0,
+          "quoteEnd": 195,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0080_0060",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 義湘傳敎  › 찬하여 말하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0080_0060",
+          "quote": "讃曰. 披榛跨海冐烟塵, 至相門開接瑞珎. 采采雜花我故國, 終南太伯一般春.",
+          "quoteStart": 0,
+          "quoteEnd": 39,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.095730555556,
+          "lon": 128.91523888889,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0050538",
+          "basis": "민백 '태백산 정암사': \"강원도 정선군 고한읍 태백산(太白山)에 있는\" 절로, 문수보살이 자장에게 태백산 갈반지에서 만나자고 했고 자장이 그곳에 석남원을 세웠다고 전한다. 자장정률조의 '太伯 葛蟠地' 문맥에 대응하는 산. 좌표는 정암사 지점이 아니라 태백산 산체의 대표점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q625254",
+          "coordLabel": "태백산(Taebaeksan, 해발 1,566.7m) 대표점",
+          "wikidataId": "Q625254",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(정암사 창건 전승)",
+          "historySourceTitle": "한국민족문화대백과사전 '태백산 정암사(太白山 淨巖寺)'",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 40.018611111111,
+          "lon": 126.33305555556,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0058920",
+          "basis": "백과는 단군 신화의 태백산을 묘향산으로 보는 일연의 주석을 소개하고 백두산 해석도 제시한다. 이 좌표는 묘향산의 지역 참조점으로 신화 속 장소를 확정하지 않는다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q492781",
+          "coordLabel": "묘향산(Mount Myohyang) 대표점",
+          "wikidataId": "Q492781",
+          "precision": "region",
+          "view": "일연 주석의 묘향산 해석(백두산설과 병기)",
+          "historySourceTitle": "한국민족문화대백과사전 「태백산」",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "unverified"
+        },
+        {
+          "lat": 41.992777777778,
+          "lon": 128.07722222222,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0058920",
+          "basis": "백과 「태백산」은 일연의 묘향산 주석을 소개한 뒤 단군 신화의 산을 백두산으로 해석한다. 신화의 현대 위치를 확정하는 대신 두 해석을 함께 표시한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q107635",
+          "coordLabel": "백두산",
+          "wikidataId": "Q107635",
+          "historySourceTitle": "한국민족문화대백과사전 「태백산」",
+          "precision": "region",
+          "view": "백과가 제시한 단군 신화의 백두산 해석(일연의 묘향산 주석과 병기)",
+          "validFrom": null,
+          "validTo": null,
+          "dateBasis": null,
+          "confidence": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-024",
+      "label": "康州",
+      "labelKo": "강주",
+      "kind": "region",
+      "count": 5,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 757,
+      "validTo": null,
+      "note": "신라 9주의 하나로 주치는 오늘날 진주. 표본은 혜공왕대(대력 초, 766년 무렵)와 후백제 견훤 관련 기사(892·927·930년 무렵)로 시기 폭이 넓지만 가리키는 주치는 같다. 디지털진주문화대전은 757년 청주(菁州)→강주 개칭은 명시하되 혜공왕·소성왕·헌덕왕대 청주/강주 사이 개명 시점은 문헌마다 다르다고 적으므로 validTo는 비워 둔다. 좌표는 현대 진주시의 광역 대표점이며 신라 주치 관아 터의 위치가 아니다.",
+      "references": [
+        "https://jinju.grandculture.net/jinju/toc/GC00400236"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0080_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 惠恭王 › 표훈의 염려대로 혜공왕 재위 초반 천재지변과 반란이 자주 일어나다",
+          "date": {
+            "label": null,
+            "raw": "0766-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0080_0010",
+          "quote": "惠恭王\n大暦之初, 康州官署大堂之東地漸䧟成池, 從十三尺横七尺. 忽有鯉魚五六相繼而漸大, 淵亦隨大. 至二年丁未, 又天狗墜扵東樓南. 頭如瓮尾三尺許色如烮火, 天地亦振. 又是年今浦縣稻田五頃中皆米顆成穗, 是年七月北宫庭中先有 二星墜地又一星墜, 三星皆没",
+          "quoteStart": 0,
+          "quoteEnd": 132,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0220_0060",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 後百濟·甄萱 › 고려 태조가 견훤에게 패하다",
+          "date": {
+            "label": null,
+            "raw": "0930-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0220_0060",
+          "quote": "太祖以精騎五千要萱於公山下大戰. 太祖之將金樂·崇謙死之諸軍敗北, 太祖僅以身免. 而不與相抵使盈其貫. 萱乗勝轉掠大木城·京山府·康州, 攻缶谷城. 又義成府之守洪述拒戰而死. 太祖聞之曰, “吾失右手矣.” 四十二年庚寅, 萱欲攻古昌郡大舉而石山營寨, 太祖隔百歩而郡北瓶山營寨. 累戰萱敗, 獲侍郎金渥. 翌日萱收卒襲破順城, 城主元逢不能禦弃城霄遁. 太祖赫怒貶爲下枝",
+          "quoteStart": 0,
+          "quoteEnd": 188,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0220_0080",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 後百濟·甄萱 › 고려 태조가 견훤에게 답서하다",
+          "date": {
+            "label": null,
+            "raw": "0927-01-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0220_0080",
+          "quote": "邊伏尸蔽野. 燕山郡畔斬吉奐於軍前, 馬利城戮隨晤於纛下. 拔任存之日刑積等數百人捐軀, 破清川縣之時直心䓁四·五軰授首. 桐藪望旗而潰散, 京山銜璧以投降. 康州則自南而來, 羅府則自西移屬. 侵攻若此收復寧遥. 必期泜水營中雪張耳千般之恨, 烏江岸上成漢王一捷之心, 竟息風波永清寰海. 天之所助命欲何歸. 况承吳 越王殿下徳洽包荒, 仁深字小, 特出綸於舟禁諭戢難於青丘. 旣奉訓謀敢不尊奉. 若足",
+          "quoteStart": 621,
+          "quoteEnd": 823,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.192777777778,
+          "lon": 128.08472222222,
+          "sourceUrl": "https://jinju.grandculture.net/jinju/toc/GC00400236",
+          "basis": "디지털진주문화대전 '강주': \"경덕왕 16년(757)에는 … 이때 청주를 강주(康州)로 개칭하였다\"고 하고, 강주를 진주 지역의 통일신라 행정 중심지로 1주 11군 27현을 관할한 지방 중심지로 설명한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42144",
+          "coordLabel": "진주시 대표점",
+          "wikidataId": "Q42144",
+          "precision": "approx",
+          "view": "디지털진주문화대전(한국학중앙연구원 향토문화전자대전)",
+          "historySourceTitle": "디지털진주문화대전 '강주(康州)'",
+          "dateBasis": "디지털진주문화대전: 757년(경덕왕 16) 청주→강주 개칭",
+          "validFrom": 757,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-025",
+      "label": "東岳",
+      "labelKo": "동악(토함산)",
+      "kind": "mountain",
+      "count": 5,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "고유명이 아니라 왕경 기준의 방위 산 이름이다. 민백 '신라 오악'은 삼국통일 이전 왕경 오악의 동악을 토함산으로 정리한다(북악은 금강산, 서악 선도산, 남악 함월산, 중악 단석산). 표본의 탈해 기사(동악에 오름, 뼈를 동악에 두라는 신탁)는 탈해가 토함산신이 되었다는 이 편의 서술과 이어진다. 통일 이후 전국 단위 오악에서는 동악이 여전히 토함산이지만 북악은 태백산으로 바뀌므로 시기별 지시 대상을 혼동하면 안 된다. 첫 번째 표본(왕력 연표)은 인용문에 표기가 없어 evidence에서 제외했다. 좌표는 산의 대표점이며 '요내정' 등 개별 유적의 위치가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0032848"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0220_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 第四 脫解王 › 탈해가 남해왕의 맏 공주와 결혼하고 영험을 발휘하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0220_0030",
+          "quote": "爲時南解王知脫解是智人以長公主妻之, 是爲阿尼夫人. 一日吐解登東岳迴程次令白衣索水飮之. 白衣汲水中路先甞而進. 其角盃貼於口不解. 因而嘖之, 白衣誓曰 “爾後若近遥不敢先甞” 然後乃解. 自此白衣讋服不敢欺罔. 今東岳中有一井, 俗云遥乃井是也.",
+          "quoteStart": 0,
+          "quoteEnd": 126,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0220_0050",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 第四 脫解王 › 탈해가 세상을 떠나 토함산신이 되다",
+          "date": {
+            "label": null,
+            "raw": "0079-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0220_0050",
+          "quote": "川丘中, 後有神詔 “慎埋葬我骨.” 其髑髏周三尺二寸, 身骨長九尺七寸. 齒凝如一骨節皆連瑣. 所謂天下無敵力士之骨. 碎爲塑像安闕内, 神又報云 “我骨置於東岳.” 故令安之.",
+          "quoteStart": 17,
+          "quoteEnd": 107,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.756666666667,
+          "lon": 129.37361111111,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0032848",
+          "basis": "민백 '신라 오악'은 삼국통일 이전 왕경 오악을 동악 토함산·서악 선도산·남악 함월산·북악 금강산·중악 단석산으로 정리하고, 토함산을 \"경북 경주시 덕황동, 불국동과 양북면에 걸쳐 있는 산. 높이 745m\"라고 적는다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q491669",
+          "coordLabel": "토함산(Tohamsan, 해발 745m) 대표점",
+          "wikidataId": "Q491669",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전",
+          "historySourceTitle": "한국민족문화대백과사전 '신라 오악(新羅 五嶽)'",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-026",
+      "label": "武珎州",
+      "labelKo": "무진주",
+      "kind": "region",
+      "count": 5,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 686,
+      "validTo": null,
+      "note": "武珍州의 이체 표기. 디지털광주문화대전은 신문왕 6년(686) 9주 편제 때 전라남도 일대를 무진주로 삼았고 치소가 \"지금의 광주광역시 일대\"였으며 757년 무주로 고쳤다고 한다. 표본 가운데 거득공 설화는 문무왕대 서술이어서 주 편제 시점과 어긋날 수 있으나, 사료 기년을 지명 존속 근거로 삼지 않았다. 892년 견훤 기사처럼 757년 개칭 뒤에도 옛 이름이 쓰이므로 validTo는 비워 둔다. 좌표는 현대 광역시 대표점으로 치소의 정확한 위치가 아니다.",
+      "references": [
+        "https://www.grandculture.net/gwangju/toc/GC60005515"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0010_0060",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 文武王法敏 › 거득공 설화",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0010_0060",
+          "quote": "臣爲宰, 則臣願潛行國内, 示民問徭役之勞逸·租賦之軽重·官吏之清濁然後就聀.” 王聽之. 公著緇衣把琵琶爲居士形出京師. 経由阿瑟羅州·牛首州·北原京, 至扵武珎州廵行里閈, 州吏安吉見是異人, 邀致其家盡情供億. 至夜安吉喚妻妾三人曰, “今兹侍宿客居士者終身偕老.” 二妻曰 “寧不並居何以於人同宿.” 其一妻曰 “公若許終身並居則承命矣,” 從之. 詰旦居士欲辭行時曰, “僕京師人也, 吾家在皇龍",
+          "quoteStart": 37,
+          "quoteEnd": 240,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0220_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 後百濟·甄萱 › 후백제를 건국하다",
+          "date": {
+            "label": null,
+            "raw": "0892-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0220_0030",
+          "quote": " 是新羅真聖王在位六年. 嬖竪在側竊弄國權綱紀紊弛, 加之以飢饉百姓流移群盗蜂起. 扵是萱竊有叛心, 嘯聚徒侣行撃京西南州縣, 所至響應旬月之間衆至五千. 遂襲武珎州自王, 猶不敢公然稱王, 自署為新羅西南都統行全州刺史兼御史中承上柱國漢南國開國公. 龍化元年己酉也. 一云景福元年壬子. 是時北原賊良吉雄強, 弓裔自投為麾下. 萱聞之遥授良吉職為裨將. 萱西廵至皃山州, 州民迎勞. 喜得人心謂左右曰. ",
+          "quoteStart": 97,
+          "quoteEnd": 300,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.166666666667,
+          "lon": 126.91666666667,
+          "sourceUrl": "https://www.grandculture.net/gwangju/toc/GC60005515",
+          "basis": "디지털광주문화대전 '통일신라시대': \"신문왕 6년 전국을 9주로 나눌 때 전라남도 일대는 무진주로 편제되었고, 치소는 지금의 광주광역시 일대였다\", 757년 무진주가 무주로 바뀌었다고 한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q41283",
+          "coordLabel": "광주광역시 대표점",
+          "wikidataId": "Q41283",
+          "precision": "region",
+          "view": "디지털광주문화대전(한국학중앙연구원 향토문화전자대전)",
+          "historySourceTitle": "디지털광주문화대전 '통일신라시대'",
+          "dateBasis": "디지털광주문화대전: 신문왕 6년(686) 9주 편제 시 무진주, 757년 무주로 개칭",
+          "validFrom": 686,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-027",
+      "label": "沙梁",
+      "labelKo": "사량(부)",
+      "kind": "region",
+      "count": 5,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": 940,
+      "note": "신라 왕경 6부의 하나인 사량부. 민백은 돌산고허촌을 고쳐 사량부라 했고 그 범위를 \"남천 이북, 서천 이동, 북천 이남 일대\"로 추측하며, 940년(고려 태조 23) 남산부로 고쳤다고 한다(삼국유사 본문의 '今曰南山部'와 일치). 다만 사량부의 실제 범위·경계는 추정이며 학설이 갈리므로 status는 majority로 두었다. 표본 중 '沙梁宅'은 금입택 이름이어서 부(部) 자체와 지시 대상이 다르고, 진한조의 '沙涿'은 최치원이 든 지명 유래(탁/량 통용)로서 관련 근거로만 넣었다. 좌표는 경주시 대표점이므로 부의 중심이나 경계로 쓰면 안 된다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0025502"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0170_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 辰韓 › 진한은 열두 개 작은 나라가 있어 각각 1만 호로 나라를 일컫다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0170_0010",
+          "quote": "辰韓\n後漢書云 “辰韓耆老自言, ‘䄅之亡人来適韓國而馬韓割東界地以與之. 相呼爲徒有似䄅語故或名之爲䄅韓.’ 有十二小國, 各萬户稱國.” 又崔致逺云 “辰韓夲燕人避之者, 故取涿水之名稱所居之邑里云沙涿·漸涿等.”",
+          "quoteStart": 0,
+          "quoteEnd": 109,
+          "termInBody": false
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0170_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 辰韓 › 신라의 전성시대에 서울 호수가 178,936호에 1,360방, 55리, 35금입택이다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0170_0020",
+          "quote": "財買井宅·北維宅·南維宅·隊宅·賔支宅·長沙宅·上櫻宅·下櫻宅·水望宅·泉宅·楊上宅·漢歧宅·鼻穴宅·板積宅·别敎宅·衙南宅·金楊宗宅·曲水宅·桞也宅·寺下宅·沙梁宅·非上宅·里南宅·思内曲宅·池宅·寺上宅·林上宅·橋南宅·巷叱宅·樓上宅·里上宅·椧南宅·井下宅.",
+          "quoteStart": 68,
+          "quoteEnd": 200,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0190_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 新羅 始祖 赫居世王 › 진한 땅에는 옛날 여섯 마을이 있었다",
+          "date": {
+            "label": null,
+            "raw": "0032-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0190_0010",
+          "quote": "新羅始祖赫居世王\n辰韓之地古有六村. 一曰閼川 楊山村, 南今曇嚴寺. 長曰謁平初降于瓢嵓峯是為及梁部李氏祖. 二曰突山高墟村, 長曰蘇伐都利初降于兄山, 是為沙梁部鄭氏祖. 今曰南山部, 仇良伐·麻等烏·道北·迴徳等南村属焉.三曰茂山大樹村, 長曰俱 禮馬, 初降于伊山是為漸梁部又牟梁部孫氏之祖. 今云長福部, 朴谷村等西村屬焉. 四曰觜山珎支村, 長曰智伯虎初降于花山是爲夲彼部崔氏祖. 今曰通仙部",
+          "quoteStart": 0,
+          "quoteEnd": 202,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.85,
+          "lon": 129.21666666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0025502",
+          "basis": "민백 '사량부': 육촌의 하나이던 돌산고허촌을 개명한 부로, 범위는 \"남천(南川) 이북, 서천(西川) 이동, 북천(北川) 이남일대를 포함했던 것으로 추측\"되며 940년(태조 23) 남산부로 고쳤다고 한다. 좌표는 그 범위를 아우르는 경주시 대표점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42097",
+          "coordLabel": "경주시 대표점",
+          "wikidataId": "Q42097",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(범위는 추정이라고 명시)",
+          "historySourceTitle": "한국민족문화대백과사전 '사량부(沙梁部)'",
+          "dateBasis": "민백: 940년(고려 태조 23) 남산부로 개칭",
+          "validFrom": null,
+          "validTo": 940,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-028",
+      "label": "浿江",
+      "labelKo": "패강",
+      "kind": "river",
+      "count": 5,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "이 후보의 근거는 661~662년 당군의 평양성 공격을 설명하는 동북아역사넷 자료다. 668년 도하 기사는 같은 출처가 직접 다루지 않아 별도 검토 대상으로 남긴다. 좌표는 Wikidata가 하구로 구분한 점으로, 평양성 도하·전투 지점이 아니다. 다른 시대의 패수·패강과 자동으로 동일시하지 않는다.",
+      "references": [
+        "https://contents.nahf.or.kr/item/level.do?levelId=gt.d_0007_0010_0020_0020"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0150",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 당 황제가 소정방을 보내 고구려 평양성을 치게 했지만 실패하다",
+          "date": {
+            "label": null,
+            "raw": "0662-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0150",
+          "quote": "七年壬戌命定方爲遼東道行軍大揔管, 俄改平壤道. 破髙䴡之衆於浿江奪馬邑山爲營, 遂圍平壤城㑹大雪解圍還. 拜涼州安集大使以定吐蕃. 乾封二年卒, 唐帝悼之贈左驍騎大将軍幽州都督謚曰荘.",
+          "quoteStart": 0,
+          "quoteEnd": 93,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0170",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 당군이 고구려를 공격하자 신라의 김유신이 군량을 전해주다",
+          "date": {
+            "label": null,
+            "raw": "0668-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0170",
+          "quote": ", 庾信先遣然起·兵川䓁二人問其㑹期, 唐帥蘇定方紙畫鸞犢二物迴之. 國人未解其意使問於元曉法師, 解之曰 “速還其兵. 謂畫犢畫鸞二切也.” 於是庾信迴軍欲渡浿江令曰, “後渡者斬之.” 軍士爭先半渡, 句麗兵來掠殺其未渡者. 翌日信返追句䴡兵捕殺數万級.”",
+          "quoteStart": 141,
+          "quoteEnd": 271,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 38.6866,
+          "lon": 125.3,
+          "sourceUrl": "https://contents.nahf.or.kr/item/level.do?levelId=gt.d_0007_0010_0020_0020",
+          "basis": "동북아역사넷은 661~662년 당군의 평양성 공격 문맥에서 패강을 대동강으로 설명한다. 668년 도하 기사까지 직접 설명한 출처는 아니며 해당 기사는 별도 검토가 필요하다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q330618",
+          "coordLabel": "대동강 하구 좌표(Wikidata P625의 river mouth 한정어)",
+          "wikidataId": "Q330618",
+          "precision": "region",
+          "view": "동북아역사재단 동북아역사넷",
+          "historySourceTitle": "동북아역사넷 '2. 당군의 고구려 공격 과정'",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-029",
+      "label": "熊川",
+      "labelKo": "웅천(웅진)",
+      "kind": "capital",
+      "count": 5,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 475,
+      "validTo": null,
+      "note": "백제 문주왕이 옮긴 도읍 熊川(=웅진)과, 527년 대통사를 세웠다는 熊川州가 같은 곳, 곧 오늘날 충청남도 공주다. 디지털공주문화대전은 웅진성이 \"충청남도 공주시 산성동에 있는 공주 공산성\"이고 475년 문주왕이 웅진으로 천도했으며 통일신라 때 웅천주가 설치되어 웅천성으로도 불렸다고 적는다. 표본의 '移都熊川' 앞뒤 연대(문주왕 즉위 원년 등)는 사료 기년이므로 도읍 존속 기간의 근거로 쓰지 않고, validFrom만 공주문화대전의 475년 서술에 따랐다(538년 사비 천도 뒤에도 熊川州로 지명이 이어져 validTo는 비움). 첫 번째 표본(왕력 연표)은 인용문에 표기가 없어 evidence에서 제외했다. 경남 창원의 熊川(웅천)과 동명이지이니 주의.",
+      "references": [
+        "https://www.grandculture.net/gongju/toc/GC01700462"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0200_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 백제, 도읍을 옮기다",
+          "date": {
+            "label": null,
+            "raw": "-0005-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0030",
+          "quote": ", 立都稱王. 十四年丙辰移都漢山歴三百八十九年, 至十三世近肖古王咸安元年, 取髙句麗 南平壤移都北漢城歴一百五年. 至二十二世文周王即位元徴三年乙卯, 移都熊川歴六十三年, 至二十六世聖王移都所夫里, 國號南扶餘, 至三十一世義慈王歴一百二十年.",
+          "quoteStart": 36,
+          "quoteEnd": 161,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0010_0040_0050",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 興法第三 › 原宗興法 厭髑滅身 › 대통사가 세워지다",
+          "date": {
+            "label": null,
+            "raw": "0527-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0010_0040_0050",
+          "quote": "又於大通元年丁未, 爲梁帝創寺於熊川州名大通寺.",
+          "quoteStart": 0,
+          "quoteEnd": 24,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.46194444,
+          "lon": 127.12722222,
+          "sourceUrl": "https://www.grandculture.net/gongju/toc/GC01700462",
+          "basis": "디지털공주문화대전 '웅진성': 웅진성은 \"충청남도 공주시 산성동에 있는 공주 공산성\"이며 \"475년(문주왕 1) … 백제 문주왕은 웅진으로 천도하였다\", 통일신라 때 웅천주가 설치되며 웅천성으로도 불렸다고 한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12584692",
+          "coordLabel": "공산성(공주) 좌표",
+          "wikidataId": "Q12584692",
+          "precision": "site",
+          "view": "디지털공주문화대전(한국학중앙연구원 향토문화전자대전)",
+          "historySourceTitle": "디지털공주문화대전 '웅진성(熊津城)'",
+          "dateBasis": "디지털공주문화대전: 475년(문주왕 1) 웅진 천도, 538년 사비 천도까지 63년간 도읍",
+          "validFrom": 475,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-030",
+      "label": "王倹",
+      "labelKo": "왕검(왕검성)",
+      "kind": "capital",
+      "count": 5,
+      "indexType": "지명",
+      "status": "disputed",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "지명 색인 王倹은 위만조선조 원주에 나타나며 같은 청크 본문은 王之都王儉이라 적는다. 본문을 다시 읽어 이 대목을 포함하도록 인용 범위를 넓혔고 인명 壇君王倹 표본 두 건은 지명 근거에서 제외했다. 검색 별칭 王儉은 이 원문 표기를 찾기 위한 것이다. 왕검성은 평양설·요동설·이동설이 병존한다. 현대 타이안현으로 특정할 학술 근거를 확인하지 못해 그 점은 제외하고, 평양설만 현대 도시 참조점으로 표시한다. 나머지 견해를 부정하거나 위치를 확정하는 뜻은 아니다.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/%EC%99%95%EA%B2%80%EC%84%B1",
+        "https://encykorea.aks.ac.kr/Article/E0039028"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0030_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 衛滿朝鮮 › 연나라 사람 위만이 망명하여 왕검에 도읍하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0030_0010",
+          "quote": "出塞渡浿水居秦故空地上下障. 稍伇屬真畨·朝鮮蠻夷及故燕·齊亡命者, 王之都王儉. 以兵威侵降其旁小邑, 真畨·臨屯皆来服屬方數千里.",
+          "quoteStart": 92,
+          "quoteEnd": 159,
+          "termInBody": false
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.016666666667,
+          "lon": 125.7475,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0039028",
+          "basis": "백과 「왕검성」은 고조선 도성의 위치가 확정되지 않았다고 하며 평양설·요동 험독현설·이동설을 소개한다. 이 점은 평양설의 현대 도시 참조점이며 성터 위치가 아니다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+          "coordLabel": "평양시 대표점",
+          "wikidataId": "Q18808",
+          "precision": "region",
+          "view": "백과에 소개된 평양설(요동설·이동설과 구별)",
+          "historySourceTitle": "한국민족문화대백과사전 「왕검성」",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "unverified"
+        }
+      ],
+      "aliases": [
+        "王儉"
+      ]
+    },
+    {
+      "id": "place-samgukyusa-031",
+      "label": "霊鷲山",
+      "labelKo": "영취산(영축산)",
+      "kind": "mountain",
+      "count": 5,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "처용랑 망해사 조의 영취산은 울산광역시 울주군 청량읍(구 청량면)의 영축산으로 보는 견해. 민백 「영축산 망해사」는 망해사가 울주 청량면 영축산에 있는 헌강왕대 창건 사찰이라 하고, 삼국유사 본문도 영취산 동쪽 기슭에 절을 두었다고 함. 원종흥법 조의 '낭지법사가 영취산에 머물렀다'는 삽량주 아곡현(울주) 영취산을 가리키나, 민백 「낭지」 항목은 현대 지명을 명시하지 않아 같은 산이라는 확정 근거는 못 읽음. 양산시·울주군 경계의 영축산(1,082m, 통도사)과는 동명이산(위키백과 확인). 이 작은 산 자체의 위키데이터 항목을 찾지 못해 산 동쪽 기슭 망해사지 승탑 좌표를 참조점으로 사용했고 산 정상이나 낭지 암자(혁목암) 위치가 아님. 선도성모수희불사 sample은 인용문에 이 표기가 없어 evidence에서 제외했다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0017906",
+        "https://encykorea.aks.ac.kr/Article/E0012383",
+        "https://ko.wikipedia.org/wiki/%EC%98%81%EC%B6%95%EC%82%B0",
+        "https://www.wikidata.org/wiki/Q12594899"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0140_0040",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 處容郞 望海寺 › 망해사를 짓다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0140_0040",
+          "quote": "王旣還, 乃卜霊鷲山東麓勝地, 置寺曰望海寺. 亦名新房寺, 乃為龍而置也.",
+          "quoteStart": 0,
+          "quoteEnd": 38,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0010_0040_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 興法第三 › 原宗興法 厭髑滅身 › 법흥왕이 불도를 도울 사람을 구하자, 염촉이 내양하다",
+          "date": {
+            "label": null,
+            "raw": "0527-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0010_0040_0010",
+          "quote": "原宗興法 猒髑滅身\n新羅夲記, “法興大王即位十四年, 小臣異次頓爲法滅身.” 即蕭梁普通八年丁未, 西笁 逹摩來金陵之歳也. 是年朗智法師亦始住霊鷲山開法, 則大敎興衰必逺近相感一時於此可信. 元和中南澗寺沙門一念撰髑香墳禮佛結社文, 載此事甚詳. 其略曰. 昔在法興大王垂拱紫極之殿俯察扶桑之域以謂, “昔漢 明感夢佛法東流. 寡人自登位願爲蒼生欲造修福滅罪之處.” 於是朝臣未測深意, ",
+          "quoteStart": 0,
+          "quoteEnd": 196,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.5325,
+          "lon": 129.2386111111111,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0017906",
+          "basis": "민백 「영축산 망해사」: 울산 울주군 청량면 영축산(靈鷲山)에 있는 헌강왕대 창건 사찰이며 신방사로도 불림. 삼국유사 처용랑 망해사 조의 창건 설화를 이 절의 연기로 서술. 좌표는 그 절터(망해사지)의 승탑 위치로, 산 동쪽 기슭을 가리키는 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12594899",
+          "coordLabel": "울주 망해사지 승탑",
+          "wikidataId": "Q12594899",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전 「영축산 망해사」",
+          "historySourceTitle": "한국민족문화대백과사전 「영축산 망해사」(E0017906)",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-032",
+      "label": "公山",
+      "labelKo": "공산(팔공산)",
+      "kind": "mountain",
+      "count": 4,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "민백 「팔공산」은 이 산의 옛 이름이 공산(公山)·부악·중악이고 조선시대부터 팔공산으로 불렸다고 하며, 대구 동구·군위군과 영천·칠곡·경산에 걸친 높이 1,192m 산지로 설명한다. 민백 「공산전투」는 927년 전투 장소를 '지금의 대구광역시 동구 팔공산 일대'로, 공산 동수(桐藪)를 동화사로 본다. 심지계조 조 sample은 인용문에 公山이 아니라 中岳으로 나오는데, 민백 팔공산이 중악을 이 산으로 보므로 evidence에 넣었다(표기 일치가 아님). 천룡사 조의 公山地藏寺는 절터 위치를 확인하지 못했다. 좌표는 여러 시·군에 걸친 산지의 정상 참조점이며 전투 지점이나 사찰 위치를 특정하지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0059697",
+        "https://encykorea.aks.ac.kr/Article/E0004338",
+        "https://www.wikidata.org/wiki/Q624313",
+        "https://www.wikidata.org/wiki/Q623815"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0220_0060",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 後百濟·甄萱 › 고려 태조가 견훤에게 패하다",
+          "date": {
+            "label": null,
+            "raw": "0930-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0220_0060",
+          "quote": "太祖以精騎五千要萱於公山下大戰. 太祖之將金樂·崇謙死之諸軍敗北, 太祖僅以身免. 而不與相抵使盈其貫. 萱乗勝轉掠大木城·京山府·康州, 攻缶谷城. 又義成府之守洪述拒戰而死. 太祖聞之曰, “吾失右手矣.” 四十二年庚寅, 萱欲攻古昌郡大舉而石山營寨, 太祖隔",
+          "quoteStart": 0,
+          "quoteEnd": 132,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0250_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 天龍寺 › 천룡사와 관련한 기록이나 전해지는 이야기들",
+          "date": {
+            "label": null,
+            "raw": "1040-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0250_0010",
+          "quote": "廊閣房舎廚庫已來興構畢, 具石造泥塑佛聖數軀, 開置釋迦万日道塲. 旣爲國修營, 官家差定主人亦可, 然當遆換交代之時道塲僧衆不得安心. 側觀入田稠足寺院, 如公山地藏寺入田二百結, 毗瑟山道仙寺入田二十結, 西京之四面山寺各田二十結例. 皆勿論有職·無職湏擇戒備才髙者, 社中衆望連次住持焚修以爲恒䂓. 弟子聞風而恱, 我此天龍寺亦於社衆之中擇選才徳雙髙大徳兼爲棟梁, 差主人鎮長焚修. 具録文字付在剛",
+          "quoteStart": 343,
+          "quoteEnd": 545,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0130_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 心地繼祖 › 영심에게서 진표의 간자를 받다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0130_0010",
+          "quote": "心地継祖\n釋心地 辰韓第 四十一主憲徳大王金氏之子也. 生而孝悌天性冲睿. 志學之年落采従師拳懃于道. 寓止中岳, 適聞俗離山 深公傳表律師佛骨簡子設果訂法㑹决意披尋, 旣至後期不許叅例. 乃席地扣庭隨衆禮懴. 経七日天大雨雪, 所立地方十尺許",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.0151,
+          "lon": 128.69977,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0059697",
+          "basis": "민백 「팔공산」: 높이 1,192m, 대구 동구·군위군과 영천·칠곡·경산에 걸친 산으로 옛 이름이 공산·부악·중악이며 신라 오악 중 중악.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q624313",
+          "coordLabel": "팔공산",
+          "wikidataId": "Q624313",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 「팔공산」",
+          "historySourceTitle": "한국민족문화대백과사전 「팔공산」(E0059697)",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 35.9925,
+          "lon": 128.70444444,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0004338",
+          "basis": "민백 「공산전투」: 927년 대구 동구 팔공산 일대의 전투이고, 태조가 대기한 공산 동수(桐藪)를 동화사로 봄. 좌표는 동화사 위치로 '공산 아래(公山下)' 전투 권역을 가리키는 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q623815",
+          "coordLabel": "동화사",
+          "wikidataId": "Q623815",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전 「공산전투」",
+          "historySourceTitle": "한국민족문화대백과사전 「공산전투」(E0004338)",
+          "dateBasis": "민백 공산전투: 927년(고려 태조 10) 전투",
+          "validFrom": 927,
+          "validTo": 927,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-033",
+      "label": "公州",
+      "labelKo": "공주",
+      "kind": "city",
+      "count": 4,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 940,
+      "validTo": null,
+      "note": "색인 표기 公州는 편찬 당시(고려)의 지명이고, 인용된 세 sample은 모두 熊川·熊川州로 나온다(termInBody=false). 민백 「공주시」는 문주왕이 웅천(熊川), 곧 공주로 천도했고 940년(태조 23)에 公州로 개칭했다고 한다. 민백 「공주 공산성」은 충남 공주시 산성동의 백제 웅진기 왕성(당시 웅진성)이자 통일신라 웅천주의 치소성으로 설명한다. 웅진기 왕성 유적과 현대 시청 부근 참조점을 후보로 나누었고, 대통사(大通寺)나 수원사(水源寺) 같은 개별 절터 위치는 확인하지 않았다. 하천 이름 熊川(금강)과 지명 웅천주를 혼동하지 말 것.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0004485",
+        "https://encykorea.aks.ac.kr/Article/E0004450",
+        "https://www.wikidata.org/wiki/Q12584692",
+        "https://www.wikidata.org/wiki/Q42062"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0200_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 백제, 도읍을 옮기다",
+          "date": {
+            "label": null,
+            "raw": "-0005-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0030",
+          "quote": "按古典記云. “東明王第三子温祚以前漢鴻佳三年癸酉, 自卒夲扶餘至慰礼城, 立都稱王. 十四年丙辰移都漢山歴三百八十九年, 至十三世近肖古王咸安元年, 取髙句麗 南平壤移都北漢城歴一百五年. 至二十二世文周王即位元徴三年乙卯, 移都熊川歴六十三",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0010_0040_0050",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 興法第三 › 原宗興法 厭髑滅身 › 대통사가 세워지다",
+          "date": {
+            "label": null,
+            "raw": "0527-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0010_0040_0050",
+          "quote": "又於大通元年丁未, 爲梁帝創寺於熊川州名大通寺.",
+          "quoteStart": 0,
+          "quoteEnd": 24,
+          "termInBody": false
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0160_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 弥勒仙花·未尸郎·真慈師 › 진자스님이 미륵선화를 쫓다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0160_0030",
+          "quote": "及真智王代有興輪寺僧真慈. 每就堂主弥勒像前發原誓言, “願我大聖化作花郎出現於世, 我常親近睟容奉以□周旋.” 其誠懇至禱之情日益弥篤. 一夕夢有僧謂曰, “汝徃熊川水源寺得見弥勒仙花也.” 慈覺而驚喜, 尋其寺行十日程一歩一禮. 及到其寺,",
+          "quoteStart": 0,
+          "quoteEnd": 122,
+          "termInBody": false
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.46194444,
+          "lon": 127.12722222,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0004450",
+          "basis": "민백 「공주 공산성」: 충남 공주시 산성동 금강 남안에 있는 백제 웅진기의 왕성으로 당시 이름은 웅진성, 사비기에는 북방성, 통일신라 때는 웅천주 치소성.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12584692",
+          "coordLabel": "공산성",
+          "wikidataId": "Q12584692",
+          "precision": "site",
+          "view": "한국민족문화대백과사전 「공주 공산성」",
+          "historySourceTitle": "한국민족문화대백과사전 「공주 공산성」(E0004450)",
+          "dateBasis": "민백 공주 공산성: 475년 웅진 천도부터 538년 사비 천도까지 왕성으로 기능",
+          "validFrom": 475,
+          "validTo": 538,
+          "confidence": "probable"
+        },
+        {
+          "lat": 36.455555555556,
+          "lon": 127.12472222222,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0004485",
+          "basis": "민백 「공주시」: 문주왕이 웅천(熊川)인 공주로 천도했고 940년(태조 23)에 公州로 개칭. 좌표는 현대 공주시(시청 일원) 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42062",
+          "coordLabel": "공주시",
+          "wikidataId": "Q42062",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전 「공주시」",
+          "historySourceTitle": "한국민족문화대백과사전 「공주시」(E0004485)",
+          "dateBasis": "민백 공주시: 940년(태조 23) 공주로 개칭",
+          "validFrom": 940,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-034",
+      "label": "所夫里",
+      "labelKo": "소부리",
+      "kind": "capital",
+      "count": 4,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 538,
+      "validTo": null,
+      "note": "민백 「사비성」은 사비를 충남 부여군 부여읍으로 보고 所夫里를 사비의 다른 이름(어원 설명 포함)으로 서술한다. 민백 「소부리주」는 671년 사비를 중심으로 설치된 주였다가 686년 웅천주가 되면서 군으로 바뀌었다고 한다. validFrom은 538년 사비 천도 기준이고, 소부리라는 재래 지명 자체는 그 이전부터 쓰였을 수 있다. 757년 부여군 개편 뒤에도 삼국유사가 인용한 양전장적에 '所夫里郡'이 보이므로 validTo는 null로 둔다. 후보 좌표 중 부소산성은 사비도성의 중심 산성이며 왕궁 추정지(관북리)와 도성 전체를 대신하지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0025675",
+        "https://encykorea.aks.ac.kr/Article/E0030088",
+        "https://encykorea.aks.ac.kr/Article/E0024406",
+        "https://www.wikidata.org/wiki/Q12598898",
+        "https://www.wikidata.org/wiki/Q50247"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0200_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 백제에 대한 기록들",
+          "date": {
+            "label": null,
+            "raw": "0538-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0010",
+          "quote": "南扶餘·前百濟·北扶餘已見上\n扶餘郡者前百濟王都也. 或稱所夫里郡. 按三國史記, “百濟聖王二十六年戊午春, 移都扵泗泚, 國號南扶餘.” 注曰 “其地名所夫里, 泗泚今之古省津也, 所夫里者扶餘之别號也.” 已上注. 又按量田帳籍曰, “所夫里郡田丁柱貼”, 今言扶餘郡者復上古之名也. 百濟王姓扶氏",
+          "quoteStart": 0,
+          "quoteEnd": 152,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0200_0030",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 백제, 도읍을 옮기다",
+          "date": {
+            "label": null,
+            "raw": "-0005-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0030",
+          "quote": "三百八十九年, 至十三世近肖古王咸安元年, 取髙句麗 南平壤移都北漢城歴一百五年. 至二十二世文周王即位元徴三年乙卯, 移都熊川歴六十三年, 至二十六世聖王移都所夫里, 國號南扶餘, 至三十一世義慈王歴一百二十年.",
+          "quoteStart": 54,
+          "quoteEnd": 161,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.291286,
+          "lon": 126.913159,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0024406",
+          "basis": "민백 「부여 부소산성」: 충남 부여군 부여읍 쌍북리, 사비 왕궁 추정지(관북리) 배후의 산성이며 기록의 소부리성·사비성을 이 산성으로 보는 견해를 소개. 백제 멸망(660)까지 사용.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12598898",
+          "coordLabel": "부소산성(Busosanseong)",
+          "wikidataId": "Q12598898",
+          "precision": "site",
+          "view": "한국민족문화대백과사전 「부여 부소산성」",
+          "historySourceTitle": "한국민족문화대백과사전 「부여 부소산성」(E0024406)",
+          "dateBasis": "민백 사비성: 538년(성왕 16) 사비 천도 / 민백 부소산성: 660년 백제 멸망까지 사용",
+          "validFrom": 538,
+          "validTo": 660,
+          "confidence": "probable"
+        },
+        {
+          "lat": 36.281944444444,
+          "lon": 126.9125,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0025675",
+          "basis": "민백 「사비성」: 충청남도 부여군 부여읍에 있었던 백제 성곽이며 소부리는 사비의 다른 이름. 좌표는 현대 부여군(부여읍 일원) 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q50247",
+          "coordLabel": "부여군",
+          "wikidataId": "Q50247",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 「사비성」",
+          "historySourceTitle": "한국민족문화대백과사전 「사비성」(E0025675)",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-035",
+      "label": "扶餘郡",
+      "labelKo": "부여군",
+      "kind": "region",
+      "count": 4,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 757,
+      "validTo": null,
+      "note": "삼국유사가 '지금의 부여군'이라 한 것은 편찬 당시의 군명으로, 옛 사비(소부리) 지역과 같은 곳이다. 디지털부여문화대전 「부여군[통일 신라 시대]」는 757년(경덕왕 16) 12월 지방 조직 개편 때 이 지역에 부여군이 설치되었다고 하고, 민백 「부여군」도 경덕왕 때 웅천주를 웅주로 고치면서 부여를 속군으로 삼았다고 한다. 좌표는 현대 부여군의 광역 참조점(군청 소재지 부여읍 부근)이며 고려·신라 군 관아 위치가 아니다. 위키데이터 Q50247에는 P625가 두 건(36.281944/126.9125, 36.26257/126.85802) 있어 부여읍에 가까운 값을 썼다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0024379",
+        "https://www.grandculture.net/buyeo/toc/GC09000408",
+        "https://www.wikidata.org/wiki/Q50247"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0200_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 백제에 대한 기록들",
+          "date": {
+            "label": null,
+            "raw": "0538-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0010",
+          "quote": "南扶餘·前百濟·北扶餘已見上\n扶餘郡者前百濟王都也. 或稱所夫里郡. 按三國史記, “百濟聖王二十六年戊午春, 移都扵泗泚, 國號南扶餘.” 注曰 “其地名所夫里, 泗泚今之古省津也, 所夫里者扶餘之别號也.” 已上注. 又按量田帳籍曰, “所夫里郡田丁柱貼”, 今言扶餘郡者",
+          "quoteStart": 0,
+          "quoteEnd": 138,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0200_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 南扶餘·前百濟·北扶餘 › 온조가 백제를 건국하다",
+          "date": {
+            "label": null,
+            "raw": "-0018-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0200_0020",
+          "quote": "慰禮, 都邑鼎定人民安泰, 遂慙悔而死, 其臣民皆歸扵慰礼城. 後以來時百姓樂恱, 攺號百濟. 其世系與髙句麗同出扶餘, 故以解為氏. 後至聖王移都扵泗泚, 今扶餘郡.”",
+          "quoteStart": 281,
+          "quoteEnd": 366,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.281944444444,
+          "lon": 126.9125,
+          "sourceUrl": "https://www.grandculture.net/buyeo/toc/GC09000408",
+          "basis": "디지털부여문화대전 「부여군[통일 신라 시대]」: 757년(경덕왕 16) 12월 개편 때 웅주 아래 부여 지역에 가림군·부여군 등이 설치됨. 민백 「부여군」도 백제 사비 도읍지로서 경덕왕 때 웅주 속군이 되었다고 함. 좌표는 현대 부여군 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q50247",
+          "coordLabel": "부여군",
+          "wikidataId": "Q50247",
+          "precision": "region",
+          "view": "디지털부여문화대전 / 한국민족문화대백과사전 「부여군」",
+          "historySourceTitle": "디지털부여문화대전 「부여군[통일 신라 시대]」(GC09000408)",
+          "dateBasis": "디지털부여문화대전: 757년(경덕왕 16) 12월 부여군 설치",
+          "validFrom": 757,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-036",
+      "label": "東國",
+      "labelKo": "동국",
+      "kind": "region",
+      "count": 4,
+      "indexType": "지명",
+      "status": "unlocated",
+      "confidence": "unverified",
+      "validFrom": null,
+      "validTo": null,
+      "note": "민백 「동국」은 동국을 '우리나라의 별칭'(중국의 동쪽 나라)으로 정의하며, 최치원의 진감선사비에 용례가 보이고 고려 이후 보편화되었다고 한다. 삼국유사 용례도 가락국기 명(銘)의 '東國分京', 자장 찬(讚)의 '東國衣冠上國裁', 대현 조의 '東國後進' 등 나라 전체를 가리키는 표현이어서 특정 지점·행정구역으로 비정할 수 없다. 국가 단위 좌표를 억지로 넣지 않고 unlocated로 둔다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0016242"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0230_0120",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 駕洛國記 › 가락국의 사적",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0230_0120",
+          "quote": "世祖已下九代孫暦數委録于下, 銘曰. 元胎肇啓, 利眼初明. 人倫雖誕, 君位未成. 中朝累世, 東國分京雞林先定駕洛後營. 自無銓宰, 誰察民氓. 遂兹玄造顧彼蒼生. 用授符命特遣精靈. 山中降卵, 霧裏藏刑. 内猶漠漠, 外亦冥冥. 望如無象, 聞乃有聲. 羣歌而奏衆舞而呈. 七日而後, 一時所寧. 風吹雲卷, 空碧天青. 下六圎卵, ",
+          "quoteStart": 0,
+          "quoteEnd": 171,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0060_0080",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 慈藏定律 › 찬하여 말하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0060_0080",
+          "quote": "讃曰. 曾向清涼夢破迴. 七篇三聚一時開. 欲令緇素衣慚愧, 東國衣冠上國裁.",
+          "quoteStart": 0,
+          "quoteEnd": 39,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0140_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 賢瑜珈海華嚴 › 대현이 유가종의 개조가 되다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0140_0010",
+          "quote": "大抵相宗銓量旨理幽深難爲剖拆. 中國名士白居易嘗窮之未能, 乃曰. “唯識幽難破, 因明擘不開.” 是以學者難承禀者尚矣. 賢獨刋定邪謬, 暫開幽奧㤆㤆㳺刃. 東國後進咸遵其訓, 中華學士徃徃得此爲眼目.",
+          "quoteStart": 54,
+          "quoteEnd": 156,
+          "termInBody": true
+        }
+      ],
+      "candidates": []
+    },
+    {
+      "id": "place-samgukyusa-037",
+      "label": "河西府",
+      "labelKo": "하서부",
+      "kind": "region",
+      "count": 4,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "민백 「하서주」는 신라 9주의 하나인 하서주(뒤의 명주)의 주치를 '현재의 강릉'이라 하고, 민백 「강릉시」도 하서량(河西良)·하슬라에서 757년 명주로 바뀌었다고 한다. 다만 府 형태의 '하서부'는 민백에는 없고 위키백과 「하서주」가 고려 성종대 명칭(하서부 또는 명주도독부)으로 서술할 뿐이며 연도가 명시되지 않아 validFrom/To는 null로 둔다. 삼국유사 대산오만진신·보질도태자전기에서 하서부는 두 태자가 대령(大嶺)을 넘어 오대산으로 가기 전에 머문 명주(강릉) 일대이고, 하서부 도내 8주의 세를 쓴다는 서술도 광역 단위다. 좌표는 현대 강릉시(시청 일원) 참조점이며 신라·고려 관아 터가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0060620",
+        "https://encykorea.aks.ac.kr/Article/E0001105",
+        "https://ko.wikipedia.org/wiki/%ED%95%98%EC%84%9C%EC%A3%BC",
+        "https://www.wikidata.org/wiki/Q42056"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0210_0040",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 臺山五萬眞身 › 보천, 효명의 두 태자가 오대산으로 들어가다",
+          "date": {
+            "label": null,
+            "raw": "0648-08-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0210_0040",
+          "quote": "藏師之返新羅淨神大王太子寳川·孝明二昆弟到河西府, 世献角干之家留一宿. 翌日過大嶺各領千徒到省烏坪遊覽累日, 忽一夕昆弟二人宻約方外之志, 不令人知逃隱入五䑓山.侍衛不知所歸於是還國",
+          "quoteStart": 0,
+          "quoteEnd": 92,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0210_0090",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 臺山五萬眞身 › 보천은 정진하면서 도를 닦았는데 이후 국가에 이로운 일을 기록으로 남기다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0210_0090",
+          "quote": "命淨行福田鎮長香火, 則國王千秋, 人民安泰, 文虎和平, 百糓豊穰矣. 又加排下院文殊岬寺爲社之都㑹, 福田七貟晝夜常行華嚴神衆禮懴, 上件三十七貟齋料衣費以河西府道内八州之稅充爲四事之資.代代君王不忘遵行幸矣.",
+          "quoteStart": 645,
+          "quoteEnd": 752,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_003_0020_0220_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第三 › 塔像第四 › 溟州 五臺山寶叱徒太子傳記 › 보질도태자가 오대산으로 들어가므로 모두 찾지 못하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_003_0020_0220_0010",
+          "quote": "溟州 五䑓山寳叱徒太子傳記\n新羅淨神太子 寳叱徒與弟孝明太子到河西府 世獻角干家一宿, 翌日踰大嶺各領一千人到省烏坪累日逰翫, 太和元年八月五日兄弟同隠入五䑓山. 徒中侍衛䓁推覔不得, 並皆還國.",
+          "quoteStart": 0,
+          "quoteEnd": 98,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.755555555556,
+          "lon": 128.89611111111,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0060620",
+          "basis": "민백 「하서주」: 신라 9주의 하나로 \"주치(州治)는 현재의 강릉\"이며 757년 명주로 개칭된 뒤에도 하서주 명칭이 계속 쓰였다고 함. 좌표는 현대 강릉시 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42056",
+          "coordLabel": "강릉시",
+          "wikidataId": "Q42056",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전 「하서주」",
+          "historySourceTitle": "한국민족문화대백과사전 「하서주」(E0060620)",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-038",
+      "label": "清道郡",
+      "labelKo": "청도군",
+      "kind": "region",
+      "count": 4,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 940,
+      "validTo": null,
+      "note": "민백 「청도군」은 이 지역이 옛 이서국이었고 940년(태조 23)에 3현을 합쳐 처음 청도현이라 했다고 하며, 1013년 밀양군 속현으로 격하, 1343년 청도군 승격 뒤 다시 현, 1366년 다시 군 승격이라는 변동을 전한다. 삼국유사가 인용한 '청도군 사적'·군계리심사 문서는 943년(천복 8) 기록으로 표기는 郡이지만, 군/현 지위는 시기에 따라 달랐다. validFrom은 청도라는 이름이 처음 쓰인 940년 기준. 좌표는 현대 청도군(군청 소재지 화양읍 일원)의 광역 참조점이며 이서국 옛 터나 운문사 위치가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0056329",
+        "https://www.wikidata.org/wiki/Q50330"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0110_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 伊西國 › 이서국 사람들이 금성을 치다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0110_0010",
+          "quote": "伊西國\n弩禮王十四年伊西國人来攻金城. 按雲門寺古傳諸寺納田記云, “貞觀六年壬辰伊西郡 今郚村零味寺納田”, 則今郚村今清道地, 即清道郡古伊西郡一.",
+          "quoteStart": 0,
+          "quoteEnd": 76,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_004_0010_0020_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第四 › 義解第五 › 寶壤梨木 › 보양 관련 기록",
+          "date": {
+            "label": null,
+            "raw": "0943-01-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_004_0010_0020_0010",
+          "quote": "寳攘梨木\n釋寳壤傳不載郷井氏族. 謹按清道郡司籍. 載天福八年癸酉正月日, 清道郡界里審使順英·大乃末水文等柱貼公文, 雲門山禪院長生南阿尼岾, 東嘉西峴, 同藪三剛典主人寳壤和尚, 院主玄㑹長老, 貞座玄两上座, 直歳信元禪師. 又開運三年丙辰雲門山禪院長生標塔公文一道, 長生十一",
+          "quoteStart": 0,
+          "quoteEnd": 142,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.643611111111,
+          "lon": 128.74305555556,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0056329",
+          "basis": "민백 「청도군」: 옛 이서국 지역으로 \"940년(태조 23)에 이 지역의 3현을 합하여 처음으로 청도현\"이라 했고 군청은 화양읍 범곡리에 있음. 좌표는 현대 청도군 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q50330",
+          "coordLabel": "청도군",
+          "wikidataId": "Q50330",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 「청도군」",
+          "historySourceTitle": "한국민족문화대백과사전 「청도군」(E0056329)",
+          "dateBasis": "민백 청도군: 940년(태조 23) 청도현 최초 설치, 1343·1366년 군 승격",
+          "validFrom": 940,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-039",
+      "label": "炭峴",
+      "labelKo": "탄현",
+      "kind": "site",
+      "count": 4,
+      "indexType": "지명",
+      "status": "disputed",
+      "confidence": "unverified",
+      "validFrom": null,
+      "validTo": null,
+      "note": "민백 「탄현」은 탄현이 고개의 일반명사여서 \"위치 비정이 쉽지 않고 학계에서는 논란이 분분하다\"고 명시하고, ①대전 동구와 충북 옥천군 사이 식장산의 마도령(마달령) ②전북 완주군 운주면 삼거리 쑥고개 ③충남 금산군 진산면 탄치(숯고개) ④금산 진산 방현리~행정리의 방현 네 설을 든다. 좌표원을 못 찾은 ④는 후보에서 뺐다. 660년 성충·흥수의 방어선 문맥(sample 1·2)과 936년 신검 항복 문맥(sample 3)은 시점이 다르지만, 민백 「일리천전투」도 936년 '탄령'을 같은 세 후보지로 보므로 후보를 시기별로 나누지 않았다(936년 기사의 黃山은 민백이 지금의 충남 논산시 연산으로 봄). 위키백과 「탄현」은 마달령 단일설만 출처 없이 적어 근거로 쓰지 않았다. 후보 좌표는 모두 참조점이며 고개의 정확한 지점을 확정하지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0058797",
+        "https://encykorea.aks.ac.kr/Article/E0047180",
+        "https://ko.wikipedia.org/wiki/%ED%83%84%ED%98%84",
+        "https://www.wikidata.org/wiki/Q27315732",
+        "https://www.wikidata.org/wiki/Q16164352",
+        "https://www.wikidata.org/wiki/Q12618249"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0070",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 백제 의자왕은 어려서 훌륭했지만 즉위 후 주색에 빠져 충신 성충의 말을 듣지 않다",
+          "date": {
+            "label": null,
+            "raw": "0641-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0070",
+          "quote": "成忠極諌, 不聴囚於獄中. 瘦困濵死書曰, “忠臣死不忘君. 願一言而死臣甞觀時變必有兵革之事. 凡用兵審擇其地䖏, 上流而迎敵可以保全. 若異國兵來陸路不使過炭峴, 水軍不使入伎伐浦, 㨿其険隘以禦之然後可也.” 王不省.",
+          "quoteStart": 60,
+          "quoteEnd": 172,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0360_0100",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 太宗春秋公 › 의자왕이 충신 흥수의 말은 멀리하고 간신들의 말에 우왕좌왕하다 때를 놓치다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0360_0100",
+          "quote": "之曰 “事急矣如何.” 首曰 “大槩如佐平成忠之說.” 大臣䓁不信曰 “興首在縲絏之中㤪君而不愛國矣. 其言不可用也. 莫若使唐兵入白江㳂流而不得方舟, 羅軍升炭峴由徑而不得並馬, 當此之時縱兵擊之, 如在籠之雞罹網之魚也.” 王曰 “然.” 又聞唐羅兵已過白江 炭峴.",
+          "quoteStart": 202,
+          "quoteEnd": 337,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0220_0130",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 後百濟·甄萱 › 후백제는 멸망하고 견훤이 죽다",
+          "date": {
+            "label": null,
+            "raw": "0936-06-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0220_0130",
+          "quote": "述·哀述·明吉等望兵勢大而整, 弃甲降於陣前. 太祖勞慰之問将帥所在, 孝奉等曰, “元帥神劒在中軍.” 太祖命将軍公萱等三軍齊進挾撃, 百濟軍潰北. 至黃山 炭峴, 神劒與二弟将軍冨逹·能奐等四十餘人生降. 太祖受降, 餘皆勞之許令與妻子上京. 問能奐曰, “始與良劒等密謀囚大王立其子者汝之謀也, 爲臣之義當如是乎.” 能奐俛首不能言. 遂命誅之. 以神劒僣位為人所脅, 非其本心. 又且歸命乞罪, ",
+          "quoteStart": 184,
+          "quoteEnd": 386,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.3413,
+          "lon": 127.5043,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0058797",
+          "basis": "민백 「탄현」이 드는 첫째 설: 대전 동구와 충북 옥천군 사이 식장산의 마도령(마달령). 좌표는 마달령 고개 항목 값으로, 위키데이터 항목이 라벨·산길(mountain pass)·국가 정보만 있어 동명 고개일 가능성을 배제하지 못함.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q27315732",
+          "coordLabel": "마달령",
+          "wikidataId": "Q27315732",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전 「탄현」(설 ①)",
+          "historySourceTitle": "한국민족문화대백과사전 「탄현」(E0058797)",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "unverified"
+        },
+        {
+          "lat": 36.0671,
+          "lon": 127.31669,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0058797",
+          "basis": "민백 「탄현」이 드는 둘째 설: 전북 완주군 운주면 삼거리의 쑥고개. 좌표는 운주면 중심 참조점이며 고개 지점이 아님.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q16164352",
+          "coordLabel": "운주면(완주군)",
+          "wikidataId": "Q16164352",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 「탄현」(설 ②) / 「일리천전투」",
+          "historySourceTitle": "한국민족문화대백과사전 「탄현」(E0058797)",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "unverified"
+        },
+        {
+          "lat": 36.13889,
+          "lon": 127.37498,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0058797",
+          "basis": "민백 「탄현」이 드는 셋째 설: 충남 금산군 진산면의 탄치(숯고개). 좌표는 진산면 중심 참조점이며 고개 지점이 아님.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12618249",
+          "coordLabel": "진산면(금산군)",
+          "wikidataId": "Q12618249",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 「탄현」(설 ③) / 「일리천전투」",
+          "historySourceTitle": "한국민족문화대백과사전 「탄현」(E0058797)",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "place-samgukyusa-040",
+      "label": "牛首州",
+      "labelKo": "우수주",
+      "kind": "region",
+      "count": 4,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 637,
+      "validTo": 673,
+      "note": "민백 「우수주」는 637년(선덕여왕 6) 우수, 곧 지금의 강원 춘천시에 설치한 상급 지방행정구역이라 하고, 673년 수약주, 757년 삭주, 940년 춘주, 1413년 춘천으로 이름이 바뀌었다고 한다. 삼국유사 마한 조의 '春州古牛首州古貊國'은 편찬 당시 지명(춘주)으로 옛 우수주를 설명한 것이고, 문무왕 조 거득공 설화의 우수주도 아슬라주·북원경과 함께 나오는 광역 주 이름이다. validFrom/To는 우수주라는 주명이 쓰인 기간이며, 좌표는 현대 춘천시(시청 일원) 참조점이고 신라 주치(우두벌 등) 지점을 확정한 것이 아니다. 조신 설화 sample은 인용문에 이 표기가 없어 evidence에서 제외했다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0072072",
+        "https://www.wikidata.org/wiki/Q42148"
+      ],
+      "sourceId": "src-samgukyusa",
+      "evidence": [
+        {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0040_0020",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 馬韓 › 4이는 9이와 9한과 예와 맥이다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0040_0020",
+          "quote": "四夷九夷·九韓·穢·貊. 周禮 ‘職方氏掌四夷九貊’者, 東夷之種即九夷也. 三國史云 “溟州古穢國. 野人耕田得穢王印献之.” 又 “春州古牛首州古貊國.” 又或云 “今朔州是貊國, 或平壌城爲貊國.” 淮南子注云 “東方之夷九種.” 論語正義云 “九夷者一玄菟·二樂浪·三高麗·四滿餙·五鳬臾·六素家·七東屠·八倭人·九天鄙.” 海東安弘記云 “九韓者一日夲·二中華·三吳越·四乇羅·",
+          "quoteStart": 0,
+          "quoteEnd": 194,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_samgukyusa_sy_002_0010_0010_0060",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第二 › 紀異第二 › 文武王法敏 › 거득공 설화",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/sy_002_0010_0010_0060",
+          "quote": "” 公曰 “陛下若以小臣爲宰, 則臣願潛行國内, 示民問徭役之勞逸·租賦之軽重·官吏之清濁然後就聀.” 王聽之. 公著緇衣把琵琶爲居士形出京師. 経由阿瑟羅州·牛首州·北原京, 至扵武珎州廵行里閈, 州吏安吉見是異人, 邀致其家盡情供億. 至夜安吉喚妻妾三人曰, “今兹侍宿客居士者終身偕老.” 二妻曰 “寧不並居何以於人同宿.” 其一妻曰 “公若許終身並居則承命矣,” 從之. 詰旦居士欲辭行時曰, “僕",
+          "quoteStart": 26,
+          "quoteEnd": 229,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.874722222222,
+          "lon": 127.73416666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0072072",
+          "basis": "민백 「우수주」: \"우수(牛首: 지금의 강원특별자치도 춘천시)에 설치한 상급 지방행정구역\"이며 673년 수약주, 757년 삭주로 개칭. 좌표는 현대 춘천시 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42148",
+          "coordLabel": "춘천시",
+          "wikidataId": "Q42148",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 「우수주」",
+          "historySourceTitle": "한국민족문화대백과사전 「우수주」(E0072072)",
+          "dateBasis": "민백 우수주: 637년(선덕여왕 6) 설치, 673년(문무왕 13) 수약주로 개칭",
+          "validFrom": 637,
+          "validTo": 673,
+          "confidence": "probable"
+        }
+      ]
+    }
+  ]
+}

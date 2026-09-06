@@ -56,6 +56,12 @@ class NameMatchingTests(unittest.TestCase):
             with patch.object(server, "DATA", Path(tmp)):
                 self.assertEqual(server.collect_country_terms(), {"b": {"陳"}})
 
+    def test_source_specific_place_does_not_count_a_homonym_in_another_book(self):
+        place = {"id": "p", "label": "陳設", "sourceId": "src-a"}
+        with patch.object(server, "index", return_value=self.idx), patch.object(server, "merged_places", return_value={"places": [place]}):
+            counts = server.places_with_mentions()["places"][0]["mentions"]
+        self.assertEqual(counts, {"src-a": 1})
+
 
 class ApiTests(unittest.TestCase):
     @classmethod
@@ -131,6 +137,19 @@ class ApiTests(unittest.TestCase):
 
 
 class PlaceMergeTests(unittest.TestCase):
+    def test_research_source_and_exact_evidence_survive_merge(self):
+        researched = {"id": "place-goryeosa-001", "label": "西京", "sourceId": "src-goryeosa",
+                      "candidates": [], "evidence": [{"chunkId": "c", "quote": "幸西京."}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            data = Path(tmp)
+            (data / "places.json").write_text('{"places": []}', encoding="utf-8")
+            (data / "places-candidates-goryeosa.json").write_text(json.dumps({"places": [researched]}), encoding="utf-8")
+            with patch.object(server, "DATA", data):
+                result = server.merged_places()["places"][0]
+        self.assertEqual(result["sourceId"], "src-goryeosa")
+        self.assertEqual(result["evidence"], researched["evidence"])
+        self.assertEqual(result["origin"], "ai")
+
     def test_different_concepts_keep_candidates_and_local_variant_links(self):
         base = {"id": "p", "label": "百殘國城", "candidates": [{"lat": 37, "lon": 127}]}
         extra = {"id": "p", "label": "漢城", "candidates": [{"lat": 38, "lon": 125, "validFrom": 475}]}

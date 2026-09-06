@@ -1,0 +1,3469 @@
+{
+  "_provenance": {
+    "source": "goryeosa",
+    "date": "2026-09-06",
+    "status": "ai-research-reviewed-not-approved",
+    "indexTermsFile": "data/research/goryeosa-place-index.json",
+    "agents": [
+      {
+        "task": "goryeosa-1",
+        "sessionId": "12dc6fb3-fab2-4fd5-8174-9c9b8c8f595f",
+        "model": "claude-opus-5",
+        "effort": "max"
+      },
+      {
+        "task": "goryeosa-2",
+        "sessionId": "0fafec82-96c9-48a4-9823-60f53d3197df",
+        "model": "claude-opus-5",
+        "effort": "max"
+      },
+      {
+        "task": "goryeosa-3",
+        "sessionId": "3f90ea38-6b2f-4924-aa98-5f07d96ec9e4",
+        "model": "claude-opus-5",
+        "effort": "max"
+      },
+      {
+        "task": "goryeosa-4",
+        "sessionId": "4cd6eedf-d9f8-4511-a1a2-fe4a048befe1",
+        "model": "claude-opus-5",
+        "effort": "max"
+      }
+    ],
+    "independentHistoricalSample": 16
+  },
+  "_note": "사료의 지명 표기별 조사 후보. sourceId 범위에서만 원문을 찾으며 같은 표기라는 이유로 기존 지명과 합치지 않는다. 현대 참조 좌표는 역사적 위치 확정이나 Claim 승격이 아니다.",
+  "places": [
+    {
+      "id": "place-goryeosa-001",
+      "label": "西京",
+      "labelKo": "서경",
+      "kind": "capital",
+      "count": 462,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": 1369,
+      "note": "고려 삼경 중 서경은 옛 고구려 도읍 평양에 설치되었다. 998년 호경, 1269~1290년 원의 동녕부, 1369년 이후 평양부로 이름이 바뀌었다. 백과의 922년 행정기구 정비를 지명의 시작으로 보지 않으며, 실제 인용에는 921년 용례가 있다. 좌표는 현대 평양시 참조점으로 재성이나 궁궐터를 확정하지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0027575"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0050_0040_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 4年 › 10월 › 왕이 서경에 행차하다",
+          "date": {
+            "label": "921년 10월 20일",
+            "raw": "0921-10-20L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0050_0040_0020",
+          "quote": "壬申 幸西京.",
+          "quoteStart": 0,
+          "quoteEnd": 7,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0060_0050_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 5年 › 11월 › 고관의 가족을 서경으로 이주시키고 내성을 쌓다",
+          "date": {
+            "label": "922년 미상",
+            "raw": "0922-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0060_0050_0020",
+          "quote": "是歲, 徙大丞 質榮·行波等父兄子弟, 及諸郡縣良家子弟, 以實西京. 幸西京, 新置官府員吏, 始築在城. 親定牙善城民居.",
+          "quoteStart": 0,
+          "quoteEnd": 63,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0090_0010_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 8年 › 3월 › 왕이 서경에 가다",
+          "date": {
+            "label": "925년 3월 미상",
+            "raw": "0925-03-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0090_0010_0010",
+          "quote": "八年 春三月 幸西京.",
+          "quoteStart": 0,
+          "quoteEnd": 11,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.016666666666666,
+          "lon": 125.7475,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0027575",
+          "basis": "민족문화대백과 '서경' 항목은 서경을 옛 도읍 평양에 둔 것으로 서술하고, 922년 행정기구 설치부터 1369년 평양부 개편까지의 연혁을 제시한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+          "wikidataId": "Q18808",
+          "coordLabel": "평양시",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(서경)",
+          "historySourceTitle": "한국민족문화대백과사전 「서경(西京)」",
+          "dateBasis": "922년은 행정기구 정비 연도다. 원문에는 921년 용례도 있어 지명의 시작 연도로 쓰지 않는다. 끝은 1369년 평양부 개편을 따른다.",
+          "validFrom": null,
+          "validTo": 1369,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-002",
+      "label": "耽羅",
+      "labelKo": "탐라",
+      "kind": "region",
+      "count": 210,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "탐라는 현재의 제주도로 설명된다(민족문화대백과 '탐라국'). 고려와의 관계는 938년 속국화, 1105년 탐라군 편제, 1153년 탐라현 격하로 이어지고 13세기 고종 연간에 제주로 개편된다. 표기 사용의 시작·종료 연도를 못 박는 출처를 찾지 못해 validFrom/validTo는 null로 둔다. 좌표는 섬 전체의 광역 참조점이며 탐라 치소나 삼성혈 같은 특정 유적을 가리키지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0058815",
+        "https://www.jeju.go.kr/culture/history/history/history01.htm"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0090_0040_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 8年 › 11월 › 탐라에서 공물을 바치다",
+          "date": {
+            "label": "925년 11월 미상",
+            "raw": "0925-11-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0090_0040_0010",
+          "quote": "十一月 己丑 耽羅貢方物.",
+          "quoteStart": 0,
+          "quoteEnd": 13,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0090_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 9월 › 탐라에 주기를 내려주다",
+          "date": {
+            "label": "1011년 9월 15일",
+            "raw": "1011-09-15L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0090_0030",
+          "quote": "乙酉 耽羅乞依州郡例, 賜朱記, 許之.",
+          "quoteStart": 0,
+          "quoteEnd": 20,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0050_0070_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 3年 › 8월 › 탐라에서 배를 바치다",
+          "date": {
+            "label": "1012년 8월 7일",
+            "raw": "1012-08-07L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0050_0070_0030",
+          "quote": "壬寅 耽羅人來, 獻大船二艘.",
+          "quoteStart": 0,
+          "quoteEnd": 15,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 33.38,
+          "lon": 126.55,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0058815",
+          "basis": "민족문화대백과 '탐라국'은 탐라를 현재의 제주도로 보고 938년 고려 속국화, 1105년 탐라군 편제 등 고려 편입 과정을 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q29151",
+          "wikidataId": "Q29151",
+          "coordLabel": "제주도(섬)",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(탐라국)",
+          "historySourceTitle": "한국민족문화대백과사전 「탐라국(耽羅國)」",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-003",
+      "label": "京城",
+      "labelKo": "경성",
+      "kind": "capital",
+      "count": 188,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "고유 지명이 아니라 '그때의 수도'를 가리키는 보통명사이므로 기사 날짜별로 지시 대상이 달라진다. 제공된 samples 3건(991년, 1011년 2건)은 모두 개경이다. 다만 1232~1270년 강도(江都) 시기의 용례는 강화를 가리키며, 실제로 이 입력의 全羅 표제 sample(1254년 '守衛京城')이 그 시기 기사다. 따라서 후보를 기간으로 분리했고, 날짜 확인 없이 한 점으로 확정해서는 안 된다. 좌표는 모두 현대 도시·군 참조점이다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0001652",
+        "https://encykorea.aks.ac.kr/Article/E0001503",
+        "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?VdkVgwKey=13%2C01330000%2C23",
+        "https://encykorea.aks.ac.kr/Article/E0001657"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_003_0120_0040_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三 世家 卷第三 › 成宗 10年 › 7월 › 노인을 봉양해 가뭄을 극복하려는 내용의 교서를 내리다",
+          "date": {
+            "label": "991년 7월 12일",
+            "raw": "0991-07-12L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_003_0120_0040_0020",
+          "quote": " 避正殿, 減常膳, 勤祈寺院, 望祀山川, 未觀石燕之飛, 轉見金烏之赫. 由予凉德, 致此亢陽, 欲推養老之恩, 以表憂農之念. 准雍熙三年賜給老人制, 在京城庶民, 年八十以上者, 所司具錄姓名申聞.”",
+          "quoteStart": 59,
+          "quoteEnd": 163,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0010_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 1월 › 거란군이 개경에 들어와 태묘 등을 불태우다",
+          "date": {
+            "label": "1011년 1월 1일",
+            "raw": "1011-01-01L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0010_0010",
+          "quote": "辛亥二年 春正月 乙亥朔 契丹主入京城, 焚燒太廟·宮闕·民屋皆盡. 是日, 王次廣州.",
+          "quoteStart": 0,
+          "quoteEnd": 44,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0070_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 7월 › 전투에서 패한 백행린을 사판에서 삭제하다",
+          "date": {
+            "label": "1011년 7월 13일",
+            "raw": "1011-07-13L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0070_0020",
+          "quote": "甲申 刑部奏, “郞中 白行隣, 當南幸之際, 留在京城, 自稱御史中丞, 與李因禮·巨貞等, 召募徒奴爲軍, 見敵不戰而潰, 請除名.” 從之.",
+          "quoteStart": 0,
+          "quoteEnd": 73,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.971666666666664,
+          "lon": 126.55277777777778,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+          "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+          "wikidataId": "Q109079",
+          "coordLabel": "개성시",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+          "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+          "dateBasis": "919년 개주 설정. 「강화군」의 1232년 강화 천도·1270년 개경 환도에 따라 기간을 나눈다. 연 단위이므로 천도·환도 연도는 겹친다.",
+          "validFrom": 919,
+          "validTo": 1232,
+          "confidence": "probable"
+        },
+        {
+          "lat": 37.971666666666664,
+          "lon": 126.55277777777778,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+          "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+          "wikidataId": "Q109079",
+          "coordLabel": "개성시",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+          "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+          "dateBasis": "919년 개주 설정. 「강화군」의 1232년 강화 천도·1270년 개경 환도에 따라 기간을 나눈다. 연 단위이므로 천도·환도 연도는 겹친다.",
+          "validFrom": 1270,
+          "validTo": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 37.73888889,
+          "lon": 126.48944444,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001503",
+          "basis": "민족문화대백과 '강화군'은 1232년(고종 19) 도읍을 강화로 옮겨 강도(江都)라 하고 1270년(원종 11) 개경으로 환도했다고 적는다. 국가유산포털 '강화 고려궁지'는 그 궁궐터를 강화읍 관청리로 소재지 표기한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q50205",
+          "wikidataId": "Q50205",
+          "coordLabel": "강화군",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(강화군)·국가유산포털(강화 고려궁지)",
+          "historySourceTitle": "한국민족문화대백과사전 「강화군(江華郡)」 / 국가유산포털 「강화 고려궁지」",
+          "dateBasis": "encykorea 강화군 항목의 1232년 천도·1270년 환도 서술",
+          "validFrom": 1232,
+          "validTo": 1270,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-004",
+      "label": "江華",
+      "labelKo": "강화",
+      "kind": "region",
+      "count": 141,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 940,
+      "validTo": null,
+      "note": "민족문화대백과 '강화군'에 따르면 940년(태조 23) 강화현이 설치되면서 '강화'라는 이름이 처음 등장하고, 1232~1270년에는 수도 강도(江都)가 된다. 고려세계 sample은 작제건 설화 서술이지만 그 안의 '江華縣'은 실재 행정지명이므로 evidence에 넣었고, 설화 자체를 특정 유적에 비정하지 않았다. 좌표는 강화군청 소재지(강화읍) 부근과 섬 전체 참조점이며, 강도 시기 궁궐터(강화 고려궁지)는 위키데이터에 P625가 없어 별도 좌표를 쓰지 못했다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0001503",
+        "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?VdkVgwKey=13%2C01330000%2C23"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_$s02_0070",
+          "sourceId": "src-goryeosa",
+          "locator": "고려세계 › 작제건이 용왕의 딸에게 장가들고 송악에 집을 지어 살다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/kr_$s02_0070",
+          "quote": "豚. 於是, 乘漆船, 載七寶與豚, 泛海焂到岸, 卽昌陵窟前江岸也. 白州正朝 劉相晞等聞曰, ‘作帝建娶西海龍女來, 實大慶也.’ 率開·貞·塩·白四州, 江華·喬桐·河陰三縣人, 爲築永安城, 營宮室.\n龍女初來, 卽往開州東北山麓, 以銀盂掘地, 取水用之, 今開城大井是也. 居一年, 豚不入牢, 乃語豚曰, ‘若此地不可居, 吾將隨汝所之.’ 詰朝, 豚至松嶽南麓而臥, 遂營新第, 卽康忠舊",
+          "quoteStart": 248,
+          "quoteEnd": 450,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_008_0110_0010_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷八 世家 卷第八 › 文宗 21年 › 1월 › 흥왕사에서 연등회를 열다",
+          "date": {
+            "label": "1067년 1월 19일",
+            "raw": "1067-01-19L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_008_0110_0010_0030",
+          "quote": "戊辰 特設燃燈大會於興王寺, 五晝夜. 勑令百司及安西都護·開城府, 廣·水·楊·東·樹五州, 江華·長湍二縣, 自闕庭至寺門, 結綵棚, 櫛比鱗次, 連亘相屬, 輦路左右, 又作燈山·火樹, 光照如晝. 是日, 王備鹵簿率百官, 行香施納財襯, 佛事之盛, 曠古未有.",
+          "quoteStart": 0,
+          "quoteEnd": 135,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_021_0180_0090_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十一 世家 卷第二十一 › 熙宗 6年 › 12월 › 명종의 태자 왕숙을 강화에서 불러오다",
+          "date": {
+            "label": "1210년 12월 미상",
+            "raw": "1210-12-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_021_0180_0090_0020",
+          "quote": "是月, 召明宗太子璹于江華.",
+          "quoteStart": 0,
+          "quoteEnd": 14,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.73888889,
+          "lon": 126.48944444,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001503",
+          "basis": "민족문화대백과 '강화군'은 940년(태조 23) 강화현 설치로 이름이 처음 등장했고 현재 인천광역시 북서부, 강화읍은 군 북동부에 있다고 설명한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q50205",
+          "wikidataId": "Q50205",
+          "coordLabel": "강화군",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(강화군)",
+          "historySourceTitle": "한국민족문화대백과사전 「강화군(江華郡)」",
+          "dateBasis": "encykorea 강화군 항목의 940년 강화현 설치 서술",
+          "validFrom": 940,
+          "validTo": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 37.71,
+          "lon": 126.44,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001503",
+          "basis": "같은 항목이 강화를 한강 입구 황해에 있는 섬 지역으로 서술하므로, 섬 전체를 가리키는 용례의 광역 참조점으로 둔다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q494786",
+          "wikidataId": "Q494786",
+          "coordLabel": "강화도",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(강화군)",
+          "historySourceTitle": "한국민족문화대백과사전 「강화군(江華郡)」",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-005",
+      "label": "東京",
+      "labelKo": "동경",
+      "kind": "capital",
+      "count": 131,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 987,
+      "validTo": 1304,
+      "note": "고려 동경은 현재의 경주로, 백과는 987년 동경 개칭·유수 설치와 1304년 계림부 개편을 설명한다. 제공된 원문 표본도 성종대 경주 행차 기사다. 초안의 요·금 동경요양부 참조점은 해당 원문 용례를 확인하지 못해 지도 후보에서 제외했다. 좌표는 현대 경주시 참조점이다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0016185",
+        "https://encykorea.aks.ac.kr/Article/E0065994",
+        "https://ko.wikipedia.org/wiki/%EC%9A%94%EC%96%91%EB%B6%80"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_003_0110_0030_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三 世家 卷第三 › 成宗 9年 › 10월 › 왕이 서경에서 백성들을 위무하는 교서를 내리다",
+          "date": {
+            "label": "990년 10월 22일",
+            "raw": "0990-10-22L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_003_0110_0030_0010",
+          "quote": "四品, 存問其家, 兼賜布二十匹·稻穀一十石. 九十以上, 布四匹·稻穀二石, 八十以上, 及篤疾者, 布三匹·稻穀二石. 隨駕軍人, 有父母年八十者, 許先赴東京問安. 於戱! 乾坤覆載, 遐覃不宰之恩, 日月運行, 宛放無私之照. 適當在車駕之經歷, 固合垂雨露之霑滋.”",
+          "quoteStart": 509,
+          "quoteEnd": 647,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_003_0180_0010_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三 世家 卷第三 › 成宗 16年 › 8월 › 왕이 동경에 가서 관리와 백성을 위무하다",
+          "date": {
+            "label": "997년 8월 3일",
+            "raw": "0997-08-03L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_003_0180_0010_0010",
+          "quote": "十六年 秋八月 乙未 幸東京, 宴群臣, 扈從臣僚軍士, 賜物有差. 中外官各加勳階, 義夫·節婦·孝子·順孫, 旌門賜物. 遂頒赦.",
+          "quoteStart": 0,
+          "quoteEnd": 67,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_003_0180_0020_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三 世家 卷第三 › 成宗 16年 › 9월 › 왕이 귀경하다",
+          "date": {
+            "label": "997년 9월 7일",
+            "raw": "0997-09-07L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_003_0180_0020_0030",
+          "quote": "己巳 至自東京.",
+          "quoteStart": 0,
+          "quoteEnd": 8,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.85,
+          "lon": 129.21666666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0016185",
+          "basis": "민족문화대백과 '동경' 항목은 이를 현재의 경상북도 경주시로 보고, 987년 동경으로 개칭해 유수를 두었다가 1304년 계림부로 바뀌었다고 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42097",
+          "wikidataId": "Q42097",
+          "coordLabel": "경주시",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(동경)",
+          "historySourceTitle": "한국민족문화대백과사전 「동경(東京)」",
+          "dateBasis": "encykorea 동경 항목의 987년 개칭·1304년 계림부 개칭 서술",
+          "validFrom": 987,
+          "validTo": 1304,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-006",
+      "label": "濟州",
+      "labelKo": "제주",
+      "kind": "region",
+      "count": 103,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "탐라를 개편한 이름으로 현재의 제주도에 해당한다. 개칭 연도는 제주특별자치도청 연혁표가 '고려 고종 연대'(표기상 1192~1259)에 탐라군을 제주로 개편했다고만 적어 정확한 해를 확인하지 못했으므로 validFrom은 null로 둔다. 삼별초·원 간섭기(1273 이후 탐라총관부, 1294 고려 환속)에는 탐라·제주 표기가 병용된다. 읍치 후보 좌표는 현대 제주시 중심 참조점이고, 민족문화대백과 '제주성지'가 세종실록지리지의 석축 읍성을 고려 탐라현 현성으로 '추정'한다고만 하므로 고려 당시 치소의 확정 위치가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0051446",
+        "https://encykorea.aks.ac.kr/Article/E0058815",
+        "https://www.jeju.go.kr/culture/history/history/history01.htm"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_022_0180_0020_0040",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十二 世家 卷第二十二 › 高宗 16年 › 2월 › 송 상인이 우리 표류민을 데리고 오다",
+          "date": {
+            "label": "1229년 2월 26일",
+            "raw": "1229-02-26L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_022_0180_0020_0040",
+          "quote": "乙丑 宋商都綱金仁美等二人, 偕濟州飄風民梁用才等二十八入來.",
+          "quoteStart": 0,
+          "quoteEnd": 31,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_024_0080_0050_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十四 世家 卷第二十四 › 高宗 45年 › 5월 › 제주 말과 최의가 기르던 호마를 고관들에게 나누어주다",
+          "date": {
+            "label": "1258년 5월 13일",
+            "raw": "1258-05-13L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_024_0080_0050_0020",
+          "quote": "壬戌 以濟州貢馬及崔竩所畜胡馬, 分賜文武四品以上.",
+          "quoteStart": 0,
+          "quoteEnd": 26,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_025_0030_0020_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十五 世家 卷第二十五 › 元宗 元年 › 2월 › 제주부사 나득황에게 방호사를 겸직시키다",
+          "date": {
+            "label": "1260년 2월 2일",
+            "raw": "1260-02-02L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_025_0030_0020_0010",
+          "quote": "二月 庚子 以濟州副使 判禮賓省事 羅得璜, 兼防護使. 朝議濟州, 海外巨鎭, 宋商島倭, 無時往來, 宜特遣防護別監, 以備非常. 然舊制, 但守倅而已, 不可別置防護, 遂以得璜, 兼之. 且故事, 京官秩高者, 補外職, 秩不相當, 則皆以本職, 帶",
+          "quoteStart": 0,
+          "quoteEnd": 129,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 33.509722222222,
+          "lon": 126.52194444444,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0051446",
+          "basis": "민족문화대백과 '제주성지'는 제주읍성을 제주시 이도1동 일대로 적고, 세종실록지리지의 석축 읍성 기록을 고려시대 탐라현 현성으로 추정한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42142",
+          "wikidataId": "Q42142",
+          "coordLabel": "제주시",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(제주성지)",
+          "historySourceTitle": "한국민족문화대백과사전 「제주성지(濟州城址)」",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 33.38,
+          "lon": 126.55,
+          "sourceUrl": "https://www.jeju.go.kr/culture/history/history/history01.htm",
+          "basis": "제주특별자치도청 연혁표는 고려 고종 연대에 탐라군을 제주로 개편하고 1294년 고려로 환속하며 제주로 복호했다고 적는다. 섬 전체를 가리키는 용례의 광역 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q29151",
+          "wikidataId": "Q29151",
+          "coordLabel": "제주도(섬)",
+          "precision": "region",
+          "view": "제주특별자치도청 제주도연혁",
+          "historySourceTitle": "제주특별자치도 「제주도연혁」",
+          "dateBasis": "제주도청 연혁표(고려 고종 연대 개편, 연도 범위만 제시)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-007",
+      "label": "京師",
+      "labelKo": "경사",
+      "kind": "capital",
+      "count": 99,
+      "indexType": "지명",
+      "status": "disputed",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "고유 지명이 아니라 '수도'를 뜻하는 보통명사로, 이 사료 안에서도 지시 대상이 최소 세 갈래다. 제공된 samples가 그대로 그 예다. 1320년 '去京師萬五千里'는 원 황제가 상왕을 토번으로 유배한 기사라 원의 수도(대도) 기준이고, 1363년 '督赴京師'는 국내 교서이므로 고려 왕경, 1369년 명에 사신을 보내며 '如京師'라 한 것은 명 초 수도 응천부(남경)다. 연대만으로는 자국·타국 용례를 가를 수 없으므로(같은 시기에 둘 다 나타남) 기사별 문맥 확인 없이 한 점으로 확정하면 안 된다. status=disputed는 학계 논쟁이 아니라 다지시어라는 뜻이다. 좌표는 모두 현대 도시 참조점이다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0001652",
+        "https://dh.aks.ac.kr/sillokwiki/index.php/%EC%97%B0%ED%96%89(%E7%87%95%E8%A1%8C)",
+        "https://dh.aks.ac.kr/sillokwiki/index.php/%EB%82%A8%EA%B2%BD(%E5%8D%97%E4%BA%AC)",
+        "https://encykorea.aks.ac.kr/Article/E0017544",
+        "https://encykorea.aks.ac.kr/Article/E0001657",
+        "https://encykorea.aks.ac.kr/Article/E0001503"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_035_0010_0120_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三十五 世家 卷第三十五 › 忠肅王 7年 › 12월 › 원 황제가 상왕을 토번으로 유배보내다",
+          "date": {
+            "label": "1320년 12월 4일",
+            "raw": "1320-12-04L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_035_0010_0120_0010",
+          "quote": "十二月 戊申 帝以學佛經爲名, 流上王于吐蕃 撒思結之地. 去京師萬五千里, 隨從宰相崔誠之等, 皆逃匿不見, 唯直寶文閣 朴仁幹·前大護軍 張元祉等, 從至流所.",
+          "quoteStart": 0,
+          "quoteEnd": 82,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_040_0020_0050_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四十 世家 卷第四十 › 恭愍王 12年 › 4월 › 지방으로 피난한 관원들의 귀경을 독려하게 하다",
+          "date": {
+            "label": "1363년 4월 7일",
+            "raw": "1363-04-07L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_040_0020_0050_0020",
+          "quote": "丙午 敎曰, “近因師旅, 民不安業, 大小朝官, 避難在外, 侵奪土田, 剝民自利, 民生益艱. 其令督赴京師.”",
+          "quoteStart": 0,
+          "quoteEnd": 58,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_041_0050_0080_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四十一 世家 卷第四十一 › 恭愍王 18年 › 8월 › 명에 각종 명목의 사신을 보내면서 의례규범을 요청하다",
+          "date": {
+            "label": "1369년 8월 6일",
+            "raw": "1369-08-06L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_041_0050_0080_0030",
+          "quote": "戊辰 遣摠部尙書 成准得如京師, 賀聖節, 大將軍 金甲雨賀皇太子千秋節, 工部尙書 張子溫賀正. 仍請賜本國朝賀儀注.",
+          "quoteStart": 0,
+          "quoteEnd": 60,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.971666666666664,
+          "lon": 126.55277777777778,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+          "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+          "wikidataId": "Q109079",
+          "coordLabel": "개성시",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+          "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+          "dateBasis": "919년 개주 설정. 「강화군」의 1232년 강화 천도·1270년 개경 환도에 따라 기간을 나눈다. 연 단위이므로 천도·환도 연도는 겹친다.",
+          "validFrom": 919,
+          "validTo": 1232,
+          "confidence": "probable"
+        },
+        {
+          "lat": 37.971666666666664,
+          "lon": 126.55277777777778,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+          "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+          "wikidataId": "Q109079",
+          "coordLabel": "개성시",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+          "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+          "dateBasis": "919년 개주 설정. 「강화군」의 1232년 강화 천도·1270년 개경 환도에 따라 기간을 나눈다. 연 단위이므로 천도·환도 연도는 겹친다.",
+          "validFrom": 1270,
+          "validTo": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 39.93333333333333,
+          "lon": 116.4,
+          "sourceUrl": "https://dh.aks.ac.kr/sillokwiki/index.php/%EC%97%B0%ED%96%89(%E7%87%95%E8%A1%8C)",
+          "basis": "한국학중앙연구원 실록위키 '연행'은 연경이 북경이며 원이 1271년 북경을 대도로 삼았다고 적는다. 민족문화대백과 '만권당'도 충선왕이 1314년 원나라 연경(北京)에 서재를 세웠다고 한다. 1320년 원 황제의 유배 조치 기사에 나오는 京師가 이에 해당한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q101186473",
+          "wikidataId": "Q101186473",
+          "coordLabel": "대도(元大都/Khanbaliq)",
+          "precision": "approx",
+          "view": "한국학중앙연구원 실록위키(연행)·한국민족문화대백과사전(만권당)",
+          "historySourceTitle": "sillokwiki 「연행(燕行)」 / 한국민족문화대백과사전 「만권당(萬卷堂)」",
+          "dateBasis": "sillokwiki 연행의 원 1271년 대도, 명 초 남경 서술",
+          "validFrom": 1271,
+          "validTo": 1368,
+          "confidence": "probable"
+        },
+        {
+          "lat": 32.060833333333335,
+          "lon": 118.77888888888889,
+          "sourceUrl": "https://dh.aks.ac.kr/sillokwiki/index.php/%EB%82%A8%EA%B2%BD(%E5%8D%97%E4%BA%AC)",
+          "basis": "한국학중앙연구원 실록위키 '남경'은 1368년 홍무제가 응천부를 남경으로 삼고 1378년 수도로 확정했다가 1421년 북경으로 천도했다고 서술한다. 1369년 명에 성절 축하 사신을 보낸 기사의 京師가 이에 해당한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q16666",
+          "wikidataId": "Q16666",
+          "coordLabel": "난징시",
+          "precision": "approx",
+          "view": "한국학중앙연구원 실록위키(남경)",
+          "historySourceTitle": "sillokwiki 「남경(南京)」",
+          "dateBasis": "sillokwiki 남경의 1368년 남경 지정·1421년 북경 천도 서술",
+          "validFrom": 1368,
+          "validTo": 1421,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-008",
+      "label": "全羅",
+      "labelKo": "전라",
+      "kind": "region",
+      "count": 96,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1018,
+      "validTo": null,
+      "note": "고려 5도의 하나인 전라(전라주도)로, 민족문화대백과는 1018년(현종 9) 강남도와 해양도를 합쳐 전라도라 했고 명칭은 전주와 나주의 머릿글자를 딴 합성 지명이라고 설명한다. 현재의 광주광역시·전라남도·전북특별자치도에 해당하는 광역 지역이므로 단일 지점이 없다. 위키데이터의 전라도 항목(Q715812)에는 P625가 없어 좌표를 쓰지 못했고, 대신 도명의 유래가 된 전주·나주를 광역 참조점으로만 제시한다. 이 두 점을 도의 중심이나 치소로 해석하면 안 된다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0049367",
+        "https://encykorea.aks.ac.kr/Article/E0063706"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_024_0040_0090_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十四 世家 卷第二十四 › 高宗 41年 › 8월 › 경상·전라도에서 야별초를 보내다",
+          "date": {
+            "label": "1254년 8월 3일",
+            "raw": "1254-08-03L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_024_0040_0090_0030",
+          "quote": "癸酉 慶尙·全羅二道, 各遣夜別抄八十人, 守衛京城.",
+          "quoteStart": 0,
+          "quoteEnd": 27,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_026_0070_0070_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十六 世家 卷第二十六 › 元宗 11年 › 7월 › 두련가가 홍차구를 보내 5도를 순시하게 하다",
+          "date": {
+            "label": "1270년 7월 13일",
+            "raw": "1270-07-13L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_026_0070_0070_0020",
+          "quote": "辛亥 頭輦哥遣摠管 洪茶丘, 巡視全羅·慶尙·東界三道.",
+          "quoteStart": 0,
+          "quoteEnd": 28,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_027_0010_0030_0120",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十七 世家 卷第二十七 › 元宗 12年 › 3월 › 몽고에 일본과의 관계 등에 관한 우리의 입장을 알리다",
+          "date": {
+            "label": "1271년 3월 미상",
+            "raw": "1271-03-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_027_0010_0030_0120",
+          "quote": "·種子·軍粮等事. 若乃農牛, 如前表奏, 小邦京中鮮有畜使者, 外方農民雖産之, 饒者畜養亦不過一二頭. 貧者多以耒耕, 或相賃牛而使之. 今外方牛畜, 悉因全羅道糧餉轉輸, 以至飢困損失者大半. 農器則, 小邦人民, 元來未有贍庀者, 此皆雖不得如數, 倂當隨力供辦. 種子則, 百姓趂年畊作, 以修貢賦, 用其餘以爲糧料, 稍存若干斗斛, 以備明年耕種, 以故雖或戶歛, 殆是不多碩耳. 軍糧則, ",
+          "quoteStart": 158,
+          "quoteEnd": 360,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.82388888888889,
+          "lon": 127.1475,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0063706",
+          "basis": "민족문화대백과 '호남지방'은 1018년(현종 9)에 강남도와 해양도를 합쳐 전라도라 했고, 전라도라는 명칭이 전주와 나주의 머릿글자에서 왔다고 적는다. 전주는 그 앞글자에 해당하는 광역 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42140",
+          "wikidataId": "Q42140",
+          "coordLabel": "전주시",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(호남지방·전라도)",
+          "historySourceTitle": "한국민족문화대백과사전 「호남지방」·「전라도(全羅道)」",
+          "dateBasis": "encykorea 호남지방 항목의 1018년(현종 9) 전라도 성립 서술",
+          "validFrom": 1018,
+          "validTo": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 35.028333333333,
+          "lon": 126.7175,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0063706",
+          "basis": "같은 항목의 '전주와 나주의 머릿글자' 서술에 따른 두 번째 광역 참조점. 도 전체의 남부를 대표하는 지점일 뿐 치소가 아니다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42083",
+          "wikidataId": "Q42083",
+          "coordLabel": "나주시",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(호남지방·전라도)",
+          "historySourceTitle": "한국민족문화대백과사전 「호남지방」·「전라도(全羅道)」",
+          "dateBasis": "encykorea 호남지방 항목의 1018년(현종 9) 전라도 성립 서술",
+          "validFrom": 1018,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-009",
+      "label": "南京",
+      "labelKo": "남경",
+      "kind": "capital",
+      "count": 94,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1067,
+      "validTo": 1390,
+      "note": "고려 삼경의 하나인 남경(양주)으로, 민족문화대백과는 현재의 서울에 해당하며 궁궐이 '경복궁의 북쪽 … 지금의 청와대 부근'에 있었다고 서술한다. '부근'이라는 표현이므로 청와대 좌표를 남경 궁궐터의 정확한 위치로 볼 수 없다. 설치 시기는 문종 21년(1067) 기록과 숙종 4년(1099) 재설치·1104년 궁궐 완성이 함께 전하고, 같은 항목이 1067년 기록을 1390년 한양 천도 정당화를 위한 소급 작성으로 보는 견해도 소개한다. 1390년 한양 천도로 남경으로서의 역할이 끝난다. 한편 명 초의 남경(응천부)이나 요의 남경은 별개 대상이므로, 이 표기가 대외 기사에 나올 경우 문맥 확인이 필요하다(근거를 못 찾아 후보로는 넣지 않았다).",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0011767"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_008_0120_0110_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷八 世家 卷第八 › 文宗 22年 › 12월 › 남경에 새 궁궐을 짓다",
+          "date": {
+            "label": "1068년 미상",
+            "raw": "1068-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_008_0120_0110_0030",
+          "quote": "是歲, 創新宮于南京.",
+          "quoteStart": 0,
+          "quoteEnd": 11,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_011_0060_0090_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十一 世家 卷第十一 › 肅宗 4年 › 9월 › 남경 건립을 논의하다",
+          "date": {
+            "label": "1099년 9월 미상",
+            "raw": "1099-09-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_011_0060_0090_0010",
+          "quote": "九月 令宰臣日官等, 議建南京于楊州.",
+          "quoteStart": 0,
+          "quoteEnd": 19,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_011_0080_0100_0040",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十一 世家 卷第十一 › 肅宗 6年 › 10월 › 남경 창건을 종묘사직에 고하다",
+          "date": {
+            "label": "1101년 10월 9일",
+            "raw": "1101-10-09L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_011_0080_0100_0040",
+          "quote": "丙申 以始創南京, 告于宗廟·社稷·山川.",
+          "quoteStart": 0,
+          "quoteEnd": 21,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.58669167,
+          "lon": 126.97486389,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0011767",
+          "basis": "민족문화대백과 '남경'은 남경 궁궐이 \"경복궁의 북쪽에 있었는데, 지금의 청와대 부근\"이라고 적는다. 1104년 궁궐 완성, 1390년 한양 천도로 역할 종료.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q494577",
+          "wikidataId": "Q494577",
+          "coordLabel": "청와대",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전(남경)",
+          "historySourceTitle": "한국민족문화대백과사전 「남경(南京)」",
+          "dateBasis": "encykorea 남경 항목의 1104년 궁궐 완성·1390년 한양 천도 서술",
+          "validFrom": 1104,
+          "validTo": 1390,
+          "confidence": "probable"
+        },
+        {
+          "lat": 37.56,
+          "lon": 126.99,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0011767",
+          "basis": "같은 항목이 고려 남경을 양주에 두었고 현재의 서울특별시에 해당한다고 설명한다. 도시 단위 광역 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q8684",
+          "wikidataId": "Q8684",
+          "coordLabel": "서울특별시",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(남경)",
+          "historySourceTitle": "한국민족문화대백과사전 「남경(南京)」",
+          "dateBasis": "encykorea 남경 항목의 1067년 설치 기록·1390년 역할 종료 서술(1067년 기록은 소급 작성 견해 병기)",
+          "validFrom": 1067,
+          "validTo": 1390,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-010",
+      "label": "合浦",
+      "labelKo": "합포",
+      "kind": "city",
+      "count": 94,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 757,
+      "validTo": null,
+      "note": "한국민족문화대백과사전 「합포」는 현재 창원시 마산합포구에 비정하고 757년 합포 개명부터의 연혁을 설명한다. 현대 행정구 좌표만 지역 참조점으로 쓴다. 몽고정은 후대 주둔 관련 유적으로 합포현 치소라는 근거가 없어 지도 후보에서 제외했다. 1052년 「用合浦之珠」는 중국 고사를 인용한 수사로 본 조사 초안에서 제외했으며, 모든 합포 용례를 한국 지명으로 단정하지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0062374",
+        "https://encykorea.aks.ac.kr/Article/E0018776"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_027_0010_0030_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十七 世家 卷第二十七 › 元宗 12年 › 3월 › 삼별초가 합포로 들어가 감무를 잡아가다",
+          "date": {
+            "label": "1271년 3월 9일",
+            "raw": "1271-03-09L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_027_0010_0030_0030",
+          "quote": "壬申 三別抄寇合浦, 執監務而去.",
+          "quoteStart": 0,
+          "quoteEnd": 17,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_027_0010_0030_0120",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十七 世家 卷第二十七 › 元宗 12年 › 3월 › 몽고에 일본과의 관계 등에 관한 우리의 입장을 알리다",
+          "date": {
+            "label": "1271년 3월 미상",
+            "raw": "1271-03-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_027_0010_0030_0120",
+          "quote": "歛者累度, 猶不連續. 且又汎計種子·蒭秣·接秋軍粮, 凡幾萬碩, 此則何從而致之耶? 况今逆賊日益蔓衍, 侵及慶尙道 金州·密城, 加又掠取南海·彰善·巨濟·合浦·珍島等處, 至於濱海部落, 悉皆怯奪, 以故凡所徵歛, 難於應副. 而慶尙·全羅貢賦, 皆未得陸輸, 必以水運, 今逆賊據於珍島, 玆乃水程之咽喉, 使往來船楫不得過行, 其軍糧·牛料·種子, 雖欲徵歛, 致之無路. 然不敢違命, 當以力",
+          "quoteStart": 412,
+          "quoteEnd": 614,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.131,
+          "lon": 128.488,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0062374",
+          "basis": "민족문화대백과 '합포'는 현재 행정구역을 경상남도 창원시 마산합포구로 제시하고 757년 합포 개명부터 1949년 마산시까지의 연혁을 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q50386",
+          "wikidataId": "Q50386",
+          "coordLabel": "마산합포구",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(합포)",
+          "historySourceTitle": "한국민족문화대백과사전 「합포(合浦)」",
+          "dateBasis": "encykorea 합포 항목의 757년 합포 개명 서술",
+          "validFrom": 757,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-011",
+      "label": "西海道",
+      "labelKo": "서해도",
+      "kind": "region",
+      "count": 92,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": 1395,
+      "note": "고려 5도 중 하나인 광역 행정구역이다. 해주는 백과에 나오는 계수관 소재지 중 하나를 표시하는 참조점이다. 도 전체의 중심·치소·경계를 뜻하지 않는다. 서해도·황해도 Wikidata 항목에는 P625가 없어 지역 전체를 대신할 좌표를 만들지 않았다. 백과 항목마다 설명하는 시작 시점이 달라 validFrom은 null이다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0028278",
+        "https://encykorea.aks.ac.kr/Article/E0065385",
+        "https://www.wikidata.org/wiki/Q714865",
+        "https://www.wikidata.org/wiki/Q698214",
+        "https://www.wikidata.org/wiki/Q12601520"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_018_0060_0080_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十八 世家 卷第十八 › 毅宗 12年 › 9월 › 배주에 별궁을 짓고 중흥궐·대화전이라 하다",
+          "date": {
+            "label": "1158년 9월 4일",
+            "raw": "1158-09-04L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_018_0060_0080_0020",
+          "quote": "庚申 遣崔允儀, 知奏事 李元膺, 內侍 朴懷俊等, 創別宮于白州. 懷俊性苛刻, 徵丁夫于西海道, 日夜催督, 不日告成. 賜闕名‘重興’, 殿額‘大化’. 術者私語曰, “此道詵所謂, 庚方客虎, 擧頭掩來之勢, 創闕於此, 恐有危亡之患.”",
+          "quoteStart": 0,
+          "quoteEnd": 123,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_019_0120_0020_0090",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十九 世家 卷第十九 › 明宗 7年 › 2월 › 서해도 도적떼의 토벌에 나서다",
+          "date": {
+            "label": "1177년 2월 미상",
+            "raw": "1177-02-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_019_0120_0020_0090",
+          "quote": "是月, 盜起西海道, 遣戶部員外郞 朴紹, 發州縣兵, 討之.",
+          "quoteStart": 0,
+          "quoteEnd": 31,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_019_0130_0010_0060",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十九 世家 卷第十九 › 明宗 8年 › 1월 › 각 도에 찰방사를 보내 민정을 살피게 하다",
+          "date": {
+            "label": "1178년 1월 22일",
+            "raw": "1178-01-22L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_019_0130_0010_0060",
+          "quote": "丁巳 分遣察訪使.工部郞中 崔詵于興化道, 刑部員外郞 崔孝著 雲中道, 閤門祗侯 林惟謙 朔方道, 監察御史 崔敦禮沿海溟州道, 秘書丞 尹宗諹 西海道, 千牛衛將軍 吳光陟 楊忠州道, 郞將 李文中 晋陜州道, 侍御史 宋端慶 尙州道, 將軍 宋君秀 全羅州道, 刑部侍郞 李文中 廣 淸州道, 起居注 皇甫倬 春州道, 問民疾苦, 黜陟官吏及奉使者, 限十年以前, 追論殿最.凡被劾者, ",
+          "quoteStart": 0,
+          "quoteEnd": 197,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 38.033333333333,
+          "lon": 125.71666666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+          "basis": "「서해도」는 현재 황해도 일대에 해당하는 고려 5도의 하나로 설명하고 계수관으로 안서대도호부(해주)와 황주목을 든다. 해주 좌표는 이 중 한 고을의 현대 참조점이며 도 전체의 중심이나 경계가 아니다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q714865",
+          "coordLabel": "해주 (Haeju) — Wikidata P625",
+          "wikidataId": "Q714865",
+          "historySourceTitle": "한국민족문화대백과사전 「서해도(西海道)」",
+          "dateBasis": "「황해도」의 1018년과 「서해도」의 명칭 확인 연도 1093년은 서로 다른 설명이므로 시작을 정하지 않는다. 끝은 1395년 풍해도 개칭을 따른다.",
+          "precision": "region",
+          "view": "한국민족문화대백과사전",
+          "validFrom": null,
+          "validTo": 1395,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-012",
+      "label": "全羅道",
+      "labelKo": "전라도",
+      "kind": "region",
+      "count": 86,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1018,
+      "validTo": 1896,
+      "note": "고려 5도의 하나인 광역 행정구역이라 한 점으로 확정할 수 없다. 민족문화대백과 '전라도'는 '전라'가 '전주와 나주의 머리 글자'를 합친 이름이고 관할이 지금의 전라북도·전라남도라고 서술한다. Wikidata '전라도'(Q715812)에는 P625가 없어, 명칭 유래이자 계수관 도시인 전주·나주를 지역 참조점으로 두 개 제시했다. 두 좌표는 도의 중심점이나 경계가 아니며 도의 범위를 대표하지 않는다. 고려 당대의 공식 도명은 '전라주도'였고(민백), 1178년 찰방사 기사에도 全羅州道로 나오지만 고종·원종대 기사에는 全羅道로 표기된다 — 편찬(1451) 단계의 표기 정리 가능성을 배제할 수 없다. 나주는 rank 19에 별도 표제로도 있으므로 중복 참조점임에 유의.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0049367",
+        "https://encykorea.aks.ac.kr/Article/E0063706",
+        "https://www.wikidata.org/wiki/Q42140",
+        "https://www.wikidata.org/wiki/Q42083",
+        "https://www.wikidata.org/wiki/Q715812"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_022_0120_0090_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十二 世家 卷第二十二 › 高宗 10年 › 9월 › 양계·5도의 진병법석에 소요되는 경비를 내고에서 지출하다",
+          "date": {
+            "label": "1223년 9월 9일",
+            "raw": "1223-09-09L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_022_0120_0090_0020",
+          "quote": "戊申 有旨, “兩界五道, 鎭兵法席供費, 皆出於民. 是欺佛欺天, 何福之有?” 爰遣中使, 出內庫銀甁三百口, 分付諸道, 慶尙道二百口, 全羅道六十口, 忠淸道四十口.",
+          "quoteStart": 0,
+          "quoteEnd": 87,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_027_0010_0020_0090",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十七 世家 卷第二十七 › 元宗 12年 › 2월 › 남쪽 지역을 침탈하는 몽고군을 회유하기 위해 장일 등을 파견하다",
+          "date": {
+            "label": "1271년 2월 17일",
+            "raw": "1271-02-17L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_027_0010_0020_0090",
+          "quote": "辛亥 脫朶兒告王曰, 我兵之戍南方者, 侵掠州郡, 民不聊生, 宜遣使安撫, 於是, 遣張鎰于慶尙道, 朱悅于全羅道, 郭汝弼于忠淸道.",
+          "quoteStart": 0,
+          "quoteEnd": 68,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_027_0010_0020_0110",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十七 世家 卷第二十七 › 元宗 12年 › 2월 › 인공수 등을 몽고로 보내 둔전의 철폐를 요청하다",
+          "date": {
+            "label": "1271년 2월 21일",
+            "raw": "1271-02-21L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_027_0010_0020_0110",
+          "quote": " 家歛戶収, 甚爲艱難, 設有種田軍又至, 則農粮旣乏於此, 時穀種更求於何處? 乃如耕牛, 元來不畜, 況城中居民, 鮮有畜使者, 當索於外邑. 然小邦忠淸·全羅道, 方困討賊, 徵索未便, 唯慶尙道, 儻可得致, 斯亦不多耳. 然則上供之事, 豈唯難於成辦, 東作之師, 亦懼罹於歉艱. 擬令世子, 權攝國事, 凡小邦情狀, 筆所未到者, 近當三月, 跨馬, 躬自朝于天陛, 一皆敷奏, 惟是賤介之陳諗",
+          "quoteStart": 105,
+          "quoteEnd": 308,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.823888888889,
+          "lon": 127.1475,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0049367",
+          "basis": "민족문화대백과 '전라도'는 도명이 '전주와 나주의 머리 글자'를 합친 것이고 관할이 지금의 전북·전남이라고 서술한다. 전주는 도명 앞 글자를 딴 대표 도시로, 광역 참조점으로만 사용.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42140",
+          "coordLabel": "전주 (Jeonju) — Wikidata P625",
+          "wikidataId": "Q42140",
+          "historySourceTitle": "한국민족문화대백과사전 「전라도」",
+          "dateBasis": "민족문화대백과 '호남지방': 고려 초 강남도·해양도를 1018년(현종 9)에 합하여 전라도라 함 / '전라도': 1896년 13도제로 남북 분리",
+          "precision": "region",
+          "view": "한국민족문화대백과사전",
+          "validFrom": 1018,
+          "validTo": 1896,
+          "confidence": "probable"
+        },
+        {
+          "lat": 35.028333333333,
+          "lon": 126.7175,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0049367",
+          "basis": "같은 항목이 도명의 뒷 글자를 나주에서 땄다고 서술한다. 나주는 고려 나주목으로 도 남부의 중심이었고, 여기서는 광역 참조점으로만 사용.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42083",
+          "coordLabel": "나주시 (Naju) — Wikidata P625",
+          "wikidataId": "Q42083",
+          "historySourceTitle": "한국민족문화대백과사전 「전라도」",
+          "dateBasis": "민족문화대백과 '호남지방': 1018년(현종 9) 전라도 성립",
+          "precision": "region",
+          "view": "한국민족문화대백과사전",
+          "validFrom": 1018,
+          "validTo": 1896,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-013",
+      "label": "慶尙道",
+      "labelKo": "경상도",
+      "kind": "region",
+      "count": 85,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": 1896,
+      "note": "경상도는 넓은 지역이며 좌표는 영남 권역의 참조점이다. 1314년 도명 통합을 시작 연도로 두면 1223~1226년 원문 용례가 제외되므로 시작을 정하지 않는다. 이름의 유래만으로 경주를 도의 중심점으로 삼은 초안 후보는 제외했다. 지도 점은 영역이나 경계가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0002512",
+        "https://www.wikidata.org/wiki/Q487576",
+        "https://www.wikidata.org/wiki/Q42097",
+        "https://www.wikidata.org/wiki/Q698206"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_022_0120_0090_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十二 世家 卷第二十二 › 高宗 10年 › 9월 › 양계·5도의 진병법석에 소요되는 경비를 내고에서 지출하다",
+          "date": {
+            "label": "1223년 9월 9일",
+            "raw": "1223-09-09L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_022_0120_0090_0020",
+          "quote": "戊申 有旨, “兩界五道, 鎭兵法席供費, 皆出於民. 是欺佛欺天, 何福之有?” 爰遣中使, 出內庫銀甁三百口, 分付諸道, 慶尙道二百口, 全羅道六十口, 忠淸道四十口.",
+          "quoteStart": 0,
+          "quoteEnd": 87,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_022_0140_0040_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十二 世家 卷第二十二 › 高宗 12年 › 4월 › 경상도 연해를 침략한 왜선을 나포하다",
+          "date": {
+            "label": "1225년 4월 8일",
+            "raw": "1225-04-08L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_022_0140_0040_0020",
+          "quote": "倭船二艘, 寇慶尙道沿海州縣, 發兵悉擒之.",
+          "quoteStart": 0,
+          "quoteEnd": 22,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_022_0150_0010_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十二 世家 卷第二十二 › 高宗 13年 › 1월 › 경상도를 침략한 왜적을 진용갑이 물리치다",
+          "date": {
+            "label": "1226년 1월 27일",
+            "raw": "1226-01-27L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_022_0150_0010_0030",
+          "quote": "倭寇慶尙道沿海州郡, 巨濟縣令 陳龍甲, 以舟師, 戰于沙島, 斬二級, 賊夜遁.",
+          "quoteStart": 0,
+          "quoteEnd": 41,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.676313,
+          "lon": 128.912105,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0002512",
+          "basis": "민족문화대백과 '경상도'는 관할 범위를 지금의 경상남도·경상북도로 서술한다. 좌표는 그에 대응하는 현대 광역 지역(영남)의 Wikidata 대표점으로, 도의 경계가 아니다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q487576",
+          "coordLabel": "영남 지방 (Yeongnam) — Wikidata P625",
+          "wikidataId": "Q487576",
+          "historySourceTitle": "한국민족문화대백과사전 「경상도」",
+          "dateBasis": "1314년은 도명 통합 연혁으로, 원문에는 1223·1225·1226년 경상도 용례가 있다. 시작을 정하지 않는다. 끝은 1896년 분도를 따른다.",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 + Wikidata 지역 대표점",
+          "validFrom": null,
+          "validTo": 1896,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-014",
+      "label": "慶尙",
+      "labelKo": "경상",
+      "kind": "region",
+      "count": 83,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1106,
+      "validTo": null,
+      "note": "독립된 지명이 아니라 도명의 약칭 또는 합성 도명의 앞 요소다. 1107년 샘플의 '慶尙·晋州道'는 민족문화대백과가 1106년(예종 1)에 영남·영동·산남 3도를 합쳐 부른 '경상진주도'와 일치하고, 1254년 '慶尙·全羅二道'와 1270년 '全羅·慶尙·東界三道'는 경상도의 약칭이다. 따라서 가리키는 공간은 慶尙道(rank 13)와 같아 좌표도 같은 광역 참조점 하나만 제시했고, 별도의 장소로 오해하지 않도록 후보를 늘리지 않았다. validFrom 1106은 '경상'이라는 요소가 도명에 처음 쓰인 시점(민백)이고, 이후 경상주도·상진안동도 등으로 도명이 바뀌므로 이 표기가 늘 같은 관할 범위를 뜻하지는 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0002512",
+        "https://www.wikidata.org/wiki/Q487576",
+        "https://www.wikidata.org/wiki/Q698206"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_012_0070_0020_0050",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十二 世家 卷第十二 › 睿宗 2年 › 2월 › 각 도에 안무사를 보내다",
+          "date": {
+            "label": "1107년 2월 29일",
+            "raw": "1107-02-29L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_012_0070_0020_0050",
+          "quote": "丙戌 分遣諸道安撫使, 起居郞 李汝霖于楊廣·忠淸州道, 大府少卿 崔渭于全羅州道, 侍御史 智祿延于慶尙·晋州道, 問民疾苦, 察守令殿最, 以聞.",
+          "quoteStart": 0,
+          "quoteEnd": 75,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_024_0040_0090_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十四 世家 卷第二十四 › 高宗 41年 › 8월 › 경상·전라도에서 야별초를 보내다",
+          "date": {
+            "label": "1254년 8월 3일",
+            "raw": "1254-08-03L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_024_0040_0090_0030",
+          "quote": "癸酉 慶尙·全羅二道, 各遣夜別抄八十人, 守衛京城.",
+          "quoteStart": 0,
+          "quoteEnd": 27,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_026_0070_0070_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十六 世家 卷第二十六 › 元宗 11年 › 7월 › 두련가가 홍차구를 보내 5도를 순시하게 하다",
+          "date": {
+            "label": "1270년 7월 13일",
+            "raw": "1270-07-13L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_026_0070_0070_0020",
+          "quote": "辛亥 頭輦哥遣摠管 洪茶丘, 巡視全羅·慶尙·東界三道.",
+          "quoteStart": 0,
+          "quoteEnd": 28,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.676313,
+          "lon": 128.912105,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0002512",
+          "basis": "민족문화대백과 '경상도'의 변천 서술(1106년 경상진주도, 1171년 경상주도 등)과 관할 범위(지금의 경남·경북)에 근거한 광역 참조점. 좌표 자체는 현대 영남 지역의 Wikidata 대표점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q487576",
+          "coordLabel": "영남 지방 (Yeongnam) — Wikidata P625",
+          "wikidataId": "Q487576",
+          "historySourceTitle": "한국민족문화대백과사전 「경상도」",
+          "dateBasis": "민족문화대백과 '경상도': 1106년 3도를 합쳐 경상진주도라 칭함",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 + Wikidata 지역 대표점",
+          "validFrom": 1106,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-015",
+      "label": "珍島",
+      "labelKo": "진도",
+      "kind": "region",
+      "count": 83,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 757,
+      "validTo": null,
+      "note": "전라남도 진도군의 본섬으로, 민족문화대백과는 해남군 우수영과 마주보는 국내 세 번째로 큰 섬(374.981㎢)이며 백제 인진도군에서 757년(경덕왕 16) 진도로 개칭되었다고 서술한다. 섬 전체가 대상이므로 첫 후보는 지역 정밀도다. 두 번째 후보 용장성은 삼별초가 1270년(원종 11) 6월 강화도에서 옮겨와 근거지로 삼은 성으로, 1270~1271년 기사(삼별초 입거·토벌)의 실제 거점에 해당하며 섬 전체와는 구분해 site 정밀도로 분리했다. 1269년 국사(國史) 이안 기사는 섬/현 단위 기사이므로 용장성과 연결하지 않았다. 삼별초의 진도 함락 시점을 명시한 출처를 이번 조사에서 확인하지 못해 용장성 후보의 validTo는 null로 두었다. 국가유산청 사적 정보의 공식 좌표(34.51631, 126.33761)는 Wikidata P625 값과 근사해 교차검증되나, 규칙에 따라 좌표값은 Wikidata를 사용했다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0054632",
+        "https://encykorea.aks.ac.kr/Article/E0039655",
+        "https://www.khs.go.kr/cha/SearchKindOpenapiDt.do?ccbaCpno=1333601260000",
+        "https://www.wikidata.org/wiki/Q485651",
+        "https://www.wikidata.org/wiki/Q12608758"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_026_0060_0050_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十六 世家 卷第二十六 › 元宗 10年 › 5월 › 일본이 침략해온다는 소식이 전해져 수비태세를 갖추다",
+          "date": {
+            "label": "1269년 5월 1일",
+            "raw": "1269-05-01L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_026_0060_0050_0010",
+          "quote": "按察使馳報, “濟州人漂風, 至日本還言, ‘日本具兵船, 將寇我.’” 於是, 遣三別抄及大角班, 巡戍海邊. 又令沿海郡縣, 築城積穀, 移彰善縣所藏國史於珍島.",
+          "quoteStart": 9,
+          "quoteEnd": 92,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_026_0070_0080_0050",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十六 世家 卷第二十六 › 元宗 11年 › 8월 › 삼별초가 진도로 들어가 약탈하다",
+          "date": {
+            "label": "1270년 8월 19일",
+            "raw": "1270-08-19L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_026_0070_0080_0050",
+          "quote": "丙戌 三別抄入據珍島, 侵掠州郡. 矯帝旨, 令全羅道按察使, 督民收穫, 徙居海島.",
+          "quoteStart": 0,
+          "quoteEnd": 43,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_026_0070_0090_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十六 世家 卷第二十六 › 元宗 11年 › 9월 › 삼별초가 장흥부를 침략하자 왕이 사자를 보내 타이르다",
+          "date": {
+            "label": "1270년 9월 4일",
+            "raw": "1270-09-04L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_026_0070_0090_0020",
+          "quote": "辛丑 將軍 楊東茂·高汝霖等, 以舟師討珍島, 賊入長興府, 殺京卒二十餘人, 擒都領尹萬藏, 剽掠財穀, 王遣使安撫.",
+          "quoteStart": 0,
+          "quoteEnd": 60,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 34.483055555556,
+          "lon": 126.26194444444,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0054632",
+          "basis": "민족문화대백과 '진도'는 진도군에 속한 섬으로 해남군 우수영과 마주하며 본섬 면적 374.981㎢, 757년 진도로 개칭되었다고 서술한다. 좌표는 섬 전체의 대표점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q485651",
+          "coordLabel": "진도(섬) / Jindo — Wikidata P625(선호값)",
+          "wikidataId": "Q485651",
+          "historySourceTitle": "한국민족문화대백과사전 「진도(珍島)」",
+          "dateBasis": "민족문화대백과 '진도': 757년(경덕왕 16) 진도로 개칭",
+          "precision": "region",
+          "view": "한국민족문화대백과사전",
+          "validFrom": 757,
+          "validTo": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 34.515555555556,
+          "lon": 126.33805555556,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0039655",
+          "basis": "민족문화대백과 '진도 용장성'은 소재지를 전라남도 진도군 군내면 용장리 106번지로 적고, 1270년(원종 11) 6월 삼별초가 강화도에서 옮겨와 항몽 거점(행궁)으로 삼은 성이라고 서술한다. 국가유산청 사적 정보도 같은 위치·성격을 제시한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q12608758",
+          "coordLabel": "진도 용장성 (Jindo Yongjangseong) — Wikidata P625",
+          "wikidataId": "Q12608758",
+          "historySourceTitle": "한국민족문화대백과사전 「진도 용장성」 / 국가유산청 사적 정보",
+          "dateBasis": "민족문화대백과 '진도 용장성': 1270년(원종 11) 6월 삼별초의 진도 이동",
+          "precision": "site",
+          "view": "한국민족문화대백과사전·국가유산청",
+          "validFrom": 1270,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-016",
+      "label": "淸州",
+      "labelKo": "청주",
+      "kind": "city",
+      "count": 79,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 940,
+      "validTo": null,
+      "note": "충청북도 청주로 본다. 민족문화대백과 '청주시'는 757년 서원경 승격, 940년(태조 23) '청주'로 개칭, 983년 청주목, 1018년 8목의 하나로 서술한다. 세 샘플 모두 이 비정과 부합한다 — 1011년 현종의 남행 중 유숙·출발 기사, 1025년 '慶·尙·淸州, 安東·密城' 지진 기사(경주·상주·청주·안동·밀성의 축약 병렬), 1178년 '廣·淸州道' 찰방사 기사. 글자가 다른 중국의 靑州와는 구별된다. 고려 청주목 관아(치소)의 지점을 따로 비정한 자료는 이번 조사에서 확인하지 못했고, 좌표는 현대 청주시 중심 참조점이므로 관아터의 정확한 위치를 뜻하지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0056739",
+        "https://www.grandculture.net/cheongju/toc/GC00201149",
+        "https://www.wikidata.org/wiki/Q42147"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0020_0040",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 2월 › 왕이 청주에 묵다",
+          "date": {
+            "label": "1011년 2월 13일",
+            "raw": "1011-02-13L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0020_0040",
+          "quote": "丁巳 次淸州.",
+          "quoteStart": 0,
+          "quoteEnd": 7,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0020_0060",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 2월 › 왕이 청주를 떠나다",
+          "date": {
+            "label": "1011년 2월 16일",
+            "raw": "1011-02-16L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0020_0060",
+          "quote": "庚申 發淸州.",
+          "quoteStart": 0,
+          "quoteEnd": 7,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_005_0030_0060_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷五 世家 卷第五 › 顯宗 16年 › 7월 › 경주 등지에 지진이 나다",
+          "date": {
+            "label": "1025년 7월 7일",
+            "raw": "1025-07-07L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_005_0030_0060_0030",
+          "quote": "丁亥 慶·尙·淸州, 安東·密城地震.",
+          "quoteStart": 0,
+          "quoteEnd": 19,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.637222222222,
+          "lon": 127.48972222222,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0056739",
+          "basis": "민족문화대백과 '청주시'는 충청북도 중서부의 도시로, 940년(태조 23) 지금 이름인 청주로 고쳐졌고 983년 청주목, 1018년 8목 설치 때 다시 청주목이 되었다고 서술한다. 좌표는 현대 청주시 중심 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42147",
+          "coordLabel": "청주 (Cheongju) — Wikidata P625",
+          "wikidataId": "Q42147",
+          "historySourceTitle": "한국민족문화대백과사전 「청주시」 / 디지털청주문화대전 「청주목」",
+          "dateBasis": "민족문화대백과 '청주시' 및 디지털청주문화대전 '청주목': 940년(태조 23) 청주로 개칭",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전·디지털청주문화대전(한국학중앙연구원)",
+          "validFrom": 940,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-017",
+      "label": "鴨綠江",
+      "labelKo": "압록강",
+      "kind": "river",
+      "count": 79,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "통설은 지금의 압록강(백두산 천지 부근 발원, 803.3㎞, 황해로 유입)으로 본다. 민족문화대백과 '압록강'은 993년(성종 12) 강동 6주 확보로 고려 북계가 압록강에 이르렀다고 서술하며 위치 비정의 이설은 언급하지 않는다. 다만 윤경진(2021, 『군사』 118, KCI)은 고려 초 여진 관계 기사의 '압록강'을 동북방의 강(지금의 용흥강 상류, 이른바 '화주압록강')으로, 고려 후기의 일부 인식을 요하와 연결된 '요하압록강'으로 보는 견해를 제시했다. 991년 '逐鴨綠江外女眞於白頭山外'는 이 소수설이 다루는 여진 관계 기사에 해당하므로 단일 비정으로 확정하지 않았다. 용흥강은 한국어 위키백과 문서와 Wikidata 항목을 찾지 못해 소수설 좌표 후보는 만들지 않았다. 하천이라 점으로 표시할 수 없고, Wikidata P625는 강 전체의 대표점 하나(상류 쪽)여서 984년 축성 지점, 1010년 거란군 도하 지점(흥화진 부근) 같은 개별 지점을 뜻하지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0035176",
+        "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002694307",
+        "https://www.wikidata.org/wiki/Q55498"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_003_0050_0020_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三 世家 卷第三 › 成宗 3年 › 5월 › 압록강에 성을 쌓게 했으나 여진이 저지하다",
+          "date": {
+            "label": "984년 미상",
+            "raw": "0984-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_003_0050_0020_0030",
+          "quote": "命刑官御事 李謙宜, 城鴨綠江岸, 以爲關城, 女眞以兵遏之, 虜謙宜而去, 軍潰不克城, 還者三之一.",
+          "quoteStart": 0,
+          "quoteEnd": 52,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_003_0120_0050_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三 世家 卷第三 › 成宗 10年 › 10월 › 여진족을 백두산 너머로 쫓아내다",
+          "date": {
+            "label": "991년 10월 3일",
+            "raw": "0991-10-03L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_003_0120_0050_0020",
+          "quote": "逐鴨綠江外女眞於白頭山外, 居之.",
+          "quoteStart": 0,
+          "quoteEnd": 17,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0030_0090_0040",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 元年 › 11월 › 거란주가 직접 흥화진을 포위공격하다",
+          "date": {
+            "label": "1010년 11월 16일",
+            "raw": "1010-11-16L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0030_0090_0040",
+          "quote": "辛卯 契丹主自將步騎四十萬, 渡鴨綠江, 圍興化鎭, 楊規·李守和等固守不降.",
+          "quoteStart": 0,
+          "quoteEnd": 39,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 41.968888888889,
+          "lon": 128.07333333333,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0035176",
+          "basis": "민족문화대백과 '압록강'은 백두산 천지 부근에서 발원해 혜산·중강진·만포·신의주를 거쳐 황해로 흘러드는 한반도 최장 하천(803.3㎞)이며, 993년 강동 6주 이후 고려 북계가 이 강에 이르렀다고 서술한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q55498",
+          "coordLabel": "압록강 / Yalu River — Wikidata P625(강 대표점 1개, 상류 쪽)",
+          "wikidataId": "Q55498",
+          "historySourceTitle": "한국민족문화대백과사전 「압록강」",
+          "dateBasis": "없음 — 하천명의 사용 시작·종료 시점을 뒷받침하는 출처를 확인하지 못함",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(통설)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-018",
+      "label": "遼東",
+      "labelKo": "요동",
+      "kind": "region",
+      "count": 76,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "'요하의 동쪽'을 가리키는 광역 지역명이라 한 점으로 확정할 수 없다. 세계한민족문화대전(한국학중앙연구원)은 좁게는 요동성 일대, 넓게는 산해관 동쪽에서 한반도 북부 서쪽까지를 가리키며 동쪽 경계는 명확하지 않다고 서술한다. 좌표는 요동성(양평)이 있던 요양의 현대 도시 참조점으로, 지역의 중심·경계를 뜻하지 않는다. 세 샘플은 시기별로 지배 세력이 달라 같은 참조점이 같은 정치체를 뜻하지 않는다 — 925년은 대조영이 의탁했다는 서술 속의 요동, 1216년은 포선만노가 웅거한 요동, 1289년은 원의 행정 단위로서의 요동(요양등로행성)이다. Wikidata '요동성'(Q15908921)에는 P625가 없어 사용하지 못했고, 한국어 위키백과 '요동'은 '랴오둥반도'로 넘겨주기되어 있어 반도 항목의 좌표는 지역명 요동의 범위와 일치하지 않으므로 쓰지 않았다.",
+      "references": [
+        "https://www.okpedia.kr/Contents/ContentsView?localCode=krcn&contentsId=GC05308532",
+        "https://www.wikidata.org/wiki/Q75203",
+        "https://www.wikidata.org/wiki/Q15908921"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0090_0020_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 8年 › 9월 › 거란에 의해 멸망한 발해인들이 계속 귀부해오다",
+          "date": {
+            "label": "925년 9월 10일",
+            "raw": "0925-09-10L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0090_0020_0020",
+          "quote": "庚子 渤海禮部卿 大和鈞·均老司政 大元鈞·工部卿 大福謨·左右衛將軍 大審理等, 率民一百戶來附. 渤海本粟末靺鞨也, 唐武后時, 高句麗人大祚榮走保遼東, 睿宗封爲渤海郡王. 因自稱渤海國, 幷有扶餘·肅愼等十餘國. 有文字禮樂官府制度, 五京十五府六十二州, 地方五千餘里, 衆數十萬, 隣于我境, 而與契丹世讎. 至是, 契丹主謂左右曰 “世讎未雪, 豈宜安處?” 乃大擧, 攻渤海大諲譔",
+          "quoteStart": 0,
+          "quoteEnd": 198,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_022_0050_0080_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十二 世家 卷第二十二 › 高宗 3年 › 윤7월 › 금이 식량이 고갈되어 밀무역을 행하다",
+          "date": {
+            "label": "1216년 윤7월 5일",
+            "raw": "1216-07-05L1"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_022_0050_0080_0030",
+          "quote": "時, 金宣撫 蒲鮮萬奴, 據遼東, 僭稱天王, 國號大眞. 先是, 金再牒乞糶, 國家令邊官, 拒而不納. 自去年, 金人因兵亂資竭, 爭賚珍寶, 款義·靜州關外, 互市米穀. 至以銀一錠, 換米四五石, 故商賈爭射厚利, 國家雖嚴刑籍貨, 然猶貪瀆無厭, 潛隱互市不絶.",
+          "quoteStart": 0,
+          "quoteEnd": 136,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_030_0050_0020_0040",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三十 世家 卷第三十 › 忠烈王 15年 › 2월 › 원이 요동 구휼을 위해 양곡 10만 석을 요구하다",
+          "date": {
+            "label": "1289년 2월 16일",
+            "raw": "1289-02-16L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_030_0050_0020_0040",
+          "quote": "丙寅 元遣湖廣等路行尙書省叅知政事 張守智, 翰林直學士 李天英等來, 詔曰, “據尙書省奏, ‘去歲, 遼東調遣軍馬, 人民被擾, 田禾未收, 例皆闕食. 江南險遠, 船運粮斛, 不敷給散. 遼東與高麗接境, 乞令本處, 措辦粮十萬石, 前來接濟.’ 得此, 今遣張守智等前去, 上件粮數, 儘力辦集, 差官報送, 趂迭來春, 接濟用度.”",
+          "quoteStart": 0,
+          "quoteEnd": 171,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 41.26432,
+          "lon": 123.1772,
+          "sourceUrl": "https://www.okpedia.kr/Contents/ContentsView?localCode=krcn&contentsId=GC05308532",
+          "basis": "세계한민족문화대전 「한국사 속의 요동」은 요동을 '요하의 동쪽'으로 정의하고 좁게는 요동성 일대를 가리킨다고 서술하며, 요양·심양을 중심 도시로, 원대에는 요양 등로 행성이 설치되었다고 적는다. 좌표는 요동성이 있던 요양의 현대 도시 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "coordLabel": "랴오양시 (Liaoyang) — Wikidata P625",
+          "wikidataId": "Q75203",
+          "historySourceTitle": "세계한민족문화대전(한국학중앙연구원) 「한국사 속의 요동, 전략적인 요충지」",
+          "dateBasis": "없음 — 지역명 '요동'의 사용 시작·종료 시점을 특정한 출처를 확인하지 못함",
+          "precision": "region",
+          "view": "세계한민족문화대전(한국학중앙연구원)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-019",
+      "label": "羅州",
+      "labelKo": "나주",
+      "kind": "city",
+      "count": 71,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 903,
+      "validTo": null,
+      "note": "전라남도 나주로 본다. 민족문화대백과 '나주시'는 영산강이 시 중앙을 가로지르는 전남 중서부 도시이며, 940년(태조 23) 금산군을 나주로 개칭하고 983년 나주목, 996년 진해군절도사(해양도), 1018년 목으로 복구되었다고 서술한다. 개칭 시점은 기록이 엇갈린다 — 입력 인용의 태조 총서 903년조는 금성(錦城)을 함락하고 '仍改錦城爲羅州'라 하여 903년을 말하는 반면 민백은 940년 전국 지명 개편을 든다. validFrom 903은 사료 기술을, 후보의 dateBasis 940은 민백 서술을 따른 것이므로 서로 다른 근거임에 유의. 좌표는 현대 나주시 중심 참조점이며 고려 나주목 관아터의 정확한 위치가 아니다. 909년·나주 포구 기사에 함께 나오는 목포·덕진포 등 세부 지점은 이번 조사 범위 밖으로 비정하지 않았다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0011489",
+        "https://encykorea.aks.ac.kr/Article/E0049367",
+        "https://www.wikidata.org/wiki/Q42083"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0010_0070",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 태조 총서 › 태조가 나주를 함락시키고 변경을 안정시킬 전략을 보고하다",
+          "date": {
+            "label": "903년 3월 미상",
+            "raw": "0903-03-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0010_0070",
+          "quote": "天復三年癸亥 三月 率舟師, 自西海抵光州界, 攻錦城郡拔之, 擊取十餘郡縣. 仍改錦城爲羅州, 分軍戍之而還. 是歲, 良州帥金忍訓告急, 裔令太祖往救. 及還, 裔問邊事, 太祖陳安邊拓境之策. 左右皆屬目, 裔亦奇之, 進階爲閼粲.",
+          "quoteStart": 0,
+          "quoteEnd": 119,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0010_0100",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 태조 총서 › 태조가 수군을 지휘해 진도를 함락하다",
+          "date": {
+            "label": "909년 미상",
+            "raw": "0909-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0010_0100",
+          "quote": "梁開平三年己巳 太祖見裔日以驕虐, 復有志於閫外. 適裔以羅州爲憂, 遂令太祖往鎭之, 進階爲韓粲 海軍大將軍. 太祖推誠撫士, 威惠並行, 士卒畏愛, 咸思奮勇, 敵境讋服. 以舟師, 次于光州塩海縣, 獲萱遣入吳越船而還, 裔喜甚, 優加褒獎. 又使太祖修戰艦于貞州, 以閼粲 宗希·金言等副之, ",
+          "quoteStart": 0,
+          "quoteEnd": 151,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0010_0110",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 태조 총서 › 태조가 나주에서 견훤의 수군을 격파하다",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/kr_001_0010_0110",
+          "quote": "及至羅州浦口, 萱親率兵列戰艦, 自木浦至德眞浦, 首尾相銜, 水陸縱橫, 兵勢甚盛. 諸將患之, 太祖曰, “勿憂也. 師克在和, 不在衆.” 乃進軍急擊, 敵船稍却. 乘風縱火, 燒溺者大半, 斬獲五百餘級, 萱以小舸遁歸. 初羅州管內諸郡, ",
+          "quoteStart": 0,
+          "quoteEnd": 124,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.028333333333,
+          "lon": 126.7175,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0011489",
+          "basis": "민족문화대백과 '나주시'는 영산강이 시 중앙을 북동에서 남서로 흐르는 전남 중서부 도시로, 940년(태조 23) 금산군을 나주로 개칭하고 983년 12목의 하나인 나주목이 되었다고 서술한다. 좌표는 현대 나주시 중심 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42083",
+          "coordLabel": "나주시 (Naju) — Wikidata P625",
+          "wikidataId": "Q42083",
+          "historySourceTitle": "한국민족문화대백과사전 「나주시」",
+          "dateBasis": "민족문화대백과 '나주시': 940년(태조 23) 금산군을 나주로 개칭 (고려사 태조 총서는 903년 금성→나주 개칭으로 서술하여 기록이 엇갈림)",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전",
+          "validFrom": 940,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-020",
+      "label": "海州",
+      "labelKo": "해주",
+      "kind": "city",
+      "count": 70,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 905,
+      "validTo": null,
+      "note": "황해도 남부의 해주(현 북한 황해남도 해주시)로 본다. 민족문화대백과 '해주시'는 태조가 남쪽으로 대해에 임한 지세를 보고 해주로 고쳤다고 전하면서도 기록상 해주라는 이름은 태봉 시기 905년부터 나타난다고 하며, 983년 해주목, 995년 절도사, 1018년 안서도호부, 1122년 대도호부, 1247년 다시 해주목으로 서술한다. 935년 샘플의 '歷巡黃·海州'는 황주와 해주를 묶은 축약 표기이므로 海州 단독 지명으로 읽을 때 주의가 필요하다. 923년 숭산사(嵩山寺), 1026년 신광사(神光寺)의 개별 위치는 이번 조사에서 비정 자료를 확인하지 못해 후보로 넣지 않았다. 좌표는 현대 해주시 중심 참조점이며 고려 안서대도호부 치소의 정확한 지점이 아니다. 현재 북한 지역이라 현지 조사·지적 자료 확인에 제약이 있다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0062760",
+        "https://encykorea.aks.ac.kr/Article/E0028278",
+        "https://www.wikidata.org/wiki/Q714865"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0070_0020_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 6年 › 6월 › 윤질이 양나라에서 귀국하면서 오백나한의 화상을 바치다",
+          "date": {
+            "label": "923년 6월 10일",
+            "raw": "0923-06-10L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0070_0020_0010",
+          "quote": "夏六月 癸未 福府卿 尹質使梁, 還獻五百羅漢畵像, 命置于海州 嵩山寺.",
+          "quoteStart": 0,
+          "quoteEnd": 37,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_002_0050_0030_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二 世家 卷第二 › 太祖 18年 › 9월 › 왕이 황주와 해주를 순시하다",
+          "date": {
+            "label": "935년 9월 2일",
+            "raw": "0935-09-02L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_002_0050_0030_0010",
+          "quote": "秋九月 甲午 幸西京, 歷巡黃·海州.",
+          "quoteStart": 0,
+          "quoteEnd": 19,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_005_0040_0090_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷五 世家 卷第五 › 顯宗 17年 › 9월 › 왕이 신광사에 가다",
+          "date": {
+            "label": "1026년 9월 22일",
+            "raw": "1026-09-22L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_005_0040_0090_0010",
+          "quote": "九月 甲子 幸海州 神光寺.",
+          "quoteStart": 0,
+          "quoteEnd": 14,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 38.033333333333,
+          "lon": 125.71666666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0062760",
+          "basis": "민족문화대백과 '해주시'는 황해도 남부(현 황해남도)의 도시로, 983년 해주목 승격, 1018년 안서도호부 개편, 1122년 대도호부 승격, 1247년 해주목 환원을 서술한다. 좌표는 현대 해주시 중심 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q714865",
+          "coordLabel": "해주 (Haeju) — Wikidata P625",
+          "wikidataId": "Q714865",
+          "historySourceTitle": "한국민족문화대백과사전 「해주시」",
+          "dateBasis": "민족문화대백과 '해주시': 기록상 해주 명칭은 905년(태봉)부터 나타남",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전",
+          "validFrom": 905,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-021",
+      "label": "義州",
+      "labelKo": "의주",
+      "kind": "city",
+      "count": 68,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1117,
+      "validTo": null,
+      "note": "고려사 세가의 義州는 압록강 하구의 대외 관문(사행이 여기까지 갔다 돌아오고, 양국 호시를 금하던 곳)으로 나온다. 민족문화대백과 '의주군'은 이 지역을 평안북도 북서부 압록강 접경으로 설명하고 1117년 수복 뒤 의주로 불렀다고 한다(그 이전 명칭은 보주·포주 계열). 좌표는 현대 의주군의 참조점이며 고려·조선대 의주성의 정확한 위치가 아니다. 동명이지 주의: (1) 민족문화대백과 '의주(義州)' 항목은 발해 62주의 하나로 위치 미상이라고 하여 별개, (2) 1278년 sample에 함께 나오는 요동의 懿州는 글자가 다른 별개 지명이다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0043403",
+        "https://encykorea.aks.ac.kr/Article/E0043401",
+        "https://www.wikidata.org/wiki/Q701248"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_020_0050_0100_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十 世家 卷第二十 › 明宗 13年 › 윤11월 › 금에 태후의 부음을 알리는 사신을 보내다",
+          "date": {
+            "label": "1183년 윤11월 4일",
+            "raw": "1183-11-04L1"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_020_0050_0100_0010",
+          "quote": "閏月 乙未 遣戶部員外郞 崔孝著如金告哀, 將軍 李文中, 謝賀生辰, 郞將 崔文淸賀正, 員外郞 鄭允當謝賜羊, 金恤我有喪, 辭遣, 故皆至義州而還.",
+          "quoteStart": 0,
+          "quoteEnd": 77,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_020_0060_0010_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十 世家 卷第二十 › 明宗 14年 › 1월 › 금에 보낸 사신들이 되돌아오다",
+          "date": {
+            "label": "1184년 1월 15일",
+            "raw": "1184-01-15L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_020_0060_0010_0030",
+          "quote": "乙巳 遣員外郞 文義赫如金, 進方物, 將軍 韓正修賀萬春節, 皆至義州而還. 以金恤我有喪也.",
+          "quoteStart": 0,
+          "quoteEnd": 48,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_020_0070_0010_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十 世家 卷第二十 › 明宗 15年 › 1월 › 서북면 병마사가 불법으로 바꾼 거란사를 바치다",
+          "date": {
+            "label": "1185년 1월 17일",
+            "raw": "1185-01-17L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_020_0070_0010_0030",
+          "quote": "辛丑 西北面兵馬使 李知命, 獻契丹絲五百束. 知命之陛辭也, 王召入內殿親諭曰, “義州雖禁兩國互市, 卿宜取龍州庫紵布, 市丹絲以進.” 故有是獻. 毅宗時, 凡金國所贈絲絹等物, 半入內府, 以需御用, 半付大府, 以充經費, 王卽位以後, 悉入內府, 賜諸嬖媵, 府藏虛渴, 徵求至此.",
+          "quoteStart": 0,
+          "quoteEnd": 147,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 40.196944444444,
+          "lon": 124.53194444444,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0043403",
+          "basis": "민족문화대백과 '의주군': 평안북도 북서부, \"북쪽으로는 압록강을 사이에 두고 중국 동북 지방과 접하고 있다\". 1117년 이 지역을 완전히 수복하면서 의주로 부르게 되었다고 서술.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q701248",
+          "wikidataId": "Q701248",
+          "coordLabel": "의주군 (Uiju County)",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전 '의주군'",
+          "historySourceTitle": "한국민족문화대백과사전 「의주군」",
+          "dateBasis": "민족문화대백과 '의주군'의 1117년 의주 명명 서술",
+          "validFrom": 1117,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-022",
+      "label": "平壤",
+      "labelKo": "평양",
+      "kind": "capital",
+      "count": 66,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "고려사 세가의 平壤은 태조 원년(918) '平壤古都'를 대도호부로 삼은 뒤 서경(西京)이 된 곳이다. 민족문화대백과 '서경천도론'은 서경을 '지금의 평양'으로 명시한다. 좌표는 현대 평양시의 광역 참조점이며 고려 서경 궁성·성곽의 위치가 아니다. validFrom/To는 null: 사료 기사 연도(918·919)를 지명 사용 시기의 근거로 쓰지 않았고, 별도 연혁 연도를 밝힌 출처를 확인하지 못했다. 소수설로 고려 서경을 요동 요양 일대로 보는 견해가 논문·재야 글에 존재하나 본문을 직접 읽지 못해 후보로 넣지 않았다. 927년 견훤 서장의 '平壤之樓'도 같은 고려 서경을 가리키는 수사로 보았다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0071271",
+        "https://www.wikidata.org/wiki/Q18808"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0020_0040_0060",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 元年 › 9월 › 백성들을 평양으로 이주시키도록 지시하다",
+          "date": {
+            "label": "918년 9월 26일",
+            "raw": "0918-09-26L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0020_0040_0060",
+          "quote": "丙申 諭群臣曰, “平壤古都, 荒廢雖久, 基址尙存. 而荊棘滋茂, 蕃人遊獵於其間, 因而侵掠邊邑, 爲害大矣. 宜徙民實之, 以固藩屛, 爲百世之利.” 遂爲大都護, 遣堂弟式廉, 廣評侍郞 列評守之.",
+          "quoteStart": 0,
+          "quoteEnd": 103,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0030_0050_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 2年 › 10월 › 평양에 성을 쌓다",
+          "date": {
+            "label": "919년 10월 미상",
+            "raw": "0919-10-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0030_0050_0010",
+          "quote": "冬十月 城平壤.",
+          "quoteStart": 0,
+          "quoteEnd": 8,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0110_0090_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 10年 › 12월 › 견훤이 화친을 요구하는 편지를 보내오다",
+          "date": {
+            "label": "927년 12월 미상",
+            "raw": "0927-12-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0110_0090_0010",
+          "quote": ", 拔僕牛毛. 冬初, 都頭 索湘, 束手於星山陣下, 月內, 左相 金樂, 曝骸於美利寺前. 殺獲居多, 追擒不少, 强羸若此, 勝負可知. 所期者, 掛弓於平壤之樓, 飮馬於浿江之水. 然以前月七日, 吳越國使班尙書至, 傳王詔旨, ‘知卿與高麗, 久通歡好, 共契隣盟. 比因質子之兩亡, 遂失和親之舊好, 互侵彊境, 不戢干戈.\n今專發使臣, 赴卿本道, 又移文高麗, 宜相親比, 永孚于休.’ ",
+          "quoteStart": 187,
+          "quoteEnd": 389,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.016666666667,
+          "lon": 125.7475,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0071271",
+          "basis": "민족문화대백과 '서경천도론'은 서경을 \"지금의 평양\"이라 하고, 태조가 고구려 옛 도읍 평양을 개발해 \"서경(西京)이라 칭하고\" 백성을 옮겨 성을 쌓았다고 서술.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+          "wikidataId": "Q18808",
+          "coordLabel": "평양시 (Pyongyang)",
+          "precision": "region",
+          "view": "한국민족문화대백과사전 '서경천도론'",
+          "historySourceTitle": "한국민족문화대백과사전 「서경천도론」",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-023",
+      "label": "京畿",
+      "labelKo": "경기",
+      "kind": "region",
+      "count": 64,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1018,
+      "validTo": null,
+      "note": "고려사 세가의 京畿는 왕도 개경(개성) 바깥의 직할 구역을 가리킨다. 민족문화대백과 '경기'는 1018년(현종 9)에 개성부 외곽을 경기라 부르기 시작했고 1069년(문종 23) 39현을 더해 52현으로 확대되었다고 한다. 좌표는 개성 시가지 참조점 하나뿐이며 경기의 경계가 아니다(면 단위 영역 아님). 조선 초 한양 중심으로 재편된 뒤의 경기(현 경기도)와는 다른 범위이므로 분리해야 한다. validTo는 개편이 태조~세종에 걸쳐 진행되어 단일 연도를 출처에서 확인하지 못해 null로 둔다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0002307",
+        "https://www.wikidata.org/wiki/Q109079",
+        "https://encykorea.aks.ac.kr/Article/E0001657"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_011_0080_0100_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十一 世家 卷第十一 › 肅宗 6年 › 10월 › 민폐를 끼친 군부대를 해산하다",
+          "date": {
+            "label": "1101년 10월 5일",
+            "raw": "1101-10-05L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_011_0080_0100_0010",
+          "quote": "冬十月 壬辰 御史臺奏, “京畿捕賊軍士, 擅掠民戶, 爲害反甚, 請罷之.” 制可.",
+          "quoteStart": 0,
+          "quoteEnd": 43,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_016_0050_0050_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十六 世家 卷第十六 › 仁宗 11年 › 5월 › 황충이 솔잎을 갉아먹는 재변으로 인해 왕이 조서를 내려 경계하다",
+          "date": {
+            "label": "1133년 5월 11일",
+            "raw": "1133-05-11L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_016_0050_0050_0010",
+          "quote": "室燒焚, 倉廩空匱, 朝廷未正, 風俗淆薄. 而政理寡術, 施設乖方, 上下人心, 日益頑鄙, 遠近民業, 日益彫殘, 夙夜恐懼, 不遑寧處. 今諫官奏曰, ‘京畿山野, 蝗虫食松.’ 此盖國多邪人, 朝無忠臣. 天意若曰, ‘居位食祿無功如蟲矣. 救之不早, 則兵起, 擧有道, 置高位, 災可消也.’ 古人云, ‘臣安祿位, 玆謂貪, 厥災, 虫食根. 德無常, 玆謂煩, 虫食葉. 不黜無德, 虫食",
+          "quoteStart": 24,
+          "quoteEnd": 226,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_025_0030_0050_0040",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十五 世家 卷第二十五 › 元宗 元年 › 5월 › 경기 지역에 농작물 피해가 나다",
+          "date": {
+            "label": "1260년 5월 미상",
+            "raw": "1260-05-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_025_0030_0050_0040",
+          "quote": "是月, 京畿旱蝗.",
+          "quoteStart": 0,
+          "quoteEnd": 9,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.971666666666664,
+          "lon": 126.55277777777778,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+          "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+          "wikidataId": "Q109079",
+          "coordLabel": "개성시 (Kaesong)",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+          "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+          "dateBasis": "민족문화대백과 '경기'의 1018년 경기 칭호 서술",
+          "validFrom": 1018,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-024",
+      "label": "東界",
+      "labelKo": "동계",
+      "kind": "region",
+      "count": 63,
+      "indexType": "지명",
+      "status": "unlocated",
+      "confidence": "unverified",
+      "validFrom": null,
+      "validTo": 1413,
+      "note": "1036년은 동계 명칭 정비 연혁이다. 1030년 원문 용례를 제외하지 않도록 시작을 정하지 않는다. 광역 동계를 안변 한 점으로 대표할 근거는 별도 검증에서 확인하지 못했다. 역사적 지역의 존재와 현대 한 지점의 위치를 구분하며, 원문은 남기고 좌표는 미정으로 둔다. 1413년 도 개칭은 백과의 양계 연혁을 따른다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0016205",
+        "https://encykorea.aks.ac.kr/Article/E0035401",
+        "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EC%9D%98_%ED%96%89%EC%A0%95_%EA%B5%AC%EC%97%AD",
+        "https://www.wikidata.org/wiki/Q484890"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_005_0080_0110_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷五 世家 卷第五 › 顯宗 21年 › 11월 › 서여진 27호가 내부하다",
+          "date": {
+            "label": "1030년 11월 16일",
+            "raw": "1030-11-16L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_005_0080_0110_0010",
+          "quote": "十一月 乙丑 西女眞曼闘等二十七戶來附, 處之東界.",
+          "quoteStart": 0,
+          "quoteEnd": 26,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_012_0050_0020_0100",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十二 世家 卷第十二 › 睿宗 卽位年 › 11월 › 동계 산천의 지세를 살피게 하다",
+          "date": {
+            "label": "1105년 11월 28일",
+            "raw": "1105-11-28L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_012_0050_0020_0100",
+          "quote": "壬戌 遣內侍祗候 智祿延, 注簿同正 殷元忠, 司天少監 許藎卿·崔資顥等, 巡視東界山川.",
+          "quoteStart": 0,
+          "quoteEnd": 46,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_012_0050_0030_0040",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十二 世家 卷第十二 › 睿宗 卽位年 › 12월 › 재추들에게 동계변방의 상황을 묻다",
+          "date": {
+            "label": "1105년 12월 12일",
+            "raw": "1105-12-12L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_012_0050_0030_0040",
+          "quote": "乙亥 召宰樞于乾明殿, 問東界邊事.",
+          "quoteStart": 0,
+          "quoteEnd": 18,
+          "termInBody": true
+        }
+      ],
+      "candidates": []
+    },
+    {
+      "id": "place-goryeosa-025",
+      "label": "慶州",
+      "labelKo": "경주",
+      "kind": "city",
+      "count": 62,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 935,
+      "validTo": null,
+      "note": "신라 왕도가 고려에 편입되면서 붙은 이름으로, 현 경상북도 경주시 일대다. 민족문화대백과 '경주시'는 동경 128°58′~129°31′, 북위 35°39′~36°04′로 위치를 적고 935년 신라 항복 뒤 경순왕 식읍이 되었으며 940년 군현 개편이 있었다고 한다. 개칭 연도는 고려사 태조 18년(935) 기사('除新羅國爲慶州')와 민백의 940년 군현 개편 서술이 엇갈린다. 고려 시기에도 995 동경유수관, 1012 경주방어사, 1018 경주대도호부, 1030 동경유수관, 1308 계림부로 명칭이 여러 번 바뀌었으므로 고려사 안에서 東京·鷄林과 같은 곳을 가리키는 경우가 있다. 좌표는 현대 경주시 참조점이며 신라 왕경 유적의 정확한 위치가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0002899",
+        "https://www.wikidata.org/wiki/Q42097"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_002_0050_0060_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二 世家 卷第二 › 太祖 18年 › 12월 › 신라왕을 신하로 받아들이고 신라를 합병하다",
+          "date": {
+            "label": "935년 12월 12일",
+            "raw": "0935-12-12L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_002_0050_0060_0020",
+          "quote": "意難違.” 乃受羅王庭見之禮, 群臣稱賀, 聲動宮掖. 於是, 拜金傅爲政丞, 位太子上, 歲給祿千碩, 創神鸞宮賜之. 其從者並收錄, 優賜田祿. 除新羅國爲慶州, 仍賜爲食邑.",
+          "quoteStart": 66,
+          "quoteEnd": 156,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0080_0110",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 8월 › 동여진이 경주를 침략하다",
+          "date": {
+            "label": "1011년 8월 미상",
+            "raw": "1011-08-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0080_0110",
+          "quote": "東女眞百餘艘, 寇慶州.",
+          "quoteStart": 0,
+          "quoteEnd": 12,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0050_0020_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 3年 › 3월 › 경주에 지진이 나다",
+          "date": {
+            "label": "1012년 3월 3일",
+            "raw": "1012-03-03L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0050_0020_0010",
+          "quote": "三月 庚午 慶州地震.",
+          "quoteStart": 0,
+          "quoteEnd": 11,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.85,
+          "lon": 129.21666666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0002899",
+          "basis": "민족문화대백과 '경주시': 경상북도 남동단, \"동쪽은 동해, 서쪽은 청도군과 영천시\"와 접하며 동경 128°58′~129°31′·북위 35°39′~36°04′. 935년 신라 항복 이후 고려 행정 개편 서술.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42097",
+          "wikidataId": "Q42097",
+          "coordLabel": "경주시 (Gyeongju)",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전 '경주시'",
+          "historySourceTitle": "한국민족문화대백과사전 「경주시」",
+          "dateBasis": "고려사 태조 18년(935) 기사 '除新羅國爲慶州'(입력 sample). 민백은 940년 군현 개편을 적어 연대 이견 있음",
+          "validFrom": 935,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-026",
+      "label": "楊廣",
+      "labelKo": "양광(양광도)",
+      "kind": "region",
+      "count": 62,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "unverified",
+      "validFrom": null,
+      "validTo": null,
+      "note": "양광은 광역 행정구역 양광도의 약칭으로 조사했다. 백과는 경기·충청·강원 일부의 범위와 광주·청주·충주 목관을 설명한다. 광주·청주의 현대 좌표 두 점은 그중 일부 고을을 참고로 표시하며 도의 경계나 전체 중심을 뜻하지 않는다. 이름의 유래는 인용한 항목에서 확인되지 않아 설명에서 뺐다. 백과와 향토문화대전의 연혁이 달라 기간은 정하지 않았다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0035413",
+        "https://www.grandculture.net/dobong/toc/GC04900292",
+        "https://www.wikidata.org/wiki/Q42069",
+        "https://www.wikidata.org/wiki/Q42147",
+        "https://www.wikidata.org/wiki/Q85982270"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_012_0070_0020_0050",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十二 世家 卷第十二 › 睿宗 2年 › 2월 › 각 도에 안무사를 보내다",
+          "date": {
+            "label": "1107년 2월 29일",
+            "raw": "1107-02-29L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_012_0070_0020_0050",
+          "quote": "丙戌 分遣諸道安撫使, 起居郞 李汝霖于楊廣·忠淸州道, 大府少卿 崔渭于全羅州道, 侍御史 智祿延于慶尙·晋州道, 問民疾苦, 察守令殿最, 以聞.",
+          "quoteStart": 0,
+          "quoteEnd": 75,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_031_0060_0060_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三十一 世家 卷第三十一 › 忠烈王 25年 › 7월 › 김유를 3도채방사로 삼다",
+          "date": {
+            "label": "1299년 7월 17일",
+            "raw": "1299-07-17L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_031_0060_0060_0010",
+          "quote": "秋七月 乙未 以將軍 金儒爲慶尙·全羅·楊廣三道採訪使.",
+          "quoteStart": 0,
+          "quoteEnd": 28,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_033_0040_0030_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三十三 世家 卷第三十三 › 忠宣王 元年 › 3월 › 원이 선박 건조를 독촉하다",
+          "date": {
+            "label": "1309년 3월 21일",
+            "raw": "1309-03-21L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_033_0040_0030_0030",
+          "quote": "鴨緣江, 使高麗舟載以輸便.” 於是, 遣遼陽省宣使劉顯等來, 令本國造船百艘, 輸米三千石, 弊不可言. 是時, 二宮之役方興, 造船之事又急, 西海·交州·楊廣之民, 尤受其害.",
+          "quoteStart": 67,
+          "quoteEnd": 158,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.409166666667,
+          "lon": 127.25916666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0035413",
+          "basis": "한국민족문화대백과사전 「양광도」는 경기·충청·강원 일부의 범위를 설명하고 광주·청주·충주를 목관으로 든다. 이 점은 그중 광주시(경기도) (Gwangju, Gyeonggi)의 현대 참조점이며 도의 경계·중심을 뜻하지 않는다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42069",
+          "wikidataId": "Q42069",
+          "coordLabel": "광주시(경기도) (Gwangju, Gyeonggi)",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(양광도의 범위·목관)",
+          "historySourceTitle": "한국민족문화대백과사전 「양광도」",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "unverified"
+        },
+        {
+          "lat": 36.637222222222,
+          "lon": 127.48972222222,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0035413",
+          "basis": "한국민족문화대백과사전 「양광도」는 경기·충청·강원 일부의 범위를 설명하고 광주·청주·충주를 목관으로 든다. 이 점은 그중 청주시 (Cheongju)의 현대 참조점이며 도의 경계·중심을 뜻하지 않는다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42147",
+          "wikidataId": "Q42147",
+          "coordLabel": "청주시 (Cheongju)",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(양광도의 범위·목관)",
+          "historySourceTitle": "한국민족문화대백과사전 「양광도」",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-027",
+      "label": "全州",
+      "labelKo": "전주",
+      "kind": "city",
+      "count": 60,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 757,
+      "validTo": null,
+      "note": "현 전라북도 전주시 일대. 민족문화대백과 '전주시'는 위치를 동경 126°59′~127°14′, 북위 35°43′~35°53′로 적고 757년(경덕왕 16) 군현 개명 때 지금 이름 전주가 되었다고 한다. 고려 때는 안남도호부·승화절도안무사·전주목 등으로 지위가 바뀌었다. 현종 2년(1011) 몽진 기사의 全州도 같은 고을로 보았다. 좌표는 현대 전주시 참조점이며 고려 전주 관아·읍성의 정확한 위치가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0049669",
+        "https://www.wikidata.org/wiki/Q42140"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0010_0110",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 1월 › 왕이 전주에 머물다",
+          "date": {
+            "label": "1011년 1월 26일",
+            "raw": "1011-01-26L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0010_0110",
+          "quote": "庚子 次全州, 留七日.",
+          "quoteStart": 0,
+          "quoteEnd": 12,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0020_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 2월 › 왕이 여양현에 묵다",
+          "date": {
+            "label": "1011년 2월 3일",
+            "raw": "1011-02-03L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0020_0010",
+          "quote": "二月 丁未 發全州, 次礪陽縣.",
+          "quoteStart": 0,
+          "quoteEnd": 16,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_017_0120_0050_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十七 世家 卷第十七 › 毅宗 卽位年 › 9월 › 평장사 이준양이 죽다",
+          "date": {
+            "label": "1146년 9월 15일",
+            "raw": "1146-09-15L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_017_0120_0050_0020",
+          "quote": "平章事 李俊陽卒, 本全州吏, 以淸白達.",
+          "quoteStart": 0,
+          "quoteEnd": 21,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.82388888888889,
+          "lon": 127.1475,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0049669",
+          "basis": "민족문화대백과 '전주시': 전라북도 중앙부, 동경 126°59′~127°14′·북위 35°43′~35°53′. \"757년(경덕왕 16)에 주군현의 명칭이 바뀔 때, 현재의 이름인 전주로 바뀌었다\".",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42140",
+          "wikidataId": "Q42140",
+          "coordLabel": "전주시 (Jeonju)",
+          "precision": "approx",
+          "view": "한국민족문화대백과사전 '전주시'",
+          "historySourceTitle": "한국민족문화대백과사전 「전주시」",
+          "dateBasis": "민족문화대백과 '전주시'의 757년 전주 개명 서술",
+          "validFrom": 757,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-028",
+      "label": "北界",
+      "labelKo": "북계",
+      "kind": "region",
+      "count": 59,
+      "indexType": "지명",
+      "status": "unlocated",
+      "confidence": "unverified",
+      "validFrom": null,
+      "validTo": 1413,
+      "note": "989년은 병마사 설치 연혁이다. 928년 원문 용례를 제외하지 않도록 시작을 정하지 않는다. 광역 북계를 안주 한 점으로 대표할 근거는 별도 검증에서 확인하지 못했다. 역사적 지역의 존재와 현대 한 지점의 위치를 구분하며, 원문은 남기고 좌표는 미정으로 둔다. 1413년 도 개칭은 백과의 양계 연혁을 따른다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0035401",
+        "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EC%9D%98_%ED%96%89%EC%A0%95_%EA%B5%AC%EC%97%AD",
+        "https://ko.wikipedia.org/wiki/%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80",
+        "https://ko.wikipedia.org/wiki/%EB%B6%81%EA%B3%84",
+        "https://www.wikidata.org/wiki/Q196236"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0120_0090_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 11年 › 11월 › 북계를 순행하다",
+          "date": {
+            "label": "928년 미상",
+            "raw": "0928-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0120_0090_0020",
+          "quote": "是歲, 巡幸北界.",
+          "quoteStart": 0,
+          "quoteEnd": 9,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_003_0140_0040_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三 世家 卷第三 › 成宗 12年 › 10월 › 거란군을 방어하기 위해 군대를 보내다",
+          "date": {
+            "label": "993년 10월 미상",
+            "raw": "0993-10-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_003_0140_0040_0010",
+          "quote": "冬十月 以侍中 朴良柔爲上軍使, 內史侍郞 徐熙爲中軍使, 門下侍郞 崔亮爲下軍使, 軍于北界, 以禦契丹.",
+          "quoteStart": 0,
+          "quoteEnd": 54,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_013_0020_0010_0060",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十三 世家 卷第十三 › 睿宗 5年 › 1월 › 북계 번장들을 접견하고 옷을 하사하다",
+          "date": {
+            "label": "1110년 1월 16일",
+            "raw": "1110-01-16L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_013_0020_0010_0060",
+          "quote": "乙卯 御宣政殿南門, 引見北界蕃長三十九人, 各賜衣一襲.",
+          "quoteStart": 0,
+          "quoteEnd": 29,
+          "termInBody": true
+        }
+      ],
+      "candidates": []
+    },
+    {
+      "id": "place-goryeosa-029",
+      "label": "忠州",
+      "labelKo": "충주",
+      "kind": "city",
+      "count": 58,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 940,
+      "validTo": null,
+      "note": "현 충청북도 충주시 일대. 한국향토문화전자대전(디지털충주문화대전) '고려시대'는 940년(태조 23) 중원부를 충주로 고쳤고 983년 12목의 하나인 충주목이 되었다고 서술한다. 목종 12년(1009) 기사의 '遂向忠州'도 같은 고을로 향한 것이다. Wikidata Q31094에는 P625 값이 두 건(둘 다 normal rank) 있어 약 6km 차이가 나며, 여기서는 첫 번째 값(36.9706/127.9322)을 시가지 참조점으로 썼다. 고려 충주 관아·읍성의 정확한 위치는 아니다.",
+      "references": [
+        "https://chungju.grandculture.net/chungju/toc/GC01900466",
+        "https://www.wikidata.org/wiki/Q31094"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0120_0070_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 太祖 11年 › 8월 › 왕이 충주에 행차하다",
+          "date": {
+            "label": "928년 8월 미상",
+            "raw": "0928-08-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0120_0070_0010",
+          "quote": "八月 幸忠州.",
+          "quoteStart": 0,
+          "quoteEnd": 7,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_003_0330_0020_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三 世家 卷第三 › 穆宗 12年 › 2월 › 강조가 목종을 폐위시킨 후 시해하고 대량원군을 왕으로 옹립하다",
+          "date": {
+            "label": "1009년 2월 3일",
+            "raw": "1009-02-03L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_003_0330_0020_0020",
+          "quote": "歸法寺, 解御衣, 換食而進. 兆召還沆等供職, 王謂沆曰, “頃府庫災而變起所忽, 皆由予不德, 夫復何怨? 但願歸老于鄕, 卿可奏新君, 且善輔佐.” 遂向忠州. 太后欲食, 王親奉盤盂, 太后欲御馬, 王親執鞚. 行至積城縣, 兆使人弑之, 以王自刎聞, 取門扇爲棺, 權厝于館, 王在位十二年, 壽三十.\n性沈毅, 少有人君之度. 善射御. 嗜酒好獵, 不留意政事, 信狎嬖倖, 以及於禍. 踰月",
+          "quoteStart": 113,
+          "quoteEnd": 315,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_016_0010_0060_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十六 世家 卷第十六 › 仁宗 7年 › 6월 › 충주를 군으로 강등시키자는 건의를 물리치다",
+          "date": {
+            "label": "1129년 6월 3일",
+            "raw": "1129-06-03L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_016_0010_0060_0020",
+          "quote": "庚戌 中書門下奏曰 “忠州人劉挺弑父, 其牧守及州吏不能敎民. 請皆下吏, 仍降州爲郡.” 王問左右, 對曰 “禮云, ‘邾婁定公時, 有弑父者, 殺其人, 壞其室, 洿其宮.’ 而止耳, 不言其所居州邑. 則降州爲郡, 非古法也.” 從之.",
+          "quoteStart": 0,
+          "quoteEnd": 121,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 36.970555555556,
+          "lon": 127.93222222222,
+          "sourceUrl": "https://chungju.grandculture.net/chungju/toc/GC01900466",
+          "basis": "디지털충주문화대전 '고려시대': 태조가 후삼국 통일 뒤 군현을 개편하며 중원부를 충주로 고쳤고(940), 성종 2년(983) 12목 설치 때 충주목으로 승격되었다고 서술.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q31094",
+          "wikidataId": "Q31094",
+          "coordLabel": "충주시 (Chungju)",
+          "precision": "approx",
+          "view": "한국향토문화전자대전(디지털충주문화대전) '고려시대'",
+          "historySourceTitle": "한국향토문화전자대전 「고려시대(충주)」",
+          "dateBasis": "디지털충주문화대전의 940년 중원부→충주 개칭 서술",
+          "validFrom": 940,
+          "validTo": null,
+          "confidence": "probable"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-030",
+      "label": "遼陽",
+      "labelKo": "요양",
+      "kind": "city",
+      "count": 57,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "요동의 遼陽으로, 위키백과 '요양부'는 그 자리를 \"현 랴오양 시 요양고성\"이라 하고 1288년 동경에서 요양로로 개명되었다고 한다. 고려사 원 간섭기 기사에서는 두 가지 용법이 섞인다: (1) 도시·로(路)로서의 요양(1278년 요양·의주 다루가치, 1279년 반주와 요양 사이 이리간 설치), (2) 광역 행정단위 요양행성(1309년 '遼陽省宣使'). 1278~79년 sample 시점은 아직 동경로였고 요양행성 설치는 1287년, 요양로 개명은 1288년이어서 시기를 나눠 후보를 둘로 적었다(두 후보의 참조점은 같은 요양 시가지다). 좌표는 현대 랴오양시 참조점이며 요양고성 성벽의 정확한 위치가 아니다. 1278년 sample에 함께 나오는 懿州는 글자가 다른 별개 지명이다.",
+      "references": [
+        "https://ko.wikipedia.org/wiki/%EC%9A%94%EC%96%91%EB%B6%80",
+        "https://ko.wikipedia.org/wiki/%EC%9A%94%EC%96%91%EB%93%B1%EC%B2%98%ED%96%89%EC%A4%91%EC%84%9C%EC%84%B1",
+        "https://www.wikidata.org/wiki/Q75203"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_028_0060_0050_0080",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十八 世家 卷第二十八 › 忠烈王 4年 › 5월 › 의주에서 요양·의주의 다루가치가 말을 바치다",
+          "date": {
+            "label": "1278년 5월 15일",
+            "raw": "1278-05-15L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_028_0060_0050_0080",
+          "quote": "丁酉 次懿州, 遼陽·懿州二達魯花赤獻馬.",
+          "quoteStart": 0,
+          "quoteEnd": 21,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_028_0060_0070_0120",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十八 世家 卷第二十八 › 忠烈王 4年 › 7월 › 왕이 원 중서성에 참소를 믿지말고 수사권을 우리에게 달라는 등의 사항을 건의하다",
+          "date": {
+            "label": "1278년 7월 11일",
+            "raw": "1278-07-11L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_028_0060_0070_0120",
+          "quote": " 住坐東京地面. 與斜米寨鄕老高婁舍·百姓兩托·也吾那·王三·郭相·古乙馬等六人, 到王京等處, 捉獺訖竄, 伏深谷閒, 謀欲驅虜人物牛馬而去.’ 其言如此, 遼陽之人, 潛行驅虜, 常常有之, 未得其跡, 今幸捕得達達茶花, 實是天幸, 望根究其徒, 置之重法, 以戒後來, 下東京摠管府, 所虜人物, 並令還本, 後有如此歹人, 許令本國, 治之以法.” 時達魯花赤, 依蒙古制, 置巡馬所, 每夜巡",
+          "quoteStart": 1189,
+          "quoteEnd": 1391,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_029_0010_0060_0080",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十九 世家 卷第二十九 › 忠烈王 5年 › 6월 › 심주와 요양에 이리간을 설치하다",
+          "date": {
+            "label": "1279년 6월 27일",
+            "raw": "1279-06-27L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_029_0010_0060_0080",
+          "quote": "都評議使據聖旨, 請於潘州·遼陽閒, 置伊里干, 徙諸道富民二百戶居之, 又於鴨綠江內, 置伊里干二所, 所各一百戶, 以供朝聘役使, 從之.",
+          "quoteStart": 0,
+          "quoteEnd": 71,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 41.26432,
+          "lon": 123.1772,
+          "sourceUrl": "https://ko.wikipedia.org/wiki/%EC%9A%94%EC%96%91%EB%B6%80",
+          "basis": "위키백과 '요양부': 요양부·요양로의 자리를 \"현 랴오양 시 요양고성\"이라 하고, 1288년 동경에서 요양로로 개명, 1287년 요양행성 분리 시 본성의 중심지가 되었다고 서술.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "wikidataId": "Q75203",
+          "coordLabel": "랴오양시 (Liaoyang)",
+          "precision": "approx",
+          "view": "위키백과 '요양부'(도시·로 소재지)",
+          "historySourceTitle": "위키백과 「요양부」",
+          "dateBasis": null,
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable"
+        },
+        {
+          "lat": 41.26432,
+          "lon": 123.1772,
+          "sourceUrl": "https://ko.wikipedia.org/wiki/%EC%9A%94%EC%96%91%EB%93%B1%EC%B2%98%ED%96%89%EC%A4%91%EC%84%9C%EC%84%B1",
+          "basis": "위키백과 '요양등처행중서성': 1287년(지원 24) 설치되어 원 멸망까지 존속했고 치소는 현 랴오닝성 랴오양시(한때 함평부)라고 서술. 광역 행성의 참조점으로만 사용.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "wikidataId": "Q75203",
+          "coordLabel": "랴오양시 (Liaoyang, 요양행성 치소 참조점)",
+          "precision": "region",
+          "view": "위키백과 '요양등처행중서성'(遼陽省 용법)",
+          "historySourceTitle": "위키백과 「요양등처행중서성」",
+          "dateBasis": "위키백과 '요양등처행중서성'의 1287년 설치 서술(폐지 연도는 '원 멸망까지'로만 서술되어 validTo는 null)",
+          "validFrom": 1287,
+          "validTo": null,
+          "confidence": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-031",
+      "label": "平州",
+      "labelKo": "평주",
+      "kind": "city",
+      "count": 56,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 940,
+      "validTo": 1413,
+      "note": "고려 관내도(뒤의 서해도) 소속 고을로, 민족문화대백과는 평주를 지금의 황해북도 평산군 지역으로 설명한다. 인용문 3건은 고려세계의 평주 호족 관련 서술과 현종 행차, 예종 10년의 '我平州僧'으로 모두 고려의 평주다. 요·금의 平州(하북 노룡)라는 동명 표기가 대외 관계 기사에 나올 여지가 있으나 여기 인용문에는 해당 없음. 좌표는 현대 평산군의 중심 참조점이며 고려 평주 치소·읍성 지점이 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0060059",
+        "https://www.wikidata.org/wiki/Q707881"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_$s02_0100",
+          "sourceId": "src-goryeosa",
+          "locator": "고려세계 › 이제현의 찬",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/kr_$s02_0100",
+          "quote": "寬毅云, ‘懿祖得唐父所留弓矢, 涉海而遠覲.’ 然則其志深切矣, 龍王問其所欲, 卽求東歸. 恐懿祖不如是也. 聖源錄云, ‘昕康大王【卽懿祖】之妻龍女者, 平州人豆恩坫角干之女子也.’ 則與寬毅所記者, 異矣.\n又曰, “金寬毅云, ‘道詵見世祖 松嶽南第曰, 「種穄之田而種麻也.」 穄之與王, 方言相類. 故太祖因姓王氏.’ 父在而子改其姓, 天下豈有是理乎? 嗚呼! 其謂我太祖爲之乎? 且太祖",
+          "quoteStart": 365,
+          "quoteEnd": 567,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_005_0070_0090_0050",
+          "sourceId": "src-goryeosa",
+          "locator": "卷五 世家 卷第五 › 顯宗 20年 › 8월 › 평주에 행차하다",
+          "date": {
+            "label": "1029년 8월 24일",
+            "raw": "1029-08-24L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_005_0070_0090_0050",
+          "quote": "庚戌 次平州.",
+          "quoteStart": 0,
+          "quoteEnd": 7,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_014_0010_0010_0090",
+          "sourceId": "src-goryeosa",
+          "locator": "卷十四 世家 卷第十四 › 睿宗 10年 › 1월 › 생여진의 아골타가 금을 건국하다",
+          "date": {
+            "label": "1115년 1월 미상",
+            "raw": "1115-01-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_014_0010_0010_0090",
+          "quote": ". 諸部各相雄長, 莫能統一. 其地西直契丹, 南直我境, 故嘗事契丹及我朝. 每來朝, 以麩金·貂皮·良馬爲贄, 我朝亦厚遺銀幣, 歲常如此. 或曰, “昔我平州僧今俊, 遁入女眞, 居阿之古村, 是謂金之先.” 或曰, “平州僧金幸之子克守, 初入女眞阿之古村, 娶女眞女, 生子曰古乙太師. 古乙生活羅太師, 活羅多子. 長曰劾里鉢, 季曰盈歌, 盈歌最雄傑, 得衆心. 盈歌死, 劾里鉢長子烏雅束",
+          "quoteStart": 118,
+          "quoteEnd": 320,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 38.33333,
+          "lon": 126.41667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0060059",
+          "basis": "민백 '평주' 항목은 평주를 지금의 황해북도 평산군 지역으로 설명하고, 940년 태조가 평주로 고친 뒤 995년 방어사, 1018년 지군사를 두었다고 정리한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q707881",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": 940,
+          "validTo": 1413,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「평주(平州)」",
+          "dateBasis": "같은 항목의 연혁: 940년(태조 23) 평주 개칭 ~ 1413년(태종 13) 평산도호부 승격",
+          "coordLabel": "평산군(Pyongsan County) 중심 좌표",
+          "wikidataId": "Q707881"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-032",
+      "label": "定州",
+      "labelKo": "정주",
+      "kind": "city",
+      "count": 54,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1041,
+      "validTo": 1413,
+      "note": "인용된 기사들은 동여진 귀부·동북면병마사 보고 문맥이므로 동계의 정주, 즉 민백이 말하는 현 함경남도 정평 지역으로 본다. 민백 정평군 항목은 1041년(정종 7) 성을 쌓고 관문을 설치하며 定州로 고쳤다고 하고, 1413년 '평안도의 정주와 군명이 같다'는 이유로 정평으로 고쳤다고 한다 — 즉 평안도에도 동명의 定州(현 평북 정주)가 있었으므로 고려 후기 서북면 관련 기사의 定州는 다른 곳일 수 있으나, 평북 정주가 언제부터 定州로 불렸는지는 확인 가능한 서술을 얻지 못해 별도 좌표 후보를 넣지 않았다. 입력 samples 중 1073년 기사(chunk_goryeosa_kr_009_0020_0060_0020)의 '奏定州號'는 '州號를 아뢰어 정하라'는 구절이 분절된 것으로 지명이 아니어서 evidence에서 제외했다. 좌표는 현대 정평군 중심 참조점이며 정주성·정주관 지점이 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0051078",
+        "https://encykorea.aks.ac.kr/Article/E0050904",
+        "https://www.wikidata.org/wiki/Q715714"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_007_0080_0010_0040",
+          "sourceId": "src-goryeosa",
+          "locator": "卷七 世家 卷第七 › 文宗 6年 › 1월 › 동여진인들이 정주에 와서 호적 편입을 청하다",
+          "date": {
+            "label": "1052년 1월 19일",
+            "raw": "1052-01-19L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_007_0080_0010_0040",
+          "quote": "丙寅 東女眞正甫 馬波等男女四十八人, 請入定州關外爲編戶, 賜田宅, 處之內地.",
+          "quoteStart": 0,
+          "quoteEnd": 41,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_009_0080_0030_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷九 世家 卷第九 › 文宗 33年 › 4월 › 여진인이 앞서 내투한 가족과 합류하도록 허락하다",
+          "date": {
+            "label": "1079년 4월 11일",
+            "raw": "1079-04-11L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_009_0080_0030_0020",
+          "quote": "己酉 東北面兵馬使奏, “女眞耶邑幹, 自 定州 弘化戍來欸云, ‘父阿羅弗, 母吳曬, 兄齊主那等六人, 曾於丁巳年, 向化來投, 願隨居之.’” 王曰, “夷狄雖同禽獸, 尙有孝心, 宜令隨父母親屬, 徙置嶺南.”",
+          "quoteStart": 0,
+          "quoteEnd": 109,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.75,
+          "lon": 127.33333,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0051078",
+          "basis": "민백 '정평군'은 1041년(정종 7) '처음으로 성을 쌓아 관문을 설치하고 정주(定州)로 개칭하였으며 방어사를 두었다'고 하고, 1044년 천리장성의 동쪽 끝을 이곳 도련포로 든다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q715714",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": 1041,
+          "validTo": 1413,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「정평군」",
+          "dateBasis": "같은 항목: 1041년 定州 개칭 ~ 1413년(태종 13) 정평으로 개칭",
+          "coordLabel": "정평군(Chongpyong County) 중심 좌표(같은 항목에 39.7873/127.3954 보조 좌표도 있음)",
+          "wikidataId": "Q715714"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-033",
+      "label": "西海",
+      "labelKo": "서해",
+      "kind": "region",
+      "count": 54,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": null,
+      "note": "한 표기가 두 대상을 가리킨다. 903년 '率舟師, 自西海抵光州界'는 바닷길, 곧 서해(황해)이고, 1278년 계점사 파견과 1279년 '西海之民'은 고려 5도의 하나인 서해도(현 황해도 일대)다. 민백 서해도 항목은 '서해도'라는 명칭이 1093년 안찰사 사례에서 처음 확인된다고 하며, 조선에서 1395년 풍해도, 1417년 황해도로 바뀌었다고 한다. 위키데이터의 서해도 항목(Q12601520)과 황해도 항목(Q698214)에는 P625가 없어 도 자체의 좌표는 읽을 수 없었고, 대신 민백이 서해도의 계수관 고을로 든 해주·황주의 현대 시·군 중심점을 광역 참조점으로 넣었다. 바다 후보의 좌표도 해역 대표점일 뿐 항로나 경계가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0028278",
+        "https://encykorea.aks.ac.kr/Article/E0066149",
+        "https://www.wikidata.org/wiki/Q37960",
+        "https://www.wikidata.org/wiki/Q714865",
+        "https://www.wikidata.org/wiki/Q705723",
+        "https://www.wikidata.org/wiki/Q12601520",
+        "https://www.wikidata.org/wiki/Q698214"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_001_0010_0070",
+          "sourceId": "src-goryeosa",
+          "locator": "卷一 世家 卷第一 › 태조 총서 › 태조가 나주를 함락시키고 변경을 안정시킬 전략을 보고하다",
+          "date": {
+            "label": "903년 3월 미상",
+            "raw": "0903-03-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_001_0010_0070",
+          "quote": "天復三年癸亥 三月 率舟師, 自西海抵光州界, 攻錦城郡拔之, 擊取十餘郡縣. 仍改錦城爲羅州, 分軍戍之而還. 是歲, 良州帥金忍訓告急, 裔令太祖往救. 及還, 裔問邊事, 太祖陳安邊拓境之策. 左右皆屬目, 裔亦奇之, 進階爲閼粲.",
+          "quoteStart": 0,
+          "quoteEnd": 119,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_028_0060_0110_0040",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十八 世家 卷第二十八 › 忠烈王 4年 › 11월 › 주열 등을 각지에 계점사로 보내다",
+          "date": {
+            "label": "1278년 11월 18일",
+            "raw": "1278-11-18L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_028_0060_0110_0040",
+          "quote": "遣諸道計點使, 三司使 朱悅于慶尙, 國子祭酒 權㫜于全羅, 判少府事 崔濡于忠淸, 殿中尹 崔有侯于東界·交州, 判事 禹濬冲于西海.",
+          "quoteStart": 0,
+          "quoteEnd": 68,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_029_0010_0020_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十九 世家 卷第二十九 › 忠烈王 5年 › 2월 › 동녕부에 조유를 보내 서해도 백성들을 데려오게 하다",
+          "date": {
+            "label": "1279년 2월 12일",
+            "raw": "1279-02-12L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_029_0010_0020_0020",
+          "quote": "己丑 遣少尹 趙愉于東寧府, 推刷己未以來西海之民亡命者.",
+          "quoteStart": 0,
+          "quoteEnd": 29,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.0,
+          "lon": 123.0,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0066149",
+          "basis": "민백 '황해' 항목은 이칭으로 '서해'를 들고, 한반도 서쪽의 연해로 그 범위를 설명한다. 903년 주사(舟師) 기사의 西海는 이 바다를 가리킨다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q37960",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「황해(黃海)」",
+          "dateBasis": null,
+          "coordLabel": "Yellow Sea 해역 대표 좌표",
+          "wikidataId": "Q37960"
+        },
+        {
+          "lat": 38.033333333333,
+          "lon": 125.71666666667,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+          "basis": "민백 '서해도'는 현 황해도 일대에 해당하는 고려 5도의 하나로, 해주(안서대도호부)와 황주목을 주요 고을로 든다. 해주는 그 광역 참조점이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q714865",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": null,
+          "validTo": 1395,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「서해도(西海道)」",
+          "dateBasis": "서해도와 황해도 항목의 1018년·1093년 설명 차이로 시작을 정하지 않는다. 1395년 풍해도 개칭을 끝으로 둔다.",
+          "coordLabel": "해주시 중심 좌표(도 전체가 아니라 계수관 소재지 참조점)",
+          "wikidataId": "Q714865"
+        },
+        {
+          "lat": 38.705833,
+          "lon": 125.747778,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+          "basis": "같은 항목이 서해도의 또 다른 주요 고을로 드는 황주목의 현대 참조점.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q705723",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": null,
+          "validTo": 1395,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「서해도(西海道)」",
+          "dateBasis": "서해도와 황해도 항목의 1018년·1093년 설명 차이로 시작을 정하지 않는다. 1395년 풍해도 개칭을 끝으로 둔다.",
+          "coordLabel": "황주군 중심 좌표(계수관 소재지 참조점)",
+          "wikidataId": "Q705723"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-034",
+      "label": "雙城",
+      "labelKo": "쌍성",
+      "kind": "region",
+      "count": 54,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1258,
+      "validTo": 1356,
+      "note": "인용 기사(1280·1284·1286)는 모두 쌍성으로 도망한 고려 민호의 쇄환 문제이므로, 원이 1258년 설치한 쌍성총관부 관할지를 가리킨다. 민백은 그 치소 화주를 '지금의 함경남도 영흥'으로 적고, 민백 영흥군 항목은 영흥군이 1977년 금야군으로 개칭되었다고 한다. 좌표는 현 금야군 중심 참조점으로 쌍성(화주성) 성터 지점이 아니며, 총관부 관할은 화주 이북 여러 주진에 걸친 넓은 범위다. 함경도 비정에 이견을 제기하는 재야 논의가 검색에 보였으나 해당 글을 근거로 읽지 않았으므로 여기서는 다루지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0034141",
+        "https://encykorea.aks.ac.kr/Article/E0064874",
+        "https://encykorea.aks.ac.kr/Article/E0037860",
+        "https://www.wikidata.org/wiki/Q706067"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_029_0020_0070_0080",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十九 世家 卷第二十九 › 忠烈王 6年 › 7월 › 원 중서성에서 쌍성 민호에 관련된 공문을 보내다",
+          "date": {
+            "label": "1280년 7월 28일",
+            "raw": "1280-07-28L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_029_0020_0070_0080",
+          "quote": "丁卯 中書省牒云, “雙城民戶, 除將韓信等三戶分付訖外, 德光等六戶, 緣雙城勒留. 在前宴帖兒元斷, 幷差官魏文愷斷, 與本國全戶三十, 隻身男女四十二名, 放歸而後, 分付德光等事, 都省准此, 除前項戶計, 箚付開元等路宣慰使, 行下雙城照勘呈省外, 合行移",
+          "quoteStart": 0,
+          "quoteEnd": 133,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_029_0060_0010_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十九 世家 卷第二十九 › 忠烈王 10年 › 1월 › 원과 우리 조정에서 쌍성의 우리 유민을 조사하다",
+          "date": {
+            "label": "1284년 1월 4일",
+            "raw": "1284-01-04L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_029_0060_0010_0010",
+          "quote": "十年 春正月 癸丑 咸平宣慰使奉中書戶部牒來, 推刷本國人口逃入雙城者. 王亦嘗遣魏文愷·金位良, 推刷甚詳. 雙城人賂以馬, 位良不受而還, 王聞而嘉之, 賜馬二匹.",
+          "quoteStart": 0,
+          "quoteEnd": 84,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_030_0020_0070_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三十 世家 卷第三十 › 忠烈王 12年 › 7월 › 원 황제가 쌍성 거주 유민을 쇄환하라고 지시하다",
+          "date": {
+            "label": "1286년 7월 9일",
+            "raw": "1286-07-09L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_030_0020_0070_0020",
+          "quote": "甲戌 齊安公淑等還自元. 帝詔推刷雙城流民.",
+          "quoteStart": 0,
+          "quoteEnd": 22,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.543055555556,
+          "lon": 127.29194444444,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0034141",
+          "basis": "민백 '쌍성총관부'는 이를 '화주(和州 : 지금의 함경남도 영흥) 이북을 직접 통치하기 위해 설치했던 관부'로 설명하며 1258년 설치, 1356년 폐지로 정리한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q706067",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": 1258,
+          "validTo": 1356,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「쌍성총관부」",
+          "dateBasis": "같은 항목의 설치(1258)·폐지(1356) 연도",
+          "coordLabel": "금야군 중심 좌표(옛 영흥군; 민백 「영흥군」에 1977년 금야군 개칭 명시)",
+          "wikidataId": "Q706067"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-035",
+      "label": "和州",
+      "labelKo": "화주",
+      "kind": "city",
+      "count": 52,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": null,
+      "validTo": 1369,
+      "note": "인용 기사 3건은 모두 동여진과의 접촉 창구(화주관, 화주방어사) 문맥으로 동계의 화주다. 민백은 화주를 함경남도 영흥 지역의 고려시대 행정구역으로 설명하고 현재의 금야군 영흥 지역으로 적는다. 개칭 연도는 '고려 초'로만 나와 validFrom은 null로 두었고, 955년 축성·995년 안변도호부·1018년 방어사·1356년 화주목·1369년 화령부의 연혁만 dateBasis에 남긴다. 뒤의 쌍성(rank 34)과 같은 지역이지만 표기·시기 성격이 달라 별도 표제로 유지했다. 좌표는 현 금야군 중심 참조점이다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0064874",
+        "https://encykorea.aks.ac.kr/Article/E0037860",
+        "https://www.wikidata.org/wiki/Q706067"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0030_0040_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 元年 › 5월 › 여진족을 죽인 책임을 물어 하공진과 유종을 유배보내다",
+          "date": {
+            "label": "1010년 5월 6일",
+            "raw": "1010-05-06L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0030_0040_0010",
+          "quote": "五月 甲申 流尙書左司郞中 河拱辰, 和州防禦郞中 柳宗于遠島. 拱辰嘗擊東女眞見敗, 宗恨之, 會女眞九十五人來朝, 至和州館, 宗盡殺之, 故並坐流. 女眞訴于契丹, 契丹主謂群臣曰, “高麗康兆弑君大逆也, 宜發兵問罪.”",
+          "quoteStart": 0,
+          "quoteEnd": 114,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0050_0100_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 3年 › 윤10월 › 여진인들이 화맹을 요청하니 승인하다",
+          "date": {
+            "label": "1012년 윤10월 미상",
+            "raw": "1012-10-19L1"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0050_0100_0010",
+          "quote": "閏月 女眞毛逸羅·鉏乙豆, 率部落三十姓, 詣和州乞盟, 許之.",
+          "quoteStart": 0,
+          "quoteEnd": 32,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_006_0110_0040_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷六 世家 卷第六 › 靖宗 9年 › 4월 › 여진인 사이라가 내조할 뜻을 알려오다",
+          "date": {
+            "label": "1043년 4월 1일",
+            "raw": "1043-04-01L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_006_0110_0040_0010",
+          "quote": "夏四月 戊戌 東北路兵馬使奏, “女眞柔遠將軍 沙伊羅, 誘致水陸賊首羅弗等四百九十四人, 詣和州館, 請朝.” 有司議奏, “此類人面獸心, 宜令兵馬使, 量减人數, 分次赴朝.” 從之.",
+          "quoteStart": 0,
+          "quoteEnd": 95,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.543055555556,
+          "lon": 127.29194444444,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0064874",
+          "basis": "민백 '화주(和州)'는 함경남도 영흥 지역의 고려시대 행정구역으로, 현재 함경남도 금야군 영흥 지역에 해당한다고 설명한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q706067",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": null,
+          "validTo": 1369,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「화주(和州)」",
+          "dateBasis": "같은 항목: 고려 초 화주 개칭(연도 미상), 955년 축성, 995년 화주안변도호부, 1018년 방어사, 1356년 화주목, 1369년 화령부 승격",
+          "coordLabel": "금야군 중심 좌표(옛 영흥군)",
+          "wikidataId": "Q706067"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-036",
+      "label": "江南",
+      "labelKo": "강남",
+      "kind": "region",
+      "count": 50,
+      "indexType": "지명",
+      "status": "unlocated",
+      "confidence": "unverified",
+      "validFrom": null,
+      "validTo": null,
+      "note": "한 표기가 최소 세 대상을 가리켜 단일 비정을 할 수 없었다. (1) 이제현 찬의 '宋祖, 以江南李氏'는 송 태조가 상대한 강남(남당) 이야기, (2) 1018년 '宋江南人'은 송의 강남 지역 사람, (3) 1017년 '分處江南州縣'만이 고려 국내 지명으로 보인다. 국내 용례를 995년 설치되어 1018년 개편된 고려 강남도(민백: 지금의 전북 일원)로 볼지, 한강 이남을 뜻하는 일반 표현으로 볼지 판단할 신뢰 출처를 찾지 못했다(한강 이남설을 적은 개인 카페 글은 근거로 쓰지 않음). 중국 강남은 위키데이터 Jiangnan 항목(Q1367898)에 P625가 없어 좌표를 읽을 수 없었다. 따라서 좌표 후보를 넣지 않는다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0001016",
+        "https://www.wikidata.org/wiki/Q1367898"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_002_0140",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二 世家 卷第二 › 이제현의 찬",
+          "date": null,
+          "permalink": "https://db.history.go.kr/id/kr_002_0140",
+          "quote": "將士推戴, 然猶固讓, 欲徇延陵之節. 弔伐之事, 亦豈得已哉? 其好生惡殺, 而信賞必罰, 推誠功臣, 而不假以權. 創業垂統, 固宜一揆矣. 至若宋祖, 以江南李氏, 比之鼾睡臥榻, 則石晋所賂契丹, 山後之十六州, 盖視爲槖中物, 旣收北漢, 將長驅, 以定秦漢之彊耳. 我太祖卽位之後, 金傅未賓, 甄萱未虜, 而屢幸西都, 親巡北鄙. 其意, 亦以東明舊壤爲吾家靑氈, 必席卷而有之, 豈止操鷄",
+          "quoteStart": 171,
+          "quoteEnd": 373,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0100_0070_0060",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 8年 › 8월 › 흑수말갈인 6명이 내투하다",
+          "date": {
+            "label": "1017년 8월 29일",
+            "raw": "1017-08-29L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0100_0070_0060",
+          "quote": "甲午 黑水靺鞨阿離弗等六人來投, 分處江南州縣.",
+          "quoteStart": 0,
+          "quoteEnd": 24,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0110_0050_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 9年 › 윤4월 › 송나라 사람 24명이 토산물을 바치다",
+          "date": {
+            "label": "1018년 4월 11일",
+            "raw": "1018-04-11L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0110_0050_0020",
+          "quote": "癸卯 宋江南人王肅子等二十四人來, 獻方物.",
+          "quoteStart": 0,
+          "quoteEnd": 22,
+          "termInBody": true
+        }
+      ],
+      "candidates": []
+    },
+    {
+      "id": "place-goryeosa-037",
+      "label": "廣州",
+      "labelKo": "광주",
+      "kind": "city",
+      "count": 49,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 940,
+      "validTo": null,
+      "note": "1011년 거란 침입 때 현종이 머문 廣州와 1029년 산적 기사 모두 오늘날 경기 광주·하남 일대의 고을이다. 민백 광주시 항목은 940년(태조 23) 한주를 광주로 고치고 983년 광주목을 두었다고 한다. 조선 후기 읍치는 남한산성이지만, 하남시청 향토유적 설명은 하남 교산동 건물지를 '고려시대 광주의 주치와 관련된 관영건축물로 추정'한다고 밝히므로 고려시대 중심지 후보를 따로 넣었다. 다만 그 유적의 위키데이터 항목(Q55727648)에는 P625가 없어 좌표는 하남시 중심점으로 대체했다. 전남 光州는 글자가 다르고, 중국 廣州(광저우)는 동명 표기이나 인용 기사와는 무관하다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0005267",
+        "https://www.hanam.go.kr/www/contents.do?key=3346",
+        "https://www.wikidata.org/wiki/Q42069",
+        "https://www.wikidata.org/wiki/Q42159",
+        "https://www.wikidata.org/wiki/Q55727648"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0010_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 1월 › 거란군이 개경에 들어와 태묘 등을 불태우다",
+          "date": {
+            "label": "1011년 1월 1일",
+            "raw": "1011-01-01L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0010_0010",
+          "quote": "辛亥二年 春正月 乙亥朔 契丹主入京城, 焚燒太廟·宮闕·民屋皆盡. 是日, 王次廣州.",
+          "quoteStart": 0,
+          "quoteEnd": 44,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0040_0010_0030",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 2年 › 1월 › 왕이 비뇌역에 묵다",
+          "date": {
+            "label": "1011년 1월 4일",
+            "raw": "1011-01-04L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0040_0010_0030",
+          "quote": "戊寅 王發廣州, 次鼻腦驛.",
+          "quoteStart": 0,
+          "quoteEnd": 14,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_005_0070_0070_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷五 世家 卷第五 › 顯宗 20年 › 6월 › 광주에 산적이 출몰하다",
+          "date": {
+            "label": "1029년 6월 28일",
+            "raw": "1029-06-28L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_005_0070_0070_0020",
+          "quote": "盜起廣州山藪.",
+          "quoteStart": 0,
+          "quoteEnd": 7,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.409167,
+          "lon": 127.259167,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0005267",
+          "basis": "민백 '광주시(경기)'는 940년(태조 23) '한주는 현재의 이름인 광주로 개칭되었고', 983년(성종 2) 광주목을 두어 관내도를 다스리게 했다고 정리한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42069",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": 940,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「광주시(廣州市)」",
+          "dateBasis": "같은 항목: 940년 광주로 개칭. 지명이 현재까지 이어져 validTo는 null",
+          "coordLabel": "경기도 광주시 중심 좌표",
+          "wikidataId": "Q42069"
+        },
+        {
+          "lat": 37.539166666667,
+          "lon": 127.21472222222,
+          "sourceUrl": "https://www.hanam.go.kr/www/contents.do?key=3346",
+          "basis": "하남시청 향토유적 소개는 교산동 건물지(하남시 교산동 78-3 일원)를 두고 '고려시대 광주의 주치(州治)와 관련된 관영건축물로 추정'된다고 하며 '광주객사' 명문와 출토를 든다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42159",
+          "precision": "approx",
+          "view": "하남시청(향토유적 안내)",
+          "validFrom": null,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "하남시청 「향토유적 – 교산동 건물지」",
+          "dateBasis": null,
+          "coordLabel": "하남시 중심 좌표(교산동 건물지 자체 좌표 아님; 유적 위키데이터 항목 Q55727648에 P625 없음)",
+          "wikidataId": "Q42159"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-038",
+      "label": "東寧府",
+      "labelKo": "동녕부",
+      "kind": "region",
+      "count": 47,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1270,
+      "validTo": null,
+      "note": "시기에 따라 위치가 다르므로 후보를 둘로 나눴다. 민백 동녕부 항목은 1269년 최탄 등의 투항을 계기로 1270년 원이 서경을 동녕부로 삼아 자비령 이북 북계 54성과 서해도 6성을 관할했고, 1290년(충렬왕 16) 그 땅을 고려에 돌려준 뒤 동녕부를 요동으로 옮겼다고 한다. 요동 안에서의 구체적 지점(요양)은 KCI에 실린 오기승(2025) 논문 초록의 '동녕로는 요양으로 옮겨 재설치되었다'는 서술로 보완했고, 위키백과 동녕부도 요동 이치를 적는다(보조 출처). 인용 기사 3건은 모두 서경 시기(1270~1274)의 일이다. 좌표는 평양·랴오양의 현대 도시 중심점으로 관부 청사 위치가 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0016332",
+        "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003233807",
+        "https://ko.wikipedia.org/wiki/%EB%8F%99%EB%85%95%EB%B6%80",
+        "https://www.wikidata.org/wiki/Q18808",
+        "https://www.wikidata.org/wiki/Q75203"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_026_0070_0020_0050",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十六 世家 卷第二十六 › 元宗 11年 › 2월 › 몽고가 서경을 귀속시키고 동녕부로 이름을 고치다",
+          "date": {
+            "label": "1270년 2월 7일",
+            "raw": "1270-02-07L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_026_0070_0020_0050",
+          "quote": "丁丑 崔坦請蒙古兵三千來鎭西京, 帝賜崔坦·李延齡金牌, 玄孝哲·韓愼銀牌 有差. 詔令內屬, 改號東寧府, 畫慈悲嶺爲界.",
+          "quoteStart": 0,
+          "quoteEnd": 62,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_027_0020_0060_0050",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十七 世家 卷第二十七 › 元宗 13年 › 6월 › 원에 별도의 현안 4개 조항을 보고하다",
+          "date": {
+            "label": "1272년 6월 26일",
+            "raw": "1272-06-26L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_027_0020_0060_0050",
+          "quote": "別楮云, “臣兢惶隕越, 謹重奏言. 臣竊有開啓事段, 具呈于後, 伏望聖慈, 咸賜兪允. 一, 東寧府. 前次經略司, 分遣不多軍馬, 而支應粮料, 始自今年正月, 至于三月十七日而止. 曾禀聖旨, 諭以一体供億, 故留在鳳州軍五百餘人粮料, 乞令東寧府應副, 而未蒙憐察, 反使王京供億, 其得能辦, 甚爲未便. 乞依聖旨, 卒令東寧府添助",
+          "quoteStart": 0,
+          "quoteEnd": 172,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_027_0040_0040_0050",
+          "sourceId": "src-goryeosa",
+          "locator": "卷二十七 世家 卷第二十七 › 元宗 15年 › 4월 › 동녕부 등지의 백성들을 선원으로 보충하도록 원에 요청하다",
+          "date": {
+            "label": "1274년 4월 18일",
+            "raw": "1274-04-18L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_027_0040_0040_0050",
+          "quote": "卒·梢工, 亦當就向件役巭而調出耳, 洪茶丘移書金方慶云, ‘船三百隻, 梢工水手一萬五千人, 預先備之.’ 其數甚多, 豈可止用小邦人而足矣? 元來所管濟州·東寧府·北界諸城人, 與夫西海道避役亡在東寧府者, 皆能習水, 又工把船, 乞令幷刷補之. 又自庚午年以來, 至今五年, 供軍糧餉, 早曾乏絶. 今此造船巭匠, 及監造官等三萬五百人, 種田軍·洪總管軍·濟州留守軍等糧米, 專取兩班祿俸及諸賦稅,",
+          "quoteStart": 73,
+          "quoteEnd": 276,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 39.016666666667,
+          "lon": 125.7475,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0016332",
+          "basis": "민백 '동녕부'는 1270년 원이 '자비령을 경계로 삼아 그 이북 지방은 모두 원나라의 소유로 한 뒤 서경에 동녕부를 설치'했다고 한다. 서경은 지금의 평양이다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": 1270,
+          "validTo": 1290,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「동녕부」",
+          "dateBasis": "같은 항목: 1270년 설치, 1290년(충렬왕 16) 고려에 반환하고 요동으로 이치",
+          "coordLabel": "평양시 중심 좌표",
+          "wikidataId": "Q18808"
+        },
+        {
+          "lat": 41.26432,
+          "lon": 123.1772,
+          "sourceUrl": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003233807",
+          "basis": "오기승(2025) 논문 초록은 1290년 이후 '동녕로는 요양으로 옮겨 재설치되었다'고 한다. 민백 동녕부 항목의 '요동으로 옮겨졌다'와 부합한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+          "precision": "region",
+          "view": "오기승, 「원(元) 동녕로와 북원(北元) 동녕부에 대한 고찰」, 한국학논총 64(2025) 초록",
+          "validFrom": 1290,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "KCI 논문 상세 페이지(초록)",
+          "dateBasis": "초록의 1290년 이치 서술 및 민백 동녕부의 1290년 반환 서술",
+          "coordLabel": "랴오양시 중심 좌표",
+          "wikidataId": "Q75203"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-039",
+      "label": "漢陽",
+      "labelKo": "한양",
+      "kind": "city",
+      "count": 47,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1308,
+      "validTo": null,
+      "note": "1317·1325년 원문은 충숙왕의 한양 행차·사냥 기록이다. 백과는 남경유수관이 1308년 한양부로 개칭되었다고 한다. 이 연도는 한양부 개편을 뜻하며 漢陽 지명 자체의 시작이 아니다. 서울의 현대 지역 참조점만 남겼다. 남경 궁궐터로 설명되는 청와대 부근을 한양부 관아 위치로 옮길 근거는 없어 해당 점을 제외했다. 원문의 富原 龍山 비정은 미확인이다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0011767",
+        "https://www.wikidata.org/wiki/Q8684",
+        "https://www.wikidata.org/wiki/Q494577"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_034_0100_0030_0050",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三十四 世家 卷第三十四 › 忠肅王 4年 › 2월 › 왕이 농사철에 사냥하여 백성들의 원망을 사다",
+          "date": {
+            "label": "1317년 2월 24일",
+            "raw": "1317-02-24L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_034_0100_0030_0050",
+          "quote": "辛酉 又獵于漢陽, 三司使 洪戎, 密直使 趙延壽·元忠, 大司憲 趙雲卿, 萬戶 張宣·曹碩·權準, 代言 許富及獵騎三百餘人, 從之. 時方農作, 民甚怨咨.",
+          "quoteStart": 0,
+          "quoteEnd": 81,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_035_0060_0090_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三十五 世家 卷第三十五 › 忠肅王 12年 › 8월 › 왕과 공주가 한양 용산의 언덕에서 묵다",
+          "date": {
+            "label": "1325년 8월 15일",
+            "raw": "1325-08-15L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_035_0060_0090_0010",
+          "quote": "八月 壬辰 王與公主, 幸漢陽, 張氈幕於富原 龍山高阜望海處, 而御之.",
+          "quoteStart": 0,
+          "quoteEnd": 37,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_035_0060_0120_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷三十五 世家 卷第三十五 › 忠肅王 12年 › 11월 › 왕이 한양에서 귀경하다",
+          "date": {
+            "label": "1325년 11월 4일",
+            "raw": "1325-11-04L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_035_0060_0120_0010",
+          "quote": "十一月 庚戌 王至自漢陽.",
+          "quoteStart": 0,
+          "quoteEnd": 13,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 37.56,
+          "lon": 126.99,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0011767",
+          "basis": "민백 '남경'은 1067년 양주를 남경으로 삼았고 '남경유수관은 1308년(충렬왕 34)에 한양부로 개칭'되었다고 하며, 남경 권역을 낙산·안산·북악·신용산 남단으로 든다(지금의 서울).",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q8684",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": 1308,
+          "validTo": null,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「남경(南京)」",
+          "dateBasis": "같은 항목의 1308년 한양부 개칭 서술(지명 漢陽 자체의 시작 연도가 아님)",
+          "coordLabel": "서울 중심 좌표",
+          "wikidataId": "Q8684"
+        }
+      ]
+    },
+    {
+      "id": "place-goryeosa-040",
+      "label": "金州",
+      "labelKo": "금주(김주)",
+      "kind": "city",
+      "count": 47,
+      "indexType": "지명",
+      "status": "majority",
+      "confidence": "probable",
+      "validFrom": 1012,
+      "validTo": 1271,
+      "note": "인용 기사 3건은 모두 현종대 금주 지진 기록으로, 민백 김해시 항목의 연혁상 이 시기의 金州는 지금의 경상남도 김해다(1012년 김주로 고치고 방어사를 둠, 1271년 김녕도호부로 승격). 같은 항목이 971년 '김주도호부' 승격도 적고 있어 명칭 사용 시작 시점에는 폭이 있다. 고려 후기·원 간섭기 기사에 나오는 金州 중에는 요동의 금주(현 다롄 진저우) 같은 동명 지명이 섞일 수 있으나 이번에 확인하지 않았다. 좌표는 현대 김해시 중심 참조점으로 고려 금주 치소 지점이 아니다.",
+      "references": [
+        "https://encykorea.aks.ac.kr/Article/E0010989",
+        "https://www.wikidata.org/wiki/Q42082"
+      ],
+      "sourceId": "src-goryeosa",
+      "evidence": [
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0060_0020_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 4年 › 3월 › 금주에 지진이 나다",
+          "date": {
+            "label": "1013년 3월 10일",
+            "raw": "1013-03-10L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0060_0020_0010",
+          "quote": "三月 辛丑 金州地震.",
+          "quoteStart": 0,
+          "quoteEnd": 11,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_004_0060_0100_0010",
+          "sourceId": "src-goryeosa",
+          "locator": "卷四 世家 卷第四 › 顯宗 4年 › 11월 › 금주에 지진이 나다",
+          "date": {
+            "label": "1013년 11월 19일",
+            "raw": "1013-11-19L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_004_0060_0100_0010",
+          "quote": "十一月 丁未 金州地震.",
+          "quoteStart": 0,
+          "quoteEnd": 12,
+          "termInBody": true
+        },
+        {
+          "chunkId": "chunk_goryeosa_kr_005_0010_0050_0020",
+          "sourceId": "src-goryeosa",
+          "locator": "卷五 世家 卷第五 › 顯宗 14年 › 5월 › 지진 발생지에서 해괴제를 지내다",
+          "date": {
+            "label": "1023년 5월 13일",
+            "raw": "1023-05-13L0"
+          },
+          "permalink": "https://db.history.go.kr/id/kr_005_0010_0050_0020",
+          "quote": "乙亥 金州地震, 始令震處, 行解怪祭.",
+          "quoteStart": 0,
+          "quoteEnd": 20,
+          "termInBody": true
+        }
+      ],
+      "candidates": [
+        {
+          "lat": 35.234166666667,
+          "lon": 128.88111111111,
+          "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0010989",
+          "basis": "민백 '김해시' 연혁은 1012년 '김주(金州)로 개칭해 방어사를 두었으며' 1271년 김녕도호부로 승격되었다고 하여, 이 시기 金州를 지금의 김해로 설명한다.",
+          "coordSourceUrl": "https://www.wikidata.org/wiki/Q42082",
+          "precision": "region",
+          "view": "한국민족문화대백과사전(한국학중앙연구원)",
+          "validFrom": 1012,
+          "validTo": 1271,
+          "confidence": "probable",
+          "historySourceTitle": "한국민족문화대백과사전 「김해시」",
+          "dateBasis": "같은 항목: 1012년 金州 개칭 ~ 1271년 김녕도호부 승격(971년 김주도호부 기록도 있어 시작 시점에 이견 여지)",
+          "coordLabel": "김해시 중심 좌표",
+          "wikidataId": "Q42082"
+        }
+      ]
+    }
+  ]
+}

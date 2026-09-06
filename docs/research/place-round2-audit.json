@@ -1,0 +1,3576 @@
+{
+  "issue": 18,
+  "date": "2026-09-06",
+  "roleSplit": {
+    "implementation": "Codex",
+    "research": "Claude Opus 5 / Max"
+  },
+  "historicalSampleSize": 32,
+  "historicalReviewIsNotAllOccurrences": true,
+  "agents": [
+    {
+      "task": "goryeosa-1",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "12dc6fb3-fab2-4fd5-8174-9c9b8c8f595f",
+      "creationflags": "CREATE_NO_WINDOW"
+    },
+    {
+      "task": "goryeosa-2",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "0fafec82-96c9-48a4-9823-60f53d3197df",
+      "creationflags": "CREATE_NO_WINDOW"
+    },
+    {
+      "task": "goryeosa-3",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "3f90ea38-6b2f-4924-aa98-5f07d96ec9e4",
+      "creationflags": "CREATE_NO_WINDOW"
+    },
+    {
+      "task": "goryeosa-4",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "4cd6eedf-d9f8-4511-a1a2-fe4a048befe1",
+      "creationflags": "CREATE_NO_WINDOW"
+    },
+    {
+      "task": "samgukyusa-1",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "b212d6d4-c858-42b5-9f13-577068551794",
+      "creationflags": "CREATE_NO_WINDOW"
+    },
+    {
+      "task": "samgukyusa-2",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "2df2c909-396a-40b1-852c-1c762afa8240",
+      "creationflags": "CREATE_NO_WINDOW"
+    },
+    {
+      "task": "samgukyusa-3",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "bfede448-6651-4771-8a96-861db3e438c8",
+      "creationflags": "CREATE_NO_WINDOW"
+    },
+    {
+      "task": "samgukyusa-4",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "785bf032-dc82-4a24-a29d-a07e2c8966d7",
+      "creationflags": "CREATE_NO_WINDOW"
+    },
+    {
+      "task": "verify-goryeosa",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": null,
+      "sessionId": "1da3a299-f692-4721-a3ef-1365476590cd",
+      "creationflags": "CREATE_NO_WINDOW",
+      "metadataNote": "Completed CLI run; supervisor log parser failed on string message. CLI OS exit code unavailable."
+    },
+    {
+      "task": "verify-samgukyusa-a",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "a0a03959-37aa-4c12-a804-f84613f03d00",
+      "creationflags": "CREATE_NO_WINDOW"
+    },
+    {
+      "task": "verify-samgukyusa-b",
+      "modelRequested": "claude-opus-5",
+      "effort": "max",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "resultSubtype": "success",
+      "isError": false,
+      "exitCode": 0,
+      "sessionId": "af3fe597-77c4-40ac-8329-b2562bb563ce",
+      "creationflags": "CREATE_NO_WINDOW"
+    }
+  ],
+  "reviews": [
+    {
+      "source": "goryeosa",
+      "checkedPlaceIds": [
+        "place-goryeosa-001",
+        "place-goryeosa-003",
+        "place-goryeosa-005",
+        "place-goryeosa-007",
+        "place-goryeosa-009",
+        "place-goryeosa-010",
+        "place-goryeosa-011",
+        "place-goryeosa-013",
+        "place-goryeosa-024",
+        "place-goryeosa-026",
+        "place-goryeosa-028",
+        "place-goryeosa-031",
+        "place-goryeosa-032",
+        "place-goryeosa-034",
+        "place-goryeosa-036",
+        "place-goryeosa-039"
+      ],
+      "findings": [
+        {
+          "placeId": "place-goryeosa-001",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "validFrom 922는 encykorea가 말하는 '행정 기구 본격 설치' 연도인데, 같은 표제의 evidence 첫 항목(921년 10월 '幸西京')이 이미 西京 표기를 쓰고 있다. 행정기구 설치 연도를 지명 사용 시작으로 옮긴 결과 자기 evidence 1건이 유효기간 밖으로 밀린다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0027575",
+          "supportedText": "민백 「서경」은 922년(태조 5)에 행정 기구를 본격 설치했다고 적을 뿐이고, 921년 행행이나 西京 표기의 최초 사용 연도는 다루지 않는다. 998년 호경·1269~1290년 동녕부·1369년 평양부 연혁은 원문대로 확인됨.",
+          "action": "null-date",
+          "suggestedChanges": {
+            "place.validFrom": null,
+            "candidates[0].validFrom": null,
+            "candidates[0].dateBasis": "922년은 encykorea가 적은 행정기구 설치 연도이며 西京 표기 사용 시작 연도가 아님(사료에 921년 용례 존재). 지명 사용 시작 연도를 밝힌 출처 미확인.",
+            "keep": "validTo 1369(평양부 개편)는 출처와 일치하므로 유지"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-003",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "basis가 민백 「개성부」 항목이 '현재의 북한 개성 지역에 해당한다'고 설명한다고 적었으나, 해당 페이지에는 현대 위치를 말하는 문장이 없다(919년 개주·995년 개성부 서술만 있음). 현대 좌표를 붙이는 근거가 정작 그 sourceUrl에 없다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0001652",
+          "supportedText": "919년(태조 2) 송악산 남쪽에 도읍을 정해 개주라 하고 995년 개성부로 바꿨다는 서술은 확인. '지금의/현재/개성직할시/북한' 류의 현대 위치 문장은 확인되지 않음. 대신 민백 「개성 성곽」(E0001657)은 '북한 황해북도 개성시'라고 명시한다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[0].basis": "919년 개주 설정·995년 개성부는 E0001652, 현대 위치(북한 황해북도 개성시)는 E0001657로 근거를 분리해 서술",
+            "references.add": "https://encykorea.aks.ac.kr/Article/E0001657",
+            "appliesAlsoTo": "place-goryeosa-007 candidates[0], place-goryeosa-023 candidates[0](범위 밖이나 같은 문구)"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-003",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "basis에는 '1232~1270년 강도 시기는 제외된다'고 적혀 있지만 필드는 validFrom 919 / validTo null이어서 강도기에도 개경 후보가 유효하다. 후보 0(개경)과 후보 1(강화)이 1232~1270에 그대로 겹쳐, note가 애써 나눈 시기 구분이 데이터에 반영되지 않는다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0001503",
+          "supportedText": "민백 「강화군」은 1232년(고종 19) 천도해 강도라 하고 1270년(원종 11) 개경으로 환도했다고 적어, 그 기간의 '京城'이 강화임을 뒷받침한다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[0]": "919~1232 / 1270~null 두 구간으로 분리하거나, 한 구간만 쓸 경우 basis가 아니라 필드에서 강도기를 배제",
+            "note": "1254년 '守衛京城'(全羅 표제 sample)이 강화 후보의 원문 근거이므로 그 인용을 이 표제 evidence에도 넣으면 근거가 자기 완결적이 됨"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-005",
+          "candidateIndex": 1,
+          "severity": "major",
+          "problem": "요양(랴오양) 후보는 이 표제의 evidence 3건(990·997년 성종대 경주 관련 기사) 중 어느 것도 뒷받침하지 않는다. note 스스로 '이 사료의 어느 대목이 그에 해당하는지는 원문 확인이 필요하다'고 적는다. 게다가 validFrom null·validTo 1288이라, 경주가 분명한 990·997년 기사에도 이 후보가 유효하게 붙어 고려 동경 기사가 요동으로 찍힐 수 있다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0016185",
+          "supportedText": "민백 「동경」은 동경을 지금의 경상북도 경주시로 보고 987년 개칭·1304년 계림부 개칭만 서술하며, 요·금의 동경(요양)은 언급하지 않는다.",
+          "action": "remove-candidate",
+          "suggestedChanges": {
+            "candidates[1]": "삭제",
+            "rationale": "같은 산출물의 place-goryeosa-009(南京)가 동일 상황에서 '근거를 못 찾아 후보로 넣지 않았다'로 처리했으므로 기준을 그쪽에 맞춤",
+            "ifRestored": "고려사 원문에서 요·금 東京 용례를 인용으로 확보한 뒤 별도 표제로 분리하고, 유효기간을 그 인용 연대에 맞춰 설정"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-007",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "개경 후보의 basis가 민백 「개성부」 항목이 왕경을 '현재의 북한 개성 지역'이라고 설명한다고 적었으나 그 페이지에 해당 서술이 없다(003과 동일 문제).",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0001652",
+          "supportedText": "919년 개주·995년 개성부 서술만 확인되고 현대 위치 문장은 없음. 민백 「개성 성곽」(E0001657)이 '북한 황해북도 개성시'로 명시.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[0].basis": "현대 위치 근거를 E0001657로 교체 또는 병기",
+            "references.add": "https://encykorea.aks.ac.kr/Article/E0001657"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-007",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "같은 사료의 같은 시기를 표제마다 다르게 처리한다. 003(京城)은 강도기(1232~1270)를 강화로 분리했는데, 007(京師)의 개경 후보는 919~null로 열려 있어 강도기 '京師' 용례가 나오면 개경으로 잘못 붙는다. 京師는 99건이라 해당 시기 용례가 포함될 개연성이 크다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0001503",
+          "supportedText": "민백 「강화군」: 1232년 천도해 강도라 하고 1270년 개경으로 환도. 대도(1271~1368)·남경(1368~1421) 후보의 연도 근거는 sillokwiki 「연행」·「남경」에서 확인됨.",
+          "action": "note",
+          "suggestedChanges": {
+            "candidates[0]": "003과 동일하게 919~1232 / 1270~null로 분리하거나, note에 '강도기 용례는 이 후보로 처리하지 않음'을 명시",
+            "doNot": "원문 인용 없이 강화 후보를 새로 추가하지 말 것 — 인용을 확보한 뒤에만 추가"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-010",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "몽고정 후보가 precision=site이면서 validFrom/validTo가 모두 null이라, 757년 이래 모든 合浦 용례에 정밀 지점으로 붙는다. 출처는 이 유적을 '고려후기 몽고군 관련 우물'로만 설명하고 합포현 치소·관아라고 하지 않는다. 1271년 삼별초가 감무를 잡아간 기사는 치소 관련이므로 site 후보를 앞세우면 치소 위치로 오독되기 쉽다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0018776",
+          "supportedText": "민백 「창원 몽고정」: 소재지 창원시 마산합포구 자산동, '고려 원종 때 당시 합포이던 이 지역'에 일본원정 준비 몽고군이 주둔. 유형은 우물이며 관아·치소 서술은 없다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[0].validFrom": 1270,
+            "candidates[0].dateBasis": "원 주둔·일본원정 준비기(13세기 후반)에 한정된 유적임을 명시",
+            "alternative": "기간을 못 정하면 precision을 approx로 낮추고, 마산합포구 광역 후보(candidates[1])를 대표 후보로 앞세울 것"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-011",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "validFrom 1018은 민백 「황해도」의 관내도 분할 서술에서 가져왔는데, 정작 candidate의 sourceUrl인 민백 「서해도」는 '서해도' 명칭이 1093년(선종 10) 안찰사 사례에서 처음 확인되고 문종 후반에 개정된 것으로 짐작된다고 적는다. 같은 산출물의 place-goryeosa-033은 같은 사전을 근거로 1093을 썼다 — 내부 불일치.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+          "supportedText": "민백 「서해도」: 1093년 안찰사 사례에서 처음 확인, 1395년 풍해도·1417년 황해도로 개칭. 민백 「황해도」: 1018년(현종 9) 관내도를 양광도와 서해도로 양분.",
+          "action": "null-date",
+          "suggestedChanges": {
+            "candidates[0].validFrom": null,
+            "candidates[0].dateBasis": "1018년(민백 「황해도」)과 1093년(민백 「서해도」)이 어긋나므로 시작 연도 미확정. 두 서술 병기.",
+            "alternative": "null이 곤란하면 033과 같이 1093으로 통일해 산출물 내 불일치를 없앨 것"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-011",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "basis와 note가 해주를 '도의 행정 중심지'라고 서술했으나 출처는 그렇게 말하지 않는다. 또 5도 단위 광역 표제인데 precision=approx라, 광역 참조점이 아니라 치소 근사값처럼 읽힌다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+          "supportedText": "민백 「서해도」는 관할을 '지금의 황해도 일대'로 적고 해주는 안서대도호부, 황주는 목관이 되었다고만 서술한다. 안찰사 치소는 명시하지 않는다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[0].precision": "region",
+            "candidates[0].basis": "'도의 행정 중심'이 아니라 '민백이 든 계수관 고을(안서대도호부 해주)의 현대 참조점'으로 수정",
+            "consider": "place-goryeosa-033처럼 황주(Q705723) 참조점을 병기해 한 점 편향을 줄일 것"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-013",
+          "candidateIndex": null,
+          "severity": "major",
+          "problem": "validFrom 1314(명칭 확정 연도)를 표제와 두 후보에 모두 걸어 두었는데, 이 표제의 evidence 3건이 모두 1223·1225·1226년의 慶尙道 용례다. 즉 자기 근거 3건 전부가 유효기간 밖으로 밀려 지도가 원문을 통째로 놓친다. note는 소급 표기 가능성을 적었지만 필드는 고쳐지지 않았다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0002512",
+          "supportedText": "민백 「경상도」: 도명은 경주·상주의 머리 글자 합성, 1106년 경상진주도, 경상도로 굳은 것은 1314년, 1896년 남북 2도로 분리. 즉 1314는 명칭 확정 연도이지 표기 사용 시작이 아니다.",
+          "action": "null-date",
+          "suggestedChanges": {
+            "place.validFrom": null,
+            "candidates[*].validFrom": null,
+            "candidates[*].dateBasis": "1314년은 '경상도'라는 도명이 굳어진 연도(민백). 본문 표기는 1223년 기사부터 확인되므로 사용 시작 연도는 미확정.",
+            "keep": "validTo 1896은 출처와 일치하므로 유지"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-013",
+          "candidateIndex": 1,
+          "severity": "minor",
+          "problem": "경주 보조 후보는 도의 치소가 아니라 도명 유래 도시일 뿐인데 precision=approx라 광역 후보(영남, region)보다 정밀해 보인다. 같은 근거의 상주는 빠져 있어 비대칭이고, 경주는 rank 25에 별도 표제도 있어 중복 참조점이 된다. 5도 광역을 도 안의 특정 도시로 대표시키는 형태에 가깝다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0002512",
+          "supportedText": "민백 「경상도」는 경주·상주를 '이 지방의 대표적 고을'로 들어 도명 유래를 설명할 뿐, 경주를 도의 중심지·치소로 서술하지 않는다.",
+          "action": "remove-candidate",
+          "suggestedChanges": {
+            "candidates[1]": "삭제(광역 참조점은 candidates[0] 영남 대표점으로 충분)",
+            "alternative": "유지한다면 precision을 region으로 낮추고 상주 참조점을 함께 넣어 비대칭을 없앨 것"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-024",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "validFrom 1036(동계 칭호 연도)인데 evidence 첫 항목이 1030년 '處之東界'라 그 기사가 유효기간 밖으로 밀린다. note가 소급 표기 가능성을 적었으나 필드는 그대로다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0016205",
+          "supportedText": "민백 「동계」: 995년 삭방도, 1036년 동계, 1047년 동북면, 1178년 연해명주도 등으로 개칭. 영역은 '공험 이남에서 삼척 이북'. 1413년 영길도 개칭은 민백 「양계」에서 확인.",
+          "action": "null-date",
+          "suggestedChanges": {
+            "place.validFrom": null,
+            "candidates[0].validFrom": null,
+            "candidates[0].dateBasis": "1036년은 민백이 적은 '동계' 칭호 연도이며 본문 표기 사용 시작 연도가 아님(1030년 용례 존재)",
+            "keep": "validTo 1413(영길도 개칭)은 민백 「양계」와 일치하므로 유지"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-024",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "안변 참조점의 근거로 든 '위키백과 「고려의 행정 구역」이 동계의 중심 관부를 안변도호부로 적는다'는 서술을 해당 문서에서 확인하지 못했다(문서는 북계=평안도, 동계=함경도라는 총칭만 서술). 민백 「동계」도 치소를 명시하지 않으며 오히려 화주를 반복 언급하고 1258년 쌍성총관부가 화주에 설치되었다고 적는다. 광역 도의 참조점이 위키백과 한 줄에만 의존한다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0016205",
+          "supportedText": "민백 「동계」에는 치소·중심 관부 서술이 없고 화주가 반복 등장한다. 위키백과 「고려의 행정 구역」에서는 동계 중심 관부 문장을 확인하지 못했다.",
+          "action": "note",
+          "suggestedChanges": {
+            "candidates[0]": "confidence=unverified 유지하되 basis에 인용 위치(문서 내 절·표)를 특정하거나, 특정 못 하면 좌표 후보 보류",
+            "note.add": "민백 「동계」는 치소를 밝히지 않으며 화주를 반복 언급한다는 점, 안변 참조점은 위키백과 서술에만 근거한다는 한계"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-026",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "basis가 민백 「양광도」에 '도명은 양주·광주에서 유래'한다는 서술이 있다고 적었으나 그 페이지에서 확인되지 않는다(정의문은 관할 범위만 서술). 또 민백이 목관으로 든 3곳(광주·청주·충주) 중 충주만 참조점에서 빠져 광역 대표점이 비대칭이다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0035413",
+          "supportedText": "민백 「양광도」 정의문은 '안찰사가 파견된 5도의 하나로서 지금의 경기도, 충청남도, 충청북도 및 강원도 일부 지역에 해당하는 행정 구역'이라 하고, 목관을 광주·청주·충주 3곳으로 든다. 도명 유래 문장은 확인되지 않음. 안찰사 치소도 명시 없음.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[0].basis": "도명 유래 서술은 삭제하거나 실제로 그렇게 적은 다른 출처로 교체",
+            "candidates": "충주 참조점을 추가하거나, 목관 3곳 중 2곳만 쓴 이유를 note에 명시",
+            "keep": "날짜 충돌(민백 1018·1087·1107 / 향토문화전자대전 1106·1314·1356)을 이유로 validFrom·validTo를 null로 둔 처리는 두 출처 모두에서 확인되며 적절"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-028",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "validFrom 989(병마사 설치 연도)인데 evidence 첫 항목이 928년 '巡幸北界'라 그 기사가 유효기간 밖으로 밀린다. 군사기구 설치 연도를 지명 사용 시작으로 옮긴 형태다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0035401",
+          "supportedText": "민백 「양계」: 989년(성종 8) 병마사를 둠에 따라 군사관장구역의 성격을 띠었고, 1413년(태종 13) 북계가 평안도, 동계가 영길도로 개칭되었다.",
+          "action": "null-date",
+          "suggestedChanges": {
+            "place.validFrom": null,
+            "candidates[0].validFrom": null,
+            "candidates[0].dateBasis": "989년은 병마사 설치 연도이며 北界 표기 사용 시작 연도가 아님(928년 용례 존재)",
+            "keep": "validTo 1413은 민백 「양계」와 일치하므로 유지"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-028",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "안주 참조점의 근거로 든 '위키백과 「고려의 행정 구역」이 안북대도호부를 북계의 중심 관부로 적는다'는 서술을 해당 문서에서 확인하지 못했다. 민백 「양계」도 치소를 밝히지 않는다. 광역 군사행정구역의 유일한 좌표가 위키백과 서술에만 의존한다.",
+          "evidenceUrl": "https://ko.wikipedia.org/wiki/%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80",
+          "supportedText": "위키백과 「대도호부」는 태조 14년(931) 영주에 안북부를 두고 1018년 안북대도호부로 승격했다고 적으며 영주를 '지금의 평안북도 안주시'라 한다(안주시는 실제로 평안남도 — 초안이 지적한 대로 문서 오류). 북계 중심 관부라는 명시는 확인 못 함.",
+          "action": "note",
+          "suggestedChanges": {
+            "candidates[0]": "confidence=unverified 유지, basis에서 '중심 관부' 근거 문장 위치를 특정하거나 특정 못 하면 보류",
+            "note.keep": "위키백과의 평안북도 표기 오류 지적은 옳으므로 유지"
+          }
+        },
+        {
+          "placeId": "place-goryeosa-039",
+          "candidateIndex": 1,
+          "severity": "minor",
+          "problem": "漢陽 표제의 청와대 후보에 validFrom 1068(남경 궁궐 건설 연도)이 붙어 있다. 이는 南京 표제(place-goryeosa-009)의 연도를 그대로 옮긴 것으로, '漢陽'이라는 표기·행정단위를 1308년 한양부 개칭 기준으로 잡은 표제 자체의 기준(validFrom 1308)과 어긋난다. 같은 인물·같은 사전에서 009 후보는 1104를, 039 후보는 1068을 쓰고 있어 산출물 내부도 어긋난다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0011767",
+          "supportedText": "민백 「남경」: 1067년 남경 설치, 1104년 궁궐 완성, 1308년(충렬왕 34) 남경유수관이 한양부로 개칭, 1390년 한양 천도. 궁궐 위치는 '경복궁의 북쪽 … 지금의 청와대 부근'.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[1].validFrom": 1308,
+            "candidates[1].dateBasis": "1308년 한양부 개칭 이후 이 표제에 적용되는 지점 참조. 1068/1104는 南京 표제의 궁궐 연도이므로 여기서 쓰지 않음",
+            "alternative": "한양부 관아 위치를 밝힌 출처가 없으므로 validFrom을 null로 두고 precision=approx 한계를 유지해도 됨"
+          }
+        }
+      ],
+      "passed": [
+        {
+          "placeId": "place-goryeosa-009",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0011767",
+          "reason": "민백 「남경」에서 궁궐 위치('경복궁의 북쪽 … 지금의 청와대 부근'), 1067년 설치·1104년 궁궐 완성·1390년 한양 천도, 1067년 기록을 한양 천도 정당화를 위한 소급 작성으로 보는 견해까지 note·basis 서술과 일치. '부근'이라는 표현을 근거로 청와대 좌표를 정확한 궁궐터로 쓰지 않고 precision=approx와 한계를 명시했고, 명 초 남경·요 남경은 원문 근거가 없다는 이유로 후보를 만들지 않은 처리도 규칙에 부합."
+        },
+        {
+          "placeId": "place-goryeosa-031",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0060059",
+          "reason": "민백 「평주」가 평주를 황해북도 평산군으로 비정하고 940년(태조 23) 평주 개칭, 995년 방어사, 1018년 지군사, 1413년(태종 13) 평산도호부 승격을 적어 validFrom 940·validTo 1413과 정확히 맞는다. 좌표를 평산군 광역 참조점으로 두고 치소·읍성 지점이 아니라고 명시한 점, 요·금의 平州 동명 가능성을 인용문 범위에서 배제한 점도 확인."
+        },
+        {
+          "placeId": "place-goryeosa-032",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0051078",
+          "reason": "민백 「정평군」이 1041년(정종 7) 축성·관문 설치와 定州 개칭·방어사 설치, 1044년 천리장성 동단 도련포, 1413년 '평안도의 정주와 군명이 같다'는 이유의 정평 개칭을 적어 validFrom 1041·validTo 1413과 일치. 동명 우려도 별도로 확인했는데, 평안북도 정주는 고려 시기 1231년 정원대도호부 승격·조선 정주목으로 나와 고려대 定州를 정평으로 본 처리와 어긋나지 않는다(이 대조는 ko.wikipedia 「정주시」 수준). 1073년 '奏定州號'를 지명이 아니라 '州號를 정하다'의 분절로 보아 제외한 판단도 문맥상 타당."
+        },
+        {
+          "placeId": "place-goryeosa-034",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0034141",
+          "reason": "민백 「쌍성총관부」가 화주를 '지금의 함경남도 영흥'으로 적고 1258년 설치·1356년 폐지, 관할이 화주 이북 여러 주진(등주·정주·장주·예주·고주·문주·의주 등)임을 서술해 validFrom 1258·validTo 1356 및 '넓은 관할' 한계 서술과 일치. 영흥→금야군 개칭(1977)도 민백 「영흥군」에서 확인되어 Q706067 연결이 타당하고, precision=region으로 성터 지점이 아님을 명시했다."
+        },
+        {
+          "placeId": "place-goryeosa-036",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0001016",
+          "reason": "민백 「강남도」는 995년(성종 14) 십도의 하나로 편성되어 1018년(현종 9) 개편으로 전주목 관할이 되었고 지금의 전북 일원에 해당한다고 서술한다. 초안이 이제현 찬의 강남(남당)·'宋江南人'·국내 용례를 구분하고, 국내 용례를 강남도로 볼지 한강 이남 일반 표현으로 볼지 가릴 출처가 없다는 이유로 status=unlocated·후보 없음으로 둔 것은 '확인 불가능한 좌표는 unlocated' 규칙에 정확히 부합한다."
+        }
+      ],
+      "unverified": [
+        {
+          "placeId": "place-goryeosa-005",
+          "reason": "고려사 세가 안에 요·금의 東京(동경요양부)을 가리키는 용례가 실제로 있는지 확인하지 못했다(db.history.go.kr robots 차단). 그래서 '있을 수 있으니 놔두라'가 아니라 '인용을 확보하기 전까지 후보 제거'를 권고했다. 랴오양 후보의 좌표·연도 근거(위키백과 「요양부」: 현 랴오양시 요양고성, 1288년 동경→요양로, 1287년 요양행성)는 페이지에서 확인되나 위키백과 단일 출처라는 한계가 있다."
+        },
+        {
+          "placeId": "place-goryeosa-007",
+          "reason": "京師 99건 가운데 어느 기사가 고려 왕경·원 대도·명 남경 중 무엇을 가리키는지는 원문 전수 확인이 필요하나 사료 DB를 열 수 없어 제공된 samples 3건만 검토했다. 세 후보의 근거(sillokwiki 「연행」의 1271년 대도, 「남경」의 1368년 남경·1378년 수도 확정·1421년 북경 천도)와 Q101186473이 실제 大都/Khanbaliq 항목이라는 점은 확인했다."
+        },
+        {
+          "placeId": "place-goryeosa-010",
+          "reason": "1052년 '用合浦之珠'를 중국 합포 고사(合浦珠還) 인용으로 보아 evidence에서 제외한 판단은 문맥상 타당해 보이나, 이를 명시한 사전·학술 서술을 찾지 못했다. 보수적 제외라 그대로 두어도 무방하다는 의견이며, 확정 판정은 하지 않는다."
+        }
+      ],
+      "task": "verify-goryeosa"
+    },
+    {
+      "source": "samgukyusa",
+      "checkedPlaceIds": [
+        "place-samgukyusa-001",
+        "place-samgukyusa-003",
+        "place-samgukyusa-005",
+        "place-samgukyusa-007",
+        "place-samgukyusa-008",
+        "place-samgukyusa-009",
+        "place-samgukyusa-011",
+        "place-samgukyusa-012"
+      ],
+      "findings": [
+        {
+          "placeId": "place-samgukyusa-009",
+          "candidateIndex": 0,
+          "severity": "major",
+          "problem": "candidate 0의 validFrom=586은 장안성 이도(수도 이동) 연도이지 平壤이라는 지명이 쓰이기 시작한 해가 아니다. 이 표제의 evidence에는 413년 '平壤州大橋成'과 단군의 '都平壤城' 기사가 들어 있는데, candidate 1(안학궁)도 427년부터라 413년 이전 용례는 어떤 후보에도 걸리지 않아 지도가 원문을 놓친다. 인용한 위키백과 문서도 586년을 '천도' 시점으로 말할 뿐 지명 사용 개시로 말하지 않는다.",
+          "evidenceUrl": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%84%B1_(%EA%B3%A0%EA%B5%AC%EB%A0%A4)",
+          "supportedText": "해당 문서는 주류 학계가 평양성을 현 평양직할시 시가지로 추정한다고 하며, 552년 축조 결정·566년 내성·586년 천도·589년 중외성이라는 축조/이도 경과를 적는다. 586은 도성 이동 연도이지 지명 발생 연도가 아니다.",
+          "action": "null-date",
+          "suggestedChanges": {
+            "candidates[0].validFrom": null,
+            "candidates[0].dateBasis": "586년은 장안성(현 평양 시가지)으로 도성을 옮긴 해일 뿐 平壤 지명의 시작이 아니므로 후보 유효기간에 쓰지 않음. 현 평양직할시는 낙랑·고구려·고려 서경 이래 平壤 비정의 주류 참조점이라 기간을 열어 둔다.",
+            "candidates[0].view": "주류 학계(현 평양직할시 = 平壤 비정의 참조점, 586년 이후 장안성 자리 포함)"
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-003",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "note의 '민족문화대백과에서 표제 항목을 찾지 못해 위키백과에 의존했다'는 서술이 사실과 다르다. 민백 '해동'(E0062492) 표제 항목이 실재하고, 이 표제에 직접 관련되는 서술을 담고 있다. (가) 어원을 '발해(渤海)의 동쪽나라'로 적어 위키백과의 '바다 동쪽에 있는 나라'와 다르고, (나) 삼국유사의 '해동' 표현 대부분이 고려시대 일연 자신의 표현이라고 밝힌다 — validFrom/To를 null로 둔 판단을 오히려 뒷받침하는 근거다. 좌표(한반도 광역 참조점, precision=region, 한계 명시)와 특정 지점이 아니라는 서술 자체에는 문제가 없다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0062492",
+          "supportedText": "민백 '해동'은 우리나라의 별칭으로, 중국인이 \"발해(渤海)의 동쪽나라\"라는 뜻으로 부른 데서 비롯됐다고 하고, 삼국유사에 나오는 '해동' 표현 대부분은 고려시대 일연 자신의 표현으로 생각된다고 서술한다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[0].sourceUrl": "https://encykorea.aks.ac.kr/Article/E0062492",
+            "candidates[0].historySourceTitle": "한국민족문화대백과사전 「해동(海東)」",
+            "candidates[0].basis": "민백 '해동'은 해동을 우리나라의 별칭이라 하고, 중국인이 발해 동쪽 나라라는 뜻으로 부른 데서 비롯했다고 설명한다. 좌표는 특정 지점이 아니라 한반도 전체를 대표하는 광역 참조점.",
+            "references": "https://encykorea.aks.ac.kr/Article/E0062492 를 추가하고, note에서 '민백 표제 항목 없음' 문장을 삭제. 대신 삼국유사의 해동 용례가 대체로 일연(고려)의 표현이라는 민백 서술을 근거로 기간 null 유지 사유를 적을 것."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-007",
+          "candidateIndex": 1,
+          "severity": "minor",
+          "problem": "두 후보는 경쟁 비정이 아니라 같은 성터(당토성)를 현대 행정구역명만 달리 적은 것이다. 민백 '대방군'(E0014398)은 치소 유지를 봉산군의 사리원 동남 문정면 당토성이라 하여, 민백 '봉산 대방토성'의 봉산군과 위키백과의 사리원시가 동일 지점을 가리킨다는 것을 명시한다. 두 참조점(약 15㎞ 차이) 어느 쪽도 토성 자체 좌표가 아닌데 나란히 세우면 지도에서 학설 대립처럼 읽힌다. 또 군(郡)·시(市) 중심 참조점에 precision=approx는 과하다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0014398",
+          "supportedText": "민백 '대방군'은 대방군 치소의 유지로 \"사리원 동남 문정면\"에 있는 속칭 당토성을 추정한다고 서술한다(민백 '봉산 대방토성'의 봉산군 문정면 토성내동, 북한명 지탑리토성과 같은 곳).",
+          "action": "remove-candidate",
+          "suggestedChanges": {
+            "remove": "candidates[1] (사리원시 참조점)",
+            "candidates[0].precision": "region",
+            "candidates[0].basis": "민백 '봉산 대방토성'과 '대방군'은 같은 당토성(봉산군 문정면, 사리원 동남, 북한명 지탑리토성)을 대방군 치소로 '추정'한다. 위키백과가 사리원시라 적은 것도 같은 성터다. 좌표는 봉산군 참조점이며 토성 자체 위치가 아니다.",
+            "note": "치소는 추정 단계이고 장무이묘 근거를 부정하는 견해도 있다는 서술은 유지하되, '민백=봉산군 / 위키백과=사리원시'를 서로 다른 후보로 나눈 문장은 같은 성터의 표기 차이로 정정."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-007",
+          "candidateIndex": null,
+          "severity": "minor",
+          "problem": "validTo=314(표제 및 candidate 1)는 위키백과 단독 근거다. 민백 '대방군'은 313년 장통이 요동으로 달아나면서 대방군이 고구려에 멸망했다고 적어 313/314 이설이 있고, 설치도 후한 건안 연간(196~220, 공손강)으로 명시한다. 1년 차이라 null까지 되돌릴 사안은 아니나, 지금은 상위 기관 출처와 어긋난 값이 dateBasis 없이 표제에 올라 있고 candidate 0에는 validTo가 없어 후보 간 값도 어긋난다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0014398",
+          "supportedText": "민백 '대방군'은 공손강이 건안 연간에 낙랑군 둔유현 이남을 떼어 대방군을 설치했다고 하고, 313년 장통이 요동으로 달아나 대방군이 고구려에 멸망·점령됐다고 서술한다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "validTo": 314,
+            "dateBasis(표제)": "소멸 연도는 위키백과 '대방군' 314년, 민백 '대방군' 313년으로 출처가 갈림. 설치는 민백이 후한 건안 연간(공손강)이라 하나 삼국유사 노례왕 4년(27년) 帶方人 기사와 어긋나므로 validFrom은 null 유지.",
+            "candidates[0].validTo": 314,
+            "references": "https://encykorea.aks.ac.kr/Article/E0014398 추가"
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-007",
+          "candidateIndex": null,
+          "severity": "minor",
+          "problem": "note는 '南帶方의 위치는 근거를 찾지 못해 후보에 넣지 않았다'고 했으나 공개 기관 자료가 있다. 한국학중앙연구원 디지털남원문화대전 '남대방군'이 삼국유사·고려사 지리지의 남원(백제 고룡군) 비정과 그 비판(동국여지지)을 함께 정리한다. 표제 10건 안에 南帶方 조가 섞여 있다면 지금의 황해도 후보만으로 다른 대상을 덮게 되므로, 원문 확인 후 별개 대상으로 분리할지 판단이 필요하다. 다만 나는 원문 DB 차단으로 南帶方 조 본문을 직접 보지 못했다.",
+          "evidenceUrl": "https://namwon.grandculture.net/namwon/toc/GC00600663",
+          "supportedText": "디지털남원문화대전(한국학중앙연구원) '남대방군'은 삼국유사가 조위 때 남대방군을 두었다고 한 기록과 고려사 지리지의 '남원=고룡군→대방군→남대방군' 서술을 들고, 한강 이남이 중국 지배를 받은 적이 없다는 동국여지지의 반박도 소개한다. 1310년 남원부가 대방군으로 개칭된 사실도 적는다.",
+          "action": "note",
+          "suggestedChanges": {
+            "note": "南帶方 비정 근거가 없다는 문장을 삭제하고, 디지털남원문화대전 '남대방군'을 근거로 '삼국유사·고려사 계통의 남원 비정이 있으나 후대의 잘못된 기록으로 보는 견해가 우세'하다고 기술. 후보 추가 여부는 표제 10건 중 南帶方 조 원문(북대방과 별개 대상)을 확인한 뒤 결정하고, 추가할 경우 confidence는 disputed/unverified로."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-008",
+          "candidateIndex": null,
+          "severity": "minor",
+          "problem": "핵심 비정(강원 오대산 / 중국 우타이산을 문맥으로 가른 것)은 확인됐고 note의 '민백 자장 항목에 오대산·문수 친견 서술이 없다'는 주장도 E0048060에서 사실로 확인됐다. 다만 인용된 민백 '오대산' 문서에는 보천·효명도, 중국 오대산과의 관계도 나오지 않아 candidate 0 basis의 마지막 문장('보천·효명 기사의 오대산이 이곳')과 candidate 1의 한중 연결 고리는 위키백과에만 걸려 있다. 같은 내용을 담은 기관 자료가 있으므로 위키백과 의존을 줄일 수 있다.",
+          "evidenceUrl": "https://gangneung.grandculture.net/gangneung/toc/GC00302613",
+          "supportedText": "디지털강릉문화대전(한국학중앙연구원) '오대산신앙'은 자장이 중국 오대산 태화지 문수 석상 앞에서 감응을 받고, 신라 명주 경계 오대산에 1만 문수가 상주한다는 부촉을 받아 643년 귀국 직후 강원도 오대산을 순례했다고 서술하며 보천의 오대산 신앙 체계도 다룬다.",
+          "action": "note",
+          "suggestedChanges": {
+            "references": "https://gangneung.grandculture.net/gangneung/toc/GC00302613 추가",
+            "candidates[1].historySourceTitle": "위키백과 「우타이산」 · 디지털강릉문화대전 「오대산신앙」",
+            "note": "중국 오대산 근거를 위키백과 단독에서 기관 자료(디지털강릉문화대전 '오대산신앙')로 보강. 두 후보를 시대 구분이 아니라 서로 다른 대상으로 둔 현재 처리는 유지."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-009",
+          "candidateIndex": 1,
+          "severity": "minor",
+          "problem": "안학궁 후보의 validTo=586이 인용한 sourceUrl과 어긋난다. 위키백과 '안학궁'은 평원왕 9년(567) 장안성 천도까지 왕궁이었다고 하고, 민백 '안학궁'(E0035088)도 427년부터 567년까지로 적는다. 586은 다른 문서(위키백과 '평양성')의 연도를 끌어온 것이다. 더구나 민백은 안학궁 조성 시기에 6세기 이전설·6세기 초반설·6세기 후반설·고구려 후기설·고려시대설까지 이견이 있다고 하므로, precision=site에 427~586을 확정값으로 붙이면 실제보다 단단해 보인다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0035088",
+          "supportedText": "민백 '안학궁'은 평양직할시 대성구역 대성산 남쪽 기슭의 고구려 도성 유적으로, 427년부터 \"장안성(후기 평양성)으로 천도하는 567년까지\" 사용됐다고 하며, 고려시대 조성설을 포함한 여러 이견을 병기한다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[1].sourceUrl": "https://encykorea.aks.ac.kr/Article/E0035088",
+            "candidates[1].historySourceTitle": "한국민족문화대백과사전 「안학궁(安鶴宮)」",
+            "candidates[1].dateBasis": "장안성 이도 연도가 출처마다 567년(민백·위키백과 '안학궁')과 586년(위키백과 '평양성')으로 갈림. 안학궁을 설명하는 출처를 따라 567로 적거나, 확정이 어려우면 validTo를 null로 두고 이설을 명시할 것.",
+            "candidates[1].confidence": "probable 유지하되 note에 민백이 든 조성 시기 이견(고려시대설 포함)을 명시"
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-009",
+          "candidateIndex": 2,
+          "severity": "minor",
+          "problem": "랴오양 후보의 근거는 위키백과의 출처 없는 한 문장('일부 학자들은 … 랴오양시에 위치했다고 주장한다')뿐이고, 어떤 연구자·논거인지 확인되지 않는다. 사료가 가리킨 성터와 랴오양시 참조점을 잇는 근거가 제시되지 않아 '근거 없으면 판정하지 않는다'는 기준에 걸린다. 별도 학술 출처를 찾지 못했다.",
+          "evidenceUrl": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%84%B1_(%EA%B3%A0%EA%B5%AC%EB%A0%A4)",
+          "supportedText": "해당 문서는 주류 학계의 현 평양 시가지설을 본문으로 서술하고, 랴오양설은 주체·근거·각주 없이 '일부 학자들'의 주장으로 한 문장만 붙여 놓았다.",
+          "action": "remove-candidate",
+          "suggestedChanges": {
+            "remove": "candidates[2] (랴오양시 참조점)",
+            "대안": "삭제하지 않으려면 confidence=unverified를 유지한 채 view/basis에 '출처가 특정되지 않은 소수설이며 학술 근거 미확인'임을 명시하고, 지도 기본 표시에서는 제외할 것."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-011",
+          "candidateIndex": 1,
+          "severity": "minor",
+          "problem": "두 후보의 basis 문장은 민백 '패수'에 실재하고 위만조선–한 경계 문맥만 골라 대동강·예성강 용례를 뺀 시대 구분도 타당하다. 다만 민백은 고조선·위만조선기 패수를 청천강이나 압록강으로 보는 것이 일반적이라고 두 설을 나란히 적는데, 압록강 후보만 confidence=unverified로 낮춰 출처보다 낮게 평가했다. 두 설의 차이는 청천강설에만 고고학 논거가 붙는다는 점이므로 그 차이를 basis에 적고 등급은 맞추는 편이 출처에 충실하다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0059801",
+          "supportedText": "민백 '패수'는 이 시기 패수를 \"청천강이나 압록강으로 보는 것이 일반적\"이라 하고, 대릉하·난하설은 연·진 장성 유적이 요령성 북부에 남아 있고 양평을 요하 동쪽 요양에 비정한다는 이유로 물리친다. 고고학 논거(명도전·세형동검 분포 경계)는 청천강설에만 붙는다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[1].confidence": "probable",
+            "candidates[1].basis": "민백 '패수'는 고조선·위만조선기 패수를 청천강이나 압록강으로 보는 것이 일반적이라고 두 설을 병기한다. 다만 고고학적 논거(명도전·세형동검 분포 경계)는 청천강설에만 제시되어 있다. 좌표는 강 전체의 참조점.",
+            "note": "표제 confidence=unverified, status=disputed는 유지(정설 없음)."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-012",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "좌표·precision·한계 서술은 적절하나 note의 출처 요약 두 곳이 부정확하다. (가) '경주시 자료와 위키백과 모량부가 모두 오늘날 건천읍 모량리 일대로 설명한다'고 했으나 위키백과 '모량부'는 건천읍·현곡면·서면·산내면으로 훨씬 넓게 적는다(部와 里를 뒤섞음). 지금 후보는 里 기준이라 건천읍 참조점이 맞지만, 근거 문장은 정정해야 한다. (나) '발굴 비정 자료를 확인하지 못했다'고 했으나 같은 위키백과 문서가 모량·방내리 도시유적과 월성 해자 9호 목간의 모량부 소속 4개 里를 근거로 든다.",
+          "evidenceUrl": "https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%9F%89%EB%B6%80",
+          "supportedText": "위키백과 '모량부'는 오늘날 \"건천읍, 현곡면, 서면, 산내면\" 등이 해당된다고 하고, 위치 근거로 모량·방내리 도시유적(6~7세기 위성도시)과 7세기 초 월성 해자 9호 목간의 모량부 소속 4개 里를 든다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "candidates[0].view": "경주시 공식 지명유래(건천읍 모량리) · 위키백과 모량부(건천읍·현곡면·서면·산내면에 걸친 6부의 하나)",
+            "note": "모량부(部)의 범위와 모량리(里)의 위치를 구분해 서술하고, 위키백과가 든 모량·방내리 도시유적·월성 해자 목간을 참고 근거로 언급. 좌표가 건천읍 참조점이라는 한계 문장은 유지."
+          }
+        }
+      ],
+      "passed": [
+        {
+          "placeId": "place-samgukyusa-001",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0002852",
+          "reason": "민백 '경주 남산 일원'에 basis 인용문이 그대로 있고(경주시 남쪽에 솟은 산, 금오산 별칭, 남북 8㎞·동서 4㎞, 절터·석불·석탑 밀집), 좌표 Q489229도 '경주시에 있는 산'으로 서울 남산과 구별된다. 산괴 전체·개별 유적 위치가 아니라는 한계를 note에 명시했고 근거 없는 창림사지 비정을 넣지 않았다. 단, 제시된 3개 사례 범위 안에서의 확인이다."
+        },
+        {
+          "placeId": "place-samgukyusa-005",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0060942",
+          "reason": "sourceUrl의 실제 표제어가 '한(韓)'이 맞고, basis가 인용한 '삼국통일 이후 요하 동쪽 지역', '나말여초에는 전국을 지칭'이 원문에 있다. 一統三韓·鎭護三韓·三韓兵乱 3사례를 마한·진한·변한이 아니라 삼국/전국 용법으로 읽은 해석과 정합하며, 출처가 연도를 특정하지 않는다는 이유로 validFrom/To를 null로 둔 처리가 맞다. 한반도 광역점은 precision=region과 한계 명시로 허용 범위."
+        }
+      ],
+      "unverified": [
+        {
+          "placeId": "place-samgukyusa-007",
+          "reason": "표제 10건 중 3건만 제시되어 南帶方 조를 비롯한 나머지 용례의 본문을 보지 못했다. 원문 DB(db.history.go.kr)는 지시에 따라 열지 않았고, 남원 비정은 디지털남원문화대전 2차 자료로만 확인했다. 봉산군 당토성의 실제 좌표를 담은 공개 자료도 찾지 못해 참조점이 유적에서 얼마나 떨어졌는지는 수치로 확인하지 못했다."
+        },
+        {
+          "placeId": "place-samgukyusa-009",
+          "reason": "413년 '平壤州大橋'의 평양 위치 논란(남평양설 등)과 랴오양설의 학술 출처를 공개 페이지에서 확인하지 못했다. 관련 검색 결과가 대부분 우리역사넷(contents.history.go.kr)이라 지시에 따라 열지 않았다. 단군 都平壤城 기사의 비정도 신화 서술이라 검증 대상으로 삼지 않았다."
+        },
+        {
+          "placeId": "place-samgukyusa-011",
+          "reason": "표제 8건 중 3건만 제시되어, 나머지 5건이 위만조선–한 경계 문맥인지 삼국시대 패하·패강(예성강·대동강) 용례인지 확인하지 못했다. 원문 DB 차단으로 문맥 확인 불가하므로, 대동강·예성강 후보를 표제 전체에서 제외한 판단은 제시된 3건 범위에서만 검증됐다."
+        }
+      ],
+      "task": "verify-samgukyusa-a"
+    },
+    {
+      "source": "samgukyusa",
+      "checkedPlaceIds": [
+        "place-samgukyusa-014",
+        "place-samgukyusa-017",
+        "place-samgukyusa-019",
+        "place-samgukyusa-023",
+        "place-samgukyusa-025",
+        "place-samgukyusa-028",
+        "place-samgukyusa-030",
+        "place-samgukyusa-039"
+      ],
+      "findings": [
+        {
+          "placeId": "place-samgukyusa-014",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "근거로 든 민백 항목의 표제어 한자는 '駱山 紅蓮庵'이어서 표제 표기 洛山과 글자가 다르다. 같은 곳(양양 낙산사 일대)이므로 비정은 유지해도 되지만, 서울 駱山(낙타산)과 혼동되지 않도록 note에 한자 차이를 남겨야 한다. 洛山 유래(보타락가산)를 직접 적은 것은 위키백과 '낙산사' 쪽이다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0064043",
+          "supportedText": "표제어 '낙산 홍련암(駱山 紅蓮庵)', 소재지 강원 양양군 강현면 전진리 산5-2, 의상 창건 672년(문무왕 12). 洛山 표기와 그 유래 설명은 이 페이지에 없다.",
+          "action": "note",
+          "suggestedChanges": {
+            "note": "민백 표제어 한자는 駱山 紅蓮庵으로 삼국유사·위키백과의 洛山과 표기가 다름(대상은 동일한 양양 낙산 일대). 洛山=보타락가산 유래는 위키백과 '낙산사'에서 확인.",
+            "keepCandidate": true
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-017",
+          "candidateIndex": 2,
+          "severity": "major",
+          "problem": "백두산 후보가 이 표제의 evidence에 근거가 없다. 등록된 evidence 2건은 모두 자장정률·의상전교 문맥이고 고조선조 인용이 없는데, 후보는 단군신화 太白山 해석으로 붙였다(view에서 '다른 조목'이라고 스스로 인정). 더구나 같은 고조선조 산을 place-samgukyusa-023은 묘향산으로 잡아 두 표제가 서로 모순된 답을 낸다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0013553",
+          "supportedText": "민백 '단군 신화'는 환웅이 내려온 산을 \"태백산(太白山 : 지금의 백두산)\"으로 적는다. 백두산 해석 자체는 사실이나, 이 서술은 고조선조 신화 문맥에만 해당하고 자장·의상 문맥과 무관하다.",
+          "action": "remove-candidate",
+          "suggestedChanges": {
+            "removeCandidateIndex": 2,
+            "alternative": "고조선조 太伯山 용례를 이 표제의 evidence에 실제로 넣을 수 있으면 그때 후보로 복구하고, 그렇지 않으면 고조선조 인용이 있는 place-samgukyusa-023으로 옮겨 묘향산설과 나란히 경쟁 비정으로 표기할 것."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-017",
+          "candidateIndex": 1,
+          "severity": "major",
+          "problem": "candidate.validFrom=676이 절(부석사) 창건 연도를 산 지명 후보의 유효 시작으로 옮긴 값이다. 이 표제는 산 太伯山이고 산이 676년에 생긴 것이 아니다. 게다가 이 후보를 뒷받침하는 evidence 청크의 date가 0670이라 연도로 거르면 자기 근거 문맥(670)에서 후보가 사라진다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0024295",
+          "supportedText": "민백 '봉황산 부석사'는 \"676년(문무왕 16) 2월에 의상이 왕명으로 창건\"이라고 적는다. 이는 절의 창건 연도이며, 太伯山이라는 지명의 사용 시작이나 산의 존속 기간에 대한 날짜 근거가 아니다.",
+          "action": "null-date",
+          "suggestedChanges": {
+            "validFrom": null,
+            "dateBasis": "민백 '봉황산 부석사'의 676년(문무왕 16) 2월 창건은 절의 창건 연도이며 지명 유효기간 근거가 아니어서 validFrom을 비움."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-017",
+          "candidateIndex": 1,
+          "severity": "minor",
+          "problem": "precision이 'site'라 산 지명의 정확한 위치가 확정된 것처럼 보인다. 그러나 sourceUrl은 절의 위치만 설명하고 '삼국유사의 太伯山 = 영주 봉황산 일대'라는 연결은 서술하지 않는다(그 항목에는 태백산이라는 말이 아예 없음). 이 좌표는 절 지점을 산 문맥의 대리 참조점으로 쓴 것이다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0024295",
+          "supportedText": "민백 '봉황산 부석사'는 절을 \"경상북도 영주시 부석면 봉황산\"에 있다고만 적고 태백산은 언급하지 않는다. 太伯山과 봉황산을 잇는 서술은 이 페이지에 없다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "precision": "approx",
+            "basis": "기존 문장 유지 + '이 항목은 太伯山과 봉황산을 연결하는 서술을 하지 않으므로, 좌표는 의상전교조 문맥의 대리 참조점(절 지점)이며 산 자체의 위치 확정이 아님'을 명시."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-019",
+          "candidateIndex": null,
+          "severity": "minor",
+          "problem": "문제 없음 항목이지만 기록용: 좌표 Q195896은 '낙랑'에서 이름을 따온 현대 행정구역(평양 락랑구역)이다. 입력이 precision=region과 '낙랑토성 발굴 지점이 아님'을 이미 명시해 허용 범위이며, 별도 수정은 필요 없다.",
+          "evidenceUrl": "https://www.wikidata.org/wiki/Q195896",
+          "supportedText": "Q195896 = 락랑구역(Rangrang-guyok), 평양의 구역(district of Pyongyang), 좌표 38°57'36\"N 125°41'24\"E. 설명에 역사 낙랑에서 유래한 이름이라고 적혀 있다.",
+          "action": "note",
+          "suggestedChanges": {
+            "note": "현행 note 유지로 충분함(현대 구역 참조점·낙랑토성 지점 아님)."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-023",
+          "candidateIndex": 1,
+          "severity": "minor",
+          "problem": "신화 지명에 묘향산설 하나만 후보로 올렸다. 근거는 각주 없는 위키백과 문서이고, 그 문서 스스로 위치 비정에 큰 의미가 없다고 정리한다. 반면 기관 출처인 민백 '태백산'(E0058920)은 같은 신화 지명을 백두산으로 결론짓는다. note가 밝힌 '신화 지명을 하나로 확정하지 않는다'는 원칙과도 어긋나는 선택 편향이다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0058920",
+          "supportedText": "민백 '태백산'은 \"伯과 白은 음가(音價)가 같으며\"라 하고, 일연의 묘향산 주석을 소개한 뒤 단군신화의 태백산을 백두산으로 본다고 서술한다. 위키백과 '태백산 (고조선)'은 \"현재 위치를 비정하는 것은 큰 의미가 없다\"고 적는다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "option1": "묘향산 후보를 유지하되 basis/view에 '경쟁 비정 중 하나(일연 주석)'임을 명시하고, 민백 E0058920 근거의 백두산설을 같은 문맥의 경쟁 후보로 추가",
+            "option2": "신화 지명이므로 후보를 두지 않고 unlocated로 두고 note에 세 설을 서술",
+            "historySourceTitle": "기관 출처(민백 '태백산' E0058920)를 references에 추가"
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-023",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "좌표가 근거로 든 정암사가 아니라 태백산 주봉 대표점(정암사에서 약 10 km)인데 basis에 그 사실이 없다. 또 같은 좌표·같은 근거인 place-samgukyusa-017 후보0은 precision=region인데 여기는 approx로 어긋난다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0050538",
+          "supportedText": "민백 '태백산 정암사'는 절을 \"강원도 정선군 고한읍 태백산(太白山)에 있는\" 사찰로 적는다. 절의 위치는 고한읍이며, 후보 좌표(Q625254)는 태백산 산체 대표점이다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "precision": "region",
+            "basis": "기존 문장 + '좌표는 정암사 지점이 아니라 태백산 산체 대표점(권역 참조)'을 명시."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-025",
+          "candidateIndex": null,
+          "severity": "major",
+          "problem": "미검증 초안인데 place.status가 'established', place.confidence가 'confirmed'로 올라가 있다. 인간 승인/확정을 뜻하는 값이라 초안 단계에서 쓰면 안 되고, 유일한 후보의 confidence가 'probable'이라 내부적으로도 어긋난다. 비정 내용(東岳=토함산) 자체는 근거로 확인되므로 좌표·basis는 유지해도 된다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0032848",
+          "supportedText": "민백 '신라 오악'은 통일 이전 왕경 오악을 동악 토함산·서악 선도산·남악 함월산·북악 금강산·중악 단석산으로, 통일 이후는 북악을 태백산으로 적는다. 토함산은 경주시 745m. 단일 기관 항목이며 확정을 선언하는 서술은 아니다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "status": "majority",
+            "confidence": "probable",
+            "note": "시기별 지시 대상 구분(통일 전후 오악) 서술은 근거와 일치하므로 유지."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-028",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "note가 좌표를 'P625 3개 중 첫 값'이라고만 적었으나, 그 값은 임의의 첫 값이 아니라 하구(river mouth) 한정어가 붙은 좌표다(나머지 한 값은 상류·발원 쪽 40.30/126.97). 지점은 평양성 문맥에서 남서쪽으로 약 50 km 떨어진 하구 일대다. precision=region이면 허용되지만 좌표 성격을 정확히 적어야 한다.",
+          "evidenceUrl": "https://www.wikidata.org/wiki/Q330618",
+          "supportedText": "Q330618(대동강, river in North Korea)의 좌표 중 38°41'11.8\"N 125°18'0.0\"E에는 하구(river mouth)에 적용된다는 한정어가 붙어 있고, 40°18'25\"N 126°58'26\"E 값이 따로 있다.",
+          "action": "note",
+          "suggestedChanges": {
+            "coordLabel": "대동강 하구 좌표(Wikidata P625, river mouth 한정어)",
+            "note": "'첫 값' 대신 '하구 좌표'로 서술하고, 평양성 도하 지점과 약 50 km 떨어진 강 전체의 참조점임을 명시."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-028",
+          "candidateIndex": 0,
+          "severity": "minor",
+          "problem": "근거 페이지가 직접 다루는 것은 661~662년 당군의 고구려 공격이다. evidence[1](668년 김유신의 패강 도하)은 이 출처가 직접 서술하지 않으므로, 두 표본을 한 문장으로 묶은 note 표현('표본 두 건은 모두 661~668년 ... 문맥')은 출처 범위를 넘는다.",
+          "evidenceUrl": "https://contents.nahf.or.kr/item/level.do?levelId=gt.d_0007_0010_0020_0020",
+          "supportedText": "페이지 제목은 '2. 당군의 고구려 공격 과정'이고 \"패강은 대동강을 말하므로\"라고 적으며, 661~662년 2차 고당전쟁 서술이다. 668년 기사에 대한 언급은 확인되지 않았다.",
+          "action": "note",
+          "suggestedChanges": {
+            "basis": "'이 출처는 661~662년 평양성 공격 문맥에서 패강=대동강이라고 적는다. 668년 도하 기사에 대한 별도 근거는 아직 없다'로 범위를 한정."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-030",
+          "candidateIndex": null,
+          "severity": "major",
+          "problem": "이 표제의 evidence 3건 중 지명 용례를 보여주는 인용이 하나도 없다. 2건은 인명 '壇君王倹'이고, 유일하게 도읍 王儉이 나와야 할 위만조선조 항목은 인용 구간에 표기가 없고 termInBody=false다. 같은 사유로 다른 표제(014·019·025·028)에서는 sample을 제외했는데 여기서만 남겨 처리도 어긋난다. 현재 데이터만 보면 평양·타이안 후보가 지명 용례에 연결되지 않는다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0039028",
+          "supportedText": "민백 '왕검성'은 왕검성을 고조선의 도성으로 정의하고 위치에 \"여러 가지 설이 있다\"고 적는다. 지명으로서의 王儉 용례가 실제로 위만조선조 본문에 있는지는 db.history.go.kr 차단으로 내가 대조하지 못했다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "evidence": "위만조선조 인용 구간을 '都王儉'이 포함되도록 넓히고 termInBody 값을 원문으로 재확인할 것. 인명(壇君王倹) 용례는 evidence에서 빼거나 '인명 용례'로 표시해 지명 근거와 구분할 것.",
+            "fallback": "지명 용례 인용을 확보하지 못하면 후보를 내리고 unlocated로 둘 것."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-030",
+          "candidateIndex": null,
+          "severity": "minor",
+          "problem": "기관 출처가 있는데 쓰지 않고 각주 없는 위키백과에만 의존했다. 민백 '왕검성'(E0039028)이 평양설·요동 험독현설·이동설과 위치 미확정 서술을 모두 담고 있다.",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0039028",
+          "supportedText": "민백 '왕검성'은 삼국사기·삼국유사에 근거한 평양설, 응소의 험독현 기록에 근거한 요동설, 요동 험독에서 평양 험독으로 옮겼다는 이동설을 나란히 소개한다.",
+          "action": "correct-fields",
+          "suggestedChanges": {
+            "references": "https://encykorea.aks.ac.kr/Article/E0039028 를 references와 후보 sourceUrl에 추가(또는 교체)",
+            "note": "위키백과 '왕검성'의 위치 학설 절에는 각주가 하나도 없다는 점을 한계로 명시."
+          }
+        },
+        {
+          "placeId": "place-samgukyusa-030",
+          "candidateIndex": 1,
+          "severity": "minor",
+          "problem": "요동설 후보의 현대 지점(랴오닝성 台安县) 특정 근거를 확인하지 못했다. 유일한 근거인 위키백과 문장에 각주가 없고, 기관 출처인 민백 '왕검성'은 '요동/험독현'까지만 말하고 현대 현(縣)을 지목하지 않는다. 험독현 기록 자체는 실재하지만 그 현을 台安县으로 옮기는 단계가 검증되지 않았다.",
+          "evidenceUrl": "https://ko.wikipedia.org/wiki/%EC%99%95%EA%B2%80%EC%84%B1",
+          "supportedText": "위키백과 '왕검성'은 \"요동군 험독현(險瀆縣)은 조선왕의 옛 도읍이다\"는 기록을 들어 랴오닝성 타이안현으로 비정한다고 적지만, 해당 절 전체에 각주가 없다.",
+          "action": "unverified",
+          "suggestedChanges": {
+            "confidence": "unverified 유지",
+            "basis": "'현대 지점(台安县) 비정을 뒷받침하는 기관·학술 출처를 확인하지 못했다'를 basis에 명시하거나, 근거를 찾지 못하면 후보에서 제외."
+          }
+        }
+      ],
+      "passed": [
+        {
+          "placeId": "place-samgukyusa-014",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0064043",
+          "reason": "민백 '낙산 홍련암'이 실제로 강원 양양군 강현면 전진리 소재와 의상의 관음 친견·대나무 전승을 적어 basis와 일치하고, Q562760은 양양군 낙산사로 좌표(38°7'30\"N 128°37'43\"E)가 후보값과 같다. 창건 연도가 671(위키백과)/672(민백)로 갈리는 것을 확인했고 validFrom을 null로 둔 처리가 맞다. 좌표가 관음굴이 아닌 절 참조점이라는 한계도 명시돼 있다. 다만 한자 표기(駱山/洛山) minor note 1건 있음."
+        },
+        {
+          "placeId": "place-samgukyusa-019",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0011573",
+          "reason": "basis의 토성리 낙랑고분 인용이 해당 페이지에 그대로 있고, 민백 '한사군'과 '낙랑고분' 모두 서기전 108년 설치와 313년 미천왕 병합을 적어 validFrom -108 / validTo 313을 뒷받침한다(대상이 행정구역 자체이므로 설치·소멸 연도 사용이 타당). Q195896은 평양 락랑구역으로 좌표가 후보값과 일치하고, precision=region과 '낙랑토성 지점 아님' 한계가 명시돼 허용 범위다. 위키백과 낙랑군도 평양설을 통설, 요서·랴오닝설을 북한 학계·재야 소수설로 적어 note와 일치한다."
+        },
+        {
+          "placeId": "place-samgukyusa-028",
+          "evidenceUrl": "https://contents.nahf.or.kr/item/level.do?levelId=gt.d_0007_0010_0020_0020",
+          "reason": "동북아역사넷 '2. 당군의 고구려 공격 과정'이 실제로 \"패강은 대동강을 말하므로\"라고 적어 이 전쟁 문맥의 비정을 직접 지지하고, Q330618은 대동강이며 precision=region으로 도하 지점이 아님을 밝혔다. 시대별 浿水/패강진 혼동을 경계한 note도 타당하다. 좌표 성격 표기와 출처의 연도 범위에 minor note 2건."
+        },
+        {
+          "placeId": "place-samgukyusa-039",
+          "evidenceUrl": "https://encykorea.aks.ac.kr/Article/E0058797",
+          "reason": "민백 '탄현'에 네 설(식장산 마도령·완주 운주면 쑥고개·금산 진산면 교촌리 숯고개·진산 방현)과 \"위치 비정이 쉽지 않고 학계에서는 논란이 분분하다\"가 실제로 있고, 민백 '일리천전투'가 936년 탄령을 같은 세 곳으로 본다고 적어 시기를 나누지 않은 근거가 확인된다(황산군=논산 연산도 일치). Q27315732·Q16164352·Q12618249의 라벨·소재지·좌표가 후보값과 맞고, 모두 unverified·region/approx로 두어 고개 지점을 확정하지 않았다. 좌표원이 없는 방현설 제외와 무각주 위키백과 마달령 단일설 배제도 타당하다."
+        }
+      ],
+      "unverified": [
+        {
+          "placeId": "place-samgukyusa-030",
+          "reason": "위만조선조 evidence의 termInBody=false와 인용 구간에 王儉이 없는 문제는 db.history.go.kr 차단으로 원문 대조를 하지 못했다. 지명 용례 존재 여부는 Codex가 로컬 원문으로 확인해야 한다."
+        },
+        {
+          "placeId": "place-samgukyusa-023",
+          "reason": "의상전교 찬의 '終南太伯'이 신라 태백산인지 중국 태백산(친링)인지는 입력 note와 마찬가지로 나도 기관·학술 출처로 가리지 못했다. 현재 후보 두 건은 이 문맥을 대상으로 하지 않는다는 점만 확인했다."
+        },
+        {
+          "placeId": "place-samgukyusa-017",
+          "reason": "'첫 sample(말갈·발해)은 quote가 비어 있어 제외했다'는 서술과 count=6의 용례 분포는 차단 도메인 원문을 열 수 없어 확인하지 못했다. 같은 이유로 8개 표제 전체의 quote 정확성·termInBody·count는 이번 검증 범위 밖이다."
+        }
+      ],
+      "task": "verify-samgukyusa-b"
+    }
+  ],
+  "corrections": {
+    "goryeosa": [
+      {
+        "placeId": "place-goryeosa-009",
+        "candidateIndex": 0,
+        "field": "lon",
+        "before": 126.97486139,
+        "after": 126.97486389,
+        "reason": "Exact P625 longitude from the live Wikidata entity JSON"
+      },
+      {
+        "placeId": "place-goryeosa-001",
+        "review": "verify-goryeosa",
+        "actions": [
+          "922년은 행정기구 정비 연도다. 원문에는 921년 용례도 있어 지명의 시작 연도로 쓰지 않는다. 끝은 1369년 평양부 개편을 따른다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 39.016666666666666,
+                "lon": 125.7475,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0027575",
+                "basis": "민족문화대백과 '서경' 항목은 서경을 옛 도읍 평양에 둔 것으로 서술하고, 922년 행정기구 설치부터 1369년 평양부 개편까지의 연혁을 제시한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+                "wikidataId": "Q18808",
+                "coordLabel": "평양시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(서경)",
+                "historySourceTitle": "한국민족문화대백과사전 「서경(西京)」",
+                "dateBasis": "encykorea 서경 항목의 연혁(922년 행정기구 설치 ~ 1369년 평양부 개편)",
+                "validFrom": 922,
+                "validTo": 1369,
+                "confidence": "probable"
+              }
+            ],
+            "after": [
+              {
+                "lat": 39.016666666666666,
+                "lon": 125.7475,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0027575",
+                "basis": "민족문화대백과 '서경' 항목은 서경을 옛 도읍 평양에 둔 것으로 서술하고, 922년 행정기구 설치부터 1369년 평양부 개편까지의 연혁을 제시한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+                "wikidataId": "Q18808",
+                "coordLabel": "평양시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(서경)",
+                "historySourceTitle": "한국민족문화대백과사전 「서경(西京)」",
+                "dateBasis": "922년은 행정기구 정비 연도다. 원문에는 921년 용례도 있어 지명의 시작 연도로 쓰지 않는다. 끝은 1369년 평양부 개편을 따른다.",
+                "validFrom": null,
+                "validTo": 1369,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "note": {
+            "before": "고려 삼경의 하나인 서경으로, 옛 고구려 도읍 평양에 설치된 것으로 설명된다(민족문화대백과 '서경'). 같은 곳이 998년 호경(鎬京), 1269~1290년 원의 동녕부, 1369년 이후 평양부로 불렸으므로 표기가 바뀌어도 위치는 같다. validFrom 922는 서경 행정기구가 본격 설치된 해라는 백과 서술을 따른 것이고, 태조 4~5년(921~922) 행행 기사 자체를 존재 근거로 삼지 않았다. 좌표는 현대 평양시 중심 참조점이며 고려 서경의 재성(在城)·궁궐 위치가 아니다.",
+            "after": "고려 삼경 중 서경은 옛 고구려 도읍 평양에 설치되었다. 998년 호경, 1269~1290년 원의 동녕부, 1369년 이후 평양부로 이름이 바뀌었다. 백과의 922년 행정기구 정비를 지명의 시작으로 보지 않으며, 실제 인용에는 921년 용례가 있다. 좌표는 현대 평양시 참조점으로 재성이나 궁궐터를 확정하지 않는다."
+          },
+          "validFrom": {
+            "before": 922,
+            "after": null
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-003",
+        "review": "verify-goryeosa",
+        "actions": [
+          "개성부 연혁과 현재 개성시 위치의 출처를 분리했다. 현대 위치는 개성 성곽 항목으로 보완했다.",
+          "개성 참조점의 왕경 기간을 919~1232와 1270년 이후로 분리했다. 강화 시기와 연속으로 표시되던 문제를 바로잡았다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 37.971666666666664,
+                "lon": 126.55277777777778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001652",
+                "basis": "민족문화대백과 '개성부'는 919년 태조가 송악산 남쪽에 도읍을 정해 개주(開州)라 했고 995년 개성부가 되었으며 현재의 북한 개성 지역에 해당한다고 설명한다. 1232~1270년 강도 시기는 제외된다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+                "wikidataId": "Q109079",
+                "coordLabel": "개성시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(개성부)",
+                "historySourceTitle": "한국민족문화대백과사전 「개성부(開城府)」",
+                "dateBasis": "encykorea 개성부 항목의 919년 개주 설정 서술",
+                "validFrom": 919,
+                "validTo": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 37.73888889,
+                "lon": 126.48944444,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001503",
+                "basis": "민족문화대백과 '강화군'은 1232년(고종 19) 도읍을 강화로 옮겨 강도(江都)라 하고 1270년(원종 11) 개경으로 환도했다고 적는다. 국가유산포털 '강화 고려궁지'는 그 궁궐터를 강화읍 관청리로 소재지 표기한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q50205",
+                "wikidataId": "Q50205",
+                "coordLabel": "강화군",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(강화군)·국가유산포털(강화 고려궁지)",
+                "historySourceTitle": "한국민족문화대백과사전 「강화군(江華郡)」 / 국가유산포털 「강화 고려궁지」",
+                "dateBasis": "encykorea 강화군 항목의 1232년 천도·1270년 환도 서술",
+                "validFrom": 1232,
+                "validTo": 1270,
+                "confidence": "probable"
+              }
+            ],
+            "after": [
+              {
+                "lat": 37.971666666666664,
+                "lon": 126.55277777777778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+                "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+                "wikidataId": "Q109079",
+                "coordLabel": "개성시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+                "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+                "dateBasis": "919년 개주 설정. 「강화군」의 1232년 강화 천도·1270년 개경 환도에 따라 기간을 나눈다. 연 단위이므로 천도·환도 연도는 겹친다.",
+                "validFrom": 919,
+                "validTo": 1232,
+                "confidence": "probable"
+              },
+              {
+                "lat": 37.971666666666664,
+                "lon": 126.55277777777778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+                "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+                "wikidataId": "Q109079",
+                "coordLabel": "개성시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+                "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+                "dateBasis": "919년 개주 설정. 「강화군」의 1232년 강화 천도·1270년 개경 환도에 따라 기간을 나눈다. 연 단위이므로 천도·환도 연도는 겹친다.",
+                "validFrom": 1270,
+                "validTo": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 37.73888889,
+                "lon": 126.48944444,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001503",
+                "basis": "민족문화대백과 '강화군'은 1232년(고종 19) 도읍을 강화로 옮겨 강도(江都)라 하고 1270년(원종 11) 개경으로 환도했다고 적는다. 국가유산포털 '강화 고려궁지'는 그 궁궐터를 강화읍 관청리로 소재지 표기한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q50205",
+                "wikidataId": "Q50205",
+                "coordLabel": "강화군",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(강화군)·국가유산포털(강화 고려궁지)",
+                "historySourceTitle": "한국민족문화대백과사전 「강화군(江華郡)」 / 국가유산포털 「강화 고려궁지」",
+                "dateBasis": "encykorea 강화군 항목의 1232년 천도·1270년 환도 서술",
+                "validFrom": 1232,
+                "validTo": 1270,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "references": {
+            "before": [
+              "https://encykorea.aks.ac.kr/Article/E0001652",
+              "https://encykorea.aks.ac.kr/Article/E0001503",
+              "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?VdkVgwKey=13%2C01330000%2C23"
+            ],
+            "after": [
+              "https://encykorea.aks.ac.kr/Article/E0001652",
+              "https://encykorea.aks.ac.kr/Article/E0001503",
+              "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?VdkVgwKey=13%2C01330000%2C23",
+              "https://encykorea.aks.ac.kr/Article/E0001657"
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-005",
+        "review": "verify-goryeosa",
+        "actions": [
+          "요·금 동경요양부 후보는 사료 표본과 연결되는 근거가 없어 제외했다(독립 검증 major)."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 35.85,
+                "lon": 129.21666666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0016185",
+                "basis": "민족문화대백과 '동경' 항목은 이를 현재의 경상북도 경주시로 보고, 987년 동경으로 개칭해 유수를 두었다가 1304년 계림부로 바뀌었다고 서술한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q42097",
+                "wikidataId": "Q42097",
+                "coordLabel": "경주시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(동경)",
+                "historySourceTitle": "한국민족문화대백과사전 「동경(東京)」",
+                "dateBasis": "encykorea 동경 항목의 987년 개칭·1304년 계림부 개칭 서술",
+                "validFrom": 987,
+                "validTo": 1304,
+                "confidence": "probable"
+              },
+              {
+                "lat": 41.26432,
+                "lon": 123.1772,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%EC%9A%94%EC%96%91%EB%B6%80",
+                "basis": "위키백과 '요양부'는 요·금의 동경 요양부를 현 랴오양시 요양고성으로 보고 1288년 동경에서 요양로로 개명되었다고 적는다. 민족문화대백과 '흥료국'도 1029년 거점을 동경요양부로 서술한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+                "wikidataId": "Q75203",
+                "coordLabel": "랴오양시",
+                "precision": "approx",
+                "view": "위키백과(요양부) 보조, 한국민족문화대백과사전(흥료국) 참고",
+                "historySourceTitle": "위키백과 「요양부」 / 한국민족문화대백과사전 「흥료국(興遼國)」",
+                "dateBasis": "위키백과 요양부의 1288년 요양로 개명 서술",
+                "validFrom": null,
+                "validTo": 1288,
+                "confidence": "unverified"
+              }
+            ],
+            "after": [
+              {
+                "lat": 35.85,
+                "lon": 129.21666666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0016185",
+                "basis": "민족문화대백과 '동경' 항목은 이를 현재의 경상북도 경주시로 보고, 987년 동경으로 개칭해 유수를 두었다가 1304년 계림부로 바뀌었다고 서술한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q42097",
+                "wikidataId": "Q42097",
+                "coordLabel": "경주시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(동경)",
+                "historySourceTitle": "한국민족문화대백과사전 「동경(東京)」",
+                "dateBasis": "encykorea 동경 항목의 987년 개칭·1304년 계림부 개칭 서술",
+                "validFrom": 987,
+                "validTo": 1304,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "note": {
+            "before": "고려 삼경의 하나인 동경으로, 민족문화대백과는 현재의 경상북도 경주시로 보고 987년(성종 6) 동경 개칭·유수 설치, 1304년(충렬왕 30) 계림부 개칭으로 실질 폐지된다고 설명한다. 제공된 samples 3건은 모두 성종대 경주 행차 기사다. 다만 대외 기사에서는 요·금의 동경(동경요양부, 현 랴오양)을 가리키는 용례가 있을 수 있어 두 번째 후보를 unverified로 병기했고, 이 사료의 어느 대목이 그에 해당하는지는 원문 확인이 필요하다. 경주 좌표는 현대 시 중심 참조점이다.",
+            "after": "고려 동경은 현재의 경주로, 백과는 987년 동경 개칭·유수 설치와 1304년 계림부 개편을 설명한다. 제공된 원문 표본도 성종대 경주 행차 기사다. 초안의 요·금 동경요양부 참조점은 해당 원문 용례를 확인하지 못해 지도 후보에서 제외했다. 좌표는 현대 경주시 참조점이다."
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-007",
+        "review": "verify-goryeosa",
+        "actions": [
+          "개성부 연혁과 현재 개성시 위치의 출처를 분리했다. 현대 위치는 개성 성곽 항목으로 보완했다.",
+          "개성 참조점의 왕경 기간을 919~1232와 1270년 이후로 분리했다. 강화 시기와 연속으로 표시되던 문제를 바로잡았다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 37.971666666666664,
+                "lon": 126.55277777777778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001652",
+                "basis": "국내 교서에서 관원의 귀경을 독려하는 용례(1363년)는 고려 왕경을 가리킨다. 민족문화대백과 '개성부'는 919년 개주 설정 이래 왕경이 현재의 북한 개성 지역이라고 설명한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+                "wikidataId": "Q109079",
+                "coordLabel": "개성시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(개성부)",
+                "historySourceTitle": "한국민족문화대백과사전 「개성부(開城府)」",
+                "dateBasis": "encykorea 개성부 항목의 919년 개주 설정 서술",
+                "validFrom": 919,
+                "validTo": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 39.93333333333333,
+                "lon": 116.4,
+                "sourceUrl": "https://dh.aks.ac.kr/sillokwiki/index.php/%EC%97%B0%ED%96%89(%E7%87%95%E8%A1%8C)",
+                "basis": "한국학중앙연구원 실록위키 '연행'은 연경이 북경이며 원이 1271년 북경을 대도로 삼았다고 적는다. 민족문화대백과 '만권당'도 충선왕이 1314년 원나라 연경(北京)에 서재를 세웠다고 한다. 1320년 원 황제의 유배 조치 기사에 나오는 京師가 이에 해당한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q101186473",
+                "wikidataId": "Q101186473",
+                "coordLabel": "대도(元大都/Khanbaliq)",
+                "precision": "approx",
+                "view": "한국학중앙연구원 실록위키(연행)·한국민족문화대백과사전(만권당)",
+                "historySourceTitle": "sillokwiki 「연행(燕行)」 / 한국민족문화대백과사전 「만권당(萬卷堂)」",
+                "dateBasis": "sillokwiki 연행의 원 1271년 대도, 명 초 남경 서술",
+                "validFrom": 1271,
+                "validTo": 1368,
+                "confidence": "probable"
+              },
+              {
+                "lat": 32.060833333333335,
+                "lon": 118.77888888888889,
+                "sourceUrl": "https://dh.aks.ac.kr/sillokwiki/index.php/%EB%82%A8%EA%B2%BD(%E5%8D%97%E4%BA%AC)",
+                "basis": "한국학중앙연구원 실록위키 '남경'은 1368년 홍무제가 응천부를 남경으로 삼고 1378년 수도로 확정했다가 1421년 북경으로 천도했다고 서술한다. 1369년 명에 성절 축하 사신을 보낸 기사의 京師가 이에 해당한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q16666",
+                "wikidataId": "Q16666",
+                "coordLabel": "난징시",
+                "precision": "approx",
+                "view": "한국학중앙연구원 실록위키(남경)",
+                "historySourceTitle": "sillokwiki 「남경(南京)」",
+                "dateBasis": "sillokwiki 남경의 1368년 남경 지정·1421년 북경 천도 서술",
+                "validFrom": 1368,
+                "validTo": 1421,
+                "confidence": "probable"
+              }
+            ],
+            "after": [
+              {
+                "lat": 37.971666666666664,
+                "lon": 126.55277777777778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+                "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+                "wikidataId": "Q109079",
+                "coordLabel": "개성시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+                "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+                "dateBasis": "919년 개주 설정. 「강화군」의 1232년 강화 천도·1270년 개경 환도에 따라 기간을 나눈다. 연 단위이므로 천도·환도 연도는 겹친다.",
+                "validFrom": 919,
+                "validTo": 1232,
+                "confidence": "probable"
+              },
+              {
+                "lat": 37.971666666666664,
+                "lon": 126.55277777777778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+                "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+                "wikidataId": "Q109079",
+                "coordLabel": "개성시",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+                "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+                "dateBasis": "919년 개주 설정. 「강화군」의 1232년 강화 천도·1270년 개경 환도에 따라 기간을 나눈다. 연 단위이므로 천도·환도 연도는 겹친다.",
+                "validFrom": 1270,
+                "validTo": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 39.93333333333333,
+                "lon": 116.4,
+                "sourceUrl": "https://dh.aks.ac.kr/sillokwiki/index.php/%EC%97%B0%ED%96%89(%E7%87%95%E8%A1%8C)",
+                "basis": "한국학중앙연구원 실록위키 '연행'은 연경이 북경이며 원이 1271년 북경을 대도로 삼았다고 적는다. 민족문화대백과 '만권당'도 충선왕이 1314년 원나라 연경(北京)에 서재를 세웠다고 한다. 1320년 원 황제의 유배 조치 기사에 나오는 京師가 이에 해당한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q101186473",
+                "wikidataId": "Q101186473",
+                "coordLabel": "대도(元大都/Khanbaliq)",
+                "precision": "approx",
+                "view": "한국학중앙연구원 실록위키(연행)·한국민족문화대백과사전(만권당)",
+                "historySourceTitle": "sillokwiki 「연행(燕行)」 / 한국민족문화대백과사전 「만권당(萬卷堂)」",
+                "dateBasis": "sillokwiki 연행의 원 1271년 대도, 명 초 남경 서술",
+                "validFrom": 1271,
+                "validTo": 1368,
+                "confidence": "probable"
+              },
+              {
+                "lat": 32.060833333333335,
+                "lon": 118.77888888888889,
+                "sourceUrl": "https://dh.aks.ac.kr/sillokwiki/index.php/%EB%82%A8%EA%B2%BD(%E5%8D%97%E4%BA%AC)",
+                "basis": "한국학중앙연구원 실록위키 '남경'은 1368년 홍무제가 응천부를 남경으로 삼고 1378년 수도로 확정했다가 1421년 북경으로 천도했다고 서술한다. 1369년 명에 성절 축하 사신을 보낸 기사의 京師가 이에 해당한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q16666",
+                "wikidataId": "Q16666",
+                "coordLabel": "난징시",
+                "precision": "approx",
+                "view": "한국학중앙연구원 실록위키(남경)",
+                "historySourceTitle": "sillokwiki 「남경(南京)」",
+                "dateBasis": "sillokwiki 남경의 1368년 남경 지정·1421년 북경 천도 서술",
+                "validFrom": 1368,
+                "validTo": 1421,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "references": {
+            "before": [
+              "https://encykorea.aks.ac.kr/Article/E0001652",
+              "https://dh.aks.ac.kr/sillokwiki/index.php/%EC%97%B0%ED%96%89(%E7%87%95%E8%A1%8C)",
+              "https://dh.aks.ac.kr/sillokwiki/index.php/%EB%82%A8%EA%B2%BD(%E5%8D%97%E4%BA%AC)",
+              "https://encykorea.aks.ac.kr/Article/E0017544"
+            ],
+            "after": [
+              "https://encykorea.aks.ac.kr/Article/E0001652",
+              "https://dh.aks.ac.kr/sillokwiki/index.php/%EC%97%B0%ED%96%89(%E7%87%95%E8%A1%8C)",
+              "https://dh.aks.ac.kr/sillokwiki/index.php/%EB%82%A8%EA%B2%BD(%E5%8D%97%E4%BA%AC)",
+              "https://encykorea.aks.ac.kr/Article/E0017544",
+              "https://encykorea.aks.ac.kr/Article/E0001657",
+              "https://encykorea.aks.ac.kr/Article/E0001503"
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-010",
+        "review": "verify-goryeosa",
+        "actions": [
+          "몽고정은 합포현 치소나 모든 시대의 대표점으로 확인되지 않아 제외했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 35.20333333333333,
+                "lon": 128.56861111111112,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0018776",
+                "basis": "민족문화대백과 '창원 몽고정'은 소재지를 창원시 마산합포구 자산동으로 적고 \"고려 원종 때 당시 합포(合浦)이던 이 지역\"에 일본 원정을 앞둔 몽고군이 주둔했다고 서술한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q12595447",
+                "wikidataId": "Q12595447",
+                "coordLabel": "몽고정",
+                "precision": "site",
+                "view": "한국민족문화대백과사전(창원 몽고정)",
+                "historySourceTitle": "한국민족문화대백과사전 「창원 몽고정(昌原 蒙古井)」",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 35.131,
+                "lon": 128.488,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0062374",
+                "basis": "민족문화대백과 '합포'는 현재 행정구역을 경상남도 창원시 마산합포구로 제시하고 757년 합포 개명부터 1949년 마산시까지의 연혁을 서술한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q50386",
+                "wikidataId": "Q50386",
+                "coordLabel": "마산합포구",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(합포)",
+                "historySourceTitle": "한국민족문화대백과사전 「합포(合浦)」",
+                "dateBasis": "encykorea 합포 항목의 757년 합포 개명 서술",
+                "validFrom": 757,
+                "validTo": null,
+                "confidence": "probable"
+              }
+            ],
+            "after": [
+              {
+                "lat": 35.131,
+                "lon": 128.488,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0062374",
+                "basis": "민족문화대백과 '합포'는 현재 행정구역을 경상남도 창원시 마산합포구로 제시하고 757년 합포 개명부터 1949년 마산시까지의 연혁을 서술한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q50386",
+                "wikidataId": "Q50386",
+                "coordLabel": "마산합포구",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(합포)",
+                "historySourceTitle": "한국민족문화대백과사전 「합포(合浦)」",
+                "dateBasis": "encykorea 합포 항목의 757년 합포 개명 서술",
+                "validFrom": 757,
+                "validTo": null,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "note": {
+            "before": "민족문화대백과 '합포'는 현재의 경상남도 창원시 마산합포구로 비정하고, 757년 골포현에서 합포로 개명, 1018년 금주 예속, 1274년 정동행성 설치와 일본 원정 기지, 1282년 회원현령 승격, 1408년 창원부 편입, 1914년 마산부, 1949년 마산시의 연혁을 제시한다. 주의: 이 입력의 sample chunk_goryeosa_kr_007_0080_0060_0020(1052년, '用合浦之珠')는 중국 합포의 구슬 고사(合浦珠還)를 인용한 수사이므로 한국 합포를 가리키지 않는다고 보아 evidence에서 제외했다. 좌표 후보 중 몽고정은 원 주둔 관련 유적이라 지점이 정확하지만 합포현 치소 자체는 아니며, 마산합포구 좌표는 현대 행정구 참조점이다.",
+            "after": "한국민족문화대백과사전 「합포」는 현재 창원시 마산합포구에 비정하고 757년 합포 개명부터의 연혁을 설명한다. 현대 행정구 좌표만 지역 참조점으로 쓴다. 몽고정은 후대 주둔 관련 유적으로 합포현 치소라는 근거가 없어 지도 후보에서 제외했다. 1052년 「用合浦之珠」는 중국 고사를 인용한 수사로 본 조사 초안에서 제외했으며, 모든 합포 용례를 한국 지명으로 단정하지 않는다."
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-011",
+        "review": "verify-goryeosa",
+        "actions": [
+          "「황해도」의 1018년과 「서해도」의 명칭 확인 연도 1093년은 서로 다른 설명이므로 시작을 정하지 않는다. 끝은 1395년 풍해도 개칭을 따른다.",
+          "해주를 도의 행정 중심이라고 단정한 표현을 계수관 소재지의 참조점으로 낮췄다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 38.033333333333,
+                "lon": 125.71666666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+                "basis": "민족문화대백과 '서해도'는 서해도가 '지금의 황해도 일대'를 관할했고 안서대도호부(해주)와 황주목이 중심이었다고 서술한다. 좌표는 도의 행정 중심지였던 해주를 지역 참조점으로 삼은 것.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q714865",
+                "coordLabel": "해주 (Haeju) — Wikidata P625",
+                "wikidataId": "Q714865",
+                "historySourceTitle": "한국민족문화대백과사전 「서해도(西海道)」",
+                "dateBasis": "민족문화대백과 '황해도': 1018년(현종 9) 관내도를 나누어 서해도가 되고, 1395년(태조 4) 풍해도로 개칭",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전",
+                "validFrom": 1018,
+                "validTo": 1395,
+                "confidence": "probable"
+              }
+            ],
+            "after": [
+              {
+                "lat": 38.033333333333,
+                "lon": 125.71666666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+                "basis": "「서해도」는 현재 황해도 일대에 해당하는 고려 5도의 하나로 설명하고 계수관으로 안서대도호부(해주)와 황주목을 든다. 해주 좌표는 이 중 한 고을의 현대 참조점이며 도 전체의 중심이나 경계가 아니다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q714865",
+                "coordLabel": "해주 (Haeju) — Wikidata P625",
+                "wikidataId": "Q714865",
+                "historySourceTitle": "한국민족문화대백과사전 「서해도(西海道)」",
+                "dateBasis": "「황해도」의 1018년과 「서해도」의 명칭 확인 연도 1093년은 서로 다른 설명이므로 시작을 정하지 않는다. 끝은 1395년 풍해도 개칭을 따른다.",
+                "precision": "region",
+                "view": "한국민족문화대백과사전",
+                "validFrom": null,
+                "validTo": 1395,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "note": {
+            "before": "고려 5도의 하나인 광역 행정구역이라 한 점으로 확정할 수 없다. 민족문화대백과 '서해도'는 관할을 '지금의 황해도 일대'로 서술하고 중심을 안서대도호부(해주)와 황주목으로 든다. 좌표는 도의 행정 중심이던 해주의 현대 도시 참조점일 뿐 도의 범위나 경계를 뜻하지 않는다. Wikidata의 '황해도'(Q698214)와 '서해도'(Q12601520)에는 P625가 없어 광역 자체의 좌표는 쓰지 못했다. 명칭 확정 시점은 민백 '서해도'가 문종 후반, 민백 '황해도'가 1018년(현종 9)으로 서로 다르게 서술하므로 validFrom 1018은 후자를 따른 것이다. 1158년 배주 별궁 축조 때 정부(丁夫)를 징발한 기사, 1177년 도적 토벌, 1178년 찰방사 파견 기사는 모두 도 단위 행정 기사로 이 비정과 어긋나지 않는다. 조선 초 풍해도(1395)·황해도(1417)로 개칭되어 표기가 달라진다.",
+            "after": "고려 5도 중 하나인 광역 행정구역이다. 해주는 백과에 나오는 계수관 소재지 중 하나를 표시하는 참조점이다. 도 전체의 중심·치소·경계를 뜻하지 않는다. 서해도·황해도 Wikidata 항목에는 P625가 없어 지역 전체를 대신할 좌표를 만들지 않았다. 백과 항목마다 설명하는 시작 시점이 달라 validFrom은 null이다."
+          },
+          "validFrom": {
+            "before": 1018,
+            "after": null
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-013",
+        "review": "verify-goryeosa",
+        "actions": [
+          "1314년은 도명 통합 연혁으로, 원문에는 1223·1225·1226년 경상도 용례가 있다. 시작을 정하지 않는다. 끝은 1896년 분도를 따른다.",
+          "1314년을 시작으로 삼아 원문 표본을 제외하던 문제(major)를 고쳤다. 도명 유래만 근거로 든 경주 참조점도 제외했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 35.676313,
+                "lon": 128.912105,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0002512",
+                "basis": "민족문화대백과 '경상도'는 관할 범위를 지금의 경상남도·경상북도로 서술한다. 좌표는 그에 대응하는 현대 광역 지역(영남)의 Wikidata 대표점으로, 도의 경계가 아니다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q487576",
+                "coordLabel": "영남 지방 (Yeongnam) — Wikidata P625",
+                "wikidataId": "Q487576",
+                "historySourceTitle": "한국민족문화대백과사전 「경상도」",
+                "dateBasis": "민족문화대백과 '경상도': 1314년(충숙왕 1) '경상도' 명칭 확정, 1896년 남북 2도로 분리",
+                "precision": "region",
+                "view": "한국민족문화대백과사전 + Wikidata 지역 대표점",
+                "validFrom": 1314,
+                "validTo": 1896,
+                "confidence": "probable"
+              },
+              {
+                "lat": 35.85,
+                "lon": 129.21666666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0002512",
+                "basis": "같은 항목이 도명을 경주·상주의 머릿글자에서 땄다고 서술한다. 경주는 도명 앞 글자를 딴 도시로, 광역 지명의 보조 참조점으로만 사용(도의 치소라는 뜻은 아님).",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q42097",
+                "coordLabel": "경주시 (Gyeongju) — Wikidata P625",
+                "wikidataId": "Q42097",
+                "historySourceTitle": "한국민족문화대백과사전 「경상도」",
+                "dateBasis": "민족문화대백과 '경상도': 1314년 명칭 확정",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전",
+                "validFrom": 1314,
+                "validTo": 1896,
+                "confidence": "unverified"
+              }
+            ],
+            "after": [
+              {
+                "lat": 35.676313,
+                "lon": 128.912105,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0002512",
+                "basis": "민족문화대백과 '경상도'는 관할 범위를 지금의 경상남도·경상북도로 서술한다. 좌표는 그에 대응하는 현대 광역 지역(영남)의 Wikidata 대표점으로, 도의 경계가 아니다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q487576",
+                "coordLabel": "영남 지방 (Yeongnam) — Wikidata P625",
+                "wikidataId": "Q487576",
+                "historySourceTitle": "한국민족문화대백과사전 「경상도」",
+                "dateBasis": "1314년은 도명 통합 연혁으로, 원문에는 1223·1225·1226년 경상도 용례가 있다. 시작을 정하지 않는다. 끝은 1896년 분도를 따른다.",
+                "precision": "region",
+                "view": "한국민족문화대백과사전 + Wikidata 지역 대표점",
+                "validFrom": null,
+                "validTo": 1896,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "note": {
+            "before": "고려 5도의 하나인 광역 행정구역이라 한 점으로 확정할 수 없다. 민족문화대백과 '경상도'는 도명이 경주·상주의 머릿글자 합성이고 관할이 지금의 경상남도·경상북도라고 서술하며, '경상도'라는 명칭 자체는 1314년(충숙왕 1)에 확정되었다고 한다. 그런데 고려사 고종 10~13년(1223~1226) 기사에 이미 慶尙道 표기가 나오므로, 본문 표기가 편찬(1451) 단계에서 정리되었을 가능성을 배제할 수 없다. 즉 validFrom 1314는 명칭 확정 시점이지 본문 등장 시점이 아니다. Wikidata '경상도'(Q715812가 아닌 Q698206)에는 P625가 없어, 광역 참조점으로 Wikidata '영남 지방' 대표점을 쓰고 명칭 유래 도시 경주를 보조 참조점으로 덧붙였다. 두 좌표 모두 도의 경계·중심을 뜻하지 않는다.",
+            "after": "경상도는 넓은 지역이며 좌표는 영남 권역의 참조점이다. 1314년 도명 통합을 시작 연도로 두면 1223~1226년 원문 용례가 제외되므로 시작을 정하지 않는다. 이름의 유래만으로 경주를 도의 중심점으로 삼은 초안 후보는 제외했다. 지도 점은 영역이나 경계가 아니다."
+          },
+          "validFrom": {
+            "before": 1314,
+            "after": null
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-023",
+        "review": "verify-goryeosa",
+        "actions": [
+          "개성부 연혁과 현재 개성시 위치의 출처를 분리했다. 현대 위치는 개성 성곽 항목으로 보완했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 37.971666666666664,
+                "lon": 126.55277777777778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0002307",
+                "basis": "민족문화대백과 '경기': 왕도 개성부의 외곽 지역을 공식적으로 경기라 칭한 것은 1018년(현종 9)이며, 개성현과 장단현령이 주변 13현을 관할했다고 서술. 점 좌표는 그 중심인 개성 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+                "wikidataId": "Q109079",
+                "coordLabel": "개성시 (Kaesong)",
+                "precision": "region",
+                "view": "한국민족문화대백과사전 '경기'(고려 경기 = 개경 주변)",
+                "historySourceTitle": "한국민족문화대백과사전 「경기」",
+                "dateBasis": "민족문화대백과 '경기'의 1018년 경기 칭호 서술",
+                "validFrom": 1018,
+                "validTo": null,
+                "confidence": "probable"
+              }
+            ],
+            "after": [
+              {
+                "lat": 37.971666666666664,
+                "lon": 126.55277777777778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0001657",
+                "basis": "「개성부」는 919년 개주 설정과 995년 개성부 개편을 설명한다. 현재의 위치는 「개성 성곽」이 북한 황해북도 개성시로 명시한다. 좌표는 현대 개성시 참조점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q109079",
+                "wikidataId": "Q109079",
+                "coordLabel": "개성시 (Kaesong)",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(개성 성곽·개성부)",
+                "historySourceTitle": "한국민족문화대백과사전 「개성 성곽」·「개성부」",
+                "dateBasis": "민족문화대백과 '경기'의 1018년 경기 칭호 서술",
+                "validFrom": 1018,
+                "validTo": null,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "references": {
+            "before": [
+              "https://encykorea.aks.ac.kr/Article/E0002307",
+              "https://www.wikidata.org/wiki/Q109079"
+            ],
+            "after": [
+              "https://encykorea.aks.ac.kr/Article/E0002307",
+              "https://www.wikidata.org/wiki/Q109079",
+              "https://encykorea.aks.ac.kr/Article/E0001657"
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-024",
+        "review": "verify-goryeosa",
+        "actions": [
+          "1036년은 동계 명칭 정비 연혁이다. 1030년 원문 용례를 제외하지 않도록 시작을 정하지 않는다. 광역 동계를 안변 한 점으로 대표할 근거는 별도 검증에서 확인하지 못했다.",
+          "특정 현대 도시를 광역 행정구역의 대표점으로 삼는 근거가 확인되지 않아 좌표를 보류했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 39.04323,
+                "lon": 127.52539,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EC%9D%98_%ED%96%89%EC%A0%95_%EA%B5%AC%EC%97%AD",
+                "basis": "위키백과 '고려의 행정 구역'은 동계(동북면)의 중심 관부를 안변도호부(등주·화주 등)로 적는다. 영역은 민족문화대백과 '동계'의 \"공험 이남에서 삼척 이북\". 좌표는 그 도호부가 있던 안변 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q484890",
+                "wikidataId": "Q484890",
+                "coordLabel": "안변군 (Anbyon County)",
+                "precision": "region",
+                "view": "위키백과 '고려의 행정 구역'(중심 관부 안변도호부) + 민족문화대백과 '동계'(영역)",
+                "historySourceTitle": "위키백과 「고려의 행정 구역」 / 한국민족문화대백과사전 「동계」",
+                "dateBasis": "민족문화대백과 '동계'의 1036년 동계 칭호, '양계'의 1413년 영길도 개칭",
+                "validFrom": 1036,
+                "validTo": 1413,
+                "confidence": "unverified"
+              }
+            ],
+            "after": []
+          },
+          "note": {
+            "before": "동계는 북계와 함께 고려 양계를 이룬 광역 군사행정구역이다. 민족문화대백과 '동계'는 995년 삭방도 → 1036년 동계 → 1047년 동북면 → 1178년 연해명주도 등으로 명칭이 바뀌었고 영역은 '공험 이남에서 삼척 이북'이라 한다. 같은 항목에 치소·중심 관부 서술은 없어, 좌표 참조점(안변)은 위키백과 '고려의 행정 구역'이 동계 중심 관부를 안변도호부(등주)라 한 데 따른 것이며 근거가 약해 confidence=unverified로 둔다. 영역 전체를 대표하는 점이 아니다. 1030년(현종 21) sample이 명칭 확정 연도(1036)보다 이른 것은 고려사 편찬 시 소급 표기 가능성이 있다. validTo 1413은 민족문화대백과 '양계'의 조선 초 영길도 개칭 서술에 따른다.",
+            "after": "1036년은 동계 명칭 정비 연혁이다. 1030년 원문 용례를 제외하지 않도록 시작을 정하지 않는다. 광역 동계를 안변 한 점으로 대표할 근거는 별도 검증에서 확인하지 못했다. 역사적 지역의 존재와 현대 한 지점의 위치를 구분하며, 원문은 남기고 좌표는 미정으로 둔다. 1413년 도 개칭은 백과의 양계 연혁을 따른다."
+          },
+          "status": {
+            "before": "established",
+            "after": "unlocated"
+          },
+          "validFrom": {
+            "before": 1036,
+            "after": null
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-026",
+        "review": "verify-goryeosa",
+        "actions": [
+          "출처에서 확인되지 않은 도명 유래와 남부 중심 주장을 빼고 확인된 목관 목록으로 근거를 좁혔다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 37.409166666667,
+                "lon": 127.25916666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0035413",
+                "basis": "민족문화대백과 '양광도': 도명은 양주·광주에서 유래하고 범위는 \"지금의 경기도, 충청남도, 충청북도 및 강원도 일부 지역\"이며 광주·청주·충주가 목관. 좌표는 그중 광주(廣州) 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q42069",
+                "wikidataId": "Q42069",
+                "coordLabel": "광주시(경기도) (Gwangju, Gyeonggi)",
+                "precision": "region",
+                "view": "한국민족문화대백과사전 '양광도'(도명 유래 및 목관)",
+                "historySourceTitle": "한국민족문화대백과사전 「양광도」",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified"
+              },
+              {
+                "lat": 36.637222222222,
+                "lon": 127.48972222222,
+                "sourceUrl": "https://www.grandculture.net/dobong/toc/GC04900292",
+                "basis": "향토문화전자대전 '양광도': 현재의 경기도 남부·강원 일부·충청남북도 거의 전역을 포함하고 \"1경·3목·2부·27군·78현을 관령\". 좌표는 그 남부 중심인 청주(淸州) 목관 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q42147",
+                "wikidataId": "Q42147",
+                "coordLabel": "청주시 (Cheongju)",
+                "precision": "region",
+                "view": "한국향토문화전자대전(디지털도봉문화대전) '양광도'",
+                "historySourceTitle": "한국향토문화전자대전 「양광도」",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified"
+              }
+            ],
+            "after": [
+              {
+                "lat": 37.409166666667,
+                "lon": 127.25916666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0035413",
+                "basis": "한국민족문화대백과사전 「양광도」는 경기·충청·강원 일부의 범위를 설명하고 광주·청주·충주를 목관으로 든다. 이 점은 그중 광주시(경기도) (Gwangju, Gyeonggi)의 현대 참조점이며 도의 경계·중심을 뜻하지 않는다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q42069",
+                "wikidataId": "Q42069",
+                "coordLabel": "광주시(경기도) (Gwangju, Gyeonggi)",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(양광도의 범위·목관)",
+                "historySourceTitle": "한국민족문화대백과사전 「양광도」",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified"
+              },
+              {
+                "lat": 36.637222222222,
+                "lon": 127.48972222222,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0035413",
+                "basis": "한국민족문화대백과사전 「양광도」는 경기·충청·강원 일부의 범위를 설명하고 광주·청주·충주를 목관으로 든다. 이 점은 그중 청주시 (Cheongju)의 현대 참조점이며 도의 경계·중심을 뜻하지 않는다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q42147",
+                "wikidataId": "Q42147",
+                "coordLabel": "청주시 (Cheongju)",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(양광도의 범위·목관)",
+                "historySourceTitle": "한국민족문화대백과사전 「양광도」",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified"
+              }
+            ]
+          },
+          "note": {
+            "before": "고려사 세가의 楊廣은 5도의 하나인 양광도(양광충청주도)를 가리키며, 도명은 양주(楊州)와 광주(廣州)에서 왔다. 민족문화대백과 '양광도'는 범위를 '지금의 경기도, 충청남도, 충청북도 및 강원도 일부'라 하고 광주·청주·충주를 목관으로 든다. 같은 항목에 안찰사 치소 서술이 없어 단일 중심점을 확인하지 못했고, 아래 후보 둘은 도 전체를 대표하는 좌표가 아니라 목관 소재지 참조점이다(Wikidata의 양광도 항목 Q85982270에는 P625가 없다). 명칭 연혁도 출처가 엇갈린다: 민백은 1018년 편성·1107년 양광충청주도, 향토문화전자대전 '양광도'는 1106년 양광충청주도·1314년 양광도 확정·1356년 충청도로 적는다. 그래서 validFrom/To는 null로 둔다. 도명 유래인 楊州는 고려에서 1104년 남경으로 승격된 곳이어서 현대 양주시와 같지 않아 참조점으로 쓰지 않았다.",
+            "after": "양광은 광역 행정구역 양광도의 약칭으로 조사했다. 백과는 경기·충청·강원 일부의 범위와 광주·청주·충주 목관을 설명한다. 광주·청주의 현대 좌표 두 점은 그중 일부 고을을 참고로 표시하며 도의 경계나 전체 중심을 뜻하지 않는다. 이름의 유래는 인용한 항목에서 확인되지 않아 설명에서 뺐다. 백과와 향토문화대전의 연혁이 달라 기간은 정하지 않았다."
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-028",
+        "review": "verify-goryeosa",
+        "actions": [
+          "989년은 병마사 설치 연혁이다. 928년 원문 용례를 제외하지 않도록 시작을 정하지 않는다. 광역 북계를 안주 한 점으로 대표할 근거는 별도 검증에서 확인하지 못했다.",
+          "특정 현대 도시를 광역 행정구역의 대표점으로 삼는 근거가 확인되지 않아 좌표를 보류했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 39.616666666667,
+                "lon": 125.66666666667,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%EB%8C%80%EB%8F%84%ED%98%B8%EB%B6%80",
+                "basis": "위키백과 '대도호부': \"고려 태조 14년(931년)에 영주(寧州, 지금의 …안주시)에 안북부(安北府)를 두었고\" 1018년 안북대도호부로 승격. 위키백과 '고려의 행정 구역'은 이 안북대도호부를 북계의 중심 관부로 적는다. 좌표는 안주 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q196236",
+                "wikidataId": "Q196236",
+                "coordLabel": "안주시 (Anju)",
+                "precision": "region",
+                "view": "위키백과 '대도호부'·'고려의 행정 구역'(북계 중심 관부 안북대도호부=영주=현 안주)",
+                "historySourceTitle": "위키백과 「대도호부」/「고려의 행정 구역」, 한국민족문화대백과사전 「양계」(범위·존속)",
+                "dateBasis": "민족문화대백과 '양계'의 989년 병마사 설치·1413년 평안도 개칭 서술",
+                "validFrom": 989,
+                "validTo": 1413,
+                "confidence": "unverified"
+              }
+            ],
+            "after": []
+          },
+          "note": {
+            "before": "북계는 동계와 함께 고려 양계를 이룬 광역 군사행정구역으로, 민족문화대백과 '양계'는 북계를 평안도 지역으로 설명하고 989년(성종 8) 병마사 설치에서 시작해 1413년 평안도로 개칭되었다고 한다. 좌표 참조점(안주)은 위키백과 '고려의 행정 구역'과 '대도호부'가 북계의 중심 관부를 영주(寧州)의 안북대도호부로 적고 영주를 현 안주로 비정한 데 따른 것이라 근거가 약해 confidence=unverified로 둔다(해당 위키백과 문서는 안주를 '평안북도'로 적었으나 안주시는 평안남도다). 영역을 대표하는 점이 아니며 서경(평양)도 북계 소속 관부였다. 태조 11년(928) sample이 989년보다 이른 것은 고려사 편찬 시 소급 표기 가능성이 있다.",
+            "after": "989년은 병마사 설치 연혁이다. 928년 원문 용례를 제외하지 않도록 시작을 정하지 않는다. 광역 북계를 안주 한 점으로 대표할 근거는 별도 검증에서 확인하지 못했다. 역사적 지역의 존재와 현대 한 지점의 위치를 구분하며, 원문은 남기고 좌표는 미정으로 둔다. 1413년 도 개칭은 백과의 양계 연혁을 따른다."
+          },
+          "status": {
+            "before": "established",
+            "after": "unlocated"
+          },
+          "validFrom": {
+            "before": 989,
+            "after": null
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-033",
+        "review": "verify-goryeosa",
+        "actions": [
+          "같은 서해도 참조점은 표제 西海道와 기간 처리 방식을 맞췄다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 35.0,
+                "lon": 123.0,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0066149",
+                "basis": "민백 '황해' 항목은 이칭으로 '서해'를 들고, 한반도 서쪽의 연해로 그 범위를 설명한다. 903년 주사(舟師) 기사의 西海는 이 바다를 가리킨다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q37960",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(한국학중앙연구원)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「황해(黃海)」",
+                "dateBasis": null,
+                "coordLabel": "Yellow Sea 해역 대표 좌표",
+                "wikidataId": "Q37960"
+              },
+              {
+                "lat": 38.033333333333,
+                "lon": 125.71666666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+                "basis": "민백 '서해도'는 현 황해도 일대에 해당하는 고려 5도의 하나로, 해주(안서대도호부)와 황주목을 주요 고을로 든다. 해주는 그 광역 참조점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q714865",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(한국학중앙연구원)",
+                "validFrom": 1093,
+                "validTo": 1395,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「서해도(西海道)」",
+                "dateBasis": "같은 항목: '서해도' 명칭은 1093년(선종 10) 안찰사 사례에서 처음 확인, 조선 1395년 풍해도로 개칭",
+                "coordLabel": "해주시 중심 좌표(도 전체가 아니라 계수관 소재지 참조점)",
+                "wikidataId": "Q714865"
+              },
+              {
+                "lat": 38.705833,
+                "lon": 125.747778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+                "basis": "같은 항목이 서해도의 또 다른 주요 고을로 드는 황주목의 현대 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q705723",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(한국학중앙연구원)",
+                "validFrom": 1093,
+                "validTo": 1395,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「서해도(西海道)」",
+                "dateBasis": "위와 같음",
+                "coordLabel": "황주군 중심 좌표(계수관 소재지 참조점)",
+                "wikidataId": "Q705723"
+              }
+            ],
+            "after": [
+              {
+                "lat": 35.0,
+                "lon": 123.0,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0066149",
+                "basis": "민백 '황해' 항목은 이칭으로 '서해'를 들고, 한반도 서쪽의 연해로 그 범위를 설명한다. 903년 주사(舟師) 기사의 西海는 이 바다를 가리킨다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q37960",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(한국학중앙연구원)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「황해(黃海)」",
+                "dateBasis": null,
+                "coordLabel": "Yellow Sea 해역 대표 좌표",
+                "wikidataId": "Q37960"
+              },
+              {
+                "lat": 38.033333333333,
+                "lon": 125.71666666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+                "basis": "민백 '서해도'는 현 황해도 일대에 해당하는 고려 5도의 하나로, 해주(안서대도호부)와 황주목을 주요 고을로 든다. 해주는 그 광역 참조점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q714865",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(한국학중앙연구원)",
+                "validFrom": null,
+                "validTo": 1395,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「서해도(西海道)」",
+                "dateBasis": "서해도와 황해도 항목의 1018년·1093년 설명 차이로 시작을 정하지 않는다. 1395년 풍해도 개칭을 끝으로 둔다.",
+                "coordLabel": "해주시 중심 좌표(도 전체가 아니라 계수관 소재지 참조점)",
+                "wikidataId": "Q714865"
+              },
+              {
+                "lat": 38.705833,
+                "lon": 125.747778,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0028278",
+                "basis": "같은 항목이 서해도의 또 다른 주요 고을로 드는 황주목의 현대 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q705723",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(한국학중앙연구원)",
+                "validFrom": null,
+                "validTo": 1395,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「서해도(西海道)」",
+                "dateBasis": "서해도와 황해도 항목의 1018년·1093년 설명 차이로 시작을 정하지 않는다. 1395년 풍해도 개칭을 끝으로 둔다.",
+                "coordLabel": "황주군 중심 좌표(계수관 소재지 참조점)",
+                "wikidataId": "Q705723"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-039",
+        "review": "verify-goryeosa",
+        "actions": [
+          "1068년 남경 궁궐 건립을 1308년 한양부 참조점 기간에 잘못 옮긴 후보를 제외했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 37.56,
+                "lon": 126.99,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0011767",
+                "basis": "민백 '남경'은 1067년 양주를 남경으로 삼았고 '남경유수관은 1308년(충렬왕 34)에 한양부로 개칭'되었다고 하며, 남경 권역을 낙산·안산·북악·신용산 남단으로 든다(지금의 서울).",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q8684",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(한국학중앙연구원)",
+                "validFrom": 1308,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「남경(南京)」",
+                "dateBasis": "같은 항목의 1308년 한양부 개칭 서술(지명 漢陽 자체의 시작 연도가 아님)",
+                "coordLabel": "서울 중심 좌표",
+                "wikidataId": "Q8684"
+              },
+              {
+                "lat": 37.58669167,
+                "lon": 126.97486389,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0011767",
+                "basis": "같은 항목: '남경의 궁궐은 경복궁의 북쪽에 있었는데, 지금의 청와대 부근이다.' 1068년 궁궐이 건설되었다고 한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q494577",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(한국학중앙연구원)",
+                "validFrom": 1068,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「남경(南京)」",
+                "dateBasis": "같은 항목: 1067년 남경 설치, 이듬해 1068년 궁궐 건설",
+                "coordLabel": "청와대 지점 좌표('부근'이라는 서술의 근사값이며 궁궐터 발굴 지점이 아님)",
+                "wikidataId": "Q494577"
+              }
+            ],
+            "after": [
+              {
+                "lat": 37.56,
+                "lon": 126.99,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0011767",
+                "basis": "민백 '남경'은 1067년 양주를 남경으로 삼았고 '남경유수관은 1308년(충렬왕 34)에 한양부로 개칭'되었다고 하며, 남경 권역을 낙산·안산·북악·신용산 남단으로 든다(지금의 서울).",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q8684",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(한국학중앙연구원)",
+                "validFrom": 1308,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「남경(南京)」",
+                "dateBasis": "같은 항목의 1308년 한양부 개칭 서술(지명 漢陽 자체의 시작 연도가 아님)",
+                "coordLabel": "서울 중심 좌표",
+                "wikidataId": "Q8684"
+              }
+            ]
+          },
+          "note": {
+            "before": "인용 기사(1317·1325)는 충숙왕의 한양 사냥·행행으로, 민백 남경 항목이 말하는 원 간섭기 한양부 시기다(남경유수관이 1308년 한양부로 개칭). 지금의 서울에 해당한다. 한양이라는 지명 자체는 1308년보다 오래됐으므로 validFrom은 '한양부' 개칭 연도라는 뜻으로만 읽어야 한다. 좌표 후보는 서울 중심점과, 민백이 남경 궁궐터로 비정한 청와대 부근 두 가지이며 어느 쪽도 한양부 관아의 확정 지점은 아니다. 1325년 기사의 '富原 龍山'을 현 서울 용산으로 볼지에 대해서는 확인 가능한 출처를 찾지 못했다.",
+            "after": "1317·1325년 원문은 충숙왕의 한양 행차·사냥 기록이다. 백과는 남경유수관이 1308년 한양부로 개칭되었다고 한다. 이 연도는 한양부 개편을 뜻하며 漢陽 지명 자체의 시작이 아니다. 서울의 현대 지역 참조점만 남겼다. 남경 궁궐터로 설명되는 청와대 부근을 한양부 관아 위치로 옮길 근거는 없어 해당 점을 제외했다. 원문의 富原 龍山 비정은 미확인이다."
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-001",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-002",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-003",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-004",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-005",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-006",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-008",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-009",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-010",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-011",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-012",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-013",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-014",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-015",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-016",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-018",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-019",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-020",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-021",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-022",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-023",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-025",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-026",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-027",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-029",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-030",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-031",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-032",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-035",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-037",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-039",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-goryeosa-040",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      }
+    ],
+    "samgukyusa": [
+      {
+        "placeId": "place-samgukyusa-007",
+        "field": "evidence[1]",
+        "before": {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0070_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 樂浪國 › 전한 때에 처음으로 낙랑군을 설치하다",
+          "date": {
+            "label": null,
+            "raw": "0028-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0070_0010",
+          "quote": " 應邵曰 ‘故朝鮮國也’. 新唐書注云 “平壤城古漢之樂浪郡也”. 國史云 “赫居世三十年樂浪人来投”, 又第三弩禮王四年 髙麗第三無恤王伐樂浪滅之, 其國人與帶方投于羅. 又無恤王二十七年光虎帝遣使伐樂浪取其地爲郡縣, 薩水已南屬漢. 又百濟 温祚之言曰, ‘東有樂浪北有靺鞨’, 則殆古漢時樂浪郡之屬縣之地也. 新羅人亦以稱樂浪故今本朝亦因之而稱樂浪郡夫人, 又太祖降女於金傅亦曰樂浪公主.",
+          "quoteStart": 13,
+          "quoteEnd": 210,
+          "termInBody": true
+        },
+        "after": {
+          "chunkId": "chunk_samgukyusa_sy_001_0020_0070_0010",
+          "sourceId": "src-samgukyusa",
+          "locator": "卷 第一 › 紀異第一 › 樂浪國 › 전한 때에 처음으로 낙랑군을 설치하다",
+          "date": {
+            "label": null,
+            "raw": "0028-99-99L0"
+          },
+          "permalink": "https://db.history.go.kr/id/sy_001_0020_0070_0010",
+          "quote": " 應邵曰 ‘故朝鮮國也’. 新唐書注云 “平壌城古漢之樂浪郡也”. 國史云 “赫居世三十年樂浪人来投”, 又第三弩禮王四年 髙麗第三無恤王伐樂浪滅之, 其國人與帶方投于羅. 又無恤王二十七年光虎帝遣使伐樂浪取其地爲郡縣, 薩水已南屬漢. 又百濟 温祚之言曰, ‘東有樂浪北有靺鞨’, 則殆古漢時樂浪郡之屬縣之地也. 新羅人亦以稱樂浪故今本朝亦因之而稱樂浪郡夫人, 又太祖降女於金傅亦曰樂浪公主.",
+          "quoteStart": 13,
+          "quoteEnd": 210,
+          "termInBody": true
+        },
+        "reason": "Restored original variant character exactly from the assigned source sample."
+      },
+      {
+        "placeId": "place-samgukyusa-009",
+        "candidateIndex": 2,
+        "before": {
+          "lat": 41.264444,
+          "lon": 123.177222
+        },
+        "after": {
+          "lat": 41.26432,
+          "lon": 123.1772
+        },
+        "reason": "Exact live Wikidata Q75203 P625; prior rounded coordinates referred to an older value."
+      },
+      {
+        "placeId": "place-samgukyusa-010",
+        "candidateIndex": 0,
+        "before": {
+          "lat": 41.264444,
+          "lon": 123.177222
+        },
+        "after": {
+          "lat": 41.26432,
+          "lon": 123.1772
+        },
+        "reason": "Exact live Wikidata Q75203 P625; prior rounded coordinates referred to an older value."
+      },
+      {
+        "placeId": "place-samgukyusa-003",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "실재하는 기관 표제어 해동을 근거로 바꾸고, 없다고 적었던 설명을 고쳤다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 37.5,
+                "lon": 127.0,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%ED%95%B4%EB%8F%99_(%EB%B3%84%EC%B9%AD)",
+                "basis": "위키백과 '해동 (별칭)'은 해동을 \"한국에 대한 별칭\"이라 하고, 중국인이 바다 동쪽 나라라는 뜻으로 부른 데서 왔으며 \"삼국 시대와 고려 시대에 많이 쓰였\"다고 한다. 좌표는 한반도 전체를 대표하는 광역 점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q483134",
+                "precision": "region",
+                "view": "위키백과 「해동 (별칭)」 - 한국 전체를 가리키는 별칭",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "위키백과 「해동 (별칭)」",
+                "dateBasis": null,
+                "coordLabel": "Korean Peninsula(한반도) 광역 참조점",
+                "wikidataId": "Q483134"
+              }
+            ],
+            "after": [
+              {
+                "lat": 37.5,
+                "lon": 127.0,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0062492",
+                "basis": "백과는 해동을 우리나라의 별칭으로 설명하며 발해 동쪽 나라라는 어원을 제시한다. 좌표는 한반도의 광역 참조점이며 특정 도시나 유적이 아니다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q483134",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(해동)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「해동」",
+                "dateBasis": null,
+                "coordLabel": "Korean Peninsula(한반도) 광역 참조점",
+                "wikidataId": "Q483134"
+              }
+            ]
+          },
+          "note": {
+            "before": "海東은 특정 지점이 아니라 '바다 동쪽 나라', 곧 한국(삼국유사 문맥에서는 신라를 포함한 우리나라)을 가리키는 별칭이다. 입력 사례도 '海東高德'(원측을 우리나라의 고승으로 지칭), '海東未有創寺奉法之事'(우리나라에 아직 절을 세운 일이 없음)처럼 나라 전체를 뜻한다. 민족문화대백과에서 표제 항목을 찾지 못해 위키백과 '해동 (별칭)'에 의존했고, 그만큼 근거가 얇다. 좌표는 한반도 광역 참조점(위키데이터 한반도 항목)일 뿐 어떤 유적·도시의 위치도 아니다. 사용 시기는 '삼국·고려 시대에 많이 쓰였다'는 서술만 있어 연도로 확정하지 않았다.",
+            "after": "해동은 특정 지점이 아닌 우리나라의 별칭이다. 한국민족문화대백과사전은 삼국유사의 해동 표현 대부분이 고려시대 일연 자신의 표현으로 보인다고 설명한다. 이를 삼국시대의 특정 장소·연도로 확정하지 않고 기간을 비워 둔다. 한반도 좌표는 광역 참조점이다."
+          },
+          "references": {
+            "before": [
+              "https://ko.wikipedia.org/wiki/%ED%95%B4%EB%8F%99_(%EB%B3%84%EC%B9%AD)",
+              "https://www.wikidata.org/wiki/Q483134"
+            ],
+            "after": [
+              "https://ko.wikipedia.org/wiki/%ED%95%B4%EB%8F%99_(%EB%B3%84%EC%B9%AD)",
+              "https://www.wikidata.org/wiki/Q483134",
+              "https://encykorea.aks.ac.kr/Article/E0062492"
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-007",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "같은 성터의 현대 행정명 차이를 경쟁 후보로 나눈 것을 합치고 precision을 region으로 고쳤다. 소멸 연도 이견과 남대방 자료를 기록했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 38.494719,
+                "lon": 125.967781,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0023889",
+                "basis": "민백 '봉산 대방토성'은 이 토성이 \"북한 황해북도 봉산군에 있는\" 성곽으로 당토성이라 불렸고, 북쪽 4㎞ 구룡리에서 대방태수 장무이 묘가 나와 대방군 치소로 추정된다고 한다. 좌표는 봉산군 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q705524",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전 「봉산 대방토성」 - 봉산군 당토성 치소 추정설",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「봉산 대방토성(鳳山 帶方土城)」",
+                "dateBasis": null,
+                "coordLabel": "Pongsan County(봉산군) 참조점",
+                "wikidataId": "Q705524"
+              },
+              {
+                "lat": 38.503889,
+                "lon": 125.758889,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%EB%8C%80%EB%B0%A9%EA%B5%B0",
+                "basis": "위키백과 '대방군'은 \"대방군의 치소는 황해북도 사리원시에 있는 속칭 당토성(唐土城)으로 추정\"된다고 하며, 314년 고구려에 멸망했다고 한다. 같은 문서가 장무이묘 근거를 부정하는 이견도 소개한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q505807",
+                "precision": "approx",
+                "view": "위키백과 「대방군」 - 사리원시 당토성 치소 추정설",
+                "validFrom": null,
+                "validTo": 314,
+                "confidence": "probable",
+                "historySourceTitle": "위키백과 「대방군」",
+                "dateBasis": "위키백과 '대방군': 313년 낙랑군, 314년 대방군이 고구려에 멸망",
+                "coordLabel": "Sariwon(사리원시) 참조점",
+                "wikidataId": "Q505807"
+              }
+            ],
+            "after": [
+              {
+                "lat": 38.494719,
+                "lon": 125.967781,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0023889",
+                "basis": "백과 「봉산 대방토성」과 「대방군」은 봉산군 문정면, 사리원 동남의 당토성을 같은 성터로 설명하며 대방군 치소로 추정한다. 이 좌표는 봉산군 참조점이고 성터 위치가 아니다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q705524",
+                "precision": "region",
+                "view": "한국민족문화대백과사전 「봉산 대방토성」 - 봉산군 당토성 치소 추정설",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「봉산 대방토성(鳳山 帶方土城)」",
+                "dateBasis": "대방군 소멸을 민족문화대백과사전은 313년, 위키백과는 314년으로 적으므로 여기서는 종료 연도를 확정하지 않는다. 원문에는 설치 연혁보다 이른 27년 용례도 있어 시작을 비워 둔다.",
+                "coordLabel": "Pongsan County(봉산군) 참조점",
+                "wikidataId": "Q705524"
+              }
+            ]
+          },
+          "note": {
+            "before": "낙랑군 남쪽에 둔 중국 군현으로, 치소는 황해도 봉산 당토성(대방토성)으로 '추정'되는 단계이며 확정된 것이 아니다. 민백은 봉산군, 위키백과는 사리원시로 같은 성터의 현대 행정구역을 달리 적어 후보를 둘로 나눴다(두 참조점은 약 15㎞ 차이). 위키백과는 장무이묘 근거를 부정하는 견해도 함께 소개한다. 삼국유사는 北帶方(본 죽담성)과 南帶方을 따로 세우는데 南帶方의 위치는 이번 조사에서 근거를 찾지 못해 후보에 넣지 않았다. 노례왕 4년(27년) 帶方人 투항 기사는 대방군 설치 시기(3세기 초)와 어긋나므로 연대 근거로 쓰지 않았다.",
+            "after": "당토성의 봉산군·사리원 표기는 같은 성터를 가리켜 두 지도 후보로 나누지 않았다. 봉산군 참조점만 남기며 치소 비정은 추정이다. 대방군 소멸 연도는 출처에 따라 313·314년으로 갈려 기간을 정하지 않았다. 남대방에는 디지털남원문화대전이 소개하는 남원 비정과 그에 대한 반론이 있다. 이 조사의 원문 표본은 북대방 등 일부 용례이므로 남대방의 점을 덧붙이지 않았다."
+          },
+          "references": {
+            "before": [
+              "https://encykorea.aks.ac.kr/Article/E0023889",
+              "https://ko.wikipedia.org/wiki/%EB%8C%80%EB%B0%A9%EA%B5%B0",
+              "https://www.wikidata.org/wiki/Q705524",
+              "https://www.wikidata.org/wiki/Q505807"
+            ],
+            "after": [
+              "https://encykorea.aks.ac.kr/Article/E0023889",
+              "https://ko.wikipedia.org/wiki/%EB%8C%80%EB%B0%A9%EA%B5%B0",
+              "https://www.wikidata.org/wiki/Q705524",
+              "https://www.wikidata.org/wiki/Q505807",
+              "https://encykorea.aks.ac.kr/Article/E0014398",
+              "https://namwon.grandculture.net/namwon/toc/GC00600663"
+            ]
+          },
+          "validTo": {
+            "before": 314,
+            "after": null
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-008",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "중국·강원 오대산의 전승 연결을 설명하는 기관 출처를 보강했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 37.798056,
+                "lon": 128.543056,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0038150",
+                "basis": "민백 '오대산'은 \"강원특별자치도 강릉시와 평창군·홍천군에 걸쳐 있는 산\"(1,563m급)으로, 자장율사가 수도하고 1만 문수보살이 상주한다는 불교 성지라고 설명한다. 보천·효명 기사의 오대산이 이곳.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q491028",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전 「오대산」 - 신라 오대산(강원)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "confirmed",
+                "historySourceTitle": "한국민족문화대백과사전 「오대산(五臺山)」",
+                "dateBasis": null,
+                "coordLabel": "Odaesan(오대산), 평창·강릉·홍천",
+                "wikidataId": "Q491028"
+              },
+              {
+                "lat": 39.081389,
+                "lon": 113.566944,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%EC%9A%B0%ED%83%80%EC%9D%B4%EC%82%B0",
+                "basis": "위키백과 '우타이산'은 이 산이 \"중국 산시성의 북동쪽\"에 있는 \"문수보살의 성지\"이며 신라 승려 자장이 이곳에서 수행했다고 한다. 자장의 '西學到五䑓山', '中國五䑓山' 기사가 이 산.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q120314",
+                "precision": "approx",
+                "view": "위키백과 「우타이산」 - 중국 오대산(산시성)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "위키백과 「우타이산」",
+                "dateBasis": null,
+                "coordLabel": "Mount Wutai(우타이산), 산시성 신저우",
+                "wikidataId": "Q120314"
+              }
+            ],
+            "after": [
+              {
+                "lat": 37.798056,
+                "lon": 128.543056,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0038150",
+                "basis": "민백 '오대산'은 \"강원특별자치도 강릉시와 평창군·홍천군에 걸쳐 있는 산\"(1,563m급)으로, 자장율사가 수도하고 1만 문수보살이 상주한다는 불교 성지라고 설명한다. 보천·효명 기사의 오대산이 이곳.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q491028",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전 「오대산」 - 신라 오대산(강원)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "confirmed",
+                "historySourceTitle": "한국민족문화대백과사전 「오대산(五臺山)」",
+                "dateBasis": null,
+                "coordLabel": "Odaesan(오대산), 평창·강릉·홍천",
+                "wikidataId": "Q491028"
+              },
+              {
+                "lat": 39.081389,
+                "lon": 113.566944,
+                "sourceUrl": "https://gangneung.grandculture.net/gangneung/toc/GC00302613",
+                "basis": "디지털강릉문화대전은 자장이 중국 오대산에서 문수 신앙을 접한 뒤 643년 귀국하여 강원 오대산을 순례했다고 전한다. 이 후보는 중국 오대산 참조점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q120314",
+                "precision": "approx",
+                "view": "디지털강릉문화대전(중국 오대산 신앙)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "디지털강릉문화대전 「오대산신앙」",
+                "dateBasis": null,
+                "coordLabel": "Mount Wutai(우타이산), 산시성 신저우",
+                "wikidataId": "Q120314"
+              }
+            ]
+          },
+          "note": {
+            "before": "같은 표기가 문맥에 따라 다른 산을 가리키므로 후보를 나눴다. 자장이 유학 중 문수 진신을 보려 간 '中國五䑓山'은 중국 산시성의 우타이산이고, 보천·효명 형제가 하서부를 거쳐 숨어든 五䑓山은 강원의 오대산이다. 신라 오대산 신앙이 중국 오대산 신앙을 옮겨온 것이라 이름이 같다. 두 좌표 모두 산 전체를 대표하는 한 점이며 월정사·중대 등 개별 사찰 위치가 아니다. 중국 오대산 쪽은 민백 '자장' 항목에 오대산·문수 친견 서술이 없어 위키백과에 의존했다.",
+            "after": "같은 표기가 문맥에 따라 다른 산을 가리키므로 후보를 나눴다. 자장이 유학 중 문수 진신을 보려 간 '中國五䑓山'은 중국 산시성의 우타이산이고, 보천·효명 형제가 하서부를 거쳐 숨어든 五䑓山은 강원의 오대산이다. 신라 오대산 신앙이 중국 오대산 신앙을 옮겨온 것이라 이름이 같다. 두 좌표 모두 산 전체를 대표하는 한 점이며 월정사·중대 등 개별 사찰 위치가 아니다. 중국 오대산 쪽은 민백 '자장' 항목에 오대산·문수 친견 서술이 없어 위키백과에 의존했다. 디지털강릉문화대전 「오대산신앙」이 자장의 중국 오대산과 강원 오대산 순례·보천 신앙의 연결을 설명한다. 두 산은 별개 대상이다."
+          },
+          "references": {
+            "before": [
+              "https://encykorea.aks.ac.kr/Article/E0038150",
+              "https://ko.wikipedia.org/wiki/%EC%9A%B0%ED%83%80%EC%9D%B4%EC%82%B0",
+              "https://encykorea.aks.ac.kr/Article/E0048060",
+              "https://www.wikidata.org/wiki/Q491028",
+              "https://www.wikidata.org/wiki/Q120314"
+            ],
+            "after": [
+              "https://encykorea.aks.ac.kr/Article/E0038150",
+              "https://ko.wikipedia.org/wiki/%EC%9A%B0%ED%83%80%EC%9D%B4%EC%82%B0",
+              "https://encykorea.aks.ac.kr/Article/E0048060",
+              "https://www.wikidata.org/wiki/Q491028",
+              "https://www.wikidata.org/wiki/Q120314",
+              "https://gangneung.grandculture.net/gangneung/toc/GC00302613"
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-009",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "지명과 천도 연도를 구분하고 안학궁의 기간 이견을 보존했다. 학술 근거를 특정하지 못한 랴오양 후보를 제외했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 39.016667,
+                "lon": 125.7475,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%84%B1_(%EA%B3%A0%EA%B5%AC%EB%A0%A4)",
+                "basis": "위키백과 '평양성 (고구려)'는 \"주류 학계에서는 평양성이 지금의 ... 평양직할시 시가지에 위치했다고 추정\"한다고 하며, 586년 장안성으로 옮겨 고구려 멸망까지 수도였다고 서술한다. 좌표는 현 평양시 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+                "precision": "approx",
+                "view": "주류 학계(현 평양 시가지 = 장안성 자리)",
+                "validFrom": 586,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "위키백과 「평양성 (고구려)」",
+                "dateBasis": "위키백과 '평양성 (고구려)': 586년 장안성으로 천도, 고구려 멸망까지 수도. 이후에도 평양은 계속 도시로 존속하므로 종료 연도는 두지 않음",
+                "coordLabel": "Pyongyang(평양직할시)",
+                "wikidataId": "Q18808"
+              },
+              {
+                "lat": 39.0618,
+                "lon": 125.834,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%EC%95%88%ED%95%99%EA%B6%81",
+                "basis": "위키백과 '안학궁'은 궁이 \"평양직할시 대성구역 안학동\"에 있고 장수왕 15년(427년) 평양 천도 때 지어져 장안성 천도까지 왕궁이었다고 한다. 같은 문서가 고려 궁전설 이견도 소개한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q3361202",
+                "precision": "site",
+                "view": "위키백과 「안학궁」 - 427~586년 평양 도성(안학궁·대성산성) 자리",
+                "validFrom": 427,
+                "validTo": 586,
+                "confidence": "probable",
+                "historySourceTitle": "위키백과 「안학궁」",
+                "dateBasis": "위키백과 '안학궁': 장수왕 15년(427) 건립, 장안성 천도까지 사용 / '평양성 (고구려)': 586년 장안성 천도",
+                "coordLabel": "Anhak Palace(안학궁), 평양 대성구역",
+                "wikidataId": "Q3361202"
+              },
+              {
+                "lat": 41.26432,
+                "lon": 123.1772,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%84%B1_(%EA%B3%A0%EA%B5%AC%EB%A0%A4)",
+                "basis": "같은 문서가 \"일부 학자들은 평양성이 지금의 ... 랴오양시에 위치했다고 주장한다\"고 소수설을 소개한다. 좌표는 랴오양시 참조점일 뿐 어떤 성터도 아니다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q75203",
+                "precision": "region",
+                "view": "일부 학자(요동·랴오양설, 소수설)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified",
+                "historySourceTitle": "위키백과 「평양성 (고구려)」",
+                "dateBasis": null,
+                "coordLabel": "Liaoyang(랴오양시)",
+                "wikidataId": "Q75203"
+              }
+            ],
+            "after": [
+              {
+                "lat": 39.016667,
+                "lon": 125.7475,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%84%B1_(%EA%B3%A0%EA%B5%AC%EB%A0%A4)",
+                "basis": "위키백과 '평양성 (고구려)'는 \"주류 학계에서는 평양성이 지금의 ... 평양직할시 시가지에 위치했다고 추정\"한다고 하며, 586년 장안성으로 옮겨 고구려 멸망까지 수도였다고 서술한다. 좌표는 현 평양시 참조점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+                "precision": "approx",
+                "view": "현대 평양시 참조점(개별 원문 용례의 위치 확정이 아님)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "위키백과 「평양성 (고구려)」",
+                "dateBasis": "586년은 장안성 천도 연도이므로 平壤 지명의 시작으로 쓰지 않는다. 413년 원문 표본도 있으며 개별 용례의 위치는 별도 검토 대상이다.",
+                "coordLabel": "Pyongyang(평양직할시)",
+                "wikidataId": "Q18808"
+              },
+              {
+                "lat": 39.0618,
+                "lon": 125.834,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0035088",
+                "basis": "백과는 안학궁을 평양 대성구역 대성산 남쪽의 도성 유적으로 설명한다. 427~567년 사용설과 고려시대 조성설 등 여러 견해를 소개하므로 특정 원문의 왕궁으로 확정하지 않는다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q3361202",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(안학궁, 조성 시기 이견 있음)",
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable",
+                "historySourceTitle": "한국민족문화대백과사전 「안학궁」",
+                "dateBasis": "안학궁 조성·사용 시기에 여러 견해가 있고 장안성 천도 연도도 567·586년으로 출처가 달라 기간을 정하지 않는다.",
+                "coordLabel": "Anhak Palace(안학궁), 평양 대성구역",
+                "wikidataId": "Q3361202"
+              }
+            ]
+          },
+          "note": {
+            "before": "주류설은 현 평양직할시다. 다만 시기를 나눠야 한다. 위키백과 '평양성 (고구려)'는 427년 천도와 586년 장안성 이도를 적고, 장안성 자리를 현 평양 시가지로 본다. 427~586년 왕궁은 대성구역의 안학궁(대성산성과 짝)으로 보는데, 같은 문서가 안학궁을 고려 궁전으로 보는 이견도 소개한다. 단군이 平壤城에 도읍했다는 기사는 신화 서술이라 특정 유적으로 확정하지 않았다. 실성왕 12년(413) '平壤州 大橋' 기사의 평양 위치에는 논란이 있으나 이번 조사에서 근거를 확인하지 못해 후보를 만들지 않았다. 랴오양설은 위키백과가 '일부 학자'의 견해로 소개하는 소수설이라 unverified로 두었다. 민백 '평양직할시'는 1995년 집필본이라 고구려 천도·서경 서술이 없어 위치 근거로 쓰지 못했다.",
+            "after": "현 평양시와 안학궁의 참조점을 둔다. 평양 지명의 시작을 586년 천도로 제한하지 않는다. 안학궁은 조성·사용 시기에 고려시대설을 포함한 여러 견해가 있어 기간을 정하지 않았다. 단군 기사나 413년 平壤州大橋의 위치를 이 좌표로 확정하지 않는다. 근거 학자가 특정되지 않은 위키백과 랴오양설은 지도 후보에서 제외했다."
+          },
+          "references": {
+            "before": [
+              "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%84%B1_(%EA%B3%A0%EA%B5%AC%EB%A0%A4)",
+              "https://ko.wikipedia.org/wiki/%EC%95%88%ED%95%99%EA%B6%81",
+              "https://encykorea.aks.ac.kr/Article/E0060024",
+              "https://www.wikidata.org/wiki/Q18808",
+              "https://www.wikidata.org/wiki/Q3361202",
+              "https://www.wikidata.org/wiki/Q75203"
+            ],
+            "after": [
+              "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%84%B1_(%EA%B3%A0%EA%B5%AC%EB%A0%A4)",
+              "https://ko.wikipedia.org/wiki/%EC%95%88%ED%95%99%EA%B6%81",
+              "https://encykorea.aks.ac.kr/Article/E0060024",
+              "https://www.wikidata.org/wiki/Q18808",
+              "https://www.wikidata.org/wiki/Q3361202",
+              "https://www.wikidata.org/wiki/Q75203",
+              "https://encykorea.aks.ac.kr/Article/E0035088"
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-011",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "출처가 나란히 소개한 청천강·압록강 후보의 등급을 맞추고 논거 차이를 기록했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 39.6,
+                "lon": 125.41666666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0059801",
+                "basis": "민백 '패수'는 청천강설의 근거로 \"명도전이나 철기 등 중국 계통 유물과 세형동검 등 조선 계통 유물의 출토지가 청천강을 경계로 뚜렷이 구분되고 있다\"는 고고학적 분포를 든다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q499266",
+                "coordLabel": "청천강",
+                "wikidataId": "Q499266",
+                "historySourceTitle": "한국민족문화대백과사전 '패수'",
+                "precision": "region",
+                "view": "청천강설(한국민족문화대백과사전)",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 39.834193,
+                "lon": 124.316082,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0059801",
+                "basis": "같은 항목이 고조선·위만조선기 패수를 청천강 또는 압록강으로 보는 것이 일반적이라고 서술하며, 대릉하·난하설은 요령성 장성 유적 위치를 들어 기각한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q55498",
+                "coordLabel": "압록강(하구 지점 좌표)",
+                "wikidataId": "Q55498",
+                "historySourceTitle": "한국민족문화대백과사전 '패수'",
+                "precision": "region",
+                "view": "압록강설(한국민족문화대백과사전이 병기한 견해)",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "unverified"
+              }
+            ],
+            "after": [
+              {
+                "lat": 39.6,
+                "lon": 125.41666666667,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0059801",
+                "basis": "민백 '패수'는 청천강설의 근거로 \"명도전이나 철기 등 중국 계통 유물과 세형동검 등 조선 계통 유물의 출토지가 청천강을 경계로 뚜렷이 구분되고 있다\"는 고고학적 분포를 든다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q499266",
+                "coordLabel": "청천강",
+                "wikidataId": "Q499266",
+                "historySourceTitle": "한국민족문화대백과사전 '패수'",
+                "precision": "region",
+                "view": "청천강설(한국민족문화대백과사전)",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 39.834193,
+                "lon": 124.316082,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0059801",
+                "basis": "백과는 고조선·위만조선기 패수를 청천강이나 압록강으로 보는 견해를 나란히 소개한다. 고고학 논거는 청천강설에 붙어 있다. 이 점은 압록강 전체의 참조점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q55498",
+                "coordLabel": "압록강(하구 지점 좌표)",
+                "wikidataId": "Q55498",
+                "historySourceTitle": "한국민족문화대백과사전 '패수'",
+                "precision": "region",
+                "view": "압록강설(한국민족문화대백과사전이 병기한 견해)",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "probable"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-012",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "모량리와 모량부의 범위·출처 서술을 구분하고 발굴 자료가 없다고 했던 표현을 바로잡았다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 35.84899,
+                "lon": 129.10257,
+                "sourceUrl": "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=300",
+                "basis": "경주시 건천읍 지명유래는 모량리가 \"신라 六部村 중 세번째 茂山大樹村에 속했으며 '점량부(漸梁部)','모량부(牟梁部)' 라 불리었고\" 일연 당시에는 장복부로도 불렸다고 설명한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q498516",
+                "coordLabel": "경주시 건천읍",
+                "wikidataId": "Q498516",
+                "historySourceTitle": "경주시 '건천읍 지명유래'",
+                "precision": "region",
+                "view": "경주시 공식 지명유래 · 위키백과 모량부(경주 서촌=건천읍 일대)",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "probable"
+              }
+            ],
+            "after": [
+              {
+                "lat": 35.84899,
+                "lon": 129.10257,
+                "sourceUrl": "https://www.gyeongju.go.kr/open_content/ko/page.do?mnu_uid=300",
+                "basis": "경주시 건천읍 지명유래는 모량리가 \"신라 六部村 중 세번째 茂山大樹村에 속했으며 '점량부(漸梁部)','모량부(牟梁部)' 라 불리었고\" 일연 당시에는 장복부로도 불렸다고 설명한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q498516",
+                "coordLabel": "경주시 건천읍",
+                "wikidataId": "Q498516",
+                "historySourceTitle": "경주시 '건천읍 지명유래'",
+                "precision": "region",
+                "view": "경주시 지명유래(모량리)·위키백과(더 넓은 모량부의 범위)",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "note": {
+            "before": "효소왕대죽지랑조의 牟梁里는 신라 6부 가운데 모량부(점량부, 일연 당대의 장복부) 지역 마을이다. 경주시 공식 지명유래와 위키백과 '모량부'가 모두 오늘날 경주시 건천읍 모량리 일대로 설명하지만, 신라 당시 마을 범위를 특정한 발굴 비정 자료는 확인하지 못했다. 좌표는 건천읍 중심 참조점이므로 모량리 마을이나 유적의 정확한 위치가 아니다. 첫 번째 sample(王曆)은 인용 구간에 牟梁里가 없어(termInBody=false) evidence에서 제외했다.",
+            "after": "경주시 공식 지명유래는 건천읍 모량리를 설명한다. 더 넓은 모량부는 위키백과에서 건천읍·현곡면·서면·산내면에 걸친 지역으로 설명한다. 부와 리를 같은 범위로 다루지 않는다. 위키백과는 모량·방내리 도시유적과 월성 해자 목간을 근거로 들지만 이 조사는 발굴 보고서까지 직접 대조하지 않았다. 좌표는 건천읍 참조점이며 마을·유적 위치가 아니다."
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-014",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "낙산의 한자 표기 차이와 출처 범위를 기록했다."
+        ],
+        "changes": {
+          "note": {
+            "before": "낙산이대성조는 洛山이 서역 補陀洛伽山(보타락가산)에서 온 이름이며 동해 바닷가 굴이 있는 곳이라고 스스로 밝힌다. 민백 '낙산 홍련암'은 그 자리를 강원 양양군 강현면 전진리로, 위키백과 '낙산사'는 오봉산으로 적는다. 좌표는 낙산사 경내 참조점이므로 관음굴(홍련암)이나 낙산 산체 범위의 정확한 위치가 아니다. 창건 연도는 위키백과가 671년, 민백 홍련암이 672년으로 달라 place 수준 validFrom은 비워 두었다. 첫 번째 sample(흥륜사 관련)은 인용 구간에 洛山이 없어 evidence에서 제외했다.",
+            "after": "낙산이대성조는 洛山이 서역 補陀洛伽山(보타락가산)에서 온 이름이며 동해 바닷가 굴이 있는 곳이라고 스스로 밝힌다. 민백 '낙산 홍련암'은 그 자리를 강원 양양군 강현면 전진리로, 위키백과 '낙산사'는 오봉산으로 적는다. 좌표는 낙산사 경내 참조점이므로 관음굴(홍련암)이나 낙산 산체 범위의 정확한 위치가 아니다. 창건 연도는 위키백과가 671년, 민백 홍련암이 672년으로 달라 place 수준 validFrom은 비워 두었다. 첫 번째 sample(흥륜사 관련)은 인용 구간에 洛山이 없어 evidence에서 제외했다. 인용한 백과의 표제 한자는 駱山 紅蓮庵으로 원문의 洛山과 다르다. 양양 낙산 일대를 설명하는 항목이며 서울 낙산과 혼동하지 않는다. 洛山의 보타락가산 유래는 위키백과 낙산사에서 확인한 설명이다."
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-017",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "사찰 창건 연도를 산 지명에 적용한 오류를 고쳤다. 신화 후보를 실제 신화 인용이 있는 표제로 옮겼다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 37.095730555556,
+                "lon": 128.91523888889,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0050538",
+                "basis": "민백 '정암사'는 절이 강원도 정선군 고한읍 태백산에 있고, 문수가 자장에게 \"태백산 갈반지에서 만나자\"고 한 뒤 자장이 그곳에 창건해 석남원이라 했다고 서술한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q625254",
+                "coordLabel": "태백산",
+                "wikidataId": "Q625254",
+                "historySourceTitle": "한국민족문화대백과사전 '정암사'",
+                "precision": "region",
+                "view": "자장정률조 갈반지·석남원 문맥의 태백산 권역(강원·경북 경계)",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 36.998853,
+                "lon": 128.687497,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0024295",
+                "basis": "민백 '봉황산 부석사'는 경북 영주시 부석면 봉황산에 있는 절로 676년(문무왕 16) 의상이 왕명으로 창건했다고 서술한다. 다만 이 항목은 '태백산'을 언급하지 않아 삼국유사의 산 이름과 다르다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q3540839",
+                "coordLabel": "부석사(영주)",
+                "wikidataId": "Q3540839",
+                "historySourceTitle": "한국민족문화대백과사전 '봉황산 부석사'",
+                "precision": "site",
+                "view": "의상전교조 '歸太伯山 創浮石寺' 문맥의 영주 부석사",
+                "validFrom": 676,
+                "validTo": null,
+                "dateBasis": "민백 '봉황산 부석사': 676년(문무왕 16) 2월 의상 창건.",
+                "confidence": "probable"
+              },
+              {
+                "lat": 41.992777777778,
+                "lon": 128.07722222222,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0013553",
+                "basis": "민백 '단군 신화'는 환웅이 하늘에서 내려온 곳을 \"태백산(太白山 : 지금의 백두산)\"으로 적는다. 민백 '태백산' 항목도 단군신화의 태백산을 백두산으로 해석한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q107635",
+                "coordLabel": "백두산",
+                "wikidataId": "Q107635",
+                "historySourceTitle": "한국민족문화대백과사전 '단군 신화' · '태백산'",
+                "precision": "region",
+                "view": "고조선조 太伯山=백두산설(민백). 이번 sample의 자장·의상 문맥과는 다른 조목에 해당함",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "unverified"
+              }
+            ],
+            "after": [
+              {
+                "lat": 37.095730555556,
+                "lon": 128.91523888889,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0050538",
+                "basis": "민백 '정암사'는 절이 강원도 정선군 고한읍 태백산에 있고, 문수가 자장에게 \"태백산 갈반지에서 만나자\"고 한 뒤 자장이 그곳에 창건해 석남원이라 했다고 서술한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q625254",
+                "coordLabel": "태백산",
+                "wikidataId": "Q625254",
+                "historySourceTitle": "한국민족문화대백과사전 '정암사'",
+                "precision": "region",
+                "view": "자장정률조 갈반지·석남원 문맥의 태백산 권역(강원·경북 경계)",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 36.998853,
+                "lon": 128.687497,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0024295",
+                "basis": "민백 '봉황산 부석사'는 경북 영주시 부석면 봉황산에 있는 절로 676년(문무왕 16) 의상이 왕명으로 창건했다고 서술한다. 다만 이 항목은 '태백산'을 언급하지 않아 삼국유사의 산 이름과 다르다. 이 좌표는 의상전교조 문맥의 절 지점을 참고로 표시하며 산 자체의 위치를 확정하지 않는다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q3540839",
+                "coordLabel": "부석사(영주)",
+                "wikidataId": "Q3540839",
+                "historySourceTitle": "한국민족문화대백과사전 '봉황산 부석사'",
+                "precision": "approx",
+                "view": "의상전교조 '歸太伯山 創浮石寺' 문맥의 영주 부석사",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": "676년은 부석사 창건 연도이며 산 지명의 시작이 아니므로 기간에 쓰지 않는다.",
+                "confidence": "probable"
+              }
+            ]
+          },
+          "note": {
+            "before": "삼국유사의 太伯山은 한 곳이 아니다. 자장정률조(葛蟠地·石南院)와 의상전교조(浮石寺 창건)는 강원·경북 경계의 태백산 권역을 가리키는 것으로 읽히지만, 민백 '봉황산 부석사'는 부석사를 경북 영주 부석면 봉황산 소재로 적어 산 이름이 어긋난다. 민백 '태백산'은 \"伯과 白은 음가(音價)가 같으며\" 혼용된다고 하고, 민백 '단군 신화'는 고조선조의 太白山을 백두산으로 본다. 첫 번째 sample(말갈·발해)은 quote가 비어 있고 termInBody=false여서 그 문맥을 확인하지 못해 evidence에서 제외했다. 자장의 석남원=정암사(강원 정선군 고한읍)는 민백으로 확인했으나 위키데이터에 P625 좌표가 없어 후보로 넣지 않았다.",
+            "after": "자장정률·의상전교 원문에 해당하는 태백산 권역과 부석사 지점을 각각 참고로 표시한다. 부석사 창건 676년을 산 지명의 시작으로 쓰지 않는다. 백과 부석사 항목은 소재지를 영주 봉황산으로 적고 太伯山과의 연결을 설명하지 않으므로 절 좌표는 문맥의 근사 참조점이다. 신화 문맥이 없는 이 표제에서 백두산 후보를 빼고, 고조선조 인용이 있는 太伯 표제에 경쟁 견해로 옮겼다. 말갈·발해 표본은 본문에서 표기를 확인하지 못해 인용에서 제외했다."
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-023",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "실제 신화 인용에 묘향산·백두산 견해를 함께 두고, 태백산 산체 참조점의 precision을 맞췄다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 37.095730555556,
+                "lon": 128.91523888889,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0050538",
+                "basis": "민백 '태백산 정암사': \"강원도 정선군 고한읍 태백산(太白山)에 있는\" 절로, 문수보살이 자장에게 태백산 갈반지에서 만나자고 했고 자장이 그곳에 석남원을 세웠다고 전한다. 자장정률조의 '太伯 葛蟠地' 문맥에 대응하는 산.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q625254",
+                "coordLabel": "태백산(Taebaeksan, 해발 1,566.7m) 대표점",
+                "wikidataId": "Q625254",
+                "precision": "approx",
+                "view": "한국민족문화대백과사전(정암사 창건 전승)",
+                "historySourceTitle": "한국민족문화대백과사전 '태백산 정암사(太白山 淨巖寺)'",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 40.018611111111,
+                "lon": 126.33305555556,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%ED%83%9C%EB%B0%B1%EC%82%B0_(%EA%B3%A0%EC%A1%B0%EC%84%A0)",
+                "basis": "위키백과 '태백산 (고조선)': 일연은 삼국유사에서 태백산을 \"묘향산(妙香山)으로 추정\"했으나, 고려 중엽 이후 묘향산을 태백산이라 부른 점에서 시기가 맞지 않는다는 비판과 백두산설·대박산설이 함께 소개된다. 고조선조 太伯山에만 해당하는 견해.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q492781",
+                "coordLabel": "묘향산(Mount Myohyang) 대표점",
+                "wikidataId": "Q492781",
+                "precision": "region",
+                "view": "일연의 주석에 근거한 묘향산설(위키백과 정리, 기관 출처 아님)",
+                "historySourceTitle": "위키백과 '태백산 (고조선)'",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified"
+              }
+            ],
+            "after": [
+              {
+                "lat": 37.095730555556,
+                "lon": 128.91523888889,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0050538",
+                "basis": "민백 '태백산 정암사': \"강원도 정선군 고한읍 태백산(太白山)에 있는\" 절로, 문수보살이 자장에게 태백산 갈반지에서 만나자고 했고 자장이 그곳에 석남원을 세웠다고 전한다. 자장정률조의 '太伯 葛蟠地' 문맥에 대응하는 산. 좌표는 정암사 지점이 아니라 태백산 산체의 대표점이다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q625254",
+                "coordLabel": "태백산(Taebaeksan, 해발 1,566.7m) 대표점",
+                "wikidataId": "Q625254",
+                "precision": "region",
+                "view": "한국민족문화대백과사전(정암사 창건 전승)",
+                "historySourceTitle": "한국민족문화대백과사전 '태백산 정암사(太白山 淨巖寺)'",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable"
+              },
+              {
+                "lat": 40.018611111111,
+                "lon": 126.33305555556,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0058920",
+                "basis": "백과는 단군 신화의 태백산을 묘향산으로 보는 일연의 주석을 소개하고 백두산 해석도 제시한다. 이 좌표는 묘향산의 지역 참조점으로 신화 속 장소를 확정하지 않는다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q492781",
+                "coordLabel": "묘향산(Mount Myohyang) 대표점",
+                "wikidataId": "Q492781",
+                "precision": "region",
+                "view": "일연 주석의 묘향산 해석(백두산설과 병기)",
+                "historySourceTitle": "한국민족문화대백과사전 「태백산」",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified"
+              },
+              {
+                "lat": 41.992777777778,
+                "lon": 128.07722222222,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0058920",
+                "basis": "백과 「태백산」은 일연의 묘향산 주석을 소개한 뒤 단군 신화의 산을 백두산으로 해석한다. 신화의 현대 위치를 확정하는 대신 두 해석을 함께 표시한다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q107635",
+                "coordLabel": "백두산",
+                "wikidataId": "Q107635",
+                "historySourceTitle": "한국민족문화대백과사전 「태백산」",
+                "precision": "region",
+                "view": "백과가 제시한 단군 신화의 백두산 해석(일연의 묘향산 주석과 병기)",
+                "validFrom": null,
+                "validTo": null,
+                "dateBasis": null,
+                "confidence": "unverified"
+              }
+            ]
+          },
+          "note": {
+            "before": "한 표기가 최소 세 문맥에서 서로 다른 대상을 가리킨다. ① 고조선조의 '三危太伯'·'太伯山頂'은 환웅 강림 신화의 산으로, 일연은 태백산을 묘향산으로 보았으나 백두산설·평양 대박산설 등이 병존하며 위키백과 '태백산 (고조선)'은 한국 역사학계가 신화 지명의 현재 위치 비정에 큰 의미를 두지 않는다고 정리한다. 신화 지명을 현대의 한 유적으로 확정하지 않는다. ② 자장정률조의 '太伯 葛蟠地'와 '太伯山'은 민백 '태백산 정암사'가 전하는 강원 태백산(정선군 고한읍) 창건 전승과 대응한다. ③ 의상전교 찬의 '終南太伯'은 중국 종남산과 짝을 이루는 문학적 대구로, 여기의 太伯이 신라 태백산인지 중국 태백산(친링)인지는 이번 조사에서 출처로 가리지 못했다. 후보 두 건은 서로 다른 문맥·견해에 대응하므로 하나로 합치면 안 된다.",
+            "after": "고조선조 신화, 자장정률의 태백산 권역, 의상전교의 문학적 대구는 서로 다른 문맥이다. 자장 문맥에는 정암사가 있는 태백산 산체의 참조점을 둔다. 신화 문맥에는 백과가 소개한 일연 주석의 묘향산과 백두산 해석을 나란히 표시하며 신화 속 장소를 확정하지 않는다. 終南太伯이 신라의 산인지 중국 친링의 산인지는 출처로 가리지 못해 그 문맥에 해당하는 점을 추가하지 않았다."
+          },
+          "references": {
+            "before": [
+              "https://encykorea.aks.ac.kr/Article/E0050538",
+              "https://ko.wikipedia.org/wiki/%ED%83%9C%EB%B0%B1%EC%82%B0_(%EA%B3%A0%EC%A1%B0%EC%84%A0)"
+            ],
+            "after": [
+              "https://encykorea.aks.ac.kr/Article/E0050538",
+              "https://ko.wikipedia.org/wiki/%ED%83%9C%EB%B0%B1%EC%82%B0_(%EA%B3%A0%EC%A1%B0%EC%84%A0)",
+              "https://encykorea.aks.ac.kr/Article/E0058920"
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-028",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "좌표의 하구 한정어를 밝히고 역사 출처가 다루는 연도를 661~662년으로 한정했다."
+        ],
+        "changes": {
+          "candidates": {
+            "before": [
+              {
+                "lat": 38.6866,
+                "lon": 125.3,
+                "sourceUrl": "https://contents.nahf.or.kr/item/level.do?levelId=gt.d_0007_0010_0020_0020",
+                "basis": "동북아역사넷 '당군의 고구려 공격 과정'은 소정방군의 진격을 설명하며 \"패강은 대동강을 말하므로\"라고 적는다. 당군이 대동강 하구로 들어가 평양성으로 나아갔다는 서술.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q330618",
+                "coordLabel": "대동강(Taedong River) 대표점(P625 3개 중 첫 값)",
+                "wikidataId": "Q330618",
+                "precision": "region",
+                "view": "동북아역사재단 동북아역사넷",
+                "historySourceTitle": "동북아역사넷 '2. 당군의 고구려 공격 과정'",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable"
+              }
+            ],
+            "after": [
+              {
+                "lat": 38.6866,
+                "lon": 125.3,
+                "sourceUrl": "https://contents.nahf.or.kr/item/level.do?levelId=gt.d_0007_0010_0020_0020",
+                "basis": "동북아역사넷은 661~662년 당군의 평양성 공격 문맥에서 패강을 대동강으로 설명한다. 668년 도하 기사까지 직접 설명한 출처는 아니며 해당 기사는 별도 검토가 필요하다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q330618",
+                "coordLabel": "대동강 하구 좌표(Wikidata P625의 river mouth 한정어)",
+                "wikidataId": "Q330618",
+                "precision": "region",
+                "view": "동북아역사재단 동북아역사넷",
+                "historySourceTitle": "동북아역사넷 '2. 당군의 고구려 공격 과정'",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "probable"
+              }
+            ]
+          },
+          "note": {
+            "before": "표본 두 건은 모두 661~668년 당·신라의 고구려 평양성 공격 문맥이며, 동북아역사재단 자료는 이 전쟁 서술에서 \"패강은 대동강\"이라고 명시한다. 다만 浿江/浿水는 시대에 따라 지시 대상이 달라 고조선·한대 浿水(청천강·압록강·요하 등 여러 설)나 통일신라 패강진의 패강(예성강설 포함)과 같은 대상으로 다루면 안 된다. 세 번째 표본(668년 고구려 멸망)은 인용문에 표기가 없어 evidence에서 제외했다. Wikidata Q330618에는 P625가 셋 있어(38.6866/125.3, 40.3065063/126.9739294, 38.68611/125.26417) 여기서는 첫 값을 강의 대표점으로 썼고, 이는 도하 지점이나 전투 위치가 아니다.",
+            "after": "이 후보의 근거는 661~662년 당군의 평양성 공격을 설명하는 동북아역사넷 자료다. 668년 도하 기사는 같은 출처가 직접 다루지 않아 별도 검토 대상으로 남긴다. 좌표는 Wikidata가 하구로 구분한 점으로, 평양성 도하·전투 지점이 아니다. 다른 시대의 패수·패강과 자동으로 동일시하지 않는다."
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-030",
+        "review": "verify-samgukyusa-a/b",
+        "actions": [
+          "로컬 원문에서 王之都王儉을 확인하고 인용 범위를 바로잡았다. 인명 표본과 타이안현 후보를 제외하고 기관 출처의 학설들을 구분했다."
+        ],
+        "changes": {
+          "aliases": {
+            "before": null,
+            "after": [
+              "王儉"
+            ]
+          },
+          "candidates": {
+            "before": [
+              {
+                "lat": 39.016666666667,
+                "lon": 125.7475,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%EC%99%95%EA%B2%80%EC%84%B1",
+                "basis": "위키백과 '왕검성': \"평양설은 한국사학계의 일반적인 의견\"이며 사료와 고고 발굴에 근거한다고 하되, 평양 안에서도 낙랑토성설과 대동강 북쪽설로 나뉜다고 적는다. 좌표는 평양시 대표점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+                "coordLabel": "평양시 대표점",
+                "wikidataId": "Q18808",
+                "precision": "region",
+                "view": "평양설(위키백과가 한국사학계 일반적 견해로 소개)",
+                "historySourceTitle": "위키백과 '왕검성'",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified"
+              },
+              {
+                "lat": 41.38134,
+                "lon": 122.4242,
+                "sourceUrl": "https://ko.wikipedia.org/wiki/%EC%99%95%EA%B2%80%EC%84%B1",
+                "basis": "위키백과 '왕검성': 요동설은 사기·한서 주석의 \"요동군 험독현은 조선왕의 옛 도읍\" 기록을 근거로 왕검성을 랴오닝성 타이안현으로 비정한다고 소개한다. 좌표는 타이안현 대표점.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q152111",
+                "coordLabel": "台安县(랴오닝성 안산시) 대표점",
+                "wikidataId": "Q152111",
+                "precision": "region",
+                "view": "요동설(위키백과 정리, 소수설로 서술)",
+                "historySourceTitle": "위키백과 '왕검성'",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified"
+              }
+            ],
+            "after": [
+              {
+                "lat": 39.016666666667,
+                "lon": 125.7475,
+                "sourceUrl": "https://encykorea.aks.ac.kr/Article/E0039028",
+                "basis": "백과 「왕검성」은 고조선 도성의 위치가 확정되지 않았다고 하며 평양설·요동 험독현설·이동설을 소개한다. 이 점은 평양설의 현대 도시 참조점이며 성터 위치가 아니다.",
+                "coordSourceUrl": "https://www.wikidata.org/wiki/Q18808",
+                "coordLabel": "평양시 대표점",
+                "wikidataId": "Q18808",
+                "precision": "region",
+                "view": "백과에 소개된 평양설(요동설·이동설과 구별)",
+                "historySourceTitle": "한국민족문화대백과사전 「왕검성」",
+                "dateBasis": null,
+                "validFrom": null,
+                "validTo": null,
+                "confidence": "unverified"
+              }
+            ]
+          },
+          "evidence": {
+            "before": [
+              {
+                "chunkId": "chunk_samgukyusa_sy_001_0020_0020_0010",
+                "sourceId": "src-samgukyusa",
+                "locator": "卷 第一 › 紀異第一 › 古朝鮮王儉朝鮮 › 단군왕검이 아사달에 도읍하다",
+                "date": null,
+                "permalink": "https://db.history.go.kr/id/sy_001_0020_0020_0010",
+                "quote": "古朝鮮\n魏書云, “乃徃二千載有壇君王倹立都阿斯逹.開國號朝鮮, 與髙同時.”",
+                "quoteStart": 0,
+                "quoteEnd": 39,
+                "termInBody": true
+              },
+              {
+                "chunkId": "chunk_samgukyusa_sy_001_0020_0020_0020",
+                "sourceId": "src-samgukyusa",
+                "locator": "卷 第一 › 紀異第一 › 古朝鮮王儉朝鮮 › 환웅이 천하에 자주 뜻을 두어 인간세상을 구하고자 하다",
+                "date": null,
+                "permalink": "https://db.history.go.kr/id/sy_001_0020_0020_0020",
+                "quote": "軰食之不見日光百日, 便得人形.’ 熊虎得而食之忌三七日熊得女身, 虎不能忌而不得人身. 熊女者無與爲婚故每於壇樹下呪願有孕. 雄乃假化而㛰之. 孕生子號曰壇君王倹. 以唐髙即位五十年庚寅, 都平壤城始稱朝鮮. 又移都於白岳山阿斯逹, 又名弓 忽山又今旀逹. 御國一千五百年. 周虎王即位己卯封箕子於朝鮮, 壇君乃移於藏唐亰後還隠於阿斯逹爲山神, 壽一千九百八歳.”",
+                "quoteStart": 169,
+                "quoteEnd": 352,
+                "termInBody": true
+              },
+              {
+                "chunkId": "chunk_samgukyusa_sy_001_0020_0030_0010",
+                "sourceId": "src-samgukyusa",
+                "locator": "卷 第一 › 紀異第一 › 衛滿朝鮮 › 연나라 사람 위만이 망명하여 왕검에 도읍하다",
+                "date": null,
+                "permalink": "https://db.history.go.kr/id/sy_001_0020_0030_0010",
+                "quote": "魏滿朝鮮\n前漢 朝鮮傳云, “自始燕時常畧得真畨·朝鮮爲置吏築障. 秦滅燕屬遼東外徼. 漢興爲逺難守, 復修遼東故塞至浿水爲界屬燕. 燕王盧綰反入凶奴, 燕人衛滿亡命聚黨千餘人, 東走出塞渡浿水居秦故空地上下障. 稍伇屬真畨·朝鮮蠻夷及故燕·齊",
+                "quoteStart": 0,
+                "quoteEnd": 122,
+                "termInBody": false
+              }
+            ],
+            "after": [
+              {
+                "chunkId": "chunk_samgukyusa_sy_001_0020_0030_0010",
+                "sourceId": "src-samgukyusa",
+                "locator": "卷 第一 › 紀異第一 › 衛滿朝鮮 › 연나라 사람 위만이 망명하여 왕검에 도읍하다",
+                "date": null,
+                "permalink": "https://db.history.go.kr/id/sy_001_0020_0030_0010",
+                "quote": "出塞渡浿水居秦故空地上下障. 稍伇屬真畨·朝鮮蠻夷及故燕·齊亡命者, 王之都王儉. 以兵威侵降其旁小邑, 真畨·臨屯皆来服屬方數千里.",
+                "quoteStart": 92,
+                "quoteEnd": 159,
+                "termInBody": false
+              }
+            ]
+          },
+          "note": {
+            "before": "지명으로 쓰인 용례는 위만조선조의 도읍 '王儉(城)'이며, 고조선조의 '壇君王倹'은 인명이므로 같은 표기라도 지시 대상이 다르다. 왕검성의 위치는 확정되지 않았다. 위키백과 '왕검성'은 평양설을 한국사학계의 일반적 의견으로 소개하면서도 평양 안에서 낙랑토성설·대동강 북쪽설로 갈린다고 하고, 요동설(요동군 험독현=랴오닝성 타이안현)과 이동설을 함께 든다. 이번 조사에서 기관·학술 출처로 각 설의 원문을 확인하지 못해 위키백과 서술에 의존했으므로 한계가 있다. 아래 좌표는 어느 것도 성터 위치가 아니라 각 설이 가리키는 광역 참조점이다.",
+            "after": "지명 색인 王倹은 위만조선조 원주에 나타나며 같은 청크 본문은 王之都王儉이라 적는다. 본문을 다시 읽어 이 대목을 포함하도록 인용 범위를 넓혔고 인명 壇君王倹 표본 두 건은 지명 근거에서 제외했다. 검색 별칭 王儉은 이 원문 표기를 찾기 위한 것이다. 왕검성은 평양설·요동설·이동설이 병존한다. 현대 타이안현으로 특정할 학술 근거를 확인하지 못해 그 점은 제외하고, 평양설만 현대 도시 참조점으로 표시한다. 나머지 견해를 부정하거나 위치를 확정하는 뜻은 아니다."
+          },
+          "references": {
+            "before": [
+              "https://ko.wikipedia.org/wiki/%EC%99%95%EA%B2%80%EC%84%B1"
+            ],
+            "after": [
+              "https://ko.wikipedia.org/wiki/%EC%99%95%EA%B2%80%EC%84%B1",
+              "https://encykorea.aks.ac.kr/Article/E0039028"
+            ]
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-001",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-002",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-004",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-006",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-008",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-015",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-016",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-018",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-021",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-022",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-024",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-025",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-026",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-029",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-032",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-033",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-034",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-035",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-037",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-038",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      },
+      {
+        "placeId": "place-samgukyusa-040",
+        "actions": [
+          "AI 조사 초안의 상태를 인간 승인·위치 확정 등급으로 두지 않는다."
+        ],
+        "changes": {
+          "status": {
+            "before": "established",
+            "after": "majority"
+          },
+          "confidence": {
+            "before": "confirmed",
+            "after": "probable"
+          }
+        }
+      }
+    ]
+  },
+  "files": {
+    "goryeosa": {
+      "sha256": "06ea07bf32ceb4f8863b827c192495cbeafc76a0eaf04fe20187ab604aaf4bc2"
+    },
+    "samgukyusa": {
+      "sha256": "b97d263dabfc8c3c73711d25f3e79478c3dae2f3c7ad9c54c7e23864875db08e"
+    }
+  }
+}

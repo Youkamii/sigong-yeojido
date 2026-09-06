@@ -195,6 +195,8 @@ def places_with_mentions() -> dict:
         m: dict[str, int] = {}
         if names:
             for c in idx["chunks"]:
+                if pl.get("sourceId") and c.get("sourceId") != pl["sourceId"]:
+                    continue
                 if matches_names(c, names, idx["countryTerms"]):
                     sid = c.get("sourceId") or "?"
                     m[sid] = m.get(sid, 0) + 1
@@ -394,7 +396,7 @@ def merged_places() -> dict:
                     if name != target.get("label") and name not in target.setdefault("aliases", []):
                         target["aliases"].append(name)
                 continue
-            rec = {k: pl[k] for k in ("id", "label", "labelKo", "kind", "status", "candidates", "note", "confidence", "count", "indexType", "relatedTo", "references", "validFrom", "validTo") if k in pl}
+            rec = {k: pl[k] for k in ("id", "label", "labelKo", "kind", "status", "candidates", "note", "confidence", "count", "indexType", "relatedTo", "references", "validFrom", "validTo", "sourceId", "evidence") if k in pl}
             rec["origin"] = "ai"          # 조사 에이전트가 모아 검증자가 대조한 것 — 사람이 확인한 연결 아님
             rec["from"] = pl.get("_from")
             rec["aliases"] = list(pl.get("aliases") or [])
