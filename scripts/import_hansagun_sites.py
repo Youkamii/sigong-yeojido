@@ -89,8 +89,9 @@ def main():
         'China Historical GIS, Harvard University and Fudan University. [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).\n\n'+
         '레코드 hvd_112638·112640·112641·112642의 필드를 발췌해 JSON으로 옮겼다. 학술 GIS의 재구성 점이며 고고 유적의 실측점으로 표시하지 않는다. '+
         '서로 다른 시기의 현도군 기록은 별도로 유지한다. 임둔·현도·낙랑의 원 present_location과 국가 코드가 함께 남아 있다. '+
-        '기간 코드 0/3과 음수 연도 체계가 미확인이라 연도 필터에서는 기간 미상으로 보이며 상세에 원 기간을 적었다. '+
-        '진번은 이번에 확보한 레코드가 없다. 수록 자료를 다른 사료의 같은 군·유적과 자동 병합하지 않는다.'))
+        '최초 적재 때 기간 코드 0/3과 음수 연도 체계를 확인하지 못해 연도 필터에서는 기간 미상으로 보이며 상세에 원 기간을 적었다. '+
+        '진번은 이번에 확보한 레코드가 없다. 수록 자료를 다른 사료의 같은 군·유적과 자동 병합하지 않는다.\n\n'+
+        '2026-09-07 추가 확인: 공개 TGAZ 초기 적재 SQL에서 코드 3은 왕의 칭호나 연호를 따른다는 설명이 있다. 코드 0은 설명 문자열이 비어 있고, 예전 할당 값이 비었던 경우는 8로 따로 적혀 있다. 운영 코드표와의 일치·음수 연도 체계·종료연도 0의 뜻은 미확인이므로 원 기간과 필터를 유지한다. [확인한 파일·커밋·한계](https://github.com/Youkamii/sigong-yeojido/blob/main/docs/research/chgis-date-codes-49.md).'))
     for eid,fields in entities.items():write_same(args.data/'entities/place'/(eid+'.md'),markdown(fields,'해당 자료의 장소 표기를 가리킨다. 다른 사료의 같은 이름과 자동 병합하지 않는다.'))
     for sid,source_rows in rows.items():write_same(args.data/'sources'/sid.removeprefix('src-')/'chunks.jsonl',''.join(json.dumps(r,ensure_ascii=False,sort_keys=True)+'\n' for r in source_rows))
     groups=defaultdict(list)
