@@ -50,6 +50,7 @@ from frontmatter import parse_front_matter
 from graph_query import neighborhood, locations, GraphUnavailable
 from chat import answer as chat_answer, ChatUnavailable
 from time_query import time_claims
+from people_query import people
 from comparison_query import comparison
 from history_map import historical_features
 from citation_samples import citation_samples
@@ -521,6 +522,15 @@ class Handler(BaseHTTPRequestHandler):
                 self._json({'error':str(exc)},400)
             except GraphUnavailable as exc:
                 self._json({'error':str(exc)},503)
+            return
+        if path == '/api/people':
+            srcs=q.get('sources',[None])[0]
+            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            try:
+                self._json(people(q.get('polity',['polity-silla'])[0],q.get('from',[501])[0],q.get('to',[600])[0],
+                                  sources,q.get('origin',['all'])[0],q.get('limit',[50])[0],q.get('offset',[0])[0]))
+            except ValueError as exc:self._json({'error':str(exc)},400)
+            except GraphUnavailable as exc:self._json({'error':str(exc)},503)
             return
         if path == '/api/locations':
             srcs=q.get('sources',[None])[0]

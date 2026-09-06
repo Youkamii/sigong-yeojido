@@ -290,6 +290,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div class="sect">찾기</div>
       <input id="q" class="q" type="search" placeholder="지명 · 인물 · 나라 · 사건" autocomplete="off" aria-label="찾기">
       <div id="qList" class="qlist"></div>
+      <details id="peopleSearch"></details>
       <div class="sect">주 렌즈</div>
       <select id="lensSelect" class="q" aria-label="주 렌즈"></select>
       <p id="lensNote" class="empty"></p>
@@ -343,6 +344,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 import { Timeline } from './app/timeline.js';
 import { groupSources } from './app/source-groups.js';
 import { GraphExplorer } from './app/graph.js';
+import { PeopleSearch } from './app/people.js';
 import { EvidenceChat } from './app/chat.js';
 import { SourceComparison } from './app/compare.js';
 import { HistoricalMap } from './app/history-map.js';
@@ -526,6 +528,7 @@ async function load(){
   state.geo = g;
   state.sources = s.sources || [];
   state.entities = en.entities || [];
+  peopleSearch.setPolities(state.entities);
   // 사료별 연도 밀도 — 타임라인 막대 안 띠. 없어도 화면은 뜬다
   try{ const dn = await fetch('/api/density').then(r=>r.json()); state.density = dn.sources || {}; }catch(e){ state.density = {}; }
   state.sources.forEach(src => { src.density = state.density[src.id] || null; });
@@ -570,6 +573,9 @@ document.getElementById('noSources').onclick=()=>{state.on.clear();sourceSelecti
 
 // ── 찾기 — 지명은 지도에서, 인물·나라·사건·관직은 주장(Claim)으로 이어진다 ──
 const TYPE_KO = {Place:'지명', Person:'인물', Polity:'나라', Event:'사건', Office:'관직', Organization:'관서·조직', TimeSpan:'시점', Location:'좌표', Conflict:'충돌'};
+const peopleSearch=new PeopleSearch(document.getElementById('peopleSearch'),{
+  filters:()=>({sources:state.on,origin:state.origin}),select:id=>select(id),
+});
 function searchAll(text){
   const t = text.trim().toLowerCase();
   if(!t) return [];
@@ -627,6 +633,7 @@ const yearText = y => y < 0 ? `기원전 ${-y}년` : `서기 ${y}년`;
 const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
 let yearSeq = 0, yearTimer = 0, panelSeq = 0;
 function refreshEvidence(){
+  peopleSearch.filtersChanged();
   if(state.mode==='compare')compareView?.show();
   chatView?.filtersChanged();
   refreshTimeClaims();
@@ -1088,6 +1095,7 @@ async function select(id, reveal = true, graphNode = null){
           ${c.status && c.status !== 'draft' ? `<span class="badge st">${esc1(c.status)}</span>` : ''}</div>
         ${q}
         <div class="srcline">${where}${c.note ? `<br><span class="cl-note">${esc1(c.note)}</span>` : ''}</div>
+        <button class="card-btn" data-claim-chunk="${esc1(c.citesChunk)}">인용한 원문 열기</button>
       </div>`;
     }).join('') : `<p class="empty" style="margin-top:10px">${state.origin === 'human' ? '사람이 작성한 것으로 기록된 주장이 없다' : '현재 사료 선택에 맞는 주장이 없다'}${cl.allClaims ? ` (전체 주장 ${cl.allClaims}건)` : ''}.</p>`;
 
@@ -1117,6 +1125,8 @@ async function select(id, reveal = true, graphNode = null){
 
 // ── 전환 ──
 document.getElementById('evi').addEventListener('click',event=>{
+  const cited=event.target.closest('[data-claim-chunk]');
+  if(cited){showChunk(cited.dataset.claimChunk);return;}
   const chunk=event.target.closest('[data-candidate-chunk]');
   const source=event.target.closest('[data-candidate-source]');
   if(chunk)showChunk(chunk.dataset.candidateChunk);
