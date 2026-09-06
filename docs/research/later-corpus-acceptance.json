@@ -1,0 +1,661 @@
+{
+  "verifiedAtUtc": "2026-09-06T05:49:55.291216+00:00",
+  "applicationCommit": "c28c59ca5cbbafcc0c9110a187709b030993e192",
+  "animationHarnessCommit": "ee99c8a",
+  "production": {
+    "oldHead": "bc9f62e22f0373b6fa954c678991c1067affe09e",
+    "finbridgeBefore": "LISTEN 0      2048   127.0.0.1:8891 0.0.0.0:* users:((\"python\",pid=100364,fd=13))",
+    "preparedFiles": {
+      "seungjeongwon-ilgi/annotations.jsonl": {
+        "sha256": "2575e2184504d655ede58b6a0011728566fd52191d90cb2387f049ef00f75a3c",
+        "bytes": 22760713
+      },
+      "seungjeongwon-ilgi/chunks.jsonl": {
+        "sha256": "05b47e9382ac00d5636449225d7c9e965661f70c2de6c4089a6ad3f136724c33",
+        "bytes": 3680219071
+      },
+      "seungjeongwon-ilgi/editorial-marks.jsonl": {
+        "sha256": "12e1f5912e51b327aa2a4b1bb3c644c3629423ed0120ed482ef7d7019598049c",
+        "bytes": 28907560
+      },
+      "seungjeongwon-ilgi/index-terms.jsonl": {
+        "sha256": "9e4c8dacafac6aa902bdc90da08c80a6baa99814c13314b205b87ee89be8b789",
+        "bytes": 962503573
+      },
+      "bibyeonsa-deungnok/annotations.jsonl": {
+        "sha256": "959ac956b64280f4454520d782e22ad84015aa28e675fb41f2919130206b49ac",
+        "bytes": 5008766
+      },
+      "bibyeonsa-deungnok/chunks.jsonl": {
+        "sha256": "2b5c596a1739bea824756605ea37fb7d22f3a7073b3176a64c89d1028392479e",
+        "bytes": 142903298
+      },
+      "bibyeonsa-deungnok/index-terms.jsonl": {
+        "sha256": "30cba166c71538b3336a13ec9304e3eb524189e9ba5e5f3d9c69a9284e696114",
+        "bytes": 96334
+      },
+      "sillok-wza/annotations.jsonl": {
+        "sha256": "1ae82893975c86f38b2b2a39b546df2e03d254c338fb023ba77bc990e9f84078",
+        "bytes": 750806
+      },
+      "sillok-wza/chunks.jsonl": {
+        "sha256": "12d793ad4939a89af047d48aebb6745ad85418611936ecbb2eb315dba6e60d19",
+        "bytes": 61544786
+      },
+      "sillok-wza/index-terms.jsonl": {
+        "sha256": "a1f641accd14ea8b073e9979da0cb0f6c8be745c776fd092ad9cb2e09587644b",
+        "bytes": 9139542
+      },
+      "sillok-wzb/annotations.jsonl": {
+        "sha256": "025d43956b949651e7e60488cc83c5378ce2658f97e6f4fa0f87c3b792996612",
+        "bytes": 57810
+      },
+      "sillok-wzb/chunks.jsonl": {
+        "sha256": "c82e1e81457d222fe8640c5909321f9a4026c1d563388cacd1d1631564c9a482",
+        "bytes": 3118148
+      },
+      "sillok-wzb/index-terms.jsonl": {
+        "sha256": "8d4d94e4416ab23fd6fdcedcd8a15857a26f7184a4d299c2320d656624c716d1",
+        "bytes": 637910
+      },
+      "sillok-wzc/annotations.jsonl": {
+        "sha256": "bc789a15e2089dc9b283c185988621c1d76e1d40b3c62143463be3d096954d71",
+        "bytes": 110431
+      },
+      "sillok-wzc/chunks.jsonl": {
+        "sha256": "4d23f5f59674581218d9dc516b83d72284b36bb442fa9ba6d4a3e6263d89986e",
+        "bytes": 7143175
+      },
+      "sillok-wzc/index-terms.jsonl": {
+        "sha256": "37b6d5b35642ce549c70e42067f19c2162f4c280e753e8e93c01636d3f0ddc8a",
+        "bytes": 784111
+      }
+    },
+    "stoppedStage": 201200,
+    "stoppedWatcher": 192373,
+    "stoppedViewer": 197102,
+    "viewer": 202873,
+    "watcher": 202874,
+    "head": "c28c59ca5cbbafcc0c9110a187709b030993e192",
+    "readySeconds": 352.94,
+    "sources": 955,
+    "chunks": 2566920,
+    "places": 140,
+    "entities": 32,
+    "claims": 86,
+    "probeCorrection": "Initial scratch check queried /api/claims without a subject (empty by contract). Corrected read-only check uses allClaims from a subject query; services were not restarted.",
+    "triples": 17136,
+    "ttl": {
+      "bytes": 802750,
+      "sha256": "c0b88e5099cb991415f1c187f519e90b59941df3c123778ac9974071bd381b53"
+    },
+    "verifiedNewJsonl": 16,
+    "verifiedExistingAnnalsJsonl": 90,
+    "viewerMemory": [
+      "VmHWM:\t 3226360 kB",
+      "VmRSS:\t 3226360 kB"
+    ],
+    "status": "",
+    "finbridgeAfter": "LISTEN 0      2048   127.0.0.1:8891 0.0.0.0:* users:((\"python\",pid=100364,fd=13))",
+    "stageStopped": true,
+    "publicUrl": "https://undertaken-coleman-interests-bruce.trycloudflare.com",
+    "publicSources": 955,
+    "publicChunks": 2566920
+  },
+  "browser": {
+    "viewer": {
+      "url": "http://127.0.0.1:8870/?q=low",
+      "checks": {
+        "gate_visible": {
+          "passed": true,
+          "evidence": "url(\"http://127.0.0.1:8870/assets/daedong-2400.jpg\")"
+        },
+        "map_land_drawn": {
+          "passed": true,
+          "evidence": "lit 62693/135207"
+        },
+        "map_pick_opens_evidence": {
+          "passed": true,
+          "evidence": "{\"label\": \"평양\", \"len\": 1153}"
+        },
+        "entity_search_shows_claims": {
+          "passed": true,
+          "evidence": "{\"found\": true, \"label\": \"광개토왕\", \"claims\": 13}"
+        },
+        "source_card_opens": {
+          "passed": true,
+          "evidence": "{\"found\": true, \"label\": \"삼국사기\", \"facts\": 7, \"hasLicense\": true, \"hasYears\": true}"
+        },
+        "timeline_mounted": {
+          "passed": true,
+          "evidence": "{\"mounted\": true, \"tracks\": 4, \"hidden\": 951, \"groupRows\": 15, \"groups\": 15, \"srcs\": 955, \"before\": \"414\", \"after\": \"1361\"}"
+        },
+        "timeline_click_changes_year": {
+          "passed": true,
+          "evidence": "414 -> 1361"
+        },
+        "year_records_open": {
+          "passed": true,
+          "evidence": "{\"ok\": true, \"year\": \"918\", \"h3\": \"서기 918년\", \"cards\": 57, \"btn\": \"이 해의 기록 57\"}"
+        },
+        "three_loaded": {
+          "passed": true,
+          "evidence": "loaded"
+        },
+        "three_draws": {
+          "passed": true,
+          "evidence": "calls 1087 tris 91487"
+        },
+        "three_pick_opens_evidence": {
+          "passed": true,
+          "evidence": "국내성 @ [471, 292]"
+        },
+        "console_errors_zero": {
+          "passed": true,
+          "evidence": "0"
+        }
+      },
+      "console": [],
+      "scene": {
+        "map": {
+          "w": 724,
+          "h": 747,
+          "litSamples": 62693,
+          "samples": 135207
+        },
+        "mapPick": {
+          "label": "평양",
+          "len": 1153
+        },
+        "entitySearch": {
+          "found": true,
+          "label": "광개토왕",
+          "claims": 13
+        },
+        "sourceCard": {
+          "found": true,
+          "label": "삼국사기",
+          "facts": 7,
+          "hasLicense": true,
+          "hasYears": true
+        },
+        "timeline": {
+          "mounted": true,
+          "tracks": 4,
+          "hidden": 951,
+          "groupRows": 15,
+          "groups": 15,
+          "srcs": 955,
+          "before": "414",
+          "after": "1361"
+        },
+        "yearPanel": {
+          "ok": true,
+          "year": "918",
+          "h3": "서기 918년",
+          "cards": 57,
+          "btn": "이 해의 기록 57"
+        },
+        "three": {
+          "quality": "low",
+          "cam": [
+            -86,
+            276,
+            162
+          ],
+          "zoom": 0.98,
+          "rim": 120,
+          "calls": 1087,
+          "tris": 91487,
+          "lights": [
+            [
+              "DirectionalLight",
+              3.3
+            ],
+            [
+              "HemisphereLight",
+              1.15
+            ],
+            [
+              "DirectionalLight",
+              0.25
+            ]
+          ],
+          "env": true,
+          "picks": 168,
+          "label": {
+            "hasMap": true,
+            "img": [
+              512,
+              128
+            ],
+            "scale": [
+              30,
+              7.5,
+              1
+            ]
+          },
+          "sea": null
+        },
+        "threePick": {
+          "screen": [
+            471,
+            292
+          ],
+          "expected": "국내성",
+          "label": "국내성"
+        }
+      }
+    },
+    "corpus": {
+      "sources": {
+        "seungjeongwon-ilgi": {
+          "chunks": 2001115,
+          "sourceCard": true,
+          "toggle": true,
+          "years": [
+            {
+              "year": 1623,
+              "total": 2701,
+              "seconds": 0.079
+            },
+            {
+              "year": 1910,
+              "total": 879,
+              "seconds": 0.117
+            }
+          ]
+        },
+        "bibyeonsa-deungnok": {
+          "chunks": 93801,
+          "sourceCard": true,
+          "toggle": true,
+          "years": [
+            {
+              "year": 1616,
+              "total": 3,
+              "seconds": 0.085
+            },
+            {
+              "year": 1892,
+              "total": 374,
+              "seconds": 0.117
+            }
+          ]
+        },
+        "sillok-wza": {
+          "chunks": 28520,
+          "sourceCard": true,
+          "toggle": true,
+          "years": [
+            {
+              "year": 1863,
+              "total": 95,
+              "seconds": 0.079
+            },
+            {
+              "year": 1907,
+              "total": 300,
+              "seconds": 0.117
+            }
+          ]
+        },
+        "sillok-wzb": {
+          "chunks": 1430,
+          "sourceCard": true,
+          "toggle": true,
+          "years": [
+            {
+              "year": 1907,
+              "total": 295,
+              "seconds": 0.075
+            },
+            {
+              "year": 1910,
+              "total": 201,
+              "seconds": 0.117
+            }
+          ]
+        },
+        "sillok-wzc": {
+          "chunks": 3683,
+          "sourceCard": true,
+          "toggle": true,
+          "years": [
+            {
+              "year": 1910,
+              "total": 60,
+              "seconds": 0.082
+            },
+            {
+              "year": 1928,
+              "total": 5,
+              "seconds": 0.115
+            }
+          ]
+        }
+      },
+      "errors": []
+    },
+    "groups": {
+      "groupCollapse": true,
+      "allOff": true,
+      "partialSelection": true,
+      "domainPreserved": true,
+      "allRestored": true,
+      "sourceCard": true,
+      "errors": []
+    },
+    "panel": {
+      "claimsBeforeSearch": true,
+      "latestSourceRemains": true,
+      "controlledMentionsResponse": true,
+      "realClaimsAndSourceCards": true,
+      "errors": []
+    },
+    "3d": {
+      "cameras": [
+        {
+          "camera": "initial",
+          "labels": 24,
+          "overlaps": 0,
+          "ids": [
+            "place-pyongyang",
+            "place-gyeongju",
+            "place-yodong",
+            "place-hansan",
+            "place-hyeondo",
+            "place-wansan",
+            "place-goryeosa-003",
+            "place-goryeosa-033",
+            "place-haseo",
+            "place-jukryeong",
+            "place-goryeosa-002",
+            "polity-wae",
+            "polity-mahan",
+            "place-goryeosa-011",
+            "place-paegang",
+            "place-goryeosa-010",
+            "place-goryeosa-019",
+            "place-goryeosa-017",
+            "place-goryeosa-015",
+            "place-goryeosa-032",
+            "place-usu",
+            "place-salsu",
+            "place-sangju-silla",
+            "place-bugwon"
+          ]
+        },
+        {
+          "camera": "rotate",
+          "labels": 24,
+          "overlaps": 0,
+          "ids": [
+            "place-pyongyang",
+            "place-gyeongju",
+            "place-yodong",
+            "place-hansan",
+            "place-hyeondo",
+            "place-wansan",
+            "place-goryeosa-003",
+            "place-goryeosa-033",
+            "place-haseo",
+            "place-jukryeong",
+            "place-goryeosa-002",
+            "polity-wae",
+            "polity-mahan",
+            "place-goryeosa-011",
+            "place-paegang",
+            "place-goryeosa-016",
+            "place-goryeosa-010",
+            "place-goryeosa-019",
+            "place-goryeosa-017",
+            "place-goryeosa-015",
+            "place-goryeosa-032",
+            "place-usu",
+            "place-salsu",
+            "place-sabi"
+          ]
+        },
+        {
+          "camera": "zoom",
+          "labels": 24,
+          "overlaps": 0,
+          "ids": [
+            "place-pyongyang",
+            "place-gyeongju",
+            "place-hansan",
+            "place-wansan",
+            "place-goryeosa-003",
+            "place-haseo",
+            "place-jukryeong",
+            "polity-wae",
+            "polity-mahan",
+            "place-goryeosa-011",
+            "place-paegang",
+            "place-goryeosa-016",
+            "place-goryeosa-010",
+            "place-namcheon",
+            "place-goryeosa-019",
+            "place-goryeosa-029",
+            "place-goryeosa-017",
+            "place-goryeosa-032",
+            "place-usu",
+            "place-gangju",
+            "place-salsu",
+            "place-sabi",
+            "place-amnok",
+            "place-jolbon"
+          ]
+        }
+      ],
+      "selectedVisible": "place-goryeosa-001",
+      "materializeStartMin": 0,
+      "materializeCompleted": true,
+      "allSourcesOffLabels": 0,
+      "errors": []
+    }
+  },
+  "localVerification": {
+    "pythonTestsPassed": 65,
+    "javascriptTestsPassed": 9,
+    "validateFixturesPassed": 8,
+    "validateEndToEndPassed": true,
+    "localSourceCards": 955,
+    "localChunks": 48888
+  },
+  "build": {
+    "triples": 17136,
+    "claims": 86,
+    "digestsMatched": 86,
+    "failures": 0,
+    "maxRssKiB": 571784,
+    "elapsedSeconds": 94.81,
+    "measurementScope": "full staging corpus before production deployment",
+    "previousCorpusTtlByteIdentical": true
+  },
+  "preservation": {
+    "originalThreeCorporaJsonlByteIdentical": 9,
+    "newJsonlHashesVerifiedInProduction": 16,
+    "existingAnnalsJsonlHashesVerifiedInProduction": 90,
+    "fantologyCoreAndVendorUnchangedSince": "56aa0c3"
+  },
+  "research": [
+    {
+      "task": "goryeosa-1",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "12dc6fb3-fab2-4fd5-8174-9c9b8c8f595f",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "goryeosa-2",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "0fafec82-96c9-48a4-9823-60f53d3197df",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "goryeosa-3",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "3f90ea38-6b2f-4924-aa98-5f07d96ec9e4",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "goryeosa-4",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "4cd6eedf-d9f8-4511-a1a2-fe4a048befe1",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "samgukyusa-1",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "b212d6d4-c858-42b5-9f13-577068551794",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "samgukyusa-2",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "2df2c909-396a-40b1-852c-1c762afa8240",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "samgukyusa-3",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "bfede448-6651-4771-8a96-861db3e438c8",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "samgukyusa-4",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "785bf032-dc82-4a24-a29d-a07e2c8966d7",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "verify-goryeosa",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "1da3a299-f692-4721-a3ef-1365476590cd",
+      "exitCode": null,
+      "metadataRecoveredFromEvents": true
+    },
+    {
+      "task": "verify-samgukyusa-a",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "a0a03959-37aa-4c12-a804-f84613f03d00",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "verify-samgukyusa-b",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "af3fe597-77c4-40ac-8329-b2562bb563ce",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "bulk-next-retry",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "ca91f51d-549a-46f0-bba9-4e012366a40d",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "corpus-cards",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "9f7d395b-ec89-43d8-965f-3c0dccdcbfe3",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "date-36",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "63f879c1-7263-4778-ad6d-88b46931e2ca",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    },
+    {
+      "task": "identity-35",
+      "modelsObserved": [
+        "claude-opus-5"
+      ],
+      "effort": "max",
+      "sessionId": "6bee1548-9a70-4c0e-a179-f54f2e558b8b",
+      "exitCode": 0,
+      "metadataRecoveredFromEvents": null
+    }
+  ],
+  "ci": {
+    "githubActionsRuns": 0,
+    "applicationCommitCheckRuns": 0,
+    "status": "NOT_RUN"
+  },
+  "remaining": [
+    "Pyongyang spelling identity lacks direct evidence; aliases retained without a new Claim.",
+    "NIKH L suffix official meaning is unconfirmed; raw dates unchanged.",
+    "Three NIKH web permalink comparisons and web/bulk character comparison: NOT_RUN (robots).",
+    "Institutional inquiry draft is unsent; licensing inquiry remains a user decision.",
+    "North Korean own-scholarship access remains unresolved in issue #12.",
+    "Existing place-gungnae missing entity-shell warning remains; candidate skipped in TTL.",
+    "No reboot autostart; viewer cold indexing took 352.94 seconds."
+  ],
+  "screenshots": {
+    "viewer-production-3d.png": {
+      "bytes": 186245,
+      "sha256": "5bc68b4b6d742b598df0ab66d3f46f6121a33289af624eaa42ab73e92d08eefa",
+      "visuallyInspected": true
+    },
+    "viewer-production-seungjeongwon.png": {
+      "bytes": 318747,
+      "sha256": "7929427b9303a46ac71af3256f1e0d08c63c1f6b15c33adc7491b2ea2617e069",
+      "visuallyInspected": true
+    }
+  }
+}

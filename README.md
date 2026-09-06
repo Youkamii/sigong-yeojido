@@ -18,12 +18,19 @@
 | 조선왕조실록 | 30 | 389,483 | [실록 적재](docs/research/sillok-ingestion.md) |
 | 한국고대금석문 | 823 | 3,195 | [금석문 적재](docs/research/geumseokmun-ingestion.md) |
 | 한국고대사료집성 | 92 | 8,689 | [집성 적재](docs/research/jipseong-ingestion.md) |
-| **c2 합계** | **949** | **438,370** | |
+| 단군 표기 설명(백과사전 짧은 인용) | 1 | 1 | [사료 카드](data/sources/encykorea-dangun.md) |
+| 승정원일기 | 1 | 2,001,115 | [승정원일기 적재](docs/research/seungjeongwon-ilgi-ingestion.md) |
+| 비변사등록 | 1 | 93,801 | [비변사등록 적재](docs/research/bibyeonsa-deungnok-ingestion.md) |
+| 고종실록·순종실록·순종실록부록 | 3 | 33,633 | [고순종실록 적재](docs/research/gosunjong-sillok-ingestion.md) |
+| **c2 합계** | **955** | **2,566,920** | |
 
-**새 Git 클론에는 카드 949개와 chunks 48,887개가 있다.** 실록 JSONL 약 801 MiB는 Git 밖의 c2
-`data/sources/sillok-*/`에 보관한다. 새 환경에서는 위 실록 재현 명령으로 생성한다. 금석문·집성의 원문 JSONL은 Git에 있다.
+**새 Git 클론에는 카드 955개와 chunks 48,888개가 있다.** 실록 30종과 새 후대 사료의 JSONL은 Git 밖의 c2
+`data/sources/sillok-*/`, `seungjeongwon-ilgi/`, `bibyeonsa-deungnok/`에 보관한다.
+새 환경에서는 각 적재 문서의 명령으로 생성한다. 파일별 SHA256·독립 XML 집계·두 번 추출한 결과는 Git에 있다.
+금석문·집성의 원문 JSONL은 Git에 있다.
 집성은 ZIP에 있는 92종의 한국 관련 기사 발췌이며 원 사서 전체가 아니다. 포털 설명의 95종과 차이는 적재 문서에 기록했다.
-claims 85개·지명 60개·Conflict 1건, c2 Fuseki 17,008 triples를 검증했다.
+claims 86개·지명 140개·Conflict 1건, c2 Fuseki 17,136 triples를 검증했다.
+추가 지명 80개는 사료별 조사 후보다. 단군 표기 연결도 근거를 붙인 AI 초안이며, 엔티티를 자동으로 합치지 않는다.
 
 ## 구조
 
@@ -60,6 +67,9 @@ c2에서 자동 재적재를 계속 실행하려면 저장소 루트에서
 검증에 실패하면 기존 Fuseki 그래프를 유지하고 다음 확인 때 재시도한다. 일반 실행은 digest를 기록하지 않는다.
 Fuseki 저장 방식은 인메모리를 유지한다. 서버나 감시 명령을 다시 띄우면 데이터에서 재적재한다.
 빌더 코드를 변경했을 때는 감시 명령도 다시 시작한다. 재부팅 후 자동 기동은 아직 설정하지 않았다.
+현재 전체 데이터는 c2 뷰어 시작 시 약 6분 동안 색인을 만들며, 준비 후 RSS 약 3.1 GiB를 쓴다.
+API 준비를 확인한 뒤 접속한다. 검증·TTL 빌더는 인용된 원문만 읽어 최대 RSS 약 558 MiB로 전체 자료를 처리했다.
+이는 해당 실행의 관측값이다. [측정 기록](docs/research/chunk-index-memory.md)
 
 API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,平穰` `/api/claims?subject=<id>&about=1`
 `/api/year?y=918` `/api/density` `/api/elevation` `/api/geo`
@@ -82,6 +92,8 @@ API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,�
 - 뷰어: `scripts/verify_viewer.py --url "http://127.0.0.1:8870/?q=low" --out /tmp/verify` — 진입·지도·근거·찾기·사료 카드·타임라인·연력·3D·콘솔 12항목, PNG 를 사람이 본다. WebGL 은 헤드리스 스크린샷이 검게 나오므로 composer.render → toDataURL 로 뽑는다.
 - 3D 진단: `scripts/diag_3d.py` (컴포저/직접 렌더 비교, 픽셀 샘플).
 - 데이터: `services/validate.py --self-test`, 추출기 두 번 실행 해시 비교.
+- 후대 사료: `scripts/verify_later_corpus.py` — 신규 5개 카드·사료 선택·연도별 원문·상위 날짜 보존 검사.
+- 패널 응답: `scripts/verify_panel_responses.py` — 원문 검색 응답을 늦춰도 실제 주장은 먼저 뜨고, 늦은 카드 응답이 최신 선택을 덮지 않는지 검사.
 
 ## 작업 규약
 

@@ -16,12 +16,21 @@
 | 조선왕조실록 | [15053647](https://www.data.go.kr/data/15053647/fileData.do) | 제한 없음 (2026-09-06) | 389,483 | `data/sources/sillok-*.md` 30개 |
 | 한국고대금석문 | [15053630](https://www.data.go.kr/data/15053630/fileData.do) | 제한 없음 (2026-09-06) | 3,195 | `data/sources/geumseok-*.md` 823개 |
 | 한국고대사료집성 | [15053631](https://www.data.go.kr/data/15053631/fileData.do) | 제한 없음 (2026-09-06) | 8,689 | `data/sources/jipseong-*.md` 92개 |
+| 단군 표기 설명 | [한국민족문화대백과사전](https://encykorea.aks.ac.kr/Article/E0013538) | 짧은 인용만 수록, 전체 재배포 미확인 (2026-09-06) | 1 | `data/sources/encykorea-dangun.md` |
+| 승정원일기 | [15064218](https://www.data.go.kr/data/15064218/fileData.do) | 제한 없음 (2026-09-06) | 2,001,115 | `data/sources/seungjeongwon-ilgi.md` |
+| 비변사등록 | [15053636](https://www.data.go.kr/data/15053636/fileData.do) | 제한 없음 (2026-09-06) | 93,801 | `data/sources/bibyeonsa-deungnok.md` |
+| 고종실록·순종실록·순종실록부록 | [15053646](https://www.data.go.kr/data/15053646/fileData.do) | 제한 없음 (2026-09-06) | 33,633 | `data/sources/sillok-wz{a,b,c}.md` 3개 |
 
-c2 합계 949 Source·438,370 chunks. 실록 JSONL은 Git 밖에 있어 새 Git 클론은 48,887 chunks다.
-신규 3종은 각각 [실록](research/sillok-ingestion.md), [금석문](research/geumseokmun-ingestion.md),
+c2 합계 955 Source·2,566,920 chunks. 실록 30종과 새 후대 사료 5개 Source의 JSONL은 Git 밖에 있어 새 Git 클론은 48,888 chunks다.
+기존 3종은 각각 [실록](research/sillok-ingestion.md), [금석문](research/geumseokmun-ingestion.md),
 [집성](research/jipseong-ingestion.md) 적재 기록에 분할 기준·날짜 처리·재현 명령·SHA256을 적었다.
 집성은 원 사서의 발췌이며 ZIP의 92종과 포털 설명의 95종 차이를 남겼다. 알 수 없는 편찬 시점은 미상으로 표시한다.
-다음 후보: 고순종실록 15053646, 비변사등록 15053636, 승정원일기 15064218(대용량 — 저장 전략 먼저).
+[승정원일기](research/seungjeongwon-ilgi-ingestion.md), [비변사등록](research/bibyeonsa-deungnok-ingestion.md),
+[고순종실록](research/gosunjong-sillok-ingestion.md)도 두 번 추출하고 XML을 별도로 세어 대조했다.
+승정원일기는 상위 일자의 날짜를 기사에 연결하고 원래 날짜 형식·편집 표지를 따로 보존한다.
+비변사등록은 기사 외에 권별 서지 273개를 구분했다. 고순종실록은 1935년 편찬 자료로 기존 실록 30종과 다른 묶음이다.
+실제 XML에 비변사등록 1616년 기사 3개와 순종실록부록 1928년 기사가 있어 카드 범위에 반영했다.
+그 사이 기록이 없는 해를 새로 채우지는 않았다.
 벌크 XML 의 구조·계층 차이는 `docs/research/bulk-xml-findings.md`.
 
 > 초안. 아래 표의 **입수처와 라이선스는 아직 직접 확인하지 않았다**(미확인 표시).
