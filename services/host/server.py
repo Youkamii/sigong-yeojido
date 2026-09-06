@@ -36,7 +36,6 @@ import mimetypes
 import re
 import sys
 import threading
-import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -129,9 +128,10 @@ def collect_chunks() -> list[dict]:
 def full_chunk(row: dict) -> dict:
     if "_path" not in row:
         return row
-    with row["_path"].open("rb") as fh:
-        fh.seek(row["_offset"])
-        chunk = json.loads(fh.readline())
+    with _FILE_READ_LOCK:
+        with row["_path"].open("rb") as fh:
+            fh.seek(row["_offset"])
+            chunk = json.loads(fh.readline())
     if chunk.get("id") != row["id"]:
         raise ValueError(f"chunk changed while reading: {row['id']}")
     return chunk
@@ -140,7 +140,7 @@ def full_chunk(row: dict) -> dict:
 # ── 색인 (읽기 전용 캐시) ──
 _IDX: dict = {"sig": None, "chunks": [], "sources": [], "places": None, "claims": [], "entities": [], "byYear": {}, "density": {}}
 _IDX_LOCK = threading.Lock()
-_SIGNATURE_LOCK = threading.Lock()
+_FILE_READ_LOCK = threading.RLock()
 
 
 def _signature() -> tuple:
@@ -166,7 +166,7 @@ def _signature() -> tuple:
 
 def index() -> dict:
     global _IDX
-    with _SIGNATURE_LOCK:
+    with _FILE_READ_LOCK:
         sig = _signature()
     with _IDX_LOCK:
         if _IDX["sig"] != sig:
@@ -274,6 +274,11 @@ def year_records(y: int, sources: set[str] | None, limit: int) -> dict:
 
 def source_card(sid: str) -> dict:
     """data/sources/<x>.md 중 id 가 맞는 카드의 머리말과 본문(마크다운 원문). 화면이 라이선스·연도 근거를 그대로 보여 준다."""
+    with _FILE_READ_LOCK:
+        return _read_source_card(sid)
+
+
+def _read_source_card(sid: str) -> dict:
     src_dir = DATA / "sources"
     if not sid or not src_dir.exists():
         return {"id": sid, "found": False}
@@ -380,9 +385,10 @@ def mentions(names: list[str], sources: set[str] | None, limit: int) -> dict:
     idx = index()
     out, by, total = [], {}, 0
     for i, c in enumerate(idx["chunks"]):
-        # 파일 변경 확인 중에만 양보해 짧은 조회가 전체 검색에 밀리지 않게 한다.
-        if i % 256 == 0 and _SIGNATURE_LOCK.locked():
-            time.sleep(0.001)
+        # 짧은 파일 읽기가 끝난 뒤 다음 묶음을 검색한다.
+        if i % 256 == 0:
+            with _FILE_READ_LOCK:
+                pass
         sid = c.get("sourceId")
         if sources is not None and sid not in sources:
             continue

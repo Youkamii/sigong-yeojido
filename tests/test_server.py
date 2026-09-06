@@ -98,6 +98,29 @@ class ApiTests(unittest.TestCase):
         with patch.object(server, "index", return_value=idx):
             self.assertEqual(self.get("/api/claims?subject=p&sources=")["total"], 0)
 
+    def test_source_card_reads_full_text_and_refreshes_file_changes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "data/sources/book"
+            source.mkdir(parents=True)
+            card = source.parent / "different-filename.md"
+            card.write_text("---\nid: src-book\ntitle: 원문 사료\n---\n첫 설명\n", encoding="utf-8")
+            chunks = source / "chunks.jsonl"
+            chunks.write_text(json.dumps({"id": "a", "sourceId": "src-book", "text": "본문"}) + "\n", encoding="utf-8")
+            with patch.object(server, "ROOT", root), patch.object(server, "DATA", root / "data"), patch.object(server, "_IDX", {"sig": None}):
+                first = self.get("/api/source?id=src-book")
+                self.assertEqual(first["frontmatter"]["chunkCount"], 1)
+                self.assertEqual(first["body"].strip(), "첫 설명")
+                self.assertEqual(first["file"], "data/sources/different-filename.md")
+                card.write_text("---\nid: src-book\ntitle: 고친 사료\n---\n수정한 설명\n", encoding="utf-8")
+                with chunks.open("a", encoding="utf-8") as stream:
+                    stream.write(json.dumps({"id": "b", "sourceId": "src-book", "text": "새 본문"}) + "\n")
+                updated = self.get("/api/source?id=src-book")
+                self.assertEqual(updated["frontmatter"]["chunkCount"], 2)
+                self.assertEqual(updated["frontmatter"]["title"], "고친 사료")
+                self.assertEqual(updated["body"].strip(), "수정한 설명")
+                self.assertFalse(self.get("/api/source?id=missing")["found"])
+
     def test_graph_empty_selection_and_failures_are_distinct(self):
         with patch.object(server, "index", side_effect=AssertionError("graph must use Fuseki")):
             self.assertEqual(self.get('/api/graph?entity=person-gwanggaeto&sources=')['claims'],[])
