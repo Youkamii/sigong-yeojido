@@ -1,0 +1,298 @@
+{
+  "verifiedAtUtc": "2026-09-06T07:21:40.742889+00:00",
+  "applicationCommit": "484f907a23756a4f72b4d5908d6d13e5df93e6b0",
+  "scope": "Read-only API/Fuseki plus isolated in-memory validator/builder inputs; no service restart, corpus edit or SPARQL mutation.",
+  "data": {
+    "sources": 955,
+    "chunks": 2566920,
+    "places": 140,
+    "claims": 86,
+    "claimsBySource": {
+      "src-encykorea-dangun": 1,
+      "src-gwanggaeto": 85
+    },
+    "claimsByOrigin": {
+      "ai": 86
+    },
+    "claimPredicates": {
+      "syj:ascendedAtAge": 1,
+      "syj:comesFrom": 1,
+      "syj:convertsTo": 10,
+      "syj:descendantOf": 1,
+      "syj:describedAs": 11,
+      "syj:diedAtAge": 1,
+      "syj:establishedCapitalAt": 1,
+      "syj:foundedBy": 1,
+      "syj:hasHouseholdCount": 1,
+      "syj:hasOutcome": 3,
+      "syj:hasTitle": 3,
+      "syj:heirOf": 1,
+      "syj:instructs": 2,
+      "syj:mentionedIn": 33,
+      "syj:occurredAt": 10,
+      "syj:readsCharacterAs": 2,
+      "syj:sameEntityAs": 1,
+      "syj:subjectToRule": 3
+    },
+    "sourceGroups": {
+      "관청 일기·등록": 2,
+      "연구·해설": 1,
+      "금석문 · 고구려": 46,
+      "금석문 · 백제": 61,
+      "금석문 · 신라": 55,
+      "금석문 · 가야": 7,
+      "금석문 · 통일신라": 108,
+      "금석문 · 발해": 26,
+      "금석문 · 고구려 유민 관련 금석문": 23,
+      "금석문 · 백제 유민 관련 금석문": 12,
+      "금석문 · 낙랑": 472,
+      "금석문 · 중국계 금석문": 13,
+      "관찬사서": 2,
+      "금석문": 1,
+      "한국고대사료집성": 92,
+      "사찬사서": 1,
+      "조선왕조실록": 30,
+      "고종·순종실록": 3
+    },
+    "defaultLensSources": [],
+    "sourcesCovering1945OrLater": [],
+    "placesOutside3d": [
+      {
+        "id": "place-daebang",
+        "outsideCandidates": 1
+      },
+      {
+        "id": "place-dongbuyeo",
+        "outsideCandidates": 2
+      },
+      {
+        "id": "place-goryeosa-007",
+        "outsideCandidates": 2
+      },
+      {
+        "id": "place-samgukyusa-008",
+        "outsideCandidates": 1
+      },
+      {
+        "id": "place-samgukyusa-013",
+        "outsideCandidates": 1
+      },
+      {
+        "id": "place-nangnang",
+        "outsideCandidates": 1
+      },
+      {
+        "id": "place-buyeo",
+        "outsideCandidates": 2
+      },
+      {
+        "id": "place-yo",
+        "outsideCandidates": 1
+      },
+      {
+        "id": "place-yosu",
+        "outsideCandidates": 1
+      },
+      {
+        "id": "polity-tang",
+        "outsideCandidates": 2
+      },
+      {
+        "id": "polity-wei",
+        "outsideCandidates": 3
+      },
+      {
+        "id": "polity-han",
+        "outsideCandidates": 2
+      },
+      {
+        "id": "polity-malgal",
+        "outsideCandidates": 3
+      },
+      {
+        "id": "polity-wae",
+        "outsideCandidates": 1
+      },
+      {
+        "id": "polity-sui",
+        "outsideCandidates": 2
+      },
+      {
+        "id": "polity-buyeo",
+        "outsideCandidates": 2
+      },
+      {
+        "id": "polity-yan",
+        "outsideCandidates": 6
+      },
+      {
+        "id": "polity-liang",
+        "outsideCandidates": 1
+      },
+      {
+        "id": "polity-chen",
+        "outsideCandidates": 1
+      },
+      {
+        "id": "polity-song",
+        "outsideCandidates": 3
+      }
+    ]
+  },
+  "originFilter": {
+    "normalCount": 13,
+    "requestedHumanCount": 13,
+    "returnedOrigins": [
+      "ai"
+    ]
+  },
+  "routes": {
+    "/api/graph": {
+      "status": 404
+    },
+    "/api/chat": {
+      "status": 404
+    },
+    "/server.py": {
+      "status": 200,
+      "bytes": "24559"
+    },
+    "/timeline-demo.html": {
+      "status": 200,
+      "bytes": "6245"
+    }
+  },
+  "rdf": {
+    "classes": [
+      {
+        "type": "https://sigong-yeojido.kr/ns#Event",
+        "n": "10"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#Polity",
+        "n": "5"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#TimeSpan",
+        "n": "10"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#Location",
+        "n": "10"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#Person",
+        "n": "5"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#Chunk",
+        "n": "28"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#Place",
+        "n": "11"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#Claim",
+        "n": "86"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#Office",
+        "n": "1"
+      },
+      {
+        "type": "http://www.w3.org/2000/01/rdf-schema#Class",
+        "n": "11"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#Conflict",
+        "n": "1"
+      },
+      {
+        "type": "https://sigong-yeojido.kr/ns#Source",
+        "n": "955"
+      }
+    ],
+    "claimSources": [
+      {
+        "source": "https://sigong-yeojido.kr/ns#src-gwanggaeto",
+        "n": "85"
+      },
+      {
+        "source": "https://sigong-yeojido.kr/ns#src-encykorea-dangun",
+        "n": "1"
+      }
+    ],
+    "locatedAtClaims": [
+      {
+        "n": "0"
+      }
+    ],
+    "defaultLens": []
+  },
+  "isolatedFixtures": {
+    "genealogyCycle": {
+      "claims": 2,
+      "predicates": [
+        "syj:descendantOf"
+      ],
+      "failureCodes": [],
+      "conflicts": 0,
+      "digest": {
+        "ok": 2,
+        "new": 0,
+        "changed": 0,
+        "refreshed": 0,
+        "stale": 0
+      },
+      "note": "Isolated synthetic claims. Genealogy uses the existing descendantOf predicate; death/appearance/order vocabularies still need a formal contract. These are not historical facts."
+    },
+    "appearanceAfterDeath": {
+      "claims": 2,
+      "predicates": [
+        "syj:appearsIn",
+        "syj:diedIn"
+      ],
+      "failureCodes": [],
+      "conflicts": 0,
+      "digest": {
+        "ok": 2,
+        "new": 0,
+        "changed": 0,
+        "refreshed": 0,
+        "stale": 0
+      },
+      "note": "Isolated synthetic claims. Genealogy uses the existing descendantOf predicate; death/appearance/order vocabularies still need a formal contract. These are not historical facts."
+    },
+    "relativeOrderCycle": {
+      "claims": 2,
+      "predicates": [
+        "syj:before"
+      ],
+      "failureCodes": [],
+      "conflicts": 0,
+      "digest": {
+        "ok": 2,
+        "new": 0,
+        "changed": 0,
+        "refreshed": 0,
+        "stale": 0
+      },
+      "note": "Isolated synthetic claims. Genealogy uses the existing descendantOf predicate; death/appearance/order vocabularies still need a formal contract. These are not historical facts."
+    },
+    "timeRangeSerialization": {
+      "verbatim": true,
+      "precision": true,
+      "year": false,
+      "earliest": false,
+      "latest": false
+    }
+  },
+  "notRun": [
+    "External web/licensing research",
+    "Actual sibling-path file disclosure",
+    "Slow-client load test",
+    "Reboot test",
+    "Full new browser regression"
+  ]
+}
