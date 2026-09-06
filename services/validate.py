@@ -52,6 +52,7 @@ from pathlib import Path
 
 from frontmatter import ParseError, parse_front_matter
 from history_rules import check as check_history
+from citation_samples import citation_samples
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -152,13 +153,17 @@ class ChunkIndex(Mapping):
         return cid in self.positions
 
     def __getitem__(self, cid):
+        row=self.raw(cid)
+        return chunk_value(row,rel(self.positions[cid][0]))
+
+    def raw(self,cid):
         path, offset = self.positions[cid]
         with path.open('rb') as handle:
             handle.seek(offset)
             row = json.loads(handle.readline().decode('utf-8').strip())
         if row.get('id') != cid:
             raise ValueError(f'chunk changed while reading: {cid}')
-        return chunk_value(row, rel(path))
+        return row
 
 
 def chunk_value(row, where):
@@ -371,6 +376,14 @@ def load_inputs(data_dir: Path) -> Inputs:
     if sources_dir.is_dir():
         for path in sorted(sources_dir.glob("*/chunks.jsonl")):
             load_chunks_file(path, inputs.chunks, inputs.failures)
+        try:
+            for cid,(path,offset,row) in citation_samples(sources_dir).items():
+                if cid in inputs.chunks:
+                    if inputs.chunks.raw(cid)!=row:
+                        inputs.failures.append(Failure('citation-copy',rel(path),None,f'citation sample differs from full corpus: {cid}'))
+                else:inputs.chunks.add(cid,path,offset,row['sourceId'])
+        except (ValueError,UnicodeDecodeError) as exc:
+            inputs.failures.append(Failure('citation-copy',rel(sources_dir),None,str(exc)))
 
     inputs.entities = load_entities(data_dir / "entities", inputs.warnings)
 

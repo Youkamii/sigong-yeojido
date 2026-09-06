@@ -10,6 +10,24 @@ import validate as V
 
 
 class ChunkIndexTests(unittest.TestCase):
+    def test_citation_copy_is_used_once_and_never_masks_a_changed_full_record(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);source=root/'sources/example';source.mkdir(parents=True)
+            row={'id':'chunk-actual','sourceId':'src-example','text':'甲\n乙','date':{'raw':'1443-12-30L0'}}
+            raw=json.dumps(row,ensure_ascii=False)+'\n'
+            (source/'citation-chunks.jsonl').write_text(raw,encoding='utf-8')
+            sample=V.load_inputs(root)
+            self.assertFalse(sample.failures);self.assertEqual(len(sample.chunks),1)
+            self.assertEqual(sample.chunks.raw('chunk-actual'),row)
+            (source/'chunks.jsonl').write_text(raw,encoding='utf-8')
+            both=V.load_inputs(root)
+            self.assertFalse(both.failures);self.assertEqual(both.chunk_counts,{'src-example':1})
+            row['date']['raw']='1443-12-29L0'
+            (source/'chunks.jsonl').write_text(json.dumps(row),encoding='utf-8')
+            mismatch=V.load_inputs(root)
+            self.assertEqual([f.code for f in mismatch.failures],['citation-copy'])
+            self.assertEqual(mismatch.chunks.raw('chunk-actual')['date']['raw'],'1443-12-29L0')
+
     def test_raw_text_is_loaded_only_on_reference_and_metadata_matches_eager_loader(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp)/'chunks.jsonl'

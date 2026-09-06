@@ -52,6 +52,7 @@ from chat import answer as chat_answer, ChatUnavailable
 from time_query import time_claims
 from comparison_query import comparison
 from history_map import historical_features
+from citation_samples import citation_samples
 from places import load_places, with_locations, place_names
 try:
     from validate import parse_claims_text, MULTI_VALUED_PREDICATES  # noqa: E402
@@ -101,6 +102,7 @@ def collect_sources(counts: dict[str, int]) -> list[dict]:
 
 def collect_chunks() -> list[dict]:
     out = []
+    samples=citation_samples(DATA/'sources')
     for jl in sorted((DATA / "sources").glob("*/chunks.jsonl")):
         with jl.open("rb") as fh:
             while True:
@@ -111,9 +113,14 @@ def collect_chunks() -> list[dict]:
                 if not line.strip():
                     continue
                 row = json.loads(line)
+                sample=samples.pop(row['id'],None)
+                if sample and sample[2]!=row:raise ValueError(f'citation sample differs from full corpus: {row["id"]}')
                 out.append({"id": row["id"], "sourceId": sys.intern(row["sourceId"]),
                             "text": row.get("text") or "", "date": row.get("date"),
                             "_path": jl, "_offset": offset})
+    for jl,offset,row in samples.values():
+        out.append({'id':row['id'],'sourceId':sys.intern(row['sourceId']),'text':row['text'],
+                    'date':row.get('date'),'_path':jl,'_offset':offset})
     return out
 
 
@@ -138,6 +145,7 @@ def _signature() -> tuple:
     src = DATA / "sources"
     files = sorted(src.glob("*.md")) + sorted(src.glob("*/chunks.jsonl")) if src.exists() else []
     files += sorted(src.glob("*/index-terms.jsonl"))
+    files += sorted(src.glob('*/citation-chunks.jsonl'))
     files.append(DATA / "places.json")
     files += sorted(DATA.glob("places-candidates*.json"))
     cdir = DATA / "claims"

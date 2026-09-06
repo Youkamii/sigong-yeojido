@@ -24,7 +24,7 @@ class SyncState:
 
 def signature(data: Path) -> tuple:
     paths = [data / "places.json"]
-    for pattern in ("sources/*.md", "sources/*/chunks.jsonl", "entities/**/*.md",
+    for pattern in ("sources/*.md", "sources/*/chunks.jsonl", "sources/*/citation-chunks.jsonl", "entities/**/*.md",
                     "claims/**/*.md", "claims/**/.digests.json"):
         paths.extend(data.glob(pattern))
     result = []
