@@ -65,6 +65,28 @@ class NameMatchingTests(unittest.TestCase):
 
 
 class ApiTests(unittest.TestCase):
+    def test_file_signature_detects_additions_changes_and_removals(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            data = Path(tmp)
+            files = ['sources/a.md', 'sources/a/chunks.jsonl', 'sources/a/index-terms.jsonl',
+                     'sources/a/citation-chunks.jsonl', 'claims/a/deeper/claim.md',
+                     'entities/person/person.md', 'places.json', 'places-candidates-a.json']
+            for name in files:
+                path = data / name; path.parent.mkdir(parents=True, exist_ok=True); path.write_text('a')
+            (data / 'unrelated.txt').write_text('ignored')
+            with patch.object(server, 'DATA', data):
+                original = server._signature()
+                self.assertEqual({Path(row[0]).relative_to(data).as_posix() for row in original}, set(files))
+                (data / 'claims/a/new.md').write_text('new')
+                added = server._signature(); self.assertNotEqual(added, original)
+                self.assertEqual(len(added), len(original) + 1)
+                (data / 'entities/person/person.md').write_text('changed size')
+                changed = server._signature(); self.assertNotEqual(changed, added)
+                (data / 'sources/a/citation-chunks.jsonl').unlink()
+                removed = server._signature(); self.assertNotEqual(removed, changed)
+                self.assertEqual(len(removed), len(original))
+                self.assertEqual(server._signature(), removed)
+
     @classmethod
     def setUpClass(cls):
         cls.httpd = server.ThreadingHTTPServer(("127.0.0.1", 0), server.Handler)

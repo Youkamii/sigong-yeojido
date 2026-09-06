@@ -146,21 +146,23 @@ _FILE_READ_LOCK = threading.RLock()
 def _signature() -> tuple:
     parts = []
     src = DATA / "sources"
-    files = sorted(src.glob("*.md")) + sorted(src.glob("*/chunks.jsonl")) if src.exists() else []
-    files += sorted(src.glob("*/index-terms.jsonl"))
-    files += sorted(src.glob('*/citation-chunks.jsonl'))
+    files = sorted(src.glob("*.md"), key=str) + sorted(src.glob("*/chunks.jsonl"), key=str) if src.exists() else []
+    files += sorted(src.glob("*/index-terms.jsonl"), key=str)
+    files += sorted(src.glob('*/citation-chunks.jsonl'), key=str)
     files.append(DATA / "places.json")
     files += sorted(DATA.glob("places-candidates*.json"))
     cdir = DATA / "claims"
     if cdir.is_dir():
-        files += sorted(cdir.glob("**/*.md"))
+        files += sorted(cdir.glob("**/*.md"), key=str)
     edir = DATA / "entities"
     if edir.is_dir():
-        files += sorted(edir.glob("**/*.md"))
+        files += sorted(edir.glob("**/*.md"), key=str)
     for f in files:
-        if f.exists():
+        try:
             st = f.stat()
-            parts.append((str(f), st.st_mtime_ns, st.st_size))
+        except FileNotFoundError:
+            continue
+        parts.append((str(f), st.st_mtime_ns, st.st_size))
     return tuple(parts)
 
 
