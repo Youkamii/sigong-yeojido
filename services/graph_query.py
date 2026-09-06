@@ -47,7 +47,7 @@ def neighborhood(entity, sources=None, origin='all', limit=30, offset=0, *, unat
     query = f'''
 SELECT DISTINCT ?claim ?subject ?predicate ?objectKind ?object ?source ?chunk ?quote ?origin ?status
        ?subjectLabel ?subjectType ?objectLabel ?objectType ?sourceLabel ?locator ?permalink
-       ?verbatim ?precision ?year ?earliest ?latest ?calendar ?lat ?lon ?validFrom ?validTo ?note
+       ?verbatim ?precision ?year ?earliest ?latest ?calendar ?lat ?lon ?validFrom ?validTo ?note ?geographyObject
 WHERE {{
   ?claim a syj:Claim; syj:subject ?subject; syj:predicate ?predicate; syj:fromSource ?source;
          syj:citesChunk ?chunk; syj:quote ?quote; syj:origin ?origin; syj:status ?status;
@@ -57,6 +57,7 @@ WHERE {{
   FILTER(?subject = {focus} || EXISTS {{?claim syj:objectEntity {focus}}} || EXISTS {{?claim syj:objectTime {focus}}})
   OPTIONAL {{?subject rdfs:label ?subjectLabel}}
   OPTIONAL {{?claim syj:note ?note}}
+  OPTIONAL {{?claim syj:geographyObject ?geographyObject}}
   OPTIONAL {{?subject a ?subjectType}}
   OPTIONAL {{?object rdfs:label ?objectLabel}}
   OPTIONAL {{?object a ?objectType}}
@@ -95,6 +96,7 @@ WHERE {{
         elif kind=='location':
             obj.update(lat=float(row['lat']),lon=float(row['lon']),precision=row.get('precision'))
             label=f"{obj['lat']}, {obj['lon']}"
+        if 'geographyObject' in row:obj=json.loads(row['geographyObject'])
         claim={'id':cid,'subject':subject,'predicate':'syj:'+local(row['predicate']),'object':obj,
                'fromSource':source,'citesChunk':chunk,'quote':row['quote'],'origin':row['origin'],'status':row['status'],
                'sourceLabel':row.get('sourceLabel',source),'subjectLabel':row.get('subjectLabel',subject),'note':row.get('note',''),

@@ -48,7 +48,8 @@ class ConflictRulesTests(unittest.TestCase):
         report = V.validate(chunks, {}, [doc], {"test": None})
         self.assertEqual(len(report.conflicts), 1)
         self.assertFalse(report.failures)
-        for predicate in V.MULTI_VALUED_PREDICATES:
+        # Geography's structured objects are covered in test_geography_rules.
+        for predicate in V.MULTI_VALUED_PREDICATES-{'syj:physicallyPresentAt','syj:minimumTravelHours'}:
             changed = copy.deepcopy(doc)
             for claim in changed.claims:
                 claim["predicate"] = predicate

@@ -71,6 +71,7 @@ MULTI_VALUED_PREDICATES = frozenset({
     "syj:hasParent", "syj:childOf", "syj:descendantOf", "syj:parentOf", "syj:fatherOf", "syj:motherOf",
     "syj:appearsIn", "syj:before", "syj:after",
     "syj:hasParticipant", "syj:hasAppointee", "syj:associatesWith", "syj:initiatedBy", "syj:conspiresWith",
+    "syj:physicallyPresentAt", "syj:minimumTravelHours",
 })
 REQUIRED_TEXT_FIELDS = (
     "id",

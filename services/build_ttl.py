@@ -548,6 +548,8 @@ def add_claim(graph: Graph, claim: dict, doc: V.ClaimsDoc, chunks: dict, cards: 
     obj = claim["object"]
     kind = obj["kind"]
     stats.kinds[kind] = stats.kinds.get(kind, 0) + 1
+    if claim['predicate'] in ('syj:physicallyPresentAt','syj:minimumTravelHours'):
+        n.add('syj:geographyObject',lit(json.dumps(obj,ensure_ascii=False,sort_keys=True)))
     if kind == "entity":
         n.add("syj:objectEntity", qname(obj["id"]))
         stats.refs.setdefault(obj["id"], where)

@@ -1,5 +1,6 @@
 """Internal consistency checks, scoped to one source; unknown dates stay unknown."""
 from collections import defaultdict
+from geography_rules import assess as assess_geography
 
 CHILD_TO_PARENT={'syj:descendantOf','syj:childOf','syj:hasParent'}
 PARENT_TO_CHILD={'syj:parentOf','syj:fatherOf','syj:motherOf'}
@@ -49,7 +50,7 @@ def cycles(edges):
 
 def check(records):
     """Return (code, claim id, message). Citation/shape validation runs before this."""
-    grouped=defaultdict(list)
+    records=list(records);grouped=defaultdict(list)
     for claim in records:grouped[claim['fromSource']].append(claim)
     failures=[]
     for source,claims in grouped.items():
@@ -100,4 +101,10 @@ def check(records):
                     fail('history-after-death',cid,'a dated living appearance is after every possible death year')
                 if appearance[1] is not None and birth[0] is not None and appearance[1]<birth[0]:
                     fail('history-before-birth',cid,'a dated living appearance is before every possible birth year')
+    for result in assess_geography(records)['checks']:
+        if result['status']=='FAIL':
+            failures.append(('history-geography',result['claim'],result['source']+': '+
+                f"{result['availableHours']:g} hours available, but cited travel requires at least {result['minimumHours']:g} hours"))
+        elif result['status']=='MALFORMED':
+            failures.append(('history-geography-shape',result['claim'],result['source']+': '+result['reason']))
     return sorted(failures)
