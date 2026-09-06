@@ -4,10 +4,10 @@ import gzip
 import json
 
 
-CATALOGS={1:'hgis-provinces-1910-1945',2:'hgis-districts-1910-1945',3:'hgis-townships-1883-1945'}
+CATALOGS={0:'cliopatria-korea-v013',1:'hgis-provinces-1910-1945',2:'hgis-districts-1910-1945',3:'hgis-townships-1883-1945'}
 
 
-@lru_cache(maxsize=3)
+@lru_cache(maxsize=4)
 def _catalog(path,mtime,size):
     with gzip.open(path,'rt',encoding='utf-8') as stream:return json.load(stream)
 
@@ -15,7 +15,7 @@ def _catalog(path,mtime,size):
 def historical_features(data,sources=None,origin='all',year=None,level=1):
     if origin not in ('all','human','ai'):raise ValueError('origin must be all, human or ai')
     level=int(level)
-    if level not in CATALOGS:raise ValueError('level must be 1 (province), 2 (district) or 3 (township)')
+    if level not in CATALOGS:raise ValueError('level must be 0 (polity), 1 (province), 2 (district) or 3 (township)')
     year=None if year is None else int(year)
     out={'type':'FeatureCollection','features':[],'level':level,'periodRule':'overlaps-selected-year'}
     if sources is not None and not sources:return out

@@ -13,6 +13,9 @@ class HistoricalMapTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.data=Path(self.temp.name);(self.data/'maps').mkdir()
+        (self.data/'maps/cliopatria-korea-v013.geojson.gz').write_bytes(gzip.compress(json.dumps({'features':[
+            self.feature('polity-bce','src-clio',-197,-92),self.feature('polity-ce','src-clio',378,533)
+        ]}).encode()))
         self.write('provinces',[self.feature('province','src-a',1910,1945)])
         self.write('districts',[self.feature('district-before','src-a',1910,1914),
                                 self.feature('district-after','src-a',1914,1945),
@@ -44,7 +47,7 @@ class HistoricalMapTests(unittest.TestCase):
         for year in (1909,1946):self.assertEqual(self.ids(level=2,year=year),[])
 
     def test_source_and_authorship_filters_apply_to_each_level(self):
-        for level in (1,2,3):self.assertEqual(self.ids(level=level,sources=set()),[])
+        for level in (0,1,2,3):self.assertEqual(self.ids(level=level,sources=set()),[])
         self.assertEqual(self.ids(level=2,sources={'src-b'},origin='human'),['human-district'])
         self.assertEqual(self.ids(level=2,sources={'src-b'},origin='ai'),[])
         self.assertEqual(self.ids(level=1,origin='human'),[])
@@ -53,7 +56,7 @@ class HistoricalMapTests(unittest.TestCase):
         self.ids(level=2)
         self.write('districts',[self.feature('replacement-record','src-a',1911,1912)])
         self.assertEqual(self.ids(level=2),['replacement-record'])
-        for level in (0,4,'unknown'):
+        for level in (-1,4,'unknown'):
             with self.assertRaises(ValueError):self.ids(level=level)
 
     def test_townships_keep_earlier_dates_and_do_not_replace_other_levels(self):
@@ -64,3 +67,11 @@ class HistoricalMapTests(unittest.TestCase):
         self.assertEqual(self.ids(level=3,sources={'src-b'}),[])
         self.assertEqual(self.ids(level=1),['province'])
         self.assertEqual(len(self.ids(level=2)),3)
+
+    def test_polity_records_keep_published_bce_ce_bounds_and_separate_sources(self):
+        for year in (-197,-92):self.assertEqual(self.ids(level=0,year=year),['polity-bce'])
+        self.assertEqual(self.ids(level=0,year=-91),[])
+        self.assertEqual(self.ids(level=0,year=500),['polity-ce'])
+        self.assertEqual(self.ids(level=0,year=500,sources={'src-a'}),[])
+        self.assertEqual(self.ids(level=0,year=500,origin='human'),[])
+        self.assertEqual(self.ids(),['province'])

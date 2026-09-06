@@ -294,8 +294,8 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div class="sect">주 렌즈</div>
       <select id="lensSelect" class="q" aria-label="주 렌즈"></select>
       <p id="lensNote" class="empty"></p>
-      <label class="empty" for="historyLevel">역사 행정 구역</label>
-      <select id="historyLevel" class="q" aria-label="역사 행정 구역 단계"><option value="1">도 경계</option><option value="2">군·부 등 경계</option><option value="3">읍·면 등 경계</option></select>
+      <label class="empty" for="historyLevel">역사 경계 종류</label>
+      <select id="historyLevel" class="q" aria-label="역사 경계 종류"><option value="0">국가·정치집단 경계</option><option value="1" selected>도 경계</option><option value="2">군·부 등 경계</option><option value="3">읍·면 등 경계</option></select>
       <button id="historyMapBtn" class="card-btn">역사 경계 0개 · 근거</button>
       <p class="empty">주 렌즈는 진하게, 추가로 켠 비교 사료는 옅게 겹쳐 보인다.</p>
       <button id="allSources" class="card-btn">모든 사료 켜기</button>
@@ -386,26 +386,27 @@ function refreshHistoryMap(){historyMap.refresh({sources:state.on,origin:state.o
 function showHistoricalList(reveal=true){
   if(reveal)openEvidence();++panelSeq;state.panel='history';state.sel=null;
   const el=document.getElementById('evi');
-  el.innerHTML=`<h3>선택한 해의 ${{1:'도',2:'군·부 등',3:'읍·면 등'}[historyLevel.value]} 경계</h3><p class="empty">${historyLevel.value==='3'?'1883':'1910'}~1945년 기관 레코드 중 선택한 해와 기간이 겹치는 경계를 표시한다. 같은 해에 바뀐 경계는 함께 보이며, 변경일과 기관의 추정 표기는 각 근거에 남아 있다.</p>`;
-  const search=document.createElement('input');search.className='q';search.placeholder='행정 구역 이름 찾기';search.setAttribute('aria-label','역사 경계 이름 찾기');
+  const description=historyLevel.value==='0'?'Cliopatria v0.1.3의 시기별 경계 견해다. 원 데이터에 없는 해는 비어 있다. 도형 적용 기간을 국가의 건국·멸망 연도로 판정하지 않는다.':`${historyLevel.value==='3'?'1883':'1910'}~1945년 기관 레코드 중 선택한 해와 기간이 겹치는 경계를 표시한다. 같은 해에 바뀐 경계는 함께 보이며, 변경일과 기관의 추정 표기는 각 근거에 남아 있다.`;
+  el.innerHTML=`<h3>선택한 해의 ${{0:'국가·정치집단',1:'도',2:'군·부 등',3:'읍·면 등'}[historyLevel.value]} 경계</h3><p class="empty">${description}</p>`;
+  const search=document.createElement('input');search.className='q';search.placeholder='경계 이름 찾기';search.setAttribute('aria-label','역사 경계 이름 찾기');
   el.append(search);const list=document.createElement('div');el.append(list);
   const render=()=>{list.replaceChildren();for(const feature of historyMap.features){
     const p=feature.properties;if(!p.label.includes(search.value.trim()))continue;
     const button=document.createElement('button');button.className='card-btn';button.dataset.feature=feature.id;
     button.textContent=`${p.label} · ${p.begin}~${p.end} · 근거`;button.onclick=()=>showHistoricalFeature(feature);list.append(button);}};
   search.oninput=render;render();
-  if(!historyMap.features.length)el.insertAdjacentHTML('beforeend','<p class="empty">현재 연도·사료·작성자 선택에서 역사 경계가 없다. 주 렌즈에서 역사지리정보DB를 선택할 수 있다.</p>');
+  if(!historyMap.features.length)el.insertAdjacentHTML('beforeend','<p class="empty">현재 연도·사료·작성자 선택에서 역사 경계가 없다. 국가 경계는 Cliopatria, 행정 경계는 역사지리정보DB 렌즈에서 볼 수 있다.</p>');
 }
 function showHistoricalFeature(feature){
   openEvidence();++panelSeq;state.panel='history-feature';state.sel=null;
-  const p=feature.properties,r=p.sourceRecord,el=document.getElementById('evi');
-  el.innerHTML=`<h3>${escH(p.label)} · 역사 행정 경계</h3><p>${escH(p.begin)} ~ ${escH(p.end)}</p>
+  const p=feature.properties,r=p.sourceRecord,el=document.getElementById('evi'),polity=p.kind==='polity-boundary';
+  const detail=polity?`<p>원 이름: ${escH(r.Name)} · 원 면적 ${escH(r.Area)} km²</p><p class="empty">한 데이터셋의 경계 견해다. 적용 기간의 양 끝을 포함하며 음수는 제공처의 기원전 표기다. 국가의 실제 건국·멸망 연도를 뜻하지 않는다.</p><p class="empty">원 도형 CRS84 경도·위도. 개별 고지도와의 대조는 미확인이다.</p>${p.outsideDiorama?'<p class="empty">한반도 표시 범위 밖의 일부 경계는 3D에서 생략된다.</p>':''}`:
+    `<p class="empty">원 호칭 ${escH(r.type||'미기재')} · 상위 구역 코드 ${escH(r.up_key||'없음')}</p><div class="quote">${escH(r.begin_sour||'시작 근거 미기재')} → ${escH(r.end_source||'종료 근거 미기재')}</div><p>기관 표기: ${escH(r.geom_ref||'미기재')} · 신뢰도 코드 ${escH(r.trust??'미기재')}</p><p class="empty">${escH(r.reference||'')}</p>`;
+  el.innerHTML=`<h3>${escH(p.label)} · 역사 ${polity?'국가':'행정'} 경계</h3><p>${escH(p.begin)} ~ ${escH(p.end)}</p>
     <p class="empty">${escH(srcLabelOf(p.fromSource))} · AI 변환 · 표시용 경계 단순화</p>
-    <p class="empty">원 호칭 ${escH(r.type||'미기재')} · 상위 구역 코드 ${escH(r.up_key||'없음')}</p>
+    ${detail}
     ${p.originalGeometryValid===false?`<p class="empty">${p.originalGeometryIssue?.startsWith('Too few points')?'원 도형의 꼭짓점 수가 부족하다.':'원 도형에 자기 교차가 있다.'} 원 좌표 해시와 표시용 단순화 결과를 함께 보존한다.</p>`:''}
     ${p.displayGeometryValid===false?'<p class="empty">표시용 도형에도 오류가 남아 있다. 원 레코드와 도형의 확인이 필요하다.</p>':''}
-    <div class="quote">${escH(r.begin_sour||'시작 근거 미기재')} → ${escH(r.end_source||'종료 근거 미기재')}</div>
-    <p>기관 표기: ${escH(r.geom_ref||'미기재')} · 신뢰도 코드 ${escH(r.trust??'미기재')}</p><p class="empty">${escH(r.reference||'')}</p>
     <button class="card-btn" data-history-chunk>원 레코드</button><button class="card-btn" data-history-source>사료 카드</button><button class="card-btn" data-history-list>경계 목록</button>`;
   el.querySelector('[data-history-chunk]').onclick=()=>showChunk(p.citesChunk);
   el.querySelector('[data-history-source]').onclick=()=>showSource(p.fromSource);
@@ -552,7 +553,7 @@ async function load(){
   const initial=state.lenses.find(l=>l.id===lenses.default);
   state.primary=new Set(initial?.sources||state.sources.filter(s=>s.defaultLens).map(s=>s.id));
   state.on=new Set(state.primary);
-  if(initial){lensSelect.value=initial.id;document.getElementById('lensNote').textContent=initial.description;}
+  if(initial){lensSelect.value=initial.id;document.getElementById('lensNote').textContent=initial.description;if(initial.historyLevel!=null)historyLevel.value=String(initial.historyLevel);}
   renderRail();
   renderStats();
   draw();
@@ -578,6 +579,7 @@ function useLens(lens){
   lens.sources.forEach(id=>selectSource(id,true));
   document.getElementById('lensNote').textContent=lens.description||lens.label;
   if(lens.year!=null){state.year=lens.year;setYearUI(state.year);tl?.setYear(state.year);}
+  if(lens.historyLevel!=null&&(lens.historyLevel===0||historyLevel.value==='0'))historyLevel.value=String(lens.historyLevel);
   sourceSelectionChanged();
 }
 document.getElementById('lensSelect').onchange=event=>useLens(state.lenses.find(l=>l.id===event.target.value));
