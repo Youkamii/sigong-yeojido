@@ -69,8 +69,8 @@
     },
     {
       "id": "hgis-1910-1945",
-        "label": "역사지리정보DB · 도·군·읍·면 경계",
-        "description": "기관이 구축한 시기별 행정 경계. 도·군·읍·면 단계를 선택한다. 읍·면 등은 1883년부터의 원 기록도 포함하며 변경일·추정 표기·근거를 남긴다.",
+      "label": "역사지리정보DB · 도·군·읍·면 경계",
+      "description": "기관이 구축한 시기별 행정 경계. 도·군·읍·면 단계를 선택한다. 읍·면 등은 1883년부터의 원 기록도 포함하며 변경일·추정 표기·근거를 남긴다.",
       "sources": [
         "src-hgis-admin-1910-1945"
       ],
@@ -110,6 +110,28 @@
       ],
       "year": -100,
       "description": "CHGIS 재구성 지점 4개와 낙랑토성·푸순시의 별도 위치 서술. 기간 코드는 원값을 보존하며 좌표 없는 견해도 근거에서 확인한다."
+    },
+    {
+      "id": "era-spine",
+      "label": "시대별 뼈대 · 기관 해설",
+      "description": "부여·가야·후삼국·조선·개항·임시정부·헌법·북한 관련 기관 해설의 발췌. 연도 미상과 재위·생몰을 구분한다.",
+      "sources": [
+        "src-encykorea-balhae",
+        "src-encykorea-bukhan",
+        "src-encykorea-buyeo",
+        "src-encykorea-daegaya",
+        "src-encykorea-ganghwado-treaty",
+        "src-encykorea-gaya",
+        "src-encykorea-geumgwangaya",
+        "src-encykorea-gungye",
+        "src-encykorea-gwangmu",
+        "src-encykorea-gyeonhwon",
+        "src-encykorea-husamguk",
+        "src-encykorea-joseon-dynasty",
+        "src-encykorea-kpg-anniversary",
+        "src-encykorea-munmu",
+        "src-law-rok-constitution-1987"
+      ]
     }
   ]
 }
