@@ -1,0 +1,93 @@
+{
+  "sources": [
+    "src-nahf-goguryeo-pyongyang",
+    "src-kci-kwon2019",
+    "src-encykorea-pyongyangseong"
+  ],
+  "chunks": 6,
+  "claims": [
+    "claim-pyongyang-early-area",
+    "claim-pyongyang-late-area",
+    "claim-pyongyang-changansong-surrounds",
+    "claim-pyongyang-kwon2019-different-sites",
+    "claim-pyongyang-fortress-in-city",
+    "claim-pyongyang-possible-late-name"
+  ],
+  "checks": [
+    {
+      "id": "ex-nahf-1",
+      "sourceId": "src-nahf-goguryeo-pyongyang",
+      "url": "http://contents.nahf.or.kr/goguryeo/pyongyang/html/1_1.html",
+      "exact": true,
+      "whitespaceOnlyMatch": true,
+      "accepted": true,
+      "quote": "같은 평양지역에 위치한 두 도성을 전기 평양성과 후기 평양성(장안성)으로 구분하여 파악하고 있다",
+      "pageSha256": "a1aa42a09a92198add290bc16414b9af4a422e565ab110ca43c097a60e598b7a",
+      "error": null
+    },
+    {
+      "id": "ex-nahf-2",
+      "sourceId": "src-nahf-goguryeo-pyongyang",
+      "url": "http://contents.nahf.or.kr/goguryeo/pyongyang/html/1_1.html",
+      "exact": true,
+      "whitespaceOnlyMatch": true,
+      "accepted": true,
+      "quote": "평원왕대에 천도한 장안성은 현재 평양 시가를 둘러싸고 있는",
+      "pageSha256": "a1aa42a09a92198add290bc16414b9af4a422e565ab110ca43c097a60e598b7a",
+      "error": null
+    },
+    {
+      "id": "ex-kwon2019-1",
+      "sourceId": "src-kci-kwon2019",
+      "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002469519",
+      "exact": true,
+      "whitespaceOnlyMatch": true,
+      "accepted": true,
+      "quote": "먼저 전자에 대해서는 313년의 낙랑 축출을 기점으로 그 이전의 평양은 집안 지역으로, 그 이후의 평양은 현재의 평양 지역으로 비정하였다.",
+      "pageSha256": "d6bf5e0d8c60ee78cc8df692bcaf2660d75c49f8ea0e79cf8d832714b3a09185",
+      "error": null
+    },
+    {
+      "id": "ex-kwon2019-2",
+      "sourceId": "src-kci-kwon2019",
+      "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002469519",
+      "exact": true,
+      "whitespaceOnlyMatch": true,
+      "accepted": true,
+      "quote": "대성구역 거점설에 무게를 실었다",
+      "pageSha256": "d6bf5e0d8c60ee78cc8df692bcaf2660d75c49f8ea0e79cf8d832714b3a09185",
+      "error": null
+    },
+    {
+      "id": "ex-encykorea-1",
+      "sourceId": "src-encykorea-pyongyangseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059975",
+      "exact": true,
+      "whitespaceOnlyMatch": true,
+      "accepted": true,
+      "quote": "북한 평양직할시에 있는 삼국시대 고구려의 성곽. 도성.",
+      "pageSha256": "0d5d849483deaca0f6ffe956241d24c1d39aab8bd38aa24c87bc0fa60e80305c",
+      "error": null
+    },
+    {
+      "id": "ex-encykorea-2",
+      "sourceId": "src-encykorea-pyongyangseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059975",
+      "exact": true,
+      "whitespaceOnlyMatch": true,
+      "accepted": true,
+      "quote": "고구려 후기에는 평양의 다른 성들과 구분하여 장안성이라 부른 듯하다.",
+      "pageSha256": "0d5d849483deaca0f6ffe956241d24c1d39aab8bd38aa24c87bc0fa60e80305c",
+      "error": null
+    }
+  ],
+  "withheld": [
+    "平穰/平壤 동일성: 직접 근거 부족",
+    "초안 c4: 논문 초록에 나오지 않는 비문·연대에 견해를 적용한 연결",
+    "초안 SAME_SITE: 같은 지역·시가를 둘러싼 성곽 관계를 동일한 장소로 확대"
+  ],
+  "newCoordinates": 0,
+  "automaticMerges": 0,
+  "humanReviewed": false,
+  "status": "partial"
+}
