@@ -11,3 +11,9 @@
 검사: `python -m unittest discover -s tests -p test_chunk_index.py`.
 인용 원문만 있는 상태, 전체와 일치하는 상태, 날짜 메타데이터가 바뀐 상태를 각각 실행한다.
 조선실록의 실제 인용 파일과 운영 전체 대조는 #51 반영 기록에 이어 적는다.
+
+`73345e8`을 `git archive`로 비어 있는 디렉터리에 풀고, 그 안의 검증기와 추적 파일만으로
+실제 검증을 실행했다. Source 988개·chunk 48,987개·Claim 245개, 실패·경고 모두 0이었다.
+전체 실록 JSONL은 0개이고, 4개 사료의 인용 원문 11개만 포함된 상태다.
+[실행 결과](citation-clean-clone-68.json). c2 전체 원문과 11개 JSON 객체의 일치는
+[운영 원문 대조](joseon-citation-corpus-51.json)에서 별도로 확인했다.
