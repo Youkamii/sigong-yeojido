@@ -209,6 +209,14 @@ def places_with_mentions() -> dict:
     return data
 
 
+def unattributed_places(sources):
+    """Legacy candidate visibility uses name hits, which are not coordinate evidence."""
+    if sources is None:return None
+    if not sources:return set()
+    return {p['id'] for p in places_with_mentions()['places']
+            if not p.get('mentions') or sources.intersection(p['mentions'])}
+
+
 _YEAR_RE = re.compile(r"^(-?\d{3,4})(?=-|$)")
 
 
@@ -478,7 +486,8 @@ class Handler(BaseHTTPRequestHandler):
             sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
             try:
                 result = neighborhood(q.get("entity", ["person-gwanggaeto"])[0], sources,
-                                      q.get("origin", ["all"])[0], q.get("limit", ["30"])[0], q.get("offset", ["0"])[0])
+                                      q.get("origin", ["all"])[0], q.get("limit", ["30"])[0], q.get("offset", ["0"])[0],
+                                      unattributed_places=unattributed_places(sources))
             except ValueError as exc:
                 self._json({"error":str(exc)},400)
                 return
@@ -503,7 +512,7 @@ class Handler(BaseHTTPRequestHandler):
             sources=None if srcs is None else set(filter(None,srcs.split(',')))
             try:
                 result=locations(q.get('place',[None])[0],sources,q.get('origin',['all'])[0],q.get('year',[None])[0],
-                                 q.get('limit',[1000])[0],q.get('offset',[0])[0])
+                                 q.get('limit',[1000])[0],q.get('offset',[0])[0],unattributed_places=unattributed_places(sources))
                 self._json(result)
             except ValueError as exc:self._json({'error':str(exc)},400)
             except GraphUnavailable as exc:self._json({'error':str(exc)},503)

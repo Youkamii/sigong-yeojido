@@ -33,7 +33,7 @@ def query_rows(query, endpoint=None):
     return [{key:value['value'] for key,value in row.items()} for row in bindings]
 
 
-def neighborhood(entity, sources=None, origin='all', limit=30, offset=0):
+def neighborhood(entity, sources=None, origin='all', limit=30, offset=0, *, unattributed_places=None):
     focus=identifier(entity)
     if origin not in ('all','human','ai'):
         raise ValueError('origin must be all, human or ai')
@@ -107,7 +107,7 @@ WHERE {{
         node(chunk,'Chunk',row.get('locator',chunk),sourceId=source)
         node(source,'Source',row.get('sourceLabel',source))
         edges.update(((subject,cid,'주장'),(cid,target,'대상·값'),(cid,chunk,'인용'),(chunk,source,'사료')))
-    candidates=locations(entity,sources,origin,limit=20)
+    candidates=locations(entity,sources,origin,limit=20,unattributed_places=unattributed_places)
     result['locations']=candidates['locations']
     result['moreLocations']=candidates['hasMore']
     for candidate in candidates['locations']:
@@ -122,7 +122,7 @@ WHERE {{
     return result
 
 
-def locations(place=None,sources=None,origin='all',year=None,limit=1000,offset=0):
+def locations(place=None,sources=None,origin='all',year=None,limit=1000,offset=0, *, unattributed_places=None):
     if origin not in ('all','human','ai'):raise ValueError('origin must be all, human or ai')
     limit=max(1,min(1000,int(limit)));offset=max(0,int(offset))
     result={'locations':[],'hasMore':False,'offset':offset,'limit':limit}
@@ -132,7 +132,8 @@ def locations(place=None,sources=None,origin='all',year=None,limit=1000,offset=0
     selection=''
     if sources is not None:
         values=','.join(identifier(s) for s in sorted(sources))
-        selection=f'FILTER(!BOUND(?source)||?source IN ({values})) FILTER NOT EXISTS {{?location syj:requiresSource ?required. FILTER(?required NOT IN ({values}))}}'
+        fallback='true' if unattributed_places is None else ('?place IN ('+','.join(identifier(p) for p in sorted(unattributed_places))+')' if unattributed_places else 'false')
+        selection=f'FILTER((!BOUND(?source)&&({fallback}))||?source IN ({values})) FILTER NOT EXISTS {{?location syj:requiresSource ?required. FILTER(?required NOT IN ({values}))}}'
     period='' if year is None else f'FILTER((!BOUND(?validFrom)||?validFrom<={int(year)})&&(!BOUND(?validTo)||?validTo>={int(year)}))'
     rows=query_rows(f'''
 SELECT DISTINCT ?location ?place ?placeLabel ?placeType ?lat ?lon ?grounded ?source ?sourceLabel ?origin ?precision ?basis ?validFrom ?validTo ?fromFile
