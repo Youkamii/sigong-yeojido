@@ -1,0 +1,805 @@
+{
+  "task": "location-lens-49",
+  "issues": ["#49", "#48", "#57"],
+  "status": "complete-for-this-pass",
+  "generatedAt": "2026-09-06",
+  "generatedBy": "claude-opus-5 (조사·수집 전용. 사람 검토 없음)",
+  "conventions": {
+    "identificationVsCoordinate": "지명→현대지역 비정 근거(sourceId/quote)와 현대지역→좌표 근거(coordinateSource)를 반드시 분리했다. 한 출처가 둘 다 제공하면 coordinateSource.sourceId가 sourceId와 같다.",
+    "status": {
+      "confirmed": "해당 URL을 실제로 열어 읽었고 인용문이 그 페이지에 있다는 뜻. 역사적 사실이 확정됐다는 뜻이 아니다.",
+      "inferred": "조사자가 두 근거를 이었거나 값을 선택했다. 원문 한 곳에 그대로 있지 않다.",
+      "unverified": "열지 못했거나 근거를 확인하지 못했다.",
+      "reported-view": "출처가 '그런 견해가 있다'고 보고만 하고 스스로 주장하지 않는다."
+    },
+    "coordinateMeaning": "좌표는 대부분 현대 행정구역의 대표점이다. 고대 지명의 좌표를 확정한 것이 아니다. precision 필드로 구분한다.",
+    "geometry": "근거 있는 경계선(polygon)을 찾지 못했으므로 만들지 않았다. 공간 범위는 region 문자열로만 남겼다.",
+    "quotaRule": "웹페이지 1개당 직접 인용 합계 25단어 이하를 지켰다. 한문·중국어 원표기는 번역·정규화하지 않았다.",
+    "lens": "기본 렌즈는 특정 출처의 견해다. 어느 견해가 통설인지 이 결과물은 판정하지 않는다."
+  },
+
+  "proposedPlaces": [
+    {"id": "place-gungnaeseong", "label": "국내성", "labelHanja": "國內城", "note": "entities.json에 없음. 새 껍데기 필요."},
+    {"id": "place-nangnang", "label": "낙랑군", "labelHanja": "樂浪郡", "note": "schema.md §9 예시가 쓰는 id. entities.json에는 없음."},
+    {"id": "place-daebang-gun", "label": "대방군", "labelHanja": "帶方郡", "note": "entities.json의 place-daebang은 광개토왕비의 '帶方界'다. 군(郡)과 계(界)의 동일성은 별도 sameEntityAs Claim 없이 합치면 안 된다."},
+    {"id": "place-daebang-gun-moved", "label": "이치된 대방군", "labelHanja": "帶方郡", "note": "4세기 전반 요서로 옮겨간 대방군. 원 대방군과 같은 노드로 합칠지는 별도 판단."},
+    {"id": "place-pyongyangseong-goguryeo", "label": "고구려 평양성", "labelHanja": "平壤城", "note": "entities.json의 place-pyongyang은 광개토왕비 표기 '平穰'이다. 후기 도성 평양성과의 동일성은 별도 Claim."},
+    {"id": "place-anhakgung", "label": "안학궁", "labelHanja": "安鶴宮", "note": "평양 천도(427) 도성 비정의 지점 후보."}
+  ],
+
+  "sources": [
+    {
+      "id": "encykorea-gungnaeseong",
+      "title": "국내성(國內城)",
+      "institution": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0006166",
+      "author": "권순홍 (경희대 연구교수)",
+      "lastUpdated": "2022-07-24",
+      "accessed": "2026-09-06",
+      "kind": "modern-reference-work",
+      "license": "공공누리 (사전 안내문에 명시). 유형 번호는 미확인.",
+      "licenseQuote": "한국민족문화대백과사전은 공공저작물로서 공공누리 제도에 따라 이용 가능합니다.",
+      "licenseUrl": "https://encykorea.aks.ac.kr/Guide/ContentUse",
+      "quotes": [
+        "중국 지린성 지안시에 있는 삼국시대 고구려의 도성 유적.",
+        "평양으로 천도하는 427년까지 고구려의 도성 역할을 하였다."
+      ],
+      "quoteWordCount": 13,
+      "readStatus": "confirmed",
+      "quoteVerification": "같은 URL을 두 번 서로 다른 질문으로 읽어 인용문 일치 확인",
+      "notes": "본문은 '집안'이 아니라 중국어 표기 '지안'을 쓴다. '통구성'이라는 문자열은 이 문서에 없다."
+    },
+    {
+      "id": "encykorea-anhakgung",
+      "title": "안학궁(安鶴宮)",
+      "institution": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0035088",
+      "author": "권순홍 (경희대 연구교수)",
+      "lastUpdated": "2022-07-30",
+      "accessed": "2026-09-06",
+      "kind": "modern-reference-work",
+      "license": "공공누리 (사전 공통 안내)",
+      "licenseUrl": "https://encykorea.aks.ac.kr/Guide/ContentUse",
+      "quotes": [
+        "평양직할시 대성구역에 있는 삼국시대 고구려의 도성 유적.",
+        "427년부터 고구려가 장안성(후기 평양성)으로 천도하는 567년까지 안학궁이 고구려의 평지 도성으로 사용되었다는 해석이었다."
+      ],
+      "quoteWordCount": 18,
+      "readStatus": "confirmed",
+      "quoteVerification": "1회 열람. 재확인 안 함.",
+      "notes": "두 번째 인용문은 서술어가 '해석이었다'이다. 이 사전이 그 연대를 단정하는 문장이 아니다."
+    },
+    {
+      "id": "encykorea-nangnang-toseong",
+      "title": "낙랑토성(樂浪土城)",
+      "institution": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011577",
+      "author": "소재구 (국립청주박물관, 미술사)",
+      "lastUpdated": "2023-02-07",
+      "accessed": "2026-09-06",
+      "kind": "modern-reference-work",
+      "license": "공공누리 (사전 공통 안내)",
+      "licenseUrl": "https://encykorea.aks.ac.kr/Guide/ContentUse",
+      "alternateName": "평양토성리토성",
+      "quotes": [
+        "북한 평안남도 대동군 대동면에 있는 초기국가시대 낙랑군의 토축 성곽",
+        "낙랑군청과 조선현청이 모두 이 성 안에 있었고",
+        "1916년에 촬영한 평양에 위치한 낙랑군치지의 모습이다."
+      ],
+      "quoteWordCount": 22,
+      "readStatus": "confirmed",
+      "quoteVerification": "같은 URL을 두 번 서로 다른 질문으로 읽어 인용문 일치 확인",
+      "notes": "세 번째 인용문은 사진 캡션이다. 본문 서술이 아니다."
+    },
+    {
+      "id": "encykorea-nangnang-gobun",
+      "title": "낙랑고분(樂浪古墳)",
+      "institution": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011573",
+      "author": "정인성",
+      "lastUpdated": "2023-09-30",
+      "accessed": "2026-09-06",
+      "kind": "modern-reference-work",
+      "license": "공공누리 (사전 공통 안내)",
+      "licenseUrl": "https://encykorea.aks.ac.kr/Guide/ContentUse",
+      "quotes": [
+        "대동강이 흐르는 평양지역을 중심으로 황해도와 평안남도에 걸쳐서 확인되는",
+        "평양 근교 토성리(土城里)에는"
+      ],
+      "quoteWordCount": 10,
+      "readStatus": "confirmed",
+      "quoteVerification": "1회 열람. 재확인 안 함.",
+      "notes": "이 문장은 고분 분포 범위다. 낙랑군의 행정 경계가 아니다."
+    },
+    {
+      "id": "encykorea-daebang-gun",
+      "title": "대방군(帶方郡)",
+      "institution": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014398",
+      "author": "이기동",
+      "lastUpdated": "2024-02-16",
+      "accessed": "2026-09-06",
+      "kind": "modern-reference-work",
+      "license": "공공누리 (사전 공통 안내)",
+      "licenseUrl": "https://encykorea.aks.ac.kr/Guide/ContentUse",
+      "quotes": [
+        "현재 황해도 봉산군 사리원 동남 문정면에 있는 속칭 당토성(唐土城)은 그 유지(遺址)로 추정되고 있다.",
+        "일부에서는 이를 중국 동북지방에 비정(比定)하는 견해도 있다.",
+        "자비령(慈悲嶺) 이남의 황해도 지방"
+      ],
+      "quoteWordCount": 22,
+      "readStatus": "confirmed",
+      "quoteVerification": "같은 URL을 두 번 서로 다른 질문으로 읽어 인용문 일치 확인",
+      "notes": "인용 한도 때문에 연도 문장은 인용하지 않았다. 이 문서에 204년(공손강)과 313년(장통) 문장이 존재하는 것은 열람으로 확인했으나 인용하지 않았으므로 연도 Claim의 근거로 쓰지 않는다."
+    },
+    {
+      "id": "kci-lee-2017-joseonhyeon",
+      "title": "낙랑군(樂浪郡) 조선현(朝鮮縣)의 위치 - 낙랑군 조선현의 평양설 및 대동강설 비판",
+      "institution": "발행: 바른역사학술원 / 저자 소속: 한가람역사문화연구소",
+      "author": "이덕일",
+      "journal": "역사와 융합",
+      "year": 2017,
+      "volumeIssuePages": "no.1, pp. 45-81",
+      "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002799091",
+      "articleId": "ART002799091",
+      "accessed": "2026-09-06",
+      "kind": "peer-indexed-journal-abstract",
+      "license": "unverified (KCI 서지·초록 페이지. 이용조건 문구 확인 못 함)",
+      "licenseUrl": null,
+      "quotes": [
+        "낙랑군조선현은 지금의 하북성 노룡현 북쪽에 있었고, 그 북쪽에 장성이 있었다."
+      ],
+      "quoteWordCount": 10,
+      "readStatus": "confirmed",
+      "quoteVerification": "같은 URL을 두 번 서로 다른 질문으로 읽어 인용문 일치 확인",
+      "notes": "본문(PDF) 미열람. 초록만 읽었다."
+    },
+    {
+      "id": "kci-bok-2020-gungnae",
+      "title": "고구려 국내성 및 환도성 위치 연구",
+      "institution": "발행: 강원대학교 인문과학연구소 / 저자 소속: 인하대학교",
+      "author": "복기대",
+      "journal": "인문과학연구",
+      "year": 2020,
+      "volumeIssuePages": "65, pp. 171-199",
+      "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002602392",
+      "articleId": "ART002602392",
+      "accessed": "2026-09-06",
+      "kind": "peer-indexed-journal-abstract",
+      "license": "unverified (KCI 서지·초록 페이지)",
+      "licenseUrl": null,
+      "quotes": [
+        "국내성은 길림성 집안시가 아니라 중국 요녕성 철령시 일대인 것을 알 수 있었다"
+      ],
+      "quoteWordCount": 12,
+      "readStatus": "confirmed",
+      "quoteVerification": "1회 열람. 재확인 안 함.",
+      "notes": "본문 미열람. 초록만 읽었다."
+    },
+    {
+      "id": "kci-gong-2020-daebang",
+      "title": "옮겨간 대방군과 남겨진 대방군",
+      "institution": "발행: 백산학회 / 저자 소속: 한밭대학교",
+      "author": "공석구",
+      "journal": "백산학보",
+      "year": 2020,
+      "volumeIssuePages": "no.117, pp. 145-169",
+      "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002620981",
+      "articleId": "ART002620981",
+      "accessed": "2026-09-06",
+      "kind": "peer-indexed-journal-abstract",
+      "license": "unverified (KCI 서지·초록 페이지)",
+      "licenseUrl": null,
+      "quotes": [
+        "대방군에 살던 주민들은 낙랑군에 뒤이어 4세기 전반 요서지방으로 옮겨갔다",
+        "이후에는 이주해가서 남영주 영구군 소속(현 하북성 보정시지역)으로 존재하였다",
+        "314년 대방군 멸망 이후의 추이를 고찰하였다"
+      ],
+      "quoteWordCount": 23,
+      "readStatus": "confirmed",
+      "quoteVerification": "1회 열람. 재확인 안 함.",
+      "notes": "본문 미열람. 초록만 읽었다."
+    },
+    {
+      "id": "nahf-ismy-gungnaeseong",
+      "title": "국내성(國內城) — 고구려·발해 문화유산 지도",
+      "institution": "동북아역사재단 (동북아역사넷)",
+      "url": "http://contents.nahf.or.kr/item/item.do?levelId=ismy.d_0002_0020_0010",
+      "altUrl": "http://contents.nahf.or.kr/id/NAHF.ismy.d_0002_0020_0010",
+      "breadcrumb": "고구려·발해 문화유산 지도 > 중국 길림성(吉林省) 집안현(輯安縣) 지역 > 국내성(國內城)",
+      "accessed": "2026-09-06",
+      "kind": "modern-institution-dataset",
+      "license": "공공누리 마크 표시. 유형 번호 미확인.",
+      "licenseUrl": "http://www.kogl.or.kr/",
+      "quotes": [
+        "그 위치는 현재 성벽 일부만 남아 있는 집안시내의 통구성으로 비정되고 있다.",
+        "서기 3년(유리왕 22년)부터 427년(장수왕 15년)까지 425년 동안 고구려의 수도였다."
+      ],
+      "quoteWordCount": 20,
+      "coordinatesOnPage": [
+        {"lat": 41.125612, "lon": 126.183498, "label": "중국 길림성 집안현 국내성", "extractedFrom": "goMap('ismy.d_0002_0020_0010','41.125612','126.183498','중국 길림성 집안현 국내성')"}
+      ],
+      "readStatus": "confirmed",
+      "quoteVerification": "같은 URL을 두 번 서로 다른 질문으로 읽어 인용문·좌표 일치 확인",
+      "notes": "좌표는 본문 문장이 아니라 지도 호출 파라미터에서 나온다. 측지계(datum) 표기가 페이지에 없다."
+    },
+    {
+      "id": "nahf-ismy-pyongyangseong",
+      "title": "고구려 평양성(平壤城) — 고구려·발해 문화유산 지도",
+      "institution": "동북아역사재단 (동북아역사넷)",
+      "url": "http://contents.nahf.or.kr/item/level.do?levelId=ismy.d_0002_0030_0010",
+      "breadcrumb": "고구려·발해 문화유산 지도 > 고구려의 문화유산 > 북한 평양 지역 > 고구려 평양성",
+      "accessed": "2026-09-06",
+      "kind": "modern-institution-dataset",
+      "license": "공공누리 마크 표시. 유형 번호 미확인.",
+      "licenseUrl": "http://www.kogl.or.kr/",
+      "quotes": [
+        "고구려가 국내성에서 평양으로 수도를 옮긴 때는 427년이다",
+        "586년(평원왕 28)에 수도를 장안성(長安成)으로 옮기는데"
+      ],
+      "quoteWordCount": 12,
+      "coordinatesOnPage": [
+        {"lat": 39.037519, "lon": 125.754069, "label": "북한 평양시 모란봉공원"},
+        {"lat": 39.035994, "lon": 125.754284, "label": "북한 평양시 모란봉공원"},
+        {"lat": 39.041517, "lon": 125.759543, "label": "북한 평양시 모란봉공원"},
+        {"lat": 39.037083, "lon": 125.759758, "label": "북한 평양시 모란봉공원"},
+        {"lat": 39.023288, "lon": 125.757376, "label": "북한 평양시"},
+        {"lat": 39.022610, "lon": 125.756797, "label": "북한 평양시 대동문공원"},
+        {"lat": 39.027140, "lon": 125.741793, "label": "북한 평양시"}
+      ],
+      "readStatus": "confirmed",
+      "quoteVerification": "1회 열람. 재확인 안 함.",
+      "notes": "좌표 7개는 성벽·문 등 개별 지점으로 보인다. 어느 것이 대표점인지 페이지가 말하지 않는다. 원문 한자 표기 '長安成'을 그대로 둔다."
+    },
+    {
+      "id": "geonames",
+      "title": "GeoNames geographical database",
+      "institution": "Unxos GmbH (St. Gallen, Switzerland)",
+      "url": "https://www.geonames.org/about.html",
+      "accessed": "2026-09-06",
+      "kind": "modern-gazetteer",
+      "license": "Creative Commons Attribution 4.0 International",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "datum": "WGS84",
+      "role": "현대 행정구역 → 좌표 근거로만 사용. 역사 비정 근거로 쓰지 않는다.",
+      "readStatus": "confirmed",
+      "notes": "about 페이지에서 라이선스와 데이터 출처(NGA/GNIS 등)를 확인했다. 개별 레코드는 search.html 결과 페이지에서 읽었다."
+    }
+  ],
+
+  "locationClaims": [
+    {
+      "claimId": "lc-gungnae-jian-encykorea",
+      "placeId": "place-gungnaeseong",
+      "sourceId": "encykorea-gungnaeseong",
+      "quote": "중국 지린성 지안시에 있는 삼국시대 고구려의 도성 유적.",
+      "quoteLang": "ko",
+      "url": "https://encykorea.aks.ac.kr/Article/E0006166",
+      "region": "중국 지린성 지안시",
+      "lat": 41.258333,
+      "lon": 126.017778,
+      "coordinateSource": {
+        "sourceId": "geonames",
+        "recordId": "2036540",
+        "name": "Ji'an Shi",
+        "featureClass": "A (third-order administrative division)",
+        "recordUrl": "https://www.geonames.org/search.html?q=Ji%27an+Jilin&country=CN",
+        "dms": "N 41° 15′ 30″ / E 126° 1′ 4″",
+        "datum": "WGS84",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": null,
+      "validTo": 427,
+      "validityQuote": "평양으로 천도하는 427년까지 고구려의 도성 역할을 하였다.",
+      "precision": "admin-city-representative-point",
+      "view": "국내성 = 중국 지린성 지안(집안) 일대",
+      "status": "confirmed",
+      "limitations": "좌표는 현대 지안시 행정구역 대표점이지 유적 지점이 아니다. 이 사전 기사에는 좌표가 없다. 시작 연도는 이 기사 인용 범위 안에서 확인하지 않았다.",
+      "identityCaveat": null
+    },
+    {
+      "claimId": "lc-gungnae-jian-nahf-site",
+      "placeId": "place-gungnaeseong",
+      "sourceId": "nahf-ismy-gungnaeseong",
+      "quote": "그 위치는 현재 성벽 일부만 남아 있는 집안시내의 통구성으로 비정되고 있다.",
+      "quoteLang": "ko",
+      "url": "http://contents.nahf.or.kr/item/item.do?levelId=ismy.d_0002_0020_0010",
+      "region": "중국 길림성 집안시 통구성",
+      "lat": 41.125612,
+      "lon": 126.183498,
+      "coordinateSource": {
+        "sourceId": "nahf-ismy-gungnaeseong",
+        "recordUrl": "http://contents.nahf.or.kr/item/item.do?levelId=ismy.d_0002_0020_0010",
+        "extractedFrom": "페이지의 지도 호출 파라미터 goMap(...,'41.125612','126.183498','중국 길림성 집안현 국내성')",
+        "datum": "미표기",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": 3,
+      "validTo": 427,
+      "validityQuote": "서기 3년(유리왕 22년)부터 427년(장수왕 15년)까지 425년 동안 고구려의 수도였다.",
+      "precision": "site-point-from-institution",
+      "view": "국내성 = 중국 지린성 지안(집안) 일대",
+      "status": "confirmed",
+      "limitations": "좌표가 본문 서술이 아니라 지도 파라미터다. 측지계·오차 표기가 없다. '비정되고 있다'는 표현이므로 이 기관이 확정했다고 읽으면 안 된다.",
+      "identityCaveat": null
+    },
+    {
+      "claimId": "lc-gungnae-tieling-bok",
+      "placeId": "place-gungnaeseong",
+      "sourceId": "kci-bok-2020-gungnae",
+      "quote": "국내성은 길림성 집안시가 아니라 중국 요녕성 철령시 일대인 것을 알 수 있었다",
+      "quoteLang": "ko",
+      "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002602392",
+      "region": "중국 요녕성 철령시 일대",
+      "lat": 42.6258333,
+      "lon": 124.3236111,
+      "coordinateSource": {
+        "sourceId": "geonames",
+        "recordId": "2034437",
+        "name": "Tieling Shi",
+        "featureClass": "A (second-order administrative division)",
+        "recordUrl": "https://www.geonames.org/search.html?q=Tieling&country=CN",
+        "dms": "N 42° 37′ 33″ / E 124° 19′ 25″",
+        "datum": "WGS84",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": null,
+      "validTo": null,
+      "validityQuote": null,
+      "precision": "region-representative-point",
+      "view": "국내성 = 중국 요녕성 철령시 일대 (지안설 부정)",
+      "status": "confirmed",
+      "limitations": "초록만 읽었고 본문은 열지 않았다. '일대'는 범위 표현이며 지점이 아니다. 좌표는 현대 철령시 행정구역 대표점이다. 시기 정보 없음.",
+      "identityCaveat": null
+    },
+    {
+      "claimId": "lc-pyongyang-anhakgung-encykorea",
+      "placeId": "place-anhakgung",
+      "sourceId": "encykorea-anhakgung",
+      "quote": "평양직할시 대성구역에 있는 삼국시대 고구려의 도성 유적.",
+      "quoteLang": "ko",
+      "url": "https://encykorea.aks.ac.kr/Article/E0035088",
+      "region": "북한 평양직할시 대성구역",
+      "lat": 39.063056,
+      "lon": 125.833889,
+      "coordinateSource": {
+        "sourceId": "geonames",
+        "recordId": "1868593",
+        "name": "Taesŏng-guyŏk",
+        "featureClass": "A (second-order administrative division)",
+        "recordUrl": "https://www.geonames.org/search.html?q=Taesong+Pyongyang&country=KP",
+        "dms": "N 39° 3′ 47″ / E 125° 50′ 2″",
+        "datum": "WGS84",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": 427,
+      "validTo": 567,
+      "validityQuote": "427년부터 고구려가 장안성(후기 평양성)으로 천도하는 567년까지 안학궁이 고구려의 평지 도성으로 사용되었다는 해석이었다.",
+      "precision": "admin-district-representative-point",
+      "view": "427년 천도지 고구려 평지 도성 = 평양직할시 대성구역 안학궁",
+      "status": "confirmed",
+      "limitations": "연대 인용문의 서술어가 '해석이었다'이다. 이 사전이 427~567을 단정한 문장이 아니므로 렌즈에 넣을 때 그대로 표기해야 한다. 좌표는 대성구역 행정구역 대표점이지 궁터 지점이 아니다.",
+      "identityCaveat": "entities.json의 place-pyongyang은 광개토왕비 표기 '平穰'이다. 이 출처는 비문 표기를 다루지 않는다. 안학궁·平穰·현 평양의 동일성은 각각 별도 sameEntityAs Claim이 필요하다."
+    },
+    {
+      "claimId": "lc-pyongyangseong-nahf",
+      "placeId": "place-pyongyangseong-goguryeo",
+      "sourceId": "nahf-ismy-pyongyangseong",
+      "quote": "586년(평원왕 28)에 수도를 장안성(長安成)으로 옮기는데",
+      "quoteLang": "ko",
+      "url": "http://contents.nahf.or.kr/item/level.do?levelId=ismy.d_0002_0030_0010",
+      "region": "북한 평양시 모란봉·대동문 일대",
+      "lat": 39.037519,
+      "lon": 125.754069,
+      "coordinateSource": {
+        "sourceId": "nahf-ismy-pyongyangseong",
+        "recordUrl": "http://contents.nahf.or.kr/item/level.do?levelId=ismy.d_0002_0030_0010",
+        "extractedFrom": "페이지의 지도 호출 파라미터 7개 중 첫 번째 (39.037519, 125.754069 / '북한 평양시 모란봉공원')",
+        "allPoints": [
+          [39.037519, 125.754069], [39.035994, 125.754284], [39.041517, 125.759543],
+          [39.037083, 125.759758], [39.023288, 125.757376], [39.022610, 125.756797],
+          [39.027140, 125.741793]
+        ],
+        "datum": "미표기",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": 586,
+      "validTo": null,
+      "validityQuote": "586년(평원왕 28)에 수도를 장안성(長安成)으로 옮기는데",
+      "precision": "site-points-from-institution",
+      "view": "고구려 후기 도성 평양성(장안성) = 평양시 모란봉 일대",
+      "status": "inferred",
+      "limitations": "status가 inferred인 이유: 좌표 7개 중 대표점을 조사자가 골랐다. 페이지는 대표점을 지정하지 않는다. 적재할 때 7점 전부를 쓰거나 대표점 선택 근거를 별도로 두는 편이 낫다. 원문 한자 표기 '長安成'을 고치지 않았다.",
+      "identityCaveat": "이 좌표는 427년 천도 시점의 도성이 아니라 후기 평양성 유구 지점이다. place-pyongyang(平穰)과 직접 잇지 말 것."
+    },
+    {
+      "claimId": "lc-pyongyang-move-427-nahf",
+      "placeId": "place-pyongyang",
+      "sourceId": "nahf-ismy-pyongyangseong",
+      "quote": "고구려가 국내성에서 평양으로 수도를 옮긴 때는 427년이다",
+      "quoteLang": "ko",
+      "url": "http://contents.nahf.or.kr/item/level.do?levelId=ismy.d_0002_0030_0010",
+      "region": "북한 평양",
+      "lat": null,
+      "lon": null,
+      "coordinateSource": null,
+      "validFrom": 427,
+      "validTo": null,
+      "validityQuote": "고구려가 국내성에서 평양으로 수도를 옮긴 때는 427년이다",
+      "precision": "unknown",
+      "view": "427년 국내성→평양 천도",
+      "status": "confirmed",
+      "limitations": "이 인용문은 '평양'이라고만 하고 지점을 특정하지 않는다. 그래서 좌표를 붙이지 않았다. 지점 후보는 lc-pyongyang-anhakgung-encykorea 참고.",
+      "identityCaveat": "place-pyongyang은 entities.json에서 광개토왕비의 '平穰'이다. 이 출처의 '평양'과 비문의 '平穰'을 같다고 두지 않았다."
+    },
+    {
+      "claimId": "lc-nangnang-taedong-toseong",
+      "placeId": "place-nangnang",
+      "sourceId": "encykorea-nangnang-toseong",
+      "quote": "북한 평안남도 대동군 대동면에 있는 초기국가시대 낙랑군의 토축 성곽",
+      "quoteLang": "ko",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011577",
+      "region": "북한 평안남도 대동군 대동면",
+      "lat": 39.10577,
+      "lon": 125.55752,
+      "coordinateSource": {
+        "sourceId": "geonames",
+        "recordId": "1868812",
+        "name": "Taedong-gun",
+        "featureClass": "A (second-order administrative division)",
+        "recordUrl": "https://www.geonames.org/search.html?q=Taedong&country=KP",
+        "dms": "N 39° 6′ 20″ / E 125° 33′ 27″",
+        "datum": "WGS84",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": null,
+      "validTo": null,
+      "validityQuote": null,
+      "precision": "admin-county-representative-point",
+      "view": "낙랑군 치소 = 평안남도 대동군 대동면 낙랑토성 (평양 일대)",
+      "status": "confirmed",
+      "supportingQuotes": [
+        "낙랑군청과 조선현청이 모두 이 성 안에 있었고",
+        "1916년에 촬영한 평양에 위치한 낙랑군치지의 모습이다."
+      ],
+      "limitations": "좌표는 현대 대동군 행정구역 대표점이며 토성 지점이 아니다. '대동군 대동면'과 현행 평양시 낙랑구역 토성동의 대응은 이 출처로 확인되지 않았다(unverified 항목 참조). 연대는 '초기국가시대'라는 문화기 표기뿐이라 연도로 옮기지 않았다.",
+      "identityCaveat": null
+    },
+    {
+      "claimId": "lc-nangnang-pyongyang-region",
+      "placeId": "place-nangnang",
+      "sourceId": "encykorea-nangnang-gobun",
+      "quote": "대동강이 흐르는 평양지역을 중심으로 황해도와 평안남도에 걸쳐서 확인되는",
+      "quoteLang": "ko",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011573",
+      "region": "대동강 유역 평양지역 중심, 황해도·평안남도에 걸침",
+      "lat": 39.033853,
+      "lon": 125.754318,
+      "coordinateSource": {
+        "sourceId": "geonames",
+        "recordId": "1871859",
+        "name": "Pyongyang",
+        "featureClass": "P (capital of a political entity)",
+        "recordUrl": "https://www.geonames.org/search.html?q=Pyongyang&country=KP",
+        "decimal": "39.033852842708576, 125.75431823730469",
+        "datum": "WGS84",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": null,
+      "validTo": null,
+      "validityQuote": null,
+      "precision": "region-representative-point",
+      "view": "낙랑(고분) 분포 = 대동강 유역 평양 일대",
+      "status": "confirmed",
+      "limitations": "이 문장은 '낙랑고분'의 분포 범위이지 낙랑군의 행정 경계가 아니다. 경계선(polygon)을 만들 근거가 아니다. 좌표는 평양시 대표점 하나이며 범위를 대신하지 못한다.",
+      "identityCaveat": null
+    },
+    {
+      "claimId": "lc-nangnang-lulong-lee",
+      "placeId": "place-nangnang",
+      "sourceId": "kci-lee-2017-joseonhyeon",
+      "quote": "낙랑군조선현은 지금의 하북성 노룡현 북쪽에 있었고, 그 북쪽에 장성이 있었다.",
+      "quoteLang": "ko",
+      "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002799091",
+      "region": "중국 하북성 노룡현 북쪽",
+      "lat": 39.9,
+      "lon": 118.966667,
+      "coordinateSource": {
+        "sourceId": "geonames",
+        "recordId": "1802021",
+        "name": "Lulong Xian",
+        "featureClass": "A (third-order administrative division)",
+        "recordUrl": "https://www.geonames.org/search.html?q=Lulong&country=CN",
+        "dms": "N 39° 54′ 0″ / E 118° 58′ 0″",
+        "datum": "WGS84",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": null,
+      "validTo": null,
+      "validityQuote": null,
+      "precision": "region-representative-point",
+      "view": "낙랑군 조선현 = 하북성 노룡현 북쪽 (평양설·대동강설 비판)",
+      "status": "confirmed",
+      "limitations": "대상이 낙랑군 전체가 아니라 조선현이다. '노룡현 북쪽'의 방향·거리를 좌표에 반영하지 않았다(좌표는 노룡현 자체). 초록만 읽었고 본문 미열람. 발행처는 바른역사학술원, 저자 소속은 한가람역사문화연구소다.",
+      "identityCaveat": "조선현과 낙랑군을 같은 place로 두면 이 견해가 왜곡된다. 필요하면 place-joseonhyeon을 따로 두는 편이 낫다."
+    },
+    {
+      "claimId": "lc-daebang-hwanghae-encykorea",
+      "placeId": "place-daebang-gun",
+      "sourceId": "encykorea-daebang-gun",
+      "quote": "현재 황해도 봉산군 사리원 동남 문정면에 있는 속칭 당토성(唐土城)은 그 유지(遺址)로 추정되고 있다.",
+      "quoteLang": "ko",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014398",
+      "region": "황해도 봉산군 사리원 동남 문정면 (자비령 이남 황해도)",
+      "lat": 38.507222,
+      "lon": 125.755833,
+      "coordinateSource": {
+        "sourceId": "geonames",
+        "recordId": "1870883",
+        "name": "Sariwon",
+        "featureClass": "P (seat of a first-order administrative division)",
+        "recordUrl": "https://www.geonames.org/search.html?q=Sariwon&country=KP",
+        "dms": "N 38° 30′ 26″ / E 125° 45′ 21″",
+        "datum": "WGS84",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": null,
+      "validTo": 314,
+      "validityQuote": "314년 대방군 멸망 이후의 추이를 고찰하였다",
+      "validitySourceId": "kci-gong-2020-daebang",
+      "precision": "settlement-representative-point",
+      "view": "대방군 = 자비령 이남 황해도 (치소 후보: 봉산 당토성)",
+      "status": "confirmed",
+      "supportingQuotes": ["자비령(慈悲嶺) 이남의 황해도 지방"],
+      "limitations": "원문이 '추정되고 있다'로 서술한다. 좌표는 사리원 도시 대표점이며 문정면 당토성 지점이 아니다. validTo 314는 다른 출처(공석구 2020)의 연도이고, encykorea 기사에는 313년 표현이 있으나 인용 한도 때문에 인용하지 않았으므로 연도 근거로 쓰지 않았다. 두 연도가 갈리는 점을 그대로 남긴다.",
+      "identityCaveat": "entities.json의 place-daebang은 광개토왕비의 '帶方界'다. 군(郡)과 계(界)를 같은 노드로 합치지 말 것."
+    },
+    {
+      "claimId": "lc-daebang-northeast-china-reported",
+      "placeId": "place-daebang-gun",
+      "sourceId": "encykorea-daebang-gun",
+      "quote": "일부에서는 이를 중국 동북지방에 비정(比定)하는 견해도 있다.",
+      "quoteLang": "ko",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014398",
+      "region": "중국 동북지방",
+      "lat": null,
+      "lon": null,
+      "coordinateSource": null,
+      "validFrom": null,
+      "validTo": null,
+      "validityQuote": null,
+      "precision": "unknown",
+      "view": "대방군 = 중국 동북지방 (해당 견해의 원 출처는 이 조사에서 확인하지 못함)",
+      "status": "reported-view",
+      "limitations": "이 사전이 그런 견해가 존재한다고 보고할 뿐 스스로 주장하지 않는다. 범위가 '중국 동북지방'뿐이라 좌표를 붙이지 않았다. 이 견해를 직접 제시한 논문을 찾으면 별도 sourceId로 교체할 것.",
+      "identityCaveat": null
+    },
+    {
+      "claimId": "lc-daebang-moved-liaoxi-gong",
+      "placeId": "place-daebang-gun-moved",
+      "sourceId": "kci-gong-2020-daebang",
+      "quote": "대방군에 살던 주민들은 낙랑군에 뒤이어 4세기 전반 요서지방으로 옮겨갔다",
+      "quoteLang": "ko",
+      "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002620981",
+      "region": "요서지방 → (이후) 남영주 영구군 소속, 현 하북성 보정시 지역",
+      "lat": 39.016667,
+      "lon": 115.183333,
+      "coordinateSource": {
+        "sourceId": "geonames",
+        "recordId": "1816969",
+        "name": "Baoding Shi",
+        "featureClass": "A (second-order administrative division)",
+        "recordUrl": "https://www.geonames.org/search.html?q=Baoding&country=CN",
+        "dms": "N 39° 1′ 0″ / E 115° 11′ 0″",
+        "datum": "WGS84",
+        "accessed": "2026-09-06"
+      },
+      "validFrom": 314,
+      "validTo": null,
+      "validityQuote": "314년 대방군 멸망 이후의 추이를 고찰하였다",
+      "precision": "region-representative-point",
+      "view": "이치(移置)된 대방군 = 요서, 뒤에 현 하북성 보정시 지역",
+      "status": "confirmed",
+      "supportingQuotes": ["이후에는 이주해가서 남영주 영구군 소속(현 하북성 보정시지역)으로 존재하였다"],
+      "limitations": "원 대방군의 위치 주장이 아니라 멸망 뒤 옮겨간 대방군 이야기다. 원 대방군 황해도설과 경쟁하는 견해가 아니다. '4세기 전반'은 연도 확정이 아니며 validFrom 314는 초록의 멸망 연도를 그대로 쓴 것이다. 보정시 좌표는 영구군 지점이 아니다. 초록만 읽음.",
+      "identityCaveat": "옮겨간 대방군을 원 대방군과 한 노드로 합치면 시기별 위치가 뒤섞인다."
+    }
+  ],
+
+  "conflicts": [
+    {
+      "about": "고구려 도성이 장안성으로 옮겨간 해",
+      "claims": [
+        {"sourceId": "encykorea-anhakgung", "value": 567, "quote": "427년부터 고구려가 장안성(후기 평양성)으로 천도하는 567년까지 안학궁이 고구려의 평지 도성으로 사용되었다는 해석이었다."},
+        {"sourceId": "nahf-ismy-pyongyangseong", "value": 586, "quote": "586년(평원왕 28)에 수도를 장안성(長安成)으로 옮기는데"}
+      ],
+      "note": "둘 다 현대 기관 자료다. 어느 쪽이 맞는지 이 조사에서 판정하지 않는다."
+    },
+    {
+      "about": "국내성의 현대 위치",
+      "claims": [
+        {"sourceId": "encykorea-gungnaeseong", "value": "중국 지린성 지안시"},
+        {"sourceId": "nahf-ismy-gungnaeseong", "value": "집안시내 통구성 (41.125612, 126.183498)"},
+        {"sourceId": "kci-bok-2020-gungnae", "value": "중국 요녕성 철령시 일대"}
+      ],
+      "note": "앞의 둘은 같은 견해, 세 번째는 명시적으로 다른 견해다."
+    },
+    {
+      "about": "낙랑군(조선현)의 현대 위치",
+      "claims": [
+        {"sourceId": "encykorea-nangnang-toseong", "value": "평안남도 대동군 대동면 (평양 일대)"},
+        {"sourceId": "kci-lee-2017-joseonhyeon", "value": "하북성 노룡현 북쪽"}
+      ],
+      "note": "대상 범위가 다르다(낙랑토성 유적 vs 조선현). 그대로 병기한다."
+    },
+    {
+      "about": "대방군 멸망 연도",
+      "claims": [
+        {"sourceId": "kci-gong-2020-daebang", "value": 314, "quote": "314년 대방군 멸망 이후의 추이를 고찰하였다"},
+        {"sourceId": "encykorea-daebang-gun", "value": 313, "quote": null, "note": "313년 문장이 기사에 있는 것은 열람으로 확인했으나 인용 한도 때문에 인용하지 않았다. 인용 없이 연도 Claim으로 쓰지 말 것."}
+      ]
+    }
+  ],
+
+  "lensSources": [
+    {
+      "id": "encykorea",
+      "label": "한국민족문화대백과사전 (한국학중앙연구원)",
+      "defaultLensCandidate": true,
+      "sourceKind": "현대 연구 사전",
+      "articlesUsed": ["encykorea-gungnaeseong", "encykorea-anhakgung", "encykorea-nangnang-toseong", "encykorea-nangnang-gobun", "encykorea-daebang-gun"],
+      "license": "공공누리",
+      "licenseUrl": "https://encykorea.aks.ac.kr/Guide/ContentUse",
+      "caution": "항목마다 집필자가 다르고 사전이 집필자 견해와 기관 입장이 다를 수 있다고 밝힌다. '사전' 하나를 단일 렌즈로 묶으면 항목 간 차이가 지워진다. 렌즈를 항목(집필자) 단위로 쪼갤지 검토 필요."
+    },
+    {
+      "id": "nahf-ismy",
+      "label": "동북아역사재단 고구려·발해 문화유산 지도",
+      "defaultLensCandidate": true,
+      "sourceKind": "현대 기관 지도 데이터",
+      "articlesUsed": ["nahf-ismy-gungnaeseong", "nahf-ismy-pyongyangseong"],
+      "license": "공공누리 (유형 미확인)",
+      "licenseUrl": "http://www.kogl.or.kr/",
+      "caution": "좌표를 직접 제공하는 드문 기관 자료다. 다만 좌표는 지도 호출 파라미터에서 읽은 값이고 측지계·오차 표기가 없다."
+    },
+    {
+      "id": "alt-scholarship-kci",
+      "label": "다른 위치 견해 (KCI 등재 학술지)",
+      "defaultLensCandidate": false,
+      "sourceKind": "현대 학술 논문",
+      "articlesUsed": ["kci-lee-2017-joseonhyeon", "kci-bok-2020-gungnae"],
+      "license": "unverified",
+      "caution": "초록만 읽었다. 두 논문의 발행처·소속이 다르므로 하나의 렌즈로 묶는 것은 조사자의 편의일 뿐 학술적 분류가 아니다. 렌즈 이름을 붙일 때 '재야'·'통설' 같은 판정어를 쓰지 않기를 권한다."
+    },
+    {
+      "id": "kci-gong-2020",
+      "label": "공석구 2020 (백산학보)",
+      "defaultLensCandidate": false,
+      "sourceKind": "현대 학술 논문",
+      "articlesUsed": ["kci-gong-2020-daebang"],
+      "license": "unverified",
+      "caution": "위치 견해 대립이 아니라 시기별 이동을 다룬다. 대립 렌즈로 쓰면 잘못 읽힌다."
+    }
+  ],
+
+  "geometrySources": [
+    {
+      "id": "chgis-v6",
+      "title": "CHGIS, Version 6",
+      "institution": "Fairbank Center for Chinese Studies, Harvard University + Center for Historical Geographical Studies, Fudan University",
+      "url": "https://chgis.fas.harvard.edu/data/chgis/v6/",
+      "distributionUrl": "https://dataverse.harvard.edu/dataverse/chgis_v6",
+      "accessed": "2026-09-06",
+      "covers": "중국 역대 행정단위(현·부 등) 시계열. 郡 단위 포함 여부는 실제 레이어를 받아 확인해야 한다.",
+      "temporalCoverage": "222 BCE ~ 1911 (프로젝트 소개 기준). v6는 1820·1911·1990 타임슬라이스 + 시계열.",
+      "licenseQuote": "free for academic research, no commercial use, resale, or redistribution permitted",
+      "license": "restricted",
+      "citation": "CHGIS, Version: 6. (c) Fairbank Center for Chinese Studies of Harvard University and the Center for Historical Geographical Studies at Fudan University, 2016.",
+      "usableFor": "군현 경계·행정단위 점/면",
+      "readStatus": "confirmed (소개 페이지만 읽음. 데이터 미다운로드)",
+      "warning": "재배포 금지 조건이라 이 프로젝트가 데이터를 그대로 실어 나르면 안 된다. 좌표를 참조만 하거나 별도 허락이 필요하다."
+    },
+    {
+      "id": "nahf-ismy-map",
+      "title": "고구려·발해 문화유산 지도",
+      "institution": "동북아역사재단",
+      "url": "http://contents.nahf.or.kr/item/item.do?itemId=ismy",
+      "regionIndexExample": "https://contents.nahf.or.kr/ismyViewer/item.do?levelId=ismy.d_0002_0030",
+      "accessed": "2026-09-06",
+      "covers": "졸본성~연해주 크라스키노까지 고구려·발해 유적 지점. 항목마다 위도·경도가 지도 호출 파라미터로 들어 있다.",
+      "license": "공공누리 마크 표시 (유형 미확인)",
+      "licenseUrl": "http://www.kogl.or.kr/",
+      "usableFor": "유적 지점(point). 국경선·군현 경계는 제공하지 않는다.",
+      "readStatus": "confirmed (개별 항목 2건과 지역 목록 2건 열람)",
+      "warning": "좌표가 문서 본문이 아니라 스크립트 파라미터다. 대량 수집은 이용조건을 먼저 확인해야 한다."
+    },
+    {
+      "id": "ccts-sinica",
+      "title": "中華文明之時空基礎架構 (CCTS)",
+      "institution": "中央研究院人文社會科學研究中心 地理資訊科學研究專題中心",
+      "url": "https://gis.rchss.sinica.edu.tw/ccts/",
+      "serviceUrl": "https://ccts.sinica.edu.tw",
+      "liteUrl": "https://gissrv4.sinica.edu.tw/gis/cctslite.aspx",
+      "accessed": "2026-09-06",
+      "covers": "譚其驤 『中國歷史地圖集』 기반 2천여 년 행정구역·취락 공간 데이터. 검색 결과에 西漢(bc0007)·東漢(ad0140) 도층 언급이 있으나 그 목록 페이지는 직접 열지 않았다.",
+      "license": "unverified (페이지에 저작권 표시만 있고 이용조건 문구를 확인하지 못함)",
+      "licenseUrl": null,
+      "usableFor": "한대 군현 경계 대조",
+      "readStatus": "confirmed (소개 페이지). 레이어 목록·연도 코드는 unverified.",
+      "warning": "저본이 『中國歷史地圖集』이므로 이 지도의 비정을 그대로 쓰면 특정 견해를 채택하는 것이 된다."
+    },
+    {
+      "id": "whg",
+      "title": "World Historical Gazetteer",
+      "institution": "Institute for Spatial History Innovation, University of Pittsburgh",
+      "url": "https://whgazetteer.org/",
+      "apiHint": "/api/schema/swagger-ui/",
+      "licensesPage": "https://whgazetteer.org/licenses/",
+      "accessed": "2026-09-06",
+      "covers": "역사 지명 색인(좌표·시기·이표기 연결). 지수 규모는 사이트 표기 기준 약 2,236,719 places / 67M toponyms.",
+      "license": "unverified (licenses 페이지 미열람)",
+      "usableFor": "지명 동일성·좌표 후보 대조",
+      "readStatus": "confirmed (첫 페이지만). 실제 질의는 하지 않음."
+    }
+  ],
+
+  "unverified": [
+    {
+      "id": "unesco-1135",
+      "what": "UNESCO 세계유산 'Capital Cities and Tombs of the Ancient Koguryo Kingdom' 공식 좌표",
+      "url": "https://whc.unesco.org/en/list/1135/",
+      "reason": "HTTP 403. 페이지를 읽지 못했다.",
+      "note": "검색 결과 스니펫에 Guonei City 좌표가 N41°8'19.40\" E126°10'34.30\"로 나왔으나 원문을 직접 확인하지 못했으므로 Claim으로 쓰지 않는다. UNESCO는 국내성/평양 좌표의 좋은 공식 출처가 될 수 있으니 다른 경로로 재시도할 값어치가 있다."
+    },
+    {
+      "id": "unesco-1091",
+      "what": "UNESCO 세계유산 'Complex of Koguryo Tombs' (평양 일대) 공식 좌표",
+      "url": "https://whc.unesco.org/en/list/1091/",
+      "reason": "HTTP 403."
+    },
+    {
+      "id": "taedong-to-nangnang-guyok",
+      "what": "encykorea가 말한 '평안남도 대동군 대동면'과 현행 '평양시 낙랑구역 토성동'의 대응",
+      "reason": "두 표기를 잇는 출처를 찾지 못했다.",
+      "note": "GeoNames에 Nangnang(1873641, 38.95/125.70)과 Nangnang-ni(1873640, 38.972778/125.700278)가 있으나, 이 레코드를 낙랑토성과 잇는 근거가 없어 좌표로 쓰지 않았다. 행정구역 개편 근거 자료가 필요하다."
+    },
+    {
+      "id": "tgaz-api",
+      "what": "Harvard CHGIS Temporal Gazetteer(TGAZ)에서 樂浪·帶方 레코드 조회",
+      "url": "https://chgis.hudci.org/tgaz/",
+      "reason": "maps.cga.harvard.edu/tgaz는 chgis.hudci.org로 이전됐고, 시도한 질의 경로 4가지가 모두 404였다. 정확한 파라미터 경로를 확인하지 못했다.",
+      "note": "성공하면 시기 범위가 붙은 좌표를 기관 근거로 얻을 수 있다. 다시 시도할 값어치가 있다."
+    },
+    {
+      "id": "nahf-board-post",
+      "what": "nahf.or.kr 게시글 '낙랑군 한사군 위만조선 위치는 중국 하북성 중부였다'",
+      "url": "https://www.nahf.or.kr/gnb04/snb01_03.do?mode=view&page=10&cid=63089&hcid=66105",
+      "reason": "열지 않았다. 기관의 연구 견해인지 이용자 게시글인지 확인하지 못했다.",
+      "note": "도메인이 재단이라는 이유로 '재단의 견해'로 쓰면 안 된다. 성격 확인 전에는 쓰지 않는다."
+    },
+    {
+      "id": "post-roads",
+      "what": "역로(역참) 공간 자료",
+      "reason": "이번 조사에서 읽을 수 있는 기관 제공 역로 GIS 자료를 찾지 못했다.",
+      "note": "고구려·한사군 시기에 해당하는 역로 자료는 애초에 드물다. 조선시대 역참 자료(국토지리정보원 국토정보플랫폼 고지도, 규장각 고지도 등)는 시기가 어긋나므로 이 이슈의 렌즈로 바로 쓰기 어렵다. 필요하면 별도 이슈로 분리 권장."
+    },
+    {
+      "id": "borders",
+      "what": "고구려·낙랑·대방의 국경선(polygon)",
+      "reason": "근거 있는 경계 데이터를 찾지 못했다.",
+      "note": "이번 결과물은 경계선을 만들지 않았다. region 문자열과 대표점만 있다. 지도에 면으로 그리면 없는 근거를 만들어내는 셈이 된다."
+    },
+    {
+      "id": "museum-nangnang-exhibition",
+      "what": "국립중앙박물관 특별전 『낙랑』 페이지",
+      "url": "https://www.museum.go.kr/site/main/exhiSpecialTheme/view/past?exhiSpThemId=3840",
+      "reason": "HTTP 500."
+    },
+    {
+      "id": "gungnae-second-view-fulltext",
+      "what": "복기대 2020, 이덕일 2017 본문",
+      "reason": "KCI 초록만 열람. 본문 PDF는 열지 않았다.",
+      "note": "본문에 좌표나 더 좁은 비정이 있을 수 있다."
+    }
+  ]
+}

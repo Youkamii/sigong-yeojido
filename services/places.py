@@ -121,12 +121,16 @@ def with_locations(data, claims, entities):
         located.setdefault(claim['subject'],[]).append((claim,candidate))
     for claim in sorted(claims,key=lambda c:c['id']):
         obj=claim.get('object',{})
-        if claim.get('predicate')!='syj:locatedIn' or obj.get('kind')!='entity':continue
+        relation=claim.get('predicate')
+        if relation not in ('syj:locatedIn','syj:northOf','syj:southeastOf') or obj.get('kind')!='entity':continue
         place=ensure(claim['subject'])
         if place is None:continue
         for coordinate,candidate in located.get(obj['id'],[]):
             if 'representative' not in candidate.get('precision',''):continue
             region=shells.get(obj['id'],{}).get('label',obj['id'])
+            direction={'syj:northOf':'북쪽','syj:southeastOf':'동남쪽'}.get(relation)
+            basis=(f'{region}의 {direction}이라는 주장. 점은 방향을 읽는 기준 지역의 현대 대표점이며, 역사 지점의 위치가 아니다. '
+                   if direction else f'{region} 범위의 현대 대표점. 유적의 정확한 위치가 아니다. ')
             place['candidates'].append({**candidate,'id':f"loc-{claim['id']}-{coordinate['id']}",
                 'claimId':claim['id'],'coordinateClaimId':coordinate['id'],'grounded':False,'derived':True,
                 'coordinateChunkId':coordinate['citesChunk'],
@@ -134,7 +138,7 @@ def with_locations(data, claims, entities):
                 'requiredSources':sorted({claim['fromSource'],coordinate['fromSource']}),
                 'validFrom':claim.get('validFrom'),'validTo':claim.get('validTo'),
                 'citesChunk':claim['citesChunk'],'quote':claim['quote'],
-                'precision':'region-representative-point',
-                'basis':f'{region} 범위의 현대 대표점. 유적의 정확한 위치가 아니다. '+claim['quote']})
+                'precision':'direction-reference-point' if direction else 'region-representative-point',
+                'basis':basis+claim['quote']})
     return data
 

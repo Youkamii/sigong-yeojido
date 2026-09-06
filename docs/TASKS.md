@@ -126,7 +126,7 @@
 | #46 | 그래프 탐색 화면·조회 | 완료 `1029baa`. 실제 Fuseki 근거 연결·페이지 이동·AI/사료 필터, [c2 운영 검증](research/graph-46-production.json) 통과 | 시간·위치 확장은 #49 #55 |
 | #47 | 근거 챗봇·Claude CLI 연결 | 완료 `3b1580e`, 겹침 수정 `5cf9859`. c2 Max 구독 답변→인용→원문, 근거 부족·AI/사료 필터·480px [운영 검증](research/chat-47-production.json) 통과 | 답할 수 있는 범위는 연결된 주장에 한정 |
 | #48 | 현대 연구 기본 렌즈·비교 사료 겹침 | 부분. 스타일 필드만 있고 기본 Source 0 | #51 #52 |
-| #49 | 좌표 Claim·지도·3D·RDF 연결 | 공용 지명 목록으로 통합, 실제 후보 206개의 ID·좌표·출처·기간 [RDF 대조 통과](research/location-catalog-49.json). 위치 Claim과 지역 대표점 연결·사료별 지도/3D 필터 구현. 수집한 직접 근거 적재·운영 Q6 검증은 다음 단계 | 위치 근거 수집, #63 완료 |
+| #49 | 좌표 Claim·지도·3D·RDF 연결 | 공용 목록·위치 근거 15개 반영, 후보 219개의 ID·좌표·출처·기간 [RDF 대조 통과](research/location-catalog-49.json). 직접 위치와 지역·방향 기준점을 구별. [반영·보류 내역](research/location-research-49.md), 운영 Q6 검증은 다음 단계 | 위치 근거 수집, #63 완료 |
 | #50 | AI 주장·연결 제외 필터 | 완료 `ef443ad`, `4d109e4`. API·2D·3D·그래프·챗봇에 적용, [3D](research/origin-filter-50.json)·[그래프](research/graph-46-production.json)·[챗봇](research/chat-47-production.json) 운영 검증 통과. human 격리 사례도 통과 | 시간축 등 추가 경로에도 같은 조건 적용 |
 | #51 | 전 시대·여러 사료의 Claim 뼈대 | 부분. 5개 Source에 140개, 고대·고려사 54개 추가. [원문·digest 검증](research/core-claims-51.md) 통과. 조선·근현대와 사건별 시간 연결은 남음 | 기존 적재본부터 시작, #52 |
 | #52 | 통사 원문 공백·잔여 사료·번역문 확보 | 미완료. 1945년 이후 원사료 카드 0 | #12, 자료별 조사 |

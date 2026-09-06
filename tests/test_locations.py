@@ -25,6 +25,12 @@ class LocationMaterializationTests(unittest.TestCase):
         self.assertEqual(derived['coordinateClaimId'],'cl-point')
         self.assertEqual(derived['claimId'],'cl-region')
         self.assertIsNone(derived['validTo'])
+        relation['predicate']='syj:northOf'
+        directional=with_locations({'places':[]},[coordinate,relation],entities)
+        point=next(p for p in directional['places'] if p['id']=='ancient')['candidates'][0]
+        self.assertEqual(point['precision'],'direction-reference-point')
+        self.assertIn('기준 지역',point['basis'])
+        self.assertFalse(point['grounded'])
         # Ordinary point claims are never silently used as the center of a region.
         coordinate['object']['precision']='site-point'
         data=with_locations({'places':[]},[coordinate,relation],entities)
