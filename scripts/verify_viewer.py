@@ -243,20 +243,30 @@ async def run(url: str, out: Path) -> int:
 
             # 5. 3D 클릭 → 근거 패널
             pick3 = await pg.evaluate(
-                """() => { const R=window.__sigong,E=R.engine;
-                  const g=R.world.marks.children.find(o=>o.name==='place:place-silla-capital:0');
-                  const head=g.userData.head; const v=head.getWorldPosition(new head.position.constructor()); v.project(E.camera);
+                """async () => { const R=window.__sigong,E=R.engine;
+                  const {Raycaster,Vector2,Vector3}=await import('three');
+                  const ray=new Raycaster();
+                  // 같은 화면 점에 후보가 겹칠 수 있으므로 실제 앞에 보이는 머리를 고른다.
+                  const head=R.world.pickTargets.find(h=>{
+                    const v=h.getWorldPosition(new Vector3()).project(E.camera);
+                    if(Math.abs(v.x)>.85||Math.abs(v.y)>.85||Math.abs(v.z)>1)return false;
+                    ray.setFromCamera(new Vector2(v.x,v.y),E.camera);
+                    return ray.intersectObjects(R.world.pickTargets,false)[0]?.object===h;
+                  });
+                  if(!head)return {screen:[],expected:null};
+                  const expected=R.world.places.find(p=>p.id===head.userData.placeId).labelKo;
+                  const v=head.getWorldPosition(new Vector3()).project(E.camera);
                   const cv=E.renderer.domElement, r=cv.getBoundingClientRect();
                   const cx=r.left+(v.x+1)/2*r.width, cy=r.top+(1-v.y)/2*r.height;
                   const mk=(t)=>new PointerEvent(t,{clientX:cx,clientY:cy,bubbles:true,pointerId:1,button:0,pointerType:'mouse',isPrimary:true});
                   cv.dispatchEvent(mk('pointerdown')); cv.dispatchEvent(mk('pointerup'));
                   cv.dispatchEvent(new MouseEvent('click',{clientX:cx,clientY:cy,bubbles:true}));
-                  return {screen:[Math.round(cx),Math.round(cy)]}; }"""
+                  return {screen:[Math.round(cx),Math.round(cy)],expected}; }"""
             )
             await pg.wait_for_timeout(500)
             sel = await pg.evaluate("(()=>{const h=document.querySelector('#evi h3');return h?h.textContent:null;})()")
             report["scene"]["threePick"] = {**pick3, "label": sel}
-            check("three_pick_opens_evidence", sel == "신라 왕경", f"{sel} @ {pick3['screen']}")
+            check("three_pick_opens_evidence", bool(pick3['expected']) and sel == pick3['expected'], f"{sel} @ {pick3['screen']}")
             (out / "05-3d-pick.png").write_bytes(await canvas_png(pg, "#three canvas"))
 
         errs = [c for c in report["console"] if c.startswith(("pageerror", "error"))]

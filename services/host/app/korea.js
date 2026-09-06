@@ -16,7 +16,7 @@ import { activeAt, candActive } from './place-state.js';
 import * as THREE from 'three';
 import { PALETTE, WHITE, hexNum, mix } from './artbible.js';
 import { makeMaterial } from './materials.js';
-import { makeGlow } from './style.js';
+import { makeGlow, patchFanMaterial } from './style.js';
 import { canvasTexture } from './util.js';
 
 /* ── 디오라마 범위 — 한반도 + 지안(국내성) + 일본 서안 한 자락 ── */
@@ -429,6 +429,22 @@ function buildColumn(place, cand, index, heightAt = null) {
   g.userData.shaft = shaft;
   g.userData.ring = ring;
 
+  // 기존 물질화 셰이더에 이 지명의 진행도와 높이만 연결한다.
+  const materialize = { value: 1 };
+  g.userData.materialize = materialize;
+  const bindColumn = shader => {
+    shader.uniforms.uMaterialize = materialize;
+    shader.uniforms.uMatMinY = { value: g.position.y };
+    shader.uniforms.uMatMaxY = { value: g.position.y + COLUMN_H + 3 };
+  };
+  for (const mesh of [shaft, ring, head]) {
+    const mat = patchFanMaterial(mesh.material, { key: 'korea-column' });
+    const compile = mat.onBeforeCompile;
+    mat.onBeforeCompile = shader => { compile(shader); bindColumn(shader); };
+    mat.userData.fanDepthPatch = bindColumn;
+    mat.userData.fanDepthKey = 'korea-column';
+  }
+
   // 라벨은 후보마다 두되 _applyLive 가 그 연도에 유효한 첫 후보에만 켠다 (도읍이 옮겨 가면 라벨도 따라간다)
   const label = makeLabel(place.labelKo, color);
   label.position.y = COLUMN_H + 7;
@@ -441,11 +457,13 @@ function buildColumn(place, cand, index, heightAt = null) {
 /* ── 라벨 — 도트 UI 계열(§4)에 맞춰 각진 판에 얹는다 ── */
 function makeLabel(text, color) {
   const pad = 16, fs = 40;
+  let inkWidth = 1;
   const tex = canvasTexture(512, 128, (ctx, w, h) => {
     ctx.clearRect(0, 0, w, h);
     ctx.font = `500 ${fs}px "Noto Sans KR", sans-serif`;
     const tw = ctx.measureText(text).width;
     const bw = Math.min(w - 4, tw + pad * 2), bh = fs + pad;
+    inkWidth = bw / w;
     const bx = (w - bw) / 2, by = (h - bh) / 2;
     ctx.fillStyle = 'rgba(12,10,8,.78)';
     ctx.fillRect(bx, by, bw, bh);
@@ -461,6 +479,7 @@ function makeLabel(text, color) {
   );
   sp.scale.set(30, 7.5, 1);
   sp.renderOrder = 10;
+  sp.userData.ink = { width: inkWidth, height: (fs + pad) / 128 };
   return sp;
 }
 
@@ -570,16 +589,17 @@ export class KoreaWorld {
     return candActive(c, this._year ?? 0);
   }
 
-  /** 라벨을 줄 지명 — 선택된 것 먼저, 그다음 사료에서 많이 언급된 순으로 LABEL_BUDGET 개 */
+  /** 선택된 지명과 원문 언급이 많은 지명을 먼저 배치한다. */
   _labelBudget() {
     const score = (p) => Object.values(p.mentions || {}).reduce((n, v) => n + (+v || 0), 0);
     const live = this.places.filter((p) => this.byPlace.has(p.id) && this._isLive(p));
     live.sort((a, b) => (b.id === this._selected) - (a.id === this._selected) || score(b) - score(a) || a.id.localeCompare(b.id));
-    return new Set(live.slice(0, LABEL_BUDGET).map((p) => p.id));
+    return new Map(live.map((p, i) => [p.id, i]));
   }
 
   _applyLive() {
     const budget = this._labelBudget();
+    this._labels = [];
     for (const p of this.places) {
       const objs = this.byPlace.get(p.id);
       if (!objs) continue;
@@ -591,7 +611,14 @@ export class KoreaWorld {
         else if (o.userData?.linkCands) live = placeLive && o.userData.linkCands.every((c) => this._candActive(c));
         if (o.userData?.label) {
           o.userData.label.visible = live && !labelShown && budget.has(p.id);
+          if (o.userData.label.visible) this._labels.push(o.userData.label);
           if (live) labelShown = true;
+          if (live && !o.userData.live) {
+            o.userData.activatedAt = this._time ?? null;
+            o.userData.materialize.value = 0;
+          }
+          o.userData.live = live;
+          if (!live) o.userData.materialize.value = 1;
         }
         o.traverse((m) => {
           if (!m.material) return;
@@ -606,6 +633,7 @@ export class KoreaWorld {
         });
       }
     }
+    this._labels.sort((a, b) => budget.get(a.parent.userData.placeId) - budget.get(b.parent.userData.placeId));
   }
 
   setSelected(placeId) {
@@ -621,15 +649,51 @@ export class KoreaWorld {
   }
 
   /** 광주가 천천히 돈다 — 살아 있다는 신호. 시간이 흐르면 세계도 움직인다. */
-  update(t) {
+  update(t, camera = null, canvas = null) {
+    this._time = t;
+    this.materializing = false;
     for (const objs of this.byPlace.values()) {
       for (const o of objs) {
         const h = o.userData?.head;
         if (h) {
           h.rotation.y = t * 0.35;
           h.position.y = 30 + Math.sin(t * 1.1 + o.position.x * 0.05) * 0.5;
+          if (o.userData.live) {
+            o.userData.activatedAt ??= t;
+            const progress = Math.min(1, Math.max(0, (t - o.userData.activatedAt) / 1.1));
+            o.userData.materialize.value = progress * progress * (3 - 2 * progress);
+            this.materializing ||= progress < 1;
+          }
         }
       }
+    }
+    if (camera && canvas) this._layoutLabels(camera, canvas);
+  }
+
+  _layoutLabels(camera, canvas) {
+    const width = canvas.clientWidth, height = canvas.clientHeight;
+    if (!width || !height) return;
+    camera.updateMatrixWorld();
+    this.group.updateMatrixWorld(true);
+    const point = new THREE.Vector3();
+    const boxes = [];
+    for (const label of this._labels || []) {
+      label.visible = false;
+      label.userData.screenBox = null;
+      if (boxes.length >= LABEL_BUDGET) continue;
+      label.getWorldPosition(point).project(camera);
+      if (point.z < -1 || point.z > 1) continue;
+      const ink = label.userData.ink;
+      const halfW = label.scale.x * ink.width * Math.abs(camera.projectionMatrix.elements[0]) * width / 4 + 3;
+      const halfH = label.scale.y * ink.height * Math.abs(camera.projectionMatrix.elements[5]) * height / 4 + 3;
+      const x = (point.x + 1) * width / 2, y = (1 - point.y) * height / 2;
+      const box = { left: x - halfW, right: x + halfW, top: y - halfH, bottom: y + halfH };
+      if (box.left < 0 || box.right > width || box.top < 0 || box.bottom > height) continue;
+      if (boxes.some(b => box.left < b.right && box.right > b.left && box.top < b.bottom && box.bottom > b.top)) continue;
+      label.visible = true;
+      label.material.opacity = label.parent.userData.materialize.value;
+      label.userData.screenBox = box;
+      boxes.push(box);
     }
   }
 }

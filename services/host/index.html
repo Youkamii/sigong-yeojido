@@ -861,7 +861,17 @@ async function init3d(){
     engine.camera.position.set(Math.sin(az)*Math.cos(el)*d, Math.sin(el)*d + 14, Math.cos(az)*Math.cos(el)*d);
     engine.controls.update(); }
   if(q && engine.setQuality) engine.setQuality(q);   // 검증·저사양용 ?q=low
-  engine.start((dt, t) => world.update(t));
+  let ssaoBeforeMaterialize = null;
+  engine.start((dt, t) => {
+    world.update(t, engine.camera, engine.renderer.domElement);
+    if (engine.ssao && world.materializing) {
+      ssaoBeforeMaterialize ??= engine.ssao.enabled;
+      engine.ssao.enabled = false;
+    } else if (engine.ssao && ssaoBeforeMaterialize !== null) {
+      engine.ssao.enabled = ssaoBeforeMaterialize;
+      ssaoBeforeMaterialize = null;
+    }
+  });
   }catch(e){ console.error('[3D] init 실패', e); window.__sigongErr = String(e && e.stack || e); }
 }
 
