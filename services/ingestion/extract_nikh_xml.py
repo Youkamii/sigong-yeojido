@@ -58,6 +58,7 @@ SOURCES: dict[str, dict] = {
     "goryeosa": {"dataset": "15053637", "label": "고려사"},       # 2026-09-05 검증: 5,389 기사 + 73 절
     "joseon-sillok": {"dataset": "15053647", "label": "조선왕조실록"},
     "seungjeongwon-ilgi": {"dataset": "15064218", "label": "승정원일기", "dateContext": True},
+    "bibyeonsa-deungnok": {"dataset": "15053636", "label": "비변사등록", "dateContext": True, "frontMatter": True},
 }
 
 # 본문에서 통째로 버리는 요소 — 원문이 아니라 국편의 편집 장치다
@@ -404,6 +405,18 @@ def extract(source: str, zpath: Path, *, emit=None) -> tuple[list[dict], dict]:
         stats[f"level{depth}"] += 1
         kids = [k for k in level if isinstance(k.tag, str) and re.fullmatch(r"level\d+", k.tag)]
         forms = date_forms(level) if preserve_dates else []
+        if depth == 1 and SOURCES.get(source, {}).get("frontMatter") and level.find("front") is not None:
+            front_level = ET.Element(level.tag, {"id": level.get("id")})
+            content = ET.SubElement(ET.SubElement(front_level, "text"), "content")
+            for description in level.findall("front/description/*/content"):
+                for paragraph in description:
+                    content.append(paragraph)
+            chunk, art = extract_article(front_level, chunk_source, labels + ["서지·해제"], "source-metadata")
+            chunk["id"] += "__front"
+            chunk["title"] = f"{label} 서지·해제"
+            chunk["lang"] = "mixed"
+            chunk["frontMatterXml"] = ET.tostring(level.find("front"), encoding="unicode")
+            take(chunk, art, "metadata")
         if level.find("text") is not None:
             if level.get("id"):
                 ctype = "section" if kids else "article"
@@ -553,6 +566,7 @@ def main(argv: list[str]) -> int:
     levels = "  ".join(f"L{d} {st.get(f'level{d}', 0)}" for d in range(1, 7) if st.get(f"level{d}"))
     print(f"xml files     : {st.get('xmlFiles', 0)}   {levels}")
     print(f"chunks        : {sum(writer.counts.values())}  (articles {st.get('articles', 0)}, sections {st.get('sections', 0)}"
+          + (f", metadata {st['metadata']}" if st.get("metadata") else "")
           + (f", text 있으나 id 없음 {st['textNoId']}" if st.get("textNoId") else "") + ")")
     empty = st.get("empty", 0)
     print(f"empty text    : {empty}")

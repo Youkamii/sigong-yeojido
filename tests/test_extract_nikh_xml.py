@@ -12,6 +12,26 @@ spec.loader.exec_module(extractor)
 
 
 class ExtractionTests(unittest.TestCase):
+    def test_register_preserves_front_matter_without_treating_print_year_as_event(self):
+        xml = '''<level1 id="bb_001"><front><biblioData><title><mainTitle>一冊</mainTitle></title>
+        <publication><dateIssued date="1959-04-05"/></publication></biblioData>
+        <description><introduction><content><paragraph>序甲</paragraph></content></introduction>
+        <remarks><content><paragraph>凡例乙</paragraph></content></remarks></description></front>
+        <level4 id="bb_001_001"><front><biblioData><date><dateOccured date="1617-01-00L0"/></date></biblioData></front>
+        <text><content>正文</content></text></level4></level1>'''
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/'register.zip'
+            with zipfile.ZipFile(path, 'w') as archive:
+                archive.writestr('one.xml', xml)
+            chunks, report = extractor.extract('bibyeonsa-deungnok', path)
+        front, article = chunks
+        self.assertEqual(front['id'], 'chunk_bibyeonsa-deungnok_bb_001__front')
+        self.assertEqual(front['text'], '序甲\n凡例乙')
+        self.assertIsNone(front['date'])
+        self.assertIn('1959-04-05', front['frontMatterXml'])
+        self.assertEqual(article['date']['raw'], '1617-01-00L0')
+        self.assertEqual(report['stats']['metadata'], 1)
+
     def test_journal_keeps_parallel_dates_and_inherits_day_without_crossing_siblings(self):
         xml = '''<level2 id="SJW-A01"><front><biblioData><date>
         <dateOccured type="간지">계해</dateOccured><dateOccured type="서기" date="1623"/>

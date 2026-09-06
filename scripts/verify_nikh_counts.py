@@ -26,7 +26,12 @@ def verify(bulk, directory, source):
         own_date = western_date(level)
         context = (level.get('id'), own_date) if own_date else inherited
         children = [c for c in level if re.fullmatch(r'level\d+', c.tag)]
+        kinds = []
+        if source == 'bibyeonsa-deungnok' and level.tag == 'level1' and level.find('front') is not None:
+            kinds.append('source-metadata')
         if level.find('text') is not None:
+            kinds.append('section' if children else 'article')
+        for kind in kinds:
             level_id = level.get('id')
             if not level_id:
                 raise ValueError('id 없는 본문')
@@ -38,14 +43,17 @@ def verify(bulk, directory, source):
                                  'annotations': 0, 'indexTerms': 0, 'examples': []}
             row = json.loads(next(readers[name]))
             expected_id = f'chunk_{name}_{level_id}'
-            kind = 'section' if children else 'article'
+            if kind == 'source-metadata':
+                expected_id += '__front'
+                if row.get('frontMatterXml') != ET.tostring(level.find('front'), encoding='unicode'):
+                    raise ValueError(f'서지 원문 불일치: {expected_id}')
             if (row['id'], row['levelId'], row['sourceId'], row['level'], row['chunkType']) != (
                     expected_id, level_id, f'src-{name}', int(level.tag[5:]), kind):
                 raise ValueError(f'누락·순서·종류 불일치: {expected_id}')
-            raw = context[1] if context else None
+            raw = context[1] if context and kind != 'source-metadata' else None
             if (row.get('date') or {}).get('raw') != raw:
                 raise ValueError(f'날짜 불일치: {expected_id}')
-            parent_id = inherited[0] if inherited and not own_date else None
+            parent_id = inherited[0] if inherited and not own_date and kind != 'source-metadata' else None
             if row.get('dateInheritedFrom') != parent_id:
                 raise ValueError(f'날짜 상속 불일치: {expected_id}')
             stats = reports[name]
