@@ -1,0 +1,69 @@
+{
+  "document": {
+    "url": "https://documents.un.org/api/symbol/access?s=A/HRC/WG.6/33/PRK/1&l=E&t=pdf",
+    "finalUrl": "https://documents.un.org/doc/undoc/gen/g19/045/30/pdf/g1904530.pdf",
+    "sha256": "1c558a38be2293ad67280e02e748f3185fc10ead1dace580f7a681d582ad13a5",
+    "bytes": 351660
+  },
+  "pages": 15,
+  "source": "src-dprk-upr3-national-report-2019",
+  "checks": [
+    {
+      "chunk": "chunk_ex-dprk-upr3-reproduced-as-received",
+      "page": 1,
+      "whitespaceOnlyMatch": true,
+      "voice": "un-secretariat"
+    },
+    {
+      "chunk": "chunk_ex-dprk-upr3-sanctions-obstacle",
+      "page": 14,
+      "whitespaceOnlyMatch": true,
+      "voice": "dprk-official"
+    },
+    {
+      "chunk": "chunk_ex-dprk-upr3-constitution-art166",
+      "page": 6,
+      "whitespaceOnlyMatch": true,
+      "voice": "dprk-official"
+    }
+  ],
+  "dateMetadataChecked": true,
+  "claims": [
+    "claim-dprk-upr3-sanctions-statement",
+    "claim-dprk-upr3-constitution-article",
+    "claim-dprk-upr3-distribution-date"
+  ],
+  "withheld": [
+    "the secretariat footnote alone does not prove DPRK authorship",
+    "constitution edition identity",
+    "text beyond adopted quotations"
+  ],
+  "run": {
+    "task": "modern-provenance-65-66",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788693021.6471336,
+    "pid": 14876,
+    "exitCode": 0,
+    "seconds": 1728.3,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "1cf8a2aa-bd0c-4a0b-920e-d7abbbb1cd14",
+    "permissionDenials": [
+      {
+        "tool_name": "Glob",
+        "tool_use_id": "toolu_01C4tB9ggamx3A8WU8SZytC4",
+        "tool_input": {
+          "pattern": "**/*.json",
+          "path": "C:\\Users\\gkfkd\\AppData\\Local\\Temp\\sigong-core-followup-opus5"
+        }
+      }
+    ]
+  },
+  "extractor": "1.28.0",
+  "humanReviewed": false
+}
