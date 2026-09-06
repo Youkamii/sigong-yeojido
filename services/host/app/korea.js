@@ -1,4 +1,4 @@
-import { activeAt, candActive, originMatches, DIORAMA_BOUNDS, inDiorama } from './place-state.js';
+import { activeAt, candActive, originMatches, sourceMatches, DIORAMA_BOUNDS, inDiorama } from './place-state.js';
 // app/korea.js — 실제 한반도를 판톨로지 아트 바이블의 언어로 세운다.
 //
 // 판톨로지의 terrain.js 는 절차 생성 판타지 대륙이다. 우리는 지형이 실측이므로
@@ -611,7 +611,7 @@ export class KoreaWorld {
       let labelShown = false;
       for (const o of objs) {
         const candidates = o.userData?.linkCands || [o.userData?.cand || p];
-        o.visible = candidates.every(c => originMatches(c, this._origin ?? 'all', p));
+        o.visible = candidates.every(c => originMatches(c, this._origin ?? 'all', p) && sourceMatches(c,p,this._on??null));
         let live = placeLive;
         if (o.userData?.cand) live = placeLive && this._candActive(o.userData.cand);
         else if (o.userData?.linkCands) live = placeLive && o.userData.linkCands.every((c) => this._candActive(c));

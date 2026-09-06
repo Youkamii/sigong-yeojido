@@ -107,6 +107,57 @@ WHERE {{
         node(chunk,'Chunk',row.get('locator',chunk),sourceId=source)
         node(source,'Source',row.get('sourceLabel',source))
         edges.update(((subject,cid,'주장'),(cid,target,'대상·값'),(cid,chunk,'인용'),(chunk,source,'사료')))
+    candidates=locations(entity,sources,origin,limit=20)
+    result['locations']=candidates['locations']
+    result['moreLocations']=candidates['hasMore']
+    for candidate in candidates['locations']:
+        node(entity,candidate['placeType'],candidate['placeLabel'])
+        node(candidate['id'],'Location',f"{candidate['lat']}, {candidate['lon']}",location=candidate)
+        edges.add((entity,candidate['id'],'좌표 근거' if candidate['grounded'] else '조사 후보'))
+        if candidate.get('fromSource'):
+            node(candidate['fromSource'],'Source',candidate['sourceLabel'])
+            edges.add((candidate['id'],candidate['fromSource'],'좌표 출처'))
     result['nodes']=list(nodes.values())
     result['edges']=[{'from':start,'to':end,'label':label} for start,end,label in sorted(edges)]
+    return result
+
+
+def locations(place=None,sources=None,origin='all',year=None,limit=1000,offset=0):
+    if origin not in ('all','human','ai'):raise ValueError('origin must be all, human or ai')
+    limit=max(1,min(1000,int(limit)));offset=max(0,int(offset))
+    result={'locations':[],'hasMore':False,'offset':offset,'limit':limit}
+    if sources is not None and not sources:return result
+    focus='' if not place else f'FILTER(?place={identifier(place)})'
+    authors='' if origin=='all' else 'FILTER(?origin='+json.dumps(origin)+')'
+    selection=''
+    if sources is not None:
+        values=','.join(identifier(s) for s in sorted(sources))
+        selection=f'FILTER(!BOUND(?source)||?source IN ({values})) FILTER NOT EXISTS {{?location syj:requiresSource ?required. FILTER(?required NOT IN ({values}))}}'
+    period='' if year is None else f'FILTER((!BOUND(?validFrom)||?validFrom<={int(year)})&&(!BOUND(?validTo)||?validTo>={int(year)}))'
+    rows=query_rows(f'''
+SELECT DISTINCT ?location ?place ?placeLabel ?placeType ?lat ?lon ?grounded ?source ?sourceLabel ?origin ?precision ?basis ?validFrom ?validTo ?fromFile
+WHERE {{
+ ?location a syj:Location; syj:candidateOf ?place; syj:lat ?lat; syj:lon ?lon; syj:grounded ?grounded.
+ OPTIONAL {{?place rdfs:label ?placeLabel}} OPTIONAL {{?place a ?placeType}}
+ OPTIONAL {{?location syj:fromSource ?source. OPTIONAL {{?source rdfs:label ?sourceLabel}}}}
+ OPTIONAL {{?location syj:origin ?origin}} OPTIONAL {{?location syj:precision ?precision}}
+ OPTIONAL {{?location syj:basis ?basis}} OPTIONAL {{?location syj:validFrom ?validFrom}}
+ OPTIONAL {{?location syj:validTo ?validTo}} OPTIONAL {{?location syj:fromFile ?fromFile}}
+ {focus} {authors} {selection} {period}
+}} ORDER BY ?location LIMIT {limit+1} OFFSET {offset}
+''')
+    result['hasMore']=len(rows)>limit
+    local=lambda value:value.removeprefix(NS)
+    for row in rows[:limit]:
+        candidate={'id':local(row['location']),'place':local(row['place']),
+                   'placeLabel':row.get('placeLabel',local(row['place'])),'placeType':local(row.get('placeType','Place')),
+                   'lat':float(row['lat']),'lon':float(row['lon']),'grounded':row['grounded']=='true'}
+        for key in ('sourceLabel','origin','precision','basis','fromFile'):
+            if key in row:candidate[key]=row[key]
+        if 'source' in row:
+            candidate['fromSource']=local(row['source'])
+            candidate.setdefault('sourceLabel',candidate['fromSource'])
+        for key in ('validFrom','validTo'):
+            candidate[key]=int(row[key]) if key in row else None
+        result['locations'].append(candidate)
     return result

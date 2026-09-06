@@ -55,6 +55,7 @@ from urllib.parse import quote as url_quote
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import validate as V  # noqa: E402  — services/validate.py: 주장 파서 · 검사 · 충돌 규칙
 from validate import MULTI_VALUED_PREDICATES
+from places import load_places as merged_place_catalog, with_locations
 
 ROOT = V.ROOT
 DATA_DIR = V.DATA_DIR
@@ -380,8 +381,8 @@ def plan_places(places: list, shells: dict[str, Shell], where: str, warnings: li
         if shell is None:
             warnings.append(f"{where}: {pid} has no entity shell under data/entities/; candidates skipped")
             continue
-        if shell.cls != "Place":
-            warnings.append(f"{where}: {pid} is a {shell.cls}, not a Place; candidates skipped")
+        if shell.cls not in ('Place','Polity'):
+            warnings.append(f"{where}: {pid} is a {shell.cls}, not a Place or Polity; candidates skipped")
             continue
         candidates = place.get("candidates") or []
         if not isinstance(candidates, list):
@@ -391,6 +392,11 @@ def plan_places(places: list, shells: dict[str, Shell], where: str, warnings: li
         for index, cand in enumerate(candidates, 1):
             if not isinstance(cand, dict) or not (_num(cand.get("lat")) and _num(cand.get("lon"))):
                 warnings.append(f"{where}: {pid} candidate #{index} has no numeric lat/lon; skipped")
+                continue
+            if cand.get('claimId'):
+                used += 1
+                if cand.get('derived'):
+                    plan.ungrounded.append((pid,index,cand,place))
                 continue
             present = [k for k in PROMOTION_FIELDS if isinstance(cand.get(k), str) and cand[k].strip()]
             if present and len(present) < len(PROMOTION_FIELDS):
@@ -587,6 +593,11 @@ def add_claim(graph: Graph, claim: dict, doc: V.ClaimsDoc, chunks: dict, cards: 
         loc.add("syj:basis", lit(basis) if isinstance(basis, str) and basis else None)
         loc.add("syj:definedBy", qname(cid))
         loc.add("syj:grounded", boolean(True))
+        loc.add('syj:candidateOf',qname(subject))
+        loc.add('syj:fromSource',qname(claim['fromSource']))
+        loc.add('syj:origin',lit(claim['origin']))
+        for key in ('validFrom','validTo'):
+            if _int_value(claim.get(key)):loc.add('syj:'+key,integer(claim[key]))
         n.add("syj:objectLocation", qname(loc_id))
         if doc.source_key == PLACES_KEY:
             stats.locations_promoted += 1
@@ -652,7 +663,7 @@ def add_conflicts(graph: Graph, conflicts: list[dict]) -> None:
 
 def add_ungrounded_location(graph: Graph, pid: str, index: int, cand: dict, place: dict, where: str) -> None:
     """근거 없는 candidate -> syj:Location 만. Claim 이 아니다 (모듈 설명 '좌표')."""
-    loc = graph.node("Location", f"loc-{pid}-{index}")
+    loc = graph.node("Location", cand.get('id') or f"loc-{pid}-{index}")
     loc.add("syj:candidateOf", qname(pid))
     loc.add("syj:candidateIndex", integer(index))
     loc.add("syj:lat", decimal(cand["lat"]))
@@ -664,8 +675,16 @@ def add_ungrounded_location(graph: Graph, pid: str, index: int, cand: dict, plac
     status = place.get("status")
     loc.add("syj:identificationStatus", lit(status) if isinstance(status, str) and status else None)
     for key in ("validFrom", "validTo"):
-        if _int_value(place.get(key)):
-            loc.add(f"syj:{key}", integer(place[key]))
+        value=cand.get(key,place.get(key))
+        if _int_value(value):loc.add(f"syj:{key}", integer(value))
+    origin=cand.get('origin',place.get('origin'))
+    if origin:loc.add('syj:origin',lit(origin))
+    source=cand.get('fromSource') or cand.get('sourceId') or place.get('sourceId')
+    if source:loc.add('syj:fromSource',qname(source))
+    if cand.get('sourceUrl'):loc.add('syj:sourceUrl',uri_literal(cand['sourceUrl']))
+    for source in cand.get('requiredSources',[]):loc.add('syj:requiresSource',qname(source))
+    if cand.get('derived'):
+        loc.add('syj:derivedFrom',qname(cand['claimId']),qname(cand['coordinateClaimId']))
     loc.add("syj:grounded", boolean(False))
     loc.add("syj:fromFile", lit(where))
 
@@ -759,7 +778,15 @@ def build(data_dir: Path, out_path: Path | None, out=None) -> tuple[int, BuildRe
     try:
         shells = load_shells(data_dir / "entities", graph.warnings)
         cards = load_cards(data_dir / "sources")
-        plan = plan_places(load_places(places_path), shells, V.rel(places_path), graph.warnings)
+        load_places(places_path)  # Keep the primary file's shape diagnostics.
+        catalog=merged_place_catalog(data_dir)
+        for place in catalog['places']:
+            if place.get('from') and place['id'] not in shells:
+                shells[place['id']]=Shell(place['id'],'Place',place.get('labelKo') or place.get('label'),place.get('label'))
+                inputs.entities[place['id']]=str(data_dir/place['from'])
+        entities=[{'id':s.id,'type':s.cls,'label':s.label,'labelHanja':s.label_hanja} for s in shells.values()]
+        catalog=with_locations(catalog,[c for doc in docs for c in doc.claims if isinstance(c,dict)],entities)
+        plan = plan_places(catalog['places'], shells, V.rel(places_path), graph.warnings)
     except BuildError as exc:
         failures.append(f"FAIL [build] {exc}")
     if plan.promoted:  # 승격 후보는 claims 파일의 claim 과 똑같이 검사받는다 (같은 파서 · 같은 게이트 · 같은 충돌 규칙)
@@ -791,7 +818,8 @@ def build(data_dir: Path, out_path: Path | None, out=None) -> tuple[int, BuildRe
             add_conflicts(graph, report.conflicts)
             for pid, index, cand, place in plan.ungrounded:
                 # 파일 표식은 환경값이 아닌 고정 문자열 — 절대경로가 산출물에 들어가면 결정론이 깨진다
-                add_ungrounded_location(graph, pid, index, cand, place, f"{data_dir.name}/{PLACES_FILENAME}")
+                filename=cand.get('from') or place.get('from') or PLACES_FILENAME
+                add_ungrounded_location(graph, pid, index, cand, place, f"{data_dir.name}/{filename}")
             check_references(graph, stats, shells, inputs.chunks)
         except BuildError as exc:
             failures.append(f"FAIL [build] {exc}")

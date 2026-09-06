@@ -196,8 +196,10 @@ class PlaceMergeTests(unittest.TestCase):
                 places = server.merged_places()["places"]
         self.assertEqual(len(places), 2)
         self.assertNotEqual(places[0]["id"], places[1]["id"])
-        self.assertEqual(places[0]["candidates"], base["candidates"])
-        self.assertEqual(places[1]["candidates"], extra["candidates"])
+        self.assertEqual([(c['lat'],c['lon']) for c in places[0]['candidates']],[(37,127)])
+        self.assertEqual([(c['lat'],c['lon'],c['validFrom']) for c in places[1]['candidates']],[(38,125,475)])
+        self.assertEqual(places[0]['candidates'][0]['id'],'loc-p-1')
+        self.assertFalse(places[0]['candidates'][0]['grounded'])
         self.assertEqual(places[1]["aliases"], ["漢忽"])
 
     def test_same_label_unions_candidates_without_losing_provenance(self):
@@ -210,7 +212,11 @@ class PlaceMergeTests(unittest.TestCase):
             with patch.object(server, "DATA", data):
                 places = server.merged_places()["places"]
         self.assertEqual(len(places), 1)
-        self.assertEqual(places[0]["candidates"], [first, dict(second, origin="ai", **{"from": "places-candidates-a.json"})])
+        self.assertEqual(places[0]['candidates'][0]['sourceUrl'],first['sourceUrl'])
+        self.assertEqual(places[0]['candidates'][1]['sourceUrl'],second['sourceUrl'])
+        self.assertEqual(places[0]['candidates'][1]['origin'],'ai')
+        self.assertEqual(places[0]['candidates'][1]['from'],'places-candidates-a.json')
+        self.assertNotEqual(places[0]['candidates'][0]['id'],places[0]['candidates'][1]['id'])
 
 
 if __name__ == "__main__":

@@ -37,10 +37,10 @@ export class GraphExplorer {
       if(!response.ok)throw new Error(data.error||'그래프 조회 실패');
       this.data=data;
       this.nodes=new Map(data.nodes.map(node=>[node.id,node]));
-      status.textContent=`관련 주장 ${this.offset+1}~${this.offset+data.claims.length} · 전체 시기`;
+      status.textContent=`관련 주장 ${data.claims.length?`${this.offset+1}~${this.offset+data.claims.length}`:'0'} · 좌표 ${data.locations?.length||0}${data.moreLocations?'+':''} · 전체 시기`;
       this.host.querySelector('[data-page="-1"]').disabled=this.offset===0;
       this.host.querySelector('[data-page="1"]').disabled=!data.hasMore;
-      if(!data.claims.length){
+      if(!data.claims.length&&!data.locations?.length){
         status.textContent='현재 사료·작성자 선택에 맞는 연결이 없다.';
         canvas.innerHTML='<p class="empty">사료 선택을 바꾸거나 다른 항목을 찾아볼 수 있다. 기록이 없다는 것이 없었던 일이라는 뜻은 아니다.</p>';
         return;
@@ -70,7 +70,7 @@ export class GraphExplorer {
       const pos=positions.get(node.id);
       const text=String(node.label);
       const label=text.length>16?text.slice(0,15)+'…':text;
-      const detail=node.type==='Claim'?(node.origin==='human'?'사람':'AI 추출'):node.type;
+      const detail=node.type==='Claim'?(node.origin==='human'?'사람':'AI 추출'):node.location?(node.location.grounded?'좌표 근거 연결':'조사 후보 · 미확정'):node.type;
       return `<g data-node="${esc(node.id)}" role="button" tabindex="0" aria-label="${esc(text+' · '+detail)}" transform="translate(${pos.x},${pos.y})" class="graph-node ${node.id===this.entity?'selected':''}">
         <title>${esc(text+' · '+node.id)}</title><rect width="212" height="48" rx="4"/>
         <text x="10" y="19">${esc(label)}</text><text class="graph-kind" x="10" y="36">${esc(detail)}</text></g>`;
@@ -85,6 +85,7 @@ export class GraphExplorer {
     if(node.type==='Source')this.callbacks.source(id);
     else if(node.type==='Chunk')this.callbacks.chunk(id);
     else if(node.type==='Claim')this.callbacks.claim(this.data.claims.find(claim=>claim.id===id));
+    else if(node.location)this.callbacks.location(node.location);
     else if(node.type==='Value'||node.type==='Location')this.callbacks.claim(this.data.claims.find(claim=>claim.id===node.claimId));
     else this.callbacks.entity(id,node);
   }

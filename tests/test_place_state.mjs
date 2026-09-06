@@ -1,6 +1,16 @@
 import { strict as assert } from 'node:assert';
 import { test } from 'node:test';
-import { activeAt, candActive, originMatches, outsideCandidates, inDiorama } from '../services/host/app/place-state.js';
+import { activeAt, candActive, originMatches, sourceMatches, outsideCandidates, inDiorama } from '../services/host/app/place-state.js';
+
+test('each coordinate follows its own source and derived points require both sources',()=>{
+  const p={mentions:{old:2},validFrom:3,validTo:427,candidates:[
+    {fromSource:'modern',validFrom:null,validTo:null,origin:'ai'},
+    {fromSource:'other',requiredSources:['other','coordinates'],origin:'ai'}]};
+  assert.equal(activeAt(p,500,new Set(['modern'])),true);
+  assert.equal(sourceMatches(p.candidates[0],p,new Set(['old'])),false);
+  assert.equal(sourceMatches(p.candidates[1],p,new Set(['other'])),false);
+  assert.equal(sourceMatches(p.candidates[1],p,new Set(['other','coordinates'])),true);
+});
 
 test('date boundaries and undated candidates are shared', () => {
   assert.equal(candActive({validFrom:-18, validTo:475}, -18), true);

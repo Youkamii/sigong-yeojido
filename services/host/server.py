@@ -47,9 +47,10 @@ DATA = ROOT / "data"
 # claims 파서는 services/validate.py 의 것을 그대로 쓴다 — 파서를 두 벌 두지 않는다
 sys.path.insert(0, str(ROOT / "services"))
 from frontmatter import parse_front_matter
-from graph_query import neighborhood, GraphUnavailable
+from graph_query import neighborhood, locations, GraphUnavailable
 from chat import answer as chat_answer, ChatUnavailable
 from time_query import time_claims
+from places import load_places, with_locations, place_names
 try:
     from validate import parse_claims_text, MULTI_VALUED_PREDICATES  # noqa: E402
 except Exception:  # validate.py 가 없거나 깨졌어도 뷰어는 뜬다 (claims 만 비어 보인다)
@@ -168,9 +169,6 @@ def index() -> dict:
         return _IDX
 
 
-def place_names(p: dict) -> list[str]:
-    names = [p.get("label")] + list(p.get("aliases") or [])
-    return [n for n in names if isinstance(n, str) and n]
 
 
 def collect_country_terms() -> dict[str, set[str]]:
@@ -353,78 +351,7 @@ def claims_for(entity_id: str, about: bool, sources: set[str] | None = None, ori
 
 
 def merged_places() -> dict:
-    """data/places.json(손질한 것) + data/places-candidates.json(#11 조사, 후보마다 validFrom/validTo).
-
-    같은 id·이름은 후보를 합친다. 이름이 다르면 조사본에 파일명 접미사를 붙여 별개로 보존한다.
-    notAPlace 항목은 뺀다. variantOf 항목(이체자·이표기)은 원 항목의 aliases 로 접는다.
-    """
-    pj = DATA / "places.json"
-    base = json.loads(pj.read_text(encoding="utf-8")) if pj.exists() else {"places": []}
-    places: list[dict] = list(base.get("places", []))
-    by_id = {pl["id"]: pl for pl in places}
-    extra: list[dict] = []
-    for cj in sorted(DATA.glob("places-candidates*.json")):   # #11 1라운드 + 사료별 2라운드 파일들
-        cand = json.loads(cj.read_text(encoding="utf-8"))
-        extra += [dict(pl, _from=cj.name) for pl in cand.get("places", []) if not pl.get("notAPlace")]
-    if extra:
-        renamed = {}
-        used_ids = set(by_id) | {pl["id"] for pl in extra}
-        labels = {key: pl.get("label") for key, pl in by_id.items()}
-        known_names = {key: set(place_names(pl)) for key, pl in by_id.items()}
-        for pl in extra:
-            if pl.get("variantOf"):
-                continue
-            old_id = pl["id"]
-            if old_id in known_names and not known_names[old_id].intersection(place_names(pl)):
-                new_id = f"{old_id}-{Path(pl['_from']).stem}"
-                suffix = 2
-                while new_id in used_ids:
-                    new_id = f"{old_id}-{Path(pl['_from']).stem}-{suffix}"
-                    suffix += 1
-                logging.warning("place id collision: %s (%s / %s); keeping %s as %s",
-                                old_id, labels[old_id], pl.get("label"), pl["_from"], new_id)
-                renamed[(pl["_from"], old_id)] = new_id
-                pl["id"] = new_id
-                used_ids.add(new_id)
-            labels[pl["id"]] = pl.get("label")
-            known_names.setdefault(pl["id"], set()).update(place_names(pl))
-        for pl in extra:
-            if pl.get("variantOf"):
-                pl["variantOf"] = renamed.get((pl["_from"], pl["variantOf"]), pl["variantOf"])
-            if pl.get("relatedTo"):
-                pl["relatedTo"] = [renamed.get((pl["_from"], pid), pid) for pid in pl["relatedTo"]]
-        variants = [pl for pl in extra if pl.get("variantOf")]
-        for pl in extra:
-            if pl.get("variantOf"):
-                continue
-            if pl["id"] in by_id:
-                target = by_id[pl["id"]]
-                for candidate in pl.get("candidates", []):
-                    if candidate not in target.setdefault("candidates", []):
-                        recorded = dict(candidate, origin="ai", **{"from": pl["_from"]})
-                        if recorded not in target["candidates"]:
-                            target["candidates"].append(recorded)
-                for name in pl.get("aliases", []):
-                    if name != target.get("label") and name not in target.setdefault("aliases", []):
-                        target["aliases"].append(name)
-                continue
-            rec = {k: pl[k] for k in ("id", "label", "labelKo", "kind", "status", "candidates", "note", "confidence", "count", "indexType", "relatedTo", "references", "validFrom", "validTo", "sourceId", "evidence") if k in pl}
-            rec["origin"] = "ai"          # 조사 에이전트가 모아 검증자가 대조한 것 — 사람이 확인한 연결 아님
-            rec["from"] = pl.get("_from")
-            rec["aliases"] = list(pl.get("aliases") or [])
-            places.append(rec)
-            by_id[rec["id"]] = rec
-        for v in variants:
-            tgt = by_id.get(v["variantOf"])
-            if tgt is not None:
-                al = tgt.setdefault("aliases", [])
-                for name in [v.get("label")] + list(v.get("aliases") or []):
-                    if name and name != tgt.get("label") and name not in al:
-                        al.append(name)
-                # 이표기 항목이 제 좌표 후보를 따로 들고 있어도 원 항목의 후보로 합치지 않는다 — 같은 자리라는 판정은 Claim 몫
-    out = dict(base)
-    out["places"] = places
-    return out
+    return with_locations(load_places(DATA),collect_claims(),collect_entities())
 
 
 def mentions(names: list[str], sources: set[str] | None, limit: int) -> dict:
@@ -549,6 +476,16 @@ class Handler(BaseHTTPRequestHandler):
                 self._json({'error':str(exc)},400)
             except GraphUnavailable as exc:
                 self._json({'error':str(exc)},503)
+            return
+        if path == '/api/locations':
+            srcs=q.get('sources',[None])[0]
+            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            try:
+                result=locations(q.get('place',[None])[0],sources,q.get('origin',['all'])[0],q.get('year',[None])[0],
+                                 q.get('limit',[1000])[0],q.get('offset',[0])[0])
+                self._json(result)
+            except ValueError as exc:self._json({'error':str(exc)},400)
+            except GraphUnavailable as exc:self._json({'error':str(exc)},503)
             return
         if path == "/api/chunk":
             cid = q.get("id", [""])[0]
