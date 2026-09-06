@@ -66,16 +66,17 @@ async def run(url, out):
         assert selected, 'No crowded on-screen label to test selected priority'
         await page.evaluate('(id)=>window.__sigong.world.setSelected(id)', selected)
         await page.wait_for_function('id => window.__sigong.world.byPlace.get(id).some(o=>o.userData.label?.visible)', arg=selected)
-        await page.evaluate('''() => {
+        start = await page.evaluate('''() => {
           const W=window.__sigong.world;
           W.setSourcesOn(new Set());
           W.setSourcesOn(new Set(W.places.flatMap(p=>Object.keys(p.mentions||{}))));
+          return [...W.byPlace.values()].flat().filter(o=>o.userData.live)
+            .map(o=>o.userData.materialize.value);
         }''')
-        start = await page.evaluate('''() => [...window.__sigong.world.byPlace.values()].flat()
-          .filter(o=>o.userData.live).map(o=>o.userData.materialize.value)''')
         assert start and min(start) < 1, start
         (out/'materializing.png').write_bytes(await canvas_png(page, '#three canvas'))
-        await page.wait_for_function('!window.__sigong.world.materializing', timeout=30000)
+        await page.wait_for_function('''() => [...window.__sigong.world.byPlace.values()].flat()
+          .filter(o=>o.userData.live).every(o=>o.userData.materialize.value === 1)''', timeout=30000)
         end = await page.evaluate('''() => [...window.__sigong.world.byPlace.values()].flat()
           .filter(o=>o.userData.live).map(o=>o.userData.materialize.value)''')
         assert end and all(value == 1 for value in end), end
