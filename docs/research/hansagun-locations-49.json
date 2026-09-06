@@ -1,0 +1,35 @@
+{
+  "sources": [
+    "src-encykorea-jinbeongun",
+    "src-encykorea-imdungun",
+    "src-encykorea-hyeondogun",
+    "src-encykorea-nangnanggun",
+    "src-geonames-hamgyongnamdo"
+  ],
+  "chunks": 10,
+  "claims": [
+    "claim-encykorea-jinbeon-jaeryeong",
+    "claim-encykorea-jinbeon-southern-extent",
+    "claim-encykorea-imdun-hamnam",
+    "claim-encykorea-imdun-gangwon",
+    "claim-encykorea-hyeondo-moved-seat",
+    "claim-encykorea-hyeondo-first-range",
+    "claim-encykorea-nangnang-region",
+    "claim-encykorea-hansagun-liaodong",
+    "claim-geonames-hamgyongnamdo"
+  ],
+  "corrections": [
+    {
+      "excerpt": "ex-hyeondo-1",
+      "reason": "actual page uses U+F934 老, not U+8001 老",
+      "quote": "서기전 75년에는 압록강 중류 지방에 있던 군치(郡治)가 요동(遼東) 혼하(渾河) 상류인 흥경(興京) · 노성(老城) 부근으로 옮겨갔다.",
+      "pageSha256": "75838fc08daeb55ba484b008b3abbd8c07a53de8065ac642bf65f14011959378"
+    }
+  ],
+  "withheld": [
+    "재령읍 좌표를 재령평야에 연결: 장소 동일성 근거 없음",
+    "초안 GeoNames 표 재구성 문장을 직접 인용으로 사용",
+    "한사군 군치 좌표·행정 경계·자료에 없는 유효기간"
+  ],
+  "humanReviewed": false
+}

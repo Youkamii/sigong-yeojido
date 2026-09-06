@@ -687,8 +687,9 @@ def add_ungrounded_location(graph: Graph, pid: str, index: int, cand: dict, plac
     for source in cand.get('requiredSources',[]):loc.add('syj:requiresSource',qname(source))
     if cand.get('derived'):
         loc.add('syj:derivedFrom',qname(cand['claimId']),qname(cand['coordinateClaimId']))
+    else:
+        loc.add("syj:fromFile", lit(where))
     loc.add("syj:grounded", boolean(False))
-    loc.add("syj:fromFile", lit(where))
 
 
 # ----------------------------------------------------------------------------

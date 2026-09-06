@@ -24,6 +24,9 @@ def main():
             {name:'goryeo-918',sources:['src-goryeosa'],year:918,origin:'all'},
             {name:'modern-without-coordinate',sources:['src-kci-bok-2020-gungnae'],year:100,origin:'all'},
             {name:'modern-with-coordinate',sources:['src-kci-bok-2020-gungnae','src-geonames'],year:100,origin:'all'},
+            {name:'imdun-without-coordinate',sources:['src-encykorea-imdungun'],year:-100,origin:'all'},
+            {name:'imdun-with-coordinate',sources:['src-encykorea-imdungun','src-geonames-hamgyongnamdo'],year:-100,origin:'all'},
+            {name:'jinbeon-no-invented-point',sources:['src-encykorea-jinbeongun'],year:-100,origin:'all'},
             {name:'none',sources:[],year:100,origin:'all'},
             {name:'human-only',sources:null,year:100,origin:'human'}];
           const results=[];
@@ -41,6 +44,13 @@ def main():
             if(missing.length||extra.length||actual.hasMore)throw Error(JSON.stringify({case:c.name,missing,extra,hasMore:actual.hasMore}));
             for(const row of actual.locations){const e=expected.get(row.id);
               if(row.place!==e.place.id||Math.abs(row.lat-e.candidate.lat)>1e-8||Math.abs(row.lon-e.candidate.lon)>1e-8)throw Error('metadata '+row.id);
+            }
+            if(['imdun-without-coordinate','jinbeon-no-invented-point'].includes(c.name)&&ids.size)throw Error('unsupported ancient coordinate');
+            if(c.name==='imdun-with-coordinate'){
+              const derived=actual.locations.find(v=>v.place==='place-encykorea-imdungun');
+              if(ids.size!==2||!derived||derived.grounded||derived.precision!=='region-representative-point')throw Error('regional point promoted to ancient seat');
+              if(derived.fromFile)throw Error('claim-derived point incorrectly attributed to legacy places file');
+              if(!expected.get(derived.id).candidate.requiredSources?.includes('src-geonames-hamgyongnamdo'))throw Error('coordinate source missing');
             }
             if(c.name==='samguksagi-500'&&ids.size>10){
               params.set('limit','5');

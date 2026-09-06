@@ -1,0 +1,437 @@
+{
+  "aiDraft": true,
+  "draftNotice": "AI 초안이다. 사람 검수 전이며 좌표·경계는 확정값이 아니다. 조사·수집 전용 산출물로, 저장소 반영은 Codex가 판단한다.",
+  "task": "hansagun-locations-49 / Q6 한사군 위치 후보와 근거 보완",
+  "generatedAt": "2026-09-06",
+  "scopeNote": "1차 목표는 진번군·임둔군의 현대 지역 비정을 명시한 기관 해설 각 1건이었고 둘 다 한국민족문화대백과사전에서 확보했다. 여유분으로 현도군·낙랑군 대표 후보의 직접 인용도 같은 방식으로 보완했다. 고대 군치의 직접 좌표는 어느 군에서도 확보하지 못했으므로 좌표는 미상으로 두고, 현대 지역명이 직접 언급된 경우에 한해 GeoNames 대표점을 보조표시 후보로만 제안한다.",
+
+  "sources": [
+    {
+      "id": "src-encykorea-jinbeongun",
+      "title": "진번군(眞番郡)",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054690",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "edition": "집필 이형구, 집필년도 1995년, 최종수정 2024년 10월 23일(항목 표기)",
+      "sourceKind": "기관 공개 백과 해설",
+      "lang": "ko",
+      "license": "항목 표기: 공공누리 제도에 따라 이용 가능한 공공저작물. 인용 시 '[출처 : 항목명 - 한국민족문화대백과사전]' 출처 표기 요구",
+      "accessedAt": "2026-09-06",
+      "verification": "독립 fetch 2회에서 동일 문자열 확인",
+      "pageQuoteBudget": "24/25 단어",
+      "excerpts": [
+        {
+          "id": "ex-jinbeon-1",
+          "text": "황해도 재령평야를 중심으로 동쪽은 지금의 춘천 일대, 북쪽은 자비령, 남쪽은 한강 북안에 이르는",
+          "locator": "본문 '2. 남방설' > 재령평야설 문장 중간부",
+          "url": "https://encykorea.aks.ac.kr/Article/E0054690",
+          "wordCount": 13
+        },
+        {
+          "id": "ex-jinbeon-2",
+          "text": "지금의 경기도와 충청남도 북부에 걸치는 지역이라고",
+          "locator": "본문 '2. 남방설' > 진번재대방설 문장 후반부",
+          "url": "https://encykorea.aks.ac.kr/Article/E0054690",
+          "wordCount": 6
+        },
+        {
+          "id": "ex-jinbeon-3",
+          "text": "진번재대방설은 중국 청나라 말의 양수경(楊守敬)이",
+          "locator": "본문 '2. 남방설' > 진번재대방설 문단 첫머리",
+          "url": "https://encykorea.aks.ac.kr/Article/E0054690",
+          "wordCount": 5
+        }
+      ]
+    },
+    {
+      "id": "src-encykorea-imdungun",
+      "title": "임둔군(臨屯郡)",
+      "url": "https://encykorea.aks.ac.kr/Article/E0047426",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "edition": "집필 이형구, 집필년도 1995년, 최종수정 2024년 09월 20일(항목 표기)",
+      "sourceKind": "기관 공개 백과 해설",
+      "lang": "ko",
+      "license": "항목 표기: 공공누리 제도에 따라 이용 가능한 공공저작물. 인용 시 출처 표기 요구",
+      "accessedAt": "2026-09-06",
+      "verification": "독립 fetch 2회에서 동일 문자열 확인",
+      "pageQuoteBudget": "18/25 단어",
+      "excerpts": [
+        {
+          "id": "ex-imdun-1",
+          "text": "반도의 동북해안의 땅으로 지금의 함경남도 전체에 비정하는 이병도(李丙燾)의 주장이다.",
+          "locator": "본문 '내용 및 변천' > 위치설 열거의 여섯째 설",
+          "url": "https://encykorea.aks.ac.kr/Article/E0047426",
+          "wordCount": 9
+        },
+        {
+          "id": "ex-imdun-2",
+          "text": "지금의 함경도 남부와 강원도에 비정하는 설이다. 이것은 일인학자 시라도리(白鳥庫吉)가",
+          "locator": "본문 '내용 및 변천' > 위치설 열거의 다섯째 설",
+          "url": "https://encykorea.aks.ac.kr/Article/E0047426",
+          "wordCount": 9
+        }
+      ]
+    },
+    {
+      "id": "src-encykorea-hyeondogun",
+      "title": "현도군(玄菟郡)",
+      "url": "https://encykorea.aks.ac.kr/Article/E0063309",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "edition": "집필자·최종수정일 표기를 두 차례 열람에서 확인하지 못했다(미확인). 열람 시점 2026-09-06 판.",
+      "sourceKind": "기관 공개 백과 해설",
+      "lang": "ko",
+      "license": "사이트 표기: 한국민족문화대백과사전은 공공저작물로서 공공누리 제도에 따라 이용 가능",
+      "accessedAt": "2026-09-06",
+      "verification": "독립 fetch 2회에서 동일 문자열 확인",
+      "pageQuoteBudget": "24/25 단어",
+      "excerpts": [
+        {
+          "id": "ex-hyeondo-1",
+          "text": "서기전 75년에는 압록강 중류 지방에 있던 군치(郡治)가 요동(遼東) 혼하(渾河) 상류인 흥경(興京) · 노성(老城) 부근으로 옮겨갔다.",
+          "locator": "본문 '형성 및 변천'",
+          "url": "https://encykorea.aks.ac.kr/Article/E0063309",
+          "wordCount": 15
+        },
+        {
+          "id": "ex-hyeondo-2",
+          "text": "압록강 중 · 상류 일대가 제1현도군의 관할 범위에 속한다는",
+          "locator": "본문 '형성 및 변천' > 강역 여러 견해를 정리한 문장 중간부",
+          "url": "https://encykorea.aks.ac.kr/Article/E0063309",
+          "wordCount": 9
+        }
+      ]
+    },
+    {
+      "id": "src-encykorea-nangnanggun",
+      "title": "낙랑군(樂浪郡)",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011576",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "edition": "집필 이형구, 집필년도 1995년, 최종수정 2023년 02월 07일(항목 표기)",
+      "sourceKind": "기관 공개 백과 해설",
+      "lang": "ko",
+      "license": "항목 표기: 공공저작물로서 공공누리 제도에 따라 이용 가능. 인용 시 '[출처 : 항목명 - 한국민족문화대백과사전]' 출처 표기 요구",
+      "accessedAt": "2026-09-06",
+      "verification": "독립 fetch 2회에서 동일 문자열 확인. 2회차 추출본에 인코딩 깨짐 1자('낙랑군'의 둘째 글자)가 있었으나 나머지는 동일했고, 여기 저장한 문자열은 1회차 추출본이다.",
+      "pageQuoteBudget": "17/25 단어",
+      "excerpts": [
+        {
+          "id": "ex-nangnang-1",
+          "text": "낙랑군의 관할지역은 오늘날의 평안남도 일대와 황해도 북부였다는 것이 통설이다.",
+          "locator": "본문 '개설'",
+          "url": "https://encykorea.aks.ac.kr/Article/E0011576",
+          "wordCount": 9
+        },
+        {
+          "id": "ex-nangnang-2",
+          "text": "한사군의 위치를 중국의 요동지역으로 비정하는 견해도 있으나",
+          "locator": "본문 '개설', ex-nangnang-1 바로 앞 문장의 앞부분",
+          "url": "https://encykorea.aks.ac.kr/Article/E0011576",
+          "wordCount": 8
+        }
+      ]
+    },
+    {
+      "id": "src-geonames-chaeryong-up",
+      "title": "GeoNames Fulltextsearch 결과 행: Chaeryŏng-ŭp (GeoNames ID 1879487)",
+      "url": "https://www.geonames.org/search.html?q=Chaeryong-up&country=KP",
+      "publisher": "GeoNames (unxos gmbh)",
+      "edition": "열람 시점 2026-09-06의 온라인 검색 결과",
+      "sourceKind": "공개 지명·좌표 데이터베이스",
+      "lang": "en",
+      "license": "GeoNames about 페이지 표기: \"The GeoNames geographical database is available for download free of charge under a creative commons attribution license.\" (src-geonames-license 참조)",
+      "accessedAt": "2026-09-06",
+      "excerpts": [
+        {
+          "id": "ex-geonames-chaeryong",
+          "text": "Chaeryŏng-ŭp | North Korea | seat of a second-order administrative division | N 38° 23′ 57'' | E 125° 36′ 56''",
+          "locator": "검색 결과 표에서 Chaeryŏng-ŭp 행(열 순서 원본 그대로, 다른 행은 이 조사와 무관해 옮기지 않음)",
+          "url": "https://www.geonames.org/search.html?q=Chaeryong-up&country=KP",
+          "note": "같은 페이지에서 십진 좌표 38.399167 / 125.615556 도 표시된다. DMS와 십진 값이 서로 일치한다."
+        }
+      ]
+    },
+    {
+      "id": "src-geonames-hamgyongnamdo",
+      "title": "GeoNames Fulltextsearch 결과 행: South Hamgyong / Hamgyŏng-namdo (GeoNames ID 1877450)",
+      "url": "https://www.geonames.org/search.html?q=Hamgyong-namdo&country=KP",
+      "publisher": "GeoNames (unxos gmbh)",
+      "edition": "열람 시점 2026-09-06의 온라인 검색 결과",
+      "sourceKind": "공개 지명·좌표 데이터베이스",
+      "lang": "en",
+      "license": "GeoNames about 페이지 표기의 creative commons attribution license (src-geonames-license 참조)",
+      "accessedAt": "2026-09-06",
+      "excerpts": [
+        {
+          "id": "ex-geonames-hamnam",
+          "text": "South Hamgyong | North Korea | first-order administrative division | N 40° 14′ 0'' | E 127° 45′ 0''",
+          "locator": "검색 결과 표에서 South Hamgyong 행(열 순서 원본 그대로, 다른 행은 이 조사와 무관해 옮기지 않음)",
+          "url": "https://www.geonames.org/search.html?q=Hamgyong-namdo&country=KP",
+          "note": "DMS를 십진으로 환산하면 40.233333 / 127.75 이다. 환산은 이 조사에서 한 것이고 페이지에 그 값이 그대로 있었는지는 확인하지 않았다."
+        }
+      ]
+    },
+    {
+      "id": "src-geonames-license",
+      "title": "About GeoNames",
+      "url": "https://www.geonames.org/about.html",
+      "publisher": "GeoNames (unxos gmbh)",
+      "edition": "열람 시점 2026-09-06",
+      "sourceKind": "이용조건 안내 페이지",
+      "lang": "en",
+      "license": "본 페이지 자체가 이용조건 안내다.",
+      "accessedAt": "2026-09-06",
+      "excerpts": [
+        {
+          "id": "ex-geonames-license",
+          "text": "The GeoNames geographical database is available for download free of charge under a creative commons attribution license.",
+          "locator": "About 페이지 본문",
+          "url": "https://www.geonames.org/about.html",
+          "wordCount": 17
+        }
+      ]
+    }
+  ],
+
+  "entities": [
+    { "id": "ent-hansagun", "type": "ancientAdministrativeUnitGroup", "label": "한사군(漢四郡)" },
+    { "id": "ent-jinbeon-gun", "type": "ancientAdministrativeUnit", "label": "진번군(眞番郡)" },
+    { "id": "ent-imdun-gun", "type": "ancientAdministrativeUnit", "label": "임둔군(臨屯郡)" },
+    { "id": "ent-hyeondo-gun", "type": "ancientAdministrativeUnit", "label": "현도군(玄菟郡)" },
+    { "id": "ent-hyeondo-gun-1st", "type": "ancientAdministrativeUnit", "label": "제1현도군(서기전 107~75년 시기의 현도군)" },
+    { "id": "ent-nangnang-gun", "type": "ancientAdministrativeUnit", "label": "낙랑군(樂浪郡)" },
+    { "id": "ent-jaeryeong-plain", "type": "modernRegion", "label": "황해도 재령평야" },
+    { "id": "ent-gyeonggi-chungnam-north", "type": "modernRegion", "label": "경기도와 충청남도 북부" },
+    { "id": "ent-hamgyeongnamdo", "type": "modernRegion", "label": "함경남도" },
+    { "id": "ent-hamgyeongdo-south-gangwondo", "type": "modernRegion", "label": "함경도 남부와 강원도" },
+    { "id": "ent-heunggyeong-noseong", "type": "modernRegion", "label": "요동 혼하 상류의 흥경·노성 부근" },
+    { "id": "ent-amnok-mid", "type": "modernRegion", "label": "압록강 중류 지방" },
+    { "id": "ent-amnok-mid-upper", "type": "modernRegion", "label": "압록강 중·상류 일대" },
+    { "id": "ent-pyeongannamdo-hwanghae-north", "type": "modernRegion", "label": "평안남도 일대와 황해도 북부" },
+    { "id": "ent-liaodong", "type": "modernRegion", "label": "중국의 요동지역" },
+    { "id": "ent-korea-mid-north-plus-south-manchuria", "type": "modernRegion", "label": "한반도 중·북부 및 남만주 일부" },
+    { "id": "ent-yi-byeongdo", "type": "person", "label": "이병도(李丙燾)" },
+    { "id": "ent-shiratori", "type": "person", "label": "시라도리(白鳥庫吉)" },
+    { "id": "ent-yang-sugyeong", "type": "person", "label": "양수경(楊守敬)" },
+    { "id": "ent-geonames-chaeryong-up", "type": "modernPlacePoint", "label": "Chaeryŏng-ŭp (GeoNames 1879487)" },
+    { "id": "ent-geonames-hamgyongnamdo", "type": "modernPlacePoint", "label": "South Hamgyong / Hamgyŏng-namdo (GeoNames 1877450)" }
+  ],
+
+  "claims": [
+    {
+      "id": "claim-jinbeon-jaeryeong",
+      "subject": "ent-jinbeon-gun",
+      "predicate": "locatedIn(비정 주장)",
+      "object": "ent-jaeryeong-plain",
+      "sourceId": "src-encykorea-jinbeongun",
+      "citesExcerpt": "ex-jinbeon-1",
+      "quote": "황해도 재령평야를 중심으로 동쪽은 지금의 춘천 일대, 북쪽은 자비령, 남쪽은 한강 북안에 이르는",
+      "judgment": "직접 근거",
+      "attributedTo": "ent-yi-byeongdo",
+      "note": "백과가 '2. 남방설'의 하나인 재령평야설로 소개한다. 인용 한도 때문에 문장 끝의 '것이라는 이병도(李丙燾)의 주장이다' 부분은 직접 인용하지 않았으나, 원문은 이 서술을 이병도의 주장으로 명시한다. 동·북·남 방향 표현은 백과의 서술 그대로이며 이 조사에서 경계선으로 바꾸지 않는다."
+    },
+    {
+      "id": "claim-jinbeon-daebang",
+      "subject": "ent-jinbeon-gun",
+      "predicate": "locatedIn(비정 주장, 다른 견해)",
+      "object": "ent-gyeonggi-chungnam-north",
+      "sourceId": "src-encykorea-jinbeongun",
+      "citesExcerpt": "ex-jinbeon-2",
+      "quote": "지금의 경기도와 충청남도 북부에 걸치는 지역이라고",
+      "judgment": "직접 근거",
+      "attributedTo": "ent-yang-sugyeong",
+      "note": "같은 항목이 '진번재대방설'로 소개하고 주창자를 청말 양수경으로 밝힌다(ex-jinbeon-3). 원문 맥락상 이 서술은 후한 말 대방군이 차지한 옛 진번군 남부 강역에 대한 것이므로, 진번군 전체 범위와 같지 않을 수 있다. claim-jinbeon-jaeryeong과 합치지 않고 별개 후보로 보존한다."
+    },
+    {
+      "id": "claim-imdun-hamnam",
+      "subject": "ent-imdun-gun",
+      "predicate": "locatedIn(비정 주장)",
+      "object": "ent-hamgyeongnamdo",
+      "sourceId": "src-encykorea-imdungun",
+      "citesExcerpt": "ex-imdun-1",
+      "quote": "반도의 동북해안의 땅으로 지금의 함경남도 전체에 비정하는 이병도(李丙燾)의 주장이다.",
+      "judgment": "직접 근거",
+      "attributedTo": "ent-yi-byeongdo",
+      "note": "같은 문단은 『무릉서』의 임둔군치 동이현 거리 기사를 근거로 군치 위치를 함경남도 남단으로 추산했다고 이어 적는다. 그 서술은 거리 추산에 의한 추정이며 군치의 좌표를 제시하지 않으므로 좌표는 미상으로 둔다."
+    },
+    {
+      "id": "claim-imdun-gangwon",
+      "subject": "ent-imdun-gun",
+      "predicate": "locatedIn(비정 주장, 다른 견해)",
+      "object": "ent-hamgyeongdo-south-gangwondo",
+      "sourceId": "src-encykorea-imdungun",
+      "citesExcerpt": "ex-imdun-2",
+      "quote": "지금의 함경도 남부와 강원도에 비정하는 설이다. 이것은 일인학자 시라도리(白鳥庫吉)가",
+      "judgment": "직접 근거",
+      "attributedTo": "ent-shiratori",
+      "note": "백과는 이 설의 출처를 시라도리의 「한의 조선사군강역고」로 밝힌다. 범위가 앞의 함경남도설과 달라 별개 후보로 보존한다."
+    },
+    {
+      "id": "claim-hyeondo-relocation-75bce",
+      "subject": "ent-hyeondo-gun",
+      "predicate": "군치(郡治) 이치(서기전 75년): from → to",
+      "object": "ent-amnok-mid → ent-heunggyeong-noseong",
+      "sourceId": "src-encykorea-hyeondogun",
+      "citesExcerpt": "ex-hyeondo-1",
+      "quote": "서기전 75년에는 압록강 중류 지방에 있던 군치(郡治)가 요동(遼東) 혼하(渾河) 상류인 흥경(興京) · 노성(老城) 부근으로 옮겨갔다.",
+      "judgment": "직접 근거",
+      "attributedTo": "한국민족문화대백과사전 서술(개별 학자 지목 없음)",
+      "note": "input-places.json의 loc-place-hyeondo-1(위키백과 근거, 신빈 만족자치현 참조점)과 같은 방향의 비정이지만 기관 해설로 근거를 갈음할 수 있다. 흥경·노성의 현대 지점 좌표는 이 자료에 없으므로 여기서 새 좌표를 만들지 않는다."
+    },
+    {
+      "id": "claim-hyeondo-first-range",
+      "subject": "ent-hyeondo-gun-1st",
+      "predicate": "관할 범위에 포함(여러 견해가 공통 동의)",
+      "object": "ent-amnok-mid-upper",
+      "sourceId": "src-encykorea-hyeondogun",
+      "citesExcerpt": "ex-hyeondo-2",
+      "quote": "압록강 중 · 상류 일대가 제1현도군의 관할 범위에 속한다는",
+      "judgment": "직접 근거",
+      "attributedTo": "한국민족문화대백과사전 서술(옥저설·고구려설 등을 정리한 뒤의 종합)",
+      "note": "input-places.json의 loc-place-hyeondo-3(위키백과 근거의 '요서·요동 일부설', 랴오양 참조점)과 내용이 어긋난다. 서로 다른 견해이므로 합치지 말고 둘 다 남긴다. 이 문장은 범위를 말할 뿐 군치 지점을 말하지 않는다."
+    },
+    {
+      "id": "claim-nangnang-tongseol",
+      "subject": "ent-nangnang-gun",
+      "predicate": "관할지역(통설)",
+      "object": "ent-pyeongannamdo-hwanghae-north",
+      "sourceId": "src-encykorea-nangnanggun",
+      "citesExcerpt": "ex-nangnang-1",
+      "quote": "낙랑군의 관할지역은 오늘날의 평안남도 일대와 황해도 북부였다는 것이 통설이다.",
+      "judgment": "직접 근거",
+      "attributedTo": "한국민족문화대백과사전 서술('통설'로 표기)",
+      "note": "input-places.json의 place-samgukyusa-019는 민백 '낙랑고분'·'한사군'을 근거로 평양 대동강 유역 참조점을 쓴다. 이 인용은 그 후보의 근거를 낙랑군 항목의 직접 문장으로 보강하는 것이며, 관할'지역' 서술이므로 군치 지점이나 경계로 쓰지 않는다."
+    },
+    {
+      "id": "claim-hansagun-liaodong-view",
+      "subject": "ent-hansagun",
+      "predicate": "위치 비정에 다른 견해가 있음",
+      "object": "ent-liaodong",
+      "sourceId": "src-encykorea-nangnanggun",
+      "citesExcerpt": "ex-nangnang-2",
+      "quote": "한사군의 위치를 중국의 요동지역으로 비정하는 견해도 있으나",
+      "judgment": "직접 근거",
+      "attributedTo": "한국민족문화대백과사전 서술(주창자 이름 없음)",
+      "note": "같은 문장의 뒷부분은 한반도 중·북부 및 남만주 일부로 보는 것이 일반적이라고 이어진다(인용 한도 때문에 뒷부분은 인용하지 않았다). 요동설을 누가 주장하는지 이 자료는 밝히지 않으므로 인물·학파를 특정하지 않는다."
+    }
+  ],
+
+  "suggestedPlaceUpdates": {
+    "status": "제안일 뿐이며 이 조사에서 저장소를 고치지 않았다. 대표점은 모두 보조표시용이고 고대 군치 확정점이 아니다.",
+    "newPlaces": [
+      {
+        "proposedId": "place-jinbeon",
+        "label": "眞番郡",
+        "labelKo": "진번군",
+        "kind": "region",
+        "status": "disputed",
+        "coordinates": "미상(고대 지점 좌표 근거 없음)",
+        "candidateViews": [
+          {
+            "view": "재령평야설(이병도) — 한국민족문화대백과사전 「진번군」",
+            "claimId": "claim-jinbeon-jaeryeong",
+            "modernRegionNamed": "황해도 재령평야(동 춘천 일대, 북 자비령, 남 한강 북안)",
+            "representativePoint": {
+              "lat": 38.399167,
+              "lon": 125.615556,
+              "label": "Chaeryŏng-ŭp (GeoNames 1879487)",
+              "coordSourceId": "src-geonames-chaeryong-up",
+              "precision": "region",
+              "caution": "재령'읍'의 점이며 재령평야의 중심이나 진번군치가 아니다. 지도에 찍을 경우 보조표시로만 쓰고 원 서술의 범위를 대신하지 않는다."
+            }
+          },
+          {
+            "view": "진번재대방설(양수경) — 같은 항목",
+            "claimId": "claim-jinbeon-daebang",
+            "modernRegionNamed": "경기도와 충청남도 북부",
+            "representativePoint": null,
+            "caution": "이 견해의 대표점은 이번에 좌표 근거를 모으지 않았다. 좌표 미상으로 둔다."
+          }
+        ]
+      },
+      {
+        "proposedId": "place-imdun",
+        "label": "臨屯郡",
+        "labelKo": "임둔군",
+        "kind": "region",
+        "status": "disputed",
+        "coordinates": "미상(고대 지점 좌표 근거 없음)",
+        "candidateViews": [
+          {
+            "view": "함경남도 전체설(이병도) — 한국민족문화대백과사전 「임둔군」",
+            "claimId": "claim-imdun-hamnam",
+            "modernRegionNamed": "함경남도",
+            "representativePoint": {
+              "lat": 40.233333,
+              "lon": 127.75,
+              "label": "South Hamgyong / Hamgyŏng-namdo (GeoNames 1877450)",
+              "coordSourceId": "src-geonames-hamgyongnamdo",
+              "precision": "region",
+              "caution": "현대 함경남도 도 단위 대표점이다. 백과가 군치를 함경남도 남단으로 추산했다고 적은 것과 이 점은 다르며, 군치 지점이 아니다."
+            }
+          },
+          {
+            "view": "함경도 남부·강원도설(시라도리) — 같은 항목",
+            "claimId": "claim-imdun-gangwon",
+            "modernRegionNamed": "함경도 남부와 강원도",
+            "representativePoint": null,
+            "caution": "두 도에 걸치는 범위라 한 점으로 대표하지 않는다. 좌표 미상."
+          }
+        ]
+      }
+    ],
+    "existingPlaceNotes": [
+      {
+        "placeId": "place-hyeondo",
+        "suggestion": "loc-place-hyeondo-1(제2현도군, 흥경·노성)의 근거를 위키백과에서 기관 해설(claim-hyeondo-relocation-75bce)로 보강할 수 있다. loc-place-hyeondo-3(제1현도군을 요서·요동 일부로 보는 견해)은 claim-hyeondo-first-range(압록강 중·상류)와 어긋나므로 둘 다 별개 후보로 유지한다. 새 좌표는 제안하지 않는다."
+      },
+      {
+        "placeId": "place-samgukyusa-019",
+        "suggestion": "낙랑군 후보의 근거로 claim-nangnang-tongseol(낙랑군 항목의 '통설' 문장)을 직접 인용 근거로 덧붙일 수 있다. 기존 좌표(평양 락랑구역 참조점)는 그대로 두고, 이 인용을 근거로 좌표를 옮기거나 경계를 그리지 않는다. claim-hansagun-liaodong-view는 같은 항목이 요동설의 존재를 인정한다는 점을 남긴다."
+      }
+    ]
+  },
+
+  "uncertainties": [
+    "네 군 모두 고대 군치(郡治)의 좌표를 직접 제시한 자료를 확보하지 못했다. 좌표는 미상으로 둔다.",
+    "진번군 항목은 남방설 외에 북방설(번한설 등)과 장백산맥 동북부에 비정하는 견해도 소개한다. 페이지당 인용 한도(25단어) 때문에 대표 2설만 인용했고 나머지는 후보로 만들지 않았다.",
+    "임둔군 항목은 이병도·시라도리 외에 이세구의 강원도설, 강릉 일대설, 정약용의 경기 서부설, 요동·요서설도 열거한다. 같은 이유로 2설만 인용했다.",
+    "현도군 항목에서 집필자와 최종수정일 표기를 두 차례 열람으로 확인하지 못했다. 판본 정보가 다른 세 항목보다 약하다.",
+    "낙랑군 항목이 말하는 요동설의 주창자·학파를 그 항목은 밝히지 않는다. 누가 말하는지는 미확인이다.",
+    "GeoNames 대표점 두 개는 현대 행정지명의 점이다. 재령읍 점은 '재령평야'와 같지 않고, 함경남도 점은 도 전체의 대표점이다. 두 점 모두 고대 군의 위치 근거가 아니다.",
+    "South Hamgyong 행의 십진 좌표는 페이지 표시값이 아니라 DMS에서 환산한 값이다. Chaeryŏng-ŭp은 페이지에 십진 값이 함께 표시되어 그대로 옮겼다.",
+    "지시에 따라 db.history.go.kr·contents.history.go.kr을 열지 않았다. 국사편찬위원회 우리역사넷의 한사군 해설은 확인하지 못했고, 동북아역사재단 동북아역사넷(contents.nahf.or.kr)의 진번·임둔 해설도 이번 자료 한도(8건) 안에서 시도하지 않았다. 남은 구멍이다."
+  ],
+
+  "reproduction": {
+    "date": "2026-09-06",
+    "tools": ["WebSearch", "WebFetch"],
+    "robotsCompliance": "db.history.go.kr, contents.history.go.kr 미접속(지시에 따른 제한). 접속한 도메인은 encykorea.aks.ac.kr, www.geonames.org 뿐이다.",
+    "sourceCount": 7,
+    "queries": [
+      "한국민족문화대백과사전 진번군 위치 자비령 이남 한강 (allowed_domains: encykorea.aks.ac.kr)",
+      "한국민족문화대백과사전 임둔군 위치 함경남도 강원도 (allowed_domains: encykorea.aks.ac.kr)",
+      "encykorea.aks.ac.kr 현도군 玄菟郡 한국민족문화대백과사전 항목",
+      "encykorea.aks.ac.kr 낙랑군 樂浪郡 한국민족문화대백과사전 위치 대동강",
+      "geonames.org Chaeryong North Korea Hwanghae populated place",
+      "geonames.org Hamgyong-namdo North Korea first-order administrative division"
+    ],
+    "fetched": [
+      "https://encykorea.aks.ac.kr/Article/E0054690 (2회)",
+      "https://encykorea.aks.ac.kr/Article/E0047426 (2회)",
+      "https://encykorea.aks.ac.kr/Article/E0063309 (2회)",
+      "https://encykorea.aks.ac.kr/Article/E0011576 (2회)",
+      "https://www.geonames.org/1879487/chaeryong-up.html (본문 추출 실패, 검색결과 페이지로 대체)",
+      "https://www.geonames.org/search.html?q=Chaeryong-up&country=KP",
+      "https://www.geonames.org/search.html?q=Hamgyong-namdo&country=KP",
+      "https://www.geonames.org/about.html"
+    ],
+    "verificationMethod": "네 개 백과 항목은 각각 서로 다른 프롬프트로 2회 열람해 같은 문자열이 나오는지 대조했다. 인용은 연속 문자열만 쓰고 생략부호를 넣지 않았으며, 한자·구철자·따옴표·가운뎃점은 원문 표기를 그대로 두었다.",
+    "quoteBudgetCheck": {
+      "E0054690": "13+6+5 = 24 단어",
+      "E0047426": "9+9 = 18 단어",
+      "E0063309": "15+9 = 24 단어",
+      "E0011576": "9+8 = 17 단어",
+      "geonames about.html": "17 단어",
+      "method": "공백 기준 토큰 수. 가운뎃점(·)이 공백으로 분리된 경우 1토큰으로 셈."
+    }
+  }
+}
