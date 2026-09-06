@@ -1,0 +1,154 @@
+{
+  "base": "http://127.0.0.1:8870",
+  "query": "http://127.0.0.1:3030/sigong/query",
+  "sources": 996,
+  "chunks": 2567024,
+  "claims": 260,
+  "questions": {
+    "Q1": {
+      "status": "PASS",
+      "selectedSource": "src-samguksagi",
+      "year": 500,
+      "candidates": 40,
+      "boundary": "지도 표시 후보의 기간·선택 검사. 좌표의 역사적 확정을 뜻하지 않는다."
+    },
+    "Q2": {
+      "status": "PASS",
+      "rawRows": 3,
+      "projectedYears": [
+        -18,
+        -17
+      ],
+      "unconvertedRows": 1,
+      "boundary": "3차 자료의 환산표를 별도로 표시한다."
+    },
+    "Q3": {
+      "status": "PASS",
+      "recordedPeople": 3,
+      "boundary": "소속과 활동 기간이 수록된 인물. 당시 인물 전수 수집은 미완료다."
+    },
+    "Q4": {
+      "status": "PASS",
+      "claimsChecked": 260,
+      "uniqueChunksChecked": 177,
+      "quoteOrSourceMismatches": []
+    },
+    "Q5": {
+      "status": "PASS",
+      "discoveredPairs": 1,
+      "boundary": "직접 사건 동일성 연결과 연도 근거가 있는 전체 수록 쌍을 조회한다."
+    },
+    "Q6": {
+      "status": "PARTIAL",
+      "counties": {
+        "낙랑": [
+          {
+            "id": "place-samgukyusa-019",
+            "label": "낙랑군",
+            "candidates": 1,
+            "directlyGrounded": 0,
+            "withSource": 1
+          },
+          {
+            "id": "place-nangnang",
+            "label": "낙랑",
+            "candidates": 3,
+            "directlyGrounded": 0,
+            "withSource": 0
+          },
+          {
+            "id": "place-encykorea-nangnanggun",
+            "label": "낙랑군 (민족문화대백과)",
+            "candidates": 0,
+            "directlyGrounded": 0,
+            "withSource": 0
+          },
+          {
+            "id": "place-joseonhyeon",
+            "label": "낙랑군 조선현",
+            "candidates": 1,
+            "directlyGrounded": 0,
+            "withSource": 1
+          },
+          {
+            "id": "place-nangnang-toseong",
+            "label": "낙랑토성",
+            "candidates": 0,
+            "directlyGrounded": 0,
+            "withSource": 0
+          }
+        ],
+        "현도": [
+          {
+            "id": "place-hyeondo",
+            "label": "현도",
+            "candidates": 3,
+            "directlyGrounded": 0,
+            "withSource": 0
+          },
+          {
+            "id": "place-encykorea-first-hyeondogun",
+            "label": "제1현도군 (민족문화대백과)",
+            "candidates": 0,
+            "directlyGrounded": 0,
+            "withSource": 0
+          }
+        ],
+        "진번": [
+          {
+            "id": "place-encykorea-jinbeongun",
+            "label": "진번군 (민족문화대백과)",
+            "candidates": 0,
+            "directlyGrounded": 0,
+            "withSource": 0
+          },
+          {
+            "id": "place-encykorea-jinbeon-southern-extent",
+            "label": "옛 진번군 남부 강역 (진번재대방설)",
+            "candidates": 0,
+            "directlyGrounded": 0,
+            "withSource": 0
+          }
+        ],
+        "임둔": [
+          {
+            "id": "place-encykorea-imdungun",
+            "label": "임둔군 (민족문화대백과)",
+            "candidates": 1,
+            "directlyGrounded": 0,
+            "withSource": 1
+          }
+        ]
+      },
+      "boundary": "좌표가 없는 군·직접 근거가 없는 옛 후보가 남았다. 표시 기능과 위치 근거 완성을 구별한다."
+    },
+    "Q7": {
+      "status": "PASS",
+      "humanResults": {
+        "/api/graph": 0,
+        "/api/time": 0,
+        "/api/people": 0,
+        "/api/history-map": 0,
+        "/api/locations": 0,
+        "/api/comparison-differences": 0,
+        "/api/compare": 0
+      },
+      "boundary": "현재 모든 Claim이 AI 초안이다. 사람 작성 기록은 0개다. 2D·3D는 별도 브라우저 검사와 함께 확인한다."
+    },
+    "Q8": {
+      "status": "PASS",
+      "source": "src-samguksagi",
+      "composedYear": 1145,
+      "coversFrom": -57,
+      "coversTo": 935
+    },
+    "Q9": {
+      "status": "PASS",
+      "claim": "claim-encykorea-jinheung-name-identity",
+      "separatePeople": 2,
+      "source": "src-encykorea-jinheung",
+      "automaticMerge": false
+    }
+  },
+  "fullySatisfied": false
+}

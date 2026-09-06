@@ -17,6 +17,7 @@ async def run(url, out):
         await page.goto(url,wait_until='networkidle')
         await page.click('#enter')
         await page.wait_for_function('window.__timeline?.sources.length > 0')
+        await page.click('#allSources')
         release_mentions=asyncio.Event()
 
         async def delayed_mentions(route):
@@ -42,8 +43,12 @@ async def run(url, out):
             card_finished.set()
 
         await page.route('**/api/source?id=src-samguksagi',delayed_card)
+        await page.locator('.card-btn[data-id="src-samguksagi"]').evaluate(
+            "el=>{for(let p=el.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;}")
         await page.locator('.card-btn[data-id="src-samguksagi"]').click()
         await asyncio.wait_for(card_held.wait(),10)
+        await page.locator('.card-btn[data-id="src-samgukyusa"]').evaluate(
+            "el=>{for(let p=el.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;}")
         await page.locator('.card-btn[data-id="src-samgukyusa"]').click()
         await page.wait_for_function('document.querySelector("#evi h3")?.textContent === "삼국유사"')
         release_card.set()

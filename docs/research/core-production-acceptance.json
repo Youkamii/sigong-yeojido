@@ -1,0 +1,134 @@
+{
+  "head": "b52760b5e64d476a798149b477afcffd11c8d041",
+  "base": "http://127.0.0.1:8870",
+  "results": [
+    {
+      "script": "scripts/verify_viewer.py",
+      "exitCode": 0,
+      "seconds": 37.28,
+      "log": "/tmp/sigong-current-acceptance/verify_viewer.log",
+      "reportFile": "core-viewer-production.json"
+    },
+    {
+      "script": "scripts/verify_modern_sources.py",
+      "exitCode": 0,
+      "seconds": 15.07,
+      "log": "/tmp/sigong-current-acceptance/verify_modern_sources.log",
+      "reportFile": "modern-sources-56-production.json"
+    },
+    {
+      "script": "scripts/verify_core_questions.py",
+      "exitCode": 0,
+      "seconds": 15.69,
+      "log": "/tmp/sigong-current-acceptance/verify_core_questions.log",
+      "reportFile": "core-questions-56-production.json"
+    },
+    {
+      "script": "scripts/verify_comparison_discovery.py",
+      "exitCode": 0,
+      "seconds": 6.77,
+      "log": "/tmp/sigong-current-acceptance/verify_comparison_discovery.log",
+      "reportFile": "comparison-discovery-53-production.json"
+    },
+    {
+      "script": "scripts/verify_comparisons.py",
+      "exitCode": 0,
+      "seconds": 7.39,
+      "log": "/tmp/sigong-current-acceptance/verify_comparisons.log",
+      "reportFile": "comparisons-53-production.json"
+    },
+    {
+      "script": "scripts/verify_people.py",
+      "exitCode": 0,
+      "seconds": 5.57,
+      "log": "/tmp/sigong-current-acceptance/verify_people.log",
+      "reportFile": "people-56-production.json"
+    },
+    {
+      "script": "scripts/verify_time.py",
+      "exitCode": 0,
+      "seconds": 8.83,
+      "log": "/tmp/sigong-current-acceptance/verify_time.log",
+      "reportFile": "time-55-production.json"
+    },
+    {
+      "script": "scripts/verify_location_filters.py",
+      "exitCode": 0,
+      "seconds": 4.92,
+      "log": "/tmp/sigong-current-acceptance/verify_location_filters.log",
+      "reportFile": "location-filters-49-production.json"
+    },
+    {
+      "script": "scripts/verify_lenses.py",
+      "exitCode": 0,
+      "seconds": 26.68,
+      "log": "/tmp/sigong-current-acceptance/verify_lenses.log",
+      "reportFile": "lenses-48-production.json"
+    },
+    {
+      "script": "scripts/verify_graph.py",
+      "exitCode": 0,
+      "seconds": 10.78,
+      "log": "/tmp/sigong-current-acceptance/verify_graph.log",
+      "reportFile": "graph-46-production.json"
+    },
+    {
+      "script": "scripts/verify_panel_responses.py",
+      "exitCode": 0,
+      "seconds": 5.8925524,
+      "log": "/tmp/sigong-current-acceptance/panel/report.json",
+      "timingScope": "Observed tool command duration including SSH",
+      "executedScript": "/tmp/sigong-panel-current.py",
+      "scriptSha256": "8d88eb226fefdbd2be22bdd24dd0831601416cfa8d32a801fa388bd9560ff54f",
+      "priorAttempts": [
+        {
+          "script": "scripts/verify_panel_responses.py",
+          "exitCode": 1,
+          "seconds": 11.03,
+          "log": "/tmp/sigong-current-acceptance/verify_panel_responses.log",
+          "reason": "Old harness did not select Gwanggaeto source under modern default lens and did not expand source groups."
+        }
+      ],
+      "reportFile": "panel-responses-71-production.json"
+    }
+  ],
+  "limits": [
+    "Q6 remains PARTIAL because not every location candidate has direct evidence.",
+    "Earlier b8561ee viewer failed its 5 second claim wait. The unchanged harness is rerun after #71.",
+    "Real Claude subscription response and historical map evidence are retained separately; not invoked again here.",
+    "Panel harness explicitly selects all sources and expands source groups; application behavior and 5 second wait are unchanged."
+  ],
+  "unitChecks": {
+    "python": {
+      "command": "python -X utf8 -m unittest discover -s tests -p test_*.py",
+      "passed": 85,
+      "exitCode": 0
+    },
+    "javascript": {
+      "command": "node --test tests/test_html.mjs tests/test_place_state.mjs tests/test_source_groups.mjs",
+      "passed": 13,
+      "exitCode": 0
+    },
+    "ttlBuilder": {
+      "passed": 27,
+      "scope": "last RDF source provenance change; server-only final fix does not modify builder"
+    }
+  },
+  "githubActions": {
+    "runs": [],
+    "status": "NOT_RUN"
+  },
+  "preservedEvidence": {
+    "historicalMap": {
+      "file": "history-map-57-production.json",
+      "implementationHead": "fd572c3",
+      "checksPassed": 7,
+      "scope": "Map data and drawing code unchanged in the final server fixes."
+    },
+    "realClaudeSubscription": {
+      "file": "chat-47-production.json",
+      "scope": "Actual subscription answer recorded after #47; no repeat model invocation in this suite."
+    },
+    "initialViewerFailure": "viewer-before-search-fix-71.json"
+  }
+}

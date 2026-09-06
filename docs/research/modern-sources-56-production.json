@@ -1,0 +1,25 @@
+{
+  "base": "http://127.0.0.1:8870",
+  "sourceCards": 13,
+  "rawChunks": 31,
+  "browserCards": [
+    "src-rok-constitution-1948",
+    "src-pa-speech-records",
+    "src-dprk-socialist-constitution",
+    "src-dprk-upr3-national-report-2019",
+    "src-archives-koreaofrecord-constitution",
+    "src-encykorea-everready"
+  ],
+  "checks": {
+    "raw_source_match": true,
+    "dprk_edition_unknown": true,
+    "dprk_author_vs_un_distributor": true,
+    "speech_text_vs_editorial_dates": true,
+    "original_unicode": true,
+    "browser_cards_and_480": true
+  },
+  "pageErrors": [],
+  "limits": [
+    "짧은 발췌·메타데이터의 수록·표시 검사다. 원 문서 전문 수집·역사적 사실 판정과 구별한다."
+  ]
+}

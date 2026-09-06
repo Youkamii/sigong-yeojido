@@ -1,0 +1,109 @@
+{
+  "base": "http://127.0.0.1:8870",
+  "result": {
+    "people": [
+      {
+        "id": "person-encykorea-beopheung",
+        "label": "법흥왕 (민족문화대백과)",
+        "evidence": [
+          {
+            "fromSource": "src-encykorea-beopheung",
+            "sourceLabel": "법흥왕 · 민족문화대백과 발췌",
+            "membership": {
+              "id": "claim-encykorea-beopheung-polity",
+              "predicate": "syj:isKingOf",
+              "quote": "신라의 제23대(재위: 514년~540년) 왕.",
+              "citesChunk": "chunk_encykorea-beopheung_01",
+              "origin": "ai"
+            },
+            "activity": {
+              "id": "claim-encykorea-beopheung-reign",
+              "predicate": "syj:reignedIn",
+              "quote": "신라의 제23대(재위: 514년~540년) 왕.",
+              "citesChunk": "chunk_encykorea-beopheung_01",
+              "origin": "ai",
+              "verbatim": "514년~540년",
+              "earliest": 514,
+              "latest": 540
+            }
+          }
+        ]
+      },
+      {
+        "id": "person-encykorea-jijeung",
+        "label": "지증왕 (민족문화대백과)",
+        "evidence": [
+          {
+            "fromSource": "src-encykorea-jijeung",
+            "sourceLabel": "지증왕 · 민족문화대백과 발췌",
+            "membership": {
+              "id": "claim-encykorea-jijeung-polity",
+              "predicate": "syj:isKingOf",
+              "quote": "신라의 제22대(재위: 500년~514년) 왕.",
+              "citesChunk": "chunk_encykorea-jijeung_01",
+              "origin": "ai"
+            },
+            "activity": {
+              "id": "claim-encykorea-jijeung-reign",
+              "predicate": "syj:reignedIn",
+              "quote": "신라의 제22대(재위: 500년~514년) 왕.",
+              "citesChunk": "chunk_encykorea-jijeung_01",
+              "origin": "ai",
+              "verbatim": "500년~514년",
+              "earliest": 500,
+              "latest": 514
+            }
+          }
+        ]
+      },
+      {
+        "id": "person-encykorea-jinheung",
+        "label": "진흥왕 (민족문화대백과)",
+        "evidence": [
+          {
+            "fromSource": "src-encykorea-jinheung",
+            "sourceLabel": "진흥왕 · 민족문화대백과 발췌",
+            "membership": {
+              "id": "claim-encykorea-jinheung-polity",
+              "predicate": "syj:isKingOf",
+              "quote": "진흥왕은 삼국시대 신라의 제24대(재위: 540~576) 왕이다.",
+              "citesChunk": "chunk_encykorea-jinheung_01",
+              "origin": "ai"
+            },
+            "activity": {
+              "id": "claim-encykorea-jinheung-reign",
+              "predicate": "syj:reignedIn",
+              "quote": "진흥왕은 삼국시대 신라의 제24대(재위: 540~576) 왕이다.",
+              "citesChunk": "chunk_encykorea-jinheung_01",
+              "origin": "ai",
+              "verbatim": "540~576",
+              "earliest": 540,
+              "latest": 576
+            }
+          }
+        ]
+      }
+    ],
+    "polity": "polity-silla",
+    "from": 501,
+    "to": 600,
+    "origin": "all",
+    "limit": 50,
+    "offset": 0,
+    "hasMore": false,
+    "evidenceTruncated": false,
+    "scope": "selected-source recorded membership and activity; not a complete historical population"
+  },
+  "pageErrors": [],
+  "checks": {
+    "three_cited_people": true,
+    "pagination": true,
+    "empty_period_and_polity": true,
+    "source_and_author_filters": true,
+    "raw_citations": true,
+    "browser_1440_and_480": true
+  },
+  "limits": [
+    "수록된 세 왕의 재위 근거를 검증했다. 당시 모든 인물을 수집했다는 뜻이 아니다."
+  ]
+}

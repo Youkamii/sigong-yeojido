@@ -1,0 +1,381 @@
+{
+  "base": "http://127.0.0.1:8870",
+  "result": {
+    "comparisons": [
+      {
+        "case": {
+          "id": "auto-claim-asin-ahwa-death-same-event-claim-ahwa-death-ns-date-claim-asin-death-sg-date",
+          "label": "아화왕 사망 (일본서기) / 아신왕 사망 (삼국사기)",
+          "description": "실제 그래프의 같은 사건 연결과 선택한 연도 근거에서 값 차이를 찾았다. 원문·환산 방식·AI 추론의 한계는 각 주장에 남는다. 자료에 없는 사건을 추정하거나 한쪽을 정답으로 고르지 않는다.",
+          "rows": [
+            "claim-ahwa-death-ns-date",
+            "claim-asin-death-sg-date"
+          ],
+          "links": [
+            {
+              "id": "claim-asin-ahwa-death-same-event",
+              "subject": "event-baekje-ahwawang-death-ns"
+            }
+          ],
+          "sources": []
+        },
+        "rows": [
+          {
+            "id": "claim-ahwa-death-ns-date",
+            "subject": "event-baekje-ahwawang-death-ns",
+            "subjectLabel": "아화왕 사망 (일본서기)",
+            "predicate": "syj:occurredIn",
+            "object": {
+              "kind": "time",
+              "id": "ts-ahwa-death-ns",
+              "verbatim": "十六年",
+              "precision": "year"
+            },
+            "fromSource": "src-web-seisaku-nihonshoki-10",
+            "sourceLabel": "일본서기 응신기 · seisaku 전사 발췌",
+            "citesChunk": "chunk_ns10-ojin16-death",
+            "quote": "十六年春二月、王仁來之。則太子菟道稚郎子、師之、習諸典籍於王仁、莫不通達。所謂王仁者、是書首等之始祖也。是歲、百濟阿花王薨。",
+            "origin": "ai",
+            "status": "draft",
+            "note": "왕인 기사로 시작하는 16년 문단 안의 是歲에 아화왕의 죽음이 나온다. 죽은 달을 봄 2월로 보지 않는다. 원문에는 서기가 없다. 285는 일본 전통 기년 대조 자료의 값이며 실제 사망 연도를 확정하지 않는다.",
+            "chunk": {
+              "id": "chunk_ns10-ojin16-death",
+              "sourceId": "src-web-seisaku-nihonshoki-10",
+              "locator": "日本書紀 巻第十 応神天皇 › 十六年 › 是歲",
+              "permalink": "https://www.seisaku.bz/nihonshoki/shoki_10.html"
+            },
+            "conversions": [
+              {
+                "id": "claim-ahwa-death-to-285-jawp",
+                "subject": "ts-ahwa-death-ns",
+                "subjectLabel": "ts-ahwa-death-ns",
+                "predicate": "syj:convertsTo",
+                "object": {
+                  "kind": "year",
+                  "value": 285
+                },
+                "fromSource": "src-jawp-285nen",
+                "sourceLabel": "285년의 일본 기년 · 일본어 위키백과",
+                "citesChunk": "chunk_jawp-285-ojin16",
+                "quote": "応神天皇16年",
+                "origin": "ai",
+                "status": "draft",
+                "note": "3차 자료의 285年 문서에 일본 기년 応神天皇16年을 병기했다. 285는 전통 기년의 서기 대응이며 현대 추정 실연대가 아니다. 별도 대조표는 日本長暦에 바탕을 둔다고 설명한다. 자료 둘은 모두 위키백과로 독립 검증이 아니다.",
+                "chunk": {
+                  "id": "chunk_jawp-285-ojin16",
+                  "sourceId": "src-jawp-285nen",
+                  "locator": "285年 › 他の紀年法 › 日本",
+                  "permalink": "https://ja.wikipedia.org/wiki/285%E5%B9%B4"
+                }
+              }
+            ],
+            "projections": [
+              {
+                "earliest": 285,
+                "latest": 285,
+                "claimId": "claim-ahwa-death-to-285-jawp",
+                "fromSource": "src-jawp-285nen"
+              }
+            ],
+            "edition": {
+              "compiler": "seisaku.bz — 운영 주체·편자 표시를 페이지에서 찾지 못했다.",
+              "composedYear": 720,
+              "edition": "미상 — 底本 표시 없음(직접 확인).",
+              "sourceKind": "원사료 전사 · 판본 미상",
+              "sourceGroup": "일본서기"
+            }
+          },
+          {
+            "id": "claim-asin-death-sg-date",
+            "subject": "event-baekje-asinwang-death-sg",
+            "subjectLabel": "아신왕 사망 (삼국사기)",
+            "predicate": "syj:occurredIn",
+            "object": {
+              "kind": "time",
+              "id": "ts-asin-death-sg",
+              "verbatim": "秋九月",
+              "precision": "month"
+            },
+            "fromSource": "src-samguksagi",
+            "sourceLabel": "삼국사기",
+            "citesChunk": "chunk_samguksagi_sg_025_0030_0250",
+            "quote": "秋九月, 王薨.",
+            "origin": "ai",
+            "status": "draft",
+            "note": "본문에는 가을 9월만 있다. 같은 왕조의 앞 기사 sg_025_0030_0240에 十四年이 있고, 국편은 이 기사의 날짜를 14년 9월로 붙였다. L0·99를 달력 날짜로 풀지 않는다. 405년은 현대 해설 출처를 별도로 켰을 때만 표시한다.",
+            "chunk": {
+              "id": "chunk_samguksagi_sg_025_0030_0250",
+              "sourceId": "src-samguksagi",
+              "locator": "卷第二十五 百濟本紀 第三 › 阿莘王 › 아신왕이 죽다",
+              "permalink": "https://db.history.go.kr/id/sg_025_0030_0250"
+            },
+            "conversions": [
+              {
+                "id": "claim-asin-death-to-405-encykorea",
+                "subject": "ts-asin-death-sg",
+                "subjectLabel": "ts-asin-death-sg",
+                "predicate": "syj:convertsTo",
+                "object": {
+                  "kind": "year",
+                  "value": 405
+                },
+                "fromSource": "src-web-encykorea-asinwang",
+                "sourceLabel": "아신왕 사망 연도 · 민족문화대백과",
+                "citesChunk": "chunk_encykorea-asin-death-metadata",
+                "quote": "사망 연도405년",
+                "origin": "ai",
+                "status": "draft",
+                "note": "현대 기관 해설의 아신왕 사망 연도 필드다. 삼국사기 본문에 405가 적혀 있다는 뜻이 아니다. 생년·정확한 월일·칭원법은 보충하지 않는다.",
+                "chunk": {
+                  "id": "chunk_encykorea-asin-death-metadata",
+                  "sourceId": "src-web-encykorea-asinwang",
+                  "locator": "아신왕 › 사망 연도 필드",
+                  "permalink": "https://encykorea.aks.ac.kr/Article/E0034365"
+                }
+              }
+            ],
+            "projections": [
+              {
+                "earliest": 405,
+                "latest": 405,
+                "claimId": "claim-asin-death-to-405-encykorea",
+                "fromSource": "src-web-encykorea-asinwang"
+              }
+            ],
+            "edition": {
+              "compiler": "김부식",
+              "composedYear": 1145,
+              "sourceKind": "관찬사서"
+            }
+          }
+        ],
+        "links": [
+          {
+            "id": "claim-asin-ahwa-death-same-event",
+            "subject": "event-baekje-ahwawang-death-ns",
+            "predicate": "syj:sameEventAs",
+            "object": {
+              "kind": "entity",
+              "id": "event-baekje-asinwang-death-sg"
+            },
+            "fromSource": "src-web-jawikipedia-asinwang",
+            "citesChunk": "chunk_jawp-asin-ahwa-identity",
+            "quote": "『日本書紀』では阿花王（あくえおう）とされる。",
+            "origin": "ai",
+            "status": "draft",
+            "sourceLabel": "아신왕·아화왕 표기 · 일본어 위키백과",
+            "subjectLabel": "아화왕 사망 (일본서기)",
+            "note": "AI 추론 연결: claim-asin-ahwa-identity-jawp의 인물 동일성, claim-asin-death-sg-person과 claim-ahwa-death-ns-person의 죽음 서술을 함께 근거로 같은 사망 사건을 비교한다. 인용문이 사건 동일성을 직접 선언한다는 뜻이 아니다. 역년 14와 16은 서로 다른 왕의 기년이므로 숫자만 비교하지 않는다.",
+            "chunk": {
+              "id": "chunk_jawp-asin-ahwa-identity",
+              "sourceId": "src-web-jawikipedia-asinwang",
+              "locator": "ja.wikipedia 「阿莘王」 본문",
+              "permalink": "https://ja.wikipedia.org/wiki/%E9%98%BF%E8%8E%98%E7%8E%8B"
+            }
+          }
+        ],
+        "sourceCount": 2,
+        "differentRawDates": true,
+        "differentProjectedYears": true,
+        "hasMore": false,
+        "origin": "all",
+        "groupingOrigin": "ai",
+        "automaticMerge": false
+      },
+      {
+        "case": {
+          "id": "auto-claim-baekje-founding-sy-byeonhan-refers-sg-claim-baekje-founding-sy-byeonhan-date-claim-baekje-founding-sg-date",
+          "label": "백제 건국 (삼국유사 변한백제조) / 백제 건국 (삼국사기 온조왕조)",
+          "description": "실제 그래프의 같은 사건 연결과 선택한 연도 근거에서 값 차이를 찾았다. 원문·환산 방식·AI 추론의 한계는 각 주장에 남는다. 자료에 없는 사건을 추정하거나 한쪽을 정답으로 고르지 않는다.",
+          "rows": [
+            "claim-baekje-founding-sy-byeonhan-date",
+            "claim-baekje-founding-sg-date"
+          ],
+          "links": [
+            {
+              "id": "claim-baekje-founding-sy-byeonhan-refers-sg",
+              "subject": "event-baekje-founding-sy-byeonhan"
+            }
+          ],
+          "sources": []
+        },
+        "rows": [
+          {
+            "id": "claim-baekje-founding-sy-byeonhan-date",
+            "subject": "event-baekje-founding-sy-byeonhan",
+            "subjectLabel": "백제 건국 (삼국유사 변한백제조)",
+            "predicate": "syj:occurredIn",
+            "object": {
+              "kind": "time",
+              "id": "ts-baekje-onjo-hongga4-samgukyusa",
+              "verbatim": "鴻嘉四年甲辰",
+              "precision": "year"
+            },
+            "fromSource": "src-samgukyusa",
+            "sourceLabel": "삼국유사",
+            "citesChunk": "chunk_samgukyusa_sy_001_0020_0160_0010",
+            "quote": "按夲紀, 温祚之起在鴻嘉四年甲辰, 則後於赫居世·東明之世四十餘年.",
+            "origin": "ai",
+            "status": "draft",
+            "note": "이것이 Q2(백제 건국 연도를 사료별로)의 핵심 충돌이다. 삼국사기 鴻嘉三年 / 삼국유사 남부여조 鴻佳三年 / 삼국유사 변한백제조 鴻嘉四年 — 세 값을 그대로 병존시킨다. 삼국유사가 가리키는 '夲紀'가 현전 삼국사기와 같은 판본인지 확인할 수 없다. '四十餘年'이라는 상대 서술도 함께 있으므로 절대연도 확정 근거로 삼지 않는다. 조사 초안의 추가 문맥: {\"conversionNote\": \"鴻嘉四年 과 간지 甲辰 이 함께 적혀 있다. 삼국사기의 鴻嘉三年 과 값이 다르므로 환산을 확정하지 않고 충돌로 남긴다.\", \"conversionStatus\": \"not-converted\", \"year\": null}",
+            "chunk": {
+              "id": "chunk_samgukyusa_sy_001_0020_0160_0010",
+              "sourceId": "src-samgukyusa",
+              "locator": "卷 第一 › 紀異第一 › 卞韓 百濟 › 변한 사람이 항복하다",
+              "permalink": "https://db.history.go.kr/id/sy_001_0020_0160_0010"
+            },
+            "conversions": [
+              {
+                "id": "claim-hongga-fourth-conversion-jawp",
+                "subject": "ts-baekje-onjo-hongga4-samgukyusa",
+                "subjectLabel": "ts-baekje-onjo-hongga4-samgukyusa",
+                "predicate": "syj:convertsTo",
+                "object": {
+                  "kind": "year",
+                  "value": -17
+                },
+                "fromSource": "src-jawp-hongga-calendar",
+                "sourceLabel": "홍가 연호·서기 대조표 · 일본어 위키백과",
+                "citesChunk": "chunk_jawp-hongga-calendar_table",
+                "quote": "鴻嘉\t元年\t2年\t3年\t4年\n西暦\t前20年\t前19年\t前18年\t前17年\n干支\t辛丑\t壬寅\t癸卯\t甲辰",
+                "origin": "ai",
+                "status": "draft",
+                "note": "3차 자료인 위키백과 대조표의 5번째 열: 4年 / 前17年 / 甲辰. 원표기와 환산을 분리했다. 당시 사건의 사실 여부나 월·일은 판정하지 않는다. 기관·학술 자료의 독립 대조는 미완료다.",
+                "chunk": {
+                  "id": "chunk_jawp-hongga-calendar_table",
+                  "sourceId": "src-jawp-hongga-calendar",
+                  "locator": "鴻嘉 › 西暦との対照表 · 原行列順",
+                  "permalink": "https://ja.wikipedia.org/wiki/%E9%B4%BB%E5%98%89"
+                }
+              }
+            ],
+            "projections": [
+              {
+                "earliest": -17,
+                "latest": -17,
+                "claimId": "claim-hongga-fourth-conversion-jawp",
+                "fromSource": "src-jawp-hongga-calendar"
+              }
+            ],
+            "edition": {
+              "compiler": "일연",
+              "composedYear": 1281,
+              "sourceKind": "사찬사서"
+            }
+          },
+          {
+            "id": "claim-baekje-founding-sg-date",
+            "subject": "event-baekje-founding-sg",
+            "subjectLabel": "백제 건국 (삼국사기 온조왕조)",
+            "predicate": "syj:occurredIn",
+            "object": {
+              "kind": "time",
+              "id": "ts-baekje-founded-hongga3-samguksagi",
+              "verbatim": "前漢 成帝鴻嘉三年",
+              "precision": "year"
+            },
+            "fromSource": "src-samguksagi",
+            "sourceLabel": "삼국사기",
+            "citesChunk": "chunk_samguksagi_sg_023_0020_0010",
+            "quote": "國號十濟. 是前漢 成帝鴻嘉三年也.",
+            "origin": "ai",
+            "status": "draft",
+            "note": "같은 chunk 의 원주(annotation)는 시조를 沸流王 으로 보는 다른 계통을 싣는다 — claim-baekje-biryu-variant 참조. 삼국유사 변한백제 조는 鴻嘉四年甲辰 이라 적는다 — claim-baekje-onjo-hongga4-samgukyusa 참조. 두 값을 합치지 않았다. 국호 十濟 → 百濟 변경은 별도 Claim(claim-baekje-rename). 조사 초안의 추가 문맥: {\"conversionNote\": \"국편 date.raw 가 -0018 이고 본문 연호도 鴻嘉三年 이라 두 값이 맞물린다. 그래도 환산 자체를 Claim 으로 둘 것(schema §8.1).\", \"conversionStatus\": \"candidate\", \"year\": -18}",
+            "chunk": {
+              "id": "chunk_samguksagi_sg_023_0020_0010",
+              "sourceId": "src-samguksagi",
+              "locator": "卷第二十三 百濟本紀 第一 › 溫祚王 › 백제가 건국되고 온조왕이 즉위하다",
+              "permalink": "https://db.history.go.kr/id/sg_023_0020_0010"
+            },
+            "conversions": [
+              {
+                "id": "claim-hongga-third-conversion-jawp",
+                "subject": "ts-baekje-founded-hongga3-samguksagi",
+                "subjectLabel": "ts-baekje-founded-hongga3-samguksagi",
+                "predicate": "syj:convertsTo",
+                "object": {
+                  "kind": "year",
+                  "value": -18
+                },
+                "fromSource": "src-jawp-hongga-calendar",
+                "sourceLabel": "홍가 연호·서기 대조표 · 일본어 위키백과",
+                "citesChunk": "chunk_jawp-hongga-calendar_table",
+                "quote": "鴻嘉\t元年\t2年\t3年\t4年\n西暦\t前20年\t前19年\t前18年\t前17年\n干支\t辛丑\t壬寅\t癸卯\t甲辰",
+                "origin": "ai",
+                "status": "draft",
+                "note": "3차 자료인 위키백과 대조표의 4번째 열: 3年 / 前18年 / 癸卯. 원표기와 환산을 분리했다. 당시 사건의 사실 여부나 월·일은 판정하지 않는다. 기관·학술 자료의 독립 대조는 미완료다.",
+                "chunk": {
+                  "id": "chunk_jawp-hongga-calendar_table",
+                  "sourceId": "src-jawp-hongga-calendar",
+                  "locator": "鴻嘉 › 西暦との対照表 · 原行列順",
+                  "permalink": "https://ja.wikipedia.org/wiki/%E9%B4%BB%E5%98%89"
+                }
+              }
+            ],
+            "projections": [
+              {
+                "earliest": -18,
+                "latest": -18,
+                "claimId": "claim-hongga-third-conversion-jawp",
+                "fromSource": "src-jawp-hongga-calendar"
+              }
+            ],
+            "edition": {
+              "compiler": "김부식",
+              "composedYear": 1145,
+              "sourceKind": "관찬사서"
+            }
+          }
+        ],
+        "links": [
+          {
+            "id": "claim-baekje-founding-sy-byeonhan-refers-sg",
+            "subject": "event-baekje-founding-sy-byeonhan",
+            "predicate": "syj:sameEventAs",
+            "object": {
+              "kind": "entity",
+              "id": "event-baekje-founding-sg"
+            },
+            "fromSource": "src-samgukyusa",
+            "citesChunk": "chunk_samgukyusa_sy_001_0020_0160_0010",
+            "quote": "按夲紀, 温祚之起在鴻嘉四年甲辰, 則後於赫居世·東明之世四十餘年.",
+            "origin": "ai",
+            "status": "draft",
+            "sourceLabel": "삼국유사",
+            "subjectLabel": "백제 건국 (삼국유사 변한백제조)",
+            "note": "按夲紀와 온조 건국 문맥에 따른 사건 연결이다. 이 本紀가 현전 삼국사기와 같은 판본이라는 판정은 아니다. 서로 다른 연호·간지 값은 보존한다.",
+            "chunk": {
+              "id": "chunk_samgukyusa_sy_001_0020_0160_0010",
+              "sourceId": "src-samgukyusa",
+              "locator": "卷 第一 › 紀異第一 › 卞韓 百濟 › 변한 사람이 항복하다",
+              "permalink": "https://db.history.go.kr/id/sy_001_0020_0160_0010"
+            }
+          }
+        ],
+        "sourceCount": 2,
+        "differentRawDates": true,
+        "differentProjectedYears": true,
+        "hasMore": false,
+        "origin": "all",
+        "groupingOrigin": "ai",
+        "automaticMerge": false
+      }
+    ],
+    "limit": 10,
+    "offset": 0,
+    "hasMore": false,
+    "scope": "explicit sameEventAs links and selected exact-year projections; no entity-name guesses"
+  },
+  "pageErrors": [],
+  "checks": {
+    "rdf_discovery_two_pairs": true,
+    "source_pair": true,
+    "all_pages": true,
+    "no_conversion_no_difference": true,
+    "source_and_origin_filters": true,
+    "browser_discovery_and_stale_results_removed": true
+  },
+  "limits": [
+    "직접 연결된 사건과 숫자로 확인한 연도만 비교한다. 전 사료에 대한 역사 해석의 완전성을 뜻하지 않는다."
+  ]
+}
