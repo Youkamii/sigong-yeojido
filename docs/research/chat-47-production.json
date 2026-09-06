@@ -1,0 +1,280 @@
+{
+  "base": "http://127.0.0.1:8870",
+  "checks": {
+    "answer_citation_original": true,
+    "answer_does_not_overlap_timeline": true,
+    "model_reports_missing_evidence": true,
+    "human_filter_and_no_model_without_evidence": true,
+    "empty_sources": true,
+    "narrow_screen": true
+  },
+  "responses": [
+    {
+      "question": "광개토왕의 이름과 즉위에 대해 비문은 어떻게 서술하나?",
+      "sentences": [
+        {
+          "text": "광개토왕릉비 전사본 1면 4번째 줄은 왕의 호칭을 \"國岡上廣開土境平安好太王\"으로 적었다고 기록한다.",
+          "citations": [
+            {
+              "id": "claim-gwanggaeto-1-04-gwanggaeto-mentioned",
+              "subject": "person-gwanggaeto",
+              "predicate": "syj:mentionedIn",
+              "object": {
+                "kind": "literal",
+                "value": "國岡上廣開土境平安好太王"
+              },
+              "fromSource": "src-gwanggaeto",
+              "citesChunk": "chunk_gwanggaeto_1-04",
+              "quote": "□至十七世孫國岡上廣開土境平安好太王",
+              "origin": "ai",
+              "status": "draft",
+              "sourceLabel": "광개토왕릉비",
+              "subjectLabel": "광개토왕",
+              "chunk": {
+                "id": "chunk_gwanggaeto_1-04",
+                "sourceId": "src-gwanggaeto",
+                "locator": "전사본 1면 4번째 줄",
+                "permalink": null
+              }
+            }
+          ]
+        },
+        {
+          "text": "같은 줄의 \"□至十七世孫\" 구절은 그를 \"十七世孫\"으로 서술한다.",
+          "citations": [
+            {
+              "id": "claim-gwanggaeto-1-04-gwanggaeto-17th-generation",
+              "subject": "person-gwanggaeto",
+              "predicate": "syj:describedAs",
+              "object": {
+                "kind": "literal",
+                "value": "十七世孫"
+              },
+              "fromSource": "src-gwanggaeto",
+              "citesChunk": "chunk_gwanggaeto_1-04",
+              "quote": "□至十七世孫國岡上廣開土境平安好太王",
+              "origin": "ai",
+              "status": "draft",
+              "sourceLabel": "광개토왕릉비",
+              "subjectLabel": "광개토왕",
+              "chunk": {
+                "id": "chunk_gwanggaeto_1-04",
+                "sourceId": "src-gwanggaeto",
+                "locator": "전사본 1면 4번째 줄",
+                "permalink": null
+              }
+            }
+          ]
+        },
+        {
+          "text": "이 구절은 또한 그를 추모(鄒牟)의 후손으로 연결하는 것으로 판독되었다.",
+          "citations": [
+            {
+              "id": "claim-gwanggaeto-1-04-gwanggaeto-descendant-of-chumo",
+              "subject": "person-gwanggaeto",
+              "predicate": "syj:descendantOf",
+              "object": {
+                "kind": "entity",
+                "id": "person-chumo"
+              },
+              "fromSource": "src-gwanggaeto",
+              "citesChunk": "chunk_gwanggaeto_1-04",
+              "quote": "□至十七世孫國岡上廣開土境平安好太王",
+              "origin": "ai",
+              "status": "draft",
+              "sourceLabel": "광개토왕릉비",
+              "subjectLabel": "광개토왕",
+              "chunk": {
+                "id": "chunk_gwanggaeto_1-04",
+                "sourceId": "src-gwanggaeto",
+                "locator": "전사본 1면 4번째 줄",
+                "permalink": null
+              }
+            }
+          ]
+        },
+        {
+          "text": "1면 5번째 줄은 \"二九登祚\"라 하여 즉위 당시 나이를 \"二九\"로 적었다.",
+          "citations": [
+            {
+              "id": "claim-gwanggaeto-1-05-gwanggaeto-ascended-age",
+              "subject": "person-gwanggaeto",
+              "predicate": "syj:ascendedAtAge",
+              "object": {
+                "kind": "literal",
+                "value": "二九"
+              },
+              "fromSource": "src-gwanggaeto",
+              "citesChunk": "chunk_gwanggaeto_1-05",
+              "quote": "二九登祚",
+              "origin": "ai",
+              "status": "draft",
+              "sourceLabel": "광개토왕릉비",
+              "subjectLabel": "광개토왕",
+              "chunk": {
+                "id": "chunk_gwanggaeto_1-05",
+                "sourceId": "src-gwanggaeto",
+                "locator": "전사본 1면 5번째 줄",
+                "permalink": null
+              }
+            }
+          ]
+        },
+        {
+          "text": "같은 줄의 \"號為永樂太王\"은 그의 칭호를 \"永樂太王\"이라 밝힌다.",
+          "citations": [
+            {
+              "id": "claim-gwanggaeto-1-05-gwanggaeto-title-yeongnak",
+              "subject": "person-gwanggaeto",
+              "predicate": "syj:hasTitle",
+              "object": {
+                "kind": "literal",
+                "value": "永樂太王"
+              },
+              "fromSource": "src-gwanggaeto",
+              "citesChunk": "chunk_gwanggaeto_1-05",
+              "quote": "號為永樂太王",
+              "origin": "ai",
+              "status": "draft",
+              "sourceLabel": "광개토왕릉비",
+              "subjectLabel": "광개토왕",
+              "chunk": {
+                "id": "chunk_gwanggaeto_1-05",
+                "sourceId": "src-gwanggaeto",
+                "locator": "전사본 1면 5번째 줄",
+                "permalink": null
+              }
+            }
+          ]
+        },
+        {
+          "text": "1면 6번째 줄은 \"卅有九晏駕棄國\"이라 하여 세상을 떠난 나이를 \"卅有九\"로 적었다.",
+          "citations": [
+            {
+              "id": "claim-gwanggaeto-1-06-gwanggaeto-died-age",
+              "subject": "person-gwanggaeto",
+              "predicate": "syj:diedAtAge",
+              "object": {
+                "kind": "literal",
+                "value": "卅有九"
+              },
+              "fromSource": "src-gwanggaeto",
+              "citesChunk": "chunk_gwanggaeto_1-06",
+              "quote": "卅有九晏駕棄國",
+              "origin": "ai",
+              "status": "draft",
+              "sourceLabel": "광개토왕릉비",
+              "subjectLabel": "광개토왕",
+              "chunk": {
+                "id": "chunk_gwanggaeto_1-06",
+                "sourceId": "src-gwanggaeto",
+                "locator": "전사본 1면 6번째 줄",
+                "permalink": null
+              }
+            }
+          ]
+        },
+        {
+          "text": "3면 2번째 줄에는 \"國岡上廣開土境好太王\"이라는 형태의 호칭이 나온다.",
+          "citations": [
+            {
+              "id": "claim-gwanggaeto-3-02-gwanggaeto-mentioned-short",
+              "subject": "person-gwanggaeto",
+              "predicate": "syj:mentionedIn",
+              "object": {
+                "kind": "literal",
+                "value": "國岡上廣開土境好太王"
+              },
+              "fromSource": "src-gwanggaeto",
+              "citesChunk": "chunk_gwanggaeto_3-02",
+              "quote": "國岡上廣開土境好太王",
+              "origin": "ai",
+              "status": "draft",
+              "sourceLabel": "광개토왕릉비",
+              "subjectLabel": "광개토왕",
+              "chunk": {
+                "id": "chunk_gwanggaeto_3-02",
+                "sourceId": "src-gwanggaeto",
+                "locator": "전사본 3면 2번째 줄",
+                "permalink": null
+              }
+            }
+          ]
+        },
+        {
+          "text": "4면 5번째 줄(\"國岡上廣開土境好太王存時教言\")과 4면 8번째 줄(\"惟國岡上廣開土境好太王\")에서도 같은 형태의 호칭이 확인된다.",
+          "citations": [
+            {
+              "id": "claim-gwanggaeto-4-05-gwanggaeto-mentioned-short",
+              "subject": "person-gwanggaeto",
+              "predicate": "syj:mentionedIn",
+              "object": {
+                "kind": "literal",
+                "value": "國岡上廣開土境好太王"
+              },
+              "fromSource": "src-gwanggaeto",
+              "citesChunk": "chunk_gwanggaeto_4-05",
+              "quote": "國岡上廣開土境好太王存時教言",
+              "origin": "ai",
+              "status": "draft",
+              "sourceLabel": "광개토왕릉비",
+              "subjectLabel": "광개토왕",
+              "chunk": {
+                "id": "chunk_gwanggaeto_4-05",
+                "sourceId": "src-gwanggaeto",
+                "locator": "전사본 4면 5번째 줄",
+                "permalink": null
+              }
+            },
+            {
+              "id": "claim-gwanggaeto-4-08-gwanggaeto-mentioned-short",
+              "subject": "person-gwanggaeto",
+              "predicate": "syj:mentionedIn",
+              "object": {
+                "kind": "literal",
+                "value": "國岡上廣開土境好太王"
+              },
+              "fromSource": "src-gwanggaeto",
+              "citesChunk": "chunk_gwanggaeto_4-08",
+              "quote": "惟國岡上廣開土境好太王",
+              "origin": "ai",
+              "status": "draft",
+              "sourceLabel": "광개토왕릉비",
+              "subjectLabel": "광개토왕",
+              "chunk": {
+                "id": "chunk_gwanggaeto_4-08",
+                "sourceId": "src-gwanggaeto",
+                "locator": "전사본 4면 8번째 줄",
+                "permalink": null
+              }
+            }
+          ]
+        }
+      ],
+      "unanswered": "제시된 근거에는 즉위 연도나 즉위 경위를 밝히는 구절, 호칭이 아닌 이름(휘) 자체를 적은 구절, 그리고 \\\"二九\\\"·\\\"卅有九\\\"를 어떤 수로 읽을지에 관한 설명이 포함되어 있지 않다. 또한 각 항목은 초안(draft) 상태의 AI 추출 판독이므로, 결락자(□) 부분과 판독 이견 여부는 이 자료만으로 확인되지 않는다.",
+      "evidenceCount": 13,
+      "truncated": false,
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "origin": "all",
+      "status": "answered"
+    },
+    {
+      "question": "광개토왕이 사용한 스마트폰의 제조사와 기종은 무엇인가?",
+      "sentences": [],
+      "unanswered": "제시된 자료(광개토왕릉비 관련 주장들)에는 스마트폰이나 그 제조사·기종에 해당하는 내용이 전혀 담겨 있지 않습니다. 인용된 주장들은 호칭·즉위 및 사망 시의 나이·수묘 관련 지시·비의 건립 등에 관한 서술뿐이어서, 질문에 답할 근거가 없습니다. 답하려면 해당 물품을 직접 언급한 별도의 사료 구절이 필요합니다.",
+      "evidenceCount": 13,
+      "truncated": false,
+      "models": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "origin": "all",
+      "status": "no_evidence"
+    }
+  ],
+  "answerSeconds": 37.94,
+  "pageErrors": []
+}

@@ -123,11 +123,11 @@
 
 | 이슈 | 작업 | 현재 상태·근거 | 선행 작업 |
 |---|---|---|---|
-| #46 | 그래프 탐색 화면·조회 | 구현·검증. 실제 Fuseki 근거 연결·페이지 이동·AI/사료 필터, [질의](research/graph-46-queries.json)·[화면](research/graph-46-browser.json). c2 앱 배포 후 운영 확인 예정 | #49 #50, 기존 Fuseki |
-| #47 | 근거 챗봇·Claude CLI 연결 | 구현·검증. 실제 Opus 5 Max 구독 답변→인용→원문, 근거 부족·AI/사료 필터 [통과](research/chat-47-browser.json). c2 앱 배포 검증 예정 | #46 #50 #51 |
+| #46 | 그래프 탐색 화면·조회 | 완료 `1029baa`. 실제 Fuseki 근거 연결·페이지 이동·AI/사료 필터, [c2 운영 검증](research/graph-46-production.json) 통과 | 시간·위치 확장은 #49 #55 |
+| #47 | 근거 챗봇·Claude CLI 연결 | 완료 `3b1580e`, 겹침 수정 `5cf9859`. c2 Max 구독 답변→인용→원문, 근거 부족·AI/사료 필터·480px [운영 검증](research/chat-47-production.json) 통과 | 답할 수 있는 범위는 연결된 주장에 한정 |
 | #48 | 현대 연구 기본 렌즈·비교 사료 겹침 | 부분. 스타일 필드만 있고 기본 Source 0 | #51 #52 |
 | #49 | 좌표 Claim·지도·3D·RDF 연결 | 부분. 후보는 있으나 locatedAt 0, 데이터 경로 분리 | 위치 근거 수집, #63 |
-| #50 | AI 주장·연결 제외 필터 | API·2D·3D 구현·실측. AI 13→0, 숨긴 3D 선택 대상도 0, [실행 기록](research/origin-filter-50.json). 그래프·챗봇 연결은 후속 구현 | provenance는 이미 있음 |
+| #50 | AI 주장·연결 제외 필터 | 완료 `ef443ad`, `4d109e4`. API·2D·3D·그래프·챗봇에 적용, [3D](research/origin-filter-50.json)·[그래프](research/graph-46-production.json)·[챗봇](research/chat-47-production.json) 운영 검증 통과. human 격리 사례도 통과 | 시간축 등 추가 경로에도 같은 조건 적용 |
 | #51 | 전 시대·여러 사료의 Claim 뼈대 | 미완료. 현재 2개 Source에 86개만 | 기존 적재본부터 시작, #52 |
 | #52 | 통사 원문 공백·잔여 사료·번역문 확보 | 미완료. 1945년 이후 원사료 카드 0 | #12, 자료별 조사 |
 | #53 | 서로 다른 사료의 사건·판독 비교 | 미완료. 현재 충돌은 한 사료의 판독 차이 | #51, 동일성 근거 |
