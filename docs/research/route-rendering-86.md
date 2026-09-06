@@ -28,3 +28,7 @@ LineString/MultiLineString의 선을 읽는다. 각 선의 첫 점에서 새로 
 현재 공개 조건과 직접 근거를 확인한 한국사 역로 선은 **0개**다. 실제 역사 자료의
 운영 수용은 **NOT_RUN**이며 #86과 상위 #57은 열린 상태를 유지한다.
 Claude Opus 5 / Max의 원 선 자료 조사는 별도로 진행한다.
+
+[운영 배포](route-deployed-86.json) 후 [실제 외부 주소](route-empty-production-86.json)에서도
+역로 API 200·빈 목록 안내·3D 선 0개를 확인했다. Source는 1,072개 그대로이고
+인공 Source가 저장되지 않았으며 콘솔 오류도 없다. 빈 데이터 처리를 검증한 결과다.
