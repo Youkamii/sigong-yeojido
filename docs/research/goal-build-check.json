@@ -10,7 +10,7 @@
     "Person": 125,
     "Place": 9230,
     "Polity": 22,
-    "Source": 1072,
+    "Source": 1073,
     "TimeSpan": 71
   },
   "checks": {
@@ -31,11 +31,11 @@
       "ok": true
     },
     "5 deterministic (byte-identical)": {
-      "detail": "two builds identical: True; sha256 0229073ae1621f0de7d2b2725cc4c06b7027f18ae4fa127c251bf6ee027ed640; matches C:/Users/gkfkd/Git/sigong-yeojido/data/build/sigong.ttl: True",
+      "detail": "two builds identical: True; sha256 24aa4dc8329e9b51b529f517a6508a2a08ca2bea42c855e34561360b68593377; matches C:/Users/gkfkd/Git/sigong-yeojido/data/build/sigong.ttl: True",
       "ok": true
     },
     "6 rdflib parse": {
-      "detail": "rdflib 7.6.0: 244941 triples (ours 244941)",
+      "detail": "rdflib 7.6.0: 244954 triples (ours 244954)",
       "ok": true
     },
     "6 riot --validate": {
@@ -44,11 +44,11 @@
       "skipped": true
     },
     "6 triple count agrees with builder": {
-      "detail": "parser 244941 vs builder 244941",
+      "detail": "parser 244954 vs builder 244954",
       "ok": true
     },
     "6 turtle syntax (ttl_check.py)": {
-      "detail": "errors=[] prefixes=['rdf', 'rdfs', 'syj', 'xsd'] triples=244941 blank_nodes=False owl=False",
+      "detail": "errors=[] prefixes=['rdf', 'rdfs', 'syj', 'xsd'] triples=244954 blank_nodes=False owl=False",
       "ok": true
     },
     "7 every link resolves to a typed node": {
@@ -66,7 +66,7 @@
   },
   "checksFailed": 0,
   "chunksCited": 9240,
-  "chunksInCorpus": 83027,
+  "chunksInCorpus": 83346,
   "citations": 9416,
   "claims": 9416,
   "conflicts": 6,
@@ -93,9 +93,9 @@
     "time": 74,
     "year": 14
   },
-  "sha256": "0229073ae1621f0de7d2b2725cc4c06b7027f18ae4fa127c251bf6ee027ed640",
-  "sources": 1072,
+  "sha256": "24aa4dc8329e9b51b529f517a6508a2a08ca2bea42c855e34561360b68593377",
+  "sources": 1073,
   "timespans": 71,
-  "triples": 244941,
+  "triples": 244954,
   "warnings": 0
 }

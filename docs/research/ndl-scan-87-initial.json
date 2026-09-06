@@ -1,0 +1,13 @@
+{
+  "base": "http://127.0.0.1:8873",
+  "exitCode": 1,
+  "passedBeforeFailure": [
+    "319 archived image hashes",
+    "319 actual API records and empty text/date",
+    "first/intermediate/last images and navigation",
+    "source clear and restore"
+  ],
+  "failure": "Mobile image bounding_box was None after switching the desktop test to 480px.",
+  "cause": "The test had not opened the mobile evidence drawer after resizing; the product requires the visible evidence button at this size.",
+  "followUp": "Use the visible evidence button and verify the image within the opened mobile drawer. No product visibility rule or timeout was changed."
+}

@@ -14,6 +14,16 @@ export function externalLink(value, label){
   }
 }
 
+export function scanImage(value, label){
+  try{
+    const url = new URL(value);
+    if(url.protocol !== 'http:' && url.protocol !== 'https:') return '';
+    return `<a href="${escapeHtml(url.href)}" target="_blank" rel="noopener"><img class="scan-image" src="${escapeHtml(url.href)}" alt="${escapeHtml(label)}" loading="lazy"></a>`;
+  }catch{
+    return '';
+  }
+}
+
 export function highlightText(value, names){
   const terms = [...new Set(names.filter(n => typeof n === 'string' && n))].sort((a,b) => b.length - a.length);
   const plain = text => escapeHtml(text).replace(/□/g, '<span class="gap">□</span>');

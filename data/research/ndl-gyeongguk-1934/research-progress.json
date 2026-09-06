@@ -1,0 +1,93 @@
+{
+  "task": "reset-public-corpus-52",
+  "modelRequested": "claude-opus-5",
+  "effort": "max",
+  "startedIso": "2026-09-07",
+  "status": "done",
+  "notes": [
+    "Read 도구가 작업 폴더 밖으로 나가지 못하도록 --restricted 상태입니다. 지시받은 docs/research/corpus-gaps-52.md 와 docs/research/nikh-license-inquiry-12.md 를 열지 못했습니다. 따라서 '이미 적재한 자료 회피'는 프롬프트에 명시된 우선순위(경국대전·일성록·근현대 신문/공문서·북한 학술)만 근거로 했고, 이 점을 uncertainty에 남깁니다.",
+    "직접 확인한 robots.txt: archive.org(=/control/,/report/만 금지), dl.ndl.go.jp(=/search,/collections/,/login,/manage,/mycollection,/api/ 금지 + 'Allow: /api/iiif/'), www.ndl.go.jp(=전체 허용), lab.ndl.go.jp(=/dl/fulltext,/dl/illust,/dl/mypage 금지), ndlsearch.ndl.go.jp(=/books/ 허용), www.data.go.kr(=Googlebot 전용 규칙만 존재), www.nl.go.kr(='User-agent: * Allow:/'), www.digital.archives.go.jp(=Crawl-delay 30, /contentDownload/* 금지), jpsearch.go.jp(=/rdf/,/data/,/api/item/search* 금지, /item/ 허용).",
+    "금지 도메인(db.history.go.kr, www.history.go.kr, sillok, db.itkc.or.kr 등)은 한 번도 WebFetch하지 않았습니다.",
+    "IIIF manifest를 요약해 읽는 과정에서 코마 수가 172로 잘못 보고되었습니다. R0000173~R0000319는 200, R0000320과 R0009999는 404로 경계를 직접 확인해 실제 319코마로 확정했습니다."
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "iso": "2026-09-07",
+      "status": "verified_primary_source_secured",
+      "exactTitle": "経国大典",
+      "landingUrl": "https://dl.ndl.go.jp/pid/1232807",
+      "primaryPublisher": "国立国会図書館デジタルコレクション (National Diet Library, Japan). 원 간행: 朝鮮総督府中枢院, 昭和9(1934)",
+      "verifiedVia": [
+        "https://dl.ndl.go.jp/api/iiif/1232807/manifest.json (robots 'Allow: /api/iiif/')",
+        "https://dl.ndl.go.jp/api/iiif/1232807/R0000001/info.json 외 R0000172/173/200/250/300/305/310/315/317/318/319 = 200, R0000320·R0009999 = 404",
+        "https://ndlsearch.ndl.go.jp/books/R100000002-I000000744869 (서지: 600p ; 23cm)",
+        "https://www.ndl.go.jp/jp/use/reproduction/index.html (보호기간 만료 자료 이용조건)",
+        "https://jpsearch.go.jp/item/dignl-1232807 (권리표시 PDM, 자유 이용)"
+      ],
+      "manifestFields": {
+        "Persistent ID": "info:ndljp/pid/1232807",
+        "Title": "経国大典",
+        "Creator": "崔恒 [等撰]||内藤吉之助 校",
+        "Publisher": "朝鮮総督府中枢院",
+        "Publication Date": "昭和9 / 1934",
+        "Call Number": "678-72",
+        "Bibliographic ID": "000000744869",
+        "DOI": "10.11501/1232807",
+        "Access Restrictions": "PDM",
+        "Attribution": "国立国会図書館 National Diet Library, JAPAN"
+      },
+      "extent": "319 코마(가로형 5658x3950px = 좌우 2면 펼침 스캔). NDL 서지 형태사항 600p ; 23cm.",
+      "licenseEvidence": "manifest 'Access Restrictions: PDM'; Japan Search 'PDM / 自由に利用可'(교육·비상업·상업 모두 가능); NDL 「著作権保護期間が満了していますので、自由にご利用いただけます。」「当館への申請は不要です。」",
+      "period": "원전 1485년 반포(성종16) / 이 판본 1934년",
+      "integrationReady": false,
+      "whyNotReady": "이미지 스캔만 확인했고 본문 텍스트를 한 글자도 읽지 못했습니다. NDL 전문텍스트 경로(/api/, lab.ndl.go.jp/dl/fulltext)는 robots 금지 또는 JS SPA라 확인 불가. OCR 필요."
+    },
+    {
+      "id": "F2",
+      "iso": "2026-09-07",
+      "status": "rejected_as_original_text",
+      "exactTitle": "교육부 국사편찬위원회_한국사데이터베이스 정보_비변사등록 원문_20221103 / 동 한국사료총서 원문_20240912",
+      "url": ["https://www.data.go.kr/data/15053636/fileData.do", "https://www.data.go.kr/data/15053632/fileData.do"],
+      "reason": "두 건 모두 확장자 XML, 데이터 건수 '1', 제공형태 '공공데이터포털에서 다운로드(원문파일등록)'. 데이터명이 '한국사데이터베이스 **정보**_...'이고 설명이 '한국사데이터베이스 웹사이트에서 제공된다'는 안내문이라, 말뭉치 본문이 아니라 데이터셋 설명 레코드일 가능성이 큽니다. 실제 파일은 확인하지 못했습니다(로그인 금지).",
+      "licenseConflict": "15053632 = '공공저작물 : 출처표시, 상업적 이용금지, 변경금지 (제 4유형)' / 15053636 = '이용허락범위 제한 없음'. 같은 계열 데이터셋인데 표기가 엇갈립니다. 지시대로 KOGL 제4유형 계열은 사용 가능으로 단정하지 않습니다."
+    },
+    {
+      "id": "F3",
+      "iso": "2026-09-07",
+      "status": "contact_channel_verified_partially",
+      "source": "공공데이터포털 data.go.kr (robots 미차단)",
+      "제공기관": "교육부 국사편찬위원회",
+      "관리부서명": "연구편찬정보화실 (데이터셋 15053636·15053632 두 건에서 동일하게 확인)",
+      "관리부서_전화번호": "미확인 (공개 데이터셋 상세 페이지에 표시되지 않음)",
+      "국편_자체_대표연락처": "미확인 (www.history.go.kr 은 robots 금지 도메인이라 직접 확인 불가. 검색 요약에 나온 번호는 직접 확인으로 승격하지 않음)",
+      "포털_공식_접수경로": {
+        "공공데이터 제공신청": "메뉴 '공공데이터 > 공공데이터 제공신청'. 안내문 '필요한 공공데이터를 신청하면 해당기관에서 10일 이내에 공공데이터 제공 여부를 결정'. 전용 URL은 미확인.",
+        "분쟁조정 신청": "https://www.data.go.kr/tcs/dor/insertTrublMdatReqstProcssView.do (페이지 제목 '분쟁조정 신청', 공공데이터분쟁조정위원회, 제공거부일로부터 60일 이내, 02-6191-2064 / fax 02-6191-2193 / odmc@nia.or.kr)",
+        "포털 일반 문의": "1566-0025 (유료, 평일 09시-18시) / opendata_help@nia.or.kr — 운영기관 NIA 공공데이터활용지원센터이며 국사편찬위원회가 아님"
+      }
+    }
+  ],
+  "failedAttempts": [
+    {"target": "C:\\Users\\gkfkd\\Git\\sigong-yeojido\\docs\\research\\corpus-gaps-52.md", "method": "Read", "result": "차단: 작업 폴더 밖 (--restricted)"},
+    {"target": "C:\\Users\\gkfkd\\Git\\sigong-yeojido\\docs\\research\\nikh-license-inquiry-12.md", "method": "Read", "result": "차단: 작업 폴더 밖 (--restricted)"},
+    {"candidate": 1, "target": "https://ko.wikisource.org/wiki/경국대전", "result": "HTTP 404 — 한국어 위키문헌에 문서 없음"},
+    {"candidate": 2, "target": "https://zh.wikisource.org/wiki/經國大典", "result": "문서는 있으나 序·箋과 六典 표제만 있고 본문은 전부 빨간링크, '未完成的页面'. 말뭉치용 텍스트 아님"},
+    {"candidate": 3, "target": "archive.org advancedsearch title:(經國大典) 및 title:(日省錄|大典會通|大典通編|續大典)", "result": "numFound=0 — 해당 표제 아이템 없음"},
+    {"candidate": 5, "target": "https://dl.ndl.go.jp/pid/1232807 (HTML)", "result": "JS SPA로 본문 없음 → robots 허용 IIIF manifest로 우회 확인"},
+    {"candidate": 5, "target": "https://lab.ndl.go.jp/dl/pid/1232807 (次世代デジタルライブラリー 전문 OCR)", "result": "JS SPA로 본문 없음. /dl/fulltext 는 robots 금지 → 전문 텍스트 확보 실패"},
+    {"candidate": 5, "target": "https://dl.ndl.go.jp/view/prepareDownload?itemId=info:ndljp/pid/1232807&contentNo=1", "result": "HTTP 404 — 구 뷰어 다운로드 경로 폐지됨"},
+    {"candidate": 5, "target": "https://dl.ndl.go.jp/api/iiif/1232806/manifest.json, /1232808/manifest.json", "result": "둘 다 404 — 분책된 형제 PID 없음(1232807 단독 완결 디지털화)"},
+    {"candidate": 4, "target": "data.go.kr 15053636 파일 실물", "result": "다운로드에 로그인 필요 추정, 지시에 따라 로그인하지 않음 → 파일 내용 미확인"},
+    {"candidate": 4, "target": "국사편찬위원회 관리부서 전화번호", "result": "data.go.kr 데이터셋 상세 페이지 2건에 미표시 → 미확인"}
+  ],
+  "candidates": [
+    {"n": 1, "name": "ko.wikisource 경국대전", "verdict": "부재(404)"},
+    {"n": 2, "name": "zh.wikisource 經國大典", "verdict": "빈 껍데기 문서"},
+    {"n": 3, "name": "Internet Archive 經國大典 / 日省錄 / 大典會通", "verdict": "부재(numFound 0)"},
+    {"n": 4, "name": "data.go.kr 국편 한국사DB 파일데이터(비변사등록·한국사료총서)", "verdict": "원문으로 인정 불가 + KOGL4 충돌"},
+    {"n": 5, "name": "NDL Digital Collections pid/1232807 経国大典 (朝鮮総督府中枢院 1934, PDM)", "verdict": "확보 — 유일한 성공 후보"},
+    {"n": 6, "name": "国立公文書館デジタルアーカイブ 朝鮮総督府施政年報", "verdict": "예비 후보. 자유이용·신청불요이나 파일 경로 /contentDownload/* 가 robots 금지, 항목 미검증"}
+  ],
+  "completed": true
+}
