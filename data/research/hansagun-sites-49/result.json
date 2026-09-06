@@ -1,0 +1,451 @@
+{
+  "aiDraft": true,
+  "draftNotice": "AI 초안이다. 사람 검수 전이며 좌표는 확정값이 아니다. 조사·수집 전용 산출물로, 저장소 반영은 Codex가 판단한다.",
+  "task": "hansagun-sites-49 / Q6 한사군 군치의 직접 지점 근거 — 구체 유적·지점과 군치를 잇는 견해의 인용 + 그 지점의 공개 좌표 레코드",
+  "generatedAt": "2026-09-06",
+  "partial": false,
+  "completionNote": "시간 한도(15분) 안에서 완료했다. 완전한 짝(견해 인용 + 좌표 레코드)은 1건(현도군-푸순 로동공원), 좌표 없는 견해 1건(낙랑토성), 좌표만 있고 유적명이 없는 학술 GIS 지점 4건을 남긴다. 진번군은 좌표 레코드 0건을 확인했다.",
+  "scopeNote": "input-previous.json이 이미 확보한 AKS 진번·임둔·현도·낙랑 '지역 서술'은 반복 수집하지 않았다. 이번에는 유적/지점 단위 자료만 모았다. AKS는 「낙랑토성」(E0011577)이라는 별개 유적 항목만 새로 열람했다.",
+  "sources": [
+    {
+      "id": "src-aks-nangnang-toseong",
+      "title": "낙랑토성(樂浪土城)",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011577",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "sourceKind": "기관 공개 백과 해설(유적 항목)",
+      "edition": "항목 표기: \"집필 1995년\" / \"소재구 (국립청주박물관, 미술사)\" / \"최종수정 2023년 02월 07일\". 열람 시점 2026-09-06 판.",
+      "license": "한국민족문화대백과사전 표기: 공공누리 제도에 따라 이용 가능한 공공저작물. 인용 시 '[출처 : 항목명 - 한국민족문화대백과사전]' 출처 표기 요구(선행 조사 input-previous.json에서 확인한 사이트 표기이며, 이 항목 페이지에서 라이선스 문구 자체를 이번에 재확인하지는 않았다).",
+      "accessedAt": "2026-09-06",
+      "verification": "서로 다른 프롬프트로 2회 열람. 두 번 모두 같은 문자열을 얻었다(1회차는 '있었'에서 끊긴 추출, 2회차는 '있었고'까지).",
+      "pageQuoteBudget": "24/25 단어",
+      "excerpts": [
+        {
+          "id": "ex-toseong-def",
+          "text": "북한 평안남도 대동군 대동면에 있는 초기국가시대 낙랑군의 토축 성곽. 토성.",
+          "locator": "항목 첫머리 정의(정의문). 2회차 열람에서 '정의' 항목으로 제시된 문자열",
+          "wordCount": 10
+        },
+        {
+          "id": "ex-toseong-gunchi",
+          "text": "이 성은 낙랑의 중심지이자 조선현(朝鮮縣) 지역의 땅으로서 낙랑군청과 조선현청이 모두 이 성 안에 있었고",
+          "locator": "본문 중 발굴 결과를 서술한 뒤의 추론 문장. 원문에서 이 문자열 앞에는 '이로 미루어 보아'가 붙어 있으나 인용 한도 때문에 옮기지 않았다.",
+          "wordCount": 14
+        }
+      ]
+    },
+    {
+      "id": "src-fushun-gov-history",
+      "title": "历史沿革_抚顺市人民政府",
+      "url": "https://www.fushun.gov.cn/005/005002/20210706/8dd202c3-afc1-4ca6-a406-4f77f3dbe8d4.html",
+      "publisher": "抚顺市人民政府(중국 랴오닝성 푸순시 인민정부)",
+      "sourceKind": "지방정부 공개 연혁 해설",
+      "edition": "추출본에 표시된 날짜 \"2025-10-10\". URL 경로에는 20210706이 들어 있다. 두 날짜의 관계는 확인하지 못했다.",
+      "license": "미확인(이 페이지에서 이용조건 표기를 확인하지 않았다).",
+      "accessedAt": "2026-09-06",
+      "verification": "1회 열람. 2회 대조를 하지 못했다(페이지 예산 한도).",
+      "pageQuoteBudget": "1문장 30자(공백 기준 1토큰). 25단어 한도 이내",
+      "excerpts": [
+        {
+          "id": "ex-fushun-xuantu-112",
+          "text": "公元112年(东汉永初六年)，玄菟郡郡治迁至今抚顺市区的劳动公园",
+          "locator": "'历史沿革' 본문 중 한대 연혁 서술. 괄호·전각 쉼표는 추출본 표기 그대로 옮겼다.",
+          "note": "간체자·구두점을 원 표기대로 보존했다."
+        }
+      ]
+    },
+    {
+      "id": "src-tgaz-xuantu-search",
+      "title": "TGAZ Temporal Gazetteer Service — 玄菟郡 검색 결과",
+      "url": "https://chgis.hudci.org/tgaz/placename?fuzzy=false&n=%E7%8E%84%E8%8F%9F%E9%83%A1",
+      "publisher": "China Historical GIS (CHGIS), Harvard University and Fudan University / TGAZ",
+      "sourceKind": "공개 학술 역사지명 GIS(온라인 게이지티어)",
+      "edition": "열람 시점 2026-09-06의 온라인 검색 결과. 데이터셋 판본 번호는 확인하지 못했다.",
+      "license": "레코드 표기: \"CC BY-NC 4.0\" (JSON 레코드 추출본 기준. 사이트 이용조건 페이지는 열람하지 않았다.)",
+      "accessedAt": "2026-09-06",
+      "verification": "검색 결과 2건 각각을 JSON 레코드 URL로 재열람해 좌표·연도를 대조했다(아래 src-tgaz-record-* 참조).",
+      "excerpts": [
+        {
+          "id": "ex-tgaz-xuantu-list",
+          "text": "hvd_112640 玄菟郡 [127.42076, 39.85064] begin -108 end -83 / hvd_112641 玄菟郡 [124.85729, 41.70123] begin -82 end 0",
+          "locator": "검색 결과 목록 2행(원본 표시 순서). 좌표는 [경도, 위도] 순으로 표시되었다."
+        }
+      ]
+    },
+    {
+      "id": "src-tgaz-record-112641",
+      "title": "TGAZ 레코드 hvd_112641 (玄菟郡)",
+      "url": "https://chgis.hudci.org/tgaz/placename/json/hvd_112641",
+      "publisher": "China Historical GIS (CHGIS), Harvard University and Fudan University / TGAZ",
+      "sourceKind": "공개 학술 GIS 레코드(JSON)",
+      "edition": "열람 시점 2026-09-06",
+      "license": "레코드 표기: CC BY-NC 4.0",
+      "accessedAt": "2026-09-06",
+      "excerpts": [
+        {
+          "id": "ex-tgaz-112641",
+          "text": "玄菟郡 / Xuantu Jun / 郡 / 41.70123 / 124.85729 / -82 / 0 / 西汉 / 辽宁新宾县西",
+          "locator": "JSON 레코드의 spellings, feature_type, latitude, longitude, begin_year, end_year, 조대(朝代), 今地 필드 값을 순서대로 옮긴 것. 필드 구분자 '/'는 이 조사에서 넣었다.",
+          "note": "'辽宁新宾县西'는 추출본에 원 문자열로 나타난 今地 표기다."
+        }
+      ]
+    },
+    {
+      "id": "src-tgaz-record-112640",
+      "title": "TGAZ 레코드 hvd_112640 (玄菟郡)",
+      "url": "https://chgis.hudci.org/tgaz/placename/json/hvd_112640",
+      "publisher": "China Historical GIS (CHGIS), Harvard University and Fudan University / TGAZ",
+      "sourceKind": "공개 학술 GIS 레코드(JSON)",
+      "edition": "열람 시점 2026-09-06",
+      "license": "레코드 표기: CC BY-NC 4.0",
+      "accessedAt": "2026-09-06",
+      "excerpts": [
+        {
+          "id": "ex-tgaz-112640",
+          "text": "玄菟郡 / Xuantu Jun / 郡 / 39.85064 / 127.42076 / -108 / -83 / 西汉",
+          "locator": "JSON 레코드 필드 값(구분자는 이 조사에서 넣었다)",
+          "note": "이 레코드의 今地 필드는 추출본에서 영문 요약(\"Korea's south Hamgyong province region\")으로만 제시되었고 원 한자 표기를 확인하지 못했다. 따라서 今地 원문은 미확인으로 둔다."
+        }
+      ]
+    },
+    {
+      "id": "src-tgaz-lelang",
+      "title": "TGAZ Temporal Gazetteer Service — 樂浪郡 검색 결과 및 레코드 hvd_112642",
+      "url": "https://chgis.hudci.org/tgaz/placename/json/hvd_112642",
+      "publisher": "China Historical GIS (CHGIS), Harvard University and Fudan University / TGAZ",
+      "sourceKind": "공개 학술 GIS 레코드(JSON) + 검색 결과",
+      "edition": "열람 시점 2026-09-06",
+      "license": "레코드 표기: CC BY-NC 4.0",
+      "accessedAt": "2026-09-06",
+      "verification": "검색 결과 페이지(https://chgis.hudci.org/tgaz/placename?fuzzy=false&n=%E6%A8%82%E6%B5%AA%E9%83%A1)에서 hvd_112642 · hvd_112643 · hvd_112645 세 레코드가 모두 같은 좌표로 표시되었고, hvd_112642는 JSON 레코드로 재열람해 같은 값을 얻었다.",
+      "excerpts": [
+        {
+          "id": "ex-tgaz-112642",
+          "text": "樂浪郡 / 乐浪郡 / Lelang Jun / 郡 / 39.03258 / 125.75502 / -108 / -83",
+          "locator": "JSON 레코드의 spellings(번체·간체·병음), feature_type, latitude, longitude, begin_year, end_year 값(구분자는 이 조사에서 넣었다)"
+        },
+        {
+          "id": "ex-tgaz-lelang-list",
+          "text": "hvd_112643 [125.75502, 39.03258] -82~0 / hvd_112645 [125.75502, 39.03258] 24~0",
+          "locator": "검색 결과 목록의 나머지 2행. hvd_112645의 종료연도 표시(0)는 추출본 그대로이며 값의 의미를 확인하지 못했다."
+        }
+      ]
+    },
+    {
+      "id": "src-tgaz-lintun",
+      "title": "TGAZ Temporal Gazetteer Service — 臨屯郡 검색 결과",
+      "url": "https://chgis.hudci.org/tgaz/placename?fuzzy=false&n=%E8%87%A8%E5%B1%AF%E9%83%A1",
+      "publisher": "China Historical GIS (CHGIS), Harvard University and Fudan University / TGAZ",
+      "sourceKind": "공개 학술 역사지명 GIS(온라인 게이지티어)",
+      "edition": "열람 시점 2026-09-06",
+      "license": "레코드 표기: CC BY-NC 4.0",
+      "accessedAt": "2026-09-06",
+      "verification": "1회 열람. JSON 레코드 재대조를 하지 못했다(시간·페이지 한도).",
+      "excerpts": [
+        {
+          "id": "ex-tgaz-112638",
+          "text": "hvd_112638 临屯郡 Lintun Jun 37.73960 128.87792 begin -108 end -82",
+          "locator": "검색 결과 1행(간체 표기 临屯郡은 결과 화면 표기 그대로다)"
+        }
+      ]
+    },
+    {
+      "id": "src-tgaz-zhenfan-zero",
+      "title": "TGAZ Temporal Gazetteer Service — 真番郡 검색 결과(0건)",
+      "url": "https://chgis.hudci.org/tgaz/placename?fuzzy=false&n=%E7%9C%9F%E7%95%AA%E9%83%A1",
+      "publisher": "China Historical GIS (CHGIS), Harvard University and Fudan University / TGAZ",
+      "sourceKind": "공개 학술 역사지명 GIS(온라인 검색 결과, 부재 확인용)",
+      "edition": "열람 시점 2026-09-06",
+      "license": "레코드 표기: CC BY-NC 4.0",
+      "accessedAt": "2026-09-06",
+      "excerpts": [
+        {
+          "id": "ex-tgaz-zhenfan-zero",
+          "text": "0 total hits",
+          "locator": "검색 결과 건수 표시. 간체 '真番郡'으로 조회한 결과이며, 번체·이표기(眞番郡 등)로는 조회하지 않았다."
+        }
+      ]
+    },
+    {
+      "id": "src-osm-nominatim-laodong-park",
+      "title": "Nominatim 검색 결과: 劳动公园 (OpenStreetMap way 358716281)",
+      "url": "https://nominatim.openstreetmap.org/search?q=%E6%8A%9A%E9%A1%BA%E5%B8%82%E5%8A%B3%E5%8A%A8%E5%85%AC%E5%9B%AD&format=json&limit=5&addressdetails=1",
+      "publisher": "OpenStreetMap 기여자 / Nominatim (OpenStreetMap Foundation 운영 서비스)",
+      "sourceKind": "공개 지도 데이터베이스의 지오코딩 레코드(기관 자료 아님, 커뮤니티 기여 데이터)",
+      "edition": "열람 시점 2026-09-06의 온라인 조회 결과",
+      "license": "미확인(이번 조사에서 OSM/Nominatim 이용조건 페이지를 열람하지 않았다. 저장소 반영 전 별도 확인이 필요하다).",
+      "accessedAt": "2026-09-06",
+      "verification": "1회 조회. 같은 질의로 반환된 2건 중 park 피처 1건과 bus_stop 피처 1건을 모두 기록했다.",
+      "excerpts": [
+        {
+          "id": "ex-osm-laodong-park",
+          "text": "way 358716281 | 劳动公园, 东公园街道, 抚顺市, 新抚区, 抚顺市, 辽宁省, 113000, 中国 | leisure | park | 41.8647834 | 123.9206921",
+          "locator": "결과 배열 첫째 항목의 osm_type/osm_id, display_name, class, type, lat, lon 필드"
+        },
+        {
+          "id": "ex-osm-laodong-busstop",
+          "text": "node 11072210106 | 劳动公园, 凤翔路, 东公园街道, 新抚区, 抚顺市, 辽宁省, 113000, 中国 | highway | bus_stop | 41.8672479 | 123.9151007",
+          "locator": "결과 배열 둘째 항목. 같은 이름의 버스정류장 피처이며 공원 피처와 구별해 남긴다."
+        }
+      ]
+    }
+  ],
+  "siteOpinions": [
+    {
+      "id": "so-xuantu-fushun-laodonggongyuan",
+      "label": "제3현도군(112년 이치) 치소를 오늘날 푸순 시가지의 劳动公园 자리로 보는 견해 + 그 장소의 공개 지도 좌표",
+      "ancientPlaceId": "ent-hyeondo-gun (input-previous.json 엔티티 id 재사용)",
+      "opinionExcerpt": "公元112年(东汉永初六年)，玄菟郡郡治迁至今抚顺市区的劳动公园 [src-fushun-gov-history / ex-fushun-xuantu-112]",
+      "siteLabel": "劳动公园 (중국 랴오닝성 푸순시 신푸구). 정부 해설은 이 장소를 현대 지명으로 지목할 뿐 고성(古城) 유구의 명칭·범위를 이 문장에서 밝히지 않는다.",
+      "coordinateSource": "OpenStreetMap / Nominatim (src-osm-nominatim-laodong-park) — 커뮤니티 기여 지도 데이터이며 기관 발굴·문화재 대장 좌표가 아니다.",
+      "coordinateRecord": "way 358716281 · display_name \"劳动公园, 东公园街道, 抚顺市, 新抚区, 抚顺市, 辽宁省, 113000, 中国\" · class=leisure · type=park",
+      "lat": 41.8647834,
+      "lon": 123.9206921,
+      "precision": "modern-feature-point (현대 공원 피처의 대표점. 고대 군치 지점의 확정 좌표가 아니다.)",
+      "identityBasis": "정부 해설이 적은 이름 '今抚顺市区的劳动公园'과 OSM 피처의 이름(劳动公园)·소재(辽宁省 抚顺市 新抚区)가 일치한다. 이 일치는 이름과 행정구역 수준의 대조이며, 두 자료 중 어느 쪽도 상대를 인용하지 않는다.",
+      "periodBasis": "정부 해설의 연도 표기 '公元112年(东汉永初六年)'. 서기전 107/108년 최초 설치기가 아니라 후한대 이치 시점이다.",
+      "limitations": [
+        "정부 해설에 좌표가 없고, OSM 피처에 군치·유적 속성이 없다. 좌표와 견해는 서로 다른 자료에서 왔다.",
+        "OSM의 park 피처는 현대 공원의 경계에서 나온 대표점이다. 발굴된 성터 유구의 중심이나 범위와 같지 않을 수 있다.",
+        "같은 질의에서 반환된 버스정류장 피처(41.8672479 / 123.9151007)와 좌표가 다르다. 이름이 같은 피처가 둘 이상이므로 지점 선택에 주의가 필요하다(두 점 사이 거리는 이 조사에서 계산하지 않았고 좌표 값만 적는다).",
+        "이 페이지는 1회만 열람했고 2회 대조를 하지 못했다.",
+        "지방정부 연혁 해설은 학설의 출처·주창자를 밝히지 않는다. 이견의 존재 여부를 이 자료로 알 수 없다."
+      ]
+    },
+    {
+      "id": "so-lelang-nangnang-toseong-aks",
+      "label": "낙랑토성 안에 낙랑군청과 조선현청이 있었다고 보는 견해 (좌표 미확보)",
+      "ancientPlaceId": "ent-nangnang-gun (input-previous.json 엔티티 id 재사용)",
+      "opinionExcerpt": "이 성은 낙랑의 중심지이자 조선현(朝鮮縣) 지역의 땅으로서 낙랑군청과 조선현청이 모두 이 성 안에 있었고 [src-aks-nangnang-toseong / ex-toseong-gunchi]",
+      "siteLabel": "낙랑토성(樂浪土城). 항목의 정의는 소재지를 \"북한 평안남도 대동군 대동면\"으로 적는다 [ex-toseong-def].",
+      "coordinateSource": null,
+      "coordinateRecord": null,
+      "lat": null,
+      "lon": null,
+      "precision": "좌표 없음",
+      "identityBasis": "AKS 항목이 이 성(낙랑토성)에 대해 직접 서술한 문장이다. 유적과 군치를 잇는 견해로서는 직접 근거다.",
+      "periodBasis": "항목이 '초기국가시대 낙랑군의 토축 성곽'으로 정의한다. 개별 축조·사용 연대는 이번 인용 범위에 넣지 않았다.",
+      "limitations": [
+        "이 유적의 공개 좌표 레코드를 끝내 찾지 못했다. 좌표는 미상으로 둔다.",
+        "AKS 항목의 소재지 표기는 '평안남도 대동군 대동면'이라는 옛 행정구역이다. 오늘날 평양직할시 락랑구역 토성동과 같은 곳인지를 이 항목은 명시하지 않으며, 이 조사도 그 동일성을 확인하지 않았다.",
+        "일본어 위키백과에서 얻은 '楽浪区域' 좌표(38.96 / 125.69)는 현대 구역 대표점이므로 이 유적의 좌표로 쓰지 않았다. 같은 이유로 다른 구역·도 대표점도 쓰지 않았다.",
+        "한국어 위키백과에는 이 유적 전용 문서를 찾지 못했다(검색 상위 10건 기준)."
+      ]
+    },
+    {
+      "id": "so-xuantu-chgis-han-2nd",
+      "label": "CHGIS의 서한 玄菟郡 지점(기원전 82년~) — 今地 표기 '辽宁新宾县西'",
+      "ancientPlaceId": "ent-hyeondo-gun",
+      "opinionExcerpt": "玄菟郡 / 郡 / 41.70123 / 124.85729 / -82 / 0 / 西汉 / 辽宁新宾县西 [src-tgaz-record-112641 / ex-tgaz-112641]",
+      "siteLabel": "유적명 없음. 레코드는 郡(commandery) 피처이며 특정 고성·발굴 유적을 지목하지 않는다.",
+      "coordinateSource": "CHGIS / TGAZ (공개 학술 GIS)",
+      "coordinateRecord": "hvd_112641",
+      "lat": 41.70123,
+      "lon": 124.85729,
+      "precision": "commandery-point (학술 GIS가 재구성한 郡 지점. 발굴 유적의 실측 좌표가 아니다.)",
+      "identityBasis": "없음. 이 좌표를 어떤 고고 유적과 연결하는 서술을 이 레코드에서 확인하지 못했다. 今地 표기 '辽宁新宾县西'만 있다.",
+      "periodBasis": "레코드의 begin_year -82, end_year 0, 조대 표기 西汉.",
+      "limitations": [
+        "input-previous.json의 claim-hyeondo-relocation-75bce(AKS: 서기전 75년에 군치가 요동 혼하 상류 흥경·노성 부근으로 이치)와 방면이 겹쳐 보이지만, 이는 이 조사의 해석이다. 두 자료는 서로를 인용하지 않는다.",
+        "연도가 어긋난다. AKS는 서기전 75년, 이 레코드의 시기 구분은 -83/-82이다. 어느 쪽도 상대의 연도를 언급하지 않는다.",
+        "CHGIS 레코드는 郡 단위 지점이며 유적명·발굴 근거를 함께 표기하지 않았다(열람 범위 내).",
+        "라이선스가 CC BY-NC 4.0으로 표기된다. 비상업 조건이므로 저장소 반영 전 이용 범위를 확인해야 한다."
+      ]
+    },
+    {
+      "id": "so-xuantu-chgis-han-1st",
+      "label": "CHGIS의 서한 玄菟郡 지점(기원전 108~83년)",
+      "ancientPlaceId": "ent-hyeondo-gun-1st",
+      "opinionExcerpt": "玄菟郡 / 郡 / 39.85064 / 127.42076 / -108 / -83 / 西汉 [src-tgaz-record-112640 / ex-tgaz-112640]",
+      "siteLabel": "유적명 없음.",
+      "coordinateSource": "CHGIS / TGAZ (공개 학술 GIS)",
+      "coordinateRecord": "hvd_112640",
+      "lat": 39.85064,
+      "lon": 127.42076,
+      "precision": "commandery-point (학술 GIS 재구성 지점)",
+      "identityBasis": "없음. 고고 유적과의 연결 서술이 레코드에 없다.",
+      "periodBasis": "레코드의 begin_year -108, end_year -83.",
+      "limitations": [
+        "이 레코드의 今地 필드를 원 한자 표기로 확인하지 못했다. 추출본에는 영문 요약만 나타났으므로, 어느 현대 지명에 해당하는지는 미확인으로 둔다.",
+        "input-previous.json의 claim-hyeondo-first-range(AKS: 압록강 중·상류가 제1현도군 관할)와 이 좌표의 방향은 서로 다르게 보인다. 이 대비는 해석이며, 어느 쪽도 상대를 언급하지 않는다. 둘을 합치지 말고 별개로 둔다."
+      ]
+    },
+    {
+      "id": "so-lelang-chgis",
+      "label": "CHGIS의 서한 樂浪郡 지점",
+      "ancientPlaceId": "ent-nangnang-gun",
+      "opinionExcerpt": "樂浪郡 / 乐浪郡 / Lelang Jun / 郡 / 39.03258 / 125.75502 / -108 / -83 [src-tgaz-lelang / ex-tgaz-112642]",
+      "siteLabel": "유적명 없음. 낙랑토성을 지목하는 서술이 레코드에 없다.",
+      "coordinateSource": "CHGIS / TGAZ (공개 학술 GIS)",
+      "coordinateRecord": "hvd_112642 (같은 좌표의 hvd_112643, hvd_112645가 시기만 달리해 함께 존재)",
+      "lat": 39.03258,
+      "lon": 125.75502,
+      "precision": "commandery-point (학술 GIS 재구성 지점)",
+      "identityBasis": "없음. 이 점을 낙랑토성(so-lelang-nangnang-toseong-aks)과 같은 지점으로 볼 근거를 확보하지 못했다. 두 자료를 잇지 않는다.",
+      "periodBasis": "레코드의 begin_year -108, end_year -83. 시기가 다른 형제 레코드 2건이 같은 좌표를 쓴다.",
+      "limitations": [
+        "AKS 낙랑토성 항목과 이 좌표를 같은 지점으로 단정하지 않았다. 짝짓기 근거가 없다.",
+        "input-previous.json의 place-samgukyusa-019(평양 락랑구역 참조점)와의 관계도 확인하지 않았다.",
+        "hvd_112645의 표시 연도(24~0)의 의미를 확인하지 못했다."
+      ]
+    },
+    {
+      "id": "so-lintun-chgis",
+      "label": "CHGIS의 서한 臨屯郡(临屯郡) 지점",
+      "ancientPlaceId": "ent-imdun-gun",
+      "opinionExcerpt": "hvd_112638 临屯郡 Lintun Jun 37.73960 128.87792 begin -108 end -82 [src-tgaz-lintun / ex-tgaz-112638]",
+      "siteLabel": "유적명 없음.",
+      "coordinateSource": "CHGIS / TGAZ (공개 학술 GIS)",
+      "coordinateRecord": "hvd_112638",
+      "lat": 37.7396,
+      "lon": 128.87792,
+      "precision": "commandery-point (학술 GIS 재구성 지점)",
+      "identityBasis": "없음.",
+      "periodBasis": "검색 결과 표의 begin -108 / end -82.",
+      "limitations": [
+        "이 점이 어느 현대 지명에 해당하는지 확인하지 않았다. 今地 표기가 있는지도 보지 못했다(JSON 레코드 미열람). 특정 시·군 이름을 이 조사에서 붙이지 않는다.",
+        "input-previous.json의 임둔군 견해들(함경남도설·함경도 남부와 강원도설 등)과 이 좌표의 관계는 대조하지 않았다.",
+        "검색 결과 페이지 1회 열람뿐이며 재대조하지 못했다."
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-toseong-is-gunchi-seat",
+      "subject": "낙랑토성(樂浪土城)",
+      "predicate": "그 성 안에 낙랑군청과 조선현청이 있었다고 서술",
+      "object": "낙랑군 치소·조선현 치소",
+      "sourceId": "src-aks-nangnang-toseong",
+      "citesExcerpt": "ex-toseong-gunchi",
+      "judgment": "직접 근거(원문 직접 진술)",
+      "attributedTo": "한국민족문화대백과사전 「낙랑토성」 서술(집필 소재구). 개별 학자를 지목하지 않는다.",
+      "note": "원문은 이 문장 앞에 '이로 미루어 보아'를 두어 발굴 결과로부터의 추론임을 밝힌다. 이 조사에서는 인용 한도 때문에 그 부분을 옮기지 않았으나, 문면이 추론임을 표시한다는 점을 남긴다."
+    },
+    {
+      "id": "claim-xuantu-moved-to-fushun-112",
+      "subject": "玄菟郡 郡治",
+      "predicate": "서기 112년에 이치했다고 서술 (원문 연도 표기는 '公元112年(东汉永初六年)')",
+      "object": "今抚顺市区的劳动公园",
+      "sourceId": "src-fushun-gov-history",
+      "citesExcerpt": "ex-fushun-xuantu-112",
+      "judgment": "직접 근거(원문 직접 진술)",
+      "attributedTo": "抚顺市人民政府 '历史沿革' 서술. 주창자·연구 출처를 밝히지 않는다.",
+      "note": "연도·지명의 원 표기는 excerpt(ex-fushun-xuantu-112)에 그대로 두었다. predicate의 '서기 112년'은 이 조사가 옮긴 표현이며 원문 문자열이 아니다."
+    },
+    {
+      "id": "claim-osm-park-record",
+      "subject": "劳动公园 (OSM way 358716281)",
+      "predicate": "공개 지도 레코드의 좌표",
+      "object": "41.8647834 / 123.9206921",
+      "sourceId": "src-osm-nominatim-laodong-park",
+      "citesExcerpt": "ex-osm-laodong-park",
+      "judgment": "직접 근거(레코드 값)",
+      "note": "레코드 자체는 현대 공원 피처다. 군치·유적 속성이 없다."
+    },
+    {
+      "id": "claim-pairing-fushun",
+      "subject": "claim-xuantu-moved-to-fushun-112 + claim-osm-park-record",
+      "predicate": "이름·행정구역 대조로 같은 장소를 가리킨다고 본다",
+      "object": "so-xuantu-fushun-laodonggongyuan",
+      "judgment": "해석(이 조사의 판단). 원문 직접 진술이 아니다.",
+      "note": "대조 근거는 '劳动公园'이라는 이름과 '抚顺市' 소재의 일치뿐이다. 발굴 유구의 위치가 공원 피처 안 어디인지는 두 자료 모두 말하지 않는다."
+    },
+    {
+      "id": "claim-zhenfan-no-gis-record",
+      "subject": "真番郡",
+      "predicate": "TGAZ/CHGIS 검색 결과 레코드 수",
+      "object": "0건",
+      "sourceId": "src-tgaz-zhenfan-zero",
+      "citesExcerpt": "ex-tgaz-zhenfan-zero",
+      "judgment": "직접 근거(검색 결과 표시)",
+      "note": "간체 표기로만 조회했다. 다른 표기로 조회하면 결과가 달라질 수 있다. 진번군의 좌표 레코드는 이번 조사 범위에서 확보하지 못했다."
+    },
+    {
+      "id": "claim-chgis-xuantu-two-points",
+      "subject": "玄菟郡",
+      "predicate": "CHGIS에 시기가 다른 서한대 지점 2건이 있고 좌표가 서로 다르다",
+      "object": "hvd_112640 (39.85064/127.42076, -108~-83) 및 hvd_112641 (41.70123/124.85729, -82~0)",
+      "sourceId": "src-tgaz-xuantu-search",
+      "citesExcerpt": "ex-tgaz-xuantu-list",
+      "judgment": "직접 근거(레코드 값)",
+      "note": "이치(移治)를 지도 데이터가 시기별 별개 점으로 표현한 사례다. 이치의 원인·연도 해석은 이 레코드가 말하지 않는다."
+    }
+  ],
+  "uncertainties": [
+    "완전한 짝(구체 지점을 지목한 견해 + 그 지점의 공개 좌표 레코드)은 현도군-푸순 로동공원 1건뿐이다. 그 1건도 좌표 출처가 기관 자료가 아니라 OpenStreetMap 커뮤니티 데이터다.",
+    "낙랑토성의 공개 좌표 레코드를 찾지 못했다. 좌표 없음이 이번 조사의 결과다.",
+    "진번군은 학술 GIS 검색에서 0건이었고, 유적 좌표도 찾지 못했다.",
+    "임둔군은 CHGIS 지점 1건이 있으나 유적과의 연결 근거가 없고, 그 점의 현대 지명도 확인하지 않았다.",
+    "추출 계층에서 한글 문자열이 깨지는 사례를 관측했다. 한국어 위키백과 API 결과에서 문서 제목이 '봉락군'·'락낙구역'·'청섯리토성' 등으로 나타났다(각각 낙랑군·락랑구역·다른 토성으로 보이나 확인하지 않았다). 위키데이터 검색은 질의어 자체가 '믹락토성'으로 깨져 0건이 나왔다. 따라서 이번 조사의 한글 인용은 2회 대조에 성공한 AKS 항목만 신뢰 대상으로 둔다.",
+    "抚顺市人民政府 페이지는 1회만 열람했다. 2회 대조를 하지 못했으므로 인용 문자열의 재현성 검증이 미완이다.",
+    "OSM/Nominatim의 이용조건을 확인하지 않았다. CHGIS 레코드는 CC BY-NC 4.0으로 표기되어 비상업 조건이다. 두 좌표 출처 모두 저장소 반영 전에 라이선스 확인이 필요하다.",
+    "CHGIS 좌표는 학술 GIS의 재구성 지점이며 발굴 유적의 실측 좌표가 아니다. 유적명을 함께 표기하지 않는다.",
+    "지시대로 읍·구역·도 대표점은 군치 좌표로 쓰지 않았다. 일본어 위키백과에서 확인된 '楽浪区域 38.96 / 125.69', '中区域 39.0201 / 125.7504' 같은 값은 참고로만 적고 후보로 만들지 않았다.",
+    "현도군의 견해별 고성 중 노성(老城)·신성(新城)·영릉진(永陵鎮)을 각각 지목한 기관 자료를 이번 페이지 예산 안에서 확보하지 못했다. 확보한 것은 후한 112년 이치처로서의 劳动公园 1건뿐이다.",
+    "db.history.go.kr·contents.history.go.kr은 지시에 따라 열지 않았다. 국가유산청(khs.go.kr)의 「낙랑토성」 간행물 페이지, 동북아역사재단 동북아역사넷, 국립문화재연구원 계열 포털은 페이지 예산 때문에 열람하지 못했다. 남은 구멍이다.",
+    "사람 검토는 미완료다. 이 파일의 모든 좌표는 후보이며 확정값이 아니다."
+  ],
+  "attemptedSources": [
+    {
+      "url": "https://maps.cga.harvard.edu/tgaz/placename?fuzzy=false&n=%E6%A8%82%E6%B5%AA%E9%83%A1",
+      "result": "HTTP 404. 구 호스트의 엔드포인트가 동작하지 않았다."
+    },
+    {
+      "url": "https://maps.cga.harvard.edu/tgaz/",
+      "result": "리다이렉트 안내 페이지. 본문에 이동 대상 https://chgis.hudci.org/tgaz/ 가 제시되어 이후 조회는 이 호스트로 했다."
+    },
+    {
+      "url": "https://chgis.fairbank.fas.harvard.edu/gazetteer/",
+      "result": "DNS 해석 실패(ENOTFOUND)."
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=낙랑토성&language=ko",
+      "result": "결과 0건. 반환된 searchinfo의 질의어가 '믹락토성'으로 깨져 있었다. 한글 질의 경로에 인코딩 문제가 있다."
+    },
+    {
+      "url": "https://ko.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=낙랑토성&prop=coordinates",
+      "result": "낙랑토성 전용 문서를 상위 10건에서 찾지 못했다. 좌표가 붙은 것은 풍납토성(37.53888889 / 127.12083333)뿐이었고 이 조사와 무관하다. 반환 제목의 한글이 깨져 있었다."
+    },
+    {
+      "url": "https://ja.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=楽浪土城&prop=coordinates",
+      "result": "유적 문서 없음. 좌표가 붙은 것은 현대 구역(楽浪区域·中区域·平川区域·船橋区域)과 몽촌토성뿐이었다. 구역 대표점은 지시에 따라 쓰지 않았다."
+    },
+    {
+      "url": "https://zh.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=玄菟郡 郡治 古城&prop=coordinates",
+      "result": "반환된 12개 문서 어디에도 좌표가 없었다(玄菟郡·候城县·高顯縣 등)."
+    },
+    {
+      "kind": "미시도",
+      "items": [
+        "국가유산청 간행물 「낙랑토성」 상세 페이지(검색 결과에 나타났으나 페이지 예산 때문에 열지 않았다)",
+        "동북아역사재단 동북아역사넷의 한사군·낙랑 유적 해설",
+        "국립문화재연구원 계열 북한 문화유산 자료",
+        "World Historical Gazetteer(whgazetteer.org) 데이터셋",
+        "TGAZ의 臨屯郡 hvd_112638 JSON 레코드 재대조"
+      ]
+    },
+    {
+      "kind": "차단(지시)",
+      "items": ["db.history.go.kr", "contents.history.go.kr"]
+    }
+  ],
+  "reproduction": {
+    "date": "2026-09-06",
+    "tools": ["WebSearch", "WebFetch"],
+    "robotsCompliance": "db.history.go.kr, contents.history.go.kr 미접속. 접속 도메인은 encykorea.aks.ac.kr, chgis.hudci.org, maps.cga.harvard.edu, www.fushun.gov.cn, nominatim.openstreetmap.org, ko/ja/zh.wikipedia.org, www.wikidata.org 이다.",
+    "sourceCount": "성과로 남긴 자료 8건(sources 배열). 이 가운데 CHGIS/TGAZ 5건은 같은 서비스의 서로 다른 조회 URL이다. 실패·무성과 조회는 attemptedSources로 옮겼다.",
+    "queries": [
+      "낙랑토성 평양 낙랑구역 토성동 낙랑군 치소 유적 좌표",
+      "CHGIS TGAZ 樂浪郡 Lelang commandery gazetteer coordinates harvard",
+      "\"낙랑토성\" 위키백과 토성동토성 위치 39 125 좌표",
+      "撫順 勞動公園 漢代古城 玄菟郡 郡治 遺址 文物保護單位"
+    ],
+    "verificationMethod": "AKS 「낙랑토성」은 서로 다른 프롬프트로 2회 열람해 같은 문자열을 확인했다. CHGIS 玄菟郡·樂浪郡은 검색 결과와 JSON 레코드를 각각 열람해 좌표·연도를 대조했다. 抚顺市人民政府와 臨屯郡 검색, Nominatim 조회는 1회뿐이며 미대조다. 인용은 연속 문자열만 쓰고 생략부호를 넣지 않았으며 한자·간체·전각 구두점·공백을 원 표기대로 두었다.",
+    "quoteBudgetCheck": {
+      "encykorea.aks.ac.kr/Article/E0011577": "10+14 = 24 단어",
+      "www.fushun.gov.cn 历史沿革": "1문장(30자, 공백 기준 1토큰)",
+      "chgis.hudci.org (각 조회 URL)": "레코드 필드 값만 옮겼다. URL당 20단어 미만",
+      "nominatim.openstreetmap.org": "레코드 2행의 필드 값. 약 22단어",
+      "method": "공백 기준 토큰 수. 한자문 인용은 공백이 없어 문자 수를 함께 적었다."
+    }
+  }
+}

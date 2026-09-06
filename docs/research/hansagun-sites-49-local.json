@@ -1,0 +1,19 @@
+{
+  "base": "http://127.0.0.1:8873",
+  "reconstructionPoints": 4,
+  "checks": {
+    "rawCoordinatesAndPeriodCodes": true,
+    "sourceSeparation": true,
+    "actual3dCandidateIds": true,
+    "humanAndEmptyFilters": true
+  },
+  "candidateIds": [
+    "loc-claim-chgis-hvd-112638-point",
+    "loc-claim-chgis-hvd-112640-point",
+    "loc-claim-chgis-hvd-112641-point",
+    "loc-claim-chgis-hvd-112642-point"
+  ],
+  "legacyUnattributedLocationsInApi": 12,
+  "pageErrors": [],
+  "priorAttempt": "Initial harness assumed source filters remove every unattributed legacy candidate; the established shared rule retains those without source or mentions."
+}

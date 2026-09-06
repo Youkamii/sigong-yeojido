@@ -1,0 +1,228 @@
+{
+  "sources": [
+    "src-aks-nangnang-toseong",
+    "src-fushun-gov-history",
+    "src-chgis-hansagun"
+  ],
+  "chunks": 7,
+  "claims": [
+    "claim-aks-nangnang-office-in-toseong",
+    "claim-fushun-xuantu-moved-seat-112",
+    "claim-chgis-hvd-112638-point",
+    "claim-chgis-hvd-112638-period",
+    "claim-chgis-hvd-112640-point",
+    "claim-chgis-hvd-112640-period",
+    "claim-chgis-hvd-112641-point",
+    "claim-chgis-hvd-112641-period",
+    "claim-chgis-hvd-112642-point",
+    "claim-chgis-hvd-112642-period"
+  ],
+  "checkedExcerpts": [
+    {
+      "excerpt": "ex-toseong-def",
+      "quoteExactInHtmlText": true,
+      "pageSha256": "1642f889abea1b7c7dc5afbb81aa536008601edfd08056921065450cc31326a0"
+    },
+    {
+      "excerpt": "ex-toseong-gunchi",
+      "quoteExactInHtmlText": true,
+      "pageSha256": "1642f889abea1b7c7dc5afbb81aa536008601edfd08056921065450cc31326a0"
+    },
+    {
+      "excerpt": "ex-fushun-xuantu-112",
+      "quoteExactInHtmlText": true,
+      "pageSha256": "2f85ea4b43c17e83fb80ad45fff4a049f6e2ce6e5ffc5518eb731901c315994b"
+    }
+  ],
+  "reconstructedPoints": [
+    {
+      "record": "hvd_112638",
+      "place": "place-chgis-hvd-112638",
+      "lat": 37.7396,
+      "lon": 128.87792,
+      "periodRaw": {
+        "begin": "-108",
+        "begin rule": "3",
+        "end": "-82",
+        "end rule": "3"
+      },
+      "quoteExactRecordProjection": true,
+      "originalSha256": "cab4c00ad5fb8bce3f5a409d12ff39104c86a66c201093aef4fafd66e5497a86"
+    },
+    {
+      "record": "hvd_112640",
+      "place": "place-chgis-hvd-112640",
+      "lat": 39.85064,
+      "lon": 127.42076,
+      "periodRaw": {
+        "begin": "-108",
+        "begin rule": "3",
+        "end": "-83",
+        "end rule": "3"
+      },
+      "quoteExactRecordProjection": true,
+      "originalSha256": "d4c799ac1427521f2820395e592e45de953c4b01b5bff50d63dd670366077565"
+    },
+    {
+      "record": "hvd_112641",
+      "place": "place-chgis-hvd-112641",
+      "lat": 41.70123,
+      "lon": 124.85729,
+      "periodRaw": {
+        "begin": "-82",
+        "begin rule": "3",
+        "end": "0",
+        "end rule": "0"
+      },
+      "quoteExactRecordProjection": true,
+      "originalSha256": "95f13355ae536694f023ebe6ccfaa6329914cd11719775d6acf6350d9a481c2d"
+    },
+    {
+      "record": "hvd_112642",
+      "place": "place-chgis-hvd-112642",
+      "lat": 39.03258,
+      "lon": 125.75502,
+      "periodRaw": {
+        "begin": "-108",
+        "begin rule": "3",
+        "end": "-83",
+        "end rule": "3"
+      },
+      "quoteExactRecordProjection": true,
+      "originalSha256": "5dbf023504f11c71b621f215f9c3c6d26bbe7f22e36448fa080a1b26c03accc3"
+    }
+  ],
+  "checks": [
+    {
+      "id": "src-aks-nangnang-toseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011577",
+      "finalUrl": "https://encykorea.aks.ac.kr/Article/E0011577",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 132867,
+      "sha256": "1642f889abea1b7c7dc5afbb81aa536008601edfd08056921065450cc31326a0"
+    },
+    {
+      "id": "src-fushun-gov-history",
+      "url": "https://www.fushun.gov.cn/005/005002/20210706/8dd202c3-afc1-4ca6-a406-4f77f3dbe8d4.html",
+      "finalUrl": "https://www.fushun.gov.cn/005/005002/20210706/8dd202c3-afc1-4ca6-a406-4f77f3dbe8d4.html",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 25330,
+      "sha256": "2f85ea4b43c17e83fb80ad45fff4a049f6e2ce6e5ffc5518eb731901c315994b"
+    },
+    {
+      "id": "src-osm-nominatim-laodong-park",
+      "url": "https://nominatim.openstreetmap.org/search?q=%E6%8A%9A%E9%A1%BA%E5%B8%82%E5%8A%B3%E5%8A%A8%E5%85%AC%E5%9B%AD&format=json&limit=5&addressdetails=1",
+      "status": "ROBOTS_DISALLOWED"
+    },
+    {
+      "id": "chgis-112638",
+      "url": "https://chgis.hudci.org/tgaz/placename/json/hvd_112638",
+      "finalUrl": "https://chgis.hudci.org/tgaz/placename/json/hvd_112638",
+      "status": 200,
+      "contentType": "text/json",
+      "bytes": 1636,
+      "sha256": "cab4c00ad5fb8bce3f5a409d12ff39104c86a66c201093aef4fafd66e5497a86",
+      "jsonType": "dict",
+      "keys": [
+        "system",
+        "license",
+        "uri",
+        "sys_id",
+        "sys_id of alternate",
+        "spellings",
+        "feature_type",
+        "temporal",
+        "spatial",
+        "historical_context",
+        "data source",
+        "source note",
+        "source uri"
+      ]
+    },
+    {
+      "id": "chgis-112640",
+      "url": "https://chgis.hudci.org/tgaz/placename/json/hvd_112640",
+      "finalUrl": "https://chgis.hudci.org/tgaz/placename/json/hvd_112640",
+      "status": 200,
+      "contentType": "text/json",
+      "bytes": 1642,
+      "sha256": "d4c799ac1427521f2820395e592e45de953c4b01b5bff50d63dd670366077565",
+      "jsonType": "dict",
+      "keys": [
+        "system",
+        "license",
+        "uri",
+        "sys_id",
+        "sys_id of alternate",
+        "spellings",
+        "feature_type",
+        "temporal",
+        "spatial",
+        "historical_context",
+        "data source",
+        "source note",
+        "source uri"
+      ]
+    },
+    {
+      "id": "chgis-112641",
+      "url": "https://chgis.hudci.org/tgaz/placename/json/hvd_112641",
+      "finalUrl": "https://chgis.hudci.org/tgaz/placename/json/hvd_112641",
+      "status": 200,
+      "contentType": "text/json",
+      "bytes": 1630,
+      "sha256": "95f13355ae536694f023ebe6ccfaa6329914cd11719775d6acf6350d9a481c2d",
+      "jsonType": "dict",
+      "keys": [
+        "system",
+        "license",
+        "uri",
+        "sys_id",
+        "sys_id of alternate",
+        "spellings",
+        "feature_type",
+        "temporal",
+        "spatial",
+        "historical_context",
+        "data source",
+        "source note",
+        "source uri"
+      ]
+    },
+    {
+      "id": "chgis-112642",
+      "url": "https://chgis.hudci.org/tgaz/placename/json/hvd_112642",
+      "finalUrl": "https://chgis.hudci.org/tgaz/placename/json/hvd_112642",
+      "status": 200,
+      "contentType": "text/json",
+      "bytes": 1645,
+      "sha256": "5dbf023504f11c71b621f215f9c3c6d26bbe7f22e36448fa080a1b26c03accc3",
+      "jsonType": "dict",
+      "keys": [
+        "system",
+        "license",
+        "uri",
+        "sys_id",
+        "sys_id of alternate",
+        "spellings",
+        "feature_type",
+        "temporal",
+        "spatial",
+        "historical_context",
+        "data source",
+        "source note",
+        "source uri"
+      ]
+    }
+  ],
+  "humanReviewed": false,
+  "withheld": [
+    "OSM 공원 좌표: robots 때문에 재대조하지 않음",
+    "낙랑토성과 CHGIS 낙랑 점의 동일시",
+    "진번 좌표",
+    "음수 연도 체계와 기간 코드의 추정 환산",
+    "학술 GIS 점을 발굴 유적의 실측점으로 표시"
+  ]
+}
