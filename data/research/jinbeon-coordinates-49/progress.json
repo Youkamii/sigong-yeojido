@@ -1,0 +1,95 @@
+{
+  "task": "reset-jinbeon-49",
+  "question": "#49/#56 Q6 - direct location evidence for Jinbeon (Zhenfan) Commandery",
+  "updated": "2026-09-07",
+  "candidateBudget": 6,
+  "candidatesOpened": 6,
+  "coordinatesSecuredForJinbeon": 0,
+  "findings": [
+    {
+      "id": "F1",
+      "candidate": 1,
+      "type": "documented-absence",
+      "source": "CHGIS Temporal Gazetteer (TGAZ), Harvard CGA + Fudan",
+      "url": "https://chgis.hudci.org/tgaz/placename?n=%E7%9C%9F%E7%95%AA",
+      "status": "verified-directly",
+      "negativeQueries": {
+        "真番": "Results: 1-0 of 0 total hits",
+        "真番郡": "Results: 1-0 of 0 total hits",
+        "眞番": "Results: 1-0 of 0 total hits",
+        "霅": "Results: 1-0 of 0 total hits",
+        "带方 / 帶方": "Results: 1-0 of 0 total hits (both forms)"
+      },
+      "controlQueries": {
+        "樂浪": "hvd_112642, hvd_112643, hvd_112645 - all [125.75502, 39.03258]",
+        "玄菟": "hvd_112640 [127.42076, 39.85064] (-108/-83); hvd_112641 [124.85729, 41.70123] (-82/0)",
+        "临屯": "hvd_112638 [128.87792, 37.73960] (-108/-82)"
+      },
+      "integrationReady": false
+    },
+    {
+      "id": "F2",
+      "candidate": 2,
+      "type": "documented-absence",
+      "source": "World Historical Gazetteer (Univ. of Pittsburgh)",
+      "url": "https://whgazetteer.org/search/?q=Zhenfan",
+      "status": "verified-directly",
+      "shortQuote": "No results - please modify your search terms and options",
+      "integrationReady": false
+    },
+    {
+      "id": "F3",
+      "candidate": 3,
+      "type": "scholarly-uncertainty-statement",
+      "source": "한국민족문화대백과사전 / 한국학중앙연구원",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054690",
+      "exactTitle": "진번군(眞番郡)",
+      "status": "verified-directly",
+      "shortQuote": "진번군의 위치와 강역에 대해서는 학자들 간에 복잡한 논의가 이루어지고 있다.",
+      "licenseEvidence": "공공누리 / KOGL public work notice on page",
+      "integrationReady": true,
+      "providesGeometry": false
+    },
+    {
+      "id": "F4",
+      "candidate": 4,
+      "type": "documented-absence",
+      "source": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q703979",
+      "status": "verified-directly",
+      "summary": "No P625 coordinate location. Only P3842 = North Korea, P17 = Han dynasty.",
+      "integrationReady": false
+    },
+    {
+      "id": "F5",
+      "candidate": 5,
+      "type": "primary-text-location-claim",
+      "source": "維基文庫 zh.wikisource, 史記索隱 (四庫全書本)/卷25",
+      "url": "https://zh.wikisource.org/wiki/%E5%8F%B2%E8%A8%98%E7%B4%A2%E9%9A%B1_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B725",
+      "status": "verified-directly",
+      "shortQuote": "嘗略屬真番朝鮮〈如淳云燕嘗略二國以屬己也應劭云𤣥莬本直番國〉",
+      "summary": "Volume covers 朝鮮列傳第五十五. Ying Shao's gloss equates Xuantu's territory with the former Zhenfan polity - an ancient textual basis for the northern/Liaodong view. Received text writes the variant 直番 for 真番 and 𤣥莬 for 玄菟.",
+      "licenseEvidence": "Public domain worldwide (author died >100 years ago, published before 1931-01-01); site text CC BY-SA 4.0",
+      "integrationReady": true,
+      "providesGeometry": false
+    },
+    {
+      "id": "F6",
+      "candidate": 6,
+      "type": "checked-no-location-content",
+      "source": "동북아역사넷 / 동북아역사재단",
+      "url": "http://contents.nahf.or.kr/item/level.do?levelId=gb.d_0436_0110",
+      "exactTitle": "東典考",
+      "status": "verified-directly",
+      "shortQuote": "元封三年癸酉 分朝鮮爲四郡 曰眞番 臨屯 玄菟 樂浪",
+      "summary": "Lists Jinbeon as one of the four commanderies but gives no location, no modern identification, no coordinate.",
+      "integrationReady": false
+    }
+  ],
+  "incidentalLead": {
+    "for": "chgis-date-codes-49 (separate thread, not resolved here)",
+    "observation": "TGAZ record JSON exposes explicit begin_rule / end_rule fields. hvd_112645 has begin=24, begin_rule=3, end=0, end_rule=0. Because begin 24 CE with end 0 would be chronologically impossible as a real year, end=0 with end_rule=0 behaves as an unknown/unset marker rather than a year. This is an inference from one record, NOT a documented spec. chgis.hudci.org/tgaz/about returned an empty body.",
+    "licenseEvidence": "hvd_112645 JSON states CC BY-NC 4.0 for CHGIS data"
+  },
+  "completed": false
+}

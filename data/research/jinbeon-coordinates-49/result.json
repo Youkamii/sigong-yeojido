@@ -1,0 +1,153 @@
+{
+  "task": "reset-jinbeon-49",
+  "question": "#49/#56 Q6 - remaining direct location evidence for 진번군 (Zhenfan Commandery)",
+  "date": "2026-09-07",
+  "modelRequested": "claude-opus-5",
+  "effort": "max",
+  "headline": "No coordinate or original geometry for 진번군 was found in any permitted public source. Four independent checks returned a documented absence, and one authoritative institutional publisher directly states the location is unresolved. Coordinates secured for 진번군: 0.",
+  "records": [
+    {
+      "id": "R1",
+      "url": "https://chgis.hudci.org/tgaz/placename?n=%E7%9C%9F%E7%95%AA",
+      "primaryPublisher": "Harvard Center for Geographic Analysis / China Historical GIS (CHGIS, Harvard University and Fudan University)",
+      "exactTitle": "Temporal Gazetteer Service (TGAZ) - placename query n=真番",
+      "checkedContent": "Queried the live TGAZ placename endpoint for 真番, 真番郡, 眞番 and 霅. All four returned zero hits. Control queries on the same endpoint in the same session returned populated records with coordinates: 樂浪郡 hvd_112642 / hvd_112643 / hvd_112645 all at [125.75502, 39.03258]; 玄菟郡 hvd_112640 at [127.42076, 39.85064] (-108 to -83) and hvd_112641 at [124.85729, 41.70123] (-82 to 0); 临屯郡 hvd_112638 at [128.87792, 37.73960] (-108 to -82). The absence is therefore specific to Zhenfan and is not an endpoint or encoding failure. 带方 and 帶方 also returned zero hits.",
+      "shortQuote": "Results: 1-0 of 0 total hits",
+      "licenseEvidence": "The TGAZ record JSON for hvd_112645 states the CHGIS data licence as CC BY-NC 4.0, and credits CHGIS (Harvard University and Fudan University) as the data source.",
+      "period": "Zhenfan Commandery 108 BCE - 82 BCE (not represented in the dataset)",
+      "uncertainty": "Verified only for the four query strings listed. TGAZ normalises names to simplified Chinese, and the endpoint moved host from maps.cga.harvard.edu to chgis.hudci.org, so the check is against the current live service rather than a versioned CHGIS release file.",
+      "downloadableUrl": "https://chgis.hudci.org/tgaz/placename/json/hvd_112645",
+      "integrationReady": false,
+      "providesGeometry": false,
+      "recordType": "documented-absence"
+    },
+    {
+      "id": "R2",
+      "url": "https://whgazetteer.org/search/?q=Zhenfan",
+      "primaryPublisher": "World Historical Gazetteer, University of Pittsburgh",
+      "exactTitle": "World Historical Gazetteer - search results for 'Zhenfan'",
+      "checkedContent": "Ran the site search for Zhenfan. The page returned the empty-result message and listed no place records, so WHG holds no point, no geometry and no dataset attestation for Zhenfan Commandery.",
+      "shortQuote": "No results - please modify your search terms and options",
+      "licenseEvidence": "Not applicable - no record was returned, so no data licence attaches.",
+      "period": "Zhenfan Commandery 108 BCE - 82 BCE (not represented)",
+      "uncertainty": "Latin-script query only. A CJK-script query was not run against WHG.",
+      "downloadableUrl": null,
+      "integrationReady": false,
+      "providesGeometry": false,
+      "recordType": "documented-absence"
+    },
+    {
+      "id": "R3",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054690",
+      "primaryPublisher": "한국학중앙연구원 (Academy of Korean Studies), 한국민족문화대백과사전",
+      "exactTitle": "진번군(眞番郡)",
+      "checkedContent": "Read the encyclopedia article directly. Authored by 이형구, written 1995, last modified 2024-10-23. The article states that the location and territory of Jinbeon are the subject of complex and unresolved debate among scholars. It groups the competing positions into a northern camp (요동 지역, 고구려 지역, 숙신 지역) and a southern camp (진국, 맥국, 재령평야, 대방 지역, 마한 지역), and notes a further view placing all four Han commanderies in the 요서 region. No coordinate, no boundary and no single accepted identification is given.",
+      "shortQuote": "진번군의 위치와 강역에 대해서는 학자들 간에 복잡한 논의가 이루어지고 있다.",
+      "licenseEvidence": "Page carries the notice that 한국민족문화대백과사전 is a 공공저작물 usable under the 공공누리 (KOGL) scheme.",
+      "period": "Jinbeon Commandery 108 BCE - 82 BCE",
+      "uncertainty": "This is the target evidence of unresolved location, not evidence of a location. It supplies text only; it does not narrow the candidate area or supply geometry.",
+      "downloadableUrl": "https://encykorea.aks.ac.kr/Article/E0054690",
+      "integrationReady": true,
+      "providesGeometry": false,
+      "recordType": "scholarly-uncertainty-statement",
+      "integrationNote": "Usable as a cited uncertainty annotation or tooltip for Jinbeon. It must not be rendered as a point, a centroid or a polygon."
+    },
+    {
+      "id": "R4",
+      "url": "https://www.wikidata.org/wiki/Q703979",
+      "primaryPublisher": "Wikimedia Foundation (Wikidata)",
+      "exactTitle": "Zhenfan Commandery (Q703979)",
+      "checkedContent": "Inspected the item. There is no coordinate location (P625) statement. The only spatial statements are P3842 located in the present-day administrative territorial entity = North Korea, and P17 country = Han dynasty. Existence dates 108 BCE to 82 BCE are given. The most widely reused open linked-data source therefore also carries no mappable point for Jinbeon.",
+      "shortQuote": "no coordinate location (P625) statement",
+      "licenseEvidence": "Wikidata statement data is released under CC0 1.0.",
+      "period": "108 BCE - 82 BCE",
+      "uncertainty": "P3842 = North Korea is a whole-country association, not a located point. It must not be reduced to a country centroid for Jinbeon.",
+      "downloadableUrl": "https://www.wikidata.org/wiki/Special:EntityData/Q703979.json",
+      "integrationReady": false,
+      "providesGeometry": false,
+      "recordType": "documented-absence"
+    },
+    {
+      "id": "R5",
+      "url": "https://zh.wikisource.org/wiki/%E5%8F%B2%E8%A8%98%E7%B4%A2%E9%9A%B1_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B725",
+      "primaryPublisher": "維基文庫 (Chinese Wikisource); underlying work 史記索隱 by 司馬貞 (Tang), 四庫全書 edition",
+      "exactTitle": "史記索隱 (四庫全書本)/卷25",
+      "checkedContent": "Confirmed this volume covers 匈奴列傳第五十二, 南越列傳第五十三, 東越列傳第五十四, 朝鮮列傳第五十五 and 西南夷列傳第五十六. Within the 朝鮮列傳 section the Suoyin commentary carries Ying Shao's gloss identifying the Xuantu area with the former Zhenfan polity, which is the oldest direct textual anchor for the northern / Liaodong placement of Jinbeon. Searched the same page for 茂陵, 霅, 七千六百, 十五縣 and 東暆: all absent.",
+      "shortQuote": "嘗略屬真番朝鮮〈如淳云燕嘗略二國以屬己也應劭云𤣥莬本直番國〉",
+      "licenseEvidence": "Page states the work is in the public domain worldwide because the author died more than 100 years ago and it was published before 1 January 1931; Wikisource site text is CC BY-SA 4.0.",
+      "period": "Han commandery period, text compiled Tang dynasty (8th century), this edition 四庫全書 (18th century)",
+      "uncertainty": "The received text writes the orthographic variants 直番 for 真番 and 𤣥莬 for 玄菟, so the identification rests on reading 直番 as 真番. The gloss asserts an equivalence of territory, not a seat; it yields no coordinate and cannot be converted into one. Wikisource transclusion means the displayed revision does not pin every included subpage.",
+      "downloadableUrl": "https://zh.wikisource.org/wiki/%E5%8F%B2%E8%A8%98%E7%B4%A2%E9%9A%B1_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B725",
+      "integrationReady": true,
+      "providesGeometry": false,
+      "recordType": "primary-text-location-claim",
+      "integrationNote": "Cite as a textual basis for the northern view only. Do NOT attach the CHGIS 玄菟郡 coordinates to Jinbeon on the strength of this gloss - that would merge two distinct named entities."
+    },
+    {
+      "id": "R6",
+      "url": "http://contents.nahf.or.kr/item/level.do?levelId=gb.d_0436_0110",
+      "primaryPublisher": "동북아역사재단 (Northeast Asian History Foundation), 동북아역사넷",
+      "exactTitle": "東典考",
+      "checkedContent": "Opened the item. It records the division of Joseon into four commanderies in the third year of Yuanfeng and names Jinbeon among them, but supplies no location statement, no modern place identification and no coordinate for Jinbeon.",
+      "shortQuote": "元封三年癸酉 分朝鮮爲四郡 曰眞番 臨屯 玄菟 樂浪",
+      "licenseEvidence": "No explicit reuse licence was observed on the item page. robots.txt for contents.nahf.or.kr disallows only PetalBot, so retrieval was permitted.",
+      "period": "108 BCE establishment notice; 東典考 is a late Joseon compilation",
+      "uncertainty": "Provides an establishment notice only. Contributes nothing to locating Jinbeon.",
+      "downloadableUrl": null,
+      "integrationReady": false,
+      "providesGeometry": false,
+      "recordType": "checked-no-location-content"
+    }
+  ],
+  "failedAttempts": [
+    {
+      "target": "C:\\Users\\gkfkd\\Git\\sigong-yeojido\\docs\\research\\hansagun-sites-49.md, chgis-date-codes-49.md, core-questions-goal.json",
+      "reason": "File tools are confined to the working directory under --restricted, and the repository path is outside it. The three briefing files could not be read. All work below proceeds from the task brief instead, so any overlap with those files is unverified."
+    },
+    {
+      "target": "https://maps.cga.harvard.edu/tgaz/placename?n=真番",
+      "reason": "HTTP 404. The TGAZ service moved host and now redirects to https://chgis.hudci.org/tgaz/. Re-run against the new host."
+    },
+    {
+      "target": "茂陵書 citation on 真番郡治霅縣, 去長安七千六百四十里, 十五縣",
+      "reason": "Not confirmed. Searched zh.wikisource 史記/卷115, zh.wikisource 史記三家註/卷115, ctext.org 史記 朝鮮列傳, and 史記索隱 (四庫全書本) 卷25, 卷26, 卷27, 卷28, 卷29. The strings 茂陵, 霅, 七千六百 and 十五縣 were absent from every one of them. This citation is widely repeated in secondary literature but was NOT verified against a permitted primary edition, so it is not asserted as a finding."
+    },
+    {
+      "target": "https://zh.wikisource.org/wiki/史記三家注/卷115",
+      "reason": "HTTP 404 for that title. The correct title is 史記三家註/卷115 (註 not 注), which was then retrieved."
+    },
+    {
+      "target": "https://chgis.hudci.org/tgaz/about and https://chgis.hudci.org/robots.txt",
+      "reason": "about page returned an empty body; robots.txt returned HTTP 404. The begin_rule / end_rule code definitions could not be documented from the publisher."
+    },
+    {
+      "target": "KCI articles '진번 위치에 대한 재검토' and '고대 진번의 변천 연구'",
+      "reason": "KCI is on the confirmed robots-prohibited list for this task. Not fetched. Their existence is known only from a search-result listing, which was not converted into a direct source check."
+    },
+    {
+      "target": "DBpia record NODE11081963 for '진번 위치에 대한 재검토'",
+      "reason": "Not an approved primary provider for this task and the full text is not openly published. Not fetched."
+    }
+  ],
+  "remaining": [
+    "A coordinate or original geometry for 진번군 from any excavation institution, peer-reviewed paper, or public GIS. Nothing was found; on present evidence it is likely that no such published coordinate exists.",
+    "Direct verification of the 茂陵書 / 真番郡治霅縣 citation in a permitted full 三家注 edition. Even if verified it yields a county name plus a road distance from Chang'an, not a coordinate, and 霅縣 is itself unlocated.",
+    "The Hwanghae-do case rests on colonial-period finds at 사리원 당토성 / 장무이묘, which are 帶方 and Goguryeo-period material centuries later than Jinbeon. Not investigated to institutional-source level here, and it must not be treated as a Jinbeon site.",
+    "CHGIS begin_rule / end_rule code definitions, which belong to the separate chgis-date-codes-49 thread. See incidentalLead."
+  ],
+  "incidentalLead": {
+    "for": "chgis-date-codes-49 (separate thread - handed off, not resolved here)",
+    "observation": "The TGAZ record JSON exposes explicit begin_rule and end_rule fields alongside the year values. Record hvd_112645 (樂浪郡) carries begin=24, begin_rule=3, end=0, end_rule=0. Since a begin of 24 CE with an end of year 0 would be chronologically impossible if 0 were a real year, end=0 paired with end_rule=0 behaves as an unknown or unset marker rather than a date.",
+    "status": "Inference from a single record. NOT a documented specification - the publisher's about page returned an empty body, so the code table was not obtained.",
+    "sourceUrl": "https://chgis.hudci.org/tgaz/placename/json/hvd_112645"
+  },
+  "constraintsObserved": {
+    "noCentroidSubstitution": "No regional centroid, country centroid or candidate-area midpoint was converted into a Jinbeon seat.",
+    "noNameMerging": "玄菟郡, 樂浪郡, 臨屯郡 and 帶方 were kept distinct from 眞番郡. The Ying Shao gloss was recorded as a textual claim, not as a coordinate transfer.",
+    "prohibitedDomains": "No fetch was made to db.history.go.kr, contents.history.go.kr, hgis.history.go.kr, www.history.go.kr, sillok.history.go.kr, db.itkc.or.kr, KCI, KISS, Nominatim, OpenHistoricalMap or Pleiades. zh.wikisource was accessed only through /wiki/ HTML, never /w/api.php.",
+    "searchResultsNotUpgraded": "Search-result summaries were not recorded as direct source verification. Every record above was opened and read at its own URL.",
+    "candidateBudget": "6 of 6 candidates opened."
+  },
+  "completed": false,
+  "completionNote": "Marked false. The stated priority was to secure at least one genuinely usable resource, meaning a coordinate or original geometry for Jinbeon, and that was not achieved. What was achieved is a directly verified, four-source documented absence plus one authoritative statement that the location is unresolved, which the brief accepts as a valid result but explicitly does not count as a coordinate acquisition."
+}
