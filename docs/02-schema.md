@@ -71,11 +71,13 @@ Entity (세계 요소)     백제 · 온조왕 · 위례성
 | `syj:Polity` | 나라 · 세력 | 껍데기 |
 | `syj:Event` | 사건 | 껍데기 |
 | `syj:Office` | 관직 · 지위 | 껍데기 |
+| `syj:Organization` | 관서 · 조직 | 껍데기 |
 | `syj:TimeSpan` | 시간 구간 | Claim에 붙음 |
 | `syj:Location` | 좌표 | Claim에 붙음 |
 | `syj:Conflict` | 충돌 표시 | 빌드 산출 |
 
-11개. 늘리려면 §1에 질문을 먼저 추가해야 한다.
+12개. `Organization`은 Q4의 근거 주체를 표현하기 위해 추가했다(#51).
+예를 들어 군국기무처가 올린 의안의 주체는 관서이고, 그 안에 규정된 총재는 관직이다. 두 종류를 합치지 않는다.
 
 ## 5. Source — 사료
 

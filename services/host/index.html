@@ -569,7 +569,7 @@ document.getElementById('allSources').onclick=()=>{state.on=new Set(state.source
 document.getElementById('noSources').onclick=()=>{state.on.clear();sourceSelectionChanged();};
 
 // ── 찾기 — 지명은 지도에서, 인물·나라·사건·관직은 주장(Claim)으로 이어진다 ──
-const TYPE_KO = {Place:'지명', Person:'인물', Polity:'나라', Event:'사건', Office:'관직', TimeSpan:'시점', Location:'좌표', Conflict:'충돌'};
+const TYPE_KO = {Place:'지명', Person:'인물', Polity:'나라', Event:'사건', Office:'관직', Organization:'관서·조직', TimeSpan:'시점', Location:'좌표', Conflict:'충돌'};
 function searchAll(text){
   const t = text.trim().toLowerCase();
   if(!t) return [];

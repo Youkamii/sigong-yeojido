@@ -1,0 +1,1170 @@
+{
+  "task": "joseon-core-51",
+  "kind": "조사·수집 결과 (코드 구현·저장소 반영은 Codex 담당)",
+  "generatedBy": "claude-opus-5",
+  "generatedAt": "2026-09-06",
+  "scope": "입력 chunks.json에 실제 적재된 태조·세종·선조·고종실록 22개 원문 chunk만 사용. 웹 조회 미시도.",
+  "sources": [
+    {
+      "id": "src-sillok-waa",
+      "label": "태조실록",
+      "labelHanja": "太祖實錄",
+      "sourceKind": "관찬사서",
+      "sourceGroup": "조선왕조실록",
+      "composedYear": 1413,
+      "coversFrom": 1392,
+      "coversTo": 1398,
+      "originalLanguage": "hanmun",
+      "license": "open",
+      "licenseDetail": "공공데이터포털 이용허락범위 제한 없음 (국사편찬위원회 벌크 XML)",
+      "licenseVerifiedAt": "2026-09-06",
+      "licenseVerifiedVia": "https://www.data.go.kr/data/15053647/fileData.do",
+      "status": "draft",
+      "verified": null,
+      "provider": "국사편찬위원회",
+      "distribution": {
+        "resource": "https://www.data.go.kr/data/15053647/fileData.do",
+        "file": "15053647.zip sha256 9d3b908e14853d1540d8286dc7e397b5d5f3eb472ffffee137dcbd2efa2b740c",
+        "license": "이용허락범위 제한 없음"
+      },
+      "chunkCount": 2477,
+      "chunksProvidedInInput": 5,
+      "chunkIdsProvided": [
+        "chunk_sillok-waa_waa_101",
+        "chunk_sillok-waa_waa_10107017_001",
+        "chunk_sillok-waa_waa_10107017_002",
+        "chunk_sillok-waa_waa_10107018_001",
+        "chunk_sillok-waa_waa_10107018_002"
+      ],
+      "excerpts": [],
+      "excerptsNote": "새 웹 자료가 아니라 기존 제공 chunk이므로 excerpts[]를 만들지 않고 claim.chunkId + claim.quote로 연결함.",
+      "access": {
+        "read": "제공된 로컬 chunks.json을 실제로 읽음 (Read 도구, 전체 3271행)",
+        "permalinkAccess": "미시도 — sillok.history.go.kr 개별 기사 URL을 이번 세션에서 열지 않음",
+        "distributionAccess": "미시도 — data.go.kr 배포 페이지를 이번 세션에서 열지 않음",
+        "metadataProvenance": "license·licenseDetail·licenseVerifiedAt/Via·composedYear·coversFrom/To·chunkCount·파일 sha256은 모두 chunks.json의 source 객체에 이미 기록되어 있던 값을 전재한 것이며, 내가 배포처에서 직접 재확인한 값이 아님"
+      }
+    },
+    {
+      "id": "src-sillok-wda",
+      "label": "세종실록",
+      "labelHanja": "世宗實錄",
+      "sourceKind": "관찬사서",
+      "sourceGroup": "조선왕조실록",
+      "composedYear": 1454,
+      "coversFrom": 1418,
+      "coversTo": 1450,
+      "originalLanguage": "hanmun",
+      "license": "open",
+      "licenseDetail": "공공데이터포털 이용허락범위 제한 없음 (국사편찬위원회 벌크 XML)",
+      "licenseVerifiedAt": "2026-09-06",
+      "licenseVerifiedVia": "https://www.data.go.kr/data/15053647/fileData.do",
+      "status": "draft",
+      "verified": null,
+      "provider": "국사편찬위원회",
+      "distribution": {
+        "resource": "https://www.data.go.kr/data/15053647/fileData.do",
+        "file": "15053647.zip sha256 9d3b908e14853d1540d8286dc7e397b5d5f3eb472ffffee137dcbd2efa2b740c",
+        "license": "이용허락범위 제한 없음"
+      },
+      "chunkCount": 32844,
+      "chunksProvidedInInput": 5,
+      "chunkIdsProvided": [
+        "chunk_sillok-wda_wda_12512030_002",
+        "chunk_sillok-wda_wda_12809029_004",
+        "chunk_sillok-wda_wda_12812026_003",
+        "chunk_sillok-wda_wda_12904020_001",
+        "chunk_sillok-wda_wda_12909029_002"
+      ],
+      "excerpts": [],
+      "excerptsNote": "새 웹 자료가 아니라 기존 제공 chunk이므로 excerpts[]를 만들지 않고 claim.chunkId + claim.quote로 연결함.",
+      "access": {
+        "read": "제공된 로컬 chunks.json을 실제로 읽음 (Read 도구)",
+        "permalinkAccess": "미시도",
+        "distributionAccess": "미시도",
+        "metadataProvenance": "chunks.json의 source 객체 값을 전재. 배포처 직접 재확인 안 함."
+      }
+    },
+    {
+      "id": "src-sillok-wna",
+      "label": "선조실록",
+      "labelHanja": "宣祖實錄",
+      "sourceKind": "관찬사서",
+      "sourceGroup": "조선왕조실록",
+      "composedYear": 1616,
+      "coversFrom": 1567,
+      "coversTo": 1608,
+      "originalLanguage": "hanmun",
+      "license": "open",
+      "licenseDetail": "공공데이터포털 이용허락범위 제한 없음 (국사편찬위원회 벌크 XML)",
+      "licenseVerifiedAt": "2026-09-06",
+      "licenseVerifiedVia": "https://www.data.go.kr/data/15053647/fileData.do",
+      "status": "draft",
+      "verified": null,
+      "provider": "국사편찬위원회",
+      "distribution": {
+        "resource": "https://www.data.go.kr/data/15053647/fileData.do",
+        "file": "15053647.zip sha256 9d3b908e14853d1540d8286dc7e397b5d5f3eb472ffffee137dcbd2efa2b740c",
+        "license": "이용허락범위 제한 없음"
+      },
+      "chunkCount": 27207,
+      "chunksProvidedInInput": 6,
+      "chunkIdsProvided": [
+        "chunk_sillok-wna_wna_12002027_001",
+        "chunk_sillok-wna_wna_12410024_001",
+        "chunk_sillok-wna_wna_12412001_002",
+        "chunk_sillok-wna_wna_12505023_006",
+        "chunk_sillok-wna_wna_12505024_003",
+        "chunk_sillok-wna_wna_12506011_007"
+      ],
+      "excerpts": [],
+      "excerptsNote": "새 웹 자료가 아니라 기존 제공 chunk이므로 excerpts[]를 만들지 않고 claim.chunkId + claim.quote로 연결함.",
+      "access": {
+        "read": "제공된 로컬 chunks.json을 실제로 읽음 (Read 도구)",
+        "permalinkAccess": "미시도",
+        "distributionAccess": "미시도",
+        "metadataProvenance": "chunks.json의 source 객체 값을 전재. 배포처 직접 재확인 안 함."
+      }
+    },
+    {
+      "id": "src-sillok-wza",
+      "label": "고종실록",
+      "labelHanja": "高宗實錄",
+      "compiler": "이왕직 실록편찬위원회",
+      "sourceKind": "실록",
+      "sourceGroup": "고종·순종실록",
+      "composedYear": 1935,
+      "coversFrom": 1863,
+      "coversTo": 1907,
+      "originalLanguage": "hanmun",
+      "license": "open",
+      "licenseDetail": "공공데이터포털 이용허락범위 제한 없음 (국편 벌크 XML)",
+      "licenseVerifiedAt": "2026-09-06",
+      "licenseVerifiedVia": "https://www.data.go.kr/data/15053646/fileData.do",
+      "status": "draft",
+      "verified": null,
+      "provider": "국사편찬위원회",
+      "distribution": {
+        "resource": "https://www.data.go.kr/data/15053646/fileData.do",
+        "file": "15053646.zip sha256 19a043d9d82c5b53307e84d329a7cfc8544708a4cb3f794a868448a2e5202b0b",
+        "license": "이용허락범위 제한 없음"
+      },
+      "chunkCount": 28520,
+      "chunksProvidedInInput": 6,
+      "chunkIdsProvided": [
+        "chunk_sillok-wza_wza_13106025_005",
+        "chunk_sillok-wza_wza_13106028_004",
+        "chunk_sillok-wza_wza_13106028_005",
+        "chunk_sillok-wza_wza_13106029_003",
+        "chunk_sillok-wza_wza_13107001_002",
+        "chunk_sillok-wza_wza_13107002_003"
+      ],
+      "excerpts": [],
+      "excerptsNote": "새 웹 자료가 아니라 기존 제공 chunk이므로 excerpts[]를 만들지 않고 claim.chunkId + claim.quote로 연결함.",
+      "access": {
+        "read": "제공된 로컬 chunks.json을 실제로 읽음 (Read 도구)",
+        "permalinkAccess": "미시도",
+        "distributionAccess": "미시도",
+        "metadataProvenance": "chunks.json의 source 객체 값을 전재. 배포처 직접 재확인 안 함."
+      },
+      "sourceCharacterNote": "chunks.json이 이 사료만 sourceKind='실록', sourceGroup='고종·순종실록', compiler='이왕직 실록편찬위원회', composedYear=1935로 기록함. 다른 세 사료(sourceKind='관찬사서')와 메타데이터상 구분됨. 이 구분은 chunks.json 메타데이터에 근거한 것이며 내가 별도 검증한 것이 아님.",
+      "dateFormsNote": "이 사료의 chunk에만 dateContext.forms가 있어 서기·간지·재위연도·개국연호·중국연호·단기·일본연호의 7가지 기년 표기를 함께 제공함. 다른 세 사료 chunk에는 date.raw만 있음."
+    }
+  ],
+  "entities": [
+    {
+      "id": "person-joseon-taejo",
+      "type": "Person",
+      "label": "태조 (조선)",
+      "labelHanja": "太祖",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-waa_waa_10107017_001", "chunk_sillok-waa_waa_10107018_001", "chunk_sillok-waa_waa_10107018_002"],
+      "appellationsInText": ["太祖", "上", "門下侍中李"],
+      "note": "태조실록 元年 기사에서 즉위 주체로 서술되는 인물. entities.json에 이미 있는 event-silla-surrender(labelHanja '歸于太祖')·person-gimbu 계열의 '太祖'는 고려 태조 맥락이므로 병합하지 않고 새 id를 만듦."
+    },
+    {
+      "id": "person-goryeo-gongyangwang",
+      "type": "Person",
+      "label": "공양왕",
+      "labelHanja": "恭讓王",
+      "status": "reused-from-entities.json",
+      "attestedIn": ["chunk_sillok-waa_waa_10107017_001"],
+      "appellationsInText": ["恭讓"],
+      "reuseBasis": "기존 entities.json 항목의 labelHanja '恭讓王'과 원문 호칭 '恭讓'이 일치하고, 두 경우 모두 폐위되는 고려 국왕이라는 역할이 같음. 다만 원문에는 '恭讓王'이라는 완전한 표기가 이 chunk 안에 없고 '恭讓'만 나옴."
+    },
+    {
+      "id": "person-goryeo-jeongchangbuwongun-yo",
+      "type": "Person",
+      "label": "정창부원군 요 (태조실록 표기)",
+      "labelHanja": "定昌府院君 瑤",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-waa_waa_10107018_002"],
+      "appellationsInText": ["定昌府院君 瑤", "瑤", "權署國事"],
+      "possibleSameAs": {
+        "entityId": "person-goryeo-gongyangwang",
+        "evidence": "waa_10107017_001은 恭讓이 是月 十二日(辛卯)에 王大妃의 敎로 폐위되어 原州로 갔다고 적고, waa_10107018_002는 權署國事 瑤가 洪武二十五年七月十二日 恭愍王妃 安氏之命으로 私第에 退居했다고 적어 날짜(7월 12일)·명령 주체·행위가 겹침.",
+        "merged": false,
+        "reason": "두 chunk 어디에도 '恭讓 = 瑤'라는 등가 진술이 없음. 위 근거는 내 해석이므로 병합하지 않고 후보 관계로만 남김."
+      }
+    },
+    {
+      "id": "person-goryeo-wangdaebi-1392",
+      "type": "Person",
+      "label": "왕대비 (태조실록 元年 기사의 王大妃/大妃)",
+      "labelHanja": "王大妃",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-waa_waa_10107017_001"],
+      "appellationsInText": ["王大妃", "大妃", "妃"],
+      "possibleSameAs": {
+        "entityId": "person-goryeo-gongminwangbi-anssi",
+        "evidence": "두 호칭이 태조실록 元年 7월 같은 사건(폐위·퇴거 명령)의 명령 주체로 나옴.",
+        "merged": false,
+        "reason": "원문에 등가 진술 없음."
+      }
+    },
+    {
+      "id": "person-goryeo-gongminwangbi-anssi",
+      "type": "Person",
+      "label": "공민왕비 안씨 (태조실록 표기)",
+      "labelHanja": "恭愍王妃 安氏",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-waa_waa_10107018_002"],
+      "appellationsInText": ["恭愍王妃 安氏"],
+      "note": "entities.json의 person-goryeo-gongminwang(공민왕)과는 별개 인물. 배우자 관계는 원문 호칭 '恭愍王妃'에 담겨 있음."
+    },
+    {
+      "id": "person-joseon-sejong",
+      "type": "Person",
+      "label": "세종",
+      "labelHanja": "世宗莊憲大王",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wda_wda_12512030_002", "chunk_sillok-wda_wda_12809029_004"],
+      "appellationsInText": ["上", "我殿下", "我主上殿下", "世宗莊憲大王(권말 제기)"],
+      "note": "훈민정음 관련 인용문 안에서는 '上'·'我殿下'로만 나오고 인명·묘호가 적혀 있지 않음. '世宗莊憲大王'은 chunk.text 끝의 권말 제기(世宗莊憲大王實錄卷第一百二終 / 卷第一百十三終)에 나오며, 이는 편찬 단계의 표기임."
+    },
+    {
+      "id": "person-jeong-inji",
+      "type": "Person",
+      "label": "정인지",
+      "labelHanja": "鄭麟趾",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wda_wda_12809029_004"],
+      "appellationsInText": ["禮曹判書鄭麟趾"],
+      "officeInText": "禮曹判書"
+    },
+    {
+      "id": "person-sin-sukju",
+      "type": "Person",
+      "label": "신숙주",
+      "labelHanja": "申叔舟",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wda_wda_12809029_004", "chunk_sillok-wda_wda_12909029_002"],
+      "appellationsInText": ["申叔舟", "集賢殿應敎申叔舟", "副校理朴彭年ㆍ申叔舟"],
+      "note": "두 chunk에서 관직 표기가 다름(副校理 / 集賢殿應敎). 같은 사료(세종실록) 안의 동일 인명 표기이므로 한 엔티티로 둠. 다른 사료 인물과는 병합하지 않음. 이번 claims에는 쓰지 않고 배경 엔티티로만 둠."
+    },
+    {
+      "id": "person-yi-bal-cheomsa",
+      "type": "Person",
+      "label": "李䟆 (가리포 첨사, 한글 독음 미확인)",
+      "labelHanja": "李䟆",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12002027_001"],
+      "officeInText": "僉使",
+      "note": "한글 독음을 확인할 근거가 입력 자료에 없어 추정하지 않음."
+    },
+    {
+      "id": "person-hyeonso",
+      "type": "Person",
+      "label": "현소",
+      "labelHanja": "玄蘇",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12410024_001"],
+      "appellationsInText": ["日本國使臣玄蘇"],
+      "affiliationInText": "日本國 使臣"
+    },
+    {
+      "id": "person-hwang-jin-uiju-moksa",
+      "type": "Person",
+      "label": "황진 (의주 목사)",
+      "labelHanja": "黃璡",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12506011_007"],
+      "officeInText": "義州牧使",
+      "note": "자형이 다른 黃進과 혼동하지 않기 위해 id에 관직을 붙임. 다른 사료 인물과 병합하지 않음."
+    },
+    {
+      "id": "person-dong-yangjeong",
+      "type": "Person",
+      "label": "동양정",
+      "labelHanja": "佟養正",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12506011_007"],
+      "officeInText": "寬奠堡副摠兵都指揮",
+      "note": "원문은 '天朝將官'·'佟指揮'로도 지칭."
+    },
+    {
+      "id": "person-choe-heungwon",
+      "type": "Person",
+      "label": "최흥원",
+      "labelHanja": "崔興源",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12505023_006"],
+      "note": "원문은 '大臣崔興源'으로 인견 대상 목록에 올림. 이번 claims에는 쓰지 않고 additionalCandidates에만 사용."
+    },
+    {
+      "id": "place-suchanggung",
+      "type": "Place",
+      "label": "수창궁",
+      "labelHanja": "壽昌宮",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-waa_waa_10107017_001"],
+      "note": "좌표 미확인 — 추정하지 않음."
+    },
+    {
+      "id": "place-wonju",
+      "type": "Place",
+      "label": "원주",
+      "labelHanja": "原州",
+      "status": "reused-from-entities.json",
+      "attestedIn": ["chunk_sillok-waa_waa_10107017_001"],
+      "reuseBasis": "기존 항목의 labelHanja '原州'와 원문 표기가 완전히 일치. 다만 기존 항목이 어느 시대 맥락에서 만들어졌는지는 입력 자료로 확인 불가 (uncertainties unc-07 참조)."
+    },
+    {
+      "id": "place-garipo",
+      "type": "Place",
+      "label": "가리포",
+      "labelHanja": "加里浦",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12002027_001"],
+      "note": "좌표 미확인."
+    },
+    {
+      "id": "place-uiju",
+      "type": "Place",
+      "label": "의주",
+      "labelHanja": "義州",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12506011_007"],
+      "note": "좌표 미확인."
+    },
+    {
+      "id": "place-pyongyang-joseon-sillok",
+      "type": "Place",
+      "label": "평양 (선조실록 표기 平壤)",
+      "labelHanja": "平壤",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12506011_007"],
+      "note": "entities.json의 기존 place-pyongyang은 labelHanja가 '平穰'(광개토왕비 계열 표기)이어서 글자와 사료 계통이 다름. 동일 지점 여부를 이번 자료로 판정할 수 없으므로 병합하지 않고 별도 id를 만듦."
+    },
+    {
+      "id": "place-chabi-gojong-sillok",
+      "type": "Place",
+      "label": "차비 (고종실록 원문 표기 差備)",
+      "labelHanja": "差備",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wza_wza_13106025_005"],
+      "note": "원문 텍스트는 '差備近處'이고 門자가 없음. 국사편찬위원회가 붙인 기사 제목은 '군국기무처의 처소를 차비문 근처에 정하다'로 '차비문'이라 씀. 원문과 기관 메타데이터의 차이를 그대로 남김."
+    },
+    {
+      "id": "office-gamnokguksa",
+      "type": "Office",
+      "label": "감록국사",
+      "labelHanja": "監錄國事",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-waa_waa_10107017_001"],
+      "note": "원문은 '以太祖監錄國事'라고만 적고 직임의 내용·기간을 규정하지 않음."
+    },
+    {
+      "id": "office-gwonseoguksa",
+      "type": "Office",
+      "label": "권서국사",
+      "labelHanja": "權署國事",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-waa_waa_10107017_001", "chunk_sillok-waa_waa_10107018_002"]
+    },
+    {
+      "id": "office-jeolla-ususa",
+      "type": "Office",
+      "label": "전라우수사",
+      "labelHanja": "全羅右水使",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12002027_001"]
+    },
+    {
+      "id": "office-cheomsa",
+      "type": "Office",
+      "label": "첨사",
+      "labelHanja": "僉使",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12002027_001"]
+    },
+    {
+      "id": "office-uiju-moksa",
+      "type": "Office",
+      "label": "의주 목사",
+      "labelHanja": "義州牧使",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12506011_007"]
+    },
+    {
+      "id": "office-yejo-panseo",
+      "type": "Office",
+      "label": "예조 판서",
+      "labelHanja": "禮曹判書",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wda_wda_12809029_004"]
+    },
+    {
+      "id": "office-chongni-daesin",
+      "type": "Office",
+      "label": "총리대신",
+      "labelHanja": "總理大臣",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wza_wza_13106028_004"]
+    },
+    {
+      "id": "office-gungukgimucheo-chongjae",
+      "type": "Office",
+      "label": "군국기무처 총재",
+      "labelHanja": "總裁",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wza_wza_13106028_004"],
+      "note": "원문은 '總裁一員, 總理大臣兼之'라 하여 총리대신이 겸한다고만 적음."
+    },
+    {
+      "id": "org-gungukgimucheo",
+      "type": "Organization",
+      "label": "군국기무처",
+      "labelHanja": "軍國機務處",
+      "status": "new",
+      "typeNote": "entities.json에는 Organization 타입이 없음(Event/Office/Person/Place/Polity만 존재). 官署를 Office(관직)와 구분하기 위해 새 타입을 제안하는 것이며, 타입 확정은 Codex 판단에 맡김.",
+      "attestedIn": [
+        "chunk_sillok-wza_wza_13106025_005",
+        "chunk_sillok-wza_wza_13106028_004",
+        "chunk_sillok-wza_wza_13106028_005",
+        "chunk_sillok-wza_wza_13106029_003",
+        "chunk_sillok-wza_wza_13107001_002",
+        "chunk_sillok-wza_wza_13107002_003"
+      ],
+      "appellationsInText": ["軍國機務處", "機務處", "本處"]
+    },
+    {
+      "id": "org-ijo",
+      "type": "Organization",
+      "label": "이조",
+      "labelHanja": "吏曹",
+      "status": "new",
+      "typeNote": "官署이므로 Office(관직)와 구분하기 위해 Organization으로 둠. 타입 확정은 Codex 판단에 맡김.",
+      "attestedIn": ["chunk_sillok-wda_wda_12812026_003", "chunk_sillok-wda_wda_12904020_001"],
+      "appellationsInText": ["吏曹"]
+    },
+    {
+      "id": "polity-ilbon-seonjo-sillok",
+      "type": "Polity",
+      "label": "일본국 (선조실록 표기 日本國)",
+      "labelHanja": "日本國",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12410024_001"],
+      "note": "entities.json의 polity-wa(왜 倭)와는 표기가 다름. 같은 chunk 안에 '倭賊'·'倭奴'도 따로 나옴. 동일 대상 여부를 이번 자료로 판정하지 않고 병합하지 않음."
+    },
+    {
+      "id": "polity-myeong-daemyeong",
+      "type": "Polity",
+      "label": "명 (선조실록 표기 大明)",
+      "labelHanja": "大明",
+      "status": "new",
+      "attestedIn": ["chunk_sillok-wna_wna_12410024_001"],
+      "note": "같은 사료군에서 '上國'·'天朝'·'朝廷'으로도 지칭됨."
+    },
+    {
+      "id": "event-taejo-enthronement-suchanggung",
+      "type": "Event",
+      "label": "태조 수창궁 즉위 (태조실록 元年 7월 17일 기사)",
+      "labelHanja": "太祖卽位于壽昌宮",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열에서 취함 (기사 제목이 아님)",
+      "attestedIn": ["chunk_sillok-waa_waa_10107017_001"]
+    },
+    {
+      "id": "event-daebi-seongyo-gamnokguksa",
+      "type": "Event",
+      "label": "대비의 선교로 태조가 감록국사가 됨",
+      "labelHanja": "大妃宣敎, 以太祖監錄國事",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-waa_waa_10107017_001"]
+    },
+    {
+      "id": "event-gwonseoguksa-toegeo-sajae",
+      "type": "Event",
+      "label": "권서국사의 사제 퇴거 (태조실록이 洪武 25년 7월 12일로 적은 사건)",
+      "labelHanja": "退居私第",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-waa_waa_10107018_002"]
+    },
+    {
+      "id": "event-eonmun-28-chinje",
+      "type": "Event",
+      "label": "언문 28자 친제",
+      "labelHanja": "上親制諺文二十八字",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-wda_wda_12512030_002"]
+    },
+    {
+      "id": "event-jeonginji-hunminjeongeum-seo",
+      "type": "Event",
+      "label": "정인지의 훈민정음 서문",
+      "labelHanja": "禮曹判書鄭麟趾序曰",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-wda_wda_12809029_004"]
+    },
+    {
+      "id": "event-hunminjeongeum-chwijae-siheom",
+      "type": "Event",
+      "label": "이과·이전 취재에 훈민정음을 함께 시험하게 한 전지",
+      "labelHanja": "訓民正音, 竝令試取",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-wda_wda_12812026_003"]
+    },
+    {
+      "id": "event-garipo-invasion-report",
+      "type": "Event",
+      "label": "가리포 복병처 침범과 병선 피탈 (전라우수사 치계)",
+      "labelHanja": "倭賊犯加里浦伏兵處",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-wna_wna_12002027_001"]
+    },
+    {
+      "id": "event-hyeonso-jiro-demand",
+      "type": "Event",
+      "label": "일본국 사신 현소 등의 지로 요구",
+      "labelHanja": "欲犯大明, 使我國指路",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-wna_wna_12410024_001"]
+    },
+    {
+      "id": "event-obal-uiju-pyongyang",
+      "type": "Event",
+      "label": "의주에서 평양까지 5撥 분치 요구",
+      "labelHanja": "自義州抵平壤, 分爲五撥",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-wna_wna_12506011_007"]
+    },
+    {
+      "id": "event-gimucheo-cheoso-designation",
+      "type": "Event",
+      "label": "군국기무처 처소 지정",
+      "labelHanja": "軍國機務處處所, 定于差備近處",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-wza_wza_13106025_005"]
+    },
+    {
+      "id": "event-gwanje-uijeong-1894",
+      "type": "Event",
+      "label": "의정부 이하 각 아문 관제·직장 의정",
+      "labelHanja": "議政府以下各衙門官制職掌",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-wza_wza_13106028_004"]
+    },
+    {
+      "id": "event-gaeguk-giyeon-uian",
+      "type": "Event",
+      "label": "개국 기년 사용 의안",
+      "labelHanja": "書開國紀年事",
+      "status": "new",
+      "labelSource": "chunk.text 원문 문자열",
+      "attestedIn": ["chunk_sillok-wza_wza_13106028_005", "chunk_sillok-wza_wza_13107001_002"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "clm-waa-01-taejo-enthronement",
+      "subject": "person-joseon-taejo",
+      "subjectLabel": "太祖 (조선 태조)",
+      "predicate": "…에서 즉위했다고 태조실록이 서술함 (원문 술어: 卽位于)",
+      "object": "place-suchanggung",
+      "objectLabel": "壽昌宮 (수창궁)",
+      "sourceId": "src-sillok-waa",
+      "chunkId": "chunk_sillok-waa_waa_10107017_001",
+      "quote": "十七日丙申, 太祖卽位于壽昌宮。",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "太祖實錄 元年 › 太祖實錄 元年 秋七月 › 太祖 元年 7月 17日",
+      "permalink": "https://sillok.history.go.kr/id/waa_10107017_001",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "十七日丙申 (일자와 일진 간지만, 연도 없음)",
+        "chunkDateRaw": "1392-07-17L0",
+        "chunkDateLabel": null,
+        "note": "서기 연도 1392는 인용 안에 없고 chunk.date.raw와 locator(元年)에만 있음. date.raw 접미사 'L0'의 의미는 미확인이므로 해석하지 않음."
+      },
+      "evidenceType": "직접 근거 (원문 서술)",
+      "limits": [
+        "원문은 태조의 이름을 적지 않고 묘호 '太祖'로 지칭함. 묘호는 사후 표기이므로 사건 당시 호칭이 아님.",
+        "壽昌宮의 위치·좌표는 이 기사에 없음.",
+        "같은 chunk의 뒷부분은 태조가 즉위를 사양했다는 서술(固拒之)을 담고 있어, 인용문만으로 즉위 경위를 요약할 수 없음.",
+        "기사 제목 '태조가 백관의 추대를 받아 수창궁에서 왕위에 오르다'는 국사편찬위원회가 붙인 현대어 표제이며 원문 문자열이 아님."
+      ]
+    },
+    {
+      "id": "clm-waa-02-gamnokguksa",
+      "subject": "person-goryeo-wangdaebi-1392",
+      "subjectLabel": "大妃 (王大妃)",
+      "predicate": "선교(宣敎)를 내려 태조로 하여금 국사를 감록하게 함",
+      "object": "office-gamnokguksa",
+      "objectLabel": "監錄國事",
+      "sourceId": "src-sillok-waa",
+      "chunkId": "chunk_sillok-waa_waa_10107017_001",
+      "quote": "壬辰, 大妃宣敎, 以太祖監錄國事。",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "太祖實錄 元年 › 太祖實錄 元年 秋七月 › 太祖 元年 7月 17日",
+      "permalink": "https://sillok.history.go.kr/id/waa_10107017_001",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "壬辰 (일진 간지만)",
+        "chunkDateRaw": "1392-07-17L0",
+        "note": "원문은 壬辰이라는 일진만 적고 며칠인지 숫자를 적지 않음. 같은 chunk가 '是月十二日辛卯'와 '十七日丙申'을 적고 있으나, 간지 순서로 壬辰의 날짜를 환산하는 것은 원문 서술이 아니므로 하지 않음. chunk.date.raw(1392-07-17)는 기사 배치일이며 이 문장이 서술하는 날이 아님."
+      },
+      "evidenceType": "직접 근거 (원문 서술)",
+      "limits": [
+        "監錄國事의 권한 범위·존속 기간을 원문이 규정하지 않음.",
+        "'大妃'가 앞 문장의 '王大妃'와 같은 인물임은 문맥상 자연스러우나 원문의 명시적 등가 진술은 아님.",
+        "이 문장은 즉위(7월 17일) 이전 단계를 서술하지만, 기사 전체는 7월 17일자로 묶여 있음."
+      ]
+    },
+    {
+      "id": "clm-waa-03-gwonseoguksa-retire",
+      "subject": "person-goryeo-jeongchangbuwongun-yo",
+      "subjectLabel": "定昌府院君 瑤 (權署國事)",
+      "predicate": "恭愍王妃 安氏의 명으로 사제(私第)에 퇴거했다고, 명 예부에 올리기를 청한 문서가 적음",
+      "object": "event-gwonseoguksa-toegeo-sajae",
+      "objectLabel": "退居私第 (문서가 洪武 25년 7월 12일로 적음)",
+      "sourceId": "src-sillok-waa",
+      "chunkId": "chunk_sillok-waa_waa_10107018_002",
+      "quote": "洪武二十五年七月十二日, 以恭愍王妃 安氏之命, 退居私第。",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "太祖實錄 元年 › 太祖實錄 元年 秋七月 › 太祖 元年 7月 18日",
+      "permalink": "https://sillok.history.go.kr/id/waa_10107018_002",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "洪武二十五年七月十二日 (명 연호 기년으로 연·월·일이 인용 안에 있음)",
+        "chunkDateRaw": "1392-07-18L0",
+        "note": "인용문이 서술하는 사건일(洪武 25년 7월 12일)과 기사 수록일(chunk.date.raw 1392-07-18)이 다름. 洪武 25년을 서기로 환산하는 작업은 하지 않음 — 그 환산은 이 인용문에 없음. 별개 chunk(waa_101)의 text가 '元年(1392)'이고 annotations에 '【洪武二十五年】'가 있으나, 괄호 안 서기가 원문인지 편집인지 미확인이므로 근거로 쓰지 않음."
+      },
+      "evidenceType": "직접 근거 (원문 서술). 단 문서 성격은 아래 limits 참조",
+      "limits": [
+        "이 문장은 실록 편찬자의 직접 서술이 아니라, 도평의사사 등이 명 예부에 올리기를 청한 문서의 본문으로 인용된 것임 (기사 서두: 都評議使司及大小臣僚、閑良、耆老等請令知密直司事趙胖赴京申禮部曰).",
+        "따라서 대외 진주문(陳奏)의 진술이며, 조선 조정이 명에 제시한 자기 서술이라는 점을 감안해야 함.",
+        "'瑤'가 waa_10107017_001의 '恭讓'과 같은 인물인지는 원문이 명시하지 않음 (entities의 possibleSameAs 참조, 병합하지 않음).",
+        "'恭愍王妃 安氏'와 waa_10107017_001의 '王大妃'가 같은 인물인지도 원문이 명시하지 않음.",
+        "문서가 실제로 명에 전달되었는지는 이 기사에 없음 (기사는 '請'까지만 적음)."
+      ]
+    },
+    {
+      "id": "clm-wda-04-eonmun-28",
+      "subject": "person-joseon-sejong",
+      "subjectLabel": "上 (세종실록의 국왕 지칭)",
+      "predicate": "언문 28자를 친히 지음 (원문 술어: 親制)",
+      "object": "event-eonmun-28-chinje",
+      "objectLabel": "諺文二十八字",
+      "sourceId": "src-sillok-wda",
+      "chunkId": "chunk_sillok-wda_wda_12512030_002",
+      "quote": "是月, 上親制諺文二十八字, 其字倣古篆, 分爲初中終聲",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "世宗實錄 二十五年 › 世宗實錄 二十五年 十(一)〔二〕月 › 世宗 25年 12月 30日",
+      "permalink": "https://sillok.history.go.kr/id/wda_12512030_002",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "是月 (이 달 — 일자 없음)",
+        "chunkDateRaw": "1443-12-30L0",
+        "note": "원문은 '是月'이라고만 적고 날짜를 특정하지 않음. chunk.date.raw의 12월 30일은 월말 배치에 따른 기관 메타데이터로 보이며, 원문이 그 날을 사건일로 적은 것이 아님. 배치 규칙 자체는 확인하지 않았으므로 단정하지 않음.",
+        "locatorAnomaly": "locator의 월 표기가 '十(一)〔二〕月'로 교감 표기를 포함함."
+      },
+      "evidenceType": "직접 근거 (원문 서술)",
+      "limits": [
+        "같은 문장은 '是謂訓民正音。'으로 끝나 이 28자를 訓民正音이라 부른다고 이어짐 (인용 길이를 줄이려고 잘랐음).",
+        "원문은 '上'이라고만 적고 인명·묘호를 적지 않음. '世宗莊憲大王'은 같은 chunk.text 끝의 권말 제기에 나오는 편찬 단계 표기임.",
+        "이 기사는 창제 사실만 적고 반포·시행에 대해서는 말하지 않음.",
+        "기사 제목 '훈민정음을 창제하다'는 국편이 붙인 현대어 표제임."
+      ]
+    },
+    {
+      "id": "clm-wda-05-jeonginji-gyehae",
+      "subject": "person-jeong-inji",
+      "subjectLabel": "禮曹判書 鄭麟趾",
+      "predicate": "서문에서 '我殿下'가 계해년 겨울에 正音 28자를 창제하고 訓民正音이라 이름했다고 적음",
+      "object": "event-jeonginji-hunminjeongeum-seo",
+      "objectLabel": "訓民正音 (명칭 부여)",
+      "sourceId": "src-sillok-wda",
+      "chunkId": "chunk_sillok-wda_wda_12809029_004",
+      "quote": "癸亥冬, 我殿下創制正音二十八字, 略揭例義以示之, 名曰訓民正音。",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "世宗實錄 二十八年 › 世宗實錄 二十八年 九月 › 世宗 28年 9月 29日",
+      "permalink": "https://sillok.history.go.kr/id/wda_12809029_004",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "癸亥冬 (간지 연도 + 계절. 서기 환산은 인용에 없음)",
+        "chunkDateRaw": "1446-09-29L0",
+        "note": "인용문이 가리키는 시점(癸亥 겨울)과 기사 수록 시점(chunk.date.raw 1446-09-29, 원문 서두는 '是月')이 다름. 癸亥를 특정 서기 연도로 승격하지 않음. 별개 chunk(wda_12512030_002, date.raw 1443-12-30)와의 대응은 해석의 영역이며 여기서 단정하지 않음."
+      },
+      "evidenceType": "직접 근거 (원문 서술). 단 서문 저자의 진술임",
+      "limits": [
+        "인용문의 창제 주체는 '我殿下'로만 표기되어 인명·묘호가 없음.",
+        "이 문장은 정인지가 쓴 서문의 일부이며 실록 편찬자의 독립 서술이 아님. 기사 서두는 '○是月, 訓民正音成。 御製曰:'으로 어제(御製)와 서문을 함께 싣고 있음.",
+        "동일 기사의 御製 부분과 서문 부분은 성격이 다르므로 한 덩어리로 인용하지 않았음.",
+        "'訓民正音成'의 '成'이 책의 완성인지 문자 체계의 완성인지 원문이 구분해 말하지 않음."
+      ]
+    },
+    {
+      "id": "clm-wda-06-chwijae",
+      "subject": "org-ijo",
+      "subjectLabel": "吏曹 (傳旨의 수신처)",
+      "predicate": "이조에 내린 傳旨가 이후 이과 및 이전 취재 때 훈민정음을 함께 시험해 뽑도록 정함",
+      "object": "event-hunminjeongeum-chwijae-siheom",
+      "objectLabel": "訓民正音 시험 부과",
+      "sourceId": "src-sillok-wda",
+      "chunkId": "chunk_sillok-wda_wda_12812026_003",
+      "quote": "今後吏科及吏典取才時, 訓民正音, 竝令試取。",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "世宗實錄 二十八年 › 世宗實錄 二十八年 十二月 › 世宗 28年 12月 26日",
+      "permalink": "https://sillok.history.go.kr/id/wda_12812026_003",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "今後 (이후 — 시점 표현만 있고 날짜 없음)",
+        "chunkDateRaw": "1446-12-26L0",
+        "note": "날짜는 인용 밖 chunk.date.raw에만 있음."
+      },
+      "evidenceType": "직접 근거 (원문 서술)",
+      "limits": [
+        "chunk.text 서두는 '○傳旨吏曹:'로 傳旨의 발신자를 적지 않음. 발신 주체를 국왕으로 단정하지 않기 위해 subject를 수신처인 吏曹로 두었음.",
+        "이어지는 문장 '雖不通義理, 能合字者取之。'는 합격 기준을 완화하는 내용으로, 인용에서 잘렸음.",
+        "실제 시행 여부·시행 결과는 이 기사에 없음.",
+        "약 5개월 뒤 기사(wda_12904020_001, date.raw 1447-04-20)에도 훈민정음 시험 규정이 다시 나오나, 두 기사의 관계를 이 자료만으로 단정하지 않음."
+      ]
+    },
+    {
+      "id": "clm-wna-07-garipo",
+      "subject": "office-jeolla-ususa",
+      "subjectLabel": "全羅右水使 (인명 미기재)",
+      "predicate": "치계로 왜적의 가리포 복병처 침범, 병선 4척 피탈, 첨사 李䟆의 부상·퇴주를 보고함",
+      "object": "event-garipo-invasion-report",
+      "objectLabel": "加里浦 침범 보고",
+      "sourceId": "src-sillok-wna",
+      "chunkId": "chunk_sillok-wna_wna_12002027_001",
+      "quote": "倭賊犯加里浦伏兵處, 兵船四艘被掠。 僉使李䟆左目中矢, 退走事。",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "宣祖實錄 二十年 › 宣祖實錄 二十年 二月 › 宣祖 20年 2月 27日",
+      "permalink": "https://sillok.history.go.kr/id/wna_12002027_001",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "없음",
+        "chunkDateRaw": "1587-02-27L0",
+        "note": "chunk.text 맨 앞의 '○丙戌/'에 일진 간지가 있으나 인용 범위 밖으로 두었음. 서기 날짜는 chunk.date.raw에만 있음. 침범이 일어난 날과 치계가 접수된 날을 원문이 구분하지 않음."
+      },
+      "evidenceType": "직접 근거 (원문 서술). 내용은 지방관의 보고를 옮긴 것",
+      "limits": [
+        "실록이 사건을 직접 서술한 것이 아니라 全羅右水使의 馳啓 내용을 옮긴 것임 (기사 서두 '全羅右水使馳啓').",
+        "전라우수사의 인명이 이 기사에 없음.",
+        "침범 주체를 원문은 '倭賊'이라고만 적음. 소속·규모는 기재되지 않음.",
+        "李䟆의 한글 독음을 확인할 근거가 없어 표기하지 않음.",
+        "이 사건을 특정 왜변 이름으로 부르는 것은 원문에 없는 후대 명명이므로 하지 않음."
+      ]
+    },
+    {
+      "id": "clm-wna-08-hyeonso-jiro",
+      "subject": "person-hyeonso",
+      "subjectLabel": "日本國 使臣 玄蘇 등",
+      "predicate": "왔을 때 '대명을 침범하려 하니 우리나라가 길을 인도하게 하라'고 말했다고 실록이 적음",
+      "object": "event-hyeonso-jiro-demand",
+      "objectLabel": "欲犯大明, 使我國指路",
+      "sourceId": "src-sillok-wna",
+      "chunkId": "chunk_sillok-wna_wna_12410024_001",
+      "quote": "先是日本國使臣玄蘇等之來也, 言: \"欲犯大明, 使我國指路。\"",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "quoteVerificationNote": "chunks.json은 JSON이라 큰따옴표가 이스케이프되어 저장됨. 검증은 '先是日本國使臣玄蘇等之來也, 言:'와 '欲犯大明, 使我國指路。' 두 구간으로 나누어 수행했고 각각 1회 일치.",
+      "locator": "宣祖實錄 二十四年 › 宣祖實錄 二十四年 十月 › 宣祖 24年 10月 24日",
+      "permalink": "https://sillok.history.go.kr/id/wna_12410024_001",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "先是 (이보다 앞서 — 상대 시점 표현만)",
+        "chunkDateRaw": "1591-10-24L0",
+        "note": "원문은 현소가 온 시점을 '先是'로만 표시하고 날짜를 적지 않음. chunk.date.raw 1591-10-24는 이 기사(주청사 발행)의 날짜이며 현소 발언 시점이 아님."
+      },
+      "evidenceType": "직접 근거 (원문 서술). 발언은 실록이 옮긴 인용",
+      "limits": [
+        "발언 원문 그대로인지 편찬자의 요약인지 실록이 밝히지 않음.",
+        "같은 기사가 뒤에서 '倭奴等以犯上國之言, 亦布於琉球'라 하여 유구 경유 정보 경로를 따로 서술하므로, 이 발언만으로 정보 유통 경로를 설명할 수 없음.",
+        "이 기사의 주된 서술은 奏請使 韓應寅 등의 발행이며, 현소 발언은 그 배경으로 삽입된 것임.",
+        "인용문의 큰따옴표는 국사편찬위원회 디지털 텍스트의 인용부호 표기임.",
+        "'玄蘇等'의 '等'이 가리키는 나머지 인물을 이 기사가 적지 않음."
+      ]
+    },
+    {
+      "id": "clm-wna-09-obal",
+      "subject": "person-dong-yangjeong",
+      "subjectLabel": "寬奠堡副摠兵都指揮 佟養正 (원문에서는 '天朝將官'의 말로 제시)",
+      "predicate": "의주에서 평양까지 5撥로 나누어 비보(飛報)에 편하게 하라고 요구했다고, 의주 목사 황진의 치계가 전함",
+      "object": "event-obal-uiju-pyongyang",
+      "objectLabel": "義州–平壤 五撥",
+      "sourceId": "src-sillok-wna",
+      "chunkId": "chunk_sillok-wna_wna_12506011_007",
+      "quote": "儞國自義州抵平壤, 分爲五撥, 以便飛報",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "宣祖實錄 二十五年 › 宣祖實錄 二十五年 六月 › 宣祖 25年 6月 11日",
+      "permalink": "https://sillok.history.go.kr/id/wna_12506011_007",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "없음",
+        "chunkDateRaw": "1592-06-11L0",
+        "note": "날짜는 인용 밖 chunk.date.raw와 locator에만 있음."
+      },
+      "evidenceType": "직접 근거 (원문 서술). 다만 삼중 인용 구조",
+      "limits": [
+        "인용 구조가 삼중임: 義州牧使 黃璡의 馳啓 → 그 안의 '天朝將官'이 통사 表憲 등에게 한 말 → 그 안의 지시문. 실록의 직접 서술이 아님.",
+        "원문은 이 말의 화자를 '天朝將官'으로 적고, 앞 문장에서 '寬奠堡副摠兵都指揮佟養正, 來到義順館'이라 하며, 뒤에서 '佟指揮爲差入名'이라 함. 화자와 佟養正의 동일성은 문맥상 자연스러우나 원문의 명시적 등가 진술은 아님.",
+        "'撥'의 운영 방식은 앞 문장의 '百里爲一撥, 節次遞報'에 있으며 인용에서 잘렸음.",
+        "요구가 실제로 시행되었는지는 이 기사에 없음.",
+        "'平壤'을 entities.json의 기존 place-pyongyang(平穰)과 병합하지 않았음."
+      ]
+    },
+    {
+      "id": "clm-wza-10-gimucheo-location",
+      "subject": "org-gungukgimucheo",
+      "subjectLabel": "軍國機務處",
+      "predicate": "그 처소를 差備 근처에 정한다는 敎가 내려짐",
+      "object": "place-chabi-gojong-sillok",
+      "objectLabel": "差備近處",
+      "sourceId": "src-sillok-wza",
+      "chunkId": "chunk_sillok-wza_wza_13106025_005",
+      "quote": "軍國機務處處所, 定于差備近處。",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "高宗實錄 三十一年 › 高宗實錄 三十一年 六月 › 高宗 31年 6月 25日",
+      "permalink": "https://sillok.history.go.kr/id/wza_13106025_005",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "없음",
+        "chunkDateRaw": "1894-06-25L0",
+        "chunkDateFormsProvided": [
+          "서기: 1894-06-25L0",
+          "간지: 庚午",
+          "재위연도: 고종 31년 6월 25일",
+          "개국연호: 조선 개국(開國) 503년 6월 25일",
+          "중국연호: 청 광서(光緖) 20년 6월 25일",
+          "단기: 4227년 6월 25일",
+          "일본연호: 명치(明治)27년 6월 25일"
+        ],
+        "note": "고종실록 chunk에는 dateContext.forms로 7가지 기년 표기가 함께 제공됨. 이 표기들은 chunks.json이 제공한 값이며 인용문 안에는 어떤 날짜 표기도 없음. 기년 간 환산의 정확성은 검증하지 않았음."
+      },
+      "evidenceType": "직접 근거 (원문 서술)",
+      "limits": [
+        "chunk.text 전체가 22자('敎曰:' + 인용문)로, 敎의 발신자를 원문이 명시하지 않음.",
+        "원문 표기는 '差備'이며 門자가 없음. 국사편찬위원회가 붙인 기사 제목은 '차비문 근처'라고 씀 — 원문과 기관 부여 제목이 다름.",
+        "差備(門)의 위치·좌표는 이 기사에 없음."
+      ]
+    },
+    {
+      "id": "clm-wza-11-gimucheo-in-uijeongbu",
+      "subject": "org-gungukgimucheo",
+      "subjectLabel": "軍國機務處",
+      "predicate": "의정부 관제의 分設 각 국(局) 중 하나로 배치되어 국내 대소 사무를 전의(專議)하며, 총재 1원은 총리대신이 겸함",
+      "object": "office-gungukgimucheo-chongjae",
+      "objectLabel": "總裁 (總理大臣 겸임)",
+      "sourceId": "src-sillok-wza",
+      "chunkId": "chunk_sillok-wza_wza_13106028_004",
+      "quote": "一, 軍國機務處, 專議國內大小事務。 總裁一員, 總理大臣兼之。",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "高宗實錄 三十一年 › 高宗實錄 三十一年 六月 › 高宗 31年 6月 28日",
+      "permalink": "https://sillok.history.go.kr/id/wza_13106028_004",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "없음",
+        "chunkDateRaw": "1894-06-28L0",
+        "chunkDateFormsProvided": [
+          "간지: 癸酉",
+          "재위연도: 고종 31년 6월 28일",
+          "개국연호: 조선 개국(開國) 503년 6월 28일",
+          "중국연호: 청 광서(光緖) 20년 6월 28일",
+          "단기: 4227년 6월 28일",
+          "일본연호: 명치(明治)27년 6월 28일"
+        ],
+        "note": "관제 실시 시점은 별개 기사(wza_13107001_002)가 '限期以七月二十日爲定'이라 적고 있어, 의정일과 실시 예정일이 구분됨."
+      },
+      "evidenceType": "직접 근거 (원문 서술)",
+      "limits": [
+        "이 문장은 군국기무처가 스스로 올린 관제안(軍國機務處啓)의 일부이며, 자기 기구의 위상을 스스로 규정한 조문임.",
+        "인용 바로 뒤에 '副總裁一員, 議員中秩高人兼之。 會議員十人以上二十人以下。 書記官三人…'이 이어져 구성이 더 있음 (인용에서 잘림).",
+        "같은 기사에서 임금의 비답은 '令會議所一體會議。'이므로, 이 시점에 관제안 전체가 그대로 재가되었다고 단정할 수 없음.",
+        "인용문 첫머리의 '一,'은 조문 구분 표시임."
+      ]
+    },
+    {
+      "id": "clm-wza-12-gaeguk-giyeon",
+      "subject": "org-gungukgimucheo",
+      "subjectLabel": "軍國機務處 (進議案)",
+      "predicate": "이제부터 국내외 공사 문첩에 개국 기년을 쓰자는 의안을 올렸고 함께 윤허됨",
+      "object": "event-gaeguk-giyeon-uian",
+      "objectLabel": "開國紀年 표기",
+      "sourceId": "src-sillok-wza",
+      "chunkId": "chunk_sillok-wza_wza_13106028_005",
+      "quote": "一, 從今以後, 國內外公私文牒, 書開國紀年事。",
+      "quoteLang": "hanmun",
+      "quoteVerified": true,
+      "locator": "高宗實錄 三十一年 › 高宗實錄 三十一年 六月 › 高宗 31年 6月 28日",
+      "permalink": "https://sillok.history.go.kr/id/wza_13106028_005",
+      "permalinkAccessed": false,
+      "dateContext": {
+        "inQuote": "從今以後 (이제부터 — 날짜 없음)",
+        "chunkDateRaw": "1894-06-28L0",
+        "note": "이 의안이 채택한 '개국 기년'이 몇 년인지는 인용문에 없음. chunks.json의 dateContext.forms가 같은 날을 '조선 개국(開國) 503년 6월 28일'로 병기하지만, 이는 기관이 제공한 환산 표기이며 이 기사 본문의 진술이 아님."
+      },
+      "evidenceType": "직접 근거 (원문 서술)",
+      "limits": [
+        "chunk.text 끝의 '竝允之。'는 열거된 여러 의안을 함께 윤허했다는 뜻으로, 이 조문 하나에 대한 개별 재가 여부는 구분되지 않음.",
+        "같은 기사에 신분·혼인·문벌·의제 관련 조문이 함께 실려 있음 (additionalCandidates 참조). 이 인용은 그중 첫 조문임.",
+        "며칠 뒤 기사(wza_13107001_002)에 '京各司及各道各邑通行文牒, 書開國紀年行會事'가 다시 나옴 — 실행 단계의 별도 의안으로 보이나 두 조문의 관계를 단정하지 않음.",
+        "실제 시행 범위·시점은 이 기사에 없음."
+      ]
+    }
+  ],
+  "additionalCandidates": {
+    "note": "claims로 승격하지 않았으나 chunk.text의 연속 문자열임을 claims와 동일한 절차로 확인한 인용 후보. 성과 수를 맞추려고 만든 것이 아니라, 이번 세션에서 확인한 범위를 남기기 위한 것임.",
+    "verification": "각 quote를 Grep으로 chunks.json에서 검색해 확인, 전부 1회 일치 (2026-09-06).",
+    "items": [
+      {"sourceId": "src-sillok-waa", "chunkId": "chunk_sillok-waa_waa_101", "quote": "元年(1392)", "topic": "권/연 단위 section chunk의 본문. 괄호 안 서기가 원문인지 디지털화 편집인지 미확인. 이 chunk의 annotations에 '【洪武二十五年】'(type 원주)가 offset 8로 따로 기록되어 있으나 chunk.text에는 없으므로 인용으로 쓰지 않음."},
+      {"sourceId": "src-sillok-waa", "chunkId": "chunk_sillok-waa_waa_10107017_001", "quote": "遂奉妃敎廢恭讓。", "topic": "공양 폐위"},
+      {"sourceId": "src-sillok-waa", "chunkId": "chunk_sillok-waa_waa_10107017_001", "quote": "遂遜于原州。", "topic": "원주로 물러남"},
+      {"sourceId": "src-sillok-waa", "chunkId": "chunk_sillok-waa_waa_10107018_002", "quote": "都評議使司及大小臣僚、閑良、耆老等請令知密直司事趙胖赴京申禮部曰", "topic": "知密直司事 趙胖의 명 예부 파견 청원"},
+      {"sourceId": "src-sillok-waa", "chunkId": "chunk_sillok-waa_waa_10107018_001", "quote": "前此久旱, 及上卽位, 霈然下雨, 人心大悅。", "topic": "즉위 직후 강우 서술 — 사료의 서술 성격(길조 서술) 사례"},
+      {"sourceId": "src-sillok-waa", "chunkId": "chunk_sillok-waa_waa_10107017_002", "quote": "及國號朝鮮", "topic": "국호 朝鮮 언급. 이 chunk 전체가 개국 조짐 설화 모음이므로 사실 서술로 다루지 않음"},
+      {"sourceId": "src-sillok-wda", "chunkId": "chunk_sillok-wda_wda_12909029_002", "quote": "是月, 《東國正韻》成, 凡六卷, 命刊行。", "topic": "동국정운 완성·간행 명령. 원문은 '是月'만 적음 (chunk.date.raw 1447-09-29)"},
+      {"sourceId": "src-sillok-wda", "chunkId": "chunk_sillok-wda_wda_12904020_001", "quote": "後式年爲始, 先試《訓民正音》, 入格者許試他才", "topic": "함길도 자제 이과 취재에 훈민정음 선시험"},
+      {"sourceId": "src-sillok-wna", "chunkId": "chunk_sillok-wna_wna_12505023_006", "quote": "臨津敗後, 軍卒散亡, 土兵五百, 初不與戰。", "topic": "최흥원이 아뢴 임진 패전 후 상황"},
+      {"sourceId": "src-sillok-wna", "chunkId": "chunk_sillok-wna_wna_12505023_006", "quote": "予旣爲宗社罪人, 卿等念及祖宗, 勉爲恢復可也。", "topic": "인견 말미의 국왕 발언 (원문 발언이며 기사 제목이 아님)"},
+      {"sourceId": "src-sillok-wna", "chunkId": "chunk_sillok-wna_wna_12505024_003", "quote": "但倭賊弓矢則畏之, 槍軍防牌軍則輕侮, 以此潰散云", "topic": "비변사 계에 대한 답 중 전술 관찰"},
+      {"sourceId": "src-sillok-wna", "chunkId": "chunk_sillok-wna_wna_12412001_002", "quote": "倭賊出沒之時, 此人等配于絶島, 似非遠慮。 改配爲可。", "topic": "1591년 12월, 왜적 출몰을 이유로 절도 유배지를 바꾸게 함"},
+      {"sourceId": "src-sillok-wna", "chunkId": "chunk_sillok-wna_wna_12412001_002", "quote": "於是翰弼配利城, 翼弼配熙川。", "topic": "송한필·송익필 유배지 확정"},
+      {"sourceId": "src-sillok-wza", "chunkId": "chunk_sillok-wza_wza_13106028_005", "quote": "一, 公私奴婢之典, 一切革罷, 禁販買人口事。", "topic": "공사노비 혁파·인구 판매 금지 의안"},
+      {"sourceId": "src-sillok-wza", "chunkId": "chunk_sillok-wza_wza_13106028_005", "quote": "一, 劈破門閥、班常等級, 不拘貴賤, 選用人材事。", "topic": "문벌·반상 등급 타파 의안"},
+      {"sourceId": "src-sillok-wza", "chunkId": "chunk_sillok-wza_wza_13106028_005", "quote": "一, 寡女再嫁, 無論貴賤, 任其自由事。", "topic": "과부 재가 자유 의안"},
+      {"sourceId": "src-sillok-wza", "chunkId": "chunk_sillok-wza_wza_13106029_003", "quote": "限七月初十日內, 一齊來呈于機務處事。", "topic": "각사 실태 조사 회보 기한"},
+      {"sourceId": "src-sillok-wza", "chunkId": "chunk_sillok-wza_wza_13107001_002", "quote": "一, 此次日本政府出力, 保認我固有自主, 亟派全權大使, 致謝厚誼, 益敦隣好事。", "topic": "일본 정부에 사례 사절 파견 의안"},
+      {"sourceId": "src-sillok-wza", "chunkId": "chunk_sillok-wza_wza_13107001_002", "quote": "日兵之留駐各地方, 寔出於防備淸兵, 毫無惡意。", "topic": "일본군 주둔 사유를 각 지방에 행회하게 한 의안"},
+      {"sourceId": "src-sillok-wza", "chunkId": "chunk_sillok-wza_wza_13107002_003", "quote": "一, 驛人、倡優、皮工, 竝許免賤事。", "topic": "역인·창우·피공 면천 의안"}
+    ]
+  },
+  "uncertainties": [
+    {
+      "id": "unc-01-L0",
+      "topic": "date.raw 접미사 'L0'",
+      "statement": "모든 chunk의 date.raw가 '1392-07-17L0' 같은 형태로 'L0' 접미사를 가짐. 이 접미사의 정의(음력 표시인지, 확실도 등급인지, 윤달 표시인지 등)를 입력 자료가 설명하지 않음.",
+      "action": "정의를 추측하지 않았고, L0가 붙은 값을 확정 연월일로 승격하지 않았음. 과제 지시에 언급된 L1/99는 이번 입력 22건에 나타나지 않아 확인하지 못함.",
+      "status": "미확인"
+    },
+    {
+      "id": "unc-02-date-mapping",
+      "topic": "원문 기년과 date.raw 서기의 대응",
+      "statement": "원문은 干支(丙申·壬辰·癸亥 등)·연호(洪武二十五年)·재위연차(元年·二十五年)로 시간을 적고, 서기 연월일은 date.raw에만 있음.",
+      "action": "환산을 수행하지 않았고, claim.dateContext에 인용 안 표기와 date.raw를 분리해 기록함.",
+      "status": "미확인 (환산 검증 미수행)"
+    },
+    {
+      "id": "unc-03-gongyang-yo",
+      "topic": "恭讓(waa_10107017_001)과 定昌府院君 瑤(waa_10107018_002)의 동일성",
+      "statement": "두 chunk가 같은 달의 같은 사건 요소(7월 12일, 恭愍王妃/王大妃의 명, 폐위·퇴거)를 공유하나, 원문에 '恭讓 = 瑤'라는 등가 진술이 없음.",
+      "action": "별도 엔티티로 두고 possibleSameAs로 근거만 기록. 병합하지 않음.",
+      "status": "미확정 (병합 보류)"
+    },
+    {
+      "id": "unc-04-wangdaebi-anssi",
+      "topic": "王大妃(waa_10107017_001)와 恭愍王妃 安氏(waa_10107018_002)의 동일성",
+      "statement": "같은 사건의 명령 주체로 나오지만 원문의 등가 진술이 없음.",
+      "action": "별도 엔티티 유지, possibleSameAs만 기록.",
+      "status": "미확정 (병합 보류)"
+    },
+    {
+      "id": "unc-05-pyongyang",
+      "topic": "entities.json의 place-pyongyang(平穰)과 선조실록의 平壤",
+      "statement": "기존 엔티티는 labelHanja가 '平穰'으로 광개토왕비 계열 표기이고, 이번 자료는 '平壤'임. 두 표기가 같은 지점을 가리키는지는 이번 검토 대상 자료로 판정할 수 없음.",
+      "action": "새 id(place-pyongyang-joseon-sillok)를 만들고 병합하지 않음.",
+      "status": "미확정 (병합 보류)"
+    },
+    {
+      "id": "unc-06-taejo-homonym",
+      "topic": "'太祖'의 다의성",
+      "statement": "entities.json의 event-silla-surrender(labelHanja '歸于太祖')·person-gimbu 맥락의 '太祖'는 고려 태조를 가리키는 것으로 보임. 태조실록의 '太祖'와 문자열이 같음.",
+      "action": "문자열 일치만으로 병합하지 않고 person-joseon-taejo를 새로 만듦.",
+      "status": "의도적 분리"
+    },
+    {
+      "id": "unc-07-wonju-reuse",
+      "topic": "place-wonju 재사용의 근거 강도",
+      "statement": "기존 entities.json의 place-wonju(原州)가 어떤 사료·시대 맥락에서 만들어졌는지 입력 자료에 정보가 없음. 재사용 근거는 한자 표기 완전 일치뿐임.",
+      "action": "재사용하되 reuseBasis에 근거 강도를 명시. Codex가 부적절하다고 판단하면 분리 가능.",
+      "status": "재사용 (근거 제한적)"
+    },
+    {
+      "id": "unc-08-waa101-parenthesis",
+      "topic": "chunk waa_101의 text '元年(1392)'",
+      "statement": "괄호 안 서기 1392가 원문 판본에 있는 것인지 디지털화 과정의 편집인지 확인할 수 없음. 같은 chunk의 annotations에는 '【洪武二十五年】'가 type '원주'로 offset 8에 기록되어 있으나 chunk.text에는 없음.",
+      "action": "인용 후보로만 남기고 claim으로 만들지 않았음. 洪武 25년의 서기 환산 근거로도 쓰지 않았음.",
+      "status": "미확인"
+    },
+    {
+      "id": "unc-09-simwol",
+      "topic": "'是月' 기사의 날짜 배치",
+      "statement": "wda_12512030_002(是月, date.raw 1443-12-30), wda_12809029_004(是月, date.raw 1446-09-29), wda_12909029_002(是月, date.raw 1447-09-29)는 모두 원문이 '이 달'이라고만 적는데 date.raw는 특정 일자를 가짐. 해당 월 말일에 배치하는 규칙으로 보이나 규칙 자체를 확인한 문서가 없음.",
+      "action": "규칙을 단정하지 않고, 원문이 일자를 적지 않았다는 사실만 claim.dateContext에 기록.",
+      "status": "미확인 (패턴 관찰만)"
+    },
+    {
+      "id": "unc-10-gyehae",
+      "topic": "정인지 서문의 '癸亥冬'",
+      "statement": "간지 연도만 있고 서기 환산이 원문에 없음. 별개 chunk(wda_12512030_002, date.raw 1443)와 연결하는 것은 해석임.",
+      "action": "환산·연결을 claim으로 만들지 않았음.",
+      "status": "미확인 (의도적 미환산)"
+    },
+    {
+      "id": "unc-11-yi-bal-reading",
+      "topic": "李䟆의 한글 독음",
+      "statement": "'䟆'의 한국 한자음을 확인할 근거가 입력 자료에 없음.",
+      "action": "독음을 만들지 않고 한자 표기만 사용.",
+      "status": "미확인"
+    },
+    {
+      "id": "unc-12-gojong-sillok-character",
+      "topic": "고종실록의 사료 성격",
+      "statement": "chunks.json이 이 사료만 compiler='이왕직 실록편찬위원회', composedYear=1935, sourceKind='실록'(다른 셋은 '관찬사서')로 기록함. 기사 내용(1894)과 편찬(1935) 사이에 큰 시차가 있음.",
+      "action": "메타데이터 사실만 source에 기록하고 사료 신뢰도 평가는 하지 않음.",
+      "status": "메타데이터 기재 사실 (별도 검증 미수행)"
+    },
+    {
+      "id": "unc-13-license",
+      "topic": "이용조건 확인 주체",
+      "statement": "license·licenseDetail·licenseVerifiedAt(2026-09-06)·licenseVerifiedVia는 chunks.json의 source 객체에 이미 있던 값이며, 해당 source에 generated.by='codex'로 표시되어 있음. 나는 data.go.kr을 이번 세션에서 열지 않았음.",
+      "action": "전재하되 출처를 명시. 내가 확인한 값처럼 쓰지 않음.",
+      "status": "미시도 (내 직접 확인 없음)"
+    },
+    {
+      "id": "unc-14-uian-implementation",
+      "topic": "군국기무처 의안의 시행",
+      "statement": "고종실록 기사들은 의안 진달과 '竝允之'까지만 적고, 실제 시행 범위·시점·결과를 적지 않음.",
+      "action": "claim의 술어를 '의안을 올렸고 윤허됨'까지로 한정.",
+      "status": "확인 범위 한정"
+    },
+    {
+      "id": "unc-15-title-vs-text",
+      "topic": "기사 제목과 원문의 차이",
+      "statement": "chunk.title은 국사편찬위원회가 붙인 현대 한국어 표제이며 원문 문자열이 아님. wza_13106025_005는 제목이 '차비문 근처'인데 원문은 '差備近處'로 門이 없는 등 표기 차이가 있음.",
+      "action": "제목을 인용이나 사건 label로 쓰지 않고, 모든 event의 labelHanja를 chunk.text에서만 취함.",
+      "status": "처리 완료"
+    },
+    {
+      "id": "unc-16-coords",
+      "topic": "좌표",
+      "statement": "壽昌宮·加里浦·差備·原州·義州·平壤 등 어떤 장소의 좌표도 입력 자료에 없음.",
+      "action": "좌표를 생성하지 않았음.",
+      "status": "미확인"
+    },
+    {
+      "id": "unc-17-edition",
+      "topic": "판본",
+      "statement": "각 chunk의 editionReferences에 태백산사고본/국편영인본(고종실록은 '원본'/국편영인본)의 책·권·장차가 기록되어 있음. 실물 판본을 대조하지 않았음.",
+      "action": "판본 정보를 claim에 옮기지 않고 chunkId로 참조하게 두었음. 필요하면 chunks.json의 editionReferences를 직접 사용할 것.",
+      "status": "미시도 (실물 대조 없음)"
+    },
+    {
+      "id": "unc-18-org-type",
+      "topic": "Organization 타입의 신설",
+      "statement": "軍國機務處·吏曹를 담기 위해 entities.json에 없는 'Organization' 타입을 새로 썼음. 기존 파일의 타입은 Event/Office/Person/Place/Polity 다섯 가지임.",
+      "action": "typeNote에 명시하고 타입 확정은 Codex에 맡김.",
+      "status": "제안 (미확정)"
+    },
+    {
+      "id": "unc-19-input-hash",
+      "topic": "입력 파일 해시",
+      "statement": "이번 세션에서 쓸 수 있는 도구가 Glob/Grep/Read/Write/WebFetch/WebSearch뿐이라 파일 해시를 계산할 셸 도구가 없었음.",
+      "action": "sha256을 만들어 넣지 않고 '미산출'로 두었으며, 대신 파일 행수와 22개 chunk id 목록을 식별자로 기록함.",
+      "status": "미산출"
+    }
+  ],
+  "reproduction": {
+    "method": "제공된 로컬 입력 파일만 읽어 인용을 추출·대조함. 웹 조회·외부 연락 없음.",
+    "workingDirectory": "C:\\Users\\gkfkd\\AppData\\Local\\Temp\\sigong-core-followup-opus5\\joseon-core-51",
+    "inputs": [
+      {
+        "path": "chunks.json",
+        "role": "원문 chunk 22건 (src-sillok-waa 5, src-sillok-wda 5, src-sillok-wna 6, src-sillok-wza 6)",
+        "sha256": "미산출 (해시 계산 도구 없음 — unc-19 참조)",
+        "linesTotal": 3271,
+        "identifierUsedInstead": "sources[].chunkIdsProvided에 22개 chunk id를 전부 기록"
+      },
+      {"path": "entities.json", "role": "기존 엔티티 목록 (109건)", "sha256": "미산출", "linesTotal": 638},
+      {"path": "run.json", "role": "실행 메타데이터", "sha256": "미산출", "linesTotal": 8}
+    ],
+    "outputs": ["progress.json", "result.json"],
+    "steps": [
+      "1. chunks.json 전체(3271행)를 Read로 3회에 나누어 읽음.",
+      "2. entities.json 전체를 읽어 재사용 가능한 id를 확인함.",
+      "3. 사료별로 짧고 자립적인 문장을 골라 chunk.text와 문자 단위로 대조함 (공백·구두점 포함).",
+      "4. 각 인용을 Grep으로 chunks.json에서 재확인함 (아래 quoteVerification).",
+      "5. 인용 안에 날짜가 없으면 chunk.date.raw를 claim.dateContext로 분리 기록함."
+    ],
+    "quoteVerification": {
+      "rule": "claim.quote는 해당 chunk.text의 연속 문자열이어야 함 (공백·구두점 포함).",
+      "procedure": "Read로 읽은 chunk.text와 육안 대조한 뒤, 각 quote를 Grep으로 chunks.json에서 검색해 일치 여부를 확인함. 모든 quote에 정규식 메타문자가 없어 고정 문자열 검색과 동일하게 동작함. 예외적으로 '元年(1392)'는 괄호를 이스케이프해 검색했고, clm-wna-08은 JSON 이스케이프된 큰따옴표 때문에 두 구간으로 나누어 검색함.",
+      "claimsChecked": 12,
+      "claimsMatched": 12,
+      "additionalCandidatesChecked": 20,
+      "additionalCandidatesMatched": 20,
+      "occurrencesPerQuote": "전부 1회",
+      "result": "통과 — 32개 인용 전부 chunks.json에서 정확히 1회 일치",
+      "verifiedAt": "2026-09-06",
+      "limitation": "이 검증은 인용이 chunks.json의 문자열과 일치함을 보인 것이며, chunks.json이 실록 원문·판본을 정확히 옮겼는지는 검증하지 않았음."
+    },
+    "notPerformed": [
+      "웹 검색 — 과제 지시상 불필요하여 하지 않음",
+      "sillok.history.go.kr permalink 접속 — 미시도",
+      "data.go.kr 배포 페이지 접속 — 미시도",
+      "db.history.go.kr, contents.history.go.kr 접속 — robots 제한 도메인으로 열지 않음",
+      "외부 연락·기관 문의 — 하지 않음",
+      "간지/연호의 서기 환산 검증",
+      "판본 실물 대조",
+      "입력 파일 해시 계산 — 도구 없음",
+      "저장소 코드 변경 — Codex 담당"
+    ],
+    "counts": {
+      "sources": 4,
+      "chunksAvailable": 22,
+      "distinctChunksUsedInClaims": 11,
+      "distinctChunksUsedInClaimsOrCandidates": 22,
+      "chunksWithNoVerifiedQuote": 0,
+      "chunkCoverageNote": "claim 12건은 서로 다른 11개 chunk를 인용함 (clm-waa-01과 clm-waa-02가 chunk_sillok-waa_waa_10107017_001을 공유). 나머지 11개 chunk는 additionalCandidates에서 인용을 확인해, 22개 chunk 전부가 검증된 인용을 최소 1개씩 가짐.",
+      "claims": 12,
+      "claimsPerSource": {"src-sillok-waa": 3, "src-sillok-wda": 3, "src-sillok-wna": 3, "src-sillok-wza": 3},
+      "entities": 43,
+      "entitiesReused": 2,
+      "entitiesNew": 41,
+      "additionalCandidateQuotes": 20,
+      "uncertainties": 19
+    }
+  }
+}
