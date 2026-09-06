@@ -1,0 +1,44 @@
+{
+  "claim": "claim-everready-institutional-description",
+  "source": "src-encykorea-everready",
+  "chunk": "chunk_encykorea-everready_lead",
+  "check": {
+    "id": "ex-encykorea-everready-lead-fix",
+    "sourceId": "src-encykorea-everready",
+    "url": "https://encykorea.aks.ac.kr/Article/E0081304",
+    "exact": true,
+    "whitespaceOnlyMatch": true,
+    "accepted": true,
+    "quote": "1953년 5월， 한국전쟁 정전회담 과정에서 불거진 한미 갈등에 대처하고자 미국이 수립한",
+    "pageSha256": "198b8acf96b1fcd7c698cbf169e78946757841f2fbc52053e5772bd954ba3878",
+    "error": null
+  },
+  "run": {
+    "task": "modern-provenance-65-66",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788693021.6471336,
+    "pid": 14876,
+    "exitCode": 0,
+    "seconds": 1728.3,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "1cf8a2aa-bd0c-4a0b-920e-d7abbbb1cd14",
+    "permissionDenials": [
+      {
+        "tool_name": "Glob",
+        "tool_use_id": "toolu_01C4tB9ggamx3A8WU8SZytC4",
+        "tool_input": {
+          "pattern": "**/*.json",
+          "path": "C:\\Users\\gkfkd\\AppData\\Local\\Temp\\sigong-core-followup-opus5"
+        }
+      }
+    ]
+  },
+  "scope": "modern commentary excerpt only; no US primary document collected",
+  "humanReviewed": false
+}
