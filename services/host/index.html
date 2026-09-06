@@ -77,7 +77,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 #resetMap{position:absolute;top:40px;left:14px;z-index:5;padding:6px 10px;background:var(--ink-2);border:1px solid var(--line-2);font-size:12px}
 .mode3d #resetMap{display:none}
 .cand.focused{outline:1px solid var(--gardenia);outline-offset:4px}
-#graph{display:none;position:absolute;inset:0 0 42% 0;background:var(--ink);z-index:4;grid-template-rows:auto minmax(0,1fr)}
+#graph{display:none;position:absolute;inset:0 0 var(--timeline-height,42%) 0;background:var(--ink);z-index:4;grid-template-rows:auto minmax(0,1fr)}
 .modegraph #graph{display:grid}
 .modegraph #three,.modegraph #map,.modegraph #outside3d,.modegraph #resetMap,.modegraph #hint{display:none}
 .graph-tools{display:flex;align-items:center;gap:8px;padding:12px;border-bottom:1px solid var(--line);font-size:12px}
@@ -231,7 +231,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .unloc b{color:var(--brick);font-weight:500}
 </style>
 <style>
-#chat{display:none;position:absolute;inset:0 0 126px;overflow:auto;padding:24px;color:var(--paper-2)}
+#chat{display:none;position:absolute;inset:0 0 var(--timeline-height,42%);overflow:auto;padding:24px;color:var(--paper-2)}
 .modechat #chat{display:block}.modechat #map,.modechat #three,.modechat #graph,.modechat #hint,.modechat #outside3d,.modechat #resetMap{display:none}
 #chat h2{font:500 22px var(--serif);color:var(--paper)}
 #chat form{display:flex;flex-direction:column;gap:8px;max-width:680px}
@@ -332,6 +332,10 @@ const state = {
   places: [], geo: null, chunks: [], sources: [], entities: [],
   on: new Set(), year: 414, sel: null, hot: null, mode: '2d', panel: null, origin: 'all', mapFocus: null
 };
+new ResizeObserver(entries=>{
+  const height=entries[0].target.getBoundingClientRect().height;
+  document.querySelector('.canvasWrap').style.setProperty('--timeline-height',height+'px');
+}).observe(document.querySelector('.timebar'));
 
 document.getElementById('humanOnly').addEventListener('change', event => {
   state.origin = event.target.checked ? 'human' : 'all';

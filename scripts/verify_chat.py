@@ -41,6 +41,8 @@ def main():
         page.wait_for_function("document.querySelector('#evi h3')?.textContent==='인용한 원문'")
         assert first['quote'] in page.locator('#evi').inner_text()
         report['checks']['answer_citation_original']=True
+        assert page.evaluate("document.querySelector('#chat').getBoundingClientRect().bottom<=document.querySelector('.timebar').getBoundingClientRect().top+1")
+        report['checks']['answer_does_not_overlap_timeline']=True
         page.screenshot(path=str(args.out/'chat-evidence.png'))
         page.locator('#chatQuestion').fill('광개토왕이 사용한 스마트폰의 제조사와 기종은 무엇인가?')
         with page.expect_response(lambda r:r.url.endswith('/api/chat'),timeout=360000) as response:

@@ -1,5 +1,3 @@
-import { escapeHtml as escH } from './html.js';
-
 export class EvidenceChat {
   constructor(host, callbacks) {
     this.host=host; this.callbacks=callbacks; this.sequence=0; this.pending=false;
@@ -47,7 +45,7 @@ export class EvidenceChat {
       if(result.unanswered) {
         const note=document.createElement('p');note.className='chat-note';note.textContent=result.unanswered;answer.append(note);
       }
-      if(result.status==='answered')answer.insertAdjacentHTML('beforeend',`<p class="chat-note">${escH(result.models.join(', ')||'Claude')}가 작성한 설명이다. 인용 연결은 확인했으며, 해석은 원문과 함께 검토할 수 있다.</p>`);
+      if(result.status==='answered')answer.insertAdjacentHTML('beforeend','<p class="chat-note">Claude가 작성한 설명이다. 인용 연결은 확인했으며, 해석은 원문과 함께 검토할 수 있다.</p>');
     } catch(error) { if(seq===this.sequence)status.textContent=error.message; }
     finally {this.pending=false;button.disabled=false;}
   }
