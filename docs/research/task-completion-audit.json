@@ -1,0 +1,380 @@
+{
+  "checkedAt": "2026-09-06T14:38:25.716973+00:00",
+  "implementationHead": "b52760b5e64d476a798149b477afcffd11c8d041",
+  "githubIssueCount": 71,
+  "taskTableRows": 71,
+  "missingIssues": [],
+  "duplicateIssues": [],
+  "closed": 61,
+  "open": [
+    8,
+    12,
+    49,
+    51,
+    52,
+    54,
+    56,
+    57,
+    61,
+    62
+  ],
+  "brokenLocalDocumentLinks": [],
+  "protectedFantologyCoreChanged": false,
+  "issues": [
+    {
+      "number": 1,
+      "state": "CLOSED",
+      "title": "[기능] F1 광개토왕비 판독문 확보 + 사료 카드"
+    },
+    {
+      "number": 2,
+      "state": "CLOSED",
+      "title": "[기능] F2 chunk 추출기"
+    },
+    {
+      "number": 3,
+      "state": "CLOSED",
+      "title": "[기능] F3 주장 추출 (claims 마크다운)"
+    },
+    {
+      "number": 4,
+      "state": "CLOSED",
+      "title": "[기능] F4 검증기"
+    },
+    {
+      "number": 5,
+      "state": "CLOSED",
+      "title": "[기능] F5 TTL 빌드"
+    },
+    {
+      "number": 6,
+      "state": "CLOSED",
+      "title": "[기능] F6 Fuseki 적재 + SPARQL 질의"
+    },
+    {
+      "number": 7,
+      "state": "CLOSED",
+      "title": "[기능] 뷰어 — 대동여지도 진입 · 시간축 지도 · 판톨로지 3D 계승"
+    },
+    {
+      "number": 8,
+      "state": "OPEN",
+      "title": "[기능] 삼국사기 벌크 XML 적재 — chunks · 교감주 · 색인어"
+    },
+    {
+      "number": 9,
+      "state": "CLOSED",
+      "title": "[기능] 지형 고도 데이터 — 3D 디오라마 산맥"
+    },
+    {
+      "number": 10,
+      "state": "CLOSED",
+      "title": "[기능] 사료별 시간 막대 타임라인 UI"
+    },
+    {
+      "number": 11,
+      "state": "CLOSED",
+      "title": "[기능] 삼국사기 색인 지명 → 좌표 후보 조사"
+    },
+    {
+      "number": 12,
+      "state": "OPEN",
+      "title": "[기록] 사료 조사 1·2차 + codex 교차검증"
+    },
+    {
+      "number": 13,
+      "state": "CLOSED",
+      "title": "[기능] 삼국유사 벌크 XML 적재 — chunks · 사료 카드 · 타임라인 막대"
+    },
+    {
+      "number": 14,
+      "state": "CLOSED",
+      "title": "[기능] 고려사 벌크 XML 적재 — chunks · 사료 카드 · 타임라인 막대"
+    },
+    {
+      "number": 15,
+      "state": "CLOSED",
+      "title": "[기능] 조선왕조실록(태조~철종) 벌크 XML 적재"
+    },
+    {
+      "number": 16,
+      "state": "CLOSED",
+      "title": "[기능] 한국고대금석문 벌크 XML 적재"
+    },
+    {
+      "number": 17,
+      "state": "CLOSED",
+      "title": "[기능] 한국고대사료집성 벌크 XML 적재"
+    },
+    {
+      "number": 18,
+      "state": "CLOSED",
+      "title": "[기능] 고려사·삼국유사 색인 지명 → 좌표 후보 조사 (#11 2라운드)"
+    },
+    {
+      "number": 19,
+      "state": "CLOSED",
+      "title": "[수정] 한 글자 국명 검색으로 잘못 붙는 근거 수정"
+    },
+    {
+      "number": 20,
+      "state": "CLOSED",
+      "title": "[수정] 지명 id 충돌에서 다른 이름과 좌표 후보 보존"
+    },
+    {
+      "number": 21,
+      "state": "CLOSED",
+      "title": "[수정] 사료를 모두 끄면 근거와 연력 및 주장도 비우기"
+    },
+    {
+      "number": 22,
+      "state": "CLOSED",
+      "title": "[수정] 주장 검증과 digest 기록 정책을 validate.py로 통일"
+    },
+    {
+      "number": 23,
+      "state": "CLOSED",
+      "title": "[수정] 사료·주장·엔티티 frontmatter 파서 통합"
+    },
+    {
+      "number": 24,
+      "state": "CLOSED",
+      "title": "[수정] 근거 검색 names 개수와 길이 제한"
+    },
+    {
+      "number": 25,
+      "state": "CLOSED",
+      "title": "[수정] 근거 패널의 HTML 및 링크 주입 경로 수정"
+    },
+    {
+      "number": 26,
+      "state": "CLOSED",
+      "title": "[수정] 2D와 3D의 연도·사료 활성 조건 통합"
+    },
+    {
+      "number": 27,
+      "state": "CLOSED",
+      "title": "[수정] 다치 술어를 Conflict 집계에서 제외"
+    },
+    {
+      "number": 28,
+      "state": "CLOSED",
+      "title": "[기능] 데이터 변경과 Fuseki 재시작 후 TTL 자동 재적재"
+    },
+    {
+      "number": 29,
+      "state": "CLOSED",
+      "title": "[문서] 인수인계에 주요 수정과 자동 적재 결과 반영"
+    },
+    {
+      "number": 30,
+      "state": "CLOSED",
+      "title": "[기능] 대용량 사료의 뷰어 메모리와 원문 응답 크기 줄이기"
+    },
+    {
+      "number": 31,
+      "state": "CLOSED",
+      "title": "[기능] 많은 사료를 시간축에서 종류별로 묶고 접기"
+    },
+    {
+      "number": 32,
+      "state": "CLOSED",
+      "title": "[문서] 사료 3라운드 운영 결과와 다음 인수인계 갱신"
+    },
+    {
+      "number": 33,
+      "state": "CLOSED",
+      "title": "[운영] 조사 역할 분담과 Opus 5 Max 숨김 실행 기록"
+    },
+    {
+      "number": 34,
+      "state": "CLOSED",
+      "title": "[수정] AI 조사 좌표를 위치 확정으로 표시하지 않기"
+    },
+    {
+      "number": 35,
+      "state": "CLOSED",
+      "title": "[기능] 이름 표기 연결을 근거 있는 sameEntityAs 주장으로 기록"
+    },
+    {
+      "number": 36,
+      "state": "CLOSED",
+      "title": "[조사] 국편 날짜 접미사와 삼국사기 글자 차이 확인"
+    },
+    {
+      "number": 37,
+      "state": "CLOSED",
+      "title": "[기능] 3D 지명 물질화와 화면 기준 라벨 겹침 개선"
+    },
+    {
+      "number": 38,
+      "state": "CLOSED",
+      "title": "[기능] 승정원일기 15064218 벌크 적재와 대용량 재현"
+    },
+    {
+      "number": 39,
+      "state": "CLOSED",
+      "title": "[기능] 비변사등록 15053636 벌크 적재"
+    },
+    {
+      "number": 40,
+      "state": "CLOSED",
+      "title": "[기능] 고종·순종실록과 부록 15053646 벌크 적재"
+    },
+    {
+      "number": 41,
+      "state": "CLOSED",
+      "title": "[수정] 대용량 사료 검증·TTL 빌드의 원문 메모리 줄이기"
+    },
+    {
+      "number": 42,
+      "state": "CLOSED",
+      "title": "[문서] 조사·후대 사료 반영 결과와 인수인계 갱신"
+    },
+    {
+      "number": 43,
+      "state": "CLOSED",
+      "title": "[수정] 느린 원문 검색과 주장 표시를 분리하고 패널 선택 유지"
+    },
+    {
+      "number": 44,
+      "state": "CLOSED",
+      "title": "[검사] 3D 물질화 시작 값을 활성화와 동시에 관측"
+    },
+    {
+      "number": 45,
+      "state": "CLOSED",
+      "title": "[점검] 전체 요구사항 작업 목록과 누락 감사"
+    },
+    {
+      "number": 46,
+      "state": "CLOSED",
+      "title": "[기능] 같은 지식그래프의 엔티티·주장·출처 탐색 화면"
+    },
+    {
+      "number": 47,
+      "state": "CLOSED",
+      "title": "[기능] Claude CLI 기반 사료 근거 챗봇"
+    },
+    {
+      "number": 48,
+      "state": "CLOSED",
+      "title": "[기능] 현대 연구에 근거한 기본 렌즈와 사료별 겹침"
+    },
+    {
+      "number": 49,
+      "state": "OPEN",
+      "title": "[기능] locatedAt 주장과 지도·3D·RDF의 위치 후보 연결"
+    },
+    {
+      "number": 50,
+      "state": "CLOSED",
+      "title": "[기능] AI가 만든 주장과 연결을 제외하는 필터"
+    },
+    {
+      "number": 51,
+      "state": "OPEN",
+      "title": "[데이터] 고조선부터 현대까지 사료별 주장 뼈대 구축"
+    },
+    {
+      "number": 52,
+      "state": "OPEN",
+      "title": "[수집] 통사 시대별 원문 공백과 남은 사료 수집 추적"
+    },
+    {
+      "number": 53,
+      "state": "CLOSED",
+      "title": "[기능] 서로 다른 사료의 같은 사건과 판독을 나란히 비교"
+    },
+    {
+      "number": 54,
+      "state": "OPEN",
+      "title": "[기능] 계보·생몰·상대 순서의 역사 일관성 검사"
+    },
+    {
+      "number": 55,
+      "state": "CLOSED",
+      "title": "[기능] 불확실한 시간 범위·상대 순서·역법 변환의 연결"
+    },
+    {
+      "number": 56,
+      "state": "OPEN",
+      "title": "[검사] 스키마 Q1부터 Q9까지 실제 질의 완료 기준"
+    },
+    {
+      "number": 57,
+      "state": "OPEN",
+      "title": "[기능] 시대별 국경·군현·역로·사건 지도"
+    },
+    {
+      "number": 58,
+      "state": "CLOSED",
+      "title": "[수정] 좁은 화면에서도 근거 패널을 열어 볼 수 있게 하기"
+    },
+    {
+      "number": 59,
+      "state": "CLOSED",
+      "title": "[수정] 3D 범위 밖이라 숨긴 위치 후보를 화면에 표시"
+    },
+    {
+      "number": 60,
+      "state": "CLOSED",
+      "title": "[수정] 지명 색인 빈도 도구의 중첩 태그·문자참조·출력 경로"
+    },
+    {
+      "number": 61,
+      "state": "OPEN",
+      "title": "[조사] 평양 표기의 시대별 동일성 근거 후속 확인"
+    },
+    {
+      "number": 62,
+      "state": "OPEN",
+      "title": "[조사] 국편 날짜 코드 공식 정의와 문자 차이 후속 확인"
+    },
+    {
+      "number": 63,
+      "state": "CLOSED",
+      "title": "[수정] 국내성 엔티티 누락으로 TTL 위치 후보가 빠지는 경고"
+    },
+    {
+      "number": 64,
+      "state": "CLOSED",
+      "title": "[수집] 위키문헌 근현대 문서 8종의 검증된 발췌"
+    },
+    {
+      "number": 65,
+      "state": "CLOSED",
+      "title": "[수집] 대통령기록관 연설 발췌와 날짜 메타데이터"
+    },
+    {
+      "number": 66,
+      "state": "CLOSED",
+      "title": "[수집] 북한 헌법 전사본과 판본 확인 상태"
+    },
+    {
+      "number": 67,
+      "state": "CLOSED",
+      "title": "[수집] 국가기록원 헌법 해설의 짧은 발췌"
+    },
+    {
+      "number": 68,
+      "state": "CLOSED",
+      "title": "[개발] 대용량 사료의 인용 원문만 새 클론에 포함하고 전체 적재본과 대조"
+    },
+    {
+      "number": 69,
+      "state": "CLOSED",
+      "title": "[수집] 에버레디계획 기관 해설의 검증된 발췌"
+    },
+    {
+      "number": 70,
+      "state": "CLOSED",
+      "title": "[수정] 전체 사료 선택에서 시간·비교 질의의 과도한 조합 줄이기"
+    },
+    {
+      "number": 71,
+      "state": "CLOSED",
+      "title": "[수정] 원문 검색이 겹칠 때 짧은 주장 조회 지연 줄이기"
+    }
+  ]
+}
