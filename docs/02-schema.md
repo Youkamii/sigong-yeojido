@@ -293,7 +293,8 @@ syj:claim-identity-geunchogo a syj:Claim ;
 사람이 손으로 적지 않는다.
 
 여러 값을 함께 가질 수 있는 `syj:mentionedIn`, `syj:describedAs`, `syj:instructs`,
-`syj:hasTitle`, `syj:hasOutcome`, `syj:subjectToRule`은 이 집계에서 제외한다.
+`syj:hasTitle`, `syj:hasOutcome`, `syj:subjectToRule`, `syj:hasName`, `syj:hasStateName`은 이 집계에서 제외한다.
+별칭과 시대별 국호는 여러 값이 함께 보존되므로 값 차이만으로 충돌로 세지 않는다.
 목록은 `services/validate.py`의 `MULTI_VALUED_PREDICATES`가 정본이고 TTL 빌더도 가져다 쓴다.
 뷰어의 `MULTI`도 같은 목록을 쓴다. `readsCharacterAs`처럼 판독이 다른 주장은 계속 나란히 표시한다.
 

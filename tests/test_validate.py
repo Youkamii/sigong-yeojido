@@ -53,7 +53,7 @@ class ConflictRulesTests(unittest.TestCase):
             changed = copy.deepcopy(doc)
             for claim in changed.claims:
                 claim["predicate"] = predicate
-                if predicate in V.MULTI_VALUED_PREDICATES-{'syj:mentionedIn','syj:describedAs','syj:instructs','syj:hasTitle','syj:hasOutcome','syj:subjectToRule'}:
+                if predicate in V.MULTI_VALUED_PREDICATES-{'syj:mentionedIn','syj:describedAs','syj:instructs','syj:hasTitle','syj:hasOutcome','syj:subjectToRule','syj:hasName','syj:hasStateName'}:
                     claim['object']={'kind':'year','value':400 if claim['id'].endswith('hae') else 500} if predicate=='syj:appearsIn' else {'kind':'entity','id':'target-'+claim['id']}
             entities={'target-'+c['id']:'test' for c in changed.claims}
             report = V.validate(chunks, entities, [changed], {"test": None})
