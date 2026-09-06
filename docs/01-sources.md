@@ -2,7 +2,27 @@
 
 > 아래 초안의 "미확인" 표시는 처음 쓸 때의 것이다. 실제로 확인·수집한 사료는 바로 아래 절에 있다.
 
-## 확인된 것 (2026-09-06)
+## 현재 수집 상태 (2026-09-07)
+
+c2 Source **1,072개·chunk 2,601,030개**, Git 추적 chunk **83,027개**다.
+[시대별 전체 대조표](research/corpus-gaps-52.md)에 전문·발췌·번역·저본·결손을 구분했다.
+아래 표는 직전 999 Source·2,567,757 chunks에서 늘어난 실제 자료다.
+
+| 추가 자료 | Source 증가 | chunk 증가 | 실제 파일·검증 |
+|---|---:|---:|---|
+| 고려사절요 | 1 | 11,226 | [#76](research/goryeosa-jeolyo-76.md) |
+| 한국독립운동사자료 42권 | 42 | 13,366 | kd036 결손·빈 텍스트 보존 [#77](research/independence-77.md) |
+| 고운당필기 | 1 | 255 | 254기사·범례 1개 [#78](research/itkc-gowundang-78.md) |
+| 위키문헌 고전 6종 | 6 | 113 | 공개 HTML 전사·실제 결손 [#80](research/wikisource-corpus-80.md) |
+| HGIS 읍·면 등 | 0, 기존 Source 확장 | 8,176 | [#75](research/hgis-townships-75.md) |
+| Cliopatria 국가·정치집단 경계 | 1 | 94 | [#79](research/cliopatria-79.md) |
+| 시대별 해설·평양 동일성·사건 장소 | 22 | 43 | [#51](research/era-spine-51.md), [#61](research/pyongyang-direct-61.md), [#81](research/khs-events-81.md) |
+| 합계 | 73 | 33,273 | 각 자료의 이슈·반복 추출·원 파일 대조를 따름 |
+
+주장은 9,416개이며 경계 레코드 9,028개와 그 밖의 관계 388개를 구분한다.
+[실제 연대·사료 분포와 남은 연결](research/claim-periods-51.md)을 함께 본다.
+
+## 이전에 확인한 벌크 자료 (2026-09-06)
 
 국편 사료의 수집 경로는 **공공데이터포털(data.go.kr)의 국사편찬위원회 벌크 XML**이다. 국편 사이트(db.history.go.kr)는 robots.txt 로
 수집을 막고 있어 긁지 않는다. 데이터셋마다 이용허락범위를 상세 페이지에서 직접 읽어 카드에 적었다.
@@ -21,7 +41,7 @@
 | 비변사등록 | [15053636](https://www.data.go.kr/data/15053636/fileData.do) | 제한 없음 (2026-09-06) | 93,801 | `data/sources/bibyeonsa-deungnok.md` |
 | 고종실록·순종실록·순종실록부록 | [15053646](https://www.data.go.kr/data/15053646/fileData.do) | 제한 없음 (2026-09-06) | 33,633 | `data/sources/sillok-wz{a,b,c}.md` 3개 |
 
-c2 합계 955 Source·2,566,920 chunks. 실록 30종과 새 후대 사료 5개 Source의 JSONL은 Git 밖에 있어 새 Git 클론은 48,888 chunks다.
+당시 c2 합계는 955 Source·2,566,920 chunks였다. 실록 30종과 새 후대 사료 5개 Source의 JSONL은 Git 밖에 있어 당시 새 Git 클론은 48,888 chunks였다.
 기존 3종은 각각 [실록](research/sillok-ingestion.md), [금석문](research/geumseokmun-ingestion.md),
 [집성](research/jipseong-ingestion.md) 적재 기록에 분할 기준·날짜 처리·재현 명령·SHA256을 적었다.
 집성은 원 사서의 발췌이며 ZIP의 92종과 포털 설명의 95종 차이를 남겼다. 알 수 없는 편찬 시점은 미상으로 표시한다.
