@@ -170,6 +170,14 @@ Claim의 내용(subject · predicate · object)을 SHA-256으로 찍어 저장�
 
 간지 · 연호를 절대연도로 옮기는 순간 정보가 사라진다. 둘 다 보관한다.
 
+국편 XML의 `dateOccured/@date`는 ISO 날짜로 해석하지 않는다. 원표기와 라벨을 보존하고,
+현재 연력은 맨 앞의 연도만 사용한다. 음수 연도는 이 프로젝트의 역사 연도 표기
+(`-57` = 기원전 57년)이며, 0년을 포함하는 천문학적 연도와 다르다.
+`L`·끝자리 숫자의 공식 뜻은 미확인이고 `99`를 실제 월·일로 변환하지 않는다.
+여러 날짜 형식이 병기되면 각각의 `type`·값·라벨을 보존한다.
+상위 일자의 날짜를 물려받은 기사에는 그 level id도 남긴다.
+근거와 예외는 [날짜·글자 조사](research/date-and-character-format.md)에 적는다.
+
 ```turtle
 syj:ts-yeongnak-6 a syj:TimeSpan ;
     syj:verbatim "永樂六年 丙申" ;          # 원문 그대로
