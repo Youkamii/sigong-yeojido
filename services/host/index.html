@@ -757,12 +757,14 @@ async function select(id){
     const k = c.predicate; const v = JSON.stringify(c.object); if(!byPred.has(k)) byPred.set(k, new Set()); byPred.get(k).add(v); }
   const conflictPreds = new Set([...byPred].filter(([k, vs]) => vs.size > 1).map(([k]) => k));
   const claimsHtml = claimsOn.length ? claimsOn.map(c => {
-      const pred = String(c.predicate || '').replace(/^syj:/,'');
+      const key = String(c.predicate || '').replace(/^syj:/,'');
+      const pred = key === 'sameEntityAs' ? '같은 대상으로 보는 주장' : key;
+      const object = key === 'sameEntityAs' && c.role === 'object' ? {kind:'entity', id:c.subject} : c.object;
       const conflict = c.role === 'subject' && conflictPreds.has(c.predicate);
       const q = c.quote ? `<div class="quote small">${esc1(c.quote)}</div>` : '';
       const where = c.chunk ? `${escH(srcLabel(c.chunk.sourceId))} · ${esc1(c.chunk.locator || c.chunk.id)}` : esc1(c.citesChunk || '');
       return `<div class="claim${conflict ? ' conflict' : ''}">
-        <div class="cl-head"><span class="pred">${esc1(pred)}</span> ${c.role === 'object' ? `<span class="role">이 지명이 목적어</span> ` : ''}${objText(c.object)}${
+        <div class="cl-head"><span class="pred">${esc1(pred)}</span> ${c.role === 'object' ? `<span class="role">이 항목을 가리키는 주장</span> ` : ''}${objText(object)}${
           conflict ? ' <span class="badge cf">값이 갈림</span>' : ''}
           <span class="badge ${c.origin === 'ai' ? 'ai' : 'human'}">${c.origin === 'ai' ? 'AI 추출' : '사람'}</span>
           ${c.status && c.status !== 'draft' ? `<span class="badge st">${esc1(c.status)}</span>` : ''}</div>
