@@ -12,8 +12,8 @@ chunks.jsonl 추출은 다른 파이프라인이 맡는다. 여기서는 지도�
 아니며(docs/research/bulk-xml-findings.md §3-3), 같은 표기가 시대에 따라 다른 곳을
 가리킬 수 있으므로 여기 숫자는 "몇 번 태깅됐나"일 뿐이다.
 
-표준 라이브러리만 쓴다. 정규식은 scripts/analyze_bulk_xml.py 와 같은 것을 써서
-그 문서에 적힌 총계(지명 4,613 · 국명 1,780)와 대조할 수 있게 한다.
+표준 라이브러리로 XML 구조를 읽는다. 중첩된 index도 각각 세며,
+표기는 공용 추출기의 term_text를 사용해 주석을 빼고 문자참조를 해독한다.
 """
 from __future__ import annotations
 
@@ -24,16 +24,14 @@ import re
 import sys
 import zipfile
 from pathlib import Path
+from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 BULK_DIR = ROOT / "data" / "bulk"
 OUT_DIR = ROOT / "data" / "research"
+sys.path.insert(0, str(ROOT / "services"))
+from ingestion.extract_nikh_xml import term_text
 
-IDX_RE = re.compile(r"<index\b[^>]*type=\"([^\"]+)\"[^>]*>(.*?)</index>", re.S)
-# 색인어 안에 교감주가 끼어드는 경우가 있다 (예: 文武<annotation …>…</annotation>王).
-# 주석 본문은 표기가 아니므로 통째로 걷어낸 뒤 나머지 인라인 태그를 벗긴다.
-ANN_RE = re.compile(r"<annotation\b.*?</annotation>", re.S)
-TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
 
 
@@ -45,9 +43,12 @@ def list_terms(zpath: Path) -> dict:
             if not name.lower().endswith(".xml"):
                 continue
             files += 1
-            s = z.read(name).decode("utf-8", "replace")
-            for typ, body in IDX_RE.findall(s):
-                term = WS_RE.sub("", TAG_RE.sub("", ANN_RE.sub("", body)))
+            root = ET.fromstring(z.read(name))
+            for element in root.iter("index"):
+                typ = element.get("type")
+                if not typ:
+                    continue
+                term = WS_RE.sub("", term_text(element))
                 if term:
                     counts[typ][term] += 1
 
@@ -90,7 +91,7 @@ def main(argv: list[str]) -> int:
         json.dump(r, f, ensure_ascii=False, indent=2, sort_keys=True)
         f.write("\n")
 
-    print(f"dataset={r['dataset']} xmlFiles={r['xmlFiles']} -> {out.relative_to(ROOT)}")
+    print(f"dataset={r['dataset']} xmlFiles={r['xmlFiles']} -> {out.resolve()}")
     for typ, info in r["types"].items():
         print(f"[{typ}] total={info['total']} distinct={info['distinct']}")
         for e in info["terms"][: a.top]:
