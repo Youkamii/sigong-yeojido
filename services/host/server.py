@@ -36,6 +36,7 @@ import mimetypes
 import re
 import sys
 import threading
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -139,6 +140,7 @@ def full_chunk(row: dict) -> dict:
 # ── 색인 (읽기 전용 캐시) ──
 _IDX: dict = {"sig": None, "chunks": [], "sources": [], "places": None, "claims": [], "entities": [], "byYear": {}, "density": {}}
 _IDX_LOCK = threading.Lock()
+_SIGNATURE_LOCK = threading.Lock()
 
 
 def _signature() -> tuple:
@@ -164,7 +166,8 @@ def _signature() -> tuple:
 
 def index() -> dict:
     global _IDX
-    sig = _signature()
+    with _SIGNATURE_LOCK:
+        sig = _signature()
     with _IDX_LOCK:
         if _IDX["sig"] != sig:
             chunks = collect_chunks()
@@ -376,7 +379,10 @@ def merged_places() -> dict:
 def mentions(names: list[str], sources: set[str] | None, limit: int) -> dict:
     idx = index()
     out, by, total = [], {}, 0
-    for c in idx["chunks"]:
+    for i, c in enumerate(idx["chunks"]):
+        # 파일 변경 확인 중에만 양보해 짧은 조회가 전체 검색에 밀리지 않게 한다.
+        if i % 256 == 0 and _SIGNATURE_LOCK.locked():
+            time.sleep(0.001)
         sid = c.get("sourceId")
         if sources is not None and sid not in sources:
             continue

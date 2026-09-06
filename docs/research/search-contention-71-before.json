@@ -1,0 +1,582 @@
+{
+  "url": "http://127.0.0.1:8870/?q=low",
+  "checks": {
+    "gate_visible": {
+      "passed": true,
+      "evidence": "url(\"http://127.0.0.1:8870/assets/daedong-2400.jpg\")"
+    },
+    "map_land_drawn": {
+      "passed": true,
+      "evidence": "lit 36605/74753"
+    },
+    "map_pick_opens_evidence": {
+      "passed": true,
+      "evidence": "{\"label\": \"평양\", \"len\": 1202}"
+    },
+    "entity_search_shows_claims": {
+      "passed": true,
+      "evidence": "{\"found\": true, \"elapsedMs\": 5064, \"label\": \"광개토왕\", \"claims\": 13}"
+    },
+    "source_card_opens": {
+      "passed": true,
+      "evidence": "{\"found\": true, \"label\": \"삼국사기\", \"facts\": 7, \"hasLicense\": true, \"hasYears\": true}"
+    },
+    "timeline_mounted": {
+      "passed": true,
+      "evidence": "{\"mounted\": true, \"tracks\": 4, \"hidden\": 992, \"groupRows\": 26, \"groups\": 26, \"srcs\": 996, \"before\": \"414\", \"after\": \"1361\"}"
+    },
+    "timeline_click_changes_year": {
+      "passed": true,
+      "evidence": "414 -> 1361"
+    },
+    "year_records_open": {
+      "passed": true,
+      "evidence": "{\"ok\": true, \"year\": \"918\", \"h3\": \"서기 918년\", \"cards\": 57, \"btn\": \"이 해의 기록 57\"}"
+    },
+    "three_loaded": {
+      "passed": true,
+      "evidence": "loaded"
+    },
+    "three_draws": {
+      "passed": true,
+      "evidence": "calls 1156 tris 93951"
+    },
+    "three_pick_opens_evidence": {
+      "passed": true,
+      "evidence": "국내성 @ [528, 186]"
+    },
+    "console_errors_zero": {
+      "passed": true,
+      "evidence": "0"
+    }
+  },
+  "console": [],
+  "scene": {
+    "map": {
+      "w": 724,
+      "h": 413,
+      "litSamples": 36605,
+      "samples": 74753
+    },
+    "mapPick": {
+      "label": "평양",
+      "len": 1202
+    },
+    "entitySearch": {
+      "found": true,
+      "elapsedMs": 5064,
+      "label": "광개토왕",
+      "claims": 13
+    },
+    "sourceCard": {
+      "found": true,
+      "label": "삼국사기",
+      "facts": 7,
+      "hasLicense": true,
+      "hasYears": true
+    },
+    "timeline": {
+      "mounted": true,
+      "tracks": 4,
+      "hidden": 992,
+      "groupRows": 26,
+      "groups": 26,
+      "srcs": 996,
+      "before": "414",
+      "after": "1361"
+    },
+    "yearPanel": {
+      "ok": true,
+      "year": "918",
+      "h3": "서기 918년",
+      "cards": 57,
+      "btn": "이 해의 기록 57"
+    },
+    "three": {
+      "quality": "low",
+      "cam": [
+        -86,
+        276,
+        162
+      ],
+      "zoom": 0.98,
+      "rim": 120,
+      "calls": 1156,
+      "tris": 93951,
+      "lights": [
+        [
+          "DirectionalLight",
+          3.3
+        ],
+        [
+          "HemisphereLight",
+          1.15
+        ],
+        [
+          "DirectionalLight",
+          0.25
+        ]
+      ],
+      "env": true,
+      "picks": 179,
+      "label": {
+        "hasMap": true,
+        "img": [
+          512,
+          128
+        ],
+        "scale": [
+          30,
+          7.5,
+          1
+        ]
+      },
+      "sea": null
+    },
+    "threePick": {
+      "screen": [
+        528,
+        186
+      ],
+      "expected": "국내성",
+      "label": "국내성"
+    }
+  },
+  "requests": [
+    {
+      "path": "/api/geo",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.508,
+      "timing": {
+        "startTime": 1788704054484.3918,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 2.638,
+        "responseStart": 6.893,
+        "responseEnd": 9.663
+      }
+    },
+    {
+      "path": "/api/lenses",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.509,
+      "timing": {
+        "startTime": 1788704054486.644,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 1.143,
+        "responseStart": 6.864,
+        "responseEnd": 9.812
+      }
+    },
+    {
+      "path": "/api/places",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.618,
+      "timing": {
+        "startTime": 1788704054483.637,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 1.955,
+        "responseStart": 480.327,
+        "responseEnd": 522.332
+      }
+    },
+    {
+      "path": "/api/sources",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.624,
+      "timing": {
+        "startTime": 1788704054485.123,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 2.25,
+        "responseStart": 516.492,
+        "responseEnd": 523.136
+      }
+    },
+    {
+      "path": "/api/entities",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.647,
+      "timing": {
+        "startTime": 1788704054486.0652,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 1.481,
+        "responseStart": 557.903,
+        "responseEnd": 561.027
+      }
+    },
+    {
+      "path": "/api/density",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.115,
+      "timing": {
+        "startTime": 1788704055134.9578,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.265,
+        "responseStart": 114.329,
+        "responseEnd": 116.177
+      }
+    },
+    {
+      "path": "/api/history-map",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.019,
+      "timing": {
+        "startTime": 1788704055435.209,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 3.417,
+        "responseStart": 4.552,
+        "responseEnd": 14.661
+      }
+    },
+    {
+      "path": "/api/time",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.021,
+      "timing": {
+        "startTime": 1788704055423.9421,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.249,
+        "responseStart": 29.254,
+        "responseEnd": 35.15
+      }
+    },
+    {
+      "path": "/api/year",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.126,
+      "timing": {
+        "startTime": 1788704055380.6438,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.22,
+        "responseStart": 136.089,
+        "responseEnd": 137.731
+      }
+    },
+    {
+      "path": "/api/history-map",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.018,
+      "timing": {
+        "startTime": 1788704057920.004,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 2.311,
+        "responseStart": 4.22,
+        "responseEnd": 8.925
+      }
+    },
+    {
+      "path": "/api/time",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.143,
+      "timing": {
+        "startTime": 1788704058034.1338,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.45,
+        "responseStart": 143.685,
+        "responseEnd": 145.415
+      }
+    },
+    {
+      "path": "/api/year",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.126,
+      "timing": {
+        "startTime": 1788704058285.284,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.677,
+        "responseStart": 124.247,
+        "responseEnd": 125.891
+      }
+    },
+    {
+      "path": "/api/places",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.096,
+      "timing": {
+        "startTime": 1788704059771.6792,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.296,
+        "responseStart": 87.669,
+        "responseEnd": 90.116
+      }
+    },
+    {
+      "path": "/api/claims",
+      "subject": [
+        "place-pyongyang"
+      ],
+      "names": null,
+      "elapsed": 0.271,
+      "timing": {
+        "startTime": 1788704059877.9102,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.675,
+        "responseStart": 269.54,
+        "responseEnd": 271.569
+      }
+    },
+    {
+      "path": "/api/mentions",
+      "subject": null,
+      "names": [
+        "平穰,平壤,平穰城,平壤城"
+      ],
+      "elapsed": 5.218,
+      "timing": {
+        "startTime": 1788704059876.739,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.536,
+        "responseStart": 5214.355,
+        "responseEnd": 5217.405
+      }
+    },
+    {
+      "path": "/api/claims",
+      "subject": [
+        "person-gwanggaeto"
+      ],
+      "names": null,
+      "elapsed": 5.015,
+      "timing": {
+        "startTime": 1788704060448.623,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.737,
+        "responseStart": 5014.059,
+        "responseEnd": 5016.17
+      }
+    },
+    {
+      "path": "/api/mentions",
+      "subject": null,
+      "names": [
+        "國岡上廣開土境平安好太王"
+      ],
+      "elapsed": 8.278,
+      "timing": {
+        "startTime": 1788704060446.9468,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.483,
+        "responseStart": 8276.992,
+        "responseEnd": 8279.23
+      }
+    },
+    {
+      "path": "/api/source",
+      "subject": null,
+      "names": null,
+      "elapsed": 2.952,
+      "timing": {
+        "startTime": 1788704065997.375,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.227,
+        "responseStart": 2951.386,
+        "responseEnd": 2954.144
+      }
+    },
+    {
+      "path": "/api/sources",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.107,
+      "timing": {
+        "startTime": 1788704069219.638,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.206,
+        "responseStart": 89.796,
+        "responseEnd": 92.164
+      }
+    },
+    {
+      "path": "/api/history-map",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.011,
+      "timing": {
+        "startTime": 1788704069354.338,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.726,
+        "responseStart": 2.996,
+        "responseEnd": 4.633
+      }
+    },
+    {
+      "path": "/api/history-map",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.01,
+      "timing": {
+        "startTime": 1788704069486.727,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.491,
+        "responseStart": 2.348,
+        "responseEnd": 4.091
+      }
+    },
+    {
+      "path": "/api/year",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.108,
+      "timing": {
+        "startTime": 1788704069735.807,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 1.975,
+        "responseStart": 107.266,
+        "responseEnd": 110.678
+      }
+    },
+    {
+      "path": "/api/year",
+      "subject": null,
+      "names": null,
+      "elapsed": 0.094,
+      "timing": {
+        "startTime": 1788704070005.1401,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 1.726,
+        "responseStart": 91.867,
+        "responseEnd": 96.68
+      }
+    },
+    {
+      "path": "/api/elevation",
+      "subject": null,
+      "names": null,
+      "elapsed": 8.143,
+      "timing": {
+        "startTime": 1788704072140.962,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 0.271,
+        "responseStart": 2.102,
+        "responseEnd": 5.096
+      }
+    },
+    {
+      "path": "/api/claims",
+      "subject": [
+        "place-gungnae"
+      ],
+      "names": null,
+      "elapsed": 0.966,
+      "timing": {
+        "startTime": 1788704087005.101,
+        "domainLookupStart": -1,
+        "domainLookupEnd": -1,
+        "connectStart": -1,
+        "secureConnectionStart": -1,
+        "connectEnd": -1,
+        "requestStart": 2.373,
+        "responseStart": 694.509,
+        "responseEnd": 698.985
+      }
+    }
+  ]
+}
