@@ -97,6 +97,7 @@ async def run(url: str, out: Path) -> int:
 
         # 2. 지도
         await pg.click("#enter")
+        await pg.click("#allSources")
         await pg.wait_for_timeout(1500)
         stats = await pg.evaluate(
             """() => { const c=document.getElementById('map'); const x=c.getContext('2d');

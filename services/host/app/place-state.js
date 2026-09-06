@@ -15,6 +15,13 @@ export function originMatches(record, origin = 'all', parent = null){
   return origin === 'all' || (record.origin ?? parent?.origin) === origin;
 }
 
+export function lensStrength(candidate, place, primary = null){
+  if(!primary?.size)return 1;
+  const source=candidate.fromSource||candidate.sourceId||place?.sourceId;
+  if(source)return primary.has(source)?1:0.32;
+  return Object.keys(place?.mentions||{}).some(id=>primary.has(id))?1:0.32;
+}
+
 export function candActive(candidate, year, parent=null){
   const from='validFrom' in candidate?candidate.validFrom:parent?.validFrom;
   const to='validTo' in candidate?candidate.validTo:parent?.validTo;

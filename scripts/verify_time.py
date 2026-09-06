@@ -24,6 +24,7 @@ def main():
         errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
         page.goto(args.base+'/?q=low',wait_until='networkidle',timeout=180000)
         page.locator('#enter').click();page.locator('#timeClaimsBtn').click()
+        page.locator('#allSources').click()
         page.locator('.time-projection').first.wait_for()
         first=data['events'][0]['conversions'][0]
         page.locator('.time-projection[data-claim="'+first['id']+'"]').click()

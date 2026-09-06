@@ -9,7 +9,7 @@ coversFrom: null
 coversTo: null
 compiler: "동북아역사재단 (동북아역사넷)"
 originalLanguage: "ko"
-defaultLens: false
+defaultLens: true
 license: "restricted"
 licenseDetail: "공공누리 마크 표시. 유형 번호 미확인."
 status: "draft"

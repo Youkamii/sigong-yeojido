@@ -425,6 +425,10 @@ class Handler(BaseHTTPRequestHandler):
         path = u.path
         q = parse_qs(u.query, keep_blank_values=True)
 
+        if path == '/api/lenses':
+            file=DATA/'lenses.json'
+            self._json(json.loads(file.read_text(encoding='utf-8')) if file.exists() else {'default':None,'lenses':[]})
+            return
         if path == "/api/places":
             self._json(places_with_mentions())
             return

@@ -38,6 +38,9 @@ def main():
     claims = []
     entities = {}
     withheld = []
+    lens_file=args.data/'lenses.json'
+    lens_config=json.loads(lens_file.read_text(encoding='utf-8')) if lens_file.exists() else {'lenses':[]}
+    default_sources=set(next((l['sources'] for l in lens_config['lenses'] if l['id']==lens_config.get('default')),[]))
 
     def entity(eid, label, hanja=None):
         entities[eid] = {'type': 'Place', 'id': eid, 'label': label}
@@ -143,7 +146,7 @@ def main():
                   'sourceGroup': '현대 좌표' if sid == 'geonames' else '현대 위치 연구',
                   'composedYear': source.get('year'), 'coversFrom': None, 'coversTo': None,
                   'compiler': source.get('author', source['institution']), 'originalLanguage': 'und' if sid == 'geonames' else 'ko',
-                  'defaultLens': False, 'license': 'CC-BY-4.0' if sid == 'geonames' else 'restricted',
+                  'defaultLens': 'src-'+sid in default_sources, 'license': 'CC-BY-4.0' if sid == 'geonames' else 'restricted',
                   'licenseDetail': source['license'], 'status': 'draft', 'verified': None,
                   'resource': source['url'], 'accessed': source['accessed'], 'generated_by': 'claude-opus-5'}
         body = '# ' + source['title'] + '\n\n' + source['institution'] + '\n\n'

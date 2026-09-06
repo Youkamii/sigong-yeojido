@@ -23,6 +23,7 @@ def main():
         page.on('pageerror',lambda error:errors.append(str(error)))
         page.goto(args.base+'/?q=low',wait_until='networkidle',timeout=180000)
         page.locator('#enter').click()
+        page.locator('#allSources').click()
         page.locator('#bchat').click()
         page.locator('#chatQuestion').fill('광개토왕의 이름과 즉위에 대해 비문은 어떻게 서술하나?')
         started=time.monotonic()

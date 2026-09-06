@@ -1,0 +1,17 @@
+{
+  "default": "modern-excerpts",
+  "lenses": [
+    {
+      "id": "modern-excerpts",
+      "label": "현대 연구 · 백과와 기관 지도",
+      "description": "한국민족문화대백과사전 집필 항목과 동북아역사재단 지도 발췌. 현재 위치 근거가 있는 일부 지명에 한정한다. 각 항목의 집필자와 견해는 사료 카드에서 확인한다.",
+      "sources": ["src-encykorea-gungnaeseong", "src-encykorea-anhakgung", "src-encykorea-nangnang-toseong", "src-encykorea-nangnang-gobun", "src-encykorea-daebang-gun", "src-nahf-ismy-gungnaeseong", "src-nahf-ismy-pyongyangseong", "src-geonames"]
+    },
+    {"id": "nahf-map", "label": "동북아역사재단 문화유산 지도", "description": "국내성·평양성 항목 발췌. 직접 지도 좌표는 국내성 1개다.", "sources": ["src-nahf-ismy-gungnaeseong", "src-nahf-ismy-pyongyangseong"]},
+    {"id": "bok-2020", "label": "복기대 2020 · 국내성 위치", "description": "논문 초록의 철령시 일대 비정. GeoNames 점은 현대 지역 대표점이다.", "sources": ["src-kci-bok-2020-gungnae", "src-geonames"]},
+    {"id": "lee-2017", "label": "이덕일 2017 · 조선현 위치", "description": "논문 초록의 노룡현 북쪽 비정. 지도 점은 방향을 읽는 노룡현 기준점이다.", "sources": ["src-kci-lee-2017-joseonhyeon", "src-geonames"]},
+    {"id": "samguksagi", "label": "삼국사기", "description": "삼국사기 주장과 이 사료에서 조사한 위치 후보.", "sources": ["src-samguksagi"]},
+    {"id": "samgukyusa", "label": "삼국유사", "description": "삼국유사 주장과 이 사료에서 조사한 위치 후보.", "sources": ["src-samgukyusa"]},
+    {"id": "goryeosa", "label": "고려사", "description": "고려사 주장과 이 사료에서 조사한 위치 후보.", "sources": ["src-goryeosa"]}
+  ]
+}

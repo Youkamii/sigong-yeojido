@@ -1,4 +1,4 @@
-import { activeAt, candActive, originMatches, sourceMatches, DIORAMA_BOUNDS, inDiorama } from './place-state.js';
+import { activeAt, candActive, originMatches, sourceMatches, lensStrength, DIORAMA_BOUNDS, inDiorama } from './place-state.js';
 // app/korea.js — 실제 한반도를 판톨로지 아트 바이블의 언어로 세운다.
 //
 // 판톨로지의 terrain.js 는 절차 생성 판타지 대륙이다. 우리는 지형이 실측이므로
@@ -580,6 +580,11 @@ export class KoreaWorld {
     this._applyLive();
   }
 
+  setPrimarySources(sources) {
+    this._primary = new Set(sources);
+    this._applyLive();
+  }
+
   _isLive(p) {
     return activeAt(p, this._year ?? 0, this._on ?? null, this._origin ?? 'all');
   }
@@ -616,6 +621,8 @@ export class KoreaWorld {
         if (o.userData?.cand) live = placeLive && this._candActive(o.userData.cand);
         else if (o.userData?.linkCands) live = placeLive && o.userData.linkCands.every((c) => this._candActive(c));
         live = live && o.visible;
+        const strength=Math.min(...candidates.map(c=>lensStrength(c,p,this._primary)));
+        o.userData.lensStrength=strength;
         if (o.userData?.label) {
           o.userData.label.visible = live && !labelShown && budget.has(p.id);
           if (o.userData.label.visible) this._labels.push(o.userData.label);
@@ -635,7 +642,7 @@ export class KoreaWorld {
               mat.userData.__baseOpacity = mat.opacity != null ? mat.opacity : 1;
             }
             mat.transparent = true;
-            mat.opacity = live ? mat.userData.__baseOpacity : mat.userData.__baseOpacity * 0.12;
+            mat.opacity = (live ? mat.userData.__baseOpacity : mat.userData.__baseOpacity * 0.12)*strength;
           }
         });
       }
@@ -698,7 +705,7 @@ export class KoreaWorld {
       if (box.left < 0 || box.right > width || box.top < 0 || box.bottom > height) continue;
       if (boxes.some(b => box.left < b.right && box.right > b.left && box.top < b.bottom && box.bottom > b.top)) continue;
       label.visible = true;
-      label.material.opacity = label.parent.userData.materialize.value;
+      label.material.opacity = label.parent.userData.materialize.value*(label.parent.userData.lensStrength??1);
       label.userData.screenBox = box;
       boxes.push(box);
     }

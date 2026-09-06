@@ -9,7 +9,7 @@ coversFrom: null
 coversTo: null
 compiler: "이기동"
 originalLanguage: "ko"
-defaultLens: false
+defaultLens: true
 license: "restricted"
 licenseDetail: "공공누리 (사전 공통 안내)"
 status: "draft"

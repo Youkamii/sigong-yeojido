@@ -279,6 +279,12 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div class="sect">찾기</div>
       <input id="q" class="q" type="search" placeholder="지명 · 인물 · 나라 · 사건" autocomplete="off" aria-label="찾기">
       <div id="qList" class="qlist"></div>
+      <div class="sect">주 렌즈</div>
+      <select id="lensSelect" class="q" aria-label="주 렌즈"></select>
+      <p id="lensNote" class="empty"></p>
+      <p class="empty">주 렌즈는 진하게, 추가로 켠 비교 사료는 옅게 겹쳐 보인다.</p>
+      <button id="allSources" class="card-btn">모든 사료 켜기</button>
+      <button id="noSources" class="card-btn">모두 끄기</button>
       <div class="sect">사료</div>
       <div id="srcList"></div>
       <div class="sect">범례</div>
@@ -326,12 +332,12 @@ import { groupSources } from './app/source-groups.js';
 import { GraphExplorer } from './app/graph.js';
 import { EvidenceChat } from './app/chat.js';
 import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
-import { activeAt as placeActiveAt, candActive as candidateActive, originMatches, sourceMatches, outsideCandidates } from './app/place-state.js';
+import { activeAt as placeActiveAt, candActive as candidateActive, originMatches, sourceMatches, lensStrength, outsideCandidates } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
 
 const state = {
   places: [], geo: null, chunks: [], sources: [], entities: [],
-  on: new Set(), year: 414, sel: null, hot: null, mode: '2d', panel: null, origin: 'all', mapFocus: null
+  on: new Set(), primary: new Set(), lenses: [], year: 414, sel: null, hot: null, mode: '2d', panel: null, origin: 'all', mapFocus: null
 };
 new ResizeObserver(entries=>{
   const height=entries[0].target.getBoundingClientRect().height;
@@ -466,11 +472,12 @@ function proj(lon, lat, v){
 // ── 데이터 ──
 async function load(){
   // 원문 조각은 여기서 받지 않는다 — 근거는 지명을 골랐을 때 서버가 찾아 준다(/api/mentions).
-  const [p, g, s, en] = await Promise.all([
+  const [p, g, s, en, lenses] = await Promise.all([
     fetch('/api/places').then(r=>r.json()),
     fetch('/api/geo').then(r=>r.json()),
     fetch('/api/sources').then(r=>r.json()),
     fetch('/api/entities').then(r=>r.json()).catch(()=>({entities:[]})),
+    fetch('/api/lenses').then(r=>r.json()),
   ]);
   state.places = p.places || [];
   state.geo = g;
@@ -480,13 +487,40 @@ async function load(){
   try{ const dn = await fetch('/api/density').then(r=>r.json()); state.density = dn.sources || {}; }catch(e){ state.density = {}; }
   state.sources.forEach(src => { src.density = state.density[src.id] || null; });
   state.chunkTotal = state.sources.reduce((n, x) => n + (x.chunkCount || 0), 0);
-  state.sources.forEach(x => state.on.add(x.id));
+  state.lenses=lenses.lenses||[];
+  const lensSelect=document.getElementById('lensSelect');
+  for(const lens of state.lenses){const option=document.createElement('option');option.value=lens.id;option.textContent=lens.label;lensSelect.append(option);}
+  const initial=state.lenses.find(l=>l.id===lenses.default);
+  state.primary=new Set(initial?.sources||state.sources.filter(s=>s.defaultLens).map(s=>s.id));
+  state.on=new Set(state.primary);
+  if(initial){lensSelect.value=initial.id;document.getElementById('lensNote').textContent=initial.description;}
   renderRail();
   renderStats();
   draw();
   mountTimeline();
   refreshTimeClaims();
 }
+
+function selectSource(id,on){
+  if(!on){state.on.delete(id);return;}
+  state.on.add(id);
+  for(const place of state.places)for(const candidate of place.candidates||[])
+    if(candidate.fromSource===id)for(const dependency of candidate.requiredSources||[])state.on.add(dependency);
+}
+function sourceSelectionChanged(){
+  renderRail();draw();if(state.mode==='3d')draw3d();
+  if(tl){tl.setSources(state.sources.map(s=>({...s,defaultLens:state.primary.has(s.id)})));tl.setOn(state.on);}
+  refreshEvidence();scheduleYearCount();
+}
+function useLens(lens){
+  state.primary=new Set(lens.sources);state.on=new Set();
+  lens.sources.forEach(id=>selectSource(id,true));
+  document.getElementById('lensNote').textContent=lens.description||lens.label;
+  sourceSelectionChanged();
+}
+document.getElementById('lensSelect').onchange=event=>useLens(state.lenses.find(l=>l.id===event.target.value));
+document.getElementById('allSources').onclick=()=>{state.on=new Set(state.sources.map(s=>s.id));sourceSelectionChanged();};
+document.getElementById('noSources').onclick=()=>{state.on.clear();sourceSelectionChanged();};
 
 // ── 찾기 — 지명은 지도에서, 인물·나라·사건·관직은 주장(Claim)으로 이어진다 ──
 const TYPE_KO = {Place:'지명', Person:'인물', Polity:'나라', Event:'사건', Office:'관직', TimeSpan:'시점', Location:'좌표', Conflict:'충돌'};
@@ -529,15 +563,13 @@ function mountTimeline(){
   if(tl){ tl.setSources(state.sources); tl.setOn(state.on); tl.setYear(state.year); return; }
   tl = new Timeline(host, {
     onTimeClaim:openTimeProjection,
-    sources: state.sources, year: state.year, on: state.on,
+    sources: state.sources.map(s=>({...s,defaultLens:state.primary.has(s.id)})), year: state.year, on: state.on,
     onYear(y){ state.year = y; setYearUI(y); draw(); if(state.mode==='3d') draw3d(); scheduleYearCount(); },
     onToggle(id, on){
-      on ? state.on.add(id) : state.on.delete(id);
-      renderRail(); draw(); if(state.mode==='3d') draw3d(); refreshEvidence(); scheduleYearCount();
+      selectSource(id,on);sourceSelectionChanged();
     },
     onToggleGroup(ids, on){
-      ids.forEach(id => on ? state.on.add(id) : state.on.delete(id));
-      renderRail(); draw(); if(state.mode==='3d') draw3d(); refreshEvidence(); scheduleYearCount();
+      ids.forEach(id=>selectSource(id,on));sourceSelectionChanged();
     },
   });
   window.__timeline = tl;   // 검증 하네스용
@@ -676,20 +708,21 @@ function renderRail(){
     row.className = 'srcrow';
     const b = document.createElement('button');
     b.className = 'src' + (state.on.has(s.id) ? ' on' : '');
+    b.dataset.source=s.id;
     b.innerHTML = `<span class="dot"></span><span class="t">${escH(s.label||s.id)}
-      <em>${s.composedYear!=null?escH(s.composedYear)+'년 편찬':''} · chunk ${escH(s.chunkCount||0)}</em></span>`;
+      <em>${state.primary.has(s.id)?'주 렌즈':state.on.has(s.id)?'비교 사료':'꺼짐'} · ${s.composedYear!=null?escH(s.composedYear)+'년 편찬 · ':''}chunk ${escH(s.chunkCount||0)}</em></span>`;
     const cb = document.createElement('button');
     cb.className = 'card-btn'; cb.type = 'button'; cb.dataset.id = s.id; cb.title = '사료 카드 — 출처·라이선스·연도 근거';
     cb.textContent = '카드';
     cb.onclick = (e) => { e.stopPropagation(); showSource(s.id); };
     b.onclick = () => {
-      state.on.has(s.id) ? state.on.delete(s.id) : state.on.add(s.id);
-      renderRail(); draw(); if(state.mode==='3d') draw3d();
-      if(tl) tl.setOn(state.on);
-      refreshEvidence();
-      scheduleYearCount();
+      selectSource(s.id,!state.on.has(s.id));sourceSelectionChanged();
     };
     row.appendChild(b); row.appendChild(cb);
+    const primary=document.createElement('button');primary.className='card-btn';primary.textContent='주';
+    primary.title='이 사료를 주 렌즈로 보기';primary.dataset.primary=s.id;
+    primary.onclick=()=>{document.getElementById('lensSelect').value='';useLens({label:s.label,sources:[s.id]});};
+    row.append(primary);
     container.appendChild(row);
     }
   }
@@ -848,7 +881,7 @@ function draw(){
     pts.forEach((q,i) => {
       const first = shown[i] === p.candidates[0] || (live && i === 0);
       const r = first ? 6 : 5;
-      const a = live ? 1 : .22;
+      const a = (live ? 1 : .22)*lensStrength(shown[i],p,state.primary);
       ctx.globalAlpha = a;
       if(state.sel === p.id || state.hot === p.id){
         ctx.beginPath(); ctx.arc(q[0],q[1], r+7, 0, 7);
@@ -1114,6 +1147,7 @@ async function init3d(){
   window.__sigong = R;   // 디버그 훅
   world.setYear(state.year);
   world.setOrigin(state.origin);
+  world.setPrimarySources(state.primary);
   if(world.setSourcesOn) world.setSourcesOn(state.on);
   if(state.sel) world.setSelected(state.sel);
   engine.setPickTargets(world.pickTargets.filter(target => target.parent.visible));
@@ -1147,6 +1181,7 @@ function draw3d(){
   if(!R) return;
   R.world.setYear(state.year);
   R.world.setOrigin(state.origin);
+  R.world.setPrimarySources(state.primary);
   if(R.world.setSourcesOn) R.world.setSourcesOn(state.on);
   R.world.setSelected(state.sel);
   R.engine.setPickTargets(R.world.pickTargets.filter(target => target.parent.visible));

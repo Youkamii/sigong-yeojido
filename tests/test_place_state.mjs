@@ -1,6 +1,12 @@
 import { strict as assert } from 'node:assert';
 import { test } from 'node:test';
-import { activeAt, candActive, originMatches, sourceMatches, outsideCandidates, inDiorama } from '../services/host/app/place-state.js';
+import { activeAt, candActive, originMatches, sourceMatches, lensStrength, outsideCandidates, inDiorama } from '../services/host/app/place-state.js';
+
+test('a shared coordinate source does not turn another historical opinion into the main lens',()=>{
+  const primary=new Set(['main','coordinates']);
+  assert.equal(lensStrength({fromSource:'main'},null,primary),1);
+  assert.equal(lensStrength({fromSource:'comparison',requiredSources:['comparison','coordinates']},null,primary),0.32);
+});
 
 test('each coordinate follows its own source and derived points require both sources',()=>{
   const p={mentions:{old:2},validFrom:3,validTo:427,candidates:[

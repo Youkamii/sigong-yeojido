@@ -17,6 +17,7 @@ async def run(args):
         page.on('pageerror',lambda error:errors.append(str(error)))
         await page.goto(args.url,wait_until='networkidle',timeout=90000)
         await page.click('#enter')
+        await page.click('#allSources')
         await page.wait_for_function('window.__timeline?.sources.length > 0')
         await page.click('#bgraph')
         await page.locator('#graph .graph-node').first.wait_for(state='visible')

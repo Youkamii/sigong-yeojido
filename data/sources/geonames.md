@@ -9,7 +9,7 @@ coversFrom: null
 coversTo: null
 compiler: "Unxos GmbH (St. Gallen, Switzerland)"
 originalLanguage: "und"
-defaultLens: false
+defaultLens: true
 license: "CC-BY-4.0"
 licenseDetail: "Creative Commons Attribution 4.0 International"
 status: "draft"

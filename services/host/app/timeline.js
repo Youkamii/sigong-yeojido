@@ -71,6 +71,7 @@ const CSS = `
 .tl-track.lens .tl-label-text{fill:var(--paper);font-weight:500}
 .tl-track.off .tl-label-text{fill:var(--paper-3)}
 .tl-body{transition:opacity .18s}
+.tl-track:not(.lens):not(.off) .tl-body{opacity:.32}
 .tl-track.off .tl-body{opacity:.22}
 .tl-bar{fill:var(--celadon-dim)}
 .tl-track.lens .tl-bar{fill:var(--celadon)}
@@ -164,7 +165,7 @@ function titleOf(s){
   }
   if (isNum(s.composedYear)) parts.push(`${fmtYearFull(s.composedYear)}에 쓰임`);
   if (isNum(s.chunkCount)) parts.push(`원문 조각 ${s.chunkCount}`);
-  if (s.defaultLens) parts.push('기본 렌즈');
+  if (s.defaultLens) parts.push('주 렌즈');
   return parts.join(' · ');
 }
 
