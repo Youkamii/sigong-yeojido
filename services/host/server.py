@@ -51,7 +51,7 @@ from graph_query import neighborhood, locations, GraphUnavailable
 from chat import answer as chat_answer, ChatUnavailable
 from time_query import time_claims
 from people_query import people
-from comparison_query import comparison
+from comparison_query import comparison, differences
 from history_map import historical_features
 from citation_samples import citation_samples
 from places import load_places, with_locations, place_names
@@ -443,6 +443,15 @@ class Handler(BaseHTTPRequestHandler):
         u = urlparse(self.path)
         path = u.path
         q = parse_qs(u.query, keep_blank_values=True)
+
+        if path=='/api/comparison-differences':
+            srcs=q.get('sources',[None])[0]
+            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            try:self._json(differences(sources,q.get('origin',['all'])[0],{s['id']:s for s in index()['sources']},
+                                      q.get('limit',[10])[0],q.get('offset',[0])[0],q.get('sourceA',[None])[0],q.get('sourceB',[None])[0]))
+            except ValueError as exc:self._json({'error':str(exc)},400)
+            except GraphUnavailable as exc:self._json({'error':str(exc)},503)
+            return
 
         if path in ('/api/comparisons','/api/compare'):
             file=DATA/'comparisons.json'
