@@ -1,0 +1,47 @@
+{
+  "claims": [
+    "claim-asin-death-sg-date",
+    "claim-asin-death-sg-person",
+    "claim-ahwa-death-ns-date",
+    "claim-ahwa-death-ns-person",
+    "claim-asin-death-to-405-encykorea",
+    "claim-asin-ahwa-identity-jawp",
+    "claim-asin-ahwa-death-same-event",
+    "claim-ahwa-death-to-285-jawp"
+  ],
+  "newSources": [
+    "src-web-seisaku-nihonshoki-10",
+    "src-web-encykorea-asinwang",
+    "src-web-jawikipedia-asinwang",
+    "src-jawp-285nen"
+  ],
+  "chunks": [
+    {
+      "chunk": "chunk_ns10-ojin16-death",
+      "pageSha256": "c8875ffff4d3534aeb16a66d20be00a25840731ba5654cc064ec4ac1ffd3bc90",
+      "quoteVerified": true
+    },
+    {
+      "chunk": "chunk_encykorea-asin-death-metadata",
+      "pageSha256": "5ab7e22c56c0808e3b62aa6600df709e084a6ee33a5ca7c0759502c57906828b",
+      "quoteVerified": true
+    },
+    {
+      "chunk": "chunk_jawp-asin-ahwa-identity",
+      "pageSha256": "a086931d5d77380fa08e58d091c85de3d9e9dd3423b2924094830009964b5f95",
+      "quoteVerified": true
+    },
+    {
+      "chunk": "chunk_jawp-285-ojin16",
+      "pageSha256": "80cb0adaefcb21e33c025ab29b4c5eb4ee17cf4c83c68afdc91c565c9beec085",
+      "quoteVerified": true
+    }
+  ],
+  "existingSgChunk": "chunk_samguksagi_sg_025_0030_0250",
+  "discarded": "agent-inserted ellipsis in the Wikisource quote; used actual stored NIKH passage instead",
+  "years": {
+    "modern_encyclopedia": 405,
+    "traditional_japanese_chronology": 285
+  },
+  "humanReviewed": false
+}

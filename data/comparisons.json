@@ -45,6 +45,33 @@
         "src-samgukyusa"
       ],
       "research": "se-sabi-transfer"
+    },
+    {
+      "id": "asin-ahwa-death",
+      "label": "아신왕·아화왕 사망 · 삼국사기와 일본서기",
+      "description": "삼국사기 아신왕 14년 조의 秋九月과 일본서기 응신 16년의 是歲를 비교한다. 현대 해설은 사망을 405년으로 적고, 일본 전통 기년 대조표는 응신 16년을 285년에 둔다. 환산 방식이 달라 120년 차이가 나며 실제 사망을 285년으로 확정하지 않는다. 인물 표기와 두 사망 서술을 근거로 AI가 사건을 연결했다.",
+      "rows": [
+        "claim-asin-death-sg-date",
+        "claim-ahwa-death-ns-date"
+      ],
+      "links": [
+        {
+          "id": "claim-asin-ahwa-identity-jawp",
+          "subject": "person-asinwang-sg"
+        },
+        {
+          "id": "claim-asin-ahwa-death-same-event",
+          "subject": "event-baekje-ahwawang-death-ns"
+        }
+      ],
+      "sources": [
+        "src-samguksagi",
+        "src-web-seisaku-nihonshoki-10",
+        "src-web-encykorea-asinwang",
+        "src-web-jawikipedia-asinwang",
+        "src-jawp-285nen"
+      ],
+      "research": "cross-chronology-53-55 and ojin16-conversion-53"
     }
   ]
 }

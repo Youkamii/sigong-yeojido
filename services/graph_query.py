@@ -47,7 +47,7 @@ def neighborhood(entity, sources=None, origin='all', limit=30, offset=0, *, unat
     query = f'''
 SELECT DISTINCT ?claim ?subject ?predicate ?objectKind ?object ?source ?chunk ?quote ?origin ?status
        ?subjectLabel ?subjectType ?objectLabel ?objectType ?sourceLabel ?locator ?permalink
-       ?verbatim ?precision ?year ?earliest ?latest ?calendar ?lat ?lon ?validFrom ?validTo
+       ?verbatim ?precision ?year ?earliest ?latest ?calendar ?lat ?lon ?validFrom ?validTo ?note
 WHERE {{
   ?claim a syj:Claim; syj:subject ?subject; syj:predicate ?predicate; syj:fromSource ?source;
          syj:citesChunk ?chunk; syj:quote ?quote; syj:origin ?origin; syj:status ?status;
@@ -56,6 +56,7 @@ WHERE {{
   {selected} {authors}
   FILTER(?subject = {focus} || EXISTS {{?claim syj:objectEntity {focus}}} || EXISTS {{?claim syj:objectTime {focus}}})
   OPTIONAL {{?subject rdfs:label ?subjectLabel}}
+  OPTIONAL {{?claim syj:note ?note}}
   OPTIONAL {{?subject a ?subjectType}}
   OPTIONAL {{?object rdfs:label ?objectLabel}}
   OPTIONAL {{?object a ?objectType}}
@@ -96,7 +97,7 @@ WHERE {{
             label=f"{obj['lat']}, {obj['lon']}"
         claim={'id':cid,'subject':subject,'predicate':'syj:'+local(row['predicate']),'object':obj,
                'fromSource':source,'citesChunk':chunk,'quote':row['quote'],'origin':row['origin'],'status':row['status'],
-               'sourceLabel':row.get('sourceLabel',source),'subjectLabel':row.get('subjectLabel',subject),
+               'sourceLabel':row.get('sourceLabel',source),'subjectLabel':row.get('subjectLabel',subject),'note':row.get('note',''),
                'chunk':{'id':chunk,'sourceId':source,'locator':row.get('locator'),'permalink':row.get('permalink')}}
         for key in ('validFrom','validTo'):
             if key in row: claim[key]=int(row[key])

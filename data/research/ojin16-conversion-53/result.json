@@ -1,0 +1,428 @@
+{
+  "meta": {
+    "task": "ojin16-conversion-53",
+    "draftStatus": "AI 초안 — 사람 검토 없음. 적재 전 각 URL 을 사람이 직접 열어 글자를 대조할 것.",
+    "producedBy": "claude-opus-5 (조사·수집만 수행). 구현·저장소 변경 없음. 외부 연락 없음.",
+    "producedAt": "2026-09-06",
+    "scope": "previous-result.json 의 uncertainty 'uv-ojin16-ce-conversion' 하나만 대상으로 했다. 두 사건 동일성 근거, 405년 백과 설명, gap-2(鴻嘉)는 재조사하지 않았다.",
+    "outcome": "성공(부분). 『日本書紀』 應神天皇十六年에 서기 285년을 직접 병기한 공개 연표 자료 2건을 확보했고, 그 환산이 무엇에 근거하는지(『日本長暦』)와 應神 元年 = 270년이라는 기준도 같은 자료에서 확보했다. 다만 두 자료가 모두 일본어 위키백과라 상호 독립 검증이 아니다. 기관·학술 자료는 확보하지 못했다.",
+    "layerSeparation": {
+      "layerA_전통기년의_환산": "『日本書紀』가 적은 天皇 즉위기년(應神十六年)을 그대로 서기로 옮긴 값. 이번에 확보한 285년이 여기 속한다. 근거로 지목된 것은 『日本長暦』.",
+      "layerB_후대연구의_실연대_비정": "같은 기사를 실제 몇 년의 사건으로 볼 것인가라는 별개의 층. ja.wikipedia 「応神天皇」의 재위 표기 '(390年?)' 와 '應神三年条（272年→392年）' 표기, 그리고 '『三国史記』 연대보다 120년 遡行' 진술이 여기 속한다.",
+      "rule": "두 층을 같은 필드에 넣지 않았다. 285 를 '아화왕이 죽은 해'로 적재하면 안 된다. 자료가 말한 것은 '書紀 기년 十六年을 서기로 옮기면 285년'까지다."
+    },
+    "quotationPolicy": {
+      "rule": "웹페이지 1개당 직접 인용 합계 25단어 이하. 생략부호를 넣은 인용 금지 — 연속된 짧은 원문만 인용했다.",
+      "cjkWordConvention": "한자·가나는 공백 단어 구분이 없어 약 1.8자를 1단어로 환산했다(페이지당 45자 상당). 실제로는 그보다 짧게 잘랐다. 이 환산 방식은 내 판단이며 자료가 정한 것이 아니다.",
+      "tableRule": "표에서 읽은 값은 quote 로 만들지 않았다. 표의 여러 칸을 이어 붙인 문자열은 이 파일 어디에도 quote 로 쓰지 않았다. 표에서 읽은 값은 claim 의 note 와 source 의 tableReading 에만 적었다.",
+      "truncationRule": "인용 한도 때문에 문장의 앞부분을 뺀 경우, 뺀 부분은 생략부호 없이 note 에 서술로만 남겼다(그 서술은 인용이 아니다)."
+    }
+  },
+
+  "sources": [
+    {
+      "id": "src-jawp-285nen",
+      "title": "285年 (일본어판 위키백과 연도 항목)",
+      "url": "https://ja.wikipedia.org/wiki/285%E5%B9%B4",
+      "publisher": "Wikipedia 일본어판. 개별 저자 표시 없음.",
+      "edition": "페이지 하단 표기 '最終更新 2023年11月30日 (木) 18:45'. 열람 2026-09-06.",
+      "sourceKind": "tertiary-wiki / 공개 연표 항목",
+      "lang": "ja",
+      "accessStatus": "read",
+      "excerpts": [
+        {
+          "id": "ex-285-ojin16",
+          "text": "応神天皇16年",
+          "locator": "「285年」 › 他の紀年法 › 日本 항목의 한 줄",
+          "url": "https://ja.wikipedia.org/wiki/285%E5%B9%B4"
+        },
+        {
+          "id": "ex-285-kouki945",
+          "text": "皇紀945年",
+          "locator": "「285年」 › 他の紀年法 › 日本 항목의 다른 한 줄 (위 줄과 같은 목록)",
+          "url": "https://ja.wikipedia.org/wiki/285%E5%B9%B4"
+        }
+      ],
+      "quoteBudget": {"charsQuoted": 13, "estimatedWords": "약 7"},
+      "structureNote": "이 두 문자열은 '他の紀年法' 목록의 서로 다른 줄이다. 한 줄로 이어 붙이지 않았다. '285년 = 응신16년'이라는 대응은 항목 제목(285年)과 이 줄의 위치에서 나온다.",
+      "readButNotQuoted": [
+        "'できごと' 절에는 응신천황·백제(아화왕·직지) 관련 기사가 없다(조회 결과 '해당 없음')."
+      ],
+      "limits": [
+        "위키백과다. 3차 자료로 표시할 것.",
+        "이 항목은 환산의 근거·방법을 밝히지 않는다.",
+        "최종수정일이 2023-11-30 으로, 같이 쓴 「応神天皇」 항목(2026-08-23)과 판 시점이 다르다."
+      ]
+    },
+    {
+      "id": "src-jawp-jodai-taisho",
+      "title": "上古天皇の在位年と西暦対照表の一覧 (일본어판 위키백과)",
+      "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%8F%A4%E5%A4%A9%E7%9A%87%E3%81%AE%E5%9C%A8%E4%BD%8D%E5%B9%B4%E3%81%A8%E8%A5%BF%E6%9A%A6%E5%AF%BE%E7%85%A7%E8%A1%A8%E3%81%AE%E4%B8%80%E8%A6%A7",
+      "publisher": "Wikipedia 일본어판. 개별 저자 표시 없음.",
+      "edition": "최종수정일 표기를 조회에서 얻지 못했다(2회 시도, '없음'/'포함되지 않음'). 열람 2026-09-06.",
+      "sourceKind": "tertiary-wiki / 상고 천황 즉위기년-서기 대조표",
+      "lang": "ja",
+      "accessStatus": "read",
+      "excerpts": [
+        {
+          "id": "ex-taisho-basis",
+          "text": "『日本長暦』に基づく",
+          "locator": "문서 서두의 대조표 근거 설명 문장 안 (연속 부분)",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%8F%A4%E5%A4%A9%E7%9A%87%E3%81%AE%E5%9C%A8%E4%BD%8D%E5%B9%B4%E3%81%A8%E8%A5%BF%E6%9A%A6%E5%AF%BE%E7%85%A7%E8%A1%A8%E3%81%AE%E4%B8%80%E8%A6%A7"
+        },
+        {
+          "id": "ex-taisho-120",
+          "text": "『三国史記』が記す年代（4世紀後半～5世紀初頭）より120年遡る",
+          "locator": "같은 문서, 書紀 연대와 실연대의 차이를 언급하는 문장의 뒷부분 (연속 부분)",
+          "url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E5%8F%A4%E5%A4%A9%E7%9A%87%E3%81%AE%E5%9C%A8%E4%BD%8D%E5%B9%B4%E3%81%A8%E8%A5%BF%E6%9A%A6%E5%AF%BE%E7%85%A7%E8%A1%A8%E3%81%AE%E4%B8%80%E8%A6%A7"
+        }
+      ],
+      "quoteBudget": {"charsQuoted": 42, "estimatedWords": "약 23"},
+      "notQuotedButRead": {
+        "basisSentenceTail": "인용하지 않은 부분: 이 문장은 '어느 연대도 『日本書紀』의 기술을 바탕으로 편찬된 長暦인' 이라는 앞부분과, '고고학적 지견에 근거한 것이 아니다' 라는 뒷부분을 가진다. 인용 한도 때문에 서술로만 남긴다.",
+        "offsetSentenceHead": "인용하지 않은 부분: 이 문장의 주어는 '『日本書紀』가 적는 神功皇后·제15대 応神天皇 시대의 역대 백제왕 연대' 이며, 문장은 '~것이 알려져 있고' 로 이어진다. 인용 한도 때문에 서술로만 남긴다."
+      },
+      "tableReading": {
+        "howRead": "표를 직접 읽어 값만 옮겼다. 표의 칸을 이어 붙인 문자열을 quote 로 만들지 않았다.",
+        "columnHeaders": "왼쪽부터 応神天皇 / 西暦 / 皇紀 / 干支 (조회 결과)",
+        "rowsRead": [
+          {"reignYear": "応神天皇元年", "西暦": 270},
+          {"reignYear": "応神天皇3年", "西暦": 272},
+          {"reignYear": "応神天皇13年", "西暦": 282},
+          {"reignYear": "応神天皇14年", "西暦": 283},
+          {"reignYear": "応神天皇15年", "西暦": 284},
+          {"reignYear": "応神天皇16年", "西暦": 285},
+          {"reignYear": "応神天皇17年", "西暦": 286},
+          {"reignYear": "応神天皇41年", "西暦": 310}
+        ],
+        "readingIncident": "첫 조회에서 '応神天皇16年 = 286年' 이라는 답이 나왔고, 행을 지정해 재조회하니 '16年 → 285年, 17年 → 286年' 로 정정됐다. 첫 답은 한 행 어긋난 오독으로 보인다. 두 번째 판독만 채택했고, 이 사고 자체를 uncertainty 로 남긴다(uv-table-row-misread).",
+        "myArithmeticCheck": "270(元年)과 310(41年)은 40년 간격이고 16년째가 285 인 것과 어긋나지 않는다. 이 확인은 내 뺄셈이며 자료의 진술이 아니다."
+      },
+      "limits": [
+        "위키백과다. 3차 자료로 표시할 것.",
+        "『日本長暦』 자체를 확인하지 않았다. 편자·성립연대·판본 미확인(uv-nihoncholeki-unchecked).",
+        "표의 皇紀·干支 열은 이번 조사에서 값을 따로 받지 않았다(응신 각 연도에 대해). 열 이름만 확인했다.",
+        "이 문서가 든 120년 차이 진술에 어떤 전거가 붙어 있는지 확인하지 않았다."
+      ]
+    },
+    {
+      "id": "src-jawp-ojin",
+      "title": "応神天皇 (일본어판 위키백과)",
+      "url": "https://ja.wikipedia.org/wiki/%E5%BF%9C%E7%A5%9E%E5%A4%A9%E7%9A%87",
+      "publisher": "Wikipedia 일본어판. 개별 저자 표시 없음.",
+      "edition": "페이지 하단 표기 '最終更新 2026年8月23日 (日) 04:56'. 열람 2026-09-06.",
+      "sourceKind": "tertiary-wiki",
+      "lang": "ja",
+      "accessStatus": "read",
+      "excerpts": [
+        {
+          "id": "ex-ojin-reign-390",
+          "text": "応神天皇元年（390年?）1月1日",
+          "locator": "「応神天皇」 기초정보(인포박스) 在位 항목의 앞부분 (연속 부분)",
+          "url": "https://ja.wikipedia.org/wiki/%E5%BF%9C%E7%A5%9E%E5%A4%A9%E7%9A%87"
+        },
+        {
+          "id": "ex-ojin-3year-arrow",
+          "text": "応神天皇3年条（272年→392年）",
+          "locator": "「応神天皇」 본문 중 백제 辰斯王 사망을 언급하는 문장 안 (연속 부분)",
+          "url": "https://ja.wikipedia.org/wiki/%E5%BF%9C%E7%A5%9E%E5%A4%A9%E7%9A%87"
+        }
+      ],
+      "quoteBudget": {"charsQuoted": 29, "estimatedWords": "약 16"},
+      "notQuotedButRead": {
+        "reignTail": "인용하지 않은 부분: 在位 항목은 '同41年（430年?）2月15日' 로 이어진다.",
+        "sentenceContext": "인용하지 않은 부분: 이 문장은 '『日本書紀』에서는' 으로 시작해 '백제의 辰斯王이 훙거했다고 기술되어 있고' 로 이어진다.",
+        "ojin16Mentions": "응신 16년 관련 기사(2월 王仁 초빙, 8월 신라 관련)는 본문에 있으나 서기 연도가 병기돼 있지 않다(조회 결과)."
+      },
+      "limits": [
+        "위키백과다. 3차 자료.",
+        "'（390年?）' 의 물음표는 자료 표기 그대로다. 이 값의 산출 근거를 인포박스가 밝히지 않는다.",
+        "'（272年→392年）' 화살표 표기의 의미를 문서가 설명하는 문장은 확인하지 못했다. 이 표기는 應神三年에 대한 것이고, 十六年으로 확장 적용하지 않았다.",
+        "인포박스의 390/430 과 대조표 문서의 270/310 은 서로 다른 층의 값이다. 같은 위키 안에서도 값이 다르다는 사실 자체를 기록해 둔다."
+      ]
+    },
+    {
+      "id": "src-kotobank-wani",
+      "title": "王仁(ワニ)とは？ 意味や使い方 (コトバンク 항목 집성 페이지)",
+      "url": "https://kotobank.jp/word/%E7%8E%8B%E4%BB%81-154262",
+      "publisher": "コトバンク (VOYAGE MARKETING / 朝日新聞社 계열 서비스). 개별 사전 항목의 출판사는 아래 참조.",
+      "edition": "페이지에 갱신일·판 표시가 없다(조회 결과).",
+      "sourceKind": "aggregator-of-published-reference-works",
+      "lang": "ja",
+      "accessStatus": "read",
+      "excerpts": [],
+      "negativeFinding": "이 페이지에 실린 사전 항목들에서 '応神天皇16年' 이나 서기 연도(285/405/378)를 병기한 문장을 찾지 못했다(조회 결과 '해당 없음'). 즉 출판 사전 계열에서 이번 환산 근거를 얻지 못했다.",
+      "dictionariesListedOnPage": [
+        "デジタル大辞泉 (小学館)",
+        "精選版 日本国語大辞典",
+        "ブリタニカ国際大百科事典 小項目事典",
+        "改訂新版 世界大百科事典 (평범사, 집필자 표기: 関 晃)",
+        "百科事典マイペディア (평범사)",
+        "日本大百科全書(ニッポニカ) (小学館, 집필자 표기: 志田諄一)",
+        "山川 日本史小辞典 改訂新版 (山川出版社)",
+        "旺文社日本史事典 三訂版 (旺文社)",
+        "デジタル版 日本人名大辞典+Plus (講談社)"
+      ],
+      "limits": [
+        "이 부정 결과는 WebFetch 발췌 모델의 판독에 의존한다. 페이지에 해당 표기가 있는데 발췌에서 누락됐을 가능성을 배제하지 못한다.",
+        "사전 항목 본문을 quote 로 옮기지 않았다(값이 없었으므로 인용할 것이 없었다)."
+      ]
+    },
+    {
+      "id": "src-naoj-koyomi-wiki",
+      "title": "暦Wiki (国立天文台暦計算室) — 조회한 URL 은 '1年とは/紀元' 계열 페이지",
+      "url": "https://eco.mtk.nao.ac.jp/koyomi/wiki/CDD7C1C72F1C7AFA4C8A4CFA1A92FB5AAB8B5.html",
+      "publisher": "国立天文台 (조회 결과 저작권 표기: Copyright(C) 1994- National Astronomical Observatory of Japan)",
+      "edition": "조회 결과 'Last-modified: 2025-06-05 (木) 14:22:16'",
+      "sourceKind": "institutional (국립천문대) — 이번에는 사용 불가",
+      "lang": "ja",
+      "accessStatus": "read-but-unusable",
+      "excerpts": [],
+      "negativeFinding": "본문이 문자 깨짐(인코딩 문제)으로 판독되지 않았다. 2회 조회했고 두 번 모두 神武天皇即位紀元·皇紀·서기 환산 규칙에 해당하는 문장을 원문 그대로 얻지 못했다. 첫 조회에서 나온 '紀元前660年に神武天皇が即位' 취지의 문자열은 깨진 텍스트 위에서 나온 것이라 인용하지 않는다.",
+      "limits": [
+        "기관 자료로 皇紀 환산 규칙을 확보하려던 시도는 실패했다.",
+        "깨진 텍스트에서 뽑힌 문자열을 원문 인용으로 쓰지 않았다. 이 판단은 의도적이다.",
+        "URL 이 실제로 어느 항목인지도 확정하지 못했다(두 번째 조회의 빵부스러기 표기는 '暦Wiki > 暦 > 1年とは')."
+      ]
+    },
+    {
+      "id": "src-iiiar-takami-pdf",
+      "title": "데이터사이언스 관점의 일본서기 기년 문제 관련 발표자료 (PDF, 검색 결과 표제: 「データサイエンスとしての日本書紀紀年問題」, 大阪電気通信大学 高見友幸)",
+      "url": "https://iiiar.org/iiars/doc/iiars_workshop14_2_4.pdf?2=",
+      "publisher": "iiiar.org (주최 단체 표기를 페이지에서 확인하지 못했다)",
+      "edition": "미확인",
+      "sourceKind": "academic-presentation (미확인)",
+      "lang": "ja",
+      "accessStatus": "fetch-failed",
+      "excerpts": [],
+      "negativeFinding": "PDF 본문을 읽지 못했다. WebFetch 는 압축된 PDF 라 텍스트 추출 불가라고 응답했고, 로컬로 저장된 PDF 도 렌더러(pdftoppm) 부재로 열지 못했다. 표제·저자·소속은 검색 결과 표시에서 본 것이며 페이지에서 직접 확인하지 않았다 — 근거로 쓰지 않는다.",
+      "limits": [
+        "이 자료의 내용을 근거로 쓴 claim 은 없다.",
+        "검색 결과 요약에 나타난 '応神天皇16年을 285年에 대응시킨 연표', 'Y=(X-285)÷3.5+405' 같은 문자열은 페이지를 직접 읽지 못했으므로 근거로 세지 않았다."
+      ]
+    }
+  ],
+
+  "entities": [
+    {"id": "timepoint-nihonshoki-ojin16", "type": "ChronologyPoint", "label": "『日本書紀』 應神天皇 十六年 (기년 표기)", "note": "previous-result 의 claim-ns10-ahwa-death 가 쓰는 기년 축의 그 지점. 사건이 아니라 기년 좌표다."},
+    {"id": "timepoint-nihonshoki-ojin-gannen", "type": "ChronologyPoint", "label": "『日本書紀』 應神天皇 元年 (기년 기준점)"},
+    {"id": "timepoint-nihonshoki-ojin3", "type": "ChronologyPoint", "label": "『日本書紀』 應神天皇 三年 (기년 표기)"},
+    {"id": "person-ojin-ns", "type": "Person", "label": "응신천황 (일본서기 기년 기준)", "status": "existing (previous-result.json)"},
+    {"id": "event-baekje-ahwawang-death-ns", "type": "Event", "label": "아화왕 사망과 직지 계위 (일본서기 응신기 16년)", "status": "existing (previous-result.json)"},
+    {"id": "event-baekje-asinwang-death-sg", "type": "Event", "label": "아신왕 사망과 전지 계위 (삼국사기 백제본기)", "status": "existing (previous-result.json)"},
+    {"id": "work-nihoncholeki", "type": "Work", "label": "『日本長暦』 (대조표가 환산 근거로 지목한 長暦)", "status": "new", "note": "이번 조사에서 이 책 자체는 확인하지 않았다. 편자·연대 미확인."}
+  ],
+
+  "claims": [
+    {
+      "id": "claim-ojin16-to-285-jawp285",
+      "layer": "A-전통기년의_환산",
+      "subject": "timepoint-nihonshoki-ojin16",
+      "predicate": "syj:reignYearConvertsTo",
+      "object": {"kind": "timespan", "verbatim": "應神天皇 十六年", "convertedLabel": "서기 285년", "year": 285, "precision": "year", "conversionStatus": "from-public-chronology-page"},
+      "sourceId": "src-jawp-285nen",
+      "citesExcerpt": "ex-285-ojin16",
+      "quote": "応神天皇16年",
+      "note": "일본어 위키백과의 연도 항목 「285年」이 '他の紀年法 › 日本' 목록에서 이 해를 '応神天皇16年' 으로 적는다. 같은 목록의 다른 줄은 '皇紀945年'(ex-285-kouki945). 대응 자체는 항목 제목과 줄 위치에서 나오며, 나는 두 문자열을 한 줄로 이어 붙이지 않았다. 이 항목은 환산 방법을 설명하지 않는다.",
+      "certainty": "confirmed(자료가 그렇게 적는다는 것까지)"
+    },
+    {
+      "id": "claim-ojin16-to-285-jawp-table",
+      "layer": "A-전통기년의_환산",
+      "subject": "timepoint-nihonshoki-ojin16",
+      "predicate": "syj:reignYearConvertsTo",
+      "object": {"kind": "timespan", "verbatim": "應神天皇 十六年", "convertedLabel": "서기 285년", "year": 285, "precision": "year", "conversionStatus": "from-published-conversion-table"},
+      "sourceId": "src-jawp-jodai-taisho",
+      "citesExcerpt": null,
+      "quote": null,
+      "note": "값은 이 문서의 대조표(열: 応神天皇 / 西暦 / 皇紀 / 干支)에서 읽었다. 표를 이어 붙인 문자열을 quote 로 만들지 않았기 때문에 quote 는 null 이다. 표에서 읽은 행은 source.tableReading.rowsRead 에 있다. 첫 조회가 이 행을 286년으로 잘못 읽었고 재조회에서 285년으로 정정된 사고가 있었다(uv-table-row-misread).",
+      "certainty": "confirmed(재조회로 정정된 판독 기준)"
+    },
+    {
+      "id": "claim-ojin-gannen-270",
+      "layer": "A-전통기년의_환산",
+      "subject": "timepoint-nihonshoki-ojin-gannen",
+      "predicate": "syj:reignYearConvertsTo",
+      "object": {"kind": "timespan", "verbatim": "應神天皇 元年", "convertedLabel": "서기 270년", "year": 270, "precision": "year", "conversionStatus": "from-published-conversion-table"},
+      "sourceId": "src-jawp-jodai-taisho",
+      "citesExcerpt": null,
+      "quote": null,
+      "note": "요청된 '응신 원년 기준'에 해당한다. 같은 표에서 41年 = 310년도 읽었다. 원년이 270년이면 십육년이 285년이 되는 것과 어긋나지 않는다 — 다만 이 대조는 내 뺄셈이고 자료의 진술이 아니다. 표 값 그대로만 적재할 것.",
+      "certainty": "confirmed(표 판독 기준)"
+    },
+    {
+      "id": "claim-conversion-basis-nihoncholeki",
+      "layer": "A-전통기년의_환산",
+      "subject": "work-nihoncholeki",
+      "predicate": "syj:isConversionBasisOf",
+      "object": {"kind": "entity", "value": "src-jawp-jodai-taisho", "note": "이 대조표의 서기 값이 무엇에 근거하는지"},
+      "sourceId": "src-jawp-jodai-taisho",
+      "citesExcerpt": "ex-taisho-basis",
+      "quote": "『日本長暦』に基づく",
+      "note": "인용하지 않은 앞뒤: 이 문장은 어느 연대든 『日本書紀』의 기술을 바탕으로 편찬된 長暦에 근거한 것이고 고고학적 지견에 근거한 것이 아니라는 취지로 이어진다(인용 한도 때문에 서술로만 남김). 즉 285년은 '書紀 기년을 曆으로 편 값'이지 실연대 비정이 아니다. 『日本長暦』 자체는 확인하지 않았다.",
+      "certainty": "confirmed(자료가 그렇게 적는다는 것까지)"
+    },
+    {
+      "id": "claim-later-dating-ojin-reign-390",
+      "layer": "B-후대연구의_실연대_비정",
+      "subject": "person-ojin-ns",
+      "predicate": "syj:reignSpanEstimatedAs",
+      "object": {"kind": "timespan", "verbatim": "応神天皇元年（390年?）1月1日", "yearStart": 390, "yearEnd": 430, "precision": "year", "conversionStatus": "modern-estimate-with-question-mark-in-source"},
+      "sourceId": "src-jawp-ojin",
+      "citesExcerpt": "ex-ojin-reign-390",
+      "quote": "応神天皇元年（390年?）1月1日",
+      "note": "인포박스 在位 항목의 앞부분이다. 뒷부분은 '同41年（430年?）2月15日'(인용하지 않고 서술로 남김). 물음표는 자료 표기 그대로이며 값의 근거를 인포박스가 밝히지 않는다. 이 값은 층 A 의 270/310 과 같은 위키 안에서 병존한다 — 합치지 말 것.",
+      "certainty": "confirmed(자료가 그렇게 적는다는 것까지). 값 자체는 비정이다."
+    },
+    {
+      "id": "claim-two-value-notation-ojin3",
+      "layer": "B-후대연구의_실연대_비정",
+      "subject": "timepoint-nihonshoki-ojin3",
+      "predicate": "syj:dualYearNotationInSource",
+      "object": {"kind": "literal", "value": "應神三年 조에 대해 '272年→392年' 식으로 두 값을 화살표로 잇는 표기"},
+      "sourceId": "src-jawp-ojin",
+      "citesExcerpt": "ex-ojin-3year-arrow",
+      "quote": "応神天皇3年条（272年→392年）",
+      "note": "previous-result 가 ja.wikipedia 「阿莘王」에서 본 '（272年→392年）' 와 같은 표기가 「応神天皇」 본문에도 있다. 앞 값 272 는 대조표의 應神三年 값(272)과 같다 — 이 일치는 내가 맞대어 본 것이다. 화살표의 의미를 설명하는 문장은 이번에도 찾지 못했다. 十六年에 대한 같은 형식의 표기는 확인하지 못했으므로 확장 적용하지 않았다.",
+      "certainty": "confirmed(표기가 존재한다는 것까지)"
+    },
+    {
+      "id": "claim-120y-offset-stated-by-source",
+      "layer": "B-후대연구의_실연대_비정",
+      "subject": "event-baekje-ahwawang-death-ns",
+      "predicate": "syj:chronologyOffsetStatedBySource",
+      "object": {"kind": "literal", "value": "『日本書紀』가 적는 神功皇后·應神天皇 시대 역대 백제왕의 연대가 『三國史記』의 연대보다 120년 앞선다는 진술", "years": 120, "direction": "日本書紀 쪽이 이르다(遡行)"},
+      "sourceId": "src-jawp-jodai-taisho",
+      "citesExcerpt": "ex-taisho-120",
+      "quote": "『三国史記』が記す年代（4世紀後半～5世紀初頭）より120年遡る",
+      "note": "인용하지 않은 앞부분: 이 문장의 주어는 '『日本書紀』가 적는 神功皇后·제15대 応神天皇 시대의 역대 백제왕 연대' 다(인용 한도 때문에 서술로만 남김). 120 이라는 수를 내가 기억에서 붙인 것이 아니라 이 문서가 적은 것이다. 다만 이 문서는 이 진술의 전거를 달았는지 확인하지 못했고, 이 진술은 아화왕 개별 기사가 아니라 그 시대 백제왕 연대 일반에 대한 것이다.",
+      "certainty": "confirmed(자료가 그렇게 적는다는 것까지). 학설의 채택이 아니다."
+    },
+    {
+      "id": "claim-q5-case-asin-death-year-difference",
+      "layer": "cross-layer(주의)",
+      "subject": "event-baekje-asinwang-death-sg",
+      "predicate": "syj:hasChronologyConflictWith",
+      "object": {
+        "kind": "entity",
+        "value": "event-baekje-ahwawang-death-ns",
+        "conflictShape": {
+          "samguksagiVerbatim": "阿莘王 十四年 秋九月 (previous-result: claim-sg25-asin-death-year14)",
+          "samguksagiConverted": 405,
+          "samguksagiConversionSource": "한국민족문화대백과사전 「아신왕」 (previous-result: claim-conv-asin-reign-to-392-405). 산출 기준 미표시.",
+          "nihonshokiVerbatim": "應神天皇 十六年 是歲 (previous-result: claim-ns10-ahwa-death)",
+          "nihonshokiConverted": 285,
+          "nihonshokiConversionSource": "ja.wikipedia 「285年」 및 「上古天皇の在位年と西暦対照表の一覧」. 후자가 환산 근거로 『日本長暦』을 든다.",
+          "differenceInYears": 120,
+          "differenceDerivation": "405 - 285 = 120 은 내 뺄셈이다. 다만 같은 수(120년)를 대조표 문서가 神功·應神代 백제왕 연대 전반에 대해 직접 적는다(claim-120y-offset-stated-by-source). 두 경로가 같은 값을 준다는 사실만 기록한다."
+        }
+      },
+      "sourceId": "src-jawp-jodai-taisho",
+      "citesExcerpt": "ex-taisho-120",
+      "quote": "『三国史記』が記す年代（4世紀後半～5世紀初頭）より120年遡る",
+      "note": "Q5 사례 완성분이다. 반드시 함께 적재할 주의: 두 값의 층위가 같지 않다. 285 는 書紀 기년을 曆으로 편 값(층 A)이고, 405 는 현대 백과사전이 정리한 연대(층 B 성격)다. 그래서 '120년'은 같은 층의 두 값을 뺀 것이 아니라 층이 다른 두 값의 차다. 이 사례를 '어느 사료가 틀렸다'로 쓰지 말 것.",
+      "certainty": "partial — 두 값과 그 출처는 확인됐고, 두 값을 나란히 두는 조작은 내가 했다."
+    }
+  ],
+
+  "uncertainties": [
+    {
+      "id": "uv-ojin16-conversion-source-tier",
+      "kind": "자료 층위",
+      "what": "應神十六年 = 285년을 병기한 자료 2건이 모두 일본어 위키백과다.",
+      "detail": "「285年」 항목과 「上古天皇の在位年と西暦対照表の一覧」은 같은 프로젝트 안의 두 문서이므로 상호 독립 검증이 아니다. 기관·학술 자료 시도는 모두 실패했다: 코토방크 「王仁」의 사전 항목들에 서기 병기가 없었고, 国立天文台 暦Wiki 페이지는 문자 깨짐이었고, 大阪電気通信大学 발표 PDF 는 열지 못했다.",
+      "impact": "'공인 연표로 검증됨'이라고 표시하면 과장이다. tertiary 로 표시할 것.",
+      "suggestedNext": "『日本長暦』 계열 또는 인쇄 연표(예: 『日本史年表』류)에서 應神紀 대조표를 직접 대조할 것.",
+      "status": "partially-verified"
+    },
+    {
+      "id": "uv-table-row-misread",
+      "kind": "도구 신뢰도",
+      "what": "같은 표에 대해 첫 조회는 '応神天皇16年 = 286年', 재조회는 '16年 = 285年 / 17年 = 286年' 을 냈다.",
+      "detail": "두 번째 판독은 13~20년 행을 연속으로 냈고 元年 270 / 41年 310 과 어긋나지 않는다. 그래서 285 를 채택했다. 그러나 이는 판독의 자기정합성이지 원문 대조가 아니다.",
+      "impact": "표에서 뽑은 모든 값(270·272·285·310)에 같은 위험이 있다. 사람이 표를 직접 볼 때까지 1년 오차 가능성을 열어둘 것.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-layer-asymmetry-285-vs-405",
+      "kind": "층위 비교",
+      "what": "285(일본서기)와 405(삼국사기)는 같은 방식으로 얻은 값이 아니다.",
+      "detail": "285 는 『日本長暦』에 근거한 기년 대조표의 값이고, 405 는 한국민족문화대백과사전이 산출 기준을 밝히지 않은 채 제시한 재위 연도다. 삼국사기 쪽 값이 '전통 기년의 환산'인지 '현대의 비정'인지 이번에도 확정하지 못했다.",
+      "impact": "'120년 차이'를 두 사료의 기년 차이로 단정하면 안 된다. 서로 다른 성격의 두 숫자를 나란히 둔 결과다.",
+      "suggestedNext": "삼국사기 백제본기 연대의 산출 기준(칭원법)을 밝힌 자료를 따로 확보할 것.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-ojin16-real-date-not-established",
+      "kind": "실연대 비정 미확보",
+      "what": "應神十六年 기사의 실연대 비정값을 자료로 확정하지 못했다.",
+      "detail": "ja.wikipedia 「応神天皇」은 應神三年에 대해 '272年→392年' 표기를 쓰지만 十六年에 대한 같은 표기는 확인하지 못했다. 대조표 문서의 120년 진술은 그 시대 백제왕 연대 전반에 대한 것이지 十六年 기사에 붙은 값이 아니다.",
+      "impact": "'應神十六年의 실연대 = 405년' 이라고 자료 근거로 쓸 수 없다. 이 파일은 그렇게 쓰지 않았다.",
+      "suggestedNext": "일본서기 백제 관계 기사의 기년 보정을 다루는 연구 1건을 확보할 것.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-nihoncholeki-unchecked",
+      "kind": "환산 근거의 원자료",
+      "what": "환산 근거로 지목된 『日本長暦』을 확인하지 않았다.",
+      "impact": "'『日本長暦』에 근거한다'는 것은 위키 문서의 주장이다. 그 책의 편자·성립·해당 표의 실제 값은 미확인.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-kouki-rule-not-obtained",
+      "kind": "계산 규칙 미확보",
+      "what": "皇紀(神武天皇即位紀元)와 서기의 환산 규칙을 기관 자료로 확보하지 못했다.",
+      "detail": "国立天文台 暦Wiki 페이지는 두 번 조회했으나 본문이 문자 깨짐이었다. 「285年」 항목의 같은 목록에 '皇紀945年' 과 항목명 285年 이 함께 있지만, 945-660=285 라는 뺄셈은 내가 한 것이고 자료가 규칙을 진술한 것이 아니다.",
+      "impact": "요청 (2)의 '원년 계산 규칙'은 應神 元年=270 이라는 기준값으로만 채워졌고, 皇紀 환산 규칙 자체는 비었다.",
+      "suggestedNext": "国立天文台 暦計算室 暦Wiki 의 해당 항목을 인코딩이 정상인 경로로 다시 열 것.",
+      "status": "unverified"
+    },
+    {
+      "id": "uv-webfetch-transcription-fidelity",
+      "kind": "도구",
+      "what": "이번 인용도 WebFetch(마크다운 변환 후 소형 모델 발췌)를 거쳤다.",
+      "impact": "물음표·괄호·물결표(（390年?）, ～) 같은 전각/반각 구분과 이체자 보존을 보장하지 못한다. 글자 단위 주장에 쓰지 말 것.",
+      "status": "unverified"
+    }
+  ],
+
+  "reproduction": {
+    "pageBudget": "지시된 상한 6개. 실제로 연 서로 다른 URL 은 6개다(같은 URL 재조회 2건은 새 페이지로 세지 않았다).",
+    "pagesAttempted": [
+      {"n": 1, "url": "https://ja.wikipedia.org/wiki/285年", "result": "읽음 — '他の紀年法 › 日本' 에서 '応神天皇16年'·'皇紀945年' 확보. 응신16년↔285년 병기 1건째"},
+      {"n": 2, "url": "https://ja.wikipedia.org/wiki/応神天皇", "result": "읽음 — 인포박스 '(390年?)' 와 본문 '応神天皇3年条（272年→392年）' 확보. 16년에는 서기 병기 없음"},
+      {"n": 3, "url": "https://kotobank.jp/word/王仁-154262", "result": "읽음 — 부정 결과. 수록 사전 9종에 서기 연도·応神16年 표기 없음(조회 기준)"},
+      {"n": 4, "url": "https://ja.wikipedia.org/wiki/上古天皇の在位年と西暦対照表の一覧", "result": "읽음(같은 URL 2회 조회) — 応神16年=285년, 元年=270년, 41年=310년, 환산 근거 『日本長暦』, 120년 遡行 진술 확보. 1회차의 '286년' 오독은 2회차에서 정정"},
+      {"n": 5, "url": "https://eco.mtk.nao.ac.jp/koyomi/wiki/CDD7C1C72F1C7AFA4C8A4CFA1A92FB5AAB8B5.html", "result": "읽었으나 사용 불가(같은 URL 2회 조회) — 본문 문자 깨짐. 皇紀 환산 규칙 확보 실패"},
+      {"n": 6, "url": "https://iiiar.org/iiars/doc/iiars_workshop14_2_4.pdf?2=", "result": "실패 — PDF 텍스트 추출 불가. 로컬 저장분도 렌더러 부재로 열지 못함"}
+    ],
+    "pagesNotAttempted": [
+      "db.history.go.kr / contents.history.go.kr — robots 제한 도메인이라 열지 않았다",
+      "ja.wikipedia 「王仁」 — previous-result 에서 이미 읽었고 応神16年의 서기 병기가 없다는 부정 결과가 기록돼 있어 다시 열지 않았다"
+    ],
+    "unattemptedCandidatesForNextRun": [
+      "国立天文台 暦計算室 暦Wiki 의 '紀元' 항목 — 인코딩이 정상인 경로(다른 URL 표기 또는 사이트 내 검색)로 재시도. 皇紀 환산 규칙을 기관 자료로 확보하는 가장 가까운 후보.",
+      "大阪電気通信大学 高見友幸 발표자료 PDF (iiiar.org) — 텍스트 추출 가능한 뷰어로 재시도. 검색 스니펫상 應神16年=285年 대조표와 실연대 보정식을 함께 담고 있을 가능성이 있으나 직접 확인하지 못했다."
+    ],
+    "searchesRun": [
+      "応神天皇十六年 西暦 285年 日本書紀 紀年",
+      "王仁 「応神天皇16年」 285年 枚方市 伝王仁墓",
+      "\"応神天皇16年\" \"285年\" 百済",
+      "kotobank 王仁 \"応神天皇16年\" 285 日本大百科全書 来朝",
+      "\"応神\" 元年 270年 日本書紀 紀年 換算 皇紀 660 対照表",
+      "\"応神天皇\" 十六年 \"285\" 年表 大学 紀要 OR 博物館 OR 市史 日本書紀 紀年"
+    ],
+    "searchSnippetsNotUsedAsEvidence": [
+      "검색 요약에 '285년(応神天皇16年) 백제 아화왕 훙거', 'Y=(X-285)÷3.5+405', '干支二運 120년' 같은 문자열이 나왔으나, 해당 페이지를 직접 열어 확인하지 않은 것은 근거로 세지 않았다.",
+      "tokyox.sakura.ne.jp(개인 블로그로 보임)는 이번에도 열지 않았다."
+    ],
+    "tooling": "WebFetch(페이지를 마크다운으로 변환 후 소형 모델이 발췌), WebSearch, Read(로컬 PDF 시도 — 렌더러 부재로 실패). 파일 쓰기는 작업 폴더(progress.json, result.json)에만 했다.",
+    "notDone": [
+      "외부 연락·기관 문의: 하지 않았다.",
+      "코드 구현·저장소 변경: 하지 않았다.",
+      "previous-result.json 의 동일성 근거·405년 백과 설명·gap-2 재조사: 하지 않았다.",
+      "120년 차이를 통설로 외워서 채우는 일: 하지 않았다. 이 파일의 120 은 대조표 문서가 적은 값이고, 405-285 뺄셈은 그 표시와 함께 적었다."
+    ],
+    "filesWritten": ["progress.json", "result.json"]
+  }
+}

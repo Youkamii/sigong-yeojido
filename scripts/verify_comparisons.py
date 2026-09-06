@@ -22,6 +22,14 @@ def main():
     assert {r['object']['verbatim'] for r in sabi['rows']}=={'十六年, 春','百濟聖王二十六年戊午春'}
     assert read('baekje-founding',sources='')['rows']==[]
     assert read('baekje-founding',sources=sources,origin='human')['rows']==[]
+    death_sources='src-samguksagi,src-web-seisaku-nihonshoki-10,src-web-encykorea-asinwang,src-web-jawikipedia-asinwang,src-jawp-285nen'
+    death=read('asin-ahwa-death',sources=death_sources)
+    assert len(death['rows'])==2 and len(death['links'])==2 and death['differentProjectedYears'],death
+    assert [r['projections'][0]['earliest'] for r in death['rows']]==[405,285]
+    assert {r['object']['verbatim'] for r in death['rows']}=={'秋九月','十六年'}
+    assert read('asin-ahwa-death',sources=death_sources,origin='human')['rows']==[]
+    raw=read('asin-ahwa-death',sources='src-samguksagi,src-web-seisaku-nihonshoki-10')
+    assert all(not r['projections'] for r in raw['rows']) and not raw['links']
     with sync_playwright() as p:
         browser=p.chromium.launch(headless=True,args=LAUNCH_ARGS);page=browser.new_page(viewport={'width':1440,'height':1000})
         errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
@@ -42,14 +50,23 @@ def main():
         assert page.locator('.compare-link').count()==0
         page.locator('#humanOnly').check();page.wait_for_function("document.querySelectorAll('.comparison-card').length===0")
         page.locator('#humanOnly').uncheck()
+        page.locator('#compare select').select_option('asin-ahwa-death');page.locator('[data-compare-sources]').click()
+        page.wait_for_function("document.querySelectorAll('.compare-year').length===2 && document.querySelector('.compare-description').textContent.includes('120년')")
+        assert '현대 해설' in page.locator('#compare').inner_text() and '전통 기년' in page.locator('#compare').inner_text()
+        page.locator('.comparison-card[data-claim=claim-ahwa-death-ns-date] [data-action=chunk]').click()
+        page.wait_for_function("document.querySelector('#evi h3')?.textContent==='인용한 원문'")
+        assert '是歲、百濟阿花王薨。' in page.locator('#evi').inner_text()
+        page.screenshot(path=str(args.out/'nihonshoki-comparison.png'))
         page.set_viewport_size({'width':480,'height':900})
         if page.locator('#evidenceBtn').get_attribute('aria-expanded')=='true':page.locator('#evidenceBtn').click()
         assert page.evaluate("document.querySelector('#compare').getBoundingClientRect().bottom<=document.querySelector('.timebar').getBoundingClientRect().top+1")
+        assert page.evaluate("document.querySelector('.compare-rows').scrollWidth<=document.querySelector('.compare-rows').clientWidth+1")
         page.screenshot(path=str(args.out/'comparison-480.png'))
         assert not errors,errors;browser.close()
-    report={'base':args.base,'cases':[founding,sabi],'pageErrors':errors,'checks':{'real_cross_source_quotes':True,
+    report={'base':args.base,'cases':[founding,sabi,death],'pageErrors':errors,'checks':{'real_cross_source_quotes':True,
             'explicit_link_evidence':True,'distinct_dates_preserved':True,'quote_original_navigation':True,
-            'source_and_ai_filters':True,'narrow_layout':True},'limits':['삼국사기·일본서기 사례는 별도 조사 후 추가한다.']}
+            'source_and_ai_filters':True,'narrow_layout':True,'samguksagi_nihonshoki':True,'chronology_conventions_separate':True},
+            'limits':['일본서기 전사본의 저본 미확정. 285는 위키백과 전통 기년표의 대응값이며 현대 추정 실연대가 아니다.']}
     (args.out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report['checks']))
 

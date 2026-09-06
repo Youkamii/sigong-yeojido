@@ -234,8 +234,8 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .modecompare #map,.modecompare #three,.modecompare #graph,.modecompare #chat,.modecompare #hint,.modecompare #outside3d,.modecompare #resetMap{display:none}
 .compare-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.compare-tools select{max-width:100%;background:var(--ink-2);color:var(--paper);padding:6px;border:1px solid var(--line-2)}
 .compare-description,#compare [role=status]{font-size:12px;line-height:1.7;color:var(--paper-3)}
-.compare-rows{display:flex;gap:12px;overflow-x:auto;padding-bottom:12px;align-items:stretch}
-.comparison-card{flex:0 0 290px;max-width:90%;border:1px solid var(--line-2);padding:14px;overflow-wrap:anywhere}
+.compare-rows{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;padding-bottom:12px;align-items:stretch}
+.comparison-card{min-width:0;border:1px solid var(--line-2);padding:14px;overflow-wrap:anywhere}
 .comparison-card h3,.compare-links h3{font-size:15px;font-weight:500}.comparison-card p{font-size:12px;line-height:1.8}
 .comparison-card .compare-raw{font-size:19px;color:var(--paper)}.comparison-card .quote,.compare-link .quote{font-size:14px;line-height:1.9;white-space:pre-wrap}
 .compare-link{padding:12px 0;border-top:1px solid var(--line)}

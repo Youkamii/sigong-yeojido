@@ -58,7 +58,14 @@ def main():
         fields={'type':'Claims','source':source,'chunk':cid,'status':'draft','generated_by':'claude-opus-5'}
         write_same(data/'claims'/source.removeprefix('src-')/'comparisons'/(cid+'.md'),
                    markdown(fields,'```claims-json\n'+json.dumps(claims,ensure_ascii=False,indent=2)+'\n```'))
-    write_same(data/'comparisons.json',json.dumps({'cases':cases},ensure_ascii=False,indent=2)+'\n')
+    path=data/'comparisons.json'
+    config=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'cases':[]}
+    for case in cases:
+        previous=next((c for c in config['cases'] if c['id']==case['id']),None)
+        if previous:
+            assert previous['rows']==case['rows'] and previous['links']==case['links'],case['id']
+        else:config['cases'].append(case)
+    path.write_text(json.dumps(config,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'newClaims':len(new),'cases':len(cases),'humanReviewed':False}))
 
 
