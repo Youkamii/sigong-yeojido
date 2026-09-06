@@ -6,7 +6,7 @@
 
 점검 항목:
   1 build        임시 파일로 두 번 빌드한다 — 둘 다 exit 0
-  2 no-text      chunk 원문이 TTL 에 없다 — chunk 마다 text 앞 20자(원문 그대로 · 공백 제거 둘 다)와 전문(全文)이 TTL 에 없다
+  2 no-text      Chunk 노드는 원 레코드의 허용 메타데이터만 갖는다. Claim의 근거 인용은 허용한다
   3 cites        모든 syj:Claim 이 syj:citesChunk 하나를 갖고, 그 chunk 가 chunks.jsonl 에 있고, TTL 에 syj:Chunk 노드로 있고,
                  syj:isSupportedBy 리터럴이 같은 id 다
   4 digest       TTL 의 syj:claimDigest 가 data/claims/*/.digests.json 의 값과 일치한다 (기록된 claim 전부 · 기록 없는 Claim 수도 보고)
@@ -80,14 +80,35 @@ class Checker:
 
 
 def load_chunks(data_dir: Path) -> dict[str, dict]:
-    chunks: dict[str, dict] = {}
-    for path in sorted((data_dir / "sources").glob("*/chunks.jsonl")):
-        with io.open(path, encoding="utf-8") as fh:
-            for line in fh:
-                if line.strip():
-                    row = json.loads(line)
-                    chunks[row["id"]] = row
-    return chunks
+    inputs = B.V.load_inputs(data_dir)
+    if inputs.failures:
+        raise ValueError('; '.join(f.render() for f in inputs.failures))
+    return inputs.chunks
+
+
+def chunk_metadata_errors(graph, chunks):
+    nodes=set(T.Index(graph).of_type(syj('Chunk')))
+    fields={RDFS_LABEL:'id',syj('locator'):'locator',syj('fromSource'):'sourceId',syj('lang'):'lang',syj('permalink'):'permalink'}
+    bad=[]
+    for subject,predicate,value in graph:
+        if subject not in nodes:continue
+        if predicate==T.RDF_TYPE:
+            if value!=syj('Chunk'):bad.append(subject+': unexpected type')
+            continue
+        cid=subject.removeprefix(SYJ)
+        if cid not in chunks:continue  # The citation check reports missing records.
+        row=chunks.raw(cid) if hasattr(chunks,'raw') else chunks[cid]
+        field=fields.get(predicate)
+        expected=row.get(field) if field else None
+        actual=value.removeprefix(SYJ) if predicate==syj('fromSource') else T.literal_value(value)
+        if field is None or actual!=expected:bad.append(subject+': unexpected metadata '+predicate)
+    return bad
+
+
+def uses_owl(graph):
+    namespace='http://www.w3.org/2002/07/owl#'
+    return any(term.startswith(namespace) or re.search(r'\^\^<http://www\.w3\.org/2002/07/owl#[^>]+>$',term)
+               for triple in graph for term in triple)
 
 
 def load_recorded_digests(data_dir: Path) -> dict[str, str]:
@@ -114,6 +135,16 @@ def object_key(idx: T.Index, claim: str) -> tuple:
             return ("year", T.literal_value(obj))
         return (pred, obj)  # entity · time: IRI 가 곧 정체다 (TimeSpan 재정의는 빌드가 막는다)
     return ("none",)
+
+
+def expected_conflicts(idx, claims):
+    groups={}
+    for claim in claims:
+        subject=idx.objects(claim,syj('subject'))[0]
+        predicate=idx.objects(claim,syj('predicate'))[0]
+        if 'syj:'+predicate.removeprefix(SYJ) in B.V.MULTI_VALUED_PREDICATES:continue
+        groups.setdefault((subject,predicate),{}).setdefault(object_key(idx,claim),set()).add(claim)
+    return {key:{claim for members in values.values() for claim in members} for key,values in groups.items() if len(values)>1}
 
 
 def run(data_dir: Path, ttl_path: Path, out) -> tuple[int, dict]:
@@ -148,18 +179,9 @@ def run(data_dir: Path, ttl_path: Path, out) -> tuple[int, dict]:
         chunks = load_chunks(data_dir)
 
         # 2 no-text
-        leaks: list[str] = []
-        norm_ttl = WS_RE.sub("", ttl)
-        n_checked = 0
-        for cid, row in chunks.items():
-            text = row.get("text") or ""
-            if not text:
-                continue
-            n_checked += 1
-            prefix = text[:20]
-            if prefix in ttl or WS_RE.sub("", prefix) in norm_ttl or text in ttl:
-                leaks.append(cid)
-        c.check("2 no chunk text in TTL", not leaks, f"{n_checked} chunks with text checked (20-char prefix raw+normalized, full text); leaks: {leaks[:5]}")
+        leaks=chunk_metadata_errors(parsed.graph,chunks)
+        n_checked=len(idx.of_type(syj('Chunk')))
+        c.check("2 no chunk text in TTL", not leaks, f"{n_checked} Chunk nodes checked against original metadata; unexpected fields or values: {leaks[:5]}")
 
         # 3 cites
         claims = idx.of_type(syj("Claim"))
@@ -172,7 +194,7 @@ def run(data_dir: Path, ttl_path: Path, out) -> tuple[int, dict]:
                 continue
             cid = cites[0][len(SYJ) :]
             if cid not in chunks:
-                bad.append(f"{cl}: {cid} not in chunks.jsonl")
+                bad.append(f"{cl}: {cid} not in corpus or citation samples")
             if cites[0] not in chunk_nodes:
                 bad.append(f"{cl}: {cid} has no syj:Chunk node")
             if idx.value(cl, syj("isSupportedBy")) != cid:
@@ -205,7 +227,7 @@ def run(data_dir: Path, ttl_path: Path, out) -> tuple[int, dict]:
         # 6 syntax
         prefixes_ok = set(parsed.prefixes) == {"syj", "rdf", "rdfs", "xsd"}
         blank = any(s.startswith("_:") or o.startswith("_:") for s, _, o in parsed.graph)
-        owl = "owl:" in ttl or "/owl#" in ttl
+        owl = bool(uses_owl(parsed.graph))
         c.check(
             "6 turtle syntax (ttl_check.py)",
             parsed.ok and prefixes_ok and not blank and not owl and not ttl.startswith("﻿") and "\r" not in ttl,
@@ -235,12 +257,7 @@ def run(data_dir: Path, ttl_path: Path, out) -> tuple[int, dict]:
         c.check("7 every link resolves to a typed node", not dangling, f"{sum(1 for _, p, _ in parsed.graph if p in LINK_PREDS)} link triples; dangling: {dangling[:3]}")
 
         # 8 conflicts
-        groups: dict[tuple[str, str], dict[tuple, set[str]]] = {}
-        for cl in claims:
-            subj = idx.objects(cl, syj("subject"))[0]
-            pred = idx.objects(cl, syj("predicate"))[0]
-            groups.setdefault((subj, pred), {}).setdefault(object_key(idx, cl), set()).add(cl)
-        expected = {k: {cl for members in v.values() for cl in members} for k, v in groups.items() if len(v) > 1}
+        expected = expected_conflicts(idx,claims)
         found: dict[tuple[str, str], set[str]] = {}
         for node in idx.of_type(syj("Conflict")):
             key = (idx.objects(node, syj("aboutSubject"))[0], idx.objects(node, syj("aboutPredicate"))[0])

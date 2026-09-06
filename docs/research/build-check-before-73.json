@@ -1,0 +1,101 @@
+{
+  "byClass": {
+    "Chunk": 927,
+    "Claim": 1086,
+    "Conflict": 6,
+    "Event": 48,
+    "Location": 225,
+    "Office": 40,
+    "Organization": 2,
+    "Person": 116,
+    "Place": 953,
+    "Polity": 13,
+    "Source": 999,
+    "TimeSpan": 44
+  },
+  "checks": {
+    "1 build exit 0 (twice)": {
+      "detail": "exit codes [0, 0]",
+      "ok": true
+    },
+    "2 no chunk text in TTL": {
+      "detail": "49721 chunks with text checked (20-char prefix raw+normalized, full text); leaks: ['chunk_ex-3-1-decl-date', 'chunk_ex-toseong-def', 'chunk_ex-toseong-gunchi', 'chunk_ex-archives-constitution-note', 'chunk_ex-armistice-signing-line']",
+      "ok": false
+    },
+    "3 every Claim cites one existing chunk (URI edge + literal)": {
+      "detail": "1086 claims, 927 chunk nodes; problems: ['https://sigong-yeojido.kr/ns#claim-joseon-coverage-wca-001: chunk_sillok-wca_wca_000 not in chunks.jsonl', 'https://sigong-yeojido.kr/ns#claim-joseon-coverage-wca-002: chunk_sillok-wca_wca_000 not in chunks.jsonl', 'https://sigong-yeojido.kr/ns#claim-joseon-coverage-wca-003: chunk_sillok-wca_wca_000 not in chunks.jsonl', 'https://sigong-yeojido.kr/ns#claim-joseon-coverage-wca-004-1: chunk_sillok-wca_wca_10101001_002 not in chunks.jsonl', 'https://sigong-yeojido.kr/ns#claim-joseon-coverage-wca-004-2: chunk_sillok-wca_wca_10101001_002 not in chunks.jsonl']",
+      "ok": false
+    },
+    "4 claimDigest == .digests.json": {
+      "detail": "1086 recorded, 0 mismatched, 0 claims without a record (promoted from places.json): []",
+      "ok": true
+    },
+    "5 deterministic (byte-identical)": {
+      "detail": "two builds identical: True; sha256 bd3018093bd5448257aa133ec137fadc8de36813643240adc940346325abc413; matches C:/Users/gkfkd/Git/sigong-yeojido/data/build/sigong.ttl: True",
+      "ok": true
+    },
+    "6 rdflib parse": {
+      "detail": "rdflib 7.6.0: 44188 triples (ours 44188)",
+      "ok": true
+    },
+    "6 riot --validate": {
+      "detail": "riot (Apache Jena) not in PATH",
+      "ok": true,
+      "skipped": true
+    },
+    "6 triple count agrees with builder": {
+      "detail": "parser 44188 vs builder 44188",
+      "ok": true
+    },
+    "6 turtle syntax (ttl_check.py)": {
+      "detail": "errors=[] prefixes=['rdf', 'rdfs', 'syj', 'xsd'] triples=44188 blank_nodes=False owl=True",
+      "ok": false
+    },
+    "7 every link resolves to a typed node": {
+      "detail": "4845 link triples; dangling: []",
+      "ok": true
+    },
+    "8 Conflict nodes == recomputed conflicts": {
+      "detail": "6 Conflict nodes, 29 recomputed groups; equal=False",
+      "ok": false
+    },
+    "9 provenance on every Claim": {
+      "detail": "origins {'ai': 1086}; problems: []",
+      "ok": true
+    }
+  },
+  "checksFailed": 4,
+  "chunksCited": 927,
+  "chunksInCorpus": 49754,
+  "citations": 1086,
+  "claims": 1086,
+  "conflicts": 6,
+  "digests": {
+    "changed": 0,
+    "new": 0,
+    "ok": 1086,
+    "refreshed": 0,
+    "stale": 0
+  },
+  "entities": 1172,
+  "failures": 0,
+  "locations": {
+    "candidatesInFile": 213,
+    "fromClaimFiles": 12,
+    "placesInFile": 150,
+    "promotedFromPlaces": 0,
+    "ungroundedCandidates": 213
+  },
+  "objectKinds": {
+    "entity": 171,
+    "literal": 842,
+    "location": 12,
+    "time": 47,
+    "year": 14
+  },
+  "sha256": "bd3018093bd5448257aa133ec137fadc8de36813643240adc940346325abc413",
+  "sources": 999,
+  "timespans": 44,
+  "triples": 44188,
+  "warnings": 0
+}
