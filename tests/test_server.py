@@ -98,6 +98,23 @@ class ApiTests(unittest.TestCase):
         with patch.object(server, "index", return_value=idx):
             self.assertEqual(self.get("/api/claims?subject=p&sources=")["total"], 0)
 
+    def test_origin_filter_keeps_human_claims_and_intersects_sources(self):
+        claims = [dict(id=origin or "unknown", subject="p", origin=origin, fromSource="src-a")
+                  for origin in ("ai", "human", None)]
+        idx = {"chunks": [], "claims": claims}
+        with patch.object(server, "index", return_value=idx):
+            self.assertEqual(self.get("/api/claims?subject=p")["total"], 3)
+            human = self.get("/api/claims?subject=p&origin=human")
+            self.assertEqual([c["id"] for c in human["claims"]], ["human"])
+            self.assertEqual(human["allClaims"], 1)
+            self.assertEqual(self.get("/api/claims?subject=p&origin=ai")["total"], 1)
+            self.assertEqual(self.get("/api/claims?subject=p&origin=human&sources=")["total"], 0)
+            self.assertEqual(self.get("/api/claims?subject=p&origin=human&sources=src-b")["total"], 0)
+            with self.assertRaises(HTTPError) as error:
+                self.get("/api/claims?subject=p&origin=reviewed")
+            self.assertEqual(error.exception.code, 400)
+            error.exception.close()
+
     def test_oversized_names_rejected_before_indexing(self):
         with patch.object(server, "index", side_effect=AssertionError("must not scan")):
             for query in (urlencode({"names": ",".join(["name"] * 9)}),

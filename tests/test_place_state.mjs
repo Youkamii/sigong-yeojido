@@ -1,6 +1,6 @@
 import { strict as assert } from 'node:assert';
 import { test } from 'node:test';
-import { activeAt, candActive } from '../services/host/app/place-state.js';
+import { activeAt, candActive, originMatches } from '../services/host/app/place-state.js';
 
 test('date boundaries and undated candidates are shared', () => {
   assert.equal(candActive({validFrom:-18, validTo:475}, -18), true);
@@ -31,4 +31,15 @@ test('a researched place remains scoped to its source even without text matches'
   assert.equal(activeAt(p, 918, new Set(['src-samgukyusa'])), false);
   assert.equal(activeAt(p, 918, new Set(['src-goryeosa'])), true);
   assert.equal(activeAt(p, 918, new Set()), false);
+});
+
+test('origin filter inherits provenance without treating missing authorship as human', () => {
+  const p = {origin:'ai', candidates:[{validFrom:400, validTo:500}, {origin:'human',validFrom:500,validTo:600}]};
+  assert.equal(originMatches(p.candidates[0], 'human', p), false);
+  assert.equal(originMatches(p.candidates[1], 'human', p), true);
+  assert.equal(originMatches({}, 'human'), false);
+  assert.equal(activeAt(p, 414, null, 'human'), false);
+  assert.equal(activeAt(p, 550, null, 'human'), true);
+  assert.equal(activeAt(p, 550, new Set(), 'human'), false);
+  assert.equal(activeAt(p, 414, null, 'all'), true);
 });

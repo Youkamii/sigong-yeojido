@@ -20,7 +20,7 @@ API는 전부 읽기 전용이다 — 이 서버는 아무것도 쓰지 않는�
   GET /api/density   사료별 {연도: 기사 수} — 타임라인 막대 안의 밀도 띠
   GET /api/source?id=src-samguksagi   사료 카드 — 머리말(스칼라) + 본문 마크다운 그대로
   GET /api/entities  엔티티 껍데기 목록 (data/entities/**/*.md 머리말: type·id·label·labelHanja) — 찾기 상자용
-  GET /api/claims?subject=<entity id>[&about=1]
+  GET /api/claims?subject=<entity id>[&about=1][&origin=all|human|ai]
                     그 엔티티가 subject 인 Claim(about=1 이면 object 에 나오는 것도) — data/claims/<src>/*.md 의 claims-json.
                     quote·citesChunk·origin(human|ai)·status 를 그대로 준다. 판정하지 않는다 — 서로 어긋나는 주장도 나란히.
   /api/places 는 places.json + places-candidates.json(#11) 을 합친다. 각 지명에 mentions {sourceId: 조각 수} 가 붙는다 (label + aliases 기준).
@@ -315,13 +315,19 @@ def _mentions_id(obj, entity_id: str) -> bool:
     return isinstance(obj, str) and obj == entity_id
 
 
-def claims_for(entity_id: str, about: bool, sources: set[str] | None = None) -> dict:
+def matches_origin(record: dict, origin: str = "all") -> bool:
+    return origin == "all" or record.get("origin") == origin
+
+
+def claims_for(entity_id: str, about: bool, sources: set[str] | None = None, origin: str = "all") -> dict:
     idx = index()
     chunks = idx.get("chunkById")
     if chunks is None:
         chunks = {c["id"]: c for c in idx["chunks"] if isinstance(c.get("id"), str)}
     out = []
     for c in idx["claims"]:
+        if not matches_origin(c, origin):
+            continue
         as_subject = c.get("subject") == entity_id
         in_object = about and _mentions_id(c.get("object"), entity_id)
         if not (as_subject or in_object):
@@ -337,7 +343,8 @@ def claims_for(entity_id: str, about: bool, sources: set[str] | None = None) -> 
         rec["chunk"] = {"id": ch["id"], "sourceId": ch.get("sourceId"), "locator": ch.get("locator"), "permalink": ch.get("permalink")} if ch else None
         out.append(rec)
     out.sort(key=lambda r: (r["role"] != "subject", str(r.get("predicate")), str(r.get("id"))))
-    return {"entity": entity_id, "claims": out, "total": len(out), "allClaims": len(idx["claims"])}
+    return {"entity": entity_id, "claims": out, "total": len(out),
+            "allClaims": sum(matches_origin(c, origin) for c in idx["claims"]), "origin": origin}
 
 
 def merged_places() -> dict:
@@ -488,11 +495,15 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"entities": index()["entities"]})
             return
         if path == "/api/claims":
+            origin = q.get("origin", ["all"])[0]
+            if origin not in ("all", "human", "ai"):
+                self._json({"error": "origin must be all, human or ai"}, 400)
+                return
             ent = (q.get("subject", [""])[0] or "").strip()
             about = q.get("about", ["0"])[0] not in ("0", "", "false")
             srcs = q.get("sources", [None])[0]
             sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
-            self._json(claims_for(ent, about, sources) if ent else {"entity": None, "claims": [], "total": 0})
+            self._json(claims_for(ent, about, sources, origin) if ent else {"entity": None, "claims": [], "total": 0})
             return
         if path == "/api/mentions":
             names = [n for value in q.get("names", []) for n in value.split(",") if n]

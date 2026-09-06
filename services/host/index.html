@@ -216,6 +216,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <button id="b3d">3D</button>
     </div>
     <span class="spacer"></span>
+    <label class="origin-filter" title="작성자가 사람으로 기록된 연결만 표시한다. 원문은 그대로 볼 수 있다."><input id="humanOnly" type="checkbox"> AI 연결 제외</label>
     <span class="back" id="toGate">← 대동여지도</span>
   </div>
 
@@ -264,13 +265,22 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 import { Timeline } from './app/timeline.js';
 import { groupSources } from './app/source-groups.js';
 import { escapeHtml as escH, externalLink, highlightText } from './app/html.js';
-import { activeAt as placeActiveAt, candActive as candidateActive } from './app/place-state.js';
+import { activeAt as placeActiveAt, candActive as candidateActive, originMatches } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
 
 const state = {
   places: [], geo: null, chunks: [], sources: [], entities: [],
-  on: new Set(), year: 414, sel: null, hot: null, mode: '2d', panel: null
+  on: new Set(), year: 414, sel: null, hot: null, mode: '2d', panel: null, origin: 'all'
 };
+
+document.getElementById('humanOnly').addEventListener('change', event => {
+  state.origin = event.target.checked ? 'human' : 'all';
+  draw();
+  if(state.mode === '3d') draw3d();
+  refreshEvidence();
+});
+
+const visibleCandidates = p => p.candidates.filter(c => originMatches(c, state.origin, p));
 
 // ── 투영 (메르카토르) ──
 // x·y 를 같은 단위(라디안)로 재야 한다. 경도를 도(度)로 두고 y만 메르카토르
@@ -554,7 +564,7 @@ function candActive(c){
   return candidateActive(c, state.year);
 }
 function activeAt(p){
-  return placeActiveAt(p, state.year, state.on);
+  return placeActiveAt(p, state.year, state.on, state.origin);
 }
 
 // ── 2D 지도 ──
@@ -606,11 +616,12 @@ function draw(){
 
   // 지명
   for(const p of state.places){
-    if(!p.candidates.length) continue;
+    const candidates = visibleCandidates(p);
+    if(!candidates.length) continue;
     const live = activeAt(p);
     const col = COLOR[p.status] || '#8B8474';
     // 살아 있으면 그 연도에 유효한 후보만, 죽어 있으면 전부(흐리게)
-    const shown = live ? p.candidates.filter(candActive) : p.candidates;
+    const shown = live ? candidates.filter(candActive) : candidates;
     const pts = shown.map(c => proj(c.lon, c.lat, v));
 
     if(pts.length > 1){
@@ -701,10 +712,12 @@ async function select(id){
   const esc0 = escH;
   const span = c => (c.validFrom==null && c.validTo==null) ? '' :
     ` · ${c.validFrom==null ? '' : (c.validFrom < 0 ? '기원전 '+(-c.validFrom) : c.validFrom)}~${c.validTo==null ? '' : (c.validTo < 0 ? '기원전 '+(-c.validTo) : c.validTo)}`;
-  const cands = p.entityType ? '' : p.candidates.length
-    ? p.candidates.map(c => `<div class="cand${candActive(c) ? '' : ' off'}">
+  const candidates = visibleCandidates(p);
+  const cands = p.entityType ? '' : candidates.length
+    ? candidates.map(c => `<div class="cand${candActive(c) ? '' : ' off'}">
         <div class="co">${c.lat.toFixed(4)}, ${c.lon.toFixed(4)} · ${esc0(c.precision)}${c.view ? ' · ' + esc0(c.view) : ''}${escH(span(c))}</div>
         <div class="bs">${esc0(c.basis)} ${externalLink(c.sourceUrl, '출처')}${c.origin === 'ai' ? ' <span class="badge ai">조사(자동) · 미확인</span>' : ''}</div></div>`).join('')
+    : state.origin !== 'all' && p.candidates.length ? '<p class="empty">현재 작성자 필터에 맞는 좌표 연결이 없다.</p>'
     : `<p class="unloc" style="margin-top:12px"><b>위치가 정해지지 않았다.</b>
        비정안이 여럿이거나 확정된 것이 없다. 이 시스템은 판정하지 않으므로 지도에 점을 찍지 않는다.</p>`;
 
@@ -729,7 +742,7 @@ async function select(id){
   });
   let cl = {claims:[], total:0};
   try{
-    cl = await fetch(`/api/claims?subject=${encodeURIComponent(id)}&about=1&sources=${encodeURIComponent(on.join(','))}`).then(r=>r.json());
+    cl = await fetch(`/api/claims?subject=${encodeURIComponent(id)}&about=1&sources=${encodeURIComponent(on.join(','))}&origin=${state.origin}`).then(r=>r.json());
   }catch(e){ console.warn('[근거] 조회 실패', e); }
   if(seq !== panelSeq || state.sel !== id) return;
 
@@ -772,7 +785,7 @@ async function select(id){
         ${q}
         <div class="srcline">${where}${c.note ? `<br><span class="cl-note">${esc1(c.note)}</span>` : ''}</div>
       </div>`;
-    }).join('') : `<p class="empty" style="margin-top:10px">이 지명을 두고 세운 주장이 아직 없다${cl.allClaims ? ` (전체 주장 ${cl.allClaims}건)` : ''}.</p>`;
+    }).join('') : `<p class="empty" style="margin-top:10px">${state.origin === 'human' ? '사람이 작성한 것으로 기록된 주장이 없다' : '현재 사료 선택에 맞는 주장이 없다'}${cl.allClaims ? ` (전체 주장 ${cl.allClaims}건)` : ''}.</p>`;
 
   el.innerHTML = head + `
     <div class="sect" style="margin-top:20px">주장 ${claimsOn.length}${conflictPreds.size ? ` · 갈리는 술어 ${conflictPreds.size}` : ''}</div>
@@ -856,6 +869,7 @@ async function init3d(){
   R = { engine, world };
   window.__sigong = R;   // 디버그 훅
   world.setYear(state.year);
+  world.setOrigin(state.origin);
   if(world.setSourcesOn) world.setSourcesOn(state.on);
   if(state.sel) world.setSelected(state.sel);
 
@@ -886,6 +900,7 @@ function resize3d(){ if(R) R.engine.resize(); }
 function draw3d(){
   if(!R) return;
   R.world.setYear(state.year);
+  R.world.setOrigin(state.origin);
   if(R.world.setSourcesOn) R.world.setSourcesOn(state.on);
   R.world.setSelected(state.sel);
 }
