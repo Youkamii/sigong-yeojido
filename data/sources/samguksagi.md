@@ -129,3 +129,10 @@ chunk id 는 `chunk_samguksagi_{levelId}` (예 `chunk_samguksagi_sg_001_0020_001
 **본문(`<text>`)을 가진 요소마다** chunk 를 만든다(`level` 필드에 층 번호, `chunkType` 은 잎이면 article). 그래서 그 절들도
 chunk 다(id `chunk_samguksagi_{level2Id}`, 예 `chunk_samguksagi_sg_001_0010` = 권1 宣撰). 합 5,237 chunk, 주석 3,339, 색인어 14,667.
 年表·目錄은 XML 표(table)·목록(ul/li)이라 행·항목마다 줄바꿈으로 펴 놓았다 — 열 구조는 원본 XML 에만 있다.
+
+## 2026-09-07 판본 이미지 대조
+
+권13 동명성왕조의 淹淲水는 교토대 소장 1574년판과 일본 국회도서관 소장 1928년판에서,
+권37 지명 목록의 같은 표기는 1928년판에서 물 수변과 虎 자형을 확인했다.
+벌크 본문은 그대로 보존한다. 이미지 자형의 대조이며 국편 웹의 㴲 표시는 여전히 미확인이다.
+[판본·이미지·원 주소와 해시](https://github.com/Youkamii/sigong-yeojido/blob/main/docs/research/samguksagi-glyphs-8.md).
