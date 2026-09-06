@@ -165,7 +165,10 @@ async def run(url: str, out: Path) -> int:
         # 3a2. 사료 카드 — 레일의 '카드' 버튼을 누르면 라이선스·연도 근거가 열린다
         card = await pg.evaluate(
             """async () => { const b=document.querySelector('.card-btn[data-id="src-samguksagi"]'); if(!b) return {found:false};
-               b.click(); await new Promise(r=>setTimeout(r,1200));
+               b.click(); const started=performance.now();
+               while((document.querySelector('#evi h3')?.textContent!=='삼국사기' || !document.querySelector('#evi table.facts')) && performance.now()-started<10000) {
+                 await new Promise(r=>setTimeout(r,50));
+               }
                const h3=document.querySelector('#evi h3'); const facts=document.querySelectorAll('#evi table.facts tr').length;
                const txt=document.getElementById('evi').innerText;
                return {found:true, label:h3&&h3.textContent, facts, hasLicense:/이용허락/.test(txt), hasYears:/연도를 이렇게 잡은 이유|담고 있는 것/.test(txt)}; }"""

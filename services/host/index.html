@@ -372,7 +372,7 @@ function mountTimeline(){
 // ── 이 해의 기록 — 국편이 연대를 붙인 기사(dateOccured) 중 현재 연도의 것 ──
 const yearText = y => y < 0 ? `기원전 ${-y}년` : `서기 ${y}년`;
 const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
-let yearSeq = 0, yearTimer = 0, yearPanelSeq = 0;
+let yearSeq = 0, yearTimer = 0, panelSeq = 0;
 function refreshEvidence(){
   if(state.sel) select(state.sel);
   else if(state.panel === 'year') showYear();
@@ -387,7 +387,7 @@ async function refreshYearCount(){
 }
 function scheduleYearCount(){ clearTimeout(yearTimer); yearTimer = setTimeout(refreshYearCount, 250); }
 async function showYear(){
-  const y = state.year, seq = ++yearPanelSeq;
+  const y = state.year, seq = ++panelSeq;
   state.panel = 'year';
   state.sel = null; draw(); if(state.mode==='3d') draw3d();
   const el = document.getElementById('evi');
@@ -395,7 +395,7 @@ async function showYear(){
   let r = {chunks:[], total:0, bySource:{}};
   try{ r = await fetch(`/api/year?y=${y}&sources=${encodeURIComponent([...state.on].join(','))}&limit=150`).then(r=>r.json()); }
   catch(e){ console.warn('[이 해] 조회 실패', e); }
-  if(seq !== yearPanelSeq || state.year !== y || state.sel || state.panel !== 'year') return;
+  if(seq !== panelSeq || state.year !== y || state.sel || state.panel !== 'year') return;
   const by = Object.entries(r.bySource||{}).map(([sid,n]) => `${srcLabelOf(sid)} ${n}`).join(' · ');
   el.innerHTML = `
     <h3>${yearText(y)}</h3>
@@ -506,12 +506,14 @@ function mdLite(md){
   return out.join('');
 }
 async function showSource(id){
+  const seq = ++panelSeq;
   state.panel = 'source';
   const el = document.getElementById('evi');
   state.sel = null; draw(); if(state.mode==='3d') draw3d();
   el.innerHTML = `<p class="empty">카드를 여는 중…</p>`;
   let r = null;
   try{ r = await fetch(`/api/source?id=${encodeURIComponent(id)}`).then(x=>x.json()); }catch(e){}
+  if(seq !== panelSeq) return;
   if(!r || !r.found){ el.innerHTML = `<p class="empty">카드가 없다: ${escH(id)}</p>`; return; }
   const f = r.frontmatter || {};
   const yr = v => v == null ? '?' : (v < 0 ? `기원전 ${-v}` : v);
@@ -682,8 +684,8 @@ cv.addEventListener('click', e => {
 
 // ── 근거 패널 ──
 // 근거는 서버가 찾는다(/api/mentions) — 이름 문자열 일치(자동). 원문 전체를 브라우저로 보내지 않는다.
-let selSeq = 0;
 async function select(id){
+  const seq = ++panelSeq;
   state.panel = 'place';
   state.sel = id; draw(); if(state.mode==='3d') draw3d();
   let p = state.places.find(x=>x.id===id);
@@ -719,18 +721,17 @@ async function select(id){
     ${p.note ? `<p class="note">${escH(p.note)}</p>` : ''}`;
   el.innerHTML = head + `<div class="sect" style="margin-top:20px">원문 근거</div><p class="empty" style="margin-top:12px">찾는 중…</p>`;
 
-  const seq = ++selSeq;
   const on = [...state.on].filter(sid => !p.sourceId || sid === p.sourceId);
-  let res = {chunks:[], total:0, bySource:{}};
+  const u = `/api/mentions?names=${encodeURIComponent(names.join(','))}&sources=${encodeURIComponent(on.join(','))}&limit=120`;
+  const mentionsRequest = fetch(u).then(r=>r.json()).catch(e=>{
+    console.warn('[근거] 조회 실패', e);
+    return {chunks:[], total:0, bySource:{}, failed:true};
+  });
   let cl = {claims:[], total:0};
   try{
-    const u = `/api/mentions?names=${encodeURIComponent(names.join(','))}&sources=${encodeURIComponent(on.join(','))}&limit=120`;
-    [res, cl] = await Promise.all([
-      fetch(u).then(r=>r.json()),
-      fetch(`/api/claims?subject=${encodeURIComponent(id)}&about=1&sources=${encodeURIComponent(on.join(','))}`).then(r=>r.json()).catch(()=>({claims:[],total:0})),
-    ]);
+    cl = await fetch(`/api/claims?subject=${encodeURIComponent(id)}&about=1&sources=${encodeURIComponent(on.join(','))}`).then(r=>r.json());
   }catch(e){ console.warn('[근거] 조회 실패', e); }
-  if(seq !== selSeq || state.sel !== id) return;   // 그 사이 다른 지명을 골랐다
+  if(seq !== panelSeq || state.sel !== id) return;
 
   const srcLabel = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
   // ── 주장(Claim) — 온톨로지 층. 어긋나는 주장도 나란히, 판정하지 않는다 ──
@@ -773,6 +774,16 @@ async function select(id){
       </div>`;
     }).join('') : `<p class="empty" style="margin-top:10px">이 지명을 두고 세운 주장이 아직 없다${cl.allClaims ? ` (전체 주장 ${cl.allClaims}건)` : ''}.</p>`;
 
+  el.innerHTML = head + `
+    <div class="sect" style="margin-top:20px">주장 ${claimsOn.length}${conflictPreds.size ? ` · 갈리는 술어 ${conflictPreds.size}` : ''}</div>
+    <div class="auto">사료 한 대목에서 세운 주장(Claim). 인용문은 그 대목의 글자 그대로이고, 누가(사람/AI) 세웠는지 딱지가 붙는다.${
+      conflictPreds.size ? ' 붉은 줄은 같은 술어에 값이 갈리는 주장 — 어느 쪽이 맞는지는 판정하지 않는다.' : ''}</div>
+    ${claimsHtml}
+    <div class="evidence-results"><div class="sect" style="margin-top:20px">원문 근거</div><p class="empty">찾는 중…</p></div>`;
+  const res = await mentionsRequest;
+  if(seq !== panelSeq || state.sel !== id) return;
+  const results = el.querySelector('.evidence-results');
+  if(res.failed){ results.innerHTML = '<p class="empty">원문 조회에 실패했다. 항목을 다시 선택해 재시도할 수 있다.</p>'; return; }
   const by = Object.entries(res.bySource||{}).map(([sid,n]) => `${srcLabel(sid)} ${n}`).join(' · ');
   const ev = res.chunks.length
     ? res.chunks.map(c => chunkCard(c, names)).join('')
@@ -780,11 +791,7 @@ async function select(id){
   const more = res.total > res.chunks.length
     ? `<p class="empty" style="margin-top:10px">${res.total}건 중 앞 ${res.chunks.length}건만 보인다.</p>` : '';
 
-  el.innerHTML = head + `
-    <div class="sect" style="margin-top:20px">주장 ${claimsOn.length}${conflictPreds.size ? ` · 갈리는 술어 ${conflictPreds.size}` : ''}</div>
-    <div class="auto">사료 한 대목에서 세운 주장(Claim). 인용문은 그 대목의 글자 그대로이고, 누가(사람/AI) 세웠는지 딱지가 붙는다.${
-      conflictPreds.size ? ' 붉은 줄은 같은 술어에 값이 갈리는 주장 — 어느 쪽이 맞는지는 판정하지 않는다.' : ''}</div>
-    ${claimsHtml}
+  results.innerHTML = `
     <div class="sect" style="margin-top:20px">원문 근거 ${res.total}</div>
     <div class="auto">두 글자 이상 이름 또는 국명 색인의 정확 일치로 찾음(자동) · 사람이 확인한 연결 아님${by ? ' · ' + escH(by) : ''}</div>
     ${names.some(n => n.length === 1) ? '<div class="auto">한 글자 이름은 원문 자동 검색 안 함 · 국명 색인이 있는 사료에서 정확히 같은 국명만 찾는다.</div>' : ''}
