@@ -710,6 +710,7 @@ async function select(id){
     <div class="han">${escH(names.join(' · '))}</div>
     <span class="badge ${escH(p.status)}">${escH(
       p.entityType ? (TYPE_KO[p.entityType]||p.entityType) :
+      p.origin === 'ai' ? (p.candidates.length ? '좌표 후보' : '위치 미정') :
       ({established:'위치 확정',majority:'통설',disputed:'비정이 갈림',unlocated:'위치 미정'}[p.status]||p.status))}</span>${
       p.origin === 'ai' ? '<span class="badge ai">조사(자동) · 미확인</span>' : ''}
     ${cands}
