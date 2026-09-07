@@ -19,7 +19,10 @@
 
 [#94 구현·범위](research/peninsula-diorama-94.md) · [공개 검사](research/peninsula-production-94.json) · [화면](research/peninsula-screen-94.png) · [모바일](research/peninsula-mobile-94.png).
 
-#93의 배치 디자인은 사용자가 거부했다. 검사 22개 통과가 요구한 화면의 완성을 뜻하지 않는다.
+#93의 배치 디자인과 #94의 작은 지도 규모를 사용자가 거부했다. 검사 통과가 요구한 화면의 완성을 뜻하지 않는다.
+
+- [ ] #96 시간 화면의 자료 보강: 기본 5묶음 인물 143개 중 108개에 명시적 날짜 객체가 없다. 기존 원문 연결과 빈 시대의 Opus 5 / Max 직접 조사를 이어가야 한다.
+- [x] #96 현재 데이터·시대별 실제 노출량과 기존 Claude 수집 실행 기록을 대조하고 [공백 점검](research/history-coverage-96.md)을 남김. 자료 보강 자체는 미완료.
 
 [#93 에셋 연결과 범위](research/fantology-assets-93.md) · [개발 화면 검사](research/fantology-assets-local-93.json).
 [공개 화면 검사](research/fantology-assets-production-93.json) · [기본 화질](research/fantology-assets-default-93.json) · [화면](research/fantology-assets-screen-93.png).
