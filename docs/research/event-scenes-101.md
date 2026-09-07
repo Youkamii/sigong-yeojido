@@ -35,6 +35,7 @@ HGIS의 저장된 13개 도 경계를 합쳐 해안선을 만들었다. 선을 �
 - 공개 서버의 최종 결과는 후속 `event-scenes-production-101.json`과 그림자·지리 검사 기록으로 남긴다.
 - 13개 장면 중 고하도 진영 이전은 섬 좌표를 확보하지 못해 지도에 놓지 않았다. 목포 행정 중심을 고하도라고 표시하지 않는다.
 - 전체 한국사의 모든 사건 장면이 채워진 상태는 아니다. 1593년 한산도 본영의 조선소·항구 표현, 다른 시대의 활동 장소 연결, 북부 산맥 4개의 이어진 좌표 확보가 남는다.
+- 공개 지리 검사 **10/10 PASS**, 그림자 검사 **4/4 PASS**. 전체 보기와 회전에서 화면 내 나무 8,341개, 투영 범위 누락 0. 지형 그림자 활성화.
 - GitHub Actions workflow가 없어 CI는 NOT_RUN이다.
 
 재생성은 `scripts/import_period_research.py --collection scenes-101`, `scripts/refine_scene_evidence.py`, `scripts/build_history_scenes.py --research <수집 폴더>` 순서다. 해안선·장면 표시 영역 생성 스크립트에는 Shapely가 필요하며 뷰어 실행에는 필요하지 않다.

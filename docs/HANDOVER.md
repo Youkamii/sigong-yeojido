@@ -1,4 +1,6 @@
-# 현재 작업: 사건 중심 3D 지도 (#99, #101)
+# 최근 반영: 사건 중심 3D 지도 (#99, #101)
+
+공개 화면 사건 26·지리 10·그림자 4개 검사 PASS. Python 116 tests, JS 3개 스크립트 PASS. CI NOT_RUN(workflow 없음). c2 뷰어 PID 304567은 /tmp/sigong-warm-viewer-101.py의 child이며 /tmp/sigong-server.pid에 기록돼 있다. Fuseki·동기화 watcher는 기존 프로세스를 유지했다. RDF 272,967 triples, SHA256 52530919774181035bbf2ba9c02d6dcfb1724314783ee386d443f16d0c504f6b.
 
 [구현과 검증 범위](research/event-scenes-101.md): 128개 새 활동 근거와 13개 장면 자료를 연결했다. 고하도 좌표와 전 시대 장면 확장은 미완료다. 기존 §7보다 최근 사용자 지시인 사건·장소 중심 장면을 우선한다.
 
