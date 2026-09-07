@@ -38,3 +38,15 @@ HGIS의 저장된 13개 도 경계를 합쳐 해안선을 만들었다. 선을 �
 - GitHub Actions workflow가 없어 CI는 NOT_RUN이다.
 
 재생성은 `scripts/import_period_research.py --collection scenes-101`, `scripts/refine_scene_evidence.py`, `scripts/build_history_scenes.py --research <수집 폴더>` 순서다. 해안선·장면 표시 영역 생성 스크립트에는 Shapely가 필요하며 뷰어 실행에는 필요하지 않다.
+
+## 공개 화면
+
+![한산도 해전의 두 함대와 기록에 따른 화재](scenes-101/naval-1592.png)
+
+![동래성의 공격과 방어](scenes-101/dongnae-1592.png)
+
+![보성사 인쇄 작업](scenes-101/printing-1919.png)
+
+![한반도 전체와 산맥·동쪽 섬](scenes-101/whole-map.png)
+
+남은 활동 장소·장면 확장은 [#103](https://github.com/Youkamii/sigong-yeojido/issues/103), 북부 산맥 보강은 #97에서 추적한다.
