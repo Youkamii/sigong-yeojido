@@ -149,5 +149,9 @@ export class ChronicleWorld extends KoreaWorld{
     const target=engine.controls.target,distance=camera.position.distanceTo(target);
     if(engine.scene.fog){engine.scene.fog.near=distance+280;engine.scene.fog.far=distance+this.maxRim*2.5;}
     engine.key.position.copy(target).add(this.sunOffset);engine.key.target.position.copy(target);
+    const shadow=engine.key.shadow.camera,extent=Math.max(60,Math.min(240,distance*.55));
+    if(Math.abs(shadow.right-extent)>1){
+      shadow.left=shadow.bottom=-extent;shadow.right=shadow.top=extent;shadow.updateProjectionMatrix();
+    }
   }
 }
