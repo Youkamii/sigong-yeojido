@@ -4,6 +4,7 @@ from collections import defaultdict
 from copy import deepcopy
 from hashlib import sha256
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 import shutil
@@ -37,6 +38,8 @@ def main():
     assert run['exitCode'] == 0 and not run['isError']
     assert run['modelsObserved'] == ['claude-opus-5'] and run['effort'] == 'max'
     draft = json.loads((args.research / 'result.json').read_text(encoding='utf-8'))
+    adjustment_file = args.data / 'research' / args.collection / 'integration-adjustments.json'
+    adjustments = json.loads(adjustment_file.read_text(encoding='utf-8')).get(job, {}) if adjustment_file.exists() else {}
     # The unpublished collector IDs refer to these already named AKS entities.
     ids = {'person-encykorea-yi-seonggye-e0059033': 'person-encykorea-yi-seonggye',
            'event-encykorea-joseon-founding-1392': 'event-joseon-founding-1392',
@@ -67,11 +70,12 @@ def main():
         assert len(raw) == record['byteLength']
         parser = Text(); parser.feed(raw.decode('utf-8'))
         text = ''.join(parser.parts)
+        collapsed_text = ' '.join(text.split())
         spaced_text = ' '.join(' '.join(parser.parts).split())
         assert sum(len(e['text'].split()) for e in source['excerpts']) <= 25, sid
         rows = []
         for excerpt in source['excerpts']:
-            assert excerpt['text'] and (excerpt['text'] in text or excerpt['text'] in spaced_text), (sid, excerpt['id'], 'raw quotation mismatch')
+            assert excerpt['text'] and any(excerpt['text'] in view for view in (text, collapsed_text, spaced_text)), (sid, excerpt['id'], 'raw quotation mismatch')
             cid = 'chunk_' + prefix + '_' + job + '_' + excerpt['id'].removeprefix('ex-')
             row = {'id': cid, 'sourceId': sid, 'text': excerpt['text'], 'locator': excerpt['locator'],
                    'permalink': url, 'sourceUrl': url, 'lang': 'ko', 'date': None,
@@ -96,8 +100,10 @@ def main():
             assert meta['id'] == sid
             assert meta.get('resource', url).rstrip('/') == url.rstrip('/'), (sid, 'source URL mismatch')
         else:
+            encyclopedia = 'encykorea.aks.ac.kr/' in url
             files[card] = markdown({'type':'Source', 'id':sid, 'label':source['title'],
-                'sourceKind':'백과사전 항목의 짧은 발췌', 'sourceGroup':'한국민족문화대백과사전',
+                'sourceKind':'백과사전 항목의 짧은 발췌' if encyclopedia else '기관 공개 자료의 짧은 발췌',
+                'sourceGroup':'한국민족문화대백과사전' if encyclopedia else source['publisher'],
                 'compiler':source['publisher'], 'composedYear':None, 'coversFrom':None, 'coversTo':None,
                 'defaultLens':True, 'resource':url, 'originalLanguage':'ko',
                 'edition':'2026-09-07 제공 페이지', 'license':'short-excerpt-only', 'status':'draft', 'verified':None},
@@ -110,6 +116,10 @@ def main():
                        'excerpts':len(rows), 'quotedWords':sum(len(r['text'].split()) for r in rows)})
     for original in draft['claims']:
         claim = deepcopy(original)
+        if change := adjustments.get(claim['id']):
+            assert claim['object']['latest'] == change['expectedLatest']
+            claim['object']['latest'] = change['latest']
+            claim['note'] = claim.get('note', '') + ' 연결 수정(Codex): ' + change['reason']
         row = chunks[claim.pop('citesExcerpt')]
         sid = claim.pop('sourceId')
         assert row['sourceId'] == sid
@@ -120,7 +130,12 @@ def main():
             obj['id'] = 'ts-' + prefix + '-' + job + '-' + obj['id'].removeprefix('ts-')
         for value in ([obj['value']] if obj['kind'] == 'year' else [obj[k] for k in ('earliest','latest','year') if k in obj]):
             quoted = row['text']
-            supported = str(value) in quoted if value >= 0 else str(abs(value)) in quoted and any(marker in quoted for marker in ('기원전', 'B.C.', 'BCE', 'BC'))
+            supported = str(value) in quoted if value >= 0 else str(abs(value)) in quoted and any(marker in quoted for marker in ('기원전', '서기전', 'B.C.', 'BCE', 'BC'))
+            if not supported and obj.get('precision') == 'century' and value < 0:
+                century = re.search(r'(?:기원전|서기전)\s*(\d+)세기', quoted)
+                supported = bool(century and value == -int(century[1]) * 100 and value == obj.get('earliest'))
+            if not supported and obj.get('kind') == 'time' and value == obj.get('latest'):
+                supported = '이듬해' in obj.get('verbatim', '') and value == obj.get('earliest', 0) + 1 and str(obj['earliest']) in row['text']
             assert supported, (claim['id'], 'numeric year absent from quotation', value)
         claim.update(fromSource=sid, citesChunk=row['id'], quote=row['text'], origin='ai', status='draft',
                      generatedBy='claude-opus-5', generatedAt=datetime.fromtimestamp(run['started'],timezone.utc).date().isoformat())
@@ -142,6 +157,7 @@ def main():
               'rawFilesChecked':checks, 'missing':draft.get('missing',[]), 'collection':run,
               'downloadPerformedBy':'claude-opus-5 via its Bash tool', 'integrationPerformedBy':'Codex',
               'reviewedEntityIds':ids,
+              'integrationAdjustments':adjustments,
               'checkOnly':args.check_only}
     if not args.check_only:
         for path, text in files.items():

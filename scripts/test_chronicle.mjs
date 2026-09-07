@@ -30,6 +30,9 @@ assert.equal(contextAt(data([birth,death,membership]),1395).people[0].relations.
 const king=claim('king','isKingOf',{kind:'entity',id:'polity-example'});
 assert.equal(contextAt(data([birth,death,reign,king]),1410).people[0].relations.length,0,'Living before accession does not mean reigning');
 assert.equal(contextAt(data([birth,death,reign,king]),1420).people[0].relations.length,1);
+const polityPeriod=claim('polity-period','activeIn',{kind:'time',id:'ts-polity',earliest:1430,latest:1450},'src-a','polity-example');
+assert.equal(contextAt(data([reign,king,polityPeriod]),1420).people[0].relations.length,0,'A later polity does not exist throughout an earlier reign');
+assert.equal(contextAt(data([reign,king,polityPeriod]),1440).people[0].relations.length,1);
 const duration={...eventDate,object:{kind:'time',id:'ts-war',earliest:1443,latest:1446}};
 const start={...eventDate,id:'date-start',object:{kind:'year',value:1443}};
 assert.equal(contextAt(data([duration,start]),1444).events.length,1,'A duration and its start do not duplicate the same event');

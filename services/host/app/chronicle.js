@@ -8,7 +8,9 @@ export const REFERENCE_GROUPS = [
   {label:'국가유산포털', matches:s=>s.id.startsWith('src-khs-')},
 ];
 export const yearLabel = y => y < 0 ? `기원전 ${-y}년` : `${y}년`;
-export const entityLabel = e => e.label.replace(/\s*\(민족문화대백과[^)]*\)/g,'').trim();
+export const entityLabel = e => e.label.replace(/\s*\([^)]*민족문화대백과[^)]*\)/g,part=>{
+  const polity=part.match(/조선|고려|백제|신라|발해/);return polity?` (${polity[0]})`:'';
+}).trim();
 const shortPredicate = p=>p.replace('syj:','');
 const ACTIVITY = new Map([['livedIn','생존'],['reignedIn','재위'],['activeIn','활동'],['appearsIn','등장']]);
 const EVENT_WORDS = {foundedIn:'건국',establishedIn:'설립',proclaimedIn:'선포',accededIn:'즉위'};
@@ -82,7 +84,10 @@ export function contextAt(data,year,span=50){
     // A lifetime cannot date a later office or membership.
     person.relations=data.claims.filter(c=>c.subject===person.id&&c.object.kind==='entity'
       &&c.predicate==='syj:isKingOf'&&person.periods.some(p=>p.claim.predicate==='syj:reignedIn'
-        &&p.claim.fromSource===c.fromSource));
+        &&p.claim.fromSource===c.fromSource)).filter(c=>{
+          const periods=dates.filter(d=>d.claim.subject===c.object.id&&d.claim.predicate==='syj:activeIn');
+          return !periods.length||periods.some(d=>d.lo<=year&&d.hi>=year);
+        });
     for(const relation of person.relations){
       const polity=entities.get(relation.object.id);
       if(polity&&!polities.has(polity.id))polities.set(polity.id,{...polity,basis:[relation],ruler:person});
