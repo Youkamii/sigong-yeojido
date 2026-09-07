@@ -5,10 +5,10 @@ export const REFERENCE_GROUPS = [
   {label:'삼국사기', matches:s=>s.id==='src-samguksagi'},
   {label:'고려사', matches:s=>s.id==='src-goryeosa'},
   {label:'조선왕조실록', matches:s=>s.id.startsWith('src-sillok-')},
-  {label:'국가유산포털', matches:s=>s.id.startsWith('src-khs-')},
+  {label:'국가유산·공공기록', matches:s=>['src-khs-','src-presidential-','src-kto-','src-i815-'].some(prefix=>s.id.startsWith(prefix))},
 ];
 export const yearLabel = y => y < 0 ? `기원전 ${-y}년` : `${y}년`;
-export const entityLabel = e => e.label.replace(/\s*\([^)]*민족문화대백과[^)]*\)/g,part=>{
+export const entityLabel = e => e.label.replace(/\s*\([\u3400-\u9fff\s]+\)/g,'').replace(e.type==='Person'?/\s*·\s*\d+년.*$/:/$^/,'').replace(/\s*\([^)]*민족문화대백과[^)]*\)/g,part=>{
   const polity=part.match(/조선|고려|백제|신라|발해/);return polity?` (${polity[0]})`:'';
 }).trim();
 const shortPredicate = p=>p.replace('syj:','');
@@ -33,7 +33,7 @@ export function datedClaims(data){
     if(o.kind!=='time')continue;
     const lo=o.earliest??o.year,hi=o.latest??o.year;
     if(Number.isInteger(lo)&&Number.isInteger(hi))result.push({claim,lo,hi,basis:[claim]});
-    for(const conversion of conversions.get(o.id)||[])result.push({claim,lo:conversion.object.value,
+    for(const conversion of (conversions.get(o.id)||[]).filter(c=>c.fromSource===claim.fromSource))result.push({claim,lo:conversion.object.value,
       hi:conversion.object.value,basis:[claim,conversion]});
   }
   return result.filter(bounded);
@@ -70,7 +70,7 @@ export function contextAt(data,year,span=50){
         claim:birth.claim,basis:[...birth.basis,...death.basis]});
     }
   }
-  // A dated participation supports presence at that event, not an inferred lifetime.
+  // Participation makes a person discoverable; only an activity's evidence can place them.
   for(const event of events.filter(e=>e.type==='Event'&&e.current)){
     for(const claim of data.claims){
       if(claim.object.kind!=='entity')continue;
@@ -172,9 +172,21 @@ export class Chronicle {
       this.chooseYear(nearest.lo);
     }
     this.callbacks.entity(id);
+    const activity=this.callbacks.activity?.(id);
+    const activityClaims=(activity?.claimIds||[]).map(id=>this.data.claims.find(c=>c.id===id)).filter(Boolean);
     const descriptions=this.data.claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate));
     this.host.innerHTML=`<button class="context-back" data-context-back>← ${yearLabel(this.year)}로 돌아가기</button>
       <div class="context-kicker">${{Person:'인물',Event:'사건',Polity:'나라'}[entity.type]||'관련 항목'}</div><h2>${esc(entityLabel(entity))}</h2>
+      ${activity?`<section class="selected-activity"><h3>${yearLabel(this.year)}${activity.place?' · '+esc(activity.place):''}</h3>
+        ${activity.role?`<p class="activity-role">${esc(activity.role)}</p>`:''}
+        <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동입니다.')}</p>
+        <p class="activity-location">${esc(activity.placement)}</p>
+        ${activity.sides.map(s=>`<p class="activity-side"><strong>${esc(s.label)}</strong> · ${esc(s.role)}</p>`).join('')}
+        <details><summary>활동·장소의 근거 ${activityClaims.length}개</summary>${activityClaims.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.quote)} ↗</button>`).join('')}
+        ${activity.coordinateNote?`<p>${esc(activity.coordinateNote)}</p>`:''}${activity.displayBasis?`<p>${esc(activity.displayBasis)}</p>`:''}
+        ${activity.sources.map(s=>`<a class="context-proof" href="${esc(s.url)}" target="_blank" rel="noopener">위치 자료 · ${esc(s.title)} ↗</a>`).join('')}</details>
+        ${activity.events.length>1?`<div class="activity-episodes">${activity.events.map(e=>`<button data-chronicle-entity="${esc(e.entityId)}">${esc(e.label)} →</button>`).join('')}</div>`:''}
+      </section>`:''}
       ${this.callbacks.placement?.(id)?`<p class="scene-placement">${esc(this.callbacks.placement(id))} · 건물·길·인물 외형은 상징 모형입니다.</p>`:''}
       ${descriptions.slice(0,2).map(c=>`<p class="entity-description">${esc(c.object.value||'')}</p>`).join('')}
       <div class="context-section"><h3>시간</h3>${dates.map(d=>`<div class="entity-date"><button data-jump-year="${d.lo}">${yearLabel(d.lo)}${d.lo!==d.hi?' – '+yearLabel(d.hi):''}</button>
@@ -197,9 +209,9 @@ export class Chronicle {
       ${status?`<p role="status" class="context-empty">${esc(status)}</p>`:''}
       ${c.polities.length?`<section class="context-polities" aria-label="이때의 나라와 세력">${c.polities.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.id)}">${esc(entityLabel(p))}${p.ruler?' · '+esc(entityLabel(p.ruler))+' 재위':''}</button>`).join('')}</section>`:''}
       ${c.events.some(e=>e.current)?`<section class="current-events"><h3>이 해의 사건</h3>${c.events.filter(e=>e.current).map(e=>`<button data-chronicle-entity="${esc(e.id)}">${esc(entityLabel(e))} <span>→</span></button>`).join('')}</section>`:''}
-      <section class="context-section"><div class="section-heading"><h3>이때의 사람들</h3><span>생존 · 재위 · 활동</span></div>
+      <details class="context-section era-people"><summary>동시대 인물 ${c.people.length}명 · 생존·재위·활동</summary><div class="section-heading"><h3>이때의 사람들</h3></div>
       ${c.people.map(p=>this.personCard(p,c)).join('')||(!status?'<p class="context-empty">선택한 사료에 이 해의 생존·활동 근거가 연결된 인물이 없습니다.</p>':'')}
-      </section><section class="context-section"><div class="section-heading"><h3>이 시기의 사건</h3><span>${yearLabel(c.from)} – ${yearLabel(c.to)}</span></div>
+      </details><section class="context-section"><div class="section-heading"><h3>이 시기의 사건</h3><span>${yearLabel(c.from)} – ${yearLabel(c.to)}</span></div>
       <div class="event-sequence">${c.events.map(e=>`<article class="period-event${e.current?' current':''}"><button class="event-year" data-jump-year="${e.lo}">${yearLabel(e.lo)}${e.lo!==e.hi?' – '+yearLabel(e.hi):''}</button>
         <button class="event-title" data-chronicle-entity="${esc(e.id)}">${esc(e.title)}</button>
         ${this.relations(e.id).filter(x=>['Person','Polity','Place'].includes(x.target.type)).slice(0,6).map(x=>`<button class="relation-chip" data-chronicle-entity="${esc(x.target.id)}">${esc(entityLabel(x.target))}</button>`).join('')}

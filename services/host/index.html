@@ -386,6 +386,7 @@ const chronicleView = new Chronicle(document.getElementById('chronicle'), docume
   year:changeYear, filters:()=>({sources:state.on,origin:state.origin}), claim:showGraphClaim,
   entity:selectSceneEntity,
   placement:id=>chronicleScene.assets?.rowFor(id)?.placementLabel,
+  activity:id=>chronicleScene.activity(id),
   context:context=>{
     const host=document.getElementById('sceneContext');
     host.querySelector('h2').textContent=yearLabel(context.year);
@@ -417,7 +418,7 @@ function selectSceneEntity(id){
 }
 document.getElementById('periodSceneBtn').onclick=()=>chronicleScene.assets?.focusPeriod();
 document.getElementById('wholeMapBtn').onclick=()=>{if(R)R.world.frame(R.engine);};
-document.getElementById('sceneDestination').onchange=event=>chronicleScene.assets?.focus(event.target.value);
+document.getElementById('sceneDestination').onchange=event=>{if(event.target.value)chronicleView.showEntity(event.target.value);};
 for(const [id,factor] of [['sceneZoomIn',.7],['sceneZoomOut',1.4]])document.getElementById(id).onclick=()=>{
   if(!R)return;const e=R.engine,d=e.camera.position.distanceTo(e.controls.target);
   e.flyTo(e.controls.target.clone(),Math.max(e.controls.minDistance,Math.min(e.controls.maxDistance,d*factor)),250);
@@ -1328,9 +1329,10 @@ async function init3d(){
   let elev = null;
   try{ elev = await fetch('/api/elevation').then(r => r.ok ? r.json() : null); }
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
-  const [outline,anchors,geography]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json'].map(file=>
+  const [outline,anchors,geography,scenes]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json','history-scenes.json'].map(file=>
     fetch('./app/'+file).then(r=>{if(!r.ok)throw Error('지도 자료를 불러오지 못했습니다.');return r.json();})));
   const world = new ChronicleWorld(state.geo, [...state.places,...anchors.places], { elev, outline, geography });
+  world.scenePackets=scenes.scenes;world.sceneSources=scenes.sources;
   engine.add(world.group);
   engine.onPick = (id,event) => { const feature=historyMap.features.find(f=>f.id===id);
     if(id&&event)chronicleScene.prefer(id,engine.pick(event)?.point);

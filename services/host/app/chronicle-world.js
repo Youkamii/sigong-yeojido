@@ -6,6 +6,7 @@ import {ridgeSegments,ridgeRelief} from './chronicle-geography.js';
 import {fitChronicleShadows} from './chronicle-shadows.js';
 
 function inside(x,z,ring){
+  const b=ring.bounds;if(b&&(x<b.minX||x>b.maxX||z<b.minZ||z>b.maxZ))return false;
   let result=false;
   for(let i=0,j=ring.length-1;i<ring.length;j=i++){
     const a=ring[i],b=ring[j];
@@ -38,6 +39,7 @@ export class ChronicleWorld extends KoreaWorld{
       return area>.12;
     });
     this.rings.sort((a,b)=>b.length-a.length);
+    this.rings=this.rings.filter(r=>!(geography?.islands||[]).some(i=>inside(...this.toWorld(i.lon,i.lat),r)));
     this.islandRings=[];
     for(const island of geography?.islands||[]){
       const geometry=island.geometry;if(!geometry)continue;
@@ -48,11 +50,19 @@ export class ChronicleWorld extends KoreaWorld{
       }
     }
     this.ridgeSegments=ridgeSegments(geography,(...c)=>this.toWorld(...c));
+    for(const ring of this.rings)ring.bounds={minX:Math.min(...ring.map(p=>p[0])),maxX:Math.max(...ring.map(p=>p[0])),
+      minZ:Math.min(...ring.map(p=>p[1])),maxZ:Math.max(...ring.map(p=>p[1]))};
     const points=this.rings.flat();
     this.bounds={minX:Math.min(...points.map(p=>p[0])),maxX:Math.max(...points.map(p=>p[0])),
       minZ:Math.min(...points.map(p=>p[1])),maxZ:Math.max(...points.map(p=>p[1]))};
     this.center=new THREE.Vector3((this.bounds.minX+this.bounds.maxX)/2,8,(this.bounds.minZ+this.bounds.maxZ)/2);
     this.maxRim=Math.max(...points.map(p=>Math.hypot(...p)));
+    this.seaLevel=7;
+    const seaGeometry=new THREE.PlaneGeometry((this.bounds.maxX-this.bounds.minX)*3,(this.bounds.maxZ-this.bounds.minZ)*3,1,1);
+    seaGeometry.rotateX(-Math.PI/2);
+    const sea=new THREE.Mesh(seaGeometry,new THREE.MeshStandardMaterial({color:'#6c999a',roughness:.55,metalness:.05}));
+    sea.position.set(this.center.x,this.seaLevel,this.center.z);sea.receiveShadow=true;sea.userData.fanGround=true;
+    sea.name='historical-sea';this.group.add(sea);
     const sample=elev?makeHeightAt(elev):()=>0;
     const [x0,z0]=this.toWorld(127,37),[x1,z1]=this.toWorld(128,38);
     this.coordinatesAt=(x,z)=>{
@@ -76,6 +86,12 @@ export class ChronicleWorld extends KoreaWorld{
     };
     // KoreaWorld's old overlays convert this display height back with terrainY.
     this.heightAt=(lon,lat)=>(this.surfaceAt(...this.toWorld(lon,lat))-7)*244.6+.001;
+    const sampleSurface=this.surfaceAt,heights=new Map();
+    this.surfaceAt=(x,z)=>{
+      const key=x.toFixed(3)+':'+z.toFixed(3);
+      if(!heights.has(key))heights.set(key,sampleSurface(x,z));
+      return heights.get(key);
+    };
     this.land=new THREE.Group();this.land.name='peninsula-diorama';this.group.add(this.land);
     this.buildLand();
   }
@@ -124,7 +140,7 @@ export class ChronicleWorld extends KoreaWorld{
       const island=this.islandRings.some(i=>i.ring===ring);
       const layers=island?[[6.7,.3,cliff,1]]:[[0,3.3,cliff,1],[3.3,2.6,earth,1],[5.9,1.1,coast,1]];
       for(const [bottom,height,material,scale] of layers){
-        const bevel=island?.015:.22;
+          const bevel=.005;
         const geometry=new THREE.ExtrudeGeometry(shape,{depth:height,bevelEnabled:true,bevelThickness:bevel,bevelSize:bevel,bevelSegments:1});
         geometry.rotateX(-Math.PI/2);
         const mesh=new THREE.Mesh(geometry,material);mesh.position.y=bottom;mesh.scale.set(scale,1,scale);
@@ -146,7 +162,8 @@ export class ChronicleWorld extends KoreaWorld{
   configureEngine(engine){
     this.engine=engine;
     engine.frameWorld(this.maxRim);
-    engine.controls.minDistance=6;engine.controls.maxDistance=this.maxRim*5;
+    engine.controls.minDistance=.1;engine.controls.maxDistance=this.maxRim*5;
+    engine.camera.near=.005;
     engine.camera.far=this.maxRim*10;engine.camera.updateProjectionMatrix();
     const el=40*Math.PI/180,az=-20*Math.PI/180,d=140;
     engine.controls.target.copy(this.center);

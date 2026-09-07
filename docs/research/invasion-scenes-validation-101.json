@@ -1,0 +1,182 @@
+{
+  "job": "invasion_events",
+  "sources": 10,
+  "excerpts": 34,
+  "claims": 53,
+  "entities": 25,
+  "rawFilesChecked": [
+    {
+      "source": "src-encykorea-busanjin",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024278",
+      "sha256": "bf0b32d2d87c961b911bc870271b20f67d0d84637c2557b943dffd1e6dae3b0a",
+      "rawBytes": 90144,
+      "excerpts": 6,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-encykorea-dongnae",
+      "url": "https://encykorea.aks.ac.kr/Article/E0016386",
+      "sha256": "eda44d7384c3701bfd68bb24df2bc6b668e4f7695030f591d920bfd20b8d83ae",
+      "rawBytes": 98251,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-encykorea-jinju-jeontu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054918",
+      "sha256": "24e8c410cd780b36210c6ed73c7e6a89cd1c6a7bdaf4d08a2c98c7170ad6d742",
+      "rawBytes": 103044,
+      "excerpts": 5,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-encykorea-haengju",
+      "url": "https://encykorea.aks.ac.kr/Article/E0062859",
+      "sha256": "f8a08e1f7b1b69b2c4e0ce8ee43a854f877c738099a5baa410a614fc13db6987",
+      "rawBytes": 109468,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-encykorea-imjinwaeran",
+      "url": "https://encykorea.aks.ac.kr/Article/E0047674",
+      "sha256": "380dccbffd8d4984a17653f963251221cb66652f91ad953f0757afcccfdd0189",
+      "rawBytes": 280978,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-encykorea-gyeongbokgung",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002434",
+      "sha256": "b5236f3b4d3e276a5c0408b7239ada6df009ab059b42457e0a71f194ab638682",
+      "rawBytes": 632606,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-kto-gyeongbokgung",
+      "url": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=108422",
+      "sha256": "09cd29228b52394d37b9270f706978c21593e292a3bd9f10de18e7bff0681bed",
+      "rawBytes": 226518,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-kto-jinjuseong",
+      "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=75199&menuSn=351",
+      "sha256": "4a533a39ade7ac3aa32fc5d51f6eb4c2551e09afd8578c9f5febbf26f79e3303",
+      "rawBytes": 222158,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-encykorea-boseongsa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0023417",
+      "sha256": "c1f407ebd131489d71d9fb66b178a725e6c3751612dfdcd2dbc8d5c1afe1ef6f",
+      "rawBytes": 74418,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-i815-boseongsa",
+      "url": "http://sajeok.i815.or.kr/i815/view_region/1344/page/2//sfl/all?type=department_detail2&reno=1&sgg=%EC%A2%85%EB%A1%9C%EA%B5%AC",
+      "sha256": "de932dbede543c8e7a26c11e84ab892261b4a4e79a22ab8589bbcc2d6a362a7f",
+      "rawBytes": 25071,
+      "excerpts": 3,
+      "quotedWords": 23
+    }
+  ],
+  "missing": [
+    {
+      "topic": "부산진성 실측 좌표",
+      "detail": "국가유산청(www.khs.go.kr, royal.khs.go.kr, www.heritage.go.kr, www.cha.go.kr)이 이 실행 환경에서 모두 연결 시간 초과라 부산진성/부산진지성 지정 좌표를 내려받지 못했다. 그래서 area anchor(부산)로만 표시했다.",
+      "affectedScenes": [
+        "scene-busanjin-1592"
+      ]
+    },
+    {
+      "topic": "동래읍성 실측 좌표",
+      "detail": "같은 이유로 동래읍성지 지정 좌표를 얻지 못해 area anchor(동래)를 썼다. 동래구청(www.dongnae.go.kr)은 접속되지만 좌표를 담은 유적 상세 페이지를 이번 범위에서 확인하지 못했다.",
+      "affectedScenes": [
+        "scene-dongnae-1592"
+      ]
+    },
+    {
+      "topic": "부산진전투 정발 외 방어 측 인물",
+      "detail": "출처가 '첨사 이하 차례로 전사하고'라고만 적어 다른 방어자 이름을 이 장면의 현장 인물로 세울 근거가 없다.",
+      "affectedScenes": [
+        "scene-busanjin-1592"
+      ]
+    },
+    {
+      "topic": "동래전투 노개방·조영규",
+      "detail": "동래전투 항목은 동래교수 노개방, 양산군수 조영규를 함께 적지만 페이지당 25단어 인용 한도 안에서 송상현·백성·포위·연도를 우선했다. 근거 문장은 원문에 있으므로 다음 배치에서 추가 가능하다.",
+      "affectedScenes": [
+        "scene-dongnae-1592"
+      ]
+    },
+    {
+      "topic": "1592년 궁궐 화재의 방화 주체",
+      "detail": "임진왜란 항목이 『선조수정실록』(난민)과 『서정일기』(일본군 유추)를 나란히 적어 서로 엇갈린다. 어느 쪽도 현장 방화자로 확정하지 않았고 두 집단 모두 presence='related'로만 두었다. 실록 원문은 국사편찬위원회 사이트라 이번 지침상 요청하지 않았다.",
+      "affectedScenes": [
+        "scene-hanyang-palace-fire-1592"
+      ]
+    },
+    {
+      "topic": "화재 장면의 소실 건물 목록",
+      "detail": "'전소', '창덕궁·창경궁 등도 모두 불에 타버려' 이상으로 어떤 전각이 탔는지 적은 근거가 없어 건물 단위 표현은 만들지 않았다.",
+      "affectedScenes": [
+        "scene-hanyang-palace-fire-1592"
+      ]
+    },
+    {
+      "topic": "진주성 좌표의 성격",
+      "detail": "국가유산청 사적 좌표를 받지 못해 한국관광공사 대표 지점을 썼다. 기준계·정확도 표기가 없고 성곽 범위도 아니다.",
+      "affectedScenes": [
+        "scene-jinju-second-siege-1593"
+      ]
+    },
+    {
+      "topic": "보성사 인쇄 장면의 천도교 지도부",
+      "detail": "손병희 등은 보성사 소유·자금과 연결되지만 2월 27일 인쇄 현장에 있었다는 문장을 확보하지 못해 참여자로 넣지 않았다.",
+      "affectedScenes": [
+        "scene-boseongsa-printing-1919"
+      ]
+    },
+    {
+      "topic": "행주대첩 좌표 재확인",
+      "detail": "khs.go.kr 접속 불가로 기존 feature 좌표를 그대로 재사용했을 뿐 이번 실행에서 원 기관 값을 다시 확인하지 못했다.",
+      "affectedScenes": [
+        "scene-haengju-1593"
+      ]
+    }
+  ],
+  "collection": {
+    "task": "invasion_events",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788794722.5844831,
+    "pid": 11032,
+    "exitCode": 0,
+    "seconds": 1597.7,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "a2c92372-ca02-405c-89c6-a7577377e7a9",
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false
+}

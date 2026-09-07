@@ -1,0 +1,169 @@
+{
+  "job": "yi_naval",
+  "sources": 11,
+  "excerpts": 36,
+  "claims": 75,
+  "entities": 24,
+  "rawFilesChecked": [
+    {
+      "source": "src-encykorea-yi-sunsin",
+      "url": "https://encykorea.aks.ac.kr/Article/E0044900",
+      "sha256": "59a184ff410cf7e5d377a165b70e0f350ec885eb1628d80e97868495cf631449",
+      "rawBytes": 239450,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-encykorea-hansando-daecheop",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061676",
+      "sha256": "b1573fa36a81ad8d1ba4764c6dce02157b502d1b629785e0bb81dfc48f23d62d",
+      "rawBytes": 94214,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-encykorea-hansando-yujeok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061677",
+      "sha256": "522fff55f25a94bfd2be9cbe5762f9c5f9a8ca7b6a216f8880d54bbff57a9a8b",
+      "rawBytes": 145403,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-encykorea-sugun-tongjesa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0031240",
+      "sha256": "33a2c7ed838634c299b3efce177fb9d81ad2333015e5734721eef09d0e9383a1",
+      "rawBytes": 99258,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-encykorea-danghangpo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013958",
+      "sha256": "507e196cf2ce44ba21f578f293766836be6491bcfafbc9e9dc3fe6fb26d503cb",
+      "rawBytes": 91045,
+      "excerpts": 5,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-encykorea-myeongnyang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0018250",
+      "sha256": "f427cbb8bee889935f90f5b387bd52a94523e04b4e8acf92fc496826516fab26",
+      "rawBytes": 93538,
+      "excerpts": 5,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-encykorea-noryang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0012716",
+      "sha256": "1cb277e7af7dfd1aae7595333fdfa3d8f409d3b0b08f8ccfcbbe175f053b249f",
+      "rawBytes": 79292,
+      "excerpts": 2,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-encykorea-gohado-yujeok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004032",
+      "sha256": "55ad96daa7eee10313e0d8bbd8f2882a786ab0e9ccfc32992ba941c59bbb4c7f",
+      "rawBytes": 128757,
+      "excerpts": 4,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-encykorea-imjinwaeran",
+      "url": "https://encykorea.aks.ac.kr/Article/E0047674",
+      "sha256": "380dccbffd8d4984a17653f963251221cb66652f91ad953f0757afcccfdd0189",
+      "rawBytes": 280978,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-encykorea-seon-geoi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0028603",
+      "sha256": "e5447d1b3a00d6355ce6d1fa2ad8963aa2d7627b73e0622cd87391e3c52edfe8",
+      "rawBytes": 79337,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-encykorea-hansando-island",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061674",
+      "sha256": "8d9d3d7009ce7bed18d5854cafd4d46c049ec782a9dd108a1809e234563c7b24",
+      "rawBytes": 114426,
+      "excerpts": 2,
+      "quotedWords": 12
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-sea-coordinates",
+      "topic": "해전 해역 좌표",
+      "detail": "한산섬 앞바다·당항포·명량(울돌목)·노량 네 해역 모두 권위 있는 해역 좌표를 얻지 못했다. 백과 서술은 '진도와 육지 사이의 해협', '남해도와 하동 사이의 해협' 같은 범위 설명뿐이다. 네 장면 모두 lon/lat을 비워 두고 구 행정구역 표시 중심만 참고점으로 붙였다.",
+      "neededSource": "국립해양조사원·국가지명위원회의 해양지명 좌표 또는 국가유산청 해전지 지정 좌표"
+    },
+    {
+      "id": "miss-heritage-service-unreachable",
+      "topic": "국가유산청(문화재청) 계열 사이트 접속 실패",
+      "detail": "www.khs.go.kr, www.heritage.go.kr, www.cha.go.kr, gis-heritage.go.kr 에 robots.txt와 본문·OpenAPI(SearchKindOpenapiList.do) 요청을 각각 20초 타임아웃으로 시도했으나 모두 연결 타임아웃이었다. 그래서 '통영 한산도 이충무공 유적'(사적) 같은 기관 목록 좌표를 이번 수집에서 확보하지 못했다.",
+      "neededSource": "국가유산청 국가유산 목록·상세 좌표(위도/경도) 원문"
+    },
+    {
+      "id": "miss-gohado-coordinate",
+      "topic": "고하도 좌표 오기",
+      "detail": "한국민족문화대백과사전 「고하도」(E0004030) 본문이 '동경 126°37′, 북위 34°77′'로 적었는데 북위 34°77′은 분이 60을 넘어 좌표로 성립하지 않는다. 그래서 고하도 장면의 lon/lat을 비우고 목포 앵커만 붙였다. 원본 파일 raw/encykorea-E0004030-gohado-island.html 에 그대로 보존해 두었다.",
+      "neededSource": "목포시·국토지리정보원 등 고하도 지점 좌표"
+    },
+    {
+      "id": "miss-jangmunpo-place",
+      "topic": "장문포해전(1594) 장면 보류",
+      "detail": "1594년 9월 장문포 해전은 근거가 있어 event-yinav-jangmunpo-1594 와 claim-jm-* 로 수집해 두었으나, 장문포의 소재 시·군을 밝힌 자료를 얻지 못해 장면으로는 만들지 않았다. 임진왜란 일람표에는 1594. 9.29. 와 1594.10. 4. 두 개의 장문포 행이 있어 단일 일자로 확정하지 않았다.",
+      "neededSource": "장문포(長門浦)의 현재 소재지와 좌표를 밝힌 기관 자료"
+    },
+    {
+      "id": "miss-1593-day",
+      "topic": "1593년 한산도 이진 일자",
+      "detail": "본영 설치는 '1593년 7월', 통제사 임용은 '1593년(선조 26) 8월'까지만 확인했다. 일자를 적은 실록 기사는 db.history.go.kr/sillok 계열이라 이번 수집에서 요청하지 않았다.",
+      "neededSource": "선조실록 해당 기사(현재 과업 규칙상 요청 제외 대상)"
+    },
+    {
+      "id": "miss-1594-yi-onsite",
+      "topic": "1594년 당항포에서 이순신의 현장 위치",
+      "detail": "당항포해전 항목은 이순신이 '한산도에서' 동향을 살피고 삼도수군을 배치했으며 어영담에게 군사를 주어 치게 했다고 적는다. 이순신이 당항포 현장에 있었는지를 밝힌 문장을 찾지 못해 presence를 related로 두었다. 임진왜란 일람표의 조선 측 장수 칸 기재(李舜臣)는 지휘 표기일 뿐 현장 근거로 쓰지 않았다.",
+      "neededSource": "1594년 3월 당항포 작전 중 이순신의 승선·이동을 적은 기관 자료"
+    },
+    {
+      "id": "miss-anchor-goseong",
+      "topic": "고성(경남) 구 행정구역 앵커 없음",
+      "detail": "existing-place-anchors.json 354개 항목에 (경남) 고성이 없어 당항포 장면에는 표시 기준점을 붙이지 못했다. '한산'은 충청남도 한산군이라 한산도와 동명이지 같은 곳이 아니어서 쓰지 않았다.",
+      "neededSource": "고성 구 행정구역 표시 중심 또는 당항포 해역 좌표"
+    }
+  ],
+  "collection": {
+    "task": "yi_naval",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788794722.582458,
+    "pid": 21168,
+    "exitCode": 0,
+    "seconds": 1809.0,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "a5d9026d-8837-4c36-8865-ab02f35441a5",
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false
+}

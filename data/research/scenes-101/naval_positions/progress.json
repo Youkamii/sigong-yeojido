@@ -1,0 +1,782 @@
+{
+  "task": "naval_positions",
+  "scope": "한산섬 앞바다·당항포·명량(울돌목)·노량 네 해역의 좌표만. 날짜·행위·인물은 ../yi_naval 결과를 그대로 둔다.",
+  "state": "완료 — 네 장면 모두 lon/lat 채움, 남은 한계는 positions.json 의 missing 에 적음",
+  "steps": [
+    {
+      "step": "이미 모아 둔 사료 확인",
+      "detail": "../yi_naval/result.json 의 scenes·claims 에서 지명 표기를 읽었다. 한산섬 앞바다, 고성 당항리 앞바다, 명량(울돌목, 진도와 육지 사이의 해협), 노량(남해도와 하동 사이의 해협). 네 장면 모두 lon/lat 이 null 이고 구 행정구역 앵커만 붙어 있었다. 이 폴더에서는 ../yi_naval 을 읽기만 했다."
+    },
+    {
+      "step": "접속 가능성 먼저 확인(8초 타임아웃)",
+      "detail": "ko/en.wikipedia, wikidata, korean.visitkorea.or.kr, khoa.go.kr, tour.haenam.go.kr, goseong.go.kr, namhae.go.kr, jindo.go.kr, tongyeong.go.kr, commons.wikimedia.org, api.opentopodata.org 는 응답. www.khs.go.kr(국가유산청)는 연결 타임아웃이라 바로 건너뛰었다."
+    },
+    {
+      "step": "기관 자료 우선 시도",
+      "detail": "국립해양조사원 개방海(oceanmap/main.do)는 200이지만 HTML 에 좌표가 없는 지도 앱. 고성군 계열 상세 URL 은 'RFC 3.0 오류 메세지' 응답. 한국관광공사 검색 결과는 자바스크립트 렌더링. download.geonames.org 와 nominatim 의 /search 는 robots 로 금지되어 요청하지 않았다. marineregions.org gazetteer 는 Noryang·Uldolmok 모두 404. Overpass 는 지시대로 시도하지 않았다."
+    },
+    {
+      "step": "발표된 지리 좌표 수집",
+      "detail": "위키데이터 P625(명량해협 Q627009, 회화면 Q12625999, 동해면 Q16183858)와 위키백과 문서 머리 스크립트의 wgCoordinates(명량해협, 남해대교, 한산도, 통영시)를 원문 그대로 받아 저장했다. 한국학중앙연구원 「고성군」(E0003703)에서 당항만이 고성군의 만이라는 서술을 받았다."
+    },
+    {
+      "step": "바다인지 검증",
+      "detail": "GEBCO 2020(15초, 약 450 m)와 Mapzen(1초, 약 30 m)을 Open Topo Data 로 조회해 격자 표본을 저장했다. 이 과정에서 위키백과 「한산도 대첩」 지오태그(34.7622/128.5025)는 +6 m, 「Noryang」 지오태그(34.94528/127.87639)는 +8 m 로 뭍이라 두 값을 모두 버렸다."
+    },
+    {
+      "step": "표시 중심 확정",
+      "detail": "한산: 통영시·한산도 두 발표 좌표의 중간점(GEBCO -18 m). 노량: 남해대교 발표 좌표에서 서남서 약 1.5 km 의 GEBCO -17 m 지점. 명량: 해협 자체의 발표 좌표를 그대로(GEBCO -4 m). 당항포: 회화면·동해면 발표 좌표를 남북 경계로 삼고 그 상자 안에서 Mapzen -7 m 인 칸."
+    }
+  ],
+  "blocked": [
+    {
+      "target": "www.khs.go.kr (국가유산청)",
+      "result": "연결 타임아웃",
+      "action": "즉시 중단"
+    },
+    {
+      "target": "download.geonames.org",
+      "result": "robots.txt 전면 Disallow",
+      "action": "요청하지 않음"
+    },
+    {
+      "target": "nominatim.openstreetmap.org/search",
+      "result": "robots.txt Disallow",
+      "action": "요청하지 않음"
+    },
+    {
+      "target": "ko/en.wikipedia.org/w/api.php",
+      "result": "robots.txt 의 Disallow: /w/",
+      "action": "문서 페이지(/wiki/)로 대체"
+    },
+    {
+      "target": "encykorea.aks.ac.kr/Article/Search",
+      "result": "robots.txt Disallow",
+      "action": "검색 대신 문서 ID 직접 요청"
+    },
+    {
+      "target": "www.gyeongnam.go.kr",
+      "result": "robots.txt Disallow",
+      "action": "요청하지 않음"
+    },
+    {
+      "target": "www.goseong.go.kr/tour, dhp.goseong.go.kr 상세 URL",
+      "result": "오류 페이지(1638 bytes)",
+      "action": "포기"
+    },
+    {
+      "target": "marineregions.org gazetteer",
+      "result": "404",
+      "action": "포기"
+    }
+  ],
+  "rules": {
+    "timeoutSeconds": 20,
+    "retries": "최대 1회",
+    "robots": "호스트마다 robots.txt 를 먼저 받아 판정하고 raw/ 에 보관",
+    "tls": "인증서 검증 기본값 사용",
+    "quoteCap": "웹페이지 1건당 인용 25단어 이하"
+  },
+  "outputs": [
+    "positions.json",
+    "manifest.json",
+    "raw/",
+    "report.md",
+    "progress.json"
+  ],
+  "downloads": [
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EB%8F%8C%EB%AA%A9",
+      "state": "ok 200 (81090 bytes)",
+      "rawFile": "raw/kowiki-울돌목.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:57:52Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%85%B8%EB%9F%89%ED%95%B4%ED%98%91",
+      "state": "ok 200 (68082 bytes)",
+      "rawFile": "raw/kowiki-노량해협.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:57:53Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%82%B0%EB%8F%84_%EB%8C%80%EC%B2%A9",
+      "state": "ok 200 (163106 bytes)",
+      "rawFile": "raw/kowiki-한산도_대첩.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:57:55Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%B9%ED%95%AD%ED%8F%AC_%ED%95%B4%EC%A0%84",
+      "state": "ok 200 (113110 bytes)",
+      "rawFile": "raw/kowiki-당항포_해전.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:57:55Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%AC%EB%82%B4%EB%9F%89",
+      "state": "ok 200 (67188 bytes)",
+      "rawFile": "raw/kowiki-견내량.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:57:55Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%B9%ED%95%AD%ED%8F%AC",
+      "state": "http 404 (51387 bytes)",
+      "rawFile": "raw/kowiki-당항포.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:57:57Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%AA%85%EB%9F%89_%ED%95%B4%EC%A0%84",
+      "state": "ok 200 (218455 bytes)",
+      "rawFile": "raw/kowiki-명량_해전.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:57:57Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%85%B8%EB%9F%89_%ED%95%B4%EC%A0%84",
+      "state": "ok 200 (140778 bytes)",
+      "rawFile": "raw/kowiki-노량_해전.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:57:58Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%B9%ED%95%AD%EB%A7%8C",
+      "state": "http 404 (51387 bytes)",
+      "rawFile": "raw/kowiki-당항만.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:57:59Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%82%B0%EB%A7%8C",
+      "state": "http 404 (51387 bytes)",
+      "rawFile": "raw/kowiki-한산만.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T15:58:00Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Hansan_Island",
+      "state": "ok 200 (179782 bytes)",
+      "rawFile": "raw/enwiki-Battle_of_Hansan_Island.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T15:58:00Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Myeongnyang",
+      "state": "ok 200 (276558 bytes)",
+      "rawFile": "raw/enwiki-Battle_of_Myeongnyang.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T15:58:01Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Noryang",
+      "state": "ok 200 (243678 bytes)",
+      "rawFile": "raw/enwiki-Battle_of_Noryang.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T15:58:02Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Myeongnyang_Strait",
+      "state": "ok 200 (104440 bytes)",
+      "rawFile": "raw/enwiki-Myeongnyang_Strait.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T15:58:03Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Noryang",
+      "state": "ok 200 (243952 bytes)",
+      "rawFile": "raw/enwiki-Noryang.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T15:58:05Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/gebco2020?locations=34.7622,128.5025|34.5683,126.3078|34.56833,126.30778|34.94528,127.87639",
+      "state": "ok 200 (618 bytes)",
+      "rawFile": "raw/opentopodata-gebco2020-check1.json",
+      "note": "GEBCO 2020 elevation at candidate points (water check)",
+      "utc": "2026-09-07T15:58:30Z"
+    },
+    {
+      "url": "https://download.geonames.org/robots.txt",
+      "state": "ok 200 (27 bytes)",
+      "rawFile": "raw/robots-download.geonames.org.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T15:59:37Z"
+    },
+    {
+      "url": "https://nominatim.openstreetmap.org/robots.txt",
+      "state": "ok 200 (252 bytes)",
+      "rawFile": "raw/robots-nominatim.openstreetmap.org.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T15:59:58Z"
+    },
+    {
+      "url": "https://marineregions.org/robots.txt",
+      "state": "ok 200 (53 bytes)",
+      "rawFile": "raw/robots-marineregions.org.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T15:59:59Z"
+    },
+    {
+      "url": "https://marineregions.org/rest/getGazetteerRecordsByName.json/Noryang/?like=true&fuzzy=false",
+      "state": "http 404 (2 bytes)",
+      "rawFile": "raw/marineregions-noryang.json",
+      "note": "Marine Regions gazetteer search",
+      "utc": "2026-09-07T16:00:00Z"
+    },
+    {
+      "url": "https://marineregions.org/rest/getGazetteerRecordsByName.json/Uldolmok/?like=true&fuzzy=false",
+      "state": "http 404 (2 bytes)",
+      "rawFile": "raw/marineregions-uldolmok.json",
+      "note": "Marine Regions gazetteer search",
+      "utc": "2026-09-07T16:00:03Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%82%A8%ED%95%B4%EB%8C%80%EA%B5%90",
+      "state": "ok 200 (123271 bytes)",
+      "rawFile": "raw/kowiki-남해대교.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:01:23Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%85%B8%EB%9F%89%EB%8C%80%EA%B5%90",
+      "state": "ok 200 (57732 bytes)",
+      "rawFile": "raw/kowiki-노량대교.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:01:24Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EC%A7%84%EB%8F%84%EB%8C%80%EA%B5%90",
+      "state": "ok 200 (107954 bytes)",
+      "rawFile": "raw/kowiki-진도대교.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:01:25Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%82%B0%EB%8F%84",
+      "state": "ok 200 (148148 bytes)",
+      "rawFile": "raw/kowiki-한산도.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:01:26Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EC%B6%94%EB%B4%89%EB%8F%84",
+      "state": "ok 200 (130180 bytes)",
+      "rawFile": "raw/kowiki-추봉도.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:01:27Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%8A%B9%EB%8B%B9",
+      "state": "ok 200 (105226 bytes)",
+      "rawFile": "raw/kowiki-제승당.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:01:28Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%B9%ED%95%AD%ED%8F%AC%EA%B4%80%EA%B4%91%EC%A7%80",
+      "state": "http 404 (52451 bytes)",
+      "rawFile": "raw/kowiki-당항포관광지.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:01:29Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%84%B1%EA%B5%B0",
+      "state": "ok 200 (60292 bytes)",
+      "rawFile": "raw/kowiki-고성군.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:01:31Z"
+    },
+    {
+      "url": "https://dhp.goseong.go.kr/index.goseong?menuCd=DOM_000000501001000000",
+      "state": "ok 200 (1638 bytes)",
+      "rawFile": "raw/goseong-dhp-intro.html",
+      "note": "당항포관광지 소개",
+      "utc": "2026-09-07T16:02:19Z"
+    },
+    {
+      "url": "https://www.goseong.go.kr/robots.txt",
+      "state": "ok 200 (96 bytes)",
+      "rawFile": "raw/robots-www.goseong.go.kr.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:02:19Z"
+    },
+    {
+      "url": "https://www.goseong.go.kr/tour/index.goseong?menuCd=DOM_000000201002001000",
+      "state": "ok 200 (1638 bytes)",
+      "rawFile": "raw/goseong-tour-danghangpo.html",
+      "note": "고성군 문화관광 당항포관광지",
+      "utc": "2026-09-07T16:02:20Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%A4%EC%B2%9C%EB%A9%B4",
+      "state": "ok 200 (57591 bytes)",
+      "rawFile": "raw/kowiki-설천면.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:03:15Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EA%B8%88%EB%82%A8%EB%A9%B4_%28%ED%95%98%EB%8F%99%EA%B5%B0%29",
+      "state": "ok 200 (92617 bytes)",
+      "rawFile": "raw/kowiki-금남면_하동군.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:03:16Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%AC%B8%EB%82%B4%EB%A9%B4",
+      "state": "ok 200 (80960 bytes)",
+      "rawFile": "raw/kowiki-문내면.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:03:17Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EA%B5%B0%EB%82%B4%EB%A9%B4",
+      "state": "ok 200 (69340 bytes)",
+      "rawFile": "raw/kowiki-군내면.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:03:18Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%ED%9A%8C%ED%99%94%EB%A9%B4",
+      "state": "ok 200 (91776 bytes)",
+      "rawFile": "raw/kowiki-회화면.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:03:20Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%8F%99%ED%95%B4%EB%A9%B4_%28%EA%B3%A0%EC%84%B1%EA%B5%B0%29",
+      "state": "ok 200 (91294 bytes)",
+      "rawFile": "raw/kowiki-동해면_고성군.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:03:21Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%82%B0%EB%A9%B4",
+      "state": "ok 200 (57008 bytes)",
+      "rawFile": "raw/kowiki-한산면.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:03:21Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%80%EC%9D%8C%ED%8F%AC",
+      "state": "ok 200 (90582 bytes)",
+      "rawFile": "raw/kowiki-관음포.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:03:23Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Namhae_Bridge",
+      "state": "ok 200 (95165 bytes)",
+      "rawFile": "raw/enwiki-Namhae_Bridge.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T16:03:24Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jindo_Bridge",
+      "state": "http 404 (50031 bytes)",
+      "rawFile": "raw/enwiki-Jindo_Bridge.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T16:03:25Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hansan-do",
+      "state": "http 404 (49872 bytes)",
+      "rawFile": "raw/enwiki-Hansan-do.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T16:03:26Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gwaneumpo",
+      "state": "http 404 (49872 bytes)",
+      "rawFile": "raw/enwiki-Gwaneumpo.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T16:03:26Z"
+    },
+    {
+      "url": "https://korean.visitkorea.or.kr/detail/cs_detail.do?cotid=c3899835-835b-4ec6-b9c8-95500486279a",
+      "state": "ok 200 (2318 bytes)",
+      "rawFile": "raw/visitkorea-cs-detail-test.html",
+      "note": "VisitKorea detail page test",
+      "utc": "2026-09-07T16:03:27Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/robots.txt",
+      "state": "ok 200 (20254 bytes)",
+      "rawFile": "raw/robots-ko.wikipedia.org.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:04:10Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EB%A5%B5%EB%8F%84",
+      "state": "ok 200 (111753 bytes)",
+      "rawFile": "raw/kowiki-미륵도.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:04:11Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%ED%86%B5%EC%98%81%EC%8B%9C",
+      "state": "ok 200 (387511 bytes)",
+      "rawFile": "raw/kowiki-통영시.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:04:12Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%94%EB%8F%84_%28%ED%86%B5%EC%98%81%EC%8B%9C%29",
+      "state": "http 404 (52275 bytes)",
+      "rawFile": "raw/kowiki-화도_통영시.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:04:14Z"
+    },
+    {
+      "url": "https://ko.wikipedia.org/wiki/%EC%A3%BD%EB%8F%84",
+      "state": "ok 200 (74622 bytes)",
+      "rawFile": "raw/kowiki-죽도.html",
+      "note": "ko.wikipedia article",
+      "utc": "2026-09-07T16:04:15Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/gebco2020?locations=34.93000,127.86000|34.93000,127.86500|34.93000,127.87000|34.93000,127.87500|34.93000,127.88000|34.93000,127.88500|34.93000,127.89000|34.93250,127.86000|34.93250,127.86500|34.93250,127.87000|34.93250,127.87500|34.93250,127.88000|34.93250,127.88500|34.93250,127.89000|34.93500,127.86000|34.93500,127.86500|34.93500,127.87000|34.93500,127.87500|34.93500,127.88000|34.93500,127.88500|34.93500,127.89000|34.93750,127.86000|34.93750,127.86500|34.93750,127.87000|34.93750,127.87500|34.93750,127.88000|34.93750,127.88500|34.93750,127.89000|34.94000,127.86000|34.94000,127.86500|34.94000,127.87000|34.94000,127.87500|34.94000,127.88000|34.94000,127.88500|34.94000,127.89000|34.94250,127.86000|34.94250,127.86500|34.94250,127.87000|34.94250,127.87500|34.94250,127.88000|34.94250,127.88500|34.94250,127.89000|34.94500,127.86000|34.94500,127.86500|34.94500,127.87000|34.94500,127.87500|34.94500,127.88000|34.94500,127.88500|34.94500,127.89000|34.94750,127.86000|34.94750,127.86500|34.94750,127.87000|34.94750,127.87500|34.94750,127.88000|34.94750,127.88500|34.94750,127.89000|34.95000,127.86000|34.95000,127.86500|34.95000,127.87000|34.95000,127.87500|34.95000,127.88000|34.95000,127.88500|34.95000,127.89000|34.95250,127.86000|34.95250,127.86500|34.95250,127.87000|34.95250,127.87500|34.95250,127.88000|34.95250,127.88500|34.95250,127.89000|34.95500,127.86000|34.95500,127.86500|34.95500,127.87000|34.95500,127.87500|34.95500,127.88000|34.95500,127.88500|34.95500,127.89000",
+      "state": "ok 200 (10961 bytes)",
+      "rawFile": "raw/opentopodata-gebco2020-noryang-grid.json",
+      "note": "GEBCO 2020 grid sample (water/land check)",
+      "utc": "2026-09-07T16:04:47Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/gebco2020?locations=34.76000,128.40000|34.76000,128.41500|34.76000,128.43000|34.76000,128.44500|34.76000,128.46000|34.76000,128.47500|34.76000,128.49000|34.76000,128.50500|34.76000,128.52000|34.76800,128.40000|34.76800,128.41500|34.76800,128.43000|34.76800,128.44500|34.76800,128.46000|34.76800,128.47500|34.76800,128.49000|34.76800,128.50500|34.76800,128.52000|34.77600,128.40000|34.77600,128.41500|34.77600,128.43000|34.77600,128.44500|34.77600,128.46000|34.77600,128.47500|34.77600,128.49000|34.77600,128.50500|34.77600,128.52000|34.78400,128.40000|34.78400,128.41500|34.78400,128.43000|34.78400,128.44500|34.78400,128.46000|34.78400,128.47500|34.78400,128.49000|34.78400,128.50500|34.78400,128.52000|34.79200,128.40000|34.79200,128.41500|34.79200,128.43000|34.79200,128.44500|34.79200,128.46000|34.79200,128.47500|34.79200,128.49000|34.79200,128.50500|34.79200,128.52000|34.80000,128.40000|34.80000,128.41500|34.80000,128.43000|34.80000,128.44500|34.80000,128.46000|34.80000,128.47500|34.80000,128.49000|34.80000,128.50500|34.80000,128.52000|34.80800,128.40000|34.80800,128.41500|34.80800,128.43000|34.80800,128.44500|34.80800,128.46000|34.80800,128.47500|34.80800,128.49000|34.80800,128.50500|34.80800,128.52000|34.81600,128.40000|34.81600,128.41500|34.81600,128.43000|34.81600,128.44500|34.81600,128.46000|34.81600,128.47500|34.81600,128.49000|34.81600,128.50500|34.81600,128.52000|34.82400,128.40000|34.82400,128.41500|34.82400,128.43000|34.82400,128.44500|34.82400,128.46000|34.82400,128.47500|34.82400,128.49000|34.82400,128.50500|34.82400,128.52000|34.83200,128.40000|34.83200,128.41500|34.83200,128.43000|34.83200,128.44500|34.83200,128.46000|34.83200,128.47500|34.83200,128.49000|34.83200,128.50500|34.83200,128.52000|34.84000,128.40000|34.84000,128.41500|34.84000,128.43000|34.84000,128.44500|34.84000,128.46000|34.84000,128.47500|34.84000,128.49000|34.84000,128.50500|34.84000,128.52000",
+      "state": "ok 200 (14023 bytes)",
+      "rawFile": "raw/opentopodata-gebco2020-hansando-grid.json",
+      "note": "GEBCO 2020 grid sample (water/land check)",
+      "utc": "2026-09-07T16:04:49Z"
+    },
+    {
+      "url": "https://commons.wikimedia.org/robots.txt",
+      "state": "ok 200 (17713 bytes)",
+      "rawFile": "raw/robots-commons.wikimedia.org.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:04:52Z"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category%3ADanghangpo",
+      "state": "http 404 (39428 bytes)",
+      "rawFile": "raw/commons-Danghangpo.html",
+      "note": "Wikimedia Commons category page",
+      "utc": "2026-09-07T16:04:52Z"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category%3AUldolmok",
+      "state": "http 404 (39373 bytes)",
+      "rawFile": "raw/commons-Uldolmok.html",
+      "note": "Wikimedia Commons category page",
+      "utc": "2026-09-07T16:04:53Z"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category%3ANoryang_Strait",
+      "state": "http 404 (39548 bytes)",
+      "rawFile": "raw/commons-Noryang_Strait.html",
+      "note": "Wikimedia Commons category page",
+      "utc": "2026-09-07T16:04:54Z"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category%3AHansando",
+      "state": "http 404 (39369 bytes)",
+      "rawFile": "raw/commons-Hansando.html",
+      "note": "Wikimedia Commons category page",
+      "utc": "2026-09-07T16:04:55Z"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category%3ADanghangpo_Tourist_Site",
+      "state": "http 404 (39818 bytes)",
+      "rawFile": "raw/commons-Danghangpo_Tourist_Site.html",
+      "note": "Wikimedia Commons category page",
+      "utc": "2026-09-07T16:04:56Z"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Category%3ANoryang",
+      "state": "http 404 (39339 bytes)",
+      "rawFile": "raw/commons-Noryang.html",
+      "note": "Wikimedia Commons category page",
+      "utc": "2026-09-07T16:04:57Z"
+    },
+    {
+      "url": "https://dhp.goseong.go.kr/robots.txt",
+      "state": "ok 200 (1638 bytes)",
+      "rawFile": "raw/robots-dhp.goseong.go.kr.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:04:57Z"
+    },
+    {
+      "url": "https://dhp.goseong.go.kr/index.goseong",
+      "state": "ok 200 (1638 bytes)",
+      "rawFile": "raw/goseong-dhp-root.html",
+      "note": "당항포관광지 첫 화면",
+      "utc": "2026-09-07T16:04:57Z"
+    },
+    {
+      "url": "https://korean.visitkorea.or.kr/robots.txt",
+      "state": "ok 200 (1237 bytes)",
+      "rawFile": "raw/robots-korean.visitkorea.or.kr.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:06:11Z"
+    },
+    {
+      "url": "https://korean.visitkorea.or.kr/search/search_list.do?keyword=%EB%8B%B9%ED%95%AD%ED%8F%AC%EA%B4%80%EA%B4%91%EC%A7%80",
+      "state": "ok 200 (42931 bytes)",
+      "rawFile": "raw/visitkorea-search-danghangpo.html",
+      "note": "VisitKorea 검색",
+      "utc": "2026-09-07T16:06:11Z"
+    },
+    {
+      "url": "https://visit.goseong.go.kr/index.goseong",
+      "state": "ok 200 (102396 bytes)",
+      "rawFile": "raw/goseong-visit-root.html",
+      "note": "고성군 문화관광",
+      "utc": "2026-09-07T16:06:12Z"
+    },
+    {
+      "url": "https://www.gyeongnam.go.kr/robots.txt",
+      "state": "ok 200 (1971 bytes)",
+      "rawFile": "raw/robots-www.gyeongnam.go.kr.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:06:12Z"
+    },
+    {
+      "url": "https://encykorea.aks.ac.kr/Search?keyword=%EB%8B%B9%ED%95%AD%ED%8F%AC",
+      "state": "http 404 (965 bytes)",
+      "rawFile": "raw/aks-search-당항포.html",
+      "note": "AKS 백과 검색",
+      "utc": "2026-09-07T16:06:59Z"
+    },
+    {
+      "url": "https://encykorea.aks.ac.kr/Search?keyword=%EC%9A%B8%EB%8F%8C%EB%AA%A9",
+      "state": "http 404 (965 bytes)",
+      "rawFile": "raw/aks-search-울돌목.html",
+      "note": "AKS 백과 검색",
+      "utc": "2026-09-07T16:07:00Z"
+    },
+    {
+      "url": "https://encykorea.aks.ac.kr/Search?keyword=%EB%85%B8%EB%9F%89",
+      "state": "http 404 (965 bytes)",
+      "rawFile": "raw/aks-search-노량.html",
+      "note": "AKS 백과 검색",
+      "utc": "2026-09-07T16:07:00Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/robots.txt",
+      "state": "ok 200 (28275 bytes)",
+      "rawFile": "raw/robots-en.wikipedia.org.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:07:37Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Danghangpo",
+      "state": "ok 200 (143422 bytes)",
+      "rawFile": "raw/enwiki-Battle_of_Danghangpo.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T16:07:37Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hansando",
+      "state": "ok 200 (88637 bytes)",
+      "rawFile": "raw/enwiki-Hansando.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T16:07:38Z"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Danghangpo",
+      "state": "http 404 (49925 bytes)",
+      "rawFile": "raw/enwiki-Danghangpo.html",
+      "note": "en.wikipedia article",
+      "utc": "2026-09-07T16:07:39Z"
+    },
+    {
+      "url": "https://www.gngsctf.or.kr/robots.txt",
+      "state": "ok 200 (86 bytes)",
+      "rawFile": "raw/robots-www.gngsctf.or.kr.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:07:39Z"
+    },
+    {
+      "url": "https://www.gngsctf.or.kr/danghangpo/index.goseong",
+      "state": "ok 200 (40285 bytes)",
+      "rawFile": "raw/gngsctf-danghangpo-root.html",
+      "note": "당항포관광지 공식 사이트",
+      "utc": "2026-09-07T16:07:39Z"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q626283",
+      "state": "ok 200 (85648 bytes)",
+      "rawFile": "raw/wikidata-Q626283.html",
+      "note": "Wikidata entity page",
+      "utc": "2026-09-07T16:08:14Z"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q12590340",
+      "state": "ok 200 (62544 bytes)",
+      "rawFile": "raw/wikidata-Q12590340.html",
+      "note": "Wikidata entity page",
+      "utc": "2026-09-07T16:08:15Z"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q627009",
+      "state": "ok 200 (81786 bytes)",
+      "rawFile": "raw/wikidata-Q627009.html",
+      "note": "Wikidata entity page",
+      "utc": "2026-09-07T16:08:16Z"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q12625999",
+      "state": "ok 200 (81596 bytes)",
+      "rawFile": "raw/wikidata-Q12625999.html",
+      "note": "Wikidata entity page",
+      "utc": "2026-09-07T16:08:17Z"
+    },
+    {
+      "url": "https://www.wikidata.org/robots.txt",
+      "state": "ok 200 (15896 bytes)",
+      "rawFile": "raw/robots-www.wikidata.org.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:08:57Z"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q16183858",
+      "state": "ok 200 (81685 bytes)",
+      "rawFile": "raw/wikidata-Q16183858.html",
+      "note": "Wikidata entity page",
+      "utc": "2026-09-07T16:08:58Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/gebco2020?locations=35.02000,128.36000|35.02000,128.37300|35.02000,128.38600|35.02000,128.39900|35.02000,128.41200|35.02000,128.42500|35.02000,128.43800|35.02000,128.45100|35.02000,128.46400|35.02000,128.47700|35.02800,128.36000|35.02800,128.37300|35.02800,128.38600|35.02800,128.39900|35.02800,128.41200|35.02800,128.42500|35.02800,128.43800|35.02800,128.45100|35.02800,128.46400|35.02800,128.47700|35.03600,128.36000|35.03600,128.37300|35.03600,128.38600|35.03600,128.39900|35.03600,128.41200|35.03600,128.42500|35.03600,128.43800|35.03600,128.45100|35.03600,128.46400|35.03600,128.47700|35.04400,128.36000|35.04400,128.37300|35.04400,128.38600|35.04400,128.39900|35.04400,128.41200|35.04400,128.42500|35.04400,128.43800|35.04400,128.45100|35.04400,128.46400|35.04400,128.47700|35.05200,128.36000|35.05200,128.37300|35.05200,128.38600|35.05200,128.39900|35.05200,128.41200|35.05200,128.42500|35.05200,128.43800|35.05200,128.45100|35.05200,128.46400|35.05200,128.47700|35.06000,128.36000|35.06000,128.37300|35.06000,128.38600|35.06000,128.39900|35.06000,128.41200|35.06000,128.42500|35.06000,128.43800|35.06000,128.45100|35.06000,128.46400|35.06000,128.47700|35.06800,128.36000|35.06800,128.37300|35.06800,128.38600|35.06800,128.39900|35.06800,128.41200|35.06800,128.42500|35.06800,128.43800|35.06800,128.45100|35.06800,128.46400|35.06800,128.47700|35.07600,128.36000|35.07600,128.37300|35.07600,128.38600|35.07600,128.39900|35.07600,128.41200|35.07600,128.42500|35.07600,128.43800|35.07600,128.45100|35.07600,128.46400|35.07600,128.47700|35.08400,128.36000|35.08400,128.37300|35.08400,128.38600|35.08400,128.39900|35.08400,128.41200|35.08400,128.42500|35.08400,128.43800|35.08400,128.45100|35.08400,128.46400|35.08400,128.47700|35.09200,128.36000|35.09200,128.37300|35.09200,128.38600|35.09200,128.39900|35.09200,128.41200|35.09200,128.42500|35.09200,128.43800|35.09200,128.45100|35.09200,128.46400|35.09200,128.47700",
+      "state": "ok 200 (14232 bytes)",
+      "rawFile": "raw/opentopodata-gebco2020-danghangpo-grid.json",
+      "note": "GEBCO 2020 grid sample (water/land check)",
+      "utc": "2026-09-07T16:08:59Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/gebco2020?locations=34.944167,127.872056|34.94100,127.86500|34.94000,127.86000|34.93800,127.86200|34.94300,127.86800|34.94600,127.87600|34.94800,127.88200|34.95000,127.88800|34.80741,128.45081|34.80000,128.45500|34.79500,128.45000|34.81000,128.45000|34.56833,126.30778|34.56900,126.30500|34.56700,126.31200",
+      "state": "ok 200 (2175 bytes)",
+      "rawFile": "raw/opentopodata-gebco2020-check2.json",
+      "note": "GEBCO 2020 point checks (candidate display centers)",
+      "utc": "2026-09-07T16:09:01Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/mapzen?locations=34.944167,127.872056|34.94350,127.87150|34.94500,127.87250|34.94400,127.87000|34.94450,127.87400|34.94250,127.86900|34.94600,127.87500|35.05017,128.41826|35.04800,128.42000|35.04600,128.42500|35.05200,128.41000|35.04900,128.40000|35.04500,128.43000|35.05300,128.39500|34.56833,126.30778|34.80741,128.45081",
+      "state": "ok 200 (2270 bytes)",
+      "rawFile": "raw/opentopodata-mapzen-check.json",
+      "note": "Mapzen 30m terrain+bathymetry (water check)",
+      "utc": "2026-09-07T16:09:55Z"
+    },
+    {
+      "url": "https://encykorea.aks.ac.kr/",
+      "state": "ok 200 (170498 bytes)",
+      "rawFile": "raw/aks-home.html",
+      "note": "AKS 백과 첫 화면",
+      "utc": "2026-09-07T16:11:04Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/gebco2020?locations=34.93300,127.84800|34.93300,127.85080|34.93300,127.85360|34.93300,127.85640|34.93300,127.85920|34.93300,127.86200|34.93300,127.86480|34.93300,127.86760|34.93300,127.87040|34.93300,127.87320|34.93500,127.84800|34.93500,127.85080|34.93500,127.85360|34.93500,127.85640|34.93500,127.85920|34.93500,127.86200|34.93500,127.86480|34.93500,127.86760|34.93500,127.87040|34.93500,127.87320|34.93700,127.84800|34.93700,127.85080|34.93700,127.85360|34.93700,127.85640|34.93700,127.85920|34.93700,127.86200|34.93700,127.86480|34.93700,127.86760|34.93700,127.87040|34.93700,127.87320|34.93900,127.84800|34.93900,127.85080|34.93900,127.85360|34.93900,127.85640|34.93900,127.85920|34.93900,127.86200|34.93900,127.86480|34.93900,127.86760|34.93900,127.87040|34.93900,127.87320|34.94100,127.84800|34.94100,127.85080|34.94100,127.85360|34.94100,127.85640|34.94100,127.85920|34.94100,127.86200|34.94100,127.86480|34.94100,127.86760|34.94100,127.87040|34.94100,127.87320|34.94300,127.84800|34.94300,127.85080|34.94300,127.85360|34.94300,127.85640|34.94300,127.85920|34.94300,127.86200|34.94300,127.86480|34.94300,127.86760|34.94300,127.87040|34.94300,127.87320|34.94500,127.84800|34.94500,127.85080|34.94500,127.85360|34.94500,127.85640|34.94500,127.85920|34.94500,127.86200|34.94500,127.86480|34.94500,127.86760|34.94500,127.87040|34.94500,127.87320|34.94700,127.84800|34.94700,127.85080|34.94700,127.85360|34.94700,127.85640|34.94700,127.85920|34.94700,127.86200|34.94700,127.86480|34.94700,127.86760|34.94700,127.87040|34.94700,127.87320|34.94900,127.84800|34.94900,127.85080|34.94900,127.85360|34.94900,127.85640|34.94900,127.85920|34.94900,127.86200|34.94900,127.86480|34.94900,127.86760|34.94900,127.87040|34.94900,127.87320|34.95100,127.84800|34.95100,127.85080|34.95100,127.85360|34.95100,127.85640|34.95100,127.85920|34.95100,127.86200|34.95100,127.86480|34.95100,127.86760|34.95100,127.87040|34.95100,127.87320",
+      "state": "ok 200 (14340 bytes)",
+      "rawFile": "raw/opentopodata-gebco2020-noryang-fine.json",
+      "note": "GEBCO 2020 fine grid, Noryang strait",
+      "utc": "2026-09-07T16:11:38Z"
+    },
+    {
+      "url": "https://encykorea.aks.ac.kr/robots.txt",
+      "state": "ok 200 (182 bytes)",
+      "rawFile": "raw/robots-encykorea.aks.ac.kr.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:12:27Z"
+    },
+    {
+      "url": "https://encykorea.aks.ac.kr/Article/E0003703",
+      "state": "ok 200 (149438 bytes)",
+      "rawFile": "raw/aks-E0003703-goseong.html",
+      "note": "한국민족문화대백과사전 고성군",
+      "utc": "2026-09-07T16:12:27Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/mapzen?locations=35.04000,128.39500|35.04000,128.40000|35.04000,128.40500|35.04000,128.41000|35.04000,128.41500|35.04000,128.42000|35.04000,128.42500|35.04000,128.43000|35.04000,128.43500|35.04000,128.44000|35.04250,128.39500|35.04250,128.40000|35.04250,128.40500|35.04250,128.41000|35.04250,128.41500|35.04250,128.42000|35.04250,128.42500|35.04250,128.43000|35.04250,128.43500|35.04250,128.44000|35.04500,128.39500|35.04500,128.40000|35.04500,128.40500|35.04500,128.41000|35.04500,128.41500|35.04500,128.42000|35.04500,128.42500|35.04500,128.43000|35.04500,128.43500|35.04500,128.44000|35.04750,128.39500|35.04750,128.40000|35.04750,128.40500|35.04750,128.41000|35.04750,128.41500|35.04750,128.42000|35.04750,128.42500|35.04750,128.43000|35.04750,128.43500|35.04750,128.44000|35.05000,128.39500|35.05000,128.40000|35.05000,128.40500|35.05000,128.41000|35.05000,128.41500|35.05000,128.42000|35.05000,128.42500|35.05000,128.43000|35.05000,128.43500|35.05000,128.44000|35.05250,128.39500|35.05250,128.40000|35.05250,128.40500|35.05250,128.41000|35.05250,128.41500|35.05250,128.42000|35.05250,128.42500|35.05250,128.43000|35.05250,128.43500|35.05250,128.44000|35.05500,128.39500|35.05500,128.40000|35.05500,128.40500|35.05500,128.41000|35.05500,128.41500|35.05500,128.42000|35.05500,128.42500|35.05500,128.43000|35.05500,128.43500|35.05500,128.44000|35.05750,128.39500|35.05750,128.40000|35.05750,128.40500|35.05750,128.41000|35.05750,128.41500|35.05750,128.42000|35.05750,128.42500|35.05750,128.43000|35.05750,128.43500|35.05750,128.44000|35.06000,128.39500|35.06000,128.40000|35.06000,128.40500|35.06000,128.41000|35.06000,128.41500|35.06000,128.42000|35.06000,128.42500|35.06000,128.43000|35.06000,128.43500|35.06000,128.44000|35.06250,128.39500|35.06250,128.40000|35.06250,128.40500|35.06250,128.41000|35.06250,128.41500|35.06250,128.42000|35.06250,128.42500|35.06250,128.43000|35.06250,128.43500|35.06250,128.44000",
+      "state": "ok 200 (13867 bytes)",
+      "rawFile": "raw/opentopodata-mapzen-danghangpo-grid.json",
+      "note": "Mapzen 30m grid, Danghang-man",
+      "utc": "2026-09-07T16:12:30Z"
+    },
+    {
+      "url": "https://www.opentopodata.org/datasets/gebco/",
+      "state": "http 404 (17196 bytes)",
+      "rawFile": "raw/opentopodata-datasets-gebco.html",
+      "note": "GEBCO dataset page (license)",
+      "utc": "2026-09-07T16:14:17Z"
+    },
+    {
+      "url": "https://www.opentopodata.org/datasets/mapzen/",
+      "state": "ok 200 (27188 bytes)",
+      "rawFile": "raw/opentopodata-datasets-mapzen.html",
+      "note": "Mapzen dataset page (license)",
+      "utc": "2026-09-07T16:14:18Z"
+    },
+    {
+      "url": "https://www.khoa.go.kr/robots.txt",
+      "state": "ok 200 (73 bytes)",
+      "rawFile": "raw/robots-www.khoa.go.kr.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:14:18Z"
+    },
+    {
+      "url": "https://www.khoa.go.kr/oceanmap/main.do",
+      "state": "ok 200 (147956 bytes)",
+      "rawFile": "raw/khoa-oceanmap-main.html",
+      "note": "국립해양조사원 개방海",
+      "utc": "2026-09-07T16:14:19Z"
+    },
+    {
+      "url": "https://tour.haenam.go.kr/robots.txt",
+      "state": "ok 200 (113 bytes)",
+      "rawFile": "raw/robots-tour.haenam.go.kr.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:14:19Z"
+    },
+    {
+      "url": "https://tour.haenam.go.kr/",
+      "state": "ok 200 (2072 bytes)",
+      "rawFile": "raw/haenam-tour-root.html",
+      "note": "해남군 문화관광",
+      "utc": "2026-09-07T16:14:19Z"
+    },
+    {
+      "url": "https://www.opentopodata.org/robots.txt",
+      "state": "ok 200 (96 bytes)",
+      "rawFile": "raw/robots-www.opentopodata.org.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:14:27Z"
+    },
+    {
+      "url": "https://www.opentopodata.org/datasets/gebco2020/",
+      "state": "ok 200 (39922 bytes)",
+      "rawFile": "raw/opentopodata-datasets-gebco2020.html",
+      "note": "GEBCO 2020 dataset page (license/resolution)",
+      "utc": "2026-09-07T16:14:28Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/robots.txt",
+      "state": "ok 200 (1248 bytes)",
+      "rawFile": "raw/robots-api.opentopodata.org.txt",
+      "note": "robots.txt",
+      "utc": "2026-09-07T16:19:25Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/gebco2020?locations=34.80757,128.45065|34.80957,128.45065|34.80557,128.45065|34.80757,128.45265|34.80757,128.44865|35.05250,128.41750|35.05450,128.41750|35.05050,128.41750|35.05250,128.41950|35.05250,128.41550|34.56833,126.30778|34.57033,126.30778|34.56633,126.30778|34.56833,126.30978|34.56833,126.30578|34.93900,127.85640|34.94100,127.85640|34.93700,127.85640|34.93900,127.85840|34.93900,127.85440",
+      "state": "ok 200 (2942 bytes)",
+      "rawFile": "raw/opentopodata-gebco2020-final-check.json",
+      "note": "final display centers +/- 0.002deg",
+      "utc": "2026-09-07T16:19:26Z"
+    },
+    {
+      "url": "https://api.opentopodata.org/v1/mapzen?locations=34.80757,128.45065|34.80957,128.45065|34.80557,128.45065|34.80757,128.45265|34.80757,128.44865|35.05250,128.41750|35.05450,128.41750|35.05050,128.41750|35.05250,128.41950|35.05250,128.41550|34.56833,126.30778|34.57033,126.30778|34.56633,126.30778|34.56833,126.30978|34.56833,126.30578|34.93900,127.85640|34.94100,127.85640|34.93700,127.85640|34.93900,127.85840|34.93900,127.85440",
+      "state": "ok 200 (2865 bytes)",
+      "rawFile": "raw/opentopodata-mapzen-final-check.json",
+      "note": "final display centers +/- 0.002deg",
+      "utc": "2026-09-07T16:19:28Z"
+    }
+  ]
+}

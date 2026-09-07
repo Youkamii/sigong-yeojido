@@ -1,0 +1,130 @@
+{
+  "sourcesChecked": [
+    {
+      "id": "src-kowiki-myeongnyang-strait",
+      "sha256": "78d9012eda0649b35b8fc7c70ff199d041a74c281ca42fc8f8a7c7f7d73aaf80",
+      "bytes": 81090
+    },
+    {
+      "id": "src-wikidata-q627009",
+      "sha256": "2314597082513c79fc1da6bbf3dc53f0eb210fea2ca9c3e2b610fa7248c8c4e1",
+      "bytes": 81786
+    },
+    {
+      "id": "src-enwiki-myeongnyang-strait",
+      "sha256": "ba64210ccd243f21b7677773d25c113ce82764d912ca1a6aeca54920c608200f",
+      "bytes": 104440
+    },
+    {
+      "id": "src-kowiki-noryang-strait",
+      "sha256": "780840e367d3bbcafb2a95ccc4d49e8ce455ad45e8c42f529d781a9fc871af12",
+      "bytes": 68082
+    },
+    {
+      "id": "src-enwiki-namhae-bridge",
+      "sha256": "caf9c4bc6ab47d893b96da47e7dd1849564c673b4978a8672e02e992ce40353c",
+      "bytes": 95165
+    },
+    {
+      "id": "src-kowiki-hansando",
+      "sha256": "34a0d8382e2e3388a76fe731c78628931c7766569d0d18b9500243b40c1bff07",
+      "bytes": 148148
+    },
+    {
+      "id": "src-kowiki-tongyeong",
+      "sha256": "6ae48b856b9e4932e3d17d493ccc75a04268954b079123359d9aab369e3eec28",
+      "bytes": 387511
+    },
+    {
+      "id": "src-wikidata-q12625999",
+      "sha256": "cefc38fb773fe6840ce40f9eacf392ee4d9d1c8e89ff4854839351405aa502c4",
+      "bytes": 81596
+    },
+    {
+      "id": "src-wikidata-q16183858",
+      "sha256": "7ef53ff72a856dec0670a3a9a52b32888b3afc5b3fa6f380321c4c4302ba2e72",
+      "bytes": 81685
+    },
+    {
+      "id": "src-aks-goseong-e0003703",
+      "sha256": "d391fe9eae1149cff4b8f512d3611e5d7f6f8536d9bcc21ae80182cc1f6e94b0",
+      "bytes": 149438
+    },
+    {
+      "id": "src-opentopodata-gebco2020",
+      "sha256": "ef7518d85c744b96184651c86001c9ae3e96571761287652f74184e251697343",
+      "bytes": 2942
+    },
+    {
+      "id": "src-opentopodata-gebco2020-check1",
+      "sha256": "a5709d81d19aab8bf6cdbc580257f7bbd4ca5be99f29b2439b2b430b637e993f",
+      "bytes": 618
+    },
+    {
+      "id": "src-opentopodata-gebco2020-doc",
+      "sha256": "920c894a9d3393094eb6ad9e1de87b8eff42a4ed23638c88e5f4615e0690aff6",
+      "bytes": 39922
+    },
+    {
+      "id": "src-opentopodata-mapzen",
+      "sha256": "9528ac18539f648811fbd4f16a37b242b338d7ac0866edfdedafc237c3941dfa",
+      "bytes": 2865
+    },
+    {
+      "id": "src-opentopodata-mapzen-dhp-grid",
+      "sha256": "aabf0fcc0131389dd5a9318d6a41a62e39f381dd3155a932c6531831ace326b5",
+      "bytes": 13867
+    },
+    {
+      "id": "src-opentopodata-mapzen-doc",
+      "sha256": "eced7e6fd0374f8080968f73f2f70824abfb056773ef5d4d24f25245668b26a5",
+      "bytes": 27188
+    },
+    {
+      "id": "src-enwiki-battle-hansan",
+      "sha256": "3e7a2c374df0156d94e077c94f389418b537b3436661639cd0a6f688dfef42b2",
+      "bytes": 179782
+    },
+    {
+      "id": "src-enwiki-noryang",
+      "sha256": "f171eea1ee5d0197272ef3a24e5a4305c179ad96d1f61d95e7ff746e98d2e7ff",
+      "bytes": 243952
+    }
+  ],
+  "wordsPerUrl": {
+    "https://ko.wikipedia.org/wiki/%EC%9A%B8%EB%8F%8C%EB%AA%A9": 22,
+    "https://www.wikidata.org/wiki/Q627009": 2,
+    "https://en.wikipedia.org/wiki/Myeongnyang_Strait": 3,
+    "https://ko.wikipedia.org/wiki/%EB%85%B8%EB%9F%89%ED%95%B4%ED%98%91": 24,
+    "https://en.wikipedia.org/wiki/Namhae_Bridge": 3,
+    "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%82%B0%EB%8F%84": 3,
+    "https://ko.wikipedia.org/wiki/%ED%86%B5%EC%98%81%EC%8B%9C": 3,
+    "https://www.wikidata.org/wiki/Q12625999": 2,
+    "https://www.wikidata.org/wiki/Q16183858": 2,
+    "https://encykorea.aks.ac.kr/Article/E0003703": 12,
+    "https://api.opentopodata.org/v1/gebco2020": 10,
+    "https://www.opentopodata.org/datasets/gebco2020/": 16,
+    "https://api.opentopodata.org/v1/mapzen": 4,
+    "https://www.opentopodata.org/datasets/mapzen/": 18,
+    "https://en.wikipedia.org/wiki/Battle_of_Hansan_Island": 1,
+    "https://en.wikipedia.org/wiki/Noryang": 2
+  },
+  "run": {
+    "task": "naval_positions",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788796437.3266397,
+    "pid": 47012,
+    "exitCode": 0,
+    "seconds": 1722.0,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "20ac9c0e-2c9a-4c0c-baeb-53659f3916ff",
+    "permissionDenials": []
+  },
+  "scope": "Coordinate evidence only; derived display centers are not battle locations."
+}

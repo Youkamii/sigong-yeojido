@@ -1,63 +1,90 @@
 import {entityLabel,yearLabel} from './chronicle.js';
 import {inDiorama} from './place-state.js';
 
-// Symbolic models from Fantology's catalog, not reconstructed portraits.
 export function personArchetype(id,claims){
-  const descriptions=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle','syj:activeIn'].includes(c.predicate));
-  const text=descriptions.map(c=>c.object.value||c.quote||'').join(' ');
+  const text=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle','syj:activeIn'].includes(c.predicate))
+    .map(c=>c.object.value||c.quote||'').join(' ');
   if(/승려|불교 승|스님/.test(text))return 'monk';
-  if(/학자|문신|문인|시인|저술가|영의정|판서/.test(text))return 'scribe';
   if(/수군|통제사|장군|장수|의병|무신/.test(text))return 'spearman';
+  if(/학자|문신|문인|시인|저술가|영의정|판서/.test(text))return 'scribe';
   return 'human';
 }
 
 export function eventArchetype(event){
-  return /전투|대첩|왜란|전쟁|항전/.test(event.label)?'battle':'hanging_scroll';
+  const label=event.label||event.title||'';
+  if(/해전|한산도|명량|노량|옥포|당포/.test(label))return 'naval';
+  if(/인쇄|간행|편찬|보성사|훈민정음|동의보감/.test(label))return 'publication';
+  if(/축성|건축|중건|화성/.test(label))return 'construction';
+  if(/전투|대첩|공성/.test(label))return 'siege';
+  if(/만세|독립|시위|운동/.test(label))return 'assembly';
+  if(/화재|소실|소각/.test(label))return 'fire';
+  if(/전쟁|왜란|항전/.test(label))return 'battle';
+  return 'court';
 }
 
-/** Only a cited event site supplies coordinates; being a contemporary never does. */
-export function planChronicleAssets(context,data,features,places=[]){
+const within=(row,year)=>(row.validFrom==null||row.validFrom<=year)&&(row.validTo==null||row.validTo>=year);
+const yearOf=value=>typeof value==='string'?Number(value.slice(0,4)):null;
+
+/** A geographic placement requires the selected activity's own place evidence. */
+export function planChronicleAssets(context,data,features,places=[],scenePackets=[]){
+  const claims=new Map(data.claims.map(c=>[c.id,c])),entities=new Map(data.entities.map(e=>[e.id,e]));
+  const supported=ids=>Array.isArray(ids)&&ids.length>0&&ids.every(id=>claims.has(id));
   const referenceFor=id=>{
-    const claims=data.claims.filter(c=>c.subject===id);
-    for(const c of claims.filter(c=>c.object.kind==='entity'&&/locatedAt|tookPlaceAt|occurredAt/.test(c.predicate))){
-      const target=data.entities.find(e=>e.id===c.object.id);
-      const p=places.find(p=>p.id===c.object.id||target&&(p.labelKo===entityLabel(target)||p.label===entityLabel(target)));
-      if(p?.candidates?.length)return {placeId:p.id,label:p.labelKo||p.label,candidate:p.candidates[0],claimIds:[c.id]};
-    }
-    for(const c of claims.filter(c=>['syj:activeIn','syj:describedAs'].includes(c.predicate))){
-      const text=c.quote||c.object.value||'';
-      const p=places.find(p=>p.candidates?.length&&(p.labelKo||'').length>=2&&text.includes(p.labelKo));
-      if(p)return {placeId:p.id,label:p.labelKo,candidate:p.candidates[0],claimIds:[c.id]};
+    for(const c of data.claims.filter(c=>c.subject===id&&c.object.kind==='entity'
+      &&['syj:tookPlaceAt','syj:occurredAt'].includes(c.predicate)&&within(c,context.year))){
+      const exact=places.filter(p=>p.id===c.object.id),target=entities.get(c.object.id);
+      const matches=exact.length?exact:places.filter(p=>target&&(p.labelKo||p.label)===entityLabel(target));
+      if(matches.length!==1)continue;
+      const p=matches[0],candidates=(p.candidates||[]).filter(candidate=>within(candidate,context.year)&&inDiorama(candidate));
+      if(candidates.length===1)return {placeId:p.id,label:p.labelKo||p.label,candidate:candidates[0],claimIds:[c.id],precision:'area'};
     }
     return null;
   };
   const people=context.people.map(person=>{
-    const period=person.periods.find(p=>p.label==='생몰')||person.periods[0];
-    return {id:'person:'+person.id,entityId:person.id,kind:'person',placement:'symbolic',
-      locationReference:referenceFor(person.id),
-      label:entityLabel(person),archetype:personArchetype(person.id,data.claims),
-      detail:`${yearLabel(period.lo)} – ${yearLabel(period.hi)} · ${period.label}`,
+    const period=person.periods.find(p=>p.label==='활동')||person.periods.find(p=>p.label==='사건 참여')||person.periods[0];
+    const locations=data.claims.filter(c=>c.subject===person.id&&c.predicate==='syj:physicallyPresentAt'
+      &&c.object.kind==='location'&&within(c,context.year)).filter(c=>{
+        const p=c.object.presence;
+        return p?yearOf(p.earliest)<=context.year&&yearOf(p.latest)>=context.year
+          :c.validFrom!=null&&c.validTo!=null;
+      });
+    return {id:'person:'+person.id,entityId:person.id,kind:'person',placement:'unlocated',
+      label:entityLabel(person),archetype:'human',locations,
+      detail:period.label==='활동'?period.claim.quote:`${yearLabel(period.lo)} – ${yearLabel(period.hi)} · ${period.label}`,
       claimIds:[...new Set(person.periods.flatMap(p=>p.basis.map(c=>c.id)))]};
   });
   const present=new Map(people.map(p=>[p.entityId,p]));
   const current=[...new Map(context.allEvents.filter(e=>e.lo<=context.year&&e.hi>=context.year).map(e=>[e.id,e])).values()];
-  const events=current.map(event=>{
+  const researched=scenePackets.filter(s=>s.startYear<=context.year&&s.endYear>=context.year
+    &&supported(s.dateClaimIds)&&supported(s.actionClaimIds));
+  const covered=new Set(researched.map(s=>s.eventId));
+  const events=current.filter(e=>!covered.has(e.id)).map(event=>{
     const sites=features.filter(f=>f.geometry?.type==='Point'&&f.properties.eventId===event.id
-      &&Number(f.properties.validFrom)<=context.year&&Number(f.properties.validTo)>=context.year
-      &&inDiorama({lon:f.geometry.coordinates[0],lat:f.geometry.coordinates[1]}));
-    const relatives=data.claims.filter(c=>c.object.kind==='entity'&&(c.subject===event.id||c.object.id===event.id));
-    const participants=new Map();
-    for(const claim of relatives){
-      const id=claim.subject===event.id?claim.object.id:claim.subject;
-      if(present.has(id)){
-        const row=participants.get(id)||{...present.get(id),relationClaims:[]};
-        row.relationClaims.push(claim.id);participants.set(id,row);
-      }
-    }
-    return {id:'event:'+event.id,entityId:event.id,kind:'event',
-      label:entityLabel(event.type==='Polity'?{...event,label:event.title}:event),
-      archetype:eventArchetype(event),detail:`${yearLabel(event.lo)}${event.lo!==event.hi?' – '+yearLabel(event.hi):''}`,
-      sites,locationReference:referenceFor(event.id),participants:[...participants.values()],claimIds:[...new Set(event.basis.map(c=>c.id))]};
+      &&within(f.properties,context.year)&&inDiorama({lon:f.geometry.coordinates[0],lat:f.geometry.coordinates[1]}));
+    return {id:'event:'+event.id,entityId:event.id,kind:'event',label:entityLabel(event),
+      archetype:eventArchetype(event),detail:yearLabel(event.lo),summary:'',sites,
+      locationReference:referenceFor(event.id),participants:[],effects:{},
+      claimIds:[...new Set(event.basis.map(c=>c.id))]};
   });
+  for(const scene of researched){
+    const place=scene.place&&supported(scene.place.claimIds)?scene.place:null;
+    const feature=place?.featureId&&features.find(f=>f.id===place.featureId&&within(f.properties,context.year));
+    const anchor=place?.medium!=='sea'&&place?.anchorPlaceId&&places.find(p=>p.id===place.anchorPlaceId);
+    const direct=place&&Number.isFinite(place.lon)&&Number.isFinite(place.lat)&&place.coordinateSourceIds?.length;
+    const coordinates=place?.displayCoordinates||feature?.geometry?.coordinates||(direct?[place.lon,place.lat]:anchor?.candidates?.length===1
+      ?[anchor.candidates[0].lon,anchor.candidates[0].lat]:null);
+    const participants=scene.participants.filter(p=>supported(p.claimIds)&&present.has(p.entityId)).map(p=>({
+      ...present.get(p.entityId),...p,archetype:['defender','invader','naval'].includes(p.side)?'spearman':'scribe',
+      relationClaims:p.claimIds,detail:p.role+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
+    events.push({id:scene.id,entityId:scene.eventId,kind:'event',label:scene.title,
+      archetype:scene.kind,detail:yearLabel(scene.startYear),summary:scene.summary,
+      scenePlace:coordinates?{...place,coordinates}:null,sites:[],locationReference:null,
+      participants,effects:Object.fromEntries(Object.entries(scene.effects||{}).map(([key,effect])=>
+        [key,{enabled:effect.enabled&&supported(effect.claimIds),claimIds:effect.claimIds}])),
+      sides:scene.participants.filter(p=>supported(p.claimIds)&&entities.get(p.entityId)?.type==='Polity')
+        .map(p=>({...p,label:entityLabel(entities.get(p.entityId))})),
+      claimIds:[...new Set([...scene.dateClaimIds,...scene.actionClaimIds,...(place?.claimIds||[])])],
+      actionClaimIds:scene.actionClaimIds,placeClaimIds:place?.claimIds||[]});
+  }
   return {year:context.year,people,events};
 }

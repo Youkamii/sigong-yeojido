@@ -1,0 +1,1473 @@
+{
+  "scenes": [
+    {
+      "id": "scene-busanjin-1592",
+      "eventId": "event-busanjin-jeontu-1592",
+      "title": "부산진 전투 (1592)",
+      "startYear": 1592,
+      "endYear": 1592,
+      "kind": "siege",
+      "summary": "1592년 4월 14일 정발 등이 부산진에서 일본군과 싸웠다. 적군은 병선을 이끌고 부산포에 들어왔고, 이튿날 우암 쪽으로 상륙해 세 방면에서 성을 공격했다. 성안 남녀노소가 모두 분전했으나 성은 함락되었다.",
+      "dateClaimIds": [
+        "claim-scenes-101-invasion_events-busanjin-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-invasion_events-busanjin-attack",
+        "claim-scenes-101-invasion_events-busanjin-fleet",
+        "claim-scenes-101-invasion_events-busanjin-fall",
+        "claim-scenes-101-invasion_events-busanjin-place"
+      ],
+      "place": {
+        "label": "부산진 (부산진성)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-145002",
+        "lon": 129.07595621500008,
+        "lat": 35.169465885500045,
+        "claimIds": [
+          "claim-scenes-101-invasion_events-busanjin-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 전투지를 '부산진'으로만 밝힌다. 부산진성 자체의 실측 좌표는 이번에 내려받지 못했고(국가유산청 khs.go.kr 접속 불가), 기존 anchor 'hgis-admin-145002'(부산)의 표시 중심을 area 정밀도로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 place anchor 파일의 화면 배치용 좌표다. 20세기 행정구역 중심이므로 16세기 성터의 실제 위치가 아니며 precision='area'로만 쓴다."
+      },
+      "participants": [
+        {
+          "entityId": "person-jeong-bal-busanjin",
+          "role": "부산진첨사로 진성에서 전투를 지휘",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-busanjin-jeongbal"
+          ]
+        },
+        {
+          "entityId": "polity-imjin-japanese-force",
+          "role": "부산포에 침입해 상륙 후 세 방면에서 성을 공격",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-busanjin-japanese",
+            "claim-scenes-101-invasion_events-busanjin-attack",
+            "claim-scenes-101-invasion_events-busanjin-fleet"
+          ]
+        },
+        {
+          "entityId": "polity-residents-busanjin-jeontu-1592",
+          "role": "성안 남녀노소로 함께 분전",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-busanjin-civilians"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-invasion_events-busanjin-fleet"
+          ]
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-invasion_events-busanjin-attack"
+          ]
+        }
+      },
+      "researchJob": "invasion_events"
+    },
+    {
+      "id": "scene-dongnae-1592",
+      "eventId": "event-dongnae-jeontu-1592",
+      "title": "동래성 전투 (1592)",
+      "startYear": 1592,
+      "endYear": 1592,
+      "kind": "siege",
+      "summary": "1592년 4월 15일 동래성을 지키던 조선군이 일본군과 맞서 싸웠다. 동래부사 송상현이 수성을 맡았고, 일본군은 성을 겹으로 포위했다. 무기를 갖추지 못한 백성들까지 싸움에 참가했으나 성은 함락되었다.",
+      "dateClaimIds": [
+        "claim-scenes-101-invasion_events-dongnae-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-invasion_events-dongnae-siege",
+        "claim-scenes-101-invasion_events-dongnae-fall",
+        "claim-scenes-101-invasion_events-dongnae-place"
+      ],
+      "place": {
+        "label": "동래성",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-147793",
+        "lon": 129.12917254500002,
+        "lat": 35.210688914500054,
+        "claimIds": [
+          "claim-scenes-101-invasion_events-dongnae-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 장소를 '동래·동래성'으로 밝힌다. 동래읍성 실측 좌표는 이번에 내려받지 못했고(국가유산청 khs.go.kr 접속 불가), 기존 anchor 'hgis-admin-147793'(동래)의 표시 중심을 area 정밀도로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 place anchor 파일의 화면 배치용 좌표다. 20세기 행정구역 중심이므로 16세기 성터의 실제 위치가 아니며 precision='area'로만 쓴다."
+      },
+      "participants": [
+        {
+          "entityId": "person-song-sanghyeon-dongnae",
+          "role": "동래부사로 성을 지킴",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-dongnae-song"
+          ]
+        },
+        {
+          "entityId": "polity-imjin-japanese-force",
+          "role": "성을 3중으로 포위하고 공격",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-dongnae-japanese",
+            "claim-scenes-101-invasion_events-dongnae-siege"
+          ]
+        },
+        {
+          "entityId": "polity-residents-dongnae-jeontu-1592",
+          "role": "동래성 백성으로 싸움에 참가",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-dongnae-civilians"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-invasion_events-dongnae-siege"
+          ]
+        }
+      },
+      "researchJob": "invasion_events"
+    },
+    {
+      "id": "scene-jinju-second-siege-1593",
+      "eventId": "event-encykorea-jinju-jeontu-1593",
+      "title": "제2차 진주성 전투 (1593)",
+      "startYear": 1593,
+      "endYear": 1593,
+      "kind": "siege",
+      "summary": "1593년 6월 20일부터 29일까지 열흘 간 이어진 농성이다. 적은 6월 21일 진주성을 포위했고 성 안에서는 주민들이 협조해 맞섰다. 황진은 탄환에 맞아 전사했고, 김천일·고종후·최경회 등은 촉석루에 있었다.",
+      "dateClaimIds": [
+        "claim-scenes-101-invasion_events-jinju1593-year",
+        "claim-scenes-101-invasion_events-jinju1593-time"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-invasion_events-jinju1593-siege",
+        "claim-scenes-101-invasion_events-jinju1593-place"
+      ],
+      "place": {
+        "label": "진주성",
+        "medium": "land",
+        "precision": "site",
+        "lon": 128.080253761737,
+        "lat": 35.1897050218524,
+        "claimIds": [
+          "claim-scenes-101-invasion_events-jinju1593-place",
+          "claim-scenes-101-invasion_events-jinju1593-site-battles",
+          "claim-scenes-101-invasion_events-jinju1593-address"
+        ],
+        "coordinateSourceIds": [
+          "src-kto-jinjuseong"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국관광공사 진주성 페이지 raw/visitkorea-en-jinjuseong-75199.html 안의 JSON-LD GeoCoordinates(latitude 35.1897050218524, longitude 128.080253761737)에서 그대로 옮겼다. 같은 페이지가 이 성에서 임진왜란 두 전투가 있었음을 밝힌다. 성 전체 범위가 아니라 관광정보용 대표 지점이며 기준계·오차는 페이지에 적혀 있지 않다."
+      },
+      "participants": [
+        {
+          "entityId": "person-kim-cheonil-jinju1593",
+          "role": "창의사로 성 안 촉석루에 있었음",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-jinju1593-kimcheonil"
+          ]
+        },
+        {
+          "entityId": "person-hwang-jin-jinju1593",
+          "role": "농성 중 탄환에 맞아 전사",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-jinju1593-hwangjin"
+          ]
+        },
+        {
+          "entityId": "person-choe-gyeonghoe-jinju1593",
+          "role": "성 안 촉석루에 있었음",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-jinju1593-choe"
+          ]
+        },
+        {
+          "entityId": "polity-imjin-japanese-force",
+          "role": "6월 21일부터 진주성을 포위",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-jinju1593-japanese",
+            "claim-scenes-101-invasion_events-jinju1593-siege"
+          ]
+        },
+        {
+          "entityId": "polity-residents-encykorea-jinju-jeontu-1593",
+          "role": "성 안 주민으로 방어에 협조",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-jinju1593-residents"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-invasion_events-jinju1593-siege"
+          ]
+        }
+      },
+      "researchJob": "invasion_events"
+    },
+    {
+      "id": "scene-haengju-1593",
+      "eventId": "event-khs-haengju",
+      "title": "행주대첩 (1593)",
+      "startYear": 1593,
+      "endYear": 1593,
+      "kind": "battle",
+      "summary": "1593년 2월 전라도관찰사 권율이 행주산성에서 왜군을 크게 무찌른 전투다. 일본군은 부대를 나누어 행주산성으로 진군했고, 승장 처영이 승의군을 이끌고 맞섰으며 부녀자들까지 동원되어 관민이 함께 싸웠다.",
+      "dateClaimIds": [
+        "claim-scenes-101-invasion_events-haengju-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-invasion_events-haengju-attack",
+        "claim-scenes-101-invasion_events-haengju-place"
+      ],
+      "place": {
+        "label": "고양 행주산성",
+        "medium": "land",
+        "precision": "site",
+        "featureId": "khs-event-haengju",
+        "lon": 126.8247541,
+        "lat": 37.59994084,
+        "claimIds": [
+          "claim-scenes-101-invasion_events-haengju-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "기존 existing-sites.json의 feature 'khs-event-haengju'(고양 행주산성 · 행주대첩)를 같은 사건·같은 유적에 그대로 재사용한다. 좌표는 그 기록의 국가유산청 목록값이며 이번 수집에서 새로 내려받지 않았다(khs.go.kr 접속 불가). 지정구역 대표점이지 전투 범위가 아니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-gwon-yul-e0007022",
+          "role": "전라도관찰사로 행주산성에서 왜군을 무찌름",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-haengju-gwonyul"
+          ]
+        },
+        {
+          "entityId": "person-cheoyeong-haengju",
+          "role": "승장으로 승의군을 이끌고 맞섬",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-haengju-cheoyeong"
+          ]
+        },
+        {
+          "entityId": "polity-imjin-japanese-force",
+          "role": "부대를 나누어 행주산성으로 진군",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-haengju-japanese",
+            "claim-scenes-101-invasion_events-haengju-attack"
+          ]
+        },
+        {
+          "entityId": "polity-residents-khs-haengju",
+          "role": "부녀자를 포함한 관민으로 함께 싸움",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-haengju-civilians"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-invasion_events-haengju-attack"
+          ]
+        }
+      },
+      "researchJob": "invasion_events"
+    },
+    {
+      "id": "scene-hanyang-palace-fire-1592",
+      "eventId": "event-hanyang-palace-fire-1592",
+      "title": "1592년 경복궁 소실 (한양 궁궐 화재)",
+      "startYear": 1592,
+      "endYear": 1592,
+      "kind": "fire",
+      "summary": "1592년 임진왜란으로 경복궁이 전소되고 창덕궁·창경궁 등도 함께 불에 탔다. 방화 주체는 기록이 엇갈린다. 『선조수정실록』은 난민이 장례원과 형조에 불을 질렀다고 하고, 『서정일기』에 따라 일본군 방화로 유추하는 서술도 함께 전한다.",
+      "dateClaimIds": [
+        "claim-scenes-101-invasion_events-fire1592-year",
+        "claim-scenes-101-invasion_events-fire1592-year-kto"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-invasion_events-fire1592-burned",
+        "claim-scenes-101-invasion_events-fire1592-other-palaces",
+        "claim-scenes-101-invasion_events-fire1592-palaces-record",
+        "claim-scenes-101-invasion_events-fire1592-dispute",
+        "claim-scenes-101-invasion_events-fire1592-place"
+      ],
+      "place": {
+        "label": "경복궁",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.97672186606306,
+        "lat": 37.576030700049394,
+        "claimIds": [
+          "claim-scenes-101-invasion_events-fire1592-place",
+          "claim-scenes-101-invasion_events-fire1592-address"
+        ],
+        "coordinateSourceIds": [
+          "src-kto-gyeongbokgung"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국관광공사 경복궁 페이지 raw/visitkorea-en-gyeongbokgung-108422.html 안의 JSON-LD GeoCoordinates(latitude 37.576030700049394, longitude 126.97672186606306)에서 그대로 옮겼다. 같은 페이지의 주소 표기는 '서울특별시 종로구 사직로 161 (세종로)'다. 궁역 전체가 아니라 관광정보용 대표 지점이며 기준계·오차는 적혀 있지 않다."
+      },
+      "participants": [
+        {
+          "entityId": "polity-imjin-nanmin-1592",
+          "role": "『선조수정실록』 서술에서 장례원·형조에 불을 지른 주체",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-fire1592-nanmin"
+          ]
+        },
+        {
+          "entityId": "polity-imjin-japanese-force",
+          "role": "『서정일기』를 근거로 경복궁 방화가 유추되는 쪽",
+          "side": "invader",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-fire1592-japanese-record"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-invasion_events-fire1592-burned",
+            "claim-scenes-101-invasion_events-fire1592-other-palaces",
+            "claim-scenes-101-invasion_events-fire1592-palaces-record"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "invasion_events"
+    },
+    {
+      "id": "scene-boseongsa-printing-1919",
+      "eventId": "event-declaration-printing-1919",
+      "title": "보성사 독립선언서 인쇄 (1919)",
+      "startYear": 1919,
+      "endYear": 1919,
+      "kind": "publication",
+      "summary": "1919년 2월 최남선이 기초한 독립선언서가 보성사로 넘겨졌고, 그달 27일 사장 이종일이 공장감독 김홍규·총무 장효근과 함께 오후 6시부터 10시까지 극비리에 인쇄를 마쳤다. 전투 장면이 아니라 인쇄소 작업 장면이다.",
+      "dateClaimIds": [
+        "claim-scenes-101-invasion_events-print1919-year",
+        "claim-scenes-101-invasion_events-print1919-date-i815"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-invasion_events-print1919-action",
+        "claim-scenes-101-invasion_events-print1919-place",
+        "claim-scenes-101-invasion_events-print1919-shop"
+      ],
+      "place": {
+        "label": "보성사 터 (경성부 수송동 44)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.981833,
+        "lat": 37.573706,
+        "claimIds": [
+          "claim-scenes-101-invasion_events-print1919-place",
+          "claim-scenes-101-invasion_events-print1919-addr",
+          "claim-scenes-101-invasion_events-print1919-site"
+        ],
+        "coordinateSourceIds": [
+          "src-i815-boseongsa"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 독립기념관 사적지 페이지 raw/i815-sajeok-boseongsa-1344.html 안의 지도 스크립트 값(var lat = \" 37.573706\"; var lng = \" 126.981833\";)을 그대로 옮겼다. 같은 페이지가 '현재 조계사 경내 서편 극락전 앞마당이 보성사 터로 비정된다'고 밝히므로 비정 지점이며, 건물은 멸실 상태다."
+      },
+      "participants": [
+        {
+          "entityId": "person-yi-jongil-boseongsa",
+          "role": "보성사 사장으로 인쇄를 완료",
+          "side": "printer",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-print1919-yi-jongil"
+          ]
+        },
+        {
+          "entityId": "person-kim-honggyu-boseongsa",
+          "role": "공장감독으로 인쇄에 참여",
+          "side": "printer",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-print1919-kim-honggyu"
+          ]
+        },
+        {
+          "entityId": "person-jang-hyogeun-boseongsa",
+          "role": "총무로 인쇄에 참여",
+          "side": "printer",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-invasion_events-print1919-jang-hyogeun"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "invasion_events"
+    },
+    {
+      "id": "scene-hansando-daecheop-1592",
+      "eventId": "event-encykorea-hansando-daecheop-1592",
+      "title": "한산도대첩 — 한산섬 앞바다 (1592)",
+      "startYear": 1592,
+      "endYear": 1592,
+      "kind": "naval",
+      "summary": "1592년 7월, 전라좌수사 이순신·전라우수사 이억기·경상우수사 원균이 거느린 조선 수군이 한산섬 앞바다에서 일본 수군 주력과 싸워 학익진으로 공격하고 적선 47척을 분파, 12척을 나포했다.",
+      "dateClaimIds": [
+        "claim-scenes-101-yi_naval-hs1592-year",
+        "claim-scenes-101-yi_naval-hs1592-datetext"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-yi_naval-hs1592-formation",
+        "claim-scenes-101-yi_naval-hs1592-burn",
+        "claim-scenes-101-yi_naval-hs1592-wakizaka"
+      ],
+      "place": {
+        "label": "한산섬 앞바다",
+        "medium": "sea",
+        "precision": "area",
+        "lon": 128.45065,
+        "lat": 34.80757,
+        "claimIds": [
+          "claim-scenes-101-yi_naval-hs1592-place",
+          "claim-scenes-101-yi_naval-hansando-admin"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-tongyeong",
+          "src-kowiki-hansando",
+          "src-opentopodata-gebco2020",
+          "src-opentopodata-mapzen",
+          "src-enwiki-battle-hansan",
+          "src-opentopodata-gebco2020-check1"
+        ],
+        "coordinateNote": "기관이 펴낸 해전 해역 경계 자료를 얻지 못해, 발표된 두 좌표를 경계로 삼고 그 사이 바다의 중간점을 계산했다(발표값이 아니라 파생값). 경계 좌표: 통영시 34.833333/128.416667(위키백과 「통영시」 wgCoordinates), 한산도 34.781814/128.484625(위키백과 「한산도」 wgCoordinates). 표시 중심 = 두 점의 산술 중간점 128.45065, 34.80757이며 두 기준점에서 각각 약 4227 m 떨어져 있다. 바다 확인: GEBCO 2020(15초 격자)에서 이 점의 값이 -18 m이고 상하좌우 0.002도(약 200 m) 네 점도 -17~-19 m, Mapzen 30 m 격자도 -2 m라 모두 물이다. 영어·한국어 위키백과 「한산도 대첩」의 지오태그 34.7622/128.5025는 GEBCO에서 +6 m(뭍)로 나와 바다 좌표로 쓰지 않았다. 한국학중앙연구원 자료의 장소 표기는 '한산섬 앞바다'뿐이고 방위·범위는 원문에 없다. 해역을 화면에 놓기 위한 근사 중심일 뿐, 학익진 같은 전투 대형이나 교전 지점을 가리키지 않는다."
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-yi-sunsin",
+          "role": "전라좌수사로 조선 수군을 거느림",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-hs1592-yi",
+            "claim-scenes-101-yi_naval-hs1592-yi-role"
+          ]
+        },
+        {
+          "entityId": "person-encykorea-yi-eokgi-e0061676",
+          "role": "전라우수사로 함께 지휘",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-hs1592-eokgi",
+            "claim-scenes-101-yi_naval-hs1592-eokgi-role"
+          ]
+        },
+        {
+          "entityId": "person-encykorea-won-gyun-e0040619",
+          "role": "경상우수사로 함께 지휘",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-hs1592-wongyun",
+            "claim-scenes-101-yi_naval-hs1592-wongyun-role"
+          ]
+        },
+        {
+          "entityId": "person-yinav-wakizaka",
+          "role": "일본 수군 지휘관",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-hs1592-wakizaka",
+            "claim-scenes-101-yi_naval-hs1592-wakizaka-table"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-hs1592-burn"
+          ]
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-hs1592-formation",
+            "claim-scenes-101-yi_naval-hs1592-burn"
+          ]
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-hs1592-formation"
+          ]
+        }
+      },
+      "researchJob": "yi_naval"
+    },
+    {
+      "id": "scene-hansando-honyeong-1593",
+      "eventId": "event-yinav-hansando-honyeong-1593",
+      "title": "한산도 수군 본영 설치와 삼도수군통제사 임용 (1593)",
+      "startYear": 1593,
+      "endYear": 1593,
+      "kind": "construction",
+      "summary": "1593년 7월 이순신이 한산도에 수군 본영을 만들고, 8월에 새로 만든 삼도수군통제사에 겸직으로 임용되었다. 본영에서는 무기와 전함을 만들고 수리했다. 해전이 아니라 본영을 두고 유지한 활동이다.",
+      "dateClaimIds": [
+        "claim-scenes-101-yi_naval-1593-year",
+        "claim-scenes-101-yi_naval-1593-datetext",
+        "claim-scenes-101-yi_naval-1593-appoint-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-yi_naval-1593-action",
+        "claim-scenes-101-yi_naval-1593-ships",
+        "claim-scenes-101-yi_naval-1593-appoint",
+        "claim-scenes-101-yi_naval-1593-tongjeyeong",
+        "claim-scenes-101-yi_naval-1593-yi-busan"
+      ],
+      "place": {
+        "label": "한산도 (수군 본영)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.466667,
+        "lat": 34.766667,
+        "claimIds": [
+          "claim-scenes-101-yi_naval-1593-place",
+          "claim-scenes-101-yi_naval-hansando-coord",
+          "claim-scenes-101-yi_naval-hansando-admin"
+        ],
+        "coordinateSourceIds": [
+          "src-encykorea-hansando-island"
+        ],
+        "coordinateNote": "한국민족문화대백과사전 「한산도」가 적은 섬 위치 '동경 128°28′, 북위 34°46′'을 십진도로 환산한 값이다(128+28/60=128.466667, 34+46/60=34.766667). 섬 전체를 대표하는 표기이고 제승당·본영 건물의 지점 좌표가 아니다. 기준계·오차·중심점 산정 방식은 원문에 없다.",
+        "displayCoordinates": [
+          128.47588072263528,
+          34.78957260559642
+        ],
+        "displayScale": 0.1,
+        "displayBasis": "지명 자료의 섬 대표 좌표 가까이에 있는 HGIS 해안 윤곽 안에 설명용 장면을 배치. 원문의 좌표는 보존하며 본영 건물의 실측 위치를 뜻하지 않음.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-yi-sunsin",
+          "role": "한산도에 수군 본영을 만들고 통제사에 임용됨",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-1593-yi-onsite",
+            "claim-scenes-101-yi_naval-1593-yi-move",
+            "claim-scenes-101-yi_naval-1593-appoint"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-1593-ships"
+          ]
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "yi_naval"
+    },
+    {
+      "id": "scene-danghangpo-2-1594",
+      "eventId": "event-yinav-danghangpo-2-1594",
+      "title": "제2차 당항포해전 (1594)",
+      "startYear": 1594,
+      "endYear": 1594,
+      "kind": "naval",
+      "summary": "1594년 3월, 한산도에서 적의 동향을 살피던 이순신이 당항포로 이동하는 왜선 31척을 확인하고 삼도수군을 배치했다. 조방장 어영담이 군사를 받아 왜선을 쳤고, 포구에 정박한 나머지 21척을 모두 불태웠다.",
+      "dateClaimIds": [
+        "claim-scenes-101-yi_naval-dh1594-year",
+        "claim-scenes-101-yi_naval-dh1594-datetext"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-yi_naval-dh1594-ships",
+        "claim-scenes-101-yi_naval-dh1594-burn",
+        "claim-scenes-101-yi_naval-dh1594-yi-hansando"
+      ],
+      "place": {
+        "label": "당항포 (고성 당항리 앞바다)",
+        "medium": "sea",
+        "precision": "area",
+        "lon": 128.4175,
+        "lat": 35.0525,
+        "claimIds": [
+          "claim-scenes-101-yi_naval-dh1594-place",
+          "claim-scenes-101-yi_naval-danghangpo-place"
+        ],
+        "coordinateSourceIds": [
+          "src-wikidata-q12625999",
+          "src-wikidata-q16183858",
+          "src-aks-goseong-e0003703",
+          "src-opentopodata-mapzen",
+          "src-opentopodata-mapzen-dhp-grid",
+          "src-opentopodata-mapzen-doc"
+        ],
+        "coordinateNote": "당항포·당항만의 해역 좌표를 발표한 기관 자료를 얻지 못했다(발표값이 아니라 파생값). 한국학중앙연구원 「고성군」이 당항만을 고성군에 발달한 만의 하나로 적은 것을 근거로 만의 남북 경계를 발표된 두 행정구역 좌표로 잡았다. 북쪽 회화면 35.074961/128.390150(위키데이터 Q12625999 P625), 남쪽 동해면 35.025381/128.446369(위키데이터 Q16183858 P625). 두 점의 단순 중간점 35.050171/128.418260은 Mapzen에서 +3 m(물가·뭍)라 그대로 쓰지 않고, 같은 경계 상자 안에서 물로 확인되는 칸을 골랐다. 표시 중심 128.41750, 35.05250은 Mapzen 30 m 격자에서 -7 m이고 동서로 0.002도 떨어진 두 점도 -7 m다. 당항만은 폭이 1 km 안팎이라 GEBCO 15초(약 450 m) 격자로는 분해되지 않아(같은 점 +14 m) 수심 확인에 쓰지 않았다. 해상도가 낮은 해안선과 대조하면 뭍으로 판정될 수 있는 좁은 만이다. 왜선이 정박했던 포구 지점이 아니라 해역 근사 중심이며, 당항포관광지 같은 육상 시설 좌표는 해역이 아니므로 쓰지 않았다."
+      },
+      "participants": [
+        {
+          "entityId": "person-yinav-eo-yeongdam",
+          "role": "조방장으로 왜선을 치는 부대를 맡음",
+          "side": "naval",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-dh1594-eo",
+            "claim-scenes-101-yi_naval-dh1594-eo-role"
+          ]
+        },
+        {
+          "entityId": "person-encykorea-yi-sunsin",
+          "role": "한산도에서 적 동향을 살피고 삼도수군을 배치",
+          "side": "naval",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-dh1594-yi-part",
+            "claim-scenes-101-yi_naval-dh1594-yi-hansando",
+            "claim-scenes-101-yi_naval-dh1594-yi-table"
+          ]
+        },
+        {
+          "entityId": "person-yinav-wakizaka",
+          "role": "일람표에 적힌 왜 측 장수",
+          "side": "invader",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-dh1594-wakizaka"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-dh1594-burn"
+          ]
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-dh1594-ships",
+            "claim-scenes-101-yi_naval-dh1594-burn"
+          ]
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-dh1594-burn"
+          ]
+        }
+      },
+      "researchJob": "yi_naval"
+    },
+    {
+      "id": "scene-hansando-fire-1597",
+      "eventId": "event-yinav-hansando-fire-1597",
+      "title": "한산도 본영 방화·소실 (1597)",
+      "startYear": 1597,
+      "endYear": 1597,
+      "kind": "fire",
+      "summary": "1597년 정유재란 때 경상우수사 배설이 한산도 본영에 불을 질러 모든 군영이 폐허가 되었다. 1593년부터 쓰던 수군 본영이 사라진 사건이다.",
+      "dateClaimIds": [
+        "claim-scenes-101-yi_naval-fire1597-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-yi_naval-fire1597-act"
+      ],
+      "place": {
+        "label": "한산도 (수군 본영)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.466667,
+        "lat": 34.766667,
+        "claimIds": [
+          "claim-scenes-101-yi_naval-fire1597-place",
+          "claim-scenes-101-yi_naval-hansando-coord",
+          "claim-scenes-101-yi_naval-hansando-admin"
+        ],
+        "coordinateSourceIds": [
+          "src-encykorea-hansando-island"
+        ],
+        "coordinateNote": "한국민족문화대백과사전 「한산도」가 적은 섬 위치 '동경 128°28′, 북위 34°46′'을 십진도로 환산한 값이다(128+28/60=128.466667, 34+46/60=34.766667). 섬 전체를 대표하는 표기이고 제승당·본영 건물의 지점 좌표가 아니다. 기준계·오차·중심점 산정 방식은 원문에 없다. 불탄 본영 건물의 지점은 자료에 없다.",
+        "displayCoordinates": [
+          128.47588072263528,
+          34.78957260559642
+        ],
+        "displayScale": 0.1,
+        "displayBasis": "지명 자료의 섬 대표 좌표 가까이에 있는 HGIS 해안 윤곽 안에 설명용 장면을 배치. 원문의 좌표는 보존하며 본영 건물의 실측 위치를 뜻하지 않음.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [
+        {
+          "entityId": "person-yinav-bae-seol",
+          "role": "경상우수사로 본영에 불을 지름",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-fire1597-bae",
+            "claim-scenes-101-yi_naval-fire1597-bae-role"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-fire1597-act"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "yi_naval"
+    },
+    {
+      "id": "scene-gohado-jin-1597",
+      "eventId": "event-yinav-gohado-jin-1597",
+      "title": "고하도 진영 이진과 수군 재건 (1597)",
+      "startYear": 1597,
+      "endYear": 1597,
+      "kind": "construction",
+      "summary": "1597년 10월 29일 이순신이 고하도로 진을 옮겨 수군 재건에 필요한 전선을 건조하고 군량을 모았다. 주둔 기간은 108일이었다. 해전이 아니라 진영을 옮겨 세운 활동이다.",
+      "dateClaimIds": [
+        "claim-scenes-101-yi_naval-gohado-year",
+        "claim-scenes-101-yi_naval-gohado-datetext"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-yi_naval-gohado-ships",
+        "claim-scenes-101-yi_naval-gohado-days"
+      ],
+      "place": {
+        "label": "고하도 (목포)",
+        "medium": "land",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [
+          "claim-scenes-101-yi_naval-gohado-place",
+          "claim-scenes-101-yi_naval-gohado-place-desc"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "백과 「고하도」 항목이 적은 좌표 표기가 '북위 34°77′'로 분(分)이 60을 넘는 오기여서 좌표로 쓰지 않았다. 목포시 달동에 있다는 서술을 근거로 목포 구 행정구역 표시 중심(hgis-admin-117666)만 화면 배치 참고점으로 붙였다."
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-yi-sunsin",
+          "role": "고하도로 진을 옮기고 전선을 건조함",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-gohado-yi",
+            "claim-scenes-101-yi_naval-gohado-ships"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-gohado-ships"
+          ]
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "yi_naval"
+    },
+    {
+      "id": "scene-myeongnyang-1597",
+      "eventId": "event-yinav-myeongnyang-1597",
+      "title": "명량대첩 — 명량(울돌목) (1597)",
+      "startYear": 1597,
+      "endYear": 1597,
+      "kind": "naval",
+      "summary": "1597년 9월 16일 이순신이 전선 13척으로 명량(울돌목)에서 일본 수군 전선 133척과 싸웠다. 각종 화전을 쏘며 공격해 적선 31척을 분파했다.",
+      "dateClaimIds": [
+        "claim-scenes-101-yi_naval-my-year",
+        "claim-scenes-101-yi_naval-my-datetext"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-yi_naval-my-ships-own",
+        "claim-scenes-101-yi_naval-my-ships-enemy",
+        "claim-scenes-101-yi_naval-my-fire",
+        "claim-scenes-101-yi_naval-my-attack"
+      ],
+      "place": {
+        "label": "명량(울돌목)",
+        "medium": "sea",
+        "precision": "area",
+        "lon": 126.30778,
+        "lat": 34.56833,
+        "claimIds": [
+          "claim-scenes-101-yi_naval-my-place",
+          "claim-scenes-101-yi_naval-my-place-desc"
+        ],
+        "coordinateSourceIds": [
+          "src-wikidata-q627009",
+          "src-enwiki-myeongnyang-strait",
+          "src-kowiki-myeongnyang-strait",
+          "src-opentopodata-gebco2020"
+        ],
+        "coordinateNote": "해협 자체에 붙은 발표 좌표를 옮긴 값이다(파생 없음). 위키데이터 Q627009(Myeongnyang Strait)의 P625가 34°34'5.99\"N, 126°18'28.01\"E이고, 영어 위키백과 「Myeongnyang Strait」 머리 스크립트의 wgCoordinates가 lat 34.568333333333335, lon 126.30777777777777로 같은 지점이다. 도분초를 십진도로 바꾸면 34.56833/126.30778이라 두 값이 일치하며, 소수점 다섯 자리로 반올림해 썼다. 범위 근거: 한국어 위키백과 「명량해협」이 해남군 문내면 학동리 화원반도와 진도군 군내면 녹진리 사이의 해협이라 적고 길이 약 1.5 km, 최협부 약 300 m라 적었다. 바다 확인: GEBCO 2020에서 -4 m다. 다만 폭 300 m 해협이라 450 m 격자로는 이웃 칸이 뭍으로 나오고, 렌더러가 저해상도 해안선을 쓰면 이 점이 뭍으로 판정될 수 있다. 우수영관광지·전망대 같은 육상 시설 좌표는 해역이 아니므로 쓰지 않았고, 이 값은 해협 해역의 근사 표시점이지 교전 지점이 아니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-yi-sunsin",
+          "role": "전선 13척을 거느리고 명량에서 싸움",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-my-yi",
+            "claim-scenes-101-yi_naval-my-ships-own"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-my-fire"
+          ]
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-my-ships-own",
+            "claim-scenes-101-yi_naval-my-ships-enemy"
+          ]
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-my-attack"
+          ]
+        }
+      },
+      "integrationNote": "불화살 사용 근거를 선박 화재로 표현하지 않는다. 해당 활동은 본문 근거로 유지한다.",
+      "researchJob": "yi_naval"
+    },
+    {
+      "id": "scene-noryang-1598",
+      "eventId": "event-yinav-noryang-1598",
+      "title": "노량해전 — 노량 앞바다 (1598)",
+      "startYear": 1598,
+      "endYear": 1598,
+      "kind": "naval",
+      "summary": "1598년 11월 18~19일 이순신과 진린이 이끄는 조·명 연합함대가 노량 앞바다에서 왜군과 싸웠다. 왜 수군 선박 200여 척이 불에 타 침몰하거나 파손되었고, 이순신은 선두에서 지휘하다 적의 유탄에 맞았다.",
+      "dateClaimIds": [
+        "claim-scenes-101-yi_naval-no-year",
+        "claim-scenes-101-yi_naval-no-datetext"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-101-yi_naval-no-burn",
+        "claim-scenes-101-yi_naval-no-yi-hit"
+      ],
+      "place": {
+        "label": "노량 앞바다",
+        "medium": "sea",
+        "precision": "area",
+        "lon": 127.8564,
+        "lat": 34.939,
+        "claimIds": [
+          "claim-scenes-101-yi_naval-no-place",
+          "claim-scenes-101-yi_naval-no-place-desc"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-noryang-strait",
+          "src-enwiki-namhae-bridge",
+          "src-opentopodata-gebco2020",
+          "src-enwiki-noryang",
+          "src-opentopodata-gebco2020-check1"
+        ],
+        "coordinateNote": "해협 좌표를 발표한 기관 자료가 없어, 발표된 최협부 기준점을 잡고 수심 자료로 물이 확인되는 지점을 표시 중심으로 삼았다(발표값이 아니라 파생값). 범위 근거: 한국어 위키백과 「노량해협」이 남해군 노량리(설천면)와 하동군 노량리(금남면) 사이라 적고, 가장 좁은 곳에 길이 660 m의 남해대교가 있다고 적었다. 그 남해대교 좌표는 영어 위키백과 wgCoordinates의 lat 34.94416666666666, lon 127.87205555555555이다. 표시 중심 127.85640, 34.93900은 이 다리 좌표에서 서남서로 약 1540 m 떨어진 지점으로, GEBCO 2020에서 -17 m, 상하좌우 0.002도 네 점도 -14~-16 m다. 다리 좌표 자체는 GEBCO에서 +4 m로 나오는데 폭 660 m 물목을 450 m 격자가 분해하지 못한 탓으로 보여 표시 좌표로 쓰지 않았다. 영어 위키백과 「Noryang」의 지오태그 34.94528/127.87639는 GEBCO에서 +8 m(뭍, 노량 마을 쪽)라 쓰지 않았다. 해협 안 근사 중심이고 이순신이 유탄에 맞은 지점이나 함대 위치를 가리키지 않는다."
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-yi-sunsin",
+          "role": "조·명 연합함대를 이끌고 싸우다 유탄에 맞음",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-no-yi",
+            "claim-scenes-101-yi_naval-no-yi-hit"
+          ]
+        },
+        {
+          "entityId": "person-yinav-jin-rin",
+          "role": "명 수군을 이끌고 연합함대를 함께 지휘",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-no-jinrin",
+            "claim-scenes-101-yi_naval-no-jinrin-role"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-no-burn"
+          ]
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-no-burn"
+          ]
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-no-burn"
+          ]
+        }
+      },
+      "researchJob": "yi_naval"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-encykorea-busanjin",
+      "title": "부산진전투(釜山鎭戰鬪) - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024278"
+    },
+    {
+      "id": "src-encykorea-dongnae",
+      "title": "동래전투(東萊戰鬪) - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0016386"
+    },
+    {
+      "id": "src-encykorea-jinju-jeontu",
+      "title": "진주전투 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054918"
+    },
+    {
+      "id": "src-encykorea-haengju",
+      "title": "행주대첩 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0062859"
+    },
+    {
+      "id": "src-encykorea-imjinwaeran",
+      "title": "임진왜란(壬辰倭亂) - 한국민족문화대백과사전 (E0047674)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0047674"
+    },
+    {
+      "id": "src-encykorea-gyeongbokgung",
+      "title": "경복궁 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002434"
+    },
+    {
+      "id": "src-kto-gyeongbokgung",
+      "title": "경복궁 - VISITKOREA",
+      "publisher": "한국관광공사(Korea Tourism Organization)",
+      "url": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=108422"
+    },
+    {
+      "id": "src-kto-jinjuseong",
+      "title": "Jinjuseong Fortress (진주성) - VISITKOREA",
+      "publisher": "한국관광공사(Korea Tourism Organization)",
+      "url": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=75199&menuSn=351"
+    },
+    {
+      "id": "src-encykorea-boseongsa",
+      "title": "보성사(普成社) - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0023417"
+    },
+    {
+      "id": "src-i815-boseongsa",
+      "title": "3.1운동 독립선언서 인쇄지-보성사 터 · 국내 독립운동·국가수호 사적지",
+      "publisher": "독립기념관(The Independence Hall of Korea)",
+      "url": "http://sajeok.i815.or.kr/i815/view_region/1344/page/2//sfl/all?type=department_detail2&reno=1&sgg=%EC%A2%85%EB%A1%9C%EA%B5%AC"
+    },
+    {
+      "id": "src-encykorea-yi-sunsin",
+      "title": "이순신(李舜臣) - 한국민족문화대백과사전 (E0044900)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0044900"
+    },
+    {
+      "id": "src-encykorea-hansando-daecheop",
+      "title": "한산도대첩(閑山島大捷) - 한국민족문화대백과사전 (E0061676)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061676"
+    },
+    {
+      "id": "src-encykorea-hansando-yujeok",
+      "title": "한산도 이충무공 유적(閑山島 李忠武公 遺蹟) - 한국민족문화대백과사전 (E0061677)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061677"
+    },
+    {
+      "id": "src-encykorea-sugun-tongjesa",
+      "title": "수군통제사(水軍統制使) - 한국민족문화대백과사전 (E0031240)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0031240"
+    },
+    {
+      "id": "src-encykorea-danghangpo",
+      "title": "당항포해전(唐項浦海戰) - 한국민족문화대백과사전 (E0013958)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013958"
+    },
+    {
+      "id": "src-encykorea-myeongnyang",
+      "title": "명량대첩(鳴梁大捷) - 한국민족문화대백과사전 (E0018250)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0018250"
+    },
+    {
+      "id": "src-encykorea-noryang",
+      "title": "노량해전(露梁海戰) - 한국민족문화대백과사전 (E0012716)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0012716"
+    },
+    {
+      "id": "src-encykorea-gohado-yujeok",
+      "title": "고하도 이충무공 유적 - 한국민족문화대백과사전 (E0004032)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004032"
+    },
+    {
+      "id": "src-encykorea-seon-geoi",
+      "title": "선거이(宣居怡) - 한국민족문화대백과사전 (E0028603)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0028603"
+    },
+    {
+      "id": "src-encykorea-hansando-island",
+      "title": "한산도(閑山島) - 한국민족문화대백과사전 (E0061674)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061674"
+    },
+    {
+      "id": "src-kowiki-myeongnyang-strait",
+      "title": "명량해협 (울돌목)",
+      "publisher": "위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EB%8F%8C%EB%AA%A9"
+    },
+    {
+      "id": "src-wikidata-q627009",
+      "title": "Myeongnyang Strait (Q627009)",
+      "publisher": "위키데이터",
+      "url": "https://www.wikidata.org/wiki/Q627009"
+    },
+    {
+      "id": "src-enwiki-myeongnyang-strait",
+      "title": "Myeongnyang Strait",
+      "publisher": "Wikipedia (English)",
+      "url": "https://en.wikipedia.org/wiki/Myeongnyang_Strait"
+    },
+    {
+      "id": "src-kowiki-noryang-strait",
+      "title": "노량해협",
+      "publisher": "위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%EB%85%B8%EB%9F%89%ED%95%B4%ED%98%91"
+    },
+    {
+      "id": "src-enwiki-namhae-bridge",
+      "title": "Namhae Bridge",
+      "publisher": "Wikipedia (English)",
+      "url": "https://en.wikipedia.org/wiki/Namhae_Bridge"
+    },
+    {
+      "id": "src-kowiki-hansando",
+      "title": "한산도",
+      "publisher": "위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%82%B0%EB%8F%84"
+    },
+    {
+      "id": "src-kowiki-tongyeong",
+      "title": "통영시",
+      "publisher": "위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%ED%86%B5%EC%98%81%EC%8B%9C"
+    },
+    {
+      "id": "src-wikidata-q12625999",
+      "title": "Hoehwa-myeon (회화면) Q12625999",
+      "publisher": "위키데이터",
+      "url": "https://www.wikidata.org/wiki/Q12625999"
+    },
+    {
+      "id": "src-wikidata-q16183858",
+      "title": "Donghae-myeon (동해면) Q16183858",
+      "publisher": "위키데이터",
+      "url": "https://www.wikidata.org/wiki/Q16183858"
+    },
+    {
+      "id": "src-aks-goseong-e0003703",
+      "title": "고성군(경상남도)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003703"
+    },
+    {
+      "id": "src-opentopodata-gebco2020",
+      "title": "Open Topo Data — GEBCO 2020 최종 후보점 조회 결과",
+      "publisher": "Open Topo Data(API) / GEBCO Compilation Group(자료)",
+      "url": "https://api.opentopodata.org/v1/gebco2020"
+    },
+    {
+      "id": "src-opentopodata-gebco2020-check1",
+      "title": "Open Topo Data — GEBCO 2020 1차 후보점 조회 결과",
+      "publisher": "Open Topo Data(API) / GEBCO Compilation Group(자료)",
+      "url": "https://api.opentopodata.org/v1/gebco2020"
+    },
+    {
+      "id": "src-opentopodata-gebco2020-doc",
+      "title": "Open Topo Data 문서 — GEBCO bathymetry",
+      "publisher": "Open Topo Data",
+      "url": "https://www.opentopodata.org/datasets/gebco2020/"
+    },
+    {
+      "id": "src-opentopodata-mapzen",
+      "title": "Open Topo Data — Mapzen 최종 후보점 조회 결과",
+      "publisher": "Open Topo Data(API) / Mapzen terrain tiles(자료)",
+      "url": "https://api.opentopodata.org/v1/mapzen"
+    },
+    {
+      "id": "src-opentopodata-mapzen-dhp-grid",
+      "title": "Open Topo Data — Mapzen 당항만 격자 표본",
+      "publisher": "Open Topo Data(API) / Mapzen terrain tiles(자료)",
+      "url": "https://api.opentopodata.org/v1/mapzen"
+    },
+    {
+      "id": "src-opentopodata-mapzen-doc",
+      "title": "Open Topo Data 문서 — Mapzen",
+      "publisher": "Open Topo Data",
+      "url": "https://www.opentopodata.org/datasets/mapzen/"
+    },
+    {
+      "id": "src-enwiki-battle-hansan",
+      "title": "Battle of Hansan Island",
+      "publisher": "Wikipedia (English)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Hansan_Island"
+    },
+    {
+      "id": "src-enwiki-noryang",
+      "title": "Noryang",
+      "publisher": "Wikipedia (English)",
+      "url": "https://en.wikipedia.org/wiki/Noryang"
+    }
+  ],
+  "missing": [
+    {
+      "job": "invasion_events",
+      "detail": {
+        "topic": "부산진성 실측 좌표",
+        "detail": "국가유산청(www.khs.go.kr, royal.khs.go.kr, www.heritage.go.kr, www.cha.go.kr)이 이 실행 환경에서 모두 연결 시간 초과라 부산진성/부산진지성 지정 좌표를 내려받지 못했다. 그래서 area anchor(부산)로만 표시했다.",
+        "affectedScenes": [
+          "scene-busanjin-1592"
+        ]
+      }
+    },
+    {
+      "job": "invasion_events",
+      "detail": {
+        "topic": "동래읍성 실측 좌표",
+        "detail": "같은 이유로 동래읍성지 지정 좌표를 얻지 못해 area anchor(동래)를 썼다. 동래구청(www.dongnae.go.kr)은 접속되지만 좌표를 담은 유적 상세 페이지를 이번 범위에서 확인하지 못했다.",
+        "affectedScenes": [
+          "scene-dongnae-1592"
+        ]
+      }
+    },
+    {
+      "job": "invasion_events",
+      "detail": {
+        "topic": "부산진전투 정발 외 방어 측 인물",
+        "detail": "출처가 '첨사 이하 차례로 전사하고'라고만 적어 다른 방어자 이름을 이 장면의 현장 인물로 세울 근거가 없다.",
+        "affectedScenes": [
+          "scene-busanjin-1592"
+        ]
+      }
+    },
+    {
+      "job": "invasion_events",
+      "detail": {
+        "topic": "동래전투 노개방·조영규",
+        "detail": "동래전투 항목은 동래교수 노개방, 양산군수 조영규를 함께 적지만 페이지당 25단어 인용 한도 안에서 송상현·백성·포위·연도를 우선했다. 근거 문장은 원문에 있으므로 다음 배치에서 추가 가능하다.",
+        "affectedScenes": [
+          "scene-dongnae-1592"
+        ]
+      }
+    },
+    {
+      "job": "invasion_events",
+      "detail": {
+        "topic": "1592년 궁궐 화재의 방화 주체",
+        "detail": "임진왜란 항목이 『선조수정실록』(난민)과 『서정일기』(일본군 유추)를 나란히 적어 서로 엇갈린다. 어느 쪽도 현장 방화자로 확정하지 않았고 두 집단 모두 presence='related'로만 두었다. 실록 원문은 국사편찬위원회 사이트라 이번 지침상 요청하지 않았다.",
+        "affectedScenes": [
+          "scene-hanyang-palace-fire-1592"
+        ]
+      }
+    },
+    {
+      "job": "invasion_events",
+      "detail": {
+        "topic": "화재 장면의 소실 건물 목록",
+        "detail": "'전소', '창덕궁·창경궁 등도 모두 불에 타버려' 이상으로 어떤 전각이 탔는지 적은 근거가 없어 건물 단위 표현은 만들지 않았다.",
+        "affectedScenes": [
+          "scene-hanyang-palace-fire-1592"
+        ]
+      }
+    },
+    {
+      "job": "invasion_events",
+      "detail": {
+        "topic": "진주성 좌표의 성격",
+        "detail": "국가유산청 사적 좌표를 받지 못해 한국관광공사 대표 지점을 썼다. 기준계·정확도 표기가 없고 성곽 범위도 아니다.",
+        "affectedScenes": [
+          "scene-jinju-second-siege-1593"
+        ]
+      }
+    },
+    {
+      "job": "invasion_events",
+      "detail": {
+        "topic": "보성사 인쇄 장면의 천도교 지도부",
+        "detail": "손병희 등은 보성사 소유·자금과 연결되지만 2월 27일 인쇄 현장에 있었다는 문장을 확보하지 못해 참여자로 넣지 않았다.",
+        "affectedScenes": [
+          "scene-boseongsa-printing-1919"
+        ]
+      }
+    },
+    {
+      "job": "invasion_events",
+      "detail": {
+        "topic": "행주대첩 좌표 재확인",
+        "detail": "khs.go.kr 접속 불가로 기존 feature 좌표를 그대로 재사용했을 뿐 이번 실행에서 원 기관 값을 다시 확인하지 못했다.",
+        "affectedScenes": [
+          "scene-haengju-1593"
+        ]
+      }
+    },
+    {
+      "job": "yi_naval",
+      "detail": {
+        "id": "miss-sea-coordinates",
+        "topic": "해전 해역 좌표",
+        "detail": "한산섬 앞바다·당항포·명량(울돌목)·노량 네 해역 모두 권위 있는 해역 좌표를 얻지 못했다. 백과 서술은 '진도와 육지 사이의 해협', '남해도와 하동 사이의 해협' 같은 범위 설명뿐이다. 네 장면 모두 lon/lat을 비워 두고 구 행정구역 표시 중심만 참고점으로 붙였다.",
+        "neededSource": "국립해양조사원·국가지명위원회의 해양지명 좌표 또는 국가유산청 해전지 지정 좌표"
+      }
+    },
+    {
+      "job": "yi_naval",
+      "detail": {
+        "id": "miss-heritage-service-unreachable",
+        "topic": "국가유산청(문화재청) 계열 사이트 접속 실패",
+        "detail": "www.khs.go.kr, www.heritage.go.kr, www.cha.go.kr, gis-heritage.go.kr 에 robots.txt와 본문·OpenAPI(SearchKindOpenapiList.do) 요청을 각각 20초 타임아웃으로 시도했으나 모두 연결 타임아웃이었다. 그래서 '통영 한산도 이충무공 유적'(사적) 같은 기관 목록 좌표를 이번 수집에서 확보하지 못했다.",
+        "neededSource": "국가유산청 국가유산 목록·상세 좌표(위도/경도) 원문"
+      }
+    },
+    {
+      "job": "yi_naval",
+      "detail": {
+        "id": "miss-gohado-coordinate",
+        "topic": "고하도 좌표 오기",
+        "detail": "한국민족문화대백과사전 「고하도」(E0004030) 본문이 '동경 126°37′, 북위 34°77′'로 적었는데 북위 34°77′은 분이 60을 넘어 좌표로 성립하지 않는다. 그래서 고하도 장면의 lon/lat을 비우고 목포 앵커만 붙였다. 원본 파일 raw/encykorea-E0004030-gohado-island.html 에 그대로 보존해 두었다.",
+        "neededSource": "목포시·국토지리정보원 등 고하도 지점 좌표"
+      }
+    },
+    {
+      "job": "yi_naval",
+      "detail": {
+        "id": "miss-jangmunpo-place",
+        "topic": "장문포해전(1594) 장면 보류",
+        "detail": "1594년 9월 장문포 해전은 근거가 있어 event-yinav-jangmunpo-1594 와 claim-jm-* 로 수집해 두었으나, 장문포의 소재 시·군을 밝힌 자료를 얻지 못해 장면으로는 만들지 않았다. 임진왜란 일람표에는 1594. 9.29. 와 1594.10. 4. 두 개의 장문포 행이 있어 단일 일자로 확정하지 않았다.",
+        "neededSource": "장문포(長門浦)의 현재 소재지와 좌표를 밝힌 기관 자료"
+      }
+    },
+    {
+      "job": "yi_naval",
+      "detail": {
+        "id": "miss-1593-day",
+        "topic": "1593년 한산도 이진 일자",
+        "detail": "본영 설치는 '1593년 7월', 통제사 임용은 '1593년(선조 26) 8월'까지만 확인했다. 일자를 적은 실록 기사는 db.history.go.kr/sillok 계열이라 이번 수집에서 요청하지 않았다.",
+        "neededSource": "선조실록 해당 기사(현재 과업 규칙상 요청 제외 대상)"
+      }
+    },
+    {
+      "job": "yi_naval",
+      "detail": {
+        "id": "miss-1594-yi-onsite",
+        "topic": "1594년 당항포에서 이순신의 현장 위치",
+        "detail": "당항포해전 항목은 이순신이 '한산도에서' 동향을 살피고 삼도수군을 배치했으며 어영담에게 군사를 주어 치게 했다고 적는다. 이순신이 당항포 현장에 있었는지를 밝힌 문장을 찾지 못해 presence를 related로 두었다. 임진왜란 일람표의 조선 측 장수 칸 기재(李舜臣)는 지휘 표기일 뿐 현장 근거로 쓰지 않았다.",
+        "neededSource": "1594년 3월 당항포 작전 중 이순신의 승선·이동을 적은 기관 자료"
+      }
+    },
+    {
+      "job": "yi_naval",
+      "detail": {
+        "id": "miss-anchor-goseong",
+        "topic": "고성(경남) 구 행정구역 앵커 없음",
+        "detail": "existing-place-anchors.json 354개 항목에 (경남) 고성이 없어 당항포 장면에는 표시 기준점을 붙이지 못했다. '한산'은 충청남도 한산군이라 한산도와 동명이지 같은 곳이 아니어서 쓰지 않았다.",
+        "neededSource": "고성 구 행정구역 표시 중심 또는 당항포 해역 좌표"
+      }
+    },
+    {
+      "job": "naval_positions",
+      "detail": {
+        "id": "miss-official-marine-name-coord",
+        "topic": "공식 해양지명 좌표(국립해양조사원·국가지명위원회)",
+        "detail": "네 해역 모두 기관이 발표한 해역 경계·좌표를 확보하지 못했다. www.khoa.go.kr/oceanmap/main.do 는 200으로 받았으나 본문 HTML에 좌표가 없는 자바스크립트 지도 앱이고, 공공데이터포털의 국립해양조사원 지명정보는 OpenAPI 인증키가 필요하다. 그래서 좌표 근거를 위키데이터·위키백과 지오태그와 공개 수심 격자로 대체하고 그 사실을 좌표 설명에 적었다.",
+        "neededSource": "국립해양조사원 해양지명 좌표 원문 또는 인증키가 있는 지명정보 OpenAPI 응답"
+      }
+    },
+    {
+      "job": "naval_positions",
+      "detail": {
+        "id": "miss-heritage-service-unreachable",
+        "topic": "국가유산청 계열 접속 실패(이번 실행에서도 동일)",
+        "detail": "www.khs.go.kr robots.txt 요청이 8초 안에 연결 타임아웃이었다. 앞선 수집에서도 같은 계열 도메인이 모두 타임아웃이어서 이번에는 빠르게 건너뛰었다.",
+        "neededSource": "국가유산청이 지정·고시한 해전지 좌표"
+      }
+    },
+    {
+      "job": "naval_positions",
+      "detail": {
+        "id": "miss-gazetteer-robots",
+        "topic": "지명 사전 서비스 robots 차단",
+        "detail": "download.geonames.org 는 robots.txt가 전면 Disallow, nominatim.openstreetmap.org 는 /search 가 Disallow라 두 지명 사전을 쓰지 않았다. marineregions.org gazetteer 검색은 Noryang·Uldolmok 모두 404였다. Overpass 는 과업 지시대로 시도하지 않았다.",
+        "neededSource": "robots가 허용하는 공개 지명 사전 또는 정식 API 키"
+      }
+    },
+    {
+      "job": "naval_positions",
+      "detail": {
+        "id": "miss-municipal-map-metadata",
+        "topic": "지자체·관광 상세 페이지의 지도 메타데이터",
+        "detail": "고성군 계열(www.goseong.go.kr/tour, dhp.goseong.go.kr)의 menuCd 상세 URL은 모두 'RFC 3.0 오류 메세지' 페이지를 돌려주었다. visit.goseong.go.kr 과 gngsctf.or.kr 첫 화면에 있는 34.9729863/128.3200566 은 대기질 API에 넘기는 고성군 대표 지점이라 해역 좌표가 아니어서 쓰지 않았다. tour.haenam.go.kr 첫 화면은 2 KB 이동 안내였고, korean.visitkorea.or.kr 검색 결과는 자바스크립트로 채워져 HTML에 좌표가 없었다. 그래서 네 해역 어디에도 공식 관광 GeoCoordinates 를 쓰지 못했다.",
+        "neededSource": "지자체·한국관광공사 상세 페이지의 JSON-LD GeoCoordinates 또는 지도 스크립트 좌표"
+      }
+    },
+    {
+      "job": "naval_positions",
+      "detail": {
+        "id": "miss-coastline-resolution",
+        "topic": "좁은 수로에서 해안선 대조 시 뭍으로 판정될 위험",
+        "detail": "울돌목(최협부 약 300 m)과 당항만(폭 1 km 안팎)은 GEBCO 15초 격자(약 450 m)로 분해되지 않는다. 울돌목 점은 GEBCO에서 -4 m지만 이웃 칸이 뭍이고, 당항만 점은 Mapzen 30 m 격자에서만 -7 m로 확인된다. 렌더러가 저해상도 해안선을 쓰면 두 점이 뭍으로 판정될 수 있다. 한산·노량 두 점은 GEBCO 이웃 칸까지 모두 물이라 여유가 있다.",
+        "neededSource": "고해상도 해안선(국토지리정보원 수치지형도, GSHHG full resolution 등) 또는 수치해도"
+      }
+    }
+  ],
+  "renderingNote": "해당 연도에 있었던 사건을 각각 표현합니다. 모형의 간격·수량은 실제 진형이나 병력 수가 아닙니다."
+}
