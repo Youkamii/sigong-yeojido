@@ -620,7 +620,7 @@ export class Engine {
       const opaque = mats.every((m) => m && m.transparent !== true && m.depthWrite !== false && m.toneMapped !== false);
       // 지면은 받기만 한다 — 지형 전체를 그림자맵에 굽는 건 낭비다
       const isGround = !!(o.userData && o.userData.fanGround);
-      o.castShadow = opaque && !isGround;
+      o.castShadow = opaque && (!isGround || o.userData.fanCastShadow === true);
       o.receiveShadow = opaque;
       if (o.castShadow) this._attachDepthMaterial(o, mats);
     });

@@ -3,6 +3,7 @@ import {KoreaWorld,toWorld,makeHeightAt} from './korea.js';
 import {makeMaterial} from './materials.js';
 import {PALETTE,mix,darken} from './artbible.js';
 import {ridgeSegments,ridgeRelief} from './chronicle-geography.js';
+import {fitChronicleShadows} from './chronicle-shadows.js';
 
 function inside(x,z,ring){
   let result=false;
@@ -138,7 +139,9 @@ export class ChronicleWorld extends KoreaWorld{
     }
     const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
     geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.computeVertexNormals();
-    const mesh=new THREE.Mesh(geometry,grass);mesh.receiveShadow=true;mesh.userData.fanGround=true;mesh.name='peninsula-surface';this.land.add(mesh);
+    geometry.computeBoundingBox();this.maxSurfaceHeight=geometry.boundingBox.max.y;
+    const mesh=new THREE.Mesh(geometry,grass);mesh.receiveShadow=true;mesh.userData.fanGround=true;
+    mesh.userData.fanCastShadow=true;mesh.name='peninsula-surface';this.land.add(mesh);
   }
   configureEngine(engine){
     this.engine=engine;
@@ -149,7 +152,7 @@ export class ChronicleWorld extends KoreaWorld{
     engine.controls.target.copy(this.center);
     engine.camera.position.copy(this.center).add(new THREE.Vector3(Math.sin(az)*Math.cos(el)*d,Math.sin(el)*d,Math.cos(az)*Math.cos(el)*d));
     engine.controls.update();
-    this.sunOffset=engine.key.position.clone().sub(engine.key.target.position);
+    this.sunDirection=engine.key.position.clone().sub(engine.key.target.position).normalize();
   }
   frame(engine){
     // Fit the projected coastline at the current angle, including portrait screens.
@@ -169,10 +172,6 @@ export class ChronicleWorld extends KoreaWorld{
     const engine=this.engine;if(!engine)return;
     const target=engine.controls.target,distance=camera.position.distanceTo(target);
     if(engine.scene.fog){engine.scene.fog.near=distance+280;engine.scene.fog.far=distance+this.maxRim*2.5;}
-    engine.key.position.copy(target).add(this.sunOffset);engine.key.target.position.copy(target);
-    const shadow=engine.key.shadow.camera,extent=Math.max(60,Math.min(240,distance*.55));
-    if(Math.abs(shadow.right-extent)>1){
-      shadow.left=shadow.bottom=-extent;shadow.right=shadow.top=extent;shadow.updateProjectionMatrix();
-    }
+    this.shadowCoverage=fitChronicleShadows(camera,engine.key,this.sunDirection,this.bounds,this.maxSurfaceHeight+32);
   }
 }
