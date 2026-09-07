@@ -18,6 +18,14 @@ with sync_playwright() as pw:
         page.wait_for_function('(n)=>window.__sigong.chronicleScene.assets.plan.year===n',arg=n)
         page.wait_for_function('!document.querySelector("#chronicle [role=status]") && !window.__sigong.engine.fly')
     def select(id):
+        options=page.locator('#sceneDestination option').evaluate_all('rows=>rows.map(r=>r.value)')
+        if id not in options:
+            detail=page.evaluate('''()=>{const a=window.__sigong.chronicleScene.assets,c=window.__sigong.chronicleScene.chronicle;
+              return {options:[...document.querySelector('#sceneDestination').options].map(o=>o.value),claims:c.data.claims.length,
+                sceneClaims:c.data.claims.filter(x=>x.id.startsWith('claim-scenes-101-')).length,events:a.plan.events,
+                people:a.plan.people,error:c.error};}''')
+            (args.out/'missing-scene.json').write_text(json.dumps(detail,ensure_ascii=False,indent=2),encoding='utf-8')
+            raise AssertionError('Missing scene option: '+id)
         page.locator('#sceneDestination').select_option(id)
         page.wait_for_function('!window.__sigong.engine.fly')
     def snapshot(id):

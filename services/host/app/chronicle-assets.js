@@ -225,7 +225,7 @@ export class ChronicleAssets{
     const radius=Math.min(2.2,row.focusDistance*.025);
     const ring=new THREE.Mesh(new THREE.RingGeometry(radius,radius*1.09,40),
       new THREE.MeshBasicMaterial({color:PALETTE.ACCENT_GOLD,side:THREE.DoubleSide}));
-    ring.rotation.x=-Math.PI/2;ring.position.copy(row.position);ring.position.y+=.1;
+    ring.rotation.x=-Math.PI/2;ring.position.copy(row.position);ring.position.y+=Math.min(.1,row.focusDistance*.001);
     this.group.add(ring);this.selection=ring;this.selectedRow=row.id;
   }
   update(t){for(const animation of this.animated||[])animation.update(t);}

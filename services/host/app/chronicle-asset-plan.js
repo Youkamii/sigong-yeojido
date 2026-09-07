@@ -74,7 +74,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
     const coordinates=place?.displayCoordinates||feature?.geometry?.coordinates||(direct?[place.lon,place.lat]:anchor?.candidates?.length===1
       ?[anchor.candidates[0].lon,anchor.candidates[0].lat]:null);
     const participants=scene.participants.filter(p=>supported(p.claimIds)&&present.has(p.entityId)).map(p=>({
-      ...present.get(p.entityId),...p,archetype:['defender','invader','naval'].includes(p.side)?'spearman':'scribe',
+      ...present.get(p.entityId),...p,archetype:/승장|승려/.test(p.role)?'monk':['defender','invader','naval'].includes(p.side)?'spearman':'scribe',
       relationClaims:p.claimIds,detail:p.role+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
     events.push({id:scene.id,entityId:scene.eventId,kind:'event',label:scene.title,
       archetype:scene.kind,detail:yearLabel(scene.startYear),summary:scene.summary,
