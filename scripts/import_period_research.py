@@ -117,8 +117,12 @@ def main():
     for original in draft['claims']:
         claim = deepcopy(original)
         if change := adjustments.get(claim['id']):
-            assert claim['object']['latest'] == change['expectedLatest']
-            claim['object']['latest'] = change['latest']
+            if 'predicate' in change:
+                assert claim['predicate'] == change['expectedPredicate']
+                claim['predicate'] = change['predicate']
+            else:
+                assert claim['object']['latest'] == change['expectedLatest']
+                claim['object']['latest'] = change['latest']
             claim['note'] = claim.get('note', '') + ' 연결 수정(Codex): ' + change['reason']
         row = chunks[claim.pop('citesExcerpt')]
         sid = claim.pop('sourceId')
@@ -166,7 +170,9 @@ def main():
         saved.mkdir(parents=True, exist_ok=True)
         for name in ('run.json','manifest.json','progress.json','result.json','report.md'):
             if (args.research / name).exists():
-                shutil.copyfile(args.research / name, saved / name)
+                content=(args.research / name).read_text(encoding='utf-8')
+                content=re.sub(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', '[contact omitted]', content)
+                write(saved / name, content)
     write(args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k:v for k,v in report.items() if k not in ('rawFilesChecked','missing','collection')},ensure_ascii=False))
 

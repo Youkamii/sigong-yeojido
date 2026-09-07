@@ -1,0 +1,55 @@
+{
+  "task": "fill-96-gap_years (focused gap repair: year800 person + 2016-2025 office evidence)",
+  "updatedUtc": "2026-09-07T14:57:44Z",
+  "assignedSubjects": 6,
+  "collectedSubjects": 6,
+  "sourcesCollected": 6,
+  "excerpts": 25,
+  "entities": 6,
+  "claims": 32,
+  "missing": 6,
+  "subjects": [
+    {
+      "label": "신라 소성왕",
+      "entityId": "person-encykorea-soseongwang",
+      "sourceId": "src-encykorea-soseongwang",
+      "status": "collected"
+    },
+    {
+      "label": "신라 애장왕",
+      "entityId": "person-encykorea-aejangwang",
+      "sourceId": "src-encykorea-aejangwang",
+      "status": "collected"
+    },
+    {
+      "label": "대한민국 이명박",
+      "entityId": "person-presidential-yi-myeongbak",
+      "sourceId": "src-presidential-history17-yi-myeongbak",
+      "status": "collected"
+    },
+    {
+      "label": "대한민국 박근혜",
+      "entityId": "person-presidential-bak-geunhye",
+      "sourceId": "src-presidential-history18-bak-geunhye",
+      "status": "collected"
+    },
+    {
+      "label": "대한민국 문재인",
+      "entityId": "person-presidential-mun-jaein",
+      "sourceId": "src-presidential-history19-mun-jaein",
+      "status": "collected"
+    },
+    {
+      "label": "대한민국 윤석열",
+      "entityId": "person-presidential-yun-seogyeol",
+      "sourceId": "src-presidential-history20-yun-seogyeol",
+      "status": "collected"
+    }
+  ],
+  "downloadsPerformedBy": "Bash + python urllib (fetch.py) in this job folder",
+  "robotsFetched": [
+    "https://encykorea.aks.ac.kr/robots.txt",
+    "https://www.pa.go.kr/robots.txt"
+  ],
+  "status": "complete"
+}
