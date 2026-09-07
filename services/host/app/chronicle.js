@@ -1,4 +1,5 @@
 import {escapeHtml as esc} from './html.js';
+import {loadChronicle} from './chronicle-load.js';
 
 export const REFERENCE_GROUPS = [
   {label:'한국민족문화대백과사전', matches:s=>s.id.includes('encykorea') || s.id.startsWith('src-aks-')},
@@ -150,11 +151,11 @@ export class Chronicle {
   }
   async refresh(){
     const seq=++this.sequence,filters=this.callbacks.filters();this.loading=true;this.error='';
+    this.requestController?.abort();this.requestController=new AbortController();
     this.data={entities:[],claims:[]};this.render();
     try{
-      const r=await fetch('/api/chronicle?'+new URLSearchParams({sources:[...filters.sources].join(','),origin:filters.origin}));
-      const data=await r.json();if(seq!==this.sequence)return;
-      if(!r.ok)throw new Error(data.error||'시대 정보를 불러오지 못했습니다.');
+      const data=await loadChronicle([...filters.sources],filters.origin,this.requestController.signal);
+      if(seq!==this.sequence)return;
       this.data=data;
     }catch(e){if(seq!==this.sequence)return;this.error=e.message;}
     this.loading=false;this.render();
