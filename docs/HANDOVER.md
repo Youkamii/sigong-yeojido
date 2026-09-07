@@ -14,9 +14,12 @@
 현재 #91에서 위 화면을 구현했고, #92의 [자료·직접 다운로드 기록](research/periods-92.md)을 연결했다.
 기본 선택은 민족문화대백과사전·삼국사기·고려사·조선왕조실록·국가유산포털 다섯 묶음이다.
 1392년 인물 6명·1593년 7명·1919년 7명, 사건 지도 선택, 원문 연결, 필터, 모바일의
-[실제 화면 검사 18개](research/chronicle-local-91.json)를 통과했다. 한국사 전체 수록 완료로 표현하지 않는다.
+[실제 화면 검사 19개](research/chronicle-local-91.json)를 통과했다. 한국사 전체 수록 완료로 표현하지 않는다.
 
-운영 반영과 공개 주소 검증은 별도 실행 기록이 있어야 완료다. 현재 새 화면의 검사는 개발 서버 기준이다.
+운영 코드·자료는 `c8b48ae7`로 반영했고 [공개 주소 실행 검사 19개](research/chronicle-production-91.json)를 모두 통과했다.
+[기본 화질의 3D 회전·사건 표시](research/chronicle-default-quality-91.json)도 별도로 확인했다.
+[배포 기록](research/chronicle-deployed-91.json): viewer 290920, watcher 290919, RDF 249,573 triples, FinBridge 유지.
+GitHub Actions 워크플로는 0개이므로 CI는 NOT_RUN이다. 위 검사는 직접 실행한 결과다.
 
 이 문서는 Claude 세션(2026-09-04~06)의 작업과 Codex가 이어서 반영한 결과를 적는다.
 하위 에이전트(워크플로)가 만든 것까지 포함한다. 사실은 **확인됨**(실행·화면으로 검증) / **미확인** 으로 나눠 적는다.
