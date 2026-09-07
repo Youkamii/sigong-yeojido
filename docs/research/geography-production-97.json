@@ -1,0 +1,103 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com",
+  "checks": [
+    {
+      "name": "Cited Taebaek and Sobaek lines are loaded",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ulleungdo retains its cited offshore position and is selectable",
+      "pass": true,
+      "detail": {
+        "lon": 130.85702593500002,
+        "lat": 37.502613992500045,
+        "inside": true,
+        "height": 12.922877172991129,
+        "coordinateRoundTrip": [
+          130.85702593500005,
+          37.50261399250004
+        ],
+        "screen": [
+          -2.2520820837440783e-15,
+          0,
+          -0.9877866535441532
+        ],
+        "sources": 3,
+        "distance": 48.00000000000002
+      }
+    },
+    {
+      "name": "dokdo-dongdo retains its cited offshore position and is selectable",
+      "pass": true,
+      "detail": {
+        "lon": 131.869556,
+        "lat": 37.240778,
+        "inside": true,
+        "height": 7.084487503255437,
+        "coordinateRoundTrip": [
+          131.86955600000005,
+          37.24077799999999
+        ],
+        "screen": [
+          0,
+          -5.141741261807064e-16,
+          -0.9977110313288813
+        ],
+        "sources": 3,
+        "distance": 8.999999999999982
+      }
+    },
+    {
+      "name": "dokdo-dongdo remains east of Ulleungdo at the official Dokdo longitude",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "dokdo-seodo retains its cited offshore position and is selectable",
+      "pass": true,
+      "detail": {
+        "lon": 131.865167,
+        "lat": 37.241833,
+        "inside": true,
+        "height": 7.124753003905258,
+        "coordinateRoundTrip": [
+          131.86516700000004,
+          37.24183299999999
+        ],
+        "screen": [
+          0,
+          -3.599218883264946e-15,
+          -0.9977110313288813
+        ],
+        "sources": 2,
+        "distance": 8.999999999999988
+      }
+    },
+    {
+      "name": "dokdo-seodo remains east of Ulleungdo at the official Dokdo longitude",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Loaded mountain paths produce raised terrain, not just labels",
+      "pass": true,
+      "detail": {
+        "maximumHeight": 23.953321276025402,
+        "baseHeight": 7
+      }
+    },
+    {
+      "name": "Mobile island selection keeps its explanation accessible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser execution errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "testedApplicationCommit": "fd854043"
+}
