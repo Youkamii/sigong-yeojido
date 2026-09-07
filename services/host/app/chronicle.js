@@ -68,6 +68,16 @@ export function contextAt(data,year,span=50){
         claim:birth.claim,basis:[...birth.basis,...death.basis]});
     }
   }
+  // A dated participation supports presence at that event, not an inferred lifetime.
+  for(const event of events.filter(e=>e.type==='Event'&&e.current)){
+    for(const claim of data.claims){
+      if(claim.object.kind!=='entity')continue;
+      const id=claim.subject===event.id&&['syj:hasParticipant','syj:ledBy'].includes(claim.predicate)?claim.object.id
+        :claim.object.id===event.id&&claim.predicate==='syj:participatedIn'?claim.subject:null;
+      const person=entities.get(id);if(person?.type!=='Person')continue;
+      addPerson(person,{lo:event.lo,hi:event.hi,label:'사건 참여',claim,basis:[claim,...event.basis],eventId:event.id});
+    }
+  }
   for(const person of people.values()){
     // A lifetime cannot date a later office or membership.
     person.relations=data.claims.filter(c=>c.subject===person.id&&c.object.kind==='entity'

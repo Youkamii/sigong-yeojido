@@ -4,6 +4,7 @@ from collections import defaultdict
 from copy import deepcopy
 from hashlib import sha256
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 import shutil
 import sys
@@ -28,8 +29,10 @@ def main():
     ap.add_argument('--data', type=Path, default=Path('data'))
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--check-only', action='store_true')
+    ap.add_argument('--collection', default='periods-92')
     args = ap.parse_args()
     job = args.research.name
+    prefix = args.collection.replace('periods-', 'period')
     run = json.loads((args.research / 'run.json').read_text(encoding='utf-8'))
     assert run['exitCode'] == 0 and not run['isError']
     assert run['modelsObserved'] == ['claude-opus-5'] and run['effort'] == 'max'
@@ -69,7 +72,7 @@ def main():
         rows = []
         for excerpt in source['excerpts']:
             assert excerpt['text'] and (excerpt['text'] in text or excerpt['text'] in spaced_text), (sid, excerpt['id'], 'raw quotation mismatch')
-            cid = 'chunk_period92_' + job + '_' + excerpt['id'].removeprefix('ex-')
+            cid = 'chunk_' + prefix + '_' + job + '_' + excerpt['id'].removeprefix('ex-')
             row = {'id': cid, 'sourceId': sid, 'text': excerpt['text'], 'locator': excerpt['locator'],
                    'permalink': url, 'sourceUrl': url, 'lang': 'ko', 'date': None,
                    'chunkType': 'excerpt', 'pageSha256': digest, 'collectedBy': 'claude-opus-5',
@@ -110,15 +113,17 @@ def main():
         row = chunks[claim.pop('citesExcerpt')]
         sid = claim.pop('sourceId')
         assert row['sourceId'] == sid
-        claim['id'] = 'claim-period92-' + job + '-' + claim['id'].removeprefix('claim-')
+        claim['id'] = 'claim-' + prefix + '-' + job + '-' + claim['id'].removeprefix('claim-')
         obj = claim['object']
         if obj['kind'] == 'time':
             assert obj['verbatim'] in row['text'], claim['id']
-            obj['id'] = 'ts-period92-' + job + '-' + obj['id'].removeprefix('ts-')
+            obj['id'] = 'ts-' + prefix + '-' + job + '-' + obj['id'].removeprefix('ts-')
         for value in ([obj['value']] if obj['kind'] == 'year' else [obj[k] for k in ('earliest','latest','year') if k in obj]):
-            assert str(value) in row['text'], (claim['id'], 'numeric year absent from quotation', value)
+            quoted = row['text']
+            supported = str(value) in quoted if value >= 0 else str(abs(value)) in quoted and any(marker in quoted for marker in ('기원전', 'B.C.', 'BCE', 'BC'))
+            assert supported, (claim['id'], 'numeric year absent from quotation', value)
         claim.update(fromSource=sid, citesChunk=row['id'], quote=row['text'], origin='ai', status='draft',
-                     generatedBy='claude-opus-5', generatedAt='2026-09-07')
+                     generatedBy='claude-opus-5', generatedAt=datetime.fromtimestamp(run['started'],timezone.utc).date().isoformat())
         by_source[sid].append(claim)
     for entity in draft['entities']:
         path = args.data / 'entities' / entity['type'].lower() / (entity['id'] + '.md')
@@ -129,7 +134,7 @@ def main():
             files[path] = markdown({k:entity[k] for k in ('id','type','label')}, entity.get('ambiguity','')).rstrip() + '\n'
     for sid, claims in by_source.items():
         for cid in dict.fromkeys(c['citesChunk'] for c in claims):
-            path = args.data / 'claims' / sid.removeprefix('src-') / 'period92' / (cid + '.md')
+            path = args.data / 'claims' / sid.removeprefix('src-') / prefix / (cid + '.md')
             files[path] = markdown({'type':'Claims', 'source':sid, 'chunk':cid, 'generated':'claude-opus-5', 'status':'draft'},
                 '```claims-json\n' + json.dumps([c for c in claims if c['citesChunk'] == cid], ensure_ascii=False, indent=2) + '\n```')
     report = {'job':job, 'sources':len(sources), 'excerpts':len(chunks),
@@ -141,7 +146,7 @@ def main():
     if not args.check_only:
         for path, text in files.items():
             write(path, text)
-        saved = args.data / 'research' / 'periods-92' / job
+        saved = args.data / 'research' / args.collection / job
         saved.mkdir(parents=True, exist_ok=True)
         for name in ('run.json','manifest.json','progress.json','result.json','report.md'):
             if (args.research / name).exists():
