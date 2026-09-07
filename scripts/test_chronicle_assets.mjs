@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {gunzipSync} from 'node:zlib';
 import {contextAt} from '../services/host/app/chronicle.js';
 import {planChronicleAssets,personArchetype} from '../services/host/app/chronicle-asset-plan.js';
 import {compileAssetCatalog,normalizeAssetRecipe} from '../services/host/app/assetcatalog.js';
@@ -16,7 +17,7 @@ const site={id:'site-a',geometry:{type:'Point',coordinates:[126.8,37.6]},propert
 const plan=(y,features=[site],d=data)=>planChronicleAssets(contextAt(d,y),d,features);
 assert.equal(plan(1593).events[0].participants[0].entityId,person.id);
 assert.deepEqual(plan(1593).events[0].participants[0].relationClaims,['participant']);
-assert.equal(plan(1593).people[0].placement,'collection');
+assert.equal(plan(1593).people[0].placement,'symbolic');
 assert.equal('coordinates' in plan(1593).people[0],false,'A lifespan does not become a geographic location');
 assert.equal(plan(1593,[]).events[0].sites.length,0,'No fallback to guessed geography');
 assert.equal(plan(1592).events.length,0,'Nearby events do not acquire active 3D models');
@@ -34,7 +35,14 @@ for(const [file,expected] of Object.entries(provenance.moduleTextSha256)){
   assert.equal(createHash('sha256').update(text).digest('hex'),expected,'Original generator text: '+file);
 }
 const catalog=compileAssetCatalog(raw);
-assert.equal(catalog.blueprintCount,5);
+assert.equal(catalog.blueprintCount,16);
+const outline=JSON.parse(await readFile(new URL('../services/host/app/korea-outline.json',import.meta.url),'utf8'));
+const boundaries=JSON.parse(gunzipSync(await readFile(new URL('../data/maps/cliopatria-korea-v013.geojson.gz',import.meta.url))));
+assert.deepEqual(outline.geometry,boundaries.features.find(f=>f.id===outline.properties.sourceFeature).geometry);
+const displayProof=JSON.parse(await readFile(new URL('../docs/research/peninsula-assets-94.json',import.meta.url),'utf8'));
+const sceneText=(await readFile(new URL('../services/host/app/chronicle-assets.js',import.meta.url),'utf8')).replace(/\r\n/g,'\n');
+const tree='function makeTreeGeometry() {'+sceneText.split('function makeTreeGeometry() {')[1].split('\n}')[0]+'\n}';
+assert.equal(createHash('sha256').update(tree).digest('hex'),displayProof.treeFunctionSha256,'Use the actual original world tree geometry');
 for(const archetype of ['human','scribe','monk','battle','hanging_scroll']){
   const {recipe,dropped}=normalizeAssetRecipe({archetype,anchor:'test',form:archetype==='battle'?'local':archetype==='hanging_scroll'?'plain':'civilian'},catalog);
   assert.deepEqual(dropped,[]);assert.equal(recipe.materialExplicit,false,'Keep the blueprint materials for individual parts');

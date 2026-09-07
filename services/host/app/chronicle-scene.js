@@ -17,33 +17,34 @@ export class ChronicleScene {
     this.chronicle=chronicle;this.world=world;
     if(!this.assets||!chronicle.context)return;
     const features=world.historyTargets.map(t=>t.userData.feature);
-    const plan=planChronicleAssets(chronicle.context,chronicle.data,features);
+    const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places);
     const signature=JSON.stringify(plan);
     if(signature===this.signature){this.syncPicks();return;}
     this.assets.rebuild(plan);this.signature=signature;
     this.host.replaceChildren();this.markers=[];
     for(const row of this.assets.rows){
+      if(row.kind==='building')continue;
       const button=document.createElement('button');button.className=row.kind==='event'?'scene-event':'scene-person';
       button.dataset.sceneEntity=row.entityId;
       button.dataset.scenePlacement=row.placement;
       if(row.kind==='event')button.dataset.sceneEvent=row.entityId;
-      button.innerHTML=`<strong>${esc(row.label)}</strong><small>${esc(row.detail)}</small>`;
+      const label=row.kind==='event'?row.label.replace(/^.*\((제[12]차 [^)]+)\)$/,'$1').replace(/\s*\(임진왜란\)/,''):row.label;
+      button.innerHTML=`<strong>${esc(label)}</strong><small>${esc(row.detail)}</small>`;
+      button.title=row.label+' · '+row.placementLabel;
       button.onclick=()=>{this.preferredRow=row.id;this.onSelect(row.entityId);};
       this.host.append(button);this.markers.push({button,position:row.labelPosition,row});
     }
     this.syncPicks();
     if(!this.initiallyFramed&&this.assets.rows.length){this.assets.focusPeriod();this.initiallyFramed=true;}
     const note=document.getElementById('sceneAssetNote');
-    note.textContent=plan.people.length||plan.events.length?'인물·사건은 상징 조형 · 진열 위치는 실제 활동 장소와 다릅니다.':'';
+    note.textContent=plan.people.length||plan.events.length?'모형을 눌러 생애와 사건을 살펴보세요.':'';
     note.hidden=!note.textContent;
   }
   syncPicks(){
     if(!this.engine)return;
-    const represented=new Set(this.assets?.rows.filter(r=>r.placement==='site').map(r=>r.site.id)||[]);
-    for(const target of this.world.historyTargets)target.visible=!represented.has(target.userData.feature.id);
-    this.engine.setPickTargets([
-      ...(this.world.marks.visible?this.world.pickTargets.filter(t=>t.parent.visible):[]),
-      ...this.world.historyTargets.filter(t=>t.visible),...(this.assets?.picks||[])]);
+    this.world.marks.visible=false;
+    this.world.history.visible=false;
+    this.engine.setPickTargets(this.assets?.picks||[]);
   }
   select(id){
     const preferred=this.preferredRow||(this.assets?.selected===id?this.assets.selectedRow:null);
@@ -63,17 +64,21 @@ export class ChronicleScene {
     const occupied=[{left:hud.left-canvasRect.left,right:hud.right-canvasRect.left,
       top:hud.top-canvasRect.top,bottom:hud.bottom-canvasRect.top}];
     const ordered=[...this.markers].sort((a,b)=>
-      Number(b.row.id===this.assets?.selectedRow)-Number(a.row.id===this.assets?.selectedRow));
+      Number(b.row.id===this.assets?.selectedRow)-Number(a.row.id===this.assets?.selectedRow)
+      ||Number(b.row.kind==='person')-Number(a.row.kind==='person'));
     for(const {button,position} of ordered){
       const p=position.clone().project(camera);
       button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1;
       if(button.hidden)continue;
       button.style.left=(p.x+1)*width/2+'px';button.style.top=(1-p.y)*height/2+'px';
       const x=(p.x+1)*width/2,y=(1-p.y)*height/2,w=button.offsetWidth,h=button.offsetHeight;
-      const rect={left:x-w/2,right:x+w/2,top:y-h,bottom:y};
-      button.hidden=rect.left<0||rect.right>width||rect.top<0||rect.bottom>height
-        ||occupied.some(r=>r.left<rect.right+4&&r.right>rect.left-4&&r.top<rect.bottom+4&&r.bottom>rect.top-4);
-      if(!button.hidden)occupied.push(rect);
+      button.hidden=true;
+      for(const [dx,dy] of [[0,0],[-22,-12],[22,-12],[0,-30],[-38,-30],[38,-30],[0,-52],[-56,-48],[56,-48]]){
+        const rect={left:x+dx-w/2,right:x+dx+w/2,top:y+dy-h,bottom:y+dy};
+        if(rect.left<0||rect.right>width||rect.top<0||rect.bottom>height
+          ||occupied.some(r=>r.left<rect.right+4&&r.right>rect.left-4&&r.top<rect.bottom+4&&r.bottom>rect.top-4))continue;
+        button.style.left=x+dx+'px';button.style.top=y+dy+'px';button.hidden=false;occupied.push(rect);break;
+      }
     }
   }
 }

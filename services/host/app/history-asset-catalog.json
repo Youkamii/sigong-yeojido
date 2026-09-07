@@ -1,60 +1,5 @@
 {
   "version": 2,
-  "categories": {
-    "humanoids": {
-      "label": "사람형 종족",
-      "family": "humanoid",
-      "forms": [
-        "civilian|민간",
-        "warrior|전사",
-        "mystic|주술",
-        "royal|왕족",
-        "corrupted|타락",
-        "veteran|백전",
-        "noble|귀족",
-        "spectral|영체"
-      ],
-      "cores": [
-        "human|인간",
-        "monk|수도사",
-        "scribe|필경사"
-      ]
-    },
-    "props": {
-      "label": "소품·장비",
-      "family": "prop",
-      "forms": [
-        "plain|평범한",
-        "ornate|장식된",
-        "royal|왕실",
-        "damaged|손상된",
-        "enchanted|마법이 걸린",
-        "broken|부러진",
-        "masterwork|명품",
-        "cursed|저주받은"
-      ],
-      "cores": [
-        "hanging_scroll|족자"
-      ]
-    },
-    "events": {
-      "label": "사건·파괴·연출",
-      "family": "event",
-      "forms": [
-        "local|국지",
-        "spreading|확산",
-        "peak|절정",
-        "aftermath|여파",
-        "supernatural|초자연",
-        "faint|조짐",
-        "violent|난폭",
-        "ruined|잔해"
-      ],
-      "cores": [
-        "battle|전투"
-      ]
-    }
-  },
   "families": {
     "terrain": {
       "capabilities": [
@@ -181,7 +126,6 @@
       "generator": "epistemic"
     }
   },
-  "coreOverrides": {},
   "modifiers": {
     "states": [
       {
@@ -968,7 +912,250 @@
     "verdant|수목",
     "arcanite|결정"
   ],
+  "categories": {
+    "ecology": {
+      "label": "식생·생태",
+      "family": "ecology",
+      "forms": [
+        "patch|성긴 군락",
+        "grove|숲",
+        "ancient|고목",
+        "colossal|거대",
+        "corrupted|오염된",
+        "blooming|만개",
+        "withered|시든",
+        "petrified|석화"
+      ],
+      "cores": [
+        "oak|참나무",
+        "fir|전나무",
+        "pine|소나무"
+      ]
+    },
+    "buildings": {
+      "label": "건물·정착지",
+      "family": "building",
+      "forms": [
+        "compact|밀집",
+        "walled|성벽형",
+        "elevated|고층형",
+        "sprawling|확산형",
+        "monumental|기념비",
+        "ruined|폐허",
+        "abandoned|버려진",
+        "fortified|요새화"
+      ],
+      "cores": [
+        "house|주택",
+        "farmhouse|농가",
+        "courtyard_house|중정 저택",
+        "pagoda|층탑",
+        "academy_hall|학당",
+        "gatehouse|성문루"
+      ]
+    },
+    "humanoids": {
+      "label": "사람형 종족",
+      "family": "humanoid",
+      "forms": [
+        "civilian|민간",
+        "warrior|전사",
+        "mystic|주술",
+        "royal|왕족",
+        "corrupted|타락",
+        "veteran|백전",
+        "noble|귀족",
+        "spectral|영체"
+      ],
+      "cores": [
+        "human|인간",
+        "spearman|창병",
+        "monk|수도사",
+        "scribe|필경사",
+        "chancellor|재상"
+      ]
+    },
+    "props": {
+      "label": "소품·장비",
+      "family": "prop",
+      "forms": [
+        "plain|평범한",
+        "ornate|장식된",
+        "royal|왕실",
+        "damaged|손상된",
+        "enchanted|마법이 걸린",
+        "broken|부러진",
+        "masterwork|명품",
+        "cursed|저주받은"
+      ],
+      "cores": [
+        "hanging_scroll|족자"
+      ]
+    },
+    "events": {
+      "label": "사건·파괴·연출",
+      "family": "event",
+      "forms": [
+        "local|국지",
+        "spreading|확산",
+        "peak|절정",
+        "aftermath|여파",
+        "supernatural|초자연",
+        "faint|조짐",
+        "violent|난폭",
+        "ruined|잔해"
+      ],
+      "cores": [
+        "battle|전투"
+      ]
+    }
+  },
   "blueprints": {
+    "academy_hall": {
+      "h": 5.2,
+      "rad": 5.62,
+      "p": [
+        {
+          "k": "box",
+          "w": 8.8,
+          "h": 0.4,
+          "d": 7.0,
+          "y": 0.2,
+          "m": "stone",
+          "c": "base",
+          "tag": "base"
+        },
+        {
+          "k": "box",
+          "w": 6.6,
+          "h": 3.2,
+          "d": 3.0,
+          "y": 2.0,
+          "z": -1.6,
+          "m": "stone",
+          "c": "body",
+          "tag": "body"
+        },
+        {
+          "k": "gable",
+          "w": 7.0,
+          "h": 1.1,
+          "d": 3.4,
+          "y": 4.15,
+          "z": -1.6,
+          "m": "timber",
+          "c": "roof",
+          "tag": "roof"
+        },
+        {
+          "k": "box",
+          "w": 2.0,
+          "h": 2.6,
+          "d": 3.4,
+          "y": 1.7,
+          "x": 2.7,
+          "z": 1.2,
+          "m": "stone",
+          "c": "bodyMid",
+          "tag": "body",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "gable",
+          "w": 2.3,
+          "h": 0.9,
+          "d": 3.7,
+          "y": 3.45,
+          "x": 2.7,
+          "z": 1.2,
+          "m": "timber",
+          "c": "roofAlt",
+          "tag": "roof",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "cyl",
+          "r": 0.24,
+          "h": 2.4,
+          "y": 1.6,
+          "z": 0.1,
+          "seg": 10,
+          "m": "stone",
+          "c": "mortar",
+          "tag": "body",
+          "rep": {
+            "n": 4,
+            "dx": 1.1
+          }
+        },
+        {
+          "k": "box",
+          "w": 4.0,
+          "h": 0.35,
+          "d": 0.6,
+          "y": 2.98,
+          "z": 0.1,
+          "m": "stone",
+          "c": "bodyMid",
+          "tag": "body"
+        },
+        {
+          "k": "gable",
+          "w": 4.2,
+          "h": 0.7,
+          "d": 1.2,
+          "y": 3.5,
+          "z": 0.1,
+          "m": "timber",
+          "c": "roof",
+          "tag": "roof"
+        },
+        {
+          "k": "open",
+          "w": 1.0,
+          "h": 1.9,
+          "y": 1.35,
+          "z": -0.08
+        },
+        {
+          "k": "box",
+          "w": 0.5,
+          "h": 1.0,
+          "d": 0.1,
+          "y": 2.5,
+          "x": 0.0,
+          "z": -0.06,
+          "m": "crystal",
+          "c": "crystalB",
+          "tag": "ornament",
+          "rep": {
+            "n": 2,
+            "dx": 4.4
+          }
+        },
+        {
+          "k": "box",
+          "w": 2.0,
+          "h": 0.16,
+          "d": 0.5,
+          "y": 0.6,
+          "z": 2.6,
+          "m": "timber",
+          "c": "timberLt",
+          "tag": "ornament"
+        },
+        {
+          "k": "flag",
+          "y": 3.6,
+          "h": 1.6,
+          "z": -1.6
+        }
+      ]
+    },
     "battle": {
       "h": 3.2,
       "rad": 4.97,
@@ -1155,6 +1342,810 @@
           "m": "stone",
           "c": "rock",
           "tag": "base"
+        }
+      ]
+    },
+    "chancellor": {
+      "h": 2.77,
+      "rad": 0.59,
+      "p": [
+        {
+          "k": "cyl",
+          "r": 0.42,
+          "r1": 0.3,
+          "h": 1.72,
+          "y": 0.86,
+          "seg": 11,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.5,
+          "h": 0.6,
+          "d": 0.3,
+          "y": 1.96,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "ledge",
+          "w": 0.6,
+          "d": 0.4,
+          "y": 2.24,
+          "m": "leather",
+          "c": "banner",
+          "tag": "body"
+        },
+        {
+          "k": "tor",
+          "R": 0.17,
+          "t": 0.03,
+          "y": 2.0,
+          "z": 0.08,
+          "rx": 1.35,
+          "m": "gold",
+          "c": "gold",
+          "tag": "ornament"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.085,
+          "h": 0.56,
+          "y": 1.94,
+          "x": 0.32,
+          "rz": 0.36,
+          "seg": 6,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "limb",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "sph",
+          "r": 0.175,
+          "y": 2.42,
+          "m": "leather",
+          "c": "timberLt",
+          "tag": "top"
+        },
+        {
+          "k": "cyl",
+          "r": 0.21,
+          "r1": 0.23,
+          "h": 0.3,
+          "y": 2.62,
+          "seg": 9,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "top"
+        },
+        {
+          "k": "band",
+          "r": 0.24,
+          "y": 2.5,
+          "m": "leather",
+          "c": "banner",
+          "tag": "top"
+        },
+        {
+          "k": "box",
+          "w": 0.26,
+          "h": 0.12,
+          "d": 0.2,
+          "y": 1.82,
+          "z": 0.28,
+          "m": "leather",
+          "c": "reed",
+          "bev": "s",
+          "tag": "ornament"
+        },
+        {
+          "k": "cyl",
+          "r": 0.055,
+          "h": 0.44,
+          "y": 1.3,
+          "x": 0.44,
+          "z": 0.14,
+          "rx": 1.5708,
+          "seg": 8,
+          "m": "leather",
+          "c": "snow",
+          "tag": "ornament"
+        }
+      ]
+    },
+    "courtyard_house": {
+      "h": 3.95,
+      "rad": 5.94,
+      "p": [
+        {
+          "k": "box",
+          "w": 8.4,
+          "h": 0.35,
+          "d": 8.4,
+          "y": 0.175,
+          "m": "stone",
+          "c": "base",
+          "tag": "base"
+        },
+        {
+          "k": "box",
+          "w": 7.6,
+          "h": 2.6,
+          "d": 1.8,
+          "y": 1.65,
+          "z": 2.9,
+          "m": "stone",
+          "c": "body",
+          "tag": "body",
+          "rep": {
+            "mir": "z"
+          }
+        },
+        {
+          "k": "box",
+          "w": 1.8,
+          "h": 2.6,
+          "d": 7.6,
+          "y": 1.65,
+          "x": 2.9,
+          "m": "stone",
+          "c": "bodyMid",
+          "tag": "body",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "gable",
+          "w": 8.0,
+          "h": 1.0,
+          "d": 2.2,
+          "y": 3.45,
+          "z": 2.9,
+          "m": "timber",
+          "c": "roof",
+          "tag": "roof",
+          "rep": {
+            "mir": "z"
+          }
+        },
+        {
+          "k": "gable",
+          "w": 2.2,
+          "h": 1.0,
+          "d": 8.0,
+          "y": 3.45,
+          "x": 2.9,
+          "m": "timber",
+          "c": "roofAlt",
+          "tag": "roof",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "w": 4.0,
+          "h": 0.12,
+          "d": 4.0,
+          "y": 0.41,
+          "m": "stone",
+          "c": "mortar",
+          "tag": "base"
+        },
+        {
+          "k": "cyl",
+          "r": 0.55,
+          "h": 0.7,
+          "y": 0.76,
+          "seg": 10,
+          "m": "stone",
+          "c": "rock",
+          "tag": "body"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.14,
+          "h": 1.0,
+          "y": 0.9,
+          "x": 1.2,
+          "z": 1.1,
+          "seg": 7,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "body"
+        },
+        {
+          "k": "sph",
+          "r": 0.9,
+          "y": 1.7,
+          "x": 1.2,
+          "z": 1.1,
+          "sy": 0.8,
+          "m": "foliage",
+          "c": "canopyHi",
+          "tag": "ornament"
+        },
+        {
+          "k": "open",
+          "w": 1.4,
+          "h": 2.0,
+          "y": 1.35,
+          "z": 3.85
+        },
+        {
+          "k": "box",
+          "w": 0.2,
+          "h": 0.5,
+          "d": 0.2,
+          "y": 2.7,
+          "x": -1.0,
+          "z": 3.9,
+          "m": "iron",
+          "c": "iron",
+          "tag": "ornament"
+        }
+      ]
+    },
+    "farmhouse": {
+      "h": 4.3,
+      "rad": 5.05,
+      "p": [
+        {
+          "k": "box",
+          "w": 9.0,
+          "h": 0.3,
+          "d": 4.6,
+          "y": 0.15,
+          "m": "stone",
+          "c": "base",
+          "tag": "base"
+        },
+        {
+          "k": "box",
+          "w": 4.4,
+          "h": 2.2,
+          "d": 3.6,
+          "y": 1.4,
+          "x": -2.1,
+          "m": "stone",
+          "c": "body",
+          "tag": "body"
+        },
+        {
+          "k": "gable",
+          "w": 4.9,
+          "h": 1.2,
+          "d": 4.0,
+          "y": 3.1,
+          "x": -2.1,
+          "m": "timber",
+          "c": "roof",
+          "tag": "roof"
+        },
+        {
+          "k": "box",
+          "w": 4.0,
+          "h": 2.6,
+          "d": 3.4,
+          "y": 1.6,
+          "x": 2.3,
+          "m": "timber",
+          "c": "timber",
+          "tag": "body"
+        },
+        {
+          "k": "gable",
+          "w": 4.5,
+          "h": 1.4,
+          "d": 3.8,
+          "y": 3.6,
+          "x": 2.3,
+          "m": "timber",
+          "c": "roofAlt",
+          "tag": "roof"
+        },
+        {
+          "k": "open",
+          "w": 0.8,
+          "h": 1.5,
+          "y": 1.05,
+          "x": -2.1,
+          "z": 1.85
+        },
+        {
+          "k": "open",
+          "w": 1.6,
+          "h": 2.0,
+          "y": 1.3,
+          "x": 2.3,
+          "z": 1.75
+        },
+        {
+          "k": "box",
+          "w": 0.14,
+          "h": 1.1,
+          "d": 0.14,
+          "y": 0.55,
+          "z": 2.9,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "base",
+          "rep": {
+            "n": 6,
+            "dx": 1.5
+          }
+        },
+        {
+          "k": "sph",
+          "r": 0.7,
+          "y": 0.75,
+          "x": 3.6,
+          "z": -1.6,
+          "sy": 1.0,
+          "m": "foliage",
+          "c": "reed",
+          "tag": "ornament"
+        },
+        {
+          "k": "box",
+          "w": 0.35,
+          "h": 1.1,
+          "d": 0.35,
+          "y": 3.3,
+          "x": -3.2,
+          "z": -0.9,
+          "m": "stone",
+          "c": "mortar",
+          "tag": "top"
+        }
+      ]
+    },
+    "fir": {
+      "h": 6.85,
+      "rad": 2.05,
+      "p": [
+        {
+          "k": "chunk",
+          "r": 0.55,
+          "y": 0.18,
+          "ex": 0.3,
+          "sy": 0.5,
+          "m": "foliage",
+          "c": "trunkDark",
+          "tag": "base"
+        },
+        {
+          "k": "cyl",
+          "r": 0.24,
+          "r1": 0.12,
+          "h": 6.0,
+          "y": 3.0,
+          "seg": 8,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "cone",
+          "r": 1.45,
+          "h": 1.9,
+          "y": 1.55,
+          "seg": 10,
+          "m": "foliage",
+          "c": "canopyLow",
+          "tag": "roof"
+        },
+        {
+          "k": "cone",
+          "r": 1.18,
+          "h": 1.75,
+          "y": 2.75,
+          "seg": 10,
+          "m": "foliage",
+          "c": "canopyLow",
+          "tag": "roof"
+        },
+        {
+          "k": "cone",
+          "r": 0.94,
+          "h": 1.6,
+          "y": 3.85,
+          "seg": 10,
+          "m": "foliage",
+          "c": "canopyHi",
+          "tag": "roof"
+        },
+        {
+          "k": "cone",
+          "r": 0.7,
+          "h": 1.45,
+          "y": 4.85,
+          "seg": 10,
+          "m": "foliage",
+          "c": "canopyHi",
+          "tag": "roof"
+        },
+        {
+          "k": "cone",
+          "r": 0.46,
+          "h": 1.3,
+          "y": 5.8,
+          "seg": 10,
+          "m": "foliage",
+          "c": "leafHi",
+          "tag": "top"
+        },
+        {
+          "k": "cone",
+          "r": 0.22,
+          "h": 0.8,
+          "y": 6.45,
+          "seg": 8,
+          "m": "foliage",
+          "c": "leafHi",
+          "tag": "top"
+        },
+        {
+          "k": "chunk",
+          "r": 0.2,
+          "y": 0.13,
+          "x": 1.05,
+          "z": 0.75,
+          "ex": 0.5,
+          "ey": 0.4,
+          "sy": 0.6,
+          "m": "stone",
+          "c": "rock",
+          "tag": "base"
+        }
+      ]
+    },
+    "gatehouse": {
+      "h": 9.0,
+      "rad": 3.6,
+      "p": [
+        {
+          "k": "box",
+          "w": 6.4,
+          "h": 0.6,
+          "d": 3.4,
+          "y": 0.3,
+          "m": "stone",
+          "c": "base",
+          "tag": "base"
+        },
+        {
+          "k": "box",
+          "w": 5.6,
+          "h": 4.4,
+          "d": 2.6,
+          "y": 2.8,
+          "m": "stone",
+          "c": "body",
+          "tag": "body"
+        },
+        {
+          "k": "open",
+          "w": 1.8,
+          "h": 2.8,
+          "y": 1.4,
+          "z": 1.34
+        },
+        {
+          "k": "tor",
+          "R": 1.05,
+          "t": 0.22,
+          "y": 2.4,
+          "z": 1.36,
+          "m": "stone",
+          "c": "trim",
+          "tag": "ornament"
+        },
+        {
+          "k": "ledge",
+          "w": 6.0,
+          "d": 3.0,
+          "y": 5.05,
+          "m": "stone",
+          "c": "trim",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 5.6,
+          "h": 1.2,
+          "d": 2.9,
+          "y": 5.6,
+          "m": "stone",
+          "c": "bodyMid",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.45,
+          "h": 0.6,
+          "d": 2.9,
+          "y": 6.5,
+          "m": "stone",
+          "c": "bodyMid",
+          "tag": "top",
+          "rep": {
+            "n": 7,
+            "dx": 0.82
+          }
+        },
+        {
+          "k": "cyl",
+          "r": 1.15,
+          "r1": 1.05,
+          "h": 7.2,
+          "y": 3.6,
+          "seg": 10,
+          "x": 2.5,
+          "m": "stone",
+          "c": "body",
+          "tag": "body",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "cone",
+          "r": 1.3,
+          "h": 1.8,
+          "y": 8.1,
+          "seg": 10,
+          "x": 2.5,
+          "m": "timber",
+          "c": "roof",
+          "tag": "top",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "w": 1.6,
+          "h": 1.9,
+          "d": 0.12,
+          "y": 1.05,
+          "z": 1.42,
+          "m": "iron",
+          "c": "iron",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.2,
+          "h": 0.6,
+          "d": 0.14,
+          "y": 3.8,
+          "z": 1.36,
+          "m": "stone",
+          "c": "mortar",
+          "tag": "body",
+          "rep": {
+            "n": 3,
+            "dx": 1.5
+          }
+        },
+        {
+          "k": "flag",
+          "y": 6.8,
+          "h": 1.5
+        }
+      ]
+    },
+    "hanging_scroll": {
+      "h": 1.66,
+      "rad": 0.42,
+      "p": [
+        {
+          "k": "box",
+          "w": 0.8,
+          "h": 0.08,
+          "d": 0.3,
+          "y": 0.04,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "base"
+        },
+        {
+          "k": "cyl",
+          "r": 0.035,
+          "h": 1.42,
+          "y": 0.79,
+          "seg": 8,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "body",
+          "rep": {
+            "n": 2,
+            "dx": 0.72
+          }
+        },
+        {
+          "k": "box",
+          "w": 0.8,
+          "h": 0.05,
+          "d": 0.05,
+          "y": 1.52,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "body"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.035,
+          "h": 0.56,
+          "y": 1.44,
+          "rz": 1.5708,
+          "seg": 8,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.52,
+          "h": 1.1,
+          "d": 0.02,
+          "y": 0.88,
+          "m": "leather",
+          "c": "banner",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.4,
+          "h": 0.86,
+          "d": 0.015,
+          "y": 0.9,
+          "z": 0.02,
+          "m": "stone",
+          "c": "snow",
+          "tag": "ornament"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.045,
+          "h": 0.6,
+          "y": 0.3,
+          "rz": 1.5708,
+          "seg": 8,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "sph",
+          "r": 0.05,
+          "y": 0.3,
+          "m": "timber",
+          "c": "timberLt",
+          "tag": "ornament",
+          "rep": {
+            "n": 2,
+            "dx": 0.64
+          }
+        },
+        {
+          "k": "box",
+          "w": 0.06,
+          "h": 0.08,
+          "d": 0.012,
+          "y": 0.56,
+          "x": 0.14,
+          "z": 0.03,
+          "m": "leather",
+          "c": "banner",
+          "tag": "ornament"
+        },
+        {
+          "k": "cone",
+          "r": 0.045,
+          "h": 0.12,
+          "y": 1.6,
+          "seg": 6,
+          "m": "timber",
+          "c": "roof",
+          "tag": "top",
+          "rep": {
+            "n": 2,
+            "dx": 0.72
+          }
+        }
+      ]
+    },
+    "house": {
+      "h": 4.3,
+      "rad": 2.3,
+      "p": [
+        {
+          "k": "box",
+          "w": 3.6,
+          "h": 0.32,
+          "d": 3.0,
+          "y": 0.16,
+          "m": "stone",
+          "c": "base",
+          "tag": "base"
+        },
+        {
+          "k": "box",
+          "w": 3.2,
+          "h": 2.2,
+          "d": 2.6,
+          "y": 1.42,
+          "m": "stone",
+          "c": "body",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.2,
+          "h": 2.2,
+          "d": 0.2,
+          "y": 1.42,
+          "x": 0.0,
+          "z": 0.0,
+          "m": "timber",
+          "c": "timber",
+          "bev": "s",
+          "tag": "body",
+          "rep": {
+            "n": 4,
+            "sq": 1.5
+          }
+        },
+        {
+          "k": "gable",
+          "w": 3.8,
+          "h": 1.15,
+          "d": 3.2,
+          "y": 3.1,
+          "m": "timber",
+          "c": "roof",
+          "tag": "roof"
+        },
+        {
+          "k": "box",
+          "w": 0.42,
+          "h": 1.1,
+          "d": 0.42,
+          "y": 3.55,
+          "x": -1.0,
+          "z": -0.6,
+          "m": "stone",
+          "c": "bodyMid",
+          "tag": "top"
+        },
+        {
+          "k": "open",
+          "w": 0.72,
+          "h": 1.35,
+          "y": 0.68,
+          "z": 1.32
+        },
+        {
+          "k": "box",
+          "w": 0.46,
+          "h": 0.46,
+          "d": 0.1,
+          "y": 1.6,
+          "x": 0.95,
+          "z": 1.32,
+          "m": "timber",
+          "c": "timberLt",
+          "bev": "s",
+          "tag": "body"
         }
       ]
     },
@@ -1408,6 +2399,427 @@
         }
       ]
     },
+    "oak": {
+      "h": 5.56,
+      "rad": 3.75,
+      "p": [
+        {
+          "k": "chunk",
+          "r": 0.5,
+          "y": 0.28,
+          "ex": 0.5,
+          "ey": 0.2,
+          "sy": 0.55,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "base",
+          "rep": {
+            "n": 6,
+            "ring": 0.78
+          }
+        },
+        {
+          "k": "cyl",
+          "r": 0.82,
+          "r1": 0.68,
+          "h": 1.7,
+          "y": 0.85,
+          "seg": 10,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "body"
+        },
+        {
+          "k": "band",
+          "r": 0.76,
+          "y": 1.62,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.34,
+          "r1": 0.18,
+          "h": 2.5,
+          "y": 2.05,
+          "x": 1.0,
+          "z": 0.25,
+          "rz": -1.15,
+          "seg": 7,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "limb"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.32,
+          "r1": 0.17,
+          "h": 2.3,
+          "y": 2.2,
+          "x": -0.95,
+          "z": -0.35,
+          "rz": 1.05,
+          "seg": 7,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "limb"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.26,
+          "r1": 0.14,
+          "h": 2.0,
+          "y": 2.35,
+          "z": 0.9,
+          "rx": -0.95,
+          "seg": 6,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "limb"
+        },
+        {
+          "k": "sph",
+          "r": 2.0,
+          "y": 4.0,
+          "sx": 1.35,
+          "sy": 0.62,
+          "sz": 1.3,
+          "m": "foliage",
+          "c": "canopyLow",
+          "tag": "roof"
+        },
+        {
+          "k": "sph",
+          "r": 1.15,
+          "y": 4.35,
+          "x": 1.55,
+          "z": 0.4,
+          "sx": 1.1,
+          "sy": 0.72,
+          "m": "foliage",
+          "c": "canopyHi",
+          "tag": "roof"
+        },
+        {
+          "k": "sph",
+          "r": 1.05,
+          "y": 4.25,
+          "x": -1.5,
+          "z": -0.5,
+          "sy": 0.75,
+          "m": "foliage",
+          "c": "canopyLow",
+          "tag": "roof"
+        },
+        {
+          "k": "sph",
+          "r": 0.8,
+          "y": 5.0,
+          "z": 0.3,
+          "sy": 0.7,
+          "m": "foliage",
+          "c": "leafHi",
+          "tag": "roof"
+        },
+        {
+          "k": "sph",
+          "r": 0.7,
+          "y": 3.15,
+          "x": 1.9,
+          "z": 0.6,
+          "sx": 1.2,
+          "sy": 0.45,
+          "sz": 1.1,
+          "m": "foliage",
+          "c": "canopyLow",
+          "tag": "roof"
+        },
+        {
+          "k": "chunk",
+          "r": 0.3,
+          "y": 0.2,
+          "x": 2.2,
+          "z": -1.5,
+          "ex": 0.7,
+          "ey": 0.3,
+          "sy": 0.5,
+          "m": "foliage",
+          "c": "leafHi",
+          "tag": "base"
+        },
+        {
+          "k": "chunk",
+          "r": 0.28,
+          "y": 0.19,
+          "x": -2.3,
+          "z": 1.3,
+          "ex": 0.6,
+          "ey": 0.3,
+          "sy": 0.55,
+          "m": "stone",
+          "c": "rock",
+          "tag": "base"
+        }
+      ]
+    },
+    "pagoda": {
+      "h": 8.5,
+      "rad": 3.25,
+      "p": [
+        {
+          "k": "box",
+          "w": 4.6,
+          "h": 0.5,
+          "d": 4.6,
+          "y": 0.25,
+          "m": "stone",
+          "c": "base",
+          "tag": "base"
+        },
+        {
+          "k": "box",
+          "w": 3.0,
+          "h": 1.5,
+          "d": 3.0,
+          "y": 1.25,
+          "m": "timber",
+          "c": "timber",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 4.6,
+          "h": 0.22,
+          "d": 4.6,
+          "y": 2.12,
+          "m": "timber",
+          "c": "roof",
+          "tag": "roof"
+        },
+        {
+          "k": "box",
+          "w": 2.5,
+          "h": 1.35,
+          "d": 2.5,
+          "y": 2.9,
+          "m": "timber",
+          "c": "timberLt",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 4.0,
+          "h": 0.22,
+          "d": 4.0,
+          "y": 3.7,
+          "m": "timber",
+          "c": "roof",
+          "tag": "roof"
+        },
+        {
+          "k": "box",
+          "w": 2.0,
+          "h": 1.2,
+          "d": 2.0,
+          "y": 4.4,
+          "m": "timber",
+          "c": "timber",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 3.3,
+          "h": 0.2,
+          "d": 3.3,
+          "y": 5.12,
+          "m": "timber",
+          "c": "roof",
+          "tag": "roof"
+        },
+        {
+          "k": "box",
+          "w": 1.5,
+          "h": 1.05,
+          "d": 1.5,
+          "y": 5.75,
+          "m": "timber",
+          "c": "timberLt",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 2.6,
+          "h": 0.2,
+          "d": 2.6,
+          "y": 6.4,
+          "m": "timber",
+          "c": "roof",
+          "tag": "roof"
+        },
+        {
+          "k": "cone",
+          "r": 1.5,
+          "h": 1.2,
+          "y": 7.1,
+          "seg": 8,
+          "m": "timber",
+          "c": "roofAlt",
+          "tag": "top"
+        },
+        {
+          "k": "cyl",
+          "r": 0.1,
+          "h": 0.8,
+          "y": 8.1,
+          "seg": 6,
+          "m": "iron",
+          "c": "iron",
+          "tag": "top"
+        },
+        {
+          "k": "tor",
+          "R": 0.25,
+          "t": 0.05,
+          "y": 8.05,
+          "rx": 1.5708,
+          "m": "gold",
+          "c": "gold",
+          "tag": "ornament",
+          "rep": {
+            "n": 3,
+            "dy": 0.25
+          }
+        },
+        {
+          "k": "open",
+          "w": 0.8,
+          "h": 1.4,
+          "y": 1.2,
+          "z": 1.52
+        }
+      ]
+    },
+    "pine": {
+      "h": 7.6,
+      "rad": 2.4,
+      "p": [
+        {
+          "k": "cyl",
+          "r": 0.7,
+          "r1": 0.55,
+          "h": 0.34,
+          "y": 0.17,
+          "seg": 10,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "base"
+        },
+        {
+          "k": "cyl",
+          "r": 0.44,
+          "r1": 0.26,
+          "h": 5.9,
+          "y": 3.1,
+          "seg": 9,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "body"
+        },
+        {
+          "k": "band",
+          "r": 0.4,
+          "y": 2.6,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "band",
+          "r": 0.33,
+          "y": 4.2,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.14,
+          "r1": 0.07,
+          "h": 1.7,
+          "y": 5.1,
+          "x": 0.6,
+          "rz": -1.0,
+          "seg": 6,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "limb"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.12,
+          "r1": 0.06,
+          "h": 1.4,
+          "y": 4.55,
+          "x": -0.55,
+          "z": 0.35,
+          "rz": 1.0,
+          "seg": 6,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "limb"
+        },
+        {
+          "k": "sph",
+          "r": 1.1,
+          "y": 6.55,
+          "sx": 1.55,
+          "sy": 0.52,
+          "sz": 1.45,
+          "m": "foliage",
+          "c": "canopyLow",
+          "tag": "roof"
+        },
+        {
+          "k": "sph",
+          "r": 0.85,
+          "y": 7.05,
+          "x": 0.35,
+          "z": -0.25,
+          "sx": 1.3,
+          "sy": 0.45,
+          "sz": 1.2,
+          "m": "foliage",
+          "c": "canopyHi",
+          "tag": "roof"
+        },
+        {
+          "k": "sph",
+          "r": 0.68,
+          "y": 5.75,
+          "x": -1.25,
+          "z": 0.45,
+          "sx": 1.25,
+          "sy": 0.42,
+          "sz": 1.15,
+          "m": "foliage",
+          "c": "canopyLow",
+          "tag": "roof"
+        },
+        {
+          "k": "sph",
+          "r": 0.5,
+          "y": 7.4,
+          "x": -0.3,
+          "sx": 1.2,
+          "sy": 0.4,
+          "sz": 1.1,
+          "m": "foliage",
+          "c": "leafHi",
+          "tag": "top"
+        }
+      ]
+    },
     "scribe": {
       "h": 1.83,
       "rad": 0.84,
@@ -1544,126 +2956,123 @@
         }
       ]
     },
-    "hanging_scroll": {
-      "h": 1.66,
-      "rad": 0.42,
+    "spearman": {
+      "h": 3.16,
+      "rad": 0.88,
       "p": [
         {
           "k": "box",
-          "w": 0.8,
-          "h": 0.08,
-          "d": 0.3,
-          "y": 0.04,
-          "m": "timber",
-          "c": "trunkDark",
+          "w": 0.54,
+          "h": 0.14,
+          "d": 0.44,
+          "y": 0.07,
+          "m": "leather",
+          "c": "trunk",
+          "bev": "s",
           "tag": "base"
         },
         {
-          "k": "cyl",
-          "r": 0.035,
-          "h": 1.42,
-          "y": 0.79,
-          "seg": 8,
-          "m": "timber",
-          "c": "trunk",
-          "tag": "body",
+          "k": "rcyl",
+          "r": 0.12,
+          "h": 1.02,
+          "y": 0.64,
+          "x": 0.15,
+          "seg": 6,
+          "m": "leather",
+          "c": "timberLt",
+          "tag": "limb",
           "rep": {
-            "n": 2,
-            "dx": 0.72
+            "mir": "x"
           }
         },
         {
           "k": "box",
-          "w": 0.8,
-          "h": 0.05,
-          "d": 0.05,
-          "y": 1.52,
-          "m": "timber",
-          "c": "trunk",
+          "w": 0.58,
+          "h": 0.76,
+          "d": 0.34,
+          "y": 1.5,
+          "m": "iron",
+          "c": "steel",
+          "tag": "body"
+        },
+        {
+          "k": "ledge",
+          "w": 0.7,
+          "d": 0.44,
+          "y": 1.9,
+          "m": "iron",
+          "c": "iron",
           "tag": "body"
         },
         {
           "k": "rcyl",
-          "r": 0.035,
-          "h": 0.56,
-          "y": 1.44,
-          "rz": 1.5708,
-          "seg": 8,
-          "m": "timber",
-          "c": "trunkDark",
-          "tag": "body"
-        },
-        {
-          "k": "box",
-          "w": 0.52,
-          "h": 1.1,
-          "d": 0.02,
-          "y": 0.88,
+          "r": 0.095,
+          "h": 0.74,
+          "y": 1.48,
+          "x": 0.38,
+          "rz": 0.14,
+          "seg": 6,
           "m": "leather",
-          "c": "banner",
-          "tag": "body"
-        },
-        {
-          "k": "box",
-          "w": 0.4,
-          "h": 0.86,
-          "d": 0.015,
-          "y": 0.9,
-          "z": 0.02,
-          "m": "stone",
-          "c": "snow",
-          "tag": "ornament"
-        },
-        {
-          "k": "rcyl",
-          "r": 0.045,
-          "h": 0.6,
-          "y": 0.3,
-          "rz": 1.5708,
-          "seg": 8,
-          "m": "timber",
-          "c": "trunkDark",
-          "tag": "body"
+          "c": "timberLt",
+          "tag": "limb",
+          "rep": {
+            "mir": "x"
+          }
         },
         {
           "k": "sph",
-          "r": 0.05,
-          "y": 0.3,
-          "m": "timber",
-          "c": "timberLt",
-          "tag": "ornament",
-          "rep": {
-            "n": 2,
-            "dx": 0.64
-          }
-        },
-        {
-          "k": "box",
-          "w": 0.06,
-          "h": 0.08,
-          "d": 0.012,
-          "y": 0.56,
-          "x": 0.14,
-          "z": 0.03,
-          "m": "leather",
-          "c": "banner",
-          "tag": "ornament"
+          "r": 0.18,
+          "y": 2.08,
+          "m": "iron",
+          "c": "iron",
+          "tag": "top"
         },
         {
           "k": "cone",
+          "r": 0.2,
+          "h": 0.22,
+          "y": 2.3,
+          "seg": 8,
+          "m": "iron",
+          "c": "steel",
+          "tag": "top"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.36,
+          "h": 0.1,
+          "y": 1.4,
+          "x": -0.44,
+          "rz": 1.5708,
+          "seg": 10,
+          "m": "timber",
+          "c": "timber",
+          "tag": "limb"
+        },
+        {
+          "k": "rcyl",
           "r": 0.045,
-          "h": 0.12,
-          "y": 1.6,
+          "h": 2.6,
+          "y": 1.42,
+          "x": 0.46,
           "seg": 6,
           "m": "timber",
-          "c": "roof",
-          "tag": "top",
-          "rep": {
-            "n": 2,
-            "dx": 0.72
-          }
+          "c": "trunkDark",
+          "tag": "limb"
+        },
+        {
+          "k": "cone",
+          "r": 0.07,
+          "h": 0.44,
+          "y": 2.94,
+          "x": 0.46,
+          "seg": 5,
+          "m": "iron",
+          "c": "steel",
+          "tag": "limb"
         }
       ]
     }
-  }
+  },
+  "coreOverrides": {}
 }

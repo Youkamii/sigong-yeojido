@@ -160,6 +160,7 @@ export class Chronicle {
     const descriptions=this.data.claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate));
     this.host.innerHTML=`<button class="context-back" data-context-back>← ${yearLabel(this.year)}로 돌아가기</button>
       <div class="context-kicker">${{Person:'인물',Event:'사건',Polity:'나라'}[entity.type]||'관련 항목'}</div><h2>${esc(entityLabel(entity))}</h2>
+      ${this.callbacks.placement?.(id)?`<p class="scene-placement">${esc(this.callbacks.placement(id))} · 건물·길·인물 외형은 상징 모형입니다.</p>`:''}
       ${descriptions.slice(0,2).map(c=>`<p class="entity-description">${esc(c.object.value||'')}</p>`).join('')}
       <div class="context-section"><h3>시간</h3>${dates.map(d=>`<div class="entity-date"><button data-jump-year="${d.lo}">${yearLabel(d.lo)}${d.lo!==d.hi?' – '+yearLabel(d.hi):''}</button>
         <span>${esc(({bornIn:'출생',diedIn:'사망',reignedIn:'재위',activeIn:'활동',occurredIn:'사건',foundedIn:'건국'})[shortPredicate(d.claim.predicate)]||'기록')}</span>

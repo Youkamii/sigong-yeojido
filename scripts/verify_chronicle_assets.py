@@ -1,4 +1,4 @@
-"""Exercise real catalog models, canvas picking, time and disposal on the live viewer (#93)."""
+"""Exercise the peninsula diorama, real assets, canvas picking and time (#94)."""
 import argparse
 import json
 from pathlib import Path
@@ -34,7 +34,8 @@ def main():
               year:a.plan.year,stats:a.stats,groups:r.engine.scene.children.filter(g=>g.name==='chronicle-assets').length,
               geometries:r.engine.renderer.info.memory.geometries,selected:a.selected,selectedRow:a.selectedRow,
               rows:a.rows.map(x=>({id:x.id,entityId:x.entityId,label:x.label,kind:x.kind,archetype:x.archetype,
-                placement:x.placement,position:x.position.toArray(),claimIds:x.claimIds,site:x.site})),
+                placement:x.placement,placementLabel:x.placementLabel,position:x.position.toArray(),claimIds:x.claimIds,site:x.site,
+                inside:r.world.contains(x.position.x,x.position.z)})),
               picks:r.engine.pickTargets.map(p=>p.userData.fanNodeId)}}''')
         def click_model(entity,placement):
             position=page.evaluate('''([id,placement])=>{const r=window.__sigong,a=r.chronicleScene.assets;
@@ -65,20 +66,28 @@ def main():
             page.evaluate('window.releaseHistoryCatalog()');ready()
             check('Delayed catalog builds the latest year only',scene()['year']==1919 and any(r['label']=='유관순' for r in scene()['rows']))
             for value,minimum in [(1392,6),(1593,7),(1919,7)]:
-                year(value);s=scene();people=[r for r in s['rows'] if r['kind']=='person' and r['placement']=='collection']
+                year(value);s=scene();people=[r for r in s['rows'] if r['kind']=='person']
                 check(f'{value}: real person and event models',len(people)>=minimum and any(r['kind']=='event' for r in s['rows']) and s['stats']['meshes']>=2,
                       {'people':[r['label'] for r in people],'assets':s['stats']['built'],'triangles':s['stats']['triangles']})
+                check(f'{value}: every figure and building stands inside the peninsula',all(r['inside'] for r in s['rows']))
             year(1593);page.locator('#periodSceneBtn').click();page.wait_for_function('!window.__sigong.engine.fly',timeout=90000)
             s=scene()
-            check('Original blueprints build without fallback or material override',s['stats']['catalog']['blueprints']==5 and s['stats']['parts']>100 and not s['stats']['dropped'],s['stats'])
+            check('Original blueprints build without fallback or material override',s['stats']['catalog']['blueprints']==16 and s['stats']['parts']>100 and not s['stats']['dropped'],s['stats'])
             located=next(r for r in s['rows'] if r['kind']=='event' and r['placement']=='site')
             check('Haengju uses the real institutional site with its evidence',located['site']['geometry']['coordinates']==[126.8247541,37.59994084]
                   and located['site']['properties']['coordinateClaimId']=='claim-khs-haengju-point',located['site']['properties']['coordinateClaimId'])
-            check('Unknown locations remain in the labelled collection',all(r.get('site') is None for r in s['rows'] if r['placement']=='collection')
-                  and any(r['label']=='임진왜란' and r['placement']=='collection' for r in s['rows']))
+            check('Symbolic placement is labelled without inventing coordinate claims',all(r.get('site') is None and r['placementLabel'] for r in s['rows'] if r['placement']=='symbolic')
+                  and any(r['label']=='임진왜란' and r['placement']=='symbolic' for r in s['rows']))
+            check('No display plinth, square sea or light-column targets',page.evaluate('''()=>{const r=window.__sigong;return
+              !r.engine.scene.getObjectByName('contemporary-collection-plinth')&&!r.world.group.getObjectByName('terrain')
+              &&!r.world.group.getObjectByName('sea')&&!r.world.marks.visible&&r.world.pickTargets.length===0;}'''.replace('return\n','return ')))
+            check('Original trees and buildings form the landscape',page.evaluate('window.__sigong.chronicleScene.assets.forestPositions.length>100')
+                  and len([r for r in s['rows'] if r['kind']=='building'])>=8)
             capture('1593')
             gwon='person-encykorea-gwon-yul-e0007022'
-            click_model(gwon,'collection')
+            page.evaluate('(id)=>window.__sigong.chronicleScene.assets.focus(id)',gwon)
+            page.wait_for_function('!window.__sigong.engine.fly',timeout=90000)
+            click_model(gwon,'relation')
             check('Clicking the actual figure opens its person and lifespan',page.locator('#chronicle h2').inner_text()=='권율'
                   and '1537년' in page.locator('#chronicle').inner_text() and '1599년' in page.locator('#chronicle').inner_text())
             capture('gwon-yul')
@@ -93,7 +102,7 @@ def main():
             click_model('event-khs-haengju','site')
             check('Clicking the event model opens its related people','권율' in page.locator('#chronicle').inner_text())
             click_model(gwon,'relation')
-            check('A figure clicked at an event stays at that event',scene()['selectedRow'].startswith('event:event-khs-haengju:'))
+            check('A figure clicked at an event stays at that event',next(r for r in scene()['rows'] if r['id']==scene()['selectedRow'])['placement']=='relation')
             capture('haengju')
             year(1600)
             check('Dead figures and their pick targets disappear',all(r['entityId']!=gwon for r in scene()['rows']) and gwon not in scene()['picks'])
