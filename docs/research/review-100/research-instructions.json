@@ -1,0 +1,66 @@
+{
+  "scope": "Excerpts from the original Codex-authored collection prompts, not new research instructions.",
+  "prompts": [
+    {
+      "job": "joseon_society",
+      "sourceFile": "joseon_society/prompt.md",
+      "sha256": "2039134b9893dc150c5e25cf280f6db45613ef881b09259d66db8409be37050e",
+      "excerpts": [
+        {
+          "line": 7,
+          "text": "For intervals use object {\"kind\":\"time\",\"id\":\"ts-...\",\"verbatim\":\"exact substring of excerpt\",\"precision\":\"year\",\"earliest\":...,\"latest\":...}. For entities use {\"kind\":\"entity\",\"id\":\"...\"}; for a concise directly supported description use {\"kind\":\"literal\",\"value\":\"...\"}. Every claim must be supported by its exact excerpt. Preserve compatibility ideographs and punctuation. Use concise excerpts totaling at most 25 whitespace-delimited words PER webpage. Birth/death table labels plus values are sufficient if they are contiguous rendered text; preserve what appears rather than inventing a sentence. Korean years explicitly published may be numeric; do not infer unknown years. Reign is not lifespan. Do not infer a person's location from their polity; only collect explicitly stated event locations. No new coordinates needed. Existing same-name IDs are NOT automatically the same person; flag ambiguity. Each new entity must have a cited name/description or related claim. Current quote data are AI drafts, not human reviewed."
+        },
+        {
+          "line": 9,
+          "text": "Stop once the bounded assigned people/events are covered or have concrete missing reasons. Complete the assigned roster rather than stopping after a few samples. Prioritize missing dates, reign intervals and dated events. The aim is a connected chronology, not isolated examples. Reuse an existing ID only after directly verifying identity against its label and source. For BCE years use negative numeric values and keep the BCE marker in the exact excerpt. For living people use a documented activity/office interval; do not invent a death or extend activity to today. Save report.md with completed counts and missing facts. Return actual paths. No institution correspondence, no code implementation, no extra research rounds. If Bash cannot download, record the exact denial/error and stop; do not silently delegate collection back to Codex."
+        },
+        {
+          "line": 13,
+          "text": "1400-1900 non-ruler historical scenes. Collect explicit lifespans/activity for 정인지, 신숙주, 성삼문, 김종서, 장영실, 조광조, 이황, 이이, 허준, 허균, 김육, 송시열, 윤휴, 유형원, 이익, 박지원, 정약용, 김정희, 최제우, 전봉준, 흥선대원군. Add 10-12 dated linked events: 사화, 중종반정, 대동법, 동의보감, 인조반정, 병자호란, 탕평, 수원화성, 천주교 박해, 동학농민운동, 갑오개혁, 강화도조약. Rulers are assigned to another collector; do not duplicate their biographical pages. Cover1500,1600,1700,1800 with actual people."
+        }
+      ]
+    },
+    {
+      "job": "joseon_rulers",
+      "sourceFile": "joseon_rulers/prompt.md",
+      "sha256": "cc82c9440148a32c5672dedb6485723ebc330d8e4a6178b5e71f823002abf404",
+      "excerpts": [
+        {
+          "line": 7,
+          "text": "For intervals use object {\"kind\":\"time\",\"id\":\"ts-...\",\"verbatim\":\"exact substring of excerpt\",\"precision\":\"year\",\"earliest\":...,\"latest\":...}. For entities use {\"kind\":\"entity\",\"id\":\"...\"}; for a concise directly supported description use {\"kind\":\"literal\",\"value\":\"...\"}. Every claim must be supported by its exact excerpt. Preserve compatibility ideographs and punctuation. Use concise excerpts totaling at most 25 whitespace-delimited words PER webpage. Birth/death table labels plus values are sufficient if they are contiguous rendered text; preserve what appears rather than inventing a sentence. Korean years explicitly published may be numeric; do not infer unknown years. Reign is not lifespan. Do not infer a person's location from their polity; only collect explicitly stated event locations. No new coordinates needed. Existing same-name IDs are NOT automatically the same person; flag ambiguity. Each new entity must have a cited name/description or related claim. Current quote data are AI drafts, not human reviewed."
+        },
+        {
+          "line": 9,
+          "text": "Stop once the bounded assigned people/events are covered or have concrete missing reasons. Complete the assigned roster rather than stopping after a few samples. Prioritize missing dates, reign intervals and dated events. The aim is a connected chronology, not isolated examples. Reuse an existing ID only after directly verifying identity against its label and source. For BCE years use negative numeric values and keep the BCE marker in the exact excerpt. For living people use a documented activity/office interval; do not invent a death or extend activity to today. Save report.md with completed counts and missing facts. Return actual paths. No institution correspondence, no code implementation, no extra research rounds. If Bash cannot download, record the exact denial/error and stop; do not silently delegate collection back to Codex."
+        },
+        {
+          "line": 13,
+          "text": "Joseon monarch chronology 1392-1910: collect explicit reign intervals for the 27 monarchs 태조, 정종, 태종, 세종, 문종, 단종, 세조, 예종, 성종, 연산군, 중종, 인종, 명종, 선조, 광해군, 인조, 효종, 현종, 숙종, 경종, 영조, 정조, 순조, 헌종, 철종, 고종, 순종. Prefer already present verified entity IDs; known duplicate source-specific IDs must NOT be merged by name alone. Add missing birth/death dates when directly available within excerpt budget, and isKingOf to the correct polity. Treat 고종·순종 대한제국 periods distinctly. The main output is complete reign coverage, not just 6-8 kings. Add dated accessions only when useful and supported. No king is active for an inferred reign."
+        }
+      ]
+    },
+    {
+      "job": "gap_years",
+      "sourceFile": "gap_years/prompt.md",
+      "sha256": "796dd0cc85c491e91231830320dac5791f94bf8042ede8077a462a27a29ebbf5",
+      "excerpts": [
+        {
+          "line": 7,
+          "text": "For intervals use object {\"kind\":\"time\",\"id\":\"ts-...\",\"verbatim\":\"exact substring of excerpt\",\"precision\":\"year\",\"earliest\":...,\"latest\":...}. For entities use {\"kind\":\"entity\",\"id\":\"...\"}; for a concise directly supported description use {\"kind\":\"literal\",\"value\":\"...\"}. Every claim must be supported by its exact excerpt. Preserve compatibility ideographs and punctuation. Use concise excerpts totaling at most 25 whitespace-delimited words PER webpage. Birth/death table labels plus values are sufficient if they are contiguous rendered text; preserve what appears rather than inventing a sentence. Korean years explicitly published may be numeric; do not infer unknown years. Reign is not lifespan. Do not infer a person's location from their polity; only collect explicitly stated event locations. No new coordinates needed. Existing same-name IDs are NOT automatically the same person; flag ambiguity. Each new entity must have a cited name/description or related claim. Current quote data are AI drafts, not human reviewed."
+        },
+        {
+          "line": 9,
+          "text": "Stop once the bounded assigned people/events are covered or have concrete missing reasons. Complete the assigned roster rather than stopping after a few samples. Prioritize missing dates, reign intervals and dated events. The aim is a connected chronology, not isolated examples. Reuse an existing ID only after directly verifying identity against its label and source. For BCE years use negative numeric values and keep the BCE marker in the exact excerpt. For living people use a documented activity/office interval; do not invent a death or extend activity to today. Save report.md with completed counts and missing facts. Return actual paths. No institution correspondence, no code implementation, no extra research rounds. If Bash cannot download, record the exact denial/error and stop; do not silently delegate collection back to Codex."
+        },
+        {
+          "line": 13,
+          "text": "YOUR ASSIGNMENT:"
+        },
+        {
+          "line": 14,
+          "text": "FOCUSED GAP REPAIR ONLY: the integrated timeline still has no person at year800, and office evidence is needed for2016-2025. Collect exactly SIX biographies: 신라 소성왕, 애장왕; 대한민국 이명박, 박근혜, 문재인, 윤석열. For the two kings collect explicit reigns and stated birth/death if available. For the four recent people collect FINISHED PRESIDENTIAL OFFICE INTERVALS ONLY, never an invented lifespan or active-until-today. Dates must be actual verified source text, including the completed end for 윤석열 if available. Prefer AKS 한국민족문화대백과사전; if these modern biographies are absent use 국가기록원 대통령기록관 official pages, at most two official index/roster pages for all four. Give official Source cards accurately, do not call them AKS. Use IDs src-presidential-... for those sources. Relation memberOf rather than isKingOf for presidents. No speculative dates, no extra roster, no other events. Use short exact excerpts, save originals+manifest, result.json etc in this folder. Finish this focused task promptly after the six subjects or record concrete missing source facts. Existing tasks are independent; do NOT access or modify any other task outputs. Your catalog is in catalog.json."
+        }
+      ]
+    }
+  ]
+}

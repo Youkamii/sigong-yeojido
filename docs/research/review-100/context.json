@@ -1,0 +1,53 @@
+{
+  "recordedAtUtc": "2026-09-07T15:19:31.106311+00:00",
+  "baseCommit": "f39f49d1bfa5c9e31c0024f629b85f91c8d3eb16",
+  "publicUrl": "https://undertaken-coleman-interests-bruce.trycloudflare.com",
+  "agents": [
+    {
+      "task": "historical_integrity_review",
+      "model": "gpt-6-astra",
+      "reasoningEffort": "xhigh",
+      "status": "completed"
+    },
+    {
+      "task": "world_design_review",
+      "model": "gpt-6-astra",
+      "reasoningEffort": "xhigh",
+      "status": "completed"
+    },
+    {
+      "task": "product_direction_review",
+      "model": "gpt-6-astra",
+      "reasoningEffort": "xhigh",
+      "status": "completed"
+    }
+  ],
+  "reviewScope": "Read-only review of code, stored research, reference images and public captures. Local uncommitted implementation existed; line references may move.",
+  "trackedDirtyFilesAtReportAssembly": [
+    "data/claims/encykorea-haeinsa-daejanggyeong/period96/chunk_period96_goryeo_late_daejanggyeong-1251.md",
+    "data/research/periods-96/integration-adjustments.json",
+    "docs/HANDOVER.md",
+    "docs/research/history-integrated-coverage-96.json",
+    "docs/research/history-validation-96.json",
+    "scripts/import_period_research.py",
+    "scripts/verify_world_navigation.py",
+    "services/host/app/chronicle-scene.js",
+    "services/host/app/chronicle-world.js",
+    "services/host/app/chronicle.css",
+    "services/host/app/chronicle.js",
+    "services/host/index.html"
+  ],
+  "liveEvidence": "root captured fresh public year 1593 using headless Chromium; the user-reported exact central frame was not reproduced.",
+  "newHistoricalResearch": "NOT_RUN",
+  "implementationFix": "NOT_DONE",
+  "newDeployment": "NOT_RUN",
+  "githubWorkflows": 0,
+  "ci": "NOT_RUN",
+  "artifactSha256": {
+    "history.md": "73c39b625178d22e8737937518367c0605c5bd3718ccb71d429086e5d3b73a14",
+    "design.md": "4f5ce2d717786e9d85f4121ead82f2b25a8aa5e87c3b1639ebc9755b8a8d7f29",
+    "product.md": "52308a5d61675edcf5b878be1ce8c858adbda817574b8007692e33ca5a83f35f",
+    "live-placement.json": "ed15a700f5be2b9d89accc77f5e4a59c16bc6427fc24e56c27d6a33d6e2ddcec",
+    "yi-sunsin-live.png": "1afec4b495b718475ed684822d565e87fd5f9db556c060fc53e370687059c416"
+  }
+}
