@@ -331,6 +331,9 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
         <small id="sceneAssetNote" hidden></small>
       </div>
       <div id="sceneEvents" class="scene-events" aria-label="3D 지도의 사건"></div>
+      <div id="sceneGeography" class="scene-events" aria-label="산맥과 섬"></div>
+      <div class="geography-navigation"><select id="geographyDestination" aria-label="산맥과 섬으로 이동"></select></div>
+      <aside id="geographyCard" class="geography-card" hidden><button id="geographyClose" aria-label="지리 설명 닫기">×</button><strong></strong><p></p><div></div></aside>
       <div id="graph" aria-label="근거 그래프"></div>
       <div id="chat" aria-label="사료 근거 챗봇"></div>
       <div id="compare" aria-label="사료별 사건 비교"></div>
@@ -1325,9 +1328,9 @@ async function init3d(){
   let elev = null;
   try{ elev = await fetch('/api/elevation').then(r => r.ok ? r.json() : null); }
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
-  const [outline,anchors]=await Promise.all(['korea-outline.json','history-place-anchors.json'].map(file=>
+  const [outline,anchors,geography]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json'].map(file=>
     fetch('./app/'+file).then(r=>{if(!r.ok)throw Error('지도 자료를 불러오지 못했습니다.');return r.json();})));
-  const world = new ChronicleWorld(state.geo, [...state.places,...anchors.places], { elev, outline });
+  const world = new ChronicleWorld(state.geo, [...state.places,...anchors.places], { elev, outline, geography });
   engine.add(world.group);
   engine.onPick = (id,event) => { const feature=historyMap.features.find(f=>f.id===id);
     if(id&&event)chronicleScene.prefer(id,engine.pick(event)?.point);
@@ -1348,6 +1351,8 @@ async function init3d(){
   engine.setPickTargets([...world.pickTargets.filter(target => target.parent.visible),...world.historyTargets]);
 
   world.configureEngine(engine);
+  const {ChronicleGeography}=await import('./app/chronicle-geography.js');
+  world.geography=new ChronicleGeography(world,engine,geography);
   if(q && engine.setQuality) engine.setQuality(q);   // 검증·저사양용 ?q=low
   let ssaoBeforeMaterialize = null;
   engine.start((dt, t) => {

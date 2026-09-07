@@ -74,6 +74,9 @@ export class ChronicleScene {
     const canvasRect=canvas.getBoundingClientRect(),hud=document.getElementById('sceneContext').getBoundingClientRect();
     const occupied=[{left:hud.left-canvasRect.left,right:hud.right-canvasRect.left,
       top:hud.top-canvasRect.top,bottom:hud.bottom-canvasRect.top}];
+    for(const element of document.querySelectorAll('.geography-navigation,.geography-card:not([hidden])')){
+      const r=element.getBoundingClientRect();occupied.push({left:r.left-canvasRect.left,right:r.right-canvasRect.left,top:r.top-canvasRect.top,bottom:r.bottom-canvasRect.top});
+    }
     const ordered=[...this.markers].sort((a,b)=>
       Number(b.row.id===this.assets?.selectedRow)-Number(a.row.id===this.assets?.selectedRow)
       ||Number(b.row.kind==='person')-Number(a.row.kind==='person'));
@@ -91,5 +94,6 @@ export class ChronicleScene {
         button.style.left=x+dx+'px';button.style.top=y+dy+'px';button.hidden=false;occupied.push(rect);break;
       }
     }
+    this.world?.geography?.update(camera,canvas,occupied);
   }
 }

@@ -108,6 +108,13 @@
 .scene-event strong,.scene-event small{color:var(--paper)}
 .scene-placement{font-size:11px;line-height:1.7;color:var(--paper-3);margin-top:12px}
 .scene-event:after{height:10px}
+.scene-geography{position:absolute;transform:translate(-50%,-100%);pointer-events:auto;padding:4px 8px;border-radius:3px;background:#e9dfc5dc;border:1px solid #7c826266;font:12px var(--serif);color:#354233;white-space:nowrap}
+.geography-navigation{position:absolute;right:14px;top:20px;z-index:6}
+.geography-navigation select{max-width:170px;padding:7px;border-radius:4px;background:#f1e9d8ed;border:1px solid #bba67a60;color:#354233;font:11px var(--sans)}
+.geography-card{position:absolute;right:14px;top:60px;z-index:7;width:230px;max-width:calc(100% - 28px);padding:13px;background:#f1e9d8f5;border:1px solid #bba67a80;border-radius:5px;color:#354233;box-shadow:0 4px 20px #51422522}
+.geography-card>button{float:right;font-size:18px}.geography-card strong{font:17px var(--serif)}
+.geography-card p{font-size:11px;line-height:1.65;margin:10px 0}.geography-card a{display:block;font-size:10px;line-height:1.6;text-decoration:underline;margin-top:5px}
+.geography-card a{color:#526451;overflow-wrap:anywhere}.geography-card details{max-height:145px;overflow:auto;margin-top:9px;font-size:10px}.geography-card summary{cursor:pointer;color:#526451}
 .hint{top:auto;bottom:calc(var(--timeline-height,150px) + 10px);left:22px;background:none;padding:0;color:var(--paper-2);font-size:10px}
 @media(max-width:1080px){.stage{grid-template-columns:minmax(0,1fr) 300px}.chronicle-panel{padding:20px 16px}.time-span{display:none}.timebar{padding:14px}.time-heading{gap:10px}.time-actions button{font-size:10px;padding:6px}}
 @media(max-width:720px){
@@ -123,4 +130,5 @@
   .era-jumps{flex-wrap:nowrap;overflow:auto;gap:2px}.era-jumps button{flex:none;font-size:9px;padding:3px 5px}
   .time-slider{margin:10px 0 7px;gap:7px}.time-slider>span{font-size:8px}
   .evi,.stage.evidence-open .evi{width:min(100%,420px)}
+  .geography-navigation{top:104px;right:10px}.geography-card{top:140px;right:10px;width:210px}
 }
