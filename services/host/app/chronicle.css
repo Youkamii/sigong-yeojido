@@ -116,7 +116,8 @@
   .stage{grid-template-columns:1fr;grid-template-rows:minmax(380px,56%) minmax(0,1fr)}
   .canvasWrap{grid-row:1}.chronicle-panel{grid-row:2;border-top:1px solid var(--line);border-left:0;padding:16px}
   .context-title h2{font-size:24px}.context-section{margin-top:20px}
-  .scene-context{top:12px;left:14px}.scene-context h2{font-size:17px}
+  .scene-context{top:10px;left:10px;padding:8px;max-width:calc(100% - 20px)}.scene-context h2{font-size:17px;display:inline-block;margin:0 12px 0 0}
+  .scene-context p,.scene-context #sceneAssetNote{display:none}.scene-actions{display:inline-flex;margin-top:0;vertical-align:middle}
   .timebar{padding:9px 12px}.time-year input{font-size:25px;width:84px}.time-year>span:first-child{display:none}
   .time-actions{gap:3px}.time-actions button{padding:5px;font-size:9px}.time-heading{gap:5px;flex-wrap:nowrap}
   .era-jumps{flex-wrap:nowrap;overflow:auto;gap:2px}.era-jumps button{flex:none;font-size:9px;padding:3px 5px}
