@@ -158,6 +158,8 @@ def full_chunk(row: dict) -> dict:
 _IDX: dict = {"sig": None, "chunks": [], "sources": [], "places": None, "claims": [], "entities": [], "byYear": {}, "density": {}}
 _IDX_LOCK = threading.Lock()
 _FILE_READ_LOCK = threading.RLock()
+_PLACES_LOCK = threading.Lock()
+_PLACE_COUNTS = {}
 
 
 def _signature() -> tuple:
@@ -195,7 +197,12 @@ def index() -> dict:
                 sid = chunk["sourceId"]
                 counts[sid] = counts.get(sid, 0) + 1
             by_year, density = build_year_index(chunks)
+            chunk_files = {str(path): cached[1] for path, cached in _CHUNK_FILES.items()}
+            for chunk in chunks:
+                if chunk['_path'] not in _CHUNK_FILES:
+                    chunk_files.setdefault(str(chunk['_path']), []).append(chunk)
             _IDX = {"chunks": chunks, "chunkById": {c["id"]: c for c in chunks},
+                    "chunkFiles": chunk_files, "countrySignature": tuple(row for row in sig if row[0].endswith('index-terms.jsonl')),
                     "countryTerms": collect_country_terms(), "sources": collect_sources(counts),
                     "places": None, "claims": collect_claims(), "entities": collect_entities(),
                     "byYear": by_year, "density": density, "sig": sig}
@@ -221,24 +228,36 @@ def matches_names(chunk: dict, names: list[str], country_terms: dict[str, set[st
 
 def places_with_mentions() -> dict:
     idx = index()
-    with _IDX_LOCK:
+    with _PLACES_LOCK:
         if idx["places"] is not None:
             return idx["places"]
-    data = merged_places()
-    for pl in data.get("places", []):
-        names = place_names(pl)
-        m: dict[str, int] = {}
-        if names:
-            for c in idx["chunks"]:
-                if pl.get("sourceId") and c.get("sourceId") != pl["sourceId"]:
-                    continue
-                if matches_names(c, names, idx["countryTerms"]):
-                    sid = c.get("sourceId") or "?"
-                    m[sid] = m.get(sid, 0) + 1
-        pl["mentions"] = m
-    with _IDX_LOCK:
+        data = merged_places()
+        used = set()
+        for pl in data.get("places", []):
+            names = place_names(pl)
+            key = (tuple(names), pl.get('sourceId'), idx.get('countrySignature'))
+            used.add(key)
+            previous = _PLACE_COUNTS.get(key, {})
+            current, m = {}, {}
+            for path, chunks in idx.get('chunkFiles', {'all': idx['chunks']}).items():
+                cached = previous.get(path)
+                if cached and cached[0] is chunks:
+                    counts = cached[1]
+                else:
+                    counts = {}
+                    if names:
+                        for c in chunks:
+                            if pl.get('sourceId') and c.get('sourceId') != pl['sourceId']:continue
+                            if matches_names(c, names, idx['countryTerms']):
+                                sid = c.get('sourceId') or '?'; counts[sid] = counts.get(sid, 0) + 1
+                current[path] = (chunks, counts)
+                for sid, count in counts.items():m[sid] = m.get(sid, 0) + count
+            _PLACE_COUNTS[key] = current
+            pl['mentions'] = m
+        for key in list(_PLACE_COUNTS):
+            if key not in used:del _PLACE_COUNTS[key]
         idx["places"] = data
-    return data
+        return data
 
 
 def unattributed_places(sources):

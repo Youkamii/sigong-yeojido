@@ -17,6 +17,24 @@ spec.loader.exec_module(server)
 
 
 class ChunkCacheTests(unittest.TestCase):
+    def test_new_source_only_recounts_changed_place_mentions(self):
+        a=[{'id':'a','sourceId':'src-a','text':'평양'}]
+        b=[{'id':'b','sourceId':'src-b','text':'서울'}]
+        idx={'chunks':a+b,'chunkFiles':{'a':a,'b':b},'countryTerms':{},'countrySignature':(), 'places':None}
+        def places():return {'places':[{'id':'py','label':'평양'}]}
+        with patch.object(server,'index',return_value=idx), patch.object(server,'merged_places',side_effect=places), patch.object(server,'_PLACE_COUNTS',{}):
+            self.assertEqual(server.places_with_mentions()['places'][0]['mentions'],{'src-a':1})
+            idx['chunkFiles']['b']=[{'id':'b-new','sourceId':'src-b','text':'평양으로 이동'}];idx['places']=None
+            with patch.object(server,'matches_names',wraps=server.matches_names) as match:
+                self.assertEqual(server.places_with_mentions()['places'][0]['mentions'],{'src-a':1,'src-b':1})
+                self.assertEqual(match.call_count,1)
+            del idx['chunkFiles']['a'];idx['places']=None
+            self.assertEqual(server.places_with_mentions()['places'][0]['mentions'],{'src-b':1})
+            idx['countrySignature']=(('changed-index',1,1),);idx['places']=None
+            with patch.object(server,'matches_names',wraps=server.matches_names) as match:
+                server.places_with_mentions();self.assertEqual(match.call_count,1)
+            self.assertEqual(len(server._PLACE_COUNTS),1)
+
     def test_only_changed_files_are_decoded_and_removed_files_disappear(self):
         with tempfile.TemporaryDirectory() as tmp:
             data = Path(tmp)
