@@ -24,6 +24,9 @@
 개발과 시각 구성은 Codex가 했다. 새 역사 조사·수집이나 Opus 호출은 이 변경에 없다.
 표시용 외곽은 고정된 한반도 모양이며 선택 연도의 국경이 아니다. 군·부 자료의 범위 중심은 관련 지명 배치 참고점이며
 과거 인물의 실제 위치를 입증하는 새 Claim으로 저장하지 않는다. 세부 범위는 [구현 기록](research/peninsula-diorama-94.md)에 둔다.
+기능 커밋 `abda878a`를 GitHub main과 c2에 반영했다. [개발](research/peninsula-local-94.json)·[공개 주소](research/peninsula-production-94.json)
+각각 27개 검사가 통과했다. [공개 화면](research/peninsula-screen-94.png)·[모바일](research/peninsula-mobile-94.png)을 확인했다.
+사용자가 이 디자인을 수용했다고 단정하지 않는다. 검사는 이 구현의 작동과 지도 안 배치를 확인한 것이다.
 
 현재 #91에서 위 화면을 구현했고, #92의 [자료·직접 다운로드 기록](research/periods-92.md)을 연결했다.
 기본 선택은 민족문화대백과사전·삼국사기·고려사·조선왕조실록·국가유산포털 다섯 묶음이다.

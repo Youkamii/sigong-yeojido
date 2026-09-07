@@ -21,6 +21,7 @@
 `14b3deabb7f94a28177c6b718f7199d0f3e301ebcf8f27df0f7ea7a4225b3298`이며 다시 대조했다.
 선택 조형도 해시는 [기록](peninsula-assets-94.json)에 있다. 기존 생성 모듈 7개는 수정하지 않았다.
 숲은 원본 `terrain.js`의 `makeTreeGeometry`와 월드의 instancing·바이옴 색 처리를 가져왔다.
+원격과 로컬 `terrain.js`의 전체 바이트 해시는 모두 `d6b3115075dca50f9a2d3581ae1aa6250aae13d3928eb228d19a1603362a5a6d`로 같았다.
 사건·인물·건물은 원본 `buildAssetField`로 조립한다. 문신·군인·승려 등의 외형도 상징 모델이다.
 
 표시 파일은 다음 명령으로 기존 저장 자료와 원본 카탈로그에서 다시 만들 수 있다.
@@ -34,3 +35,19 @@ python scripts/verify_chronicle_assets.py --base <viewer URL> --out <report fold
 
 새 역사 조사·수집 및 Opus 호출은 없다. 개발·시각 구성은 Codex가 맡았다.
 실제 화면 검사 통과와 사용자의 디자인 수용은 별개다. 한국사 전체 인물·사건 수록 완료를 뜻하지 않는다.
+
+## 검증과 반영
+
+기능 커밋은 `abda878af69e1f518cc86bfcd09cc3e9716b6390`이다.
+[개발 화면 27개 검사](peninsula-local-94.json)가 통과했다. 실제 c2 API와 로컬 정적 파일을 함께 사용했다.
+첫 검사에서는 연속 재생 중 멈춤 버튼 검사가 시간 초과로 끝났다. 나무 위치 계산을 재사용하도록 고친 뒤 같은 검사에 통과했다.
+JavaScript 시간 규칙·조형도·원본 나무 함수·저장된 외곽 대조 검사는 로컬과 c2에서 통과했다.
+[정적 파일 반영 기록](peninsula-deployed-94.json)은 운영 HTTP의 파일 10개가 Git 체크아웃과 같음을 확인한다.
+viewer 290920·watcher 290919를 재시작하지 않았고 FinBridge 222676도 그대로 유지했다. 새 터미널 창은 띄우지 않았다.
+GitHub Actions 워크플로는 0개다. 위 검사는 직접 실행했다.
+
+[공개 주소 검사 27개](peninsula-production-94.json)도 모두 통과했다. 1392년 인물 6명, 1593년·1919년 각각 7명,
+모든 인물·건물의 한반도 안 배치, 실제 캔버스 클릭, 원문, 사망·미래 사건 제외, 빈 사료·AI 제외 필터,
+재생·멈춤, 이전 도형 해제, 모바일 480×900에서 캔버스와 라벨 겹침 0, JavaScript·WebGL 오류 0을 확인했다.
+브라우저 검사는 `q=low`로 실행했다. [공개 화면](peninsula-screen-94.png)과 [모바일](peninsula-mobile-94.png)을 함께 보존한다.
+표시 모델은 1392년 17개·1593년 34개·1919년 31개이며, 인물에 연결된 상징 가옥이 포함된 수다.

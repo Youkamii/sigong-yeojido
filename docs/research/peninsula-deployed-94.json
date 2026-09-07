@@ -1,0 +1,31 @@
+{
+  "before": "150433f8bf931a6260ad5bc1acb08e399555bced",
+  "after": "abda878af69e1f518cc86bfcd09cc3e9716b6390",
+  "services": {
+    "viewer": {
+      "pid": 290920,
+      "cwd": "/home/lia-c2/sigong-yeojido",
+      "command": "python3 -u services/host/server.py --port 8870"
+    },
+    "watcher": {
+      "pid": 290919,
+      "cwd": "/home/lia-c2/sigong-yeojido",
+      "command": "python3 -u scripts/sync_fuseki.py --watch"
+    }
+  },
+  "restarted": false,
+  "finbridgePid": 222676,
+  "servedFiles": {
+    "app/chronicle-asset-plan.js": "a16311c600c2ea910a6890a13d631ae4801814188eb170675d9093e49a6763ba",
+    "app/chronicle-assets.js": "c09b575f7f55461a4abb86fd15d11d2639243b8f6cf34e2d4f3196cebd801e00",
+    "app/chronicle-scene.js": "5dfda656e6fe92be04de91c6fadf80d48b0ca672162ffb9853736dfdc8127eb6",
+    "app/chronicle-world.js": "c1a344e22d72b7e65e2fae2a4f9a15a725ee3056254ec737ce7a227683fb30be",
+    "app/chronicle.css": "20df614070684dc0a8cc7684f54001e017fe1fc3b0952af1e439a52065347f5f",
+    "app/chronicle.js": "02c14ce919e10194a6d4fb98cd5a5ebbd506aca273c1827c428d9a7c94d95637",
+    "app/history-asset-catalog.json": "82bcb13057fb75bed51508c65f2a140087eeb78a56cb2ca9da14187946a11db5",
+    "app/history-place-anchors.json": "8c4fa0bc5a27794dfc265b8a368dba78028b42ba7092ff23e1ff327e46b00db5",
+    "app/korea-outline.json": "6669e9cb8c2d47b784874dc3fa0ec272572251cf18882a5e9af62e5fe96efbd3",
+    "index.html": "5fa992721f760dca07446b9a13301681aaffd2d97f15ad282e1105c6d3820445"
+  },
+  "checkedAt": "2026-09-07T12:58:23Z"
+}
