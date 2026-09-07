@@ -102,10 +102,24 @@ def collect_sources(counts: dict[str, int]) -> list[dict]:
     return out
 
 
+_CHUNK_FILES = {}
+
+
 def collect_chunks() -> list[dict]:
+    global _CHUNK_FILES
     out = []
     samples=citation_samples(DATA/'sources')
+    sample_signature=tuple((str(p),p.stat().st_mtime_ns,p.stat().st_size)
+                           for p in sorted((DATA/'sources').glob('*/citation-chunks.jsonl')))
+    current={}
     for jl in sorted((DATA / "sources").glob("*/chunks.jsonl")):
+        stat=jl.stat();key=(stat.st_mtime_ns,stat.st_size,sample_signature)
+        cached=_CHUNK_FILES.get(jl)
+        if cached and cached[0]==key:
+            rows=cached[1];out.extend(rows);current[jl]=cached
+            for row in rows:samples.pop(row['id'],None)
+            continue
+        rows=[]
         with jl.open("rb") as fh:
             while True:
                 offset = fh.tell()
@@ -117,12 +131,14 @@ def collect_chunks() -> list[dict]:
                 row = json.loads(line)
                 sample=samples.pop(row['id'],None)
                 if sample and sample[2]!=row:raise ValueError(f'citation sample differs from full corpus: {row["id"]}')
-                out.append({"id": row["id"], "sourceId": sys.intern(row["sourceId"]),
+                rows.append({"id": row["id"], "sourceId": sys.intern(row["sourceId"]),
                             "text": row.get("text") or "", "date": row.get("date"),
                             "_path": jl, "_offset": offset})
+        current[jl]=(key,rows);out.extend(rows)
     for jl,offset,row in samples.values():
         out.append({'id':row['id'],'sourceId':sys.intern(row['sourceId']),'text':row['text'],
                     'date':row.get('date'),'_path':jl,'_offset':offset})
+    _CHUNK_FILES=current
     return out
 
 

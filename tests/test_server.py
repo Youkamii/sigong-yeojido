@@ -16,6 +16,44 @@ server = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(server)
 
 
+class ChunkCacheTests(unittest.TestCase):
+    def test_only_changed_files_are_decoded_and_removed_files_disappear(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            data = Path(tmp)
+            a, b = [data / 'sources' / name / 'chunks.jsonl' for name in ('a', 'b')]
+            def save(path, ident, text):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(json.dumps({'id': ident, 'sourceId': 'src-' + path.parent.name,
+                                            'text': text, 'locator': 'original'}) + '\n', encoding='utf-8')
+            save(a, 'a', 'first'); save(b, 'b', 'second')
+            with patch.object(server, 'DATA', data), patch.object(server, '_CHUNK_FILES', {}):
+                first = server.collect_chunks()
+                with patch.object(server.json, 'loads', wraps=json.loads) as decode:
+                    cached = server.collect_chunks()
+                    self.assertEqual(decode.call_count, 0)
+                    self.assertIs(cached[0], first[0])
+                    save(b, 'b-new', 'changed content')
+                    changed = server.collect_chunks()
+                    self.assertEqual(decode.call_count, 1)
+                self.assertEqual([r['id'] for r in changed], ['a', 'b-new'])
+                self.assertEqual(server.full_chunk(changed[0])['locator'], 'original')
+                a.unlink()
+                self.assertEqual([r['id'] for r in server.collect_chunks()], ['b-new'])
+
+    def test_changed_citation_sample_still_checks_full_corpus(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / 'sources/a'; source.mkdir(parents=True)
+            row = {'id': 'a', 'sourceId': 'src-a', 'text': 'original'}
+            (source / 'chunks.jsonl').write_text(json.dumps(row) + '\n', encoding='utf-8')
+            sample = source / 'citation-chunks.jsonl'
+            sample.write_text(json.dumps(row) + '\n', encoding='utf-8')
+            with patch.object(server, 'DATA', Path(tmp)), patch.object(server, '_CHUNK_FILES', {}):
+                server.collect_chunks()
+                sample.write_text(json.dumps({**row, 'text': 'different'}) + '\n', encoding='utf-8')
+                with self.assertRaisesRegex(ValueError, 'differs from full corpus'):
+                    server.collect_chunks()
+
+
 class NameMatchingTests(unittest.TestCase):
     def test_three_digit_inscription_years_and_unknown_dates(self):
         self.assertEqual(server.year_of("798-99-99"), 798)
