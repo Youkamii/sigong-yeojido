@@ -87,11 +87,14 @@
 .reference-set details{margin:10px 0 0 19px}
 .reference-set summary{font-size:10px;color:var(--paper-3);cursor:pointer}
 #sourceTimelineFold{margin-top:20px;color:var(--paper-3);font-size:11px}
-.scene-context{position:absolute;top:20px;left:22px;z-index:6;pointer-events:none;text-shadow:0 1px 4px #f1e9d8}
+.scene-context{position:absolute;top:20px;left:22px;z-index:6;pointer-events:none;padding:12px;background:#f1e9d8ed;border:1px solid #bba67a60;border-radius:5px}
 .scene-context h2{font:22px var(--serif);color:var(--paper);margin-bottom:6px}
 .scene-context p{font-size:11px;color:var(--paper-2)}
 .scene-actions{display:flex;gap:6px;margin-top:12px;pointer-events:auto}
 .scene-actions button{padding:6px 10px;border:1px solid var(--line-2);border-radius:4px;background:var(--ink-2);font-size:10px}
+.scene-navigation{display:flex;align-items:center;gap:5px;margin-top:8px;pointer-events:auto;font-size:11px;max-width:320px}
+.scene-navigation select{min-width:0;max-width:170px;padding:6px;background:var(--ink-2);color:var(--paper);border:1px solid var(--line-2);border-radius:4px}
+.scene-navigation button{width:30px;height:30px;border:1px solid var(--line-2);border-radius:4px;background:var(--ink-2);font-size:18px}
 #sceneAssetNote{display:block;margin-top:10px;max-width:285px;font-size:10px;line-height:1.6;color:var(--paper-3)}
 #sceneAssetNote[hidden]{display:none}
 .scene-person{position:absolute;transform:translate(-50%,-100%);pointer-events:auto;max-width:160px;text-align:center;padding:3px 7px;background:#ece2cbe0;border:1px solid #a58f6044;border-radius:2px;white-space:nowrap;box-shadow:0 2px 8px #51422518}

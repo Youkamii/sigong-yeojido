@@ -29,9 +29,9 @@ export class ChronicleWorld extends KoreaWorld{
     for(const child of [...this.group.children])if(child!==this.history&&child!==this.marks){
       this.group.remove(child);child.traverse(o=>{o.geometry?.dispose();for(const m of [o.material].flat())m?.dispose();});
     }
-    this.places=places;this.marks.visible=false;this.geo=geo;
+    this.places=places;this.marks.visible=false;this.geo=geo;this.mapScale=8;
     const polygons=outline.geometry.type==='Polygon'?[outline.geometry.coordinates]:outline.geometry.coordinates;
-    this.rings=polygons.map(p=>p[0].map(c=>toWorld(...c))).filter(r=>{
+    this.rings=polygons.map(p=>p[0].map(c=>this.toWorld(...c))).filter(r=>{
       const area=Math.abs(r.reduce((a,p,i)=>a+p[0]*r[(i+1)%r.length][1]-r[(i+1)%r.length][0]*p[1],0))/2;
       return area>.12;
     });
@@ -40,9 +40,9 @@ export class ChronicleWorld extends KoreaWorld{
     this.bounds={minX:Math.min(...points.map(p=>p[0])),maxX:Math.max(...points.map(p=>p[0])),
       minZ:Math.min(...points.map(p=>p[1])),maxZ:Math.max(...points.map(p=>p[1]))};
     this.center=new THREE.Vector3((this.bounds.minX+this.bounds.maxX)/2,8,(this.bounds.minZ+this.bounds.maxZ)/2);
-    this.maxRim=95;
+    this.maxRim=Math.max(...points.map(p=>Math.hypot(...p)));
     const sample=elev?makeHeightAt(elev):()=>0;
-    const [x0,z0]=toWorld(127,37),[x1,z1]=toWorld(128,38);
+    const [x0,z0]=this.toWorld(127,37),[x1,z1]=this.toWorld(128,38);
     this.coordinatesAt=(x,z)=>{
       const lon=127+(x-x0)/(x1-x0),merc37=Math.log(Math.tan(Math.PI/4+37*Math.PI/360));
       const merc38=Math.log(Math.tan(Math.PI/4+38*Math.PI/360));
@@ -53,16 +53,17 @@ export class ChronicleWorld extends KoreaWorld{
       const [lon,lat]=this.coordinatesAt(x,z);
       let height=0;
       for(const dx of [-.12,0,.12])for(const dy of [-.12,0,.12])height+=Math.max(0,sample(lon+dx,lat+dy))/9;
-      return 7+Math.sqrt(height)*.095*Math.min(1,edgeDistance(x,z,ring)/2.3);
+      return 7+Math.sqrt(height)*.095*Math.min(1,edgeDistance(x,z,ring)/(2.3*this.mapScale));
     };
     // KoreaWorld's old overlays convert this display height back with terrainY.
-    this.heightAt=(lon,lat)=>(this.surfaceAt(...toWorld(lon,lat))-7)*244.6+.001;
+    this.heightAt=(lon,lat)=>(this.surfaceAt(...this.toWorld(lon,lat))-7)*244.6+.001;
     this.land=new THREE.Group();this.land.name='peninsula-diorama';this.group.add(this.land);
     this.buildLand();
   }
+  toWorld(lon,lat){return toWorld(lon,lat).map(v=>v*this.mapScale);}
   contains(x,z,margin=0){return this.rings.some(r=>inside(x,z,r)&&edgeDistance(x,z,r)>=margin);}
   placeNear(x,z,radius=2,occupied=[]){
-    for(let i=0;i<700;i++){
+    for(let i=0;i<700+occupied.length*12;i++){
       const angle=i*2.399963,spread=i?Math.sqrt(i)*1.05:0;
       const px=x+Math.cos(angle)*spread,pz=z+Math.sin(angle)*spread;
       if(this.contains(px,pz,radius)&&occupied.every(p=>Math.hypot(px-p.x,pz-p.z)>=radius+p.radius))
@@ -71,10 +72,14 @@ export class ChronicleWorld extends KoreaWorld{
     return null;
   }
   displayAnchor(id,occupied=[],radius=3){
-    const seed=stableSeed(id),b=this.bounds;
-    const x=b.minX+(b.maxX-b.minX)*(.2+(seed%1000)/1000*.6);
-    const z=b.minZ+(b.maxZ-b.minZ)*(.18+(Math.floor(seed/1000)%1000)/1000*.68);
-    return this.placeNear(x,z,radius,occupied);
+    const b=this.bounds;
+    for(let i=0;i<80;i++){
+      const seed=stableSeed(id+':'+i),x=b.minX+(b.maxX-b.minX)*(.1+(seed%1000)/1000*.8);
+      const z=b.minZ+(b.maxZ-b.minZ)*(.1+(Math.floor(seed/1000)%1000)/1000*.8);
+      if(!this.contains(x,z,radius))continue;
+      const p=this.placeNear(x,z,radius,occupied);if(p)return p;
+    }
+    return null;
   }
   buildLand(){
     const earth=makeMaterial('MAT_STONE',{color:PALETTE.BASE_EARTH,roughness:.98});
@@ -86,7 +91,7 @@ export class ChronicleWorld extends KoreaWorld{
     const addTriangle=(a,b,c,depth=0)=>{
       const lengths=[Math.hypot(a[0]-b[0],a[1]-b[1]),Math.hypot(b[0]-c[0],b[1]-c[1]),Math.hypot(c[0]-a[0],c[1]-a[1])];
       const longest=Math.max(...lengths),index=lengths.indexOf(longest);
-      if(longest>3.5&&depth<14){
+      if(longest>3.5*this.mapScale&&depth<14){
         const pts=[a,b,c],p=pts[index],q=pts[(index+1)%3],r=pts[(index+2)%3],mid=[(p[0]+q[0])/2,(p[1]+q[1])/2];
         addTriangle(p,mid,r,depth+1);addTriangle(mid,q,r,depth+1);return;
       }
@@ -114,8 +119,35 @@ export class ChronicleWorld extends KoreaWorld{
     geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.computeVertexNormals();
     const mesh=new THREE.Mesh(geometry,grass);mesh.receiveShadow=true;mesh.userData.fanGround=true;mesh.name='peninsula-surface';this.land.add(mesh);
   }
+  configureEngine(engine){
+    this.engine=engine;
+    engine.frameWorld(this.maxRim);
+    engine.controls.minDistance=34;engine.controls.maxDistance=this.maxRim*5;
+    engine.camera.far=this.maxRim*10;engine.camera.updateProjectionMatrix();
+    const el=40*Math.PI/180,az=-20*Math.PI/180,d=140;
+    engine.controls.target.copy(this.center);
+    engine.camera.position.copy(this.center).add(new THREE.Vector3(Math.sin(az)*Math.cos(el)*d,Math.sin(el)*d,Math.cos(az)*Math.cos(el)*d));
+    engine.controls.update();
+    this.sunOffset=engine.key.position.clone().sub(engine.key.target.position);
+  }
   frame(engine){
+    // Fit the projected coastline at the current angle, including portrait screens.
+    const direction=engine.camera.position.clone().sub(engine.controls.target).normalize();
+    if(direction.y<.22)direction.setY(.22).normalize();
+    const right=new THREE.Vector3(direction.z,0,-direction.x).normalize(),up=new THREE.Vector3().crossVectors(direction,right);
+    let halfWidth=0,halfHeight=0;
+    for(const [x,z] of this.rings.flat()){
+      const p=new THREE.Vector3(x,7,z).sub(this.center);
+      halfWidth=Math.max(halfWidth,Math.abs(p.dot(right)));halfHeight=Math.max(halfHeight,Math.abs(p.dot(up)));
+    }
     const aspect=engine.renderer.domElement.clientWidth/engine.renderer.domElement.clientHeight;
-    engine.flyTo(this.center.clone(),Math.max(215,205/aspect),650);
+    engine.flyTo(this.center.clone(),Math.max(halfHeight,halfWidth/aspect)/Math.tan(21*Math.PI/180)*1.18,650);
+  }
+  update(t,camera,canvas){
+    super.update(t,camera,canvas);
+    const engine=this.engine;if(!engine)return;
+    const target=engine.controls.target,distance=camera.position.distanceTo(target);
+    if(engine.scene.fog){engine.scene.fog.near=distance+280;engine.scene.fog.far=distance+this.maxRim*2.5;}
+    engine.key.position.copy(target).add(this.sunOffset);engine.key.target.position.copy(target);
   }
 }

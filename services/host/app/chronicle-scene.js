@@ -20,6 +20,7 @@ export class ChronicleScene {
     const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places);
     const signature=JSON.stringify(plan);
     if(signature===this.signature){this.syncPicks();return;}
+    const changedYear=this.assets.plan?.year!==plan.year;
     this.assets.rebuild(plan);this.signature=signature;
     this.host.replaceChildren();this.markers=[];
     for(const row of this.assets.rows){
@@ -34,10 +35,20 @@ export class ChronicleScene {
       button.onclick=()=>{this.preferredRow=row.id;this.onSelect(row.entityId);};
       this.host.append(button);this.markers.push({button,position:row.labelPosition,row});
     }
+    const destination=document.getElementById('sceneDestination'),previous=destination.value;
+    destination.replaceChildren(new Option('인물·사건을 골라 이동',''));
+    for(const row of this.assets.rows)if(row.kind!=='building')destination.add(new Option(row.label,row.entityId));
+    if(this.assets.rows.some(row=>row.entityId===previous))destination.value=previous;
+    destination.disabled=!this.assets.rows.length;
     this.syncPicks();
-    if(!this.initiallyFramed&&this.assets.rows.length){this.assets.focusPeriod();this.initiallyFramed=true;}
+    const sceneInView=this.assets.rows.some(row=>{
+      const p=row.position.clone().project(this.engine.camera);return Math.abs(p.x)<.85&&Math.abs(p.y)<.85&&Math.abs(p.z)<1;
+    });
+    if(this.assets.rows.length&&(!this.initiallyFramed||(changedYear&&!sceneInView))){
+      this.assets.focusPeriod();this.initiallyFramed=true;
+    }
     const note=document.getElementById('sceneAssetNote');
-    note.textContent=plan.people.length||plan.events.length?'모형을 눌러 생애와 사건을 살펴보세요.':'';
+    note.textContent='끌어서 이동 · 휠로 확대 · 오른쪽 드래그로 회전';
     note.hidden=!note.textContent;
   }
   syncPicks(){

@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import {compileAssetCatalog} from './assetcatalog.js';
 import {buildAssetField} from './assetforge.js';
-import {toWorld} from './korea.js';
 import {stableSeed} from './chronicle-world.js';
 import {PALETTE,mix,FOLIAGE,WHITE} from './artbible.js';
 import {makeSurface,biomeByName} from './style.js';
@@ -50,31 +49,58 @@ export class ChronicleAssets{
     if(engine.scene.fog)engine.scene.fog.color.copy(engine.scene.background);
   }
   field(recipes,anchors){
-    return buildAssetField({world:{ground:[],sky:[],anchorOf:id=>anchors.get(id),surfaceAt:()=>0,time:null,cata:null},
-      catalog:this.catalog,recipes,seed:'sigong-history'});
+    const result={group:new THREE.Group(),picks:[],animated:[],stats:{catalog:this.catalog.stats,dropped:[],batches:0}};
+    const regions=new Map();
+    for(const recipe of recipes){
+      const p=anchors.get(recipe.anchor),key=Math.floor(p.x/128)+':'+Math.floor(p.z/128);
+      if(!regions.has(key))regions.set(key,[]);regions.get(key).push(recipe);
+    }
+    for(const region of regions.values())for(let i=0;i<region.length;i+=160){
+      const field=buildAssetField({world:{ground:[],sky:[],anchorOf:id=>anchors.get(id),surfaceAt:()=>0,time:null,cata:null},
+        catalog:this.catalog,recipes:region.slice(i,i+160),seed:'sigong-history'});
+      result.group.add(field.group);result.picks.push(...field.picks);result.animated.push(...field.animated);
+      result.stats.batches++;
+      for(const [key,value] of Object.entries(field.stats))if(typeof value==='number')result.stats[key]=(result.stats[key]||0)+value;
+      result.stats.dropped.push(...field.stats.dropped);
+    }
+    for(const key of ['built','requested','meshes','triangles'])result.stats[key]??=0;
+    return result;
   }
   buildForest(occupied){
     const group=new THREE.Group();group.name='peninsula-woods';
     const b=this.world.bounds,candidates=this.treeCandidates||[];
-    if(!this.treeCandidates)for(let i=0;i<4500&&candidates.length<400;i++){
+    const cells=new Map(),cellSize=3;
+    if(!this.treeCandidates)for(let i=0;i<100000&&candidates.length<12000;i++){
       const seed=stableSeed('wood:'+i),x=b.minX+(b.maxX-b.minX)*(seed%10000)/10000;
       const z=b.minZ+(b.maxZ-b.minZ)*(Math.floor(seed/10000)%10000)/10000;
-      if(!this.world.contains(x,z,1.2)||candidates.some(p=>Math.hypot(x-p.x,z-p.z)<2.8))continue;
+      if(!this.world.contains(x,z,1.2))continue;
+      const cx=Math.floor(x/cellSize),cz=Math.floor(z/cellSize);
+      let crowded=false;
+      for(let dx=-1;dx<=1;dx++)for(let dz=-1;dz<=1;dz++)
+        if((cells.get((cx+dx)+':'+(cz+dz))||[]).some(p=>Math.hypot(x-p.x,z-p.z)<2.8))crowded=true;
+      if(crowded)continue;
       candidates.push(new THREE.Vector3(x,this.world.surfaceAt(x,z),z));
+      const key=cx+':'+cz;if(!cells.has(key))cells.set(key,[]);cells.get(key).push({x,z});
     }
     this.treeCandidates=candidates;
     const positions=candidates.filter(p=>occupied.every(o=>Math.hypot(p.x-o.x,p.z-o.z)>=o.radius+1.4));
-    const trees=new THREE.InstancedMesh(makeTreeGeometry(),
-      makeSurface({preset:'MAT_FOLIAGE',vertexColors:true,color:WHITE},{wind:.9,windAxis:'y',key:'tree'}),positions.length);
+    const geometry=makeTreeGeometry(),material=makeSurface({preset:'MAT_FOLIAGE',vertexColors:true,color:WHITE},{wind:.9,windAxis:'y',key:'tree'});
+    const regions=new Map();
+    for(const p of positions){const key=Math.floor(p.x/96)+':'+Math.floor(p.z/96);
+      if(!regions.has(key))regions.set(key,[]);regions.get(key).push(p);}
     const matrix=new THREE.Matrix4(),q=new THREE.Quaternion(),scale=new THREE.Vector3(),biome=biomeByName('forest');
-    positions.forEach((position,i)=>{
-      const seed=stableSeed('tree:'+i),t=(seed%1000)/1000,s=.7+t*.45;
-      q.setFromEuler(new THREE.Euler(0,t*6.28,0));scale.set(s,s*(.85+t*.5),s);
-      matrix.compose(position,q,scale);trees.setMatrixAt(i,matrix);
-      trees.setColorAt(i,mixColor(biome.low,biome.high,.25+t*.6).multiplyScalar(.92+t*.22));
-    });
-    trees.instanceMatrix.needsUpdate=true;if(trees.instanceColor)trees.instanceColor.needsUpdate=true;
-    trees.name='fan-trees';trees.frustumCulled=false;group.add(trees);
+    for(const [key,region] of regions){
+      const trees=new THREE.InstancedMesh(geometry,material,region.length);
+      region.forEach((position,i)=>{
+        const seed=stableSeed('tree:'+position.x+':'+position.z),t=(seed%1000)/1000,s=.7+t*.45;
+        q.setFromEuler(new THREE.Euler(0,t*6.28,0));scale.set(s,s*(.85+t*.5),s);
+        matrix.compose(position,q,scale);trees.setMatrixAt(i,matrix);
+        trees.setColorAt(i,mixColor(biome.low,biome.high,.25+t*.6).multiplyScalar(.92+t*.22));
+      });
+      trees.instanceMatrix.needsUpdate=true;if(trees.instanceColor)trees.instanceColor.needsUpdate=true;
+      trees.name='fan-trees:'+key;trees.computeBoundingSphere();group.add(trees);
+    }
+    if(!positions.length){geometry.dispose();material.dispose();}
     if(this.forest){this.engine.remove(this.forest);release(this.forest);}
     this.forest=group;this.forestPositions=positions;this.engine.add(group);
   }
@@ -90,11 +116,11 @@ export class ChronicleAssets{
       rows.push({...row,archetype,position,scale});
     };
     const locate=row=>{
-      const site=row.sites?.find(s=>this.world.contains(...toWorld(...s.geometry.coordinates)));
-      if(site){const [x,z]=toWorld(...site.geometry.coordinates);return {position:new THREE.Vector3(x,this.world.surfaceAt(x,z),z),
+      const site=row.sites?.find(s=>this.world.contains(...this.world.toWorld(...s.geometry.coordinates)));
+      if(site){const [x,z]=this.world.toWorld(...site.geometry.coordinates);return {position:new THREE.Vector3(x,this.world.surfaceAt(x,z),z),
         placement:'site',site,placementLabel:'출처에 연결된 사건 장소'};}
       const ref=row.locationReference;
-      if(ref){const [x,z]=toWorld(ref.candidate.lon,ref.candidate.lat);
+      if(ref){const [x,z]=this.world.toWorld(ref.candidate.lon,ref.candidate.lat);
         if(this.world.contains(x,z))return {position:this.world.placeNear(x,z,3,occupied),placement:'related-place',
           placementLabel:ref.label+' 관련 기록 · 상징 배치'};}
       const center=row.kind==='person'&&[...eventPositions.values()][0]?.position;
@@ -174,7 +200,15 @@ export class ChronicleAssets{
     const row=this.rowFor(id,preferred);if(!row)return false;
     this.engine.flyTo(row.pick.position.clone(),row.kind==='person'?86:106,650);return true;
   }
-  focusPeriod(){this.world.frame(this.engine);return true;}
+  focusPeriod(id){
+    const scenes=this.rows.filter(r=>r.kind==='event');
+    const row=scenes.find(r=>r.entityId===id)||scenes.sort((a,b)=>
+      Number(b.placement==='site')-Number(a.placement==='site')||(b.participants?.length||0)-(a.participants?.length||0))[0]
+      ||this.rows.find(r=>r.kind==='person');
+    if(!row){this.world.frame(this.engine);return false;}
+    this.activeScene=row.entityId;
+    this.engine.flyTo(row.position.clone().add(new THREE.Vector3(0,5,0)),125,650);return true;
+  }
   setSelected(id,preferred){
     this.selected=id;this.selectedRow=preferred;
     if(this.selection){release(this.selection);this.selection=null;}
