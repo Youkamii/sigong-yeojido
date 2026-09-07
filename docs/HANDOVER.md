@@ -68,9 +68,13 @@
 - [공식 연락처](research/nikh-contact-12.md)는 국편 연구편찬정보화실 **02-500-8387**이다. 날짜·글자 8문항과
   이용조건 4문항의 초안은 미발송이다. 전화 발신 도구가 없고, 직접 문의 회신 또는 대기 처리의 사용자 결정은 아직 없다.
 
-원래 §7은 **9개 완료·1개 부분·1개 결정 대기**다. 전체 이슈 #1~#89는 **81개 닫힘·8개 열림**이며,
-열린 것은 #8 #12 #49 #52 #56 #57 #62 #86이다. #51은 원래의 대표 뼈대 기준 4개를 대조해 닫았다.
+원래 §7은 **9개 완료·1개 부분·1개 결정 대기**다. 전체 이슈 #1~#90은 **81개 닫힘·9개 열림**이며,
+열린 것은 #8 #12 #49 #52 #56 #57 #62 #86 #90이다. #51은 원래의 대표 뼈대 기준 4개를 대조해 닫았다.
 모든 사료의 전문·직접 위치 근거·역로가 확보된 상태는 아니다.
+
+독립신문(서재필) 19,635기사·776발행일은 #90에서 추출·독립 검사하고
+`/home/lia-c2/work/sigong-newspaper90/`에 별도 보관했다. 공개 적재 0건이므로 위 운영 집계에 더하지 않는다.
+신문 LOD의 적용 이용조건 확인과 실제 공개 화면 검사가 남았다. [수집·대조·남은 범위](research/newspaper-lod-90.md).
 재부팅 자동 기동·TDB2·선택 상태 영구 저장·빈 서버 전체 복원 검사는 별도 미설정/미검증이다.
 
 ## 이전 진행 — Codex, 기능·데이터 기준 `2fee775`
@@ -510,7 +514,7 @@ c2에는 Source 999개·2,567,757 chunk·1,086 Claim이 있다. 2D·3D·그래�
 ```bash
 ssh lia-c2
 cd ~/sigong-yeojido && git pull --ff-only
-curl -fsS http://127.0.0.1:8870/api/sources | python3 -c 'import json,sys; s=json.load(sys.stdin)["sources"]; print(len(s), sum(x["chunkCount"] for x in s))'  # 1072 2601030
+curl -fsS http://127.0.0.1:8870/api/sources | python3 -c 'import json,sys; s=json.load(sys.stdin)["sources"]; print(len(s), sum(x["chunkCount"] for x in s))'  # 1075 2601351
 .venv-build/bin/python scripts/verify_viewer.py --url "http://127.0.0.1:8870/?q=low" --out /tmp/verify   # 12/12
 python3 services/validate.py                                        # OK
 python3 services/build_ttl.py && scripts/fuseki.sh status           # TTL 빌드, Fuseki 상태
