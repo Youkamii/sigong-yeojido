@@ -6,14 +6,21 @@ from playwright.sync_api import sync_playwright
 ap=argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--base',required=True);ap.add_argument('--out',type=Path,required=True)
 ap.add_argument('--quality',choices=['low','default'],default='low')
+ap.add_argument('--browser',help='Optional installed Chromium executable; use its native graphics backend')
 ap.add_argument('--capacity',action='store_true',help='Also build 161 test figures in an isolated field')
 args=ap.parse_args();args.out.mkdir(parents=True,exist_ok=True)
-report={'base':args.base,'quality':args.quality,'checks':[],'errors':[]}
+report={'base':args.base,'quality':args.quality,'checks':[],'errors':[],'browserResourceErrors':[]}
 with sync_playwright() as pw:
-    browser=pw.chromium.launch(headless=True,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+    browser=pw.chromium.launch(headless=True,executable_path=args.browser,args=[] if args.browser else
+        ['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
     page=browser.new_page(viewport={'width':1440,'height':1000});page.set_default_timeout(90000)
     page.on('pageerror',lambda e:report['errors'].append(str(e)))
-    page.on('console',lambda m:report['errors'].append(m.text) if m.type=='error' else None)
+    def console(message):
+        if message.type!='error':return
+        url=message.location.get('url','')
+        if url==args.base.rstrip('/')+'/favicon.ico':report['browserResourceErrors'].append({'url':url,'error':message.text})
+        else:report['errors'].append(message.text+' '+url)
+    page.on('console',console)
     def check(name,ok,detail=None):
         value={'name':name,'pass':bool(ok),'detail':detail};report['checks'].append(value)
         print(json.dumps(value,ensure_ascii=False),flush=True);assert ok,(name,detail)

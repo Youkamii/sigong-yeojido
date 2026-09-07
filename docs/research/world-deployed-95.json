@@ -1,0 +1,26 @@
+{
+  "before": "23033f36526842d93202a109e040a7f23e9c0d85",
+  "after": "1df1d42b4d9dcb6f9b5f5411e2692e9cdf60c224",
+  "services": {
+    "viewer": {
+      "pid": 290920,
+      "cwd": "/home/lia-c2/sigong-yeojido",
+      "command": "python3 -u services/host/server.py --port 8870"
+    },
+    "watcher": {
+      "pid": 290919,
+      "cwd": "/home/lia-c2/sigong-yeojido",
+      "command": "python3 -u scripts/sync_fuseki.py --watch"
+    }
+  },
+  "restarted": false,
+  "finbridgePid": 222676,
+  "servedFiles": {
+    "app/chronicle-assets.js": "db3768269ec95dcfeccef61639ee60a69c4645f14740d04493c5192c048ddaab",
+    "app/chronicle-scene.js": "9a3a9bd556d4f09c26c3e3538996ac34d6fcb76f16731c69eade9c93928f4fc9",
+    "app/chronicle-world.js": "97523ac983c3e5b8ec45109c47bc4a4303839b6f54a6954aa8de43dca96b55ed",
+    "app/chronicle.css": "4a41726bc1f4767fe590d8c74ea0c244e9a55a861254da54d73e2e9cf7f13355",
+    "index.html": "c3f740da9b7e0afe01dfd30b85bc37d1a2ed216bb68a1b2de1c6cbabc81280a0"
+  },
+  "checkedAt": "2026-09-07T13:43:00Z"
+}

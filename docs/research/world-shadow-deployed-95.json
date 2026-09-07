@@ -1,0 +1,22 @@
+{
+  "before": "24651c9f62f97b0a3b1bcb34b3921fefcb0edcbc",
+  "after": "9050101068e42b53f15a3b443d8c4861e080db01",
+  "services": {
+    "viewer": {
+      "pid": 290920,
+      "cwd": "/home/lia-c2/sigong-yeojido",
+      "command": "python3 -u services/host/server.py --port 8870"
+    },
+    "watcher": {
+      "pid": 290919,
+      "cwd": "/home/lia-c2/sigong-yeojido",
+      "command": "python3 -u scripts/sync_fuseki.py --watch"
+    }
+  },
+  "restarted": false,
+  "finbridgePid": 222676,
+  "servedFiles": {
+    "app/chronicle-world.js": "92b5dcc8dcc99be473dd9a54b2677e48a329345d24bf90efb73ebbccf2247a84"
+  },
+  "checkedAt": "2026-09-07T13:52:27Z"
+}

@@ -1,0 +1,62 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com",
+  "checks": [
+    {
+      "name": "Public bytes: index.html",
+      "pass": true,
+      "detail": "c3f740da9b7e0afe01dfd30b85bc37d1a2ed216bb68a1b2de1c6cbabc81280a0"
+    },
+    {
+      "name": "Public bytes: app/chronicle-world.js",
+      "pass": true,
+      "detail": "97523ac983c3e5b8ec45109c47bc4a4303839b6f54a6954aa8de43dca96b55ed"
+    },
+    {
+      "name": "Public bytes: app/chronicle-assets.js",
+      "pass": true,
+      "detail": "db3768269ec95dcfeccef61639ee60a69c4645f14740d04493c5192c048ddaab"
+    },
+    {
+      "name": "Public bytes: app/chronicle-scene.js",
+      "pass": true,
+      "detail": "9a3a9bd556d4f09c26c3e3538996ac34d6fcb76f16731c69eade9c93928f4fc9"
+    },
+    {
+      "name": "Public bytes: app/chronicle.css",
+      "pass": true,
+      "detail": "6d17bd1c01216dc07f8f30390f3b64de6b08488d91c7119603dd074b8f9740c7"
+    },
+    {
+      "name": "Default-quality public view opens a close populated region",
+      "pass": true,
+      "detail": {
+        "quality": "medium",
+        "scale": 8,
+        "year": 1593,
+        "assets": 34,
+        "people": 7,
+        "inside": true,
+        "distance": 125,
+        "visible": 9,
+        "selected": null,
+        "options": [
+          "",
+          "event-encykorea-imjinwaeran",
+          "event-encykorea-jinju-jeontu-1593",
+          "event-khs-haengju",
+          "person-encykorea-gwak-jaeu-e0004695",
+          "person-encykorea-gwon-yul-e0007022",
+          "person-encykorea-seonjo-e0028912",
+          "person-encykorea-won-gyun-e0040619",
+          "person-encykorea-yu-seongryong-e0041546",
+          "person-encykorea-yi-sunsin",
+          "person-encykorea-yi-hangbok-e0046429"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "quality": "default",
+  "failure": "Page.screenshot: Timeout 90000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - fonts loaded\n",
+  "passed": false
+}

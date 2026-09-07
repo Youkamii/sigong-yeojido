@@ -16,6 +16,8 @@
 - [x] #94 사용자 제공 화면 기준: 한반도 윤곽의 디오라마, 지도 안 건물·마을·숲·인물·사건 구성. #93의 바깥 진열대와 빛기둥 제거.
 - [x] #94 원본 조형도와 실제 Fantology 월드의 나무를 사용하고, 생몰·사건 시간과 배치 설명을 유지.
 - [x] #94 `abda878a` GitHub·c2 반영. 개발·공개 주소 각각 27개 검사 통과, 모바일과 실제 화면 확인.
+- [x] #95 작은 지도 규모 수정: 배치 공간 64배, 가까운 지역 진입, 드래그·확대·장면 이동·전체 보기, 지역별 조형 생성.
+- [x] #95 GitHub·c2 반영. 공개 기본 화질 검사 22개 통과. [실행 근거와 범위](research/world-scale-95.md).
 
 [#94 구현·범위](research/peninsula-diorama-94.md) · [공개 검사](research/peninsula-production-94.json) · [화면](research/peninsula-screen-94.png) · [모바일](research/peninsula-mobile-94.png).
 
