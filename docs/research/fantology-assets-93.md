@@ -51,3 +51,17 @@ SSH로 읽은 원본 에셋과 생성기를 시공여지도에서 실제로 실�
 
 개발 검사에서는 로컬 정적 파일과 읽기 전용 c2 API 프록시를 쓴다. 운영 검사는 공개 주소에서 별도로 한다.
 외형 고증과 한국사 전체의 인물·사건·장소 수록 완료를 뜻하지 않는다.
+
+## 운영 확인
+
+기능 커밋은 `2209a2ad`다. [개발 검사 22개](fantology-assets-local-93.json)와
+[공개 주소 검사 22개](fantology-assets-production-93.json)가 모두 통과했다.
+1392년 8개·1593년 11개·1919년 10개 조형이 생성됐고, 날짜와 사료 선택에 따라 이전 모델의 도형 18개를 해제하는 것도 확인했다.
+[기본 화질](fantology-assets-default-93.json)은 medium, 조형 11개, JavaScript·WebGL 오류 0이다.
+
+[운영 반영 기록](fantology-assets-deployed-93.json): 정적 파일 13개의 실제 HTTP 응답을 Git 파일과 대조했다.
+viewer 290920·watcher 290919·FinBridge 222676은 그대로 유지했다. GitHub Actions 워크플로는 0개이므로 CI는 NOT_RUN이다.
+
+![공개 주소의 기본 화질 화면](fantology-assets-screen-93.png)
+
+[모바일 화면](fantology-assets-mobile-93.png)도 확인했다. 원본 생성기·조형도 연결을 완료한 것이며 인물 초상·시대별 복식 복원을 완료한 것은 아니다.

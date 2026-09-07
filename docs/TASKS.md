@@ -12,9 +12,10 @@
 - [x] #91 공개 운영 주소 반영, 같은 동작 19개 통과. 기본 화질의 3D 회전·사건 표시도 확인.
 - [x] #93 Fantology의 실제 조형도·생성기·부품 재질·배치·클릭 경로를 인물·사건에 연결.
 - [x] #93 실제 모델 클릭, 날짜·사료·작성자 필터, 지연 로딩, 도형 해제, 모바일의 개발 화면 검사 22개 통과.
-- [ ] #93 운영 반영과 공개 주소 검사.
+- [x] #93 `2209a2ad` 운영 반영, 공개 주소 검사 22개 통과. 기본 화질의 조형 11개·오류 0 확인.
 
 [#93 에셋 연결과 범위](research/fantology-assets-93.md) · [개발 화면 검사](research/fantology-assets-local-93.json).
+[공개 화면 검사](research/fantology-assets-production-93.json) · [기본 화질](research/fantology-assets-default-93.json) · [화면](research/fantology-assets-screen-93.png).
 
 [수집과 범위](research/periods-92.md) · [실제 개발 화면 검사](research/chronicle-local-91.json).
 [공개 화면 검사](research/chronicle-production-91.json) · [기본 화질](research/chronicle-default-quality-91.json) · [배포](research/chronicle-deployed-91.json).

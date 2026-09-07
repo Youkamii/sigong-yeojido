@@ -1,0 +1,186 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com",
+  "quality": "low",
+  "checks": [
+    {
+      "name": "Time controls work while the catalog is still loading",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Delayed catalog builds the latest year only",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1392: real person and event models",
+      "pass": true,
+      "detail": {
+        "people": [
+          "공양왕",
+          "이성계",
+          "정도전",
+          "정몽주",
+          "태종(휘 방원)",
+          "하륜"
+        ],
+        "assets": 8,
+        "triangles": 3800
+      }
+    },
+    {
+      "name": "1593: real person and event models",
+      "pass": true,
+      "detail": {
+        "people": [
+          "곽재우",
+          "권율",
+          "선조",
+          "원균",
+          "유성룡",
+          "이순신",
+          "이항복"
+        ],
+        "assets": 11,
+        "triangles": 7184
+      }
+    },
+    {
+      "name": "1919: real person and event models",
+      "pass": true,
+      "detail": {
+        "people": [
+          "고종",
+          "김구",
+          "손병희",
+          "안창호",
+          "유관순",
+          "이승만",
+          "한용운"
+        ],
+        "assets": 10,
+        "triangles": 4780
+      }
+    },
+    {
+      "name": "Original blueprints build without fallback or material override",
+      "pass": true,
+      "detail": {
+        "catalog": {
+          "categories": 3,
+          "cores": 5,
+          "forms": 8,
+          "variants": 5,
+          "archetypes": 200,
+          "blueprints": 5,
+          "states": 58,
+          "actions": 27,
+          "effects": 16,
+          "styles": 24,
+          "materials": 20,
+          "cultures": 20,
+          "combinationEstimate": 363968640000
+        },
+        "requested": 11,
+        "built": 11,
+        "static": 11,
+        "dynamic": 0,
+        "parts": 247,
+        "meshes": 6,
+        "triangles": 7184,
+        "effects": 6,
+        "dropped": []
+      }
+    },
+    {
+      "name": "Haengju uses the real institutional site with its evidence",
+      "pass": true,
+      "detail": "claim-khs-haengju-point"
+    },
+    {
+      "name": "Unknown locations remain in the labelled collection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Clicking the actual figure opens its person and lifespan",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Figure evidence opens the cited original quote",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Source excerpt resolves through the live API",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Clicking the event model opens its related people",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A figure clicked at an event stays at that event",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Dead figures and their pick targets disappear",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A nearby future battle does not appear in 3D",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "All sources off removes models and hit targets",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Origin filter removes AI-derived models and hit targets",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Repeated time changes release old geometry and retain one scene",
+      "pass": true,
+      "detail": {
+        "disposed": 18,
+        "groups": 1
+      }
+    },
+    {
+      "name": "Playback updates real models",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mobile keeps the real 3D canvas and time controls",
+      "pass": true,
+      "detail": {
+        "x": 0,
+        "y": 48,
+        "width": 480,
+        "height": 376
+      }
+    },
+    {
+      "name": "Visible model labels do not overlap on mobile",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "No JavaScript or WebGL errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

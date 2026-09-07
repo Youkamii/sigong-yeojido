@@ -1,0 +1,34 @@
+{
+  "before": "69a020720127dc2fe38edfa592c7b086d6e8c6a2",
+  "after": "2209a2ade181df1c525002893d9abb661b2350f4",
+  "services": {
+    "viewer": {
+      "pid": 290920,
+      "cwd": "/home/lia-c2/sigong-yeojido",
+      "command": "python3 -u services/host/server.py --port 8870"
+    },
+    "watcher": {
+      "pid": 290919,
+      "cwd": "/home/lia-c2/sigong-yeojido",
+      "command": "python3 -u scripts/sync_fuseki.py --watch"
+    }
+  },
+  "restarted": false,
+  "finbridgePid": 222676,
+  "servedFiles": {
+    "app/assetblueprint.js": "6ec64962460fc921c8274d9f906bdcdecf822298cc297fd8c8d5f8e933033a4b",
+    "app/assetcatalog.js": "89bc3a4b5f29b52a2afa0b90b5c4f80040998497ffd771cd430b591094b9d444",
+    "app/assetforge.js": "44182c37705a9a5237a5b19db1ef20e0b1136f183e398e53fe4aa4879b77ff3f",
+    "app/cataclysm.js": "9ad26eae66f403551d2610868816a14a06ca9cf7a9f799899cbc4f5ac591f80f",
+    "app/chronicle-asset-plan.js": "1c382382a271156a74dbef583b6ead3dfbb9993326cdeb8858cc14eb5af37bef",
+    "app/chronicle-assets.js": "fca99898d1b1c790235f9488f5ebaa82a45b998fa63b3da509f7bffa0c7f2008",
+    "app/chronicle-scene.js": "848ac9f8dd3157ccbe8b56a4b672a368a50dbcb1515c55c9f4e16fcc3ece7845",
+    "app/chronicle.css": "8108e9f88d47ec93166ba673971df651fcdb1367312fc08ccbbe841f43277172",
+    "app/geom2d.js": "6ff4005c6014e0bc0b75fe39b222f7f77b9121e4230f7428d0ae4de5419a218a",
+    "app/history-asset-catalog.json": "ea4b15822e46b9c5c95252f5af0eb5d1f16900d764474fea9543a4dda4e326c3",
+    "app/landmarks.js": "bf90d4b38b204d1a8b86591e54fb773e80acebb030d89e7d225f1d2fda33a1c7",
+    "app/timetravel.js": "ecd525ac7c2ec029672c44adc51aab3194eeb8b5b6c8d7cc1be573d5baa021d9",
+    "index.html": "626809e1b53e3892bf1c200d35269b920bedd6a1f28264f1f1f01909d2ed71e5"
+  },
+  "checkedAt": "2026-09-07T03:48:57Z"
+}

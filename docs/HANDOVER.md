@@ -29,7 +29,11 @@ GitHub Actions 워크플로는 0개이므로 CI는 NOT_RUN이다. 위 검사는 
 연도·사료·AI 기록 제외와 클릭 대상이 함께 갱신된다. 위치 근거가 없는 기록은 지도 밖 진열에 둔다.
 [개발 화면 검사 22개](research/fantology-assets-local-93.json)가 모두 통과했다.
 원본 모듈·조형도의 동일성, 모바일 이름표 겹침·버튼 가림 수정, 이전 모델 도형 해제도 확인했다.
-운영 반영과 공개 주소 검사는 이 이슈의 후속 기록을 따른다.
+기능 커밋 `2209a2ad`를 GitHub main과 c2에 반영했고 [공개 주소 검사 22개](research/fantology-assets-production-93.json)도 모두 통과했다.
+[기본 화질 검사](research/fantology-assets-default-93.json)는 실제 medium 품질에서 조형 11개·오류 0을 확인했다.
+[운영 반영](research/fantology-assets-deployed-93.json)은 정적 파일만 교체했으며 viewer 290920·watcher 290919를 재시작하지 않았다.
+[기본 화면](research/fantology-assets-screen-93.png) · [모바일](research/fantology-assets-mobile-93.png).
+이번 범위는 실제 에셋 연결이다. 현재 인물 외형은 상징 모델이며 초상·시대별 복식 복원이 아니다.
 
 이 문서는 Claude 세션(2026-09-04~06)의 작업과 Codex가 이어서 반영한 결과를 적는다.
 하위 에이전트(워크플로)가 만든 것까지 포함한다. 사실은 **확인됨**(실행·화면으로 검증) / **미확인** 으로 나눠 적는다.
