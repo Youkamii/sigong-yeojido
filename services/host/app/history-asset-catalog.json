@@ -1,0 +1,1669 @@
+{
+  "version": 2,
+  "categories": {
+    "humanoids": {
+      "label": "사람형 종족",
+      "family": "humanoid",
+      "forms": [
+        "civilian|민간",
+        "warrior|전사",
+        "mystic|주술",
+        "royal|왕족",
+        "corrupted|타락",
+        "veteran|백전",
+        "noble|귀족",
+        "spectral|영체"
+      ],
+      "cores": [
+        "human|인간",
+        "monk|수도사",
+        "scribe|필경사"
+      ]
+    },
+    "props": {
+      "label": "소품·장비",
+      "family": "prop",
+      "forms": [
+        "plain|평범한",
+        "ornate|장식된",
+        "royal|왕실",
+        "damaged|손상된",
+        "enchanted|마법이 걸린",
+        "broken|부러진",
+        "masterwork|명품",
+        "cursed|저주받은"
+      ],
+      "cores": [
+        "hanging_scroll|족자"
+      ]
+    },
+    "events": {
+      "label": "사건·파괴·연출",
+      "family": "event",
+      "forms": [
+        "local|국지",
+        "spreading|확산",
+        "peak|절정",
+        "aftermath|여파",
+        "supernatural|초자연",
+        "faint|조짐",
+        "violent|난폭",
+        "ruined|잔해"
+      ],
+      "cores": [
+        "battle|전투"
+      ]
+    }
+  },
+  "families": {
+    "terrain": {
+      "capabilities": [
+        "ground",
+        "static",
+        "breakable",
+        "wettable",
+        "traversable"
+      ],
+      "generator": "terrain"
+    },
+    "atmosphere": {
+      "capabilities": [
+        "volume",
+        "flowing",
+        "effect",
+        "wettable"
+      ],
+      "generator": "atmosphere"
+    },
+    "ecology": {
+      "capabilities": [
+        "organism",
+        "flammable",
+        "growing",
+        "breakable"
+      ],
+      "generator": "ecology"
+    },
+    "building": {
+      "capabilities": [
+        "structure",
+        "habitable",
+        "flammable",
+        "breakable",
+        "openable"
+      ],
+      "generator": "building"
+    },
+    "interior": {
+      "capabilities": [
+        "structure",
+        "habitable",
+        "prop",
+        "flammable",
+        "breakable",
+        "openable"
+      ],
+      "generator": "interior"
+    },
+    "infrastructure": {
+      "capabilities": [
+        "structure",
+        "traversable",
+        "breakable",
+        "openable"
+      ],
+      "generator": "infrastructure"
+    },
+    "vehicle": {
+      "capabilities": [
+        "vehicle",
+        "movable",
+        "rideable",
+        "breakable",
+        "flammable"
+      ],
+      "generator": "vehicle"
+    },
+    "humanoid": {
+      "capabilities": [
+        "creature",
+        "humanoid",
+        "living",
+        "legged",
+        "movable",
+        "sentient",
+        "flammable"
+      ],
+      "generator": "humanoid"
+    },
+    "creature": {
+      "capabilities": [
+        "creature",
+        "living",
+        "legged",
+        "movable",
+        "flammable"
+      ],
+      "generator": "creature"
+    },
+    "prop": {
+      "capabilities": [
+        "prop",
+        "movable",
+        "carriable",
+        "breakable"
+      ],
+      "generator": "prop"
+    },
+    "magic": {
+      "capabilities": [
+        "magic",
+        "anomaly",
+        "luminous",
+        "transformable"
+      ],
+      "generator": "magic"
+    },
+    "event": {
+      "capabilities": [
+        "event",
+        "effect",
+        "transformable"
+      ],
+      "generator": "event"
+    },
+    "epistemic": {
+      "capabilities": [
+        "epistemic",
+        "holographic",
+        "transformable"
+      ],
+      "generator": "epistemic"
+    }
+  },
+  "coreOverrides": {},
+  "modifiers": {
+    "states": [
+      {
+        "id": "intact",
+        "label": "온전한"
+      },
+      {
+        "id": "cracked",
+        "label": "금이 간",
+        "requiresAny": [
+          "breakable"
+        ]
+      },
+      {
+        "id": "damaged",
+        "label": "손상된",
+        "requiresAny": [
+          "breakable",
+          "living"
+        ]
+      },
+      {
+        "id": "half_ruined",
+        "label": "반쯤 무너진",
+        "requiresAny": [
+          "structure",
+          "breakable"
+        ]
+      },
+      {
+        "id": "collapsed",
+        "label": "붕괴한",
+        "requiresAny": [
+          "structure",
+          "breakable"
+        ]
+      },
+      {
+        "id": "shattering",
+        "label": "부서지는",
+        "requiresAny": [
+          "breakable"
+        ]
+      },
+      {
+        "id": "overturned",
+        "label": "뒤집힌",
+        "requiresAny": [
+          "movable",
+          "vehicle"
+        ]
+      },
+      {
+        "id": "derailed",
+        "label": "탈선한",
+        "requiresAny": [
+          "rail"
+        ]
+      },
+      {
+        "id": "sunk",
+        "label": "가라앉은",
+        "requiresAny": [
+          "ground",
+          "structure",
+          "vehicle"
+        ]
+      },
+      {
+        "id": "buried",
+        "label": "파묻힌",
+        "requiresAny": [
+          "ground",
+          "structure",
+          "prop"
+        ]
+      },
+      {
+        "id": "eroded",
+        "label": "침식된",
+        "requiresAny": [
+          "ground",
+          "structure",
+          "prop"
+        ]
+      },
+      {
+        "id": "repaired",
+        "label": "수리된",
+        "requiresAny": [
+          "breakable",
+          "vehicle"
+        ]
+      },
+      {
+        "id": "extended",
+        "label": "증축된",
+        "requiresAny": [
+          "structure"
+        ]
+      },
+      {
+        "id": "under_construction",
+        "label": "짓는 중",
+        "requiresAny": [
+          "structure"
+        ]
+      },
+      {
+        "id": "burning",
+        "label": "불타는",
+        "requiresAny": [
+          "flammable",
+          "vehicle",
+          "structure",
+          "living"
+        ]
+      },
+      {
+        "id": "smoldering",
+        "label": "연기 나는",
+        "requiresAny": [
+          "flammable",
+          "vehicle",
+          "structure"
+        ]
+      },
+      {
+        "id": "charred",
+        "label": "그을린",
+        "requiresAny": [
+          "flammable",
+          "vehicle",
+          "structure",
+          "living"
+        ]
+      },
+      {
+        "id": "frozen",
+        "label": "얼어붙은"
+      },
+      {
+        "id": "wet",
+        "label": "젖은"
+      },
+      {
+        "id": "flooded",
+        "label": "침수된",
+        "requiresAny": [
+          "ground",
+          "structure",
+          "habitable"
+        ]
+      },
+      {
+        "id": "rusted",
+        "label": "녹슨",
+        "requiresAny": [
+          "vehicle",
+          "structure",
+          "prop"
+        ]
+      },
+      {
+        "id": "corroded",
+        "label": "부식된",
+        "requiresAny": [
+          "vehicle",
+          "structure",
+          "prop"
+        ]
+      },
+      {
+        "id": "mossy",
+        "label": "이끼 낀",
+        "requiresAny": [
+          "ground",
+          "structure",
+          "prop"
+        ]
+      },
+      {
+        "id": "overgrown",
+        "label": "뒤덮여 자란",
+        "requiresAny": [
+          "ground",
+          "structure",
+          "infrastructure"
+        ]
+      },
+      {
+        "id": "bloodied",
+        "label": "피 묻은",
+        "requiresAny": [
+          "living",
+          "weapon",
+          "structure"
+        ]
+      },
+      {
+        "id": "crystallized",
+        "label": "결정화된"
+      },
+      {
+        "id": "infected",
+        "label": "감염된",
+        "requiresAny": [
+          "living",
+          "organism",
+          "habitable"
+        ]
+      },
+      {
+        "id": "petrified",
+        "label": "석화된",
+        "requiresAny": [
+          "living",
+          "organism"
+        ]
+      },
+      {
+        "id": "gilded",
+        "label": "금장된"
+      },
+      {
+        "id": "holographic",
+        "label": "홀로그램인"
+      },
+      {
+        "id": "transparent",
+        "label": "투명한"
+      },
+      {
+        "id": "inhabited",
+        "label": "사람이 사는",
+        "requiresAny": [
+          "habitable",
+          "ground"
+        ]
+      },
+      {
+        "id": "abandoned",
+        "label": "버려진",
+        "requiresAny": [
+          "habitable",
+          "structure",
+          "vehicle"
+        ]
+      },
+      {
+        "id": "occupied",
+        "label": "점령된",
+        "requiresAny": [
+          "habitable",
+          "fortified",
+          "ground"
+        ]
+      },
+      {
+        "id": "besieged",
+        "label": "포위된",
+        "requiresAny": [
+          "fortified",
+          "habitable"
+        ]
+      },
+      {
+        "id": "blocked",
+        "label": "막힌",
+        "requiresAny": [
+          "traversable",
+          "openable"
+        ]
+      },
+      {
+        "id": "quarantined",
+        "label": "격리된",
+        "requiresAny": [
+          "habitable",
+          "ground"
+        ]
+      },
+      {
+        "id": "looted",
+        "label": "약탈된",
+        "requiresAny": [
+          "habitable",
+          "container",
+          "vehicle"
+        ]
+      },
+      {
+        "id": "festival",
+        "label": "축제 중",
+        "requiresAny": [
+          "habitable",
+          "ground"
+        ]
+      },
+      {
+        "id": "evacuating",
+        "label": "대피 중",
+        "requiresAny": [
+          "habitable",
+          "sentient"
+        ]
+      },
+      {
+        "id": "battle",
+        "label": "전투 중",
+        "requiresAny": [
+          "habitable",
+          "sentient",
+          "ground"
+        ]
+      },
+      {
+        "id": "funeral",
+        "label": "장례 중",
+        "requiresAny": [
+          "habitable",
+          "sentient",
+          "ground"
+        ]
+      },
+      {
+        "id": "pilgrimage",
+        "label": "순례 중",
+        "requiresAny": [
+          "habitable",
+          "sentient",
+          "ground"
+        ]
+      },
+      {
+        "id": "rebuilding",
+        "label": "재건 중",
+        "requiresAny": [
+          "habitable",
+          "structure"
+        ]
+      },
+      {
+        "id": "cursed",
+        "label": "저주받은"
+      },
+      {
+        "id": "blessed",
+        "label": "축복받은"
+      },
+      {
+        "id": "haunted",
+        "label": "귀신 들린"
+      },
+      {
+        "id": "possessed",
+        "label": "빙의된",
+        "requiresAny": [
+          "living",
+          "vehicle",
+          "prop"
+        ]
+      },
+      {
+        "id": "sealed",
+        "label": "봉인된",
+        "requiresAny": [
+          "openable",
+          "magic",
+          "anomaly"
+        ]
+      },
+      {
+        "id": "berserk",
+        "label": "폭주하는",
+        "requiresAny": [
+          "living",
+          "powered",
+          "magic"
+        ]
+      },
+      {
+        "id": "unstable",
+        "label": "불안정한"
+      },
+      {
+        "id": "illusory",
+        "label": "환영인"
+      },
+      {
+        "id": "duplicated",
+        "label": "복제된"
+      },
+      {
+        "id": "looped",
+        "label": "반복되는"
+      },
+      {
+        "id": "gravity_inverted",
+        "label": "중력이 뒤집힌"
+      },
+      {
+        "id": "folded_space",
+        "label": "공간이 접힌"
+      },
+      {
+        "id": "version_overlap",
+        "label": "판본이 겹친"
+      },
+      {
+        "id": "erasing",
+        "label": "지워지는"
+      }
+    ],
+    "actions": [
+      {
+        "id": "idle",
+        "label": "정지"
+      },
+      {
+        "id": "moving",
+        "label": "이동",
+        "requiresAny": [
+          "movable",
+          "flowing"
+        ]
+      },
+      {
+        "id": "walking",
+        "label": "걷기",
+        "requiresAny": [
+          "legged",
+          "humanoid"
+        ]
+      },
+      {
+        "id": "running",
+        "label": "달리기",
+        "requiresAny": [
+          "legged",
+          "humanoid"
+        ]
+      },
+      {
+        "id": "driving",
+        "label": "주행",
+        "requiresAny": [
+          "wheeled",
+          "powered"
+        ]
+      },
+      {
+        "id": "rolling",
+        "label": "구르기",
+        "requiresAny": [
+          "wheeled"
+        ]
+      },
+      {
+        "id": "sailing",
+        "label": "항해",
+        "requiresAny": [
+          "watercraft"
+        ]
+      },
+      {
+        "id": "flying",
+        "label": "비행",
+        "requiresAny": [
+          "flying",
+          "winged",
+          "airborne"
+        ]
+      },
+      {
+        "id": "gliding",
+        "label": "활공",
+        "requiresAny": [
+          "winged",
+          "airborne"
+        ]
+      },
+      {
+        "id": "hovering",
+        "label": "부유",
+        "requiresAny": [
+          "flying",
+          "hovering",
+          "magic",
+          "holographic"
+        ]
+      },
+      {
+        "id": "falling",
+        "label": "추락",
+        "requiresAny": [
+          "movable",
+          "airborne",
+          "flying"
+        ]
+      },
+      {
+        "id": "rotating",
+        "label": "회전",
+        "requiresAny": [
+          "magic",
+          "machine",
+          "powered",
+          "holographic"
+        ]
+      },
+      {
+        "id": "patrolling",
+        "label": "순찰",
+        "requiresAny": [
+          "sentient",
+          "vehicle"
+        ]
+      },
+      {
+        "id": "chasing",
+        "label": "추격",
+        "requiresAny": [
+          "living",
+          "vehicle"
+        ]
+      },
+      {
+        "id": "fleeing",
+        "label": "도주",
+        "requiresAny": [
+          "living",
+          "vehicle"
+        ]
+      },
+      {
+        "id": "attacking",
+        "label": "공격",
+        "requiresAny": [
+          "living",
+          "weapon",
+          "armed"
+        ]
+      },
+      {
+        "id": "defending",
+        "label": "방어",
+        "requiresAny": [
+          "living",
+          "fortified",
+          "weapon"
+        ]
+      },
+      {
+        "id": "working",
+        "label": "작업",
+        "requiresAny": [
+          "sentient",
+          "machine"
+        ]
+      },
+      {
+        "id": "resting",
+        "label": "휴식",
+        "requiresAny": [
+          "living",
+          "vehicle"
+        ]
+      },
+      {
+        "id": "sleeping",
+        "label": "수면",
+        "requiresAny": [
+          "living"
+        ]
+      },
+      {
+        "id": "roaring",
+        "label": "포효",
+        "requiresAny": [
+          "creature"
+        ]
+      },
+      {
+        "id": "transforming",
+        "label": "변형",
+        "requiresAny": [
+          "transformable",
+          "living",
+          "magic"
+        ]
+      },
+      {
+        "id": "spawning",
+        "label": "생성",
+        "requiresAny": [
+          "event",
+          "magic",
+          "living"
+        ]
+      },
+      {
+        "id": "vanishing",
+        "label": "소멸",
+        "requiresAny": [
+          "magic",
+          "epistemic",
+          "living"
+        ]
+      },
+      {
+        "id": "opening",
+        "label": "열림",
+        "requiresAny": [
+          "openable"
+        ]
+      },
+      {
+        "id": "traversing",
+        "label": "통과",
+        "requiresAny": [
+          "traversable"
+        ]
+      },
+      {
+        "id": "collapsing",
+        "label": "붕괴",
+        "requiresAny": [
+          "breakable",
+          "structure"
+        ]
+      }
+    ],
+    "effects": [
+      {
+        "id": "fire",
+        "label": "불꽃"
+      },
+      {
+        "id": "smoke",
+        "label": "연기"
+      },
+      {
+        "id": "sparks",
+        "label": "불티"
+      },
+      {
+        "id": "steam",
+        "label": "증기"
+      },
+      {
+        "id": "frost_mist",
+        "label": "서리 안개"
+      },
+      {
+        "id": "dust",
+        "label": "먼지"
+      },
+      {
+        "id": "debris",
+        "label": "파편"
+      },
+      {
+        "id": "water_spray",
+        "label": "물보라"
+      },
+      {
+        "id": "lightning",
+        "label": "번개"
+      },
+      {
+        "id": "aura",
+        "label": "기운"
+      },
+      {
+        "id": "runes",
+        "label": "룬"
+      },
+      {
+        "id": "shadow",
+        "label": "그림자"
+      },
+      {
+        "id": "spores",
+        "label": "포자"
+      },
+      {
+        "id": "hologram_noise",
+        "label": "홀로그램 잡음"
+      },
+      {
+        "id": "time_echo",
+        "label": "시간 잔상"
+      },
+      {
+        "id": "gravity_shards",
+        "label": "중력 파편"
+      }
+    ],
+    "styles": [
+      "prehistoric|선사",
+      "ancient|고대",
+      "classical|고전",
+      "nordic|북방",
+      "medieval|중세",
+      "renaissance|르네상스",
+      "baroque|바로크",
+      "industrial|산업",
+      "victorian|빅토리아",
+      "modern|근대",
+      "contemporary|현대",
+      "dieselpunk|디젤펑크",
+      "steampunk|스팀펑크",
+      "cyberpunk|사이버펑크",
+      "solarpunk|솔라펑크",
+      "biopunk|바이오펑크",
+      "post_apocalyptic|멸망 이후",
+      "space_opera|우주 오페라",
+      "mythic_korean|한국 신화",
+      "mythic_chinese|중국 신화",
+      "mythic_japanese|일본 신화",
+      "desert_fantasy|사막 판타지",
+      "gothic_horror|고딕 공포",
+      "surreal|초현실"
+    ],
+    "materials": [
+      "weathered_stone|풍화석",
+      "polished_stone|연마석",
+      "raw_wood|생목",
+      "dark_timber|검은 목재",
+      "black_iron|흑철",
+      "bright_steel|밝은 강철",
+      "bronze|청동",
+      "gold|금",
+      "leather|가죽",
+      "cloth|천",
+      "bone|뼈",
+      "glass|유리",
+      "crystal|결정",
+      "ice|얼음",
+      "ceramic|도자기",
+      "paper|종이",
+      "foliage|식생",
+      "water|물",
+      "hologram|홀로그램",
+      "organic|유기질"
+    ],
+    "cultures": [
+      "steppe|초원",
+      "forest|숲",
+      "mountain|산악",
+      "desert|사막",
+      "island|도서",
+      "polar|극지",
+      "river|강 유역",
+      "maritime|해양",
+      "subterranean|지하",
+      "nomadic|유목",
+      "imperial|제국",
+      "republic|공화",
+      "tribal|부족",
+      "monastic|수도회",
+      "mercantile|상업",
+      "militaristic|군사",
+      "celestial|천상",
+      "infernal|지옥",
+      "fey|요정",
+      "machine|기계"
+    ],
+    "scales": [
+      "tiny|극소",
+      "small|소형",
+      "human|사람 크기",
+      "large|대형",
+      "giant|거대",
+      "colossal|초거대",
+      "world|세계 규모"
+    ]
+  },
+  "variants": [
+    "native|토착",
+    "stonecut|석조",
+    "ironwrought|철제",
+    "verdant|수목",
+    "arcanite|결정"
+  ],
+  "blueprints": {
+    "battle": {
+      "h": 3.2,
+      "rad": 4.97,
+      "p": [
+        {
+          "k": "box",
+          "w": 7.6,
+          "h": 0.24,
+          "d": 6.2,
+          "y": 0.12,
+          "bev": "m",
+          "m": "stone",
+          "c": "base",
+          "tag": "base"
+        },
+        {
+          "k": "ledge",
+          "w": 7.7,
+          "d": 6.3,
+          "y": 0.26,
+          "m": "stone",
+          "c": "mortar",
+          "tag": "base"
+        },
+        {
+          "k": "cyl",
+          "r": 0.26,
+          "r1": 0.22,
+          "h": 1.55,
+          "y": 1.02,
+          "z": 1.65,
+          "seg": 8,
+          "m": "iron",
+          "c": "steel",
+          "tag": "body",
+          "rep": {
+            "n": 5,
+            "dx": 0.85
+          }
+        },
+        {
+          "k": "sph",
+          "r": 0.22,
+          "y": 1.94,
+          "z": 1.65,
+          "m": "iron",
+          "c": "iron",
+          "tag": "top",
+          "rep": {
+            "n": 5,
+            "dx": 0.85
+          }
+        },
+        {
+          "k": "cyl",
+          "r": 0.34,
+          "h": 0.1,
+          "y": 1.05,
+          "z": 1.32,
+          "rx": 1.5708,
+          "seg": 10,
+          "m": "timber",
+          "c": "banner",
+          "tag": "ornament",
+          "rep": {
+            "n": 5,
+            "dx": 0.85
+          }
+        },
+        {
+          "k": "rcyl",
+          "r": 0.06,
+          "h": 2.6,
+          "y": 1.6,
+          "z": 1.95,
+          "rx": 0.35,
+          "seg": 5,
+          "m": "timber",
+          "c": "timber",
+          "tag": "limb",
+          "rep": {
+            "n": 5,
+            "dx": 0.85
+          }
+        },
+        {
+          "k": "cyl",
+          "r": 0.28,
+          "r1": 0.23,
+          "h": 1.5,
+          "y": 1.0,
+          "z": -1.7,
+          "seg": 8,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "body",
+          "rep": {
+            "n": 4,
+            "dx": 0.95
+          }
+        },
+        {
+          "k": "sph",
+          "r": 0.21,
+          "y": 1.9,
+          "z": -1.7,
+          "m": "leather",
+          "c": "bodyMid",
+          "tag": "top",
+          "rep": {
+            "n": 4,
+            "dx": 0.95
+          }
+        },
+        {
+          "k": "rcyl",
+          "r": 0.06,
+          "h": 2.4,
+          "y": 1.55,
+          "z": -2.0,
+          "rx": -0.45,
+          "seg": 5,
+          "m": "timber",
+          "c": "timber",
+          "tag": "limb",
+          "rep": {
+            "n": 4,
+            "dx": 0.95
+          }
+        },
+        {
+          "k": "chunk",
+          "r": 0.26,
+          "y": 0.32,
+          "z": 0.1,
+          "ex": 1.3,
+          "ey": 0.5,
+          "m": "iron",
+          "c": "steel",
+          "tag": "base",
+          "rep": {
+            "n": 3,
+            "dx": 1.35
+          }
+        },
+        {
+          "k": "cone",
+          "r": 0.05,
+          "h": 0.55,
+          "y": 0.44,
+          "z": 0.55,
+          "rx": 0.6,
+          "seg": 4,
+          "m": "iron",
+          "c": "steel",
+          "tag": "ornament",
+          "rep": {
+            "n": 6,
+            "dx": 0.62
+          }
+        },
+        {
+          "k": "flag",
+          "y": 1.1,
+          "h": 2.1,
+          "x": -2.85,
+          "z": 0.1
+        },
+        {
+          "k": "flag",
+          "y": 1.1,
+          "h": 1.9,
+          "x": 2.95,
+          "z": -0.35
+        },
+        {
+          "k": "chunk",
+          "r": 0.24,
+          "y": 0.19,
+          "x": -3.35,
+          "z": -2.3,
+          "ex": 0.6,
+          "ey": 1.0,
+          "m": "stone",
+          "c": "rock",
+          "tag": "base"
+        }
+      ]
+    },
+    "human": {
+      "h": 2.45,
+      "rad": 0.6,
+      "p": [
+        {
+          "k": "box",
+          "w": 0.26,
+          "h": 0.2,
+          "d": 0.42,
+          "y": 0.1,
+          "x": 0.22,
+          "bev": "s",
+          "m": "leather",
+          "c": "trunk",
+          "tag": "base",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "rcyl",
+          "r": 0.13,
+          "h": 0.8,
+          "y": 0.58,
+          "x": 0.22,
+          "seg": 8,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "limb",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "w": 0.6,
+          "h": 0.42,
+          "d": 0.36,
+          "y": 1.16,
+          "bev": "m",
+          "m": "leather",
+          "c": "banner",
+          "tag": "body"
+        },
+        {
+          "k": "band",
+          "r": 0.34,
+          "y": 0.97,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.64,
+          "h": 0.62,
+          "d": 0.4,
+          "y": 1.66,
+          "bev": "m",
+          "m": "leather",
+          "c": "roofAlt",
+          "tag": "body"
+        },
+        {
+          "k": "sph",
+          "r": 0.35,
+          "y": 1.9,
+          "sx": 1.06,
+          "sy": 0.46,
+          "sz": 0.62,
+          "m": "leather",
+          "c": "roofAlt",
+          "tag": "body"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.105,
+          "h": 0.82,
+          "y": 1.5,
+          "x": 0.41,
+          "rz": 0.12,
+          "seg": 8,
+          "m": "leather",
+          "c": "roofAlt",
+          "tag": "limb",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "sph",
+          "r": 0.1,
+          "y": 1.05,
+          "x": 0.47,
+          "m": "leather",
+          "c": "timberLt",
+          "tag": "limb",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "cyl",
+          "r": 0.085,
+          "h": 0.12,
+          "y": 2.02,
+          "seg": 6,
+          "m": "leather",
+          "c": "timberLt",
+          "tag": "body"
+        },
+        {
+          "k": "sph",
+          "r": 0.19,
+          "y": 2.2,
+          "sy": 1.1,
+          "m": "leather",
+          "c": "timberLt",
+          "tag": "top"
+        },
+        {
+          "k": "sph",
+          "r": 0.205,
+          "y": 2.27,
+          "sy": 0.78,
+          "sz": 1.02,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "top"
+        },
+        {
+          "k": "box",
+          "w": 0.68,
+          "h": 1.1,
+          "d": 0.1,
+          "y": 1.5,
+          "z": -0.26,
+          "bev": "m",
+          "m": "leather",
+          "c": "banner",
+          "tag": "ornament"
+        },
+        {
+          "k": "sph",
+          "r": 0.065,
+          "y": 1.95,
+          "z": 0.21,
+          "m": "gold",
+          "c": "gold",
+          "tag": "ornament"
+        }
+      ]
+    },
+    "monk": {
+      "h": 2.42,
+      "rad": 0.82,
+      "p": [
+        {
+          "k": "cone",
+          "r": 0.43,
+          "h": 1.92,
+          "y": 0.96,
+          "seg": 10,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "band",
+          "r": 0.35,
+          "y": 1.32,
+          "m": "leather",
+          "c": "reed",
+          "tag": "body"
+        },
+        {
+          "k": "sph",
+          "r": 0.33,
+          "y": 1.98,
+          "sy": 0.68,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.1,
+          "h": 0.46,
+          "y": 1.8,
+          "z": 0.24,
+          "rz": 1.5708,
+          "seg": 6,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "limb"
+        },
+        {
+          "k": "sph",
+          "r": 0.175,
+          "y": 2.24,
+          "m": "leather",
+          "c": "timberLt",
+          "tag": "top"
+        },
+        {
+          "k": "tor",
+          "R": 0.17,
+          "t": 0.035,
+          "y": 1.86,
+          "z": 0.28,
+          "rx": 1.5708,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "ornament"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.035,
+          "h": 1.94,
+          "y": 0.97,
+          "x": 0.42,
+          "seg": 5,
+          "m": "timber",
+          "c": "timber",
+          "tag": "limb"
+        },
+        {
+          "k": "sph",
+          "r": 0.13,
+          "y": 1.84,
+          "z": 0.3,
+          "sy": 0.58,
+          "m": "timber",
+          "c": "timberLt",
+          "tag": "ornament"
+        },
+        {
+          "k": "chunk",
+          "r": 0.15,
+          "y": 0.13,
+          "x": -0.5,
+          "z": 0.26,
+          "ex": 0.6,
+          "ey": 0.4,
+          "m": "stone",
+          "c": "rock",
+          "tag": "base"
+        }
+      ]
+    },
+    "scribe": {
+      "h": 1.83,
+      "rad": 0.84,
+      "p": [
+        {
+          "k": "box",
+          "w": 0.46,
+          "h": 0.52,
+          "d": 0.42,
+          "y": 0.26,
+          "x": -0.06,
+          "m": "timber",
+          "c": "timber",
+          "bev": "s",
+          "tag": "base"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.12,
+          "h": 0.54,
+          "y": 0.62,
+          "x": 0.16,
+          "z": 0.16,
+          "rx": 1.5708,
+          "seg": 6,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "limb",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "rcyl",
+          "r": 0.1,
+          "h": 0.58,
+          "y": 0.29,
+          "x": 0.16,
+          "z": 0.38,
+          "seg": 6,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "limb",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "w": 0.5,
+          "h": 0.64,
+          "d": 0.3,
+          "y": 1.14,
+          "rx": 0.24,
+          "m": "leather",
+          "c": "roofAlt",
+          "tag": "body"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.08,
+          "h": 0.56,
+          "y": 1.16,
+          "x": 0.28,
+          "z": 0.3,
+          "rx": 0.95,
+          "seg": 6,
+          "m": "leather",
+          "c": "roofAlt",
+          "tag": "limb",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "sph",
+          "r": 0.17,
+          "y": 1.56,
+          "m": "leather",
+          "c": "timberLt",
+          "tag": "top"
+        },
+        {
+          "k": "cyl",
+          "r": 0.19,
+          "r1": 0.17,
+          "h": 0.14,
+          "y": 1.76,
+          "seg": 8,
+          "m": "leather",
+          "c": "trunkDark",
+          "tag": "top"
+        },
+        {
+          "k": "box",
+          "w": 0.62,
+          "h": 0.08,
+          "d": 0.44,
+          "y": 1.06,
+          "z": 0.56,
+          "rx": 0.38,
+          "m": "timber",
+          "c": "timberLt",
+          "bev": "s",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.1,
+          "h": 1.02,
+          "d": 0.1,
+          "y": 0.51,
+          "x": 0.24,
+          "z": 0.58,
+          "m": "timber",
+          "c": "timber",
+          "bev": "s",
+          "tag": "base",
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "cone",
+          "r": 0.03,
+          "h": 0.34,
+          "y": 1.36,
+          "z": 0.44,
+          "rz": 0.3,
+          "seg": 4,
+          "m": "leather",
+          "c": "snow",
+          "tag": "ornament"
+        }
+      ]
+    },
+    "hanging_scroll": {
+      "h": 1.66,
+      "rad": 0.42,
+      "p": [
+        {
+          "k": "box",
+          "w": 0.8,
+          "h": 0.08,
+          "d": 0.3,
+          "y": 0.04,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "base"
+        },
+        {
+          "k": "cyl",
+          "r": 0.035,
+          "h": 1.42,
+          "y": 0.79,
+          "seg": 8,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "body",
+          "rep": {
+            "n": 2,
+            "dx": 0.72
+          }
+        },
+        {
+          "k": "box",
+          "w": 0.8,
+          "h": 0.05,
+          "d": 0.05,
+          "y": 1.52,
+          "m": "timber",
+          "c": "trunk",
+          "tag": "body"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.035,
+          "h": 0.56,
+          "y": 1.44,
+          "rz": 1.5708,
+          "seg": 8,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.52,
+          "h": 1.1,
+          "d": 0.02,
+          "y": 0.88,
+          "m": "leather",
+          "c": "banner",
+          "tag": "body"
+        },
+        {
+          "k": "box",
+          "w": 0.4,
+          "h": 0.86,
+          "d": 0.015,
+          "y": 0.9,
+          "z": 0.02,
+          "m": "stone",
+          "c": "snow",
+          "tag": "ornament"
+        },
+        {
+          "k": "rcyl",
+          "r": 0.045,
+          "h": 0.6,
+          "y": 0.3,
+          "rz": 1.5708,
+          "seg": 8,
+          "m": "timber",
+          "c": "trunkDark",
+          "tag": "body"
+        },
+        {
+          "k": "sph",
+          "r": 0.05,
+          "y": 0.3,
+          "m": "timber",
+          "c": "timberLt",
+          "tag": "ornament",
+          "rep": {
+            "n": 2,
+            "dx": 0.64
+          }
+        },
+        {
+          "k": "box",
+          "w": 0.06,
+          "h": 0.08,
+          "d": 0.012,
+          "y": 0.56,
+          "x": 0.14,
+          "z": 0.03,
+          "m": "leather",
+          "c": "banner",
+          "tag": "ornament"
+        },
+        {
+          "k": "cone",
+          "r": 0.045,
+          "h": 0.12,
+          "y": 1.6,
+          "seg": 6,
+          "m": "timber",
+          "c": "roof",
+          "tag": "top",
+          "rep": {
+            "n": 2,
+            "dx": 0.72
+          }
+        }
+      ]
+    }
+  }
+}
