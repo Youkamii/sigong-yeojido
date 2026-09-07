@@ -244,6 +244,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .comparison-card .compare-raw{font-size:19px;color:var(--paper)}.comparison-card .quote,.compare-link .quote{font-size:14px;line-height:1.9;white-space:pre-wrap}
 .compare-link{padding:12px 0;border-top:1px solid var(--line)}
 </style>
+<link rel="stylesheet" href="./app/chronicle.css">
 <style>
 #chat{display:none;position:absolute;inset:0 0 var(--timeline-height,42%);overflow:auto;padding:24px;color:var(--paper-2)}
 .modechat #chat{display:block}.modechat #map,.modechat #three,.modechat #graph,.modechat #hint,.modechat #outside3d,.modechat #resetMap{display:none}
@@ -283,7 +284,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <button id="bcompare">비교</button>
     </div>
     <span class="spacer"></span>
-    <button id="sourcesBtn" class="panel-btn" aria-controls="sourceRail" aria-expanded="false">찾기·사료</button>
+      <button id="sourcesBtn" class="panel-btn" aria-controls="sourceRail" aria-expanded="false">기본 사료 5종</button>
     <button id="evidenceBtn" class="panel-btn" aria-controls="evi" aria-expanded="false">근거 열기</button>
     <label class="origin-filter" title="작성자가 사람으로 기록된 연결만 표시한다. 원문은 그대로 볼 수 있다."><input id="humanOnly" type="checkbox"> AI 연결 제외</label>
     <span class="back" id="toGate">← 대동여지도</span>
@@ -294,7 +295,8 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div class="sect">찾기</div>
       <input id="q" class="q" type="search" placeholder="지명 · 인물 · 나라 · 사건" autocomplete="off" aria-label="찾기">
       <div id="qList" class="qlist"></div>
-      <details id="peopleSearch"></details>
+      <details id="peopleSearch" hidden></details>
+      <div hidden>
       <div class="sect">주 렌즈</div>
       <select id="lensSelect" class="q" aria-label="주 렌즈"></select>
       <p id="lensNote" class="empty"></p>
@@ -302,11 +304,12 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <select id="historyLevel" class="q" aria-label="역사 지도 종류"><option value="0">국가·정치집단 경계</option><option value="1" selected>도 경계</option><option value="2">군·부 등 경계</option><option value="3">읍·면 등 경계</option><option value="4">사건 관련 장소</option><option value="5">역로·현재 옛길</option></select>
       <button id="historyMapBtn" class="card-btn">역사 경계 0개 · 근거</button>
       <p class="empty">주 렌즈는 진하게, 추가로 켠 비교 사료는 옅게 겹쳐 보인다.</p>
-      <button id="allSources" class="card-btn">모든 사료 켜기</button>
+      </div>
+      <button id="allSources" class="card-btn">5종 모두 켜기</button>
       <button id="noSources" class="card-btn">모두 끄기</button>
       <div class="sect">사료</div>
       <div id="srcList"></div>
-      <div class="sect">범례</div>
+      <div hidden><div class="sect">범례</div>
       <div class="legend">
         <div><i style="background:#7FBBA8"></i>위치 확정</div>
         <div><i style="background:#8FBF74"></i>통설</div>
@@ -315,11 +318,14 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       </div>
       <div class="sect">데이터</div>
       <div class="legend" id="stats"></div>
+      </div>
     </aside>
 
     <div class="canvasWrap">
       <canvas id="map"></canvas>
       <div id="three"></div>
+      <div class="scene-context" id="sceneContext"><h2>1593년</h2><p>동시대 인물과 사건</p></div>
+      <div id="sceneEvents" class="scene-events" aria-label="3D 지도의 사건"></div>
       <div id="graph" aria-label="근거 그래프"></div>
       <div id="chat" aria-label="사료 근거 챗봇"></div>
       <div id="compare" aria-label="사료별 사건 비교"></div>
@@ -327,6 +333,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <button id="resetMap" hidden>전체 지도</button>
       <details id="outside3d" hidden><summary></summary><div></div></details>
       <div class="timebar">
+        <div id="historyTime" aria-label="역사 시간 탐색"></div>
         <div class="row">
           <span class="year"><b id="yearV">414</b><span id="yearL">서기</span>
             <button id="yearBtn" class="yearbtn" type="button" title="이 해로 연대가 붙은 기사를 본다">이 해의 기록</button>
@@ -336,6 +343,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       </div>
     </div>
 
+    <aside id="chronicle" class="chronicle-panel" aria-label="이 시대의 인물과 사건"></aside>
     <aside class="evi" id="evi" tabindex="-1" aria-label="사료와 주장 근거">
       <p class="empty">지도에서 지명을 고르면 그 지명이 어느 사료 어느 대목에서 나왔는지, 위치를 무엇으로 보는지가 여기 열린다.</p>
     </aside>
@@ -351,6 +359,8 @@ import { Timeline } from './app/timeline.js';
 import { groupSources } from './app/source-groups.js';
 import { GraphExplorer } from './app/graph.js';
 import { PeopleSearch } from './app/people.js';
+import { Chronicle, REFERENCE_GROUPS, yearLabel } from './app/chronicle.js';
+import { ChronicleScene } from './app/chronicle-scene.js';
 import { EvidenceChat } from './app/chat.js';
 import { SourceComparison } from './app/compare.js';
 import { HistoricalMap } from './app/history-map.js';
@@ -360,8 +370,40 @@ const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
 
 const state = {
   places: [], geo: null, chunks: [], sources: [], entities: [], sourcesReady: false, pendingSourceSelection: null,
-  on: new Set(), primary: new Set(), lenses: [], year: 414, sel: null, hot: null, mode: '2d', panel: null, origin: 'all', mapFocus: null
+  on: new Set(), primary: new Set(), lenses: [], year: 1593, sel: null, hot: null, mode: '3d', panel: null, origin: 'all', mapFocus: null
 };
+document.body.classList.add('mode3d');
+const chronicleScene=new ChronicleScene(document.getElementById('sceneEvents'),id=>chronicleView.showEntity(id));
+const chronicleView = new Chronicle(document.getElementById('chronicle'), document.getElementById('historyTime'), {
+  year:changeYear, filters:()=>({sources:state.on,origin:state.origin}), claim:showGraphClaim,
+  entity:selectSceneEntity,
+  context:context=>{
+    const host=document.getElementById('sceneContext');
+    host.querySelector('h2').textContent=yearLabel(context.year);
+    host.querySelector('p').textContent=`동시대 인물 ${context.people.length} · 주변 사건 ${context.events.length}`;
+    if(window.__sigong)chronicleScene.refresh(window.__sigong.world,chronicleView);
+  }
+});
+function changeYear(year){
+  state.year=year;setYearUI(year);tl?.setYear(year);draw();
+  if(state.mode==='3d')draw3d();scheduleYearCount();refreshHistoryMap();
+}
+function selectSceneEntity(id){
+  state.sel=id;
+  if(R){
+    R.world.setSelected(id);
+    const feature=historyMap.features.find(f=>f.properties.eventId===id);
+    if(feature){
+      const target=R.world.historyTargets.find(t=>t.userData.feature?.id===feature.id);
+      if(target){
+        target.geometry.computeBoundingSphere();
+        const focus=target.geometry.boundingSphere.center;
+        const offset=R.engine.camera.position.clone().sub(R.engine.controls.target);
+        R.engine.controls.target.copy(focus);R.engine.camera.position.copy(focus).add(offset);R.engine.controls.update();
+      }
+    }
+  }
+}
 new ResizeObserver(entries=>{
   const height=entries[0].target.getBoundingClientRect().height;
   document.querySelector('.canvasWrap').style.setProperty('--timeline-height',height+'px');
@@ -382,7 +424,7 @@ let chatView = null;
 let compareView = null;
 const historyMap=new HistoricalMap(document.getElementById('historyMapBtn'),{
   list:showHistoricalList,
-  changed:features=>{R?.world.setHistoricalFeatures(features);draw();if(R)draw3d();if(['history','history-feature'].includes(state.panel))showHistoricalList(false);}
+  changed:features=>{R?.world.setHistoricalFeatures(features);draw();if(R){draw3d();chronicleScene.refresh(R.world,chronicleView);if(state.sel)selectSceneEntity(state.sel);}if(['history','history-feature'].includes(state.panel))showHistoricalList(false);}
 });
 const historyLevel=document.getElementById('historyLevel');
 historyLevel.onchange=()=>refreshHistoryMap();
@@ -442,8 +484,8 @@ function graph(){
   });
 }
 
-async function showChunk(id){
-  openEvidence();
+async function showChunk(id,reveal=true){
+  if(reveal)openEvidence();
   const seq=++panelSeq;
   state.panel='chunk';state.chunkId=id;state.sel=null;
   const el=document.getElementById('evi');
@@ -483,13 +525,11 @@ function setDrawer(kind){
   document.getElementById('evidenceBtn').setAttribute('aria-expanded', String(kind === 'evidence'));
   document.getElementById('sourcesBtn').setAttribute('aria-expanded', String(kind === 'sources'));
   document.getElementById('evidenceBtn').textContent = kind === 'evidence' ? '근거 닫기' : '근거 열기';
-  document.getElementById('sourcesBtn').textContent = kind === 'sources' ? '목록 닫기' : '찾기·사료';
+  document.getElementById('sourcesBtn').textContent = kind === 'sources' ? '사료 닫기' : '기본 사료 5종';
 }
 function openEvidence(){
-  if(innerWidth <= 1080){
     setDrawer('evidence');
     document.getElementById('evi').focus({preventScroll:true});
-  }
 }
 for(const [id, kind] of [['evidenceBtn','evidence'], ['sourcesBtn','sources']]){
   document.getElementById(id).onclick = () => {
@@ -527,7 +567,7 @@ function renderOutside(){
   const el = document.getElementById('outside3d');
   const rows = outsideCandidates(state.places, state.year, state.on, state.origin);
   el.hidden = !rows.length;
-  el.querySelector('summary').textContent = `3D 틀 밖의 위치 후보 ${rows.length}개`;
+  el.querySelector('summary').textContent = `다른 지역의 기록 ${rows.length}개`;
   const list = el.querySelector('div');
   list.replaceChildren();
   for(const {place, candidate} of rows){
@@ -569,9 +609,10 @@ async function load(){
   state.lenses=lenses.lenses||[];
   const lensSelect=document.getElementById('lensSelect');
   for(const lens of state.lenses){const option=document.createElement('option');option.value=lens.id;option.textContent=lens.label;lensSelect.append(option);}
-  const initial=state.lenses.find(l=>l.id===lenses.default);
-  state.primary=new Set(initial?.sources||state.sources.filter(s=>s.defaultLens).map(s=>s.id));
-  state.on=new Set(state.pendingSourceSelection===true?state.sources.map(s=>s.id):state.pendingSourceSelection===false?[]:state.primary);
+  const initial=null;
+  const referenceSources=state.sources.filter(s=>REFERENCE_GROUPS.some(g=>g.matches(s)));
+  state.primary=new Set(referenceSources.map(s=>s.id));
+  state.on=new Set(state.pendingSourceSelection===false?[]:state.primary);
   state.sourcesReady=true;state.pendingSourceSelection=null;
   if(initial){lensSelect.value=initial.id;document.getElementById('lensNote').textContent=initial.description;if(initial.historyLevel!=null)historyLevel.value=String(initial.historyLevel);}
   renderRail();
@@ -580,6 +621,9 @@ async function load(){
   mountTimeline();
   scheduleYearCount();
   refreshTimeClaims();
+  chronicleView.refresh();
+  setYearUI(state.year);
+  historyLevel.value='4';
   refreshHistoryMap();
 }
 
@@ -606,7 +650,7 @@ function useLens(lens){
 document.getElementById('lensSelect').onchange=event=>useLens(state.lenses.find(l=>l.id===event.target.value));
 function selectAllSources(selected){
   if(!state.sourcesReady)state.pendingSourceSelection=selected;
-  state.on=new Set(selected?state.sources.map(s=>s.id):[]);sourceSelectionChanged();
+  state.on=new Set(selected?state.sources.filter(s=>REFERENCE_GROUPS.some(g=>g.matches(s))).map(s=>s.id):[]);sourceSelectionChanged();
 }
 document.getElementById('allSources').onclick=()=>selectAllSources(true);
 document.getElementById('noSources').onclick=()=>selectAllSources(false);
@@ -648,6 +692,7 @@ let tl = null;
 function setYearUI(v){
   document.getElementById('yearV').textContent = v < 0 ? Math.abs(v) : v;
   document.getElementById('yearL').textContent = v < 0 ? '기원전' : '서기';
+  chronicleView.setYear(v);
 }
 function mountTimeline(){
   const host = document.getElementById('tl');
@@ -656,7 +701,7 @@ function mountTimeline(){
   tl = new Timeline(host, {
     onTimeClaim:openTimeProjection,
     sources: state.sources.map(s=>({...s,defaultLens:state.primary.has(s.id)})), year: state.year, on: state.on,
-    onYear(y){ state.year = y; setYearUI(y); draw(); if(state.mode==='3d') draw3d(); scheduleYearCount(); refreshHistoryMap(); },
+    onYear:changeYear,
     onToggle(id, on){
       selectSource(id,on);sourceSelectionChanged();
     },
@@ -673,6 +718,7 @@ const yearText = y => y < 0 ? `기원전 ${-y}년` : `서기 ${y}년`;
 const srcLabelOf = sid => (state.sources.find(x=>x.id===sid)||{}).label || sid;
 let yearSeq = 0, yearTimer = 0, panelSeq = 0;
 function refreshEvidence(){
+  chronicleView.refresh();
   peopleSearch.filtersChanged();
   if(state.mode==='compare')compareView?.show();
   chatView?.filtersChanged();
@@ -681,7 +727,7 @@ function refreshEvidence(){
   else{
     if(state.mode==='graph') graph().show(graphView.entity);
     if(state.panel === 'year') showYear(false);
-    else if(state.panel === 'chunk') showChunk(state.chunkId);
+    else if(state.panel === 'chunk') showChunk(state.chunkId,false);
     else if(state.panel === 'scan') showScanPage(state.scanSource, state.scanOffset);
   }
 }
@@ -786,43 +832,16 @@ function renderRail(){
   const el = document.getElementById('srcList');
   el.innerHTML = '';
   if(!state.sources.length){ el.innerHTML = '<p class="empty">사료 없음</p>'; return; }
-  for(const group of groupSources(state.sources)){
-    let container = el;
-    if(group.label){
-      const details = document.createElement('details');
-      details.className = 'srcgroup';
-      details.open = openSourceGroups.has(group.label);
-      const summary = document.createElement('summary');
-      summary.textContent = `${group.label} (${group.sources.length})`;
-      details.appendChild(summary);
-      details.ontoggle = () => {
-        if(details.isConnected) details.open ? openSourceGroups.add(group.label) : openSourceGroups.delete(group.label);
-      };
-      el.appendChild(details);
-      container = details;
-    }
-    for(const s of group.sources){
-    const row = document.createElement('div');
-    row.className = 'srcrow';
-    const b = document.createElement('button');
-    b.className = 'src' + (state.on.has(s.id) ? ' on' : '');
-    b.dataset.source=s.id;
-    b.innerHTML = `<span class="dot"></span><span class="t">${escH(s.label||s.id)}
-      <em>${state.primary.has(s.id)?'주 렌즈':state.on.has(s.id)?'비교 사료':'꺼짐'} · ${s.composedYear!=null?escH(s.composedYear)+'년 편찬 · ':''}chunk ${escH(s.chunkCount||0)}</em></span>`;
-    const cb = document.createElement('button');
-    cb.className = 'card-btn'; cb.type = 'button'; cb.dataset.id = s.id; cb.title = '사료 카드 — 출처·라이선스·연도 근거';
-    cb.textContent = '카드';
-    cb.onclick = (e) => { e.stopPropagation(); showSource(s.id); };
-    b.onclick = () => {
-      selectSource(s.id,!state.on.has(s.id));sourceSelectionChanged();
-    };
-    row.appendChild(b); row.appendChild(cb);
-    const primary=document.createElement('button');primary.className='card-btn';primary.textContent='주';
-    primary.title='이 사료를 주 렌즈로 보기';primary.dataset.primary=s.id;
-    primary.onclick=()=>{document.getElementById('lensSelect').value='';useLens({label:s.label,sources:[s.id]});};
-    row.append(primary);
-    container.appendChild(row);
-    }
+  for(const reference of REFERENCE_GROUPS){
+    const sources=state.sources.filter(reference.matches);
+    const section=document.createElement('section');section.className='reference-set';
+    const button=document.createElement('button');button.textContent=reference.label;
+    const selected=sources.some(s=>state.on.has(s.id));button.classList.toggle('on',selected);
+    button.setAttribute('aria-pressed',String(selected));button.dataset.reference=reference.label;
+    button.onclick=()=>{sources.forEach(s=>selectSource(s.id,!selected));sourceSelectionChanged();};
+    section.append(button);el.append(section);
+    const details=document.createElement('details');const summary=document.createElement('summary');summary.textContent='수록 항목과 출처';details.append(summary);section.append(details);
+    for(const s of sources){const item=document.createElement('button');item.className='context-proof';item.textContent=s.label;item.onclick=()=>showSource(s.id);details.append(item);}
   }
 }
 
@@ -1208,9 +1227,10 @@ document.getElementById('evi').addEventListener('click',event=>{
   if(chunk)showChunk(chunk.dataset.candidateChunk);
   else if(source)showSource(source.dataset.candidateSource);
 });
-document.getElementById('enter').onclick = () => {
+document.getElementById('enter').onclick = async () => {
   document.getElementById('gate').classList.add('out');
   document.getElementById('app').classList.add('in');
+  await loaded;
   setTimeout(()=>{ draw(); if(state.mode==='3d') init3d(); }, 60);
 };
 document.getElementById('toGate').onclick = () => {
@@ -1266,6 +1286,7 @@ addEventListener('resize', () => { draw(); if(state.mode==='3d') resize3d(); });
 let R = null;
 
 async function init3d(){
+  document.getElementById('hint').textContent='드래그로 회전 · 휠로 확대 · 연도로 탐색';
   if(R){ R.engine.resize(); draw3d(); return; }
   const host = document.getElementById('three');
   host.innerHTML = '';
@@ -1291,11 +1312,14 @@ async function init3d(){
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
   const world = new KoreaWorld(state.geo, state.places, { elev, sub: q === 'low' ? 3 : 1 });
   engine.add(world.group);
-  engine.onPick = (id) => { const feature=historyMap.features.find(f=>f.id===id);if(feature)showHistoricalFeature(feature);else if(id)select(id); };
+  engine.onPick = (id) => { const feature=historyMap.features.find(f=>f.id===id);
+    if(feature&&chronicleView.data.entities.some(e=>e.id===feature.properties.eventId))chronicleView.showEntity(feature.properties.eventId);
+    else if(feature)showHistoricalFeature(feature);else if(id)select(id); };
 
   R = { engine, world };
   window.__sigong = R;   // 디버그 훅
   world.setHistoricalFeatures(historyMap.features);
+  chronicleScene.refresh(world,chronicleView);
   world.setYear(state.year);
   world.setOrigin(state.origin);
   world.setPrimarySources(state.primary);
@@ -1315,6 +1339,7 @@ async function init3d(){
   let ssaoBeforeMaterialize = null;
   engine.start((dt, t) => {
     world.update(t, engine.camera, engine.renderer.domElement);
+    chronicleScene.update(engine.camera,engine.renderer.domElement);
     if (engine.ssao && world.materializing) {
       ssaoBeforeMaterialize ??= engine.ssao.enabled;
       engine.ssao.enabled = false;
@@ -1338,7 +1363,7 @@ function draw3d(){
   R.engine.setPickTargets([...R.world.pickTargets.filter(target => target.parent.visible),...R.world.historyTargets]);
 }
 
-load();
+const loaded=load();
 </script>
 </body>
 </html>
