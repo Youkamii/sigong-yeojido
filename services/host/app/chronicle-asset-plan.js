@@ -42,6 +42,23 @@ const yearOf=value=>typeof value==='string'?Number(value.slice(0,4)):null;
 export function planChronicleAssets(context,data,features,places=[],scenePackets=[],registry={}){
   const claims=new Map(data.claims.map(c=>[c.id,c])),entities=new Map(data.entities.map(e=>[e.id,e]));
   const supported=ids=>Array.isArray(ids)&&ids.length>0&&ids.every(id=>claims.has(id));
+  const sceneReference=(placeId)=>{
+    const references=[];
+    for(const scene of scenePackets){
+      const p=scene.place;
+      if(!p||p.medium==='sea'||!supported(p.claimIds)||!p.claimIds.some(id=>{
+        const c=claims.get(id);return c.subject===scene.eventId&&['syj:tookPlaceAt','syj:occurredAt'].includes(c.predicate)&&c.object.kind==='entity'&&c.object.id===placeId;
+      }))continue;
+      const anchor=places.find(a=>a.id===p.anchorPlaceId),region=regionalCoordinate(registry,p.anchorPlaceId,p.label);
+      const direct=Number.isFinite(p.lon)&&Number.isFinite(p.lat)&&p.coordinateSourceIds?.length;
+      const candidate=p.displayCoordinates?{lon:p.displayCoordinates[0],lat:p.displayCoordinates[1]}:direct?{lon:p.lon,lat:p.lat}:anchor?.candidates?.length===1?anchor.candidates[0]:region;
+      if(!candidate||!inDiorama(candidate))continue;
+      references.push({candidate,claimIds:p.claimIds,precision:'area',coordinateNote:p.coordinateNote||candidate.basis||region?.coordinateNote,
+        coordinateSourceIds:direct||p.displayCoordinates?p.coordinateSourceIds:region?.sourceIds||[candidate.fromSource].filter(Boolean)});
+    }
+    if(new Set(references.map(r=>r.candidate.lon.toFixed(5)+':'+r.candidate.lat.toFixed(5))).size!==1)return null;
+    return references[0];
+  };
   const referenceFor=(id,person=false)=>{
     for(const c of data.claims.filter(c=>c.subject===id&&c.object.kind==='entity'
       &&(person?['syj:activeIn']:['syj:tookPlaceAt','syj:occurredAt']).includes(c.predicate)&&within(c,context.year)
@@ -51,10 +68,13 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       if(region&&inDiorama(region))return {placeId:region.id,label:region.label,candidate:region,
         claimIds:[c.id],precision:'area',coordinateNote:region.coordinateNote,coordinateSourceIds:region.sourceIds};
       const matches=exact.length?exact:places.filter(p=>target&&(p.labelKo||p.label)===entityLabel(target));
-      if(matches.length!==1)continue;
-      const p=matches[0],candidates=(p.candidates||[]).filter(candidate=>within(candidate,context.year)&&inDiorama(candidate));
-      if(candidates.length===1)return {placeId:p.id,label:p.labelKo||p.label,candidate:candidates[0],claimIds:[c.id],precision:'area',
-        coordinateNote:candidates[0].basis,coordinateSourceIds:[candidates[0].fromSource].filter(Boolean)};
+      if(matches.length===1){
+        const p=matches[0],candidates=(p.candidates||[]).filter(candidate=>within(candidate,context.year)&&inDiorama(candidate));
+        if(candidates.length===1)return {placeId:p.id,label:p.labelKo||p.label,candidate:candidates[0],claimIds:[c.id],precision:'area',
+          coordinateNote:candidates[0].basis,coordinateSourceIds:[candidates[0].fromSource].filter(Boolean)};
+      }
+      const reference=!person&&sceneReference(c.object.id);
+      if(reference)return {...reference,placeId:c.object.id,label:target?entityLabel(target):c.object.id,claimIds:[c.id,...reference.claimIds]};
     }
     return null;
   };
@@ -79,10 +99,11 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
   const events=current.filter(e=>!covered.has(e.id)).map(event=>{
     const sites=features.filter(f=>f.geometry?.type==='Point'&&f.properties.eventId===event.id
       &&within(f.properties,context.year)&&inDiorama({lon:f.geometry.coordinates[0],lat:f.geometry.coordinates[1]}));
+    const locationReference=referenceFor(event.id);
     return {id:'event:'+event.id,entityId:event.id,kind:'event',year:context.year,label:entityLabel(event),
       archetype:eventArchetype(event),detail:yearLabel(event.lo),summary:'',sites,
-      locationReference:referenceFor(event.id),participants:[],effects:{},
-      claimIds:[...new Set(event.basis.map(c=>c.id))]};
+      locationReference,participants:[],effects:{},
+      claimIds:[...new Set([...event.basis.map(c=>c.id),...(locationReference?.claimIds||[])])]};
   });
   for(const scene of researched){
     const place=scene.place&&(supported(scene.place.claimIds)||scene.place.placementType==='context-region')?scene.place:null;

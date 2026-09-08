@@ -26,6 +26,19 @@ assert.deepEqual(plan(1593,[],{entities:[],claims:[]}),{year:1593,people:[],even
 assert.equal(personArchetype(person.id,[claim('king',person.id,'hasTitle',{kind:'literal',value:'조선의 왕'})]),'human','A Korean king does not become a European fantasy king');
 assert.equal(personArchetype(person.id,[claim('scholar',person.id,'describedAs',{kind:'literal',value:'문신'})]),'scribe');
 
+const locality={id:'place-shared',type:'Place',label:'같은 발사장'};
+const later={id:'event-later',type:'Event',label:'시험 발사'},earlier={id:'event-earlier',type:'Event',label:'이전 발사'};
+const locationData={entities:[later,earlier,locality],claims:[claim('later-date',later.id,'occurredIn',year(2018)),claim('earlier-date',earlier.id,'occurredIn',year(2009)),
+  claim('later-place',later.id,'tookPlaceAt',{kind:'entity',id:locality.id}),claim('earlier-place',earlier.id,'tookPlaceAt',{kind:'entity',id:locality.id})]};
+const donor={id:'earlier-scene',eventId:earlier.id,startYear:2009,endYear:2009,place:{medium:'land',lon:127.535,lat:34.43194,claimIds:['earlier-place'],coordinateSourceIds:['coordinate-source']}};
+const reused=(d=locationData,packets=[donor],y=2018)=>planChronicleAssets(contextAt(d,y),d,[],[],packets).events.find(e=>e.entityId===later.id);
+assert.equal(reused().locationReference.candidate.lon,127.535,'A shared exact place can reuse sourced coordinates from another year');
+assert.ok(reused().claimIds.includes('later-place')&&reused().claimIds.includes('earlier-place'),'Both placement links reach the evidence panel');
+for(const id of ['later-place','earlier-place'])assert.equal(reused({...locationData,claims:locationData.claims.filter(c=>c.id!==id)}).locationReference,null);
+assert.equal(reused(locationData,[donor,{...donor,place:{...donor.place,lon:127.6}}]).locationReference,null,'Conflicting coordinates are not picked arbitrarily');
+assert.equal(reused({...locationData,claims:locationData.claims.map(c=>c.id==='earlier-place'?{...c,object:{kind:'entity',id:'namesake-place'}}:c)}).locationReference,null);
+assert.equal(reused(locationData,[donor],2017),undefined,'Coordinate reuse does not extend the event date');
+
 const raw=JSON.parse(await readFile(new URL('../services/host/app/history-asset-catalog.json',import.meta.url),'utf8'));
 const provenance=JSON.parse(await readFile(new URL('../docs/research/fantology-assets-93.json',import.meta.url),'utf8'));
 for(const [file,expected] of Object.entries(provenance.moduleTextSha256)){
