@@ -1,5 +1,6 @@
 import {escapeHtml as esc} from './html.js';
 import {loadChronicle} from './chronicle-load.js';
+import {EventTimeline} from './event-timeline.js';
 
 const sourceHost=source=>{try{return new URL(source.resource||'').hostname;}catch{return '';}};
 const publicRecord=source=>{
@@ -140,18 +141,16 @@ export class Chronicle {
       <button data-play aria-label="시간 재생">▶ 재생</button><button data-next aria-label="다음 사건 연도로">다음 사건 →</button></div>
       <label class="time-span">주변 사건 <select aria-label="사건 탐색 범위"><option value="20">20년</option><option value="50" selected>50년</option><option value="100">100년</option></select></label></div>
       <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2025" value="1593" aria-label="역사 시간 이동"><span>2025</span></div>
-      <div class="era-jumps">${[['414','고구려'],['540','신라'],['918','고려'],['1392','조선 건국'],['1446','세종'],['1593','임진왜란'],['1897','대한제국'],['1919','독립운동']].map(([y,l])=>`<button data-era="${y}">${l}</button>`).join('')}</div>`;
+      <div class="event-strip"></div>`;
+    this.timeline=new EventTimeline(controls.querySelector('.event-strip'),{yearLabel,
+      preview:year=>this.previewYear(year),commit:()=>this.finishScrub(),select:entry=>this.showEvent(entry)});
     const yearInput=controls.querySelector('[type=number]');
     const goYear=()=>{if(yearInput.reportValidity()){this.stopPlay();if(yearInput.valueAsNumber!==this.year)this.chooseYear(yearInput.valueAsNumber);}};
     yearInput.onchange=goYear;
     yearInput.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();goYear();}};
     controls.querySelector('[data-go-year]').onclick=goYear;
     const slider=controls.querySelector('[type=range]');
-    slider.oninput=e=>{
-      this.stopPlay();clearTimeout(this.scrubTimer);this.pendingYear=+e.target.value;
-      yearInput.value=this.pendingYear;this.timeline?.setYear(this.pendingYear);
-      this.scrubTimer=setTimeout(()=>this.finishScrub(),120);
-    };
+    slider.oninput=e=>this.previewYear(+e.target.value);
     slider.onchange=()=>this.finishScrub();
     controls.querySelector('select').onchange=e=>{this.span=+e.target.value;this.render();};
     controls.querySelector('[data-previous]').onclick=()=>this.chooseYear(this.context?.previous);
@@ -162,7 +161,10 @@ export class Chronicle {
       const jump=event.target.closest('[data-jump-year]');if(jump){this.chooseYear(+jump.dataset.jumpYear);return;}
       const proof=event.target.closest('[data-chronicle-claim]');
       if(proof){const c=this.data.claims.find(c=>c.id===proof.dataset.chronicleClaim);if(c)this.callbacks.claim(c);return;}
-      const entity=event.target.closest('[data-chronicle-entity]');if(entity)this.showEntity(entity.dataset.chronicleEntity);
+      const entity=event.target.closest('[data-chronicle-entity]');if(entity){
+        const scene=entity.dataset.chronicleScene&&this.context.allEvents.find(e=>e.sceneId===entity.dataset.chronicleScene);
+        if(scene)this.showEvent(scene);else this.showEntity(entity.dataset.chronicleEntity);
+      }
       if(event.target.closest('[data-context-back]'))this.render();
     };
     this.render();
@@ -173,7 +175,18 @@ export class Chronicle {
     if(year===0)year=this.year<0?1:-1;
     this.callbacks.year(year);
   }
+  previewYear(year){
+    if(!Number.isInteger(year)||year<-2500||year>2100)return;
+    if(year===0)year=this.year<0?1:-1;
+    this.stopPlay();clearTimeout(this.scrubTimer);this.pendingYear=year;
+    this.controls.querySelector('[type=number]').value=year;this.controls.querySelector('[type=range]').value=year;
+    this.timeline.setYear(year);this.scrubTimer=setTimeout(()=>this.finishScrub(),120);
+  }
   finishScrub(){const year=this.pendingYear;clearTimeout(this.scrubTimer);this.pendingYear=null;if(year!==this.year)this.chooseYear(year);}
+  showEvent(event){
+    this.stopPlay();this.chooseYear(this.year>=event.lo&&this.year<=event.hi?this.year:event.lo);
+    this.callbacks.scene?.(event.sceneId);this.showEntity(event.id);
+  }
   setYear(year){this.year=year;this.render();}
   stopPlay(){clearInterval(this.timer);this.timer=null;this.controls.querySelector('[data-play]').textContent='▶ 재생';}
   togglePlay(){
@@ -233,6 +246,7 @@ export class Chronicle {
   }
   render(){
     const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
+    this.timeline.setEvents(c.allEvents);this.timeline.setYear(this.year);
     this.controls.querySelector('[type=number]').value=this.year;
     this.controls.querySelector('[type=range]').value=this.year;
     this.controls.querySelector('[data-calendar]').textContent='연도 입력';
@@ -244,12 +258,12 @@ export class Chronicle {
     this.host.innerHTML=`<div class="context-kicker">시간 속으로</div><div class="context-title"><h2>${yearLabel(this.year)}</h2><span>${counts}</span></div>
       ${status?`<p role="status" class="context-empty">${esc(status)}</p>`:''}
       ${c.polities.length?`<section class="context-polities" aria-label="이때의 나라와 세력">${c.polities.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.id)}">${esc(entityLabel(p))}${p.ruler?' · '+esc(entityLabel(p.ruler))+' 재위':''}</button>`).join('')}</section>`:''}
-      ${c.events.some(e=>e.current)?`<section class="current-events"><h3>이 해의 사건</h3>${c.events.filter(e=>e.current).map(e=>`<button data-chronicle-entity="${esc(e.id)}">${esc(entityLabel(e))} <span>→</span></button>`).join('')}</section>`:''}
+      ${c.events.some(e=>e.current)?`<section class="current-events"><h3>이 해의 사건</h3>${c.events.filter(e=>e.current).map(e=>`<button data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId||'')}">${esc(e.title)} <span>→</span></button>`).join('')}</section>`:''}
       <details class="context-section era-people"><summary>동시대 인물 ${c.people.length}명 · 생존·재위·활동</summary><div class="section-heading"><h3>이때의 사람들</h3></div>
       ${c.people.map(p=>this.personCard(p,c)).join('')||(!status?'<p class="context-empty">선택한 사료에 이 해의 생존·활동 근거가 연결된 인물이 없습니다.</p>':'')}
       </details><section class="context-section"><div class="section-heading"><h3>이 시기의 사건</h3><span>${yearLabel(c.from)} – ${yearLabel(c.to)}</span></div>
       <div class="event-sequence">${c.events.map(e=>`<article class="period-event${e.current?' current':''}"><button class="event-year" data-jump-year="${e.lo}">${yearLabel(e.lo)}${e.lo!==e.hi?' – '+yearLabel(e.hi):''}</button>
-        <button class="event-title" data-chronicle-entity="${esc(e.id)}">${esc(e.title)}</button>
+        <button class="event-title" data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId||'')}">${esc(e.title)}</button>
         ${this.relations(e.id).filter(x=>['Person','Polity','Place'].includes(x.target.type)).slice(0,6).map(x=>`<button class="relation-chip" data-chronicle-entity="${esc(x.target.id)}">${esc(entityLabel(x.target))}</button>`).join('')}
         ${[...new Map(e.basis.map(b=>[b.fromSource,b])).values()].map(b=>`<button class="context-proof" data-chronicle-claim="${esc(b.id)}">${esc(b.sourceLabel)} ↗</button>`).join('')}</article>`).join('')||(!status?'<p class="context-empty">이 범위에 연결된 사건이 없습니다. 이전·다음 사건으로 이동할 수 있습니다.</p>':'')}</div></section>
       <p class="context-footnote">선택한 사료에 근거가 연결된 항목입니다. 생몰년과 재위·활동 기간을 구별합니다.${this.data.hasMore?' 조회 한도에 도달해 일부만 표시합니다.':''}</p>`;

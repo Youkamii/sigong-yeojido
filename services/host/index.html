@@ -391,6 +391,7 @@ const chronicleScene=new ChronicleScene(document.getElementById('sceneEvents'),i
 const chronicleView = new Chronicle(document.getElementById('chronicle'), document.getElementById('historyTime'), {
   year:changeYear, filters:()=>({sources:state.on,origin:state.origin}), claim:showGraphClaim,
   entity:selectSceneEntity,
+  scene:id=>{chronicleScene.preferredRow=id;},
   placement:id=>chronicleScene.assets?.rowFor(id)?.placementLabel,
   activity:id=>chronicleScene.activity(id),
   scenePackets:()=>chronicleScene.world?.scenePackets||[],
