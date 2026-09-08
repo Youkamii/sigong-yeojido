@@ -6,6 +6,7 @@ import {composeHistoricalEvent} from './chronicle-event-scenes.js';
 import {PALETTE,mix,FOLIAGE,WHITE} from './artbible.js';
 import {makeSurface,biomeByName} from './style.js';
 import {mergeParts,mixColor} from './util.js';
+import {ChronicleScenery} from './chronicle-scenery.js';
 
 let catalogPromise;
 export function loadHistoryAssets(){
@@ -203,7 +204,11 @@ export class ChronicleAssets{
     const paths=new THREE.BufferGeometry();paths.setAttribute('position',new THREE.Float32BufferAttribute(pathPositions,3));paths.computeVertexNormals();
     const pathMesh=new THREE.Mesh(paths,new THREE.MeshStandardMaterial({color:mix(PALETTE.NEUTRAL_BONE,PALETTE.BASE_EARTH,.28),roughness:1,side:THREE.DoubleSide}));
     pathMesh.receiveShadow=true;pathMesh.name='settlement-footpaths';next.add(pathMesh);
-    this.buildForest(occupied,sceneWoods);
+    this.scenery||=new ChronicleScenery(this);
+    this.scenery.sync(occupied);
+    this.forestOccupied=occupied;this.forestScenes=sceneWoods;
+    this.buildForest([...occupied,...this.scenery.clearings],sceneWoods);
+    this.scenery.start(this.forestPositions);
     const byRecipe=new Map(rows.map(r=>[r.id,r]));
     field.group.updateMatrixWorld(true);
     for(const pick of field.picks){
@@ -245,5 +250,5 @@ export class ChronicleAssets{
     ring.rotation.x=-Math.PI/2;ring.position.copy(row.position);ring.position.y+=Math.min(.1,focusDistance*.001);
     this.group.add(ring);this.selection=ring;this.selectedRow=row.id;
   }
-  update(t){for(const animation of this.animated||[])animation.update(t);}
+  update(t){for(const animation of this.animated||[])animation.update(t);this.scenery?.update(this.engine.camera,t);}
 }

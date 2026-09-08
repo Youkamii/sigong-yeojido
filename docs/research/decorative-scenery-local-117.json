@@ -1,0 +1,331 @@
+{
+  "base": "http://127.0.0.1:8873",
+  "checks": [
+    {
+      "name": "Villages, fields and tigers finish without an asset error",
+      "pass": true,
+      "detail": {
+        "villages": 18,
+        "houses": 92,
+        "fields": 72,
+        "tigers": 18,
+        "ready": true
+      }
+    },
+    {
+      "name": "Decorative settlements populate both northern and southern land",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Villages and farm geometry stay on land",
+      "pass": true,
+      "detail": [
+        {
+          "id": "scenery-village:0",
+          "visible": true,
+          "coordinates": [
+            125.26072756457789,
+            38.38865648495348
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:1",
+          "visible": true,
+          "coordinates": [
+            125.96488977540226,
+            39.99974064262514
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:2",
+          "visible": true,
+          "coordinates": [
+            125.8810609407803,
+            39.49054493162587
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:3",
+          "visible": true,
+          "coordinates": [
+            125.95650689194008,
+            38.9319604242498
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:4",
+          "visible": true,
+          "coordinates": [
+            125.95650689194008,
+            38.355795814851746
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:5",
+          "visible": true,
+          "coordinates": [
+            126.66905198622665,
+            40.04467764482764
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:6",
+          "visible": true,
+          "coordinates": [
+            126.76964658777297,
+            38.873247288752246
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:7",
+          "visible": true,
+          "coordinates": [
+            126.7193492869998,
+            38.38865648495348
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:8",
+          "visible": true,
+          "coordinates": [
+            127.3648313135888,
+            40.65796653793992
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:9",
+          "visible": false,
+          "coordinates": [
+            127.41512861436199,
+            37.77500955739712
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:10",
+          "visible": true,
+          "coordinates": [
+            127.46542591513516,
+            37.22968291138188
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:11",
+          "visible": true,
+          "coordinates": [
+            127.46542591513516,
+            36.57274200251996
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:12",
+          "visible": true,
+          "coordinates": [
+            128.0689935244132,
+            41.17739416677504
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:13",
+          "visible": true,
+          "coordinates": [
+            128.2450340771193,
+            40.63888572886783
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:14",
+          "visible": true,
+          "coordinates": [
+            128.10252505826196,
+            37.748500736037265
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:15",
+          "visible": true,
+          "coordinates": [
+            128.14443947557294,
+            37.20965648019105
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:16",
+          "visible": false,
+          "coordinates": [
+            128.2534169605815,
+            35.43346705666876
+          ],
+          "inside": true,
+          "fields": 276
+        },
+        {
+          "id": "scenery-village:17",
+          "visible": true,
+          "coordinates": [
+            128.94919628794366,
+            35.44712646523757
+          ],
+          "inside": true,
+          "fields": 276
+        }
+      ]
+    },
+    {
+      "name": "Tigers are in visible woodland clearings instead of inside tree trunks or water",
+      "pass": true,
+      "detail": [
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.654111359465343
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.622997588547467
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.555148828319203
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.504906374732377
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.90165179827221
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.878380435529056
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.439788369021771
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 14.275866626577606
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.73984703912531
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 14.604785045375404
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.666459998895231
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.854206237555804
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.551123014785182
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.561923147377486
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 15.125597725647493
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.489191953208316
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.431730039474798
+        },
+        {
+          "inside": true,
+          "visible": true,
+          "nearestTree": 13.858381815852322
+        }
+      ]
+    },
+    {
+      "name": "Scenery is separate from historical claims and selectable evidence",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No background village overlaps an active history scene",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Dragging still moves through the populated landscape",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Source deselection keeps the requested background but removes history rows and regions",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "historyReadySeconds": 8.5,
+  "sceneryReadySeconds": 10.063
+}
