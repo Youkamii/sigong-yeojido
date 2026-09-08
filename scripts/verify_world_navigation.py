@@ -31,7 +31,7 @@ with sync_playwright() as pw:
     def snapshot(id):
         return page.evaluate("""id=>{const r=window.__sigong,a=r.chronicleScene.assets,w=r.world,
           event=a.plan.events.find(e=>e.entityId===id),rows=a.rows.filter(x=>x.entityId===id||x.eventId===id),fires=[];
-          a.group.traverse(o=>{if(o.name==='event-fire')fires.push({side:o.userData.targetSide});});
+          a.group.traverse(o=>{if(o.name==='event-fire'&&o.parent.userData.sceneId===event?.id)fires.push({side:o.userData.targetSide});});
           return {place:event?.scenePlace,effects:event?.effects,rows:rows.map(x=>({kind:x.kind,archetype:x.archetype,id:x.entityId,
             side:x.side,shipSide:x.shipSide,compact:x.compact,coordinates:w.coordinatesAt(x.position.x,x.position.z),
             inside:w.contains(x.position.x,x.position.z),action:x.action})),fires,stats:a.stats};}""",id)
