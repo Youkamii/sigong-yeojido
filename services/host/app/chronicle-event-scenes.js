@@ -48,6 +48,7 @@ export function composeHistoricalEvent(event,position,world){
   if(event.compact)displayScale*=.16;
   const radius=sea?45:['siege','battle'].includes(event.archetype)?36:24;
   const model=(archetype,dx,dz,scale=1,extra={})=>{
+    if(!modern)archetype=({palace:'korean_hall',house:'korean_house'})[archetype]||archetype;
     dx*=displayScale;dz*=displayScale;scale*=displayScale;
     let x=position.x+dx,z=position.z+dz;
     const onWater=extra.medium?extra.medium==='sea':sea;
@@ -213,7 +214,7 @@ export function composeHistoricalEvent(event,position,world){
     }
   }
   if(!event.compact&&event.effects.fire?.enabled&&(!personalFire||paperFire)){
-    for(const target of models.filter(m=>paperFire?m.archetype==='book':sea?m.archetype===shipType&&m.side==='invader':['house','courtyard_house','palace','civic_hall'].includes(m.archetype)).slice(0,3)){
+    for(const target of models.filter(m=>paperFire?m.archetype==='book':sea?m.archetype===shipType&&m.side==='invader':['house','korean_house','courtyard_house','palace','korean_hall','civic_hall'].includes(m.archetype)).slice(0,3)){
       const p=target.position.clone();p.y+=(paperFire?.4:sea?2:3)*displayScale;
       fireAt(group,p,(paperFire?.2:sea?1.2:1.5)*displayScale,animated);
       group.children.at(-1).userData.targetSide=target.side||null;
