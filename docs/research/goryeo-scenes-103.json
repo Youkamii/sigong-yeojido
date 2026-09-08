@@ -1,0 +1,406 @@
+{
+  "job": "goryeo_scenes",
+  "sources": 33,
+  "excerpts": 65,
+  "claims": 141,
+  "entities": 88,
+  "rawFilesChecked": [
+    {
+      "source": "src-ency-taejo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059032",
+      "sha256": "f887348d212ccef5f80fed4520d621eabe877f645a2a5b7e1284809e9afff092",
+      "rawBytes": 101402,
+      "excerpts": 1,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-ency-illicheon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0047180",
+      "sha256": "e57a3c7b87af31b5410d50ec8833b8e5b634a2ea460d04282b3621bf58abfaf3",
+      "rawBytes": 101059,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-ency-seohui",
+      "url": "https://encykorea.aks.ac.kr/Article/E0028321",
+      "sha256": "489c8d5fe2b56311a7b805ca2ccbd744782f90580e6c523b2c1a318edcfa13ce",
+      "rawBytes": 101715,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-ency-anyungjin",
+      "url": "https://encykorea.aks.ac.kr/Article/E0034935",
+      "sha256": "9746ee8d4d23eedab0d303889f078c6ba6943904487fd327601d563a3e867a14",
+      "rawBytes": 96381,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-ency-gujudaecheop",
+      "url": "https://encykorea.aks.ac.kr/Article/E0006043",
+      "sha256": "f8e79e4bcafef7a14ea0bbab0d9c9a82438022ff30bfcd959fab009b2cfa1f04",
+      "rawBytes": 100979,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-ency-ganggamchan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0000954",
+      "sha256": "cd49d1de1d5381cce2fdce4de630ab9e1989d5b1fd2bf5960cccf50cd2bd0e34",
+      "rawBytes": 137083,
+      "excerpts": 1,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-ency-guseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0005847",
+      "sha256": "e5355bc6f2ee33ae1797937afed0432bfdd688b1559a0e8598596ff95a71cd0b",
+      "rawBytes": 122687,
+      "excerpts": 2,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-ency-myocheong-nan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0018893",
+      "sha256": "db8278c4d73521712da98de56e36cffeba14ba24e7ff95e9b99f7ee196959022",
+      "rawBytes": 102342,
+      "excerpts": 3,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-ency-bohyeonwon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0023616",
+      "sha256": "3decc9862a5b58556e049494835ccb16a681a2bda76d31e42e7ee8bdfb6e0cb6",
+      "rawBytes": 92505,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-ency-jeongjungbu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0050935",
+      "sha256": "5eeb4881e8444aee15706f52f9e7592a1a524d2ca0ea339d96c460b89d683481",
+      "rawBytes": 98421,
+      "excerpts": 1,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-ency-manjeok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0017709",
+      "sha256": "84dababaf081dd2962bfbc199bceadf6d0059c2bfb8b625fbe9637a5faed2d47",
+      "rawBytes": 97773,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-ency-ganghwa-cheondo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0001532",
+      "sha256": "d8e35fcce20f4b4f92e076fc78cd51cfea17369464cfc61c7217a1188f78fe73",
+      "rawBytes": 110142,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-ency-cheoinseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0055720",
+      "sha256": "5bebbc7b4b004957beb5e4dd3b7e4047edb5822bb3a7152e1aa00358ffd01e02",
+      "rawBytes": 92078,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-ency-gimyunhu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0010122",
+      "sha256": "beeaff1ec4d6093352039d3e0d2a23245795904dd6f7030a6f0558a891f1d967",
+      "rawBytes": 87579,
+      "excerpts": 1,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-ency-haeinsa-daejanggyeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0062710",
+      "sha256": "eb2a7e1396215e529085a69b8145ee123599fdbbb6386220b7437cee3c3f06b5",
+      "rawBytes": 173250,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-ency-daejanggyeongpan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0062711",
+      "sha256": "4e82a6a075f9e914a7ed5bea5a7b94fe3368caf8dee9daeea7b3fe07fbd2c797",
+      "rawBytes": 236628,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-ency-jindo-yongjangseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0039655",
+      "sha256": "6161496e6ad6dee4bd7c5edea4f1e790c6b5fe87f92f28038b46e18636c312c3",
+      "rawBytes": 139449,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-ency-baejungson",
+      "url": "https://encykorea.aks.ac.kr/Article/E0021928",
+      "sha256": "394cf224d59d1e921626e28f46b80cc1d4ef92dac844624d1dc8418955ce98f6",
+      "rawBytes": 130132,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-ency-honggeonjeok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0063941",
+      "sha256": "703e87daf64e095e0c7e9f737bd97bd3ee0a4d6953fac70ac81644a41f31a6b3",
+      "rawBytes": 93501,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-ency-bokju-cheondo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0071053",
+      "sha256": "c72b523b5300a77069bbcc64a5b60a824cffd1e295dacb33fff2986c9e61c334",
+      "rawBytes": 93805,
+      "excerpts": 2,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-ency-munikjeom",
+      "url": "https://encykorea.aks.ac.kr/Article/E0019627",
+      "sha256": "136926d40c1f5404c979660f47c16534e399d8ff6b4988ff460e60ec1c38fd06",
+      "rawBytes": 132484,
+      "excerpts": 1,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-ency-mokmyeon-sibae",
+      "url": "https://encykorea.aks.ac.kr/Article/E0019628",
+      "sha256": "7932be40164d5948b6754e48960452fd4950c96f685426a3d9c87c128d49d494",
+      "rawBytes": 105014,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-ency-hwatongdogam",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064918",
+      "sha256": "f30f13bb6bfd2727f1b58acefed738991db5917ef35d6e8a07747ba605cc8189",
+      "rawBytes": 85832,
+      "excerpts": 2,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-ency-choemuseon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0057297",
+      "sha256": "80e1544f31acf7fad5d03ccedb1c3728d6179cb256337b888c7f67c6f14b06c8",
+      "rawBytes": 100567,
+      "excerpts": 1,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-ency-nase",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011388",
+      "sha256": "784b10058e754b122583ec841125d5621a6a2463b5aff8727666bfedfe623194",
+      "rawBytes": 76041,
+      "excerpts": 1,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-ency-jikji",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022266",
+      "sha256": "6afab13d3f23c6de354d3c1279c55f26b41a6c969ea95d9e3b15cda688759ed7",
+      "rawBytes": 126026,
+      "excerpts": 1,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-ency-heungdeoksaji",
+      "url": "https://encykorea.aks.ac.kr/Article/E0056767",
+      "sha256": "9001e9ff2bd57b7c22f0433a196159dba02ce8b9f8c355d7d7a1ac00609c9576",
+      "rawBytes": 112532,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-ency-uwang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040045",
+      "sha256": "f84f97e570edc5bd3617506c616a83fc490c0c3fe40db42ddf051440478c25e3",
+      "rawBytes": 98593,
+      "excerpts": 1,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-kowiki-cheoinseong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%98%EC%9D%B8%EC%84%B1",
+      "sha256": "e09627ad99ee9305f6a1695b73f8c891302b72f7403e6d0ed76da133fb43b4ca",
+      "rawBytes": 152788,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-heungdeoksaji",
+      "url": "https://ko.wikipedia.org/wiki/%ED%9D%A5%EB%8D%95%EC%82%AC%EC%A7%80",
+      "sha256": "ed0b1b044bc7930d03fb93135e96dd45f4fae1bde9295299fa85661f15eccde1",
+      "rawBytes": 96512,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-wihwado",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9C%84%ED%99%94%EB%8F%84",
+      "sha256": "eacb3d36bf8271fc485b9b9d432646fc2d7ee559d46098254209adbcdaac7c09",
+      "rawBytes": 119559,
+      "excerpts": 2,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-kowiki-yongjangsanseong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%A9%EC%9E%A5%EC%82%B0%EC%84%B1",
+      "sha256": "10bd88433b0d7e41dc31bc7776bfcd921113d63f4d970e890f308c3f88b7cded",
+      "rawBytes": 127807,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-mokmyeon",
+      "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%EC%B2%AD_%EB%AA%A9%EB%A9%B4%EC%8B%9C%EB%B0%B0_%EC%9C%A0%EC%A7%80",
+      "sha256": "2a0a916ebac012d1ca6d036e1fc548c8211fdd62bbdafb760ea876b23ca9b0fd",
+      "rawBytes": 85979,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "topic": "동북 9성 좌표",
+      "detail": "구성(九城) 항목이 9성 범위에 대해 함흥평야설·길주설·두만강 이북설이 갈린다고 명시한다. 어느 설도 채택하지 않고 scene-dongbuk-9seong-1107 의 좌표를 비워 두었다.",
+      "affectedScenes": [
+        "scene-dongbuk-9seong-1107"
+      ]
+    },
+    {
+      "topic": "진포 해역 좌표",
+      "detail": "진포는 금강 하구의 해상이다. 육상 군·현 앵커를 쓰면 해전을 육지에 올려 놓게 되어 좌표를 비웠다. 국립해양조사원 등 공식 해역 좌표를 얻지 못했다.",
+      "affectedScenes": [
+        "scene-jinpo-1380"
+      ]
+    },
+    {
+      "topic": "안융진성(문덕군) 좌표",
+      "detail": "출처는 안융진성을 평안남도 문덕군 신리로 적지만 문덕군 단위 좌표를 얻지 못했다. 인접한 안주 앵커로 지역 기준 추정 배치를 했고 지명이 다르다는 점을 coordinateNote 에 남겼다.",
+      "affectedScenes": [
+        "scene-anyungjin-993",
+        "scene-seohui-damphan-993"
+      ]
+    },
+    {
+      "topic": "서희 담판 지점",
+      "detail": "서희 항목은 담판 장소를 \"거란의 군영\"으로만 적는다. 지명·좌표 근거가 없어 안융진 일대를 활동 지역으로만 사용했다.",
+      "affectedScenes": [
+        "scene-seohui-damphan-993"
+      ]
+    },
+    {
+      "topic": "보현원 지점",
+      "detail": "보현원은 \"개경 동남쪽에 있던 사찰\"로만 서술된다. 절터 위치를 특정한 자료를 찾지 못해 개성 앵커로 대체했다.",
+      "affectedScenes": [
+        "scene-bohyeonwon-1170"
+      ]
+    },
+    {
+      "topic": "개경 북산 지점",
+      "detail": "만적의 난 집회 장소인 개경 북산의 개별 좌표를 얻지 못했다.",
+      "affectedScenes": [
+        "scene-manjeok-1198"
+      ]
+    },
+    {
+      "topic": "남도석성 좌표",
+      "detail": "배중손 전사지로 서술된 남도석성의 좌표를 얻지 못해 진도 섬 앵커로 대체했다. 용장성 지점과 구분해 두었다.",
+      "affectedScenes": [
+        "scene-jindo-hamnak-1271"
+      ]
+    },
+    {
+      "topic": "대장경 완성 연도의 출처 간 차이",
+      "detail": "해인사 대장경 항목은 1251년 완성으로, 합천 해인사 대장경판 항목은 1237년 판각 시작~1248년 대장 목록 조성으로 적는다. 두 서술을 합치지 않고 별도 이벤트·장면으로 나누어 두었다.",
+      "affectedScenes": [
+        "scene-daejanggyeong-pangak-1237",
+        "scene-daejanggyeong-wanseong-1251"
+      ]
+    },
+    {
+      "topic": "1251년 완성 장소",
+      "detail": "해인사 대장경 항목은 완성 장소를 밝히지 않는다. \"개판 이후 강화도에 보관\"이라는 서술만으로 강화 앵커를 썼고, 완성 지점 좌표가 아님을 명시했다.",
+      "affectedScenes": [
+        "scene-daejanggyeong-wanseong-1251"
+      ]
+    },
+    {
+      "topic": "화통도감 소재지",
+      "detail": "화통도감 항목이 관청 소재지를 밝히지 않아 좌표를 비웠다.",
+      "affectedScenes": [
+        "scene-hwatongdogam-1377"
+      ]
+    },
+    {
+      "topic": "위화도 좌표의 문서 내 상충",
+      "detail": "위키백과 위화도 문서가 제목 좌표(40.137; 124.446)와 섬 정보 상자(39.8702; 124.2941)에 서로 다른 값을 싣는다. 제목 좌표를 표시에 쓰고 두 값을 모두 클레임으로 남겼다. 공식 지리 자료로 확인하지 못했다.",
+      "affectedScenes": [
+        "scene-wihwado-hoegun-1388"
+      ]
+    },
+    {
+      "topic": "문익점 반입 경로",
+      "detail": "귀국 경로·반입 지점이 서술되지 않아 scene-mokhwa-doip-1363 의 좌표를 비웠다.",
+      "affectedScenes": [
+        "scene-mokhwa-doip-1363"
+      ]
+    },
+    {
+      "topic": "국가유산청 좌표 접근",
+      "detail": "www.khs.go.kr, www.cha.go.kr, www.heritage.go.kr 는 이전 실행에서 연결 시간 초과로 확인되어 이번 실행에서도 요청하지 않았다. 지정 좌표는 위키백과 표시 좌표로 대체하고 출처를 명시했다.",
+      "affectedScenes": [
+        "scene-cheoinseong-1232",
+        "scene-jikji-1377",
+        "scene-mokhwa-jaebae-1363"
+      ]
+    },
+    {
+      "topic": "1359년 홍건적 제1차 침입",
+      "detail": "홍건적 항목에 1359년 침입 서술이 있으나 이번 실행의 발췌 예산(항목당 25단어) 안에서 1361년 서술을 우선해 장면을 만들지 않았다. 필요하면 같은 원본 파일에서 추가 발췌가 가능하다.",
+      "affectedScenes": []
+    }
+  ],
+  "collection": {
+    "task": "goryeo_scenes",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788830088.5040276,
+    "resumeRequested": "420afe36-2ac6-4afa-966a-95151c34b857",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "pid": 7056,
+    "sessionId": "420afe36-2ac6-4afa-966a-95151c34b857",
+    "lastEventUtc": 1788830242.3411665,
+    "exitCode": 0,
+    "seconds": 154.2,
+    "resultSubtype": "success",
+    "isError": false,
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

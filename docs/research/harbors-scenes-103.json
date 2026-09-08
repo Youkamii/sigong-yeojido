@@ -1,0 +1,336 @@
+{
+  "job": "harbors_and_presence",
+  "sources": 24,
+  "excerpts": 74,
+  "claims": 103,
+  "entities": 28,
+  "rawFilesChecked": [
+    {
+      "source": "src-syj103-encykorea-gohado-island",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004030",
+      "sha256": "be26a0138b2175e7d355775b4d1ffcb7731fd13a434a85c6ef82a34cc99e6858",
+      "rawBytes": 88503,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-syj103-encykorea-gohado-yujeok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004032",
+      "sha256": "1b85b641c17e499d1b2997299c4fa65a63617e9421951ddde01ccbc7d9900a56",
+      "rawBytes": 128525,
+      "excerpts": 4,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-syj103-encykorea-hansando-yujeok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061677",
+      "sha256": "07c38029d6f7196a35fb4e4b38a7006fd4cac23d86aba7a4755414a554153eee",
+      "rawBytes": 145303,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj103-encykorea-hansando-island",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061674",
+      "sha256": "3daeac5079ae85fcfc342d38ae89e763228190041eac4d844bdb124d050dc2d0",
+      "rawBytes": 114326,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-syj103-encykorea-sugun-tongjesa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0031240",
+      "sha256": "a9fabf57d872cec7b4c0b4d2e8fdd2faf0076d814df2a9ea5265aa40fe07c3b7",
+      "rawBytes": 99158,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-syj103-encykorea-danghangpo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013958",
+      "sha256": "69fe05147d5b7aeb14a824b4aba97d413bf56b1c3ee102e88e3376ae5b0263cb",
+      "rawBytes": 90945,
+      "excerpts": 4,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-syj103-encykorea-eo-yeongdam",
+      "url": "https://encykorea.aks.ac.kr/Article/E0036032",
+      "sha256": "f55d13ba6f256c9e5753ec2f2c594710ba7832115c3dd1f867c04bdc08651fb2",
+      "rawBytes": 75532,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-syj103-encykorea-noryang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0012716",
+      "sha256": "a707ece415323da82866fc8b982918c7818a4766b25a74dda619ea3863fde96e",
+      "rawBytes": 79192,
+      "excerpts": 5,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj103-encykorea-yi-sunsin",
+      "url": "https://encykorea.aks.ac.kr/Article/E0044900",
+      "sha256": "2876ce1ad03b6057b82b05a46e3e660ddec985f203ffcf4f11840220fdbf19ec",
+      "rawBytes": 239350,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-syj103-encykorea-busanjin-jeontu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024278",
+      "sha256": "d166f2b2d6acd2f7d73bea3766d13a51313be3cb74e011590f5aa2e417d5f7d8",
+      "rawBytes": 90044,
+      "excerpts": 5,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj103-encykorea-dongnae-jeontu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0016386",
+      "sha256": "dfe0fac4ae4db8e2f1f15a2615464d03878b23c61aa8c8c5ab72bae1f54f6126",
+      "rawBytes": 98151,
+      "excerpts": 5,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj103-grandculture-busanjinseong",
+      "url": "http://busan.grandculture.net/Contents/Contents?dataType=01&contents_id=GC04201590&isTreeSpread=Y",
+      "sha256": "b8d657d8c8497ac7209b1cdf6754b3856649f99ce4e35be4faeb65d8167d03be",
+      "rawBytes": 40076,
+      "excerpts": 2,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj103-grandculture-dongnae-eupseongji",
+      "url": "http://busan.grandculture.net/Contents/Contents?dataType=01&contents_id=GC04203418&isTreeSpread=Y",
+      "sha256": "c30935f57c2b9699e109bf7067600534729247cce7093c5d535f0faf64d7784e",
+      "rawBytes": 51272,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-syj103-wikidata-gohado",
+      "url": "https://www.wikidata.org/wiki/Q12584477",
+      "sha256": "1bc898a7cb248d6c12628f15778a43bced9e55a47c2f02d60e45be98039bd772",
+      "rawBytes": 87785,
+      "excerpts": 3,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-syj103-kowiki-hansando-yujeok",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%8A%B9%EB%8B%B9",
+      "sha256": "fa88d83529da7a32a420cf1036f069d75825efe4fe94d3057fdbfc6b8b540b4f",
+      "rawBytes": 105226,
+      "excerpts": 4,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-syj103-kowiki-jeonggongdan",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B3%B5%EB%8B%A8",
+      "sha256": "44cbd1be76c89acad40800019b49455e0cd5d45318aecf7a3935f0306f599ee7",
+      "rawBytes": 82790,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-syj103-kowiki-suan-station",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%98%EC%95%88%EC%97%AD",
+      "sha256": "8a988e07cffcbe21a4b51049cd379a0b64a4c45c3c5487353613d6651a8f9150",
+      "rawBytes": 115013,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-syj103-wikidata-hoehwa",
+      "url": "https://www.wikidata.org/wiki/Q12625999",
+      "sha256": "cefc38fb773fe6840ce40f9eacf392ee4d9d1c8e89ff4854839351405aa502c4",
+      "rawBytes": 81596,
+      "excerpts": 2,
+      "quotedWords": 5
+    },
+    {
+      "source": "src-syj103-wikidata-donghae",
+      "url": "https://www.wikidata.org/wiki/Q16183858",
+      "sha256": "7ef53ff72a856dec0670a3a9a52b32888b3afc5b3fa6f380321c4c4302ba2e72",
+      "rawBytes": 81685,
+      "excerpts": 2,
+      "quotedWords": 5
+    },
+    {
+      "source": "src-syj103-encykorea-goseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003703",
+      "sha256": "edaf32dd9c1102dc7435cff5bc3802751dcf470c7983fca51c4b91b8dcc4f1aa",
+      "rawBytes": 149274,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-syj103-kowiki-noryang-strait",
+      "url": "https://ko.wikipedia.org/wiki/%EB%85%B8%EB%9F%89%ED%95%B4%ED%98%91",
+      "sha256": "780840e367d3bbcafb2a95ccc4d49e8ce455ad45e8c42f529d781a9fc871af12",
+      "rawBytes": 68082,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-syj103-opentopodata-mapzen",
+      "url": "https://api.opentopodata.org/v1/mapzen?locations=35.0501708,128.4182597|35.0525,128.4175|35.0515,128.4155|35.0530,128.4195",
+      "sha256": "5254a8370268bd921dfe3aa0e00570133a0bc0e9d88419b064e298f21518ba21",
+      "rawBytes": 607,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-syj103-opentopodata-landcheck",
+      "url": "https://api.opentopodata.org/v1/mapzen?locations=34.79417,128.47222|35.135083,129.053778|35.2018028,129.0838333|34.769722,126.368333",
+      "sha256": "d040da89b5d68fe611aaeeec52aafc09c75b36ca451538149eb7f7f4a4998624",
+      "rawBytes": 620,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-syj103-opentopodata-gebco",
+      "url": "https://api.opentopodata.org/v1/gebco2020?locations=34.9390,127.8564|34.9425,127.8665|34.9300,127.8500|34.9060,127.8573",
+      "sha256": "99099432577b7cd2b6a0f399382dde3f3b39d83c71edd43300c072f2d9e21eae",
+      "rawBytes": 610,
+      "excerpts": 2,
+      "quotedWords": 18
+    }
+  ],
+  "missing": [
+    {
+      "topic": "고하도 이충무공 유적 지점 좌표",
+      "detail": "백과 「고하도 이충무공 유적」이 소재지를 '전남 목포시 달동 산230번지'로 적지만 위도·경도는 없다. 국가유산청 계열(khs.go.kr) 접근은 이번에도 시도 대상에서 제외했고, 목포시 지자체 지도 파일도 확보하지 못했다. 그래서 장면 좌표는 섬 대표점(GNS 기반 위키데이터 값)으로만 두었다.",
+      "neededSource": "목포시 또는 국토지리정보원의 고하도 이충무공 유적 지점 좌표",
+      "affectedScenes": [
+        "scene-gohado-jin-1597",
+        "scene-syj103-gohado-jujun-1597-1598"
+      ]
+    },
+    {
+      "topic": "백과 「고하도」 좌표 오기('북위 34°77′')",
+      "detail": "본문 좌표 표기의 분(分)이 60을 넘어 좌표로 성립하지 않는다. 이번 실행에서도 정정된 기관 표기를 찾지 못했다. 임의 환산 없이 원문 그대로 claim-syj103-gh-badcoord에 보존했다.",
+      "neededSource": "백과 항목 정정본 또는 기관 발표 좌표",
+      "affectedScenes": [
+        "scene-gohado-jin-1597"
+      ]
+    },
+    {
+      "topic": "한산도 본영 건물 지점",
+      "detail": "'한산도 북서부 해안선의 깊숙한 곳'까지가 출처의 한계다. 현재의 제승당 건물은 1976년 중건물이라 1593년 본영 건물 위치로 쓸 수 없다. 선착장·조선소(배 만드는 자리) 지점을 밝힌 자료도 얻지 못했다.",
+      "neededSource": "한산도 통제영 유구 발굴 보고 또는 기관 고시 좌표",
+      "affectedScenes": [
+        "scene-hansando-honyeong-1593",
+        "scene-syj103-hansando-gunyeong-1593-1597"
+      ]
+    },
+    {
+      "topic": "한산도 운영 구간의 '3년 8개월' 기간 표기",
+      "detail": "「한산도 이충무공 유적」 원문은 '1597년 원균의 모함으로 섬을 떠날 때까지 이순신은 3년 8개월 동안 한산도에서 군영을 지휘했다.'로 한 문장 안에 끝 연도와 기간을 함께 적는다. 그러나 시작 연도 1593은 다른 문장에 있어, 페이지당 25단어 한도 안에서 1593과 1597을 모두 담은 하나의 인용을 만들 수 없었다. 그래서 시작(1593)과 끝(1597)을 각각 연도가 적힌 문장으로 나눠 인용하고 기간 표기 '3년 8개월'은 인용에서 제외했다. 원문은 raw/encykorea-E0061677-hansando-yujeok.html에 그대로 있다.",
+      "neededSource": "같은 항목의 추가 인용 여유 또는 시작·끝 연도를 한 문장에 적은 기관 자료",
+      "affectedScenes": [
+        "scene-syj103-hansando-gunyeong-1593-1597"
+      ]
+    },
+    {
+      "topic": "한산도 본영의 둔전·곡식 경작 서술",
+      "detail": "백과 「한산도 이충무공 유적」에 '둔전을 개간해서 곡식을 경작하고'라는 문장이 있으나 페이지당 25단어 인용 한도 때문에 이번 인용에서 제외했다. 다음 배치에서 인용 여유가 생기면 농사 장면 요소로 추가할 수 있다.",
+      "neededSource": "같은 항목의 추가 인용 여유",
+      "affectedScenes": [
+        "scene-syj103-hansando-gunyeong-1593-1597"
+      ]
+    },
+    {
+      "topic": "1594년 당항포에서 이순신의 승선 여부",
+      "detail": "출처는 이순신의 위치를 '한산도에서'로만 적고 견내량·증도 배치도 지휘 서술이다. 이순신이 당항포 현장에 있었다는 문장은 이번에도 찾지 못해 presence='related'를 유지했다.",
+      "neededSource": "1594년 3월 작전 중 이순신의 이동을 적은 기관 자료",
+      "affectedScenes": [
+        "scene-danghangpo-2-1594"
+      ]
+    },
+    {
+      "topic": "당항포·노량 해역의 기관 발표 좌표",
+      "detail": "국립해양조사원 해양지명 좌표를 이번에도 확보하지 못했다(공공데이터포털 OpenAPI 인증키 필요). 두 해역 모두 발표 좌표가 아니라 파생 표시점이며 산출 과정을 coordinateNote에 적었다.",
+      "neededSource": "국립해양조사원 해양지명 좌표 원문",
+      "affectedScenes": [
+        "scene-danghangpo-2-1594",
+        "scene-noryang-1598"
+      ]
+    },
+    {
+      "topic": "부산진성·동래읍성의 실측 성곽 좌표",
+      "detail": "부산역사문화대전 본문에는 위도·경도 항목이 없다. 정공단·수안역 좌표는 성 구역 안의 후대 시설 표시점이며 성벽 범위가 아니다. 국가유산청 지정 좌표는 이번 범위에서 요청하지 않았다.",
+      "neededSource": "부산광역시 또는 국가유산청의 성곽 지정 구역 좌표",
+      "affectedScenes": [
+        "scene-busanjin-1592",
+        "scene-dongnae-1592"
+      ]
+    },
+    {
+      "topic": "부산진전투 일자 표기 차이",
+      "detail": "백과 「부산진전투」는 1592년 4월 14일 전투로 적고, 부산역사문화대전은 '1592년(선조 25) 음력 4월 13일' 일본군이 부산 앞바다에 쳐들어왔다고 적는다. 후자는 함대 도착 서술이라 함락일과 같은 값으로 합치지 않았고, 장면 일자는 백과 표기만 썼다.",
+      "neededSource": "두 표기의 관계를 밝힌 기관 자료",
+      "affectedScenes": [
+        "scene-busanjin-1592"
+      ]
+    },
+    {
+      "topic": "노량해전의 다른 전사자와 명 측 인물",
+      "detail": "백과 「노량해전」은 명나라 장수 등자룡, 가리포첨사 이영남, 낙안군수 방덕룡의 전사와 관음포 추격을 적지만 페이지당 25단어 한도 때문에 이번 인용에서 제외했다. 근거 문장은 raw/encykorea-E0012716-noryang-haejeon.html 에 있다.",
+      "neededSource": "같은 항목의 추가 인용 여유",
+      "affectedScenes": [
+        "scene-noryang-1598"
+      ]
+    },
+    {
+      "topic": "진린의 노량 이전 행적 서술 차이",
+      "detail": "같은 항목 안에서 진린은 고니시의 뇌물을 받고 통신선 1척을 내보냈다가 이순신에게 알렸다고도 적히고, 이순신 항목에는 '싸움을 기피하려는' 인물로 적힌다. 장면에는 19일 새벽의 공동 행동만 넣고 이 평가 차이는 반영하지 않았다.",
+      "neededSource": "해당 서술의 사료 근거를 밝힌 연구",
+      "affectedScenes": [
+        "scene-noryang-1598"
+      ]
+    }
+  ],
+  "collection": {
+    "task": "harbors_and_presence",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788830348.1596508,
+    "resumeRequested": "b1bf1fe3-0ea5-4401-8d6b-4820b9d719d6",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "pid": 22136,
+    "sessionId": "b1bf1fe3-0ea5-4401-8d6b-4820b9d719d6",
+    "lastEventUtc": 1788830661.881471,
+    "exitCode": 0,
+    "seconds": 314.1,
+    "resultSubtype": "success",
+    "isError": false,
+    "permissionDenials": [
+      {
+        "tool_name": "Read",
+        "tool_use_id": "toolu_01GnZjuGBPcVcPZ55QhFCFeo",
+        "tool_input": {
+          "file_path": "C:\\Users\\gkfkd\\Git\\sigong-yeojido\\scripts\\import_period_research.py",
+          "offset": 110,
+          "limit": 60
+        }
+      }
+    ]
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

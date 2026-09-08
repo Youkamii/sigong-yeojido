@@ -1,0 +1,440 @@
+{
+  "job": "ancient_scenes",
+  "sources": 33,
+  "excerpts": 73,
+  "claims": 144,
+  "entities": 82,
+  "rawFilesChecked": [
+    {
+      "source": "src-anc-enc-hyeokgeose",
+      "url": "https://encykorea.aks.ac.kr/Article/E0063242",
+      "sha256": "0ede0bb9cf4353681b9126f169aeddb213f04d8a82e3130f8fca1ad14d69db14",
+      "rawBytes": 137280,
+      "excerpts": 3,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-anc-enc-jobun",
+      "url": "https://encykorea.aks.ac.kr/Article/E0051835",
+      "sha256": "740f7962118c3a1c648fdd8068061353b143a2f7501b469cb25cd8c6ee34d7e4",
+      "rawBytes": 78538,
+      "excerpts": 1,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-anc-enc-gammunguk",
+      "url": "https://encykorea.aks.ac.kr/Article/E0000756",
+      "sha256": "ac09b67e4ac9408ad282773bc3ec2ea016ac07384bea332dbbd3f7c46ddb20a2",
+      "rawBytes": 73519,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-anc-enc-geunchogo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0007465",
+      "sha256": "44630f948558e44368e8c56c92f2152bfc318935ca3b4e16feb1771a6c030867",
+      "rawBytes": 93571,
+      "excerpts": 3,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-anc-enc-sosurim",
+      "url": "https://encykorea.aks.ac.kr/Article/E0030144",
+      "sha256": "a7061110e54d6211ec5df6fa863c169e64302091c23dc835339a43a0d680afee",
+      "rawBytes": 85176,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-anc-enc-taehak",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059090",
+      "sha256": "26b81e43a198ade9bb3c99eca76cc710fba4aedb2489fa4c54b732ddbcd2fe7a",
+      "rawBytes": 104685,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-anc-enc-jangsu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0048605",
+      "sha256": "0f03596b2c9734524ec9f9b4641903b6aa44c70e1ca5f3ed6b5a70c6d5d65b88",
+      "rawBytes": 88265,
+      "excerpts": 1,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-anc-enc-isabu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0044524",
+      "sha256": "b1f585201b45fd5f88e42dede97b52b3bcd650346e6d4a7166d29b4ac399961e",
+      "rawBytes": 91261,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-anc-enc-ichadon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0046157",
+      "sha256": "395ecbbaccd817c4dae62a179a76426f5b4fc87b1acfe7f9bff7330f1d1ef1eb",
+      "rawBytes": 126959,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-anc-enc-heungnyunsa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065996",
+      "sha256": "cf82a0a9842961c89a846e553163526ba2797a2907f1d218dd23cbd64220ab43",
+      "rawBytes": 133306,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-anc-enc-gwansanseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004868",
+      "sha256": "c3d1a1cd3ac392a846d8ff1e9833b8a8a14725568ed7b7e3ad6cdb9b9383afc5",
+      "rawBytes": 102328,
+      "excerpts": 4,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-anc-enc-hwangnyongsa-tap",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065127",
+      "sha256": "f04ec82e2a09c0d85a5e68676ebde5bed0f9e21d02b6b9f952f062ceb90a06d7",
+      "rawBytes": 99122,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-anc-enc-salsu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0026415",
+      "sha256": "46997e838f5118eee160c26b906470be807692982d088c398f0329901cf8e465",
+      "rawBytes": 92427,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-anc-enc-yeongaesomun",
+      "url": "https://encykorea.aks.ac.kr/Article/E0036672",
+      "sha256": "dd6f8051d39d1bc55edcdca2d9ba55aab89b459654997e6da795d89a3e37092d",
+      "rawBytes": 122582,
+      "excerpts": 1,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-anc-enc-hwangsanbeol",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065183",
+      "sha256": "570bdd36f23db44f0d02feea4112af094b7e7800347f8c1af4caad81589dd5c4",
+      "rawBytes": 80402,
+      "excerpts": 4,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-anc-enc-uija",
+      "url": "https://encykorea.aks.ac.kr/Article/E0043357",
+      "sha256": "9fbbd92ac8233806f05e7ffdbc611977d37d5b4ad519ba1f9df04ba272cf574b",
+      "rawBytes": 109706,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-anc-enc-bojang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0023525",
+      "sha256": "71167c764a9ec4e077ec8924422783667bd5f006e1e6f6774d99238732d3d369",
+      "rawBytes": 92619,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-anc-enc-munmu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0019473",
+      "sha256": "fe90eb520b9bc636fd2ef3e655966d66ce030e59ad6c9aa056f94e9012063933",
+      "rawBytes": 144319,
+      "excerpts": 1,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-anc-enc-gameunsa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0000802",
+      "sha256": "17015a24a88f68f1cb1de567249fec53139a66944d9974a3b394cb6704e65a9c",
+      "rawBytes": 118652,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-anc-enc-daejoyeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003841",
+      "sha256": "2232ff66e55f9a2e95a45cd6e8a95115b14d34c8e414e9afe035ea6c16c559d8",
+      "rawBytes": 79893,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-anc-enc-bulguksa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024933",
+      "sha256": "afc31a7044dd904f533b3be869c7652ae2f81117f44d9fec0b8d63983b90c158",
+      "rawBytes": 137820,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-anc-enc-cheonghaejin",
+      "url": "https://encykorea.aks.ac.kr/Article/E0056856",
+      "sha256": "cba0b72882573bfe6afc293f8d424111ef2d0dd92f49f85b877be8c8f3537958",
+      "rawBytes": 92959,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-anc-enc-jangbogo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0048474",
+      "sha256": "f68f388b319aa191beb00105933cca6bb23762e3cd3539c3c4b07cf4910c4cc8",
+      "rawBytes": 127067,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-anc-enc-cheonghaejin-yujeok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0048392",
+      "sha256": "2b8182fd6ba82dd015c27aebb08335ff5cad1184f6e40a15341416fc6b43e62d",
+      "rawBytes": 129168,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-anc-kowiki-bulguksa",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%88%EA%B5%AD%EC%82%AC",
+      "sha256": "1fe059555aa03fa9ebe29efac78338ebdc874cfc87c7bc112df88155c1777f23",
+      "rawBytes": 333587,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-anc-kowiki-gameunsa",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%90%EC%9D%80%EC%82%AC",
+      "sha256": "31d9a33e7a3dbc28d4378b836a352b0fd8832eca6aea81ab9bcc976dca37ff6b",
+      "rawBytes": 184899,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-anc-kowiki-hwangnyongsa",
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%A9%EB%A3%A1%EC%82%AC",
+      "sha256": "b142110b29b4ce9e4744c92ef19854dcbd93fb5d359cf767efdad356683e74cf",
+      "rawBytes": 224570,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-anc-kowiki-busosanseong",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%86%8C%EC%82%B0%EC%84%B1",
+      "sha256": "05b7d33e1c65e0da54d3da8ea287ad10152882ef78aa9edbf5bea7f9733b7079",
+      "rawBytes": 199566,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-anc-kowiki-gibeolpo",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B8%B0%EB%B2%8C%ED%8F%AC",
+      "sha256": "b2c609d3e790f8ee7ba9d61c8b2cab2c0d3fb21d8efd4ce642164cbf2836c867",
+      "rawBytes": 62341,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-anc-wikidata-q499266",
+      "url": "https://www.wikidata.org/wiki/Q499266",
+      "sha256": "259a5015466da7a7218c108388f7611fab146dbdb781fa6cfcfe48a0b22a2a4e",
+      "rawBytes": 130435,
+      "excerpts": 2,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-anc-wikidata-q625594",
+      "url": "https://www.wikidata.org/wiki/Q625594",
+      "sha256": "d09d65fa696987f03cef2d095a383a08f3c9434ab59c7254b21a8158096d6fa9",
+      "rawBytes": 111724,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-anc-wikidata-q489139",
+      "url": "https://www.wikidata.org/wiki/Q489139",
+      "sha256": "04ae4b9d586485bcd695a239472a68c7e6a174a9d487ee8f3937536073f1bd78",
+      "rawBytes": 126667,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-anc-wikidata-q711386",
+      "url": "https://www.wikidata.org/wiki/Q711386",
+      "sha256": "41a5dd00aea119ca6c7c8b7c5fb590de88a597a3acc5344feb04115307265168",
+      "rawBytes": 129386,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "job": "ancient_scenes",
+      "topic": "평양성 실측 좌표",
+      "detail": "371·427년의 평양성(출처가 '지금의 평양 大城山城'으로 비정)과 642·668년의 평양성 좌표를 얻지 못했다. ko.wikipedia 「대성산성」·「안학궁」·「평양성」 문서에 좌표가 없고, 위키데이터 Q55728993(대성산성)·Q4873114(평양성)에는 P625 진술이 없으며 en.wikipedia 「Taesong Fortress」에도 좌표가 없다. 그래서 네 장면 모두 HGIS 평양 지역 기준점(hgis-admin-93236)으로만 표시했고, 그 결과 시기가 다른 두 평양성이 화면에서 같은 점으로 겹친다.",
+      "affectedScenes": [
+        "scene-anc-pyongyangseong-371",
+        "scene-anc-pyongyang-transfer-427",
+        "scene-anc-yeongaesomun-642",
+        "scene-anc-goguryeo-fall-668"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "살수 전투 지점",
+      "detail": "출처(민족문화대백과 「살수대첩」)는 살수를 '지금의 청천강'이라고만 적고 강 안의 전투 지점을 밝히지 않았다. 위키데이터 Q499266의 항목 수준 coordinate location(39°36′0″N 125°25′0″E)을 하천 표시점으로 썼다. 같은 항목의 origin of the watercourse 좌표(40°25′30″N 126°43′10″E)는 상류 발원지라 쓰지 않았다. 도하 지점의 실제 위치는 미해결이다.",
+      "affectedScenes": [
+        "scene-anc-salsu-612"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "기벌포 해전 지점",
+      "detail": "민족문화대백과 「문무왕」은 기벌포에서 격파했다고만 적고 좌표를 주지 않는다. 위키백과 「기벌포」가 '충청남도 서천군 장항읍 일대', '금강 하구'라고 비정하므로 위키데이터 Q489139(금강)의 coordinate location(36°0′0.0″N 126°40′0.1″E)을 하구 표시점으로 썼다. coastline.json 육지 다각형 밖(바다)임은 확인했으나 해전 지점 자체의 좌표는 아니다. 서천군 지역 중심점으로 대체하지 않았다.",
+      "affectedScenes": [
+        "scene-anc-gibeolpo-676"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "동모산 좌표",
+      "detail": "발해 건국지 동모산의 좌표를 얻지 못했다(ko.wikipedia 「동모산」 문서에 좌표 없음, 위키데이터 Q12593333에 P625 없음). 출처가 말한 '지금의 길림성 돈화현'의 시 중심점으로 대체하는 것은 산성 위치를 도시 중심으로 옮기는 일이라 하지 않았고, place.lon/lat을 null로 두었다.",
+      "affectedScenes": [
+        "scene-anc-balhae-698"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "흥륜사 절터 좌표와 처형 지점",
+      "detail": "민족문화대백과 「이차돈」·「경주 흥륜사」는 순교와 흥륜사 공사의 관계만 적고 처형 지점을 밝히지 않는다. 흥륜사 절터의 좌표도 이번 실행에서 확보하지 못해 경주 지역 기준점(hgis-admin-157642)으로만 표시했다.",
+      "affectedScenes": [
+        "scene-anc-ichadon-527"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "장보고 암살 지점",
+      "detail": "민족문화대백과 「청해진」·「장보고」는 846년 자객 염장이 장보고를 암살했다고만 적고 살해 지점을 명시하지 않는다. 그래서 tookPlaceAt 대신 relatedTo(claim-anc-jangbogo-place)로 청해진과 연결하고, 좌표는 청해진(장도) 표시 좌표임을 명시했다.",
+      "affectedScenes": [
+        "scene-anc-jangbogo-846"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "청해진 장도와 해안선 데이터",
+      "detail": "위키데이터 Q625594(청해진) 좌표(34°21′37.1585″N 126°44′8.0185″E)는 완도읍 장좌리 앞 장도를 가리키는데, 동봉된 coastline.json(1940년 도 경계 단순화본)에는 이 작은 섬이 없어 표시상 육지 밖 점이 된다. 렌더러에서 섬을 별도로 그리거나 완도 본섬 쪽으로 붙이는 처리가 필요하다.",
+      "affectedScenes": [
+        "scene-anc-cheonghaejin-828",
+        "scene-anc-jangbogo-846",
+        "scene-anc-cheonghaejin-abolition-851"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "국내성 좌표의 캔버스 범위",
+      "detail": "태학 설립지 국내성 좌표는 위키데이터 Q711386의 coordinate location(41°7′14.999″N 126°10′43.000″E)이다. 한반도 해안선 캔버스 밖(중국 지린성 지안시)이라 지도에 표시되지 않을 수 있다.",
+      "affectedScenes": [
+        "scene-anc-taehak-372"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "국학(682년 설치) 장소 근거 없음",
+      "detail": "민족문화대백과 「국학」(E0006550, raw/enc-E0006550-gukhak.html로 내려받음)은 682년(신문왕 2) 설치와 관제만 적고 소재지를 밝히지 않는다. 왕경(경주)이라는 서술이 본문에 없어 장면을 만들지 않았다. 통일신라 학술 활동 장면을 채우려면 소재지를 밝힌 다른 출처가 필요하다.",
+      "affectedScenes": []
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "불국사 창건 연대 이설",
+      "detail": "민족문화대백과 「경주 불국사」는 『삼국유사』의 751년 창건과, 석가탑 발견 문서에 따른 742년 착공 정정을 함께 적는다. 장면은 startYear 751로 두되 claim-anc-bulguksa-dispute로 742년 이설을 남겼다. 어느 한쪽으로 확정하지 않았다.",
+      "affectedScenes": [
+        "scene-anc-bulguksa-751"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "소국 측 인물 근거",
+      "detail": "감문국(231)·우산국(512) 장면에서 방어 측은 소국 자체만 참가자로 두었다. 내려받은 출처에 방어 측 개인의 이름과 행위가 없어 현장 인물을 세우지 않았다.",
+      "affectedScenes": [
+        "scene-anc-gammunguk-231",
+        "scene-anc-usanguk-512"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "사비성 포위의 신라 측 지휘관",
+      "detail": "민족문화대백과 「의자왕」은 사비성 포위를 '두 나라의 군대가 합류하여'라고만 적어 신라 측 지휘관의 사비성 현장 행위가 없다. 김유신은 황산벌 장면에만 현장 인물로 두었다.",
+      "affectedScenes": [
+        "scene-anc-sabi-660"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "이번 실행에서 장면화하지 않은 기존 카탈로그 사건",
+      "detail": "기존 카탈로그의 918년 이전 사건 가운데 event-encykorea-silla-attacks-baekje-167, event-encykorea-goguryeo-raids-silla-245, event-encykorea-silla-goguryeo-peace-248, event-encykorea-iseogoguk-destroyed-297, event-encykorea-yulryeong-promulgated-373, event-encykorea-silseong-hostage-392, event-nadang-war-671-676, event-samguk-tongil-676, event-balhae-renaming-713, event-balhae-deungju-raid(732)는 장면을 만들지 않았다. 사유는 (가) 출처 문면에 행위 장소가 없거나(167·245·248·373·392), (나) 여러 해에 걸친 전쟁·통일 서술이라 특정 지점 장면으로 바꾸기 어렵거나(671~676), (다) 무대가 한반도 밖(713 책봉·732 등주)이기 때문이다.",
+      "affectedScenes": []
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "국가유산청 계열 좌표 미시도",
+      "detail": "이번 실행에서는 국가유산청(khs.go.kr 계열) 지정문화유산 좌표 API를 요청하지 않았다. 같은 프로젝트의 앞선 실행 기록(existing-scenes.json missing)에 연결 시간 초과가 보고되어 있어, 접속 가능한 encykorea·위키백과·위키데이터로 대체했다. 부소산성·황룡사지·감은사지·불국사·청해진 유적의 기관 실측 좌표는 아직 비어 있다.",
+      "affectedScenes": [
+        "scene-anc-sabi-660",
+        "scene-anc-hwangnyongsa-tap-645",
+        "scene-anc-gameunsa-682",
+        "scene-anc-bulguksa-751",
+        "scene-anc-cheonghaejin-828"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "의자왕의 사비성-웅진성 이동",
+      "detail": "민족문화대백과 「의자왕」은 7월 12일 사비성 포위 뒤 왕이 7월 13일 웅진성으로 옮겼다가 항복했다고 적는다. 항복 지점(웅진성, 지금의 공주)의 좌표는 이번 실행에서 확보하지 않았고 장면은 사비성 포위 지점 하나로만 표시했다. 두 지점을 나누어 보여주려면 웅진성 좌표가 더 필요하다.",
+      "affectedScenes": [
+        "scene-anc-sabi-660"
+      ]
+    },
+    {
+      "job": "ancient_scenes",
+      "topic": "668년 평양성 함락 현장 인물",
+      "detail": "민족문화대백과 「보장왕」은 함락 뒤 왕이 당나라로 잡혀갔다고만 적고 성 안에서의 행위를 적지 않아 보장왕을 현장(on-site) 인물로 두지 않았다. 김인문·이세적 등 공격 측 지휘관은 이번에 내려받은 출처에 없어 참가자로 넣지 않았다(기존 카탈로그에는 「삼국통일」 항목 근거의 claim이 있다).",
+      "affectedScenes": [
+        "scene-anc-goguryeo-fall-668"
+      ]
+    }
+  ],
+  "collection": {
+    "task": "ancient_scenes",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788828070.2752192,
+    "resumeRequested": null,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "pid": 27116,
+    "sessionId": "b7cd5dc3-7097-471f-a37d-f78b623e71eb",
+    "lastEventUtc": 1788830278.1639295,
+    "exitCode": 0,
+    "seconds": 2208.3,
+    "resultSubtype": "success",
+    "isError": false,
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

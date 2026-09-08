@@ -1,0 +1,142 @@
+{
+ "task": "joseon_early_scenes",
+ "era": "1392-1591",
+ "updatedUtc": "2026-09-08T01:37:01Z",
+ "status": "COMPLETE - result.json + report.md written and independently audited (0 errors)",
+ "counts": {
+  "sources": 24,
+  "excerpts": 67,
+  "entities": 90,
+  "claims": 139,
+  "scenes": 22,
+  "missing": 10,
+  "rawFiles": 34
+ },
+ "checks": [
+  "sha256 of every cited raw file re-verified",
+  "every excerpt found verbatim in its raw file after HTML strip + whitespace normalisation",
+  "per-URL excerpt budget <= 25 whitespace words",
+  "every occurredIn/activeIn numeric year and interval bound appears in its cited excerpt (23/23 PASS)",
+  "no duplicate source/entity/claim/scene/excerpt ids; all references resolve",
+  "effects enabled only with evidence claims; fire disabled in all 22 scenes"
+ ],
+ "scenes": [
+  {
+   "id": "scene-je-jeong-mongju-1392",
+   "year": 1392,
+   "kind": "court"
+  },
+  {
+   "id": "scene-je-joseon-founding-1392",
+   "year": 1392,
+   "kind": "court"
+  },
+  {
+   "id": "scene-je-hanyang-cheondo-1394",
+   "year": 1394,
+   "kind": "assembly"
+  },
+  {
+   "id": "scene-je-gyeongbokgung-1395",
+   "year": 1395,
+   "kind": "construction"
+  },
+  {
+   "id": "scene-je-hanyang-doseong-1396",
+   "year": 1396,
+   "kind": "construction"
+  },
+  {
+   "id": "scene-je-honil-gangni-1402",
+   "year": 1402,
+   "kind": "publication"
+  },
+  {
+   "id": "scene-je-jujaso-1403",
+   "year": 1403,
+   "kind": "publication"
+  },
+  {
+   "id": "scene-je-daemado-chulhang-1419",
+   "year": 1419,
+   "kind": "naval"
+  },
+  {
+   "id": "scene-je-jagyeongnu-1434",
+   "year": 1434,
+   "kind": "construction"
+  },
+  {
+   "id": "scene-je-hunminjeongeum-changje-1443",
+   "year": 1443,
+   "kind": "publication"
+  },
+  {
+   "id": "scene-je-hunminjeongeum-haerye-1446",
+   "year": 1446,
+   "kind": "publication"
+  },
+  {
+   "id": "scene-je-yisiae-nan-1467",
+   "year": 1467,
+   "kind": "battle"
+  },
+  {
+   "id": "scene-je-gyeongguk-daejeon-1485",
+   "year": 1485,
+   "kind": "publication"
+  },
+  {
+   "id": "scene-je-muo-sahwa-1498",
+   "year": 1498,
+   "kind": "court"
+  },
+  {
+   "id": "scene-je-jungjong-banjeong-1506",
+   "year": 1506,
+   "kind": "assembly"
+  },
+  {
+   "id": "scene-je-sampo-waeran-busanpo-1510",
+   "year": 1510,
+   "kind": "battle"
+  },
+  {
+   "id": "scene-je-sampo-waeran-jepo-1510",
+   "year": 1510,
+   "kind": "siege"
+  },
+  {
+   "id": "scene-je-gimyo-sahwa-1519",
+   "year": 1519,
+   "kind": "court"
+  },
+  {
+   "id": "scene-je-baegundong-seowon-1543",
+   "year": 1543,
+   "kind": "construction"
+  },
+  {
+   "id": "scene-je-sosu-saeaek-1550",
+   "year": 1550,
+   "kind": "court"
+  },
+  {
+   "id": "scene-je-eulmyo-waebyeon-1555",
+   "year": 1555,
+   "kind": "siege"
+  },
+  {
+   "id": "scene-je-dosanseowon-1574",
+   "year": 1574,
+   "kind": "construction"
+  }
+ ],
+ "blocked": [
+  "khs.go.kr timed out",
+  "grandculture.net SSL WRONG_SIGNATURE_TYPE",
+  "contents.history.go.kr (NIKH) not requested per instructions",
+  "encykorea /Article/Search disallowed by robots, /Article/Keyword 404",
+  "wikidata /wiki/Special:EntityData disallowed by robots"
+ ]
+}

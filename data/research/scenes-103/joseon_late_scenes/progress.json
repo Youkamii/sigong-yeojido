@@ -1,0 +1,33 @@
+{
+ "job": "joseon_late_scenes",
+ "era": "1599-1875",
+ "status": "complete (citation repair applied)",
+ "updatedUtc": "2026-09-08T01:23:38Z",
+ "scenesWritten": 19,
+ "sources": 30,
+ "claims": 126,
+ "entities": 74,
+ "missing": 15,
+ "citationRepair": {
+  "reviewed": 6,
+  "alreadySupportedByIdeumhaeRule": [
+   "claim-jl-bj-time",
+   "claim-jl-hg-time"
+  ],
+  "repaired": [
+   "claim-jl-samjeondo-date -> claim-jl-samjeondo-year + claim-jl-samjeondo-day",
+   "claim-jl-by-date -> literal day claim, year kept on claim-jl-by-year"
+  ],
+  "excerptAdded": "ex-bj-1637",
+  "excerptShortened": "ex-bj-chulseong (4->3 words)",
+  "scenesLost": 0
+ },
+ "validation": "validate.py OK; importer rules (raw quotation 3 views, <=25 words/URL, verbatim-in-quote, numeric year support) all pass",
+ "outputs": [
+  "result.json",
+  "report.md",
+  "manifest.json",
+  "raw/",
+  "progress.json"
+ ]
+}

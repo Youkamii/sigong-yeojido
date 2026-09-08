@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 import shutil
 import sys
+from urllib.parse import unquote
 
 from import_location_research import markdown
 from import_pyongyang_identity import Text
@@ -24,6 +25,15 @@ ENTITY_ID_ALIASES = {
     'event-encykorea-haengju-daecheop-1593': 'event-khs-haengju',
 }
 
+def source_id_aliases(draft, data, collection, job):
+    aliases={}
+    for source in draft['sources']:
+        card=data/'sources'/(source['id'].removeprefix('src-')+'.md')
+        if card.exists():
+            meta,_=parse_front_matter(card.read_text(encoding='utf-8'))
+            if unquote(meta.get('resource','')).rstrip('/')!=unquote(source['url']).rstrip('/'):
+                aliases[source['id']]='src-'+collection+'-'+job+'-'+source['id'].removeprefix('src-')
+    return aliases
 def write(path, text):
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists() and path.read_text(encoding='utf-8') == text:
@@ -42,9 +52,15 @@ def main():
     job = args.research.name
     prefix = args.collection.replace('periods-', 'period')
     run = json.loads((args.research / 'run.json').read_text(encoding='utf-8'))
-    assert run['exitCode'] == 0 and not run['isError']
+    complete = run.get('exitCode') == 0 and not run.get('isError')
+    assert complete or (args.check_only and 'exitCode' not in run)
     assert run['modelsObserved'] == ['claude-opus-5'] and run['effort'] == 'max'
     draft = json.loads((args.research / 'result.json').read_text(encoding='utf-8'))
+    source_aliases=source_id_aliases(draft,args.data,args.collection,job)
+    for source in draft['sources']:
+        source['id']=source_aliases.get(source['id'],source['id'])
+    for claim in draft['claims']:
+        claim['sourceId']=source_aliases.get(claim['sourceId'],claim['sourceId'])
     adjustment_file = args.data / 'research' / args.collection / 'integration-adjustments.json'
     adjustments = json.loads(adjustment_file.read_text(encoding='utf-8')).get(job, {}) if adjustment_file.exists() else {}
     # The unpublished collector IDs refer to these already named AKS entities.
@@ -59,12 +75,12 @@ def main():
         if claim['id'] in ('claim-joseonfounding-part-taejong', 'claim-joseonfounding-part-gongyang'):
             claim['predicate'] = 'syj:relatedTo'
     manifest = json.loads((args.research / 'manifest.json').read_text(encoding='utf-8'))
-    downloads = {r['url']: r for r in manifest if r.get('httpStatus') == 200}
+    downloads = {unquote(r['url']).rstrip('/'): r for r in manifest if r.get('httpStatus') == 200}
     chunks, sources, by_source = {}, {}, defaultdict(list)
     files, checks = {}, []
     for source in draft['sources']:
         sid, url = source['id'], source['url']
-        record = downloads[url]
+        record = downloads[unquote(url).rstrip('/')]
         raw_path = (args.research / source['rawFile']).resolve()
         assert raw_path.is_relative_to(args.research.resolve())
         raw = raw_path.read_bytes()
@@ -101,7 +117,7 @@ def main():
         if card.exists():
             meta, _ = parse_front_matter(card.read_text(encoding='utf-8'))
             assert meta['id'] == sid
-            assert meta.get('resource', url).rstrip('/') == url.rstrip('/'), (sid, 'source URL mismatch')
+            assert unquote(meta.get('resource',url)).rstrip('/') == unquote(url).rstrip('/'), (sid, 'source URL mismatch')
         else:
             encyclopedia = 'encykorea.aks.ac.kr/' in url
             files[card] = markdown({'type':'Source', 'id':sid, 'label':source['title'],
@@ -164,8 +180,9 @@ def main():
               'rawFilesChecked':checks, 'missing':draft.get('missing',[]), 'collection':run,
               'downloadPerformedBy':'claude-opus-5 via its Bash tool', 'integrationPerformedBy':'Codex',
               'reviewedEntityIds':ids,
+              'reviewedSourceIds':source_aliases,
               'integrationAdjustments':adjustments,
-              'checkOnly':args.check_only}
+              'checkOnly':args.check_only, 'collectionComplete':complete}
     if not args.check_only:
         for path, text in files.items():
             write(path, text)

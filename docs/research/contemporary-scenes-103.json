@@ -1,0 +1,415 @@
+{
+  "job": "contemporary_scenes",
+  "sources": 33,
+  "excerpts": 76,
+  "claims": 127,
+  "entities": 62,
+  "rawFilesChecked": [
+    {
+      "source": "src-encykorea-incheon-landing",
+      "url": "https://encykorea.aks.ac.kr/Article/E0047085",
+      "sha256": "66a2a75e0e730ce4ad458942df3f72e17969e3d52fa6cc51c0742e03d98e111b",
+      "rawBytes": 152496,
+      "excerpts": 5,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-encykorea-jeon-taeil",
+      "url": "https://encykorea.aks.ac.kr/Article/E0068917",
+      "sha256": "f362dc5d847518ce920fb8e494512714b519870275b62a9e547d55699dc4162d",
+      "rawBytes": 90362,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-archives-exway",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/exway.do",
+      "sha256": "2656e4b708e655e227d45c0e98d553d2c2e5e0d62cb7715b473c9eed88a2a78d",
+      "rawBytes": 65059,
+      "excerpts": 4,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-archives-pohang-steel",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/pohangJecheol.do",
+      "sha256": "3d72e3a46ecddc646d129315373350dc4fee3f2d1aa30b7d5535c3289b0f6803",
+      "rawBytes": 84728,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-archives-subway",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/subway.do",
+      "sha256": "d90bf46b5a21b068db10179d973900a336804ad329e728549c8c74a81e4e5f07",
+      "rawBytes": 84546,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-kowiki-wolmido",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9B%94%EB%AF%B8%EB%8F%84",
+      "sha256": "8cb0f544b0bc180fd6985b926a6bd9aa2bce20f342041aa93784442f44488860",
+      "rawBytes": 661844,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-cheongnyangni",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EB%9F%89%EB%A6%AC%EC%97%AD",
+      "sha256": "2a65b3f979d8a15461c909da8a67c6271ba20ce44e65dc64c0472e14cf75b6bf",
+      "rawBytes": 627847,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-encykorea-jeju43",
+      "url": "https://encykorea.aks.ac.kr/Article/E0051439",
+      "sha256": "cd9118d0bfb993140e6102828876df0ad78780f4a3bb8bed612a7ec59264b68a",
+      "rawBytes": 110406,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-archives-jsa",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/jsa.do",
+      "sha256": "c1bb9c2a4bd6d58038da7508391f2a439a5cb26bc30d47b62716687c146d9590",
+      "rawBytes": 91858,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-archives-419",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/4_19.do",
+      "sha256": "6a33e47bf9ff5d22cd31d64247bbbe757329e028dca06b6df49a08d4c33cea4e",
+      "rawBytes": 88800,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-encykorea-buma",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024157",
+      "sha256": "2c00e9c44525eb04e9a780f2f1ffb89ad0d4b15e21d0bc9cdc290002382371eb",
+      "rawBytes": 106607,
+      "excerpts": 4,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-archives-518",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/5_18.do",
+      "sha256": "d04e35af18f6c121dbac0b50d8a710321f6546abb6614157bf1ee1700f616198",
+      "rawBytes": 90569,
+      "excerpts": 4,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-kowiki-panmunjom",
+      "url": "https://ko.wikipedia.org/wiki/%ED%8C%90%EB%AC%B8%EC%A0%90",
+      "sha256": "7d7edd93f8b1c76f22f1595cf2b0678f5155ce4b22ac8e968551634a79405094",
+      "rawBytes": 138907,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-archives-joseonchong",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/joseonChong.do",
+      "sha256": "3f80ccfeb3250391abb15442cce820c02a78e9ba69093368c7ce9f737105be15",
+      "rawBytes": 65781,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-archives-parliament",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/parliamentBldg.do",
+      "sha256": "d482b6aefd54ed2cf886cbfa27ef446b71db4f64d700c9841c68b6bf7bf9b090",
+      "rawBytes": 63095,
+      "excerpts": 4,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-archives-reunion",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/reunion.do",
+      "sha256": "f8dc56b304c5071dafc4ab1fdcea7121120f2a7b0aa5de512ae9d9a7478ad753",
+      "rawBytes": 64702,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-archives-intlsports",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/intlSports.do",
+      "sha256": "8877d6552233042b609e29294bbdf2ec88632c733858bb40eaf6dc2424a5f0e5",
+      "rawBytes": 68615,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-archives-expo",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/expo.do",
+      "sha256": "f50d7a25eddf45de7204c2652989deecd783fe562b7ef2c82f0c722767b327b2",
+      "rawBytes": 63208,
+      "excerpts": 3,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-archives-cheonggyecheon",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/cheonggyecheon.do",
+      "sha256": "eb8ddb4308c28593238a77880d2c2121a1c6f91d2a10bfbe25848c0a89e15d52",
+      "rawBytes": 81412,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-archives-satellite",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/artificalSatellite.do",
+      "sha256": "50082f23adf466075b2894e7b4bf1784ea99a770fb942505fb2000d0a5ad12a5",
+      "rawBytes": 64078,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-kowiki-gyeongbokgung-geo",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81",
+      "sha256": "81d032900dc44a5b5251fd6cca87b37d823ebc279397a9bf986d354a869d4fad",
+      "rawBytes": 542604,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-yeouido-park",
+      "url": "https://ko.wikipedia.org/wiki/%EC%97%AC%EC%9D%98%EB%8F%84%EA%B3%B5%EC%9B%90",
+      "sha256": "26dd73107c91d1fc6e2053acffa30ffd376160372b0a2d627e854626c5f291d3",
+      "rawBytes": 171507,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-olympic-stadium",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EC%98%AC%EB%A6%BC%ED%94%BD%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%9E%A5",
+      "sha256": "651554213197deafdc949b16c53e6bd8a8449bf3cdaf10e3a44fc1eecdfdce26",
+      "rawBytes": 372278,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-cheonggye-plaza",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EA%B3%84%EA%B4%91%EC%9E%A5",
+      "sha256": "74ba006f56dc9ae43ef4f01694f2ff23adbe5889ba4c5f2eb3f697c6e8c16a0e",
+      "rawBytes": 129991,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-assembly-building",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%20%EA%B5%AD%ED%9A%8C%EC%9D%98%EC%82%AC%EB%8B%B9",
+      "sha256": "7c063988aaf127dc8722b1e22666d75d15ea09f49b29611947f522e01bde292a",
+      "rawBytes": 178396,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-naro-space-center",
+      "url": "https://en.wikipedia.org/wiki/Naro%20Space%20Center",
+      "sha256": "1a608d859e91d4d522adf591c5efc23bbe52a2312227fe5eb232c1daa3fa33ee",
+      "rawBytes": 188598,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-archives-guro",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/gurogongdan.do",
+      "sha256": "d2d15e81f98e3ccf34f738150e902f9e63ba548bfb58770f3069fe4ecf41c6bb",
+      "rawBytes": 84597,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-archives-myeongdong",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/myeongdongCathedral.do",
+      "sha256": "ce867ad00b67871d30372e452081a03c1d6f9c564e60a3dfd76a58a9d872991d",
+      "rawBytes": 89766,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-archives-airport",
+      "url": "https://theme.archives.go.kr/next/koreaOfRecord/intlAirport.do",
+      "sha256": "76365a74d6a2c7d7b6b4a30d1f0d321c243b615a91641fde13e04145bd6320d1",
+      "rawBytes": 66179,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-koreakr-nuri",
+      "url": "https://www.korea.kr/special/policyCurationView.do?newsId=148899436",
+      "sha256": "c9471f2ba0d78fd608c38a3ce0601c7912bcc29ae2df04ef44825338488fd253",
+      "rawBytes": 177498,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-kowiki-guro-station",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EB%A1%9C%EC%97%AD",
+      "sha256": "f23db292c490d171241830770fd92f55d2d7525ad62ca0973ff195c3a3c01acb",
+      "rawBytes": 205437,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-myeongdong-cathedral",
+      "url": "https://ko.wikipedia.org/wiki/%EB%AA%85%EB%8F%99%EC%84%B1%EB%8B%B9",
+      "sha256": "f8acd4e2d20b476998b9a040dbc6991a62307b407280c82171ef1c3d128c2d56",
+      "rawBytes": 309113,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-incheon-airport",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B8%EC%B2%9C%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD",
+      "sha256": "f9a226791374eb97e9b2b169d547458bdd6d21aab03b8a5fd1ff6cb963e23e65",
+      "rawBytes": 1110528,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "topic": "서울 평화시장 좌표",
+      "detail": "전태일 분신 장소인 평화시장의 좌표를 담은 공공기관 페이지를 얻지 못했다(위키백과 '평화시장' 문서에 좌표 없음, nominatim은 robots 불허, 국가유산청 계열은 이전 실행에서 접속 불가). 인근 흥인지문 좌표로 대체하지 않았다.",
+      "affectedScenes": [
+        "scene-jeon-taeil-1970"
+      ]
+    },
+    {
+      "topic": "인천상륙작전 해면 좌표",
+      "detail": "상륙 함대가 있던 해면이나 상륙 해안(그린·레드·블루 비치)의 공공기관 좌표를 얻지 못해 위키백과 월미도 좌표를 area 기준으로만 썼다.",
+      "affectedScenes": [
+        "scene-incheon-landing-1950"
+      ]
+    },
+    {
+      "topic": "경부고속도로 준공식장",
+      "detail": "국가기록원 서술은 준공식이 열린 장소 이름을 적지 않는다. 그래서 대구 area anchor로만 배치했다.",
+      "affectedScenes": [
+        "scene-gyeongbu-expressway-1970"
+      ]
+    },
+    {
+      "topic": "포항제철소 실측 좌표",
+      "detail": "포항제철소 부지의 공공기관 좌표를 얻지 못했다(위키백과 '포항제철소' 문서 없음). 영일 area anchor로만 배치했다.",
+      "affectedScenes": [
+        "scene-pohang-steel-1973"
+      ]
+    },
+    {
+      "topic": "2018 판문점선언 남측 참석자",
+      "detail": "국가기록원 판문점 서술의 해당 문장은 김정은 국무위원장만 이름을 적는다. 문재인 대통령의 이 행위 현장 근거를 같은 발췌에서 얻지 못해 참가자로 세우지 않았다.",
+      "affectedScenes": [
+        "scene-panmunjom-summit-2018"
+      ]
+    },
+    {
+      "topic": "부산대학교 좌표",
+      "detail": "부마민주항쟁 시작 지점(부산대 구내 도서관 앞)의 공공기관 좌표를 얻지 못해 부산 area anchor로만 배치했다.",
+      "affectedScenes": [
+        "scene-buma-busan-1979"
+      ]
+    },
+    {
+      "topic": "마산 중앙부두 좌표",
+      "detail": "김주열 시신이 발견된 마산 중앙부두 앞바다의 좌표를 얻지 못해 마산 area anchor를 썼다. 바다 지점을 육지 중심으로 옮겨 표시하지 않도록 medium은 land, precision은 area로 두었다.",
+      "affectedScenes": [
+        "scene-masan-419-1960"
+      ]
+    },
+    {
+      "topic": "1953 정전협정 조인식장 좌표",
+      "detail": "조인식이 열린 판문점 목조 건물의 위치를 특정한 공공기관 좌표를 얻지 못해 위키백과 판문점 좌표를 area로 썼다.",
+      "affectedScenes": [
+        "scene-panmunjom-armistice-1953"
+      ]
+    },
+    {
+      "topic": "1948년 제헌국회 개원 날짜",
+      "detail": "국가기록원 국회의사당 서술은 '이곳에서 제헌국회가 개원되었는데'라고만 적어 개원 날짜가 문장에 없다. 같은 기관의 조선총독부 청사 문서에는 1948년 5월 31일 개의가 적혀 있으나 발췌 낱말 한도 때문에 인용하지 못했다.",
+      "affectedScenes": [
+        "scene-rok-founding-1948"
+      ]
+    },
+    {
+      "topic": "2002 한일월드컵 장소",
+      "detail": "국가기록원 '올림픽과 월드컵' 서술은 개최지를 '한국과 일본'과 '거리'로만 적고 경기장 이름을 밝히지 않는다. 거리응원 장면을 특정 좌표에 놓을 근거가 없어 이번 장면 목록에서 뺐다.",
+      "affectedScenes": []
+    },
+    {
+      "topic": "6·25전쟁 중 중앙청 방화 연도",
+      "detail": "조선총독부 청사 문서는 '북한군은 퇴각하면서 중앙청에 불을 질렀는데'라고만 적고 연도를 밝히지 않는다. 연도를 추정해 화재 장면을 만들지 않았다.",
+      "affectedScenes": []
+    },
+    {
+      "topic": "2021년 누리호 발사 장소 문장",
+      "detail": "정책브리핑 페이지의 2021년 1차 발사 서술에는 발사 장소가 적혀 있지 않다. 같은 페이지의 2018년 시험발사체 문장이 밝힌 '전남 고흥군 나로우주센터'를 근거로 배치하고 그 한계를 좌표 설명에 적었다.",
+      "affectedScenes": [
+        "scene-nuri-launch-2021"
+      ]
+    },
+    {
+      "topic": "구로공단 준공식장 좌표",
+      "detail": "'한국 수출산업공단본부 광장'의 좌표를 얻지 못해 같은 구로동의 구로역 좌표를 area 기준으로 썼다.",
+      "affectedScenes": [
+        "scene-guro-complex-1967"
+      ]
+    },
+    {
+      "topic": "1987년 6월항쟁 전국 국면",
+      "detail": "이번에 내려받은 국가기록원 명동성당 서술은 명동성당의 역할만 적는다. 서울 시청 앞·전국 도시의 6월항쟁 집회 장소와 날짜를 담은 기관 자료는 확보하지 못했다.",
+      "affectedScenes": [
+        "scene-myeongdong-1987"
+      ]
+    },
+    {
+      "topic": "2022년 누리호 2차 발사",
+      "detail": "정책브리핑 해당 페이지는 2022년 4월까지 운영된 자료라 2022년 6월 21일 2차 발사 성공을 담고 있지 않다. 2022년 이후 사건은 이번 범위에서 근거를 갖춘 장면으로 만들지 못했다.",
+      "affectedScenes": []
+    }
+  ],
+  "collection": {
+    "task": "contemporary_scenes",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788830347.3483694,
+    "resumeRequested": "cc6807e9-2c80-45c1-a16f-ff7867a7763f",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "pid": 8208,
+    "sessionId": "cc6807e9-2c80-45c1-a16f-ff7867a7763f",
+    "lastEventUtc": 1788830490.5221796,
+    "exitCode": 0,
+    "seconds": 143.6,
+    "resultSubtype": "success",
+    "isError": false,
+    "permissionDenials": [
+      {
+        "tool_name": "Read",
+        "tool_use_id": "toolu_01DVtRMPqEAMMmT14zLvRMuk",
+        "tool_input": {
+          "file_path": "C:\\Users\\gkfkd\\Git\\sigong-yeojido\\scripts\\import_period_research.py",
+          "offset": 122,
+          "limit": 32
+        }
+      }
+    ]
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

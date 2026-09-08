@@ -1,0 +1,61 @@
+{
+ "task": "harbors_and_presence",
+ "sessionNote": "reboot 후 새 CLI 세션. 이전 세션 대화는 복구 불가(--resume 실패). recovered-activity.json 확인 결과 이전 세션은 파일 목록 확인 단계까지만 진행, 다운로드 없음.",
+ "startedUtc": 1788828939.6496835,
+ "downloadsDone": [
+  "encykorea E0004030 고하도",
+  "encykorea E0004032 고하도 이충무공 유적",
+  "encykorea E0061677 한산도 이충무공 유적",
+  "encykorea E0013958 당항포해전",
+  "encykorea E0036032 어영담",
+  "encykorea E0012716 노량해전",
+  "encykorea E0044900 이순신",
+  "encykorea E0061674 한산도",
+  "encykorea E0003703 고성군",
+  "wikidata Q12584477 고하도",
+  "wikidata Q12625999/Q16183858 회화면/동해면",
+  "wikidata Q12590340/Q626283 (좌표 없음)",
+  "kowiki 고하도/제승당/한산도/정공단/수안역/노량해협/관음포/당항포해전",
+  "enwiki Namhae Bridge/Battle of Danghangpo",
+  "busan.grandculture GC04201590 부산진성 터",
+  "busan.grandculture GC04203418 동래읍성지",
+  "opentopodata mapzen(당항포)/gebco2020(노량)"
+ ],
+ "keyFindings": [
+  "고하도 좌표: encykorea 34°77′ 오기 유지, wikidata Q12584477(GNS 출처) 34°46'11\"N/126°22'6\"E 별도 지리 앵커",
+  "한산도 본영 위치: 한산도 북서부 해안선 깊숙한 곳(백과), 제승당 kowiki 34.79417/128.47222",
+  "부산진성 임진왜란 이전 위치: 증산~좌천1동 정공단 사이(부산역사문화대전), 정공단 kowiki 35.135083/129.053778",
+  "조선 전기 동래읍성: 동래시장 중심 수안동·복천동·낙민동, 수안역 kowiki 35.201803/129.083833",
+  "노량해전 진린 현장 행동 확보(서로 위급함을 구하며 독려), 어영담 당항포 근해 격파 문장 확보"
+ ],
+ "nextSteps": [
+  "report.md 작성"
+ ],
+ "updatedUtc": 1788830645.7821443,
+ "resultWritten": true,
+ "resultSummary": {
+  "sources": 24,
+  "entities": 28,
+  "claims": 103,
+  "scenes": 8,
+  "missing": 11
+ },
+ "scenes": [
+  "scene-busanjin-1592(refine)",
+  "scene-dongnae-1592(refine)",
+  "scene-hansando-honyeong-1593(refine)",
+  "scene-syj103-hansando-gunyeong-1593-1597(new interval)",
+  "scene-danghangpo-2-1594(refine)",
+  "scene-gohado-jin-1597(refine)",
+  "scene-syj103-gohado-jujun-1597-1598(new interval)",
+  "scene-noryang-1598(refine)"
+ ],
+ "landCheck": "mapzen 조회: 한산도 유적 +18 m, 정공단 +16 m, 수안역 +12 m, 고하도 +57 m (모두 뭍)",
+ "reportWritten": true,
+ "citationRepair": {
+  "trigger": "integration-review.json / claim-syj103-hsg-interval",
+  "fix": "time 객체를 1593·1597 두 연도 claim으로 분리, ex-hy-command→ex-hy-leave(1597 포함) 교체, 장면 dateClaimIds 두 건 인용",
+  "verified": "verify_importer.py problems=0",
+  "sceneSpanKept": "1593-1597"
+ }
+}
