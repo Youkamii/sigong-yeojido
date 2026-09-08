@@ -130,7 +130,8 @@ for scene in scenes:
     point=Point(place['lon'],place['lat'])
     polygon=min(coast.geoms,key=lambda p:p.distance(point))
     if place['precision']!='area':
-        if polygon.area>.0005 or polygon.distance(point)>.001:continue
+        if polygon.covers(point) and polygon.area>.0005:continue
+        if polygon.distance(point)>.02:continue
         if not polygon.covers(point):place['displayPrecision']='area'
     if polygon.distance(point)>.02:continue
     if polygon.area>.1:
@@ -144,14 +145,15 @@ for scene in scenes:
                 place['displayBasis']='지역 기준 추정 배치. 고정된 옛 해안선과 원자료 지점의 차이 때문에 가까운 육지 쪽 표시점을 사용합니다. 원자료 좌표는 따로 보존하며 실제 현장 지점의 수정이 아닙니다.'
                 place['displaySource']=outline['properties']['source']
         continue
-    center=point if polygon.covers(point) else polygon.representative_point()
+    interior=polygon.buffer(-.0001)
+    center=point if polygon.covers(point) else nearest_points(point,interior)[1] if not interior.is_empty else polygon.representative_point()
     place['displayCoordinates']=[center.x,center.y]
     b=polygon.bounds
     merc=lambda lat:math.log(math.tan(math.pi/4+math.radians(lat)/2))
     world_scale=1600/(merc(43.5)-merc(33))
     width=math.radians(b[2]-b[0])*world_scale;height=(merc(b[3])-merc(b[1]))*world_scale
     place['displayScale']=max(.002,min(1,min(width,height)/65))
-    place['displayBasis']='원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.' if polygon.covers(point) else '지명 자료의 섬 대표 좌표 가까이에 있는 HGIS 해안 윤곽 안에 설명용 장면을 배치. 원문의 좌표는 보존하며 본영 건물의 실측 위치를 뜻하지 않음.'
+    place['displayBasis']='원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.' if polygon.covers(point) else '고정된 옛 해안선 안의 가까운 표시점에 설명용 장면을 배치합니다. 해안선 단순화와 이후 매립으로 현재 지형과 차이가 있으며, 원자료 좌표는 별도로 보존합니다. 실제 현장 지점을 바꾸는 근거가 아닙니다.'
     place['displaySource']=outline['properties']['source']
 
 output={'scenes':scenes,'sources':list(sources.values()),'missing':missing,
