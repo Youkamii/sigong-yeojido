@@ -83,6 +83,13 @@ export function composeHistoricalEvent(event,position,world){
       }
       if(shore)for(let i=0;i<6;i++)model(modern?'human':'spearman',shore.dx+(i%3)*2,shore.dz+Math.floor(i/3)*2,1.2,{medium:'land',side:'naval',action:'walking'});
     }
+  }else if(event.archetype==='settlement'){
+    model(modern?'civic_hall':'palace',0,-7,1.5,{primary:true});
+    if(!event.compact){
+      for(const [x,z] of [[-22,-10],[22,-8],[-22,13],[20,17]])model('house',x,z,1.2,{path:true});
+      model('market',0,16,1.4);model('handcart',10,13,1.1);
+      for(let i=0;i<12;i++)model('human',-18+(i%6)*7,3+Math.floor(i/6)*9,1.5,{action:i%3?'walking':'working'});
+    }
   }else if(launch){
     model('rocket',0,0,1.7,{primary:true});
     if(!event.compact){model('civic_hall',18,-14,1);model('car',16,6,1.2);
