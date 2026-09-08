@@ -1,0 +1,596 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com/",
+  "checks": [
+    {
+      "name": "The served API contains the new actual Opus claims",
+      "pass": true,
+      "detail": {
+        "newClaims": 362,
+        "claims": 3022,
+        "error": "",
+        "packets": 218
+      }
+    },
+    {
+      "name": "Sparse sample years gain local activities beyond the capital",
+      "pass": true,
+      "detail": [
+        {
+          "year": -500,
+          "locatedEvents": 0,
+          "namedPeople": 0
+        },
+        {
+          "year": 300,
+          "locatedEvents": 2,
+          "namedPeople": 0
+        },
+        {
+          "year": 700,
+          "locatedEvents": 2,
+          "namedPeople": 0
+        },
+        {
+          "year": 1000,
+          "locatedEvents": 2,
+          "namedPeople": 0
+        },
+        {
+          "year": 1200,
+          "locatedEvents": 2,
+          "namedPeople": 1
+        },
+        {
+          "year": 1400,
+          "locatedEvents": 1,
+          "namedPeople": 0
+        },
+        {
+          "year": 1500,
+          "locatedEvents": 3,
+          "namedPeople": 0
+        },
+        {
+          "year": 1700,
+          "locatedEvents": 2,
+          "namedPeople": 0
+        },
+        {
+          "year": 1800,
+          "locatedEvents": 3,
+          "namedPeople": 0
+        },
+        {
+          "year": 1919,
+          "locatedEvents": 6,
+          "namedPeople": 6
+        },
+        {
+          "year": 1950,
+          "locatedEvents": 3,
+          "namedPeople": 0
+        }
+      ]
+    },
+    {
+      "name": "Byeokgolje coordinates remain regional references",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scene-jl2-jepo-waegwan-1423-1510 can be selected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Jepo shows local residence and trade",
+      "pass": true,
+      "detail": {
+        "year": 1500,
+        "kind": "market",
+        "place": {
+          "label": "제포(내이포) · 웅천",
+          "medium": "land",
+          "precision": "area",
+          "lon": 128.5951,
+          "lat": 35.2236,
+          "anchorPlaceId": "hgis-admin-145022",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-jepo-place"
+          ],
+          "coordinateSourceIds": [],
+          "coordinateNote": "지역 기준 표시. 백과사전은 제포를 '경상남도 창원시 진해구 웅천동에 있었던 포구'라고만 적고 좌표를 주지 않는다. existing-place-anchors.json의 '창원'(hgis-admin-145022) 구역 표시 중심을 지역 앵커로 쓴다. 웅천동 포구 지점이 아니라 같은 시 단위 표시점이며, 실제 제포는 이 점의 남동쪽 해안에 있었다. 위치 참고 표기: 제포(내이포) · 웅천 (지금의 창원시 진해구 웅천동)",
+          "coordinateClaimIds": [],
+          "coordinates": [
+            128.59510797300004,
+            35.22363419000004
+          ]
+        },
+        "people": [],
+        "sides": [
+          {
+            "entityId": "polity-jl2-jepo-hangeo-waein",
+            "role": "제포 왜관에 상주한 왜인 거주민(왜인 측), 500여 호로 늘어남",
+            "side": "civilian",
+            "presence": "on-site",
+            "claimIds": [
+              "claim-scenes-122-joseon_localities-jl2-jepo-participant",
+              "claim-scenes-122-joseon_localities-jl2-jepo-population"
+            ],
+            "label": "제포에 상주하던 왜인 거주민 (1423~1510년 제포 왜관) · 집단 행위자"
+          }
+        ],
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "ships": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "attack": {
+            "enabled": false,
+            "claimIds": []
+          }
+        },
+        "invaderModels": 0,
+        "dropped": []
+      }
+    },
+    {
+      "name": "Historical map labels omit modern postal districts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scene-jl2-tongjeyeong-duryongpo-1603-1895 can be selected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A founding officer does not remain at the naval office in 1700",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scene-jl2-bunwonri-1752-1883 can be selected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Bunwon is a working pottery scene",
+      "pass": true,
+      "detail": {
+        "year": 1800,
+        "kind": "kiln",
+        "place": {
+          "label": "광주 분원리 관요",
+          "medium": "land",
+          "precision": "area",
+          "lon": 127.31953,
+          "lat": 37.49979,
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-bunwon-place"
+          ],
+          "coordinateSourceIds": [
+            "src-jl2-wd-Q13999938"
+          ],
+          "coordinateNote": "백과사전은 분원이 고정된 자리를 '경기도 광주군 남종면 분원리'라고만 적고 좌표를 주지 않는다. 이번에 내려받은 위키데이터 Q13999938(남종면)의 좌표 위치(P625)를 면 단위 표시점으로 썼다. 분원리 가마터의 발굴 좌표가 아니며, 시 단위 중심점 대신 해당 면의 표시점을 골랐다. 위치 참고 표기: 경기 광주 남종면 분원리 일대",
+          "coordinateClaimIds": [
+            "claim-scenes-122-joseon_localities-jl2-bunwon-coord"
+          ],
+          "coordinates": [
+            127.31953,
+            37.49979
+          ]
+        },
+        "people": [],
+        "sides": [],
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "ships": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "attack": {
+            "enabled": false,
+            "claimIds": []
+          }
+        },
+        "invaderModels": 0,
+        "dropped": []
+      }
+    },
+    {
+      "name": "Mandongmyo does not backdate the 1844 rite to 1800",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scene-syj122-hangpaduri-1271-1273 can be selected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The 1271 fortress does not show the 1273 attacking force",
+      "pass": true,
+      "detail": {
+        "year": 1271,
+        "kind": "siege",
+        "place": {
+          "label": "제주 항파두리성",
+          "medium": "land",
+          "precision": "site",
+          "lon": 126.4075,
+          "lat": 33.4525,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hpd-place"
+          ],
+          "coordinateSourceIds": [
+            "src-syj122-kowiki-hangpaduri"
+          ],
+          "coordinateNote": "이번에 내려받은 위키백과 「제주 항파두리 항몽 유적」 문서 머리의 표시 좌표(33.45250; 126.40750)다. 사적으로 지정된 유적 구역을 가리키는 표시점이며 내성·외성 전체 범위가 아니다. 위치 참고 표기: 제주 항파두리성 (제주시 애월읍 고성리)",
+          "coordinateClaimIds": [],
+          "coordinates": [
+            126.4075,
+            33.4525
+          ]
+        },
+        "people": [
+          "person-syj122-gimtongjeong"
+        ],
+        "sides": [
+          {
+            "entityId": "polity-encykorea-sambyeolcho",
+            "role": "항파두리성에 자리 잡은 삼별초 군사 조직",
+            "side": "defender",
+            "presence": "on-site",
+            "claimIds": [
+              "claim-scenes-122-early_localities-syj122-hpd-sambyeolcho"
+            ],
+            "label": "삼별초 (군사 조직)"
+          }
+        ],
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "ships": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "attack": {
+            "enabled": false,
+            "claimIds": [
+              "claim-scenes-122-early_localities-syj122-hpd-yeomong"
+            ],
+            "startYear": 1273,
+            "endYear": 1273
+          }
+        },
+        "invaderModels": 0,
+        "dropped": []
+      }
+    },
+    {
+      "name": "scene-syj122-hangpaduri-1271-1273 can be selected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The attacking force appears in its documented year",
+      "pass": true,
+      "detail": {
+        "year": 1273,
+        "kind": "siege",
+        "place": {
+          "label": "제주 항파두리성",
+          "medium": "land",
+          "precision": "site",
+          "lon": 126.4075,
+          "lat": 33.4525,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hpd-place"
+          ],
+          "coordinateSourceIds": [
+            "src-syj122-kowiki-hangpaduri"
+          ],
+          "coordinateNote": "이번에 내려받은 위키백과 「제주 항파두리 항몽 유적」 문서 머리의 표시 좌표(33.45250; 126.40750)다. 사적으로 지정된 유적 구역을 가리키는 표시점이며 내성·외성 전체 범위가 아니다. 위치 참고 표기: 제주 항파두리성 (제주시 애월읍 고성리)",
+          "coordinateClaimIds": [],
+          "coordinates": [
+            126.4075,
+            33.4525
+          ]
+        },
+        "people": [
+          "person-syj122-gimtongjeong"
+        ],
+        "sides": [
+          {
+            "entityId": "polity-encykorea-sambyeolcho",
+            "role": "항파두리성에 자리 잡은 삼별초 군사 조직",
+            "side": "defender",
+            "presence": "on-site",
+            "claimIds": [
+              "claim-scenes-122-early_localities-syj122-hpd-sambyeolcho"
+            ],
+            "label": "삼별초 (군사 조직)"
+          },
+          {
+            "entityId": "polity-syj122-yeomong-force-1273",
+            "role": "1273년 4월 항파두리성을 공격한 여몽연합군",
+            "side": "invader",
+            "presence": "on-site",
+            "claimIds": [
+              "claim-scenes-122-early_localities-syj122-hpd-yeomong"
+            ],
+            "startYear": 1273,
+            "endYear": 1273,
+            "label": "항파두리성을 공격한 여몽연합군 (1273)"
+          }
+        ],
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "ships": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "attack": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-122-early_localities-syj122-hpd-yeomong"
+            ],
+            "startYear": 1273,
+            "endYear": 1273
+          }
+        },
+        "invaderModels": 10,
+        "dropped": []
+      }
+    },
+    {
+      "name": "scene-mod-dongnip-sinmun-1896 can be selected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The newspaper continues after Seo Jae-pil leaves",
+      "pass": true,
+      "detail": {
+        "year": 1899,
+        "kind": "publication",
+        "place": {
+          "label": "서울 정동",
+          "medium": "land",
+          "precision": "area",
+          "lon": 126.97805555556,
+          "lat": 37.566666666667,
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-dongnip-place"
+          ],
+          "coordinateSourceIds": [
+            "src-kowiki-seoul"
+          ],
+          "coordinateNote": "출처는 사옥을 '정동에 있는 정부 소유의 건물'까지만 적어 지점을 특정할 수 없다. 좌표는 이번에 내려받은 한국어 위키백과 '서울특별시' 문서(raw/kowiki-seoul.html)의 지도 틀 중심값(data-lat 37.566666666667, data-lon 126.97805555556)이며 서울 도심을 대표하는 표시점이다. 한국어 위키백과 '정동 (서울특별시)' 문서에는 좌표 표시가 없어 동 단위 좌표를 얻지 못했다. 위치 참고 표기: 서울 정동 (독립신문사 사옥)",
+          "coordinateClaimIds": [],
+          "coordinates": [
+            126.97805555556,
+            37.566666666667
+          ]
+        },
+        "people": [],
+        "sides": [],
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "ships": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "attack": {
+            "enabled": false,
+            "claimIds": []
+          }
+        },
+        "invaderModels": 0,
+        "dropped": []
+      }
+    },
+    {
+      "name": "scene-mod-seoul-station-1925 can be selected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The old station uses its dated name and a regional coordinate",
+      "pass": true,
+      "detail": {
+        "year": 1925,
+        "kind": "construction",
+        "place": {
+          "label": "경성역",
+          "medium": "land",
+          "precision": "area",
+          "lon": 126.97083,
+          "lat": 37.55472,
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-seoulstation-place"
+          ],
+          "coordinateSourceIds": [
+            "src-kowiki-seoulyeok"
+          ],
+          "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '서울역' 문서(raw/kowiki-seoulyeok.html)의 geo 값 '37.55472; 126.97083'이다. 이 값이 가리키는 것은 현재의 서울역이며, 1925년 준공된 역사 건물이 이 점과 정확히 같은 자리인지는 이 조사의 출처로 따로 확인하지 못했다. 위치 참고 표기: 서울역 (1925년 준공한 역사)",
+          "coordinateClaimIds": [],
+          "coordinates": [
+            126.97083,
+            37.55472
+          ]
+        },
+        "people": [],
+        "sides": [],
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "ships": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "attack": {
+            "enabled": false,
+            "claimIds": []
+          }
+        },
+        "invaderModels": 0,
+        "dropped": []
+      }
+    },
+    {
+      "name": "1270 reuses the same evidenced place coordinate",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "2018 reuses the same evidenced place coordinate",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "scene-syj122-buinsa-1232 can be selected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Buinsa uses an area reference after the temple relocation",
+      "pass": true,
+      "detail": {
+        "year": 1232,
+        "kind": "fire",
+        "place": {
+          "label": "팔공산 부인사",
+          "medium": "land",
+          "precision": "area",
+          "lon": 128.67306,
+          "lat": 35.99417,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-buinsa1232-place"
+          ],
+          "coordinateSourceIds": [
+            "src-syj122-kowiki-buinsa"
+          ],
+          "coordinateNote": "현재 부인사는 원터에서 서북쪽 약 400m 옮겨졌다. 이 좌표는 사찰 일대의 참고점이며 1232년 화재 현장 좌표가 아니다. 위치 참고 표기: 팔공산 부인사 (대구광역시 동구)",
+          "coordinateClaimIds": [],
+          "coordinates": [
+            128.67306,
+            35.99417
+          ]
+        },
+        "people": [],
+        "sides": [
+          {
+            "entityId": "polity-syj122-mongol-army-1232",
+            "role": "1232년 침입군 (출처에 지휘관·부대명 없음)",
+            "side": "invader",
+            "presence": "on-site",
+            "claimIds": [
+              "claim-scenes-122-early_localities-syj122-buinsa1232-mongol"
+            ],
+            "label": "1232년 몽골 침입군 (부인사 경판 소실 기사)"
+          }
+        ],
+        "effects": {
+          "fire": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-122-early_localities-syj122-buinsa1232-burn"
+            ]
+          },
+          "ships": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "attack": {
+            "enabled": false,
+            "claimIds": []
+          }
+        },
+        "invaderModels": 0,
+        "dropped": []
+      }
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "coverage": [
+    {
+      "year": -500,
+      "locatedEvents": 0,
+      "namedPeople": 0
+    },
+    {
+      "year": 300,
+      "locatedEvents": 2,
+      "namedPeople": 0
+    },
+    {
+      "year": 700,
+      "locatedEvents": 2,
+      "namedPeople": 0
+    },
+    {
+      "year": 1000,
+      "locatedEvents": 2,
+      "namedPeople": 0
+    },
+    {
+      "year": 1200,
+      "locatedEvents": 2,
+      "namedPeople": 1
+    },
+    {
+      "year": 1400,
+      "locatedEvents": 1,
+      "namedPeople": 0
+    },
+    {
+      "year": 1500,
+      "locatedEvents": 3,
+      "namedPeople": 0
+    },
+    {
+      "year": 1700,
+      "locatedEvents": 2,
+      "namedPeople": 0
+    },
+    {
+      "year": 1800,
+      "locatedEvents": 3,
+      "namedPeople": 0
+    },
+    {
+      "year": 1919,
+      "locatedEvents": 6,
+      "namedPeople": 6
+    },
+    {
+      "year": 1950,
+      "locatedEvents": 3,
+      "namedPeople": 0
+    }
+  ]
+}
