@@ -146,7 +146,13 @@ export class Chronicle {
     yearInput.onchange=goYear;
     yearInput.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();goYear();}};
     controls.querySelector('[data-go-year]').onclick=goYear;
-    controls.querySelector('[type=range]').oninput=e=>this.chooseYear(+e.target.value);
+    const slider=controls.querySelector('[type=range]');
+    slider.oninput=e=>{
+      this.stopPlay();clearTimeout(this.scrubTimer);this.pendingYear=+e.target.value;
+      yearInput.value=this.pendingYear;this.timeline?.setYear(this.pendingYear);
+      this.scrubTimer=setTimeout(()=>this.finishScrub(),120);
+    };
+    slider.onchange=()=>this.finishScrub();
     controls.querySelector('select').onchange=e=>{this.span=+e.target.value;this.render();};
     controls.querySelector('[data-previous]').onclick=()=>this.chooseYear(this.context?.previous);
     controls.querySelector('[data-next]').onclick=()=>this.chooseYear(this.context?.next);
@@ -162,10 +168,12 @@ export class Chronicle {
     this.render();
   }
   chooseYear(year){
+    clearTimeout(this.scrubTimer);this.pendingYear=null;
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
     if(year===0)year=this.year<0?1:-1;
     this.callbacks.year(year);
   }
+  finishScrub(){const year=this.pendingYear;clearTimeout(this.scrubTimer);this.pendingYear=null;if(year!==this.year)this.chooseYear(year);}
   setYear(year){this.year=year;this.render();}
   stopPlay(){clearInterval(this.timer);this.timer=null;this.controls.querySelector('[data-play]').textContent='▶ 재생';}
   togglePlay(){

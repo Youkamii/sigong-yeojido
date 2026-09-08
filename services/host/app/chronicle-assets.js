@@ -72,6 +72,8 @@ export class ChronicleAssets{
     return result;
   }
   buildForest(occupied,scenes=[]){
+    const forestKey=JSON.stringify([occupied.map(o=>[o.x,o.z,o.radius]),scenes,this.scenery.paths.key]);
+    if(this.forestKey===forestKey)return;
     const group=new THREE.Group();group.name='peninsula-woods';
     const b=this.world.bounds,candidates=this.treeCandidates||[];
     const cells=new Map(),cellSize=1.5;
@@ -91,22 +93,33 @@ export class ChronicleAssets{
     }
     this.treeCandidates=candidates;
     const treeScale=p=>Math.min(1,...scenes.filter(s=>Math.hypot(p.x-s.x,p.z-s.z)<Math.max(12,90*s.scale)).map(s=>s.scale));
-    const positions=candidates.filter(p=>occupied.every(o=>Math.hypot(p.x-o.x,p.z-o.z)>=o.radius+.8*treeScale(p))&&!this.scenery.nearPath?.(p.x,p.z,1.1));
-    for(const p of positions)p.treeScale=treeScale(p);
+    const positions=candidates.filter(p=>{
+      p.treeScale=treeScale(p);
+      return occupied.every(o=>(p.x-o.x)**2+(p.z-o.z)**2>=(o.radius+.8*p.treeScale)**2)&&!this.scenery.nearPath?.(p.x,p.z,1.1);
+    });
+    const treeCells=new Map(),treeCellSize=3;
+    const register=p=>{const key=Math.floor(p.x/treeCellSize)+':'+Math.floor(p.z/treeCellSize);if(!treeCells.has(key))treeCells.set(key,[]);treeCells.get(key).push(p);};
+    const crowded=(x,z,radius)=>{
+      const cx=Math.floor(x/treeCellSize),cz=Math.floor(z/treeCellSize),reach=Math.ceil(radius/treeCellSize);
+      for(let dx=-reach;dx<=reach;dx++)for(let dz=-reach;dz<=reach;dz++)
+        if((treeCells.get((cx+dx)+':'+(cz+dz))||[]).some(p=>(x-p.x)**2+(z-p.z)**2<radius**2))return true;
+      return false;
+    };
+    positions.forEach(register);
     for(const site of this.scenery.sites)for(let i=0;i<36;i++){
       const seed=stableSeed(site.id+':edge:'+i),angle=(seed%1000)/1000*Math.PI*2,radius=12+(Math.floor(seed/1000)%1000)/100;
       const x=site.x+Math.cos(angle)*radius,z=site.z+Math.sin(angle)*radius;
       if(seed%3||!this.world.contains(x,z,1)||this.world.ridgeAt(x,z)>.8||this.scenery.nearPath?.(x,z,1.1)
-        ||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+.8)||positions.some(p=>Math.hypot(x-p.x,z-p.z)<1.45))continue;
-      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=treeScale(p);positions.push(p);
+        ||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+.8)||crowded(x,z,1.45))continue;
+      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=treeScale(p);positions.push(p);register(p);
     }
     for(const scene of scenes.filter(s=>s.scale<.5))for(let i=0;i<180;i++){
       const seed=stableSeed(scene.id+':grove:'+i),angle=(seed%10000)/10000*Math.PI*2;
       const radius=(27+(Math.floor(seed/10000)%1000)/1000*48)*scene.scale;
       const x=scene.x+Math.cos(angle)*radius,z=scene.z+Math.sin(angle)*radius;
       if(!this.world.contains(x,z,.3*scene.scale)||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+1.4*scene.scale))continue;
-      if(positions.some(p=>Math.hypot(x-p.x,z-p.z)<2.8*scene.scale))continue;
-      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=scene.scale;positions.push(p);
+      if(crowded(x,z,2.8*scene.scale))continue;
+      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=scene.scale;positions.push(p);register(p);
     }
     const geometry=makeTreeGeometry(),material=makeSurface({preset:'MAT_FOLIAGE',vertexColors:true,color:WHITE},{wind:.9,windAxis:'y',key:'tree'});
     const regions=new Map();
@@ -126,7 +139,7 @@ export class ChronicleAssets{
     }
     if(!positions.length){geometry.dispose();material.dispose();}
     if(this.forest){this.engine.remove(this.forest);release(this.forest);}
-    this.forest=group;this.forestPositions=positions;this.engine.add(group);
+    this.forest=group;this.forestPositions=positions;this.engine.add(group);this.forestKey=forestKey;
   }
   rebuild(plan){
     const next=new THREE.Group();next.name='chronicle-assets';
