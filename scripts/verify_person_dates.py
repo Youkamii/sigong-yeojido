@@ -18,6 +18,7 @@ with sync_playwright() as pw:
         page.wait_for_function('!document.querySelector("#chronicle [role=status]")&&!window.__sigong.engine.fly')
     try:
         page.goto(a.base,wait_until='domcontentloaded');page.locator('#enter').click()
+        page.wait_for_function('window.__sigong?.chronicleScene.assets?.revision>0')
         page.wait_for_function('window.__sigong?.chronicleScene.chronicle.data.claims.some(c=>c.id.startsWith("claim-people-96-"))')
         for n,person in [(514,'person-beopheung'),(1430,'ent-wea-ha-yeon'),(1450,'ent-wia-sin-sukju'),(1740,'ent-wua-yeongjo')]:
             year(n)
@@ -42,8 +43,10 @@ with sync_playwright() as pw:
         year(1476)
         check('Sin Sukju is absent after the sourced 1475 death',page.locator('.era-people [data-chronicle-entity="ent-wia-sin-sukju"]').count()==0)
         year(-2000)
+        page.locator('.era-people summary').click()
         tradition=page.locator('.period-person').filter(has=page.locator('[data-chronicle-entity="person-dangun"]'))
-        check('Dangun chronology is explicitly shown as tradition',tradition.count()==1 and '전승 연대' in tradition.inner_text())
+        text=tradition.inner_text() if tradition.count()==1 else ''
+        check('Dangun chronology is explicitly shown as tradition',tradition.count()==1 and '전승 연대' in text,{'count':tradition.count(),'text':text})
         page.locator('#humanOnly').check()
         page.wait_for_function('!window.__sigong.chronicleScene.chronicle.loading')
         check('AI exclusion removes the newly collected date claims',page.evaluate('!window.__sigong.chronicleScene.chronicle.data.claims.some(c=>c.id.startsWith("claim-people-96-"))'))

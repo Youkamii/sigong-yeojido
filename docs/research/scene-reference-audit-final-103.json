@@ -1,0 +1,138 @@
+{
+  "counts": {
+    "packets": 154,
+    "shown": 148,
+    "missingReferences": 0,
+    "excluded": 0,
+    "unlocated": 6
+  },
+  "missing": [],
+  "excluded": [],
+  "unlocated": [
+    {
+      "id": "scene-anc-balhae-698",
+      "title": "동모산 축성과 건국 (698)",
+      "place": {
+        "label": "동모산 (지금의 길림성 돈화현)",
+        "medium": "land",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [
+          "claim-scenes-103-ancient_scenes-anc-balhae-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "동모산의 좌표를 이번 실행에서 얻지 못했다(위키백과 동모산 문서·위키데이터 Q12593333에 좌표 없음). 돈화현 중심점으로 대체하지 않고 좌표를 비웠다.",
+        "coordinateClaimIds": []
+      }
+    },
+    {
+      "id": "scene-dongbuk-9seong-1107",
+      "title": "동북 9성 축성 (1107~1109)",
+      "place": {
+        "label": "동북 9성 (영주·웅주·복주·길주·함주·공험진·의주·통태진·평융진)",
+        "medium": "land",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [
+          "claim-scenes-103-goryeo_scenes-9seong-dispute"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처가 9성 범위에 대해 함흥평야설·길주설·두만강 이북설이 갈린다고 명시하므로 좌표를 하나로 확정하지 않는다. 어느 학설도 표시 기준으로 채택하지 않았다."
+      }
+    },
+    {
+      "id": "scene-mokhwa-doip-1363",
+      "title": "문익점의 목화 종자 반입 (1363)",
+      "place": {
+        "label": "원나라 사행에서의 귀국길 (출처에 경로·지점 없음)",
+        "medium": "land",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 원나라로 갔다가 귀국했다는 이동만 적고 반입 지점이나 경로를 밝히지 않는다. 임의 경로를 그리지 않기 위해 좌표를 두지 않는다."
+      }
+    },
+    {
+      "id": "scene-hwatongdogam-1377",
+      "title": "화통도감 설치 — 화약·화기 제조 관청 (1377)",
+      "place": {
+        "label": "화통도감 (설치 지점 미상)",
+        "medium": "land",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 관청의 설치·폐지 시기와 기능만 적고 소재지를 밝히지 않는다. 개경으로 추정해 배치하지 않는다."
+      }
+    },
+    {
+      "id": "scene-cheongsanri-1920",
+      "title": "청산리대첩 (1920) — 한반도 캔버스 밖 간도",
+      "place": {
+        "label": "청산리 일대 (간도, 한반도 지도 범위 밖)",
+        "medium": "land",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [
+          "claim-scenes-103-modern_scenes-mod-cheongsanri-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "청산리 일대의 좌표를 이번에 확보하지 못했다(위키데이터 청산리 전투 Q490156에 P625 없음). 만주 간도 지역으로 한반도 캔버스 밖이므로, 반도 안이나 임의 지점에 배치하지 않고 좌표를 비워 둔다.",
+        "outsidePeninsula": true,
+        "coordinateClaimIds": []
+      }
+    },
+    {
+      "id": "scene-gwangbok-geonjun-1945",
+      "title": "8·15광복과 건국준비위원회 결성 (1945)",
+      "place": {
+        "label": "(장소 미상 — 인용 출처에 광복 당일 장소와 건준 결성 장소가 없음)",
+        "medium": "land",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [],
+        "coordinateSourceIds": [],
+        "coordinateNote": "인용한 두 항목 모두 장소를 적지 않는다. 서울로 추정해 배치하지 않고 좌표를 비워 둔다. 장소가 붙은 광복 당일 episode(예: 형무소 출옥, 행정권 이양 교섭)는 별도 출처가 필요하다."
+      }
+    }
+  ],
+  "duplicates": [
+    {
+      "id": "event-encykorea-injo-banjeong-1623",
+      "scenes": [
+        "scene-jl-injo-banjeong-hongjewon-1623",
+        "scene-jl-injo-banjeong-changdeokgung-1623"
+      ]
+    },
+    {
+      "id": "event-jl-jeongmyo-horan-1627",
+      "scenes": [
+        "scene-jl-jeongmyo-horan-anju-1627",
+        "scene-jl-jeongmyo-horan-ganghwa-1627"
+      ]
+    }
+  ],
+  "naval": [
+    {
+      "participants": [
+        {
+          "entityId": "person-encykorea-yi-sunsin",
+          "role": "전선 13척을 거느리고 명량에서 싸움",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-101-yi_naval-my-yi",
+            "claim-scenes-101-yi_naval-my-ships-own"
+          ]
+        }
+      ]
+    }
+  ]
+}

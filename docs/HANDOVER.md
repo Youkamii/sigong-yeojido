@@ -2,7 +2,7 @@
 
 [공개 화면](https://undertaken-coleman-interests-bruce.trycloudflare.com/) · [반영·검증·한계](research/resumed-scene-acceptance-103.md).
 
-실제 Claude Opus 5 / Max 조사 12개를 완료하고 새 Claim 기록 995개를 연결했다. 장면 자료는 154개, 공통 좌표 436개,
+실제 Claude Opus 5 / Max 조사 16개를 완료하고 새 Claim 기록 1,168개를 연결했다. 장면 자료는 154개, 공통 좌표 436개,
 산맥 8개·선택 가능한 봉우리 50개·울릉도와 독도 동서도다. 고하도·청해진 섬 누락과 역사 지점의 1/8 배율 문제를 고쳤다.
 도읍의 지속 활동 9개를 연결했고, 선택 시 연도가 마지막 기록으로 바뀌던 오류는 `f7396019`에서 수정했다.
 
@@ -10,10 +10,13 @@
 도읍 활동은 `f7396019` 공개 화면에서 [29개 검사](research/city-production-resumed-96.json)가 통과했다.
 Python 검증기 OK, unittest 116개·JS 4개 스크립트 PASS. CI NOT_RUN(실제 workflow 0개).
 c2 뷰어 PID 304567, Fuseki 167737, 동기화 watcher 290919를 유지했다. FinBridge 222676은 다른 서비스이므로 건드리지 않는다.
-RDF 293,159 triples, SHA256 `a818c5554b290d40393e906643a30bca5bcdd66be163406d52fb858fd2d61c39`.
+RDF 297,171 triples, SHA256 `0c40e70db598d10291b76e5f81af2503a32c167087a0ac5c701bc62a0ef0b6d1`.
 
-**남은 현재 작업은 #96의 인물 날짜 연결이다.** 원래 108명 중 83명에 대해 실제 Opus 5 / Max 4개 조사 작업을 창 없이 실행 중이다.
-작업 폴더는 `%TEMP%/sigong-completion-103/person_dates_*`다. 원문·실행 기록을 보존하고 완료한 결과만 검증 후 반영한다.
+**#96 날짜 보강 조사·통합 완료:** 원래 미연결 인물 항목 108개 중 104개는 날짜 화면에서 탐색 가능하다.
+나머지 4개는 동일성·원문 미확인으로 남겼다. [조사·제외 이유·실제 시대별 노출량](research/person-date-completion-96.md)을 따른다.
+[인물 날짜·원문·전승 구분 공개 검사 24개](research/person-date-production-final-96.json)도 통과했다.
+1000·1100·1200·1300·1500·1700·1800년 표본의 인물·현재 활동 공백을 보강했다. 단군은 ‘전승 연대’로 표시한다.
+전체 Claim은 11,904개, Source 카드는 1,640개이며 새 자료는 AI 초안이다. 4개 추가 조사 원문도 [c2 아카이브](research/archive-person-dates-96.json) 해시 대조를 완료했다.
 이 아래 날짜·완료 수치는 이전 시점 기록이며 위 현재 상태보다 우선하지 않는다. 사용자가 전면 원문 수집보다 사건·장소 중심 3D를 우선하도록 정정했다.
 
 # 인수인계 — 시공여지도 (2026-09-07, 시간으로 탐색하는 3D 역사)
