@@ -129,7 +129,18 @@ for scene in scenes:
     if not place or place['medium']!='land' or place['precision']!='area' or place.get('lon') is None:continue
     point=Point(place['lon'],place['lat'])
     polygon=min(coast.geoms,key=lambda p:p.distance(point))
-    if polygon.distance(point)>.01 or polygon.area>.1:continue
+    if polygon.distance(point)>.02:continue
+    if polygon.area>.1:
+        if not polygon.covers(point):
+            boundary=nearest_points(polygon.boundary,point)[0]
+            candidates=[Point(boundary.x+math.cos(i*math.pi/16)*.0008,boundary.y+math.sin(i*math.pi/16)*.0008) for i in range(32)]
+            candidates=[p for p in candidates if polygon.covers(p)]
+            if candidates:
+                display=max(candidates,key=lambda p:p.distance(polygon.boundary))
+                place['displayCoordinates']=[display.x,display.y]
+                place['displayBasis']='지역 기준 추정 배치. 고정된 옛 해안선과 원자료 지점의 차이 때문에 가까운 육지 쪽 표시점을 사용합니다. 원자료 좌표는 따로 보존하며 실제 현장 지점의 수정이 아닙니다.'
+                place['displaySource']=outline['properties']['source']
+        continue
     center=point if polygon.covers(point) else polygon.representative_point()
     place['displayCoordinates']=[center.x,center.y]
     b=polygon.bounds
