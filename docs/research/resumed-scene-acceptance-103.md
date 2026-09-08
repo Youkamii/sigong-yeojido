@@ -28,12 +28,15 @@
 | 넓은 세계 이동·사건·모델 | [29개 PASS](world-production-resumed-103.json), 실행 오류 0 | `215929eb` |
 | 산맥·봉우리·섬·38도 선 | [15개 PASS](geography-production-resumed-97.json), 실행 오류 0 | 해당 보고서의 실제 실행 시점 |
 | 공개 기본 화질 그림자 | [4개 PASS](shadows-production-resumed-101.json) | 보이는 숲의 잘린 그림자 0, 측정 FPS 약 79–122 |
+| 도읍 활동 선택 후 입력 연도 유지·기간 종료·사료 해제 | [29개 PASS](city-production-resumed-96.json), 실행 오류 0 | `f7396019` |
+| 대표 사건·근거·모바일·전체 지도 재검사 | [29개 PASS](world-production-final-101.json), 실행 오류 0 | `f7396019` 공개판, 검사 스크립트 `99cd7c82` |
 | 저장소 검증 | Python 검증기 OK, unittest 116개 PASS, JS 연대·조형·로드·좌표 4개 스크립트 PASS | 도읍 52개 Claim 반영 후 |
 | GitHub Actions | NOT_RUN | 실제 워크플로 0개 |
 
 각 실행의 범위를 구별한다. 서로 다른 커밋의 검사 수를 합쳐 최신 커밋 전체 검증 수라고 표현하지 않는다.
 초기 도읍 검사에는 선택 후 연도를 대조하는 조건이 빠져 있었다. 스크린샷에서 1700년 선택이 1910년으로 바뀐 것을 발견했고,
 `f7396019`에서 수정했다. `verify_city_activity.py`는 이제 화면 연도와 모델 계획 연도가 입력값과 같은지도 검사한다.
+[1700년 한성 실제 화면](hanseong-1700-resumed-96.png)과 [모바일 보성사 화면](world-mobile-final-101.png)을 확인했다.
 
 현재 154개 장면의 Claim 참조 누락은 0개, 기본 출판물 선택에서 필수 날짜·행동·장소 근거 누락도 0개다.
 좌표 연결 계획에서는 148개가 연결되고 6개는 장소 미상 또는 한반도 범위 밖이다. 148은 렌더링 합격 수가 아니다.
