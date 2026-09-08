@@ -575,15 +575,16 @@ export class KoreaWorld {
       if(feature.geometry.type==='Point'){
         const point=feature.geometry.coordinates;
         if(!inDiorama({lon:point[0],lat:point[1]}))continue;
-        const [x,z]=toWorld(...point),y=this.heightAt?terrainY(Math.max(0,this.heightAt(...point)))+.4:LAND_DEPTH+.4;
+        const [x,z]=this.toWorld?this.toWorld(...point):toWorld(...point);
+        const y=this.surfaceAt?this.surfaceAt(x,z)+.4:this.heightAt?terrainY(Math.max(0,this.heightAt(...point)))+.4:LAND_DEPTH+.4;
         positions.push(x-1.2,y,z,x+1.2,y,z,x,y,z-1.2,x,y,z+1.2,x,y,z,x,y+4,z);
       }
       for(const line of featureLines(feature))for(let i=1;i<line.length;i++){
         const a=line[i-1],b=line[i];
         if(!inDiorama({lon:a[0],lat:a[1]})||!inDiorama({lon:b[0],lat:b[1]}))continue;
         for(const point of [a,b]){
-          const [x,z]=toWorld(...point);
-          const y=this.heightAt?terrainY(Math.max(0,this.heightAt(...point)))+.4:LAND_DEPTH+.4;
+          const [x,z]=this.toWorld?this.toWorld(...point):toWorld(...point);
+          const y=this.surfaceAt?this.surfaceAt(x,z)+.4:this.heightAt?terrainY(Math.max(0,this.heightAt(...point)))+.4:LAND_DEPTH+.4;
           positions.push(x,y,z);
         }
       }
