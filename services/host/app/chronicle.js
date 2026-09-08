@@ -130,14 +130,18 @@ export class Chronicle {
   constructor(host,controls,callbacks){
     this.host=host;this.controls=controls;this.callbacks=callbacks;
     this.data={entities:[],claims:[]};this.year=1593;this.span=50;this.sequence=0;this.loading=true;
-    controls.innerHTML=`<div class="time-heading"><div class="time-year"><span data-calendar>서기</span>
-      <input aria-label="탐색 연도" type="number" value="1593" min="-2500" max="2100" step="1"><span>년</span></div>
+    controls.innerHTML=`<div class="time-heading"><div class="time-year"><label for="historyYear" data-calendar>연도 입력</label>
+      <input id="historyYear" aria-label="탐색 연도" aria-describedby="yearInputHelp" type="number" value="1593" min="-2500" max="2100" step="1" required><span>년</span><button data-go-year>이동</button><small id="yearInputHelp">Enter로 이동 · 기원전은 −500처럼 입력</small></div>
       <div class="time-actions"><button data-previous aria-label="이전 사건 연도로">← 이전 사건</button>
       <button data-play aria-label="시간 재생">▶ 재생</button><button data-next aria-label="다음 사건 연도로">다음 사건 →</button></div>
       <label class="time-span">주변 사건 <select aria-label="사건 탐색 범위"><option value="20">20년</option><option value="50" selected>50년</option><option value="100">100년</option></select></label></div>
       <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2025" value="1593" aria-label="역사 시간 이동"><span>2025</span></div>
       <div class="era-jumps">${[['414','고구려'],['540','신라'],['918','고려'],['1392','조선 건국'],['1446','세종'],['1593','임진왜란'],['1897','대한제국'],['1919','독립운동']].map(([y,l])=>`<button data-era="${y}">${l}</button>`).join('')}</div>`;
-    controls.querySelector('[type=number]').onchange=e=>this.chooseYear(+e.target.value);
+    const yearInput=controls.querySelector('[type=number]');
+    const goYear=()=>{if(yearInput.reportValidity()){this.stopPlay();if(yearInput.valueAsNumber!==this.year)this.chooseYear(yearInput.valueAsNumber);}};
+    yearInput.onchange=goYear;
+    yearInput.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();goYear();}};
+    controls.querySelector('[data-go-year]').onclick=goYear;
     controls.querySelector('[type=range]').oninput=e=>this.chooseYear(+e.target.value);
     controls.querySelector('select').onchange=e=>{this.span=+e.target.value;this.render();};
     controls.querySelector('[data-previous]').onclick=()=>this.chooseYear(this.context?.previous);
@@ -219,7 +223,7 @@ export class Chronicle {
     const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
     this.controls.querySelector('[type=number]').value=this.year;
     this.controls.querySelector('[type=range]').value=this.year;
-    this.controls.querySelector('[data-calendar]').textContent='연도';
+    this.controls.querySelector('[data-calendar]').textContent='연도 입력';
     this.controls.querySelector('[data-previous]').disabled=c.previous==null;
     this.controls.querySelector('[data-next]').disabled=c.next==null;
     this.controls.querySelectorAll('[data-era]').forEach(b=>b.classList.toggle('on',Math.abs(+b.dataset.era-this.year)<10));
