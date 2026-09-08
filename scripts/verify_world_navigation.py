@@ -39,6 +39,9 @@ with sync_playwright() as pw:
     try:
         page.goto(args.base,wait_until='domcontentloaded');page.locator('#enter').click()
         page.wait_for_function('window.__sigong?.chronicleScene.assets?.revision>0')
+        surface=page.evaluate('''()=>{const w=window.__sigong.world,p=w.land.getObjectByName('peninsula-surface').geometry.attributes.position;
+          let minimum=Infinity;for(let i=0;i<p.count;i++)minimum=Math.min(minimum,p.getY(i));return {minimum,sea:w.seaLevel};}''')
+        check('Small-island ground stays above the sea and coastal cap',surface['minimum']>surface['sea']+.015,surface)
         year(1593);select('person-encykorea-yi-sunsin');s=snapshot('event-yinav-hansando-honyeong-1593')
         check('1593 Yi Sunsin is placed within Hansando through his dated activity',any(r['id']=='person-encykorea-yi-sunsin' and r['inside'] and 128.45<r['coordinates'][0]<128.57 and 34.74<r['coordinates'][1]<34.85 for r in s['rows']),s)
         check('The selected activity shows place, role and evidence','한산도' in page.locator('.selected-activity').inner_text() and page.locator('.selected-activity [data-chronicle-claim]').count()>0)
