@@ -1,0 +1,1897 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com/",
+  "checks": [
+    {
+      "name": "The scene initialized without an asset error",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Small-island ground stays above the sea and coastal cap",
+      "pass": true,
+      "detail": {
+        "minimum": 7.039999961853027,
+        "sea": 7
+      }
+    },
+    {
+      "name": "1593 Yi Sunsin is placed within Hansando through his dated activity",
+      "pass": true,
+      "detail": {
+        "place": {
+          "label": "한산도 수군 본영 (한산도 북서부 해안선 깊숙한 곳, 통영시 한산면 두억리)",
+          "medium": "land",
+          "precision": "area",
+          "lon": 128.47222,
+          "lat": 34.79417,
+          "claimIds": [
+            "claim-scenes-103-harbors_and_presence-syj103-hs-place"
+          ],
+          "coordinateSourceIds": [
+            "src-syj103-kowiki-hansando-yujeok",
+            "src-syj103-encykorea-hansando-yujeok",
+            "src-syj103-encykorea-hansando-island",
+            "src-syj103-opentopodata-landcheck"
+          ],
+          "coordinateNote": "장소 근거: 한국민족문화대백과사전 「한산도 이충무공 유적」이 유적을 '한산도 북서부 해안선의 깊숙한 곳'이라 적고 그곳이 경상도 수군통제영이 있던 곳이라 한다. 표시 좌표 128.47222, 34.79417은 같은 유적(사적 제113호, 통영시 한산면 두억리 875)의 위키백과 좌표 표기 '북위 34.79417° 동경 128.47222°'를 그대로 옮긴 값이며, 그 위치는 섬 북서부에 해당해 본문 서술과 어긋나지 않는다. 다만 이 점이 가리키는 것은 제승당 등 현재의 기념 시설이고 같은 문서가 '현재의 건물은 1976년 10월에 중건한 것'이라 적으므로 1593년 본영 건물의 실측 위치가 아니다. 참고로 백과 「한산도」는 섬 전체 대표 좌표를 '동경 128°28′, 북위 34°46′'로 적는데 이는 섬 표기이지 본영 지점이 아니어서 표시값으로 쓰지 않았다. precision='area'.",
+          "coordinateClaimIds": [
+            "claim-scenes-103-harbors_and_presence-syj103-hs-locality",
+            "claim-scenes-103-harbors_and_presence-syj103-hs-tongjeyeong",
+            "claim-scenes-103-harbors_and_presence-syj103-hs-island-coord",
+            "claim-scenes-103-harbors_and_presence-syj103-hs-island-admin",
+            "claim-scenes-103-harbors_and_presence-syj103-hs-marker-coord",
+            "claim-scenes-103-harbors_and_presence-syj103-hs-marker-addr",
+            "claim-scenes-103-harbors_and_presence-syj103-hs-marker-what",
+            "claim-scenes-103-harbors_and_presence-syj103-hs-marker-rebuild",
+            "claim-scenes-103-harbors_and_presence-syj103-hs-marker-land"
+          ],
+          "displayCoordinates": [
+            128.47222,
+            34.79417
+          ],
+          "displayScale": 0.1,
+          "displayBasis": "원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.",
+          "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz",
+          "coordinates": [
+            128.47222,
+            34.79417
+          ]
+        },
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "ships": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-103-harbors_and_presence-syj103-hs-ships"
+            ]
+          },
+          "attack": {
+            "enabled": false,
+            "claimIds": []
+          }
+        },
+        "rows": [
+          {
+            "kind": "event",
+            "archetype": "courtyard_house",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.47222,
+              34.79417
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "table",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.46551369323024,
+              34.79003944561014
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "handcart",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.47892630676975,
+              34.79072788570982
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "human",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.4638371165378,
+              34.78866254816957
+            ],
+            "inside": true,
+            "action": "working"
+          },
+          {
+            "kind": "building",
+            "archetype": "human",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.4680285582689,
+              34.78866254816957
+            ],
+            "inside": true,
+            "action": "working"
+          },
+          {
+            "kind": "building",
+            "archetype": "human",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.47222,
+              34.78866254816957
+            ],
+            "inside": true,
+            "action": "working"
+          },
+          {
+            "kind": "building",
+            "archetype": "human",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.4764114417311,
+              34.78866254816957
+            ],
+            "inside": true,
+            "action": "working"
+          },
+          {
+            "kind": "building",
+            "archetype": "boat_slip",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.47139013687612,
+              34.79485148681962
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "boat",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.4615503312644,
+              34.80293154404656
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "boat",
+            "id": "event-yinav-hansando-honyeong-1593",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.45680825627073,
+              34.80682526473015
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-encykorea-yi-sunsin",
+            "side": "naval",
+            "shipSide": null,
+            "compact": null,
+            "coordinates": [
+              128.46635198157648,
+              34.79830034748335
+            ],
+            "inside": true,
+            "action": "idle"
+          }
+        ],
+        "fires": [],
+        "stats": {
+          "catalog": {
+            "categories": 7,
+            "cores": 34,
+            "forms": 8,
+            "variants": 5,
+            "archetypes": 1360,
+            "blueprints": 34,
+            "states": 58,
+            "actions": 27,
+            "effects": 16,
+            "styles": 24,
+            "materials": 20,
+            "cultures": 20,
+            "combinationEstimate": 2474986752000
+          },
+          "dropped": [],
+          "batches": 7,
+          "requested": 69,
+          "built": 69,
+          "static": 53,
+          "dynamic": 16,
+          "parts": 1180,
+          "meshes": 75,
+          "triangles": 41038,
+          "effects": 0
+        }
+      }
+    },
+    {
+      "name": "The Hansando base has shore work and ships on water",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The selected activity shows place, role and evidence",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "An activity opens its actual stored quote",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1592: opposing fleets stay in the researched sea area",
+      "pass": true,
+      "detail": {
+        "place": {
+          "label": "한산섬 앞바다",
+          "medium": "sea",
+          "precision": "area",
+          "lon": 128.45065,
+          "lat": 34.80757,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-hs1592-place",
+            "claim-scenes-101-yi_naval-hansando-admin"
+          ],
+          "coordinateSourceIds": [
+            "src-kowiki-tongyeong",
+            "src-kowiki-hansando",
+            "src-opentopodata-gebco2020",
+            "src-opentopodata-mapzen",
+            "src-enwiki-battle-hansan",
+            "src-opentopodata-gebco2020-check1"
+          ],
+          "coordinateNote": "기관이 펴낸 해전 해역 경계 자료를 얻지 못해, 발표된 두 좌표를 경계로 삼고 그 사이 바다의 중간점을 계산했다(발표값이 아니라 파생값). 경계 좌표: 통영시 34.833333/128.416667(위키백과 「통영시」 wgCoordinates), 한산도 34.781814/128.484625(위키백과 「한산도」 wgCoordinates). 표시 중심 = 두 점의 산술 중간점 128.45065, 34.80757이며 두 기준점에서 각각 약 4227 m 떨어져 있다. 바다 확인: GEBCO 2020(15초 격자)에서 이 점의 값이 -18 m이고 상하좌우 0.002도(약 200 m) 네 점도 -17~-19 m, Mapzen 30 m 격자도 -2 m라 모두 물이다. 영어·한국어 위키백과 「한산도 대첩」의 지오태그 34.7622/128.5025는 GEBCO에서 +6 m(뭍)로 나와 바다 좌표로 쓰지 않았다. 한국학중앙연구원 자료의 장소 표기는 '한산섬 앞바다'뿐이고 방위·범위는 원문에 없다. 해역을 화면에 놓기 위한 근사 중심일 뿐, 학익진 같은 전투 대형이나 교전 지점을 가리키지 않는다.",
+          "coordinates": [
+            128.45065,
+            34.80757
+          ]
+        },
+        "effects": {
+          "fire": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-101-yi_naval-hs1592-burn"
+            ]
+          },
+          "ships": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-101-yi_naval-hs1592-formation",
+              "claim-scenes-101-yi_naval-hs1592-burn"
+            ]
+          },
+          "attack": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-101-yi_naval-hs1592-formation"
+            ]
+          }
+        },
+        "rows": [
+          {
+            "kind": "event",
+            "archetype": "ship",
+            "id": "event-encykorea-hansando-daecheop-1592",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.4485355585018,
+              34.807569999999984
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-encykorea-hansando-daecheop-1592",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.44674641569566,
+              34.80957318239963
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-encykorea-hansando-daecheop-1592",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.44707171438768,
+              34.805299667751946
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-encykorea-hansando-daecheop-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.45341503888224,
+              34.80943963842116
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-encykorea-hansando-daecheop-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.45455358430434,
+              34.807569999999984
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-encykorea-hansando-daecheop-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.4537403375743,
+              34.80516611684858
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-encykorea-yi-sunsin",
+            "side": "naval",
+            "shipSide": "naval",
+            "compact": null,
+            "coordinates": [
+              128.4485355585018,
+              34.807569999999984
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-encykorea-yi-eokgi-e0061676",
+            "side": "naval",
+            "shipSide": "naval",
+            "compact": null,
+            "coordinates": [
+              128.44674641569566,
+              34.80957318239963
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-encykorea-won-gyun-e0040619",
+            "side": "naval",
+            "shipSide": "naval",
+            "compact": null,
+            "coordinates": [
+              128.44707171438768,
+              34.805299667751946
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-yinav-wakizaka",
+            "side": "invader",
+            "shipSide": "invader",
+            "compact": null,
+            "coordinates": [
+              128.45341503888224,
+              34.80943963842116
+            ],
+            "inside": false,
+            "action": null
+          }
+        ],
+        "fires": [
+          {
+            "side": "invader"
+          },
+          {
+            "side": "invader"
+          },
+          {
+            "side": "invader"
+          }
+        ],
+        "stats": {
+          "catalog": {
+            "categories": 7,
+            "cores": 34,
+            "forms": 8,
+            "variants": 5,
+            "archetypes": 1360,
+            "blueprints": 34,
+            "states": 58,
+            "actions": 27,
+            "effects": 16,
+            "styles": 24,
+            "materials": 20,
+            "cultures": 20,
+            "combinationEstimate": 2474986752000
+          },
+          "dropped": [],
+          "batches": 14,
+          "requested": 70,
+          "built": 70,
+          "static": 65,
+          "dynamic": 5,
+          "parts": 1382,
+          "meshes": 65,
+          "triangles": 53214,
+          "effects": 0
+        }
+      }
+    },
+    {
+      "name": "1592: named people stay with their own fleet",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Wakizaka belongs to the Japanese fleet",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Recorded ship fires target Japanese vessels",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1592: no model or action dropped",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1594: opposing fleets stay in the researched sea area",
+      "pass": true,
+      "detail": {
+        "place": {
+          "label": "당항포 앞바다 (고성 당항만)",
+          "medium": "sea",
+          "precision": "area",
+          "lon": 128.4175,
+          "lat": 35.0525,
+          "claimIds": [
+            "claim-scenes-103-harbors_and_presence-syj103-dh-place"
+          ],
+          "coordinateSourceIds": [
+            "src-syj103-encykorea-goseong",
+            "src-syj103-wikidata-hoehwa",
+            "src-syj103-wikidata-donghae",
+            "src-syj103-opentopodata-mapzen"
+          ],
+          "coordinateNote": "당항만·당항포 해역의 좌표를 발표한 기관 자료를 이번에도 얻지 못했다(따라서 발표값이 아니라 파생값이다). 백과 「고성군」이 당항만을 고성군에 발달한 만의 하나로, 회화면·동해면을 고성군 행정구역으로 적는 것을 근거로 만의 북안·남안 기준점을 두 면의 발표 좌표로 잡았다. 북안 회화면 35°4'29.86\"N, 128°23'24.54\"E(=35.074961, 128.390150), 남안 동해면 35°1'31.37\"N, 128°26'46.93\"E(=35.025381, 128.446369). 두 점의 단순 중간점 35.050171, 128.418260은 이번 조회에서 표고 +2 m(물가·뭍)로 나와 그대로 쓰지 않고, 같은 만 안에서 -7 m로 물이 확인되는 128.4175, 35.0525를 표시 중심으로 삼았다. 당항만은 폭이 좁아 저해상도 해안선에서는 뭍으로 판정될 수 있다. 왜선이 정박했던 포구 지점이 아니며, 육상 시설인 당항포관광지 좌표는 해역이 아니므로 쓰지 않았다. precision='area', medium='sea'.",
+          "coordinateClaimIds": [
+            "claim-scenes-103-harbors_and_presence-syj103-dh-bay",
+            "claim-scenes-103-harbors_and_presence-syj103-dh-twice",
+            "claim-scenes-103-harbors_and_presence-syj103-dh-myeon",
+            "claim-scenes-103-harbors_and_presence-syj103-dh-hoehwa-coord",
+            "claim-scenes-103-harbors_and_presence-syj103-dh-donghae-coord",
+            "claim-scenes-103-harbors_and_presence-syj103-dh-depth"
+          ],
+          "coordinates": [
+            128.4175,
+            35.0525
+          ]
+        },
+        "effects": {
+          "fire": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-103-harbors_and_presence-syj103-dh-burn"
+            ]
+          },
+          "ships": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-103-harbors_and_presence-syj103-dh-burn",
+              "claim-scenes-103-harbors_and_presence-syj103-dh-datetext"
+            ]
+          },
+          "attack": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-103-harbors_and_presence-syj103-dh-eo-act",
+              "claim-scenes-103-harbors_and_presence-syj103-dh-burn"
+            ]
+          }
+        },
+        "rows": [
+          {
+            "kind": "event",
+            "archetype": "ship",
+            "id": "event-yinav-danghangpo-2-1594",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.41663392476232,
+              35.052499999999995
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-danghangpo-2-1594",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.41590109186893,
+              35.053318063390996
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-danghangpo-2-1594",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.41603433421318,
+              35.051572851583785
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-danghangpo-2-1594",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.41863255992615,
+              35.05326352608655
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-danghangpo-2-1594",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.41909890813105,
+              35.052499999999995
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-danghangpo-2-1594",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.41876580227043,
+              35.05151831311388
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-yinav-eo-yeongdam",
+            "side": "naval",
+            "shipSide": "naval",
+            "compact": null,
+            "coordinates": [
+              128.41663392476232,
+              35.052499999999995
+            ],
+            "inside": false,
+            "action": null
+          }
+        ],
+        "fires": [
+          {
+            "side": "invader"
+          },
+          {
+            "side": "invader"
+          },
+          {
+            "side": "invader"
+          }
+        ],
+        "stats": {
+          "catalog": {
+            "categories": 7,
+            "cores": 34,
+            "forms": 8,
+            "variants": 5,
+            "archetypes": 1360,
+            "blueprints": 34,
+            "states": 58,
+            "actions": 27,
+            "effects": 16,
+            "styles": 24,
+            "materials": 20,
+            "cultures": 20,
+            "combinationEstimate": 2474986752000
+          },
+          "dropped": [],
+          "batches": 8,
+          "requested": 8,
+          "built": 8,
+          "static": 8,
+          "dynamic": 0,
+          "parts": 220,
+          "meshes": 29,
+          "triangles": 10433,
+          "effects": 0
+        }
+      }
+    },
+    {
+      "name": "1594: named people stay with their own fleet",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Distant command does not place Yi Sunsin in Danghangpo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1594: no model or action dropped",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1597: opposing fleets stay in the researched sea area",
+      "pass": true,
+      "detail": {
+        "place": {
+          "label": "명량(울돌목)",
+          "medium": "sea",
+          "precision": "area",
+          "lon": 126.30778,
+          "lat": 34.56833,
+          "claimIds": [
+            "claim-scenes-101-yi_naval-my-place",
+            "claim-scenes-101-yi_naval-my-place-desc"
+          ],
+          "coordinateSourceIds": [
+            "src-wikidata-q627009",
+            "src-enwiki-myeongnyang-strait",
+            "src-kowiki-myeongnyang-strait",
+            "src-opentopodata-gebco2020"
+          ],
+          "coordinateNote": "해협 자체에 붙은 발표 좌표를 옮긴 값이다(파생 없음). 위키데이터 Q627009(Myeongnyang Strait)의 P625가 34°34'5.99\"N, 126°18'28.01\"E이고, 영어 위키백과 「Myeongnyang Strait」 머리 스크립트의 wgCoordinates가 lat 34.568333333333335, lon 126.30777777777777로 같은 지점이다. 도분초를 십진도로 바꾸면 34.56833/126.30778이라 두 값이 일치하며, 소수점 다섯 자리로 반올림해 썼다. 범위 근거: 한국어 위키백과 「명량해협」이 해남군 문내면 학동리 화원반도와 진도군 군내면 녹진리 사이의 해협이라 적고 길이 약 1.5 km, 최협부 약 300 m라 적었다. 바다 확인: GEBCO 2020에서 -4 m다. 다만 폭 300 m 해협이라 450 m 격자로는 이웃 칸이 뭍으로 나오고, 렌더러가 저해상도 해안선을 쓰면 이 점이 뭍으로 판정될 수 있다. 우수영관광지·전망대 같은 육상 시설 좌표는 해역이 아니므로 쓰지 않았고, 이 값은 해협 해역의 근사 표시점이지 교전 지점이 아니다.",
+          "coordinates": [
+            126.30778,
+            34.56833
+          ]
+        },
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": [
+              "claim-scenes-101-yi_naval-my-fire"
+            ]
+          },
+          "ships": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-101-yi_naval-my-ships-own",
+              "claim-scenes-101-yi_naval-my-ships-enemy"
+            ]
+          },
+          "attack": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-101-yi_naval-my-attack"
+            ]
+          }
+        },
+        "rows": [
+          {
+            "kind": "event",
+            "archetype": "ship",
+            "id": "event-yinav-myeongnyang-1597",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.3075983708583,
+              34.568329999999996
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-myeongnyang-1597",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.3074446846615,
+              34.5685025719799
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-myeongnyang-1597",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.30747262760637,
+              34.5681344179898
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-myeongnyang-1597",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.30801751503141,
+              34.5684910671924
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-myeongnyang-1597",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.30811531533847,
+              34.568329999999996
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-myeongnyang-1597",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.30804545797626,
+              34.568122913151335
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-encykorea-yi-sunsin",
+            "side": "naval",
+            "shipSide": "naval",
+            "compact": null,
+            "coordinates": [
+              126.3075983708583,
+              34.568329999999996
+            ],
+            "inside": false,
+            "action": null
+          }
+        ],
+        "fires": [],
+        "stats": {
+          "catalog": {
+            "categories": 7,
+            "cores": 34,
+            "forms": 8,
+            "variants": 5,
+            "archetypes": 1360,
+            "blueprints": 34,
+            "states": 58,
+            "actions": 27,
+            "effects": 16,
+            "styles": 24,
+            "materials": 20,
+            "cultures": 20,
+            "combinationEstimate": 2474986752000
+          },
+          "dropped": [],
+          "batches": 15,
+          "requested": 16,
+          "built": 16,
+          "static": 16,
+          "dynamic": 0,
+          "parts": 344,
+          "meshes": 45,
+          "triangles": 15018,
+          "effects": 0
+        }
+      }
+    },
+    {
+      "name": "1597: named people stay with their own fleet",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Fire arrows do not imply burning ships at Myeongnyang",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1597: no model or action dropped",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1598: opposing fleets stay in the researched sea area",
+      "pass": true,
+      "detail": {
+        "place": {
+          "label": "노량 앞바다 (남해도와 하동 사이 해협)",
+          "medium": "sea",
+          "precision": "area",
+          "lon": 127.8564,
+          "lat": 34.939,
+          "claimIds": [
+            "claim-scenes-103-harbors_and_presence-syj103-no-place"
+          ],
+          "coordinateSourceIds": [
+            "src-syj103-encykorea-noryang",
+            "src-syj103-kowiki-noryang-strait",
+            "src-syj103-opentopodata-gebco"
+          ],
+          "coordinateNote": "해협 자체에 붙은 기관 발표 좌표를 얻지 못해 파생값을 쓴다. 범위 근거: 백과 「노량해전」이 장소를 '노량(경상남도 남해도와 하동 사이의 해협) 앞바다'로 적고, 위키백과 「노량해협」이 남해군 노량리(설천면)와 하동군 노량리(금남면) 사이의 바다이며 가장 좁은 곳에 길이 660 m의 남해대교가 있다고 적는다. 표시 좌표 127.8564, 34.939는 그 해협 안에서 수심 조회 결과가 -17 m로 물로 확인되는 지점이다. 폭이 좁은 물목이라 저해상도 해안선에서는 뭍으로 판정될 수 있다. 이순신이 마지막 왜군을 추격한 관음포 쪽 지오태그 지점(34.906, 127.8573)은 조회 결과 +24 m로 뭍이라 해상 표시점으로 쓰지 않았다. 교전 지점이나 함대 위치가 아니라 해역 안의 근사 표시점이다. precision='area', medium='sea'.",
+          "coordinateClaimIds": [
+            "claim-scenes-103-harbors_and_presence-syj103-no-strait",
+            "claim-scenes-103-harbors_and_presence-syj103-no-narrow",
+            "claim-scenes-103-harbors_and_presence-syj103-no-bridge",
+            "claim-scenes-103-harbors_and_presence-syj103-no-depth",
+            "claim-scenes-103-harbors_and_presence-syj103-no-gwaneumpo-land"
+          ],
+          "coordinates": [
+            127.8564,
+            34.939
+          ]
+        },
+        "effects": {
+          "fire": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-103-harbors_and_presence-syj103-no-burn"
+            ]
+          },
+          "ships": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-103-harbors_and_presence-syj103-no-burn"
+            ]
+          },
+          "attack": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-103-harbors_and_presence-syj103-no-mutual",
+              "claim-scenes-103-harbors_and_presence-syj103-no-burn"
+            ]
+          }
+        },
+        "rows": [
+          {
+            "kind": "event",
+            "archetype": "ship",
+            "id": "event-yinav-noryang-1598",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              127.8542855585018,
+              34.93900000000001
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-noryang-1598",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              127.85249641569567,
+              34.94099998249298
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-noryang-1598",
+            "side": "naval",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              127.85282171438766,
+              34.936733294213134
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-noryang-1598",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              127.85916503888224,
+              34.9408666518442
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-noryang-1598",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              127.86030358430435,
+              34.93900000000001
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "ship",
+            "id": "event-yinav-noryang-1598",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              127.85949033757427,
+              34.936599956627724
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-encykorea-yi-sunsin",
+            "side": "naval",
+            "shipSide": "naval",
+            "compact": null,
+            "coordinates": [
+              127.8542855585018,
+              34.93900000000001
+            ],
+            "inside": false,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-yinav-jin-rin",
+            "side": "naval",
+            "shipSide": "naval",
+            "compact": null,
+            "coordinates": [
+              127.85282171438766,
+              34.936733294213134
+            ],
+            "inside": false,
+            "action": null
+          }
+        ],
+        "fires": [
+          {
+            "side": "invader"
+          },
+          {
+            "side": "invader"
+          },
+          {
+            "side": "invader"
+          }
+        ],
+        "stats": {
+          "catalog": {
+            "categories": 7,
+            "cores": 34,
+            "forms": 8,
+            "variants": 5,
+            "archetypes": 1360,
+            "blueprints": 34,
+            "states": 58,
+            "actions": 27,
+            "effects": 16,
+            "styles": 24,
+            "materials": 20,
+            "cultures": 20,
+            "combinationEstimate": 2474986752000
+          },
+          "dropped": [],
+          "batches": 11,
+          "requested": 18,
+          "built": 18,
+          "static": 15,
+          "dynamic": 3,
+          "parts": 395,
+          "meshes": 52,
+          "triangles": 17879,
+          "effects": 0
+        }
+      }
+    },
+    {
+      "name": "1598: named people stay with their own fleet",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1598: no model or action dropped",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Selecting a nearby siege unfolds walls and opposing troops",
+      "pass": true,
+      "detail": {
+        "place": {
+          "label": "동래성 (조선 전기 동래읍성, 부산 동래구 동래시장·수안동 일대)",
+          "medium": "land",
+          "precision": "area",
+          "lon": 129.0838333,
+          "lat": 35.2018028,
+          "claimIds": [
+            "claim-scenes-103-harbors_and_presence-syj103-dn-place"
+          ],
+          "coordinateSourceIds": [
+            "src-syj103-grandculture-dongnae-eupseongji",
+            "src-syj103-kowiki-suan-station"
+          ],
+          "coordinateNote": "부산역사문화대전 「동래읍성지」가 1592년에 함락된 성을 조선 전기 동래읍성으로 보고 그 범위를 '동래시장을 중심으로 수안동, 복천동, 복산동, 낙민동 일부 일대'로 적는다. 1731년에 쌓은 조선 후기 동래읍성(마안산 능선 일대)과 위치가 다르므로 후기 성곽 좌표를 쓰지 않았다. 표시 좌표 129.0838333, 35.2018028은 그 범위 안에 있는 수안역의 위키백과 좌표 표기(북위 35.2018028° 동경 129.0838333°)를 그대로 옮긴 값이다. 이 지점은 2005년 역 건설 현장에서 조선 전기 동래읍성 해자가 확인된 곳이자 현재 동래읍성임진왜란역사관이 있는 현대 시설의 위치이며, 성의 중심이나 성문의 실측 위치가 아니다. precision='area'로만 쓴다. 이전 배치의 20세기 행정구역(동래) 표시 중심을 대체했다.",
+          "replacedAnchorPlaceId": "hgis-admin-147793",
+          "coordinateClaimIds": [
+            "claim-scenes-103-harbors_and_presence-syj103-dn-pos",
+            "claim-scenes-103-harbors_and_presence-syj103-dn-fall2",
+            "claim-scenes-103-harbors_and_presence-syj103-dn-marker-coord",
+            "claim-scenes-103-harbors_and_presence-syj103-dn-marker-moat",
+            "claim-scenes-103-harbors_and_presence-syj103-dn-marker-moat2",
+            "claim-scenes-103-harbors_and_presence-syj103-dn-marker-museum"
+          ],
+          "coordinates": [
+            129.0838333,
+            35.2018028
+          ]
+        },
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "ships": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "attack": {
+            "enabled": true,
+            "claimIds": [
+              "claim-scenes-103-harbors_and_presence-syj103-dn-siege"
+            ]
+          }
+        },
+        "rows": [
+          {
+            "kind": "event",
+            "archetype": "gatehouse",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.08383330000004,
+              35.20180280000001
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "wall",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.92455851421832,
+              35.194952632737575
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "wall",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.00838734884024,
+              35.194952632737575
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "wall",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.15927925115977,
+              35.194952632737575
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "wall",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.14754321431272,
+              35.19906280241932
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "house",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.95809004806708,
+              35.29080238355689
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "house",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.09221618346223,
+              35.30448595444458
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "house",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.20957655193294,
+              35.277116499223496
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "house",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.00000446537808,
+              35.36603338412544
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "house",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.18442790154637,
+              35.37286909359404
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.0268296924571,
+              35.1497270429972
+            ],
+            "inside": true,
+            "action": "attacking"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.05030176615122,
+              35.1497270429972
+            ],
+            "inside": true,
+            "action": "attacking"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.05868464961344,
+              35.071550887261786
+            ],
+            "inside": true,
+            "action": "attacking"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.09724591353955,
+              35.1497270429972
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.0268296924571,
+              35.13053283041331
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.05030176615122,
+              35.13053283041331
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.0737738398454,
+              35.13053283041331
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.09724591353955,
+              35.13053283041331
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "invader",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.1207179872337,
+              35.13053283041331
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "defender",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.92455851421832,
+              35.22919769130581
+            ],
+            "inside": true,
+            "action": "defending"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "defender",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              128.97485581499149,
+              35.22919769130581
+            ],
+            "inside": true,
+            "action": "defending"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "defender",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.02515311576468,
+              35.22919769130581
+            ],
+            "inside": true,
+            "action": "defending"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "defender",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.07545041653782,
+              35.22919769130581
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "defender",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.125747717311,
+              35.22919769130581
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "defender",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.17604501808415,
+              35.22919769130581
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "spearman",
+            "id": "event-dongnae-jeontu-1592",
+            "side": "defender",
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.22634231885735,
+              35.22919769130581
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "building",
+            "archetype": "banner",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.01677023230246,
+              35.141501506082875
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "banner",
+            "id": "event-dongnae-jeontu-1592",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              129.15089636769758,
+              35.218240844217235
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-song-sanghyeon-dongnae",
+            "side": "defender",
+            "shipSide": null,
+            "compact": null,
+            "coordinates": [
+              129.02515311576468,
+              35.24289166962505
+            ],
+            "inside": true,
+            "action": "idle"
+          },
+          {
+            "kind": "person",
+            "archetype": "spearman",
+            "id": "person-syj103-jo-yeonggyu",
+            "side": "defender",
+            "shipSide": null,
+            "compact": null,
+            "coordinates": [
+              129.07545041653782,
+              35.24289166962505
+            ],
+            "inside": true,
+            "action": "idle"
+          }
+        ],
+        "fires": [],
+        "stats": {
+          "catalog": {
+            "categories": 7,
+            "cores": 34,
+            "forms": 8,
+            "variants": 5,
+            "archetypes": 1360,
+            "blueprints": 34,
+            "states": 58,
+            "actions": 27,
+            "effects": 16,
+            "styles": 24,
+            "materials": 20,
+            "cultures": 20,
+            "combinationEstimate": 2474986752000
+          },
+          "dropped": [],
+          "batches": 14,
+          "requested": 75,
+          "built": 75,
+          "static": 69,
+          "dynamic": 6,
+          "parts": 1448,
+          "meshes": 68,
+          "triangles": 54483,
+          "effects": 0
+        }
+      }
+    },
+    {
+      "name": "Palace fire appears without inventing a named arsonist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Printing includes tables, books, cart and three working participants",
+      "pass": true,
+      "detail": {
+        "place": {
+          "label": "보성사 터 (경성부 수송동 44)",
+          "medium": "land",
+          "precision": "site",
+          "lon": 126.981833,
+          "lat": 37.573706,
+          "claimIds": [
+            "claim-scenes-101-invasion_events-print1919-place",
+            "claim-scenes-101-invasion_events-print1919-addr",
+            "claim-scenes-101-invasion_events-print1919-site"
+          ],
+          "coordinateSourceIds": [
+            "src-i815-boseongsa"
+          ],
+          "coordinateNote": "좌표는 이번에 내려받은 독립기념관 사적지 페이지 raw/i815-sajeok-boseongsa-1344.html 안의 지도 스크립트 값(var lat = \" 37.573706\"; var lng = \" 126.981833\";)을 그대로 옮겼다. 같은 페이지가 '현재 조계사 경내 서편 극락전 앞마당이 보성사 터로 비정된다'고 밝히므로 비정 지점이며, 건물은 멸실 상태다.",
+          "coordinates": [
+            126.981833,
+            37.573706
+          ]
+        },
+        "effects": {
+          "fire": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "ships": {
+            "enabled": false,
+            "claimIds": []
+          },
+          "attack": {
+            "enabled": false,
+            "claimIds": []
+          }
+        },
+        "rows": [
+          {
+            "kind": "event",
+            "archetype": "table",
+            "id": "event-declaration-printing-1919",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.98183299999998,
+              37.573706
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "academy_hall",
+            "id": "event-declaration-printing-1919",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.98183299999998,
+              37.66002813679953
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "table",
+            "id": "event-declaration-printing-1919",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.92315281576462,
+              37.573706
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "book",
+            "id": "event-declaration-printing-1919",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.92315281576462,
+              37.573706
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "table",
+            "id": "event-declaration-printing-1919",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              127.04051318423535,
+              37.573706
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "book",
+            "id": "event-declaration-printing-1919",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              127.04051318423535,
+              37.573706
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "handcart",
+            "id": "event-declaration-printing-1919",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              127.08242760154633,
+              37.53383122187263
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "building",
+            "archetype": "book",
+            "id": "event-declaration-printing-1919",
+            "side": null,
+            "shipSide": null,
+            "compact": false,
+            "coordinates": [
+              126.98183299999998,
+              37.573706
+            ],
+            "inside": true,
+            "action": null
+          },
+          {
+            "kind": "person",
+            "archetype": "human",
+            "id": "person-yi-jongil-boseongsa",
+            "side": "printer",
+            "shipSide": null,
+            "compact": null,
+            "coordinates": [
+              126.92315281576462,
+              37.54712518511827
+            ],
+            "inside": true,
+            "action": "working"
+          },
+          {
+            "kind": "person",
+            "archetype": "human",
+            "id": "person-kim-honggyu-boseongsa",
+            "side": "printer",
+            "shipSide": null,
+            "compact": null,
+            "coordinates": [
+              126.97345011653778,
+              37.54712518511827
+            ],
+            "inside": true,
+            "action": "working"
+          },
+          {
+            "kind": "person",
+            "archetype": "human",
+            "id": "person-jang-hyogeun-boseongsa",
+            "side": "printer",
+            "shipSide": null,
+            "compact": null,
+            "coordinates": [
+              127.02374741731094,
+              37.54712518511827
+            ],
+            "inside": true,
+            "action": "working"
+          }
+        ],
+        "fires": [],
+        "stats": {
+          "catalog": {
+            "categories": 7,
+            "cores": 34,
+            "forms": 8,
+            "variants": 5,
+            "archetypes": 1360,
+            "blueprints": 34,
+            "states": 58,
+            "actions": 27,
+            "effects": 16,
+            "styles": 24,
+            "materials": 20,
+            "cultures": 20,
+            "combinationEstimate": 2474986752000
+          },
+          "dropped": [],
+          "batches": 3,
+          "requested": 41,
+          "built": 41,
+          "static": 38,
+          "dynamic": 3,
+          "parts": 636,
+          "meshes": 20,
+          "triangles": 23782,
+          "effects": 0
+        }
+      }
+    },
+    {
+      "name": "Mobile keeps scene navigation available",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The large peninsula is retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "All sources off removes all historical scenes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser execution errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
