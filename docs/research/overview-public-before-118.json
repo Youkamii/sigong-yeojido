@@ -1,0 +1,504 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com/",
+  "errors": [],
+  "scenarios": [
+    {
+      "frames": 717,
+      "actualFps": 137.2485212763921,
+      "p50": 6.099999999998545,
+      "p95": 12.200000000000728,
+      "max": 163.40000000000146,
+      "over50": 1,
+      "measured": {
+        "ChronicleWorld.update": {
+          "count": 718,
+          "total": 269.1000000536442,
+          "max": 1.5
+        },
+        "ChronicleScene.update": {
+          "count": 718,
+          "total": 75.19999998807907,
+          "max": 0.6999999992549419
+        },
+        "EffectComposer.render": {
+          "count": 718,
+          "total": 3825.0999999903142,
+          "max": 13
+        }
+      },
+      "stats": {
+        "calls": 472,
+        "triangles": 1317902,
+        "sceneCalls": 225,
+        "sceneTriangles": 658940,
+        "fps": 94.3396226614024,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116,
+        "adaptMedianMs": 6.399999998509884
+      },
+      "name": "idle",
+      "hotspots": [
+        {
+          "name": "(idle)",
+          "url": "",
+          "hits": 309
+        },
+        {
+          "name": "(program)",
+          "url": "",
+          "hits": 284
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 79
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 58
+        },
+        {
+          "name": "i",
+          "url": "three.module.min.js",
+          "hits": 49
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 44
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 43
+        },
+        {
+          "name": "get clientWidth",
+          "url": "",
+          "hits": 42
+        },
+        {
+          "name": "multiplyMatrices",
+          "url": "three.module.min.js",
+          "hits": 41
+        },
+        {
+          "name": "bindVertexArray",
+          "url": "",
+          "hits": 38
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 36
+        },
+        {
+          "name": "Jl.renderBufferDirect",
+          "url": "three.module.min.js",
+          "hits": 35
+        }
+      ]
+    },
+    {
+      "frames": 895,
+      "actualFps": 116.83005469474068,
+      "p50": 6.100000000002183,
+      "p95": 12.400000000001455,
+      "max": 169.79999999999927,
+      "over50": 1,
+      "measured": {
+        "ChronicleWorld.update": {
+          "count": 896,
+          "total": 389.90000000968575,
+          "max": 1.699999999254942
+        },
+        "ChronicleScene.update": {
+          "count": 896,
+          "total": 157.20000002905726,
+          "max": 2.199999999254942
+        },
+        "EffectComposer.render": {
+          "count": 896,
+          "total": 5882.100000005215,
+          "max": 25.200000002980232
+        },
+        "ChronicleGeography.update": {
+          "count": 57,
+          "total": 39.30000000819564,
+          "max": 1.699999999254942
+        }
+      },
+      "stats": {
+        "calls": 468,
+        "triangles": 1330462,
+        "sceneCalls": 223,
+        "sceneTriangles": 665220,
+        "fps": 78.74015748493433,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116,
+        "adaptMedianMs": 7.800000000745058
+      },
+      "name": "pan",
+      "hotspots": [
+        {
+          "name": "(program)",
+          "url": "",
+          "hits": 455
+        },
+        {
+          "name": "(idle)",
+          "url": "",
+          "hits": 191
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 129
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 78
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 75
+        },
+        {
+          "name": "bindVertexArray",
+          "url": "",
+          "hits": 75
+        },
+        {
+          "name": "get clientWidth",
+          "url": "",
+          "hits": 69
+        },
+        {
+          "name": "i",
+          "url": "three.module.min.js",
+          "hits": 67
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 65
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 60
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 59
+        },
+        {
+          "name": "bindVertexArray",
+          "url": "",
+          "hits": 58
+        }
+      ]
+    },
+    {
+      "frames": 225,
+      "actualFps": 42.72287097692968,
+      "p50": 24.19999999999709,
+      "p95": 36.30000000000291,
+      "max": 151.3000000000029,
+      "over50": 1,
+      "measured": {
+        "ChronicleWorld.update": {
+          "count": 226,
+          "total": 124.10000002756715,
+          "max": 1.300000000745058
+        },
+        "ChronicleScene.update": {
+          "count": 226,
+          "total": 31.19999998807907,
+          "max": 0.6999999992549419
+        },
+        "EffectComposer.render": {
+          "count": 226,
+          "total": 4730.9000000059605,
+          "max": 41.600000001490116
+        }
+      },
+      "stats": {
+        "calls": 2076,
+        "triangles": 4455798,
+        "sceneCalls": 1027,
+        "sceneTriangles": 2227888,
+        "fps": 35.08771929824561,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116,
+        "adaptMedianMs": 8
+      },
+      "name": "overview",
+      "hotspots": [
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 161
+        },
+        {
+          "name": "(program)",
+          "url": "",
+          "hits": 119
+        },
+        {
+          "name": "bindVertexArray",
+          "url": "",
+          "hits": 85
+        },
+        {
+          "name": "bindVertexArray",
+          "url": "",
+          "hits": 80
+        },
+        {
+          "name": "i",
+          "url": "three.module.min.js",
+          "hits": 74
+        },
+        {
+          "name": "Jl.renderBufferDirect",
+          "url": "three.module.min.js",
+          "hits": 67
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 60
+        },
+        {
+          "name": "Jl.renderBufferDirect",
+          "url": "three.module.min.js",
+          "hits": 58
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 58
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 56
+        },
+        {
+          "name": "multiplyMatrices",
+          "url": "three.module.min.js",
+          "hits": 52
+        },
+        {
+          "name": "multiplyMatrices",
+          "url": "three.module.min.js",
+          "hits": 50
+        }
+      ]
+    }
+  ],
+  "readySeconds": 14.141,
+  "sceneryReadySeconds": 14.766,
+  "scenery": {
+    "villages": 18,
+    "houses": 92,
+    "fields": 72,
+    "tigers": 18,
+    "ready": true
+  },
+  "startupHotspots": [
+    {
+      "name": "(idle)",
+      "url": "",
+      "line": -1,
+      "hits": 3464
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 991
+    },
+    {
+      "name": "(program)",
+      "url": "",
+      "line": -1,
+      "hits": 935
+    },
+    {
+      "name": "ridgeRelief",
+      "url": "chronicle-geography.js",
+      "line": 11,
+      "hits": 428
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 204
+    },
+    {
+      "name": "coastlineDistance",
+      "url": "coastline-index.js",
+      "line": 31,
+      "hits": 138
+    },
+    {
+      "name": "buildForest",
+      "url": "chronicle-assets.js",
+      "line": 73,
+      "hits": 136
+    },
+    {
+      "name": "insideCoastline",
+      "url": "coastline-index.js",
+      "line": 20,
+      "hits": 130
+    },
+    {
+      "name": "ChronicleWorld.surfaceAt",
+      "url": "chronicle-world.js",
+      "line": 76,
+      "hits": 117
+    },
+    {
+      "name": "(garbage collector)",
+      "url": "",
+      "line": -1,
+      "hits": 97
+    },
+    {
+      "name": "coastlineDistance",
+      "url": "coastline-index.js",
+      "line": 31,
+      "hits": 66
+    },
+    {
+      "name": "insideCoastline",
+      "url": "coastline-index.js",
+      "line": 20,
+      "hits": 55
+    },
+    {
+      "name": "insideCoastline",
+      "url": "coastline-index.js",
+      "line": 20,
+      "hits": 47
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 41
+    },
+    {
+      "name": "ridgeRelief",
+      "url": "chronicle-geography.js",
+      "line": 11,
+      "hits": 39
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 39
+    },
+    {
+      "name": "_layoutLabels",
+      "url": "korea.js",
+      "line": 717,
+      "hits": 38
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 30
+    }
+  ],
+  "scene": {
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "year": 1593,
+    "quality": "medium",
+    "stats": {
+      "calls": 472,
+      "triangles": 1317902,
+      "sceneCalls": 225,
+      "sceneTriangles": 658940,
+      "fps": 83.33333333333333,
+      "quality": "medium",
+      "autoMedianMs": 6.100000001490116
+    },
+    "geography": 66,
+    "markers": 11,
+    "trees": 9983,
+    "terrainTriangles": 74182
+  },
+  "longFrames": [
+    {
+      "start": 1431.5,
+      "duration": 64
+    },
+    {
+      "start": 3720.89999999851,
+      "duration": 54
+    },
+    {
+      "start": 5070.39999999851,
+      "duration": 119
+    },
+    {
+      "start": 6307.60000000149,
+      "duration": 1175
+    },
+    {
+      "start": 7618,
+      "duration": 629
+    },
+    {
+      "start": 8253.199999999255,
+      "duration": 72
+    },
+    {
+      "start": 9697.800000000745,
+      "duration": 2258
+    },
+    {
+      "start": 11956.300000000745,
+      "duration": 305
+    },
+    {
+      "start": 12350.89999999851,
+      "duration": 174
+    },
+    {
+      "start": 12540,
+      "duration": 185
+    },
+    {
+      "start": 12893.60000000149,
+      "duration": 343
+    },
+    {
+      "start": 13301,
+      "duration": 698
+    },
+    {
+      "start": 14210.10000000149,
+      "duration": 102
+    },
+    {
+      "start": 14548.10000000149,
+      "duration": 171
+    },
+    {
+      "start": 28214.300000000745,
+      "duration": 57
+    }
+  ]
+}
