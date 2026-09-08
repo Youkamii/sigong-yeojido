@@ -33,9 +33,11 @@ export class ChronicleScene {
       button.dataset.scenePlacement=row.placement;
       if(row.kind==='event')button.dataset.sceneEvent=row.entityId;
       const label=row.kind==='event'?row.label.replace(/^.*\((제[12]차 [^)]+)\)$/,'$1').replace(/\s*\(임진왜란\)/,''):row.label;
-      button.innerHTML=`<strong>${esc(label)}</strong><small>${esc(row.detail)}</small>`;
+      const detail=row.kind==='person'?(row.role||row.detail.split(' · ')[0]):row.detail;
+      button.innerHTML=`<strong>${esc(label)}</strong><small>${esc(detail)}</small>`;
       button.title=row.label+' · '+row.placementLabel;
       button.onclick=()=>{this.preferredRow=row.id;this.onSelect(row.entityId);};
+      button.onpointerenter=button.onpointerleave=()=>{const marker=this.markers.find(m=>m.button===button);if(marker)marker.size=null;this.layoutKey=null;};
       this.host.append(button);this.markers.push({button,position:row.labelPosition,row});
     }
     const destination=document.getElementById('sceneDestination'),previous=destination.value;
@@ -102,7 +104,7 @@ export class ChronicleScene {
     const card=document.getElementById('geographyCard'),hudElement=document.getElementById('sceneContext');
     const viewport=width+':'+height;
     const key=[...camera.matrixWorld.elements,...camera.projectionMatrix.elements,viewport,
-      this.assets?.selectedRow,document.getElementById('geographyDestination').value,card.hidden,card.offsetHeight,hudElement.offsetHeight].join(':');
+      this.assets?.selectedRow,this.assets?.activeScene,document.getElementById('geographyDestination').value,card.hidden,card.offsetHeight,hudElement.offsetHeight].join(':');
     if(this.layoutKey===key)return;
     this.layoutKey=key;
     if(this.labelViewport!==viewport){
@@ -117,12 +119,16 @@ export class ChronicleScene {
     }
     const ordered=[...this.markers].sort((a,b)=>
       Number(b.row.id===this.assets?.selectedRow)-Number(a.row.id===this.assets?.selectedRow)
+      ||Number(b.row.sceneId===this.assets?.activeScene)-Number(a.row.sceneId===this.assets?.activeScene)
+      ||Number(b.row.kind==='person')-Number(a.row.kind==='person')
       ||Number(b.row.kind==='event')-Number(a.row.kind==='event'));
-    const distance=camera.position.distanceTo(this.engine.controls.target);
+    let peopleShown=0;
+    const named=new Set();
     for(const marker of ordered){
       const {button,position,row}=marker;
       const p=position.clone().project(camera);
-      button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1||(row.kind==='person'&&(distance>220||row.entityId!==this.assets?.selected));
+      button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1
+        ||(row.kind==='person'&&(named.has(row.entityId)||(peopleShown>=(width<600?3:6)&&row.entityId!==this.assets?.selected)));
       if(button.hidden)continue;
       button.style.left=(p.x+1)*width/2+'px';button.style.top=(1-p.y)*height/2+'px';
       const x=(p.x+1)*width/2,y=(1-p.y)*height/2;
@@ -135,6 +141,7 @@ export class ChronicleScene {
           ||occupied.some(r=>r.left<rect.right+4&&r.right>rect.left-4&&r.top<rect.bottom+4&&r.bottom>rect.top-4))continue;
         button.style.left=x+dx+'px';button.style.top=y+dy+'px';button.hidden=false;occupied.push(rect);break;
       }
+      if(row.kind==='person'&&!button.hidden){peopleShown++;named.add(row.entityId);}
     }
     this.world?.geography?.update(camera,canvas,occupied);
   }
