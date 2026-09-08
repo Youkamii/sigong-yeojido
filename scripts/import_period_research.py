@@ -136,6 +136,9 @@ def main():
     for original in draft['claims']:
         claim = deepcopy(original)
         if change := adjustments.get(claim['id']):
+            if change.get('exclude'):
+                assert change.get('reason'), claim['id']
+                continue
             if 'predicate' in change:
                 assert claim['predicate'] == change['expectedPredicate']
                 claim['predicate'] = change['predicate']
