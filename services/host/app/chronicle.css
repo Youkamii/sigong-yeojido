@@ -159,5 +159,6 @@
   .era-jumps{flex-wrap:nowrap;overflow:auto;gap:2px}.era-jumps button{flex:none;font-size:9px;padding:3px 5px}
   .time-slider{margin:10px 0 7px;gap:7px}.time-slider>span{font-size:8px}
   .evi,.stage.evidence-open .evi{width:min(100%,420px)}
-  .geography-navigation{top:104px;right:10px}.geography-card{top:140px;right:10px;width:210px;max-height:calc(100% - 155px)}
+  .geography-navigation{top:calc(18px + var(--scene-hud-height,86px));right:10px}
+  .geography-card{top:calc(26px + var(--scene-hud-height,86px) + var(--geography-nav-height,28px));right:10px;width:210px;max-height:calc(100% - var(--scene-hud-height,86px) - var(--geography-nav-height,28px) - 36px)}
 }

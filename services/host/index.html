@@ -439,6 +439,13 @@ new ResizeObserver(entries=>{
   document.querySelector('.canvasWrap').style.setProperty('--timeline-height',height+'px');
   draw();if(R)resize3d();
 }).observe(document.querySelector('.timebar'));
+const canvasWrap=document.querySelector('.canvasWrap'),sceneHud=document.getElementById('sceneContext'),geographyNav=document.querySelector('.geography-navigation');
+const hudObserver=new ResizeObserver(()=>{
+  canvasWrap.style.setProperty('--scene-hud-height',sceneHud.offsetHeight+'px');
+  canvasWrap.style.setProperty('--geography-nav-height',geographyNav.offsetHeight+'px');
+  chronicleScene.layoutKey=null;
+});
+hudObserver.observe(sceneHud);hudObserver.observe(geographyNav);
 
 document.getElementById('humanOnly').addEventListener('change', event => {
   state.origin = event.target.checked ? 'human' : 'all';

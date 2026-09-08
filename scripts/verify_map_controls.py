@@ -38,7 +38,10 @@ with sync_playwright() as pw:
   page.locator('#mapDisplay summary').click()
   for name in ['people','events','regions','geography','scenery','forest','paths']:page.locator('[data-map-display='+name+']').check()
   page.set_viewport_size({'width':480,'height':900})
+  page.wait_for_timeout(200)
   check('Mobile exposes year input, Go and display choices',page.locator('#historyYear').is_visible() and page.locator('[data-go-year]').is_visible() and page.locator('#mapDisplay').is_visible())
+  hud=page.locator('#sceneContext').bounding_box();nav=page.locator('.geography-navigation').bounding_box()
+  check('Expanded mobile display controls do not overlap the geography menu',nav['y']>=hud['y']+hud['height']+7)
   page.screenshot(path=str(a.out/'controls-mobile.png'))
   check('No browser errors',not r['errors'],r['errors'])
  finally:
