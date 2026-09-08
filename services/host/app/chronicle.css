@@ -99,7 +99,7 @@
 #sceneAssetNote[hidden]{display:none}
 .scene-person{position:absolute;transform:translate(-50%,-100%);pointer-events:auto;max-width:160px;text-align:center;padding:3px 7px;background:#ece2cbe0;border:1px solid #a58f6044;border-radius:2px;white-space:nowrap;box-shadow:0 2px 8px #51422518}
 .scene-person strong{font:13px var(--serif);color:var(--paper)}
-.scene-person small{display:none;margin-top:4px;font:9px var(--sans);color:var(--paper-2)}
+.scene-person small{display:none;margin-top:4px;font:9px var(--sans);color:var(--paper-2);white-space:normal;overflow-wrap:anywhere}
 .scene-person:hover,.scene-person.selected{border-color:var(--celadon);z-index:2}
 .scene-person:hover small,.scene-person.selected small{display:block}
 .scene-event strong{font-size:12px;max-width:115px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.scene-event small{display:none;font-size:9px;margin-top:4px}
