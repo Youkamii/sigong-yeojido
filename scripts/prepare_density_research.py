@@ -38,6 +38,9 @@ for job in ['early_localities','joseon_localities','modern_localities']:
    claim=next(c for c in draft['claims'] if c['id']==cid)
    claim.update(sourceId='src-syj122-aks-byeokgolje',citesExcerpt=eid,note='한국민족문화대백과사전이 명시한 수리 시설 벽골제와 사건의 관계. 현재 좌표와 옛 제방 범위는 별도 위치 참고 자료로 구분한다.')
   notes.append('벽골제 장소 Claim 두 개는 현대 주소가 아니라 AKS의 시설 이용·증축 기록에 연결. 위키백과 좌표 출처는 위치 참고로만 유지.')
+  for sid in ['scene-syj122-byeokgolje-330-790','scene-syj122-byeokgolje-790']:
+   scene(sid)['place']['precision']='area'
+  notes.append('벽골제 좌표는 현존 유적 대표점이므로 지역 참고로 표시. 옛 제방 선형·증축 구간의 정확한 현장으로 표현하지 않는다.')
   notes.append('벽골제 장기 이용은 유지하되 공사 동작은330·790년에 한정.')
   s=scene('scene-syj122-heunghwajin-995-1030');s['kind']='siege';s['visualActions']='흥화진의 성곽과 방어 거점 운영. 공격군이나 공사 중인 인부를 추정하지 않는다.'
   s=scene('scene-syj122-suseonsa-1200-1205');ceremony=copy.deepcopy(s);ceremony['id']='scene-syj122-suseonsa-1205'

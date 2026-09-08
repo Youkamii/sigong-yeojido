@@ -21,10 +21,12 @@ with sync_playwright() as pw:
  try:
   page.goto(a.base,wait_until='domcontentloaded');page.locator('#enter').click()
   page.wait_for_function('window.__sigong?.chronicleScene.assets?.scenery.stats.ready&&!window.__sigong.chronicleScene.chronicle.loading')
-  check('The served API contains the new actual Opus claims',page.evaluate('window.__sigong.chronicleScene.chronicle.data.claims.filter(c=>c.id.startsWith("claim-scenes-122-")).length>280'))
+  counts=page.evaluate('''()=>{const c=window.__sigong.chronicleScene.chronicle;return {newClaims:c.data.claims.filter(c=>c.id.startsWith('claim-scenes-122-')).length,claims:c.data.claims.length,error:c.error,packets:window.__sigong.world.scenePackets.length};}''')
+  check('The served API contains the new actual Opus claims',counts['newClaims']>280,counts)
   for n in [-500,300,700,1000,1200,1400,1500,1700,1800,1919,1950]:
    year(n);r['coverage'].append(page.evaluate('''()=>{const a=window.__sigong.chronicleScene.assets;return {year:a.plan.year,locatedEvents:new Set(a.rows.filter(r=>r.kind==='event').map(r=>r.sceneId||r.id)).size,namedPeople:a.rows.filter(r=>r.kind==='person').length};}'''))
   check('Sparse sample years gain local activities beyond the capital',all(row['locatedEvents']>=2 for row in r['coverage'] if row['year'] in [700,1000,1200,1500,1700,1800]),r['coverage'])
+  check('Byeokgolje coordinates remain regional references',page.evaluate('window.__sigong.world.scenePackets.filter(s=>s.id.includes("byeokgolje")).every(s=>s.place.precision==="area")'))
   year(1500);s=select('scene-jl2-jepo-waegwan-1423-1510');check('Jepo shows local residence and trade',s['kind']=='market' and not s['dropped'],s)
   page.screenshot(path=str(a.out/'jepo-1500.png'))
   check('Historical map labels omit modern postal districts',page.evaluate('window.__sigong.world.geography.markers.filter(m=>m.region).every(m=>!/(특별자치|특별시|광역시)/.test(m.row.label))'))
