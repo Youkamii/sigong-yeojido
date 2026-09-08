@@ -48,7 +48,7 @@ export function composeHistoricalEvent(event,position,world){
   if(event.compact)displayScale*=.16;
   const radius=sea?45:['siege','battle'].includes(event.archetype)?36:24;
   const model=(archetype,dx,dz,scale=1,extra={})=>{
-    if(!modern)archetype=({palace:'korean_hall',house:'korean_house'})[archetype]||archetype;
+    if(!modern)archetype=({palace:'korean_hall',house:'korean_house',gatehouse:'korean_gate',academy_hall:'korean_academy',courtyard_house:'korean_courtyard'})[archetype]||archetype;
     dx*=displayScale;dz*=displayScale;scale*=displayScale;
     let x=position.x+dx,z=position.z+dz;
     const onWater=extra.medium?extra.medium==='sea':sea;
@@ -214,7 +214,7 @@ export function composeHistoricalEvent(event,position,world){
     }
   }
   if(!event.compact&&event.effects.fire?.enabled&&(!personalFire||paperFire)){
-    for(const target of models.filter(m=>paperFire?m.archetype==='book':sea?m.archetype===shipType&&m.side==='invader':['house','korean_house','courtyard_house','palace','korean_hall','civic_hall'].includes(m.archetype)).slice(0,3)){
+    for(const target of models.filter(m=>paperFire?m.archetype==='book':sea?m.archetype===shipType&&m.side==='invader':['house','korean_house','courtyard_house','korean_courtyard','palace','korean_hall','civic_hall'].includes(m.archetype)).slice(0,3)){
       const p=target.position.clone();p.y+=(paperFire?.4:sea?2:3)*displayScale;
       fireAt(group,p,(paperFire?.2:sea?1.2:1.5)*displayScale,animated);
       group.children.at(-1).userData.targetSide=target.side||null;
@@ -227,11 +227,11 @@ export function composeHistoricalEvent(event,position,world){
       const affiliation=alliedFleet&&side==='naval'?(/명나라 수군|명 수군/.test(person.role)?'ming':'joseon'):null;
       const fleet=models.filter(m=>m.archetype===shipType&&m.side===side&&(!affiliation||m.fleet===affiliation)),ship=fleet[index%fleet.length];
       if(!ship)continue;
-      const row=model(person.archetype,(ship.position.x-position.x)/displayScale,(ship.position.z-position.z)/displayScale,.75,{person,side,lift:(modern?1.9:2.2)*ship.scale/displayScale});
+      const row=model(person.archetype,(ship.position.x-position.x)/displayScale,(ship.position.z-position.z)/displayScale,1.05,{person,side,lift:(modern?1.9:2.2)*ship.scale/displayScale});
       if(row){row.shipSide=ship.side;row.fleet=ship.fleet;}
     }else{
       const dx=-7+index*6,dz=event.archetype==='publication'?4:side==='invader'?22:side==='civilian'?4:-6;
-      model(person.archetype,dx,dz,1.9,{person,side,action:event.archetype==='publication'?'working':'idle'});
+      model(person.archetype,dx,dz,2.4,{person,side,action:event.archetype==='publication'?'working':'idle'});
     }
   }
   return {group,animated,models,occupied,compositionKind,displayScale,radius:radius*displayScale,

@@ -23,6 +23,18 @@ export function eventArchetype(event){
   return 'court';
 }
 
+export function activityFigure(id,role,year,claims){
+  if(year>=1876)return 'modern_figure';
+  const texts=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate)
+    &&c.validFrom!=null&&c.validTo!=null&&within(c,year));
+  const text=[role,...texts.map(c=>c.object.value||'')].join(' ');
+  if(/승려|승장|스님/.test(text))return 'period_monk';
+  if(texts.some(c=>c.predicate==='syj:hasTitle'&&/왕$|황제$|국왕/.test(c.object.value||''))||/국왕|군주|왕으로 즉위/.test(role))return 'period_ruler';
+  if(/지휘|통제사|수군|수사|장군|무장|의병장|총사령|대장/.test(text))return 'period_commander';
+  if(/학자|문신|문인|시인|저술|판서|정승|학당|강학|편찬|간행/.test(text))return 'period_scholar';
+  return 'period_figure';
+}
+
 const within=(row,year)=>(row.validFrom==null||row.validFrom<=year)&&(row.validTo==null||row.validTo>=year);
 const yearOf=value=>typeof value==='string'?Number(value.slice(0,4)):null;
 
@@ -55,7 +67,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
           :c.validFrom!=null&&c.validTo!=null;
       });
     return {id:'person:'+person.id,entityId:person.id,kind:'person',placement:'unlocated',
-      label:entityLabel(person),archetype:'human',locations,locationReference:referenceFor(person.id,true),
+      label:entityLabel(person),archetype:activityFigure(person.id,'',context.year,data.claims),locations,locationReference:referenceFor(person.id,true),
       detail:period.label==='활동'?period.claim.quote:`${yearLabel(period.lo)} – ${yearLabel(period.hi)} · ${period.label}`,
       claimIds:[...new Set(person.periods.flatMap(p=>p.basis.map(c=>c.id)))]};
   });
@@ -83,7 +95,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       ?[anchor.candidates[0].lon,anchor.candidates[0].lat]:region?[region.lon,region.lat]:null);
     const regionalPlacement=region&&!place?.displayCoordinates&&!feature&&!direct&&!anchor;
     const participants=scene.participants.filter(p=>supported(p.claimIds)&&present.has(p.entityId)).map(p=>({
-      ...present.get(p.entityId),...p,archetype:context.year>=1876?'human':/승장|승려/.test(p.role)?'monk':['defender','invader','naval'].includes(p.side)?'spearman':'scribe',
+      ...present.get(p.entityId),...p,archetype:activityFigure(p.entityId,p.role,context.year,data.claims),
       relationClaims:p.claimIds,detail:p.role+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
     events.push({id:scene.id,entityId:scene.eventId,kind:'event',year:context.year,label:scene.title,
       archetype:scene.kind,detail:yearLabel(scene.startYear),summary:scene.summary,
