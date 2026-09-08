@@ -112,6 +112,11 @@ if args.collection=='scenes-101' and (position_folder/'run.json').exists():
 outline=json.loads((root/'services/host/app/korea-outline.json').read_text(encoding='utf-8'))
 coast=shape(outline['geometry'])
 for scene in scenes:
+    if scene['id']=='scene-city-hanseong-capital-1394-1910':
+        registry=json.loads((root/'services/host/app/history-coordinates.json').read_text(encoding='utf-8'))
+        region=next(p for p in registry['places'] if p['id']=='rc-hanseongbu')
+        assert [scene['place']['lon'],scene['place']['lat']]==[region['lon'],region['lat']]
+        scene['place']['coordinateSourceIds']=region['sourceIds']
     if scene['id']=='scene-jeju43-1947-1954':
         scene['effects']['attack'].update({'startYear':1947,'endYear':1947})
     if scene['id']=='scene-myeongnyang-1597':

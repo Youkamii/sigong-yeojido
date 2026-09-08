@@ -11306,7 +11306,10 @@
         "claimIds": [
           "claim-activity-96-later_capital_activity-city-hanseong-place"
         ],
-        "coordinateSourceIds": [],
+        "coordinateSourceIds": [
+          "src-wd-Q624467",
+          "src-kowiki-gaeseong_hanseongbu"
+        ],
         "coordinateNote": "출처는 도시·행정구역만 밝히고 궁궐터·관아터 같은 지점을 특정하지 않는다. 저장된 공통 지리 등록부(coordinates-105-evidence.zip > coordinates.json 의 rc-hanseongbu, 원 좌표 출처는 위키데이터 Q624467)의 한성부 대표 좌표를 그대로 옮겨 지역 기준 추정 배치를 한다. 표시용 앵커 목록(existing-place-anchors.json)에는 한성부 항목이 없어 anchorPlaceId 를 비웠다. 원자료 좌표 자릿수가 거칠고(약 0.017도) 도성 안 특정 지점을 뜻하지 않는다.",
         "coordinateClaimIds": []
       },
