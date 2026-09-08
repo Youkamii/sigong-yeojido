@@ -1,5 +1,14 @@
 import assert from 'node:assert/strict';
-import {contextAt, datedClaims} from '../services/host/app/chronicle.js';
+import {contextAt, datedClaims, REFERENCE_GROUPS} from '../services/host/app/chronicle.js';
+import {readFile} from 'node:fs/promises';
+
+for(const name of ['anc-enc-cheonghaejin','archives-subway','je-encykorea-e0002296']){
+  const card=await readFile(new URL('../data/sources/'+name+'.md',import.meta.url),'utf8');
+  const source=Object.fromEntries(['id','resource','sourceGroup'].map(key=>[key,JSON.parse(card.match(new RegExp('^'+key+': (.+)$','m'))[1])]));
+  assert.ok(REFERENCE_GROUPS.some(group=>group.matches(source)),'Actual imported publication is selected: '+name);
+}
+assert.equal(REFERENCE_GROUPS.length,5);
+assert.equal(REFERENCE_GROUPS.some(g=>g.matches({id:'src-coordinate-only',resource:'https://ko.wikipedia.org/wiki/서울'})),false);
 
 const person={id:'person-example',type:'Person',label:'인물'};
 const event={id:'event-example',type:'Event',label:'사건'};

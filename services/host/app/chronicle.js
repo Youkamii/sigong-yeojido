@@ -1,12 +1,18 @@
 import {escapeHtml as esc} from './html.js';
 import {loadChronicle} from './chronicle-load.js';
 
+const sourceHost=source=>{try{return new URL(source.resource||'').hostname;}catch{return '';}};
+const publicRecord=source=>{
+  const host=sourceHost(source);
+  return ['archives.go.kr','khs.go.kr','cha.go.kr','i815.or.kr','president.pa.go.kr','pa.go.kr','visitkorea.or.kr','grandculture.net','korea.kr']
+    .some(domain=>host===domain||host.endsWith('.'+domain));
+};
 export const REFERENCE_GROUPS = [
-  {label:'한국민족문화대백과사전', matches:s=>s.id.includes('encykorea') || s.id.startsWith('src-aks-')},
+  {label:'한국민족문화대백과사전', matches:s=>s.sourceGroup==='한국민족문화대백과사전'||sourceHost(s)==='encykorea.aks.ac.kr'||s.id.includes('encykorea')||s.id.startsWith('src-aks-')},
   {label:'삼국사기', matches:s=>s.id==='src-samguksagi'},
   {label:'고려사', matches:s=>s.id==='src-goryeosa'},
   {label:'조선왕조실록', matches:s=>s.id.startsWith('src-sillok-')},
-  {label:'국가유산·공공기록', matches:s=>['src-khs-','src-presidential-','src-kto-','src-i815-'].some(prefix=>s.id.startsWith(prefix))},
+  {label:'국가유산·공공기록', matches:s=>publicRecord(s)||['src-khs-','src-presidential-','src-kto-','src-i815-'].some(prefix=>s.id.startsWith(prefix))},
 ];
 export const yearLabel = y => y < 0 ? `기원전 ${-y}년` : `${y}년`;
 export const entityLabel = e => e.label.replace(/\s*\([\u3400-\u9fff\s]+\)/g,'').replace(e.type==='Person'?/\s*·\s*\d+년.*$/:/$^/,'').replace(/\s*\([^)]*민족문화대백과[^)]*\)/g,part=>{
