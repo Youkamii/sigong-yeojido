@@ -112,6 +112,8 @@ if args.collection=='scenes-101' and (position_folder/'run.json').exists():
 outline=json.loads((root/'services/host/app/korea-outline.json').read_text(encoding='utf-8'))
 coast=shape(outline['geometry'])
 for scene in scenes:
+    if scene['id']=='scene-jeju43-1947-1954':
+        scene['effects']['attack'].update({'startYear':1947,'endYear':1947})
     if scene['id']=='scene-myeongnyang-1597':
         scene['sides']=[{'side':'invader','label':'일본 수군','claimIds':['claim-scenes-101-yi_naval-my-ships-enemy']}]
     place=scene.get('place')

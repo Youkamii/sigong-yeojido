@@ -91,7 +91,8 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
         coordinateNote:'지역 기준 추정 배치 · '+region.coordinateNote,coordinateSourceIds:region.sourceIds}: {})}:null,
       sites:[],locationReference:null,visualActions:scene.visualActions,
       participants,effects:Object.fromEntries(Object.entries(scene.effects||{}).map(([key,effect])=>
-        [key,{enabled:effect.enabled&&supported(effect.claimIds),claimIds:effect.claimIds}])),
+        [key,{...effect,enabled:effect.enabled&&supported(effect.claimIds)
+          &&(effect.startYear==null||effect.startYear<=context.year)&&(effect.endYear==null||effect.endYear>=context.year)}])),
       sides:[...scene.participants.filter(p=>supported(p.claimIds)&&entities.get(p.entityId)?.type==='Polity')
         .map(p=>({...p,label:entityLabel(entities.get(p.entityId))})),...(scene.sides||[]).filter(p=>supported(p.claimIds))],
       claimIds:[...new Set([...scene.dateClaimIds,...scene.actionClaimIds,...(place?.claimIds||[])])],
