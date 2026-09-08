@@ -1,0 +1,146 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com/",
+  "checks": [
+    {
+      "name": "The slider track has a pointer cursor",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The event strip follows numeric year entry",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Chronological cards are bounded to a small visible window",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The second Japanese expedition remains in the event list",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1193 scenes at distinct places are separate cards",
+      "pass": true,
+      "detail": [
+        {
+          "sceneId": "scene-syj122-gimsami-unmun-1193",
+          "title": "김사미의 난 — 청도 운문 거점 (1193)"
+        },
+        {
+          "sceneId": "scene-syj122-hyosim-chojeon-1193",
+          "title": "효심의 초전 거점 — 지금의 울산 (1193)"
+        }
+      ]
+    },
+    {
+      "name": "A timeline card selects its specific scene",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Bunwon retains workshop details before selecting it",
+      "pass": true,
+      "detail": [
+        {
+          "kind": "event",
+          "archetype": "rural_store",
+          "compact": false
+        },
+        {
+          "kind": "building",
+          "archetype": "table",
+          "compact": false
+        },
+        {
+          "kind": "building",
+          "archetype": "table",
+          "compact": false
+        },
+        {
+          "kind": "building",
+          "archetype": "table",
+          "compact": false
+        },
+        {
+          "kind": "building",
+          "archetype": "handcart",
+          "compact": false
+        },
+        {
+          "kind": "building",
+          "archetype": "human",
+          "compact": false
+        },
+        {
+          "kind": "building",
+          "archetype": "human",
+          "compact": false
+        },
+        {
+          "kind": "building",
+          "archetype": "human",
+          "compact": false
+        },
+        {
+          "kind": "building",
+          "archetype": "human",
+          "compact": false
+        },
+        {
+          "kind": "building",
+          "archetype": "human",
+          "compact": false
+        }
+      ]
+    },
+    {
+      "name": "Previous event moves both the strip and the map",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Dragging the event strip changes its year and the map",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Keyboard navigation moves to the next dated event",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Playback moves the event strip with the year",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "BCE entry is preserved while nearby dated records remain discoverable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mobile retains map space without horizontal page overflow",
+      "pass": true,
+      "detail": {
+        "barBottom": 593.265625,
+        "canvasHeight": 303,
+        "viewportWidth": 480,
+        "bodyWidth": 480
+      }
+    },
+    {
+      "name": "Source deselection removes the event strip cards too",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
