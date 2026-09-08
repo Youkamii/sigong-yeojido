@@ -7,6 +7,7 @@ import {fitChronicleShadows} from './chronicle-shadows.js';
 import {unprojectCoordinates} from './history-coordinates.js';
 import {insideCoastline as inside,coastlineDistance as edgeDistance} from './coastline-index.js';
 import {NeighborLand} from './neighbor-land.js';
+import {terrainSurface} from './terrain-surface.js';
 
 export function stableSeed(text){let value=2166136261;for(const c of text)value=Math.imul(value^c.charCodeAt(0),16777619);return value>>>0;}
 
@@ -81,6 +82,7 @@ export class ChronicleWorld extends KoreaWorld{
     };
     this.land=new THREE.Group();this.land.name='peninsula-diorama';this.group.add(this.land);
     this.buildLand();
+    this.surfaceAt=terrainSurface(this.land.getObjectByName('peninsula-surface').geometry.attributes.position,this.surfaceAt);
   }
   toWorld(lon,lat){return toWorld(lon,lat).map(v=>v*this.mapScale);}
   contains(x,z,margin=0){return this.rings.some(r=>inside(x,z,r)&&(!margin||edgeDistance(x,z,r,margin)>=margin))||this.neighbors.contains(x,z,margin);}
