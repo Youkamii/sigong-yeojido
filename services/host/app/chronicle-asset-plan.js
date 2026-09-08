@@ -1,5 +1,6 @@
 import {entityLabel,yearLabel} from './chronicle.js';
 import {inDiorama} from './place-state.js';
+import {regionalCoordinate} from './history-coordinates.js';
 
 export function personArchetype(id,claims){
   const text=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle','syj:activeIn'].includes(c.predicate))
@@ -26,17 +27,22 @@ const within=(row,year)=>(row.validFrom==null||row.validFrom<=year)&&(row.validT
 const yearOf=value=>typeof value==='string'?Number(value.slice(0,4)):null;
 
 /** A geographic placement requires the selected activity's own place evidence. */
-export function planChronicleAssets(context,data,features,places=[],scenePackets=[]){
+export function planChronicleAssets(context,data,features,places=[],scenePackets=[],registry={}){
   const claims=new Map(data.claims.map(c=>[c.id,c])),entities=new Map(data.entities.map(e=>[e.id,e]));
   const supported=ids=>Array.isArray(ids)&&ids.length>0&&ids.every(id=>claims.has(id));
-  const referenceFor=id=>{
+  const referenceFor=(id,person=false)=>{
     for(const c of data.claims.filter(c=>c.subject===id&&c.object.kind==='entity'
-      &&['syj:tookPlaceAt','syj:occurredAt'].includes(c.predicate)&&within(c,context.year))){
+      &&(person?['syj:activeIn']:['syj:tookPlaceAt','syj:occurredAt']).includes(c.predicate)&&within(c,context.year)
+      &&(!person||(c.validFrom!=null&&c.validTo!=null)))){
       const exact=places.filter(p=>p.id===c.object.id),target=entities.get(c.object.id);
+      const region=regionalCoordinate(registry,c.object.id,target&&entityLabel(target));
+      if(region&&inDiorama(region))return {placeId:region.id,label:region.label,candidate:region,
+        claimIds:[c.id],precision:'area',coordinateNote:region.coordinateNote,coordinateSourceIds:region.sourceIds};
       const matches=exact.length?exact:places.filter(p=>target&&(p.labelKo||p.label)===entityLabel(target));
       if(matches.length!==1)continue;
       const p=matches[0],candidates=(p.candidates||[]).filter(candidate=>within(candidate,context.year)&&inDiorama(candidate));
-      if(candidates.length===1)return {placeId:p.id,label:p.labelKo||p.label,candidate:candidates[0],claimIds:[c.id],precision:'area'};
+      if(candidates.length===1)return {placeId:p.id,label:p.labelKo||p.label,candidate:candidates[0],claimIds:[c.id],precision:'area',
+        coordinateNote:candidates[0].basis,coordinateSourceIds:[candidates[0].fromSource].filter(Boolean)};
     }
     return null;
   };
@@ -49,7 +55,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
           :c.validFrom!=null&&c.validTo!=null;
       });
     return {id:'person:'+person.id,entityId:person.id,kind:'person',placement:'unlocated',
-      label:entityLabel(person),archetype:'human',locations,
+      label:entityLabel(person),archetype:'human',locations,locationReference:referenceFor(person.id,true),
       detail:period.label==='활동'?period.claim.quote:`${yearLabel(period.lo)} – ${yearLabel(period.hi)} · ${period.label}`,
       claimIds:[...new Set(person.periods.flatMap(p=>p.basis.map(c=>c.id)))]};
   });
@@ -70,15 +76,20 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
     const place=scene.place&&supported(scene.place.claimIds)?scene.place:null;
     const feature=place?.featureId&&features.find(f=>f.id===place.featureId&&within(f.properties,context.year));
     const anchor=place?.medium!=='sea'&&place?.anchorPlaceId&&places.find(p=>p.id===place.anchorPlaceId);
+    const region=place?.medium!=='sea'&&place?.precision==='area'
+      ?regionalCoordinate(registry,place.anchorPlaceId,place.label):null;
     const direct=place&&Number.isFinite(place.lon)&&Number.isFinite(place.lat)&&place.coordinateSourceIds?.length;
     const coordinates=place?.displayCoordinates||feature?.geometry?.coordinates||(direct?[place.lon,place.lat]:anchor?.candidates?.length===1
-      ?[anchor.candidates[0].lon,anchor.candidates[0].lat]:null);
+      ?[anchor.candidates[0].lon,anchor.candidates[0].lat]:region?[region.lon,region.lat]:null);
+    const regionalPlacement=region&&!place?.displayCoordinates&&!feature&&!direct&&!anchor;
     const participants=scene.participants.filter(p=>supported(p.claimIds)&&present.has(p.entityId)).map(p=>({
       ...present.get(p.entityId),...p,archetype:/승장|승려/.test(p.role)?'monk':['defender','invader','naval'].includes(p.side)?'spearman':'scribe',
       relationClaims:p.claimIds,detail:p.role+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
     events.push({id:scene.id,entityId:scene.eventId,kind:'event',label:scene.title,
       archetype:scene.kind,detail:yearLabel(scene.startYear),summary:scene.summary,
-      scenePlace:coordinates?{...place,coordinates}:null,sites:[],locationReference:null,
+      scenePlace:coordinates?{...place,coordinates,...(regionalPlacement?{
+        coordinateNote:'지역 기준 추정 배치 · '+region.coordinateNote,coordinateSourceIds:region.sourceIds}: {})}:null,
+      sites:[],locationReference:null,
       participants,effects:Object.fromEntries(Object.entries(scene.effects||{}).map(([key,effect])=>
         [key,{enabled:effect.enabled&&supported(effect.claimIds),claimIds:effect.claimIds}])),
       sides:scene.participants.filter(p=>supported(p.claimIds)&&entities.get(p.entityId)?.type==='Polity')

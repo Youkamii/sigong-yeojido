@@ -1,5 +1,6 @@
 import {escapeHtml as esc} from './html.js';
 import {planChronicleAssets} from './chronicle-asset-plan.js';
+import {formatCoordinates} from './history-coordinates.js';
 
 export class ChronicleScene {
   constructor(host,onSelect){this.host=host;this.onSelect=onSelect;this.markers=[];}
@@ -17,7 +18,7 @@ export class ChronicleScene {
     this.chronicle=chronicle;this.world=world;
     if(!this.assets||!chronicle.context)return;
     const features=world.historyTargets.map(t=>t.userData.feature);
-    const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[]);
+    const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[],world.coordinateRegistry);
     const signature=JSON.stringify([plan,this.assets.activeScene]);
     if(signature===this.signature){this.syncPicks();return;}
     const changedYear=this.assets.plan?.year!==plan.year;
@@ -67,9 +68,11 @@ export class ChronicleScene {
     return {summary:selected.summary,role:person?.role,place:selected.scenePlace?.label||selected.locationReference?.label,
       placement:row?.placementLabel||'활동은 확인됐으며 지도 위치는 아직 연결되지 않았습니다.',
       claimIds:[...new Set([...selected.claimIds,...(person?.relationClaims||[])])],
-      coordinateNote:selected.scenePlace?.coordinateNote,displayBasis:selected.scenePlace?.displayBasis,
-      sides:selected.sides||[],events,sources:(selected.scenePlace?.coordinateSourceIds||[])
-        .map(id=>this.world.sceneSources?.find(s=>s.id===id)).filter(Boolean)};
+      coordinates:formatCoordinates(selected.scenePlace?.coordinates||(selected.locationReference
+        ?[selected.locationReference.candidate.lon,selected.locationReference.candidate.lat]:null)),
+      coordinateNote:selected.scenePlace?.coordinateNote||selected.locationReference?.coordinateNote,displayBasis:selected.scenePlace?.displayBasis,
+      sides:selected.sides||[],events,sources:(selected.scenePlace?.coordinateSourceIds||selected.locationReference?.coordinateSourceIds||[])
+        .map(id=>[...(this.world.sceneSources||[]),...(this.world.coordinateRegistry?.sources||[])].find(s=>s.id===id)).filter(Boolean)};
   }
   select(id){
     const preferred=this.preferredRow||(this.assets?.selected===id?this.assets.selectedRow:null);

@@ -1,0 +1,2631 @@
+{
+  "sources": [
+    {
+      "id": "src-existing-anchors-hgis",
+      "title": "표시용 장소 앵커 (국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생) · 기존 저장본",
+      "publisher": "국사편찬위원회 GIS 사업팀 (기존 카탈로그 기록 표기: 국편). 파생 앵커 파일은 시공여지도 작업본.",
+      "url": "https://hgis.history.go.kr/pro_g1/dataset.do",
+      "license": "원 자료 이용 조건을 이 조사에서 확인하지 못했다. 기관 배포 조건을 따로 확인해야 한다.",
+      "reusedStoredInput": true
+    },
+    {
+      "id": "src-existing-sites-khs",
+      "title": "국가유산청 목록 좌표를 담은 기존 사건 지점 저장본",
+      "publisher": "국가유산청 (좌표 원 출처) · 시공여지도 기존 조사분",
+      "url": "https://github.com/Youkamii/sigong-yeojido/blob/main/data/maps/khs-events.geojson.gz",
+      "license": "원 자료 이용 조건을 이 조사에서 확인하지 못했다.",
+      "reusedStoredInput": true
+    },
+    {
+      "id": "src-wikidata-licensing",
+      "title": "Wikidata:Licensing",
+      "publisher": "Wikidata (Wikimedia Foundation)",
+      "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "license": "페이지 본문이 밝히는 데이터 조건: CC0"
+    },
+    {
+      "id": "src-kowiki-licensing",
+      "title": "위키백과:저작권",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation)",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%A0%80%EC%9E%91%EA%B6%8C",
+      "license": "페이지 본문이 밝히는 문서 조건: CC BY-SA 4.0"
+    },
+    {
+      "id": "src-wd-Q8684",
+      "title": "서울특별시 (Seoul) · 위키데이터 항목 Q8684",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8684.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-seoul",
+      "title": "서울특별시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q624467",
+      "title": "한성부 (Hanseongbu) · 위키데이터 항목 Q624467",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q624467.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-gaeseong_hanseongbu",
+      "title": "한성부 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%84%B1%EB%B6%80",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q482485",
+      "title": "경복궁 (Gyeongbokgung) · 위키데이터 항목 Q482485",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q482485.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-gyeongbokgung",
+      "title": "경복궁 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q18808",
+      "title": "평양시 (Pyongyang) · 위키데이터 항목 Q18808",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q18808.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-pyongyang",
+      "title": "평양시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q109079",
+      "title": "개성시 (Kaesong) · 위키데이터 항목 Q109079",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q109079.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-kaesong",
+      "title": "개성시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q5369516",
+      "title": "만월대 (Manwoldae) · 위키데이터 항목 Q5369516",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5369516.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-manwoldae",
+      "title": "만월대 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%A7%8C%EC%9B%94%EB%8C%80",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42097",
+      "title": "경주시 (Gyeongju) · 위키데이터 항목 Q42097",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42097.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-gyeongju",
+      "title": "경주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q471292",
+      "title": "경주 월성 (Wolseong) · 위키데이터 항목 Q471292",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q471292.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-wolseong",
+      "title": "경주 월성 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%9B%94%EC%84%B1",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q50247",
+      "title": "부여군 (Buyeo County) · 위키데이터 항목 Q50247",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50247.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-buyeo",
+      "title": "부여군 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC%EA%B5%B0",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q12598898",
+      "title": "부여 부소산성 (Busosanseong) · 위키데이터 항목 Q12598898",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q12598898.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-busosanseong",
+      "title": "부여 부소산성 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%86%8C%EC%82%B0%EC%84%B1",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42062",
+      "title": "공주시 (Gongju) · 위키데이터 항목 Q42062",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42062.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-gongju",
+      "title": "공주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q12584692",
+      "title": "공산성 (Gongsanseong) · 위키데이터 항목 Q12584692",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q12584692.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-gongsanseong",
+      "title": "공주 공산성 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%82%B0%EC%84%B1",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42140",
+      "title": "전주시 (Jeonju) · 위키데이터 항목 Q42140",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42140.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-jeonju",
+      "title": "전주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%84%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q16520",
+      "title": "부산광역시 (Busan) · 위키데이터 항목 Q16520",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16520.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-busan",
+      "title": "부산광역시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q50383",
+      "title": "동래구 (Dongnae District) · 위키데이터 항목 Q50383",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50383.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-dongnae",
+      "title": "동래구 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8F%99%EB%9E%98%EA%B5%AC",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42144",
+      "title": "진주시 (Jinju) · 위키데이터 항목 Q42144",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42144.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-jinju",
+      "title": "진주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A7%84%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q12618350",
+      "title": "진주성 (Jinju Fortress) · 위키데이터 항목 Q12618350",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q12618350.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-jinjuseong",
+      "title": "진주성 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A7%84%EC%A3%BC%EC%84%B1",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42125",
+      "title": "여수시 (Yeosu) · 위키데이터 항목 Q42125",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42125.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-yeosu",
+      "title": "여수시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%97%AC%EC%88%98%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42152",
+      "title": "통영시 (Tongyeong) · 위키데이터 항목 Q42152",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42152.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-tongyeong",
+      "title": "통영시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%86%B5%EC%98%81%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q485029",
+      "title": "한산도 (Hansando) · 위키데이터 항목 Q485029",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q485029.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-hansando",
+      "title": "한산도 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%82%B0%EB%8F%84",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42094",
+      "title": "목포시 (Mokpo) · 위키데이터 항목 Q42094",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42094.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-mokpo",
+      "title": "목포시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%AA%A9%ED%8F%AC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q12584477",
+      "title": "고하도 (Gohado) · 위키데이터 항목 Q12584477",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q12584477.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-gohado",
+      "title": "고하도 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%ED%95%98%EB%8F%84",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42083",
+      "title": "나주시 (Naju) · 위키데이터 항목 Q42083",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42083.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-naju",
+      "title": "나주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%82%98%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q41283",
+      "title": "광주광역시 (Gwangju) · 위키데이터 항목 Q41283",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q41283.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-gwangju",
+      "title": "광주광역시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q50325",
+      "title": "진도군 (Jindo County) · 위키데이터 항목 Q50325",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50325.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-jindo",
+      "title": "진도군 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A7%84%EB%8F%84%EA%B5%B0",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42057",
+      "title": "거제시 (Geoje) · 위키데이터 항목 Q42057",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42057.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-geoje",
+      "title": "거제시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A0%9C%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q41278",
+      "title": "울산광역시 (Ulsan) · 위키데이터 항목 Q41278",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q41278.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-ulsan",
+      "title": "울산광역시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42082",
+      "title": "김해시 (Gimhae) · 위키데이터 항목 Q42082",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42082.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-gimhae",
+      "title": "김해시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B9%80%ED%95%B4%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q50207",
+      "title": "고령군 (Goryeong County) · 위키데이터 항목 Q50207",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50207.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-goryeong",
+      "title": "고령군 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%B9%EA%B5%B0",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42137",
+      "title": "익산시 (Iksan) · 위키데이터 항목 Q42137",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42137.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-iksan",
+      "title": "익산시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B5%EC%82%B0%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q20927",
+      "title": "대구광역시 (Daegu) · 위키데이터 항목 Q20927",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20927.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-daegu",
+      "title": "대구광역시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q20921",
+      "title": "대전광역시 (Daejeon) · 위키데이터 항목 Q20921",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20921.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-daejeon",
+      "title": "대전광역시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42147",
+      "title": "청주시 (Cheongju) · 위키데이터 항목 Q42147",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42147.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-cheongju",
+      "title": "청주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q31094",
+      "title": "충주시 (Chungju) · 위키데이터 항목 Q31094",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q31094.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-chungju",
+      "title": "충주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B6%A9%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42116",
+      "title": "안동시 (Andong) · 위키데이터 항목 Q42116",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42116.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-andong",
+      "title": "안동시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%88%EB%8F%99%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q20714",
+      "title": "수원시 (Suwon) · 위키데이터 항목 Q20714",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20714.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-suwon",
+      "title": "수원시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%98%EC%9B%90%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q20934",
+      "title": "인천광역시 (Incheon) · 위키데이터 항목 Q20934",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20934.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-incheon",
+      "title": "인천광역시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42056",
+      "title": "강릉시 (Gangneung) · 위키데이터 항목 Q42056",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42056.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-gangneung",
+      "title": "강릉시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%EB%A6%89%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42109",
+      "title": "속초시 (Sokcho) · 위키데이터 항목 Q42109",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42109.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-sokcho",
+      "title": "속초시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%86%8D%EC%B4%88%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q50254",
+      "title": "양양군 (Yangyang County) · 위키데이터 항목 Q50254",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50254.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-yangyang",
+      "title": "양양군 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%96%91%EC%96%91%EA%B5%B0",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42148",
+      "title": "춘천시 (Chuncheon) · 위키데이터 항목 Q42148",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42148.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-chuncheon",
+      "title": "춘천시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B6%98%EC%B2%9C%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q50329",
+      "title": "철원군 (Cheorwon County) · 위키데이터 항목 Q50329",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50329.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-cheorwon_south",
+      "title": "철원군 (대한민국) · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%A0%EC%9B%90%EA%B5%B0_%28%EB%82%A8%ED%95%9C%29",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q490109",
+      "title": "철원군 (Chorwon County) · 위키데이터 항목 Q490109",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q490109.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-cheorwon_north",
+      "title": "철원군 (조선민주주의인민공화국) · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%A0%EC%9B%90%EA%B5%B0_%28%EB%B6%81%29",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q50205",
+      "title": "강화군 (Ganghwa County) · 위키데이터 항목 Q50205",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50205.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-ganghwa",
+      "title": "강화군 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%ED%99%94%EA%B5%B0",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q494786",
+      "title": "강화도 (Ganghwa Island) · 위키데이터 항목 Q494786",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q494786.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-ganghwado",
+      "title": "강화도 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%ED%99%94%EB%8F%84",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q714865",
+      "title": "해주시 (Haeju) · 위키데이터 항목 Q714865",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q714865.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-haeju",
+      "title": "해주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%B4%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q505807",
+      "title": "사리원시 (Sariwon) · 위키데이터 항목 Q505807",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q505807.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-sariwon",
+      "title": "사리원시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EB%A6%AC%EC%9B%90%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q109386",
+      "title": "남포시 (Nampo) · 위키데이터 항목 Q109386",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q109386.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-nampo",
+      "title": "남포시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%82%A8%ED%8F%AC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q109374",
+      "title": "원산시 (Wonsan) · 위키데이터 항목 Q109374",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q109374.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-wonsan",
+      "title": "원산시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9B%90%EC%82%B0%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q109356",
+      "title": "함흥시 (Hamhung) · 위키데이터 항목 Q109356",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q109356.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-hamhung",
+      "title": "함흥시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%A8%ED%9D%A5%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q224982",
+      "title": "흥남구역 (Hungnam) · 위키데이터 항목 Q224982",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q224982.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-hungnam",
+      "title": "흥남구역 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%9D%A5%EB%82%A8",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q109336",
+      "title": "청진시 (Chongjin) · 위키데이터 항목 Q109336",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q109336.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-chongjin",
+      "title": "청진시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%A7%84%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q156243",
+      "title": "신의주시 (Sinuiju) · 위키데이터 항목 Q156243",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q156243.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-sinuiju",
+      "title": "신의주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9D%98%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q701248",
+      "title": "의주군 (Uiju County) · 위키데이터 항목 Q701248",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q701248.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-uiju",
+      "title": "의주군 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%98%EC%A3%BC%EA%B5%B0",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q706605",
+      "title": "위화도 (Wihwa Island) · 위키데이터 항목 Q706605",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q706605.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-wihwado",
+      "title": "위화도 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9C%84%ED%99%94%EB%8F%84",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q489825",
+      "title": "강계시 (Kanggye) · 위키데이터 항목 Q489825",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q489825.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-kanggye",
+      "title": "강계시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%EA%B3%84%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q489829",
+      "title": "혜산시 (Hyesan) · 위키데이터 항목 Q489829",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q489829.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-hyesan",
+      "title": "혜산시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%98%9C%EC%82%B0%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q48888",
+      "title": "회령시 (Hoeryong) · 위키데이터 항목 Q48888",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q48888.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-hoeryong",
+      "title": "회령시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%9A%8C%EB%A0%B9%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q221734",
+      "title": "라선시 (Rason) · 위키데이터 항목 Q221734",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q221734.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-rason",
+      "title": "라선시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%84%A0%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q483530",
+      "title": "옹진군 (Ongjin County) · 위키데이터 항목 Q483530",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q483530.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-ongjin_dprk",
+      "title": "옹진군 (황해남도) · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%98%B9%EC%A7%84%EA%B5%B0_%28%ED%99%A9%ED%95%B4%EB%82%A8%EB%8F%84%29",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q485315",
+      "title": "백령도 (Baengnyeongdo) · 위키데이터 항목 Q485315",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q485315.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-baengnyeongdo",
+      "title": "백령도 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B0%B1%EB%A0%B9%EB%8F%84",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q495167",
+      "title": "판문점 (Panmunjom) · 위키데이터 항목 Q495167",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q495167.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-panmunjom",
+      "title": "판문점 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%8C%90%EB%AC%B8%EC%A0%90",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q42142",
+      "title": "제주시 (Jeju) · 위키데이터 항목 Q42142",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42142.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-jeju_city",
+      "title": "제주시 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%A3%BC%EC%8B%9C",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q29151",
+      "title": "제주도 (Jeju Island) · 위키데이터 항목 Q29151",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q29151.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-jejudo",
+      "title": "제주도 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%A3%BC%EB%8F%84",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q494645",
+      "title": "한라산 (Hallasan) · 위키데이터 항목 Q494645",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q494645.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-hallasan",
+      "title": "한라산 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EB%9D%BC%EC%82%B0",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q41172",
+      "title": "울릉도 (Ulleungdo) · 위키데이터 항목 Q41172",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q41172.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-ulleungdo",
+      "title": "울릉도 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EB%A6%89%EB%8F%84",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-wd-Q20317",
+      "title": "독도 (Liancourt Rocks) · 위키데이터 항목 Q20317",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20317.json",
+      "license": "CC0 1.0 (src-wikidata-licensing 참조)"
+    },
+    {
+      "id": "src-kowiki-dokdo",
+      "title": "독도 · 한국어 위키백과 (항목 식별용)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8F%85%EB%8F%84",
+      "license": "CC BY-SA 4.0 (src-kowiki-licensing 참조)"
+    },
+    {
+      "id": "src-hgis-admin-1910-1945",
+      "title": "역사지리정보DB 행정구역 좌표",
+      "publisher": "국사편찬위원회",
+      "url": "https://hgis.history.go.kr/pro_g1/dataset.do"
+    }
+  ],
+  "places": [
+    {
+      "id": "rc-seoul-city",
+      "label": "서울특별시",
+      "aliases": [
+        "서울",
+        "Seoul"
+      ],
+      "lon": 126.99,
+      "lat": 37.56,
+      "precision": "area",
+      "entityIds": [
+        "place-encykorea-seoul"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q8684",
+        "src-kowiki-seoul"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q8684 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '서울특별시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 조선의 한성부는 rc-hanseongbu 로 따로 두었다."
+    },
+    {
+      "id": "rc-hanseongbu",
+      "label": "한성부",
+      "aliases": [
+        "한성",
+        "한양",
+        "Hanseong",
+        "Hanyang"
+      ],
+      "lon": 127.0,
+      "lat": 37.583333333333336,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-8906"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q624467",
+        "src-kowiki-gaeseong_hanseongbu"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q624467 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '한성부' 문서가 가리키는 항목 번호로 확인했다. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 조선 한성부 항목의 좌표다. 현재 서울특별시 행정구역(rc-seoul-city)과 같은 지역을 가리키지만 같은 행정 실체는 아니며, 원자료가 이 점을 어떤 기준으로 잡았는지는 밝히지 않는다. 백제 위례성 비정은 여기에 포함하지 않았다."
+    },
+    {
+      "id": "rc-gyeongbokgung",
+      "label": "경복궁",
+      "aliases": [
+        "Gyeongbokgung"
+      ],
+      "lon": 126.9767996,
+      "lat": 37.5798841,
+      "precision": "site",
+      "entityIds": [
+        "place-gyeongbokgung"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q482485",
+        "src-kowiki-gyeongbokgung"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q482485 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '경복궁' 문서가 가리키는 항목 번호로 확인했다. 유적·시설 지점 좌표다. 조선 법궁의 지점이며 한성부 전체를 대표하지 않는다."
+    },
+    {
+      "id": "rc-pyongyang-city",
+      "label": "평양시",
+      "aliases": [
+        "평양",
+        "평양직할시",
+        "Pyongyang"
+      ],
+      "lon": 125.7475,
+      "lat": 39.016666666666666,
+      "precision": "area",
+      "entityIds": [
+        "place-encykorea-modern-pyongyang-city",
+        "place-nahf-modern-pyongyang-city",
+        "place-encykorea-pyongyang"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-93236"
+      ],
+      "sourceIds": [
+        "src-wd-Q18808",
+        "src-kowiki-pyongyang"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q18808 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '평양시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 고구려 평양성 등 역사 지점의 비정은 이 점으로 대신하지 않는다."
+    },
+    {
+      "id": "rc-pyongyang-1910-1945",
+      "label": "평양 (1910~1945 행정구역)",
+      "aliases": [
+        "평양부",
+        "평양군"
+      ],
+      "lon": 125.68462533200005,
+      "lat": 39.085723067500055,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-93236"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-93236"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-93236, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다."
+    },
+    {
+      "id": "rc-kaesong-city",
+      "label": "개성시",
+      "aliases": [
+        "개성",
+        "개성직할시",
+        "Kaesong"
+      ],
+      "lon": 126.55277777777778,
+      "lat": 37.971666666666664,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-6836"
+      ],
+      "sourceIds": [
+        "src-wd-Q109079",
+        "src-kowiki-kaesong"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q109079 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '개성시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 원자료는 개경 등 옛 이름을 별칭으로 함께 싣지만, 고려 수도 개경의 중심 지점은 rc-manwoldae 를 쓴다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 37.9717 로 38도선 남쪽이다. 원자료가 적은 현재 소속 국가는 조선민주주의인민공화국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-manwoldae",
+      "label": "만월대",
+      "aliases": [
+        "Manwoldae"
+      ],
+      "lon": 126.54333333333334,
+      "lat": 37.985,
+      "precision": "site",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q5369516",
+        "src-kowiki-manwoldae"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q5369516 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '만월대' 문서가 가리키는 항목 번호로 확인했다. 유적·시설 지점 좌표다. 고려 정궁 터의 지점이며 개경 도성 전체 범위가 아니다."
+    },
+    {
+      "id": "rc-kaesong-1910-1945",
+      "label": "개성 (1910~1945 행정구역)",
+      "aliases": [
+        "개성군",
+        "개성부"
+      ],
+      "lon": 126.52319263200002,
+      "lat": 38.021695409000046,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-6836"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-6836"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-6836, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 38.0217 로 38도선 북쪽이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-gyeongju-city",
+      "label": "경주시",
+      "aliases": [
+        "경주",
+        "Gyeongju"
+      ],
+      "lon": 129.21666666667,
+      "lat": 35.85,
+      "precision": "area",
+      "entityIds": [
+        "place-encykorea-gyeongju"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-157642"
+      ],
+      "sourceIds": [
+        "src-wd-Q42097",
+        "src-kowiki-gyeongju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42097 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '경주시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 신라 왕경의 범위·중심 비정은 여기에 포함하지 않았다."
+    },
+    {
+      "id": "rc-wolseong",
+      "label": "경주 월성",
+      "aliases": [
+        "월성",
+        "반월성",
+        "Wolseong"
+      ],
+      "lon": 129.223337,
+      "lat": 35.831314,
+      "precision": "site",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q471292",
+        "src-kowiki-wolseong"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q471292 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '경주 월성' 문서가 가리키는 항목 번호로 확인했다. 유적·시설 지점 좌표다. 신라 궁성 터의 지점이다."
+    },
+    {
+      "id": "rc-buyeo-county",
+      "label": "부여군",
+      "aliases": [
+        "부여",
+        "Buyeo"
+      ],
+      "lon": 126.9125,
+      "lat": 36.281944444444,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-27192"
+      ],
+      "sourceIds": [
+        "src-wd-Q50247",
+        "src-kowiki-buyeo"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q50247 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '부여군' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 2개 있다. 순위 표시가 없어 첫 진술을 썼다. 다른 값: 126.85802, 36.26257. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 백제 사비 도성의 중심 지점 비정은 여기에 포함하지 않았다."
+    },
+    {
+      "id": "rc-busosanseong",
+      "label": "부여 부소산성",
+      "aliases": [
+        "부소산성",
+        "Busosanseong"
+      ],
+      "lon": 126.913159,
+      "lat": 36.291286,
+      "precision": "site",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q12598898",
+        "src-kowiki-busosanseong"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q12598898 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '부여 부소산성' 문서가 가리키는 항목 번호로 확인했다. 유적·시설 지점 좌표다. 사비기 왕궁 배후 산성 구역의 지점이다."
+    },
+    {
+      "id": "rc-gongju-city",
+      "label": "공주시",
+      "aliases": [
+        "공주",
+        "Gongju"
+      ],
+      "lon": 127.12472222222,
+      "lat": 36.455555555556,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-20613"
+      ],
+      "sourceIds": [
+        "src-wd-Q42062",
+        "src-kowiki-gongju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42062 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '공주시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 백제 웅진기 왕성 지점은 rc-gongsanseong 을 쓴다."
+    },
+    {
+      "id": "rc-gongsanseong",
+      "label": "공주 공산성",
+      "aliases": [
+        "공산성",
+        "Gongsanseong"
+      ],
+      "lon": 127.12722222,
+      "lat": 36.46194444,
+      "precision": "site",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q12584692",
+        "src-kowiki-gongsanseong"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q12584692 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '공주 공산성' 문서가 가리키는 항목 번호로 확인했다. 유적·시설 지점 좌표다. 웅진기와 관련되는 성곽 구역의 지점이다."
+    },
+    {
+      "id": "rc-jeonju-city",
+      "label": "전주시",
+      "aliases": [
+        "전주",
+        "Jeonju"
+      ],
+      "lon": 127.1475,
+      "lat": 35.82388888888889,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-95291"
+      ],
+      "sourceIds": [
+        "src-wd-Q42140",
+        "src-kowiki-jeonju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42140 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '전주시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-busan-city",
+      "label": "부산광역시",
+      "aliases": [
+        "부산",
+        "Busan"
+      ],
+      "lon": 129.075,
+      "lat": 35.18,
+      "precision": "area",
+      "entityIds": [
+        "place-encykorea-busan"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-145002"
+      ],
+      "sourceIds": [
+        "src-wd-Q16520",
+        "src-kowiki-busan"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q16520 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '부산광역시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-dongnae-gu",
+      "label": "동래구",
+      "aliases": [
+        "동래",
+        "Dongnae"
+      ],
+      "lon": 129.08388889,
+      "lat": 35.20361111,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-147793"
+      ],
+      "sourceIds": [
+        "src-wd-Q50383",
+        "src-kowiki-dongnae"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q50383 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '동래구' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 1592년 동래성 전투 지점(카탈로그 place-dongnaeseong-1592)과 같은 점으로 쓰지 않는다."
+    },
+    {
+      "id": "rc-jinju-city",
+      "label": "진주시",
+      "aliases": [
+        "진주",
+        "Jinju"
+      ],
+      "lon": 128.08472222222,
+      "lat": 35.192777777778,
+      "precision": "area",
+      "entityIds": [
+        "place-encykorea-jinju"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-145018"
+      ],
+      "sourceIds": [
+        "src-wd-Q42144",
+        "src-kowiki-jinju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42144 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '진주시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-jinjuseong",
+      "label": "진주성",
+      "aliases": [
+        "Jinjuseong"
+      ],
+      "lon": 128.07333333333332,
+      "lat": 35.19,
+      "precision": "site",
+      "entityIds": [
+        "place-jinjuseong"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q12618350",
+        "src-kowiki-jinjuseong"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q12618350 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '진주성' 문서가 가리키는 항목 번호로 확인했다. 유적·시설 지점 좌표다."
+    },
+    {
+      "id": "rc-yeosu-city",
+      "label": "여수시",
+      "aliases": [
+        "여수",
+        "Yeosu"
+      ],
+      "lon": 127.662163,
+      "lat": 34.760689,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-114867"
+      ],
+      "sourceIds": [
+        "src-wd-Q42125",
+        "src-kowiki-yeosu"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42125 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '여수시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 전라좌수영 터의 지점 좌표는 이 등록부에 없다."
+    },
+    {
+      "id": "rc-tongyeong-city",
+      "label": "통영시",
+      "aliases": [
+        "통영",
+        "Tongyeong"
+      ],
+      "lon": 128.42361111111,
+      "lat": 34.845833333333,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-145025"
+      ],
+      "sourceIds": [
+        "src-wd-Q42152",
+        "src-kowiki-tongyeong"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42152 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '통영시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-hansando",
+      "label": "한산도",
+      "aliases": [
+        "한산섬",
+        "Hansando"
+      ],
+      "lon": 128.485,
+      "lat": 34.7818,
+      "precision": "area",
+      "entityIds": [
+        "place-yinav-hansando"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q485029",
+        "src-kowiki-hansando"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q485029 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '한산도' 문서가 가리키는 항목 번호로 확인했다. 섬 전체를 대표하는 좌표점이다. 상륙·정박 지점 등 구체적 위치를 뜻하지 않는다. 한산도대첩 해전 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-mokpo-city",
+      "label": "목포시",
+      "aliases": [
+        "목포",
+        "Mokpo"
+      ],
+      "lon": 126.38861111111,
+      "lat": 34.793611111111,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-117666"
+      ],
+      "sourceIds": [
+        "src-wd-Q42094",
+        "src-kowiki-mokpo"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42094 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '목포시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-gohado",
+      "label": "고하도",
+      "aliases": [
+        "Gohado"
+      ],
+      "lon": 126.36833333333,
+      "lat": 34.769722222222,
+      "precision": "area",
+      "entityIds": [
+        "place-yinav-gohado"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q12584477",
+        "src-kowiki-gohado"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q12584477 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '고하도' 문서가 가리키는 항목 번호로 확인했다. 섬 전체를 대표하는 좌표점이다. 상륙·정박 지점 등 구체적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-naju-city",
+      "label": "나주시",
+      "aliases": [
+        "나주",
+        "Naju"
+      ],
+      "lon": 126.7175,
+      "lat": 35.028333333333,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q42083",
+        "src-kowiki-naju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42083 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '나주시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 카탈로그의 place-naju 는 1011년 기사에 나오는 나주를 가리키는 항목이라 현대 시 기록에 연결하지 않았다."
+    },
+    {
+      "id": "rc-gwangju-city",
+      "label": "광주광역시",
+      "aliases": [
+        "광주",
+        "Gwangju"
+      ],
+      "lon": 126.91666666667,
+      "lat": 35.166666666667,
+      "precision": "area",
+      "entityIds": [
+        "place-encykorea-gwangju-1980"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q41283",
+        "src-kowiki-gwangju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q41283 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '광주광역시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-jindo-county",
+      "label": "진도군",
+      "aliases": [
+        "진도",
+        "Jindo"
+      ],
+      "lon": 126.26194444444,
+      "lat": 34.483055555556,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q50325",
+        "src-kowiki-jindo"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q50325 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '진도군' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-geoje-city",
+      "label": "거제시",
+      "aliases": [
+        "거제",
+        "거제도",
+        "Geoje"
+      ],
+      "lon": 128.58861111111,
+      "lat": 34.850277777778,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q42057",
+        "src-kowiki-geoje"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42057 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '거제시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-ulsan-city",
+      "label": "울산광역시",
+      "aliases": [
+        "울산",
+        "Ulsan"
+      ],
+      "lon": 129.31666666667,
+      "lat": 35.55,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q41278",
+        "src-kowiki-ulsan"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q41278 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '울산광역시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-gimhae-city",
+      "label": "김해시",
+      "aliases": [
+        "김해",
+        "Gimhae"
+      ],
+      "lon": 128.88111111111,
+      "lat": 35.234166666667,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q42082",
+        "src-kowiki-gimhae"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42082 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '김해시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-goryeong-county",
+      "label": "고령군",
+      "aliases": [
+        "고령",
+        "Goryeong"
+      ],
+      "lon": 128.26888888889,
+      "lat": 35.730277777778,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q50207",
+        "src-kowiki-goryeong"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q50207 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '고령군' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-iksan-city",
+      "label": "익산시",
+      "aliases": [
+        "익산",
+        "Iksan"
+      ],
+      "lon": 126.95444444444,
+      "lat": 35.943888888889,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q42137",
+        "src-kowiki-iksan"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42137 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '익산시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-daegu-city",
+      "label": "대구광역시",
+      "aliases": [
+        "대구",
+        "Daegu"
+      ],
+      "lon": 128.60166666666666,
+      "lat": 35.87166666666667,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q20927",
+        "src-kowiki-daegu"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q20927 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '대구광역시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-daejeon-city",
+      "label": "대전광역시",
+      "aliases": [
+        "대전",
+        "Daejeon"
+      ],
+      "lon": 127.385,
+      "lat": 36.35,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q20921",
+        "src-kowiki-daejeon"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q20921 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '대전광역시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-cheongju-city",
+      "label": "청주시",
+      "aliases": [
+        "청주",
+        "Cheongju"
+      ],
+      "lon": 127.48972222222,
+      "lat": 36.637222222222,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q42147",
+        "src-kowiki-cheongju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42147 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '청주시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-chungju-city",
+      "label": "충주시",
+      "aliases": [
+        "충주",
+        "Chungju"
+      ],
+      "lon": 127.93222222222,
+      "lat": 36.970555555556,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q31094",
+        "src-kowiki-chungju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q31094 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '충주시' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 2개 있다. 순위 표시가 없어 첫 진술을 썼다. 다른 값: 127.87722, 37.01778. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-andong-city",
+      "label": "안동시",
+      "aliases": [
+        "안동",
+        "Andong"
+      ],
+      "lon": 128.725,
+      "lat": 36.565555555556,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q42116",
+        "src-kowiki-andong"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42116 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '안동시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-suwon-city",
+      "label": "수원시",
+      "aliases": [
+        "수원",
+        "Suwon"
+      ],
+      "lon": 127.01,
+      "lat": 37.285833333333,
+      "precision": "area",
+      "entityIds": [
+        "place-encykorea-suwon"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q20714",
+        "src-kowiki-suwon"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q20714 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '수원시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-incheon-city",
+      "label": "인천광역시",
+      "aliases": [
+        "인천",
+        "Incheon"
+      ],
+      "lon": 126.64861111111,
+      "lat": 37.463888888889,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q20934",
+        "src-kowiki-incheon"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q20934 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '인천광역시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-gangneung-city",
+      "label": "강릉시",
+      "aliases": [
+        "강릉",
+        "Gangneung"
+      ],
+      "lon": 128.89611111111,
+      "lat": 37.755555555556,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-46922"
+      ],
+      "sourceIds": [
+        "src-wd-Q42056",
+        "src-kowiki-gangneung"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42056 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '강릉시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 37.7556 로 38도선 남쪽이다. 원자료가 적은 현재 소속 국가는 대한민국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-sokcho-city",
+      "label": "속초시",
+      "aliases": [
+        "속초",
+        "Sokcho"
+      ],
+      "lon": 128.59111111111,
+      "lat": 38.208333333333,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q42109",
+        "src-kowiki-sokcho"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42109 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '속초시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 38.2083 로 38도선 북쪽이다. 원자료가 적은 현재 소속 국가는 대한민국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-yangyang-county",
+      "label": "양양군",
+      "aliases": [
+        "양양",
+        "Yangyang"
+      ],
+      "lon": 128.61666666667,
+      "lat": 38.066666666667,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-47064"
+      ],
+      "sourceIds": [
+        "src-wd-Q50254",
+        "src-kowiki-yangyang"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q50254 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '양양군' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 38.0667 로 38도선 북쪽이다. 원자료가 적은 현재 소속 국가는 대한민국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-chuncheon-city",
+      "label": "춘천시",
+      "aliases": [
+        "춘천",
+        "Chuncheon"
+      ],
+      "lon": 127.73416666667,
+      "lat": 37.874722222222,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q42148",
+        "src-kowiki-chuncheon"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42148 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '춘천시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-cheorwon-county-rok",
+      "label": "철원군 (대한민국 강원)",
+      "aliases": [
+        "철원",
+        "Cheorwon"
+      ],
+      "lon": 127.2175,
+      "lat": 38.209167,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q50329",
+        "src-kowiki-cheorwon_south"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q50329 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '철원군 (대한민국)' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 2개 있다. 순위 표시가 없어 첫 진술을 썼다. 다른 값: 127.44522, 38.24391. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 조선민주주의인민공화국의 같은 이름 군(rc-cheorwon-county-dprk)과 다른 행정구역이며 합치지 않는다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 38.2092 로 38도선 북쪽이다. 원자료가 적은 현재 소속 국가는 대한민국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-cheorwon-county-dprk",
+      "label": "철원군 (조선민주주의인민공화국 강원)",
+      "aliases": [
+        "철원",
+        "Cheorwon"
+      ],
+      "lon": 127.0,
+      "lat": 38.333333333333336,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q490109",
+        "src-kowiki-cheorwon_north"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q490109 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '철원군 (조선민주주의인민공화국)' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 2개 있다. 우선 순위(preferred) 진술을 썼다. 다른 값: 126.90439, 38.34669. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 대한민국의 같은 이름 군(rc-cheorwon-county-rok)과 다른 행정구역이며 합치지 않는다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 38.3333 로 38도선 북쪽이다. 원자료가 적은 현재 소속 국가는 조선민주주의인민공화국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-cheorwon-1910-1945",
+      "label": "철원 (1910~1945 행정구역)",
+      "aliases": [
+        "철원군"
+      ],
+      "lon": 127.22448079300011,
+      "lat": 38.24684868400004,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-55145"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-55145"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-55145, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다. 이 시기 철원군 영역은 뒤에 남북으로 나뉘었으므로 현재의 두 철원군 중 하나와 같다고 보지 않는다."
+    },
+    {
+      "id": "rc-wonju-1910-1945",
+      "label": "원주 (1910~1945 행정구역)",
+      "aliases": [
+        "원주군"
+      ],
+      "lon": 127.98131429200009,
+      "lat": 37.325385782500064,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-47131"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-47131"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-47131, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다."
+    },
+    {
+      "id": "rc-ganghwa-county",
+      "label": "강화군",
+      "aliases": [
+        "강화",
+        "Ganghwa"
+      ],
+      "lon": 126.48944444,
+      "lat": 37.73888889,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-557"
+      ],
+      "sourceIds": [
+        "src-wd-Q50205",
+        "src-kowiki-ganghwa"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q50205 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '강화군' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-ganghwado",
+      "label": "강화도",
+      "aliases": [
+        "Ganghwado",
+        "Ganghwa Island"
+      ],
+      "lon": 126.44,
+      "lat": 37.71,
+      "precision": "area",
+      "entityIds": [
+        "place-encykorea-ganghwado"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q494786",
+        "src-kowiki-ganghwado"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q494786 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '강화도' 문서가 가리키는 항목 번호로 확인했다. 섬 전체를 대표하는 좌표점이다. 상륙·정박 지점 등 구체적 위치를 뜻하지 않는다. 고려 강도(江都) 시기 궁궐 터의 지점은 이 등록부에 없다."
+    },
+    {
+      "id": "rc-haeju-city",
+      "label": "해주시",
+      "aliases": [
+        "해주",
+        "Haeju"
+      ],
+      "lon": 125.71666666667,
+      "lat": 38.033333333333,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-56726"
+      ],
+      "sourceIds": [
+        "src-wd-Q714865",
+        "src-kowiki-haeju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q714865 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '해주시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 38.0333 로 38도선 북쪽이다. 원자료가 적은 현재 소속 국가는 조선민주주의인민공화국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-sariwon-city",
+      "label": "사리원시",
+      "aliases": [
+        "사리원",
+        "Sariwon"
+      ],
+      "lon": 125.75888888889,
+      "lat": 38.503888888889,
+      "precision": "area",
+      "entityIds": [
+        "place-geonames-1870883"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q505807",
+        "src-kowiki-sariwon"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q505807 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '사리원시' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 3개 있다. 순위 표시가 없어 첫 진술을 썼다. 다른 값: 125.73989, 38.53242; 125.75871, 38.50198. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-nampo-city",
+      "label": "남포시",
+      "aliases": [
+        "남포",
+        "Nampo"
+      ],
+      "lon": 125.4,
+      "lat": 38.733333333333,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q109386",
+        "src-kowiki-nampo"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q109386 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '남포시' 문서가 가리키는 항목 번호로 확인했다. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 1910~1945 자료의 진남포와 같은 곳인지 이 조사에서 확인하지 않았고 앵커를 연결하지 않았다."
+    },
+    {
+      "id": "rc-wonsan-city",
+      "label": "원산시",
+      "aliases": [
+        "원산",
+        "Wonsan"
+      ],
+      "lon": 127.44611111111,
+      "lat": 39.1475,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-69663"
+      ],
+      "sourceIds": [
+        "src-wd-Q109374",
+        "src-kowiki-wonsan"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q109374 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '원산시' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 2개 있다. 순위 표시가 없어 첫 진술을 썼다. 다른 값: 127.43351, 39.17144. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-hamhung-city",
+      "label": "함흥시",
+      "aliases": [
+        "함흥",
+        "Hamhung"
+      ],
+      "lon": 127.53333333333,
+      "lat": 39.916666666667,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-69676"
+      ],
+      "sourceIds": [
+        "src-wd-Q109356",
+        "src-kowiki-hamhung"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q109356 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '함흥시' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 2개 있다. 순위 표시가 없어 첫 진술을 썼다. 다른 값: 127.48861, 39.96556. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-hungnam-district",
+      "label": "흥남구역",
+      "aliases": [
+        "흥남",
+        "Hungnam"
+      ],
+      "lon": 127.61666666667,
+      "lat": 39.833333333333,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q224982",
+        "src-kowiki-hungnam"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q224982 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '흥남구역' 문서가 가리키는 항목 번호로 확인했다. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 1910~1945 앵커의 '흠남' 표기와 같은 곳인지 확인하지 않아 연결하지 않았다."
+    },
+    {
+      "id": "rc-chongjin-city",
+      "label": "청진시",
+      "aliases": [
+        "청진",
+        "Chongjin"
+      ],
+      "lon": 129.78333333333333,
+      "lat": 41.78333333333333,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-85108"
+      ],
+      "sourceIds": [
+        "src-wd-Q109336",
+        "src-kowiki-chongjin"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q109336 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '청진시' 문서가 가리키는 항목 번호로 확인했다. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-sinuiju-city",
+      "label": "신의주시",
+      "aliases": [
+        "신의주",
+        "Sinuiju"
+      ],
+      "lon": 124.4,
+      "lat": 40.1,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-136857"
+      ],
+      "sourceIds": [
+        "src-wd-Q156243",
+        "src-kowiki-sinuiju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q156243 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '신의주시' 문서가 가리키는 항목 번호로 확인했다. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-uiju-county",
+      "label": "의주군",
+      "aliases": [
+        "의주",
+        "Uiju"
+      ],
+      "lon": 124.53194444444,
+      "lat": 40.196944444444,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-137262"
+      ],
+      "sourceIds": [
+        "src-wd-Q701248",
+        "src-kowiki-uiju"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q701248 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '의주군' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 3개 있다. 우선 순위(preferred) 진술을 썼다. 다른 값: 124.53167, 40.19944; 124.66861, 40.21139. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-wihwado",
+      "label": "위화도",
+      "aliases": [
+        "Wihwado"
+      ],
+      "lon": 124.446,
+      "lat": 40.137,
+      "precision": "area",
+      "entityIds": [
+        "place-wihwado"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q706605",
+        "src-kowiki-wihwado"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q706605 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '위화도' 문서가 가리키는 항목 번호로 확인했다. 섬 전체를 대표하는 좌표점이다. 상륙·정박 지점 등 구체적 위치를 뜻하지 않는다. 압록강 하중도의 대표점이다."
+    },
+    {
+      "id": "rc-kanggye-city",
+      "label": "강계시",
+      "aliases": [
+        "강계",
+        "Kanggye"
+      ],
+      "lon": 126.6,
+      "lat": 40.966666666667,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q489825",
+        "src-kowiki-kanggye"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q489825 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '강계시' 문서가 가리키는 항목 번호로 확인했다. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-hyesan-city",
+      "label": "혜산시",
+      "aliases": [
+        "혜산",
+        "Hyesan"
+      ],
+      "lon": 128.18333333333,
+      "lat": 41.4,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q489829",
+        "src-kowiki-hyesan"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q489829 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '혜산시' 문서가 가리키는 항목 번호로 확인했다. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-hoeryong-city",
+      "label": "회령시",
+      "aliases": [
+        "회령",
+        "Hoeryong"
+      ],
+      "lon": 129.75,
+      "lat": 42.433333333333,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q48888",
+        "src-kowiki-hoeryong"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q48888 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '회령시' 문서가 가리키는 항목 번호로 확인했다. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-rason-city",
+      "label": "라선시",
+      "aliases": [
+        "라선",
+        "나선",
+        "나진",
+        "Rason"
+      ],
+      "lon": 130.38444444444,
+      "lat": 42.344444444444,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q221734",
+        "src-kowiki-rason"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q221734 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '라선시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 1910~1945 나진 앵커와 겹치는 지역이나 같은 행정 실체가 아니므로 연결하지 않았다."
+    },
+    {
+      "id": "rc-ongjin-county-dprk",
+      "label": "옹진군 (황해남도)",
+      "aliases": [
+        "옹진",
+        "Ongjin"
+      ],
+      "lon": 125.35722222222,
+      "lat": 37.930555555556,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-56652"
+      ],
+      "sourceIds": [
+        "src-wd-Q483530",
+        "src-kowiki-ongjin_dprk"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q483530 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '옹진군 (황해남도)' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 2개 있다. 순위 표시가 없어 첫 진술을 썼다. 다른 값: 125.28528, 37.96528. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다. 인천광역시 옹진군과 이름만 같은 다른 행정구역이며 합치지 않는다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 37.9306 로 38도선 남쪽이다. 원자료가 적은 현재 소속 국가는 조선민주주의인민공화국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-baengnyeongdo",
+      "label": "백령도",
+      "aliases": [
+        "Baengnyeongdo"
+      ],
+      "lon": 124.65,
+      "lat": 37.966666666667,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q485315",
+        "src-kowiki-baengnyeongdo"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q485315 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '백령도' 문서가 가리키는 항목 번호로 확인했다. 원자료에 좌표 진술이 2개 있다. 순위 표시가 없어 첫 진술을 썼다. 다른 값: 124.67278, 37.97250. 원자료가 밝힌 좌표 자릿수는 약 0.017도로 거칠다. 섬 전체를 대표하는 좌표점이다. 상륙·정박 지점 등 구체적 위치를 뜻하지 않는다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 37.9667 로 38도선 남쪽이다. 원자료가 적은 현재 소속 국가는 대한민국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-panmunjom",
+      "label": "판문점",
+      "aliases": [
+        "Panmunjom"
+      ],
+      "lon": 126.67777777778,
+      "lat": 37.955555555556,
+      "precision": "site",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q495167",
+        "src-kowiki-panmunjom"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q495167 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '판문점' 문서가 가리키는 항목 번호로 확인했다. 유적·시설 지점 좌표다. 정전협정 관련 장소의 지점이며, 군사분계선 자체의 선형을 뜻하지 않는다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 37.9556 로 38도선 남쪽이다. 원자료가 적은 현재 소속 국가는 조선민주주의인민공화국·대한민국이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-jeju-city",
+      "label": "제주시",
+      "aliases": [
+        "제주",
+        "Jeju"
+      ],
+      "lon": 126.52194444444,
+      "lat": 33.509722222222,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-121085"
+      ],
+      "sourceIds": [
+        "src-wd-Q42142",
+        "src-kowiki-jeju_city"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q42142 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '제주시' 문서가 가리키는 항목 번호로 확인했다. 현재 행정구역을 대표하는 좌표점이다. 사건의 실제 발생 지점이나 인물의 물리적 위치를 뜻하지 않는다."
+    },
+    {
+      "id": "rc-jejudo",
+      "label": "제주도",
+      "aliases": [
+        "Jejudo",
+        "Jeju Island"
+      ],
+      "lon": 126.55,
+      "lat": 33.38,
+      "precision": "area",
+      "entityIds": [
+        "place-encykorea-jejudo"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q29151",
+        "src-kowiki-jejudo"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q29151 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '제주도' 문서가 가리키는 항목 번호로 확인했다. regionBounds 는 같은 항목의 최북단(P1332)·최남단(P1333)·최동단(P1334)·최서단(P1335) 좌표에서 직접 만든 값이며 부속 도서를 포함하지 않는다. 섬 전체를 대표하는 좌표점이다. 상륙·정박 지점 등 구체적 위치를 뜻하지 않는다.",
+      "regionBounds": [
+        126.16083333333333,
+        33.195277777777775,
+        126.94666666666667,
+        33.565555555555555
+      ]
+    },
+    {
+      "id": "rc-hallasan",
+      "label": "한라산",
+      "aliases": [
+        "Hallasan"
+      ],
+      "lon": 126.51666666667,
+      "lat": 33.35,
+      "precision": "site",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q494645",
+        "src-kowiki-hallasan"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q494645 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '한라산' 문서가 가리키는 항목 번호로 확인했다. 산 정상부를 가리키는 좌표점이다."
+    },
+    {
+      "id": "rc-ulleungdo",
+      "label": "울릉도",
+      "aliases": [
+        "Ulleungdo",
+        "Ulleung Island"
+      ],
+      "lon": 130.85638888889,
+      "lat": 37.501111111111,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [
+        "hgis-admin-157376",
+        "hgis-admin-145016"
+      ],
+      "sourceIds": [
+        "src-wd-Q41172",
+        "src-kowiki-ulleungdo"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q41172 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '울릉도' 문서가 가리키는 항목 번호로 확인했다. 섬 전체를 대표하는 좌표점이다. 상륙·정박 지점 등 구체적 위치를 뜻하지 않는다. 1910~1945 자료에는 울릉도와 울도 두 레코드가 같은 범위 중심을 갖고 있어 둘 다 참고로 붙였다."
+    },
+    {
+      "id": "rc-dokdo",
+      "label": "독도",
+      "aliases": [
+        "獨島",
+        "Dokdo",
+        "Liancourt Rocks"
+      ],
+      "lon": 131.86666666667,
+      "lat": 37.241666666667,
+      "precision": "area",
+      "entityIds": [],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-wd-Q20317",
+        "src-kowiki-dokdo"
+      ],
+      "coordinateNote": "좌표는 위키데이터 Q20317 의 좌표 위치(P625) 값을 그대로 옮겼다. 원값이 이미 WGS84 십진도이므로 투영 변환을 하지 않았다. 항목 식별은 한국어 위키백과 '독도' 문서가 가리키는 항목 번호로 확인했다. 섬 전체를 대표하는 좌표점이다. 상륙·정박 지점 등 구체적 위치를 뜻하지 않는다. 원자료의 영어 표제는 Liancourt Rocks이고 다른 언어 별칭도 함께 실려 있다."
+    },
+    {
+      "id": "rc-jangdan-1910-1945",
+      "label": "장단 (1910~1945 행정구역)",
+      "aliases": [
+        "장단군"
+      ],
+      "lon": 126.73388598100007,
+      "lat": 38.02575555700005,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-8391"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-8391"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-8391, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 38.0258 로 38도선 북쪽이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-gimhwa-1910-1945",
+      "label": "김화 (1910~1945 행정구역)",
+      "aliases": [
+        "김화군"
+      ],
+      "lon": 127.4709252185001,
+      "lat": 38.27925928350004,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-46991"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-46991"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-46991, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 38.2793 로 38도선 북쪽이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-pyeonggang-1910-1945",
+      "label": "평강 (1910~1945 행정구역)",
+      "aliases": [
+        "평강군"
+      ],
+      "lon": 127.21055686700004,
+      "lat": 38.556889454500066,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-55241"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-55241"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-55241, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다."
+    },
+    {
+      "id": "rc-anhyeop-1910-1945",
+      "label": "안협 (1910~1945 행정구역)",
+      "aliases": [
+        "안협군"
+      ],
+      "lon": 126.90975898450012,
+      "lat": 38.37683282000003,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-47041"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-47041"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-47041, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다."
+    },
+    {
+      "id": "rc-yeonan-1910-1945",
+      "label": "연안 (1910~1945 행정구역)",
+      "aliases": [
+        "연안군"
+      ],
+      "lon": 126.11504443250004,
+      "lat": 37.922613362500044,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-56625"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-56625"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-56625, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 37.9226 로 38도선 남쪽이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-ganseong-1910-1945",
+      "label": "간성 (1910~1945 행정구역)",
+      "aliases": [
+        "간성군"
+      ],
+      "lon": 128.45023967800006,
+      "lat": 38.37927332800004,
+      "precision": "area",
+      "entityIds": [
+        "place-hgis-admin-46626"
+      ],
+      "anchorPlaceIds": [
+        "hgis-admin-46626"
+      ],
+      "sourceIds": [
+        "src-existing-anchors-hgis"
+      ],
+      "coordinateNote": "좌표는 기존 앵커 저장본의 값을 그대로 썼다(앵커 hgis-admin-46626, 원 근거 src-hgis-admin-1910-1945). 국사편찬위원회 1910~1945 행정구역 경계 자료에서 파생된 표시용 앵커의 범위 중심점이다. 당시 군 경계의 중심이며 읍치(관아)·현재 시가지 위치와 같지 않다. UI가 그리는 위도 38도 직선 검증용 지점이다. 이 좌표의 위도는 38.3793 로 38도선 북쪽이다. 38도선은 지리 좌표선이고 현재 군사분계선과 다르므로, 이 관계를 분계선 위치로 읽지 않는다."
+    },
+    {
+      "id": "rc-haengjusanseong",
+      "label": "고양 행주산성",
+      "aliases": [
+        "행주산성"
+      ],
+      "lon": 126.8247541,
+      "lat": 37.59994084,
+      "precision": "site",
+      "entityIds": [
+        "place-khs-haengju",
+        "place-encykorea-haengjusanseong"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-existing-sites-khs"
+      ],
+      "coordinateNote": "좌표는 기존 저장본의 국가유산청 목록 좌표를 그대로 썼다(기록된 출처 src-khs-haengju, 소재지 경기 고양시 덕양구 행주내동 산26번지). 기관 목록의 현재 위치이며 사건의 공간 범위가 아니다."
+    },
+    {
+      "id": "rc-namhansanseong",
+      "label": "남한산성",
+      "aliases": [],
+      "lon": 127.188620365178,
+      "lat": 37.4789288320326,
+      "precision": "site",
+      "entityIds": [
+        "place-khs-namhansanseong"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-existing-sites-khs"
+      ],
+      "coordinateNote": "좌표는 기존 저장본의 국가유산청 목록 좌표를 그대로 썼다(기록된 출처 src-khs-namhansanseong, 소재지 경기도 광주시 남한산성면 산성리 산1). 기관 목록의 현재 위치이며 사건의 공간 범위가 아니다."
+    },
+    {
+      "id": "rc-jindo-yongjangseong",
+      "label": "진도 용장성",
+      "aliases": [
+        "용장성"
+      ],
+      "lon": 126.3376054,
+      "lat": 34.51630607,
+      "precision": "site",
+      "entityIds": [
+        "place-khs-yongjang"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-existing-sites-khs"
+      ],
+      "coordinateNote": "좌표는 기존 저장본의 국가유산청 목록 좌표를 그대로 썼다(기록된 출처 src-khs-yongjang, 소재지 전남광주통합특별시 진도군 군내면 용장리 106번지). 기관 목록의 현재 위치이며 사건의 공간 범위가 아니다."
+    },
+    {
+      "id": "rc-jeamri",
+      "label": "화성 제암리 3·1운동 순국 유적",
+      "aliases": [
+        "제암리"
+      ],
+      "lon": 126.892553311741,
+      "lat": 37.1256636879734,
+      "precision": "site",
+      "entityIds": [
+        "place-khs-jeamri"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-existing-sites-khs"
+      ],
+      "coordinateNote": "좌표는 기존 저장본의 국가유산청 목록 좌표를 그대로 썼다(기록된 출처 src-khs-jeamri, 소재지 경기 화성시 향남읍 제암리 322-4번지). 기관 목록의 현재 위치이며 사건의 공간 범위가 아니다."
+    },
+    {
+      "id": "rc-jeonnam-office",
+      "label": "광주 전라남도청 구 본관",
+      "aliases": [],
+      "lon": 126.920026701413,
+      "lat": 35.1470577129307,
+      "precision": "site",
+      "entityIds": [
+        "place-khs-jeonnam-office"
+      ],
+      "anchorPlaceIds": [],
+      "sourceIds": [
+        "src-existing-sites-khs"
+      ],
+      "coordinateNote": "좌표는 기존 저장본의 국가유산청 목록 좌표를 그대로 썼다(기록된 출처 src-khs-jeonnam-office, 소재지 전남광주통합특별시 동구 광산동 13번지). 기관 목록의 현재 위치이며 사건의 공간 범위가 아니다."
+    }
+  ],
+  "missing": [
+    {
+      "id": "rc-baekdusan",
+      "label": "백두산",
+      "reason": "위키데이터 Q107635 에 순위 표시 없는 좌표 진술이 두 개(128.07722, 41.99278 과 126.83000, 40.94000) 있고 두 값이 약 150km 떨어져 있다. 어느 쪽이 맞는지 다른 출처로 가리지 못해 등록하지 않았다.",
+      "attempted": "raw/wd_Q107635.json (다운로드 완료, manifest 에 기록)"
+    },
+    {
+      "id": "rc-cheorwon-taebong-capital",
+      "label": "태봉 도성 (철원 풍천원)",
+      "reason": "궁예 태봉 도성 터의 좌표를 제공하는 접근 가능한 출처를 이번 조사에서 얻지 못했다. 해당 지역은 현재 비무장지대 안이다. 대신 현재의 두 철원군과 1910~1945 철원군 앵커만 넣었다."
+    },
+    {
+      "id": "rc-hanseong-baekje-capital",
+      "label": "백제 한성",
+      "reason": "위치 비정이 학설별로 갈리는 문제라 지리 좌표 등록부에서 한 점으로 확정하지 않았다. 카탈로그의 place-hanseong 항목과 연결하지 않았다."
+    },
+    {
+      "id": "source-khs-openapi",
+      "label": "국가유산청 국가유산 목록/상세 OpenAPI",
+      "reason": "www.khs.go.kr 과 www.cha.go.kr 모두 이 환경에서 robots.txt 와 API 요청이 시간 초과로 응답하지 않았다(각 1회 재시도 포함). 월성·부소산성·공산성·진주성 같은 남한 유적의 기관 공식 좌표를 이번에 직접 받지 못했고, 대신 위키데이터 좌표를 썼다. 기존 저장본에 이미 있던 다섯 개 국가유산청 좌표만 재사용했다."
+    },
+    {
+      "id": "source-nikh-hgis-site",
+      "label": "국사편찬위원회 역사지리정보 서비스 (hgis.history.go.kr)",
+      "reason": "robots.txt 가 모든 경로를 막고 있어(Disallow: /) 내려받지 않았다. 그래서 1910~1945 경계 자료의 배포 조건·정식 자료명·URL 을 원 기관 페이지로 확인하지 못했고, 제공자 표기는 기존 저장본과 카탈로그에 기록된 문구(국편 / 2020·2022 국편GIS사업팀)에 근거한다."
+    },
+    {
+      "id": "source-encykorea",
+      "label": "한국민족문화대백과사전 (encykorea.aks.ac.kr)",
+      "reason": "robots.txt 상 접근은 가능하지만 항목 본문이 자바스크립트로 채워져 정적 HTML 에 좌표·경위도 범위가 없고, 기계 판독용 OpenAPI 는 신청 절차가 필요하다. 그래서 시·군 항목이 싣는 동경·북위 범위를 regionBounds 로 쓰지 못했다."
+    },
+    {
+      "id": "source-geonames-nominatim-wdqs",
+      "label": "GeoNames 덤프 · Nominatim · Wikidata Query Service",
+      "reason": "download.geonames.org, nominatim.openstreetmap.org, query.wikidata.org 모두 robots.txt 가 해당 경로를 금지하고 있어 요청하지 않았다. 교차 검증용 두 번째 좌표 출처를 확보하지 못했다."
+    },
+    {
+      "id": "regionbounds-general",
+      "label": "지역 경계 상자(regionBounds)",
+      "reason": "제주도 한 곳을 빼면 출처가 경계 상자를 직접 제시하지 않는다. 임의로 만들지 않았다. 제주도만 같은 위키데이터 항목의 최북·최남·최동·최서 좌표로 만들었다."
+    },
+    {
+      "id": "mdl-polyline",
+      "label": "군사분계선(MDL)·비무장지대 선형",
+      "reason": "지시대로 만들지 않았다. 이 등록부에는 위도 38도선 근처의 실제 출처 좌표를 가진 장소들만 있고, 정전협정 선형 자체의 좌표열은 없다."
+    },
+    {
+      "id": "alias-identity-unverified",
+      "label": "확인하지 못한 옛 이름 대응",
+      "reason": "1910~1945 앵커의 '흠남'과 현재 흥남구역, '진남포'와 현재 남포시, '나진'과 현재 라선시, '울도'와 '울릉도' 사이의 동일 실체 여부를 이번 조사에서 문헌으로 확인하지 않았다. 울릉도만 두 앵커의 좌표가 동일해 참고로 함께 붙였고 나머지는 연결하지 않았다."
+    },
+    {
+      "id": "sokcho-1910-anchor",
+      "label": "속초의 1910~1945 앵커",
+      "reason": "기존 앵커 자료는 군 단위여서 속초면·속초읍에 해당하는 앵커가 없다. 당시 속초 지역은 양양군에 속했으므로 양양 앵커만 있고, 이를 속초의 앵커로 쓰지 않았다."
+    }
+  ],
+  "collection": {
+    "sessionId": "2fa76b76-3e91-4a51-a280-cad84ab75547",
+    "model": "claude-opus-5",
+    "effort": "max",
+    "complete": true,
+    "snapshotSha256": "e7a40828f6e8308cc4bf896233a6da93fce763c1329317611491ecc49da5fe0b"
+  },
+  "note": "위치 자료의 지역 대표점과 사건의 활동 근거를 따로 연결합니다. 38선은 북위 38도이며 현재의 군사분계선과 다릅니다."
+}

@@ -125,7 +125,7 @@ export class ChronicleAssets{
       if(event.scenePlace){
         const [x,z]=this.world.toWorld(...event.scenePlace.coordinates);
         return {position:new THREE.Vector3(x,event.scenePlace.medium==='sea'?this.world.seaLevel:this.world.surfaceAt(x,z),z),
-          placement:'activity',placementLabel:event.scenePlace.label+' · '+(event.scenePlace.precision==='area'?'활동 지역':'사건 장소'),
+          placement:'activity',placementLabel:event.scenePlace.label+' · '+(event.scenePlace.precision==='area'?'지역 기준 추정 배치':'사건 장소'),
           locationReference:event.scenePlace,site:null};
       }
       const site=event.sites?.[0];
@@ -134,7 +134,7 @@ export class ChronicleAssets{
       const ref=event.locationReference;
       if(ref){const [x,z]=this.world.toWorld(ref.candidate.lon,ref.candidate.lat);return {
         position:new THREE.Vector3(x,this.world.surfaceAt(x,z),z),placement:'area',locationReference:ref,
-        placementLabel:ref.label+' · 사건이 기록된 지역'};}
+        placementLabel:ref.label+' · 지역 기준 추정 배치'};}
       return null;
     };
     const placedPeople=new Set(),fullScenes=[];
@@ -161,6 +161,13 @@ export class ChronicleAssets{
       }
     }
     for(const person of plan.people.filter(p=>!placedPeople.has(p.entityId))){
+      if(!person.locations?.length&&person.locationReference){
+        const ref=person.locationReference,[x,z]=this.world.toWorld(ref.candidate.lon,ref.candidate.lat);
+        if(this.world.contains(x,z))add({...person,placement:'area',placementLabel:ref.label+' · 지역 기준 추정 배치',
+          claimIds:[...person.claimIds,...ref.claimIds]},new THREE.Vector3(x,this.world.surfaceAt(x,z),z),2.1);
+        else unlocated.push(person);
+        continue;
+      }
       if(person.locations?.length!==1){unlocated.push(person);continue;}
       const claim=person.locations[0],o=claim.object,[x,z]=this.world.toWorld(o.lon,o.lat);
       add({...person,placement:'presence',placementLabel:'해당 시기의 출현 근거',claimIds:[...person.claimIds,claim.id]},

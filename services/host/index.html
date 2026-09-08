@@ -332,7 +332,8 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       </div>
       <div id="sceneEvents" class="scene-events" aria-label="3D 지도의 사건"></div>
       <div id="sceneGeography" class="scene-events" aria-label="산맥과 섬"></div>
-      <div class="geography-navigation"><select id="geographyDestination" aria-label="산맥과 섬으로 이동"></select></div>
+      <div class="geography-navigation"><select id="geographyDestination" aria-label="지역과 산맥, 섬으로 이동"></select>
+        <label title="북위 38도인 위도선입니다. 현재의 군사분계선과 다릅니다."><input type="checkbox" id="showParallel38">북위 38°</label></div>
       <aside id="geographyCard" class="geography-card" hidden><button id="geographyClose" aria-label="지리 설명 닫기">×</button><strong></strong><p></p><div></div></aside>
       <div id="graph" aria-label="근거 그래프"></div>
       <div id="chat" aria-label="사료 근거 챗봇"></div>
@@ -1329,9 +1330,11 @@ async function init3d(){
   let elev = null;
   try{ elev = await fetch('/api/elevation').then(r => r.ok ? r.json() : null); }
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
-  const [outline,anchors,geography,scenes]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json','history-scenes.json'].map(file=>
+  const [outline,anchors,geography,scenes,coordinates]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json','history-scenes.json','history-coordinates.json'].map(file=>
     fetch('./app/'+file).then(r=>{if(!r.ok)throw Error('지도 자료를 불러오지 못했습니다.');return r.json();})));
   const world = new ChronicleWorld(state.geo, [...state.places,...anchors.places], { elev, outline, geography });
+  const {coordinateRegistry}=await import('./app/history-coordinates.js');
+  world.coordinateRegistry=coordinateRegistry(anchors,coordinates);
   world.scenePackets=scenes.scenes;world.sceneSources=scenes.sources;
   engine.add(world.group);
   engine.onPick = (id,event) => { const feature=historyMap.features.find(f=>f.id===id);

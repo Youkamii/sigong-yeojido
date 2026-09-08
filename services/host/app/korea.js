@@ -19,23 +19,14 @@ import { PALETTE, WHITE, hexNum, mix } from './artbible.js';
 import { makeMaterial } from './materials.js';
 import { makeGlow, patchFanMaterial } from './style.js';
 import { canvasTexture } from './util.js';
+import {projectCoordinates} from './history-coordinates.js';
 
 /* ── 디오라마 범위 — 한반도 + 지안(국내성) + 일본 서안 한 자락 ── */
 export const BOX = DIORAMA_BOUNDS;
 
-const merc = (lat) => Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360));
-const rad = (lon) => (lon * Math.PI) / 180;
-
-const MX0 = rad(BOX.lon0), MX1 = rad(BOX.lon1);
-const MY0 = merc(BOX.lat0), MY1 = merc(BOX.lat1);
-const CX = (MX0 + MX1) / 2, CY = (MY0 + MY1) / 2;
-
-/** 월드 반경 ±100 에 맞춘 배율 — 아트 바이블의 layout 공간과 같은 눈금 */
-const SCALE = 200 / Math.max(MX1 - MX0, MY1 - MY0);
-
 /** 경위도 → 월드 (x, z). 북쪽이 -z */
 export function toWorld(lon, lat) {
-  return [(rad(lon) - CX) * SCALE, -(merc(lat) - CY) * SCALE];
+  return projectCoordinates(lon,lat);
 }
 
 const LAND_DEPTH = 7;       // 부유 디오라마의 두께

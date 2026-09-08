@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {formatCoordinates,latitudeCoordinates,regionalCoordinate} from './history-coordinates.js';
 
 export function ridgeSegments(data,toWorld){
   return (data?.ridges||[]).flatMap(ridge=>{
@@ -20,45 +21,64 @@ export class ChronicleGeography{
   constructor(world,engine,data){
     this.world=world;this.engine=engine;this.data=data;this.markers=[];
     const host=document.getElementById('sceneGeography'),menu=document.getElementById('geographyDestination');
-    menu.replaceChildren(new Option('산맥·섬으로 이동',''));
-    for(const row of [...data.islands,...data.ridges]){
+    const positions=latitudeCoordinates(38).map(c=>{
+      const [x,z]=world.toWorld(...c);return new THREE.Vector3(x,world.surfaceAt(x,z)+.3,z);
+    });
+    this.parallel=new THREE.Line(new THREE.BufferGeometry().setFromPoints(positions),
+      new THREE.LineDashedMaterial({color:'#b55b40',dashSize:3,gapSize:2,transparent:true,opacity:.85}));
+    this.parallel.name='latitude-38';this.parallel.computeLineDistances();this.parallel.visible=false;world.group.add(this.parallel);
+    const toggle=document.getElementById('showParallel38');
+    toggle.onchange=()=>{this.parallel.visible=toggle.checked;};
+    menu.replaceChildren(new Option('지역·산맥·섬으로 이동',''));
+    const regions=new Map();
+    for(const row of world.coordinateRegistry?.places||[]){
+      const region=regionalCoordinate(world.coordinateRegistry,null,row.label);
+      if(region)regions.set(row.label,region);
+    }
+    for(const row of [...data.islands,...data.ridges,...regions.values()]){
       const line=row.geometry?.type==='LineString'?row.geometry.coordinates:row.geometry?.type==='MultiLineString'?row.geometry.coordinates[0]:null;
       const coordinate=row.lon!=null?[row.lon,row.lat]:line?.[Math.floor(line.length/2)];
       if(!coordinate)continue;
       const [x,z]=world.toWorld(...coordinate),position=new THREE.Vector3(x,world.surfaceAt(x,z)+.8,z);
       const button=document.createElement('button');button.className='scene-geography';button.textContent=row.label;
+      const region=regions.get(row.label)===row;
       button.dataset.geography=row.id;button.onclick=()=>this.focus(row.id);host.append(button);
-      this.markers.push({row,button,position});menu.add(new Option(row.label,row.id));
+      this.markers.push({row,button,position,region});menu.add(new Option(row.label,row.id));
     }
     menu.onchange=()=>{if(menu.value)this.focus(menu.value);};
     document.getElementById('geographyClose').onclick=()=>{document.getElementById('geographyCard').hidden=true;};
   }
   focus(id){
     const marker=this.markers.find(m=>m.row.id===id);if(!marker)return false;
-    const {row,position}=marker,island=this.data.islands.includes(row);
-    this.engine.flyTo(position.clone(),island?(row.areaKm2<1?9:48):180,650);
+    const {row,position,region}=marker,island=this.data.islands.includes(row);
+    this.engine.flyTo(position.clone(),region?115:island?(row.areaKm2<1?9:48):180,650);
     document.getElementById('geographyDestination').value=id;
     const card=document.getElementById('geographyCard');card.hidden=false;
     card.querySelector('strong').textContent=row.label;
-    card.querySelector('p').textContent=[row.lon!=null?`${row.lat.toFixed(5)}°N · ${row.lon.toFixed(5)}°E`:'',row.displayNote||''].filter(Boolean).join(' · ');
+    card.querySelector('p').textContent=[row.lon!=null?formatCoordinates([row.lon,row.lat]):'',
+      region&&row.precision==='area'?'지역 기준점 · 인물의 실제 위치를 뜻하지 않습니다.':'',
+      row.displayNote||''].filter(Boolean).join(' · ');
     const refs=card.querySelector('div');refs.replaceChildren();
     const more=document.createElement('details'),summary=document.createElement('summary');
     summary.textContent='위치 자료 더 보기';more.append(summary);
+    if(row.coordinateNote){const note=document.createElement('p');note.textContent=row.coordinateNote;more.append(note);}
     let shown=0;
     for(const sid of row.sourceIds||[]){
-      const source=this.data.sources.find(s=>s.id===sid);if(!source)continue;
+      const source=[...this.data.sources,...(this.world.coordinateRegistry?.sources||[])].find(s=>s.id===sid);if(!source)continue;
       const link=document.createElement('a');link.textContent=source.title;link.title=source.publisher+' · '+source.title;
       link.href=source.url;link.target='_blank';link.rel='noopener';
       (shown++<2?refs:more).append(link);
     }
-    if(shown>2)refs.append(more);
+    if(shown>2||row.coordinateNote)refs.append(more);
     return true;
   }
   update(camera,canvas,occupied){
     const distance=camera.position.distanceTo(this.engine.controls.target),w=canvas.clientWidth,h=canvas.clientHeight;
-    for(const {row,button,position} of this.markers){
+    for(const {row,button,position,region} of this.markers){
       const p=position.clone().project(camera),island=this.data.islands.includes(row);
-      button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1||(!island&&distance<90);
+      const selected=document.getElementById('geographyDestination').value===row.id;
+      button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1||(!island&&!region&&distance<90)
+        ||(region&&!selected&&(distance<80||distance>420));
       if(button.hidden)continue;
       const x=(p.x+1)*w/2,y=(1-p.y)*h/2,bw=button.offsetWidth,bh=button.offsetHeight;
       const rect={left:x-bw/2,right:x+bw/2,top:y-bh,bottom:y};

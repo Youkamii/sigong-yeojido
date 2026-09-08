@@ -4,6 +4,7 @@ import {makeMaterial} from './materials.js';
 import {PALETTE,mix,darken} from './artbible.js';
 import {ridgeSegments,ridgeRelief} from './chronicle-geography.js';
 import {fitChronicleShadows} from './chronicle-shadows.js';
+import {unprojectCoordinates} from './history-coordinates.js';
 
 function inside(x,z,ring){
   const b=ring.bounds;if(b&&(x<b.minX||x>b.maxX||z<b.minZ||z>b.maxZ))return false;
@@ -64,12 +65,7 @@ export class ChronicleWorld extends KoreaWorld{
     sea.position.set(this.center.x,this.seaLevel,this.center.z);sea.receiveShadow=true;sea.userData.fanGround=true;
     sea.name='historical-sea';this.group.add(sea);
     const sample=elev?makeHeightAt(elev):()=>0;
-    const [x0,z0]=this.toWorld(127,37),[x1,z1]=this.toWorld(128,38);
-    this.coordinatesAt=(x,z)=>{
-      const lon=127+(x-x0)/(x1-x0),merc37=Math.log(Math.tan(Math.PI/4+37*Math.PI/360));
-      const merc38=Math.log(Math.tan(Math.PI/4+38*Math.PI/360));
-      return [lon,(2*Math.atan(Math.exp(merc37+(z-z0)/(z1-z0)*(merc38-merc37)))-Math.PI/2)*180/Math.PI];
-    };
+    this.coordinatesAt=(x,z)=>unprojectCoordinates(x,z,this.mapScale);
     this.surfaceAt=(x,z)=>{
       const ring=this.rings.find(r=>inside(x,z,r));if(!ring)return 7;
       const island=this.islandRings.find(i=>i.ring===ring);

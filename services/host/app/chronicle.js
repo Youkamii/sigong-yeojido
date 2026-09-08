@@ -182,6 +182,7 @@ export class Chronicle {
         ${activity.role?`<p class="activity-role">${esc(activity.role)}</p>`:''}
         <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동입니다.')}</p>
         <p class="activity-location">${esc(activity.placement)}</p>
+        ${activity.coordinates?`<p class="activity-coordinates">${esc(activity.coordinates)}</p>`:''}
         ${activity.sides.map(s=>`<p class="activity-side"><strong>${esc(s.label)}</strong> · ${esc(s.role)}</p>`).join('')}
         <details><summary>활동·장소의 근거 ${activityClaims.length}개</summary>${activityClaims.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.quote)} ↗</button>`).join('')}
         ${activity.coordinateNote?`<p>${esc(activity.coordinateNote)}</p>`:''}${activity.displayBasis?`<p>${esc(activity.displayBasis)}</p>`:''}
