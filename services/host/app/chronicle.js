@@ -204,7 +204,8 @@ export class Chronicle {
         <details><summary>활동·장소의 근거 ${activityClaims.length}개</summary>${activityClaims.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.quote)} ↗</button>`).join('')}
         ${activity.coordinateNote?`<p>${esc(activity.coordinateNote)}</p>`:''}${activity.displayBasis?`<p>${esc(activity.displayBasis)}</p>`:''}
         ${activity.sources.map(s=>`<a class="context-proof" href="${esc(s.url)}" target="_blank" rel="noopener">위치 자료 · ${esc(s.title)} ↗</a>`).join('')}</details>
-        ${activity.events.length>1?`<div class="activity-episodes">${activity.events.map(e=>`<button data-chronicle-entity="${esc(e.entityId)}">${esc(e.label)} →</button>`).join('')}</div>`:''}
+        ${activity.events.length?`<div class="activity-episodes">${activity.events.map(e=>`<button data-chronicle-entity="${esc(e.entityId)}">${esc(e.label)} →</button>`).join('')}</div>`:''}
+        ${(activity.participants||[]).length?`<div class="activity-participants">${activity.participants.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.entityId)}">${esc(p.label)} · ${esc(p.role)}${p.presence!=='on-site'?' (관련)':''}</button>`).join('')}</div>`:''}
       </section>`:''}
       ${this.callbacks.placement?.(id)?`<p class="scene-placement">${esc(this.callbacks.placement(id))} · 건물·길·인물 외형은 상징 모형입니다.</p>`:''}
       ${descriptions.slice(0,2).map(c=>`<p class="entity-description">${esc(c.object.value||'')}</p>`).join('')}

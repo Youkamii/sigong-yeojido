@@ -97,6 +97,19 @@
 .scene-navigation button{width:30px;height:30px;border:1px solid var(--line-2);border-radius:4px;background:var(--ink-2);font-size:18px}
 #sceneAssetNote{display:block;margin-top:10px;max-width:285px;font-size:10px;line-height:1.6;color:var(--paper-3)}
 #sceneAssetNote[hidden]{display:none}
+.scene-focus{position:absolute;z-index:6;left:22px;bottom:calc(var(--timeline-height,150px) + 14px);width:min(600px,calc(100% - 44px));padding:10px 12px;background:#f1e9d8f5;border:1px solid #a68a58;border-radius:5px;box-shadow:0 3px 12px #35290f22}
+.scene-focus[hidden]{display:none}
+.focus-heading{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.focus-heading>span{font-size:10px;color:var(--paper-2)}
+.focus-heading>button{font:15px var(--serif);color:var(--paper);text-align:left}
+.focus-people{display:flex;gap:6px;margin-top:8px;overflow-x:auto;padding-bottom:2px}
+.focus-people>button{flex:0 0 auto;max-width:180px;text-align:left;padding:5px 8px;border-left:2px solid var(--celadon);background:#e2e7d6;color:var(--paper)}
+.focus-people>button[aria-pressed=true]{background:#294439;color:#f4e9c9}
+.focus-people strong,.focus-people small{display:block;white-space:normal;line-height:1.4}
+.focus-people strong{font:13px var(--serif)}
+.focus-people small{font-size:10px;margin-top:3px}
+.activity-participants{margin-top:10px}
+@media(max-width:600px){.scene-focus{left:10px;width:calc(100% - 20px);padding:8px;bottom:calc(var(--timeline-height,150px) + 7px)}.focus-people>button{max-width:140px}.focus-heading>button{font-size:13px}}
 .scene-person{position:absolute;transform:translate(-50%,-100%);pointer-events:auto;max-width:148px;text-align:center;padding:6px 10px;background:#243d36f2;border:1px solid #c4a35f;border-radius:3px;white-space:nowrap;box-shadow:0 3px 12px #17251f44}
 .scene-person strong{font:15px var(--serif);color:#fff2d2}
 .scene-person small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:3px;font:10px/1.4 var(--sans);color:#e2d4b2;white-space:normal;overflow-wrap:anywhere}

@@ -21,7 +21,7 @@ export class ChronicleScene {
     const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[],world.coordinateRegistry);
     world.geography?.setActivities(plan);
     const signature=JSON.stringify([plan,this.assets.activeScene]);
-    if(signature===this.signature){this.syncPicks();return;}
+    if(signature===this.signature){this.syncPicks();this.renderFocus();return;}
     const changedYear=this.assets.plan?.year!==plan.year;
     this.assets.rebuild(plan);this.signature=signature;
     this.layoutKey=null;
@@ -59,6 +59,21 @@ export class ChronicleScene {
     const note=document.getElementById('sceneAssetNote');
     note.textContent='끌어서 이동 · 휠로 확대 · 오른쪽 드래그로 회전';
     note.hidden=!note.textContent;
+    this.renderFocus();
+  }
+  renderFocus(){
+    const host=document.getElementById('sceneFocus'),row=this.assets?.rowFor(this.assets.selected,this.assets.selectedRow);
+    const scene=this.assets?.plan.events.find(e=>e.id===row?.sceneId);
+    host.hidden=!scene;
+    if(!scene){host.replaceChildren();return;}
+    const people=scene.participants.filter(p=>p.presence==='on-site');
+    host.innerHTML=`<div class="focus-heading"><span>${esc(this.assets.plan.year)}년 · ${esc(scene.scenePlace?.label||scene.locationReference?.label||'현장')}</span>
+      <button data-focus-entity="${esc(scene.entityId)}" data-focus-row="${esc(scene.id)}">${esc(scene.label)} ↗</button></div>
+      <div class="focus-people">${people.map(p=>`<button data-focus-entity="${esc(p.entityId)}" data-focus-row="${esc(p.id+'@'+scene.id)}" aria-pressed="${p.entityId===this.assets.selected}"><strong>${esc(p.label)}</strong><small>${esc(p.role)}</small></button>`).join('')}</div>`;
+    for(const button of host.querySelectorAll('[data-focus-entity]'))button.onclick=()=>{
+      this.preferredRow=button.dataset.focusRow;this.onSelect(button.dataset.focusEntity);
+    };
+    this.layoutKey=null;
   }
   syncPicks(){
     if(!this.engine)return;
@@ -74,7 +89,7 @@ export class ChronicleScene {
     const selected=events.find(e=>selectedRow?.sceneId===e.id)||events[0];
     const person=selected.participants.find(p=>p.entityId===id);
     const row=this.assets.rows.find(r=>r.sceneId===selected.id&&r.kind==='event');
-    return {summary:selected.summary,role:person?.role,place:selected.scenePlace?.label||selected.locationReference?.label,
+    return {summary:selected.summary,role:person?.role,participants:selected.participants,place:selected.scenePlace?.label||selected.locationReference?.label,
       placement:row?.placementLabel||'활동은 확인됐으며 지도 위치는 아직 연결되지 않았습니다.',
       claimIds:[...new Set([...selected.claimIds,...(person?.relationClaims||[])])],
       coordinates:formatCoordinates(selected.scenePlace?.coordinates||(selected.locationReference
@@ -90,7 +105,8 @@ export class ChronicleScene {
       ||this.assets?.plan.events.find(e=>e.participants.some(p=>p.entityId===id&&p.presence==='on-site'))?.id;
     if(sceneId&&this.assets.activeScene!==sceneId){this.assets.activeScene=sceneId;this.refresh(this.world,this.chronicle);}
     this.preferredRow=null;this.assets?.setSelected(id,preferred);
-    for(const {button,row} of this.markers)button.classList.toggle('selected',row.entityId===id);
+    for(const marker of this.markers){marker.button.classList.toggle('selected',marker.row.entityId===id);marker.size=null;}
+    this.renderFocus();
     return this.assets?.focus(id,preferred)||false;
   }
   prefer(id,point){
@@ -114,7 +130,7 @@ export class ChronicleScene {
     const canvasRect=canvas.getBoundingClientRect(),hud=document.getElementById('sceneContext').getBoundingClientRect();
     const occupied=[{left:hud.left-canvasRect.left,right:hud.right-canvasRect.left,
       top:hud.top-canvasRect.top,bottom:hud.bottom-canvasRect.top}];
-    for(const element of document.querySelectorAll('.geography-navigation,.geography-card:not([hidden])')){
+    for(const element of document.querySelectorAll('.geography-navigation,.geography-card:not([hidden]),.scene-focus:not([hidden])')){
       const r=element.getBoundingClientRect();occupied.push({left:r.left-canvasRect.left,right:r.right-canvasRect.left,top:r.top-canvasRect.top,bottom:r.bottom-canvasRect.top});
     }
     const ordered=[...this.markers].sort((a,b)=>
