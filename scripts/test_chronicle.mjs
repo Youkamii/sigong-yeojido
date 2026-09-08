@@ -24,6 +24,9 @@ assert.equal(contextAt(data([birth,{...death,fromSource:'src-b'}]),1420).people.
 const reign=claim('reign','reignedIn',{kind:'time',id:'ts-reign',verbatim:'1418–1450',earliest:1418,latest:1450});
 assert.equal(contextAt(data([reign]),1420).people[0].periods[0].label,'재위');
 assert.equal(contextAt(data([reign]),1410).people.length,0);
+const tradition=claim('tradition','appearsIn',{kind:'time',id:'ts-tradition',earliest:-2333,latest:-1122});
+tradition.note='전승 연대이며 실제 생몰년이 아니다.';
+assert.equal(contextAt(data([tradition]),-2000).people[0].periods[0].label,'전승 연대','An explicitly recorded tradition is labeled instead of presented as a lifespan');
 const eventDate=claim('date','occurredIn',{kind:'time',id:'ts-event',verbatim:'그 해'},'src-a',event.id);
 assert.equal(contextAt(data([eventDate]),1446).events.length,0,'An original date without conversion cannot acquire an invented year');
 const conversion=claim('conversion','convertsTo',{kind:'year',value:1446},'src-a','ts-event');

@@ -20,6 +20,7 @@ export const entityLabel = e => e.label.replace(/\s*\([\u3400-\u9fff\s]+\)/g,'')
 }).trim();
 const shortPredicate = p=>p.replace('syj:','');
 const ACTIVITY = new Map([['livedIn','생존'],['reignedIn','재위'],['activeIn','활동'],['appearsIn','등장']]);
+const activityLabel=(predicate,claim)=>predicate==='appearsIn'&&claim.note?.startsWith('전승 연대')?'전승 연대':ACTIVITY.get(predicate);
 const EVENT_WORDS = {foundedIn:'건국',establishedIn:'설립',proclaimedIn:'선포',accededIn:'즉위'};
 const RELATION_WORDS = {hasParticipant:'참여',participatedIn:'참여 사건',tookPlaceAt:'장소',occurredAt:'장소',
   isKingOf:'나라',memberOf:'소속',affiliatedWith:'소속',hasParent:'부모',childOf:'부모',parentOf:'자녀',
@@ -57,7 +58,7 @@ export function contextAt(data,year,span=50){
   for(const d of dates){
     const entity=entities.get(d.claim.subject),predicate=shortPredicate(d.claim.predicate);
     if(entity?.type==='Person'&&ACTIVITY.has(predicate)&&d.lo<=year&&d.hi>=year)
-      addPerson(entity,{...d,label:ACTIVITY.get(predicate)});
+      addPerson(entity,{...d,label:activityLabel(predicate,d.claim)});
     if(entity?.type==='Polity'&&predicate==='activeIn'&&d.lo<=year&&d.hi>=year)
       polities.set(entity.id,{...entity,period:d,basis:d.basis});
     if(entity?.type==='Event'||entity?.type==='Polity'&&EVENT_WORDS[predicate]){
@@ -208,7 +209,7 @@ export class Chronicle {
       ${this.callbacks.placement?.(id)?`<p class="scene-placement">${esc(this.callbacks.placement(id))} · 건물·길·인물 외형은 상징 모형입니다.</p>`:''}
       ${descriptions.slice(0,2).map(c=>`<p class="entity-description">${esc(c.object.value||'')}</p>`).join('')}
       <div class="context-section"><h3>시간</h3>${dates.map(d=>`<div class="entity-date"><button data-jump-year="${d.lo}">${yearLabel(d.lo)}${d.lo!==d.hi?' – '+yearLabel(d.hi):''}</button>
-        <span>${esc(({bornIn:'출생',diedIn:'사망',reignedIn:'재위',activeIn:'활동',occurredIn:'사건',foundedIn:'건국'})[shortPredicate(d.claim.predicate)]||'기록')}</span>
+        <span>${esc(activityLabel(shortPredicate(d.claim.predicate),d.claim)||({bornIn:'출생',diedIn:'사망',occurredIn:'사건',foundedIn:'건국'})[shortPredicate(d.claim.predicate)]||'기록')}</span>
         ${d.basis.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.sourceLabel)} ↗</button>`).join('')}</div>`).join('')||'<p class="context-empty">날짜 근거가 아직 연결되지 않았습니다.</p>'}</div>
       <div class="context-section"><h3>관련 인물·사건·장소</h3><p class="context-empty">이 항목의 전체 기록입니다. 관계가 있었던 시기는 각 근거에서 확인할 수 있습니다.</p>${this.relations(id).map(({claim,target})=>`<div class="relation-row"><button data-chronicle-entity="${esc(target.id)}">${esc(entityLabel(target))}</button>
         <small>${esc(RELATION_WORDS[shortPredicate(claim.predicate)]||'관련 기록')}</small><button class="context-proof" data-chronicle-claim="${esc(claim.id)}">근거 ↗</button></div>`).join('')||'<p class="context-empty">연결 근거가 아직 없습니다.</p>'}</div>`;
