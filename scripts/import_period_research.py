@@ -188,7 +188,7 @@ def main():
             write(path, text)
         saved = args.data / 'research' / args.collection / job
         saved.mkdir(parents=True, exist_ok=True)
-        for name in ('run.json','manifest.json','progress.json','result.json','report.md'):
+        for name in ('run.json','manifest.json','progress.json','result.json','report.md','coverage.json'):
             if (args.research / name).exists():
                 content=(args.research / name).read_text(encoding='utf-8')
                 content=re.sub(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', '[contact omitted]', content)
