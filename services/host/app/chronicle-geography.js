@@ -15,7 +15,7 @@ export function ridgeRelief(x,z,segments){
     const dx=b[0]-a[0],dz=b[1]-a[1],t=Math.max(0,Math.min(1,((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz||1)));
     nearest=Math.min(nearest,Math.hypot(x-a[0]-t*dx,z-a[1]-t*dz));
   }
-  return Math.exp(-Math.pow(nearest/16,2));
+  return .7*Math.exp(-Math.pow(nearest/9,2))+.3*Math.exp(-Math.pow(nearest/22,2));
 }
 
 export class ChronicleGeography{

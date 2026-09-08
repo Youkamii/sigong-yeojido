@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {compileAssetCatalog} from './assetcatalog.js';
 import {buildAssetField} from './assetforge.js';
-import {stableSeed} from './chronicle-world.js';
+import {stableSeed,woodlandDensity} from './chronicle-world.js';
 import {composeHistoricalEvent} from './chronicle-event-scenes.js';
 import {PALETTE,mix,FOLIAGE,WHITE} from './artbible.js';
 import {makeSurface,biomeByName} from './style.js';
@@ -50,11 +50,11 @@ export class ChronicleAssets{
     engine.scene.background=new THREE.Color(PALETTE.NEUTRAL_BONE);
     if(engine.scene.fog)engine.scene.fog.color.copy(engine.scene.background);
   }
-  field(recipes,anchors){
+  field(recipes,anchors,{regional=true}={}){
     const result={group:new THREE.Group(),picks:[],animated:[],stats:{catalog:this.catalog.stats,dropped:[],batches:0}};
     const regions=new Map();
     for(const recipe of recipes){
-      const p=anchors.get(recipe.anchor),key=Math.floor(p.x/128)+':'+Math.floor(p.z/128)+(recipe.scale<.1?':small:'+recipe.id:'');
+      const p=anchors.get(recipe.anchor),key=regional?Math.floor(p.x/128)+':'+Math.floor(p.z/128)+(recipe.scale<.1?':small:'+recipe.id:''):'local';
       if(!regions.has(key))regions.set(key,[]);regions.get(key).push(recipe);
     }
     for(const region of regions.values())for(let i=0;i<region.length;i+=160){
@@ -74,26 +74,32 @@ export class ChronicleAssets{
   buildForest(occupied,scenes=[]){
     const group=new THREE.Group();group.name='peninsula-woods';
     const b=this.world.bounds,candidates=this.treeCandidates||[];
-    const cells=new Map(),cellSize=3;
-    if(!this.treeCandidates)for(let i=0;i<100000&&candidates.length<12000;i++){
+    const cells=new Map(),cellSize=1.5;
+    if(!this.treeCandidates)for(let i=0;i<180000&&candidates.length<18000;i++){
       const seed=stableSeed('wood:'+i),x=b.minX+(b.maxX-b.minX)*(seed%10000)/10000;
       const z=b.minZ+(b.maxZ-b.minZ)*(Math.floor(seed/10000)%10000)/10000;
       if(!this.world.contains(x,z,1.2))continue;
-      const height=this.world.surfaceAt(x,z),slope=Math.abs(this.world.surfaceAt(x+3,z)-this.world.surfaceAt(x-3,z))/6;
-      const grove=Math.sin(x/39)+Math.cos(z/47)+Math.sin((x+z)/21)*.45;
-      if(grove<-.25||slope>1.15||(height>23&&seed%4))continue;
+      const height=this.world.surfaceAt(x,z),slope=Math.max(Math.abs(this.world.surfaceAt(x+2,z)-this.world.surfaceAt(x-2,z)),Math.abs(this.world.surfaceAt(x,z+2)-this.world.surfaceAt(x,z-2)))/4;
+      if(woodlandDensity(x,z)<(stableSeed('canopy:'+i)%1000)/1000||slope>.9||this.world.ridgeAt(x,z)>.8||(height>23&&seed%4))continue;
       const cx=Math.floor(x/cellSize),cz=Math.floor(z/cellSize);
       let crowded=false;
       for(let dx=-1;dx<=1;dx++)for(let dz=-1;dz<=1;dz++)
-        if((cells.get((cx+dx)+':'+(cz+dz))||[]).some(p=>Math.hypot(x-p.x,z-p.z)<2.8))crowded=true;
+        if((cells.get((cx+dx)+':'+(cz+dz))||[]).some(p=>Math.hypot(x-p.x,z-p.z)<1.45))crowded=true;
       if(crowded)continue;
       candidates.push(new THREE.Vector3(x,this.world.surfaceAt(x,z),z));
       const key=cx+':'+cz;if(!cells.has(key))cells.set(key,[]);cells.get(key).push({x,z});
     }
     this.treeCandidates=candidates;
     const treeScale=p=>Math.min(1,...scenes.filter(s=>Math.hypot(p.x-s.x,p.z-s.z)<Math.max(12,90*s.scale)).map(s=>s.scale));
-    const positions=candidates.filter(p=>occupied.every(o=>Math.hypot(p.x-o.x,p.z-o.z)>=o.radius+1.4*treeScale(p)));
+    const positions=candidates.filter(p=>occupied.every(o=>Math.hypot(p.x-o.x,p.z-o.z)>=o.radius+.8*treeScale(p))&&!this.scenery.nearPath?.(p.x,p.z,1.1));
     for(const p of positions)p.treeScale=treeScale(p);
+    for(const site of this.scenery.sites)for(let i=0;i<36;i++){
+      const seed=stableSeed(site.id+':edge:'+i),angle=(seed%1000)/1000*Math.PI*2,radius=12+(Math.floor(seed/1000)%1000)/100;
+      const x=site.x+Math.cos(angle)*radius,z=site.z+Math.sin(angle)*radius;
+      if(seed%3||!this.world.contains(x,z,1)||this.world.ridgeAt(x,z)>.8||this.scenery.nearPath?.(x,z,1.1)
+        ||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+.8)||positions.some(p=>Math.hypot(x-p.x,z-p.z)<1.45))continue;
+      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=treeScale(p);positions.push(p);
+    }
     for(const scene of scenes.filter(s=>s.scale<.5))for(let i=0;i<180;i++){
       const seed=stableSeed(scene.id+':grove:'+i),angle=(seed%10000)/10000*Math.PI*2;
       const radius=(27+(Math.floor(seed/10000)%1000)/1000*48)*scene.scale;
@@ -110,7 +116,7 @@ export class ChronicleAssets{
     for(const [key,region] of regions){
       const trees=new THREE.InstancedMesh(geometry,material,region.length);
       region.forEach((position,i)=>{
-        const seed=stableSeed('tree:'+position.x+':'+position.z),t=(seed%1000)/1000,s=(.7+t*.45)*(position.treeScale||1);
+        const seed=stableSeed('tree:'+position.x+':'+position.z),t=(seed%1000)/1000,s=(.4+t*.22)*(position.treeScale||1);
         q.setFromEuler(new THREE.Euler(0,t*6.28,0));scale.set(s,s*(.85+t*.5),s);
         matrix.compose(position,q,scale);trees.setMatrixAt(i,matrix);
         trees.setColorAt(i,mixColor(biome.low,biome.high,.25+t*.6).multiplyScalar(.92+t*.22));

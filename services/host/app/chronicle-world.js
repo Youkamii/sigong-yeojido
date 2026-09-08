@@ -10,6 +10,7 @@ import {NeighborLand} from './neighbor-land.js';
 import {terrainSurface} from './terrain-surface.js';
 
 export function stableSeed(text){let value=2166136261;for(const c of text)value=Math.imul(value^c.charCodeAt(0),16777619);return value>>>0;}
+export function woodlandDensity(x,z){return Math.max(0,Math.min(1,(Math.sin(x/31)+Math.cos(z/37)+Math.sin((x+z)/13)*.5-.4)/1.8));}
 
 /** The outline is a fixed map canvas. It never supplies historical location claims. */
 export class ChronicleWorld extends KoreaWorld{
@@ -36,6 +37,8 @@ export class ChronicleWorld extends KoreaWorld{
       }
     }
     this.ridgeSegments=ridgeSegments(geography,(...c)=>this.toWorld(...c));
+    const ridges=new Map();
+    this.ridgeAt=(x,z)=>{const key=x.toFixed(3)+':'+z.toFixed(3);if(!ridges.has(key))ridges.set(key,ridgeRelief(x,z,this.ridgeSegments));return ridges.get(key);};
     for(const ring of this.rings)ring.bounds={minX:Math.min(...ring.map(p=>p[0])),maxX:Math.max(...ring.map(p=>p[0])),
       minZ:Math.min(...ring.map(p=>p[1])),maxZ:Math.max(...ring.map(p=>p[1]))};
     const points=this.rings.flat();
@@ -69,7 +72,7 @@ export class ChronicleWorld extends KoreaWorld{
       const [lon,lat]=this.coordinatesAt(x,z);
       let height=0;
       for(const dx of [-.12,0,.12])for(const dy of [-.12,0,.12])height+=Math.max(0,sample(lon+dx,lat+dy))/9;
-      const ridge=ridgeRelief(x,z,this.ridgeSegments);
+      const ridge=this.ridgeAt(x,z);
       return 7.04+(Math.sqrt(height)*.095+ridge*(4+Math.sqrt(height)*.32))*edgeDistance(x,z,ring,2.3*this.mapScale)/(2.3*this.mapScale);
     };
     // KoreaWorld's old overlays convert this display height back with terrainY.
@@ -112,6 +115,7 @@ export class ChronicleWorld extends KoreaWorld{
     const grass=makeMaterial('MAT_STONE',{color:'#ffffff',vertexColors:true,roughness:.94,metalness:0});
     const positions=[],colors=[],low=new THREE.Color(mix(PALETTE.BASE_VERDANT,PALETTE.BASE_STONE,.25));
     const high=new THREE.Color(mix(PALETTE.BASE_EARTH,PALETTE.BASE_VERDANT,.45));
+    const crest=new THREE.Color('#8e8b70'),woods=new THREE.Color('#56674b');
     const addTriangle=(a,b,c,limit,depth=0)=>{
       const lengths=[Math.hypot(a[0]-b[0],a[1]-b[1]),Math.hypot(b[0]-c[0],b[1]-c[1]),Math.hypot(c[0]-a[0],c[1]-a[1])];
       const longest=Math.max(...lengths),index=lengths.indexOf(longest);
@@ -121,6 +125,8 @@ export class ChronicleWorld extends KoreaWorld{
       }
       for(const p of [a,b,c]){
         const y=Math.max(7.04,this.surfaceAt(...p)),color=low.clone().lerp(high,Math.min(1,(y-7)/20));
+        const ridge=this.ridgeAt(...p);
+        color.lerp(woods,woodlandDensity(...p)*.22*(1-ridge)).lerp(crest,Math.max(0,ridge-.45)*.7);
         positions.push(p[0],y,p[1]);colors.push(color.r,color.g,color.b);
       }
     };

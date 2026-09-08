@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import {stableSeed} from './chronicle-world.js';
 import {insideCoastline} from './coastline-index.js';
+import {CountrysidePaths} from './chronicle-paths.js';
+import {sceneryOverview} from './scenery-overview.js';
 const randomFor=id=>{let n=stableSeed(id);return()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};};
 const blend=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
 
@@ -19,15 +21,17 @@ export class ChronicleScenery{
       candidates.push({x:px,z:pz,radius:12,scale:.27+r()*.1,angle:r()*Math.PI*2,layout:seed%4,seed});
     }
     this.sites=candidates.sort((a,b)=>a.seed-b.seed).slice(0,64).map((s,i)=>({...s,id:'scenery-village:'+i}));
+    this.paths=new CountrysidePaths(w,this.sites);this.group.add(this.paths.mesh);
   }
   point(site,x,z){const c=Math.cos(site.angle),s=Math.sin(site.angle);return [site.x+(x*c+z*s)*site.scale,site.z+(-x*s+z*c)*site.scale];}
   available(site){return this.occupied.every(o=>Math.hypot(site.x-o.x,site.z-o.z)>site.radius+o.radius+4);}
   setDisplay(visible,paths){this.group.visible=visible;this.showPaths=paths;this.group.traverse(o=>{if(o.name==='scenery-lanes')o.visible=paths;});}
-  sync(occupied){this.occupied=occupied;this.clearings=[...this.sites,...this.wildlife].filter(s=>this.available(s));for(const c of this.cells)c.group.visible=this.available(c.site);}
+  sync(occupied){this.occupied=occupied;this.clearings=[...this.sites,...this.wildlife].filter(s=>this.available(s));for(const c of this.cells)c.group.visible=this.available(c.site);this.paths.sync(s=>this.available(s),occupied);}
+  nearPath(x,z,margin){return this.paths.near(x,z,margin);}
   start(forest){if(this.ready)return;this.ready=this.populate(forest).then(()=>{this.stats.ready=true;}).catch(e=>{this.stats.error=e.message;console.error('[scenery]',e);});}
   mesh(points,colors,name){
     const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(points,3));g.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));g.computeVertexNormals();
-    const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,side:THREE.DoubleSide}));m.name=name;m.receiveShadow=true;return m;
+    const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,side:THREE.DoubleSide}));m.name=name;m.receiveShadow=true;m.userData.fanGround=true;return m;
   }
   async populate(forest){
     for(const site of this.sites){
@@ -45,7 +49,8 @@ export class ChronicleScenery{
         houses.push(p);add(i===count-1&&r()>.45?'rural_store':r()>.8?'rural_hut':r()>.75?'korean_house':'rural_cottage',...p,.65+r()*.35);this.stats.houses++;
       }
       if(r()>.4)add('handcart',1,1,.5);add('human',-1,3,.65);if(r()>.5)add('human',5,-2,.6);
-      const field=this.assets.field(recipes,anchors);field.group.position.set(site.x,0,site.z);field.group.rotation.y=site.angle;group.add(field.group);cell.animated=field.animated;
+      const field=this.assets.field(recipes,anchors,{regional:false});field.group.position.set(site.x,0,site.z);field.group.rotation.y=site.angle;group.add(field.group);cell.animated=field.animated;
+      cell.detail=field.group;cell.overview=sceneryOverview(field.group);group.add(cell.overview);
       const positions=[],colors=[],roadPoints=[],roadColors=[],earth=new THREE.Color('#958664');
       const push=(target,palette,p,color)=>{target.push(p[0],p[1],p[2]);palette.push(color.r,color.g,color.b);};
       const fill=(corners,color,heightAt,lift=0)=>{for(const i of [0,2,1,0,3,2]){const p=corners[i];push(positions,colors,[p[0],heightAt(...p)+lift,p[1]],color);}};
@@ -76,6 +81,7 @@ export class ChronicleScenery{
         }
       }
       const lanes=this.mesh(roadPoints,roadColors,'scenery-lanes');lanes.visible=this.showPaths;group.add(lanes);
+      this.assets.engine._tagShadows(group);
       group.visible=this.available(site);this.stats.villages++;
       await new Promise(resolve=>setTimeout(resolve,0));
     }
@@ -88,11 +94,16 @@ export class ChronicleScenery{
       chosen.push(p);const id='scenery-tiger:'+chosen.length,scale=.48+(seed%5)*.025;
       const field=this.assets.field([{id,anchor:id,archetype:'tiger',scale,seed:id,offset:[0,p.y,0]}],new Map([[id,p]]));
       field.group.name=id;field.group.userData.decorative=true;
+      this.assets.engine._tagShadows(field.group);
       const site={x:p.x,z:p.z,radius:3.2};this.wildlife.push(site);this.cells.push({site,group:field.group,animated:field.animated,scale});this.group.add(field.group);this.stats.tigers++;
       await new Promise(resolve=>setTimeout(resolve,0));
     }
     this.sync(this.occupied);this.assets.buildForest([...this.assets.forestOccupied,...this.clearings],this.assets.forestScenes);
     this.assets.forest.visible=this.assets.world.geography?.display?.forest!==false;
   }
-  update(camera,t){for(const c of this.cells)if(c.group.visible&&Math.hypot(camera.position.x-c.site.x,camera.position.z-c.site.z)<160)for(const a of c.animated)a.update(t);}
+  update(camera,t){for(const c of this.cells)if(c.group.visible){
+    const distance=Math.hypot(camera.position.x-c.site.x,camera.position.y-this.world.surfaceAt(c.site.x,c.site.z),camera.position.z-c.site.z);
+    if(c.detail){c.detail.visible=distance<180;c.overview.visible=distance>=180;}
+    if(distance<160)for(const a of c.animated)a.update(t);
+  }}
 }
