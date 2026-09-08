@@ -1,0 +1,182 @@
+{
+  "job": "ancient_capital_activity",
+  "sources": 9,
+  "excerpts": 19,
+  "claims": 25,
+  "entities": 12,
+  "rawFilesChecked": [
+    {
+      "source": "src-ency-baekje",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022355",
+      "sha256": "4bad0cef7a980e915dd8f43f44e2afdca379c2fa69affdd598189b02a6993acf",
+      "rawBytes": 282808,
+      "excerpts": 1,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-ency-gongsanseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004450",
+      "sha256": "d6d79029b2d66e85c6eb90e566c39bcec3a02a79a12f8807da5842c0127a4c41",
+      "rawBytes": 105709,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-ency-busosanseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024406",
+      "sha256": "6ed2c6f834ec81b771e46924055c3d8ba1f73a49e88ce4982133ca42bb7ced65",
+      "rawBytes": 114781,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-ency-pyongyangsi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059979",
+      "sha256": "18eacd9af3812e06ad5d3e57e7c81d865f2ce43699321f4f148c530cef151714",
+      "rawBytes": 180429,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-ency-pyongyangseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059975",
+      "sha256": "0012c5c04ff5ce3a5dcb550df6a9e89b3b8061fd1f8df09a0ba4a95f295a5742",
+      "rawBytes": 178359,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-ency-jangsuwang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0048605",
+      "sha256": "0f03596b2c9734524ec9f9b4641903b6aa44c70e1ca5f3ed6b5a70c6d5d65b88",
+      "rawBytes": 88265,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-ency-goguryeo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003323",
+      "sha256": "07e369034684ca425e23bb860919eed90290a979ca2d074ea0cb773009a85326",
+      "rawBytes": 340168,
+      "excerpts": 1,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-ency-wolseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002909",
+      "sha256": "24d8d8c1323f4a8a71cca4db26bd7f4850b550d37fb7e965c821c506c237434e",
+      "rawBytes": 113518,
+      "excerpts": 4,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-ency-silla",
+      "url": "https://encykorea.aks.ac.kr/Article/E0032800",
+      "sha256": "fd1b27d43529158e8b3ce56179fd94aae04e46273a2f1641bfa054e591ecef65",
+      "rawBytes": 326346,
+      "excerpts": 2,
+      "quotedWords": 12
+    }
+  ],
+  "missing": [
+    {
+      "topic": "월성 초축 연대 표기 충돌",
+      "detail": "「경주 월성」은 같은 간지(파사 이사금 22)를 내용 요약에서 201년, 본문에서 101년으로 적어 항목 안에서 값이 어긋난다. 어느 쪽으로도 정규화하지 않고 두 연도 주장을 모두 claim 으로 남겼으며 scene.startYear 는 요약문의 201을 썼다.",
+      "affectedScenes": [
+        "scene-city-gyeongju-wolseong-201-935"
+      ]
+    },
+    {
+      "topic": "월성의 고고학 연대와 사료 연대 차이",
+      "detail": "같은 항목은 발굴 조사에서 교호 성토된 토성의 완공을 5세기 초반으로 보고하고, 축조·사용 시기에 3세기 말∼5세기 후반의 이견이 있다고 밝힌다. \"5세기 초반\"은 특정 연도가 아니라 연도 claim 으로 만들 수 없고, 출처별 인용 단어 상한(25어) 때문에 해당 문장은 excerpt 로 넣지 않았다. 이 장면의 시작 경계는 사료가 전하는 값이며 고고학 연대가 아니다.",
+      "affectedScenes": [
+        "scene-city-gyeongju-wolseong-201-935"
+      ]
+    },
+    {
+      "topic": "신라 왕경 성립 시점",
+      "detail": "「신라」는 왕조의 시작을 서기전 57년(혁거세거서간 1)으로 적지만 이는 건국 전승 연대이고, 경주가 그때부터 왕경으로 기능했다는 별도 서술은 확인하지 못했다. 전승 연대를 도성 활동 구간의 시작으로 쓰지 않았다.",
+      "affectedScenes": [
+        "scene-city-gyeongju-wolseong-201-935"
+      ]
+    },
+    {
+      "topic": "평양 도읍기 내부의 왕성 이동",
+      "detail": "평양 도읍기 안에서 왕성 자리가 안학궁 일대에서 장안성으로 옮겨졌다. 「평양성」은 이 이동을 586년(평원왕 28)으로 적고, 별도 항목 「평양천도」는 천도 뒤 160년 만이라고 적어 표현이 다르다. 두 왕성의 좌표 근거가 없어 지점을 나누지 않고 평양 지역 하나로만 배치했다.",
+      "affectedScenes": [
+        "scene-city-pyongyang-capital-427-668"
+      ]
+    },
+    {
+      "topic": "도성 범위 좌표 미확보",
+      "detail": "네 장면 모두 출처가 왕성 소재지를 시·군·동 수준으로만 적고 도성 범위나 지리 좌표를 제시하지 않는다. 공식 좌표를 얻지 못해 existing-place-anchors.json 의 시군 표시 기준점에 precision=\"area\" 로 배치했다. 실제 궁성 지점이 아니다.",
+      "affectedScenes": [
+        "scene-city-ungjin-capital-475-538",
+        "scene-city-sabi-capital-538-660",
+        "scene-city-pyongyang-capital-427-668",
+        "scene-city-gyeongju-wolseong-201-935"
+      ]
+    },
+    {
+      "topic": "월·일 단위 시점",
+      "detail": "네 구간 모두 출처가 연 단위로만 경계를 적는다. 웅진·사비 천도의 달과 날, 평양 천도의 달과 날은 확인하지 못했다.",
+      "affectedScenes": [
+        "scene-city-ungjin-capital-475-538",
+        "scene-city-sabi-capital-538-660",
+        "scene-city-pyongyang-capital-427-668"
+      ]
+    },
+    {
+      "topic": "도성 안 상주 인물",
+      "detail": "전 기간에 걸쳐 특정 인물이 도성에 머물렀다는 서술은 어느 출처에서도 확인하지 못했다. 재위 기간이나 생몰년으로 상주를 추정하지 않았고 participants 는 정치체 단위(presence=\"related\")로만 두었다.",
+      "affectedScenes": [
+        "scene-city-ungjin-capital-475-538",
+        "scene-city-sabi-capital-538-660",
+        "scene-city-pyongyang-capital-427-668",
+        "scene-city-gyeongju-wolseong-201-935"
+      ]
+    },
+    {
+      "topic": "통일신라 왕경의 별도 구간",
+      "detail": "과제의 경주/신라 항목 중 통일 이후 왕경만을 따로 자른 구간(676~935 등)은 도읍 기능의 연속을 직접 진술한 문장을 확보하지 못해 만들지 않았다. 월성 사용의 연속 서술에 기대어 하나의 구간만 두었다.",
+      "affectedScenes": []
+    },
+    {
+      "topic": "한성도읍기",
+      "detail": "같은 인용문이 한성도읍기를 기원전 18∼기원후 475로 적지만 시작이 건국 전승 연대여서 장면으로 만들지 않았다. 요청 범위(웅진·사비·평양·경주)에도 들어 있지 않다.",
+      "affectedScenes": []
+    }
+  ],
+  "collection": {
+    "task": "ancient_capital_activity",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788834087.5978992,
+    "resumeRequested": null,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "pid": 7004,
+    "sessionId": "0b1d88fc-e3ed-44dc-967b-2ce87938436f",
+    "lastEventUtc": 1788835223.6937795,
+    "exitCode": 0,
+    "seconds": 1136.5,
+    "resultSubtype": "success",
+    "isError": false,
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

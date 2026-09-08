@@ -10845,6 +10845,556 @@
       "visualActions": "발사대에서 점화해 상승하는 발사체와 지상 관제 시설을 표시한다. 3단 엔진 조기 종료로 목표 궤도 투입에 실패했으므로 궤도 안착이나 성공 연출은 넣지 않고, 궤도·낙하 지점도 그리지 않는다.",
       "researchJob": "scene_position_repairs",
       "researchCollection": "scenes-103"
+    },
+    {
+      "id": "scene-city-ungjin-capital-475-538",
+      "eventId": "event-city-ungjin-capital-475-538",
+      "title": "백제 웅진 도읍기 도성 활동 (475~538)",
+      "startYear": 475,
+      "endYear": 538,
+      "kind": "settlement",
+      "summary": "민족문화대백과 「백제」는 수도 변천을 기준으로 475∼538년을 웅진도읍기로 구분한다. 이 기간 동안 지금의 충청남도 공주에 있던 웅진이 백제의 수도였고 공산성(당시 웅진성)이 왕성으로 쓰였다. 한 번의 사건이 아니라 왕성과 관부가 계속 유지된 도읍 기간이며, 538년 사비 천도라는 연도 있는 이동으로 닫힌다.",
+      "dateClaimIds": [
+        "claim-activity-96-ancient_capital_activity-ungjin-capital-span",
+        "claim-activity-96-ancient_capital_activity-ungjin-start-475-corroboration"
+      ],
+      "actionClaimIds": [
+        "claim-activity-96-ancient_capital_activity-ungjin-capital-span",
+        "claim-activity-96-ancient_capital_activity-ungjin-action",
+        "claim-activity-96-ancient_capital_activity-ungjin-place"
+      ],
+      "place": {
+        "label": "웅진(지금의 충청남도 공주) 일대",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-20613",
+        "lon": 127.12620022900006,
+        "lat": 36.47880969700006,
+        "claimIds": [
+          "claim-activity-96-ancient_capital_activity-ungjin-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 추정 배치. 출처는 웅진을 \"충청남도 공주\"로, 왕성 공산성을 \"충남 공주시 산성동\"으로만 적고 도성 범위나 좌표는 제시하지 않는다. existing-place-anchors.json 의 공주 표시 기준점(국편 1910~1945 행정 경계 자료의 범위 중심)을 썼다. 역사적 지점 좌표가 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-baekje",
+          "role": "웅진에 수도를 두고 통치한 왕조(백제)",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-activity-96-ancient_capital_activity-ungjin-polity"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "강 옆 낮은 구릉 아래 자리한 상징적인 읍락. 초가와 기와지붕 집이 모여 있고 한쪽에 장이 서서 이름 없는 사람들이 물건을 늘어놓고 오간다. 가운데 관아 형태의 큰 건물로 관인 차림의 사람들이 드나든다. 성문 앞으로 짐을 진 사람과 우마차가 천천히 지나가는 일상 동작이 이어진다. 전투·화재·함선 없음.",
+      "researchJob": "ancient_capital_activity",
+      "researchCollection": "activity-96"
+    },
+    {
+      "id": "scene-city-sabi-capital-538-660",
+      "eventId": "event-city-sabi-capital-538-660",
+      "title": "백제 사비 도읍기 도성 활동 (538~660)",
+      "startYear": 538,
+      "endYear": 660,
+      "kind": "settlement",
+      "summary": "같은 시기 구분에서 538∼660년은 사비도읍기이다. 지금의 충청남도 부여군 부여읍 일대가 백제의 수도였고, 부소산성이 사비기의 왕성이자 배후 산성·후원이었던 것으로 여겨진다. 천도에 앞서 도성 시설물이 먼저 계획되었다는 서술처럼 도성 운영이 이어진 기간이며, 660년 백제 멸망으로 닫힌다.",
+      "dateClaimIds": [
+        "claim-activity-96-ancient_capital_activity-sabi-capital-span"
+      ],
+      "actionClaimIds": [
+        "claim-activity-96-ancient_capital_activity-sabi-capital-span",
+        "claim-activity-96-ancient_capital_activity-sabi-action",
+        "claim-activity-96-ancient_capital_activity-sabi-preparation",
+        "claim-activity-96-ancient_capital_activity-sabi-place"
+      ],
+      "place": {
+        "label": "사비(지금의 충청남도 부여군 부여읍) 일대",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-27192",
+        "lon": 126.89852042850003,
+        "lat": 36.31324435500005,
+        "claimIds": [
+          "claim-activity-96-ancient_capital_activity-sabi-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 추정 배치. 출처는 부소산성을 \"충청남도 부여군 부여읍 부소산\"으로만 적고 사비 도성 범위 좌표는 제시하지 않는다. existing-place-anchors.json 의 부여 표시 기준점(국편 1910~1945 행정 경계 자료의 범위 중심)을 썼다. 역사적 지점 좌표가 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-baekje",
+          "role": "사비에 수도를 두고 통치한 왕조(백제)",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-activity-96-ancient_capital_activity-sabi-polity"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "강을 낀 평지에 나란히 늘어선 상징적인 도성 마을. 기와집과 초가가 줄지어 있고 한쪽 거리에 장이 서서 이름 없는 사람들이 짐을 부리고 흥정한다. 중앙 관아 건물 마당에서 관인 차림의 사람들이 문서를 들고 오간다. 뒤편 산성 성문으로 인부들이 짐을 지고 오르내리는 평상시 동작이 이어진다. 전투·화재·함선 없음.",
+      "researchJob": "ancient_capital_activity",
+      "researchCollection": "activity-96"
+    },
+    {
+      "id": "scene-city-pyongyang-capital-427-668",
+      "eventId": "event-city-pyongyang-capital-427-668",
+      "title": "고구려 평양 도읍기 도성 활동 (427~668)",
+      "startYear": 427,
+      "endYear": 668,
+      "kind": "settlement",
+      "summary": "민족문화대백과 「평양시」는 427년(장수왕 15) 평양 천도 이후 고구려 멸망 때까지 240여 년간 평양이 수도로 번성하였다고 적고, 668년 평양성 함락으로 멸망하였다고 적는다. 이 기간 안에서 왕성 자리는 한 차례 옮겨져 처음에는 지금의 평양 동북 안학궁이 중심이었고, 「평양성」 항목은 586년(평원왕 28)에 도읍을 장안성으로 옮겼다는 『삼국사기』 기록을 전한다. 두 자리 모두 평양 안이어서 도읍 기능은 이어진다.",
+      "dateClaimIds": [
+        "claim-activity-96-ancient_capital_activity-pyongyang-capital-start-427",
+        "claim-activity-96-ancient_capital_activity-pyongyang-capital-end-668",
+        "claim-activity-96-ancient_capital_activity-pyongyang-start-427-corroboration",
+        "claim-activity-96-ancient_capital_activity-pyongyang-end-668-corroboration"
+      ],
+      "actionClaimIds": [
+        "claim-activity-96-ancient_capital_activity-pyongyang-capital-start-427",
+        "claim-activity-96-ancient_capital_activity-pyongyang-capital-end-668",
+        "claim-activity-96-ancient_capital_activity-pyongyang-continuity",
+        "claim-activity-96-ancient_capital_activity-pyongyang-586-inner-move",
+        "claim-activity-96-ancient_capital_activity-pyongyang-place"
+      ],
+      "place": {
+        "label": "평양(고구려 도읍) 일대",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-93236",
+        "lon": 125.68462533200005,
+        "lat": 39.085723067500055,
+        "claimIds": [
+          "claim-activity-96-ancient_capital_activity-pyongyang-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 추정 배치. 출처는 초기 왕성을 \"지금의 평양 동북의 안학궁\", 뒤의 왕성을 장안성으로만 적고 좌표는 제시하지 않는다. 두 왕성이 평양 안에서 갈리므로 지점을 특정하지 않고 existing-place-anchors.json 의 평양 표시 기준점(국편 1910~1945 행정 경계 자료의 범위 중심)을 썼다. 역사적 지점 좌표가 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-goguryeo",
+          "role": "평양에 수도를 두고 통치한 왕조(고구려)",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-activity-96-ancient_capital_activity-pyongyang-polity"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "큰 강 북쪽 기슭에 자리한 상징적인 도성 마을. 기와집과 초가가 모여 있고 거리 한쪽에 장이 서서 이름 없는 사람들이 곡식과 천을 사고판다. 관아 형태의 큰 건물 앞에서 관인 차림의 사람들이 모였다 흩어진다. 멀리 산 능선의 성벽을 배경으로 나무를 나르고 물을 긷는 일상 동작이 이어진다. 전투·화재·함선 없음.",
+      "researchJob": "ancient_capital_activity",
+      "researchCollection": "activity-96"
+    },
+    {
+      "id": "scene-city-gyeongju-wolseong-201-935",
+      "eventId": "event-city-gyeongju-wolseong-201-935",
+      "title": "신라 왕경 경주와 월성 왕성 활동 (사료 201/101~935)",
+      "startYear": 201,
+      "endYear": 935,
+      "kind": "settlement",
+      "summary": "민족문화대백과 「경주 월성」은 월성이 사료에 등장하는 시점을 내용 요약에서 201년(파사 이사금 22)으로, 본문에서는 같은 간지를 101년으로 적어 항목 안에서 값이 어긋난다. 두 값을 모두 남긴다. 이른 연대는 『삼국사기』가 전하는 기록이고 같은 항목은 발굴 결과 토성 완공을 5세기 초반으로 보고하므로 시작 경계는 확정된 것이 아니다. 다만 월성이 신라가 멸망하는 시기까지 지속적으로 사용되었다는 서술이 있어 왕성 기능의 연속은 확인되며, 신라 멸망 연도인 935년(경순왕 9)에서 구간이 닫힌다.",
+      "dateClaimIds": [
+        "claim-activity-96-ancient_capital_activity-gyeongju-wolseong-start-201",
+        "claim-activity-96-ancient_capital_activity-gyeongju-wolseong-start-101-variant",
+        "claim-activity-96-ancient_capital_activity-gyeongju-end-935"
+      ],
+      "actionClaimIds": [
+        "claim-activity-96-ancient_capital_activity-gyeongju-continuity",
+        "claim-activity-96-ancient_capital_activity-gyeongju-place",
+        "claim-activity-96-ancient_capital_activity-gyeongju-wanggyeong"
+      ],
+      "place": {
+        "label": "신라 왕경 경주(월성 소재 지역) 일대",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-157642",
+        "lon": 129.17336341450005,
+        "lat": 35.85977428950005,
+        "claimIds": [
+          "claim-activity-96-ancient_capital_activity-gyeongju-place",
+          "claim-activity-96-ancient_capital_activity-gyeongju-wanggyeong"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 추정 배치. 출처는 월성을 \"경상북도 경주시 인왕동\"으로만 적고 왕경 전체 범위 좌표는 제시하지 않는다. existing-place-anchors.json 의 경주 표시 기준점(국편 1910~1945 행정 경계 자료의 범위 중심)을 썼다. 역사적 지점 좌표가 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-silla",
+          "role": "왕경 경주를 유지한 왕조(신라)",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-activity-96-ancient_capital_activity-gyeongju-polity"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "분지 안에 반달 모양 토성을 두고 펼쳐진 상징적인 도성 마을. 구획된 길을 따라 기와집이 늘어서고 한쪽 저자에 사람들이 모여 물건을 늘어놓는다. 관아 형태의 건물 마당에서 관인 차림의 사람들이 문서를 주고받는다. 성벽 아래로 물을 긷고 짐을 나르는 이름 없는 사람들의 동작이 이어진다. 전투·화재·함선 없음.",
+      "researchJob": "ancient_capital_activity",
+      "researchCollection": "activity-96"
+    },
+    {
+      "id": "scene-city-gaegyeong-capital-919-1232",
+      "eventId": "event-city-gaegyeong-capital-919-1232",
+      "title": "개경, 고려 수도로서의 도시 활동 (919~1232)",
+      "startYear": 919,
+      "endYear": 1232,
+      "kind": "settlement",
+      "summary": "919년 왕건이 송악현과 개성현 일부를 합쳐 개주라 하고 이곳으로 천도하면서 고려의 수도 개경이 생겼다. 개경 항목은 강화도 천도기를 제외하면 436년 8개월 동안 고려왕조의 수도로 기능했다고 적는다. 이 장면은 1232년 강화 천도로 도읍이 옮겨질 때까지의 앞 구간을 하나의 지속 활동으로 둔다. 전투·화재 장면이 아니라 수도로서 유지된 행정·거주 기능을 나타낸다.",
+      "dateClaimIds": [
+        "claim-activity-96-later_capital_activity-city-gaegyeong-919-start-year",
+        "claim-activity-96-later_capital_activity-city-gaegyeong-1232-end-year"
+      ],
+      "actionClaimIds": [
+        "claim-activity-96-later_capital_activity-city-gaegyeong-919-function",
+        "claim-activity-96-later_capital_activity-city-gaegyeong-919-place"
+      ],
+      "place": {
+        "label": "개경 (지금의 개성 일대)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-6836",
+        "lon": 126.52319263200002,
+        "lat": 38.021695409000046,
+        "claimIds": [
+          "claim-activity-96-later_capital_activity-city-gaegyeong-919-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 도시·행정구역만 밝히고 궁궐터·관아터 같은 지점을 특정하지 않는다. 개성 지역 앵커에 지역 기준 추정 배치를 한다. 앵커 좌표는 ../goryeo_scenes/existing-place-anchors.json 의 표시 기준점(국사편찬위원회 1910~1945 행정구역 경계 자료의 범위 중심)이다. 역사적 도성 지점 좌표가 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-goryeo",
+          "role": "개경을 수도로 삼은 왕조(고려)",
+          "side": "administration",
+          "presence": "related",
+          "claimIds": [
+            "claim-activity-96-later_capital_activity-city-gaegyeong-919-goryeo"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "성문과 큰길을 낀 도성 마을이 늘 켜져 있는 모습. 기와집과 초가가 늘어선 거리, 좌판이 선 장터 골목, 문서를 들고 드나드는 관아 마당을 익명 인물들의 일상 동작으로 표현한다. 군대 이동·공격·불길은 넣지 않는다.",
+      "researchJob": "later_capital_activity",
+      "researchCollection": "activity-96"
+    },
+    {
+      "id": "scene-city-ganghwa-capital-1232-1270",
+      "eventId": "event-city-ganghwa-capital-1232-1270",
+      "title": "강화(강도), 고려 국도로서의 도시 활동 (1232~1270)",
+      "startYear": 1232,
+      "endYear": 1270,
+      "kind": "settlement",
+      "summary": "1232년 몽골의 침략에 대항해 도읍지를 강화도로 옮겼고, 1270년 개경으로 환도할 때까지 강화가 고려의 국도였다. 천도 뒤 궁궐과 여러 관청이 세워져 도읍 시설을 갖추었다. 이 장면은 그 39년 가까운 기간의 도읍 기능을 하나의 지속 구간으로 둔다. 같은 시기의 전투는 이 장면에 넣지 않는다.",
+      "dateClaimIds": [
+        "claim-activity-96-later_capital_activity-city-ganghwa-1232-start-year",
+        "claim-activity-96-later_capital_activity-city-ganghwa-1270-end-year"
+      ],
+      "actionClaimIds": [
+        "claim-activity-96-later_capital_activity-city-ganghwa-function",
+        "claim-activity-96-later_capital_activity-city-ganghwa-gwana",
+        "claim-activity-96-later_capital_activity-city-ganghwa-place"
+      ],
+      "place": {
+        "label": "강화도 (고려 강도)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-557",
+        "lon": 126.44283851900008,
+        "lat": 37.71023307050007,
+        "claimIds": [
+          "claim-activity-96-later_capital_activity-city-ganghwa-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 도시·행정구역만 밝히고 궁궐터·관아터 같은 지점을 특정하지 않는다. 강화 지역 앵커에 지역 기준 추정 배치를 한다. 앵커 좌표는 ../goryeo_scenes/existing-place-anchors.json 의 표시 기준점(국사편찬위원회 1910~1945 행정구역 경계 자료의 범위 중심)이다. 강도 궁궐터 좌표가 아니다.",
+        "coordinateClaimIds": [],
+        "displayCoordinates": [
+          126.44283851900008,
+          37.71023307050007
+        ],
+        "displayScale": 0.33760588779154,
+        "displayBasis": "원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [
+        {
+          "entityId": "polity-goryeo",
+          "role": "강화를 국도로 삼은 왕조(고려)",
+          "side": "administration",
+          "presence": "related",
+          "claimIds": [
+            "claim-activity-96-later_capital_activity-city-ganghwa-goryeo"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "섬 안쪽에 자리 잡은 임시 도읍 마을. 새로 세운 관청 건물과 궁궐 담장, 그 앞으로 늘어선 살림집과 작은 장터를 두고 짐을 나르고 문서를 옮기는 익명 인물들의 일상 동작을 반복해 보여 준다. 배·공격·불길은 넣지 않는다.",
+      "researchJob": "later_capital_activity",
+      "researchCollection": "activity-96"
+    },
+    {
+      "id": "scene-city-gaegyeong-capital-1270-1394",
+      "eventId": "event-city-gaegyeong-capital-1270-1394",
+      "title": "개경, 환도 이후 고려 수도로서의 도시 활동 (1270~1394)",
+      "startYear": 1270,
+      "endYear": 1394,
+      "kind": "settlement",
+      "summary": "1270년 강도에서 개경으로 환도한 뒤 개경은 다시 고려의 수도였다. 개경 항목은 강화도 천도기를 제외하면 436년 8개월 동안 수도로 기능했다고 적어 환도 이후의 지속을 밝힌다. 한성부 항목은 1394년 개경에서 한양부로 수도를 옮겼다고 적으므로 이 구간의 끝을 1394년으로 둔다. 1361년 홍건적의 함락 같은 개별 사건은 이 지속 장면에 넣지 않는다.",
+      "dateClaimIds": [
+        "claim-activity-96-later_capital_activity-city-gaegyeong-1270-start-year",
+        "claim-activity-96-later_capital_activity-city-gaegyeong-1394-end-year"
+      ],
+      "actionClaimIds": [
+        "claim-activity-96-later_capital_activity-city-gaegyeong-1270-function",
+        "claim-activity-96-later_capital_activity-city-gaegyeong-1270-place"
+      ],
+      "place": {
+        "label": "개경 (지금의 개성 일대)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-6836",
+        "lon": 126.52319263200002,
+        "lat": 38.021695409000046,
+        "claimIds": [
+          "claim-activity-96-later_capital_activity-city-gaegyeong-1270-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 도시·행정구역만 밝히고 궁궐터·관아터 같은 지점을 특정하지 않는다. 개성 지역 앵커에 지역 기준 추정 배치를 한다. 앵커 좌표는 ../goryeo_scenes/existing-place-anchors.json 의 표시 기준점(국사편찬위원회 1910~1945 행정구역 경계 자료의 범위 중심)이다. 역사적 도성 지점 좌표가 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-goryeo",
+          "role": "환도 뒤 개경을 수도로 삼은 왕조(고려)",
+          "side": "administration",
+          "presence": "related",
+          "claimIds": [
+            "claim-activity-96-later_capital_activity-city-gaegyeong-1270-goryeo"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "환도 뒤 다시 채워진 도성 마을. 손보고 있는 담장과 지붕, 다시 열린 장터 좌판, 관아 앞을 오가는 익명 인물들의 평범한 일과를 보여 준다. 병력 집결이나 화재는 넣지 않는다.",
+      "researchJob": "later_capital_activity",
+      "researchCollection": "activity-96"
+    },
+    {
+      "id": "scene-city-hanseong-capital-1394-1910",
+      "eventId": "event-city-hanseong-capital-1394-1910",
+      "title": "한성부, 조선 수도로서의 도시 활동 (1394~1910)",
+      "startYear": 1394,
+      "endYear": 1910,
+      "kind": "settlement",
+      "summary": "1394년 개경에서 한양부로 수도를 옮기고 이듬해 한성부로 이름을 고쳤다. 한성부 항목은 1910년 경성부로 이름이 바뀔 때까지 515년간 조선왕조의 수도였다고 적는다. 도성에는 민가를 짓고 5부 52방의 행정구역을 두었다. 이 장면은 그 사이의 임진왜란·환도 같은 개별 사건이 아니라 계속된 수도 행정·거주 기능만 나타낸다.",
+      "dateClaimIds": [
+        "claim-activity-96-later_capital_activity-city-hanseong-1394-start-year",
+        "claim-activity-96-later_capital_activity-city-hanseong-1910-end-year"
+      ],
+      "actionClaimIds": [
+        "claim-activity-96-later_capital_activity-city-hanseong-function",
+        "claim-activity-96-later_capital_activity-city-hanseong-bang",
+        "claim-activity-96-later_capital_activity-city-hanseong-place"
+      ],
+      "place": {
+        "label": "한성부 (조선 수도)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": null,
+        "lon": 127.0,
+        "lat": 37.583333333333336,
+        "claimIds": [
+          "claim-activity-96-later_capital_activity-city-hanseong-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 도시·행정구역만 밝히고 궁궐터·관아터 같은 지점을 특정하지 않는다. 저장된 공통 지리 등록부(coordinates-105-evidence.zip > coordinates.json 의 rc-hanseongbu, 원 좌표 출처는 위키데이터 Q624467)의 한성부 대표 좌표를 그대로 옮겨 지역 기준 추정 배치를 한다. 표시용 앵커 목록(existing-place-anchors.json)에는 한성부 항목이 없어 anchorPlaceId 를 비웠다. 원자료 좌표 자릿수가 거칠고(약 0.017도) 도성 안 특정 지점을 뜻하지 않는다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-joseon",
+          "role": "한성부를 수도로 삼은 왕조(조선)",
+          "side": "administration",
+          "presence": "related",
+          "claimIds": [
+            "claim-activity-96-later_capital_activity-city-hanseong-joseon"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "성벽과 큰길로 구획된 도성 마을. 기와집과 초가가 방(坊)별로 모여 있고, 큰길가 장터 좌판과 관아 마당에서 문서를 주고받는 익명 인물들의 일상 동작이 이어진다. 전투·화재 연출은 넣지 않는다.",
+      "researchJob": "later_capital_activity",
+      "researchCollection": "activity-96"
+    },
+    {
+      "id": "scene-city-busan-temporary-capital-1950-1953",
+      "eventId": "event-city-busan-temporary-capital-1950-1953",
+      "title": "부산, 임시수도로서의 도시 활동 (1950~1953)",
+      "startYear": 1950,
+      "endYear": 1953,
+      "kind": "settlement",
+      "summary": "부산 항목은 6·25전쟁이 일어나자 1950년 8월 18일부터 1953년 8월 15일까지 부산이 임시수도로 반격의 기지가 되었고 피난민이 몰려들어 인구가 급증하였다고 적는다. 이 장면은 그 기간의 도시 기능과 인구 집중을 하나의 지속 구간으로 둔다. 출처 발췌는 이 기간을 끊김 없이 이어진 하나의 구간으로 서술하며, 중간의 정부 이동 여부는 이 발췌로 확인되지 않는다.",
+      "dateClaimIds": [
+        "claim-activity-96-later_capital_activity-city-busan-1950-start-year",
+        "claim-activity-96-later_capital_activity-city-busan-1953-end-year"
+      ],
+      "actionClaimIds": [
+        "claim-activity-96-later_capital_activity-city-busan-function",
+        "claim-activity-96-later_capital_activity-city-busan-place"
+      ],
+      "place": {
+        "label": "부산 (임시수도)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-145002",
+        "lon": 129.07595621500008,
+        "lat": 35.169465885500045,
+        "claimIds": [
+          "claim-activity-96-later_capital_activity-city-busan-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 도시·행정구역만 밝히고 궁궐터·관아터 같은 지점을 특정하지 않는다. 부산 지역 앵커에 지역 기준 추정 배치를 한다. 앵커 좌표는 ../goryeo_scenes/existing-place-anchors.json 의 표시 기준점(국사편찬위원회 1910~1945 행정구역 경계 자료의 범위 중심)이다. 임시수도 정부청사 등 개별 건물 좌표가 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-refugees-busan-1950-1953",
+          "role": "전쟁 중 부산으로 몰려든 피난민",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-activity-96-later_capital_activity-city-busan-refugees"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "항구를 낀 도시가 사람으로 붐비는 모습. 비탈에 빽빽이 들어선 집과 임시 거처, 길가 노점, 사람들이 줄지어 드나드는 공공 청사 앞마당을 익명 인물들의 일상 동작으로 표현한다. 폭격·화재·전투 연출은 넣지 않는다.",
+      "researchJob": "later_capital_activity",
+      "researchCollection": "activity-96"
     }
   ],
   "sources": [
@@ -12371,6 +12921,84 @@
       "title": "한국형발사체 누리호 - 한국항공우주연구원",
       "publisher": "한국항공우주연구원(KARI)",
       "url": "https://www.kari.re.kr/kor/contents/51"
+    },
+    {
+      "id": "src-ency-baekje",
+      "title": "백제 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022355"
+    },
+    {
+      "id": "src-ency-gongsanseong",
+      "title": "공주 공산성 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004450"
+    },
+    {
+      "id": "src-ency-busosanseong",
+      "title": "부여 부소산성 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024406"
+    },
+    {
+      "id": "src-ency-pyongyangsi",
+      "title": "평양시 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059979"
+    },
+    {
+      "id": "src-ency-pyongyangseong",
+      "title": "평양성 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059975"
+    },
+    {
+      "id": "src-ency-jangsuwang",
+      "title": "장수왕 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0048605"
+    },
+    {
+      "id": "src-ency-goguryeo",
+      "title": "고구려 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003323"
+    },
+    {
+      "id": "src-ency-wolseong",
+      "title": "경주 월성 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002909"
+    },
+    {
+      "id": "src-ency-silla",
+      "title": "신라 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0032800"
+    },
+    {
+      "id": "src-encykorea-gaegyeong",
+      "title": "개경 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0079670"
+    },
+    {
+      "id": "src-encykorea-ganghwa-cheondo",
+      "title": "강화천도 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0001532"
+    },
+    {
+      "id": "src-encykorea-hanseongbu",
+      "title": "한성부 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061730"
+    },
+    {
+      "id": "src-encykorea-busan",
+      "title": "부산광역시 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024209"
     }
   ],
   "missing": [
@@ -13625,6 +14253,166 @@
         "detail": "나로우주센터 안에서 실제로 쓴 발사대(제2발사대)의 좌표는 확보하지 못했다. 배치점은 시설 표시 좌표이며 발사대 지점이 아니다.",
         "affectedScenes": [
           "scene-nuri-launch-2021"
+        ]
+      }
+    },
+    {
+      "job": "ancient_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "월성 초축 연대 표기 충돌",
+        "detail": "「경주 월성」은 같은 간지(파사 이사금 22)를 내용 요약에서 201년, 본문에서 101년으로 적어 항목 안에서 값이 어긋난다. 어느 쪽으로도 정규화하지 않고 두 연도 주장을 모두 claim 으로 남겼으며 scene.startYear 는 요약문의 201을 썼다.",
+        "affectedScenes": [
+          "scene-city-gyeongju-wolseong-201-935"
+        ]
+      }
+    },
+    {
+      "job": "ancient_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "월성의 고고학 연대와 사료 연대 차이",
+        "detail": "같은 항목은 발굴 조사에서 교호 성토된 토성의 완공을 5세기 초반으로 보고하고, 축조·사용 시기에 3세기 말∼5세기 후반의 이견이 있다고 밝힌다. \"5세기 초반\"은 특정 연도가 아니라 연도 claim 으로 만들 수 없고, 출처별 인용 단어 상한(25어) 때문에 해당 문장은 excerpt 로 넣지 않았다. 이 장면의 시작 경계는 사료가 전하는 값이며 고고학 연대가 아니다.",
+        "affectedScenes": [
+          "scene-city-gyeongju-wolseong-201-935"
+        ]
+      }
+    },
+    {
+      "job": "ancient_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "신라 왕경 성립 시점",
+        "detail": "「신라」는 왕조의 시작을 서기전 57년(혁거세거서간 1)으로 적지만 이는 건국 전승 연대이고, 경주가 그때부터 왕경으로 기능했다는 별도 서술은 확인하지 못했다. 전승 연대를 도성 활동 구간의 시작으로 쓰지 않았다.",
+        "affectedScenes": [
+          "scene-city-gyeongju-wolseong-201-935"
+        ]
+      }
+    },
+    {
+      "job": "ancient_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "평양 도읍기 내부의 왕성 이동",
+        "detail": "평양 도읍기 안에서 왕성 자리가 안학궁 일대에서 장안성으로 옮겨졌다. 「평양성」은 이 이동을 586년(평원왕 28)으로 적고, 별도 항목 「평양천도」는 천도 뒤 160년 만이라고 적어 표현이 다르다. 두 왕성의 좌표 근거가 없어 지점을 나누지 않고 평양 지역 하나로만 배치했다.",
+        "affectedScenes": [
+          "scene-city-pyongyang-capital-427-668"
+        ]
+      }
+    },
+    {
+      "job": "ancient_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "도성 범위 좌표 미확보",
+        "detail": "네 장면 모두 출처가 왕성 소재지를 시·군·동 수준으로만 적고 도성 범위나 지리 좌표를 제시하지 않는다. 공식 좌표를 얻지 못해 existing-place-anchors.json 의 시군 표시 기준점에 precision=\"area\" 로 배치했다. 실제 궁성 지점이 아니다.",
+        "affectedScenes": [
+          "scene-city-ungjin-capital-475-538",
+          "scene-city-sabi-capital-538-660",
+          "scene-city-pyongyang-capital-427-668",
+          "scene-city-gyeongju-wolseong-201-935"
+        ]
+      }
+    },
+    {
+      "job": "ancient_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "월·일 단위 시점",
+        "detail": "네 구간 모두 출처가 연 단위로만 경계를 적는다. 웅진·사비 천도의 달과 날, 평양 천도의 달과 날은 확인하지 못했다.",
+        "affectedScenes": [
+          "scene-city-ungjin-capital-475-538",
+          "scene-city-sabi-capital-538-660",
+          "scene-city-pyongyang-capital-427-668"
+        ]
+      }
+    },
+    {
+      "job": "ancient_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "도성 안 상주 인물",
+        "detail": "전 기간에 걸쳐 특정 인물이 도성에 머물렀다는 서술은 어느 출처에서도 확인하지 못했다. 재위 기간이나 생몰년으로 상주를 추정하지 않았고 participants 는 정치체 단위(presence=\"related\")로만 두었다.",
+        "affectedScenes": [
+          "scene-city-ungjin-capital-475-538",
+          "scene-city-sabi-capital-538-660",
+          "scene-city-pyongyang-capital-427-668",
+          "scene-city-gyeongju-wolseong-201-935"
+        ]
+      }
+    },
+    {
+      "job": "ancient_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "통일신라 왕경의 별도 구간",
+        "detail": "과제의 경주/신라 항목 중 통일 이후 왕경만을 따로 자른 구간(676~935 등)은 도읍 기능의 연속을 직접 진술한 문장을 확보하지 못해 만들지 않았다. 월성 사용의 연속 서술에 기대어 하나의 구간만 두었다.",
+        "affectedScenes": []
+      }
+    },
+    {
+      "job": "ancient_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "한성도읍기",
+        "detail": "같은 인용문이 한성도읍기를 기원전 18∼기원후 475로 적지만 시작이 건국 전승 연대여서 장면으로 만들지 않았다. 요청 범위(웅진·사비·평양·경주)에도 들어 있지 않다.",
+        "affectedScenes": []
+      }
+    },
+    {
+      "job": "later_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "개경 강도 기간 표기의 불일치",
+        "detail": "개경 항목 본문은 강도 시기를 37년 10개월로, 같은 항목의 주석은 39년으로 적어 서로 다르다. 어느 쪽도 장면 연도로 쓰지 않았고, 1232·1270 두 연도는 강화천도 항목 발췌에서만 가져왔다.",
+        "affectedScenes": [
+          "scene-city-gaegyeong-capital-919-1232",
+          "scene-city-ganghwa-capital-1232-1270",
+          "scene-city-gaegyeong-capital-1270-1394"
+        ]
+      }
+    },
+    {
+      "job": "later_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "한성부 수도 지위의 중간 변동",
+        "detail": "한성부 항목은 1895년 한성부를 한성군으로 격하했다가 1896년 수도로서의 위치를 회복했다고 적으면서도 1394~1910을 515년간의 수도 기간으로 서술한다. 이 작업은 출처 서술을 따라 하나의 구간으로 두었고 1895~1896의 격하·회복은 별도 장면으로 만들지 않았다.",
+        "affectedScenes": [
+          "scene-city-hanseong-capital-1394-1910"
+        ]
+      }
+    },
+    {
+      "job": "later_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "한성부 표시 앵커 없음",
+        "detail": "표시용 앵커 목록에 한성부·경성 항목이 없어 저장된 공통 지리 등록부의 한성부 대표 좌표를 썼고 anchorPlaceId 를 비웠다. 앵커 id 를 붙이려면 별도 등록이 필요하다.",
+        "affectedScenes": [
+          "scene-city-hanseong-capital-1394-1910"
+        ]
+      }
+    },
+    {
+      "job": "later_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "부산 임시수도 구간의 세부 확인 안 됨",
+        "detail": "부산 항목 발췌는 1950년 8월 18일~1953년 8월 15일을 하나의 임시수도 기간으로 적는다. 이 기간 안의 정부 소재지 이동이나 환도 여부를 다루는 별도 출처는 이 작업에서 내려받지 않았다. 또 발췌가 국가명을 적지 않아 대한민국 정부를 참여자로 넣지 않았다.",
+        "affectedScenes": [
+          "scene-city-busan-temporary-capital-1950-1953"
+        ]
+      }
+    },
+    {
+      "job": "later_capital_activity",
+      "collection": "activity-96",
+      "detail": {
+        "topic": "개경 도읍 종료와 조선 건국 사이",
+        "detail": "1392년 조선 건국부터 1394년 한양 천도까지 개경이 조선의 도읍이었는지는 내려받은 발췌가 밝히지 않는다. 개경 구간의 끝을 1394년 수도 이전으로만 잡고 왕조 참여자는 고려로 두었다.",
+        "affectedScenes": [
+          "scene-city-gaegyeong-capital-1270-1394"
         ]
       }
     }

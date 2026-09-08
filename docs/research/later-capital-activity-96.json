@@ -1,0 +1,112 @@
+{
+  "job": "later_capital_activity",
+  "sources": 4,
+  "excerpts": 9,
+  "claims": 27,
+  "entities": 12,
+  "rawFilesChecked": [
+    {
+      "source": "src-encykorea-gaegyeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0079670",
+      "sha256": "fbd81846225a9d318e9fdba25c05dd026745f7dc6940b2975c7eff5260d34e2f",
+      "rawBytes": 99592,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-encykorea-ganghwa-cheondo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0001532",
+      "sha256": "d8e35fcce20f4b4f92e076fc78cd51cfea17369464cfc61c7217a1188f78fe73",
+      "rawBytes": 110142,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-encykorea-hanseongbu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061730",
+      "sha256": "bb91aabc7b60e85aedabf5285092ed37cf5b01bb6e1f230f626e2a0235cde08b",
+      "rawBytes": 100996,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-encykorea-busan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024209",
+      "sha256": "f06dbc07ea77b7ffb8f3313aa73e0f8e1625657166712ed30a950593bbac0f36",
+      "rawBytes": 204825,
+      "excerpts": 1,
+      "quotedWords": 16
+    }
+  ],
+  "missing": [
+    {
+      "topic": "개경 강도 기간 표기의 불일치",
+      "detail": "개경 항목 본문은 강도 시기를 37년 10개월로, 같은 항목의 주석은 39년으로 적어 서로 다르다. 어느 쪽도 장면 연도로 쓰지 않았고, 1232·1270 두 연도는 강화천도 항목 발췌에서만 가져왔다.",
+      "affectedScenes": [
+        "scene-city-gaegyeong-capital-919-1232",
+        "scene-city-ganghwa-capital-1232-1270",
+        "scene-city-gaegyeong-capital-1270-1394"
+      ]
+    },
+    {
+      "topic": "한성부 수도 지위의 중간 변동",
+      "detail": "한성부 항목은 1895년 한성부를 한성군으로 격하했다가 1896년 수도로서의 위치를 회복했다고 적으면서도 1394~1910을 515년간의 수도 기간으로 서술한다. 이 작업은 출처 서술을 따라 하나의 구간으로 두었고 1895~1896의 격하·회복은 별도 장면으로 만들지 않았다.",
+      "affectedScenes": [
+        "scene-city-hanseong-capital-1394-1910"
+      ]
+    },
+    {
+      "topic": "한성부 표시 앵커 없음",
+      "detail": "표시용 앵커 목록에 한성부·경성 항목이 없어 저장된 공통 지리 등록부의 한성부 대표 좌표를 썼고 anchorPlaceId 를 비웠다. 앵커 id 를 붙이려면 별도 등록이 필요하다.",
+      "affectedScenes": [
+        "scene-city-hanseong-capital-1394-1910"
+      ]
+    },
+    {
+      "topic": "부산 임시수도 구간의 세부 확인 안 됨",
+      "detail": "부산 항목 발췌는 1950년 8월 18일~1953년 8월 15일을 하나의 임시수도 기간으로 적는다. 이 기간 안의 정부 소재지 이동이나 환도 여부를 다루는 별도 출처는 이 작업에서 내려받지 않았다. 또 발췌가 국가명을 적지 않아 대한민국 정부를 참여자로 넣지 않았다.",
+      "affectedScenes": [
+        "scene-city-busan-temporary-capital-1950-1953"
+      ]
+    },
+    {
+      "topic": "개경 도읍 종료와 조선 건국 사이",
+      "detail": "1392년 조선 건국부터 1394년 한양 천도까지 개경이 조선의 도읍이었는지는 내려받은 발췌가 밝히지 않는다. 개경 구간의 끝을 1394년 수도 이전으로만 잡고 왕조 참여자는 고려로 두었다.",
+      "affectedScenes": [
+        "scene-city-gaegyeong-capital-1270-1394"
+      ]
+    }
+  ],
+  "collection": {
+    "task": "later_capital_activity",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788834087.5978992,
+    "resumeRequested": null,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "pid": 28572,
+    "sessionId": "69962011-9226-42d2-8160-9a6943dcbbad",
+    "lastEventUtc": 1788834878.1824365,
+    "exitCode": 0,
+    "seconds": 791.0,
+    "resultSubtype": "success",
+    "isError": false,
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}
