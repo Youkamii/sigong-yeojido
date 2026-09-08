@@ -19,6 +19,7 @@ export class ChronicleScene {
     if(!this.assets||!chronicle.context)return;
     const features=world.historyTargets.map(t=>t.userData.feature);
     const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[],world.coordinateRegistry);
+    world.geography?.setActivities(plan);
     const signature=JSON.stringify([plan,this.assets.activeScene]);
     if(signature===this.signature){this.syncPicks();return;}
     const changedYear=this.assets.plan?.year!==plan.year;

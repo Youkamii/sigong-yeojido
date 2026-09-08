@@ -1362,7 +1362,8 @@ async function init3d(){
 
   world.configureEngine(engine);
   const {ChronicleGeography}=await import('./app/chronicle-geography.js');
-  world.geography=new ChronicleGeography(world,engine,geography);
+    world.geography=new ChronicleGeography(world,engine,geography);
+    world.geography.setActivities(chronicleScene.assets?.plan);
   if(q && engine.setQuality) engine.setQuality(q);   // 검증·저사양용 ?q=low
   let ssaoBeforeMaterialize = null;
   engine.start((dt, t) => {

@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import {formatCoordinates,latitudeCoordinates,regionalCoordinate} from './history-coordinates.js';
+import {formatCoordinates,latitudeCoordinates} from './history-coordinates.js';
+import {activityGeography} from './activity-geography.js';
 
 export function ridgeSegments(data,toWorld){
   return (data?.ridges||[]).flatMap(ridge=>{
@@ -30,47 +31,61 @@ export class ChronicleGeography{
     const toggle=document.getElementById('showParallel38');
     toggle.onchange=()=>{this.parallel.visible=toggle.checked;};
     menu.replaceChildren(new Option('지역·산맥·섬으로 이동',''));
-    const regions=new Map();
-    for(const row of world.coordinateRegistry?.places||[]){
-      const region=regionalCoordinate(world.coordinateRegistry,null,row.label);
-      if(region)regions.set(row.label,region);
-    }
-    for(const row of [...data.islands,...data.ridges,...(data.peaks||[]),...regions.values()]){
-      const line=row.geometry?.type==='LineString'?row.geometry.coordinates:row.geometry?.type==='MultiLineString'?row.geometry.coordinates[0]:null;
-      const coordinate=row.lon!=null?[row.lon,row.lat]:line?.[Math.floor(line.length/2)];
-      if(!coordinate)continue;
-      const [x,z]=world.toWorld(...coordinate),position=new THREE.Vector3(x,world.surfaceAt(x,z)+.8,z);
-      const button=document.createElement('button');button.className='scene-geography';button.textContent=row.label;
-      const region=regions.get(row.label)===row;
-      button.dataset.geography=row.id;button.onclick=()=>this.focus(row.id);host.append(button);
-      this.markers.push({row,button,position,region});menu.add(new Option(row.label,row.id));
-    }
+    for(const row of [...data.islands,...data.ridges,...(data.peaks||[])])this.addMarker(row);
     menu.onchange=()=>{if(menu.value)this.focus(menu.value);};
     document.getElementById('geographyClose').onclick=()=>{document.getElementById('geographyCard').hidden=true;};
+  }
+  addMarker(row,region=false){
+      const world=this.world,host=document.getElementById('sceneGeography'),menu=document.getElementById('geographyDestination');
+      const line=row.geometry?.type==='LineString'?row.geometry.coordinates:row.geometry?.type==='MultiLineString'?row.geometry.coordinates[0]:null;
+      const coordinate=row.lon!=null?[row.lon,row.lat]:line?.[Math.floor(line.length/2)];
+      if(!coordinate)return;
+      const [x,z]=world.toWorld(...coordinate),position=new THREE.Vector3(x,world.surfaceAt(x,z)+.8,z);
+      const button=document.createElement('button');button.className='scene-geography';button.textContent=row.label;
+      button.dataset.geography=row.id;button.onclick=()=>this.focus(row.id);host.append(button);
+      this.markers.push({row,button,position,region});menu.add(new Option(row.label,row.id));
+  }
+  setActivities(plan){
+    const rows=activityGeography(plan),key=JSON.stringify(rows);
+    if(this.activityKey===key)return;
+    this.activityKey=key;
+    const menu=document.getElementById('geographyDestination'),previous=menu.value;
+    const selected=this.markers.find(m=>m.row.id===previous);
+    for(const marker of this.markers.filter(m=>m.region))marker.button.remove();
+    this.markers=this.markers.filter(m=>!m.region);
+    for(const option of [...menu.options])if(option.value.startsWith('activity-place:'))option.remove();
+    for(const row of rows)this.addMarker(row,true);
+    if([...menu.options].some(option=>option.value===previous)){
+      menu.value=previous;
+      if(selected?.region&&!document.getElementById('geographyCard').hidden)this.showCard(this.markers.find(m=>m.row.id===previous));
+    }else if(selected?.region){menu.value='';document.getElementById('geographyCard').hidden=true;}
   }
   focus(id){
     const marker=this.markers.find(m=>m.row.id===id);if(!marker)return false;
     const {row,position,region}=marker,island=this.data.islands.includes(row);
     this.engine.flyTo(position.clone(),region?115:island?(row.areaKm2<1?9:48):180,650);
     document.getElementById('geographyDestination').value=id;
+    this.showCard(marker);
+    return true;
+  }
+  showCard({row,region}){
     const card=document.getElementById('geographyCard');card.hidden=false;
     card.querySelector('strong').textContent=row.label;
     card.querySelector('p').textContent=[row.lon!=null?formatCoordinates([row.lon,row.lat]):'',
       region&&row.precision==='area'?'지역 기준점 · 인물의 실제 위치를 뜻하지 않습니다.':'',
-      row.displayNote||''].filter(Boolean).join(' · ');
+      region?row.year+'년 · '+row.activities.map(a=>a.label).join(' / '):row.displayNote||''].filter(Boolean).join(' · ');
     const refs=card.querySelector('div');refs.replaceChildren();
     const more=document.createElement('details'),summary=document.createElement('summary');
     summary.textContent='위치 자료 더 보기';more.append(summary);
     if(row.coordinateNote){const note=document.createElement('p');note.textContent=row.coordinateNote;more.append(note);}
     let shown=0;
     for(const sid of row.sourceIds||[]){
-      const source=[...this.data.sources,...(this.world.coordinateRegistry?.sources||[])].find(s=>s.id===sid);if(!source)continue;
+      const source=[...this.data.sources,...(this.world.sceneSources||[]),...(this.world.coordinateRegistry?.sources||[])].find(s=>s.id===sid);if(!source)continue;
       const link=document.createElement('a');link.textContent=source.title;link.title=source.publisher+' · '+source.title;
       link.href=source.url;link.target='_blank';link.rel='noopener';
       (shown++<2?refs:more).append(link);
     }
     if(shown>2||row.coordinateNote)refs.append(more);
-    return true;
   }
   update(camera,canvas,occupied){
     const distance=camera.position.distanceTo(this.engine.controls.target),w=canvas.clientWidth,h=canvas.clientHeight;
