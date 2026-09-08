@@ -1,0 +1,488 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com/",
+  "checks": [
+    {
+      "name": "Rendered terrain raycasts agree with small scenery heights",
+      "pass": true,
+      "detail": {
+        "samples": 1598,
+        "hits": 1521,
+        "misses": 77,
+        "maxError": 6.039613253960852e-14,
+        "errors": []
+      }
+    },
+    {
+      "name": "Woods remain instanced with a bounded tree count",
+      "pass": true,
+      "detail": {
+        "trees": 9583,
+        "meshes": 99
+      }
+    },
+    {
+      "name": "Footpaths join villages on land outside active historical scenes",
+      "pass": true,
+      "detail": {
+        "routes": 57,
+        "vertices": 13998
+      }
+    },
+    {
+      "name": "Forest does not cover the footpath network",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Buildings and wildlife cast shadows after asynchronous loading",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Eight ridges and the offshore islands are retained",
+      "pass": true,
+      "detail": [
+        "울릉도",
+        "독도 동도",
+        "독도 서도"
+      ]
+    },
+    {
+      "name": "The path checkbox hides both local lanes and connecting footpaths",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The overview retains every visible village as a merged shape",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "readySeconds": 13.797,
+  "landscape": {
+    "terrain": {
+      "samples": 1598,
+      "hits": 1521,
+      "misses": 77,
+      "maxError": 6.039613253960852e-14,
+      "errors": []
+    },
+    "trees": 9583,
+    "routes": 57,
+    "roadVertices": 13998,
+    "roadsOnLand": true,
+    "roadsOutsideHistory": true,
+    "treesOutsidePaths": true,
+    "forestMeshes": [
+      {
+        "instanced": true,
+        "count": 148
+      },
+      {
+        "instanced": true,
+        "count": 344
+      },
+      {
+        "instanced": true,
+        "count": 8
+      },
+      {
+        "instanced": true,
+        "count": 310
+      },
+      {
+        "instanced": true,
+        "count": 13
+      },
+      {
+        "instanced": true,
+        "count": 7
+      },
+      {
+        "instanced": true,
+        "count": 461
+      },
+      {
+        "instanced": true,
+        "count": 409
+      },
+      {
+        "instanced": true,
+        "count": 254
+      },
+      {
+        "instanced": true,
+        "count": 276
+      },
+      {
+        "instanced": true,
+        "count": 42
+      },
+      {
+        "instanced": true,
+        "count": 258
+      },
+      {
+        "instanced": true,
+        "count": 166
+      },
+      {
+        "instanced": true,
+        "count": 306
+      },
+      {
+        "instanced": true,
+        "count": 174
+      },
+      {
+        "instanced": true,
+        "count": 68
+      },
+      {
+        "instanced": true,
+        "count": 303
+      },
+      {
+        "instanced": true,
+        "count": 213
+      },
+      {
+        "instanced": true,
+        "count": 58
+      },
+      {
+        "instanced": true,
+        "count": 26
+      },
+      {
+        "instanced": true,
+        "count": 40
+      },
+      {
+        "instanced": true,
+        "count": 343
+      },
+      {
+        "instanced": true,
+        "count": 240
+      },
+      {
+        "instanced": true,
+        "count": 109
+      },
+      {
+        "instanced": true,
+        "count": 116
+      },
+      {
+        "instanced": true,
+        "count": 335
+      },
+      {
+        "instanced": true,
+        "count": 249
+      },
+      {
+        "instanced": true,
+        "count": 157
+      },
+      {
+        "instanced": true,
+        "count": 5
+      },
+      {
+        "instanced": true,
+        "count": 194
+      },
+      {
+        "instanced": true,
+        "count": 381
+      },
+      {
+        "instanced": true,
+        "count": 21
+      },
+      {
+        "instanced": true,
+        "count": 273
+      },
+      {
+        "instanced": true,
+        "count": 54
+      },
+      {
+        "instanced": true,
+        "count": 95
+      },
+      {
+        "instanced": true,
+        "count": 148
+      },
+      {
+        "instanced": true,
+        "count": 222
+      },
+      {
+        "instanced": true,
+        "count": 76
+      },
+      {
+        "instanced": true,
+        "count": 14
+      },
+      {
+        "instanced": true,
+        "count": 21
+      },
+      {
+        "instanced": true,
+        "count": 394
+      },
+      {
+        "instanced": true,
+        "count": 50
+      },
+      {
+        "instanced": true,
+        "count": 315
+      },
+      {
+        "instanced": true,
+        "count": 86
+      },
+      {
+        "instanced": true,
+        "count": 313
+      },
+      {
+        "instanced": true,
+        "count": 8
+      },
+      {
+        "instanced": true,
+        "count": 71
+      },
+      {
+        "instanced": true,
+        "count": 152
+      },
+      {
+        "instanced": true,
+        "count": 80
+      },
+      {
+        "instanced": true,
+        "count": 136
+      },
+      {
+        "instanced": true,
+        "count": 6
+      },
+      {
+        "instanced": true,
+        "count": 50
+      },
+      {
+        "instanced": true,
+        "count": 26
+      },
+      {
+        "instanced": true,
+        "count": 60
+      },
+      {
+        "instanced": true,
+        "count": 13
+      },
+      {
+        "instanced": true,
+        "count": 47
+      },
+      {
+        "instanced": true,
+        "count": 24
+      },
+      {
+        "instanced": true,
+        "count": 21
+      },
+      {
+        "instanced": true,
+        "count": 29
+      },
+      {
+        "instanced": true,
+        "count": 49
+      },
+      {
+        "instanced": true,
+        "count": 47
+      },
+      {
+        "instanced": true,
+        "count": 41
+      },
+      {
+        "instanced": true,
+        "count": 25
+      },
+      {
+        "instanced": true,
+        "count": 52
+      },
+      {
+        "instanced": true,
+        "count": 43
+      },
+      {
+        "instanced": true,
+        "count": 10
+      },
+      {
+        "instanced": true,
+        "count": 21
+      },
+      {
+        "instanced": true,
+        "count": 46
+      },
+      {
+        "instanced": true,
+        "count": 1
+      },
+      {
+        "instanced": true,
+        "count": 40
+      },
+      {
+        "instanced": true,
+        "count": 6
+      },
+      {
+        "instanced": true,
+        "count": 14
+      },
+      {
+        "instanced": true,
+        "count": 12
+      },
+      {
+        "instanced": true,
+        "count": 48
+      },
+      {
+        "instanced": true,
+        "count": 35
+      },
+      {
+        "instanced": true,
+        "count": 2
+      },
+      {
+        "instanced": true,
+        "count": 7
+      },
+      {
+        "instanced": true,
+        "count": 5
+      },
+      {
+        "instanced": true,
+        "count": 3
+      },
+      {
+        "instanced": true,
+        "count": 18
+      },
+      {
+        "instanced": true,
+        "count": 6
+      },
+      {
+        "instanced": true,
+        "count": 17
+      },
+      {
+        "instanced": true,
+        "count": 1
+      },
+      {
+        "instanced": true,
+        "count": 49
+      },
+      {
+        "instanced": true,
+        "count": 13
+      },
+      {
+        "instanced": true,
+        "count": 12
+      },
+      {
+        "instanced": true,
+        "count": 9
+      },
+      {
+        "instanced": true,
+        "count": 3
+      },
+      {
+        "instanced": true,
+        "count": 9
+      },
+      {
+        "instanced": true,
+        "count": 5
+      },
+      {
+        "instanced": true,
+        "count": 20
+      },
+      {
+        "instanced": true,
+        "count": 14
+      },
+      {
+        "instanced": true,
+        "count": 27
+      },
+      {
+        "instanced": true,
+        "count": 1
+      },
+      {
+        "instanced": true,
+        "count": 10
+      },
+      {
+        "instanced": true,
+        "count": 1
+      },
+      {
+        "instanced": true,
+        "count": 19
+      },
+      {
+        "instanced": true,
+        "count": 7
+      },
+      {
+        "instanced": true,
+        "count": 17
+      }
+    ],
+    "sceneryShadows": true,
+    "ridges": 8,
+    "islands": [
+      "울릉도",
+      "독도 동도",
+      "독도 서도"
+    ]
+  }
+}
