@@ -15,7 +15,9 @@ def contains(point,ring):
     return inside
 
 def main():
-    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--research',type=Path,required=True);args=ap.parse_args()
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--research',type=Path,required=True)
+    ap.add_argument('--merge',action='store_true',help='Merge a completed regional collection into the existing display geography')
+    args=ap.parse_args()
     run=json.loads((args.research/'run.json').read_text(encoding='utf-8'))
     assert run['exitCode']==0 and not run['isError'] and run['modelsObserved']==['claude-opus-5'] and run['effort']=='max'
     data=json.loads((args.research/'geography.json').read_text(encoding='utf-8'))
@@ -28,6 +30,32 @@ def main():
             expected=source['sha256'][name] if isinstance(source['sha256'],dict) else source['sha256']
             assert digest==expected
             assert any(r.get('sha256')==digest and r.get('httpStatus')==200 and r.get('byteLength')==len(raw) for r in manifest)
+    if args.merge:
+        output=ROOT/'services/host/app/history-geography.json'
+        previous=json.loads(output.read_text(encoding='utf-8'))
+        previous.setdefault('collections',{}).setdefault('initial',{'missing':previous.get('missing',[])})
+        for ridge in data.get('ridges',[]):
+            assert ridge.get('geometry') and ridge['sourceIds']
+            assert ridge['geometry']['type'] in ('LineString','MultiLineString')
+            ridge['label']=ridge['label'].split(' (')[0]
+            ridge['displayNote']='출처에 나온 봉우리와 고개를 이어 산줄기의 방향을 표시했습니다. 높이와 굴곡은 단순화했으며 실측 능선이나 등산로가 아닙니다.'
+        for key in ('ridges','peaks','islands','sources'):
+            rows={r['id']:r for r in previous.get(key,[])}
+            rows.update({r['id']:r for r in data.get(key,[])})
+            previous[key]=list(rows.values())
+        previous.setdefault('collections',{})[args.research.name]={
+            'sessionId':run['sessionId'],'model':run['modelsObserved'][0],'effort':run['effort'],
+            'missing':data.get('missing',[])}
+        if args.research.name=='northern_ridges':
+            # The follow-up collection found conflicting identities at this older point.
+            previous['peaks']=[peak for peak in previous['peaks'] if peak['id']!='peak-낭림산']
+            previous['missing']=data.get('missing',[])
+        saved=ROOT/'data/research/geography-97'/args.research.name;saved.mkdir(parents=True,exist_ok=True)
+        for name in ('run.json','manifest.json','geography.json','progress.json','report.md'):
+            if (args.research/name).exists():shutil.copyfile(args.research/name,saved/name)
+        output.write_text(json.dumps(previous,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        print(json.dumps({key:len(previous[key]) for key in ('ridges','peaks','islands','sources')}))
+        return
     coast_file=ROOT/'data/maps/hgis-districts-1910-1945.geojson.gz'
     feature=next(f for f in json.load(gzip.open(coast_file))['features'] if f['id']=='hgis-admin-157376')
     polygons=feature['geometry']['coordinates']

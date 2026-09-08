@@ -27,6 +27,17 @@ with sync_playwright() as pw:
         data=page.evaluate('window.__sigong.world.geography.data')
         check('Cited Taebaek and Sobaek lines are loaded',
               {'taebaek-sanmaek','sobaek-sanmaek'}.issubset({r['id'] for r in data['ridges']}))
+        for ridge_id in ['nangnim-sanmaek','hamgyeong-sanmaek','macheollyeong-sanmaek','jeogyuryeong-sanmaek','gangnam-sanmaek']:
+            page.locator('#geographyDestination').select_option(ridge_id)
+            page.wait_for_function('!window.__sigong.engine.fly')
+            result=page.evaluate('''id=>{const w=window.__sigong.world,r=w.geography.data.ridges.find(r=>r.id===id);
+              const points=r.geometry.coordinates.map(c=>{const [x,z]=w.toWorld(...c);return {inside:w.contains(x,z),height:w.surfaceAt(x,z)};});
+              return {points:points.length,inside:points.every(p=>p.inside),maximum:Math.max(...points.map(p=>p.height)),
+                sources:document.querySelectorAll('#geographyCard a').length};}''',ridge_id)
+            check(ridge_id+' has selectable sourced relief inside the peninsula',result['points']>=4 and result['inside'] and result['maximum']>12 and result['sources']>0,result)
+        page.locator('#geographyDestination').select_option('peak-한라산')
+        page.wait_for_function('!window.__sigong.engine.fly')
+        check('Collected peaks are selectable with their source',page.locator('#geographyCard a').count()>0 and '한라산' in page.locator('#geographyCard strong').inner_text())
         for name in ['ulleungdo','dokdo-dongdo','dokdo-seodo']:
             page.locator('#geographyDestination').select_option(name)
             page.wait_for_function('!window.__sigong.engine.fly')

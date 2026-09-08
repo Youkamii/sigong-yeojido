@@ -35,7 +35,7 @@ export class ChronicleGeography{
       const region=regionalCoordinate(world.coordinateRegistry,null,row.label);
       if(region)regions.set(row.label,region);
     }
-    for(const row of [...data.islands,...data.ridges,...regions.values()]){
+    for(const row of [...data.islands,...data.ridges,...(data.peaks||[]),...regions.values()]){
       const line=row.geometry?.type==='LineString'?row.geometry.coordinates:row.geometry?.type==='MultiLineString'?row.geometry.coordinates[0]:null;
       const coordinate=row.lon!=null?[row.lon,row.lat]:line?.[Math.floor(line.length/2)];
       if(!coordinate)continue;
