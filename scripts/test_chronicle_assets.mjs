@@ -56,6 +56,7 @@ assert.equal(packetPlan().events[0].participants[0].presence,'related');
 assert.equal(packetPlan({...scene,place:{...scene.place,lon:null,lat:null}}).events[0].scenePlace,null,'A sea scene cannot use a county center');
 assert.equal(packetPlan(scene,{...data,claims:data.claims.filter(c=>c.id!=='participant')}).events[0].scenePlace,undefined,'Missing action evidence removes the curated scene');
 assert.equal(packetPlan(scene,data,1592).events.length,0);
+assert.equal(packetPlan({...scene,effects:{fire:{enabled:true,claimIds:['participant'],startYear:1592,endYear:1592}}}).events[0].effects.fire.enabled,false,'An effect does not continue beyond its own recorded year');
 assert.deepEqual(packetPlan(scene,{entities:[],claims:[]}).events,[]);
 const packets=JSON.parse(await readFile(new URL('../services/host/app/history-scenes.json',import.meta.url),'utf8')).scenes;
 assert.equal(packets.find(s=>s.id==='scene-myeongnyang-1597').effects.fire.enabled,false,'Fire arrows do not prove burning ships');
