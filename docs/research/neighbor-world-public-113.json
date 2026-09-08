@@ -1,0 +1,143 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com",
+  "checks": [
+    {
+      "name": "The initial scene retains a close Korean view and map scale",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "China east is real navigable land in the surrounding view",
+      "pass": true,
+      "detail": {
+        "inside": true,
+        "height": 7.04,
+        "roundTrip": [
+          119,
+          36
+        ],
+        "screen": [
+          -0.42537535701359724,
+          -0.23619779193362764,
+          -0.6651533339039033
+        ]
+      }
+    },
+    {
+      "name": "Manchuria is real navigable land in the surrounding view",
+      "pass": true,
+      "detail": {
+        "inside": true,
+        "height": 7.04,
+        "roundTrip": [
+          126.62444000000002,
+          45.75778000000001
+        ],
+        "screen": [
+          -0.3075722949855492,
+          0.32357659863820953,
+          -0.5634414222260413
+        ]
+      }
+    },
+    {
+      "name": "Kyushu is real navigable land in the surrounding view",
+      "pass": true,
+      "detail": {
+        "inside": true,
+        "height": 7.04,
+        "roundTrip": [
+          130.7,
+          33.199999999999996
+        ],
+        "screen": [
+          0.09786432851059296,
+          -0.20571001591831342,
+          -0.6596136557164888
+        ]
+      }
+    },
+    {
+      "name": "Honshu is real navigable land in the surrounding view",
+      "pass": true,
+      "detail": {
+        "inside": true,
+        "height": 7.04,
+        "roundTrip": [
+          137.5,
+          36
+        ],
+        "screen": [
+          0.3227841039827369,
+          0.0035776372899370915,
+          -0.621585750801727
+        ]
+      }
+    },
+    {
+      "name": "Hokkaido is real navigable land in the surrounding view",
+      "pass": true,
+      "detail": {
+        "inside": true,
+        "height": 7.04,
+        "roundTrip": [
+          142.50000000000003,
+          43.499999999999986
+        ],
+        "screen": [
+          0.38115808551735364,
+          0.41634403968108774,
+          -0.5465854282240727
+        ]
+      }
+    },
+    {
+      "name": "The sea between Korea and Japan remains water",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Dragging the large surrounding view actually moves the camera target",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Korean overview still contains both Dokdo islands",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The researched Harbin event becomes selectable on neighboring land",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Harbin keeps its actual coordinates and dated participants",
+      "pass": true,
+      "detail": {
+        "coordinates": [
+          126.62444,
+          45.75778
+        ],
+        "people": [
+          "person-encykorea-an-junggeun",
+          "person-ito-hirobumi"
+        ],
+        "land": true,
+        "label": "하얼빈역 저격 (1909)"
+      }
+    },
+    {
+      "name": "The surrounding overview is reachable on mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "readySeconds": 14.968
+}
