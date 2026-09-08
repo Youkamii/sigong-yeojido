@@ -65,6 +65,15 @@ export function contextAt(data,year,span=50){
         current:d.lo<=year&&d.hi>=year});
     }
   }
+  const byClaim=new Map(data.claims.map(claim=>[claim.id,claim]));
+  for(const scene of data.scenePackets||[]){
+    if(scene.kind!=='settlement'||!Number.isInteger(scene.startYear)||!Number.isInteger(scene.endYear))continue;
+    const ids=[...scene.dateClaimIds,...scene.actionClaimIds],entity=entities.get(scene.eventId);
+    if(!entity||!ids.length||ids.some(id=>!byClaim.has(id)))continue;
+    for(let i=events.length-1;i>=0;i--)if(events[i].id===scene.eventId)events.splice(i,1);
+    events.push({...entity,lo:scene.startYear,hi:scene.endYear,claim:byClaim.get(scene.dateClaimIds[0]),
+      basis:[...new Set(ids)].map(id=>byClaim.get(id)),title:scene.title,current:scene.startYear<=year&&scene.endYear>=year});
+  }
   // A lifespan must have both ends from the same source. Reign is a separate period.
   const births=dates.filter(d=>d.claim.predicate==='syj:bornIn');
   for(const birth of births){
@@ -204,7 +213,7 @@ export class Chronicle {
         <small>${esc(RELATION_WORDS[shortPredicate(claim.predicate)]||'관련 기록')}</small><button class="context-proof" data-chronicle-claim="${esc(claim.id)}">근거 ↗</button></div>`).join('')||'<p class="context-empty">연결 근거가 아직 없습니다.</p>'}</div>`;
   }
   render(){
-    const c=contextAt(this.data,this.year,this.span);this.context=c;
+    const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
     this.controls.querySelector('[type=number]').value=this.year;
     this.controls.querySelector('[type=range]').value=this.year;
     this.controls.querySelector('[data-calendar]').textContent='연도';

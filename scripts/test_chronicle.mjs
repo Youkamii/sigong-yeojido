@@ -59,3 +59,12 @@ assert.equal(contextAt(data([duration]),1444).people.length,0,'Filtered-out part
 const reverse=claim('participated','participatedIn',{kind:'entity',id:event.id});
 assert.equal(contextAt(data([duration,reverse]),1444).people.length,1);
 console.log('PASS: lifespans, source separation, reign, unknown dates, conversion evidence, nearby events and empty selection');
+const cityStart=claim('city-start','occurredIn',{kind:'year',value:919},'src-a',event.id);
+const cityEnd=claim('city-end','occurredIn',{kind:'year',value:1232},'src-a',event.id);
+const cityAction=claim('city-action','describedAs',{kind:'literal',value:'도읍 활동'},'src-a',event.id);
+const cityPacket={eventId:event.id,kind:'settlement',title:'도읍 활동',startYear:919,endYear:1232,dateClaimIds:['city-start','city-end'],actionClaimIds:['city-action']};
+const cityData={...data([cityStart,cityEnd,cityAction]),scenePackets:[cityPacket]};
+assert.equal(contextAt(cityData,1000).events[0].current,true,'A supported continuous city function remains visible between its endpoints');
+assert.equal(contextAt(cityData,1233).events[0].current,false);
+assert.equal(contextAt({...cityData,claims:[cityStart,cityEnd]},1000).events.length,0,'Two dates alone do not establish a continuous city function');
+assert.equal(contextAt({...cityData,claims:[cityAction]},1000).events.length,0,'Filtered dates remove the continuous city scene');

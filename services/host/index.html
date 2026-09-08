@@ -388,6 +388,7 @@ const chronicleView = new Chronicle(document.getElementById('chronicle'), docume
   entity:selectSceneEntity,
   placement:id=>chronicleScene.assets?.rowFor(id)?.placementLabel,
   activity:id=>chronicleScene.activity(id),
+  scenePackets:()=>chronicleScene.world?.scenePackets||[],
   context:context=>{
     const host=document.getElementById('sceneContext');
     host.querySelector('h2').textContent=yearLabel(context.year);
@@ -1350,6 +1351,7 @@ async function init3d(){
   window.__sigong = R;   // 디버그 훅
   world.setHistoricalFeatures(historyMap.features);
   chronicleScene.refresh(world,chronicleView);
+  chronicleView.render();
   chronicleScene.attach(engine,world);
   world.setYear(state.year);
   world.setOrigin(state.origin);
