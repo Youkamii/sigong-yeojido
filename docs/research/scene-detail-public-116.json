@@ -1,0 +1,96 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com/",
+  "checks": [
+    {
+      "name": "1500 uses Korean halls and houses without a Western palace dome",
+      "pass": true,
+      "detail": [
+        "handcart",
+        "human",
+        "korean_hall",
+        "korean_house",
+        "market"
+      ]
+    },
+    {
+      "name": "1500 keeps Hanseong without modern metropolitan city labels",
+      "pass": true,
+      "detail": [
+        "한성부 (조선 수도)"
+      ]
+    },
+    {
+      "name": "Selecting a battle reveals key names and their roles without selecting each person",
+      "pass": true,
+      "detail": [
+        "이순신\n전라좌수사로 조선 수군을 거느림",
+        "이억기\n전라우수사로 함께 지휘",
+        "원균\n경상우수사로 함께 지휘",
+        "와키자카\n일본 수군 지휘관"
+      ]
+    },
+    {
+      "name": "Dated naval commanders use the commander silhouette",
+      "pass": true,
+      "detail": [
+        {
+          "id": "person-encykorea-yi-sunsin",
+          "model": "period_commander",
+          "role": "전라좌수사로 조선 수군을 거느림"
+        },
+        {
+          "id": "person-encykorea-yi-eokgi-e0061676",
+          "model": "period_commander",
+          "role": "전라우수사로 함께 지휘"
+        },
+        {
+          "id": "person-encykorea-won-gyun-e0040619",
+          "model": "period_commander",
+          "role": "경상우수사로 함께 지휘"
+        },
+        {
+          "id": "person-yinav-wakizaka",
+          "model": "period_commander",
+          "role": "일본 수군 지휘관"
+        }
+      ]
+    },
+    {
+      "name": "Mobile keeps a short readable list of on-map people",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1919 printing participants use modern clothing",
+      "pass": true,
+      "detail": [
+        "modern_figure",
+        "modern_figure",
+        "modern_figure"
+      ]
+    },
+    {
+      "name": "1952 keeps the modern civic building",
+      "pass": true,
+      "detail": [
+        "banner",
+        "civic_hall",
+        "house",
+        "human",
+        "market",
+        "rifle_soldier"
+      ]
+    },
+    {
+      "name": "No scene models were dropped",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
