@@ -8,6 +8,7 @@ for(const name of ['anc-enc-cheonghaejin','archives-subway','je-encykorea-e00022
   assert.ok(REFERENCE_GROUPS.some(group=>group.matches(source)),'Actual imported publication is selected: '+name);
 }
 assert.equal(REFERENCE_GROUPS.length,5);
+assert.equal(REFERENCE_GROUPS.some(g=>g.matches({id:'src-hgis-admin',resource:'https://hgis.history.go.kr/pro_g1/dataset.do'})),false,'Map boundary datasets are not a default historical publication');
 assert.equal(REFERENCE_GROUPS.some(g=>g.matches({id:'src-coordinate-only',resource:'https://ko.wikipedia.org/wiki/서울'})),false);
 
 const person={id:'person-example',type:'Person',label:'인물'};

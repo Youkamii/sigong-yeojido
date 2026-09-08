@@ -4,7 +4,7 @@ import {loadChronicle} from './chronicle-load.js';
 const sourceHost=source=>{try{return new URL(source.resource||'').hostname;}catch{return '';}};
 const publicRecord=source=>{
   const host=sourceHost(source);
-  return host.endsWith('.go.kr')||['i815.or.kr','visitkorea.or.kr','grandculture.net','korea.kr','kari.re.kr']
+  return ['archives.go.kr','khs.go.kr','cha.go.kr','pa.go.kr','i815.or.kr','visitkorea.or.kr','grandculture.net','korea.kr','kari.re.kr','junggu.seoul.go.kr']
     .some(domain=>host===domain||host.endsWith('.'+domain));
 };
 export const REFERENCE_GROUPS = [
