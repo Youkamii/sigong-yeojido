@@ -126,9 +126,12 @@ for scene in scenes:
                 place['displayCoordinates']=[display.x,display.y]
                 place['displayBasis']='원자료의 섬·해안 지역점 가까운 바다에 설명용 장면을 배치. HGIS 해안 윤곽에서 바다로 확인한 표시점이며 실제 함대 위치나 상륙 경로가 아닙니다.'
                 place['displaySource']=outline['properties']['source']
-    if not place or place['medium']!='land' or place['precision']!='area' or place.get('lon') is None:continue
+    if not place or place['medium']!='land' or place.get('lon') is None:continue
     point=Point(place['lon'],place['lat'])
     polygon=min(coast.geoms,key=lambda p:p.distance(point))
+    if place['precision']!='area':
+        if polygon.area>.0005 or polygon.distance(point)>.001:continue
+        if not polygon.covers(point):place['displayPrecision']='area'
     if polygon.distance(point)>.02:continue
     if polygon.area>.1:
         if not polygon.covers(point):
