@@ -1,0 +1,171 @@
+{
+  "job": "scene_position_repairs",
+  "sources": 11,
+  "excerpts": 18,
+  "claims": 28,
+  "entities": 10,
+  "rawFilesChecked": [
+    {
+      "source": "src-ency-choemuseon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0057297",
+      "sha256": "80e1544f31acf7fad5d03ccedb1c3728d6179cb256337b888c7f67c6f14b06c8",
+      "rawBytes": 100567,
+      "excerpts": 1,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-ency-nase",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011388",
+      "sha256": "784b10058e754b122583ec841125d5621a6a2463b5aff8727666bfedfe623194",
+      "rawBytes": 76041,
+      "excerpts": 1,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-anc-wikidata-q489139",
+      "url": "https://www.wikidata.org/wiki/Q489139",
+      "sha256": "04ae4b9d586485bcd695a239472a68c7e6a174a9d487ee8f3937536073f1bd78",
+      "rawBytes": 126667,
+      "excerpts": 3,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-encykorea-jeon-taeil",
+      "url": "https://encykorea.aks.ac.kr/Article/E0068917",
+      "sha256": "f362dc5d847518ce920fb8e494512714b519870275b62a9e547d55699dc4162d",
+      "rawBytes": 90362,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-spr-kowiki-pyeonghwa-market",
+      "url": "https://ko.wikipedia.org/wiki/%ED%8F%89%ED%99%94%EC%8B%9C%EC%9E%A5_(%EC%84%9C%EC%9A%B8)",
+      "sha256": "9950c1eddfa40c0394beeccbad84aa10306134748a16578157ed06ca483175a2",
+      "rawBytes": 118591,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-spr-wikidata-q12621852",
+      "url": "https://www.wikidata.org/wiki/Q12621852",
+      "sha256": "2553c917d1a82c6fcc74143c8a4b9c0b1225adee6fba93c1b71db494b8c9a9f4",
+      "rawBytes": 66777,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-je-wikidata-q8684",
+      "url": "https://www.wikidata.org/wiki/Q8684",
+      "sha256": "386d437220923f5cd7312086c113e6e5d74af10286e06389d61a0e75576b7d8d",
+      "rawBytes": 1061099,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-koreakr-nuri",
+      "url": "https://www.korea.kr/special/policyCurationView.do?newsId=148899436",
+      "sha256": "c9471f2ba0d78fd608c38a3ce0601c7912bcc29ae2df04ef44825338488fd253",
+      "rawBytes": 177498,
+      "excerpts": 2,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-spr-koreakr-nuri-launch-day",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148894641",
+      "sha256": "d6473d98df20506654c69d7c56635de934efc5e612f7cea5873422cc632d1583",
+      "rawBytes": 176089,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-spr-kari-nuri",
+      "url": "https://www.kari.re.kr/kor/contents/51",
+      "sha256": "69559d2b78fca992fd365f46917f26c834a5543c82db70161b1cf65c891f6467",
+      "rawBytes": 287557,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-enwiki-naro-space-center",
+      "url": "https://en.wikipedia.org/wiki/Naro%20Space%20Center",
+      "sha256": "1a608d859e91d4d522adf591c5efc23bbe52a2312227fe5eb232c1daa3fa33ee",
+      "rawBytes": 188598,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "job": "scene_position_repairs",
+      "topic": "진포 해전 지점의 실측 좌표",
+      "detail": "출처는 진포를 '금강 하구'이자 '지금의 충청남도 서천'으로만 적고 해전이 벌어진 수역의 좌표를 주지 않는다. 이번 배치는 위키데이터 Q489139(금강) P625의 하구 표시점을 금강 하구 공통 표시점으로 다시 쓴 것으로, 전투 지점의 좌표가 아니다. 서천 앞바다·군산 앞바다 구간을 구분할 수 있는 권위 있는 해역 좌표는 확보하지 못했다.",
+      "affectedScenes": [
+        "scene-jinpo-1380"
+      ]
+    },
+    {
+      "job": "scene_position_repairs",
+      "topic": "평화시장 지점 좌표",
+      "detail": "평화시장의 측량 좌표를 담은 자료를 이번에도 얻지 못했다. 한국어 위키백과 '평화시장 (서울)'과 영어 위키백과 'Seoul Peace Market' 문서에 좌표 표기가 없고, 위키데이터 항목 Q12621852 에는 P625 좌표가 없으며 소속 행정구역(중구)만 적혀 있다. 주소 '서울시 중구 청계천로 274 (을지로6가)'까지만 출처로 확인했다. 또한 제공된 existing-place-anchors.json 은 1910~1945 국편 군현 앵커 354개여서 서울·경성 항목이 없어 anchorPlaceId 를 맞출 수 없었다. 그래서 위키데이터 서울(Q8684) 표시 좌표를 지역 기준 추정 배치로 썼다. 주소로 어림하면 실제 시장 자리와 2 km 안팎 차이가 난다(측량값 아님).",
+      "affectedScenes": [
+        "scene-jeon-taeil-1970"
+      ]
+    },
+    {
+      "job": "scene_position_repairs",
+      "topic": "누리호 1차 발사 장소를 한 문장에 적은 자료",
+      "detail": "'2021년 10월 21일 나로우주센터에서 발사했다'를 한 문장에 담은 권위 있는 자료는 접근 범위 안에서 찾지 못했다. 대신 발사 당일 정책브리핑 기사('이날 전남 고흥군 나로우주센터를 찾아 발사를 참관')와 같은 기사 작성일 2021.10.21, 그리고 항우연의 '2021년 10월 21일 누리호 1차 비행시험이 진행되었다'를 함께 쓴다. 앞 문장은 대통령의 참관 장소를 적은 서술이다.",
+      "affectedScenes": [
+        "scene-nuri-launch-2021"
+      ]
+    },
+    {
+      "job": "scene_position_repairs",
+      "topic": "누리호 1차 발사대의 좌표",
+      "detail": "나로우주센터 안에서 실제로 쓴 발사대(제2발사대)의 좌표는 확보하지 못했다. 배치점은 시설 표시 좌표이며 발사대 지점이 아니다.",
+      "affectedScenes": [
+        "scene-nuri-launch-2021"
+      ]
+    }
+  ],
+  "collection": {
+    "task": "scene_position_repairs",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788832441.344002,
+    "resumeRequested": null,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "pid": 6968,
+    "sessionId": "d2c318f4-c1b2-4232-9768-e1db709993e2",
+    "lastEventUtc": 1788833782.318566,
+    "exitCode": 0,
+    "seconds": 1341.3,
+    "resultSubtype": "success",
+    "isError": false,
+    "permissionDenials": [
+      {
+        "tool_name": "Read",
+        "tool_use_id": "toolu_01TTP8CAfacvHgVQBzatfCGR",
+        "tool_input": {
+          "file_path": "C:\\Users\\gkfkd\\Git\\sigong-yeojido\\scripts\\import_period_research.py"
+        }
+      }
+    ]
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

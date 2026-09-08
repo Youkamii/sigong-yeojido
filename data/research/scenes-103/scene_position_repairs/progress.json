@@ -1,0 +1,47 @@
+{
+ "job": "scene_position_repairs",
+ "status": "complete",
+ "scope": ["scene-jinpo-1380", "scene-jeon-taeil-1970", "scene-nuri-launch-2021"],
+ "updatedUtc": "2026-09-08T02:35:00Z",
+ "counts": {
+  "sources": 11,
+  "sourcesReused": 6,
+  "sourcesNew": 5,
+  "excerpts": 18,
+  "claims": 28,
+  "claimsCopied": 18,
+  "claimsNew": 10,
+  "entities": 10,
+  "scenes": 3,
+  "missing": 4,
+  "manifestRecords": 16,
+  "manifestCited": 11
+ },
+ "steps": [
+  {"step": "read neighbour packets with focused python extraction", "status": "done"},
+  {"step": "read importer constraints (read-only)", "status": "done"},
+  {"step": "copy reused raw bytes + manifest records, verify sha256/byteLength", "status": "done"},
+  {
+   "step": "problem 1 jinpo estuary point",
+   "status": "resolved",
+   "detail": "Wikidata Q489139 raw bytes confirm the item is 'Geum River (Q489139)' with native label 금강 and coordinate location 36°0'0.0\"N, 126°40'0.1\"E qualified 'applies to part river mouth'. Identity matches the encykorea wording 금강 하구의 진포, so the ancient_scenes geographic record is reused as an approximate common estuary display point. Point (126.66669, 36.0) lies outside every land polygon of ../ancient_scenes/coastline.json (nearest land vertex 0.76 km); medium stays 'sea'; no inland county centre used."
+  },
+  {
+   "step": "problem 2 pyeonghwa market coordinate",
+   "status": "resolved-as-regional",
+   "detail": "No surveyed point exists in reachable authoritative sources: ko.wikipedia 평화시장 (서울) and en.wikipedia Seoul Peace Market carry no coordinates, and Wikidata Q12621852 has no P625. Sourced the address 서울시 중구 청계천로 274 (을지로6가) and the Jung District placement instead. existing-place-anchors.json holds only 354 HGIS 1910-1945 county anchors with no Seoul/Gyeongseong entry, so no anchorPlaceId could be matched; the field is left out and the reason recorded. Placed at the collection's existing Seoul reference point, Wikidata Q8684 coordinate location 37°33'36\"N, 126°59'24\"E = (126.99, 37.56), precision area, note '지역 기준 추정 배치', explicitly not the actual site."
+  },
+  {
+   "step": "problem 3 nuri 2021 launch site",
+   "status": "resolved",
+   "detail": "Replaced the 2018 place gating. New place claim cites the launch-day policy briefing (korea.kr 148894641, dated 2021.10.21): '문 대통령은 이날 전남 고흥군 나로우주센터를 찾아 발사를 참관하고 결과를 보고받은 뒤'. Added KARI's own '2021년 10월 21일 누리호 1차 비행시험이 진행되었다' and its launch-site spec. No single sentence combining 2021-10-21 with the site was found; the note and missing entry say so, and the KARI spec table is used only as facility-coordinate evidence because it sits under the 3rd-launch entry. Failed orbital insertion preserved with a new sourced claim and rewritten summary."
+  },
+  {"step": "validate against importer assertions", "status": "done", "result": "all importer checks pass"},
+  {"step": "write result.json / report.md / manifest.json / progress.json", "status": "done"}
+ ],
+ "notes": [
+  "robots.txt checked for every host before each request; https://www.wikidata.org/wiki/Special:EntityData/Q8684.json is disallowed and was not downloaded, the allowed item page /wiki/Q8684 was used instead.",
+  "All subprocesses ran without windows; no browser or terminal window was opened.",
+  "Five fetched-but-uncited pages are kept in manifest.json with citedInResult=false and the reason they were not used."
+ ]
+}

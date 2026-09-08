@@ -3814,108 +3814,6 @@
       "researchCollection": "scenes-103"
     },
     {
-      "id": "scene-jinpo-1380",
-      "eventId": "event-goryeo-jinpo-1380",
-      "title": "진포 해전 — 화포의 첫 실전 사용 (1380)",
-      "startYear": 1380,
-      "endYear": 1380,
-      "kind": "naval",
-      "summary": "1380년 왜구 선박 500여 척이 금강 하구 진포로 침입하자 나세·최무선 등이 전함 100척으로 나아가 화약과 화포를 실전에 처음 사용해 격파하였다.",
-      "dateClaimIds": [
-        "claim-scenes-103-goryeo_scenes-jinpo-1380-year"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-103-goryeo_scenes-jinpo-1380-action",
-        "claim-scenes-103-goryeo_scenes-jinpo-1380-firearms",
-        "claim-scenes-103-goryeo_scenes-jinpo-1380-place"
-      ],
-      "place": {
-        "label": "진포 — 금강 하구 (진포: 지금의 충청남도 서천)",
-        "medium": "sea",
-        "precision": "area",
-        "lon": null,
-        "lat": null,
-        "claimIds": [
-          "claim-scenes-103-goryeo_scenes-jinpo-1380-place"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "해상 전투이므로 육상 군·현 앵커(서천 등)를 좌표로 쓰지 않았다. 금강 하구 진포 해역의 권위 있는 좌표를 이번 실행에서 확보하지 못해 좌표를 비워 둔다. 배치가 필요하면 서천·군산 사이 금강 하구 수역이라는 출처 서술과 별도의 해역 좌표 근거가 필요하다.",
-        "coordinateClaimIds": [
-          "claim-scenes-103-goryeo_scenes-jinpo-1380-locus"
-        ]
-      },
-      "participants": [
-        {
-          "entityId": "person-ency-nase",
-          "role": "전함 100척을 이끈 해도원수(고려 수군)",
-          "side": "naval",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-103-goryeo_scenes-jinpo-1380-nase"
-          ]
-        },
-        {
-          "entityId": "person-ency-choemuseon",
-          "role": "화기로 무장한 전함을 이끌고 싸운 화기 제작자(고려 수군)",
-          "side": "naval",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-103-goryeo_scenes-jinpo-1380-choemuseon"
-          ]
-        },
-        {
-          "entityId": "person-ency-simdeokbu",
-          "role": "함께 출전한 장수(고려 수군)",
-          "side": "naval",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-103-goryeo_scenes-jinpo-1380-simdeokbu"
-          ]
-        },
-        {
-          "entityId": "group-goryeo-navy-jinpo-1380",
-          "role": "출전한 고려 전함 100척(고려 수군)",
-          "side": "naval",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-103-goryeo_scenes-jinpo-1380-fleet"
-          ]
-        },
-        {
-          "entityId": "group-waegu-jinpo-1380",
-          "role": "500여 척으로 진포에 침입한 왜구 선단(침입 측)",
-          "side": "invader",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-103-goryeo_scenes-jinpo-1380-waegu"
-          ]
-        }
-      ],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": true,
-          "claimIds": [
-            "claim-scenes-103-goryeo_scenes-jinpo-1380-nase",
-            "claim-scenes-103-goryeo_scenes-jinpo-1380-waegu"
-          ]
-        },
-        "attack": {
-          "enabled": true,
-          "claimIds": [
-            "claim-scenes-103-goryeo_scenes-jinpo-1380-action",
-            "claim-scenes-103-goryeo_scenes-jinpo-1380-firearms"
-          ]
-        }
-      },
-      "visualActions": "하구 수역에서 전함 대열이 침입 선단을 향해 화포를 쏘고 적선이 부서지는 해상 전투. 불태웠다는 서술이 이 출처에 없으므로 화재 연출은 넣지 않는다.",
-      "researchJob": "goryeo_scenes",
-      "researchCollection": "scenes-103"
-    },
-    {
       "id": "scene-wihwado-hoegun-1388",
       "eventId": "event-wihwado-hoegun-1388",
       "title": "위화도 회군 (1388)",
@@ -7343,68 +7241,6 @@
       "researchCollection": "scenes-103"
     },
     {
-      "id": "scene-jeon-taeil-1970",
-      "eventId": "event-encykorea-jeon-taeil-immolation-1970",
-      "title": "전태일 분신 항거 — 서울 평화시장 (1970)",
-      "startYear": 1970,
-      "endYear": 1970,
-      "kind": "fire",
-      "summary": "1970년 11월 13일 전태일이 평화시장에서 근로기준법 화형식을 열고 분신 항거했으며 그날 밤 숨졌다. 그는 1965년부터 평화시장 의류제조회사에서 일하던 재단사였다.",
-      "dateClaimIds": [
-        "claim-scenes-103-contemporary_scenes-jeontaeil-1970-date"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-103-contemporary_scenes-jeontaeil-1970-action",
-        "claim-scenes-103-contemporary_scenes-jeontaeil-1970-place",
-        "claim-scenes-103-contemporary_scenes-jeontaeil-1970-person",
-        "claim-scenes-103-contemporary_scenes-jeontaeil-workplace"
-      ],
-      "place": {
-        "label": "서울 평화시장",
-        "medium": "land",
-        "precision": "area",
-        "lon": null,
-        "lat": null,
-        "claimIds": [
-          "claim-scenes-103-contemporary_scenes-jeontaeil-1970-place"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "출처는 장소를 '서울 평화시장'으로 밝히지만, 평화시장의 좌표를 담은 공공기관 페이지나 위키백과 좌표를 이번 실행에서 얻지 못했다(위키백과 '평화시장' 문서에 좌표 표기가 없음). 근처 다른 지점으로 대체하지 않고 좌표를 비워 둔다.",
-        "coordinateClaimIds": []
-      },
-      "participants": [
-        {
-          "entityId": "person-encykorea-jeon-taeil",
-          "role": "평화시장 재단사로서 근로기준법 화형식을 열고 분신 항거",
-          "side": "civilian",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-103-contemporary_scenes-jeontaeil-1970-action",
-            "claim-scenes-103-contemporary_scenes-jeontaeil-1970-person"
-          ]
-        }
-      ],
-      "effects": {
-        "fire": {
-          "enabled": true,
-          "claimIds": [
-            "claim-scenes-103-contemporary_scenes-jeontaeil-1970-action"
-          ]
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "visualActions": "평화시장 앞 거리에서 법전을 태우는 불길과 분신 장면을 절제해 표현하고, 시장 건물의 재봉 노동 공간을 배경으로 둔다. 사망 시점(그날 밤)까지가 출처 범위다.",
-      "researchJob": "contemporary_scenes",
-      "researchCollection": "scenes-103"
-    },
-    {
       "id": "scene-gyeongbu-expressway-1970",
       "eventId": "event-gyeongbu-expressway-opening-1970",
       "title": "경부고속도로 완전 개통 준공식 (1970)",
@@ -8651,63 +8487,6 @@
         }
       },
       "visualActions": "갯벌을 메운 넓은 매립지 위의 활주로와 여객터미널, 개항일에 오르내리는 항공기를 표시한다. 매립 면적·공사비 수치는 이 발췌 범위 밖이다.",
-      "researchJob": "contemporary_scenes",
-      "researchCollection": "scenes-103"
-    },
-    {
-      "id": "scene-nuri-launch-2021",
-      "eventId": "event-nuri-first-launch-2021",
-      "title": "누리호 1차 발사 (2021)",
-      "startYear": 2021,
-      "endYear": 2021,
-      "kind": "construction",
-      "summary": "2021년 10월 21일 오후 5시 정각 누리호 비행모델 1호기가 이륙했다. 같은 자료는 2018년 11월 28일 시험발사체가 전남 고흥군 나로우주센터에서 발사되었다고 밝힌다.",
-      "dateClaimIds": [
-        "claim-scenes-103-contemporary_scenes-nuri-2021-date"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-103-contemporary_scenes-nuri-2021-action",
-        "claim-scenes-103-contemporary_scenes-kslv-2018-launch",
-        "claim-scenes-103-contemporary_scenes-kslv-2018-date",
-        "claim-scenes-103-contemporary_scenes-nuri-2021-facility-link"
-      ],
-      "place": {
-        "label": "나로우주센터 (전남 고흥군)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 127.535,
-        "lat": 34.43194,
-        "claimIds": [
-          "claim-scenes-103-contemporary_scenes-kslv-2018-launch"
-        ],
-        "coordinateSourceIds": [
-          "src-enwiki-naro-space-center"
-        ],
-        "coordinateNote": "발췌한 2021년 발사 문장에는 발사 장소가 적혀 있지 않다. 같은 페이지가 2018년 시험발사체를 '전남 고흥군 나로우주센터에서' 발사했다고 밝혀 같은 시설로 배치했고, 좌표는 영어 위키백과 Naro Space Center 문서의 표시 좌표다. 2021년 발사 지점을 직접 명시한 문장은 확보하지 못해 precision='area'로 둔다.",
-        "displayCoordinates": [
-          127.535,
-          34.43194
-        ],
-        "displayScale": 0.1409121166978956,
-        "displayBasis": "원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.",
-        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "visualActions": "발사대에서 점화해 상승하는 발사체와 지상 관제 시설을 표시한다. 1차 발사는 3단 엔진 조기 종료로 목표 궤도 투입에 실패했다는 점은 요약에만 두고, 궤도·낙하 지점은 그리지 않는다.",
       "researchJob": "contemporary_scenes",
       "researchCollection": "scenes-103"
     },
@@ -10814,6 +10593,243 @@
       "visualActions": "해상의 함선이 강화 연안의 보를 향해 포격하고 상륙한 부대가 성벽으로 밀려드는 수륙 양면 공격, 보 안에서 맞서는 수비병의 방어 장면. 함선 수와 대형은 사료에 없다.",
       "researchJob": "joseon_late_scenes",
       "researchCollection": "scenes-103"
+    },
+    {
+      "id": "scene-jinpo-1380",
+      "eventId": "event-goryeo-jinpo-1380",
+      "title": "진포 해전 — 화포의 첫 실전 사용 (1380)",
+      "startYear": 1380,
+      "endYear": 1380,
+      "kind": "naval",
+      "summary": "1380년 왜구 선박 500여 척이 금강 하구 진포로 침입하자 나세·최무선 등이 전함 100척으로 나아가 화약과 화포를 실전에 처음 사용해 격파하였다.",
+      "dateClaimIds": [
+        "claim-scenes-103-scene_position_repairs-jinpo-1380-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-103-scene_position_repairs-jinpo-1380-action",
+        "claim-scenes-103-scene_position_repairs-jinpo-1380-firearms",
+        "claim-scenes-103-scene_position_repairs-jinpo-1380-place"
+      ],
+      "place": {
+        "label": "진포 — 금강 하구 (진포: 지금의 충청남도 서천)",
+        "medium": "sea",
+        "precision": "area",
+        "lon": 126.66669,
+        "lat": 36.0,
+        "claimIds": [
+          "claim-scenes-103-scene_position_repairs-jinpo-1380-place"
+        ],
+        "coordinateSourceIds": [
+          "src-anc-wikidata-q489139"
+        ],
+        "coordinateNote": "금강 하구 공통 표시점. 출처(한국민족문화대백과사전)는 진포를 \"금강 하구의 진포\"이자 \"지금의 충청남도 서천\"으로 적는다. 좌표는 위키데이터 Q489139의 P625 값 36°0'0.0\"N, 126°40'0.1\"E 이며, 같은 문서가 이 항목의 한국어 이름을 '금강'으로, 이 좌표의 한정어를 '강 하구(river mouth)'로 밝혀 출처가 말한 금강 하구와 동일 대상임을 확인했다. ancient_scenes 의 scene-anc-gibeolpo-676(같은 금강 하구)에서 내려받은 지리 레코드를 하구 공통 표시점으로 다시 쓴 것이다. 해전 지점의 실측 좌표가 아니며 전투 범위를 대신하지 않는다. 해상 전투이므로 서천·군산 같은 육상 군현 중심점은 쓰지 않았고, 이 점이 동봉된 coastline.json 육지 다각형 밖(바다, 최근접 육지 꼭짓점까지 약 0.76 km)임을 확인했다.",
+        "coordinateClaimIds": [
+          "claim-scenes-103-scene_position_repairs-jinpo-1380-locus",
+          "claim-scenes-103-scene_position_repairs-spr-geum-mouth-coord",
+          "claim-scenes-103-scene_position_repairs-spr-geum-identity"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-ency-nase",
+          "role": "전함 100척을 이끈 해도원수(고려 수군)",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-103-scene_position_repairs-jinpo-1380-nase"
+          ]
+        },
+        {
+          "entityId": "person-ency-choemuseon",
+          "role": "화기로 무장한 전함을 이끌고 싸운 화기 제작자(고려 수군)",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-103-scene_position_repairs-jinpo-1380-choemuseon"
+          ]
+        },
+        {
+          "entityId": "person-ency-simdeokbu",
+          "role": "함께 출전한 장수(고려 수군)",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-103-scene_position_repairs-jinpo-1380-simdeokbu"
+          ]
+        },
+        {
+          "entityId": "group-goryeo-navy-jinpo-1380",
+          "role": "출전한 고려 전함 100척(고려 수군)",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-103-scene_position_repairs-jinpo-1380-fleet"
+          ]
+        },
+        {
+          "entityId": "group-waegu-jinpo-1380",
+          "role": "500여 척으로 진포에 침입한 왜구 선단(침입 측)",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-103-scene_position_repairs-jinpo-1380-waegu"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-103-scene_position_repairs-jinpo-1380-nase",
+            "claim-scenes-103-scene_position_repairs-jinpo-1380-waegu"
+          ]
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-103-scene_position_repairs-jinpo-1380-action",
+            "claim-scenes-103-scene_position_repairs-jinpo-1380-firearms"
+          ]
+        }
+      },
+      "visualActions": "하구 수역에서 전함 대열이 침입 선단을 향해 화포를 쏘고 적선이 부서지는 해상 전투. 불태웠다는 서술이 이 출처에 없으므로 화재 연출은 넣지 않는다. 배치점은 하구 표시점이므로 특정 해안선에 배를 붙이지 않는다.",
+      "researchJob": "scene_position_repairs",
+      "researchCollection": "scenes-103"
+    },
+    {
+      "id": "scene-jeon-taeil-1970",
+      "eventId": "event-encykorea-jeon-taeil-immolation-1970",
+      "title": "전태일 분신 항거 — 서울 평화시장 (1970)",
+      "startYear": 1970,
+      "endYear": 1970,
+      "kind": "fire",
+      "summary": "1970년 11월 13일 전태일이 평화시장에서 근로기준법 화형식을 열고 분신 항거했으며 그날 밤 숨졌다. 그는 1965년부터 평화시장 의류제조회사에서 일하던 재단사였다.",
+      "dateClaimIds": [
+        "claim-scenes-103-scene_position_repairs-jeontaeil-1970-date"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-103-scene_position_repairs-jeontaeil-1970-action",
+        "claim-scenes-103-scene_position_repairs-jeontaeil-1970-place",
+        "claim-scenes-103-scene_position_repairs-jeontaeil-1970-person",
+        "claim-scenes-103-scene_position_repairs-jeontaeil-workplace"
+      ],
+      "place": {
+        "label": "서울 평화시장 (서울시 중구 청계천로 274, 을지로6가)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.99,
+        "lat": 37.56,
+        "claimIds": [
+          "claim-scenes-103-scene_position_repairs-jeontaeil-1970-place"
+        ],
+        "coordinateSourceIds": [
+          "src-je-wikidata-q8684"
+        ],
+        "coordinateNote": "지역 기준 추정 배치. 평화시장 지점의 실측 좌표를 이번 실행에서도 확보하지 못했다(위키백과 '평화시장 (서울)'·영어 위키백과 'Seoul Peace Market' 문서에 좌표 표기가 없고, 위키데이터 평화시장 항목 Q12621852 에 P625 좌표가 없다). 대신 출처로 확인한 소재지는 '서울시 중구 청계천로 274 (을지로6가)'이고 위키데이터는 소속 행정구역을 중구로 적는다. 제공된 ../contemporary_scenes/existing-place-anchors.json 은 1910~1945 국편 군현 앵커 354개뿐이어서 서울·경성 앵커가 없고 맞출 anchorPlaceId 가 없다. 그래서 이 컬렉션의 다른 서울 장면들과 같은 기준점인 위키데이터 서울(Q8684)의 coordinate location 37°33'36\"N, 126°59'24\"E 를 지역 기준 추정 배치로 쓴다. 주소(중구 청계천로 274)로 어림하면 이 표시점은 실제 시장 자리에서 2 km 안팎 떨어져 있다. 측량한 거리가 아니라 주소에서 어림한 값이며, 어느 쪽이든 사건 지점의 좌표가 아니다.",
+        "coordinateClaimIds": [
+          "claim-scenes-103-scene_position_repairs-spr-pyeonghwa-address",
+          "claim-scenes-103-scene_position_repairs-spr-pyeonghwa-area",
+          "claim-scenes-103-scene_position_repairs-spr-pyeonghwa-jung-district"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-jeon-taeil",
+          "role": "평화시장 재단사로서 근로기준법 화형식을 열고 분신 항거",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-103-scene_position_repairs-jeontaeil-1970-action",
+            "claim-scenes-103-scene_position_repairs-jeontaeil-1970-person"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-103-scene_position_repairs-jeontaeil-1970-action"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "평화시장 앞 거리에서 법전을 태우는 불길과 분신 장면을 절제해 표현하고, 시장 건물의 재봉 노동 공간을 배경으로 둔다. 사망 시점(그날 밤)까지가 출처 범위다. 배치점은 서울 도심 기준점이므로 특정 건물을 지목하는 연출은 피한다.",
+      "researchJob": "scene_position_repairs",
+      "researchCollection": "scenes-103"
+    },
+    {
+      "id": "scene-nuri-launch-2021",
+      "eventId": "event-nuri-first-launch-2021",
+      "title": "누리호 1차 발사 (2021)",
+      "startYear": 2021,
+      "endYear": 2021,
+      "kind": "construction",
+      "summary": "2021년 10월 21일 오후 5시 정각 누리호 비행모델 1호기가 나로우주센터에서 이륙했으나 위성모사체를 목표 궤도인 고도 700 km 태양동기궤도에 투입하지는 못했다.",
+      "dateClaimIds": [
+        "claim-scenes-103-scene_position_repairs-nuri-2021-date",
+        "claim-scenes-103-scene_position_repairs-spr-nuri-2021-launch-day",
+        "claim-scenes-103-scene_position_repairs-spr-kari-nuri-2021-date"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-103-scene_position_repairs-nuri-2021-action",
+        "claim-scenes-103-scene_position_repairs-spr-nuri-2021-outcome",
+        "claim-scenes-103-scene_position_repairs-spr-nuri-2021-place"
+      ],
+      "place": {
+        "label": "나로우주센터 (전남 고흥군 봉래면 하반로 508)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.535,
+        "lat": 34.43194,
+        "claimIds": [
+          "claim-scenes-103-scene_position_repairs-spr-nuri-2021-place"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-naro-space-center",
+          "src-spr-kari-nuri"
+        ],
+        "coordinateNote": "2021년 발사 자체에 대한 장소 근거로 바꿨다. 발사 당일(2021.10.21) 정책브리핑 기사가 대통령이 '이날 전남 고흥군 나로우주센터를 찾아 발사를 참관'했다고 적는다. 이전 배치가 근거로 삼던 2018년 시험발사체 문장은 이 장면에서 뺐다. 좌표는 영어 위키백과 Naro Space Center 문서의 표시 좌표(34.43194; 127.53500)이고, 항우연이 밝힌 발사장 제원 '나로우주센터(전남 고흥군 봉래면 하반로 508) 동경 127.53도, 북위 34.43도'와 어긋나지 않는다. 항우연 제원표는 3차 발사 상세 항목에 붙어 있어 시설 좌표 근거로만 썼다. 발사대(제2발사대) 자체의 좌표는 확보하지 못해 precision='area'로 둔다.",
+        "coordinateClaimIds": [
+          "claim-scenes-103-scene_position_repairs-spr-naro-site-spec",
+          "claim-scenes-103-scene_position_repairs-coord-naro"
+        ],
+        "displayCoordinates": [
+          127.535,
+          34.43194
+        ],
+        "displayScale": 0.1409121166978956,
+        "displayBasis": "원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "발사대에서 점화해 상승하는 발사체와 지상 관제 시설을 표시한다. 3단 엔진 조기 종료로 목표 궤도 투입에 실패했으므로 궤도 안착이나 성공 연출은 넣지 않고, 궤도·낙하 지점도 그리지 않는다.",
+      "researchJob": "scene_position_repairs",
+      "researchCollection": "scenes-103"
     }
   ],
   "sources": [
@@ -12316,6 +12332,30 @@
       "title": "Fortress Wall of Seoul (Q5472741) - Wikidata",
       "publisher": "위키미디어 재단 · 위키데이터",
       "url": "https://www.wikidata.org/wiki/Q5472741"
+    },
+    {
+      "id": "src-spr-kowiki-pyeonghwa-market",
+      "title": "평화시장 (서울) - 위키백과",
+      "publisher": "위키미디어 재단 · 위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%ED%8F%89%ED%99%94%EC%8B%9C%EC%9E%A5_(%EC%84%9C%EC%9A%B8)"
+    },
+    {
+      "id": "src-spr-wikidata-q12621852",
+      "title": "Pyounghwa Market (Q12621852) - Wikidata",
+      "publisher": "위키미디어 재단 · 위키데이터",
+      "url": "https://www.wikidata.org/wiki/Q12621852"
+    },
+    {
+      "id": "src-spr-koreakr-nuri-launch-day",
+      "title": "문 대통령 “누리호, 목표 완벽히 이르지 못했지만 매우 훌륭한 성과” - 대한민국 정책브리핑",
+      "publisher": "문화체육관광부 대한민국 정책브리핑(korea.kr) · 작성 청와대",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148894641"
+    },
+    {
+      "id": "src-spr-kari-nuri",
+      "title": "한국형발사체 누리호 - 한국항공우주연구원",
+      "publisher": "한국항공우주연구원(KARI)",
+      "url": "https://www.kari.re.kr/kor/contents/51"
     }
   ],
   "missing": [
@@ -13523,6 +13563,54 @@
         "kind": "license-unverified",
         "topic": "한국민족문화대백과사전 항목 라이선스",
         "what": "항목 하단에 공공누리 제1유형 표기가 보이지만, 본문 텍스트 전체에 대한 조건 문면을 이번 수집에서 별도로 내려받아 확인하지 않았다. sources[].license에 그대로 미검증으로 적었다."
+      }
+    },
+    {
+      "job": "scene_position_repairs",
+      "collection": "scenes-103",
+      "detail": {
+        "job": "scene_position_repairs",
+        "topic": "진포 해전 지점의 실측 좌표",
+        "detail": "출처는 진포를 '금강 하구'이자 '지금의 충청남도 서천'으로만 적고 해전이 벌어진 수역의 좌표를 주지 않는다. 이번 배치는 위키데이터 Q489139(금강) P625의 하구 표시점을 금강 하구 공통 표시점으로 다시 쓴 것으로, 전투 지점의 좌표가 아니다. 서천 앞바다·군산 앞바다 구간을 구분할 수 있는 권위 있는 해역 좌표는 확보하지 못했다.",
+        "affectedScenes": [
+          "scene-jinpo-1380"
+        ]
+      }
+    },
+    {
+      "job": "scene_position_repairs",
+      "collection": "scenes-103",
+      "detail": {
+        "job": "scene_position_repairs",
+        "topic": "평화시장 지점 좌표",
+        "detail": "평화시장의 측량 좌표를 담은 자료를 이번에도 얻지 못했다. 한국어 위키백과 '평화시장 (서울)'과 영어 위키백과 'Seoul Peace Market' 문서에 좌표 표기가 없고, 위키데이터 항목 Q12621852 에는 P625 좌표가 없으며 소속 행정구역(중구)만 적혀 있다. 주소 '서울시 중구 청계천로 274 (을지로6가)'까지만 출처로 확인했다. 또한 제공된 existing-place-anchors.json 은 1910~1945 국편 군현 앵커 354개여서 서울·경성 항목이 없어 anchorPlaceId 를 맞출 수 없었다. 그래서 위키데이터 서울(Q8684) 표시 좌표를 지역 기준 추정 배치로 썼다. 주소로 어림하면 실제 시장 자리와 2 km 안팎 차이가 난다(측량값 아님).",
+        "affectedScenes": [
+          "scene-jeon-taeil-1970"
+        ]
+      }
+    },
+    {
+      "job": "scene_position_repairs",
+      "collection": "scenes-103",
+      "detail": {
+        "job": "scene_position_repairs",
+        "topic": "누리호 1차 발사 장소를 한 문장에 적은 자료",
+        "detail": "'2021년 10월 21일 나로우주센터에서 발사했다'를 한 문장에 담은 권위 있는 자료는 접근 범위 안에서 찾지 못했다. 대신 발사 당일 정책브리핑 기사('이날 전남 고흥군 나로우주센터를 찾아 발사를 참관')와 같은 기사 작성일 2021.10.21, 그리고 항우연의 '2021년 10월 21일 누리호 1차 비행시험이 진행되었다'를 함께 쓴다. 앞 문장은 대통령의 참관 장소를 적은 서술이다.",
+        "affectedScenes": [
+          "scene-nuri-launch-2021"
+        ]
+      }
+    },
+    {
+      "job": "scene_position_repairs",
+      "collection": "scenes-103",
+      "detail": {
+        "job": "scene_position_repairs",
+        "topic": "누리호 1차 발사대의 좌표",
+        "detail": "나로우주센터 안에서 실제로 쓴 발사대(제2발사대)의 좌표는 확보하지 못했다. 배치점은 시설 표시 좌표이며 발사대 지점이 아니다.",
+        "affectedScenes": [
+          "scene-nuri-launch-2021"
+        ]
       }
     }
   ],
