@@ -33,7 +33,7 @@ for(const [file,expected] of Object.entries(provenance.moduleTextSha256)){
   assert.equal(createHash('sha256').update(text).digest('hex'),expected,'Original generator text: '+file);
 }
 const catalog=compileAssetCatalog(raw);
-assert.equal(catalog.blueprintCount,46);
+assert.equal(catalog.blueprintCount,49);
 const outline=JSON.parse(await readFile(new URL('../services/host/app/korea-outline.json',import.meta.url),'utf8'));
 assert.equal(createHash('sha256').update(await readFile(new URL('../'+outline.properties.source,import.meta.url))).digest('hex'),outline.properties.sha256);
 const displayProof=JSON.parse(await readFile(new URL('../docs/research/peninsula-assets-94.json',import.meta.url),'utf8'));
