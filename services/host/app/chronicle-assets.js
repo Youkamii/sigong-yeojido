@@ -138,7 +138,7 @@ export class ChronicleAssets{
       return null;
     };
     const placedPeople=new Set(),fullScenes=[];
-    const events=[...plan.events].sort((a,b)=>Number(b.entityId===this.activeScene)-Number(a.entityId===this.activeScene)
+    const events=[...plan.events].sort((a,b)=>Number(b.id===this.activeScene)-Number(a.id===this.activeScene)
       ||Number(!!b.scenePlace)-Number(!!a.scenePlace));
     for(const event of events){
       const loc=locate(event);
@@ -150,10 +150,10 @@ export class ChronicleAssets{
       if(!compact)fullScenes.push(loc.position);
       occupied.push({...loc.position,radius:scene.radius},...scene.occupied);
       for(const [index,model] of scene.models.entries()){
-        const person=model.person,row=person?{...person,id:person.id+'@'+event.id,kind:'person',eventId:event.entityId,
+        const person=model.person,row=person?{...person,id:person.id+'@'+event.id,kind:'person',eventId:event.entityId,sceneId:event.id,
           activity:event.summary,placement:loc.placement,placementLabel:person.role+' · '+loc.placementLabel,
           site:loc.site,locationReference:loc.locationReference,focusDistance:scene.focusDistance,action:model.action,side:model.side,shipSide:model.shipSide}
-          :{...event,...loc,id:model.primary?event.id:event.id+':part:'+index,kind:model.primary?'event':'building',
+          :{...event,...loc,id:model.primary?event.id:event.id+':part:'+index,sceneId:event.id,kind:model.primary?'event':'building',
             sceneKind:scene.compositionKind,path:model.path,focusDistance:scene.focusDistance,action:model.action,compact,side:model.side};
         const position=model.position.clone();position.y+=model.lift||0;
         add(row,position,model.scale,model.archetype);
@@ -222,17 +222,17 @@ export class ChronicleAssets{
       Number(b.placement==='site')-Number(a.placement==='site')||(b.participants?.length||0)-(a.participants?.length||0))[0]
       ||this.rows.find(r=>r.kind==='person');
     if(!row){this.world.frame(this.engine);return false;}
-    this.activeScene=row.entityId;
+    this.activeScene=row.sceneId||row.id;
     this.engine.flyTo(row.position.clone().add(new THREE.Vector3(0,5,0)),row.focusDistance||125,650);return true;
   }
   setSelected(id,preferred){
     this.selected=id;this.selectedRow=preferred;
     if(this.selection){release(this.selection);this.selection=null;}
     const row=this.rowFor(id,preferred);if(!row)return;
-    const radius=Math.min(2.2,row.focusDistance*.025);
+    const focusDistance=row.focusDistance||110,radius=Math.min(2.2,focusDistance*.025);
     const ring=new THREE.Mesh(new THREE.RingGeometry(radius,radius*1.09,40),
       new THREE.MeshBasicMaterial({color:PALETTE.ACCENT_GOLD,side:THREE.DoubleSide}));
-    ring.rotation.x=-Math.PI/2;ring.position.copy(row.position);ring.position.y+=Math.min(.1,row.focusDistance*.001);
+    ring.rotation.x=-Math.PI/2;ring.position.copy(row.position);ring.position.y+=Math.min(.1,focusDistance*.001);
     this.group.add(ring);this.selection=ring;this.selectedRow=row.id;
   }
   update(t){for(const animation of this.animated||[])animation.update(t);}

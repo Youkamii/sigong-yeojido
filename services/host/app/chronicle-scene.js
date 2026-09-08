@@ -38,8 +38,12 @@ export class ChronicleScene {
     }
     const destination=document.getElementById('sceneDestination'),previous=destination.value;
     destination.replaceChildren(new Option('인물·사건을 골라 이동',''));
-    for(const row of this.assets.rows)if(row.kind!=='building')destination.add(new Option(row.label,row.entityId));
-    if(this.assets.rows.some(row=>row.entityId===previous))destination.value=previous;
+    const listed=new Set();
+    for(const row of this.assets.rows)if(row.kind!=='building'){
+      const option=new Option(row.label+(listed.has(row.entityId)?' · '+(row.locationReference?.label||row.detail):''),listed.has(row.entityId)?row.id:row.entityId);
+      option.dataset.sceneRow=row.id;option.dataset.sceneEntity=row.entityId;destination.add(option);listed.add(row.entityId);
+    }
+    if([...destination.options].some(option=>option.value===previous))destination.value=previous;
     destination.disabled=!this.assets.rows.length;
     this.syncPicks();
     const sceneInView=this.assets.rows.some(row=>{
@@ -62,9 +66,10 @@ export class ChronicleScene {
     const plan=this.assets?.plan;if(!plan)return null;
     const events=plan.events.filter(e=>e.entityId===id||e.participants.some(p=>p.entityId===id));
     if(!events.length)return null;
-    const selected=events.find(e=>this.assets.rowFor(id)?.eventId===e.entityId)||events[0];
+    const selectedRow=this.assets.rowFor(id,this.assets.selectedRow);
+    const selected=events.find(e=>selectedRow?.sceneId===e.id)||events[0];
     const person=selected.participants.find(p=>p.entityId===id);
-    const row=this.assets.rows.find(r=>r.entityId===selected.entityId&&r.kind==='event');
+    const row=this.assets.rows.find(r=>r.sceneId===selected.id&&r.kind==='event');
     return {summary:selected.summary,role:person?.role,place:selected.scenePlace?.label||selected.locationReference?.label,
       placement:row?.placementLabel||'활동은 확인됐으며 지도 위치는 아직 연결되지 않았습니다.',
       claimIds:[...new Set([...selected.claimIds,...(person?.relationClaims||[])])],
@@ -77,9 +82,9 @@ export class ChronicleScene {
   select(id){
     const preferred=this.preferredRow||(this.assets?.selected===id?this.assets.selectedRow:null);
     const row=this.assets?.rowFor(id,preferred);
-    const eventId=row?.eventId||(row?.kind==='event'?row.entityId:null)
-      ||this.assets?.plan.events.find(e=>e.participants.some(p=>p.entityId===id&&p.presence==='on-site'))?.entityId;
-    if(eventId&&this.assets.activeScene!==eventId){this.assets.activeScene=eventId;this.refresh(this.world,this.chronicle);}
+    const sceneId=row?.sceneId
+      ||this.assets?.plan.events.find(e=>e.participants.some(p=>p.entityId===id&&p.presence==='on-site'))?.id;
+    if(sceneId&&this.assets.activeScene!==sceneId){this.assets.activeScene=sceneId;this.refresh(this.world,this.chronicle);}
     this.preferredRow=null;this.assets?.setSelected(id,preferred);
     for(const {button,row} of this.markers)button.classList.toggle('selected',row.entityId===id);
     return this.assets?.focus(id,preferred)||false;
@@ -87,7 +92,7 @@ export class ChronicleScene {
   prefer(id,point){
     if(!point||!this.assets)return;
     this.preferredRow=this.assets.rows.filter(r=>r.entityId===id)
-      .sort((a,b)=>a.pick.position.distanceToSquared(point)-b.pick.position.distanceToSquared(point))[0]?.id;
+      .sort((a,b)=>a.pick.getWorldPosition(point.clone()).distanceToSquared(point)-b.pick.getWorldPosition(point.clone()).distanceToSquared(point))[0]?.id;
   }
   update(camera,canvas,t){
     this.assets?.update(t);

@@ -419,7 +419,10 @@ function selectSceneEntity(id){
 }
 document.getElementById('periodSceneBtn').onclick=()=>chronicleScene.assets?.focusPeriod();
 document.getElementById('wholeMapBtn').onclick=()=>{if(R)R.world.frame(R.engine);};
-document.getElementById('sceneDestination').onchange=event=>{if(event.target.value)chronicleView.showEntity(event.target.value);};
+document.getElementById('sceneDestination').onchange=event=>{
+  const option=event.target.selectedOptions[0];if(!option?.value)return;
+  chronicleScene.preferredRow=option.dataset.sceneRow;chronicleView.showEntity(option.dataset.sceneEntity);
+};
 for(const [id,factor] of [['sceneZoomIn',.7],['sceneZoomOut',1.4]])document.getElementById(id).onclick=()=>{
   if(!R)return;const e=R.engine,d=e.camera.position.distanceTo(e.controls.target);
   e.flyTo(e.controls.target.clone(),Math.max(e.controls.minDistance,Math.min(e.controls.maxDistance,d*factor)),250);
