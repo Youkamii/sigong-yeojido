@@ -70,7 +70,7 @@ export class ChronicleAssets{
     for(const key of ['built','requested','meshes','triangles'])result.stats[key]??=0;
     return result;
   }
-  buildForest(occupied){
+  buildForest(occupied,scenes=[]){
     const group=new THREE.Group();group.name='peninsula-woods';
     const b=this.world.bounds,candidates=this.treeCandidates||[];
     const cells=new Map(),cellSize=3;
@@ -90,7 +90,17 @@ export class ChronicleAssets{
       const key=cx+':'+cz;if(!cells.has(key))cells.set(key,[]);cells.get(key).push({x,z});
     }
     this.treeCandidates=candidates;
-    const positions=candidates.filter(p=>occupied.every(o=>Math.hypot(p.x-o.x,p.z-o.z)>=o.radius+1.4));
+    const treeScale=p=>Math.min(1,...scenes.filter(s=>Math.hypot(p.x-s.x,p.z-s.z)<Math.max(12,90*s.scale)).map(s=>s.scale));
+    const positions=candidates.filter(p=>occupied.every(o=>Math.hypot(p.x-o.x,p.z-o.z)>=o.radius+1.4*treeScale(p)));
+    for(const p of positions)p.treeScale=treeScale(p);
+    for(const scene of scenes.filter(s=>s.scale<.5))for(let i=0;i<180;i++){
+      const seed=stableSeed(scene.id+':grove:'+i),angle=(seed%10000)/10000*Math.PI*2;
+      const radius=(27+(Math.floor(seed/10000)%1000)/1000*48)*scene.scale;
+      const x=scene.x+Math.cos(angle)*radius,z=scene.z+Math.sin(angle)*radius;
+      if(!this.world.contains(x,z,.3*scene.scale)||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+1.4*scene.scale))continue;
+      if(positions.some(p=>Math.hypot(x-p.x,z-p.z)<2.8*scene.scale))continue;
+      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=scene.scale;positions.push(p);
+    }
     const geometry=makeTreeGeometry(),material=makeSurface({preset:'MAT_FOLIAGE',vertexColors:true,color:WHITE},{wind:.9,windAxis:'y',key:'tree'});
     const regions=new Map();
     for(const p of positions){const key=Math.floor(p.x/96)+':'+Math.floor(p.z/96);
@@ -99,7 +109,7 @@ export class ChronicleAssets{
     for(const [key,region] of regions){
       const trees=new THREE.InstancedMesh(geometry,material,region.length);
       region.forEach((position,i)=>{
-        const seed=stableSeed('tree:'+position.x+':'+position.z),t=(seed%1000)/1000,s=.7+t*.45;
+        const seed=stableSeed('tree:'+position.x+':'+position.z),t=(seed%1000)/1000,s=(.7+t*.45)*(position.treeScale||1);
         q.setFromEuler(new THREE.Euler(0,t*6.28,0));scale.set(s,s*(.85+t*.5),s);
         matrix.compose(position,q,scale);trees.setMatrixAt(i,matrix);
         trees.setColorAt(i,mixColor(biome.low,biome.high,.25+t*.6).multiplyScalar(.92+t*.22));
@@ -137,7 +147,7 @@ export class ChronicleAssets{
         placementLabel:ref.label+' · 지역 기준 추정 배치'};}
       return null;
     };
-    const placedPeople=new Set(),fullScenes=[];
+    const placedPeople=new Set(),fullScenes=[],sceneWoods=[];
     const events=[...plan.events].sort((a,b)=>Number(b.id===this.activeScene)-Number(a.id===this.activeScene)
       ||Number(!!b.scenePlace)-Number(!!a.scenePlace));
     for(const event of events){
@@ -147,7 +157,7 @@ export class ChronicleAssets{
       const scene=composeHistoricalEvent({...event,compact},loc.position,this.world);
       if(!scene.models.some(m=>m.primary)){unlocated.push(event);continue;}
       next.add(scene.group);eventAnimations.push(...scene.animated);
-      if(!compact)fullScenes.push(loc.position);
+      if(!compact){fullScenes.push(loc.position);sceneWoods.push({id:event.id,x:loc.position.x,z:loc.position.z,scale:scene.displayScale});}
       occupied.push({...loc.position,radius:scene.radius},...scene.occupied);
       for(const [index,model] of scene.models.entries()){
         const person=model.person,row=person?{...person,id:person.id+'@'+event.id,kind:'person',eventId:event.entityId,sceneId:event.id,
@@ -193,7 +203,7 @@ export class ChronicleAssets{
     const paths=new THREE.BufferGeometry();paths.setAttribute('position',new THREE.Float32BufferAttribute(pathPositions,3));paths.computeVertexNormals();
     const pathMesh=new THREE.Mesh(paths,new THREE.MeshStandardMaterial({color:mix(PALETTE.NEUTRAL_BONE,PALETTE.BASE_EARTH,.28),roughness:1,side:THREE.DoubleSide}));
     pathMesh.receiveShadow=true;pathMesh.name='settlement-footpaths';next.add(pathMesh);
-    this.buildForest(occupied);
+    this.buildForest(occupied,sceneWoods);
     const byRecipe=new Map(rows.map(r=>[r.id,r]));
     field.group.updateMatrixWorld(true);
     for(const pick of field.picks){

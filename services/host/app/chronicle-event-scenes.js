@@ -226,6 +226,6 @@ export function composeHistoricalEvent(event,position,world){
       model(person.archetype,dx,dz,1.9,{person,side,action:event.archetype==='publication'?'working':'idle'});
     }
   }
-  return {group,animated,models,occupied,compositionKind,radius:radius*displayScale,
+  return {group,animated,models,occupied,compositionKind,displayScale,radius:radius*displayScale,
     focusDistance:Math.max(.1,(sea?145:harbor?150:event.archetype==='publication'?85:115)*displayScale)};
 }
