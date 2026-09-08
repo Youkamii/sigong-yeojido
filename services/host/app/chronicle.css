@@ -109,6 +109,12 @@
 .focus-people strong{font:13px var(--serif)}
 .focus-people small{font-size:10px;margin-top:3px}
 .activity-participants{margin-top:10px}
+.map-display{pointer-events:auto;margin-top:8px;max-width:295px;color:var(--paper-2);font:11px var(--sans)}
+.map-display summary{cursor:pointer;padding:4px 0;color:var(--paper)}
+.map-display fieldset{display:flex;gap:7px 12px;flex-wrap:wrap;border:0;padding:7px 0;margin:0}
+.map-display legend{font-size:10px;color:var(--paper-3);padding:0}
+.map-display label{display:flex;align-items:center;gap:4px;white-space:nowrap;cursor:pointer}
+.map-display input{accent-color:var(--celadon)}
 @media(max-width:600px){.scene-focus{left:10px;width:calc(100% - 20px);padding:8px;bottom:calc(var(--timeline-height,150px) + 7px)}.focus-people>button{max-width:140px}.focus-heading>button{font-size:13px}}
 .scene-person{position:absolute;transform:translate(-50%,-100%);pointer-events:auto;max-width:148px;text-align:center;padding:6px 10px;background:#243d36f2;border:1px solid #c4a35f;border-radius:3px;white-space:nowrap;box-shadow:0 3px 12px #17251f44}
 .scene-person strong{font:15px var(--serif);color:#fff2d2}

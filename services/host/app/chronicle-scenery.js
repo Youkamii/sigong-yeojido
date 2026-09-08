@@ -18,6 +18,10 @@ export class ChronicleScenery{
     }
   }
   available(site){return this.occupied.every(o=>Math.hypot(site.x-o.x,site.z-o.z)>site.radius+o.radius+8);}
+  setDisplay(visible,paths){
+    this.group.visible=visible;this.showPaths=paths;
+    this.group.traverse(o=>{if(o.name==='scenery-lanes')o.visible=paths;});
+  }
   sync(occupied){
     this.occupied=occupied;
     this.clearings=[...this.sites,...this.wildlife].filter(s=>this.available(s));
@@ -102,6 +106,7 @@ export class ChronicleScenery{
     }
     this.sync(this.occupied);
     this.assets.buildForest([...this.assets.forestOccupied,...this.clearings],this.assets.forestScenes);
+    this.assets.forest.visible=this.assets.world.geography?.display?.forest!==false;
   }
   update(camera,t){
     for(const cell of this.cells){

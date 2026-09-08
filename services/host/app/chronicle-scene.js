@@ -3,7 +3,25 @@ import {planChronicleAssets} from './chronicle-asset-plan.js';
 import {formatCoordinates} from './history-coordinates.js';
 
 export class ChronicleScene {
-  constructor(host,onSelect){this.host=host;this.onSelect=onSelect;this.markers=[];}
+  constructor(host,onSelect){
+    this.host=host;this.onSelect=onSelect;this.markers=[];
+    this.display={regions:true,geography:true,people:true,events:true,scenery:true,forest:true,paths:true};
+    try{const saved=JSON.parse(localStorage.getItem('sigong-map-display-v1')||'{}');for(const key in this.display)if(typeof saved[key]==='boolean')this.display[key]=saved[key];}catch{}
+    for(const input of document.querySelectorAll('[data-map-display]')){
+      input.checked=this.display[input.dataset.mapDisplay];input.onchange=()=>{
+        this.display[input.dataset.mapDisplay]=input.checked;
+        try{localStorage.setItem('sigong-map-display-v1',JSON.stringify(this.display));}catch{}
+        this.applyDisplay();
+      };
+    }
+  }
+  applyDisplay(){
+    this.layoutKey=null;
+    if(this.world?.geography)this.world.geography.display=this.display;
+    if(this.assets?.scenery)this.assets.scenery.setDisplay(this.display.scenery,this.display.paths);
+    if(this.assets?.forest)this.assets.forest.visible=this.display.forest;
+    const paths=this.assets?.group.getObjectByName('settlement-footpaths');if(paths)paths.visible=this.display.paths;
+  }
   async attach(engine,world){
     this.engine=engine;this.world=world;
     try{
@@ -21,7 +39,7 @@ export class ChronicleScene {
     const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[],world.coordinateRegistry);
     world.geography?.setActivities(plan);
     const signature=JSON.stringify([plan,this.assets.activeScene]);
-    if(signature===this.signature){this.syncPicks();this.renderFocus();return;}
+    if(signature===this.signature){this.syncPicks();this.renderFocus();this.applyDisplay();return;}
     const changedYear=this.assets.plan?.year!==plan.year;
     this.assets.rebuild(plan);this.signature=signature;
     this.layoutKey=null;
@@ -60,6 +78,7 @@ export class ChronicleScene {
     note.textContent='끌어서 이동 · 휠로 확대 · 오른쪽 드래그로 회전';
     note.hidden=!note.textContent;
     this.renderFocus();
+    this.applyDisplay();
   }
   renderFocus(){
     const host=document.getElementById('sceneFocus'),row=this.assets?.rowFor(this.assets.selected,this.assets.selectedRow);
@@ -144,6 +163,7 @@ export class ChronicleScene {
       const {button,position,row}=marker;
       const p=position.clone().project(camera);
       button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1
+        ||(row.kind==='person'&&!this.display.people)||(row.kind==='event'&&!this.display.events)
         ||(row.kind==='person'&&(named.has(row.entityId)||(peopleShown>=(width<600?3:6)&&row.entityId!==this.assets?.selected)));
       if(button.hidden)continue;
       button.style.left=(p.x+1)*width/2+'px';button.style.top=(1-p.y)*height/2+'px';

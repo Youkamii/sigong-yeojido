@@ -328,6 +328,10 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
         <div class="scene-actions"><button id="periodSceneBtn">이 시대 가까이</button><button id="wholeMapBtn">한반도 전체</button><button id="eastAsiaBtn">주변국까지</button></div>
         <div class="scene-navigation"><label for="sceneDestination">장면 이동</label><select id="sceneDestination" aria-label="인물과 사건 장면으로 이동"></select>
           <button id="sceneZoomIn" aria-label="지도 확대">+</button><button id="sceneZoomOut" aria-label="지도 축소">−</button></div>
+        <details id="mapDisplay" class="map-display"><summary>지도 표시</summary>
+          <fieldset><legend>이름표</legend><label><input type="checkbox" data-map-display="regions" checked>지역명</label><label><input type="checkbox" data-map-display="geography" checked>산·섬 이름</label><label><input type="checkbox" data-map-display="people" checked>인물 이름</label><label><input type="checkbox" data-map-display="events" checked>사건 이름</label></fieldset>
+          <fieldset><legend>풍경</legend><label><input type="checkbox" data-map-display="scenery" checked>마을·밭·동물</label><label><input type="checkbox" data-map-display="forest" checked>숲</label><label><input type="checkbox" data-map-display="paths" checked>길</label></fieldset>
+        </details>
         <small id="sceneAssetNote" hidden></small>
       </div>
       <div id="sceneEvents" class="scene-events" aria-label="3D 지도의 사건"></div>

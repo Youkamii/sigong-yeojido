@@ -95,6 +95,7 @@ export class ChronicleGeography{
       const p=position.clone().project(camera),island=this.data.islands.includes(row);
       const selected=selectedId===row.id;
       button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1||(!island&&!region&&distance<90)
+        ||(region?this.display?.regions===false:this.display?.geography===false)
         ||(region&&!selected&&(distance<80||distance>420));
       if(button.hidden)continue;
       marker.size||=[button.offsetWidth,button.offsetHeight];
