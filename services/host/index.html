@@ -325,7 +325,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <canvas id="map"></canvas>
       <div id="three"></div>
       <div class="scene-context" id="sceneContext"><h2>1593년</h2><p>동시대 인물과 사건</p>
-        <div class="scene-actions"><button id="periodSceneBtn">이 시대 가까이</button><button id="wholeMapBtn">한반도 전체</button></div>
+        <div class="scene-actions"><button id="periodSceneBtn">이 시대 가까이</button><button id="wholeMapBtn">한반도 전체</button><button id="eastAsiaBtn">주변국까지</button></div>
         <div class="scene-navigation"><label for="sceneDestination">장면 이동</label><select id="sceneDestination" aria-label="인물과 사건 장면으로 이동"></select>
           <button id="sceneZoomIn" aria-label="지도 확대">+</button><button id="sceneZoomOut" aria-label="지도 축소">−</button></div>
         <small id="sceneAssetNote" hidden></small>
@@ -420,6 +420,7 @@ function selectSceneEntity(id){
 }
 document.getElementById('periodSceneBtn').onclick=()=>chronicleScene.assets?.focusPeriod();
 document.getElementById('wholeMapBtn').onclick=()=>{if(R)R.world.frame(R.engine);};
+document.getElementById('eastAsiaBtn').onclick=()=>{if(R)R.world.frame(R.engine,true);};
 document.getElementById('sceneDestination').onchange=event=>{
   const option=event.target.selectedOptions[0];if(!option?.value)return;
   chronicleScene.preferredRow=option.dataset.sceneRow;chronicleView.showEntity(option.dataset.sceneEntity);
@@ -1334,9 +1335,9 @@ async function init3d(){
   let elev = null;
   try{ elev = await fetch('/api/elevation').then(r => r.ok ? r.json() : null); }
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
-  const [outline,anchors,geography,scenes,coordinates]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json','history-scenes.json','history-coordinates.json'].map(file=>
+  const [outline,anchors,geography,scenes,coordinates,neighbors]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json','history-scenes.json','history-coordinates.json','neighbor-outline.json'].map(file=>
     fetch('./app/'+file).then(r=>{if(!r.ok)throw Error('지도 자료를 불러오지 못했습니다.');return r.json();})));
-  const world = new ChronicleWorld(state.geo, [...state.places,...anchors.places], { elev, outline, geography });
+  const world = new ChronicleWorld(state.geo, [...state.places,...anchors.places], { elev, outline, geography, neighbors });
   const {coordinateRegistry}=await import('./app/history-coordinates.js');
   world.coordinateRegistry=coordinateRegistry(anchors,coordinates);
   world.scenePackets=scenes.scenes;world.sceneSources=scenes.sources;
@@ -1362,8 +1363,8 @@ async function init3d(){
 
   world.configureEngine(engine);
   const {ChronicleGeography}=await import('./app/chronicle-geography.js');
-    world.geography=new ChronicleGeography(world,engine,geography);
-    world.geography.setActivities(chronicleScene.assets?.plan);
+  world.geography=new ChronicleGeography(world,engine,geography);
+  world.geography.setActivities(chronicleScene.assets?.plan);
   if(q && engine.setQuality) engine.setQuality(q);   // 검증·저사양용 ?q=low
   let ssaoBeforeMaterialize = null;
   engine.start((dt, t) => {

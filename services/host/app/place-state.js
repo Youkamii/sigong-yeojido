@@ -1,7 +1,8 @@
 export const DIORAMA_BOUNDS = {lon0:123, lon1:132, lat0:33, lat1:43.5};
+export const WORLD_BOUNDS = {lon0:115, lon1:146, lat0:25, lat1:49};
 
 export function inDiorama(candidate){
-  const b = DIORAMA_BOUNDS;
+  const b = WORLD_BOUNDS;
   return candidate.lon >= b.lon0 && candidate.lon <= b.lon1 && candidate.lat >= b.lat0 && candidate.lat <= b.lat1;
 }
 

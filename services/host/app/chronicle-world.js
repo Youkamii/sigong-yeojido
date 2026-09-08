@@ -6,12 +6,13 @@ import {ridgeSegments,ridgeRelief} from './chronicle-geography.js';
 import {fitChronicleShadows} from './chronicle-shadows.js';
 import {unprojectCoordinates} from './history-coordinates.js';
 import {insideCoastline as inside,coastlineDistance as edgeDistance} from './coastline-index.js';
+import {NeighborLand} from './neighbor-land.js';
 
 export function stableSeed(text){let value=2166136261;for(const c of text)value=Math.imul(value^c.charCodeAt(0),16777619);return value>>>0;}
 
 /** The outline is a fixed map canvas. It never supplies historical location claims. */
 export class ChronicleWorld extends KoreaWorld{
-  constructor(geo,places,{elev,outline,geography}){
+  constructor(geo,places,{elev,outline,geography,neighbors}){
     super({features:[]},[],{});
     for(const child of [...this.group.children])if(child!==this.history&&child!==this.marks){
       this.group.remove(child);child.traverse(o=>{o.geometry?.dispose();for(const m of [o.material].flat())m?.dispose();});
@@ -41,8 +42,14 @@ export class ChronicleWorld extends KoreaWorld{
       minZ:Math.min(...points.map(p=>p[1])),maxZ:Math.max(...points.map(p=>p[1]))};
     this.center=new THREE.Vector3((this.bounds.minX+this.bounds.maxX)/2,8,(this.bounds.minZ+this.bounds.maxZ)/2);
     this.maxRim=Math.max(...points.map(p=>Math.hypot(...p)));
+    this.neighbors=new NeighborLand(neighbors,(...c)=>this.toWorld(...c));this.group.add(this.neighbors.group);
+    const worldPoints=[...points,...this.neighbors.rings.flat()];
+    this.navigationBounds=worldPoints.reduce((b,[x,z])=>({minX:Math.min(b.minX,x),maxX:Math.max(b.maxX,x),
+      minZ:Math.min(b.minZ,z),maxZ:Math.max(b.maxZ,z)}),{...this.bounds});
+    this.navigationRim=worldPoints.reduce((r,p)=>Math.max(r,Math.hypot(...p)),this.maxRim);
     this.seaLevel=7;
-    const seaGeometry=new THREE.PlaneGeometry((this.bounds.maxX-this.bounds.minX)*3,(this.bounds.maxZ-this.bounds.minZ)*3,1,1);
+    const nb=this.navigationBounds;
+    const seaGeometry=new THREE.PlaneGeometry((nb.maxX-nb.minX)*3,(nb.maxZ-nb.minZ)*3,1,1);
     seaGeometry.rotateX(-Math.PI/2);
     const sea=new THREE.Mesh(seaGeometry,new THREE.MeshStandardMaterial({color:'#6c999a',roughness:.55,metalness:.05}));
     sea.position.set(this.center.x,this.seaLevel,this.center.z);sea.receiveShadow=true;sea.userData.fanGround=true;
@@ -50,7 +57,7 @@ export class ChronicleWorld extends KoreaWorld{
     const sample=elev?makeHeightAt(elev):()=>0;
     this.coordinatesAt=(x,z)=>unprojectCoordinates(x,z,this.mapScale);
     this.surfaceAt=(x,z)=>{
-      const ring=this.rings.find(r=>inside(x,z,r));if(!ring)return 7;
+      const ring=this.rings.find(r=>inside(x,z,r));if(!ring)return this.neighbors.contains(x,z)?7.04:7;
       const island=this.islandRings.find(i=>i.ring===ring);
       if(island){
         const [cx,cz]=this.toWorld(island.island.lon,island.island.lat);
@@ -76,7 +83,7 @@ export class ChronicleWorld extends KoreaWorld{
     this.buildLand();
   }
   toWorld(lon,lat){return toWorld(lon,lat).map(v=>v*this.mapScale);}
-  contains(x,z,margin=0){return this.rings.some(r=>inside(x,z,r)&&(!margin||edgeDistance(x,z,r,margin)>=margin));}
+  contains(x,z,margin=0){return this.rings.some(r=>inside(x,z,r)&&(!margin||edgeDistance(x,z,r,margin)>=margin))||this.neighbors.contains(x,z,margin);}
   placeNear(x,z,radius=2,occupied=[]){
     for(let i=0;i<700+occupied.length*12;i++){
       const angle=i*2.399963,spread=i?Math.sqrt(i)*1.05:0;
@@ -142,34 +149,39 @@ export class ChronicleWorld extends KoreaWorld{
   }
   configureEngine(engine){
     this.engine=engine;
-    engine.frameWorld(this.maxRim);
-    engine.controls.minDistance=.1;engine.controls.maxDistance=this.maxRim*5;
+    engine.frameWorld(this.navigationRim);
+    engine.controls.minDistance=.1;engine.controls.maxDistance=this.navigationRim*5;
     engine.camera.near=.005;
-    engine.camera.far=this.maxRim*10;engine.camera.updateProjectionMatrix();
+    engine.camera.far=this.navigationRim*10;engine.camera.updateProjectionMatrix();
     const el=40*Math.PI/180,az=-20*Math.PI/180,d=140;
     engine.controls.target.copy(this.center);
     engine.camera.position.copy(this.center).add(new THREE.Vector3(Math.sin(az)*Math.cos(el)*d,Math.sin(el)*d,Math.cos(az)*Math.cos(el)*d));
     engine.controls.update();
     this.sunDirection=engine.key.position.clone().sub(engine.key.target.position).normalize();
   }
-  frame(engine){
+  frame(engine,includeNeighbors=false){
     // Fit the projected coastline at the current angle, including portrait screens.
     const direction=engine.camera.position.clone().sub(engine.controls.target).normalize();
     if(direction.y<.22)direction.setY(.22).normalize();
     const right=new THREE.Vector3(direction.z,0,-direction.x).normalize(),up=new THREE.Vector3().crossVectors(direction,right);
+    const bounds=includeNeighbors?this.navigationBounds:this.bounds;
+    const center=includeNeighbors?new THREE.Vector3((bounds.minX+bounds.maxX)/2,8,(bounds.minZ+bounds.maxZ)/2):this.center;
+    const rings=includeNeighbors?[...this.rings,...this.neighbors.rings]:this.rings;
     let halfWidth=0,halfHeight=0;
-    for(const [x,z] of this.rings.flat()){
-      const p=new THREE.Vector3(x,7,z).sub(this.center);
+    for(const [x,z] of rings.flat()){
+      const p=new THREE.Vector3(x,7,z).sub(center);
       halfWidth=Math.max(halfWidth,Math.abs(p.dot(right)));halfHeight=Math.max(halfHeight,Math.abs(p.dot(up)));
     }
     const aspect=engine.renderer.domElement.clientWidth/engine.renderer.domElement.clientHeight;
-    engine.flyTo(this.center.clone(),Math.max(halfHeight,halfWidth/aspect)/Math.tan(21*Math.PI/180)*1.18,650);
+    engine.flyTo(center.clone(),Math.max(halfHeight,halfWidth/aspect)/Math.tan(21*Math.PI/180)*1.18,650);
   }
   update(t,camera,canvas){
     super.update(t,camera,canvas);
     const engine=this.engine;if(!engine)return;
     const target=engine.controls.target,distance=camera.position.distanceTo(target);
-    if(engine.scene.fog){engine.scene.fog.near=distance+280;engine.scene.fog.far=distance+this.maxRim*2.5;}
-    this.shadowCoverage=fitChronicleShadows(camera,engine.key,this.sunDirection,this.bounds,this.maxSurfaceHeight+32);
+    const near=Math.max(.0005,distance*.05);
+    if(camera.near!==near){camera.near=near;camera.updateProjectionMatrix();}
+    if(engine.scene.fog){engine.scene.fog.near=distance+Math.max(280,distance*.65);engine.scene.fog.far=distance+this.navigationRim*3.5;}
+    this.shadowCoverage=fitChronicleShadows(camera,engine.key,this.sunDirection,this.navigationBounds,this.maxSurfaceHeight+32);
   }
 }
