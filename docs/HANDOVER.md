@@ -1,8 +1,20 @@
-# 최근 반영: 사건 중심 3D 지도 (#99, #101)
+# 최근 반영: 재부팅 후 조사 복구·사건·지리 장면 (2026-09-08)
 
-공개 화면 사건 26·지리 10·그림자 4개 검사 PASS. Python 116 tests, JS 3개 스크립트 PASS. CI NOT_RUN(workflow 없음). c2 뷰어 PID 304567은 /tmp/sigong-warm-viewer-101.py의 child이며 /tmp/sigong-server.pid에 기록돼 있다. Fuseki·동기화 watcher는 기존 프로세스를 유지했다. RDF 272,967 triples, SHA256 52530919774181035bbf2ba9c02d6dcfb1724314783ee386d443f16d0c504f6b.
+[공개 화면](https://undertaken-coleman-interests-bruce.trycloudflare.com/) · [반영·검증·한계](research/resumed-scene-acceptance-103.md).
 
-[구현과 검증 범위](research/event-scenes-101.md): 128개 새 활동 근거와 13개 장면 자료를 연결했다. 고하도 좌표와 전 시대 장면 확장은 미완료다. 기존 §7보다 최근 사용자 지시인 사건·장소 중심 장면을 우선한다.
+실제 Claude Opus 5 / Max 조사 12개를 완료하고 새 Claim 기록 995개를 연결했다. 장면 자료는 154개, 공통 좌표 436개,
+산맥 8개·선택 가능한 봉우리 50개·울릉도와 독도 동서도다. 고하도·청해진 섬 누락과 역사 지점의 1/8 배율 문제를 고쳤다.
+도읍의 지속 활동 9개를 연결했고, 선택 시 연도가 마지막 기록으로 바뀌던 오류는 `f7396019`에서 수정했다.
+
+공개 사건 43개·지리 15개·세계 탐색 29개·그림자 4개 검사는 각 보고서의 커밋 범위를 따른다.
+도읍 활동은 `f7396019` 공개 화면에서 [29개 검사](research/city-production-resumed-96.json)가 통과했다.
+Python 검증기 OK, unittest 116개·JS 4개 스크립트 PASS. CI NOT_RUN(실제 workflow 0개).
+c2 뷰어 PID 304567, Fuseki 167737, 동기화 watcher 290919를 유지했다. FinBridge 222676은 다른 서비스이므로 건드리지 않는다.
+RDF 293,159 triples, SHA256 `a818c5554b290d40393e906643a30bca5bcdd66be163406d52fb858fd2d61c39`.
+
+**남은 현재 작업은 #96의 인물 날짜 연결이다.** 원래 108명 중 83명에 대해 실제 Opus 5 / Max 4개 조사 작업을 창 없이 실행 중이다.
+작업 폴더는 `%TEMP%/sigong-completion-103/person_dates_*`다. 원문·실행 기록을 보존하고 완료한 결과만 검증 후 반영한다.
+이 아래 날짜·완료 수치는 이전 시점 기록이며 위 현재 상태보다 우선하지 않는다. 사용자가 전면 원문 수집보다 사건·장소 중심 3D를 우선하도록 정정했다.
 
 # 인수인계 — 시공여지도 (2026-09-07, 시간으로 탐색하는 3D 역사)
 
