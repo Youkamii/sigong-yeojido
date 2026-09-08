@@ -16,6 +16,13 @@ from import_pyongyang_identity import Text
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'services'))
 from frontmatter import parse_front_matter
 
+ENTITY_ID_ALIASES = {
+    'person-encykorea-yi-seonggye-e0059033': 'person-encykorea-yi-seonggye',
+    'event-encykorea-joseon-founding-1392': 'event-joseon-founding-1392',
+    'event-samil-movement-1919': 'event-encykorea-samil-movement-1919',
+    'place-taehwagwan': 'place-encykorea-taehwagwan',
+    'event-encykorea-haengju-daecheop-1593': 'event-khs-haengju',
+}
 
 def write(path, text):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -41,11 +48,7 @@ def main():
     adjustment_file = args.data / 'research' / args.collection / 'integration-adjustments.json'
     adjustments = json.loads(adjustment_file.read_text(encoding='utf-8')).get(job, {}) if adjustment_file.exists() else {}
     # The unpublished collector IDs refer to these already named AKS entities.
-    ids = {'person-encykorea-yi-seonggye-e0059033': 'person-encykorea-yi-seonggye',
-           'event-encykorea-joseon-founding-1392': 'event-joseon-founding-1392',
-           'event-samil-movement-1919': 'event-encykorea-samil-movement-1919',
-           'place-taehwagwan': 'place-encykorea-taehwagwan',
-           'event-encykorea-haengju-daecheop-1593': 'event-khs-haengju'}
+    ids = ENTITY_ID_ALIASES
     for entity in draft['entities']:
         entity['id'] = ids.get(entity['id'], entity['id'])
     for claim in draft['claims']:

@@ -6,24 +6,34 @@ import json
 import math
 from pathlib import Path
 from shapely.geometry import shape,Point
+from import_period_research import ENTITY_ID_ALIASES
 
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--research',type=Path,required=True)
+parser.add_argument('--collection',default='scenes-101')
+parser.add_argument('--job',action='append',help='Completed job names; defaults to the original naval and invasion collection')
+parser.add_argument('--merge',action='store_true',help='Keep existing scenes and replace only matching scene IDs')
+parser.add_argument('--out',type=Path,default=root/'services/host/app/history-scenes.json')
 args=parser.parse_args()
 scenes=[];sources={};missing=[]
-for job in ['invasion_events','yi_naval']:
+if args.merge:
+    previous=json.loads(args.out.read_text(encoding='utf-8'))
+    scenes=previous['scenes'];sources={s['id']:s for s in previous['sources']};missing=previous.get('missing',[])
+for job in args.job or ['invasion_events','yi_naval']:
     folder=args.research/job
     run=json.loads((folder/'run.json').read_text(encoding='utf-8'))
     assert run.get('exitCode')==0 and not run['isError'] and run['modelsObserved']==['claude-opus-5'] and run['effort']=='max'
     result=json.loads((folder/'result.json').read_text(encoding='utf-8'))
     claims={c['id']:c for c in result['claims']}
-    ids=lambda values:['claim-scenes-101-'+job+'-'+value.removeprefix('claim-') for value in values]
+    prefix=args.collection.replace('periods-','period')
+    ids=lambda values:['claim-'+prefix+'-'+job+'-'+value.removeprefix('claim-') for value in values]
     for source in result['sources']:
         assert sha256((folder/source['rawFile']).read_bytes()).hexdigest()==source['sha256']
         sources[source['id']]={k:source[k] for k in ['id','title','publisher','url']}
     for original in result['scenes']:
         scene=deepcopy(original)
+        scene['eventId']=ENTITY_ID_ALIASES.get(scene['eventId'],scene['eventId'])
         for key in ['dateClaimIds','actionClaimIds']:
             assert scene[key] and all(c in claims for c in scene[key]),(scene['id'],key)
             scene[key]=ids(scene[key])
@@ -36,25 +46,29 @@ for job in ['invasion_events','yi_naval']:
             if (place['medium']=='sea' or scene['id']=='scene-gohado-jin-1597') and place.get('lon') is None:
                 place.pop('anchorPlaceId',None)
         for actor in scene['participants']:
+            actor['entityId']=ENTITY_ID_ALIASES.get(actor['entityId'],actor['entityId'])
             assert actor['claimIds'] and all(c in claims for c in actor['claimIds'])
             actor['claimIds']=ids(actor['claimIds'])
             if actor['entityId']=='polity-imjin-fortress-people':
                 actor['entityId']='polity-residents-'+scene['eventId'].removeprefix('event-')
-            if scene['id']=='scene-danghangpo-2-1594' and actor['entityId']=='person-yinav-eo-yeongdam':
+            if args.collection=='scenes-101' and scene['id']=='scene-danghangpo-2-1594' and actor['entityId']=='person-yinav-eo-yeongdam':
                 actor['presence']='related'
         for effect in scene['effects'].values():
             assert not effect['enabled'] or effect['claimIds']
             assert all(c in claims for c in effect['claimIds'])
             effect['claimIds']=ids(effect['claimIds'])
-        if scene['id']=='scene-myeongnyang-1597':
+        if args.collection=='scenes-101' and scene['id']=='scene-myeongnyang-1597':
             scene['effects']['fire']['enabled']=False
             scene['integrationNote']='불화살 사용 근거를 선박 화재로 표현하지 않는다. 해당 활동은 본문 근거로 유지한다.'
         scene['researchJob']=job
+        scene['researchCollection']=args.collection
+        scenes=[s for s in scenes if s['id']!=scene['id']]
         scenes.append(scene)
-    missing.extend({'job':job,'detail':item} for item in result.get('missing',[]))
+    missing=[m for m in missing if m.get('job')!=job]
+    missing.extend({'job':job,'collection':args.collection,'detail':item} for item in result.get('missing',[]))
 
 position_folder=args.research/'naval_positions'
-if (position_folder/'run.json').exists():
+if args.collection=='scenes-101' and (position_folder/'run.json').exists():
     run=json.loads((position_folder/'run.json').read_text(encoding='utf-8'))
     if run.get('exitCode')==0 and not run.get('isError'):
         assert run['modelsObserved']==['claude-opus-5'] and run['effort']=='max'
@@ -67,6 +81,7 @@ if (position_folder/'run.json').exists():
             assert position['coordinateSourceIds'] and all(s in sources for s in position['coordinateSourceIds'])
             scene['place'].update({k:position[k] for k in ['lon','lat','precision','coordinateSourceIds','coordinateNote']})
             if position.get('geometry'):scene['place']['geometry']=position['geometry']
+        missing=[m for m in missing if m.get('job')!='naval_positions']
         missing.extend({'job':'naval_positions','detail':item} for item in result.get('missing',[]))
 
 outline=json.loads((root/'services/host/app/korea-outline.json').read_text(encoding='utf-8'))
@@ -89,5 +104,5 @@ for scene in scenes:
 
 output={'scenes':scenes,'sources':list(sources.values()),'missing':missing,
         'renderingNote':'해당 연도에 있었던 사건을 각각 표현합니다. 모형의 간격·수량은 실제 진형이나 병력 수가 아닙니다.'}
-(root/'services/host/app/history-scenes.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+args.out.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({'scenes':len(scenes),'sources':len(sources),'missing':len(missing)},ensure_ascii=False))
