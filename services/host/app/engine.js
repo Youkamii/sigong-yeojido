@@ -1035,7 +1035,8 @@ export class Engine {
     info.autoReset = false;
     const tick = () => {
       this._raf = requestAnimationFrame(tick);
-      const dt = Math.min(this.clock.getDelta(), 0.05);
+      const elapsed = this.clock.getDelta();
+      const dt = Math.min(elapsed, 0.05);
       const t = this.clock.elapsedTime;
       U.time.value = t;
       this._updateFly(dt * 1000);
@@ -1051,8 +1052,8 @@ export class Engine {
       this.composer.render(dt);
       this.stats.calls = info.render.calls;
       this.stats.triangles = info.render.triangles;
-      this.stats.fps = dt > 0 ? 1 / dt : 0;
-      this._autoQuality(dt * 1000);
+      this.stats.fps = elapsed > 0 ? 1 / elapsed : 0;
+      this._autoQuality(elapsed * 1000);
     };
     tick();
   }

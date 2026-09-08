@@ -5,25 +5,8 @@ import {PALETTE,mix,darken} from './artbible.js';
 import {ridgeSegments,ridgeRelief} from './chronicle-geography.js';
 import {fitChronicleShadows} from './chronicle-shadows.js';
 import {unprojectCoordinates} from './history-coordinates.js';
+import {insideCoastline as inside,coastlineDistance as edgeDistance} from './coastline-index.js';
 
-function inside(x,z,ring){
-  const b=ring.bounds;if(b&&(x<b.minX||x>b.maxX||z<b.minZ||z>b.maxZ))return false;
-  let result=false;
-  for(let i=0,j=ring.length-1;i<ring.length;j=i++){
-    const a=ring[i],b=ring[j];
-    if((a[1]>z)!==(b[1]>z)&&x<(b[0]-a[0])*(z-a[1])/(b[1]-a[1])+a[0])result=!result;
-  }
-  return result;
-}
-function edgeDistance(x,z,ring){
-  let best=Infinity;
-  for(let i=0;i<ring.length-1;i++){
-    const a=ring[i],b=ring[i+1],dx=b[0]-a[0],dz=b[1]-a[1];
-    const t=Math.max(0,Math.min(1,((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz||1)));
-    best=Math.min(best,Math.hypot(x-a[0]-t*dx,z-a[1]-t*dz));
-  }
-  return best;
-}
 export function stableSeed(text){let value=2166136261;for(const c of text)value=Math.imul(value^c.charCodeAt(0),16777619);return value>>>0;}
 
 /** The outline is a fixed map canvas. It never supplies historical location claims. */
@@ -72,13 +55,14 @@ export class ChronicleWorld extends KoreaWorld{
       if(island){
         const [cx,cz]=this.toWorld(island.island.lon,island.island.lat);
         const extent=Math.max(...ring.map(p=>Math.hypot(p[0]-cx,p[1]-cz)));
-        return 7.04+Math.min(island.island.areaKm2<1?.35:6,edgeDistance(x,z,ring)*1.2)*Math.max(.2,1-Math.hypot(x-cx,z-cz)/(extent||1));
+        const relief=island.island.areaKm2<1?.35:6;
+        return 7.04+edgeDistance(x,z,ring,relief/1.2)*1.2*Math.max(.2,1-Math.hypot(x-cx,z-cz)/(extent||1));
       }
       const [lon,lat]=this.coordinatesAt(x,z);
       let height=0;
       for(const dx of [-.12,0,.12])for(const dy of [-.12,0,.12])height+=Math.max(0,sample(lon+dx,lat+dy))/9;
       const ridge=ridgeRelief(x,z,this.ridgeSegments);
-      return 7.04+(Math.sqrt(height)*.095+ridge*(4+Math.sqrt(height)*.32))*Math.min(1,edgeDistance(x,z,ring)/(2.3*this.mapScale));
+      return 7.04+(Math.sqrt(height)*.095+ridge*(4+Math.sqrt(height)*.32))*edgeDistance(x,z,ring,2.3*this.mapScale)/(2.3*this.mapScale);
     };
     // KoreaWorld's old overlays convert this display height back with terrainY.
     this.heightAt=(lon,lat)=>(this.surfaceAt(...this.toWorld(lon,lat))-7)*244.6+.001;
@@ -92,7 +76,7 @@ export class ChronicleWorld extends KoreaWorld{
     this.buildLand();
   }
   toWorld(lon,lat){return toWorld(lon,lat).map(v=>v*this.mapScale);}
-  contains(x,z,margin=0){return this.rings.some(r=>inside(x,z,r)&&edgeDistance(x,z,r)>=margin);}
+  contains(x,z,margin=0){return this.rings.some(r=>inside(x,z,r)&&(!margin||edgeDistance(x,z,r,margin)>=margin));}
   placeNear(x,z,radius=2,occupied=[]){
     for(let i=0;i<700+occupied.length*12;i++){
       const angle=i*2.399963,spread=i?Math.sqrt(i)*1.05:0;

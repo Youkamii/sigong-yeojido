@@ -74,13 +74,16 @@ export class ChronicleGeography{
   }
   update(camera,canvas,occupied){
     const distance=camera.position.distanceTo(this.engine.controls.target),w=canvas.clientWidth,h=canvas.clientHeight;
-    for(const {row,button,position,region} of this.markers){
+    const selectedId=document.getElementById('geographyDestination').value;
+    for(const marker of this.markers){
+      const {row,button,position,region}=marker;
       const p=position.clone().project(camera),island=this.data.islands.includes(row);
-      const selected=document.getElementById('geographyDestination').value===row.id;
+      const selected=selectedId===row.id;
       button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1||(!island&&!region&&distance<90)
         ||(region&&!selected&&(distance<80||distance>420));
       if(button.hidden)continue;
-      const x=(p.x+1)*w/2,y=(1-p.y)*h/2,bw=button.offsetWidth,bh=button.offsetHeight;
+      marker.size||=[button.offsetWidth,button.offsetHeight];
+      const x=(p.x+1)*w/2,y=(1-p.y)*h/2,[bw,bh]=marker.size;
       const rect={left:x-bw/2,right:x+bw/2,top:y-bh,bottom:y};
       button.hidden=occupied.some(r=>r.left<rect.right+4&&r.right>rect.left-4&&r.top<rect.bottom+4&&r.bottom>rect.top-4);
       if(!button.hidden){button.style.left=x+'px';button.style.top=y+'px';occupied.push(rect);}

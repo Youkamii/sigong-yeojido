@@ -23,6 +23,7 @@ export class ChronicleScene {
     if(signature===this.signature){this.syncPicks();return;}
     const changedYear=this.assets.plan?.year!==plan.year;
     this.assets.rebuild(plan);this.signature=signature;
+    this.layoutKey=null;
     this.host.replaceChildren();this.markers=[];
     for(const row of this.assets.rows){
       if(row.kind==='building')continue;
@@ -97,6 +98,16 @@ export class ChronicleScene {
   update(camera,canvas,t){
     this.assets?.update(t);
     const width=canvas.clientWidth,height=canvas.clientHeight;
+    const card=document.getElementById('geographyCard'),hudElement=document.getElementById('sceneContext');
+    const viewport=width+':'+height;
+    const key=[...camera.matrixWorld.elements,...camera.projectionMatrix.elements,viewport,
+      this.assets?.selectedRow,document.getElementById('geographyDestination').value,card.hidden,card.offsetHeight,hudElement.offsetHeight].join(':');
+    if(this.layoutKey===key)return;
+    this.layoutKey=key;
+    if(this.labelViewport!==viewport){
+      this.labelViewport=viewport;
+      for(const marker of [...this.markers,...(this.world?.geography?.markers||[])])marker.size=null;
+    }
     const canvasRect=canvas.getBoundingClientRect(),hud=document.getElementById('sceneContext').getBoundingClientRect();
     const occupied=[{left:hud.left-canvasRect.left,right:hud.right-canvasRect.left,
       top:hud.top-canvasRect.top,bottom:hud.bottom-canvasRect.top}];
@@ -107,12 +118,15 @@ export class ChronicleScene {
       Number(b.row.id===this.assets?.selectedRow)-Number(a.row.id===this.assets?.selectedRow)
       ||Number(b.row.kind==='event')-Number(a.row.kind==='event'));
     const distance=camera.position.distanceTo(this.engine.controls.target);
-    for(const {button,position,row} of ordered){
+    for(const marker of ordered){
+      const {button,position,row}=marker;
       const p=position.clone().project(camera);
       button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1||(row.kind==='person'&&(distance>220||row.entityId!==this.assets?.selected));
       if(button.hidden)continue;
       button.style.left=(p.x+1)*width/2+'px';button.style.top=(1-p.y)*height/2+'px';
-      const x=(p.x+1)*width/2,y=(1-p.y)*height/2,w=button.offsetWidth,h=button.offsetHeight;
+      const x=(p.x+1)*width/2,y=(1-p.y)*height/2;
+      marker.size||=[button.offsetWidth,button.offsetHeight];
+      const [w,h]=marker.size;
       button.hidden=true;
       for(const [dx,dy] of [[0,0],[-22,-12],[22,-12],[0,-30],[-38,-30],[38,-30],[0,-52],[-56,-48],[56,-48]]){
         const rect={left:x+dx-w/2,right:x+dx+w/2,top:y+dy-h,bottom:y+dy};

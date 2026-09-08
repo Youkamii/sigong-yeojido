@@ -1,0 +1,282 @@
+{
+  "before": {
+    "readySeconds": 48.031,
+    "scene": {
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "year": 1593,
+      "quality": "medium",
+      "stats": {
+        "calls": 472,
+        "triangles": 1331606,
+        "sceneCalls": 225,
+        "sceneTriangles": 665792,
+        "fps": 68.4931506954174,
+        "quality": "medium"
+      },
+      "geography": 494,
+      "markers": 11,
+      "trees": 8333,
+      "terrainTriangles": 74182
+    },
+    "errors": [],
+    "scenarios": [
+      {
+        "frames": 644,
+        "actualFps": 126.0545322867936,
+        "p50": 6.099999999998545,
+        "p95": 12.200000000004366,
+        "max": 72.80000000000291,
+        "over50": 1,
+        "measured": {
+          "ChronicleWorld.update": {
+            "count": 645,
+            "total": 157.50000000745058,
+            "max": 8.100000001490116
+          },
+          "ChronicleGeography.update": {
+            "count": 645,
+            "total": 1462.799999985844,
+            "max": 5.699999999254942
+          },
+          "ChronicleScene.update": {
+            "count": 645,
+            "total": 1928.2000000216067,
+            "max": 6.800000000745058
+          },
+          "EffectComposer.render": {
+            "count": 645,
+            "total": 1981.0000000111759,
+            "max": 14.200000002980232
+          }
+        },
+        "stats": {
+          "calls": 472,
+          "triangles": 1331606,
+          "sceneCalls": 225,
+          "sceneTriangles": 665792,
+          "fps": 147.0588235132989,
+          "quality": "medium",
+          "autoMedianMs": 7.5
+        },
+        "name": "idle"
+      },
+      {
+        "frames": 988,
+        "actualFps": 133.62366274902283,
+        "p50": 6.099999999998545,
+        "p95": 12.200000000004366,
+        "max": 84.90000000000146,
+        "over50": 1,
+        "measured": {
+          "ChronicleWorld.update": {
+            "count": 989,
+            "total": 216.20000002905726,
+            "max": 7.299999997019768
+          },
+          "ChronicleGeography.update": {
+            "count": 989,
+            "total": 2096.1000000461936,
+            "max": 12.199999999254942
+          },
+          "ChronicleScene.update": {
+            "count": 989,
+            "total": 2781.6000000610948,
+            "max": 12.900000002235174
+          },
+          "EffectComposer.render": {
+            "count": 989,
+            "total": 2749.699999984354,
+            "max": 7.900000002235174
+          }
+        },
+        "stats": {
+          "calls": 468,
+          "triangles": 1331302,
+          "sceneCalls": 223,
+          "sceneTriangles": 665640,
+          "fps": 142.85714285714286,
+          "quality": "medium",
+          "autoMedianMs": 7.5,
+          "adaptMedianMs": 7.100000001490116
+        },
+        "name": "pan"
+      },
+      {
+        "frames": 386,
+        "actualFps": 75.28328750024386,
+        "p50": 12.10000000000582,
+        "p95": 18.30000000000291,
+        "max": 84.90000000000146,
+        "over50": 1,
+        "measured": {
+          "ChronicleWorld.update": {
+            "count": 387,
+            "total": 90.79999996349216,
+            "max": 0.8000000007450581
+          },
+          "ChronicleGeography.update": {
+            "count": 387,
+            "total": 1325.1999999545515,
+            "max": 16.399999998509884
+          },
+          "ChronicleScene.update": {
+            "count": 387,
+            "total": 1691.9999999813735,
+            "max": 19.099999997764826
+          },
+          "EffectComposer.render": {
+            "count": 387,
+            "total": 2147.9000000171363,
+            "max": 18.599999997764826
+          }
+        },
+        "stats": {
+          "calls": 1452,
+          "triangles": 3473506,
+          "sceneCalls": 715,
+          "sceneTriangles": 1736742,
+          "fps": 68.49315067794092,
+          "quality": "medium",
+          "autoMedianMs": 7.5,
+          "adaptMedianMs": 12.300000000745058
+        },
+        "name": "overview"
+      }
+    ]
+  },
+  "after": {
+    "readySeconds": 10.109,
+    "scene": {
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "year": 1593,
+      "quality": "medium",
+      "stats": {
+        "calls": 472,
+        "triangles": 1331606,
+        "sceneCalls": 225,
+        "sceneTriangles": 665792,
+        "fps": 166.66666666666666,
+        "quality": "medium"
+      },
+      "geography": 494,
+      "markers": 11,
+      "trees": 8333,
+      "terrainTriangles": 74182
+    },
+    "errors": [],
+    "scenarios": [
+      {
+        "frames": 819,
+        "actualFps": 160.3053435114504,
+        "p50": 6.099999999998545,
+        "p95": 6.200000000000728,
+        "max": 72.69999999999891,
+        "over50": 1,
+        "measured": {
+          "ChronicleWorld.update": {
+            "count": 820,
+            "total": 259.39999996498227,
+            "max": 1.0999999977648258
+          },
+          "ChronicleScene.update": {
+            "count": 820,
+            "total": 53.40000003576279,
+            "max": 0.4000000022351742
+          },
+          "EffectComposer.render": {
+            "count": 820,
+            "total": 2960.0999999307096,
+            "max": 11.399999998509884
+          }
+        },
+        "stats": {
+          "calls": 472,
+          "triangles": 1331606,
+          "sceneCalls": 225,
+          "sceneTriangles": 665792,
+          "fps": 161.2903226000275,
+          "quality": "medium",
+          "autoMedianMs": 6.099999997764826
+        },
+        "name": "idle"
+      },
+      {
+        "frames": 1190,
+        "actualFps": 160.41843598765186,
+        "p50": 6.099999999998545,
+        "p95": 6.200000000000728,
+        "max": 103,
+        "over50": 1,
+        "measured": {
+          "ChronicleWorld.update": {
+            "count": 1191,
+            "total": 365.59999994188547,
+            "max": 1
+          },
+          "ChronicleScene.update": {
+            "count": 1191,
+            "total": 130.200000051409,
+            "max": 1.7000000029802322
+          },
+          "EffectComposer.render": {
+            "count": 1191,
+            "total": 4236.7999999932945,
+            "max": 12.100000001490116
+          },
+          "ChronicleGeography.update": {
+            "count": 57,
+            "total": 33.69999999925494,
+            "max": 1.1000000014901161
+          }
+        },
+        "stats": {
+          "calls": 468,
+          "triangles": 1331302,
+          "sceneCalls": 223,
+          "sceneTriangles": 665640,
+          "fps": 120.4819277541041,
+          "quality": "medium",
+          "autoMedianMs": 6.099999997764826,
+          "adaptMedianMs": 6.099999997764826
+        },
+        "name": "pan"
+      },
+      {
+        "frames": 645,
+        "actualFps": 125.35468573871813,
+        "p50": 6.099999999998545,
+        "p95": 12.299999999999272,
+        "max": 103.10000000000218,
+        "over50": 1,
+        "measured": {
+          "ChronicleWorld.update": {
+            "count": 646,
+            "total": 170.3000000230968,
+            "max": 0.9000000022351742
+          },
+          "ChronicleScene.update": {
+            "count": 646,
+            "total": 37.80000005662441,
+            "max": 0.30000000074505806
+          },
+          "EffectComposer.render": {
+            "count": 646,
+            "total": 4315.799999881536,
+            "max": 29.5
+          }
+        },
+        "stats": {
+          "calls": 1452,
+          "triangles": 3473506,
+          "sceneCalls": 715,
+          "sceneTriangles": 1736742,
+          "fps": 153.84615384615384,
+          "quality": "medium",
+          "autoMedianMs": 6.099999997764826,
+          "adaptMedianMs": 6.600000001490116
+        },
+        "name": "overview"
+      }
+    ]
+  }
+}
