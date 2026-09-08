@@ -65,7 +65,7 @@ for name in ['korean_hall','korean_house']:
         w,h,d,y=roof['w'],roof['h'],roof['d'],roof['y']
         for sign in [-1,1]:
             target['p'].append(part('box','roof','timber','iron',w=w+.22,h=.11,d=.55,y=y+.04,z=sign*(d/2-.06),rx=-sign*.15,detail116=True))
-            target['p'].append(part('rcyl','roof','timber','steel',r=.027,h=math.hypot(h,d/2),y=y+h/2+.027,z=sign*d/4,
+            target['p'].append(part('rcyl','roof','timber','roofAlt',r=.027,h=math.hypot(h,d/2),y=y+h/2+.027,z=sign*d/4,
                 rx=-sign*math.atan2(d/2,h),seg=5,rep={'n':14,'dx':w/14},detail116=True))
             target['p'].append(part('box','body','timber','timber',w=.1,h=.13,d=.75,y=y-.11,z=sign*(d/2-.3),rep={'n':12,'dx':w/13},detail116=True))
 
