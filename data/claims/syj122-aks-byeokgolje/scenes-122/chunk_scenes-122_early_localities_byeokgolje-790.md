@@ -60,6 +60,23 @@ status: "draft"
     "generatedAt": "2026-09-08"
   },
   {
+    "id": "claim-scenes-122-early_localities-syj122-byeokgolje790-place",
+    "subject": "event-syj122-byeokgolje-jeungchuk-790",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-syj122-byeokgolje"
+    },
+    "note": "한국민족문화대백과사전이 명시한 수리 시설 벽골제와 사건의 관계. 현재 좌표와 옛 제방 범위는 별도 위치 참고 자료로 구분한다.",
+    "fromSource": "src-syj122-aks-byeokgolje",
+    "citesChunk": "chunk_scenes-122_early_localities_byeokgolje-790",
+    "quote": "790년(원성왕 6)에 신라 정부는 전주(全州) 등 7주(州)의 주민을 징발하여 벽골제를 증축(增築)하였다.",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-08"
+  },
+  {
     "id": "claim-scenes-122-early_localities-syj122-byeokgolje790-action",
     "subject": "event-syj122-byeokgolje-jeungchuk-790",
     "predicate": "syj:describedAs",
