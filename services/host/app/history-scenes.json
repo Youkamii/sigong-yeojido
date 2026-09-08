@@ -11400,6 +11400,4367 @@
       "visualActions": "항구를 낀 도시가 사람으로 붐비는 모습. 비탈에 빽빽이 들어선 집과 임시 거처, 길가 노점, 사람들이 줄지어 드나드는 공공 청사 앞마당을 익명 인물들의 일상 동작으로 표현한다. 폭격·화재·전투 연출은 넣지 않는다.",
       "researchJob": "later_capital_activity",
       "researchCollection": "activity-96"
+    },
+    {
+      "id": "scene-syj122-byeokgolje-330-790",
+      "eventId": "event-syj122-byeokgolje-chukjo-330",
+      "title": "김제 벽골제 축조와 수리 시설 운용 (330~790)",
+      "startYear": 330,
+      "endYear": 790,
+      "kind": "court",
+      "summary": "출처는 벽골제가 330년에 처음 축조된 것으로 전한다고 적고, 790년 증축 기사를 이어 적으며, 이 제방이 오랜 기간 수리 시설로 활용되었다고 서술한다. 두 기록 사이의 해마다의 운영 기록은 출처에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-byeokgolje-year-330",
+        "claim-scenes-122-early_localities-syj122-byeokgolje-year-790-bound"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-byeokgolje-place",
+        "claim-scenes-122-early_localities-syj122-byeokgolje-longuse",
+        "claim-scenes-122-early_localities-syj122-byeokgolje-790-in-interval"
+      ],
+      "place": {
+        "label": "김제 벽골제",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.85444,
+        "lat": 35.75444,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-byeokgolje-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj122-kowiki-byeokgolje"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「벽골제」 문서 머리의 표시 좌표(북위 35.75444° 동경 126.85444°)를 그대로 옮겼다. 현재 사적으로 지정된 제방 구간을 가리키는 표시점이며 330년 당시 제방 선형이 아니다. 위치 참고 표기: 김제 벽골제 (전북특별자치도 김제시 부량면)",
+        "coordinateClaimIds": []
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": {
+        "activity": "제방·저수와 관개 이용",
+        "constructionYears": [
+          330,
+          790
+        ]
+      },
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-byeokgolje-790",
+      "eventId": "event-syj122-byeokgolje-jeungchuk-790",
+      "title": "벽골제 증축 — 전주 등 7주 주민 징발 (790)",
+      "startYear": 790,
+      "endYear": 790,
+      "kind": "construction",
+      "summary": "790년(원성왕 6) 신라 정부가 전주 등 일곱 주의 주민을 징발해 벽골제를 증축하였다. 동원 인원이나 공사 기간은 출처에 적혀 있지 않다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-byeokgolje790-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-byeokgolje790-place",
+        "claim-scenes-122-early_localities-syj122-byeokgolje790-action"
+      ],
+      "place": {
+        "label": "김제 벽골제",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.85444,
+        "lat": 35.75444,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-byeokgolje790-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj122-kowiki-byeokgolje"
+        ],
+        "coordinateNote": "위키백과 「벽골제」 문서 머리의 표시 좌표다. 790년 증축 구간의 위치는 출처에 없다. 위치 참고 표기: 김제 벽골제 (전북특별자치도 김제시 부량면)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-syj122-7ju-laborers-790",
+          "role": "전주 등 7주에서 징발되어 증축 공사에 동원된 주민 (신라)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-byeokgolje790-laborers"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "제방 위에 사람들이 줄지어 흙을 나르고 다지는 부역 공사",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-iseoguk-297",
+      "eventId": "event-encykorea-iseogoguk-destroyed-297",
+      "title": "이서국의 신라 침공 (297, 연대 이설 있음)",
+      "startYear": 297,
+      "endYear": 297,
+      "kind": "battle",
+      "summary": "삼국사기는 유례이사금 14년(297)에 이서국이 신라를 침공했다고 적었다. 같은 백과 항목은 삼국유사가 유리왕 14년(37)에 이서 사람이 금성을 쳤다고 적은 것도 함께 전하며 두 기사의 연대가 다르다고 밝힌다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-iseoguk-year-297",
+        "claim-scenes-122-early_localities-syj122-iseoguk-altdate"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-iseoguk-action"
+      ],
+      "place": null,
+      "participants": [
+        {
+          "entityId": "polity-syj122-iseoguk-force-297",
+          "role": "이서국 세력으로 신라를 침공",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-iseoguk-force"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-silla-defense-297",
+          "role": "침공을 받은 신라 쪽",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-iseoguk-silla"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-iseoguk-action"
+          ]
+        }
+      },
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-maesoseong-675",
+      "eventId": "event-syj122-maesoseong-jeontu-675",
+      "title": "매소성전투 — 신라군의 매소성 공격 (675, 위치 미상)",
+      "startYear": 675,
+      "endYear": 675,
+      "kind": "battle",
+      "summary": "675년 나당전쟁 중 신라군이 당군이 주둔한 매소성을 공격해 이겼다. 매소성 항목은 675년 9월 29일에 이근행이 군사를 이끌고 매소성에 주둔했다고 적는다. 매소성의 위치는 출처가 알 수 없다고 밝혔고 연천 대전리산성설과 양주 대모산성설이 함께 제시되어 있다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-maesoseong-year",
+        "claim-scenes-122-early_localities-syj122-maesoseong-day"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-maesoseong-action",
+        "claim-scenes-122-early_localities-syj122-maesoseong-place"
+      ],
+      "place": {
+        "label": "매소성",
+        "medium": "land",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-maesoseong-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "좌표를 넣지 않았다. 백과 항목이 '매소성의 위치는 알 수 없다'고 적고 연천 대전리산성설과 양주 대모산성설을 함께 제시하기 때문이다. 두 후보는 약 40km 떨어져 있어 한쪽 군 중심을 쓰면 다른 견해를 지운다. 필요한 자료: 두 후보 산성의 실측 좌표와 어느 설을 표시할지에 대한 편집 판단. 위치 참고 표기: 매소성 (위치 미상 · 연천 대전리산성설/양주 대모산성설)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-early_localities-syj122-maesoseong-dispute"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "polity-syj122-silla-army-675",
+          "role": "매소성을 공격한 신라군",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-maesoseong-silla"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-tang-army-675",
+          "role": "매소성에 주둔한 당군",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-maesoseong-tang"
+          ]
+        },
+        {
+          "entityId": "person-syj122-igeunhaeng",
+          "role": "당군을 이끌고 매소성에 주둔한 지휘관",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-maesoseong-igeunhaeng"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-maesoseong-action"
+          ]
+        }
+      },
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-buseoksa-676",
+      "eventId": "event-syj122-buseoksa-changgeon-676",
+      "title": "부석사 창건과 40일 법회 — 영주 봉황산 (676)",
+      "startYear": 676,
+      "endYear": 676,
+      "kind": "assembly",
+      "summary": "676년(문무왕 16) 2월 의상이 왕명으로 봉황산에 부석사를 창건하고 화엄종의 중심 사찰로 삼았다. 출처는 창건 뒤 의상이 이 절에서 40일 동안 법회를 열었다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-buseoksa-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-buseoksa-place",
+        "claim-scenes-122-early_localities-syj122-buseoksa-action",
+        "claim-scenes-122-early_localities-syj122-buseoksa-beophoe"
+      ],
+      "place": {
+        "label": "봉황산 부석사",
+        "medium": "land",
+        "precision": "site",
+        "lon": 128.6874968,
+        "lat": 36.9988527,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-buseoksa-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj122-kowiki-buseoksa"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「부석사」 문서 머리의 표시 좌표(북위 36.9988527° 동경 128.6874968°)다. 현재 사찰 경내를 가리키는 표시점이며 676년 창건 당시 가람 범위가 아니다. 위치 참고 표기: 봉황산 부석사 (경상북도 영주시 부석면)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-syj122-uisang",
+          "role": "왕명으로 부석사를 창건하고 이 절에서 40일 법회를 연 승려",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-buseoksa-uisang",
+            "claim-scenes-122-early_localities-syj122-buseoksa-beophoe"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "산비탈 절터에 목조 전각을 세우는 창건 공사와, 마당에 모여 앉아 설법을 듣는 법회",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-heunghwajin-995-1030",
+      "eventId": "event-syj122-heunghwajin-unyeong-995-1030",
+      "title": "흥화진 축성과 최전방 진 운영 (995~1030)",
+      "startYear": 995,
+      "endYear": 1030,
+      "kind": "siege",
+      "summary": "흥화진은 995년(성종 14)에 쌓은 압록강 방면 요충지로, 고려의 최전방 진이자 외교 창구로 기능하다가 1030년(현종 21) 영주로 승격했다. 두 연도 사이의 해마다의 기록은 이 항목에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hhjin-built-995",
+        "claim-scenes-122-early_localities-syj122-hhjin-1030"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hhjin-function",
+        "claim-scenes-122-early_localities-syj122-hhjin-place"
+      ],
+      "place": {
+        "label": "흥화진",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-137262",
+        "lon": 124.68155,
+        "lat": 40.20331,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-hhjin-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "좌표는 함께 제공된 의주 표시 앵커(hgis-admin-137262, 1910~1945 의주 행정구역 표시 중심)다. 출처가 흥화진을 '평안북도 의주군 위원면'으로 적었으므로 같은 군 범위 안의 지역 표시로 쓴다. 위원면 자체나 성터의 실측 좌표는 이번에 확보하지 못했다. 위치 참고 표기: 흥화진 (강감찬 항목 표기: 지금의 평안북도 의주군 위원면)",
+        "coordinateClaimIds": []
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "흥화진의 성곽과 방어 거점 운영. 공격군이나 공사 중인 인부를 추정하지 않는다.",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-heunghwajin-1010",
+      "eventId": "event-syj122-heunghwajin-jeontu-1010",
+      "title": "흥화진 포위전 — 양규의 농성 (1010)",
+      "startYear": 1010,
+      "endYear": 1010,
+      "kind": "siege",
+      "summary": "1010년 거란 제2차 침입 때 거란군이 압록강을 건너 흥화진을 포위했고 전투는 11월 17일부터 23일까지 이어졌다. 도순검사 양규는 진사 정성 등과 함께 성을 굳게 지키며 항복 권유를 물리쳤다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hhj1010-year",
+        "claim-scenes-122-early_localities-syj122-hhj1010-days"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hhj1010-siege",
+        "claim-scenes-122-early_localities-syj122-hhj1010-place",
+        "claim-scenes-122-early_localities-syj122-hhj1010-yanggyu-act"
+      ],
+      "place": {
+        "label": "흥화진",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-137262",
+        "lon": 124.68155,
+        "lat": 40.20331,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-hhj1010-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "의주 표시 앵커(hgis-admin-137262)를 지역 표시로 썼다. 출처가 흥화진을 의주군 위원면으로 적었기 때문이며, 성벽 위치의 실측 좌표는 아니다. 위치 참고 표기: 흥화진 (지금의 평안북도 의주군 위원면으로 표기됨)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-syj122-yanggyu",
+          "role": "고려 도순검사로 흥화진에서 농성을 지휘",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hhj1010-yanggyu",
+            "claim-scenes-122-early_localities-syj122-hhj1010-yanggyu-act"
+          ]
+        },
+        {
+          "entityId": "person-syj122-jeongseong",
+          "role": "고려 흥화진사로 함께 성을 지킴",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hhj1010-jeongseong"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-heunghwajin-garrison-1010",
+          "role": "흥화진을 지킨 고려 수비군",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hhj1010-garrison"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-georan-army-1010",
+          "role": "성종이 이끌고 와 성을 포위한 거란군",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hhj1010-georan"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hhj1010-siege"
+          ]
+        }
+      },
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-samgyocheon-1018",
+      "eventId": "event-syj122-samgyocheon-sugong-1018",
+      "title": "흥화진 삼교천 수공 (1018)",
+      "startYear": 1018,
+      "endYear": 1018,
+      "kind": "battle",
+      "summary": "1018년 소배압의 거란군이 침입하자 강감찬은 삼교천 상류의 둑을 막고 군사를 매복시켰다가 거란군이 강을 건널 때 물을 터뜨렸다. 강감찬 항목은 쇠가죽을 꿰어 성 동쪽 냇물을 막았다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-samgyo-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-samgyo-action",
+        "claim-scenes-122-early_localities-syj122-samgyo-water",
+        "claim-scenes-122-early_localities-syj122-samgyo-place"
+      ],
+      "place": {
+        "label": "흥화진 앞 삼교천 일대",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-137262",
+        "lon": 124.68155,
+        "lat": 40.20331,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-samgyo-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "의주 표시 앵커(hgis-admin-137262)를 지역 표시로 썼다. 삼교천의 하천 구간 좌표는 출처에 없고 이번에 확보하지 못했다. 위치 참고 표기: 흥화진 앞 삼교천 일대 (의주군 위원면으로 표기됨)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-ganggamchan",
+          "role": "고려 지휘관으로 둑을 막고 매복을 배치",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-samgyo-ganggamchan",
+            "claim-scenes-122-early_localities-syj122-samgyo-action"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-georan-army-1018",
+          "role": "소배압이 이끌고 압록강을 건넌 거란 침입군",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-samgyo-georan"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-samgyo-action"
+          ]
+        }
+      },
+      "visualActions": "하천 상류의 둑을 막았다가 터뜨려 물이 쏟아지는 장면과 산기슭에 숨은 매복 부대",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-cheollijangseong-1033-1041",
+      "eventId": "event-encykorea-cheollijangseong-chukjo-1033-1044",
+      "title": "천리장성 축조 — 압록강에서 원산만까지 (1033~1041)",
+      "startYear": 1033,
+      "endYear": 1041,
+      "kind": "construction",
+      "summary": "1033년(덕종 2) 8월 왕이 평장사 유소에게 명해 북쪽 변경에 관방을 쌓게 한 것이 출발점이 되었고, 1035년과 1041년 2·3차 축성으로 이어졌다. 장성은 압록강에서 원산만에 이르는 북쪽 변경에 쌓았다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-clj-1033",
+        "claim-scenes-122-early_localities-syj122-clj-1041"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-clj-line"
+      ],
+      "place": {
+        "label": "천리장성 서쪽 기점 방면",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-137262",
+        "lon": 124.68155,
+        "lat": 40.20331,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-clj-line"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "천리장성은 압록강에서 원산만까지 이어지는 선형 시설이어서 한 점으로 나타낼 수 없다. 표시는 서쪽 기점 방면인 의주 표시 앵커(hgis-admin-137262) 한 점만 쓴 것이고 성벽 노선이 아니다. 필요한 자료: 장성 노선의 선형 좌표(현재 확보하지 못함). 위치 참고 표기: 천리장성 서쪽 기점 방면 (압록강 어귀 · 의주 일대 표시)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-syj122-yuso",
+          "role": "고려 평장사로 축성을 명받은 책임자 (현장 위치는 출처에 없음)",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-clj-yuso"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "국경 능선을 따라 돌을 쌓아 성벽을 잇는 축성 작업",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-suseonsa-1200",
+      "eventId": "event-syj122-suseonsa-gilsangsa-1200-1205",
+      "title": "지눌 결사의 길상사 이전 (1200)",
+      "startYear": 1200,
+      "endYear": 1200,
+      "kind": "court",
+      "summary": "1200년 지눌의 결사가 송광산 길상사로 근거지를 옮겼다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-suseonsa-1200"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-suseonsa-place",
+        "claim-scenes-122-early_localities-syj122-suseonsa-jinul"
+      ],
+      "place": {
+        "label": "송광산 길상사",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.276104,
+        "lat": 35.00219,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-suseonsa-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj122-enwiki-songgwangsa"
+        ],
+        "coordinateNote": "이번에 내려받은 영어 위키백과 Songgwangsa 문서 머리의 표시 좌표(35.00219; 127.276104)다. 현재 순천 송광사 경내를 가리키는 표시점이며 1200년 당시 길상사 건물 배치가 아니다. 백과 항목이 길상사→수선사→송광사 개칭을 적어 같은 절로 이었다. 위치 참고 표기: 송광산 길상사 → 조계산 수선사 (지금의 순천 송광사)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-early_localities-syj122-suseonsa-rename"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-syj122-jinul",
+          "role": "결사를 이끌고 길상사로 옮겨 중수와 법회를 주관한 승려",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-suseonsa-jinul",
+            "claim-scenes-122-early_localities-syj122-suseonsa-beophoe"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "길상사로 옮긴 결사의 장면.",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-gujuseong-1231",
+      "eventId": "event-encykorea-gujuseong-battle",
+      "title": "구주성 전투 — 박서의 네 차례 수성 (1231)",
+      "startYear": 1231,
+      "endYear": 1231,
+      "kind": "siege",
+      "summary": "1231년(고종 18) 9월부터 12월까지 몽골군 한 부대가 구주성을 네 차례 공격했다. 서북면병마사 박서가 고려군을 이끌고 항전했고 김경손은 성의 남면을 맡았다. 몽골군은 기름으로 불을 질러 성을 공격하는 등 여러 공성법을 썼다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-guju-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-guju-place",
+        "claim-scenes-122-early_localities-syj122-guju-fire"
+      ],
+      "place": {
+        "label": "구주성",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-137518",
+        "lon": 125.12039,
+        "lat": 39.98529,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-guju-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "좌표는 함께 제공된 구성 표시 앵커(hgis-admin-137518, 1910~1945 행정구역 표시 중심)다. 기존 구주대첩 장면과 같은 지역 표시점이며 성벽 실측 위치가 아니다. 위치 참고 표기: 구주성 (평안북도 구성 지역)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-syj122-bakseo",
+          "role": "고려 서북면병마사로 구주성 수성을 지휘",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-guju-bakseo"
+          ]
+        },
+        {
+          "entityId": "person-syj122-gimgyeongson",
+          "role": "고려 정주 분도장군으로 성 남면을 맡음",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-guju-gyeongson"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-guju-garrison-1231",
+          "role": "구주성에 모인 고려 별초군과 백성",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-guju-garrison"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-mongol-army-1231",
+          "role": "내륙로 확보를 위해 구주성을 공격한 몽골군 부대",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-guju-mongol"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-guju-fire"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-guju-place",
+            "claim-scenes-122-early_localities-syj122-guju-fire"
+          ]
+        }
+      },
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-buinsa-1232",
+      "eventId": "event-syj122-buinsa-soesil-1232",
+      "title": "부인사 초조대장경판 소실 (1232)",
+      "startYear": 1232,
+      "endYear": 1232,
+      "kind": "fire",
+      "summary": "1232년 몽골 침입으로 부인사가 보유하던 초조대장경판이 대부분 불타 없어졌다. 어느 건물이 얼마나 탔는지는 출처에 적혀 있지 않다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-buinsa1232-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-buinsa1232-burn",
+        "claim-scenes-122-early_localities-syj122-buinsa1232-place"
+      ],
+      "place": {
+        "label": "팔공산 부인사",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.67306,
+        "lat": 35.99417,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-buinsa1232-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj122-kowiki-buinsa"
+        ],
+        "coordinateNote": "현재 부인사는 원터에서 서북쪽 약 400m 옮겨졌다. 이 좌표는 사찰 일대의 참고점이며 1232년 화재 현장 좌표가 아니다. 위치 참고 표기: 팔공산 부인사 (대구광역시 동구)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-syj122-mongol-army-1232",
+          "role": "1232년 침입군 (출처에 지휘관·부대명 없음)",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-buinsa1232-mongol"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-buinsa1232-burn"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "대장경판이 불탄 기록을 책판 보관 장면으로 표현한다. 건물 전체의 화재로 확대하지 않는다.",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-hwangnyongsa-1238",
+      "eventId": "event-syj122-hwangnyongsa-soesil-1238",
+      "title": "황룡사 소실 — 경주 (1238)",
+      "startYear": 1238,
+      "endYear": 1238,
+      "kind": "fire",
+      "summary": "1238년(고종 25) 몽고병의 침입 때 황룡사가 모두 불탔고 이후 복원되지 못했다. 출처는 이 절이 그때까지 신라 최고의 국가사찰로 유지되어 왔다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hns-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hns-burn",
+        "claim-scenes-122-early_localities-syj122-hns-place",
+        "claim-scenes-122-early_localities-syj122-hns-status"
+      ],
+      "place": {
+        "label": "경주 황룡사",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.2325,
+        "lat": 35.83694,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-hns-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj122-kowiki-hwangnyongsa"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「황룡사」 문서 머리의 표시 좌표(북위 35.83694° 동경 129.23250°)다. 지금의 절터를 가리키는 표시점이며 1238년 당시 가람 전체 범위가 아니다. 백과 항목의 소재지 표기는 경북 경주시 구황동 320-1번지다. 위치 참고 표기: 경주 황룡사지 (경상북도 경주시 구황동)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-syj122-mongol-army-1238",
+          "role": "1238년 몽고병 (출처에 지휘관 이름 없음)",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hns-mongol"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hns-burn"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "너른 절터의 목탑과 금당이 불타는 장면",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-hangpaduri-1271-1273",
+      "eventId": "event-encykorea-sambyeolcho-hangjaeng",
+      "title": "삼별초의 제주 항파두리 거점 (1271~1273)",
+      "startYear": 1271,
+      "endYear": 1273,
+      "kind": "siege",
+      "summary": "1271년 4월 진도가 함락되자 김통정이 이끄는 삼별초가 제주도로 거점을 옮겨 항파두리에 성을 쌓고 버텼고, 1273년(원종 14) 4월 여몽연합군의 조직적 공격으로 진압되었다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hpd-1271",
+        "claim-scenes-122-early_localities-syj122-hpd-1273"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hpd-move",
+        "claim-scenes-122-early_localities-syj122-hpd-place"
+      ],
+      "place": {
+        "label": "제주 항파두리성",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.4075,
+        "lat": 33.4525,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-hpd-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj122-kowiki-hangpaduri"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「제주 항파두리 항몽 유적」 문서 머리의 표시 좌표(33.45250; 126.40750)다. 사적으로 지정된 유적 구역을 가리키는 표시점이며 내성·외성 전체 범위가 아니다. 위치 참고 표기: 제주 항파두리성 (제주시 애월읍 고성리)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-syj122-gimtongjeong",
+          "role": "제주로 거점을 옮긴 삼별초 지휘자",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hpd-gimtongjeong"
+          ]
+        },
+        {
+          "entityId": "polity-encykorea-sambyeolcho",
+          "role": "항파두리성에 자리 잡은 삼별초 군사 조직",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hpd-sambyeolcho"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-yeomong-force-1273",
+          "role": "1273년 4월 항파두리성을 공격한 여몽연합군",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hpd-yeomong"
+          ],
+          "startYear": 1273,
+          "endYear": 1273
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hpd-yeomong"
+          ],
+          "startYear": 1273,
+          "endYear": 1273
+        }
+      },
+      "visualActions": "토성 위의 경계 근무와 성 안 진지, 1273년 봄의 공격",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-hapo-1274",
+      "eventId": "event-encykorea-ilbon-wonjeong",
+      "title": "합포 출항 — 1차 일본원정 선단의 출발 (1274)",
+      "startYear": 1274,
+      "endYear": 1274,
+      "kind": "naval",
+      "summary": "1274년 10월 27일 고려 도독사 김방경의 부대와 원나라 도원수 흔도가 이끄는 몽한군이 9백여 척으로 원정기지인 합포(지금의 마산)를 떠나 1차 일본정벌에 나섰다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hapo-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hapo-depart",
+        "claim-scenes-122-early_localities-syj122-hapo-place"
+      ],
+      "place": {
+        "label": "합포",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-150534",
+        "lon": 128.57482,
+        "lat": 35.22345,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-hapo-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처가 합포를 '지금의 마산'으로 적었으므로 함께 제공된 마산 표시 앵커(hgis-admin-150534, 1910~1945 행정구역 표시 중심)를 지역 표시로 썼다. 선단이 실제로 정박·출항한 포구 지점이나 앞바다 좌표는 확보하지 못했다. 바다 지점을 육지 점으로 바꾼 것이 아니라 출항지인 포구 지역을 가리킨다. 위치 참고 표기: 합포 (지금의 마산 일대)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-gimbanggyeong",
+          "role": "고려 도독사로 삼익군을 이끌고 합포에서 출발",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hapo-gimbanggyeong"
+          ]
+        },
+        {
+          "entityId": "person-syj122-heundo",
+          "role": "원나라 도원수로 몽한군을 지휘 (고려군과 구분되는 원 측)",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hapo-heundo"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-yeowon-fleet-1274",
+          "role": "합포를 떠난 여원연합 선단",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hapo-fleet"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hapo-depart"
+          ]
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "포구에 늘어선 배들이 돛을 올리고 차례로 바다로 나서는 출항 장면",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-hongsan-1376",
+      "eventId": "event-syj122-hongsan-daecheop-1376",
+      "title": "홍산대첩 — 부여 홍산 (1376)",
+      "startYear": 1376,
+      "endYear": 1376,
+      "kind": "battle",
+      "summary": "1376년(우왕 2) 7월 최영이 홍산에서 왜구를 크게 물리쳤다. 여러 장수가 나아가지 못할 때 최영이 선두에 나서 돌진했고, 숨어 있던 적의 화살이 그의 입술에 맞았다고 출처는 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hongsan-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hongsan-place",
+        "claim-scenes-122-early_localities-syj122-hongsan-arrow"
+      ],
+      "place": {
+        "label": "홍산",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-36258",
+        "lon": 126.77091,
+        "lat": 36.27705,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-hongsan-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "좌표는 함께 제공된 홍산 표시 앵커(hgis-admin-36258, 1910~1945 홍산 행정구역 표시 중심)다. 출처가 전투지를 부여군 홍산면으로 적었으므로 같은 지역 표시로 쓰며, 백과가 비정한 태봉산성 지점의 실측 좌표는 확보하지 못했다. 위치 참고 표기: 홍산 (충청남도 부여군 홍산면)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-choeyeong",
+          "role": "고려군 지휘관으로 선두에서 돌진",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hongsan-choeyeong",
+            "claim-scenes-122-early_localities-syj122-hongsan-arrow"
+          ]
+        },
+        {
+          "entityId": "person-syj122-choegongcheol",
+          "role": "고려 양광도 도순문사로 함께 출전",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hongsan-officers"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-goryeo-army-1376",
+          "role": "최영을 중심으로 싸운 고려군",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hongsan-goryeo"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-waegu-1376",
+          "role": "금강을 따라 내륙까지 들어와 홍산에 머물던 왜구",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hongsan-waegu"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hongsan-arrow"
+          ]
+        }
+      },
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-hwangsan-1380",
+      "eventId": "event-syj122-hwangsan-daecheop-1380",
+      "title": "황산대첩 — 남원 운봉 (1380)",
+      "startYear": 1380,
+      "endYear": 1380,
+      "kind": "battle",
+      "summary": "1380년(우왕 6) 9월 이성계 등이 전라도 지리산 부근 황산에서 왜구를 크게 이겼다. 왜구는 앞서 남원 운봉현을 불태우고 인월역에 머물렀고, 교전은 황산 북쪽 정산봉 근처에서 벌어졌다. 이성계와 이지란이 협공으로 아지발도를 사살한 뒤 전세가 기울었다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hwangsan-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hwangsan-place",
+        "claim-scenes-122-early_localities-syj122-hwangsan-burn"
+      ],
+      "place": {
+        "label": "황산과 남원 운봉현 일대",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-94600",
+        "lon": 127.58109,
+        "lat": 35.43079,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-hwangsan-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "좌표는 함께 제공된 운봉 표시 앵커(hgis-admin-94600, 1910~1945 행정구역 표시 중심)다. 출처가 왜구의 운봉현 방화와 인월역 주둔, 황산 북쪽 정산봉 부근 교전을 적었으므로 그 지역을 대표하는 표시로 쓴다. 황산·정산봉 자체의 실측 좌표는 확보하지 못했다. 위치 참고 표기: 황산과 남원 운봉현 일대 (전북 남원시 운봉)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-early_localities-syj122-hwangsan-spot"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-yi-seonggye",
+          "role": "고려군 지휘관으로 친병을 이끌고 싸우며 아지발도를 협공",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hwangsan-yiseonggye"
+          ]
+        },
+        {
+          "entityId": "person-syj122-yijiran",
+          "role": "고려 쪽 장수로 협공에 참여",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hwangsan-yijiran"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-goryeo-army-1380",
+          "role": "황산에서 싸운 고려군",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hwangsan-goryeo"
+          ]
+        },
+        {
+          "entityId": "person-syj122-ajibaldo",
+          "role": "왜구 쪽 두목으로 항전하다 사살됨",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hwangsan-aji"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-waegu-1380",
+          "role": "운봉현을 불태우고 인월역에 주둔한 왜구",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hwangsan-waegu"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hwangsan-burn"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hwangsan-yiseonggye",
+            "claim-scenes-122-early_localities-syj122-hwangsan-burn"
+          ]
+        }
+      },
+      "visualActions": "불타는 운봉현 마을과 산기슭에서 맞붙는 기병 교전",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-gimsami-unmun-1193",
+      "eventId": "event-syj122-gimsami-nan-1193",
+      "title": "김사미의 난 — 청도 운문 거점 (1193)",
+      "startYear": 1193,
+      "endYear": 1193,
+      "kind": "assembly",
+      "summary": "1193년(명종 23) 청도의 운문사를 중심으로 김사미가 저항을 일으켜 운문에 웅거했다. 중앙 정부는 대장군 전존걸이 장군들을 인솔해 현지로 나가게 했다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-gimsami-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-gimsami-place",
+        "claim-scenes-122-early_localities-syj122-gimsami-act"
+      ],
+      "place": {
+        "label": "운문",
+        "medium": "land",
+        "precision": "site",
+        "lon": 128.96,
+        "lat": 35.66139,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-gimsami-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj122-kowiki-unmunsa"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「운문사」 문서 머리의 표시 좌표(35.66139; 128.96000)다. 현재 운문사 경내를 가리키는 표시점이며, 출처는 저항의 근거지를 '운문'이라고만 적었으므로 진지의 위치가 아니라 중심 사찰의 위치다. 위치 참고 표기: 운문 (경상북도 청도군 운문사 일대)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-syj122-gimsami",
+          "role": "운문에 웅거한 저항 주도자",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-gimsami-person",
+            "claim-scenes-122-early_localities-syj122-gimsami-act"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-namjeok-unmun-1193",
+          "role": "운문에 모인 저항 세력",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-gimsami-group"
+          ]
+        },
+        {
+          "entityId": "person-syj122-jeonjongeol",
+          "role": "고려 중앙군 대장군으로 토벌군을 인솔 (교전 지점은 출처에 없음)",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-gimsami-jeonjongeol"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-tobeolgun-1193",
+          "role": "중앙에서 파견된 고려 토벌군",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-gimsami-tobeol"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "산속 절과 그 둘레에 사람들이 모여 진을 치는 모습",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-hyosim-chojeon-1193",
+      "eventId": "event-syj122-gimsami-nan-1193",
+      "title": "효심의 초전 거점 — 지금의 울산 (1193)",
+      "startYear": 1193,
+      "endYear": 1193,
+      "kind": "assembly",
+      "summary": "같은 1193년에 효심이 초전(지금의 울산광역시)에 웅거하여 무리를 모았다. 출처는 운문의 김사미와 초전의 효심이 같이 저항했다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hyosim-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-hyosim-place",
+        "claim-scenes-122-early_localities-syj122-hyosim-act"
+      ],
+      "place": {
+        "label": "초전",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-176306",
+        "lon": 129.26591,
+        "lat": 35.53987,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-hyosim-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처가 초전을 '지금의 울산광역시'라고만 적었으므로 함께 제공된 울산 표시 앵커(hgis-admin-176306, 1910~1945 행정구역 표시 중심)를 지역 표시로 썼다. 초전의 정확한 지점은 출처에 없다. 위치 참고 표기: 초전 (지금의 울산광역시)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-syj122-hyosim",
+          "role": "초전에 웅거한 저항 주도자",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hyosim-person",
+            "claim-scenes-122-early_localities-syj122-hyosim-act"
+          ]
+        },
+        {
+          "entityId": "polity-syj122-namjeok-chojeon-1193",
+          "role": "초전에 모인 저항 세력",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-hyosim-group"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "들과 마을에 무리가 모여 진을 치는 모습",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-nangnanggun-108bce-313",
+      "eventId": "event-syj122-nangnanggun-108bce-313",
+      "title": "낙랑군의 설치와 313년까지의 존속 (서기전 108~313)",
+      "startYear": -108,
+      "endYear": 313,
+      "kind": "court",
+      "summary": "출처는 낙랑군이 서기전 108년 한 무제에 의해 옛 고조선의 중심부에 설치되어 약 400여 년간 유지되었고 313년까지 존속했다고 적는다. 낙랑군 25개 현의 호구통계를 적은 목간은 평양시 낙랑구역의 목곽묘에서 나왔다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-nangnang-start",
+        "claim-scenes-122-early_localities-syj122-nangnang-end"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-nangnang-duration",
+        "claim-scenes-122-early_localities-syj122-nangnang-place"
+      ],
+      "place": {
+        "label": "낙랑군 관련 유물 출토지 일대",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-93236",
+        "lon": 125.68463,
+        "lat": 39.08572,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-nangnang-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "좌표는 함께 제공된 평양 표시 앵커(hgis-admin-93236, 1910~1945 행정구역 표시 중심)다. 출처가 낙랑군 목간의 출토지를 평양시 낙랑구역으로 적었기에 그 지역을 대표하는 표시로 썼고, 군 치소(낙랑토성)의 실측 좌표는 이번에 확보하지 못했다. 낙랑군의 위치를 둘러싼 학설 대립은 출처가 여러 견해를 함께 소개한다. 위치 참고 표기: 낙랑군 관련 유물 출토지 일대 (평양시 낙랑구역)",
+        "coordinateClaimIds": []
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "군현 관부에서 현별 호구 장부를 기록하고 주변 지역과 물자가 오가는 모습",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-syj122-suseonsa-1205",
+      "eventId": "event-syj122-suseonsa-gilsangsa-1200-1205",
+      "title": "길상사 중수 완료와 경찬법회 (1205)",
+      "startYear": 1205,
+      "endYear": 1205,
+      "kind": "assembly",
+      "summary": "1200년(신종 3) 결사의 근거지를 송광산 길상사로 옮겼고, 1205년(희종 1) 9년 만에 공사를 마치고 약 120일 동안 경찬법회를 열었다. 절 이름은 뒤에 수선사로, 고려 말기에는 송광사로 바뀌었다.",
+      "dateClaimIds": [
+        "claim-scenes-122-early_localities-syj122-suseonsa-1205"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-early_localities-syj122-suseonsa-beophoe",
+        "claim-scenes-122-early_localities-syj122-suseonsa-place"
+      ],
+      "place": {
+        "label": "송광산 길상사",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.276104,
+        "lat": 35.00219,
+        "claimIds": [
+          "claim-scenes-122-early_localities-syj122-suseonsa-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj122-enwiki-songgwangsa"
+        ],
+        "coordinateNote": "이번에 내려받은 영어 위키백과 Songgwangsa 문서 머리의 표시 좌표(35.00219; 127.276104)다. 현재 순천 송광사 경내를 가리키는 표시점이며 1200년 당시 길상사 건물 배치가 아니다. 백과 항목이 길상사→수선사→송광사 개칭을 적어 같은 절로 이었다. 위치 참고 표기: 송광산 길상사 → 조계산 수선사 (지금의 순천 송광사)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-early_localities-syj122-suseonsa-rename"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-syj122-jinul",
+          "role": "결사를 이끌고 길상사로 옮겨 중수와 법회를 주관한 승려",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-early_localities-syj122-suseonsa-jinul",
+            "claim-scenes-122-early_localities-syj122-suseonsa-beophoe"
+          ],
+          "startYear": 1205,
+          "endYear": 1205
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "산속 절의 중수 공사와, 완공 뒤 넉 달 가까이 이어지는 법회에 승려·속인이 모여드는 장면",
+      "researchJob": "early_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-jepo-waegwan-1423-1510",
+      "eventId": "event-jl2-jepo-waegwan-1423",
+      "title": "제포 왜관 — 왜인 거주와 교역 (1423~1510)",
+      "startYear": 1423,
+      "endYear": 1510,
+      "kind": "court",
+      "summary": "1423년 부산포와 함께 제포가 개항되어 왜인의 거주가 허락되었다. 왜인은 성 밖 제한 구역인 왜관에 살았고, 상주 인구가 늘어 제포에만 500여 호에 이르렀다. 1510년 난이 평정된 뒤 삼포의 왜관은 폐쇄되었다.",
+      "visualActions": "왜관의 거주·교역. 주민과 수레, 상거래 장면.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-jepo-open-year",
+        "claim-scenes-122-joseon_localities-jl2-jepo-end-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-jepo-open-act",
+        "claim-scenes-122-joseon_localities-jl2-jepo-waegwan-zone",
+        "claim-scenes-122-joseon_localities-jl2-jepo-population",
+        "claim-scenes-122-joseon_localities-jl2-jepo-span"
+      ],
+      "place": {
+        "label": "제포(내이포) · 웅천",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.5951,
+        "lat": 35.2236,
+        "anchorPlaceId": "hgis-admin-145022",
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-jepo-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 표시. 백과사전은 제포를 '경상남도 창원시 진해구 웅천동에 있었던 포구'라고만 적고 좌표를 주지 않는다. existing-place-anchors.json의 '창원'(hgis-admin-145022) 구역 표시 중심을 지역 앵커로 쓴다. 웅천동 포구 지점이 아니라 같은 시 단위 표시점이며, 실제 제포는 이 점의 남동쪽 해안에 있었다. 위치 참고 표기: 제포(내이포) · 웅천 (지금의 창원시 진해구 웅천동)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-jl2-jepo-hangeo-waein",
+          "role": "제포 왜관에 상주한 왜인 거주민(왜인 측), 500여 호로 늘어남",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-jepo-participant",
+            "claim-scenes-122-joseon_localities-jl2-jepo-population"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-yeompo-waegwan-1426-1512",
+      "eventId": "event-jl2-yeompo-waegwan-1426",
+      "title": "염포 왜관 — 설치와 폐쇄 (1426~1512)",
+      "startYear": 1426,
+      "endYear": 1512,
+      "kind": "court",
+      "summary": "1426년 부산포·제포와 함께 삼포에 왜관을 설치할 때 염포에도 일본인의 거주가 허락되었다. 이 왜관은 1512년 임신약조의 체결로 폐쇄되었다.",
+      "visualActions": "왜관의 거주·교역. 주민과 수레, 상거래 장면.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-yeompo-year",
+        "claim-scenes-122-joseon_localities-jl2-yeompo-span",
+        "claim-scenes-122-joseon_localities-jl2-yeompo-end"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-yeompo-act"
+      ],
+      "place": {
+        "label": "염포",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.39765,
+        "lat": 35.53242,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-yeompo-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-wd-Q12607260"
+        ],
+        "coordinateNote": "백과사전은 염포를 '울산광역시 북구 염포동에 있었던 조선시대의 포구'라고 적고 좌표를 주지 않는다. 이번에 내려받은 위키데이터 Q12607260(염포동)의 좌표 위치(P625)를 동 단위 표시점으로 썼다. 울산 시·군 중심점 대신 해당 동의 표시점을 골랐으며, 조선시대 포구와 왜관 울타리의 위치가 아니다. 위치 참고 표기: 염포 (울산 북구 염포동)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-yeompo-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "polity-jl2-yeompo-waein",
+          "role": "염포 왜관에 거주가 허락된 일본인(왜인 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-yeompo-people"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-choebu-jeju-1488",
+      "eventId": "event-jl2-choebu-pyoryu-1488",
+      "title": "최부의 제주 출항과 표류 (1488)",
+      "startYear": 1488,
+      "endYear": 1488,
+      "kind": "naval",
+      "summary": "경차관으로 제주에 부임해 있던 최부가 부친상을 듣고 1488년 윤1월 3일 제주를 떠나 나주로 향하다 풍랑을 만나 바다를 표류하였다. 일행은 42인이었다.",
+      "visualActions": "제주 해안에서 배가 떠나고 곧 풍랑에 휘말리는 장면. 도착지는 조선 해안이 아니므로 항로를 그리지 않는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-choebu-year",
+        "claim-scenes-122-joseon_localities-jl2-choebu-date"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-choebu-act",
+        "claim-scenes-122-joseon_localities-jl2-choebu-party"
+      ],
+      "place": {
+        "label": "제주",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.5373,
+        "lat": 33.4198,
+        "anchorPlaceId": "hgis-admin-121085",
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-choebu-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 표시. 출처는 '제주를 떠나'라고만 적고 포구 이름과 좌표를 주지 않는다. existing-place-anchors.json의 '제주'(hgis-admin-121085) 구역 표시 중심을 지역 앵커로 썼다. 표류가 일어난 바다 위 지점이 아니다. 위치 참고 표기: 제주 (출항지, 포구 이름 미상)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-jl2-choe-bu",
+          "role": "제주 경차관으로 부임해 있다가 배를 타고 떠남(조선 관원)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-choebu-participant",
+            "claim-scenes-122-joseon_localities-jl2-choebu-role"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-choebu-act"
+          ]
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-iryunhaengsildo-gimsan-1518",
+      "eventId": "event-jl2-iryunhaengsildo-1518",
+      "title": "『이륜행실도』 초간 — 경상도 김산군 (1518)",
+      "startYear": 1518,
+      "endYear": 1518,
+      "kind": "publication",
+      "summary": "왕명으로 편찬된 『이륜행실도』 초간본이 1518년 경상도 김산군(지금의 김천)에서 간행되었다. 김안국이 경상감사로 나가게 되자 전 사역원정 조신이 찬집 책임을 맡아 간행을 보았다.",
+      "visualActions": "고을 관아 곁에서 목판을 새기고 찍어 책을 매는 지방 간행 작업을 보인다. 한성이 아니라 경상도 고을에서 이루어진 일이다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-iryun-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-iryun-act",
+        "claim-scenes-122-joseon_localities-jl2-iryun-order"
+      ],
+      "place": {
+        "label": "경상도 김산군",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.0878,
+        "lat": 36.0436,
+        "anchorPlaceId": "hgis-admin-157648",
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-iryun-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 표시. 출처가 밝힌 장소는 고을 단위 '경상도 김산군(지금의 김천)'이며, existing-place-anchors.json의 '김천'(hgis-admin-157648) 구역 표시 중심을 지역 앵커로 썼다. 판각·인출이 이루어진 건물 위치는 출처에 없다. 위치 참고 표기: 경상도 김산군 (지금의 김천)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-jl2-jo-sin",
+          "role": "찬집 책임을 맡아 간행을 본 전 사역원정(조선 관원)",
+          "side": "printer",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-iryun-josin"
+          ]
+        },
+        {
+          "entityId": "person-jl2-kim-anguk",
+          "role": "경상감사로 나가며 편찬을 넘긴 문신(조선 관원)",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-iryun-kimanguk"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-tongjeyeong-duryongpo-1603-1895",
+      "eventId": "event-jl2-tongjeyeong-duryongpo-1603",
+      "title": "삼도수군통제영 두룡포 설영과 존속 (1603~1895)",
+      "startYear": 1603,
+      "endYear": 1895,
+      "kind": "naval",
+      "summary": "1603년 제6대 통제사 이경준이 통제영 자리를 두룡포(지금의 통영시 문화동)로 정했다. 이 통제영은 1895년 각 도의 병영과 수영이 없어질 때까지 292년간 그대로 유지되었다.",
+      "visualActions": "조선 수군 지휘 관청의 운영. 배가 있었던 구체 장면이나 출항은 새로 만들지 않는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-tongje-year",
+        "claim-scenes-122-joseon_localities-jl2-tongje-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-tongje-act"
+      ],
+      "place": {
+        "label": "두룡포 통제영",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.42361111111,
+        "lat": 34.845833333333,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-tongje-place"
+        ],
+        "coordinateSourceIds": [
+          "src-wd-Q42152"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 위키데이터 Q42152(통영시)의 좌표 위치(P625) 값을 그대로 옮겼다. 백과사전이 통제영 자리를 '통영시 문화동'이라 밝힌 것과 같은 시 안의 표시점이며, 관아 터의 측량 좌표가 아니다. 원값이 WGS84 십진도이므로 변환하지 않았다. 위치 참고 표기: 두룡포 통제영 (통영시 문화동)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-tongje-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-jl2-yi-gyeongjun",
+          "role": "통제영 자리를 두룡포로 정한 제6대 통제사(조선 수군). 현장에서 터를 닦았다는 문장은 인용 한도로 발췌하지 못했다",
+          "side": "naval",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-tongje-person",
+            "claim-scenes-122-joseon_localities-jl2-tongje-act"
+          ],
+          "startYear": 1603,
+          "endYear": 1603
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-hamel-daejeong-1653",
+      "eventId": "event-jl2-hamel-jeju-1653",
+      "title": "스페르베르호 난파와 제주 대정현 상륙 (1653)",
+      "startYear": 1653,
+      "endYear": 1653,
+      "kind": "naval",
+      "summary": "1653년 네덜란드 무역선 스페르베르호가 풍랑으로 난파해 선원 64명 가운데 36명이 중상을 입은 채 제주도 대정현 차귀진 아래 대야수 연변에 상륙했다. 이들은 체포되어 13년 28일 동안 억류되었다.",
+      "visualActions": "부서진 배와 해안에 오른 사람들, 이들을 붙잡는 지방 군졸을 보인다. 배는 조선 배가 아니다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-hamel-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-hamel-act",
+        "claim-scenes-122-joseon_localities-jl2-hamel-ship",
+        "claim-scenes-122-joseon_localities-jl2-hamel-hold"
+      ],
+      "place": {
+        "label": "제주 대정현 차귀진 아래 대야수 연변",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.3456,
+        "lat": 33.2778,
+        "anchorPlaceId": "hgis-admin-113330",
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-hamel-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 표시. 출처는 '대정현 차귀진 아래 대야수 연변'이라는 옛 지명만 적고 좌표를 주지 않는다. existing-place-anchors.json의 '대정'(hgis-admin-113330) 구역 표시 중심을 지역 앵커로 썼다. 차귀진이나 대야수 해안의 실제 지점이 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-jl2-sperwer-crew-1653",
+          "role": "난파 뒤 해안에 오른 네덜란드 배의 생존 선원(표착민)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-hamel-crew",
+            "claim-scenes-122-joseon_localities-jl2-hamel-act"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-hamel-ship"
+          ]
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-daedongbeop-bi-sosa-1659",
+      "eventId": "event-jl2-daedongbeop-bi-1659",
+      "title": "대동법시행기념비 건립 — 평택 소사 (1659)",
+      "startYear": 1659,
+      "endYear": 1659,
+      "kind": "construction",
+      "summary": "1651년 영의정 김육이 충청도에 대동법을 시행하도록 상소해 허락을 얻어 실시하자, 왕이 이를 기념하는 비를 세우도록 했다. 백과사전 정보표는 비의 건립 시기를 1659년, 소재지를 경기도 평택시 소사동 140-1로 적었다.",
+      "visualActions": "삼남으로 오르내리는 길목에 귀부와 이수를 갖춘 큰 비를 세우는 작업을 보인다. 세금 제도의 시행을 알리는 표석이다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ddb-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ddb-act",
+        "claim-scenes-122-joseon_localities-jl2-ddb-1651"
+      ],
+      "place": {
+        "label": "평택 소사동",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.9575,
+        "lat": 37.0275,
+        "anchorPlaceId": "hgis-admin-46292",
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-ddb-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 표시. 출처는 소재지를 '경기도 평택시 소사동 140-1'로 적었을 뿐 좌표가 없고, 같은 글이 1970년에 원래 자리에서 북서쪽 200여m 지점으로 옮겼다고 밝힌다. existing-place-anchors.json의 '평택'(hgis-admin-46292) 구역 표시 중심을 지역 앵커로 썼으며 1659년 비가 선 지점이 아니다. 위치 참고 표기: 평택 소사동 (기념비 자리)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-kim-yuk-e0010098",
+          "role": "1651년 충청도 대동법 시행을 상소한 영의정(조선 조정), 비가 기리는 인물",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ddb-kimyuk"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-choryang-waegwan-1675-1678",
+      "eventId": "event-jl2-choryang-waegwan-1678",
+      "title": "초량 왜관 신축과 이전 — 부산 용두산 (1675~1678)",
+      "startYear": 1675,
+      "endYear": 1678,
+      "kind": "construction",
+      "summary": "초량 왜관 신축 공사는1675년에 시작해1678년4월 완공되었다. 두모포에서 용두산 일대로 옮기는 건설 사업이다.",
+      "visualActions": "왜관 건물 신축과 이전 준비. 입주자는 완공된1678년에만 표시한다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-choryang-year",
+        "claim-scenes-122-joseon_localities-jl2-choryang-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-choryang-act",
+        "claim-scenes-122-joseon_localities-jl2-choryang-yongdusan"
+      ],
+      "place": {
+        "label": "초량 왜관",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.03278,
+        "lat": 35.10056,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-choryang-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-yongdusan"
+        ],
+        "coordinateNote": "백과사전이 초량왜관을 '지금의 용두산 일대'로 적고 왜관이 용두산을 중심으로 동·서관으로 나뉘었다고 밝혔으므로, 이번에 내려받은 한국어 위키백과 '용두산공원' 문서 상단의 표시 좌표(35.10056; 129.03278)를 지역 표시점으로 썼다. 이는 현재 공원의 표시 좌표이고 1678년 왜관 담장 범위가 아니다. 위치 참고 표기: 초량 왜관 (부산 용두산 일대)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-choryang-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "polity-jl2-tsushima-residents-choryang",
+          "role": "동관에 상주하며 외교·무역을 담당한 대마도 사람들(일본 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-choryang-residents"
+          ],
+          "startYear": 1678,
+          "endYear": 1678
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-ganghwa-dondae-1679",
+      "eventId": "event-jl2-ganghwa-dondae-1679",
+      "title": "강화도 해안 돈대 축조 (1679)",
+      "startYear": 1679,
+      "endYear": 1679,
+      "kind": "construction",
+      "summary": "1679년 강화도의 해안방위를 위해 돈대가 축조되었다. 분오리돈대 기록은 강화유수 윤이제가 병조판서 김석주의 명령을 받아 경상도 군위의 어영군 8천여 명을 동원해 쌓았다고 '전한다'고 적었다. 강화도 해안에는 모두 53개 돈대가 설치되었다.",
+      "visualActions": "해안 여러 지점에서 돌을 쌓아 네모난 초소를 올리는 공사를 동시에 보인다. 한 지점이 아니라 섬 해안선을 따라 흩어진 공사다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-dondae-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-dondae-act",
+        "claim-scenes-122-joseon_localities-jl2-dondae-count"
+      ],
+      "place": {
+        "label": "강화도 해안",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.4428,
+        "lat": 37.7102,
+        "anchorPlaceId": "hgis-admin-557",
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-dondae-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 표시. 1679년 공사는 한 지점이 아니라 강화도 해안을 따라 흩어진 돈대들이고, 출처는 개별 돈대의 행정 주소(길상면 선두리, 화도면 사기리)만 준다. existing-place-anchors.json의 '강화'(hgis-admin-557) 구역 표시 중심을 지역 앵커로 썼으며 특정 돈대의 좌표가 아니다. 위치 참고 표기: 강화도 해안 (돈대 축조 구간)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-dondae-place2"
+        ],
+        "displayCoordinates": [
+          126.4428,
+          37.7102
+        ],
+        "displayScale": 0.33760588779154,
+        "displayBasis": "원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [
+        {
+          "entityId": "person-jl2-yun-ije",
+          "role": "돈대를 쌓았다고 전하는 강화유수(조선 관원)",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-dondae-builders"
+          ]
+        },
+        {
+          "entityId": "person-jl2-kim-seokju",
+          "role": "축조를 명령한 병조판서(조선 조정), 현장 행위 서술 없음",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-dondae-order"
+          ]
+        },
+        {
+          "entityId": "polity-jl2-eoyeonggun-ganghwa-1679",
+          "role": "동원되어 돈대를 쌓은 경상도 군위의 어영군(조선 군병)",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-dondae-troops"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-yakjojechalbi-1683",
+      "eventId": "event-jl2-yakjojechalbi-1683",
+      "title": "약조제찰비 — 왜관 운영 금제조항의 게시 (1683)",
+      "startYear": 1683,
+      "endYear": 1683,
+      "kind": "court",
+      "summary": "1683년 동래부사와 대마도주가 왜관 운영을 위한 금제조항 다섯 가지를 정하고, 이를 널리 알리려 비석을 세웠다. 조선측은 수문 안에, 일본측은 왜관 경계지역에 세웠다.",
+      "visualActions": "왜관 수문 안쪽과 경계에 각각 비석을 세우고 조항을 내거는 장면. 조선 관원과 대마도 측이 마주 서는 구도로 둔다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-yakjo-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-yakjo-act"
+      ],
+      "place": {
+        "label": "초량 왜관 수문 안팎",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.03278,
+        "lat": 35.10056,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-yakjo-set"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-yongdusan"
+        ],
+        "coordinateNote": "왜관과 같은 지역 표시점(용두산)을 쓴다. 비는 뒤에 옮겨져 현재 부산광역시시립박물관 경내에 있으므로, 현재 비의 위치는 1683년에 세운 자리가 아니다. 위치 참고 표기: 초량 왜관 수문 안팎 (부산 용두산 일대)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-choryang-coord"
+        ]
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-anyongbok-ulleungdo-1693",
+      "eventId": "event-jl2-anyongbok-1693",
+      "title": "울릉도 어로와 일본 어민과의 충돌 (1693)",
+      "startYear": 1693,
+      "endYear": 1693,
+      "kind": "naval",
+      "summary": "1693년 3월 안용복은 어부 40여 명과 울릉도에서 고기를 잡던 중이었다. 울릉도 연혁은 이 해에 안용복이 일본 어부와 충돌한 사건이 있었다고 적었다.",
+      "visualActions": "섬 연안에 댄 어선과 그물질하는 어부, 마주친 두 무리가 맞서는 장면을 보인다. 조선 어민과 일본 어민을 서로 다른 무리로 구분한다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ayb93-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ayb93-act",
+        "claim-scenes-122-joseon_localities-jl2-ayb93-clash"
+      ],
+      "place": {
+        "label": "울릉도",
+        "medium": "land",
+        "precision": "area",
+        "lon": 130.85638888889,
+        "lat": 37.501111111111,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-ayb93-place"
+        ],
+        "coordinateSourceIds": [
+          "src-wd-Q41172"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 위키데이터 Q41172(울릉도)의 좌표 위치(P625) 값을 그대로 옮겼다. 섬 전체를 대표하는 표시점이며 어로나 충돌이 일어난 바다 위 지점이 아니다.",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-ulleung-coord"
+        ],
+        "displayCoordinates": [
+          130.85638888889,
+          37.501111111111
+        ],
+        "displayScale": 0.22312110479015013,
+        "displayBasis": "원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [
+        {
+          "entityId": "person-jl2-an-yongbok",
+          "role": "울릉도에서 고기잡다 일본 어민과 충돌한 어부(조선 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ayb93-person",
+            "claim-scenes-122-joseon_localities-jl2-ayb93-act"
+          ]
+        },
+        {
+          "entityId": "polity-jl2-eobu-ulleung-1693",
+          "role": "함께 고기잡던 어부 40여 명(조선 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ayb93-fishers"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ayb93-act"
+          ]
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-hwayangdong-seowon-1695-1871",
+      "eventId": "event-jl2-hwayangdong-seowon-1695",
+      "title": "화양동서원 창건 — 괴산 화양동 (1695)",
+      "startYear": 1695,
+      "endYear": 1695,
+      "kind": "construction",
+      "summary": "1695년 송시열을 제향하기 위해 유생들이 힘을 합쳐 충청북도 괴산 청천면 화양동에 서원을 세웠다. 이 서원은 1871년 노론 사림의 강경한 반대에도 철폐되었다.",
+      "visualActions": "1695년의 서원 창건과 참여 유생.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-hys-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-hys-act"
+      ],
+      "place": {
+        "label": "화양동서원",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.8111139,
+        "lat": 36.6686921,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-hys-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-mandongmyo"
+        ],
+        "coordinateNote": "출처는 서원이 '충청북도 괴산군 청천면'에 있었다고만 적는다. 같은 화양동에 있는 만동묘의 표시 좌표(한국어 위키백과 '만동묘' 문서 상단 36.6686921; 127.8111139)를 이 골짜기의 지역 표시점으로 썼다. 서원 건물터의 측량 좌표가 아니며, 만동묘와 서원이 같은 지점이라는 뜻도 아니다. 위치 참고 표기: 괴산 청천면 화양동 (화양동서원)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-hwayang-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "polity-jl2-hwayang-yusaeng-1695",
+          "role": "서원을 세우는 데 힘을 합친 유생들(노론계 사림)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-hys-people"
+          ],
+          "startYear": 1695,
+          "endYear": 1695
+        },
+        {
+          "entityId": "person-encykorea-song-siyeol-e0030898",
+          "role": "서원이 제향한 인물(노론), 창건 당시 생존 인물이 아님",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-hys-songsiyeol"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-anyongbok-ulleungdo-1696",
+      "eventId": "event-jl2-anyongbok-1696",
+      "title": "안용복의 울릉도 도해와 일본 어민 추격 (1696)",
+      "startYear": 1696,
+      "endYear": 1696,
+      "kind": "naval",
+      "summary": "1696년 안용복은 조선 어민 10여 명과 함께 울릉도에 가서 어로 중이던 일본 어민을 송도(독도)까지 쫓아가 문책했다. 울릉도 연혁은 이 해에 그가 일본으로 건너가 울릉도가 조선의 영토임을 인정받았다고 적었다.",
+      "visualActions": "울릉도에서 배를 몰아 동쪽 바다로 일본 어선을 쫓는 장면. 1693년 사건과는 다른 해의 별개 행동으로 둔다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ayb96-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ayb96-act",
+        "claim-scenes-122-joseon_localities-jl2-ayb96-result"
+      ],
+      "place": {
+        "label": "울릉도",
+        "medium": "land",
+        "precision": "area",
+        "lon": 130.85638888889,
+        "lat": 37.501111111111,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-ayb96-place"
+        ],
+        "coordinateSourceIds": [
+          "src-wd-Q41172"
+        ],
+        "coordinateNote": "울릉도 표시점(위키데이터 Q41172 P625)을 그대로 쓴다. 추격이 이어진 송도(독도)까지의 항로나 바다 위 지점은 표시하지 않는다. 위치 참고 표기: 울릉도 (송도=독도 방향 추격의 기점)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-ulleung-coord"
+        ],
+        "displayCoordinates": [
+          130.85638888889,
+          37.501111111111
+        ],
+        "displayScale": 0.22312110479015013,
+        "displayBasis": "원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [
+        {
+          "entityId": "person-jl2-an-yongbok",
+          "role": "울릉도에 가서 일본 어민을 추격·문책한 인물(조선 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ayb96-person",
+            "claim-scenes-122-joseon_localities-jl2-ayb96-act"
+          ]
+        },
+        {
+          "entityId": "polity-jl2-eomin-ulleung-1696",
+          "role": "함께 울릉도에 간 조선 어민 10여 명(조선 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ayb96-fishers"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ayb96-act"
+          ]
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-mandongmyo-1703",
+      "eventId": "event-jl2-mandongmyo-1703",
+      "title": "만동묘 창건 — 괴산 화양동 (1703)",
+      "startYear": 1703,
+      "endYear": 1703,
+      "kind": "construction",
+      "summary": "1703년 권상하 등이 부근 유생들의 협력을 얻어 화양동에 만동묘를 창건했다.",
+      "visualActions": "1703년 창건.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-mandong-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-mandong-act"
+      ],
+      "place": {
+        "label": "만동묘",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.8111139,
+        "lat": 36.6686921,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-mandong-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-mandongmyo"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '만동묘' 문서 상단의 표시 좌표(36.6686921; 127.8111139)를 그대로 옮겼다. 현재 만동묘 자리를 가리키는 표시점이며, 백과사전이 밝힌 소재지(괴산군 청천면 화양리)와 같은 지역이다. 위치 참고 표기: 괴산 청천면 화양동 (만동묘)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-hwayang-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-jl2-gwon-sangha",
+          "role": "만동묘를 창건한 송시열 문인(노론계 유림)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-mandong-gwon"
+          ],
+          "startYear": 1703,
+          "endYear": 1703
+        },
+        {
+          "entityId": "person-jl2-jeong-ho",
+          "role": "창건에 함께한 인물(노론계)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-mandong-jeongho"
+          ],
+          "startYear": 1703,
+          "endYear": 1703
+        },
+        {
+          "entityId": "person-jl2-min-jeongjung",
+          "role": "창건에 함께한 인물(노론계)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-mandong-min"
+          ],
+          "startYear": 1703,
+          "endYear": 1703
+        },
+        {
+          "entityId": "person-jl2-yi-seonjik",
+          "role": "창건에 함께한 인물(노론계)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-mandong-yi"
+          ],
+          "startYear": 1703,
+          "endYear": 1703
+        },
+        {
+          "entityId": "polity-jl2-mandong-yusaeng-1703",
+          "role": "창건에 협력한 부근 유생들(지역 사림)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-mandong-yusaeng"
+          ],
+          "startYear": 1703,
+          "endYear": 1703
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-bukhansanseong-1711",
+      "eventId": "event-jl2-bukhansanseong-1711",
+      "title": "북한산성 축성 — 승려 부역 (1711)",
+      "startYear": 1711,
+      "endYear": 1711,
+      "kind": "construction",
+      "summary": "한양 도성을 지키기 위해 1711년 북한산성을 쌓았다. 공사는 그해 4월에 착수해 9월에 끝났고, 전국의 승려들이 동원되어 성능의 감독 아래 부역했다. 완공 뒤에는 의승군이 성을 지켰다.",
+      "visualActions": "능선을 따라 돌을 나르고 성벽을 쌓는 승려 부역 장면과, 완공 뒤 성문을 지키는 의승군을 보인다. 도성 안이 아니라 북한산 능선 위의 공사다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-bhs-year",
+        "claim-scenes-122-joseon_localities-jl2-bhs-months"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-bhs-act",
+        "claim-scenes-122-joseon_localities-jl2-bhs-guard"
+      ],
+      "place": {
+        "label": "북한산성",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.973222,
+        "lat": 37.647056,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-bhs-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-bukhansanseong"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '북한산성' 문서 상단의 표시 좌표(37.647056; 126.973222)를 그대로 옮겼다. 둘레 12.7km 성곽 전체가 아니라 하나의 표시점이며, 백과사전이 밝힌 위치(고양시와 서울 경계의 북한산 능선)와 같은 지역이다. 위치 참고 표기: 북한산성 (북한산 능선)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-bhs-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-jl2-seongneung",
+          "role": "축성 부역을 감독한 승려(조선 승군)",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-bhs-seongneung"
+          ]
+        },
+        {
+          "entityId": "polity-jl2-seungryo-bukhansanseong-1711",
+          "role": "동원되어 성을 쌓은 전국의 승려(조선 승군)",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-bhs-monks"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-bunwonri-1752-1883",
+      "eventId": "event-jl2-bunwonri-1752",
+      "title": "분원리 관요 — 백자 제작 (1752~1883)",
+      "startYear": 1752,
+      "endYear": 1883,
+      "kind": "construction",
+      "summary": "관영 사기제조장인 분원이 1752년 분원리로 옮겨졌고, 이곳은 1752년부터 1883년 분원이 민영화되기까지 제작·운영되었다. 오늘날 남은 백자와 청화백자 대부분이 여기서 만들어졌다.",
+      "visualActions": "백자 관요의 제작·운영: 가마와 도자기 작업대, 옮겨 쌓는 백자.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-bunwon-year",
+        "claim-scenes-122-joseon_localities-jl2-bunwon-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-bunwon-act",
+        "claim-scenes-122-joseon_localities-jl2-bunwon-work",
+        "claim-scenes-122-joseon_localities-jl2-bunwon-official"
+      ],
+      "place": {
+        "label": "광주 분원리 관요",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.31953,
+        "lat": 37.49979,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-bunwon-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-wd-Q13999938"
+        ],
+        "coordinateNote": "백과사전은 분원이 고정된 자리를 '경기도 광주군 남종면 분원리'라고만 적고 좌표를 주지 않는다. 이번에 내려받은 위키데이터 Q13999938(남종면)의 좌표 위치(P625)를 면 단위 표시점으로 썼다. 분원리 가마터의 발굴 좌표가 아니며, 시 단위 중심점 대신 해당 면의 표시점을 골랐다. 위치 참고 표기: 경기 광주 남종면 분원리 일대",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-bunwon-coord"
+        ]
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-oegyujanggak-1782",
+      "eventId": "event-jl2-oegyujanggak-1782",
+      "title": "외규장각 설치 — 강화도 (1782)",
+      "startYear": 1782,
+      "endYear": 1782,
+      "kind": "construction",
+      "summary": "1782년 2월 정조가 왕실 관련 서적을 보관할 목적으로 강화도에 외규장각을 설치했다. 조선시대에 강화 고려궁지 자리에 건물과 외규장각 등이 세워졌다.",
+      "visualActions": "강화 관청 구역 안에 서고 건물을 세우고 궤에 담긴 책을 옮겨 넣는 장면. 한성의 규장각과는 별개의 서고임을 보인다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ogj-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ogj-act"
+      ],
+      "place": {
+        "label": "강화 외규장각",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.48472,
+        "lat": 37.75111,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-ogj-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-goryeogungji"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '고려궁지' 문서 상단의 표시 좌표(37.75111; 126.48472)를 그대로 옮겼다. 백과사전이 '조선시대에 이 자리에 외규장각 등이 건립되었다'고 밝힌 고려궁지의 표시점이며, 1782년 외규장각 건물 자체의 측량 좌표는 아니다. 위치 참고 표기: 강화 외규장각 (고려궁지 자리)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-ogj-address",
+          "claim-scenes-122-joseon_localities-jl2-ogj-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-jeongjo-e0050867",
+          "role": "외규장각 설치를 명한 국왕(조선 조정), 강화 현장 행위 서술 없음",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ogj-jeongjo"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-sinhae-jinsan-1791",
+      "eventId": "event-jl2-sinhae-jinsan-1791",
+      "title": "신해박해(진산사건) — 전라도 진산 (1791)",
+      "startYear": 1791,
+      "endYear": 1791,
+      "kind": "court",
+      "summary": "1791년 전라도 진산에서 조상 제사 문제로 박해가 일어났다. 진산에 살던 선비 윤지충과 그의 외종형 권상연이 조상 제사를 폐지하고 신주를 불태웠다.",
+      "visualActions": "고을 마을집에서 신주를 태우는 일과, 이를 문제 삼아 관에서 사람을 잡아들이는 움직임을 보인다. 처형 장면은 이번 발췌 범위 밖이므로 넣지 않는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-sinhae-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-sinhae-act",
+        "claim-scenes-122-joseon_localities-jl2-sinhae-cause"
+      ],
+      "place": {
+        "label": "전라도 진산",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.4341,
+        "lat": 36.1792,
+        "anchorPlaceId": "hgis-admin-95337",
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-sinhae-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "지역 기준 표시. 출처가 밝힌 장소는 고을 단위 '전라도 진산'이며, existing-place-anchors.json의 '진산'(hgis-admin-95337) 구역 표시 중심을 지역 앵커로 썼다. 윤지충의 집이나 관아의 위치가 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-jl2-yun-jichung",
+          "role": "제사를 폐지하고 신주를 불태운 진산의 선비(천주교 신자 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-sinhae-yun",
+            "claim-scenes-122-joseon_localities-jl2-sinhae-act"
+          ]
+        },
+        {
+          "entityId": "person-jl2-gwon-sangyeon",
+          "role": "함께 신주를 불태운 외종형(천주교 신자 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-sinhae-gwon",
+            "claim-scenes-122-joseon_localities-jl2-sinhae-act"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-hwaseong-jinchan-1795",
+      "eventId": "event-jl2-bongsudang-jinchan-1795",
+      "title": "화성행궁 회갑 진연 — 봉수당 진찬 (1795)",
+      "startYear": 1795,
+      "endYear": 1795,
+      "kind": "assembly",
+      "summary": "1795년 윤2월 9일 정조가 회갑을 맞은 혜경궁 홍씨를 모시고 현륭원과 화성행궁에 행차해 진연을 올렸다. 행사는 윤2월 16일까지 화성에서 이어졌고, 의궤 도식에 「봉수당진찬도」가 실렸다.",
+      "visualActions": "행궁 봉수당 앞뜰에 자리를 펴고 상을 올리는 잔치와 악공·여령의 정재, 행렬을 보인다. 축성 공사 장면이 아니라 잔치 장면이다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-bs-year",
+        "claim-scenes-122-joseon_localities-jl2-bs-days"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-bs-act",
+        "claim-scenes-122-joseon_localities-jl2-bs-uigwe-figure"
+      ],
+      "place": {
+        "label": "수원 화성행궁",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.00833,
+        "lat": 37.27222,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-bs-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-suwon-hwaseong"
+        ],
+        "coordinateNote": "출처는 행사 장소를 '화성(지금의 수원성곽)'과 화성행궁으로 적고 좌표를 주지 않는다. 이번에 내려받은 한국어 위키백과 '수원 화성' 문서 상단의 표시 좌표(37.27222; 127.00833)를 지역 표시점으로 썼다. 성곽 전체의 표시점이며 행궁 봉수당 건물의 좌표가 아니다. 위치 참고 표기: 수원 화성행궁 (봉수당)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-bs-address",
+          "claim-scenes-122-joseon_localities-jl2-bs-bongsudang",
+          "claim-scenes-122-joseon_localities-jl2-bs-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-jeongjo-e0050867",
+          "role": "혜경궁을 모시고 행차해 진연을 올린 국왕(조선 왕실)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-bs-jeongjo",
+            "claim-scenes-122-joseon_localities-jl2-bs-act"
+          ]
+        },
+        {
+          "entityId": "person-jl2-hyegyeonggung-hong",
+          "role": "회갑을 맞아 진연을 받은 당사자(조선 왕실)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-bs-hong",
+            "claim-scenes-122-joseon_localities-jl2-bs-act"
+          ]
+        },
+        {
+          "entityId": "person-jl2-chae-jegong",
+          "role": "행차를 준비한 정리소 총리대신(조선 조정), 현장 행위 서술 없음",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-bs-chae"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-dasanchodang-1808-1818",
+      "eventId": "event-jl2-dasanchodang-1808",
+      "title": "다산초당의 저술 — 강진 (1808~1818)",
+      "startYear": 1808,
+      "endYear": 1818,
+      "kind": "publication",
+      "summary": "강진에 유배 중이던 정약용이 1808년 윤규로의 산정이던 초당으로 처소를 옮겨, 1818년 귀양에서 풀릴 때까지 10여 년간 여기서 지내며 《목민심서》 등을 저술했다.",
+      "visualActions": "산기슭 초당에서 책을 쓰고 제자와 강학하는 모습을 보인다. 유배지 전체가 아니라 이 초당 한 곳의 활동이다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-dasan-year",
+        "claim-scenes-122-joseon_localities-jl2-dasan-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-dasan-act"
+      ],
+      "place": {
+        "label": "강진 다산초당",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.74472,
+        "lat": 34.58,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-dasan-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-dasanchodang"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '다산초당' 문서 상단의 표시 좌표(34.58000; 126.74472)를 그대로 옮겼다. 백과사전이 밝힌 소재지(전남 강진군 도암면 만덕리 산103-2)와 같은 곳을 가리키지만, 현재 복원된 건물의 표시점이며 1808년 건물의 측량 좌표가 아니다. 위치 참고 표기: 강진 다산초당 (도암면 만덕리)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-dasan-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-jeong-yagyong-e0050549",
+          "role": "초당에 머물며 《목민심서》 등을 저술한 유배인(조선 문신)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-dasan-person",
+            "claim-scenes-122-joseon_localities-jl2-dasan-act"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-oegyujanggak-fire-1866",
+      "eventId": "event-jl2-oegyujanggak-fire-1866",
+      "title": "외규장각 소실과 의궤 약탈 (1866)",
+      "startYear": 1866,
+      "endYear": 1866,
+      "kind": "fire",
+      "summary": "병인양요 때 프랑스 군대의 방화로 강화 외규장각 전각이 불타고, 의궤를 비롯한 340여 권의 도서가 약탈되었다.",
+      "visualActions": "서고 건물이 불타는 가운데 책 궤짝을 실어 나가는 장면. 같은 해 강화의 다른 전투 장면과 겹치지 않게 서고 한 곳으로 한정한다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ogjf-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-ogjf-fire",
+        "claim-scenes-122-joseon_localities-jl2-ogjf-loot"
+      ],
+      "place": {
+        "label": "강화 외규장각",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.48472,
+        "lat": 37.75111,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-ogjf-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-goryeogungji"
+        ],
+        "coordinateNote": "1782년 설치 장면과 같은 표시점(고려궁지)을 쓴다. 불탄 전각의 정확한 위치를 측량한 값이 아니다. 위치 참고 표기: 강화 외규장각 (고려궁지 자리)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-ogj-coord"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "polity-jl2-french-force-1866",
+          "role": "전각에 불을 지르고 도서를 약탈한 프랑스 군대(침입 측)",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ogjf-french",
+            "claim-scenes-122-joseon_localities-jl2-ogjf-fire"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ogjf-fire"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-joseon_localities-jl2-ogjf-fire",
+            "claim-scenes-122-joseon_localities-jl2-ogjf-loot"
+          ]
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-jl2-mandongmyo-1844",
+      "eventId": "event-jl2-mandongmyo-1703",
+      "title": "만동묘 관찰사의 봄·가을 제향 (1844)",
+      "startYear": 1844,
+      "endYear": 1844,
+      "kind": "assembly",
+      "summary": "1844년에 관찰사가 봄과 가을 한 번씩 정식 제사를 지내게 하였다.",
+      "visualActions": "1844년 제향.1703년 창건 인물을 배치하지 않는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-mandong-rite-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-joseon_localities-jl2-mandong-rite"
+      ],
+      "place": {
+        "label": "만동묘",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.8111139,
+        "lat": 36.6686921,
+        "claimIds": [
+          "claim-scenes-122-joseon_localities-jl2-mandong-place"
+        ],
+        "coordinateSourceIds": [
+          "src-jl2-kowiki-mandongmyo"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '만동묘' 문서 상단의 표시 좌표(36.6686921; 127.8111139)를 그대로 옮겼다. 현재 만동묘 자리를 가리키는 표시점이며, 백과사전이 밝힌 소재지(괴산군 청천면 화양리)와 같은 지역이다. 위치 참고 표기: 괴산 청천면 화양동 (만동묘)",
+        "coordinateClaimIds": [
+          "claim-scenes-122-joseon_localities-jl2-hwayang-coord"
+        ]
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "joseon_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-busan-port-1876",
+      "eventId": "event-mod-busan-port-opening-1876",
+      "title": "부산항 개항과 축항 공사 (1876)",
+      "startYear": 1876,
+      "endYear": 1876,
+      "kind": "construction",
+      "summary": "출처는 부산항을 1876년에 '부산포'라는 이름으로 개항한 우리나라 최초의 무역항으로 적는다. 개항 뒤 일본의 상륙항으로서 축항 공사가 실시되었고, 1912년 제1부두와 1927년 제2부두가 건설되었다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-busanport-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-busanport-action",
+        "claim-scenes-122-modern_localities-mod-busanport-piers"
+      ],
+      "place": {
+        "label": "부산항",
+        "medium": "sea",
+        "precision": "area",
+        "lon": 129.07889,
+        "lat": 35.10389,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-busanport-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-busanhang"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '부산항' 문서(raw/kowiki-busanhang.html)의 geo 표시값 '35.10389; 129.07889'을 그대로 옮긴 것이다. 이 점은 현재의 부산항을 가리키는 대표점이며, 1876년 개항 당시 부산포의 정확한 접안 지점이나 해관 위치를 뜻하지 않는다. 항만 전체를 대표하는 표시점이므로 precision 은 area 로 둔다. 공통 좌표 등록부의 rc-busan-city(부산광역시 대표점)와는 다른 점이다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-busanport-trade",
+            "claim-scenes-122-modern_localities-mod-busanport-action"
+          ]
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "부두를 쌓는 축항 공사와, 무역항·상륙항으로 드나드는 배의 접안을 보여준다. 출처가 밝히지 않은 선박 수·화물 종류·사람 수는 그리지 않는다.",
+      "note": "이 장면에는 출처가 이름을 밝힌 현장 인물이 없다. 축항 공사의 시행 주체를 개인으로 특정하지 않았다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-wonsanhaksa-1883",
+      "eventId": "event-mod-wonsanhaksa-1883",
+      "title": "원산학사 설립과 운영 (1883~1894)",
+      "startYear": 1883,
+      "endYear": 1894,
+      "kind": "court",
+      "summary": "1883년(고종 20) 함경남도 원산에 관민이 합심하여 원산학사를 세웠다. 출처는 이 학교를 민간이 세운 중등학교로 적고, 1894년 갑오경장 무렵 소학교와 중학교의 기능이 분화되었다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-wonsanhaksa-year",
+        "claim-scenes-122-modern_localities-mod-wonsanhaksa-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-wonsanhaksa-action"
+      ],
+      "place": {
+        "label": "원산",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-69663",
+        "lon": 127.3743182825001,
+        "lat": 39.207965066500066,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-wonsanhaksa-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 설립지를 '함경남도 원산'까지만 적는다. 좌표는 이 작업에 전달된 existing-place-anchors.json 의 '원산' 앵커(hgis-admin-69663, 국편 1910~1945 행정구역 경계 자료의 범위 중심)를 그대로 쓴 옛 행정구역 표시 중심점이며, 학교 건물 지점이 아니다. 한국어 위키백과 '원산시' 문서에는 좌표 표시가 없어 이번에 별도 좌표를 얻지 못했다. 위치 참고 표기: 원산 (함경남도)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "group-mod-wonsanhaksa-gwanmin-1883",
+          "role": "학교 설립 기금을 모아 원산학사를 세운 덕원·원산 관민",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-wonsanhaksa-gwanmin"
+          ],
+          "startYear": 1883,
+          "endYear": 1883
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "학교 운영과 교육. 설립 관민은1883년에만 배치.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-wonsan-haegwan-1883",
+      "eventId": "event-mod-wonsan-haegwan-1883",
+      "title": "원산해관 창설과 관세 징수 (1883~1925)",
+      "startYear": 1883,
+      "endYear": 1925,
+      "kind": "assembly",
+      "summary": "1883년 6월 17일 함경도 원산에 근대적 관세 징수 기구인 원산해관이 창설되었고, 실제 관세징수 업무는 그해 11월 3일부터 시작되었다. 출처는 이 기구가 1925년 원산세관지서로 격하될 때까지 이어졌다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-haegwan-year",
+        "claim-scenes-122-modern_localities-mod-haegwan-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-haegwan-action"
+      ],
+      "place": {
+        "label": "원산 · 원산해관",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-69663",
+        "lon": 127.3743182825001,
+        "lat": 39.207965066500066,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-haegwan-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 '함경도 원산'까지만 적고 해관 청사 지점을 밝히지 않는다. 좌표는 전달받은 existing-place-anchors.json 의 '원산' 앵커(hgis-admin-69663) 표시 중심점이다. 개항장 해관의 실제 위치가 아니다. 위치 참고 표기: 원산 (함경남도) · 원산해관",
+        "coordinateClaimIds": []
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "개항장 해관에서 관세를 징수하고 화물을 살피는 사무 활동. 배의 출입은 이 인용에 없어 표시하지 않는다.",
+      "note": "세무사·감리 등 인물명은 인용 낱말 수 제한으로 넣지 못했다. 문평리(place-mod-deokwon-munpyeong)는 1929년 원산총파업 장면에서 쓴다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-dongnip-sinmun-1896",
+      "eventId": "event-mod-dongnip-sinmun-1896",
+      "title": "『독립신문』 창간과 발행 (1896~1899)",
+      "startYear": 1896,
+      "endYear": 1899,
+      "kind": "publication",
+      "summary": "서재필이 정동의 정부 소유 건물을 사옥으로 빌려 독립신문사를 세우고 1896년 4월 7일 창간호를 냈다. 그는 사장 겸 주필이었다. 출처는 이 신문이 1899년 12월 4일자를 끝으로 종간했다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-dongnip-year",
+        "claim-scenes-122-modern_localities-mod-dongnip-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-dongnip-action"
+      ],
+      "place": {
+        "label": "서울 정동",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.97805555556,
+        "lat": 37.566666666667,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-dongnip-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-seoul"
+        ],
+        "coordinateNote": "출처는 사옥을 '정동에 있는 정부 소유의 건물'까지만 적어 지점을 특정할 수 없다. 좌표는 이번에 내려받은 한국어 위키백과 '서울특별시' 문서(raw/kowiki-seoul.html)의 지도 틀 중심값(data-lat 37.566666666667, data-lon 126.97805555556)이며 서울 도심을 대표하는 표시점이다. 한국어 위키백과 '정동 (서울특별시)' 문서에는 좌표 표시가 없어 동 단위 좌표를 얻지 못했다. 위치 참고 표기: 서울 정동 (독립신문사 사옥)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-mod-seo-jaepil",
+          "role": "사장 겸 주필로 창간호를 낸 사람",
+          "side": "printer",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-dongnip-seojaepil"
+          ],
+          "startYear": 1896,
+          "endYear": 1898
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "빌린 사옥에서 신문을 짜고 찍어 내는 인쇄·발행 작업. 인쇄기 대수나 발행 부수는 이 장면의 인용에 없어 표시하지 않는다.",
+      "note": "조필 주시경 등 다른 인물은 인용 낱말 수 제한으로 넣지 못했다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-gyeongin-1899",
+      "eventId": "event-mod-gyeongin-1899",
+      "title": "경인선 노량진~인천 간 첫 영업 개시 (1899)",
+      "startYear": 1899,
+      "endYear": 1899,
+      "kind": "construction",
+      "summary": "출처는 경인선을 우리나라 최초의 철도로 적고, 1899년 9월 18일 노량진~인천 간에서 최초의 영업을 개시했다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-gyeongin1899-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-gyeongin1899-action",
+        "claim-scenes-122-modern_localities-mod-gyeongin1899-first"
+      ],
+      "place": {
+        "label": "노량진~인천 구간",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.61667,
+        "lat": 37.47583,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-gyeongin1899-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-incheon-station"
+        ],
+        "coordinateNote": "출처가 밝힌 것은 '노량진~인천'이라는 구간뿐이라 한 점으로 줄일 수 없다. 표시점은 이번에 내려받은 한국어 위키백과 '인천역' 문서(raw/kowiki-incheon-station.html)의 geo 값 '37.47583; 126.61667'이며 현재의 인천역 지점이다. 1899년 임시영업 당시 종점 역사의 위치가 이 점과 같다고 단정하지 않는다. 구간 전체를 대표하는 표시이므로 precision 은 area 로 둔다. 위치 참고 표기: 노량진~인천 구간 (경인선)",
+        "coordinateClaimIds": []
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "노량진과 인천 사이를 오가는 첫 열차 운행. 기관차 수나 객차 수는 이 장면의 인용에 없어 표시하지 않는다.",
+      "note": "출처가 이 날 현장 인물을 이름으로 밝히지 않아 참가자를 넣지 않았다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-gyeongin-1900",
+      "eventId": "event-mod-gyeongin-1900",
+      "title": "경인선 전 구간 개통식 (1900)",
+      "startYear": 1900,
+      "endYear": 1900,
+      "kind": "assembly",
+      "summary": "1900년 11월 12일 경성역 인근에서 경인선 전 구간의 개통식이 거행되었다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-gyeongin1900-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-gyeongin1900-action"
+      ],
+      "place": {
+        "label": "경성역 인근",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.97805555556,
+        "lat": 37.566666666667,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-gyeongin1900-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-seoul"
+        ],
+        "coordinateNote": "출처는 '경성역 인근'까지만 적는다. 같은 경인선 항목은 이 경성역을 1905년 서대문역으로 개칭했다고 적는 반면 같은 사전의 서울역 항목은 1905년 남대문역 개칭으로 적어 두 서술이 어긋난다. 그래서 현재의 서울역 좌표를 쓰지 않았다. 표시점은 내려받은 한국어 위키백과 '서울특별시' 문서의 지도 틀 중심값(37.566666666667, 126.97805555556)으로 서울 도심 대표점이며 개통식장 지점이 아니다. 위치 참고 표기: 경성역 인근 (1900년 개통식 장소)",
+        "coordinateClaimIds": []
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "철도 개통식에 모인 사람들과 정차한 열차. 참석자 수와 식순은 이 인용에 없어 표시하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-gongjinhoe-1915",
+      "eventId": "event-mod-gongjinhoe-1915",
+      "title": "조선물산공진회 — 경복궁 (1915)",
+      "startYear": 1915,
+      "endYear": 1915,
+      "kind": "assembly",
+      "summary": "1915년 9월 11일부터 10월 30일까지 일제가 경복궁의 일부 건물을 훼손하거나 수축하고 전국의 물품을 모아 전시한 박람회를 열었다. 시정 5년을 기념한다는 명분이었고, 전국의 농민들까지 강제 동원해 관람하게 했다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-gongjinhoe-year",
+        "claim-scenes-122-modern_localities-mod-gongjinhoe-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-gongjinhoe-action",
+        "claim-scenes-122-modern_localities-mod-gongjinhoe-pretext"
+      ],
+      "place": {
+        "label": "경복궁",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.97722,
+        "lat": 37.57861,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-gongjinhoe-place"
+        ],
+        "coordinateSourceIds": [
+          "src-scenes-122-modern_localities-kowiki-gyeongbokgung"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '경복궁' 문서(raw/kowiki-gyeongbokgung.html)의 geo 값 '37.57861; 126.97722'이다. 궁역 전체를 대표하는 지점이며 공진회 전시관이 섰던 자리를 따로 가리키지 않는다. 공통 좌표 등록부의 rc-gyeongbokgung(126.9767996, 37.5798841)과 같은 대상의 다른 표기값이다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "polity-mod-ilje-gongjinhoe-1915",
+          "role": "경복궁 건물을 훼손·수축하고 박람회를 연 식민 당국 (출처 표기: 일제)",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-gongjinhoe-ilje"
+          ]
+        },
+        {
+          "entityId": "group-mod-gongjinhoe-farmers-1915",
+          "role": "강제 동원되어 관람한 전국의 농민들",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-gongjinhoe-farmers"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "궁 안에 전시장을 차리고 물품을 늘어놓은 박람회장과 그리로 몰려드는 관람 인파. 훼손·수축된 건물의 이름과 수는 인용에 없으므로 특정 건물을 허무는 모습으로 그리지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-hyeongpyeongsa-1923",
+      "eventId": "event-mod-hyeongpyeongsa-1923",
+      "title": "형평사 창립총회 — 진주 대안동 (1923)",
+      "startYear": 1923,
+      "endYear": 1923,
+      "kind": "assembly",
+      "summary": "1923년 4월 25일 진주에서 백정 신분으로 자산가가 된 이학찬이 신현수·강상호·천석구·장지필 등과 진주 대안동에서 회원 80여 명과 더불어 창립총회를 열어 형평사를 설립했다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-hyeongpyeong-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-hyeongpyeong-action"
+      ],
+      "place": {
+        "label": "진주 대안동(大安洞)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.083,
+        "lat": 35.2,
+        "anchorPlaceId": "hgis-admin-145018",
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-hyeongpyeong-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-jinju"
+        ],
+        "coordinateNote": "출처는 '진주 대안동'까지 적지만 총회가 열린 건물을 밝히지 않는다. 좌표는 이번에 내려받은 한국어 위키백과 '진주시' 문서(raw/kowiki-jinju.html)의 geo 값 '35.200; 128.083'으로 진주시를 대표하는 점이며, 대안동이라는 동 범위를 따로 표시한 좌표가 아니다. 전달받은 앵커 hgis-admin-145018(진주)도 같은 지역을 가리켜 함께 적어 둔다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-mod-lee-hakchan",
+          "role": "교육 차별에 분개해 창립을 이끈 백정 신분의 자산가",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-hyeongpyeong-leehakchan",
+            "claim-scenes-122-modern_localities-mod-hyeongpyeong-action"
+          ]
+        },
+        {
+          "entityId": "person-mod-sin-hyeonsu",
+          "role": "창립총회에 함께한 발기인 (출처 표기: 양반)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-hyeongpyeong-sinhyeonsu"
+          ]
+        },
+        {
+          "entityId": "person-mod-kang-sangho",
+          "role": "창립총회에 함께한 발기인 (출처 표기: 양반)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-hyeongpyeong-kangsangho"
+          ]
+        },
+        {
+          "entityId": "person-mod-cheon-seokgu",
+          "role": "창립총회에 함께한 발기인 (출처 표기: 양반)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-hyeongpyeong-cheonseokgu"
+          ]
+        },
+        {
+          "entityId": "person-mod-jang-jipil",
+          "role": "창립총회에 함께한 발기인 (출처 표기: 백정)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-hyeongpyeong-jangjipil"
+          ]
+        },
+        {
+          "entityId": "group-mod-hyeongpyeongsa-members-1923",
+          "role": "창립총회에 모인 회원 80여 명",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-hyeongpyeong-members"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "한 건물에 80여 명이 모여 여는 창립총회. 취지서 낭독과 사칙 채택 같은 절차는 인용 낱말 수 제한으로 출처를 붙이지 못해 따로 표시하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-seoul-station-1925",
+      "eventId": "event-mod-seoul-station-1925",
+      "title": "경성역사 준공 (1925)",
+      "startYear": 1925,
+      "endYear": 1925,
+      "kind": "construction",
+      "summary": "1925년 9월 30일 서울역사가 준공되었다. 출처는 시공을 조선호텔을 지은 아오미 하지메가 맡았다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-seoulstation-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-seoulstation-action"
+      ],
+      "place": {
+        "label": "경성역",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.97083,
+        "lat": 37.55472,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-seoulstation-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-seoulyeok"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '서울역' 문서(raw/kowiki-seoulyeok.html)의 geo 값 '37.55472; 126.97083'이다. 이 값이 가리키는 것은 현재의 서울역이며, 1925년 준공된 역사 건물이 이 점과 정확히 같은 자리인지는 이 조사의 출처로 따로 확인하지 못했다. 위치 참고 표기: 서울역 (1925년 준공한 역사)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-mod-aomi-hajime",
+          "role": "역사 시공을 맡은 시공자",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-seoulstation-builder"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "역사 건물을 올리는 공사와 준공한 역사. 돔·타일 같은 외관 묘사는 인용 낱말 수 제한으로 출처를 붙이지 못해 표시하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-seoul-station-ktx-2004",
+      "eventId": "event-mod-seoul-station-ktx-2004",
+      "title": "서울역 KTX 개통과 통합민자역사 (2004)",
+      "startYear": 2004,
+      "endYear": 2004,
+      "kind": "assembly",
+      "summary": "출처는 서울역이 2004년 4월 1일 KTX 열차 개통과 함께 서울통합민자역사로 새롭게 단장했다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-ktx-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-ktx-action"
+      ],
+      "place": {
+        "label": "서울역",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.97083,
+        "lat": 37.55472,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-ktx-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-seoulyeok"
+        ],
+        "coordinateNote": "좌표는 내려받은 한국어 위키백과 '서울역' 문서의 geo 값 '37.55472; 126.97083'으로 현재의 서울역 지점이다. 2004년 단장한 역사와 같은 자리를 가리킨다고 보되, 승강장·역사 건물의 개별 위치를 나누지는 않는다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "새로 단장한 역사와 고속열차의 출발·도착, 승강장을 오가는 승객. 이용객 수치는 다른 해의 통계라 이 장면에 쓰지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-610-manse-1926",
+      "eventId": "event-mod-610-manse-1926",
+      "title": "6·10만세운동 — 종로 3가 단성사 앞 (1926)",
+      "startYear": 1926,
+      "endYear": 1926,
+      "kind": "assembly",
+      "summary": "1926년 6월 10일 순종의 인산일에 학생 2만4000여 명이 참가했고, 순종의 상여가 종로 3가 단성사 앞을 지날 때 중앙고보생 300여 명이 만세를 불렀다. 시위는 군대까지 동원한 일제의 감시망에 저지당했다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-610-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-610-action"
+      ],
+      "place": {
+        "label": "종로 3가 단성사 앞",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.9924056,
+        "lat": 37.5709333,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-610-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-danseongsa"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '단성사' 문서(raw/kowiki-danseongsa.html)의 geo 값 '37.5709333; 126.9924056'이다. 이 값은 단성사가 있던 종로 3가 지점을 가리키며, 상여 행렬의 정확한 통과 지점을 재는 값은 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "group-mod-610-students-1926",
+          "role": "인산일 행렬에 참가한 학생들 (조선인 학생 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-610-students"
+          ]
+        },
+        {
+          "entityId": "group-mod-610-jungang-1926",
+          "role": "단성사 앞에서 '조선독립만세'를 부른 중앙고보생 (조선인 학생 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-610-jungang"
+          ]
+        },
+        {
+          "entityId": "polity-mod-ilje-610-1926",
+          "role": "군대까지 동원해 시위를 저지한 식민 당국 (일제 측)",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-610-ilje"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "상여 행렬이 지나는 거리에 늘어선 학생들, 그 앞에서 만세를 부르고 격문을 뿌리는 무리, 이를 막아서는 경계 병력. 체포자 수와 총격 여부는 이 장면의 인용에 없어 표시하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-wonsan-strike-1929",
+      "eventId": "event-mod-wonsan-strike-1929",
+      "title": "원산총파업 (1929)",
+      "startYear": 1929,
+      "endYear": 1929,
+      "kind": "assembly",
+      "summary": "1929년 1월 13일부터 4월 6일까지 원산노동연합회 산하 노동조합원 2,200여 명이 참여한 파업이 이어졌다. 발단이 된 제유공장은 함경남도 덕원군 문평리에 있었고, 일본 경찰은 원산노동연합회 간부 7, 8명을 구속했다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-wonsanstrike-year",
+        "claim-scenes-122-modern_localities-mod-wonsanstrike-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-wonsanstrike-workers",
+        "claim-scenes-122-modern_localities-mod-wonsanstrike-police"
+      ],
+      "place": {
+        "label": "원산",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-69663",
+        "lon": 127.3743182825001,
+        "lat": 39.207965066500066,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-wonsanstrike-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "좌표는 전달받은 existing-place-anchors.json 의 '원산' 앵커(hgis-admin-69663, 국편 1910~1945 행정구역 경계 자료의 범위 중심)다. 파업 현장(부두·공장·시가)의 개별 지점이 아니다. 발단이 된 문평 제유공장은 덕원군 문평리로 적혀 있으며, 그 지역의 앵커는 hgis-admin-69688(덕원, 127.25299042500006, 39.09104668000006)이다. 두 지점을 한 점으로 합치지 않았다. 위치 참고 표기: 원산 (함경남도)",
+        "relatedAnchorPlaceIds": [
+          "hgis-admin-69688"
+        ],
+        "coordinateClaimIds": [
+          "claim-scenes-122-modern_localities-mod-wonsanstrike-munpyeong"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "group-mod-wonsan-union-1929",
+          "role": "총파업에 참가한 원산노동연합회 산하 조합원 (노동자 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-wonsanstrike-workers"
+          ]
+        },
+        {
+          "entityId": "polity-mod-japanese-police-1929",
+          "role": "연합회 간부를 구속한 일본 경찰 (진압 측)",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-wonsanstrike-police"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "일을 멈춘 항구 도시의 노동자 무리와, 간부를 붙잡아 가는 경찰. 원산상업회의소·함남노동회 같은 조직의 움직임은 인용 낱말 수 제한으로 출처를 붙이지 못해 표시하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-daegu-october-1946",
+      "eventId": "event-mod-daegu-october-1946",
+      "title": "대구 십일사건 — 대구역 앞 발포와 대구부청 포위 (1946)",
+      "startYear": 1946,
+      "endYear": 1946,
+      "kind": "assembly",
+      "summary": "1946년 좌파 세력과 민중이 대구를 시작으로 일으킨 사건이다. 10월 1일 대구역 앞에서 경찰이 전평 계열 노동자들의 시위를 진압하다 발포해 노동자가 사망했고, 이튿날 시민들이 대구부청과 경찰서를 포위했다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-daegu1946-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-daegu1946-action",
+        "claim-scenes-122-modern_localities-mod-daegu1946-citizens"
+      ],
+      "place": {
+        "label": "대구역 앞",
+        "medium": "land",
+        "precision": "site",
+        "lon": 128.5960528,
+        "lat": 35.8759306,
+        "anchorPlaceId": "hgis-admin-174575",
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-daegu1946-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-daegu-station"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '대구역' 문서(raw/kowiki-daegu-station.html)의 geo 값 '35.8759306; 128.5960528'이며 현재의 대구역 지점이다. 1946년 당시 역사와 광장의 자리가 이 점과 같은지는 이 조사의 출처로 확인하지 못했다. 대구부청·경찰서의 위치는 출처가 밝히지 않아 따로 표시하지 않았고, 지역 표시는 앵커 hgis-admin-174575(대구)와 같은 범위다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "group-mod-daegu-jeonpyeong-1946",
+          "role": "대구역 앞에서 시위한 전평 계열 노동자 (시위 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-daegu1946-workers"
+          ]
+        },
+        {
+          "entityId": "polity-mod-police-daegu-1946",
+          "role": "시위를 진압하며 발포한 경찰 (진압 측)",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-daegu1946-police"
+          ]
+        },
+        {
+          "entityId": "group-mod-daegu-citizens-1946",
+          "role": "이튿날 대구부청과 경찰서를 포위한 시민들 (시위 측)",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-daegu1946-citizens"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-daegu1946-action"
+          ]
+        }
+      },
+      "visualActions": "역 앞 광장의 시위 대열과 총을 쏘는 진압 경찰, 이튿날 관청을 둘러싸는 시민 무리. 사망자 수와 건물 파괴는 이 장면의 인용에 없어 표시하지 않는다.",
+      "note": "attack 는 '진압하는 과정에서 발포하여'라는 출처 서술에 근거한다. 방화·소실 서술이 없어 fire 는 끈다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-yeosun-yeosu-1948",
+      "eventId": "event-mod-yeosun-1948",
+      "title": "여수·순천 10·19사건 — 여수 주둔 제14연대의 명령 거부 (1948)",
+      "startYear": 1948,
+      "endYear": 1948,
+      "kind": "battle",
+      "summary": "1948년 10월 19일 여수에 주둔하던 국방경비대 제14연대 소속 군인들이 제주4·3사건 진압 명령을 거부하고 즉시 여수로 진격했다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-yeosun-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-yeosun-refusal",
+        "claim-scenes-122-modern_localities-mod-yeosun-advance"
+      ],
+      "place": {
+        "label": "여수",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.6622221,
+        "lat": 34.7603737,
+        "anchorPlaceId": "hgis-admin-114867",
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-yeosun-place-yeosu"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-yeosu"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '여수시' 문서(raw/kowiki-yeosu.html)의 geo 값 '34.7603737; 127.6622221'로 여수시를 대표하는 점이다. 출처는 연대 창설지를 여수 신월리로 적지만 이 좌표는 신월리 지점이 아니다. 전달받은 앵커 hgis-admin-114867(여수)도 같은 지역을 가리킨다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "group-mod-yeosun-14th-1948",
+          "role": "진압 명령을 거부하고 여수로 진격한 국방경비대 제14연대 (봉기 부대 측)",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-yeosun-14th",
+            "claim-scenes-122-modern_localities-mod-yeosun-advance"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-yeosun-advance"
+          ]
+        }
+      },
+      "visualActions": "주둔지에서 출동해 도시로 들어가는 부대. 병력 수(출처는 1,000~2,000명으로 추산한다고 적는다)와 이동 경로는 이 장면의 인용에 넣지 않았으므로 숫자로 그리지 않는다.",
+      "note": "side 값은 이 장면에서 공격해 들어간 쪽을 invader 로, 맞선 쪽을 defender 로 두는 표시 규칙을 따랐다. 정치적 평가가 아니다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-yeosun-suncheon-1948",
+      "eventId": "event-mod-yeosun-1948",
+      "title": "여수·순천 10·19사건 — 순천 함락 (1948)",
+      "startYear": 1948,
+      "endYear": 1948,
+      "kind": "battle",
+      "summary": "순천 경찰은 제14연대에 응전했으나 패퇴했고, 20일 오후 순천도 함락되었다. 출처는 이 사건을 1948년 10월 19일부터로 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-yeosun-year",
+        "claim-scenes-122-modern_localities-mod-yeosun-suncheon-fall"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-yeosun-suncheon-fall"
+      ],
+      "place": {
+        "label": "순천",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.483,
+        "lat": 34.95,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-yeosun-place-suncheon"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-suncheon"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '순천시 (전라남도)' 문서(raw/kowiki-suncheon-jn.html)의 geo 값 '34.950; 127.483'으로 순천시를 대표하는 점이다. 경찰서·시가 등 교전 지점을 가리키지 않는다. 같은 이름의 평안남도 순천시와 구별하려고 전라남도 문서를 따로 받았다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "group-mod-yeosun-14th-1948",
+          "role": "순천으로 진격해 20일 오후 순천을 함락한 제14연대 (봉기 부대 측)",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-yeosun-suncheon-fall"
+          ]
+        },
+        {
+          "entityId": "polity-mod-suncheon-police-1948",
+          "role": "응전했으나 패퇴한 순천 경찰 (경찰 측)",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-yeosun-police"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-yeosun-suncheon-fall"
+          ]
+        }
+      },
+      "visualActions": "시가로 들어오는 부대와 맞서다 물러나는 경찰. 민간인 피해는 출처가 통계를 폭넓게 적을 뿐 이 장면의 인용에 없어 그리지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-daegu-228-1960",
+      "eventId": "event-mod-daegu-228-1960",
+      "title": "2·28대구학생시위 — 경북고에서 경북도청까지 (1960)",
+      "startYear": 1960,
+      "endYear": 1960,
+      "kind": "assembly",
+      "summary": "1960년 2월 28일 낮 12시 50분 경북고 학생 부위원장 이대우가 학교 운동장 조회단에서 결의문을 읽었고, 학생들은 경찰과 충돌해가며 경북도청에 이르러 3시경까지 시위를 벌였다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-228-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-228-action",
+        "claim-scenes-122-modern_localities-mod-228-march"
+      ],
+      "place": {
+        "label": "대구 시내",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-174575",
+        "lon": 128.56628767200004,
+        "lat": 35.85917231250005,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-228-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "출처는 경북고 운동장과 경북도청을 시위의 출발점·도착점으로 적지만 1960년 당시 경북도청의 자리를 이 조사의 출처로 특정하지 못했다(현재의 경상북도청은 안동으로 옮겨 갔다). 그래서 역이나 청사 좌표를 쓰지 않고, 전달받은 existing-place-anchors.json 의 '대구' 앵커(hgis-admin-174575, 국편 1910~1945 행정구역 경계 자료의 범위 중심)를 시가 전체의 표시점으로 썼다. 위치 참고 표기: 대구 시내 (경북고 운동장 ~ 경북도청)",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-mod-lee-daewoo",
+          "role": "학교 운동장 조회단에서 결의문을 읽은 경북고 학생 부위원장 (학생 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-228-leedaewoo"
+          ]
+        },
+        {
+          "entityId": "group-mod-daegu-students-1960",
+          "role": "시내로 나가 경북도청까지 시위한 고등학생들 (학생 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-228-students"
+          ]
+        },
+        {
+          "entityId": "polity-mod-police-daegu-1960",
+          "role": "시위대와 충돌한 경찰 (진압 측)",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-228-police"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "학교 운동장 단상에서 결의문을 읽는 학생, 구호를 외치며 시내로 나가는 대열, 길을 막고 부딪치는 경찰. 연행자 수는 이 장면의 인용에 없어 표시하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-worker-struggle-ulsan-1987",
+      "eventId": "event-mod-worker-struggle-1987",
+      "title": "87년 노동자대투쟁 — 울산 가두시위 (1987)",
+      "startYear": 1987,
+      "endYear": 1987,
+      "kind": "assembly",
+      "summary": "1987년 7월부터 9월까지 전국에서 노동쟁의와 민주화운동이 이어졌다. 8월 17일과 18일 울산 현대그룹노조연합 노동자 3만여 명이 가두시위를 벌였고, 9월 4일에는 대우자동차와 현대중공업 파업농성장에 공권력이 투입되었다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-worker87-year",
+        "claim-scenes-122-modern_localities-mod-worker87-span"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-worker87-action",
+        "claim-scenes-122-modern_localities-mod-worker87-crackdown"
+      ],
+      "place": {
+        "label": "울산",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.31139,
+        "lat": 35.53833,
+        "anchorPlaceId": "hgis-admin-176306",
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-worker87-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-ulsan"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '울산광역시' 문서(raw/kowiki-ulsan.html)의 geo 값 '35.53833; 129.31139'로 울산을 대표하는 점이다. 출처는 가두시위를 '도시 전체'의 일로 적고 개별 공장·가두의 지점을 밝히지 않는다. 전달받은 앵커 hgis-admin-176306(울산)도 같은 지역을 가리킨다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "group-mod-ulsan-workers-1987",
+          "role": "8월 17~18일 가두시위를 벌인 현노협 노동자 (노동자 측)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-worker87-workers"
+          ]
+        },
+        {
+          "entityId": "polity-mod-gongkwonryeok-1987",
+          "role": "9월 4일 파업농성장에 투입된 공권력 (진압 측)",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-worker87-crackdown"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "공장 지대 도시의 큰길을 메운 노동자 행렬. 9월 4일 공권력 투입은 출처가 대우자동차·현대중공업 농성장이라고만 적어 울산 현장 장면으로 그리지 않는다.",
+      "note": "공권력은 이 장면(8월 17~18일 울산 가두시위)의 현장 행위자가 아니라 같은 사건의 다른 날 행위자여서 presence 를 related 로 두었다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-daegu-subway-fire-2003",
+      "eventId": "event-mod-daegu-subway-fire-2003",
+      "title": "대구지하철 화재참사 — 중앙로역 (2003)",
+      "startYear": 2003,
+      "endYear": 2003,
+      "kind": "fire",
+      "summary": "2003년 2월 18일 대구지하철 중앙로역에서 방화로 대형 철도 사고가 났다. 열차가 중앙로역에 도착한 시점에 방화범이 휘발유에 불을 붙였고, 당황한 승객들은 황급히 대피했다. 출처는 192명이 사망했다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-daegufire-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-daegufire-action",
+        "claim-scenes-122-modern_localities-mod-daegufire-ignition",
+        "claim-scenes-122-modern_localities-mod-daegufire-toll"
+      ],
+      "place": {
+        "label": "대구지하철 중앙로역",
+        "medium": "land",
+        "precision": "site",
+        "lon": 128.594024,
+        "lat": 35.870988,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-daegufire-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-jungangno-daegu"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '중앙로역 (대구)' 문서(raw/kowiki-jungangno-station-daegu.html)의 geo 값 '35.870988; 128.594024'다. 이 값은 현재 운영 중인 같은 이름의 역을 가리키며, 지하 승강장의 깊이나 사고 열차의 정차 위치를 나타내지 않는다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "group-mod-daegu-subway-arsonist-2003",
+          "role": "열차 안에서 휘발유에 불을 붙인 방화범",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-daegufire-arsonist"
+          ]
+        },
+        {
+          "entityId": "group-mod-daegu-subway-passengers-2003",
+          "role": "불길을 피해 황급히 대피한 승객들",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-daegufire-passengers"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-daegufire-ignition",
+            "claim-scenes-122-modern_localities-mod-daegufire-action"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "역에 정차한 열차에서 불이 번지고 승객이 승강장 밖으로 빠져나가는 모습. 두 열차의 위치 관계와 구조 활동의 시간표는 이 장면의 인용에 없어 그리지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-sungnyemun-fire-2008",
+      "eventId": "event-mod-sungnyemun-fire-2008",
+      "title": "숭례문 화재 (2008)",
+      "startYear": 2008,
+      "endYear": 2008,
+      "kind": "fire",
+      "summary": "2008년 2월 10일 저녁 70대 채종기가 국보인 숭례문에 방화를 저질러 숭례문이 소실되었다. 밤 8시 45분경 시작된 불은 5시간 넘게 이어졌고, 화재 현장에는 시민들의 추모행렬이 이어졌다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-sungnyemun-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-sungnyemun-action",
+        "claim-scenes-122-modern_localities-mod-sungnyemun-hours"
+      ],
+      "place": {
+        "label": "숭례문",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.97528,
+        "lat": 37.55972,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-sungnyemun-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-sungnyemun"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '숭례문' 문서(raw/kowiki-sungnyemun.html)의 geo 값 '37.55972; 126.97528'이다. 이 값은 숭례문 자리를 가리키며, 2013년 복원한 지금의 건물과 2008년 불탄 건물이 같은 자리라는 것은 출처가 복원 사실을 적은 데 따른다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-mod-chae-jonggi",
+          "role": "숭례문에 방화한 사람 (출처 표기: 검거된 방화범)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-sungnyemun-chae"
+          ]
+        },
+        {
+          "entityId": "group-mod-sungnyemun-citizens-2008",
+          "role": "화재 현장에 추모행렬을 이룬 시민들",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-sungnyemun-citizens"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-sungnyemun-action",
+            "claim-scenes-122-modern_localities-mod-sungnyemun-hours"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "밤에 문루가 타오르는 불길과 그 앞에 늘어선 시민들의 추모행렬. 소방차 대수와 진압 과정은 인용 낱말 수 제한으로 출처를 붙이지 못해 표시하지 않는다.",
+      "note": "출처는 2층 문루의 90%, 1층 문루의 10%가 소실되었다고 적지만 그 문장은 인용 낱말 수 제한으로 넣지 않았다. 그래서 불탄 부위의 비율을 화면에서 구분하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-yeo-unhyeong-1947",
+      "eventId": "event-encykorea-yeo-unhyeong-assassination-1947",
+      "title": "여운형 암살 — 서울 혜화동 로터리 (1947)",
+      "startYear": 1947,
+      "endYear": 1947,
+      "kind": "assembly",
+      "summary": "1947년 7월 19일 여운형이 서울 혜화동 로터리에서 총격을 받고 암살당했다. 출처는 한지근 등에 의한 사건으로 적고, 경찰이 한지근의 단독범행으로 결론 내려 수사를 종결했다고 적는다. 같은 항목은 1974년 가담자 4명의 다른 진술이 나왔고 그 신빙성에 의문이 제기되었다고도 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-yeo-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-yeo-action",
+        "claim-scenes-122-modern_localities-mod-yeo-dispute"
+      ],
+      "place": {
+        "label": "서울 혜화동 로터리",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.00194,
+        "lat": 37.58222,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-yeo-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-hyehwa-station"
+        ],
+        "coordinateNote": "출처는 '서울 혜화동 로터리'까지만 적는다. 한국어 위키백과 '혜화동' 문서에는 좌표 표시가 없어, 같은 혜화동 자리의 지하철역인 '혜화역' 문서(raw/kowiki-hyehwa-station.html)의 geo 값 '37.58222; 127.00194'를 표시점으로 썼다. 이 값이 가리키는 것은 현재의 혜화역이며 1947년의 로터리 지점이나 피격 지점을 재는 값이 아니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-yeo-unhyeong",
+          "role": "혜화동 로터리에서 총격을 받고 숨진 사람",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-yeo-victim",
+            "claim-scenes-122-modern_localities-mod-yeo-action"
+          ]
+        },
+        {
+          "entityId": "person-mod-han-jigeun",
+          "role": "출처가 암살 주체로 적은 인물 (경찰은 단독범행으로 결론)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-yeo-suspect"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-yeo-action"
+          ]
+        }
+      },
+      "visualActions": "로터리를 지나는 차와 그 곁의 총격, 그 자리에 멈춰 선 사람들. 가담자 수와 배후 조직은 출처가 서로 다른 서술을 함께 적으므로 한 가지로 그리지 않는다.",
+      "note": "kind 열거값에 암살·테러 항목이 없어 거리에서 일어난 사건이라는 뜻으로 assembly 를 쓰고 attack 을 켰다. 사건의 책임 소재는 출처가 밝힌 두 가지 서술(경찰의 단독범행 결론, 1974년 가담자들의 진술과 그에 대한 의문)을 함께 남긴다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
+    },
+    {
+      "id": "scene-mod-inter-korean-summit-2000",
+      "eventId": "event-encykorea-inter-korean-summit-2000",
+      "title": "제1차 남북정상회담 — 평양 순안 공항의 첫 만남 (2000)",
+      "startYear": 2000,
+      "endYear": 2000,
+      "kind": "assembly",
+      "summary": "제1차 남북정상회담은 2000년 6월에 열렸다. 6월 13일 평양 순안 공항에서 두 정상이 역사적인 첫 만남을 가졌다. 출처는 이 회담의 두 당사자를 김대중 대통령과 김정일 위원장으로 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-122-modern_localities-mod-summit-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-122-modern_localities-mod-summit-action"
+      ],
+      "place": {
+        "label": "평양 순안 공항",
+        "medium": "land",
+        "precision": "site",
+        "lon": 125.67,
+        "lat": 39.22389,
+        "claimIds": [
+          "claim-scenes-122-modern_localities-mod-summit-place-airport",
+          "claim-scenes-122-modern_localities-mod-summit-place-city"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pyongyang-sunan-airport"
+        ],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '평양국제비행장'(문서 제목 표기: 평양 순안 국제공항) 문서(raw/kowiki-pyongyang-airport.html)의 geo 값 '39.22389; 125.67000'이다. 현재 공항 부지를 가리키는 점이며 2000년 6월 13일 영접이 이루어진 활주로·청사의 위치를 따로 재지 않았다. 한국어 위키백과 '평양시' 문서에는 좌표 표시가 없어 도시 대표점은 얻지 못했고, 전달받은 앵커로는 hgis-admin-93236(평양)이 있다.",
+        "relatedAnchorPlaceIds": [
+          "hgis-admin-93236"
+        ],
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-kim-daejung",
+          "role": "제1차 정상회담의 남측 당사자 (대한민국 대통령)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-summit-kdj"
+          ]
+        },
+        {
+          "entityId": "person-encykorea-kim-jongil",
+          "role": "제1차 정상회담의 북측 당사자 (북한 국방위원장)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-122-modern_localities-mod-summit-kji"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "공항에 내린 남측 일행과 이를 맞는 북측 최고당국자의 첫 만남. 수행 인원 수와 의장대 규모는 이 장면의 인용에 없어 그리지 않는다.",
+      "note": "두 사람 모두 같은 자리의 당사자여서 side 를 civilian(비군사 행위자)으로 두었다. 남·북 소속은 role 문구로 구분한다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-122"
     }
   ],
   "sources": [
@@ -13004,6 +17365,594 @@
       "title": "부산광역시 - 한국민족문화대백과사전",
       "publisher": "한국학중앙연구원 한국민족문화대백과사전",
       "url": "https://encykorea.aks.ac.kr/Article/E0024209"
+    },
+    {
+      "id": "src-syj122-aks-byeokgolje",
+      "title": "벽골제 - 한국민족문화대백과사전 (E0022816)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022816"
+    },
+    {
+      "id": "src-syj122-kowiki-byeokgolje",
+      "title": "벽골제 - 위키백과",
+      "publisher": "위키미디어 재단 · 위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B2%BD%EA%B3%A8%EC%A0%9C"
+    },
+    {
+      "id": "src-syj122-aks-iseoguk",
+      "title": "이서국(伊西國) - 한국민족문화대백과사전 (E0044654)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0044654"
+    },
+    {
+      "id": "src-syj122-aks-maesoseong-jeontu",
+      "title": "매소성전투 - 한국민족문화대백과사전 (E0017963)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0017963"
+    },
+    {
+      "id": "src-syj122-aks-maesoseong",
+      "title": "매소성(買肖城) - 한국민족문화대백과사전 (E0017962)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0017962"
+    },
+    {
+      "id": "src-syj122-aks-buseoksa",
+      "title": "봉황산 부석사 - 한국민족문화대백과사전 (E0024295)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024295"
+    },
+    {
+      "id": "src-syj122-kowiki-buseoksa",
+      "title": "부석사 - 위키백과",
+      "publisher": "위키미디어 재단 · 위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%84%9D%EC%82%AC"
+    },
+    {
+      "id": "src-syj122-aks-heunghwajin-jeontu",
+      "title": "흥화진전투(興化鎭戰鬪) - 한국민족문화대백과사전 (E0070246)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0070246"
+    },
+    {
+      "id": "src-syj122-aks-heunghwajin",
+      "title": "흥화진(興化鎭) - 한국민족문화대백과사전 (E0066073)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0066073"
+    },
+    {
+      "id": "src-syj122-aks-yanggyu",
+      "title": "양규 - 한국민족문화대백과사전 (E0035425)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0035425"
+    },
+    {
+      "id": "src-syj122-aks-ganggamchan",
+      "title": "강감찬 - 한국민족문화대백과사전 (E0000954)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0000954"
+    },
+    {
+      "id": "src-syj122-aks-cheollijangseong",
+      "title": "천리장성 - 한국민족문화대백과사전 (E0055848)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0055848"
+    },
+    {
+      "id": "src-syj122-aks-gujuseong-jeontu",
+      "title": "구주성전투 - 한국민족문화대백과사전 (E0070234)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0070234"
+    },
+    {
+      "id": "src-syj122-aks-hwangnyongsaji",
+      "title": "경주 황룡사지 - 한국민족문화대백과사전 (E0065131)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065131"
+    },
+    {
+      "id": "src-syj122-kowiki-hwangnyongsa",
+      "title": "황룡사 - 위키백과",
+      "publisher": "위키미디어 재단 · 위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%A9%EB%A3%A1%EC%82%AC"
+    },
+    {
+      "id": "src-syj122-aks-chojo-daejanggyeong",
+      "title": "초조대장경 - 한국민족문화대백과사전 (E0057046)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0057046"
+    },
+    {
+      "id": "src-syj122-aks-buinsa",
+      "title": "팔공산 부인사 - 한국민족문화대백과사전 (E0024515)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024515"
+    },
+    {
+      "id": "src-syj122-kowiki-buinsa",
+      "title": "부인사 - 위키백과",
+      "publisher": "위키미디어 재단 · 위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%9D%B8%EC%82%AC"
+    },
+    {
+      "id": "src-syj122-aks-suseonsa",
+      "title": "수선사 - 한국민족문화대백과사전 (E0031457)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0031457"
+    },
+    {
+      "id": "src-syj122-enwiki-songgwangsa",
+      "title": "Songgwangsa - Wikipedia",
+      "publisher": "위키미디어 재단 · Wikipedia (English)",
+      "url": "https://en.wikipedia.org/wiki/Songgwangsa"
+    },
+    {
+      "id": "src-syj122-aks-hangpaduri",
+      "title": "제주 항파두리 항몽유적지 - 한국민족문화대백과사전 (E0051473)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0051473"
+    },
+    {
+      "id": "src-syj122-kowiki-hangpaduri",
+      "title": "제주 항파두리 항몽 유적 - 위키백과",
+      "publisher": "위키미디어 재단 · 위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%A3%BC%20%ED%95%AD%ED%8C%8C%EB%91%90%EB%A6%AC%20%ED%95%AD%EB%AA%BD%20%EC%9C%A0%EC%A0%81"
+    },
+    {
+      "id": "src-syj122-aks-yeowon",
+      "title": "여원연합군(麗元聯合軍) - 한국민족문화대백과사전 (E0066625)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0066625"
+    },
+    {
+      "id": "src-syj122-aks-hongsan",
+      "title": "홍산대첩(鴻山大捷) - 한국민족문화대백과사전 (E0064128)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064128"
+    },
+    {
+      "id": "src-syj122-aks-hwangsan",
+      "title": "황산대첩(荒山大捷) - 한국민족문화대백과사전 (E0065178)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065178"
+    },
+    {
+      "id": "src-syj122-aks-gimsami",
+      "title": "김사미의 난 - 한국민족문화대백과사전 (E0009297)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0009297"
+    },
+    {
+      "id": "src-syj122-kowiki-unmunsa",
+      "title": "운문사 - 위키백과",
+      "publisher": "위키미디어 재단 · 위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B4%EB%AC%B8%EC%82%AC"
+    },
+    {
+      "id": "src-syj122-aks-nangnanggun",
+      "title": "낙랑군 - 한국민족문화대백과사전 (E0011576)",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011576"
+    },
+    {
+      "id": "src-jl2-aks-sampo",
+      "title": "삼포 (三浦) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0026914"
+    },
+    {
+      "id": "src-jl2-aks-jepo",
+      "title": "제포 (薺浦) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0051508"
+    },
+    {
+      "id": "src-jl2-aks-pyohaerok",
+      "title": "표해록 (漂海錄) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0060289"
+    },
+    {
+      "id": "src-jl2-aks-iryunhaengsildo",
+      "title": "이륜행실도 (二倫行實圖) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0044125"
+    },
+    {
+      "id": "src-jl2-aks-tongjeyeong",
+      "title": "통영 삼도수군통제영 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059416"
+    },
+    {
+      "id": "src-jl2-aks-hamel",
+      "title": "하멜표류기 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0060599"
+    },
+    {
+      "id": "src-jl2-aks-daedongbeop-bi",
+      "title": "대동법시행기념비 (大同法施行記念碑) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014247"
+    },
+    {
+      "id": "src-jl2-aks-waegwan",
+      "title": "왜관 (倭館) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0039194"
+    },
+    {
+      "id": "src-jl2-aks-busan-junggu",
+      "title": "중구(부산광역시) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0067020"
+    },
+    {
+      "id": "src-jl2-aks-yakjojechalbi",
+      "title": "약조제찰비 (約條製札碑) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0035365"
+    },
+    {
+      "id": "src-jl2-aks-bunori-dondae",
+      "title": "분오리돈대 (分五里墩臺) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0076938"
+    },
+    {
+      "id": "src-jl2-aks-taekji-dondae",
+      "title": "택지돈대(후애돈대) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059133"
+    },
+    {
+      "id": "src-jl2-aks-hwayangdong-seowon",
+      "title": "화양동서원 (華陽洞書院) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064769"
+    },
+    {
+      "id": "src-jl2-aks-mandongmyo",
+      "title": "만동묘 (萬東廟) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0017568"
+    },
+    {
+      "id": "src-jl2-aks-bukhansanseong",
+      "title": "북한산성 (北漢山城) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024791"
+    },
+    {
+      "id": "src-jl2-aks-bukhanchiyeong",
+      "title": "북한치영 (北漢緇營) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024800"
+    },
+    {
+      "id": "src-jl2-aks-anyongbok",
+      "title": "안용복 (安龍福) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0034915"
+    },
+    {
+      "id": "src-jl2-aks-ulleungdo",
+      "title": "울릉도 (鬱陵島) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040443"
+    },
+    {
+      "id": "src-jl2-aks-gwangju-baekja",
+      "title": "광주 조선백자 요지 (廣州 朝鮮白磁 窯址) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0005291"
+    },
+    {
+      "id": "src-jl2-aks-bunwon",
+      "title": "분원 (分院) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024851"
+    },
+    {
+      "id": "src-jl2-aks-oegyujanggak",
+      "title": "외규장각의궤 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0071554"
+    },
+    {
+      "id": "src-jl2-aks-wonhaeng-uigwe",
+      "title": "원행을묘정리의궤 (園幸乙卯整理儀軌) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040890"
+    },
+    {
+      "id": "src-jl2-aks-hwaseong-haenggung",
+      "title": "수원 화성행궁 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064690"
+    },
+    {
+      "id": "src-jl2-aks-dasanchodang",
+      "title": "다산초당 (茶山草堂) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013467"
+    },
+    {
+      "id": "src-jl2-aks-sinhae-bakhae",
+      "title": "신해박해 (辛亥迫害) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0033544"
+    },
+    {
+      "id": "src-jl2-kowiki-bukhansanseong",
+      "title": "북한산성 · 한국어 위키백과 (표시 좌표)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%81%ED%95%9C%EC%82%B0%EC%84%B1"
+    },
+    {
+      "id": "src-jl2-kowiki-dasanchodang",
+      "title": "다산초당 · 한국어 위키백과 (표시 좌표)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A4%EC%82%B0%EC%B4%88%EB%8B%B9"
+    },
+    {
+      "id": "src-jl2-kowiki-goryeogungji",
+      "title": "고려궁지 · 한국어 위키백과 (표시 좌표)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B6%81%EC%A7%80"
+    },
+    {
+      "id": "src-jl2-kowiki-mandongmyo",
+      "title": "만동묘 · 한국어 위키백과 (표시 좌표)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%A7%8C%EB%8F%99%EB%AC%98"
+    },
+    {
+      "id": "src-jl2-kowiki-yongdusan",
+      "title": "용두산공원 · 한국어 위키백과 (표시 좌표)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%A9%EB%91%90%EC%82%B0%EA%B3%B5%EC%9B%90"
+    },
+    {
+      "id": "src-jl2-kowiki-suwon-hwaseong",
+      "title": "수원 화성 · 한국어 위키백과 (표시 좌표)",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%98%EC%9B%90%20%ED%99%94%EC%84%B1"
+    },
+    {
+      "id": "src-wd-Q41172",
+      "title": "울릉도 (Ulleungdo) · 위키데이터 항목 Q41172",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q41172.json"
+    },
+    {
+      "id": "src-wd-Q42152",
+      "title": "통영시 (Tongyeong) · 위키데이터 항목 Q42152",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q42152.json"
+    },
+    {
+      "id": "src-jl2-wd-Q13999938",
+      "title": "남종면 (경기도 광주시) · 위키데이터 항목 Q13999938",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q13999938.json"
+    },
+    {
+      "id": "src-jl2-aks-ganghwa-goryeogungji",
+      "title": "강화 고려궁지 (江華 高麗宮址) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0001502"
+    },
+    {
+      "id": "src-jl2-aks-yeompo",
+      "title": "염포 (鹽浦) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0037152"
+    },
+    {
+      "id": "src-jl2-wd-Q12607260",
+      "title": "염포동 (울산광역시 북구) · 위키데이터 항목 Q12607260",
+      "publisher": "Wikidata (Wikimedia Foundation) 및 기여자",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q12607260.json"
+    },
+    {
+      "id": "src-aks-busan-port",
+      "title": "부산항(釜山港) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024288"
+    },
+    {
+      "id": "src-aks-wonsan-haksa",
+      "title": "원산학사(元山學舍) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040700"
+    },
+    {
+      "id": "src-aks-wonsan-haegwan",
+      "title": "원산해관(元山海關) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0078154"
+    },
+    {
+      "id": "src-aks-dongnip-sinmun",
+      "title": "독립신문 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0015984"
+    },
+    {
+      "id": "src-aks-gyeonginseon",
+      "title": "경인선 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002748"
+    },
+    {
+      "id": "src-aks-mulsan-gongjinhoe",
+      "title": "조선물산공진회 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0052019"
+    },
+    {
+      "id": "src-aks-hyeongpyeong",
+      "title": "형평운동 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0063568"
+    },
+    {
+      "id": "src-aks-seoul-station",
+      "title": "서울역 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0068162"
+    },
+    {
+      "id": "src-aks-610-manse",
+      "title": "6·10만세운동(六十萬歲運動) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0042124"
+    },
+    {
+      "id": "src-aks-wonsan-strike",
+      "title": "원산총파업(元山總罷業) · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040696"
+    },
+    {
+      "id": "src-aks-daegu-october-1946",
+      "title": "대구 십일사건 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014119"
+    },
+    {
+      "id": "src-aks-yeosun-1948",
+      "title": "여수·순천 10·19사건 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0036410"
+    },
+    {
+      "id": "src-aks-daegu-228-1960",
+      "title": "2·28대구학생시위 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0075781"
+    },
+    {
+      "id": "src-aks-worker-1987",
+      "title": "87년 노동자대투쟁 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0073744"
+    },
+    {
+      "id": "src-aks-daegu-subway-fire-2003",
+      "title": "대구지하철 화재참사 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0078975"
+    },
+    {
+      "id": "src-aks-sungnyemun-fire-2008",
+      "title": "숭례문화재사건 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0081349"
+    },
+    {
+      "id": "src-kowiki-busanhang",
+      "title": "부산항 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%82%B0%ED%95%AD"
+    },
+    {
+      "id": "src-kowiki-incheon-station",
+      "title": "인천역 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B8%EC%B2%9C%EC%97%AD"
+    },
+    {
+      "id": "src-kowiki-seoul",
+      "title": "서울특별시 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C"
+    },
+    {
+      "id": "src-scenes-122-modern_localities-kowiki-gyeongbokgung",
+      "title": "경복궁 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81"
+    },
+    {
+      "id": "src-kowiki-jinju",
+      "title": "진주시 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A7%84%EC%A3%BC%EC%8B%9C"
+    },
+    {
+      "id": "src-kowiki-seoulyeok",
+      "title": "서울역 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EC%97%AD"
+    },
+    {
+      "id": "src-kowiki-danseongsa",
+      "title": "단성사 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%84%B1%EC%82%AC"
+    },
+    {
+      "id": "src-kowiki-daegu-station",
+      "title": "대구역 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EA%B5%AC%EC%97%AD"
+    },
+    {
+      "id": "src-kowiki-yeosu",
+      "title": "여수시 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%97%AC%EC%88%98%EC%8B%9C"
+    },
+    {
+      "id": "src-kowiki-suncheon",
+      "title": "순천시 (전라남도) · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%9C%EC%B2%9C%EC%8B%9C_(%EC%A0%84%EB%9D%BC%EB%82%A8%EB%8F%84)"
+    },
+    {
+      "id": "src-kowiki-ulsan",
+      "title": "울산광역시 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C"
+    },
+    {
+      "id": "src-kowiki-jungangno-daegu",
+      "title": "중앙로역 (대구) · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%95%99%EB%A1%9C%EC%97%AD_(%EB%8C%80%EA%B5%AC)"
+    },
+    {
+      "id": "src-kowiki-sungnyemun",
+      "title": "숭례문 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%AD%EB%A1%80%EB%AC%B8"
+    },
+    {
+      "id": "src-aks-yeo-unhyeong-1947",
+      "title": "여운형 암살사건 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0075783"
+    },
+    {
+      "id": "src-aks-inter-korean-summit",
+      "title": "남북정상회담 · 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 『한국민족문화대백과사전』",
+      "url": "https://encykorea.aks.ac.kr/Article/E0070317"
+    },
+    {
+      "id": "src-kowiki-hyehwa-station",
+      "title": "혜화역 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%98%9C%ED%99%94%EC%97%AD"
+    },
+    {
+      "id": "src-kowiki-pyongyang-sunan-airport",
+      "title": "평양 순안 국제공항 · 한국어 위키백과",
+      "publisher": "한국어 위키백과 (Wikimedia Foundation) 및 기여자",
+      "url": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EA%B5%AD%EC%A0%9C%EB%B9%84%ED%96%89%EC%9E%A5"
     }
   ],
   "missing": [
@@ -14420,6 +19369,424 @@
           "scene-city-gaegyeong-capital-1270-1394"
         ]
       }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-maesoseong-coordinate",
+        "topic": "매소성(675) 표시 좌표",
+        "detail": "한국민족문화대백과사전 매소성전투 항목은 '매소성의 위치는 알 수 없다'고 적고, 매소성 항목은 연천 대전리산성설과 양주 대모산성설을 함께 제시한다. 두 후보가 약 40km 떨어져 있어 좌표를 넣지 않았다.",
+        "needed": "연천 대전리산성·양주 대모산성의 공식 실측 좌표와, 지도에 어느 설을 표시할지에 대한 편집 판단."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-cheollijangseong-line",
+        "topic": "천리장성(1033~1041) 노선",
+        "detail": "출처는 압록강에서 원산만에 이르는 선형만 서술한다. 점 하나로는 시설을 나타낼 수 없어 서쪽 기점 방면의 의주 표시 앵커만 사용했다.",
+        "needed": "장성 노선의 선형(라인) 좌표 또는 13성·3성 각 지점의 좌표."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-heunghwajin-site",
+        "topic": "흥화진 성터 좌표",
+        "detail": "강감찬 항목이 '현재 평안북도 의주군 위원면'이라고만 적어 의주 표시 앵커를 지역 표시로 썼다.",
+        "needed": "위원면 또는 흥화진성 터의 공식 좌표(국가유산·북한 지리자료)."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-hongsan-taebongsanseong",
+        "topic": "홍산대첩 전적지(태봉산성) 좌표",
+        "detail": "백과 항목이 전투 장소를 부여군 홍산면 태봉산성으로 비정하지만 좌표는 싣지 않았다. 홍산 지역 앵커로 대신했다.",
+        "needed": "태봉산성 또는 홍산대첩비 지점의 공식 좌표."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-hwangsan-jeongsanbong",
+        "topic": "황산·정산봉 좌표",
+        "detail": "교전 지점을 '황산 북쪽 정산봉 근처'로 적었으나 좌표가 없어 운봉 지역 앵커를 썼다.",
+        "needed": "황산(荒山)·정산봉·황산대첩비지의 실측 좌표."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-hapo-harbor-point",
+        "topic": "합포 포구·정박지 좌표",
+        "detail": "출처는 '원정기지인 합포(지금의 마산)'라고만 적는다. 마산 행정 표시 앵커를 출항 지역 표시로 썼고 앞바다 지점은 넣지 않았다.",
+        "needed": "합포성지 또는 원정 선단 정박지에 대한 공식 좌표·해역 자료."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-byeokgolje-700-interval",
+        "topic": "벽골제 330~790 사이의 연차 기록",
+        "detail": "출처는 330년 축조, 790년 증축, 그리고 '오랜 기간 수리 시설로 활용되었고'라는 한 문장만 제공한다. 700년 무렵의 개별 연도 기록은 확인하지 못했다.",
+        "needed": "삼국사기·고려사 등 원사료의 중간 연도 수리·관리 기사."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-chojo-carving-site",
+        "topic": "초조대장경 판각 장소",
+        "detail": "초조대장경 항목은 판각 시기의 여러 설만 적고 판각 장소를 명시하지 않는다. 부인사 항목의 '현종~문종 도감 설치·보유' 서술을 근거로 부인사에 표시했다.",
+        "needed": "판각 장소(흥왕사 대장전 등)에 대한 1차 사료 근거와 그 좌표."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-nangnang-toseong-coordinate",
+        "topic": "낙랑군 치소(낙랑토성) 좌표",
+        "detail": "낙랑군 항목은 설치(서기전 108년)와 313년까지의 존속을 적지만 치소의 위치를 좌표로 밝히지 않는다. 목간 출토지 서술을 근거로 평양 지역 표시 앵커를 썼다.",
+        "needed": "낙랑토성 등 치소 유적의 공식 좌표. 낙랑군 위치에 대한 학설 대립도 함께 표시해야 한다."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-daebanggun-interval",
+        "topic": "대방군 존속 구간",
+        "detail": "300년 무렵을 지나는 또 하나의 기관 구간 후보이지만 이번 창에서 대방군 항목을 내려받지 않았다.",
+        "needed": "대방군 항목의 설치·소멸 연도 문장과 치소 위치."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-posangpalguk-year",
+        "topic": "포상팔국 전쟁의 서기 연도",
+        "detail": "포상팔국의 난 항목(E0077932)을 내려받았으나 본문이 '『삼국사기』 권2 신라본기의 내해니사금 14년조'라고만 적고 서기 연도를 쓰지 않아, 연대 환산을 이 조사에서 만들지 않고 장면을 만들지 않았다. 대상국도 가라설·아라설로 갈린다.",
+        "needed": "서기 연도를 직접 밝힌 출처 문장(또는 환산 근거)과 골포·칠포·고자·사물국 비정지의 좌표."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-heunghwajin-yeongdeokjin",
+        "topic": "흥화진 기능 종료 시점",
+        "detail": "'영덕진 설치 이전까지 외교 창구로 기능하였다'는 서술의 영덕진 설치 연도가 항목에 없어, 구간 끝을 1030년 영주 승격으로 잡았다.",
+        "needed": "영덕진 설치 연도를 밝힌 출처."
+      }
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": "부인사 1011~1087 판각 장면 제외: 원문은 흥왕사 보관 뒤 부인사로 옮겼다고 하며 부인사 전체기간 판각을 뒷받침하지 않는다."
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": "이서국297: 청도는 침공국 소재지이며 전투 장소 근거가 아니므로 사건 좌표와 잘못된 장소 Claim 제외."
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": "항파두리의 여몽연합군과 공격 효과는1273년에만 표시. 거점 기간과 분리."
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": "벽골제 장기 이용은 유지하되 공사 동작은330·790년에 한정."
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": "1200년 결사 이전과1205년 경찬법회를 두 단년 장면으로 분리."
+    },
+    {
+      "job": "early_localities",
+      "collection": "scenes-122",
+      "detail": "서로 다른 발췌를 합친 time.verbatim을 없애고 각 발췌가 실제 입증하는 날짜만 Claim으로 기록. 검토된 장면 기간은 시작·끝 Claim을 함께 연결한다."
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-choryang-close",
+        "topic": "초량왜관 존속의 끝",
+        "detail": "내려받은 왜관(E0039194)·중구(E0067020) 본문은 1678년 이전·설치만 밝히고 왜관이 언제 닫혔는지 연도를 적지 않는다. 그래서 초량왜관 장면의 구간을 공사 기간(1675~1678)으로만 두었고 1700년·1800년을 지나는 존속 구간으로 쓰지 않았다.",
+        "needed": "초량왜관의 폐쇄·개항 전환 연도를 명시한 백과사전 또는 공공기록 본문"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-tongyeongseong-1678",
+        "topic": "1678년 통영성(평산성) 축성",
+        "detail": "통제영 항목(E0059416) 본문에 '1678년(숙종 4) 제57대 통제사 윤천뢰가 … 평산성을 쌓았다'는 서술이 있으나, 이 페이지의 인용 한도(25단어)를 1603년 설영과 1895년까지의 존속 구간에 이미 썼기 때문에 발췌하지 못했다. 통영시 항목(E0059371)에는 이 서술이 없다.",
+        "needed": "같은 사실을 적은 다른 출처 1건(예: 통영지 항목)"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-sinhae-jeonju",
+        "topic": "신해박해의 전주 이송과 처형",
+        "detail": "윤지충·권상연이 진산 관아에 자수한 뒤 전주 감영으로 옮겨져 처형되었다는 대목은 이번에 내려받은 신해박해(E0033544) 발췌 범위에 넣지 못했고, 윤지충 항목(E0042601)은 내려받지 않았다. 그래서 전주를 무대로 하는 장면을 만들지 않았다.",
+        "needed": "윤지충 항목 원문과 처형 날짜·장소 문장"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-yakjo-original-spot",
+        "topic": "약조제찰비가 처음 선 지점",
+        "detail": "출처는 비가 용두산공원에 있었고 1979년부터 부산광역시시립박물관 경내로 옮겨 보존한다고 밝힌다. 1683년에 세운 '수문 안' 지점의 좌표는 어떤 출처에서도 얻지 못했으므로 왜관과 같은 용두산 표시점을 썼다.",
+        "needed": "초량왜관 수문 위치를 좌표로 표시한 발굴·지적 자료"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-jepo-point",
+        "topic": "제포 포구 지점 좌표",
+        "detail": "제포 항목은 '창원시 진해구 웅천동'까지만 적는다. 웅천동 단위의 공개 좌표를 이번에 확보하지 못해 '창원' 구역 앵커(hgis-admin-145022)를 지역 표시점으로 썼고, 실제 포구는 이 점의 남동쪽 해안이다.",
+        "needed": "웅천동 또는 제포진성의 공개 좌표"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-bunwonri-point",
+        "topic": "분원리 가마터 좌표",
+        "detail": "분원리 가마터 자체의 좌표를 주는 출처를 찾지 못해 남종면(위키데이터 Q13999938) 표시점을 썼다. 국가유산청 포털(www.heritage.go.kr)은 robots.txt 요청부터 시간 초과되어 공식 지정구역 좌표를 받지 못했다.",
+        "needed": "국가유산청 사적 '광주 조선백자 요지' 지정구역 좌표"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-mandongmyo-1865",
+        "topic": "만동묘 철폐(1865)",
+        "detail": "만동묘 항목 본문에 1865년 철폐 서술이 있으나 이 페이지의 인용 한도를 창건(1703)·정례 제향(1844)에 써서 발췌하지 못했다. 장면 구간을 1703~1844로 두고 철폐를 주장하지 않았다.",
+        "needed": "같은 사실을 적은 다른 출처 1건"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-anyongbok-1693-abduction",
+        "topic": "1693년 박어둔과 함께 일본으로 끌려간 대목",
+        "detail": "안용복 항목의 인용 한도를 1693년 어로와 1696년 추격에 나눠 써서, 박어둔이 함께 잡혀간 문장을 발췌하지 못했다. 그래서 박어둔을 참여자로 넣지 않았다.",
+        "needed": "박어둔의 1693년 행적을 적은 별도 출처"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-busanpo-scene",
+        "topic": "부산포진·부산포 왜관 장면",
+        "detail": "부산포 항목(E0024284)을 내려받았으나 진성 축조 연도가 없고 왜관 서술도 '세종 때'·'중종 때'처럼 연호 단위여서 연도 근거가 있는 장면을 만들지 않았다. 같은 시기 삼포 가운데 연도가 분명한 제포와 염포만 장면으로 만들었다.",
+        "needed": "부산포진성 축조 연도가 적힌 본문"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-heritage-portal",
+        "topic": "국가유산 포털 접속",
+        "detail": "https://www.heritage.go.kr/robots.txt 요청이 15초 안에 응답하지 않아 공식 문화유산 좌표·지정 정보를 이번 조사에서 쓰지 못했다. 재시도 없이 넘어갔고 좌표는 위키백과·위키데이터의 표시 좌표와 기존 행정구역 앵커로 대체했다.",
+        "needed": "국가유산청 포털 또는 공공데이터 좌표 접근"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "miss-jl2-early-1392-1420",
+        "topic": "1392~1420 구간의 새 장면",
+        "detail": "이 구간은 기존 154개 장면(개경 즉위, 한양 천도, 경복궁, 한양도성, 혼일강리도, 주자소 등)이 이미 조밀해 중복을 피했다. 이번 조사에서 이 구간의 새 지방 사례는 추가하지 않았다.",
+        "needed": "1392~1420년 지방 관아·포구·간행 활동의 연도 있는 서술"
+      }
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": "통제영 존속기간은 유지하되 이경준의 자리선정 참여는1603년에 한정."
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": "초량왜관 입주자를 완공 전1675~1677년에서 제외."
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": "화양동서원은 확인된1695년 창건 장면만 표시. 장기 건설·독서 활동을 덧붙이지 않는다."
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": "만동묘1703창건·1844제향을 단년 장면으로 분리하고 창건 인물의 참여도1703으로 한정."
+    },
+    {
+      "job": "joseon_localities",
+      "collection": "scenes-122",
+      "detail": "서로 다른 발췌를 합친 time.verbatim을 없애고 각 발췌가 실제 입증하는 날짜만 Claim으로 기록. 검토된 장면 기간은 시작·끝 Claim을 함께 연결한다."
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-wonsan-coordinate",
+        "topic": "원산·덕원의 좌표 출처",
+        "detail": "한국어 위키백과 '원산시' 문서에는 좌표 표시(geo·지도 틀)가 없어 이번에 자체 좌표를 얻지 못했다. 위키데이터 항목 JSON 은 Special: 경로여서 robots.txt 가 막고 있어 요청하지 않았다. 그래서 원산학사·원산해관·원산총파업 세 장면 모두 전달받은 1910~1945 행정구역 앵커(hgis-admin-69663)를 표시점으로 썼다. 공통 좌표 등록부의 rc-wonsan-city(127.44611, 39.1475)와는 약 10km 떨어진 다른 값이다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-jeongdong-coordinate",
+        "topic": "서울 정동 독립신문사 사옥 지점",
+        "detail": "출처는 사옥을 '정동에 있는 정부 소유의 건물'까지만 적는다. 한국어 위키백과 '정동 (서울특별시)' 문서에는 좌표가 없어 동 단위 좌표를 얻지 못했고, 서울 도심 대표점을 대신 썼다. 같은 사전 항목의 사진 설명은 '한성 정동 배재학당 구내'라고 적어 본문과 표현이 다르며, 어느 쪽이 사옥인지 이번 조사로 가리지 못했다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-gyeongseong-station-1900",
+        "topic": "1900년 경성역의 위치",
+        "detail": "『한국민족문화대백과사전』 경인선 항목은 1900년의 경성역이 1905년 서대문역으로 개칭되었다고 적고, 같은 사전 서울역 항목은 1905년 남대문역 개칭으로 적는다. 두 서술이 어긋나 1900년 개통식장을 현재의 서울역 좌표에 놓지 않았다. 서대문 쪽 옛 역사의 좌표를 제공하는 출처를 이번에 얻지 못했다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-gyeongbuk-provincial-office-1960",
+        "topic": "1960년 경상북도청의 자리",
+        "detail": "2·28대구학생시위의 도착점인 경북도청의 1960년 위치를 밝힌 출처를 이번에 얻지 못했다. 현재의 경상북도청은 안동으로 옮겨 가 좌표를 그대로 쓸 수 없어, 대구 시가 전체를 대표하는 앵커를 썼다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-daegu-buchung-1946",
+        "topic": "대구부청·경찰서의 위치",
+        "detail": "1946년 10월 2일 시민들이 포위한 대구부청과 경찰서의 지점을 출처가 밝히지 않았고, 별도 좌표 출처도 얻지 못했다. 그래서 장면의 표시점은 발포가 있었던 대구역 앞으로만 두었다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-arsonist-name-2003",
+        "topic": "대구지하철 방화 피의자의 이름 인용",
+        "detail": "출처는 관련 인물을 김대한으로 적지만, 한 웹페이지당 인용 낱말 25개 제한 때문에 이름이 든 문장을 인용하지 못했다. 그래서 참가자를 '방화범'이라는 출처 표기로만 두었다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-busan-port-actors",
+        "topic": "부산항 축항 공사의 시행 주체",
+        "detail": "출처는 '일본의 식민지 정책에 의하여' 축항 공사가 실시되었다고만 적고 시행 기관·인물을 밝히지 않는다. 그래서 이 장면에는 이름을 밝힌 현장 행위자를 넣지 않았다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-wonsanhaksa-persons",
+        "topic": "원산학사 설립 인물",
+        "detail": "출처는 정현석·어윤중·정헌시를 설립 지원자로 적지만, 인용 낱말 수 제한으로 이들이 든 문장을 인용하지 못해 참가자를 '관민' 집단으로만 두었다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-heritage-portal",
+        "topic": "국가유산청 공식 좌표",
+        "detail": "www.heritage.go.kr 의 robots.txt 요청이 15초 안에 응답하지 않아(재시도 1회 포함) 이 기관의 공식 좌표를 이번에 쓰지 않았다. 숭례문·경복궁 같은 유산의 기관 좌표 대신 한국어 위키백과 좌표를 썼다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-wikidata-entitydata",
+        "topic": "위키데이터 항목 JSON",
+        "detail": "www.wikidata.org 의 robots.txt 가 /wiki/Special: 과 /w/ 를 막고 있어 Special:EntityData JSON 과 api.php 를 요청하지 않았다. 공통 좌표 등록부가 쓴 src-wd-* 원본 바이트를 이 폴더에 두지 못했으므로, 그 좌표를 옮겨 쓰지 않고 같은 대상의 한국어 위키백과 문서를 직접 받아 좌표를 얻었다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-hyehwadong-coordinate",
+        "topic": "혜화동 로터리의 좌표",
+        "detail": "한국어 위키백과 '혜화동' 문서에 좌표 표시가 없어 같은 동의 혜화역 좌표를 표시점으로 썼다. 1947년 로터리의 중심이나 피격 지점을 가리키는 값이 아니다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": {
+        "id": "missing-mod-summit-2000-venue",
+        "topic": "2000년 정상회담의 회담장",
+        "detail": "출처는 6월 14일 오후 백화원 초대소에서 합의가 이루어졌다고 적지만, 인용 낱말 수 제한으로 그 문장을 인용하지 못했고 백화원 초대소의 좌표 출처도 얻지 못했다. 그래서 장면은 6월 13일 순안 공항의 첫 만남으로 한정했다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": "원산학사 설립 집단은1883년에 한정. 학교 운영기간을 설립자의 현장 기간으로 쓰지 않는다."
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": "독립신문 발행은1899까지 유지하되 서재필 참여는1898년 인계·출국 연도까지로 한정(연 단위)."
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": "대구부청·경찰서 포위 시민을 대구역 현장에 배치하지 않고 관련 집단으로 표시."
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": "서울역 시공 담당을 준공 현장 참석으로 바꾸지 않으며 현재역 좌표는 지역 참고점으로 표시."
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-122",
+      "detail": "서로 다른 발췌를 합친 time.verbatim을 없애고 각 발췌가 실제 입증하는 날짜만 Claim으로 기록. 검토된 장면 기간은 시작·끝 Claim을 함께 연결한다."
     }
   ],
   "renderingNote": "해당 연도에 있었던 사건을 각각 표현합니다. 모형의 간격·수량은 실제 진형이나 병력 수가 아닙니다."

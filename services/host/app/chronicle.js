@@ -67,11 +67,13 @@ export function contextAt(data,year,span=50){
     }
   }
   const byClaim=new Map(data.claims.map(claim=>[claim.id,claim]));
+  const curatedEvents=new Set();
   for(const scene of data.scenePackets||[]){
-    if(scene.kind!=='settlement'||!Number.isInteger(scene.startYear)||!Number.isInteger(scene.endYear))continue;
+    if(!Number.isInteger(scene.startYear)||!Number.isInteger(scene.endYear))continue;
     const ids=[...scene.dateClaimIds,...scene.actionClaimIds],entity=entities.get(scene.eventId);
     if(!entity||!ids.length||ids.some(id=>!byClaim.has(id)))continue;
-    for(let i=events.length-1;i>=0;i--)if(events[i].id===scene.eventId)events.splice(i,1);
+    if(!curatedEvents.has(scene.eventId))for(let i=events.length-1;i>=0;i--)if(events[i].id===scene.eventId)events.splice(i,1);
+    curatedEvents.add(scene.eventId);
     events.push({...entity,lo:scene.startYear,hi:scene.endYear,claim:byClaim.get(scene.dateClaimIds[0]),
       basis:[...new Set(ids)].map(id=>byClaim.get(id)),title:scene.title,current:scene.startYear<=year&&scene.endYear>=year});
   }
@@ -91,10 +93,12 @@ export function contextAt(data,year,span=50){
   for(const event of events.filter(e=>e.type==='Event'&&e.current)){
     for(const claim of data.claims){
       if(claim.object.kind!=='entity')continue;
+      const lo=Math.max(event.lo,claim.validFrom??event.lo),hi=Math.min(event.hi,claim.validTo??event.hi);
+      if(year<lo||year>hi)continue;
       const id=claim.subject===event.id&&['syj:hasParticipant','syj:ledBy'].includes(claim.predicate)?claim.object.id
         :claim.object.id===event.id&&claim.predicate==='syj:participatedIn'?claim.subject:null;
       const person=entities.get(id);if(person?.type!=='Person')continue;
-      addPerson(person,{lo:event.lo,hi:event.hi,label:'사건 참여',claim,basis:[claim,...event.basis],eventId:event.id});
+      addPerson(person,{lo,hi,label:'사건 참여',claim,basis:[claim,...event.basis],eventId:event.id});
     }
   }
   for(const person of people.values()){

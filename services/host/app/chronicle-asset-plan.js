@@ -115,7 +115,8 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
     const coordinates=place?.displayCoordinates||feature?.geometry?.coordinates||(direct?[place.lon,place.lat]:anchor?.candidates?.length===1
       ?[anchor.candidates[0].lon,anchor.candidates[0].lat]:region?[region.lon,region.lat]:null);
     const regionalPlacement=region&&!place?.displayCoordinates&&!feature&&!direct&&!anchor;
-    const participants=scene.participants.filter(p=>supported(p.claimIds)&&present.has(p.entityId)).map(p=>({
+    const activeParticipants=scene.participants.filter(p=>(p.startYear==null||p.startYear<=context.year)&&(p.endYear==null||p.endYear>=context.year));
+    const participants=activeParticipants.filter(p=>supported(p.claimIds)&&present.has(p.entityId)).map(p=>({
       ...present.get(p.entityId),...p,archetype:activityFigure(p.entityId,p.role,context.year,data.claims),
       relationClaims:p.claimIds,detail:p.role+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
     events.push({id:scene.id,entityId:scene.eventId,kind:'event',year:context.year,label:scene.title,
@@ -126,7 +127,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       participants,effects:Object.fromEntries(Object.entries(scene.effects||{}).map(([key,effect])=>
         [key,{...effect,enabled:effect.enabled&&supported(effect.claimIds)
           &&(effect.startYear==null||effect.startYear<=context.year)&&(effect.endYear==null||effect.endYear>=context.year)}])),
-      sides:[...scene.participants.filter(p=>supported(p.claimIds)&&entities.get(p.entityId)?.type==='Polity')
+      sides:[...activeParticipants.filter(p=>supported(p.claimIds)&&entities.get(p.entityId)?.type==='Polity')
         .map(p=>({...p,label:entityLabel(entities.get(p.entityId))})),...(scene.sides||[]).filter(p=>supported(p.claimIds))],
       claimIds:[...new Set([...scene.dateClaimIds,...scene.actionClaimIds,...(place?.claimIds||[])])],
       actionClaimIds:scene.actionClaimIds,placeClaimIds:place?.claimIds||[]});

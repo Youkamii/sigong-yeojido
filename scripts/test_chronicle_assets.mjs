@@ -66,6 +66,7 @@ const scene={id:'scene-a',eventId:event.id,title:'전투',kind:'naval',summary:'
 const packetPlan=(s=scene,d=data,y=1593)=>planChronicleAssets(contextAt(d,y),d,[],[{id:'land-center',candidates:[{lon:127,lat:37}]}],[s]);
 assert.deepEqual(packetPlan().events[0].scenePlace.coordinates,[127,35]);
 assert.equal(packetPlan().events[0].participants[0].presence,'related');
+assert.equal(packetPlan({...scene,participants:scene.participants.map(p=>({...p,startYear:1594,endYear:1594}))}).events[0].participants.length,0,'A scene duration does not extend a participant beyond their own dates');
 assert.equal(packetPlan({...scene,place:{...scene.place,lon:null,lat:null}}).events[0].scenePlace,null,'A sea scene cannot use a county center');
 assert.equal(packetPlan(scene,{...data,claims:data.claims.filter(c=>c.id!=='participant')}).events[0].scenePlace,undefined,'Missing action evidence removes the curated scene');
 assert.equal(packetPlan(scene,data,1592).events.length,0);

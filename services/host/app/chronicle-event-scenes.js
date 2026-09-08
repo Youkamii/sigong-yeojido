@@ -32,11 +32,14 @@ export function composeHistoricalEvent(event,position,world){
   const launch=modern&&/누리호|발사체/.test(actions);
   const temple=/황룡사|불국사|감은사|흥륜사|사찰|사원/.test(actions)&&event.archetype==='construction';
   const rail=modern&&/지하철|철도|열차/.test(actions),industry=modern&&/제철|고로|공업단지/.test(actions);
-  const road=modern&&/고속도로/.test(actions),personalFire=/분신|자해/.test(actions),paperFire=personalFire&&/화형식|법전.*태/.test(actions);
+  const road=modern&&/고속도로/.test(actions),personalFire=/분신|자해/.test(actions),blockFire=/대장경판|경판|판목/.test(actions)&&event.effects.fire?.enabled;
+  const paperFire=blockFire||personalFire&&/화형식|법전.*태/.test(actions);
+  const kiln=/백자|관요|사기제조장|분원리/.test(actions),irrigation=/벽골제|수리 시설|관개/.test(actions);
+  const invaders=event.effects.attack?.enabled||[...(event.sides||[]),...event.participants].some(p=>p.side==='invader'&&p.presence==='on-site');
   const harbor=!sea&&['construction','naval'].includes(event.archetype)&&event.effects.ships?.enabled;
-  const teaching=!sea&&/강학|강의|교육|서당|서원|성균관/.test(actions)&&['court','construction','publication'].includes(event.archetype);
+  const teaching=!sea&&/강학|강의|교육|서당|서원|성균관|학교|학사/.test(actions)&&['court','publication','assembly'].includes(event.archetype);
   const market=!sea&&/장시|시장|교역|무역|상업/.test(actions)&&['court','construction'].includes(event.archetype);
-  const compositionKind=launch?'launch':temple?'temple':rail?'rail':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
+  const compositionKind=kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
   let displayScale=event.scenePlace?.displayScale||1;
   if(sea){
     let clearance=35;
@@ -91,6 +94,29 @@ export function composeHistoricalEvent(event,position,world){
       model('market',0,16,1.4);model('handcart',10,13,1.1);
       for(let i=0;i<12;i++)model('human',-18+(i%6)*7,3+Math.floor(i/6)*9,1.5,{action:i%3?'walking':'working'});
     }
+  }else if(kiln){
+    model('rural_store',0,-9,2,{primary:true});
+    if(!event.compact){
+      const kiln=new THREE.Mesh(new THREE.CylinderGeometry(3,4,3.5,10),new THREE.MeshStandardMaterial({color:'#a48768',roughness:1}));
+      kiln.scale.setScalar(displayScale);kiln.position.set(position.x-10*displayScale,world.surfaceAt(position.x-10*displayScale,position.z)+1.75*displayScale,position.z);group.add(kiln);
+      for(const x of [-1,8,17]){model('table',x,5,1.5);for(let i=0;i<3;i++){
+        const jar=new THREE.Mesh(new THREE.SphereGeometry(.6,8,6),new THREE.MeshStandardMaterial({color:'#e4dfc9',roughness:.6}));
+        jar.scale.set(displayScale*.8,displayScale,displayScale*.8);jar.position.set(position.x+(x+i*1.4-1.4)*displayScale,world.surfaceAt(position.x+x*displayScale,position.z+5*displayScale)+2.8*displayScale,position.z+5*displayScale);group.add(jar);
+      }}
+      model('handcart',-12,10,1.1);for(let i=0;i<5;i++)model('human',-5+i*5,12,1.4,{action:'working'});
+    }
+  }else if(irrigation){
+    model('rural_hut',-20,-9,1.5,{primary:true});
+    if(!event.compact){
+      const water=new THREE.Mesh(new THREE.PlaneGeometry(34*displayScale,19*displayScale),new THREE.MeshStandardMaterial({color:'#668f8e',roughness:.6,side:THREE.DoubleSide}));
+      water.rotation.x=-Math.PI/2;water.position.set(position.x,position.y+.15*displayScale,position.z);water.userData.fanGround=true;group.add(water);
+      for(let i=0;i<10;i++){
+        const x=position.x+(-19+i*4)*displayScale,z=position.z+11*displayScale;
+        const bank=new THREE.Mesh(new THREE.BoxGeometry(4.1*displayScale,1.8*displayScale,3*displayScale),new THREE.MeshStandardMaterial({color:'#958764',roughness:1}));
+        bank.position.set(x,world.surfaceAt(x,z)+.9*displayScale,z);group.add(bank);
+      }
+      if(event.visualActions?.constructionYears?.includes(event.year)){model('handcart',-12,17,1.2);for(let i=0;i<5;i++)model('human',-8+i*4,16,1.4,{action:'working'});}
+    }
   }else if(launch){
     model('rocket',0,0,1.7,{primary:true});
     if(!event.compact){model('civic_hall',18,-14,1);model('car',16,6,1.2);
@@ -113,9 +139,9 @@ export function composeHistoricalEvent(event,position,world){
     model('steelworks',0,0,1.6,{primary:true});
     if(!event.compact){model('civic_hall',18,-7,1.0);model('car',14,13,1.2);
       for(let i=0;i<6;i++)model('human',-12+i*5,12,1.5,{action:'working'});}
-  }else if(personalFire){
+  }else if(personalFire||blockFire){
     model(paperFire?'book':'banner',0,0,paperFire?1.5:2,{primary:true});
-    if(!event.compact){model('market',0,-12,1.5);for(let i=0;i<6;i++)model('human',-9+i*4,5,1.5);}
+    if(!event.compact){model(blockFire?'academy_hall':'market',0,-12,1.5);for(let i=0;i<6;i++)model(blockFire?'book':'human',-9+i*4,5,1.5);}
   }else if(harbor){
     model('courtyard_house',0,0,1.4,{primary:true});
     if(!event.compact){
@@ -146,8 +172,8 @@ export function composeHistoricalEvent(event,position,world){
     model('banner',0,0,1.8,{primary:true,side:'defender'});
     if(!event.compact){
       for(let i=0;i<10;i++)model(soldier,-20+(i%5)*8,-8-Math.floor(i/5)*7,1.5,{side:'defender',action:event.effects.attack?.enabled&&i<3?'defending':'idle'});
-      for(let i=0;i<10;i++)model(soldier,-17+(i%5)*8,13+Math.floor(i/5)*7,1.5,{side:'invader',action:event.effects.attack?.enabled&&i<3?'attacking':'idle'});
-      standard(model('banner',-24,-12,1.8),'defender',4);standard(model('banner',24,18,1.8),'invader',4);
+      if(invaders)for(let i=0;i<10;i++)model(soldier,-17+(i%5)*8,13+Math.floor(i/5)*7,1.5,{side:'invader',action:event.effects.attack?.enabled&&i<3?'attacking':'idle'});
+      standard(model('banner',-24,-12,1.8),'defender',4);if(invaders)standard(model('banner',24,18,1.8),'invader',4);
     }
   }else if(event.archetype==='siege'){
     model('gatehouse',0,0,1.55,{primary:true});
@@ -161,9 +187,9 @@ export function composeHistoricalEvent(event,position,world){
     }
     for(const [x,z] of [[-15,-13],[1,-15],[15,-11],[-10,-24],[12,-25]])model('house',x,z,.9,{path:true});
     {
-      for(let i=0;i<10;i++)model(soldier,-17+(i%5)*7,19+Math.floor(i/5)*7,1.5,{side:'invader',action:event.effects.attack?.enabled&&i<3?'attacking':'idle'});
+      if(invaders)for(let i=0;i<10;i++)model(soldier,-17+(i%5)*7,19+Math.floor(i/5)*7,1.5,{side:'invader',action:event.effects.attack?.enabled&&i<3?'attacking':'idle'});
       for(let i=0;i<7;i++)model(soldier,-19+i*6,-4,1.5,{side:'defender',action:event.effects.attack?.enabled&&i<3?'defending':'idle'});
-      standard(model('banner',-20,22,1.8),'invader',4);standard(model('banner',20,-6,1.8),'defender',4);
+      if(invaders)standard(model('banner',-20,22,1.8),'invader',4);standard(model('banner',20,-6,1.8),'defender',4);
     }
     }
   }else if(teaching){

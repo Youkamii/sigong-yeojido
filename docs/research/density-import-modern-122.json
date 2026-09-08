@@ -1,0 +1,372 @@
+{
+  "job": "modern_localities",
+  "sources": 33,
+  "excerpts": 53,
+  "claims": 113,
+  "entities": 74,
+  "rawFilesChecked": [
+    {
+      "source": "src-aks-busan-port",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024288",
+      "sha256": "06da6dcaf8471021a242bae561be972d48cb3e9d1a113fa3bb349ce53d538c9e",
+      "rawBytes": 100359,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-wonsan-haksa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040700",
+      "sha256": "326aec53f10638b85c0ccac635edfba2292beb3952d8ab8a42380d7184df415a",
+      "rawBytes": 82162,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-wonsan-haegwan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0078154",
+      "sha256": "0d6cd22b3a20ad4a100799c808d7367cc52b295a8eaeaa61afff2eaeb6143dc3",
+      "rawBytes": 82080,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-aks-dongnip-sinmun",
+      "url": "https://encykorea.aks.ac.kr/Article/E0015984",
+      "sha256": "fe670520e2cf38efb88158e0447cc1d2f86157cf381b1c70691eb1f262bd5526",
+      "rawBytes": 136939,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-gyeonginseon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002748",
+      "sha256": "a924cbd229ac6045494a83a079f2cabf83c5ed853e882a0e89943e5de95594cd",
+      "rawBytes": 100867,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-aks-mulsan-gongjinhoe",
+      "url": "https://encykorea.aks.ac.kr/Article/E0052019",
+      "sha256": "1a60901ea2107083aea17413acc7f0e58ab5d671f90e6ed705375d1fb374265a",
+      "rawBytes": 93380,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-hyeongpyeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0063568",
+      "sha256": "fce766b220506715ee727cb8ca8f9c39a590794fddbb3dd54dc701c0b15c4748",
+      "rawBytes": 96741,
+      "excerpts": 2,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-seoul-station",
+      "url": "https://encykorea.aks.ac.kr/Article/E0068162",
+      "sha256": "37242005377f49398e98de171debedfa94381d9990d41f462fc09183bb7444e8",
+      "rawBytes": 95176,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-aks-610-manse",
+      "url": "https://encykorea.aks.ac.kr/Article/E0042124",
+      "sha256": "bbdbc9f48c27ce04e8139b164836c82ac6e98eea54178349857d2336682e80d7",
+      "rawBytes": 102970,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-wonsan-strike",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040696",
+      "sha256": "2687e9ee286ffa02f87024cf271bbf1fc8490f5d96170203decc8c30d7096007",
+      "rawBytes": 105383,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-aks-daegu-october-1946",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014119",
+      "sha256": "c36cc15f070d80b0ae8d1fa4ea20e4bb931369dbaea97f0a23ff11db6d4c62fe",
+      "rawBytes": 84954,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-yeosun-1948",
+      "url": "https://encykorea.aks.ac.kr/Article/E0036410",
+      "sha256": "f6219574f57588d0ef91f09856fc1b49ba9f7da06f318e13962adacd6cd1c149",
+      "rawBytes": 120117,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-daegu-228-1960",
+      "url": "https://encykorea.aks.ac.kr/Article/E0075781",
+      "sha256": "f642685cba8de32a85a53ebebd65e725a9acad3550218d9a1d2dc607f9f5bcf8",
+      "rawBytes": 84422,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-aks-worker-1987",
+      "url": "https://encykorea.aks.ac.kr/Article/E0073744",
+      "sha256": "c31a443bf3e056526236fe848eebd32ea9a7204887fbc4bf130601c44ca3b318",
+      "rawBytes": 96509,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-aks-daegu-subway-fire-2003",
+      "url": "https://encykorea.aks.ac.kr/Article/E0078975",
+      "sha256": "1847c33a61225f8de8bc46548ff484ee0e0bc2d5c644e7657858e266dce61dd8",
+      "rawBytes": 93212,
+      "excerpts": 4,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-aks-sungnyemun-fire-2008",
+      "url": "https://encykorea.aks.ac.kr/Article/E0081349",
+      "sha256": "67a0ae0f4cae630bc3eecb87d8207228808cb7bf3cd063e8f27bba094b51320c",
+      "rawBytes": 124512,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-kowiki-busanhang",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%82%B0%ED%95%AD",
+      "sha256": "19f6be7e427590e7cc1bb8d9dc0f37e9c0509e92d3dcfd7e1567c5fe382270f5",
+      "rawBytes": 251054,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-incheon-station",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B8%EC%B2%9C%EC%97%AD",
+      "sha256": "bd96b70e6a61e532e44e79d12c407682372f2e177a23b2163f2d025aa9652a2c",
+      "rawBytes": 261595,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-seoul",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C",
+      "sha256": "e9c20291ae112226c742c383cba5d2ed0d464743eeacffea1353fea6b21ba74e",
+      "rawBytes": 1235887,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-scenes-122-modern_localities-kowiki-gyeongbokgung",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81",
+      "sha256": "81d032900dc44a5b5251fd6cca87b37d823ebc279397a9bf986d354a869d4fad",
+      "rawBytes": 542604,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-jinju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A7%84%EC%A3%BC%EC%8B%9C",
+      "sha256": "906170d9a1edced97ec77f2c9b686bce28a12cabb08ca8cbb9359eb6faa0b99f",
+      "rawBytes": 389893,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-seoulyeok",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EC%97%AD",
+      "sha256": "533c857e9d819530285a299ffcab5c4b87d1636cdf8da8772c05a96e4f86e78b",
+      "rawBytes": 829520,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-danseongsa",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%84%B1%EC%82%AC",
+      "sha256": "10d8aea60e23856cc495a9dd7f24277f59d0ca44d2be740afb78819d0a461197",
+      "rawBytes": 144708,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-daegu-station",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EA%B5%AC%EC%97%AD",
+      "sha256": "7f2457c12e01acdb754447659cb3c01314fb89d4aecdb11183102010aa4065ef",
+      "rawBytes": 490961,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-yeosu",
+      "url": "https://ko.wikipedia.org/wiki/%EC%97%AC%EC%88%98%EC%8B%9C",
+      "sha256": "60bf2aa8a95ee745f8f05c8c266c8fdb681581b556926e4e7582f89f3ba5835c",
+      "rawBytes": 423218,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-suncheon",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%9C%EC%B2%9C%EC%8B%9C_(%EC%A0%84%EB%9D%BC%EB%82%A8%EB%8F%84)",
+      "sha256": "df912e8a20683e5dcabfb0d69f2ac5a905c9297ee2874c8013a13b2e51f1c691",
+      "rawBytes": 362406,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-ulsan",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C",
+      "sha256": "92135d9c9094fe69146106b2d08cc7695cc852590231339ee81eb99b7b3db75f",
+      "rawBytes": 556234,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-jungangno-daegu",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%95%99%EB%A1%9C%EC%97%AD_(%EB%8C%80%EA%B5%AC)",
+      "sha256": "39822de448952015650c2dca5f0240c49482973328d216fade030855fac232e6",
+      "rawBytes": 141118,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-sungnyemun",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%AD%EB%A1%80%EB%AC%B8",
+      "sha256": "41348a9a421bc4fe70f9ba5cdef30681d00eadf90c2de82fd32401fd7cc7b2b5",
+      "rawBytes": 427065,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-aks-yeo-unhyeong-1947",
+      "url": "https://encykorea.aks.ac.kr/Article/E0075783",
+      "sha256": "4367e853753322245252821cb639a3ec953d0b3db261ab3676a43517657b0dec",
+      "rawBytes": 83907,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-aks-inter-korean-summit",
+      "url": "https://encykorea.aks.ac.kr/Article/E0070317",
+      "sha256": "8fec13785b4e427bd5a6953869f4ed676ed826eb8f7f5e3a87077eeb014ee6c3",
+      "rawBytes": 125038,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-kowiki-hyehwa-station",
+      "url": "https://ko.wikipedia.org/wiki/%ED%98%9C%ED%99%94%EC%97%AD",
+      "sha256": "a1314f698cde98a41aa116f3cecd37524bf7624d6ac8ef56ba302ea88edea29a",
+      "rawBytes": 142453,
+      "excerpts": 0,
+      "quotedWords": 0
+    },
+    {
+      "source": "src-kowiki-pyongyang-sunan-airport",
+      "url": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91%EA%B5%AD%EC%A0%9C%EB%B9%84%ED%96%89%EC%9E%A5",
+      "sha256": "aaa48b49d3f54e5778767868f96d9df15dad6dc1f409077f274765abd2a01f9c",
+      "rawBytes": 192184,
+      "excerpts": 0,
+      "quotedWords": 0
+    }
+  ],
+  "missing": [
+    {
+      "id": "missing-mod-wonsan-coordinate",
+      "topic": "원산·덕원의 좌표 출처",
+      "detail": "한국어 위키백과 '원산시' 문서에는 좌표 표시(geo·지도 틀)가 없어 이번에 자체 좌표를 얻지 못했다. 위키데이터 항목 JSON 은 Special: 경로여서 robots.txt 가 막고 있어 요청하지 않았다. 그래서 원산학사·원산해관·원산총파업 세 장면 모두 전달받은 1910~1945 행정구역 앵커(hgis-admin-69663)를 표시점으로 썼다. 공통 좌표 등록부의 rc-wonsan-city(127.44611, 39.1475)와는 약 10km 떨어진 다른 값이다."
+    },
+    {
+      "id": "missing-mod-jeongdong-coordinate",
+      "topic": "서울 정동 독립신문사 사옥 지점",
+      "detail": "출처는 사옥을 '정동에 있는 정부 소유의 건물'까지만 적는다. 한국어 위키백과 '정동 (서울특별시)' 문서에는 좌표가 없어 동 단위 좌표를 얻지 못했고, 서울 도심 대표점을 대신 썼다. 같은 사전 항목의 사진 설명은 '한성 정동 배재학당 구내'라고 적어 본문과 표현이 다르며, 어느 쪽이 사옥인지 이번 조사로 가리지 못했다."
+    },
+    {
+      "id": "missing-mod-gyeongseong-station-1900",
+      "topic": "1900년 경성역의 위치",
+      "detail": "『한국민족문화대백과사전』 경인선 항목은 1900년의 경성역이 1905년 서대문역으로 개칭되었다고 적고, 같은 사전 서울역 항목은 1905년 남대문역 개칭으로 적는다. 두 서술이 어긋나 1900년 개통식장을 현재의 서울역 좌표에 놓지 않았다. 서대문 쪽 옛 역사의 좌표를 제공하는 출처를 이번에 얻지 못했다."
+    },
+    {
+      "id": "missing-mod-gyeongbuk-provincial-office-1960",
+      "topic": "1960년 경상북도청의 자리",
+      "detail": "2·28대구학생시위의 도착점인 경북도청의 1960년 위치를 밝힌 출처를 이번에 얻지 못했다. 현재의 경상북도청은 안동으로 옮겨 가 좌표를 그대로 쓸 수 없어, 대구 시가 전체를 대표하는 앵커를 썼다."
+    },
+    {
+      "id": "missing-mod-daegu-buchung-1946",
+      "topic": "대구부청·경찰서의 위치",
+      "detail": "1946년 10월 2일 시민들이 포위한 대구부청과 경찰서의 지점을 출처가 밝히지 않았고, 별도 좌표 출처도 얻지 못했다. 그래서 장면의 표시점은 발포가 있었던 대구역 앞으로만 두었다."
+    },
+    {
+      "id": "missing-mod-arsonist-name-2003",
+      "topic": "대구지하철 방화 피의자의 이름 인용",
+      "detail": "출처는 관련 인물을 김대한으로 적지만, 한 웹페이지당 인용 낱말 25개 제한 때문에 이름이 든 문장을 인용하지 못했다. 그래서 참가자를 '방화범'이라는 출처 표기로만 두었다."
+    },
+    {
+      "id": "missing-mod-busan-port-actors",
+      "topic": "부산항 축항 공사의 시행 주체",
+      "detail": "출처는 '일본의 식민지 정책에 의하여' 축항 공사가 실시되었다고만 적고 시행 기관·인물을 밝히지 않는다. 그래서 이 장면에는 이름을 밝힌 현장 행위자를 넣지 않았다."
+    },
+    {
+      "id": "missing-mod-wonsanhaksa-persons",
+      "topic": "원산학사 설립 인물",
+      "detail": "출처는 정현석·어윤중·정헌시를 설립 지원자로 적지만, 인용 낱말 수 제한으로 이들이 든 문장을 인용하지 못해 참가자를 '관민' 집단으로만 두었다."
+    },
+    {
+      "id": "missing-mod-heritage-portal",
+      "topic": "국가유산청 공식 좌표",
+      "detail": "www.heritage.go.kr 의 robots.txt 요청이 15초 안에 응답하지 않아(재시도 1회 포함) 이 기관의 공식 좌표를 이번에 쓰지 않았다. 숭례문·경복궁 같은 유산의 기관 좌표 대신 한국어 위키백과 좌표를 썼다."
+    },
+    {
+      "id": "missing-mod-wikidata-entitydata",
+      "topic": "위키데이터 항목 JSON",
+      "detail": "www.wikidata.org 의 robots.txt 가 /wiki/Special: 과 /w/ 를 막고 있어 Special:EntityData JSON 과 api.php 를 요청하지 않았다. 공통 좌표 등록부가 쓴 src-wd-* 원본 바이트를 이 폴더에 두지 못했으므로, 그 좌표를 옮겨 쓰지 않고 같은 대상의 한국어 위키백과 문서를 직접 받아 좌표를 얻었다."
+    },
+    {
+      "id": "missing-mod-hyehwadong-coordinate",
+      "topic": "혜화동 로터리의 좌표",
+      "detail": "한국어 위키백과 '혜화동' 문서에 좌표 표시가 없어 같은 동의 혜화역 좌표를 표시점으로 썼다. 1947년 로터리의 중심이나 피격 지점을 가리키는 값이 아니다."
+    },
+    {
+      "id": "missing-mod-summit-2000-venue",
+      "topic": "2000년 정상회담의 회담장",
+      "detail": "출처는 6월 14일 오후 백화원 초대소에서 합의가 이루어졌다고 적지만, 인용 낱말 수 제한으로 그 문장을 인용하지 못했고 백화원 초대소의 좌표 출처도 얻지 못했다. 그래서 장면은 6월 13일 순안 공항의 첫 만남으로 한정했다."
+    },
+    "원산학사 설립 집단은1883년에 한정. 학교 운영기간을 설립자의 현장 기간으로 쓰지 않는다.",
+    "독립신문 발행은1899까지 유지하되 서재필 참여는1898년 인계·출국 연도까지로 한정(연 단위).",
+    "대구부청·경찰서 포위 시민을 대구역 현장에 배치하지 않고 관련 집단으로 표시.",
+    "서울역 시공 담당을 준공 현장 참석으로 바꾸지 않으며 현재역 좌표는 지역 참고점으로 표시.",
+    "서로 다른 발췌를 합친 time.verbatim을 없애고 각 발췌가 실제 입증하는 날짜만 Claim으로 기록. 검토된 장면 기간은 시작·끝 Claim을 함께 연결한다."
+  ],
+  "collection": {
+    "task": "modern_localities",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788852839.937795,
+    "pid": 29736,
+    "exitCode": 0,
+    "seconds": 2447.1,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "dd263268-23b2-4b8d-931b-88e7a63835fe",
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {
+    "src-kowiki-gyeongbokgung": "src-scenes-122-modern_localities-kowiki-gyeongbokgung"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}
