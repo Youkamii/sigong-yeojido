@@ -23,12 +23,20 @@ function fireAt(group,position,scale,animated){
 /** Local composition explains the event; these offsets are not new geographic facts. */
 export function composeHistoricalEvent(event,position,world){
   const group=new THREE.Group(),animated=[],models=[],occupied=[];
-  const sea=event.scenePlace?.medium==='sea'||event.archetype==='naval';
+  group.userData.sceneId=event.id;
+  const sea=event.scenePlace?event.scenePlace.medium==='sea':event.archetype==='naval';
   const actions=[event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
-  const harbor=!sea&&event.archetype==='construction'&&event.effects.ships?.enabled;
-  const teaching=!sea&&/강학|강의|교육|서당|서원|성균관/.test(actions)&&!['battle','siege','fire'].includes(event.archetype);
-  const market=!sea&&/장시|시장|교역|무역|상업/.test(actions)&&!['battle','siege','fire'].includes(event.archetype);
-  const compositionKind=harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
+  const modern=event.year>=1876,shipType=modern?'motor_ship':'ship';
+  const alliedFleet=event.participants.some(p=>p.presence==='on-site'&&p.side==='naval'&&/명나라 수군|명 수군/.test(p.role));
+  const soldier=modern?'rifle_soldier':'spearman';
+  const launch=modern&&/누리호|발사체/.test(actions);
+  const temple=/황룡사|불국사|감은사|흥륜사|사찰|사원/.test(actions)&&event.archetype==='construction';
+  const rail=modern&&/지하철|철도|열차/.test(actions),industry=modern&&/제철|고로|공업단지/.test(actions);
+  const road=modern&&/고속도로/.test(actions),personalFire=/분신|자해/.test(actions),paperFire=personalFire&&/화형식|법전.*태/.test(actions);
+  const harbor=!sea&&['construction','naval'].includes(event.archetype)&&event.effects.ships?.enabled;
+  const teaching=!sea&&/강학|강의|교육|서당|서원|성균관/.test(actions)&&['court','construction','publication'].includes(event.archetype);
+  const market=!sea&&/장시|시장|교역|무역|상업/.test(actions)&&['court','construction'].includes(event.archetype);
+  const compositionKind=launch?'launch':temple?'temple':rail?'rail':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
   let displayScale=event.scenePlace?.displayScale||1;
   if(sea){
     let clearance=35;
@@ -42,7 +50,7 @@ export function composeHistoricalEvent(event,position,world){
   const model=(archetype,dx,dz,scale=1,extra={})=>{
     dx*=displayScale;dz*=displayScale;scale*=displayScale;
     let x=position.x+dx,z=position.z+dz;
-    const onWater=sea||extra.medium==='sea';
+    const onWater=extra.medium?extra.medium==='sea':sea;
     if(!onWater&&!world.contains(x,z)){
       x=position.x+dx*.4;z=position.z+dz*.4;
       if(!world.contains(x,z))return;
@@ -54,19 +62,52 @@ export function composeHistoricalEvent(event,position,world){
   };
   const standard=(row,side,lift=0)=>{
     if(!row)return;
-    const flag=new THREE.Mesh(new THREE.BoxGeometry(2.8,.9,.12),new THREE.MeshStandardMaterial({color:side==='invader'?'#9a4435':'#346978',roughness:1}));
+    const flag=new THREE.Mesh(new THREE.BoxGeometry(2.8,.9,.12),new THREE.MeshStandardMaterial({color:side==='invader'?'#9a4435':row.fleet==='ming'?'#a58030':'#346978',roughness:1}));
     flag.position.copy(row.position);flag.position.y+=(lift+2)*displayScale;flag.scale.setScalar(displayScale);
-    flag.name='event-side-'+side;group.add(flag);
+    flag.name='event-side-'+side;flag.userData.fleet=row.fleet||side;group.add(flag);
   };
   if(sea){
-    model('ship',-13,0,1.5,{primary:true,side:'naval'});
+    model(shipType,-13,0,1.5,{primary:true,side:'naval',fleet:alliedFleet?'joseon':undefined});
     const opposingFleet=[...(event.sides||[]),...event.participants].some(p=>p.side==='invader');
     if(!event.compact&&event.effects.ships?.enabled){
       for(const [x,z,s,side] of [[-24,-15,1.1,'naval'],[-22,17,1.2,'naval'],[17,-14,1.15,'invader'],[24,0,1.05,'invader'],[19,18,1.1,'invader']]){
-        if(side!=='invader'||opposingFleet)model('ship',x,z,s,{side});
+        if(side!=='invader'||opposingFleet)model(shipType,x,z,s,{side,fleet:alliedFleet&&side==='naval'?(z>0?'ming':'joseon'):undefined});
       }
     }
-    models.filter(m=>m.archetype==='ship').forEach(m=>standard(m,m.side,7));
+    models.filter(m=>m.archetype===shipType).forEach(m=>standard(m,m.side,modern?3:7));
+    if(!event.compact&&/상륙/.test(event.label)){
+      let shore=null;
+      for(let r=3;r<90&&!shore;r+=2)for(let i=0;i<32;i++){
+        const a=i*Math.PI/16,dx=Math.cos(a)*r,dz=Math.sin(a)*r;
+        if(world.contains(position.x+dx*displayScale,position.z+dz*displayScale)){shore={dx,dz};break;}
+      }
+      if(shore)for(let i=0;i<6;i++)model(modern?'human':'spearman',shore.dx+(i%3)*2,shore.dz+Math.floor(i/3)*2,1.2,{medium:'land',side:'naval',action:'walking'});
+    }
+  }else if(launch){
+    model('rocket',0,0,1.7,{primary:true});
+    if(!event.compact){model('civic_hall',18,-14,1);model('car',16,6,1.2);
+      for(let i=0;i<4;i++)model('human',12+i*4,13,1.5);}
+  }else if(temple){
+    model('pagoda',0,0,1.8,{primary:true});
+    if(!event.compact){model('academy_hall',0,-16,1.8);model('handcart',15,9,1.1);
+      for(let i=0;i<6;i++)model('human',-12+i*5,12,1.5,{action:'working'});}
+  }else if(rail||road){
+    model(rail?'station':'civic_hall',0,-10,1.4,{primary:true});
+    if(!event.compact){
+      const length=65*displayScale,width=(rail?4:8)*displayScale;
+      const base=new THREE.Mesh(new THREE.BoxGeometry(length,.12*displayScale,width),new THREE.MeshStandardMaterial({color:rail?'#817765':'#777b76',roughness:1}));
+      base.position.set(position.x,position.y+.07*displayScale,position.z+8*displayScale);group.add(base);
+      for(const x of [-20,0,20])model(rail?'train':'car',x,8,rail?.9:1.2);
+      for(let i=0;i<8;i++)model('human',-13+i*4,-1,1.5);
+      model('banner',-15,0,1.5);model('banner',15,0,1.5);
+    }
+  }else if(industry){
+    model('steelworks',0,0,1.6,{primary:true});
+    if(!event.compact){model('civic_hall',18,-7,1.0);model('car',14,13,1.2);
+      for(let i=0;i<6;i++)model('human',-12+i*5,12,1.5,{action:'working'});}
+  }else if(personalFire){
+    model(paperFire?'book':'banner',0,0,paperFire?1.5:2,{primary:true});
+    if(!event.compact){model('market',0,-12,1.5);for(let i=0;i<6;i++)model('human',-9+i*4,5,1.5);}
   }else if(harbor){
     model('courtyard_house',0,0,1.4,{primary:true});
     if(!event.compact){
@@ -93,7 +134,14 @@ export function composeHistoricalEvent(event,position,world){
         group.add(timber);
       }
     }
-  }else if(['siege','battle'].includes(event.archetype)){
+  }else if(event.archetype==='battle'){
+    model('banner',0,0,1.8,{primary:true,side:'defender'});
+    if(!event.compact){
+      for(let i=0;i<10;i++)model(soldier,-20+(i%5)*8,-8-Math.floor(i/5)*7,1.5,{side:'defender',action:event.effects.attack?.enabled&&i<3?'defending':'idle'});
+      for(let i=0;i<10;i++)model(soldier,-17+(i%5)*8,13+Math.floor(i/5)*7,1.5,{side:'invader',action:event.effects.attack?.enabled&&i<3?'attacking':'idle'});
+      standard(model('banner',-24,-12,1.8),'defender',4);standard(model('banner',24,18,1.8),'invader',4);
+    }
+  }else if(event.archetype==='siege'){
     model('gatehouse',0,0,1.55,{primary:true});
     if(!event.compact){
     for(const x of [-19,-9,9,19])model('wall',x,1,1.0);
@@ -105,8 +153,8 @@ export function composeHistoricalEvent(event,position,world){
     }
     for(const [x,z] of [[-15,-13],[1,-15],[15,-11],[-10,-24],[12,-25]])model('house',x,z,.9,{path:true});
     {
-      for(let i=0;i<10;i++)model('spearman',-17+(i%5)*7,19+Math.floor(i/5)*7,1.5,{side:'invader',action:event.effects.attack?.enabled&&i<3?'attacking':'idle'});
-      for(let i=0;i<7;i++)model('spearman',-19+i*6,-4,1.5,{side:'defender',action:event.effects.attack?.enabled&&i<3?'defending':'idle'});
+      for(let i=0;i<10;i++)model(soldier,-17+(i%5)*7,19+Math.floor(i/5)*7,1.5,{side:'invader',action:event.effects.attack?.enabled&&i<3?'attacking':'idle'});
+      for(let i=0;i<7;i++)model(soldier,-19+i*6,-4,1.5,{side:'defender',action:event.effects.attack?.enabled&&i<3?'defending':'idle'});
       standard(model('banner',-20,22,1.8),'invader',4);standard(model('banner',20,-6,1.8),'defender',4);
     }
     }
@@ -134,21 +182,33 @@ export function composeHistoricalEvent(event,position,world){
       }
     }
   }else{
-    model(event.archetype==='court'?'palace':'courtyard_house',0,0,1.8,{primary:true});
+    model(modern?'civic_hall':event.archetype==='court'?'palace':'courtyard_house',0,0,1.8,{primary:true});
     if(!event.compact){
     for(const [x,z] of [[-16,-9],[16,-10],[-19,11],[17,15]])model('house',x,z,.9,{path:true});
-    if(event.archetype==='assembly')for(let i=0;i<15;i++)model('human',-11+(i%5)*5,12+Math.floor(i/5)*5,1.5);
+    if(event.archetype==='assembly'&&event.id!=='scene-jl-donghak-yongdam-1860')for(let i=0;i<15;i++)model('human',-11+(i%5)*5,12+Math.floor(i/5)*5,1.5);
     if(event.archetype==='construction'){
       model('handcart',10,9,1.3);model('table',-10,10,1.3);
       for(let i=0;i<6;i++)model('human',-12+i*5,14,1.5,{action:'working'});
     }
-    if(event.archetype==='court')for(let i=0;i<8;i++)model('scribe',-12+(i%4)*8,10+Math.floor(i/4)*6,1.5);
+    if(event.archetype==='court')for(let i=0;i<8;i++)model(modern?'human':'scribe',-12+(i%4)*8,10+Math.floor(i/4)*6,1.5);
     }
   }
-  if(!event.compact&&event.effects.fire?.enabled){
-    for(const target of models.filter(m=>sea?m.archetype==='ship'&&m.side==='invader':['house','courtyard_house','palace'].includes(m.archetype)).slice(0,3)){
-      const p=target.position.clone();p.y+=(sea?2:3)*displayScale;
-      fireAt(group,p,(sea?1.2:1.5)*displayScale,animated);
+  if(!sea&&!harbor&&!event.compact&&event.effects.ships?.enabled){
+    let shore=null;
+    for(let r=3;r<48&&!shore;r+=2)for(let i=0;i<48;i++){
+      const angle=i*Math.PI/24,dx=Math.cos(angle)*r,dz=Math.sin(angle)*r;
+      if(!world.contains(position.x+dx*displayScale,position.z+dz*displayScale)){shore={dx,dz,angle};break;}
+    }
+    if(shore)for(let i=0;i<3;i++){
+      const side=[...(event.sides||[]),...event.participants].some(p=>p.side==='invader')?'invader':'naval';
+      const ship=model(shipType,shore.dx+Math.cos(shore.angle)*(4+i*6),shore.dz+Math.sin(shore.angle)*(4+i*6),1,{medium:'sea',side});
+      standard(ship,side,modern?3:7);
+    }
+  }
+  if(!event.compact&&event.effects.fire?.enabled&&(!personalFire||paperFire)){
+    for(const target of models.filter(m=>paperFire?m.archetype==='book':sea?m.archetype===shipType&&m.side==='invader':['house','courtyard_house','palace','civic_hall'].includes(m.archetype)).slice(0,3)){
+      const p=target.position.clone();p.y+=(paperFire?.4:sea?2:3)*displayScale;
+      fireAt(group,p,(paperFire?.2:sea?1.2:1.5)*displayScale,animated);
       group.children.at(-1).userData.targetSide=target.side||null;
     }
   }
@@ -156,12 +216,13 @@ export function composeHistoricalEvent(event,position,world){
   for(const person of event.compact?[]:event.participants.filter(p=>p.presence==='on-site')){
     const side=person.side||'civilian',index=actorCounts[side]||0;actorCounts[side]=index+1;
     if(sea){
-      const ship=models.filter(m=>m.archetype==='ship'&&m.side===side)[index%3];
+      const affiliation=alliedFleet&&side==='naval'?(/명나라 수군|명 수군/.test(person.role)?'ming':'joseon'):null;
+      const fleet=models.filter(m=>m.archetype===shipType&&m.side===side&&(!affiliation||m.fleet===affiliation)),ship=fleet[index%fleet.length];
       if(!ship)continue;
-      const row=model(person.archetype,(ship.position.x-position.x)/displayScale,(ship.position.z-position.z)/displayScale,.75,{person,side,lift:2.7*ship.scale/displayScale});
-      if(row)row.shipSide=ship.side;
+      const row=model(person.archetype,(ship.position.x-position.x)/displayScale,(ship.position.z-position.z)/displayScale,.75,{person,side,lift:(modern?1.9:2.2)*ship.scale/displayScale});
+      if(row){row.shipSide=ship.side;row.fleet=ship.fleet;}
     }else{
-      const dx=-7+index*6,dz=event.archetype==='publication'?4:side==='invader'?22:-6;
+      const dx=-7+index*6,dz=event.archetype==='publication'?4:side==='invader'?22:side==='civilian'?4:-6;
       model(person.archetype,dx,dz,1.9,{person,side,action:event.archetype==='publication'?'working':'idle'});
     }
   }
