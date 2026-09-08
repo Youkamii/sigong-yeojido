@@ -1,0 +1,78 @@
+{
+  "base": "http://127.0.0.1:8873",
+  "checks": [
+    {
+      "name": "regional",
+      "pass": true,
+      "detail": {
+        "visible": 100,
+        "clipped": 0,
+        "width": 236,
+        "height": 172,
+        "depth": 484.4557111477425,
+        "terrainCasts": true,
+        "quality": "medium",
+        "fps": 120.48192770002818,
+        "contactShadows": true,
+        "contactShadowsExpected": true,
+        "sunlight": true
+      }
+    },
+    {
+      "name": "whole",
+      "pass": true,
+      "detail": {
+        "visible": 9983,
+        "clipped": 0,
+        "width": 2128,
+        "height": 1424,
+        "depth": 2089.0127814387934,
+        "terrainCasts": true,
+        "quality": "medium",
+        "fps": 90.90909090909092,
+        "contactShadows": false,
+        "contactShadowsExpected": false,
+        "sunlight": true
+      }
+    },
+    {
+      "name": "rotated",
+      "pass": true,
+      "detail": {
+        "visible": 9980,
+        "clipped": 0,
+        "width": 2336,
+        "height": 1384,
+        "depth": 1897.413102476251,
+        "terrainCasts": true,
+        "quality": "medium",
+        "fps": 126.5822785048889,
+        "contactShadows": false,
+        "contactShadowsExpected": false,
+        "sunlight": true
+      }
+    },
+    {
+      "name": "mountains",
+      "pass": true,
+      "detail": {
+        "visible": 584,
+        "clipped": 0,
+        "width": 392,
+        "height": 272,
+        "depth": 474.26794720919406,
+        "terrainCasts": true,
+        "quality": "medium",
+        "fps": 434.7826085548094,
+        "contactShadows": true,
+        "contactShadowsExpected": true,
+        "sunlight": true
+      }
+    },
+    {
+      "name": "Quality changes preserve the close-view contact shadow setting",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

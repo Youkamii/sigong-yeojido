@@ -149,6 +149,7 @@ export class ChronicleWorld extends KoreaWorld{
   }
   configureEngine(engine){
     this.engine=engine;
+    engine.contactShadowDistance=400;
     engine.frameWorld(this.navigationRim);
     engine.controls.minDistance=.1;engine.controls.maxDistance=this.navigationRim*5;
     engine.camera.near=.005;

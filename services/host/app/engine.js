@@ -366,7 +366,7 @@ export class Engine {
     if (opts.manual !== false) { this._qualityLocked = true; this._autoDone = true; }
 
     // 물질화 중에는 SSAO 가 아직 없는 물체의 접촉 그림자를 그리므로 프리셋 위에 한 겹 더 눌러 둔다
-    if (this.ssao) this.ssao.enabled = cfg.ssao && !this._materializing;
+    if (this.ssao) this.ssao.enabled = cfg.ssao && !this._materializing && !this._distantOverview;
     if (this.bloom) this.bloom.enabled = cfg.bloom;
     if (this.film) this.film.enabled = cfg.film;
     if (this.smaa) this.smaa.enabled = cfg.smaa;
@@ -459,10 +459,12 @@ export class Engine {
    */
   _syncMaterializePasses() {
     const on = U.materialize.value < 0.999;
-    if (on === this._materializing) return;
+    const distant = this.camera.position.distanceTo(this.controls.target) > (this.contactShadowDistance ?? Infinity);
+    if (on === this._materializing && distant === this._distantOverview) return;
     this._materializing = on;
+    this._distantOverview = distant;
     const cfg = QUALITY[this.quality] || QUALITY.medium;
-    if (this.ssao) this.ssao.enabled = cfg.ssao && !on;
+    if (this.ssao) this.ssao.enabled = cfg.ssao && !on && !distant;
   }
 
   /**

@@ -1,0 +1,494 @@
+{
+  "base": "http://127.0.0.1:8873",
+  "errors": [],
+  "scenarios": [
+    {
+      "frames": 769,
+      "actualFps": 148.92998934831024,
+      "p50": 6.099999999998545,
+      "p95": 11.800000000001091,
+      "max": 151.39999999999964,
+      "over50": 2,
+      "measured": {
+        "ChronicleWorld.update": {
+          "count": 770,
+          "total": 279.7000000551343,
+          "max": 1.3999999985098839
+        },
+        "ChronicleScene.update": {
+          "count": 770,
+          "total": 64.29999997466803,
+          "max": 0.5999999977648258
+        },
+        "EffectComposer.render": {
+          "count": 770,
+          "total": 3386.4000000320375,
+          "max": 18.100000001490116
+        }
+      },
+      "stats": {
+        "calls": 472,
+        "triangles": 1317902,
+        "sceneCalls": 225,
+        "sceneTriangles": 658940,
+        "fps": 163.93442628957737,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116
+      },
+      "name": "idle",
+      "hotspots": [
+        {
+          "name": "(idle)",
+          "url": "",
+          "hits": 610
+        },
+        {
+          "name": "(program)",
+          "url": "",
+          "hits": 273
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 59
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 40
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 40
+        },
+        {
+          "name": "get clientWidth",
+          "url": "",
+          "hits": 39
+        },
+        {
+          "name": "(garbage collector)",
+          "url": "",
+          "hits": 39
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 36
+        },
+        {
+          "name": "i",
+          "url": "three.module.min.js",
+          "hits": 35
+        },
+        {
+          "name": "Jl.renderBufferDirect",
+          "url": "three.module.min.js",
+          "hits": 34
+        },
+        {
+          "name": "upload",
+          "url": "three.module.min.js",
+          "hits": 31
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 31
+        }
+      ]
+    },
+    {
+      "frames": 1183,
+      "actualFps": 159.2172379914133,
+      "p50": 6.099999999998545,
+      "p95": 6.299999999999272,
+      "max": 109.19999999999891,
+      "over50": 1,
+      "measured": {
+        "ChronicleWorld.update": {
+          "count": 1184,
+          "total": 402.90000004693866,
+          "max": 1.300000000745058
+        },
+        "ChronicleScene.update": {
+          "count": 1184,
+          "total": 131.69999995827675,
+          "max": 1.7000000029802322
+        },
+        "EffectComposer.render": {
+          "count": 1184,
+          "total": 4822.000000089407,
+          "max": 9.899999998509884
+        },
+        "ChronicleGeography.update": {
+          "count": 57,
+          "total": 26.100000012665987,
+          "max": 1
+        }
+      },
+      "stats": {
+        "calls": 468,
+        "triangles": 1330462,
+        "sceneCalls": 223,
+        "sceneTriangles": 665220,
+        "fps": 138.88888890326115,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116,
+        "adaptMedianMs": 6.099999997764826
+      },
+      "name": "pan",
+      "hotspots": [
+        {
+          "name": "(idle)",
+          "url": "",
+          "hits": 948
+        },
+        {
+          "name": "(program)",
+          "url": "",
+          "hits": 432
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 97
+        },
+        {
+          "name": "i",
+          "url": "three.module.min.js",
+          "hits": 63
+        },
+        {
+          "name": "get clientWidth",
+          "url": "",
+          "hits": 63
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 58
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 56
+        },
+        {
+          "name": "Jl.renderBufferDirect",
+          "url": "three.module.min.js",
+          "hits": 55
+        },
+        {
+          "name": "upload",
+          "url": "three.module.min.js",
+          "hits": 43
+        },
+        {
+          "name": "Xt",
+          "url": "three.module.min.js",
+          "hits": 43
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 41
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 39
+        }
+      ]
+    },
+    {
+      "frames": 703,
+      "actualFps": 136.3089929034009,
+      "p50": 6.099999999998545,
+      "p95": 12.200000000000728,
+      "max": 103,
+      "over50": 1,
+      "measured": {
+        "ChronicleWorld.update": {
+          "count": 704,
+          "total": 223.30000004544854,
+          "max": 1.199999999254942
+        },
+        "ChronicleScene.update": {
+          "count": 704,
+          "total": 50.29999999329448,
+          "max": 0.4000000022351742
+        },
+        "EffectComposer.render": {
+          "count": 704,
+          "total": 4315.399999991059,
+          "max": 12.300000000745058
+        }
+      },
+      "stats": {
+        "calls": 1045,
+        "triangles": 2227906,
+        "sceneCalls": 1027,
+        "sceneTriangles": 2227888,
+        "fps": 153.84615384615384,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116,
+        "adaptMedianMs": 7
+      },
+      "name": "overview",
+      "hotspots": [
+        {
+          "name": "(program)",
+          "url": "",
+          "hits": 228
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 196
+        },
+        {
+          "name": "bindVertexArray",
+          "url": "",
+          "hits": 180
+        },
+        {
+          "name": "Jl.renderBufferDirect",
+          "url": "three.module.min.js",
+          "hits": 123
+        },
+        {
+          "name": "i",
+          "url": "three.module.min.js",
+          "hits": 102
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 99
+        },
+        {
+          "name": "setValue",
+          "url": "three.module.min.js",
+          "hits": 95
+        },
+        {
+          "name": "compose",
+          "url": "three.module.min.js",
+          "hits": 77
+        },
+        {
+          "name": "upload",
+          "url": "three.module.min.js",
+          "hits": 76
+        },
+        {
+          "name": "",
+          "url": "three.module.min.js",
+          "hits": 69
+        },
+        {
+          "name": "(idle)",
+          "url": "",
+          "hits": 68
+        },
+        {
+          "name": "multiplyMatrices",
+          "url": "three.module.min.js",
+          "hits": 58
+        }
+      ]
+    }
+  ],
+  "readySeconds": 8.422,
+  "sceneryReadySeconds": 8.812,
+  "scenery": {
+    "villages": 18,
+    "houses": 92,
+    "fields": 72,
+    "tigers": 18,
+    "ready": true
+  },
+  "startupHotspots": [
+    {
+      "name": "(idle)",
+      "url": "",
+      "line": -1,
+      "hits": 1341
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 885
+    },
+    {
+      "name": "(program)",
+      "url": "",
+      "line": -1,
+      "hits": 613
+    },
+    {
+      "name": "ridgeRelief",
+      "url": "chronicle-geography.js",
+      "line": 11,
+      "hits": 224
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 186
+    },
+    {
+      "name": "coastlineDistance",
+      "url": "coastline-index.js",
+      "line": 31,
+      "hits": 130
+    },
+    {
+      "name": "insideCoastline",
+      "url": "coastline-index.js",
+      "line": 20,
+      "hits": 91
+    },
+    {
+      "name": "(garbage collector)",
+      "url": "",
+      "line": -1,
+      "hits": 80
+    },
+    {
+      "name": "buildForest",
+      "url": "chronicle-assets.js",
+      "line": 73,
+      "hits": 80
+    },
+    {
+      "name": "ChronicleWorld.surfaceAt",
+      "url": "chronicle-world.js",
+      "line": 76,
+      "hits": 79
+    },
+    {
+      "name": "coastlineDistance",
+      "url": "coastline-index.js",
+      "line": 31,
+      "hits": 58
+    },
+    {
+      "name": "insideCoastline",
+      "url": "coastline-index.js",
+      "line": 20,
+      "hits": 57
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 47
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 41
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 31
+    },
+    {
+      "name": "insideCoastline",
+      "url": "coastline-index.js",
+      "line": 20,
+      "hits": 31
+    },
+    {
+      "name": "A",
+      "url": "three.module.min.js",
+      "line": 5,
+      "hits": 27
+    },
+    {
+      "name": "",
+      "url": "chronicle-assets.js",
+      "line": 94,
+      "hits": 24
+    }
+  ],
+  "scene": {
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "year": 1593,
+    "quality": "medium",
+    "stats": {
+      "calls": 472,
+      "triangles": 1317902,
+      "sceneCalls": 225,
+      "sceneTriangles": 658940,
+      "fps": 156.2500000363798,
+      "quality": "medium"
+    },
+    "geography": 66,
+    "markers": 11,
+    "trees": 9983,
+    "terrainTriangles": 74182
+  },
+  "longFrames": [
+    {
+      "start": 2327.7999999970198,
+      "duration": 114
+    },
+    {
+      "start": 2807.599999997765,
+      "duration": 1010
+    },
+    {
+      "start": 3837,
+      "duration": 560
+    },
+    {
+      "start": 4479.099999997765,
+      "duration": 1364
+    },
+    {
+      "start": 5845.099999997765,
+      "duration": 344
+    },
+    {
+      "start": 6285.5,
+      "duration": 258
+    },
+    {
+      "start": 6544,
+      "duration": 119
+    },
+    {
+      "start": 6757.29999999702,
+      "duration": 215
+    },
+    {
+      "start": 6997.599999997765,
+      "duration": 67
+    },
+    {
+      "start": 7170.699999999255,
+      "duration": 116
+    },
+    {
+      "start": 7287.29999999702,
+      "duration": 393
+    },
+    {
+      "start": 7779.099999997765,
+      "duration": 523
+    },
+    {
+      "start": 8645.199999999255,
+      "duration": 131
+    }
+  ]
+}

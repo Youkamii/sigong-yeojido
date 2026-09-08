@@ -23,15 +23,17 @@ with sync_playwright() as pw:
               if(Math.abs(q.x)>1||Math.abs(q.y)>1||Math.abs(q.z)>1)clipped++;}}
           return {visible,clipped,width:shadow.right-shadow.left,height:shadow.top-shadow.bottom,
             depth:shadow.far,terrainCasts:w.land.getObjectByName('peninsula-surface').castShadow,
-            quality:e.quality,fps:e.stats.fps};}''')
-        passed=result['visible']>0 and result['clipped']==0 and result['terrainCasts']
+            quality:e.quality,fps:e.stats.fps,contactShadows:e.ssao.enabled,
+            contactShadowsExpected:e.camera.position.distanceTo(e.controls.target)<=e.contactShadowDistance,
+            sunlight:e.renderer.shadowMap.enabled};}''')
+        passed=result['visible']>0 and result['clipped']==0 and result['terrainCasts'] and result['sunlight'] and result['contactShadows']==result['contactShadowsExpected']
         report['checks'].append({'name':name,'pass':passed,'detail':result})
         print(json.dumps(report['checks'][-1]),flush=True)
         assert passed,result
         page.screenshot(path=str(args.out/(name+'.png')))
     try:
         page.goto(args.base,wait_until='domcontentloaded');page.locator('#enter').click()
-        page.wait_for_function('window.__sigong?.chronicleScene.assets?.revision>0')
+        page.wait_for_function('window.__sigong?.chronicleScene.assets?.scenery.stats.ready&&!window.__sigong.engine._materializing')
         inspect('regional')
         page.locator('#wholeMapBtn').click();inspect('whole')
         page.evaluate('''()=>{const e=window.__sigong.engine;
@@ -39,6 +41,14 @@ with sync_playwright() as pw:
           offset.applyAxisAngle(e.camera.up,Math.PI/2);e.camera.position.copy(e.controls.target).add(offset);
           e.controls.update();}''');inspect('rotated')
         page.locator('#geographyDestination').select_option('taebaek-sanmaek');inspect('mountains')
+        page.evaluate("window.__sigong.engine.setQuality('low')")
+        page.wait_for_timeout(100)
+        low=page.evaluate('!window.__sigong.engine.ssao.enabled')
+        page.evaluate("window.__sigong.engine.setQuality('medium')")
+        page.wait_for_timeout(100)
+        restored=page.evaluate('window.__sigong.engine.ssao.enabled&&window.__sigong.engine.renderer.shadowMap.enabled')
+        report['checks'].append({'name':'Quality changes preserve the close-view contact shadow setting','pass':low and restored})
+        assert low and restored
         assert not report['errors'],report['errors']
     finally:
         (args.out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
