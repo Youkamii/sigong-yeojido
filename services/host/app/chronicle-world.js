@@ -37,7 +37,7 @@ export class ChronicleWorld extends KoreaWorld{
     const polygons=outline.geometry.type==='Polygon'?[outline.geometry.coordinates]:outline.geometry.coordinates;
     this.rings=polygons.map(p=>p[0].map(c=>this.toWorld(...c))).filter(r=>{
       const area=Math.abs(r.reduce((a,p,i)=>a+p[0]*r[(i+1)%r.length][1]-r[(i+1)%r.length][0]*p[1],0))/2;
-      return area>.12;
+      return area>.00001;
     });
     this.rings.sort((a,b)=>b.length-a.length);
     this.rings=this.rings.filter(r=>!(geography?.islands||[]).some(i=>inside(...this.toWorld(i.lon,i.lat),r)));

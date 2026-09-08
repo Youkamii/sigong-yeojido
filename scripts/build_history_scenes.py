@@ -147,7 +147,7 @@ for scene in scenes:
     merc=lambda lat:math.log(math.tan(math.pi/4+math.radians(lat)/2))
     world_scale=1600/(merc(43.5)-merc(33))
     width=math.radians(b[2]-b[0])*world_scale;height=(merc(b[3])-merc(b[1]))*world_scale
-    place['displayScale']=max(.1,min(1,min(width,height)/65))
+    place['displayScale']=max(.002,min(1,min(width,height)/65))
     place['displayBasis']='원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.' if polygon.covers(point) else '지명 자료의 섬 대표 좌표 가까이에 있는 HGIS 해안 윤곽 안에 설명용 장면을 배치. 원문의 좌표는 보존하며 본영 건물의 실측 위치를 뜻하지 않음.'
     place['displaySource']=outline['properties']['source']
 
