@@ -89,7 +89,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       archetype:scene.kind,detail:yearLabel(scene.startYear),summary:scene.summary,
       scenePlace:coordinates?{...place,coordinates,...(regionalPlacement?{
         coordinateNote:'지역 기준 추정 배치 · '+region.coordinateNote,coordinateSourceIds:region.sourceIds}: {})}:null,
-      sites:[],locationReference:null,
+      sites:[],locationReference:null,visualActions:scene.visualActions,
       participants,effects:Object.fromEntries(Object.entries(scene.effects||{}).map(([key,effect])=>
         [key,{enabled:effect.enabled&&supported(effect.claimIds),claimIds:effect.claimIds}])),
       sides:scene.participants.filter(p=>supported(p.claimIds)&&entities.get(p.entityId)?.type==='Polity')

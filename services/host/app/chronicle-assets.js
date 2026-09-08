@@ -154,7 +154,7 @@ export class ChronicleAssets{
           activity:event.summary,placement:loc.placement,placementLabel:person.role+' · '+loc.placementLabel,
           site:loc.site,locationReference:loc.locationReference,focusDistance:scene.focusDistance,action:model.action,side:model.side,shipSide:model.shipSide}
           :{...event,...loc,id:model.primary?event.id:event.id+':part:'+index,kind:model.primary?'event':'building',
-            sceneKind:event.archetype,path:model.path,focusDistance:scene.focusDistance,action:model.action,compact,side:model.side};
+            sceneKind:scene.compositionKind,path:model.path,focusDistance:scene.focusDistance,action:model.action,compact,side:model.side};
         const position=model.position.clone();position.y+=model.lift||0;
         add(row,position,model.scale,model.archetype);
         if(person)placedPeople.add(person.entityId);

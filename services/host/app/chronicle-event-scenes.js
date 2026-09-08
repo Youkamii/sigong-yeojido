@@ -24,6 +24,11 @@ function fireAt(group,position,scale,animated){
 export function composeHistoricalEvent(event,position,world){
   const group=new THREE.Group(),animated=[],models=[],occupied=[];
   const sea=event.scenePlace?.medium==='sea'||event.archetype==='naval';
+  const actions=[event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
+  const harbor=!sea&&event.archetype==='construction'&&event.effects.ships?.enabled;
+  const teaching=!sea&&/강학|강의|교육|서당|서원|성균관/.test(actions)&&!['battle','siege','fire'].includes(event.archetype);
+  const market=!sea&&/장시|시장|교역|무역|상업/.test(actions)&&!['battle','siege','fire'].includes(event.archetype);
+  const compositionKind=harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
   let displayScale=event.scenePlace?.displayScale||1;
   if(sea){
     let clearance=35;
@@ -37,12 +42,13 @@ export function composeHistoricalEvent(event,position,world){
   const model=(archetype,dx,dz,scale=1,extra={})=>{
     dx*=displayScale;dz*=displayScale;scale*=displayScale;
     let x=position.x+dx,z=position.z+dz;
-    if(!sea&&!world.contains(x,z)){
+    const onWater=sea||extra.medium==='sea';
+    if(!onWater&&!world.contains(x,z)){
       x=position.x+dx*.4;z=position.z+dz*.4;
       if(!world.contains(x,z))return;
     }
-    if(sea&&world.contains(x,z))return;
-    const p=new THREE.Vector3(x,sea?world.seaLevel:world.surfaceAt(x,z),z);
+    if(onWater&&world.contains(x,z))return;
+    const p=new THREE.Vector3(x,onWater?world.seaLevel:world.surfaceAt(x,z),z);
     const row={archetype,position:p,scale,...extra,lift:(extra.lift||0)*displayScale};models.push(row);occupied.push({...p,radius:(archetype==='spearman'?1.7:3)*displayScale});
     return row;
   };
@@ -54,10 +60,39 @@ export function composeHistoricalEvent(event,position,world){
   };
   if(sea){
     model('ship',-13,0,1.5,{primary:true,side:'naval'});
+    const opposingFleet=[...(event.sides||[]),...event.participants].some(p=>p.side==='invader');
     if(!event.compact&&event.effects.ships?.enabled){
-      for(const [x,z,s,side] of [[-24,-15,1.1,'naval'],[-22,17,1.2,'naval'],[17,-14,1.15,'invader'],[24,0,1.05,'invader'],[19,18,1.1,'invader']])model('ship',x,z,s,{side});
+      for(const [x,z,s,side] of [[-24,-15,1.1,'naval'],[-22,17,1.2,'naval'],[17,-14,1.15,'invader'],[24,0,1.05,'invader'],[19,18,1.1,'invader']]){
+        if(side!=='invader'||opposingFleet)model('ship',x,z,s,{side});
+      }
     }
     models.filter(m=>m.archetype==='ship').forEach(m=>standard(m,m.side,7));
+  }else if(harbor){
+    model('courtyard_house',0,0,1.4,{primary:true});
+    if(!event.compact){
+      let shore=null;
+      for(let r=1;r<48&&!shore;r+=1)for(let i=0;i<48;i++){
+        const angle=i*Math.PI/24,dx=Math.cos(angle)*r,dz=Math.sin(angle)*r;
+        if(!world.contains(position.x+dx*displayScale,position.z+dz*displayScale)){
+          shore={dx,dz,angle};break;
+        }
+      }
+      model('table',-8,6,1.5);model('handcart',8,5,1.1);
+      for(let i=0;i<4;i++)model('human',-10+i*5,8,1.5,{action:'working',side:'naval'});
+      if(shore){
+        const {dx,dz,angle}=shore;
+        model('boat_slip',dx*.7,dz*.7,1.0);
+        for(let i=0;i<3;i++){
+          const sx=dx+Math.cos(angle)*(8+i*8),sz=dz+Math.sin(angle)*(8+i*8);
+          model(i?'boat':'ship',sx,sz,i?.8:1.1,{medium:'sea',side:'naval'});
+        }
+      }
+      for(let i=0;i<5;i++){
+        const timber=new THREE.Mesh(new THREE.BoxGeometry(5,.55,.7),new THREE.MeshStandardMaterial({color:'#97764c',roughness:1}));
+        timber.scale.setScalar(displayScale);timber.position.set(position.x-5*displayScale,position.y+(.4+i%2*.6)*displayScale,position.z+(11+i*.8)*displayScale);
+        group.add(timber);
+      }
+    }
   }else if(['siege','battle'].includes(event.archetype)){
     model('gatehouse',0,0,1.55,{primary:true});
     if(!event.compact){
@@ -75,6 +110,18 @@ export function composeHistoricalEvent(event,position,world){
       standard(model('banner',-20,22,1.8),'invader',4);standard(model('banner',20,-6,1.8),'defender',4);
     }
     }
+  }else if(teaching){
+    model('academy_hall',0,-6,1.7,{primary:true});
+    if(!event.compact){
+      model('table',0,5,1.6);model('book',0,5,1.5,{lift:2.5});
+      for(let i=0;i<9;i++)model('scribe',-9+(i%3)*8,12+Math.floor(i/3)*6,1.4,{action:'working'});
+    }
+  }else if(market){
+    model('market',0,0,1.8,{primary:true});
+    if(!event.compact){
+      for(const x of [-16,16]){model('market',x,1,1.3);model('handcart',x,9,1.0);}
+      for(let i=0;i<9;i++)model('human',-15+(i%5)*7,10+Math.floor(i/5)*6,1.5,{action:i%3?'walking':'working'});
+    }
   }else if(event.archetype==='publication'){
     model('table',0,0,2.5,{primary:true});
     if(!event.compact){
@@ -91,7 +138,11 @@ export function composeHistoricalEvent(event,position,world){
     if(!event.compact){
     for(const [x,z] of [[-16,-9],[16,-10],[-19,11],[17,15]])model('house',x,z,.9,{path:true});
     if(event.archetype==='assembly')for(let i=0;i<15;i++)model('human',-11+(i%5)*5,12+Math.floor(i/5)*5,1.5);
-    if(event.archetype==='construction'){model('handcart',10,9,1.3);model('table',-10,10,1.3);}
+    if(event.archetype==='construction'){
+      model('handcart',10,9,1.3);model('table',-10,10,1.3);
+      for(let i=0;i<6;i++)model('human',-12+i*5,14,1.5,{action:'working'});
+    }
+    if(event.archetype==='court')for(let i=0;i<8;i++)model('scribe',-12+(i%4)*8,10+Math.floor(i/4)*6,1.5);
     }
   }
   if(!event.compact&&event.effects.fire?.enabled){
@@ -114,5 +165,6 @@ export function composeHistoricalEvent(event,position,world){
       model(person.archetype,dx,dz,1.9,{person,side,action:event.archetype==='publication'?'working':'idle'});
     }
   }
-  return {group,animated,models,occupied,radius:radius*displayScale,focusDistance:Math.max(.1,(sea?145:event.archetype==='publication'?85:115)*displayScale)};
+  return {group,animated,models,occupied,compositionKind,radius:radius*displayScale,
+    focusDistance:Math.max(.1,(sea?145:harbor?150:event.archetype==='publication'?85:115)*displayScale)};
 }
