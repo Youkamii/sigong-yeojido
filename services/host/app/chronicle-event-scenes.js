@@ -50,6 +50,7 @@ export function composeHistoricalEvent(event,position,world){
   }
   if(event.compact)displayScale*=.16;
   const radius=sea?45:['siege','battle'].includes(event.archetype)?36:24;
+  if(!event.compact&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,event.maxRadius/radius);
   const model=(archetype,dx,dz,scale=1,extra={})=>{
     if(!modern)archetype=({palace:'korean_hall',house:'korean_house',gatehouse:'korean_gate',academy_hall:'korean_academy',courtyard_house:'korean_courtyard'})[archetype]||archetype;
     dx*=displayScale;dz*=displayScale;scale*=displayScale;

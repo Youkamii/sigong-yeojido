@@ -67,16 +67,16 @@ export function contextAt(data,year,span=50){
     }
   }
   const byClaim=new Map(data.claims.map(claim=>[claim.id,claim]));
-  const curatedEvents=new Set();
+  const curatedEvents=[];
   for(const scene of data.scenePackets||[]){
     if(!Number.isInteger(scene.startYear)||!Number.isInteger(scene.endYear))continue;
     const ids=[...scene.dateClaimIds,...scene.actionClaimIds],entity=entities.get(scene.eventId);
     if(!entity||!ids.length||ids.some(id=>!byClaim.has(id)))continue;
-    if(!curatedEvents.has(scene.eventId))for(let i=events.length-1;i>=0;i--)if(events[i].id===scene.eventId)events.splice(i,1);
-    curatedEvents.add(scene.eventId);
-    events.push({...entity,lo:scene.startYear,hi:scene.endYear,claim:byClaim.get(scene.dateClaimIds[0]),
+    curatedEvents.push({...entity,sceneId:scene.id,placeLabel:scene.place?.label,lo:scene.startYear,hi:scene.endYear,claim:byClaim.get(scene.dateClaimIds[0]),
       basis:[...new Set(ids)].map(id=>byClaim.get(id)),title:scene.title,current:scene.startYear<=year&&scene.endYear>=year});
   }
+  for(let i=events.length-1;i>=0;i--)if(curatedEvents.some(s=>s.id===events[i].id&&s.lo<=events[i].lo&&s.hi>=events[i].hi))events.splice(i,1);
+  events.push(...curatedEvents);
   // A lifespan must have both ends from the same source. Reign is a separate period.
   const births=dates.filter(d=>d.claim.predicate==='syj:bornIn');
   for(const birth of births){
@@ -116,10 +116,10 @@ export function contextAt(data,year,span=50){
   }
   const unique=new Map();
   for(const event of events){
-  const key=[event.id,event.lo,event.hi].join('|');
+  const key=[event.id,event.lo,event.hi,event.sceneId||''].join('|');
     if(unique.has(key))unique.get(key).basis.push(...event.basis);else unique.set(key,{...event,basis:[...event.basis]});
   }
-  const grouped=[...unique.values()].filter(e=>!events.some(other=>other!==e&&other.id===e.id
+  const grouped=[...unique.values()].filter(e=>!events.some(other=>other!==e&&other.id===e.id&&other.sceneId===e.sceneId
     &&other.claim.fromSource===e.claim.fromSource&&other.claim.predicate===e.claim.predicate
     &&other.lo<=e.lo&&other.hi>=e.hi&&(other.lo<e.lo||other.hi>e.hi)));
   grouped.sort((a,b)=>a.lo-b.lo||a.title.localeCompare(b.title,'ko'));

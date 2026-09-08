@@ -173,8 +173,9 @@ export class ChronicleAssets{
     for(const event of events){
       const loc=locate(event);
       if(!loc){unlocated.push(event);continue;}
-      const compact=fullScenes.some(p=>p.distanceTo(loc.position)<55);
-      const scene=composeHistoricalEvent({...event,compact},loc.position,this.world);
+      const nearest=Math.min(Infinity,...fullScenes.map(p=>p.distanceTo(loc.position)));
+      const compact=nearest<3;
+      const scene=composeHistoricalEvent({...event,compact,maxRadius:nearest*.45},loc.position,this.world);
       if(!scene.models.some(m=>m.primary)){unlocated.push(event);continue;}
       next.add(scene.group);eventAnimations.push(...scene.animated);
       if(!compact){fullScenes.push(loc.position);sceneWoods.push({id:event.id,x:loc.position.x,z:loc.position.z,scale:scene.displayScale});}

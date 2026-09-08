@@ -71,3 +71,7 @@ assert.equal(contextAt(cityData,1000).events[0].current,true,'A supported contin
 assert.equal(contextAt(cityData,1233).events[0].current,false);
 assert.equal(contextAt({...cityData,claims:[cityStart,cityEnd]},1000).events.length,0,'Two dates alone do not establish a continuous city function');
 assert.equal(contextAt({...cityData,claims:[cityAction]},1000).events.length,0,'Filtered dates remove the continuous city scene');
+const laterDate=claim('later-date','occurredIn',{kind:'year',value:1281},'src-a',event.id);
+assert.ok(contextAt({...cityData,claims:[...cityData.claims,laterDate]},1281).allEvents.some(e=>e.lo===1281),'A curated scene must not erase another sourced date of the same event');
+const places={...cityData,scenePackets:[{...cityPacket,id:'city-a',title:'도읍A'},{...cityPacket,id:'city-b',title:'도읍B'}]};
+assert.deepEqual(contextAt(places,1000).events.map(e=>e.sceneId).sort(),['city-a','city-b'],'Scenes at different places remain separately discoverable in the same year');
