@@ -183,7 +183,8 @@ export class Chronicle {
   showEntity(id){
     this.stopPlay();const entity=this.data.entities.find(e=>e.id===id);if(!entity)return;
     const dates=datedClaims(this.data).filter(d=>d.claim.subject===id);
-    if(entity.type==='Event'&&dates.length&&!dates.some(d=>d.lo<=this.year&&d.hi>=this.year)){
+    const currentEvent=this.context?.allEvents.some(e=>e.id===id&&e.current);
+    if(entity.type==='Event'&&dates.length&&!currentEvent&&!dates.some(d=>d.lo<=this.year&&d.hi>=this.year)){
       const nearest=[...dates].sort((a,b)=>Math.abs(a.lo-this.year)-Math.abs(b.lo-this.year))[0];
       this.chooseYear(nearest.lo);
     }
