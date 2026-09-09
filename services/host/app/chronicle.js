@@ -224,8 +224,8 @@ export class Chronicle {
     const activityClaims=(activity?.claimIds||[]).map(id=>this.data.claims.find(c=>c.id===id)).filter(Boolean);
     const descriptions=this.data.claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate));
     this.host.innerHTML=`<button class="context-back" data-context-back>← ${yearLabel(this.year)}로 돌아가기</button>
-      <div class="context-kicker">${{Person:'인물',Event:'사건',Narrative:'설화·전승',Polity:'나라'}[entity.type]||'관련 항목'}</div><h2>${esc(entityLabel(entity))}</h2>
-      ${activity?`<section class="selected-activity"><h3>${activity.narrative?'이야기의 무대':yearLabel(this.year)}${activity.place?' · '+esc(activity.place):''}</h3>
+      <div class="context-kicker">${{Person:'인물',Event:'사건',Narrative:'설화·전승',Polity:'나라',Place:'장소'}[entity.type]||'관련 항목'}</div><h2>${esc(activity?.siteBackground?activity.place:entityLabel(entity))}</h2>
+      ${activity?`<section class="selected-activity"><h3>${activity.narrative?'이야기의 무대':activity.siteBackground?'성곽 배경 · 추정':yearLabel(this.year)}${activity.place?' · '+esc(activity.place):''}</h3>
         ${activity.role?`<p class="activity-role">${esc(activity.role)}</p>`:''}
         <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동입니다.')}</p>
         ${activity.narrative?`<dl class="narrative-times"><dt>이야기 속 시기</dt><dd>${esc(activity.narrative.storyTime.label)}</dd><dt>관련 문헌·기록 시기</dt><dd>${esc(activity.narrative.recordingTime.label)}</dd></dl><p class="activity-location">이야기와 기록 시기는 다릅니다. 이 표시가 선택한 연도의 실제 사건을 뜻하지는 않습니다.</p>`:''}
@@ -238,9 +238,9 @@ export class Chronicle {
         ${activity.events.length?`<div class="activity-episodes">${activity.events.map(e=>`<button data-chronicle-entity="${esc(e.entityId)}">${esc(e.label)} →</button>`).join('')}</div>`:''}
         ${(activity.participants||[]).length?`<div class="activity-participants">${activity.participants.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.entityId)}">${esc(p.label)} · ${esc(p.role)}${p.presence!=='on-site'?' (관련)':''}</button>`).join('')}</div>`:''}
       </section>`:''}
-      ${!activity?.narrative&&this.callbacks.placement?.(id)?`<p class="scene-placement">${esc(this.callbacks.placement(id))} · 건물·길·인물 외형은 상징 모형입니다.</p>`:''}
+      ${!activity?.narrative&&!activity?.siteBackground&&this.callbacks.placement?.(id)?`<p class="scene-placement">${esc(this.callbacks.placement(id))} · 건물·길·인물 외형은 상징 모형입니다.</p>`:''}
       ${activity?.narrative?'':descriptions.slice(0,2).map(c=>`<p class="entity-description">${esc(c.object.value||'')}</p>`).join('')}
-      ${activity?.narrative?'':`<div class="context-section"><h3>시간</h3>${dates.map(d=>`<div class="entity-date"><button data-jump-year="${d.lo}">${yearLabel(d.lo)}${d.lo!==d.hi?' – '+yearLabel(d.hi):''}</button>
+      ${activity?.narrative||activity?.siteBackground?'':`<div class="context-section"><h3>시간</h3>${dates.map(d=>`<div class="entity-date"><button data-jump-year="${d.lo}">${yearLabel(d.lo)}${d.lo!==d.hi?' – '+yearLabel(d.hi):''}</button>
         <span>${esc(activityLabel(shortPredicate(d.claim.predicate),d.claim)||({bornIn:'출생',diedIn:'사망',occurredIn:'사건',foundedIn:'건국'})[shortPredicate(d.claim.predicate)]||'기록')}</span>
         ${d.basis.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.sourceLabel)} ↗</button>`).join('')}</div>`).join('')||'<p class="context-empty">날짜 근거가 아직 연결되지 않았습니다.</p>'}</div>`}
       <div class="context-section"><h3>관련 인물·사건·장소</h3><p class="context-empty">이 항목의 전체 기록입니다. 관계가 있었던 시기는 각 근거에서 확인할 수 있습니다.</p>${this.relations(id).map(({claim,target})=>`<div class="relation-row"><button data-chronicle-entity="${esc(target.id)}">${esc(entityLabel(target))}</button>

@@ -2,6 +2,7 @@ import {escapeHtml as esc} from './html.js';
 import {planChronicleAssets} from './chronicle-asset-plan.js';
 import {formatCoordinates} from './history-coordinates.js';
 import {planTraditions} from './chronicle-traditions.js';
+import {planHistoricalSites} from './chronicle-sites.js';
 
 export class ChronicleScene {
   constructor(host,onSelect){
@@ -12,7 +13,7 @@ export class ChronicleScene {
       input.checked=this.display[input.dataset.mapDisplay];input.onchange=()=>{
         this.display[input.dataset.mapDisplay]=input.checked;
         try{localStorage.setItem('sigong-map-display-v1',JSON.stringify(this.display));}catch{}
-        if(input.dataset.mapDisplay==='traditions'&&this.world)this.refresh(this.world,this.chronicle);
+        if(['traditions','scenery'].includes(input.dataset.mapDisplay)&&this.world)this.refresh(this.world,this.chronicle);
         else this.applyDisplay();
       };
     }
@@ -42,6 +43,7 @@ export class ChronicleScene {
     const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[],world.coordinateRegistry);
     world.territories?.setYear(plan.year,chronicle.callbacks.filters());
     world.geography?.setActivities(plan);
+    if(this.display.scenery)plan.events.push(...planHistoricalSites(chronicle.data,world.scenePackets||[],plan));
     if(this.display.traditions)plan.events.push(...planTraditions(chronicle.data,world.traditions?.narratives||[],plan.year));
     const signature=JSON.stringify([plan,this.assets.activeScene]);
     if(signature===this.signature){this.syncPicks();this.renderFocus();this.applyDisplay();return;}
@@ -92,7 +94,7 @@ export class ChronicleScene {
     host.hidden=!scene;
     if(!scene){host.replaceChildren();return;}
     const people=scene.participants.filter(p=>p.presence==='on-site');
-    host.innerHTML=`<div class="focus-heading"><span>${scene.narrative?'설화·전승의 무대':esc(this.assets.plan.year)+'년'} · ${esc(scene.scenePlace?.label||scene.locationReference?.label||'현장')}</span>
+    host.innerHTML=`<div class="focus-heading"><span>${scene.narrative?'설화·전승의 무대':scene.siteBackground?'성곽 배경 · 추정':esc(this.assets.plan.year)+'년'} · ${esc(scene.scenePlace?.label||scene.locationReference?.label||'현장')}</span>
       <button data-focus-entity="${esc(scene.entityId)}" data-focus-row="${esc(scene.id)}">${esc(scene.label)} ↗</button></div>
       <div class="focus-people">${people.map(p=>`<button data-focus-entity="${esc(p.entityId)}" data-focus-row="${esc(p.id+'@'+scene.id)}" aria-pressed="${p.entityId===this.assets.selected}"><strong>${esc(p.label)}</strong><small>${esc(p.role)}</small></button>`).join('')}</div>`;
     for(const button of host.querySelectorAll('[data-focus-entity]'))button.onclick=()=>{
@@ -114,13 +116,13 @@ export class ChronicleScene {
     const selected=events.find(e=>selectedRow?.sceneId===e.id)||events[0];
     const person=selected.participants.find(p=>p.entityId===id);
     const row=this.assets.rows.find(r=>r.sceneId===selected.id&&r.kind==='event');
-    return {summary:selected.summary,narrative:selected.narrative,role:person?.role,participants:selected.participants,place:selected.scenePlace?.label||selected.locationReference?.label,
+    return {summary:selected.summary,narrative:selected.narrative,siteBackground:selected.siteBackground,role:person?.role,participants:selected.participants,place:selected.scenePlace?.label||selected.locationReference?.label,
       placement:row?.placementLabel||'활동은 확인됐으며 지도 위치는 아직 연결되지 않았습니다.',
       claimIds:[...new Set([...selected.claimIds,...(person?.relationClaims||[])])],
       coordinates:formatCoordinates(selected.scenePlace?.coordinates||(selected.locationReference
         ?[selected.locationReference.candidate.lon,selected.locationReference.candidate.lat]:null)),
       coordinateNote:selected.scenePlace?.coordinateNote||selected.locationReference?.coordinateNote,displayBasis:selected.scenePlace?.displayBasis,
-      sides:selected.sides||[],events,sources:(selected.scenePlace?.coordinateSourceIds||selected.locationReference?.coordinateSourceIds||[])
+      sides:selected.sides||[],events:selected.siteBackground?.episodes||events,sources:(selected.scenePlace?.coordinateSourceIds||selected.locationReference?.coordinateSourceIds||[])
         .map(id=>[...(this.world.sceneSources||[]),...(this.world.coordinateRegistry?.sources||[])].find(s=>s.id===id)).filter(Boolean)};
   }
   select(id){
