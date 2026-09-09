@@ -11,7 +11,9 @@ export function activityGeography(plan){
     if(!regions.has(key))regions.set(key,{id:'activity-place:'+key,label:place.label,lon:coordinates[0],lat:coordinates[1],
       precision:place.precision,coordinateNote:place.coordinateNote,sourceIds:place.coordinateSourceIds||[],
       year:plan.year,activities:[]});
-    regions.get(key).activities.push({id:event.entityId,label:event.label});
+    const row=regions.get(key);
+    row.capital ||= event.archetype==='settlement'&&/도읍|왕경|수도|국도|환도/.test(event.label);
+    row.activities.push({id:event.entityId,label:event.label});
   }
   return [...regions.values()];
 }

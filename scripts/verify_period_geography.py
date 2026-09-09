@@ -27,7 +27,7 @@ with sync_playwright() as pw:
               any('한성부' in label for label in labels) and not any(any(word in label for word in ['서울특별시','부산광역시','인천광역시','평양시','개성시']) for label in labels),labels)
         value=page.locator('#geographyDestination option').evaluate_all("opts=>opts.find(o=>o.textContent.includes('한성부')).value")
         page.locator('#geographyDestination').select_option(value);page.wait_for_function('!window.__sigong.engine.fly')
-        check('Map marker, menu and card agree on the historical place',page.locator('#geographyCard strong').inner_text() in labels
+        check('Map marker, menu and card agree on the historical place',page.locator('#geographyCard strong').inner_text() in [label.removeprefix('수도 · ') for label in labels]
               and '1500년' in page.locator('#geographyCard p').first.inner_text()
               and page.evaluate('(id)=>window.__sigong.world.geography.markers.some(m=>m.row.id===id&&m.region)',value))
         page.screenshot(path=str(a.out/'hanseong-1500.png'))

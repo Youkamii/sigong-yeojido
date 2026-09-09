@@ -41,9 +41,12 @@ export class ChronicleGeography{
       const coordinate=row.lon!=null?[row.lon,row.lat]:line?.[Math.floor(line.length/2)];
       if(!coordinate)return;
       const [x,z]=world.toWorld(...coordinate),position=new THREE.Vector3(x,world.surfaceAt(x,z)+.8,z);
-      const button=document.createElement('button');button.className='scene-geography';button.textContent=row.label;
+      const button=document.createElement('button');button.className='scene-geography';button.textContent=(row.capital?'수도 · ':'')+row.label;
+      button.dataset.capital=String(!!row.capital);
       button.dataset.geography=row.id;button.onclick=()=>this.focus(row.id);host.append(button);
-      this.markers.push({row,button,position,region});menu.add(new Option(row.label,row.id));
+      const important=row.capital||['peak-백두산','peak-한라산','ulleungdo','dokdo-dongdo','dokdo-seodo'].includes(row.id);
+      this.markers.push({row,button,position,region,important});menu.add(new Option((row.capital?'수도 · ':'')+row.label,row.id));
+      this.markers.sort((a,b)=>Number(!!b.row.capital)-Number(!!a.row.capital)||Number(b.important)-Number(a.important));
   }
   setActivities(plan){
     const rows=activityGeography(plan),key=JSON.stringify(rows);
@@ -91,12 +94,13 @@ export class ChronicleGeography{
     const distance=camera.position.distanceTo(this.engine.controls.target),w=canvas.clientWidth,h=canvas.clientHeight;
     const selectedId=document.getElementById('geographyDestination').value;
     for(const marker of this.markers){
-      const {row,button,position,region}=marker;
+      const {row,button,position,region,important}=marker;
       const p=position.clone().project(camera),island=this.data.islands.includes(row);
       const selected=selectedId===row.id;
-      button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1||(!island&&!region&&distance<90)
+      button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1||(!island&&!region&&!selected&&distance<90)
         ||(region?this.display?.regions===false:this.display?.geography===false)
-        ||(region&&!selected&&(distance<80||distance>420));
+        ||(!selected&&!important&&this.display?.morePlaces!==true)
+        ||(region&&!selected&&!row.capital&&(distance<80||distance>420));
       if(button.hidden)continue;
       marker.size||=[button.offsetWidth,button.offsetHeight];
       const x=(p.x+1)*w/2,y=(1-p.y)*h/2,[bw,bh]=marker.size;

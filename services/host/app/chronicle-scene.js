@@ -5,7 +5,7 @@ import {formatCoordinates} from './history-coordinates.js';
 export class ChronicleScene {
   constructor(host,onSelect){
     this.host=host;this.onSelect=onSelect;this.markers=[];
-    this.display={regions:true,geography:true,people:true,events:true,scenery:true,forest:true,paths:true};
+    this.display={regions:true,geography:true,morePlaces:false,people:true,events:true,scenery:true,forest:true,paths:true};
     try{const saved=JSON.parse(localStorage.getItem('sigong-map-display-v1')||'{}');for(const key in this.display)if(typeof saved[key]==='boolean')this.display[key]=saved[key];}catch{}
     for(const input of document.querySelectorAll('[data-map-display]')){
       input.checked=this.display[input.dataset.mapDisplay];input.onchange=()=>{
@@ -152,6 +152,8 @@ export class ChronicleScene {
     for(const element of document.querySelectorAll('.geography-navigation,.geography-card:not([hidden]),.scene-focus:not([hidden])')){
       const r=element.getBoundingClientRect();occupied.push({left:r.left-canvasRect.left,right:r.right-canvasRect.left,top:r.top-canvasRect.top,bottom:r.bottom-canvasRect.top});
     }
+    const geographyFirst=camera.position.distanceTo(this.engine.controls.target)>600;
+    if(geographyFirst)this.world?.geography?.update(camera,canvas,occupied);
     const ordered=[...this.markers].sort((a,b)=>
       Number(b.row.id===this.assets?.selectedRow)-Number(a.row.id===this.assets?.selectedRow)
       ||Number(b.row.sceneId===this.assets?.activeScene)-Number(a.row.sceneId===this.assets?.activeScene)
@@ -179,6 +181,6 @@ export class ChronicleScene {
       }
       if(row.kind==='person'&&!button.hidden){peopleShown++;named.add(row.entityId);}
     }
-    this.world?.geography?.update(camera,canvas,occupied);
+    if(!geographyFirst)this.world?.geography?.update(camera,canvas,occupied);
   }
 }
