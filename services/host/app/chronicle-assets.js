@@ -43,6 +43,7 @@ function makeTreeGeometry() {
 }
 
 export class ChronicleAssets{
+  release(group){release(group);}
   constructor(engine,world,catalog){
     this.engine=engine;this.world=world;this.catalog=catalog;
     this.rows=[];this.picks=[];this.revision=0;this.group=new THREE.Group();
@@ -228,7 +229,7 @@ export class ChronicleAssets{
     this.scenery.sync(occupied);
     this.forestOccupied=occupied;this.forestScenes=sceneWoods;
     this.buildForest([...occupied,...this.scenery.clearings],sceneWoods);
-    this.scenery.start(this.forestPositions);
+    this.scenery.start(this.forestPositions,plan.year);
     const byRecipe=new Map(rows.map(r=>[r.id,r]));
     field.group.updateMatrixWorld(true);
     for(const pick of field.picks){

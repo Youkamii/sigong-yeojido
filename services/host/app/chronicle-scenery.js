@@ -3,6 +3,7 @@ import {stableSeed} from './chronicle-world.js';
 import {insideCoastline} from './coastline-index.js';
 import {CountrysidePaths} from './chronicle-paths.js';
 import {sceneryOverview} from './scenery-overview.js';
+import {sceneryPeriod,sceneryRecipe} from './scenery-period.js';
 const randomFor=id=>{let n=stableSeed(id);return()=>{n=(Math.imul(n,1664525)+1013904223)>>>0;return n/4294967296;};};
 const blend=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
 
@@ -18,7 +19,7 @@ export class ChronicleScenery{
       if(!insideCoastline(px,pz,w.rings[0])||!w.contains(px,pz,14))continue;
       const heights=[[0,0],[-11,-11],[11,-11],[11,11],[-11,11]].map(([dx,dz])=>w.surfaceAt(px+dx,pz+dz));
       if(heights[0]>26||Math.max(...heights)-Math.min(...heights)>3.6)continue;
-      candidates.push({x:px,z:pz,radius:12,scale:.27+r()*.1,angle:r()*Math.PI*2,layout:seed%4,seed});
+      candidates.push({x:px,z:pz,latitude:w.coordinatesAt(px,pz)[1],radius:12,scale:.27+r()*.1,angle:r()*Math.PI*2,layout:seed%4,seed});
     }
     this.sites=candidates.sort((a,b)=>a.seed-b.seed).slice(0,64).map((s,i)=>({...s,id:'scenery-village:'+i}));
     this.paths=new CountrysidePaths(w,this.sites);this.group.add(this.paths.mesh);
@@ -26,9 +27,54 @@ export class ChronicleScenery{
   point(site,x,z){const c=Math.cos(site.angle),s=Math.sin(site.angle);return [site.x+(x*c+z*s)*site.scale,site.z+(-x*s+z*c)*site.scale];}
   available(site){return this.occupied.every(o=>Math.hypot(site.x-o.x,site.z-o.z)>site.radius+o.radius+4);}
   setDisplay(visible,paths){this.group.visible=visible;this.showPaths=paths;this.group.traverse(o=>{if(o.name==='scenery-lanes')o.visible=paths;});}
-  sync(occupied){this.occupied=occupied;this.clearings=[...this.sites,...this.wildlife].filter(s=>this.available(s));for(const c of this.cells)c.group.visible=this.available(c.site);this.paths.sync(s=>this.available(s),occupied);}
+  sync(occupied){
+    this.occupied=occupied;this.clearings=[...this.sites,...this.wildlife].filter(s=>this.available(s));
+    for(const c of this.cells){
+      c.group.visible=this.available(c.site)&&(c.recipes?c.period===this.period?.id:this.period?.tigers!==false);
+      const fields=c.group.getObjectByName('decorative-fields');if(fields)fields.visible=this.period?.fields!==false;
+    }
+    this.stats.tigers=this.period?.tigers===false?0:this.wildlife.length;
+    this.paths.sync(s=>this.available(s),occupied);
+  }
   nearPath(x,z,margin){return this.paths.near(x,z,margin);}
-  start(forest){if(this.ready)return;this.ready=this.populate(forest).then(()=>{this.stats.ready=true;}).catch(e=>{this.stats.error=e.message;console.error('[scenery]',e);});}
+  start(forest,year){
+    this.setYear(year);if(this.ready)return;
+    this.ready=this.populate(forest).then(()=>{this.initialized=true;return this.refreshPeriod();}).catch(e=>this.failed(e));
+  }
+  failed(error){this.stats.error=error.message;console.error('[scenery]',error);}
+  setYear(year){
+    this.stats.year=year;const period=sceneryPeriod(year);if(this.period?.id===period.id)return;
+    this.period=period;this.stats.ready=false;this.sync(this.occupied);
+    if(this.initialized)this.refreshPeriod().catch(e=>this.failed(e));
+  }
+  async refreshPeriod(){
+    if(this.refreshing)return this.refreshing;
+    this.refreshing=(async()=>{
+      while(this.cells.some(c=>c.recipes&&c.period!==this.period.id)){
+        const period=this.period;
+        for(const cell of this.cells){
+          if(this.period!==period)break;
+          if(!cell.recipes||cell.period===period.id)continue;
+          this.buildVillage(cell,period);
+          await new Promise(resolve=>setTimeout(resolve,0));
+        }
+      }
+      this.sync(this.occupied);this.stats.period=this.period.id;this.stats.ready=true;
+    })();
+    try{await this.refreshing;}finally{this.refreshing=null;}
+  }
+  buildVillage(cell,period){
+    const recipes=cell.recipes.map(r=>sceneryRecipe(r,period,cell.site)).filter(Boolean);
+    const field=this.assets.field(recipes,cell.anchors,{regional:false});
+    if(field.stats.dropped.length){this.assets.release(field.group);throw Error('생활 풍경 조형을 만들지 못했습니다.');}
+    field.group.position.set(cell.site.x,0,cell.site.z);field.group.rotation.y=cell.site.angle;
+    const overview=sceneryOverview(field.group);
+    if(cell.detail)this.assets.release(cell.detail);if(cell.overview)this.assets.release(cell.overview);
+    cell.detail=field.group;cell.overview=overview;cell.animated=field.animated;cell.period=period.id;
+    cell.models=recipes.map(r=>{const p=cell.anchors.get(r.anchor),[x,z]=this.point(cell.site,p.x/cell.site.scale,p.z/cell.site.scale);return {archetype:r.archetype,x,z,scale:r.scale};});
+    cell.group.add(field.group,overview);this.assets.engine._tagShadows(cell.group);
+    cell.group.visible=this.available(cell.site);this.stats.modelBuilds=(this.stats.modelBuilds||0)+1;
+  }
   mesh(points,colors,name){
     const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(points,3));g.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));g.computeVertexNormals();
     const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,side:THREE.DoubleSide}));m.name=name;m.receiveShadow=true;m.userData.fanGround=true;return m;
@@ -49,8 +95,7 @@ export class ChronicleScenery{
         houses.push(p);add(i===count-1&&r()>.45?'rural_store':r()>.8?'rural_hut':r()>.75?'korean_house':'rural_cottage',...p,.65+r()*.35);this.stats.houses++;
       }
       if(r()>.4)add('handcart',1,1,.5);add('human',-1,3,.65);if(r()>.5)add('human',5,-2,.6);
-      const field=this.assets.field(recipes,anchors,{regional:false});field.group.position.set(site.x,0,site.z);field.group.rotation.y=site.angle;group.add(field.group);cell.animated=field.animated;
-      cell.detail=field.group;cell.overview=sceneryOverview(field.group);group.add(cell.overview);
+      cell.recipes=recipes;cell.anchors=anchors;this.buildVillage(cell,this.period);
       const positions=[],colors=[],roadPoints=[],roadColors=[],earth=new THREE.Color('#958664');
       const push=(target,palette,p,color)=>{target.push(p[0],p[1],p[2]);palette.push(color.r,color.g,color.b);};
       const fill=(corners,color,heightAt,lift=0)=>{for(const i of [0,2,1,0,3,2]){const p=corners[i];push(positions,colors,[p[0],heightAt(...p)+lift,p[1]],color);}};

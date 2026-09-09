@@ -964,7 +964,10 @@
         "korean_courtyard|마당집 모형",
         "rural_cottage|작은 초가",
         "rural_store|작은 곡식 창고",
-        "rural_hut|낮은 움막"
+        "rural_hut|낮은 움막",
+        "rural_tiled|낮은 기와 농가",
+        "rural_metal|작은 판지붕 농가",
+        "rural_flat|작은 평지붕 농가"
       ]
     },
     "humanoids": {
@@ -992,7 +995,9 @@
         "period_commander|무장·지휘관 모형",
         "period_ruler|군주 모형",
         "period_monk|승려 모형",
-        "modern_figure|근현대 인물 모형"
+        "modern_figure|근현대 인물 모형",
+        "rural_figure|이름 없는 생활 인물",
+        "field_worker|농촌 생활 인물"
       ]
     },
     "props": {
@@ -1075,7 +1080,8 @@
         "handcart|손수레",
         "train|열차 모형",
         "car|차량 모형",
-        "motor_ship|기관 선박 모형"
+        "motor_ship|기관 선박 모형",
+        "farm_tractor|농기계 상징 모형"
       ]
     },
     "wildlife": {
@@ -8517,6 +8523,622 @@
           "d": 3.4,
           "x": 6,
           "y": 2.8
+        }
+      ]
+    },
+    "rural_tiled": {
+      "h": 3.6,
+      "rad": 3.8,
+      "p": [
+        {
+          "k": "box",
+          "c": "base",
+          "tag": "base",
+          "m": "timber",
+          "w": 5.8,
+          "h": 0.25,
+          "d": 4.3,
+          "y": 0.125
+        },
+        {
+          "k": "box",
+          "c": "body",
+          "tag": "body",
+          "m": "timber",
+          "w": 5.1,
+          "h": 2.2,
+          "d": 3.5,
+          "y": 1.35
+        },
+        {
+          "k": "gable",
+          "c": "iron",
+          "tag": "roof",
+          "m": "timber",
+          "w": 6.1,
+          "h": 1.1,
+          "d": 4.6,
+          "y": 2.45
+        },
+        {
+          "k": "box",
+          "c": "timber",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.8,
+          "h": 1.8,
+          "d": 0.06,
+          "x": -1,
+          "y": 1.15,
+          "z": 1.8
+        },
+        {
+          "k": "box",
+          "c": "deepWater",
+          "tag": "body",
+          "m": "timber",
+          "w": 1.1,
+          "h": 0.8,
+          "d": 0.06,
+          "x": 1,
+          "y": 1.6,
+          "z": 1.8
+        },
+        {
+          "k": "box",
+          "c": "timberLt",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.07,
+          "h": 0.84,
+          "d": 0.08,
+          "x": 1,
+          "y": 1.6,
+          "z": 1.86
+        },
+        {
+          "k": "box",
+          "c": "bodyMid",
+          "tag": "body",
+          "m": "timber",
+          "w": 1.4,
+          "h": 0.4,
+          "d": 0.7,
+          "x": -1,
+          "y": 0.2,
+          "z": 2.1
+        }
+      ]
+    },
+    "rural_metal": {
+      "h": 3.1,
+      "rad": 4,
+      "p": [
+        {
+          "k": "box",
+          "c": "base",
+          "tag": "base",
+          "m": "timber",
+          "w": 6.5,
+          "h": 0.25,
+          "d": 3.8,
+          "y": 0.125
+        },
+        {
+          "k": "box",
+          "c": "body",
+          "tag": "body",
+          "m": "timber",
+          "w": 5.8,
+          "h": 2.2,
+          "d": 3.2,
+          "y": 1.35
+        },
+        {
+          "k": "gable",
+          "c": "deepWater",
+          "tag": "roof",
+          "m": "timber",
+          "w": 6.6,
+          "h": 0.6,
+          "d": 3.9,
+          "y": 2.45
+        },
+        {
+          "k": "box",
+          "c": "deepWater",
+          "tag": "roof",
+          "m": "timber",
+          "w": 0.055,
+          "h": 0.05,
+          "d": 3.8,
+          "y": 2.62,
+          "rep": {
+            "n": 14,
+            "dx": 0.44
+          }
+        },
+        {
+          "k": "box",
+          "c": "iron",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.8,
+          "h": 1.8,
+          "d": 0.06,
+          "x": 1.2,
+          "y": 1.15,
+          "z": 1.65
+        },
+        {
+          "k": "box",
+          "c": "steel",
+          "tag": "body",
+          "m": "timber",
+          "w": 1.5,
+          "h": 0.75,
+          "d": 0.06,
+          "x": -1.2,
+          "y": 1.65,
+          "z": 1.65
+        },
+        {
+          "k": "box",
+          "c": "timber",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.1,
+          "h": 1.9,
+          "d": 0.1,
+          "x": 2.5,
+          "y": 1,
+          "z": 2.7,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "c": "deepWater",
+          "tag": "roof",
+          "m": "timber",
+          "w": 5.3,
+          "h": 0.13,
+          "d": 1.1,
+          "y": 2.02,
+          "z": 2.3
+        }
+      ]
+    },
+    "rural_flat": {
+      "h": 3.35,
+      "rad": 3.5,
+      "p": [
+        {
+          "k": "box",
+          "c": "base",
+          "tag": "base",
+          "m": "timber",
+          "w": 5.1,
+          "h": 0.2,
+          "d": 4.6,
+          "y": 0.1
+        },
+        {
+          "k": "box",
+          "c": "body",
+          "tag": "body",
+          "m": "timber",
+          "w": 4.8,
+          "h": 2.6,
+          "d": 4.2,
+          "y": 1.5
+        },
+        {
+          "k": "box",
+          "c": "steel",
+          "tag": "roof",
+          "m": "timber",
+          "w": 5.1,
+          "h": 0.18,
+          "d": 4.5,
+          "y": 2.89
+        },
+        {
+          "k": "box",
+          "c": "bodyMid",
+          "tag": "roof",
+          "m": "timber",
+          "w": 5.1,
+          "h": 0.35,
+          "d": 0.13,
+          "y": 3.13,
+          "z": -2.19
+        },
+        {
+          "k": "box",
+          "c": "bodyMid",
+          "tag": "roof",
+          "m": "timber",
+          "w": 0.13,
+          "h": 0.35,
+          "d": 4.5,
+          "y": 3.13,
+          "x": 2.49,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "c": "iron",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.9,
+          "h": 1.9,
+          "d": 0.06,
+          "x": -1.3,
+          "y": 1.16,
+          "z": 2.14
+        },
+        {
+          "k": "box",
+          "c": "deepWater",
+          "tag": "body",
+          "m": "timber",
+          "w": 1.8,
+          "h": 1,
+          "d": 0.06,
+          "x": 0.9,
+          "y": 1.8,
+          "z": 2.14
+        },
+        {
+          "k": "box",
+          "c": "snow",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.06,
+          "h": 1,
+          "d": 0.08,
+          "x": 0.9,
+          "y": 1.8,
+          "z": 2.18
+        }
+      ]
+    },
+    "rural_figure": {
+      "h": 2.4,
+      "rad": 0.7,
+      "p": [
+        {
+          "k": "box",
+          "c": "iron",
+          "tag": "base",
+          "m": "timber",
+          "w": 0.24,
+          "h": 0.13,
+          "d": 0.36,
+          "y": 0.065,
+          "x": 0.18,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "c": "timberLt",
+          "tag": "limb",
+          "m": "timber",
+          "w": 0.24,
+          "h": 0.78,
+          "d": 0.3,
+          "y": 0.52,
+          "x": 0.18,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "c": "body",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.68,
+          "h": 0.8,
+          "d": 0.42,
+          "y": 1.3
+        },
+        {
+          "k": "rcyl",
+          "c": "body",
+          "tag": "limb",
+          "m": "timber",
+          "r": 0.14,
+          "h": 0.8,
+          "y": 1.25,
+          "x": 0.43,
+          "rz": 0.12,
+          "seg": 8,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "sph",
+          "c": "timberLt",
+          "tag": "limb",
+          "m": "timber",
+          "r": 0.11,
+          "y": 0.86,
+          "x": 0.47,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "sph",
+          "c": "timberLt",
+          "tag": "top",
+          "m": "timber",
+          "r": 0.24,
+          "y": 1.98,
+          "sy": 1.1
+        },
+        {
+          "k": "sph",
+          "c": "iron",
+          "tag": "top",
+          "m": "timber",
+          "r": 0.245,
+          "y": 2.1,
+          "sy": 0.45
+        }
+      ]
+    },
+    "field_worker": {
+      "h": 2.4,
+      "rad": 0.7,
+      "p": [
+        {
+          "k": "box",
+          "c": "iron",
+          "tag": "base",
+          "m": "timber",
+          "w": 0.24,
+          "h": 0.13,
+          "d": 0.36,
+          "y": 0.065,
+          "x": 0.18,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "c": "deepWater",
+          "tag": "limb",
+          "m": "timber",
+          "w": 0.24,
+          "h": 0.78,
+          "d": 0.3,
+          "y": 0.52,
+          "x": 0.18,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "box",
+          "c": "body",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.68,
+          "h": 0.8,
+          "d": 0.42,
+          "y": 1.3
+        },
+        {
+          "k": "rcyl",
+          "c": "body",
+          "tag": "limb",
+          "m": "timber",
+          "r": 0.14,
+          "h": 0.8,
+          "y": 1.25,
+          "x": 0.43,
+          "rz": 0.12,
+          "seg": 8,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "sph",
+          "c": "timberLt",
+          "tag": "limb",
+          "m": "timber",
+          "r": 0.11,
+          "y": 0.86,
+          "x": 0.47,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "sph",
+          "c": "timberLt",
+          "tag": "top",
+          "m": "timber",
+          "r": 0.24,
+          "y": 1.98,
+          "sy": 1.1
+        },
+        {
+          "k": "sph",
+          "c": "iron",
+          "tag": "top",
+          "m": "timber",
+          "r": 0.245,
+          "y": 2.1,
+          "sy": 0.45
+        },
+        {
+          "k": "cyl",
+          "c": "timberLt",
+          "tag": "top",
+          "m": "timber",
+          "r": 0.42,
+          "h": 0.035,
+          "y": 2.15,
+          "seg": 12
+        },
+        {
+          "k": "cyl",
+          "c": "timberLt",
+          "tag": "top",
+          "m": "timber",
+          "r": 0.24,
+          "r1": 0.17,
+          "h": 0.17,
+          "y": 2.25,
+          "seg": 10
+        }
+      ]
+    },
+    "farm_tractor": {
+      "h": 2.5,
+      "rad": 2,
+      "p": [
+        {
+          "k": "box",
+          "c": "deepWater",
+          "tag": "body",
+          "m": "timber",
+          "w": 1.3,
+          "h": 0.65,
+          "d": 2.9,
+          "y": 0.95
+        },
+        {
+          "k": "box",
+          "c": "canopyLow",
+          "tag": "body",
+          "m": "timber",
+          "w": 1.1,
+          "h": 0.75,
+          "d": 1.25,
+          "y": 1.45,
+          "z": 0.68
+        },
+        {
+          "k": "box",
+          "c": "iron",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.7,
+          "h": 0.55,
+          "d": 0.15,
+          "y": 1.8,
+          "z": -0.6
+        },
+        {
+          "k": "box",
+          "c": "iron",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.7,
+          "h": 0.15,
+          "d": 0.55,
+          "y": 1.5,
+          "z": -0.4
+        },
+        {
+          "k": "rcyl",
+          "c": "iron",
+          "tag": "body",
+          "m": "timber",
+          "r": 0.06,
+          "h": 0.8,
+          "y": 2,
+          "z": 0.8,
+          "x": 0.4,
+          "seg": 6
+        },
+        {
+          "k": "box",
+          "c": "steel",
+          "tag": "body",
+          "m": "timber",
+          "w": 0.7,
+          "h": 0.43,
+          "d": 0.06,
+          "y": 1.47,
+          "z": 1.33
+        },
+        {
+          "k": "cyl",
+          "c": "iron",
+          "tag": "base",
+          "m": "timber",
+          "r": 0.68,
+          "h": 0.3,
+          "x": 0.78,
+          "y": 0.68,
+          "z": -0.8,
+          "rz": 1.5707963267948966,
+          "seg": 10,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "cyl",
+          "c": "steel",
+          "tag": "base",
+          "m": "timber",
+          "r": 0.2924,
+          "h": 0.32,
+          "x": 0.78,
+          "y": 0.68,
+          "z": -0.8,
+          "rz": 1.5707963267948966,
+          "seg": 10,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "cyl",
+          "c": "iron",
+          "tag": "base",
+          "m": "timber",
+          "r": 0.43,
+          "h": 0.3,
+          "x": 0.78,
+          "y": 0.43,
+          "z": 1,
+          "rz": 1.5707963267948966,
+          "seg": 10,
+          "rep": {
+            "mir": "x"
+          }
+        },
+        {
+          "k": "cyl",
+          "c": "steel",
+          "tag": "base",
+          "m": "timber",
+          "r": 0.18489999999999998,
+          "h": 0.32,
+          "x": 0.78,
+          "y": 0.43,
+          "z": 1,
+          "rz": 1.5707963267948966,
+          "seg": 10,
+          "rep": {
+            "mir": "x"
+          }
         }
       ]
     }
