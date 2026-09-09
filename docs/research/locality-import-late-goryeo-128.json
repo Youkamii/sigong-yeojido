@@ -1,0 +1,161 @@
+{
+  "job": "late_goryeo",
+  "sources": 11,
+  "excerpts": 25,
+  "claims": 52,
+  "entities": 32,
+  "rawFilesChecked": [
+    {
+      "source": "src-lg128-encykorea-mangi-mangsoi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0017893",
+      "sha256": "aa3297e3c76bfe1cb018e7c2fc67651da50034a0e97b37eee8a65d9dc9a0d1d6",
+      "rawBytes": 103102,
+      "excerpts": 2,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-lg128-encykorea-jowichong-nan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0052464",
+      "sha256": "d8bdb05635e5c8149e29bfb8860b8e8d43f7fe0645d05e96beefc8d26330c58e",
+      "rawBytes": 97689,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-lg128-encykorea-jukju-jeontu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0053594",
+      "sha256": "df6906f6e7d318be67f7878322c140258ea61be1400e981a6247c3590cbd1c57",
+      "rawBytes": 75832,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-lg128-encykorea-jukjusanseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0053593",
+      "sha256": "aefe1035893ff3a7b50058a9a91ff6ac43c37b291ce1487d5223befa6f585d17",
+      "rawBytes": 124264,
+      "excerpts": 1,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-lg128-encykorea-chungju-jeontu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0058221",
+      "sha256": "2f9461b9b530f71f9bc4c74ddfeb23ee1d0c5d286f68205574d6725bef250da0",
+      "rawBytes": 95430,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-lg128-encykorea-gim-yunhu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0010122",
+      "sha256": "a77c836983b5824d67636d0ee0862a250b274e141f0e67717b305eb670ae1355",
+      "rawBytes": 87691,
+      "excerpts": 2,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-lg128-encykorea-jewang-ungi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0051343",
+      "sha256": "e5f2c6dd75082430e9ff798f0dc7a4aecfb4d89f22d833fa35582834cb9ff376",
+      "rawBytes": 119336,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-lg128-encykorea-samcheok-yiseunghyu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0026863",
+      "sha256": "e36a1b20c702ab6007c433e09cbf58edb60a8cbdfc23fc823c3e3e22234c6ab1",
+      "rawBytes": 118220,
+      "excerpts": 2,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-lg128-encykorea-gunwi-ingaksaji",
+      "url": "https://encykorea.aks.ac.kr/Article/E0006692",
+      "sha256": "40836bf62e3c60b57e76ca7a7bc4bf992fe2ef172429c65af044abee4721058a",
+      "rawBytes": 126699,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-lg128-encykorea-ssangseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0034141",
+      "sha256": "e53824648b1255165807f263989ad6846763e8a88768702da626254556c2c3f0",
+      "rawBytes": 79477,
+      "excerpts": 5,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-lg128-encykorea-hadan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0062309",
+      "sha256": "18f2d59ff81e2cce24799bc27fc9f16fa1c394c923227ad9eee94d5af677ae1e",
+      "rawBytes": 99634,
+      "excerpts": 2,
+      "quotedWords": 21
+    }
+  ],
+  "missing": [
+    {
+      "topic": "유적 지점 좌표",
+      "detail": "죽주산성·충주산성·인각사지·삼척 두타산 이승휴 유적의 site 정밀도 좌표를 이번 배치에서 내려받지 못했다. 국가유산청(www.khs.go.kr) 요청이 20초 안에 응답하지 않아 재시도 1회 뒤 중단했다. 모든 장면을 구역 앵커(precision=area)로만 표시했다."
+    },
+    {
+      "topic": "명학소 위치",
+      "detail": "망이·망소이의 난 항목은 명학소를 대전 서구 탄방동으로 \"추정\"한다고만 적는다. 확정 좌표 근거가 없어 공주 구역 앵커로 대신했다."
+    },
+    {
+      "topic": "서경성 지점",
+      "detail": "통양문·대동문 등 1176년 공격 지점의 좌표 근거가 없다. 평양 구역 앵커만 썼다."
+    },
+    {
+      "topic": "정좌산 비정",
+      "detail": "합단의 침입 항목은 정좌산의 현재 위치를 밝히지 않는다. 연기 구역 앵커로만 표시했다."
+    },
+    {
+      "topic": "구산문 도회",
+      "detail": "인각사 항목은 구산문 도회 개최를 \"추정\"으로 적어 별도 집회 장면(assembly)으로 만들지 않았다."
+    },
+    {
+      "topic": "유인우 현장 위치",
+      "detail": "쌍성총관부 항목은 유인우의 임명만 적고 화주 현장 도착을 적지 않아 presence 를 related 로 두었다."
+    },
+    {
+      "topic": "좌표 출처 표기",
+      "detail": "coordinateSourceIds 의 'src-existing-anchors-hgis' 는 기존 저장본(existing-coordinates.json)의 ID 를 그대로 인용한 것이며 이번에 새로 내려받지 않았다. 그래서 sources 배열에는 넣지 않았다."
+    },
+    "서경 거병 인물은1174년, 통양문·대동문 공격자와 공격 효과는1176년으로 한정.",
+    "죽주성의 불탄 대상은 철수하는 몽골군 공성 기구다. 성·가옥을 태우는 일반 화재 효과는 제외.",
+    "1287년 출간일과 삼척의 저술 장소를 출간 현장으로 결합하지 않는다. 출간 기록은 연표에 유지하고 현장 좌표·출석 배치는 제외.",
+    "발췌를 이어 만든 time.verbatim은 원문에 실제 있는 날짜·서술로 정리."
+  ],
+  "collection": {
+    "task": "late_goryeo",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788878041.6344779,
+    "pid": 32012,
+    "exitCode": 0,
+    "seconds": 987.7,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "d252c141-a898-423f-a6b9-232c053213d8",
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

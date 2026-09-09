@@ -66,7 +66,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       const exact=places.filter(p=>p.id===c.object.id),target=entities.get(c.object.id);
       const region=regionalCoordinate(registry,c.object.id,target&&entityLabel(target));
       if(region&&inDiorama(region))return {placeId:region.id,label:region.label,candidate:region,
-        claimIds:[c.id],precision:'area',coordinateNote:region.coordinateNote,coordinateSourceIds:region.sourceIds};
+        claimIds:[c.id],precision:region.precision||'area',coordinateNote:region.coordinateNote,coordinateSourceIds:region.sourceIds};
       const matches=exact.length?exact:places.filter(p=>target&&(p.labelKo||p.label)===entityLabel(target));
       if(matches.length===1){
         const p=matches[0],candidates=(p.candidates||[]).filter(candidate=>within(candidate,context.year)&&inDiorama(candidate));

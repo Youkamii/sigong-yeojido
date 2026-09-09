@@ -1,0 +1,41 @@
+{
+  "model": "claude-opus-5",
+  "effort": "max",
+  "sessionId": "4cbc0506-edfd-42e5-8ce4-d81f0ba36715",
+  "accepted": [
+    "place-encykorea-gobu",
+    "place-encykorea-namyeongdong",
+    "place-shanghai",
+    "place-encykorea-shanghai-hongkou-park"
+  ],
+  "sources": 8,
+  "missing": [
+    {
+      "eventId": "event-encykorea-bongodong-1920",
+      "placeId": "place-encykorea-bongodong",
+      "label": "봉오동 (중국 지린성, 봉오동전투 전장 골짜기)",
+      "reason": "봉오동 골짜기의 좌표를 실은 출처를 이번 조사에서 얻지 못했다. 위키데이터 Q11245860(Battle of Fengwudong)에는 좌표 위치(P625)도 장소(P276) 진술도 없고, 한국어 위키백과 '봉오동 전투'와 영어 위키백과 'Battle of Fengwudong' 문서에도 좌표 표기가 없다. '봉오동' 자체의 문서는 한국어 위키백과에 없고(404), 중국어 위키백과의 凤梧洞战斗·鳳梧洞 문서도 없다(404). 오픈스트리트맵 Overpass 조회는 robots.txt 가 /api/ 를 막아 시도하지 않았다. 지시대로 투먼시나 중국 중심점 같은 대체 좌표를 넣지 않고 비워 둔다.",
+      "attempted": [
+        "raw/wd_Q11245860.html",
+        "raw/kowiki_bongodong_battle.html",
+        "raw/enwiki_fengwudong.html",
+        "raw/zhwiki_fengwudong.html",
+        "raw/zhwiki_fengwudong_s.html",
+        "raw/zhwiki_fengwudong_place.html",
+        "raw/kowiki_bongodong.html (404)",
+        "https://overpass-api.de/api/interpreter (robots 차단, 재시도 안 함)"
+      ]
+    },
+    {
+      "eventId": "event-encykorea-park-chunghee-death-1979",
+      "placeId": "place-encykorea-gungjeongdong",
+      "reason": "청운효자동 전체의 좌표를 궁정동의 좌표로 사용하지 않는다."
+    },
+    {
+      "eventId": "event-yinav-jangmunpo-1594",
+      "placeId": "place-yinav-jangmunpo",
+      "reason": "같은 장목리에 있다는 사실만으로 장목항 좌표를 장문포 해역과 연결하지 않는다."
+    }
+  ],
+  "review": "Codex checked existing entity identities, coordinates and stored quotations. Candidate sites in other areas are excluded."
+}

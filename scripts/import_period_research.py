@@ -125,7 +125,7 @@ def main():
                 'sourceGroup':'한국민족문화대백과사전' if encyclopedia else source['publisher'],
                 'compiler':source['publisher'], 'composedYear':None, 'coversFrom':None, 'coversTo':None,
                 'defaultLens':True, 'resource':url, 'originalLanguage':'ko',
-                'edition':'2026-09-07 제공 페이지', 'license':'short-excerpt-only', 'status':'draft', 'verified':None},
+                'edition':record['fetchedUtc'][:10]+' 제공 페이지', 'license':'short-excerpt-only', 'status':'draft', 'verified':None},
                 f"[출처: {source['title']}]({url})\n\n" + source['license'] +
                 '\n\n시간 탐색에 필요한 짧은 인용만 수록했다. 원 HTML은 별도 수집 폴더에 보관한다. '
                 '조사·다운로드·추출은 Claude Opus 5 / Max, 코드 통합·원문 대조는 Codex가 수행했다. '

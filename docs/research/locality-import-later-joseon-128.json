@@ -1,0 +1,198 @@
+{
+  "job": "later_joseon",
+  "sources": 9,
+  "excerpts": 21,
+  "claims": 44,
+  "entities": 25,
+  "rawFilesChecked": [
+    {
+      "source": "src-syj128-jeonju-sago",
+      "url": "https://encykorea.aks.ac.kr/Article/E0049663",
+      "sha256": "86b6e3510aae07107193becb217469c4a119a732d8788f634c122f57a15f23c0",
+      "rawBytes": 123976,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-syj128-son-hongnok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0030589",
+      "sha256": "73548f5afd606a2c7798240bc0d51817be86b8f2625d20b018a5b073867f21f0",
+      "rawBytes": 90181,
+      "excerpts": 1,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-syj128-junggang-gaesi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0053672",
+      "sha256": "71cac56a1483e4b29d4d3da00e9341e627d95484abb3473f4edee05d567229ff",
+      "rawBytes": 121996,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-syj128-odaesan-sago",
+      "url": "https://encykorea.aks.ac.kr/Article/E0038152",
+      "sha256": "8facdedd64fd7156ba2ac357e016c985e7247e0f8b7105a01e15966473bdd4ea",
+      "rawBytes": 103499,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-syj128-hoeryong-gaesi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065474",
+      "sha256": "0b6e82813c788bf8414440c4c1761ed80925a026388339af03d85cd1a624e859",
+      "rawBytes": 97123,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-syj128-manisan-sago",
+      "url": "https://encykorea.aks.ac.kr/Article/E0017304",
+      "sha256": "598442de7abacec42e6a93dce163e5c857f24c9787a0a8ba6b39713b7d116cf9",
+      "rawBytes": 94955,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj128-jeongjoksan-sago",
+      "url": "https://encykorea.aks.ac.kr/Article/E0050877",
+      "sha256": "faa58b518ceb59b73a948f974688636dbc1227e1f51af3be481145f7433a2399",
+      "rawBytes": 130965,
+      "excerpts": 2,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj128-kim-mandeok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0076304",
+      "sha256": "50b3a44598baddfcebeb37fd4e68ef00fd26672f3327f374a4671f88ac60172a",
+      "rawBytes": 110700,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj128-daegu-gamyeongji",
+      "url": "https://encykorea.aks.ac.kr/Article/E0077035",
+      "sha256": "59014b0b8b1a536e419f464e5c58a3c2818cf44de5e5faafe8d4796c0cfb9766",
+      "rawBytes": 100986,
+      "excerpts": 2,
+      "quotedWords": 19
+    }
+  ],
+  "missing": [
+    {
+      "id": "missing-syj128-eunbongam-point",
+      "what": "1592년 실록을 옮긴 내장산 암자(은봉암/용굴암)의 좌표",
+      "why": "전주사고·손홍록 두 항목이 암자 이름을 다르게 적고 두 항목 모두 좌표가 없다. 장면은 정읍 구역 앵커로만 표시했다.",
+      "nextStep": "국가유산청 또는 정읍시 공공기관 자료에서 내장산 은봉암·용굴암 터의 지정·조사 좌표를 확인해야 한다.",
+      "sceneIds": [
+        "scene-syj128-jeonju-sillok-naejangsan-1592"
+      ]
+    },
+    {
+      "id": "missing-syj128-daegu-gamyeongji-point",
+      "what": "대구 경상감영지(사적)의 기관 좌표",
+      "why": "국가유산청(www.khs.go.kr) 요청이 20초 안에 응답하지 않아 이번에 받지 못했다. 재시도도 실패해 더 기다리지 않았다.",
+      "nextStep": "국가유산청 국가유산포털 상세 항목에서 경상감영지의 위도·경도를 따로 내려받아 좌표 출처로 붙여야 한다.",
+      "sceneIds": [
+        "scene-syj128-daegu-gamyeong-1601"
+      ]
+    },
+    {
+      "id": "missing-syj128-odaesan-sago-point",
+      "what": "오대산사고 터(남호암 기슭)의 좌표",
+      "why": "출처는 월정사 북쪽 10리라는 상대 거리만 적는다. 오대산사고지 항목은 이번에 내려받지 않았다.",
+      "nextStep": "오대산사고지(E0038153) 또는 국가유산청 사적 자료에서 좌표를 확인해 별도 좌표 출처로 붙인다.",
+      "sceneIds": [
+        "scene-syj128-odaesan-sago-1606"
+      ]
+    },
+    {
+      "id": "missing-syj128-junggang-island",
+      "what": "중강개시가 열린 섬(검동도 또는 어적도)의 좌표",
+      "why": "출처 자체가 개시 장소를 추정으로만 적는다. 압록강 하중도라 육지 대체점을 쓰면 잘못된 위치가 된다.",
+      "nextStep": "압록강 하중도 지명을 다루는 공공 지리 자료에서 두 섬의 위치를 확인해야 한다.",
+      "sceneIds": [
+        "scene-syj128-junggang-gaesi-1646"
+      ]
+    },
+    {
+      "id": "missing-syj128-junggang-merchant-year",
+      "what": "상인 232명 참여 기사의 연도",
+      "why": "출처는 재개된 중강개시라고만 적고 연도를 밝히지 않아 1646년 당일 인원으로 못박을 수 없다.",
+      "nextStep": "『비변사등록』·『통문관지』 계열 연구 인용을 확인해 해당 기록의 연도를 특정해야 한다.",
+      "sceneIds": [
+        "scene-syj128-junggang-gaesi-1646"
+      ]
+    },
+    {
+      "id": "missing-syj128-hoeryong-market-site",
+      "what": "회령개시 시장 터의 지점",
+      "why": "출처는 두만강변 회령이라는 고을 이름만 적는다.",
+      "nextStep": "함경도 개시 관련 기관 자료나 회령 읍성 관련 좌표 자료를 확인해야 한다.",
+      "sceneIds": [
+        "scene-syj128-hoeryong-gaesi-1638"
+      ]
+    },
+    {
+      "id": "missing-syj128-manisan-existence",
+      "what": "마니산사고의 위치와 존재 자체",
+      "why": "출처가 덕포리 서재곡 재궁 터를 확정할 고고학 근거가 없다고 적고, 강화도 설치설을 재고해야 한다는 주장을 함께 소개한다.",
+      "nextStep": "최근 연구가 제시한 강화부 읍내 사고설을 다루는 공개 학술·기관 자료로 위치 서술을 다시 맞춰야 한다.",
+      "sceneIds": [
+        "scene-syj128-manisan-sago-fire-1653"
+      ]
+    },
+    {
+      "id": "missing-syj128-jeongjok-sago-point",
+      "what": "정족산사고 건물(전등사 서쪽)의 좌표",
+      "why": "이번 장면은 기존 저장분의 정족산성 표시점을 다시 쓴 것이며 사고 건물 자체의 측량값이 아니다.",
+      "nextStep": "정족산사고지의 지정·조사 좌표를 별도로 내려받아 site 정밀도로 올려야 한다.",
+      "sceneIds": [
+        "scene-syj128-jeongjoksan-sago-1660"
+      ]
+    },
+    {
+      "id": "missing-syj128-mandeok-site",
+      "what": "1795년 구휼이 이루어진 제주 안의 장소",
+      "why": "출처는 제주도로 곡식을 들여왔다고만 적고 관아·포구 이름을 적지 않는다.",
+      "nextStep": "제주목 관련 기관 자료나 만덕전 관련 사료 해설에서 곡식을 부린 포구·관아 표기를 찾아야 한다.",
+      "sceneIds": [
+        "scene-syj128-kim-mandeok-jeju-1795"
+      ]
+    },
+    "전주사고 실록 이안의 공로만 확인된 유신·안의는 직접 운반 현장 인물로 확정하지 않는다.",
+    "중강개시 상인232명의 활동 연도는 원문에 없어1646년 현장 출석으로 표시하지 않는다.",
+    "김만덕 구휼 장소에 별도 구휼선 난파를 합치지 않는다. 포구·난파 위치 미상으로 배 효과 제외.",
+    "발췌를 이어 만든 time.verbatim은 원문에 실제 있는 날짜·서술로 정리."
+  ],
+  "collection": {
+    "task": "later_joseon",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788878041.6354778,
+    "pid": 3892,
+    "exitCode": 0,
+    "seconds": 1125.8,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "cb45d802-0560-4956-9231-4f364a868c37",
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

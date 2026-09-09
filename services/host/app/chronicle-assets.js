@@ -155,7 +155,7 @@ export class ChronicleAssets{
       if(event.scenePlace){
         const [x,z]=this.world.toWorld(...event.scenePlace.coordinates);
         return {position:new THREE.Vector3(x,event.scenePlace.medium==='sea'?this.world.seaLevel:this.world.surfaceAt(x,z),z),
-          placement:'activity',placementLabel:event.scenePlace.label+' · '+(event.scenePlace.precision==='area'?'지역 기준 추정 배치':'사건 장소'),
+          placement:'activity',placementLabel:event.scenePlace.label+' · '+(event.scenePlace.displayBasis||(event.scenePlace.precision==='area'?'지역 기준 추정 배치':'사건 장소')),
           locationReference:event.scenePlace,site:null};
       }
       const site=event.sites?.[0];
@@ -164,7 +164,7 @@ export class ChronicleAssets{
       const ref=event.locationReference;
       if(ref){const [x,z]=this.world.toWorld(ref.candidate.lon,ref.candidate.lat);return {
         position:new THREE.Vector3(x,this.world.surfaceAt(x,z),z),placement:'area',locationReference:ref,
-        placementLabel:ref.label+' · 지역 기준 추정 배치'};}
+        placementLabel:ref.label+' · '+(ref.precision==='site'?'사건 장소':'지역 기준 추정 배치')};}
       return null;
     };
     const placedPeople=new Set(),fullScenes=[],sceneWoods=[];

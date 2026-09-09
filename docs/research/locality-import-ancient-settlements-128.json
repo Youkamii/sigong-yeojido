@@ -1,0 +1,166 @@
+{
+  "job": "ancient_settlements",
+  "sources": 10,
+  "excerpts": 36,
+  "claims": 54,
+  "entities": 33,
+  "rawFilesChecked": [
+    {
+      "source": "src-aks-uljin-bongpyeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040509",
+      "sha256": "facb2588082e520c2440f51dcff0dd1c03a99b96169f3a7312f3aaa1409c70ea",
+      "rawBytes": 119302,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-pohang-naengsuri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0037640",
+      "sha256": "54451129e638ca637043b40de95d1a1d23393ffdf5eaf005fd60c4365156dd7b",
+      "rawBytes": 137591,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-ureuk",
+      "url": "https://encykorea.aks.ac.kr/Article/E0039864",
+      "sha256": "29a6093716c94fc4f33d4a68fab7b081e7692988984f1df3f956aca1cc99fed0",
+      "rawBytes": 89305,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-aks-beopji",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022744",
+      "sha256": "fc369f41917b69552275f4a0b152ca21493175ecfba02db7976f0b3880cccdf9",
+      "rawBytes": 73472,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-aks-jinheungwang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0055013",
+      "sha256": "a1780821db189827080e832b0c21f64855d79cea090759a70ffe30cd478d7358",
+      "rawBytes": 105756,
+      "excerpts": 2,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-aks-daegu-ojakbi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014083",
+      "sha256": "17938be06a4be68d4cb8d17c85f3280fae71629988999f8af30fcd6a170e8d35",
+      "rawBytes": 107630,
+      "excerpts": 5,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-changnyeong-cheokgyeongbi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0055364",
+      "sha256": "cc275ab536f5b5376d7789a9973221db95e718838c9852af3e9198d7d82a05e3",
+      "rawBytes": 166629,
+      "excerpts": 4,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-aks-daegaya",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013970",
+      "sha256": "74fb617a240252aed3d6f14d73a177a66188ce34a51aa4f2e58de046b31a3fcf",
+      "rawBytes": 116303,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-mireuksa-sarigi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0079586",
+      "sha256": "9886a5fa81d056182349ac3fa5711c6e3b86828e2fdef01acc6c25bb79a59e21",
+      "rawBytes": 116594,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-aks-yeongcheon-cheongjebi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0037763",
+      "sha256": "cde6f06f6e3e17f6d456a03ec14e1e36e636417b760a10f442b86346d0b7ed78",
+      "rawBytes": 120791,
+      "excerpts": 5,
+      "quotedWords": 23
+    }
+  ],
+  "missing": [
+    {
+      "topic": "영천 청제(청못)의 좌표",
+      "need": "청못 또는 청제비의 기관 좌표",
+      "blocked": "국가유산청 khs.go.kr 요청이 20초 타임아웃(재시도 1회 포함)으로 실패했고, 기존 앵커·좌표 등록부에 영천 항목이 없다.",
+      "effect": "scene-syj128-yeongcheon-cheongje-536 의 lon/lat 을 null 로 두었다."
+    },
+    {
+      "topic": "익산 미륵사지 서탑의 지점 좌표",
+      "need": "미륵사지(금마면 기양리)의 기관 좌표",
+      "blocked": "AKS 항목은 지번만 적고 좌표가 없다. 국가유산청 접속 실패.",
+      "effect": "익산 군 단위 앵커로 표시했고 실제 절터와 수 ㎞ 차이가 남을 coordinateNote 에 적었다."
+    },
+    {
+      "topic": "울진 봉평리 신라비의 거벌모라 위치",
+      "need": "비문 지명 거벌모라의 비정 좌표",
+      "blocked": "출처는 거벌모라 등 비문 지명을 열거할 뿐 위치를 확정하지 않는다.",
+      "effect": "울진 군 단위 앵커만 사용했다."
+    },
+    {
+      "topic": "대구 오작비의 오(塢) 위치",
+      "need": "영동리촌과 오의 위치 비정",
+      "blocked": "출처가 '정확한 위치는 알 수 없으나'라고 명시한다.",
+      "effect": "대구 지역 앵커만 사용했고 보관처(박물관)는 장소로 쓰지 않았다."
+    },
+    {
+      "topic": "냉수리비의 원위치",
+      "need": "비가 원래 서 있던 지점",
+      "blocked": "출처가 발견자의 조부 대에 옮겨져 원래 위치를 알 수 없다고 밝힌다.",
+      "effect": "영일 지역 앵커만 사용했다."
+    },
+    {
+      "topic": "우륵의 국원 안치 연도",
+      "need": "안치 자체의 연도를 밝힌 AKS 서술",
+      "blocked": "우륵·진흥왕 항목은 안치 사실만 적고 연도를 적지 않는다. 법지 항목의 '552년 우륵에게 노래를 배웠고'만 연도를 준다.",
+      "effect": "장면 연도를 552년 학습 시점으로만 잡고 안치 연도는 주장하지 않았다."
+    },
+    {
+      "topic": "금관가야의 532년 투항 장면",
+      "need": "투항이 이루어진 장소를 밝힌 서술",
+      "blocked": "AKS 금관가야 항목(E0007597, raw/aks-geumgwangaya-E0007597.html 로 내려받음)은 '532년 신라에 투항하였다'만 적고 장소를 적지 않는다.",
+      "effect": "김해 장면을 만들지 않고 보류했다."
+    },
+    "냉수리443년·503년과 오작비518년·578년은 대안 연대다. 중간 해에 계속된 사건으로 표시하지 않고 대표 후보와 다른 설을 함께 표시.",
+    "발견지와 조건부 비정은 사건의 확정 현장과 구분하고 지도 설명에도 배치 근거를 표시.",
+    "발췌를 이어 만든 time.verbatim은 원문에 실제 있는 날짜·서술로 정리."
+  ],
+  "collection": {
+    "task": "ancient_settlements",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788878041.6344779,
+    "pid": 21568,
+    "exitCode": 0,
+    "seconds": 1322.4,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "03ec0bc5-c10a-45dc-8661-89b0e4139071",
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

@@ -1,0 +1,153 @@
+{
+  "job": "modern_localities",
+  "sources": 10,
+  "excerpts": 26,
+  "claims": 46,
+  "entities": 26,
+  "rawFilesChecked": [
+    {
+      "source": "src-aks-mokpo-port",
+      "url": "https://encykorea.aks.ac.kr/Article/E0018741",
+      "sha256": "fb53afd2315f247986de20fac536b5fd666f0867cbb836ea7cd026bfaab84dda",
+      "rawBytes": 105195,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-aks-sinchuk-gyoan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0051403",
+      "sha256": "cfdf6b164435a38aef85535f0e3bd6d86afcbd45febc2b46d33011b4bf11baee",
+      "rawBytes": 108274,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-aks-sorokdo-hospital",
+      "url": "https://encykorea.aks.ac.kr/Article/E0006230",
+      "sha256": "081af0ef499206164ff30c94e016a919ae94043de2787cbe6f54d13adf4e07d8",
+      "rawBytes": 94492,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-aks-amtaedo-sojak",
+      "url": "https://encykorea.aks.ac.kr/Article/E0035164",
+      "sha256": "f0d3dbe6794538b7c2f3353a09e727b8b6afdf5e60e90eb9d4038cb34824decd",
+      "rawBytes": 84232,
+      "excerpts": 4,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-aks-gang-juryong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0079723",
+      "sha256": "8f40873e4198ce51d029c394d2415225e9810b51462f908ebcb10dc8664b9489",
+      "rawBytes": 84810,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-aks-joseoneohakhoe",
+      "url": "https://encykorea.aks.ac.kr/Article/E0052129",
+      "sha256": "b343e642c989ead32ecfc8675df5fa204630be7504d4c4f2f840be18b6747358",
+      "rawBytes": 121421,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-aks-jangsaengpo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0048528",
+      "sha256": "927565c1712d54c07732b5f2fd63254e3e91b85a6b137179b3e4e2b76dbeb275",
+      "rawBytes": 91244,
+      "excerpts": 2,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-aks-gori-npp",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003544",
+      "sha256": "2fe0271f598410e86c91a90d49375bb880579c41a23238356fed2b7174f3f4a6",
+      "rawBytes": 110542,
+      "excerpts": 4,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-kowiki-amtaedo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%94%ED%83%9C%EB%8F%84",
+      "sha256": "2bef1fbe10395f4039789571af50c8e9b88de7f131fb21c29acb7db2230db0f3",
+      "rawBytes": 133710,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-wd-Q489336-sorokdo",
+      "url": "https://www.wikidata.org/wiki/Q489336",
+      "sha256": "14bb860618f28d3152cb94a6778eec269726751a80ec26548e3d698dabdee542",
+      "rawBytes": 106399,
+      "excerpts": 1,
+      "quotedWords": 4
+    }
+  ],
+  "missing": [
+    {
+      "topic": "제주해녀항일운동 (1932, 구좌면 세화리)",
+      "want": "1932년 1월 세화리 시위의 날짜·장소·주도자를 밝힌 공공기관 원문",
+      "blocked": "제주항일기념관 페이지(https://www.jeju.go.kr/hangil/contents/haenyeo.htm)는 jeju.go.kr robots.txt가 '/'를 막고 /hangil/ 을 허용 목록에 넣지 않아 받지 않았다. 디지털제주문화대전(jeju.grandculture.net)은 robots.txt가 AI 크롤러(ClaudeBot·anthropic-ai 등)에 Disallow: / 를 지정해 받지 않았다. 한국민족문화대백과사전에서는 해당 항목을 찾지 못했다(robots가 /Article/Search 를 막아 사전 내부 검색을 쓰지 못함).",
+      "result": "장면 없음"
+    },
+    {
+      "topic": "거문도사건 (1885~1887)",
+      "want": "거문도 점거의 시작·종료 시점 원문과 거문도의 실측 좌표",
+      "blocked": "거문도는 기존 좌표 등록부와 앵커 목록에 없다. 여수·돌산 앵커는 약 50㎞ 떨어져 있어 섬 대신 쓸 수 없다고 판단해 장면을 만들지 않았다.",
+      "result": "장면 없음"
+    },
+    {
+      "topic": "을밀대·홍원경찰서·장생포 납도·소록도 병원 건물의 지점 좌표",
+      "want": "사건이 실제로 벌어진 건물·지점의 실측 좌표(국가유산청 등 공공 좌표 기록)",
+      "blocked": "이번 조사에서 해당 지점을 잰 공개 좌표 기록을 확인하지 못했다.",
+      "result": "모두 precision='area' 로 두고 근거를 coordinateNote 에 적었다. 지점 좌표가 확보되면 교체해야 한다."
+    },
+    {
+      "topic": "암태도 소작쟁의의 목포 국면 (1924년 6월·7월 목포경찰서·법원 앞 시위)",
+      "want": "목포에서 벌어진 시위를 별도 장면으로 만들 좌표·인용 여백",
+      "blocked": "한 웹페이지당 인용 25낱말 상한을 이미 다 썼다.",
+      "result": "암태도 장면 요약에만 남기고 목포 장면은 만들지 않았다."
+    },
+    {
+      "topic": "고리원자력발전소 1971년 당시 행정구역명",
+      "want": "착공 시점의 행정구역 표기(현재 표기는 부산광역시 기장군 장안읍)",
+      "blocked": "인용한 한국민족문화대백과사전 「고리원자력발전소」에는 현재 주소만 있다.",
+      "result": "장소 이름을 '고리'로 두고 현재 표기임을 note 에 적었다."
+    },
+    "조선어학회 재판과1942년 홍원 취조를 분리. 소록도 수용 정원을 실제 수용 인원으로 바꾸지 않음.",
+    "발췌를 이어 만든 time.verbatim은 원문에 실제 있는 날짜·서술로 정리."
+  ],
+  "collection": {
+    "task": "modern_localities",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788878041.6354778,
+    "pid": 30032,
+    "exitCode": 0,
+    "seconds": 1241.1,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "b85c475f-07f0-4e26-94cd-df4b2040720e",
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}
