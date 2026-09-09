@@ -1,0 +1,133 @@
+{
+  "job": "local_conflicts",
+  "sources": 10,
+  "excerpts": 37,
+  "claims": 79,
+  "entities": 54,
+  "rawFilesChecked": [
+    {
+      "source": "src-syj135-aks-daeyaseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014594",
+      "sha256": "f7004c565ae45da3737976ea5adc3077ca2a7d9b106daad1cf8af5e479e0f4c2",
+      "rawBytes": 81208,
+      "excerpts": 4,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-syj135-aks-gongsan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004338",
+      "sha256": "66ce633f110462cc933ec2c22b96eb86171222debaffbd9fde0ed86992ed25c2",
+      "rawBytes": 78404,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-syj135-aks-gochang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003996",
+      "sha256": "c97bf335a89f91ff73a54cac0370c8b92f864ef57388628dc2e69b7bd17ab1f2",
+      "rawBytes": 97878,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj135-aks-baekjeok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022348",
+      "sha256": "62623d8b02bff9d51a82cfc0573b6dd90950dc0ae477dc355924915c0d3a7849",
+      "rawBytes": 73785,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-syj135-aks-gwaneumpo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004988",
+      "sha256": "fb0fb3eedea2ead55aafc1dda8968888014cd50882af77ae4c0807f7f9e55129",
+      "rawBytes": 79044,
+      "excerpts": 5,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj135-aks-itanggae",
+      "url": "https://encykorea.aks.ac.kr/Article/E0046315",
+      "sha256": "fe219613f0dca53bf766af732815942ad413206fdd517b00ad1a31f12f29d2c6",
+      "rawBytes": 77314,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-syj135-aks-iinjwa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0045630",
+      "sha256": "72cdf0aaf566e5f371ad46877cc727a27cda6e2a89d6951753953c4fd5581bc6",
+      "rawBytes": 97360,
+      "excerpts": 4,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-syj135-aks-sherman",
+      "url": "https://encykorea.aks.ac.kr/Article/E0051255",
+      "sha256": "ad0c22942517592618f9ee44b45d68d8d030baaad766632c72f06a7bed8c320a",
+      "rawBytes": 106338,
+      "excerpts": 3,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj135-aks-hwangnyong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065135",
+      "sha256": "92bc105b349827752f3ffa1c26617515069d5e38c908248045957218349fe4cc",
+      "rawBytes": 127474,
+      "excerpts": 5,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj135-aks-hongju",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064411",
+      "sha256": "25fde69793929711bd93fcd8231684c745bff437137f7a9f54a826edd13a4d1b",
+      "rawBytes": 111240,
+      "excerpts": 4,
+      "quotedWords": 25
+    }
+  ],
+  "missing": [
+    {
+      "sceneId": "scene-syj135-gwaneumpo-1383",
+      "what": "관음포 앞바다·박두양 해역의 공적 좌표",
+      "why": "해전 장면을 바다 위에 놓으려면 해역 좌표가 필요하나, 육상 앵커로 대체하지 않는다는 규칙에 따라 비워 두었다.",
+      "candidateNext": "국립해양조사원 해양지명 자료 또는 국가유산청 지정구역 좌표 가운데 \"관음포\"라는 해역·만 이름에 붙은 좌표를 별도 출처로 내려받아 확인할 것."
+    },
+    {
+      "sceneId": "scene-syj135-sherman-1866",
+      "what": "대동강 물길 위 소각 지점의 좌표",
+      "why": "항목은 평양·만경대까지의 항행만 적고 배가 불탄 지점을 밝히지 않아 강 위 좌표가 없다.",
+      "candidateNext": "평양시 또는 국가기록 계열 공적 자료에서 \"제너럴셔먼호\" 관련 지점 표기를 찾을 것."
+    }
+  ],
+  "collection": {
+    "task": "local_conflicts",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788919670.1112313,
+    "pid": 32656,
+    "exitCode": 0,
+    "seconds": 1317.9,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "275606dc-3923-4051-969e-02649131f159",
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

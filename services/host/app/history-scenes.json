@@ -17195,7 +17195,8 @@
           34.82426842823604
         ],
         "displayScale": 0.10860994828148891,
-        "displayBasis": "사량도 전체의 기준점에 사량진 사건을 설명하는 장면입니다. 사량진성·진촌마을의 정확한 지점은 아닙니다."
+        "displayBasis": "사량도 전체의 기준점에 사량진 사건을 설명하는 장면입니다. 사량진성·진촌마을의 정확한 지점은 아닙니다.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
       },
       "participants": [
         {
@@ -19151,6 +19152,1533 @@
       },
       "researchJob": "remaining_positions",
       "researchCollection": "place-references-132"
+    },
+    {
+      "id": "scene-syj135-samnyeonsanseong-chukjo-470",
+      "eventId": "syj135-event-samnyeonsanseong-chukjo-470",
+      "title": "삼년산성 축조 — 보은 오정산 (470)",
+      "startYear": 470,
+      "endYear": 470,
+      "kind": "construction",
+      "summary": "백과사전이 인용한 『삼국사기』 기사에 따르면 신라 자비마립간 13년(470)에 충청북도 보은군 오정산에 삼년산성이 축조되었다. 공사를 시작한 지 3년 만에 완공했다는 이름 유래가 함께 전한다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-470-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-470-action",
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-470-place"
+      ],
+      "place": {
+        "label": "삼년산성 (충청북도 보은군 오정산)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.74167,
+        "lat": 36.48917,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-samnyeon-470-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-samnyeonsanseong-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「보은 삼년산성」 문서(raw/kowiki-samnyeonsanseong.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "syj135-person-jabi-maripgan",
+          "role": "축조 연대를 적은 재위 기년의 왕 (현장 근거 없음)",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-samnyeon-470-jabi"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": {
+        "fortress": true,
+        "construction": true
+      },
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-samnyeonsanseong-gaechuk-486",
+      "eventId": "syj135-event-samnyeonsanseong-gaechuk-486",
+      "title": "삼년산성·굴산성 개축 (486)",
+      "startYear": 486,
+      "endYear": 486,
+      "kind": "construction",
+      "summary": "소지마립간 8년(486년) 기사로, 삼년산성과 굴산성 두 성을 고쳐 쌓았다는 기록이 인용되어 있다. 470년 초축 이후의 보수 공사에 해당한다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-486-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-486-action",
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-486-place",
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-486-gulsan"
+      ],
+      "place": {
+        "label": "삼년산성 (충청북도 보은군 오정산)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.74167,
+        "lat": 36.48917,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-samnyeon-486-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-samnyeonsanseong-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「보은 삼년산성」 문서(raw/kowiki-samnyeonsanseong.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "syj135-person-soji-maripgan",
+          "role": "개축 연대를 적은 재위 기년의 왕 (현장 근거 없음)",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-samnyeon-486-soji"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": {
+        "fortress": true,
+        "construction": true
+      },
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-samnyeonsanseong-josuh-660",
+      "eventId": "syj135-event-samnyeonsanseong-josuh-660",
+      "title": "당 황제 조서 전달 의식 — 삼년산성 (660년 9월)",
+      "startYear": 660,
+      "endYear": 660,
+      "kind": "court",
+      "summary": "660년 9월 당 황제의 조서를 신라 태종무열왕에게 전달하는 의식이 삼년산성에서 거행되었다. 산성이 전쟁기 신라의 거점으로 쓰였음을 보여주는 장면이다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-660-year",
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-660-time"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-660-action",
+        "claim-scenes-135-forts_settlements-syj135-samnyeon-660-place"
+      ],
+      "place": {
+        "label": "삼년산성 (충청북도 보은군 오정산)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.74167,
+        "lat": 36.48917,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-samnyeon-660-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-samnyeonsanseong-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「보은 삼년산성」 문서(raw/kowiki-samnyeonsanseong.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-taejong-muyeol",
+          "role": "삼년산성에서 당 황제의 조서를 받은 신라 국왕",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-samnyeon-660-muyeol"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": {
+        "fortress": true,
+        "construction": false
+      },
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-myeonghwalseong-wae-431",
+      "eventId": "syj135-event-myeonghwalseong-wae-431",
+      "title": "왜인의 명활성 포위 (431)",
+      "startYear": 431,
+      "endYear": 431,
+      "kind": "siege",
+      "summary": "431년(눌지마립간 15) 왜인이 명활성을 포위하고 점령하려 했다는 기록이 전한다. 신라 왕경 동쪽을 지키던 성이 공격 목표가 된 장면이다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-myeong-431-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-myeong-431-action",
+        "claim-scenes-135-forts_settlements-syj135-myeong-431-place"
+      ],
+      "place": {
+        "label": "명활산성 (경상북도 경주시 천군동 일대)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.25528,
+        "lat": 35.83556,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-myeong-431-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-myeonghwalseong-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「경주 명활성」 문서(raw/kowiki-myeonghwalseong.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": [
+          "claim-scenes-135-forts_settlements-syj135-myeong-place"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "polity-wa",
+          "role": "명활성을 포위하고 점령하려 한 세력",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-myeong-431-wa"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-myeong-431-action"
+          ]
+        }
+      },
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-myeonghwalsanseong-chukseong-551",
+      "eventId": "syj135-event-myeonghwalsanseong-chukseong-551",
+      "title": "명활산성 축성 — 신미년(551) 작성비로 확인 (551)",
+      "startYear": 551,
+      "endYear": 551,
+      "kind": "construction",
+      "summary": "1975~1976년과 1988년에 발견된 『명활산성 작성비』를 통해 명활산성이 신미년(551년, 진흥왕 12)에 축성되었다는 사실이 확인되었다. 항목은 이 성이 여러 차례 개보수되었다고 적는다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-myeong-551-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-myeong-551-action",
+        "claim-scenes-135-forts_settlements-syj135-myeong-551-place"
+      ],
+      "place": {
+        "label": "명활산성 (경상북도 경주시 천군동 일대)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.25528,
+        "lat": 35.83556,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-myeong-551-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-myeonghwalseong-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「경주 명활성」 문서(raw/kowiki-myeonghwalseong.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": [
+          "claim-scenes-135-forts_settlements-syj135-myeong-place"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-jinheung",
+          "role": "축성 연대를 적은 재위 기년의 왕 (현장 근거 없음)",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-myeong-551-jinheung"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": {
+        "fortress": true,
+        "construction": true
+      },
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-myeonghwalsanseong-bidam-647",
+      "eventId": "syj135-event-myeonghwalsanseong-bidam-647",
+      "title": "비담의 난 반란군의 명활산성 점거 (647)",
+      "startYear": 647,
+      "endYear": 647,
+      "kind": "siege",
+      "summary": "647년 비담의 난 당시 반란군이 명활산성을 점거했다고 항목은 적는다. 이후 명활산성이 폐성되었을 가능성도 함께 언급된다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-myeong-647-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-myeong-647-action",
+        "claim-scenes-135-forts_settlements-syj135-myeong-647-place"
+      ],
+      "place": {
+        "label": "명활산성 (경상북도 경주시 천군동 일대)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.25528,
+        "lat": 35.83556,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-myeong-647-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-myeonghwalseong-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「경주 명활성」 문서(raw/kowiki-myeonghwalseong.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": [
+          "claim-scenes-135-forts_settlements-syj135-myeong-place"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "syj135-polity-bidam-banrangun-647",
+          "role": "명활산성을 점거한 반란군",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-myeong-647-rebels"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": {
+        "fortress": true,
+        "occupation": true
+      },
+      "integrationNote": "점거 기록만으로 공성 공격 동작을 추가하지 않는다.",
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-gochang-eupseong-chukjo-1453",
+      "eventId": "syj135-event-gochang-eupseong-chukjo-1453",
+      "title": "고창읍성(모양성) 축조 — 단종 1년(1453) 설 · 태조 2년(1393) 설도 있음",
+      "startYear": 1453,
+      "endYear": 1453,
+      "kind": "construction",
+      "summary": "전라도 여러 고을을 동원해 고창의 진산 반등산을 에워싸며 쌓은 석축 읍성이다. 축조 시기는 단종 1년(1453) 설과 숙종 때 설이 함께 전하고, 계유년 명문 때문에 태조 2년(1393)일 가능성도 제기된다. 왜구 방어를 목적으로 한 축성으로 판단된다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-gochang-year",
+        "claim-scenes-135-forts_settlements-syj135-gochang-dispute"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-gochang-place",
+        "claim-scenes-135-forts_settlements-syj135-gochang-mobil",
+        "claim-scenes-135-forts_settlements-syj135-gochang-purpose"
+      ],
+      "place": {
+        "label": "고창읍성 (전북 고창군, 반등산을 에워싼 읍성)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.70361,
+        "lat": 35.43111,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-gochang-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-gochangeupseong-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「고창읍성」 문서(raw/kowiki-gochangeupseong.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "syj135-polity-gochang-chukseong-dongwon",
+          "role": "성을 쌓는 데 동원된 전라도 여러 고을",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-gochang-mobil"
+          ]
+        },
+        {
+          "entityId": "person-encykorea-danjong-e0013661",
+          "role": "축조 연대 표기의 재위 왕 (현장 근거 없음)",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-gochang-danjong"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": {
+        "fortress": true,
+        "construction": true
+      },
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-songgukri-josa-1975-1987",
+      "eventId": "syj135-event-songgukri-haksul-josa-1975-1987",
+      "title": "부여 송국리 선사 취락지 정식 학술 조사 (1975~1987)",
+      "startYear": 1975,
+      "endYear": 1987,
+      "kind": "excavation",
+      "summary": "충청남도 부여군 초촌면의 청동기시대 대규모 취락유적에서 1975년 국립중앙박물관이 정식 학술 조사를 시작해 1987년 제7차 조사까지 실시하였다. 한때 방어용 목책으로 보던 나무 기둥은 뒤에 목책으로 보기 어렵다는 견해가 제기되었다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-song-start",
+        "claim-scenes-135-forts_settlements-syj135-song-end"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-song-action",
+        "claim-scenes-135-forts_settlements-syj135-song-place",
+        "claim-scenes-135-forts_settlements-syj135-song-mokchaek"
+      ],
+      "place": {
+        "label": "부여 송국리 선사 취락지 (충청남도 부여군 초촌면)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.03417,
+        "lat": 36.26667,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-song-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-songgukri-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「부여 송국리 유적」 문서(raw/kowiki-songgukri.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "syj135-polity-gungnip-jungang-bakmulgwan",
+          "role": "1975년 정식 학술 조사를 시작해 1987년까지 수행한 기관",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-song-nmk"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "integrationNote": "현대 발굴 조사 시기이며 선사 취락의 거주 연도가 아니다. 조사 구역과 작업 도구로 표현한다.",
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-geomdanri-balgul-1990",
+      "eventId": "syj135-event-geomdanri-balgul-1990",
+      "title": "울주 검단리 유적 발굴조사 — 환호 취락 확인 (1990)",
+      "startYear": 1990,
+      "endYear": 1990,
+      "kind": "excavation",
+      "summary": "1990년 부산대학교 박물관이 울산광역시 울주군 웅촌면 검단리에서 약 3개월간 발굴조사를 하였다. 능선을 따라 타원형으로 두른 환호와 그 안팎의 집자리·무덤이 확인되어 환호 취락 조사의 시발점이 되었다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-geomdan-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-geomdan-action",
+        "claim-scenes-135-forts_settlements-syj135-geomdan-place",
+        "claim-scenes-135-forts_settlements-syj135-geomdan-hwanho"
+      ],
+      "place": {
+        "label": "울주 검단리 유적 (울산광역시 울주군 웅촌면)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.18167,
+        "lat": 35.44917,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-geomdan-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-geomdanri-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「울주 검단리 유적」 문서(raw/kowiki-geomdanri.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": []
+      },
+      "participants": [
+        {
+          "entityId": "syj135-polity-busan-univ-museum",
+          "role": "1990년 약 3개월간 발굴조사를 수행한 기관",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-geomdan-pnu"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "integrationNote": "현대 발굴 조사 시기이며 선사 취락의 거주 연도가 아니다. 조사 구역과 작업 도구로 표현한다.",
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-amsadong-josa-1971-1975",
+      "eventId": "syj135-event-amsadong-josa-1971-1975",
+      "title": "서울 암사동 유적 4차 조사 — 신석기 취락 확인 (1971~1975)",
+      "startYear": 1971,
+      "endYear": 1975,
+      "kind": "excavation",
+      "summary": "1971∼1975년 사이 국립중앙박물관 조사단이 서울 강동구 암사동 한강 하안단구의 유적을 4차에 걸쳐 조사하여, 신석기시대 집자리가 취락을 이루고 있음을 확인하였다. 유적은 강 건너 아차산성과 마주 본다.",
+      "dateClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-amsa-start",
+        "claim-scenes-135-forts_settlements-syj135-amsa-end",
+        "claim-scenes-135-forts_settlements-syj135-amsa-time"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-forts_settlements-syj135-amsa-action",
+        "claim-scenes-135-forts_settlements-syj135-amsa-place"
+      ],
+      "place": {
+        "label": "서울 암사동 유적 (서울특별시 강동구, 한강 하안단구)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.13028,
+        "lat": 37.56056,
+        "claimIds": [
+          "claim-scenes-135-forts_settlements-syj135-amsa-place"
+        ],
+        "coordinateSourceIds": [
+          "src-syj135-kowiki-amsadong-geo"
+        ],
+        "coordinateNote": "좌표는 한국어 위키백과 「서울 암사동 유적」 문서(raw/kowiki-amsadong.html)의 좌표 메타데이터에 표시된 십진도 값을 그대로 옮긴 것이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 항목에서 가져왔고, 좌표만 별도 출처로 붙였다. 이 점은 유적/성곽의 참조 지점이며 기준계·오차·중심점 산정 방식은 문서에 명시되어 있지 않다. 성곽·취락의 실제 범위나 사건이 벌어진 정확한 지점을 뜻하지 않는다.",
+        "displayBasis": "유적의 참조점에 놓은 설명용 장면입니다. 성벽·집자리의 실제 윤곽이나 배치를 복원한 것은 아닙니다.",
+        "coordinateClaimIds": [
+          "claim-scenes-135-forts_settlements-syj135-amsa-riverbank"
+        ]
+      },
+      "participants": [
+        {
+          "entityId": "syj135-polity-gungnip-jungang-bakmulgwan",
+          "role": "4차에 걸쳐 조사한 조사단",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-forts_settlements-syj135-amsa-nmk"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "integrationNote": "현대 발굴 조사 시기이며 선사 취락의 거주 연도가 아니다. 조사 구역과 작업 도구로 표현한다.",
+      "researchJob": "forts_settlements",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-daeyaseong-642",
+      "eventId": "event-syj135-daeyaseong-jeontu-642",
+      "title": "대야성전투 — 대야성(지금의 합천) (642)",
+      "startYear": 642,
+      "endYear": 642,
+      "kind": "siege",
+      "summary": "642년 백제 장군 윤충이 군사를 받아 신라의 대야성을 공격했다. 성 안에서는 창고에 불을 지른 내응이 있었고, 죽죽과 용석은 백제군에 맞서 싸웠다.",
+      "visualActions": {
+        "fireTargets": [
+          "rural_store"
+        ]
+      },
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-daeyaseong-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-daeyaseong-attack",
+        "claim-scenes-135-local_conflicts-syj135-daeyaseong-fire",
+        "claim-scenes-135-local_conflicts-syj135-daeyaseong-place"
+      ],
+      "place": {
+        "label": "대야성(大耶城)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-145028",
+        "lon": 128.11653032850006,
+        "lat": 35.65219333400003,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-daeyaseong-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis"
+        ],
+        "coordinateNote": "표시점은 기존 앵커 hgis-admin-145028(합천)의 값 128.116530, 35.652193 을 그대로 옮긴 것이다. 이 앵커는 1910~1945 행정구역 자료에서 파생된 표시용 구역 중심점(기존 저장본 src-existing-anchors-hgis)이며 이번에 새로 내려받지 않았다. 정밀도는 area 이고 합천 고을 안의 실제 지점 좌표가 아니다. 항목은 대야성을 \"지금의 경상남도 합천군\"으로만 적고 성터 지점을 밝히지 않았다.",
+        "coordinateClaimIds": [],
+        "displayBasis": "사료에 적힌 지역의 기준점에 놓은 설명용 장면입니다. 군·고을의 참조 위치이며 정확한 성터나 전장 배치가 아닙니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-syj135-yunchung",
+          "role": "군사를 받아 대야성을 공격한 백제 장군",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-daeyaseong-yunchung",
+            "claim-scenes-135-local_conflicts-syj135-daeyaseong-attack"
+          ]
+        },
+        {
+          "entityId": "person-syj135-jukjuk",
+          "role": "대야성에서 백제군에 대항한 재지세력",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-daeyaseong-jukjuk"
+          ]
+        },
+        {
+          "entityId": "person-syj135-yongseok",
+          "role": "대야성에서 백제군에 대항한 재지세력",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-daeyaseong-yongseok"
+          ]
+        },
+        {
+          "entityId": "polity-baekje",
+          "role": "대야성을 공격한 쪽",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-daeyaseong-baekje"
+          ]
+        },
+        {
+          "entityId": "polity-silla",
+          "role": "대야성을 두고 맞선 쪽",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-daeyaseong-silla-baekje"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-daeyaseong-fire"
+          ]
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-daeyaseong-attack"
+          ]
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135",
+      "integrationNote": "성 안 창고의 화재만 표현한다. 전체 마을 화재로 확대하지 않는다."
+    },
+    {
+      "id": "scene-syj135-gongsan-927",
+      "eventId": "event-syj135-gongsan-jeontu-927",
+      "title": "공산전투 — 팔공산 일대 (927)",
+      "startYear": 927,
+      "endYear": 927,
+      "kind": "battle",
+      "summary": "927년 팔공산 일대에서 후백제 견훤과 고려 태조 왕건이 크게 맞붙었다. 고려 쪽에서는 장군 김락과 신숭겸이 죽었고 태조는 간신히 몸을 피했다.",
+      "visualActions": "산자락에서 두 무리가 맞붙고 한쪽이 무너져 흩어지는 장면. 대열 배치와 병력 수는 자료에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-gongsan-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-gongsan-battle",
+        "claim-scenes-135-local_conflicts-syj135-gongsan-place"
+      ],
+      "place": {
+        "label": "팔공산(八公山) 일대",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.695,
+        "lat": 36.01694,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-gongsan-place"
+        ],
+        "coordinateSourceIds": [
+          "encykorea-taebaek",
+          "wiki-en-Palgongsan"
+        ],
+        "coordinateNote": "표시점은 기존 앵커 hgis-admin-174575(대구)의 값 128.566288, 35.859172 을 그대로 옮긴 것이다. 이 앵커는 1910~1945 행정구역 자료에서 파생된 표시용 구역 중심점(기존 저장본 src-existing-anchors-hgis)이며 이번에 새로 내려받지 않았다. 정밀도는 area 이고 대구 고을 안의 실제 지점 좌표가 아니다. 항목이 적은 곳은 팔공산 \"일대\"이며 산 안의 교전 지점은 밝혀져 있지 않다. 앵커는 대구 구역의 표시 중심이므로 팔공산 능선보다 남서쪽에 놓인다.",
+        "coordinateClaimIds": [],
+        "displayBasis": "기존에 확인한 팔공산 참조점에 공산전투를 설명하는 장면을 놓았습니다. 산 정상에서 싸웠다는 뜻이 아니며 정확한 전장 위치는 미상입니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-gyeonhwon",
+          "role": "공산에서 왕건과 맞선 후백제 쪽 주역",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gongsan-gyeonhwon",
+            "claim-scenes-135-local_conflicts-syj135-gongsan-battle"
+          ]
+        },
+        {
+          "entityId": "person-encykorea-goryeo-taejo",
+          "role": "공산에서 크게 패하고 몸을 피한 고려 태조",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gongsan-wanggeon"
+          ]
+        },
+        {
+          "entityId": "person-syj135-gimrak",
+          "role": "공산전투에서 죽은 고려 장군",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gongsan-gimrak"
+          ]
+        },
+        {
+          "entityId": "person-syj135-sinsunggyeom",
+          "role": "공산전투에서 죽은 고려 장군",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gongsan-sinsunggyeom"
+          ]
+        },
+        {
+          "entityId": "polity-hubaekje",
+          "role": "견훤 쪽 정치체",
+          "side": "invader",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gongsan-hubaekje"
+          ]
+        },
+        {
+          "entityId": "polity-goryeo",
+          "role": "왕건 쪽 정치체",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gongsan-goryeo"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gongsan-battle"
+          ]
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-gochang-930",
+      "eventId": "event-syj135-gochang-jeontu-930",
+      "title": "고창전투 — 고창군(지금의 안동 와룡면) (930)",
+      "startYear": 930,
+      "endYear": 930,
+      "kind": "battle",
+      "summary": "930년 고창군에서 고려와 후백제가 맞붙어 견훤이 왕건에게 크게 패했다. 뒤에 고창군은 안동부로 승격되었다.",
+      "visualActions": "고을 들머리에서 두 군세가 맞붙고 한쪽이 물러나는 장면. 진형과 병력 수는 자료에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-gochang-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-gochang-battle",
+        "claim-scenes-135-local_conflicts-syj135-gochang-place"
+      ],
+      "place": {
+        "label": "고창군(古昌郡)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-157663",
+        "lon": 128.7155758505001,
+        "lat": 36.50730765350005,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-gochang-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis"
+        ],
+        "coordinateNote": "표시점은 기존 앵커 hgis-admin-157663(안동)의 값 128.715576, 36.507308 을 그대로 옮긴 것이다. 이 앵커는 1910~1945 행정구역 자료에서 파생된 표시용 구역 중심점(기존 저장본 src-existing-anchors-hgis)이며 이번에 새로 내려받지 않았다. 정밀도는 area 이고 안동 고을 안의 실제 지점 좌표가 아니다. 항목은 고창군을 \"지금의 경상북도 안동시 와룡면\"으로 적었으나 와룡면 단위 좌표는 확보하지 못해 안동 구역 앵커로만 표시한다.",
+        "coordinateClaimIds": [],
+        "displayBasis": "사료에 적힌 지역의 기준점에 놓은 설명용 장면입니다. 군·고을의 참조 위치이며 정확한 성터나 전장 배치가 아닙니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-gyeonhwon",
+          "role": "고창전투에서 크게 패한 쪽의 주역",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gochang-gyeonhwon"
+          ]
+        },
+        {
+          "entityId": "person-encykorea-goryeo-taejo",
+          "role": "고창전투에서 이긴 쪽의 주역",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gochang-wanggeon"
+          ]
+        },
+        {
+          "entityId": "polity-hubaekje",
+          "role": "항목 정의가 밝힌 교전 정치체",
+          "side": "invader",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gochang-hubaekje"
+          ]
+        },
+        {
+          "entityId": "polity-goryeo",
+          "role": "항목 정의가 밝힌 교전 정치체",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gochang-goryeo"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gochang-battle"
+          ]
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-baekjeok-1237",
+      "eventId": "event-syj135-baekjeok-nan-1237",
+      "title": "백적의 난 — 이연년 형제의 담양 봉기 (1237)",
+      "startYear": 1237,
+      "endYear": 1237,
+      "kind": "assembly",
+      "summary": "1237년 초적 이연년 형제가 전라도 담양 지방에서 민란을 일으켰다. 백제부흥을 내세워 ‘백적’이라 불렸고, 나주를 공격하다 전라도지휘사 김경손에게 패해 진압되었다.",
+      "visualActions": "고을 어귀에 무리가 모여 기치를 세우고 움직이는 장면. 인원수와 무장은 자료에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-baekjeok-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-baekjeok-act",
+        "claim-scenes-135-local_conflicts-syj135-baekjeok-name",
+        "claim-scenes-135-local_conflicts-syj135-baekjeok-place"
+      ],
+      "place": {
+        "label": "전라도 담양(潭陽) 지방",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-113290",
+        "lon": 127.00195616950003,
+        "lat": 35.352550882500054,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-baekjeok-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis"
+        ],
+        "coordinateNote": "표시점은 기존 앵커 hgis-admin-113290(담양)의 값 127.001956, 35.352551 을 그대로 옮긴 것이다. 이 앵커는 1910~1945 행정구역 자료에서 파생된 표시용 구역 중심점(기존 저장본 src-existing-anchors-hgis)이며 이번에 새로 내려받지 않았다. 정밀도는 area 이고 담양 고을 안의 실제 지점 좌표가 아니다. 항목은 \"담양 지방\"이라고만 적어 봉기 지점이 없다. 뒤이은 교전지 나주는 별도의 곳이며 이 표시점이 아니다.",
+        "coordinateClaimIds": [],
+        "displayBasis": "사료에 적힌 지역의 기준점에 놓은 설명용 장면입니다. 군·고을의 참조 위치이며 정확한 성터나 전장 배치가 아닙니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-syj135-yi-yeonnyeon",
+          "role": "담양 지방에서 민란을 일으킨 주도자",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-baekjeok-leader",
+            "claim-scenes-135-local_conflicts-syj135-baekjeok-act"
+          ]
+        },
+        {
+          "entityId": "person-syj122-gimgyeongson",
+          "role": "나주에서 이 무리를 물리친 전라도지휘사 (담양 현장 서술 없음)",
+          "side": "defender",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-baekjeok-gimgyeongson"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135",
+      "integrationNote": "담양 봉기에 나주에서 벌어진 공격 동작을 옮기지 않는다."
+    },
+    {
+      "id": "scene-syj135-gwaneumpo-1383",
+      "eventId": "event-syj135-gwaneumpo-jeontu-1383",
+      "title": "관음포전투 — 남해현 북방 관음포 앞바다 (1383)",
+      "startYear": 1383,
+      "endYear": 1383,
+      "kind": "naval",
+      "summary": "1383년 해도원수 정지가 전선 47척을 이끌고 경상도로 향했고, 관음포에 도달한 왜구를 앞바다에서 크게 무찔렀다. 화포로 선봉대선 17척을 완파했다.",
+      "visualActions": "앞바다에서 배들이 맞서고 선봉 쪽 배들이 부서지는 장면. 항로와 진형은 자료에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-gwaneumpo-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-gwaneumpo-act",
+        "claim-scenes-135-local_conflicts-syj135-gwaneumpo-fleet",
+        "claim-scenes-135-local_conflicts-syj135-gwaneumpo-cannon",
+        "claim-scenes-135-local_conflicts-syj135-gwaneumpo-place"
+      ],
+      "place": {
+        "label": "관음포 앞바다 (남해현 북방)",
+        "medium": "sea",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-gwaneumpo-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "좌표를 넣지 않았다. 항목이 적은 곳은 \"남해현 북방의 관음포 앞바다\"와 \"박두양\"이라는 해역이며, 이 해역의 공적 좌표를 이번에 확보하지 못했다. 남해군 육상 앵커나 관음포 해안의 기념 유적 좌표로 바다를 대신 찍지 않았다.",
+        "coordinateClaimIds": [],
+        "displayBasis": "사료에 적힌 지역의 기준점에 놓은 설명용 장면입니다. 군·고을의 참조 위치이며 정확한 성터나 전장 배치가 아닙니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-syj135-jeongji",
+          "role": "전선 47척을 이끌고 관음포에서 싸운 해도원수",
+          "side": "naval",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gwaneumpo-jeongji",
+            "claim-scenes-135-local_conflicts-syj135-gwaneumpo-fleet"
+          ]
+        },
+        {
+          "entityId": "polity-syj135-waegu-1383",
+          "role": "관음포에 도달한 왜구",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gwaneumpo-waegu"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gwaneumpo-fleet",
+            "claim-scenes-135-local_conflicts-syj135-gwaneumpo-cannon"
+          ]
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-gwaneumpo-cannon"
+          ]
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-itanggae-gyeongwon-1583",
+      "eventId": "event-syj135-itanggae-nan-1583",
+      "title": "이탕개의 난 — 경원부성 점령 (1583)",
+      "startYear": 1583,
+      "endYear": 1583,
+      "kind": "siege",
+      "summary": "1583년 경원부에 살던 번호들이 난을 일으키자 경원부사 김수가 나아가 싸우다 패했고, 여진인들이 부성을 점령하고 인마를 약탈했다.",
+      "visualActions": "북쪽 고을 성이 넘어가고 성 안팎에서 사람과 말이 끌려 나가는 장면. 병력 수와 성문 위치는 자료에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-itanggae-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-itanggae-act",
+        "claim-scenes-135-local_conflicts-syj135-itanggae-place"
+      ],
+      "place": {
+        "label": "경원부성(府城)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-85096",
+        "lon": 130.2132757985001,
+        "lat": 42.64235940900008,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-itanggae-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis"
+        ],
+        "coordinateNote": "표시점은 기존 앵커 hgis-admin-85096(경원)의 값 130.213276, 42.642359 을 그대로 옮긴 것이다. 이 앵커는 1910~1945 행정구역 자료에서 파생된 표시용 구역 중심점(기존 저장본 src-existing-anchors-hgis)이며 이번에 새로 내려받지 않았다. 정밀도는 area 이고 경원 고을 안의 실제 지점 좌표가 아니다. 항목은 부성 자리를 밝히지 않았고 아산보·안원보 등 부내 진보는 별개의 곳이다.",
+        "coordinateClaimIds": [],
+        "displayBasis": "사료에 적힌 지역의 기준점에 놓은 설명용 장면입니다. 군·고을의 참조 위치이며 정확한 성터나 전장 배치가 아닙니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-syj135-gimsu",
+          "role": "나아가 싸우다 패한 경원부사",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-itanggae-gimsu"
+          ]
+        },
+        {
+          "entityId": "polity-syj135-beonho-gyeongwon-1583",
+          "role": "경원부성을 점령한 번호·여진인",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-itanggae-beonho",
+            "claim-scenes-135-local_conflicts-syj135-itanggae-act"
+          ]
+        },
+        {
+          "entityId": "person-syj135-itanggae",
+          "role": "난의 중심 인물 (경원부성 현장 서술 없음)",
+          "side": "invader",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-itanggae-leader"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-itanggae-act"
+          ]
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-iinjwa-cheongju-1728",
+      "eventId": "event-syj135-iinjwa-cheongju-1728",
+      "title": "이인좌의 난 — 청주성 함락 (1728년 3월 15일)",
+      "startYear": 1728,
+      "endYear": 1728,
+      "kind": "siege",
+      "summary": "1728년 3월 15일 이인좌가 청주성을 함락하며 난이 시작되었다. 반군은 병영을 급습해 충청병사 이봉상을 죽이고 청주를 장악한 뒤 신천영을 병사로 삼았다.",
+      "visualActions": "고을 성과 병영이 밤사이 넘어가고 성문 위에 다른 깃발이 서는 장면. 병력 수와 진입로는 자료에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-iinjwa-year",
+        "claim-scenes-135-local_conflicts-syj135-iinjwa-date"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-iinjwa-act",
+        "claim-scenes-135-local_conflicts-syj135-iinjwa-camp",
+        "claim-scenes-135-local_conflicts-syj135-iinjwa-place"
+      ],
+      "place": {
+        "label": "청주성(淸州城)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-10708",
+        "lon": 127.56992952750005,
+        "lat": 36.66155612150007,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-iinjwa-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis"
+        ],
+        "coordinateNote": "표시점은 기존 앵커 hgis-admin-10708(청주)의 값 127.569930, 36.661556 을 그대로 옮긴 것이다. 이 앵커는 1910~1945 행정구역 자료에서 파생된 표시용 구역 중심점(기존 저장본 src-existing-anchors-hgis)이며 이번에 새로 내려받지 않았다. 정밀도는 area 이고 청주 고을 안의 실제 지점 좌표가 아니다. 항목은 청주성·병영이라고만 적고 성곽 지점을 밝히지 않았다. 뒤에 나오는 상당성은 별개 표기다.",
+        "coordinateClaimIds": [],
+        "displayBasis": "사료에 적힌 지역의 기준점에 놓은 설명용 장면입니다. 군·고을의 참조 위치이며 정확한 성터나 전장 배치가 아닙니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-syj135-yi-injwa",
+          "role": "청주성을 함락한 반군 주도자",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-iinjwa-leader",
+            "claim-scenes-135-local_conflicts-syj135-iinjwa-act"
+          ]
+        },
+        {
+          "entityId": "person-syj135-yi-bongsang",
+          "role": "급습당한 청주 병영의 충청병사",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-iinjwa-bongsang"
+          ]
+        },
+        {
+          "entityId": "person-syj135-sin-cheonyeong",
+          "role": "청주 장악 뒤 병사(兵使)로 세워진 인물",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-iinjwa-sin"
+          ]
+        },
+        {
+          "entityId": "polity-syj135-bangun-1728",
+          "role": "병영을 급습한 반군",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-iinjwa-group"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-iinjwa-act",
+            "claim-scenes-135-local_conflicts-syj135-iinjwa-camp"
+          ]
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-sherman-1866",
+      "eventId": "event-syj135-general-sherman-1866",
+      "title": "제너럴셔먼호 소각 — 평양 대동강 (1866)",
+      "startYear": 1866,
+      "endYear": 1866,
+      "kind": "fire",
+      "summary": "1866년 이양선 한 척이 대동강을 거슬러 평양까지 올라왔다. 평양감사 박규수가 군민의 화공으로 제너럴셔먼호를 불태웠다.",
+      "visualActions": "강 위의 배 한 척이 불길에 싸이고 강가에 사람들이 늘어선 장면. 배의 정박 지점과 강폭은 자료에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-sherman-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-sherman-fire",
+        "claim-scenes-135-local_conflicts-syj135-sherman-place"
+      ],
+      "place": {
+        "label": "평양 대동강",
+        "medium": "land",
+        "precision": "area",
+        "lon": null,
+        "lat": null,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-sherman-place"
+        ],
+        "coordinateSourceIds": [],
+        "coordinateNote": "표시점은 기존 앵커 hgis-admin-93236(평양)의 값 125.684625, 39.085723 을 그대로 옮긴 것이다. 이 앵커는 1910~1945 행정구역 자료에서 파생된 표시용 구역 중심점(기존 저장본 src-existing-anchors-hgis)이며 이번에 새로 내려받지 않았다. 정밀도는 area 이고 평양 고을 안의 실제 지점 좌표가 아니다. 사건은 대동강 물길 위에서 일어났지만 강 위의 지점 좌표를 확보하지 못해 평양 구역 앵커로만 표시한다. 항목이 적은 만경대까지의 항행 구간을 선으로 그리지 않는다.",
+        "coordinateClaimIds": [
+          "claim-scenes-135-local_conflicts-syj135-sherman-pyongyang"
+        ],
+        "displayBasis": "평양 대동강의 사건 기록입니다. 수집한 고을 중심점은 강의 위치가 아니므로 지도의 점을 확정하지 않았습니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-syj135-bak-gyusu",
+          "role": "화공으로 셔먼호를 불태운 평양감사",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-sherman-bak",
+            "claim-scenes-135-local_conflicts-syj135-sherman-fire"
+          ]
+        },
+        {
+          "entityId": "polity-syj135-pyongyang-gunmin-1866",
+          "role": "화공을 편 평양 군민",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-sherman-gunmin"
+          ]
+        },
+        {
+          "entityId": "polity-syj135-sherman-crew-1866",
+          "role": "대동강을 거슬러 올라온 배와 선원",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-sherman-ship"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-sherman-fire"
+          ]
+        },
+        "ships": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-sherman-ship"
+          ]
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-sherman-fire"
+          ]
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135",
+      "integrationNote": "배를 평양의 육지 중심점에 놓지 않는다. 사건과 인물·원문은 연표에서 탐색할 수 있다."
+    },
+    {
+      "id": "scene-syj135-hwangnyongchon-1894",
+      "eventId": "event-syj135-hwangnyongchon-jeontu-1894",
+      "title": "황룡촌 싸움 — 장성 황룡면 (1894)",
+      "startYear": 1894,
+      "endYear": 1894,
+      "kind": "battle",
+      "summary": "1894년 황룡촌에 유진하던 동학농민군이 월평리에서 점심을 먹다가 관군의 기습 포격을 받았다. 항목은 이 싸움 자리를 장성군 황룡면으로 적는다.",
+      "visualActions": "들판에 머물던 무리가 갑작스러운 포격에 흩어졌다가 되돌아서는 장면. 대열과 무기 배치는 자료에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-hwangnyong-year",
+        "claim-scenes-135-local_conflicts-syj135-hwangnyong-date"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-hwangnyong-yujin",
+        "claim-scenes-135-local_conflicts-syj135-hwangnyong-attack",
+        "claim-scenes-135-local_conflicts-syj135-hwangnyong-place",
+        "claim-scenes-135-local_conflicts-syj135-hwangnyong-lunch"
+      ],
+      "place": {
+        "label": "황룡촌 (장성군 황룡면)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-120156",
+        "lon": 126.80171111950011,
+        "lat": 35.35255938350005,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-hwangnyong-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis"
+        ],
+        "coordinateNote": "표시점은 기존 앵커 hgis-admin-120156(장성)의 값 126.801711, 35.352559 을 그대로 옮긴 것이다. 이 앵커는 1910~1945 행정구역 자료에서 파생된 표시용 구역 중심점(기존 저장본 src-existing-anchors-hgis)이며 이번에 새로 내려받지 않았다. 정밀도는 area 이고 장성 고을 안의 실제 지점 좌표가 아니다. 항목은 황룡면·월평리·신호리를 적지만 각 마을의 좌표는 없다. 앵커는 장성 구역의 표시 중심이다.",
+        "coordinateClaimIds": [],
+        "displayBasis": "사료에 적힌 지역의 기준점에 놓은 설명용 장면입니다. 군·고을의 참조 위치이며 정확한 성터나 전장 배치가 아닙니다."
+      },
+      "participants": [
+        {
+          "entityId": "polity-syj135-donghak-army-1894",
+          "role": "황룡촌에 유진하다 포격을 받은 동학농민군",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-hwangnyong-donghak",
+            "claim-scenes-135-local_conflicts-syj135-hwangnyong-yujin"
+          ]
+        },
+        {
+          "entityId": "polity-syj135-gwangun-1894",
+          "role": "황룡촌의 농민군에게 기습 포격을 가한 관군",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-hwangnyong-gwangun",
+            "claim-scenes-135-local_conflicts-syj135-hwangnyong-attack"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-hwangnyong-attack"
+          ]
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135"
+    },
+    {
+      "id": "scene-syj135-hongjuseong-1906",
+      "eventId": "event-syj135-hongjuseong-jeontu-1906",
+      "title": "홍주성 전투 — 제2차 홍주의진 (1906)",
+      "startYear": 1906,
+      "endYear": 1906,
+      "kind": "siege",
+      "summary": "1906년 5월 19일 홍주의진이 홍주로 진격해 홍주성을 점령했고, 5월 31일 새벽 4시경 홍주성은 일본군의 총공격으로 점령되었다. 의병장 민종식은 패퇴해 성을 빠져나왔다.",
+      "visualActions": "읍성 성벽을 두고 안팎이 맞서고 새벽에 성이 넘어가는 장면. 병력 수와 포위선은 자료에 없다.",
+      "dateClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-hongju-year",
+        "claim-scenes-135-local_conflicts-syj135-hongju-occupy-date",
+        "claim-scenes-135-local_conflicts-syj135-hongju-fall-date"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-135-local_conflicts-syj135-hongju-occupy",
+        "claim-scenes-135-local_conflicts-syj135-hongju-fall",
+        "claim-scenes-135-local_conflicts-syj135-hongju-place"
+      ],
+      "place": {
+        "label": "홍주성(洪州城)",
+        "medium": "land",
+        "precision": "area",
+        "anchorPlaceId": "hgis-admin-31710",
+        "lon": 126.64827610850006,
+        "lat": 36.53298528500005,
+        "claimIds": [
+          "claim-scenes-135-local_conflicts-syj135-hongju-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis"
+        ],
+        "coordinateNote": "표시점은 기존 앵커 hgis-admin-31710(홍주)의 값 126.648276, 36.532985 을 그대로 옮긴 것이다. 이 앵커는 1910~1945 행정구역 자료에서 파생된 표시용 구역 중심점(기존 저장본 src-existing-anchors-hgis)이며 이번에 새로 내려받지 않았다. 정밀도는 area 이고 홍주 고을 안의 실제 지점 좌표가 아니다. 항목은 홍주성이라고만 적고 성곽 안 지점을 밝히지 않았다. 홍주 앵커는 옛 지명 표기와 맞아 홍성 앵커 대신 썼다.",
+        "coordinateClaimIds": [],
+        "displayBasis": "사료에 적힌 지역의 기준점에 놓은 설명용 장면입니다. 군·고을의 참조 위치이며 정확한 성터나 전장 배치가 아닙니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-syj135-min-jongsik",
+          "role": "홍주성 전투에서 패퇴해 성을 빠져나온 의병장",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-hongju-min"
+          ]
+        },
+        {
+          "entityId": "polity-syj135-hongju-uijin-1906",
+          "role": "홍주성을 점령하고 지킨 의병 부대",
+          "side": "defender",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-hongju-uijin",
+            "claim-scenes-135-local_conflicts-syj135-hongju-occupy"
+          ]
+        },
+        {
+          "entityId": "polity-syj135-japanese-army-1906",
+          "role": "홍주성을 총공격해 점령한 일본군",
+          "side": "invader",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-hongju-japanese",
+            "claim-scenes-135-local_conflicts-syj135-hongju-fall"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-135-local_conflicts-syj135-hongju-occupy",
+            "claim-scenes-135-local_conflicts-syj135-hongju-fall"
+          ]
+        }
+      },
+      "researchJob": "local_conflicts",
+      "researchCollection": "scenes-135"
     }
   ],
   "sources": [
@@ -21790,6 +23318,138 @@
       "publisher": "Wikimedia Foundation / Wikidata",
       "url": "https://www.wikidata.org/wiki/Q24000445",
       "license": "구조화 데이터는 CC0 1.0 (Wikidata:Licensing). 문서 텍스트 인용은 출처 표시로 대신한다."
+    },
+    {
+      "id": "src-syj135-aks-samnyeonsanseong",
+      "title": "삼년산성 (한국민족문화대백과사전 E0026508)",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0026508"
+    },
+    {
+      "id": "src-syj135-kowiki-samnyeonsanseong-geo",
+      "title": "보은 삼년산성 (한국어 위키백과) · 좌표 메타데이터",
+      "publisher": "위키미디어 재단 · 한국어 위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B3%B4%EC%9D%80%20%EC%82%BC%EB%85%84%EC%82%B0%EC%84%B1"
+    },
+    {
+      "id": "src-syj135-aks-myeonghwalsanseong",
+      "title": "명활산성 (한국민족문화대백과사전 E0018430)",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0018430"
+    },
+    {
+      "id": "src-syj135-kowiki-myeonghwalseong-geo",
+      "title": "경주 명활성 (한국어 위키백과) · 좌표 메타데이터",
+      "publisher": "위키미디어 재단 · 한국어 위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC%20%EB%AA%85%ED%99%9C%EC%84%B1"
+    },
+    {
+      "id": "src-syj135-aks-gochang-eupseong",
+      "title": "고창읍성 (한국민족문화대백과사전 E0003993)",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003993"
+    },
+    {
+      "id": "src-syj135-kowiki-gochangeupseong-geo",
+      "title": "고창읍성 (한국어 위키백과) · 좌표 메타데이터",
+      "publisher": "위키미디어 재단 · 한국어 위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%B0%BD%EC%9D%8D%EC%84%B1"
+    },
+    {
+      "id": "src-syj135-aks-songgukri",
+      "title": "부여 송국리 선사 취락지 (한국민족문화대백과사전 E0024420)",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024420"
+    },
+    {
+      "id": "src-syj135-kowiki-songgukri-geo",
+      "title": "부여 송국리 유적 (한국어 위키백과) · 좌표 메타데이터",
+      "publisher": "위키미디어 재단 · 한국어 위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC%20%EC%86%A1%EA%B5%AD%EB%A6%AC%20%EC%9C%A0%EC%A0%81"
+    },
+    {
+      "id": "src-syj135-aks-geomdanri",
+      "title": "울주 검단리 유적 (한국민족문화대백과사전 E0040495)",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040495"
+    },
+    {
+      "id": "src-syj135-kowiki-geomdanri-geo",
+      "title": "울주 검단리 유적 (한국어 위키백과) · 좌표 메타데이터",
+      "publisher": "위키미디어 재단 · 한국어 위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%A3%BC%20%EA%B2%80%EB%8B%A8%EB%A6%AC%20%EC%9C%A0%EC%A0%81"
+    },
+    {
+      "id": "src-syj135-aks-amsadong",
+      "title": "서울 암사동 유적 (한국민족문화대백과사전 E0035155)",
+      "publisher": "한국학중앙연구원 · 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0035155"
+    },
+    {
+      "id": "src-syj135-kowiki-amsadong-geo",
+      "title": "서울 암사동 유적 (한국어 위키백과) · 좌표 메타데이터",
+      "publisher": "위키미디어 재단 · 한국어 위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%20%EC%95%94%EC%82%AC%EB%8F%99%20%EC%9C%A0%EC%A0%81"
+    },
+    {
+      "id": "src-syj135-aks-daeyaseong",
+      "title": "대야성전투 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014594"
+    },
+    {
+      "id": "src-syj135-aks-gongsan",
+      "title": "공산전투 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004338"
+    },
+    {
+      "id": "src-syj135-aks-gochang",
+      "title": "고창전투 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003996"
+    },
+    {
+      "id": "src-syj135-aks-baekjeok",
+      "title": "백적의 난(百賊의 亂) - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022348"
+    },
+    {
+      "id": "src-syj135-aks-gwaneumpo",
+      "title": "관음포전투(觀音浦戰鬪) - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004988"
+    },
+    {
+      "id": "src-syj135-aks-itanggae",
+      "title": "이탕개의 난 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0046315"
+    },
+    {
+      "id": "src-syj135-aks-iinjwa",
+      "title": "이인좌의 난 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0045630"
+    },
+    {
+      "id": "src-syj135-aks-sherman",
+      "title": "제너럴셔먼호 사건 - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0051255"
+    },
+    {
+      "id": "src-syj135-aks-hwangnyong",
+      "title": "황룡 전적지(黃龍 戰蹟地) - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065135"
+    },
+    {
+      "id": "src-syj135-aks-hongju",
+      "title": "홍주의진(洪州義陣) - 한국민족문화대백과사전",
+      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064411"
     }
   ],
   "missing": [
@@ -23994,6 +25654,108 @@
       "job": "modern_localities",
       "collection": "scenes-128",
       "detail": "발췌를 이어 만든 time.verbatim은 원문에 실제 있는 날짜·서술로 정리."
+    },
+    {
+      "job": "forts_settlements",
+      "collection": "scenes-135",
+      "detail": {
+        "topic": "국가유산청(국가문화유산포털) 좌표 원본",
+        "detail": "www.khs.go.kr, www.heritage.go.kr, gis-heritage.go.kr 로 보낸 요청이 모두 20초 안에 응답하지 않았다(robots.txt 및 SearchKindOpenapiList.do 각 1회 재시도 포함). 그래서 기존 existing-sites.json 과 같은 기관 목록 좌표를 이번 6개 유적에 대해서는 받지 못했고, 좌표는 한국어 위키백과 문서의 좌표 메타데이터로 대신했다. 기관 좌표가 확보되면 각 place 의 coordinateSourceIds 를 교체해야 한다.",
+        "blocks": [
+          "scene-syj135-samnyeonsanseong-chukjo-470",
+          "scene-syj135-myeonghwalseong-wae-431",
+          "scene-syj135-gochang-eupseong-chukjo-1453",
+          "scene-syj135-songgukri-josa-1975-1987",
+          "scene-syj135-geomdanri-balgul-1990",
+          "scene-syj135-amsadong-josa-1971-1975"
+        ]
+      }
+    },
+    {
+      "job": "forts_settlements",
+      "collection": "scenes-135",
+      "detail": {
+        "topic": "선사 취락의 점유 연대",
+        "detail": "암사동은 방사성탄소연대가 6200∼3400 B.P. 로, 검단리는 집자리별 보정연대(서기전 930·880·710)로만 제시된다. 항목이 취락의 시작·종료 기간을 명시하지 않아 서기 연도 구간 Claim 을 만들지 않았고, 대신 연대가 분명한 발굴 조사 사건을 장면으로 삼았다. 점유기 자체를 장면으로 만들려면 기간을 명시한 보고서 서술이 따로 필요하다.",
+        "blocks": [
+          "scene-syj135-amsadong-josa-1971-1975",
+          "scene-syj135-geomdanri-balgul-1990",
+          "scene-syj135-songgukri-josa-1975-1987"
+        ]
+      }
+    },
+    {
+      "job": "forts_settlements",
+      "collection": "scenes-135",
+      "detail": {
+        "topic": "삼년산성 486년 개축의 지휘자",
+        "detail": "항목은 이찬 실죽을 장군으로 삼고 일선군 장정 3천 명을 징발했다고 적지만, 한 웹페이지 25단어 인용 한도 때문에 해당 구절을 인용하지 못했다. 실죽의 현장 역할과 동원 인원은 이번 결과에 넣지 않았다.",
+        "blocks": [
+          "scene-syj135-samnyeonsanseong-gaechuk-486"
+        ]
+      }
+    },
+    {
+      "job": "forts_settlements",
+      "collection": "scenes-135",
+      "detail": {
+        "topic": "굴산성 위치",
+        "detail": "486년 기사에서 삼년산성과 함께 고쳐 쌓은 굴산성은 엔티티로만 두었다. 항목 관련어에 충청북도 옥천군 청산면으로 비정된다는 설명이 붙어 있으나 본문 인용을 확보하지 않아 좌표·장면을 만들지 않았다.",
+        "blocks": [
+          "scene-syj135-samnyeonsanseong-gaechuk-486"
+        ]
+      }
+    },
+    {
+      "job": "forts_settlements",
+      "collection": "scenes-135",
+      "detail": {
+        "topic": "고창읍성 축조 연대",
+        "detail": "단종 1년(1453) 설, 숙종 때 설, 계유년 명문에 따른 태조 2년(1393) 설이 함께 전한다. 표시 연도는 1453 으로 두었으나 확정 연대가 아니다. 연대를 좁히려면 성돌 명문 판독 보고나 지자체 발굴 보고서가 필요하다.",
+        "blocks": [
+          "scene-syj135-gochang-eupseong-chukjo-1453"
+        ]
+      }
+    },
+    {
+      "job": "forts_settlements",
+      "collection": "scenes-135",
+      "detail": {
+        "topic": "명활산성 초축 시점",
+        "detail": "항목은 초축 시기가 명확하지 않다고 적으며 405년·431년 기사로 5세기 이전 존재만 추정한다. 이번 결과는 작성비로 확인된 551년 축성과 431·647년 사건만 장면으로 만들었고, 5세기 이전 축성 장면은 만들지 않았다.",
+        "blocks": [
+          "scene-syj135-myeonghwalsanseong-chukseong-551"
+        ]
+      }
+    },
+    {
+      "job": "forts_settlements",
+      "collection": "scenes-135",
+      "detail": {
+        "topic": "아차산성 엔티티의 근거",
+        "detail": "암사동 항목이 \"강 건너에는 아차산성이 마주한다\"고만 적어 관계 Claim 하나만 두었다. 아차산성의 축조·사용 연대와 좌표는 이번 조사에서 내려받지 않았다.",
+        "blocks": []
+      }
+    },
+    {
+      "job": "local_conflicts",
+      "collection": "scenes-135",
+      "detail": {
+        "sceneId": "scene-syj135-gwaneumpo-1383",
+        "what": "관음포 앞바다·박두양 해역의 공적 좌표",
+        "why": "해전 장면을 바다 위에 놓으려면 해역 좌표가 필요하나, 육상 앵커로 대체하지 않는다는 규칙에 따라 비워 두었다.",
+        "candidateNext": "국립해양조사원 해양지명 자료 또는 국가유산청 지정구역 좌표 가운데 \"관음포\"라는 해역·만 이름에 붙은 좌표를 별도 출처로 내려받아 확인할 것."
+      }
+    },
+    {
+      "job": "local_conflicts",
+      "collection": "scenes-135",
+      "detail": {
+        "sceneId": "scene-syj135-sherman-1866",
+        "what": "대동강 물길 위 소각 지점의 좌표",
+        "why": "항목은 평양·만경대까지의 항행만 적고 배가 불탄 지점을 밝히지 않아 강 위 좌표가 없다.",
+        "candidateNext": "평양시 또는 국가기록 계열 공적 자료에서 \"제너럴셔먼호\" 관련 지점 표기를 찾을 것."
+      }
     }
   ],
   "renderingNote": "해당 연도에 있었던 사건을 각각 표현합니다. 모형의 간격·수량은 실제 진형이나 병력 수가 아닙니다."

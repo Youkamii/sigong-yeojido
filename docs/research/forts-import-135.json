@@ -1,0 +1,191 @@
+{
+  "job": "forts_settlements",
+  "sources": 12,
+  "excerpts": 28,
+  "claims": 58,
+  "entities": 28,
+  "rawFilesChecked": [
+    {
+      "source": "src-syj135-aks-samnyeonsanseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0026508",
+      "sha256": "7dc70324dd83a24aa28e12e623e93279bf06d4629e92bf5f5cc7f2be3f9567c6",
+      "rawBytes": 130729,
+      "excerpts": 5,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj135-kowiki-samnyeonsanseong-geo",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B3%B4%EC%9D%80%20%EC%82%BC%EB%85%84%EC%82%B0%EC%84%B1",
+      "sha256": "58a5520917430f5e2541104a7d5206039723167799b0f95680e681e78a7f8ffb",
+      "rawBytes": 154313,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-syj135-aks-myeonghwalsanseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0018430",
+      "sha256": "d042adbedeb8fac1a062e4f8f4669fccf2eef19c5a1ddcc24545b5969f10418c",
+      "rawBytes": 119673,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj135-kowiki-myeonghwalseong-geo",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC%20%EB%AA%85%ED%99%9C%EC%84%B1",
+      "sha256": "20a254928edd835ace086ef21f13979189e9d2b98750d0655ba8e9bd32378cfd",
+      "rawBytes": 98243,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-syj135-aks-gochang-eupseong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003993",
+      "sha256": "419f50037a6d055ae642f2f14e2c54a3bcc59571b8e72df3d0c854c6d169287d",
+      "rawBytes": 131555,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-syj135-kowiki-gochangeupseong-geo",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%B0%BD%EC%9D%8D%EC%84%B1",
+      "sha256": "748b80123c7e408b46e6cbf631e0ae888e28908f90951a1edf72e1d0855c1e51",
+      "rawBytes": 140129,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-syj135-aks-songgukri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024420",
+      "sha256": "d828467c8bd81871ae9705a21dfa59f26ca78ce8b360b7587d56a4a362986d8e",
+      "rawBytes": 114948,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-syj135-kowiki-songgukri-geo",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC%20%EC%86%A1%EA%B5%AD%EB%A6%AC%20%EC%9C%A0%EC%A0%81",
+      "sha256": "c73eee39f23b3dec1ee6f15ed1f2ed5427cec30f43c7414017c4dbb08727f5cb",
+      "rawBytes": 89055,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-syj135-aks-geomdanri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040495",
+      "sha256": "9c1243ace7dea31d80ae564306cfac46f482173652af6850b1a8b2c81d9ef3cb",
+      "rawBytes": 123195,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-syj135-kowiki-geomdanri-geo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%A3%BC%20%EA%B2%80%EB%8B%A8%EB%A6%AC%20%EC%9C%A0%EC%A0%81",
+      "sha256": "297478d1c4896d78b846e67b4f1e134334abac7fb6e8293fbd5e98512c0800b3",
+      "rawBytes": 78844,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-syj135-aks-amsadong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0035155",
+      "sha256": "d524b33cc47c936e39049eb6c88ff9e9df79ffa20fc087168f550b2ed47fc14a",
+      "rawBytes": 166896,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-syj135-kowiki-amsadong-geo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%20%EC%95%94%EC%82%AC%EB%8F%99%20%EC%9C%A0%EC%A0%81",
+      "sha256": "083e4771377171f481ae6f45731946b739081b446cc50350bb7157bf0c784b2c",
+      "rawBytes": 123369,
+      "excerpts": 1,
+      "quotedWords": 4
+    }
+  ],
+  "missing": [
+    {
+      "topic": "국가유산청(국가문화유산포털) 좌표 원본",
+      "detail": "www.khs.go.kr, www.heritage.go.kr, gis-heritage.go.kr 로 보낸 요청이 모두 20초 안에 응답하지 않았다(robots.txt 및 SearchKindOpenapiList.do 각 1회 재시도 포함). 그래서 기존 existing-sites.json 과 같은 기관 목록 좌표를 이번 6개 유적에 대해서는 받지 못했고, 좌표는 한국어 위키백과 문서의 좌표 메타데이터로 대신했다. 기관 좌표가 확보되면 각 place 의 coordinateSourceIds 를 교체해야 한다.",
+      "blocks": [
+        "scene-syj135-samnyeonsanseong-chukjo-470",
+        "scene-syj135-myeonghwalseong-wae-431",
+        "scene-syj135-gochang-eupseong-chukjo-1453",
+        "scene-syj135-songgukri-josa-1975-1987",
+        "scene-syj135-geomdanri-balgul-1990",
+        "scene-syj135-amsadong-josa-1971-1975"
+      ]
+    },
+    {
+      "topic": "선사 취락의 점유 연대",
+      "detail": "암사동은 방사성탄소연대가 6200∼3400 B.P. 로, 검단리는 집자리별 보정연대(서기전 930·880·710)로만 제시된다. 항목이 취락의 시작·종료 기간을 명시하지 않아 서기 연도 구간 Claim 을 만들지 않았고, 대신 연대가 분명한 발굴 조사 사건을 장면으로 삼았다. 점유기 자체를 장면으로 만들려면 기간을 명시한 보고서 서술이 따로 필요하다.",
+      "blocks": [
+        "scene-syj135-amsadong-josa-1971-1975",
+        "scene-syj135-geomdanri-balgul-1990",
+        "scene-syj135-songgukri-josa-1975-1987"
+      ]
+    },
+    {
+      "topic": "삼년산성 486년 개축의 지휘자",
+      "detail": "항목은 이찬 실죽을 장군으로 삼고 일선군 장정 3천 명을 징발했다고 적지만, 한 웹페이지 25단어 인용 한도 때문에 해당 구절을 인용하지 못했다. 실죽의 현장 역할과 동원 인원은 이번 결과에 넣지 않았다.",
+      "blocks": [
+        "scene-syj135-samnyeonsanseong-gaechuk-486"
+      ]
+    },
+    {
+      "topic": "굴산성 위치",
+      "detail": "486년 기사에서 삼년산성과 함께 고쳐 쌓은 굴산성은 엔티티로만 두었다. 항목 관련어에 충청북도 옥천군 청산면으로 비정된다는 설명이 붙어 있으나 본문 인용을 확보하지 않아 좌표·장면을 만들지 않았다.",
+      "blocks": [
+        "scene-syj135-samnyeonsanseong-gaechuk-486"
+      ]
+    },
+    {
+      "topic": "고창읍성 축조 연대",
+      "detail": "단종 1년(1453) 설, 숙종 때 설, 계유년 명문에 따른 태조 2년(1393) 설이 함께 전한다. 표시 연도는 1453 으로 두었으나 확정 연대가 아니다. 연대를 좁히려면 성돌 명문 판독 보고나 지자체 발굴 보고서가 필요하다.",
+      "blocks": [
+        "scene-syj135-gochang-eupseong-chukjo-1453"
+      ]
+    },
+    {
+      "topic": "명활산성 초축 시점",
+      "detail": "항목은 초축 시기가 명확하지 않다고 적으며 405년·431년 기사로 5세기 이전 존재만 추정한다. 이번 결과는 작성비로 확인된 551년 축성과 431·647년 사건만 장면으로 만들었고, 5세기 이전 축성 장면은 만들지 않았다.",
+      "blocks": [
+        "scene-syj135-myeonghwalsanseong-chukseong-551"
+      ]
+    },
+    {
+      "topic": "아차산성 엔티티의 근거",
+      "detail": "암사동 항목이 \"강 건너에는 아차산성이 마주한다\"고만 적어 관계 Claim 하나만 두었다. 아차산성의 축조·사용 연대와 좌표는 이번 조사에서 내려받지 않았다.",
+      "blocks": []
+    }
+  ],
+  "collection": {
+    "task": "forts_settlements",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "creationflags": "CREATE_NO_WINDOW",
+    "started": 1788919670.1129687,
+    "pid": 25572,
+    "exitCode": 0,
+    "seconds": 1443.6,
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "resultSubtype": "success",
+    "isError": false,
+    "sessionId": "0328a0c8-a037-4570-a213-5f4cead45a9b",
+    "permissionDenials": []
+  },
+  "downloadPerformedBy": "claude-opus-5 via its Bash tool",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": {
+    "person-encykorea-yi-seonggye-e0059033": "person-encykorea-yi-seonggye",
+    "event-encykorea-joseon-founding-1392": "event-joseon-founding-1392",
+    "event-samil-movement-1919": "event-encykorea-samil-movement-1919",
+    "place-taehwagwan": "place-encykorea-taehwagwan",
+    "event-encykorea-haengju-daecheop-1593": "event-khs-haengju"
+  },
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

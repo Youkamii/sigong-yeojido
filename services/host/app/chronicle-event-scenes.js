@@ -42,7 +42,8 @@ export function composeHistoricalEvent(event,position,world){
   const harbor=!sea&&['construction','naval'].includes(event.archetype)&&event.effects.ships?.enabled;
   const teaching=!sea&&/강학|강의|교육|서당|서원|성균관|학교|학사/.test(actions)&&['court','publication','assembly'].includes(event.archetype);
   const market=!sea&&/장시|시장|교역|무역|상업/.test(actions)&&['court','construction'].includes(event.archetype);
-  const compositionKind=music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
+  const fortress=event.visualActions?.fortress;
+  const compositionKind=fortress?'fortress':music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
   let displayScale=event.scenePlace?.displayScale||1;
   if(sea){
     let clearance=35;
@@ -99,6 +100,25 @@ export function composeHistoricalEvent(event,position,world){
     if(!event.compact){
       model('grain_stack',-9,-2,1.8);model('handcart',-13,6,1.2);model('table',5,4,1.5);
       for(const [x,z] of [[4,8],[10,11],[7,16],[-1,13]])model(modern?'modern_figure':'period_figure',x,z,1.6,{action:'working'});
+    }
+  }else if(event.archetype==='excavation'){
+    model('dig_site',0,0,2,{primary:true});
+    if(!event.compact){
+      model('dig_site',-15,-9,1.2);model('table',13,2,1.2);model('book',13,2,1,{lift:2});
+      model('groundbreaking',-10,10,.9);
+      for(const [x,z] of [[-8,3],[5,-7],[12,6]])model('modern_figure',x,z,1.6,{action:'working'});
+    }
+  }else if(fortress){
+    model('gatehouse',0,10,1.4,{primary:true});
+    if(!event.compact){
+      const width=18+(event.scenePlace.label.length%3)*3;
+      for(const x of [-width,-9,9,width]){model('wall',x,10,1);model('wall',x,-17,1);}
+      for(const x of [-width-4,width+4])for(const z of [-10,-1,6])model('fort_wall_side',x,z,1);
+      model('rural_store',-9,-6,1.4);model('korean_house',10,-5,1.2);
+      if(event.visualActions.construction){
+        model('handcart',-12,18,1.3);model('groundbreaking',8,17,1.2);
+        for(const [x,z] of [[-14,6],[12,15],[18,-12]])model('period_figure',x,z,1.5,{action:'working'});
+      }else if(event.archetype==='court'){model('table',0,-4,1.5);model('book',0,-4,1.2,{lift:2.5});}
     }
   }else if(event.archetype==='settlement'){
     model(modern?'civic_hall':'palace',0,-7,1.5,{primary:true});
@@ -246,6 +266,7 @@ export function composeHistoricalEvent(event,position,world){
     if(event.archetype==='court')for(let i=0;i<8;i++)model(modern?'human':'scribe',-12+(i%4)*8,10+Math.floor(i/4)*6,1.5);
     }
   }
+  if(!event.compact&&event.visualActions?.fireTargets?.includes('rural_store'))model('rural_store',-8,-16,1.5);
   if(!sea&&!harbor&&!event.compact&&event.effects.ships?.enabled){
     let shore=null;
     for(let r=3;r<48&&!shore;r+=2)for(let i=0;i<48;i++){
@@ -259,7 +280,7 @@ export function composeHistoricalEvent(event,position,world){
     }
   }
   if(!event.compact&&event.effects.fire?.enabled&&(!personalFire||paperFire)){
-    for(const target of models.filter(m=>paperFire?m.archetype==='book':sea?m.archetype===shipType&&m.side==='invader':['house','korean_house','courtyard_house','korean_courtyard','palace','korean_hall','civic_hall'].includes(m.archetype)).slice(0,3)){
+    for(const target of models.filter(m=>event.visualActions?.fireTargets?event.visualActions.fireTargets.includes(m.archetype):paperFire?m.archetype==='book':sea?m.archetype===shipType&&m.side==='invader':['house','korean_house','courtyard_house','korean_courtyard','palace','korean_hall','civic_hall'].includes(m.archetype)).slice(0,3)){
       const p=target.position.clone();p.y+=(paperFire?.4:sea?2:3)*displayScale;
       fireAt(group,p,(paperFire?.2:sea?1.2:1.5)*displayScale,animated);
       group.children.at(-1).userData.targetSide=target.side||null;
