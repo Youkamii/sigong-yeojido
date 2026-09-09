@@ -1,0 +1,14 @@
+/* 단순 모드 — 첫 화면 걷어내기 (#147)
+   body.simple 일 때만 적용한다. ?ui=full 로 열면 이 파일은 아무것도 하지 않고 기존 화면이 그대로 나온다.
+   기능은 지우지 않고 숨긴다: 인라인 스크립트가 getElementById 로 69개 조작을 참조하므로 DOM 을 지우면 깨진다. */
+
+/* 상단 바·우측 연력 패널·좌상단 연도 카드·우상단 이동 셀렉트·힌트·3D 보조 버튼을 숨긴다 */
+body.simple #app{grid-template-rows:1fr}
+body.simple .bar{display:none}
+body.simple .stage{grid-template-columns:minmax(0,1fr)}
+body.simple #chronicle{display:none}
+body.simple .scene-context,
+body.simple .geography-navigation,
+body.simple #hint,
+body.simple #outside3d,
+body.simple #resetMap{display:none}

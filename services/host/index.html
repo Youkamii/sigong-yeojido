@@ -247,6 +247,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .compare-link{padding:12px 0;border-top:1px solid var(--line)}
 </style>
 <link rel="stylesheet" href="./app/chronicle.css">
+<link rel="stylesheet" href="./app/simple.css">
 <style>
 #chat{display:none;position:absolute;inset:0 0 var(--timeline-height,42%);overflow:auto;padding:24px;color:var(--paper-2)}
 .modechat #chat{display:block}.modechat #map,.modechat #three,.modechat #graph,.modechat #hint,.modechat #outside3d,.modechat #resetMap{display:none}
@@ -260,6 +261,10 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 </style>
 </head>
 <body>
+<script>
+// 단순 모드(#147): 기본으로 켠다. ?ui=full 이면 기존 화면 그대로 — 되돌리기 경로.
+(function(){var ui=new URLSearchParams(location.search).get('ui');if(ui!=='full')document.body.classList.add('simple');})();
+</script>
 
 <div id="gate">
   <div class="map"></div>
