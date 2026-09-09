@@ -1,0 +1,14 @@
+[Unit]
+Description=Sigong Yeojido RDF synchronization
+Wants=sigong-fuseki.service
+After=sigong-fuseki.service
+
+[Service]
+WorkingDirectory=@ROOT@
+ExecStart=@PYTHON@ -u @ROOT@/scripts/sync_fuseki.py --watch
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target

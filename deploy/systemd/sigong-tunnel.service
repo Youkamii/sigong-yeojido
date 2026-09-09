@@ -1,0 +1,13 @@
+[Unit]
+Description=Sigong Yeojido fixed public tunnel
+Wants=sigong-viewer.service
+After=sigong-viewer.service
+
+[Service]
+ExecStart=@CLOUDFLARED@ tunnel --no-autoupdate --config @CONFIG@ run
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target

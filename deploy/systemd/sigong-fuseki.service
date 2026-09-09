@@ -1,0 +1,13 @@
+[Unit]
+Description=Sigong Yeojido Fuseki
+
+[Service]
+WorkingDirectory=@ROOT@
+Environment=FUSEKI_BASE=@ROOT@/.fuseki/run
+ExecStart=@ROOT@/.fuseki/jre/bin/java -Xmx1g -jar @ROOT@/.fuseki/fuseki/fuseki-server.jar --localhost --port 3030 --ping --update --mem /sigong
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Sigong Yeojido history viewer
+Wants=sigong-fuseki.service sigong-sync.service
+After=sigong-fuseki.service
+
+[Service]
+WorkingDirectory=@ROOT@
+ExecStart=@PYTHON@ -u @ROOT@/services/host/server.py --host 0.0.0.0 --port 8870
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target
