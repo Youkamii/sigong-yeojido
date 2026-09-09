@@ -5,7 +5,7 @@ import {formatCoordinates} from './history-coordinates.js';
 export class ChronicleScene {
   constructor(host,onSelect){
     this.host=host;this.onSelect=onSelect;this.markers=[];
-    this.display={regions:true,geography:true,morePlaces:false,people:true,events:true,scenery:true,forest:true,paths:true};
+    this.display={regions:true,geography:true,morePlaces:false,territories:true,people:true,events:true,scenery:true,forest:true,paths:true};
     try{const saved=JSON.parse(localStorage.getItem('sigong-map-display-v1')||'{}');for(const key in this.display)if(typeof saved[key]==='boolean')this.display[key]=saved[key];}catch{}
     for(const input of document.querySelectorAll('[data-map-display]')){
       input.checked=this.display[input.dataset.mapDisplay];input.onchange=()=>{
@@ -20,6 +20,7 @@ export class ChronicleScene {
     if(this.world?.geography)this.world.geography.display=this.display;
     if(this.assets?.scenery)this.assets.scenery.setDisplay(this.display.scenery,this.display.paths);
     if(this.assets?.forest)this.assets.forest.visible=this.display.forest;
+    this.world?.territories?.setDisplay(this.display.territories);
     const paths=this.assets?.group.getObjectByName('settlement-footpaths');if(paths)paths.visible=this.display.paths;
   }
   async attach(engine,world){
@@ -37,6 +38,7 @@ export class ChronicleScene {
     if(!this.assets||!chronicle.context)return;
     const features=world.historyTargets.map(t=>t.userData.feature);
     const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[],world.coordinateRegistry);
+    world.territories?.setYear(plan.year,chronicle.callbacks.filters());
     world.geography?.setActivities(plan);
     const signature=JSON.stringify([plan,this.assets.activeScene]);
     if(signature===this.signature){this.syncPicks();this.renderFocus();this.applyDisplay();return;}

@@ -184,3 +184,10 @@
   .geography-navigation{top:calc(18px + var(--scene-hud-height,86px));right:10px}
   .geography-card{top:calc(26px + var(--scene-hud-height,86px) + var(--geography-nav-height,28px));right:10px;width:210px;max-height:calc(100% - var(--scene-hud-height,86px) - var(--geography-nav-height,28px) - 36px)}
 }
+/* Territorial colors live on the terrain; the legend stays beside map controls. */
+.territory-legend{margin-top:10px;font-size:11px;color:#6f6249;max-width:300px}
+.territory-legend summary{cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.territory-legend p{font-size:11px!important;line-height:1.65;margin:7px 0}
+.territory-legend a{display:block;font-size:10px;color:#486e72}
+.territory-key{display:inline-flex;align-items:center;gap:4px;margin:7px 10px 0 0}
+.territory-key i{width:9px;height:9px;border-radius:2px;display:inline-block}

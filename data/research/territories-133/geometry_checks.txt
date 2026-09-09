@@ -1,0 +1,29 @@
+== grid overlap / coverage test (0.05 deg, land+sea cells counted equally) ==
+year  500 cellsCovered=15294  {'Goguryeo': 12429, 'Baekje': 1379, 'Silla': 938, 'Byeonhan': 548}  OVERLAP=none
+year  550 cellsCovered=15296  {'Goguryeo': 12429, 'Baekje': 1379, 'Silla': 1063, 'Byeonhan': 425}  OVERLAP=none
+year  553 cellsCovered=15296  {'Goguryeo': 12429, 'Baekje': 1379, 'Silla': 1063, 'Byeonhan': 425}  OVERLAP=none
+year  555 cellsCovered=15304  {'Goguryeo': 10418, 'Silla': 3084, 'Baekje': 1379, 'Byeonhan': 425}  OVERLAP={'Baekje|Silla': 2}
+year  562 cellsCovered=15304  {'Goguryeo': 10418, 'Silla': 3084, 'Baekje': 1379, 'Byeonhan': 425}  OVERLAP={'Baekje|Silla': 2}
+year  566 cellsCovered=15304  {'Goguryeo': 10418, 'Silla': 3084, 'Baekje': 1379, 'Byeonhan': 425}  OVERLAP={'Baekje|Silla': 2}
+year  567 cellsCovered=15312  {'Goguryeo': 10418, 'Silla': 3519, 'Baekje': 1375}  OVERLAP=none
+year  600 cellsCovered=15312  {'Goguryeo': 10418, 'Silla': 3519, 'Baekje': 1375}  OVERLAP=none
+year  660 cellsCovered=15312  {'Goguryeo': 10418, 'Silla': 3519, 'Baekje': 1375}  OVERLAP=none
+year  661 cellsCovered=13935  {'Goguryeo': 10418, 'Silla': 3517}  OVERLAP=none
+year  668 cellsCovered=13937  {'Goguryeo': 10418, 'Silla': 3519}  OVERLAP=none
+year  670 cellsCovered=13937  {'Goguryeo': 10418, 'Silla': 3519}  OVERLAP=none
+year  673 cellsCovered=13937  {'Goguryeo': 10418, 'Silla': 3519}  OVERLAP=none
+year  674 cellsCovered=3528  {'Silla': 3519, 'Goguryeo': 9}  OVERLAP=none
+year  676 cellsCovered=3528  {'Silla': 3519, 'Goguryeo': 9}  OVERLAP=none
+year  681 cellsCovered=3528  {'Silla': 3519, 'Goguryeo': 9}  OVERLAP=none
+year  682 cellsCovered=6090  {'Unified Silla': 6090}  OVERLAP=none
+year  700 cellsCovered=6090  {'Unified Silla': 6090}  OVERLAP=none
+
+== capital point tests ==
+  year  500:  Gyeongju=Silla  Seoul-Hanseong=Goguryeo  Ungjin=Baekje  Sabi=Baekje  Pyongyang=Goguryeo  Gungnaeseong=Goguryeo  Gimhae=Byeonhan  Goryeong=Silla  Wonsan=Goguryeo  Hamhung=Goguryeo
+  year  550:  Gyeongju=Silla  Seoul-Hanseong=Goguryeo  Ungjin=Baekje  Sabi=Baekje  Pyongyang=Goguryeo  Gungnaeseong=Goguryeo  Gimhae=Silla  Goryeong=Silla  Wonsan=Goguryeo  Hamhung=Goguryeo
+  year  555:  Gyeongju=Silla  Seoul-Hanseong=Silla  Ungjin=Baekje  Sabi=Baekje  Pyongyang=Goguryeo  Gungnaeseong=Goguryeo  Gimhae=Silla  Goryeong=Silla  Wonsan=Silla  Hamhung=Silla
+  year  562:  Gyeongju=Silla  Seoul-Hanseong=Silla  Ungjin=Baekje  Sabi=Baekje  Pyongyang=Goguryeo  Gungnaeseong=Goguryeo  Gimhae=Silla  Goryeong=Silla  Wonsan=Silla  Hamhung=Silla
+  year  600:  Gyeongju=Silla  Seoul-Hanseong=Silla  Ungjin=Baekje  Sabi=Baekje  Pyongyang=Goguryeo  Gungnaeseong=Goguryeo  Gimhae=Silla  Goryeong=Silla  Wonsan=Silla  Hamhung=Silla
+  year  660:  Gyeongju=Silla  Seoul-Hanseong=Silla  Ungjin=Baekje  Sabi=Baekje  Pyongyang=Goguryeo  Gungnaeseong=Goguryeo  Gimhae=Silla  Goryeong=Silla  Wonsan=Silla  Hamhung=Silla
+  year  676:  Gyeongju=Silla  Seoul-Hanseong=Silla  Ungjin=-  Sabi=-  Pyongyang=-  Gungnaeseong=-  Gimhae=Silla  Goryeong=Silla  Wonsan=Silla  Hamhung=Silla
+  year  700:  Gyeongju=Unified Silla  Seoul-Hanseong=Unified Silla  Ungjin=Unified Silla  Sabi=Unified Silla  Pyongyang=Unified Silla  Gungnaeseong=-  Gimhae=Unified Silla  Goryeong=Unified Silla  Wonsan=Unified Silla  Hamhung=Unified Silla
