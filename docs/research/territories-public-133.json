@@ -1,0 +1,498 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com/",
+  "checks": [
+    {
+      "name": "500 uses only contemporaneous territory records",
+      "pass": true,
+      "detail": {
+        "year": 500,
+        "redraws": 2,
+        "features": [
+          {
+            "id": "cliopatria-01810",
+            "name": "신라 · Silla",
+            "start": 378,
+            "end": 533
+          },
+          {
+            "id": "cliopatria-02134",
+            "name": "백제 · Baekje",
+            "start": 476,
+            "end": 566
+          },
+          {
+            "id": "cliopatria-02165",
+            "name": "고구려 · Goguryeo",
+            "start": 480,
+            "end": 554
+          }
+        ],
+        "borders": 3,
+        "landColorPixels": 74599
+      }
+    },
+    {
+      "name": "550 uses only contemporaneous territory records",
+      "pass": true,
+      "detail": {
+        "year": 550,
+        "redraws": 3,
+        "features": [
+          {
+            "id": "cliopatria-02134",
+            "name": "백제 · Baekje",
+            "start": 476,
+            "end": 566
+          },
+          {
+            "id": "cliopatria-02165",
+            "name": "고구려 · Goguryeo",
+            "start": 480,
+            "end": 554
+          },
+          {
+            "id": "cliopatria-02261",
+            "name": "신라 · Silla",
+            "start": 534,
+            "end": 554
+          }
+        ],
+        "borders": 3,
+        "landColorPixels": 75026
+      }
+    },
+    {
+      "name": "555 uses only contemporaneous territory records",
+      "pass": true,
+      "detail": {
+        "year": 555,
+        "redraws": 4,
+        "features": [
+          {
+            "id": "cliopatria-02134",
+            "name": "백제 · Baekje",
+            "start": 476,
+            "end": 566
+          },
+          {
+            "id": "cliopatria-02354",
+            "name": "고구려 · Goguryeo",
+            "start": 555,
+            "end": 611
+          },
+          {
+            "id": "cliopatria-02358",
+            "name": "신라 · Silla",
+            "start": 555,
+            "end": 566
+          }
+        ],
+        "borders": 3,
+        "landColorPixels": 75157
+      }
+    },
+    {
+      "name": "600 uses only contemporaneous territory records",
+      "pass": true,
+      "detail": {
+        "year": 600,
+        "redraws": 5,
+        "features": [
+          {
+            "id": "cliopatria-02354",
+            "name": "고구려 · Goguryeo",
+            "start": 555,
+            "end": 611
+          },
+          {
+            "id": "cliopatria-02387",
+            "name": "신라 · Silla",
+            "start": 567,
+            "end": 660
+          },
+          {
+            "id": "cliopatria-02396",
+            "name": "백제 · Baekje",
+            "start": 567,
+            "end": 655
+          }
+        ],
+        "borders": 3,
+        "landColorPixels": 76627
+      }
+    },
+    {
+      "name": "700 uses only contemporaneous territory records",
+      "pass": true,
+      "detail": {
+        "year": 700,
+        "redraws": 6,
+        "features": [
+          {
+            "id": "cliopatria-02939",
+            "name": "통일신라 · Unified Silla",
+            "start": 682,
+            "end": 891
+          }
+        ],
+        "borders": 1,
+        "landColorPixels": 21790
+      }
+    },
+    {
+      "name": "1240 uses only contemporaneous territory records",
+      "pass": true,
+      "detail": {
+        "year": 1240,
+        "redraws": 7,
+        "features": [
+          {
+            "id": "cliopatria-06103",
+            "name": "고려 · Goryeo",
+            "start": 1227,
+            "end": 1259
+          }
+        ],
+        "borders": 1,
+        "landColorPixels": 20641
+      }
+    },
+    {
+      "name": "1500 uses only contemporaneous territory records",
+      "pass": true,
+      "detail": {
+        "year": 1500,
+        "redraws": 8,
+        "features": [
+          {
+            "id": "cliopatria-07773",
+            "name": "조선 · Joseon",
+            "start": 1440,
+            "end": 1515
+          }
+        ],
+        "borders": 1,
+        "landColorPixels": 34998
+      }
+    },
+    {
+      "name": "1952 uses only contemporaneous territory records",
+      "pass": true,
+      "detail": {
+        "year": 1952,
+        "redraws": 9,
+        "features": [
+          {
+            "id": "cliopatria-14876",
+            "name": "북한 · Democratic People's Republic of Korea",
+            "start": 1948,
+            "end": 1952
+          },
+          {
+            "id": "cliopatria-14878",
+            "name": "대한민국 · Republic of Korea",
+            "start": 1948,
+            "end": 1952
+          }
+        ],
+        "borders": 2,
+        "landColorPixels": 34974
+      }
+    },
+    {
+      "name": "Silla territorial expansion changes the displayed mask",
+      "pass": true,
+      "detail": [
+        "cliopatria-01810",
+        "cliopatria-02261",
+        "cliopatria-02358",
+        "cliopatria-02387",
+        "cliopatria-02939"
+      ]
+    },
+    {
+      "name": "Goguryeo is not displayed after its documented fall",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Known approximation limits are visible without opening a source panel",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "An unchanged historical outline is reused",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Territory toggle removes both tint and boundaries",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Missing territory years are not filled with present-day borders",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mobile map retains the selected territory and available controls",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Empty source selection clears territory records",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No WebGL shader or browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "periods": [
+    {
+      "year": 500,
+      "redraws": 2,
+      "features": [
+        {
+          "id": "cliopatria-01810",
+          "name": "신라 · Silla",
+          "start": 378,
+          "end": 533
+        },
+        {
+          "id": "cliopatria-02134",
+          "name": "백제 · Baekje",
+          "start": 476,
+          "end": 566
+        },
+        {
+          "id": "cliopatria-02165",
+          "name": "고구려 · Goguryeo",
+          "start": 480,
+          "end": 554
+        }
+      ],
+      "borders": 3,
+      "landColorPixels": 74599
+    },
+    {
+      "year": 550,
+      "redraws": 3,
+      "features": [
+        {
+          "id": "cliopatria-02134",
+          "name": "백제 · Baekje",
+          "start": 476,
+          "end": 566
+        },
+        {
+          "id": "cliopatria-02165",
+          "name": "고구려 · Goguryeo",
+          "start": 480,
+          "end": 554
+        },
+        {
+          "id": "cliopatria-02261",
+          "name": "신라 · Silla",
+          "start": 534,
+          "end": 554
+        }
+      ],
+      "borders": 3,
+      "landColorPixels": 75026
+    },
+    {
+      "year": 555,
+      "redraws": 4,
+      "features": [
+        {
+          "id": "cliopatria-02134",
+          "name": "백제 · Baekje",
+          "start": 476,
+          "end": 566
+        },
+        {
+          "id": "cliopatria-02354",
+          "name": "고구려 · Goguryeo",
+          "start": 555,
+          "end": 611
+        },
+        {
+          "id": "cliopatria-02358",
+          "name": "신라 · Silla",
+          "start": 555,
+          "end": 566
+        }
+      ],
+      "borders": 3,
+      "landColorPixels": 75157
+    },
+    {
+      "year": 600,
+      "redraws": 5,
+      "features": [
+        {
+          "id": "cliopatria-02354",
+          "name": "고구려 · Goguryeo",
+          "start": 555,
+          "end": 611
+        },
+        {
+          "id": "cliopatria-02387",
+          "name": "신라 · Silla",
+          "start": 567,
+          "end": 660
+        },
+        {
+          "id": "cliopatria-02396",
+          "name": "백제 · Baekje",
+          "start": 567,
+          "end": 655
+        }
+      ],
+      "borders": 3,
+      "landColorPixels": 76627
+    },
+    {
+      "year": 700,
+      "redraws": 6,
+      "features": [
+        {
+          "id": "cliopatria-02939",
+          "name": "통일신라 · Unified Silla",
+          "start": 682,
+          "end": 891
+        }
+      ],
+      "borders": 1,
+      "landColorPixels": 21790
+    },
+    {
+      "year": 1240,
+      "redraws": 7,
+      "features": [
+        {
+          "id": "cliopatria-06103",
+          "name": "고려 · Goryeo",
+          "start": 1227,
+          "end": 1259
+        }
+      ],
+      "borders": 1,
+      "landColorPixels": 20641
+    },
+    {
+      "year": 1500,
+      "redraws": 8,
+      "features": [
+        {
+          "id": "cliopatria-07773",
+          "name": "조선 · Joseon",
+          "start": 1440,
+          "end": 1515
+        }
+      ],
+      "borders": 1,
+      "landColorPixels": 34998
+    },
+    {
+      "year": 1952,
+      "redraws": 9,
+      "features": [
+        {
+          "id": "cliopatria-14876",
+          "name": "북한 · Democratic People's Republic of Korea",
+          "start": 1948,
+          "end": 1952
+        },
+        {
+          "id": "cliopatria-14878",
+          "name": "대한민국 · Republic of Korea",
+          "start": 1948,
+          "end": 1952
+        }
+      ],
+      "borders": 2,
+      "landColorPixels": 34974
+    },
+    {
+      "year": 670,
+      "redraws": 10,
+      "features": [
+        {
+          "id": "cliopatria-02900",
+          "name": "신라 · Silla",
+          "start": 666,
+          "end": 673
+        }
+      ],
+      "borders": 1,
+      "landColorPixels": 12730
+    },
+    {
+      "year": 1500,
+      "redraws": 11,
+      "features": [
+        {
+          "id": "cliopatria-07773",
+          "name": "조선 · Joseon",
+          "start": 1440,
+          "end": 1515
+        }
+      ],
+      "borders": 1,
+      "landColorPixels": 34998
+    },
+    {
+      "year": 1501,
+      "redraws": 11,
+      "features": [
+        {
+          "id": "cliopatria-07773",
+          "name": "조선 · Joseon",
+          "start": 1440,
+          "end": 1515
+        }
+      ],
+      "borders": 1,
+      "landColorPixels": 34998
+    },
+    {
+      "year": -500,
+      "redraws": 12,
+      "features": [],
+      "borders": 0,
+      "landColorPixels": 0
+    },
+    {
+      "year": 600,
+      "redraws": 13,
+      "features": [
+        {
+          "id": "cliopatria-02354",
+          "name": "고구려 · Goguryeo",
+          "start": 555,
+          "end": 611
+        },
+        {
+          "id": "cliopatria-02387",
+          "name": "신라 · Silla",
+          "start": 567,
+          "end": 660
+        },
+        {
+          "id": "cliopatria-02396",
+          "name": "백제 · Baekje",
+          "start": 567,
+          "end": 655
+        }
+      ],
+      "borders": 3,
+      "landColorPixels": 76627
+    }
+  ]
+}

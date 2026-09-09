@@ -1,0 +1,453 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com/",
+  "checks": [
+    {
+      "name": "Early scenery excludes tiled houses, handcarts and rendered fields",
+      "pass": true,
+      "detail": {
+        "stats": {
+          "villages": 56,
+          "houses": 269,
+          "fields": 196,
+          "tigers": 16,
+          "ready": true,
+          "year": -2000,
+          "modelBuilds": 112,
+          "period": "early-settlement"
+        },
+        "kinds": [
+          "rural_hut",
+          "rural_figure"
+        ],
+        "valid": true,
+        "tigers": 16,
+        "fields": 0,
+        "seconds": 0.938
+      }
+    },
+    {
+      "name": "Early farming scenery uses low huts and small fields",
+      "pass": true,
+      "detail": {
+        "stats": {
+          "villages": 56,
+          "houses": 269,
+          "fields": 196,
+          "tigers": 16,
+          "ready": true,
+          "year": -500,
+          "modelBuilds": 168,
+          "period": "early-farming"
+        },
+        "kinds": [
+          "rural_hut",
+          "rural_figure"
+        ],
+        "valid": true,
+        "tigers": 16,
+        "fields": 56,
+        "seconds": 0.656
+      }
+    },
+    {
+      "name": "Traditional background contains varied houses and period figures",
+      "pass": true,
+      "detail": {
+        "stats": {
+          "villages": 56,
+          "houses": 269,
+          "fields": 196,
+          "tigers": 16,
+          "ready": true,
+          "year": 1592,
+          "modelBuilds": 224,
+          "period": "traditional"
+        },
+        "kinds": [
+          "rural_hut",
+          "rural_cottage",
+          "rural_store",
+          "handcart",
+          "period_figure",
+          "korean_house"
+        ],
+        "valid": true,
+        "tigers": 16,
+        "fields": 56,
+        "seconds": 1.922
+      }
+    },
+    {
+      "name": "Scrubbing within an era reuses village geometry",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Early modern countryside changes residents and omits roaming tigers",
+      "pass": true,
+      "detail": {
+        "stats": {
+          "villages": 56,
+          "houses": 269,
+          "fields": 196,
+          "tigers": 0,
+          "ready": true,
+          "year": 1960,
+          "modelBuilds": 280,
+          "period": "early-modern"
+        },
+        "kinds": [
+          "rural_hut",
+          "rural_cottage",
+          "rural_store",
+          "handcart",
+          "field_worker",
+          "korean_house"
+        ],
+        "valid": true,
+        "tigers": 0,
+        "fields": 56,
+        "seconds": 1.422
+      }
+    },
+    {
+      "name": "Roof conversion keeps old and new houses together",
+      "pass": true,
+      "detail": {
+        "stats": {
+          "villages": 56,
+          "houses": 269,
+          "fields": 196,
+          "tigers": 0,
+          "ready": true,
+          "year": 1975,
+          "modelBuilds": 336,
+          "period": "roof-transition"
+        },
+        "kinds": [
+          "rural_hut",
+          "rural_cottage",
+          "rural_store",
+          "handcart",
+          "field_worker",
+          "korean_house",
+          "rural_flat",
+          "rural_tiled",
+          "rural_metal"
+        ],
+        "valid": true,
+        "tigers": 0,
+        "fields": 56,
+        "seconds": 1.266
+      }
+    },
+    {
+      "name": "Later countryside includes varied modern roofs and farm machinery",
+      "pass": true,
+      "detail": {
+        "stats": {
+          "villages": 56,
+          "houses": 269,
+          "fields": 196,
+          "tigers": 0,
+          "ready": true,
+          "year": 2000,
+          "modelBuilds": 392,
+          "period": "mechanized"
+        },
+        "kinds": [
+          "rural_hut",
+          "rural_cottage",
+          "rural_store",
+          "handcart",
+          "field_worker",
+          "korean_house",
+          "rural_tiled",
+          "rural_flat",
+          "rural_metal",
+          "farm_tractor"
+        ],
+        "valid": true,
+        "tigers": 0,
+        "fields": 56,
+        "seconds": 1.078
+      }
+    },
+    {
+      "name": "Era replacement releases all previous village geometries",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Rapid era reversals finish only the final selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Scenery toggle remains off during an era change",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Path toggle survives model replacement",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Historical evidence remains separate and every visible village stays outside active scenes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "periods": [
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 16,
+        "ready": true,
+        "year": -2000,
+        "modelBuilds": 112,
+        "period": "early-settlement"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_figure"
+      ],
+      "valid": true,
+      "tigers": 16,
+      "fields": 0,
+      "seconds": 0.938
+    },
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 16,
+        "ready": true,
+        "year": -500,
+        "modelBuilds": 168,
+        "period": "early-farming"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_figure"
+      ],
+      "valid": true,
+      "tigers": 16,
+      "fields": 56,
+      "seconds": 0.656
+    },
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 16,
+        "ready": true,
+        "year": 1592,
+        "modelBuilds": 224,
+        "period": "traditional"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_cottage",
+        "rural_store",
+        "handcart",
+        "period_figure",
+        "korean_house"
+      ],
+      "valid": true,
+      "tigers": 16,
+      "fields": 56,
+      "seconds": 1.922
+    },
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 16,
+        "ready": true,
+        "year": 1597,
+        "modelBuilds": 224,
+        "period": "traditional"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_cottage",
+        "rural_store",
+        "handcart",
+        "period_figure",
+        "korean_house"
+      ],
+      "valid": true,
+      "tigers": 16,
+      "fields": 56,
+      "seconds": 1.219
+    },
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 0,
+        "ready": true,
+        "year": 1960,
+        "modelBuilds": 280,
+        "period": "early-modern"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_cottage",
+        "rural_store",
+        "handcart",
+        "field_worker",
+        "korean_house"
+      ],
+      "valid": true,
+      "tigers": 0,
+      "fields": 56,
+      "seconds": 1.422
+    },
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 0,
+        "ready": true,
+        "year": 1975,
+        "modelBuilds": 336,
+        "period": "roof-transition"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_cottage",
+        "rural_store",
+        "handcart",
+        "field_worker",
+        "korean_house",
+        "rural_flat",
+        "rural_tiled",
+        "rural_metal"
+      ],
+      "valid": true,
+      "tigers": 0,
+      "fields": 56,
+      "seconds": 1.266
+    },
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 0,
+        "ready": true,
+        "year": 2000,
+        "modelBuilds": 392,
+        "period": "mechanized"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_cottage",
+        "rural_store",
+        "handcart",
+        "field_worker",
+        "korean_house",
+        "rural_tiled",
+        "rural_flat",
+        "rural_metal",
+        "farm_tractor"
+      ],
+      "valid": true,
+      "tigers": 0,
+      "fields": 56,
+      "seconds": 1.078
+    },
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 16,
+        "ready": true,
+        "year": 1500,
+        "modelBuilds": 448,
+        "period": "traditional"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_cottage",
+        "rural_store",
+        "handcart",
+        "period_figure",
+        "korean_house"
+      ],
+      "valid": true,
+      "tigers": 15,
+      "fields": 56,
+      "seconds": 1.797
+    },
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 16,
+        "ready": true,
+        "year": 1500,
+        "modelBuilds": 567,
+        "period": "traditional"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_cottage",
+        "rural_store",
+        "handcart",
+        "period_figure",
+        "korean_house"
+      ],
+      "valid": true,
+      "tigers": 15,
+      "fields": 56,
+      "seconds": 1.25
+    },
+    {
+      "stats": {
+        "villages": 56,
+        "houses": 269,
+        "fields": 196,
+        "tigers": 0,
+        "ready": true,
+        "year": 2000,
+        "modelBuilds": 623,
+        "period": "mechanized"
+      },
+      "kinds": [
+        "rural_hut",
+        "rural_cottage",
+        "rural_store",
+        "handcart",
+        "field_worker",
+        "korean_house",
+        "rural_tiled",
+        "rural_flat",
+        "rural_metal",
+        "farm_tractor"
+      ],
+      "valid": true,
+      "tigers": 0,
+      "fields": 56,
+      "seconds": 1.406
+    }
+  ]
+}

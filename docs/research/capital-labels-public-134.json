@@ -1,0 +1,56 @@
+{
+  "base": "https://convention-pierre-bloom-pros.trycloudflare.com",
+  "checks": [
+    {
+      "name": "Default geography shows only key landmarks and contemporary capitals",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Sabi and Silla capital remain while the earlier Baekje capital is absent",
+      "pass": true,
+      "detail": "사비(지금의 충청남도 부여군 부여읍) 일대 평양(고구려 도읍) 일대 신라 왕경 경주(월성 소재 지역) 일대"
+    },
+    {
+      "name": "At least one capital name is actually visible on the overview",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Other place and peak names can be expanded",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The Goryeo capital follows relocation to Ganghwa",
+      "pass": true,
+      "detail": "강화도 (고려 강도)"
+    },
+    {
+      "name": "The capital returns to Gaegyeong",
+      "pass": true,
+      "detail": "개경 (지금의 개성 일대)"
+    },
+    {
+      "name": "Hanseong keeps its historical name",
+      "pass": true,
+      "detail": "한성부 (조선 수도)"
+    },
+    {
+      "name": "Expired Hanseong capital is removed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Mobile defaults still omit minor peaks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
