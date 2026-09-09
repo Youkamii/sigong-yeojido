@@ -1,0 +1,746 @@
+{
+  "base": "https://undertaken-coleman-interests-bruce.trycloudflare.com/",
+  "checks": [
+    {
+      "name": "All 48 imported locality packets are served",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "New historical claims are available through the real API",
+      "pass": true,
+      "detail": 287
+    },
+    {
+      "name": "Every new scene is discoverable; only the four known missing locations remain unplaced",
+      "pass": true,
+      "detail": {
+        "located": 44,
+        "unlocated": [
+          "scene-syj128-yeongcheon-cheongje-536",
+          "scene-ej-saryangjin-waebyeon-1544",
+          "scene-ej-sonjukdo-1587",
+          "scene-lg128-jewangungi-samcheok-1287"
+        ]
+      }
+    },
+    {
+      "name": "470 does not activate a scene between alternative candidate dates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "550 does not activate a scene between alternative candidate dates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The map identifies the Naengsuri discovery-region assumption",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Ureuk and his three learners appear together at Gugwon",
+      "pass": true,
+      "detail": [
+        "person-encykorea-ureuk",
+        "person-encykorea-gyego",
+        "person-encykorea-beopji",
+        "person-encykorea-mandeok"
+      ]
+    },
+    {
+      "name": "The 1415 repair has working figures and a handcart",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1894 links its researched place without moving to an unrelated city",
+      "pass": true,
+      "detail": {
+        "located": true,
+        "reference": {
+          "placeId": "rc-gobu-myeon",
+          "label": "고부 지역 (현재 고부면의 대표점 참고)",
+          "candidate": {
+            "lon": 126.757689,
+            "lat": 35.602739,
+            "precision": "area",
+            "medium": "land",
+            "sourceIds": [
+              "src-wd-Q16184254",
+              "src-kowiki-gobu-myeon"
+            ],
+            "coordinateNote": "위키데이터 Q16184254(Gobu-myeon)의 좌표 위치(P625) 값을 도분초에서 십진도로 옮긴 값이다(35°36'9.86\"N, 126°45'27.68\"E). 항목 식별은 한국어 위키백과 '고부면' 문서가 가리키는 항목 번호로 확인했다. 이 점이 가리키는 것은 오늘날 정읍시 고부면이라는 행정구역의 대표점이며, 1894년 고부군의 경계도 아니고 봉기가 시작된 고부 관아 터의 지점도 아니다. 관아 터 좌표를 밝힌 출처는 이번 조사에서 확보하지 못했으므로 정밀도는 area 로 둔다.",
+            "id": "rc-gobu-myeon",
+            "label": "고부 지역 (현재 고부면의 대표점 참고)",
+            "aliases": [],
+            "anchorPlaceIds": [],
+            "entityIds": [
+              "place-encykorea-gobu"
+            ]
+          },
+          "claimIds": [
+            "claim-period96-joseon_society-donghak-nongmin-place"
+          ],
+          "precision": "area",
+          "coordinateNote": "위키데이터 Q16184254(Gobu-myeon)의 좌표 위치(P625) 값을 도분초에서 십진도로 옮긴 값이다(35°36'9.86\"N, 126°45'27.68\"E). 항목 식별은 한국어 위키백과 '고부면' 문서가 가리키는 항목 번호로 확인했다. 이 점이 가리키는 것은 오늘날 정읍시 고부면이라는 행정구역의 대표점이며, 1894년 고부군의 경계도 아니고 봉기가 시작된 고부 관아 터의 지점도 아니다. 관아 터 좌표를 밝힌 출처는 이번 조사에서 확보하지 못했으므로 정밀도는 area 로 둔다.",
+          "coordinateSourceIds": [
+            "src-wd-Q16184254",
+            "src-kowiki-gobu-myeon"
+          ]
+        }
+      }
+    },
+    {
+      "name": "1987 links its researched place without moving to an unrelated city",
+      "pass": true,
+      "detail": {
+        "located": true,
+        "reference": {
+          "placeId": "rc-namyeongdong-daegongbunsil",
+          "label": "남영동 대공분실",
+          "candidate": {
+            "lon": 126.971757,
+            "lat": 37.540846,
+            "precision": "site",
+            "medium": "land",
+            "sourceIds": [
+              "src-wd-Q24867240",
+              "src-kowiki-namyeongdong"
+            ],
+            "coordinateNote": "좌표는 위키데이터 Q24867240 의 좌표 위치(P625) 값이며(37°32'27.046\"N, 126°58'18.325\"E), 한국어 위키백과 '남영동 대공분실' 문서의 좌표 표기(37.540846; 126.971757)와 같은 값이다. 두 출처 모두 1987년 박종철이 조사받다 숨진 그 건물, 곧 옛 치안본부 대공분실(뒤에 경찰청 인권센터, 현 민주인권기념관) 자리를 가리키므로 정밀도는 site 로 둔다. 1987년 5월 명동성당에서 이루어진 사건 축소·은폐 폭로 장소는 여기에 넣지 않았다.",
+            "id": "rc-namyeongdong-daegongbunsil",
+            "label": "남영동 대공분실",
+            "aliases": [],
+            "anchorPlaceIds": [],
+            "entityIds": [
+              "place-encykorea-namyeongdong"
+            ]
+          },
+          "claimIds": [
+            "claim-period96-modern-fill96m-070"
+          ],
+          "precision": "site",
+          "coordinateNote": "좌표는 위키데이터 Q24867240 의 좌표 위치(P625) 값이며(37°32'27.046\"N, 126°58'18.325\"E), 한국어 위키백과 '남영동 대공분실' 문서의 좌표 표기(37.540846; 126.971757)와 같은 값이다. 두 출처 모두 1987년 박종철이 조사받다 숨진 그 건물, 곧 옛 치안본부 대공분실(뒤에 경찰청 인권센터, 현 민주인권기념관) 자리를 가리키므로 정밀도는 site 로 둔다. 1987년 5월 명동성당에서 이루어진 사건 축소·은폐 폭로 장소는 여기에 넣지 않았다.",
+          "coordinateSourceIds": [
+            "src-wd-Q24867240",
+            "src-kowiki-namyeongdong"
+          ]
+        }
+      }
+    },
+    {
+      "name": "1919 links its researched place without moving to an unrelated city",
+      "pass": true,
+      "detail": {
+        "located": true,
+        "reference": {
+          "placeId": "rc-shanghai-city",
+          "label": "상하이",
+          "candidate": {
+            "lon": 121.469167,
+            "lat": 31.2325,
+            "precision": "area",
+            "medium": "land",
+            "sourceIds": [
+              "src-wd-Q8686",
+              "src-kowiki-shanghai"
+            ],
+            "coordinateNote": "좌표는 위키데이터 Q8686(Shanghai)의 좌표 위치(P625) 값을 옮긴 것으로(31°13'57\"N, 121°28'9\"E), 상하이시라는 도시 전체의 대표점이다. 원값의 초 단위가 정수라 자릿수 자체가 거칠다. 1919년 임시정부가 수립된 실제 청사 자리의 좌표는 이번 조사에서 확보하지 못했다. 오늘날 관광지로 알려진 마당로(馬當路) 임시정부 청사는 1926년 이후 쓰던 뒷날의 청사 건물이므로 수립 지점으로 쓰지 않았다. 정밀도는 area 다.",
+            "id": "rc-shanghai-city",
+            "label": "상하이",
+            "aliases": [],
+            "anchorPlaceIds": [],
+            "entityIds": [
+              "place-shanghai"
+            ]
+          },
+          "claimIds": [
+            "claim-period92-founding-contemporaries-kpg-place"
+          ],
+          "precision": "area",
+          "coordinateNote": "좌표는 위키데이터 Q8686(Shanghai)의 좌표 위치(P625) 값을 옮긴 것으로(31°13'57\"N, 121°28'9\"E), 상하이시라는 도시 전체의 대표점이다. 원값의 초 단위가 정수라 자릿수 자체가 거칠다. 1919년 임시정부가 수립된 실제 청사 자리의 좌표는 이번 조사에서 확보하지 못했다. 오늘날 관광지로 알려진 마당로(馬當路) 임시정부 청사는 1926년 이후 쓰던 뒷날의 청사 건물이므로 수립 지점으로 쓰지 않았다. 정밀도는 area 다.",
+          "coordinateSourceIds": [
+            "src-wd-Q8686",
+            "src-kowiki-shanghai"
+          ]
+        }
+      }
+    },
+    {
+      "name": "1932 links its researched place without moving to an unrelated city",
+      "pass": true,
+      "detail": {
+        "located": true,
+        "reference": {
+          "placeId": "rc-shanghai-hongkou-park",
+          "label": "상하이 훙커우공원",
+          "candidate": {
+            "lon": 121.478425,
+            "lat": 31.272836,
+            "precision": "area",
+            "medium": "land",
+            "sourceIds": [
+              "src-wd-Q1142220",
+              "src-kowiki-luxun-park"
+            ],
+            "coordinateNote": "좌표는 위키데이터 Q1142220(Lu Xun Park)의 좌표 위치(P625) 값이며(31°16'22.21\"N, 121°28'42.33\"E), 한국어 위키백과 '루쉰공원' 문서의 좌표 표기(31.2728361; 121.4784250)와 같은 값이다. 두 출처가 찍는 것은 1932년 당시 훙커우공원이던 오늘날 루쉰공원 전체의 대표점 한 곳이다. 윤봉길이 폭탄을 던진 천장절 기념식 단상 자리(현 매헌 기념관 일대)를 따로 찍은 값이 아니므로 정밀도는 area 로 둔다.",
+            "id": "rc-shanghai-hongkou-park",
+            "label": "상하이 훙커우공원",
+            "aliases": [],
+            "anchorPlaceIds": [],
+            "entityIds": [
+              "place-encykorea-shanghai-hongkou-park"
+            ]
+          },
+          "claimIds": [
+            "claim-period96-modern-fill96m-014"
+          ],
+          "precision": "area",
+          "coordinateNote": "좌표는 위키데이터 Q1142220(Lu Xun Park)의 좌표 위치(P625) 값이며(31°16'22.21\"N, 121°28'42.33\"E), 한국어 위키백과 '루쉰공원' 문서의 좌표 표기(31.2728361; 121.4784250)와 같은 값이다. 두 출처가 찍는 것은 1932년 당시 훙커우공원이던 오늘날 루쉰공원 전체의 대표점 한 곳이다. 윤봉길이 폭탄을 던진 천장절 기념식 단상 자리(현 매헌 기념관 일대)를 따로 찍은 값이 아니므로 정밀도는 area 로 둔다.",
+          "coordinateSourceIds": [
+            "src-wd-Q1142220",
+            "src-kowiki-luxun-park"
+          ]
+        }
+      }
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-syj128-uljin-bongpyeong-524",
+      "year": 524,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-pohang-naengsuri-503",
+      "year": 503,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-gugwon-ureuk-552",
+      "year": 552,
+      "planned": true,
+      "coordinate": true,
+      "rows": 24,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-daegu-ojak",
+      "year": 518,
+      "planned": true,
+      "coordinate": true,
+      "rows": 1,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-changnyeong-sunsu-561",
+      "year": 561,
+      "planned": true,
+      "coordinate": true,
+      "rows": 21,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-daegaya-fall-562",
+      "year": 562,
+      "planned": true,
+      "coordinate": true,
+      "rows": 25,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-mireuksa-sari-639",
+      "year": 639,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-yeongcheon-cheongje-536",
+      "year": 536,
+      "planned": true,
+      "coordinate": false,
+      "rows": 0,
+      "located": false,
+      "dropped": [],
+      "listed": true,
+      "unlocated": true
+    },
+    {
+      "id": "scene-syj128-haeinsa-802",
+      "year": 802,
+      "planned": true,
+      "coordinate": true,
+      "rows": 14,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-silsangsa-828",
+      "year": 828,
+      "planned": true,
+      "coordinate": true,
+      "rows": 14,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-borimsa-birojana-858",
+      "year": 858,
+      "planned": true,
+      "coordinate": true,
+      "rows": 10,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-jingam-tapbi-887",
+      "year": 887,
+      "planned": true,
+      "coordinate": true,
+      "rows": 8,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-wonjong-aeno-889",
+      "year": 889,
+      "planned": true,
+      "coordinate": true,
+      "rows": 22,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-wansanju-900",
+      "year": 900,
+      "planned": true,
+      "coordinate": true,
+      "rows": 14,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-tamna-mallo-938",
+      "year": 938,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-namgyeong-1104",
+      "year": 1104,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-ej-byeokgolje-1415",
+      "year": 1415,
+      "planned": true,
+      "coordinate": true,
+      "rows": 8,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-ej-haemi-byeongyeong-1416-1421",
+      "year": 1416,
+      "planned": true,
+      "coordinate": true,
+      "rows": 12,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-ej-nagan-eupseong-1424",
+      "year": 1424,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-ej-danjong-cheongnyeongpo-1457",
+      "year": 1457,
+      "planned": true,
+      "coordinate": true,
+      "rows": 14,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-ej-saryangjin-waebyeon-1544",
+      "year": 1544,
+      "planned": true,
+      "coordinate": false,
+      "rows": 0,
+      "located": false,
+      "dropped": [],
+      "listed": true,
+      "unlocated": true
+    },
+    {
+      "id": "scene-ej-sonjukdo-1587",
+      "year": 1587,
+      "planned": true,
+      "coordinate": false,
+      "rows": 0,
+      "located": false,
+      "dropped": [],
+      "listed": true,
+      "unlocated": true
+    },
+    {
+      "id": "scene-ej-nokdundo-1587",
+      "year": 1587,
+      "planned": true,
+      "coordinate": true,
+      "rows": 21,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-ej-byeolbangjin-1510",
+      "year": 1510,
+      "planned": true,
+      "coordinate": true,
+      "rows": 7,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-lg128-mangi-mangsoi-1176",
+      "year": 1176,
+      "planned": true,
+      "coordinate": true,
+      "rows": 25,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-lg128-jowichong-seogyeong-1174",
+      "year": 1174,
+      "planned": true,
+      "coordinate": true,
+      "rows": 19,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-lg128-jukjuseong-1236",
+      "year": 1236,
+      "planned": true,
+      "coordinate": true,
+      "rows": 30,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-lg128-chungjuseong-1253",
+      "year": 1253,
+      "planned": true,
+      "coordinate": true,
+      "rows": 30,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-lg128-jewangungi-samcheok-1287",
+      "year": 1287,
+      "planned": true,
+      "coordinate": false,
+      "rows": 0,
+      "located": false,
+      "dropped": [],
+      "listed": true,
+      "unlocated": true
+    },
+    {
+      "id": "scene-lg128-ingaksa-iryeon-1284",
+      "year": 1284,
+      "planned": true,
+      "coordinate": true,
+      "rows": 9,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-lg128-ssangseong-hwaju-1356",
+      "year": 1356,
+      "planned": true,
+      "coordinate": true,
+      "rows": 15,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-lg128-jeongjwasan-yeongi-1291",
+      "year": 1291,
+      "planned": true,
+      "coordinate": true,
+      "rows": 24,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-jeonju-sillok-naejangsan-1592",
+      "year": 1592,
+      "planned": true,
+      "coordinate": true,
+      "rows": 22,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-daegu-gamyeong-1601",
+      "year": 1601,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-odaesan-sago-1606",
+      "year": 1606,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-hoeryong-gaesi-1638",
+      "year": 1638,
+      "planned": true,
+      "coordinate": true,
+      "rows": 20,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-junggang-gaesi-1646",
+      "year": 1646,
+      "planned": true,
+      "coordinate": true,
+      "rows": 20,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-manisan-sago-fire-1653",
+      "year": 1653,
+      "planned": true,
+      "coordinate": true,
+      "rows": 5,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-jeongjoksan-sago-1660",
+      "year": 1660,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-syj128-kim-mandeok-jeju-1795",
+      "year": 1795,
+      "planned": true,
+      "coordinate": true,
+      "rows": 21,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-mod128-mokpo-gaehang-1897",
+      "year": 1897,
+      "planned": true,
+      "coordinate": true,
+      "rows": 8,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-mod128-sinchuk-gyoan-1901",
+      "year": 1901,
+      "planned": true,
+      "coordinate": true,
+      "rows": 30,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-mod128-sorokdo-jahyeuiwon-1916",
+      "year": 1916,
+      "planned": true,
+      "coordinate": true,
+      "rows": 7,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-mod128-amtaedo-sojak-1923",
+      "year": 1923,
+      "planned": true,
+      "coordinate": true,
+      "rows": 19,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-mod128-eulmildae-nongseong-1931",
+      "year": 1931,
+      "planned": true,
+      "coordinate": true,
+      "rows": 21,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-mod128-joseoneohakhoe-1942",
+      "year": 1942,
+      "planned": true,
+      "coordinate": true,
+      "rows": 14,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-mod128-ulsan-gigongsik-1962",
+      "year": 1962,
+      "planned": true,
+      "coordinate": true,
+      "rows": 13,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    },
+    {
+      "id": "scene-mod128-gori-npp1-1971-1978",
+      "year": 1971,
+      "planned": true,
+      "coordinate": true,
+      "rows": 10,
+      "located": true,
+      "dropped": [],
+      "listed": true,
+      "unlocated": false
+    }
+  ],
+  "errors": []
+}
