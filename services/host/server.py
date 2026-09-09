@@ -689,13 +689,18 @@ class Handler(BaseHTTPRequestHandler):
         self._send(target.read_bytes(), ctype or "application/octet-stream")
 
 
+class ViewerServer(ThreadingHTTPServer):
+    # The module graph and map assets arrive together through the public tunnel.
+    request_queue_size = 128
+
+
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--port", type=int, default=8870)
     ap.add_argument("--host", default="127.0.0.1")
     a = ap.parse_args(argv)
 
-    srv = ThreadingHTTPServer((a.host, a.port), Handler)
+    srv = ViewerServer((a.host, a.port), Handler)
     print(f"sigong-yeojido viewer  http://{a.host}:{a.port}")
     print(f"  root={HERE}")
     # 색인을 미리 데운다 — 첫 요청이 수십 MB 원문을 읽고 지명별 mentions 를 세느라 몇 초 걸리면 첫 화면이 비어 보인다

@@ -1,0 +1,179 @@
+{
+  "base": "https://convention-pierre-bloom-pros.trycloudflare.com",
+  "checks": [
+    {
+      "name": "All nine typed narratives and 67 actual claims are available",
+      "pass": true,
+      "detail": {
+        "narratives": [
+          "event-syj136-arang-jeonseol",
+          "event-syj136-cheoyong-jeonseung",
+          "event-syj136-gujiga-jeonseung",
+          "event-syj136-gwaneumsa-yeongi",
+          "event-syj136-jeongeup-mangbuseok",
+          "event-syj136-nakhwaam-jeonseung",
+          "event-syj136-ondalsanseong-jeonseol",
+          "event-syj136-seodong-seolhwa",
+          "event-syj136-samseong-sinhwa"
+        ],
+        "rows": [
+          {
+            "id": "nar-syj136-gujibong",
+            "land": true
+          },
+          {
+            "id": "nar-syj136-cheoyong",
+            "land": true
+          },
+          {
+            "id": "nar-syj136-seodong",
+            "land": true
+          },
+          {
+            "id": "nar-syj136-samseong",
+            "land": true
+          },
+          {
+            "id": "nar-syj136-nakhwaam",
+            "land": true
+          },
+          {
+            "id": "nar-syj136-ondal",
+            "land": true
+          },
+          {
+            "id": "nar-syj136-gwaneumsa",
+            "land": true
+          },
+          {
+            "id": "nar-syj136-mangbuseok",
+            "land": true
+          },
+          {
+            "id": "nar-syj136-arang",
+            "land": true
+          }
+        ],
+        "claims": 67
+      }
+    },
+    {
+      "name": "Nine story markers are on land",
+      "pass": true,
+      "detail": [
+        {
+          "id": "nar-syj136-gujibong",
+          "land": true
+        },
+        {
+          "id": "nar-syj136-cheoyong",
+          "land": true
+        },
+        {
+          "id": "nar-syj136-seodong",
+          "land": true
+        },
+        {
+          "id": "nar-syj136-samseong",
+          "land": true
+        },
+        {
+          "id": "nar-syj136-nakhwaam",
+          "land": true
+        },
+        {
+          "id": "nar-syj136-ondal",
+          "land": true
+        },
+        {
+          "id": "nar-syj136-gwaneumsa",
+          "land": true
+        },
+        {
+          "id": "nar-syj136-mangbuseok",
+          "land": true
+        },
+        {
+          "id": "nar-syj136-arang",
+          "land": true
+        }
+      ]
+    },
+    {
+      "name": "Nine stories have distinct primary motifs",
+      "pass": true,
+      "detail": [
+        "story_egg",
+        "hanging_scroll",
+        "period_figure",
+        "story_hollows",
+        "story_rock",
+        "wall",
+        "pagoda",
+        "standing_stone",
+        "korean_house"
+      ]
+    },
+    {
+      "name": "Story layer explains that it is separate from the event year",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Undated Arang can be selected without changing the year",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "The focused story is explicitly a narrative",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Story selection has places, people and evidence buttons",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Ondal does not present the related book date as the legend recording date",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Gujibong keeps story year 42 separate from the related document period",
+      "pass": true,
+      "detail": "이야기 속 시기\n서기 42년 3월 계욕의 날\n관련 문헌·기록 시기\n1075∼1084년경 『가락국기』 간행"
+    },
+    {
+      "name": "Story characters do not become on-site people at book publication",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Story toggle removes the models and navigation entries",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Turning stories back on restores nine markers",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Disabling all sources also removes all narrative models",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Restoring sources restores narrative evidence and markers",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
