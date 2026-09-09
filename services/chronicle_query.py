@@ -16,7 +16,7 @@ SELECT DISTINCT ?claim ?subject ?subjectType ?subjectLabel ?predicate ?objectKin
        ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink ?note
        ?lat ?lon ?validFrom ?validTo ?geographyObject
 WHERE {{
-  VALUES ?subjectType {{syj:Person syj:Event syj:Polity syj:Place syj:TimeSpan}}
+  VALUES ?subjectType {{syj:Person syj:Event syj:Narrative syj:Polity syj:Place syj:TimeSpan}}
   ?subject a ?subjectType.
   ?claim a syj:Claim; syj:subject ?subject; syj:predicate ?predicate; ?objectKind ?object;
          syj:fromSource ?source; syj:citesChunk ?chunk; syj:quote ?quote;

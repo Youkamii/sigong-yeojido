@@ -72,8 +72,8 @@ PREFIXES = (
     ("rdfs", "http://www.w3.org/2000/01/rdf-schema#"),
     ("xsd", "http://www.w3.org/2001/XMLSchema#"),
 )
-ENTITY_DIRS = {"person": "Person", "place": "Place", "polity": "Polity", "event": "Event", "office": "Office", "organization":"Organization"}
-CLASSES = ("Source", "Chunk", "Person", "Place", "Polity", "Event", "Office", "Organization", "TimeSpan", "Location", "Claim", "Conflict")
+ENTITY_DIRS = {"person": "Person", "place": "Place", "polity": "Polity", "event": "Event", "office": "Office", "organization":"Organization", "narrative":"Narrative"}
+CLASSES = ("Source", "Chunk", "Person", "Place", "Polity", "Event", "Office", "Organization", "Narrative", "TimeSpan", "Location", "Claim", "Conflict")
 CLASS_LABELS = {
     "Source": "사료",
     "Chunk": "원문 조각",
@@ -81,6 +81,7 @@ CLASS_LABELS = {
     "Place": "장소",
     "Polity": "나라·세력",
     "Event": "사건",
+    "Narrative": "설화·전승",
     "Office": "관직·지위",
     "Organization": "관서·조직",
     "TimeSpan": "시간 구간",
@@ -98,6 +99,7 @@ SEE_ALSO = {
     "Polity": (CRM + "E74_Group",),
     "Organization": (CRM + "E74_Group",),
     "Event": (CRM + "E5_Event",),
+    "Narrative": (CRM + "E33_Linguistic_Object",),
     "TimeSpan": (CRM + "E52_Time-Span", "http://www.w3.org/2006/time#TemporalEntity"),
     "Location": (CRM + "E94_Space_Primitive", "http://www.opengis.net/ont/geosparql#Geometry"),
     "Claim": (CRM + "E13_Attribute_Assignment",),

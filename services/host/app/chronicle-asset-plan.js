@@ -92,8 +92,8 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       claimIds:[...new Set(person.periods.flatMap(p=>p.basis.map(c=>c.id)))]};
   });
   const present=new Map(people.map(p=>[p.entityId,p]));
-  const current=[...new Map(context.allEvents.filter(e=>e.lo<=context.year&&e.hi>=context.year).map(e=>[e.id,e])).values()];
-  const researched=scenePackets.filter(s=>s.startYear<=context.year&&s.endYear>=context.year
+  const current=[...new Map(context.allEvents.filter(e=>e.type!=='Narrative'&&e.lo<=context.year&&e.hi>=context.year).map(e=>[e.id,e])).values()];
+  const researched=scenePackets.filter(s=>!s.narrativeType&&s.startYear<=context.year&&s.endYear>=context.year
     &&supported(s.dateClaimIds)&&supported(s.actionClaimIds));
   const covered=new Set(researched.map(s=>s.eventId));
   const events=current.filter(e=>!covered.has(e.id)).map(event=>{

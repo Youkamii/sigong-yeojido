@@ -53,7 +53,7 @@ export function composeHistoricalEvent(event,position,world){
     displayScale=Math.min(displayScale,clearance/48);
   }
   if(event.compact)displayScale*=.16;
-  const radius=sea?45:['siege','battle'].includes(event.archetype)?36:24;
+  const radius=event.archetype==='tradition'?9:sea?45:['siege','battle'].includes(event.archetype)?36:24;
   if(!event.compact&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,event.maxRadius/radius);
   const model=(archetype,dx,dz,scale=1,extra={})=>{
     if(!modern)archetype=({palace:'korean_hall',house:'korean_house',gatehouse:'korean_gate',academy_hall:'korean_academy',courtyard_house:'korean_courtyard'})[archetype]||archetype;
@@ -92,6 +92,9 @@ export function composeHistoricalEvent(event,position,world){
       }
       if(shore)for(let i=0;i<6;i++)model(modern?'human':'spearman',shore.dx+(i%3)*2,shore.dz+Math.floor(i/3)*2,1.2,{medium:'land',side:'naval',action:'walking'});
     }
+  }else if(event.archetype==='tradition'){
+    model('book',0,0,2.2,{primary:true,lift:event.compact?0:3.3});
+    if(!event.compact)model('table',0,0,2.5);
   }else if(music){
     model('string_instrument',-8,0,2,{primary:true});
     if(!event.compact)model('string_instrument',2,7,1.7);

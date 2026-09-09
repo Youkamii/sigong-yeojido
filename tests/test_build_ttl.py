@@ -128,6 +128,7 @@ class BuildFixtureTest(unittest.TestCase):
                 "Event": 1,
                 "Office": 0,
                 "Organization": 0,
+                "Narrative": 0,
                 "TimeSpan": 1,
                 "Location": 3,
                 "Claim": 9,

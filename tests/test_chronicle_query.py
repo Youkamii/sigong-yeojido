@@ -32,4 +32,17 @@ class ChronicleLocationTests(unittest.TestCase):
             self.assertEqual(chronicle(set())['claims'],[])
             query.assert_not_called()
 
+    def test_narrative_setting_preserves_its_type_and_claim(self):
+        row={'claim':NS+'claim-story','subject':NS+'story','subjectType':NS+'Narrative',
+             'subjectLabel':'전승','predicate':NS+'hasSetting','objectKind':NS+'objectEntity',
+             'object':NS+'place','objectType':NS+'Place','objectLabel':'전승의 무대',
+             'source':NS+'src-story','sourceLabel':'전승 기록','chunk':NS+'chunk-story',
+             'quote':'전승의 무대를 설명하는 검사 인용','origin':'ai','status':'draft'}
+        with patch('chronicle_query.query_rows',return_value=[row]) as query:
+            result=chronicle({'src-story'})
+        self.assertIn('syj:Narrative',query.call_args.args[0])
+        self.assertEqual(result['entities'][0]['type'],'Narrative')
+        self.assertEqual(result['claims'][0]['predicate'],'syj:hasSetting')
+        self.assertEqual(result['claims'][0]['citesChunk'],'chunk-story')
+
 if __name__=='__main__':unittest.main()
