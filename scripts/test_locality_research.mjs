@@ -33,8 +33,12 @@ for(const [year,id] of [[503,'scene-syj128-pohang-naengsuri-503'],[518,'scene-sy
   assert.ok(event.scenePlace?.displayBasis,'Reference regions keep their explicit placement explanation');
   assert.ok(event.participants.every(p=>p.presence==='related'),'A reference region does not establish personal attendance');
 }
-for(const [year,id] of [[536,'scene-syj128-yeongcheon-cheongje-536'],[1544,'scene-ej-saryangjin-waebyeon-1544'],[1587,'scene-ej-sonjukdo-1587'],[1287,'scene-lg128-jewangungi-samcheok-1287']]){
+for(const [year,id] of [[1287,'scene-lg128-jewangungi-samcheok-1287']]){
   assert.equal(plan(year).events.find(e=>e.id===id).scenePlace,null,'Missing sites cannot fall back to a different place');
+}
+for(const [year,id] of [[536,'scene-syj128-yeongcheon-cheongje-536'],[1544,'scene-ej-saryangjin-waebyeon-1544'],[1587,'scene-ej-sonjukdo-1587']]){
+  const p=plan(year).events.find(e=>e.id===id).scenePlace;
+  assert.equal(p.precision,'area');assert.ok(p.displayBasis&&p.coordinateSourceIds.length);
 }
 const revolt=plan(1174).events.find(e=>e.id==='scene-lg128-jowichong-seogyeong-1174');
 assert.equal(revolt.effects.attack.enabled,false);
@@ -44,7 +48,7 @@ assert.equal(plan(1236).events.find(e=>e.id==='scene-lg128-jukjuseong-1236').eff
 assert.equal(plan(1795).events.find(e=>e.id==='scene-syj128-kim-mandeok-jeju-1795').effects.ships.enabled,false);
 assert.deepEqual(plan(1415).events.find(e=>e.id==='scene-ej-byeokgolje-1415').visualActions.constructionYears,[1415]);
 assert.equal(regionalCoordinate(registry,'place-encykorea-namyeongdong').precision,'site');
-for(const id of ['place-encykorea-gungjeongdong','place-yinav-jangmunpo','place-encykorea-bongodong']){
+for(const id of ['place-encykorea-gungjeongdong','place-encykorea-bongodong']){
   assert.equal(regionalCoordinate(registry,id),null,'A nearby administrative point must not stand in for an unidentified site');
 }
 for(const id of ['place-shanghai','place-encykorea-shanghai-hongkou-park'])assert.ok(regionalCoordinate(registry,id));

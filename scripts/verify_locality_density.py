@@ -35,7 +35,7 @@ with sync_playwright() as pw:
    r['scenes'].append(row)
    assert row['planned'] and row['listed'] and not row['dropped'],row
    assert row['coordinate']==s['coordinate'] and row['located']==s['coordinate'],row
-  check('Every new scene is discoverable; only the four known missing locations remain unplaced',sum(s['located'] for s in r['scenes'])==44,{'located':44,'unlocated':[s['id'] for s in r['scenes'] if not s['located']]})
+  check('Every new scene is discoverable; only the unknown publication site remains unplaced',sum(s['located'] for s in r['scenes'])==47,{'located':47,'unlocated':[s['id'] for s in r['scenes'] if not s['located']]})
   for n,id in [(470,'event-syj128-naengsuri-503'),(550,'event-syj128-daegu-ojak')]:
    year(n);check(str(n)+' does not activate a scene between alternative candidate dates',page.evaluate('id=>!__sigong.chronicleScene.assets.plan.events.some(e=>e.entityId===id)',id))
   year(503);select('scene-syj128-pohang-naengsuri-503')
@@ -50,6 +50,15 @@ with sync_playwright() as pw:
    year(n)
    row=page.evaluate('''id=>{const a=__sigong.chronicleScene.assets,e=a.plan.events.find(e=>e.entityId===id);return {located:a.rows.some(r=>r.kind==='event'&&r.entityId===id),reference:e?.locationReference};}''',id)
    check(str(n)+' links its researched place without moving to an unrelated city',row['located'],row)
+  for n,id in [(536,'scene-syj128-yeongcheon-cheongje-536'),(1544,'scene-ej-saryangjin-waebyeon-1544'),(1587,'scene-ej-sonjukdo-1587'),(1594,'scene-jangmunpo-1594')]:
+   year(n);select(id)
+   rows=page.evaluate('''id=>{const a=__sigong.chronicleScene.assets,e=a.plan.events.find(e=>e.id===id);return {place:e?.scenePlace,
+    people:a.rows.filter(r=>r.sceneId===id&&r.kind==='person').map(r=>({id:r.entityId,position:r.position.toArray()})),
+    ships:a.rows.filter(r=>r.sceneId===id&&r.archetype==='ship').map(r=>({land:__sigong.world.contains(r.position.x,r.position.z)}))};}''',id)
+   check(str(n)+' restored location keeps its explicit area-reference explanation',rows['place']['precision']=='area' and rows['place']['displayBasis'],rows)
+   if n in [1587,1594]:check(str(n)+' ships stay on water',bool(rows['ships']) and all(not s['land'] for s in rows['ships']))
+   if n==1594:check('Yi Sun-sin and Seon Geo-i occupy distinct places on the ship',len(rows['people'])==2 and len({tuple(p['position']) for p in rows['people']})==2,rows['people'])
+   page.screenshot(path=str(a.out/(str(n)+'-restored.png')))
   check('No browser errors',not r['errors'],r['errors'])
  finally:
   (a.out/'report.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n',encoding='utf8');b.close()

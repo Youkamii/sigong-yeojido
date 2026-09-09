@@ -1,0 +1,92 @@
+{
+  "model": "claude-opus-5",
+  "effort": "max",
+  "sessionId": "39bc5b1c-abb3-4973-ae8b-4c043a310c9e",
+  "accepted": [
+    {
+      "sceneId": "scene-syj128-yeongcheon-cheongje-536",
+      "placeId": "place-syj128-cheongje",
+      "sourceCoordinates": [
+        128.94083,
+        35.92472
+      ],
+      "displayCoordinates": [
+        128.94083,
+        35.92472
+      ],
+      "precision": "area",
+      "displayBasis": "청제비 부근에 청못 축조를 설명하는 장면입니다. 비석의 좌표이며 제방 전체나 공사 현장의 정확한 점은 아닙니다."
+    },
+    {
+      "sceneId": "scene-ej-saryangjin-waebyeon-1544",
+      "placeId": "place-ej-saryangjin",
+      "sourceCoordinates": [
+        128.205278,
+        34.825556
+      ],
+      "displayCoordinates": [
+        128.2049411406604,
+        34.82426842823604
+      ],
+      "precision": "area",
+      "displayBasis": "사량도 전체의 기준점에 사량진 사건을 설명하는 장면입니다. 사량진성·진촌마을의 정확한 지점은 아닙니다."
+    },
+    {
+      "sceneId": "scene-ej-sonjukdo-1587",
+      "placeId": "place-ej-sonjukdo-haesang",
+      "sourceCoordinates": [
+        127.358056,
+        34.279444
+      ],
+      "displayCoordinates": [
+        127.358056,
+        34.279444
+      ],
+      "precision": "area",
+      "displayBasis": "출처의 섬·왜성 기준점 가까운 바다에 설명용 장면을 배치했습니다. 원자료 좌표는 육상 기준점이며 이 표시점은 실제 함대 위치·교전 지점이 아닙니다."
+    },
+    {
+      "sceneId": "scene-jangmunpo-1594",
+      "placeId": "place-yinav-jangmunpo",
+      "sourceCoordinates": [
+        128.669444,
+        34.995
+      ],
+      "displayCoordinates": [
+        128.6653472653312,
+        35.00357524225456
+      ],
+      "precision": "area",
+      "displayBasis": "출처의 섬·왜성 기준점 가까운 바다에 설명용 장면을 배치했습니다. 원자료 좌표는 육상 기준점이며 이 표시점은 실제 함대 위치·교전 지점이 아닙니다."
+    }
+  ],
+  "missing": [
+    {
+      "eventId": "event-encykorea-park-chunghee-death-1979",
+      "placeId": "place-encykorea-gungjeongdong",
+      "label": "궁정동 안가 (서울 종로구 궁정동)",
+      "reason": "궁정동 안가 터의 좌표를 실은 출처를 얻지 못했다. 한국어 위키백과 '10·26 사건' 문서는 위치를 '서울특별시 종로구 궁정동 안가 (현 청운효자동 무궁화동산)'라고 글로만 적고 좌표 표기(wgCoordinates)가 없다. 그 터에 들어선 '무궁화동산' 문서는 한국어 위키백과에 없어 404 였고, 따라서 같은 이름의 대상에 붙은 위키데이터 좌표도 잡히지 않았다. 위키데이터·위키백과의 검색과 Special: 경로는 robots.txt 가 /w/ 와 /wiki/Special: 을 막고 있어 항목 번호를 검색으로 찾지 못했다. 서울시 지도 서비스(map.seoul.go.kr)는 robots.txt 자리에 '서비스 안내' HTML 만 돌려주어 수집 허용 여부를 확인할 수 없었고, 국가유산청(khs.go.kr, heritage.go.kr)은 연결이 되지 않았다. 지시대로 청운효자동 등 상위 행정동 중심점으로 대신하지 않고 비워 둔다.",
+      "attempted": [
+        "raw/kowiki_1026_sageon.html (200, 좌표 표기 없음)",
+        "raw/kowiki_mugunghwa_dongsan.html (404)",
+        "https://map.seoul.go.kr/robots.txt (robots.txt 대신 HTML 안내 페이지, 요청 중단)",
+        "https://www.khs.go.kr/robots.txt (연결 시간 초과)",
+        "https://www.heritage.go.kr/robots.txt (연결 시간 초과)",
+        "위키데이터/위키백과 검색 API (robots.txt 의 Disallow: /w/, /wiki/Special: 로 시도하지 않음)"
+      ]
+    },
+    {
+      "eventId": "event-encykorea-bongodong-1920",
+      "placeId": "place-encykorea-bongodong",
+      "label": "봉오동 (중국 지린성, 봉오동전투 전장 골짜기)",
+      "reason": "봉오동 골짜기의 좌표를 실은 출처를 이번에도 얻지 못했다. 앞선 조사가 확인한 대로 위키데이터 Q11245860 에 좌표 위치(P625)가 없고 한국어·영어 위키백과 전투 문서에도 좌표 표기가 없으며, '봉오동' 자체 문서도 없다. 이번에 새로 시도한 '봉오저수지'(한국어 위키백과)와 '凤梧水库'(중국어 위키백과)도 모두 404 였다. 기관 출처인 독립기념관 국외독립운동사적지(oversea.i815.or.kr)는 robots.txt 가 'user-agent:* / disallow:/' 로 전부 막고 있어 요청하지 않았다. 지시대로 도문시 중심점이나 석현진 같은 인접 행정지명 좌표로 대신하지 않고 비워 둔다.",
+      "attempted": [
+        "raw/kowiki_bongo_reservoir.html (404)",
+        "raw/zhwiki_fengwu_reservoir.html (404)",
+        "http://oversea.i815.or.kr/robots.txt (200, 전체 Disallow 확인 후 본문 요청 안 함)",
+        "앞선 조사 시도분: wd_Q11245860 / kowiki_bongodong_battle / enwiki_fengwudong / zhwiki_fengwudong / kowiki_bongodong(404)"
+      ]
+    }
+  ],
+  "review": "All four are area references. Cheongje stele is not an exact reservoir point. Sea display positions are separately recorded, not source coordinates. Existing Jangmunpo claims establish the year and named joint participation."
+}

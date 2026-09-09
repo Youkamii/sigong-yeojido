@@ -37,7 +37,7 @@ export function composeHistoricalEvent(event,position,world){
   const relief=!sea&&/구휼/.test(actions)&&/곡식|구휼미/.test(actions);
   const road=modern&&/고속도로/.test(actions),personalFire=/분신|자해/.test(actions),blockFire=/대장경판|경판|판목/.test(actions)&&event.effects.fire?.enabled;
   const paperFire=blockFire||personalFire&&/화형식|법전.*태/.test(actions);
-  const kiln=/백자|관요|사기제조장|분원리/.test(actions),irrigation=/벽골제|수리 시설|관개/.test(actions);
+  const kiln=/백자|관요|사기제조장|분원리/.test(actions),irrigation=/벽골제|청못|청제|수리 시설|관개/.test(actions);
   const invaders=event.effects.attack?.enabled||[...(event.sides||[]),...event.participants].some(p=>p.side==='invader'&&p.presence==='on-site');
   const harbor=!sea&&['construction','naval'].includes(event.archetype)&&event.effects.ships?.enabled;
   const teaching=!sea&&/강학|강의|교육|서당|서원|성균관|학교|학사/.test(actions)&&['court','publication','assembly'].includes(event.archetype);
@@ -272,7 +272,8 @@ export function composeHistoricalEvent(event,position,world){
       const affiliation=alliedFleet&&side==='naval'?(/명나라 수군|명 수군/.test(person.role)?'ming':'joseon'):null;
       const fleet=models.filter(m=>m.archetype===shipType&&m.side===side&&(!affiliation||m.fleet===affiliation)),ship=fleet[index%fleet.length];
       if(!ship)continue;
-      const row=model(person.archetype,(ship.position.x-position.x)/displayScale,(ship.position.z-position.z)/displayScale,1.05,{person,side,lift:(modern?1.9:2.2)*ship.scale/displayScale});
+      const berth=Math.floor(index/fleet.length),dx=berth?(berth%2?-.5:.5)*ship.scale/displayScale:0,dz=berth?(Math.floor((berth-1)/2)+1)*.65*ship.scale/displayScale:0;
+      const row=model(person.archetype,(ship.position.x-position.x)/displayScale+dx,(ship.position.z-position.z)/displayScale+dz,1.05,{person,side,lift:(modern?1.9:2.2)*ship.scale/displayScale});
       if(row){row.shipSide=ship.side;row.fleet=ship.fleet;}
     }else if(music){
       const teacher=/가르친|악사/.test(person.role),instrument=/가얏고|가야금/.test(person.role),dance=/춤/.test(person.role);
