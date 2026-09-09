@@ -147,6 +147,8 @@ export class Chronicle {
       <label class="time-span">주변 사건 <select aria-label="사건 탐색 범위"><option value="20">20년</option><option value="50" selected>50년</option><option value="100">100년</option></select></label></div>
       <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2025" value="1593" aria-label="역사 시간 이동"><span>2025</span></div>
       <div class="event-strip"></div>`;
+    // 조작 묶음(.time-heading)은 단순 모드(#149)가 메뉴 서랍으로 옮긴다 — 노드 참조를 들고 있으면 옮겨도 찾는다
+    this.heading=controls.querySelector('.time-heading');
     this.timeline=new EventTimeline(controls.querySelector('.event-strip'),{yearLabel,
       preview:year=>this.previewYear(year),commit:()=>this.finishScrub(),select:entry=>this.showEvent(entry)});
     const yearInput=controls.querySelector('[type=number]');
@@ -174,6 +176,7 @@ export class Chronicle {
     };
     this.render();
   }
+  $(selector){return this.controls.querySelector(selector)||this.heading.querySelector(selector);}
   chooseYear(year){
     clearTimeout(this.scrubTimer);this.pendingYear=null;
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
@@ -184,7 +187,7 @@ export class Chronicle {
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
     if(year===0)year=this.year<0?1:-1;
     this.stopPlay();clearTimeout(this.scrubTimer);this.pendingYear=year;
-    this.controls.querySelector('[type=number]').value=year;this.controls.querySelector('[type=range]').value=year;
+    this.$('[type=number]').value=year;this.$('[type=range]').value=year;
     this.timeline.setYear(year);this.scrubTimer=setTimeout(()=>this.finishScrub(),120);
   }
   finishScrub(){const year=this.pendingYear;clearTimeout(this.scrubTimer);this.pendingYear=null;if(year!==this.year)this.chooseYear(year);}
@@ -193,10 +196,10 @@ export class Chronicle {
     this.callbacks.scene?.(event.sceneId);this.showEntity(event.id);
   }
   setYear(year){this.year=year;this.render();}
-  stopPlay(){clearInterval(this.timer);this.timer=null;this.controls.querySelector('[data-play]').textContent='▶ 재생';}
+  stopPlay(){clearInterval(this.timer);this.timer=null;this.$('[data-play]').textContent='▶ 재생';}
   togglePlay(){
     if(this.timer){this.stopPlay();return;}
-    this.controls.querySelector('[data-play]').textContent='Ⅱ 멈춤';
+    this.$('[data-play]').textContent='Ⅱ 멈춤';
     this.timer=setInterval(()=>{if(this.year>=2025){this.stopPlay();return;}this.chooseYear(this.year+1);},1200);
   }
   async refresh(){
@@ -253,11 +256,11 @@ export class Chronicle {
   render(){
     const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
     this.timeline.setEvents(c.allEvents);this.timeline.setYear(this.year);
-    this.controls.querySelector('[type=number]').value=this.year;
-    this.controls.querySelector('[type=range]').value=this.year;
-    this.controls.querySelector('[data-calendar]').textContent='연도 입력';
-    this.controls.querySelector('[data-previous]').disabled=c.previous==null;
-    this.controls.querySelector('[data-next]').disabled=c.next==null;
+    this.$('[type=number]').value=this.year;
+    this.$('[type=range]').value=this.year;
+    this.$('[data-calendar]').textContent='연도 입력';
+    this.$('[data-previous]').disabled=c.previous==null;
+    this.$('[data-next]').disabled=c.next==null;
     this.controls.querySelectorAll('[data-era]').forEach(b=>b.classList.toggle('on',Math.abs(+b.dataset.era-this.year)<10));
     const status=this.error||(this.loading?'이 시대의 인물과 사건을 불러오는 중…':'');
     const counts=`인물 ${c.people.length} · 주변 사건 ${c.events.length}`;
