@@ -1022,7 +1022,11 @@
         "grain_stack|곡식 자루 모형",
         "groundbreaking|첫 삽 모형",
         "dig_site|발굴 조사 구역",
-        "fort_wall_side|성벽 측면"
+        "fort_wall_side|성벽 측면",
+        "story_egg|강림 전승의 알 모형",
+        "story_rock|바위 전승 모형",
+        "standing_stone|망부석 전승 모형",
+        "story_hollows|삼성혈 전승 모형"
       ]
     },
     "events": {
@@ -9393,6 +9397,119 @@
           "y": 4.4,
           "z": 4,
           "tag": "body"
+        }
+      ]
+    },
+    "story_egg": {
+      "h": 2.3,
+      "rad": 1.5,
+      "p": [
+        {
+          "k": "sph",
+          "c": "snow",
+          "m": "stone",
+          "r": 1,
+          "x": 0,
+          "y": 1.2,
+          "z": 0,
+          "tag": "body",
+          "sx": 0.8,
+          "sy": 1.15,
+          "sz": 0.8
+        }
+      ]
+    },
+    "story_rock": {
+      "h": 3,
+      "rad": 3,
+      "p": [
+        {
+          "k": "sph",
+          "c": "stone",
+          "m": "stone",
+          "r": 2,
+          "x": 0,
+          "y": 1.1,
+          "z": 0,
+          "tag": "body",
+          "sx": 1.3,
+          "sy": 0.7,
+          "sz": 1
+        },
+        {
+          "k": "sph",
+          "c": "stone",
+          "m": "stone",
+          "r": 1.3,
+          "x": 1.2,
+          "y": 0.55,
+          "z": 0.5,
+          "tag": "body",
+          "sy": 0.5
+        }
+      ]
+    },
+    "standing_stone": {
+      "h": 4.5,
+      "rad": 1.5,
+      "p": [
+        {
+          "k": "sph",
+          "c": "stone",
+          "m": "stone",
+          "r": 1.3,
+          "x": 0,
+          "y": 2.1,
+          "z": 0,
+          "tag": "body",
+          "sx": 0.7,
+          "sy": 1.7,
+          "sz": 0.6
+        }
+      ]
+    },
+    "story_hollows": {
+      "h": 0.4,
+      "rad": 3,
+      "p": [
+        {
+          "k": "sph",
+          "c": "stone",
+          "m": "stone",
+          "r": 1,
+          "x": 0,
+          "y": 0.15,
+          "z": -1.4,
+          "tag": "body",
+          "sx": 1.1,
+          "sy": 0.15,
+          "sz": 0.8
+        },
+        {
+          "k": "sph",
+          "c": "stone",
+          "m": "stone",
+          "r": 1,
+          "x": -1.3,
+          "y": 0.15,
+          "z": 1,
+          "tag": "body",
+          "sx": 1.1,
+          "sy": 0.15,
+          "sz": 0.8
+        },
+        {
+          "k": "sph",
+          "c": "stone",
+          "m": "stone",
+          "r": 1,
+          "x": 1.3,
+          "y": 0.15,
+          "z": 1,
+          "tag": "body",
+          "sx": 1.1,
+          "sy": 0.15,
+          "sz": 0.8
         }
       ]
     }
