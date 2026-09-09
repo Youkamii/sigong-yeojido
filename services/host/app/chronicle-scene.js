@@ -7,16 +7,24 @@ import {planHistoricalSites} from './chronicle-sites.js';
 export class ChronicleScene {
   constructor(host,onSelect){
     this.host=host;this.onSelect=onSelect;this.markers=[];
-    this.display={regions:true,geography:true,morePlaces:false,territories:true,traditions:true,people:true,events:true,scenery:true,forest:true,paths:true};
+    this.display={regions:true,geography:true,morePlaces:false,territories:true,siteNames:false,siteBackground:false,people:true,events:true,scenery:true,forest:true,paths:true};
+    this.traditionId='';
     try{const saved=JSON.parse(localStorage.getItem('sigong-map-display-v1')||'{}');for(const key in this.display)if(typeof saved[key]==='boolean')this.display[key]=saved[key];}catch{}
     for(const input of document.querySelectorAll('[data-map-display]')){
       input.checked=this.display[input.dataset.mapDisplay];input.onchange=()=>{
         this.display[input.dataset.mapDisplay]=input.checked;
         try{localStorage.setItem('sigong-map-display-v1',JSON.stringify(this.display));}catch{}
-        if(['traditions','scenery'].includes(input.dataset.mapDisplay)&&this.world)this.refresh(this.world,this.chronicle);
+        if(input.dataset.mapDisplay==='siteBackground'&&this.world)this.refresh(this.world,this.chronicle);
         else this.applyDisplay();
       };
     }
+    document.getElementById('traditionDestination').onchange=event=>{
+      this.traditionId=event.target.value;
+      this.refresh(this.world,this.chronicle);
+      const story=this.assets?.plan.events.find(e=>e.id===this.traditionId);
+      if(story){this.preferredRow=story.id;this.onSelect(story.entityId);}
+      else this.chronicle?.render();
+    };
   }
   applyDisplay(){
     this.layoutKey=null;
@@ -39,15 +47,22 @@ export class ChronicleScene {
     if(!chronicle)return;
     this.chronicle=chronicle;this.world=world;
     if(!this.assets||!chronicle.context)return;
+    const changedYear=this.assets.plan?.year!==chronicle.context.year;
+    if(changedYear)this.traditionId='';
+    const stories=planTraditions(chronicle.data,world.traditions?.narratives||[]);
+    if(!stories.some(s=>s.id===this.traditionId))this.traditionId='';
+    const storyMenu=document.getElementById('traditionDestination');
+    storyMenu.replaceChildren(new Option('이야기를 골라 보기',''),...stories.map(s=>new Option(s.label,s.id)));
+    storyMenu.value=this.traditionId;storyMenu.disabled=!stories.length;
     const features=world.historyTargets.map(t=>t.userData.feature);
     const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[],world.coordinateRegistry);
     world.territories?.setYear(plan.year,chronicle.callbacks.filters());
     world.geography?.setActivities(plan);
-    if(this.display.scenery)plan.events.push(...planHistoricalSites(chronicle.data,world.scenePackets||[],plan));
-    if(this.display.traditions)plan.events.push(...planTraditions(chronicle.data,world.traditions?.narratives||[],plan.year));
+    if(this.display.siteBackground)plan.events.push(...planHistoricalSites(chronicle.data,world.scenePackets||[],plan));
+    plan.events.push(...stories.filter(s=>s.id===this.traditionId));
+    if(!plan.events.some(e=>e.id===this.assets.activeScene))this.assets.activeScene=null;
     const signature=JSON.stringify([plan,this.assets.activeScene]);
     if(signature===this.signature){this.syncPicks();this.renderFocus();this.applyDisplay();return;}
-    const changedYear=this.assets.plan?.year!==plan.year;
     this.assets.rebuild(plan);this.signature=signature;
     this.layoutKey=null;
     this.host.replaceChildren();this.markers=[];
@@ -70,7 +85,7 @@ export class ChronicleScene {
     destination.replaceChildren(new Option('인물·사건을 골라 이동',''));
     const listed=new Set();
     for(const row of this.assets.rows)if(row.kind!=='building'){
-      const option=new Option(row.label+(listed.has(row.entityId)?' · '+(row.locationReference?.label||row.detail):''),listed.has(row.entityId)?row.id:row.entityId);
+      const option=new Option((row.setting||row.siteBackground?'도시·시설 · ':'')+row.label+(listed.has(row.entityId)?' · '+(row.locationReference?.label||row.detail):''),listed.has(row.entityId)?row.id:row.entityId);
       option.dataset.sceneRow=row.id;option.dataset.sceneEntity=row.entityId;destination.add(option);listed.add(row.entityId);
     }
     if([...destination.options].some(option=>option.value===previous))destination.value=previous;
@@ -94,7 +109,7 @@ export class ChronicleScene {
     host.hidden=!scene;
     if(!scene){host.replaceChildren();return;}
     const people=scene.participants.filter(p=>p.presence==='on-site');
-    host.innerHTML=`<div class="focus-heading"><span>${scene.narrative?'설화·전승의 무대':scene.siteBackground?'성곽 배경 · 추정':esc(this.assets.plan.year)+'년'} · ${esc(scene.scenePlace?.label||scene.locationReference?.label||'현장')}</span>
+    host.innerHTML=`<div class="focus-heading"><span>${scene.narrative?'설화·전승의 무대':scene.siteBackground?'성곽 배경 · 추정':scene.setting?'도시·시설 · '+esc(this.assets.plan.year)+'년':esc(this.assets.plan.year)+'년'} · ${esc(scene.scenePlace?.label||scene.locationReference?.label||'현장')}</span>
       <button data-focus-entity="${esc(scene.entityId)}" data-focus-row="${esc(scene.id)}">${esc(scene.label)} ↗</button></div>
       <div class="focus-people">${people.map(p=>`<button data-focus-entity="${esc(p.entityId)}" data-focus-row="${esc(p.id+'@'+scene.id)}" aria-pressed="${p.entityId===this.assets.selected}"><strong>${esc(p.label)}</strong><small>${esc(p.role)}</small></button>`).join('')}</div>`;
     for(const button of host.querySelectorAll('[data-focus-entity]'))button.onclick=()=>{
@@ -165,6 +180,7 @@ export class ChronicleScene {
     const ordered=[...this.markers].sort((a,b)=>
       Number(b.row.id===this.assets?.selectedRow)-Number(a.row.id===this.assets?.selectedRow)
       ||Number(b.row.sceneId===this.assets?.activeScene)-Number(a.row.sceneId===this.assets?.activeScene)
+      ||Number(!!(a.row.setting||a.row.siteBackground))-Number(!!(b.row.setting||b.row.siteBackground))
       ||Number(b.row.kind==='person')-Number(a.row.kind==='person')
       ||Number(b.row.kind==='event')-Number(a.row.kind==='event'));
     let peopleShown=0;
@@ -173,7 +189,8 @@ export class ChronicleScene {
       const {button,position,row}=marker;
       const p=position.clone().project(camera);
       button.hidden=p.z< -1||p.z>1||Math.abs(p.x)>1||Math.abs(p.y)>1
-        ||(row.kind==='person'&&!this.display.people)||(row.kind==='event'&&!this.display.events)
+        ||(row.kind==='person'&&!this.display.people)||(row.kind==='event'&&!row.setting&&!row.siteBackground&&!row.narrative&&!this.display.events)
+        ||((row.setting||row.siteBackground)&&!this.display.siteNames&&row.entityId!==this.assets?.selected)
         ||(row.kind==='person'&&(named.has(row.entityId)||(peopleShown>=(width<600?3:6)&&row.entityId!==this.assets?.selected)));
       if(button.hidden)continue;
       button.style.left=(p.x+1)*width/2+'px';button.style.top=(1-p.y)*height/2+'px';

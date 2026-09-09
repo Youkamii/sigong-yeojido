@@ -1,7 +1,7 @@
 import {escapeHtml as esc} from './html.js';
 
 export function timelineEntries(events){
-  return events.filter(e=>Number.isInteger(e.lo)&&e.lo!==0).map(e=>({...e,key:[e.id,e.lo,e.hi,e.sceneId||''].join('|')}))
+  return events.filter(e=>Number.isInteger(e.lo)&&e.lo!==0).map(e=>({...e,hi:e.setting?e.lo:e.hi,key:[e.id,e.lo,e.hi,e.sceneId||''].join('|')}))
     .sort((a,b)=>a.lo-b.lo||a.title.localeCompare(b.title,'ko')||a.key.localeCompare(b.key));
 }
 export function yearAnchors(entries){

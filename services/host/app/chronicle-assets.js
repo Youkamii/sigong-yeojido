@@ -170,6 +170,7 @@ export class ChronicleAssets{
     };
     const placedPeople=new Set(),fullScenes=[],sceneWoods=[];
     const events=[...plan.events].sort((a,b)=>Number(b.id===this.activeScene)-Number(a.id===this.activeScene)
+      ||Number(!!(a.setting||a.siteBackground||a.narrative))-Number(!!(b.setting||b.siteBackground||b.narrative))
       ||Number(!!b.scenePlace)-Number(!!a.scenePlace));
     for(const event of events){
       const loc=locate(event);
@@ -254,9 +255,10 @@ export class ChronicleAssets{
   }
   focusPeriod(id){
     const scenes=this.rows.filter(r=>r.kind==='event'&&!r.compact);
-    const row=scenes.find(r=>r.entityId===id)||scenes.sort((a,b)=>
+    const current=scenes.filter(r=>!r.setting&&!r.siteBackground&&!r.narrative);
+    const row=scenes.find(r=>r.entityId===id)||current.sort((a,b)=>
       Number(b.placement==='site')-Number(a.placement==='site')||(b.participants?.length||0)-(a.participants?.length||0))[0]
-      ||this.rows.find(r=>r.kind==='person');
+      ||this.rows.find(r=>r.kind==='person')||scenes.find(r=>r.setting);
     if(!row){this.world.frame(this.engine);return false;}
     this.activeScene=row.sceneId||row.id;
     this.engine.flyTo(row.position.clone().add(new THREE.Vector3(0,5,0)),row.focusDistance||125,650);return true;

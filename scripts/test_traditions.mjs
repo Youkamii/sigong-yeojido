@@ -17,6 +17,8 @@ for(const year of [42,550,1145,1281,1500,2025]){
   const plan=planChronicleAssets(context,data,[],[],scenes);
   assert.ok(plan.events.every(e=>!narratives.has(e.entityId)),'Stories are not rendered as current historical activities');
   assert.equal(planTraditions(data,packet.narratives,year).length,9,'Story layer is explicitly separate from event year');
+  assert.ok(planTraditions(data,packet.narratives).every(n=>n.year===null),'Timeless stories are not assigned the selected year');
+  assert.ok(context.allEvents.every(e=>e.type!=='Narrative'),'Book dates do not turn legends into historical events');
   assert.ok(context.people.every(e=>!e.id.startsWith('person-syj136-')||e.id==='person-syj136-seong-hyeon'),'Characters are not dated by book publication');
 }
 assert.equal(planTraditions({entities:[],claims:[]},packet.narratives,1281).length,0,'Empty sources hide all stories');

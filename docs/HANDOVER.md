@@ -744,3 +744,9 @@ scripts/fuseki.sh query 'SELECT (COUNT(*) AS ?n) WHERE {?s ?p ?o}'  # 배포 JSO
 python3 scripts/verify_core_questions.py --out /tmp/core-questions.json  # 8 PASS, Q6 PARTIAL
 ```
 PNG 는 `scp lia-c2:/tmp/verify/04-3d.png .` 로 받아 눈으로 본다.
+## 2026-09-09 최신: 입장 밝기·렌더링 비용·연도별 표시 (#141–143)
+
+[고정 주소](https://sigong.rabbion.info/)에 프런트 파일만 반영한다. 이 변경으로 서버를 재시작하지 않는다.
+입장 화면은 밝은 종이색으로 변경(#141). 바다 밑 암반·가려진 면을 제외하고 앞면 렌더링 설정과 카메라 기울기 제한을 수정했다(#142). 같은 RTX3060 화면에서 가까운 장면의 제출 삼각형은 약32%, 전체 보기에서는 약12% 줄었다. FPS 개선을 일반화하지 않는다([측정](research/render-cost-142.json)).
+설화9개는 기본 지도와 사건 연표에서 제외하고, 별도 메뉴에서 한 편씩 선택한다. 연도를 바꾸면 선택한 설화도 닫힌다. 추정 성곽은 별도 선택으로 옮겼다. 오래 운영된 도시·시설은 기간 안에서 배경으로 유지하며, 시작 연도만 사건 연표에 놓고 매년 현재 사건으로 되풀이하지 않는다(#143).
+실제 공개 데이터로 설화 교체·연도 변경·한산도 본영 종료·이순신 사후 표시·통제영 기간 종료를 확인했다([검사](research/periods-143.json)). 관련 Node 검사5개 통과. 새 사료 수집이나 역사적 기간의 임의 변경은 없다. CI는 workflow가 없어 NOT_RUN이다.

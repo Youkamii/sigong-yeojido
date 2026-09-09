@@ -1,6 +1,7 @@
 import {escapeHtml as esc} from './html.js';
 import {loadChronicle} from './chronicle-load.js';
 import {EventTimeline} from './event-timeline.js';
+import {isHistoricalSetting} from './chronicle-sites.js';
 
 const sourceHost=source=>{try{return new URL(source.resource||'').hostname;}catch{return '';}};
 const publicRecord=source=>{
@@ -73,9 +74,11 @@ export function contextAt(data,year,span=50){
   for(const scene of data.scenePackets||[]){
     if(!Number.isInteger(scene.startYear)||!Number.isInteger(scene.endYear))continue;
     const ids=[...scene.dateClaimIds,...scene.actionClaimIds],entity=entities.get(scene.eventId);
-    if(!entity||!ids.length||ids.some(id=>!byClaim.has(id)))continue;
+    if(!entity||entity.type==='Narrative'||scene.narrativeType||!ids.length||ids.some(id=>!byClaim.has(id)))continue;
+    const setting=isHistoricalSetting(scene);
     curatedEvents.push({...entity,sceneId:scene.id,placeLabel:scene.place?.label,lo:scene.startYear,hi:scene.endYear,claim:byClaim.get(scene.dateClaimIds[0]),
-      basis:[...new Set(ids)].map(id=>byClaim.get(id)),title:scene.title,current:scene.startYear<=year&&scene.endYear>=year});
+      basis:[...new Set(ids)].map(id=>byClaim.get(id)),title:scene.title,setting,
+      current:setting?scene.startYear===year:scene.startYear<=year&&scene.endYear>=year});
   }
   for(let i=events.length-1;i>=0;i--)if(curatedEvents.some(s=>s.id===events[i].id&&s.lo<=events[i].lo&&s.hi>=events[i].hi))events.splice(i,1);
   events.push(...curatedEvents);
@@ -125,10 +128,11 @@ export function contextAt(data,year,span=50){
     &&other.claim.fromSource===e.claim.fromSource&&other.claim.predicate===e.claim.predicate
     &&other.lo<=e.lo&&other.hi>=e.hi&&(other.lo<e.lo||other.hi>e.hi)));
   grouped.sort((a,b)=>a.lo-b.lo||a.title.localeCompare(b.title,'ko'));
-  const nearby=grouped.filter(e=>e.lo<=to&&e.hi>=from);
-  const eventYears=[...new Set(events.flatMap(e=>[e.lo,e.hi]))].sort((a,b)=>a-b);
+  const nearby=grouped.filter(e=>e.lo<=to&&(e.setting?e.lo:e.hi)>=from);
+  const settings=grouped.filter(e=>e.setting&&e.lo<=year&&e.hi>=year);
+  const eventYears=[...new Set(grouped.flatMap(e=>e.setting?[e.lo]:[e.lo,e.hi]))].sort((a,b)=>a-b);
   return {year,from,to,entities,people:[...people.values()].sort((a,b)=>a.label.localeCompare(b.label,'ko')),
-    polities:[...polities.values()],events:nearby,eventYears,allEvents:grouped,
+    polities:[...polities.values()],events:nearby,settings,eventYears,allEvents:grouped,
     previous:eventYears.filter(y=>y<year).at(-1),next:eventYears.find(y=>y>year)};
 }
 
@@ -261,6 +265,7 @@ export class Chronicle {
       ${status?`<p role="status" class="context-empty">${esc(status)}</p>`:''}
       ${c.polities.length?`<section class="context-polities" aria-label="이때의 나라와 세력">${c.polities.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.id)}">${esc(entityLabel(p))}${p.ruler?' · '+esc(entityLabel(p.ruler))+' 재위':''}</button>`).join('')}</section>`:''}
       ${c.events.some(e=>e.current)?`<section class="current-events"><h3>이 해의 사건</h3>${c.events.filter(e=>e.current).map(e=>`<button data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId||'')}">${esc(e.title)} <span>→</span></button>`).join('')}</section>`:''}
+      ${c.settings.length?`<details class="context-section era-sites"><summary>이때의 도시·시설 ${c.settings.length}곳</summary>${c.settings.map(e=>`<button class="period-site" data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId)}">${esc(e.title)}</button>`).join('')}</details>`:''}
       <details class="context-section era-people"><summary>동시대 인물 ${c.people.length}명 · 생존·재위·활동</summary><div class="section-heading"><h3>이때의 사람들</h3></div>
       ${c.people.map(p=>this.personCard(p,c)).join('')||(!status?'<p class="context-empty">선택한 사료에 이 해의 생존·활동 근거가 연결된 인물이 없습니다.</p>':'')}
       </details><section class="context-section"><div class="section-heading"><h3>이 시기의 사건</h3><span>${yearLabel(c.from)} – ${yearLabel(c.to)}</span></div>

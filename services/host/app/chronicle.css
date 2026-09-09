@@ -143,6 +143,10 @@
 .map-display legend{font-size:10px;color:var(--paper-3);padding:0}
 .map-display label{display:flex;align-items:center;gap:4px;white-space:nowrap;cursor:pointer}
 .map-display input{accent-color:var(--celadon)}
+.tradition-browser p{font-size:10px;line-height:1.6;margin:4px 0 8px;max-width:270px}
+.tradition-browser select{width:100%;margin-top:5px;padding:6px;background:var(--ink-2);color:var(--paper);border:1px solid var(--line-2);border-radius:4px}
+.era-sites>summary{cursor:pointer;font-size:12px;color:var(--paper-2);padding:10px 0}
+.period-site{display:block;text-align:left;font:12px/1.6 var(--sans);padding:6px 0;color:var(--paper-2)}
 @media(max-width:600px){.scene-focus{left:10px;width:calc(100% - 20px);padding:8px;bottom:calc(var(--timeline-height,150px) + 7px)}.focus-people>button{max-width:140px}.focus-heading>button{font-size:13px}}
 .scene-person{position:absolute;transform:translate(-50%,-100%);pointer-events:auto;max-width:148px;text-align:center;padding:6px 10px;background:#243d36f2;border:1px solid #c4a35f;border-radius:3px;white-space:nowrap;box-shadow:0 3px 12px #17251f44}
 .scene-person strong{font:15px var(--serif);color:#fff2d2}

@@ -1,3 +1,13 @@
+// These packets describe continuing use of a place, rather than a recurring event.
+const SETTINGS=new Set([
+  'scene-syj122-byeokgolje-330-790','scene-syj122-nangnanggun-108bce-313',
+  'scene-jl2-tongjeyeong-duryongpo-1603-1895','scene-jl2-bunwonri-1752-1883',
+  'scene-jl2-jepo-waegwan-1423-1510','scene-jl2-yeompo-waegwan-1426-1512',
+  'scene-mod-wonsan-haegwan-1883','scene-syj122-heunghwajin-995-1030',
+  'scene-mod-wonsanhaksa-1883'
+]);
+export const isHistoricalSetting=scene=>scene.kind==='settlement'||SETTINGS.has(scene.id);
+
 // These display intervals join dated records; they are not assertions of continuous occupation.
 export function planHistoricalSites(data,packets,plan){
   const claims=new Map(data.claims.map(c=>[c.id,c])),entities=new Map(data.entities.map(e=>[e.id,e]));

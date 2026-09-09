@@ -14,4 +14,7 @@ for(const year of [1274,1275,1281,1400,1948])assert.equal(yearAtPosition(anchors
 assert.equal(positionAtYear(anchors,-500),0);
 assert.equal(yearAtPosition([],1),null);
 assert.notEqual(yearAtPosition([{year:-1,position:0},{year:1,position:1}],.5),0,'The timeline cannot introduce year zero');
+const facility={id:'facility',title:'시설 운영',lo:1603,hi:1895,setting:true};
+assert.equal(timelineEntries([facility])[0].hi,1603,'Opening is a timeline point, not a current event for centuries');
+assert.equal(facility.hi,1895,'Timeline presentation preserves the documented operating period');
 console.log('PASS: chronological cards, distinct places, year interpolation and BCE');
