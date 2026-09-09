@@ -31,7 +31,10 @@ export function composeHistoricalEvent(event,position,world){
   const soldier=modern?'rifle_soldier':'spearman';
   const launch=modern&&/누리호|발사체/.test(actions);
   const temple=/황룡사|불국사|감은사|흥륜사|사찰|사원/.test(actions)&&event.archetype==='construction';
-  const rail=modern&&/지하철|철도|열차/.test(actions),industry=modern&&/제철|고로|공업단지/.test(actions);
+  const rail=modern&&/지하철|철도|열차/.test(actions),industry=modern&&/제철|고로|공업단지|공업센터|원자력발전소/.test(actions);
+  const groundbreaking=industry&&/기공식/.test(actions),power=industry&&/원자력발전소/.test(actions);
+  const music=!sea&&/가얏고|가야금|음악 전습/.test(actions)&&/가르|배우|배운|전습/.test(actions);
+  const relief=!sea&&/구휼/.test(actions)&&/곡식|구휼미/.test(actions);
   const road=modern&&/고속도로/.test(actions),personalFire=/분신|자해/.test(actions),blockFire=/대장경판|경판|판목/.test(actions)&&event.effects.fire?.enabled;
   const paperFire=blockFire||personalFire&&/화형식|법전.*태/.test(actions);
   const kiln=/백자|관요|사기제조장|분원리/.test(actions),irrigation=/벽골제|수리 시설|관개/.test(actions);
@@ -39,7 +42,7 @@ export function composeHistoricalEvent(event,position,world){
   const harbor=!sea&&['construction','naval'].includes(event.archetype)&&event.effects.ships?.enabled;
   const teaching=!sea&&/강학|강의|교육|서당|서원|성균관|학교|학사/.test(actions)&&['court','publication','assembly'].includes(event.archetype);
   const market=!sea&&/장시|시장|교역|무역|상업/.test(actions)&&['court','construction'].includes(event.archetype);
-  const compositionKind=kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
+  const compositionKind=music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
   let displayScale=event.scenePlace?.displayScale||1;
   if(sea){
     let clearance=35;
@@ -87,6 +90,15 @@ export function composeHistoricalEvent(event,position,world){
         if(world.contains(position.x+dx*displayScale,position.z+dz*displayScale)){shore={dx,dz};break;}
       }
       if(shore)for(let i=0;i<6;i++)model(modern?'human':'spearman',shore.dx+(i%3)*2,shore.dz+Math.floor(i/3)*2,1.2,{medium:'land',side:'naval',action:'walking'});
+    }
+  }else if(music){
+    model('string_instrument',-8,0,2,{primary:true});
+    if(!event.compact)model('string_instrument',2,7,1.7);
+  }else if(relief){
+    model('grain_stack',0,0,2.4,{primary:true});
+    if(!event.compact){
+      model('grain_stack',-9,-2,1.8);model('handcart',-13,6,1.2);model('table',5,4,1.5);
+      for(const [x,z] of [[4,8],[10,11],[7,16],[-1,13]])model(modern?'modern_figure':'period_figure',x,z,1.6,{action:'working'});
     }
   }else if(event.archetype==='settlement'){
     model(modern?'civic_hall':'palace',0,-7,1.5,{primary:true});
@@ -136,6 +148,12 @@ export function composeHistoricalEvent(event,position,world){
       for(let i=0;i<8;i++)model('human',-13+i*4,-1,1.5);
       model('banner',-15,0,1.5);model('banner',15,0,1.5);
     }
+  }else if(groundbreaking){
+    model('groundbreaking',0,0,2.4,{primary:true});
+  }else if(power){
+    const building=event.year<event.endYear?'building_frame':'power_facility';
+    model(building,0,0,2,{primary:true});
+    if(!event.compact&&building==='building_frame')model('groundbreaking',-13,8,1.3);
   }else if(industry){
     model('steelworks',0,0,1.6,{primary:true});
     if(!event.compact){model('civic_hall',18,-7,1.0);model('car',14,13,1.2);
@@ -256,11 +274,15 @@ export function composeHistoricalEvent(event,position,world){
       if(!ship)continue;
       const row=model(person.archetype,(ship.position.x-position.x)/displayScale,(ship.position.z-position.z)/displayScale,1.05,{person,side,lift:(modern?1.9:2.2)*ship.scale/displayScale});
       if(row){row.shipSide=ship.side;row.fleet=ship.fleet;}
+    }else if(music){
+      const teacher=/가르친|악사/.test(person.role),instrument=/가얏고|가야금/.test(person.role),dance=/춤/.test(person.role);
+      const [dx,dz]=teacher?[-8,-3]:instrument?[2,4]:dance?[12,11]:[10,-3];
+      model(person.archetype,dx,dz,2.4,{person,side,action:teacher||instrument?'working':dance?'walking':'idle'});
     }else{
       const dx=-7+index*6,dz=event.archetype==='publication'?4:side==='invader'?22:side==='civilian'?4:-6;
       model(person.archetype,dx,dz,2.4,{person,side,action:event.archetype==='publication'?'working':'idle'});
     }
   }
   return {group,animated,models,occupied,compositionKind,displayScale,radius:radius*displayScale,
-    focusDistance:Math.max(.1,(sea?145:harbor?150:event.archetype==='publication'?85:115)*displayScale)};
+    focusDistance:Math.max(.1,(sea?145:harbor?150:groundbreaking?60:music||event.archetype==='publication'?85:relief||power?95:115)*displayScale)};
 }

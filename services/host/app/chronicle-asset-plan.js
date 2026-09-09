@@ -120,7 +120,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       ...present.get(p.entityId),...p,archetype:activityFigure(p.entityId,p.role,context.year,data.claims),
       relationClaims:p.claimIds,detail:p.role+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
     events.push({id:scene.id,entityId:scene.eventId,kind:'event',year:context.year,label:scene.title,
-      archetype:scene.kind,detail:yearLabel(scene.startYear),summary:scene.summary,
+      archetype:scene.kind,startYear:scene.startYear,endYear:scene.endYear,detail:yearLabel(scene.startYear),summary:scene.summary,
       scenePlace:coordinates?{...place,coordinates,precision:place.displayPrecision||place.precision,...(regionalPlacement?{
         coordinateNote:'지역 기준 추정 배치 · '+region.coordinateNote,coordinateSourceIds:region.sourceIds}: {})}:null,
       sites:[],locationReference:null,visualActions:scene.visualActions,

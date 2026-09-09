@@ -46,14 +46,14 @@ for(const [file,expected] of Object.entries(provenance.moduleTextSha256)){
   assert.equal(createHash('sha256').update(text).digest('hex'),expected,'Original generator text: '+file);
 }
 const catalog=compileAssetCatalog(raw);
-assert.equal(catalog.blueprintCount,49);
+assert.ok(catalog.blueprintCount>=54);
 const outline=JSON.parse(await readFile(new URL('../services/host/app/korea-outline.json',import.meta.url),'utf8'));
 assert.equal(createHash('sha256').update(await readFile(new URL('../'+outline.properties.source,import.meta.url))).digest('hex'),outline.properties.sha256);
 const displayProof=JSON.parse(await readFile(new URL('../docs/research/peninsula-assets-94.json',import.meta.url),'utf8'));
 const sceneText=(await readFile(new URL('../services/host/app/chronicle-assets.js',import.meta.url),'utf8')).replace(/\r\n/g,'\n');
 const tree='function makeTreeGeometry() {'+sceneText.split('function makeTreeGeometry() {')[1].split('\n}')[0]+'\n}';
 assert.equal(createHash('sha256').update(tree).digest('hex'),displayProof.treeFunctionSha256,'Use the actual original world tree geometry');
-for(const archetype of ['human','scribe','monk','battle','hanging_scroll','ship','wall','table','book','handcart','steelworks','station','train','car','motor_ship','civic_hall','rocket','rifle_soldier','korean_hall','korean_house']){
+for(const archetype of ['human','scribe','monk','battle','hanging_scroll','ship','wall','table','book','handcart','steelworks','station','train','car','motor_ship','civic_hall','rocket','rifle_soldier','korean_hall','korean_house','string_instrument','grain_stack','groundbreaking','building_frame','power_facility']){
   const {recipe,dropped}=normalizeAssetRecipe({archetype,anchor:'test',form:archetype==='battle'?'local':archetype==='hanging_scroll'?'plain':['human','scribe','monk'].includes(archetype)?'civilian':undefined},catalog);
   assert.deepEqual(dropped,[]);assert.equal(recipe.materialExplicit,false,'Keep the blueprint materials for individual parts');
   assert.ok(catalog.cores.get(archetype).blueprint.p.length>=5,'Use the assembled blueprint, not a generic fallback box');
