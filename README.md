@@ -10,7 +10,7 @@
 - 조사 기록(사료 조사 1·2차, codex 교차검증, 국편 벌크 XML 구조): `docs/research/`
 - 현재 운영 상태·완료 이슈·다음 작업: [인수인계](docs/HANDOVER.md)
 - 전체 요구사항·완료 범위·빠진 기능: [전체 작업 목록](docs/TASKS.md)
-- 현재 운영 화면: [시공여지도 열기](https://attend-bacon-eligibility-selections.trycloudflare.com)
+- 현재 운영 화면: [시공여지도 열기](https://sigong.rabbion.info/)
 
 사료 적재·주장 검증·Fuseki, 2D·3D 지도, 그래프 탐색과 Claude Max 근거 챗봇이 동작한다.
 현대 연구 기본 렌즈·AI 제외·인물 검색·사료 비교·시간 환산·역사 경계 표시도 구현했다.
