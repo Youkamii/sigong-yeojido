@@ -8,6 +8,7 @@ import {unprojectCoordinates} from './history-coordinates.js';
 import {insideCoastline as inside,coastlineDistance as edgeDistance} from './coastline-index.js';
 import {NeighborLand} from './neighbor-land.js';
 import {terrainSurface} from './terrain-surface.js';
+import {ChronicleRivers} from './chronicle-rivers.js';
 
 export function stableSeed(text){let value=2166136261;for(const c of text)value=Math.imul(value^c.charCodeAt(0),16777619);return value>>>0;}
 export function woodlandDensity(x,z){return Math.max(0,Math.min(1,(Math.sin(x/31)+Math.cos(z/37)+Math.sin((x+z)/13)*.5-.4)/1.8));}
@@ -86,7 +87,9 @@ export class ChronicleWorld extends KoreaWorld{
     this.land=new THREE.Group();this.land.name='peninsula-diorama';this.group.add(this.land);
     this.buildLand();
     this.surfaceAt=terrainSurface(this.land.getObjectByName('peninsula-surface').geometry.attributes.position,this.surfaceAt);
+    this.rivers=new ChronicleRivers(this);this.group.add(this.rivers.group);
   }
+  nearWater(x,z,margin=0){return this.rivers?.near(x,z,margin)||false;}
   toWorld(lon,lat){return toWorld(lon,lat).map(v=>v*this.mapScale);}
   contains(x,z,margin=0){return this.rings.some(r=>inside(x,z,r)&&(!margin||edgeDistance(x,z,r,margin)>=margin))||this.neighbors.contains(x,z,margin);}
   placeNear(x,z,radius=2,occupied=[]){
@@ -159,6 +162,7 @@ export class ChronicleWorld extends KoreaWorld{
   }
   configureEngine(engine){
     this.engine=engine;
+    this.rivers.addControls(engine);
     engine.contactShadowDistance=400;
     engine.frameWorld(this.navigationRim);
     engine.controls.minDistance=.1;engine.controls.maxDistance=this.navigationRim*5;
