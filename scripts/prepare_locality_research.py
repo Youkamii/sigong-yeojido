@@ -77,9 +77,11 @@ for job in a.job:
     if s['place']['precision']=='site':s['place']['precision']='area'
  if job=='modern_localities':
   s=scene('scene-mod128-joseoneohakhoe-1942');s['actionClaimIds'].remove('claim-mod128-joseo-action')
+  s['place']['claimIds']=['claim-mod128-joseo-place']
   claim('claim-mod128-joseo-action')['note']+=' 재판은1944~1945년 함흥이다.1942년 홍원 압송·취조 장면의 행동 근거로 합치지 않는다.'
   s=scene('scene-mod128-sorokdo-jahyeuiwon-1916');s['visualActions']='소록도에 병원이 문을 여는 장면. 출처의100여 명은 수용 정원이며 실제 환자 인원이나 건물 수·배치를 뜻하지 않는다.'
   notes.append('조선어학회 재판과1942년 홍원 취조를 분리. 소록도 수용 정원을 실제 수용 인원으로 바꾸지 않음.')
+  notes.append('홍원 취조 서술은 행동 근거에만 연결해 장소 좌표의 참고 설명으로 분류·제거되지 않게 함.')
  excerpts={e['id']:e['text'] for source in draft['sources'] for e in source['excerpts']}
  for c in draft['claims']:
   obj=c['object']

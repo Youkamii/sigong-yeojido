@@ -17431,511 +17431,6 @@
       "researchCollection": "scenes-128"
     },
     {
-      "id": "scene-mod128-mokpo-gaehang-1897",
-      "eventId": "event-mod128-mokpo-gaehang-1897",
-      "title": "목포항 개항 (1897)",
-      "startYear": 1897,
-      "endYear": 1897,
-      "kind": "construction",
-      "summary": "한국민족문화대백과사전 「목포항」은 국토 서남단에 있는 이 항구가 1897년 10월에 개항되었다고 적는다. 개항 당일의 의식·참석자는 이 문서에 없어 넣지 않았다.",
-      "dateClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-mokpo-year"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-mokpo-action"
-      ],
-      "place": {
-        "label": "목포항 (전라남도 목포시)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 126.38861111111,
-        "lat": 34.793611111111,
-        "claimIds": [
-          "claim-scenes-128-modern_localities-mod128-mokpo-place"
-        ],
-        "coordinateSourceIds": [
-          "src-wd-Q42094",
-          "src-kowiki-mokpo"
-        ],
-        "coordinateClaimIds": [],
-        "coordinateNote": "좌표는 이번 조사에서 새로 내려받은 값이 아니라 기존 좌표 등록부(existing-coordinates.json)의 rc-mokpo-city 값을 그대로 옮긴 것이다(원 근거 위키데이터 Q42094, 목포시 대표점). 현재 목포시 행정구역을 대표하는 점이며 부두·세관 자리 같은 항만 시설 지점이 아니고 1897년 항계(港界)를 잰 좌표도 아니다.",
-        "displayCoordinates": [
-          126.38938869477863,
-          34.79841160616607
-        ],
-        "displayBasis": "지역 기준 추정 배치. 고정된 옛 해안선과 원자료 지점의 차이 때문에 가까운 육지 쪽 표시점을 사용합니다. 원자료 좌표는 따로 보존하며 실제 현장 지점의 수정이 아닙니다.",
-        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "visualActions": "개항한 항구 한 곳을 점으로 표시한다. 입항 선박이나 부두 건물 모습은 1897년 근거가 없어 넣지 않는다.",
-      "researchJob": "modern_localities",
-      "researchCollection": "scenes-128"
-    },
-    {
-      "id": "scene-mod128-sinchuk-gyoan-1901",
-      "eventId": "event-mod128-sinchuk-gyoan-1901",
-      "title": "신축교안 — 대정 민회와 제주성 포위 (1901)",
-      "startYear": 1901,
-      "endYear": 1901,
-      "kind": "siege",
-      "summary": "1901년 5월 대정에서 민회를 연 도민들이 제주성으로 진군하다 천주교인들과 충돌했고, 5월 16일 이재수 등의 지휘 아래 수천 명이 제주성을 포위했다.",
-      "dateClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-sinchuk-year"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-sinchuk-march",
-        "claim-scenes-128-modern_localities-mod128-sinchuk-siege"
-      ],
-      "place": {
-        "label": "제주성 (1901년 포위 대상)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 126.53727886400003,
-        "lat": 33.41983001950007,
-        "anchorPlaceId": "hgis-admin-121085",
-        "claimIds": [
-          "claim-scenes-128-modern_localities-mod128-sinchuk-place"
-        ],
-        "coordinateSourceIds": [
-          "src-existing-anchors-hgis",
-          "src-hgis-admin-1910-1945"
-        ],
-        "coordinateClaimIds": [],
-        "coordinateNote": "전달받은 표시용 앵커 hgis-admin-121085('제주') 값을 그대로 썼다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 제주군 범위 중심점이며 1901년 제주성(제주읍성)의 성벽·성문을 잰 좌표가 아니다. 민회가 열린 대정은 이 점과 다른 곳이어서 별도 좌표가 필요하다."
-      },
-      "participants": [
-        {
-          "entityId": "person-mod128-yi-jaesu",
-          "role": "제주성 포위를 지휘 (출처 표기: 이재수 등의 지휘 아래)",
-          "side": "civilian",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-128-modern_localities-mod128-sinchuk-yijaesu",
-            "claim-scenes-128-modern_localities-mod128-sinchuk-siege"
-          ]
-        },
-        {
-          "entityId": "group-mod128-jeju-domin-1901",
-          "role": "제주성을 포위한 도민 수천 명",
-          "side": "civilian",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-128-modern_localities-mod128-sinchuk-domin"
-          ]
-        }
-      ],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": true,
-          "claimIds": [
-            "claim-scenes-128-modern_localities-mod128-sinchuk-siege"
-          ]
-        }
-      },
-      "visualActions": "성 하나를 사람 무리가 둘러싸는 포위 장면. 불과 배는 인용 근거가 없어 끈다. 성 함락 뒤의 사상자 수도 표시하지 않는다.",
-      "researchJob": "modern_localities",
-      "researchCollection": "scenes-128"
-    },
-    {
-      "id": "scene-mod128-sorokdo-jahyeuiwon-1916",
-      "eventId": "event-mod128-sorokdo-jahyeuiwon-1916",
-      "title": "소록도자혜의원 개원 (1916)",
-      "startYear": 1916,
-      "endYear": 1916,
-      "kind": "construction",
-      "summary": "1916년 소록도에 ‘소록도자혜의원’이라는 이름의 병원이 문을 열었고, 설립 당시부터 각지에서 온 한센병 환자 100여 명을 정원으로 강제수용하기 시작했다.",
-      "dateClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-sorokdo-year"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-sorokdo-action",
-        "claim-scenes-128-modern_localities-mod128-sorokdo-force"
-      ],
-      "place": {
-        "label": "소록도 (전라남도 고흥군 도양읍 소록리)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 127.11666666666667,
-        "lat": 34.5,
-        "claimIds": [
-          "claim-scenes-128-modern_localities-mod128-sorokdo-place"
-        ],
-        "coordinateSourceIds": [
-          "src-wd-Q489336-sorokdo"
-        ],
-        "coordinateClaimIds": [],
-        "coordinateNote": "좌표는 이번에 내려받은 위키데이터 Q489336(소록도) 문서(raw/wikidata-Q489336-sorokdo.html)의 좌표 속성 표시값 \"34°30'N, 127°7'E\"를 십진도로 옮긴 값이다(34.5, 127.116666…). 화면에 분(分) 단위까지만 표시되어 있어 섬 안의 병원 건물 위치가 아니라 섬 전체를 가리키는 대표점이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 「국립소록도병원」 인용문이 담당한다.",
-        "displayCoordinates": [
-          127.11422448492678,
-          34.49028950997342
-        ],
-        "displayScale": 0.1635975105659234,
-        "displayBasis": "고정된 옛 해안선 안의 가까운 표시점에 설명용 장면을 배치합니다. 해안선 단순화와 이후 매립으로 현재 지형과 차이가 있으며, 원자료 좌표는 별도로 보존합니다. 실제 현장 지점을 바꾸는 근거가 아닙니다.",
-        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "visualActions": "소록도에 병원이 문을 여는 장면. 출처의100여 명은 수용 정원이며 실제 환자 인원이나 건물 수·배치를 뜻하지 않는다.",
-      "researchJob": "modern_localities",
-      "researchCollection": "scenes-128"
-    },
-    {
-      "id": "scene-mod128-amtaedo-sojak-1923",
-      "eventId": "event-mod128-amtaedo-sojak-1923",
-      "title": "암태도 소작쟁의 (1923~1924)",
-      "startYear": 1923,
-      "endYear": 1924,
-      "kind": "assembly",
-      "summary": "1923년 8월부터 1924년 8월까지 암태도 소작인들이 벌인 소작농민항쟁이다. 서태석의 주도로 암태소작인회를 조직했고, 1924년 3월 27일 면민대회가 열렸으며 뒤에는 암태청년회 회장 박복영이 앞장섰다.",
-      "dateClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-amtae-start",
-        "claim-scenes-128-modern_localities-mod128-amtae-end"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-amtae-action",
-        "claim-scenes-128-modern_localities-mod128-amtae-meeting"
-      ],
-      "place": {
-        "label": "암태도",
-        "medium": "land",
-        "precision": "area",
-        "lon": 126.112139,
-        "lat": 34.827722,
-        "claimIds": [
-          "claim-scenes-128-modern_localities-mod128-amtae-place"
-        ],
-        "coordinateSourceIds": [
-          "src-kowiki-amtaedo"
-        ],
-        "coordinateClaimIds": [],
-        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '암태도' 문서(raw/kowiki-amtaedo.html) 머리에 표시된 '북위 34.827722° 동경 126.112139°'를 그대로 옮긴 섬 대표점이다. 쟁의가 벌어진 마을·면민대회 자리를 잰 값이 아니다. 백과사전 본문이 말하는 목포경찰서·법원 앞 시위는 목포에서 있었고 이 점과 다른 곳이다.",
-        "displayCoordinates": [
-          126.112139,
-          34.827722
-        ],
-        "displayScale": 0.1839027773256567,
-        "displayBasis": "원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.",
-        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
-      },
-      "participants": [
-        {
-          "entityId": "person-mod128-seo-taeseok",
-          "role": "암태소작인회를 조직해 소작료 인하를 요구 (출처 표기: 주도)",
-          "side": "civilian",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-128-modern_localities-mod128-amtae-seo"
-          ]
-        },
-        {
-          "entityId": "person-mod128-bak-bokyeong",
-          "role": "암태청년회 회장으로 앞장서서 쟁의를 주도",
-          "side": "civilian",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-128-modern_localities-mod128-amtae-park"
-          ]
-        },
-        {
-          "entityId": "group-mod128-amtae-sojakinhoe",
-          "role": "쟁의를 이끈 소작인 조직",
-          "side": "civilian",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-128-modern_localities-mod128-amtae-org"
-          ]
-        }
-      ],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "visualActions": "섬에서 이어진 1년간의 항쟁. 면민대회처럼 사람이 모이는 장면으로 표시하고, 인용하지 못한 인원 수·충돌 장면은 넣지 않는다.",
-      "researchJob": "modern_localities",
-      "researchCollection": "scenes-128"
-    },
-    {
-      "id": "scene-mod128-eulmildae-nongseong-1931",
-      "eventId": "event-mod128-eulmildae-nongseong-1931",
-      "title": "평원고무공장 파업과 을밀대 지붕 농성 — 평양 (1931)",
-      "startYear": 1931,
-      "endYear": 1931,
-      "kind": "assembly",
-      "summary": "평양 평원고무공장 여공 강주룡이 1931년 5월 파업을 주도하던 중 일본 경찰의 간섭으로 공장에서 쫓겨나자 을밀대 지붕으로 올라가 무산자의 단결과 노동생활의 참상을 호소했다.",
-      "dateClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-gang-year"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-gang-action"
-      ],
-      "place": {
-        "label": "을밀대 (평양)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 125.68462533200005,
-        "lat": 39.085723067500055,
-        "anchorPlaceId": "hgis-admin-93236",
-        "claimIds": [
-          "claim-scenes-128-modern_localities-mod128-gang-place"
-        ],
-        "coordinateSourceIds": [
-          "src-existing-anchors-hgis",
-          "src-hgis-admin-1910-1945"
-        ],
-        "coordinateClaimIds": [
-          "claim-scenes-128-modern_localities-mod128-gang-factory"
-        ],
-        "coordinateNote": "전달받은 표시용 앵커 hgis-admin-93236('평양') 값을 그대로 썼다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 평양 범위 중심점이며, 모란봉 을밀대 건물이나 평원고무공장 자리를 잰 좌표가 아니다. 을밀대 자체의 실측 좌표는 이번 조사에서 얻지 못했다."
-      },
-      "participants": [
-        {
-          "entityId": "person-mod128-gang-juryong",
-          "role": "파업을 주도하다 을밀대 지붕에 올라 호소",
-          "side": "civilian",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-128-modern_localities-mod128-gang-person",
-            "claim-scenes-128-modern_localities-mod128-gang-action"
-          ]
-        }
-      ],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "visualActions": "누각 지붕 위에 한 사람이 올라가 있는 장면. 인용문에 없는 농성 시간·군중 규모는 표시하지 않는다.",
-      "researchJob": "modern_localities",
-      "researchCollection": "scenes-128"
-    },
-    {
-      "id": "scene-mod128-joseoneohakhoe-1942",
-      "eventId": "event-mod128-joseoneohakhoe-1942",
-      "title": "조선어학회 사건 — 홍원 압송과 홍원경찰서 취조 (1942)",
-      "startYear": 1942,
-      "endYear": 1942,
-      "kind": "court",
-      "summary": "1942년 10월부터 일제가 조선어학회 회원과 관련 인물을 검거했다. 10월 1일 서울에서 구속된 최현배 등 11명은 다음날 함경남도 홍원으로 압송되었고, 사건을 취조한 곳은 홍원경찰서였다.",
-      "dateClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-joseo-year"
-      ],
-      "actionClaimIds": [],
-      "place": {
-        "label": "함경남도 홍원 (홍원경찰서)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 127.90037129150005,
-        "lat": 40.18159423250006,
-        "anchorPlaceId": "hgis-admin-69680",
-        "claimIds": [
-          "claim-scenes-128-modern_localities-mod128-joseo-place"
-        ],
-        "coordinateSourceIds": [
-          "src-existing-anchors-hgis",
-          "src-hgis-admin-1910-1945"
-        ],
-        "coordinateClaimIds": [
-          "claim-scenes-128-modern_localities-mod128-joseo-police"
-        ],
-        "coordinateNote": "전달받은 표시용 앵커 hgis-admin-69680('홍원') 값을 그대로 썼다. 국사편찬위원회 1910~1945 행정구역 경계 자료의 홍원군 범위 중심점이며 홍원경찰서 건물 자리가 아니다. 검거가 시작된 서울과 재판이 열린 함흥은 이 점과 다른 곳이라 여기에 함께 찍지 않았다."
-      },
-      "participants": [
-        {
-          "entityId": "person-mod128-choe-hyeonbae",
-          "role": "서울에서 구속되어 이튿날 홍원으로 압송된 11명 중 한 사람",
-          "side": "civilian",
-          "presence": "on-site",
-          "claimIds": [
-            "claim-scenes-128-modern_localities-mod128-joseo-choe"
-          ]
-        },
-        {
-          "entityId": "group-mod128-joseoneohakhoe",
-          "role": "검거·기소 대상이 된 단체",
-          "side": "civilian",
-          "presence": "related",
-          "claimIds": [
-            "claim-scenes-128-modern_localities-mod128-joseo-group"
-          ]
-        }
-      ],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "visualActions": "경찰서로 사람들이 끌려와 조사받는 장면. 인원은 인용문에 있는 11명까지만 쓰고 고문 묘사는 넣지 않는다.",
-      "researchJob": "modern_localities",
-      "researchCollection": "scenes-128"
-    },
-    {
-      "id": "scene-mod128-ulsan-gigongsik-1962",
-      "eventId": "event-mod128-ulsan-gigongsik-1962",
-      "title": "울산공업센터 기공식 — 장생포동 납도 (1962)",
-      "startYear": 1962,
-      "endYear": 1962,
-      "kind": "construction",
-      "summary": "1962년 울산지구가 특정 공업지구로 결정되면서 장생포동 납도에서 국민의 관심 속에 울산공업센터 기공식이 거행되었다.",
-      "dateClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-ulsan-year"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-ulsan-action"
-      ],
-      "place": {
-        "label": "장생포동 납도 (울산)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.31666666667,
-        "lat": 35.55,
-        "claimIds": [
-          "claim-scenes-128-modern_localities-mod128-ulsan-place"
-        ],
-        "coordinateSourceIds": [
-          "src-wd-Q41278",
-          "src-kowiki-ulsan"
-        ],
-        "coordinateClaimIds": [
-          "claim-scenes-128-modern_localities-mod128-ulsan-area"
-        ],
-        "coordinateNote": "좌표는 기존 좌표 등록부의 rc-ulsan-city 값을 그대로 옮긴 울산광역시 대표점이다(원 근거 위키데이터 Q41278). 기공식이 열린 장생포동 납도는 울산만 서쪽 해안이어서 이 대표점과 수 킬로미터 떨어져 있다. 납도 자체를 잰 좌표는 이번 조사에서 얻지 못했다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "visualActions": "해안 공업지구에서 열리는 기공식. 참석 인원과 식장 배치는 인용 근거가 없어 표시하지 않는다.",
-      "researchJob": "modern_localities",
-      "researchCollection": "scenes-128"
-    },
-    {
-      "id": "scene-mod128-gori-npp1-1971-1978",
-      "eventId": "event-mod128-gori-npp1-1971-1978",
-      "title": "고리원자력발전소 1호기 착공과 준공 — 기장 고리 (1971~1978)",
-      "startYear": 1971,
-      "endYear": 1978,
-      "kind": "construction",
-      "summary": "1971년 11월 15일 고리에서 원자로건물을 착공했고, 국내 처음으로 원자력에 의한 전기를 공급한 뒤 1978년 4월 29일 설비용량 58만 7000㎾의 원자력발전소로 준공했다.",
-      "dateClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-gori-start",
-        "claim-scenes-128-modern_localities-mod128-gori-end"
-      ],
-      "actionClaimIds": [
-        "claim-scenes-128-modern_localities-mod128-gori-action-start",
-        "claim-scenes-128-modern_localities-mod128-gori-action-done",
-        "claim-scenes-128-modern_localities-mod128-gori-power"
-      ],
-      "place": {
-        "label": "고리",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.20659018900005,
-        "lat": 35.27612128700005,
-        "anchorPlaceId": "hgis-admin-144992",
-        "claimIds": [
-          "claim-scenes-128-modern_localities-mod128-gori-place"
-        ],
-        "coordinateSourceIds": [
-          "src-existing-anchors-hgis",
-          "src-hgis-admin-1910-1945"
-        ],
-        "coordinateClaimIds": [],
-        "coordinateNote": "전달받은 표시용 앵커 hgis-admin-144992('기장') 값을 그대로 썼다. 국사편찬위원회 1910~1945 행정구역 경계 자료의 기장군 범위 중심점이며 발전소 부지를 잰 좌표가 아니다. 고리는 기장군 북동쪽 해안이라 이 중심점과 십여 킬로미터 떨어져 있고, 1971년 당시 이 지역의 행정구역 이름도 인용 출처에 없다. 위치 참고 표기: 고리 (부산광역시 기장군 장안읍)"
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "visualActions": "해안 발전소 부지에서 이어진 공사와 준공. 원자로 수·건물 형태·공사 인원은 인용 근거가 없어 표시하지 않는다.",
-      "researchJob": "modern_localities",
-      "researchCollection": "scenes-128"
-    },
-    {
       "id": "scene-lg128-mangi-mangsoi-1176",
       "eventId": "event-lg128-mangi-mangsoi-1176",
       "title": "망이·망소이의 난 — 공주 명학소 봉기 (1176)",
@@ -19048,6 +18543,511 @@
         }
       },
       "researchJob": "later_joseon",
+      "researchCollection": "scenes-128"
+    },
+    {
+      "id": "scene-mod128-mokpo-gaehang-1897",
+      "eventId": "event-mod128-mokpo-gaehang-1897",
+      "title": "목포항 개항 (1897)",
+      "startYear": 1897,
+      "endYear": 1897,
+      "kind": "construction",
+      "summary": "한국민족문화대백과사전 「목포항」은 국토 서남단에 있는 이 항구가 1897년 10월에 개항되었다고 적는다. 개항 당일의 의식·참석자는 이 문서에 없어 넣지 않았다.",
+      "dateClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-mokpo-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-mokpo-action"
+      ],
+      "place": {
+        "label": "목포항 (전라남도 목포시)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.38861111111,
+        "lat": 34.793611111111,
+        "claimIds": [
+          "claim-scenes-128-modern_localities-mod128-mokpo-place"
+        ],
+        "coordinateSourceIds": [
+          "src-wd-Q42094",
+          "src-kowiki-mokpo"
+        ],
+        "coordinateClaimIds": [],
+        "coordinateNote": "좌표는 이번 조사에서 새로 내려받은 값이 아니라 기존 좌표 등록부(existing-coordinates.json)의 rc-mokpo-city 값을 그대로 옮긴 것이다(원 근거 위키데이터 Q42094, 목포시 대표점). 현재 목포시 행정구역을 대표하는 점이며 부두·세관 자리 같은 항만 시설 지점이 아니고 1897년 항계(港界)를 잰 좌표도 아니다.",
+        "displayCoordinates": [
+          126.38938869477863,
+          34.79841160616607
+        ],
+        "displayBasis": "지역 기준 추정 배치. 고정된 옛 해안선과 원자료 지점의 차이 때문에 가까운 육지 쪽 표시점을 사용합니다. 원자료 좌표는 따로 보존하며 실제 현장 지점의 수정이 아닙니다.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "개항한 항구 한 곳을 점으로 표시한다. 입항 선박이나 부두 건물 모습은 1897년 근거가 없어 넣지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-128"
+    },
+    {
+      "id": "scene-mod128-sinchuk-gyoan-1901",
+      "eventId": "event-mod128-sinchuk-gyoan-1901",
+      "title": "신축교안 — 대정 민회와 제주성 포위 (1901)",
+      "startYear": 1901,
+      "endYear": 1901,
+      "kind": "siege",
+      "summary": "1901년 5월 대정에서 민회를 연 도민들이 제주성으로 진군하다 천주교인들과 충돌했고, 5월 16일 이재수 등의 지휘 아래 수천 명이 제주성을 포위했다.",
+      "dateClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-sinchuk-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-sinchuk-march",
+        "claim-scenes-128-modern_localities-mod128-sinchuk-siege"
+      ],
+      "place": {
+        "label": "제주성 (1901년 포위 대상)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.53727886400003,
+        "lat": 33.41983001950007,
+        "anchorPlaceId": "hgis-admin-121085",
+        "claimIds": [
+          "claim-scenes-128-modern_localities-mod128-sinchuk-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis",
+          "src-hgis-admin-1910-1945"
+        ],
+        "coordinateClaimIds": [],
+        "coordinateNote": "전달받은 표시용 앵커 hgis-admin-121085('제주') 값을 그대로 썼다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 제주군 범위 중심점이며 1901년 제주성(제주읍성)의 성벽·성문을 잰 좌표가 아니다. 민회가 열린 대정은 이 점과 다른 곳이어서 별도 좌표가 필요하다."
+      },
+      "participants": [
+        {
+          "entityId": "person-mod128-yi-jaesu",
+          "role": "제주성 포위를 지휘 (출처 표기: 이재수 등의 지휘 아래)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-128-modern_localities-mod128-sinchuk-yijaesu",
+            "claim-scenes-128-modern_localities-mod128-sinchuk-siege"
+          ]
+        },
+        {
+          "entityId": "group-mod128-jeju-domin-1901",
+          "role": "제주성을 포위한 도민 수천 명",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-128-modern_localities-mod128-sinchuk-domin"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": true,
+          "claimIds": [
+            "claim-scenes-128-modern_localities-mod128-sinchuk-siege"
+          ]
+        }
+      },
+      "visualActions": "성 하나를 사람 무리가 둘러싸는 포위 장면. 불과 배는 인용 근거가 없어 끈다. 성 함락 뒤의 사상자 수도 표시하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-128"
+    },
+    {
+      "id": "scene-mod128-sorokdo-jahyeuiwon-1916",
+      "eventId": "event-mod128-sorokdo-jahyeuiwon-1916",
+      "title": "소록도자혜의원 개원 (1916)",
+      "startYear": 1916,
+      "endYear": 1916,
+      "kind": "construction",
+      "summary": "1916년 소록도에 ‘소록도자혜의원’이라는 이름의 병원이 문을 열었고, 설립 당시부터 각지에서 온 한센병 환자 100여 명을 정원으로 강제수용하기 시작했다.",
+      "dateClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-sorokdo-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-sorokdo-action",
+        "claim-scenes-128-modern_localities-mod128-sorokdo-force"
+      ],
+      "place": {
+        "label": "소록도 (전라남도 고흥군 도양읍 소록리)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.11666666666667,
+        "lat": 34.5,
+        "claimIds": [
+          "claim-scenes-128-modern_localities-mod128-sorokdo-place"
+        ],
+        "coordinateSourceIds": [
+          "src-wd-Q489336-sorokdo"
+        ],
+        "coordinateClaimIds": [],
+        "coordinateNote": "좌표는 이번에 내려받은 위키데이터 Q489336(소록도) 문서(raw/wikidata-Q489336-sorokdo.html)의 좌표 속성 표시값 \"34°30'N, 127°7'E\"를 십진도로 옮긴 값이다(34.5, 127.116666…). 화면에 분(分) 단위까지만 표시되어 있어 섬 안의 병원 건물 위치가 아니라 섬 전체를 가리키는 대표점이다. 역사 서술과 장소 연결은 한국민족문화대백과사전 「국립소록도병원」 인용문이 담당한다.",
+        "displayCoordinates": [
+          127.11422448492678,
+          34.49028950997342
+        ],
+        "displayScale": 0.1635975105659234,
+        "displayBasis": "고정된 옛 해안선 안의 가까운 표시점에 설명용 장면을 배치합니다. 해안선 단순화와 이후 매립으로 현재 지형과 차이가 있으며, 원자료 좌표는 별도로 보존합니다. 실제 현장 지점을 바꾸는 근거가 아닙니다.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "소록도에 병원이 문을 여는 장면. 출처의100여 명은 수용 정원이며 실제 환자 인원이나 건물 수·배치를 뜻하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-128"
+    },
+    {
+      "id": "scene-mod128-amtaedo-sojak-1923",
+      "eventId": "event-mod128-amtaedo-sojak-1923",
+      "title": "암태도 소작쟁의 (1923~1924)",
+      "startYear": 1923,
+      "endYear": 1924,
+      "kind": "assembly",
+      "summary": "1923년 8월부터 1924년 8월까지 암태도 소작인들이 벌인 소작농민항쟁이다. 서태석의 주도로 암태소작인회를 조직했고, 1924년 3월 27일 면민대회가 열렸으며 뒤에는 암태청년회 회장 박복영이 앞장섰다.",
+      "dateClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-amtae-start",
+        "claim-scenes-128-modern_localities-mod128-amtae-end"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-amtae-action",
+        "claim-scenes-128-modern_localities-mod128-amtae-meeting"
+      ],
+      "place": {
+        "label": "암태도",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.112139,
+        "lat": 34.827722,
+        "claimIds": [
+          "claim-scenes-128-modern_localities-mod128-amtae-place"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-amtaedo"
+        ],
+        "coordinateClaimIds": [],
+        "coordinateNote": "좌표는 이번에 내려받은 한국어 위키백과 '암태도' 문서(raw/kowiki-amtaedo.html) 머리에 표시된 '북위 34.827722° 동경 126.112139°'를 그대로 옮긴 섬 대표점이다. 쟁의가 벌어진 마을·면민대회 자리를 잰 값이 아니다. 백과사전 본문이 말하는 목포경찰서·법원 앞 시위는 목포에서 있었고 이 점과 다른 곳이다.",
+        "displayCoordinates": [
+          126.112139,
+          34.827722
+        ],
+        "displayScale": 0.1839027773256567,
+        "displayBasis": "원자료의 지역점에 설명용 장면을 배치하며 모형의 간격·수량은 실제 배치가 아닙니다.",
+        "displaySource": "data/maps/hgis-provinces-1910-1945.geojson.gz"
+      },
+      "participants": [
+        {
+          "entityId": "person-mod128-seo-taeseok",
+          "role": "암태소작인회를 조직해 소작료 인하를 요구 (출처 표기: 주도)",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-128-modern_localities-mod128-amtae-seo"
+          ]
+        },
+        {
+          "entityId": "person-mod128-bak-bokyeong",
+          "role": "암태청년회 회장으로 앞장서서 쟁의를 주도",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-128-modern_localities-mod128-amtae-park"
+          ]
+        },
+        {
+          "entityId": "group-mod128-amtae-sojakinhoe",
+          "role": "쟁의를 이끈 소작인 조직",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-128-modern_localities-mod128-amtae-org"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "섬에서 이어진 1년간의 항쟁. 면민대회처럼 사람이 모이는 장면으로 표시하고, 인용하지 못한 인원 수·충돌 장면은 넣지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-128"
+    },
+    {
+      "id": "scene-mod128-eulmildae-nongseong-1931",
+      "eventId": "event-mod128-eulmildae-nongseong-1931",
+      "title": "평원고무공장 파업과 을밀대 지붕 농성 — 평양 (1931)",
+      "startYear": 1931,
+      "endYear": 1931,
+      "kind": "assembly",
+      "summary": "평양 평원고무공장 여공 강주룡이 1931년 5월 파업을 주도하던 중 일본 경찰의 간섭으로 공장에서 쫓겨나자 을밀대 지붕으로 올라가 무산자의 단결과 노동생활의 참상을 호소했다.",
+      "dateClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-gang-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-gang-action"
+      ],
+      "place": {
+        "label": "을밀대 (평양)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 125.68462533200005,
+        "lat": 39.085723067500055,
+        "anchorPlaceId": "hgis-admin-93236",
+        "claimIds": [
+          "claim-scenes-128-modern_localities-mod128-gang-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis",
+          "src-hgis-admin-1910-1945"
+        ],
+        "coordinateClaimIds": [
+          "claim-scenes-128-modern_localities-mod128-gang-factory"
+        ],
+        "coordinateNote": "전달받은 표시용 앵커 hgis-admin-93236('평양') 값을 그대로 썼다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 평양 범위 중심점이며, 모란봉 을밀대 건물이나 평원고무공장 자리를 잰 좌표가 아니다. 을밀대 자체의 실측 좌표는 이번 조사에서 얻지 못했다."
+      },
+      "participants": [
+        {
+          "entityId": "person-mod128-gang-juryong",
+          "role": "파업을 주도하다 을밀대 지붕에 올라 호소",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-128-modern_localities-mod128-gang-person",
+            "claim-scenes-128-modern_localities-mod128-gang-action"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "누각 지붕 위에 한 사람이 올라가 있는 장면. 인용문에 없는 농성 시간·군중 규모는 표시하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-128"
+    },
+    {
+      "id": "scene-mod128-joseoneohakhoe-1942",
+      "eventId": "event-mod128-joseoneohakhoe-1942",
+      "title": "조선어학회 사건 — 홍원 압송과 홍원경찰서 취조 (1942)",
+      "startYear": 1942,
+      "endYear": 1942,
+      "kind": "court",
+      "summary": "1942년 10월부터 일제가 조선어학회 회원과 관련 인물을 검거했다. 10월 1일 서울에서 구속된 최현배 등 11명은 다음날 함경남도 홍원으로 압송되었고, 사건을 취조한 곳은 홍원경찰서였다.",
+      "dateClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-joseo-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-joseo-police"
+      ],
+      "place": {
+        "label": "함경남도 홍원 (홍원경찰서)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.90037129150005,
+        "lat": 40.18159423250006,
+        "anchorPlaceId": "hgis-admin-69680",
+        "claimIds": [
+          "claim-scenes-128-modern_localities-mod128-joseo-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis",
+          "src-hgis-admin-1910-1945"
+        ],
+        "coordinateClaimIds": [],
+        "coordinateNote": "전달받은 표시용 앵커 hgis-admin-69680('홍원') 값을 그대로 썼다. 국사편찬위원회 1910~1945 행정구역 경계 자료의 홍원군 범위 중심점이며 홍원경찰서 건물 자리가 아니다. 검거가 시작된 서울과 재판이 열린 함흥은 이 점과 다른 곳이라 여기에 함께 찍지 않았다."
+      },
+      "participants": [
+        {
+          "entityId": "person-mod128-choe-hyeonbae",
+          "role": "서울에서 구속되어 이튿날 홍원으로 압송된 11명 중 한 사람",
+          "side": "civilian",
+          "presence": "on-site",
+          "claimIds": [
+            "claim-scenes-128-modern_localities-mod128-joseo-choe"
+          ]
+        },
+        {
+          "entityId": "group-mod128-joseoneohakhoe",
+          "role": "검거·기소 대상이 된 단체",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-scenes-128-modern_localities-mod128-joseo-group"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "경찰서로 사람들이 끌려와 조사받는 장면. 인원은 인용문에 있는 11명까지만 쓰고 고문 묘사는 넣지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-128"
+    },
+    {
+      "id": "scene-mod128-ulsan-gigongsik-1962",
+      "eventId": "event-mod128-ulsan-gigongsik-1962",
+      "title": "울산공업센터 기공식 — 장생포동 납도 (1962)",
+      "startYear": 1962,
+      "endYear": 1962,
+      "kind": "construction",
+      "summary": "1962년 울산지구가 특정 공업지구로 결정되면서 장생포동 납도에서 국민의 관심 속에 울산공업센터 기공식이 거행되었다.",
+      "dateClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-ulsan-year"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-ulsan-action"
+      ],
+      "place": {
+        "label": "장생포동 납도 (울산)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.31666666667,
+        "lat": 35.55,
+        "claimIds": [
+          "claim-scenes-128-modern_localities-mod128-ulsan-place"
+        ],
+        "coordinateSourceIds": [
+          "src-wd-Q41278",
+          "src-kowiki-ulsan"
+        ],
+        "coordinateClaimIds": [
+          "claim-scenes-128-modern_localities-mod128-ulsan-area"
+        ],
+        "coordinateNote": "좌표는 기존 좌표 등록부의 rc-ulsan-city 값을 그대로 옮긴 울산광역시 대표점이다(원 근거 위키데이터 Q41278). 기공식이 열린 장생포동 납도는 울산만 서쪽 해안이어서 이 대표점과 수 킬로미터 떨어져 있다. 납도 자체를 잰 좌표는 이번 조사에서 얻지 못했다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "해안 공업지구에서 열리는 기공식. 참석 인원과 식장 배치는 인용 근거가 없어 표시하지 않는다.",
+      "researchJob": "modern_localities",
+      "researchCollection": "scenes-128"
+    },
+    {
+      "id": "scene-mod128-gori-npp1-1971-1978",
+      "eventId": "event-mod128-gori-npp1-1971-1978",
+      "title": "고리원자력발전소 1호기 착공과 준공 — 기장 고리 (1971~1978)",
+      "startYear": 1971,
+      "endYear": 1978,
+      "kind": "construction",
+      "summary": "1971년 11월 15일 고리에서 원자로건물을 착공했고, 국내 처음으로 원자력에 의한 전기를 공급한 뒤 1978년 4월 29일 설비용량 58만 7000㎾의 원자력발전소로 준공했다.",
+      "dateClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-gori-start",
+        "claim-scenes-128-modern_localities-mod128-gori-end"
+      ],
+      "actionClaimIds": [
+        "claim-scenes-128-modern_localities-mod128-gori-action-start",
+        "claim-scenes-128-modern_localities-mod128-gori-action-done",
+        "claim-scenes-128-modern_localities-mod128-gori-power"
+      ],
+      "place": {
+        "label": "고리",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.20659018900005,
+        "lat": 35.27612128700005,
+        "anchorPlaceId": "hgis-admin-144992",
+        "claimIds": [
+          "claim-scenes-128-modern_localities-mod128-gori-place"
+        ],
+        "coordinateSourceIds": [
+          "src-existing-anchors-hgis",
+          "src-hgis-admin-1910-1945"
+        ],
+        "coordinateClaimIds": [],
+        "coordinateNote": "전달받은 표시용 앵커 hgis-admin-144992('기장') 값을 그대로 썼다. 국사편찬위원회 1910~1945 행정구역 경계 자료의 기장군 범위 중심점이며 발전소 부지를 잰 좌표가 아니다. 고리는 기장군 북동쪽 해안이라 이 중심점과 십여 킬로미터 떨어져 있고, 1971년 당시 이 지역의 행정구역 이름도 인용 출처에 없다. 위치 참고 표기: 고리 (부산광역시 기장군 장안읍)"
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "visualActions": "해안 발전소 부지에서 이어진 공사와 준공. 원자로 수·건물 형태·공사 인원은 인용 근거가 없어 표시하지 않는다.",
+      "researchJob": "modern_localities",
       "researchCollection": "scenes-128"
     }
   ],
@@ -23553,66 +23553,6 @@
       "detail": "발췌를 이어 만든 time.verbatim은 원문에 실제 있는 날짜·서술로 정리."
     },
     {
-      "job": "modern_localities",
-      "collection": "scenes-128",
-      "detail": {
-        "topic": "제주해녀항일운동 (1932, 구좌면 세화리)",
-        "want": "1932년 1월 세화리 시위의 날짜·장소·주도자를 밝힌 공공기관 원문",
-        "blocked": "제주항일기념관 페이지(https://www.jeju.go.kr/hangil/contents/haenyeo.htm)는 jeju.go.kr robots.txt가 '/'를 막고 /hangil/ 을 허용 목록에 넣지 않아 받지 않았다. 디지털제주문화대전(jeju.grandculture.net)은 robots.txt가 AI 크롤러(ClaudeBot·anthropic-ai 등)에 Disallow: / 를 지정해 받지 않았다. 한국민족문화대백과사전에서는 해당 항목을 찾지 못했다(robots가 /Article/Search 를 막아 사전 내부 검색을 쓰지 못함).",
-        "result": "장면 없음"
-      }
-    },
-    {
-      "job": "modern_localities",
-      "collection": "scenes-128",
-      "detail": {
-        "topic": "거문도사건 (1885~1887)",
-        "want": "거문도 점거의 시작·종료 시점 원문과 거문도의 실측 좌표",
-        "blocked": "거문도는 기존 좌표 등록부와 앵커 목록에 없다. 여수·돌산 앵커는 약 50㎞ 떨어져 있어 섬 대신 쓸 수 없다고 판단해 장면을 만들지 않았다.",
-        "result": "장면 없음"
-      }
-    },
-    {
-      "job": "modern_localities",
-      "collection": "scenes-128",
-      "detail": {
-        "topic": "을밀대·홍원경찰서·장생포 납도·소록도 병원 건물의 지점 좌표",
-        "want": "사건이 실제로 벌어진 건물·지점의 실측 좌표(국가유산청 등 공공 좌표 기록)",
-        "blocked": "이번 조사에서 해당 지점을 잰 공개 좌표 기록을 확인하지 못했다.",
-        "result": "모두 precision='area' 로 두고 근거를 coordinateNote 에 적었다. 지점 좌표가 확보되면 교체해야 한다."
-      }
-    },
-    {
-      "job": "modern_localities",
-      "collection": "scenes-128",
-      "detail": {
-        "topic": "암태도 소작쟁의의 목포 국면 (1924년 6월·7월 목포경찰서·법원 앞 시위)",
-        "want": "목포에서 벌어진 시위를 별도 장면으로 만들 좌표·인용 여백",
-        "blocked": "한 웹페이지당 인용 25낱말 상한을 이미 다 썼다.",
-        "result": "암태도 장면 요약에만 남기고 목포 장면은 만들지 않았다."
-      }
-    },
-    {
-      "job": "modern_localities",
-      "collection": "scenes-128",
-      "detail": {
-        "topic": "고리원자력발전소 1971년 당시 행정구역명",
-        "want": "착공 시점의 행정구역 표기(현재 표기는 부산광역시 기장군 장안읍)",
-        "blocked": "인용한 한국민족문화대백과사전 「고리원자력발전소」에는 현재 주소만 있다.",
-        "result": "장소 이름을 '고리'로 두고 현재 표기임을 note 에 적었다."
-      }
-    },
-    {
-      "job": "modern_localities",
-      "collection": "scenes-128",
-      "detail": "조선어학회 재판과1942년 홍원 취조를 분리. 소록도 수용 정원을 실제 수용 인원으로 바꾸지 않음."
-    },
-    {
-      "job": "modern_localities",
-      "collection": "scenes-128",
-      "detail": "발췌를 이어 만든 time.verbatim은 원문에 실제 있는 날짜·서술로 정리."
-    },
-    {
       "job": "late_goryeo",
       "collection": "scenes-128",
       "detail": {
@@ -23822,6 +23762,71 @@
     },
     {
       "job": "later_joseon",
+      "collection": "scenes-128",
+      "detail": "발췌를 이어 만든 time.verbatim은 원문에 실제 있는 날짜·서술로 정리."
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-128",
+      "detail": {
+        "topic": "제주해녀항일운동 (1932, 구좌면 세화리)",
+        "want": "1932년 1월 세화리 시위의 날짜·장소·주도자를 밝힌 공공기관 원문",
+        "blocked": "제주항일기념관 페이지(https://www.jeju.go.kr/hangil/contents/haenyeo.htm)는 jeju.go.kr robots.txt가 '/'를 막고 /hangil/ 을 허용 목록에 넣지 않아 받지 않았다. 디지털제주문화대전(jeju.grandculture.net)은 robots.txt가 AI 크롤러(ClaudeBot·anthropic-ai 등)에 Disallow: / 를 지정해 받지 않았다. 한국민족문화대백과사전에서는 해당 항목을 찾지 못했다(robots가 /Article/Search 를 막아 사전 내부 검색을 쓰지 못함).",
+        "result": "장면 없음"
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-128",
+      "detail": {
+        "topic": "거문도사건 (1885~1887)",
+        "want": "거문도 점거의 시작·종료 시점 원문과 거문도의 실측 좌표",
+        "blocked": "거문도는 기존 좌표 등록부와 앵커 목록에 없다. 여수·돌산 앵커는 약 50㎞ 떨어져 있어 섬 대신 쓸 수 없다고 판단해 장면을 만들지 않았다.",
+        "result": "장면 없음"
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-128",
+      "detail": {
+        "topic": "을밀대·홍원경찰서·장생포 납도·소록도 병원 건물의 지점 좌표",
+        "want": "사건이 실제로 벌어진 건물·지점의 실측 좌표(국가유산청 등 공공 좌표 기록)",
+        "blocked": "이번 조사에서 해당 지점을 잰 공개 좌표 기록을 확인하지 못했다.",
+        "result": "모두 precision='area' 로 두고 근거를 coordinateNote 에 적었다. 지점 좌표가 확보되면 교체해야 한다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-128",
+      "detail": {
+        "topic": "암태도 소작쟁의의 목포 국면 (1924년 6월·7월 목포경찰서·법원 앞 시위)",
+        "want": "목포에서 벌어진 시위를 별도 장면으로 만들 좌표·인용 여백",
+        "blocked": "한 웹페이지당 인용 25낱말 상한을 이미 다 썼다.",
+        "result": "암태도 장면 요약에만 남기고 목포 장면은 만들지 않았다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-128",
+      "detail": {
+        "topic": "고리원자력발전소 1971년 당시 행정구역명",
+        "want": "착공 시점의 행정구역 표기(현재 표기는 부산광역시 기장군 장안읍)",
+        "blocked": "인용한 한국민족문화대백과사전 「고리원자력발전소」에는 현재 주소만 있다.",
+        "result": "장소 이름을 '고리'로 두고 현재 표기임을 note 에 적었다."
+      }
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-128",
+      "detail": "조선어학회 재판과1942년 홍원 취조를 분리. 소록도 수용 정원을 실제 수용 인원으로 바꾸지 않음."
+    },
+    {
+      "job": "modern_localities",
+      "collection": "scenes-128",
+      "detail": "홍원 취조 서술은 행동 근거에만 연결해 장소 좌표의 참고 설명으로 분류·제거되지 않게 함."
+    },
+    {
+      "job": "modern_localities",
       "collection": "scenes-128",
       "detail": "발췌를 이어 만든 time.verbatim은 원문에 실제 있는 날짜·서술로 정리."
     }

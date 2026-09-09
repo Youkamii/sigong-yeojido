@@ -21,6 +21,9 @@ for(const job of ['ancient_settlements','middle_kingdoms','late_goryeo','early_j
 const data={entities:[...entities.values()],claims,scenePackets:packets};
 const plan=year=>planChronicleAssets(contextAt(data,year),data,[],anchors.places,packets,registry);
 assert.equal(claims.length,289);
+for(const scene of packets.filter(s=>s.researchCollection==='scenes-128')){
+  assert.ok(plan(scene.startYear).events.some(e=>e.id===scene.id),'Every imported scene retains date and action evidence: '+scene.id);
+}
 for(const [year,id] of [[470,'event-syj128-naengsuri-503'],[550,'event-syj128-daegu-ojak']]){
   assert.ok(!contextAt(data,year).events.some(e=>e.id===id&&e.current),'Alternative candidate dates are not a continuous event');
   assert.ok(!plan(year).events.some(e=>e.entityId===id));
