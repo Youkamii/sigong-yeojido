@@ -27,28 +27,30 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 
 /* ═══ 진입 — 대동여지도 ═══ */
 #gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;
-  background:var(--ink);transition:opacity .9s ease, visibility .9s}
+  background:#eee4cc;color:#302d24;transition:opacity .9s ease, visibility .9s}
 #gate.out{opacity:0;visibility:hidden}
 #gate .map{position:absolute;inset:0;background:url("assets/daedong-2400.jpg") center/cover no-repeat;
-  opacity:.5;filter:sepia(.25) contrast(1.08);
+  opacity:.86;filter:sepia(.12) contrast(.94);
   animation:drift 46s ease-in-out infinite alternate}
 @keyframes drift{from{transform:scale(1.06) translateY(-1.5%)}to{transform:scale(1.16) translateY(1.5%)}}
 #gate .veil{position:absolute;inset:0;
-  background:radial-gradient(65% 55% at 50% 45%, rgba(18,16,12,.45), rgba(18,16,12,.93) 78%)}
+  background:radial-gradient(ellipse at 50% 43%,rgba(250,245,230,.96) 0%,rgba(248,240,219,.87) 35%,rgba(239,226,198,.28) 78%),
+    linear-gradient(0deg,rgba(246,237,216,.92),transparent 24%)}
 #gate .inner{position:relative;text-align:center;padding:0 28px;max-width:760px}
-#gate .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.34em;color:var(--paper-3);
+#gate .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.34em;color:#695d48;
   text-transform:uppercase}
 #gate h1{font-family:var(--serif);font-weight:800;font-size:clamp(52px,11vw,116px);
-  line-height:.95;letter-spacing:.02em;margin:16px 0 0;text-shadow:0 4px 40px rgba(0,0,0,.7)}
-#gate .rom{font-family:var(--mono);font-size:12px;letter-spacing:.42em;color:var(--paper-2);margin-top:18px}
+  line-height:.95;letter-spacing:.02em;margin:16px 0 0;text-shadow:0 2px 16px rgba(255,252,242,.55)}
+#gate .rom{font-family:var(--mono);font-size:12px;letter-spacing:.42em;color:#71634c;margin-top:18px}
 #gate p{font-family:var(--serif);font-size:clamp(15px,2.1vw,19px);line-height:1.75;
-  color:var(--paper-2);margin-top:26px;max-width:52ch;margin-inline:auto}
-#gate .enter{margin-top:38px;border:1px solid var(--line-2);padding:13px 34px;border-radius:2px;
-  font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--paper);
-  background:rgba(232,227,212,.04);transition:background .25s,border-color .25s}
-#gate .enter:hover{background:rgba(127,187,168,.14);border-color:var(--celadon-dim)}
+  color:#65543e;margin-top:26px;max-width:52ch;margin-inline:auto}
+#gate .enter{margin-top:38px;border:1px solid #285247;padding:13px 34px;border-radius:2px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:#fff9e9;
+  background:#285247;transition:background .25s,border-color .25s}
+#gate .enter:hover{background:#1d4138;border-color:#1d4138}
+#gate .enter:focus-visible{outline-color:#285247;outline-offset:4px}
 #gate .credit{position:absolute;bottom:20px;left:0;right:0;text-align:center;
-  font-family:var(--mono);font-size:10.5px;color:#5B5648;letter-spacing:.05em;padding:0 20px}
+  font-family:var(--mono);font-size:10.5px;color:#695d48;letter-spacing:.05em;padding:0 20px}
 
 /* ═══ 본 화면 ═══ */
 #app{position:fixed;inset:0;display:grid;grid-template-rows:auto 1fr;opacity:0;transition:opacity .8s .3s}
