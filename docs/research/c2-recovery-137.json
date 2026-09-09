@@ -1,0 +1,71 @@
+{
+  "at": "2026-09-09T13:54:02+0900",
+  "boot": "시스템 부팅 2026-08-20 21:41",
+  "uptime": "1699941.51 6630872.62",
+  "bootId": "3d378cf2-fcd0-4b1b-9edd-6ad1cc6565a8",
+  "head": "d362e293efe2e0a4906a37ac5693cd43421652fb",
+  "oom": " 9월 09 13:38:17 liac2-MacBookPro kernel: Out of memory: Killed process 304567 (python3.14) total-vm:5680320kB, anon-rss:3781296kB, file-rss:296kB, shmem-rss:0kB, UID:1000 pgtables:8772kB oom_score_adj:0\n 9월 09 13:38:17 liac2-MacBookPro kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/session-2634.scope,task=python3.14,pid=304567,uid=1000\n 9월 09 13:38:16 liac2-MacBookPro kernel: Thread-1874 (pr invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0\n",
+  "stopped": {
+    "pid": 325678,
+    "cmd": "/home/linuxbrew/.linuxbrew/opt/python@3.14/bin/python3.14 /tmp/sigong-warm-viewer-136.py --child ",
+    "rss": "VmRSS:\t 3351660 kB"
+  },
+  "viewerPid": 326490,
+  "memoryAfterStop": {
+    "MemAvailable": "6215140 kB",
+    "SwapFree": "588800 kB"
+  },
+  "viewerStatus": {
+    "State": "S (sleeping)",
+    "VmSize": "4748184 kB",
+    "VmRSS": "3460376 kB"
+  },
+  "availableKB": "MemAvailable:    2756616 kB",
+  "viewerLog": "The startup probes timed out before serving began, leaving BrokenPipe entries; final HTTP and browser checks are recorded separately.",
+  "c2TtlSha256": "5a4009c04d99fe109236cb01bfd3ef5883f18f9739af55435220778318f43bae",
+  "rdfCount": [
+    {
+      "count": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+        "value": "315183"
+      }
+    }
+  ],
+  "verifiedAt": "2026-09-09T14:03:46+0900",
+  "corpus": {
+    "total": 2603432,
+    "returned": 1,
+    "sampleHasText": true,
+    "sampleId": "chunk_ex-3-1-decl-open",
+    "samguksagi": {
+      "total": 5237,
+      "sampleId": "chunk_samguksagi_sg_000_0010",
+      "sourceId": "src-samguksagi",
+      "textLength": 75
+    }
+  },
+  "oomAfterRestart": "-- No entries --\n",
+  "publicUrl": "https://attend-bacon-eligibility-selections.trycloudflare.com/",
+  "tunnelPid": 326965,
+  "preservedProcesses": {
+    "167737": true,
+    "325679": true,
+    "222676": true
+  },
+  "lanCheck": {
+    "network": "192.168.35.0/24",
+    "testedAddresses": 254,
+    "c2Ip": "192.168.35.47",
+    "c2Ssh": true,
+    "ipChanged": false,
+    "rebooted": false,
+    "allAddressesReport": "Saved locally in TEMP/sigong-lan-check-137.json; other device inventory not published"
+  },
+  "publicBrowserChecks": {
+    "traditions": 15,
+    "historicalSites": 12,
+    "passed": 27,
+    "errors": 0
+  }
+}
