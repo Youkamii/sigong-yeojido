@@ -26,7 +26,7 @@ def main():
             field=page.locator('#historyTime [type=number]');field.fill(str(value));field.press('Enter')
             page.wait_for_function('(y)=>window.__sigong.world._year===y',arg=value)
         try:
-            page.goto(args.base.rstrip('/')+'/?q=low',wait_until='domcontentloaded',timeout=90000)
+            page.goto(args.base.rstrip('/')+'/?ui=full&q=low',wait_until='domcontentloaded',timeout=90000)
             page.locator('#enter').click()
             page.wait_for_function('window.__sigong||window.__sigongErr',timeout=90000);ready()
             check('3D opens as the primary view',page.evaluate("!!window.__sigong&&!window.__sigongErr&&document.body.classList.contains('mode3d')"))

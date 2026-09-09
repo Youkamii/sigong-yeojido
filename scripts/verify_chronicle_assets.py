@@ -58,7 +58,7 @@ def main():
               window.fetch=(url,...args)=>String(url).includes('history-asset-catalog.json')
                 ?new Promise(resolve=>{window.releaseHistoryCatalog=()=>resolve(originalFetch(url,...args));})
                 :originalFetch(url,...args);''')
-            page.goto(args.base.rstrip('/')+('/?q=low' if args.quality=='low' else '/'),wait_until='domcontentloaded',timeout=90000)
+            page.goto(args.base.rstrip('/')+('/?ui=full&q=low' if args.quality=='low' else '/'),wait_until='domcontentloaded',timeout=90000)
             page.locator('#enter').click()
             page.wait_for_function('!!window.__sigong&&typeof window.releaseHistoryCatalog==="function"',timeout=90000)
             field=page.locator('#historyTime [type=number]');field.fill('1919');field.press('Enter')

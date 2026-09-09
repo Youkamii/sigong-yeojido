@@ -1,21 +1,23 @@
-/* 단순 모드 — 첫 화면 걷어내기 (#147)
+/* 단순 모드 — 첫 화면 걷어내기 (#147 #148 #149)
    body.simple 일 때만 적용한다. ?ui=full 로 열면 이 파일은 아무것도 하지 않고 기존 화면이 그대로 나온다.
    기능은 지우지 않고 숨긴다: 인라인 스크립트가 getElementById 로 69개 조작을 참조하므로 DOM 을 지우면 깨진다. */
 
-/* 상단 바·우측 연력 패널·좌상단 연도 카드·우상단 이동 셀렉트·힌트·3D 보조 버튼을 숨긴다 */
+/* ── #147 골격: 상단 바·우측 연력 패널·힌트·3D 보조 버튼을 숨기고 캔버스가 전체를 차지한다 ── */
 body.simple #app{grid-template-rows:1fr}
 body.simple .bar{display:none}
-body.simple .stage{grid-template-columns:minmax(0,1fr)}
-body.simple #chronicle{display:none}
-body.simple .scene-context,
-body.simple .geography-navigation,
+body.simple .stage{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}   /* 행도 덮는다 — 720px 이하 미디어쿼리가 2행을 남긴다 */
+body.simple #chronicle,
 body.simple #hint,
+body.simple #resetMap,
 body.simple #outside3d,
-body.simple #resetMap{display:none}
+body.simple.mode3d #outside3d:not([hidden]){display:none}     /* 기존 .mode3d #outside3d:not([hidden]) 보다 특이성이 높아야 한다 */
+/* 서랍으로 옮기기 전 원래 자리에서만 숨긴다(모듈 실행 전 깜빡임 방지). 서랍 안에서는 되돌릴 규칙이 필요 없다 */
+body.simple .canvasWrap>.scene-context,
+body.simple .canvasWrap>.geography-navigation,
+body.simple #historyTime>.time-heading{display:none}
 
-/* 하단 연도 손잡이 (#148) — 바 8px · 손잡이 56px · 큰 연도 하나. 연도 입력칸·이동·이전/재생/다음·주변 사건·사건 띠는 숨긴다 */
+/* ── #148 하단 연도 손잡이: 바 8px · 손잡이 56px · 큰 연도 하나 ── */
 body.simple .timebar{padding:14px 24px 12px;touch-action:pan-x}
-body.simple .time-heading,
 body.simple .event-strip,
 body.simple .time-slider>span{display:none}
 body.simple .time-slider{margin:0;gap:0}
@@ -29,38 +31,39 @@ body.simple .time-slider input[type=range]::-moz-range-thumb{width:56px;height:5
 body.simple .simple-year-row{display:flex;align-items:baseline;justify-content:space-between;margin-top:2px}
 body.simple .simple-year-end{font:12px var(--mono);color:var(--paper-3)}
 body.simple .simple-year{font:700 36px/1 var(--serif);color:var(--paper);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-
 /* 손가락 충돌 방지 — 손잡이를 끌다 위로 새도 지도가 돌지 않게, 캔버스 제스처는 엔진(OrbitControls)만 받는다 */
 body.simple #three,
 body.simple #map{touch-action:none}
 
-/* 우상단 아이콘 2개와 메뉴 서랍 (#149) — 기존 조작은 전부 서랍 안으로 옮긴다, 삭제 0 */
-body.simple .simple-top{position:absolute;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;gap:8px;padding:12px 16px;pointer-events:none}
+/* ── #149 우상단 아이콘 2개와 메뉴 서랍 ── */
+body.simple .simple-top{position:absolute;top:0;left:0;right:0;z-index:26;display:flex;align-items:center;gap:8px;padding:12px 16px;pointer-events:none}  /* 근거 패널(z 25) 위 */
 body.simple .simple-top>*{pointer-events:auto}
 body.simple .simple-brand{font:700 16px var(--serif);color:var(--paper);padding:6px 10px;border-radius:8px;background:#f1e9d8e6;border:1px solid #bba67a60}
 body.simple .simple-top .spacer{flex:1;pointer-events:none}
 body.simple .simple-icon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-width:44px;min-height:44px;
   padding:3px 8px;border-radius:8px;background:#f1e9d8e6;border:1px solid #bba67a60;color:var(--paper);font:11px var(--sans);box-shadow:0 1px 4px #0002}
 body.simple .simple-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-body.simple .simple-icon.on{background:var(--celadon);color:#fff8e8;border-color:var(--celadon)}
+body.simple .simple-icon.on,
+body.simple.modechat #simpleAsk{background:var(--celadon);color:#fff8e8;border-color:var(--celadon)}
 body.simple .simple-scrim{position:fixed;inset:0;z-index:29;background:#0003}
 body.simple .simple-menu{position:fixed;top:0;right:0;bottom:0;z-index:30;width:min(380px,100%);overflow:auto;background:var(--ink-2);
-  border-left:1px solid var(--line);box-shadow:-10px 0 30px #0004;padding:12px 18px 32px;color:var(--paper)}
-body.simple .simple-menu[hidden],body.simple .simple-scrim[hidden]{display:none}
+  border-left:1px solid var(--line);box-shadow:-10px 0 30px #0004;padding:12px 18px 32px;color:var(--paper);outline:none}
 body.simple .simple-menu-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
 body.simple .simple-menu-head strong{font:700 18px var(--serif)}
 body.simple .simple-menu-head button{min-width:44px;min-height:44px;font-size:24px}
 body.simple .simple-menu section{padding:10px 0 14px;border-top:1px solid var(--line-2)}
 body.simple .simple-menu h3{font:500 12px var(--sans);color:var(--paper-3);margin:0 0 8px;letter-spacing:.08em}
-/* 옮겨 온 기존 조작이 서랍 안에서 보이도록 — 원래 자리에서 숨기던 규칙을 여기서만 되돌린다 */
-body.simple .simple-menu .seg{display:flex;flex-wrap:wrap;margin-bottom:8px}
-body.simple .simple-menu .seg button{padding:8px 14px}
+/* 옮겨 온 기존 조작을 서랍 폭(380px)에 맞춘다 — 뷰포트 기준 미디어쿼리(chronicle.css)가 새어 들어오는 것을 막는다 */
 body.simple .simple-menu .panel-btn,body.simple .simple-menu .origin-filter{display:inline-flex;margin:0 8px 8px 0;vertical-align:middle}
-body.simple .simple-menu #sourcesBtn{display:none}          /* 사료 목록이 이미 서랍 안에 있다 */
-body.simple .simple-menu .time-heading{display:flex}
+body.simple .simple-menu .time-heading{flex-wrap:wrap}
+body.simple .simple-menu .time-span{display:block}
 body.simple .simple-menu .rail{display:block;position:static;width:auto;max-width:none;border:0;padding:0;box-shadow:none;overflow:visible;background:none}
-body.simple .simple-menu .scene-context,body.simple .simple-menu .geography-navigation{display:block;position:static;max-width:none;padding:0;background:none;border:0;box-shadow:none;pointer-events:auto}
-body.simple .simple-menu .scene-context h2,body.simple .simple-menu .scene-context p{display:none}   /* 연도·개수는 하단 손잡이가 보여준다 */
+body.simple .simple-menu .scene-context,body.simple .simple-menu .geography-navigation{position:static;max-width:none;padding:0;background:none;border:0;box-shadow:none;pointer-events:auto}
+body.simple .simple-menu .scene-context>h2,body.simple .simple-menu .scene-context>p{display:none}   /* 연도·개수는 하단 손잡이가 보여준다 */
 body.simple .simple-menu .geography-navigation{margin-top:8px;justify-content:flex-start}
-/* 질문(챗) 화면이 우상단 아이콘·제목 아래로 들어가게 */
+
+/* 서랍 밖에 열리는 패널들이 우상단 아이콘 아래로 들어가게 */
 body.simple.modechat #chat,body.simple.modegraph #graph,body.simple.modecompare #compare{padding-top:76px}
+body.simple #geographyCard{top:76px}
+body.simple .evi{padding-top:64px}
+body.simple .simple-evi-close{position:absolute;top:10px;left:10px;min-width:44px;min-height:44px;font-size:24px;border:1px solid var(--line-2);border-radius:8px;background:var(--ink-2)}
