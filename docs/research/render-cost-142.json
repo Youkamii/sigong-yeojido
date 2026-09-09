@@ -1,0 +1,83 @@
+{
+  "issue": 142,
+  "url": "https://sigong.rabbion.info/",
+  "environment": {
+    "viewport": [
+      1440,
+      900
+    ],
+    "quality": "medium",
+    "devicePixelRatio": 1,
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 (0x00002504) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "note": "Same desktop GPU and real public data, with local changed modules for after. Two-second samples do not establish low-end-device FPS. Triangle counts measure submitted geometry, not milliseconds.",
+  "before": {
+    "quality": "medium",
+    "pixelRatio": 1,
+    "local": {
+      "fps": 155.54115359688922,
+      "p95": 12,
+      "stats": {
+        "calls": 551,
+        "triangles": 1382566,
+        "sceneCalls": 265,
+        "sceneTriangles": 691272,
+        "fps": 77.51937985391572,
+        "quality": "medium",
+        "autoMedianMs": 6.199999995529652
+      }
+    },
+    "trees": 9567,
+    "polarLimit": 2.921681167838508,
+    "overview": {
+      "fps": 129.11909865895598,
+      "p95": 12.200000000000728,
+      "stats": {
+        "calls": 1259,
+        "triangles": 2446988,
+        "sceneCalls": 1241,
+        "sceneTriangles": 2446970,
+        "fps": 172.41379319204017,
+        "quality": "medium",
+        "autoMedianMs": 6.199999995529652
+      }
+    }
+  },
+  "after": {
+    "quality": "medium",
+    "pixelRatio": 1,
+    "local": {
+      "fps": 152,
+      "p95": 12.100000000000364,
+      "stats": {
+        "calls": 489,
+        "triangles": 942066,
+        "sceneCalls": 234,
+        "sceneTriangles": 471022,
+        "fps": 109.8901098721155,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116
+      }
+    },
+    "trees": 9567,
+    "polarLimit": 1.382300767579509,
+    "overview": {
+      "fps": 134.10439204347165,
+      "p95": 12.200000000000728,
+      "stats": {
+        "calls": 1017,
+        "triangles": 2143670,
+        "sceneCalls": 999,
+        "sceneTriangles": 2143652,
+        "fps": 147.05882359386314,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116
+      }
+    },
+    "cullingChecks": {
+      "frontSide": true,
+      "doubleSide": true,
+      "staysAboveMap": true
+    }
+  }
+}

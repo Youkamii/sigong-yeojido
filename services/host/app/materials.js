@@ -306,7 +306,7 @@ export function makeMaterial(name, params = {}) {
       blending: (params.additive != null ? params.additive : preset.additive)
         ? THREE.AdditiveBlending : THREE.NormalBlending,
       depthWrite: params.depthWrite != null ? params.depthWrite : preset.depthWrite,
-      side: params.side || (preset.doubleSided ? THREE.DoubleSide : THREE.FrontSide),
+      side: params.side ?? (preset.doubleSided ? THREE.DoubleSide : THREE.FrontSide),
       toneMapped: preset.toneMapped,
       map: params.map || null,
       alphaMap: params.alphaMap || null,
@@ -328,7 +328,7 @@ export function makeMaterial(name, params = {}) {
     vertexColors: !!params.vertexColors,
     transparent: !!params.transparent,
     opacity: params.opacity != null ? params.opacity : 1,
-    side: params.side || (preset.doubleSided ? THREE.DoubleSide : THREE.FrontSide),
+    side: params.side ?? (preset.doubleSided ? THREE.DoubleSide : THREE.FrontSide),
     alphaTest: params.alphaTest != null ? params.alphaTest : (preset.alphaTest || 0),
     map: params.map || null,
     alphaMap: params.alphaMap || null,

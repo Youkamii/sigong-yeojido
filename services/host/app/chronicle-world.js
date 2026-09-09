@@ -109,7 +109,6 @@ export class ChronicleWorld extends KoreaWorld{
     return null;
   }
   buildLand(){
-    const earth=makeMaterial('MAT_STONE',{color:PALETTE.BASE_EARTH,roughness:.98});
     const cliff=makeMaterial('MAT_STONE',{color:darken(PALETTE.BASE_EARTH,.3),roughness:.98});
     const coast=makeMaterial('MAT_STONE',{color:mix(PALETTE.BASE_WATER,PALETTE.BASE_STONE,.42),roughness:.85});
     const grass=makeMaterial('MAT_STONE',{color:'#ffffff',vertexColors:true,roughness:.94,metalness:0});
@@ -134,10 +133,13 @@ export class ChronicleWorld extends KoreaWorld{
       const limit=Math.min(1.5*this.mapScale,Math.max(.03,Math.max(ring.bounds.maxX-ring.bounds.minX,ring.bounds.maxZ-ring.bounds.minZ)/8));
       const shape=new THREE.Shape(ring.map(p=>new THREE.Vector2(p[0],-p[1])));
       const island=this.islandRings.some(i=>i.ring===ring);
-      const layers=island?[[6.7,.3,cliff,1]]:[[0,3.3,cliff,1],[3.3,2.6,earth,1],[5.9,1.1,coast,1]];
+      // The sea hides the lower rock layers; the terrain supplies the upper face.
+      const layers=island?[[6.7,.3,cliff,1]]:[[5.9,1.1,coast,1]];
       for(const [bottom,height,material,scale] of layers){
           const bevel=.005;
         const geometry=new THREE.ExtrudeGeometry(shape,{depth:height,bevelEnabled:true,bevelThickness:bevel,bevelSize:bevel,bevelSegments:1});
+        const walls=geometry.groups.find(group=>group.materialIndex===1);
+        if(walls)geometry.setDrawRange(walls.start,walls.count);
         geometry.rotateX(-Math.PI/2);
         const mesh=new THREE.Mesh(geometry,material);mesh.position.y=bottom;mesh.scale.set(scale,1,scale);
         mesh.receiveShadow=true;mesh.userData.fanGround=true;this.land.add(mesh);
@@ -160,6 +162,7 @@ export class ChronicleWorld extends KoreaWorld{
     engine.contactShadowDistance=400;
     engine.frameWorld(this.navigationRim);
     engine.controls.minDistance=.1;engine.controls.maxDistance=this.navigationRim*5;
+    engine.controls.maxPolarAngle=Math.PI*.44;
     engine.camera.near=.005;
     engine.camera.far=this.navigationRim*10;engine.camera.updateProjectionMatrix();
     const el=40*Math.PI/180,az=-20*Math.PI/180,d=140;
