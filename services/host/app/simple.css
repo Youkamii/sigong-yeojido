@@ -12,3 +12,24 @@ body.simple .geography-navigation,
 body.simple #hint,
 body.simple #outside3d,
 body.simple #resetMap{display:none}
+
+/* 하단 연도 손잡이 (#148) — 바 8px · 손잡이 56px · 큰 연도 하나. 연도 입력칸·이동·이전/재생/다음·주변 사건·사건 띠는 숨긴다 */
+body.simple .timebar{padding:14px 24px 12px;touch-action:pan-x}
+body.simple .time-heading,
+body.simple .event-strip,
+body.simple .time-slider>span{display:none}
+body.simple .time-slider{margin:0;gap:0}
+body.simple .time-slider input[type=range]{height:56px;margin:0;background:transparent;cursor:grab}
+body.simple .time-slider input[type=range]:active{cursor:grabbing}
+body.simple .time-slider input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:4px;background:var(--line-2)}
+body.simple .time-slider input[type=range]::-webkit-slider-thumb{width:56px;height:56px;margin-top:-24px;border-radius:50%;
+  border:4px solid var(--ink-2);background:var(--celadon);box-shadow:0 2px 8px #0004}
+body.simple .time-slider input[type=range]::-moz-range-track{height:8px;border-radius:4px;background:var(--line-2)}
+body.simple .time-slider input[type=range]::-moz-range-thumb{width:56px;height:56px;border-radius:50%;border:4px solid var(--ink-2);background:var(--celadon)}
+body.simple .simple-year-row{display:flex;align-items:baseline;justify-content:space-between;margin-top:2px}
+body.simple .simple-year-end{font:12px var(--mono);color:var(--paper-3)}
+body.simple .simple-year{font:700 36px/1 var(--serif);color:var(--paper);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+
+/* 손가락 충돌 방지 — 손잡이를 끌다 위로 새도 지도가 돌지 않게, 캔버스 제스처는 엔진(OrbitControls)만 받는다 */
+body.simple #three,
+body.simple #map{touch-action:none}
