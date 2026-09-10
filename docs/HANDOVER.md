@@ -1,29 +1,3 @@
-## 2026-09-09 최신: 첫 화면 걷어내기 D1 — 브랜치 `feat/first-screen-simple` (#147 #148 #149)
-
-**2026-09-10 main 에 합치고 c2 에 배포했다(사용자 결정).** main `4c19f1a5`, c2 `git pull --ff-only`(화면 파일만이라 뷰어 재시작 없음), 서비스 4개 active 유지.
-공개 주소에서 body.simple 로 뜨고 1593년 진주성 장면이 실제 데이터로 확인됨. 되돌리려면 태그 `before-first-screen-simple`(= `8440aa57`)로. 작업 워크트리는 `C:/Users/gkfkd/Git/sigong-simple`, 브랜치 `feat/first-screen-simple`.
-
-배경: 사용자 피드백 2건(버튼·입력이 너무 많아 첫 화면에서 당황한다, 정보는 많은데 찾는 길이 없다). 타겟을 **중고등학생·패드 터치**로 좁혔다.
-설계안은 [first-screen-plan.md](first-screen-plan.md) — 디자이너 초안을 적대적·조언적 페르소나 2개가 흔든 뒤 정리한 v1. 일주일 일정 D1~D6 중 **D1 완료**.
-
-| 기능 | 이슈 → 커밋 | 확인(로컬 :8871, 1194×834·390×844 캡처) |
-|---|---|---|
-| 단순 모드 골격 — `body.simple` 기본 켬, 패널·탭·조작을 CSS 로 숨김(삭제 0). `?ui=full` 이면 기존 화면 | #147 → `df1746f7` | 보이는 조작 32개 → 3개. full 은 32개 그대로 |
-| 하단 연도 손잡이 — 바 8px·손잡이 56px·큰 연도 하나. 기존 Chronicle range 재사용. `touch-action` 분리 | #148 → `da52d12c` | 끄는 중 "1950년", 확정 "기원전 108년", 3D 갱신 |
-| 우상단 물어보기·메뉴 아이콘, 메뉴 서랍에 기존 조작 전부 DOM 이동 | #149 → `48eb4b0f` | 서랍에서 사료 끄면 요청이 새로 나감, Esc 닫힘, 물어보기 ↔ 3D |
-| 적대 리뷰(정합성·보안·단순화) CONFIRMED 12건 수정 | → `1c17f084` | 모바일 캔버스 844px 전체, 근거 패널 위에 아이콘·닫기 버튼, 서랍 안 미디어쿼리 누수 차단 |
-
-새 파일: `services/host/app/simple.css`, `services/host/app/simple.js`. 수정: `index.html`(+6), `chronicle.js`(요소 참조 캐시 `this.el`, `syncYear`), 하네스 2개(`/?ui=full&q=low`).
-판톨로지 이식 파일은 손대지 않았다.
-
-**기존 검증 하네스 주의**: 단순 모드가 기본이라 `#historyTime [type=number]` 류 셀렉터가 기본 URL 에서 0개다. `verify_chronicle.py`·`verify_chronicle_assets.py` 는 고쳤고, `--base` 를 받는 나머지 7개는 `--base "http://127.0.0.1:8870/?ui=full"` 로 부른다.
-
-검증 데이터: 로컬 뷰어를 c2 Fuseki 에 SSH 터널(`ssh -N -L 3031:127.0.0.1:3030 lia-c2`, `SIGONG_FUSEKI_QUERY=http://127.0.0.1:3031/sigong/query`)로 붙여 315,183 트리플 그대로 확인했다. 1593년 진주성 장면(김천일·최경회·이순신·병사)이 단순·기존 두 모드에서 같은 카메라·같은 라벨로 뜬다. 1950년은 두 모드 모두 카메라가 제자리라 장면이 화면 밖 — 기존 동작이며 D3(확대 단계·표식)에서 다룬다. 3D 로딩은 20초쯤 걸리므로 캡처는 그 뒤에 찍는다.
-미검증: 패드 실기기(터치·로딩 시간·프레임). c2 의 뷰어·Fuseki·서비스는 건드리지 않았다. gstack 헤드리스 브라우저는 WebGL 부하로 가끔 재시작한다.
-범위 밖 관찰: `tests/test_place_state.mjs` 1건 실패는 main 도 동일. 서버 응답에 CSP·X-Frame-Options 없음(기존).
-
-다음(D2~D6, 설계안 §8): 게이트 → 로딩 화면 + 시대 이름 줄 + 10년 밀도 점(D2) → 확대 3단계 스냅 + HTML 표식(D3) → 표식 → 하단 카드 + 눈 아이콘(D4) → 온보딩 손짓·챗 추천 칩(D5) → 패드 실기기 확인(D6).
-
 ## 2026-09-09 최신: 고정 주소와 자동 실행 (#140)
 
 [시공여지도 고정 주소](https://sigong.rabbion.info/) · [운영 명령](deployment.md).

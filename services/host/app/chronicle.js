@@ -155,9 +155,6 @@ export class Chronicle {
     yearInput.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();goYear();}};
     controls.querySelector('[data-go-year]').onclick=goYear;
     const slider=controls.querySelector('[type=range]');
-    // 노드 참조를 캐시한다 — 단순 모드(#149)가 .time-heading 을 메뉴 서랍으로 옮겨도 참조는 그대로 산다
-    this.el={year:yearInput,range:slider,play:controls.querySelector('[data-play]'),calendar:controls.querySelector('[data-calendar]'),
-      previous:controls.querySelector('[data-previous]'),next:controls.querySelector('[data-next]')};
     slider.oninput=e=>this.previewYear(+e.target.value);
     slider.onchange=()=>this.finishScrub();
     controls.querySelector('select').onchange=e=>{this.span=+e.target.value;this.render();};
@@ -177,11 +174,6 @@ export class Chronicle {
     };
     this.render();
   }
-  /** 연도 입력칸·슬라이더·(단순 모드의) 큰 연도 표시를 한 곳에서 맞춘다 — 끄는 동안(previewYear)과 확정(render) 모두 여기로 */
-  syncYear(year){
-    this.el.year.value=year;this.el.range.value=year;
-    const big=this.controls.querySelector('.simple-year');if(big)big.textContent=yearLabel(year);
-  }
   chooseYear(year){
     clearTimeout(this.scrubTimer);this.pendingYear=null;
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
@@ -192,7 +184,7 @@ export class Chronicle {
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
     if(year===0)year=this.year<0?1:-1;
     this.stopPlay();clearTimeout(this.scrubTimer);this.pendingYear=year;
-    this.syncYear(year);
+    this.controls.querySelector('[type=number]').value=year;this.controls.querySelector('[type=range]').value=year;
     this.timeline.setYear(year);this.scrubTimer=setTimeout(()=>this.finishScrub(),120);
   }
   finishScrub(){const year=this.pendingYear;clearTimeout(this.scrubTimer);this.pendingYear=null;if(year!==this.year)this.chooseYear(year);}
@@ -201,10 +193,10 @@ export class Chronicle {
     this.callbacks.scene?.(event.sceneId);this.showEntity(event.id);
   }
   setYear(year){this.year=year;this.render();}
-  stopPlay(){clearInterval(this.timer);this.timer=null;this.el.play.textContent='▶ 재생';}
+  stopPlay(){clearInterval(this.timer);this.timer=null;this.controls.querySelector('[data-play]').textContent='▶ 재생';}
   togglePlay(){
     if(this.timer){this.stopPlay();return;}
-    this.el.play.textContent='Ⅱ 멈춤';
+    this.controls.querySelector('[data-play]').textContent='Ⅱ 멈춤';
     this.timer=setInterval(()=>{if(this.year>=2025){this.stopPlay();return;}this.chooseYear(this.year+1);},1200);
   }
   async refresh(){
@@ -261,10 +253,11 @@ export class Chronicle {
   render(){
     const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
     this.timeline.setEvents(c.allEvents);this.timeline.setYear(this.year);
-    this.syncYear(this.year);
-    this.el.calendar.textContent='연도 입력';
-    this.el.previous.disabled=c.previous==null;
-    this.el.next.disabled=c.next==null;
+    this.controls.querySelector('[type=number]').value=this.year;
+    this.controls.querySelector('[type=range]').value=this.year;
+    this.controls.querySelector('[data-calendar]').textContent='연도 입력';
+    this.controls.querySelector('[data-previous]').disabled=c.previous==null;
+    this.controls.querySelector('[data-next]').disabled=c.next==null;
     this.controls.querySelectorAll('[data-era]').forEach(b=>b.classList.toggle('on',Math.abs(+b.dataset.era-this.year)<10));
     const status=this.error||(this.loading?'이 시대의 인물과 사건을 불러오는 중…':'');
     const counts=`인물 ${c.people.length} · 주변 사건 ${c.events.length}`;
