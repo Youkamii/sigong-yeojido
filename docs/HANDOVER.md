@@ -1,7 +1,7 @@
 ## 2026-09-09 최신: 첫 화면 걷어내기 D1 — 브랜치 `feat/first-screen-simple` (#147 #148 #149)
 
-**main 에 합치지 않았다.** 워크트리 `C:/Users/gkfkd/Git/sigong-simple`, 브랜치 `feat/first-screen-simple`, 복귀 지점 태그 `before-first-screen-simple`(= main `8440aa57`).
-c2·공개 주소는 아직 이 변경을 모른다. 합칠지는 사용자 결정.
+**2026-09-10 main 에 합치고 c2 에 배포했다(사용자 결정).** main `4c19f1a5`, c2 `git pull --ff-only`(화면 파일만이라 뷰어 재시작 없음), 서비스 4개 active 유지.
+공개 주소에서 body.simple 로 뜨고 1593년 진주성 장면이 실제 데이터로 확인됨. 되돌리려면 태그 `before-first-screen-simple`(= `8440aa57`)로. 작업 워크트리는 `C:/Users/gkfkd/Git/sigong-simple`, 브랜치 `feat/first-screen-simple`.
 
 배경: 사용자 피드백 2건(버튼·입력이 너무 많아 첫 화면에서 당황한다, 정보는 많은데 찾는 길이 없다). 타겟을 **중고등학생·패드 터치**로 좁혔다.
 설계안은 [first-screen-plan.md](first-screen-plan.md) — 디자이너 초안을 적대적·조언적 페르소나 2개가 흔든 뒤 정리한 v1. 일주일 일정 D1~D6 중 **D1 완료**.
