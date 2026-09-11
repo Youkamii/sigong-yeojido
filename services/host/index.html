@@ -1369,7 +1369,8 @@ async function init3d(){
   world.territories=new ChronicleTerritories(world,territories);
   const {coordinateRegistry}=await import('./app/history-coordinates.js');
   world.coordinateRegistry=coordinateRegistry(anchors,coordinates);
-  world.scenePackets=scenes.scenes;world.sceneSources=[...scenes.sources,...geography.sources];
+  const {describeSettlements}=await import('./app/historical-regions.js');
+  world.scenePackets=describeSettlements(scenes.scenes);world.sceneSources=[...scenes.sources,...geography.sources];
   world.traditions=traditions;
   engine.add(world.group);
   engine.onPick = (id,event) => { const feature=historyMap.features.find(f=>f.id===id);

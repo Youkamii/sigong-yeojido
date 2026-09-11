@@ -12,7 +12,8 @@ export function activityGeography(plan){
       precision:place.precision,coordinateNote:place.coordinateNote,sourceIds:place.coordinateSourceIds||[],
       year:plan.year,activities:[]});
     const row=regions.get(key);
-    row.capital ||= event.archetype==='settlement'&&/도읍|왕경|수도|국도|환도/.test(event.label);
+    row.settlement=place.settlement||row.settlement;
+    row.capital ||= place.settlement?.scope==='capital-role'||event.archetype==='settlement'&&/도읍|왕경|수도|국도|환도/.test(event.label);
     row.activities.push({id:event.entityId,label:event.label});
   }
   return [...regions.values()];

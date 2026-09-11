@@ -7,6 +7,7 @@ import {PALETTE,mix,FOLIAGE,WHITE} from './artbible.js';
 import {makeSurface,biomeByName} from './style.js';
 import {mergeParts,mixColor} from './util.js';
 import {ChronicleScenery} from './chronicle-scenery.js';
+import {createCityLOD} from './city-lod.js';
 import {sceneVisualKey} from './chronicle-persistence.js';
 
 let catalogPromise;
@@ -216,6 +217,7 @@ export class ChronicleAssets{
     }
     this.unlocated=unlocated;
     // Keep named people independent; batch the many anonymous actors/buildings per scene.
+    const cityLODs=[];
     const batches=new Map(),byId=new Map(rows.map(row=>[row.id,row]));
     for(const recipe of recipes){
       const row=byId.get(recipe.id),id=row.kind==='person'?'person:'+row.id:'scene:'+row.sceneId;
@@ -227,7 +229,12 @@ export class ChronicleAssets{
       const cached=this.fieldCache.get(id),built=cached?.key===key?cached.field:this.field(batch,anchors);
       if(built===cached?.field)reuse.fields++;else reuse.builtFields++;
       nextFields.set(id,{key,field:built});field.group.add(built.group);
-      field.picks.push(...built.picks);field.animated.push(...built.animated);
+      const cityRows=batch.map(recipe=>byId.get(recipe.id));
+      if(cityRows.some(row=>row.kind==='event'&&row.sceneKind==='settlement'&&!row.compact)){
+        built.cityLOD||=createCityLOD(batch,anchors,cityRows,built);
+        built.cityLOD.update(this.engine.camera);field.group.add(built.cityLOD.group);cityLODs.push(built.cityLOD);
+      }
+      field.picks.push(...built.picks);field.animated.push(...built.animated.map(animation=>built.cityLOD?{update:t=>{if(built.cityLOD.near)animation.update(t);}}:animation));
       for(const [name,value] of Object.entries(built.stats))if(typeof value==='number')field.stats[name]=(field.stats[name]||0)+value;
       field.stats.dropped.push(...built.stats.dropped);
     }
@@ -269,7 +276,7 @@ export class ChronicleAssets{
     }
     const previous=this.group;
     this.engine.add(next);this.group=next;this.rows=rows;this.picks=field.picks;
-    this.animated=[...field.animated,...eventAnimations];this.stats=field.stats;this.plan=plan;this.revision++;
+    this.cityLODs=cityLODs;this.animated=[...field.animated,...eventAnimations];this.stats=field.stats;this.plan=plan;this.revision++;
     this.engine.remove(previous);release(previous);
     this.sceneCache=nextScenes;this.fieldCache=nextFields;this.reuse=reuse;
     this.selection=null;this.setSelected(this.selected,this.selectedRow);
@@ -303,5 +310,5 @@ export class ChronicleAssets{
     ring.rotation.x=-Math.PI/2;ring.position.copy(row.position);ring.position.y+=Math.min(.1,focusDistance*.001);
     this.group.add(ring);this.selection=ring;this.selectedRow=row.id;
   }
-  update(t){for(const animation of this.animated||[])animation.update(t);this.scenery?.update(this.engine.camera,t);}
+  update(t){for(const lod of this.cityLODs||[])lod.update(this.engine.camera);for(const animation of this.animated||[])animation.update(t);this.scenery?.update(this.engine.camera,t);}
 }
