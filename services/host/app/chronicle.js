@@ -178,6 +178,7 @@ export class Chronicle {
     clearTimeout(this.scrubTimer);this.pendingYear=null;
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
     if(year===0)year=this.year<0?1:-1;
+    if(year===this.year)return;
     this.callbacks.year(year);
   }
   previewYear(year){
