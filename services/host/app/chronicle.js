@@ -1,6 +1,6 @@
 import {escapeHtml as esc} from './html.js';
 import {loadChronicle} from './chronicle-load.js';
-import {createYearHold,bindYearHold,stepYear} from './year-hold.js';
+import {createYearHold,bindYearHold,bindYearSlider,stepYear} from './year-hold.js';
 import {EventTimeline} from './event-timeline.js';
 import {isHistoricalSetting} from './chronicle-sites.js';
 
@@ -146,7 +146,7 @@ export class Chronicle {
       <div class="time-actions"><button data-previous aria-label="이전 사건 연도로">← 이전 사건</button>
       <button data-play aria-label="시간 재생">▶ 재생</button><button data-next aria-label="다음 사건 연도로">다음 사건 →</button></div>
       <label class="time-span">주변 사건 <select aria-label="사건 탐색 범위"><option value="20">20년</option><option value="50" selected>50년</option><option value="100">100년</option></select></label></div>
-      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2100" value="1593" aria-label="역사 시간 이동"><span>2100</span></div>
+      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2100" value="1593" aria-label="역사 시간 이동, 좌우로 밀면 1년부터 점점 빨라집니다" title="좌우로 밀면 1년부터 점점 빨라집니다 · 놓으면 멈춤"><span>2100</span></div>
       <div class="event-strip"></div>`;
     this.timeline=new EventTimeline(controls.querySelector('.event-strip'),{yearLabel,
       preview:year=>this.previewYear(year),commit:()=>this.finishScrub(),select:entry=>this.showEvent(entry)});
@@ -158,6 +158,7 @@ export class Chronicle {
     yearInput.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();goYear();}};
     controls.querySelector('[data-go-year]').onclick=goYear;
     const slider=controls.querySelector('[type=range]');
+    bindYearSlider(slider,this.yearHold,()=>this.stopPlay());
     slider.oninput=e=>this.previewYear(+e.target.value);
     slider.onchange=()=>this.finishScrub();
     controls.querySelector('select').onchange=e=>{this.span=+e.target.value;this.render();};

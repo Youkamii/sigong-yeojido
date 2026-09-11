@@ -56,3 +56,35 @@ export function bindYearHold(root,hold){
   document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
   return stop;
 }
+
+export function bindYearSlider(slider,hold,onStart=()=>{}){
+  let pointer=null,lastX=0,key=null;
+  const stop=()=>{
+    const id=pointer;pointer=null;key=null;hold.stop();
+    if(id!==null&&slider.hasPointerCapture(id))slider.releasePointerCapture(id);
+  };
+  slider.onpointerdown=event=>{
+    if(event.button!==0||!event.isPrimary)return;
+    event.preventDefault();stop();onStart();pointer=event.pointerId;lastX=event.clientX;
+    slider.focus();slider.setPointerCapture(pointer);
+  };
+  slider.onpointermove=event=>{
+    if(event.pointerId!==pointer)return;
+    event.preventDefault();const delta=event.clientX-lastX;
+    if(Math.abs(delta)<3)return;
+    lastX=event.clientX;hold.start(Math.sign(delta));
+  };
+  slider.onpointerup=slider.onpointercancel=event=>{if(event.pointerId===pointer)stop();};
+  slider.onlostpointercapture=()=>{if(pointer!==null)stop();};
+  slider.onkeydown=event=>{
+    if(!['ArrowLeft','ArrowRight','ArrowDown','ArrowUp'].includes(event.key))return;
+    event.preventDefault();if(event.repeat)return;
+    stop();onStart();key=event.key;
+    hold.start(['ArrowLeft','ArrowDown'].includes(key)?-1:1);
+  };
+  slider.onkeyup=event=>{if(event.key===key){event.preventDefault();stop();}};
+  slider.onblur=stop;
+  window.addEventListener('blur',stop);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+  return stop;
+}
