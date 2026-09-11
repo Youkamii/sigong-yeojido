@@ -1,4 +1,5 @@
 import {buildingArchetype} from './period-buildings.js';
+import {figureArchetype} from './period-figures.js';
 // Broad visual settings for unnamed scenery, not dates of nationwide change.
 const periods=[
   {until:-1500,id:'early-settlement',year:-2000,housing:'early',fields:false,people:'rural_figure',tigers:true},
@@ -6,8 +7,10 @@ const periods=[
   {until:918,id:'three-kingdoms',year:600,housing:'traditional',fields:true,people:'period_figure',tigers:true},
   {until:1392,id:'goryeo',year:1200,housing:'traditional',fields:true,people:'period_figure',tigers:true},
   {until:1876,id:'joseon',year:1700,housing:'traditional',fields:true,people:'period_figure',tigers:true},
-  {until:1910,id:'late-joseon',year:1890,housing:'traditional',fields:true,people:'period_figure',tigers:true},
-  {until:1970,id:'early-modern',year:1930,housing:'traditional',fields:true,people:'field_worker',tigers:false},
+  {until:1895,id:'late-joseon',year:1890,housing:'traditional',fields:true,people:'period_figure',tigers:true},
+  {until:1910,id:'opening-period',year:1900,housing:'traditional',fields:true,people:'period_figure',tigers:true},
+  {until:1945,id:'early-modern',year:1930,housing:'traditional',fields:true,people:'field_worker',tigers:false},
+  {until:1970,id:'modern-farming',year:1960,housing:'traditional',fields:true,people:'field_worker',tigers:false},
   {until:1980,id:'roof-transition',year:1975,housing:'mixed',fields:true,people:'field_worker',tigers:false},
   {until:Infinity,id:'mechanized',year:2000,housing:'modern',fields:true,people:'field_worker',tigers:false},
 ].map(Object.freeze);
@@ -30,7 +33,7 @@ export function sceneryRecipe(recipe,period,site){
   }else if(['rural_store','market'].includes(archetype)){
     if(archetype==='market'&&period.housing==='early')return null;
     archetype=buildingArchetype(archetype,site.latitude>=37.7&&['mixed','modern'].includes(period.housing)?1700:period.year,{seed:choice});
-  }else if(archetype==='human')archetype=period.people;
+  }else if(archetype==='human')archetype=figureArchetype('commoner',period.year);
   else if(archetype==='handcart'){
     if(period.housing==='early')return null;
     if(period.housing==='modern'&&site.latitude<37.7&&choice<55)archetype='farm_tractor';
