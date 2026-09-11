@@ -29,7 +29,9 @@ export function sceneryRecipe(recipe,period,site){
     else if(site.latitude<37.7&&['mixed','modern'].includes(period.housing)){
       const share=period.housing==='mixed'?35:85;
       if(choice<share)archetype=choice%3===0?'rural_flat':choice%3===1?'rural_metal':'rural_tiled';
-    }else if(!['mixed','modern'].includes(period.housing))archetype=buildingArchetype(archetype,period.year,{seed:choice});
+      else if(archetype==='rural_hut')archetype='rural_cottage';
+    }else if(['mixed','modern'].includes(period.housing))archetype=buildingArchetype('rural_cottage',1700,{seed:choice});
+    else archetype=buildingArchetype(archetype,period.year,{seed:choice});
   }else if(['rural_store','market'].includes(archetype)){
     if(archetype==='market'&&period.housing==='early')return null;
     archetype=buildingArchetype(archetype,site.latitude>=37.7&&['mixed','modern'].includes(period.housing)?1700:period.year,{seed:choice});
