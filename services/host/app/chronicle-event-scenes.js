@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import {figureArchetype} from './period-figures.js';
+import {buildingArchetype} from './period-buildings.js';
 import {settlementLayout,SETTLEMENT_RADIUS} from './historical-regions.js';
 
 function fireAt(group,position,scale,animated){
@@ -147,6 +149,13 @@ export function composeHistoricalEvent(event,position,world){
       const fields=new THREE.InstancedMesh(new THREE.BoxGeometry(5*displayScale,.08*displayScale,3*displayScale),new THREE.MeshStandardMaterial({color:'#8c9252',roughness:1}),patches.length);
       const matrix=new THREE.Matrix4();patches.forEach((p,i)=>fields.setMatrixAt(i,matrix.makeTranslation(...p)));
       fields.name='city-symbolic-fields';group.add(fields);
+      const lanes=[];
+      for(let i=-8;i<=8;i++)for(const [x,z,sx,sz] of [[i*5,6,4.6,1],[-18,i*5,1,4.6],[18,i*5,1,4.6]]){
+        const px=position.x+x*displayScale,pz=position.z+z*displayScale;
+        if(world.contains(px,pz))lanes.push([px,world.surfaceAt(px,pz)+.06*displayScale,pz,sx,sz]);
+      }
+      const street=new THREE.InstancedMesh(new THREE.BoxGeometry(1.1*displayScale,.06*displayScale,1.1*displayScale),new THREE.MeshStandardMaterial({color:'#ad9e7e',roughness:1}),lanes.length);
+      lanes.forEach(([x,y,z,sx,sz],i)=>{matrix.makeScale(sx,1,sz);matrix.setPosition(x,y,z);street.setMatrixAt(i,matrix);});street.name='city-local-lanes';group.add(street);
     }
   }else if(kiln){
     model('rural_store',0,-9,2,{primary:true});
@@ -325,6 +334,11 @@ export function composeHistoricalEvent(event,position,world){
       const dx=-7+index*6,dz=event.archetype==='publication'?4:side==='invader'?22:side==='civilian'?4:-6;
       model(person.archetype,dx,dz,2.4,{person,side,action:event.archetype==='publication'?'working':'idle'});
     }
+  }
+  const anonymousRoles={human:'commoner',period_figure:'commoner',modern_figure:'commoner',spearman:'soldier',rifle_soldier:'soldier',period_commander:'commander',period_scholar:'scholar',period_monk:'monk',period_ruler:'ruler'};
+  for(const [seed,row] of models.entries())if(!row.person){
+    const role=anonymousRoles[row.archetype];
+    row.archetype=role?figureArchetype(role,event.year):buildingArchetype(row.archetype,event.year,{seed,latitude:event.scenePlace?.coordinates?.[1]});
   }
   return {group,animated,models,occupied,compositionKind,displayScale,radius:radius*displayScale,
     focusDistance:Math.max(.1,(event.archetype==='settlement'?220:sea?145:harbor?150:groundbreaking?60:music||['publication','tradition'].includes(event.archetype)?85:relief||power?95:115)*displayScale)};

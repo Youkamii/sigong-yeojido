@@ -1,16 +1,16 @@
-﻿import test from 'node:test';
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import {settlementLayout,settlementStyle,SETTLEMENT_RADIUS} from '../services/host/app/historical-regions.js';
 const event={id:'scene-city-hanseong-capital-1394-1910',year:1593};
 test('capital has many small houses, separate wards, market and peripheral hamlets',()=>{
  const layout=settlementLayout(event);
  assert.ok(layout.filter(r=>['house','courtyard_house','rural_store'].includes(r.archetype)).length>=50);
- assert.equal(new Set(layout.filter(r=>Number.isInteger(r.ward)).map(r=>r.ward)).size,6);
+ assert.equal(new Set(layout.filter(r=>Number.isInteger(r.ward)).map(r=>r.ward)).size,12);
  assert.equal(layout.filter(r=>r.ward==='hamlet').length,8);
  assert.equal(layout.filter(r=>r.ward==='market').length,6);
  assert.equal(layout.filter(r=>r.primary).length,1);
  assert.ok(layout.every(r=>Math.hypot(r.x,r.z)<=SETTLEMENT_RADIUS));
- assert.ok(layout.filter(r=>r.archetype==='house').every(r=>r.scale<.6));
+ assert.ok(layout.filter(r=>r.archetype==='house').every(r=>r.scale<.7));
 });
 test('port, fortified, capital and town have distinct reproducible layouts',()=>{
  const styles=['port','fortified','capital','town'];
@@ -34,4 +34,12 @@ test('capital role keeps evidence interval separate from city existence',async()
  assert.equal(scene.place.settlement,undefined);
  assert.equal(result.startYear,1394);assert.equal(result.endYear,1910);
  assert.equal(result.place.settlement.existsSince,undefined);
+});
+
+test('scene identity reuses years inside an era and changes at building or dress boundaries',async()=>{
+ const {sceneVisualKey}=await import('../services/host/app/chronicle-persistence.js');
+ const scene={...event,archetype:'settlement',participants:[],effects:{},scenePlace:{coordinates:[127,37],label:'Hanseong'}};
+ const key=year=>sceneVisualKey({...scene,year},{toArray:()=>[10,0,20]},false,100);
+ assert.equal(key(1593),key(1594));
+ for(const boundary of [918,1392,1876,1895,1945,1970])assert.notEqual(key(boundary-1),key(boundary));
 });

@@ -7,6 +7,8 @@ import {PALETTE,mix,FOLIAGE,WHITE} from './artbible.js';
 import {makeSurface,biomeByName} from './style.js';
 import {mergeParts,mixColor} from './util.js';
 import {ChronicleScenery} from './chronicle-scenery.js';
+import {extendFigureCatalog} from './period-figures.js';
+import {extendBuildingCatalog} from './period-buildings.js';
 import {createCityLOD} from './city-lod.js';
 import {sceneVisualKey} from './chronicle-persistence.js';
 
@@ -14,7 +16,7 @@ let catalogPromise;
 export function loadHistoryAssets(){
   if(!catalogPromise)catalogPromise=fetch('./app/history-asset-catalog.json')
     .then(r=>{if(!r.ok)throw Error('인물 조형을 불러오지 못했습니다.');return r.json();})
-    .then(compileAssetCatalog).catch(error=>{catalogPromise=null;throw error;});
+    .then(extendFigureCatalog).then(extendBuildingCatalog).then(compileAssetCatalog).catch(error=>{catalogPromise=null;throw error;});
   return catalogPromise;
 }
 function release(group){
