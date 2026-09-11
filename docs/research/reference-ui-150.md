@@ -1,6 +1,10 @@
 # 참고 화면 기반 지도 UI (#150–154)
 
-[공개 미리보기](https://sigong.rabbion.info/previews/reference-ui/index.html)
+[현재 공개 화면](https://sigong.rabbion.info/)
+
+2026-09-11 운영 반영 후 사용자 지시에 따라 강·지형 PR #146을 전부 되돌렸다(#156, `b2b1f550`, PR #157). 새 UI는 유지하고 지도 렌더러·풍경·나무 배치는 배포 전 `4ceea311`과 같다. 복구된 공개 주소의 [브라우저 검사 33개](reference-ui-150/restored-checks.json)와 [공개 파일 바이트 대조](reference-ui-150/restored-files.json)가 통과했다. [복구된 지도 화면](reference-ui-150/restored-overview.jpg)을 남긴다. 이전 미리보기 주소는 현재 기본 주소로 이동한다.
+
+아래 최초 미리보기의 화면·성능 기록에는 철회한 강·지형 변경이 포함되어 있다. 현재 지형의 근거로 쓰지 않는다.
 
 사용자가 제공한 4개 화면을 따라 전체 화면 지도 위에 검색, 이야기와 관계, AI 대화, 하단 사건 목록을 배치했다. 짙은 녹회색 패널, 금색 강조, 명조 제목을 사용한다. 기본 지도는 현장을 가까이 보여주며, 이동·확대와 한반도 전체 보기를 유지한다.
 
@@ -16,7 +20,7 @@
 
 검색은 선택한 사료의 실제 인물·사건을 사용한다. 관계는 기존 Claim과 장면에 연결된 참여 인물·장소에서 가져온다. 사건 분류는 기존 장면 종류와 제목을 이용한 화면용 분류다. 새 역사 사실·관계·좌표를 추가한 작업이 아니다. 연도나 사료가 바뀌면 이전 선택과 대화 답변을 정리한다.
 
-이벤트 카드는 화면 주변만 만들고 기존 가로 이동을 재사용한다. 매 프레임 지형 계산, 새 3D 모델, 배경 흐림 효과를 추가하지 않았다. 강·지형 개선은 선행 [PR #146](https://github.com/Youkamii/sigong-yeojido/pull/146)에 포함된 내용이다.
+이벤트 카드는 화면 주변만 만들고 기존 가로 이동을 재사용한다. UI에서 매 프레임 지형 계산, 새 3D 모델, 배경 흐림 효과를 추가하지 않았다. 최초 미리보기에 포함했던 [PR #146](https://github.com/Youkamii/sigong-yeojido/pull/146)의 강·지형 변경은 현재 철회한 상태다.
 
 ## 확인 결과
 
@@ -37,10 +41,10 @@
 재현 스크립트는 [verify_atlas_ui.py](../../scripts/verify_atlas_ui.py)다. Python용 Playwright와 Chrome이 필요하다.
 
 ```powershell
-python scripts/verify_atlas_ui.py --url https://sigong.rabbion.info/previews/reference-ui/index.html --out "$env:TEMP/sigong-ui-check"
+python scripts/verify_atlas_ui.py --url https://sigong.rabbion.info/ --out "$env:TEMP/sigong-ui-check"
 ```
 
-## 화면
+## 최초 미리보기 화면 (강·지형 복구 전)
 
 ![인물 검색과 관련 사건 이동](reference-ui-150/search.jpg)
 
@@ -57,6 +61,6 @@ python scripts/verify_atlas_ui.py --url https://sigong.rabbion.info/previews/ref
 ## 병렬 작업과 반영 상태
 
 - 작업 폴더: `C:/Users/gkfkd/Git/sigong-ui`, 브랜치: `codex/reference-map-ui`.
-- 강·지형 브랜치 `codex/visual-rivers-peninsula`의 `998f6d9b`에서 분리했다. UI PR은 이 브랜치를 대상으로 하며, #146을 먼저 병합한 다음 UI PR의 대상을 main으로 옮긴다.
-- 공개 미리보기는 c2의 `services/host/previews/reference-ui/`에 둔 정적 파일이다. `build-info.json`의 실행 코드 표시는 `d4f47bb8`이다. 이후 검사·문서 커밋은 실행 코드에 영향을 주지 않는다.
-- 기본 주소의 main `4ceea311`과 Claude 작업 폴더는 변경하지 않았다. 서비스 재시작도 하지 않았다. 이번 UI는 미리보기까지 반영되었고 main 병합은 대기 중이다.
+- 최초에는 강·지형 브랜치 `codex/visual-rivers-peninsula`의 `998f6d9b`에서 분리했다. #146과 #155를 main에 병합한 뒤, 사용자 지시로 #146만 #157에서 되돌렸다.
+- 현재는 c2 기본 주소에서 새 UI와 복구한 지도를 제공한다. 기존 미리보기 index는 기본 주소로 이동한다. 복구 코드의 main 병합은 `11dcc4e3`이다.
+- Claude 작업 폴더는 변경하지 않았다. 정적 파일 배포만 수행하여 서비스 재시작은 없었다.

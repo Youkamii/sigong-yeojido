@@ -12,6 +12,7 @@ parser.add_argument('--url', default='https://sigong.rabbion.info/')
 parser.add_argument('--frontend', type=Path)
 parser.add_argument('--out', type=Path, required=True)
 parser.add_argument('--browser', default=r'C:\Program Files\Google\Chrome\Application\chrome.exe')
+parser.add_argument('--rivers', action='store_true', help='Expect the separate river preview instead of the restored map')
 args = parser.parse_args()
 args.out.mkdir(parents=True, exist_ok=True)
 report = {'url': args.url, 'frontend': str(args.frontend) if args.frontend else 'public',
@@ -77,8 +78,11 @@ with sync_playwright() as pw:
         page.locator('#atlasSettingsButton').click()
         check('150_settings', page.locator('#atlasSettings').is_visible())
         rivers = page.locator('[data-map-rivers]')
-        rivers.uncheck();check('150_rivers_off', page.evaluate('!__sigong.world.rivers.group.visible'))
-        rivers.check()
+        if args.rivers:
+            rivers.uncheck();check('150_rivers_off', page.evaluate('!__sigong.world.rivers.group.visible'))
+            rivers.check()
+        else:
+            check('156_previous_map', rivers.count() == 0 and page.evaluate('!__sigong.world.rivers'))
         page.locator('.atlas-source-fold>summary').click()
         page.locator('#noSources').click()
         page.wait_for_function('!__sigong.chronicleScene.chronicle.loading&&__sigong.chronicleScene.chronicle.data.entities.length===0')
