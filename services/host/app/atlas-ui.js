@@ -1,11 +1,14 @@
 import {icon} from './atlas-icons.js';
 import {yearLabel} from './chronicle.js';
+import {AtlasData} from './atlas-data.js';
+import {AtlasSearch} from './atlas-search.js';
 
 const eras=[[-2333,'고조선'],[-57,'삼국'],[698,'남북국'],[918,'고려'],[1392,'조선'],[1897,'대한제국'],[1945,'현대']];
 
 export class AtlasUI{
   constructor({chronicle,scene,runtime,filters,evidence}){
     Object.assign(this,{chronicle,scene,runtime,filters,evidence});
+    this.data=new AtlasData();
     document.body.classList.add('atlas');
     this.root=document.createElement('div');this.root.id='atlas';
     this.root.innerHTML=`<div class="atlas-brand"><h1>시공여지도</h1><p>시간으로 읽는 한국사</p></div>
@@ -34,6 +37,7 @@ export class AtlasUI{
       const offset=e.camera.position.clone().sub(e.controls.target);e.fly=null;
       e.camera.position.set(e.controls.target.x,e.controls.target.y+offset.y,e.controls.target.z+Math.hypot(offset.x,offset.z));e.controls.update();
     };
+    this.search=new AtlasSearch(this);
     this.update(chronicle.context);
   }
   buildSettings(){
@@ -99,9 +103,11 @@ export class AtlasUI{
   showEntity(){this.openPanel('legacy');return false;}
   update(context){
     if(!context)return;
+    this.data.update(this.chronicle.data,context,this.chronicle.callbacks.scenePackets?.());
     const changed=this.lastYear!==undefined&&this.lastYear!==context.year;
     if(changed&&this.panel==='legacy')this.closePanel();
     this.lastYear=context.year;this.syncTime(context.year);
     const status=this.root.querySelector('#atlasStatus');status.textContent=this.chronicle.error||(this.chronicle.loading?'인물과 사건을 불러오는 중…':'');status.hidden=!status.textContent;
+    this.search?.update();
   }
 }
