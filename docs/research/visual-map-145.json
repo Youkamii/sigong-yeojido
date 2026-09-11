@@ -1,0 +1,120 @@
+{
+  "issues": [
+    144,
+    145
+  ],
+  "baseCommit": "8440aa579705a1f55e352f7917d7efd06acade6c",
+  "viewport": [
+    1440,
+    900
+  ],
+  "quality": "medium",
+  "devicePixelRatio": 1,
+  "sampleMilliseconds": 1800,
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "comparison": "Real public data with frontend from the isolated worktree; same local camera target and whole-map action. Short desktop samples, not a low-end device guarantee.",
+  "before": {
+    "mode": "before",
+    "readySeconds": 12.663419399999839,
+    "checks": {
+      "noBrowserErrors": true
+    },
+    "errors": [],
+    "local": {
+      "fps": 146.66666666666666,
+      "p95": 12.100000000000364,
+      "stats": {
+        "calls": 573,
+        "triangles": 1652284,
+        "sceneCalls": 276,
+        "sceneTriangles": 826131,
+        "fps": 133.33333333333334,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116
+      }
+    },
+    "overview": {
+      "fps": 102.43632336655592,
+      "p95": 18,
+      "stats": {
+        "calls": 987,
+        "triangles": 2147302,
+        "sceneCalls": 969,
+        "sceneTriangles": 2147284,
+        "fps": 106.38297874026841,
+        "quality": "medium",
+        "autoMedianMs": 6.100000001490116
+      }
+    },
+    "scene": {
+      "trees": 9628,
+      "rivers": null,
+      "treesInRivers": 0,
+      "surfaceTriangles": 74182
+    }
+  },
+  "after": {
+    "mode": "compact",
+    "readySeconds": 8.95689819999825,
+    "checks": {
+      "toggleOff": true,
+      "toggleOn": true,
+      "noBrowserErrors": true
+    },
+    "errors": [],
+    "local": {
+      "fps": 164.45182724252493,
+      "p95": 6.200000000000728,
+      "stats": {
+        "calls": 462,
+        "triangles": 1187478,
+        "sceneCalls": 221,
+        "sceneTriangles": 593728,
+        "fps": 166.66666666666666,
+        "quality": "medium"
+      }
+    },
+    "overview": {
+      "fps": 163.34440753045405,
+      "p95": 6.200000000000728,
+      "stats": {
+        "calls": 774,
+        "triangles": 1741980,
+        "sceneCalls": 756,
+        "sceneTriangles": 1741962,
+        "fps": 131.57894734262266,
+        "quality": "medium"
+      }
+    },
+    "scene": {
+      "trees": 9212,
+      "rivers": {
+        "rivers": 13,
+        "drawCalls": 2,
+        "triangles": 33222
+      },
+      "treesInRivers": 0,
+      "surfaceTriangles": 27309
+    },
+    "geometry": [
+      {
+        "name": "river-banks",
+        "triangles": 21953,
+        "downward": 0,
+        "castsShadow": false
+      },
+      {
+        "name": "river-water",
+        "triangles": 11269,
+        "downward": 0,
+        "castsShadow": false
+      },
+      {
+        "name": "peninsula-surface",
+        "triangles": 27309,
+        "downward": 0,
+        "castsShadow": true
+      }
+    ]
+  }
+}

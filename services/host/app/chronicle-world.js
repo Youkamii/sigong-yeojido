@@ -1,13 +1,13 @@
 import * as THREE from 'three';
 import {KoreaWorld,toWorld,makeHeightAt} from './korea.js';
-import {makeMaterial} from './materials.js';
-import {PALETTE,mix,darken} from './artbible.js';
 import {ridgeSegments,ridgeRelief} from './chronicle-geography.js';
 import {fitChronicleShadows} from './chronicle-shadows.js';
 import {unprojectCoordinates} from './history-coordinates.js';
 import {insideCoastline as inside,coastlineDistance as edgeDistance} from './coastline-index.js';
 import {NeighborLand} from './neighbor-land.js';
 import {terrainSurface} from './terrain-surface.js';
+import {ChronicleRivers} from './chronicle-rivers.js';
+import {buildPeninsulaTerrain} from './peninsula-terrain.js';
 
 export function stableSeed(text){let value=2166136261;for(const c of text)value=Math.imul(value^c.charCodeAt(0),16777619);return value>>>0;}
 export function woodlandDensity(x,z){return Math.max(0,Math.min(1,(Math.sin(x/31)+Math.cos(z/37)+Math.sin((x+z)/13)*.5-.4)/1.8));}
@@ -70,10 +70,10 @@ export class ChronicleWorld extends KoreaWorld{
         return 7.04+edgeDistance(x,z,ring,relief/1.2)*1.2*Math.max(.2,1-Math.hypot(x-cx,z-cz)/(extent||1));
       }
       const [lon,lat]=this.coordinatesAt(x,z);
-      let height=0;
-      for(const dx of [-.12,0,.12])for(const dy of [-.12,0,.12])height+=Math.max(0,sample(lon+dx,lat+dy))/9;
+      let height=Math.max(0,sample(lon,lat))*.5;
+      for(const [dx,dy] of [[-.025,0],[.025,0],[0,-.025],[0,.025]])height+=Math.max(0,sample(lon+dx,lat+dy))*.125;
       const ridge=this.ridgeAt(x,z);
-      return 7.04+(Math.sqrt(height)*.095+ridge*(4+Math.sqrt(height)*.32))*edgeDistance(x,z,ring,2.3*this.mapScale)/(2.3*this.mapScale);
+      return 7.04+(height*.012+Math.sqrt(height)*.04+ridge*1.8)*edgeDistance(x,z,ring,2.3*this.mapScale)/(2.3*this.mapScale);
     };
     // KoreaWorld's old overlays convert this display height back with terrainY.
     this.heightAt=(lon,lat)=>(this.surfaceAt(...this.toWorld(lon,lat))-7)*244.6+.001;
@@ -86,7 +86,9 @@ export class ChronicleWorld extends KoreaWorld{
     this.land=new THREE.Group();this.land.name='peninsula-diorama';this.group.add(this.land);
     this.buildLand();
     this.surfaceAt=terrainSurface(this.land.getObjectByName('peninsula-surface').geometry.attributes.position,this.surfaceAt);
+    this.rivers=new ChronicleRivers(this);this.group.add(this.rivers.group);
   }
+  nearWater(x,z,margin=0){return this.rivers?.near(x,z,margin)||false;}
   toWorld(lon,lat){return toWorld(lon,lat).map(v=>v*this.mapScale);}
   contains(x,z,margin=0){return this.rings.some(r=>inside(x,z,r)&&(!margin||edgeDistance(x,z,r,margin)>=margin))||this.neighbors.contains(x,z,margin);}
   placeNear(x,z,radius=2,occupied=[]){
@@ -108,57 +110,10 @@ export class ChronicleWorld extends KoreaWorld{
     }
     return null;
   }
-  buildLand(){
-    const cliff=makeMaterial('MAT_STONE',{color:darken(PALETTE.BASE_EARTH,.3),roughness:.98});
-    const coast=makeMaterial('MAT_STONE',{color:mix(PALETTE.BASE_WATER,PALETTE.BASE_STONE,.42),roughness:.85});
-    const grass=makeMaterial('MAT_STONE',{color:'#ffffff',vertexColors:true,roughness:.94,metalness:0});
-    const positions=[],colors=[],low=new THREE.Color(mix(PALETTE.BASE_VERDANT,PALETTE.BASE_STONE,.25));
-    const high=new THREE.Color(mix(PALETTE.BASE_EARTH,PALETTE.BASE_VERDANT,.45));
-    const crest=new THREE.Color('#8e8b70'),woods=new THREE.Color('#56674b');
-    const addTriangle=(a,b,c,limit,depth=0)=>{
-      const lengths=[Math.hypot(a[0]-b[0],a[1]-b[1]),Math.hypot(b[0]-c[0],b[1]-c[1]),Math.hypot(c[0]-a[0],c[1]-a[1])];
-      const longest=Math.max(...lengths),index=lengths.indexOf(longest);
-      if(longest>limit&&depth<18){
-        const pts=[a,b,c],p=pts[index],q=pts[(index+1)%3],r=pts[(index+2)%3],mid=[(p[0]+q[0])/2,(p[1]+q[1])/2];
-        addTriangle(p,mid,r,limit,depth+1);addTriangle(mid,q,r,limit,depth+1);return;
-      }
-      for(const p of [a,b,c]){
-        const y=Math.max(7.04,this.surfaceAt(...p)),color=low.clone().lerp(high,Math.min(1,(y-7)/20));
-        const ridge=this.ridgeAt(...p);
-        color.lerp(woods,woodlandDensity(...p)*.22*(1-ridge)).lerp(crest,Math.max(0,ridge-.45)*.7);
-        positions.push(p[0],y,p[1]);colors.push(color.r,color.g,color.b);
-      }
-    };
-    for(const ring of this.rings){
-      const limit=Math.min(1.5*this.mapScale,Math.max(.03,Math.max(ring.bounds.maxX-ring.bounds.minX,ring.bounds.maxZ-ring.bounds.minZ)/8));
-      const shape=new THREE.Shape(ring.map(p=>new THREE.Vector2(p[0],-p[1])));
-      const island=this.islandRings.some(i=>i.ring===ring);
-      // The sea hides the lower rock layers; the terrain supplies the upper face.
-      const layers=island?[[6.7,.3,cliff,1]]:[[5.9,1.1,coast,1]];
-      for(const [bottom,height,material,scale] of layers){
-          const bevel=.005;
-        const geometry=new THREE.ExtrudeGeometry(shape,{depth:height,bevelEnabled:true,bevelThickness:bevel,bevelSize:bevel,bevelSegments:1});
-        const walls=geometry.groups.find(group=>group.materialIndex===1);
-        if(walls)geometry.setDrawRange(walls.start,walls.count);
-        geometry.rotateX(-Math.PI/2);
-        const mesh=new THREE.Mesh(geometry,material);mesh.position.y=bottom;mesh.scale.set(scale,1,scale);
-        mesh.receiveShadow=true;mesh.userData.fanGround=true;this.land.add(mesh);
-      }
-      const flat=new THREE.ShapeGeometry(shape),p=flat.attributes.position,idx=flat.index;
-      for(let i=0;i<idx.count;i+=3){
-        const points=[0,1,2].map(k=>[p.getX(idx.getX(i+k)),-p.getY(idx.getX(i+k))]);
-        addTriangle(...points,limit);
-      }
-      flat.dispose();
-    }
-    const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
-    geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.computeVertexNormals();
-    geometry.computeBoundingBox();this.maxSurfaceHeight=geometry.boundingBox.max.y;
-    const mesh=new THREE.Mesh(geometry,grass);mesh.receiveShadow=true;mesh.userData.fanGround=true;
-    mesh.userData.fanCastShadow=true;mesh.name='peninsula-surface';this.land.add(mesh);
-  }
+  buildLand(){buildPeninsulaTerrain(this);}
   configureEngine(engine){
     this.engine=engine;
+    this.rivers.addControls(engine);
     engine.contactShadowDistance=400;
     engine.frameWorld(this.navigationRim);
     engine.controls.minDistance=.1;engine.controls.maxDistance=this.navigationRim*5;
