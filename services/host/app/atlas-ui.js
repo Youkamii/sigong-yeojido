@@ -6,7 +6,7 @@ import {AtlasStory} from './atlas-story.js';
 import {AtlasChat} from './atlas-chat.js';
 import {AtlasEvents} from './atlas-events.js';
 
-const eras=[[-2333,'고조선'],[-57,'삼국'],[698,'남북국'],[918,'고려'],[1392,'조선'],[1897,'대한제국'],[1945,'현대']];
+const eras=[[-2500,'고대'],[-57,'삼국'],[698,'남북국'],[918,'고려'],[1392,'조선'],[1897,'대한제국'],[1945,'현대']];
 
 export class AtlasUI{
   constructor({chronicle,scene,runtime,filters,evidence}){
@@ -90,10 +90,12 @@ export class AtlasUI{
     const era=eras.filter(([start])=>start<=year).at(-1)||eras[0];this.time.querySelector('.atlas-era').value=era[0];
     this.time.querySelector('.time-year>span').textContent=year<0?'기원전':'년';
     const key=min+':'+max;
-    if(this.tickKey!==key){this.tickKey=key;this.ticks.innerHTML=Array.from({length:5},(_,i)=>Math.round(min+(max-min)*i/4)).map(y=>`<span>${y<0?'BC '+Math.abs(y):y}</span>`).join('');}
+    if(this.tickKey!==key){this.tickKey=key;this.ticks.innerHTML=Array.from({length:5},(_,i)=>Math.round(min+(max-min)*i/4)).map(y=>`<span data-tick-year="${y}">${y===0?'':y<0?'BC '+Math.abs(y):y}</span>`).join('');}
+    for(const tick of this.ticks.children)tick.classList.toggle('near-current',Math.abs(+tick.dataset.tickYear-year)<(max-min)*.13);
   }
   registerPanel(name,element){this.panes.set(name,element);this.root.querySelector('#atlasPanelMount').append(element);element.hidden=true;}
   openPanel(name){
+    this.closeEvidence();
     this.panel=name;document.body.dataset.atlasPanel=name;
     for(const [key,pane] of this.panes)pane.hidden=key!==name;
     this.root.querySelector('#atlasSettingsButton').setAttribute('aria-expanded',String(name==='settings'));
