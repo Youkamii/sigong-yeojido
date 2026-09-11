@@ -71,7 +71,7 @@ export class AtlasUI{
     this.slider=controls.querySelector('[type=range]');
     this.ticks=document.createElement('div');this.ticks.className='atlas-time-ticks';this.time.querySelector('.atlas-slider-slot').append(this.ticks);
     this.currentTick=document.createElement('span');this.currentTick.className='atlas-current-tick';this.time.querySelector('.atlas-slider-slot').append(this.currentTick);
-    this.slider.addEventListener('input',()=>this.syncTime(+this.slider.value,true));
+    controls.addEventListener('yearpreview',event=>this.syncTime(event.detail,true));
     this.slider.addEventListener('change',()=>{this.rangeWindow=null;this.syncTime(this.chronicle.year);});
     controls.querySelector('[data-previous]').title='이전 사건';controls.querySelector('[data-next]').title='다음 사건';
     controls.querySelector('[data-previous]').innerHTML=icon('left');controls.querySelector('[data-next]').innerHTML=icon('right');
@@ -79,7 +79,7 @@ export class AtlasUI{
   syncTime(year,preview=false){
     if(!Number.isInteger(year))return;
     const span=+this.root.querySelector('#atlasTimeWindow').value;
-    if(!preview&&(!this.rangeWindow||year<this.rangeWindow[0]||year>this.rangeWindow[1])){
+    if(!this.rangeWindow||year<this.rangeWindow[0]||year>this.rangeWindow[1]){
       const low=span>=4600?-2500:Math.max(-2500,Math.min(2100-span,Math.floor(year/(span/2))*(span/2)-span/2));
       this.rangeWindow=[low,span>=4600?2100:low+span];
     }

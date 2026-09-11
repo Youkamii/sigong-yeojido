@@ -162,7 +162,7 @@ export class ChronicleScene {
     const card=document.getElementById('geographyCard'),hudElement=document.getElementById('sceneContext');
     const viewport=width+':'+height;
     const key=[...camera.matrixWorld.elements,...camera.projectionMatrix.elements,viewport,
-      this.assets?.selectedRow,this.assets?.activeScene,document.getElementById('geographyDestination').value,card.hidden,card.offsetHeight,hudElement.offsetHeight].join(':');
+      this.assets?.selectedRow,this.assets?.activeScene,this.world?.territories?.key,this.world?.territories?.visible,document.getElementById('geographyDestination').value,card.hidden,card.offsetHeight,hudElement.offsetHeight].join(':');
     if(this.layoutKey===key)return;
     this.layoutKey=key;
     if(this.labelViewport!==viewport){
@@ -175,6 +175,7 @@ export class ChronicleScene {
     for(const element of document.querySelectorAll('.geography-navigation,.geography-card:not([hidden]),.scene-focus:not([hidden])')){
       const r=element.getBoundingClientRect();occupied.push({left:r.left-canvasRect.left,right:r.right-canvasRect.left,top:r.top-canvasRect.top,bottom:r.bottom-canvasRect.top});
     }
+    this.world?.territories?.update(camera,canvas,occupied);
     const geographyFirst=camera.position.distanceTo(this.engine.controls.target)>600;
     if(geographyFirst)this.world?.geography?.update(camera,canvas,occupied);
     const ordered=[...this.markers].sort((a,b)=>

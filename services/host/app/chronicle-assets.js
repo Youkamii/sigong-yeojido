@@ -7,6 +7,7 @@ import {PALETTE,mix,FOLIAGE,WHITE} from './artbible.js';
 import {makeSurface,biomeByName} from './style.js';
 import {mergeParts,mixColor} from './util.js';
 import {ChronicleScenery} from './chronicle-scenery.js';
+import {sceneVisualKey} from './chronicle-persistence.js';
 
 let catalogPromise;
 export function loadHistoryAssets(){
@@ -145,6 +146,9 @@ export class ChronicleAssets{
   rebuild(plan){
     const next=new THREE.Group();next.name='chronicle-assets';
     const rows=[],anchors=new Map(),recipes=[],occupied=[],eventAnimations=[],unlocated=[];
+    this.sceneCache||=new Map();this.fieldCache||=new Map();
+    const nextScenes=new Map(),nextFields=new Map();
+    const reuse={scenes:0,fields:0,builtScenes:0,builtFields:0};
     const add=(row,position,scale,archetype=row.archetype)=>{
       if(!position)return;
       anchors.set(row.id,position);
@@ -177,13 +181,17 @@ export class ChronicleAssets{
       if(!loc){unlocated.push(event);continue;}
       const nearest=Math.min(Infinity,...fullScenes.map(p=>p.distanceTo(loc.position)));
       const compact=nearest<3;
-      const scene=composeHistoricalEvent({...event,compact,maxRadius:nearest*.45},loc.position,this.world);
-      if(!scene.models.some(m=>m.primary)){unlocated.push(event);continue;}
+      const key=sceneVisualKey(event,loc.position,compact,nearest*.45);
+      const cached=this.sceneCache.get(event.id);
+      const scene=cached?.key===key?cached.scene:composeHistoricalEvent({...event,compact,maxRadius:nearest*.45},loc.position,this.world);
+      if(scene===cached?.scene)reuse.scenes++;else reuse.builtScenes++;
+      if(!scene.models.some(m=>m.primary)){release(scene.group);unlocated.push(event);continue;}
+      nextScenes.set(event.id,{key,scene});
       next.add(scene.group);eventAnimations.push(...scene.animated);
       if(!compact){fullScenes.push(loc.position);sceneWoods.push({id:event.id,x:loc.position.x,z:loc.position.z,scale:scene.displayScale});}
       occupied.push({...loc.position,radius:scene.radius},...scene.occupied);
       for(const [index,model] of scene.models.entries()){
-        const person=model.person,row=person?{...person,id:person.id+'@'+event.id,kind:'person',eventId:event.entityId,sceneId:event.id,
+        const person=model.person&&event.participants.find(p=>p.id===model.person.id),row=person?{...person,id:person.id+'@'+event.id,kind:'person',eventId:event.entityId,sceneId:event.id,
           activity:event.summary,placement:loc.placement,placementLabel:person.role+' · '+loc.placementLabel,
           site:loc.site,locationReference:loc.locationReference,focusDistance:scene.focusDistance,action:model.action,side:model.side,shipSide:model.shipSide}
           :{...event,...loc,id:model.primary?event.id:event.id+':part:'+index,sceneId:event.id,kind:model.primary?'event':'building',
@@ -207,7 +215,23 @@ export class ChronicleAssets{
         new THREE.Vector3(x,this.world.surfaceAt(x,z),z),2.1);
     }
     this.unlocated=unlocated;
-    const field=this.field(recipes,anchors);
+    // Keep named people independent; batch the many anonymous actors/buildings per scene.
+    const batches=new Map(),byId=new Map(rows.map(row=>[row.id,row]));
+    for(const recipe of recipes){
+      const row=byId.get(recipe.id),id=row.kind==='person'?'person:'+row.id:'scene:'+row.sceneId;
+      if(!batches.has(id))batches.set(id,[]);batches.get(id).push(recipe);
+    }
+    const field={group:new THREE.Group(),picks:[],animated:[],stats:{catalog:this.catalog.stats,dropped:[],batches:0}};
+    for(const [id,batch] of batches){
+      const key=JSON.stringify(batch.map(recipe=>[recipe,anchors.get(recipe.anchor).toArray()]));
+      const cached=this.fieldCache.get(id),built=cached?.key===key?cached.field:this.field(batch,anchors);
+      if(built===cached?.field)reuse.fields++;else reuse.builtFields++;
+      nextFields.set(id,{key,field:built});field.group.add(built.group);
+      field.picks.push(...built.picks);field.animated.push(...built.animated);
+      for(const [name,value] of Object.entries(built.stats))if(typeof value==='number')field.stats[name]=(field.stats[name]||0)+value;
+      field.stats.dropped.push(...built.stats.dropped);
+    }
+    for(const name of ['built','requested','meshes','triangles'])field.stats[name]??=0;
     if(field.stats.built!==recipes.length||field.stats.dropped.length){release(field.group);throw Error('일부 역사 조형을 만들지 못했습니다.');}
     next.add(field.group);
     const pathPositions=[];
@@ -223,9 +247,14 @@ export class ChronicleAssets{
         for(const k of [0,2,1,1,2,3])pathPositions.push(...corners[k]);
       }
     }
-    const paths=new THREE.BufferGeometry();paths.setAttribute('position',new THREE.Float32BufferAttribute(pathPositions,3));paths.computeVertexNormals();
-    const pathMesh=new THREE.Mesh(paths,new THREE.MeshStandardMaterial({color:mix(PALETTE.NEUTRAL_BONE,PALETTE.BASE_EARTH,.28),roughness:1,side:THREE.DoubleSide}));
-    pathMesh.receiveShadow=true;pathMesh.name='settlement-footpaths';next.add(pathMesh);
+    const pathKey=JSON.stringify(pathPositions);
+    let pathMesh=this.pathMesh;
+    if(pathKey!==this.pathKey){
+      const paths=new THREE.BufferGeometry();paths.setAttribute('position',new THREE.Float32BufferAttribute(pathPositions,3));paths.computeVertexNormals();
+      pathMesh=new THREE.Mesh(paths,new THREE.MeshStandardMaterial({color:mix(PALETTE.NEUTRAL_BONE,PALETTE.BASE_EARTH,.28),roughness:1,side:THREE.DoubleSide}));
+      pathMesh.receiveShadow=true;pathMesh.name='settlement-footpaths';
+    }
+    next.add(pathMesh);this.pathMesh=pathMesh;this.pathKey=pathKey;
     this.scenery||=new ChronicleScenery(this);
     this.scenery.sync(occupied);
     this.forestOccupied=occupied;this.forestScenes=sceneWoods;
@@ -242,6 +271,7 @@ export class ChronicleAssets{
     this.engine.add(next);this.group=next;this.rows=rows;this.picks=field.picks;
     this.animated=[...field.animated,...eventAnimations];this.stats=field.stats;this.plan=plan;this.revision++;
     this.engine.remove(previous);release(previous);
+    this.sceneCache=nextScenes;this.fieldCache=nextFields;this.reuse=reuse;
     this.selection=null;this.setSelected(this.selected,this.selectedRow);
   }
   rowFor(id,preferred){

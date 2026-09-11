@@ -1,5 +1,6 @@
 import {escapeHtml as esc} from './html.js';
 import {loadChronicle} from './chronicle-load.js';
+import {createYearHold,bindYearHold,bindYearSlider,stepYear} from './year-hold.js';
 import {EventTimeline} from './event-timeline.js';
 import {isHistoricalSetting} from './chronicle-sites.js';
 
@@ -141,20 +142,23 @@ export class Chronicle {
     this.host=host;this.controls=controls;this.callbacks=callbacks;
     this.data={entities:[],claims:[]};this.year=1593;this.span=50;this.sequence=0;this.loading=true;
     controls.innerHTML=`<div class="time-heading"><div class="time-year"><label for="historyYear" data-calendar>연도 입력</label>
-      <input id="historyYear" aria-label="탐색 연도" aria-describedby="yearInputHelp" type="number" value="1593" min="-2500" max="2100" step="1" required><span>년</span><button data-go-year>이동</button><small id="yearInputHelp">Enter로 이동 · 기원전은 −500처럼 입력</small></div>
+      <input id="historyYear" aria-label="탐색 연도" aria-describedby="yearInputHelp" type="number" value="1593" min="-2500" max="2100" step="1" required><span>년</span><div class="year-nudge" role="group" aria-label="1년씩 이동, 길게 누르면 빨라집니다"><button data-year-step="-1" aria-label="이전 연도, 길게 누르면 빨라집니다" title="1년 전 · 길게 누르면 빨라집니다">−</button><button data-year-step="1" aria-label="다음 연도, 길게 누르면 빨라집니다" title="1년 후 · 길게 누르면 빨라집니다">+</button></div><button data-go-year>이동</button><small id="yearInputHelp">Enter로 이동 · 기원전은 −500처럼 입력</small></div>
       <div class="time-actions"><button data-previous aria-label="이전 사건 연도로">← 이전 사건</button>
       <button data-play aria-label="시간 재생">▶ 재생</button><button data-next aria-label="다음 사건 연도로">다음 사건 →</button></div>
       <label class="time-span">주변 사건 <select aria-label="사건 탐색 범위"><option value="20">20년</option><option value="50" selected>50년</option><option value="100">100년</option></select></label></div>
-      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2025" value="1593" aria-label="역사 시간 이동"><span>2025</span></div>
+      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2100" value="1593" aria-label="역사 시간 이동, 좌우로 밀면 1년부터 점점 빨라집니다" title="좌우로 밀면 1년부터 점점 빨라집니다 · 놓으면 멈춤"><span>2100</span></div>
       <div class="event-strip"></div>`;
     this.timeline=new EventTimeline(controls.querySelector('.event-strip'),{yearLabel,
       preview:year=>this.previewYear(year),commit:()=>this.finishScrub(),select:entry=>this.showEvent(entry)});
+    this.yearHold=createYearHold({read:()=>this.pendingYear??this.year,preview:year=>this.previewYear(year,true),commit:()=>this.finishScrub()});
+    bindYearHold(controls,this.yearHold);
     const yearInput=controls.querySelector('[type=number]');
     const goYear=()=>{if(yearInput.reportValidity()){this.stopPlay();if(yearInput.valueAsNumber!==this.year)this.chooseYear(yearInput.valueAsNumber);}};
     yearInput.onchange=goYear;
     yearInput.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();goYear();}};
     controls.querySelector('[data-go-year]').onclick=goYear;
     const slider=controls.querySelector('[type=range]');
+    bindYearSlider(slider,this.yearHold,()=>this.stopPlay());
     slider.oninput=e=>this.previewYear(+e.target.value);
     slider.onchange=()=>this.finishScrub();
     controls.querySelector('select').onchange=e=>{this.span=+e.target.value;this.render();};
@@ -175,18 +179,22 @@ export class Chronicle {
     this.render();
   }
   chooseYear(year){
+    this.yearHold?.stop(false);
     clearTimeout(this.scrubTimer);this.pendingYear=null;
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
     if(year===0)year=this.year<0?1:-1;
     if(year===this.year)return;
     this.callbacks.year(year);
   }
-  previewYear(year){
+  previewYear(year,holding=false){
+    if(!holding)this.yearHold?.stop(false);
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
     if(year===0)year=this.year<0?1:-1;
     this.stopPlay();clearTimeout(this.scrubTimer);this.pendingYear=year;
     this.controls.querySelector('[type=number]').value=year;this.controls.querySelector('[type=range]').value=year;
-    this.timeline.setYear(year);this.scrubTimer=setTimeout(()=>this.finishScrub(),120);
+    this.timeline.setYear(year);
+    this.controls.dispatchEvent(new CustomEvent('yearpreview',{detail:year}));
+    if(!holding)this.scrubTimer=setTimeout(()=>this.finishScrub(),120);
   }
   finishScrub(){const year=this.pendingYear;clearTimeout(this.scrubTimer);this.pendingYear=null;if(year!==this.year)this.chooseYear(year);}
   showEvent(event){
@@ -196,11 +204,12 @@ export class Chronicle {
   setYear(year){this.year=year;this.render();}
   stopPlay(){clearInterval(this.timer);this.timer=null;const button=this.controls.querySelector('[data-play]');button.textContent='▶ 재생';button.setAttribute('aria-pressed','false');button.setAttribute('aria-label','시간 재생');}
   togglePlay(){
+    this.yearHold.stop();this.finishScrub();
     if(this.timer){this.stopPlay();return;}
     this.controls.querySelector('[data-play]').textContent='Ⅱ 멈춤';
     this.controls.querySelector('[data-play]').setAttribute('aria-pressed','true');
     this.controls.querySelector('[data-play]').setAttribute('aria-label','시간 재생 멈춤');
-    this.timer=setInterval(()=>{if(this.year>=2025){this.stopPlay();return;}this.chooseYear(this.year+1);},1200);
+    this.timer=setInterval(()=>{if(this.year>=2100){this.stopPlay();return;}this.chooseYear(stepYear(this.year,1));},1200);
   }
   async refresh(){
     const seq=++this.sequence,filters=this.callbacks.filters();this.loading=true;this.error='';

@@ -1,16 +1,18 @@
 import * as THREE from 'three';
 import {yearLabel} from './chronicle.js';
+import {TerritoryLabels} from './territory-labels.js';
+import {visibleTerritories} from './territory-label-geometry.js';
+export {territoriesAt} from './territory-label-geometry.js';
 
 const colors={Gojoseon:'#aa7660','Korean Jin':'#afa263',Goguryeo:'#b66d60',Baekje:'#c5a459',Silla:'#5e9ea3',
   'Unified Silla':'#5e9ea3',Balhae:'#9b84b6',Goryeo:'#738cba',Joseon:'#92a265','Korean Empire':'#92a265',
   'Republic of Korea':'#779fb5',"Democratic People's Republic of Korea":'#b97a71'};
 const ringsOf=f=>f.geometry.type==='Polygon'?[f.geometry.coordinates]:f.geometry.coordinates;
-export const territoriesAt=(features,year)=>features.filter(f=>f.properties.validFrom<=year&&year<=f.properties.validTo
-  &&f.properties.sourceRecord.Name!=='Byeonhan'
-  &&!(f.properties.sourceRecord.Name==='Goguryeo'&&year>668));
+
 
 export class ChronicleTerritories{
   constructor(world,data){
+    this.labels=new TerritoryLabels(world);
     this.world=world;this.records=data.features;this.features=[];this.paths=new Map();this.visible=true;
     this.group=new THREE.Group();this.group.name='chronicle-territories';world.group.add(this.group);
     this.canvas=document.createElement('canvas');this.canvas.width=this.canvas.height=1024;this.context=this.canvas.getContext('2d');
@@ -69,17 +71,18 @@ export class ChronicleTerritories{
   }
   setYear(year,{origin='all',sources=null}={}){
     this.year=year;
-    const features=origin==='human'||sources?.size===0?[]:territoriesAt(this.records,year);
+    const features=visibleTerritories(this.records,year,{origin,sources});
     const key=features.map(f=>f.id).join(':');this.stats.year=year;
     if(key!==this.key){
-      this.key=key;this.features=features;this.context.clearRect(0,0,1024,1024);
+      this.key=key;this.features=features;this.labels.setFeatures(features);this.context.clearRect(0,0,1024,1024);
       for(const old of [...this.group.children]){old.geometry.dispose();old.material.dispose();old.removeFromParent();}
       for(const feature of features){this.context.fillStyle=this.color(feature);this.context.fill(this.path(feature),'evenodd');this.border(feature);}
       this.texture.needsUpdate=true;this.stats.redraws++;
     }
     this.renderLegend();
   }
-  setDisplay(visible){this.visible=visible;this.group.visible=visible;this.uniforms.territoryEnabled.value=visible?1:0;this.legend.hidden=!visible;this.note.hidden=!visible||!this.note.textContent;}
+  update(camera,canvas,occupied){this.labels.update(camera,canvas,occupied);}
+  setDisplay(visible){this.labels.setDisplay(visible);this.visible=visible;this.group.visible=visible;this.uniforms.territoryEnabled.value=visible?1:0;this.legend.hidden=!visible;this.note.hidden=!visible||!this.note.textContent;}
   renderLegend(){
     this.legend.replaceChildren();
     const title=document.createElement('summary');title.textContent=this.features.length?'국가 영역 · '+this.features.map(f=>f.properties.label.split(' · ')[0]).join(' / '):'국가 영역 · 이 연도 자료 없음';
