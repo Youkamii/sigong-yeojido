@@ -12,3 +12,11 @@ test('court scribes use era scholars in actual composition',()=>{
   assert.equal(scene.models.filter(row=>row.archetype==='scribe').length,0);
  }
 });
+
+test('a coastal city keeps its primary on the unchanged land anchor',()=>{
+ const position=new THREE.Vector3(100,0,100);
+ const scene=composeHistoricalEvent({id:'coastal-city',archetype:'settlement',label:'',summary:'',year:1500,participants:[],effects:{}},position,{contains:(x,z)=>z>=100,surfaceAt:()=>0});
+ const primary=scene.models.find(row=>row.primary);assert.ok(primary);
+ assert.deepEqual(primary.position.toArray(),position.toArray());
+ assert.ok(scene.models.every(row=>row.position.z>=100));
+});

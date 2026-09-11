@@ -64,9 +64,13 @@ export function composeHistoricalEvent(event,position,world){
     let x=position.x+dx,z=position.z+dz;
     const onWater=extra.medium?extra.medium==='sea':sea;
     if(!onWater&&!world.contains(x,z)){
-      if(event.archetype==='settlement')return;
-      x=position.x+dx*.4;z=position.z+dz*.4;
-      if(!world.contains(x,z))return;
+      if(event.archetype==='settlement'){
+        if(!extra.primary||!world.contains(position.x,position.z))return;
+        x=position.x;z=position.z;
+      }else{
+        x=position.x+dx*.4;z=position.z+dz*.4;
+        if(!world.contains(x,z))return;
+      }
     }
     if(onWater&&world.contains(x,z))return;
     const p=new THREE.Vector3(x,onWater?world.seaLevel:world.surfaceAt(x,z),z);
