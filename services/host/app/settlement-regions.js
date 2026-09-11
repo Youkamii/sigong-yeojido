@@ -43,27 +43,47 @@ export function settlementLayout(site,periodOrYear){
   const density=year< -1500?.16:year<1?.28:year<918?.45:year<1392?.6:year<1876?.78:year<1945?.9:1;
   const fieldsVisible=typeof periodOrYear==='object'?periodOrYear.fields!==false:year>=-1500;
   const config=settings[site.kind]||settings.village,r=randomFor(site.seed),houses=[],fields=[],roads=[];
-  const core=site.radius*.57,spacing=site.kind==='regional'?2.0:site.kind==='town'?2.15:2.4;
+  const core=site.radius*.57,spacing=site.kind==='regional'?1.85:site.kind==='town'?2:2.15;
   const bend=(z)=>Math.sin(z/(core||1)*2+site.layout)*core*.16;
   const lots=[];
   for(let row=-Math.floor(core/spacing);row<=Math.floor(core/spacing);row++)for(let col=-Math.floor(core/spacing);col<=Math.floor(core/spacing);col++){
-    const z=row*spacing+(r()-.5)*.45,x=col*spacing+(row%2)*.5+(r()-.5)*.45+bend(z);
-    if(Math.hypot(x,z)>core||Math.abs(x-bend(z))<.85)continue;
-    lots.push({x,z,scale:.42+r()*.23,angle:site.layout===2?(r()-.5)*.65:(row%2)*Math.PI/2+(r()-.5)*.18,archetype:r()<.2?'korean_house':'rural_cottage',rank:Math.hypot(x,z)+r()*core*.35});
+    let z=row*spacing+(r()-.5)*.4,x=col*spacing+(row%2)*.5+(r()-.5)*.4;
+    if(Math.hypot(x,z)>core||Math.abs(x)<.85)continue;
+    if(site.layout===0){x*=.72;z*=1.3;x+=bend(z);}
+    else if(site.layout===1){
+      // Three uneven pockets leave little commons between groups of homes.
+      const pocket=(row+col+100)%3,a=r()*Math.PI*2,d=Math.sqrt(r())*core*.45;
+      x=Math.cos(a)*d+[-.42,.38,.08][pocket]*core;
+      z=Math.sin(a)*d+[-.25,-.2,.5][pocket]*core;
+    }else if(site.layout===3){x*=1.22;z=z*.72+Math.sin(x/core*2)*.6;}
+    else x+=bend(z)*.2;
+    if(lots.some(p=>Math.hypot(p.x-x,p.z-z)<2.1))continue;
+    lots.push({x,z,scale:.42+r()*.23,angle:site.layout===1?r()*Math.PI*2:site.layout===3?(r()-.5)*.12:(row%2)*Math.PI/2+(r()-.5)*.18,archetype:r()<.2?'korean_house':'rural_cottage',rank:Math.hypot(x,z)+r()*core*.35});
   }
   lots.sort((a,b)=>a.rank-b.rank);
   for(const lot of lots.slice(0,Math.max(3,Math.floor(config.houses*density)))){const {rank,...house}=lot;houses.push(house);}
-  const spine=Array.from({length:9},(_,i)=>{const z=(i/8*2-1)*site.radius*.9;return [bend(z),z];});
+  const spine=Array.from({length:9},(_,i)=>{const z=(i/8*2-1)*site.radius*.9;return site.layout===3?[z,bend(z)]:[bend(z),z];});
   roads.push({points:spine,width:site.kind==='regional'?.8:.55});
-  for(let i=0;i<3;i++){
+  for(let i=0;i<(site.layout===0?1:3);i++){
     const z=(i-1)*core*.55;
-    roads.push({points:[[-core*.95,z-.6],[bend(z),z],[core*.95,z+.9]],width:.35});
+    const points=site.layout===1?[[0,0],[-core*.42,core*.3],[core*.08,core*.5]]:site.layout===3?[[-core*1.2,z],[0,z+.6],[core*1.2,z]]:[[-core*.95,z-.6],[bend(z),z],[core*.95,z+.9]];
+    if(site.layout===1&&i>0)continue;
+    roads.push({points,width:.35});
   }
-  if(fieldsVisible)for(let i=0;i<config.fields;i++){
-    const angle=i/config.fields*Math.PI*2+(r()-.5)*.1;
-    const half=Math.PI/config.fields*(.7+r()*.15),inner=core+1+r()*.7,outer=site.radius*(.88+r()*.1);
-    const corners=[[inner,angle-half],[outer,angle-half*.93],[outer*(.94+r()*.05),angle+half],[inner*(.94+r()*.08),angle+half*.91]].map(([radius,a])=>[Math.cos(a)*radius,Math.sin(a)*radius]);
-    fields.push({corners,color:Math.floor(r()*4)});
+  const plotBounds=[];
+  if(fieldsVisible)for(let i=0;i<config.fields*60&&fields.length<config.fields;i++){
+    const size=site.radius/12;
+    let x=(r()*2-1)*site.radius*.85,z=(r()*2-1)*site.radius*.85;
+    if(site.layout===0)x=(r()<.5?-1:1)*site.radius*(.45+r()*.32);
+    if(site.layout===1&&z< -site.radius*.25)continue;
+    if(site.layout===3)z=(r()<.3?-1:1)*site.radius*(.48+r()*.25);
+    const hw=(1.2+r()*1.2)*size,hd=(site.layout===3?.65+r()*.5:1.05+r()*1.1)*size;
+    const box={minX:x-hw,maxX:x+hw,minZ:z-hd,maxZ:z+hd};
+    if(plotBounds.some(p=>box.minX<p.maxX+.35&&box.maxX>p.minX-.35&&box.minZ<p.maxZ+.35&&box.maxZ>p.minZ-.35))continue;
+    if(lots.some(p=>p.x>box.minX-1.1&&p.x<box.maxX+1.1&&p.z>box.minZ-1.1&&p.z<box.maxZ+1.1))continue;
+    const corners=[[-hw,-hd],[hw,-hd],[hw,hd],[-hw,hd]].map(([dx,dz])=>[x+dx*(.86+r()*.14),z+dz*(.86+r()*.14)]);
+    if(corners.some(p=>Math.hypot(...p)>site.radius*.98))continue;
+    plotBounds.push(box);fields.push({corners,color:Math.floor(r()*4)});
   }
   return {houses,fields,roads,density};
 }
