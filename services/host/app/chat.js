@@ -19,7 +19,7 @@ export class EvidenceChat {
     if(this.pending)return;
     const question=this.host.querySelector('textarea').value.trim();
     if(!question)return;
-    const seq=++this.sequence, button=this.host.querySelector('button'), status=this.host.querySelector('.chat-status');
+    const seq=++this.sequence, button=this.host.querySelector('form button[type=submit]'), status=this.host.querySelector('.chat-status');
     this.pending=true;button.disabled=true;status.textContent='선택한 근거를 읽고 답변하는 중…';
     this.host.querySelector('.chat-answer').replaceChildren();
     try {

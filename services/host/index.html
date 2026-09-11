@@ -247,6 +247,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .compare-link{padding:12px 0;border-top:1px solid var(--line)}
 </style>
 <link rel="stylesheet" href="./app/chronicle.css">
+<link rel="stylesheet" href="./app/atlas.css">
 <style>
 #chat{display:none;position:absolute;inset:0 0 var(--timeline-height,42%);overflow:auto;padding:24px;color:var(--paper-2)}
 .modechat #chat{display:block}.modechat #map,.modechat #three,.modechat #graph,.modechat #hint,.modechat #outside3d,.modechat #resetMap{display:none}
@@ -382,6 +383,7 @@ import { groupSources } from './app/source-groups.js';
 import { GraphExplorer } from './app/graph.js';
 import { PeopleSearch } from './app/people.js';
 import { Chronicle, REFERENCE_GROUPS, yearLabel } from './app/chronicle.js';
+import { AtlasUI } from './app/atlas-ui.js';
 import { ChronicleScene } from './app/chronicle-scene.js';
 import { EvidenceChat } from './app/chat.js';
 import { SourceComparison } from './app/compare.js';
@@ -395,6 +397,7 @@ const state = {
   on: new Set(), primary: new Set(), lenses: [], year: 1593, sel: null, hot: null, mode: '3d', panel: null, origin: 'all', mapFocus: null
 };
 document.body.classList.add('mode3d');
+let atlasUI=null;
 const chronicleScene=new ChronicleScene(document.getElementById('sceneEvents'),id=>chronicleView.showEntity(id));
 const chronicleView = new Chronicle(document.getElementById('chronicle'), document.getElementById('historyTime'), {
   year:changeYear, filters:()=>({sources:state.on,origin:state.origin}), claim:showGraphClaim,
@@ -402,12 +405,14 @@ const chronicleView = new Chronicle(document.getElementById('chronicle'), docume
   scene:id=>{chronicleScene.preferredRow=id;},
   placement:id=>chronicleScene.assets?.rowFor(id)?.placementLabel,
   activity:id=>chronicleScene.activity(id),
+  presentEntity:(entity,activity)=>atlasUI?.showEntity(entity,activity),
   scenePackets:()=>chronicleScene.world?.scenePackets||[],
   context:context=>{
     const host=document.getElementById('sceneContext');
     host.querySelector('h2').textContent=yearLabel(context.year);
     host.querySelector('p').textContent=`동시대 인물 ${context.people.length} · 주변 사건 ${context.events.length}`;
     if(window.__sigong)chronicleScene.refresh(window.__sigong.world,chronicleView);
+    atlasUI?.update(context);
   }
 });
 function changeYear(year){
@@ -1419,6 +1424,8 @@ function draw3d(){
 }
 
 const loaded=load();
+atlasUI=new AtlasUI({chronicle:chronicleView,scene:chronicleScene,runtime:()=>R,
+  filters:()=>({sources:state.on,origin:state.origin,entity:state.sel}),evidence:showGraphClaim});
 </script>
 </body>
 </html>

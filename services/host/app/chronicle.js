@@ -178,6 +178,7 @@ export class Chronicle {
     clearTimeout(this.scrubTimer);this.pendingYear=null;
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
     if(year===0)year=this.year<0?1:-1;
+    if(year===this.year)return;
     this.callbacks.year(year);
   }
   previewYear(year){
@@ -193,10 +194,12 @@ export class Chronicle {
     this.callbacks.scene?.(event.sceneId);this.showEntity(event.id);
   }
   setYear(year){this.year=year;this.render();}
-  stopPlay(){clearInterval(this.timer);this.timer=null;this.controls.querySelector('[data-play]').textContent='▶ 재생';}
+  stopPlay(){clearInterval(this.timer);this.timer=null;const button=this.controls.querySelector('[data-play]');button.textContent='▶ 재생';button.setAttribute('aria-pressed','false');button.setAttribute('aria-label','시간 재생');}
   togglePlay(){
     if(this.timer){this.stopPlay();return;}
     this.controls.querySelector('[data-play]').textContent='Ⅱ 멈춤';
+    this.controls.querySelector('[data-play]').setAttribute('aria-pressed','true');
+    this.controls.querySelector('[data-play]').setAttribute('aria-label','시간 재생 멈춤');
     this.timer=setInterval(()=>{if(this.year>=2025){this.stopPlay();return;}this.chooseYear(this.year+1);},1200);
   }
   async refresh(){
@@ -225,6 +228,7 @@ export class Chronicle {
     }
     this.callbacks.entity(id);
     const activity=this.callbacks.activity?.(id);
+    if(this.callbacks.presentEntity?.(entity,activity))return;
     const activityClaims=(activity?.claimIds||[]).map(id=>this.data.claims.find(c=>c.id===id)).filter(Boolean);
     const descriptions=this.data.claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate));
     this.host.innerHTML=`<button class="context-back" data-context-back>← ${yearLabel(this.year)}로 돌아가기</button>
@@ -252,7 +256,7 @@ export class Chronicle {
   }
   render(){
     const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
-    this.timeline.setEvents(c.allEvents);this.timeline.setYear(this.year);
+    this.timeline.setEvents(this.callbacks.timelineEvents?.(c.allEvents)||c.allEvents);this.timeline.setYear(this.year);
     this.controls.querySelector('[type=number]').value=this.year;
     this.controls.querySelector('[type=range]').value=this.year;
     this.controls.querySelector('[data-calendar]').textContent='연도 입력';
