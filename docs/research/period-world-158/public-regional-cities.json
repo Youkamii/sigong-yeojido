@@ -1,0 +1,977 @@
+{
+  "url": "https://sigong.rabbion.info/",
+  "scope": "Real deployed public static files and APIs; no local intercepts",
+  "started": "2026-09-11T10:10:16.547676+00:00",
+  "checks": [
+    {
+      "name": "13 deployed regional scenes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "All new city entities and claims arrived through the real chronicle API",
+      "pass": true,
+      "detail": [
+        {
+          "id": "event-regional163-wonju-1395",
+          "entity": true,
+          "claims": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-place",
+            "claim-regional163-wonju-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-jeonju-1403",
+          "entity": true,
+          "claims": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-place",
+            "claim-regional163-jeonju-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-gangneung-1389",
+          "entity": true,
+          "claims": [
+            "claim-regional163-gangneung-period",
+            "claim-regional163-gangneung-place",
+            "claim-regional163-gangneung-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-andong-1581",
+          "entity": true,
+          "claims": [
+            "claim-regional163-andong-period",
+            "claim-regional163-andong-place",
+            "claim-regional163-andong-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-jinju-1402",
+          "entity": true,
+          "claims": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-place",
+            "claim-regional163-jinju-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-cheongju-1870",
+          "entity": true,
+          "claims": [
+            "claim-regional163-cheongju-period",
+            "claim-regional163-cheongju-place",
+            "claim-regional163-cheongju-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-chungju-1895",
+          "entity": true,
+          "claims": [
+            "claim-regional163-chungju-period",
+            "claim-regional163-chungju-place",
+            "claim-regional163-chungju-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-namgyeong-1099",
+          "entity": true,
+          "claims": [
+            "claim-regional163-namgyeong-period",
+            "claim-regional163-namgyeong-place",
+            "claim-regional163-namgyeong-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-mokpo-1914",
+          "entity": true,
+          "claims": [
+            "claim-regional163-mokpo-period",
+            "claim-regional163-mokpo-place",
+            "claim-regional163-mokpo-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-incheon-1413",
+          "entity": true,
+          "claims": [
+            "claim-regional163-incheon-period",
+            "claim-regional163-incheon-place",
+            "claim-regional163-incheon-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-jeju-1955",
+          "entity": true,
+          "claims": [
+            "claim-regional163-jeju-period",
+            "claim-regional163-jeju-place",
+            "claim-regional163-jeju-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-haeju-1938",
+          "entity": true,
+          "claims": [
+            "claim-regional163-haeju-period",
+            "claim-regional163-haeju-place",
+            "claim-regional163-haeju-transition"
+          ]
+        },
+        {
+          "id": "event-regional163-hamhung-1416",
+          "entity": true,
+          "claims": [
+            "claim-regional163-hamhung-period",
+            "claim-regional163-hamhung-place",
+            "claim-regional163-hamhung-transition"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1307 active cities have real plan entries, grounded primaries and API evidence",
+      "pass": true,
+      "detail": [
+        {
+          "id": "scene-regional163-namgyeong-1099",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-namgyeong-period",
+            "claim-regional163-namgyeong-transition",
+            "claim-regional163-namgyeong-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-namgyeong-period",
+            "claim-regional163-namgyeong-transition",
+            "claim-regional163-namgyeong-place"
+          ],
+          "buildings": 102,
+          "placement": "남경 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "name": "1459 active cities have real plan entries, grounded primaries and API evidence",
+      "pass": true,
+      "detail": [
+        {
+          "id": "scene-regional163-wonju-1395",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "buildings": 102,
+          "placement": "원주 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jeonju-1403",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "buildings": 102,
+          "placement": "전주부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-gangneung-1389",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-gangneung-period",
+            "claim-regional163-gangneung-transition",
+            "claim-regional163-gangneung-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-gangneung-period",
+            "claim-regional163-gangneung-transition",
+            "claim-regional163-gangneung-place"
+          ],
+          "buildings": 83,
+          "placement": "강릉대도호부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jinju-1402",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "buildings": 139,
+          "placement": "진주목 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-incheon-1413",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-incheon-period",
+            "claim-regional163-incheon-transition",
+            "claim-regional163-incheon-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-incheon-period",
+            "claim-regional163-incheon-transition",
+            "claim-regional163-incheon-place"
+          ],
+          "buildings": 41,
+          "placement": "인천군 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-hamhung-1416",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-hamhung-period",
+            "claim-regional163-hamhung-transition",
+            "claim-regional163-hamhung-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-hamhung-period",
+            "claim-regional163-hamhung-transition",
+            "claim-regional163-hamhung-place"
+          ],
+          "buildings": 72,
+          "placement": "함흥부 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "name": "1775 active cities have real plan entries, grounded primaries and API evidence",
+      "pass": true,
+      "detail": [
+        {
+          "id": "scene-regional163-wonju-1395",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "buildings": 102,
+          "placement": "원주 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jeonju-1403",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "buildings": 102,
+          "placement": "전주부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-andong-1581",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-andong-period",
+            "claim-regional163-andong-transition",
+            "claim-regional163-andong-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-andong-period",
+            "claim-regional163-andong-transition",
+            "claim-regional163-andong-place"
+          ],
+          "buildings": 102,
+          "placement": "안동부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jinju-1402",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "buildings": 136,
+          "placement": "진주목 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "name": "1894 active cities have real plan entries, grounded primaries and API evidence",
+      "pass": true,
+      "detail": [
+        {
+          "id": "scene-regional163-wonju-1395",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "buildings": 102,
+          "placement": "원주 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jeonju-1403",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "buildings": 102,
+          "placement": "전주부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jinju-1402",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "buildings": 136,
+          "placement": "진주목 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-cheongju-1870",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-cheongju-period",
+            "claim-regional163-cheongju-transition",
+            "claim-regional163-cheongju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-cheongju-period",
+            "claim-regional163-cheongju-transition",
+            "claim-regional163-cheongju-place"
+          ],
+          "buildings": 102,
+          "placement": "청주목 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "name": "1907 active cities have real plan entries, grounded primaries and API evidence",
+      "pass": true,
+      "detail": [
+        {
+          "id": "scene-regional163-chungju-1895",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-chungju-period",
+            "claim-regional163-chungju-transition",
+            "claim-regional163-chungju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-chungju-period",
+            "claim-regional163-chungju-transition",
+            "claim-regional163-chungju-place"
+          ],
+          "buildings": 102,
+          "placement": "충주 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "name": "1944 active cities have real plan entries, grounded primaries and API evidence",
+      "pass": true,
+      "detail": [
+        {
+          "id": "scene-regional163-mokpo-1914",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-mokpo-period",
+            "claim-regional163-mokpo-transition",
+            "claim-regional163-mokpo-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-mokpo-period",
+            "claim-regional163-mokpo-transition",
+            "claim-regional163-mokpo-place"
+          ],
+          "buildings": 60,
+          "placement": "목포부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-haeju-1938",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-haeju-period",
+            "claim-regional163-haeju-transition",
+            "claim-regional163-haeju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-haeju-period",
+            "claim-regional163-haeju-transition",
+            "claim-regional163-haeju-place"
+          ],
+          "buildings": 49,
+          "placement": "해주부 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "name": "2005 active cities have real plan entries, grounded primaries and API evidence",
+      "pass": true,
+      "detail": [
+        {
+          "id": "scene-regional163-jeju-1955",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jeju-period",
+            "claim-regional163-jeju-transition",
+            "claim-regional163-jeju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jeju-period",
+            "claim-regional163-jeju-transition",
+            "claim-regional163-jeju-place"
+          ],
+          "buildings": 73,
+          "placement": "제주시 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "name": "All 13 city primaries exercised",
+      "pass": true,
+      "detail": [
+        "scene-regional163-andong-1581",
+        "scene-regional163-cheongju-1870",
+        "scene-regional163-chungju-1895",
+        "scene-regional163-gangneung-1389",
+        "scene-regional163-haeju-1938",
+        "scene-regional163-hamhung-1416",
+        "scene-regional163-incheon-1413",
+        "scene-regional163-jeju-1955",
+        "scene-regional163-jeonju-1403",
+        "scene-regional163-jinju-1402",
+        "scene-regional163-mokpo-1914",
+        "scene-regional163-namgyeong-1099",
+        "scene-regional163-wonju-1395"
+      ]
+    },
+    {
+      "name": "scene-regional163-namgyeong-1099 boundary 1308",
+      "pass": true,
+      "detail": {
+        "expectedPresent": false,
+        "actualPresent": false
+      }
+    },
+    {
+      "name": "scene-regional163-gangneung-1389 boundary 1665",
+      "pass": true,
+      "detail": {
+        "expectedPresent": true,
+        "actualPresent": true
+      }
+    },
+    {
+      "name": "scene-regional163-gangneung-1389 boundary 1666",
+      "pass": true,
+      "detail": {
+        "expectedPresent": false,
+        "actualPresent": false
+      }
+    },
+    {
+      "name": "scene-regional163-jeju-1955 boundary 1954",
+      "pass": true,
+      "detail": {
+        "expectedPresent": false,
+        "actualPresent": false
+      }
+    },
+    {
+      "name": "scene-regional163-jeju-1955 boundary 1955",
+      "pass": true,
+      "detail": {
+        "expectedPresent": true,
+        "actualPresent": true
+      }
+    },
+    {
+      "name": "scene-regional163-jeju-1955 boundary 2006",
+      "pass": true,
+      "detail": {
+        "expectedPresent": false,
+        "actualPresent": false
+      }
+    },
+    {
+      "name": "Source off clears historical scenes and pick targets",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser execution errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "samples": [
+    {
+      "year": 1307,
+      "rows": [
+        {
+          "id": "scene-regional163-namgyeong-1099",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-namgyeong-period",
+            "claim-regional163-namgyeong-transition",
+            "claim-regional163-namgyeong-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-namgyeong-period",
+            "claim-regional163-namgyeong-transition",
+            "claim-regional163-namgyeong-place"
+          ],
+          "buildings": 102,
+          "placement": "남경 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "year": 1459,
+      "rows": [
+        {
+          "id": "scene-regional163-wonju-1395",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "buildings": 102,
+          "placement": "원주 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jeonju-1403",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "buildings": 102,
+          "placement": "전주부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-gangneung-1389",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-gangneung-period",
+            "claim-regional163-gangneung-transition",
+            "claim-regional163-gangneung-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-gangneung-period",
+            "claim-regional163-gangneung-transition",
+            "claim-regional163-gangneung-place"
+          ],
+          "buildings": 83,
+          "placement": "강릉대도호부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jinju-1402",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "buildings": 139,
+          "placement": "진주목 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-incheon-1413",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-incheon-period",
+            "claim-regional163-incheon-transition",
+            "claim-regional163-incheon-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-incheon-period",
+            "claim-regional163-incheon-transition",
+            "claim-regional163-incheon-place"
+          ],
+          "buildings": 41,
+          "placement": "인천군 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-hamhung-1416",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-hamhung-period",
+            "claim-regional163-hamhung-transition",
+            "claim-regional163-hamhung-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-hamhung-period",
+            "claim-regional163-hamhung-transition",
+            "claim-regional163-hamhung-place"
+          ],
+          "buildings": 72,
+          "placement": "함흥부 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "year": 1775,
+      "rows": [
+        {
+          "id": "scene-regional163-wonju-1395",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "buildings": 102,
+          "placement": "원주 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jeonju-1403",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "buildings": 102,
+          "placement": "전주부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-andong-1581",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-andong-period",
+            "claim-regional163-andong-transition",
+            "claim-regional163-andong-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-andong-period",
+            "claim-regional163-andong-transition",
+            "claim-regional163-andong-place"
+          ],
+          "buildings": 102,
+          "placement": "안동부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jinju-1402",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "buildings": 136,
+          "placement": "진주목 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "year": 1894,
+      "rows": [
+        {
+          "id": "scene-regional163-wonju-1395",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-wonju-period",
+            "claim-regional163-wonju-transition",
+            "claim-regional163-wonju-place"
+          ],
+          "buildings": 102,
+          "placement": "원주 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jeonju-1403",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jeonju-period",
+            "claim-regional163-jeonju-transition",
+            "claim-regional163-jeonju-place"
+          ],
+          "buildings": 102,
+          "placement": "전주부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-jinju-1402",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jinju-period",
+            "claim-regional163-jinju-transition",
+            "claim-regional163-jinju-place"
+          ],
+          "buildings": 136,
+          "placement": "진주목 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-cheongju-1870",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-cheongju-period",
+            "claim-regional163-cheongju-transition",
+            "claim-regional163-cheongju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-cheongju-period",
+            "claim-regional163-cheongju-transition",
+            "claim-regional163-cheongju-place"
+          ],
+          "buildings": 102,
+          "placement": "청주목 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "year": 1907,
+      "rows": [
+        {
+          "id": "scene-regional163-chungju-1895",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-chungju-period",
+            "claim-regional163-chungju-transition",
+            "claim-regional163-chungju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-chungju-period",
+            "claim-regional163-chungju-transition",
+            "claim-regional163-chungju-place"
+          ],
+          "buildings": 102,
+          "placement": "충주 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "year": 1944,
+      "rows": [
+        {
+          "id": "scene-regional163-mokpo-1914",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-mokpo-period",
+            "claim-regional163-mokpo-transition",
+            "claim-regional163-mokpo-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-mokpo-period",
+            "claim-regional163-mokpo-transition",
+            "claim-regional163-mokpo-place"
+          ],
+          "buildings": 60,
+          "placement": "목포부 · 지역 기준 추정 배치"
+        },
+        {
+          "id": "scene-regional163-haeju-1938",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-haeju-period",
+            "claim-regional163-haeju-transition",
+            "claim-regional163-haeju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-haeju-period",
+            "claim-regional163-haeju-transition",
+            "claim-regional163-haeju-place"
+          ],
+          "buildings": 49,
+          "placement": "해주부 · 지역 기준 추정 배치"
+        }
+      ]
+    },
+    {
+      "year": 2005,
+      "rows": [
+        {
+          "id": "scene-regional163-jeju-1955",
+          "inPlan": true,
+          "primary": true,
+          "onLand": true,
+          "claimIds": [
+            "claim-regional163-jeju-period",
+            "claim-regional163-jeju-transition",
+            "claim-regional163-jeju-place"
+          ],
+          "apiClaims": [
+            "claim-regional163-jeju-period",
+            "claim-regional163-jeju-transition",
+            "claim-regional163-jeju-place"
+          ],
+          "buildings": 73,
+          "placement": "제주시 · 지역 기준 추정 배치"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "finished": "2026-09-11T10:10:38.841277+00:00"
+}

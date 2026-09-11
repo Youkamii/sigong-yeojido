@@ -48,4 +48,14 @@
 
 모든 브라우저 검사는 headless Chrome이다. 모바일은 화면 크기와 터치를 모사했으며 물리적인 기기 검사는 NOT_RUN이다. AI 대화 전송만 모의 응답으로 검사했고 실제 모델 응답은 NOT_RUN이다. GitHub Actions workflow는 0개다.
 
+## 공개 배포 결과
+
+PR #165, main/c2 `09c097e4`의 실제 공개 주소에서 로컬 파일 대체나 자료 주입 없이 [UI 33개](period-world-158/public-ui.json), [새 도시·기간 경계·출처 선택 18개](period-world-158/public-regional-cities.json), [한성 4시기 장소 버튼](period-world-158/public-capital-periods.json)이 모두 통과했다. 브라우저 오류는 0개다. [1400년 한성 배경](period-world-158/public-capital-1400.png) · [전체 지도](period-world-158/public-overview.jpg).
+
+자료 반영 직후의 [첫 검사](period-world-158/public-first-index-refresh.json)는 서버 색인 갱신 중 45초 대기를 넘겼다. `/api/sources`의 새 자료 반영을 확인한 뒤 다시 실행한 공개 검사에서는 준비 약 13초, 가까운 장면 약 154fps·전체 지도 약 137fps·프레임 간격 p95 약 12.1/12.2ms였다. 1586×992·DPR 1·medium·각 약 1.4초의 짧은 PC 표본이며 저사양 기기 성능을 뜻하지 않는다.
+
+c2 자동 동기화는 경고·실패 없이 316,201트리플을 적재했고 실제 SPARQL에서 새 Claim 42개를 확인했다. API에는 Source 1,857개·원문 2,603,458조각이 있다. 서버 TTL 해시는 `6b032c17ee1d023af6e5e8c5879e085b8d976d8557561ece212f052575f3a953`이다. 로컬 빌드와의 차이를 직접 비교했으며 35개 기존 사료의 `chunkCount`만 다르다. 로컬은 인용 표본, c2는 전체 벌크 원문을 가지고 있기 때문이다.
+
+[실제 Opus 조사 아카이브](period-world-158/research-archive.json)는 WebFetch 추출 출력·노트·기관 원본 HTML과 실행 메타데이터를 보존한다. 모델의 별도 최종 요약 JSON은 생성되지 않아 미완으로 기록했고 추가 작성 프로세스는 종료했다. 실제 채택 도시 데이터는 저장된 조사 자료를 기관 HTML과 대조해 정규화했다. 마을 배치·지붕 비율 등 미술 선택을 출처가 확정한 역사 사실로 세지 않는다.
+
 짧은 약 1.4초 성능 표본은 검사 JSON에 보관했다. 최종 도시 데이터와 무관한 중간 측정이며 서로 다른 장면의 FPS를 직접 개선 비율로 비교하지 않는다. 한반도 지형·해안선·강 파일은 이번 변경 범위에 포함하지 않는다.
