@@ -1,4 +1,7 @@
 import * as THREE from 'three';
+import {figureArchetype} from './period-figures.js';
+import {buildingArchetype} from './period-buildings.js';
+import {settlementLayout,SETTLEMENT_RADIUS} from './historical-regions.js';
 
 function fireAt(group,position,scale,animated){
   const fire=new THREE.Group();fire.position.copy(position);fire.scale.setScalar(scale);group.add(fire);
@@ -53,7 +56,7 @@ export function composeHistoricalEvent(event,position,world){
     displayScale=Math.min(displayScale,clearance/48);
   }
   if(event.compact)displayScale*=.16;
-  const radius=event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
+  const radius=event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
   if(!event.compact&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,event.maxRadius/radius);
   const model=(archetype,dx,dz,scale=1,extra={})=>{
     if(!modern)archetype=({palace:'korean_hall',house:'korean_house',gatehouse:'korean_gate',academy_hall:'korean_academy',courtyard_house:'korean_courtyard'})[archetype]||archetype;
@@ -61,8 +64,13 @@ export function composeHistoricalEvent(event,position,world){
     let x=position.x+dx,z=position.z+dz;
     const onWater=extra.medium?extra.medium==='sea':sea;
     if(!onWater&&!world.contains(x,z)){
-      x=position.x+dx*.4;z=position.z+dz*.4;
-      if(!world.contains(x,z))return;
+      if(event.archetype==='settlement'){
+        if(!extra.primary||!world.contains(position.x,position.z))return;
+        x=position.x;z=position.z;
+      }else{
+        x=position.x+dx*.4;z=position.z+dz*.4;
+        if(!world.contains(x,z))return;
+      }
     }
     if(onWater&&world.contains(x,z))return;
     const p=new THREE.Vector3(x,onWater?world.seaLevel:world.surfaceAt(x,z),z);
@@ -135,11 +143,23 @@ export function composeHistoricalEvent(event,position,world){
       }else if(event.archetype==='court'){model('table',0,-4,1.5);model('book',0,-4,1.2,{lift:2.5});}
     }
   }else if(event.archetype==='settlement'){
-    model(modern?'civic_hall':'palace',0,-7,1.5,{primary:true});
+    for(const {archetype,x,z,scale,...extra} of settlementLayout(event))model(archetype,x,z,scale,extra);
     if(!event.compact){
-      for(const [x,z] of [[-22,-10],[22,-8],[-22,13],[20,17]])model('house',x,z,1.2,{path:true});
-      model('market',0,16,1.4);model('handcart',10,13,1.1);
-      for(let i=0;i<12;i++)model('human',-18+(i%6)*7,3+Math.floor(i/6)*9,1.5,{action:i%3?'walking':'working'});
+      const patches=[];
+      for(const x of [-48,-40,-8,0,8,40,48])for(const z of [47,55,63]){
+        const px=position.x+x*displayScale,pz=position.z+z*displayScale;
+        if(world.contains(px,pz)&&world.contains(px+3*displayScale,pz+2*displayScale))patches.push([px,world.surfaceAt(px,pz)+.05*displayScale,pz]);
+      }
+      const fields=new THREE.InstancedMesh(new THREE.BoxGeometry(5*displayScale,.08*displayScale,3*displayScale),new THREE.MeshStandardMaterial({color:'#8c9252',roughness:1}),patches.length);
+      const matrix=new THREE.Matrix4();patches.forEach((p,i)=>fields.setMatrixAt(i,matrix.makeTranslation(...p)));
+      fields.name='city-symbolic-fields';group.add(fields);
+      const lanes=[];
+      for(let i=-8;i<=8;i++)for(const [x,z,sx,sz] of [[i*5,6,4.6,1],[-18,i*5,1,4.6],[18,i*5,1,4.6]]){
+        const px=position.x+x*displayScale,pz=position.z+z*displayScale;
+        if(world.contains(px,pz))lanes.push([px,world.surfaceAt(px,pz)+.06*displayScale,pz,sx,sz]);
+      }
+      const street=new THREE.InstancedMesh(new THREE.BoxGeometry(1.1*displayScale,.06*displayScale,1.1*displayScale),new THREE.MeshStandardMaterial({color:'#ad9e7e',roughness:1}),lanes.length);
+      lanes.forEach(([x,y,z,sx,sz],i)=>{matrix.makeScale(sx,1,sz);matrix.setPosition(x,y,z);street.setMatrixAt(i,matrix);});street.name='city-local-lanes';group.add(street);
     }
   }else if(kiln){
     model('rural_store',0,-9,2,{primary:true});
@@ -319,6 +339,11 @@ export function composeHistoricalEvent(event,position,world){
       model(person.archetype,dx,dz,2.4,{person,side,action:event.archetype==='publication'?'working':'idle'});
     }
   }
+  const anonymousRoles={human:'commoner',period_figure:'commoner',modern_figure:'commoner',spearman:'soldier',rifle_soldier:'soldier',period_commander:'commander',period_scholar:'scholar',scribe:'scholar',period_monk:'monk',period_ruler:'ruler'};
+  for(const [seed,row] of models.entries())if(!row.person){
+    const role=anonymousRoles[row.archetype];
+    row.archetype=role?figureArchetype(role,event.year):buildingArchetype(row.archetype,event.year,{seed,latitude:event.scenePlace?.coordinates?.[1]});
+  }
   return {group,animated,models,occupied,compositionKind,displayScale,radius:radius*displayScale,
-    focusDistance:Math.max(.1,(sea?145:harbor?150:groundbreaking?60:music||['publication','tradition'].includes(event.archetype)?85:relief||power?95:115)*displayScale)};
+    focusDistance:Math.max(.1,(event.archetype==='settlement'?220:sea?145:harbor?150:groundbreaking?60:music||['publication','tradition'].includes(event.archetype)?85:relief||power?95:115)*displayScale)};
 }

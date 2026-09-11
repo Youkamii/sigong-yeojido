@@ -1,0 +1,313 @@
+{
+  "issue": 162,
+  "node": {
+    "scope": "Real Three geometry with a flat 600x600 fixture and mocked canvas painting; not measured terrain acceptance",
+    "results": [
+      {
+        "command": "node scripts/test_period_buildings.mjs",
+        "exitCode": 0,
+        "stdout": "PASS: 108 compact role/period variants, immutable extension, deterministic variety and storage roles",
+        "stderr": ""
+      },
+      {
+        "command": "node scripts/test_scenery_period.mjs",
+        "exitCode": 0,
+        "stdout": "PASS: era settings, mixed roofs, tools, anonymous people, northern source scope and wildlife display",
+        "stderr": ""
+      },
+      {
+        "command": "node scripts/test_village_runtime.mjs",
+        "exitCode": 0,
+        "stdout": "PASS: actual village geometry, unchanged-year identity, period disposal, source clearings and one-draw LOD {\"villages\":88,\"houses\":519,\"fields\":319,\"layouts\":6,\"distantVillageDraws\":88,\"triangles\":354124}\nPASS: integrated figure-era boundary, latest-year async completion and same-era reuse",
+        "stderr": ""
+      }
+    ]
+  },
+  "browser": {
+    "revision": "dd0d21e86eda680f38fd439469dce707cd116e53",
+    "api": "https://sigong.rabbion.info/",
+    "frontend": "Local static files intercepted; live history APIs",
+    "checks": {
+      "samePeriodDetail": true,
+      "samePeriodOverview": true,
+      "samePeriodZeroBuilds": true,
+      "nearUsesDetail": true,
+      "farUsesOverview": true,
+      "goryeoBuilding": true,
+      "goryeoPerson": true,
+      "earlyHouse": true,
+      "tinyHouseScale": true,
+      "noPageErrors": true
+    },
+    "site": {
+      "x": 49.02849363668781,
+      "z": -348.21884826772737,
+      "latitude": 40.69049853985491,
+      "radius": 12,
+      "scale": 0.26715462196618317,
+      "angle": 5.970101950481093,
+      "layout": 5,
+      "seed": 249609839,
+      "id": "scenery-village:2"
+    },
+    "periodSamples": [
+      {
+        "name": "joseon-near",
+        "period": "joseon",
+        "detail": "9952d13f-1c23-4fff-b656-de739cffe2fd",
+        "overview": "0fa8af24-00f5-4b6e-925c-4943ed60e954",
+        "detailVisible": true,
+        "overviewVisible": false,
+        "stats": {
+          "villages": 76,
+          "houses": 451,
+          "fields": 255,
+          "tigers": 15,
+          "ready": true,
+          "year": 1600,
+          "modelBuilds": 76,
+          "period": "joseon"
+        }
+      },
+      {
+        "name": "joseon-far",
+        "period": "joseon",
+        "detail": "9952d13f-1c23-4fff-b656-de739cffe2fd",
+        "overview": "0fa8af24-00f5-4b6e-925c-4943ed60e954",
+        "detailVisible": false,
+        "overviewVisible": true,
+        "stats": {
+          "villages": 76,
+          "houses": 451,
+          "fields": 255,
+          "tigers": 15,
+          "ready": true,
+          "year": 1600,
+          "modelBuilds": 76,
+          "period": "joseon"
+        }
+      },
+      {
+        "name": "joseon-next-year",
+        "period": "joseon",
+        "detail": "9952d13f-1c23-4fff-b656-de739cffe2fd",
+        "overview": "0fa8af24-00f5-4b6e-925c-4943ed60e954",
+        "detailVisible": true,
+        "overviewVisible": false,
+        "stats": {
+          "villages": 76,
+          "houses": 451,
+          "fields": 255,
+          "tigers": 15,
+          "ready": true,
+          "year": 1601,
+          "modelBuilds": 76,
+          "period": "joseon"
+        }
+      },
+      {
+        "name": "goryeo-near",
+        "period": "goryeo",
+        "detail": "51c845e2-d196-4d59-9d5e-6ba267b071e3",
+        "overview": "2c642039-4234-483d-805d-1e6b0d1a114c",
+        "detailVisible": true,
+        "overviewVisible": false,
+        "stats": {
+          "villages": 76,
+          "houses": 451,
+          "fields": 255,
+          "tigers": 15,
+          "ready": true,
+          "year": 1200,
+          "modelBuilds": 152,
+          "period": "goryeo"
+        }
+      },
+      {
+        "name": "three-near",
+        "period": "three-kingdoms",
+        "detail": "f476cd0e-f5e1-4202-918e-e07982e06770",
+        "overview": "cfce3cd6-6c28-4907-940a-13192a86c027",
+        "detailVisible": true,
+        "overviewVisible": false,
+        "stats": {
+          "villages": 76,
+          "houses": 451,
+          "fields": 255,
+          "tigers": 15,
+          "ready": true,
+          "year": 600,
+          "modelBuilds": 228,
+          "period": "three-kingdoms"
+        }
+      },
+      {
+        "name": "early-near",
+        "period": "early-farming",
+        "detail": "22b67e8e-7a90-4afb-90f3-df5b7283321a",
+        "overview": "5a926fda-e72c-4369-94f9-81bce68468c7",
+        "detailVisible": true,
+        "overviewVisible": false,
+        "stats": {
+          "villages": 76,
+          "houses": 451,
+          "fields": 255,
+          "tigers": 15,
+          "ready": true,
+          "year": -500,
+          "modelBuilds": 304,
+          "period": "early-farming"
+        }
+      }
+    ],
+    "capture": "Actual compositor frame read immediately with canvas.toDataURL, without production camera edits"
+  },
+  "northModernFollowup": {
+    "revision": "dc7de673",
+    "checks": {
+      "sameNorthernSite": true,
+      "noEarlyHut": true,
+      "neutralHouseFamily": true,
+      "modernFigure": true,
+      "noPageErrors": true
+    },
+    "sample": {
+      "year": 2000,
+      "period": "mechanized",
+      "target": [
+        49.028493636687834,
+        10.854741825254449,
+        -348.21884826772754
+      ],
+      "camera": [
+        59.182952926982956,
+        23.910475198491028,
+        -333.71247785302023
+      ],
+      "zoom": 14.209576716511647,
+      "fly": false,
+      "site": {
+        "x": 49.02849363668781,
+        "z": -348.21884826772737,
+        "latitude": 40.69049853985491,
+        "radius": 12,
+        "scale": 0.26715462196618317,
+        "angle": 5.970101950481093,
+        "layout": 5,
+        "seed": 249609839,
+        "id": "scenery-village:2"
+      },
+      "models": [
+        {
+          "archetype": "era_joseon_house_0",
+          "x": 47.42089176680108,
+          "z": -350.7049131461673,
+          "scale": 0.24871150475362871
+        },
+        {
+          "archetype": "era_joseon_house_1",
+          "x": 50.10047466200273,
+          "z": -350.6798650966178,
+          "scale": 0.2538904436706735
+        },
+        {
+          "archetype": "era_joseon_house_1",
+          "x": 51.517355063511395,
+          "z": -349.378762559303,
+          "scale": 0.24804949371627266
+        },
+        {
+          "archetype": "era_joseon_house_2",
+          "x": 47.34302640961073,
+          "z": -348.764485611561,
+          "scale": 0.20741551078331633
+        },
+        {
+          "archetype": "era_joseon_house_0",
+          "x": 48.996017998232915,
+          "z": -349.07177659817063,
+          "scale": 0.2526308865686377
+        },
+        {
+          "archetype": "era_joseon_house_0",
+          "x": 50.81939909194348,
+          "z": -347.6390773413253,
+          "scale": 0.21115028005883305
+        },
+        {
+          "archetype": "era_joseon_house_1",
+          "x": 46.103680522153105,
+          "z": -347.20006488460314,
+          "scale": 0.2005437436446907
+        },
+        {
+          "archetype": "era_joseon_store_2",
+          "x": 48.72190326601743,
+          "z": -347.19488099464985,
+          "scale": 0.21210583351842938
+        },
+        {
+          "archetype": "era_joseon_store_2",
+          "x": 48.595117798260134,
+          "z": -349.48236525756744,
+          "scale": 0.14693504208140076
+        },
+        {
+          "archetype": "handcart",
+          "x": 49.200379551041166,
+          "z": -347.88239854410926,
+          "scale": 0.13357731098309159
+        },
+        {
+          "archetype": "figure_modern_commoner",
+          "x": 48.527480103804955,
+          "z": -347.53862671540253,
+          "scale": 0.17365050427801906
+        },
+        {
+          "archetype": "figure_modern_commoner",
+          "x": 50.463896540881215,
+          "z": -348.3157743825369,
+          "scale": 0.16029277317970989
+        }
+      ],
+      "stats": {
+        "villages": 76,
+        "houses": 451,
+        "fields": 255,
+        "tigers": 0,
+        "ready": true,
+        "year": 2000,
+        "modelBuilds": 152,
+        "period": "mechanized"
+      },
+      "render": {
+        "calls": 161,
+        "triangles": 783590,
+        "sceneCalls": 70,
+        "sceneTriangles": 391784,
+        "fps": 161.29032211546843,
+        "quality": "medium",
+        "autoMedianMs": 11.199999988079071,
+        "adaptMedianMs": 6.0999999940395355
+      },
+      "detail": "5303e956-534f-43bc-aece-94cb9e19af7d",
+      "overview": "15957114-2b01-4e60-8057-8bc1198145c7",
+      "detailVisible": true,
+      "overviewVisible": false,
+      "cameraSame": true,
+      "name": "modern-north-fixed"
+    },
+    "screenshot": "villages-162-modern-north.png",
+    "screenshotSha256": "842a59df9df67f0e619cf151c50e05727d1eefc2638e35250d57b4c166499dfa"
+  },
+  "research": {
+    "status": "COLLECTED_WEBFETCH_SUMMARIES_FINAL_JSON_PENDING",
+    "modelRequested": "claude-opus-5",
+    "effort": "max",
+    "sessionId": "62a67f07-082e-443a-b461-a48ebf686adc",
+    "collectionExit": "Intentional collection-to-consolidation switch; not a completed final report",
+    "collectionEventsSha256": "b117167c98d67ded78f834e2fdc76b1457e7d42c6eb568bd4b1f49585a0b6573",
+    "interpretation": "WebFetch summaries are not exact raw HTML; no measured national roof ratios or reconstructed village layouts are claimed."
+  }
+}

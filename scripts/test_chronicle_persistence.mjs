@@ -3,11 +3,10 @@ import {registerHooks} from 'node:module';
 registerHooks({resolve(specifier,context,next){return specifier==='three'
   ?{url:new URL('../services/host/vendor/three.module.min.js',import.meta.url).href,shortCircuit:true,format:'module'}:{...next(specifier,context),...(specifier.endsWith('.js')?{format:'module'}:{})};}});
 const THREE=await import('three');
-const {ChronicleAssets}=await import('../services/host/app/chronicle-assets.js');
+const {ChronicleAssets,loadHistoryAssets}=await import('../services/host/app/chronicle-assets.js');
 const {sceneVisualKey}=await import('../services/host/app/chronicle-persistence.js');
 const {readFile}=await import('node:fs/promises');
-const {compileAssetCatalog}=await import('../services/host/app/assetcatalog.js');
-const engine={scene:new THREE.Scene(),add(group){this.scene.add(group);},remove(group){this.scene.remove(group);},flyTo(){}};
+const engine={scene:new THREE.Scene(),camera:new THREE.PerspectiveCamera(),add(group){this.scene.add(group);},remove(group){this.scene.remove(group);},flyTo(){}};
 const world={toWorld:(x,z)=>[x,z],surfaceAt:()=>0,contains:()=>true};
 const assets=new ChronicleAssets(engine,world,{stats:{}});
 // Exercise real composition/reconciliation and Three ownership without a WebGL/canvas runtime.
@@ -65,7 +64,13 @@ const context=new Proxy({getImageData:(x,y,w,h)=>({data:new Uint8ClampedArray(w*
   createLinearGradient:()=>({addColorStop(){}}),createRadialGradient:()=>({addColorStop(){}})},
   {get:(target,key)=>target[key]||(()=>{})});
 globalThis.document={createElement:()=>({getContext:()=>context})};
-const catalog=compileAssetCatalog(JSON.parse(await readFile(new URL('../services/host/app/history-asset-catalog.json',import.meta.url),'utf8')));
+const raw=JSON.parse(await readFile(new URL('../services/host/app/history-asset-catalog.json',import.meta.url),'utf8'));
+let catalogFetches=0;
+globalThis.fetch=async()=>{catalogFetches++;return {ok:true,json:async()=>raw};};
+const catalog=await loadHistoryAssets();
+assert.equal(await loadHistoryAssets(),catalog);assert.equal(catalogFetches,1);
+assert.ok(catalog.cores.has('figure_joseon_commoner')&&catalog.cores.has('era_joseon_house_0'),
+  'The production loader includes both figure and building catalogs');
 const production=new ChronicleAssets(engine,world,catalog);
 production.scenery=assets.scenery;production.buildForest=()=>{};
 production.rebuild(plan([event()]));

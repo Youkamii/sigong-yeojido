@@ -14,14 +14,14 @@ export class ChronicleScenery{
     assets.engine.add(this.group);this.sites=[];this.cells=[];this.occupied=[];this.wildlife=[];this.showPaths=true;
     this.stats={villages:0,houses:0,fields:0,tigers:0,ready:false};
     const w=this.world,b=w.bounds,candidates=[];
-    for(let x=b.minX+20;x<b.maxX-20;x+=58)for(let z=b.minZ+20;z<b.maxZ-20;z+=58){
+    for(let x=b.minX+20;x<b.maxX-20;x+=52)for(let z=b.minZ+20;z<b.maxZ-20;z+=52){
       const seed=stableSeed('hamlet:'+x+':'+z),r=randomFor(String(seed)),px=x+r()*26-13,pz=z+r()*26-13;
       if(!insideCoastline(px,pz,w.rings[0])||!w.contains(px,pz,14))continue;
       const heights=[[0,0],[-11,-11],[11,-11],[11,11],[-11,11]].map(([dx,dz])=>w.surfaceAt(px+dx,pz+dz));
       if(heights[0]>26||Math.max(...heights)-Math.min(...heights)>3.6)continue;
-      candidates.push({x:px,z:pz,latitude:w.coordinatesAt(px,pz)[1],radius:12,scale:.27+r()*.1,angle:r()*Math.PI*2,layout:seed%4,seed});
+      candidates.push({x:px,z:pz,latitude:w.coordinatesAt(px,pz)[1],radius:12,scale:.25+r()*.08,angle:r()*Math.PI*2,layout:seed%6,seed});
     }
-    this.sites=candidates.sort((a,b)=>a.seed-b.seed).slice(0,64).map((s,i)=>({...s,id:'scenery-village:'+i}));
+    this.sites=candidates.sort((a,b)=>a.seed-b.seed).slice(0,88).map((s,i)=>({...s,id:'scenery-village:'+i}));
     this.paths=new CountrysidePaths(w,this.sites);this.group.add(this.paths.mesh);
   }
   point(site,x,z){const c=Math.cos(site.angle),s=Math.sin(site.angle);return [site.x+(x*c+z*s)*site.scale,site.z+(-x*s+z*c)*site.scale];}
@@ -83,7 +83,7 @@ export class ChronicleScenery{
     for(const site of this.sites){
       const r=randomFor(site.id+':'+site.seed),group=new THREE.Group();group.name=site.id;group.userData.decorative=true;
       const cell={site,group,animated:[],models:[],plots:[]};this.cells.push(cell);this.group.add(group);
-      const anchors=new Map(),recipes=[],houses=[],count=3+Math.floor(r()*5);
+      const anchors=new Map(),recipes=[],houses=[],count=4+Math.floor(r()*6);
       const add=(archetype,x,z,scale)=>{
         const [wx,wz]=this.point(site,x,z);if(!this.world.contains(wx,wz,1))return;
         const id=site.id+':'+recipes.length,y=this.world.surfaceAt(wx,wz),p=new THREE.Vector3(x*site.scale,y,z*site.scale);
@@ -91,9 +91,12 @@ export class ChronicleScenery{
       };
       for(let i=0;i<count;i++){
         const a=(i/count)*Math.PI*2,jitter=r()*3-1.5;
-        const p=site.layout===0?[(i-(count-1)/2)*7,(i%2?1:-1)*(6+r()*3)]:site.layout===1?[Math.cos(a)*(10+r()*3),Math.sin(a)*(9+r()*3)]:site.layout===2?[(i%3-1)*9+jitter,(Math.floor(i/3)-.5)*12+jitter]:[Math.cos(a)*7+i*.9,Math.sin(a)*12+jitter];
-        houses.push(p);add(i===count-1&&r()>.45?'rural_store':r()>.8?'rural_hut':r()>.75?'korean_house':'rural_cottage',...p,.65+r()*.35);this.stats.houses++;
+        const p=site.layout===0?[(i-(count-1)/2)*6,(i%2?1:-1)*(6+r()*3)]:site.layout===1?[Math.cos(a)*(10+r()*3),Math.sin(a)*(9+r()*3)]:site.layout===2?[(i%3-1)*9+jitter,(Math.floor(i/3)-1)*10+jitter]:site.layout===3?[Math.cos(a)*7+i*.9,Math.sin(a)*12+jitter]:site.layout===4?[(i%2?9:-9)+Math.cos(a)*4,Math.sin(a)*9+jitter]:[(i%3-1)*8+jitter,Math.floor(i/3)*7-10+Math.abs(i%3-1)*3];
+        const archetype=i===count-1&&r()>.45?'rural_store':r()>.8?'rural_hut':r()>.75?'korean_house':'rural_cottage';
+        houses.push(p);add(archetype,...p,.65+r()*.35);if(archetype!=='rural_store')this.stats.houses++;
       }
+      add('rural_store',-3,-4,.55);
+      if(site.seed%4===0)add('market',3,1,.42);
       if(r()>.4)add('handcart',1,1,.5);add('human',-1,3,.65);if(r()>.5)add('human',5,-2,.6);
       cell.recipes=recipes;cell.anchors=anchors;this.buildVillage(cell,this.period);
       const positions=[],colors=[],roadPoints=[],roadColors=[],earth=new THREE.Color('#958664');
