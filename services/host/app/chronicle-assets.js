@@ -81,7 +81,7 @@ export class ChronicleAssets{
     if(!this.treeCandidates)for(let i=0;i<180000&&candidates.length<18000;i++){
       const seed=stableSeed('wood:'+i),x=b.minX+(b.maxX-b.minX)*(seed%10000)/10000;
       const z=b.minZ+(b.maxZ-b.minZ)*(Math.floor(seed/10000)%10000)/10000;
-      if(!this.world.contains(x,z,1.2)||this.world.nearWater?.(x,z,1.2))continue;
+      if(!this.world.contains(x,z,1.2))continue;
       const height=this.world.surfaceAt(x,z),slope=Math.max(Math.abs(this.world.surfaceAt(x+2,z)-this.world.surfaceAt(x-2,z)),Math.abs(this.world.surfaceAt(x,z+2)-this.world.surfaceAt(x,z-2)))/4;
       if(woodlandDensity(x,z)<(stableSeed('canopy:'+i)%1000)/1000||slope>.9||this.world.ridgeAt(x,z)>.8||(height>23&&seed%4))continue;
       const cx=Math.floor(x/cellSize),cz=Math.floor(z/cellSize);
@@ -96,7 +96,7 @@ export class ChronicleAssets{
     const treeScale=p=>Math.min(1,...scenes.filter(s=>Math.hypot(p.x-s.x,p.z-s.z)<Math.max(12,90*s.scale)).map(s=>s.scale));
     const positions=candidates.filter(p=>{
       p.treeScale=treeScale(p);
-      return occupied.every(o=>(p.x-o.x)**2+(p.z-o.z)**2>=(o.radius+.8*p.treeScale)**2)&&!this.scenery.nearPath?.(p.x,p.z,1.1)&&!this.world.nearWater?.(p.x,p.z,1.1);
+      return occupied.every(o=>(p.x-o.x)**2+(p.z-o.z)**2>=(o.radius+.8*p.treeScale)**2)&&!this.scenery.nearPath?.(p.x,p.z,1.1);
     });
     const treeCells=new Map(),treeCellSize=3;
     const register=p=>{const key=Math.floor(p.x/treeCellSize)+':'+Math.floor(p.z/treeCellSize);if(!treeCells.has(key))treeCells.set(key,[]);treeCells.get(key).push(p);};
@@ -110,7 +110,7 @@ export class ChronicleAssets{
     for(const site of this.scenery.sites)for(let i=0;i<36;i++){
       const seed=stableSeed(site.id+':edge:'+i),angle=(seed%1000)/1000*Math.PI*2,radius=12+(Math.floor(seed/1000)%1000)/100;
       const x=site.x+Math.cos(angle)*radius,z=site.z+Math.sin(angle)*radius;
-      if(seed%3||!this.world.contains(x,z,1)||this.world.nearWater?.(x,z,1.1)||this.world.ridgeAt(x,z)>.8||this.scenery.nearPath?.(x,z,1.1)
+      if(seed%3||!this.world.contains(x,z,1)||this.world.ridgeAt(x,z)>.8||this.scenery.nearPath?.(x,z,1.1)
         ||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+.8)||crowded(x,z,1.45))continue;
       const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=treeScale(p);positions.push(p);register(p);
     }
@@ -118,7 +118,7 @@ export class ChronicleAssets{
       const seed=stableSeed(scene.id+':grove:'+i),angle=(seed%10000)/10000*Math.PI*2;
       const radius=(27+(Math.floor(seed/10000)%1000)/1000*48)*scene.scale;
       const x=scene.x+Math.cos(angle)*radius,z=scene.z+Math.sin(angle)*radius;
-      if(!this.world.contains(x,z,.3*scene.scale)||this.world.nearWater?.(x,z,1.1*scene.scale)||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+1.4*scene.scale))continue;
+      if(!this.world.contains(x,z,.3*scene.scale)||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+1.4*scene.scale))continue;
       if(crowded(x,z,2.8*scene.scale))continue;
       const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=scene.scale;positions.push(p);register(p);
     }
