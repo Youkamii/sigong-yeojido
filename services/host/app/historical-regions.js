@@ -32,8 +32,19 @@ export function settlementLayout(event){
 }
 export const SETTLEMENT_RADIUS=72;
 
-export function describeSettlements(scenes){
-  return scenes.map(scene=>scene.kind!=='settlement'?scene:{...scene,place:{...scene.place,
-    settlement:{scope:scene.id.includes('capital')||scene.id.includes('wolseong')?'capital-role':'documented-activity',
+export function describeSettlements(scenes,corrections=[]){
+  const corrected=scenes.flatMap(scene=>{
+    const correction=corrections.find(row=>row.sceneId===scene.id);if(!correction)return [scene];
+    return correction.periods.map((period,index)=>({...scene,
+      id:index===correction.periods.length-1?scene.id:scene.id+':role:'+period.startYear,
+      startYear:period.startYear,endYear:period.endYear,roleCorrection:true,
+      title:period.label+(period.capital?' · 조선 수도':' · 기록 사이 도시 배경'),
+      summary:period.capital?`${period.label}의 수도 역할을 ${period.startYear}~${period.endYear}년 구간으로 표시합니다. 도시의 전체 존속 기간을 뜻하지 않으며, 건물 배치는 익명 생활을 보여주는 추정 배경입니다.`:'1399년 개경 천도와 1405년 한양 천도 사이에는 수도로 표시하지 않습니다. 도시는 기록 사이를 잇는 추정 생활 배경으로 남깁니다.',
+      actionClaimIds:[...scene.actionClaimIds,...correction.claimIds],
+      participants:period.capital?scene.participants:scene.participants.map(person=>({...person,role:'기록상 관련 국가 또는 인물'})),
+      place:{...scene.place,label:period.label,settlement:{scope:period.capital?'capital-role':'between-records'}}}));
+  });
+  return corrected.map(scene=>scene.kind!=='settlement'?scene:{...scene,place:{...scene.place,
+    settlement:{scope:scene.place?.settlement?.scope||(scene.id.includes('capital')||scene.id.includes('wolseong')?'capital-role':'documented-activity'),
       startYear:scene.startYear,endYear:scene.endYear,claimIds:[...scene.dateClaimIds,...scene.actionClaimIds]}}});
 }

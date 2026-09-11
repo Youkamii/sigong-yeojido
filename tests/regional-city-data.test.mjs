@@ -1,4 +1,4 @@
-﻿import test from 'node:test';
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {contextAt} from '../services/host/app/chronicle.js';
@@ -14,7 +14,7 @@ const claims=approved.sources.flatMap(source=>source.excerpts.flatMap(excerpt=>{
 const data={entities:approved.entities,claims};
 const plan=(year,filtered=data)=>planChronicleAssets(contextAt(filtered,year),filtered,[],[],scenes);
 test('all 13 actual imported city packets appear only inside their reviewed intervals',()=>{
- assert.equal(scenes.length,13);assert.equal(claims.length,39);
+ assert.equal(scenes.length,13);assert.equal(claims.filter(c=>c.id.startsWith('claim-regional163-')&&!c.id.startsWith('claim-regional163-hanseong-')).length,39);
  for(const scene of scenes){
   for(const year of [scene.startYear,scene.endYear]){
    const row=plan(year).events.find(row=>row.id===scene.id);assert.ok(row,scene.id+':'+year);

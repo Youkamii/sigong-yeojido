@@ -74,10 +74,10 @@ def main():
             outputs[ROOT/'data/claims'/key/(chunk['id']+'.md')]=markdown({'type':'Claims','source':source['id'],'chunk':chunk['id'],'generated':'codex','status':'draft'},'```claims-json\n'+json.dumps(selected,ensure_ascii=False,indent=2)+'\n```')
     for entity in approved['entities']:
         outputs[ROOT/'data/entities'/entity['type'].lower()/(entity['id']+'.md')]=markdown(entity,'인용한 주장과 연결하기 위한 이름 항목이다. 시기와 장소는 개별 근거를 따른다.')
-    outputs[ROOT/'services/host/app/historical-regions.json']=json.dumps({'sources':list(sources.values()),'scenes':approved['scenes'],'missing':approved.get('missing',[])},ensure_ascii=False,indent=2)+'\n'
+    outputs[ROOT/'services/host/app/historical-regions.json']=json.dumps({'sources':list(sources.values()),'scenes':approved['scenes'],'missing':approved.get('missing',[]),'capitalCorrections':approved.get('capitalCorrections',[])},ensure_ascii=False,indent=2)+'\n'
     if args.write:
         for path,text in outputs.items():
-            if path.exists():assert path.read_text(encoding='utf-8')==text,('existing file differs',str(path))
+            if path.exists() and path.name!='historical-regions.json':assert path.read_text(encoding='utf-8')==text,('existing file differs',str(path))
         for path,text in outputs.items():path.parent.mkdir(parents=True,exist_ok=True);path.write_text(text,encoding='utf-8')
     print(json.dumps({'sources':len(sources),'chunks':len(chunks),'claims':len(claims),'scenes':len(approved['scenes']),'files':len(outputs),'written':args.write}))
 

@@ -34,7 +34,7 @@ export class AtlasStory{
     return events.find(e=>e.sceneId===scene)||events[0];
   }
   relatedRows(){
-    const data=this.ui.data,event=this.sceneEvent(),scene=data.scenes.get(event?.sceneId);
+    const data=this.ui.data,event=this.sceneEvent(),scene=data.scenes.get(this.activity?.sceneId||event?.sceneId);
     const rows=new Map(data.relations(this.entity.id).map(r=>[r.entity.id,{...r,role:'',presence:''}]));
     if(this.entity.type==='Event')for(const p of scene?.participants||[]){
       const entity=data.entities.get(p.entityId),claims=(p.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean);
@@ -46,7 +46,7 @@ export class AtlasStory{
   }
   render(){
     if(!this.entity)return;
-    const ui=this.ui,data=ui.data,entity=this.entity,activity=this.activity,event=this.sceneEvent(),scene=data.scenes.get(event?.sceneId),name=data.label(entity);
+    const ui=this.ui,data=ui.data,entity=this.entity,activity=this.activity,event=this.sceneEvent(),scene=data.scenes.get(activity?.sceneId||event?.sceneId),name=activity?.setting?activity.label:data.label(entity);
     const related=this.relatedRows(),dates=data.datesLabel(entity.id),claims=data.subjects.get(entity.id)||[];
     const role=scene?.participants?.find(p=>p.entityId===entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id)));
     const description=activity?.summary||data.description(entity.id)||(entity.type==='Event'?scene?.summary:role?`${yearLabel(scene.startYear)} · ${role.role}`:'');

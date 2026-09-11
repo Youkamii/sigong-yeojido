@@ -73,7 +73,7 @@ export function contextAt(data,year,span=50){
   const byClaim=new Map(data.claims.map(claim=>[claim.id,claim]));
   const curatedEvents=[];
   for(const scene of data.scenePackets||[]){
-    if(!Number.isInteger(scene.startYear)||!Number.isInteger(scene.endYear))continue;
+    if(!Number.isInteger(scene.startYear)||!Number.isInteger(scene.endYear)||scene.place?.settlement?.scope==='between-records')continue;
     const ids=[...scene.dateClaimIds,...scene.actionClaimIds],entity=entities.get(scene.eventId);
     if(!entity||entity.type==='Narrative'||scene.narrativeType||!ids.length||ids.some(id=>!byClaim.has(id)))continue;
     const setting=isHistoricalSetting(scene);
@@ -81,7 +81,8 @@ export function contextAt(data,year,span=50){
       basis:[...new Set(ids)].map(id=>byClaim.get(id)),title:scene.title,setting,
       current:setting?scene.startYear===year:scene.startYear<=year&&scene.endYear>=year});
   }
-  for(let i=events.length-1;i>=0;i--)if(curatedEvents.some(s=>s.id===events[i].id&&s.lo<=events[i].lo&&s.hi>=events[i].hi))events.splice(i,1);
+  const correctedEntities=new Set((data.scenePackets||[]).filter(scene=>scene.roleCorrection&&scene.actionClaimIds.every(id=>byClaim.has(id))).map(scene=>scene.eventId));
+  for(let i=events.length-1;i>=0;i--)if(correctedEntities.has(events[i].id)||curatedEvents.some(s=>s.id===events[i].id&&s.lo<=events[i].lo&&s.hi>=events[i].hi))events.splice(i,1);
   events.push(...curatedEvents);
   // A lifespan must have both ends from the same source. Reign is a separate period.
   const births=dates.filter(d=>d.claim.predicate==='syj:bornIn');
@@ -231,7 +232,8 @@ export class Chronicle {
     this.stopPlay();const entity=this.data.entities.find(e=>e.id===id);if(!entity)return;
     const dates=datedClaims(this.data).filter(d=>d.claim.subject===id);
     const currentEvent=this.context?.allEvents.some(e=>e.id===id&&e.current);
-    if(entity.type==='Event'&&dates.length&&!currentEvent&&!dates.some(d=>d.lo<=this.year&&d.hi>=this.year)){
+    const currentSetting=this.callbacks.activity?.(id)?.setting;
+    if(entity.type==='Event'&&dates.length&&!currentEvent&&!currentSetting&&!dates.some(d=>d.lo<=this.year&&d.hi>=this.year)){
       const nearest=[...dates].sort((a,b)=>Math.abs(a.lo-this.year)-Math.abs(b.lo-this.year))[0];
       this.chooseYear(nearest.lo);
     }
@@ -241,7 +243,7 @@ export class Chronicle {
     const activityClaims=(activity?.claimIds||[]).map(id=>this.data.claims.find(c=>c.id===id)).filter(Boolean);
     const descriptions=this.data.claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate));
     this.host.innerHTML=`<button class="context-back" data-context-back>← ${yearLabel(this.year)}로 돌아가기</button>
-      <div class="context-kicker">${{Person:'인물',Event:'사건',Narrative:'설화·전승',Polity:'나라',Place:'장소'}[entity.type]||'관련 항목'}</div><h2>${esc(activity?.siteBackground?activity.place:entityLabel(entity))}</h2>
+      <div class="context-kicker">${{Person:'인물',Event:'사건',Narrative:'설화·전승',Polity:'나라',Place:'장소'}[entity.type]||'관련 항목'}</div><h2>${esc(activity?.setting?activity.label:activity?.siteBackground?activity.place:entityLabel(entity))}</h2>
       ${activity?`<section class="selected-activity"><h3>${activity.narrative?'이야기의 무대':activity.siteBackground?'성곽 배경 · 추정':yearLabel(this.year)}${activity.place?' · '+esc(activity.place):''}</h3>
         ${activity.role?`<p class="activity-role">${esc(activity.role)}</p>`:''}
         <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동입니다.')}</p>

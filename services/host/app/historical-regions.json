@@ -244,6 +244,51 @@
           "locator": "본문 역사·변천 항목의 짧은 발췌"
         }
       ]
+    },
+    {
+      "id": "src-regional163-capital-e0061730",
+      "title": "한성부 · 수도 역할과 지명 보정 근거",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061730",
+      "verifiedFile": "E0061730.html",
+      "verifiedSha256": "79fad9d90e435d141e48e83cb8770a7bac03fb54e55e8e4366bbc40a3c7e6675",
+      "excerpts": [
+        {
+          "id": "chunk_regional163_hanseong_name",
+          "text": "1394년 개경(開京)에서 한양부(漢陽府)로 수도를 옮기고 그 다음해인 1395년 한양부를 한성부라고 이름을 고쳤다.",
+          "locator": "본문 개요·역사 항목"
+        }
+      ]
+    },
+    {
+      "id": "src-regional163-capital-e0050884",
+      "title": "정종 · 수도 역할과 지명 보정 근거",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0050884",
+      "verifiedFile": "E0050884.html",
+      "verifiedSha256": "07b10b8de050f7e821a2cf34db1c708dd48854d096aeeb9f1e20e7355bbffc10",
+      "excerpts": [
+        {
+          "id": "chunk_regional163_hanseong_departure",
+          "text": "1399년 개경으로 천도했고,",
+          "locator": "본문 개요·역사 항목"
+        }
+      ]
+    },
+    {
+      "id": "src-regional163-capital-e0058040",
+      "title": "춘추관사고 · 수도 역할과 지명 보정 근거",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0058040",
+      "verifiedFile": "E0058040.html",
+      "verifiedSha256": "d89c52d5d93e637ccf93997e25b4224764026e850cef22be9c9076a70947f41b",
+      "excerpts": [
+        {
+          "id": "chunk_regional163_hanseong_return",
+          "text": "1405년 한양으로 천도하여 경복궁 근정전 서랑에 봉안하여 조선의 춘추관사고로 자리를 잡았다.",
+          "locator": "본문 개요·역사 항목"
+        }
+      ]
     }
   ],
   "scenes": [
@@ -740,6 +785,42 @@
     {
       "topic": "실제 도시 배치",
       "reason": "기존 지역 참고 좌표를 재사용한 익명 생활 배경이다. 주거 구역·시장·밭은 실제 가로망 복원이 아니다."
+    }
+  ],
+  "capitalCorrections": [
+    {
+      "sceneId": "scene-city-hanseong-capital-1394-1910",
+      "claimIds": [
+        "claim-regional163-hanseong-name",
+        "claim-regional163-hanseong-departure",
+        "claim-regional163-hanseong-return"
+      ],
+      "periods": [
+        {
+          "startYear": 1394,
+          "endYear": 1394,
+          "label": "한양부",
+          "capital": true
+        },
+        {
+          "startYear": 1395,
+          "endYear": 1398,
+          "label": "한성부",
+          "capital": true
+        },
+        {
+          "startYear": 1399,
+          "endYear": 1404,
+          "label": "한성부",
+          "capital": false
+        },
+        {
+          "startYear": 1405,
+          "endYear": 1910,
+          "label": "한성부",
+          "capital": true
+        }
+      ]
     }
   ]
 }
