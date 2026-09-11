@@ -1,25 +1,35 @@
+import {buildingArchetype} from './period-buildings.js';
 // Broad visual settings for unnamed scenery, not dates of nationwide change.
+const periods=[
+  {until:-1500,id:'early-settlement',year:-2000,housing:'early',fields:false,people:'rural_figure',tigers:true},
+  {until:1,id:'early-farming',year:-500,housing:'early',fields:true,people:'rural_figure',tigers:true},
+  {until:918,id:'three-kingdoms',year:600,housing:'traditional',fields:true,people:'period_figure',tigers:true},
+  {until:1392,id:'goryeo',year:1200,housing:'traditional',fields:true,people:'period_figure',tigers:true},
+  {until:1876,id:'joseon',year:1700,housing:'traditional',fields:true,people:'period_figure',tigers:true},
+  {until:1910,id:'late-joseon',year:1890,housing:'traditional',fields:true,people:'period_figure',tigers:true},
+  {until:1970,id:'early-modern',year:1930,housing:'traditional',fields:true,people:'field_worker',tigers:false},
+  {until:1980,id:'roof-transition',year:1975,housing:'mixed',fields:true,people:'field_worker',tigers:false},
+  {until:Infinity,id:'mechanized',year:2000,housing:'modern',fields:true,people:'field_worker',tigers:false},
+].map(Object.freeze);
 export function sceneryPeriod(year){
-  if(year<-1500)return {id:'early-settlement',housing:'early',fields:false,people:'rural_figure',tigers:true};
-  if(year<1)return {id:'early-farming',housing:'early',fields:true,people:'rural_figure',tigers:true};
-  if(year<1910)return {id:'traditional',housing:'traditional',fields:true,people:'period_figure',tigers:true};
-  if(year<1970)return {id:'early-modern',housing:'traditional',fields:true,people:'field_worker',tigers:false};
-  if(year<1980)return {id:'roof-transition',housing:'mixed',fields:true,people:'field_worker',tigers:false};
-  return {id:'mechanized',housing:'modern',fields:true,people:'field_worker',tigers:false};
+  return periods.find(period=>year<period.until);
 }
 
 export function sceneryRecipe(recipe,period,site){
   const seed=Number(recipe.id.split(':').at(-1)),choice=(site.seed+seed*37)%100;
-  const houses=['rural_store','rural_hut','korean_house','rural_cottage'];
+  const houses=['rural_hut','korean_house','rural_cottage'];
   let archetype=recipe.archetype;
   if(houses.includes(archetype)){
-    if(period.housing==='early')archetype='rural_hut';
+    if(period.housing==='early')archetype=buildingArchetype(archetype,period.year,{seed:choice});
     // The collected modernization references concern the South. Keep the
     // northern scenery neutral until regional references are available.
     else if(site.latitude<37.7&&['mixed','modern'].includes(period.housing)){
       const share=period.housing==='mixed'?35:85;
       if(choice<share)archetype=choice%3===0?'rural_flat':choice%3===1?'rural_metal':'rural_tiled';
-    }
+    }else if(!['mixed','modern'].includes(period.housing))archetype=buildingArchetype(archetype,period.year,{seed:choice});
+  }else if(['rural_store','market'].includes(archetype)){
+    if(archetype==='market'&&period.housing==='early')return null;
+    archetype=buildingArchetype(archetype,site.latitude>=37.7&&['mixed','modern'].includes(period.housing)?1700:period.year,{seed:choice});
   }else if(archetype==='human')archetype=period.people;
   else if(archetype==='handcart'){
     if(period.housing==='early')return null;
