@@ -746,6 +746,7 @@ function stateRotation(recipe) {
   else if (recipe.states.includes('gravity_inverted')) q = QE(0, 0, Math.PI);
   if (recipe.action === 'sleeping') q.multiply(QE(0, 0, Math.PI * 0.48));
   else if (recipe.action === 'resting') q.multiply(QE(0, 0, 0.14));
+  q.premultiply(QE(0, recipe.yaw || 0, 0));
   return q;
 }
 
