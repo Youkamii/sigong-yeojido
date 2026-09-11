@@ -256,7 +256,7 @@ export class Chronicle {
   }
   render(){
     const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
-    this.timeline.setEvents(c.allEvents);this.timeline.setYear(this.year);
+    this.timeline.setEvents(this.callbacks.timelineEvents?.(c.allEvents)||c.allEvents);this.timeline.setYear(this.year);
     this.controls.querySelector('[type=number]').value=this.year;
     this.controls.querySelector('[type=range]').value=this.year;
     this.controls.querySelector('[data-calendar]').textContent='연도 입력';

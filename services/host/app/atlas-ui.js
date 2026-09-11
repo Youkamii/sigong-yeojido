@@ -4,6 +4,7 @@ import {AtlasData} from './atlas-data.js';
 import {AtlasSearch} from './atlas-search.js';
 import {AtlasStory} from './atlas-story.js';
 import {AtlasChat} from './atlas-chat.js';
+import {AtlasEvents} from './atlas-events.js';
 
 const eras=[[-2333,'고조선'],[-57,'삼국'],[698,'남북국'],[918,'고려'],[1392,'조선'],[1897,'대한제국'],[1945,'현대']];
 
@@ -42,6 +43,7 @@ export class AtlasUI{
     this.search=new AtlasSearch(this);
     this.story=new AtlasStory(this);
     this.chat=new AtlasChat(this);
+    this.events=new AtlasEvents(this);
     this.update(chronicle.context);
   }
   buildSettings(){
@@ -83,6 +85,7 @@ export class AtlasUI{
     }
     const [min,max]=this.rangeWindow||[-2500,2100];this.slider.min=min;this.slider.max=max;this.slider.value=year;
     this.slider.setAttribute('aria-valuetext',yearLabel(year));
+    this.events?.preview(year);
     this.currentTick.textContent=year<0?'BC '+Math.abs(year):year;this.currentTick.style.left=((year-min)/(max-min)*100)+'%';
     const era=eras.filter(([start])=>start<=year).at(-1)||eras[0];this.time.querySelector('.atlas-era').value=era[0];
     this.time.querySelector('.time-year>span').textContent=year<0?'기원전':'년';
@@ -115,5 +118,6 @@ export class AtlasUI{
     const status=this.root.querySelector('#atlasStatus');status.textContent=this.chronicle.error||(this.chronicle.loading?'인물과 사건을 불러오는 중…':'');status.hidden=!status.textContent;
     this.search?.update();
     this.chat?.update(changed||filtersChanged);
+    this.events?.update();
   }
 }

@@ -54,14 +54,14 @@ export class EventTimeline{
   }
   setYear(year,instant=false){
     if(!Number.isInteger(year))return;this.year=year;
-    const width=this.viewport.clientWidth;this.cardWidth=width<600?146:190;this.step=this.cardWidth+14;
+    const width=this.viewport.clientWidth;this.cardWidth=this.cardWidthFor?.(width)||(width<600?146:190);this.step=this.cardWidth+14;
     const position=positionAtYear(this.anchors,year),count=Math.ceil(width/this.step)+6;
     const start=Math.max(0,Math.min(this.entries.length-count,Math.floor(position-count/2))),end=Math.min(this.entries.length,start+count);
     const key=[start,end,this.cardWidth].join(':');
     if(this.windowKey!==key){
       this.windowKey=key;instant=true;
       this.track.innerHTML=this.entries.slice(start,end).map(e=>`<button class="event-strip-card" data-event-key="${esc(e.key)}" data-event-id="${esc(e.id)}" data-scene-id="${esc(e.sceneId||'')}" data-year="${e.lo}">
-        <span class="event-strip-date">${esc(this.yearLabel(e.lo))}${e.hi!==e.lo?' – '+esc(this.yearLabel(e.hi)):''}</span><strong>${esc(e.title)}</strong>${e.placeLabel?`<small>${esc(e.placeLabel)}</small>`:''}</button>`).join('');
+        ${this.cardContent?this.cardContent(e):`<span class="event-strip-date">${esc(this.yearLabel(e.lo))}${e.hi!==e.lo?' – '+esc(this.yearLabel(e.hi)):''}</span><strong>${esc(e.title)}</strong>${e.placeLabel?`<small>${esc(e.placeLabel)}</small>`:''}`}</button>`).join('');
     }
     this.track.style.setProperty('--event-card-width',this.cardWidth+'px');
     this.track.style.transition=instant||this.drag?'none':'';
