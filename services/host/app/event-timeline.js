@@ -55,7 +55,7 @@ export class EventTimeline{
   setYear(year,instant=false){
     if(!Number.isInteger(year))return;this.year=year;
     const width=this.viewport.clientWidth;this.cardWidth=this.cardWidthFor?.(width)||(width<600?146:190);this.step=this.cardWidth+14;
-    const position=positionAtYear(this.anchors,year),count=Math.ceil(width/this.step)+6;
+    const rawPosition=positionAtYear(this.anchors,year),position=this.snapToCard&&!this.drag?Math.round(rawPosition):rawPosition,count=Math.ceil(width/this.step)+6;
     const start=Math.max(0,Math.min(this.entries.length-count,Math.floor(position-count/2))),end=Math.min(this.entries.length,start+count);
     const key=[start,end,this.cardWidth].join(':');
     if(this.windowKey!==key){

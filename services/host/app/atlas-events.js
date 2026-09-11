@@ -24,6 +24,7 @@ export class AtlasEvents{
     this.toggle.onclick=()=>{if(ui.panel==='events')ui.closePanel();else{ui.openPanel('events');this.toggle.setAttribute('aria-expanded','true');this.update();}};
     this.pane.addEventListener('click',e=>{const button=e.target.closest('[data-event-category]');if(button){this.category=button.dataset.eventCategory;this.update();}});
     this.timeline.cardWidthFor=width=>width<700?Math.min(350,Math.max(220,width*.8)):Math.floor((width-28)/3);
+    this.timeline.snapToCard=true;
     this.timeline.cardContent=event=>this.card(event);
     this.timeline.windowKey=null;
     ui.chronicle.callbacks.timelineEvents=events=>this.filter(events);
