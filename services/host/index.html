@@ -1361,7 +1361,7 @@ async function init3d(){
   let elev = null;
   try{ elev = await fetch('/api/elevation').then(r => r.ok ? r.json() : null); }
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
-  const [outline,anchors,geography,scenes,coordinates,neighbors,traditions]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json','history-scenes.json','history-coordinates.json','neighbor-outline.json','history-traditions.json'].map(file=>
+  const [outline,anchors,geography,scenes,coordinates,neighbors,traditions,regions]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json','history-scenes.json','history-coordinates.json','neighbor-outline.json','history-traditions.json','historical-regions.json'].map(file=>
     fetch('./app/'+file).then(r=>{if(!r.ok)throw Error('지도 자료를 불러오지 못했습니다.');return r.json();})));
   const world = new ChronicleWorld(state.geo, [...state.places,...anchors.places], { elev, outline, geography, neighbors });
   const [{ChronicleTerritories},territories]=await Promise.all([import('./app/chronicle-territories.js'),
@@ -1370,7 +1370,7 @@ async function init3d(){
   const {coordinateRegistry}=await import('./app/history-coordinates.js');
   world.coordinateRegistry=coordinateRegistry(anchors,coordinates);
   const {describeSettlements}=await import('./app/historical-regions.js');
-  world.scenePackets=describeSettlements(scenes.scenes);world.sceneSources=[...scenes.sources,...geography.sources];
+  world.scenePackets=describeSettlements([...scenes.scenes,...regions.scenes]);world.sceneSources=[...scenes.sources,...geography.sources,...regions.sources];
   world.traditions=traditions;
   engine.add(world.group);
   engine.onPick = (id,event) => { const feature=historyMap.features.find(f=>f.id===id);
