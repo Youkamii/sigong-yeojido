@@ -16,7 +16,7 @@ export class ChronicleScenery{
     const w=this.world,b=w.bounds,candidates=[];
     for(let x=b.minX+20;x<b.maxX-20;x+=58)for(let z=b.minZ+20;z<b.maxZ-20;z+=58){
       const seed=stableSeed('hamlet:'+x+':'+z),r=randomFor(String(seed)),px=x+r()*26-13,pz=z+r()*26-13;
-      if(!insideCoastline(px,pz,w.rings[0])||!w.contains(px,pz,14)||w.nearWater?.(px,pz,14))continue;
+      if(!insideCoastline(px,pz,w.rings[0])||!w.contains(px,pz,14))continue;
       const heights=[[0,0],[-11,-11],[11,-11],[11,11],[-11,11]].map(([dx,dz])=>w.surfaceAt(px+dx,pz+dz));
       if(heights[0]>26||Math.max(...heights)-Math.min(...heights)>3.6)continue;
       candidates.push({x:px,z:pz,latitude:w.coordinatesAt(px,pz)[1],radius:12,scale:.27+r()*.1,angle:r()*Math.PI*2,layout:seed%4,seed});
@@ -85,7 +85,7 @@ export class ChronicleScenery{
       const cell={site,group,animated:[],models:[],plots:[]};this.cells.push(cell);this.group.add(group);
       const anchors=new Map(),recipes=[],houses=[],count=3+Math.floor(r()*5);
       const add=(archetype,x,z,scale)=>{
-        const [wx,wz]=this.point(site,x,z);if(!this.world.contains(wx,wz,1)||this.world.nearWater?.(wx,wz,1))return;
+        const [wx,wz]=this.point(site,x,z);if(!this.world.contains(wx,wz,1))return;
         const id=site.id+':'+recipes.length,y=this.world.surfaceAt(wx,wz),p=new THREE.Vector3(x*site.scale,y,z*site.scale);
         anchors.set(id,p);recipes.push({id,anchor:id,archetype,scale:scale*site.scale,seed:id,offset:[0,y,0]});cell.models.push({archetype,x:wx,z:wz,scale:scale*site.scale});
       };
