@@ -23,7 +23,10 @@ export class AtlasData{
     const active=new Set(this.events.map(e=>e.sceneId));
     this.scenes=new Map((packets||[]).filter(p=>active.has(p.id)).map(p=>[p.id,p]));
   }
-  label(entity){return cleanTitle(entityLabel(entity));}
+  label(entity){
+    const scene=entity.type==='Event'&&this.eventsFor(entity.id).find(e=>e.id===entity.id&&e.sceneId);
+    return cleanTitle(scene?.title||entityLabel(entity)).replace(/\s*·\s*현재 기관 좌표$/,'');
+  }
   description(id){
     return (this.subjects.get(id)||[]).find(c=>c.predicate==='syj:describedAs'&&c.object.value)?.object.value||'';
   }

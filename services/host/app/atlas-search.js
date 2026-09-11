@@ -12,7 +12,7 @@ export class AtlasSearch{
     this.pane=document.createElement('aside');this.pane.className='atlas-pane atlas-right';this.pane.id='atlasSearchResults';this.pane.setAttribute('aria-label','검색 결과');
     this.pane.innerHTML=`<header><h2>검색 결과</h2><button class="atlas-icon" data-close aria-label="검색 결과 닫기">${icon('close')}</button></header><div class="atlas-tabs" role="tablist" aria-label="검색 종류">${[['all','전체'],['Person','인물'],['Event','사건']].map(([value,label])=>`<button role="tab" data-search-type="${value}" aria-selected="${value==='all'}">${label}</button>`).join('')}</div><p class="atlas-search-note atlas-muted"></p><div class="atlas-search-results"></div><section class="atlas-search-detail"></section>`;
     ui.registerPanel('search',this.pane);
-    mount.querySelector('form').onsubmit=e=>{e.preventDefault();this.show();};
+    mount.querySelector('form').onsubmit=e=>{e.preventDefault();this.show();this.input.focus();};
     this.input.oninput=()=>{clearTimeout(this.timer);this.timer=setTimeout(()=>this.show(),140);};
     this.input.onfocus=()=>{if(this.input.value.trim())this.show();};
     mount.querySelector('.atlas-search-clear').onclick=()=>{this.input.value='';this.selected=null;this.show();this.input.focus();};
@@ -23,7 +23,7 @@ export class AtlasSearch{
       if(e.target.closest('[data-search-proof]')){const claim=ui.data.subjects.get(this.selected)?.[0];if(claim)ui.evidence(claim);}
     };
   }
-  show(){this.ui.openPanel('search');this.render();}
+  show(){clearTimeout(this.timer);this.ui.openPanel('search');this.render();}
   update(){if(this.ui.panel==='search')this.render();}
   render(){
     const query=this.input.value.trim(),data=this.ui.data,rows=data.search(query,this.type);
@@ -35,7 +35,8 @@ export class AtlasSearch{
     const entity=data.entities.get(this.selected),detail=this.pane.querySelector('.atlas-search-detail');
     if(!entity){detail.replaceChildren();return;}
     const event=data.eventsFor(entity.id)[0],scene=data.scenes.get(event?.sceneId),claim=data.subjects.get(entity.id)?.[0];
-    const description=data.description(entity.id)||(entity.type==='Event'?scene?.summary:'');
+    const participant=scene?.participants?.find(p=>p.entityId===entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id)));
+    const description=data.description(entity.id)||(entity.type==='Event'?scene?.summary:participant?`${yearLabel(scene.startYear)} · ${participant.role}`:'');
     detail.innerHTML=`<h2>${esc(data.label(entity))}</h2>${description?`<p class="atlas-description">${esc(description)}</p>`:''}
       ${event&&entity.type==='Person'?`<p class="atlas-muted">관련 사건 <strong>${esc(cleanTitle(event.title))}</strong> · ${esc(yearLabel(event.lo))}</p>`:''}
       ${claim?`<button class="atlas-source-link" data-search-proof>${esc(claim.sourceLabel||'기록의 근거')} ↗</button>`:''}
