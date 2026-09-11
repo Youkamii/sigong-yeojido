@@ -15,7 +15,11 @@ export class AtlasStory{
       const related=e.target.closest('[data-story-entity]');if(related){this.ui.chronicle.showEntity(related.dataset.storyEntity);return;}
       const event=e.target.closest('[data-story-event]');if(event){const entry=ui.data.events.find(x=>x.sceneId===event.dataset.storyEvent);if(entry)ui.chronicle.showEvent(entry);return;}
       const claim=e.target.closest('[data-story-claim]');if(claim){const row=ui.data.claims.get(claim.dataset.storyClaim);if(row)ui.evidence(row);return;}
-      if(e.target.closest('[data-story-place]')){const event=this.sceneEvent();if(event)ui.chronicle.showEvent(event);return;}
+      if(e.target.closest('[data-story-place]')){
+        if(this.activity?.sceneId){ui.chronicle.callbacks.scene?.(this.activity.sceneId);ui.chronicle.showEntity(this.entity.id);}
+        else{const event=this.sceneEvent();if(event)ui.chronicle.showEvent(event);}
+        return;
+      }
       if(e.target.closest('[data-story-chat]'))ui.chat?.show(this.entity.id);
     };
   }
@@ -53,7 +57,7 @@ export class AtlasStory{
     const place=activity?.place||scene?.place?.label;
     const relationMode=this.mode==='relations';
     this.pane.innerHTML=`<header><button class="atlas-story-back" data-story-back>${icon('left')}<span>${relationMode?'이야기로':this.history.length?'이전 이야기':'지도로 돌아가기'}</span></button><button class="atlas-icon" data-close aria-label="이야기 닫기">${icon('close')}</button></header>
-      <div class="atlas-story-body"><p class="atlas-breadcrumb">${typeName(entity.type)} <span>›</span> ${esc(activity?.narrative?'설화·전승':event?yearLabel(event.lo):dates)}</p>
+      <div class="atlas-story-body"><p class="atlas-breadcrumb">${typeName(entity.type)} <span>›</span> ${esc(activity?.narrative?'설화·전승':activity?.setting?yearLabel(ui.chronicle.year):event?yearLabel(event.lo):dates)}</p>
       <h2>${esc(name)}${relationMode?'과 연결':''}</h2>
       ${relationMode?'<p class="atlas-muted">관계를 따라 탐색해 보세요.</p>':`${activity?.role?`<p class="atlas-role">${esc(activity.role)}</p>`:''}${description?`<p class="atlas-description">${esc(description)}</p>`:'<p class="atlas-muted">이 항목에 연결된 기록과 관계를 살펴보세요.</p>'}
       ${activity?.narrative?`<p class="atlas-muted">이야기 속 시기 · ${esc(activity.narrative.storyTime.label)}<br>문헌의 기록 시기 · ${esc(activity.narrative.recordingTime.label)}</p>`:''}
