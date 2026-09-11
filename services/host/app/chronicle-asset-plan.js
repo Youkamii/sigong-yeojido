@@ -2,6 +2,7 @@ import {entityLabel,yearLabel} from './chronicle.js';
 import {inDiorama} from './place-state.js';
 import {regionalCoordinate} from './history-coordinates.js';
 import {isHistoricalSetting} from './chronicle-sites.js';
+import {figureArchetype} from './period-figures.js';
 
 export function personArchetype(id,claims){
   const text=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle','syj:activeIn'].includes(c.predicate))
@@ -25,15 +26,15 @@ export function eventArchetype(event){
 }
 
 export function activityFigure(id,role,year,claims){
-  if(year>=1876)return 'modern_figure';
   const texts=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate)
     &&c.validFrom!=null&&c.validTo!=null&&within(c,year));
   const text=[role,...texts.map(c=>c.object.value||'')].join(' ');
-  if(/승려|승장|스님/.test(text))return 'period_monk';
-  if(texts.some(c=>c.predicate==='syj:hasTitle'&&/왕$|황제$|국왕/.test(c.object.value||''))||/국왕|군주|왕으로 즉위/.test(role))return 'period_ruler';
-  if(/지휘|통제사|수군|수사|장군|무장|의병장|총사령|대장/.test(text))return 'period_commander';
-  if(/학자|문신|문인|시인|저술|판서|정승|학당|강학|편찬|간행/.test(text))return 'period_scholar';
-  return 'period_figure';
+  if(/승려|승장|스님/.test(text))return figureArchetype('monk',year);
+  if(texts.some(c=>c.predicate==='syj:hasTitle'&&/왕$|황제$|국왕/.test(c.object.value||''))||/국왕|군주|왕으로 즉위/.test(role))return figureArchetype('ruler',year);
+  if(/지휘|통제사|수군|수사|장군|무장|의병장|총사령|대장/.test(text))return figureArchetype('commander',year);
+  if(/학자|문신|문인|시인|저술|판서|정승|학당|강학|편찬|간행/.test(text))return figureArchetype('scholar',year);
+  if(/병사|군사|군인|보병|기병|수병/.test(text))return figureArchetype('soldier',year);
+  return figureArchetype('commoner',year);
 }
 
 const within=(row,year)=>(row.validFrom==null||row.validFrom<=year)&&(row.validTo==null||row.validTo>=year);
