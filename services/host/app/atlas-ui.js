@@ -3,6 +3,7 @@ import {yearLabel} from './chronicle.js';
 import {AtlasData} from './atlas-data.js';
 import {AtlasSearch} from './atlas-search.js';
 import {AtlasStory} from './atlas-story.js';
+import {AtlasChat} from './atlas-chat.js';
 
 const eras=[[-2333,'고조선'],[-57,'삼국'],[698,'남북국'],[918,'고려'],[1392,'조선'],[1897,'대한제국'],[1945,'현대']];
 
@@ -40,6 +41,7 @@ export class AtlasUI{
     };
     this.search=new AtlasSearch(this);
     this.story=new AtlasStory(this);
+    this.chat=new AtlasChat(this);
     this.update(chronicle.context);
   }
   buildSettings(){
@@ -112,5 +114,6 @@ export class AtlasUI{
     this.lastYear=context.year;this.syncTime(context.year);
     const status=this.root.querySelector('#atlasStatus');status.textContent=this.chronicle.error||(this.chronicle.loading?'인물과 사건을 불러오는 중…':'');status.hidden=!status.textContent;
     this.search?.update();
+    this.chat?.update(changed||filtersChanged);
   }
 }
