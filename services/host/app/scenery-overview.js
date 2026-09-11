@@ -8,23 +8,23 @@ export function sceneryOverview(world,cells,period){
   const point=(site,x,z)=>{const c=Math.cos(site.angle),s=Math.sin(site.angle);return [site.x+x*c+z*s,site.z-x*s+z*c];};
   const triangle=(b,a,c,d,color)=>{b.positions.push(...a,...c,...d);for(let i=0;i<3;i++)b.colors.push(color.r,color.g,color.b);};
   const quad=(b,p,color)=>{triangle(b,p[0],p[2],p[1],color);triangle(b,p[0],p[3],p[2],color);};
-  const earth=new THREE.Color('#aa9570'),walls=new THREE.Color('#c4b48e');
-  const crops=['#819258','#9a9d64','#b1a26a','#73917b','#939868','#a99b78'].map(c=>new THREE.Color(c));
+  const earth=new THREE.Color('#aa9570'),walls=new THREE.Color('#aa9773');
+  const crops=['#819258','#9a9d64','#b1a26a','#87915b','#939868','#a99b78'].map(c=>new THREE.Color(c));
   for(const cell of cells){
     const {site,layout}=cell,houses=get(site,'houses'),fields=get(site,'fields'),lanes=get(site,'lanes');
     for(const [index,h] of layout.houses.entries()){
       const start=houses.positions.length;
       const [x,z]=point(site,h.x,h.z),angle=site.angle+(h.angle||0),c=Math.cos(angle),s=Math.sin(angle),scale=h.scale;
       const corner=(dx,dz,y)=>[x+dx*c+dz*s,y,z-dx*s+dz*c];
-      const footprint=[[-2.8,-2.1],[2.8,-2.1],[2.8,2.1],[-2.8,2.1]].map(([dx,dz])=>corner(dx*scale,dz*scale,0));
-      const y=Math.max(...footprint.map(p=>world.surfaceAt(p[0],p[2])))+.08,height=(period.housing==='early'?.75:1.8)*scale;
+      const footprint=[[-1.2,-.95],[1.2,-.95],[1.2,.95],[-1.2,.95]].map(([dx,dz])=>corner(dx*scale,dz*scale,0));
+      const y=Math.max(...footprint.map(p=>world.surfaceAt(p[0],p[2])))+.08,height=(period.housing==='early'?.35:.85)*scale;
       const base=footprint.map(p=>[p[0],y,p[2]]),top=base.map(p=>[p[0],y+height,p[2]]);
       quad(houses,base.map(p=>[x+(p[0]-x)*1.2,y-.015,z+(p[2]-z)*1.2]),earth);
       for(let j=0;j<4;j++)quad(houses,[base[j],base[(j+1)%4],top[(j+1)%4],top[j]],walls);
       const modern=site.latitude<37.7&&period.housing==='modern'&&(index+site.seed)%5!==0;
-      const roof=new THREE.Color(period.housing==='early'?'#998264':modern?['#65888b','#977868','#81877f'][index%3]:index%(period.year<918?9:5)===0?'#666d68':index%3===0?'#a69770':'#b6a77f');
+      const roof=new THREE.Color(period.housing==='early'?'#79613e':modern?['#65888b','#977868','#81877f'][index%3]:index%(period.year<918?9:5)===0?'#666d68':index%3===0?'#79613e':'#887049');
       if(modern)quad(houses,top,roof);
-      else {const a=corner(-2.8*scale,0,y+height+1.2*scale),b=corner(2.8*scale,0,y+height+1.2*scale);
+      else {const a=corner(-1.2*scale,0,y+height+.6*scale),b=corner(1.2*scale,0,y+height+.6*scale);
         quad(houses,[top[0],top[1],b,a],roof);quad(houses,[a,b,top[2],top[3]],roof);
         triangle(houses,top[0],a,top[3],walls);triangle(houses,top[1],top[2],b,walls);}
       houses.ranges.push({id:site.id,index,start,end:houses.positions.length});
@@ -34,6 +34,8 @@ export function sceneryOverview(world,cells,period){
       const ground=p.map(([x,z])=>[x,world.surfaceAt(x,z)+.11,z]);quad(fields,ground,earth);
       const center=p.reduce((a,v)=>[a[0]+v[0]/4,a[1]+v[1]/4],[0,0]);
       quad(fields,p.map(([x,z])=>{x=center[0]+(x-center[0])*.9;z=center[1]+(z-center[1])*.9;return [x,world.surfaceAt(x,z)+.13,z];}),crops[field.color%crops.length]);
+      const blend=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
+      for(const t of [.3,.6])quad(fields,[blend(p[0],p[3],t),blend(p[1],p[2],t),blend(p[1],p[2],t+.025),blend(p[0],p[3],t+.025)].map(([x,z])=>[x,world.surfaceAt(x,z)+.15,z]),earth);
     }
     for(const road of layout.roads)for(let j=1;j<road.points.length;j++){
       const a=point(site,...road.points[j-1]),b=point(site,...road.points[j]),dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz)||1,nx=-dz/len*road.width/2,nz=dx/len*road.width/2;
@@ -55,4 +57,5 @@ export function setOverviewDetails(group,details){
     if(changed)attr.needsUpdate=true;
   }
 }
+
 

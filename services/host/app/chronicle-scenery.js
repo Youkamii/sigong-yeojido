@@ -43,9 +43,9 @@ export class ChronicleScenery{
     const anchors=new Map(),recipes=[],{site,layout}=cell;
     // Only a small, closest-neighbour cluster receives detailed walls and people.
     const houses=layout.houses.map((h,index)=>({...h,index})).sort((a,b)=>a.x*a.x+a.z*a.z-b.x*b.x-b.z*b.z).slice(0,20);
-    const add=(archetype,x,z,scale)=>{const id=site.id+':'+recipes.length,[wx,wz]=this.point(site,x,z),y=this.world.surfaceAt(wx,wz);anchors.set(id,new THREE.Vector3(x,y,z));recipes.push(sceneryRecipe({id,anchor:id,archetype,scale,seed:id,offset:[0,y,0]},this.period,site));};
-    for(const h of houses)add(h.archetype||'rural_cottage',h.x,h.z,h.scale);
-    add('human',0,2,.65);add('handcart',2,0,.5);
+    const add=(archetype,x,z,scale,yaw=0)=>{const id=site.id+':'+recipes.length,[wx,wz]=this.point(site,x,z),y=this.world.surfaceAt(wx,wz);anchors.set(id,new THREE.Vector3(x,y,z));recipes.push(sceneryRecipe({id,anchor:id,archetype,scale,yaw,seed:id,offset:[0,y,0]},this.period,site));};
+    for(const h of houses)add(h.archetype||'rural_cottage',h.x,h.z,h.scale*.35,h.angle||0);
+    add('human',0,2,.23);add('handcart',2,0,.18);
     const field=this.assets.field(recipes.filter(Boolean),anchors,{regional:false});field.group.position.set(site.x,0,site.z);field.group.rotation.y=site.angle;
     this.assets.engine._tagShadows(field.group);this.group.add(field.group);const detail={site,indices:houses.map(h=>h.index),group:field.group,animated:field.animated};this.detailCache.set(site.id,detail);this.stats.modelBuilds++;return detail;
   }

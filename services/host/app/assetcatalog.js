@@ -264,6 +264,7 @@ export function normalizeAssetRecipe(raw, catalog, index = 0) {
       capabilities: core.capabilities,
       anchor,
       offset,
+      yaw: Number.isFinite(src.yaw) ? src.yaw : 0,
       scale: bounded(src.scale, 0.1, 12, 1),
       scaleClass: token('scaleClass', catalog.scaleById, 'human'),
       style: token('style', catalog.styleById, 'medieval'),
