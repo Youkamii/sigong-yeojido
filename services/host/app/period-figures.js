@@ -117,7 +117,8 @@ function blueprint(raw,era,role){
   }
   return {h:military&&!early&&!modern?3:2.8,rad:military?.8:.75,p,
     displayStyle:{era:era.id,role,note:figureStyleNote,
-      sourceIds:['aks-boksik-E0023690',...(military?['aks-gabot-E0000930','aks-gunbok-E0006624']:[]),...(role==='ruler'&&(era.id==='joseon'||transition)?['aks-gonryongpo-E0004150']:[])],
+      sourceIds:[...(!early?['aks-boksik-E0023690']:[]),...(military&&!early&&!modern?['aks-gabot-E0000930']:[]),...(military&&(era.id==='joseon'||transition||modern)?['aks-gunbok-E0006624']:[]),...(role==='ruler'&&(era.id==='joseon'||transition)?['aks-gonryongpo-E0004150']:[])],
+      evidenceScope:'출처는 해당 시대의 큰 옷차림을 참고한 자료입니다. 이 역할이나 인물의 모든 부품·색·소지품을 입증하지 않습니다.',
       artisticChoices:'단순한 얼굴과 몸 비율, 장식의 모양과 크기, 색 배합, 시대별 배정은 화면 표현을 위한 선택입니다.'}};
 }
 export function extendFigureCatalog(raw){

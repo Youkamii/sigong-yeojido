@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {figureArchetype,figureEra,figureEras,figureRoles,extendFigureCatalog} from '../services/host/app/period-figures.js';
+import {figureArchetype,figureEra,figureEras,figureRoles,figureStyleSources,extendFigureCatalog} from '../services/host/app/period-figures.js';
 import {activityFigure} from '../services/host/app/chronicle-asset-plan.js';
 import {compileAssetCatalog,normalizeAssetRecipe} from '../services/host/app/assetcatalog.js';
 const raw=JSON.parse(readFileSync(new URL('../services/host/app/history-asset-catalog.json',import.meta.url),'utf8'));
@@ -9,6 +9,14 @@ assert.equal(JSON.stringify(raw),before,'Extending figures does not mutate the c
 assert.deepEqual(extendFigureCatalog(extended),extended,'Repeated loading does not duplicate cores');
 assert.equal(extended.categories.humanoids.cores.length,raw.categories.humanoids.cores.length+figureEras.length*figureRoles.length);
 for(const [year,era] of [[-1000,'early'],[-1,'early'],[0,'three_kingdoms'],[600,'three_kingdoms'],[917,'three_kingdoms'],[918,'goryeo'],[1391,'goryeo'],[1392,'joseon'],[1894,'joseon'],[1895,'transition'],[1944,'transition'],[1945,'modern'],[2026,'modern']])assert.equal(figureEra(year).id,era);
+const sourceIds=new Set(figureStyleSources.map(source=>source.id));
+for(const era of figureEras)for(const role of figureRoles){
+  const style=extended.blueprints[figureArchetype(role,Math.max(era.from,-1000))].displayStyle;
+  assert.ok(style.evidenceScope&&style.artisticChoices);
+  assert.ok(style.sourceIds.every(id=>sourceIds.has(id)));
+  if(era.id==='early')assert.deepEqual(style.sourceIds,[],'Early figures have no verified costume attribution');
+  if(['transition','modern'].includes(era.id))assert.ok(!style.sourceIds.includes('aks-gabot-E0000930'),'Western uniforms do not inherit historical armor evidence');
+}
 const shape=bp=>JSON.stringify(bp.p.map(({c,m,...part})=>part));
 for(const role of figureRoles){
   const silhouettes=new Set();
