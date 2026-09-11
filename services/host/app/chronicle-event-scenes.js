@@ -335,7 +335,7 @@ export function composeHistoricalEvent(event,position,world){
       model(person.archetype,dx,dz,2.4,{person,side,action:event.archetype==='publication'?'working':'idle'});
     }
   }
-  const anonymousRoles={human:'commoner',period_figure:'commoner',modern_figure:'commoner',spearman:'soldier',rifle_soldier:'soldier',period_commander:'commander',period_scholar:'scholar',period_monk:'monk',period_ruler:'ruler'};
+  const anonymousRoles={human:'commoner',period_figure:'commoner',modern_figure:'commoner',spearman:'soldier',rifle_soldier:'soldier',period_commander:'commander',period_scholar:'scholar',scribe:'scholar',period_monk:'monk',period_ruler:'ruler'};
   for(const [seed,row] of models.entries())if(!row.person){
     const role=anonymousRoles[row.archetype];
     row.archetype=role?figureArchetype(role,event.year):buildingArchetype(row.archetype,event.year,{seed,latitude:event.scenePlace?.coordinates?.[1]});
