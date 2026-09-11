@@ -10,7 +10,7 @@ import {planSettlementSites,settlementLayout} from './settlement-regions.js';
 export class ChronicleScenery{
   constructor(assets){
     this.assets=assets;this.world=assets.world;this.group=new THREE.Group();this.group.name='decorative-scenery';assets.engine.add(this.group);
-    this.sites=planSettlementSites(this.world);this.cells=[];this.occupied=[];this.wildlife=[];this.showPaths=true;this.detailCache=new Map();
+    this.sites=planSettlementSites(this.world);this.cells=[];this.occupied=[];this.wildlife=[];this.showPaths=true;this.detailCache=new Map();this.houseScales=new Map();
     this.stats={villages:this.sites.length,houses:0,fields:0,tigers:0,ready:false,modelBuilds:0};
     this.paths=new CountrysidePaths(this.world,this.sites);this.group.add(this.paths.mesh);
   }
@@ -44,7 +44,18 @@ export class ChronicleScenery{
     // Only a small, closest-neighbour cluster receives detailed walls and people.
     const houses=layout.houses.map((h,index)=>({...h,index})).sort((a,b)=>a.x*a.x+a.z*a.z-b.x*b.x-b.z*b.z).slice(0,20);
     const add=(archetype,x,z,scale,yaw=0)=>{const id=site.id+':'+recipes.length,[wx,wz]=this.point(site,x,z),y=this.world.surfaceAt(wx,wz);anchors.set(id,new THREE.Vector3(x,y,z));recipes.push(sceneryRecipe({id,anchor:id,archetype,scale,yaw,seed:id,offset:[0,y,0]},this.period,site));};
-    for(const h of houses)add(h.archetype||'rural_cottage',h.x,h.z,h.scale*.35,h.angle||0);
+    for(const h of houses){
+      add(h.archetype||'rural_cottage',h.x,h.z,h.scale,h.angle||0);
+      const recipe=recipes.at(-1);if(!recipe)continue;
+      if(!this.houseScales.has(recipe.archetype)){
+        const sample=this.assets.field([{...recipe,scale:1,yaw:0,offset:[0,0,0]}],new Map([[recipe.anchor,new THREE.Vector3()]]),{regional:false});
+        sample.group.updateWorldMatrix(true,true);const bounds=new THREE.Box3();
+        sample.group.traverse(o=>{if(o.isMesh&&o.material.visible!==false)bounds.expandByObject(o);});
+        const size=bounds.getSize(new THREE.Vector3());
+        this.houseScales.set(recipe.archetype,Math.min(Math.sqrt((2.4*1.9)/(size.x*size.z)),3/Math.hypot(size.x,size.z)));this.assets.release(sample.group);
+      }
+      recipe.scale=h.scale*this.houseScales.get(recipe.archetype);
+    }
     add('human',0,2,.23);add('handcart',2,0,.18);
     const field=this.assets.field(recipes.filter(Boolean),anchors,{regional:false});field.group.position.set(site.x,0,site.z);field.group.rotation.y=site.angle;
     this.assets.engine._tagShadows(field.group);this.group.add(field.group);const detail={site,indices:houses.map(h=>h.index),group:field.group,animated:field.animated};this.detailCache.set(site.id,detail);this.stats.modelBuilds++;return detail;
