@@ -1,4 +1,11 @@
-## 2026-09-09 최신: 고정 주소와 자동 실행 (#140)
+## 2026-09-11: 참고 화면 기반 UI 미리보기 (#150–154)
+
+[새 UI 미리보기](https://sigong.rabbion.info/previews/reference-ui/index.html) · [기능별 커밋·검사·화면](research/reference-ui-150.md).
+전체 지도 위에 검색, 왼쪽 사건·인물·관계 패널, AI 대화, 하단 연도와 사건 목록을 구현했다. 공개 브라우저 검사 33개와 기존 Node 검사 4종이 통과했다. 실제 모델 응답과 물리적인 모바일 기기 검사는 NOT_RUN이다.
+
+Codex는 별도 `sigong-ui` worktree / `codex/reference-map-ui` 브랜치에서 작업했다. 강·지형 PR #146을 기반으로 한 UI 전용 변경이며, main과 Claude 작업 폴더는 그대로다. 미리보기 실행 코드는 `d4f47bb8`이다. 기본 주소에는 아직 병합하지 않았으며 #146 다음에 UI를 병합한다.
+
+## 2026-09-09: 고정 주소와 자동 실행 (#140)
 
 [시공여지도 고정 주소](https://sigong.rabbion.info/) · [운영 명령](deployment.md).
 c2의 뷰어·Fuseki·RDF 동기화·전용 터널을 사용자 systemd 서비스로 등록했다. 로그인 없이 부팅 시 시작하고 프로세스 종료 시 다시 실행한다.
