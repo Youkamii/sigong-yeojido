@@ -33,6 +33,7 @@ export function sceneVisualKey(event,position,compact,maxRadius,world){
     actions:actionPatterns.map(pattern=>pattern.test(actions)),landing:/상륙/.test(event.label),
     visualActions,effects:Object.fromEntries(Object.entries(event.effects||{}).map(([id,value])=>[id,value.enabled])),
     narrative:event.narrative?.id,sides:(event.sides||[]).map(p=>[p.side,p.presence]),
+    participantGroups:(event.participantGroups||[]).map(g=>[g.role,g.stance,g.side,g.count,g.label]),
     participants:event.participants.map(p=>[p.id,p.entityId,p.presence,p.side,p.archetype,
       /명나라 수군|명 수군/.test(p.role),/가르친|악사/.test(p.role),/가얏고|가야금/.test(p.role),/춤/.test(p.role)])});
 }

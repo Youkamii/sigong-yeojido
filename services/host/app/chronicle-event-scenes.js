@@ -114,11 +114,12 @@ export function composeHistoricalEvent(event,position,world){
     return null;
   };
   /** 참여 집단 루프: role→모델, stance→동작·배치, side→깃발 색. 배치 좌표와 count 는 표현용이며 사료의 인원수·위치 주장이 아니다. */
-  const composeGroups=()=>{
+  const composeGroups=(primary=false)=>{
     const counters={};
     groups.forEach((g,gi)=>{
+      if(event.compact&&models.some(m=>m.primary))return;
       const stance=STANCE_ACTIONS[g.stance]?g.stance:'bystander',action=STANCE_ACTIONS[stance];
-      const archetype=figureArchetype(g.role,event.year),count=Math.max(0,Math.min(40,Math.trunc(Number(g.count)||0)));
+      const archetype=figureArchetype(g.role,event.year),count=Math.max(0,Math.min(event.compact?1:40,Math.trunc(Number(g.count)||0)));
       const extra={side:g.side||'c',stance,role:g.role,groupLabel:g.label,groupIndex:gi,action};
       const seed=hash32([event.id,g.label||'',g.role||'',stance,String(gi)].join('|'));
       const rows=[];
@@ -134,9 +135,10 @@ export function composeHistoricalEvent(event,position,world){
           const h=hash32(seed+':'+n),angle=(h%3600)/3600*Math.PI*2,rad=Math.sqrt(((h>>>12)%1000)/1000)*6;
           dx=-24+Math.cos(angle)*rad;dz=Math.sin(angle)*rad;
         }
-        const row=model(archetype,dx,dz,1.5,extra);if(row)rows.push(row);
+        const row=model(archetype,dx,dz,1.5,extra);
+        if(row){if(primary&&!models.some(m=>m.primary))row.primary=true;rows.push(row);}
       }
-      if(rows.length&&flagColor(g.side)){
+      if(!event.compact&&rows.length&&flagColor(g.side)){
         const ax=rows.reduce((t,r)=>t+r.position.x,0)/rows.length,az=rows.reduce((t,r)=>t+r.position.z,0)/rows.length;
         const off=stance==='defender'?-4:4;
         standard(model('banner',(ax-position.x)/displayScale+off,(az-position.z)/displayScale+off,1.8,{side:g.side,groupIndex:gi}),g.side,4);
@@ -163,8 +165,11 @@ export function composeHistoricalEvent(event,position,world){
     model('academy_hall',0,-13,1.7,{primary:true});
     if(!event.compact){
       for(const x of [-9,0,9]){model('table',x,0,1.5);model('book',x,0,1.4,{lift:2.6});}
-      const printer=figureArchetype('printer',event.year);
-      for(let i=0;i<6;i++)model(printer,-11+(i%3)*9,i<3?4:-4,1.5,{action:'working',role:'printer'});
+      if(groups)composeGroups();
+      else{
+        const printer=figureArchetype('printer',event.year);
+        for(let i=0;i<6;i++)model(printer,-11+(i%3)*9,i<3?4:-4,1.5,{action:'working',role:'printer'});
+      }
     }
   }else if(sceneFunction==='migration'){
     model('handcart',0,0,1.3,{primary:true});
@@ -174,16 +179,19 @@ export function composeHistoricalEvent(event,position,world){
       model('handcart',14,0,1.2);
     }
   }else if(sceneFunction==='persecution'){
-    const civilian=figureArchetype('civilian',event.year);
-    model(civilian,0,0,1.6,{primary:true,role:'civilian',stance:'victim',action:'idle'});
-    if(!event.compact){
-      // 전각(palace) 없음 · 군집은 결정론 무작위(반경 6) · 무릎/서기 동작이 없으므로 idle
-      const seed=hash32(event.id+'|persecution');
-      for(let i=1;i<10;i++){
-        const h=hash32(seed+':'+i),angle=(h%3600)/3600*Math.PI*2,rad=Math.sqrt(((h>>>12)%1000)/1000)*6;
-        model(civilian,Math.cos(angle)*rad,Math.sin(angle)*rad,1.5,{role:'civilian',stance:'victim',action:'idle'});
+    if(groups)composeGroups(true);
+    else{
+      const civilian=figureArchetype('civilian',event.year);
+      model(civilian,0,0,1.6,{primary:true,role:'civilian',stance:'victim',action:'idle'});
+      if(!event.compact){
+        // 전각(palace) 없음 · 군집은 결정론 무작위(반경 6) · 무릎/서기 동작이 없으므로 idle
+        const seed=hash32(event.id+'|persecution');
+        for(let i=1;i<10;i++){
+          const h=hash32(seed+':'+i),angle=(h%3600)/3600*Math.PI*2,rad=Math.sqrt(((h>>>12)%1000)/1000)*6;
+          model(civilian,Math.cos(angle)*rad,Math.sin(angle)*rad,1.5,{role:'civilian',stance:'victim',action:'idle'});
+        }
+        for(const [x,z] of [[-10,4],[10,4],[0,-10]])model(soldier,x,z,1.5,{action:'defending',role:'soldier',stance:'defender'});
       }
-      for(const [x,z] of [[-10,4],[10,4],[0,-10]])model(soldier,x,z,1.5,{action:'defending',role:'soldier',stance:'defender'});
     }
   }else if(sceneFunction==='naval_expedition'){
     // place 가 육지면 해안 방향(없으면 +z 18)으로 배 3척, 해안에 사람 4명

@@ -189,9 +189,10 @@ export class ChronicleAssets{
       // Keep the settlement at its documented anchor. Nearby events use a local stage.
       const hostCity=!city&&cityPositions.find(position=>position.distanceTo(loc.position)<18);
       if(hostCity){
+        const sea=event.scenePlace?event.scenePlace.medium==='sea':event.archetype==='naval';
         for(const [dx,dz] of [[0,10],[10,0],[-10,0],[0,-10]]){
           const x=loc.position.x+dx,z=loc.position.z+dz;
-          if(this.world.contains(x,z)){loc.position.set(x,this.world.surfaceAt(x,z),z);break;}
+          if(this.world.contains(x,z)!==sea){loc.position.set(x,sea?this.world.seaLevel:this.world.surfaceAt(x,z),z);break;}
         }
       }
       const nearest=city?Infinity:Math.min(Infinity,...fullScenes.map(p=>p.distanceTo(loc.position)));

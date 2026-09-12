@@ -21,7 +21,15 @@ export const URBAN_REGIONS=Object.freeze([
 
 export function urbanRegionAt(lon,lat,year){
   const [x,z]=projectCoordinates(lon,lat,8);
-  return URBAN_REGIONS.find(p=>{const [px,pz]=projectCoordinates(p.lon,p.lat,8);return year>=p.startYear&&Math.hypot(x-px,z-pz)<p.radius;})||null;
+  let nearest=null,nearestDistance=Infinity;
+  for(const region of URBAN_REGIONS){
+    if(!(year>=region.startYear))continue;
+    const [px,pz]=projectCoordinates(region.lon,region.lat,8),distance=Math.hypot(x-px,z-pz);
+    if(distance<region.radius&&(distance<nearestDistance||distance===nearestDistance&&region.id<nearest.id)){
+      nearest=region;nearestDistance=distance;
+    }
+  }
+  return nearest;
 }
 
 export function planUrbanSites(world){

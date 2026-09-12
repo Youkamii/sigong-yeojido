@@ -18,6 +18,8 @@ export const REFERENCE_GROUPS = [
   {label:'국가유산·공공기록', matches:s=>publicRecord(s)||['src-khs-','src-presidential-','src-kto-','src-i815-'].some(prefix=>s.id.startsWith(prefix))},
 ];
 export const yearLabel = y => y < 0 ? `기원전 ${-y}년` : `${y}년`;
+export const sceneContextLabel = (context,estimatedSites=0) =>
+  `동시대 인물 ${context.people.length} · 주변 사건 ${context.events.length} · 추정 배경 마을 ${estimatedSites}(사료 없음)`;
 export const entityLabel = e => e.label.replace(/\s*\([\u3400-\u9fff\s]+\)/g,'').replace(e.type==='Person'?/\s*·\s*\d+년.*$/:/$^/,'').replace(/\s*\([^)]*민족문화대백과[^)]*\)/g,part=>{
   const polity=part.match(/조선|고려|백제|신라|발해/);return polity?` (${polity[0]})`:'';
 }).trim();

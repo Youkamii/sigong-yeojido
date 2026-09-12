@@ -333,7 +333,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
           <button id="sceneZoomIn" aria-label="지도 확대">+</button><button id="sceneZoomOut" aria-label="지도 축소">−</button></div>
         <details id="mapDisplay" class="map-display"><summary>지도 표시</summary>
           <fieldset><legend>이름표</legend><label><input type="checkbox" data-map-display="regions" checked>당시 수도</label><label><input type="checkbox" data-map-display="geography" checked>대표 산·섬</label><label><input type="checkbox" data-map-display="morePlaces">다른 지명·봉우리</label><label><input type="checkbox" data-map-display="people" checked>인물 이름</label><label><input type="checkbox" data-map-display="events" checked>사건 이름</label><label><input type="checkbox" data-map-display="siteNames">도시·시설 이름</label></fieldset>
-          <fieldset><legend>풍경</legend><label><input type="checkbox" data-map-display="territories" checked>국가 영역</label><label><input type="checkbox" data-map-display="scenery" checked>마을·밭·동물</label><label><input type="checkbox" data-map-display="forest" checked>숲</label><label><input type="checkbox" data-map-display="paths" checked>길</label><label><input type="checkbox" data-map-display="siteBackground">기록 사이의 추정 성곽</label></fieldset>
+          <fieldset><legend>풍경</legend><label><input type="checkbox" data-map-display="territories" checked>국가 영역</label><label><input type="checkbox" data-map-display="scenery" checked>마을·밭·동물 (추정 배경 · 사료 없음)</label><label><input type="checkbox" data-map-display="forest" checked>숲</label><label><input type="checkbox" data-map-display="paths" checked>길</label><label><input type="checkbox" data-map-display="siteBackground">기록 사이의 추정 성곽</label></fieldset>
         </details>
         <details class="map-display tradition-browser"><summary>설화·전승 따로 보기</summary>
           <p>이야기의 무대를 한 편씩 봅니다. 연도를 바꾸면 지도에서 닫힙니다.</p>
@@ -382,7 +382,7 @@ import { Timeline } from './app/timeline.js';
 import { groupSources } from './app/source-groups.js';
 import { GraphExplorer } from './app/graph.js';
 import { PeopleSearch } from './app/people.js';
-import { Chronicle, REFERENCE_GROUPS, yearLabel } from './app/chronicle.js';
+import { Chronicle, REFERENCE_GROUPS, yearLabel, sceneContextLabel } from './app/chronicle.js';
 import { AtlasUI } from './app/atlas-ui.js';
 import { ChronicleScene } from './app/chronicle-scene.js';
 import { EvidenceChat } from './app/chat.js';
@@ -410,11 +410,17 @@ const chronicleView = new Chronicle(document.getElementById('chronicle'), docume
   context:context=>{
     const host=document.getElementById('sceneContext');
     host.querySelector('h2').textContent=yearLabel(context.year);
-    host.querySelector('p').textContent=`동시대 인물 ${context.people.length} · 주변 사건 ${context.events.length}`;
     if(window.__sigong)chronicleScene.refresh(window.__sigong.world,chronicleView);
+    updateSceneContext(context);
     atlasUI?.update(context);
   }
 });
+function updateSceneContext(context=chronicleView.context){
+  if(!context)return;
+  const paragraph=document.querySelector('#sceneContext p');
+  const text=sceneContextLabel(context,chronicleScene.assets?.scenery?.stats.estimatedSites);
+  if(paragraph.textContent!==text)paragraph.textContent=text;
+}
 function changeYear(year){
   chronicleScene.assets?.setSelected(null);
   state.sel=null;state.year=year;setYearUI(year);tl?.setYear(year);draw();
@@ -1401,6 +1407,7 @@ async function init3d(){
   engine.start((dt, t) => {
     world.update(t, engine.camera, engine.renderer.domElement);
     chronicleScene.update(engine.camera,engine.renderer.domElement,t);
+    updateSceneContext();
     if (engine.ssao && world.materializing) {
       ssaoBeforeMaterialize ??= engine.ssao.enabled;
       engine.ssao.enabled = false;
