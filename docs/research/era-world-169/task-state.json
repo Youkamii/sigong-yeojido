@@ -1,0 +1,151 @@
+{
+  "issue": 169,
+  "baseline": "7312de21fd53dbf0a4bd3e40600461847f69a42f",
+  "scope": "12 Astra max: 6 era reviewers and 6 paired adversaries",
+  "readOnlyRuntime": true,
+  "captures": {
+    "directory": "captures",
+    "views": 114,
+    "years": 31,
+    "manifest": "captures/manifest.json"
+  },
+  "teams": [
+    {
+      "id": "01",
+      "era": "선사·초기국가 (~300)",
+      "reviewer": {
+        "task": "era01_prehistory_review",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/01-prehistory-review.md",
+        "sha256": "ca77ecc0481bd8075645e94c202a42c166ef47de3348d19fab62296e68eec0a3",
+        "sourceSha256": "ca77ecc0481bd8075645e94c202a42c166ef47de3348d19fab62296e68eec0a3"
+      },
+      "adversary": {
+        "task": "era01_prehistory_adversary",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/01-prehistory-adversary.md",
+        "sha256": "e32d6b6f587dbfdbbfe92c1053a7f5c1197d91e3d48b6cb5e33ee09ceb2f4520",
+        "sourceSha256": "6e34951905d5b89fb5789fed0994e82dceeabbe7a5f46e3d3264411ab265a405"
+      }
+    },
+    {
+      "id": "02",
+      "era": "삼국·남북국 (300–935)",
+      "reviewer": {
+        "task": "era02_three_kingdoms_review",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/02-three-kingdoms-review.md",
+        "sha256": "c92e2cd79cac105815f4de20547e12a95c1c1e6e6b06b76ad864408fa91d9eb4",
+        "sourceSha256": "c92e2cd79cac105815f4de20547e12a95c1c1e6e6b06b76ad864408fa91d9eb4"
+      },
+      "adversary": {
+        "task": "era02_three_kingdoms_adversary",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/02-three-kingdoms-adversary.md",
+        "sha256": "806e957294946d265c1c141abeb8bb695123891a90167f908379bc2fdf63f202",
+        "sourceSha256": "806e957294946d265c1c141abeb8bb695123891a90167f908379bc2fdf63f202"
+      }
+    },
+    {
+      "id": "03",
+      "era": "고려 (918–1392)",
+      "reviewer": {
+        "task": "era03_goryeo_review",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/03-goryeo-review.md",
+        "sha256": "439cbb222f60a2fcaac27c8d6ecd940f73bdb29740b541b3749bb29a7ca5cab8",
+        "sourceSha256": "853e89c64654ea42893cca0a0a7460275b59a543b702daededf3f8ea8785d259"
+      },
+      "adversary": {
+        "task": "era03_goryeo_adversary",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/03-goryeo-adversary.md",
+        "sha256": "67eec8dc7108e5c8447be16a1a8b1ccbd4163c283069791d62071a0202a631a9",
+        "sourceSha256": "67eec8dc7108e5c8447be16a1a8b1ccbd4163c283069791d62071a0202a631a9"
+      }
+    },
+    {
+      "id": "04",
+      "era": "조선 (1392–1876)",
+      "reviewer": {
+        "task": "era04_joseon_review",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/04-joseon-review.md",
+        "sha256": "441e3a56cf1c48b7ff8b24b40b5dc8b8c3203d29743d8c02158bcf1c8f03d07d",
+        "sourceSha256": "ba3d082ddc82e57597bc0fc7445f5578899aaab957c4a0cdc5cf058d2699e5ae"
+      },
+      "adversary": {
+        "task": "era04_joseon_adversary",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/04-joseon-adversary.md",
+        "sha256": "0624ff4dbb14d8c251caf20059bc0dba2273626f63072ca65f46ae1aadf6c168",
+        "sourceSha256": "0624ff4dbb14d8c251caf20059bc0dba2273626f63072ca65f46ae1aadf6c168"
+      }
+    },
+    {
+      "id": "05",
+      "era": "개항·일제강점기 (1876–1945)",
+      "reviewer": {
+        "task": "era05_colonial_review",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/05-colonial-review.md",
+        "sha256": "43a79eb77c64fc2d60586436df2dd2d61cfe4bd4bcf0343d7216a04bd9a6c6be",
+        "sourceSha256": "0b1b987f6cc54c409295ba43abe5d7b6033c117d77d79f9424002e2d899dc47b"
+      },
+      "adversary": {
+        "task": "era05_colonial_adversary",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/05-colonial-adversary.md",
+        "sha256": "573b386ed2bc9b82cc03892cb97d08e3c7b613ffd3cbc45439c0ba7bd6a89439",
+        "sourceSha256": "573b386ed2bc9b82cc03892cb97d08e3c7b613ffd3cbc45439c0ba7bd6a89439"
+      }
+    },
+    {
+      "id": "06",
+      "era": "해방·전쟁·산업화·현대 (1945–현재)",
+      "reviewer": {
+        "task": "era06_modern_review",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/06-modern-review.md",
+        "sha256": "2fbb655de477303642ac4e8451aa72695abe42c1502484f73822e1b5cb47d2c1",
+        "sourceSha256": "2fbb655de477303642ac4e8451aa72695abe42c1502484f73822e1b5cb47d2c1"
+      },
+      "adversary": {
+        "task": "era06_modern_adversary",
+        "status": "completed",
+        "model": "gpt-6-astra",
+        "effort": "max",
+        "report": "reviews/06-modern-adversary.md",
+        "sha256": "bda1b8fec2a1064716886610e98ddfc8535d5504eaa502345aa9f7d3d8316b00",
+        "sourceSha256": "bda1b8fec2a1064716886610e98ddfc8535d5504eaa502345aa9f7d3d8316b00"
+      }
+    }
+  ],
+  "totalAgents": 12,
+  "completedReports": 12,
+  "pairedAdversaries": 6,
+  "maxConcurrentSubagents": 3,
+  "reportNormalization": "UTF-8, LF line endings, one final newline; review content unchanged. sourceSha256 records the agent output bytes."
+}

@@ -1,0 +1,73 @@
+{
+  "reviewer": "06-modern-adversary",
+  "code": "7312de21fd53dbf0a4bd3e40600461847f69a42f",
+  "captureSource": "https://sigong.rabbion.info/",
+  "stage": "independent findings recorded before reading paired report",
+  "pairedReportReadAtThisStage": false,
+  "imagesActuallyViewed": [
+    "1948-jeju-160-ui.jpg", "1960-jeju-160-canvas.jpg", "2006-jeju-160-canvas.jpg",
+    "1953-hanseong-160-ui.jpg", "1960-hanseong-160-canvas.jpg",
+    "1953-busan-60-canvas.jpg", "1995-busan-160-canvas.jpg",
+    "1975-seoul_gangnam-160-canvas.jpg", "2020-seoul_gangnam-160-canvas.jpg", "2020-seoul_gangnam-60-canvas.jpg",
+    "1975-pohang-60-canvas.jpg", "1975-pyongyang-160-canvas.jpg", "2020-pyongyang-160-canvas.jpg", "2020-incheon-60-canvas.jpg"
+  ],
+  "independentObservations": [
+    {"id":"I1","status":"observed+static","finding":"1948 제주 화면은 섬을 가로지르는 규모의 두 무장 인물 묶음으로 사건을 표시한다. 마을과 민간인 생활의 관계가 읽히지 않는다. history-scenes의 제주 장면은 1947~1954 battle이고 composer battle은 두 병사 격자를 만든다. 사건 기간 전체에 같은 무력 대치를 대표시키는 문제다. 병사가 있다는 사실 자체를 오류라고 하지 않는다."},
+    {"id":"I2","status":"observed+static","finding":"1960 제주 화면의 큰 시가지가 2006년에 작은 농촌 배경으로 변한다. historical-regions의 제주시 장면은 1955~2005이며 planChronicleAssets는 endYear 이후 packet을 제외한다. 도시는 있었던 사실을 무한정 동일한 양식으로 연장하기보다 지역과 행정 지위, 생활 배경의 기간을 나눠야 한다."},
+    {"id":"I3","status":"observed+static","finding":"2020 서울 강남과 인천 관찰점에서는 밭과 저층 농촌 집이 주로 보인다. 전 도시 자료가 없다는 뜻은 아니다. 1975 강남 카메라에는 큰 civic 형태의 사건 건물과 농촌 배경이 공존하나 도시 내부의 이동 및 일상 구성이 읽히지 않는다."},
+    {"id":"I4","status":"observed+static","finding":"1975와 2020 평양 관찰점은 대체로 같은 농촌 배치를 보인다. sceneryRecipe는 위도 37.7 이상 mixed/modern 주거와 상점을 1700년 family로 보낸다. neutral이라는 주석은 현대 북부를 조선식 배경으로 지속 표시하는 선택의 근거가 될 수 없다. 북부의 특정 현대 건물이나 개통 연도는 아직 독립 기관 근거 미검증이다."},
+    {"id":"I5","status":"observed+static","finding":"1975 포항 관찰점에는 제철 시설이 보이지 않는다. 포항제철소 packet은 1973~1973이고 종합준공 뒤에도 시설이 존속하는 구조는 이 packet에서 확인되지 않는다. 1973 장면을 실제 지형에서 다시 실행하지 않았으므로 포항 전체 모델 또는 실측 부지가 없다고 단정하지 않는다."},
+    {"id":"I6","status":"observed+static","finding":"1953 부산은 큰 전통 가옥과 가로 및 좌판 묶음으로 표시되고 1995에는 작은 농촌 배경이 주로 보인다. 피란 학교와 주거, 시장, 항만·철도 등의 장소 관계는 검토 화면에서 읽히지 않는다. 일반 좌판이 있으므로 시장 모델이 전혀 없다고 할 수는 없다."},
+    {"id":"I7","status":"static","finding":"buildingArchetype는 civic_hall과 academy_hall을 hall로 묶고, 1970 이전 earlymodern hall의 source를 korean_hall로 만든다. 1945~1969 모든 이름 있는 현대 시설에 일괄적인 현대 외양을 넣는 것도 오답이며, 공통 remapping이 개별 시설 핵심을 덮는지가 문제다."},
+    {"id":"I8","status":"static","finding":"compositionKind의 rail은 장면 label/summary/visualActions의 지하철·철도·열차 단어에 반응한다. 산업·화재·철거·통신·체육·교통 시설의 고유 역할을 텍스트 키워드만으로 정할 위험이 있다. 각 실제 packet을 판정하기 전까지 특정 오분류는 미검증이다."},
+    {"id":"I9","status":"observed+static","finding":"2020 서울 강남의 160/60 이미지에서 농촌이라는 역할은 유지되지만 원경 지붕과 근경 모형의 선택은 별도 알고리즘이다. 한 쌍의 이미지로 모든 도시 LOD나 프레임 성능을 검증했다고 할 수 없다."}
+  ],
+  "independentlyReadCode": {
+    "services/host/app/scenery-period.js":"periods; sceneryRecipe latitude threshold and replacement",
+    "services/host/app/historical-regions.js":"settlementLayout; describeSettlements",
+    "services/host/app/historical-regions.json":"modern Jeju and Mokpo scene date ranges",
+    "services/host/app/chronicle-event-scenes.js":"composer branches and final figure/building archetype mapping",
+    "services/host/app/chronicle-asset-plan.js":"97-135 current and researched date filters",
+    "services/host/app/chronicle-scenery.js":"available, sync, overview and detail selection",
+    "services/host/app/scenery-overview.js":"modern roof selection",
+    "services/host/app/period-buildings.js":"familyAt, roles, earlymodern hall source",
+    "services/host/app/period-figures.js":"1945-present family and limited commoner roles",
+    "services/host/app/history-scenes.json":"modern scene listing including events outside sampled cameras"
+  },
+  "institutionSourcesIndependentlyChecked": [
+    {"url":"https://jeju43peace.or.kr/kor/sub01_01_01.do","supports":"1947~1954 period; residents victimized; source distinguishes historical sequence","doesNotSupport":"single exact island-wide battle lineup, village-specific loss date, exact coordinate"},
+    {"url":"https://www.posco.com/homepage/docs/kor7/jsp/prcenter/press/s91c600310v.jsp?idx=185&onPage=1","supports":"Pohang first-phase integrated completion 1973-07-03","doesNotSupport":"1975 facility footprint or permanent survival of all 1973 components"},
+    {"url":"https://www.posco.com/posco_50th/past_ly_08.html","supports":"subsequent expansion after first phase; construction not equal to whole facility lifetime","doesNotSupport":"precise camera-to-facility coordinate relation"},
+    {"url":"https://www.busan.go.kr/depart/culture040208030102","supports":"Busan temporary-capital exhibition documents refugee housing, schools, market stalls and everyday culture","doesNotSupport":"exact urban layout or every resident's lifestyle"},
+    {"url":"https://museum.seoul.go.kr/archive/archiveNew/NR_archiveList.do?ctgryId=CTGRY754&subCtgryId=CTGRY755&type=B","supports":"1970s Gangnam varied development and infrastructure, distinct from one stable farming backdrop","doesNotSupport":"every listed infrastructure completed in 1975"},
+    {"url":"https://archives.seoul.go.kr/contents/mapthehan","supports":"Han River and land reclamation changed geographic landscape during urban growth","doesNotSupport":"specific defect of current river mesh without spatial comparison"}
+  ],
+  "pairedAudit": {
+    "completed": true,
+    "pairedReport": "06-modern-review.md",
+    "pairedEvidence": "06-modern-evidence.json",
+    "conclusion": "Modern-world fail upheld; core M06-01 through M06-08 retained with runtime scope restrictions; M06-09 everyday-life meaning should accompany the urban foundation rather than be deferred entirely.",
+    "principalCorrections": [
+      "M06-07 selected-scene scaling is a verified code path, not a newly executed click/select acceptance test.",
+      "M06-08 independently selected roof families can diverge, but all-city and tracked-house LOD transitions were not executed.",
+      "4 cells, 20 detailed houses and 1 new cell per frame are current implementation constraints, not universal content or performance acceptance thresholds.",
+      "30-second sampling is a proposed measurement procedure, not sufficient proof against long-term memory growth.",
+      "Do not claim every modern facility lacks construction-state distinctions: the existing Gori power branch chooses building_frame before endYear and power_facility at endYear."
+    ],
+    "additionalVerifiedConnections": [
+      "history-scenes.json:7514 requests signing table and document for the 1953 armistice; the assembly default at chronicle-event-scenes.js:291-300 does not instantiate them; pre-1970 civic_hall is further remapped to korean_hall-family geometry.",
+      "settlement-regions.js:20-30 excludes anonymous candidate sites near the coast or with too much height variation; inserting city models into those same rural candidates cannot by itself represent waterfront and hillside life."
+    ],
+    "newPublicRuntimeOrFlatWorldProbeExecutedByAdversary": false,
+    "secondaryInstitutionalSourceReadAfterPair": "https://encykorea.aks.ac.kr/Article/E0059979",
+    "sourceCaution": "The AKS Pyongyang page is authored institutional reference material with mixed statistical reference years, not a primary survey of the 2020 cityscape. Busan official exhibit content was available in search excerpts but full-body extraction was not reliably reproduced."
+  },
+  "limits": [
+    "No new browser, site runtime or terrain mock launched by adversary.",
+    "Capture filenames are observation points, not measured historical facility coordinates.",
+    "No claim that cumulative detailArchetypes are visible models.",
+    "No bulk collection or Claude collection was executed.",
+    "2020 is the newest directly inspected scene year; 2026 scene not inspected.",
+    "No all-city LOD or device performance acceptance was established."
+  ]
+}

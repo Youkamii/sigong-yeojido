@@ -1,0 +1,178 @@
+{
+  "reviewer": "05-colonial-adversary",
+  "baseCommit": "7312de21fd53dbf0a4bd3e40600461847f69a42f",
+  "phase": "independent-record-preserved-and-peer-reviewed",
+  "criteria": "docs/research/era-world-169/criteria.md",
+  "publicCaptureUrl": "https://sigong.rabbion.info/",
+  "actuallyViewed": [
+    "1880-hanseong-160-ui.jpg",
+    "1880-hanseong-60-canvas.jpg",
+    "1880-incheon-60-canvas.jpg",
+    "1900-hanseong-60-ui.jpg",
+    "1900-incheon-160-ui.jpg",
+    "1900-incheon-60-canvas.jpg",
+    "1900-mokpo-60-ui.jpg",
+    "1925-hanseong-160-ui.jpg",
+    "1925-hanseong-60-canvas.jpg",
+    "1925-pyongyang-60-ui.jpg",
+    "1935-busan-60-ui.jpg",
+    "1935-incheon-60-ui.jpg"
+  ],
+  "independentFindings": [
+    {
+      "id": "I1",
+      "finding": "수도권 1880의 큰 도시 배경이 1900의 철도 사건에 밀려 축소된다. 1900에 수도 데이터가 아예 없다는 뜻은 아니다.",
+      "evidence": [
+        "1880-hanseong-160-ui.jpg",
+        "1900-hanseong-60-ui.jpg",
+        "chronicle-assets.js:179-189",
+        "chronicle-event-scenes.js:58-60",
+        "historical-regions.js:11-12"
+      ],
+      "status": "image-and-code",
+      "boundary": "카메라 중심을 옛 한성 도심의 실측 좌표로 간주하지 않는다. 동일 위치에서 사건과 생활 배경의 크기가 충돌하는 문제다."
+    },
+    {
+      "id": "I2",
+      "finding": "1925 경성역사 준공이 철도 분류에 걸리지 않고 일반 civic_hall을 거쳐 한식 전각 계열로 바뀐다.",
+      "evidence": [
+        "1925-hanseong-160-ui.jpg",
+        "1925-hanseong-60-canvas.jpg",
+        "history-scenes.json:14861",
+        "chronicle-event-scenes.js:37",
+        "chronicle-event-scenes.js:292",
+        "chronicle-event-scenes.js:345",
+        "period-buildings.js:9-17",
+        "period-buildings.js:36-40"
+      ],
+      "status": "image-code-institution",
+      "institution": "https://www.seoul284.org/cms/content/view/253",
+      "boundary": "1925년 건물에 관한 돔과 벽돌 외관, 역사 기능의 구분이다. 1900년 개통식의 경성역 위치 논쟁이나 현재 역 좌표의 정확성은 판정하지 않는다."
+    },
+    {
+      "id": "I3",
+      "finding": "1925·1935 UI 시대 선택이 대한제국으로 표시된다. eras에 1910 항목이 없고 마지막 시작연도를 선택하는 구현과 일치한다.",
+      "evidence": [
+        "1925-pyongyang-60-ui.jpg",
+        "1935-busan-60-ui.jpg",
+        "1935-incheon-60-ui.jpg",
+        "atlas-ui.js:9",
+        "atlas-ui.js:90"
+      ],
+      "status": "image-and-code",
+      "boundary": "세부 날짜 단위의 1910·1945 경계 정책은 별도 설계이며, 확인한 1925·1935 표시 오류와 구분한다."
+    },
+    {
+      "id": "I4",
+      "finding": "경인선·목포항·경성역 시설은 건립 또는 개통 사건 기간만 가진다. 수도 역할 종료 후에도 생활권이 이어지는 모델과 시설 수명이 필요하다.",
+      "evidence": [
+        "history-scenes.json:14639",
+        "history-scenes.json:14861",
+        "history-scenes.json:18578",
+        "chronicle-asset-plan.js:97-99",
+        "historical-regions.json:591",
+        "historical-regions.json:790"
+      ],
+      "status": "code-and-sampled-visuals",
+      "boundary": "1901·1926 공개 화면 직접 관측은 하지 않았다. 해당 사건 필터에서 제외되는 것은 코드 확인, 전체 지도에서 어떤 대체 자산도 없다는 것은 미검증."
+    },
+    {
+      "id": "I5",
+      "finding": "1900 목포·1925 평양·1935 부산과 인천 캡처에서 도시에 맞는 항만·역·도시 생활 관계를 읽기 어렵다. 일반 농촌 배경만으로 장소 차이를 메우지 못한다.",
+      "evidence": [
+        "1900-mokpo-60-ui.jpg",
+        "1925-pyongyang-60-ui.jpg",
+        "1935-busan-60-ui.jpg",
+        "1935-incheon-60-ui.jpg",
+        "scenery-period.js:9-13",
+        "period-buildings.js:6-7",
+        "chronicle-scenery.js:42-61"
+      ],
+      "status": "bounded-visual-finding",
+      "boundary": "모든 화면·자료가 없다는 주장은 하지 않는다. 목포 1897 개항, 원산총파업, 암태도 소작쟁의, 평양1931 여성노동자 농성, 제주1901 신축교안 데이터는 존재한다."
+    }
+  ],
+  "institutionChecks": [
+    {
+      "url": "https://www.seoul284.org/cms/content/view/253",
+      "usedFor": "1900 목조 남대문정차장과 1925년 돔·벽돌 경성역의 구별; 1925년 준공 이후 영업 지속",
+      "limit": "이 기관 페이지도 역명 변경 요약과 연표 표현이 다르므로 1900 개통식 장소를 현재 서울역으로 확정하지 않는다."
+    },
+    {
+      "url": "https://www.seoul.go.kr/story/seoulhistory/pc.html",
+      "usedFor": "1925년 돔형 역사와 앞선 목조 역사 차이 교차확인",
+      "limit": "수도 건물 하나의 형태를 지방역이나 전국 도시의 모습으로 일반화하지 않는다."
+    },
+    {
+      "url": "https://www.incheon.go.kr/IC010205/view?beginDt=&curPage=23&endDt=&repSeq=DOM_0000000013880402&srchMainManagerDeptNm=&srchRepContents=%EA%B3%B5%EA%B3%B5&srchRepTitle=",
+      "usedFor": "인천항 개항연도1883의 제한적인 확인",
+      "limit": "현대 재생 홍보의 발전 서사를 식민도시 전체 역사 근거로 사용하지 않는다."
+    },
+    {
+      "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i402520",
+      "usedFor": "??? ??? ??? ??? ???, ??? ?? ??",
+      "limit": "?? ?? ???. ?? ????? ????? ?? ??? ???? ??."
+    },
+    {
+      "url": "https://museum.seoul.go.kr/www/exh/per/exhPer3th.jsp?sso=ok",
+      "usedFor": "1910 ?? ??? ?? ?? ??, ??? ??? ??? ??, ?? ??",
+      "limit": "??? ??? ?? ?? ??? ????? ??."
+    },
+    {
+      "url": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_40&levelId=kc_i403240",
+      "usedFor": "??? ??? ????????? ?? ??",
+      "limit": "?? ????? ??? ?? ?? ?? ?? ??? ???? ??."
+    },
+    {
+      "url": "https://encykorea.aks.ac.kr/Article/E0079723",
+      "usedFor": "??? ?? ??? ??? ?? ? ??",
+      "limit": "????? ?? ?? ?? ?? ?? ??? ???? ??."
+    }
+  ],
+  "notRun": [
+    "브라우저 새 캡처",
+    "1901·1926 시설 존속 공개화면",
+    "부산·평양·제주 해당 시기 추가 카메라 탐색",
+    "모든 도시 LOD 전환",
+    "새 벌크 수집",
+    "Claude 조사"
+  ],
+  "peerRead": true,
+  "ugeumchiBranchDiagnostic": {
+    "note": "Actual composer imported without source-file edits; flat ground and empty participants isolate the anonymous branch. Not public visibility evidence.",
+    "packetId": "scene-ugeumchi-1894",
+    "packetSummary": "전봉준이 주력부대 1만여 명을 이끌고 공주를 공격했으나 몇 차례의 전투를 거쳐 11월 초 우금치싸움에서 대패하였다.",
+    "packetVisualActions": "고개를 향해 여러 차례 밀고 올라갔다가 무너져 물러나는 대규모 농민군의 공격 장면.",
+    "packetParticipantSides": [
+      {
+        "id": "person-encykorea-jeon-bongjun-e0049437",
+        "role": "주력부대 1만여 명을 이끌고 공주를 공격한 동학농민군 지도자",
+        "side": "defender"
+      },
+      {
+        "id": "polity-donghak-nongmingun-1894",
+        "role": "공주 공격에 동원된 동학농민군 주력부대(봉기 측)",
+        "side": "defender"
+      }
+    ],
+    "compositionKind": "battle",
+    "counts": {
+      "defender|none|banner": 1,
+      "defender|defending|figure_joseon_soldier": 3,
+      "defender|idle|figure_joseon_soldier": 7,
+      "invader|attacking|figure_joseon_soldier": 3,
+      "invader|idle|figure_joseon_soldier": 7,
+      "none|none|banner": 2
+    }
+  },
+  "finalized": true,
+  "peerReport": "05-colonial-review.md",
+  "peerSupport": "05-colonial-support.json",
+  "reviewAdjustments": [
+    "Do not treat a long anonymous model-family interval itself as a historical error.",
+    "Keep compositor branch verification separate from public scene verification.",
+    "Use actual city LOD boundary, not unverified 160/60 crossing.",
+    "Reject arbitrary p95 20 percent acceptance threshold.",
+    "Keep P0 semantic-priority definition separate from service-incident severity."
+  ]
+}

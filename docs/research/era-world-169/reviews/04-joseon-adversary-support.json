@@ -1,0 +1,64 @@
+{
+  "reviewer": "04-joseon-adversary",
+  "phase": "independent-read-before-peer",
+  "baseline": "7312de21fd53dbf0a4bd3e40600461847f69a42f",
+  "captureOrigin": "Parent-supplied public-site captures and manifest; no new browser run",
+  "inspectedImages": [
+    {"file":"1450-hanseong-160-canvas.jpg","observation":"Large organized settlement, markets, gate/wall fragments and adjoining small countryside visible. Named-settlement and countryside sizes differ strongly."},
+    {"file":"1450-hanseong-60-canvas.jpg","observation":"Repeated courtyard/house/storage groups, six market stalls and anonymous commoners are readable. No evidence this distance crosses the city LOD threshold."},
+    {"file":"1450-jeonju-60-canvas.jpg","observation":"Same house group and six-stall market composition as Hanseong, with fewer wards."},
+    {"file":"1592-busan-160-canvas.jpg","observation":"Siege gate, soldiers, ships and five nearby houses dominate the waterfront; other countryside remains visible beyond the scene."},
+    {"file":"1592-busan-60-canvas.jpg","observation":"Defender and attacker soldiers have the same broad figure shape; house-size soldier symbols and intact repeated buildings give little civilian life or damage information."},
+    {"file":"1593-busan-60-canvas.jpg","observation":"Previous gate, ships and soldiers disappear; generic house-and-field region appears inland. This is a battle-year-to-following-war-year comparison, not a completed-war reconstruction test."},
+    {"file":"1700-hanseong-60-canvas.jpg","observation":"Core street, courtyard groups and market layout closely match 1450 at the same view."},
+    {"file":"1700-andong-60-canvas.jpg","observation":"Core composition repeats Jeonju town wards and the same market/commoner row; sloping ground fragments street surface visibility."},
+    {"file":"1795-hanseong-160-canvas.jpg","observation":"Same capital core appears much smaller while nearby construction/production-size scenes are large."},
+    {"file":"1795-hanseong-60-canvas.jpg","observation":"Zoom enlarges the small capital symbol, but its world-relative size remains much smaller than 1450/1700. No assertion of a crossed LOD threshold."},
+    {"file":"1795-jeju-160-canvas.jpg","observation":"The island view is dominated by relief grain, commoners, a cart and table; ordinary habitation and maritime circulation are not readable in this view."},
+    {"file":"1795-jeju-60-canvas.jpg","observation":"Relief is a distinct composition and is not a generic soldier or assembly grid. Named person is a larger instance of the same commoner family."}
+  ],
+  "independentFindings": [
+    {"id":"I1","finding":"Regional and early/late Joseon differentiation is weak in visible city compositions.","evidence":["historical-regions.js:13-21","period-buildings.js:6,14-17,34-58","scenery-period.js:9"],"limit":"Repeated grid or simplified geometry is not itself a historical error; exact town street plans are not required."},
+    {"id":"I2","finding":"Nearby events can reduce the capital's entire displayed scale and replace surrounding background availability.","evidence":["chronicle-assets.js:178-195","chronicle-event-scenes.js:58-60","chronicle-scenery.js:18-38","1795-hanseong-160-canvas.jpg"],"limit":"This is event overlap/display allocation evidence, not a proven city LOD transition."},
+    {"id":"I3","finding":"Busan 1592 scene termination removes its scene geometry; surviving wartime settlement/ruin/mobility state is not supplied by that episode.","evidence":["history-scenes.json:8511","chronicle-asset-plan.js:97-99","1592-busan-60-canvas.jpg","1593-busan-60-canvas.jpg"],"limit":"1593 is still within the 1592-1598 war. Exact post-battle rebuilding, castle relocation and occupation state need local dated sources."},
+    {"id":"I4","finding":"1795 Jeju relief is specifically implemented, yet broader island habitation/transport and differentiated recipients are not readable in the supplied views.","evidence":["chronicle-event-scenes.js:40,120-125","history-scenes.json:18504","1795-jeju-160-canvas.jpg","1795-jeju-60-canvas.jpg"],"limit":"Jeju and relief source material exist. Failure to render a ship is not proof ships are unknown: effects.ships is deliberately false and the script warns two same-year episodes are not simultaneous."},
+    {"id":"I5","finding":"A single Joseon role-based figure style is used for 1392-1894 and both sides of 1592 fighting; period/affiliation variation cannot be inferred from the source-linked style note.","evidence":["period-figures.js:13,20,71-80,118-122","chronicle-event-scenes.js:244-265,342-345"],"limit":"The institutional military-dress entry discusses dated changes. It does not by itself justify dating every brimmed hat or every displayed garment as impossible in 1592."},
+    {"id":"I6","finding":"Some ongoing-use packets exist (Bunwon, Tongjeyeong, waegwan); facility persistence cannot be declared entirely absent.","evidence":["chronicle-sites.js:2-9","history-scenes.json:13128,13919"],"limit":"Baegundong/Dosan/Byeolbangjin construction-only packets and narrow background interpolation still justify a per-facility lifecycle audit; this read did not prove every facility missing from every data layer."}
+  ],
+  "institutionalChecks": [
+    {"url":"https://encykorea.aks.ac.kr/Article/E0076304","title":"김만덕","verified":"Female merchant; 1795 relief; maritime grain procurement; government relief-shipping loss and private relief must not automatically be a simultaneous scene."},
+    {"url":"https://encykorea.aks.ac.kr/Article/E0047674","title":"임진왜란","verified":"War spans 1592-1598; 1593 is not the postwar endpoint."},
+    {"url":"https://encykorea.aks.ac.kr/Article/E0006624","title":"군복","verified":"Contains several dated changes including after the two wars, and later garment/headwear descriptions; not a single timeless Joseon standard."}
+  ],
+  "afterPeerRead": {
+    "peerFiles": ["04-joseon-review.md", "04-joseon-support.json"],
+    "additionalInstitutionalChecks": [
+      {"url":"https://encykorea.aks.ac.kr/Article/E0065474","title":"회령개시","verified":"1638 establishment, 1769 and 1851 rule changes, mixed commodities and government supervision; commodity trade does not prove local commodity production."},
+      {"url":"https://encykorea.aks.ac.kr/Article/E0015677","title":"안동 도산서원","verified":"1574 establishment, 1575 royal naming, survival through suppression, 1930 east library; present building inventory is not a 1574 inventory."},
+      {"url":"https://jeju.museum.go.kr/_prog/_board/?GotoPage=0&code=onlearning&menu_dvs_cd=&mode=V&no=2001909&site_dvs=&site_dvs_cd=kr&skey=&sval=","title":"탐라순력도","verified":"Museum transcript gives different 1702 dates for horses, inspection and elderly banquet; citrus tribute spans September to following February. A dated elderly banquet does not establish routine elder nursing."},
+      {"url":"https://encykorea.aks.ac.kr/Article/E0024278","title":"부산진전투","verified":"Japanese invading force and participation of residents are recorded; this entry does not establish every soldier's exact dress."},
+      {"url":"https://encykorea.aks.ac.kr/Article/E0033249","title":"신유박해","verified":"1801 religious persecution includes searches, arrests and deaths; a routine scholarly court gathering is not an adequate representation of those actions."}
+    ],
+    "localComposerChecks": {
+      "method":"Loaded baseline chronicle-event-scenes.js in memory, replacing module specifiers only with absolute baseline files and bundled Three.js. Invoked actual composer in an all-land, zero-height world with named participants omitted. This verifies branch/model construction only; public placement, supported-claim filtering, named figures, water and terrain are NOT validated.",
+      "repoFilesChanged":false,
+      "rows":[
+        {"id":"scene-je-dosanseowon-1574","compositionKind":"construction","models":{"courtyard":1,"house":4,"handcart":1,"table":1,"figure_joseon_commoner":6}},
+        {"id":"scene-syj128-hoeryong-gaesi-1638","compositionKind":"assembly","models":{"courtyard":1,"house":4,"figure_joseon_commoner":15}},
+        {"id":"scene-jl2-hwaseong-jinchan-1795","compositionKind":"assembly","models":{"courtyard":1,"house":4,"figure_joseon_commoner":15}},
+        {"id":"scene-jl2-tongjeyeong-duryongpo-1603-1895","compositionKind":"naval","models":{"courtyard":1,"house":4}},
+        {"id":"scene-syj128-kim-mandeok-jeju-1795","compositionKind":"relief","models":{"grain_stack":2,"handcart":1,"table":1,"figure_joseon_commoner":4}},
+        {"id":"scene-busanjin-1592","compositionKind":"siege","groups":{"invader:figure_joseon_soldier":10,"defender:figure_joseon_soldier":7},"note":"Counts are this fixture's output, not public visible counts or historical force sizes."},
+        {"id":"scene-jl-sinyu-bakhae-1801","compositionKind":"court","models":{"hall":1,"house":4,"figure_joseon_scholar":8}}
+      ]
+    },
+    "mainCorrectionsToPeer":[
+      "Reject the ungrounded p95 <= 33.3 ms, 30-second and 10-round-trip values as product acceptance criteria; retain measurement method as provisional diagnostics.",
+      "Do not turn a broad 1592-1637 work range into one war/occupation/recovery state shared by Busan, Dongnae and Jeolla.",
+      "Separate a dated elderly banquet from evidence of ordinary elder care; preserve the separate dates in Tamna paintings.",
+      "Keep JO-04/05 as planner/data-supported continuity defects pending dedicated public boundary views, and keep precise Jeju cell suppression and winning Hanseong nearest event unverified.",
+      "Split JO-08 figure-role meaning from terrain/road placement because they have different causes and verification."
+    ]
+  },
+  "notRun": ["New public browser capture","Full northern Joseon visual acceptance","Facility construction-next-year public screenshot pairs","Named person selection/picking check","LOD threshold crossing capture","All historical-source coverage audit","Public current-Jeju site-by-site suppression tracing","Public Hanseong winning-nearest-event tracing","Sustained performance benchmark","New Claude or bulk research collection"]
+}
