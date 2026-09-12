@@ -11,7 +11,7 @@ export const isHistoricalSetting=scene=>scene.kind==='settlement'||SETTINGS.has(
 // These display intervals join dated records; they are not assertions of continuous occupation.
 export function planHistoricalSites(data,packets,plan){
   const claims=new Map(data.claims.map(c=>[c.id,c])),entities=new Map(data.entities.map(e=>[e.id,e]));
-  const sites=planContinuingCities(packets,plan,claims);
+  const sites=[];
   for(const entityId of ['syj135-place-samnyeonsanseong','syj135-place-myeonghwalsanseong']){
     const entity=entities.get(entityId);if(!entity)continue;
     const episodes=packets.filter(s=>s.researchCollection==='scenes-135'
@@ -49,14 +49,14 @@ export function planContinuingCities(packets,plan,claims){
     if(claims&&!claimIds.every(id=>claims.has(id)))continue;
     if(plan.events.some(event=>event.archetype==='settlement'&&event.scenePlace
       &&Math.hypot(event.scenePlace.coordinates[0]-place.lon,event.scenePlace.coordinates[1]-place.lat)<.03))continue;
-    const label='?? ?? ?? ?? ??';
-    sites.push({id:'background-city-'+scene.id,kind:'event',year:plan.year,label,archetype:'settlement',
-      setting:true,detail:'?? ?? ??? ??? ?? ?? ??',
-      summary:'? ??? ?? ??? ???? ?? ?? ?? ??? ??? ?????. ?? ?? ??? ?? ??, ??? ??? ??? ??? ?? ????. ?? ??? ?? ??? ???? ????.',
+    const label='이름 없는 도시 생활 배경',id='background-city-'+scene.id;
+    sites.push({id,entityId:id,kind:'event',year:plan.year,label,archetype:'settlement',
+      setting:true,detail:'과거 도시 기록의 위치를 잇는 추정 배경',
+      summary:'이 위치의 도시 기록을 바탕으로 이름 없는 생활 배경을 이어서 보여줍니다. 이전 도시 명칭과 행정 지위, 사건과 인물의 기간을 연장한 것이 아닙니다. 현재 건물과 거리 배치는 복원도가 아닙니다.',
       claimIds,siteBackground:{scope:'anonymous-city',sourceSceneId:scene.id,
         recordedStartYear:scene.startYear,recordedEndYear:scene.endYear,episodes:[]},
       scenePlace:{...place,label,settlement:{scope:'anonymous-city'},coordinates:[place.lon,place.lat],
-        displayBasis:'??? ?? ?? ??? ???? ?? ?? ?? ?? ??'},
+        displayBasis:'수집된 과거 도시 위치에 이어지는 이름 없는 추정 생활 배경'},
       visualActions:{cityStyle:scene.id.includes('busan')?'port':scene.id.includes('hanseong')?'capital':'town'},
       sites:[],effects:{},sides:[],participants:[]});
   }

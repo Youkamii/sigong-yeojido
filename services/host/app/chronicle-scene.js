@@ -2,7 +2,7 @@ import {escapeHtml as esc} from './html.js';
 import {planChronicleAssets} from './chronicle-asset-plan.js';
 import {formatCoordinates} from './history-coordinates.js';
 import {planTraditions} from './chronicle-traditions.js';
-import {planHistoricalSites} from './chronicle-sites.js';
+import {planHistoricalSites,planContinuingCities} from './chronicle-sites.js';
 
 export class ChronicleScene {
   constructor(host,onSelect){
@@ -58,6 +58,7 @@ export class ChronicleScene {
     const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[],world.coordinateRegistry);
     world.territories?.setYear(plan.year,chronicle.callbacks.filters());
     world.geography?.setActivities(plan);
+    plan.events.push(...planContinuingCities(world.scenePackets||[],plan,new Map(chronicle.data.claims.map(claim=>[claim.id,claim]))));
     if(this.display.siteBackground)plan.events.push(...planHistoricalSites(chronicle.data,world.scenePackets||[],plan));
     plan.events.push(...stories.filter(s=>s.id===this.traditionId));
     if(!plan.events.some(e=>e.id===this.assets.activeScene))this.assets.activeScene=null;
@@ -109,7 +110,7 @@ export class ChronicleScene {
     host.hidden=!scene;
     if(!scene){host.replaceChildren();return;}
     const people=scene.participants.filter(p=>p.presence==='on-site');
-    host.innerHTML=`<div class="focus-heading"><span>${scene.narrative?'설화·전승의 무대':scene.siteBackground?'성곽 배경 · 추정':scene.setting?'도시·시설 · '+esc(this.assets.plan.year)+'년':esc(this.assets.plan.year)+'년'} · ${esc(scene.scenePlace?.label||scene.locationReference?.label||'현장')}</span>
+    host.innerHTML=`<div class="focus-heading"><span>${scene.narrative?'설화·전승의 무대':scene.siteBackground?.scope==='anonymous-city'?scene.label:scene.siteBackground?'성곽 배경 · 추정':scene.setting?'도시·시설 · '+esc(this.assets.plan.year)+'년':esc(this.assets.plan.year)+'년'} · ${esc(scene.scenePlace?.label||scene.locationReference?.label||'현장')}</span>
       <button data-focus-entity="${esc(scene.entityId)}" data-focus-row="${esc(scene.id)}">${esc(scene.label)} ↗</button></div>
       <div class="focus-people">${people.map(p=>`<button data-focus-entity="${esc(p.entityId)}" data-focus-row="${esc(p.id+'@'+scene.id)}" aria-pressed="${p.entityId===this.assets.selected}"><strong>${esc(p.label)}</strong><small>${esc(p.role)}</small></button>`).join('')}</div>`;
     for(const button of host.querySelectorAll('[data-focus-entity]'))button.onclick=()=>{
