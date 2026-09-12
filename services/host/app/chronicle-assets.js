@@ -149,7 +149,7 @@ export class ChronicleAssets{
   }
   rebuild(plan){
     const next=new THREE.Group();next.name='chronicle-assets';
-    const rows=[],anchors=new Map(),recipes=[],occupied=[],eventAnimations=[],unlocated=[];
+    const rows=[],anchors=new Map(),recipes=[],occupied=[],areaOccupied=[],eventAnimations=[],unlocated=[];
     this.sceneCache||=new Map();this.fieldCache||=new Map();
     const nextScenes=new Map(),nextFields=new Map();
     const reuse={scenes:0,fields:0,builtScenes:0,builtFields:0};
@@ -204,10 +204,13 @@ export class ChronicleAssets{
       nextScenes.set(event.id,{key,scene});
       next.add(scene.group);eventAnimations.push(...scene.animated);
       if(!compact){fullScenes.push(loc.position);sceneWoods.push({id:event.id,x:loc.position.x,z:loc.position.z,scale:scene.displayScale});}
-      if(!city)occupied.push({...loc.position,radius:scene.radius});
+      if(!city){
+        occupied.push({...loc.position,radius:0});
+        areaOccupied.push({...loc.position,radius:scene.radius});
+      }
       const urbanRegion=city&&event.scenePlace?.coordinates&&urbanRegionAt(...event.scenePlace.coordinates,event.year);
-      if(urbanRegion)occupied.push({...loc.position,radius:0,urbanRegionId:urbanRegion.id});
-      occupied.push(...scene.occupied);
+      if(urbanRegion){const marker={...loc.position,radius:0,urbanRegionId:urbanRegion.id};occupied.push(marker);areaOccupied.push(marker);}
+      occupied.push(...scene.occupied);areaOccupied.push(...scene.occupied);
       for(const [index,model] of scene.models.entries()){
         const person=model.person&&event.participants.find(p=>p.id===model.person.id),row=person?{...person,id:person.id+'@'+event.id,kind:'person',eventId:event.entityId,sceneId:event.id,
           activity:event.summary,placement:loc.placement,placementLabel:person.role+' · '+loc.placementLabel,
@@ -280,9 +283,9 @@ export class ChronicleAssets{
     }
     next.add(pathMesh);this.pathMesh=pathMesh;this.pathKey=pathKey;
     this.scenery||=new ChronicleScenery(this);
-    this.scenery.sync(occupied);
-    this.forestOccupied=occupied;this.forestScenes=sceneWoods;
-    this.buildForest([...occupied,...this.scenery.clearings],sceneWoods);
+    this.scenery.sync(occupied,areaOccupied);
+    this.forestOccupied=areaOccupied;this.forestScenes=sceneWoods;
+    this.buildForest([...areaOccupied,...this.scenery.clearings],sceneWoods);
     this.scenery.start(this.forestPositions,plan.year);
     const byRecipe=new Map(rows.map(r=>[r.id,r]));
     field.group.updateMatrixWorld(true);
