@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {registerHooks} from 'node:module';
 import {planContinuingFacilities} from '../services/host/app/facility-persistence.js';
 import {sceneVisualKey} from '../services/host/app/chronicle-persistence.js';
+import {insideCoastline} from '../services/host/app/coastline-index.js';
 registerHooks({resolve(specifier,context,next){return specifier==='three'?{url:new URL('../services/host/vendor/three.module.min.js',import.meta.url).href,shortCircuit:true,format:'module'}:next(specifier,context);}});
 const THREE=await import('three');
 const {composeHistoricalEvent}=await import('../services/host/app/chronicle-event-scenes.js');
@@ -12,6 +13,8 @@ const plan=year=>({year,events:packets.filter(s=>s.startYear<=year&&s.endYear>=y
 const rows=year=>planContinuingFacilities(packets,plan(year));
 const at=(id,year)=>rows(year).find(row=>row.siteBackground.sourceSceneId===id);
 const hwangnyongsa='scene-anc-hwangnyongsa-tap-645',station='scene-mod-seoul-station-1925';
+const myeonghwal='scene-syj135-myeonghwalsanseong-chukseong-551',namgyeong='scene-syj128-namgyeong-1104';
+const byeolbangjin='scene-ej-byeolbangjin-1510',dondae='scene-jl2-ganghwa-dondae-1679';
 const flat={contains:()=>true,surfaceAt:()=>0,seaLevel:0};
 const sea={...flat,contains:()=>false};
 const compose=(row,extra={})=>composeHistoricalEvent({...row,...extra},new THREE.Vector3(),row.scenePlace.medium==='sea'?sea:flat);
@@ -33,6 +36,51 @@ test('경성역은 원 패킷이 활성인 1925년에는 중복하지 않고 192
   assert.match(row.summary,/건립 기록을 근거로 시설이 남아 있다고 추정한 배경이며 이후 변형·훼손 기록은 반영하지 않았다/);
   assert.deepEqual(row.participants,[]);assert.deepEqual(row.participantGroups,[]);
   assert.equal(planContinuingFacilities(packets,{year:1926,events:[packets.find(s=>s.id===station)]}).some(r=>r.siteBackground.sourceSceneId===station),false);
+  for(const year of [1926,2020,2100]){
+    const continuing=at(station,year).continuing;
+    assert.equal(continuing.untilYear,2100);assert.equal(continuing.openEnded,true);
+    assert.equal(continuing.cappedBy,undefined);
+  }
+});
+
+test('금성 축조 전승과 narrativeType·tradition 패킷은 어느 표시 연도에도 시설이 아니다',()=>{
+  const geumseong=packets.find(s=>s.id==='scene-anc-geumseong-bce37');assert.match(geumseong.title,/전승/);
+  const source=packets.find(s=>s.id===station);
+  const excluded=[geumseong,{...source,id:'narrative',narrativeType:'legend'},
+    {...source,id:'empty-narrative',narrativeType:''},{...source,id:'tradition',kind:'tradition'}];
+  for(let year=-2000;year<=2101;year++)assert.deepEqual(planContinuingFacilities(excluded,{year,events:[]}),[],String(year));
+  for(const year of [645,646,1795,2020])assert.equal(at(geumseong.id,year),undefined);
+});
+
+test('명활산성·남경 궁궐·돈대·별방진은 같은 왕조의 상한까지만 시설로 남는다',()=>{
+  for(const [id,visible,until] of [[myeonghwal,600,917],[namgyeong,1300,1391],[dondae,1795,1909],[byeolbangjin,1795,1909]]){
+    const row=at(id,visible);assert.ok(row,id);
+    assert.equal(row.continuing.untilYear,until);assert.equal(row.continuing.openEnded,false);
+    assert.equal(row.continuing.cappedBy,'dynasty-boundary');assert.equal(row.continuing.endedBy,null);
+    assert.equal(row.continuing.basis,'건립 기록 뒤 같은 왕조 안에서 존속 추정');
+    assert.ok(at(id,until),id);assert.equal(at(id,until+1),undefined,id);
+  }
+  assert.equal(at(namgyeong,1300).label,'남경 궁궐 · 시설(추정 존속)');
+  assert.equal(at(byeolbangjin,2020),undefined);
+});
+
+test('상한은 착공이 아닌 건립 종료 뒤 첫 경계이며 경성역 외에는 1945년 경계도 적용한다',()=>{
+  const source=packets.find(s=>s.id===station);
+  for(const [endYear,untilYear] of [[917,917],[918,1391],[1391,1391],[1392,1909],[1909,1909],[1910,1944],[1925,1944],[1944,1944],[1945,2100],[2000,2100]]){
+    const scene={...source,id:'boundary-case',startYear:500,endYear};
+    const result=planContinuingFacilities([scene],{year:endYear+1,events:[]});
+    if(endYear===untilYear){assert.deepEqual(result,[]);continue;}
+    assert.equal(result[0].continuing.untilYear,untilYear);
+    assert.equal(result[0].continuing.openEnded,untilYear===2100);
+    assert.equal(result[0].continuing.cappedBy,untilYear===2100?undefined:'dynasty-boundary');
+  }
+});
+
+test('1795년 한성 반경 1도 시설 수는 제시된 38개와 워크트리 변경 전 11개보다 줄어든다',t=>{
+  const nearby=rows(1795).filter(row=>Math.hypot(row.place.lon-126.9768,row.place.lat-37.58)<=1);
+  t.diagnostic('1795 HANSEONG radius=1deg: supplied=38, worktree_before=11, after='+nearby.length);
+  assert.ok(nearby.length<38);assert.ok(nearby.length<11);
+  assert.ok(!nearby.some(row=>row.siteBackground.sourceSceneId===namgyeong));
 });
 
 const palace=packets.find(s=>s.id==='scene-je-gyeongbokgung-1395'&&s.kind==='construction');
@@ -42,7 +90,7 @@ test('경복궁 건립 시설은 1592년 소실 이후인 1593년에 없다',{sk
   for(const year of [1592,1593])assert.equal(at(palace.id,year),undefined);
 });
 
-test('소멸 기록이 없는 시설은 openEnded이고 2100년까지 표시한다',()=>{
+test('2100년 상한 시설만 openEnded이고 2101년부터 표시하지 않는다',()=>{
   const open=rows(2000).filter(r=>r.continuing.openEnded);assert.ok(open.length>0);
   for(const row of open){assert.equal(row.continuing.untilYear,2100);assert.equal(row.continuing.endedBy,null);}
   assert.ok(at(station,2100));assert.equal(rows(2101).length,0);
@@ -60,7 +108,8 @@ test('실제 건립 패킷의 시설 조립에는 공사 인력·손수레·건�
       assert.ok(scene.radius<=12,packet.id);assert.ok(scene.occupied.every(o=>o.radius<=3),packet.id);
     }
   }
-  assert.equal(count,packets.filter(s=>s.kind==='construction'&&Number.isFinite(s.place?.lon)&&Number.isFinite(s.place?.lat)).length);
+  const eligible=packets.filter(s=>s.kind==='construction'&&s.narrativeType==null&&!s.title?.includes('전승')&&Number.isFinite(s.place?.lon)&&Number.isFinite(s.place?.lat));
+  assert.equal(count,eligible.length);
   assert.ok(compose(at(station,1926)).models.some(m=>m.archetype==='station'));
   assert.ok(compose(at(hwangnyongsa,646)).models.some(m=>m.archetype==='pagoda'));
   assert.ok(compose(at(hwangnyongsa,646)).models.some(m=>/monk/.test(m.archetype)));
@@ -68,7 +117,7 @@ test('실제 건립 패킷의 시설 조립에는 공사 인력·손수레·건�
 
 test('시설 표시 연도와 시대가 바뀌어도 재사용 키와 조립 외형은 같다',()=>{
   const position=new THREE.Vector3();
-  for(const [id,years] of [[hwangnyongsa,[646,1237]],[station,[1926,1945,2100]],['scene-anc-gameunsa-682',[683,1876,2100]]]){
+  for(const [id,years] of [[hwangnyongsa,[646,1237]],[station,[1926,1945,2100]],['scene-anc-gameunsa-682',[683,800,917]]]){
     const first=at(id,years[0]);assert.ok(first);
     for(const year of years){
       const row=at(id,year);assert.ok(row);assert.equal(row.id,first.id);
@@ -99,6 +148,60 @@ test('좌표·이름을 함께 대조하고 가장 이른 소멸 기록을 선�
   const [row]=planContinuingFacilities(candidates,{year:1949,events:[]});
   assert.equal(row.continuing.endedBy,'first');assert.equal(row.continuing.untilYear,1949);
   assert.equal(planContinuingFacilities(candidates,{year:1950,events:[]}).length,0);
+});
+
+test('소멸 기록은 왕조 경계보다 이르거나 늦어도 상한에 우선한다',()=>{
+  const source=packets.find(s=>s.id===myeonghwal);
+  for(const year of [800,1000]){
+    const ending={...source,id:'destruction',kind:'fire',startYear:year,endYear:year,title:source.place.label+' 소실'};
+    const [row]=planContinuingFacilities([source,ending],{year:year-1,events:[]});
+    assert.equal(row.continuing.untilYear,year-1);assert.equal(row.continuing.endedBy,ending.id);
+    assert.equal(row.continuing.openEnded,false);assert.equal(row.continuing.cappedBy,undefined);
+    assert.deepEqual(planContinuingFacilities([source,ending],{year,events:[]}),[]);
+  }
+});
+
+test('실제 제주·강화 링 폭이 시설 조립과 재사용 키의 크기 상한에 함께 반영된다',async t=>{
+  const {createEstimatedWorld}=await import('../scripts/check_estimated_islands.mjs');
+  const world=createEstimatedWorld();
+  for(const [id,name,limit] of [[byeolbangjin,'Jeju',.6],[dondae,'Ganghwa',.14],[namgyeong,'Mainland',.7]]){
+    const row=at(id,id===namgyeong?1300:1795),[x,z]=world.toWorld(...row.scenePlace.coordinates);
+    const position=new THREE.Vector3(x,world.surfaceAt(x,z),z);
+    const ring=world.rings.find(r=>insideCoastline(x,z,r));assert.ok(ring,name);
+    const width=ring.bounds.maxX-ring.bounds.minX,expected=Math.min(row.scenePlace.displayScale||1,.7,width/160);
+    for(const compact of [false,true]){
+      const scene=composeHistoricalEvent({...row,compact},position,world);
+      assert.ok(scene.models.some(model=>model.primary),name);
+      assert.ok(scene.displayScale<=limit,name);assert.equal(scene.displayScale,expected*(compact?.16:1));
+      const key=JSON.parse(sceneVisualKey(row,position,compact,100,world));
+      assert.equal(key.scale,expected);assert.equal(key.maxRadius,compact?null:12*expected);
+      const limited=composeHistoricalEvent({...row,compact,maxRadius:1},position,world);
+      assert.equal(limited.displayScale,compact?expected*.16:Math.min(expected,1/12));
+      assert.equal(JSON.parse(sceneVisualKey(row,position,compact,1,world)).maxRadius,compact?null:1);
+    }
+    t.diagnostic(name+': ringWidth='+width+', displayScale='+expected);
+    const smaller={...row,scenePlace:{...row.scenePlace,displayScale:.05}};
+    assert.equal(composeHistoricalEvent(smaller,position,world).displayScale,.05);
+    assert.equal(JSON.parse(sceneVisualKey(smaller,position,false,100,world)).scale,.05);
+  }
+});
+
+test('링 순서와 꼭짓점 수 대신 면적으로 본토를 고르고 캐시 키는 링 폭 변경을 따른다',()=>{
+  const row=at(station,1926),position=new THREE.Vector3();
+  const island=[[-10,-10],[0,-10],[10,-10],[10,0],[10,10],[0,10],[-10,10],[-10,0]];
+  const mainland=[[100,100],[500,100],[500,500],[100,500]];
+  const world={...flat,rings:[island,mainland]};
+  assert.equal(composeHistoricalEvent(row,position,world).displayScale,.125);
+  const key=sceneVisualKey(row,position,false,100,world);
+  assert.equal(JSON.parse(key).scale,.125);
+  assert.equal(sceneVisualKey(row,position,false,100,{...world,rings:[mainland,island]}),key);
+  const wider={...world,rings:[island.map(([x,z])=>[x*2,z]),mainland]};
+  assert.equal(composeHistoricalEvent(row,position,wider).displayScale,.25);
+  assert.notEqual(sceneVisualKey(row,position,false,100,wider),key);
+  assert.equal(composeHistoricalEvent(row,position,flat).displayScale,.7);
+  const event={...row,continuing:undefined};
+  assert.equal(composeHistoricalEvent(event,position,world).displayScale,1);
+  assert.equal(sceneVisualKey(event,position,false,100,world),sceneVisualKey(event,position,false,100,flat));
 });
 
 test('장소명 대체·근거 필터를 적용하고 원 패킷은 바꾸지 않는다',()=>{

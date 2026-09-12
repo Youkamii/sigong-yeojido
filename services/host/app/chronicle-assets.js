@@ -196,7 +196,7 @@ export class ChronicleAssets{
       }
       const nearest=city?Infinity:Math.min(Infinity,...fullScenes.map(p=>p.distanceTo(loc.position)));
       const compact=!city&&nearest<3;
-      const key=sceneVisualKey(event,loc.position,compact,nearest*.45);
+      const key=sceneVisualKey(event,loc.position,compact,nearest*.45,this.world);
       const cached=this.sceneCache.get(event.id);
       const scene=cached?.key===key?cached.scene:composeHistoricalEvent({...event,compact,maxRadius:nearest*.45},loc.position,this.world);
       if(scene===cached?.scene)reuse.scenes++;else reuse.builtScenes++;

@@ -3,6 +3,7 @@ import {figureArchetype} from './period-figures.js';
 import {buildingArchetype} from './period-buildings.js';
 import {settlementLayout,SETTLEMENT_RADIUS} from './historical-regions.js';
 import {urbanRegionAt} from './urban-regions.js';
+import {facilityDisplayScale} from './facility-scale.js';
 import {hash32} from './util.js';
 
 /** #173: 패킷의 sceneFunction 이 문자열 분기보다 먼저 구성을 정한다. */
@@ -72,7 +73,7 @@ export function composeHistoricalEvent(event,position,world){
     }
     displayScale=Math.min(displayScale,clearance/48);
   }
-  if(facility)displayScale=Math.min(displayScale,1);
+  if(facility)displayScale=facilityDisplayScale(displayScale,position,world);
   if(event.compact)displayScale*=.16;
   const radius=facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
   if(!event.compact&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,event.maxRadius/radius);
