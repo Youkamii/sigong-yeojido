@@ -5,8 +5,7 @@ import {AtlasSearch} from './atlas-search.js';
 import {AtlasStory} from './atlas-story.js';
 import {AtlasChat} from './atlas-chat.js';
 import {AtlasEvents} from './atlas-events.js';
-
-const eras=[[-2500,'고대'],[-57,'삼국'],[698,'남북국'],[918,'고려'],[1392,'조선'],[1897,'대한제국'],[1945,'현대']];
+import {eras,eraAt} from './atlas-eras.js';
 
 export class AtlasUI{
   constructor({chronicle,scene,runtime,filters,evidence}){
@@ -87,7 +86,7 @@ export class AtlasUI{
     this.slider.setAttribute('aria-valuetext',yearLabel(year));
     this.events?.preview(year);
     this.currentTick.textContent=year<0?'BC '+Math.abs(year):year;this.currentTick.style.left=((year-min)/(max-min)*100)+'%';
-    const era=eras.filter(([start])=>start<=year).at(-1)||eras[0];this.time.querySelector('.atlas-era').value=era[0];
+    const era=eraAt(year);this.time.querySelector('.atlas-era').value=era[0];
     this.time.querySelector('.time-year>span').textContent=year<0?'기원전':'년';
     const key=min+':'+max;
     if(this.tickKey!==key){this.tickKey=key;this.ticks.innerHTML=Array.from({length:5},(_,i)=>Math.round(min+(max-min)*i/4)).map(y=>`<span data-tick-year="${y}">${y===0?'':y<0?'BC '+Math.abs(y):y}</span>`).join('');}
