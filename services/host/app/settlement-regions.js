@@ -1,4 +1,5 @@
 import {insideCoastline,coastlineDistance} from './coastline-index.js';
+import {urbanLayout} from './urban-regions.js';
 
 const seedFor=text=>{let n=2166136261;for(const c of text)n=Math.imul(n^c.charCodeAt(0),16777619);return n>>>0;};
 const randomFor=seed=>()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
@@ -39,6 +40,7 @@ export function planSettlementSites(world){
 }
 
 export function settlementLayout(site,periodOrYear){
+  if(site.kind==='urban')return urbanLayout(site,periodOrYear);
   const year=typeof periodOrYear==='number'?periodOrYear:periodOrYear?.year??1960;
   const density=year< -1500?.16:year<1?.28:year<918?.45:year<1392?.6:year<1876?.78:year<1945?.9:1;
   const fieldsVisible=typeof periodOrYear==='object'?periodOrYear.fields!==false:year>=-1500;

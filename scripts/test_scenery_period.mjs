@@ -25,7 +25,7 @@ assert.notEqual(sceneryPeriod(1944),sceneryPeriod(1945));
 const houses=n=>Array.from({length:100},(_,seed)=>sceneryRecipe(recipe,sceneryPeriod(n),{...site,seed}).archetype);
 assert.ok(houses(1975).includes('rural_cottage')&&houses(1975).includes('rural_metal'));
 assert.ok(houses(1980).filter(h=>h.startsWith('rural_')&&h!=='rural_cottage').length>houses(1975).filter(h=>h!=='rural_cottage').length);
-assert.match(sceneryRecipe(recipe,sceneryPeriod(2000),northern).archetype,/^era_joseon_house_/,'Southern modernization sources do not imply a northern roof campaign');
+assert.doesNotMatch(sceneryRecipe(recipe,sceneryPeriod(2000),northern).archetype,/^era_joseon_house_/,'Modern northern scenery must not revert to 1700');
 assert.notEqual(sceneryRecipe({...recipe,archetype:'rural_hut'},sceneryPeriod(2000),northern).archetype,'rural_hut',
   'Neutral northern scenery does not bring back prehistoric hut silhouettes');
 assert.equal(sceneryRecipe({...recipe,archetype:'handcart'},sceneryPeriod(1975),site).archetype,'handcart');
