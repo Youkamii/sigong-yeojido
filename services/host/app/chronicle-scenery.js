@@ -24,7 +24,7 @@ export class ChronicleScenery{
     if(this.initialized&&key!==this.occupancyKey)this.refreshPeriod();this.occupancyKey=key;
     for(const c of this.cells)if(c.group)c.group.visible=this.available(c.site)&&this.period?.tigers!==false;
     for(const c of this.detailCache.values())c.group.visible=c.group.visible&&this.available(c.site);
-    this.stats.tigers=this.period?.tigers===false?0:this.wildlife.length;this.paths.sync(s=>this.available(s),occupied);
+    this.stats.tigers=this.period?.tigers===false?0:this.wildlife.length;this.paths.sync(s=>this.available(s),occupied,(this.urbanSites||[]).filter(s=>this.period?.year>=s.profile.startYear));
   }
   nearPath(x,z,margin){return this.paths.near(x,z,margin);}
   start(forest,year){this.setYear(year);if(this.ready)return;this.ready=this.populate(forest).then(()=>{this.initialized=true;this.refreshPeriod();}).catch(e=>this.failed(e));}
@@ -101,7 +101,7 @@ export class ChronicleScenery{
       const a=this.point(site,...road.points[0]),b=this.point(site,...road.points[1]);
       const car=i%3===0,geometry=new THREE.BoxGeometry(car?.5:.12,car?.23:.3,car?.27:.12);
       const mesh=new THREE.Mesh(geometry,new THREE.MeshStandardMaterial({color:car?'#c0a475':i%2?'#657889':'#9c8071'}));group.add(mesh);
-      const update=t=>{const f=(t*.08+i*.173)%1,x=a[0]+(b[0]-a[0])*f,z=a[1]+(b[1]-a[1])*f;
+      const update=t=>{const f=(1-Math.cos(t*.5+i*.173))/2,x=a[0]+(b[0]-a[0])*f,z=a[1]+(b[1]-a[1])*f;
         mesh.position.set(x,this.world.surfaceAt(x,z)+(car?.18:.2),z);mesh.rotation.y=-Math.atan2(b[1]-a[1],b[0]-a[0]);};update(0);animated.push({update});
     }
     const detail={site,indices:[],group,animated};this.detailCache.set(site.id,detail);this.stats.modelBuilds++;return detail;
