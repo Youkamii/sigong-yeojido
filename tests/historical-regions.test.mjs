@@ -43,3 +43,19 @@ test('scene identity reuses years inside an era and changes at building or dress
  assert.equal(key(1593),key(1594));
  for(const boundary of [918,1392,1876,1895,1945,1970])assert.notEqual(key(boundary-1),key(boundary));
 });
+
+
+test('modern role endings retain anonymous city without extending named roles or actors',async()=>{
+ const {planContinuingCities}=await import('../services/host/app/chronicle-sites.js');
+ for(const [id,endYear] of [['scene-regional163-jeju-1955',2005],['scene-city-busan-temporary-capital-1950-1953',1953],['scene-city-hanseong-capital-1394-1910',1910]]){
+  const source={id,kind:'settlement',startYear:endYear-10,endYear,dateClaimIds:['date'],actionClaimIds:['role'],place:{lon:127,lat:37,claimIds:['place']},participants:[{id:'old-person'}]};
+  const before=JSON.stringify(source);
+  assert.equal(planContinuingCities([source],{year:endYear,events:[]}).length,0);
+  const [background]=planContinuingCities([source],{year:endYear+1,events:[]});
+  assert.equal(background.archetype,'settlement');assert.equal(background.label,'?? ?? ?? ?? ??');
+  assert.deepEqual(background.participants,[]);assert.equal(background.endYear,undefined);
+  assert.equal(background.siteBackground.recordedEndYear,endYear);assert.equal(JSON.stringify(source),before);
+  assert.equal(planContinuingCities([source],{year:endYear+1,events:[]},new Map()).length,0);
+  assert.equal(planContinuingCities([source],{year:endYear+1,events:[{archetype:'settlement',scenePlace:{coordinates:[127,37]}}]}).length,0);
+ }
+});

@@ -11,7 +11,7 @@ export const isHistoricalSetting=scene=>scene.kind==='settlement'||SETTINGS.has(
 // These display intervals join dated records; they are not assertions of continuous occupation.
 export function planHistoricalSites(data,packets,plan){
   const claims=new Map(data.claims.map(c=>[c.id,c])),entities=new Map(data.entities.map(e=>[e.id,e]));
-  const sites=[];
+  const sites=planContinuingCities(packets,plan,claims);
   for(const entityId of ['syj135-place-samnyeonsanseong','syj135-place-myeonghwalsanseong']){
     const entity=entities.get(entityId);if(!entity)continue;
     const episodes=packets.filter(s=>s.researchCollection==='scenes-135'
@@ -28,6 +28,37 @@ export function planHistoricalSites(data,packets,plan){
       siteBackground:{startYear:first.startYear,endYear:last.endYear,episodes:episodes.map(s=>({entityId:s.eventId,label:s.title}))},
       scenePlace:{...first.place,label,coordinates:[first.place.lon,first.place.lat],displayBasis:'기록 사이를 잇는 추정 배경입니다. 성의 실제 윤곽이나 건물 배치를 복원한 것은 아닙니다.'},
       visualActions:{fortress:true},sites:[],effects:{},sides:[],participants:[]});
+  }
+  return sites;
+}
+
+// A former name or administrative role ending does not remove the anonymous town.
+// Only these collected modern city records supply locations, never facility lifetimes.
+const CONTINUING_CITIES=new Set([
+  'scene-regional163-jeju-1955',
+  'scene-city-busan-temporary-capital-1950-1953',
+  'scene-city-hanseong-capital-1394-1910',
+]);
+export function planContinuingCities(packets,plan,claims){
+  const sites=[];
+  for(const scene of packets){
+    if(!CONTINUING_CITIES.has(scene.id)||scene.kind!=='settlement'||plan.year<=scene.endYear)continue;
+    const place=scene.place;
+    if(!Number.isFinite(place?.lon)||!Number.isFinite(place?.lat))continue;
+    const claimIds=[...new Set([...scene.dateClaimIds,...scene.actionClaimIds,...place.claimIds])];
+    if(claims&&!claimIds.every(id=>claims.has(id)))continue;
+    if(plan.events.some(event=>event.archetype==='settlement'&&event.scenePlace
+      &&Math.hypot(event.scenePlace.coordinates[0]-place.lon,event.scenePlace.coordinates[1]-place.lat)<.03))continue;
+    const label='?? ?? ?? ?? ??';
+    sites.push({id:'background-city-'+scene.id,kind:'event',year:plan.year,label,archetype:'settlement',
+      setting:true,detail:'?? ?? ??? ??? ?? ?? ??',
+      summary:'? ??? ?? ??? ???? ?? ?? ?? ??? ??? ?????. ?? ?? ??? ?? ??, ??? ??? ??? ??? ?? ????. ?? ??? ?? ??? ???? ????.',
+      claimIds,siteBackground:{scope:'anonymous-city',sourceSceneId:scene.id,
+        recordedStartYear:scene.startYear,recordedEndYear:scene.endYear,episodes:[]},
+      scenePlace:{...place,label,settlement:{scope:'anonymous-city'},coordinates:[place.lon,place.lat],
+        displayBasis:'??? ?? ?? ??? ???? ?? ?? ?? ?? ??'},
+      visualActions:{cityStyle:scene.id.includes('busan')?'port':scene.id.includes('hanseong')?'capital':'town'},
+      sites:[],effects:{},sides:[],participants:[]});
   }
   return sites;
 }
