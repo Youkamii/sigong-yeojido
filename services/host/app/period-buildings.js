@@ -12,6 +12,11 @@ const roles={house:'house',rural_hut:'house',rural_cottage:'house',korean_house:
   courtyard_house:'courtyard',korean_courtyard:'courtyard',academy_hall:'hall',korean_academy:'hall'};
 const familyAt=year=>BUILDING_PERIODS.find(period=>year<period.until);
 export function buildingArchetype(archetype,year,region={}){
+  if(archetype.startsWith('urban_')){
+    const type=archetype.slice(6),variant=Math.abs(Math.trunc(region.seed||0))%3;
+    const stage=year<1945?'transition':year<1970?'postwar':'modern';
+    return `urban_${stage}_${type}_${variant}`;
+  }
   const role=roles[archetype];if(!role)return archetype;
   const family=familyAt(year).id,variant=Math.abs(Math.trunc(region.seed||0))%3;
   return `era_${family}_${role}_${variant}`;
@@ -59,5 +64,34 @@ export function extendBuildingCatalog(raw){
     }
     blueprints[id]=blueprint;cores.push(`${id}|이름 없는 시대별 ${role} 모형`);
   }
+  for(const [stage,year] of [['transition',1930],['postwar',1960],['modern',2010]])
+    for(const type of ['lowrise','apartment','commercial','civic','transit','industrial','warehouse'])for(let variant=0;variant<3;variant++){
+      const id=`urban_${stage}_${type}_${variant}`;
+      blueprints[id]=urbanBlueprint(type,year,variant);cores.push(`${id}|이름 없는 도시 건물`);
+    }
   return {...raw,blueprints,categories:{...raw.categories,buildings:{...raw.categories.buildings,cores}}};
+}
+
+// Shared proportions for anonymous city blocks; never a named building reconstruction.
+export function urbanBuildingDimensions(type,year,variant=0){
+  const modern=year>=1970;
+  const dimensions={lowrise:[5,4,3.2+variant*.9],apartment:[7,4,modern?18+variant*5:4],
+    commercial:[5,5,modern?10+variant*5:4],civic:[10,6,4.8],transit:[10,4,3],
+    industrial:[8,6,4],warehouse:[7,5,3]};
+  const [width,depth,height]=dimensions[type]||dimensions.lowrise;
+  return {width,depth,height};
+}
+function urbanBlueprint(type,year,variant){
+  const {width:w,depth:d,height:h}=urbanBuildingDimensions(type,year,variant);
+  const p=[{k:'box',w,h,d,y:h/2,m:'stone',c:variant===1?'bodyMid':'stone',tag:'body'},
+    {k:'box',w:w+.25,h:.22,d:d+.25,y:h+.11,m:'stone',c:'iron',tag:'roof'}];
+  const floors=Math.max(1,Math.floor(h/1.8));
+  for(let floor=0;floor<floors;floor++)for(let column=0;column<3;column++){
+    p.push({k:'box',w:w*.17,h:.65,d:.08,x:(column-1)*w*.28,y:1+floor*1.8,z:d/2+.05,m:'stone',c:'iron',tag:'window',rep:{mir:'z'}});
+  }
+  if(['commercial','transit'].includes(type))p.push({k:'box',w:w*.85,h:.3,d:1,y:1.9,z:d/2+.4,m:'timber',c:variant===2?'timberLt':'bodyMid',tag:'awning'});
+  if(year<1945&&type==='lowrise'){
+    p.splice(1,1);p.push({k:'gable',w:w+.5,h:1.1,d:d+.5,y:h,m:'timber',c:'iron',tag:'roof'});
+  }
+  return {h:h+1,rad:Math.hypot(w,d)/2,p};
 }

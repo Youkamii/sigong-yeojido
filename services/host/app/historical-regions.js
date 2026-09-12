@@ -6,6 +6,7 @@ export function settlementStyle(event){
   return event.id.includes('capital')||event.id.includes('wolseong')?'capital':'town';
 }
 export function settlementLayout(event){
+  if(event.year>=1876&&!event.compact)return urbanSettlementLayout(event);
   const style=settlementStyle(event),rows=[];
   const add=(archetype,x,z,scale=1,extra={})=>rows.push({archetype,x,z,scale,...extra});
   add(event.year>=1876?'civic_hall':'palace',0,-32,.68,{primary:true});
@@ -28,6 +29,30 @@ export function settlementLayout(event){
     for(const x of [-42,-35,-28,-21,-14,14,21,28,35,42])add('wall',x,42,.7);
     if(style==='fortified')for(const x of [-43,43])for(const z of [-30,-15,0,15])add('fort_wall_side',x,z,.7);
   }
+  return rows;
+}
+
+function urbanSettlementLayout(event){
+  const rows=[],style=settlementStyle(event),postwar=event.year>=1945,modern=event.year>=1970;
+  const add=(archetype,x,z,scale=.7,extra={})=>rows.push({archetype,x,z,scale,...extra});
+  add('urban_civic',0,-28,.95,{primary:true,ward:'civic'});
+  // Unequal blocks leave a central street, small squares and a transport edge.
+  const wards=[[-30,-24],[-29,0],[-29,26],[-7,27],[16,27],[32,6],[28,-19],[-8,-8],[13,-9]];
+  for(const [ward,[cx,cz]] of wards.entries()){
+    const residential=ward<5,apartments=modern&&residential&&ward%2===0;
+    const count=apartments?4:ward%2?6:5;
+    for(let i=0;i<count;i++){
+      const archetype=apartments?'urban_apartment':residential
+        ?(!postwar&&i%3===0?'courtyard_house':'urban_lowrise'):'urban_commercial';
+      add(archetype,cx+(i%2)*7-3,cz+Math.floor(i/2)*7-6,apartments?.68:.7,{ward});
+    }
+  }
+  add('urban_transit',22,44,.9,{ward:'transit'});
+  if(style==='port')for(let i=0;i<4;i++)add('urban_warehouse',-26+i*9,48,.8,{ward:'harbor'});
+  else{add('urban_commercial',-26,46,.9,{ward:'market'});add('urban_lowrise',-12,46,.8,{ward:'old-town'});}
+  if(!postwar){add('market',-8,6,.7);add('handcart',-12,10,.6);}
+  else for(const [x,z] of [[-17,7],[18,20],[7,43]])add('car',x,z,.6);
+  for(let i=0;i<14;i++)add('human',-13+(i%7)*4,5+Math.floor(i/7)*31,.85,{action:'walking'});
   return rows;
 }
 export const SETTLEMENT_RADIUS=72;

@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {figureArchetype} from './period-figures.js';
 import {buildingArchetype} from './period-buildings.js';
 import {settlementLayout,SETTLEMENT_RADIUS} from './historical-regions.js';
+import {urbanRegionAt} from './urban-regions.js';
 
 function fireAt(group,position,scale,animated){
   const fire=new THREE.Group();fire.position.copy(position);fire.scale.setScalar(scale);group.add(fire);
@@ -48,6 +49,9 @@ export function composeHistoricalEvent(event,position,world){
   const fortress=event.visualActions?.fortress;
   const compositionKind=fortress?'fortress':music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
   let displayScale=event.scenePlace?.displayScale||1;
+  const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates
+    &&urbanRegionAt(...event.scenePlace.coordinates,event.year);
+  if(urbanRegion)displayScale*=urbanRegion.radius/SETTLEMENT_RADIUS;
   if(sea){
     let clearance=35;
     for(let r=.1;r<35;r*=1.25){
@@ -146,19 +150,19 @@ export function composeHistoricalEvent(event,position,world){
     for(const {archetype,x,z,scale,...extra} of settlementLayout(event))model(archetype,x,z,scale,extra);
     if(!event.compact){
       const patches=[];
-      for(const x of [-48,-40,-8,0,8,40,48])for(const z of [47,55,63]){
+      for(const x of event.year<1876?[-48,-40,-8,0,8,40,48]:[])for(const z of [47,55,63]){
         const px=position.x+x*displayScale,pz=position.z+z*displayScale;
         if(world.contains(px,pz)&&world.contains(px+3*displayScale,pz+2*displayScale))patches.push([px,world.surfaceAt(px,pz)+.05*displayScale,pz]);
       }
       const fields=new THREE.InstancedMesh(new THREE.BoxGeometry(5*displayScale,.08*displayScale,3*displayScale),new THREE.MeshStandardMaterial({color:'#8c9252',roughness:1}),patches.length);
       const matrix=new THREE.Matrix4();patches.forEach((p,i)=>fields.setMatrixAt(i,matrix.makeTranslation(...p)));
-      fields.name='city-symbolic-fields';group.add(fields);
+      fields.name='city-symbolic-fields';if(patches.length)group.add(fields);else{fields.geometry.dispose();fields.material.dispose();}
       const lanes=[];
       for(let i=-8;i<=8;i++)for(const [x,z,sx,sz] of [[i*5,6,4.6,1],[-18,i*5,1,4.6],[18,i*5,1,4.6]]){
         const px=position.x+x*displayScale,pz=position.z+z*displayScale;
         if(world.contains(px,pz))lanes.push([px,world.surfaceAt(px,pz)+.06*displayScale,pz,sx,sz]);
       }
-      const street=new THREE.InstancedMesh(new THREE.BoxGeometry(1.1*displayScale,.06*displayScale,1.1*displayScale),new THREE.MeshStandardMaterial({color:'#ad9e7e',roughness:1}),lanes.length);
+      const street=new THREE.InstancedMesh(new THREE.BoxGeometry(1.1*displayScale,.06*displayScale,1.1*displayScale),new THREE.MeshStandardMaterial({color:event.year>=1945?'#777b76':'#ad9e7e',roughness:1}),lanes.length);
       lanes.forEach(([x,y,z,sx,sz],i)=>{matrix.makeScale(sx,1,sz);matrix.setPosition(x,y,z);street.setMatrixAt(i,matrix);});street.name='city-local-lanes';group.add(street);
     }
   }else if(kiln){

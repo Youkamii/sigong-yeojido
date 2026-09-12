@@ -23,7 +23,7 @@ test('compact scenes keep exactly one primary and layout never changes dates or 
  const source={...event,startYear:1394,endYear:1910,claimIds:['a','b'],compact:true};
  const before=JSON.stringify(source),layout=settlementLayout(source);
  assert.equal(layout.length,1);assert.ok(layout[0].primary);assert.equal(JSON.stringify(source),before);
- assert.equal(settlementLayout({...event,year:1900})[0].archetype,'civic_hall');
+ assert.equal(settlementLayout({...event,year:1900})[0].archetype,'urban_civic');
 });
 
 test('capital role keeps evidence interval separate from city existence',async()=>{
@@ -52,10 +52,23 @@ test('modern role endings retain anonymous city without extending named roles or
   const before=JSON.stringify(source);
   assert.equal(planContinuingCities([source],{year:endYear,events:[]}).length,0);
   const [background]=planContinuingCities([source],{year:endYear+1,events:[]});
-  assert.equal(background.archetype,'settlement');assert.equal(background.label,'?? ?? ?? ?? ??');
+  assert.equal(background.archetype,'settlement');assert.equal(background.label,'이름 없는 도시 생활 배경');
   assert.deepEqual(background.participants,[]);assert.equal(background.endYear,undefined);
   assert.equal(background.siteBackground.recordedEndYear,endYear);assert.equal(JSON.stringify(source),before);
   assert.equal(planContinuingCities([source],{year:endYear+1,events:[]},new Map()).length,0);
   assert.equal(planContinuingCities([source],{year:endYear+1,events:[{archetype:'settlement',scenePlace:{coordinates:[127,37]}}]}).length,0);
  }
+});
+
+
+test('modern city has connected varied blocks without a rural ward template',()=>{
+ const rows=settlementLayout({...event,year:2010});
+ for(const type of ['urban_apartment','urban_lowrise','urban_commercial','urban_civic','urban_transit'])assert.ok(rows.some(row=>row.archetype===type),type);
+ assert.equal(rows.filter(row=>['house','farmhouse','handcart','grain_stack','gatehouse','wall'].includes(row.archetype)).length,0);
+ assert.ok(rows.filter(row=>row.archetype.startsWith('urban_')).length>40);
+ const older=settlementLayout({...event,year:1960});
+ assert.ok(older.some(row=>row.archetype==='urban_lowrise'));assert.ok(!older.some(row=>row.archetype==='urban_apartment'));
+ const transition=settlementLayout({...event,year:1930});
+ assert.ok(transition.some(row=>row.archetype==='courtyard_house'));
+ assert.ok(transition.some(row=>row.archetype==='urban_lowrise'));
 });

@@ -11,6 +11,7 @@ import {extendFigureCatalog} from './period-figures.js';
 import {extendBuildingCatalog} from './period-buildings.js';
 import {createCityLOD} from './city-lod.js';
 import {sceneVisualKey} from './chronicle-persistence.js';
+import {urbanRegionAt} from './urban-regions.js';
 
 let catalogPromise;
 export function loadHistoryAssets(){
@@ -176,14 +177,25 @@ export class ChronicleAssets{
       return null;
     };
     const placedPeople=new Set(),fullScenes=[],sceneWoods=[];
-    const events=[...plan.events].sort((a,b)=>Number(b.id===this.activeScene)-Number(a.id===this.activeScene)
+    const events=[...plan.events].sort((a,b)=>Number(b.archetype==='settlement')-Number(a.archetype==='settlement')
+      ||Number(b.id===this.activeScene)-Number(a.id===this.activeScene)
       ||Number(!!(a.setting||a.siteBackground||a.narrative))-Number(!!(b.setting||b.siteBackground||b.narrative))
       ||Number(!!b.scenePlace)-Number(!!a.scenePlace));
+    const cityPositions=events.filter(event=>event.archetype==='settlement').map(locate).filter(Boolean).map(loc=>loc.position);
     for(const event of events){
       const loc=locate(event);
       if(!loc){unlocated.push(event);continue;}
-      const nearest=Math.min(Infinity,...fullScenes.map(p=>p.distanceTo(loc.position)));
-      const compact=nearest<3;
+      const city=event.archetype==='settlement';
+      // Keep the settlement at its documented anchor. Nearby events use a local stage.
+      const hostCity=!city&&cityPositions.find(position=>position.distanceTo(loc.position)<18);
+      if(hostCity){
+        for(const [dx,dz] of [[0,10],[10,0],[-10,0],[0,-10]]){
+          const x=loc.position.x+dx,z=loc.position.z+dz;
+          if(this.world.contains(x,z)){loc.position.set(x,this.world.surfaceAt(x,z),z);break;}
+        }
+      }
+      const nearest=city?Infinity:Math.min(Infinity,...fullScenes.map(p=>p.distanceTo(loc.position)));
+      const compact=!city&&nearest<3;
       const key=sceneVisualKey(event,loc.position,compact,nearest*.45);
       const cached=this.sceneCache.get(event.id);
       const scene=cached?.key===key?cached.scene:composeHistoricalEvent({...event,compact,maxRadius:nearest*.45},loc.position,this.world);
@@ -192,7 +204,10 @@ export class ChronicleAssets{
       nextScenes.set(event.id,{key,scene});
       next.add(scene.group);eventAnimations.push(...scene.animated);
       if(!compact){fullScenes.push(loc.position);sceneWoods.push({id:event.id,x:loc.position.x,z:loc.position.z,scale:scene.displayScale});}
-      occupied.push({...loc.position,radius:scene.radius},...scene.occupied);
+      if(!city)occupied.push({...loc.position,radius:scene.radius});
+      const urbanRegion=city&&event.scenePlace?.coordinates&&urbanRegionAt(...event.scenePlace.coordinates,event.year);
+      if(urbanRegion)occupied.push({...loc.position,radius:0,urbanRegionId:urbanRegion.id});
+      occupied.push(...scene.occupied);
       for(const [index,model] of scene.models.entries()){
         const person=model.person&&event.participants.find(p=>p.id===model.person.id),row=person?{...person,id:person.id+'@'+event.id,kind:'person',eventId:event.entityId,sceneId:event.id,
           activity:event.summary,placement:loc.placement,placementLabel:person.role+' · '+loc.placementLabel,
