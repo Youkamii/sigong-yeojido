@@ -8,12 +8,20 @@ import {planSettlementSites,planEstimatedSites,estimatedSitePasses,settlementLay
 import {planUrbanSites} from './urban-regions.js';
 import {buildSettlementZones} from './inhabited-zones.js';
 
-// 추정 사이트 선택(순수 함수): 시대 문턱 통과 → 활성 문서화 사이트 근처 탈락 → urban 반경 안 탈락 → 사건 점유에 양보.
+// 문서화·도시·사건에 양보한 뒤 시대 문턱을 적용하고, 빈 링은 최소 seed 한 곳을 남긴다.
 export function selectEstimatedSites(estimated,documented,urban,periodId,available=()=>true){
-  return estimated.filter(s=>estimatedSitePasses(s,periodId)
-    &&documented.every(d=>Math.hypot(s.x-d.x,s.z-d.z)>s.radius+d.radius+6)
+  const eligible=estimated.filter(s=>documented.every(d=>Math.hypot(s.x-d.x,s.z-d.z)>s.radius+d.radius+6)
     &&urban.every(u=>Math.hypot(s.x-u.x,s.z-u.z)>u.radius)
     &&available(s));
+  const selected=new Set(eligible.filter(s=>estimatedSitePasses(s,periodId))),rings=new Map();
+  for(const site of eligible){
+    if(!Number.isInteger(site.ringIndex))continue;
+    if(!rings.has(site.ringIndex))rings.set(site.ringIndex,[]);
+    rings.get(site.ringIndex).push(site);
+  }
+  for(const sites of rings.values())if(!sites.some(s=>selected.has(s)))
+    selected.add(sites.reduce((a,b)=>a.seed<b.seed||a.seed===b.seed&&a.id<b.id?a:b));
+  return eligible.filter(s=>selected.has(s));
 }
 
 // Anonymous scenery provides context; historical places and people remain separate.

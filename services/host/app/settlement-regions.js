@@ -24,10 +24,12 @@ export function planSettlementSites(world,zones=world.settlementZones||[]){
 // 풍경이 비지 않도록 격자에서 만든다(화면 표현용, 역사 주장이 아님). seed 결정론.
 export function planEstimatedSites(world){
   const candidates=[],b=world.bounds;
+  const areas=world.rings.map(r=>Math.abs(r.reduce((a,p,i)=>a+p[0]*r[(i+1)%r.length][1]-r[(i+1)%r.length][0]*p[1],0))/2);
+  const mainland=areas.indexOf(Math.max(...areas));
   for(let gx=Math.ceil(b.minX/24);gx*24<b.maxX;gx++)for(let gz=Math.ceil(b.minZ/24);gz*24<b.maxZ;gz++){
     const id=`estimated-region:${gx}:${gz}`,seed=seedFor(`settlement-region:${gx}:${gz}`),r=randomFor(seed);
     const x=gx*24+(r()-.5)*14,z=gz*24+(r()-.5)*14;
-    const ring=world.rings.find(ring=>insideCoastline(x,z,ring));if(!ring)continue;
+    const ring=world.rings[mainland];if(!ring||!insideCoastline(x,z,ring))continue;
     const y=world.surfaceAt(x,z);if(!Number.isFinite(y)||y>(world.seaLevel??7)+13)continue;
     let kind=seed%19===0?'regional':seed%5===0?'town':'village';
     let radius=settings[kind].radius;
@@ -43,12 +45,52 @@ export function planEstimatedSites(world){
     };
     if(!fits(radius)){kind='village';radius=settings[kind].radius;if(!fits(radius))continue;}
     const angle=r()*Math.PI*2,latitude=world.coordinatesAt?world.coordinatesAt(x,z)[1]:null;
-    candidates.push({id,x,z,latitude,seed,kind,radius,angle,scale:1,layout:seed%4,estimated:true,documented:false,startYear:-Infinity,endYear:Infinity,basis:'추정 배경 — 사료 없음'});
+    candidates.push({id,x,z,latitude,seed,kind,radius,angle,scale:1,layout:seed%4,ringIndex:mainland,estimated:true,documented:false,startYear:-Infinity,endYear:Infinity,basis:'추정 배경 — 사료 없음'});
   }
   // 큰 중심지가 먼저 자리를 잡고, 위도별 전국 상한은 두지 않는다.
   candidates.sort((a,b)=>b.radius-a.radius||a.seed-b.seed);
   const sites=[];
   for(const site of candidates)if(sites.every(other=>Math.hypot(site.x-other.x,site.z-other.z)>site.radius+other.radius+2))sites.push(site);
+  // 섬은 별도로 배치해 본토의 격자·seed·간격을 바꾸지 않는다.
+  for(let ringIndex=0;ringIndex<world.rings.length;ringIndex++){
+    if(ringIndex===mainland)continue;
+    const ring=world.rings[ringIndex],bounds=ring.bounds||{
+      minX:Math.min(...ring.map(p=>p[0])),maxX:Math.max(...ring.map(p=>p[0])),
+      minZ:Math.min(...ring.map(p=>p[1])),maxZ:Math.max(...ring.map(p=>p[1]))};
+    const width=bounds.maxX-bounds.minX,depth=bounds.maxZ-bounds.minZ;
+    if(width<=0||depth<=0||areas[ringIndex]<=0)continue;
+    const step=Math.max(8,Math.min(24,width/4)),minimum=Math.max(2,Math.ceil(areas[ringIndex]/(24*24)));
+    const islandSites=[];
+    // 작은 섬이나 굴곡진 해안에서 부족하면 격자를 세분해 다시 찾는다.
+    // 고도·경사 조건을 통과하지 못한 지점은 최소 개수 때문에 강제로 넣지 않는다.
+    for(let level=0;level<8&&(level===0||islandSites.length<minimum);level++){
+      const nx=Math.max(1,Math.ceil(width/step))*2**level,nz=Math.max(1,Math.ceil(depth/step))*2**level;
+      const dx=width/nx,dz=depth/nz,local=[];
+      for(let ix=0;ix<nx;ix++)for(let iz=0;iz<nz;iz++){
+        const id=`estimated-region:island:${ringIndex}:${level}:${ix}:${iz}`,seed=seedFor(id),r=randomFor(seed);
+        const x=bounds.minX+(ix+.5+(r()-.5)*.5)*dx,z=bounds.minZ+(iz+.5+(r()-.5)*.5)*dz;
+        if(!insideCoastline(x,z,ring))continue;
+        const y=world.surfaceAt(x,z);if(!Number.isFinite(y)||y>(world.seaLevel??7)+13)continue;
+        const radius=Math.min(settings.village.radius,dx*.4,dz*.4),margin=radius*.2;
+        if(coastlineDistance(x,z,ring,radius+margin)<radius+margin)continue;
+        const samples=[];
+        for(let sx=-radius;sx<=radius;sx+=radius/2)for(let sz=-radius;sz<=radius;sz+=radius/2){
+          if(sx*sx+sz*sz>radius*radius)continue;
+          samples.push(world.surfaceAt(x+sx,z+sz));
+        }
+        if(samples.some(h=>!Number.isFinite(h))||Math.max(...samples)-Math.min(...samples)>=Math.min(3.6,radius*.15))continue;
+        local.push({id,x,z,latitude:world.coordinatesAt?world.coordinatesAt(x,z)[1]:null,seed,kind:'village',radius,
+          angle:r()*Math.PI*2,scale:1,layout:seed%4,ringIndex,estimated:true,documented:false,
+          startYear:-Infinity,endYear:Infinity,basis:'추정 배경 — 사료 없음'});
+      }
+      local.sort((a,b)=>a.seed-b.seed);
+      for(const site of local){
+        if(level>0&&islandSites.length>=minimum)break;
+        if(islandSites.every(other=>Math.hypot(site.x-other.x,site.z-other.z)>site.radius+other.radius+Math.min(2,site.radius*.2)))islandSites.push(site);
+      }
+    }
+    sites.push(...islandSites);
+  }
   return sites.sort((a,b)=>a.id.localeCompare(b.id));
 }
 
@@ -68,6 +110,13 @@ export function settlementSiteForYear(site,year){return site.modernProfile&&year
 
 export function settlementLayout(site,periodOrYear){
   if(site.kind==='urban')return urbanLayout(site,periodOrYear);
+  if(site.estimated&&site.radius<settings.village.radius){
+    const scale=site.radius/settings.village.radius,layout=settlementLayout({...site,radius:settings.village.radius},periodOrYear);
+    const point=([x,z])=>[x*scale,z*scale];
+    return {...layout,houses:layout.houses.map(h=>({...h,x:h.x*scale,z:h.z*scale,scale:h.scale*scale})),
+      fields:layout.fields.map(f=>({...f,corners:f.corners.map(point)})),
+      roads:layout.roads.map(r=>({...r,width:r.width*scale,points:r.points.map(point)}))};
+  }
   const year=typeof periodOrYear==='number'?periodOrYear:periodOrYear?.year??1960;
   const density=year< -1500?.16:year<1?.28:year<918?.45:year<1392?.6:year<1876?.78:year<1945?.9:1;
   const fieldsVisible=typeof periodOrYear==='object'?periodOrYear.fields!==false:year>=-1500;
