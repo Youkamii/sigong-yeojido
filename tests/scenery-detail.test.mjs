@@ -30,7 +30,7 @@ test('urban near facades preserve the same tall bodies and same-period scrubs re
   const roofs=overview.children.find(m=>m.name==='settlement-roofs'),original=roofs.geometry.attributes.position.array.slice();
   roofs.geometry.computeBoundingBox();assert.ok(roofs.geometry.boundingBox.max.y>7,'far skyline keeps building heights');
   const c=Object.create(ChronicleScenery.prototype);
-  Object.assign(c,{world,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),period,detailCache:new Map(),stats:{modelBuilds:0}});
+  Object.assign(c,{world,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),period,periodKey:period.id+'|'+site.id+':urban',sites:[site],detailCache:new Map(),stats:{modelBuilds:0,year:2010}});
   const detail=c.buildDetail({site,layout});assert.deepEqual(detail.indices,[]);assert.ok(detail.animated.length>0);
   setOverviewDetails(overview,[detail]);assert.deepEqual(roofs.geometry.attributes.position.array,original);
   c.setYear(2011);assert.equal(c.detailCache.get(site.id),detail);assert.equal(c.stats.modelBuilds,1);
@@ -40,11 +40,20 @@ test('one event occupancy clips individual city parcels without erasing its neig
   const site={id:'urban-region:seoul',kind:'urban',profile:URBAN_REGIONS[0],radius:20,seed:1822,x:0,z:0,angle:0,latitude:37.56};
   const terrain={...world,rings:[[[-100,-100],[100,-100],[100,100],[-100,100]]],contains:()=>true};
   const c=Object.create(ChronicleScenery.prototype);
-  Object.assign(c,{world:terrain,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),period:sceneryPeriod(2010),sites:[site],urbanSites:[site],occupied:[],detailCache:new Map(),stats:{},showPaths:true});
+  Object.assign(c,{world:terrain,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),period:sceneryPeriod(2010),sites:[site],urbanSites:[site],occupied:[],detailCache:new Map(),stats:{year:2010},showPaths:true});
   c.refreshPeriod();const before=c.stats.houses,first=c.landscapeCells[0].layout.houses[0];
   c.occupied=[{x:first.x,z:first.z,radius:1}];c.refreshPeriod();
   assert.ok(c.stats.houses<before);assert.ok(c.stats.houses>before*.8);assert.equal(c.landscapeCells.length,1);
   c.occupied=[{x:0,z:0,radius:0,urbanRegionId:'seoul'}];c.refreshPeriod();
   assert.equal(c.stats.houses,0,'explicit named city owns the shared district instead of duplicate geometry');
+});
+
+test('documented zone activation uses its actual year and reuses geometry between boundaries',()=>{
+  const c=Object.create(ChronicleScenery.prototype),site={id:'settlement-region:dated',kind:'town',startYear:1234,endYear:1250};
+  let builds=0;Object.assign(c,{sites:[site],stats:{},detailCache:new Map(),initialized:true,occupied:[],assets:{release(){}},refreshPeriod(){builds++;},sync(){}});
+  c.setYear(1233);assert.equal(c.activeSites().length,0);
+  c.setYear(1234);assert.equal(c.activeSites().length,1);const count=builds;
+  c.setYear(1235);assert.equal(builds,count,'same era and same active zone retains geometry');
+  c.setYear(1251);assert.equal(c.activeSites().length,0);assert.equal(builds,count+1);
 });
 

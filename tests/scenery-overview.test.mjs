@@ -7,6 +7,10 @@ import {compileAssetCatalog,normalizeAssetRecipe} from '../services/host/app/ass
 const source=(await readFile(new URL('../services/host/app/scenery-overview.js',import.meta.url),'utf8')).replace("'three'",JSON.stringify(new URL('../services/host/vendor/three.module.min.js',import.meta.url).href));
 const {sceneryOverview,setOverviewDetails}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const world={rings:[[[-220,-450],[220,-450],[220,450],[-220,450]]],bounds:{minX:-220,maxX:220,minZ:-450,maxZ:450},seaLevel:7,surfaceAt:()=>8,coordinatesAt:(x,z)=>[127,38-z/100]};
+world.toWorld=(lon,lat)=>[(lon-127)*100,(38-lat)*100];
+// Explicit synthetic source zones stress geometry batching; the production
+// planner no longer invents a national settlement grid.
+world.settlementZones=Array.from({length:96},(_,i)=>({id:'fixture-zone:'+i,lon:125.1+(i%8)*.5,lat:34.2+Math.floor(i/8)*.65,startYear:-3000,endYear:2026,kind:'regional',contextType:'settlement',sourceIds:['fixture-source']}));
 test('far scenery uses direct bounded geometry for thousands of homes in all periods',()=>{
  const sites=planSettlementSites(world);
  for(const year of [600,1500,1960]){

@@ -4,44 +4,50 @@ import {insideCoastline} from './coastline-index.js';
 import {CountrysidePaths} from './chronicle-paths.js';
 import {sceneryOverview,setOverviewDetails} from './scenery-overview.js';
 import {sceneryPeriod,sceneryRecipe} from './scenery-period.js';
-import {planSettlementSites,settlementLayout} from './settlement-regions.js';
+import {planSettlementSites,settlementLayout,settlementSiteActive,settlementSiteForYear} from './settlement-regions.js';
 import {planUrbanSites} from './urban-regions.js';
+import {buildSettlementZones} from './inhabited-zones.js';
 
 // Anonymous scenery provides context; historical places and people remain separate.
 export class ChronicleScenery{
   constructor(assets){
     this.assets=assets;this.world=assets.world;this.group=new THREE.Group();this.group.name='decorative-scenery';assets.engine.add(this.group);
-    this.urbanSites=planUrbanSites(this.world);this.sites=[...planSettlementSites(this.world),...this.urbanSites];this.cells=[];this.occupied=[];this.wildlife=[];this.showPaths=true;this.detailCache=new Map();this.houseScales=new Map();
+    this.urbanSites=planUrbanSites(this.world);this.sites=[...planSettlementSites(this.world,buildSettlementZones(this.world.scenePackets||[],this.world.coordinateRegistry||{},this.world.places||[])),...this.urbanSites];this.cells=[];this.occupied=[];this.wildlife=[];this.showPaths=true;this.detailCache=new Map();this.houseScales=new Map();
     this.stats={villages:this.sites.length,houses:0,fields:0,tigers:0,ready:false,modelBuilds:0};
     this.paths=new CountrysidePaths(this.world,this.sites.filter(s=>s.kind!=='urban'));this.group.add(this.paths.mesh);
   }
   point(site,x,z){const c=Math.cos(site.angle),s=Math.sin(site.angle);return [site.x+x*c+z*s,site.z-x*s+z*c];}
+  activeSites(){const year=this.stats.year;return this.sites.filter(s=>settlementSiteActive(s,year)).map(s=>settlementSiteForYear(s,year));}
   available(site){return site.id?.startsWith('settlement-region:')||site.kind==='urban'||this.occupied.every(o=>Math.hypot(site.x-o.x,site.z-o.z)>site.radius+o.radius+4);}
   setDisplay(visible,paths){this.group.visible=visible;this.showPaths=paths;this.group.traverse(o=>{if(o.name==='scenery-lanes')o.visible=paths;});}
   sync(occupied){
-    this.occupied=occupied;this.clearings=[...this.sites,...this.wildlife].filter(s=>this.available(s)&&(s.kind!=='urban'||this.period?.year>=s.profile.startYear));
+    this.occupied=occupied;this.clearings=[...this.activeSites(),...this.wildlife].filter(s=>this.available(s));
     const key=occupied.map(o=>`${o.x}:${o.z}:${o.radius}:${o.urbanRegionId||''}`).sort().join('|');
     if(this.initialized&&key!==this.occupancyKey)this.refreshPeriod();this.occupancyKey=key;
     for(const c of this.cells)if(c.group)c.group.visible=this.available(c.site)&&this.period?.tigers!==false;
     for(const c of this.detailCache.values())c.group.visible=c.group.visible&&this.available(c.site);
-    this.stats.tigers=this.period?.tigers===false?0:this.wildlife.length;this.paths.sync(s=>this.available(s),occupied,(this.urbanSites||[]).filter(s=>this.period?.year>=s.profile.startYear));
+    this.stats.tigers=this.period?.tigers===false?0:this.wildlife.length;this.paths.sync(s=>this.available(s)&&settlementSiteActive(s,this.stats.year),occupied,this.activeSites().filter(s=>s.kind==='urban'));
   }
   nearPath(x,z,margin){return this.paths.near(x,z,margin);}
   start(forest,year){this.setYear(year);if(this.ready)return;this.ready=this.populate(forest).then(()=>{this.initialized=true;this.refreshPeriod();}).catch(e=>this.failed(e));}
   failed(error){this.stats.error=error.message;console.error('[scenery]',error);}
-  setYear(year){this.stats.year=year;const period=sceneryPeriod(year);if(this.period?.id===period.id)return;this.period=period;this.stats.ready=false;
+  setYear(year){this.stats.year=year;const period=sceneryPeriod(year),key=period.id+'|'+this.activeSites().map(s=>s.id+':'+s.kind).join('|');if(this.periodKey===key)return;this.periodKey=key;this.period=period;this.stats.ready=false;
     for(const c of this.detailCache.values())this.assets.release(c.group);this.detailCache.clear();
     if(this.initialized)this.refreshPeriod();this.sync(this.occupied);
   }
   refreshPeriod(){
     for(const c of this.detailCache.values())this.assets.release(c.group);this.detailCache.clear();
-    const urban=(this.urbanSites||[]).filter(s=>this.period.year>=s.profile.startYear);
-    const active=this.sites.filter(s=>this.available(s)&&!(s.kind==='urban'&&this.occupied.some(o=>o.urbanRegionId===s.profile.id))).map(site=>{
-      const layout=settlementLayout(site,this.period);
+    const candidates=this.activeSites().sort((a,b)=>b.radius-a.radius||a.id.localeCompare(b.id));
+    const current=candidates.filter((s,i)=>!candidates.slice(0,i).some(other=>other.kind===s.kind&&Math.hypot(other.x-s.x,other.z-s.z)<.1));
+    const major=current.filter(s=>s.kind==='urban'&&!s.documented);
+    const selected=current.filter(s=>!s.documented||s.kind!=='urban'||major.every(m=>Math.hypot(s.x-m.x,s.z-m.z)>m.radius));
+    const urban=selected.filter(s=>s.kind==='urban');
+    const active=selected.filter(s=>this.available(s)&&!(s.kind==='urban'&&this.occupied.some(o=>o.urbanRegionId===s.profile.id))).map(site=>{
+      const layout=settlementLayout(site,{...this.period,year:this.stats.year});
       const free=(x,z,radius=0)=>this.occupied.every(o=>Math.hypot(x-o.x,z-o.z)>radius+o.radius+.15);
       const ground=(x,z,margin=0)=>this.world.rings.some(r=>insideCoastline(x,z,r))&&(!this.world.contains||this.world.contains(x,z,margin));
       const ruralFree=(x,z)=>site.kind==='urban'||urban.every(s=>Math.hypot(x-s.x,z-s.z)>s.radius);
-      const owns=(x,z)=>site.kind!=='urban'||urban.every(s=>s===site||Math.hypot(x-site.x,z-site.z)<=Math.hypot(x-s.x,z-s.z));
+      const owns=(x,z)=>site.kind!=='urban'||urban.every(s=>s.id===site.id||Math.hypot(x-site.x,z-site.z)<=Math.hypot(x-s.x,z-s.z));
       const fits=h=>{const [x,z]=this.point(site,h.x,h.z),r=Math.hypot(h.width??2.4*h.scale,h.depth??1.9*h.scale)/2;
         return free(x,z,r)&&ruralFree(x,z)&&owns(x,z)&&ground(x,z,r)&&(!h.width||Math.max(...[[-r,-r],[r,-r],[r,r],[-r,r]].map(([dx,dz])=>this.world.surfaceAt(x+dx,z+dz)))-Math.min(...[[-r,-r],[r,-r],[r,r],[-r,r]].map(([dx,dz])=>this.world.surfaceAt(x+dx,z+dz)))<1.8);};
       layout.houses=layout.houses.filter(fits);
@@ -58,6 +64,7 @@ export class ChronicleScenery{
     }).filter(c=>c.layout.houses.length);
     const overview=sceneryOverview(this.world,active,this.period);if(this.overview)this.assets.release(this.overview);this.overview=overview;this.detailKey=null;this.group.add(overview);this.landscapeCells=active;
     this.stats.houses=active.reduce((n,c)=>n+c.layout.houses.length,0);this.stats.fields=active.reduce((n,c)=>n+c.layout.fields.length,0);this.stats.villages=active.length;
+    this.stats.documentedZones=current.filter(s=>s.documented).length;this.stats.zoneIds=current.filter(s=>s.documented).map(s=>s.id);
     this.stats.farDraws=overview.children.length;this.stats.farTriangles=overview.children.reduce((n,m)=>n+m.geometry.attributes.position.count/3,0);this.stats.period=this.period.id;this.stats.ready=true;
     this.setDisplay(this.group.visible,this.showPaths);
   }

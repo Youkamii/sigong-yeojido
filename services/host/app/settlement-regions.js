@@ -1,43 +1,27 @@
-import {insideCoastline,coastlineDistance} from './coastline-index.js';
+import {insideCoastline} from './coastline-index.js';
 import {urbanLayout} from './urban-regions.js';
+import {projectCoordinates} from './history-coordinates.js';
 
 const seedFor=text=>{let n=2166136261;for(const c of text)n=Math.imul(n^c.charCodeAt(0),16777619);return n>>>0;};
 const randomFor=seed=>()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
 const settings={village:{radius:12,houses:28,fields:10},town:{radius:19,houses:76,fields:15},regional:{radius:28,houses:180,fields:22}};
 
-// These anonymous regions describe scenery composition, not historical populations.
-export function planSettlementSites(world){
-  const candidates=[],b=world.bounds;
-  for(let gx=Math.ceil(b.minX/24);gx*24<b.maxX;gx++)for(let gz=Math.ceil(b.minZ/24);gz*24<b.maxZ;gz++){
-    const id=`settlement-region:${gx}:${gz}`,seed=seedFor(id),r=randomFor(seed);
-    const x=gx*24+(r()-.5)*14,z=gz*24+(r()-.5)*14;
-    const ring=world.rings.find(ring=>insideCoastline(x,z,ring));if(!ring)continue;
-    const y=world.surfaceAt(x,z);if(!Number.isFinite(y)||y>(world.seaLevel??7)+13)continue;
-    const regionalSeed=seedFor(`${Math.floor(x/120)}:${Math.floor(z/120)}`);
-    // Broad fertile belts get several neighboring villages; quieter belts stay open.
-    if(seed%100>(regionalSeed%5===0?48:94))continue;
-    let kind=seed%19===0?'regional':seed%5===0?'town':'village';
-    let radius=settings[kind].radius;
-    const fits=size=>{
-      if(coastlineDistance(x,z,ring,size+1)<size+1)return false;
-      const samples=[];
-      for(let dx=-size;dx<=size;dx+=size/2)for(let dz=-size;dz<=size;dz+=size/2){
-        if(dx*dx+dz*dz>size*size)continue;
-        const h=world.surfaceAt(x+dx,z+dz);if(!Number.isFinite(h))return false;
-        samples.push(h);
-      }
-      return Math.max(...samples)-Math.min(...samples)<Math.min(3.6,size*.15);
-    };
-    if(!fits(radius)){kind='village';radius=settings[kind].radius;if(!fits(radius))continue;}
-    const angle=r()*Math.PI*2,latitude=world.coordinatesAt(x,z)[1];
-    candidates.push({id,x,z,latitude,seed,kind,radius,angle,scale:1,layout:seed%4});
-  }
-  // Larger centers claim space first, without a global cap biasing any latitude.
-  candidates.sort((a,b)=>b.radius-a.radius||a.seed-b.seed);
-  const sites=[];
-  for(const site of candidates)if(sites.every(other=>Math.hypot(site.x-other.x,site.z-other.z)>site.radius+other.radius+2))sites.push(site);
-  return sites.sort((a,b)=>a.id.localeCompare(b.id));
+// Location and time come from documented habitation zones. Seeds vary only the
+// anonymous parcels inside them, never where people are assumed to have lived.
+export function planSettlementSites(world,zones=world.settlementZones||[]){
+  return zones.flatMap(zone=>{
+    if(!Number.isFinite(zone.lon)||!Number.isFinite(zone.lat)||!Number.isFinite(zone.startYear)||!Number.isFinite(zone.endYear)||zone.startYear>zone.endYear)return [];
+    const [x,z]=world.toWorld?world.toWorld(zone.lon,zone.lat):projectCoordinates(zone.lon,zone.lat,world.mapScale??8);
+    if(!world.rings.some(r=>insideCoastline(x,z,r))||!Number.isFinite(world.surfaceAt(x,z)))return [];
+    const kind=settings[zone.kind]?zone.kind:'village',id='settlement-region:'+zone.id,seed=seedFor(id);
+    const radius=zone.radius??settings[kind].radius;
+    return [{...zone,id,x,z,latitude:zone.lat,seed,kind,radius,angle:0,scale:1,layout:seed%4,documented:true,
+      modernProfile:zone.localityType!=='city'?null:{id:zone.id,lon:zone.lon,lat:zone.lat,radius,startYear:Math.max(1945,zone.startYear),growthYear:1980,lowSkyline:kind!=='regional',industry:zone.industry}}];
+  }).sort((a,b)=>a.id.localeCompare(b.id));
 }
+
+export function settlementSiteActive(site,year){return site.kind==='urban'?year>=site.profile.startYear:site.startYear<=year&&year<=site.endYear;}
+export function settlementSiteForYear(site,year){return site.modernProfile&&year>=site.modernProfile.startYear?{...site,kind:'urban',profile:site.modernProfile}:site;}
 
 export function settlementLayout(site,periodOrYear){
   if(site.kind==='urban')return urbanLayout(site,periodOrYear);
