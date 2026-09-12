@@ -1,6 +1,8 @@
 import {settlementStyle} from './historical-regions.js';
 import {urbanRegionAt} from './urban-regions.js';
 
+// Yield to a same-place active zone only if it starts after the record ends (a newer documented record supersedes the old one);
+// a zone that already covered the record (Seoul 1308~2100 vs Hanseong 1394~1910) does not cancel its continuation.
 // These packets describe continuing use of a place, rather than a recurring event.
 const SETTINGS=new Set([
   'scene-syj122-byeokgolje-330-790','scene-syj122-nangnanggun-108bce-313',
@@ -56,7 +58,7 @@ export function planContinuingCities(packets,plan,claims,settlementZones=[]){
     if(plan.events.some(event=>event.archetype==='settlement'&&event.scenePlace
       &&Math.hypot(event.scenePlace.coordinates[0]-place.lon,event.scenePlace.coordinates[1]-place.lat)<.03))continue;
     if(yieldsToUrban(scene,urbanRegionAt(place.lon,place.lat,plan.year)))continue;
-    if(activeZones.some(zone=>samePlace(zone,place)))continue;
+    if(activeZones.some(zone=>samePlace(zone,place)&&zone.startYear>scene.endYear))continue;
     ended.push({scene,place,claimIds});
   }
   // Several ended records at one spot leave a single continuation: the latest recorded end.

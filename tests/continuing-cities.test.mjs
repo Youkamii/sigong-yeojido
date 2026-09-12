@@ -51,14 +51,17 @@ test('700 Sabi continues as a town, not a capital',()=>{
   assert.equal(rows[0].siteBackground.sourceSceneId,'scene-city-sabi-capital-538-660');
 });
 
-test('Seoul: 1350 and 1920 yield to the documented zone, 1400 Hanseong record is active',()=>{
+test('Seoul: 1350 yields to the newer zone, Hanseong continues until urban Seoul starts in 1945',()=>{
   const zone=zonesAt(1350,...SEOUL).find(zone=>zone.id==='inhabited:place-goryeosa-039');
   assert.ok(zone);assert.equal(zone.startYear,1308);assert.equal(zone.endYear,2100);
   assert.equal(at(1350,...SEOUL).length,0);
   assert.equal(at(1400,...SEOUL).length,0);
   assert.equal(at(1000,...SEOUL).length,0,'nothing before the first record starts');
-  assert.ok(zonesAt(1920,...SEOUL).includes(zone));assert.equal(at(1920,...SEOUL).length,0);
-  assert.equal(at(1950,...SEOUL).length,0,'urban Seoul profile takes over from 1945');
+  for(const year of [1920,1925,1944]){
+    assert.ok(zonesAt(year,...SEOUL).includes(zone));
+    assert.deepEqual(at(year,...SEOUL).map(row=>row.id),['background-city-scene-city-hanseong-capital-1394-1910'],String(year));
+  }
+  for(const year of [1945,1950,2020])assert.equal(at(year,...SEOUL).length,0,`urban Seoul profile takes over from 1945: ${year}`);
 });
 
 test('1300 Gaegyeong is active in its second interval',()=>{
@@ -76,16 +79,25 @@ test('rows keep the anonymous-city format used by the scene and context panels',
   const before=JSON.stringify([packets,zones]);rowsAt(700);assert.equal(JSON.stringify([packets,zones]),before);
 });
 
-test('1450 Gongju yields through the actual documented interval and returns after its end',()=>{
+test('1450 Gongju: the documented zone starts with the record (475), so the Ungjin continuation coexists instead of yielding',()=>{
   const gongju=[127.12,36.45],id='scene-city-ungjin-capital-475-538';
   const active=zonesAt(1450,...gongju);assert.ok(active.length>0);
   const packet=packets.find(scene=>scene.id===id);
-  assert.ok(active.some(zone=>Math.hypot(zone.lon-packet.place.lon,zone.lat-packet.place.lat)<.03));
-  const endYear=Math.max(...active.map(zone=>zone.endYear));
-  assert.equal(endYear,2100);
-  for(const year of [1450,endYear])assert.equal(rowsAt(year).some(row=>row.siteBackground.sourceSceneId===id),false);
-  assert.equal(zonesAt(endYear+1,...gongju).length,0);
-  assert.equal(at(endYear+1,...gongju).some(row=>row.siteBackground.sourceSceneId===id),true);
+  assert.equal(packet.endYear,538);
+  assert.ok(active.every(zone=>zone.startYear<=packet.endYear),'no active Gongju zone starts after the record ends');
+  const rows=rowsAt(1450).filter(row=>row.siteBackground.sourceSceneId===id);
+  assert.equal(rows.length,1);assert.equal(rows[0].scenePlace.displayScale,0.5);
+});
+
+test('zone precedence depends on its start year relative to the record end, even when open-ended',()=>{
+  for(const [endYear,startYear,expected] of [[1910,1308,1],[538,757,0]]){
+    const scene={id:'stub-city',kind:'settlement',startYear:475,endYear,dateClaimIds:[],actionClaimIds:[],
+      place:{lon:0,lat:0,claimIds:[]}};
+    const zone={lon:0,lat:0,startYear,endYear:2100,openEnded:true};
+    const rows=planContinuingCities([scene],{year:1925,events:[]},undefined,[zone]);
+    assert.equal(rows.length,expected,`zone starts ${startYear}, record ends ${endYear}`);
+    if(expected)assert.equal(rows[0].id,'background-city-stub-city');
+  }
 });
 
 test('omitting zones preserves previous callers and latest-ended-record selection',()=>{
