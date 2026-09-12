@@ -32,6 +32,18 @@ export function selectEstimatedSites(estimated,documented,urban,periodId,availab
   return eligible.filter(s=>selected.has(s));
 }
 
+// 같은 자리(0.1 미만)의 urban은 반경과 무관하게 문서화되지 않은 urban-region:* 원 구역을 우선한다.
+// 다른 자리의 문서화 urban은 이웃 반경 안에서도 남겨 서울 소실을 막고, 집 소유는 기존 owns()가 정한다.
+export function selectSceneSites(activeSites,estimatedIds){
+  const candidates=activeSites.filter(s=>!(s.documented&&s.kind==='urban'&&activeSites.some(other=>
+    other.kind==='urban'&&!other.documented&&other.id.startsWith('urban-region:')&&Math.hypot(other.x-s.x,other.z-s.z)<.1)))
+    .sort((a,b)=>b.radius-a.radius||a.id.localeCompare(b.id));
+  const current=candidates.filter((s,i)=>!candidates.slice(0,i).some(other=>other.kind===s.kind&&Math.hypot(other.x-s.x,other.z-s.z)<.1));
+  const major=current.filter(s=>s.kind==='urban'&&!s.documented);
+  const selected=current.filter(s=>s.estimated?estimatedIds.has(s.id):!s.documented||s.kind!=='urban'||major.every(m=>Math.hypot(s.x-m.x,s.z-m.z)>=.1));
+  return {current,major,selected};
+}
+
 // Anonymous scenery provides context; historical places and people remain separate.
 export class ChronicleScenery{
   constructor(assets){
@@ -61,12 +73,10 @@ export class ChronicleScenery{
   }
   refreshPeriod(preserve=false){
     const started=performance.now();
-    const candidates=this.activeSites().sort((a,b)=>b.radius-a.radius||a.id.localeCompare(b.id));
-    const current=candidates.filter((s,i)=>!candidates.slice(0,i).some(other=>other.kind===s.kind&&Math.hypot(other.x-s.x,other.z-s.z)<.1));
-    const major=current.filter(s=>s.kind==='urban'&&!s.documented);
+    const sites=this.activeSites(),{current}=selectSceneSites(sites,this.estimatedIds);
     const estimated=selectEstimatedSites(current.filter(s=>s.estimated),current.filter(s=>s.documented&&s.kind!=='urban'),current.filter(s=>s.kind==='urban'),s=>sitePeriod(s,this.stats.year).id,s=>this.available(s));
     this.estimatedIds=new Set(estimated.map(s=>s.id));
-    const selected=current.filter(s=>s.estimated?this.estimatedIds.has(s.id):!s.documented||s.kind!=='urban'||major.every(m=>Math.hypot(s.x-m.x,s.z-m.z)>m.radius));
+    const {selected}=selectSceneSites(sites,this.estimatedIds);
     const urban=selected.filter(s=>s.kind==='urban');
     // Urban ownership can clip neighbouring parcels. Rural additions/removals
     // only invalidate their own cells and the far batches containing them.
