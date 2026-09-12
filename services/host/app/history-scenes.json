@@ -1043,7 +1043,8 @@
         }
       },
       "researchJob": "ancient_scenes",
-      "researchCollection": "scenes-103"
+      "researchCollection": "scenes-103",
+      "sceneFunction": "naval_expedition"
     },
     {
       "id": "scene-anc-ichadon-527",
@@ -2254,7 +2255,8 @@
         }
       },
       "researchJob": "ancient_scenes",
-      "researchCollection": "scenes-103"
+      "researchCollection": "scenes-103",
+      "sceneFunction": "migration"
     },
     {
       "id": "scene-goryeo-founding-918",
@@ -3138,7 +3140,22 @@
       },
       "visualActions": "목판에 글자를 새기고 판을 옮겨 쌓는 각판 작업장 장면. 판 수량은 출처 표기 범위를 넘겨 표현하지 않는다.",
       "researchJob": "goryeo_scenes",
-      "researchCollection": "scenes-103"
+      "researchCollection": "scenes-103",
+      "sceneFunction": "print_workshop",
+      "participantGroups": [
+        {
+          "entityId": "group-daejangdogam-ganghwa-1237-1248",
+          "label": "대장도감·분사대장도감 각판 인원",
+          "role": "printer",
+          "stance": "worker",
+          "side": "a",
+          "count": 8,
+          "claimIds": [
+            "claim-scenes-103-goryeo_scenes-pangak-workers"
+          ]
+        }
+      ],
+      "participantGroupsNote": "count 는 화면 표현값이며 사료의 인원수가 아니다"
     },
     {
       "id": "scene-daejanggyeong-wanseong-1251",
@@ -3818,7 +3835,21 @@
       },
       "visualActions": "절 안 공방에서 금속활자를 골라 판에 앉히고 먹을 칠해 종이를 찍어 내는 인쇄 작업, 시주자가 지켜보는 장면.",
       "researchJob": "goryeo_scenes",
-      "researchCollection": "scenes-103"
+      "researchCollection": "scenes-103",
+      "sceneFunction": "print_workshop",
+      "participantGroups": [
+        {
+          "entityId": null,
+          "label": "흥덕사 인쇄 일꾼",
+          "role": "printer",
+          "stance": "worker",
+          "side": "a",
+          "count": 6,
+          "claimIds": [],
+          "basis": "인쇄 작업의 추정 배경"
+        }
+      ],
+      "participantGroupsNote": "count 는 화면 표현값이며 사료의 인원수가 아니다"
     },
     {
       "id": "scene-wihwado-hoegun-1388",
@@ -4377,7 +4408,34 @@
         "claim-scenes-103-modern_scenes-mod-ugeumchi-rel"
       ],
       "researchJob": "modern_scenes",
-      "researchCollection": "scenes-103"
+      "researchCollection": "scenes-103",
+      "sceneFunction": "uprising_battle",
+      "participantGroups": [
+        {
+          "entityId": "polity-donghak-nongmingun-1894",
+          "label": "동학농민군(전봉준 지휘)",
+          "role": "militia",
+          "stance": "attacker",
+          "side": "a",
+          "count": 12,
+          "claimIds": [
+            "claim-scenes-103-modern_scenes-mod-ugeumchi-nongmingun",
+            "claim-scenes-103-modern_scenes-mod-ugeumchi-jeon",
+            "claim-scenes-103-modern_scenes-mod-ugeumchi-act"
+          ]
+        },
+        {
+          "entityId": null,
+          "label": "관군·일본군",
+          "role": "soldier",
+          "stance": "defender",
+          "side": "b",
+          "count": 8,
+          "claimIds": [],
+          "basis": "기존 effects.attack 표현을 대체하는 추정 배치"
+        }
+      ],
+      "participantGroupsNote": "count 는 화면 표현값이며 사료의 인원수가 아니다"
     },
     {
       "id": "scene-eulmi-sabyeon-1895",
@@ -7508,7 +7566,55 @@
       },
       "visualActions": "제주도 위에 1947년 3·1절 대회의 시가행진과 발포, 그리고 무장대와 토벌대의 충돌을 서로 다른 편으로 나누어 표시한다. 두 편을 하나로 합치지 않고, 초토화 마을 이름은 이 발췌에 없으므로 그리지 않는다.",
       "researchJob": "contemporary_scenes",
-      "researchCollection": "scenes-103"
+      "researchCollection": "scenes-103",
+      "sceneFunction": "civil_conflict",
+      "participantGroups": [
+        {
+          "entityId": "polity-jeju43-namrodang-armed",
+          "label": "남로당 무장대",
+          "role": "militia",
+          "stance": "attacker",
+          "side": "a",
+          "count": 8,
+          "claimIds": [
+            "claim-scenes-103-contemporary_scenes-jeju43-armed"
+          ]
+        },
+        {
+          "entityId": "polity-jeju43-suppression",
+          "label": "토벌대",
+          "role": "soldier",
+          "stance": "defender",
+          "side": "b",
+          "count": 8,
+          "claimIds": [
+            "claim-scenes-103-contemporary_scenes-jeju43-suppression"
+          ]
+        },
+        {
+          "entityId": "polity-jeju43-police-1947",
+          "label": "경찰",
+          "role": "police",
+          "stance": "defender",
+          "side": "b",
+          "count": 4,
+          "claimIds": [
+            "claim-scenes-103-contemporary_scenes-jeju43-police"
+          ]
+        },
+        {
+          "entityId": "polity-jeju43-crowd-1947",
+          "label": "군중·희생 민간인",
+          "role": "civilian",
+          "stance": "victim",
+          "side": "c",
+          "count": 12,
+          "claimIds": [
+            "claim-scenes-103-contemporary_scenes-jeju43-crowd"
+          ]
+        }
+      ],
+      "participantGroupsNote": "count 는 화면 표현값이며 사료의 인원수가 아니다"
     },
     {
       "id": "scene-panmunjom-armistice-1953",
@@ -10131,7 +10237,33 @@
       },
       "visualActions": "관헌이 마을을 돌며 집집을 뒤져 사람을 붙잡아 끌고 가고, 강가 형장에 사람들이 모이는 수색·처형 장면. 인원수와 형장 구조는 사료 수치를 만들지 않는다.",
       "researchJob": "joseon_late_scenes",
-      "researchCollection": "scenes-103"
+      "researchCollection": "scenes-103",
+      "sceneFunction": "persecution",
+      "participantGroups": [
+        {
+          "entityId": "polity-jl-cheonjugyodo-1801",
+          "label": "천주교도",
+          "role": "civilian",
+          "stance": "victim",
+          "side": "c",
+          "count": 12,
+          "claimIds": [
+            "claim-scenes-103-joseon_late_scenes-jl-sy-cheonjugyodo"
+          ]
+        },
+        {
+          "entityId": "polity-jl-bakhae-gwanheon-1801",
+          "label": "조선 관헌",
+          "role": "soldier",
+          "stance": "defender",
+          "side": "b",
+          "count": 6,
+          "claimIds": [
+            "claim-scenes-103-joseon_late_scenes-jl-sy-gwanheon"
+          ]
+        }
+      ],
+      "participantGroupsNote": "count 는 화면 표현값이며 사료의 인원수가 아니다"
     },
     {
       "id": "scene-jl-jeongjuseong-1811",
@@ -14913,7 +15045,8 @@
       },
       "visualActions": "역사 건물을 올리는 공사와 준공한 역사. 돔·타일 같은 외관 묘사는 인용 낱말 수 제한으로 출처를 붙이지 못해 표시하지 않는다.",
       "researchJob": "modern_localities",
-      "researchCollection": "scenes-122"
+      "researchCollection": "scenes-122",
+      "sceneFunction": "rail_station"
     },
     {
       "id": "scene-mod-seoul-station-ktx-2004",
@@ -16426,7 +16559,8 @@
         }
       },
       "researchJob": "middle_kingdoms",
-      "researchCollection": "scenes-128"
+      "researchCollection": "scenes-128",
+      "sceneFunction": "temple"
     },
     {
       "id": "scene-syj128-silsangsa-828",

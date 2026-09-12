@@ -14,10 +14,25 @@ export const figureEras=[
   {id:'transition',label:'개항기·근대',from:1895,to:1944},
   {id:'modern',label:'현대',from:1945,to:Infinity},
 ];
-export const figureRoles=['ruler','commander','scholar','monk','commoner','soldier'];
+// 시대별 조립 블루프린트를 생성하는 역할(figure_<era>_<role>)과, 카탈로그의 기존 부품을 재배정하는 역할(#173 참여 집단)을 나눈다.
+export const blueprintRoles=['ruler','commander','scholar','monk','commoner','soldier'];
+export const figureRoles=[...blueprintRoles,'militia','police','civilian','printer','worker'];
 const roleLabels={ruler:'군주',commander:'지휘관',scholar:'학자',monk:'승려',commoner:'생활 인물',soldier:'군사'};
 export const figureEra=year=>figureEras.find(era=>era.from<=year&&year<=era.to)||figureEras[3];
-export const figureArchetype=(role,year)=>'figure_'+figureEra(year).id+'_'+(figureRoles.includes(role)?role:'commoner');
+const eraFigure=(role,year)=>'figure_'+figureEra(year).id+'_'+role;
+// 재배정 역할 → 카탈로그(history-asset-catalog.json)에 실제로 있는 archetype. 없는 조합은 commoner 로 폴백한다.
+const reassigned={
+  militia:()=>'field_worker',            // 농기구를 든 인물 · 깃발은 장면 조립기에서 집단 단위로 세운다
+  worker:()=>'field_worker',
+  police:year=>year>=1876?'rifle_soldier':eraFigure('soldier',year),
+  civilian:year=>year>=1876?'modern_figure':'period_figure',
+  printer:year=>eraFigure('commoner',year),
+};
+export const figureArchetype=(role,year)=>{
+  if(blueprintRoles.includes(role))return eraFigure(role,year);
+  const pick=reassigned[role];
+  return pick?pick(year)||eraFigure('commoner',year):eraFigure('commoner',year);
+};
 const part=(k,shape,c='iron',tag='ornament',m='leather')=>({k,...shape,m,c,tag});
 const box=(w,h,d,x,y,z,c='iron',tag='ornament')=>part('box',{w,h,d,x,y,z},c,tag);
 const cylinder=(r,h,x,y,z,c='iron',tag='top')=>part('cyl',{r,h,x,y,z,seg:10},c,tag);
@@ -124,7 +139,7 @@ function blueprint(raw,era,role){
 export function extendFigureCatalog(raw){
   const category=raw.categories.humanoids,cores=[...category.cores],blueprints={...raw.blueprints};
   const known=new Set(cores.map(core=>typeof core==='string'?core.split('|')[0]:core.id));
-  for(const era of figureEras)for(const role of figureRoles){
+  for(const era of figureEras)for(const role of blueprintRoles){
     const id=figureArchetype(role,Math.max(era.from,-1000));
     if(!known.has(id))cores.push(id+'|'+era.label+' '+roleLabels[role]+' 표현');
     blueprints[id]=blueprint(raw,era,role);

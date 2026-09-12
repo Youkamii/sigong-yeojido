@@ -29,7 +29,7 @@ export function activityFigure(id,role,year,claims){
   const texts=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate)
     &&c.validFrom!=null&&c.validTo!=null&&within(c,year));
   const text=[role,...texts.map(c=>c.object.value||'')].join(' ');
-  if(/승려|승장|스님/.test(text))return figureArchetype('monk',year);
+  if(/승려|승장|스님|비구니|여승/.test(text))return figureArchetype('monk',year);
   if(texts.some(c=>c.predicate==='syj:hasTitle'&&/왕$|황제$|국왕/.test(c.object.value||''))||/국왕|군주|왕으로 즉위/.test(role))return figureArchetype('ruler',year);
   if(/지휘|통제사|수군|수사|장군|무장|의병장|총사령|대장/.test(text))return figureArchetype('commander',year);
   if(/학자|문신|문인|시인|저술|판서|정승|학당|강학|편찬|간행/.test(text))return figureArchetype('scholar',year);
@@ -126,6 +126,11 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       scenePlace:coordinates?{...place,coordinates,precision:place.displayPrecision||place.precision,...(regionalPlacement?{
         coordinateNote:'지역 기준 추정 배치 · '+region.coordinateNote,coordinateSourceIds:region.sourceIds}: {})}:null,
       sites:[],locationReference:null,visualActions:scene.visualActions,
+      // #173: 장면 기능과 참여 집단은 패킷 값을 그대로 넘긴다. participantGroups 는 Person 여부와 무관하게 통과(entityId 가 Polity·null 이어도 됨).
+      // count 는 화면 표현값이며 사료의 인원수 주장이 아니다.
+      ...(scene.sceneFunction?{sceneFunction:scene.sceneFunction}:{}),
+      ...(Array.isArray(scene.participantGroups)&&scene.participantGroups.length?{participantGroups:scene.participantGroups.map(g=>({...g,
+        label:g.label||(g.entityId&&entities.get(g.entityId)?entityLabel(entities.get(g.entityId)):g.role)}))}:{}),
       participants,effects:Object.fromEntries(Object.entries(scene.effects||{}).map(([key,effect])=>
         [key,{...effect,enabled:effect.enabled&&supported(effect.claimIds)
           &&(effect.startYear==null||effect.startYear<=context.year)&&(effect.endYear==null||effect.endYear>=context.year)}])),

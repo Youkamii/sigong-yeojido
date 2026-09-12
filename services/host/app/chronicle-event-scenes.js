@@ -3,6 +3,12 @@ import {figureArchetype} from './period-figures.js';
 import {buildingArchetype} from './period-buildings.js';
 import {settlementLayout,SETTLEMENT_RADIUS} from './historical-regions.js';
 import {urbanRegionAt} from './urban-regions.js';
+import {hash32} from './util.js';
+
+/** #173: 패킷의 sceneFunction 이 문자열 분기보다 먼저 구성을 정한다. */
+export const SCENE_FUNCTIONS=['rail_station','temple','print_workshop','migration','persecution','naval_expedition','civil_conflict','uprising_battle'];
+const CONFLICT_FUNCTIONS=['civil_conflict','uprising_battle'];
+const STANCE_ACTIONS={attacker:'attacking',defender:'defending',bystander:'idle',victim:'idle',marching:'walking',worker:'working'};
 
 function fireAt(group,position,scale,animated){
   const fire=new THREE.Group();fire.position.copy(position);fire.scale.setScalar(scale);group.add(fire);
@@ -42,12 +48,15 @@ export function composeHistoricalEvent(event,position,world){
   const road=modern&&/고속도로/.test(actions),personalFire=/분신|자해/.test(actions),blockFire=/대장경판|경판|판목/.test(actions)&&event.effects.fire?.enabled;
   const paperFire=blockFire||personalFire&&/화형식|법전.*태/.test(actions);
   const kiln=/백자|관요|사기제조장|분원리/.test(actions),irrigation=/벽골제|청못|청제|수리 시설|관개/.test(actions);
-  const invaders=event.effects.attack?.enabled||[...(event.sides||[]),...event.participants].some(p=>p.side==='invader'&&p.presence==='on-site');
+  // participantGroups 가 있으면 sides 기반 invaders 플래그는 무시한다 (집단이 stance 로 배치를 정한다).
+  const groups=Array.isArray(event.participantGroups)&&event.participantGroups.length?event.participantGroups:null;
+  const invaders=!groups&&(event.effects.attack?.enabled||[...(event.sides||[]),...event.participants].some(p=>p.side==='invader'&&p.presence==='on-site'));
   const harbor=!sea&&['construction','naval'].includes(event.archetype)&&event.effects.ships?.enabled;
   const teaching=!sea&&/강학|강의|교육|서당|서원|성균관|학교|학사/.test(actions)&&['court','publication','assembly'].includes(event.archetype);
   const market=!sea&&/장시|시장|교역|무역|상업/.test(actions)&&['court','construction'].includes(event.archetype);
   const fortress=event.visualActions?.fortress;
-  const compositionKind=fortress?'fortress':music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype;
+  const sceneFunction=SCENE_FUNCTIONS.includes(event.sceneFunction)?event.sceneFunction:null;
+  const compositionKind=sceneFunction||(fortress?'fortress':music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype);
   let displayScale=event.scenePlace?.displayScale||1;
   const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates
     &&urbanRegionAt(...event.scenePlace.coordinates,event.year);
@@ -83,11 +92,113 @@ export function composeHistoricalEvent(event,position,world){
   };
   const standard=(row,side,lift=0)=>{
     if(!row)return;
-    const flag=new THREE.Mesh(new THREE.BoxGeometry(2.8,.9,.12),new THREE.MeshStandardMaterial({color:side==='invader'?'#9a4435':row.fleet==='ming'?'#a58030':'#346978',roughness:1}));
+    const flag=new THREE.Mesh(new THREE.BoxGeometry(2.8,.9,.12),new THREE.MeshStandardMaterial({color:side==='invader'||side==='b'?'#9a4435':row.fleet==='ming'?'#a58030':'#346978',roughness:1}));
     flag.position.copy(row.position);flag.position.y+=(lift+2)*displayScale;flag.scale.setScalar(displayScale);
     flag.name='event-side-'+side;flag.userData.fleet=row.fleet||side;group.add(flag);
   };
-  if(sea){
+  const flagColor=side=>side==='invader'||side==='b'?'#9a4435':side==='a'||side==='naval'||side==='defender'?'#346978':null;
+  const construction=event.visualActions?.constructionYears?.includes(event.year)||event.visualActions?.construction===true
+    ||(event.archetype==='construction'&&(event.endYear==null||event.year<=event.endYear));
+  const shoreward=()=>{
+    for(let r=1;r<48;r+=1)for(let i=0;i<48;i++){
+      const angle=i*Math.PI/24,dx=Math.cos(angle)*r,dz=Math.sin(angle)*r;
+      if(!world.contains(position.x+dx*displayScale,position.z+dz*displayScale))return {dx,dz,angle};
+    }
+    return null;
+  };
+  /** 참여 집단 루프: role→모델, stance→동작·배치, side→깃발 색. 배치 좌표와 count 는 표현용이며 사료의 인원수·위치 주장이 아니다. */
+  const composeGroups=()=>{
+    const counters={};
+    groups.forEach((g,gi)=>{
+      const stance=STANCE_ACTIONS[g.stance]?g.stance:'bystander',action=STANCE_ACTIONS[stance];
+      const archetype=figureArchetype(g.role,event.year),count=Math.max(0,Math.min(40,Math.trunc(Number(g.count)||0)));
+      const extra={side:g.side||'c',stance,role:g.role,groupLabel:g.label,groupIndex:gi,action};
+      const seed=hash32([event.id,g.label||'',g.role||'',stance,String(gi)].join('|'));
+      const rows=[];
+      for(let i=0;i<count;i++){
+        const n=counters[stance]||0;counters[stance]=n+1;
+        let dx,dz;
+        if(stance==='attacker'){dx=-17+(n%5)*8;dz=13+Math.floor(n/5)*7;}
+        else if(stance==='defender'){dx=-20+(n%5)*8;dz=-8-Math.floor(n/5)*7;}
+        else if(stance==='marching'){dx=-22+n*4;dz=2;}
+        else if(stance==='worker'){dx=-12+(n%6)*5;dz=10+Math.floor(n/6)*5;}
+        else{
+          // 주거 쪽(-x) 군집 · 반경 6 안 결정론 무작위 (hash32 기반, 격자 아님)
+          const h=hash32(seed+':'+n),angle=(h%3600)/3600*Math.PI*2,rad=Math.sqrt(((h>>>12)%1000)/1000)*6;
+          dx=-24+Math.cos(angle)*rad;dz=Math.sin(angle)*rad;
+        }
+        const row=model(archetype,dx,dz,1.5,extra);if(row)rows.push(row);
+      }
+      if(rows.length&&flagColor(g.side)){
+        const ax=rows.reduce((t,r)=>t+r.position.x,0)/rows.length,az=rows.reduce((t,r)=>t+r.position.z,0)/rows.length;
+        const off=stance==='defender'?-4:4;
+        standard(model('banner',(ax-position.x)/displayScale+off,(az-position.z)/displayScale+off,1.8,{side:g.side,groupIndex:gi}),g.side,4);
+      }
+    });
+  };
+  if(sceneFunction==='rail_station'){
+    model('station',0,-10,1.4,{primary:true});
+    if(!event.compact){
+      const base=new THREE.Mesh(new THREE.BoxGeometry(65*displayScale,.12*displayScale,4*displayScale),new THREE.MeshStandardMaterial({color:'#817765',roughness:1}));
+      base.position.set(position.x,position.y+.07*displayScale,position.z+8*displayScale);group.add(base);
+      model('train',0,8,.9);
+      if(construction){model('handcart',18,-1,1.1);for(let i=0;i<6;i++)model('field_worker',-13+i*5,-1,1.5,{action:'working',role:'worker'});}
+      else for(let i=0;i<4;i++)model('human',-8+i*5,-1,1.5);
+    }
+  }else if(sceneFunction==='temple'){
+    model('pagoda',0,0,1.8,{primary:true});
+    if(!event.compact){
+      model('academy_hall',0,-16,1.8);
+      if(construction){model('handcart',15,9,1.1);for(let i=0;i<6;i++)model('field_worker',-12+i*5,12,1.5,{action:'working',role:'worker'});}
+      else{model('period_monk',-6,9,1.5);model('period_monk',6,9,1.5);}
+    }
+  }else if(sceneFunction==='print_workshop'){
+    model('academy_hall',0,-13,1.7,{primary:true});
+    if(!event.compact){
+      for(const x of [-9,0,9]){model('table',x,0,1.5);model('book',x,0,1.4,{lift:2.6});}
+      const printer=figureArchetype('printer',event.year);
+      for(let i=0;i<6;i++)model(printer,-11+(i%3)*9,i<3?4:-4,1.5,{action:'working',role:'printer'});
+    }
+  }else if(sceneFunction==='migration'){
+    model('handcart',0,0,1.3,{primary:true});
+    if(!event.compact){
+      const civilian=figureArchetype('civilian',event.year);
+      for(let i=0;i<12;i++)model(civilian,-24+i*4,3,1.5,{action:'walking',role:'civilian',stance:'marching'});
+      model('handcart',14,0,1.2);
+    }
+  }else if(sceneFunction==='persecution'){
+    const civilian=figureArchetype('civilian',event.year);
+    model(civilian,0,0,1.6,{primary:true,role:'civilian',stance:'victim',action:'idle'});
+    if(!event.compact){
+      // 전각(palace) 없음 · 군집은 결정론 무작위(반경 6) · 무릎/서기 동작이 없으므로 idle
+      const seed=hash32(event.id+'|persecution');
+      for(let i=1;i<10;i++){
+        const h=hash32(seed+':'+i),angle=(h%3600)/3600*Math.PI*2,rad=Math.sqrt(((h>>>12)%1000)/1000)*6;
+        model(civilian,Math.cos(angle)*rad,Math.sin(angle)*rad,1.5,{role:'civilian',stance:'victim',action:'idle'});
+      }
+      for(const [x,z] of [[-10,4],[10,4],[0,-10]])model(soldier,x,z,1.5,{action:'defending',role:'soldier',stance:'defender'});
+    }
+  }else if(sceneFunction==='naval_expedition'){
+    // place 가 육지면 해안 방향(없으면 +z 18)으로 배 3척, 해안에 사람 4명
+    const shore=sea?null:shoreward(),dir=shore||{dx:0,dz:18,angle:Math.PI/2};
+    const fleetSide=groups?.find(g=>g.stance==='attacker'||g.stance==='marching')?.side||'naval';
+    for(let i=0;i<3;i++){
+      const dx=sea?-13+i*13:dir.dx+Math.cos(dir.angle)*(6+i*8),dz=sea?(i-1)*10:dir.dz+Math.sin(dir.angle)*(6+i*8);
+      standard(model(shipType,dx,dz,i?1.1:1.5,{medium:'sea',side:fleetSide,primary:i===0}),fleetSide,modern?3:7);
+    }
+    if(!event.compact&&!sea)for(let i=0;i<4;i++)model('human',dir.dx*.6-6+i*4,dir.dz*.6,1.5,{medium:'land',action:'idle'});
+    if(!event.compact&&groups)composeGroups();
+  }else if(CONFLICT_FUNCTIONS.includes(sceneFunction)||(groups&&event.archetype==='battle')){
+    model('banner',0,0,1.8,{primary:true,side:groups?'c':'defender'});
+    if(!event.compact){
+      if(groups)composeGroups();
+      else{
+        for(let i=0;i<10;i++)model(soldier,-20+(i%5)*8,-8-Math.floor(i/5)*7,1.5,{side:'defender',action:event.effects.attack?.enabled&&i<3?'defending':'idle'});
+        if(invaders)for(let i=0;i<10;i++)model(soldier,-17+(i%5)*8,13+Math.floor(i/5)*7,1.5,{side:'invader',action:event.effects.attack?.enabled&&i<3?'attacking':'idle'});
+        standard(model('banner',-24,-12,1.8),'defender',4);if(invaders)standard(model('banner',24,18,1.8),'invader',4);
+      }
+    }
+  }else if(sea){
     model(shipType,-13,0,1.5,{primary:true,side:'naval',fleet:alliedFleet?'joseon':undefined});
     const opposingFleet=[...(event.sides||[]),...event.participants].some(p=>p.side==='invader');
     if(!event.compact&&event.effects.ships?.enabled){
