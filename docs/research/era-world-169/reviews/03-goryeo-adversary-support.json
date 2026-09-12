@@ -1,0 +1,72 @@
+{
+  "reviewer": "03-goryeo-adversary",
+  "code": "7312de21fd53dbf0a4bd3e40600461847f69a42f",
+  "method": "Read criteria, inspect 12 supplied public UI captures and generation code independently, then review paired report. No app mutation or new browser/window.",
+  "directlyViewedCaptures": [
+    "1100-gaegyeong-160-ui.jpg", "1100-gaegyeong-60-ui.jpg",
+    "1100-byeokrando-160-ui.jpg", "1100-byeokrando-60-ui.jpg",
+    "1240-ganghwa-160-ui.jpg", "1240-ganghwa-60-ui.jpg",
+    "1356-pyongyang-160-ui.jpg", "1356-pyongyang-60-ui.jpg",
+    "1377-cheongju-60-ui.jpg", "1377-gangjin-60-ui.jpg",
+    "920-sanggyong-160-ui.jpg", "920-gyeongju-60-ui.jpg"
+  ],
+  "independentFindings": [
+    {"id":"I1","finding":"Large named Gaegyeong city does contain dwellings, market stalls, people, gate, wall and nearby fields. Byeokrando viewpoint sees much of the same city; the inspected scene does not communicate harbor work. Symbolic repetition alone is not an error; city footprints and terrain fit need separate checking.","evidence":["historical-regions.js:8-33","chronicle-event-scenes.js:61-77,145-162","1100-gaegyeong-160-ui.jpg","1100-byeokrando-60-ui.jpg"]},
+    {"id":"I2","finding":"Ganghwa city and Tripitaka carving share effectively the same area anchor. Event-first ordering compacts the later city to a primary hall only, consistent with the 1240 capture. City existence and local temporary activity are coupled.","evidence":["chronicle-assets.js:178-195","historical-regions.js:11-12","history-scenes.json:scene-city-ganghwa-capital-1232-1270","history-scenes.json:scene-daejanggyeong-pangak-1237","1240-ganghwa-60-ui.jpg"]},
+    {"id":"I3","finding":"Jikji sponsor Myodeok is marked on-site; publication actors are assigned working. Existing institution text establishes sponsorship, not being physically at the printing table. Nonappearance is not established either.","evidence":["history-scenes.json:3743-3831","chronicle-event-scenes.js:324-339","1377-cheongju-60-ui.jpg","https://encykorea.aks.ac.kr/Article/E0022266"]},
+    {"id":"I4","finding":"Global year selects Goryeo building and figure family; buildingArchetype ignores regional information beyond seed. The 920 Silla capital can therefore use the Goryeo family while retaining its Silla label. This proves a time/region selection limitation, not that all historical Korean housing had to look different.","evidence":["period-buildings.js:4-17","scenery-period.js:4-18,21-38","chronicle-asset-plan.js:124-125","chronicle-event-scenes.js:342-345","920-gyeongju-60-ui.jpg"]},
+    {"id":"I5","finding":"Pyongyang and Gangjin inspected views show anonymous houses, fields and paths but no named regional activity. Camera targets do not prove historical site coordinates or all-data absence. Sanggyong target z=-899.17 lies beyond worldBounds.minZ=-720.10; blank view is not evidence that Balhae has no historical records.","evidence":["captures/manifest.json","docs/research/era-world-169/runtime-inspection.json","1356-pyongyang-160-ui.jpg","1377-gangjin-60-ui.jpg","920-sanggyong-160-ui.jpg"]},
+    {"id":"I6","finding":"The named Tripitaka carving workforce is a Polity/group entity. Context.people and visible participants filter to Person. Publication composition adds no anonymous labor figures, so a source-backed group can stay in side metadata without producing carving workers. A helper probe misclassifies the words daejangdogam as commander, but that helper output is NOT evidence of a visible commander in this scene.","evidence":["data/research/scenes-103/goryeo_scenes/result.json:1025-1028","chronicle.js:64,91,107","chronicle-asset-plan.js:120-133","chronicle-event-scenes.js:280-289,324-339","1240-ganghwa-60-ui.jpg"]}
+  ],
+  "executedPureFunctionProbe": {
+    "runtime":"Node, direct imports, no terrain or browser",
+    "myodeok":"figure_goryeo_scholar",
+    "blockCarversHelperOnly":"figure_goryeo_commander",
+    "regionalBuildingsSameSeed":["era_goryeo_house_2","era_goryeo_house_2","era_goryeo_house_2"],
+    "ganghwaCompactLayout":[{"archetype":"palace","x":0,"z":-32,"scale":0.68,"primary":true}],
+    "ganghwaFullLayoutCount":140,
+    "limitations":"Pure-function evidence only. Full layout count is not a visible-model count; blockCarversHelperOnly is not reached for the current Polity group. No new full-terrain or browser run."
+  },
+  "primarySourcesOpened":[
+    {"url":"https://encykorea.aks.ac.kr/Article/E0022266","supports":"1377 Heungdeoksa metal-type publication with Myodeok's sponsorship; distinguishes 1378 Chwiamsa woodblock version; does not establish physical attendance."},
+    {"url":"https://encykorea.aks.ac.kr/Article/E0079670","supports":"Gaegyeong road/market/stream/guesthouse relationships; an institutional overview does not fix one simultaneous full-era plan."},
+    {"url":"https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r200325","supports":"Byeokrando harbor/ferry relationship to Gaegyeong; 1123 Goryeodogyeong text survives without its pictures; does not supply exact dock footprint."}
+  ],
+  "pairedReportRead":"03-goryeo-review.md and 03-goryeo-support.json",
+  "supplementalCaptures": {
+    "base":"C:/Users/gkfkd/AppData/Local/Temp/sigong-jeju-audit",
+    "viewed":["1100-ui.png","1270-ui.png","1273-ui.png"],
+    "metadata":"report.json",
+    "metadataTopLevelKeys":["errors","views"],
+    "sameShaAsCurrent":"NOT_VERIFIED",
+    "reportedAvailability":{"1100":[true,true],"1270":[false,false],"1273":[false,false]},
+    "scope":"Earlier audit observations. Year changes are not same-year display-toggle verification."
+  },
+  "goryeoVersusJoseonBlueprintProbe": {
+    "executedIndependently":true,
+    "house":[true,false,false],
+    "store":[true,true,true],
+    "hall":[true,true,true],
+    "gate":[true,true,true],
+    "market":[true,true,true],
+    "courtyard":[true,true,true],
+    "interpretation":"Same blueprint parts are confirmed, but sameness is not itself historical error."
+  },
+  "additionalPrimarySourcesRead":[
+    {"url":"https://www.seamuse.go.kr/research/excavation/info/90","mode":"web open","scope":"Mado 2 dated 1190-1213, transport from Gochang toward Gaegyeong and excavated cargo; not a universal ship or exact route."},
+    {"url":"https://encykorea.aks.ac.kr/Article/E0001532","mode":"web open","scope":"Ganghwa capital period and staged palace, offices, academy, ancestral temple and fortifications."},
+    {"url":"https://encykorea.aks.ac.kr/Article/E0051462","mode":"web open","scope":"1073 horse tribute, 1276 Mongol-horse introduction, and later Joseon pasture organization separated."},
+    {"url":"https://encykorea.aks.ac.kr/Article/E0034141","mode":"web open","scope":"Ssangseong office 1258-1356 and mixed settlement, not uniform ethnic models."},
+    {"url":"https://www.heritage.go.kr/heri/cul/culGuidePostDetail.do?ccbaCpno=1333903960000&ccgbGbtype=UNI&ccgbGbtypeNo=1&pageNo=1_5_0_0","mode":"official URL search body; direct open returned 403","scope":"Hangpaduri earthen inner/outer structure and archaeological remains; original exact height not established."},
+    {"url":"https://heritage.go.kr/heri/cul/culSelectDetail.do?ccbaAsno=0000690000000&ccbaCpno=1333500690000&ccbaCtcd=35&ccbaKdcd=13&pageNo=1_1_1_0","mode":"official URL search body","scope":"Yucheon-ri kiln site, late 11th to 14th century institutional dating; not every kiln active every year."}
+  ],
+  "keyCorrections":[
+    "Do not merge current code evidence with unversioned earlier Jeju screenshots.",
+    "Do not treat year-transition captures as same-year event toggle tests.",
+    "Identical Goryeo and Joseon parts require contextual review, not mandatory artificial style divergence.",
+    "Suggested FPS, percentile, repetition and visual-element counts are not user acceptance contracts.",
+    "Polity carving workforce is not converted into publication workers; helper commander result is latent and not a visible scene claim."
+  ],
+  "finalReport":"03-goryeo-adversary.md",
+  "status":"Complete. Final paired-claim decisions, new workforce linkage defect, bad-fix counterexamples, regional lifetime proposals and acceptance scenes recorded."
+}
