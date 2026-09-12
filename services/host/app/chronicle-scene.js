@@ -4,6 +4,7 @@ import {formatCoordinates} from './history-coordinates.js';
 import {planTraditions} from './chronicle-traditions.js';
 import {planHistoricalSites,planContinuingCities} from './chronicle-sites.js';
 import {planContinuingFacilities} from './facility-persistence.js';
+import {buildSettlementZones} from './inhabited-zones.js';
 
 export class ChronicleScene {
   constructor(host,onSelect){
@@ -37,6 +38,7 @@ export class ChronicleScene {
   }
   async attach(engine,world){
     this.engine=engine;this.world=world;
+    this.settlementZones=buildSettlementZones(world.scenePackets||[],world.coordinateRegistry||{},world.places||[]);
     try{
       const {ChronicleAssets,loadHistoryAssets}=await import('./chronicle-assets.js');
       this.assets=new ChronicleAssets(engine,world,await loadHistoryAssets());
@@ -60,7 +62,7 @@ export class ChronicleScene {
     world.territories?.setYear(plan.year,chronicle.callbacks.filters());
     world.geography?.setActivities(plan);
     const claims=new Map(chronicle.data.claims.map(claim=>[claim.id,claim]));
-    plan.events.push(...planContinuingCities(world.scenePackets||[],plan,claims));
+    plan.events.push(...planContinuingCities(world.scenePackets||[],plan,claims,this.settlementZones));
     plan.events.push(...planContinuingFacilities(world.scenePackets||[],plan,claims));
     if(this.display.siteBackground)plan.events.push(...planHistoricalSites(chronicle.data,world.scenePackets||[],plan));
     plan.events.push(...stories.filter(s=>s.id===this.traditionId));

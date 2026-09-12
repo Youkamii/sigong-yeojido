@@ -1,17 +1,32 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
-import {describeSettlements} from '../services/host/app/historical-regions.js';
+import {readFileSync,readdirSync} from 'node:fs';
+import {registerHooks} from 'node:module';
+import {describeSettlements,SETTLEMENT_RADIUS} from '../services/host/app/historical-regions.js';
 import {planContinuingCities} from '../services/host/app/chronicle-sites.js';
+import {buildSettlementZones} from '../services/host/app/inhabited-zones.js';
+import {coordinateRegistry} from '../services/host/app/history-coordinates.js';
+registerHooks({resolve(specifier,context,next){return specifier==='three'?{url:new URL('../services/host/vendor/three.module.min.js',import.meta.url).href,shortCircuit:true,format:'module'}:next(specifier,context);}});
+const THREE=await import('three');
+const {composeHistoricalEvent}=await import('../services/host/app/chronicle-event-scenes.js');
 const json=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),'utf8'));
 const scenes=json('../services/host/app/history-scenes.json'),regions=json('../services/host/app/historical-regions.json');
 // Same composition as services/host/index.html (world.scenePackets).
 const packets=describeSettlements([...scenes.scenes,...regions.scenes],regions.capitalCorrections);
+const anchors=json('../services/host/app/history-place-anchors.json');
+const registry=coordinateRegistry(anchors,json('../services/host/app/history-coordinates.json'));
+// Catalog candidates inherit dates and provenance from their place in services/places.py load_places.
+const catalogs=['places.json',...readdirSync(new URL('../data/',import.meta.url)).filter(name=>/^places-candidates.*\.json$/.test(name)).sort()];
+const places=catalogs.flatMap(name=>json('../data/'+name).places).filter(place=>!place.notAPlace&&!place.variantOf)
+  .map(place=>({...place,candidates:(place.candidates||[]).map(candidate=>({sourceId:place.sourceId,validFrom:place.validFrom,validTo:place.validTo,...candidate}))}));
+const zones=buildSettlementZones(packets,registry,[...places,...anchors.places]);
 const activeCities=year=>packets.filter(s=>s.kind==='settlement'&&s.startYear<=year&&year<=s.endYear)
   .map(s=>({id:s.id,archetype:'settlement',scenePlace:{coordinates:[s.place.lon,s.place.lat]}}));
 const plan=year=>({year,events:activeCities(year)});
 const near=(row,lon,lat)=>Math.hypot(row.scenePlace.coordinates[0]-lon,row.scenePlace.coordinates[1]-lat)<.03;
-const at=(year,lon,lat)=>planContinuingCities(packets,plan(year)).filter(row=>near(row,lon,lat));
+const rowsAt=year=>planContinuingCities(packets,plan(year),undefined,zones);
+const at=(year,lon,lat)=>rowsAt(year).filter(row=>near(row,lon,lat));
+const zonesAt=(year,lon,lat)=>zones.filter(zone=>zone.startYear<=year&&year<=zone.endYear&&Math.hypot(zone.lon-lon,zone.lat-lat)<.03);
 const JEJU=[126.52194444444,33.509722222222],BUSAN=[129.07595621500008,35.169465885500045],SEOUL=[127,37.583333333333336];
 const SABI=[126.89852042850003,36.31324435500005],GAEGYEONG=[126.52319263200002,38.021695409000046];
 
@@ -27,7 +42,7 @@ test('Jeju remains an anonymous town after the 1955–2005 record ends',()=>{
 
 test('1960 Busan yields to the modern urban profile',()=>{
   assert.equal(at(1960,...BUSAN).length,0);
-  assert.equal(planContinuingCities(packets,plan(1960)).some(row=>row.siteBackground.sourceSceneId.includes('busan')),false);
+  assert.equal(rowsAt(1960).some(row=>row.siteBackground.sourceSceneId.includes('busan')),false);
 });
 
 test('700 Sabi continues as a town, not a capital',()=>{
@@ -36,13 +51,13 @@ test('700 Sabi continues as a town, not a capital',()=>{
   assert.equal(rows[0].siteBackground.sourceSceneId,'scene-city-sabi-capital-538-660');
 });
 
-test('Seoul: 1350 Namgyeong continues once, 1400 Hanseong record is active',()=>{
-  const rows=at(1350,...SEOUL);assert.equal(rows.length,1);
-  assert.equal(rows[0].siteBackground.sourceSceneId,'scene-regional163-namgyeong-1099');
+test('Seoul: 1350 and 1920 yield to the documented zone, 1400 Hanseong record is active',()=>{
+  const zone=zonesAt(1350,...SEOUL).find(zone=>zone.id==='inhabited:place-goryeosa-039');
+  assert.ok(zone);assert.equal(zone.startYear,1308);assert.equal(zone.endYear,2100);
+  assert.equal(at(1350,...SEOUL).length,0);
   assert.equal(at(1400,...SEOUL).length,0);
   assert.equal(at(1000,...SEOUL).length,0,'nothing before the first record starts');
-  const modern=at(1920,...SEOUL);assert.equal(modern.length,1,'several ended records leave the latest one');
-  assert.equal(modern[0].siteBackground.recordedEndYear,1910);
+  assert.ok(zonesAt(1920,...SEOUL).includes(zone));assert.equal(at(1920,...SEOUL).length,0);
   assert.equal(at(1950,...SEOUL).length,0,'urban Seoul profile takes over from 1945');
 });
 
@@ -57,5 +72,44 @@ test('rows keep the anonymous-city format used by the scene and context panels',
   assert.equal(row.siteBackground.scope,'anonymous-city');assert.equal(row.scenePlace.settlement.scope,'anonymous-city');
   assert.equal(row.label,'이름 없는 도시 생활 배경');assert.deepEqual(row.participants,[]);assert.equal(row.endYear,undefined);
   assert.ok(row.claimIds.length>0);
-  const before=JSON.stringify(packets);planContinuingCities(packets,plan(700));assert.equal(JSON.stringify(packets),before);
+  assert.equal(row.summary,'이 위치의 도시 기록을 바탕으로 이름 없는 생활 배경을 이어서 보여줍니다. 이전 도시 명칭과 행정 지위, 사건과 인물의 기간을 연장한 것이 아닙니다. 현재 건물과 거리 배치는 복원도가 아닙니다.\n규모는 축소 표현');
+  const before=JSON.stringify([packets,zones]);rowsAt(700);assert.equal(JSON.stringify([packets,zones]),before);
+});
+
+test('1450 Gongju yields through the actual documented interval and returns after its end',()=>{
+  const gongju=[127.12,36.45],id='scene-city-ungjin-capital-475-538';
+  const active=zonesAt(1450,...gongju);assert.ok(active.length>0);
+  const packet=packets.find(scene=>scene.id===id);
+  assert.ok(active.some(zone=>Math.hypot(zone.lon-packet.place.lon,zone.lat-packet.place.lat)<.03));
+  const endYear=Math.max(...active.map(zone=>zone.endYear));
+  assert.equal(endYear,2100);
+  for(const year of [1450,endYear])assert.equal(rowsAt(year).some(row=>row.siteBackground.sourceSceneId===id),false);
+  assert.equal(zonesAt(endYear+1,...gongju).length,0);
+  assert.equal(at(endYear+1,...gongju).some(row=>row.siteBackground.sourceSceneId===id),true);
+});
+
+test('omitting zones preserves previous callers and latest-ended-record selection',()=>{
+  for(const [year,id] of [[1350,'scene-regional163-namgyeong-1099'],[1920,'scene-city-hanseong-capital-1394-1910']]){
+    const rows=planContinuingCities(packets,plan(year)).filter(row=>near(row,...SEOUL));
+    assert.equal(rows.length,1);assert.equal(rows[0].siteBackground.sourceSceneId,id);
+  }
+});
+
+test('continuing towns use half scale for composition, radius and occupied space',()=>{
+  const flat={contains:()=>true,surfaceAt:()=>0,seaLevel:0};
+  for(const year of [700,1350,1450,1795,2006,2020]){
+    const rows=rowsAt(year);assert.ok(rows.length>0);
+    for(const row of rows)assert.equal(row.scenePlace.displayScale,0.5,row.id);
+  }
+  const [row]=at(700,...SABI);
+  const small=composeHistoricalEvent(row,new THREE.Vector3(),flat);
+  const full=composeHistoricalEvent({...row,scenePlace:{...row.scenePlace,displayScale:1}},new THREE.Vector3(),flat);
+  assert.equal(small.displayScale,0.5);assert.equal(small.radius,SETTLEMENT_RADIUS*0.5);
+  assert.ok(small.models.length>0);assert.equal(small.models.length,full.models.length);
+  for(let i=0;i<small.models.length;i++){
+    assert.equal(small.models[i].scale,full.models[i].scale*0.5);
+    assert.equal(small.models[i].position.x,full.models[i].position.x*0.5);
+    assert.equal(small.models[i].position.z,full.models[i].position.z*0.5);
+    assert.equal(small.occupied[i].radius,full.occupied[i].radius*0.5);
+  }
 });

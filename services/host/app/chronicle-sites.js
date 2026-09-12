@@ -44,7 +44,8 @@ const samePlace=(a,b)=>Math.hypot(a.lon-b.lon,a.lat-b.lat)<.03;
 // A modern urban profile takes over the spot unless the record itself covers the profile's start
 // (the record is then the documented basis of that modern city and its continuation keeps it).
 const yieldsToUrban=(scene,urban)=>Boolean(urban)&&!(scene.startYear<=urban.startYear&&urban.startYear<=scene.endYear);
-export function planContinuingCities(packets,plan,claims){
+export function planContinuingCities(packets,plan,claims,settlementZones=[]){
+  const activeZones=settlementZones.filter(zone=>zone.startYear<=plan.year&&plan.year<=zone.endYear);
   const ended=[];
   for(const scene of packets){
     if(scene.kind!=='settlement'||!Number.isFinite(scene.endYear)||plan.year<=scene.endYear)continue;
@@ -55,6 +56,7 @@ export function planContinuingCities(packets,plan,claims){
     if(plan.events.some(event=>event.archetype==='settlement'&&event.scenePlace
       &&Math.hypot(event.scenePlace.coordinates[0]-place.lon,event.scenePlace.coordinates[1]-place.lat)<.03))continue;
     if(yieldsToUrban(scene,urbanRegionAt(place.lon,place.lat,plan.year)))continue;
+    if(activeZones.some(zone=>samePlace(zone,place)))continue;
     ended.push({scene,place,claimIds});
   }
   // Several ended records at one spot leave a single continuation: the latest recorded end.
@@ -64,11 +66,11 @@ export function planContinuingCities(packets,plan,claims){
     const label='이름 없는 도시 생활 배경',id='background-city-'+scene.id;
     return {id,entityId:id,kind:'event',year:plan.year,label,archetype:'settlement',
       setting:true,detail:'과거 도시 기록의 위치를 잇는 추정 배경 · 기록 종료 뒤 존속',
-      summary:'이 위치의 도시 기록을 바탕으로 이름 없는 생활 배경을 이어서 보여줍니다. 이전 도시 명칭과 행정 지위, 사건과 인물의 기간을 연장한 것이 아닙니다. 현재 건물과 거리 배치는 복원도가 아닙니다.',
+      summary:'이 위치의 도시 기록을 바탕으로 이름 없는 생활 배경을 이어서 보여줍니다. 이전 도시 명칭과 행정 지위, 사건과 인물의 기간을 연장한 것이 아닙니다. 현재 건물과 거리 배치는 복원도가 아닙니다.\n규모는 축소 표현',
       claimIds,siteBackground:{scope:'anonymous-city',sourceSceneId:scene.id,
         recordedStartYear:scene.startYear,recordedEndYear:scene.endYear,episodes:[]},
       continuing:{sinceYear:scene.endYear+1,basis:'기록 종료 뒤 존속 추정',sourceSceneId:scene.id},
-      scenePlace:{...place,label,settlement:{scope:'anonymous-city'},coordinates:[place.lon,place.lat],
+      scenePlace:{...place,label,settlement:{scope:'anonymous-city'},coordinates:[place.lon,place.lat],displayScale:0.5,
         displayBasis:'수집된 과거 도시 위치에 이어지는 이름 없는 추정 생활 배경 · 추정(기록 종료 뒤 존속)'},
       visualActions:{cityStyle:continuingStyle(scene)},
       sites:[],effects:{},sides:[],participants:[]};
