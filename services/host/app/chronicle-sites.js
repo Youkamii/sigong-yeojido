@@ -45,7 +45,9 @@ const continuingStyle=scene=>settlementStyle(scene)==='port'?'port':'town';
 const samePlace=(a,b)=>Math.hypot(a.lon-b.lon,a.lat-b.lat)<.03;
 // A modern urban profile takes over the spot unless the record itself covers the profile's start
 // (the record is then the documented basis of that modern city and its continuation keeps it).
-const yieldsToUrban=(scene,urban)=>Boolean(urban)&&!(scene.startYear<=urban.startYear&&urban.startYear<=scene.endYear);
+// 원 구역은 성장 연도 전에는 축소·저밀도라 이어지는 도시가 그 전까지 배경을 잇는다.
+// 성장 연도부터 원 구역이 넘겨받으며, 이어지는 도시의 점유 마커가 원 구역을 쉬게 하므로 겹치지 않는다.
+const yieldsToUrban=(scene,urban,year)=>Boolean(urban)&&year>=(urban.growthYear??urban.startYear)&&!(scene.startYear<=urban.startYear&&urban.startYear<=scene.endYear);
 export function planContinuingCities(packets,plan,claims,settlementZones=[]){
   const activeZones=settlementZones.filter(zone=>zone.startYear<=plan.year&&plan.year<=zone.endYear);
   const ended=[];
@@ -57,7 +59,7 @@ export function planContinuingCities(packets,plan,claims,settlementZones=[]){
     if(claims&&!claimIds.every(id=>claims.has(id)))continue;
     if(plan.events.some(event=>event.archetype==='settlement'&&event.scenePlace
       &&Math.hypot(event.scenePlace.coordinates[0]-place.lon,event.scenePlace.coordinates[1]-place.lat)<.03))continue;
-    if(yieldsToUrban(scene,urbanRegionAt(place.lon,place.lat,plan.year)))continue;
+    if(yieldsToUrban(scene,urbanRegionAt(place.lon,place.lat,plan.year),plan.year))continue;
     if(activeZones.some(zone=>samePlace(zone,place)&&zone.startYear>scene.endYear))continue;
     ended.push({scene,place,claimIds});
   }

@@ -40,9 +40,13 @@ test('Jeju remains an anonymous town after the 1955–2005 record ends',()=>{
   assert.equal(at(2005,...JEJU).length,0,'active record year has no continuation');
 });
 
-test('1960 Busan yields to the modern urban profile',()=>{
-  assert.equal(at(1960,...BUSAN).length,0);
-  assert.equal(rowsAt(1960).some(row=>row.siteBackground.sourceSceneId.includes('busan')),false);
+test('Busan: the 1950-1953 record excludes 1945 and continues until urban growth in 1970',()=>{
+  const id='scene-city-busan-temporary-capital-1950-1953';
+  const packet=packets.find(scene=>scene.id===id);
+  assert.equal(packet.startYear,1950);assert.equal(packet.endYear,1953);
+  assert.deepEqual(at(1960,...BUSAN).map(row=>row.id),['background-city-'+id]);
+  assert.equal(at(1970,...BUSAN).length,0);
+  assert.equal(rowsAt(1970).some(row=>row.siteBackground.sourceSceneId.includes('busan')),false);
 });
 
 test('700 Sabi continues as a town, not a capital',()=>{
@@ -51,17 +55,17 @@ test('700 Sabi continues as a town, not a capital',()=>{
   assert.equal(rows[0].siteBackground.sourceSceneId,'scene-city-sabi-capital-538-660');
 });
 
-test('Seoul: 1350 yields to the newer zone, Hanseong continues until urban Seoul starts in 1945',()=>{
+test('Seoul: 1350 yields to the newer zone, Hanseong continues until urban Seoul grows in 1970',()=>{
   const zone=zonesAt(1350,...SEOUL).find(zone=>zone.id==='inhabited:place-goryeosa-039');
   assert.ok(zone);assert.equal(zone.startYear,1308);assert.equal(zone.endYear,2100);
   assert.equal(at(1350,...SEOUL).length,0);
   assert.equal(at(1400,...SEOUL).length,0);
   assert.equal(at(1000,...SEOUL).length,0,'nothing before the first record starts');
-  for(const year of [1920,1925,1944]){
+  for(const year of [1920,1925,1944,1945,1950,1969]){
     assert.ok(zonesAt(year,...SEOUL).includes(zone));
     assert.deepEqual(at(year,...SEOUL).map(row=>row.id),['background-city-scene-city-hanseong-capital-1394-1910'],String(year));
   }
-  for(const year of [1945,1950,2020])assert.equal(at(year,...SEOUL).length,0,`urban Seoul profile takes over from 1945: ${year}`);
+  for(const year of [1970,2020])assert.equal(at(year,...SEOUL).length,0,`urban Seoul profile takes over from 1970: ${year}`);
 });
 
 test('1300 Gaegyeong is active in its second interval',()=>{
