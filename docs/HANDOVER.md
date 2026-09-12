@@ -1,6 +1,6 @@
 ## 2026-09-12: 시대별 세계 수정 1차 — 브랜치 `feat/era-world-170` (#170 #171 #172 #173 #174 #175)
 
-**main 에 합치지 않았다. 공개 주소는 그대로다.** 워크트리 `C:/Users/gkfkd/Git/sigong-world`, 브랜치 `feat/era-world-170`(origin 백업, origin/main 5c9ae2b0 보다 25커밋 앞·0 뒤). Codex 의 미합류 브랜치 `codex/annual-world-fixes`(b66dee50, #170·#172·#174·#177 12커밋) 위에 세웠다.
+**2026-09-13 새벽 사용자 승인("올려봐")으로 main 에 ff 합류·c2 배포(5b533c04, 정적 파일만이라 뷰어 재시작 없음, 공개 주소에서 새 코드·라벨 확인).** 워크트리 `C:/Users/gkfkd/Git/sigong-world`, 브랜치 `feat/era-world-170`(origin/main 5c9ae2b0 → 33커밋). Codex 의 미합류 브랜치 `codex/annual-world-fixes`(b66dee50, #170·#172·#174·#177 12커밋) 위에 세웠다.
 사용자 지시: Claude 가 리딩하고 구현은 하위 에이전트 — 초반 4건은 Fable 5.1 low(dev-low·워크플로), 이후 추가 개발 9건은 Codex CLI `gpt-6-astra` effort high. 검증은 로컬 뷰어(:8872, c2 Fuseki 를 SSH 터널 3031 로 연결)에서 #169 와 같은 카메라로 전후 캡처.
 
 ### 2차(같은 날 저녁): 화면 재검토에서 찾은 결함 5건 수정 — `890cf17a` `0ab950c2` `bb298f0d` `bb731beb` `c3b23b5b`
@@ -33,7 +33,7 @@
 테스트: `node --test tests/*.mjs` 144/145(실패 1건 `test_place_state.mjs` 는 main 과 동일한 기존 건), Python 120 OK. 근거 폴더: `docs/research/issue-172/`, `issue-171-coexist/`, `estimated-islands-174/`, `estimated-island-density-174/`. 캡처 세트는 로컬 `%TEMP%/claude/.../scratchpad/captures/{before,after*,final}-*`.
 
 **남은 일**
-- 사용자에게 화면 확인(전후 비교 아티팩트) → 승인 뒤 main 합류·c2 배포(`git pull --ff-only`, 화면 파일만이라 재시작 불필요).
+- (완료) 사용자 승인 뒤 main 합류·c2 배포 — 2026-09-13.
 - 해외 거점(백제→왜, 발해 상경, 하얼빈 외): 데이터가 하얼빈 1건뿐 — 사료·좌표 수집이 선행. 주변국 육지는 평지(높이 7.04)라 지형 과제도 남음.
 - 사건 반경(24~36)과 시설 크기(본토 0.7)는 표현용 상한이며 실기기·패드 성능은 미측정. 저사양 검사 NOT_RUN.
 - 알려진 한계: 시설 이름 토큰 추정(별칭·이전 미판별), construction 에 섞인 철거·행사 기록, 궁 계열 정규식 오분류 가능(용장성 → 행정으로 분류됨).
