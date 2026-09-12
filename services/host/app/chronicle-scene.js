@@ -63,7 +63,7 @@ export class ChronicleScene {
     world.geography?.setActivities(plan);
     const claims=new Map(chronicle.data.claims.map(claim=>[claim.id,claim]));
     plan.events.push(...planContinuingCities(world.scenePackets||[],plan,claims,this.settlementZones));
-    plan.events.push(...planContinuingFacilities(world.scenePackets||[],plan,claims));
+    plan.events.push(...planContinuingFacilities(world.scenePackets||[],plan,claims,world));
     if(this.display.siteBackground)plan.events.push(...planHistoricalSites(chronicle.data,world.scenePackets||[],plan));
     plan.events.push(...stories.filter(s=>s.id===this.traditionId));
     if(!plan.events.some(e=>e.id===this.assets.activeScene))this.assets.activeScene=null;

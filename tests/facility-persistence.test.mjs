@@ -18,6 +18,14 @@ const byeolbangjin='scene-ej-byeolbangjin-1510',dondae='scene-jl2-ganghwa-dondae
 const flat={contains:()=>true,surfaceAt:()=>0,seaLevel:0};
 const sea={...flat,contains:()=>false};
 const compose=(row,extra={})=>composeHistoricalEvent({...row,...extra},new THREE.Vector3(),row.scenePlace.medium==='sea'?sea:flat);
+let actualWorld;
+async function getActualWorld(){
+  if(!actualWorld){
+    const {createEstimatedWorld}=await import('../scripts/check_estimated_islands.mjs');
+    actualWorld=createEstimatedWorld();
+  }
+  return actualWorld;
+}
 
 test('황룡사는 646·1237년에 존속하고 1238년 소실부터 사라진다',()=>{
   for(const year of [646,1237]){
@@ -38,6 +46,7 @@ test('경성역은 원 패킷이 활성인 1925년에는 중복하지 않고 192
   assert.equal(planContinuingFacilities(packets,{year:1926,events:[packets.find(s=>s.id===station)]}).some(r=>r.siteBackground.sourceSceneId===station),false);
   for(const year of [1926,2020,2100]){
     const continuing=at(station,year).continuing;
+    assert.equal(continuing.facilityType,'openEnded');
     assert.equal(continuing.untilYear,2100);assert.equal(continuing.openEnded,true);
     assert.equal(continuing.cappedBy,undefined);
   }
@@ -52,20 +61,32 @@ test('금성 축조 전승과 narrativeType·tradition 패킷은 어느 표시 �
   for(const year of [645,646,1795,2020])assert.equal(at(geumseong.id,year),undefined);
 });
 
-test('명활산성·남경 궁궐·돈대·별방진은 같은 왕조의 상한까지만 시설로 남는다',()=>{
-  for(const [id,visible,until] of [[myeonghwal,600,917],[namgyeong,1300,1391],[dondae,1795,1909],[byeolbangjin,1795,1909]]){
-    const row=at(id,visible);assert.ok(row,id);
-    assert.equal(row.continuing.untilYear,until);assert.equal(row.continuing.openEnded,false);
+test('남경 궁궐은 1300·1391년에 있고 1392년부터 없다',()=>{
+  for(const year of [1300,1391]){
+    const row=at(namgyeong,year);assert.ok(row);
+    assert.equal(row.continuing.facilityType,'dynasty-boundary');
+    assert.equal(row.continuing.untilYear,1391);assert.equal(row.continuing.openEnded,false);
     assert.equal(row.continuing.cappedBy,'dynasty-boundary');assert.equal(row.continuing.endedBy,null);
-    assert.equal(row.continuing.basis,'건립 기록 뒤 같은 왕조 안에서 존속 추정');
-    assert.ok(at(id,until),id);assert.equal(at(id,until+1),undefined,id);
   }
+  for(const year of [1392,2020])assert.equal(at(namgyeong,year),undefined);
   assert.equal(at(namgyeong,1300).label,'남경 궁궐 · 시설(추정 존속)');
-  assert.equal(at(byeolbangjin,2020),undefined);
 });
 
-test('상한은 착공이 아닌 건립 종료 뒤 첫 경계이며 경성역 외에는 1945년 경계도 적용한다',()=>{
-  const source=packets.find(s=>s.id===station);
+test('소멸 패킷 없는 사찰·산성·돈대·진·제방은 2020·2100년에도 남는다',()=>{
+  for(const id of [myeonghwal,dondae,byeolbangjin,'scene-syj128-haeinsa-802',
+    'scene-syj128-silsangsa-828','scene-syj128-mireuksa-sari-639',
+    'scene-syj135-samnyeonsanseong-chukjo-470','scene-syj122-byeokgolje-790','scene-ej-byeokgolje-1415']){
+    for(const year of [2020,2100]){
+      const row=at(id,year);assert.ok(row,id);
+      assert.equal(row.continuing.facilityType,'openEnded',id);
+      assert.equal(row.continuing.untilYear,2100);assert.equal(row.continuing.openEnded,true);
+      assert.equal(row.continuing.cappedBy,undefined);assert.equal(row.continuing.endedBy,null);
+    }
+  }
+});
+
+test('행정 시설 상한은 착공이 아닌 건립 종료 뒤 첫 경계이며 1945년 경계도 적용한다',()=>{
+  const source=packets.find(s=>s.id===namgyeong);
   for(const [endYear,untilYear] of [[917,917],[918,1391],[1391,1391],[1392,1909],[1909,1909],[1910,1944],[1925,1944],[1944,1944],[1945,2100],[2000,2100]]){
     const scene={...source,id:'boundary-case',startYear:500,endYear};
     const result=planContinuingFacilities([scene],{year:endYear+1,events:[]});
@@ -76,10 +97,10 @@ test('상한은 착공이 아닌 건립 종료 뒤 첫 경계이며 경성역 �
   }
 });
 
-test('1795년 한성 반경 1도 시설 수는 제시된 38개와 워크트리 변경 전 11개보다 줄어든다',t=>{
+test('1795년 한성에서는 남경 궁궐이 사라지고 북한산성은 남는다',t=>{
   const nearby=rows(1795).filter(row=>Math.hypot(row.place.lon-126.9768,row.place.lat-37.58)<=1);
-  t.diagnostic('1795 HANSEONG radius=1deg: supplied=38, worktree_before=11, after='+nearby.length);
-  assert.ok(nearby.length<38);assert.ok(nearby.length<11);
+  t.diagnostic('1795 HANSEONG radius=1deg: facilities='+nearby.length);
+  assert.ok(nearby.some(row=>row.siteBackground.sourceSceneId==='scene-jl2-bukhansanseong-1711'));
   assert.ok(!nearby.some(row=>row.siteBackground.sourceSceneId===namgyeong));
 });
 
@@ -151,19 +172,20 @@ test('좌표·이름을 함께 대조하고 가장 이른 소멸 기록을 선�
 });
 
 test('소멸 기록은 왕조 경계보다 이르거나 늦어도 상한에 우선한다',()=>{
-  const source=packets.find(s=>s.id===myeonghwal);
-  for(const year of [800,1000]){
+  for(const id of [myeonghwal,namgyeong]){
+    const source=packets.find(s=>s.id===id);
+    for(const year of id===myeonghwal?[800,1000]:[1300,1500]){
     const ending={...source,id:'destruction',kind:'fire',startYear:year,endYear:year,title:source.place.label+' 소실'};
     const [row]=planContinuingFacilities([source,ending],{year:year-1,events:[]});
     assert.equal(row.continuing.untilYear,year-1);assert.equal(row.continuing.endedBy,ending.id);
     assert.equal(row.continuing.openEnded,false);assert.equal(row.continuing.cappedBy,undefined);
     assert.deepEqual(planContinuingFacilities([source,ending],{year,events:[]}),[]);
+    }
   }
 });
 
 test('실제 제주·강화 링 폭이 시설 조립과 재사용 키의 크기 상한에 함께 반영된다',async t=>{
-  const {createEstimatedWorld}=await import('../scripts/check_estimated_islands.mjs');
-  const world=createEstimatedWorld();
+  const world=await getActualWorld();
   for(const [id,name,limit] of [[byeolbangjin,'Jeju',.6],[dondae,'Ganghwa',.14],[namgyeong,'Mainland',.7]]){
     const row=at(id,id===namgyeong?1300:1795),[x,z]=world.toWorld(...row.scenePlace.coordinates);
     const position=new THREE.Vector3(x,world.surfaceAt(x,z),z);
@@ -184,6 +206,89 @@ test('실제 제주·강화 링 폭이 시설 조립과 재사용 키의 크기 
     assert.equal(composeHistoricalEvent(smaller,position,world).displayScale,.05);
     assert.equal(JSON.parse(sceneVisualKey(smaller,position,false,100,world)).scale,.05);
   }
+});
+
+test('시설 키워드는 네 필드에서 분류하고 역의 ID가 달라도 같은 규칙을 쓴다',()=>{
+  const source={...packets.find(s=>s.id===station),id:'different-station-id',title:'시설 건립',
+    summary:'',sceneFunction:'',visualActions:{},startYear:800,endYear:800};
+  const groups={
+    'dynasty-boundary':['궁궐','궁','경복궁','전각','관아','객사','행궁','도감','감영','읍성 관청','기념 행사 시설'],
+    openEnded:['사찰','탑','산성','성곽','돈대','진','진(鎭)','제방','저수지','다리','도로','역','철도',
+      '비석','기념비','서원','향교','학교','공장','발전소','항만']
+  };
+  for(const [type,keywords] of Object.entries(groups))for(const keyword of keywords){
+    for(const field of ['title','summary','sceneFunction','visualActions']){
+      const scene={...source,[field]:keyword+' 건립'};
+      const [row]=planContinuingFacilities([scene],{year:801,events:[]});
+      assert.equal(row.continuing.facilityType,type,field+': '+keyword);
+      assert.equal(row.continuing.untilYear,type==='openEnded'?2100:917);
+    }
+  }
+  for(const patch of [{sceneFunction:'rail_station'},{title:'경성역사 준공'},
+    {visualActions:{fortress:true,constructionYears:[800]}},{visualActions:{type:'temple'}}]){
+    assert.equal(planContinuingFacilities([{...source,...patch}],{year:2020,events:[]})[0].continuing.facilityType,'openEnded');
+  }
+  for(const patch of [{},{title:'지역 공사',summary:'역사 자료로 확인된 사진'},
+    {visualActions:{fortress:false,constructionYears:[800]}}]){
+    const [row]=planContinuingFacilities([{...source,...patch}],{year:801,events:[]});
+    assert.equal(row.continuing.facilityType,'dynasty-boundary');
+    assert.equal(row.continuing.untilYear,917);
+  }
+});
+
+test('시설 제목을 주변·부속 시설 설명보다 우선한다',()=>{
+  const source=packets.find(s=>s.id===namgyeong);
+  for(const [title,summary,type] of [
+    ['불국사 창건','전각을 세운다','openEnded'],
+    ['남경 궁궐 완성','산성과 다리 곁 관아','dynasty-boundary'],
+    ['읍성 관청 건립','성곽 안 관아','dynasty-boundary']
+  ]){
+    const [row]=planContinuingFacilities([{...source,title,summary}],{year:1300,events:[]});
+    assert.equal(row.continuing.facilityType,type);
+  }
+});
+
+test('해안선 밖 표시 좌표는 제외하며 원 좌표·패킷은 바꾸지 않는다',()=>{
+  const source=packets.find(s=>s.id===station),ring=[[-1,-1],[1,-1],[1,1],[-1,1]];
+  const world={rings:[ring],toWorld:(lon,lat)=>[lon,lat],contains:()=>true};
+  const land={...source,place:{...source.place,lon:0,lat:0}};
+  const water={...source,place:{...source.place,lon:2,lat:0}};
+  const before=JSON.stringify([land,water]);
+  const query=scene=>planContinuingFacilities([scene],{year:2020,events:[]},undefined,world);
+  assert.equal(query(land).length,1);assert.deepEqual(query(water),[]);
+  assert.deepEqual(query({...land,place:{...land.place,displayCoordinates:[2,0]}}),[]);
+  assert.equal(query({...water,place:{...water.place,displayCoordinates:[0,0]}}).length,1);
+  assert.deepEqual(planContinuingFacilities([land],{year:2020,events:[]},undefined,{...world,rings:[]}),[]);
+  assert.equal(planContinuingFacilities([water],{year:2020,events:[]}).length,1);
+  assert.equal(JSON.stringify([land,water]),before);
+});
+
+test('실제 ChronicleWorld로 바다 시설을 제외하고 1450년 전주 반경 1도의 시설은 모두 육지에 둔다',async t=>{
+  const world=await getActualWorld();
+  const onLand=row=>world.rings.some(ring=>insideCoastline(...world.toWorld(...row.scenePlace.coordinates),ring));
+  const nearJeonju=row=>Math.hypot(row.place.lon-127.15,row.place.lat-35.82)<=1;
+  const before=rows(1450).filter(nearJeonju);
+  const water=before.filter(row=>!onLand(row));
+  const after=planContinuingFacilities(packets,plan(1450),undefined,world).filter(nearJeonju);
+  assert.ok(after.length>0);assert.ok(after.every(onLand));
+  assert.deepEqual(after.map(row=>row.id),before.filter(onLand).map(row=>row.id));
+  t.diagnostic('1450 JEONJU radius=1deg: '+JSON.stringify({before:before.length,after:after.length,
+    excluded:water.map(row=>({title:row.title,coordinates:row.scenePlace.coordinates})),
+    land:after.map(row=>({title:row.title,coordinates:row.scenePlace.coordinates}))}));
+  for(const year of [1300,1450,2020]){
+    assert.ok(planContinuingFacilities(packets,plan(year),undefined,world).every(onLand));
+  }
+  const current=planContinuingFacilities(packets,plan(2020),undefined,world);
+  for(const id of [station,byeolbangjin,'scene-syj128-haeinsa-802','scene-syj135-samnyeonsanseong-chukjo-470']){
+    assert.ok(current.some(row=>row.siteBackground.sourceSceneId===id),id);
+  }
+  const busan=at('scene-mod-busan-port-1876',2020);assert.ok(busan);assert.equal(onLand(busan),false);
+  assert.equal(current.some(row=>row.id===busan.id),false);
+  t.diagnostic('2020 BUSAN excluded: '+JSON.stringify({title:busan.title,coordinates:busan.scenePlace.coordinates}));
+  const source=packets.find(s=>s.id===station);
+  const seaScene={...source,place:{...source.place,lon:124,lat:35,displayCoordinates:[124,35]}};
+  assert.equal(world.rings.some(ring=>insideCoastline(...world.toWorld(124,35),ring)),false);
+  assert.deepEqual(planContinuingFacilities([seaScene],{year:2020,events:[]},undefined,world),[]);
 });
 
 test('링 순서와 꼭짓점 수 대신 면적으로 본토를 고르고 캐시 키는 링 폭 변경을 따른다',()=>{
