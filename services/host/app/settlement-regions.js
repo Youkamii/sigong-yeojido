@@ -1,4 +1,4 @@
-import {insideCoastline} from './coastline-index.js';
+import {insideCoastline,coastlineDistance} from './coastline-index.js';
 import {urbanLayout} from './urban-regions.js';
 import {projectCoordinates} from './history-coordinates.js';
 
@@ -19,6 +19,49 @@ export function planSettlementSites(world,zones=world.settlementZones||[]){
       modernProfile:zone.localityType!=='city'?null:{id:zone.id,lon:zone.lon,lat:zone.lat,radius,startYear:Math.max(1945,zone.startYear),growthYear:1980,lowSkyline:kind!=='regional',industry:zone.industry}}];
   }).sort((a,b)=>a.id.localeCompare(b.id));
 }
+
+// 추정 배경 사이트: 사료 없는 익명 마을·밭. 문서화 zone 이 없는 지역·시대에도
+// 풍경이 비지 않도록 격자에서 만든다(화면 표현용, 역사 주장이 아님). seed 결정론.
+export function planEstimatedSites(world){
+  const candidates=[],b=world.bounds;
+  for(let gx=Math.ceil(b.minX/24);gx*24<b.maxX;gx++)for(let gz=Math.ceil(b.minZ/24);gz*24<b.maxZ;gz++){
+    const id=`estimated-region:${gx}:${gz}`,seed=seedFor(`settlement-region:${gx}:${gz}`),r=randomFor(seed);
+    const x=gx*24+(r()-.5)*14,z=gz*24+(r()-.5)*14;
+    const ring=world.rings.find(ring=>insideCoastline(x,z,ring));if(!ring)continue;
+    const y=world.surfaceAt(x,z);if(!Number.isFinite(y)||y>(world.seaLevel??7)+13)continue;
+    let kind=seed%19===0?'regional':seed%5===0?'town':'village';
+    let radius=settings[kind].radius;
+    const fits=size=>{
+      if(coastlineDistance(x,z,ring,size+1)<size+1)return false;
+      const samples=[];
+      for(let dx=-size;dx<=size;dx+=size/2)for(let dz=-size;dz<=size;dz+=size/2){
+        if(dx*dx+dz*dz>size*size)continue;
+        const h=world.surfaceAt(x+dx,z+dz);if(!Number.isFinite(h))return false;
+        samples.push(h);
+      }
+      return Math.max(...samples)-Math.min(...samples)<Math.min(3.6,size*.15);
+    };
+    if(!fits(radius)){kind='village';radius=settings[kind].radius;if(!fits(radius))continue;}
+    const angle=r()*Math.PI*2,latitude=world.coordinatesAt?world.coordinatesAt(x,z)[1]:null;
+    candidates.push({id,x,z,latitude,seed,kind,radius,angle,scale:1,layout:seed%4,estimated:true,documented:false,startYear:-Infinity,endYear:Infinity,basis:'추정 배경 — 사료 없음'});
+  }
+  // 큰 중심지가 먼저 자리를 잡고, 위도별 전국 상한은 두지 않는다.
+  candidates.sort((a,b)=>b.radius-a.radius||a.seed-b.seed);
+  const sites=[];
+  for(const site of candidates)if(sites.every(other=>Math.hypot(site.x-other.x,site.z-other.z)>site.radius+other.radius+2))sites.push(site);
+  return sites.sort((a,b)=>a.id.localeCompare(b.id));
+}
+
+// 시대 계수: 추정 사이트 중 화면에 올릴 비율. 풍경 밀도 표현용 추정치이며 역사 주장이 아니다.
+const estimatedPeriodRatio={'early-settlement':.10,'early-farming':.18,'three-kingdoms':.30,'goryeo':.38,'joseon':.50,
+  'late-joseon':.55,'opening-period':.55,'early-modern':.55,'postwar':.60,'modern-farming':.60,'early-roof-transition':.60,'roof-transition':.60,'mechanized':.60};
+export function estimatedSiteThreshold(periodId,latitude){
+  const period=estimatedPeriodRatio[periodId]??.45;
+  // 지역 계수: 제주(34.2 미만) 0.6, 북부(38.5 초과) 0.7 — 역시 표현용 추정치.
+  const region=!Number.isFinite(latitude)?1:latitude<34.2?.6:latitude>38.5?.7:1;
+  return period*region;
+}
+export function estimatedSitePasses(site,periodId){return site.seed%100<estimatedSiteThreshold(periodId,site.latitude)*100;}
 
 export function settlementSiteActive(site,year){return site.kind==='urban'?year>=site.profile.startYear:site.startYear<=year&&year<=site.endYear;}
 export function settlementSiteForYear(site,year){return site.modernProfile&&year>=site.modernProfile.startYear?{...site,kind:'urban',profile:site.modernProfile}:site;}
