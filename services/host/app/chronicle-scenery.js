@@ -4,23 +4,31 @@ import {insideCoastline} from './coastline-index.js';
 import {CountrysidePaths} from './chronicle-paths.js';
 import {sceneryOverview,setOverviewDetails} from './scenery-overview.js';
 import {sceneryPeriod,sitePeriod,sceneryRecipe,sceneryHouseRecipe} from './scenery-period.js';
-import {planSettlementSites,planEstimatedSites,estimatedSitePasses,settlementLayout,settlementSiteActive,settlementSiteForYear} from './settlement-regions.js';
+import {planSettlementSites,planEstimatedSites,estimatedSitePasses,estimatedIslandSettings,settlementLayout,settlementSiteActive,settlementSiteForYear} from './settlement-regions.js';
 import {planUrbanSites} from './urban-regions.js';
 import {buildSettlementZones} from './inhabited-zones.js';
 
-// 문서화·도시·사건에 양보한 뒤 시대 문턱을 적용하고, 빈 링은 최소 seed 한 곳을 남긴다.
+// 문서화·도시·사건에 양보한 뒤 시대 문턱 적용. 작은 섬은 최소 보장 없이 집 몇 채만 남긴다.
 export function selectEstimatedSites(estimated,documented,urban,periodId,available=()=>true){
   const eligible=estimated.filter(s=>documented.every(d=>Math.hypot(s.x-d.x,s.z-d.z)>s.radius+d.radius+6)
     &&urban.every(u=>Math.hypot(s.x-u.x,s.z-u.z)>u.radius)
     &&available(s));
   const selected=new Set(eligible.filter(s=>estimatedSitePasses(s,typeof periodId==='function'?periodId(s):periodId))),rings=new Map();
   for(const site of eligible){
-    if(!Number.isInteger(site.ringIndex))continue;
+    if(!Number.isInteger(site.ringIndex)||site.islandArea<estimatedIslandSettings.mediumArea)continue;
     if(!rings.has(site.ringIndex))rings.set(site.ringIndex,[]);
     rings.get(site.ringIndex).push(site);
   }
   for(const sites of rings.values())if(!sites.some(s=>selected.has(s)))
     selected.add(sites.reduce((a,b)=>a.seed<b.seed||a.seed===b.seed&&a.id<b.id?a:b));
+  // 카메라 이동으로 마을이 바뀌지 않도록 world 격자별 상한을 적용한다.
+  // 큰 섬을 먼저 보존하고 나머지는 seed 순으로 고른다. 지역 상한은 최소 보장보다 우선한다.
+  const cells=new Map(),{cellSize,cellLimit,largeArea}=estimatedIslandSettings;
+  const islands=[...selected].filter(s=>Number.isFinite(s.islandArea)).sort((a,b)=>Number(b.islandArea>=largeArea)-Number(a.islandArea>=largeArea)||a.seed-b.seed||a.id.localeCompare(b.id));
+  for(const site of islands){
+    const key=`${Math.floor(site.x/cellSize)}:${Math.floor(site.z/cellSize)}`,count=cells.get(key)||0;
+    if(count>=cellLimit)selected.delete(site);else cells.set(key,count+1);
+  }
   return eligible.filter(s=>selected.has(s));
 }
 

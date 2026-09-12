@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: estimated sites are deterministic and marked as undocumented background
+ok 1 - estimated sites are deterministic and marked as undocumented background
+  ---
+  duration_ms: 25.6159
+  type: 'test'
+  ...
+# Subtest: medium island grids preserve mainland sites even when the largest ring is not first
+ok 2 - medium island grids preserve mainland sites even when the largest ring is not first
+  ---
+  duration_ms: 17.9287
+  type: 'test'
+  ...
+# Subtest: island minimum does not override invalid elevation, nonfinite terrain or steep slopes
+ok 3 - island minimum does not override invalid elevation, nonfinite terrain or steep slopes
+  ---
+  duration_ms: 149.9688
+  type: 'test'
+  ...
+# Subtest: medium and large empty rings select their lowest eligible seed in prehistory and Joseon
+ok 4 - medium and large empty rings select their lowest eligible seed in prehistory and Joseon
+  ---
+  duration_ms: 0.7103
+  type: 'test'
+  ...
+# Subtest: real ChronicleWorld islands reach their area minimum and preserve mainland counts
+ok 5 - real ChronicleWorld islands reach their area minimum and preserve mainland counts
+  ---
+  duration_ms: 1623.9925
+  type: 'test'
+  ...
+# Subtest: area boundaries omit tiny rings and never guarantee small island candidates or selection
+ok 6 - area boundaries omit tiny rings and never guarantee small island candidates or selection
+  ---
+  duration_ms: 36.0199
+  type: 'test'
+  ...
+# Subtest: small island layouts have 2 to 4 full-size houses within radius 6 and no village roads or fields
+ok 7 - small island layouts have 2 to 4 full-size houses within radius 6 and no village roads or fields
+  ---
+  duration_ms: 0.4408
+  type: 'test'
+  ...
+# Subtest: island cell cap is deterministic across rings and boundaries, with mainland unaffected
+ok 8 - island cell cap is deterministic across rings and boundaries, with mainland unaffected
+  ---
+  duration_ms: 0.5171
+  type: 'test'
+  ...
+# Subtest: real world Mokpo density is bounded, Jeju survives and mainland stays at 110
+ok 9 - real world Mokpo density is bounded, Jeju survives and mainland stays at 110
+  ---
+  duration_ms: 1811.6182
+  type: 'test'
+  ...
+# Subtest: same-period year changes reuse candidates and do not refresh selection
+ok 10 - same-period year changes reuse candidates and do not refresh selection
+  ---
+  duration_ms: 62.4799
+  type: 'test'
+  ...
+# Subtest: threshold grows with period and shrinks for Jeju and the north
+ok 11 - threshold grows with period and shrinks for Jeju and the north
+  ---
+  duration_ms: 13.03
+  type: 'test'
+  ...
+# Subtest: estimated sites yield to documented, urban and occupied areas
+ok 12 - estimated sites yield to documented, urban and occupied areas
+  ---
+  duration_ms: 11.697
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3967.2577

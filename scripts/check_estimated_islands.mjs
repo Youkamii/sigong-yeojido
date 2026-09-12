@@ -48,6 +48,25 @@ export function estimatedIslandReport(world){
       name:world.islandRings.find(r=>r.ring===ring)?.island.id||'',candidates:sites.filter(s=>ringOf(s)===i).length}])};
 }
 
+export function estimatedDensityReport(world){
+  const scenery=new ChronicleScenery({world,engine:{add(){}},release:g=>g.removeFromParent()});
+  const areas=world.rings.map(r=>Math.abs(r.reduce((a,p,i)=>a+p[0]*r[(i+1)%r.length][1]-r[(i+1)%r.length][0]*p[1],0))/2);
+  const mainland=areas.indexOf(Math.max(...areas)),jeju=world.rings.findIndex(r=>insideCoastline(...world.toWorld(126.55,33.38),r));
+  const rows=[['mokpo',1900,126.39,34.79],['jeju',1795,126.55,33.38],['gangnam',2020,127.0473,37.5172]].map(([name,year,lon,lat])=>{
+    scenery.setYear(year);scenery.refreshPeriod();
+    const [x,z]=world.toWorld(lon,lat),near=s=>name==='jeju'?s.ringIndex===jeju:Math.hypot(s.x-x,s.z-z)<=100;
+    const candidates=scenery.sites.filter(s=>s.estimated&&near(s));
+    const selected=candidates.filter(s=>scenery.estimatedIds.has(s.id)),cells=scenery.landscapeCells.filter(c=>near(c.site));
+    const estimated=cells.filter(c=>c.site.estimated);
+    return {name,year,lon,lat,radius:name==='jeju'?null:100,candidates:candidates.length,selected:selected.length,
+      islandSelected:selected.filter(s=>s.ringIndex!==mainland).length,estimatedRenderedSites:estimated.length,
+      estimatedHouses:estimated.reduce((n,c)=>n+c.layout.houses.length,0),renderedSites:cells.length,
+      houses:cells.reduce((n,c)=>n+c.layout.houses.length,0),farTriangles:scenery.stats.farTriangles};
+  });
+  return {mainlandCandidates:scenery.sites.filter(s=>s.estimated&&s.ringIndex===mainland).length,
+    mode:'Real world terrain, documented zones, urban profiles and scenery geometry; no event occupancy; canvas drawing stubbed. farTriangles is nationwide.',rows};
+}
+
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
-  console.log(JSON.stringify(estimatedIslandReport(createEstimatedWorld(process.argv.includes('--outline-only'))),null,2));
+  console.log(JSON.stringify((process.argv.includes('--density')?estimatedDensityReport:estimatedIslandReport)(createEstimatedWorld(process.argv.includes('--outline-only'))),null,2));
 }

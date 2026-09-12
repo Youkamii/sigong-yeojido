@@ -6,6 +6,10 @@ import {sitePeriod} from './scenery-period.js';
 const seedFor=text=>{let n=2166136261;for(const c of text)n=Math.imul(n^c.charCodeAt(0),16777619);return n>>>0;};
 const randomFor=seed=>()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
 const settings={village:{radius:12,houses:28,fields:10},town:{radius:19,houses:76,fields:15},regional:{radius:28,houses:180,fields:22}};
+// 화면 밀도 기준: 목포 다도해의 작은 링마다 마을이 생기는 과밀을 줄인다.
+// 면적은 world 단위 제곱이며 실제 인구·거주 여부에 대한 역사 주장이 아니다.
+export const estimatedIslandSettings=Object.freeze({smallArea:20,mediumArea:120,largeArea:600,
+  smallRadius:6,smallFootprint:.25,smallMinHouses:2,smallMaxHouses:4,cellSize:48,cellLimit:3});
 
 // Location and time come from documented habitation zones. Seeds vary only the
 // anonymous parcels inside them, never where people are assumed to have lived.
@@ -54,15 +58,16 @@ export function planEstimatedSites(world){
   for(const site of candidates)if(sites.every(other=>Math.hypot(site.x-other.x,site.z-other.z)>site.radius+other.radius+2))sites.push(site);
   // 섬은 별도로 배치해 본토의 격자·seed·간격을 바꾸지 않는다.
   for(let ringIndex=0;ringIndex<world.rings.length;ringIndex++){
-    if(ringIndex===mainland)continue;
+    if(ringIndex===mainland||areas[ringIndex]<estimatedIslandSettings.smallArea)continue;
     const ring=world.rings[ringIndex],bounds=ring.bounds||{
       minX:Math.min(...ring.map(p=>p[0])),maxX:Math.max(...ring.map(p=>p[0])),
       minZ:Math.min(...ring.map(p=>p[1])),maxZ:Math.max(...ring.map(p=>p[1]))};
     const width=bounds.maxX-bounds.minX,depth=bounds.maxZ-bounds.minZ;
     if(width<=0||depth<=0||areas[ringIndex]<=0)continue;
-    const step=Math.max(8,Math.min(24,width/4)),minimum=Math.max(2,Math.ceil(areas[ringIndex]/(24*24)));
+    const islandArea=areas[ringIndex],small=islandArea<estimatedIslandSettings.mediumArea;
+    const step=Math.max(8,Math.min(24,width/4)),minimum=islandArea>=estimatedIslandSettings.largeArea?Math.max(2,Math.ceil(islandArea/(24*24))):small?0:1;
     const islandSites=[];
-    // 작은 섬이나 굴곡진 해안에서 부족하면 격자를 세분해 다시 찾는다.
+    // 중간·큰 섬은 후보가 부족하면 격자를 세분해 다시 찾는다.
     // 고도·경사 조건을 통과하지 못한 지점은 최소 개수 때문에 강제로 넣지 않는다.
     for(let level=0;level<8&&(level===0||islandSites.length<minimum);level++){
       const nx=Math.max(1,Math.ceil(width/step))*2**level,nz=Math.max(1,Math.ceil(depth/step))*2**level;
@@ -72,7 +77,9 @@ export function planEstimatedSites(world){
         const x=bounds.minX+(ix+.5+(r()-.5)*.5)*dx,z=bounds.minZ+(iz+.5+(r()-.5)*.5)*dz;
         if(!insideCoastline(x,z,ring))continue;
         const y=world.surfaceAt(x,z);if(!Number.isFinite(y)||y>(world.seaLevel??7)+13)continue;
-        const radius=Math.min(settings.village.radius,dx*.4,dz*.4),margin=radius*.2;
+        // 집 2~4채는 마을보다 좁은 지형 영역을 검사한다.
+        const footprint=small?estimatedIslandSettings.smallFootprint:.4;
+        const radius=Math.min(settings.village.radius,dx*footprint,dz*footprint),margin=radius*.2;
         if(coastlineDistance(x,z,ring,radius+margin)<radius+margin)continue;
         const samples=[];
         for(let sx=-radius;sx<=radius;sx+=radius/2)for(let sz=-radius;sz<=radius;sz+=radius/2){
@@ -80,8 +87,9 @@ export function planEstimatedSites(world){
           samples.push(world.surfaceAt(x+sx,z+sz));
         }
         if(samples.some(h=>!Number.isFinite(h))||Math.max(...samples)-Math.min(...samples)>=Math.min(3.6,radius*.15))continue;
-        local.push({id,x,z,latitude:world.coordinatesAt?world.coordinatesAt(x,z)[1]:null,seed,kind:'village',radius,
-          angle:r()*Math.PI*2,scale:1,layout:seed%4,ringIndex,estimated:true,documented:false,
+        // 작은 섬도 지형 검사는 격자 안에서 한다. 반경 6의 집 배치는 실제 해안에서 다시 잘린다.
+        local.push({id,x,z,latitude:world.coordinatesAt?world.coordinatesAt(x,z)[1]:null,seed,kind:'village',radius:small?estimatedIslandSettings.smallRadius:radius,
+          angle:r()*Math.PI*2,scale:1,layout:seed%4,ringIndex,islandArea,estimated:true,documented:false,
           startYear:-Infinity,endYear:Infinity,basis:'추정 배경 — 사료 없음'});
       }
       local.sort((a,b)=>a.seed-b.seed);
@@ -111,6 +119,12 @@ export function settlementSiteForYear(site,year){return site.modernProfile&&year
 
 export function settlementLayout(site,periodOrYear){
   if(site.kind==='urban')return urbanLayout(site,periodOrYear);
+  if(site.estimated&&site.islandArea<estimatedIslandSettings.mediumArea){
+    const r=randomFor(site.seed),count=estimatedIslandSettings.smallMinHouses+site.seed%(estimatedIslandSettings.smallMaxHouses-estimatedIslandSettings.smallMinHouses+1);
+    const houses=Array.from({length:count},(_,i)=>({x:(i%2?1:-1)*1.5,z:count===2?0:(Math.floor(i/2)*2-1)*1.5,
+      scale:.42+r()*.23,angle:(r()-.5)*.18,archetype:'rural_cottage',lotIndex:i}));
+    return {houses,fields:[],roads:[],density:1};
+  }
   if(site.estimated&&site.radius<settings.village.radius){
     const scale=site.radius/settings.village.radius,layout=settlementLayout({...site,radius:settings.village.radius},periodOrYear);
     const point=([x,z])=>[x*scale,z*scale];
