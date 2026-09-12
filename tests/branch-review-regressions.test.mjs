@@ -11,6 +11,7 @@ const {extendFigureCatalog}=await import('../services/host/app/period-figures.js
 const {sceneVisualKey}=await import('../services/host/app/chronicle-persistence.js');
 const {urbanRegionAt}=await import('../services/host/app/urban-regions.js');
 const {composeHistoricalEvent}=await import('../services/host/app/chronicle-event-scenes.js');
+const {planContinuingFacilities}=await import('../services/host/app/facility-persistence.js');
 const chronicle=await import('../services/host/app/chronicle.js');
 // 기존 city-lod 테스트와 같은 캔버스 대체. 텍스처 그리기만 생략한다.
 globalThis.document={createElement:()=>({getContext:()=>new Proxy({getImageData:()=>({data:new Uint8ClampedArray(512*512*4)}),createImageData:()=>({data:new Uint8ClampedArray(512*512*4)})},{get:(o,k)=>o[k]||(()=>({addColorStop(){}}))})})};
@@ -29,6 +30,23 @@ function assetsFor(world){
   return assets;
 }
 const rebuild=(assets,events)=>assets.rebuild({year:1801,events,people:[]});
+
+test('시설 외형 변경은 실제 rebuild의 대표 모델을 교체하고 이후 재사용한다',()=>{
+  const packet=packets.find(p=>p.id==='scene-mod-seoul-station-1925');
+  const [row]=planContinuingFacilities([packet],{year:1926,events:[]});
+  const assets=assetsFor(flat);
+  rebuild(assets,[row]);
+  const first=assets.sceneCache.get(row.id).scene;
+  assert.equal(first.models.find(m=>m.primary)?.archetype,'station');
+  const changed={...row,facilityLook:'palace',continuing:{...row.continuing,facilityLook:'palace'}};
+  rebuild(assets,[changed]);
+  const second=assets.sceneCache.get(row.id).scene;
+  assert.notEqual(second,first);
+  assert.equal(second.models.find(m=>m.primary)?.archetype,'civic_hall');
+  assert.ok(!second.models.some(m=>/courtyard|figure|human|worker|handcart/.test(m.archetype)));
+  rebuild(assets,[changed]);
+  assert.equal(assets.sceneCache.get(row.id).scene,second);
+});
 
 for(const medium of ['sea',undefined])test(`1: 도시 (0,1) 옆 바다 사건 (0,-5)을 rebuild해도 바다에 남는다 (${medium||'naval fallback'})`,()=>{
   const world={...flat,contains:(x,z)=>z>=0},assets=assetsFor(world);

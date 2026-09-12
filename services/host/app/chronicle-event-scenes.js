@@ -34,6 +34,7 @@ function fireAt(group,position,scale,animated){
 /** Local composition explains the event; these offsets are not new geographic facts. */
 export function composeHistoricalEvent(event,position,world){
   const facility=event.continuing?.kind==='facility';
+  const facilityLook=facility?event.continuing.facilityLook:null;
   // 시설은 건립 종료 당시 외형을 유지하며 당시 인물과 사건 효과를 재연하지 않는다.
   if(facility)event={...event,year:event.endYear??event.continuing.sinceYear-1,participants:[],participantGroups:[],sides:[],
     effects:{...event.effects,fire:{enabled:false},attack:{enabled:false}}};
@@ -44,24 +45,26 @@ export function composeHistoricalEvent(event,position,world){
   const modern=event.year>=1876,shipType=modern?'motor_ship':'ship';
   const alliedFleet=event.participants.some(p=>p.presence==='on-site'&&p.side==='naval'&&/명나라 수군|명 수군/.test(p.role));
   const soldier=modern?'rifle_soldier':'spearman';
-  const launch=modern&&/누리호|발사체/.test(actions);
-  const temple=/황룡사|불국사|감은사|흥륜사|사찰|사원/.test(actions)&&event.archetype==='construction';
-  const rail=modern&&/지하철|철도|열차/.test(actions),industry=modern&&/제철|고로|공업단지|공업센터|원자력발전소/.test(actions);
-  const groundbreaking=!facility&&industry&&/기공식/.test(actions),power=industry&&/원자력발전소/.test(actions);
-  const music=!sea&&/가얏고|가야금|음악 전습/.test(actions)&&/가르|배우|배운|전습/.test(actions);
-  const relief=!sea&&/구휼/.test(actions)&&/곡식|구휼미/.test(actions);
-  const road=modern&&/고속도로/.test(actions),personalFire=/분신|자해/.test(actions),blockFire=/대장경판|경판|판목/.test(actions)&&event.effects.fire?.enabled;
+  const launch=!facility&&modern&&/누리호|발사체/.test(actions);
+  const temple=!facility&&/황룡사|불국사|감은사|흥륜사|사찰|사원/.test(actions)&&event.archetype==='construction';
+  const rail=!facility&&modern&&/지하철|철도|열차/.test(actions);
+  const facilityHarbor=facilityLook==='industry'&&/항만|부두|축항/.test(actions);
+  const industry=facility?facilityLook==='industry'&&!facilityHarbor:modern&&/제철|고로|공업단지|공업센터|원자력발전소/.test(actions);
+  const groundbreaking=!facility&&industry&&/기공식/.test(actions),power=industry&&(facility?/발전소/:/원자력발전소/).test(actions);
+  const music=!facility&&!sea&&/가얏고|가야금|음악 전습/.test(actions)&&/가르|배우|배운|전습/.test(actions);
+  const relief=!facility&&!sea&&/구휼/.test(actions)&&/곡식|구휼미/.test(actions);
+  const road=!facility&&modern&&/고속도로/.test(actions),personalFire=!facility&&/분신|자해/.test(actions),blockFire=!facility&&/대장경판|경판|판목/.test(actions)&&event.effects.fire?.enabled;
   const paperFire=blockFire||personalFire&&/화형식|법전.*태/.test(actions);
-  const kiln=/백자|관요|사기제조장|분원리/.test(actions),irrigation=/벽골제|청못|청제|수리 시설|관개/.test(actions);
+  const kiln=!facility&&/백자|관요|사기제조장|분원리/.test(actions),irrigation=!facility&&/벽골제|청못|청제|수리 시설|관개/.test(actions);
   // participantGroups 가 있으면 sides 기반 invaders 플래그는 무시한다 (집단이 stance 로 배치를 정한다).
   const groups=Array.isArray(event.participantGroups)&&event.participantGroups.length?event.participantGroups:null;
   const invaders=!groups&&(event.effects.attack?.enabled||[...(event.sides||[]),...event.participants].some(p=>p.side==='invader'&&p.presence==='on-site'));
-  const harbor=!sea&&['construction','naval'].includes(event.archetype)&&event.effects.ships?.enabled;
-  const teaching=!sea&&/강학|강의|교육|서당|서원|성균관|학교|학사/.test(actions)&&['court','publication','assembly'].includes(event.archetype);
-  const market=!sea&&/장시|시장|교역|무역|상업/.test(actions)&&['court','construction'].includes(event.archetype);
-  const fortress=event.visualActions?.fortress;
-  const sceneFunction=SCENE_FUNCTIONS.includes(event.sceneFunction)?event.sceneFunction:null;
-  const compositionKind=sceneFunction||(fortress?'fortress':music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype);
+  const harbor=facility?facilityHarbor:!sea&&['construction','naval'].includes(event.archetype)&&event.effects.ships?.enabled;
+  const teaching=!facility&&!sea&&/강학|강의|교육|서당|서원|성균관|학교|학사/.test(actions)&&['court','publication','assembly'].includes(event.archetype);
+  const market=!facility&&!sea&&/장시|시장|교역|무역|상업/.test(actions)&&['court','construction'].includes(event.archetype);
+  const fortress=!facility&&event.visualActions?.fortress;
+  const sceneFunction=(facility?['temple','rail_station']:SCENE_FUNCTIONS).includes(event.sceneFunction)&&(!facility||['temple','rail_station'].includes(facilityLook))?event.sceneFunction:null;
+  const compositionKind=facilityLook==='palace'?'palace':sceneFunction||(fortress?'fortress':music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype);
   let displayScale=event.scenePlace?.displayScale||1;
   const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates
     &&urbanRegionAt(...event.scenePlace.coordinates,event.year);
@@ -78,7 +81,7 @@ export function composeHistoricalEvent(event,position,world){
   const radius=facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
   if(!event.compact&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,event.maxRadius/radius);
   const model=(archetype,dx,dz,scale=1,extra={})=>{
-    if(facility&&(/worker|handcart|groundbreaking/.test(archetype)||extra.action==='working'||extra.role==='worker'))return;
+    if(facility&&(/worker|handcart|groundbreaking|building_frame|human|figure|monk|scribe|spearman|soldier|commander|ruler|scholar/.test(archetype)||extra.person||extra.role||extra.action==='working'))return;
     if(!modern)archetype=({palace:'korean_hall',house:'korean_house',gatehouse:'korean_gate',academy_hall:'korean_academy',courtyard_house:'korean_courtyard'})[archetype]||archetype;
     dx*=displayScale;dz*=displayScale;scale*=displayScale;
     let x=position.x+dx,z=position.z+dz;
@@ -145,7 +148,9 @@ export function composeHistoricalEvent(event,position,world){
       }
     });
   };
-  if(sceneFunction==='rail_station'){
+  if(facilityLook==='palace'){
+    model(modern?'civic_hall':'palace',0,0,1.8,{primary:true});
+  }else if(sceneFunction==='rail_station'){
     model('station',0,-10,1.4,{primary:true});
     if(!event.compact){
       const base=new THREE.Mesh(new THREE.BoxGeometry(65*displayScale,.12*displayScale,4*displayScale),new THREE.MeshStandardMaterial({color:'#817765',roughness:1}));
@@ -347,7 +352,7 @@ export function composeHistoricalEvent(event,position,world){
     model(paperFire?'book':'banner',0,0,paperFire?1.5:2,{primary:true});
     if(!event.compact){model(blockFire?'academy_hall':'market',0,-12,1.5);for(let i=0;i<6;i++)model(blockFire?'book':'human',-9+i*4,5,1.5);}
   }else if(harbor){
-    model('courtyard_house',0,0,1.4,{primary:true});
+    model(facility?'boat_slip':'courtyard_house',0,0,1.4,{primary:true});
     if(!event.compact){
       let shore=null;
       for(let r=1;r<48&&!shore;r+=1)for(let i=0;i<48;i++){
@@ -432,7 +437,7 @@ export function composeHistoricalEvent(event,position,world){
     }
   }
   if(!event.compact&&event.visualActions?.fireTargets?.includes('rural_store'))model('rural_store',-8,-16,1.5);
-  if(!sea&&!harbor&&!event.compact&&event.effects.ships?.enabled){
+  if(!facility&&!sea&&!harbor&&!event.compact&&event.effects.ships?.enabled){
     let shore=null;
     for(let r=3;r<48&&!shore;r+=2)for(let i=0;i<48;i++){
       const angle=i*Math.PI/24,dx=Math.cos(angle)*r,dz=Math.sin(angle)*r;
@@ -472,6 +477,8 @@ export function composeHistoricalEvent(event,position,world){
   }
   const anonymousRoles={human:'commoner',period_figure:'commoner',modern_figure:'commoner',spearman:'soldier',rifle_soldier:'soldier',period_commander:'commander',period_scholar:'scholar',scribe:'scholar',period_monk:'monk',period_ruler:'ruler'};
   for(const [seed,row] of models.entries())if(!row.person){
+    // 궁궐 시설의 대표 외형은 위에서 고른 korean_hall/civic_hall을 그대로 쓴다.
+    if(facilityLook==='palace'&&row.primary)continue;
     const role=anonymousRoles[row.archetype];
     row.archetype=role?figureArchetype(role,event.year):buildingArchetype(row.archetype,event.year,{seed,latitude:event.scenePlace?.coordinates?.[1]});
   }
