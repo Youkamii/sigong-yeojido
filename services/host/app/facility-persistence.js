@@ -25,6 +25,7 @@ const coordinates=place=>Number.isFinite(place?.lon)&&Number.isFinite(place?.lat
 // 경계는 실제 철거 연도가 아닌 추정의 한계다. 소멸 기록은 경계 전후에 관계없이 우선한다.
 // 1945년 이후에는 다음 경계가 없어 두 유형 모두 2100년 상한이다. 영구 존속이나 현존 확인을 뜻하지 않는다.
 // world가 있으면 실제 표시 좌표가 어느 해안선 링에도 속하지 않는 시설은 제외한다(좌표 이동 없음).
+// 현재 지형 고도가 유한하지 않거나 (seaLevel??7)+0.3 이하이면 제방·저수지도 제외하며, 과거 지형은 복원하지 않는다.
 // world 생략 호출은 기존처럼 좌표를 검사하지 않는다. 링은 현재 지도 기준이며 과거 해안선을 복원하지 않는다.
 const administrative=/궁궐|행궁|전각|관아|객사|도감|감영|관청|청사|의사당|본영|병영|통제영|왜관|사고|서고|기념\s*행사|기념식|기공식|(?:^|\s|[가-힣])궁(?=[\s·—(의을에]|$)|(?:^|[\s_])(?:palace|government|office|ceremony)(?=[\s_]|$)/;
 const durable=/사찰|가람|절터|서원|향교|학교|목탑|석탑|서탑|동탑|산성|성곽|성벽|읍성|도성|축성|돈대|鎭|제방|저수지|벽골제|청제|다리|교량|도로|철도|지하철|비석|기념비|정계비|표석|공장|제철소|발전소|항만|항구|부두|축항|(?:^|\s)(?:절|탑|역|진)(?=[\s을를의에·—(]|$)|[가-힣]+사\s*(?:창건|건립)|[가-힣]+진\s*(?:설치|이설|축성|축조)|[가-힣]+역사?\s*(?:준공|건립|개통|완공)|(?:^|[\s_])(?:temple|pagoda|fortress|fort|wall|reservoir|dam|bridge|road|rail|railway|station|stele|monument|school|factory|power|port|harbor)(?=[\s_]|$)/;
@@ -54,6 +55,8 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
     if(world){
       const [x,z]=world.toWorld(...displayCoordinates);
       if(!Number.isFinite(x)||!Number.isFinite(z)||!world.rings.some(ring=>insideCoastline(x,z,ring)))continue;
+      const y=world.surfaceAt(x,z);
+      if(!Number.isFinite(y)||y<=(world.seaLevel??7)+.3)continue;
     }
     const name=facilityName(scene);
     const tokens=name.replace(/\([^)]*\)/g,' ').split(/[\s·—~()[\]]+/).filter(Boolean);

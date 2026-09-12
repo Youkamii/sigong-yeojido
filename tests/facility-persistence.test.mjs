@@ -250,7 +250,7 @@ test('시설 제목을 주변·부속 시설 설명보다 우선한다',()=>{
 
 test('해안선 밖 표시 좌표는 제외하며 원 좌표·패킷은 바꾸지 않는다',()=>{
   const source=packets.find(s=>s.id===station),ring=[[-1,-1],[1,-1],[1,1],[-1,1]];
-  const world={rings:[ring],toWorld:(lon,lat)=>[lon,lat],contains:()=>true};
+  const world={rings:[ring],toWorld:(lon,lat)=>[lon,lat],contains:()=>true,surfaceAt:()=>8};
   const land={...source,place:{...source.place,lon:0,lat:0}};
   const water={...source,place:{...source.place,lon:2,lat:0}};
   const before=JSON.stringify([land,water]);
@@ -263,25 +263,57 @@ test('해안선 밖 표시 좌표는 제외하며 원 좌표·패킷은 바꾸�
   assert.equal(JSON.stringify([land,water]),before);
 });
 
+test('링 안 시설도 표시 좌표 고도가 해수면 여유 높이 이하이거나 유한하지 않으면 제외한다',()=>{
+  const ring=[[-1,-1],[1,-1],[1,1],[-1,1]];
+  for(const id of [station,'scene-syj122-byeokgolje-790','scene-ej-byeokgolje-1415']){
+    const source=packets.find(s=>s.id===id);
+    const scene={...source,place:{...source.place,lon:0,lat:0,displayCoordinates:[.5,.5]}};
+    for(const seaLevel of [undefined,null,0,12]){
+      const level=seaLevel??7;
+      const query=height=>planContinuingFacilities([scene],{year:2020,events:[]},undefined,{
+        rings:[ring],toWorld:(lon,lat)=>[lon,lat],seaLevel,
+        surfaceAt:(x,z)=>{assert.deepEqual([x,z],[.5,.5]);return height;}
+      });
+      for(const height of [level-1,level,level+.3,NaN,Infinity,-Infinity]){
+        assert.deepEqual(query(height),[],id+': '+seaLevel+', '+height);
+      }
+      assert.equal(query(level+.31)[0]?.siteBackground.sourceSceneId,id);
+    }
+  }
+});
+
 test('실제 ChronicleWorld로 바다 시설을 제외하고 1450년 전주 반경 1도의 시설은 모두 육지에 둔다',async t=>{
   const world=await getActualWorld();
-  const onLand=row=>world.rings.some(ring=>insideCoastline(...world.toWorld(...row.scenePlace.coordinates),ring));
+  const onLand=row=>{
+    const [x,z]=world.toWorld(...row.scenePlace.coordinates),y=world.surfaceAt(x,z);
+    return world.rings.some(ring=>insideCoastline(x,z,ring))&&Number.isFinite(y)&&y>(world.seaLevel??7)+.3;
+  };
+  const describe=row=>{
+    const [x,z]=world.toWorld(...row.scenePlace.coordinates);
+    return {id:row.siteBackground.sourceSceneId,title:row.title,coordinates:row.scenePlace.coordinates,
+      insideRing:world.rings.some(ring=>insideCoastline(x,z,ring)),surface:world.surfaceAt(x,z)};
+  };
   const nearJeonju=row=>Math.hypot(row.place.lon-127.15,row.place.lat-35.82)<=1;
   const before=rows(1450).filter(nearJeonju);
   const water=before.filter(row=>!onLand(row));
+  assert.deepEqual(water.map(row=>row.siteBackground.sourceSceneId),[
+    'scene-syj122-byeokgolje-790','scene-ej-byeokgolje-1415'
+  ]);
   const after=planContinuingFacilities(packets,plan(1450),undefined,world).filter(nearJeonju);
   assert.ok(after.length>0);assert.ok(after.every(onLand));
   assert.deepEqual(after.map(row=>row.id),before.filter(onLand).map(row=>row.id));
   t.diagnostic('1450 JEONJU radius=1deg: '+JSON.stringify({before:before.length,after:after.length,
-    excluded:water.map(row=>({title:row.title,coordinates:row.scenePlace.coordinates})),
-    land:after.map(row=>({title:row.title,coordinates:row.scenePlace.coordinates}))}));
+    seaLevel:world.seaLevel??7,excluded:water.map(describe),land:after.map(describe)}));
   for(const year of [1300,1450,2020]){
     assert.ok(planContinuingFacilities(packets,plan(year),undefined,world).every(onLand));
   }
   const current=planContinuingFacilities(packets,plan(2020),undefined,world);
-  for(const id of [station,byeolbangjin,'scene-syj128-haeinsa-802','scene-syj135-samnyeonsanseong-chukjo-470']){
+  for(const id of [station,'scene-syj128-haeinsa-802','scene-syj135-samnyeonsanseong-chukjo-470']){
     assert.ok(current.some(row=>row.siteBackground.sourceSceneId===id),id);
   }
+  const coastal=at(byeolbangjin,2020);assert.ok(coastal);assert.equal(onLand(coastal),false);
+  assert.equal(current.some(row=>row.id===coastal.id),false);
+  t.diagnostic('2020 BYEOLBANGJIN excluded: '+JSON.stringify(describe(coastal)));
   const busan=at('scene-mod-busan-port-1876',2020);assert.ok(busan);assert.equal(onLand(busan),false);
   assert.equal(current.some(row=>row.id===busan.id),false);
   t.diagnostic('2020 BUSAN excluded: '+JSON.stringify({title:busan.title,coordinates:busan.scenePlace.coordinates}));
