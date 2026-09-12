@@ -232,7 +232,7 @@ export class Chronicle {
     this.stopPlay();
     const background=this.callbacks.activity?.(id);
     const entity=this.data.entities.find(e=>e.id===id)
-      ||(background?.siteBackground?.scope==='anonymous-city'?{id,type:'Place',labels:[]}:null);
+      ||(['anonymous-city','facility'].includes(background?.siteBackground?.scope)?{id,type:'Place',labels:[]}:null);
     if(!entity)return;
     const dates=datedClaims(this.data).filter(d=>d.claim.subject===id);
     const currentEvent=this.context?.allEvents.some(e=>e.id===id&&e.current);
@@ -248,7 +248,7 @@ export class Chronicle {
     const descriptions=this.data.claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate));
     this.host.innerHTML=`<button class="context-back" data-context-back>← ${yearLabel(this.year)}로 돌아가기</button>
       <div class="context-kicker">${{Person:'인물',Event:'사건',Narrative:'설화·전승',Polity:'나라',Place:'장소'}[entity.type]||'관련 항목'}</div><h2>${esc(activity?.setting?activity.label:activity?.siteBackground?activity.place:entityLabel(entity))}</h2>
-      ${activity?`<section class="selected-activity"><h3>${activity.narrative?'이야기의 무대':activity.siteBackground?.scope==='anonymous-city'?'도시 생활 배경 · 추정':activity.siteBackground?'성곽 배경 · 추정':yearLabel(this.year)}${activity.place?' · '+esc(activity.place):''}</h3>
+      ${activity?`<section class="selected-activity"><h3>${activity.narrative?'이야기의 무대':activity.siteBackground?.scope==='anonymous-city'?'도시 생활 배경 · 추정':activity.siteBackground?.scope==='facility'?'시설 · 추정 존속':activity.siteBackground?'성곽 배경 · 추정':yearLabel(this.year)}${activity.place?' · '+esc(activity.place):''}</h3>
         ${activity.role?`<p class="activity-role">${esc(activity.role)}</p>`:''}
         <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동입니다.')}</p>
         ${activity.narrative?`<dl class="narrative-times"><dt>이야기 속 시기</dt><dd>${esc(activity.narrative.storyTime.label)}</dd><dt>관련 문헌·기록 시기</dt><dd>${esc(activity.narrative.recordingTime.label)}</dd></dl><p class="activity-location">이야기와 기록 시기는 다릅니다. 이 표시가 선택한 연도의 실제 사건을 뜻하지는 않습니다.</p>`:''}

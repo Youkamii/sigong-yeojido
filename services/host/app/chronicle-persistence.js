@@ -11,13 +11,16 @@ const actionPatterns=[/누리호|발사체/,/황룡사|불국사|감은사|흥�
   /벽골제|청못|청제|수리 시설|관개/,/강학|강의|교육|서당|서원|성균관|학교|학사/,
   /장시|시장|교역|무역|상업/];
 export function sceneVisualKey(event,position,compact,maxRadius){
+  const facility=event.continuing?.kind==='facility';
+  // 조립기와 같은 건립 종료 연도를 써서 연도 이동만으로 시설을 다시 만들지 않는다.
+  if(facility)event={...event,year:event.endYear??event.continuing.sinceYear-1};
   const visualActions={...event.visualActions};
   if(visualActions.constructionYears)visualActions.constructionYears=visualActions.constructionYears.includes(event.year);
-  const actions=[event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
+  const actions=[facility?event.title||event.label:event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
   const sea=event.scenePlace?event.scenePlace.medium==='sea':event.archetype==='naval';
   const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates&&urbanRegionAt(...event.scenePlace.coordinates,event.year);
-  const radius=event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
-  return JSON.stringify({position:position.toArray(),compact,
+  const radius=facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
+  return JSON.stringify({facility,sceneFunction:event.sceneFunction,position:position.toArray(),compact,
     maxRadius:compact?null:Math.min(maxRadius,radius*(event.scenePlace?.displayScale||1)),
     cityStyle:event.archetype==='settlement'?settlementStyle(event):null,
     cityRegion:urbanRegion?[urbanRegion.id,urbanRegion.radius]:null,

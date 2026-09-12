@@ -32,17 +32,21 @@ function fireAt(group,position,scale,animated){
 
 /** Local composition explains the event; these offsets are not new geographic facts. */
 export function composeHistoricalEvent(event,position,world){
+  const facility=event.continuing?.kind==='facility';
+  // 시설은 건립 종료 당시 외형을 유지하며 당시 인물과 사건 효과를 재연하지 않는다.
+  if(facility)event={...event,year:event.endYear??event.continuing.sinceYear-1,participants:[],participantGroups:[],sides:[],
+    effects:{...event.effects,fire:{enabled:false},attack:{enabled:false}}};
   const group=new THREE.Group(),animated=[],models=[],occupied=[];
   group.userData.sceneId=event.id;
   const sea=event.scenePlace?event.scenePlace.medium==='sea':event.archetype==='naval';
-  const actions=[event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
+  const actions=[facility?event.title||event.label:event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
   const modern=event.year>=1876,shipType=modern?'motor_ship':'ship';
   const alliedFleet=event.participants.some(p=>p.presence==='on-site'&&p.side==='naval'&&/명나라 수군|명 수군/.test(p.role));
   const soldier=modern?'rifle_soldier':'spearman';
   const launch=modern&&/누리호|발사체/.test(actions);
   const temple=/황룡사|불국사|감은사|흥륜사|사찰|사원/.test(actions)&&event.archetype==='construction';
   const rail=modern&&/지하철|철도|열차/.test(actions),industry=modern&&/제철|고로|공업단지|공업센터|원자력발전소/.test(actions);
-  const groundbreaking=industry&&/기공식/.test(actions),power=industry&&/원자력발전소/.test(actions);
+  const groundbreaking=!facility&&industry&&/기공식/.test(actions),power=industry&&/원자력발전소/.test(actions);
   const music=!sea&&/가얏고|가야금|음악 전습/.test(actions)&&/가르|배우|배운|전습/.test(actions);
   const relief=!sea&&/구휼/.test(actions)&&/곡식|구휼미/.test(actions);
   const road=modern&&/고속도로/.test(actions),personalFire=/분신|자해/.test(actions),blockFire=/대장경판|경판|판목/.test(actions)&&event.effects.fire?.enabled;
@@ -68,10 +72,12 @@ export function composeHistoricalEvent(event,position,world){
     }
     displayScale=Math.min(displayScale,clearance/48);
   }
+  if(facility)displayScale=Math.min(displayScale,1);
   if(event.compact)displayScale*=.16;
-  const radius=event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
+  const radius=facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
   if(!event.compact&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,event.maxRadius/radius);
   const model=(archetype,dx,dz,scale=1,extra={})=>{
+    if(facility&&(/worker|handcart|groundbreaking/.test(archetype)||extra.action==='working'||extra.role==='worker'))return;
     if(!modern)archetype=({palace:'korean_hall',house:'korean_house',gatehouse:'korean_gate',academy_hall:'korean_academy',courtyard_house:'korean_courtyard'})[archetype]||archetype;
     dx*=displayScale;dz*=displayScale;scale*=displayScale;
     let x=position.x+dx,z=position.z+dz;
@@ -97,8 +103,8 @@ export function composeHistoricalEvent(event,position,world){
     flag.name='event-side-'+side;flag.userData.fleet=row.fleet||side;group.add(flag);
   };
   const flagColor=side=>side==='invader'||side==='b'?'#9a4435':side==='a'||side==='naval'||side==='defender'?'#346978':null;
-  const construction=event.visualActions?.constructionYears?.includes(event.year)||event.visualActions?.construction===true
-    ||(event.archetype==='construction'&&(event.endYear==null||event.year<=event.endYear));
+  const construction=!facility&&(event.visualActions?.constructionYears?.includes(event.year)||event.visualActions?.construction===true
+    ||(event.archetype==='construction'&&(event.endYear==null||event.year<=event.endYear)));
   const shoreward=()=>{
     for(let r=1;r<48;r+=1)for(let i=0;i<48;i++){
       const angle=i*Math.PI/24,dx=Math.cos(angle)*r,dz=Math.sin(angle)*r;
@@ -252,7 +258,7 @@ export function composeHistoricalEvent(event,position,world){
       for(const x of [-width,-9,9,width]){model('wall',x,10,1);model('wall',x,-17,1);}
       for(const x of [-width-4,width+4])for(const z of [-10,-1,6])model('fort_wall_side',x,z,1);
       model('rural_store',-9,-6,1.4);model('korean_house',10,-5,1.2);
-      if(event.visualActions.construction){
+      if(!facility&&event.visualActions.construction){
         model('handcart',-12,18,1.3);model('groundbreaking',8,17,1.2);
         for(const [x,z] of [[-14,6],[12,15],[18,-12]])model('period_figure',x,z,1.5,{action:'working'});
       }else if(event.archetype==='court'){model('table',0,-4,1.5);model('book',0,-4,1.2,{lift:2.5});}
@@ -297,7 +303,7 @@ export function composeHistoricalEvent(event,position,world){
         const bank=new THREE.Mesh(new THREE.BoxGeometry(4.1*displayScale,1.8*displayScale,3*displayScale),new THREE.MeshStandardMaterial({color:'#958764',roughness:1}));
         bank.position.set(x,world.surfaceAt(x,z)+.9*displayScale,z);group.add(bank);
       }
-      if(event.visualActions?.constructionYears?.includes(event.year)){model('handcart',-12,17,1.2);for(let i=0;i<5;i++)model('human',-8+i*4,16,1.4,{action:'working'});}
+      if(!facility&&event.visualActions?.constructionYears?.includes(event.year)){model('handcart',-12,17,1.2);for(let i=0;i<5;i++)model('human',-8+i*4,16,1.4,{action:'working'});}
     }
   }else if(launch){
     model('rocket',0,0,1.7,{primary:true});
@@ -305,8 +311,9 @@ export function composeHistoricalEvent(event,position,world){
       for(let i=0;i<4;i++)model('human',12+i*4,13,1.5);}
   }else if(temple){
     model('pagoda',0,0,1.8,{primary:true});
-    if(!event.compact){model('academy_hall',0,-16,1.8);model('handcart',15,9,1.1);
-      for(let i=0;i<6;i++)model('human',-12+i*5,12,1.5,{action:'working'});}
+    if(!event.compact){model('academy_hall',0,-16,1.8);
+      if(facility){model('period_monk',-6,9,1.5);model('period_monk',6,9,1.5);}
+      else{model('handcart',15,9,1.1);for(let i=0;i<6;i++)model('human',-12+i*5,12,1.5,{action:'working'});}}
   }else if(rail||road){
     model(rail?'station':'civic_hall',0,-10,1.4,{primary:true});
     if(!event.compact){
@@ -350,7 +357,7 @@ export function composeHistoricalEvent(event,position,world){
           model(i?'boat':'ship',sx,sz,i?.8:1.1,{medium:'sea',side:'naval'});
         }
       }
-      for(let i=0;i<5;i++){
+      for(let i=0;!facility&&i<5;i++){
         const timber=new THREE.Mesh(new THREE.BoxGeometry(5,.55,.7),new THREE.MeshStandardMaterial({color:'#97764c',roughness:1}));
         timber.scale.setScalar(displayScale);timber.position.set(position.x-5*displayScale,position.y+(.4+i%2*.6)*displayScale,position.z+(11+i*.8)*displayScale);
         group.add(timber);
@@ -408,7 +415,7 @@ export function composeHistoricalEvent(event,position,world){
     if(!event.compact){
     for(const [x,z] of [[-16,-9],[16,-10],[-19,11],[17,15]])model('house',x,z,.9,{path:true});
     if(event.archetype==='assembly'&&event.id!=='scene-jl-donghak-yongdam-1860')for(let i=0;i<15;i++)model('human',-11+(i%5)*5,12+Math.floor(i/5)*5,1.5);
-    if(event.archetype==='construction'){
+    if(!facility&&event.archetype==='construction'){
       model('handcart',10,9,1.3);model('table',-10,10,1.3);
       for(let i=0;i<6;i++)model('human',-12+i*5,14,1.5,{action:'working'});
     }
