@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';
 import {registerHooks} from 'node:module';
-import {describeSettlements,SETTLEMENT_RADIUS} from '../services/host/app/historical-regions.js';
+import {describeSettlements,settlementLayout,SETTLEMENT_RADIUS} from '../services/host/app/historical-regions.js';
+import {sceneVisualKey} from '../services/host/app/chronicle-persistence.js';
 import {planContinuingCities} from '../services/host/app/chronicle-sites.js';
 import {buildSettlementZones} from '../services/host/app/inhabited-zones.js';
 import {coordinateRegistry} from '../services/host/app/history-coordinates.js';
@@ -29,6 +30,62 @@ const at=(year,lon,lat)=>rowsAt(year).filter(row=>near(row,lon,lat));
 const zonesAt=(year,lon,lat)=>zones.filter(zone=>zone.startYear<=year&&year<=zone.endYear&&Math.hypot(zone.lon-lon,zone.lat-lat)<.03);
 const JEJU=[126.52194444444,33.509722222222],BUSAN=[129.07595621500008,35.169465885500045],SEOUL=[127,37.583333333333336];
 const SABI=[126.89852042850003,36.31324435500005],GAEGYEONG=[126.52319263200002,38.021695409000046];
+
+test('2020 Gaegyeong continues as six low-rise town wards with fewer people and cars',()=>{
+  const [row]=at(2020,...GAEGYEONG);assert.ok(row);
+  assert.equal(row.siteBackground.recordedStartYear,1270);
+  assert.equal(row.siteBackground.recordedEndYear,1394);
+  const before=JSON.stringify(row),small=settlementLayout(row),full=settlementLayout({...row,continuing:undefined});
+  const count=(rows,type)=>rows.filter(r=>r.archetype===type).length;
+  assert.equal(count(small,'urban_apartment'),0);
+  assert.ok(count(full,'urban_apartment')>0);
+  assert.ok(small.length<full.length);
+  assert.deepEqual([...new Set(small.filter(r=>Number.isInteger(r.ward)).map(r=>r.ward))],[0,1,2,3,4,5]);
+  assert.ok(small.filter(r=>Number.isInteger(r.ward)).every(r=>r.archetype===(r.ward<5?'urban_lowrise':'urban_commercial')));
+  assert.equal(count(small,'urban_commercial'),6);
+  assert.deepEqual(small.filter(r=>r.primary),[{archetype:'urban_civic',x:0,z:-28,scale:.8,primary:true,ward:'civic'}]);
+  assert.equal(count(small,'urban_transit'),0);
+  assert.equal(count(small,'human'),count(full,'human')/2);
+  assert.equal(count(small,'car'),Math.floor(count(full,'car')/2));
+  assert.equal(JSON.stringify(row),before);
+});
+
+test('1900 continuing residential wards keep courtyard houses and low-rise homes',()=>{
+  const [row]=at(1900,...GAEGYEONG);assert.ok(row);
+  const rows=settlementLayout(row),homes=rows.filter(r=>Number.isInteger(r.ward)&&r.ward<5);
+  assert.deepEqual([...new Set(homes.map(r=>r.archetype))].sort(),['courtyard_house','urban_lowrise']);
+  assert.equal(rows.filter(r=>r.archetype==='urban_apartment'||r.archetype==='urban_transit').length,0);
+  assert.equal(rows.filter(r=>r.archetype==='car').length,0);
+  for(const year of [1945,1960]){
+    const homes=settlementLayout({...row,year}).filter(r=>Number.isInteger(r.ward)&&r.ward<5);
+    assert.ok(homes.every(r=>r.archetype==='urban_lowrise'));
+  }
+});
+
+test('continuing ports keep only two warehouses and no transit',()=>{
+  const [row]=at(2020,...GAEGYEONG);assert.ok(row);
+  const port={...row,visualActions:{...row.visualActions,cityStyle:'port'}};
+  const small=settlementLayout(port),full=settlementLayout({...port,continuing:undefined});
+  assert.equal(small.filter(r=>r.archetype==='urban_warehouse').length,2);
+  assert.equal(full.filter(r=>r.archetype==='urban_warehouse').length,4);
+  assert.equal(small.filter(r=>r.archetype==='urban_transit'||r.archetype==='urban_apartment').length,0);
+  assert.ok(small.length<full.length);
+});
+
+test('continuing flag does not change layouts before 1876',()=>{
+  const [row]=at(1875,...GAEGYEONG);assert.ok(row);
+  assert.deepEqual(settlementLayout(row),settlementLayout({...row,continuing:undefined}));
+});
+
+test('visual reuse keys distinguish continuing and documented cities at the same location',()=>{
+  const [row]=at(2020,...GAEGYEONG);assert.ok(row);
+  const key=event=>sceneVisualKey(event,new THREE.Vector3(),false,100);
+  const continuing=key(row),documented=key({...row,continuing:undefined});
+  assert.notEqual(continuing,documented);
+  assert.equal(JSON.parse(continuing).continuing,true);
+  assert.equal(JSON.parse(documented).continuing,false);
+  assert.deepEqual({...JSON.parse(continuing),continuing:false},JSON.parse(documented));
+});
 
 test('Jeju remains an anonymous town after the 1955–2005 record ends',()=>{
   for(const year of [2006,2020]){

@@ -65,3 +65,18 @@ test('other duplicates keep radius priority and the ID tie-break',()=>{
     current:[a,large],major:[],selected:[a,large]
   });
 });
+
+test('documented Jeju remains when its original urban profile is suppressed by an active scene',()=>{
+  const documented=site('settlement-region:inhabited:scene-regional163-jeju-1955',0,0,28,
+    {documented:true,profile:{id:'inhabited:scene-regional163-jeju-1955'}});
+  const original=site('urban-region:jeju',0,0,9,{profile:{id:'jeju'}});
+  const suppressed=new Set(['jeju']);
+  for(const input of [[documented,original],[original,documented]]){
+    assert.deepEqual(selectSceneSites(input,new Set(),suppressed),{
+      current:[documented],major:[],selected:[documented]
+    });
+    assert.deepEqual(selectSceneSites(input,new Set(),new Set()).selected,[original]);
+    assert.deepEqual(selectSceneSites(input,new Set(),new Set(['another-city'])).selected,[original]);
+  }
+  assert.deepEqual([...suppressed],['jeju']);
+});

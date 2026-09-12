@@ -32,11 +32,11 @@ export function selectEstimatedSites(estimated,documented,urban,periodId,availab
   return eligible.filter(s=>selected.has(s));
 }
 
-// 같은 자리(0.1 미만)의 urban은 반경과 무관하게 문서화되지 않은 urban-region:* 원 구역을 우선한다.
+// 같은 자리(0.1 미만)의 urban은 반경과 무관하게 원 구역을 우선하되, 장면 마커로 쉬는 원 구역에는 자리를 내주지 않는다.
 // 다른 자리의 문서화 urban은 이웃 반경 안에서도 남겨 서울 소실을 막고, 집 소유는 기존 owns()가 정한다.
-export function selectSceneSites(activeSites,estimatedIds){
+export function selectSceneSites(activeSites,estimatedIds,suppressedProfileIds=new Set()){
   const candidates=activeSites.filter(s=>!(s.documented&&s.kind==='urban'&&activeSites.some(other=>
-    other.kind==='urban'&&!other.documented&&other.id.startsWith('urban-region:')&&Math.hypot(other.x-s.x,other.z-s.z)<.1)))
+    other.kind==='urban'&&!other.documented&&other.id.startsWith('urban-region:')&&!suppressedProfileIds.has(other.profile?.id)&&Math.hypot(other.x-s.x,other.z-s.z)<.1)))
     .sort((a,b)=>b.radius-a.radius||a.id.localeCompare(b.id));
   const current=candidates.filter((s,i)=>!candidates.slice(0,i).some(other=>other.kind===s.kind&&Math.hypot(other.x-s.x,other.z-s.z)<.1));
   const major=current.filter(s=>s.kind==='urban'&&!s.documented);
@@ -73,10 +73,11 @@ export class ChronicleScenery{
   }
   refreshPeriod(preserve=false){
     const started=performance.now();
-    const sites=this.activeSites(),{current}=selectSceneSites(sites,this.estimatedIds);
+    const suppressedProfileIds=new Set(this.occupied.map(o=>o.urbanRegionId).filter(Boolean));
+    const sites=this.activeSites(),{current}=selectSceneSites(sites,this.estimatedIds,suppressedProfileIds);
     const estimated=selectEstimatedSites(current.filter(s=>s.estimated),current.filter(s=>s.documented&&s.kind!=='urban'),current.filter(s=>s.kind==='urban'),s=>sitePeriod(s,this.stats.year).id,s=>this.available(s));
     this.estimatedIds=new Set(estimated.map(s=>s.id));
-    const {selected}=selectSceneSites(sites,this.estimatedIds);
+    const {selected}=selectSceneSites(sites,this.estimatedIds,suppressedProfileIds);
     const urban=selected.filter(s=>s.kind==='urban');
     // Urban ownership can clip neighbouring parcels. Rural additions/removals
     // only invalidate their own cells and the far batches containing them.

@@ -22,7 +22,7 @@ export function sceneVisualKey(event,position,compact,maxRadius,world){
   const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates&&urbanRegionAt(...event.scenePlace.coordinates,event.year);
   const radius=facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
   const scale=facility?facilityDisplayScale(event.scenePlace?.displayScale||1,position,world):event.scenePlace?.displayScale;
-  return JSON.stringify({facility,facilityLook:facility?event.continuing.facilityLook:undefined,sceneFunction:event.sceneFunction,position:position.toArray(),compact,
+  return JSON.stringify({continuing:Boolean(event.continuing),facility,facilityLook:facility?event.continuing.facilityLook:undefined,sceneFunction:event.sceneFunction,position:position.toArray(),compact,
     facilityIndustry:facility&&event.continuing.facilityLook==='industry'?[/발전소/.test(actions),/항만|부두|축항/.test(actions)]:undefined,
     maxRadius:compact?null:Math.min(maxRadius,radius*(facility?scale:scale||1)),
     cityStyle:event.archetype==='settlement'?settlementStyle(event):null,

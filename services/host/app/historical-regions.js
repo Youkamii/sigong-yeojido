@@ -33,13 +33,13 @@ export function settlementLayout(event){
 }
 
 function urbanSettlementLayout(event){
-  const rows=[],style=settlementStyle(event),postwar=event.year>=1945,modern=event.year>=1970;
+  const rows=[],style=settlementStyle(event),postwar=event.year>=1945,modern=event.year>=1970,continuing=Boolean(event.continuing);
   const add=(archetype,x,z,scale=.7,extra={})=>rows.push({archetype,x,z,scale,...extra});
-  add('urban_civic',0,-28,.95,{primary:true,ward:'civic'});
+  add('urban_civic',0,-28,continuing?.8:.95,{primary:true,ward:'civic'});
   // Unequal blocks leave a central street, small squares and a transport edge.
   const wards=[[-30,-24],[-29,0],[-29,26],[-7,27],[16,27],[32,6],[28,-19],[-8,-8],[13,-9]];
-  for(const [ward,[cx,cz]] of wards.entries()){
-    const residential=ward<5,apartments=modern&&residential&&ward%2===0;
+  for(const [ward,[cx,cz]] of (continuing?wards.slice(0,6):wards).entries()){
+    const residential=ward<5,apartments=!continuing&&modern&&residential&&ward%2===0;
     const count=apartments?4:ward%2?6:5;
     for(let i=0;i<count;i++){
       const archetype=apartments?'urban_apartment':residential
@@ -47,12 +47,12 @@ function urbanSettlementLayout(event){
       add(archetype,cx+(i%2)*7-3,cz+Math.floor(i/2)*7-6,apartments?.68:.7,{ward});
     }
   }
-  add('urban_transit',22,44,.9,{ward:'transit'});
-  if(style==='port')for(let i=0;i<4;i++)add('urban_warehouse',-26+i*9,48,.8,{ward:'harbor'});
-  else{add('urban_commercial',-26,46,.9,{ward:'market'});add('urban_lowrise',-12,46,.8,{ward:'old-town'});}
+  if(!continuing)add('urban_transit',22,44,.9,{ward:'transit'});
+  if(style==='port')for(let i=0;i<(continuing?2:4);i++)add('urban_warehouse',-26+i*9,48,.8,{ward:'harbor'});
+  else if(!continuing){add('urban_commercial',-26,46,.9,{ward:'market'});add('urban_lowrise',-12,46,.8,{ward:'old-town'});}
   if(!postwar){add('market',-8,6,.7);add('handcart',-12,10,.6);}
-  else for(const [x,z] of [[-17,7],[18,20],[7,43]])add('car',x,z,.6);
-  for(let i=0;i<14;i++)add('human',-13+(i%7)*4,5+Math.floor(i/7)*31,.85,{action:'walking'});
+  else for(const [x,z] of [[-17,7],[18,20],[7,43]].slice(0,continuing?1:3))add('car',x,z,.6);
+  for(let i=0;i<(continuing?7:14);i++)add('human',-13+(i%7)*4,5+Math.floor(i/7)*31,.85,{action:'walking'});
   return rows;
 }
 export const SETTLEMENT_RADIUS=72;
