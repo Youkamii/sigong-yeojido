@@ -3,7 +3,7 @@ import {stableSeed} from './chronicle-world.js';
 import {insideCoastline} from './coastline-index.js';
 import {CountrysidePaths} from './chronicle-paths.js';
 import {sceneryOverview,setOverviewDetails} from './scenery-overview.js';
-import {sceneryPeriod,sceneryRecipe} from './scenery-period.js';
+import {sceneryPeriod,sitePeriod,sceneryRecipe,sceneryHouseRecipe} from './scenery-period.js';
 import {planSettlementSites,planEstimatedSites,estimatedSitePasses,settlementLayout,settlementSiteActive,settlementSiteForYear} from './settlement-regions.js';
 import {planUrbanSites} from './urban-regions.js';
 import {buildSettlementZones} from './inhabited-zones.js';
@@ -13,7 +13,7 @@ export function selectEstimatedSites(estimated,documented,urban,periodId,availab
   const eligible=estimated.filter(s=>documented.every(d=>Math.hypot(s.x-d.x,s.z-d.z)>s.radius+d.radius+6)
     &&urban.every(u=>Math.hypot(s.x-u.x,s.z-u.z)>u.radius)
     &&available(s));
-  const selected=new Set(eligible.filter(s=>estimatedSitePasses(s,periodId))),rings=new Map();
+  const selected=new Set(eligible.filter(s=>estimatedSitePasses(s,typeof periodId==='function'?periodId(s):periodId))),rings=new Map();
   for(const site of eligible){
     if(!Number.isInteger(site.ringIndex))continue;
     if(!rings.has(site.ringIndex))rings.set(site.ringIndex,[]);
@@ -47,21 +47,29 @@ export class ChronicleScenery{
   nearPath(x,z,margin){return this.paths.near(x,z,margin);}
   start(forest,year){this.setYear(year);if(this.ready)return;this.ready=this.populate(forest).then(()=>{this.initialized=true;this.refreshPeriod();}).catch(e=>this.failed(e));}
   failed(error){this.stats.error=error.message;console.error('[scenery]',error);}
-  setYear(year){this.stats.year=year;const period=sceneryPeriod(year),key=period.id+'|'+this.activeSites().map(s=>s.id+':'+s.kind).join('|');if(this.periodKey===key)return;this.periodKey=key;this.period=period;this.stats.ready=false;
-    for(const c of this.detailCache.values())this.assets.release(c.group);this.detailCache.clear();
-    if(this.initialized)this.refreshPeriod();this.sync(this.occupied);
+  setYear(year){this.stats.year=year;const period=sceneryPeriod(year),key=period.id+'|'+this.activeSites().map(s=>s.id+':'+s.kind+':'+sitePeriod(s,year).id).join('|');if(this.periodKey===key)return;this.periodKey=key;this.period=period;this.stats.ready=false;
+    if(this.initialized)this.refreshPeriod(true);this.sync(this.occupied);
   }
-  refreshPeriod(){
-    for(const c of this.detailCache.values())this.assets.release(c.group);this.detailCache.clear();
+  refreshPeriod(preserve=false){
+    const started=performance.now();
     const candidates=this.activeSites().sort((a,b)=>b.radius-a.radius||a.id.localeCompare(b.id));
     const current=candidates.filter((s,i)=>!candidates.slice(0,i).some(other=>other.kind===s.kind&&Math.hypot(other.x-s.x,other.z-s.z)<.1));
     const major=current.filter(s=>s.kind==='urban'&&!s.documented);
-    const estimated=selectEstimatedSites(current.filter(s=>s.estimated),current.filter(s=>s.documented&&s.kind!=='urban'),current.filter(s=>s.kind==='urban'),this.period.id,s=>this.available(s));
+    const estimated=selectEstimatedSites(current.filter(s=>s.estimated),current.filter(s=>s.documented&&s.kind!=='urban'),current.filter(s=>s.kind==='urban'),s=>sitePeriod(s,this.stats.year).id,s=>this.available(s));
     this.estimatedIds=new Set(estimated.map(s=>s.id));
     const selected=current.filter(s=>s.estimated?this.estimatedIds.has(s.id):!s.documented||s.kind!=='urban'||major.every(m=>Math.hypot(s.x-m.x,s.z-m.z)>m.radius));
     const urban=selected.filter(s=>s.kind==='urban');
+    // Urban ownership can clip neighbouring parcels. Rural additions/removals
+    // only invalidate their own cells and the far batches containing them.
+    const urbanKey=urban.map(s=>s.id).join('|');
+    const previous=new Map(preserve&&urbanKey===this.urbanKey?(this.landscapeCells||[]).map(c=>[c.site.id,c]):[]);
+    this.urbanKey=urbanKey;
+    const changedSites=[];
     const active=selected.filter(s=>this.available(s)&&!(s.kind==='urban'&&this.occupied.some(o=>o.urbanRegionId===s.profile.id))).map(site=>{
-      const layout=settlementLayout(site,{...this.period,year:this.stats.year});
+      const period=sitePeriod(site,this.stats.year),old=previous.get(site.id);
+      if(old?.period.id===period.id)return old;
+      changedSites.push(site);
+      const layout=settlementLayout(site,site.kind==='urban'?this.stats.year:period);
       const free=(x,z,radius=0)=>this.occupied.every(o=>Math.hypot(x-o.x,z-o.z)>radius+o.radius+.15);
       const ground=(x,z,margin=0)=>this.world.rings.some(r=>insideCoastline(x,z,r))&&(!this.world.contains||this.world.contains(x,z,margin));
       const ruralFree=(x,z)=>site.kind==='urban'||urban.every(s=>Math.hypot(x-s.x,z-s.z)>s.radius);
@@ -78,22 +86,29 @@ export class ChronicleScenery{
         for(let j=0;j<count;j++){const points=[j/count,(j+1)/count].map(t=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]);
           if(points.every(p=>{const [x,z]=this.point(site,...p);return owns(x,z)&&ground(x,z,road.width)&&free(x,z,road.width/2)&&ruralFree(x,z);}))segments.push({...road,points});}return segments;
       }));
-      return {site,layout};
+      return {site,layout,period};
     }).filter(c=>c.layout.houses.length);
-    const overview=sceneryOverview(this.world,active,this.period);if(this.overview)this.assets.release(this.overview);this.overview=overview;this.detailKey=null;this.group.add(overview);this.landscapeCells=active;
+    const activeIds=new Set(active.map(c=>c.site.id));
+    for(const [id,c] of previous)if(!activeIds.has(id))changedSites.push(c.site);
+    const retained=new Set(active.filter(c=>previous.get(c.site.id)===c).map(c=>c.site.id));
+    for(const [id,c] of this.detailCache)if(!retained.has(id)){this.assets.release(c.group);this.detailCache.delete(id);}
+    const overview=sceneryOverview(this.world,active,this.stats.year,this.overview,previous.size?changedSites:null);if(this.overview)this.assets.release(this.overview);this.overview=overview;this.detailKey=null;this.group.add(overview);this.landscapeCells=active;
+    setOverviewDetails(overview,[...this.detailCache.values()].filter(c=>c.group.visible));
     this.stats.houses=active.reduce((n,c)=>n+c.layout.houses.length,0);this.stats.fields=active.reduce((n,c)=>n+c.layout.fields.length,0);this.stats.villages=active.length;
     this.stats.estimatedSites=estimated.length;this.stats.documentedZones=current.filter(s=>s.documented).length;this.stats.zoneIds=current.filter(s=>s.documented).map(s=>s.id);
     this.stats.farDraws=overview.children.length;this.stats.farTriangles=overview.children.reduce((n,m)=>n+m.geometry.attributes.position.count/3,0);this.stats.period=this.period.id;this.stats.ready=true;
+    this.stats.refreshedSites=changedSites.length;this.stats.reusedSites=retained.size;this.stats.refreshMs=performance.now()-started;
     this.setDisplay(this.group.visible,this.showPaths);
   }
   buildDetail(cell){
     const anchors=new Map(),recipes=[],{site,layout}=cell;
+    const period=cell.period??(Number.isFinite(this.stats.year)?sitePeriod(site,this.stats.year):this.period);
     if(site.kind==='urban')return this.buildUrbanDetail(cell);
     // Only a small, closest-neighbour cluster receives detailed walls and people.
     const houses=layout.houses.map((h,index)=>({...h,index})).sort((a,b)=>a.x*a.x+a.z*a.z-b.x*b.x-b.z*b.z).slice(0,20);
-    const add=(archetype,x,z,scale,yaw=0)=>{const id=site.id+':'+recipes.length,[wx,wz]=this.point(site,x,z),y=this.world.surfaceAt(wx,wz);anchors.set(id,new THREE.Vector3(x,y,z));recipes.push(sceneryRecipe({id,anchor:id,archetype,scale,yaw,seed:id,offset:[0,y,0]},this.period,site));};
+    const add=(archetype,x,z,scale,yaw=0,resolved=false)=>{const id=site.id+':'+recipes.length,[wx,wz]=this.point(site,x,z),y=this.world.surfaceAt(wx,wz);anchors.set(id,new THREE.Vector3(x,y,z));const recipe={id,anchor:id,archetype,scale,yaw,seed:id,offset:[0,y,0]};recipes.push(resolved?recipe:sceneryRecipe(recipe,period,site));};
     for(const h of houses){
-      add(h.archetype||'rural_cottage',h.x,h.z,h.scale,h.angle||0);
+      add(sceneryHouseRecipe(h,period,site,h.index).archetype,h.x,h.z,h.scale,h.angle||0,true);
       const recipe=recipes.at(-1);if(!recipe)continue;
       if(!this.houseScales.has(recipe.archetype)){
         const sample=this.assets.field([{...recipe,scale:1,yaw:0,offset:[0,0,0]}],new Map([[recipe.anchor,new THREE.Vector3()]]),{regional:false});

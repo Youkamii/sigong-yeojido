@@ -1,6 +1,7 @@
 import {insideCoastline,coastlineDistance} from './coastline-index.js';
 import {urbanLayout} from './urban-regions.js';
 import {projectCoordinates} from './history-coordinates.js';
+import {sitePeriod} from './scenery-period.js';
 
 const seedFor=text=>{let n=2166136261;for(const c of text)n=Math.imul(n^c.charCodeAt(0),16777619);return n>>>0;};
 const randomFor=seed=>()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};
@@ -117,9 +118,10 @@ export function settlementLayout(site,periodOrYear){
       fields:layout.fields.map(f=>({...f,corners:f.corners.map(point)})),
       roads:layout.roads.map(r=>({...r,width:r.width*scale,points:r.points.map(point)}))};
   }
-  const year=typeof periodOrYear==='number'?periodOrYear:periodOrYear?.year??1960;
+  const period=typeof periodOrYear==='number'?sitePeriod(site,periodOrYear):periodOrYear;
+  const year=period?.year??1960;
   const density=year< -1500?.16:year<1?.28:year<918?.45:year<1392?.6:year<1876?.78:year<1945?.9:1;
-  const fieldsVisible=typeof periodOrYear==='object'?periodOrYear.fields!==false:year>=-1500;
+  const fieldsVisible=period?.fields!==false;
   const config=settings[site.kind]||settings.village,r=randomFor(site.seed),houses=[],fields=[],roads=[];
   const core=site.radius*.57,spacing=site.kind==='regional'?1.85:site.kind==='town'?2:2.15;
   const bend=(z)=>Math.sin(z/(core||1)*2+site.layout)*core*.16;
@@ -139,7 +141,7 @@ export function settlementLayout(site,periodOrYear){
     lots.push({x,z,scale:.42+r()*.23,angle:site.layout===1?r()*Math.PI*2:site.layout===3?(r()-.5)*.12:(row%2)*Math.PI/2+(r()-.5)*.18,archetype:r()<.2?'korean_house':'rural_cottage',rank:Math.hypot(x,z)+r()*core*.35});
   }
   lots.sort((a,b)=>a.rank-b.rank);
-  for(const lot of lots.slice(0,Math.max(3,Math.floor(config.houses*density)))){const {rank,...house}=lot;houses.push(house);}
+  for(const lot of lots.slice(0,Math.max(3,Math.floor(config.houses*density)))){const {rank,...house}=lot;houses.push({...house,lotIndex:houses.length});}
   const spine=Array.from({length:9},(_,i)=>{const z=(i/8*2-1)*site.radius*.9;return site.layout===3?[z,bend(z)]:[bend(z),z];});
   roads.push({points:spine,width:site.kind==='regional'?.8:.55});
   for(let i=0;i<(site.layout===0?1:3);i++){

@@ -20,6 +20,16 @@ export function sceneryPeriod(year){
   return periods.find(period=>year<period.until);
 }
 
+export function sitePeriod(site,year){
+  // A single offset preserves the order of even the closely spaced boundaries.
+  const offset=(Number(site.seed)>>>0)%51-25;
+  return sceneryPeriod(site.kind==='urban'?year:year-offset);
+}
+
+export function sceneryHouseRecipe(house,period,site,index=0){
+  return sceneryRecipe({id:site.id+':'+(house.lotIndex??index),archetype:house.archetype||'rural_cottage'},period,site);
+}
+
 export function sceneryRecipe(recipe,period,site){
   const seed=Number(recipe.id.split(':').at(-1)),choice=(site.seed+seed*37)%100;
   const houses=['rural_hut','korean_house','rural_cottage'];

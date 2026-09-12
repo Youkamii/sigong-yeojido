@@ -1,35 +1,49 @@
 import * as THREE from 'three';
+import {sitePeriod,sceneryHouseRecipe} from './scenery-period.js';
+import {sceneryHouseForm} from './scenery-house-form.js';
+
+const bucketFor=site=>Math.floor(site.x/480)+':'+Math.floor(site.z/480);
 
 // The distant landscape is built directly, never cloned from detailed assets.
-export function sceneryOverview(world,cells,period){
+export function sceneryOverview(world,cells,periodOrYear,previous=null,changedSites=null){
   const buckets=new Map();
-  const get=(site,kind)=>{const key=Math.floor(site.x/480)+':'+Math.floor(site.z/480)+':'+kind;
-    if(!buckets.has(key))buckets.set(key,{positions:[],colors:[],kind,ranges:[]});return buckets.get(key);};
+  const dirty=changedSites&&new Set(changedSites.map(bucketFor));
+  const get=(site,kind)=>{const key=bucketFor(site)+':'+kind;
+    if(!buckets.has(key))buckets.set(key,{positions:[],colors:[],kind,bucket:bucketFor(site),ranges:[]});return buckets.get(key);};
   const point=(site,x,z)=>{const c=Math.cos(site.angle),s=Math.sin(site.angle);return [site.x+x*c+z*s,site.z-x*s+z*c];};
   const triangle=(b,a,c,d,color)=>{b.positions.push(...a,...c,...d);for(let i=0;i<3;i++)b.colors.push(color.r,color.g,color.b);};
   const quad=(b,p,color)=>{triangle(b,p[0],p[2],p[1],color);triangle(b,p[0],p[3],p[2],color);};
   const earth=new THREE.Color('#aa9570'),walls=new THREE.Color('#aa9773');
   const crops=['#819258','#9a9d64','#b1a26a','#87915b','#939868','#a99b78'].map(c=>new THREE.Color(c));
   for(const cell of cells){
+    if(dirty&&!dirty.has(bucketFor(cell.site)))continue;
+    const period=cell.period??(typeof periodOrYear==='number'?sitePeriod(cell.site,periodOrYear):periodOrYear);
     const {site,layout}=cell,houses=get(site,'houses'),fields=get(site,'fields'),lanes=get(site,'lanes');
     for(const [index,h] of layout.houses.entries()){
       const start=houses.positions.length;
       const [x,z]=point(site,h.x,h.z),angle=site.angle+(h.angle||0),c=Math.cos(angle),s=Math.sin(angle),scale=h.scale;
       const corner=(dx,dz,y)=>[x+dx*c+dz*s,y,z-dx*s+dz*c];
-      const hw=h.width?h.width/2:1.2*scale,hd=h.depth?h.depth/2:.95*scale;
+      const form=h.type?null:sceneryHouseForm(sceneryHouseRecipe(h,period,site,index).archetype);
+      const hw=h.width?h.width/2:form.width*scale/2,hd=h.depth?h.depth/2:form.depth*scale/2;
       const footprint=[[-hw,-hd],[hw,-hd],[hw,hd],[-hw,hd]].map(([dx,dz])=>corner(dx,dz,0));
-      const y=Math.max(...footprint.map(p=>world.surfaceAt(p[0],p[2])))+.08,height=h.height??(period.housing==='early'?.35:.85)*scale;
+      const y=Math.max(...footprint.map(p=>world.surfaceAt(p[0],p[2])))+.08,height=h.height??form.eave*scale;
       const wallColor=h.color?new THREE.Color(h.color):walls;
       const base=footprint.map(p=>[p[0],y,p[2]]),top=base.map(p=>[p[0],y+height,p[2]]);
-      quad(houses,base.map(p=>[x+(p[0]-x)*1.2,y-.015,z+(p[2]-z)*1.2]),earth);
-      for(let j=0;j<4;j++)quad(houses,[base[j],base[(j+1)%4],top[(j+1)%4],top[j]],wallColor);
-      const modern=!!h.type||period.housing==='modern'&&(index+site.seed)%5!==0;
-      const roof=new THREE.Color(period.housing==='early'?'#79613e':modern?['#65888b','#977868','#81877f'][index%3]:index%(period.year<918?9:5)===0?'#666d68':index%3===0?'#79613e':'#887049');
-      if(modern)quad(houses,top,h.type?new THREE.Color('#697977'):roof);
-      else {const a=corner(-1.2*scale,0,y+height+.6*scale),b=corner(1.2*scale,0,y+height+.6*scale);
-        quad(houses,[top[0],top[1],b,a],roof);quad(houses,[a,b,top[2],top[3]],roof);
-        triangle(houses,top[0],a,top[3],walls);triangle(houses,top[1],top[2],b,walls);}
-      houses.ranges.push({id:site.id,index,start,end:houses.positions.length});
+      const roof=new THREE.Color(h.type?'#697977':form.color);
+      if(form?.roof==='cone'){
+        const ring=Array.from({length:6},(_,j)=>{const a=j*Math.PI/3+Math.PI/12;return corner(Math.cos(a)*hw,Math.sin(a)*hd,y+height);});
+        const apex=corner(0,0,y+height+form.rise*scale);
+        for(let j=0;j<6;j++){const a=ring[j],b=ring[(j+1)%6];
+          quad(houses,[[a[0],y,a[2]],[b[0],y,b[2]],b,a],wallColor);triangle(houses,a,b,apex,roof);}
+      }else{
+        quad(houses,base.map(p=>[x+(p[0]-x)*1.2,y-.015,z+(p[2]-z)*1.2]),earth);
+        for(let j=0;j<4;j++)quad(houses,[base[j],base[(j+1)%4],top[(j+1)%4],top[j]],wallColor);
+        if(h.type||form.roof==='flat')quad(houses,top,roof);
+        else {const a=corner(-hw,0,y+height+form.rise*scale),b=corner(hw,0,y+height+form.rise*scale);
+          quad(houses,[top[0],top[1],b,a],roof);quad(houses,[a,b,top[2],top[3]],roof);
+          triangle(houses,top[0],a,top[3],walls);triangle(houses,top[1],top[2],b,walls);}
+      }
+      houses.ranges.push({id:site.id,index,start,end:houses.positions.length,roof:form?.roof||'flat'});
     }
     for(const space of layout.spaces||[]){
       const p=[[-space.width/2,-space.depth/2],[space.width/2,-space.depth/2],[space.width/2,space.depth/2],[-space.width/2,space.depth/2]];
@@ -49,8 +63,10 @@ export function sceneryOverview(world,cells,period){
     }
   }
   const group=new THREE.Group();group.name='scenery-overview';
+  if(previous&&dirty)for(const mesh of [...previous.children])if(!dirty.has(mesh.userData.bucket))group.add(mesh);
   for(const b of buckets.values())if(b.positions.length){const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(b.positions,3));geometry.setAttribute('color',new THREE.Float32BufferAttribute(b.colors,3));geometry.computeVertexNormals();
     const mesh=new THREE.Mesh(geometry,new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,side:THREE.DoubleSide}));mesh.name=b.kind==='lanes'?'scenery-lanes':b.kind==='fields'?'decorative-fields':'settlement-roofs';mesh.receiveShadow=false;mesh.castShadow=false;
+    mesh.userData.bucket=b.bucket;
     if(b.ranges.length){mesh.userData.houseRanges=b.ranges;mesh.userData.originalPositions=geometry.attributes.position.array.slice();}group.add(mesh);}
   return group;
 }
