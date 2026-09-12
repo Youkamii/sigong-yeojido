@@ -67,6 +67,7 @@ export function extendBuildingCatalog(raw){
   for(const [stage,year] of [['transition',1930],['postwar',1960],['modern',2010]])
     for(const type of ['lowrise','apartment','commercial','civic','transit','industrial','warehouse'])for(let variant=0;variant<3;variant++){
       const id=`urban_${stage}_${type}_${variant}`;
+      if(blueprints[id])continue;
       blueprints[id]=urbanBlueprint(type,year,variant);cores.push(`${id}|이름 없는 도시 건물`);
     }
   return {...raw,blueprints,categories:{...raw.categories,buildings:{...raw.categories.buildings,cores}}};

@@ -1,6 +1,7 @@
 import {figureArchetype} from './period-figures.js';
 import {buildingArchetype} from './period-buildings.js';
 import {settlementStyle,SETTLEMENT_RADIUS} from './historical-regions.js';
+import {urbanRegionAt} from './urban-regions.js';
 // These are the text-driven visual choices in composeHistoricalEvent.
 // Evidence, labels and the current year remain fresh on rows, not in mesh identity.
 const actionPatterns=[/누리호|발사체/,/황룡사|불국사|감은사|흥륜사|사찰|사원/,
@@ -14,10 +15,12 @@ export function sceneVisualKey(event,position,compact,maxRadius){
   if(visualActions.constructionYears)visualActions.constructionYears=visualActions.constructionYears.includes(event.year);
   const actions=[event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
   const sea=event.scenePlace?event.scenePlace.medium==='sea':event.archetype==='naval';
+  const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates&&urbanRegionAt(...event.scenePlace.coordinates,event.year);
   const radius=event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
   return JSON.stringify({position:position.toArray(),compact,
     maxRadius:compact?null:Math.min(maxRadius,radius*(event.scenePlace?.displayScale||1)),
     cityStyle:event.archetype==='settlement'?settlementStyle(event):null,
+    cityRegion:urbanRegion?[urbanRegion.id,urbanRegion.radius]:null,
     figureStyle:figureArchetype('commoner',event.year),buildingStyle:buildingArchetype('house',event.year),
     archetype:event.archetype,modern:event.year>=1876,building:/원자력발전소/.test(actions)&&event.year<event.endYear,
     medium:event.scenePlace?.medium,scale:event.scenePlace?.displayScale,
