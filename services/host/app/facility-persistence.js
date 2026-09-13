@@ -1,3 +1,4 @@
+import {HERITAGE_TYPES} from './heritage-models.js';
 import {insideCoastline} from './coastline-index.js';
 
 const END_YEAR=2100;
@@ -36,6 +37,7 @@ const industry=/공장|제철소|공업단지|발전소|항만|부두|축항/;
 const excluded=/성벽|축성|도성|산성|성곽|읍성|돈대|鎭|제방|저수지|벽골제|청제|준천|개천|수축|증축|다리|교량|도로|비석|기념비|정계비|표석|사리\s*봉안|서원|향교|학교|(?:[가-힣]*)(?:비|능|묘|릉|진)(?=[\s·—(의을에]|$)|\b(?:fortress|fort|wall|reservoir|dam|bridge|road|stele|monument|school)\b/i;
 
 function facilityLook(scene){
+  if(scene.kind==='heritage')return HERITAGE_TYPES.includes(scene.heritageType)?scene.heritageType:null;
   // visualActions는 문자열 또는 객체다. false인 플래그와 숫자 연도는 분류 근거로 쓰지 않는다.
   const words=value=>typeof value==='string'?value:value&&typeof value==='object'
     ?Object.entries(value).flatMap(([key,v])=>v===true?[key]:[words(v)]).join(' '):'';
@@ -59,11 +61,12 @@ function facilityName(scene){
 export function planContinuingFacilities(packets,plan,claims,world=null){
   const rows=[];
   for(const scene of packets){
-    if(scene.kind!=='construction'||scene.narrativeType!=null||scene.title?.includes('전승')
+    const heritage=scene.kind==='heritage'&&scene.persistence?.kind==='facility';
+    if((scene.kind!=='construction'&&!heritage)||scene.narrativeType!=null||scene.title?.includes('전승')
       ||!coordinates(scene.place)||!Number.isFinite(scene.endYear))continue;
     const look=facilityLook(scene);
     if(!look)continue;
-    const sinceYear=scene.endYear+1;
+    const sinceYear=heritage?Math.max(scene.endYear+1,scene.persistence.from):scene.endYear+1;
     if(plan.year<sinceYear||plan.year>END_YEAR||plan.events.some(event=>event.id===scene.id))continue;
     const displayCoordinates=scene.place.displayCoordinates||[scene.place.lon,scene.place.lat];
     if(world){
@@ -72,7 +75,7 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
       const y=world.surfaceAt(x,z);
       if(!Number.isFinite(y)||y<=(world.seaLevel??7)+.3)continue;
     }
-    const name=facilityName(scene);
+    const name=heritage?scene.title:facilityName(scene);
     const tokens=name.replace(/\([^)]*\)/g,' ').split(/[\s·—~()[\]]+/).filter(Boolean);
     const ending=packets.filter(other=>other.id!==scene.id&&other.startYear>scene.endYear
       &&coordinates(other.place)&&Math.hypot(other.place.lon-scene.place.lon,other.place.lat-scene.place.lat)<=.01
@@ -81,9 +84,9 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
       .sort((a,b)=>a.startYear-b.startYear||a.id.localeCompare(b.id))[0];
     const type=look==='palace'?'dynasty-boundary':'openEnded';
     const boundary=type==='dynasty-boundary'?DYNASTY_BOUNDARIES.find(year=>year>scene.endYear):undefined;
-    const untilYear=Math.min(ending?ending.startYear-1:END_YEAR,boundary?boundary-1:END_YEAR);
+    const untilYear=Math.min(heritage?(scene.persistence.to??END_YEAR):END_YEAR,ending?ending.startYear-1:END_YEAR,boundary?boundary-1:END_YEAR);
     if(plan.year>untilYear)continue;
-    const claimIds=[...new Set([...(scene.dateClaimIds||[]),...(scene.actionClaimIds||[]),...(scene.place.claimIds||[])])];
+    const claimIds=[...new Set([...(scene.dateClaimIds||[]),...(scene.actionClaimIds||[]),...(scene.place.claimIds||[]),...(heritage?scene.persistence.basisClaimIds||[]:[])])];
     if(claims&&!claimIds.every(id=>claims.has(id)))continue;
     const id='background-facility-'+scene.id;
     rows.push({...scene,id,entityId:id,kind:'event',year:plan.year,archetype:scene.archetype||scene.kind,

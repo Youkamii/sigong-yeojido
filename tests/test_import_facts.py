@@ -246,6 +246,29 @@ class FactsIngestTests(unittest.TestCase):
         self.assertNotIn('participantGroups', scene)
         self.assertNotIn('participantGroupsNote', scene)
 
+    def test_build_portrait_and_heritage_and_reject_invalid_kind(self):
+        self.import_job()
+        saved = self.saved_root() / JOB / 'result.json'
+        output = self.root / 'scene-kinds.json'
+        for kind, heritage_type in [('portrait', None), ('heritage', 'pagoda'), ('heritage', None),
+                                    ('heritage', 'castle'), ('unknown', None)]:
+            draft = copy.deepcopy(self.draft)
+            draft['scenes'][0]['kind'] = kind
+            if heritage_type:
+                draft['scenes'][0].update(heritageType=heritage_type, heritageFloors=5)
+            write_json(saved, draft)
+            valid = kind == 'portrait' or heritage_type == 'pagoda'
+            result = self.run_script('build_history_scenes.py', '--research', self.saved_root(),
+                                    '--collection', COLLECTION, '--job', JOB, '--data', self.data,
+                                    '--out', output, success=valid)
+            if valid:
+                scene = read_json(output)['scenes'][0]
+                self.assertEqual(scene['kind'], kind)
+                if heritage_type:
+                    self.assertEqual((scene['heritageType'], scene['heritageFloors']), ('pagoda', 5))
+            else:
+                self.assertIn('heritageType' if kind == 'heritage' else 'kind', result.stderr)
+
     def test_summary_rejects_strings_booleans_and_nonfinite_numbers(self):
         self.import_job()
         path = self.saved_root() / JOB / 'result.json'

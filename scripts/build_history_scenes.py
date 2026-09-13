@@ -6,7 +6,8 @@ import json
 import math
 from pathlib import Path
 from import_period_research import ENTITY_ID_ALIASES,source_id_aliases,check_run
-from scene_vocabulary import normalize_group,PARTICIPANT_GROUPS_NOTE
+from scene_vocabulary import normalize_group,PARTICIPANT_GROUPS_NOTE,HERITAGE_TYPES
+from check_fact_research import KINDS
 
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
@@ -36,6 +37,11 @@ for job in args.job or ['invasion_events','yi_naval']:
         sources[sid]={**{k:source[k] for k in ['id','title','publisher','url']},'id':sid}
     for original in result['scenes']:
         scene=deepcopy(original)
+        assert scene['kind'] in KINDS,(scene['id'],'kind')
+        if scene['kind']=='heritage' or 'heritageType' in scene:
+            assert scene.get('heritageType') in HERITAGE_TYPES,(scene['id'],'heritageType')
+        if 'heritageFloors' in scene:
+            assert type(scene['heritageFloors']) is int and scene['heritageFloors'] in (3,5),(scene['id'],'heritageFloors')
         scene['eventId']=ENTITY_ID_ALIASES.get(scene['eventId'],scene['eventId'])
         for key in ['dateClaimIds','actionClaimIds']:
             assert scene[key] and all(c in claims for c in scene[key]),(scene['id'],key)

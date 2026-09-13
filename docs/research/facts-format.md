@@ -52,7 +52,10 @@ predicate 허용 목록(검증기가 파일 `scripts/fact_predicates.json` 로 �
 
 ### scenes[] (기존 build_history_scenes 형식 + 추가 필드)
 
-기존 필수: `id, eventId, title, startYear<=endYear, kind, summary, dateClaimIds(비지 않음), actionClaimIds(비지 않음), place|null, participants[], effects{}`. kind 는 기존 값(`settlement|construction|battle|siege|naval|fire|court|assembly|publication|excavation|tradition`)에 `disaster|relief|market|ritual|migration|survey` 를 더해 쓴다.
+기존 필수: `id, eventId, title, startYear<=endYear, kind, summary, dateClaimIds(비지 않음), actionClaimIds(비지 않음), place|null, participants[], effects{}`. kind 는 기존 값(`settlement|construction|battle|siege|naval|fire|court|assembly|publication|excavation|tradition`)에 `disaster|relief|market|ritual|migration|survey|portrait|heritage` 를 더해 쓴다.
+`heritageType`: heritage일 때 필수. `pagoda|stele|hall|tomb|fortress|site|artifact|bridge|kiln` 중 하나이며, `heritageFloors`는 석탑 층수 3(기본) 또는 5다.
+`portrait`: 참여 인물 1명을 중심에 놓는다. `sceneFunction` 또는 `place.setting`의 palace/office/temple/battle/village(궁궐/관아/사찰/전장/마을) 힌트로 작은 무대를 고르며, participantGroups 수행원은 전체 4명까지다.
+`heritage.persistence`: `{kind:"facility", from, to, basisClaimIds}`가 있으면 건립 장면 이후 지정 기간에 같은 외형으로 존속한다. 카드의 문화재 근거 설명은 summary와 place.coordinateNote에 기록한다.
 추가(모두 검증기가 확인): `category`(아래 10개 중 하나) · `region`(`capital|north|central|south|island`) · `decade`(startYear 를 10으로 내림) · 선택 `sceneFunction`(`rail_station|temple|print_workshop|migration|persecution|naval_expedition|civil_conflict|uprising_battle|market|relief|construction_site|fortress|harbor|kiln|irrigation`) · 선택 `participantGroups[{entityId?,label,role,stance,side,count,claimIds[]}]` · 선택 `persistence {kind:'city'|'facility'|'institution'|'none', from, to|null, basisClaimIds[]}`.
 place: `{label, medium('land'|'sea'), precision('site'|'area'), lon, lat, claimIds[], coordinateSourceIds[], coordinateNote}` — 좌표는 반드시 sources[] 의 발췌(위키 표시 좌표 등)나 location 주장에 근거를 둔다.
 

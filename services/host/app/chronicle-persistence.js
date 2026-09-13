@@ -20,7 +20,7 @@ export function sceneVisualKey(event,position,compact,maxRadius,world){
   const actions=[facility?event.title||event.label:event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
   const sea=event.scenePlace?event.scenePlace.medium==='sea':event.archetype==='naval';
   const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates&&urbanRegionAt(...event.scenePlace.coordinates,event.year);
-  const radius=facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
+  const radius=event.archetype==='portrait'?7:event.archetype==='heritage'?8:facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
   const scale=facility?facilityDisplayScale(event.scenePlace?.displayScale||1,position,world):event.scenePlace?.displayScale;
   return JSON.stringify({continuing:Boolean(event.continuing),facility,facilityLook:facility?event.continuing.facilityLook:undefined,sceneFunction:event.sceneFunction,position:position.toArray(),compact,
     facilityIndustry:facility&&event.continuing.facilityLook==='industry'?[/발전소/.test(actions),/항만|부두|축항/.test(actions)]:undefined,
@@ -28,7 +28,7 @@ export function sceneVisualKey(event,position,compact,maxRadius,world){
     cityStyle:event.archetype==='settlement'?settlementStyle(event):null,
     cityRegion:urbanRegion?[urbanRegion.id,urbanRegion.radius]:null,
     figureStyle:figureArchetype('commoner',event.year),buildingStyle:buildingArchetype('house',event.year),
-    archetype:event.archetype,modern:event.year>=1876,building:/원자력발전소/.test(actions)&&event.year<event.endYear,
+    archetype:event.archetype,heritageType:event.heritageType,heritageFloors:event.heritageFloors,setting:event.scenePlace?.setting,modern:event.year>=1876,building:/원자력발전소/.test(actions)&&event.year<event.endYear,
     medium:event.scenePlace?.medium,scale,
     fortressWidth:visualActions.fortress?event.scenePlace.label.length%3:null,
     actions:actionPatterns.map(pattern=>pattern.test(actions)),landing:/상륙/.test(event.label),

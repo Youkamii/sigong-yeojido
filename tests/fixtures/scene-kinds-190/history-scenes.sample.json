@@ -1,0 +1,360 @@
+{
+  "renderingNote": "합성 검사용 근거이며 실제 조사·인용 검증 결과가 아니다.",
+  "scenes": [
+    {
+      "id": "sample-190-sejong",
+      "eventId": "event-sample-190-sejong",
+      "title": "세종",
+      "startYear": 1443,
+      "endYear": 1443,
+      "kind": "portrait",
+      "summary": "훈민정음을 만든 임금",
+      "dateClaimIds": [
+        "claim-sample-190-sejong-date"
+      ],
+      "actionClaimIds": [
+        "claim-sample-190-sejong-action"
+      ],
+      "place": {
+        "lon": 126.977,
+        "lat": 37.579,
+        "label": "경복궁",
+        "precision": "site",
+        "medium": "land",
+        "claimIds": [
+          "claim-sample-190-sejong-place"
+        ],
+        "coordinateSourceIds": [
+          "src-scene-kinds-190-sample"
+        ],
+        "coordinateNote": "사용자가 지정한 표본 좌표 · 모형 검사용",
+        "setting": "palace"
+      },
+      "participants": [
+        {
+          "entityId": "person-joseon-sejong",
+          "role": "훈민정음을 만든 임금",
+          "presence": "on-site",
+          "side": "civilian",
+          "claimIds": [
+            "claim-sample-190-sejong-person"
+          ]
+        }
+      ],
+      "effects": {},
+      "category": "person",
+      "region": "capital",
+      "decade": 1440
+    },
+    {
+      "id": "sample-190-rain-gauge",
+      "eventId": "event-sample-190-rain-gauge",
+      "title": "측우기",
+      "startYear": 1441,
+      "endYear": 1441,
+      "kind": "heritage",
+      "summary": "문화재 · 국가유산포털 소재지",
+      "dateClaimIds": [
+        "claim-sample-190-rain-gauge-date"
+      ],
+      "actionClaimIds": [
+        "claim-sample-190-rain-gauge-action"
+      ],
+      "place": {
+        "lon": 126.978,
+        "lat": 37.576,
+        "label": "한양 관상감 터",
+        "precision": "site",
+        "medium": "land",
+        "claimIds": [
+          "claim-sample-190-rain-gauge-place"
+        ],
+        "coordinateSourceIds": [
+          "src-scene-kinds-190-sample"
+        ],
+        "coordinateNote": "사용자가 지정한 표본 좌표 · 모형 검사용"
+      },
+      "participants": [],
+      "effects": {},
+      "category": "culture",
+      "region": "capital",
+      "decade": 1440,
+      "heritageType": "artifact"
+    },
+    {
+      "id": "sample-190-dabotap",
+      "eventId": "event-sample-190-dabotap",
+      "title": "불국사 다보탑",
+      "startYear": 751,
+      "endYear": 751,
+      "kind": "heritage",
+      "summary": "문화재 · 국가유산포털 소재지",
+      "dateClaimIds": [
+        "claim-sample-190-dabotap-date"
+      ],
+      "actionClaimIds": [
+        "claim-sample-190-dabotap-action"
+      ],
+      "place": {
+        "lon": 129.332,
+        "lat": 35.79,
+        "label": "불국사",
+        "precision": "site",
+        "medium": "land",
+        "claimIds": [
+          "claim-sample-190-dabotap-place"
+        ],
+        "coordinateSourceIds": [
+          "src-scene-kinds-190-sample"
+        ],
+        "coordinateNote": "사용자가 지정한 표본 좌표 · 모형 검사용"
+      },
+      "participants": [],
+      "effects": {},
+      "category": "culture",
+      "region": "south",
+      "decade": 750,
+      "heritageType": "pagoda"
+    },
+    {
+      "id": "sample-190-gwanggaeto-stele",
+      "eventId": "event-sample-190-gwanggaeto-stele",
+      "title": "광개토대왕릉비",
+      "startYear": 414,
+      "endYear": 414,
+      "kind": "heritage",
+      "summary": "문화재 · 국가유산포털 소재지",
+      "dateClaimIds": [
+        "claim-sample-190-gwanggaeto-stele-date"
+      ],
+      "actionClaimIds": [
+        "claim-sample-190-gwanggaeto-stele-action"
+      ],
+      "place": {
+        "lon": 126.19,
+        "lat": 41.13,
+        "label": "국내성",
+        "precision": "site",
+        "medium": "land",
+        "claimIds": [
+          "claim-sample-190-gwanggaeto-stele-place"
+        ],
+        "coordinateSourceIds": [
+          "src-scene-kinds-190-sample"
+        ],
+        "coordinateNote": "사용자가 지정한 표본 좌표 · 모형 검사용"
+      },
+      "participants": [],
+      "effects": {},
+      "category": "culture",
+      "region": "north",
+      "decade": 410,
+      "heritageType": "stele"
+    }
+  ],
+  "entities": [
+    {
+      "id": "person-joseon-sejong",
+      "type": "Person",
+      "label": "세종"
+    },
+    {
+      "id": "event-sample-190-sejong",
+      "type": "Event",
+      "label": "세종"
+    },
+    {
+      "id": "event-sample-190-rain-gauge",
+      "type": "Event",
+      "label": "측우기"
+    },
+    {
+      "id": "event-sample-190-dabotap",
+      "type": "Event",
+      "label": "불국사 다보탑"
+    },
+    {
+      "id": "event-sample-190-gwanggaeto-stele",
+      "type": "Event",
+      "label": "광개토대왕릉비"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-sample-190-sejong-person",
+      "subject": "event-sample-190-sejong",
+      "predicate": "syj:hasParticipant",
+      "object": {
+        "kind": "entity",
+        "id": "person-joseon-sejong"
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-sejong-date",
+      "subject": "event-sample-190-sejong",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "year": 1443,
+        "earliest": 1443,
+        "latest": 1443
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-sejong-action",
+      "subject": "event-sample-190-sejong",
+      "predicate": "syj:describedAs",
+      "object": {
+        "kind": "literal",
+        "value": "훈민정음을 만든 임금"
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-sejong-place",
+      "subject": "event-sample-190-sejong",
+      "predicate": "syj:occurredAt",
+      "object": {
+        "kind": "location",
+        "lon": 126.977,
+        "lat": 37.579
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-rain-gauge-date",
+      "subject": "event-sample-190-rain-gauge",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "year": 1441,
+        "earliest": 1441,
+        "latest": 1441
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-rain-gauge-action",
+      "subject": "event-sample-190-rain-gauge",
+      "predicate": "syj:describedAs",
+      "object": {
+        "kind": "literal",
+        "value": "문화재 · 국가유산포털 소재지"
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-rain-gauge-place",
+      "subject": "event-sample-190-rain-gauge",
+      "predicate": "syj:occurredAt",
+      "object": {
+        "kind": "location",
+        "lon": 126.978,
+        "lat": 37.576
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-dabotap-date",
+      "subject": "event-sample-190-dabotap",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "year": 751,
+        "earliest": 751,
+        "latest": 751
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-dabotap-action",
+      "subject": "event-sample-190-dabotap",
+      "predicate": "syj:describedAs",
+      "object": {
+        "kind": "literal",
+        "value": "문화재 · 국가유산포털 소재지"
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-dabotap-place",
+      "subject": "event-sample-190-dabotap",
+      "predicate": "syj:occurredAt",
+      "object": {
+        "kind": "location",
+        "lon": 129.332,
+        "lat": 35.79
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-gwanggaeto-stele-date",
+      "subject": "event-sample-190-gwanggaeto-stele",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "year": 414,
+        "earliest": 414,
+        "latest": 414
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-gwanggaeto-stele-action",
+      "subject": "event-sample-190-gwanggaeto-stele",
+      "predicate": "syj:describedAs",
+      "object": {
+        "kind": "literal",
+        "value": "문화재 · 국가유산포털 소재지"
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    },
+    {
+      "id": "claim-sample-190-gwanggaeto-stele-place",
+      "subject": "event-sample-190-gwanggaeto-stele",
+      "predicate": "syj:occurredAt",
+      "object": {
+        "kind": "location",
+        "lon": 126.19,
+        "lat": 41.13
+      },
+      "fromSource": "src-scene-kinds-190-sample",
+      "quote": "화면 검사용 표본 · 사용자 지정 내용",
+      "sourceLabel": "검사용 표본"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-scene-kinds-190-sample",
+      "title": "사용자 지정 표본",
+      "publisher": "로컬 검증",
+      "url": ""
+    }
+  ]
+}

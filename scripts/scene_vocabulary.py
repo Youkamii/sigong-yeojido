@@ -1,6 +1,8 @@
 """Display vocabulary for facts collections; source wording is retained."""
 import re
 
+HERITAGE_TYPES = ('pagoda', 'stele', 'hall', 'tomb', 'fortress', 'site', 'artifact', 'bridge', 'kiln')
+
 
 PARTICIPANT_GROUPS_NOTE = 'count 는 화면 표현값이며 사료의 인원수가 아니다'
 ROLE_KEYWORDS = {

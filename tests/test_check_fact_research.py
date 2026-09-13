@@ -36,6 +36,32 @@ class FactResearchTests(unittest.TestCase):
     def test_valid_fixture(self):
         self.assertEqual(self.check().failures, [])
 
+    def test_portrait_and_heritage_kinds(self):
+        for kind in ('portrait', 'heritage'):
+            for heritage_type in C.HERITAGE_TYPES:
+                result = copy.deepcopy(self.original)
+                scene = result['scenes'][0]
+                scene['kind'] = kind
+                if kind == 'heritage':
+                    scene['heritageType'] = heritage_type
+                else:
+                    scene['sceneFunction'] = 'palace'
+                self.assertEqual(self.check(result).failures, [], (kind, heritage_type))
+
+    def test_heritage_requires_valid_type_and_optional_floors(self):
+        for value in (None, '', 'castle', [], 3):
+            result = copy.deepcopy(self.original)
+            scene = result['scenes'][0]
+            scene['kind'] = 'heritage'
+            if value is not None:
+                scene['heritageType'] = value
+            self.assertIn('heritageType', '\n'.join(self.check(result).failures))
+        for floors in (3, 5, 4, True, '5'):
+            result = copy.deepcopy(self.original)
+            result['scenes'][0].update(kind='heritage', heritageType='pagoda', heritageFloors=floors)
+            failures = self.check(result).failures
+            self.assertEqual(bool(failures), floors not in (3, 5), failures)
+
     def test_five_single_failures(self):
         cases = [('quote', '인용 불일치'), ('chunk', 'chunk 없음'), ('year', '연도 불일치'),
                  ('predicate', '허용 밖 predicate'), ('reference', '참조 없음')]

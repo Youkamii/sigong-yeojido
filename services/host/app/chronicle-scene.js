@@ -149,7 +149,8 @@ export class ChronicleScene {
     const selectedRow=this.assets.rowFor(id,this.assets.selectedRow);
     const selected=events.find(e=>selectedRow?.sceneId===e.id)||events[0];
     const person=selected.participants.find(p=>p.entityId===id);
-    const row=this.assets.rows.find(r=>r.sceneId===selected.id&&r.kind==='event');
+    const row=this.assets.rows.find(r=>r.sceneId===selected.id&&r.kind==='event')
+      ||this.assets.rows.find(r=>r.sceneId===selected.id&&r.kind==='person');
     return {sceneId:selected.id,label:selected.label,setting:selected.setting,summary:selected.summary,narrative:selected.narrative,siteBackground:selected.siteBackground,role:person?.role||(selected.scenePlace?.settlement?.scope==='between-records'?'기록 사이 추정 배경':undefined),participants:selected.participants,place:selected.scenePlace?.label||selected.locationReference?.label,
       placement:row?.placementLabel||'활동은 확인됐으며 지도 위치는 아직 연결되지 않았습니다.',
       claimIds:[...new Set([...selected.claimIds,...(person?.relationClaims||[])])],

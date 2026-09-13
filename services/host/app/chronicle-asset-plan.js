@@ -129,6 +129,8 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       // #173: 장면 기능과 참여 집단은 패킷 값을 그대로 넘긴다. participantGroups 는 Person 여부와 무관하게 통과(entityId 가 Polity·null 이어도 됨).
       // count 는 화면 표현값이며 사료의 인원수 주장이 아니다.
       ...(scene.sceneFunction?{sceneFunction:scene.sceneFunction}:{}),
+      ...(scene.heritageType?{heritageType:scene.heritageType}:{}),
+      ...(scene.heritageFloors?{heritageFloors:scene.heritageFloors}:{}),
       ...(Array.isArray(scene.participantGroups)&&scene.participantGroups.length?{participantGroups:scene.participantGroups.map(g=>({...g,
         label:g.label||(g.entityId&&entities.get(g.entityId)?entityLabel(entities.get(g.entityId)):g.role)}))}:{}),
       participants,effects:Object.fromEntries(Object.entries(scene.effects||{}).map(([key,effect])=>

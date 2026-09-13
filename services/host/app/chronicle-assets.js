@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {compileAssetCatalog} from './assetcatalog.js';
 import {buildAssetField} from './assetforge.js';
 import {stableSeed,woodlandDensity} from './chronicle-world.js';
+import {extendHeritageCatalog} from './heritage-models.js';
 import {composeHistoricalEvent} from './chronicle-event-scenes.js';
 import {PALETTE,mix,FOLIAGE,WHITE} from './artbible.js';
 import {makeSurface,biomeByName} from './style.js';
@@ -24,7 +25,7 @@ let catalogPromise;
 export function loadHistoryAssets(){
   if(!catalogPromise)catalogPromise=fetch('./app/history-asset-catalog.json')
     .then(r=>{if(!r.ok)throw Error('인물 조형을 불러오지 못했습니다.');return r.json();})
-    .then(extendFigureCatalog).then(extendBuildingCatalog).then(compileAssetCatalog).catch(error=>{catalogPromise=null;throw error;});
+    .then(extendFigureCatalog).then(extendBuildingCatalog).then(extendHeritageCatalog).then(compileAssetCatalog).catch(error=>{catalogPromise=null;throw error;});
   return catalogPromise;
 }
 function release(group){
