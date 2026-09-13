@@ -1,3 +1,26 @@
+## 2026-09-13: 사실 수집 파일럿 — 삼국·통일신라·발해 403건, 브랜치 `feat/facts-pilot-ancient` (#180 #181 #182 #183 #184 #185)
+
+**main 에 합치지 않았다. 공개 주소는 그대로다.** 워크트리 `C:/Users/gkfkd/Git/sigong-facts`(origin 백업). 사용자 지시: 역사 사실이 너무 부족하니 삼국시대부터 10년 단위로 사실을 모은다. Claude 가 리딩, 조사는 **Opus 5 high**(워크플로 15 job × 조사→적대 검수→수정 = 45 에이전트, 45분, 7.6M 토큰), 개발은 **Codex gpt-6-astra high** 5건.
+
+| 단계 | 산출 | 근거 |
+|---|---|---|
+| 지침·스펙 | `docs/research/facts-brief.md`(갈래 10·10년×5권역 격자·규칙), `docs/research/facts-format.md`(result.json 형식·검증·세계 연결·집단 어휘) | #180 → `23c14eba` `19b51937` |
+| 도구 | `scripts/search_chunks.py`(로컬 원문 검색), `scripts/check_fact_research.py`(검증기·커버리지), `scripts/fact_predicates.json` | #181 → `19b51937` |
+| 조사 | `data/research/facts-ancient/<15 job>/`(result·run·manifest·report·raw). 사실 403(같은 기록 중복 약 48), 장면 202, 주장 992(원문 인용 941·웹 발췌 51). 검증기 PASS | #182 #183 → `2e12bc9a` |
+| 적재 | `import_period_research.py`(citesChunk+quote·workflow run·literal 문자열·껍데기 개체·다중 claims 파일), `build_history_scenes.py`(추가 필드·fact-coordinate·집단 정규화), `summarize_facts.py`·`build_fact_layers.py`(호구 밀도 9·행정 존속 44 → `fact-layers.json`), `scene_vocabulary.py` | #184 → `d623ea11` `d3d8eab2` `2e12bc9a` `5ea2aa74` `d843e143` |
+| 세계 연결 | `estimatedSiteThreshold(…, context)` 호구 계수(반경 40·±150년·clamp 0.6~1.8), `buildSettlementZones(…, factLayers)` 행정 구역, `SCENE_FUNCTIONS` +7(market·relief·construction_site·fortress·harbor·kiln·irrigation) | #184 #173 → `d3d8eab2` `5ea2aa74` |
+| 화면 | 로컬 Fuseki(:3033, TTL 336,780 트리플)+뷰어(:8875)로 26지점 캡처. 패킷 294→496. 685 남원소경(관아·이주 행렬·마을), 600 사비 왕흥사, 700~800 경주 장면 증가 확인 | #185 (배포 전) |
+
+**남은 일**
+- 사용자 확인 뒤 main 합류·c2 배포(c2 는 `git pull` 뒤 `sigong-sync` 가 TTL 재적재 — 정적 파일만이 아니므로 확인 필요).
+- 좌표 없는 사실 254건은 주장으로만 남았다(장면 없음). 조사 칸 2차에서 좌표 근거(위키 표시 좌표·국가유산포털)를 채운다.
+- 한반도 밖(국내성·졸본·발해 상경)은 지형 데이터가 없어 화면에 못 놓는다(#해외 거점).
+- `disaster` kind 장면은 조립기 분기가 없어 기와집으로 보인다. 구휼(relief)만 연결됨.
+- 조사 간 같은 기록 중복(약 48건)은 장면만 빼고 사실은 남겼다. 다음 라운드는 job 설계에서 횡단 칸의 중복을 미리 막는다.
+- 고려·조선·근현대 라운드(계획: 고려 250·조선 400·근현대 150).
+
+**함정**: `/api/chronicle` 은 SPARQL LIMIT 2001 이고 클라이언트가 사료 목록을 반으로 나눠 재조회한다(`chronicle-load.js`). 한 사료가 2,000 주장을 넘으면 오류가 난다 — 삼국사기는 744. 로컬 검증은 `scripts/fuseki.sh` 가 Windows Git Bash 에서 `setsid` 가 없어 실패하므로 `MSYS_NO_PATHCONV=1 java -jar .fuseki/fuseki/fuseki-server.jar --port 3033 --mem /sigong` 로 직접 띄운다. 3030 은 다른 node 프로세스가 쓰고 있었다. 8873 에 옛 뷰어가 겹쳐 떠 있어 옛 파일을 내보낸 적이 있다 — 포트 확인 필수. 픽스처 원본 HTML 은 `.gitattributes` `-text` 로 바이트를 보존한다.
+
 ## 2026-09-12: 시대별 세계 수정 1차 — 브랜치 `feat/era-world-170` (#170 #171 #172 #173 #174 #175)
 
 **2026-09-13 새벽 사용자 승인("올려봐")으로 main 에 ff 합류·c2 배포(5b533c04, 정적 파일만이라 뷰어 재시작 없음, 공개 주소에서 새 코드·라벨 확인).** 워크트리 `C:/Users/gkfkd/Git/sigong-world`, 브랜치 `feat/era-world-170`(origin/main 5c9ae2b0 → 33커밋). Codex 의 미합류 브랜치 `codex/annual-world-fixes`(b66dee50, #170·#172·#174·#177 12커밋) 위에 세웠다.
