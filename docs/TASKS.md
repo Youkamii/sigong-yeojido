@@ -1,5 +1,24 @@
 # 전체 작업 목록과 누락 점검
 
+## 2026-09-14: 국가 영역 공백·시작 화면 화질·AI 이미지 파일럿 배포, 교과서 항목 목록 1차 (#186 #187 #188 #189 #190)
+
+**2026-09-14 새벽 사용자 승인("올려 일단. 선작업 후 조율하자")으로 main 9878f55e 를 c2 에 배포(뷰어 재시작, 색인 약 8분 뒤 응답). 공개 주소 캡처: 1946 소련군정·미군정 이름표, 1920 일제강점기 조선 범례, 시작 화면 화질 버튼(낮음 입장 12초).** 리딩 Claude, 개발 Codex gpt-6-astra high(워크트리 sigong-codex-a/b/c), 조사 Opus 5 high 워크플로, 적대 리뷰 red-reviewer 3렌즈 × 기능.
+
+| 기능 | 이슈 → 커밋 | 내용·검증 |
+|---|---|---|
+| 1945 전후 국가 영역 없음 | #189 → `59b361aa` `760a697b` (닫힘) | 원인은 Cliopatria 자료 공백(1911~1947). HGIS 13도(1940) union 참고 도형 3개 `data/maps/polity-gap-1911-1947.geojson.gz`(`scripts/build_polity_gap_1911_1947.py`): 일제강점기 조선 1911~1944, 38도선 이남 미군정·이북 소련군정 1945~1947. 기존 HGIS 주장 인용, level 0 카탈로그 합침, 3D 출처 필터를 2D API 와 일치, 범례 출처 링크 2종, 2D 근거 패널 참고 도형 전용. 도 경계 이음새 구멍 104개가 이름표 자리 계산을 막아 제거. 지도 이름표는 5자 이내(mapLabel) — 글자 크기가 도형 여유 반지름에 비례해 6자 이상은 어느 줌에서도 숨겨진다 |
+| 시작 화면 화질 선택 | #187 → `06ad6fa3` (닫힘) | `quality-choice.js`(추천·선택 규칙: ?q= > 저장값 > 기기 추천, 버튼 안 누르면 manual:false 로 저장해 자동 적응 유지, ?q= 는 잠금·미저장) · `quality-gate.js` · `scene-quality.js`(낮음: 숲 후보 18만→1.8만, 추정 마을 임계 ×0.25 — `selectEstimatedSites` context.scale 로 부분집합·섬 보장 유지) · `occupancy-grid.js`(점유 검사 격자, 모든 화질) · 예산 같으면 재빌드 없음. CPU 6배 제한 3회 중앙값: 낮음 103→44초, 보통 118→70초. `scripts/measure_first_screen.py`, `scripts/verify_quality_gate.py`, `docs/research/quality-gate-187.md` |
+| AI 생성 상상도 파일럿 | #188 → `9878f55e` (열림) | Codex `image_gen.imagegen` 으로 세종 초상·훈민정음 반포·한산도 대첩 3장(장당 28~44초). `services/host/assets/ai-images/`(1024px JPEG ≤250KB + 512px ≤80KB, index.json 에 프롬프트·근거·고증 한계·"AI 생성 상상도"), `scripts/ai_images/finalize_image.py`·README. 카드 UI 는 진행 중(브랜치 feat/ai-image-cards-188) |
+| 교과서 항목 목록 1차 | #186 → 브랜치 `feat/curriculum-items-186` `db209fe0` (main 미합류) | Opus 5 high 워크플로 10칸(조사→적대 검수→수정)+최종 검수: 982건(선사 56·삼국 126·남북국 80·고려 92·92·조선 115·115·개항 103·일제 103·현대 100), 필수 인물·사건 164개 누락 0(세종·훈민정음·장영실·측우기 포함). `docs/research/curriculum-186/items/<era>.json`·`review/`·`items.merged.json`·`README.md`·`table.md`, `scripts/merge_curriculum_items.py`. 검토용 표 아티팩트(세션 목록 "고등 한국사 항목 목록"). 최종 검수 지적: 경계 중복 15쌍, 918~935 두 칸 겹침, 삼국 칸 성취기준 미확인, 추정 좌표 53%·개경/경주 한 점 밀집, 동명이인 표기 → 정리 워크플로 진행 중. 다음 단계 지침 `docs/research/curriculum-items-brief.md`(항목→facts-format 대응, 근거 우선순위, 45칸 계획) |
+| 장면 유형·추정 배경 흐리게 | #190 (진행 중) | 브랜치 feat/estimated-dim-190(추정 마을·밭·길·숲 흐리게+지도 설정 토글), feat/scene-kinds-190(kind portrait·heritage: 조립기·검증기·빌드·표본 패킷) — Codex 병렬 |
+
+**남은 일**
+- #186: 정리 워크플로 결과 반영 → 사용자 검토("선작업 후 조율") → 조선 전기(115건)부터 항목별 근거 조사(Opus, `curriculum-items-brief.md`) → 적재 → 화면 확인. 삼국 칸 성취기준 확인, 좌표 구체화(도시 중심점이 아니라 궁궐·전장 등)는 근거 조사에서.
+- #190·#188 UI: 캡처 확인 → 적대 리뷰 → main 합류 → 사용자 승인 뒤 배포.
+- #187 실기기 패드 측정 미확인. 2020 제주시 작음, 좌표 없는 사실 254건, 해외 지형, disaster 조립 분기는 그대로.
+
+**함정**: c2 뷰어는 재시작 뒤 약 8분간 `/api/*` 가 응답하지 않는다(정적 파일은 즉시). `validate.py --write-digests` 는 모든 `.digests.json` 을 LF 로 다시 써서 CRLF 작업 트리에서 수백 파일이 수정된 것처럼 보인다 — 내용 diff 는 `git diff --numstat` 으로 확인하고 노이즈는 `git checkout --` 로 되돌린다. Bash 도구의 큰 heredoc 에서 따옴표가 섞이면 파싱 오류가 나므로 작업 지시서는 Write 도구로 쓴다. 로컬 뷰어 포트는 다른 워크트리(8876~8881)와 겹치지 않게 지정한다.
+
 ## 2026-09-13: 사실 수집 파일럿 — 삼국·통일신라·발해 403건, 브랜치 `feat/facts-pilot-ancient` (#180 #181 #182 #183 #184 #185)
 
 **2026-09-13 11:15 사용자 지시("합해봐. 일단 보게")로 main 에 ff 합류·c2 배포(0b67a09c). c2 sigong-sync 가 5초 감시로 TTL 을 재빌드해 336,780 트리플 적재(SYNC OK), 뷰어는 파일 서명으로 색인을 갱신하므로 재시작 없음. 공개 주소에서 패킷 496·사실 주장·fact-layers 확인.** 워크트리 `C:/Users/gkfkd/Git/sigong-facts`(origin 백업). 사용자 지시: 역사 사실이 너무 부족하니 삼국시대부터 10년 단위로 사실을 모은다. Claude 가 리딩, 조사는 **Opus 5 high**(워크플로 15 job × 조사→적대 검수→수정 = 45 에이전트, 45분, 7.6M 토큰), 개발은 **Codex gpt-6-astra high** 5건.
