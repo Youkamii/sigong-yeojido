@@ -2,12 +2,14 @@ import {escapeHtml as esc} from './html.js';
 import {icon} from './atlas-icons.js';
 import {cleanTitle,typeName} from './atlas-data.js';
 import {yearLabel} from './chronicle.js';
+import {loadAiImages,aiImageFor,pickSrc} from './ai-images.js';
 
 export class AtlasStory{
   constructor(ui){
     this.ui=ui;this.history=[];
     this.pane=document.createElement('aside');this.pane.className='atlas-pane atlas-left atlas-story';this.pane.id='atlasStory';this.pane.setAttribute('aria-label','인물과 사건 이야기');
     ui.registerPanel('story',this.pane);
+    loadAiImages().then(data=>{if(data&&this.entity)this.render();});
     this.pane.onclick=e=>{
       if(e.target.closest('[data-story-back]')){this.back();return;}
       if(e.target.closest('[data-story-relations]')){this.mode='relations';this.render();return;}
@@ -56,9 +58,16 @@ export class AtlasStory{
     const description=activity?.summary||data.description(entity.id)||(entity.type==='Event'?scene?.summary:role?`${yearLabel(scene.startYear)} · ${role.role}`:'');
     const place=activity?.place||scene?.place?.label;
     const relationMode=this.mode==='relations';
+    const image=aiImageFor({entityId:entity.id,sceneId:activity?.sceneId||(entity.type==='Event'?event?.sceneId:null),itemId:activity?.itemId||entity.itemId});
+    const imageFigure=image?`<figure class="atlas-ai-image">
+      <a class="atlas-ai-image-link" href="${esc(image.src)}" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="${esc(pickSrc(image,ui.runtime()?.engine?.quality))}" alt="${esc(image.alt)}"><span class="relation-chip atlas-ai-badge atlas-ai-overlay">AI 상상도</span></a>
+      <figcaption><span class="relation-chip atlas-ai-badge">${esc(image.label)}</span><p>${esc(image.notice)}</p></figcaption>
+      <details><summary>어떻게 만들었나</summary><dl><dt>바탕 자료</dt><dd>${esc(image.basis)}</dd><dt>상상한 부분과 한계</dt><dd>${esc(image.caveats)}</dd><dt>생성 시각</dt><dd>${esc(image.generatedAt)}</dd><dt>생성 도구</dt><dd>${esc(image.generator)}</dd></dl></details>
+    </figure>`:'';
     this.pane.innerHTML=`<header><button class="atlas-story-back" data-story-back>${icon('left')}<span>${relationMode?'이야기로':this.history.length?'이전 이야기':'지도로 돌아가기'}</span></button><button class="atlas-icon" data-close aria-label="이야기 닫기">${icon('close')}</button></header>
       <div class="atlas-story-body"><p class="atlas-breadcrumb">${typeName(entity.type)} <span>›</span> ${esc(activity?.narrative?'설화·전승':activity?.setting?yearLabel(ui.chronicle.year):event?yearLabel(event.lo):dates)}</p>
       <h2>${esc(name)}${relationMode?'과 연결':''}</h2>
+      ${imageFigure}
       ${relationMode?'<p class="atlas-muted">관계를 따라 탐색해 보세요.</p>':`${activity?.role?`<p class="atlas-role">${esc(activity.role)}</p>`:''}${description?`<p class="atlas-description">${esc(description)}</p>`:'<p class="atlas-muted">이 항목에 연결된 기록과 관계를 살펴보세요.</p>'}
       ${activity?.narrative?`<p class="atlas-muted">이야기 속 시기 · ${esc(activity.narrative.storyTime.label)}<br>문헌의 기록 시기 · ${esc(activity.narrative.recordingTime.label)}</p>`:''}
       ${place?`<button class="atlas-place" data-story-place>${icon('pin')}<span>${esc(place)}</span>${icon('arrow')}</button>`:''}

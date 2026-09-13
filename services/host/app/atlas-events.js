@@ -2,6 +2,7 @@ import {escapeHtml as esc} from './html.js';
 import {icon} from './atlas-icons.js';
 import {cleanTitle} from './atlas-data.js';
 import {yearLabel} from './chronicle.js';
+import {loadAiImages,aiImageFor} from './ai-images.js';
 
 export function eventCategory(event,scene){
   if(['battle','naval','siege'].includes(scene?.kind))return 'war';
@@ -28,12 +29,14 @@ export class AtlasEvents{
     this.timeline.cardContent=event=>this.card(event);
     this.timeline.windowKey=null;
     ui.chronicle.callbacks.timelineEvents=events=>this.filter(events);
+    loadAiImages().then(data=>{if(data){this.timeline.windowKey=null;this.update();}});
   }
   filter(events){return events.filter(event=>this.category==='all'||eventCategory(event,this.ui.data.scenes?.get(event.sceneId))===this.category);}
   card(event){
     const data=this.ui.data,scene=data.scenes?.get(event.sceneId),people=(scene?.participants||[]).filter(p=>data.entities.has(p.entityId)&&data.entities.get(p.entityId).type==='Person'&&(p.claimIds||[]).some(id=>data.claims.has(id))).slice(0,2).map(p=>data.label(data.entities.get(p.entityId)));
     const symbol=scene?.kind==='naval'?'ship':scene?.kind==='siege'?'castle':eventCategory(event,scene)==='war'?'battle':'event';
-    return `<span class="atlas-event-date">${esc(yearLabel(event.lo))}</span><div class="atlas-event-card-body">${icon(symbol)}<div><strong>${esc(cleanTitle(event.title))}</strong><small>${esc([...people,event.placeLabel].filter(Boolean).join(' · '))}</small><span class="atlas-event-action"><em class="atlas-event-current">선택한 사건 보기</em><em class="atlas-event-jump">${esc(yearLabel(event.lo))}으로 이동</em>${icon('arrow')}</span></div></div>`;
+    const image=aiImageFor({entityId:event.id,sceneId:event.sceneId,itemId:event.itemId});
+    return `<span class="atlas-event-date">${esc(yearLabel(event.lo))}</span><div class="atlas-event-card-body">${image?`<img class="atlas-ai-thumbnail" loading="lazy" decoding="async" src="${esc(image.preview)}" alt="${esc(image.alt)}" width="56" height="56">`:icon(symbol)}<div><strong>${esc(cleanTitle(event.title))}</strong><small>${esc([...people,event.placeLabel].filter(Boolean).join(' · '))}</small><span class="atlas-event-action"><em class="atlas-event-current">선택한 사건 보기</em><em class="atlas-event-jump">${esc(yearLabel(event.lo))}으로 이동</em>${icon('arrow')}</span></div></div>${image?'<small class="relation-chip atlas-ai-badge atlas-ai-card-label">AI 상상도</small>':''}`;
   }
   preview(year){if(!this.pane.hidden)this.pane.querySelector('.atlas-event-caption').textContent=yearLabel(year)+'의 앞뒤 이야기';}
   update(){

@@ -1,0 +1,167 @@
+{
+  "checks": [
+    {
+      "name": "viewer ready",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Sejong uses preview at low quality",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "low quality never requests full portrait",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "AI notice is visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "full-size link",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "details collapsed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "quality event preserves open panel",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "next render uses full-size at medium",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "generation metadata",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "01-sejong-medium.png <= 1MB",
+      "pass": true,
+      "detail": 367488
+    },
+    {
+      "name": "tablet preview",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "tablet image and badge fit",
+      "pass": true,
+      "detail": {
+        "imageHeight": 320,
+        "imageWidth": 213,
+        "width": 351,
+        "badgeFont": 12,
+        "overflow": false
+      }
+    },
+    {
+      "name": "02-sejong-tablet-low.png <= 1MB",
+      "pass": true,
+      "detail": 211836
+    },
+    {
+      "name": "Hansando card uses preview",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Hansando thumbnail is 56 x 56",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "card badge is at least 12px",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "card badge inside card",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "unmapped card keeps icon and omits badge",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "03-hansando-card.png <= 1MB",
+      "pass": true,
+      "detail": 125937
+    },
+    {
+      "name": "Hansando story uses scene mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "04-hansando-story.png <= 1MB",
+      "pass": true,
+      "detail": 254234
+    },
+    {
+      "name": "second Sejong entity also mapped",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Hunminjeongeum event mapping",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "unmapped test entity exists",
+      "pass": true,
+      "detail": "person-jeong-inji"
+    },
+    {
+      "name": "unmapped entity has no figure",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "index and map fetched once",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "failed image index leaves story usable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:8881/assets/ai-images/index.json",
+    "http://127.0.0.1:8881/app/ai-image-map.json",
+    "http://127.0.0.1:8881/assets/ai-images/sejong-portrait-512.jpg",
+    "http://127.0.0.1:8881/assets/ai-images/sejong-portrait.jpg",
+    "http://127.0.0.1:8881/assets/ai-images/hansando-1592-512.jpg",
+    "http://127.0.0.1:8881/assets/ai-images/sejong-hunminjeongeum-1446-512.jpg",
+    "http://127.0.0.1:8881/assets/ai-images/index.json",
+    "http://127.0.0.1:8881/app/ai-image-map.json"
+  ],
+  "captures": [
+    "01-sejong-medium.png",
+    "02-sejong-tablet-low.png",
+    "03-hansando-card.png",
+    "04-hansando-story.png"
+  ]
+}
