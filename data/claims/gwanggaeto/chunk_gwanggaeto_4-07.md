@@ -46,6 +46,23 @@ claim 으로 만들지 않은 것: 國煙 · 看煙 각각의 수. 전사본 이
     "origin": "ai",
     "status": "draft",
     "note": "총계 330가. 國煙·看煙 의 내역 숫자는 전사본 이 자리 글자가 어긋나 보여 claim 으로 만들지 않았다."
+  },
+  {
+    "id": "claim-facts-ancient-goguryeo_middle-gg-sumyoin-count",
+    "subject": "event-gg-sumyoin-414",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gwanggaeto-neungbi"
+    },
+    "citesChunk": "chunk_gwanggaeto_4-07",
+    "quote": "復取舊民一百十家，合新舊守墓石國煙，卅看煙三百都合三百卅家",
+    "note": "구민 110가를 더해 국연 30·간연 300, 모두 330가",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

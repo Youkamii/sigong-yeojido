@@ -71,6 +71,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-facts-ancient-balhae-balhae-713-time",
+    "subject": "polity-balhae",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "713년",
+      "year": 713,
+      "precision": "year",
+      "earliest": 713,
+      "latest": 713,
+      "id": "ts-facts-ancient-balhae-balhae-713-time"
+    },
+    "citesChunk": "chunk_period96_three_kingdoms_late_balhae-713",
+    "quote": "713년에 당나라에서 발해군왕을 받은 뒤 국명을 발해로 변경하였다.",
+    "note": "",
+    "fromSource": "src-encykorea-balhae",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

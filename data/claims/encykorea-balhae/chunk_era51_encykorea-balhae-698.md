@@ -65,6 +65,28 @@ generated_by: "claude-opus-5"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-facts-ancient-balhae-balhae-found-time",
+    "subject": "polity-balhae",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "698년",
+      "year": 698,
+      "precision": "year",
+      "earliest": 698,
+      "latest": 698,
+      "id": "ts-facts-ancient-balhae-balhae-found-time"
+    },
+    "citesChunk": "chunk_era51_encykorea-balhae-698",
+    "quote": "698년에 고구려 옛 장수인 대조영",
+    "note": "한국민족문화대백과 발해 항목 발췌 chunk.",
+    "fromSource": "src-encykorea-balhae",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

@@ -1,0 +1,104 @@
+{
+  "job": "balhae",
+  "sources": 2,
+  "excerpts": 4,
+  "chunkClaims": 70,
+  "excerptClaims": 2,
+  "facts": 27,
+  "factsByCategory": {
+    "administration": 6,
+    "culture": 2,
+    "economy": 4,
+    "facility": 4,
+    "foreign": 4,
+    "settlement": 6,
+    "war": 1
+  },
+  "claims": 72,
+  "entities": 22,
+  "rawFilesChecked": [
+    {
+      "source": "src-enwiki-shangjing",
+      "url": "https://en.wikipedia.org/wiki/Shangjing_Longquanfu",
+      "sha256": "d2a21fc7542fda4755382fd06cf2a2d3a796b16e6ee2b45aaaf10d1c45c51b6b",
+      "rawBytes": 89045,
+      "excerpts": 2,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-kowiki-sangyeong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%83%81%EA%B2%BD%EC%9A%A9%EC%B2%9C%EB%B6%80",
+      "sha256": "4ffc28db1b97e5acddadf6c87cf710b1bd7e3d50ca58fcfe4c2487daf22dfd83",
+      "rawBytes": 84635,
+      "excerpts": 2,
+      "quotedWords": 13
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-balhae-1",
+      "topic": "5경의 좌표",
+      "detail": "상경 용천부만 영어 위키백과에서 십진 좌표를 얻었다. 중경 현덕부(서고성)·동경 용원부(팔련성)·남경 남해부·서경 압록부는 ko/en 위키백과에 좌표가 없거나 문서가 없었다.",
+      "neededSource": "국립문화유산연구원 또는 en.wikipedia 의 서고성·팔련성 문서(좌표 포함)"
+    },
+    {
+      "id": "miss-balhae-2",
+      "topic": "동모산 좌표",
+      "detail": "동모산은 위키백과 문서에 표시 좌표가 없어 좌표를 만들지 않았다. 기존 scene-anc-balhae-698 도 같은 이유로 좌표를 비워 두었다.",
+      "neededSource": "동모산(성산자산성) 위치를 십진 좌표로 적은 허용 출처"
+    },
+    {
+      "id": "miss-balhae-3",
+      "topic": "발해 안의 재해·구휼 기사",
+      "detail": "중국 정사 발해전과 고려사에는 발해 내부의 가뭄·홍수·기근·진휼 기사가 없다. 이 칸에서 disaster 갈래를 채우지 못했다.",
+      "neededSource": "발해 관련 금석문 또는 일본 사서(속일본기) 전사본"
+    },
+    {
+      "id": "miss-balhae-4",
+      "topic": "발해의 절·탑 건립 연대",
+      "detail": "상경성 절터·영광탑 같은 불교 시설의 건립 연대를 적은 원문 조각을 로컬 사료에서 찾지 못해 facility 를 성곽·주둔지로만 채웠다.",
+      "neededSource": "국가유산포털 또는 국립문화유산연구원의 발해 불교 유적 해설"
+    },
+    {
+      "id": "miss-balhae-5",
+      "topic": "권역 코드에 국외가 없다",
+      "detail": "권역 코드는 capital·north·central·south·island 뿐이라 발해가 주체이지만 장소가 중국 내지인 사실(fact-balhae-017·018·019·022·024·025)을 north 로 셀 수밖에 없다. region×10년 표의 north 에 실제로는 북위 34~37도인 당 장안·낙양·산둥 사건 6건이 섞인다. 각 사실의 note 에 실제 위도를 통일된 문구로 적어 두었다.",
+      "neededSource": "칸 설계 쪽의 foreign(국외) 권역 코드 추가 또는 사실마다 실제 좌표 권역을 따로 적는 필드"
+    },
+    {
+      "id": "miss-balhae-6",
+      "topic": "브리프 규칙 8과 검증기 refs 검사의 충돌",
+      "detail": "규칙 8은 history-scenes.json 에 이미 있는 장면이면 facts 의 sceneId 에 그 기존 id 를 적으라고 하는데, check_fact_research.py 430~431 행은 fact.sceneId 를 같은 result.json 의 scenes 안에서만 찾아 실패시킨다. fact-balhae-001(scene-anc-balhae-698)이 여기에 해당해 sceneId 를 null 로 두고 note 로만 기존 장면을 가리켰다.",
+      "neededSource": "검증기가 외부 장면 id(services/host/app/history-scenes.json)를 허용하도록 고치는 도구 쪽 수정"
+    },
+    {
+      "id": "miss-balhae-7",
+      "topic": "규모·주둔·현대 지명을 담을 predicate",
+      "detail": "fact_predicates.json 에서 literal 을 받는 predicate 는 administeredAs·householdCount·populationCount 뿐이라 성곽 규모(週三十里)·주둔(常屯勁兵)·호수 어림수(數萬戶)·현대 지명 비정을 담을 자리가 없다. 이번 수정에서는 이런 값을 syj:relatedTo(entity)로 옮기고 원문은 quote 와 note 에 남겼으며, 현대 지명 비정 claim(claim-balhae-sangyeong-modern)은 지웠다.",
+      "neededSource": "scripts/fact_predicates.json 에 규모·주둔용 predicate 추가(예: syj:hasScale, syj:garrisonedAt)"
+    }
+  ],
+  "collection": {
+    "task": "balhae",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789260586,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-balhae"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "polity-balhae",
+    "polity-georan"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

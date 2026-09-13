@@ -1,0 +1,1897 @@
+{
+ "collection": "facts-ancient",
+ "job": "baekje_late",
+ "cell": {
+  "polity": "백제",
+  "from": 500,
+  "to": 660,
+  "regions": [
+   "south"
+  ],
+  "categories": {
+   "settlement": 3,
+   "administration": 4,
+   "facility": 3,
+   "economy": 3,
+   "disaster": 2,
+   "culture": 2,
+   "foreign": 2,
+   "person": 1
+  }
+ },
+ "sources": [
+  {
+   "id": "src-kowiki-gongsanseong",
+   "title": "공산성 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%82%B0%EC%84%B1",
+   "rawFile": "raw/gongsanseong.html",
+   "sha256": "2c5744207bf7a7675c9e16efde5840e445a7fe614227934abb05bb41f130d75d",
+   "httpStatus": 200,
+   "byteLength": 207270,
+   "fetchedUtc": "2026-09-13T00:39:39Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
+    {
+     "id": "ex-gongsanseong-geo",
+     "text": "36.46333; 127.12694",
+     "locator": "문서 머리 좌표 표시(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-busosanseong",
+   "title": "부소산성 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%86%8C%EC%82%B0%EC%84%B1",
+   "rawFile": "raw/busosanseong.html",
+   "sha256": "94e92a5be3be0ff4bb215748668dd6ed3d263248d401adfc83218c1c68b08190",
+   "httpStatus": 200,
+   "byteLength": 199617,
+   "fetchedUtc": "2026-09-13T00:39:40Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
+    {
+     "id": "ex-busosanseong-geo",
+     "text": "36.28750; 126.91528",
+     "locator": "문서 머리 좌표 표시(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-wangheungsaji",
+   "title": "왕흥사지 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%99%95%ED%9D%A5%EC%82%AC%EC%A7%80",
+   "rawFile": "raw/wangheungsaji.html",
+   "sha256": "f69d92608f5d5b141e4661eea00bc6d27730efeeb287b1e487d363040b8656c9",
+   "httpStatus": 200,
+   "byteLength": 101981,
+   "fetchedUtc": "2026-09-13T00:39:40Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
+    {
+     "id": "ex-wangheungsaji-geo",
+     "text": "36.29639; 126.90694",
+     "locator": "문서 머리 좌표 표시(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-gungnamji",
+   "title": "궁남지 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B6%81%EB%82%A8%EC%A7%80",
+   "rawFile": "raw/gungnamji.html",
+   "sha256": "fd455a67ddd60ba66a14a319b0e021e24721aea3fbea450c1fe571ca0fb8a4e7",
+   "httpStatus": 200,
+   "byteLength": 90230,
+   "fetchedUtc": "2026-09-13T00:39:40Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
+    {
+     "id": "ex-gungnamji-geo",
+     "text": "36.269056; 126.9136333",
+     "locator": "문서 머리 좌표 표시(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-mireuksaji",
+   "title": "익산 미륵사지 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%9D%B5%EC%82%B0%20%EB%AF%B8%EB%A5%B5%EC%82%AC%EC%A7%80",
+   "rawFile": "raw/mireuksaji.html",
+   "sha256": "0ce021c9a5d86ea6dc865c2e25f97a2b2259604ee7ebd38249387074a8aeab8b",
+   "httpStatus": 200,
+   "byteLength": 202774,
+   "fetchedUtc": "2026-09-13T00:39:41Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
+    {
+     "id": "ex-mireuksaji-geo",
+     "text": "36.01083; 127.03056",
+     "locator": "문서 머리 좌표 표시(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-seongheungsanseong",
+   "title": "성흥산성 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%84%B1%ED%9D%A5%EC%82%B0%EC%84%B1",
+   "rawFile": "raw/seongheungsanseong.html",
+   "sha256": "2d1d4356751ed5388e1686071dd4929140ef5383a11a0fdc2cec75b6ff53ac17",
+   "httpStatus": 200,
+   "byteLength": 179946,
+   "fetchedUtc": "2026-09-13T00:39:42Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
+    {
+     "id": "ex-seongheungsanseong-geo",
+     "text": "36.19556; 126.89833",
+     "locator": "문서 머리 좌표 표시(class=\"geo\")"
+    }
+   ]
+  }
+ ],
+ "entities": [
+  {
+   "id": "polity-baekje",
+   "type": "Polity",
+   "label": "백제"
+  },
+  {
+   "id": "polity-silla",
+   "type": "Polity",
+   "label": "신라"
+  },
+  {
+   "id": "polity-liang",
+   "type": "Polity",
+   "label": "양(梁)"
+  },
+  {
+   "id": "polity-wa",
+   "type": "Polity",
+   "label": "왜(倭)"
+  },
+  {
+   "id": "place-sabi",
+   "type": "Place",
+   "label": "사비(泗沘)"
+  },
+  {
+   "id": "place-ungjinseong",
+   "type": "Place",
+   "label": "웅진성(熊津城)"
+  },
+  {
+   "id": "place-gongsanseong",
+   "type": "Place",
+   "label": "웅진 왕궁(공산성)"
+  },
+  {
+   "id": "place-garimseong",
+   "type": "Place",
+   "label": "가림성(加林城)"
+  },
+  {
+   "id": "place-wangheungsa",
+   "type": "Place",
+   "label": "왕흥사(王興寺)"
+  },
+  {
+   "id": "place-gungnamji",
+   "type": "Place",
+   "label": "궁남지(宮南池)"
+  },
+  {
+   "id": "place-mireuksa",
+   "type": "Place",
+   "label": "미륵사(彌勒寺)"
+  },
+  {
+   "id": "place-naji",
+   "type": "Place",
+   "label": "내지성(奈祇城)"
+  },
+  {
+   "id": "person-sataekjijeok",
+   "type": "Person",
+   "label": "사택지적(砂宅智積)"
+  },
+  {
+   "id": "inst-baekje-busae",
+   "type": "Institution",
+   "label": "백제 조세(賦稅)"
+  },
+  {
+   "id": "thing-baekje-sanmul",
+   "type": "Thing",
+   "label": "백제의 오곡·가축·산물(五穀·牛·豬·雞·巨栗)"
+  }
+ ],
+ "claims": [
+  {
+   "id": "cl-bj-538-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十六年",
+    "year": 538,
+    "precision": "year",
+    "earliest": 538,
+    "latest": 538
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0060_0100",
+   "quote": "十六年, 春, 移都於泗沘, 國號南扶餘.",
+   "note": "성왕 16년(538) 사비 천도"
+  },
+  {
+   "id": "cl-bj-538-move",
+   "subject": "polity-baekje",
+   "predicate": "syj:capitalMovedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-sabi"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0060_0100",
+   "quote": "移都於泗沘",
+   "note": "웅진에서 사비로 도읍을 옮김"
+  },
+  {
+   "id": "cl-bj-660-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 660
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0380",
+   "quote": "國夲有五部·三十七郡·二百城·七十六萬戶",
+   "note": "의자왕 20년(660) 기사"
+  },
+  {
+   "id": "cl-bj-660-hoju",
+   "subject": "polity-baekje",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 760000,
+    "unit": "戶"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0380",
+   "quote": "國夲有五部·三十七郡·二百城·七十六萬戶",
+   "note": "백제 전체 76만 호"
+  },
+  {
+   "id": "cl-bj-660-gunhyeon",
+   "subject": "polity-baekje",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "五部·三十七郡·二百城"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0380",
+   "quote": "國夲有五部·三十七郡·二百城·七十六萬戶",
+   "note": "5부 37군 200성 편제"
+  },
+  {
+   "id": "cl-bj-660-dodok",
+   "subject": "polity-baekje",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "熊津·馬韓·東明·金漣·德安 五都督府"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0380",
+   "quote": "至是析置熊津·馬韓·東明·金漣·德安五都督府, 各統州縣",
+   "note": "당이 옛 백제 땅에 5도독부를 나누어 둠"
+  },
+  {
+   "id": "cl-bj-660-ungjin",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-ungjinseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0380",
+   "quote": "又以左衛郎將王文度爲熊津都督, 撫其餘衆",
+   "note": "웅진도독부가 옛 도성 웅진에 놓임"
+  },
+  {
+   "id": "cl-bj-521-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 521
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0190",
+   "quote": "秋八月, 蝗害糓, 民饑, 亡入新羅者九百戶.",
+   "note": "무령왕 21년(521) 8월"
+  },
+  {
+   "id": "cl-bj-521-flee",
+   "subject": "polity-baekje",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 900,
+    "unit": "戶"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0190",
+   "quote": "亡入新羅者九百戶",
+   "note": "신라로 도망해 들어간 900호"
+  },
+  {
+   "id": "cl-bj-521-silla",
+   "subject": "polity-baekje",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0190",
+   "quote": "亡入新羅者九百戶",
+   "note": "유출 방향이 신라"
+  },
+  {
+   "id": "cl-bj-jubseo-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "建德六年",
+    "year": 577,
+    "precision": "year",
+    "earliest": 577,
+    "latest": 577
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0030",
+   "quote": "建德六年, 齊滅, 昌始遣使獻方物.",
+   "note": "주서 백제전이 백제 사정을 기록한 시점(북주 건덕 6년=577)"
+  },
+  {
+   "id": "cl-bj-jubseo-manga",
+   "subject": "polity-baekje",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "都下有萬家, 分爲五部"
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0030",
+   "quote": "都下有萬家, 分爲五部, 曰上部·前部·中部·下部·後部, 統兵五百人.",
+   "note": "도성에 1만 가, 5부 편제"
+  },
+  {
+   "id": "cl-bj-jubseo-sabi",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sabi"
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0030",
+   "quote": "治固麻城. 其外更有五方",
+   "note": "도성(고마성) 밖에 5방을 둠"
+  },
+  {
+   "id": "cl-bj-jubseo-obang",
+   "subject": "polity-baekje",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "五方"
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0030",
+   "quote": "其外更有五方, 中方曰古沙城, 東方曰得安城, 南方曰久知下城, 西方曰刀先城, 北方曰熊津城.",
+   "note": "5방성 이름"
+  },
+  {
+   "id": "cl-bj-jubseo-bangnyeong",
+   "subject": "polity-baekje",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "方領·郡將"
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0030",
+   "quote": "五方各有方領一人, 以達率爲之, 郡將三人, 以德率爲之.",
+   "note": "방령 1인·군장 3인"
+  },
+  {
+   "id": "cl-bj-jubseo-tax",
+   "subject": "polity-baekje",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "inst-baekje-busae"
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0030",
+   "quote": "賦稅以布絹絲麻及米等, 量歲豐儉, 差等輸之.",
+   "note": "베·명주·실·삼·쌀로 조세를 걷되 풍흉에 따라 차등(원문은 quote 에 그대로 둔다)"
+  },
+  {
+   "id": "cl-bj-jubseo-dosibu",
+   "subject": "polity-baekje",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "都市部·點口部"
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0030",
+   "quote": "外官有司軍部·司徒部·司空部·司寇部·點口部·客部·外舍部·綢部·日官部·都市部.",
+   "note": "외관 10부에 시장 담당 도시부와 호구 담당 점구부"
+  },
+  {
+   "id": "cl-bj-suseo-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "開皇十八年",
+    "year": 598,
+    "precision": "year",
+    "earliest": 598,
+    "latest": 598
+   },
+   "sourceId": "src-jipseong-ko_033",
+   "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0020",
+   "quote": "開皇十八年, 昌使其長史王辯那來獻方物",
+   "note": "수서 백제전, 개황 18년(598)"
+  },
+  {
+   "id": "cl-bj-suseo-life",
+   "subject": "polity-baekje",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "thing-baekje-sanmul"
+   },
+   "sourceId": "src-jipseong-ko_033",
+   "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0020",
+   "quote": "有五穀·牛·豬·雞, 多不火食. 厥田下濕, 人皆山居. 有巨栗.",
+   "note": "오곡과 소·돼지·닭, 낮고 습한 밭, 산에 사는 사람들, 큰 밤(원문은 quote 에 그대로 둔다)"
+  },
+  {
+   "id": "cl-bj-500-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十二年",
+    "year": 500,
+    "precision": "year",
+    "earliest": 500,
+    "latest": 500
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0040_0370",
+   "quote": "二十二年, 春, 起臨流閣於宫東, 髙五丈.",
+   "note": "동성왕 22년(500) 봄"
+  },
+  {
+   "id": "cl-bj-500-build",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gongsanseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0040_0370",
+   "quote": "起臨流閣於宫東, 髙五丈. 又穿池養竒禽.",
+   "note": "웅진 왕궁 동쪽에 임류각을 세우고 연못을 팜"
+  },
+  {
+   "id": "cl-bj-501-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 501
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0040_0450",
+   "quote": "八月, 築加林城, 以衛士佐平苗加鎮之.",
+   "note": "동성왕 23년(501) 8월"
+  },
+  {
+   "id": "cl-bj-501-build",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-garimseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0040_0450",
+   "quote": "築加林城, 以衛士佐平苗加鎮之",
+   "note": "가림성을 쌓고 위사좌평 백가에게 지키게 함"
+  },
+  {
+   "id": "cl-bj-526-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "四年",
+    "year": 526,
+    "precision": "year",
+    "earliest": 526,
+    "latest": 526
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0060_0050",
+   "quote": "四年, 冬十月, 修葺熊津城, 立沙井柵.",
+   "note": "성왕 4년(526) 10월"
+  },
+  {
+   "id": "cl-bj-526-build",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-ungjinseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0060_0050",
+   "quote": "修葺熊津城, 立沙井柵",
+   "note": "웅진성을 고쳐 쌓고 사정책을 세움"
+  },
+  {
+   "id": "cl-bj-600-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二年",
+    "year": 600,
+    "precision": "year",
+    "earliest": 600,
+    "latest": 600
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0040_0030",
+   "quote": "二年, 春正月, 創王興寺, 度僧三十人.",
+   "note": "법왕 2년(600) 정월"
+  },
+  {
+   "id": "cl-bj-600-build",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-wangheungsa"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0040_0030",
+   "quote": "創王興寺, 度僧三十人",
+   "note": "왕흥사를 창건하고 승려 30인을 두다"
+  },
+  {
+   "id": "cl-bj-634wh-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三十五年",
+    "year": 634,
+    "precision": "year",
+    "earliest": 634,
+    "latest": 634
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0050_0440",
+   "quote": "三十五年, 春二月, 王興寺成. 其寺臨水, 彩餙壯麗.",
+   "note": "무왕 35년(634) 2월 준공"
+  },
+  {
+   "id": "cl-bj-634wh-done",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-wangheungsa"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0050_0440",
+   "quote": "王興寺成. 其寺臨水, 彩餙壯麗. 王每乗舟, 入寺行香.",
+   "note": "물가에 임한 절, 왕이 배를 타고 드나듦"
+  },
+  {
+   "id": "cl-bj-634gn-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 634
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0050_0450",
+   "quote": "三月, 穿池於宫南, 引水二十餘里",
+   "note": "무왕 35년(634) 3월"
+  },
+  {
+   "id": "cl-bj-634gn-build",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gungnamji"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0050_0450",
+   "quote": "穿池於宫南, 引水二十餘里, 四岸植以楊栁, 水中築㠀嶼, 擬方丈仙山.",
+   "note": "궁 남쪽 연못, 20여 리 물을 끌고 버들을 심고 섬을 쌓음"
+  },
+  {
+   "id": "cl-bj-510-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十年",
+    "year": 510,
+    "precision": "year",
+    "earliest": 510,
+    "latest": 510
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0140",
+   "quote": "十年, 春正月, 下令完固隄防, 驅内外㳺食者歸農.",
+   "note": "무령왕 10년(510) 정월"
+  },
+  {
+   "id": "cl-bj-502-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二年",
+    "year": 502,
+    "precision": "year",
+    "earliest": 502,
+    "latest": 502
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0050",
+   "quote": "二年, 春, 民饑且疫.",
+   "note": "무령왕 2년(502) 봄"
+  },
+  {
+   "id": "cl-bj-506-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 506
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0100",
+   "quote": "三月至五月不雨, 川澤竭. 民饑, 發倉賑救.",
+   "note": "무령왕 6년(506) 3~5월"
+  },
+  {
+   "id": "cl-bj-506-relief",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-ungjinseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0100",
+   "quote": "民饑, 發倉賑救",
+   "note": "창고를 열어 구휼 — 당시 도읍은 웅진"
+  },
+  {
+   "id": "cl-bj-612-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 612
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0050_0170",
+   "quote": "五月, 大水, 漂沒人家.",
+   "note": "무왕 13년(612) 5월"
+  },
+  {
+   "id": "cl-bj-612-act",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sabi"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0050_0170",
+   "quote": "大水, 漂沒人家",
+   "note": "큰물에 민가가 떠내려가 잠김"
+  },
+  {
+   "id": "cl-bj-657d-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 657
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0280",
+   "quote": "夏四月, 大早, 赤地.",
+   "note": "의자왕 17년(657) 4월"
+  },
+  {
+   "id": "cl-bj-657j-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十七年",
+    "year": 657,
+    "precision": "year",
+    "earliest": 657,
+    "latest": 657
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0270",
+   "quote": "十七年, 春正月, 拜王庻子四十一人爲佐平, 各賜食邑.",
+   "note": "의자왕 17년(657) 정월"
+  },
+  {
+   "id": "cl-bj-657j-act",
+   "subject": "polity-baekje",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "佐平·食邑"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0270",
+   "quote": "拜王庻子四十一人爲佐平, 各賜食邑",
+   "note": "서자 41인을 좌평으로 삼고 각각 식읍을 줌"
+  },
+  {
+   "id": "cl-bj-541-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十九年",
+    "year": 541,
+    "precision": "year",
+    "earliest": 541,
+    "latest": 541
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0060_0120",
+   "quote": "十九年, 王遣使入梁朝貢, 兼表請毛詩博士·涅槃等經義并工匠·畫師䓁, 從之.",
+   "note": "성왕 19년(541)"
+  },
+  {
+   "id": "cl-bj-541-act",
+   "subject": "polity-baekje",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-liang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0060_0120",
+   "quote": "兼表請毛詩博士·涅槃等經義并工匠·畫師䓁, 從之",
+   "note": "모시박사·열반경의와 공장·화사를 청해 받음"
+  },
+  {
+   "id": "cl-bj-599-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 599
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0040_0020",
+   "quote": "冬十二月, 下令禁殺生, 収民家所養鷹·鷂放之, 漁獵之具焚之.",
+   "note": "법왕 원년(599) 12월"
+  },
+  {
+   "id": "cl-bj-639-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "己亥年",
+    "year": 639,
+    "precision": "year",
+    "earliest": 639,
+    "latest": 639
+   },
+   "sourceId": "src-geumseok-gskh_002_0050_0040",
+   "citesChunk": "chunk_geumseok-gskh_002_0050_0040_gskh_002_0050_0040_0020",
+   "quote": "故能謹捨淨財, 造立伽藍, 以己亥年正月卄九日, 奉迎舍利.",
+   "note": "기해년(639) 정월 29일"
+  },
+  {
+   "id": "cl-bj-639-act",
+   "subject": "polity-baekje",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-mireuksa"
+   },
+   "sourceId": "src-geumseok-gskh_002_0050_0040",
+   "citesChunk": "chunk_geumseok-gskh_002_0050_0040_gskh_002_0050_0040_0020",
+   "quote": "我百濟王后, 佐平沙宅積德女, 種善因於曠劫, 受勝報於今生, 撫育萬民, 棟梁三寶. 故能謹捨淨財, 造立伽藍",
+   "note": "백제 왕후(좌평 사택적덕의 딸)가 정재를 희사해 가람을 세움"
+  },
+  {
+   "id": "cl-bj-521l-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 521
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0210",
+   "quote": "十二月, 髙祖詔冊王曰",
+   "note": "무령왕 21년(521) 12월"
+  },
+  {
+   "id": "cl-bj-521l-act",
+   "subject": "polity-baekje",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-liang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0210",
+   "quote": "可使持節·都督百濟諸軍事·寧東大將軍.",
+   "note": "양 고조가 백제왕 여륭을 영동대장군으로 책명"
+  },
+  {
+   "id": "cl-bj-608-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 608
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0050_0100",
+   "quote": "隋文林郎裴清奉使倭國, 經我國南路.",
+   "note": "무왕 9년(608) 3월"
+  },
+  {
+   "id": "cl-bj-608-route",
+   "subject": "polity-baekje",
+   "predicate": "syj:routeConnects",
+   "object": {
+    "kind": "entity",
+    "id": "polity-wa"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0050_0100",
+   "quote": "奉使倭國, 經我國南路",
+   "note": "수 사신이 왜로 가며 백제 남로를 지남"
+  },
+  {
+   "id": "cl-bj-654-time",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "甲寅年",
+    "year": 654,
+    "precision": "year",
+    "earliest": 654,
+    "latest": 654
+   },
+   "sourceId": "src-geumseok-gskh_002_0020_0010",
+   "citesChunk": "chunk_geumseok-gskh_002_0020_0010_gskh_002_0020_0010_0020",
+   "quote": "甲寅年正月九日奈祇城 砂宅智積",
+   "note": "갑인년(654) 정월 9일"
+  },
+  {
+   "id": "cl-bj-654-act",
+   "subject": "person-sataekjijeok",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-naji"
+   },
+   "sourceId": "src-geumseok-gskh_002_0020_0010",
+   "citesChunk": "chunk_geumseok-gskh_002_0020_0010_gskh_002_0020_0010_0020",
+   "quote": "穿金以建珍堂鑿玉以立寶塔",
+   "note": "내지성 사람 사택지적이 금을 뚫어 진당을 세우고 옥을 다듬어 보탑을 세움"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "scene-bj-garimseong-501",
+   "eventId": "event-bj-garimseong-501",
+   "title": "가림성 축조와 백가의 진수 — 부여 임천 (501)",
+   "startYear": 501,
+   "endYear": 501,
+   "kind": "construction",
+   "category": "facility",
+   "region": "south",
+   "decade": 500,
+   "sceneFunction": "fortress",
+   "summary": "동성왕 23년 8월 가림성을 쌓고 위사좌평 백가를 보내 지키게 했다.",
+   "dateClaimIds": [
+    "cl-bj-501-time"
+   ],
+   "actionClaimIds": [
+    "cl-bj-501-build"
+   ],
+   "place": {
+    "label": "가림성(성흥산성)",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.89833,
+    "lat": 36.19556,
+    "claimIds": [
+     "cl-bj-501-build"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-seongheungsanseong"
+    ],
+    "coordinateNote": "성흥산성 위키백과 표시 좌표. 가림성=부여 임천 성흥산성 비정."
+   },
+   "participants": [],
+   "effects": {},
+   "participantGroups": [
+    {
+     "label": "위사좌평 백가와 수비군",
+     "role": "garrison",
+     "stance": "defend",
+     "side": "baekje",
+     "count": null,
+     "claimIds": [
+      "cl-bj-501-build"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 501,
+    "to": null,
+    "basisClaimIds": [
+     "cl-bj-501-build"
+    ]
+   }
+  },
+  {
+   "id": "scene-bj-jingu-506",
+   "eventId": "event-bj-jingu-506",
+   "title": "가뭄 끝의 발창진구 — 웅진 (506)",
+   "startYear": 506,
+   "endYear": 506,
+   "kind": "relief",
+   "category": "disaster",
+   "region": "south",
+   "decade": 500,
+   "sceneFunction": "relief",
+   "summary": "무령왕 6년 3월부터 5월까지 비가 오지 않아 내와 못이 마르고 백성이 굶주리자 창고를 열어 구휼했다.",
+   "dateClaimIds": [
+    "cl-bj-506-time"
+   ],
+   "actionClaimIds": [
+    "cl-bj-506-relief"
+   ],
+   "place": {
+    "label": "웅진성(공산성)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 127.12694,
+    "lat": 36.46333,
+    "claimIds": [
+     "cl-bj-506-relief"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-gongsanseong"
+    ],
+    "coordinateNote": "공산성 위키백과 표시 좌표. 구휼 장소는 원문에 없고 당시 도읍 웅진으로 잡았다."
+   },
+   "participants": [],
+   "effects": {},
+   "participantGroups": [
+    {
+     "label": "굶주린 백성",
+     "role": "recipient",
+     "stance": "neutral",
+     "side": "baekje",
+     "count": null,
+     "claimIds": [
+      "cl-bj-506-relief"
+     ]
+    },
+    {
+     "label": "창고를 연 관인",
+     "role": "official",
+     "stance": "neutral",
+     "side": "baekje",
+     "count": null,
+     "claimIds": [
+      "cl-bj-506-relief"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 506,
+    "to": 506,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-bj-ungjinseong-526",
+   "eventId": "event-bj-ungjinseong-526",
+   "title": "웅진성 수즙과 사정책 설치 — 공주 (526)",
+   "startYear": 526,
+   "endYear": 526,
+   "kind": "construction",
+   "category": "facility",
+   "region": "south",
+   "decade": 520,
+   "sceneFunction": "fortress",
+   "summary": "성왕 4년 10월 웅진성을 고쳐 쌓고 사정책을 세웠다.",
+   "dateClaimIds": [
+    "cl-bj-526-time"
+   ],
+   "actionClaimIds": [
+    "cl-bj-526-build"
+   ],
+   "place": {
+    "label": "웅진성(공산성)",
+    "medium": "land",
+    "precision": "site",
+    "lon": 127.12694,
+    "lat": 36.46333,
+    "claimIds": [
+     "cl-bj-526-build"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-gongsanseong"
+    ],
+    "coordinateNote": "공산성 위키백과 표시 좌표."
+   },
+   "participants": [],
+   "effects": {},
+   "persistence": {
+    "kind": "facility",
+    "from": 526,
+    "to": null,
+    "basisClaimIds": [
+     "cl-bj-526-build"
+    ]
+   }
+  },
+  {
+   "id": "scene-bj-wangheungsa-600",
+   "eventId": "event-bj-wangheungsa-600",
+   "title": "왕흥사 창건과 준공 — 부여 규암 (600~634)",
+   "startYear": 600,
+   "endYear": 634,
+   "kind": "construction",
+   "category": "facility",
+   "region": "south",
+   "decade": 600,
+   "sceneFunction": "temple",
+   "summary": "법왕 2년 정월 왕흥사를 창건하고 승려 30인을 두었으며, 무왕 35년 2월 절이 완성되었다. 물가에 임해 단청이 웅장했고 왕은 배를 타고 드나들며 향을 올렸다.",
+   "dateClaimIds": [
+    "cl-bj-600-time",
+    "cl-bj-634wh-time"
+   ],
+   "actionClaimIds": [
+    "cl-bj-600-build",
+    "cl-bj-634wh-done"
+   ],
+   "place": {
+    "label": "왕흥사지",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.90694,
+    "lat": 36.29639,
+    "claimIds": [
+     "cl-bj-600-build",
+     "cl-bj-634wh-done"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-wangheungsaji"
+    ],
+    "coordinateNote": "왕흥사지 위키백과 표시 좌표."
+   },
+   "participants": [],
+   "effects": {},
+   "participantGroups": [
+    {
+     "label": "도승 30인",
+     "role": "monk",
+     "stance": "neutral",
+     "side": "baekje",
+     "count": 30,
+     "claimIds": [
+      "cl-bj-600-build"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 600,
+    "to": null,
+    "basisClaimIds": [
+     "cl-bj-600-build",
+     "cl-bj-634wh-done"
+    ]
+   }
+  },
+  {
+   "id": "scene-bj-gungnamji-634",
+   "eventId": "event-bj-gungnamji-634",
+   "title": "궁 남쪽 연못 조성 — 부여 궁남지 (634)",
+   "startYear": 634,
+   "endYear": 634,
+   "kind": "construction",
+   "category": "facility",
+   "region": "south",
+   "decade": 630,
+   "sceneFunction": "construction_site",
+   "summary": "무왕 35년 3월 궁 남쪽에 못을 파고 20여 리 밖에서 물을 끌어들였다. 네 언덕에 버들을 심고 물 가운데 섬을 쌓아 방장선산을 본떴다. 관개 시설이 아니라 궁원(宮苑)의 못이다.",
+   "dateClaimIds": [
+    "cl-bj-634gn-time"
+   ],
+   "actionClaimIds": [
+    "cl-bj-634gn-build"
+   ],
+   "place": {
+    "label": "궁남지",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.9136333,
+    "lat": 36.269056,
+    "claimIds": [
+     "cl-bj-634gn-build"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-gungnamji"
+    ],
+    "coordinateNote": "궁남지 위키백과 표시 좌표."
+   },
+   "participants": [],
+   "effects": {},
+   "persistence": {
+    "kind": "facility",
+    "from": 634,
+    "to": null,
+    "basisClaimIds": [
+     "cl-bj-634gn-build"
+    ]
+   }
+  },
+  {
+   "id": "scene-bj-daesu-612",
+   "eventId": "event-bj-daesu-612",
+   "title": "큰물에 민가가 떠내려가다 — 사비 (612)",
+   "startYear": 612,
+   "endYear": 612,
+   "kind": "disaster",
+   "category": "disaster",
+   "region": "south",
+   "decade": 610,
+   "summary": "무왕 13년 5월 큰물이 나 민가가 떠내려가고 잠겼다.",
+   "dateClaimIds": [
+    "cl-bj-612-time"
+   ],
+   "actionClaimIds": [
+    "cl-bj-612-act"
+   ],
+   "place": {
+    "label": "사비 도성(부소산성)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.91528,
+    "lat": 36.2875,
+    "claimIds": [
+     "cl-bj-612-act"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-busosanseong"
+    ],
+    "coordinateNote": "부소산성 위키백과 표시 좌표. 원문에 지점이 없어 당시 도읍 사비로 잡고 area."
+   },
+   "participants": [],
+   "effects": {},
+   "participantGroups": [
+    {
+     "label": "집을 잃은 민가",
+     "role": "victim",
+     "stance": "neutral",
+     "side": "baekje",
+     "count": null,
+     "claimIds": [
+      "cl-bj-612-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 612,
+    "to": 612,
+    "basisClaimIds": []
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "fact-bj-001",
+   "category": "settlement",
+   "region": "south",
+   "decade": 660,
+   "year": 660,
+   "yearVerbatim": "二十年",
+   "placeLabel": "백제 전역(도읍 사비)",
+   "modernPlace": "충남 부여 일대",
+   "what": "백제가 망할 무렵 나라 전체는 5부 37군 200성 76만 호였다",
+   "claimIds": [
+    "cl-bj-660-time",
+    "cl-bj-660-hoju",
+    "cl-bj-660-gunhyeon"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "76만 호는 나라 전체 수치라 지점 좌표를 붙이지 않았다. 좌표를 붙이면 세계 연결 코드(반경 40단위·±150년)가 이 수치를 사비 한 지점의 가구 수로 읽어 같은 좌표의 도성 1만 가 기록(fact-bj-003)을 밀어낸다. 사비 지점의 밀도는 도성 1만 가 기록이 맡는다. yearVerbatim(二十年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "persistence": null,
+   "density": {
+    "households": 760000,
+    "unit": "戶",
+    "claimIds": [
+     "cl-bj-660-hoju"
+    ]
+   }
+  },
+  {
+   "id": "fact-bj-002",
+   "category": "settlement",
+   "region": "south",
+   "decade": 520,
+   "year": 521,
+   "yearVerbatim": "二十一年",
+   "placeLabel": "백제(도읍 웅진)",
+   "modernPlace": "충남 공주 일대",
+   "what": "메뚜기가 곡식을 해쳐 백성이 굶주리자 900호가 신라로 도망해 들어갔다",
+   "claimIds": [
+    "cl-bj-521-time",
+    "cl-bj-521-flee",
+    "cl-bj-521-silla"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "떠난 곳·도착한 곳이 원문에 없어 좌표를 붙이지 않았다. yearVerbatim(二十一年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "persistence": null,
+   "density": {
+    "households": 900,
+    "unit": "戶",
+    "claimIds": [
+     "cl-bj-521-flee"
+    ]
+   }
+  },
+  {
+   "id": "fact-bj-003",
+   "category": "settlement",
+   "region": "south",
+   "decade": 570,
+   "year": 577,
+   "yearVerbatim": "建德六年",
+   "placeLabel": "사비 도성",
+   "modernPlace": "충남 부여읍",
+   "what": "도성 안에 1만 가가 살았고 상·전·중·하·후 5부로 나뉘어 부마다 500명의 병사를 거느렸다",
+   "claimIds": [
+    "cl-bj-jubseo-time",
+    "cl-bj-jubseo-manga",
+    "cl-bj-jubseo-sabi"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "[대용 연도] 주서 백제전은 연도가 붙은 기사가 아니다. 주서가 백제 사정을 적은 시점으로 건덕 6년(577)을 대용 연도로 잡았고 서술 자체는 6세기 사비기 전반에 걸친다(577년에 일어난 일이 아니다). 治固麻城의 고마성은 삼국사기 지리4가 居拔城과 같다고 한 도성이며 북방이 웅진성으로 따로 적혀 있어 사비로 보았다. 다만 固麻城을 熊津(곰나루)의 음차로 읽어 웅진으로 보는 설(이병도 등)도 있어 confidence 는 medium 이다.",
+   "lon": 126.91528,
+   "lat": 36.2875,
+   "coordinateBasis": "src-kowiki-busosanseong ex-busosanseong-geo",
+   "persistence": null,
+   "density": {
+    "households": 10000,
+    "unit": "家",
+    "claimIds": [
+     "cl-bj-jubseo-manga"
+    ]
+   }
+  },
+  {
+   "id": "fact-bj-004",
+   "category": "administration",
+   "region": "south",
+   "decade": 530,
+   "year": 538,
+   "yearVerbatim": "十六年",
+   "placeLabel": "사비",
+   "modernPlace": "충남 부여읍",
+   "what": "성왕이 웅진에서 사비로 도읍을 옮기고 국호를 남부여라 했다",
+   "claimIds": [
+    "cl-bj-538-time",
+    "cl-bj-538-move"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "도읍 지속 장면은 이미 services/host/app/history-scenes.json 의 scene-city-sabi-capital-538-660 에 있어 새 장면을 만들지 않았다.",
+   "lon": 126.91528,
+   "lat": 36.2875,
+   "coordinateBasis": "src-kowiki-busosanseong ex-busosanseong-geo",
+   "persistence": {
+    "kind": "city",
+    "from": 538,
+    "to": 660
+   },
+   "density": null
+  },
+  {
+   "id": "fact-bj-005",
+   "category": "administration",
+   "region": "south",
+   "decade": 570,
+   "year": 577,
+   "yearVerbatim": "建德六年",
+   "placeLabel": "백제 5방(중방 고사성 등)",
+   "modernPlace": "금강 이남 각지",
+   "what": "도성 밖에 5방을 두어 중방 고사성·동방 득안성·남방 구지하성·서방 도선성·북방 웅진성이라 했고 방마다 방령 1인과 군장 3인을 두었다",
+   "claimIds": [
+    "cl-bj-jubseo-time",
+    "cl-bj-jubseo-obang",
+    "cl-bj-jubseo-bangnyeong"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "[대용 연도] 연도는 주서가 백제를 적은 시점(건덕 6년=577)을 빌린 것이고 주서 백제전에는 5방 설치 연도가 없다. 제도 시작 연도가 미상이라 persistence 를 두지 않았다. 5방성의 현재 위치 비정에도 학설이 갈려 좌표를 붙이지 않았다(중방 고사성은 정읍 고사부리성, 동방 득안성은 논산 일대로 보는 설이 있다).",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-006",
+   "category": "administration",
+   "region": "south",
+   "decade": 650,
+   "year": 657,
+   "yearVerbatim": "十七年",
+   "placeLabel": "사비 도성",
+   "modernPlace": "충남 부여읍",
+   "what": "의자왕이 서자 41명을 좌평으로 삼고 각각 식읍을 주었다",
+   "claimIds": [
+    "cl-bj-657j-time",
+    "cl-bj-657j-act"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "",
+   "lon": 126.91528,
+   "lat": 36.2875,
+   "coordinateBasis": "src-kowiki-busosanseong ex-busosanseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-007",
+   "category": "administration",
+   "region": "south",
+   "decade": 660,
+   "year": 660,
+   "yearVerbatim": "二十年",
+   "placeLabel": "웅진도독부",
+   "modernPlace": "충남 공주 공산성",
+   "what": "백제가 망한 뒤 옛 땅을 웅진·마한·동명·금련·덕안 5도독부로 나누고 주현을 통할하게 했으며 왕문도를 웅진도독으로 삼았다",
+   "claimIds": [
+    "cl-bj-660-time",
+    "cl-bj-660-dodok",
+    "cl-bj-660-ungjin"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "5도독부 가운데 웅진도독부의 치소로 알려진 공산성 좌표만 붙였다. yearVerbatim(二十年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "lon": 127.12694,
+   "lat": 36.46333,
+   "coordinateBasis": "src-kowiki-gongsanseong ex-gongsanseong-geo",
+   "persistence": {
+    "kind": "institution",
+    "from": 660,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-bj-008",
+   "category": "facility",
+   "region": "south",
+   "decade": 500,
+   "year": 500,
+   "yearVerbatim": "二十二年",
+   "placeLabel": "웅진 왕궁 임류각",
+   "modernPlace": "충남 공주 공산성",
+   "what": "동성왕이 궁 동쪽에 높이 5장의 임류각을 세우고 연못을 파 기이한 새를 길렀다",
+   "claimIds": [
+    "cl-bj-500-time",
+    "cl-bj-500-build"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "임류각지는 공산성 안 추정 터라 좌표는 공산성 표시 좌표(area)다. [중복: baekje_middle/fact-bm-013 와 같은 기록, 장면은 그쪽만]",
+   "lon": 127.12694,
+   "lat": 36.46333,
+   "coordinateBasis": "src-kowiki-gongsanseong ex-gongsanseong-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 500,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-bj-009",
+   "category": "facility",
+   "region": "south",
+   "decade": 500,
+   "year": 501,
+   "yearVerbatim": "二十三年",
+   "placeLabel": "가림성",
+   "modernPlace": "충남 부여 임천 성흥산성",
+   "what": "동성왕 23년 8월 가림성을 쌓고 위사좌평 백가를 보내 지키게 했다",
+   "claimIds": [
+    "cl-bj-501-time",
+    "cl-bj-501-build"
+   ],
+   "sceneId": "scene-bj-garimseong-501",
+   "confidence": "high",
+   "note": "yearVerbatim(二十三年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "lon": 126.89833,
+   "lat": 36.19556,
+   "coordinateBasis": "src-kowiki-seongheungsanseong ex-seongheungsanseong-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 501,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-bj-010",
+   "category": "facility",
+   "region": "south",
+   "decade": 520,
+   "year": 526,
+   "yearVerbatim": "四年",
+   "placeLabel": "웅진성",
+   "modernPlace": "충남 공주 공산성",
+   "what": "성왕 4년 10월 웅진성을 고쳐 쌓고 사정책을 세웠다",
+   "claimIds": [
+    "cl-bj-526-time",
+    "cl-bj-526-build"
+   ],
+   "sceneId": "scene-bj-ungjinseong-526",
+   "confidence": "high",
+   "note": "사정책은 공주 사곡 일대로 보는 설이 있으나 확정되지 않아 좌표는 웅진성만 붙였다.",
+   "lon": 127.12694,
+   "lat": 36.46333,
+   "coordinateBasis": "src-kowiki-gongsanseong ex-gongsanseong-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 526,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-bj-011",
+   "category": "facility",
+   "region": "south",
+   "decade": 600,
+   "year": 600,
+   "yearVerbatim": "二年",
+   "placeLabel": "왕흥사",
+   "modernPlace": "충남 부여 규암 왕흥사지",
+   "what": "법왕 2년 정월 왕흥사를 창건하고 승려 30인을 두었으며 무왕 35년(634) 2월 물가에 임한 절로 완성되었다",
+   "claimIds": [
+    "cl-bj-600-time",
+    "cl-bj-600-build",
+    "cl-bj-634wh-time",
+    "cl-bj-634wh-done"
+   ],
+   "sceneId": "scene-bj-wangheungsa-600",
+   "confidence": "high",
+   "note": "",
+   "lon": 126.90694,
+   "lat": 36.29639,
+   "coordinateBasis": "src-kowiki-wangheungsaji ex-wangheungsaji-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 600,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-bj-012",
+   "category": "facility",
+   "region": "south",
+   "decade": 630,
+   "year": 634,
+   "yearVerbatim": "三十五年",
+   "placeLabel": "궁남지",
+   "modernPlace": "충남 부여 궁남지",
+   "what": "무왕 35년 3월 궁 남쪽에 못을 파고 20여 리 밖에서 물을 끌어들여 네 언덕에 버들을 심고 물 가운데 섬을 쌓았다",
+   "claimIds": [
+    "cl-bj-634gn-time",
+    "cl-bj-634gn-build"
+   ],
+   "sceneId": "scene-bj-gungnamji-634",
+   "confidence": "high",
+   "note": "궁남지는 방장선산을 본뜬 궁원(宮苑)의 못이라 연결 장면의 sceneFunction 을 irrigation 이 아니라 construction_site 로 두었다. yearVerbatim(三十五年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "lon": 126.9136333,
+   "lat": 36.269056,
+   "coordinateBasis": "src-kowiki-gungnamji ex-gungnamji-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 634,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-bj-013",
+   "category": "economy",
+   "region": "south",
+   "decade": 510,
+   "year": 510,
+   "yearVerbatim": "十年",
+   "placeLabel": "백제 전역",
+   "modernPlace": "금강 유역 일대",
+   "what": "무령왕이 제방을 완전히 하라 명하고 안팎의 떠돌며 먹던 자들을 농사로 돌려보냈다",
+   "claimIds": [
+    "cl-bj-510-time"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "제방 위치가 원문에 없어 좌표를 붙이지 않았다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-014",
+   "category": "economy",
+   "region": "south",
+   "decade": 570,
+   "year": 577,
+   "yearVerbatim": "建德六年",
+   "placeLabel": "백제 전역",
+   "modernPlace": "",
+   "what": "조세는 베·명주·실·삼과 쌀 따위로 걷되 그해 풍흉을 헤아려 차등을 두어 바치게 했다",
+   "claimIds": [
+    "cl-bj-jubseo-time",
+    "cl-bj-jubseo-tax"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "[대용 연도] 연도는 주서가 백제를 적은 시점(건덕 6년=577)을 빌린 것이며 서술은 사비기 전반의 제도다. 577년에 조세 제도가 생겼다는 뜻이 아니다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-015",
+   "category": "economy",
+   "region": "south",
+   "decade": 570,
+   "year": 577,
+   "yearVerbatim": "建德六年",
+   "placeLabel": "사비 도성",
+   "modernPlace": "충남 부여읍",
+   "what": "바깥 관청 열 곳 가운데 시장을 맡은 도시부와 호구를 맡은 점구부가 있었다",
+   "claimIds": [
+    "cl-bj-jubseo-time",
+    "cl-bj-jubseo-dosibu"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "[대용 연도] 연도는 주서가 백제를 적은 시점(건덕 6년=577)을 빌린 것이다. 도시부·점구부의 청사 위치는 알 수 없어 도성 대표 좌표(부소산성)를 area 성격으로 붙였다.",
+   "lon": 126.91528,
+   "lat": 36.2875,
+   "coordinateBasis": "src-kowiki-busosanseong ex-busosanseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-016",
+   "category": "economy",
+   "region": "south",
+   "decade": 590,
+   "year": 598,
+   "yearVerbatim": "開皇十八年",
+   "placeLabel": "백제 전역",
+   "modernPlace": "",
+   "what": "오곡과 소·돼지·닭이 있으나 익혀 먹지 않는 일이 많았고 밭은 낮고 습해 사람들은 산에 살았으며 큰 밤이 났다",
+   "claimIds": [
+    "cl-bj-suseo-time",
+    "cl-bj-suseo-life"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "[대용 연도] 연도는 수서 백제전에 나오는 개황 18년(598)을 빌린 것이며 서술은 6~7세기 백제의 생활상이다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-017",
+   "category": "disaster",
+   "region": "south",
+   "decade": 500,
+   "year": 502,
+   "yearVerbatim": "二年",
+   "placeLabel": "백제(도읍 웅진)",
+   "modernPlace": "충남 공주 일대",
+   "what": "무령왕 2년 봄 백성이 굶주리고 전염병이 돌았다",
+   "claimIds": [
+    "cl-bj-502-time"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "지점이 원문에 없어 좌표를 붙이지 않았다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-018",
+   "category": "disaster",
+   "region": "south",
+   "decade": 500,
+   "year": 506,
+   "yearVerbatim": "六年",
+   "placeLabel": "웅진성",
+   "modernPlace": "충남 공주 공산성",
+   "what": "3월부터 5월까지 비가 오지 않아 내와 못이 마르고 백성이 굶주리자 창고를 열어 구휼했다",
+   "claimIds": [
+    "cl-bj-506-time",
+    "cl-bj-506-relief"
+   ],
+   "sceneId": "scene-bj-jingu-506",
+   "confidence": "high",
+   "note": "구휼 장소가 원문에 없어 당시 도읍 웅진으로 잡았다(area). yearVerbatim(六年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "lon": 127.12694,
+   "lat": 36.46333,
+   "coordinateBasis": "src-kowiki-gongsanseong ex-gongsanseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-019",
+   "category": "disaster",
+   "region": "south",
+   "decade": 610,
+   "year": 612,
+   "yearVerbatim": "十三年",
+   "placeLabel": "사비 도성",
+   "modernPlace": "충남 부여읍",
+   "what": "무왕 13년 5월 큰물이 나 민가가 떠내려가고 잠겼다",
+   "claimIds": [
+    "cl-bj-612-time",
+    "cl-bj-612-act"
+   ],
+   "sceneId": "scene-bj-daesu-612",
+   "confidence": "high",
+   "note": "지점이 원문에 없어 당시 도읍 사비로 잡았다(area). yearVerbatim(十三年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "lon": 126.91528,
+   "lat": 36.2875,
+   "coordinateBasis": "src-kowiki-busosanseong ex-busosanseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-020",
+   "category": "disaster",
+   "region": "south",
+   "decade": 650,
+   "year": 657,
+   "yearVerbatim": "十七年",
+   "placeLabel": "백제 전역",
+   "modernPlace": "",
+   "what": "의자왕 17년 여름 4월 큰 가뭄이 들어 땅이 벌겋게 드러났다",
+   "claimIds": [
+    "cl-bj-657d-time"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "yearVerbatim(十七年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-021",
+   "category": "culture",
+   "region": "south",
+   "decade": 540,
+   "year": 541,
+   "yearVerbatim": "十九年",
+   "placeLabel": "사비 도성",
+   "modernPlace": "충남 부여읍",
+   "what": "성왕이 양에 사신을 보내 모시박사와 열반경 등 경의, 그리고 공장과 화사를 청해 받았다",
+   "claimIds": [
+    "cl-bj-541-time",
+    "cl-bj-541-act"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "받아들인 장소가 원문에 없어 당시 도읍 사비 좌표를 붙였다.",
+   "lon": 126.91528,
+   "lat": 36.2875,
+   "coordinateBasis": "src-kowiki-busosanseong ex-busosanseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-022",
+   "category": "culture",
+   "region": "south",
+   "decade": 590,
+   "year": 599,
+   "yearVerbatim": "元年",
+   "placeLabel": "사비 도성",
+   "modernPlace": "충남 부여읍",
+   "what": "법왕이 살생을 금하라 명하고 민가에서 기르던 매와 새매를 거두어 놓아주며 고기잡이·사냥 도구를 태우게 했다",
+   "claimIds": [
+    "cl-bj-599-time"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "yearVerbatim(元年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "lon": 126.91528,
+   "lat": 36.2875,
+   "coordinateBasis": "src-kowiki-busosanseong ex-busosanseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-023",
+   "category": "culture",
+   "region": "south",
+   "decade": 630,
+   "year": 639,
+   "yearVerbatim": "己亥年",
+   "placeLabel": "미륵사",
+   "modernPlace": "전북 익산 미륵사지",
+   "what": "백제 왕후인 좌평 사택적덕의 딸이 정재를 희사해 가람을 세우고 기해년 정월 29일 사리를 봉영했다",
+   "claimIds": [
+    "cl-bj-639-time",
+    "cl-bj-639-act"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "봉안 장면은 이미 services/host/app/history-scenes.json 의 scene-syj128-mireuksa-sari-639 에 있어 새 장면을 만들지 않았다.",
+   "lon": 127.03056,
+   "lat": 36.01083,
+   "coordinateBasis": "src-kowiki-mireuksaji ex-mireuksaji-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 639,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-bj-024",
+   "category": "foreign",
+   "region": "south",
+   "decade": 520,
+   "year": 521,
+   "yearVerbatim": "二十一年",
+   "placeLabel": "사비 이전 도읍 웅진",
+   "modernPlace": "충남 공주 일대",
+   "what": "양 고조가 조서를 내려 백제왕 여륭을 사지절·도독백제제군사·영동대장군으로 책명했다",
+   "claimIds": [
+    "cl-bj-521l-time",
+    "cl-bj-521l-act"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "책명을 받은 장소가 원문에 없어 좌표를 붙이지 않았다. yearVerbatim(二十一年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-025",
+   "category": "foreign",
+   "region": "south",
+   "decade": 600,
+   "year": 608,
+   "yearVerbatim": "九年",
+   "placeLabel": "백제 남로",
+   "modernPlace": "금강 하구~서남해 연안",
+   "what": "수의 문림랑 배청이 왜국에 사신으로 가면서 백제의 남쪽 길을 지났다",
+   "claimIds": [
+    "cl-bj-608-time",
+    "cl-bj-608-route"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "남로의 경로가 특정되지 않아 좌표를 붙이지 않았다. yearVerbatim(九年)은 chunk date.label 의 재위년 표기이며 인용 chunk 본문에는 없다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-bj-026",
+   "category": "person",
+   "region": "south",
+   "decade": 650,
+   "year": 654,
+   "yearVerbatim": "甲寅年",
+   "placeLabel": "내지성(奈祇城)",
+   "modernPlace": "충남 부여 추정",
+   "what": "갑인년 정월 9일 내지성 사람 사택지적이 금을 뚫어 진당을 세우고 옥을 다듬어 보탑을 세웠다는 비를 남겼다",
+   "claimIds": [
+    "cl-bj-654-time",
+    "cl-bj-654-act"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "비는 부여 관북리 부근에서 수습되었으나 내지성의 위치 비정에 학설이 갈려 좌표를 붙이지 않았다.",
+   "persistence": null,
+   "density": null
+  }
+ ],
+ "missing": [
+  {
+   "id": "miss-bj-1",
+   "topic": "사비 도성의 시장 위치",
+   "detail": "주서 백제전의 都市部로 시장 담당 관청이 있었음은 알 수 있으나 사비 도성 안 시장 자리를 특정할 원문을 찾지 못했다.",
+   "neededSource": "부여 관북리·쌍북리 발굴 보고(국립부여문화유산연구소) 또는 목간 판독문"
+  },
+  {
+   "id": "miss-bj-2",
+   "topic": "5방성의 현재 위치",
+   "detail": "중방 고사성·동방 득안성·남방 구지하성·서방 도선성의 비정이 갈려 좌표를 붙이지 못했다.",
+   "neededSource": "한국민족문화대백과 '오방성' 항목 또는 국가유산포털 고사부리성 해설"
+  },
+  {
+   "id": "miss-bj-3",
+   "topic": "사비기 역(驛)·나루",
+   "detail": "500~660년 백제의 역참·나루 설치 기사를 삼국사기 백제본기에서 찾지 못해 transport 사실이 없다.",
+   "neededSource": "삼국사기 지리지 권36~37의 백제 군현 조 또는 일본서기 백제 관련 기사"
+  },
+  {
+   "id": "miss-bj-4",
+   "topic": "사비 도성 호구의 연대 있는 수치",
+   "detail": "都下有萬家는 연도가 붙은 기사가 아니어서 주서 기록 시점(577)으로 대신했다.",
+   "neededSource": "부여 궁남지·쌍북리 출토 호적 관련 목간 판독문"
+  }
+ ]
+}

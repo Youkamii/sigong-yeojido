@@ -81,6 +81,23 @@ claim 으로 만들지 않은 것: 사망 연도(비문은 나이만 말한다),
     "origin": "ai",
     "status": "draft",
     "note": "비가 자기 자신을 가리키는 자리. 立碑 의 목적(銘記勳績, 以永後世)이 이어진다."
+  },
+  {
+    "id": "claim-facts-ancient-goguryeo_middle-gg-neungbi-erect",
+    "subject": "event-gg-neungbi-414",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gwanggaeto-neungbi"
+    },
+    "citesChunk": "chunk_gwanggaeto_1-06",
+    "quote": "以甲寅年九月廿九日乙酉遷就山陵於是立碑銘記勳績",
+    "note": "갑인년(414) 9월 29일 산릉에 옮기고 비를 세워 훈적을 새김",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

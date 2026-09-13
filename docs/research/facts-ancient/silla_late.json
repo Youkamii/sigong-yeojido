@@ -1,0 +1,181 @@
+{
+  "job": "silla_late",
+  "sources": 13,
+  "excerpts": 13,
+  "chunkClaims": 63,
+  "excerptClaims": 13,
+  "facts": 26,
+  "factsByCategory": {
+    "administration": 5,
+    "culture": 2,
+    "disaster": 4,
+    "economy": 3,
+    "facility": 5,
+    "foreign": 2,
+    "person": 1,
+    "settlement": 4
+  },
+  "claims": 76,
+  "entities": 34,
+  "rawFilesChecked": [
+    {
+      "source": "src-kowiki-wolseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%9B%94%EC%84%B1",
+      "sha256": "e1758d1ef3b417bb45eae97cee684e83bc30cdf4a644e0727d309fcd30cda589",
+      "rawBytes": 277688,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-hwangnyongsa",
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%A9%EB%A3%A1%EC%82%AC",
+      "sha256": "e819b8d445ce00271e0e1ba1edfde97122fdc7b6264069db5571b089a5d95d89",
+      "rawBytes": 224622,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-bunhwangsa",
+      "url": "https://en.wikipedia.org/wiki/Bunhwangsa",
+      "sha256": "bb0cae0b6e7457f432eb7b9b0a53e2d8ae10d181844090627b7a26f64a7dee1b",
+      "rawBytes": 114468,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-namsan-sinseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EB%82%A8%EC%82%B0%EC%8B%A0%EC%84%B1",
+      "sha256": "55ab0eccc8726f73b1e4ebd0d52e7a83ce4635245c83cecef6e278b083fa23ca",
+      "rawBytes": 103962,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-busanseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EB%B6%80%EC%82%B0%EC%84%B1",
+      "sha256": "2cb752bbea167860069db50dd2a1c2ebfdd9f8785d09af1925058a634671b211",
+      "rawBytes": 96737,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-bukhansan-sunsubi",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%81%ED%95%9C%EC%82%B0_%EC%8B%A0%EB%9D%BC_%EC%A7%84%ED%9D%A5%EC%99%95_%EC%88%9C%EC%88%98%EB%B9%84",
+      "sha256": "80797c4281bb9c84d25ccaada6d30f333359c0e8922a20f4889d051cf4bad674",
+      "rawBytes": 181300,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-chungju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B6%A9%EC%A3%BC%EC%8B%9C",
+      "sha256": "e5ead90141b0b7025be7cacb3d18b6c64383c5eb47d82616e1f936bd817ff8e2",
+      "rawBytes": 551173,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-danyang",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%96%91%EA%B5%B0",
+      "sha256": "5b25229d3324db13e63f34a93e3cb45ed7c54e26ba0837c298e35bd165582c9f",
+      "rawBytes": 219455,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gangneung",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%EB%A6%89%EC%8B%9C",
+      "sha256": "7e32b5ab888cdef11afefcdece84da9e84bcda04f6d878880f8a19f3e5dc11ba",
+      "rawBytes": 511918,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-samcheok",
+      "url": "https://ko.wikipedia.org/wiki/%EC%82%BC%EC%B2%99%EC%8B%9C",
+      "sha256": "2ad0edea68bb60a6ca8763acf925167a0faf1f210e65713963a0ab35d11806f7",
+      "rawBytes": 354488,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gumi",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EB%AF%B8%EC%8B%9C",
+      "sha256": "cf8189f048b62cfee148bbb6b080f8673d8907c5857c6654aff3c5b08d536fdd",
+      "rawBytes": 440733,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gyeongsan",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%82%B0%EC%8B%9C",
+      "sha256": "f9216932a7f87eded45cd8915a887cbab9df9f948375ee328cfa5153a9042a82",
+      "rawBytes": 396840,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-heungnyunsa",
+      "url": "https://ko.wikipedia.org/wiki/%ED%9D%A5%EB%A5%9C%EC%82%AC",
+      "sha256": "6e16e36560ba2aed96c281ed9e9bfe5529fe5cba76c8196d52a95c45b2a2a019",
+      "rawBytes": 140257,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-sl-1",
+      "topic": "아시촌 소경의 위치",
+      "detail": "514년 소경을 둔 阿尸村의 자리가 함안설·안강설 등으로 갈려 좌표를 두지 못했다.",
+      "neededSource": "한국민족문화대백과 '아시촌소경' 항목 또는 고고 발굴 보고"
+    },
+    {
+      "id": "miss-sl-2",
+      "topic": "신주(新州)의 치소",
+      "detail": "553년 설치한 신주의 치소가 확정되지 않아 한강 하류 지점을 찍지 못했다.",
+      "neededSource": "국가유산포털·한국민족문화대백과의 신주 치소 비정 서술"
+    },
+    {
+      "id": "miss-sl-3",
+      "topic": "영흥사 터",
+      "detail": "596년 불이 난 영흥사의 절터가 확정되지 않아 좌표를 두지 못했다.",
+      "neededSource": "국가유산포털 경주 영흥사지 해설"
+    },
+    {
+      "id": "miss-sl-4",
+      "topic": "신라 호구 총수",
+      "detail": "500~668년 신라 전체의 戶·口 총수를 적은 기록을 찾지 못했다. 재해 피해 호수와 투항 호구만 남았다.",
+      "neededSource": "집성(수서·구당서 신라전)의 호수 기사"
+    },
+    {
+      "id": "miss-sl-5",
+      "topic": "북한산주 치소",
+      "detail": "557년 신주를 없애고 둔 북한산주의 치소 위치를 댈 출처가 없어 사실로 세지 않았다.",
+      "neededSource": "한국민족문화대백과 '북한산주' 항목"
+    }
+  ],
+  "collection": {
+    "task": "silla_late",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789260618,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-silla_late"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "person-kim-yusin",
+    "place-apryangju"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

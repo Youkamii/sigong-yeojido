@@ -1,0 +1,108 @@
+{
+  "job": "goguryeo_early",
+  "sources": 4,
+  "excerpts": 4,
+  "chunkClaims": 64,
+  "excerptClaims": 4,
+  "facts": 26,
+  "factsByCategory": {
+    "administration": 6,
+    "culture": 2,
+    "disaster": 3,
+    "economy": 3,
+    "facility": 4,
+    "foreign": 2,
+    "person": 1,
+    "settlement": 5
+  },
+  "claims": 68,
+  "entities": 19,
+  "rawFilesChecked": [
+    {
+      "source": "src-enwiki-gungnae",
+      "url": "https://en.wikipedia.org/wiki/Gungnae_City",
+      "sha256": "49613cfff79a625f03da226b6d8ccefef745599a23f1d862ea3d1fcb5790ebab",
+      "rawBytes": 126493,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-wandu",
+      "url": "https://en.wikipedia.org/wiki/Wandu_Mountain_City",
+      "sha256": "595d1ab4b1698507f50dff78dc1b590af5d45dbc4178e455ab7594f1d4fd0dd0",
+      "rawBytes": 107009,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-wunu",
+      "url": "https://en.wikipedia.org/wiki/Wunu_Mountain_City",
+      "sha256": "9efc2d12a9200390330064a8f11d6529702dc7247ee779196b29f41e707436ba",
+      "rawBytes": 138463,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gwangugeom",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%80%EA%B5%AC%EA%B2%80",
+      "sha256": "e8a93e017f38dfcf90315792a1218a4c2e94c5dc46d50b389f14e4c2f6ed5ec3",
+      "rawBytes": 155138,
+      "excerpts": 1,
+      "quotedWords": 9
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-gg-1",
+      "topic": "기원전 1세기~3세기 고구려 금석문",
+      "detail": "이 칸의 연대(-37~300) 안에 드는 고구려 금석문을 로컬 금석문 묶음에서 찾지 못했다. 광개토왕릉비(414)·모두루묘지 등은 모두 300년 이후다.",
+      "neededSource": "3세기 이전 고구려 명문 자료(기와 명문·칠기 명문 등) 판독문"
+    },
+    {
+      "id": "miss-gg-2",
+      "topic": "초기 고구려의 시장·철·소금 생산지",
+      "detail": "삼국사기 고구려본기 -37~300년 구간에 市 개설이나 제철·제염 기사가 없다. 삼국지의 '下戶遠擔米糧魚鹽供給之'가 유일한 유통 단서였다.",
+      "neededSource": "고고 발굴 보고(국립문화유산연구원 등)의 고구려 초기 제철·제염 유적 해설"
+    },
+    {
+      "id": "miss-gg-3",
+      "topic": "책성·연나부·질산·질양의 좌표",
+      "detail": "이 네 곳은 사료에 위치 서술이 없고 비정에도 학설이 갈려 좌표를 만들지 않았다.",
+      "neededSource": "한국민족문화대백과 또는 국가유산포털의 위치 서술이 있는 표제어"
+    },
+    {
+      "id": "miss-gg-4",
+      "topic": "247년 평양성의 위치",
+      "detail": "동천왕이 쌓은 평양성을 대동강 평양으로 볼지 압록강 유역으로 볼지 학설이 갈려 좌표를 넣지 않았다.",
+      "neededSource": "한국민족문화대백과 '평양성' 항목의 동천왕대 서술"
+    },
+    {
+      "id": "miss-gg-5",
+      "topic": "교통(transport) 갈래",
+      "detail": "이 칸의 갈래 할당에 transport가 없고, 해당 구간 본기에도 驛·나루 설치 기사가 없어 만들지 않았다.",
+      "neededSource": "없음(할당 밖)"
+    }
+  ],
+  "collection": {
+    "task": "goguryeo_early",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789259912,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-goguryeo_early"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "place-jilsan"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

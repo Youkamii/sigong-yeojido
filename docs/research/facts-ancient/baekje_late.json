@@ -1,0 +1,121 @@
+{
+  "job": "baekje_late",
+  "sources": 6,
+  "excerpts": 6,
+  "chunkClaims": 51,
+  "excerptClaims": 0,
+  "facts": 26,
+  "factsByCategory": {
+    "administration": 4,
+    "culture": 3,
+    "disaster": 4,
+    "economy": 4,
+    "facility": 5,
+    "foreign": 2,
+    "person": 1,
+    "settlement": 3
+  },
+  "claims": 51,
+  "entities": 15,
+  "rawFilesChecked": [
+    {
+      "source": "src-kowiki-gongsanseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%82%B0%EC%84%B1",
+      "sha256": "2c5744207bf7a7675c9e16efde5840e445a7fe614227934abb05bb41f130d75d",
+      "rawBytes": 207270,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-busosanseong",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%86%8C%EC%82%B0%EC%84%B1",
+      "sha256": "94e92a5be3be0ff4bb215748668dd6ed3d263248d401adfc83218c1c68b08190",
+      "rawBytes": 199617,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-facts-ancient-baekje_late-kowiki-wangheungsaji",
+      "url": "https://ko.wikipedia.org/wiki/%EC%99%95%ED%9D%A5%EC%82%AC%EC%A7%80",
+      "sha256": "f69d92608f5d5b141e4661eea00bc6d27730efeeb287b1e487d363040b8656c9",
+      "rawBytes": 101981,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gungnamji",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B6%81%EB%82%A8%EC%A7%80",
+      "sha256": "fd455a67ddd60ba66a14a319b0e021e24721aea3fbea450c1fe571ca0fb8a4e7",
+      "rawBytes": 90230,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-mireuksaji",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B5%EC%82%B0%20%EB%AF%B8%EB%A5%B5%EC%82%AC%EC%A7%80",
+      "sha256": "0ce021c9a5d86ea6dc865c2e25f97a2b2259604ee7ebd38249387074a8aeab8b",
+      "rawBytes": 202774,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-seongheungsanseong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%B1%ED%9D%A5%EC%82%B0%EC%84%B1",
+      "sha256": "2d1d4356751ed5388e1686071dd4929140ef5383a11a0fdc2cec75b6ff53ac17",
+      "rawBytes": 179946,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-bj-1",
+      "topic": "사비 도성의 시장 위치",
+      "detail": "주서 백제전의 都市部로 시장 담당 관청이 있었음은 알 수 있으나 사비 도성 안 시장 자리를 특정할 원문을 찾지 못했다.",
+      "neededSource": "부여 관북리·쌍북리 발굴 보고(국립부여문화유산연구소) 또는 목간 판독문"
+    },
+    {
+      "id": "miss-bj-2",
+      "topic": "5방성의 현재 위치",
+      "detail": "중방 고사성·동방 득안성·남방 구지하성·서방 도선성의 비정이 갈려 좌표를 붙이지 못했다.",
+      "neededSource": "한국민족문화대백과 '오방성' 항목 또는 국가유산포털 고사부리성 해설"
+    },
+    {
+      "id": "miss-bj-3",
+      "topic": "사비기 역(驛)·나루",
+      "detail": "500~660년 백제의 역참·나루 설치 기사를 삼국사기 백제본기에서 찾지 못해 transport 사실이 없다.",
+      "neededSource": "삼국사기 지리지 권36~37의 백제 군현 조 또는 일본서기 백제 관련 기사"
+    },
+    {
+      "id": "miss-bj-4",
+      "topic": "사비 도성 호구의 연대 있는 수치",
+      "detail": "都下有萬家는 연도가 붙은 기사가 아니어서 주서 기록 시점(577)으로 대신했다.",
+      "neededSource": "부여 궁남지·쌍북리 출토 호적 관련 목간 판독문"
+    }
+  ],
+  "collection": {
+    "task": "baekje_late",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789260395,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-baekje_late"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "person-sataekjijeok",
+    "place-naji"
+  ],
+  "reviewedSourceIds": {
+    "src-kowiki-wangheungsaji": "src-facts-ancient-baekje_late-kowiki-wangheungsaji"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

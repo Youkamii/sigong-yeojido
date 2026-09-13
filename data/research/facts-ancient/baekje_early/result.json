@@ -1,0 +1,2612 @@
+{
+  "collection": "facts-ancient",
+  "job": "baekje_early",
+  "cell": {
+    "polity": "백제",
+    "from": -18,
+    "to": 300,
+    "regions": [
+      "central"
+    ],
+    "categories": {
+      "settlement": 3,
+      "administration": 4,
+      "facility": 3,
+      "economy": 3,
+      "disaster": 2,
+      "culture": 2,
+      "foreign": 2,
+      "person": 1
+    }
+  },
+  "sources": [
+    {
+      "id": "src-kowiki-pungnaptoseong",
+      "title": "풍납토성 — 위키백과",
+      "publisher": "위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%ED%92%8D%EB%82%A9%ED%86%A0%EC%84%B1",
+      "rawFile": "raw/ko-pungnaptoseong.html",
+      "sha256": "b8a50b51bc3822fd73353f38a1ee063ad239cb6a13b87e031d17bcf95caf387c",
+      "httpStatus": 200,
+      "byteLength": 153935,
+      "fetchedUtc": "2026-09-13T00:49:03Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-pungnap-geo",
+          "text": "37.53889; 127.12083",
+          "locator": "문서 머리 표시 좌표(geo)"
+        }
+      ]
+    },
+    {
+      "id": "src-kowiki-bukhansanseong",
+      "title": "북한산성 — 위키백과",
+      "publisher": "위키백과(한국어)",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%81%ED%95%9C%EC%82%B0%EC%84%B1",
+      "rawFile": "raw/ko-bukhansanseong.html",
+      "sha256": "5b6d40c194112bceb3cf3550d93bf2c24f8b804bfeed4fd8d3597e093f2b814f",
+      "httpStatus": 200,
+      "byteLength": 227220,
+      "fetchedUtc": "2026-09-13T00:49:03Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-bukhansan-geo",
+          "text": "37.647056; 126.973222",
+          "locator": "문서 머리 표시 좌표(geo)"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "polity-baekje",
+      "type": "Polity",
+      "label": "백제"
+    },
+    {
+      "id": "polity-mahan",
+      "type": "Polity",
+      "label": "마한"
+    },
+    {
+      "id": "polity-buyeo",
+      "type": "Polity",
+      "label": "부여"
+    },
+    {
+      "id": "polity-nangnang",
+      "type": "Polity",
+      "label": "낙랑군"
+    },
+    {
+      "id": "polity-daebang",
+      "type": "Polity",
+      "label": "대방군"
+    },
+    {
+      "id": "polity-namokjeo",
+      "type": "Polity",
+      "label": "남옥저"
+    },
+    {
+      "id": "person-onjo",
+      "type": "Person",
+      "label": "온조왕"
+    },
+    {
+      "id": "place-hanam-wiryeseong",
+      "type": "Place",
+      "label": "하남위례성"
+    },
+    {
+      "id": "place-wiryeseong",
+      "type": "Place",
+      "label": "위례성"
+    },
+    {
+      "id": "place-hansan",
+      "type": "Place",
+      "label": "한산(漢山)"
+    },
+    {
+      "id": "place-hansan-west",
+      "type": "Place",
+      "label": "한산 서쪽"
+    },
+    {
+      "id": "place-hansu-northeast",
+      "type": "Place",
+      "label": "한수 동북 부락"
+    },
+    {
+      "id": "place-hangang",
+      "type": "Place",
+      "label": "한강(漢江)"
+    },
+    {
+      "id": "place-bukhansanseong",
+      "type": "Place",
+      "label": "북한산성"
+    },
+    {
+      "id": "place-daedusanseong",
+      "type": "Place",
+      "label": "대두산성"
+    },
+    {
+      "id": "place-guknam-jugun",
+      "type": "Place",
+      "label": "나라 남쪽 주·군"
+    },
+    {
+      "id": "place-namtaek",
+      "type": "Place",
+      "label": "남택(南澤)"
+    },
+    {
+      "id": "place-daedan",
+      "type": "Place",
+      "label": "큰 제단(大壇)"
+    },
+    {
+      "id": "place-dongmyeongmyo",
+      "type": "Place",
+      "label": "동명왕묘"
+    },
+    {
+      "id": "event-baekje-famine-15",
+      "type": "Event",
+      "label": "15년 가뭄과 기근"
+    },
+    {
+      "id": "event-baekje-relief-248",
+      "type": "Event",
+      "label": "248년 진휼"
+    },
+    {
+      "id": "event-mahan-dwelling",
+      "type": "Event",
+      "label": "마한의 초옥토실 거주"
+    },
+    {
+      "id": "place-wiryeseong-onjo",
+      "type": "Place",
+      "label": "온조 원년 도읍 위례성(원문 河南慰禮城)"
+    },
+    {
+      "id": "place-baekje-gangyeok",
+      "type": "Place",
+      "label": "백제 강역(북 패하~남 웅천)"
+    },
+    {
+      "id": "place-jebang",
+      "type": "Place",
+      "label": "제방(隄防)"
+    },
+    {
+      "id": "place-adan-sa-seong",
+      "type": "Place",
+      "label": "아단성·사성"
+    },
+    {
+      "id": "place-jeokhyeon-sado",
+      "type": "Place",
+      "label": "적현성·사도성"
+    },
+    {
+      "id": "person-haeru",
+      "type": "Person",
+      "label": "해루(解婁)"
+    },
+    {
+      "id": "event-haeru-ubo",
+      "type": "Event",
+      "label": "해루의 우보 임명(23)"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-loc-pungnap",
+      "subject": "place-hanam-wiryeseong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 37.53889,
+        "lon": 127.12083,
+        "precision": "area"
+      },
+      "sourceId": "src-kowiki-pungnaptoseong",
+      "citesExcerpt": "ex-pungnap-geo",
+      "note": "풍납토성의 표시 좌표. 하남위례성=풍납토성 비정은 통설이나 확정된 것은 아니다."
+    },
+    {
+      "id": "claim-loc-bukhansan",
+      "subject": "place-bukhansanseong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 37.647056,
+        "lon": 126.973222,
+        "precision": "area"
+      },
+      "sourceId": "src-kowiki-bukhansanseong",
+      "citesExcerpt": "ex-bukhansan-geo",
+      "note": "지금 북한산성의 표시 좌표. 132년 축성지와 같은 자리인지는 확정되지 않았다."
+    },
+    {
+      "id": "claim-onjo-found-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:foundedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "鴻嘉三年",
+        "year": -18,
+        "precision": "year",
+        "earliest": -18,
+        "latest": -18
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0010",
+      "quote": "是前漢 成帝鴻嘉三年也",
+      "note": "전한 성제 홍가 3년 = 서기전 18년"
+    },
+    {
+      "id": "claim-onjo-capital",
+      "subject": "person-onjo",
+      "predicate": "syj:capitalMovedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-wiryeseong-onjo"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0010",
+      "quote": "温祚都河南 慰禮城, 以十臣爲輔翼, 國號十濟",
+      "note": "삼국사기는 원년 도읍을 河南慰禮城이라 적지만 13년의 한수 남쪽 천도 논의와 14년 遷都 기사와 어긋난다(하북위례성설). 서기전 5년 천도 목적지와 같은 엔티티로 두지 않는다."
+    },
+    {
+      "id": "claim-onjo-buyeo",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-buyeo"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0010",
+      "quote": "其世系, 與髙句麗同出扶餘, 故以扶餘爲氏",
+      "note": ""
+    },
+    {
+      "id": "claim-border-6-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": -6
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0210",
+      "quote": "八月, 遣使馬韓, 告遷都",
+      "note": ""
+    },
+    {
+      "id": "claim-border-6-mahan",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-mahan"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0210",
+      "quote": "遣使馬韓, 告遷都",
+      "note": ""
+    },
+    {
+      "id": "claim-border-6-area",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-baekje-gangyeok"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0210",
+      "quote": "遂畫定疆埸. 北至浿河, 南限熊川, 西窮大海, 東極走壤",
+      "note": "원문 표기는 '疆埸 北至浿河, 南限熊川, 西窮大海, 東極走壤'이다. 州·郡·縣 같은 행정 단위가 아니어서 administeredAs 대신 relatedTo로 둔다."
+    },
+    {
+      "id": "claim-move-5-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十四年",
+        "year": -5,
+        "precision": "year",
+        "earliest": -5,
+        "latest": -5
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0230",
+      "quote": "十四年, 春正月, 遷都.",
+      "note": ""
+    },
+    {
+      "id": "claim-move-5-to",
+      "subject": "polity-baekje",
+      "predicate": "syj:capitalMovedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hanam-wiryeseong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0230",
+      "quote": "遷都",
+      "note": "원문은 '十四年, 春正月, 遷都.' 뿐이고 옮긴 곳의 이름이 없다. 13년의 한수 남쪽 천도 계획 기사로 하남위례성으로 본다."
+    },
+    {
+      "id": "claim-move-5-plan",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hanam-wiryeseong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0190",
+      "quote": "觀漢水之南, 圡壤膏腴, 冝都於彼, 以圖久安之計",
+      "note": ""
+    },
+    {
+      "id": "claim-seonggwol-6-t",
+      "subject": "place-hanam-wiryeseong",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": -6
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0220",
+      "quote": "九月, 立城闕.",
+      "note": ""
+    },
+    {
+      "id": "claim-seonggwol-6-build",
+      "subject": "place-hanam-wiryeseong",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": -6
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0220",
+      "quote": "立城闕",
+      "note": ""
+    },
+    {
+      "id": "claim-hansan-6-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": -6
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0200",
+      "quote": "秋七月, 就漢山下立柵, 移慰禮城民戸.",
+      "note": ""
+    },
+    {
+      "id": "claim-hansan-6-move",
+      "subject": "polity-baekje",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-hansan"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0200",
+      "quote": "就漢山下立柵, 移慰禮城民戸",
+      "note": ""
+    },
+    {
+      "id": "claim-daedu-9-t",
+      "subject": "place-daedusanseong",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 9
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0390",
+      "quote": "秋七月, 築大豆山城.",
+      "note": ""
+    },
+    {
+      "id": "claim-daedu-9-build",
+      "subject": "place-daedusanseong",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": 9
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0390",
+      "quote": "築大豆山城",
+      "note": ""
+    },
+    {
+      "id": "claim-bu-13-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "三十一年",
+        "year": 13,
+        "precision": "year",
+        "earliest": 13,
+        "latest": 13
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0420",
+      "quote": "三十一年, 春正月, 分國内民戸爲南·北部.",
+      "note": ""
+    },
+    {
+      "id": "claim-bu-13-admin",
+      "subject": "polity-baekje",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "南·北部"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0420",
+      "quote": "分國内民戸爲南·北部",
+      "note": ""
+    },
+    {
+      "id": "claim-bu-15-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 15
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0470",
+      "quote": "秋八月, 加置東·西二部.",
+      "note": ""
+    },
+    {
+      "id": "claim-bu-15-admin",
+      "subject": "polity-baekje",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "東·西二部"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0470",
+      "quote": "加置東·西二部",
+      "note": ""
+    },
+    {
+      "id": "claim-drought-15-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "三十三年",
+        "year": 15,
+        "precision": "year",
+        "earliest": 15,
+        "latest": 15
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0460",
+      "quote": "三十三年, 春夏大旱.",
+      "note": ""
+    },
+    {
+      "id": "claim-drought-15-famine",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "event-baekje-famine-15"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0460",
+      "quote": "民饑相食, 盗賊大起, 王撫安之",
+      "note": ""
+    },
+    {
+      "id": "claim-flee-19-t",
+      "subject": "place-hansu-northeast",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 19
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0520",
+      "quote": "夏四月, 旱, 至六月乃雨.",
+      "note": ""
+    },
+    {
+      "id": "claim-flee-19-house",
+      "subject": "place-hansu-northeast",
+      "predicate": "syj:householdCount",
+      "object": {
+        "kind": "literal",
+        "value": 1000,
+        "unit": "戶"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0520",
+      "quote": "亡入髙句麗者一千餘戸",
+      "note": "원문 \"一千餘戸\"를 1000호로 셈했다."
+    },
+    {
+      "id": "claim-flee-19-empty",
+      "subject": "place-hansu-northeast",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-hansu-northeast"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0520",
+      "quote": "漢水東北部落饑荒, 亡入髙句麗者一千餘戸, 浿·帶之間, 空無居人",
+      "note": ""
+    },
+    {
+      "id": "claim-wirye-23-t",
+      "subject": "place-wiryeseong",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 23
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0590",
+      "quote": "二月, 發漢水東北諸部落人年十五歳以上, 修營慰禮城.",
+      "note": ""
+    },
+    {
+      "id": "claim-wirye-23-repair",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-wiryeseong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0590",
+      "quote": "修營慰禮城",
+      "note": "修營(고쳐 쌓음) 기사여서 신축을 뜻하는 builtIn 대신 relatedTo로 둔다."
+    },
+    {
+      "id": "claim-okjeo-25-t",
+      "subject": "polity-namokjeo",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 25
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0620",
+      "quote": "冬十月, 南沃沮 仇頗解等二十餘家, 至斧壤納欵",
+      "note": ""
+    },
+    {
+      "id": "claim-okjeo-25-settle",
+      "subject": "polity-namokjeo",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-hansan-west"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0620",
+      "quote": "王納之, 安置漢山之西",
+      "note": ""
+    },
+    {
+      "id": "claim-rice-33-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 33
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0030_0080",
+      "quote": "二月, 下令, 國南州郡始作稻田.",
+      "note": ""
+    },
+    {
+      "id": "claim-rice-33-produce",
+      "subject": "polity-baekje",
+      "predicate": "syj:producedAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-guknam-jugun"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0030_0080",
+      "quote": "國南州郡始作稻田",
+      "note": ""
+    },
+    {
+      "id": "claim-flood-116-t",
+      "subject": "place-hangang",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 116
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0040_0220",
+      "quote": "六月, 大雨浹旬, 漢江水漲, 漂毀民屋.",
+      "note": ""
+    },
+    {
+      "id": "claim-flood-116-at",
+      "subject": "place-hangang",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-hangang"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0040_0220",
+      "quote": "漢江水漲, 漂毀民屋",
+      "note": ""
+    },
+    {
+      "id": "claim-flood-116-repair",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 116
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0040_0230",
+      "quote": "秋七月, 命有司, 補水損之田.",
+      "note": ""
+    },
+    {
+      "id": "claim-bukhan-132-t",
+      "subject": "place-bukhansanseong",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "五年",
+        "year": 132,
+        "precision": "year",
+        "earliest": 132,
+        "latest": 132
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0050_0030",
+      "quote": "五年, 春二月, 築北漢山城.",
+      "note": ""
+    },
+    {
+      "id": "claim-bukhan-132-build",
+      "subject": "place-bukhansanseong",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": 132
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0050_0030",
+      "quote": "築北漢山城",
+      "note": ""
+    },
+    {
+      "id": "claim-dike-222-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "九年",
+        "year": 222,
+        "precision": "year",
+        "earliest": 222,
+        "latest": 222
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0020_0090",
+      "quote": "九年, 春二月, 命有司, 修隄防.",
+      "note": ""
+    },
+    {
+      "id": "claim-dike-222-repair",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-jebang"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0020_0090",
+      "quote": "修隄防",
+      "note": "修隄防(제방 수리) 기사여서 builtIn 대신 relatedTo로 둔다."
+    },
+    {
+      "id": "claim-farm-222",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 222
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0020_0100",
+      "quote": "三月, 下令勸農事.",
+      "note": ""
+    },
+    {
+      "id": "claim-rice-242-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "九年",
+        "year": 242,
+        "precision": "year",
+        "earliest": 242,
+        "latest": 242
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0100",
+      "quote": "九年, 春二月, 命國人, 開稻田於南澤.",
+      "note": ""
+    },
+    {
+      "id": "claim-rice-242-produce",
+      "subject": "polity-baekje",
+      "predicate": "syj:producedAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-namtaek"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0100",
+      "quote": "開稻田於南澤",
+      "note": ""
+    },
+    {
+      "id": "claim-altar-243-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十年",
+        "year": 243,
+        "precision": "year",
+        "earliest": 243,
+        "latest": 243
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0130",
+      "quote": "十年, 春正月, 設大壇, 祀天地·山川.",
+      "note": ""
+    },
+    {
+      "id": "claim-altar-243-build",
+      "subject": "place-daedan",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": 243
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0130",
+      "quote": "設大壇",
+      "note": ""
+    },
+    {
+      "id": "claim-mahan-gyeongcho",
+      "subject": "polity-mahan",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "景初中",
+        "year": 238,
+        "precision": "year",
+        "earliest": 237,
+        "latest": 239
+      },
+      "sourceId": "src-jipseong-ko_022",
+      "citesChunk": "chunk_jipseong-ko_022_ko_022_0350_0010",
+      "quote": "景初中, 明帝密遣帶方太守劉昕·樂浪太守鮮于嗣越海 定二郡",
+      "note": "이 chunk에는 date가 없다. 본문에 실제로 있는 연호 표기 景初中(위 명제 경초 연간, 237~239)을 연도 기준으로 삼고 earliest·latest로 폭을 남겼다. 마한 50여 국 호수 서술은 위·대방군이 이 무렵 파악한 상태를 적은 것이다."
+    },
+    {
+      "id": "claim-mahan-house",
+      "subject": "polity-mahan",
+      "predicate": "syj:householdCount",
+      "object": {
+        "kind": "literal",
+        "value": 100000,
+        "unit": "戶"
+      },
+      "sourceId": "src-jipseong-ko_022",
+      "citesChunk": "chunk_jipseong-ko_022_ko_022_0350_0010",
+      "quote": "總十餘萬戶",
+      "note": "원문 \"十餘萬戶\"를 10만 호로 셈했다."
+    },
+    {
+      "id": "claim-mahan-dwelling",
+      "subject": "polity-mahan",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "event-mahan-dwelling"
+      },
+      "sourceId": "src-jipseong-ko_022",
+      "citesChunk": "chunk_jipseong-ko_022_ko_022_0350_0010",
+      "quote": "居處作草屋土室, 形如冢, 其戶在上",
+      "note": ""
+    },
+    {
+      "id": "claim-mahan-baekje",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-mahan"
+      },
+      "sourceId": "src-jipseong-ko_022",
+      "citesChunk": "chunk_jipseong-ko_022_ko_022_0350_0010",
+      "quote": "伯濟國",
+      "note": "마한 50여 국 목록 안에 伯濟國이 들어 있다."
+    },
+    {
+      "id": "claim-relief-248-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 248
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0190",
+      "quote": "冬, 民饑, 發倉賑恤.",
+      "note": ""
+    },
+    {
+      "id": "claim-relief-248-act",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "event-baekje-relief-248"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0190",
+      "quote": "發倉賑恤. 又復一年租調",
+      "note": ""
+    },
+    {
+      "id": "claim-drought-248",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十五年",
+        "year": 248,
+        "precision": "year",
+        "earliest": 248,
+        "latest": 248
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0180",
+      "quote": "十五年, 春夏旱.",
+      "note": ""
+    },
+    {
+      "id": "claim-dongmyeong-t",
+      "subject": "place-dongmyeongmyo",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "元年",
+        "year": -18,
+        "precision": "year",
+        "earliest": -18,
+        "latest": -18
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0020",
+      "quote": "元年, 夏五月, 立東明王廟.",
+      "note": ""
+    },
+    {
+      "id": "claim-dongmyeong-build",
+      "subject": "place-dongmyeongmyo",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": -18
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0020",
+      "quote": "立東明王廟",
+      "note": ""
+    },
+    {
+      "id": "claim-dongmyeong-299",
+      "subject": "place-dongmyeongmyo",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二年",
+        "year": 299,
+        "precision": "year",
+        "earliest": 299,
+        "latest": 299
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0050_0030",
+      "quote": "二年, 春正月, 謁東明廟.",
+      "note": "299년 분서왕 배알 기사로 존속이 확인된다."
+    },
+    {
+      "id": "claim-nangnang-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": -15
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0080",
+      "quote": "秋八月, 遣使樂浪修好.",
+      "note": ""
+    },
+    {
+      "id": "claim-nangnang-act",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-nangnang"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0080",
+      "quote": "遣使樂浪修好",
+      "note": ""
+    },
+    {
+      "id": "claim-nangnang-break",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": -11
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0120",
+      "quote": "由是與樂浪失和",
+      "note": "서기전 11년에 낙랑과의 우호가 끊어졌다."
+    },
+    {
+      "id": "claim-daebang-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 286
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0040_0030",
+      "quote": "髙句麗伐帶方, 帶方請救於我.",
+      "note": ""
+    },
+    {
+      "id": "claim-daebang-marriage",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-daebang"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0040_0030",
+      "quote": "先是, 王娶帶方王女寳菓爲夫人",
+      "note": ""
+    },
+    {
+      "id": "claim-daebang-repair",
+      "subject": "polity-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-adan-sa-seong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0040_0030",
+      "quote": "修阿旦城·虵城備之",
+      "note": "修阿旦城·虵城(성 수리) 기사여서 builtIn 대신 relatedTo로 둔다."
+    },
+    {
+      "id": "claim-jwapyeong-t",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二十七年",
+        "year": 260,
+        "precision": "year",
+        "earliest": 260,
+        "latest": 260
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0260",
+      "quote": "二十七年, 春正月, 置内臣佐平掌宣納事.",
+      "note": ""
+    },
+    {
+      "id": "claim-jwapyeong-admin",
+      "subject": "polity-baekje",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "六佐平"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0260",
+      "quote": "六佐平並一品, 逹率二品, 恩率三品",
+      "note": ""
+    },
+    {
+      "id": "claim-gwanbok-260",
+      "subject": "polity-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 260
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0030_0270",
+      "quote": "二月, 下令六品已上服紫, 以銀花餙冠",
+      "note": ""
+    },
+    {
+      "id": "claim-jeokhyeon-210-t",
+      "subject": "place-jeokhyeon-sado",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "四十五年",
+        "year": 210,
+        "precision": "year",
+        "earliest": 210,
+        "latest": 210
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0060_0190",
+      "quote": "四十五年, 春二月, 築赤峴·沙道二城, 移東部民戸.",
+      "note": ""
+    },
+    {
+      "id": "claim-jeokhyeon-210-build",
+      "subject": "place-jeokhyeon-sado",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": 210
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0060_0190",
+      "quote": "築赤峴·沙道二城",
+      "note": "築(쌓음) 기사다."
+    },
+    {
+      "id": "claim-jeokhyeon-210-move",
+      "subject": "polity-baekje",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-jeokhyeon-sado"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0060_0190",
+      "quote": "移東部民戸",
+      "note": "동부의 민호를 새로 쌓은 두 성으로 옮겼다."
+    },
+    {
+      "id": "claim-haeru-23-t",
+      "subject": "person-haeru",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "四十一年",
+        "year": 23,
+        "precision": "year",
+        "earliest": 23,
+        "latest": 23
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0580",
+      "quote": "四十一年, 春正月, 右輔乙音卒, 拜北部解婁爲右輔.",
+      "note": ""
+    },
+    {
+      "id": "claim-haeru-23-office",
+      "subject": "person-haeru",
+      "predicate": "syj:participatedIn",
+      "object": {
+        "kind": "entity",
+        "id": "event-haeru-ubo"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0020_0580",
+      "quote": "拜北部解婁爲右輔. 解婁夲扶餘人也. 神識淵與, 年過七十",
+      "note": "부여 사람이며 북부 소속으로, 일흔이 넘은 나이에 우보가 되었다."
+    },
+    {
+      "id": "claim-haeru-34-t",
+      "subject": "person-haeru",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "七年",
+        "year": 34,
+        "precision": "year",
+        "earliest": 34,
+        "latest": 34
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0030_0090",
+      "quote": "七年, 春二月, 右輔解婁卒, 年九十歳.",
+      "note": "다루왕 7년(34)이다."
+    },
+    {
+      "id": "claim-haeru-34-end",
+      "subject": "person-haeru",
+      "predicate": "syj:endedIn",
+      "object": {
+        "kind": "year",
+        "value": 34
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_023_0030_0090",
+      "quote": "右輔解婁卒, 年九十歳",
+      "note": "아흔 살로 죽었다."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-bj-hansan-chaek--6",
+      "eventId": "event-bj-hansan-chaek--6",
+      "title": "한산 아래 목책 조영과 위례성 민호 이주 — 한성 (서기전 6)",
+      "startYear": -6,
+      "kind": "migration",
+      "category": "settlement",
+      "sceneFunction": "migration",
+      "summary": "서기전 6년 7월 백제가 한산 아래에 목책을 세우고 위례성의 민호를 그곳으로 옮겼다. 천도를 앞둔 주민 이동이다. 漢山의 위치는 확정되지 않아 좌표를 두지 않았다.",
+      "dateClaimIds": [
+        "claim-hansan-6-t"
+      ],
+      "actionClaimIds": [
+        "claim-hansan-6-move"
+      ],
+      "place": null,
+      "participantGroups": [
+        {
+          "label": "위례성에서 옮겨온 민호",
+          "role": "이주민",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": null,
+          "claimIds": [
+            "claim-hansan-6-move"
+          ]
+        }
+      ],
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": -6,
+      "region": "central",
+      "decade": -10
+    },
+    {
+      "id": "scene-bj-seonggwol--6",
+      "eventId": "event-bj-seonggwol--6",
+      "title": "하남위례성 성과 대궐 조영 — 한성 (서기전 6)",
+      "startYear": -6,
+      "kind": "construction",
+      "category": "facility",
+      "sceneFunction": "construction_site",
+      "summary": "서기전 6년 9월 백제가 새 도읍 자리에 성과 대궐(城闕)을 세웠다.",
+      "dateClaimIds": [
+        "claim-seonggwol-6-t"
+      ],
+      "actionClaimIds": [
+        "claim-seonggwol-6-build"
+      ],
+      "place": {
+        "label": "하남위례성(풍납토성 비정)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12083,
+        "lat": 37.53889,
+        "claimIds": [
+          "claim-loc-pungnap"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pungnaptoseong"
+        ],
+        "coordinateNote": "좌표는 위키백과 풍납토성 문서의 표시 좌표다. 하남위례성=풍납토성 비정은 통설이지만 몽촌토성설 등 다른 견해가 있어 precision을 area로 둔다."
+      },
+      "persistence": {
+        "kind": "facility",
+        "basisClaimIds": [
+          "claim-seonggwol-6-build"
+        ],
+        "from": -6,
+        "to": null
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": -6,
+      "region": "central",
+      "decade": -10
+    },
+    {
+      "id": "scene-bj-capital-move--5",
+      "eventId": "event-bj-capital-move--5",
+      "title": "하남위례성 천도 — 한성 (서기전 5)",
+      "startYear": -5,
+      "kind": "settlement",
+      "category": "administration",
+      "summary": "서기전 5년 정월 백제가 도읍을 옮겼다. 원문에는 옮긴 곳의 이름이 없고, 앞선 13년의 한수 남쪽 천도 계획 기사에 따라 하남위례성으로 본다.",
+      "dateClaimIds": [
+        "claim-move-5-t"
+      ],
+      "actionClaimIds": [
+        "claim-move-5-to",
+        "claim-move-5-plan"
+      ],
+      "place": {
+        "label": "하남위례성(풍납토성 비정)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12083,
+        "lat": 37.53889,
+        "claimIds": [
+          "claim-loc-pungnap"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pungnaptoseong"
+        ],
+        "coordinateNote": "좌표는 위키백과 풍납토성 문서의 표시 좌표다. 하남위례성=풍납토성 비정은 통설이지만 몽촌토성설 등 다른 견해가 있어 precision을 area로 둔다."
+      },
+      "participants": [
+        {
+          "entityId": "person-onjo",
+          "role": "천도를 결정한 국왕",
+          "side": "civilian",
+          "presence": "related",
+          "claimIds": [
+            "claim-move-5-plan"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "city",
+        "basisClaimIds": [
+          "claim-move-5-to"
+        ],
+        "from": -5,
+        "to": null
+      },
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": -5,
+      "region": "central",
+      "decade": -10
+    },
+    {
+      "id": "scene-bj-flee-goguryeo-19",
+      "eventId": "event-bj-flee-goguryeo-19",
+      "title": "한수 동북 부락의 기근과 1천여 호 유출 (19)",
+      "startYear": 19,
+      "kind": "migration",
+      "category": "settlement",
+      "sceneFunction": "migration",
+      "summary": "19년 가뭄 끝에 한수 동북 부락이 굶주려 1천여 호가 고구려로 넘어갔고 패수와 대수 사이가 비었다.",
+      "dateClaimIds": [
+        "claim-flee-19-t"
+      ],
+      "actionClaimIds": [
+        "claim-flee-19-empty",
+        "claim-flee-19-house"
+      ],
+      "place": null,
+      "participantGroups": [
+        {
+          "label": "고구려로 옮겨간 한수 동북 부락민",
+          "role": "유민",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": 1000,
+          "claimIds": [
+            "claim-flee-19-house"
+          ]
+        }
+      ],
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 19,
+      "region": "central",
+      "decade": 10
+    },
+    {
+      "id": "scene-bj-wirye-repair-23",
+      "eventId": "event-bj-wirye-repair-23",
+      "title": "위례성 수리 부역 — 한성 (23)",
+      "startYear": 23,
+      "kind": "construction",
+      "category": "facility",
+      "sceneFunction": "construction_site",
+      "summary": "23년 2월 한수 동북 여러 부락의 15세 이상 사람을 징발해 위례성을 고쳐 쌓았다. 신축이 아니라 보수여서 시설 존속 기록은 두지 않는다.",
+      "dateClaimIds": [
+        "claim-wirye-23-t"
+      ],
+      "actionClaimIds": [
+        "claim-wirye-23-repair"
+      ],
+      "place": {
+        "label": "위례성(풍납토성 비정)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12083,
+        "lat": 37.53889,
+        "claimIds": [
+          "claim-loc-pungnap"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pungnaptoseong"
+        ],
+        "coordinateNote": "좌표는 위키백과 풍납토성 문서의 표시 좌표다. 하남위례성=풍납토성 비정은 통설이지만 몽촌토성설 등 다른 견해가 있어 precision을 area로 둔다."
+      },
+      "participantGroups": [
+        {
+          "label": "한수 동북 부락의 15세 이상 장정",
+          "role": "부역 인부",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": null,
+          "claimIds": [
+            "claim-wirye-23-t"
+          ]
+        }
+      ],
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 23,
+      "region": "central",
+      "decade": 20
+    },
+    {
+      "id": "scene-bj-okjeo-settle-25",
+      "eventId": "event-bj-okjeo-settle-25",
+      "title": "남옥저 구파해 일행 20여 가의 귀순과 정착 (25)",
+      "startYear": 25,
+      "kind": "migration",
+      "category": "settlement",
+      "sceneFunction": "migration",
+      "summary": "25년 10월 남옥저의 구파해 등 20여 가가 부양에 이르러 귀순하자 왕이 받아들여 한산 서쪽에 살게 했다.",
+      "dateClaimIds": [
+        "claim-okjeo-25-t"
+      ],
+      "actionClaimIds": [
+        "claim-okjeo-25-settle"
+      ],
+      "place": null,
+      "participantGroups": [
+        {
+          "label": "남옥저 구파해 일행",
+          "role": "귀순 이주민",
+          "stance": "friendly",
+          "side": "civilian",
+          "count": 20,
+          "claimIds": [
+            "claim-okjeo-25-t"
+          ]
+        }
+      ],
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 25,
+      "region": "central",
+      "decade": 20
+    },
+    {
+      "id": "scene-bj-rice-33",
+      "eventId": "event-bj-rice-33",
+      "title": "나라 남쪽 주·군의 논농사 개시 (33)",
+      "startYear": 33,
+      "kind": "construction",
+      "category": "economy",
+      "sceneFunction": "irrigation",
+      "summary": "33년 2월 다루왕이 나라 남쪽 주·군에 명하여 처음으로 논(稻田)을 만들게 했다.",
+      "dateClaimIds": [
+        "claim-rice-33-t"
+      ],
+      "actionClaimIds": [
+        "claim-rice-33-produce"
+      ],
+      "place": null,
+      "participantGroups": [
+        {
+          "label": "나라 남쪽 주·군의 농민",
+          "role": "논 개간 노동",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": null,
+          "claimIds": [
+            "claim-rice-33-produce"
+          ]
+        }
+      ],
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 33,
+      "region": "central",
+      "decade": 30
+    },
+    {
+      "id": "scene-bj-han-flood-116",
+      "eventId": "event-bj-han-flood-116",
+      "title": "한강 범람과 민가 유실 — 한성 일대 (116)",
+      "startYear": 116,
+      "kind": "disaster",
+      "category": "disaster",
+      "summary": "116년 6월 열흘 동안 큰비가 내려 한강이 불어 민가가 떠내려갔고, 7월에 관리를 시켜 물에 상한 논밭을 손보게 했다.",
+      "dateClaimIds": [
+        "claim-flood-116-t"
+      ],
+      "actionClaimIds": [
+        "claim-flood-116-at",
+        "claim-flood-116-repair"
+      ],
+      "place": {
+        "label": "한강 하류 왕도 일대(풍납토성 기준)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12083,
+        "lat": 37.53889,
+        "claimIds": [
+          "claim-loc-pungnap"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pungnaptoseong"
+        ],
+        "coordinateNote": "원문은 한강이라고만 적어 지점이 특정되지 않는다. 왕도가 있던 풍납토성 좌표를 대표점으로 쓰고 precision을 area로 둔다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 116,
+      "region": "central",
+      "decade": 110
+    },
+    {
+      "id": "scene-bj-bukhansanseong-132",
+      "eventId": "event-bj-bukhansanseong-132",
+      "title": "북한산성 축조 (132)",
+      "startYear": 132,
+      "kind": "construction",
+      "category": "facility",
+      "sceneFunction": "fortress",
+      "summary": "132년 2월 개루왕이 북한산성을 쌓았다. 한강 북쪽에 백제의 거점이 생겼다.",
+      "dateClaimIds": [
+        "claim-bukhan-132-t"
+      ],
+      "actionClaimIds": [
+        "claim-bukhan-132-build"
+      ],
+      "place": {
+        "label": "북한산성",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.973222,
+        "lat": 37.647056,
+        "claimIds": [
+          "claim-loc-bukhansan"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-bukhansanseong"
+        ],
+        "coordinateNote": "좌표는 위키백과 북한산성 문서의 표시 좌표다. 132년 기사의 북한산성이 지금의 북한산성과 같은 자리인지는 확정되지 않아 precision을 area로 둔다."
+      },
+      "persistence": {
+        "kind": "facility",
+        "basisClaimIds": [
+          "claim-bukhan-132-build"
+        ],
+        "from": 132,
+        "to": null
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 132,
+      "region": "central",
+      "decade": 130
+    },
+    {
+      "id": "scene-bj-dike-222",
+      "eventId": "event-bj-dike-222",
+      "title": "제방 수리와 권농 (222)",
+      "startYear": 222,
+      "kind": "construction",
+      "category": "economy",
+      "sceneFunction": "irrigation",
+      "summary": "222년 2월 구수왕이 담당 관리에게 제방을 고치게 하고, 3월에는 농사를 권하는 명을 내렸다.",
+      "dateClaimIds": [
+        "claim-dike-222-t"
+      ],
+      "actionClaimIds": [
+        "claim-dike-222-repair",
+        "claim-farm-222"
+      ],
+      "place": null,
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 222,
+      "region": "central",
+      "decade": 220
+    },
+    {
+      "id": "scene-bj-namtaek-242",
+      "eventId": "event-bj-namtaek-242",
+      "title": "남택 진펄의 논 개간 (242)",
+      "startYear": 242,
+      "kind": "construction",
+      "category": "economy",
+      "sceneFunction": "irrigation",
+      "summary": "242년 2월 고이왕이 나라 사람들에게 명해 남쪽 진펄(南澤)을 논으로 일구게 했다.",
+      "dateClaimIds": [
+        "claim-rice-242-t"
+      ],
+      "actionClaimIds": [
+        "claim-rice-242-produce"
+      ],
+      "place": null,
+      "participantGroups": [
+        {
+          "label": "동원된 국인",
+          "role": "개간 인부",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": null,
+          "claimIds": [
+            "claim-rice-242-produce"
+          ]
+        }
+      ],
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 242,
+      "region": "central",
+      "decade": 240
+    },
+    {
+      "id": "scene-bj-daedan-243",
+      "eventId": "event-bj-daedan-243",
+      "title": "큰 제단(大壇)에서 천지·산천 제사 — 한성 (243)",
+      "startYear": 243,
+      "kind": "ritual",
+      "category": "culture",
+      "summary": "243년 정월 고이왕이 큰 제단을 차리고 하늘과 땅, 산과 내에 제사를 지냈다.",
+      "dateClaimIds": [
+        "claim-altar-243-t"
+      ],
+      "actionClaimIds": [
+        "claim-altar-243-build"
+      ],
+      "place": {
+        "label": "왕도의 큰 제단(풍납토성 기준)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12083,
+        "lat": 37.53889,
+        "claimIds": [
+          "claim-loc-pungnap"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pungnaptoseong"
+        ],
+        "coordinateNote": "원문에 제단 자리가 없다. 왕도를 대표해 풍납토성 좌표를 쓰고 precision을 area로 둔다."
+      },
+      "persistence": {
+        "kind": "facility",
+        "basisClaimIds": [
+          "claim-altar-243-build"
+        ],
+        "from": 243,
+        "to": null
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 243,
+      "region": "central",
+      "decade": 240
+    },
+    {
+      "id": "scene-bj-relief-248",
+      "eventId": "event-bj-relief-248",
+      "title": "창고를 열어 굶주린 백성을 구제하다 — 한성 (248)",
+      "startYear": 248,
+      "kind": "relief",
+      "category": "disaster",
+      "sceneFunction": "relief",
+      "summary": "248년 봄·여름 가뭄 뒤 겨울에 백성이 굶주리자 창고를 열어 나눠주고 한 해 조(租)와 조(調)를 면제했다.",
+      "dateClaimIds": [
+        "claim-relief-248-t"
+      ],
+      "actionClaimIds": [
+        "claim-relief-248-act",
+        "claim-drought-248"
+      ],
+      "place": {
+        "label": "왕도의 창고(풍납토성 기준)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12083,
+        "lat": 37.53889,
+        "claimIds": [
+          "claim-loc-pungnap"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pungnaptoseong"
+        ],
+        "coordinateNote": "창고 자리가 원문에 없어 왕도 대표점인 풍납토성 좌표를 쓰고 precision을 area로 둔다."
+      },
+      "participantGroups": [
+        {
+          "label": "굶주린 백성",
+          "role": "진휼 수급자",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": null,
+          "claimIds": [
+            "claim-relief-248-act"
+          ]
+        }
+      ],
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 248,
+      "region": "central",
+      "decade": 240
+    },
+    {
+      "id": "scene-bj-dongmyeongmyo--18",
+      "eventId": "event-bj-dongmyeongmyo--18",
+      "title": "동명왕 사당 건립 — 한성 (서기전 18)",
+      "startYear": -18,
+      "endYear": 299,
+      "kind": "ritual",
+      "category": "culture",
+      "sceneFunction": "temple",
+      "summary": "서기전 18년 5월 온조왕이 동명왕의 사당을 세웠다. 분서왕 2년(299) 정월 배알 기사까지 이어진다.",
+      "dateClaimIds": [
+        "claim-dongmyeong-t"
+      ],
+      "actionClaimIds": [
+        "claim-dongmyeong-build",
+        "claim-dongmyeong-299"
+      ],
+      "place": {
+        "label": "동명왕묘(왕도, 풍납토성 기준)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12083,
+        "lat": 37.53889,
+        "claimIds": [
+          "claim-loc-pungnap"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pungnaptoseong"
+        ],
+        "coordinateNote": "사당 자리가 원문에 없다. 왕도 대표점인 풍납토성 좌표를 쓰고 precision을 area로 둔다."
+      },
+      "persistence": {
+        "kind": "facility",
+        "basisClaimIds": [
+          "claim-dongmyeong-build",
+          "claim-dongmyeong-299"
+        ],
+        "from": -18,
+        "to": null
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "region": "central",
+      "decade": -20
+    },
+    {
+      "id": "scene-bj-jwapyeong-260",
+      "eventId": "event-bj-jwapyeong-260",
+      "title": "6좌평과 16관등 설치 — 한성 (260)",
+      "startYear": 260,
+      "kind": "court",
+      "category": "administration",
+      "summary": "260년 정월 고이왕이 내신좌평 등 6좌평과 달솔 이하 16관등을 두고, 2월에는 품계에 따라 관복 빛깔을 정했다.",
+      "dateClaimIds": [
+        "claim-jwapyeong-t"
+      ],
+      "actionClaimIds": [
+        "claim-jwapyeong-admin",
+        "claim-gwanbok-260"
+      ],
+      "place": {
+        "label": "백제 왕도(풍납토성 기준)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12083,
+        "lat": 37.53889,
+        "claimIds": [
+          "claim-loc-pungnap"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pungnaptoseong"
+        ],
+        "coordinateNote": "좌표는 위키백과 풍납토성 문서의 표시 좌표다. 하남위례성=풍납토성 비정은 통설이지만 몽촌토성설 등 다른 견해가 있어 precision을 area로 둔다."
+      },
+      "persistence": {
+        "kind": "institution",
+        "basisClaimIds": [
+          "claim-jwapyeong-admin"
+        ],
+        "from": 260,
+        "to": null
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "endYear": 260,
+      "region": "central",
+      "decade": 260
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact-bj-001",
+      "category": "administration",
+      "region": "central",
+      "decade": -20,
+      "year": -18,
+      "yearVerbatim": "鴻嘉三年",
+      "placeLabel": "위례성(원문 河南慰禮城)",
+      "modernPlace": "서울 한강 유역(하남·하북위례성설 갈림)",
+      "what": "온조가 부여 계통 집단을 이끌고 남하해 위례성(원문 河南慰禮城)에 도읍하고 나라를 세웠다(전한 성제 홍가 3년).",
+      "claimIds": [
+        "claim-onjo-found-t",
+        "claim-onjo-capital",
+        "claim-onjo-buyeo"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "건국 연대와 위례성 위치 모두 논쟁이 있다. 삼국사기는 원년 도읍을 河南慰禮城이라 적지만 13년의 한수 남쪽 천도 논의와 14년 遷都 기사가 이어져 내부 모순이 있다(하북위례성설). 그래서 서기전 5년 천도 목적지와 별개 엔티티로 두고 좌표도 두지 않았다. 갈래는 건국·도읍이므로 administration이다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-002",
+      "category": "administration",
+      "region": "central",
+      "decade": -10,
+      "year": -6,
+      "yearVerbatim": "八月",
+      "placeLabel": "백제 강역(북 패하~남 웅천)",
+      "modernPlace": "예성강~안성천 일대(비정)",
+      "what": "마한에 도읍을 옮긴다고 알리고 강역을 북쪽 패하, 남쪽 웅천, 서쪽 큰 바다, 동쪽 주양으로 획정했다.",
+      "claimIds": [
+        "claim-border-6-t",
+        "claim-border-6-mahan",
+        "claim-border-6-area"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "패하·웅천·주양의 비정에 학설이 갈려 좌표를 두지 않았다. 강역 획정은 행정 단위 표기가 아니어서 claim의 predicate를 syj:relatedTo로 두고 원문 표기는 claim note에 적었다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-003",
+      "category": "administration",
+      "region": "central",
+      "decade": -10,
+      "year": -5,
+      "yearVerbatim": "十四年",
+      "placeLabel": "하남위례성",
+      "modernPlace": "서울 송파구 풍납토성 일대(비정)",
+      "what": "백제가 도읍을 옮겼다. 원문에는 옮긴 곳의 이름이 없다.",
+      "claimIds": [
+        "claim-move-5-t",
+        "claim-move-5-to",
+        "claim-move-5-plan",
+        "claim-loc-pungnap"
+      ],
+      "sceneId": "scene-bj-capital-move--5",
+      "confidence": "medium",
+      "note": "천도 기사는 '十四年, 春正月, 遷都.' 뿐이고 목적지 이름이 없다. 앞선 13년의 한수 남쪽 천도 계획 기사에 따라 하남위례성(풍납토성 비정)으로 본다. 삼국사기는 원년 도읍도 河南慰禮城이라 적어 내부 모순이 있으므로, 건국기 도읍(fact-bj-001)과는 다른 엔티티로 나누어 같은 도읍으로 두 번 옮겨온 기록이 되지 않게 했다. 한성 함락(475)은 이 칸 밖이라 to는 null로 둔다.",
+      "lon": 127.12083,
+      "lat": 37.53889,
+      "coordinateBasis": "src-kowiki-pungnaptoseong ex-pungnap-geo",
+      "persistence": {
+        "kind": "city",
+        "from": -5,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bj-004",
+      "category": "facility",
+      "region": "central",
+      "decade": -10,
+      "year": -6,
+      "yearVerbatim": "九月",
+      "placeLabel": "하남위례성 성궐",
+      "modernPlace": "서울 송파구 풍납토성 일대(비정)",
+      "what": "새 도읍 자리에 성과 대궐(城闕)을 세웠다.",
+      "claimIds": [
+        "claim-seonggwol-6-t",
+        "claim-seonggwol-6-build"
+      ],
+      "sceneId": "scene-bj-seonggwol--6",
+      "confidence": "medium",
+      "note": "원문은 성궐을 세운 자리를 밝히지 않는다. 같은 해 천도 준비 기사들과 이어 읽어 새 도읍 자리로 보았다. 원문에 자리가 적혀 있지 않아 사실에는 좌표를 두지 않는다(왕도 대표점은 장면 표시용으로만 precision area와 함께 쓴다).",
+      "persistence": {
+        "kind": "facility",
+        "from": -6,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bj-005",
+      "category": "settlement",
+      "region": "central",
+      "decade": -10,
+      "year": -6,
+      "yearVerbatim": "秋七月",
+      "placeLabel": "한산 아래 목책",
+      "modernPlace": "서울·경기 한강 유역(비정 미확정)",
+      "what": "한산 아래에 목책을 세우고 위례성의 민호를 그곳으로 옮겼다.",
+      "claimIds": [
+        "claim-hansan-6-t",
+        "claim-hansan-6-move"
+      ],
+      "sceneId": "scene-bj-hansan-chaek--6",
+      "confidence": "medium",
+      "note": "漢山의 위치는 확정되지 않았다. 남한산·이성산성·몽촌토성 등이 후보로 거론되지만 허용 출처에서 '漢山=○○'이라고 적은 서술을 확인하지 못해 좌표를 두지 않았다. 앞서 쓰려던 위키백과 몽촌토성 문서에는 몽촌토성을 漢山으로 비정한다는 서술이 없다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-006",
+      "category": "facility",
+      "region": "central",
+      "decade": 0,
+      "year": 9,
+      "yearVerbatim": "秋七月",
+      "placeLabel": "대두산성",
+      "modernPlace": "충남 아산·예산 일대(비정, 이설 있음)",
+      "what": "대두산성을 쌓았다.",
+      "claimIds": [
+        "claim-daedu-9-t",
+        "claim-daedu-9-build"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "위치 비정이 갈려 좌표를 두지 않았다. 18년 탕정성 축조 때 대두성 민호를 나눈 기사가 이어진다.",
+      "persistence": {
+        "kind": "facility",
+        "from": 9,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bj-007",
+      "category": "administration",
+      "region": "central",
+      "decade": 10,
+      "year": 13,
+      "yearVerbatim": "三十一年",
+      "placeLabel": "백제 전역",
+      "modernPlace": "한강 유역",
+      "what": "나라 안의 민호를 남부와 북부로 나누어 편성했다.",
+      "claimIds": [
+        "claim-bu-13-t",
+        "claim-bu-13-admin"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "부(部) 편성의 실제 시행 시점에 논쟁이 있다.",
+      "persistence": {
+        "kind": "institution",
+        "from": 13,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bj-008",
+      "category": "administration",
+      "region": "central",
+      "decade": 10,
+      "year": 15,
+      "yearVerbatim": "秋八月",
+      "placeLabel": "백제 전역",
+      "modernPlace": "한강 유역",
+      "what": "동부와 서부 두 부를 더 두어 네 부 체제가 되었다.",
+      "claimIds": [
+        "claim-bu-15-t",
+        "claim-bu-15-admin",
+        "claim-bu-13-admin"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "2년 전 남·북부 편성에 동·서부를 더한 것이다.",
+      "persistence": {
+        "kind": "institution",
+        "from": 15,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bj-009",
+      "category": "disaster",
+      "region": "central",
+      "decade": 10,
+      "year": 15,
+      "yearVerbatim": "三十三年",
+      "placeLabel": "백제 전역",
+      "modernPlace": "한강 유역",
+      "what": "봄부터 여름까지 큰 가뭄이 들어 백성이 굶주려 서로 잡아먹고 도적이 크게 일어났다.",
+      "claimIds": [
+        "claim-drought-15-t",
+        "claim-drought-15-famine"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "초기 기사의 신빙성 논쟁이 있어 confidence를 medium으로 둔다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-010",
+      "category": "settlement",
+      "region": "central",
+      "decade": 10,
+      "year": 19,
+      "yearVerbatim": "夏四月",
+      "placeLabel": "한수 동북 부락",
+      "modernPlace": "한강 북동안 일대",
+      "what": "가뭄으로 한수 동북 부락이 굶주려 1천여 호가 고구려로 넘어갔고 패수와 대수 사이에 사는 사람이 없어졌다.",
+      "claimIds": [
+        "claim-flee-19-t",
+        "claim-flee-19-empty",
+        "claim-flee-19-house"
+      ],
+      "sceneId": "scene-bj-flee-goguryeo-19",
+      "confidence": "medium",
+      "note": "1천여 호를 1000호로 셈했다. 부락의 범위가 넓어 좌표를 두지 않았다.",
+      "persistence": null,
+      "density": {
+        "households": 1000,
+        "unit": "戶",
+        "claimIds": [
+          "claim-flee-19-house"
+        ]
+      }
+    },
+    {
+      "id": "fact-bj-011",
+      "category": "facility",
+      "region": "central",
+      "decade": 20,
+      "year": 23,
+      "yearVerbatim": "二月",
+      "placeLabel": "위례성",
+      "modernPlace": "서울 송파구 풍납토성 일대(비정)",
+      "what": "한수 동북 여러 부락의 15세 이상 사람을 징발해 위례성을 고쳐 쌓았다.",
+      "claimIds": [
+        "claim-wirye-23-t",
+        "claim-wirye-23-repair"
+      ],
+      "sceneId": "scene-bj-wirye-repair-23",
+      "confidence": "medium",
+      "note": "修營(고쳐 쌓음) 기사여서 새 시설이 아니라 서기전 6년 성궐(fact-bj-004)의 보수로 본다. 그래서 persistence를 두지 않았고 claim도 builtIn 대신 relatedTo로 적었다. 원문에 자리가 적혀 있지 않아 사실에는 좌표를 두지 않는다(왕도 대표점은 장면 표시용으로만 precision area와 함께 쓴다).",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-012",
+      "category": "settlement",
+      "region": "central",
+      "decade": 20,
+      "year": 25,
+      "yearVerbatim": "冬十月",
+      "placeLabel": "한산 서쪽",
+      "modernPlace": "서울·경기 한강 남안 일대(비정)",
+      "what": "남옥저의 구파해 등 20여 가가 귀순해 오자 왕이 받아들여 한산 서쪽에 살게 했다.",
+      "claimIds": [
+        "claim-okjeo-25-t",
+        "claim-okjeo-25-settle"
+      ],
+      "sceneId": "scene-bj-okjeo-settle-25",
+      "confidence": "medium",
+      "note": "원문 단위는 家다. 20이라는 수는 claim-okjeo-25-t가 인용한 '二十餘家'에 있고, claim-okjeo-25-settle('王納之, 安置漢山之西')에는 수치가 없다. 정착지가 \"한산 서쪽\"이라고만 적혀 좌표를 두지 않았다.",
+      "persistence": null,
+      "density": {
+        "households": 20,
+        "unit": "家",
+        "claimIds": [
+          "claim-okjeo-25-t"
+        ]
+      }
+    },
+    {
+      "id": "fact-bj-013",
+      "category": "economy",
+      "region": "central",
+      "decade": 30,
+      "year": 33,
+      "yearVerbatim": "二月",
+      "placeLabel": "나라 남쪽 주·군",
+      "modernPlace": "한강 이남 백제 영역(비정)",
+      "what": "나라 남쪽 주·군에 명하여 처음으로 논(稻田)을 만들게 했다.",
+      "claimIds": [
+        "claim-rice-33-t",
+        "claim-rice-33-produce"
+      ],
+      "sceneId": "scene-bj-rice-33",
+      "confidence": "medium",
+      "note": "백제 논농사 개시 기사로 자주 인용되나 연대 신빙성 논쟁이 있다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-014",
+      "category": "disaster",
+      "region": "central",
+      "decade": 110,
+      "year": 116,
+      "yearVerbatim": "六月",
+      "placeLabel": "한강 하류",
+      "modernPlace": "서울 한강 일대",
+      "what": "열흘 동안 큰비가 내려 한강이 불어 민가가 떠내려갔고, 다음 달 관리를 시켜 물에 상한 논밭을 손보게 했다.",
+      "claimIds": [
+        "claim-flood-116-t",
+        "claim-flood-116-at",
+        "claim-flood-116-repair"
+      ],
+      "sceneId": "scene-bj-han-flood-116",
+      "confidence": "medium",
+      "note": "피해 지점이 원문에 특정되지 않는다. 원문에 자리가 적혀 있지 않아 사실에는 좌표를 두지 않는다(왕도 대표점은 장면 표시용으로만 precision area와 함께 쓴다).",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-015",
+      "category": "facility",
+      "region": "central",
+      "decade": 130,
+      "year": 132,
+      "yearVerbatim": "五年",
+      "placeLabel": "북한산성",
+      "modernPlace": "서울 은평·경기 고양 북한산 일대",
+      "what": "개루왕이 북한산성을 쌓았다.",
+      "claimIds": [
+        "claim-bukhan-132-t",
+        "claim-bukhan-132-build",
+        "claim-loc-bukhansan"
+      ],
+      "sceneId": "scene-bj-bukhansanseong-132",
+      "confidence": "medium",
+      "note": "132년 기사의 북한산성이 지금의 북한산성(조선 숙종대 개축)과 같은 자리인지는 확정되지 않았다.",
+      "lon": 126.973222,
+      "lat": 37.647056,
+      "coordinateBasis": "src-kowiki-bukhansanseong ex-bukhansan-geo",
+      "persistence": {
+        "kind": "facility",
+        "from": 132,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bj-016",
+      "category": "economy",
+      "region": "central",
+      "decade": 220,
+      "year": 222,
+      "yearVerbatim": "九年",
+      "placeLabel": "백제 전역",
+      "modernPlace": "한강 유역",
+      "what": "담당 관리에게 제방(隄防)을 고치게 하고 이어 농사를 권하는 명을 내렸다.",
+      "claimIds": [
+        "claim-dike-222-t",
+        "claim-dike-222-repair",
+        "claim-farm-222"
+      ],
+      "sceneId": "scene-bj-dike-222",
+      "confidence": "medium",
+      "note": "제방 위치가 적혀 있지 않아 좌표를 두지 않았다. 修隄防은 수리 기사여서 claim의 predicate를 builtIn 대신 relatedTo로 두었다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-017",
+      "category": "economy",
+      "region": "central",
+      "decade": 240,
+      "year": 242,
+      "yearVerbatim": "九年",
+      "placeLabel": "남택(南澤)",
+      "modernPlace": "한강 이남 저습지(비정)",
+      "what": "고이왕이 나라 사람들에게 명해 남쪽 진펄(南澤)을 논으로 일구게 했다.",
+      "claimIds": [
+        "claim-rice-242-t",
+        "claim-rice-242-produce"
+      ],
+      "sceneId": "scene-bj-namtaek-242",
+      "confidence": "medium",
+      "note": "南澤의 위치가 특정되지 않는다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-018",
+      "category": "culture",
+      "region": "central",
+      "decade": 240,
+      "year": 243,
+      "yearVerbatim": "十年",
+      "placeLabel": "왕도의 큰 제단",
+      "modernPlace": "서울 송파구 일대(비정)",
+      "what": "고이왕이 큰 제단(大壇)을 차리고 하늘과 땅, 산과 내에 제사를 지냈다.",
+      "claimIds": [
+        "claim-altar-243-t",
+        "claim-altar-243-build"
+      ],
+      "sceneId": "scene-bj-daedan-243",
+      "confidence": "medium",
+      "note": "제단 자리가 원문에 없다. 원문에 자리가 적혀 있지 않아 사실에는 좌표를 두지 않는다(왕도 대표점은 장면 표시용으로만 precision area와 함께 쓴다).",
+      "persistence": {
+        "kind": "facility",
+        "from": 243,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bj-019",
+      "category": "settlement",
+      "region": "central",
+      "decade": 230,
+      "year": 238,
+      "yearVerbatim": "景初中",
+      "placeLabel": "마한 50여 국",
+      "modernPlace": "경기·충청·전라 일원",
+      "what": "삼국지 한전은 마한 50여 국의 큰 나라가 1만여 가, 작은 나라가 수천 가로 모두 10여만 호였고 백성은 풀집과 흙집에 살았다고 적었다. 그 50여 국 목록 안에 백제(伯濟國)가 들어 있다.",
+      "claimIds": [
+        "claim-mahan-gyeongcho",
+        "claim-mahan-house",
+        "claim-mahan-dwelling",
+        "claim-mahan-baekje"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "연도는 chunk 본문에 실제로 있는 연호 표기 景初中(위 명제 경초 연간, 237~239)을 기준으로 삼았고, 앞서 적었던 '正始 年間(推定)'은 인용 밖 표기여서 버렸다(chunk에 date가 없고 正始라는 글자도 없다). 10여만 호는 마한 전체 수치이고 마한은 경기·충청·전라에 걸쳐 있어 한 권역의 밀도로 세면 왜곡되므로 density를 두지 않고 수치는 claim과 이 서술로만 남긴다. 권역 central은 백제(伯濟國)가 있던 자리 기준이다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-020",
+      "category": "disaster",
+      "region": "central",
+      "decade": 240,
+      "year": 248,
+      "yearVerbatim": "十五年",
+      "placeLabel": "왕도의 창고",
+      "modernPlace": "서울 송파구 일대(비정)",
+      "what": "봄·여름 가뭄 뒤 겨울에 백성이 굶주리자 창고를 열어 나눠주고 한 해의 조(租)와 조(調)를 면제했다.",
+      "claimIds": [
+        "claim-relief-248-t",
+        "claim-relief-248-act",
+        "claim-drought-248"
+      ],
+      "sceneId": "scene-bj-relief-248",
+      "confidence": "medium",
+      "note": "창고 자리가 원문에 없다. 원문에 자리가 적혀 있지 않아 사실에는 좌표를 두지 않는다(왕도 대표점은 장면 표시용으로만 precision area와 함께 쓴다).",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-021",
+      "category": "culture",
+      "region": "central",
+      "decade": -20,
+      "year": -18,
+      "yearVerbatim": "元年",
+      "placeLabel": "동명왕묘",
+      "modernPlace": "서울 송파구 일대(비정)",
+      "what": "온조왕이 동명왕의 사당을 세웠고, 분서왕 2년(299) 정월 배알 기사까지 이어진다.",
+      "claimIds": [
+        "claim-dongmyeong-t",
+        "claim-dongmyeong-build",
+        "claim-dongmyeong-299"
+      ],
+      "sceneId": "scene-bj-dongmyeongmyo--18",
+      "confidence": "medium",
+      "note": "근거로 든 299년 기사는 분서왕 2년 정월의 謁東明廟로, 즉위년 기사가 아니다. 이 기사로 사당이 최소 3세기 말까지 남아 있었음이 확인된다. 원문에 자리가 적혀 있지 않아 사실에는 좌표를 두지 않는다(왕도 대표점은 장면 표시용으로만 precision area와 함께 쓴다).",
+      "persistence": {
+        "kind": "facility",
+        "from": -18,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bj-022",
+      "category": "foreign",
+      "region": "central",
+      "decade": -20,
+      "year": -15,
+      "yearVerbatim": "秋八月",
+      "placeLabel": "백제 왕도(낙랑에 사신 파견)",
+      "modernPlace": "서울 송파구 일대(비정)",
+      "what": "백제가 낙랑에 사신을 보내 우호를 맺었으나 서기전 11년 축성 문제로 사이가 틀어졌다.",
+      "claimIds": [
+        "claim-nangnang-t",
+        "claim-nangnang-act",
+        "claim-nangnang-break"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "권역과 장소는 사신을 보낸 주체인 백제 왕도 기준이다. 상대인 낙랑군 치소는 평양 일대로 비정되어 위도상 north에 해당하고 치소 위치에 이설도 있어 좌표를 두지 않았다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-023",
+      "category": "foreign",
+      "region": "central",
+      "decade": 280,
+      "year": 286,
+      "yearVerbatim": "元年",
+      "placeLabel": "대방군",
+      "modernPlace": "황해도 일대(비정)",
+      "what": "고구려가 대방을 치자 대방이 구원을 청했고, 대방왕의 딸 보과를 부인으로 맞은 책계왕이 군사를 보내 돕고 아단성·사성을 수리해 대비했다.",
+      "claimIds": [
+        "claim-daebang-t",
+        "claim-daebang-marriage",
+        "claim-daebang-repair"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "해당 chunk의 date.raw는 0286, date.label은 책계왕 \"원년\"이다. 권역은 구원군을 보내고 성을 고친 백제 쪽 기준이다. 修阿旦城·虵城은 수리 기사여서 claim을 relatedTo로 두었다. 아단성은 서울 아차산성 비정설이 있으나 확정되지 않아 좌표를 두지 않았다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-024",
+      "category": "administration",
+      "region": "central",
+      "decade": 260,
+      "year": 260,
+      "yearVerbatim": "二十七年",
+      "placeLabel": "백제 왕도",
+      "modernPlace": "서울 송파구 일대(비정)",
+      "what": "고이왕이 내신좌평 등 6좌평과 달솔 이하 16관등을 두고, 이어 품계에 따라 관복 빛깔을 자주색·붉은색·푸른색으로 정했다.",
+      "claimIds": [
+        "claim-jwapyeong-t",
+        "claim-jwapyeong-admin",
+        "claim-gwanbok-260"
+      ],
+      "sceneId": "scene-bj-jwapyeong-260",
+      "confidence": "medium",
+      "note": "6좌평·16관등의 일괄 설치 연대를 260년으로 볼지에 학계 논쟁이 있어 confidence를 medium으로 둔다. 원문에 자리가 적혀 있지 않아 사실에는 좌표를 두지 않는다(왕도 대표점은 장면 표시용으로만 precision area와 함께 쓴다).",
+      "persistence": {
+        "kind": "institution",
+        "from": 260,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bj-025",
+      "category": "person",
+      "region": "central",
+      "decade": 20,
+      "year": 23,
+      "yearVerbatim": "四十一年",
+      "placeLabel": "백제 왕도의 조정(북부 출신)",
+      "modernPlace": "서울 송파구 일대(비정)",
+      "what": "부여 사람으로 북부에 속한 해루가 일흔이 넘은 나이에 우보(右輔)가 되었고, 서기 34년 아흔 살에 죽었다.",
+      "claimIds": [
+        "claim-haeru-23-t",
+        "claim-haeru-23-office",
+        "claim-haeru-34-t",
+        "claim-haeru-34-end"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "생몰 연도는 적히지 않고 나이(임명 때 70 넘음, 죽을 때 90세)만 있다. 활동 장소는 백제 왕도의 조정이며 원문에 자리가 없어 좌표는 두지 않았다.",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bj-026",
+      "category": "settlement",
+      "region": "central",
+      "decade": 210,
+      "year": 210,
+      "yearVerbatim": "四十五年",
+      "placeLabel": "적현성·사도성",
+      "modernPlace": "한강 유역 백제 영역(비정 미확정)",
+      "what": "초고왕이 적현성과 사도성 두 성을 쌓고 동부의 민호를 그곳으로 옮겼다.",
+      "claimIds": [
+        "claim-jeokhyeon-210-t",
+        "claim-jeokhyeon-210-build",
+        "claim-jeokhyeon-210-move"
+      ],
+      "sceneId": null,
+      "confidence": "medium",
+      "note": "축성과 사민을 함께 적은 기사여서 취락(settlement)으로 셌다. 두 성의 현대 지명 비정이 갈려 좌표를 두지 않았다.",
+      "persistence": null,
+      "density": null
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-bj-1",
+      "topic": "한성기 백제 호구 수",
+      "detail": "삼국사기 백제본기 -18~300년 구간에는 백제 자체의 호(戶)·구(口) 총수 기사가 없다. 19년 유출 1천여 호와 25년 귀순 20여 가가 전부다.",
+      "neededSource": "삼국지 한전의 국별 호수 추정 연구, 풍납토성·몽촌토성 발굴 보고(nrich.go.kr)"
+    },
+    {
+      "id": "miss-bj-2",
+      "topic": "한성기 시장(市) 기사",
+      "detail": "이 구간에 市 개설 기사가 없어 economy 갈래를 농경·제방 기사로 채웠다.",
+      "neededSource": "삼국사기 신라본기 소지왕대 京師市肆 기사와 비교할 백제 자료"
+    },
+    {
+      "id": "miss-bj-3",
+      "topic": "대두산성·탕정성·적현성·사도성의 좌표",
+      "detail": "축성 기사는 있으나 현대 지명 비정이 갈려 좌표를 넣지 못했다.",
+      "neededSource": "국가유산포털(heritage.go.kr) 성곽 지정 정보, 한국민족문화대백과 해당 항목"
+    },
+    {
+      "id": "miss-bj-4",
+      "topic": "한성기 금석문",
+      "detail": "이 구간의 백제 금석문이 로컬 사료에 없다. 연대를 스스로 증명하는 1차 자료가 삼국사기뿐이다.",
+      "neededSource": "한성기 백제 명문 자료(현재 확인된 것 없음)"
+    },
+    {
+      "id": "miss-bj-5",
+      "topic": "漢山의 위치 비정 근거",
+      "detail": "서기전 6년 '就漢山下立柵' 의 漢山을 남한산·이성산성·몽촌토성 중 어디로 볼지 허용 출처에서 직접 서술한 문장을 찾지 못했다. 위키백과 몽촌토성 문서는 몽촌토성을 漢山으로 비정하지 않는다.",
+      "neededSource": "한국민족문화대백과 '한산' 항목, 국가유산포털 이성산성·몽촌토성 해설"
+    },
+    {
+      "id": "miss-bj-6",
+      "topic": "기리영 전투(二郡遂滅韓)의 연도",
+      "detail": "삼국지 한전 chunk에는 date가 없고 본문에 正始라는 연호가 없어 통설의 246년을 근거로 댈 수 없었다. 본문에 실제로 있는 景初中(237~239)을 연도 기준으로 대신 썼다.",
+      "neededSource": "한국민족문화대백과 '기리영전투'·'삼한' 항목의 연도 서술"
+    }
+  ]
+}

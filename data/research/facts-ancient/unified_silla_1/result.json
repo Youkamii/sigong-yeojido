@@ -1,0 +1,3374 @@
+{
+  "collection": "facts-ancient",
+  "job": "unified_silla_1",
+  "cell": {
+    "polity": "통일신라",
+    "from": 668,
+    "to": 780,
+    "regions": [
+      "capital",
+      "south",
+      "central",
+      "north"
+    ],
+    "categories": {
+      "settlement": 4,
+      "administration": 5,
+      "facility": 3,
+      "economy": 3,
+      "disaster": 2,
+      "culture": 2,
+      "transport": 1
+    }
+  },
+  "sources": [
+    {
+      "id": "src-kowiki-woljeonggyo",
+      "title": "경주 춘양교지와 월정교지 - 위키백과, 우리 모두의 백과사전",
+      "publisher": "ko.wikipedia.org",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9B%94%EC%A0%95%EA%B5%90",
+      "rawFile": "raw/woljeonggyo.html",
+      "sha256": "afc1695f37137f2cfc251faf5b186b3fdafc13a44ddf49c6f1ed66ac92b92c48",
+      "httpStatus": 200,
+      "byteLength": 105417,
+      "fetchedUtc": "2026-09-13T00:39:16Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-woljeonggyo-geo",
+          "text": "35.82944; 129.21806",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-kowiki-gwanmunseong",
+      "title": "관문성 - 위키백과",
+      "publisher": "ko.wikipedia.org",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%80%EB%AC%B8%EC%84%B1",
+      "rawFile": "raw/gwanmunseong.html",
+      "sha256": "6f9ca648ab2055739e3928a62e1afbd476dfdfa1c8c0c34d54faead9fac7fc6a",
+      "httpStatus": 200,
+      "byteLength": 135879,
+      "fetchedUtc": "2026-09-13T00:39:18Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-gwanmunseong-geo",
+          "text": "35.67000; 129.33472",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-kowiki-namhansanseong",
+      "title": "남한산성 - 위키백과",
+      "publisher": "ko.wikipedia.org",
+      "url": "https://ko.wikipedia.org/wiki/%EB%82%A8%ED%95%9C%EC%82%B0%EC%84%B1",
+      "rawFile": "raw/namhansanseong.html",
+      "sha256": "9e2de94f9706acd157c8de9445ac4b0845cca424c2fccc5dfa584632fc375715",
+      "httpStatus": 200,
+      "byteLength": 692743,
+      "fetchedUtc": "2026-09-13T00:39:20Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-namhansanseong-geo",
+          "text": "37.47803; 127.18419",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-kowiki-cheongju",
+      "title": "청주시 - 위키백과",
+      "publisher": "ko.wikipedia.org",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%A3%BC%EC%8B%9C",
+      "rawFile": "raw/cheongju.html",
+      "sha256": "8b16fd6b57e6efbf555123545576afde65b011243e513c10925cdef3b4e45a54",
+      "httpStatus": 200,
+      "byteLength": 466863,
+      "fetchedUtc": "2026-09-13T00:39:21Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-cheongju-geo",
+          "text": "36.63333; 127.48333",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-kowiki-wonju",
+      "title": "원주시 - 위키백과",
+      "publisher": "ko.wikipedia.org",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9B%90%EC%A3%BC%EC%8B%9C",
+      "rawFile": "raw/wonju.html",
+      "sha256": "cae7ad689ce27604a9aed685b728b764a229a0a13bf4eaaf87ad880a1075a1f3",
+      "httpStatus": 200,
+      "byteLength": 404207,
+      "fetchedUtc": "2026-09-13T00:39:25Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-wonju-geo",
+          "text": "37.34167; 127.92083",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-kowiki-jeonju",
+      "title": "전주시 - 위키백과",
+      "publisher": "ko.wikipedia.org",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%84%EC%A3%BC%EC%8B%9C",
+      "rawFile": "raw/jeonju.html",
+      "sha256": "34181dbb88815561f450e33feab7ed312c22b1d4cf69e6e126778fe4a1e10d7f",
+      "httpStatus": 200,
+      "byteLength": 445953,
+      "fetchedUtc": "2026-09-13T00:39:30Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-jeonju-geo",
+          "text": "35.82194; 127.14889",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-kowiki-gangneung",
+      "title": "강릉시 - 위키백과",
+      "publisher": "ko.wikipedia.org",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%EB%A6%89%EC%8B%9C",
+      "rawFile": "raw/gangneung.html",
+      "sha256": "7e32b5ab888cdef11afefcdece84da9e84bcda04f6d878880f8a19f3e5dc11ba",
+      "httpStatus": 200,
+      "byteLength": 511918,
+      "fetchedUtc": "2026-09-13T00:39:36Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-gangneung-geo",
+          "text": "37.750; 128.900",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-kowiki-iksan",
+      "title": "익산시 - 위키백과",
+      "publisher": "ko.wikipedia.org",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B5%EC%82%B0%EC%8B%9C",
+      "rawFile": "raw/iksan.html",
+      "sha256": "87a1481d7ef3245b30eedec7dbfcf02f081cbc8c8ce1d023531607b4133ca224",
+      "httpStatus": 200,
+      "byteLength": 318762,
+      "fetchedUtc": "2026-09-13T00:39:38Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-iksan-geo",
+          "text": "35.9438888989; 126.954444454",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-enwiki-gyeongju",
+      "title": "Gyeongju - Wikipedia",
+      "publisher": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Gyeongju",
+      "rawFile": "raw/en-gyeongju.html",
+      "sha256": "b026135658a0bf993a47cbbd3978a68234ef72fd97e6fcbd2f7e2ff2d81c9551",
+      "httpStatus": 200,
+      "byteLength": 1018634,
+      "fetchedUtc": "2026-09-13T00:40:02Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-gyeongju-geo",
+          "text": "35.850; 129.217",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-enwiki-namwon",
+      "title": "Namwon - Wikipedia",
+      "publisher": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Namwon",
+      "rawFile": "raw/en-namwon.html",
+      "sha256": "e8f4700295fe4c213aec138e0fce9b6c83ac9d9049526c3fa52d7bba123e0093",
+      "httpStatus": 200,
+      "byteLength": 258455,
+      "fetchedUtc": "2026-09-13T00:40:04Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-namwon-geo",
+          "text": "35.41000; 127.38583",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-enwiki-gimhae",
+      "title": "Gimhae - Wikipedia",
+      "publisher": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Gimhae",
+      "rawFile": "raw/en-gimhae.html",
+      "sha256": "d8ac3c59ea21c60d64855504dd8c8ca35557525e70a9eb2bbd9a35d177308819",
+      "httpStatus": 200,
+      "byteLength": 213911,
+      "fetchedUtc": "2026-09-13T00:40:05Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-gimhae-geo",
+          "text": "35.23417; 128.88111",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-enwiki-pyongyang",
+      "title": "Pyongyang - Wikipedia",
+      "publisher": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Pyongyang",
+      "rawFile": "raw/en-pyongyang.html",
+      "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+      "httpStatus": 200,
+      "byteLength": 897617,
+      "fetchedUtc": "2026-09-13T00:40:07Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-pyongyang-geo",
+          "text": "39.01667; 125.74750",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-enwiki-wonsan",
+      "title": "Wonsan - Wikipedia",
+      "publisher": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Wonsan",
+      "rawFile": "raw/en-wonsan.html",
+      "sha256": "438d71f3f3bd6d0713717eac79ac2d643202005fcdbce1599490d7a713aa6a9e",
+      "httpStatus": 200,
+      "byteLength": 332381,
+      "fetchedUtc": "2026-09-13T00:40:08Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-wonsan-geo",
+          "text": "39.14750; 127.44611",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-enwiki-sacheonwangsa",
+      "title": "Sacheonwangsa - Wikipedia",
+      "publisher": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Sacheonwangsa",
+      "rawFile": "raw/en-sacheonwangsa.html",
+      "sha256": "fec1c1457aef193ee458f36c882415adcffd5c812f296b804a416a2cd40b8cf8",
+      "httpStatus": 200,
+      "byteLength": 82945,
+      "fetchedUtc": "2026-09-13T00:40:11Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-sacheonwangsa-geo",
+          "text": "35.81917; 129.24194",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    },
+    {
+      "id": "src-enwiki-gamsansa",
+      "title": "Gamsansa - Wikipedia",
+      "publisher": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Gamsansa",
+      "rawFile": "raw/en-gamsansa.html",
+      "sha256": "0546d797028de2da3e6464b262cc117b052df5676a419b40c75048af2cfbc7a2",
+      "httpStatus": 200,
+      "byteLength": 105237,
+      "fetchedUtc": "2026-09-13T01:09:32Z",
+      "license": "CC BY-SA 4.0 (위키백과)",
+      "excerpts": [
+        {
+          "id": "ex-gamsansa-geo",
+          "text": "35.7664625; 129.337048",
+          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "polity-silla",
+      "type": "Polity",
+      "label": "신라"
+    },
+    {
+      "id": "place-gyeongju",
+      "type": "Place",
+      "label": "왕경 경주(금성)"
+    },
+    {
+      "id": "place-wansanju",
+      "type": "Place",
+      "label": "완산주"
+    },
+    {
+      "id": "place-cheongju-jinju",
+      "type": "Place",
+      "label": "청주(菁州, 오늘날 진주)"
+    },
+    {
+      "id": "place-seowongyeong",
+      "type": "Place",
+      "label": "서원소경"
+    },
+    {
+      "id": "place-namwongyeong",
+      "type": "Place",
+      "label": "남원소경"
+    },
+    {
+      "id": "place-bugwongyeong",
+      "type": "Place",
+      "label": "북원소경"
+    },
+    {
+      "id": "place-geumgwangyeong",
+      "type": "Place",
+      "label": "금관소경"
+    },
+    {
+      "id": "place-pyongyangju",
+      "type": "Place",
+      "label": "평양주"
+    },
+    {
+      "id": "place-gwanmunseong",
+      "type": "Place",
+      "label": "모벌군성(관문성)"
+    },
+    {
+      "id": "place-jujangseong",
+      "type": "Place",
+      "label": "한산주 주장성"
+    },
+    {
+      "id": "place-sacheonwangsa",
+      "type": "Place",
+      "label": "사천왕사"
+    },
+    {
+      "id": "place-wolji",
+      "type": "Place",
+      "label": "왕궁 안 못(월지)"
+    },
+    {
+      "id": "place-seosi",
+      "type": "Place",
+      "label": "왕경 서시"
+    },
+    {
+      "id": "place-namsi",
+      "type": "Place",
+      "label": "왕경 남시"
+    },
+    {
+      "id": "place-ungcheonju",
+      "type": "Place",
+      "label": "웅천주"
+    },
+    {
+      "id": "place-cheonjeonggun",
+      "type": "Place",
+      "label": "천정군"
+    },
+    {
+      "id": "place-haseoju",
+      "type": "Place",
+      "label": "하서주"
+    },
+    {
+      "id": "place-bongdeoksa",
+      "type": "Place",
+      "label": "봉덕사"
+    },
+    {
+      "id": "place-gamsansa",
+      "type": "Place",
+      "label": "감산사"
+    },
+    {
+      "id": "place-geummagun",
+      "type": "Place",
+      "label": "금마군"
+    },
+    {
+      "id": "place-woljeonggyo",
+      "type": "Place",
+      "label": "월정교"
+    },
+    {
+      "id": "inst-gukhak",
+      "type": "Institution",
+      "label": "국학"
+    },
+    {
+      "id": "inst-oesajeong",
+      "type": "Institution",
+      "label": "외사정"
+    },
+    {
+      "id": "person-gimjiseong",
+      "type": "Person",
+      "label": "김지성(金志誠)"
+    },
+    {
+      "id": "group-gwanmun-labor",
+      "type": "Group",
+      "label": "관문성 축조 역도"
+    },
+    {
+      "id": "place-imcheonsa",
+      "type": "Place",
+      "label": "임천사(林泉寺)"
+    },
+    {
+      "id": "person-yihyo",
+      "type": "Person",
+      "label": "이효(理曉) — 하서주 용명악 거사"
+    },
+    {
+      "id": "place-geummajeo",
+      "type": "Place",
+      "label": "금마저(고구려 유민 거주지)"
+    },
+    {
+      "id": "person-anseung",
+      "type": "Person",
+      "label": "안승(安勝)"
+    },
+    {
+      "id": "group-goguryeo-refugees",
+      "type": "Group",
+      "label": "검모잠이 모은 고구려 유민"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-us1-9ju-time",
+      "subject": "event-us1-9ju",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "五年",
+        "year": 685,
+        "precision": "year",
+        "earliest": 685,
+        "latest": 685
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0210",
+      "quote": "五年, 春, 復置完山州, 以龍元為揔管. 挺居列州以置菁州, 始備九州.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-9ju-wansan",
+      "subject": "event-us1-9ju",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-wansanju"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0210",
+      "quote": "復置完山州, 以龍元為揔管.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-9ju-admin",
+      "subject": "place-wansanju",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "州"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0210",
+      "quote": "復置完山州",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-9ju-geoyeol",
+      "subject": "place-cheongju-jinju",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "州"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0210",
+      "quote": "挺居列州以置菁州, 始備九州.",
+      "note": "거열주를 갈라 청주(菁州, 뒤의 강주·오늘날 진주)를 두어 9주를 갖췄다."
+    },
+    {
+      "id": "claim-us1-757-time",
+      "subject": "event-us1-757",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 757
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0030_0640",
+      "quote": "冬十二月, 攺沙伐州為尚州, 領州一·郡十·縣三十.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-757-sangju",
+      "subject": "polity-silla",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "尚州 領州一·郡十·縣三十"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0030_0640",
+      "quote": "攺沙伐州為尚州, 領州一·郡十·縣三十.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-757-hanju",
+      "subject": "polity-silla",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "漢山州為漢州 領州一·小京一·郡二十七·縣四十六"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0030_0640",
+      "quote": "漢山州為漢州, 領州一·小京一·郡二十七·縣四十六.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-9ju-total",
+      "subject": "polity-silla",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "九州所管郡縣 無慮四百五十"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_034_0020_0210",
+      "quote": "九州所管郡縣, 無慮四百五十.",
+      "note": "지리지 총론. 날짜가 없는 조각이라 연도 검사는 적용되지 않는다."
+    },
+    {
+      "id": "claim-us1-seowon-time",
+      "subject": "event-us1-seowon",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "三月",
+        "year": 685,
+        "precision": "month",
+        "earliest": 685,
+        "latest": 685
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0230",
+      "quote": "三月, 置西原小亰, 以阿湌元泰為仕臣.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-seowon-admin",
+      "subject": "place-seowongyeong",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "小亰"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0230",
+      "quote": "置西原小亰, 以阿湌元泰為仕臣.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-seowon-geo",
+      "subject": "place-seowongyeong",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-silla"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_036_0020_0020",
+      "quote": "西原京, 神文王五年初置西原小京, 景徳王攺名西原京. 今清州.",
+      "note": "지리지가 서원경을 고려 청주로 비정한다."
+    },
+    {
+      "id": "claim-us1-namwon-time",
+      "subject": "event-us1-namwon",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "三月",
+        "year": 685,
+        "precision": "month",
+        "earliest": 685,
+        "latest": 685
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0230",
+      "quote": "三月, 置西原小亰, 以阿湌元泰為仕臣. 置南原小亰",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-namwon-act",
+      "subject": "event-us1-namwon",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-namwongyeong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0230",
+      "quote": "置南原小亰, 徙諸州郡民户分居之.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-namwon-migrants",
+      "subject": "place-namwongyeong",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "徙諸州郡民户分居之"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0230",
+      "quote": "徙諸州郡民户分居之",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-namwon-geo",
+      "subject": "place-namwongyeong",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-silla"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_036_0020_0170",
+      "quote": "南原小京, 夲百濟古龍郡. 新羅并之, 神文王五年初置小亰.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-bugwon-time",
+      "subject": "event-us1-bugwon",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "year",
+        "value": 678
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0660",
+      "quote": "置北原小京, 以大阿湌吴起守之.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-bugwon-admin",
+      "subject": "place-bugwongyeong",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "小京"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0660",
+      "quote": "置北原小京",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-bugwon-wall",
+      "subject": "place-bugwongyeong",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "神文王五年築城 周一千三十一歩"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_035_0020_0320",
+      "quote": "北原京, 本髙句麗 平原郡, 文武王置北原小京. 神文王五年築城, 周一千三十一歩.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-geumgwan-time",
+      "subject": "event-us1-geumgwan",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "year",
+        "value": 680
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0830",
+      "quote": "加耶郡置金官小京.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-geumgwan-admin",
+      "subject": "place-geumgwangyeong",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "小京"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0830",
+      "quote": "加耶郡置金官小京.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-pyongyang-time",
+      "subject": "event-us1-pyongyang",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 736
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0040_1670",
+      "quote": "遣伊湌允忠·思仁·英述, 検察平壌·牛頭二州地勢.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-pyongyang-act",
+      "subject": "event-us1-pyongyang",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-pyongyangju"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0040_1670",
+      "quote": "検察平壌·牛頭二州地勢.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-oesajeong-time",
+      "subject": "inst-oesajeong",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "year",
+        "value": 673
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0340",
+      "quote": "始置外司正. 州二人郡一人.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-oesajeong-admin",
+      "subject": "inst-oesajeong",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "外司正 州二人郡一人"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0340",
+      "quote": "始置外司正. 州二人郡一人.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gwanmun-time",
+      "subject": "event-us1-gwanmun",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "開元十年壬戌十月",
+        "year": 722,
+        "precision": "month",
+        "earliest": 722,
+        "latest": 722
+      },
+      "sourceId": "src-samgukyusa",
+      "citesChunk": "chunk_samgukyusa_sy_002_0010_0060_0010",
+      "quote": "開元十年壬戌十月, 始築關門扵毛火郡.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gwanmun-act",
+      "subject": "event-us1-gwanmun",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-gwanmunseong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0040_1180",
+      "quote": "築毛伐郡城, 以遮日夲賊路.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gwanmun-size",
+      "subject": "place-gwanmunseong",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "周迴六千七百九十二歩五尺"
+      },
+      "sourceId": "src-samgukyusa",
+      "citesChunk": "chunk_samgukyusa_sy_002_0010_0060_0010",
+      "quote": "周迴六千七百九十二歩五尺",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gwanmun-labor",
+      "subject": "event-us1-gwanmun",
+      "predicate": "syj:participatedIn",
+      "object": {
+        "kind": "entity",
+        "id": "group-gwanmun-labor"
+      },
+      "sourceId": "src-samgukyusa",
+      "citesChunk": "chunk_samgukyusa_sy_002_0010_0060_0010",
+      "quote": "役徒三万九千二百六十二人, 掌貟元真角干.",
+      "note": "참여한 쪽은 역도 39,262명과 담당 원진 각간이다. 앞서 대상을 관문성(장소)으로 잘못 적었다."
+    },
+    {
+      "id": "claim-us1-jujang-time",
+      "subject": "event-us1-jujang",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": 672
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0180",
+      "quote": "築漢山州晝長城, 周四千三百六十歩.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-jujang-act",
+      "subject": "event-us1-jujang",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-jujangseong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0180",
+      "quote": "築漢山州晝長城",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-jujang-size",
+      "subject": "place-jujangseong",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "周四千三百六十歩"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0180",
+      "quote": "周四千三百六十歩",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-sacheon-time",
+      "subject": "event-us1-sacheon",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": 679
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0780",
+      "quote": "四天王寺成.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-sacheon-act",
+      "subject": "event-us1-sacheon",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-sacheonwangsa"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0780",
+      "quote": "四天王寺成.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-wolji-time",
+      "subject": "event-us1-wolji",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二月",
+        "year": 674,
+        "precision": "month",
+        "earliest": 674,
+        "latest": 674
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0380",
+      "quote": "二月, 宫内穿池造山, 種花草, 養珍禽竒獸.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-wolji-act",
+      "subject": "event-us1-wolji",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-wolji"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_007_0020_0380",
+      "quote": "宫内穿池造山, 種花草, 養珍禽竒獸.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-market-time",
+      "subject": "event-us1-market",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "year",
+        "value": 695
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0030_0120",
+      "quote": "置西·南二市.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-market-act",
+      "subject": "event-us1-market",
+      "predicate": "syj:producedAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-seosi"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0030_0120",
+      "quote": "置西·南二市.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-market-seosijeon",
+      "subject": "place-seosi",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "西市典 監二人"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_038_0020_2780",
+      "quote": "西市典, 孝昭王四年置. 監二人.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-market-namsijeon",
+      "subject": "place-namsi",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "南市典 監二人"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_038_0020_2820",
+      "quote": "南市典, 亦孝昭王四年置. 監二人.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-jeongjeon-time",
+      "subject": "event-us1-jeongjeon",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "秋八月",
+        "year": 722,
+        "precision": "month",
+        "earliest": 722,
+        "latest": 722
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0040_1160",
+      "quote": "秋八月, 始給百姓丁田.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-jeongjeon-act",
+      "subject": "event-us1-jeongjeon",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-silla"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0040_1160",
+      "quote": "始給百姓丁田.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gwallyojeon-time",
+      "subject": "event-us1-gwallyojeon",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "五月",
+        "year": 687,
+        "precision": "month",
+        "earliest": 687,
+        "latest": 687
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0390",
+      "quote": "五月, 教賜文虎官僚田有差.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gwallyojeon-act",
+      "subject": "event-us1-gwallyojeon",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-silla"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0390",
+      "quote": "教賜文虎官僚田有差.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-hyangdeok-time",
+      "subject": "event-us1-hyangdeok",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十四年",
+        "year": 755,
+        "precision": "year",
+        "earliest": 755,
+        "latest": 755
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0030_0510",
+      "quote": "十四年, 春, 穀貴民饑.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-hyangdeok-act",
+      "subject": "event-us1-hyangdeok",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-ungcheonju"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0030_0510",
+      "quote": "熊川州 向德, 貧無以爲養, 割股肉, 飼其父.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-relief669-time",
+      "subject": "event-us1-relief669",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "夏五月",
+        "year": 669,
+        "precision": "month",
+        "earliest": 669,
+        "latest": 669
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_006_0020_0930",
+      "quote": "夏五月, 泉井·比列忽·各連等三郡民饑, 發倉賑恤.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-relief669-act",
+      "subject": "event-us1-relief669",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-cheonjeonggun"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_006_0020_0930",
+      "quote": "泉井·比列忽·各連等三郡民饑, 發倉賑恤.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-quake779-time",
+      "subject": "event-us1-quake779",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十五年, 春三月",
+        "year": 779,
+        "precision": "month",
+        "earliest": 779,
+        "latest": 779
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0040_0550",
+      "quote": "十五年, 春三月, 京都地震, 壞民屋, 死者百餘人.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-quake779-act",
+      "subject": "event-us1-quake779",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-gyeongju"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0040_0550",
+      "quote": "京都地震, 壞民屋, 死者百餘人.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-rain715-time",
+      "subject": "event-us1-rain715",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "六月",
+        "year": 715,
+        "precision": "month",
+        "earliest": 715,
+        "latest": 715
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0040_0750",
+      "quote": "六月, 大旱.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-rain715-act",
+      "subject": "event-us1-rain715",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-imcheonsa"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0040_0750",
+      "quote": "祈雨於林泉寺池上, 則雨浹旬.",
+      "note": "비를 빈 자리는 임천사 못가다. 임천사의 위치를 알려주는 조각은 로컬 원문에 이 한 건뿐이라 좌표를 붙이지 않았다."
+    },
+    {
+      "id": "claim-us1-bell-time",
+      "subject": "event-us1-bell",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": 771
+      },
+      "sourceId": "src-geumseok-gskh_005_0070_0030",
+      "citesChunk": "chunk_geumseok-gskh_005_0070_0030_gskh_005_0070_0030_0020",
+      "quote": "大曆六年歲次辛亥 十二月十四日",
+      "note": "종명 끝의 주조 날짜 구절이다. 조각의 date.raw 도 0771 이다."
+    },
+    {
+      "id": "claim-us1-bell-bronze",
+      "subject": "event-us1-bell",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-silla"
+      },
+      "sourceId": "src-geumseok-gskh_005_0070_0030",
+      "citesChunk": "chunk_geumseok-gskh_005_0070_0030_gskh_005_0070_0030_0020",
+      "quote": "敬捨銅一十二萬斤欲鑄一丈鍾一口立",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-bell-place",
+      "subject": "event-us1-bell",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-bongdeoksa"
+      },
+      "sourceId": "src-samgukyusa",
+      "citesChunk": "chunk_samgukyusa_sy_003_0020_0070_0030",
+      "quote": "命有司鳩工徒乃克成之, 安於奉徳寺.",
+      "note": "삼국유사는 대력 경술(770) 12월 완성으로 적고, 종명은 771년으로 적는다."
+    },
+    {
+      "id": "claim-us1-gamsan-time",
+      "subject": "event-us1-gamsan",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "開元七年己未二月十五日",
+        "year": 719,
+        "precision": "day",
+        "earliest": 719,
+        "latest": 719
+      },
+      "sourceId": "src-geumseok-gskh_005_0020_0010",
+      "citesChunk": "chunk_geumseok-gskh_005_0020_0010_gskh_005_0020_0010_0020",
+      "quote": "開元七年己未二月十五日重阿飡金志誠奉",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gamsan-act",
+      "subject": "event-us1-gamsan",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-gamsansa"
+      },
+      "sourceId": "src-geumseok-gskh_005_0020_0010",
+      "citesChunk": "chunk_geumseok-gskh_005_0020_0010_gskh_005_0020_0010_0020",
+      "quote": "敬造甘",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gamsan-person",
+      "subject": "event-us1-gamsan",
+      "predicate": "syj:participatedIn",
+      "object": {
+        "kind": "entity",
+        "id": "person-gimjiseong"
+      },
+      "sourceId": "src-geumseok-gskh_005_0020_0010",
+      "citesChunk": "chunk_geumseok-gskh_005_0020_0010_gskh_005_0020_0010_0020",
+      "quote": "罄志誠之資業, 建甘山之伽藍.",
+      "note": "감산사를 짓고 불상을 발원한 사람은 중아찬 김지성이다. 앞서 대상을 감산사(장소)로 잘못 적었다."
+    },
+    {
+      "id": "claim-us1-gukhak-time",
+      "subject": "inst-gukhak",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 747
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0030_0260",
+      "quote": "置國學諸業愽士·助教.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gukhak-admin",
+      "subject": "inst-gukhak",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "國學諸業愽士·助教"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0030_0260",
+      "quote": "置國學諸業愽士·助教.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-gukhak-found",
+      "subject": "inst-gukhak",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-silla"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_038_0020_2120",
+      "quote": "國學, 屬礼部, 神文王二年置.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-bridge-time",
+      "subject": "event-us1-bridge",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": 760
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0030_0750",
+      "quote": "又於宫南蚊川之上, 起月浄·春陽二橋.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-bridge-act",
+      "subject": "event-us1-bridge",
+      "predicate": "syj:routeConnects",
+      "object": {
+        "kind": "entity",
+        "id": "place-woljeonggyo"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_009_0030_0750",
+      "quote": "起月浄·春陽二橋.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-geumma-time",
+      "subject": "event-us1-geumma",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十一月",
+        "year": 684,
+        "precision": "month",
+        "earliest": 684,
+        "latest": 684
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0200",
+      "quote": "十一月, 安勝族子將軍大文, 在金馬渚謀叛",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-geumma-act",
+      "subject": "event-us1-geumma",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-geummagun"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0200",
+      "quote": "徙其人於國南州郡, 以其地爲金馬郡.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-geumma-admin",
+      "subject": "place-geummagun",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "金馬郡"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0020_0200",
+      "quote": "以其地爲金馬郡.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-baekje63-time",
+      "subject": "event-us1-baekje63",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "秋七月",
+        "year": 670,
+        "precision": "month",
+        "earliest": 670,
+        "latest": 670
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_006_0020_1020",
+      "quote": "秋七月, 王疑百濟殘衆反覆",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-baekje63-act",
+      "subject": "event-us1-baekje63",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-silla"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_006_0020_1020",
+      "quote": "攻取城六十三, 徙其人於内地.",
+      "note": ""
+    },
+    {
+      "id": "claim-us1-rain715-origin",
+      "subject": "person-yihyo",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-haseoju"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_008_0040_0750",
+      "quote": "王召河西州龍鳴嶽居士理曉",
+      "note": "하서주 용명악은 거사 이효의 출신지다. 왕이 그를 불러(召) 임천사에서 빌게 했으므로 하서주는 행위 장소가 아니다."
+    },
+    {
+      "id": "claim-us1-anseung-time",
+      "subject": "event-us1-anseung",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "六月",
+        "year": 670,
+        "precision": "month",
+        "earliest": 670,
+        "latest": 670
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_006_0020_1000",
+      "quote": "六月, 髙句麗水臨城人年岑大兄, 收合殘民",
+      "note": "문무왕 10년 6월"
+    },
+    {
+      "id": "claim-us1-anseung-settle",
+      "subject": "event-us1-anseung",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-geummajeo"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_006_0020_1000",
+      "quote": "王處之國西金馬渚.",
+      "note": "왕이 안승 무리를 나라 서쪽 금마저(오늘날 익산 금마)에 살게 했다."
+    },
+    {
+      "id": "claim-us1-anseung-people",
+      "subject": "event-us1-anseung",
+      "predicate": "syj:participatedIn",
+      "object": {
+        "kind": "entity",
+        "id": "group-goguryeo-refugees"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_006_0020_1000",
+      "quote": "收合殘民, 自窮牟城至浿江南",
+      "note": "검모잠이 모은 고구려 남은 백성이다. 사람 수는 원문에 없다. 조각 본문은 이름을 年岑 으로 적고 교감주에 다른 판본은 牟(검모잠)로 적는다고 밝힌다."
+    },
+    {
+      "id": "claim-us1-anseung-lead",
+      "subject": "event-us1-anseung",
+      "predicate": "syj:participatedIn",
+      "object": {
+        "kind": "entity",
+        "id": "person-anseung"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_006_0020_1000",
+      "quote": "見髙句麗大臣淵淨土之子安勝, 迎致漢城中, 奉以爲君.",
+      "note": "유민이 받든 고구려 귀족 안승이다."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-us1-9ju-685",
+      "eventId": "event-us1-9ju",
+      "title": "완산주 복치와 9주 완비 — 완산주(전주) (685)",
+      "startYear": 685,
+      "endYear": 685,
+      "kind": "court",
+      "summary": "685년(신문왕 5) 봄 완산주를 다시 두어 용원을 총관으로 삼고, 거열주를 갈라 청주를 두어 비로소 9주를 갖추었다.",
+      "dateClaimIds": [
+        "claim-us1-9ju-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-9ju-wansan",
+        "claim-us1-9ju-admin",
+        "claim-us1-9ju-geoyeol"
+      ],
+      "place": {
+        "label": "완산주 치소(오늘날 전주)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.14889,
+        "lat": 35.82194,
+        "claimIds": [
+          "claim-us1-9ju-wansan"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-jeonju"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "administration",
+      "region": "south",
+      "decade": 680,
+      "persistence": {
+        "kind": "institution",
+        "from": 685,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-9ju-time",
+          "claim-us1-9ju-admin"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-757-rename",
+      "eventId": "event-us1-757",
+      "title": "9주 이름 개정과 군현 편제 — 왕경 (757)",
+      "startYear": 757,
+      "endYear": 757,
+      "kind": "court",
+      "summary": "757년(경덕왕 16) 12월 사벌주를 상주로 고치는 등 9주의 이름을 중국식으로 바꾸고 각 주에 딸린 소경·군·현의 수를 정리했다. 지리지는 9주가 거느린 군현이 대략 450이라 적는다.",
+      "dateClaimIds": [
+        "claim-us1-757-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-757-sangju",
+        "claim-us1-757-hanju",
+        "claim-us1-9ju-total"
+      ],
+      "place": {
+        "label": "왕경 경주",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.217,
+        "lat": 35.85,
+        "claimIds": [
+          "claim-us1-757-sangju"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-gyeongju"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "administration",
+      "region": "capital",
+      "decade": 750,
+      "persistence": {
+        "kind": "institution",
+        "from": 757,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-757-time"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-seowon-685",
+      "eventId": "event-us1-seowon",
+      "title": "서원소경 설치 — 오늘날 청주 (685)",
+      "startYear": 685,
+      "endYear": 685,
+      "kind": "settlement",
+      "summary": "685년(신문왕 5) 3월 서원소경을 두고 아찬 원태를 사신으로 삼았다. 지리지는 이 소경을 뒤의 서원경, 곧 청주로 적는다.",
+      "dateClaimIds": [
+        "claim-us1-seowon-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-seowon-admin",
+        "claim-us1-seowon-geo"
+      ],
+      "place": {
+        "label": "서원소경(오늘날 청주)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.48333,
+        "lat": 36.63333,
+        "claimIds": [
+          "claim-us1-seowon-admin"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-cheongju"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "administration",
+      "region": "south",
+      "decade": 680,
+      "persistence": {
+        "kind": "city",
+        "from": 685,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-seowon-time",
+          "claim-us1-seowon-admin"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-namwon-685",
+      "eventId": "event-us1-namwon",
+      "title": "남원소경 설치와 여러 주·군 백성의 이주 — 남원 (685)",
+      "startYear": 685,
+      "endYear": 685,
+      "kind": "migration",
+      "summary": "685년(신문왕 5) 3월 남원소경을 두고 여러 주와 군의 민호를 옮겨 나누어 살게 했다. 새 소경을 사람으로 채우는 계획 이주다.",
+      "dateClaimIds": [
+        "claim-us1-namwon-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-namwon-act",
+        "claim-us1-namwon-migrants",
+        "claim-us1-namwon-geo"
+      ],
+      "place": {
+        "label": "남원소경(오늘날 남원)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.38583,
+        "lat": 35.41,
+        "claimIds": [
+          "claim-us1-namwon-act"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-namwon"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "settlement",
+      "region": "south",
+      "decade": 680,
+      "sceneFunction": "migration",
+      "participantGroups": [
+        {
+          "label": "여러 주·군에서 옮겨 온 민호",
+          "role": "이주민",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": null,
+          "claimIds": [
+            "claim-us1-namwon-migrants"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "city",
+        "from": 685,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-namwon-time",
+          "claim-us1-namwon-act"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-bugwon-678",
+      "eventId": "event-us1-bugwon",
+      "title": "북원소경 설치 — 오늘날 원주 (678)",
+      "startYear": 678,
+      "endYear": 678,
+      "kind": "settlement",
+      "summary": "678년(문무왕 18) 정월 북원소경을 두고 대아찬 오기가 지키게 했다. 지리지는 신문왕 5년에 둘레 1,031보의 성을 쌓았다고 적는다.",
+      "dateClaimIds": [
+        "claim-us1-bugwon-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-bugwon-admin",
+        "claim-us1-bugwon-wall"
+      ],
+      "place": {
+        "label": "북원소경(오늘날 원주)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.92083,
+        "lat": 37.34167,
+        "claimIds": [
+          "claim-us1-bugwon-admin"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-wonju"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "administration",
+      "region": "central",
+      "decade": 670,
+      "persistence": {
+        "kind": "city",
+        "from": 678,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-bugwon-time",
+          "claim-us1-bugwon-admin"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-geumgwan-680",
+      "eventId": "event-us1-geumgwan",
+      "title": "금관소경 설치 — 가야군(오늘날 김해) (680)",
+      "startYear": 680,
+      "endYear": 680,
+      "kind": "settlement",
+      "summary": "680년(문무왕 20) 5월 옛 금관국 땅인 가야군에 금관소경을 두었다.",
+      "dateClaimIds": [
+        "claim-us1-geumgwan-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-geumgwan-admin"
+      ],
+      "place": {
+        "label": "금관소경(오늘날 김해)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.88111,
+        "lat": 35.23417,
+        "claimIds": [
+          "claim-us1-geumgwan-admin"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-gimhae"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "administration",
+      "region": "south",
+      "decade": 680,
+      "persistence": {
+        "kind": "city",
+        "from": 680,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-geumgwan-time",
+          "claim-us1-geumgwan-admin"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-pyongyang-736",
+      "eventId": "event-us1-pyongyang",
+      "title": "평양·우두 두 주의 지세 검찰 — 평양 (736)",
+      "startYear": 736,
+      "endYear": 736,
+      "kind": "survey",
+      "summary": "736년(성덕왕 35) 이찬 윤충·사인·영술을 보내 평양주와 우두주 두 주의 지세를 살피게 했다. 패강 이남을 받은 뒤 북쪽 경계를 다지는 답사다.",
+      "dateClaimIds": [
+        "claim-us1-pyongyang-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-pyongyang-act"
+      ],
+      "place": {
+        "label": "평양주(오늘날 평양)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 125.7475,
+        "lat": 39.01667,
+        "claimIds": [
+          "claim-us1-pyongyang-act"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-pyongyang"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [
+        {
+          "entityId": "polity-silla",
+          "role": "지세를 검찰하러 보낸 조정",
+          "side": "civilian",
+          "claimIds": [
+            "claim-us1-pyongyang-act"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "administration",
+      "region": "north",
+      "decade": 730
+    },
+    {
+      "id": "scene-us1-gwanmun-722",
+      "eventId": "event-us1-gwanmun",
+      "title": "모벌군성(관문성) 축조 — 경주 동남 경계 (722)",
+      "startYear": 722,
+      "endYear": 722,
+      "kind": "construction",
+      "summary": "722년(성덕왕 21) 10월 모화군에 관문을 쌓기 시작했다. 일본 쪽에서 오는 길을 막으려는 성으로, 삼국유사는 둘레 6,792보 5척에 역도 39,262명이 동원되고 원진 각간이 일을 맡았다고 적는다.",
+      "dateClaimIds": [
+        "claim-us1-gwanmun-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-gwanmun-act",
+        "claim-us1-gwanmun-size",
+        "claim-us1-gwanmun-labor"
+      ],
+      "place": {
+        "label": "모벌군성(관문성)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.33472,
+        "lat": 35.67,
+        "claimIds": [
+          "claim-us1-gwanmun-act"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-gwanmunseong"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「관문성」 문서 머리의 표시 좌표다. 성벽이 길게 뻗어 있어 표시점 하나가 전체 범위를 대신한다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "facility",
+      "region": "capital",
+      "decade": 720,
+      "sceneFunction": "fortress",
+      "participantGroups": [
+        {
+          "label": "성을 쌓은 역도",
+          "role": "축성 인부",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": 39262,
+          "claimIds": [
+            "claim-us1-gwanmun-labor"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "facility",
+        "from": 722,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-gwanmun-time",
+          "claim-us1-gwanmun-act"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-jujang-672",
+      "eventId": "event-us1-jujang",
+      "title": "한산주 주장성 축조 — 오늘날 남한산성 (672)",
+      "startYear": 672,
+      "endYear": 672,
+      "kind": "construction",
+      "summary": "672년(문무왕 12) 한산주에 둘레 4,360보의 주장성을 쌓았다. 당과 맞서던 시기에 한강 남쪽을 지키는 큰 산성이다.",
+      "dateClaimIds": [
+        "claim-us1-jujang-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-jujang-act",
+        "claim-us1-jujang-size"
+      ],
+      "place": {
+        "label": "한산주 주장성(오늘날 남한산성)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.18419,
+        "lat": 37.47803,
+        "claimIds": [
+          "claim-us1-jujang-act"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-namhansanseong"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「남한산성」 문서 머리의 표시 좌표다. 주장성을 남한산성의 전신으로 보는 견해에 따른 표시점이다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "facility",
+      "region": "central",
+      "decade": 670,
+      "sceneFunction": "fortress",
+      "persistence": {
+        "kind": "facility",
+        "from": 672,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-jujang-time",
+          "claim-us1-jujang-act"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-sacheon-679",
+      "eventId": "event-us1-sacheon",
+      "title": "사천왕사 완성 — 경주 낭산 (679)",
+      "startYear": 679,
+      "endYear": 679,
+      "kind": "construction",
+      "summary": "679년(문무왕 19) 사천왕사가 완성되었다. 당군을 물리치려는 기도를 계기로 세운 절로 통일 직후 왕경의 대표 사찰이 된다.",
+      "dateClaimIds": [
+        "claim-us1-sacheon-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-sacheon-act"
+      ],
+      "place": {
+        "label": "사천왕사",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.24194,
+        "lat": 35.81917,
+        "claimIds": [
+          "claim-us1-sacheon-act"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-sacheonwangsa"
+        ],
+        "coordinateNote": "이번에 내려받은 영어 위키백과 Sacheonwangsa 문서 머리의 표시 좌표다. 오늘날 사천왕사지를 가리킨다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "facility",
+      "region": "capital",
+      "decade": 670,
+      "sceneFunction": "temple",
+      "persistence": {
+        "kind": "facility",
+        "from": 679,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-sacheon-time",
+          "claim-us1-sacheon-act"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-wolji-674",
+      "eventId": "event-us1-wolji",
+      "title": "궁 안에 못을 파고 산을 쌓다 — 왕경 (674)",
+      "startYear": 674,
+      "endYear": 674,
+      "kind": "construction",
+      "summary": "674년(문무왕 14) 2월 궁 안에 못을 파고 산을 만들어 화초를 심고 진기한 새와 짐승을 길렀다. 오늘날 경주 월지(안압지)로 보는 조원 공사다.",
+      "dateClaimIds": [
+        "claim-us1-wolji-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-wolji-act"
+      ],
+      "place": {
+        "label": "왕궁 안 못(월지)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.217,
+        "lat": 35.85,
+        "claimIds": [
+          "claim-us1-wolji-act"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-gyeongju"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "facility",
+      "region": "capital",
+      "decade": 670,
+      "persistence": {
+        "kind": "facility",
+        "from": 674,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-wolji-time",
+          "claim-us1-wolji-act"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-market-695",
+      "eventId": "event-us1-market",
+      "title": "서시·남시 설치 — 왕경 (695)",
+      "startYear": 695,
+      "endYear": 695,
+      "kind": "market",
+      "summary": "695년(효소왕 4) 서시와 남시 두 시장을 두었다. 직관지는 같은 해 서시전과 남시전을 두고 감 2인씩을 배치했다고 적는다. 이미 있던 동시와 함께 왕경에 세 시장이 서게 된다.",
+      "dateClaimIds": [
+        "claim-us1-market-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-market-act",
+        "claim-us1-market-seosijeon",
+        "claim-us1-market-namsijeon"
+      ],
+      "place": {
+        "label": "왕경 서시·남시",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.217,
+        "lat": 35.85,
+        "claimIds": [
+          "claim-us1-market-act"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-gyeongju"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "economy",
+      "region": "capital",
+      "decade": 690,
+      "sceneFunction": "market",
+      "persistence": {
+        "kind": "institution",
+        "from": 695,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-market-time",
+          "claim-us1-market-seosijeon"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-relief-669",
+      "eventId": "event-us1-relief669",
+      "title": "천정·비열홀·각련 세 군 진휼 — 천정군(오늘날 원산) (669)",
+      "startYear": 669,
+      "endYear": 669,
+      "kind": "relief",
+      "summary": "669년(문무왕 9) 5월 천정·비열홀·각련 세 군의 백성이 굶주리자 창고를 열어 진휼했다. 고구려 멸망 직후 북쪽 변경 군들의 사정을 보여준다.",
+      "dateClaimIds": [
+        "claim-us1-relief669-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-relief669-act"
+      ],
+      "place": {
+        "label": "천정군(오늘날 원산)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.44611,
+        "lat": 39.1475,
+        "claimIds": [
+          "claim-us1-relief669-act"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-wonsan"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "disaster",
+      "region": "north",
+      "decade": 660,
+      "sceneFunction": "relief",
+      "participantGroups": [
+        {
+          "label": "굶주린 세 군의 백성",
+          "role": "진휼 대상",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": null,
+          "claimIds": [
+            "claim-us1-relief669-act"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene-us1-quake-779",
+      "eventId": "event-us1-quake779",
+      "title": "왕경 지진으로 민가가 무너지다 — 경주 (779)",
+      "startYear": 779,
+      "endYear": 779,
+      "kind": "disaster",
+      "summary": "779년(혜공왕 15) 3월 서울에 지진이 나 민가가 무너지고 100여 명이 죽었다. 이 시기 기록 가운데 사망자 수까지 적힌 드문 재해다.",
+      "dateClaimIds": [
+        "claim-us1-quake779-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-quake779-act"
+      ],
+      "place": {
+        "label": "왕경 경주",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.217,
+        "lat": 35.85,
+        "claimIds": [
+          "claim-us1-quake779-act"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-gyeongju"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "disaster",
+      "region": "capital",
+      "decade": 770,
+      "participantGroups": [
+        {
+          "label": "무너진 민가에서 죽은 사람",
+          "role": "피해자",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": 100,
+          "claimIds": [
+            "claim-us1-quake779-act"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene-us1-rain-715",
+      "eventId": "event-us1-rain715",
+      "title": "큰 가뭄과 임천사 못가의 기우 (715)",
+      "startYear": 715,
+      "endYear": 715,
+      "kind": "ritual",
+      "summary": "715년(성덕왕 14) 6월 큰 가뭄이 들자 왕이 하서주 용명악의 거사 이효를 불러 임천사 못가에서 비를 빌게 했고 열흘 동안 비가 내렸다고 적는다. 임천사의 자리는 원문으로 확인되지 않아 좌표를 두지 않았다.",
+      "dateClaimIds": [
+        "claim-us1-rain715-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-rain715-act",
+        "claim-us1-rain715-origin"
+      ],
+      "place": null,
+      "participants": [
+        {
+          "entityId": "person-yihyo",
+          "role": "왕의 부름을 받아 비를 빈 하서주 용명악 거사",
+          "side": "civilian",
+          "claimIds": [
+            "claim-us1-rain715-origin"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "disaster",
+      "region": "capital",
+      "decade": 710
+    },
+    {
+      "id": "scene-us1-bell-771",
+      "eventId": "event-us1-bell",
+      "title": "성덕대왕신종 주조 완성 — 봉덕사 (771)",
+      "startYear": 771,
+      "endYear": 771,
+      "kind": "construction",
+      "summary": "경덕왕이 아버지 성덕왕을 위해 구리 12만 근을 내어 큰 종을 만들려다 이루지 못했고, 혜공왕 때 완성해 봉덕사에 걸었다. 종명은 771년으로 적고 삼국유사는 770년 12월로 적는다.",
+      "dateClaimIds": [
+        "claim-us1-bell-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-bell-bronze",
+        "claim-us1-bell-place"
+      ],
+      "place": {
+        "label": "봉덕사(왕경 안)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.217,
+        "lat": 35.85,
+        "claimIds": [
+          "claim-us1-bell-place"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-gyeongju"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「Gyeongju」 문서 머리의 표시 좌표다. 봉덕사 터의 자리가 미상이라 왕경 전체를 가리키는 표시점으로 두었다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "culture",
+      "region": "capital",
+      "decade": 770,
+      "sceneFunction": "temple",
+      "persistence": {
+        "kind": "facility",
+        "from": 771,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-bell-time"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-gamsan-719",
+      "eventId": "event-us1-gamsan",
+      "title": "감산사 조성과 석조 미륵·아미타상 발원 — 경주 (719)",
+      "startYear": 719,
+      "endYear": 719,
+      "kind": "construction",
+      "summary": "719년(성덕왕 18) 2월 15일 중아찬 김지성이 돌아가신 부모를 위해 감산사를 짓고 석조 아미타상과 미륵상 각 한 구를 만들었다고 조상기가 적는다.",
+      "dateClaimIds": [
+        "claim-us1-gamsan-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-gamsan-act",
+        "claim-us1-gamsan-person"
+      ],
+      "place": {
+        "label": "감산사(경주 외동 괘릉리)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.337048,
+        "lat": 35.7664625,
+        "claimIds": [
+          "claim-us1-gamsan-act"
+        ],
+        "coordinateSourceIds": [
+          "src-enwiki-gamsansa"
+        ],
+        "coordinateNote": "이번에 내려받은 영어 위키백과 「Gamsansa」 문서 머리의 표시 좌표다. 감산사지 자리를 가리킨다."
+      },
+      "participants": [
+        {
+          "entityId": "person-gimjiseong",
+          "role": "감산사를 짓고 불상을 발원한 중아찬",
+          "side": "civilian",
+          "claimIds": [
+            "claim-us1-gamsan-person"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "culture",
+      "region": "capital",
+      "decade": 710,
+      "sceneFunction": "temple",
+      "persistence": {
+        "kind": "facility",
+        "from": 719,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-gamsan-time",
+          "claim-us1-gamsan-act"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-bridge-760",
+      "eventId": "event-us1-bridge",
+      "title": "월정교·춘양교 가설 — 궁 남쪽 문천 (760)",
+      "startYear": 760,
+      "endYear": 760,
+      "kind": "construction",
+      "summary": "760년(경덕왕 19) 2월 궁 남쪽 문천 위에 월정교와 춘양교 두 다리를 놓았다. 왕경 남쪽과 남산 기슭을 잇는 길이 정비된다.",
+      "dateClaimIds": [
+        "claim-us1-bridge-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-bridge-act"
+      ],
+      "place": {
+        "label": "월정교",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.21806,
+        "lat": 35.82944,
+        "claimIds": [
+          "claim-us1-bridge-act"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-woljeonggyo"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「월정교」 문서 머리의 표시 좌표다. 복원된 다리 자리를 가리킨다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "transport",
+      "region": "capital",
+      "decade": 760,
+      "persistence": {
+        "kind": "facility",
+        "from": 760,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-bridge-time",
+          "claim-us1-bridge-act"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-geumma-684",
+      "eventId": "event-us1-geumma",
+      "title": "금마저 반란 진압 뒤 주민을 나라 남쪽으로 옮기다 — 익산 (684)",
+      "startYear": 684,
+      "endYear": 684,
+      "kind": "migration",
+      "summary": "684년(신문왕 4) 11월 안승의 조카 대문이 금마저에서 반란을 꾀하다 처형되고, 남은 무리가 성에 웅거하자 신라군이 성을 함락한 뒤 그 사람들을 나라 남쪽 주군으로 옮기고 그 땅을 금마군으로 삼았다.",
+      "dateClaimIds": [
+        "claim-us1-geumma-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-geumma-act",
+        "claim-us1-geumma-admin"
+      ],
+      "place": {
+        "label": "금마군(오늘날 익산)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.954444454,
+        "lat": 35.9438888989,
+        "claimIds": [
+          "claim-us1-geumma-act"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-iksan"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 치소 범위가 아니다."
+      },
+      "participants": [],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "settlement",
+      "region": "south",
+      "decade": 680,
+      "sceneFunction": "migration",
+      "participantGroups": [
+        {
+          "label": "나라 남쪽 주군으로 옮겨진 보덕국 주민",
+          "role": "강제 이주민",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": null,
+          "claimIds": [
+            "claim-us1-geumma-act"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "institution",
+        "from": 684,
+        "to": null,
+        "basisClaimIds": [
+          "claim-us1-geumma-admin"
+        ]
+      }
+    },
+    {
+      "id": "scene-us1-anseung-670",
+      "eventId": "event-us1-anseung",
+      "title": "안승과 고구려 유민을 금마저에 살게 하다 — 익산 (670)",
+      "startYear": 670,
+      "endYear": 670,
+      "kind": "migration",
+      "summary": "670년(문무왕 10) 6월 고구려 수림성 사람 대형 검모잠이 남은 백성을 모아 패강 남쪽으로 내려와 안승을 임금으로 받들고 신라에 의탁하자, 왕이 그 무리를 나라 서쪽 금마저에 살게 했다. 고구려 유민 집단이 한곳에 자리 잡은 기록이다.",
+      "dateClaimIds": [
+        "claim-us1-anseung-time"
+      ],
+      "actionClaimIds": [
+        "claim-us1-anseung-settle",
+        "claim-us1-anseung-people",
+        "claim-us1-anseung-lead"
+      ],
+      "place": {
+        "label": "금마저(오늘날 익산)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 126.954444454,
+        "lat": 35.9438888989,
+        "claimIds": [
+          "claim-us1-anseung-settle"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-iksan"
+        ],
+        "coordinateNote": "이번에 내려받은 위키백과 「익산시」 문서 머리의 표시 좌표다. 현재 행정 중심을 가리키는 표시점이며 당시 거주 범위가 아니다."
+      },
+      "participants": [
+        {
+          "entityId": "person-anseung",
+          "role": "고구려 유민이 받든 임금",
+          "side": "civilian",
+          "claimIds": [
+            "claim-us1-anseung-lead"
+          ]
+        }
+      ],
+      "effects": {
+        "fire": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "ships": {
+          "enabled": false,
+          "claimIds": []
+        },
+        "attack": {
+          "enabled": false,
+          "claimIds": []
+        }
+      },
+      "category": "settlement",
+      "region": "south",
+      "decade": 670,
+      "sceneFunction": "migration",
+      "participantGroups": [
+        {
+          "label": "검모잠이 모아 금마저에 정착한 고구려 유민",
+          "role": "정착민",
+          "stance": "neutral",
+          "side": "civilian",
+          "count": null,
+          "claimIds": [
+            "claim-us1-anseung-people"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "city",
+        "from": 670,
+        "to": 684,
+        "basisClaimIds": [
+          "claim-us1-anseung-settle",
+          "claim-us1-geumma-admin"
+        ]
+      }
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact-us1-001",
+      "category": "administration",
+      "region": "south",
+      "decade": 680,
+      "year": 685,
+      "yearVerbatim": "五年",
+      "placeLabel": "완산주",
+      "modernPlace": "전북 전주",
+      "what": "완산주를 다시 두고 거열주를 갈라 청주를 두어 9주 체제를 완성했다",
+      "claimIds": [
+        "claim-us1-9ju-time",
+        "claim-us1-9ju-wansan",
+        "claim-us1-9ju-admin",
+        "claim-us1-9ju-geoyeol"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 127.14889,
+      "lat": 35.82194,
+      "coordinateBasis": "src-kowiki-jeonju ex-jeonju-geo",
+      "sceneId": "scene-us1-9ju-685",
+      "persistence": {
+        "kind": "institution",
+        "from": 685,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-002",
+      "category": "administration",
+      "region": "capital",
+      "decade": 750,
+      "year": 757,
+      "yearVerbatim": "十六年 十二月",
+      "placeLabel": "왕경 경주",
+      "modernPlace": "경북 경주",
+      "what": "9주의 이름을 상주·양주·강주·한주·삭주·웅주·명주·전주·무주로 고치고 소경·군·현을 각 주에 소속시켰다",
+      "claimIds": [
+        "claim-us1-757-time",
+        "claim-us1-757-sangju",
+        "claim-us1-757-hanju",
+        "claim-us1-9ju-total"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 129.217,
+      "lat": 35.85,
+      "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+      "sceneId": "scene-us1-757-rename",
+      "persistence": {
+        "kind": "institution",
+        "from": 757,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-003",
+      "category": "administration",
+      "region": "south",
+      "decade": 680,
+      "year": 685,
+      "yearVerbatim": "三月",
+      "placeLabel": "서원소경",
+      "modernPlace": "충북 청주",
+      "what": "서원소경을 두고 아찬 원태를 사신으로 삼았다",
+      "claimIds": [
+        "claim-us1-seowon-time",
+        "claim-us1-seowon-admin",
+        "claim-us1-seowon-geo"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 127.48333,
+      "lat": 36.63333,
+      "coordinateBasis": "src-kowiki-cheongju ex-cheongju-geo",
+      "sceneId": "scene-us1-seowon-685",
+      "persistence": {
+        "kind": "city",
+        "from": 685,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-004",
+      "category": "settlement",
+      "region": "south",
+      "decade": 680,
+      "year": 685,
+      "yearVerbatim": "三月",
+      "placeLabel": "남원소경",
+      "modernPlace": "전북 남원",
+      "what": "남원소경을 두고 여러 주·군의 민호를 옮겨 나누어 살게 했다",
+      "claimIds": [
+        "claim-us1-namwon-time",
+        "claim-us1-namwon-act",
+        "claim-us1-namwon-migrants",
+        "claim-us1-namwon-geo"
+      ],
+      "confidence": "high",
+      "note": "옮긴 민호의 수는 원문에 없다.",
+      "lon": 127.38583,
+      "lat": 35.41,
+      "coordinateBasis": "src-enwiki-namwon ex-namwon-geo",
+      "sceneId": "scene-us1-namwon-685",
+      "persistence": {
+        "kind": "city",
+        "from": 685,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-005",
+      "category": "administration",
+      "region": "central",
+      "decade": 670,
+      "year": 678,
+      "yearVerbatim": "十八年 正月",
+      "placeLabel": "북원소경",
+      "modernPlace": "강원 원주",
+      "what": "북원소경을 두고 대아찬 오기가 지키게 했다. 지리지는 신문왕 5년에 둘레 1,031보의 성을 쌓았다고 적는다",
+      "claimIds": [
+        "claim-us1-bugwon-time",
+        "claim-us1-bugwon-admin",
+        "claim-us1-bugwon-wall"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 127.92083,
+      "lat": 37.34167,
+      "coordinateBasis": "src-kowiki-wonju ex-wonju-geo",
+      "sceneId": "scene-us1-bugwon-678",
+      "persistence": {
+        "kind": "city",
+        "from": 678,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-006",
+      "category": "administration",
+      "region": "south",
+      "decade": 680,
+      "year": 680,
+      "yearVerbatim": "二十年 五月",
+      "placeLabel": "금관소경",
+      "modernPlace": "경남 김해",
+      "what": "옛 금관국 땅인 가야군에 금관소경을 두었다",
+      "claimIds": [
+        "claim-us1-geumgwan-time",
+        "claim-us1-geumgwan-admin"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 128.88111,
+      "lat": 35.23417,
+      "coordinateBasis": "src-enwiki-gimhae ex-gimhae-geo",
+      "sceneId": "scene-us1-geumgwan-680",
+      "persistence": {
+        "kind": "city",
+        "from": 680,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-007",
+      "category": "administration",
+      "region": "north",
+      "decade": 730,
+      "year": 736,
+      "yearVerbatim": "三十五年",
+      "placeLabel": "평양주·우두주",
+      "modernPlace": "평양·춘천",
+      "what": "이찬 윤충 등을 보내 평양주와 우두주 두 주의 지세를 살피게 했다",
+      "claimIds": [
+        "claim-us1-pyongyang-time",
+        "claim-us1-pyongyang-act"
+      ],
+      "confidence": "high",
+      "note": "좌표는 평양 쪽만 표시했다. 우두주(춘천) 좌표는 이번에 받지 않았다.",
+      "lon": 125.7475,
+      "lat": 39.01667,
+      "coordinateBasis": "src-enwiki-pyongyang ex-pyongyang-geo",
+      "sceneId": "scene-us1-pyongyang-736",
+      "density": null
+    },
+    {
+      "id": "fact-us1-008",
+      "category": "administration",
+      "region": "capital",
+      "decade": 670,
+      "year": 673,
+      "yearVerbatim": "十三年",
+      "placeLabel": "주·군",
+      "modernPlace": "",
+      "what": "외사정을 처음 두어 주에 2인, 군에 1인씩 배치했다",
+      "claimIds": [
+        "claim-us1-oesajeong-time",
+        "claim-us1-oesajeong-admin"
+      ],
+      "confidence": "high",
+      "note": "전국 관제라 장소 장면을 만들지 않았다.",
+      "sceneId": null,
+      "persistence": {
+        "kind": "institution",
+        "from": 673,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-009",
+      "category": "facility",
+      "region": "capital",
+      "decade": 720,
+      "year": 722,
+      "yearVerbatim": "開元十年壬戌十月",
+      "placeLabel": "모벌군성(관문성)",
+      "modernPlace": "경북 경주 외동·울산 경계",
+      "what": "모화군에 관문성을 쌓기 시작했다. 둘레 6,792보 5척, 역도 39,262명, 담당은 원진 각간이다",
+      "claimIds": [
+        "claim-us1-gwanmun-time",
+        "claim-us1-gwanmun-act",
+        "claim-us1-gwanmun-size",
+        "claim-us1-gwanmun-labor"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 129.33472,
+      "lat": 35.67,
+      "coordinateBasis": "src-kowiki-gwanmunseong ex-gwanmunseong-geo",
+      "sceneId": "scene-us1-gwanmun-722",
+      "persistence": {
+        "kind": "facility",
+        "from": 722,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-010",
+      "category": "facility",
+      "region": "central",
+      "decade": 670,
+      "year": 672,
+      "yearVerbatim": "十二年",
+      "placeLabel": "한산주 주장성",
+      "modernPlace": "경기 광주 남한산성",
+      "what": "한산주에 둘레 4,360보의 주장성을 쌓았다",
+      "claimIds": [
+        "claim-us1-jujang-time",
+        "claim-us1-jujang-act",
+        "claim-us1-jujang-size"
+      ],
+      "confidence": "medium",
+      "note": "주장성을 남한산성의 전신으로 보는 견해에 따라 좌표를 붙였다. 비정에 이설이 있다.",
+      "lon": 127.18419,
+      "lat": 37.47803,
+      "coordinateBasis": "src-kowiki-namhansanseong ex-namhansanseong-geo",
+      "sceneId": "scene-us1-jujang-672",
+      "persistence": {
+        "kind": "facility",
+        "from": 672,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-011",
+      "category": "facility",
+      "region": "capital",
+      "decade": 670,
+      "year": 679,
+      "yearVerbatim": "十九年 八月",
+      "placeLabel": "사천왕사",
+      "modernPlace": "경북 경주 배반동",
+      "what": "사천왕사가 완성되었다",
+      "claimIds": [
+        "claim-us1-sacheon-time",
+        "claim-us1-sacheon-act"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 129.24194,
+      "lat": 35.81917,
+      "coordinateBasis": "src-enwiki-sacheonwangsa ex-sacheonwangsa-geo",
+      "sceneId": "scene-us1-sacheon-679",
+      "persistence": {
+        "kind": "facility",
+        "from": 679,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-012",
+      "category": "facility",
+      "region": "capital",
+      "decade": 670,
+      "year": 674,
+      "yearVerbatim": "十四年 二月",
+      "placeLabel": "왕궁 안 못(월지)",
+      "modernPlace": "경북 경주 월지",
+      "what": "궁 안에 못을 파고 산을 만들어 화초를 심고 진기한 새와 짐승을 길렀다",
+      "claimIds": [
+        "claim-us1-wolji-time",
+        "claim-us1-wolji-act"
+      ],
+      "confidence": "medium",
+      "note": "좌표는 경주 시가 표시점이다. 월지 자체의 좌표는 이번에 받지 않았다.",
+      "lon": 129.217,
+      "lat": 35.85,
+      "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+      "sceneId": "scene-us1-wolji-674",
+      "persistence": {
+        "kind": "facility",
+        "from": 674,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-013",
+      "category": "economy",
+      "region": "capital",
+      "decade": 690,
+      "year": 695,
+      "yearVerbatim": "四年",
+      "placeLabel": "왕경 서시·남시",
+      "modernPlace": "경북 경주",
+      "what": "서시와 남시 두 시장을 두고 각각 서시전·남시전에 감 2인을 배치했다",
+      "claimIds": [
+        "claim-us1-market-time",
+        "claim-us1-market-act",
+        "claim-us1-market-seosijeon",
+        "claim-us1-market-namsijeon"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 129.217,
+      "lat": 35.85,
+      "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+      "sceneId": "scene-us1-market-695",
+      "persistence": {
+        "kind": "institution",
+        "from": 695,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-014",
+      "category": "economy",
+      "region": "capital",
+      "decade": 720,
+      "year": 722,
+      "yearVerbatim": "二十一年 秋八月",
+      "placeLabel": "왕경 경주",
+      "modernPlace": "경북 경주",
+      "what": "백성에게 처음으로 정전을 지급했다",
+      "claimIds": [
+        "claim-us1-jeongjeon-time",
+        "claim-us1-jeongjeon-act"
+      ],
+      "confidence": "high",
+      "note": "전국에 걸친 조치라 장면을 만들지 않았다. 좌표는 조치를 내린 왕경 표시점이다.",
+      "lon": 129.217,
+      "lat": 35.85,
+      "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+      "sceneId": null,
+      "density": null
+    },
+    {
+      "id": "fact-us1-015",
+      "category": "economy",
+      "region": "capital",
+      "decade": 680,
+      "year": 687,
+      "yearVerbatim": "七年 五月",
+      "placeLabel": "왕경 경주",
+      "modernPlace": "경북 경주",
+      "what": "문무 관료에게 차등을 두어 관료전을 내렸다",
+      "claimIds": [
+        "claim-us1-gwallyojeon-time",
+        "claim-us1-gwallyojeon-act"
+      ],
+      "confidence": "high",
+      "note": "전국에 걸친 조치라 장면을 만들지 않았다.",
+      "lon": 129.217,
+      "lat": 35.85,
+      "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+      "sceneId": null,
+      "density": null
+    },
+    {
+      "id": "fact-us1-016",
+      "category": "disaster",
+      "region": "south",
+      "decade": 750,
+      "year": 755,
+      "yearVerbatim": "十四年",
+      "placeLabel": "웅천주",
+      "modernPlace": "충남 공주",
+      "what": "곡식값이 올라 백성이 굶주렸고, 웅천주 사람 향덕이 넓적다리 살을 베어 아버지를 먹이자 왕이 후하게 상을 내리고 정표했다",
+      "claimIds": [
+        "claim-us1-hyangdeok-time",
+        "claim-us1-hyangdeok-act"
+      ],
+      "confidence": "high",
+      "note": "웅천주(공주) 좌표는 이번에 받지 않아 붙이지 않았다. 원문 첫 구절이 穀貴民饑 이므로 갈래를 economy 에서 disaster(기근·구휼)로 옮겼다.",
+      "sceneId": null,
+      "density": null
+    },
+    {
+      "id": "fact-us1-017",
+      "category": "disaster",
+      "region": "north",
+      "decade": 660,
+      "year": 669,
+      "yearVerbatim": "九年 夏五月",
+      "placeLabel": "천정군·비열홀군·각련군",
+      "modernPlace": "강원 원산 일대",
+      "what": "세 군의 백성이 굶주리자 창고를 열어 진휼했다",
+      "claimIds": [
+        "claim-us1-relief669-time",
+        "claim-us1-relief669-act"
+      ],
+      "confidence": "medium",
+      "note": "좌표는 천정군을 덕원(원산)으로 보는 통설에 따른 표시점이다.",
+      "lon": 127.44611,
+      "lat": 39.1475,
+      "coordinateBasis": "src-enwiki-wonsan ex-wonsan-geo",
+      "sceneId": "scene-us1-relief-669",
+      "density": null
+    },
+    {
+      "id": "fact-us1-018",
+      "category": "disaster",
+      "region": "capital",
+      "decade": 770,
+      "year": 779,
+      "yearVerbatim": "十五年 春三月",
+      "placeLabel": "왕경 경주",
+      "modernPlace": "경북 경주",
+      "what": "서울에 지진이 나 민가가 무너지고 100여 명이 죽었다",
+      "claimIds": [
+        "claim-us1-quake779-time",
+        "claim-us1-quake779-act"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 129.217,
+      "lat": 35.85,
+      "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+      "sceneId": "scene-us1-quake-779",
+      "density": null
+    },
+    {
+      "id": "fact-us1-019",
+      "category": "disaster",
+      "region": "capital",
+      "decade": 710,
+      "year": 715,
+      "yearVerbatim": "六月",
+      "placeLabel": "임천사 못가",
+      "modernPlace": "",
+      "what": "큰 가뭄이 들자 하서주 용명악의 거사 이효를 불러 임천사 못가에서 비를 빌게 했고 열흘 동안 비가 내렸다",
+      "claimIds": [
+        "claim-us1-rain715-time",
+        "claim-us1-rain715-act",
+        "claim-us1-rain715-origin"
+      ],
+      "confidence": "medium",
+      "note": "임천사와 용명악의 위치는 미상이라 좌표를 붙이지 않았다. 하서주(강릉)는 거사 이효의 출신지일 뿐 기우가 벌어진 곳이 아니다. 왕이 사람을 불러 빌게 한 일이므로 권역은 왕이 있던 왕경(capital)으로 두었다.",
+      "sceneId": "scene-us1-rain-715",
+      "density": null
+    },
+    {
+      "id": "fact-us1-020",
+      "category": "culture",
+      "region": "capital",
+      "decade": 770,
+      "year": 771,
+      "yearVerbatim": "大曆六年",
+      "placeLabel": "봉덕사(왕경 안)",
+      "modernPlace": "경북 경주",
+      "what": "성덕대왕신종을 완성해 봉덕사에 걸었다. 경덕왕이 구리 12만 근을 내어 시작한 일이다",
+      "claimIds": [
+        "claim-us1-bell-time",
+        "claim-us1-bell-bronze",
+        "claim-us1-bell-place"
+      ],
+      "confidence": "high",
+      "note": "종명은 771년, 삼국유사는 대력 경술(770) 12월로 적는다. 봉덕사 터의 정확한 자리는 미상이라 좌표는 왕경 전체를 가리키는 경주 표시점을 precision area 로 썼다. 종은 지금 국립경주박물관에 있다.",
+      "lon": 129.217,
+      "lat": 35.85,
+      "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+      "sceneId": "scene-us1-bell-771",
+      "persistence": {
+        "kind": "facility",
+        "from": 771,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-021",
+      "category": "culture",
+      "region": "capital",
+      "decade": 710,
+      "year": 719,
+      "yearVerbatim": "開元七年己未二月十五日",
+      "placeLabel": "감산사",
+      "modernPlace": "경북 경주 외동읍 괘릉리",
+      "what": "중아찬 김지성이 돌아가신 부모를 위해 감산사를 짓고 석조 아미타상과 미륵상 각 한 구를 만들었다",
+      "claimIds": [
+        "claim-us1-gamsan-time",
+        "claim-us1-gamsan-act",
+        "claim-us1-gamsan-person"
+      ],
+      "confidence": "medium",
+      "note": "좌표는 이번에 새로 내려받은 영어 위키백과 「Gamsansa」 문서 머리의 표시 좌표(감산사지)다. 앞서 쓰던 경주시 표시점은 약 12km 어긋나 바꿨다.",
+      "lon": 129.337048,
+      "lat": 35.7664625,
+      "coordinateBasis": "src-enwiki-gamsansa ex-gamsansa-geo",
+      "sceneId": "scene-us1-gamsan-719",
+      "persistence": {
+        "kind": "facility",
+        "from": 719,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-022",
+      "category": "culture",
+      "region": "capital",
+      "decade": 740,
+      "year": 747,
+      "yearVerbatim": "六年",
+      "placeLabel": "국학",
+      "modernPlace": "경북 경주",
+      "what": "국학에 여러 학업의 박사와 조교를 두었다. 국학 자체는 신문왕 2년에 예부 소속으로 설치되었다",
+      "claimIds": [
+        "claim-us1-gukhak-time",
+        "claim-us1-gukhak-admin",
+        "claim-us1-gukhak-found"
+      ],
+      "confidence": "high",
+      "note": "관제 정비라 장면을 만들지 않았다. persistence.from은 국학 설치 연도(682)다.",
+      "sceneId": null,
+      "persistence": {
+        "kind": "institution",
+        "from": 682,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-023",
+      "category": "transport",
+      "region": "capital",
+      "decade": 760,
+      "year": 760,
+      "yearVerbatim": "十九年 二月",
+      "placeLabel": "문천 위 월정교·춘양교",
+      "modernPlace": "경북 경주 교동",
+      "what": "궁 남쪽 문천 위에 월정교와 춘양교 두 다리를 놓았다",
+      "claimIds": [
+        "claim-us1-bridge-time",
+        "claim-us1-bridge-act"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 129.21806,
+      "lat": 35.82944,
+      "coordinateBasis": "src-kowiki-woljeonggyo ex-woljeonggyo-geo",
+      "sceneId": "scene-us1-bridge-760",
+      "persistence": {
+        "kind": "facility",
+        "from": 760,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-025",
+      "category": "settlement",
+      "region": "south",
+      "decade": 680,
+      "year": 684,
+      "yearVerbatim": "四年 十一月",
+      "placeLabel": "금마저·금마군",
+      "modernPlace": "전북 익산 금마",
+      "what": "금마저의 반란을 진압한 뒤 그곳 사람들을 나라 남쪽 주·군으로 옮기고 그 땅을 금마군으로 삼았다",
+      "claimIds": [
+        "claim-us1-geumma-time",
+        "claim-us1-geumma-act",
+        "claim-us1-geumma-admin"
+      ],
+      "confidence": "high",
+      "note": "",
+      "lon": 126.954444454,
+      "lat": 35.9438888989,
+      "coordinateBasis": "src-kowiki-iksan ex-iksan-geo",
+      "sceneId": "scene-us1-geumma-684",
+      "persistence": {
+        "kind": "institution",
+        "from": 684,
+        "to": null
+      },
+      "density": null
+    },
+    {
+      "id": "fact-us1-026",
+      "category": "settlement",
+      "region": "south",
+      "decade": 670,
+      "year": 670,
+      "yearVerbatim": "十年 秋七月",
+      "placeLabel": "백제 옛 땅",
+      "modernPlace": "충남·전북 일대",
+      "what": "백제 남은 무리의 성 63곳을 쳐서 빼앗고 그 사람들을 내지로 옮겼다",
+      "claimIds": [
+        "claim-us1-baekje63-time",
+        "claim-us1-baekje63-act"
+      ],
+      "confidence": "medium",
+      "note": "성 63곳의 위치가 특정되지 않아 좌표와 장면을 붙이지 않았다.",
+      "sceneId": null,
+      "density": null
+    },
+    {
+      "id": "fact-us1-027",
+      "category": "settlement",
+      "region": "south",
+      "decade": 670,
+      "year": 670,
+      "yearVerbatim": "六月",
+      "placeLabel": "금마저",
+      "modernPlace": "전북 익산 금마",
+      "what": "검모잠이 모은 고구려 유민과 그들이 받든 안승을 나라 서쪽 금마저에 살게 했다",
+      "claimIds": [
+        "claim-us1-anseung-time",
+        "claim-us1-anseung-settle",
+        "claim-us1-anseung-people",
+        "claim-us1-anseung-lead"
+      ],
+      "confidence": "high",
+      "note": "옮겨 온 사람 수는 원문에 없어 density 를 붙이지 않았다. 684년 금마저 반란 진압 뒤 주민이 나라 남쪽으로 옮겨졌으므로(fact-us1-025) 지속은 684년까지로 두었다. 조각은 이름을 年岑 으로 적고 교감주가 다른 판본의 牟(검모잠)를 알려 준다.",
+      "lon": 126.954444454,
+      "lat": 35.9438888989,
+      "coordinateBasis": "src-kowiki-iksan ex-iksan-geo",
+      "sceneId": "scene-us1-anseung-670",
+      "persistence": {
+        "kind": "city",
+        "from": 670,
+        "to": 684
+      },
+      "density": null
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-us1-1",
+      "topic": "주·군별 호구 수",
+      "detail": "삼국사기 지리지 권34~36에는 통일신라 군현의 호구 수가 없어 왕경 밖 취락 밀도를 숫자로 댈 수 없었다.",
+      "neededSource": "신라촌락문서(정창원 좌파리가반부속문서) 판독문, 또는 호구가 적힌 금석문"
+    },
+    {
+      "id": "miss-us1-2",
+      "topic": "제방·수리 시설",
+      "detail": "668~780년 구간에서 築堤 기사를 찾지 못했다. 영천 청제비·대구 무술오작비는 이 구간 밖이다.",
+      "neededSource": "통일신라기 제방 관련 금석문 또는 발굴 보고"
+    },
+    {
+      "id": "miss-us1-3",
+      "topic": "역(驛)·조운 기록",
+      "detail": "욕돌역(668) 한 건 외에 통일신라 역로를 보여주는 원문을 찾지 못해 transport 갈래를 다리 한 건으로 채웠다.",
+      "neededSource": "삼국사기 직관지 또는 금석문의 역·나루 기록"
+    },
+    {
+      "id": "miss-us1-4",
+      "topic": "웅천주·우두주·감산사지 좌표",
+      "detail": "공주·춘천·감산사지의 십진 좌표를 받지 않아 해당 사실에 좌표를 붙이지 못했다.",
+      "neededSource": "ko/en 위키백과 해당 문서 또는 국가유산포털 지정문화유산 페이지"
+    },
+    {
+      "id": "miss-us1-5",
+      "topic": "왕경 전성기 호구 수(삼국유사 178,936호)의 연대",
+      "detail": "삼국유사 권1 기이 辰韓조의 '新羅全盛之時 京中十七萬八千九百三十六户' 조각은 date 가 null 이고 연호도 없어 어느 해의 수치인지 원문으로 댈 수 없다. 연대를 8세기 중엽으로 잡아 density 를 붙였던 fact-us1-024 를 검수 뒤 통째로 뺐다. 연대 근거 없는 밀도 기록이 세계 연결 규칙에서 실제 마을 밀도 계수로 쓰이기 때문이다.",
+      "neededSource": "전성기의 시점을 연도로 말하는 한국민족문화대백과 '신라 왕경'·'금입택' 서술, 또는 연대가 붙은 호구 기록(신라촌락문서 판독문)"
+    }
+  ]
+}

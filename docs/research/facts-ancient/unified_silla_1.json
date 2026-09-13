@@ -1,0 +1,196 @@
+{
+  "job": "unified_silla_1",
+  "sources": 15,
+  "excerpts": 15,
+  "chunkClaims": 72,
+  "excerptClaims": 0,
+  "facts": 26,
+  "factsByCategory": {
+    "administration": 7,
+    "culture": 3,
+    "disaster": 4,
+    "economy": 3,
+    "facility": 4,
+    "settlement": 4,
+    "transport": 1
+  },
+  "claims": 72,
+  "entities": 55,
+  "rawFilesChecked": [
+    {
+      "source": "src-kowiki-woljeonggyo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9B%94%EC%A0%95%EA%B5%90",
+      "sha256": "afc1695f37137f2cfc251faf5b186b3fdafc13a44ddf49c6f1ed66ac92b92c48",
+      "rawBytes": 105417,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gwanmunseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%80%EB%AC%B8%EC%84%B1",
+      "sha256": "6f9ca648ab2055739e3928a62e1afbd476dfdfa1c8c0c34d54faead9fac7fc6a",
+      "rawBytes": 135879,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-namhansanseong",
+      "url": "https://ko.wikipedia.org/wiki/%EB%82%A8%ED%95%9C%EC%82%B0%EC%84%B1",
+      "sha256": "9e2de94f9706acd157c8de9445ac4b0845cca424c2fccc5dfa584632fc375715",
+      "rawBytes": 692743,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-cheongju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%A3%BC%EC%8B%9C",
+      "sha256": "8b16fd6b57e6efbf555123545576afde65b011243e513c10925cdef3b4e45a54",
+      "rawBytes": 466863,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-wonju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9B%90%EC%A3%BC%EC%8B%9C",
+      "sha256": "cae7ad689ce27604a9aed685b728b764a229a0a13bf4eaaf87ad880a1075a1f3",
+      "rawBytes": 404207,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-jeonju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%84%EC%A3%BC%EC%8B%9C",
+      "sha256": "34181dbb88815561f450e33feab7ed312c22b1d4cf69e6e126778fe4a1e10d7f",
+      "rawBytes": 445953,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gangneung",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%EB%A6%89%EC%8B%9C",
+      "sha256": "7e32b5ab888cdef11afefcdece84da9e84bcda04f6d878880f8a19f3e5dc11ba",
+      "rawBytes": 511918,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-iksan",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B5%EC%82%B0%EC%8B%9C",
+      "sha256": "87a1481d7ef3245b30eedec7dbfcf02f081cbc8c8ce1d023531607b4133ca224",
+      "rawBytes": 318762,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-gyeongju",
+      "url": "https://en.wikipedia.org/wiki/Gyeongju",
+      "sha256": "b026135658a0bf993a47cbbd3978a68234ef72fd97e6fcbd2f7e2ff2d81c9551",
+      "rawBytes": 1018634,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-namwon",
+      "url": "https://en.wikipedia.org/wiki/Namwon",
+      "sha256": "e8f4700295fe4c213aec138e0fce9b6c83ac9d9049526c3fa52d7bba123e0093",
+      "rawBytes": 258455,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-gimhae",
+      "url": "https://en.wikipedia.org/wiki/Gimhae",
+      "sha256": "d8ac3c59ea21c60d64855504dd8c8ca35557525e70a9eb2bbd9a35d177308819",
+      "rawBytes": 213911,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-pyongyang",
+      "url": "https://en.wikipedia.org/wiki/Pyongyang",
+      "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+      "rawBytes": 897617,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-wonsan",
+      "url": "https://en.wikipedia.org/wiki/Wonsan",
+      "sha256": "438d71f3f3bd6d0713717eac79ac2d643202005fcdbce1599490d7a713aa6a9e",
+      "rawBytes": 332381,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-sacheonwangsa",
+      "url": "https://en.wikipedia.org/wiki/Sacheonwangsa",
+      "sha256": "fec1c1457aef193ee458f36c882415adcffd5c812f296b804a416a2cd40b8cf8",
+      "rawBytes": 82945,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-gamsansa",
+      "url": "https://en.wikipedia.org/wiki/Gamsansa",
+      "sha256": "0546d797028de2da3e6464b262cc117b052df5676a419b40c75048af2cfbc7a2",
+      "rawBytes": 105237,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-us1-1",
+      "topic": "주·군별 호구 수",
+      "detail": "삼국사기 지리지 권34~36에는 통일신라 군현의 호구 수가 없어 왕경 밖 취락 밀도를 숫자로 댈 수 없었다.",
+      "neededSource": "신라촌락문서(정창원 좌파리가반부속문서) 판독문, 또는 호구가 적힌 금석문"
+    },
+    {
+      "id": "miss-us1-2",
+      "topic": "제방·수리 시설",
+      "detail": "668~780년 구간에서 築堤 기사를 찾지 못했다. 영천 청제비·대구 무술오작비는 이 구간 밖이다.",
+      "neededSource": "통일신라기 제방 관련 금석문 또는 발굴 보고"
+    },
+    {
+      "id": "miss-us1-3",
+      "topic": "역(驛)·조운 기록",
+      "detail": "욕돌역(668) 한 건 외에 통일신라 역로를 보여주는 원문을 찾지 못해 transport 갈래를 다리 한 건으로 채웠다.",
+      "neededSource": "삼국사기 직관지 또는 금석문의 역·나루 기록"
+    },
+    {
+      "id": "miss-us1-4",
+      "topic": "웅천주·우두주·감산사지 좌표",
+      "detail": "공주·춘천·감산사지의 십진 좌표를 받지 않아 해당 사실에 좌표를 붙이지 못했다.",
+      "neededSource": "ko/en 위키백과 해당 문서 또는 국가유산포털 지정문화유산 페이지"
+    },
+    {
+      "id": "miss-us1-5",
+      "topic": "왕경 전성기 호구 수(삼국유사 178,936호)의 연대",
+      "detail": "삼국유사 권1 기이 辰韓조의 '新羅全盛之時 京中十七萬八千九百三十六户' 조각은 date 가 null 이고 연호도 없어 어느 해의 수치인지 원문으로 댈 수 없다. 연대를 8세기 중엽으로 잡아 density 를 붙였던 fact-us1-024 를 검수 뒤 통째로 뺐다. 연대 근거 없는 밀도 기록이 세계 연결 규칙에서 실제 마을 밀도 계수로 쓰이기 때문이다.",
+      "neededSource": "전성기의 시점을 연도로 말하는 한국민족문화대백과 '신라 왕경'·'금입택' 서술, 또는 연대가 붙은 호구 기록(신라촌락문서 판독문)"
+    }
+  ],
+  "collection": {
+    "task": "unified_silla_1",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789262028,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-unified_silla_1"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "event-us1-anseung",
+    "person-anseung"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

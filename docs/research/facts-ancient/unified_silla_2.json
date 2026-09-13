@@ -1,0 +1,173 @@
+{
+  "job": "unified_silla_2",
+  "sources": 12,
+  "excerpts": 12,
+  "chunkClaims": 60,
+  "excerptClaims": 0,
+  "facts": 27,
+  "factsByCategory": {
+    "administration": 5,
+    "culture": 3,
+    "disaster": 3,
+    "economy": 4,
+    "facility": 5,
+    "foreign": 2,
+    "person": 1,
+    "settlement": 4
+  },
+  "claims": 60,
+  "entities": 29,
+  "rawFilesChecked": [
+    {
+      "source": "src-kowiki-hwangnyongsa",
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%A9%EB%A3%A1%EC%82%AC",
+      "sha256": "e819b8d445ce00271e0e1ba1edfde97122fdc7b6264069db5571b089a5d95d89",
+      "rawBytes": 224622,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-byeokgolje",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B2%BD%EA%B3%A8%EC%A0%9C",
+      "sha256": "94ec8428c95b1e5bc7d6099ffebed478e73a5547798d34aaae17104330350a3c",
+      "rawBytes": 171604,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gaeseonsaji",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%A0%EC%82%AC%EC%A7%80_%EC%84%9D%EB%93%B1",
+      "sha256": "878a997146266781bf72dd7003ff223e7a93dbe76e886d6426f20936aac71cb6",
+      "rawBytes": 97609,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-jungchosaji",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%B4%88%EC%82%AC%EC%A7%80_%EB%8B%B9%EA%B0%84%EC%A7%80%EC%A3%BC",
+      "sha256": "056dd025a37024641c5d56959da2de1b117301a84db1ab25a069fd142d7ffb01",
+      "rawBytes": 95255,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gaeseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1%EC%8B%9C",
+      "sha256": "a29aece4aba435443c9eb5094e753b897a81f7a04972d128e90b0642c5b7c3dc",
+      "rawBytes": 244923,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-cheongjebi",
+      "url": "https://ko.wikipedia.org/wiki/%EC%98%81%EC%B2%9C_%EC%B2%AD%EC%A0%9C%EB%B9%84",
+      "sha256": "670d0426335d9991a46458b503d56f20019ec52624d72ef268eea95c2a487ec7",
+      "rawBytes": 107649,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-cheorwon",
+      "url": "https://en.wikipedia.org/wiki/Cheorwon_County",
+      "sha256": "259629a7a5e04fa8da20d43f0106ae256013c393d9987a7b2b956356e0367ac6",
+      "rawBytes": 177621,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-ganghwa",
+      "url": "https://en.wikipedia.org/wiki/Ganghwa_County",
+      "sha256": "19a8ca34b3caea716f59134ff9287cab22b9c2f10fb2888b8e4e54452f182e5e",
+      "rawBytes": 165202,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-hwaseong",
+      "url": "https://en.wikipedia.org/wiki/Hwaseong%2C_Gyeonggi",
+      "sha256": "a4ed52cc068709b66189d14b2530ddfe79b1b13e0d1756cf3aa626f0f04831c8",
+      "rawBytes": 221467,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-jirisan",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A7%80%EB%A6%AC%EC%82%B0",
+      "sha256": "d6b6f3e2f86c8f43753003526ebdb9f9b915f8425da6393aeb1dc3d8152628ec",
+      "rawBytes": 331765,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-gyeongju",
+      "url": "https://en.wikipedia.org/wiki/Gyeongju",
+      "sha256": "b026135658a0bf993a47cbbd3978a68234ef72fd97e6fcbd2f7e2ff2d81c9551",
+      "rawBytes": 1018634,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-dangseong",
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%94%EC%84%B1_%EB%8B%B9%EC%84%B1",
+      "sha256": "4df6172358dcb0c6cd1f63cc2395caa8a3c41dc14a8072c79a751adc14ebe819",
+      "rawBytes": 197482,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-us2-1",
+      "topic": "패강진 치소와 패강장성 노선 좌표",
+      "detail": "782년 사민과 826년 패강장성의 무대인 패강진 치소·장성 노선의 십진 좌표를 허용 출처에서 찾지 못했다.",
+      "neededSource": "한국민족문화대백과 패강진 항목, 국가유산포털 황해도 관련 유적 페이지"
+    },
+    {
+      "id": "miss-us2-2",
+      "topic": "청해진(완도 장도) 십진 좌표",
+      "detail": "완도군 위키백과 문서에 십진 좌표 표기가 없어 828년 청해진 사실에 좌표를 붙이지 못했다.",
+      "neededSource": "국가유산포털 완도 청해진 유적(사적 제308호) 페이지"
+    },
+    {
+      "id": "miss-us2-3",
+      "topic": "군현별 호구 총수",
+      "detail": "780~935년 신라본기에는 군현별 戶·口 총수 기사가 없어 밀도를 숫자로 채울 근거가 904년 청주 민호 1,000호뿐이다.",
+      "neededSource": "삼국사기 지리지 권34~36 군현 조, 신라촌락문서(정창원 문서) 판독문"
+    },
+    {
+      "id": "miss-us2-4",
+      "topic": "경시(京市) 운영 기사",
+      "detail": "이 시기 동시·서시·남시의 운영이나 개편을 직접 전하는 기사를 찾지 못해 market 장면 근거가 880년 월상루 기사에 그쳤다.",
+      "neededSource": "삼국사기 잡지 직관지 시전(市典) 조, 삼국유사 관련 조목"
+    },
+    {
+      "id": "miss-us2-5",
+      "topic": "금석문 chunk 의 복수 연대",
+      "detail": "개선사지 석등기 chunk 는 868년과 891년 두 기사를 한 조각에 담고 date.raw 가 0868-99-99 하나뿐이라 891년 기사에 시간 주장을 달 수 없다. 891년 사실(fact-us2-027)은 entity 주장만으로 근거를 댔다.",
+      "neededSource": "개선사지 석등기의 연대별 분할 chunk 또는 검증기의 복수 연대 허용"
+    }
+  ],
+  "collection": {
+    "task": "unified_silla_2",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789260751,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-unified_silla_2"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "person-choe-chiwon",
+    "place-gyeongju"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

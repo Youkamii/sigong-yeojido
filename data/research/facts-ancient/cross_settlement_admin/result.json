@@ -1,0 +1,2367 @@
+{
+ "collection": "facts-ancient",
+ "job": "cross_settlement_admin",
+ "cell": {
+  "polity": "삼국·통일신라 횡단",
+  "from": -57,
+  "to": 935,
+  "regions": [
+   "south",
+   "central",
+   "north"
+  ],
+  "categories": {
+   "settlement": 10,
+   "administration": 10
+  }
+ },
+ "sources": [
+  {
+   "id": "src-kowiki-chungju",
+   "title": "한국어 위키백과 — 충주시",
+   "publisher": "위키미디어 재단",
+   "url": "https://ko.wikipedia.org/wiki/%EC%B6%A9%EC%A3%BC%EC%8B%9C",
+   "rawFile": "raw/kowiki-chungju.html",
+   "sha256": "e5ead90141b0b7025be7cacb3d18b6c64383c5eb47d82616e1f936bd817ff8e2",
+   "httpStatus": 200,
+   "byteLength": 551173,
+   "fetchedUtc": "2026-09-13T00:40:03Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-chungju",
+     "text": "36.9906949; 127.9259673",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-wonju",
+   "title": "한국어 위키백과 — 원주시",
+   "publisher": "위키미디어 재단",
+   "url": "https://ko.wikipedia.org/wiki/%EC%9B%90%EC%A3%BC%EC%8B%9C",
+   "rawFile": "raw/kowiki-wonju.html",
+   "sha256": "cae7ad689ce27604a9aed685b728b764a229a0a13bf4eaaf87ad880a1075a1f3",
+   "httpStatus": 200,
+   "byteLength": 404207,
+   "fetchedUtc": "2026-09-13T00:40:05Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-wonju",
+     "text": "37.34167; 127.92083",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-cheongju",
+   "title": "한국어 위키백과 — 청주시",
+   "publisher": "위키미디어 재단",
+   "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%A3%BC%EC%8B%9C",
+   "rawFile": "raw/kowiki-cheongju.html",
+   "sha256": "8b16fd6b57e6efbf555123545576afde65b011243e513c10925cdef3b4e45a54",
+   "httpStatus": 200,
+   "byteLength": 466863,
+   "fetchedUtc": "2026-09-13T00:40:07Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-cheongju",
+     "text": "36.63333; 127.48333",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-sangju",
+   "title": "한국어 위키백과 — 상주시",
+   "publisher": "위키미디어 재단",
+   "url": "https://ko.wikipedia.org/wiki/%EC%83%81%EC%A3%BC%EC%8B%9C",
+   "rawFile": "raw/kowiki-sangju.html",
+   "sha256": "e668bbcc10e96b235fb9c5bb7ef8d641be9f1a07b6c1098db1bdfcc9d84e8b8d",
+   "httpStatus": 200,
+   "byteLength": 440941,
+   "fetchedUtc": "2026-09-13T00:40:11Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-sangju",
+     "text": "36.4107986; 128.1590393",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-gangneung",
+   "title": "한국어 위키백과 — 강릉시",
+   "publisher": "위키미디어 재단",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%EB%A6%89%EC%8B%9C",
+   "rawFile": "raw/kowiki-gangneung.html",
+   "sha256": "7e32b5ab888cdef11afefcdece84da9e84bcda04f6d878880f8a19f3e5dc11ba",
+   "httpStatus": 200,
+   "byteLength": 511918,
+   "fetchedUtc": "2026-09-13T00:40:13Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-gangneung",
+     "text": "37.750; 128.900",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-samcheok",
+   "title": "한국어 위키백과 — 삼척시",
+   "publisher": "위키미디어 재단",
+   "url": "https://ko.wikipedia.org/wiki/%EC%82%BC%EC%B2%99%EC%8B%9C",
+   "rawFile": "raw/kowiki-samcheok.html",
+   "sha256": "2ad0edea68bb60a6ca8763acf925167a0faf1f210e65713963a0ab35d11806f7",
+   "httpStatus": 200,
+   "byteLength": 354488,
+   "fetchedUtc": "2026-09-13T00:40:20Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-samcheok",
+     "text": "37.4498122; 129.1651884",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-gimhae",
+   "title": "English Wikipedia — Gimhae",
+   "publisher": "Wikimedia Foundation",
+   "url": "https://en.wikipedia.org/wiki/Gimhae",
+   "rawFile": "raw/enwiki-gimhae.html",
+   "sha256": "d8ac3c59ea21c60d64855504dd8c8ca35557525e70a9eb2bbd9a35d177308819",
+   "httpStatus": 200,
+   "byteLength": 213911,
+   "fetchedUtc": "2026-09-13T00:40:39Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-en-gimhae",
+     "text": "35.23417; 128.88111",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-namwon",
+   "title": "English Wikipedia — Namwon",
+   "publisher": "Wikimedia Foundation",
+   "url": "https://en.wikipedia.org/wiki/Namwon",
+   "rawFile": "raw/enwiki-namwon.html",
+   "sha256": "e8f4700295fe4c213aec138e0fce9b6c83ac9d9049526c3fa52d7bba123e0093",
+   "httpStatus": 200,
+   "byteLength": 258455,
+   "fetchedUtc": "2026-09-13T00:40:41Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-en-namwon",
+     "text": "35.41000; 127.38583",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-wando",
+   "title": "English Wikipedia — Wando County",
+   "publisher": "Wikimedia Foundation",
+   "url": "https://en.wikipedia.org/wiki/Wando_County",
+   "rawFile": "raw/enwiki-wando.html",
+   "sha256": "0bef8beb53aa9ddbfb98a3a80c9a8fd2d7c726afda8c2529fb15a690c24490c0",
+   "httpStatus": 200,
+   "byteLength": 152726,
+   "fetchedUtc": "2026-09-13T00:40:43Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-en-wando",
+     "text": "34.317; 126.750",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-changnyeong",
+   "title": "English Wikipedia — Changnyeong County",
+   "publisher": "Wikimedia Foundation",
+   "url": "https://en.wikipedia.org/wiki/Changnyeong_County",
+   "rawFile": "raw/enwiki-changnyeong.html",
+   "sha256": "8f64415f5a7d9efb9a1c8f9c3f86d54d2bc83e9e990c29701b0478d2abfd35df",
+   "httpStatus": 200,
+   "byteLength": 167209,
+   "fetchedUtc": "2026-09-13T00:40:45Z",
+   "license": "CC BY-SA 4.0 (위키백과 본문)",
+   "excerpts": [
+    {
+     "id": "ex-en-changnyeong",
+     "text": "35.544414; 128.492181",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  }
+ ],
+ "entities": [
+  {
+   "id": "polity-silla",
+   "type": "Polity",
+   "label": "신라"
+  },
+  {
+   "id": "polity-goguryeo",
+   "type": "Polity",
+   "label": "고구려"
+  },
+  {
+   "id": "polity-baekje",
+   "type": "Polity",
+   "label": "백제"
+  },
+  {
+   "id": "polity-buyeo",
+   "type": "Polity",
+   "label": "부여"
+  },
+  {
+   "id": "polity-okjeo",
+   "type": "Polity",
+   "label": "동옥저"
+  },
+  {
+   "id": "polity-ye",
+   "type": "Polity",
+   "label": "예(濊)"
+  },
+  {
+   "id": "polity-mahan",
+   "type": "Polity",
+   "label": "마한"
+  },
+  {
+   "id": "polity-byeonjinhan",
+   "type": "Polity",
+   "label": "변한·진한"
+  },
+  {
+   "id": "place-guknae-jian",
+   "type": "Place",
+   "label": "환도(丸都)·국내 일대"
+  },
+  {
+   "id": "place-nangnang",
+   "type": "Place",
+   "label": "낙랑군"
+  },
+  {
+   "id": "place-chaekseong",
+   "type": "Place",
+   "label": "책성(柵城)"
+  },
+  {
+   "id": "place-sabeolju",
+   "type": "Place",
+   "label": "사벌주(沙伐州)"
+  },
+  {
+   "id": "place-sadoseong",
+   "type": "Place",
+   "label": "사도성(沙道城)"
+  },
+  {
+   "id": "place-asichon",
+   "type": "Place",
+   "label": "아시촌(阿尸村)"
+  },
+  {
+   "id": "place-gugwon",
+   "type": "Place",
+   "label": "국원(國原)"
+  },
+  {
+   "id": "place-haseulla",
+   "type": "Place",
+   "label": "하슬라(何瑟羅)"
+  },
+  {
+   "id": "place-siljik",
+   "type": "Place",
+   "label": "실직(悉直)"
+  },
+  {
+   "id": "place-bugwon",
+   "type": "Place",
+   "label": "북원(北原)"
+  },
+  {
+   "id": "place-geumgwan",
+   "type": "Place",
+   "label": "금관(金官)"
+  },
+  {
+   "id": "place-seowon",
+   "type": "Place",
+   "label": "서원(西原)"
+  },
+  {
+   "id": "place-namwon",
+   "type": "Place",
+   "label": "남원(南原)"
+  },
+  {
+   "id": "place-bisabeol",
+   "type": "Place",
+   "label": "비자화(比自火)·비사벌"
+  },
+  {
+   "id": "place-sabi",
+   "type": "Place",
+   "label": "사비(泗沘)"
+  },
+  {
+   "id": "place-byeokgolgun",
+   "type": "Place",
+   "label": "벽골군(碧骨郡)"
+  },
+  {
+   "id": "place-cheonghaejin",
+   "type": "Place",
+   "label": "청해진(淸海鎭)"
+  },
+  {
+   "id": "place-ninejuseolla",
+   "type": "Place",
+   "label": "신라 9주"
+  },
+  {
+   "id": "event-757-reform",
+   "type": "Event",
+   "label": "경덕왕 16년 9주 개명"
+  },
+  {
+   "id": "event-67-jujugunju",
+   "type": "Event",
+   "label": "탈해이사금 11년 주주·군주 설치"
+  }
+ ],
+ "claims": [
+  {
+   "id": "c-buyeo-t",
+   "subject": "polity-buyeo",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "正始中",
+    "year": 245,
+    "precision": "decade",
+    "earliest": 240,
+    "latest": 249
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0300_0010",
+   "quote": "正始中, 幽州刺史毌丘儉討句麗, 遣玄菟太守王頎詣夫餘",
+   "note": "《삼국지》 위서 동이전 기사에는 서기 연도가 없다. 그래서 그 기사 안에 실제로 적힌 연호 표기를 근거 인용으로 삼고 연대 정밀도를 낮춰 적었다. 부여전 안의 연호 표기는 '正始中'(위 정시 연간 240~249)뿐이므로 정밀도를 decade 로 두고 대표 연도를 245로 적었다."
+  },
+  {
+   "id": "c-buyeo-h",
+   "subject": "polity-buyeo",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 80000,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0300_0010",
+   "quote": "方可二千里. 戶八萬",
+   "note": "원문 戶八萬 = 8만 호"
+  },
+  {
+   "id": "c-gg-t",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "正始三年",
+    "year": 242,
+    "precision": "decade",
+    "earliest": 240,
+    "latest": 249
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0310_0010",
+   "quote": "正始三年, 宮寇西安平, 其五年, 爲幽州刺吏毌丘儉所破",
+   "note": "《삼국지》 위서 동이전 기사에는 서기 연도가 없다. 그래서 그 기사 안에 실제로 적힌 연호 표기를 근거 인용으로 삼고 연대 정밀도를 낮춰 적었다. 고구려전에서 확인되는 가장 늦은 연호 표기가 '正始三年'(242)이라 그 해를 대표 연도로 적고 정밀도는 decade(정시 연간)로 두었다."
+  },
+  {
+   "id": "c-gg-h",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 30000,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0310_0010",
+   "quote": "都於丸都之下,方可二千里, 戶三萬",
+   "note": "환도성 아래를 도읍으로 삼고 3만 호"
+  },
+  {
+   "id": "c-okjeo-t",
+   "subject": "polity-okjeo",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "今",
+    "year": 250,
+    "precision": "century",
+    "earliest": 201,
+    "latest": 300
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0320_0010",
+   "quote": "唯不耐濊侯至今猶置功曹·主簿諸曹",
+   "note": "《삼국지》 위서 동이전 기사에는 서기 연도가 없다. 그래서 그 기사 안에 실제로 적힌 연호 표기를 근거 인용으로 삼고 연대 정밀도를 낮춰 적었다. 동옥저전에는 3세기 연호 표기가 하나도 없고 편찬 시점을 가리키는 '今'만 있다. 그래서 정밀도를 century(3세기)로 낮추고 대표 연도를 250으로 적었다."
+  },
+  {
+   "id": "c-okjeo-h",
+   "subject": "polity-okjeo",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 5000,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0320_0010",
+   "quote": "南與濊貊接. 戶五千",
+   "note": "동옥저 5천 호"
+  },
+  {
+   "id": "c-ye-t",
+   "subject": "polity-ye",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "正始六年",
+    "year": 245,
+    "precision": "decade",
+    "earliest": 240,
+    "latest": 249
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0340_0010",
+   "quote": "正始六年, 樂浪太守劉茂·帶方太守弓遵以領東濊屬句麗",
+   "note": "《삼국지》 위서 동이전 기사에는 서기 연도가 없다. 그래서 그 기사 안에 실제로 적힌 연호 표기를 근거 인용으로 삼고 연대 정밀도를 낮춰 적었다. 예전에 '正始六年'(245)이 적혀 있어 그 해를 대표 연도로 삼았다. 호수 자체에 붙은 연도는 아니므로 정밀도는 decade 다."
+  },
+  {
+   "id": "c-ye-h",
+   "subject": "polity-ye",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 20000,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0340_0010",
+   "quote": "今朝鮮之東皆其地也. 戶二萬",
+   "note": "예 2만 호"
+  },
+  {
+   "id": "c-mahan-t",
+   "subject": "polity-mahan",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "景初中",
+    "year": 238,
+    "precision": "decade",
+    "earliest": 237,
+    "latest": 239
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0350_0010",
+   "quote": "景初中, 明帝密遣帶方太守劉昕·樂浪太守鮮于嗣越海 定二郡",
+   "note": "《삼국지》 위서 동이전 기사에는 서기 연도가 없다. 그래서 그 기사 안에 실제로 적힌 연호 표기를 근거 인용으로 삼고 연대 정밀도를 낮춰 적었다. 한(韓)전에서 확인되는 가장 늦은 연호 표기가 '景初中'(위 경초 연간 237~239)이라 그 구간으로 잡고 대표 연도를 238로 적었다."
+  },
+  {
+   "id": "c-mahan-h",
+   "subject": "polity-mahan",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 100000,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0350_0010",
+   "quote": "大國萬餘家, 小國數千家, 總十餘萬戶",
+   "note": "'總十餘萬戶'의 하한 100000 을 적었다. 범위·이상 표기는 모두 하한으로 통일했다(변진 四五萬戶 → 40000)."
+  },
+  {
+   "id": "c-mahan-n",
+   "subject": "polity-mahan",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "凡五十餘國"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0350_0010",
+   "quote": "凡五十餘國",
+   "note": "마한 50여 국"
+  },
+  {
+   "id": "c-byeon-t",
+   "subject": "polity-byeonjinhan",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "今",
+    "year": 250,
+    "precision": "century",
+    "earliest": 201,
+    "latest": 300
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
+   "quote": "今辰韓人皆褊頭",
+   "note": "《삼국지》 위서 동이전 기사에는 서기 연도가 없다. 그래서 그 기사 안에 실제로 적힌 연호 표기를 근거 인용으로 삼고 연대 정밀도를 낮춰 적었다. 변진전에는 연호 표기가 없고 편찬 시점을 가리키는 '今'만 있다. 정밀도를 century(3세기)로 낮추고 대표 연도를 250으로 적었다."
+  },
+  {
+   "id": "c-byeon-h",
+   "subject": "polity-byeonjinhan",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 40000,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
+   "quote": "大國四五千家, 小國六七百家, 總四五萬戶",
+   "note": "四五萬戶(4~5만 호)의 하한 40000 을 적었다. 같은 result 의 마한 '總十餘萬戶'도 하한(100000)으로 잡아 범위값은 모두 하한으로 통일했다."
+  },
+  {
+   "id": "c-byeon-n",
+   "subject": "polity-byeonjinhan",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "弁·辰韓合二十四國"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
+   "quote": "弁·辰韓合二十四國"
+  },
+  {
+   "id": "c-47-t",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "冬十月",
+    "year": 47,
+    "precision": "month",
+    "earliest": 47,
+    "latest": 47
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_014_0030_0110",
+   "quote": "冬十月, 蠶友落部大家戴升等一萬餘家, 詣樂浪投漢."
+  },
+  {
+   "id": "c-47-a",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-nangnang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_014_0030_0110",
+   "quote": "蠶友落部大家戴升等一萬餘家, 詣樂浪投漢"
+  },
+  {
+   "id": "c-217-t",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "秋八月",
+    "year": 217,
+    "precision": "month",
+    "earliest": 217,
+    "latest": 217
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_016_0040_0130",
+   "quote": "二十一年, 秋八月, 漢 平州人夏瑤, 以百姓一千餘家來投, 王納之, 安置柵城."
+  },
+  {
+   "id": "c-217-a",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-chaekseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_016_0040_0130",
+   "quote": "以百姓一千餘家來投, 王納之, 安置柵城"
+  },
+  {
+   "id": "c-67-t",
+   "subject": "event-67-jujugunju",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "春正月",
+    "year": 67,
+    "precision": "month",
+    "earliest": 67,
+    "latest": 67
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0050_0140",
+   "quote": "十一年, 春正月, 以朴氏貴戚, 分理國内州郡, 號爲州主·郡主."
+  },
+  {
+   "id": "c-67-a",
+   "subject": "event-67-jujugunju",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "州主·郡主"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0050_0140",
+   "quote": "分理國内州郡, 號爲州主·郡主"
+  },
+  {
+   "id": "c-293-t",
+   "subject": "place-sadoseong",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "春二月",
+    "year": 293,
+    "precision": "month",
+    "earliest": 293,
+    "latest": 293
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0080_0120",
+   "quote": "十年, 春二月, 攺築沙道城, 移沙伐州豪民八十餘家."
+  },
+  {
+   "id": "c-293-a",
+   "subject": "place-sadoseong",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sabeolju"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0080_0120",
+   "quote": "移沙伐州豪民八十餘家",
+   "note": "사벌주의 호민 80여 가를 사도성으로 옮겼다"
+  },
+  {
+   "id": "c-505-t",
+   "subject": "place-siljik",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "智證王六年",
+    "year": 505,
+    "precision": "year",
+    "earliest": 505,
+    "latest": 505
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_035_0020_0510",
+   "quote": "智證王六年, 梁天監四年爲州, 以異斯夫爲軍主.",
+   "note": "지리지 삼척군 조. 梁 天監 4년 = 505년"
+  },
+  {
+   "id": "c-505-a",
+   "subject": "place-siljik",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "州"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_035_0020_0510",
+   "quote": "梁天監四年爲州, 以異斯夫爲軍主"
+  },
+  {
+   "id": "c-514a-t",
+   "subject": "place-asichon",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "春正月",
+    "year": 514,
+    "precision": "month",
+    "earliest": 514,
+    "latest": 514
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0020_0190",
+   "quote": "十五年, 春正月, 置小京於阿尸村."
+  },
+  {
+   "id": "c-514a-a",
+   "subject": "place-asichon",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "小京"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0020_0190",
+   "quote": "置小京於阿尸村"
+  },
+  {
+   "id": "c-514b-t",
+   "subject": "place-asichon",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "秋七月",
+    "year": 514,
+    "precision": "month",
+    "earliest": 514,
+    "latest": 514
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0020_0200",
+   "quote": "秋七月, 徙六部及南地人戶, 充實之."
+  },
+  {
+   "id": "c-514b-a",
+   "subject": "place-asichon",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0020_0200",
+   "quote": "徙六部及南地人戶, 充實之",
+   "note": "6부와 남쪽 지방의 인호를 옮겨 아시촌 소경을 채웠다"
+  },
+  {
+   "id": "c-524-t",
+   "subject": "place-sabeolju",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "法興王十一年",
+    "year": 524,
+    "precision": "year",
+    "earliest": 524,
+    "latest": 524
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_034_0020_0230",
+   "quote": "法興王十一年, 梁普通六年, 初置軍主爲上州.",
+   "note": "지리지 상주 조. 연도는 chunk date.raw(0524)를 따랐다. 원문의 梁 普通 6년은 서기 525년에 해당해 한 해 어긋난다"
+  },
+  {
+   "id": "c-524-a",
+   "subject": "place-sabeolju",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "上州"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_034_0020_0230",
+   "quote": "初置軍主爲上州"
+  },
+  {
+   "id": "c-555-t",
+   "subject": "place-bisabeol",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "眞興王十六年",
+    "year": 555,
+    "precision": "year",
+    "earliest": 555,
+    "latest": 555
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_034_0020_0380",
+   "quote": "火王郡, 本比自火郡, 眞興王十六年置州, 名下州.",
+   "note": "지리지 화왕군 조. 진흥왕 16년 = 555년"
+  },
+  {
+   "id": "c-555-a",
+   "subject": "place-bisabeol",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "下州"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_034_0020_0380",
+   "quote": "眞興王十六年置州, 名下州"
+  },
+  {
+   "id": "c-557-t",
+   "subject": "place-gugwon",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十八年",
+    "year": 557,
+    "precision": "year",
+    "earliest": 557,
+    "latest": 557
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0040_0270",
+   "quote": "十八年, 以國原爲小京."
+  },
+  {
+   "id": "c-557-a",
+   "subject": "place-gugwon",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "小京"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0040_0270",
+   "quote": "以國原爲小京"
+  },
+  {
+   "id": "c-558-t",
+   "subject": "place-gugwon",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "春二月",
+    "year": 558,
+    "precision": "month",
+    "earliest": 558,
+    "latest": 558
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0040_0290",
+   "quote": "十九年, 春二月, 徙貴戚子弟及六部豪民, 以實國原."
+  },
+  {
+   "id": "c-558-a",
+   "subject": "place-gugwon",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0040_0290",
+   "quote": "徙貴戚子弟及六部豪民, 以實國原"
+  },
+  {
+   "id": "c-639-t",
+   "subject": "place-haseulla",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "春二月",
+    "year": 639,
+    "precision": "month",
+    "earliest": 639,
+    "latest": 639
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_005_0020_0260",
+   "quote": "八年, 春二月, 以何瑟羅州爲北小京, 命沙湌眞珠鎭之."
+  },
+  {
+   "id": "c-639-a",
+   "subject": "place-haseulla",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "北小京"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_005_0020_0260",
+   "quote": "以何瑟羅州爲北小京"
+  },
+  {
+   "id": "c-658-t",
+   "subject": "place-haseulla",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三月",
+    "year": 658,
+    "precision": "month",
+    "earliest": 658,
+    "latest": 658
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_005_0040_0190",
+   "quote": "三月, 王以何瑟羅地連靺鞨, 人不能安, 罷京爲州, 置都督以鎭之. 又以悉直爲北鎭."
+  },
+  {
+   "id": "c-658-a",
+   "subject": "place-haseulla",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "州"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_005_0040_0190",
+   "quote": "罷京爲州, 置都督以鎭之",
+   "note": "북소경을 폐하고 주로 되돌려 도독을 두었다"
+  },
+  {
+   "id": "c-660-t",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 660
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0380",
+   "quote": "國夲有五部·三十七郡·二百城·七十六萬戶"
+  },
+  {
+   "id": "c-660-h",
+   "subject": "polity-baekje",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 760000,
+    "unit": "戶"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0380",
+   "quote": "七十六萬戶",
+   "note": "백제 멸망 시점의 기록: 5부 37군 200성 76만 호"
+  },
+  {
+   "id": "c-660-n",
+   "subject": "polity-baekje",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "五部·三十七郡·二百城"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0380",
+   "quote": "國夲有五部·三十七郡·二百城"
+  },
+  {
+   "id": "c-678-t",
+   "subject": "place-bugwon",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "year",
+    "value": 678
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0660",
+   "quote": "置北原小京, 以大阿湌吴起守之."
+  },
+  {
+   "id": "c-678-a",
+   "subject": "place-bugwon",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "小京"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0660",
+   "quote": "置北原小京"
+  },
+  {
+   "id": "c-680-t",
+   "subject": "place-geumgwan",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "year",
+    "value": 680
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0830",
+   "quote": "加耶郡置金官小京."
+  },
+  {
+   "id": "c-680-a",
+   "subject": "place-geumgwan",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "小京"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0830",
+   "quote": "加耶郡置金官小京"
+  },
+  {
+   "id": "c-685a-t",
+   "subject": "place-seowon",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三月",
+    "year": 685,
+    "precision": "month",
+    "earliest": 685,
+    "latest": 685
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0020_0230",
+   "quote": "三月, 置西原小亰, 以阿湌元泰為仕臣."
+  },
+  {
+   "id": "c-685a-a",
+   "subject": "place-seowon",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "小亰"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0020_0230",
+   "quote": "置西原小亰"
+  },
+  {
+   "id": "c-685b-t",
+   "subject": "place-namwon",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "year",
+    "value": 685
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0020_0230",
+   "quote": "置南原小亰, 徙諸州郡民户分居之."
+  },
+  {
+   "id": "c-685b-a",
+   "subject": "place-namwon",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0020_0230",
+   "quote": "徙諸州郡民户分居之",
+   "note": "여러 주·군의 민호를 옮겨 나누어 살게 했다"
+  },
+  {
+   "id": "c-757-t",
+   "subject": "event-757-reform",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "冬十二月",
+    "year": 757,
+    "precision": "month",
+    "earliest": 757,
+    "latest": 757
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_009_0030_0640",
+   "quote": "冬十二月, 攺沙伐州為尚州, 領州一·郡十·縣三十."
+  },
+  {
+   "id": "c-757-a",
+   "subject": "event-757-reform",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "攺沙伐州為尚州, 領州一·郡十·縣三十"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_009_0030_0640",
+   "quote": "攺沙伐州為尚州, 領州一·郡十·縣三十"
+  },
+  {
+   "id": "c-757-b",
+   "subject": "place-ninejuseolla",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "漢山州為漢州, 領州一·小京一·郡二十七·縣四十六"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_009_0030_0640",
+   "quote": "漢山州為漢州, 領州一·小京一·郡二十七·縣四十六"
+  },
+  {
+   "id": "c-851-t",
+   "subject": "place-cheonghaejin",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "春二月",
+    "year": 851,
+    "precision": "month",
+    "earliest": 851,
+    "latest": 851
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_011_0020_0340",
+   "quote": "十三年, 春二月, 罷清海鎮, 徙其人於碧骨郡."
+  },
+  {
+   "id": "c-851-a",
+   "subject": "place-cheonghaejin",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-byeokgolgun"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_011_0020_0340",
+   "quote": "罷清海鎮, 徙其人於碧骨郡"
+  },
+  {
+   "id": "c-524-end-jiriji",
+   "subject": "place-sabeolju",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "真興王十八年, 州廢"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_034_0020_0230",
+   "quote": "真興王十八年, 州廢.",
+   "note": "지리지 상주 조에 상주(上州)가 진흥왕 18년(557)에 폐지되었다고 적혀 있다. 이 chunk 의 date.raw 는 0524 라서 시간 주장으로 적으면 연도 일치 검사에 걸린다. 그래서 폐지 연도 자체는 같은 사건을 적은 신라본기 557년 기사(c-557-sabeol-end)로 댄다."
+  },
+  {
+   "id": "c-557-sabeol-end",
+   "subject": "place-sabeolju",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 557
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0040_0280",
+   "quote": "廢沙伐州, 置甘文州",
+   "note": "신라본기 진흥왕 18년(557) 기사. 사벌주를 폐하고 감문주를 두었다. 이 chunk 본문에는 연월 표기가 없어 year 객체로 적었다."
+  },
+  {
+   "id": "c-687-t",
+   "subject": "place-sabeolju",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三月",
+    "year": 687,
+    "precision": "month",
+    "earliest": 687,
+    "latest": 687
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0020_0360",
+   "quote": "三月, 罷一善州, 復置沙伐州, 以波珍湌官長爲揔管."
+  },
+  {
+   "id": "c-687-a",
+   "subject": "place-sabeolju",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "州"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0020_0360",
+   "quote": "復置沙伐州",
+   "note": "일선주를 파하고 사벌주를 다시 두었다."
+  },
+  {
+   "id": "c-687-jiriji",
+   "subject": "place-sabeolju",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "神文王七年, 唐垂拱三年, 復置, 築城"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_034_0020_0230",
+   "quote": "神文王七年, 唐垂拱三年, 復置, 築城",
+   "note": "지리지 상주 조도 신문왕 7년(당 수공 3년, 687)에 다시 두고 성을 쌓았다고 적었다."
+  },
+  {
+   "id": "c-660-hdr",
+   "subject": "polity-baekje",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十年",
+    "year": 660,
+    "precision": "year",
+    "earliest": 660,
+    "latest": 660
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_028_0020_0340",
+   "quote": "二十年, 春二月",
+   "note": "삼국사기 본기는 한 해의 기사를 여러 조각으로 나눠 싣고 연월 표기는 그 해 첫 조각에만 있다. 이 사실이 인용한 조각에는 연월 표기가 없어, 같은 해 같은 왕대의 첫 조각에 적힌 연 표기를 연도 표기의 근거로 따로 인용한다. 의자왕 20년(660) 조의 연 표기는 '二十年'이다."
+  },
+  {
+   "id": "c-678-hdr",
+   "subject": "place-bugwon",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十八年",
+    "year": 678,
+    "precision": "year",
+    "earliest": 678,
+    "latest": 678
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0640",
+   "quote": "十八年, 春正月",
+   "note": "삼국사기 본기는 한 해의 기사를 여러 조각으로 나눠 싣고 연월 표기는 그 해 첫 조각에만 있다. 이 사실이 인용한 조각에는 연월 표기가 없어, 같은 해 같은 왕대의 첫 조각에 적힌 연 표기를 연도 표기의 근거로 따로 인용한다. 문무왕 18년(678) 정월 조의 연 표기는 '十八年'이다."
+  },
+  {
+   "id": "c-680-hdr",
+   "subject": "place-geumgwan",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十年",
+    "year": 680,
+    "precision": "year",
+    "earliest": 680,
+    "latest": 680
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0800",
+   "quote": "二十年, 春二月",
+   "note": "삼국사기 본기는 한 해의 기사를 여러 조각으로 나눠 싣고 연월 표기는 그 해 첫 조각에만 있다. 이 사실이 인용한 조각에는 연월 표기가 없어, 같은 해 같은 왕대의 첫 조각에 적힌 연 표기를 연도 표기의 근거로 따로 인용한다. 문무왕 20년(680) 조의 연 표기는 '二十年'이다."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "scene-cross-47-daeseung",
+   "eventId": "polity-goguryeo",
+   "title": "잠우락부 대가 대승의 1만여 가 낙랑 이탈 (47)",
+   "startYear": 47,
+   "endYear": 47,
+   "kind": "migration",
+   "summary": "고구려 잠우락부의 대가 대승 등 1만여 가가 낙랑으로 가서 한에 투항했다.",
+   "dateClaimIds": [
+    "c-47-t"
+   ],
+   "actionClaimIds": [
+    "c-47-a"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {},
+   "category": "settlement",
+   "region": "north",
+   "decade": 40,
+   "sceneFunction": "migration",
+   "participantGroups": [
+    {
+     "label": "잠우락부 주민",
+     "role": "이주민",
+     "stance": "이탈",
+     "side": "고구려",
+     "count": 10000,
+     "claimIds": [
+      "c-47-a"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-cross-505-siljikju",
+   "eventId": "place-siljik",
+   "title": "실직에 주를 두고 이사부를 군주로 삼다 (505)",
+   "startYear": 505,
+   "endYear": 505,
+   "kind": "settlement",
+   "summary": "지증왕 6년 실직을 주로 삼고 이사부를 군주로 임명했다. 신라 주(州)·군주제의 이른 사례다.",
+   "dateClaimIds": [
+    "c-505-t"
+   ],
+   "actionClaimIds": [
+    "c-505-a"
+   ],
+   "place": {
+    "label": "실직(지금의 삼척)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.1651884,
+    "lat": 37.4498122,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-samcheok"
+    ],
+    "coordinateNote": "좌표는 위키백과 문서 머리의 표시 좌표(현대 시·군 중심)로, 옛 치소 자리가 아니라 해당 고을의 대략 위치다."
+   },
+   "participants": [],
+   "effects": {},
+   "category": "administration",
+   "region": "central",
+   "decade": 500,
+   "persistence": {
+    "kind": "institution",
+    "from": 505,
+    "to": null,
+    "basisClaimIds": [
+     "c-505-a"
+    ]
+   }
+  },
+  {
+   "id": "scene-cross-514-asichon",
+   "eventId": "place-asichon",
+   "title": "아시촌 소경 설치와 6부·남지 인호 이주 (514)",
+   "startYear": 514,
+   "endYear": 514,
+   "kind": "settlement",
+   "summary": "지증왕 15년 정월 아시촌에 소경을 두고, 그해 7월 6부와 남쪽 지방의 인호를 옮겨 채웠다.",
+   "dateClaimIds": [
+    "c-514a-t",
+    "c-514b-t"
+   ],
+   "actionClaimIds": [
+    "c-514a-a",
+    "c-514b-a"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {},
+   "category": "administration",
+   "region": "south",
+   "decade": 510,
+   "sceneFunction": "migration",
+   "participantGroups": [
+    {
+     "label": "6부와 남쪽 지방 인호",
+     "role": "이주민",
+     "stance": "동원",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "c-514b-a"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "institution",
+    "from": 514,
+    "to": null,
+    "basisClaimIds": [
+     "c-514a-a"
+    ]
+   }
+  },
+  {
+   "id": "scene-cross-524-sangju",
+   "eventId": "place-sabeolju",
+   "title": "사벌주에 군주를 두어 상주(上州)로 삼다 (524)",
+   "startYear": 524,
+   "endYear": 524,
+   "kind": "settlement",
+   "summary": "법흥왕 11년(양 보통 6년) 사벌 땅에 처음 군주를 두고 상주라 불렀다. 진흥왕 18년(557) 이 주는 폐지된다.",
+   "dateClaimIds": [
+    "c-524-t"
+   ],
+   "actionClaimIds": [
+    "c-524-a"
+   ],
+   "place": {
+    "label": "상주(上州)·사벌주",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.1590393,
+    "lat": 36.4107986,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-sangju"
+    ],
+    "coordinateNote": "좌표는 위키백과 문서 머리의 표시 좌표(현대 시·군 중심)로, 옛 치소 자리가 아니라 해당 고을의 대략 위치다."
+   },
+   "participants": [],
+   "effects": {},
+   "category": "administration",
+   "region": "south",
+   "decade": 520,
+   "persistence": {
+    "kind": "institution",
+    "from": 524,
+    "to": 557,
+    "basisClaimIds": [
+     "c-524-a",
+     "c-524-end-jiriji",
+     "c-557-sabeol-end"
+    ]
+   }
+  },
+  {
+   "id": "scene-cross-555-haju",
+   "eventId": "place-bisabeol",
+   "title": "비자화에 주를 두어 하주(下州)로 삼다 (555)",
+   "startYear": 555,
+   "endYear": 555,
+   "kind": "settlement",
+   "summary": "진흥왕 16년 비자화군에 주를 두고 하주라 하였다. 진흥왕 26년 주는 폐지되었다.",
+   "dateClaimIds": [
+    "c-555-t"
+   ],
+   "actionClaimIds": [
+    "c-555-a"
+   ],
+   "place": {
+    "label": "비사벌(지금의 창녕)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.492181,
+    "lat": 35.544414,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-enwiki-changnyeong"
+    ],
+    "coordinateNote": "좌표는 위키백과 문서 머리의 표시 좌표(현대 시·군 중심)로, 옛 치소 자리가 아니라 해당 고을의 대략 위치다."
+   },
+   "participants": [],
+   "effects": {},
+   "category": "administration",
+   "region": "south",
+   "decade": 550,
+   "persistence": {
+    "kind": "institution",
+    "from": 555,
+    "to": 565,
+    "basisClaimIds": [
+     "c-555-a"
+    ]
+   }
+  },
+  {
+   "id": "scene-cross-658-haseulla-ju",
+   "eventId": "place-haseulla",
+   "title": "북소경을 폐하고 하슬라를 주로 되돌리다 (658)",
+   "startYear": 658,
+   "endYear": 658,
+   "kind": "court",
+   "summary": "무열왕 5년 3월, 하슬라 땅이 말갈과 이어져 사람들이 편치 못하다 하여 경을 파하고 주로 삼아 도독을 두었으며 실직을 북진으로 삼았다.",
+   "dateClaimIds": [
+    "c-658-t"
+   ],
+   "actionClaimIds": [
+    "c-658-a"
+   ],
+   "place": {
+    "label": "하슬라(지금의 강릉)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.9,
+    "lat": 37.75,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-gangneung"
+    ],
+    "coordinateNote": "좌표는 위키백과 문서 머리의 표시 좌표(현대 시·군 중심)로, 옛 치소 자리가 아니라 해당 고을의 대략 위치다."
+   },
+   "participants": [],
+   "effects": {},
+   "category": "administration",
+   "region": "central",
+   "decade": 650,
+   "persistence": {
+    "kind": "institution",
+    "from": 658,
+    "to": null,
+    "basisClaimIds": [
+     "c-658-a"
+    ]
+   }
+  },
+  {
+   "id": "scene-cross-678-bugwon",
+   "eventId": "place-bugwon",
+   "title": "북원소경 설치 (678)",
+   "startYear": 678,
+   "endYear": 678,
+   "kind": "settlement",
+   "summary": "문무왕 18년 북원(지금의 원주)에 소경을 두고 대아찬 오기로 지키게 했다.",
+   "dateClaimIds": [
+    "c-678-t"
+   ],
+   "actionClaimIds": [
+    "c-678-a"
+   ],
+   "place": {
+    "label": "북원(지금의 원주)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 127.92083,
+    "lat": 37.34167,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wonju"
+    ],
+    "coordinateNote": "좌표는 위키백과 문서 머리의 표시 좌표(현대 시·군 중심)로, 옛 치소 자리가 아니라 해당 고을의 대략 위치다."
+   },
+   "participants": [],
+   "effects": {},
+   "category": "administration",
+   "region": "central",
+   "decade": 670,
+   "persistence": {
+    "kind": "institution",
+    "from": 678,
+    "to": null,
+    "basisClaimIds": [
+     "c-678-a"
+    ]
+   }
+  },
+  {
+   "id": "scene-cross-680-geumgwan",
+   "eventId": "place-geumgwan",
+   "title": "가야군에 금관소경을 두다 (680)",
+   "startYear": 680,
+   "endYear": 680,
+   "kind": "settlement",
+   "summary": "문무왕 20년 옛 금관국 자리인 가야군에 금관소경을 설치했다.",
+   "dateClaimIds": [
+    "c-680-t"
+   ],
+   "actionClaimIds": [
+    "c-680-a"
+   ],
+   "place": {
+    "label": "금관(지금의 김해)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.88111,
+    "lat": 35.23417,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-enwiki-gimhae"
+    ],
+    "coordinateNote": "좌표는 위키백과 문서 머리의 표시 좌표(현대 시·군 중심)로, 옛 치소 자리가 아니라 해당 고을의 대략 위치다."
+   },
+   "participants": [],
+   "effects": {},
+   "category": "administration",
+   "region": "south",
+   "decade": 680,
+   "persistence": {
+    "kind": "institution",
+    "from": 680,
+    "to": null,
+    "basisClaimIds": [
+     "c-680-a"
+    ]
+   }
+  },
+  {
+   "id": "scene-cross-687-sabeolju",
+   "eventId": "place-sabeolju",
+   "title": "일선주를 파하고 사벌주를 다시 두다 (687)",
+   "startYear": 687,
+   "endYear": 687,
+   "kind": "settlement",
+   "summary": "신문왕 7년 3월 일선주를 파하고 557년에 폐지되었던 사벌주를 다시 두어 파진찬 관장을 총관으로 삼았다.",
+   "dateClaimIds": [
+    "c-687-t"
+   ],
+   "actionClaimIds": [
+    "c-687-a",
+    "c-687-jiriji"
+   ],
+   "place": {
+    "label": "사벌주(지금의 상주)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.1590393,
+    "lat": 36.4107986,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-sangju"
+    ],
+    "coordinateNote": "좌표는 위키백과 문서 머리의 표시 좌표(현대 시·군 중심)로, 옛 치소 자리가 아니라 해당 고을의 대략 위치다."
+   },
+   "participants": [],
+   "effects": {},
+   "category": "administration",
+   "region": "south",
+   "decade": 680,
+   "persistence": {
+    "kind": "institution",
+    "from": 687,
+    "to": null,
+    "basisClaimIds": [
+     "c-687-a",
+     "c-687-jiriji"
+    ]
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "fact-cross-s01",
+   "category": "settlement",
+   "region": "north",
+   "decade": 240,
+   "year": 245,
+   "yearVerbatim": "正始中",
+   "placeLabel": "부여",
+   "modernPlace": "중국 지린성 쑹화강 유역",
+   "what": "부여의 호수를 8만 호로 적었다",
+   "claimIds": [
+    "c-buyeo-t",
+    "c-buyeo-h"
+   ],
+   "confidence": "medium",
+   "note": "《삼국지》 위서 동이전 부여 조. 기사에 서기 연도가 없어 같은 기사 안의 연호 표기 '正始中'(240~249)을 연대 근거로 삼았다(c-buyeo-t, precision decade). 호수는 중국 측 견문 기록이라 실측치로 보기 어렵다.",
+   "sceneId": null,
+   "density": {
+    "households": 80000,
+    "unit": "戶",
+    "claimIds": [
+     "c-buyeo-h"
+    ]
+   }
+  },
+  {
+   "id": "fact-cross-s02",
+   "category": "settlement",
+   "region": "north",
+   "decade": 240,
+   "year": 242,
+   "yearVerbatim": "正始三年",
+   "placeLabel": "환도(丸都) 아래",
+   "modernPlace": "중국 지린성 지안 일대",
+   "what": "고구려가 환도성 아래를 도읍으로 삼았고 호수는 3만 호였다",
+   "claimIds": [
+    "c-gg-t",
+    "c-gg-h"
+   ],
+   "confidence": "medium",
+   "note": "《삼국지》 위서 동이전 고구려 조. 기사 안에서 확인되는 가장 늦은 연호 표기 '正始三年'(242)을 연대 근거로 삼았다(c-gg-t, precision decade). 호수는 견문 기록이다.",
+   "sceneId": null,
+   "density": {
+    "households": 30000,
+    "unit": "戶",
+    "claimIds": [
+     "c-gg-h"
+    ]
+   }
+  },
+  {
+   "id": "fact-cross-s03",
+   "category": "settlement",
+   "region": "north",
+   "decade": 250,
+   "year": 250,
+   "yearVerbatim": "今",
+   "placeLabel": "동옥저",
+   "modernPlace": "함경남도 함흥 일대",
+   "what": "동옥저의 호수를 5천 호로 적었다",
+   "claimIds": [
+    "c-okjeo-t",
+    "c-okjeo-h"
+   ],
+   "confidence": "medium",
+   "note": "《삼국지》 위서 동이전 동옥저 조. 이 조에는 3세기 연호 표기가 없고 편찬 시점을 가리키는 '今'만 있어 연대를 3세기(201~300)로만 잡았다(c-okjeo-t, precision century). 250년은 3세기 중엽을 나타내는 대표값일 뿐 사료에 적힌 연도가 아니다.",
+   "sceneId": null,
+   "density": {
+    "households": 5000,
+    "unit": "戶",
+    "claimIds": [
+     "c-okjeo-h"
+    ]
+   }
+  },
+  {
+   "id": "fact-cross-s04",
+   "category": "settlement",
+   "region": "central",
+   "decade": 240,
+   "year": 245,
+   "yearVerbatim": "正始六年",
+   "placeLabel": "예(濊)",
+   "modernPlace": "강원 동해안 일대",
+   "what": "예의 호수를 2만 호로 적었다",
+   "claimIds": [
+    "c-ye-t",
+    "c-ye-h"
+   ],
+   "confidence": "medium",
+   "note": "《삼국지》 위서 동이전 예 조. 같은 조의 '正始六年'(245)을 연대 근거로 삼았다(c-ye-t, precision decade). 호수는 견문 기록이다.",
+   "sceneId": null,
+   "density": {
+    "households": 20000,
+    "unit": "戶",
+    "claimIds": [
+     "c-ye-h"
+    ]
+   }
+  },
+  {
+   "id": "fact-cross-s05",
+   "category": "settlement",
+   "region": "south",
+   "decade": 230,
+   "year": 238,
+   "yearVerbatim": "景初中",
+   "placeLabel": "마한",
+   "modernPlace": "경기·충청·전라 일대",
+   "what": "마한 50여 국의 호수를 합해 10여만 호, 큰 나라는 1만여 가, 작은 나라는 수천 가라 적었다",
+   "claimIds": [
+    "c-mahan-t",
+    "c-mahan-h",
+    "c-mahan-n"
+   ],
+   "confidence": "medium",
+   "note": "《삼국지》 위서 동이전 한(韓) 조. 같은 조의 '景初中'(237~239)을 연대 근거로 삼았다(c-mahan-t, precision decade). 권역은 마한 50여 국의 무게중심(충청·전라)이 위도 37도 아래라 south 로 잡았다(경기 북부까지 걸치는 점은 modernPlace 에 남겨둔다). 十餘萬戶는 하한이다. [중복: baekje_early/fact-bj-019 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": {
+    "households": 100000,
+    "unit": "戶",
+    "claimIds": [
+     "c-mahan-h"
+    ]
+   }
+  },
+  {
+   "id": "fact-cross-s06",
+   "category": "settlement",
+   "region": "south",
+   "decade": 250,
+   "year": 250,
+   "yearVerbatim": "今",
+   "placeLabel": "변한·진한",
+   "modernPlace": "경상도 일대",
+   "what": "변한·진한 24국의 호수를 합해 4~5만 호, 큰 나라는 4~5천 가, 작은 나라는 6~7백 가라 적었다",
+   "claimIds": [
+    "c-byeon-t",
+    "c-byeon-h",
+    "c-byeon-n"
+   ],
+   "confidence": "medium",
+   "note": "《삼국지》 위서 동이전 변진 조. 연호 표기가 없고 '今'만 있어 연대를 3세기(201~300)로만 잡았다(c-byeon-t, precision century). 250년은 대표값이다. '總四五萬戶'는 범위값이라 마한과 같은 규칙으로 하한 40000 을 density 에 적었다.",
+   "sceneId": null,
+   "density": {
+    "households": 40000,
+    "unit": "戶",
+    "claimIds": [
+     "c-byeon-h"
+    ]
+   }
+  },
+  {
+   "id": "fact-cross-s07",
+   "category": "settlement",
+   "region": "north",
+   "decade": 40,
+   "year": 47,
+   "yearVerbatim": "冬十月",
+   "placeLabel": "낙랑",
+   "modernPlace": "평양 일대",
+   "what": "고구려 잠우락부 대가 대승 등 1만여 가가 낙랑으로 가서 한에 투항했다",
+   "claimIds": [
+    "c-47-t",
+    "c-47-a"
+   ],
+   "confidence": "medium",
+   "note": "1만여 가는 상당한 과장일 수 있으나 초기 고구려 인구 이동의 규모 감각을 준다.",
+   "sceneId": "scene-cross-47-daeseung",
+   "density": {
+    "households": 10000,
+    "unit": "家",
+    "claimIds": [
+     "c-47-a"
+    ]
+   }
+  },
+  {
+   "id": "fact-cross-s08",
+   "category": "settlement",
+   "region": "north",
+   "decade": 210,
+   "year": 217,
+   "yearVerbatim": "二十一年",
+   "placeLabel": "책성(柵城)",
+   "modernPlace": "중국 지린성 훈춘 비정",
+   "what": "후한 평주 사람 하요가 백성 1천여 가를 이끌고 투항하자 책성에 안치했다",
+   "claimIds": [
+    "c-217-t",
+    "c-217-a"
+   ],
+   "confidence": "high",
+   "note": "책성의 위치는 훈춘 팔련성 등으로 비정되나 확정되지 않아 좌표를 적지 않았다. [중복: goguryeo_early/fact-gg-003 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": {
+    "households": 1000,
+    "unit": "家",
+    "claimIds": [
+     "c-217-a"
+    ]
+   }
+  },
+  {
+   "id": "fact-cross-s09",
+   "category": "settlement",
+   "region": "south",
+   "decade": 290,
+   "year": 293,
+   "yearVerbatim": "十年",
+   "placeLabel": "사도성 / 사벌주",
+   "modernPlace": "상주(이주 출발지)",
+   "what": "사도성을 고쳐 쌓고 사벌주의 호민 80여 가를 옮겼다",
+   "claimIds": [
+    "c-293-t",
+    "c-293-a"
+   ],
+   "confidence": "medium",
+   "note": "원문은 '移沙伐州豪民八十餘家' — 사벌주의 호민 80여 가를 사도성으로 옮긴 기사다. 도착지인 사도성의 자리가 영덕 등으로 비정만 될 뿐 확정되지 않아 좌표를 넣지 않았다(출발지 상주 좌표를 붙이면 사람이 빠져나간 곳의 마을 밀도를 올리는 쪽으로 읽히므로 뺐다). density 의 80家 는 어느 한 지점의 정주 밀도가 아니라 옮겨진 집단의 규모이며, 좌표가 없으므로 세계 밀도 계산에는 쓰이지 않는다. [중복: silla_gaya_early/fact-sgy-005 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": {
+    "households": 80,
+    "unit": "家",
+    "claimIds": [
+     "c-293-a"
+    ],
+    "note": "사벌주에서 사도성으로 옮겨진 집단의 규모(80여 가)이며 특정 지점의 정주 밀도가 아니다."
+   }
+  },
+  {
+   "id": "fact-cross-s10",
+   "category": "settlement",
+   "region": "south",
+   "decade": 510,
+   "year": 514,
+   "yearVerbatim": "秋七月",
+   "placeLabel": "아시촌 소경",
+   "modernPlace": "위치 미상(함안·의성설)",
+   "what": "6부와 남쪽 지방의 인호를 옮겨 아시촌 소경을 채웠다",
+   "claimIds": [
+    "c-514b-t",
+    "c-514b-a"
+   ],
+   "confidence": "high",
+   "note": "아시촌 위치는 함안·의성·안강 등 설이 갈려 좌표를 넣지 않았다.",
+   "sceneId": "scene-cross-514-asichon",
+   "density": null
+  },
+  {
+   "id": "fact-cross-s11",
+   "category": "settlement",
+   "region": "south",
+   "decade": 550,
+   "year": 558,
+   "yearVerbatim": "十九年",
+   "placeLabel": "국원",
+   "modernPlace": "충주",
+   "what": "귀척의 자제와 6부의 호민을 옮겨 국원을 채웠다",
+   "claimIds": [
+    "c-558-t",
+    "c-558-a"
+   ],
+   "confidence": "high",
+   "note": "충주는 위도 36.99로 central 경계 바로 아래라 규칙대로 south 로 분류했다. [중복: silla_late/fact-sl-002 와 같은 기록, 장면은 그쪽만]",
+   "lon": 127.9259673,
+   "lat": 36.9906949,
+   "coordinateBasis": "src-kowiki-chungju ex-chungju",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-cross-s12",
+   "category": "settlement",
+   "region": "south",
+   "decade": 660,
+   "year": 660,
+   "yearVerbatim": "二十年",
+   "placeLabel": "백제",
+   "modernPlace": "충남 부여 중심의 백제 전역",
+   "what": "백제에는 본래 5부 37군 200성 76만 호가 있었다고 적었다",
+   "claimIds": [
+    "c-660-t",
+    "c-660-hdr",
+    "c-660-h",
+    "c-660-n"
+   ],
+   "confidence": "medium",
+   "note": "당이 백제를 평정한 뒤 5도독부를 두며 적은 수치로, 당대 실측이 아니라 항복 문서 계열의 개괄값이다. 인용한 조각 본문에는 연월 표기가 없어, 같은 의자왕 20년 조 첫 조각의 '二十年'을 연 표기 근거로 따로 인용했다(c-660-hdr).",
+   "sceneId": null,
+   "density": {
+    "households": 760000,
+    "unit": "戶",
+    "claimIds": [
+     "c-660-h"
+    ]
+   }
+  },
+  {
+   "id": "fact-cross-s14",
+   "category": "settlement",
+   "region": "south",
+   "decade": 680,
+   "year": 685,
+   "yearVerbatim": "三月",
+   "placeLabel": "남원소경",
+   "modernPlace": "남원",
+   "what": "남원소경을 두고 여러 주·군의 민호를 옮겨 나누어 살게 했다",
+   "claimIds": [
+    "c-685b-t",
+    "c-685b-a"
+   ],
+   "confidence": "high",
+   "note": "인용한 chunk 는 신문왕 5년 3월 조로 본문 첫머리의 연월 표기가 '三月' 이다. [중복: unified_silla_1/fact-us1-004 와 같은 기록, 장면은 그쪽만]",
+   "lon": 127.38583,
+   "lat": 35.41,
+   "coordinateBasis": "src-enwiki-namwon ex-en-namwon",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-cross-s15",
+   "category": "settlement",
+   "region": "south",
+   "decade": 850,
+   "year": 851,
+   "yearVerbatim": "十三年",
+   "placeLabel": "청해진 → 벽골군",
+   "modernPlace": "완도 → 김제",
+   "what": "청해진을 혁파하고 그곳 사람들을 벽골군으로 옮겼다",
+   "claimIds": [
+    "c-851-t",
+    "c-851-a"
+   ],
+   "confidence": "high",
+   "note": "좌표는 이주 출발지인 청해진(완도) 쪽이다. 이 사건의 장면은 이미 services/host/app/history-scenes.json 에 scene-anc-cheonghaejin-abolition-851(851년 청해진 철폐와 주민 강제 이주)로 있어 새 장면을 만들지 않았다. 검증기는 facts[].sceneId 가 같은 result.json 의 scenes 안에 있는 id 만 허용해(check_fact_research.py facts[].sceneId 참조 검사) 기존 장면 id 를 적으면 FAIL 이 나므로 null 로 두고 여기에 연결 대상을 적어 둔다. [중복: unified_silla_2/fact-us2-002 와 같은 기록, 장면은 그쪽만]",
+   "lon": 126.75,
+   "lat": 34.317,
+   "coordinateBasis": "src-enwiki-wando ex-en-wando",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-cross-a01",
+   "category": "administration",
+   "region": "south",
+   "decade": 60,
+   "year": 67,
+   "yearVerbatim": "十一年",
+   "placeLabel": "신라 국내 주군",
+   "modernPlace": "경상도 일원",
+   "what": "박씨 귀척을 나누어 나라 안의 주와 군을 다스리게 하고 주주·군주라 불렀다",
+   "claimIds": [
+    "c-67-t",
+    "c-67-a"
+   ],
+   "confidence": "low",
+   "note": "초기 신라 기사의 연대 신빙성 논쟁이 있어 confidence 를 low 로 두었다. 지방관 칭호가 처음 보이는 기사다. [중복: silla_gaya_early/fact-sgy-008 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 67,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a02",
+   "category": "administration",
+   "region": "central",
+   "decade": 500,
+   "year": 505,
+   "yearVerbatim": "智證王六年",
+   "placeLabel": "실직(悉直)",
+   "modernPlace": "삼척",
+   "what": "실직을 주로 삼고 이사부를 군주로 삼았다",
+   "claimIds": [
+    "c-505-t",
+    "c-505-a"
+   ],
+   "confidence": "high",
+   "note": "지리지 삼척군 조의 기록으로 본기 지증왕 6년 기사와 맞물린다. 인용 chunk 에 실직주의 폐지 기록이 없어 persistence.to 는 null 로 두었다. 다만 658년 기사에 '又以悉直爲北鎭'(실직을 북진으로 삼았다)이 있어 주로서의 지위는 그 전에 끝난 것으로 보이나, 명시적 폐지 기사가 아니어서 연도를 적지 않았다.",
+   "lon": 129.1651884,
+   "lat": 37.4498122,
+   "coordinateBasis": "src-kowiki-samcheok ex-samcheok",
+   "sceneId": "scene-cross-505-siljikju",
+   "persistence": {
+    "kind": "institution",
+    "from": 505,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a03",
+   "category": "administration",
+   "region": "south",
+   "decade": 510,
+   "year": 514,
+   "yearVerbatim": "十五年",
+   "placeLabel": "아시촌",
+   "modernPlace": "위치 미상(함안·의성설)",
+   "what": "아시촌에 소경을 두었다 — 신라 소경 제도의 첫 사례",
+   "claimIds": [
+    "c-514a-t",
+    "c-514a-a"
+   ],
+   "confidence": "high",
+   "note": "아시촌의 위치 비정이 갈려 좌표를 넣지 않았다.",
+   "sceneId": "scene-cross-514-asichon",
+   "persistence": {
+    "kind": "institution",
+    "from": 514,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a04",
+   "category": "administration",
+   "region": "south",
+   "decade": 520,
+   "year": 524,
+   "yearVerbatim": "法興王十一年",
+   "placeLabel": "사벌주(上州)",
+   "modernPlace": "상주",
+   "what": "사벌 땅에 처음 군주를 두고 상주(上州)라 하였다 — 진흥왕 18년(557) 주가 폐지된다",
+   "claimIds": [
+    "c-524-t",
+    "c-524-a",
+    "c-524-end-jiriji",
+    "c-557-sabeol-end"
+   ],
+   "confidence": "high",
+   "note": "연도는 chunk date.raw(0524)를 따랐다. 원문에 함께 적힌 梁 普通 6년은 525년이어서 한 해 어긋난다. 같은 지리지 조에 '真興王十八年, 州廢'라 하여 557년에 폐지되었고(c-524-end-jiriji), 신라본기 557년 조의 '廢沙伐州, 置甘文州'가 같은 사건이므로(c-557-sabeol-end) persistence.to 를 557 로 적었다. 687년 復置는 fact-cross-a13 으로 따로 뒀다.",
+   "lon": 128.1590393,
+   "lat": 36.4107986,
+   "coordinateBasis": "src-kowiki-sangju ex-sangju",
+   "sceneId": "scene-cross-524-sangju",
+   "persistence": {
+    "kind": "institution",
+    "from": 524,
+    "to": 557
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a05",
+   "category": "administration",
+   "region": "south",
+   "decade": 550,
+   "year": 555,
+   "yearVerbatim": "眞興王十六年",
+   "placeLabel": "비자화(比自火)",
+   "modernPlace": "창녕",
+   "what": "비자화군에 주를 두고 하주(下州)라 하였다",
+   "claimIds": [
+    "c-555-t",
+    "c-555-a"
+   ],
+   "confidence": "high",
+   "note": "같은 조에 '二十六年州廢'라 하여 진흥왕 26년(565)에 주가 폐지되었다.",
+   "lon": 128.492181,
+   "lat": 35.544414,
+   "coordinateBasis": "src-enwiki-changnyeong ex-en-changnyeong",
+   "sceneId": "scene-cross-555-haju",
+   "persistence": {
+    "kind": "institution",
+    "from": 555,
+    "to": 565
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a06",
+   "category": "administration",
+   "region": "south",
+   "decade": 550,
+   "year": 557,
+   "yearVerbatim": "十八年",
+   "placeLabel": "국원(國原)",
+   "modernPlace": "충주",
+   "what": "국원을 소경으로 삼았다 — 뒤의 중원경",
+   "claimIds": [
+    "c-557-t",
+    "c-557-a"
+   ],
+   "confidence": "high",
+   "note": "충주는 위도 36.99로 경계 바로 아래라 규칙대로 south 로 분류했다. [중복: silla_late/fact-sl-008 와 같은 기록, 장면은 그쪽만]",
+   "lon": 127.9259673,
+   "lat": 36.9906949,
+   "coordinateBasis": "src-kowiki-chungju ex-chungju",
+   "sceneId": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 557,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a07",
+   "category": "administration",
+   "region": "central",
+   "decade": 630,
+   "year": 639,
+   "yearVerbatim": "八年",
+   "placeLabel": "하슬라주(북소경)",
+   "modernPlace": "강릉",
+   "what": "하슬라주를 북소경으로 삼고 사찬 진주에게 지키게 했다",
+   "claimIds": [
+    "c-639-t",
+    "c-639-a"
+   ],
+   "confidence": "high",
+   "note": "[중복: silla_late/fact-sl-010 와 같은 기록, 장면은 그쪽만]",
+   "lon": 128.9,
+   "lat": 37.75,
+   "coordinateBasis": "src-kowiki-gangneung ex-gangneung",
+   "sceneId": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 639,
+    "to": 658
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a08",
+   "category": "administration",
+   "region": "central",
+   "decade": 650,
+   "year": 658,
+   "yearVerbatim": "三月",
+   "placeLabel": "하슬라(何瑟羅)",
+   "modernPlace": "강릉",
+   "what": "말갈과 접해 불안하다 하여 북소경을 파하고 주로 삼아 도독을 두고, 실직을 북진으로 삼았다",
+   "claimIds": [
+    "c-658-t",
+    "c-658-a"
+   ],
+   "confidence": "high",
+   "note": "639년에 둔 북소경이 19년 만에 주로 되돌아갔다.",
+   "lon": 128.9,
+   "lat": 37.75,
+   "coordinateBasis": "src-kowiki-gangneung ex-gangneung",
+   "sceneId": "scene-cross-658-haseulla-ju",
+   "persistence": {
+    "kind": "institution",
+    "from": 658,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a09",
+   "category": "administration",
+   "region": "central",
+   "decade": 670,
+   "year": 678,
+   "yearVerbatim": "十八年",
+   "placeLabel": "북원소경",
+   "modernPlace": "원주",
+   "what": "북원에 소경을 두고 대아찬 오기에게 지키게 했다",
+   "claimIds": [
+    "c-678-t",
+    "c-678-hdr",
+    "c-678-a"
+   ],
+   "confidence": "high",
+   "note": "인용한 조각 본문에 연월 표기가 없어 시간 주장은 year 객체(678)로 적고, 같은 문무왕 18년 정월 조 첫 조각의 '十八年'을 연 표기 근거로 따로 인용했다(c-678-hdr).",
+   "lon": 127.92083,
+   "lat": 37.34167,
+   "coordinateBasis": "src-kowiki-wonju ex-wonju",
+   "sceneId": "scene-cross-678-bugwon",
+   "persistence": {
+    "kind": "institution",
+    "from": 678,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a10",
+   "category": "administration",
+   "region": "south",
+   "decade": 680,
+   "year": 680,
+   "yearVerbatim": "二十年",
+   "placeLabel": "가야군 / 금관소경",
+   "modernPlace": "김해",
+   "what": "가야군에 금관소경을 두었다",
+   "claimIds": [
+    "c-680-t",
+    "c-680-hdr",
+    "c-680-a"
+   ],
+   "confidence": "high",
+   "note": "인용한 조각 본문에 연월 표기가 없어 시간 주장은 year 객체(680)로 적고, 같은 문무왕 20년 조 첫 조각의 '二十年'을 연 표기 근거로 따로 인용했다(c-680-hdr).",
+   "lon": 128.88111,
+   "lat": 35.23417,
+   "coordinateBasis": "src-enwiki-gimhae ex-en-gimhae",
+   "sceneId": "scene-cross-680-geumgwan",
+   "persistence": {
+    "kind": "institution",
+    "from": 680,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a11",
+   "category": "administration",
+   "region": "south",
+   "decade": 680,
+   "year": 685,
+   "yearVerbatim": "三月",
+   "placeLabel": "서원소경",
+   "modernPlace": "청주",
+   "what": "서원소경을 두고 아찬 원태를 사신(仕臣)으로 삼았다",
+   "claimIds": [
+    "c-685a-t",
+    "c-685a-a"
+   ],
+   "confidence": "high",
+   "note": "[중복: unified_silla_1/fact-us1-003 와 같은 기록, 장면은 그쪽만]",
+   "lon": 127.48333,
+   "lat": 36.63333,
+   "coordinateBasis": "src-kowiki-cheongju ex-cheongju",
+   "sceneId": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 685,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a13",
+   "category": "administration",
+   "region": "south",
+   "decade": 680,
+   "year": 687,
+   "yearVerbatim": "三月",
+   "placeLabel": "사벌주(沙伐州)",
+   "modernPlace": "상주",
+   "what": "일선주를 파하고 사벌주를 다시 두어 파진찬 관장을 총관으로 삼았다 — 557년에 폐지된 주가 130년 만에 부활했다",
+   "claimIds": [
+    "c-687-t",
+    "c-687-a",
+    "c-687-jiriji"
+   ],
+   "confidence": "high",
+   "note": "지리지 상주 조의 '神文王七年, 唐垂拱三年, 復置, 築城'과 신라본기 신문왕 7년 3월 기사가 같은 사건이다. 524~557년의 상주(上州)는 fact-cross-a04 로 따로 뒀다.",
+   "lon": 128.1590393,
+   "lat": 36.4107986,
+   "coordinateBasis": "src-kowiki-sangju ex-sangju",
+   "sceneId": "scene-cross-687-sabeolju",
+   "persistence": {
+    "kind": "institution",
+    "from": 687,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-cross-a12",
+   "category": "administration",
+   "region": "south",
+   "decade": 750,
+   "year": 757,
+   "yearVerbatim": "冬十二月",
+   "placeLabel": "사벌주 → 상주(尙州)",
+   "modernPlace": "상주",
+   "what": "사벌주를 상주로 고치고 그 아래 주 1·군 10·현 30을 소속시켰다(경덕왕 16년 9주 개명의 첫 조항)",
+   "claimIds": [
+    "c-757-t",
+    "c-757-a"
+   ],
+   "confidence": "high",
+   "note": "757년 9주 개명은 전국 조치지만 조사 칸의 권역이 south·central·north 라 권역이 특정되는 개별 조항으로 쪼갰다. 이 사실은 사벌주→상주 조항이고, 한산주→한주 조항은 fact-cross-a14 다. [중복: unified_silla_1/fact-us1-002 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 757,
+    "to": null
+   },
+   "density": null,
+   "lon": 128.1590393,
+   "lat": 36.4107986,
+   "coordinateBasis": "src-kowiki-sangju ex-sangju"
+  },
+  {
+   "id": "fact-cross-a14",
+   "category": "administration",
+   "region": "central",
+   "decade": 750,
+   "year": 757,
+   "yearVerbatim": "冬十二月",
+   "placeLabel": "한산주 → 한주(漢州)",
+   "modernPlace": "경기 광주 일대(한주 치소)",
+   "what": "한산주를 한주로 고치고 주 1·소경 1·군 27·현 46을 소속시켰다",
+   "claimIds": [
+    "c-757-t",
+    "c-757-b"
+   ],
+   "confidence": "high",
+   "note": "757년 9주 개명의 한산주 조항. 한주 치소(옛 한산주) 위치를 확정할 수 있는 좌표 출처를 받지 못해 좌표를 넣지 않았다. [중복: unified_silla_1/fact-us1-002 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 757,
+    "to": null
+   },
+   "density": null
+  }
+ ],
+ "missing": [
+  {
+   "id": "miss-1",
+   "topic": "통일신라 호구 총수",
+   "detail": "삼국사기 지리지와 본기에는 9주 전체의 호수·구수 총계가 없다. 신라촌락문서(정창원 문서)의 촌별 호구가 필요하다.",
+   "neededSource": "일본 정창원 신라촌락문서 판독문 또는 한국민족문화대백과 '신라촌락문서' 항목"
+  },
+  {
+   "id": "miss-2",
+   "topic": "아시촌·사도성 위치",
+   "detail": "514년 아시촌 소경과 293년 사도성의 위치가 비정 단계에 머물러 좌표를 넣지 못했다.",
+   "neededSource": "국가유산포털 또는 한국민족문화대백과의 아시촌소경·사도성 항목"
+  },
+  {
+   "id": "miss-3",
+   "topic": "고구려·백제 군현 편제",
+   "detail": "삼국사기 지리지 권37은 고구려·백제 군현의 옛 이름만 나열하고 설치 연대가 없어 연도가 붙는 사실로 만들기 어려웠다.",
+   "neededSource": "당 이적의 고구려 城 목록 원문(집성 구당서·신당서 지리지)과 연대 비정 연구"
+  },
+  {
+   "id": "miss-4",
+   "topic": "삼국지 동이전 동옥저·변진의 연대",
+   "detail": "동옥저전·변진전에는 연호 표기가 하나도 없어 3세기(201~300)라는 century 정밀도로만 연대를 잡았다. 부여·고구려·예·한 조는 각각 正始中·正始三年·正始六年·景初中 을 근거로 댈 수 있었다.",
+   "neededSource": "한국민족문화대백과 '삼국지 동이전'·'동옥저'·'변한' 항목의 편찬 연대 서술(십진 연도 표기가 있는 발췌)"
+  }
+ ]
+}

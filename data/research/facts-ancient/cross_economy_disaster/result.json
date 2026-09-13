@@ -1,0 +1,2839 @@
+{
+ "collection": "facts-ancient",
+ "job": "cross_economy_disaster",
+ "cell": {
+  "polity": "횡단(신라·고구려·백제·통일신라)",
+  "from": -57,
+  "to": 935,
+  "regions": [
+   "south",
+   "central",
+   "north"
+  ],
+  "categories": {
+   "economy": 10,
+   "disaster": 10
+  }
+ },
+ "sources": [
+  {
+   "id": "src-enwiki-gongju",
+   "title": "Gongju",
+   "publisher": "English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gongju",
+   "rawFile": "raw/enwiki-gongju.html",
+   "sha256": "75d8af0d54ac6cf024732d45754b95f0b52222f2c20b19cf71aac58bacdfe4ad",
+   "httpStatus": 200,
+   "byteLength": 156593,
+   "fetchedUtc": "2026-09-13T00:36:52Z",
+   "license": "CC BY-SA 4.0 (Wikipedia)",
+   "excerpts": [
+    {
+     "id": "ex-gongju-geo",
+     "text": "36.450; 127.117",
+     "locator": "표시 좌표 (class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-gungnae",
+   "title": "Gungnae Fortress",
+   "publisher": "English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gungnae_Fortress",
+   "rawFile": "raw/enwiki-gungnae.html",
+   "sha256": "2ccc548ae79f8cfce65d1260a449d6ea4fba12a1870697b343039bafff8ee232",
+   "httpStatus": 200,
+   "byteLength": 126509,
+   "fetchedUtc": "2026-09-13T00:36:53Z",
+   "license": "CC BY-SA 4.0 (Wikipedia)",
+   "excerpts": [
+    {
+     "id": "ex-gungnae-geo",
+     "text": "41.12083; 126.17861",
+     "locator": "표시 좌표 (class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-gyeongju",
+   "title": "Gyeongju",
+   "publisher": "English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gyeongju",
+   "rawFile": "raw/enwiki-gyeongju.html",
+   "sha256": "b026135658a0bf993a47cbbd3978a68234ef72fd97e6fcbd2f7e2ff2d81c9551",
+   "httpStatus": 200,
+   "byteLength": 1018634,
+   "fetchedUtc": "2026-09-13T00:36:49Z",
+   "license": "CC BY-SA 4.0 (Wikipedia)",
+   "excerpts": [
+    {
+     "id": "ex-gyeongju-geo",
+     "text": "35.850; 129.217",
+     "locator": "표시 좌표 (class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-pyongyang",
+   "title": "Pyongyang",
+   "publisher": "English Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pyongyang",
+   "rawFile": "raw/enwiki-pyongyang.html",
+   "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+   "httpStatus": 200,
+   "byteLength": 897617,
+   "fetchedUtc": "2026-09-13T00:36:52Z",
+   "license": "CC BY-SA 4.0 (Wikipedia)",
+   "excerpts": [
+    {
+     "id": "ex-pyongyang-geo",
+     "text": "39.01667; 125.74750",
+     "locator": "표시 좌표 (class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-byeokgolje",
+   "title": "벽골제",
+   "publisher": "한국어 위키백과",
+   "url": "https://ko.wikipedia.org/wiki/벽골제",
+   "rawFile": "raw/kowiki-byeokgolje.html",
+   "sha256": "94ec8428c95b1e5bc7d6099ffebed478e73a5547798d34aaae17104330350a3c",
+   "httpStatus": 200,
+   "byteLength": 171604,
+   "fetchedUtc": "2026-09-13T00:36:49Z",
+   "license": "CC BY-SA 4.0 (Wikipedia)",
+   "excerpts": [
+    {
+     "id": "ex-byeokgolje-geo",
+     "text": "35.75444; 126.85444",
+     "locator": "표시 좌표 (class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-cheongjebi",
+   "title": "영천 청제비",
+   "publisher": "한국어 위키백과",
+   "url": "https://ko.wikipedia.org/wiki/영천_청제비",
+   "rawFile": "raw/kowiki-cheongjebi.html",
+   "sha256": "670d0426335d9991a46458b503d56f20019ec52624d72ef268eea95c2a487ec7",
+   "httpStatus": 200,
+   "byteLength": 107649,
+   "fetchedUtc": "2026-09-13T00:36:50Z",
+   "license": "CC BY-SA 4.0 (Wikipedia)",
+   "excerpts": [
+    {
+     "id": "ex-cheongjebi-geo",
+     "text": "35.92472; 128.94083",
+     "locator": "표시 좌표 (class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-gumi",
+   "title": "구미시",
+   "publisher": "한국어 위키백과",
+   "url": "https://ko.wikipedia.org/wiki/구미시",
+   "rawFile": "raw/kowiki-gumi.html",
+   "sha256": "cf8189f048b62cfee148bbb6b080f8673d8907c5857c6654aff3c5b08d536fdd",
+   "httpStatus": 200,
+   "byteLength": 440733,
+   "fetchedUtc": "2026-09-13T00:36:50Z",
+   "license": "CC BY-SA 4.0 (Wikipedia)",
+   "excerpts": [
+    {
+     "id": "ex-gumi-geo",
+     "text": "36.119469; 128.344381",
+     "locator": "표시 좌표 (class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-sangju",
+   "title": "상주시",
+   "publisher": "한국어 위키백과",
+   "url": "https://ko.wikipedia.org/wiki/상주시",
+   "rawFile": "raw/kowiki-sangju.html",
+   "sha256": "e668bbcc10e96b235fb9c5bb7ef8d641be9f1a07b6c1098db1bdfcc9d84e8b8d",
+   "httpStatus": 200,
+   "byteLength": 440941,
+   "fetchedUtc": "2026-09-13T00:36:51Z",
+   "license": "CC BY-SA 4.0 (Wikipedia)",
+   "excerpts": [
+    {
+     "id": "ex-sangju-geo",
+     "text": "36.4107986; 128.1590393",
+     "locator": "표시 좌표 (class=\"geo\")"
+    }
+   ]
+  }
+ ],
+ "entities": [
+  {
+   "id": "polity-silla",
+   "type": "Polity",
+   "label": "신라"
+  },
+  {
+   "id": "polity-goguryeo",
+   "type": "Polity",
+   "label": "고구려"
+  },
+  {
+   "id": "polity-baekje",
+   "type": "Polity",
+   "label": "백제"
+  },
+  {
+   "id": "place-gyeongdo-silla",
+   "type": "Place",
+   "label": "신라 왕경(京都·京師)"
+  },
+  {
+   "id": "place-gungnaeseong",
+   "type": "Place",
+   "label": "국내성(고구려 도읍)"
+  },
+  {
+   "id": "place-pyongyang",
+   "type": "Place",
+   "label": "평양(고구려 도읍)"
+  },
+  {
+   "id": "place-byeokgolje",
+   "type": "Place",
+   "label": "벽골제(碧骨池·碧骨堤)"
+  },
+  {
+   "id": "place-sije",
+   "type": "Place",
+   "label": "시제(矢堤)"
+  },
+  {
+   "id": "place-cheongje",
+   "type": "Place",
+   "label": "청제(菁堤)·영읍곡 대오"
+  },
+  {
+   "id": "place-yeongdongri",
+   "type": "Place",
+   "label": "영동리촌(另冬里村) 오(塢)"
+  },
+  {
+   "id": "place-ilseongun",
+   "type": "Place",
+   "label": "일선군(一善郡)"
+  },
+  {
+   "id": "place-sabeolgun",
+   "type": "Place",
+   "label": "사벌군(沙伐郡)"
+  },
+  {
+   "id": "place-wiryeseong",
+   "type": "Place",
+   "label": "백제 한성기 도읍(慰禮城)"
+  },
+  {
+   "id": "place-cheonjeong-3gun",
+   "type": "Place",
+   "label": "천정·비열홀·각련 세 군"
+  },
+  {
+   "id": "place-sillaguk-seo",
+   "type": "Place",
+   "label": "신라 나라 서쪽(國西)"
+  },
+  {
+   "id": "place-baekje-guk-dong",
+   "type": "Place",
+   "label": "백제 나라 동쪽(國東)"
+  },
+  {
+   "id": "place-goguryeo-guk-nam",
+   "type": "Place",
+   "label": "고구려 나라 남쪽(國南)"
+  },
+  {
+   "id": "event-ced-e020",
+   "type": "Event",
+   "label": "백제의 권농상 사자 파견 (20)"
+  },
+  {
+   "id": "event-ced-e144",
+   "type": "Event",
+   "label": "주군 제방 수리와 농지 개척 명령 (144)"
+  },
+  {
+   "id": "event-ced-e194",
+   "type": "Event",
+   "label": "고구려 진대법 제정 (194)"
+  },
+  {
+   "id": "event-ced-e330",
+   "type": "Event",
+   "label": "벽골지 개착 (330)"
+  },
+  {
+   "id": "event-ced-e429",
+   "type": "Event",
+   "label": "시제(矢堤) 축조 (429)"
+  },
+  {
+   "id": "event-ced-e490",
+   "type": "Event",
+   "label": "경사(京師) 시장 개설 (490)"
+  },
+  {
+   "id": "event-ced-e502",
+   "type": "Event",
+   "label": "우경 시행 (502)"
+  },
+  {
+   "id": "event-ced-e509",
+   "type": "Event",
+   "label": "경도 동시 설치 (509)"
+  },
+  {
+   "id": "event-ced-e536",
+   "type": "Event",
+   "label": "영읍곡 대오(大塢) 축조와 병진명 비 (536)"
+  },
+  {
+   "id": "event-ced-e578",
+   "type": "Event",
+   "label": "영동리촌 오(塢) 축조와 무술명 오작비 (578)"
+  },
+  {
+   "id": "event-ced-e695",
+   "type": "Event",
+   "label": "서시·남시 설치 (695)"
+  },
+  {
+   "id": "event-ced-e790",
+   "type": "Event",
+   "label": "벽골제 증축 (790)"
+  },
+  {
+   "id": "event-ced-e798",
+   "type": "Event",
+   "label": "청제(菁堤) 수리와 정원명 비 (798)"
+  },
+  {
+   "id": "event-ced-d059",
+   "type": "Event",
+   "label": "고구려 도성 홍수 (59)"
+  },
+  {
+   "id": "event-ced-d100",
+   "type": "Event",
+   "label": "신라 경도 지진 (100)"
+  },
+  {
+   "id": "event-ced-d221",
+   "type": "Event",
+   "label": "백제 나라 동쪽 홍수와 산사태 (221)"
+  },
+  {
+   "id": "event-ced-d304",
+   "type": "Event",
+   "label": "신라 경도 지진 (304)"
+  },
+  {
+   "id": "event-ced-d465",
+   "type": "Event",
+   "label": "사벌군 황충 피해 (465)"
+  },
+  {
+   "id": "event-ced-d521",
+   "type": "Event",
+   "label": "백제 황충·기근과 신라로의 유망 (521)"
+  },
+  {
+   "id": "event-ced-d535",
+   "type": "Event",
+   "label": "고구려 나라 남쪽 홍수 (535)"
+  },
+  {
+   "id": "event-ced-d589",
+   "type": "Event",
+   "label": "신라 나라 서쪽 대홍수와 진휼 (589)"
+  },
+  {
+   "id": "event-ced-d657",
+   "type": "Event",
+   "label": "일선군 홍수 (657)"
+  },
+  {
+   "id": "event-ced-d669",
+   "type": "Event",
+   "label": "천정·비열홀·각련 세 군의 기근과 진휼 (669)"
+  },
+  {
+   "id": "event-ced-d779",
+   "type": "Event",
+   "label": "신라 경도 지진 (779)"
+  },
+  {
+   "id": "event-ced-d796",
+   "type": "Event",
+   "label": "경도 기근·역병과 창고 진휼 (796)"
+  },
+  {
+   "id": "group-cheongje-536-labor",
+   "type": "Group",
+   "label": "영읍곡 대오 공사의 작인(作人)"
+  },
+  {
+   "id": "group-yeongdongri-578-labor",
+   "type": "Group",
+   "label": "영동리촌 오 공사의 역부"
+  },
+  {
+   "id": "group-cheongje-798-labor",
+   "type": "Group",
+   "label": "청제 수리 공사의 부척·법공부"
+  },
+  {
+   "id": "place-namsansinseong",
+   "type": "Place",
+   "label": "남산신성(南山新城)"
+  },
+  {
+   "id": "place-haseulla",
+   "type": "Place",
+   "label": "하슬라(何瑟羅)"
+  },
+  {
+   "id": "event-ced-e041bc",
+   "type": "Event",
+   "label": "혁거세의 6부 순행과 권농 (기원전 41)"
+  },
+  {
+   "id": "event-ced-e663",
+   "type": "Event",
+   "label": "남산신성 장창 축조 (663)"
+  },
+  {
+   "id": "event-ced-e880",
+   "type": "Event",
+   "label": "왕경의 기와집·숯불과 시정 (880)"
+  },
+  {
+   "id": "event-ced-d397",
+   "type": "Event",
+   "label": "하슬라의 가뭄·황충과 흉년 구제 (397)"
+  },
+  {
+   "id": "event-ced-d628",
+   "type": "Event",
+   "label": "큰 가뭄과 시장 옮기기·기우 (628)"
+  },
+  {
+   "id": "event-ced-d817",
+   "type": "Event",
+   "label": "굶어 죽는 이가 많아 주군 창고를 열다 (817)"
+  }
+ ],
+ "claims": [
+  {
+   "id": "claim-ced-e020-time",
+   "subject": "event-ced-e020",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三月",
+    "year": 20,
+    "precision": "month",
+    "earliest": 20,
+    "latest": 20
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_023_0020_0540",
+   "quote": "三月, 發使勸農桑"
+  },
+  {
+   "id": "claim-ced-e020-act",
+   "subject": "event-ced-e020",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-wiryeseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_023_0020_0540",
+   "quote": "發使勸農桑, 其以不急之事擾民者, 皆除之",
+   "note": "온조왕 38년 3월, 사자를 보내 농상을 권하고 급하지 않은 일로 백성을 번거롭게 하는 것을 없앴다"
+  },
+  {
+   "id": "claim-ced-e144-time",
+   "subject": "event-ced-e144",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十一年, 春二月",
+    "year": 144,
+    "precision": "month",
+    "earliest": 144,
+    "latest": 144
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0080_0180",
+   "quote": "十一年, 春二月, 下令"
+  },
+  {
+   "id": "claim-ced-e144-act",
+   "subject": "event-ced-e144",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0080_0180",
+   "quote": "諸州郡修完堤坊, 廣闢田野",
+   "note": "여러 주군에 제방을 수리하고 전야를 널리 개간하게 한 명령"
+  },
+  {
+   "id": "claim-ced-e194-time",
+   "subject": "event-ced-e194",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "冬十月",
+    "year": 194,
+    "precision": "month",
+    "earliest": 194,
+    "latest": 194
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_016_0030_0140",
+   "quote": "冬十月, 王畋于質陽"
+  },
+  {
+   "id": "claim-ced-e194-act",
+   "subject": "event-ced-e194",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "冬十月",
+    "year": 194,
+    "precision": "month",
+    "earliest": 194,
+    "latest": 194
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_016_0030_0140",
+   "quote": "命有司, 每年自春三月, 至秋七月, 出官糓, 以百姓家口多小, 賑貸有差, 至冬十月還納, 以爲恒式",
+   "note": "해마다 3월부터 7월까지 관곡을 내어 가구 수에 따라 차등 대여하고 10월에 갚게 한 상례(진대법)"
+  },
+  {
+   "id": "claim-ced-e194-place",
+   "subject": "event-ced-e194",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gungnaeseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_016_0030_0140",
+   "quote": "仍命内外所司, 愽問鰥寡孤獨老病貧乏不能自存者, 救恤之",
+   "note": "왕이 안팎의 관사에 명해 구휼하게 하였다. 인용문에는 장소가 적혀 있지 않다. 고국천왕 재위기 도읍이 국내성이라는 일반 사실로 연결한 것이며, 좌표 근거는 위키백과 발췌다."
+  },
+  {
+   "id": "claim-ced-e330-time",
+   "subject": "event-ced-e330",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十一年",
+    "year": 330,
+    "precision": "year",
+    "earliest": 330,
+    "latest": 330
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0100_0100",
+   "quote": "二十一年, 始開碧骨池"
+  },
+  {
+   "id": "claim-ced-e330-act",
+   "subject": "event-ced-e330",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-byeokgolje"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0100_0100",
+   "quote": "始開碧骨池, 岸長一千八百歩",
+   "note": "처음으로 벽골지를 열었고 둑 길이가 1800보였다"
+  },
+  {
+   "id": "claim-ced-e429-time",
+   "subject": "event-ced-e429",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十三年",
+    "year": 429,
+    "precision": "year",
+    "earliest": 429,
+    "latest": 429
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0040_0090",
+   "quote": "十三年, 新築矢堤"
+  },
+  {
+   "id": "claim-ced-e429-act",
+   "subject": "event-ced-e429",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sije"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0040_0090",
+   "quote": "新築矢堤, 岸長二千一百七十歩",
+   "note": "둑 길이 2170보의 시제를 새로 쌓았다"
+  },
+  {
+   "id": "claim-ced-e490-time",
+   "subject": "event-ced-e490",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三月",
+    "year": 490,
+    "precision": "month",
+    "earliest": 490,
+    "latest": 490
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0060_0390",
+   "quote": "三月, 龍見鄒羅井"
+  },
+  {
+   "id": "claim-ced-e490-act",
+   "subject": "event-ced-e490",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gyeongdo-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0060_0390",
+   "quote": "初開京師市■, 以通四方之貨",
+   "note": "처음으로 서울에 시장을 열어 사방의 물화를 통하게 하였다"
+  },
+  {
+   "id": "claim-ced-e502-time",
+   "subject": "event-ced-e502",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三月",
+    "year": 502,
+    "precision": "month",
+    "earliest": 502,
+    "latest": 502
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0020_0050",
+   "quote": "三月, 分命州郡主勸農"
+  },
+  {
+   "id": "claim-ced-e502-act",
+   "subject": "event-ced-e502",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0020_0050",
+   "quote": "分命州郡主勸農, 始用牛耕",
+   "note": "주군의 장에게 나누어 명해 농사를 권하고, 처음으로 소로 밭을 갈게 하였다"
+  },
+  {
+   "id": "claim-ced-e509-time",
+   "subject": "event-ced-e509",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十年, 春正月",
+    "year": 509,
+    "precision": "month",
+    "earliest": 509,
+    "latest": 509
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0020_0130",
+   "quote": "十年, 春正月, 置京都東市"
+  },
+  {
+   "id": "claim-ced-e509-act",
+   "subject": "event-ced-e509",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gyeongdo-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0020_0130",
+   "quote": "置京都東市",
+   "note": "서울에 동시를 두었다"
+  },
+  {
+   "id": "claim-ced-e536-time",
+   "subject": "event-ced-e536",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "丙辰年二月八日",
+    "year": 536,
+    "precision": "day",
+    "earliest": 536,
+    "latest": 536
+   },
+   "sourceId": "src-geumseok-gskh_003_0010_0100",
+   "citesChunk": "chunk_geumseok-gskh_003_0010_0100_gskh_003_0010_0100_0020",
+   "quote": "丙辰年二月八日另邑谷"
+  },
+  {
+   "id": "claim-ced-e536-act",
+   "subject": "event-ced-e536",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-cheongje"
+   },
+   "sourceId": "src-geumseok-gskh_003_0010_0100",
+   "citesChunk": "chunk_geumseok-gskh_003_0010_0100_gskh_003_0010_0100_0020",
+   "quote": "丙辰年二月八日, 另邑谷大塢",
+   "note": "병진년 2월 8일 영읍곡의 큰 저수지"
+  },
+  {
+   "id": "claim-ced-e578-time",
+   "subject": "event-ced-e578",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "戊戌年十一月朔十四日",
+    "year": 578,
+    "precision": "day",
+    "earliest": 578,
+    "latest": 578
+   },
+   "sourceId": "src-geumseok-gskh_003_0010_0070",
+   "citesChunk": "chunk_geumseok-gskh_003_0010_0070_gskh_003_0010_0070_0020",
+   "quote": "戊戌年十一月朔十四日另冬里村且只▨塢作記之"
+  },
+  {
+   "id": "claim-ced-e578-act",
+   "subject": "event-ced-e578",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-yeongdongri"
+   },
+   "sourceId": "src-geumseok-gskh_003_0010_0070",
+   "citesChunk": "chunk_geumseok-gskh_003_0010_0070_gskh_003_0010_0070_0020",
+   "quote": "另冬里村, 且只▨塢, 作記之",
+   "note": "영동리촌의 차지▨오를 만들고 기록한다"
+  },
+  {
+   "id": "claim-ced-e695-time",
+   "subject": "event-ced-e695",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 695
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0030_0120",
+   "quote": "置西·南二市"
+  },
+  {
+   "id": "claim-ced-e695-act",
+   "subject": "event-ced-e695",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gyeongdo-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0030_0120",
+   "quote": "置西·南二市",
+   "note": "서시와 남시 두 시장을 두었다"
+  },
+  {
+   "id": "claim-ced-e790-time",
+   "subject": "event-ced-e790",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "六年, 春正月",
+    "year": 790,
+    "precision": "month",
+    "earliest": 790,
+    "latest": 790
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0020_0280",
+   "quote": "六年, 春正月, 以宗基爲侍中"
+  },
+  {
+   "id": "claim-ced-e790-act",
+   "subject": "event-ced-e790",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-byeokgolje"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0020_0280",
+   "quote": "増築碧骨堤, 徴全州等七州人興役",
+   "note": "벽골제를 증축하며 전주 등 일곱 주 사람을 징발해 역을 일으켰다"
+  },
+  {
+   "id": "claim-ced-e798-time",
+   "subject": "event-ced-e798",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "貞元十四年戊寅四月十三日",
+    "year": 798,
+    "precision": "day",
+    "earliest": 798,
+    "latest": 798
+   },
+   "sourceId": "src-geumseok-gskh_005_0010_0241",
+   "citesChunk": "chunk_geumseok-gskh_005_0010_0241_gskh_005_0010_0241_0020",
+   "quote": "貞元十四年戊寅四月十三日, 菁堤治記之"
+  },
+  {
+   "id": "claim-ced-e798-act",
+   "subject": "event-ced-e798",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-cheongje"
+   },
+   "sourceId": "src-geumseok-gskh_005_0010_0241",
+   "citesChunk": "chunk_geumseok-gskh_005_0010_0241_gskh_005_0010_0241_0020",
+   "quote": "謂洑堤傷故, 所內使以見令賜矣",
+   "note": "못둑이 상하였다 하므로 소내사를 보내어 보게 하고 명을 내렸다"
+  },
+  {
+   "id": "claim-ced-d059-time",
+   "subject": "event-ced-d059",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "秋七月",
+    "year": 59,
+    "precision": "month",
+    "earliest": 59,
+    "latest": 59
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_015_0020_0060",
+   "quote": "秋七月, 京都大水"
+  },
+  {
+   "id": "claim-ced-d059-act",
+   "subject": "event-ced-d059",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gungnaeseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_015_0020_0060",
+   "quote": "京都大水, 漂沒民屋",
+   "note": "도성에 큰물이 나 백성의 집이 떠내려가고 잠겼다"
+  },
+  {
+   "id": "claim-ced-d100-time",
+   "subject": "event-ced-d100",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "冬十月",
+    "year": 100,
+    "precision": "month",
+    "earliest": 100,
+    "latest": 100
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0060_0230",
+   "quote": "冬十月, 京都地震"
+  },
+  {
+   "id": "claim-ced-d100-act",
+   "subject": "event-ced-d100",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gyeongdo-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0060_0230",
+   "quote": "京都地震, 倒民屋, 有死者",
+   "note": "서울에 지진이 나 백성의 집이 넘어지고 죽은 이가 있었다"
+  },
+  {
+   "id": "claim-ced-d221-time",
+   "subject": "event-ced-d221",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "八年, 夏五月",
+    "year": 221,
+    "precision": "month",
+    "earliest": 221,
+    "latest": 221
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_024_0020_0060",
+   "quote": "八年, 夏五月, 國東大水"
+  },
+  {
+   "id": "claim-ced-d221-act",
+   "subject": "event-ced-d221",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-baekje-guk-dong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_024_0020_0060",
+   "quote": "國東大水, 山崩四十餘所",
+   "note": "나라 동쪽에 큰물이 나 마흔 곳 넘게 산이 무너졌다"
+  },
+  {
+   "id": "claim-ced-d304-time",
+   "subject": "event-ced-d304",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "九月",
+    "year": 304,
+    "precision": "month",
+    "earliest": 304,
+    "latest": 304
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0090_0090",
+   "quote": "九月, 京都地震"
+  },
+  {
+   "id": "claim-ced-d304-act",
+   "subject": "event-ced-d304",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gyeongdo-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0090_0090",
+   "quote": "京都地震, 壊民屋, 有死者",
+   "note": "서울에 지진이 나 백성의 집이 부서지고 죽은 이가 있었다"
+  },
+  {
+   "id": "claim-ced-d465-time",
+   "subject": "event-ced-d465",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "五月",
+    "year": 465,
+    "precision": "month",
+    "earliest": 465,
+    "latest": 465
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0050_0100",
+   "quote": "五月, 沙伐郡蝗"
+  },
+  {
+   "id": "claim-ced-d465-act",
+   "subject": "event-ced-d465",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sabeolgun"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0050_0100",
+   "quote": "沙伐郡蝗",
+   "note": "사벌군에 누리가 났다"
+  },
+  {
+   "id": "claim-ced-d521-time",
+   "subject": "event-ced-d521",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "秋八月",
+    "year": 521,
+    "precision": "month",
+    "earliest": 521,
+    "latest": 521
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0190",
+   "quote": "秋八月, 蝗害糓, 民饑"
+  },
+  {
+   "id": "claim-ced-d521-act",
+   "subject": "event-ced-d521",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-baekje"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0190",
+   "quote": "蝗害糓, 民饑, 亡入新羅者九百戶",
+   "note": "누리가 곡식을 해쳐 백성이 굶주리고 신라로 도망해 들어간 자가 900호였다. 원문에 피해 지역 표기가 없어 장소를 지정하지 않는다."
+  },
+  {
+   "id": "claim-ced-d521-ho",
+   "subject": "event-ced-d521",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 900,
+    "unit": "戶"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0050_0190",
+   "quote": "亡入新羅者九百戶",
+   "note": "신라로 도망해 들어간 유민의 규모 900호다. 어느 지역의 총 호수가 아니며, 원문은 떠난 지역을 적지 않았다."
+  },
+  {
+   "id": "claim-ced-d535-time",
+   "subject": "event-ced-d535",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "夏五月",
+    "year": 535,
+    "precision": "month",
+    "earliest": 535,
+    "latest": 535
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0040_0110",
+   "quote": "夏五月, 國南大水"
+  },
+  {
+   "id": "claim-ced-d535-act",
+   "subject": "event-ced-d535",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-goguryeo-guk-nam"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0040_0110",
+   "quote": "國南大水, 漂沒民屋, 死者二百餘人",
+   "note": "나라 남쪽에 큰물이 나 민가가 떠내려가고 200여 명이 죽었다"
+  },
+  {
+   "id": "claim-ced-d589-time",
+   "subject": "event-ced-d589",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "秋七月",
+    "year": 589,
+    "precision": "month",
+    "earliest": 589,
+    "latest": 589
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0060_0170",
+   "quote": "秋七月, 國西大水"
+  },
+  {
+   "id": "claim-ced-d589-act",
+   "subject": "event-ced-d589",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sillaguk-seo"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0060_0170",
+   "quote": "國西大水, 漂沒人戶三萬三百六十, 死者二百餘人. 王發使賑恤之",
+   "note": "나라 서쪽에 큰물이 나 3만 360호가 떠내려가고 200여 명이 죽자 왕이 사자를 보내 진휼하였다"
+  },
+  {
+   "id": "claim-ced-d589-ho",
+   "subject": "event-ced-d589",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 30360,
+    "unit": "戶"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0060_0170",
+   "quote": "漂沒人戶三萬三百六十",
+   "note": "큰물에 떠내려가고 잠긴 인호 3만 360. 유실된 호수이지 나라 서쪽 지역의 총 호수가 아니다."
+  },
+  {
+   "id": "claim-ced-d657-time",
+   "subject": "event-ced-d657",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "四年, 秋七月",
+    "year": 657,
+    "precision": "month",
+    "earliest": 657,
+    "latest": 657
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_005_0040_0170",
+   "quote": "四年, 秋七月, 一善郡大水"
+  },
+  {
+   "id": "claim-ced-d657-act",
+   "subject": "event-ced-d657",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-ilseongun"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_005_0040_0170",
+   "quote": "一善郡大水, 溺死者三百餘人",
+   "note": "일선군에 큰물이 나 빠져 죽은 이가 300여 명이었다"
+  },
+  {
+   "id": "claim-ced-d669-time",
+   "subject": "event-ced-d669",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "夏五月",
+    "year": 669,
+    "precision": "month",
+    "earliest": 669,
+    "latest": 669
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_006_0020_0930",
+   "quote": "夏五月, 泉井·比列忽·各連等三郡民饑"
+  },
+  {
+   "id": "claim-ced-d669-act",
+   "subject": "event-ced-d669",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-cheonjeong-3gun"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_006_0020_0930",
+   "quote": "泉井·比列忽·各連等三郡民饑, 發倉賑恤",
+   "note": "천정·비열홀·각련 세 군의 백성이 굶주려 창고를 열어 진휼하였다"
+  },
+  {
+   "id": "claim-ced-d779-time",
+   "subject": "event-ced-d779",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十五年, 春三月",
+    "year": 779,
+    "precision": "month",
+    "earliest": 779,
+    "latest": 779
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_009_0040_0550",
+   "quote": "十五年, 春三月, 京都地震"
+  },
+  {
+   "id": "claim-ced-d779-act",
+   "subject": "event-ced-d779",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gyeongdo-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_009_0040_0550",
+   "quote": "京都地震, 壞民屋, 死者百餘人",
+   "note": "서울에 지진이 나 백성의 집이 무너지고 100여 명이 죽었다"
+  },
+  {
+   "id": "claim-ced-d796-time",
+   "subject": "event-ced-d796",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十二年",
+    "year": 796,
+    "precision": "year",
+    "earliest": 796,
+    "latest": 796
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0020_0580",
+   "quote": "十二年, 春, 京都飢疫"
+  },
+  {
+   "id": "claim-ced-d796-act",
+   "subject": "event-ced-d796",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gyeongdo-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0020_0580",
+   "quote": "京都飢疫, 王發倉廪賑恤之",
+   "note": "서울에 굶주림과 돌림병이 돌자 왕이 창고를 열어 진휼하였다"
+  },
+  {
+   "id": "claim-ced-e536-labor",
+   "subject": "group-cheongje-536-labor",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "event-ced-e536"
+   },
+   "sourceId": "src-geumseok-gskh_003_0010_0100",
+   "citesChunk": "chunk_geumseok-gskh_003_0010_0100_gskh_003_0010_0100_0020",
+   "quote": "作人七千人",
+   "note": "비에 새긴 작인 7000명. 수치는 사실의 what·note 로만 옮겼고 행정 단위 술어로 적지 않았다."
+  },
+  {
+   "id": "claim-ced-e578-labor",
+   "subject": "group-yeongdongri-578-labor",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "event-ced-e578"
+   },
+   "sourceId": "src-geumseok-gskh_003_0010_0070",
+   "citesChunk": "chunk_geumseok-gskh_003_0010_0070_gskh_003_0010_0070_0020",
+   "quote": "此作起數者, 三百十二人, 功夫如. 十三日了作事之",
+   "note": "일으킨 사람 312명이 13일 만에 마쳤다는 기록. 수치는 what·note 로만 옮겼다."
+  },
+  {
+   "id": "claim-ced-e798-labor",
+   "subject": "group-cheongje-798-labor",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "event-ced-e798"
+   },
+   "sourceId": "src-geumseok-gskh_005_0010_0241",
+   "citesChunk": "chunk_geumseok-gskh_005_0010_0241_gskh_005_0010_0241_0020",
+   "quote": "都合斧尺百卅六, 法功夫一万四千百卌人",
+   "note": "부척 136, 법공부 14140. 法功夫 를 사람 수가 아니라 연인원(일한 날 수의 합)으로 읽는 견해가 있어 인원으로 단정하지 않는다."
+  },
+  {
+   "id": "claim-ced-d304b-act",
+   "subject": "event-ced-d304",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0090_0080",
+   "quote": "七年, 秋八月, 地震, 泉湧",
+   "note": "같은 해 8월 지진으로 샘이 솟았다는 별개 기사(기림이사금 7년 8월)"
+  },
+  {
+   "id": "claim-ced-d465b-act",
+   "subject": "event-ced-d465",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0050_0090",
+   "quote": "八年, 夏四月, 大水, 山崩一十七所",
+   "note": "같은 해 4월 큰물로 열일곱 곳의 산이 무너졌다는 별개 기사"
+  },
+  {
+   "id": "claim-ced-e041bc-time",
+   "subject": "event-ced-e041bc",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十七年",
+    "year": -41,
+    "precision": "year",
+    "earliest": -41,
+    "latest": -41
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0070",
+   "quote": "十七年, 王巡撫六部"
+  },
+  {
+   "id": "claim-ced-e041bc-act",
+   "subject": "event-ced-e041bc",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0070",
+   "quote": "王巡撫六部, 妃閼英從焉. 勸督農桑, 以盡地利",
+   "note": "왕이 6부를 순행해 위무하고 농사와 누에치기를 권해 땅의 이로움을 다하게 하였다"
+  },
+  {
+   "id": "claim-ced-e663-time",
+   "subject": "event-ced-e663",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三年, 春正月",
+    "year": 663,
+    "precision": "month",
+    "earliest": 663,
+    "latest": 663
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_006_0020_0320",
+   "quote": "三年, 春正月, 作長倉扵南山新城"
+  },
+  {
+   "id": "claim-ced-e663-act",
+   "subject": "event-ced-e663",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-namsansinseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_006_0020_0320",
+   "quote": "作長倉扵南山新城",
+   "note": "남산신성에 긴 창고(長倉)를 지었다 — 왕경의 곡식 저장 시설"
+  },
+  {
+   "id": "claim-ced-e880-time",
+   "subject": "event-ced-e880",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "九月九日",
+    "year": 880,
+    "precision": "day",
+    "earliest": 880,
+    "latest": 880
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_011_0050_0170",
+   "quote": "九月九日, 王與左右, 登月上樓四望"
+  },
+  {
+   "id": "claim-ced-e880-act",
+   "subject": "event-ced-e880",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-gyeongdo-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_011_0050_0170",
+   "quote": "京都民屋相屬, 歌吹連聲",
+   "note": "월상루에서 바라본 서울은 민가가 잇달아 있고 노랫소리가 이어졌다"
+  },
+  {
+   "id": "claim-ced-e880-life",
+   "subject": "event-ced-e880",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_011_0050_0170",
+   "quote": "覆屋以瓦不以茅, 炊飯以炭不以薪",
+   "note": "지붕을 띠가 아니라 기와로 덮고 밥을 섶이 아니라 숯으로 짓는다는 말"
+  },
+  {
+   "id": "claim-ced-d397-time",
+   "subject": "event-ced-d397",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "四十二年, 秋七月",
+    "year": 397,
+    "precision": "month",
+    "earliest": 397,
+    "latest": 397
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0020_0260",
+   "quote": "四十二年, 秋七月, 北邊何瑟羅旱·蝗"
+  },
+  {
+   "id": "claim-ced-d397-act",
+   "subject": "event-ced-d397",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-haseulla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0020_0260",
+   "quote": "北邊何瑟羅旱·蝗, 年荒民飢. 曲赦囚徒, 復一年租調",
+   "note": "북쪽 변경 하슬라에 가뭄과 누리가 들어 흉년이 지고 백성이 굶주리자 죄수를 사면하고 한 해 조조를 면제했다"
+  },
+  {
+   "id": "claim-ced-d628-time",
+   "subject": "event-ced-d628",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 628
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0060_0690",
+   "quote": "夏大旱, 移市, 畫龍祈雨",
+   "note": "이 조각에는 연 표기가 없어 시간 주장을 year 형으로 적었다(date.raw 0628)"
+  },
+  {
+   "id": "claim-ced-d628-act",
+   "subject": "event-ced-d628",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0060_0690",
+   "quote": "夏大旱, 移市, 畫龍祈雨",
+   "note": "여름에 크게 가물자 시장을 옮기고 용을 그려 비를 빌었다"
+  },
+  {
+   "id": "claim-ced-d817-time",
+   "subject": "event-ced-d817",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "冬十月",
+    "year": 817,
+    "precision": "month",
+    "earliest": 817,
+    "latest": 817
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0050_0380",
+   "quote": "冬十月, 人多飢死"
+  },
+  {
+   "id": "claim-ced-d817-act",
+   "subject": "event-ced-d817",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0050_0380",
+   "quote": "人多飢死, 教州郡, 發倉穀存恤",
+   "note": "굶어 죽는 사람이 많자 주군에 명해 창고 곡식을 내어 구제하게 하였다"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "scene-ced-eco-429",
+   "eventId": "event-ced-e429",
+   "title": "시제(矢堤) 축조 — 둑 길이 2170보 (429)",
+   "startYear": 429,
+   "endYear": 429,
+   "kind": "construction",
+   "summary": "429년 신라가 둑 길이 2170보의 시제를 새로 쌓았다. 삼국사기는 위치를 적지 않았다.",
+   "dateClaimIds": [
+    "claim-ced-e429-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-e429-act"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "economy",
+   "region": "south",
+   "decade": 420,
+   "sceneFunction": "irrigation",
+   "participantGroups": [
+    {
+     "entityId": "polity-silla",
+     "label": "신라",
+     "role": "제방을 쌓은 주체",
+     "stance": "시공",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-e429-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 429,
+    "to": null,
+    "basisClaimIds": [
+     "claim-ced-e429-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-ced-eco-798",
+   "eventId": "event-ced-e798",
+   "title": "청제(菁堤) 수리 — 절화·압훼 두 군의 부역 (798)",
+   "startYear": 798,
+   "endYear": 798,
+   "kind": "construction",
+   "summary": "798년 4월 13일 못둑이 상하자 소내사를 보내 살피게 하고 절화군과 압훼군 사람을 일으켜 청제를 고쳤다. 부척 136과 법공부 14140을 비에 새겼는데, 법공부는 사람 수가 아니라 연인원으로 읽는 견해가 있다.",
+   "dateClaimIds": [
+    "claim-ced-e798-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-e798-act",
+    "claim-ced-e798-labor"
+   ],
+   "place": {
+    "label": "청제(菁堤)와 청제비",
+    "medium": "land",
+    "precision": "site",
+    "lon": 128.94083,
+    "lat": 35.92472,
+    "claimIds": [
+     "claim-ced-e798-act"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-cheongjebi"
+    ],
+    "coordinateNote": "한국어 위키백과 「영천 청제비」 문서 머리의 표시 좌표. 비와 청못이 함께 있는 지점이다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "economy",
+   "region": "south",
+   "decade": 790,
+   "sceneFunction": "irrigation",
+   "participantGroups": [
+    {
+     "label": "절화군·압훼군에서 일으킨 역부",
+     "role": "제방을 고친 쪽 — 비의 法功夫 14140은 연인원 해석이 있어 인원을 비워 둔다",
+     "stance": "부역",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-e798-labor"
+     ]
+    },
+    {
+     "label": "소내사·상간 등 감독 관인",
+     "role": "공사를 살피고 지휘한 쪽",
+     "stance": "감독",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-e798-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 798,
+    "to": null,
+    "basisClaimIds": [
+     "claim-ced-e798-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-ced-dis-059",
+   "eventId": "event-ced-d059",
+   "title": "도성 홍수로 민가가 떠내려가다 — 국내성 (59)",
+   "startYear": 59,
+   "endYear": 59,
+   "kind": "disaster",
+   "summary": "59년 7월 고구려 도성에 큰물이 나서 백성의 집이 떠내려가고 물에 잠겼다.",
+   "dateClaimIds": [
+    "claim-ced-d059-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-d059-act"
+   ],
+   "place": {
+    "label": "고구려 도성(국내성)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.17861,
+    "lat": 41.12083,
+    "claimIds": [
+     "claim-ced-d059-act"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-gungnae"
+    ],
+    "coordinateNote": "영어 위키백과 「Gungnae Fortress」 문서 머리의 표시 좌표. 태조대왕 때 고구려 도읍 국내성이다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "disaster",
+   "region": "north",
+   "decade": 50,
+   "participantGroups": [
+    {
+     "label": "집이 떠내려간 도성 주민",
+     "role": "피해를 입은 쪽",
+     "stance": "피해",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-ced-d059-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 59,
+    "to": 59,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-ced-dis-100",
+   "eventId": "event-ced-d100",
+   "title": "경도 지진으로 민가가 무너지다 — 신라 왕경 (100)",
+   "startYear": 100,
+   "endYear": 100,
+   "kind": "disaster",
+   "summary": "100년 10월 신라 서울에 지진이 나서 백성의 집이 넘어지고 죽은 사람이 나왔다.",
+   "dateClaimIds": [
+    "claim-ced-d100-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-d100-act"
+   ],
+   "place": {
+    "label": "신라 왕경(京都)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.217,
+    "lat": 35.85,
+    "claimIds": [
+     "claim-ced-d100-act"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-gyeongju"
+    ],
+    "coordinateNote": "영어 위키백과 「Gyeongju」 문서 머리의 표시 좌표. 신라 왕경(경주) 범위를 가리키는 개략 좌표다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "disaster",
+   "region": "south",
+   "decade": 100,
+   "participantGroups": [
+    {
+     "label": "집이 무너진 왕경 주민",
+     "role": "피해를 입은 쪽",
+     "stance": "피해",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-d100-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 100,
+    "to": 100,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-ced-dis-304",
+   "eventId": "event-ced-d304",
+   "title": "경도 지진과 우물 솟구침 — 신라 왕경 (304)",
+   "startYear": 304,
+   "endYear": 304,
+   "kind": "disaster",
+   "summary": "304년 8월 지진으로 샘이 솟구치고 9월 서울에 다시 지진이 나 백성의 집이 부서지고 죽은 사람이 나왔다.",
+   "dateClaimIds": [
+    "claim-ced-d304-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-d304-act",
+    "claim-ced-d304b-act"
+   ],
+   "place": {
+    "label": "신라 왕경(京都)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.217,
+    "lat": 35.85,
+    "claimIds": [
+     "claim-ced-d304-act"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-gyeongju"
+    ],
+    "coordinateNote": "영어 위키백과 「Gyeongju」 문서 머리의 표시 좌표. 신라 왕경(경주) 범위를 가리키는 개략 좌표다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "disaster",
+   "region": "south",
+   "decade": 300,
+   "participantGroups": [
+    {
+     "label": "집이 부서진 왕경 주민",
+     "role": "피해를 입은 쪽",
+     "stance": "피해",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-d304-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 304,
+    "to": 304,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-ced-dis-465",
+   "eventId": "event-ced-d465",
+   "title": "사벌군에 누리가 나다 — 상주 (465)",
+   "startYear": 465,
+   "endYear": 465,
+   "kind": "disaster",
+   "summary": "465년 5월 신라 사벌군에 누리 떼가 났다. 같은 해 4월에는 큰물로 열일곱 곳의 산이 무너졌다.",
+   "dateClaimIds": [
+    "claim-ced-d465-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-d465-act",
+    "claim-ced-d465b-act"
+   ],
+   "place": {
+    "label": "사벌군(沙伐郡)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.1590393,
+    "lat": 36.4107986,
+    "claimIds": [
+     "claim-ced-d465-act"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-sangju"
+    ],
+    "coordinateNote": "한국어 위키백과 「상주시」 문서 머리의 표시 좌표. 沙伐郡은 지금의 상주 일대로 비정된다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "disaster",
+   "region": "south",
+   "decade": 460,
+   "participantGroups": [
+    {
+     "label": "사벌군의 농민",
+     "role": "곡식을 잃은 쪽",
+     "stance": "피해",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-d465-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 465,
+    "to": 465,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-ced-dis-521",
+   "eventId": "event-ced-d521",
+   "title": "누리와 굶주림으로 900호가 신라로 넘어가다 — 백제 (521)",
+   "startYear": 521,
+   "endYear": 521,
+   "kind": "migration",
+   "summary": "521년 8월 백제에서 누리가 곡식을 해쳐 백성이 굶주렸고 900호가 신라로 도망해 들어갔다. 원문은 이들이 떠난 지역을 적지 않았다.",
+   "dateClaimIds": [
+    "claim-ced-d521-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-d521-act",
+    "claim-ced-d521-ho"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "disaster",
+   "region": "south",
+   "decade": 520,
+   "sceneFunction": "migration",
+   "participantGroups": [
+    {
+     "label": "신라로 넘어간 백제 유민",
+     "role": "굶주려 신라로 떠난 쪽 — 900호는 유민의 규모이지 어느 지역의 총 호수가 아니다",
+     "stance": "유망",
+     "side": "백제",
+     "count": 900,
+     "claimIds": [
+      "claim-ced-d521-ho"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 521,
+    "to": 521,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-ced-eco-663",
+   "eventId": "event-ced-e663",
+   "title": "남산신성에 장창을 짓다 — 신라 왕경 (663)",
+   "startYear": 663,
+   "endYear": 663,
+   "kind": "construction",
+   "summary": "663년 정월 신라가 남산신성에 긴 창고(長倉)를 지었다. 전쟁이 이어지던 때 왕경의 곡식을 쌓아 두는 시설이다.",
+   "dateClaimIds": [
+    "claim-ced-e663-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-e663-act"
+   ],
+   "place": {
+    "label": "남산신성(경주 남산)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.217,
+    "lat": 35.85,
+    "claimIds": [
+     "claim-ced-e663-act"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-gyeongju"
+    ],
+    "coordinateNote": "영어 위키백과 「Gyeongju」 문서 머리의 표시 좌표. 남산신성은 경주 남산에 있으나 이 좌표는 경주시 개략값이지 성터 지점이 아니다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "economy",
+   "region": "south",
+   "decade": 660,
+   "sceneFunction": "construction_site",
+   "participantGroups": [
+    {
+     "entityId": "polity-silla",
+     "label": "신라 조정",
+     "role": "창고를 지은 주체",
+     "stance": "시공",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-e663-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 663,
+    "to": null,
+    "basisClaimIds": [
+     "claim-ced-e663-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-ced-dis-397",
+   "eventId": "event-ced-d397",
+   "title": "하슬라의 가뭄과 누리 — 사면과 조조 면제 (397)",
+   "startYear": 397,
+   "endYear": 397,
+   "kind": "relief",
+   "summary": "397년 7월 신라 북쪽 변경 하슬라에 가뭄과 누리가 들어 흉년이 지고 백성이 굶주리자, 죄수를 사면하고 한 해의 조조를 면제해 주었다.",
+   "dateClaimIds": [
+    "claim-ced-d397-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-d397-act"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "disaster",
+   "region": "central",
+   "decade": 390,
+   "sceneFunction": "relief",
+   "participantGroups": [
+    {
+     "label": "굶주린 하슬라 백성",
+     "role": "흉년을 겪고 면세를 받은 쪽",
+     "stance": "피해",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-d397-act"
+     ]
+    },
+    {
+     "entityId": "polity-silla",
+     "label": "신라 조정",
+     "role": "사면과 면세를 집행한 쪽",
+     "stance": "구휼",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-d397-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 397,
+    "to": 397,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-ced-dis-628",
+   "eventId": "event-ced-d628",
+   "title": "큰 가뭄에 시장을 옮기고 용을 그려 비를 빌다 — 신라 (628)",
+   "startYear": 628,
+   "endYear": 628,
+   "kind": "ritual",
+   "summary": "628년 여름 크게 가물자 신라가 시장을 옮기고 용을 그려 비를 빌었다. 시장을 옮기는 것은 가뭄에 하던 의례다.",
+   "dateClaimIds": [
+    "claim-ced-d628-time"
+   ],
+   "actionClaimIds": [
+    "claim-ced-d628-act"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "disaster",
+   "region": "south",
+   "decade": 620,
+   "participantGroups": [
+    {
+     "entityId": "polity-silla",
+     "label": "신라 조정",
+     "role": "시장을 옮기고 기우를 행한 쪽",
+     "stance": "의례",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-ced-d628-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 628,
+    "to": 628,
+    "basisClaimIds": []
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "fact-ced-eco-020",
+   "category": "economy",
+   "region": "central",
+   "decade": 20,
+   "year": 20,
+   "yearVerbatim": "三月",
+   "placeLabel": "백제 한성기 도읍(위례성)",
+   "modernPlace": "서울·하남 일대",
+   "what": "백제가 사자를 보내 농사와 누에치기를 권하고, 급하지 않은 일로 백성을 부리는 것을 없앴다",
+   "claimIds": [
+    "claim-ced-e020-time",
+    "claim-ced-e020-act"
+   ],
+   "confidence": "medium",
+   "note": "한성기 도읍 위치 비정에 서울 풍납토성설·하남설 등이 갈려 좌표를 넣지 않았다.",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-144",
+   "category": "economy",
+   "region": "south",
+   "decade": 140,
+   "year": 144,
+   "yearVerbatim": "十一年, 春二月",
+   "placeLabel": "신라의 여러 주군(諸州郡)",
+   "modernPlace": "경상도 일원",
+   "what": "신라가 여러 주군에 제방을 손보고 들을 널리 개간하라고 명하고, 민간의 금은주옥 사용을 금하였다",
+   "claimIds": [
+    "claim-ced-e144-time",
+    "claim-ced-e144-act"
+   ],
+   "confidence": "medium",
+   "note": "명령이 미친 주군이 특정되지 않아 좌표를 넣지 않았다. 2세기 기년의 신빙성 논쟁이 있어 confidence medium. [중복: silla_gaya_early/fact-sgy-018 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-194",
+   "category": "economy",
+   "region": "north",
+   "decade": 190,
+   "year": 194,
+   "yearVerbatim": "冬十月",
+   "placeLabel": "국내성(고구려 도읍)",
+   "modernPlace": "중국 지린성 지안",
+   "what": "고구려가 봄 3월부터 가을 7월까지 관곡을 가구 수에 따라 빌려주고 10월에 갚게 하는 진대법을 상례로 정하였다",
+   "claimIds": [
+    "claim-ced-e194-time",
+    "claim-ced-e194-act",
+    "claim-ced-e194-place"
+   ],
+   "confidence": "high",
+   "note": "좌표는 194년(고국천왕 16년) 고구려 도읍인 국내성의 위키백과 표시 좌표다. 진대 시행 장소는 원문에 없고, claim-ced-e194-place 의 인용문에도 장소 표기가 없어 그 주장을 장소 근거로 읽어서는 안 된다. 갈래는 관곡 대여라는 생활·경제 제도의 성격을 보아 economy 로 두었고, 장면 기능만 relief 로 적었다. [중복: goguryeo_early/fact-gg-015 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 126.17861,
+   "lat": 41.12083,
+   "coordinateBasis": "src-enwiki-gungnae ex-gungnae-geo",
+   "persistence": {
+    "kind": "institution",
+    "from": 194,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-330",
+   "category": "economy",
+   "region": "south",
+   "decade": 330,
+   "year": 330,
+   "yearVerbatim": "二十一年",
+   "placeLabel": "벽골지(碧骨池)",
+   "modernPlace": "전북 김제 부량면",
+   "what": "둑 길이 1800보의 벽골지를 처음 열어 저수 시설을 만들었다",
+   "claimIds": [
+    "claim-ced-e330-time",
+    "claim-ced-e330-act"
+   ],
+   "confidence": "medium",
+   "note": "이미 있는 장면 scene-syj122-byeokgolje-330-790 이 이 공사를 다룬다. 새 장면을 만들지 않았다. 삼국사기는 신라 흘해이사금 21년 기사로 싣지만 당시 김제는 백제 영역이어서 주체 논쟁이 있다. 둑 길이 1800보는 인용한 act 주장의 원문에 들어 있고, 길이를 담을 전용 술어가 허용 목록에 없어 별도 literal 주장으로 적지 않았다.",
+   "sceneId": null,
+   "lon": 126.85444,
+   "lat": 35.75444,
+   "coordinateBasis": "src-kowiki-byeokgolje ex-byeokgolje-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 330,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-429",
+   "category": "economy",
+   "region": "south",
+   "decade": 420,
+   "year": 429,
+   "yearVerbatim": "十三年",
+   "placeLabel": "시제(矢堤)",
+   "modernPlace": "위치 미상",
+   "what": "신라가 둑 길이 2170보의 시제를 새로 쌓았다",
+   "claimIds": [
+    "claim-ced-e429-time",
+    "claim-ced-e429-act"
+   ],
+   "confidence": "high",
+   "note": "위치가 사료에 없어 좌표를 넣지 않았다.",
+   "sceneId": "scene-ced-eco-429",
+   "persistence": {
+    "kind": "facility",
+    "from": 429,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-490",
+   "category": "economy",
+   "region": "south",
+   "decade": 490,
+   "year": 490,
+   "yearVerbatim": "三月",
+   "placeLabel": "신라 왕경(京師)",
+   "modernPlace": "경북 경주",
+   "what": "신라가 서울에 처음으로 시장을 열어 사방의 물화를 통하게 하였다",
+   "claimIds": [
+    "claim-ced-e490-time",
+    "claim-ced-e490-act"
+   ],
+   "confidence": "high",
+   "note": "좌표는 왕경 전체를 가리키는 개략값이다. 시장 자리는 사료에 없다. [중복: silla_middle/fact-sm-013 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+   "persistence": {
+    "kind": "institution",
+    "from": 490,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-502",
+   "category": "economy",
+   "region": "south",
+   "decade": 500,
+   "year": 502,
+   "yearVerbatim": "三月",
+   "placeLabel": "신라의 여러 주군",
+   "modernPlace": "경상도 일원",
+   "what": "신라가 주군의 장에게 권농을 명하고 처음으로 소를 부려 논밭을 갈게 하였다",
+   "claimIds": [
+    "claim-ced-e502-time",
+    "claim-ced-e502-act"
+   ],
+   "confidence": "high",
+   "note": "시행 지역이 특정되지 않아 좌표와 장면을 만들지 않았다. [중복: silla_late/fact-sl-015 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-509",
+   "category": "economy",
+   "region": "south",
+   "decade": 500,
+   "year": 509,
+   "yearVerbatim": "十年, 春正月",
+   "placeLabel": "신라 왕경 동시(東市)",
+   "modernPlace": "경북 경주",
+   "what": "신라가 서울에 동시를 설치하였다",
+   "claimIds": [
+    "claim-ced-e509-time",
+    "claim-ced-e509-act"
+   ],
+   "confidence": "high",
+   "note": "좌표는 왕경 개략값이다. 직관지는 동시전을 지증왕 9년(508) 설치로 적어 1년 차이가 있다. [중복: silla_late/fact-sl-016 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+   "persistence": {
+    "kind": "institution",
+    "from": 509,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-536",
+   "category": "economy",
+   "region": "south",
+   "decade": 530,
+   "year": 536,
+   "yearVerbatim": "丙辰年二月八日",
+   "placeLabel": "영읍곡(另邑谷) 대오 — 청못",
+   "modernPlace": "경북 영천 도남동",
+   "what": "영읍곡에 큰 저수지를 쌓았고, 둑의 규모와 동원 인원 7000명을 비에 새겼다",
+   "claimIds": [
+    "claim-ced-e536-time",
+    "claim-ced-e536-act",
+    "claim-ced-e536-labor"
+   ],
+   "confidence": "high",
+   "note": "이미 있는 장면 scene-syj128-yeongcheon-cheongje-536 이 이 공사를 다룬다. 새 장면을 만들지 않았다. 판독에 이견이 있는 글자가 많다. 동원 인원 7000명은 참여 주장(claim-ced-e536-labor)의 인용으로만 남겼다.",
+   "sceneId": null,
+   "lon": 128.94083,
+   "lat": 35.92472,
+   "coordinateBasis": "src-kowiki-cheongjebi ex-cheongjebi-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 536,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-578",
+   "category": "economy",
+   "region": "south",
+   "decade": 570,
+   "year": 578,
+   "yearVerbatim": "戊戌年十一月朔十四日",
+   "placeLabel": "영동리촌(另冬里村) 오(塢)",
+   "modernPlace": "대구 일원(비정)",
+   "what": "영동리촌에 너비 20보·높이 5보4척·길이 50보의 저수지 둑을 312명이 13일 만에 쌓고 비에 새겼다",
+   "claimIds": [
+    "claim-ced-e578-time",
+    "claim-ced-e578-act",
+    "claim-ced-e578-labor"
+   ],
+   "confidence": "medium",
+   "note": "이미 있는 장면 scene-syj128-daegu-ojak 이 이 공사를 다룬다. 무술년을 518년으로 보는 설도 있어 confidence medium. 영동리촌 위치가 확정되지 않아 좌표를 넣지 않았다. 동원 인원 312명은 참여 주장(claim-ced-e578-labor)의 인용으로만 남겼다.",
+   "sceneId": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 578,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-695",
+   "category": "economy",
+   "region": "south",
+   "decade": 690,
+   "year": 695,
+   "yearVerbatim": "4년",
+   "placeLabel": "신라 왕경 서시·남시",
+   "modernPlace": "경북 경주",
+   "what": "신라가 서울에 서시와 남시 두 시장을 더 두었다",
+   "claimIds": [
+    "claim-ced-e695-time",
+    "claim-ced-e695-act"
+   ],
+   "confidence": "high",
+   "note": "이 조각에는 간지 표기가 없어 시간 주장을 year 형으로 적었다(date.raw 0695). 좌표는 왕경 개략값이다. [중복: unified_silla_1/fact-us1-013 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+   "persistence": {
+    "kind": "institution",
+    "from": 695,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-790",
+   "category": "economy",
+   "region": "south",
+   "decade": 790,
+   "year": 790,
+   "yearVerbatim": "六年, 春正月",
+   "placeLabel": "벽골제(碧骨堤)",
+   "modernPlace": "전북 김제 부량면",
+   "what": "신라가 전주 등 일곱 주의 사람을 징발해 벽골제를 증축하였다",
+   "claimIds": [
+    "claim-ced-e790-time",
+    "claim-ced-e790-act"
+   ],
+   "confidence": "high",
+   "note": "이미 있는 장면 scene-syj122-byeokgolje-790 이 이 공사를 다룬다. 새 장면을 만들지 않았다.",
+   "sceneId": null,
+   "lon": 126.85444,
+   "lat": 35.75444,
+   "coordinateBasis": "src-kowiki-byeokgolje ex-byeokgolje-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 790,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-798",
+   "category": "economy",
+   "region": "south",
+   "decade": 790,
+   "year": 798,
+   "yearVerbatim": "貞元十四年戊寅四月十三日",
+   "placeLabel": "청제(菁堤)",
+   "modernPlace": "경북 영천 도남동",
+   "what": "상한 못둑을 고치는 청제 수리 공사에 부척 136과 법공부 14140(연인원으로 보는 독법도 있다)이 들었다",
+   "claimIds": [
+    "claim-ced-e798-time",
+    "claim-ced-e798-act",
+    "claim-ced-e798-labor"
+   ],
+   "confidence": "high",
+   "note": "좌표는 청제비가 선 자리다. 판독에 이견이 있는 글자가 있다. 法功夫 를 사람 수로 단정하지 않았다. 인원·수치를 담을 전용 술어가 없어 참여 주장의 인용으로만 남겼다.",
+   "sceneId": "scene-ced-eco-798",
+   "lon": 128.94083,
+   "lat": 35.92472,
+   "coordinateBasis": "src-kowiki-cheongjebi ex-cheongjebi-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 798,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-059",
+   "category": "disaster",
+   "region": "north",
+   "decade": 50,
+   "year": 59,
+   "yearVerbatim": "秋七月",
+   "placeLabel": "고구려 도성(京都)",
+   "modernPlace": "중국 지린성 지안",
+   "what": "도성에 큰물이 나 백성의 집이 떠내려가고 물에 잠겼다",
+   "claimIds": [
+    "claim-ced-d059-time",
+    "claim-ced-d059-act"
+   ],
+   "confidence": "medium",
+   "note": "태조대왕 7년 기사로, 당시 도읍을 국내성으로 보아 좌표를 달았다. 초기 기년에 논쟁이 있다.",
+   "sceneId": "scene-ced-dis-059",
+   "lon": 126.17861,
+   "lat": 41.12083,
+   "coordinateBasis": "src-enwiki-gungnae ex-gungnae-geo",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-100",
+   "category": "disaster",
+   "region": "south",
+   "decade": 100,
+   "year": 100,
+   "yearVerbatim": "冬十月",
+   "placeLabel": "신라 왕경(京都)",
+   "modernPlace": "경북 경주",
+   "what": "서울에 지진이 나 백성의 집이 넘어지고 죽은 사람이 있었다",
+   "claimIds": [
+    "claim-ced-d100-time",
+    "claim-ced-d100-act"
+   ],
+   "confidence": "medium",
+   "note": "2세기 초 기년의 신빙성 논쟁이 있어 confidence medium.",
+   "sceneId": "scene-ced-dis-100",
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-221",
+   "category": "disaster",
+   "region": "central",
+   "decade": 220,
+   "year": 221,
+   "yearVerbatim": "八年, 夏五月",
+   "placeLabel": "백제 나라 동쪽(國東)",
+   "modernPlace": "한강 중상류 일원(비정)",
+   "what": "백제 나라 동쪽에 큰물이 나 마흔 곳 넘게 산이 무너졌다",
+   "claimIds": [
+    "claim-ced-d221-time",
+    "claim-ced-d221-act"
+   ],
+   "confidence": "medium",
+   "note": "'國東'의 범위가 특정되지 않아 좌표와 장면을 만들지 않았다.",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-304",
+   "category": "disaster",
+   "region": "south",
+   "decade": 300,
+   "year": 304,
+   "yearVerbatim": "九月",
+   "placeLabel": "신라 왕경(京都)",
+   "modernPlace": "경북 경주",
+   "what": "서울에 지진이 나 백성의 집이 부서지고 죽은 사람이 있었다",
+   "claimIds": [
+    "claim-ced-d304-time",
+    "claim-ced-d304-act",
+    "claim-ced-d304b-act"
+   ],
+   "confidence": "medium",
+   "note": "같은 해 8월 '地震, 泉湧' 기사를 claim-ced-d304b-act 로 함께 인용했다. 사실은 9월 경도 지진 하나로 센다.",
+   "sceneId": "scene-ced-dis-304",
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-465",
+   "category": "disaster",
+   "region": "south",
+   "decade": 460,
+   "year": 465,
+   "yearVerbatim": "五月",
+   "placeLabel": "사벌군(沙伐郡)",
+   "modernPlace": "경북 상주",
+   "what": "신라 사벌군에 누리 떼가 났다",
+   "claimIds": [
+    "claim-ced-d465-time",
+    "claim-ced-d465-act",
+    "claim-ced-d465b-act"
+   ],
+   "confidence": "high",
+   "note": "沙伐郡은 지금의 상주로 비정된다. 좌표는 상주시 표시 좌표다. 같은 해 4월 '大水, 山崩一十七所' 기사를 claim-ced-d465b-act 로 함께 인용했다.",
+   "sceneId": "scene-ced-dis-465",
+   "lon": 128.1590393,
+   "lat": 36.4107986,
+   "coordinateBasis": "src-kowiki-sangju ex-sangju-geo",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-521",
+   "category": "disaster",
+   "region": "south",
+   "decade": 520,
+   "year": 521,
+   "yearVerbatim": "秋八月",
+   "placeLabel": "백제(지역 미상)",
+   "modernPlace": "미상",
+   "what": "누리가 곡식을 해쳐 백성이 굶주렸고 900호가 신라로 도망해 들어갔다",
+   "claimIds": [
+    "claim-ced-d521-time",
+    "claim-ced-d521-act",
+    "claim-ced-d521-ho"
+   ],
+   "confidence": "medium",
+   "note": "원문에 피해 지역이 없어 좌표를 넣지 않았다. 900호는 신라로 도망해 들어간 유민의 규모이지 어느 지역의 호수가 아니므로 density 로 적지 않았다.",
+   "sceneId": "scene-ced-dis-521",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-535",
+   "category": "disaster",
+   "region": "central",
+   "decade": 530,
+   "year": 535,
+   "yearVerbatim": "夏五月",
+   "placeLabel": "고구려 나라 남쪽(國南)",
+   "modernPlace": "평양 이남 일원",
+   "what": "나라 남쪽에 큰물이 나 민가가 떠내려가고 200여 명이 죽었다",
+   "claimIds": [
+    "claim-ced-d535-time",
+    "claim-ced-d535-act"
+   ],
+   "confidence": "medium",
+   "note": "원문이 '國南'이라고만 적어 평양 이남 어디인지 범위가 미상이다. 도읍 평양의 좌표는 사건 위치가 아니므로 넣지 않았다. 권역은 나라 남쪽이라는 사건 위치를 따라 central 로 두었다. [중복: goguryeo_late/fact-gg-dis-002 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-589",
+   "category": "disaster",
+   "region": "south",
+   "decade": 580,
+   "year": 589,
+   "yearVerbatim": "秋七月",
+   "placeLabel": "신라 나라 서쪽(國西)",
+   "modernPlace": "소백산맥 서쪽 일원(비정)",
+   "what": "나라 서쪽에 큰물이 나 3만 360호가 떠내려가고 200여 명이 죽자 왕이 사자를 보내 진휼하였다",
+   "claimIds": [
+    "claim-ced-d589-time",
+    "claim-ced-d589-act",
+    "claim-ced-d589-ho"
+   ],
+   "confidence": "high",
+   "note": "'國西'의 범위가 특정되지 않아 좌표를 넣지 않았다. 삼국사기 재해 기사 가운데 호수가 가장 크게 적힌 사례다. 3만 360호는 큰물에 떠내려가고 잠긴 호수이지 나라 서쪽 지역의 총 호수가 아니다. 좌표가 없어 세계 표시에는 쓰이지 않는다. [중복: silla_late/fact-sl-019 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": {
+    "households": 30360,
+    "unit": "戶",
+    "claimIds": [
+     "claim-ced-d589-ho"
+    ]
+   }
+  },
+  {
+   "id": "fact-ced-dis-657",
+   "category": "disaster",
+   "region": "south",
+   "decade": 650,
+   "year": 657,
+   "yearVerbatim": "四年, 秋七月",
+   "placeLabel": "일선군(一善郡)",
+   "modernPlace": "경북 구미 선산",
+   "what": "일선군에 큰물이 나 300여 명이 빠져 죽었다",
+   "claimIds": [
+    "claim-ced-d657-time",
+    "claim-ced-d657-act"
+   ],
+   "confidence": "high",
+   "note": "一善郡은 지금의 구미 선산 일대로 비정된다. 좌표는 구미시 표시 좌표라 precision area. 좌표로 쓴 값은 구미시 표시 좌표이며 一善郡 의 중심으로 보는 선산읍(대략 북위 36.25)과 약 15km 차이가 있다. [중복: silla_late/fact-sl-021 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 128.344381,
+   "lat": 36.119469,
+   "coordinateBasis": "src-kowiki-gumi ex-gumi-geo",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-669",
+   "category": "disaster",
+   "region": "north",
+   "decade": 660,
+   "year": 669,
+   "yearVerbatim": "夏五月",
+   "placeLabel": "천정·비열홀·각련 세 군",
+   "modernPlace": "함남 문천·안변, 회양 일원(비정)",
+   "what": "천정·비열홀·각련 세 군의 백성이 굶주려 창고를 열어 진휼하였다",
+   "claimIds": [
+    "claim-ced-d669-time",
+    "claim-ced-d669-act"
+   ],
+   "confidence": "medium",
+   "note": "세 군의 비정에 이설이 있어 좌표를 넣지 않았다. 각련은 회양, 천정은 문천, 비열홀은 안변으로 보는 견해가 많다. [중복: unified_silla_1/fact-us1-017 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-779",
+   "category": "disaster",
+   "region": "south",
+   "decade": 770,
+   "year": 779,
+   "yearVerbatim": "十五年, 春三月",
+   "placeLabel": "신라 왕경(京都)",
+   "modernPlace": "경북 경주",
+   "what": "서울에 지진이 나 백성의 집이 무너지고 100여 명이 죽었다",
+   "claimIds": [
+    "claim-ced-d779-time",
+    "claim-ced-d779-act"
+   ],
+   "confidence": "high",
+   "note": "좌표는 왕경 개략값이다. [중복: unified_silla_1/fact-us1-018 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-796",
+   "category": "disaster",
+   "region": "south",
+   "decade": 790,
+   "year": 796,
+   "yearVerbatim": "十二年",
+   "placeLabel": "신라 왕경(京都)",
+   "modernPlace": "경북 경주",
+   "what": "서울에 굶주림과 돌림병이 돌자 왕이 창고를 열어 진휼하였다",
+   "claimIds": [
+    "claim-ced-d796-time",
+    "claim-ced-d796-act"
+   ],
+   "confidence": "high",
+   "note": "좌표는 왕경 개략값이다. [중복: unified_silla_2/fact-us2-019 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-041bc",
+   "category": "economy",
+   "region": "south",
+   "decade": -50,
+   "year": -41,
+   "yearVerbatim": "十七年",
+   "placeLabel": "신라 6부",
+   "modernPlace": "경북 경주 일원",
+   "what": "혁거세가 6부를 순행하며 백성을 위무하고 농사와 누에치기를 권해 땅의 이로움을 다하게 하였다",
+   "claimIds": [
+    "claim-ced-e041bc-time",
+    "claim-ced-e041bc-act"
+   ],
+   "confidence": "low",
+   "note": "기원전 기년의 신빙성 논쟁이 크고 6부의 범위도 특정되지 않아 좌표와 장면을 만들지 않았다. 기원전 구간의 생활·경제 기사가 드물어 기록으로만 남긴다. [중복: silla_gaya_early/fact-sgy-017 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-663",
+   "category": "economy",
+   "region": "south",
+   "decade": 660,
+   "year": 663,
+   "yearVerbatim": "三年, 春正月",
+   "placeLabel": "남산신성(南山新城)",
+   "modernPlace": "경북 경주 남산",
+   "what": "신라가 남산신성에 긴 창고(長倉)를 지어 곡식을 쌓았다",
+   "claimIds": [
+    "claim-ced-e663-time",
+    "claim-ced-e663-act"
+   ],
+   "confidence": "high",
+   "note": "좌표는 경주시 표시 좌표로 남산신성 성터 지점이 아니라 개략값이다. 기각된 fact-ced-eco-662(웅진 복구) 대신 넣은 660년대 경제 사실이다.",
+   "sceneId": "scene-ced-eco-663",
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 663,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-ced-eco-880",
+   "category": "economy",
+   "region": "south",
+   "decade": 880,
+   "year": 880,
+   "yearVerbatim": "九月九日",
+   "placeLabel": "신라 왕경(京都)",
+   "modernPlace": "경북 경주",
+   "what": "왕이 월상루에서 바라본 서울은 민가가 잇달아 있고 노랫소리가 이어졌으며, 지붕을 기와로 덮고 밥을 숯으로 짓는다는 말이 오갔다",
+   "claimIds": [
+    "claim-ced-e880-time",
+    "claim-ced-e880-act",
+    "claim-ced-e880-life"
+   ],
+   "confidence": "low",
+   "note": "헌강왕대 태평성대 서술은 상투적 수사라는 견해가 있어 confidence low 로 두고 장면을 만들지 않았다. 좌표는 왕경 개략값이다.",
+   "sceneId": null,
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-enwiki-gyeongju ex-gyeongju-geo",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-397",
+   "category": "disaster",
+   "region": "central",
+   "decade": 390,
+   "year": 397,
+   "yearVerbatim": "四十二年, 秋七月",
+   "placeLabel": "하슬라(何瑟羅)",
+   "modernPlace": "강원 강릉 일원(비정)",
+   "what": "북쪽 변경 하슬라에 가뭄과 누리가 들어 흉년이 지고 백성이 굶주리자 죄수를 사면하고 한 해의 조조를 면제하였다",
+   "claimIds": [
+    "claim-ced-d397-time",
+    "claim-ced-d397-act"
+   ],
+   "confidence": "medium",
+   "note": "何瑟羅 는 지금의 강릉 일대로 비정되나 확정 좌표를 댈 발췌를 구하지 않아 좌표를 넣지 않았다.",
+   "sceneId": "scene-ced-dis-397",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-628",
+   "category": "disaster",
+   "region": "south",
+   "decade": 620,
+   "year": 628,
+   "yearVerbatim": "夏",
+   "placeLabel": "신라(장소 미상)",
+   "modernPlace": "미상",
+   "what": "여름에 크게 가물자 시장을 옮기고 용을 그려 비를 빌었다",
+   "claimIds": [
+    "claim-ced-d628-time",
+    "claim-ced-d628-act"
+   ],
+   "confidence": "medium",
+   "note": "移市 를 왕경 시장을 옮긴 것으로 보는 견해가 있으나 원문에 장소 표기가 없어 좌표를 넣지 않았다. 조각에 연 표기가 없어 시간 주장은 year 형이다(date.raw 0628).",
+   "sceneId": "scene-ced-dis-628",
+   "density": null
+  },
+  {
+   "id": "fact-ced-dis-817",
+   "category": "disaster",
+   "region": "south",
+   "decade": 810,
+   "year": 817,
+   "yearVerbatim": "冬十月",
+   "placeLabel": "신라의 주군(州郡)",
+   "modernPlace": "신라 전역",
+   "what": "굶어 죽는 사람이 많아지자 주군에 명해 창고의 곡식을 내어 구제하게 하였다",
+   "claimIds": [
+    "claim-ced-d817-time",
+    "claim-ced-d817-act"
+   ],
+   "confidence": "high",
+   "note": "명령이 미친 주군이 특정되지 않아 좌표를 넣지 않았다. 권역은 신라 본토 기준으로 south 로 두었다. [중복: unified_silla_2/fact-us2-020 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "density": null
+  }
+ ],
+ "missing": [
+  {
+   "id": "miss-ced-1",
+   "topic": "鐵·鹽 생산지",
+   "detail": "삼국사기 본기에서 -57~935년 사이 철장·염장의 장소가 특정되는 기사를 찾지 못했다. 809년 서형산성 염고(鹽庫) 기사는 재이 기사이고, 932년 鹽州는 지명이다.",
+   "neededSource": "중국 정사 동이전(집성) 弁辰 出鐵 조, 한국민족문화대백과 '제철' 항목, 발굴 보고(진천 석장리 등)"
+  },
+  {
+   "id": "miss-ced-2",
+   "topic": "재해 피해의 군현별 분포",
+   "detail": "홍수·지진 기사 대다수가 '京都·國西·國東'처럼 방위로만 적혀 군현 단위 좌표를 댈 수 없었다. 일선군·사벌군처럼 군 이름이 적힌 사례는 드물다.",
+   "neededSource": "삼국사기 지리지와 대조한 군현 비정 연구, 한국민족문화대백과 군현 항목"
+  },
+  {
+   "id": "miss-ced-3",
+   "topic": "시장의 자리",
+   "detail": "동시·서시·남시의 설치 연도는 확인했지만 왕경 안의 위치를 댈 수 있는 원문·발굴 근거를 이 범위에서 찾지 못해 좌표는 왕경 개략값으로만 썼다.",
+   "neededSource": "국립경주문화유산연구소 왕경 발굴 보고, 국가유산포털 경주 월성·황룡사 일원 해설"
+  },
+  {
+   "id": "miss-ced-4",
+   "topic": "길이·인원을 담을 술어",
+   "detail": "둑 길이(1800보·2170보)와 동원 인원(7000·312·14140)을 적을 전용 술어가 predicate 허용 목록에 없어 syj:administeredAs 로 적었다가 검수에서 거짓 삼단논법으로 기각되었다. 수치는 what·note 와 syj:participatedIn 인용으로만 남겼다.",
+   "neededSource": "scripts/fact_predicates.json 에 syj:measuredLength·syj:laborCount 같은 술어 추가(조사원 권한 밖)"
+  },
+  {
+   "id": "miss-ced-5",
+   "topic": "하슬라·일선군의 정확한 비정 좌표",
+   "detail": "하슬라(강릉)는 좌표 발췌를 구하지 않아 비웠고, 일선군은 구미시 표시 좌표를 써 선산읍 중심과 약 15km 차이가 있다.",
+   "neededSource": "한국민족문화대백과 '하슬라'·'일선군' 항목, 위키백과 강릉시·선산읍 표시 좌표"
+  }
+ ]
+}

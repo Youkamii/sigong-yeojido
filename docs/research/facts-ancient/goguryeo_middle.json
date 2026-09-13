@@ -1,0 +1,111 @@
+{
+  "job": "goguryeo_middle",
+  "sources": 4,
+  "excerpts": 4,
+  "chunkClaims": 61,
+  "excerptClaims": 4,
+  "facts": 29,
+  "factsByCategory": {
+    "administration": 6,
+    "culture": 2,
+    "disaster": 3,
+    "economy": 4,
+    "facility": 5,
+    "foreign": 3,
+    "person": 2,
+    "settlement": 4
+  },
+  "claims": 65,
+  "entities": 43,
+  "rawFilesChecked": [
+    {
+      "source": "src-enwiki-pyongyang",
+      "url": "https://en.wikipedia.org/wiki/Pyongyang",
+      "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+      "rawBytes": 897617,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-facts-ancient-goguryeo_middle-enwiki-gungnae",
+      "url": "https://en.wikipedia.org/wiki/Gungnae_Fortress",
+      "sha256": "2ccc548ae79f8cfce65d1260a449d6ea4fba12a1870697b343039bafff8ee232",
+      "rawBytes": 126509,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gwanggaeto-bi",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%91%EA%B0%9C%ED%86%A0%EC%99%95%EB%A6%89%EB%B9%84",
+      "sha256": "d3817158a99ed215d25f6045c64740bbb9efd7a35d8124877c6a900bca30df56",
+      "rawBytes": 220796,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-hwando",
+      "url": "https://en.wikipedia.org/wiki/Hwando_Mountain_Fortress",
+      "sha256": "43ae3bbdcda6fa51aacbb7ab34308f7f05eab76a90da422a1de3f3b60c1168d0",
+      "rawBytes": 107030,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-1",
+      "topic": "고구려 호구 수",
+      "detail": "300~500년 고구려 본기에는 戶·口 총수 기사가 없다. 수묘인 330가와 이주 인구만 확인된다.",
+      "neededSource": "집성(위서 고구려전 등)의 戶數 기사 또는 중국 정사 동이전"
+    },
+    {
+      "id": "miss-2",
+      "topic": "충주 고구려비 좌표",
+      "detail": "ko/en 위키백과의 충주 고구려비 문서에 십진 표시 좌표가 없어 좌표를 넣지 못했다.",
+      "neededSource": "국가유산포털(heritage.go.kr)의 국보 205호 위치 정보"
+    },
+    {
+      "id": "miss-3",
+      "topic": "덕흥리 고분 좌표",
+      "detail": "ko 위키백과 덕흥리 고분 문서에 십진 표시 좌표가 없다.",
+      "neededSource": "en.wikipedia 또는 기관 해설 페이지의 십진 좌표"
+    },
+    {
+      "id": "miss-4",
+      "topic": "시장(市)·교통(驛) 기사",
+      "detail": "300~500년 고구려본기에는 市 개설이나 驛 설치 기사가 없어 economy 는 소금 행상·교역품·풍년으로 채웠다.",
+      "neededSource": "집성·고고 보고(안학궁·국내성 발굴)"
+    },
+    {
+      "id": "miss-5",
+      "topic": "고구려 economy 갈래의 사료 부족",
+      "detail": "300~500년 고구려본기에는 市·堤·牛耕·鐵 기사가 없고 교역 기사는 대부분 遣使·朝貢 형식이라 외교 갈래와 겹친다. 검수에서 fact-gg-016(楛矢)을 foreign 으로 옮기면서 economy 는 소금 행상(015)·풍년(017)·흉작(028)·덕흥리 식료(029) 네 건으로 다시 채웠다.",
+      "neededSource": "집성(위서·양서 고구려전)의 물산·교역 기사, 국내성·안학궁 발굴 보고"
+    }
+  ],
+  "collection": {
+    "task": "goguryeo_middle",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789261856,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-goguryeo_middle"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "event-gg-jin-burial-408",
+    "place-deokheungri"
+  ],
+  "reviewedSourceIds": {
+    "src-enwiki-gungnae": "src-facts-ancient-goguryeo_middle-enwiki-gungnae"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

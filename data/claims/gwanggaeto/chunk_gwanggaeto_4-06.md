@@ -45,6 +45,23 @@ claim 으로 만들지 않은 것: 韓穢 가 어느 지역 사람들인지(엔�
     "origin": "ai",
     "status": "draft",
     "note": "守墓者 로 취한 가호 수(같은 줄의 安守墓者 문맥). 4면 7줄의 舊民一百十家 와 합쳐 都合三百卅家 — 비문 안에서 220+110=330 으로 맞아떨어진다(산술 확인)."
+  },
+  {
+    "id": "claim-facts-ancient-goguryeo_middle-gg-sumyoin-hanye",
+    "subject": "event-gg-sumyoin-414",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gwanggaeto-neungbi"
+    },
+    "citesChunk": "chunk_gwanggaeto_4-06",
+    "quote": "取韓穢二百廿家",
+    "note": "왕이 몸소 데려온 한·예 220가를 수묘인으로 삼음",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

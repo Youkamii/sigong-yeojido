@@ -1,0 +1,2404 @@
+{
+  "collection": "facts-ancient",
+  "job": "baekje_middle",
+  "cell": {
+    "polity": "백제",
+    "from": 300,
+    "to": 500,
+    "regions": [
+      "central",
+      "south"
+    ],
+    "categories": {
+      "settlement": 3,
+      "administration": 4,
+      "facility": 3,
+      "economy": 3,
+      "disaster": 2,
+      "culture": 2,
+      "foreign": 2,
+      "person": 1
+    }
+  },
+  "sources": [
+    {
+      "id": "src-kowiki-gongsanseong",
+      "title": "공산성 — 위키백과",
+      "publisher": "위키백과 (ko.wikipedia.org)",
+      "license": "CC BY-SA 4.0",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%82%B0%EC%84%B1",
+      "rawFile": "raw/gongsanseong.html",
+      "sha256": "2c5744207bf7a7675c9e16efde5840e445a7fe614227934abb05bb41f130d75d",
+      "httpStatus": 200,
+      "byteLength": 207270,
+      "fetchedUtc": "2026-09-13T00:38:10Z",
+      "excerpts": [
+        {
+          "id": "ex-gongsan-geo",
+          "text": "36.46333; 127.12694",
+          "locator": "문서 머리 표시 좌표(span.geo)"
+        }
+      ]
+    },
+    {
+      "id": "src-kowiki-pungnaptoseong",
+      "title": "풍납토성 — 위키백과",
+      "publisher": "위키백과 (ko.wikipedia.org)",
+      "license": "CC BY-SA 4.0",
+      "url": "https://ko.wikipedia.org/wiki/%ED%92%8D%EB%82%A9%ED%86%A0%EC%84%B1",
+      "rawFile": "raw/pungnaptoseong.html",
+      "sha256": "b8a50b51bc3822fd73353f38a1ee063ad239cb6a13b87e031d17bcf95caf387c",
+      "httpStatus": 200,
+      "byteLength": 153935,
+      "fetchedUtc": "2026-09-13T00:38:10Z",
+      "excerpts": [
+        {
+          "id": "ex-pungnap-geo",
+          "text": "37.53889; 127.12083",
+          "locator": "문서 머리 표시 좌표(span.geo)"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "polity-baekje",
+      "type": "Polity",
+      "label": "백제"
+    },
+    {
+      "id": "polity-jin",
+      "type": "Polity",
+      "label": "동진"
+    },
+    {
+      "id": "polity-song",
+      "type": "Polity",
+      "label": "송(유송)"
+    },
+    {
+      "id": "place-hansan",
+      "type": "Place",
+      "label": "한산"
+    },
+    {
+      "id": "place-hanseong",
+      "type": "Place",
+      "label": "한성"
+    },
+    {
+      "id": "place-hansanseong",
+      "type": "Place",
+      "label": "한산성"
+    },
+    {
+      "id": "place-hansan-temple",
+      "type": "Place",
+      "label": "한산 불사"
+    },
+    {
+      "id": "place-ungjin",
+      "type": "Place",
+      "label": "웅진"
+    },
+    {
+      "id": "place-ungjin-bridge",
+      "type": "Place",
+      "label": "웅진교"
+    },
+    {
+      "id": "place-ungjin-market",
+      "type": "Place",
+      "label": "웅진 저자(熊建市)"
+    },
+    {
+      "id": "place-imnyugak",
+      "type": "Place",
+      "label": "임류각"
+    },
+    {
+      "id": "place-daedusanseong",
+      "type": "Place",
+      "label": "대두산성"
+    },
+    {
+      "id": "place-dugok",
+      "type": "Place",
+      "label": "두곡"
+    },
+    {
+      "id": "place-cheongmongnyeong",
+      "type": "Place",
+      "label": "청목령"
+    },
+    {
+      "id": "place-sagu-seong",
+      "type": "Place",
+      "label": "사구성"
+    },
+    {
+      "id": "person-muryeong",
+      "type": "Person",
+      "label": "무령왕(사마왕)"
+    },
+    {
+      "id": "person-mallanata",
+      "type": "Person",
+      "label": "마라난타"
+    },
+    {
+      "id": "person-goheung",
+      "type": "Person",
+      "label": "고흥"
+    },
+    {
+      "id": "person-yeosin",
+      "type": "Person",
+      "label": "여신"
+    },
+    {
+      "id": "person-haegu",
+      "type": "Person",
+      "label": "해구"
+    },
+    {
+      "id": "person-gaero",
+      "type": "Person",
+      "label": "개로왕(여경)"
+    },
+    {
+      "id": "event-bm-hogu-399",
+      "type": "Event",
+      "label": "399년 호구 감소"
+    },
+    {
+      "id": "event-bm-daedu-476",
+      "type": "Event",
+      "label": "476년 대두산성 수축과 민호 이주"
+    },
+    {
+      "id": "event-bm-hansanseong-482",
+      "type": "Event",
+      "label": "482년 말갈의 한산성 습격"
+    },
+    {
+      "id": "event-bm-flee-silla-491",
+      "type": "Event",
+      "label": "491년 신라로의 유망"
+    },
+    {
+      "id": "event-bm-hansan-371",
+      "type": "Event",
+      "label": "371년 한산 천도"
+    },
+    {
+      "id": "event-bm-ungjin-475",
+      "type": "Event",
+      "label": "475년 웅진 천도"
+    },
+    {
+      "id": "event-bm-sangjwapyeong-408",
+      "type": "Event",
+      "label": "408년 상좌평 설치"
+    },
+    {
+      "id": "event-bm-dugok-479",
+      "type": "Event",
+      "label": "479년 대두성 이전"
+    },
+    {
+      "id": "event-bm-gwanbang-386",
+      "type": "Event",
+      "label": "386년 청목령 관방 설치"
+    },
+    {
+      "id": "event-bm-temple-385",
+      "type": "Event",
+      "label": "385년 한산 불사 창건"
+    },
+    {
+      "id": "event-bm-sagu-417",
+      "type": "Event",
+      "label": "417년 사구성 축조"
+    },
+    {
+      "id": "event-bm-bridge-498",
+      "type": "Event",
+      "label": "498년 웅진교 가설"
+    },
+    {
+      "id": "event-bm-imnyugak-500",
+      "type": "Event",
+      "label": "500년 임류각 건립"
+    },
+    {
+      "id": "event-bm-jo-406",
+      "type": "Event",
+      "label": "406년 한성 조 1천 석 사여"
+    },
+    {
+      "id": "event-bm-market-478",
+      "type": "Event",
+      "label": "478년 웅진 저자 처형"
+    },
+    {
+      "id": "event-bm-harvest-489",
+      "type": "Event",
+      "label": "489년 대풍년"
+    },
+    {
+      "id": "event-bm-drought-331",
+      "type": "Event",
+      "label": "331년 대가뭄과 기근"
+    },
+    {
+      "id": "event-bm-relief-382",
+      "type": "Event",
+      "label": "382년 기근과 관곡 구휼"
+    },
+    {
+      "id": "event-bm-flood-491",
+      "type": "Event",
+      "label": "491년 웅천 범람"
+    },
+    {
+      "id": "event-bm-famine-499",
+      "type": "Event",
+      "label": "499년 대한발과 유망"
+    },
+    {
+      "id": "event-bm-buddhism-384",
+      "type": "Event",
+      "label": "384년 불법 전래"
+    },
+    {
+      "id": "event-bm-seogi-375",
+      "type": "Event",
+      "label": "375년 서기 편찬 전승"
+    },
+    {
+      "id": "event-bm-jin-372",
+      "type": "Event",
+      "label": "372년 동진 조공"
+    },
+    {
+      "id": "event-bm-song-429",
+      "type": "Event",
+      "label": "429년 송 조공"
+    },
+    {
+      "id": "event-bm-yeogyeong-457",
+      "type": "Event",
+      "label": "457년 여경 진동대장군 책봉"
+    },
+    {
+      "id": "event-bm-hansanseong-483",
+      "type": "Event",
+      "label": "483년 동성왕의 한산성 순무"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-bm-hogu-399-t",
+      "subject": "event-bm-hogu-399",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "八年",
+        "year": 399,
+        "precision": "month",
+        "earliest": 399,
+        "latest": 399
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0030_0170",
+      "quote": "八年, 秋八月, 王欲侵髙句麗, 大徴兵馬",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-hogu-399-a",
+      "subject": "event-bm-hogu-399",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-baekje"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0030_0170",
+      "quote": "民苦於役, 多奔新羅, 戶口衰滅",
+      "note": "징발을 피해 신라로 달아나 호구가 줄었다"
+    },
+    {
+      "id": "claim-bm-daedu-476-t",
+      "subject": "event-bm-daedu-476",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二年",
+        "year": 476,
+        "precision": "month",
+        "earliest": 476,
+        "latest": 476
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0020_0030",
+      "quote": "二年, 春二月, 修葺大豆山城, 移漢北民戶",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-daedu-476-a",
+      "subject": "event-bm-daedu-476",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-daedusanseong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0020_0030",
+      "quote": "修葺大豆山城, 移漢北民戶",
+      "note": "한강 북쪽 민호를 대두산성으로 옮겼다"
+    },
+    {
+      "id": "claim-bm-hansanseong-482-t",
+      "subject": "event-bm-hansanseong-482",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "秋九月",
+        "year": 482,
+        "precision": "month",
+        "earliest": 482,
+        "latest": 482
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0030",
+      "quote": "秋九月, 靺鞨襲破漢山城",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-hansanseong-482-h",
+      "subject": "place-hansanseong",
+      "predicate": "syj:householdCount",
+      "object": {
+        "kind": "literal",
+        "value": 300,
+        "unit": "戶"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0030",
+      "quote": "虜三百餘戸以歸",
+      "note": "원문은 '虜三百餘戸以歸' — 말갈이 사로잡아 간 호수이지 한산성의 가구 수가 아니다. 원문 표기는 '戸'이고 검증기의 householdCount 규약에 맞춰 unit은 '戶'로 적었다."
+    },
+    {
+      "id": "claim-bm-flee-silla-491-t",
+      "subject": "event-bm-flee-silla-491",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "秋七月",
+        "year": 491,
+        "precision": "month",
+        "earliest": 491,
+        "latest": 491
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0220",
+      "quote": "秋七月, 民饑亡入新羅者六百餘家",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-flee-silla-491-h",
+      "subject": "event-bm-flee-silla-491",
+      "predicate": "syj:householdCount",
+      "object": {
+        "kind": "literal",
+        "value": 600,
+        "unit": "戶"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0220",
+      "quote": "民饑亡入新羅者六百餘家",
+      "note": "원문은 '民饑亡入新羅者六百餘家' — 신라로 달아난 가호 수다. 원문 표기는 '家'이고 검증기의 householdCount 규약에 맞춰 unit은 '戶'로 적었다."
+    },
+    {
+      "id": "claim-bm-hansan-371-t",
+      "subject": "event-bm-hansan-371",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二十六年",
+        "year": 371,
+        "precision": "year",
+        "earliest": 371,
+        "latest": 371
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0080_0080",
+      "quote": "二十六年, 髙句麗舉兵來",
+      "note": "천도 기사 조각(chunk_samguksagi_sg_024_0080_0100)의 본문은 '移都漢山.' 뿐이라 연도 표기가 없다. 같은 해(근초고왕 26년) 첫 조각의 원문 표기 '二十六年'을 연도 근거로 삼았고 두 조각의 date.raw는 모두 0371이다."
+    },
+    {
+      "id": "claim-bm-hansan-371-a",
+      "subject": "polity-baekje",
+      "predicate": "syj:capitalMovedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hansan"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0080_0100",
+      "quote": "移都漢山",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-ungjin-475-t",
+      "subject": "event-bm-ungjin-475",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "冬十月",
+        "year": 475,
+        "precision": "month",
+        "earliest": 475,
+        "latest": 475
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0020_0020",
+      "quote": "冬十月, 移都於熊津",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-ungjin-475-a",
+      "subject": "polity-baekje",
+      "predicate": "syj:capitalMovedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-ungjin"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0020_0020",
+      "quote": "移都於熊津",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-sangjwapyeong-408-t",
+      "subject": "event-bm-sangjwapyeong-408",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "四年",
+        "year": 408,
+        "precision": "month",
+        "earliest": 408,
+        "latest": 408
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0040_0060",
+      "quote": "四年, 春正月, 拜餘信爲上佐平",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-sangjwapyeong-408-a",
+      "subject": "event-bm-sangjwapyeong-408",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-yeosin"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0040_0060",
+      "quote": "拜餘信爲上佐平, 委以軍囯政事",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-sangjwapyeong-408-l",
+      "subject": "event-bm-sangjwapyeong-408",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-baekje"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0040_0060",
+      "quote": "上佐平之職, 始於此",
+      "note": "상좌평(上佐平) 직이 이때 처음 생겼다. 上佐平은 州·郡·縣 같은 행정 단위가 아니라 관직명이므로 syj:administeredAs(행정 단위 원문 표기용)를 쓰지 않고 relatedTo로 적었다."
+    },
+    {
+      "id": "claim-bm-dugok-479-t",
+      "subject": "event-bm-dugok-479",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "秋九月",
+        "year": 479,
+        "precision": "month",
+        "earliest": 479,
+        "latest": 479
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0030_0060",
+      "quote": "秋九月, 移大且城於斗谷",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-dugok-479-a",
+      "subject": "event-bm-dugok-479",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-dugok"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0030_0060",
+      "quote": "移大且城於斗谷",
+      "note": "원문은 大且城, 앞 기사(478)의 大豆城과 같은 성으로 본다"
+    },
+    {
+      "id": "claim-bm-gwanbang-386-t",
+      "subject": "event-bm-gwanbang-386",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二年",
+        "year": 386,
+        "precision": "year",
+        "earliest": 386,
+        "latest": 386
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0020_0020",
+      "quote": "二年, 春, 發國内人年十五歳已上, 設關防",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-gwanbang-386-a",
+      "subject": "event-bm-gwanbang-386",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-cheongmongnyeong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0020_0020",
+      "quote": "設關防, 自青木嶺, 北距八坤城, 西至於海",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-temple-385-t",
+      "subject": "event-bm-temple-385",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二年",
+        "year": 385,
+        "precision": "month",
+        "earliest": 385,
+        "latest": 385
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0100_0040",
+      "quote": "二年, 春二月, 創佛寺於漢山, 度僧十人",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-temple-385-a",
+      "subject": "event-bm-temple-385",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-hansan"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0100_0040",
+      "quote": "創佛寺於漢山, 度僧十人",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-temple-385-b",
+      "subject": "place-hansan-temple",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "year",
+        "value": 385
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0100_0040",
+      "quote": "創佛寺於漢山",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-sagu-417-t",
+      "subject": "event-bm-sagu-417",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "秋七月",
+        "year": 417,
+        "precision": "month",
+        "earliest": 417,
+        "latest": 417
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0040_0120",
+      "quote": "秋七月, 徴東·北二部人年十五已上, 築沙口城",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-sagu-417-a",
+      "subject": "event-bm-sagu-417",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-sagu-seong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0040_0120",
+      "quote": "築沙口城, 使兵官佐平解丘監役",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-bridge-498-t",
+      "subject": "event-bm-bridge-498",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二十年",
+        "year": 498,
+        "precision": "year",
+        "earliest": 498,
+        "latest": 498
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0320",
+      "quote": "二十年, 設熊津橋",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-bridge-498-a",
+      "subject": "event-bm-bridge-498",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-ungjin-bridge"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0320",
+      "quote": "設熊津橋",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-imnyugak-500-t",
+      "subject": "event-bm-imnyugak-500",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二十二年",
+        "year": 500,
+        "precision": "year",
+        "earliest": 500,
+        "latest": 500
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0370",
+      "quote": "二十二年, 春, 起臨流閣於宫東, 髙五丈",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-imnyugak-500-a",
+      "subject": "event-bm-imnyugak-500",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-imnyugak"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0370",
+      "quote": "起臨流閣於宫東, 髙五丈",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-jo-406-t",
+      "subject": "event-bm-jo-406",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "秋九月",
+        "year": 406,
+        "precision": "month",
+        "earliest": 406,
+        "latest": 406
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0040_0040",
+      "quote": "秋九月, 以解忠爲逹率, 賜漢城租一千石",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-jo-406-a",
+      "subject": "event-bm-jo-406",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-hanseong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0040_0040",
+      "quote": "賜漢城租一千石",
+      "note": "한성의 조(租) 1천 석을 달솔 해충에게 내렸다"
+    },
+    {
+      "id": "claim-bm-market-478-t",
+      "subject": "event-bm-market-478",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二年",
+        "year": 478,
+        "precision": "year",
+        "earliest": 478,
+        "latest": 478
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0030_0020",
+      "quote": "二年, 春, 佐平解仇與恩率燕信聚衆, 據大豆城叛",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-market-478-a",
+      "subject": "event-bm-market-478",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-ungjin-market"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0030_0020",
+      "quote": "斬於熊建市",
+      "note": "熊建市는 熊津市의 이표기로 본다"
+    },
+    {
+      "id": "claim-bm-harvest-489-t",
+      "subject": "event-bm-harvest-489",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十一年",
+        "year": 489,
+        "precision": "year",
+        "earliest": 489,
+        "latest": 489
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0150",
+      "quote": "十一年, 秋, 大有年. 國南海村人, 獻合頴禾",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-harvest-489-a",
+      "subject": "event-bm-harvest-489",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-baekje"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0150",
+      "quote": "大有年. 國南海村人, 獻合頴禾",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-drought-331-t",
+      "subject": "event-bm-drought-331",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二十八年",
+        "year": 331,
+        "precision": "year",
+        "earliest": 331,
+        "latest": 331
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0060_0150",
+      "quote": "二十八年, 春夏大旱, 草木枯, 江水竭",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-drought-331-a",
+      "subject": "event-bm-drought-331",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-baekje"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0060_0150",
+      "quote": "至秋七月乃雨. 年饑, 人相食",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-relief-382-t",
+      "subject": "event-bm-relief-382",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "八年",
+        "year": 382,
+        "precision": "year",
+        "earliest": 382,
+        "latest": 382
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0090_0100",
+      "quote": "八年, 春不雨, 至六月, 民饑, 至有鬻子者",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-relief-382-a",
+      "subject": "event-bm-relief-382",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-baekje"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0090_0100",
+      "quote": "王出官糓贖之",
+      "note": "관가의 곡식으로 팔려간 아이를 되사게 했다"
+    },
+    {
+      "id": "claim-bm-flood-491-t",
+      "subject": "event-bm-flood-491",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十三年",
+        "year": 491,
+        "precision": "month",
+        "earliest": 491,
+        "latest": 491
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0210",
+      "quote": "十三年, 夏六月, 熊川水漲, 漂沒王都二百餘家",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-flood-491-a",
+      "subject": "event-bm-flood-491",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-ungjin"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0210",
+      "quote": "熊川水漲, 漂沒王都二百餘家",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-flood-491-h",
+      "subject": "event-bm-flood-491",
+      "predicate": "syj:householdCount",
+      "object": {
+        "kind": "literal",
+        "value": 200,
+        "unit": "戶"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0210",
+      "quote": "漂沒王都二百餘家",
+      "note": "원문은 '漂沒王都二百餘家' — 왕도에서 침수·유실된 집 수이지 웅진 왕도의 가구 수가 아니다. 원문 표기는 '家'이고 검증기의 householdCount 규약에 맞춰 unit은 '戶'로 적었다."
+    },
+    {
+      "id": "claim-bm-famine-499-t",
+      "subject": "event-bm-famine-499",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二十一年",
+        "year": 499,
+        "precision": "year",
+        "earliest": 499,
+        "latest": 499
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0350",
+      "quote": "二十一年, 夏大旱, 民饑相食, 盗賊多起",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-famine-499-a",
+      "subject": "event-bm-famine-499",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-baekje"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0350",
+      "quote": "臣寮請發倉賑救, 王不聽",
+      "note": "신하들이 창고를 열어 구휼하자 했으나 왕이 듣지 않았다"
+    },
+    {
+      "id": "claim-bm-famine-499-p",
+      "subject": "event-bm-famine-499",
+      "predicate": "syj:populationCount",
+      "object": {
+        "kind": "literal",
+        "value": 2000,
+        "unit": "口"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0350",
+      "quote": "漢山人亡入髙句麗者二千",
+      "note": "원문은 '漢山人亡入髙句麗者二千' — 고구려로 달아난 사람 수다. 원문에는 '口'가 없이 '二千'만 있고 검증기의 populationCount 규약에 맞춰 unit은 '口'로 적었다."
+    },
+    {
+      "id": "claim-bm-buddhism-384-t",
+      "subject": "event-bm-buddhism-384",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "九月",
+        "year": 384,
+        "precision": "month",
+        "earliest": 384,
+        "latest": 384
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0100_0030",
+      "quote": "九月, 胡僧摩羅難陁自晉至, 王迎之",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-buddhism-384-a",
+      "subject": "event-bm-buddhism-384",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-mallanata"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0100_0030",
+      "quote": "胡僧摩羅難陁自晉至, 王迎之, 致宫内禮敬焉. 佛法始於此",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-seogi-375-t",
+      "subject": "event-bm-seogi-375",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "冬十一月",
+        "year": 375,
+        "precision": "month",
+        "earliest": 375,
+        "latest": 375
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0080_0160",
+      "quote": "冬十一月, 王薨",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-seogi-375-a",
+      "subject": "event-bm-seogi-375",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-goheung"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0080_0160",
+      "quote": "至是得愽士髙興, 始有書記",
+      "note": "고기(古記) 인용. '至是得愽士髙興, 始有書記'의 '至是'는 근초고왕 재위 전체를 가리키는 회고 서술이라 375년 11월의 사건이 아니다. 이 조각의 locator도 '근초고왕이 죽다'(졸기)다."
+    },
+    {
+      "id": "claim-bm-jin-372-t",
+      "subject": "event-bm-jin-372",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "二十七年",
+        "year": 372,
+        "precision": "month",
+        "earliest": 372,
+        "latest": 372
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0080_0110",
+      "quote": "二十七年, 春正月, 遣使入晉朝貢",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-jin-372-a",
+      "subject": "event-bm-jin-372",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-jin"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_024_0080_0110",
+      "quote": "遣使入晉朝貢",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-song-429-t",
+      "subject": "event-bm-song-429",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "三年",
+        "year": 429,
+        "precision": "year",
+        "earliest": 429,
+        "latest": 429
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0060_0040",
+      "quote": "三年, 秋, 遣使入宋朝貢",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-song-429-a",
+      "subject": "event-bm-song-429",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-song"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_025_0060_0040",
+      "quote": "遣使入宋朝貢",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-song-429-x",
+      "subject": "event-bm-song-429",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "元嘉六年",
+        "year": 429,
+        "precision": "month",
+        "earliest": 429,
+        "latest": 429
+      },
+      "sourceId": "src-jipseong-ko_024",
+      "citesChunk": "chunk_jipseong-ko_024_ko_024_0030_0010",
+      "quote": "(元嘉六年(429)七月) 是月, 百濟王遣使獻方物",
+      "note": "송서 문제본기의 같은 해 기사 — 교차 확인"
+    },
+    {
+      "id": "claim-bm-yeogyeong-457-t",
+      "subject": "event-bm-yeogyeong-457",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "大明元年",
+        "year": 457,
+        "precision": "month",
+        "earliest": 457,
+        "latest": 457
+      },
+      "sourceId": "src-jipseong-ko_024",
+      "citesChunk": "chunk_jipseong-ko_024_ko_024_0040_0030",
+      "quote": "(大明元年(457)冬十月) 甲辰, 以百濟王餘慶爲鎭東大將軍",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-yeogyeong-457-a",
+      "subject": "event-bm-yeogyeong-457",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-gaero"
+      },
+      "sourceId": "src-jipseong-ko_024",
+      "citesChunk": "chunk_jipseong-ko_024_ko_024_0040_0030",
+      "quote": "以百濟王餘慶爲鎭東大將軍",
+      "note": "餘慶은 개로왕의 중국식 이름"
+    },
+    {
+      "id": "claim-bm-muryeong-birth",
+      "subject": "person-muryeong",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 461
+      },
+      "sourceId": "src-geumseok-gskh_002_0010_0010",
+      "citesChunk": "chunk_geumseok-gskh_002_0010_0010_gskh_002_0010_0010_0080",
+      "quote": "나이가 62세가 되는 계묘년 5월",
+      "note": "지석 해석문은 계묘년(523)에 62세로 죽었다고만 적고 생년은 적지 않는다. 이 조각의 각주 gskh_002_0010_0010_0080_0003이 '卒年인 523년의 왕의 향수가 62세로 되어 있는 사실에서 무녕왕의 生年이 461년임을 알 수 있다. 『日本書紀』에도 雄略天皇 5년(461) 6월 1일 무녕왕이 탄생한 것으로 되어 있어 이 지석의 기록과 합치된다'고 하여 461년을 따랐다. 세는나이로 단순 역산하면 462년이 되나 각주와 일본서기는 461년이다. 조각에 date가 없어 검증기의 연도 일치 검사는 생략된다."
+    },
+    {
+      "id": "claim-bm-muryeong-title",
+      "subject": "person-muryeong",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-baekje"
+      },
+      "sourceId": "src-geumseok-gskh_002_0010_0010",
+      "citesChunk": "chunk_geumseok-gskh_002_0010_0010_gskh_002_0010_0010_0030",
+      "quote": "寧東大將軍百濟斯麻王年六十二歲",
+      "note": "무령왕릉 지석 판독문. 줄바꿈을 무시하면 이어지는 표기"
+    },
+    {
+      "id": "claim-bm-hansanseong-483-t",
+      "subject": "event-bm-hansanseong-483",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "五年",
+        "year": 483,
+        "precision": "year",
+        "earliest": 483,
+        "latest": 483
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0050",
+      "quote": "五年, 春, 王以獵出, 至漢山城",
+      "note": ""
+    },
+    {
+      "id": "claim-bm-hansanseong-483-a",
+      "subject": "event-bm-hansanseong-483",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-hansanseong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0040_0050",
+      "quote": "至漢山城, 撫問軍民, 浹旬乃還",
+      "note": "웅진 천도 8년 뒤에도 한산성에 군사와 백성이 있었음을 보여준다"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-bm-hansan-capital-371",
+      "eventId": "event-bm-hansan-371",
+      "title": "한산으로 도읍을 옮기다 (371)",
+      "startYear": 371,
+      "endYear": 371,
+      "kind": "settlement",
+      "summary": "근초고왕이 평양성 싸움을 마친 뒤 도읍을 한산으로 옮겼다.",
+      "dateClaimIds": [
+        "claim-bm-hansan-371-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-hansan-371-a"
+      ],
+      "place": null,
+      "participants": [],
+      "effects": {},
+      "category": "administration",
+      "region": "central",
+      "decade": 370,
+      "participantGroups": [
+        {
+          "label": "백제 왕실과 조정",
+          "role": "주체",
+          "stance": "주도",
+          "side": "백제",
+          "count": null,
+          "claimIds": [
+            "claim-bm-hansan-371-a"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "city",
+        "from": 371,
+        "to": 475,
+        "basisClaimIds": [
+          "claim-bm-hansan-371-a",
+          "claim-bm-ungjin-475-a"
+        ]
+      }
+    },
+    {
+      "id": "scene-bm-buddhism-384",
+      "eventId": "event-bm-buddhism-384",
+      "title": "마라난타가 오고 불법이 시작되다 — 한성 (384)",
+      "startYear": 384,
+      "endYear": 384,
+      "kind": "court",
+      "summary": "호승 마라난타가 동진에서 오자 침류왕이 궁 안에 맞아 예로 섬겼고 백제 불법이 여기서 비롯되었다.",
+      "dateClaimIds": [
+        "claim-bm-buddhism-384-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-buddhism-384-a"
+      ],
+      "place": {
+        "label": "한성 왕궁(풍납토성 비정)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12083,
+        "lat": 37.53889,
+        "claimIds": [
+          "claim-bm-buddhism-384-a"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-pungnaptoseong"
+        ],
+        "coordinateNote": "한성 왕성을 풍납토성으로 보는 통설에 따라 위키백과 풍납토성 표시 좌표를 썼다. 몽촌토성 설도 있어 precision은 area."
+      },
+      "participants": [
+        {
+          "entityId": "person-mallanata",
+          "claimIds": [
+            "claim-bm-buddhism-384-a"
+          ]
+        }
+      ],
+      "effects": {},
+      "category": "culture",
+      "region": "central",
+      "decade": 380,
+      "sceneFunction": "temple",
+      "participantGroups": [
+        {
+          "label": "마라난타 일행",
+          "role": "전래자",
+          "stance": "우호",
+          "side": "동진",
+          "count": null,
+          "claimIds": [
+            "claim-bm-buddhism-384-a"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "institution",
+        "from": 384,
+        "to": null,
+        "basisClaimIds": [
+          "claim-bm-buddhism-384-a"
+        ]
+      }
+    },
+    {
+      "id": "scene-bm-hansan-temple-385",
+      "eventId": "event-bm-temple-385",
+      "title": "한산에 절을 세우고 승려 열 명을 두다 (385)",
+      "startYear": 385,
+      "endYear": 385,
+      "kind": "construction",
+      "summary": "침류왕 2년 봄, 한산에 불사를 짓고 승려 열 명의 출가를 허락했다.",
+      "dateClaimIds": [
+        "claim-bm-temple-385-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-temple-385-a",
+        "claim-bm-temple-385-b"
+      ],
+      "place": null,
+      "participants": [],
+      "effects": {},
+      "category": "facility",
+      "region": "central",
+      "decade": 380,
+      "sceneFunction": "temple",
+      "participantGroups": [
+        {
+          "label": "출가한 승려",
+          "role": "거주자",
+          "stance": "중립",
+          "side": "백제",
+          "count": 10,
+          "claimIds": [
+            "claim-bm-temple-385-a"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "facility",
+        "from": 385,
+        "to": null,
+        "basisClaimIds": [
+          "claim-bm-temple-385-b"
+        ]
+      }
+    },
+    {
+      "id": "scene-bm-gwanbang-386",
+      "eventId": "event-bm-gwanbang-386",
+      "title": "청목령에서 바다까지 관방을 세우다 (386)",
+      "startYear": 386,
+      "endYear": 386,
+      "kind": "construction",
+      "summary": "진사왕이 나라 안 열다섯 살 이상을 징발해 청목령에서 북으로 팔곤성, 서로 바다에 이르는 관방을 쌓았다.",
+      "dateClaimIds": [
+        "claim-bm-gwanbang-386-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-gwanbang-386-a"
+      ],
+      "place": null,
+      "participants": [],
+      "effects": {},
+      "category": "facility",
+      "region": "central",
+      "decade": 380,
+      "sceneFunction": "fortress",
+      "participantGroups": [
+        {
+          "label": "징발된 15세 이상 백성",
+          "role": "역부",
+          "stance": "동원",
+          "side": "백제",
+          "count": null,
+          "claimIds": [
+            "claim-bm-gwanbang-386-t"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "facility",
+        "from": 386,
+        "to": null,
+        "basisClaimIds": [
+          "claim-bm-gwanbang-386-a"
+        ]
+      }
+    },
+    {
+      "id": "scene-bm-relief-382",
+      "eventId": "event-bm-relief-382",
+      "title": "굶주려 아이를 판 백성을 관곡으로 되사다 (382)",
+      "startYear": 382,
+      "endYear": 382,
+      "kind": "relief",
+      "summary": "봄부터 6월까지 비가 오지 않아 백성이 굶주려 자식을 파는 지경에 이르자 근구수왕이 관가 곡식을 내어 되사 주었다.",
+      "dateClaimIds": [
+        "claim-bm-relief-382-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-relief-382-a"
+      ],
+      "place": null,
+      "participants": [],
+      "effects": {},
+      "category": "disaster",
+      "region": "central",
+      "decade": 380,
+      "sceneFunction": "relief",
+      "participantGroups": [
+        {
+          "label": "굶주린 백성",
+          "role": "수혜자",
+          "stance": "피해",
+          "side": "백제",
+          "count": null,
+          "claimIds": [
+            "claim-bm-relief-382-t"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "none",
+        "from": 382,
+        "to": 382,
+        "basisClaimIds": []
+      }
+    },
+    {
+      "id": "scene-bm-drought-331",
+      "eventId": "event-bm-drought-331",
+      "title": "풀과 나무가 마르고 강물이 끊긴 큰 가뭄 (331)",
+      "startYear": 331,
+      "endYear": 331,
+      "kind": "disaster",
+      "summary": "비류왕 28년 봄여름 큰 가뭄에 초목이 마르고 강물이 말랐으며 가을에야 비가 왔고 그해 기근으로 사람이 사람을 먹었다.",
+      "dateClaimIds": [
+        "claim-bm-drought-331-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-drought-331-a"
+      ],
+      "place": null,
+      "participants": [],
+      "effects": {},
+      "category": "disaster",
+      "region": "central",
+      "decade": 330,
+      "participantGroups": [
+        {
+          "label": "한성 일대 백성",
+          "role": "피해자",
+          "stance": "피해",
+          "side": "백제",
+          "count": null,
+          "claimIds": [
+            "claim-bm-drought-331-a"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "none",
+        "from": 331,
+        "to": 331,
+        "basisClaimIds": []
+      }
+    },
+    {
+      "id": "scene-bm-sagu-fortress-417",
+      "eventId": "event-bm-sagu-417",
+      "title": "동·북 두 부의 장정을 모아 사구성을 쌓다 (417)",
+      "startYear": 417,
+      "endYear": 417,
+      "kind": "construction",
+      "summary": "전지왕이 동부와 북부의 열다섯 살 이상을 징발해 사구성을 쌓고 병관좌평 해구에게 공사를 감독하게 했다.",
+      "dateClaimIds": [
+        "claim-bm-sagu-417-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-sagu-417-a"
+      ],
+      "place": null,
+      "participants": [
+        {
+          "entityId": "person-haegu",
+          "claimIds": [
+            "claim-bm-sagu-417-a"
+          ]
+        }
+      ],
+      "effects": {},
+      "category": "facility",
+      "region": "central",
+      "decade": 410,
+      "sceneFunction": "fortress",
+      "participantGroups": [
+        {
+          "label": "동부·북부 15세 이상 장정",
+          "role": "역부",
+          "stance": "동원",
+          "side": "백제",
+          "count": null,
+          "claimIds": [
+            "claim-bm-sagu-417-t"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "facility",
+        "from": 417,
+        "to": null,
+        "basisClaimIds": [
+          "claim-bm-sagu-417-a"
+        ]
+      }
+    },
+    {
+      "id": "scene-bm-daedu-migration-476",
+      "eventId": "event-bm-daedu-476",
+      "title": "대두산성을 고치고 한강 북쪽 민호를 옮기다 (476)",
+      "startYear": 476,
+      "endYear": 476,
+      "kind": "migration",
+      "summary": "웅진 천도 이듬해 문주왕이 대두산성을 수리하고 한강 북쪽에 남아 있던 민호를 그곳으로 옮겼다.",
+      "dateClaimIds": [
+        "claim-bm-daedu-476-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-daedu-476-a"
+      ],
+      "place": null,
+      "participants": [],
+      "effects": {},
+      "category": "settlement",
+      "region": "south",
+      "decade": 470,
+      "sceneFunction": "migration",
+      "participantGroups": [
+        {
+          "label": "한강 북쪽 민호",
+          "role": "이주민",
+          "stance": "피동",
+          "side": "백제",
+          "count": null,
+          "claimIds": [
+            "claim-bm-daedu-476-a"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "facility",
+        "from": 476,
+        "to": null,
+        "basisClaimIds": [
+          "claim-bm-daedu-476-a"
+        ]
+      }
+    },
+    {
+      "id": "scene-bm-ungjin-market-478",
+      "eventId": "event-bm-market-478",
+      "title": "웅진 저자에서 반란 가담자의 처자를 베다 (478)",
+      "startYear": 478,
+      "endYear": 478,
+      "kind": "market",
+      "summary": "좌평 해구와 은솔 연신의 반란을 진압한 뒤 달아난 연신의 처자를 웅진 저자에서 베었다. 웅진 도성에 저자가 있었음을 보여준다.",
+      "dateClaimIds": [
+        "claim-bm-market-478-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-market-478-a"
+      ],
+      "place": {
+        "label": "웅진 저자",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12694,
+        "lat": 36.46333,
+        "claimIds": [
+          "claim-bm-market-478-a"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-gongsanseong"
+        ],
+        "coordinateNote": "웅진 도성인 공주 공산성의 위키백과 표시 좌표. 저자의 정확한 자리는 알 수 없어 precision은 area."
+      },
+      "participants": [],
+      "effects": {},
+      "category": "economy",
+      "region": "south",
+      "decade": 470,
+      "sceneFunction": "market",
+      "participantGroups": [
+        {
+          "label": "웅진 저자에 모인 사람들",
+          "role": "목격자",
+          "stance": "중립",
+          "side": "백제",
+          "count": null,
+          "claimIds": [
+            "claim-bm-market-478-a"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "facility",
+        "from": 478,
+        "to": null,
+        "basisClaimIds": [
+          "claim-bm-market-478-a"
+        ]
+      }
+    },
+    {
+      "id": "scene-bm-ungjin-flood-491",
+      "eventId": "event-bm-flood-491",
+      "title": "웅천이 넘쳐 왕도 200여 집이 떠내려가다 (491)",
+      "startYear": 491,
+      "endYear": 491,
+      "kind": "disaster",
+      "summary": "동성왕 13년 6월 웅천 물이 불어 왕도의 200여 집이 물에 잠겨 떠내려갔다.",
+      "dateClaimIds": [
+        "claim-bm-flood-491-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-flood-491-a",
+        "claim-bm-flood-491-h"
+      ],
+      "place": {
+        "label": "웅진 왕도",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12694,
+        "lat": 36.46333,
+        "claimIds": [
+          "claim-bm-flood-491-a"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-gongsanseong"
+        ],
+        "coordinateNote": "웅진 도성인 공주 공산성의 위키백과 표시 좌표. 침수 범위는 알 수 없어 precision은 area."
+      },
+      "participants": [],
+      "effects": {},
+      "category": "disaster",
+      "region": "south",
+      "decade": 490,
+      "participantGroups": [
+        {
+          "label": "침수·유실된 왕도 민가(200여 家)",
+          "role": "피해자",
+          "stance": "피해",
+          "side": "백제",
+          "count": 200,
+          "claimIds": [
+            "claim-bm-flood-491-h"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "none",
+        "from": 491,
+        "to": 491,
+        "basisClaimIds": []
+      }
+    },
+    {
+      "id": "scene-bm-ungjin-bridge-498",
+      "eventId": "event-bm-bridge-498",
+      "title": "웅진교를 놓다 (498)",
+      "startYear": 498,
+      "endYear": 498,
+      "kind": "construction",
+      "summary": "동성왕 20년에 웅진교를 가설했다. 도성과 강 건너를 잇는 다리다.",
+      "dateClaimIds": [
+        "claim-bm-bridge-498-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-bridge-498-a"
+      ],
+      "place": {
+        "label": "웅진교",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12694,
+        "lat": 36.46333,
+        "claimIds": [
+          "claim-bm-bridge-498-a"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-gongsanseong"
+        ],
+        "coordinateNote": "다리 자리가 특정되지 않아 웅진 도성(공산성) 위키백과 표시 좌표를 area로 썼다."
+      },
+      "participants": [],
+      "effects": {},
+      "category": "facility",
+      "region": "south",
+      "decade": 490,
+      "sceneFunction": "construction_site",
+      "participantGroups": [
+        {
+          "label": "가설에 동원된 사람들",
+          "role": "역부",
+          "stance": "동원",
+          "side": "백제",
+          "count": null,
+          "claimIds": [
+            "claim-bm-bridge-498-a"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "facility",
+        "from": 498,
+        "to": null,
+        "basisClaimIds": [
+          "claim-bm-bridge-498-a"
+        ]
+      }
+    },
+    {
+      "id": "scene-bm-imnyugak-500",
+      "eventId": "event-bm-imnyugak-500",
+      "title": "궁 동쪽에 임류각을 세우다 (500)",
+      "startYear": 500,
+      "endYear": 500,
+      "kind": "construction",
+      "summary": "동성왕 22년 봄, 궁 동쪽에 높이 다섯 길의 임류각을 세우고 못을 파 진기한 새를 길렀다.",
+      "dateClaimIds": [
+        "claim-bm-imnyugak-500-t"
+      ],
+      "actionClaimIds": [
+        "claim-bm-imnyugak-500-a"
+      ],
+      "place": {
+        "label": "임류각(공산성 안)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.12694,
+        "lat": 36.46333,
+        "claimIds": [
+          "claim-bm-imnyugak-500-a"
+        ],
+        "coordinateSourceIds": [
+          "src-kowiki-gongsanseong"
+        ],
+        "coordinateNote": "임류각지가 공주 공산성 안에서 확인되어 공산성 위키백과 표시 좌표를 area로 썼다."
+      },
+      "participants": [],
+      "effects": {},
+      "category": "facility",
+      "region": "south",
+      "decade": 500,
+      "sceneFunction": "construction_site",
+      "participantGroups": [
+        {
+          "label": "축조 역부",
+          "role": "역부",
+          "stance": "동원",
+          "side": "백제",
+          "count": null,
+          "claimIds": [
+            "claim-bm-imnyugak-500-a"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "facility",
+        "from": 500,
+        "to": null,
+        "basisClaimIds": [
+          "claim-bm-imnyugak-500-a"
+        ]
+      }
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact-bm-001",
+      "category": "settlement",
+      "region": "central",
+      "decade": 390,
+      "year": 399,
+      "yearVerbatim": "八年",
+      "placeLabel": "한성",
+      "modernPlace": "서울 송파 일대",
+      "what": "고구려를 치려고 군사와 말을 크게 징발하자 백성이 부역을 괴로워해 신라로 달아나 호구가 줄었다",
+      "claimIds": [
+        "claim-bm-hogu-399-t",
+        "claim-bm-hogu-399-a"
+      ],
+      "confidence": "high",
+      "note": "호구 감소를 수치 없이 적은 기사라 density는 비웠다",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-002",
+      "category": "settlement",
+      "region": "south",
+      "decade": 470,
+      "year": 476,
+      "yearVerbatim": "二年",
+      "placeLabel": "대두산성",
+      "modernPlace": "충남 아산·예산 일대(비정 미상)",
+      "what": "문주왕이 대두산성을 수리하고 한강 북쪽 민호를 그곳으로 옮겼다",
+      "claimIds": [
+        "claim-bm-daedu-476-t",
+        "claim-bm-daedu-476-a"
+      ],
+      "confidence": "medium",
+      "note": "대두산성 위치는 아산 영인산성·예산 등 학설이 갈려 좌표를 넣지 않았다",
+      "sceneId": "scene-bm-daedu-migration-476",
+      "persistence": {
+        "from": 476,
+        "to": null,
+        "kind": "facility"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-003",
+      "category": "war",
+      "region": "central",
+      "decade": 480,
+      "year": 482,
+      "yearVerbatim": "秋九月",
+      "placeLabel": "한산성",
+      "modernPlace": "서울·경기 한강 남안(비정 미상)",
+      "what": "말갈이 한산성을 습격해 깨뜨리고 300여 호를 사로잡아 돌아갔다",
+      "claimIds": [
+        "claim-bm-hansanseong-482-t",
+        "claim-bm-hansanseong-482-h"
+      ],
+      "confidence": "medium",
+      "note": "300여 戶는 한산성의 취락 규모가 아니라 말갈이 사로잡아 간 호수(虜三百餘戸以歸)라 density를 비웠다. 말갈의 습격 기사여서 갈래를 war로 두었다. 한산성 위치 비정이 갈려 좌표는 넣지 않았다.",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-004",
+      "category": "settlement",
+      "region": "south",
+      "decade": 490,
+      "year": 491,
+      "yearVerbatim": "秋七月",
+      "placeLabel": "웅진 왕도",
+      "modernPlace": "충남 공주",
+      "what": "굶주린 백성 600여 가가 신라로 달아났다",
+      "claimIds": [
+        "claim-bm-flee-silla-491-t",
+        "claim-bm-flee-silla-491-h"
+      ],
+      "confidence": "high",
+      "note": "600여 家는 웅진 왕도의 가구 수가 아니라 굶주려 신라로 빠져나간 가호 수(民饑亡入新羅者六百餘家)라 density를 비웠다. 같은 해 6월 웅천 범람(fact-bm-019)에 이어진 기사다.",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-005",
+      "category": "administration",
+      "region": "central",
+      "decade": 370,
+      "year": 371,
+      "yearVerbatim": "二十六年",
+      "placeLabel": "한산",
+      "modernPlace": "서울 송파~경기 하남 일대",
+      "what": "근초고왕이 도읍을 한산으로 옮겼다",
+      "claimIds": [
+        "claim-bm-hansan-371-t",
+        "claim-bm-hansan-371-a"
+      ],
+      "confidence": "medium",
+      "note": "천도 기사 조각에는 연도 표기가 없어(본문이 '移都漢山.' 뿐) 같은 해 첫 조각의 원문 표기 '二十六年'(chunk_samguksagi_sg_024_0080_0080, date.raw 0371)을 연도 근거로 삼았다. 한산의 자리는 북한산·남한산·한성 내부 이설이 있어 좌표를 넣지 않았다.",
+      "sceneId": "scene-bm-hansan-capital-371",
+      "persistence": {
+        "from": 371,
+        "to": 475,
+        "kind": "city"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-006",
+      "category": "administration",
+      "region": "south",
+      "decade": 470,
+      "year": 475,
+      "yearVerbatim": "冬十月",
+      "placeLabel": "웅진",
+      "modernPlace": "충남 공주",
+      "what": "한성이 함락된 뒤 문주왕이 도읍을 웅진으로 옮겼다",
+      "claimIds": [
+        "claim-bm-ungjin-475-t",
+        "claim-bm-ungjin-475-a"
+      ],
+      "confidence": "high",
+      "note": "이미 있는 장면 scene-city-ungjin-capital-475-538('백제 웅진 도읍기 도성 활동', 475~538, services/host/app/history-scenes.json)과 같은 사건이라 새 장면을 만들지 않았다. 검증기(check_fact_research.py의 fact.sceneId refs)가 sceneId를 같은 result.json의 scenes 안에서만 찾으므로 외부 장면 id를 넣으면 '참조 없음'으로 실패한다. 그래서 필드는 null로 두고 연결할 기존 장면 id를 여기에 적는다.",
+      "sceneId": null,
+      "lon": 127.12694,
+      "lat": 36.46333,
+      "coordinateBasis": "src-kowiki-gongsanseong ex-gongsan-geo",
+      "persistence": {
+        "from": 475,
+        "to": null,
+        "kind": "city"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-007",
+      "category": "administration",
+      "region": "central",
+      "decade": 400,
+      "year": 408,
+      "yearVerbatim": "四年",
+      "placeLabel": "한성",
+      "modernPlace": "서울 송파 일대",
+      "what": "전지왕이 여신을 상좌평으로 삼아 군국 정사를 맡겼고 상좌평 직이 이때 처음 생겼다",
+      "claimIds": [
+        "claim-bm-sangjwapyeong-408-t",
+        "claim-bm-sangjwapyeong-408-a",
+        "claim-bm-sangjwapyeong-408-l"
+      ],
+      "confidence": "high",
+      "note": "관제 신설이라 장면으로 만들지 않았다. 上佐平은 관직명이라 claim-bm-sangjwapyeong-408-l의 predicate를 행정 단위용 syj:administeredAs에서 syj:relatedTo로 바꿨다.",
+      "sceneId": null,
+      "persistence": {
+        "from": 408,
+        "to": null,
+        "kind": "institution"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-008",
+      "category": "administration",
+      "region": "south",
+      "decade": 470,
+      "year": 479,
+      "yearVerbatim": "秋九月",
+      "placeLabel": "대두성 → 두곡",
+      "modernPlace": "충남 내륙(비정 미상)",
+      "what": "삼근왕이 대두성을 두곡으로 옮겼다",
+      "claimIds": [
+        "claim-bm-dugok-479-t",
+        "claim-bm-dugok-479-a"
+      ],
+      "confidence": "medium",
+      "note": "두곡 위치 미상. 478년 해구의 반란 근거지였던 대두성을 옮긴 조치로 본다",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-009",
+      "category": "facility",
+      "region": "central",
+      "decade": 380,
+      "year": 386,
+      "yearVerbatim": "二年",
+      "placeLabel": "청목령~팔곤성~바다",
+      "modernPlace": "개성 청석동 고개 비정",
+      "what": "진사왕이 나라 안 15세 이상을 징발해 청목령에서 북으로 팔곤성, 서로 바다에 이르는 관방을 설치했다",
+      "claimIds": [
+        "claim-bm-gwanbang-386-t",
+        "claim-bm-gwanbang-386-a"
+      ],
+      "confidence": "medium",
+      "note": "關防(방어 시설) 축조라 갈래를 facility로 두었다(persistence.kind, 장면의 sceneFunction도 facility·fortress). 청목령·팔곤성 비정에 이설이 있어 좌표를 넣지 않았다.",
+      "sceneId": "scene-bm-gwanbang-386",
+      "persistence": {
+        "from": 386,
+        "to": null,
+        "kind": "facility"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-010",
+      "category": "facility",
+      "region": "central",
+      "decade": 380,
+      "year": 385,
+      "yearVerbatim": "二年",
+      "placeLabel": "한산",
+      "modernPlace": "서울 송파~경기 하남 일대",
+      "what": "침류왕이 한산에 불사를 짓고 승려 열 명의 출가를 허락했다 — 기록에 남은 백제 최초의 절",
+      "claimIds": [
+        "claim-bm-temple-385-t",
+        "claim-bm-temple-385-a",
+        "claim-bm-temple-385-b"
+      ],
+      "confidence": "medium",
+      "note": "절터가 특정되지 않아 좌표를 넣지 않았다",
+      "sceneId": "scene-bm-hansan-temple-385",
+      "persistence": {
+        "from": 385,
+        "to": null,
+        "kind": "facility"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-011",
+      "category": "facility",
+      "region": "central",
+      "decade": 410,
+      "year": 417,
+      "yearVerbatim": "秋七月",
+      "placeLabel": "사구성",
+      "modernPlace": "위치 미상",
+      "what": "전지왕이 동부·북부의 15세 이상을 징발해 사구성을 쌓고 병관좌평 해구가 공사를 감독했다",
+      "claimIds": [
+        "claim-bm-sagu-417-t",
+        "claim-bm-sagu-417-a"
+      ],
+      "confidence": "medium",
+      "note": "사구성 위치 미상",
+      "sceneId": "scene-bm-sagu-fortress-417",
+      "persistence": {
+        "from": 417,
+        "to": null,
+        "kind": "facility"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-012",
+      "category": "facility",
+      "region": "south",
+      "decade": 490,
+      "year": 498,
+      "yearVerbatim": "二十年",
+      "placeLabel": "웅진교",
+      "modernPlace": "충남 공주 금강 일대",
+      "what": "동성왕 20년에 웅진교를 놓았다",
+      "claimIds": [
+        "claim-bm-bridge-498-t",
+        "claim-bm-bridge-498-a"
+      ],
+      "confidence": "medium",
+      "note": "다리 자리가 특정되지 않아 웅진 도성 좌표를 area 근거로 썼다",
+      "sceneId": "scene-bm-ungjin-bridge-498",
+      "lon": 127.12694,
+      "lat": 36.46333,
+      "coordinateBasis": "src-kowiki-gongsanseong ex-gongsan-geo",
+      "persistence": {
+        "from": 498,
+        "to": null,
+        "kind": "facility"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-013",
+      "category": "facility",
+      "region": "south",
+      "decade": 500,
+      "year": 500,
+      "yearVerbatim": "二十二年",
+      "placeLabel": "임류각",
+      "modernPlace": "충남 공주 공산성",
+      "what": "동성왕이 궁 동쪽에 높이 다섯 길의 임류각을 세우고 못을 파 진기한 새를 길렀다",
+      "claimIds": [
+        "claim-bm-imnyugak-500-t",
+        "claim-bm-imnyugak-500-a"
+      ],
+      "confidence": "high",
+      "note": "공산성 안에서 임류각지로 보는 건물터가 확인되었다. 좌표는 공산성 표시 좌표(area)",
+      "sceneId": "scene-bm-imnyugak-500",
+      "lon": 127.12694,
+      "lat": 36.46333,
+      "coordinateBasis": "src-kowiki-gongsanseong ex-gongsan-geo",
+      "persistence": {
+        "from": 500,
+        "to": null,
+        "kind": "facility"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-014",
+      "category": "economy",
+      "region": "central",
+      "decade": 400,
+      "year": 406,
+      "yearVerbatim": "秋九月",
+      "placeLabel": "한성",
+      "modernPlace": "서울 송파 일대",
+      "what": "전지왕이 해충을 달솔로 삼고 한성의 조(租) 1천 석을 내려주었다",
+      "claimIds": [
+        "claim-bm-jo-406-t",
+        "claim-bm-jo-406-a"
+      ],
+      "confidence": "medium",
+      "note": "한성 왕성을 풍납토성으로 보는 통설에 따른 좌표. 조(租)를 단위로 거둔 수취가 한성에서 이뤄졌음을 보여준다",
+      "sceneId": null,
+      "lon": 127.12083,
+      "lat": 37.53889,
+      "coordinateBasis": "src-kowiki-pungnaptoseong ex-pungnap-geo",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-015",
+      "category": "economy",
+      "region": "south",
+      "decade": 470,
+      "year": 478,
+      "yearVerbatim": "二年",
+      "placeLabel": "웅진 저자(熊建市)",
+      "modernPlace": "충남 공주",
+      "what": "반란에 가담한 연신의 처자를 웅진 저자에서 베었다 — 웅진 도성에 저자가 섰음을 보여주는 기사",
+      "claimIds": [
+        "claim-bm-market-478-t",
+        "claim-bm-market-478-a"
+      ],
+      "confidence": "medium",
+      "note": "원문은 熊建市. 熊津市의 이표기로 보는 것이 통설이다",
+      "sceneId": "scene-bm-ungjin-market-478",
+      "lon": 127.12694,
+      "lat": 36.46333,
+      "coordinateBasis": "src-kowiki-gongsanseong ex-gongsan-geo",
+      "persistence": {
+        "from": 478,
+        "to": null,
+        "kind": "facility"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-016",
+      "category": "economy",
+      "region": "south",
+      "decade": 480,
+      "year": 489,
+      "yearVerbatim": "十一年",
+      "placeLabel": "국남 해촌",
+      "modernPlace": "충남·전북 서해안(비정 미상)",
+      "what": "가을에 큰 풍년이 들어 나라 남쪽 바닷가 마을 사람이 이삭 둘이 붙은 벼를 바쳤다",
+      "claimIds": [
+        "claim-bm-harvest-489-t",
+        "claim-bm-harvest-489-a"
+      ],
+      "confidence": "medium",
+      "note": "해촌(海村)의 자리는 특정되지 않는다",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-017",
+      "category": "disaster",
+      "region": "central",
+      "decade": 330,
+      "year": 331,
+      "yearVerbatim": "二十八年",
+      "placeLabel": "한성 일대",
+      "modernPlace": "서울 송파 일대",
+      "what": "봄여름 큰 가뭄으로 초목이 마르고 강물이 끊겼으며 가을에야 비가 왔고 그해 기근으로 사람이 사람을 먹었다",
+      "claimIds": [
+        "claim-bm-drought-331-t",
+        "claim-bm-drought-331-a"
+      ],
+      "confidence": "high",
+      "note": "피해 범위가 적히지 않아 왕도 기준으로 권역을 central로 두었다",
+      "sceneId": "scene-bm-drought-331",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-018",
+      "category": "disaster",
+      "region": "central",
+      "decade": 380,
+      "year": 382,
+      "yearVerbatim": "八年",
+      "placeLabel": "한성 일대",
+      "modernPlace": "서울 송파 일대",
+      "what": "봄부터 6월까지 비가 오지 않아 백성이 자식을 파는 지경에 이르자 왕이 관가 곡식을 내어 되사 주었다",
+      "claimIds": [
+        "claim-bm-relief-382-t",
+        "claim-bm-relief-382-a"
+      ],
+      "confidence": "high",
+      "note": "구휼 기사 — 굶주림과 관곡 지출이 함께 적힌 드문 사례",
+      "sceneId": "scene-bm-relief-382",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-019",
+      "category": "disaster",
+      "region": "south",
+      "decade": 490,
+      "year": 491,
+      "yearVerbatim": "十三年",
+      "placeLabel": "웅진 왕도",
+      "modernPlace": "충남 공주",
+      "what": "웅천 물이 불어 왕도의 200여 집이 물에 잠겨 떠내려갔다",
+      "claimIds": [
+        "claim-bm-flood-491-t",
+        "claim-bm-flood-491-a",
+        "claim-bm-flood-491-h"
+      ],
+      "confidence": "high",
+      "note": "웅천은 지금의 금강. 왕도 200여 家가 침수·유실된 수치(漂沒王都二百餘家)일 뿐 웅진 왕도의 가구 수가 아니라 density를 비웠다. 좌표가 붙은 기록이라 density를 남기면 fact-layers의 밀도 계층에 웅진 왕도의 호수로 실린다.",
+      "sceneId": "scene-bm-ungjin-flood-491",
+      "lon": 127.12694,
+      "lat": 36.46333,
+      "coordinateBasis": "src-kowiki-gongsanseong ex-gongsan-geo",
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-020",
+      "category": "disaster",
+      "region": "central",
+      "decade": 490,
+      "year": 499,
+      "yearVerbatim": "二十一年",
+      "placeLabel": "한산",
+      "modernPlace": "서울·경기 한강 유역",
+      "what": "큰 가뭄에 백성이 굶어 서로 잡아먹고 도적이 일어났으며, 신하들이 창고를 열어 구휼하자 했으나 왕이 듣지 않았고, 한산 사람 2천이 고구려로 달아났다",
+      "claimIds": [
+        "claim-bm-famine-499-t",
+        "claim-bm-famine-499-a",
+        "claim-bm-famine-499-p"
+      ],
+      "confidence": "medium",
+      "note": "원문은 '二十一年, 夏大旱, 民饑相食, 盗賊多起, 臣寮請發倉賑救, 王不聽. 漢山人亡入髙句麗者二千.'으로 두 문장이 나란히 있을 뿐 창고를 열지 않아 달아났다는 인과는 원문에 없다. 2천은 한산의 인구가 아니라 빠져나간 사람 수라 density를 비웠다. 이탈 기록이 한산 사람이라 권역을 central로 두었다.",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-021",
+      "category": "culture",
+      "region": "central",
+      "decade": 380,
+      "year": 384,
+      "yearVerbatim": "九月",
+      "placeLabel": "한성 왕궁",
+      "modernPlace": "서울 송파 풍납토성 비정",
+      "what": "호승 마라난타가 동진에서 오자 침류왕이 궁 안에 맞아 예로 섬겼고 백제 불법이 여기서 비롯되었다",
+      "claimIds": [
+        "claim-bm-buddhism-384-t",
+        "claim-bm-buddhism-384-a"
+      ],
+      "confidence": "high",
+      "note": "한성 왕성을 풍납토성으로 보는 통설에 따른 좌표(area 수준)",
+      "sceneId": "scene-bm-buddhism-384",
+      "lon": 127.12083,
+      "lat": 37.53889,
+      "coordinateBasis": "src-kowiki-pungnaptoseong ex-pungnap-geo",
+      "persistence": {
+        "from": 384,
+        "to": null,
+        "kind": "institution"
+      },
+      "density": null
+    },
+    {
+      "id": "fact-bm-022",
+      "category": "culture",
+      "region": "central",
+      "decade": 370,
+      "year": 375,
+      "yearVerbatim": "至是",
+      "placeLabel": "한성",
+      "modernPlace": "서울 송파 일대",
+      "what": "고기(古記)에 백제가 나라를 연 뒤 글로 일을 적은 적이 없다가 박사 고흥을 얻어 비로소 서기(書記)가 있게 되었다고 한다",
+      "claimIds": [
+        "claim-bm-seogi-375-t",
+        "claim-bm-seogi-375-a"
+      ],
+      "confidence": "low",
+      "note": "375는 이 고기(古記) 인용이 실린 근초고왕 30년 졸기(冬十一月, 王薨)의 위치일 뿐 書記 편찬 시점 자체는 아니다. '至是得愽士髙興, 始有書記'의 '至是'는 근초고왕 재위 전체를 가리키는 회고 서술이다. 삼국사기 편찬자도 고흥이 다른 책에 보이지 않는다고 덧붙였다.",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-023",
+      "category": "foreign",
+      "region": "central",
+      "decade": 370,
+      "year": 372,
+      "yearVerbatim": "二十七年",
+      "placeLabel": "한성",
+      "modernPlace": "서울 송파 일대",
+      "what": "근초고왕이 정월에 동진에 사신을 보내 조공했다",
+      "claimIds": [
+        "claim-bm-jin-372-t",
+        "claim-bm-jin-372-a"
+      ],
+      "confidence": "high",
+      "note": "삼국사기 백제본기에 보이는 첫 동진 견사 기사다(백제본기 300년 이후 구간 기준). 東晉은 엄밀히 南朝(宋·齊·梁·陳)에 들지 않으므로 '남조 통교'라는 표현은 쓰지 않았다. 출발지는 왕도, 도착지는 동진 건강.",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-024",
+      "category": "foreign",
+      "region": "central",
+      "decade": 420,
+      "year": 429,
+      "yearVerbatim": "三年",
+      "placeLabel": "한성",
+      "modernPlace": "서울 송파 일대",
+      "what": "비유왕이 가을에 송에 사신을 보내 조공했고 송서 문제본기에도 같은 해 백제왕이 방물을 바쳤다고 적혀 있다",
+      "claimIds": [
+        "claim-bm-song-429-t",
+        "claim-bm-song-429-a",
+        "claim-bm-song-429-x"
+      ],
+      "confidence": "high",
+      "note": "삼국사기와 송서 본기가 같은 해를 적은 교차 확인 사례",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-025",
+      "category": "foreign",
+      "region": "central",
+      "decade": 450,
+      "year": 457,
+      "yearVerbatim": "大明元年",
+      "placeLabel": "한성",
+      "modernPlace": "서울 송파 일대",
+      "what": "송 효무제가 백제왕 여경(개로왕)을 진동대장군으로 삼았다",
+      "claimIds": [
+        "claim-bm-yeogyeong-457-t",
+        "claim-bm-yeogyeong-457-a"
+      ],
+      "confidence": "high",
+      "note": "집성 송서 효무제본기. 책봉 행위 자체는 송 도읍 건강의 조정에서 이뤄졌고, 좌표·권역은 수봉자인 백제 왕의 왕도(한성) 기준으로 두었다. 삼국사기 개로왕조에는 이 기사가 없다(개로왕 조각은 455·468·469·472·475로 이어진다).",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-026",
+      "category": "person",
+      "region": "south",
+      "decade": 460,
+      "year": 461,
+      "yearVerbatim": "年六十二歲",
+      "placeLabel": "무령왕릉(지석 출토지)",
+      "modernPlace": "충남 공주 송산리 무령왕릉 — 지석이 나온 곳이며 출생지가 아니다",
+      "what": "무령왕(사마왕)은 무령왕릉 지석에 계묘년(523) 나이 62세로 돌아갔다고 적혀 있고, 이 지석 조각의 각주와 일본서기가 생년을 461년으로 본다",
+      "claimIds": [
+        "claim-bm-muryeong-birth",
+        "claim-bm-muryeong-title"
+      ],
+      "confidence": "medium",
+      "note": "지석은 생년을 직접 적지 않는다. 이 조각의 각주(gskh_002_0010_0010_0080_0003)가 '卒年인 523년의 향수가 62세인 사실에서 무녕왕의 生年이 461년임을 알 수 있다. 『日本書紀』에도 雄略天皇 5년(461) 6월 1일 탄생으로 되어 있어 이 지석의 기록과 합치된다'고 하여 461년을 따랐다. 세는나이로 단순 역산하면 462년이 되지만 각주와 일본서기는 461년이다. 좌표·권역은 지석이 나온 공주 기준이며 출생지가 아니다. 일본서기는 각라도(가카라시마) 출생을 전한다.",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    },
+    {
+      "id": "fact-bm-027",
+      "category": "settlement",
+      "region": "central",
+      "decade": 480,
+      "year": 483,
+      "yearVerbatim": "五年",
+      "placeLabel": "한산성",
+      "modernPlace": "서울·경기 한강 남안(비정 미상)",
+      "what": "동성왕이 사냥을 나갔다가 한산성에 이르러 군사와 백성을 위무하고 열흘 만에 돌아왔다",
+      "claimIds": [
+        "claim-bm-hansanseong-483-t",
+        "claim-bm-hansanseong-483-a"
+      ],
+      "confidence": "medium",
+      "note": "웅진 천도(475)와 말갈의 습격(482) 뒤에도 한산성에 백제의 군사와 백성이 남아 있었음을 보여준다. 한산성 위치 비정이 갈려 좌표는 넣지 않았다.",
+      "sceneId": null,
+      "persistence": null,
+      "density": null
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-1",
+      "topic": "백제 호구 총수",
+      "detail": "300~500년 백제의 전국 호수·구수를 적은 기록을 찾지 못했다. 송서·양서 백제전은 마한 시절의 '總十餘萬戶'만 적고 백제 자체 호구는 없다.",
+      "neededSource": "중국 정사 백제전의 호구 기재, 또는 목간·호적 자료"
+    },
+    {
+      "id": "miss-2",
+      "topic": "한성기 도성의 확정 좌표",
+      "detail": "한성·한산의 자리에 풍납토성설·몽촌토성설·남한산설이 갈려 371년 한산 천도의 좌표를 넣지 못했다.",
+      "neededSource": "국가유산포털의 풍납동 토성·몽촌토성 위치 서술, 발굴 보고"
+    },
+    {
+      "id": "miss-3",
+      "topic": "웅진기 시장·가마의 위치",
+      "detail": "熊建市(웅진 저자)의 자리를 특정할 자료가 없어 공산성 좌표를 area로 대신했다.",
+      "neededSource": "공주 지역 발굴 보고(국립부여문화유산연구소)"
+    },
+    {
+      "id": "miss-4",
+      "topic": "대두산성·사구성·두곡 비정",
+      "detail": "476·479·417년 기사에 나오는 성과 골짜기의 위치가 확정되지 않아 좌표를 넣지 못했다.",
+      "neededSource": "한국민족문화대백과사전의 해당 항목, 지표조사 보고"
+    },
+    {
+      "id": "miss-5",
+      "topic": "기존 장면과의 연결",
+      "detail": "fact-bm-006(475년 웅진 천도)은 이미 있는 장면 scene-city-ungjin-capital-475-538과 같은 사건이지만, 검증기가 fact.sceneId를 같은 result.json의 scenes 안에서만 찾아 외부 장면 id를 적으면 실패한다.",
+      "neededSource": "검증기에 기존 history-scenes.json의 장면 id를 허용하는 확인 경로"
+    }
+  ]
+}

@@ -1,0 +1,2873 @@
+{
+ "collection": "facts-ancient",
+ "job": "cross_facility_culture",
+ "cell": {
+  "polity": "삼국·통일신라 횡단",
+  "from": -57,
+  "to": 935,
+  "regions": [
+   "south",
+   "central",
+   "north"
+  ],
+  "categories": {
+   "facility": 10,
+   "culture": 10
+  }
+ },
+ "sources": [
+  {
+   "id": "src-kowiki-wolseong",
+   "title": "경주 월성",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%9B%94%EC%84%B1",
+   "rawFile": "raw/wolseong.html",
+   "sha256": "e1758d1ef3b417bb45eae97cee684e83bc30cdf4a644e0727d309fcd30cda589",
+   "httpStatus": 200,
+   "byteLength": 277688,
+   "fetchedUtc": "2026-09-13T00:37:48Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-wolseong-geo",
+     "text": "35.83083; 129.22611",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-wandu",
+   "title": "Hwando",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Wandu",
+   "rawFile": "raw/en-wandu.html",
+   "sha256": "48a23ac664e1ce6ef103e0824572879daf7bbe998d207acddd344dafe06da545",
+   "httpStatus": 200,
+   "byteLength": 106954,
+   "fetchedUtc": "2026-09-13T00:38:15Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-wandu-geo",
+     "text": "41.146528; 126.163194",
+     "locator": "infobox coordinates"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-pyongyang",
+   "title": "Pyongyang",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Pyongyang",
+   "rawFile": "raw/en-pyongyang.html",
+   "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+   "httpStatus": 200,
+   "byteLength": 897617,
+   "fetchedUtc": "2026-09-13T00:38:18Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-pyongyang-geo",
+     "text": "39.01667; 125.74750",
+     "locator": "infobox coordinates"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-gungnae",
+   "title": "Gungnae",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Gungnae",
+   "rawFile": "raw/en-gungnae.html",
+   "sha256": "ee13edd241dbfe9ed5f492003259378572970f2daca301251d08dde5cbccdb7b",
+   "httpStatus": 200,
+   "byteLength": 126209,
+   "fetchedUtc": "2026-09-13T00:38:17Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-gungnae-geo",
+     "text": "41.12083; 126.17861",
+     "locator": "infobox coordinates"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-samnyeonsanseong",
+   "title": "삼년산성",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%82%BC%EB%85%84%EC%82%B0%EC%84%B1",
+   "rawFile": "raw/samnyeonsanseong.html",
+   "sha256": "f821ebd0793270d98bd8aaa883be25ea0e50c36112f8b9204b9efaeb9d56077a",
+   "httpStatus": 200,
+   "byteLength": 154669,
+   "fetchedUtc": "2026-09-13T00:37:52Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-samnyeon-geo",
+     "text": "36.48917; 127.74167",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-namhansanseong",
+   "title": "남한산성",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EB%82%A8%ED%95%9C%EC%82%B0%EC%84%B1",
+   "rawFile": "raw/namhansanseong.html",
+   "sha256": "9e2de94f9706acd157c8de9445ac4b0845cca424c2fccc5dfa584632fc375715",
+   "httpStatus": 200,
+   "byteLength": 692743,
+   "fetchedUtc": "2026-09-13T00:37:53Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-namhan-geo",
+     "text": "37.47889; 127.18111",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-woljeonggyo",
+   "title": "경주 춘양교지와 월정교지",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%9B%94%EC%A0%95%EA%B5%90",
+   "rawFile": "raw/woljeonggyo.html",
+   "sha256": "afc1695f37137f2cfc251faf5b186b3fdafc13a44ddf49c6f1ed66ac92b92c48",
+   "httpStatus": 200,
+   "byteLength": 105417,
+   "fetchedUtc": "2026-09-13T00:37:55Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-woljeonggyo-geo",
+     "text": "35.82944; 129.21806",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-byeokgolje",
+   "title": "김제 벽골제",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B9%80%EC%A0%9C_%EB%B2%BD%EA%B3%A8%EC%A0%9C",
+   "rawFile": "raw/byeokgolje.html",
+   "sha256": "990019ef9fc86346cc8ced08210d52d864dada04bda5a564753ddf0a6a178f3d",
+   "httpStatus": 200,
+   "byteLength": 172007,
+   "fetchedUtc": "2026-09-13T00:37:56Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-byeokgolje-geo",
+     "text": "35.75444; 126.85444",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-wangheungsaji",
+   "title": "부여 왕흥사지",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC_%EC%99%95%ED%9D%A5%EC%82%AC%EC%A7%80",
+   "rawFile": "raw/wangheungsaji.html",
+   "sha256": "f007827131694924611c1839bcce54c125fb5f742d28abfab9aedca32a1a956e",
+   "httpStatus": 200,
+   "byteLength": 101624,
+   "fetchedUtc": "2026-09-13T00:37:58Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-wangheungsa-geo",
+     "text": "36.29639; 126.90694",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-bunhwangsa",
+   "title": "Bunhwangsa",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Bunhwangsa",
+   "rawFile": "raw/en-bunhwangsa.html",
+   "sha256": "bb0cae0b6e7457f432eb7b9b0a53e2d8ae10d181844090627b7a26f64a7dee1b",
+   "httpStatus": 200,
+   "byteLength": 114468,
+   "fetchedUtc": "2026-09-13T00:38:19Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-bunhwangsa-geo",
+     "text": "35.84056; 129.23361",
+     "locator": "infobox coordinates"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-buseoksa",
+   "title": "부석사",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%84%9D%EC%82%AC",
+   "rawFile": "raw/buseoksa.html",
+   "sha256": "8ba75347eebbacd6b3bd94e283cc1bd465ac2381cb146e77f366ebec47917d20",
+   "httpStatus": 200,
+   "byteLength": 367062,
+   "fetchedUtc": "2026-09-13T00:38:01Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-buseoksa-geo",
+     "text": "36.9988527; 128.6874968",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-haeinsa",
+   "title": "해인사",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%ED%95%B4%EC%9D%B8%EC%82%AC",
+   "rawFile": "raw/haeinsa.html",
+   "sha256": "c88858587c0ab949fcbc25e704b6bf518a56dc89b84ca39295211af5c87d7dbd",
+   "httpStatus": 200,
+   "byteLength": 387938,
+   "fetchedUtc": "2026-09-13T00:38:02Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-haeinsa-geo",
+     "text": "35.80111; 128.09833",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-namsanfortress",
+   "title": "Namsansinseong",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Namsan_Fortress",
+   "rawFile": "raw/en-namsan-fortress.html",
+   "sha256": "394a0e078b81c21b8b14e4e5783bc5adeef13534ea3383dfb615e2b0100681a2",
+   "httpStatus": 200,
+   "byteLength": 87677,
+   "fetchedUtc": "2026-09-13T00:45:44Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-namsanseong-geo",
+     "text": "35.8169; 129.2286",
+     "locator": "infobox coordinates"
+    },
+    {
+     "id": "ex-namsanseong-built591",
+     "text": "According to the Samguk sagi, it was built in 591",
+     "locator": "History 문단 첫 문장"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-pungnaptoseong",
+   "title": "풍납토성",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%ED%92%8D%EB%82%A9%ED%86%A0%EC%84%B1",
+   "rawFile": "raw/pungnaptoseong.html",
+   "sha256": "b8a50b51bc3822fd73353f38a1ee063ad239cb6a13b87e031d17bcf95caf387c",
+   "httpStatus": 200,
+   "byteLength": 153935,
+   "fetchedUtc": "2026-09-13T00:45:39Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-pungnap-geo",
+     "text": "37.53889; 127.12083",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-enwiki-gongju",
+   "title": "Gongju",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Gongju",
+   "rawFile": "raw/en-gongju.html",
+   "sha256": "75d8af0d54ac6cf024732d45754b95f0b52222f2c20b19cf71aac58bacdfe4ad",
+   "httpStatus": 200,
+   "byteLength": 156593,
+   "fetchedUtc": "2026-09-13T00:45:42Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-gongju-geo",
+     "text": "36.450; 127.117",
+     "locator": "infobox coordinates"
+    }
+   ]
+  }
+ ],
+ "entities": [
+  {
+   "id": "polity-silla",
+   "type": "Polity",
+   "label": "신라"
+  },
+  {
+   "id": "polity-goguryeo",
+   "type": "Polity",
+   "label": "고구려"
+  },
+  {
+   "id": "polity-baekje",
+   "type": "Polity",
+   "label": "백제"
+  },
+  {
+   "id": "place-wolseong",
+   "type": "Place",
+   "label": "월성"
+  },
+  {
+   "id": "place-geumseong",
+   "type": "Place",
+   "label": "금성"
+  },
+  {
+   "id": "event-wolseong-101",
+   "type": "Event",
+   "label": "월성 축조"
+  },
+  {
+   "id": "place-hwandoseong",
+   "type": "Place",
+   "label": "환도성"
+  },
+  {
+   "id": "event-hwando-198",
+   "type": "Event",
+   "label": "환도성 축조"
+  },
+  {
+   "id": "place-pyongyang",
+   "type": "Place",
+   "label": "평양"
+  },
+  {
+   "id": "event-pyongyang-247",
+   "type": "Event",
+   "label": "평양성 축조와 이주"
+  },
+  {
+   "id": "place-guknaeseong",
+   "type": "Place",
+   "label": "국내성"
+  },
+  {
+   "id": "event-guknae-342",
+   "type": "Event",
+   "label": "국내성 축조"
+  },
+  {
+   "id": "place-sije",
+   "type": "Place",
+   "label": "시제(矢堤)"
+  },
+  {
+   "id": "place-samnyeonsanseong",
+   "type": "Place",
+   "label": "삼년산성"
+  },
+  {
+   "id": "event-samnyeon-470",
+   "type": "Event",
+   "label": "삼년산성 축조"
+  },
+  {
+   "id": "place-ungjingyo",
+   "type": "Place",
+   "label": "웅진교"
+  },
+  {
+   "id": "place-namsanseong",
+   "type": "Place",
+   "label": "남산성"
+  },
+  {
+   "id": "event-namsanseong-591",
+   "type": "Event",
+   "label": "남산성 축조"
+  },
+  {
+   "id": "place-jujangseong",
+   "type": "Place",
+   "label": "주장성(晝長城)"
+  },
+  {
+   "id": "event-jujang-672",
+   "type": "Event",
+   "label": "주장성 축조"
+  },
+  {
+   "id": "place-bukgyeong-jangseong",
+   "type": "Place",
+   "label": "북경 장성(721)"
+  },
+  {
+   "id": "place-woljeonggyo",
+   "type": "Place",
+   "label": "월정교"
+  },
+  {
+   "id": "event-gyeongju-bridges-760",
+   "type": "Event",
+   "label": "월정교·춘양교 가설"
+  },
+  {
+   "id": "place-byeokgolje",
+   "type": "Place",
+   "label": "벽골제"
+  },
+  {
+   "id": "event-byeokgolje-790",
+   "type": "Event",
+   "label": "벽골제 증축"
+  },
+  {
+   "id": "place-paegang-jangseong",
+   "type": "Place",
+   "label": "패강 장성"
+  },
+  {
+   "id": "event-gg-buddhism-372",
+   "type": "Event",
+   "label": "전진 사신과 순도의 불상·경문 전래"
+  },
+  {
+   "id": "place-chomunsa",
+   "type": "Place",
+   "label": "초문사"
+  },
+  {
+   "id": "event-chomunsa-375",
+   "type": "Event",
+   "label": "초문사·이불란사 창건"
+  },
+  {
+   "id": "place-hanseong-baekje",
+   "type": "Place",
+   "label": "한성(백제 도읍)"
+  },
+  {
+   "id": "event-bj-buddhism-384",
+   "type": "Event",
+   "label": "마라난타의 백제 불교 전래"
+  },
+  {
+   "id": "place-pyongyang-nine-temples",
+   "type": "Place",
+   "label": "평양 9사"
+  },
+  {
+   "id": "event-pyongyang-nine-393",
+   "type": "Event",
+   "label": "평양 아홉 절 창건"
+  },
+  {
+   "id": "place-geumgangsa",
+   "type": "Place",
+   "label": "금강사"
+  },
+  {
+   "id": "event-geumgangsa-498",
+   "type": "Event",
+   "label": "금강사 창건"
+  },
+  {
+   "id": "place-daetongsa",
+   "type": "Place",
+   "label": "대통사"
+  },
+  {
+   "id": "event-daetongsa-527",
+   "type": "Event",
+   "label": "대통사 창건"
+  },
+  {
+   "id": "event-silla-buddhism-528",
+   "type": "Event",
+   "label": "신라 불법 시행"
+  },
+  {
+   "id": "event-hwarang-576",
+   "type": "Event",
+   "label": "원화를 받들고 화랑을 두다"
+  },
+  {
+   "id": "group-hwarang",
+   "type": "Group",
+   "label": "화랑"
+  },
+  {
+   "id": "place-wangheungsa",
+   "type": "Place",
+   "label": "왕흥사"
+  },
+  {
+   "id": "event-wangheungsa-600",
+   "type": "Event",
+   "label": "왕흥사 창건"
+  },
+  {
+   "id": "place-bunhwangsa",
+   "type": "Place",
+   "label": "분황사"
+  },
+  {
+   "id": "event-bunhwangsa-634",
+   "type": "Event",
+   "label": "분황사 완성"
+  },
+  {
+   "id": "place-buseoksa",
+   "type": "Place",
+   "label": "부석사"
+  },
+  {
+   "id": "person-uisang",
+   "type": "Person",
+   "label": "의상"
+  },
+  {
+   "id": "event-buseoksa-676",
+   "type": "Event",
+   "label": "부석사 창건"
+  },
+  {
+   "id": "inst-gukhak",
+   "type": "Institution",
+   "label": "국학"
+  },
+  {
+   "id": "place-haeinsa",
+   "type": "Place",
+   "label": "해인사"
+  },
+  {
+   "id": "event-haeinsa-802",
+   "type": "Event",
+   "label": "해인사 창건"
+  }
+ ],
+ "claims": [
+  {
+   "id": "claim-wolseong-time",
+   "subject": "place-wolseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十二年",
+    "year": 101,
+    "precision": "month",
+    "earliest": 101,
+    "latest": 101
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0060_0240",
+   "quote": "二十二年, 春二月, 築城, 名月城."
+  },
+  {
+   "id": "claim-wolseong-act",
+   "subject": "event-wolseong-101",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-wolseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0060_0240",
+   "quote": "築城, 名月城"
+  },
+  {
+   "id": "claim-wolseong-size",
+   "subject": "place-wolseong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-geumseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_034_0020_0120",
+   "quote": "於金城東南築城, 號月城, 或號在城, 周一千二十三歩",
+   "note": "지리지: 금성 동남쪽, 둘레 1023보"
+  },
+  {
+   "id": "claim-wolseong-loc",
+   "subject": "place-wolseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.83083,
+    "lon": 129.22611,
+    "precision": "site"
+   },
+   "sourceId": "src-kowiki-wolseong",
+   "citesExcerpt": "ex-wolseong-geo"
+  },
+  {
+   "id": "claim-hwando-time",
+   "subject": "place-hwandoseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二年",
+    "year": 198,
+    "precision": "month",
+    "earliest": 198,
+    "latest": 198
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_016_0040_0030",
+   "quote": "二年, 春二月, 築丸都城."
+  },
+  {
+   "id": "claim-hwando-act",
+   "subject": "event-hwando-198",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hwandoseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_016_0040_0030",
+   "quote": "築丸都城"
+  },
+  {
+   "id": "claim-hwando-loc",
+   "subject": "place-hwandoseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 41.146528,
+    "lon": 126.163194,
+    "precision": "site"
+   },
+   "sourceId": "src-enwiki-wandu",
+   "citesExcerpt": "ex-wandu-geo",
+   "note": "영어 위키백과 Hwando(URL Wandu 는 리다이렉트) 표시 좌표, 지안 환도산성"
+  },
+  {
+   "id": "claim-py247-time",
+   "subject": "place-pyongyang",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十一年",
+    "year": 247,
+    "precision": "month",
+    "earliest": 247,
+    "latest": 247
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_017_0020_0160",
+   "quote": "二十一年, 春二月, 王以丸都城經亂, 不可復都, 築平壤城, 移民及廟社."
+  },
+  {
+   "id": "claim-py247-act",
+   "subject": "event-pyongyang-247",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-pyongyang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_017_0020_0160",
+   "quote": "築平壤城, 移民及廟社"
+  },
+  {
+   "id": "claim-py-loc",
+   "subject": "place-pyongyang",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 39.01667,
+    "lon": 125.7475,
+    "precision": "area"
+   },
+   "sourceId": "src-enwiki-pyongyang",
+   "citesExcerpt": "ex-pyongyang-geo",
+   "note": "현재 평양시 좌표로 대신함"
+  },
+  {
+   "id": "claim-guknae-time",
+   "subject": "place-guknaeseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十二年",
+    "year": 342,
+    "precision": "month",
+    "earliest": 342,
+    "latest": 342
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_018_0020_0110",
+   "quote": "十二年, 春二月, 修葺丸都城, 又築國内城."
+  },
+  {
+   "id": "claim-guknae-act",
+   "subject": "event-guknae-342",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-guknaeseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_018_0020_0110",
+   "quote": "修葺丸都城, 又築國内城"
+  },
+  {
+   "id": "claim-guknae-loc",
+   "subject": "place-guknaeseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 41.12083,
+    "lon": 126.17861,
+    "precision": "site"
+   },
+   "sourceId": "src-enwiki-gungnae",
+   "citesExcerpt": "ex-gungnae-geo"
+  },
+  {
+   "id": "claim-sije-time",
+   "subject": "place-sije",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十三年",
+    "year": 429,
+    "precision": "year",
+    "earliest": 429,
+    "latest": 429
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0040_0090",
+   "quote": "十三年, 新築矢堤, 岸長二千一百七十歩."
+  },
+  {
+   "id": "claim-sije-act",
+   "subject": "place-sije",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0040_0090",
+   "quote": "新築矢堤, 岸長二千一百七十歩",
+   "note": "둑 언덕 길이 2170보"
+  },
+  {
+   "id": "claim-samnyeon-time",
+   "subject": "place-samnyeonsanseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十三年",
+    "year": 470,
+    "precision": "year",
+    "earliest": 470,
+    "latest": 470
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0050_0180",
+   "quote": "十三年, 築三年山城."
+  },
+  {
+   "id": "claim-samnyeon-act",
+   "subject": "event-samnyeon-470",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-samnyeonsanseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0050_0180",
+   "quote": "築三年山城"
+  },
+  {
+   "id": "claim-samnyeon-loc",
+   "subject": "place-samnyeonsanseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 36.48917,
+    "lon": 127.74167,
+    "precision": "site"
+   },
+   "sourceId": "src-kowiki-samnyeonsanseong",
+   "citesExcerpt": "ex-samnyeon-geo"
+  },
+  {
+   "id": "claim-ungjingyo-time",
+   "subject": "place-ungjingyo",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十年",
+    "year": 498,
+    "precision": "year",
+    "earliest": 498,
+    "latest": 498
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0040_0320",
+   "quote": "二十年, 設熊津橋."
+  },
+  {
+   "id": "claim-ungjingyo-act",
+   "subject": "place-ungjingyo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-baekje"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_026_0040_0320",
+   "quote": "設熊津橋"
+  },
+  {
+   "id": "claim-namsan-time",
+   "subject": "place-namsanseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "秋七月",
+    "year": 591,
+    "precision": "month",
+    "earliest": 591,
+    "latest": 591
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0060_0190",
+   "quote": "秋七月, 築南山城, 周二千八百五十四步."
+  },
+  {
+   "id": "claim-namsan-act",
+   "subject": "place-namsanseong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0060_0190",
+   "quote": "築南山城, 周二千八百五十四步",
+   "note": "둘레 2854보"
+  },
+  {
+   "id": "claim-namsan-loc",
+   "subject": "place-namsanseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.8169,
+    "lon": 129.2286,
+    "precision": "area"
+   },
+   "sourceId": "src-enwiki-namsanfortress",
+   "citesExcerpt": "ex-namsanseong-geo",
+   "note": "영어 위키백과 Namsansinseong(URL Namsan_Fortress 는 리다이렉트) 표시 좌표, 경주 남산"
+  },
+  {
+   "id": "claim-jujang-time",
+   "subject": "place-jujangseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "year",
+    "value": 672
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0180",
+   "quote": "築漢山州晝長城, 周四千三百六十歩."
+  },
+  {
+   "id": "claim-jujang-act",
+   "subject": "event-jujang-672",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-jujangseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0180",
+   "quote": "築漢山州晝長城, 周四千三百六十歩",
+   "note": "둘레 4360보"
+  },
+  {
+   "id": "claim-jujang-loc",
+   "subject": "place-jujangseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.47889,
+    "lon": 127.18111,
+    "precision": "area"
+   },
+   "sourceId": "src-kowiki-namhansanseong",
+   "citesExcerpt": "ex-namhan-geo",
+   "note": "남한산성 비정"
+  },
+  {
+   "id": "claim-bukjang-time",
+   "subject": "place-bukgyeong-jangseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十年",
+    "year": 721,
+    "precision": "month",
+    "earliest": 721,
+    "latest": 721
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0040_1120",
+   "quote": "二十年, 秋七月, 徵何瑟羅道丁夫二千, 築長城於北境."
+  },
+  {
+   "id": "claim-bukjang-act",
+   "subject": "place-bukgyeong-jangseong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_008_0040_1120",
+   "quote": "徵何瑟羅道丁夫二千, 築長城於北境",
+   "note": "하슬라도 정부 2000명 동원"
+  },
+  {
+   "id": "claim-woljeong-time",
+   "subject": "place-woljeonggyo",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "year",
+    "value": 760
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_009_0030_0750",
+   "quote": "又於宫南蚊川之上, 起月浄·春陽二橋."
+  },
+  {
+   "id": "claim-woljeong-act",
+   "subject": "event-gyeongju-bridges-760",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-woljeonggyo"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_009_0030_0750",
+   "quote": "又於宫南蚊川之上, 起月浄·春陽二橋",
+   "note": "궁궐 남쪽 문천 위에 월정·춘양 두 다리"
+  },
+  {
+   "id": "claim-woljeong-loc",
+   "subject": "place-woljeonggyo",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.82944,
+    "lon": 129.21806,
+    "precision": "area"
+   },
+   "sourceId": "src-kowiki-woljeonggyo",
+   "citesExcerpt": "ex-woljeonggyo-geo",
+   "note": "위키백과 \"경주 춘양교지와 월정교지\" 합동 항목의 표시 좌표. 문서가 두 다리를 함께 다루고 어느 쪽 지점인지 구분하지 않아 precision area"
+  },
+  {
+   "id": "claim-byeokgol-time",
+   "subject": "place-byeokgolje",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "六年",
+    "year": 790,
+    "precision": "month",
+    "earliest": 790,
+    "latest": 790
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0020_0280",
+   "quote": "六年, 春正月, 以宗基爲侍中. 増築碧骨堤, 徴全州等七州人興役. 熊川州進赤烏."
+  },
+  {
+   "id": "claim-byeokgol-act",
+   "subject": "event-byeokgolje-790",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-byeokgolje"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0020_0280",
+   "quote": "増築碧骨堤, 徴全州等七州人興役",
+   "note": "전주 등 일곱 주의 사람을 징발해 역사를 일으켰다"
+  },
+  {
+   "id": "claim-byeokgol-loc",
+   "subject": "place-byeokgolje",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.75444,
+    "lon": 126.85444,
+    "precision": "site"
+   },
+   "sourceId": "src-kowiki-byeokgolje",
+   "citesExcerpt": "ex-byeokgolje-geo"
+  },
+  {
+   "id": "claim-paegang-time",
+   "subject": "place-paegang-jangseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十八年",
+    "year": 826,
+    "precision": "month",
+    "earliest": 826,
+    "latest": 826
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0050_0720",
+   "quote": "十八年, 秋七月, 命牛岑太守白永, 徴漢山北諸州郡人一萬, 築浿江長城三百里."
+  },
+  {
+   "id": "claim-paegang-act",
+   "subject": "place-paegang-jangseong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0050_0720",
+   "quote": "徴漢山北諸州郡人一萬, 築浿江長城三百里",
+   "note": "한산 이북 여러 주·군에서 1만 명을 징발, 길이 300리"
+  },
+  {
+   "id": "claim-gg372-time",
+   "subject": "event-gg-buddhism-372",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二年",
+    "year": 372,
+    "precision": "month",
+    "earliest": 372,
+    "latest": 372
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_018_0030_0020",
+   "quote": "二年, 夏六月, 秦王符堅遣使及浮屠順道, 送佛像·經文. 王遣使迴謝, 以貢方物."
+  },
+  {
+   "id": "claim-gg372-act",
+   "subject": "event-gg-buddhism-372",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-guknaeseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_018_0030_0020",
+   "quote": "秦王符堅遣使及浮屠順道, 送佛像·經文",
+   "note": "인용문에 지명이 없다. 사건 지점은 claim-gg-capital-guknae 로 뒷받침한 당시 도읍 국내성으로 잡았다."
+  },
+  {
+   "id": "claim-c375-time",
+   "subject": "place-chomunsa",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "五年",
+    "year": 375,
+    "precision": "month",
+    "earliest": 375,
+    "latest": 375
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_018_0030_0060",
+   "quote": "五年, 春二月, 始創肖門寺, 以置順道. 又創伊弗蘭寺, 以置阿道. 此海東佛法之始."
+  },
+  {
+   "id": "claim-c375-act",
+   "subject": "event-chomunsa-375",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-chomunsa"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_018_0030_0060",
+   "quote": "始創肖門寺, 以置順道. 又創伊弗蘭寺, 以置阿道",
+   "note": "인용문에 지명이 없다. 절터 비정은 claim-gg-capital-guknae 로 뒷받침한 당시 도읍 국내성 일원이다."
+  },
+  {
+   "id": "claim-c384-time",
+   "subject": "event-bj-buddhism-384",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "九月",
+    "year": 384,
+    "precision": "month",
+    "earliest": 384,
+    "latest": 384
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_024_0100_0030",
+   "quote": "九月, 胡僧摩羅難陁自晉至, 王迎之, 致宫内禮敬焉. 佛法始於此."
+  },
+  {
+   "id": "claim-c384-act",
+   "subject": "event-bj-buddhism-384",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hanseong-baekje"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_024_0100_0030",
+   "quote": "胡僧摩羅難陁自晉至, 王迎之, 致宫内禮敬焉"
+  },
+  {
+   "id": "claim-hanseong-loc",
+   "subject": "place-hanseong-baekje",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.53889,
+    "lon": 127.12083,
+    "precision": "area"
+   },
+   "sourceId": "src-kowiki-pungnaptoseong",
+   "citesExcerpt": "ex-pungnap-geo",
+   "note": "풍납토성 비정에 따른 좌표"
+  },
+  {
+   "id": "claim-c393-time",
+   "subject": "place-pyongyang-nine-temples",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "year",
+    "value": 393
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_018_0050_0051",
+   "quote": "創九寺於平壤."
+  },
+  {
+   "id": "claim-c393-act",
+   "subject": "event-pyongyang-nine-393",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-pyongyang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_018_0050_0051",
+   "quote": "創九寺於平壤"
+  },
+  {
+   "id": "claim-c498-time",
+   "subject": "place-geumgangsa",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "秋七月",
+    "year": 498,
+    "precision": "month",
+    "earliest": 498,
+    "latest": 498
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0020_0220",
+   "quote": "秋七月, 創金剛寺."
+  },
+  {
+   "id": "claim-c498-act",
+   "subject": "event-geumgangsa-498",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goguryeo"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0020_0220",
+   "quote": "創金剛寺",
+   "note": "원문 \"創金剛寺\"는 창건지를 적지 않았다. 주체가 고구려임만 주장하고, 평양 비정은 claim-gg-capital-pyongyang-427(427년 평양 천도)에 기댄 추론으로 note 에만 둔다."
+  },
+  {
+   "id": "claim-c527-time",
+   "subject": "place-daetongsa",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "大通元年丁未",
+    "year": 527,
+    "precision": "year",
+    "earliest": 527,
+    "latest": 527
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_003_0010_0040_0050",
+   "quote": "又於大通元年丁未, 爲梁帝創寺於熊川州名大通寺."
+  },
+  {
+   "id": "claim-c527-act",
+   "subject": "place-daetongsa",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-baekje"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_003_0010_0040_0050",
+   "quote": "爲梁帝創寺於熊川州名大通寺",
+   "note": "삼국유사 흥법 原宗興法 조. 웅천주에 절을 세워 대통사라 했다"
+  },
+  {
+   "id": "claim-daetongsa-loc",
+   "subject": "place-daetongsa",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 36.45,
+    "lon": 127.117,
+    "precision": "area"
+   },
+   "sourceId": "src-enwiki-gongju",
+   "citesExcerpt": "ex-gongju-geo",
+   "note": "웅천주=공주 비정에 따른 시 좌표"
+  },
+  {
+   "id": "claim-c528-time",
+   "subject": "event-silla-buddhism-528",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十五年",
+    "year": 528,
+    "precision": "year",
+    "earliest": 528,
+    "latest": 528
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0030_0110",
+   "quote": "十五年, 肇行佛法."
+  },
+  {
+   "id": "claim-c528-act",
+   "subject": "event-silla-buddhism-528",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0030_0110",
+   "quote": "肇行佛法"
+  },
+  {
+   "id": "claim-c576-time",
+   "subject": "event-hwarang-576",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三十七年",
+    "year": 576,
+    "precision": "year",
+    "earliest": 576,
+    "latest": 576
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0040_0550",
+   "quote": "三十七年, 春, 始奉源花."
+  },
+  {
+   "id": "claim-c576-act",
+   "subject": "event-hwarang-576",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "group-hwarang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0040_0550",
+   "quote": "其後更取美貌男子, 粧飾之, 名花郞以奉之, 徒衆雲集",
+   "note": "원화가 파한 뒤 화랑을 두니 무리가 구름처럼 모였다"
+  },
+  {
+   "id": "claim-c600-time",
+   "subject": "place-wangheungsa",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二年",
+    "year": 600,
+    "precision": "month",
+    "earliest": 600,
+    "latest": 600
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0040_0030",
+   "quote": "二年, 春正月, 創王興寺, 度僧三十人."
+  },
+  {
+   "id": "claim-c600-act",
+   "subject": "event-wangheungsa-600",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-wangheungsa"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_027_0040_0030",
+   "quote": "創王興寺, 度僧三十人",
+   "note": "승려 30인을 得度시켰다"
+  },
+  {
+   "id": "claim-wangheungsa-loc",
+   "subject": "place-wangheungsa",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 36.29639,
+    "lon": 126.90694,
+    "precision": "site"
+   },
+   "sourceId": "src-kowiki-wangheungsaji",
+   "citesExcerpt": "ex-wangheungsa-geo"
+  },
+  {
+   "id": "claim-c634-time",
+   "subject": "place-bunhwangsa",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "year",
+    "value": 634
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_005_0020_0110",
+   "quote": "芬皇寺成."
+  },
+  {
+   "id": "claim-c634-act",
+   "subject": "event-bunhwangsa-634",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-bunhwangsa"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_005_0020_0110",
+   "quote": "芬皇寺成"
+  },
+  {
+   "id": "claim-bunhwangsa-loc",
+   "subject": "place-bunhwangsa",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.84056,
+    "lon": 129.23361,
+    "precision": "site"
+   },
+   "sourceId": "src-enwiki-bunhwangsa",
+   "citesExcerpt": "ex-bunhwangsa-geo"
+  },
+  {
+   "id": "claim-c676-time",
+   "subject": "place-buseoksa",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十六年",
+    "year": 676,
+    "precision": "month",
+    "earliest": 676,
+    "latest": 676
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0550",
+   "quote": "十六年, 春二月, 髙僧義相奉旨, 創浮石寺."
+  },
+  {
+   "id": "claim-c676-act",
+   "subject": "event-buseoksa-676",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-buseoksa"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0550",
+   "quote": "髙僧義相奉旨, 創浮石寺"
+  },
+  {
+   "id": "claim-c676-uisang",
+   "subject": "person-uisang",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "event-buseoksa-676"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0550",
+   "quote": "髙僧義相奉旨"
+  },
+  {
+   "id": "claim-buseoksa-loc",
+   "subject": "place-buseoksa",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 36.9988527,
+    "lon": 128.6874968,
+    "precision": "site"
+   },
+   "sourceId": "src-kowiki-buseoksa",
+   "citesExcerpt": "ex-buseoksa-geo"
+  },
+  {
+   "id": "claim-c682-time",
+   "subject": "inst-gukhak",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "神文王二年",
+    "year": 682,
+    "precision": "year",
+    "earliest": 682,
+    "latest": 682
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_038_0020_2120",
+   "quote": "國學, 屬礼部, 神文王二年置."
+  },
+  {
+   "id": "claim-c682-act",
+   "subject": "inst-gukhak",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_038_0020_2120",
+   "quote": "國學, 屬礼部, 神文王二年置. 景徳王攺爲大學監, 惠恭王復故.",
+   "note": "예부 소속. 경덕왕이 대학감으로 고쳤다가 혜공왕이 되돌렸다"
+  },
+  {
+   "id": "claim-c802-time",
+   "subject": "place-haeinsa",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "八月",
+    "year": 802,
+    "precision": "month",
+    "earliest": 802,
+    "latest": 802
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0040_0190",
+   "quote": "八月, 創加耶山海印寺. 歃良州進赤烏."
+  },
+  {
+   "id": "claim-c802-act",
+   "subject": "event-haeinsa-802",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-haeinsa"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0040_0190",
+   "quote": "創加耶山海印寺"
+  },
+  {
+   "id": "claim-haeinsa-loc",
+   "subject": "place-haeinsa",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.80111,
+    "lon": 128.09833,
+    "precision": "site"
+   },
+   "sourceId": "src-kowiki-haeinsa",
+   "citesExcerpt": "ex-haeinsa-geo"
+  },
+  {
+   "id": "claim-gg-capital-guknae",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:capitalMovedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-guknaeseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_037_0020_0030",
+   "quote": "都囯内歴四百二十五年, 長壽王十五年, 移都平壤",
+   "note": "지리지 지리四 高句麗: 국내에 도읍한 지 425년 만인 장수왕 15년(427)에 평양으로 옮겼다 — 372·375년 당시 도읍이 국내성임을 보이는 근거"
+  },
+  {
+   "id": "claim-gg-capital-pyongyang-427",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:capitalMovedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-pyongyang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_018_0060_0100",
+   "quote": "十五年, 移都平壤",
+   "note": "장수왕 15년(427) 평양 천도 — 393년(광개토왕대 평양 9사)·498년(금강사) 기사의 평양 비정을 잇는 근거"
+  },
+  {
+   "id": "claim-namsan-wiki591",
+   "subject": "place-namsanseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "year",
+    "value": 591
+   },
+   "sourceId": "src-enwiki-namsanfortress",
+   "citesExcerpt": "ex-namsanseong-built591",
+   "note": "영어 위키백과 Namsansinseong 문서가 삼국사기에 따라 591년 축성이라고 명시한다"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "scene-cfc-wolseong-101",
+   "eventId": "event-wolseong-101",
+   "title": "월성 축조 — 경주 (101)",
+   "startYear": 101,
+   "endYear": 101,
+   "kind": "construction",
+   "summary": "파사이사금 22년 2월 성을 쌓고 월성이라 불렀다. 지리지는 금성 동남쪽 둘레 1023보라 적었다.",
+   "dateClaimIds": [
+    "claim-wolseong-time"
+   ],
+   "actionClaimIds": [
+    "claim-wolseong-act",
+    "claim-wolseong-size"
+   ],
+   "place": {
+    "label": "월성",
+    "medium": "land",
+    "precision": "site",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [
+     "claim-wolseong-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "위키백과 경주 월성 표시 좌표"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "facility",
+   "region": "south",
+   "decade": 100,
+   "sceneFunction": "fortress",
+   "participantGroups": [
+    {
+     "label": "신라 조정",
+     "role": "축성 주체",
+     "stance": "주도",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-wolseong-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 101,
+    "to": null,
+    "basisClaimIds": [
+     "claim-wolseong-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-pyongyang-247",
+   "eventId": "event-pyongyang-247",
+   "title": "평양성 축조와 주민·종묘사직 이전 (247)",
+   "startYear": 247,
+   "endYear": 247,
+   "kind": "construction",
+   "summary": "동천왕 21년 2월 환도성이 난을 겪어 다시 도읍할 수 없자 평양성을 쌓고 백성과 종묘사직을 옮겼다.",
+   "dateClaimIds": [
+    "claim-py247-time"
+   ],
+   "actionClaimIds": [
+    "claim-py247-act"
+   ],
+   "place": {
+    "label": "평양성",
+    "medium": "land",
+    "precision": "area",
+    "lon": 125.7475,
+    "lat": 39.01667,
+    "claimIds": [
+     "claim-py-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-pyongyang"
+    ],
+    "coordinateNote": "영어 위키백과 Pyongyang 표시 좌표(현 평양시), 3세기 평양성 위치 비정은 학설이 갈린다"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "facility",
+   "region": "north",
+   "decade": 240,
+   "sceneFunction": "construction_site",
+   "participantGroups": [
+    {
+     "label": "환도성 주민",
+     "role": "이주민",
+     "stance": "피동",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-py247-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 247,
+    "to": null,
+    "basisClaimIds": [
+     "claim-py247-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-guknae-342",
+   "eventId": "event-guknae-342",
+   "title": "환도성 보수와 국내성 축조 (342)",
+   "startYear": 342,
+   "endYear": 342,
+   "kind": "construction",
+   "summary": "고국원왕 12년 2월 환도성을 고쳐 쌓고 국내성을 쌓았다.",
+   "dateClaimIds": [
+    "claim-guknae-time"
+   ],
+   "actionClaimIds": [
+    "claim-guknae-act"
+   ],
+   "place": {
+    "label": "국내성",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.17861,
+    "lat": 41.12083,
+    "claimIds": [
+     "claim-guknae-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-gungnae"
+    ],
+    "coordinateNote": "영어 위키백과 Gungnae 표시 좌표"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "facility",
+   "region": "north",
+   "decade": 340,
+   "sceneFunction": "fortress",
+   "participantGroups": [
+    {
+     "label": "고구려 조정",
+     "role": "축성 주체",
+     "stance": "주도",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-guknae-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 342,
+    "to": null,
+    "basisClaimIds": [
+     "claim-guknae-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-namsanseong-591",
+   "eventId": "event-namsanseong-591",
+   "title": "남산성 축조 — 경주 남산 (591)",
+   "startYear": 591,
+   "endYear": 591,
+   "kind": "construction",
+   "summary": "진평왕 13년 7월 남산성을 쌓았다. 둘레는 2854보였다.",
+   "dateClaimIds": [
+    "claim-namsan-time"
+   ],
+   "actionClaimIds": [
+    "claim-namsan-act"
+   ],
+   "place": {
+    "label": "남산성",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.2286,
+    "lat": 35.8169,
+    "claimIds": [
+     "claim-namsan-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-namsanfortress"
+    ],
+    "coordinateNote": "영어 위키백과 Namsansinseong(경주 남산) 표시 좌표. 문서가 삼국사기의 591년 축성을 명시한다"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "facility",
+   "region": "south",
+   "decade": 590,
+   "sceneFunction": "fortress",
+   "participantGroups": [
+    {
+     "label": "신라 역부",
+     "role": "축성 인력",
+     "stance": "동원",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-namsan-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 591,
+    "to": null,
+    "basisClaimIds": [
+     "claim-namsan-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-woljeonggyo-760",
+   "eventId": "event-gyeongju-bridges-760",
+   "title": "월정교·춘양교 가설 — 경주 문천 (760)",
+   "startYear": 760,
+   "endYear": 760,
+   "kind": "construction",
+   "summary": "경덕왕 때 궁궐 남쪽 문천 위에 월정교와 춘양교 두 다리를 놓았다.",
+   "dateClaimIds": [
+    "claim-woljeong-time"
+   ],
+   "actionClaimIds": [
+    "claim-woljeong-act"
+   ],
+   "place": {
+    "label": "월정교·춘양교(문천)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.21806,
+    "lat": 35.82944,
+    "claimIds": [
+     "claim-woljeong-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-woljeonggyo"
+    ],
+    "coordinateNote": "위키백과 \"경주 춘양교지와 월정교지\" 합동 항목의 표시 좌표. 두 다리를 구분하지 않아 area"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "facility",
+   "region": "south",
+   "decade": 760,
+   "sceneFunction": "construction_site",
+   "participantGroups": [
+    {
+     "label": "신라 조정",
+     "role": "공사 주체",
+     "stance": "주도",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-woljeong-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 760,
+    "to": null,
+    "basisClaimIds": [
+     "claim-woljeong-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-chomunsa-375",
+   "eventId": "event-chomunsa-375",
+   "title": "초문사·이불란사 창건 — 국내성 (375)",
+   "startYear": 375,
+   "endYear": 375,
+   "kind": "construction",
+   "summary": "소수림왕 5년 2월 초문사를 처음 세워 순도를 두고, 이불란사를 세워 아도를 두었다. 해동 불법의 시작이라 적었다.",
+   "dateClaimIds": [
+    "claim-c375-time"
+   ],
+   "actionClaimIds": [
+    "claim-c375-act",
+    "claim-gg-capital-guknae"
+   ],
+   "place": {
+    "label": "국내성 일원",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.17861,
+    "lat": 41.12083,
+    "claimIds": [
+     "claim-guknae-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-gungnae"
+    ],
+    "coordinateNote": "영어 위키백과 Gungnae 표시 좌표. 절터가 특정되지 않아 당시 도읍 좌표이며 도읍 근거는 claim-gg-capital-guknae"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "culture",
+   "region": "north",
+   "decade": 370,
+   "sceneFunction": "temple",
+   "participantGroups": [
+    {
+     "label": "순도·아도",
+     "role": "주지 승려",
+     "stance": "정주",
+     "side": "고구려",
+     "count": 2,
+     "claimIds": [
+      "claim-c375-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 375,
+    "to": null,
+    "basisClaimIds": [
+     "claim-c375-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-pyongyang-nine-393",
+   "eventId": "event-pyongyang-nine-393",
+   "title": "평양에 아홉 절 창건 (393)",
+   "startYear": 393,
+   "endYear": 393,
+   "kind": "construction",
+   "summary": "광개토왕 때 평양에 아홉 절을 창건하였다.",
+   "dateClaimIds": [
+    "claim-c393-time"
+   ],
+   "actionClaimIds": [
+    "claim-c393-act"
+   ],
+   "place": {
+    "label": "평양",
+    "medium": "land",
+    "precision": "area",
+    "lon": 125.7475,
+    "lat": 39.01667,
+    "claimIds": [
+     "claim-py-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-pyongyang"
+    ],
+    "coordinateNote": "영어 위키백과 Pyongyang 표시 좌표"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "culture",
+   "region": "north",
+   "decade": 390,
+   "sceneFunction": "temple",
+   "participantGroups": [
+    {
+     "label": "고구려 조정",
+     "role": "창건 주체",
+     "stance": "주도",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-c393-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 393,
+    "to": null,
+    "basisClaimIds": [
+     "claim-c393-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-geumgangsa-498",
+   "eventId": "event-geumgangsa-498",
+   "title": "금강사 창건 — 평양 (498)",
+   "startYear": 498,
+   "endYear": 498,
+   "kind": "construction",
+   "summary": "문자명왕 7년 7월 금강사를 창건하였다. 원문은 창건지를 적지 않았고, 427년 평양 천도 기사에 근거해 당시 도읍인 평양 일원으로 잡았다.",
+   "dateClaimIds": [
+    "claim-c498-time"
+   ],
+   "actionClaimIds": [
+    "claim-c498-act",
+    "claim-gg-capital-pyongyang-427"
+   ],
+   "place": {
+    "label": "평양(당시 고구려 도읍)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 125.7475,
+    "lat": 39.01667,
+    "claimIds": [
+     "claim-py-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-pyongyang"
+    ],
+    "coordinateNote": "영어 위키백과 Pyongyang 표시 좌표. 원문에 창건지가 없어 427년 천도 이후 도읍 좌표를 썼고 청암리사지 비정설이 있다"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "culture",
+   "region": "north",
+   "decade": 490,
+   "sceneFunction": "temple",
+   "participantGroups": [
+    {
+     "label": "고구려 조정",
+     "role": "창건 주체",
+     "stance": "주도",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-c498-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 498,
+    "to": null,
+    "basisClaimIds": [
+     "claim-c498-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-daetongsa-527",
+   "eventId": "event-daetongsa-527",
+   "title": "대통사 창건 — 웅천주(공주) (527)",
+   "startYear": 527,
+   "endYear": 527,
+   "kind": "construction",
+   "summary": "삼국유사 흥법편은 대통 원년 정미에 양 황제를 위하여 웅천주에 절을 세우고 대통사라 하였다고 적었다.",
+   "dateClaimIds": [
+    "claim-c527-time"
+   ],
+   "actionClaimIds": [
+    "claim-c527-act"
+   ],
+   "place": {
+    "label": "웅천주(공주)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 127.117,
+    "lat": 36.45,
+    "claimIds": [
+     "claim-daetongsa-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-gongju"
+    ],
+    "coordinateNote": "영어 위키백과 Gongju 표시 좌표. 절터(반죽동 일원) 좌표가 아니라 웅천주=공주 비정에 따른 시 좌표"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "culture",
+   "region": "south",
+   "decade": 520,
+   "sceneFunction": "temple",
+   "participantGroups": [
+    {
+     "label": "백제 조정",
+     "role": "창건 주체",
+     "stance": "주도",
+     "side": "백제",
+     "count": null,
+     "claimIds": [
+      "claim-c527-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 527,
+    "to": null,
+    "basisClaimIds": [
+     "claim-c527-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-wangheungsa-600",
+   "eventId": "event-wangheungsa-600",
+   "title": "왕흥사 창건 — 부여 (600)",
+   "startYear": 600,
+   "endYear": 600,
+   "kind": "construction",
+   "summary": "법왕 2년 정월 왕흥사를 창건하고 승려 30인을 득도시켰다.",
+   "dateClaimIds": [
+    "claim-c600-time"
+   ],
+   "actionClaimIds": [
+    "claim-c600-act"
+   ],
+   "place": {
+    "label": "왕흥사",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.90694,
+    "lat": 36.29639,
+    "claimIds": [
+     "claim-wangheungsa-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-kowiki-wangheungsaji"
+    ],
+    "coordinateNote": "위키백과 부여 왕흥사지 표시 좌표"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "culture",
+   "region": "south",
+   "decade": 600,
+   "sceneFunction": "temple",
+   "participantGroups": [
+    {
+     "label": "득도한 승려",
+     "role": "출가자",
+     "stance": "입사",
+     "side": "백제",
+     "count": 30,
+     "claimIds": [
+      "claim-c600-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 600,
+    "to": null,
+    "basisClaimIds": [
+     "claim-c600-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-cfc-bunhwangsa-634",
+   "eventId": "event-bunhwangsa-634",
+   "title": "분황사 완성 — 경주 (634)",
+   "startYear": 634,
+   "endYear": 634,
+   "kind": "construction",
+   "summary": "선덕왕 때 분황사가 완성되었다.",
+   "dateClaimIds": [
+    "claim-c634-time"
+   ],
+   "actionClaimIds": [
+    "claim-c634-act"
+   ],
+   "place": {
+    "label": "분황사",
+    "medium": "land",
+    "precision": "site",
+    "lon": 129.23361,
+    "lat": 35.84056,
+    "claimIds": [
+     "claim-bunhwangsa-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-bunhwangsa"
+    ],
+    "coordinateNote": "영어 위키백과 Bunhwangsa 표시 좌표"
+   },
+   "participants": [],
+   "effects": {},
+   "category": "culture",
+   "region": "south",
+   "decade": 630,
+   "sceneFunction": "temple",
+   "participantGroups": [
+    {
+     "label": "신라 조정",
+     "role": "창건 주체",
+     "stance": "주도",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-c634-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 634,
+    "to": null,
+    "basisClaimIds": [
+     "claim-c634-act"
+    ]
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "fact-cfc-f01",
+   "category": "facility",
+   "region": "south",
+   "decade": 100,
+   "year": 101,
+   "yearVerbatim": "二十二年",
+   "placeLabel": "월성",
+   "modernPlace": "경상북도 경주시 인왕동",
+   "what": "신라가 성을 쌓아 월성이라 이름하였다(지리지에 금성 동남쪽, 둘레 1023보)",
+   "claimIds": [
+    "claim-wolseong-time",
+    "claim-wolseong-act",
+    "claim-wolseong-size"
+   ],
+   "confidence": "medium",
+   "note": "초기 기사 연대 신빙성 논쟁이 있어 confidence medium. 기존 장면 `scene-city-gyeongju-wolseong-201-935`(신라 왕경 경주와 월성 왕성 활동, 201/101~935)는 월성의 왕성 지속을 다루는 settlement 장면이고 이번 것은 101년 축성 행위(construction) 장면이라 구분했다. relatedExistingSceneId 로 기계가 읽을 수 있게 적어 둔다. 병합 단계에서 좌표 0.03도·기간 겹침 규칙에 걸릴 수 있으므로 상위 병합 담당이 확인해야 한다.",
+   "sceneId": "scene-cfc-wolseong-101",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "claim-wolseong-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 101,
+    "to": null
+   },
+   "existingSceneId": null,
+   "relatedExistingSceneId": "scene-city-gyeongju-wolseong-201-935"
+  },
+  {
+   "id": "fact-cfc-f02",
+   "category": "facility",
+   "region": "north",
+   "decade": 190,
+   "year": 198,
+   "yearVerbatim": "二年",
+   "placeLabel": "환도성",
+   "modernPlace": "중국 지린성 지안 환도산성",
+   "what": "고구려가 환도성을 쌓았다",
+   "claimIds": [
+    "claim-hwando-time",
+    "claim-hwando-act"
+   ],
+   "confidence": "high",
+   "note": "[중복: goguryeo_early/fact-gg-013 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 126.163194,
+   "lat": 41.146528,
+   "coordinateBasis": "claim-hwando-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 198,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-f03",
+   "category": "facility",
+   "region": "north",
+   "decade": 240,
+   "year": 247,
+   "yearVerbatim": "二十一年",
+   "placeLabel": "평양성",
+   "modernPlace": "평양 일원(비정)",
+   "what": "환도성이 난을 겪어 평양성을 쌓고 백성과 종묘사직을 옮겼다",
+   "claimIds": [
+    "claim-py247-time",
+    "claim-py247-act"
+   ],
+   "confidence": "medium",
+   "note": "3세기 평양성의 위치 비정에 학설이 갈려 precision area",
+   "sceneId": "scene-cfc-pyongyang-247",
+   "lon": 125.7475,
+   "lat": 39.01667,
+   "coordinateBasis": "claim-py-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 247,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-f04",
+   "category": "facility",
+   "region": "north",
+   "decade": 340,
+   "year": 342,
+   "yearVerbatim": "十二年",
+   "placeLabel": "국내성",
+   "modernPlace": "중국 지린성 지안시",
+   "what": "환도성을 고쳐 쌓고 국내성을 쌓았다",
+   "claimIds": [
+    "claim-guknae-time",
+    "claim-guknae-act"
+   ],
+   "confidence": "high",
+   "note": "",
+   "sceneId": "scene-cfc-guknae-342",
+   "lon": 126.17861,
+   "lat": 41.12083,
+   "coordinateBasis": "claim-guknae-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 342,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-f05",
+   "category": "facility",
+   "region": "south",
+   "decade": 420,
+   "year": 429,
+   "yearVerbatim": "十三年",
+   "placeLabel": "시제(矢堤)",
+   "modernPlace": "미상(신라 왕경 일원 추정)",
+   "what": "신라가 시제를 새로 쌓았다. 둑 언덕 길이가 2170보였다",
+   "claimIds": [
+    "claim-sije-time",
+    "claim-sije-act"
+   ],
+   "confidence": "medium",
+   "note": "둑의 위치가 특정되지 않아 좌표·장면 없음. region south 는 신라 영역 추정 [중복: silla_middle/fact-sm-010 와 같은 기록, 장면은 그쪽만]",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 429,
+    "to": null
+   },
+   "sceneId": null
+  },
+  {
+   "id": "fact-cfc-f06",
+   "category": "facility",
+   "region": "south",
+   "decade": 470,
+   "year": 470,
+   "yearVerbatim": "十三年",
+   "placeLabel": "삼년산성",
+   "modernPlace": "충청북도 보은군 보은읍",
+   "what": "신라가 삼년산성을 쌓았다",
+   "claimIds": [
+    "claim-samnyeon-time",
+    "claim-samnyeon-act",
+    "claim-samnyeon-loc"
+   ],
+   "confidence": "high",
+   "note": "같은 사건 장면이 services/host/app/history-scenes.json 에 이미 있어(`scene-syj135-samnyeonsanseong-chukjo-470` — 삼년산성 축조 — 보은 오정산, 470) 새 장면을 만들지 않았다. 검증기가 sceneId 를 이 result.json 의 scenes[] 안으로만 참조 허용하므로(외부 id 를 넣으면 \"참조 없음\" 실패) sceneId 는 null 로 두고 기존 장면 id 를 existingSceneId 필드에 적었다. [중복: silla_middle/fact-sm-011 와 같은 기록, 장면은 그쪽만]",
+   "lon": 127.74167,
+   "lat": 36.48917,
+   "coordinateBasis": "claim-samnyeon-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 470,
+    "to": null
+   },
+   "sceneId": null,
+   "existingSceneId": "scene-syj135-samnyeonsanseong-chukjo-470"
+  },
+  {
+   "id": "fact-cfc-f07",
+   "category": "facility",
+   "region": "south",
+   "decade": 490,
+   "year": 498,
+   "yearVerbatim": "二十年",
+   "placeLabel": "웅진교",
+   "modernPlace": "충청남도 공주 일원(비정)",
+   "what": "백제 동성왕 20년 웅진교를 놓았다",
+   "claimIds": [
+    "claim-ungjingyo-time",
+    "claim-ungjingyo-act"
+   ],
+   "confidence": "medium",
+   "note": "다리 지점이 특정되지 않아 좌표·장면 없음 [중복: baekje_middle/fact-bm-012 와 같은 기록, 장면은 그쪽만]",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 498,
+    "to": null
+   },
+   "sceneId": null
+  },
+  {
+   "id": "fact-cfc-f08",
+   "category": "facility",
+   "region": "south",
+   "decade": 590,
+   "year": 591,
+   "yearVerbatim": "秋七月",
+   "placeLabel": "남산성",
+   "modernPlace": "경상북도 경주시 남산 일원",
+   "what": "진평왕 13년 7월 남산성을 쌓았다. 둘레 2854보",
+   "claimIds": [
+    "claim-namsan-time",
+    "claim-namsan-act",
+    "claim-namsan-loc",
+    "claim-namsan-wiki591"
+   ],
+   "confidence": "high",
+   "note": "영어 위키백과 Namsansinseong 문서(제목이 Namsansinseong, URL Namsan_Fortress 는 리다이렉트)가 \"According to the Samguk sagi, it was built in 591\" 이라고 명시하고 위치를 경주 남산으로 적어 591년 축성과 경주 남산 비정이 외부 출처로도 뒷받침된다. 다만 성 전체 범위가 넓어 좌표 precision 은 area.",
+   "sceneId": "scene-cfc-namsanseong-591",
+   "lon": 129.2286,
+   "lat": 35.8169,
+   "coordinateBasis": "claim-namsan-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 591,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-f09",
+   "category": "facility",
+   "region": "central",
+   "decade": 670,
+   "year": 672,
+   "yearVerbatim": "(원문 연대 표기 없음)",
+   "placeLabel": "주장성",
+   "modernPlace": "경기도 광주 남한산성(비정)",
+   "what": "한산주에 둘레 4360보의 주장성을 쌓았다",
+   "claimIds": [
+    "claim-jujang-time",
+    "claim-jujang-act"
+   ],
+   "confidence": "medium",
+   "note": "인용 chunk 본문에 연대 표기(干支·재위년)가 없어 yearVerbatim 에 적을 원문 표기가 없다. 연도는 chunk date.raw 0672-08-99L0 를 따랐다. 검증기가 yearVerbatim 에 빈 문자열을 허용하지 않아(필수 str) \"(원문 연대 표기 없음)\" 으로 적었다. 주장성=남한산성 비정은 학설이라 confidence medium. [중복: unified_silla_1/fact-us1-010 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 127.18111,
+   "lat": 37.47889,
+   "coordinateBasis": "claim-jujang-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 672,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-f10",
+   "category": "facility",
+   "region": "central",
+   "decade": 720,
+   "year": 721,
+   "yearVerbatim": "二十年",
+   "placeLabel": "북쪽 국경 장성",
+   "modernPlace": "강원 강릉 이북(비정)",
+   "what": "성덕왕 20년 7월 하슬라도의 장정 2000명을 징발해 북쪽 국경에 장성을 쌓았다",
+   "claimIds": [
+    "claim-bukjang-time",
+    "claim-bukjang-act"
+   ],
+   "confidence": "medium",
+   "note": "장성 권역 기준(f10·f13 공통): 선형이 특정되지 않은 장성은 원문에 나오는 지명 가운데 가장 북쪽 기준점의 현대 비정 위도로 권역을 정한다(north=위도 39 이상, central=37~39). 이 기사의 지명은 何瑟羅(강릉 약 37.75) 하나뿐이고 北境은 지명이 아니므로 central. 장성 선형이 특정되지 않아 좌표·장면 없음.",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 721,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-f11",
+   "category": "facility",
+   "region": "south",
+   "decade": 760,
+   "year": 760,
+   "yearVerbatim": "(원문 연대 표기 없음)",
+   "placeLabel": "월정교·춘양교",
+   "modernPlace": "경상북도 경주시 교동 문천",
+   "what": "궁궐 남쪽 문천 위에 월정교와 춘양교 두 다리를 놓았다",
+   "claimIds": [
+    "claim-woljeong-time",
+    "claim-woljeong-act"
+   ],
+   "confidence": "high",
+   "note": "인용 chunk 본문에 연대 표기(干支·재위년)가 없어 yearVerbatim 에 적을 원문 표기가 없다. 연도는 chunk date.raw 0760-02-99L0 를 따랐다. 검증기가 yearVerbatim 에 빈 문자열을 허용하지 않아(필수 str) \"(원문 연대 표기 없음)\" 으로 적었다. 좌표는 위키백과 \"경주 춘양교지와 월정교지\" 합동 항목의 표시 좌표이며 월정교지·춘양교지를 구분하지 않아 precision area 로 낮췄다.",
+   "sceneId": "scene-cfc-woljeonggyo-760",
+   "lon": 129.21806,
+   "lat": 35.82944,
+   "coordinateBasis": "claim-woljeong-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 760,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-f12",
+   "category": "facility",
+   "region": "south",
+   "decade": 790,
+   "year": 790,
+   "yearVerbatim": "六年",
+   "placeLabel": "벽골제",
+   "modernPlace": "전라북도 김제시 부량면",
+   "what": "벽골제를 늘려 쌓고 전주 등 일곱 주의 사람을 징발해 역사를 일으켰다",
+   "claimIds": [
+    "claim-byeokgol-time",
+    "claim-byeokgol-act",
+    "claim-byeokgol-loc"
+   ],
+   "confidence": "high",
+   "note": "같은 사건 장면이 services/host/app/history-scenes.json 에 이미 있어(`scene-syj122-byeokgolje-790` — 벽골제 증축 — 전주 등 7주 주민 징발, 790) 새 장면을 만들지 않았다. 검증기가 sceneId 를 이 result.json 의 scenes[] 안으로만 참조 허용하므로(외부 id 를 넣으면 \"참조 없음\" 실패) sceneId 는 null 로 두고 기존 장면 id 를 existingSceneId 필드에 적었다. [중복: unified_silla_2/fact-us2-010 와 같은 기록, 장면은 그쪽만]",
+   "lon": 126.85444,
+   "lat": 35.75444,
+   "coordinateBasis": "claim-byeokgol-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 790,
+    "to": null
+   },
+   "sceneId": null,
+   "existingSceneId": "scene-syj122-byeokgolje-790"
+  },
+  {
+   "id": "fact-cfc-f13",
+   "category": "facility",
+   "region": "central",
+   "decade": 820,
+   "year": 826,
+   "yearVerbatim": "十八年",
+   "placeLabel": "패강 장성",
+   "modernPlace": "대동강 이남 패서 일대(비정)",
+   "what": "우잠태수 백영에게 명해 한산 이북 여러 주·군의 사람 1만 명을 징발하여 패강 장성 300리를 쌓았다",
+   "claimIds": [
+    "claim-paegang-time",
+    "claim-paegang-act"
+   ],
+   "confidence": "medium",
+   "note": "장성 권역 기준(f10·f13 공통): 선형이 특정되지 않은 장성은 원문에 나오는 지명 가운데 가장 북쪽 기준점의 현대 비정 위도로 권역을 정한다(north=위도 39 이상, central=37~39). 이 기사의 지명은 牛岑(황해 금천 약 38.1)·漢山(서울 약 37.5)·浿江이고, 삼국사기 지리지(chunk_samguksagi_sg_037_0020_0030)가 \"今大同江爲浿水明矣\"라 하여 패수를 대동강으로 보더라도 하구~평양 구간이 위도 38.7~39.0이라 39를 넘지 않는다. 예성강 비정설은 더 남쪽이다. 따라서 central. 장성 선형이 특정되지 않아 좌표·장면 없음. [중복: unified_silla_2/fact-us2-012 와 같은 기록, 장면은 그쪽만]",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 826,
+    "to": null
+   },
+   "sceneId": null
+  },
+  {
+   "id": "fact-cfc-c01",
+   "category": "culture",
+   "region": "north",
+   "decade": 370,
+   "year": 372,
+   "yearVerbatim": "二年",
+   "placeLabel": "국내성",
+   "modernPlace": "중국 지린성 지안시",
+   "what": "전진왕 부견이 사신과 승려 순도를 보내 불상과 경문을 전했다",
+   "claimIds": [
+    "claim-gg372-time",
+    "claim-gg372-act",
+    "claim-gg-capital-guknae"
+   ],
+   "confidence": "high",
+   "note": "좌표는 사건 지점이 아니라 당시 도읍 국내성의 좌표다. 인용문 자체에는 지명이 없고, 372년 도읍이 국내성이라는 근거는 claim-gg-capital-guknae(지리지: 국내 도읍 425년 뒤 427년 평양 천도)로 따로 붙였다. [중복: goguryeo_middle/fact-gg-021 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 126.17861,
+   "lat": 41.12083,
+   "coordinateBasis": "claim-guknae-loc",
+   "density": null
+  },
+  {
+   "id": "fact-cfc-c02",
+   "category": "culture",
+   "region": "north",
+   "decade": 370,
+   "year": 375,
+   "yearVerbatim": "五年",
+   "placeLabel": "초문사·이불란사",
+   "modernPlace": "중국 지린성 지안시 일원(비정)",
+   "what": "초문사를 처음 세워 순도를 두고 이불란사를 세워 아도를 두었다(해동 불법의 시작)",
+   "claimIds": [
+    "claim-c375-time",
+    "claim-c375-act",
+    "claim-gg-capital-guknae"
+   ],
+   "confidence": "high",
+   "note": "절터가 특정되지 않아 당시 도읍 좌표로 대신했다. 375년 도읍이 국내성이라는 근거는 claim-gg-capital-guknae 에 따로 붙였다.",
+   "sceneId": "scene-cfc-chomunsa-375",
+   "lon": 126.17861,
+   "lat": 41.12083,
+   "coordinateBasis": "claim-guknae-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 375,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-c03",
+   "category": "culture",
+   "region": "central",
+   "decade": 380,
+   "year": 384,
+   "yearVerbatim": "九月",
+   "placeLabel": "한성(백제 도읍)",
+   "modernPlace": "서울 송파 풍납토성 일원(비정)",
+   "what": "침류왕 원년 9월 승려 마라난타가 진에서 오자 왕이 맞아 궁 안에서 예로 공경했다. 백제 불법이 여기서 시작되었다",
+   "claimIds": [
+    "claim-c384-time",
+    "claim-c384-act",
+    "claim-hanseong-loc"
+   ],
+   "confidence": "medium",
+   "note": "도읍 한성의 위치 비정에 학설이 갈려 풍납토성 좌표를 area 로 붙였다 [중복: baekje_middle/fact-bm-021 와 같은 기록, 장면은 그쪽만]",
+   "sceneId": null,
+   "lon": 127.12083,
+   "lat": 37.53889,
+   "coordinateBasis": "claim-hanseong-loc",
+   "density": null
+  },
+  {
+   "id": "fact-cfc-c04",
+   "category": "culture",
+   "region": "north",
+   "decade": 390,
+   "year": 393,
+   "yearVerbatim": "(원문 연대 표기 없음)",
+   "placeLabel": "평양",
+   "modernPlace": "평양 일원",
+   "what": "평양에 아홉 절을 창건하였다",
+   "claimIds": [
+    "claim-c393-time",
+    "claim-c393-act"
+   ],
+   "confidence": "high",
+   "note": "인용 chunk 본문에 연대 표기(干支·재위년)가 없어 yearVerbatim 에 적을 원문 표기가 없다. 연도는 chunk date.raw 0393-08-99L0 를 따랐다. 검증기가 yearVerbatim 에 빈 문자열을 허용하지 않아(필수 str) \"(원문 연대 표기 없음)\" 으로 적었다.",
+   "sceneId": "scene-cfc-pyongyang-nine-393",
+   "lon": 125.7475,
+   "lat": 39.01667,
+   "coordinateBasis": "claim-py-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 393,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-c05",
+   "category": "culture",
+   "region": "north",
+   "decade": 490,
+   "year": 498,
+   "yearVerbatim": "秋七月",
+   "placeLabel": "금강사",
+   "modernPlace": "평양 청암리사지(비정)",
+   "what": "문자명왕 7년 7월 금강사를 창건하였다",
+   "claimIds": [
+    "claim-c498-time",
+    "claim-c498-act",
+    "claim-gg-capital-pyongyang-427"
+   ],
+   "confidence": "medium",
+   "note": "원문은 창건지를 적지 않았다. 좌표는 사건 지점이 아니라 427년 천도 이후 도읍인 평양의 좌표이며(claim-gg-capital-pyongyang-427), 평양 청암리사지 비정설이 있어 precision area·confidence medium.",
+   "sceneId": "scene-cfc-geumgangsa-498",
+   "lon": 125.7475,
+   "lat": 39.01667,
+   "coordinateBasis": "claim-py-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 498,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-c06",
+   "category": "culture",
+   "region": "south",
+   "decade": 520,
+   "year": 527,
+   "yearVerbatim": "大通元年丁未",
+   "placeLabel": "대통사",
+   "modernPlace": "충청남도 공주시 반죽동 일원(비정)",
+   "what": "양 황제를 위해 웅천주에 절을 세워 대통사라 하였다(삼국유사 흥법)",
+   "claimIds": [
+    "claim-c527-time",
+    "claim-c527-act",
+    "claim-daetongsa-loc"
+   ],
+   "confidence": "medium",
+   "note": "삼국유사 전승이며 대통사 창건 주체·연대에 이설이 있다. 좌표는 절터가 아니라 웅천주=공주 비정에 따른 시 좌표(area)",
+   "sceneId": "scene-cfc-daetongsa-527",
+   "lon": 127.117,
+   "lat": 36.45,
+   "coordinateBasis": "claim-daetongsa-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 527,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-c07",
+   "category": "culture",
+   "region": "south",
+   "decade": 520,
+   "year": 528,
+   "yearVerbatim": "十五年",
+   "placeLabel": "신라 왕경",
+   "modernPlace": "경상북도 경주시",
+   "what": "법흥왕 15년 비로소 불법을 행하였다",
+   "claimIds": [
+    "claim-c528-time",
+    "claim-c528-act"
+   ],
+   "confidence": "high",
+   "note": "기존 history-scenes.json 의 \"이차돈 순교와 흥륜사 공사 — 경주 (527)\" 과 겹쳐 새 장면을 만들지 않았다",
+   "density": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 528,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-c08",
+   "category": "culture",
+   "region": "south",
+   "decade": 570,
+   "year": 576,
+   "yearVerbatim": "三十七年",
+   "placeLabel": "신라 왕경",
+   "modernPlace": "경상북도 경주시",
+   "what": "진흥왕 37년 봄 처음으로 원화를 받들었고, 뒤에 화랑을 두어 무리가 모였다",
+   "claimIds": [
+    "claim-c576-time",
+    "claim-c576-act"
+   ],
+   "confidence": "medium",
+   "note": "화랑 제도의 시작 연대는 삼국유사와 차이가 있다. 장소가 특정되지 않아 장면 없음",
+   "density": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 576,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-c09",
+   "category": "culture",
+   "region": "south",
+   "decade": 600,
+   "year": 600,
+   "yearVerbatim": "二年",
+   "placeLabel": "왕흥사",
+   "modernPlace": "충청남도 부여군 규암면 왕흥사지",
+   "what": "법왕 2년 정월 왕흥사를 창건하고 승려 30인을 득도시켰다",
+   "claimIds": [
+    "claim-c600-time",
+    "claim-c600-act"
+   ],
+   "confidence": "high",
+   "note": "634년 준공 기사(chunk_samguksagi_sg_027_0050_0440)가 따로 있다",
+   "sceneId": "scene-cfc-wangheungsa-600",
+   "lon": 126.90694,
+   "lat": 36.29639,
+   "coordinateBasis": "claim-wangheungsa-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 600,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-c10",
+   "category": "culture",
+   "region": "south",
+   "decade": 630,
+   "year": 634,
+   "yearVerbatim": "(원문 연대 표기 없음)",
+   "placeLabel": "분황사",
+   "modernPlace": "경상북도 경주시 구황동",
+   "what": "분황사가 완성되었다",
+   "claimIds": [
+    "claim-c634-time",
+    "claim-c634-act"
+   ],
+   "confidence": "high",
+   "note": "인용 chunk 본문에 연대 표기(干支·재위년)가 없어 yearVerbatim 에 적을 원문 표기가 없다. 연도는 chunk date.raw 0634-99-99L0 를 따랐다. 검증기가 yearVerbatim 에 빈 문자열을 허용하지 않아(필수 str) \"(원문 연대 표기 없음)\" 으로 적었다.",
+   "sceneId": "scene-cfc-bunhwangsa-634",
+   "lon": 129.23361,
+   "lat": 35.84056,
+   "coordinateBasis": "claim-bunhwangsa-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 634,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-c11",
+   "category": "culture",
+   "region": "south",
+   "decade": 670,
+   "year": 676,
+   "yearVerbatim": "十六年",
+   "placeLabel": "부석사",
+   "modernPlace": "경상북도 영주시 부석면",
+   "what": "고승 의상이 왕명을 받들어 부석사를 창건하였다",
+   "claimIds": [
+    "claim-c676-time",
+    "claim-c676-act",
+    "claim-c676-uisang",
+    "claim-buseoksa-loc"
+   ],
+   "confidence": "high",
+   "note": "같은 사건 장면이 services/host/app/history-scenes.json 에 이미 있어(`scene-syj122-buseoksa-676` — 부석사 창건과 40일 법회 — 영주 봉황산, 676) 새 장면을 만들지 않았다. 검증기가 sceneId 를 이 result.json 의 scenes[] 안으로만 참조 허용하므로(외부 id 를 넣으면 \"참조 없음\" 실패) sceneId 는 null 로 두고 기존 장면 id 를 existingSceneId 필드에 적었다.",
+   "lon": 128.6874968,
+   "lat": 36.9988527,
+   "coordinateBasis": "claim-buseoksa-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 676,
+    "to": null
+   },
+   "sceneId": null,
+   "existingSceneId": "scene-syj122-buseoksa-676"
+  },
+  {
+   "id": "fact-cfc-c12",
+   "category": "culture",
+   "region": "south",
+   "decade": 680,
+   "year": 682,
+   "yearVerbatim": "神文王二年",
+   "placeLabel": "국학",
+   "modernPlace": "경상북도 경주시",
+   "what": "신문왕 2년 예부 소속으로 국학을 두었다(경덕왕이 대학감으로 고쳤다가 혜공왕이 되돌림)",
+   "claimIds": [
+    "claim-c682-time",
+    "claim-c682-act"
+   ],
+   "confidence": "high",
+   "note": "기존 history-scenes.json 의 \"태학 설립 — 국내성 (372)\" 과 다른 신라 국학이다. 위치가 특정되지 않아 장면 없음",
+   "density": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 682,
+    "to": null
+   }
+  },
+  {
+   "id": "fact-cfc-c13",
+   "category": "culture",
+   "region": "south",
+   "decade": 800,
+   "year": 802,
+   "yearVerbatim": "八月",
+   "placeLabel": "해인사",
+   "modernPlace": "경상남도 합천군 가야면",
+   "what": "가야산에 해인사를 창건하였다",
+   "claimIds": [
+    "claim-c802-time",
+    "claim-c802-act",
+    "claim-haeinsa-loc"
+   ],
+   "confidence": "high",
+   "note": "같은 사건 장면이 services/host/app/history-scenes.json 에 이미 있어(`scene-syj128-haeinsa-802` — 해인사 창건 착수 — 합천 가야산, 802) 새 장면을 만들지 않았다. 검증기가 sceneId 를 이 result.json 의 scenes[] 안으로만 참조 허용하므로(외부 id 를 넣으면 \"참조 없음\" 실패) sceneId 는 null 로 두고 기존 장면 id 를 existingSceneId 필드에 적었다.",
+   "lon": 128.09833,
+   "lat": 35.80111,
+   "coordinateBasis": "claim-haeinsa-loc",
+   "density": null,
+   "persistence": {
+    "kind": "facility",
+    "from": 802,
+    "to": null
+   },
+   "sceneId": null,
+   "existingSceneId": "scene-syj128-haeinsa-802"
+  }
+ ],
+ "missing": [
+  {
+   "id": "miss-1",
+   "topic": "금석문 비문 건립 연대",
+   "detail": "data/sources/geumseok-* chunk 에는 date 가 없어 연도 조건 검색이 되지 않고, 비문 자체의 연호를 서기연으로 옮길 근거를 로컬에서 확보하지 못했다.",
+   "neededSource": "한국민족문화대백과 또는 국가유산포털의 비 건립 연대 서술"
+  },
+  {
+   "id": "miss-2",
+   "topic": "시제(矢堤)·웅진교·패강 장성의 위치",
+   "detail": "원문에 방위·지명이 없어 좌표를 두지 못했고 장면을 만들지 않았다.",
+   "neededSource": "고고 발굴 보고(국립문화유산연구원) 또는 위키백과 비정 문서"
+  },
+  {
+   "id": "miss-3",
+   "topic": "대통사지 절터 좌표",
+   "detail": "ko.wikipedia 의 공주 대통사지 문서가 없어(404) 절터 좌표를 구하지 못했고, 웅천주=공주 비정에 따라 Gongju 문서의 시 좌표를 area 로 대신했다.",
+   "neededSource": "국가유산포털 공주 대통사지 당간지주 항목의 좌표"
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+  "job": "silla_gaya_early",
+  "sources": 4,
+  "excerpts": 4,
+  "chunkClaims": 70,
+  "excerptClaims": 1,
+  "facts": 26,
+  "factsByCategory": {
+    "administration": 5,
+    "culture": 2,
+    "disaster": 2,
+    "economy": 3,
+    "facility": 6,
+    "foreign": 3,
+    "person": 1,
+    "settlement": 4
+  },
+  "claims": 71,
+  "entities": 43,
+  "rawFilesChecked": [
+    {
+      "source": "src-kowiki-wolseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%9B%94%EC%84%B1",
+      "sha256": "e1758d1ef3b417bb45eae97cee684e83bc30cdf4a644e0727d309fcd30cda589",
+      "rawBytes": 277688,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gujibong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%A7%80%EB%B4%89",
+      "sha256": "32fc4704510ea64c80c82ae2b246a17176816557bb49c0de9f09352787e6527d",
+      "rawBytes": 91368,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-dalseong",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EA%B5%AC_%EB%8B%AC%EC%84%B1",
+      "sha256": "5ccc171d65893295cd78d0fc3b8546730fc2bf8ff891da39f78b59f18e26282e",
+      "rawBytes": 97221,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-encykorea-daebang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014398",
+      "sha256": "9fc3506dd77a1991a669b2b2acf884846efafbdee8ca9eb74dba3e018b991bdd",
+      "rawBytes": 107960,
+      "excerpts": 1,
+      "quotedWords": 8
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-sgy-1",
+      "topic": "가야 권역의 호구 수",
+      "detail": "금관가야를 비롯한 가야 각국의 戶·口 수치를 전하는 로컬 chunk 를 찾지 못했다. 삼국지 변진전의 \"總四五萬戶\"가 변·진한 24국 합계일 뿐이다.",
+      "neededSource": "삼국지 변진전 이외의 중국 정사 호수 기사, 또는 발굴 보고의 취락 규모 추정"
+    },
+    {
+      "id": "miss-sgy-2",
+      "topic": "가야 고분·토성의 축조 연대",
+      "detail": "대성동 고분군·봉황토성처럼 고고학으로 확인되는 3세기 이전 가야 시설의 축조 연대를 로컬 원문에서 찾지 못했다.",
+      "neededSource": "국가유산포털·국립김해박물관 해설 페이지(웹 발췌 허용 출처)"
+    },
+    {
+      "id": "miss-sgy-3",
+      "topic": "신라 초기 시장(市) 기사",
+      "detail": "-57~300년 구간 신라본기에는 京市·東市 같은 시장 개설 기사가 없다. 시장 근거는 삼국지 변진전의 \"諸市買皆用鐵\"뿐이다.",
+      "neededSource": "삼국사기 신라본기 권3 이후(490년 京師市肆) 또는 고고 자료"
+    },
+    {
+      "id": "miss-sgy-4",
+      "topic": "사도성·감물현·마산현의 위치 비정",
+      "detail": "세 곳 모두 현대 지명 비정이 갈려 좌표를 넣지 못했다.",
+      "neededSource": "한국민족문화대백과 또는 국가유산포털의 위치 서술"
+    }
+  ],
+  "collection": {
+    "task": "silla_gaya_early",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789261802,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-silla_gaya_early"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "event-sgy-byeonjin-record"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

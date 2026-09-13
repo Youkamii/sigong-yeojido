@@ -1,0 +1,109 @@
+{
+  "job": "goguryeo_late",
+  "sources": 4,
+  "excerpts": 4,
+  "chunkClaims": 54,
+  "excerptClaims": 4,
+  "facts": 26,
+  "factsByCategory": {
+    "administration": 5,
+    "culture": 4,
+    "disaster": 4,
+    "economy": 3,
+    "facility": 3,
+    "foreign": 2,
+    "person": 1,
+    "settlement": 4
+  },
+  "claims": 58,
+  "entities": 33,
+  "rawFilesChecked": [
+    {
+      "source": "src-enwiki-pyongyang",
+      "url": "https://en.wikipedia.org/wiki/Pyongyang",
+      "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+      "rawBytes": 897617,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-jian",
+      "url": "https://en.wikipedia.org/wiki/Ji%27an,_Jilin",
+      "sha256": "c3cf4499f5ecfa710365ca347dae29736197c5129a98cb4b6ab8b69fa4421a4c",
+      "rawBytes": 189389,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-dengta",
+      "url": "https://en.wikipedia.org/wiki/Dengta,_Liaoning",
+      "sha256": "63a1a10883433eeef27c562c7b9d451fc24405b3f89827e1eef1af633a6786cf",
+      "rawBytes": 167054,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-huanren",
+      "url": "https://en.wikipedia.org/wiki/Huanren_Manchu_Autonomous_County",
+      "sha256": "1bfbfdc834a8986e6c63e6db8eee2db0fecfe409aa0ea6996833eaf3d689cb7d",
+      "rawBytes": 220514,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-1",
+      "topic": "고구려 후기 시장(市)",
+      "detail": "500~668년 고구려본기에 市 개설 기사가 없어 economy를 조세·권농·비축으로 채웠다",
+      "neededSource": "집성 수서·구당서의 교역 서술 추가 발췌 또는 고고 보고서"
+    },
+    {
+      "id": "miss-2",
+      "topic": "저수지·둑(堤)",
+      "detail": "이 시기 고구려의 築堤·作橋 기사를 찾지 못했다",
+      "neededSource": "금석문 또는 발굴 보고(국립문화유산연구원)"
+    },
+    {
+      "id": "miss-3",
+      "topic": "한성(漢城)의 위치",
+      "detail": "수서의 三京 가운데 한성 위치가 재령설·황주설로 갈려 좌표를 넣지 못했다",
+      "neededSource": "한국민족문화대백과 또는 국가유산포털의 위치 서술"
+    },
+    {
+      "id": "miss-4",
+      "topic": "국내성·요동성 개별 좌표",
+      "detail": "국내성은 지안시, 백암성은 덩타시 좌표로 대신해 precision을 area로 두었다",
+      "neededSource": "ko/en 위키백과 개별 성 문서의 표시 좌표"
+    },
+    {
+      "id": "miss-5",
+      "topic": "연대 없는 중국 정사 서술의 연도",
+      "detail": "수서·구당서 고려전의 풍속·제도·조세 서술에는 연대가 없다. 임의 중간값을 쓰지 않고 연대 주장 claim 을 뺀 뒤, 서술이 확실히 유효한 구간의 하한(수서 586, 구당서 619)에 배치하고 confidence 를 low 로 두었다.",
+      "neededSource": "한국민족문화대백과의 해당 항목 발췌(/Article/Search 가 robots 로 막혀 문서 id 를 찾지 못했다)"
+    }
+  ],
+  "collection": {
+    "task": "goguryeo_late",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789262133,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-goguryeo_late"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "event-gg-baegam-645",
+    "polity-tang"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

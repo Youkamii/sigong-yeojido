@@ -1,0 +1,137 @@
+{
+  "job": "cross_economy_disaster",
+  "sources": 8,
+  "excerpts": 8,
+  "chunkClaims": 71,
+  "excerptClaims": 0,
+  "facts": 31,
+  "factsByCategory": {
+    "disaster": 15,
+    "economy": 16
+  },
+  "claims": 71,
+  "entities": 53,
+  "rawFilesChecked": [
+    {
+      "source": "src-enwiki-gongju",
+      "url": "https://en.wikipedia.org/wiki/Gongju",
+      "sha256": "75d8af0d54ac6cf024732d45754b95f0b52222f2c20b19cf71aac58bacdfe4ad",
+      "rawBytes": 156593,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-facts-ancient-cross_economy_disaster-enwiki-gungnae",
+      "url": "https://en.wikipedia.org/wiki/Gungnae_Fortress",
+      "sha256": "2ccc548ae79f8cfce65d1260a449d6ea4fba12a1870697b343039bafff8ee232",
+      "rawBytes": 126509,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-gyeongju",
+      "url": "https://en.wikipedia.org/wiki/Gyeongju",
+      "sha256": "b026135658a0bf993a47cbbd3978a68234ef72fd97e6fcbd2f7e2ff2d81c9551",
+      "rawBytes": 1018634,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-pyongyang",
+      "url": "https://en.wikipedia.org/wiki/Pyongyang",
+      "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+      "rawBytes": 897617,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-byeokgolje",
+      "url": "https://ko.wikipedia.org/wiki/벽골제",
+      "sha256": "94ec8428c95b1e5bc7d6099ffebed478e73a5547798d34aaae17104330350a3c",
+      "rawBytes": 171604,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-cheongjebi",
+      "url": "https://ko.wikipedia.org/wiki/영천_청제비",
+      "sha256": "670d0426335d9991a46458b503d56f20019ec52624d72ef268eea95c2a487ec7",
+      "rawBytes": 107649,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gumi",
+      "url": "https://ko.wikipedia.org/wiki/구미시",
+      "sha256": "cf8189f048b62cfee148bbb6b080f8673d8907c5857c6654aff3c5b08d536fdd",
+      "rawBytes": 440733,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-sangju",
+      "url": "https://ko.wikipedia.org/wiki/상주시",
+      "sha256": "e668bbcc10e96b235fb9c5bb7ef8d641be9f1a07b6c1098db1bdfcc9d84e8b8d",
+      "rawBytes": 440941,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-ced-1",
+      "topic": "鐵·鹽 생산지",
+      "detail": "삼국사기 본기에서 -57~935년 사이 철장·염장의 장소가 특정되는 기사를 찾지 못했다. 809년 서형산성 염고(鹽庫) 기사는 재이 기사이고, 932년 鹽州는 지명이다.",
+      "neededSource": "중국 정사 동이전(집성) 弁辰 出鐵 조, 한국민족문화대백과 '제철' 항목, 발굴 보고(진천 석장리 등)"
+    },
+    {
+      "id": "miss-ced-2",
+      "topic": "재해 피해의 군현별 분포",
+      "detail": "홍수·지진 기사 대다수가 '京都·國西·國東'처럼 방위로만 적혀 군현 단위 좌표를 댈 수 없었다. 일선군·사벌군처럼 군 이름이 적힌 사례는 드물다.",
+      "neededSource": "삼국사기 지리지와 대조한 군현 비정 연구, 한국민족문화대백과 군현 항목"
+    },
+    {
+      "id": "miss-ced-3",
+      "topic": "시장의 자리",
+      "detail": "동시·서시·남시의 설치 연도는 확인했지만 왕경 안의 위치를 댈 수 있는 원문·발굴 근거를 이 범위에서 찾지 못해 좌표는 왕경 개략값으로만 썼다.",
+      "neededSource": "국립경주문화유산연구소 왕경 발굴 보고, 국가유산포털 경주 월성·황룡사 일원 해설"
+    },
+    {
+      "id": "miss-ced-4",
+      "topic": "길이·인원을 담을 술어",
+      "detail": "둑 길이(1800보·2170보)와 동원 인원(7000·312·14140)을 적을 전용 술어가 predicate 허용 목록에 없어 syj:administeredAs 로 적었다가 검수에서 거짓 삼단논법으로 기각되었다. 수치는 what·note 와 syj:participatedIn 인용으로만 남겼다.",
+      "neededSource": "scripts/fact_predicates.json 에 syj:measuredLength·syj:laborCount 같은 술어 추가(조사원 권한 밖)"
+    },
+    {
+      "id": "miss-ced-5",
+      "topic": "하슬라·일선군의 정확한 비정 좌표",
+      "detail": "하슬라(강릉)는 좌표 발췌를 구하지 않아 비웠고, 일선군은 구미시 표시 좌표를 써 선산읍 중심과 약 15km 차이가 있다.",
+      "neededSource": "한국민족문화대백과 '하슬라'·'일선군' 항목, 위키백과 강릉시·선산읍 표시 좌표"
+    }
+  ],
+  "collection": {
+    "task": "cross_economy_disaster",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789261862,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-cross_economy_disaster"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "event-ced-d817",
+    "polity-silla"
+  ],
+  "reviewedSourceIds": {
+    "src-enwiki-gungnae": "src-facts-ancient-cross_economy_disaster-enwiki-gungnae"
+  },
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

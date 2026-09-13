@@ -29,6 +29,28 @@ generated_by: "claude-opus-5"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-facts-ancient-balhae-balhae-fall-time",
+    "subject": "polity-balhae",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "926년",
+      "year": 926,
+      "precision": "year",
+      "earliest": 926,
+      "latest": 926,
+      "id": "ts-facts-ancient-balhae-balhae-fall-time"
+    },
+    "citesChunk": "chunk_era51_encykorea-balhae-926",
+    "quote": "925년 12월에 거란의 대대적인 침공을 받고 926년 초에 멸망하였다.",
+    "note": "",
+    "fromSource": "src-encykorea-balhae",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

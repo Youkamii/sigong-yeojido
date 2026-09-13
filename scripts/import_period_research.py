@@ -77,7 +77,7 @@ def check_local_claim(claim, row):
         assert norm(obj['verbatim']) and norm(obj['verbatim']) in norm(row['text']) and norm(obj['verbatim']) in norm(quote), (claim['id'], 'verbatim mismatch')
     raw = (row.get('date') or {}).get('raw')
     if raw and obj['kind'] in ('time', 'year'):
-        match = re.match(r'^([+-]?\d{4})(?!\d)', raw)
+        match = re.match(r'^([+-]?\d{3,4})(?!\d)', raw)  # 서버·검증기와 같은 규칙(798-99-99, -0057-04-15L0)
         assert match, (row['id'], 'invalid date.raw year')
         year = int(match[1])
         keys = ('value',) if obj['kind'] == 'year' else ('year', 'earliest', 'latest')
@@ -236,9 +236,28 @@ def main():
             if not supported and obj.get('kind') == 'time' and value == obj.get('latest'):
                 supported = '이듬해' in obj.get('verbatim', '') and value == obj.get('earliest', 0) + 1 and str(obj['earliest']) in row['text']
             assert supported, (claim['id'], 'numeric year absent from quotation', value)
+        if obj['kind'] == 'literal' and isinstance(obj.get('value'), (int, float)) and not isinstance(obj.get('value'), bool):
+            # services/validate.py 는 literal value 를 문자열로만 받는다. 조사 결과의 수치는 facts[].density 에 숫자로 남는다.
+            obj['value'] = str(obj['value'])
         claim.update(fromSource=sid, citesChunk=row['id'], quote=quote, origin='ai', status='draft',
                      generatedBy='claude-opus-5', generatedAt=datetime.fromtimestamp(run['started'],timezone.utc).date().isoformat())
         by_source[sid].append(claim)
+    # 장면의 eventId 처럼 entities[] 에 선언되지 않은 주체·대상 id 는 접두어로 유형을 정해 껍데기 개체를 만든다.
+    entity_types = {'event':'Event','place':'Place','person':'Person','polity':'Polity','facility':'Facility',
+                    'institution':'Institution','group':'Group','organization':'Organization','org':'Organization','work':'Work','office':'Office'}
+    declared = {e['id'] for e in draft['entities']}
+    scene_labels = {s.get('eventId'): s.get('title') for s in draft.get('scenes', []) if s.get('eventId')}
+    for original in draft['claims']:
+        ids = [original['subject']] + ([original['object']['id']] if original['object'].get('kind') == 'entity' else [])
+        for eid in ids:
+            if eid in declared or (eid.startswith(('ts-', 'chunk_'))):
+                continue
+            kind = entity_types.get(eid.split('-')[0], 'Thing')
+            if any((args.data / 'entities' / folder / (eid + '.md')).exists() for folder in [kind.lower(), 'thing']):
+                declared.add(eid); continue
+            draft['entities'].append({'id':eid, 'type':kind, 'label':scene_labels.get(eid, eid),
+                                      'ambiguity':'사실 조사(facts) 주장의 주체로 쓰인 id 에 자동으로 만든 껍데기 개체다. 이름은 장면 제목이나 id 다.'})
+            declared.add(eid)
     for entity in draft['entities']:
         path = args.data / 'entities' / entity['type'].lower() / (entity['id'] + '.md')
         if path.exists():
@@ -250,8 +269,10 @@ def main():
         for cid in dict.fromkeys(c['citesChunk'] for c in claims):
             folder = args.data / 'claims' / sid.removeprefix('src-')
             existing = sorted(folder.rglob(cid + '.md'))
-            assert len(existing) <= 1, (cid, 'multiple existing claim files', existing)
-            path = existing[0] if existing else folder / prefix / (cid + '.md')
+            # 같은 chunk 의 claims 파일이 이미 여러 곳(예: 최상위와 comparisons/)에 있으면 합칠 대상을
+            # 고르지 않고 이 컬렉션 폴더의 파일에 쓴다(validate 는 chunk 당 파일 여러 개를 허용한다).
+            own = folder / prefix / (cid + '.md')
+            path = existing[0] if len(existing) == 1 else own
             files[path] = merge_claims(path, [c for c in claims if c['citesChunk'] == cid], sid, cid)
     report = {'job':job, 'sources':len(sources), 'excerpts':len(chunks),
               'chunkClaims':chunk_claims, 'excerptClaims':excerpt_claims,

@@ -43,6 +43,61 @@ generated_by: claude-opus-5
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-06",
     "note": "고조선 유민과 진한 6부를 잇는 것은 삼국사기의 서술이다. 역사적 계승 관계로 확정하지 않는다. 여섯 마을 이름은 삼국유사 신라시조 조와 표기·설명이 다르다. 대조는 하지 않았다. era 를 '삼한'으로 붙였으나 chunk 자체는 신라본기다. coverage 분류의 편의값이다."
+  },
+  {
+    "id": "claim-facts-ancient-silla_gaya_early-sgy-6chon-time",
+    "subject": "event-sgy-jinhan-6chon",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "五鳳元年甲子",
+      "year": -57,
+      "precision": "year",
+      "earliest": -57,
+      "latest": -57,
+      "id": "ts-facts-ancient-silla_gaya_early-sgy-6chon-time"
+    },
+    "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
+    "quote": "前漢 孝宣帝五鳳元年甲子, 四月丙辰即位",
+    "note": "혁거세 즉위 기사의 서기전 57년 간지",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-facts-ancient-silla_gaya_early-sgy-6chon-village",
+    "subject": "place-seorabeol",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "entity-sgy-jinhan-6bu"
+    },
+    "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
+    "quote": "朝鮮遺民分居山谷之間, 爲六村",
+    "note": "조선 유민이 산곡 사이에 나뉘어 살아 여섯 마을을 이루었다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-facts-ancient-silla_gaya_early-sgy-6chon-admin",
+    "subject": "entity-sgy-jinhan-6bu",
+    "predicate": "syj:administeredAs",
+    "object": {
+      "kind": "literal",
+      "value": "辰韓六部"
+    },
+    "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
+    "quote": "是爲辰韓六部",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

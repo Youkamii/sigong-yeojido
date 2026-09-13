@@ -1,0 +1,50 @@
+---
+type: "Claims"
+source: "src-samguksagi"
+chunk: "chunk_samguksagi_sg_004_0040_0550"
+generated: "claude-opus-5"
+status: "draft"
+---
+
+```claims-json
+[
+  {
+    "id": "claim-facts-ancient-cross_facility_culture-c576-time",
+    "subject": "event-hwarang-576",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "三十七年",
+      "year": 576,
+      "precision": "year",
+      "earliest": 576,
+      "latest": 576,
+      "id": "ts-facts-ancient-cross_facility_culture-c576-time"
+    },
+    "citesChunk": "chunk_samguksagi_sg_004_0040_0550",
+    "quote": "三十七年, 春, 始奉源花.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-facts-ancient-cross_facility_culture-c576-act",
+    "subject": "event-hwarang-576",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "group-hwarang"
+    },
+    "citesChunk": "chunk_samguksagi_sg_004_0040_0550",
+    "quote": "其後更取美貌男子, 粧飾之, 名花郞以奉之, 徒衆雲集",
+    "note": "원화가 파한 뒤 화랑을 두니 무리가 구름처럼 모였다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
+  }
+]
+```

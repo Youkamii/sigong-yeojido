@@ -61,6 +61,23 @@ status: draft
     "origin": "ai",
     "status": "draft",
     "note": "같은 줄 又制守墓人 규정의 셋째 조항. 파는 자는 刑, 사는 자는 수묘를 지게 한다."
+  },
+  {
+    "id": "claim-facts-ancient-goguryeo_middle-gg-sumyoin-ban",
+    "subject": "polity-goguryeo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-gwanggaeto-neungbi"
+    },
+    "citesChunk": "chunk_gwanggaeto_4-09",
+    "quote": "又制守墓人自今以後不得更相轉賣",
+    "note": "수묘인의 전매를 금지하는 령",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

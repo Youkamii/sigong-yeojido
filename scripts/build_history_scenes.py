@@ -47,7 +47,12 @@ for job in args.job or ['invasion_events','yi_naval']:
         if place:
             assert all(c in claims for c in place['claimIds'])
             if not place['claimIds']:
-                if place.get('lon') is not None:
+                if place.get('lon') is not None and args.collection.startswith('facts-'):
+                    # 사실 조사 장면: 활동 장소 주장 없이 조사 출처의 표시 좌표(coordinateSourceIds)만 있는 경우.
+                    assert place.get('coordinateSourceIds') or place.get('coordinateNote'),(scene['id'],'coordinate basis missing')
+                    place['placementType']='fact-coordinate'
+                    place['displayBasis']=place.get('displayBasis') or '사실 조사 출처의 표시 좌표에 놓은 배치입니다. 유적 실측점이나 복원이 아니며, 관련 인물의 현장 출석을 뜻하지 않습니다.'
+                elif place.get('lon') is not None:
                     # These reviewed court episodes explicitly use a capital-context assumption.
                     assert job=='joseon_early_scenes' and scene['id'] in (
                         'scene-je-hunminjeongeum-changje-1443','scene-je-hunminjeongeum-haerye-1446',

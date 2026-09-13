@@ -1,0 +1,2263 @@
+{
+ "collection": "facts-ancient",
+ "job": "balhae",
+ "cell": {
+  "polity": "발해",
+  "from": 698,
+  "to": 926,
+  "regions": [
+   "north"
+  ],
+  "categories": {
+   "administration": 6,
+   "settlement": 4,
+   "facility": 3,
+   "economy": 3,
+   "foreign": 3,
+   "culture": 1
+  }
+ },
+ "sources": [
+  {
+   "id": "src-enwiki-shangjing",
+   "title": "Shangjing Longquanfu",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Shangjing_Longquanfu",
+   "rawFile": "raw/enwiki-shangjing.html",
+   "sha256": "d2a21fc7542fda4755382fd06cf2a2d3a796b16e6ee2b45aaaf10d1c45c51b6b",
+   "httpStatus": 200,
+   "byteLength": 89045,
+   "fetchedUtc": "2026-09-13T00:37:23Z",
+   "license": "CC BY-SA 4.0 (Wikipedia)",
+   "excerpts": [
+    {
+     "id": "ex-shangjing-geo",
+     "text": "44.1306; 129.1417",
+     "locator": "문서 머리의 표시 좌표(Coordinates)"
+    },
+    {
+     "id": "ex-shangjing-desc",
+     "text": "Balhae archaeological site in China",
+     "locator": "문서 머리 설명"
+    }
+   ]
+  },
+  {
+   "id": "src-kowiki-sangyeong",
+   "title": "상경용천부",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%83%81%EA%B2%BD%EC%9A%A9%EC%B2%9C%EB%B6%80",
+   "rawFile": "raw/kowiki-sangyeong.html",
+   "sha256": "4ffc28db1b97e5acddadf6c87cf710b1bd7e3d50ca58fcfe4c2487daf22dfd83",
+   "httpStatus": 200,
+   "byteLength": 84635,
+   "fetchedUtc": "2026-09-13T00:36:54Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-sangyeong-def",
+     "text": "상경 용천부(上京龍泉府)는 발해의 주요 도시였던 5경 중 하나이다.",
+     "locator": "개요 첫 문장"
+    },
+    {
+     "id": "ex-sangyeong-place",
+     "text": "닝안 현 발해진 상경용천부 고성",
+     "locator": "속주 표 · 용주 행의 대략적 위치"
+    }
+   ]
+  }
+ ],
+ "entities": [
+  {
+   "id": "polity-balhae",
+   "type": "Polity",
+   "label": "발해"
+  },
+  {
+   "id": "polity-tang",
+   "type": "Polity",
+   "label": "당"
+  },
+  {
+   "id": "polity-silla",
+   "type": "Polity",
+   "label": "신라"
+  },
+  {
+   "id": "polity-goryeo",
+   "type": "Polity",
+   "label": "고려"
+  },
+  {
+   "id": "polity-georan",
+   "type": "Polity",
+   "label": "거란"
+  },
+  {
+   "id": "polity-japan",
+   "type": "Polity",
+   "label": "일본"
+  },
+  {
+   "id": "person-encykorea-daejoyeong",
+   "type": "Person",
+   "label": "대조영"
+  },
+  {
+   "id": "person-balhae-daeheummu",
+   "type": "Person",
+   "label": "대흠무(문왕)"
+  },
+  {
+   "id": "person-balhae-daehwaseo",
+   "type": "Person",
+   "label": "대화여(성왕)"
+  },
+  {
+   "id": "person-balhae-daeinsu",
+   "type": "Person",
+   "label": "대인수(선왕)"
+  },
+  {
+   "id": "person-balhae-daeinseon",
+   "type": "Person",
+   "label": "대인선"
+  },
+  {
+   "id": "place-balhae-dongmosan",
+   "type": "Place",
+   "label": "동모산"
+  },
+  {
+   "id": "place-balhae-aoluha",
+   "type": "Place",
+   "label": "오루하 가 성벽터"
+  },
+  {
+   "id": "place-balhae-sangyeong",
+   "type": "Place",
+   "label": "상경 용천부"
+  },
+  {
+   "id": "place-balhae-holhanseong",
+   "type": "Place",
+   "label": "홀한성"
+  },
+  {
+   "id": "place-balhae-donggyeong",
+   "type": "Place",
+   "label": "동경 용원부(책성부)"
+  },
+  {
+   "id": "place-balhae-namgyeong",
+   "type": "Place",
+   "label": "남경 남해부"
+  },
+  {
+   "id": "place-balhae-seogyeong",
+   "type": "Place",
+   "label": "서경 압록부"
+  },
+  {
+   "id": "place-balhae-jangnyeongbu",
+   "type": "Place",
+   "label": "장령부"
+  },
+  {
+   "id": "place-balhae-buyeobu",
+   "type": "Place",
+   "label": "부여부"
+  },
+  {
+   "id": "place-balhae-nosung",
+   "type": "Place",
+   "label": "노성(盧城)"
+  },
+  {
+   "id": "place-silla-cheonjeonggun",
+   "type": "Place",
+   "label": "신라 천정군"
+  }
+ ],
+ "claims": [
+  {
+   "id": "claim-balhae-sangyeong-loc",
+   "subject": "place-balhae-sangyeong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 44.1306,
+    "lon": 129.1417,
+    "precision": "site"
+   },
+   "sourceId": "src-enwiki-shangjing",
+   "citesExcerpt": "ex-shangjing-geo",
+   "note": "영어 위키백과 Shangjing Longquanfu 문서 머리의 표시 좌표(십진). 지금의 헤이룽장성 닝안시 발해진 상경성터."
+  },
+  {
+   "id": "claim-balhae-sangyeong-def",
+   "subject": "place-balhae-sangyeong",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "上京"
+   },
+   "sourceId": "src-kowiki-sangyeong",
+   "citesExcerpt": "ex-sangyeong-def",
+   "note": "상경 용천부가 발해 5경의 하나라는 서술."
+  },
+  {
+   "id": "claim-balhae-found-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "698년",
+    "year": 698,
+    "precision": "year",
+    "earliest": 698,
+    "latest": 698
+   },
+   "sourceId": "src-encykorea-balhae",
+   "citesChunk": "chunk_era51_encykorea-balhae-698",
+   "quote": "698년에 고구려 옛 장수인 대조영",
+   "note": "한국민족문화대백과 발해 항목 발췌 chunk."
+  },
+  {
+   "id": "claim-balhae-found-site",
+   "subject": "polity-balhae",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-dongmosan"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1650_0010",
+   "quote": "遂率其衆東保桂婁之故地, 據東牟山, 築城以居之",
+   "note": "구당서 발해말갈전."
+  },
+  {
+   "id": "claim-balhae-found-person",
+   "subject": "person-encykorea-daejoyeong",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "polity-balhae"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1650_0010",
+   "quote": "聖曆中, 自立爲振國王, 遣使通于突厥",
+   "note": "성력 연간(698~700) 진국왕 자립."
+  },
+  {
+   "id": "claim-balhae-713-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "713년",
+    "year": 713,
+    "precision": "year",
+    "earliest": 713,
+    "latest": 713
+   },
+   "sourceId": "src-encykorea-balhae",
+   "citesChunk": "chunk_period96_three_kingdoms_late_balhae-713",
+   "quote": "713년에 당나라에서 발해군왕을 받은 뒤 국명을 발해로 변경하였다.",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-holhanju",
+   "subject": "polity-balhae",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "忽汗州都督"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1650_0010",
+   "quote": "仍以其所統爲忽汗州, 加授忽汗州都督, 自是每歲遣使朝貢",
+   "note": "구당서는 睿宗 先天 2년(713) 최흔을 보내 책봉했다고 적었다."
+  },
+  {
+   "id": "claim-balhae-sangyeong-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "天寶末",
+    "year": 755,
+    "precision": "decade",
+    "earliest": 742,
+    "latest": 756
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "天寶末, 欽茂徙上京, 直舊國三百里忽汗河之東",
+   "note": "天寶(742~756) 말이라 적혀 연도가 한 해로 특정되지 않는다. 755년으로 잡고 범위를 742~756으로 두었다."
+  },
+  {
+   "id": "claim-balhae-sangyeong-move",
+   "subject": "polity-balhae",
+   "predicate": "syj:capitalMovedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-sangyeong"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "天寶末, 欽茂徙上京, 直舊國三百里忽汗河之東",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-sangyeong-king",
+   "subject": "person-balhae-daeheummu",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-sangyeong"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "子欽茂立, 改年大興",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-donggyeong-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "貞元時",
+    "year": 785,
+    "precision": "decade",
+    "earliest": 785,
+    "latest": 793
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "大曆中, 二十五來, 以日本舞女十一獻諸朝. 貞元時, 東南徙東京",
+   "note": "貞元(785~805) 연간이라고만 적혀 있다. 785년으로 잡고 성왕의 상경 환도(794년경) 이전으로 범위를 두었다."
+  },
+  {
+   "id": "claim-balhae-donggyeong-move",
+   "subject": "polity-balhae",
+   "predicate": "syj:capitalMovedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-donggyeong"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "貞元時, 東南徙東京",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-donggyeong-name",
+   "subject": "place-balhae-donggyeong",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "東京 龍原府 亦曰柵城府"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "𧴖貃故地爲東京, 曰龍原府, 亦曰柵城府, 領慶·鹽·穆·賀四州",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-return-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 794
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "推宏臨子華璵爲王, 復還上京, 改年中興",
+   "note": "신당서는 연도를 적지 않았다. 성왕 즉위·중흥 개원을 794년으로 보는 통설을 따랐고 chunk 에 date 가 없어 연도 검사는 걸리지 않는다."
+  },
+  {
+   "id": "claim-balhae-return-move",
+   "subject": "polity-balhae",
+   "predicate": "syj:capitalMovedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-sangyeong"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "復還上京, 改年中興",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-5gyeong",
+   "subject": "polity-balhae",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "五京·十五府·六十二州"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "至是遂爲海東盛國, 地有五京·十五府·六十二州",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-5gyeong-gs",
+   "subject": "polity-balhae",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "五京十五府六十二州"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_001_0090_0020_0020",
+   "quote": "五京十五府六十二州, 地方五千餘里, 衆數十萬",
+   "note": "고려사 태조 8년 9월 기사에 붙은 발해 개관. 신당서와 같은 숫자다."
+  },
+  {
+   "id": "claim-balhae-seonwang-time",
+   "subject": "person-balhae-daeinsu",
+   "predicate": "syj:reignedTo",
+   "object": {
+    "kind": "time",
+    "verbatim": "大和四年",
+    "year": 830,
+    "precision": "year",
+    "earliest": 830,
+    "latest": 830
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "大和四年(830), 仁秀死, 謚宣王",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-seonwang-expand",
+   "subject": "person-balhae-daeinsu",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "polity-balhae"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "仁秀頗能討伐海北諸部, 開大境宇, 有功",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-fall-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "926년",
+    "year": 926,
+    "precision": "year",
+    "earliest": 926,
+    "latest": 926
+   },
+   "sourceId": "src-encykorea-balhae",
+   "citesChunk": "chunk_era51_encykorea-balhae-926",
+   "quote": "925년 12월에 거란의 대대적인 침공을 받고 926년 초에 멸망하였다.",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-fall-siege",
+   "subject": "polity-georan",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-holhanseong"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_001_0090_0020_0020",
+   "quote": "乃大擧, 攻渤海大諲譔, 圍忽汗城. 大諲譔戰敗乞降, 遂滅渤海",
+   "note": "고려사 태조 8년 9월 경자 기사. 홀한성은 상경 용천부의 다른 이름이다."
+  },
+  {
+   "id": "claim-balhae-fall-king",
+   "subject": "person-balhae-daeinseon",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-holhanseong"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_001_0090_0020_0020",
+   "quote": "攻渤海大諲譔, 圍忽汗城",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-fall-dongdan",
+   "subject": "polity-georan",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "東丹國"
+   },
+   "sourceId": "src-goryeosa-jeolyo",
+   "citesChunk": "chunk_goryeosa-jeolyo_kj_001_0010_0090_0050_0010",
+   "quote": "契丹主大擧攻渤海, 圍忽汗城, 滅之, 改爲東丹國",
+   "note": "고려사절요는 멸망을 태조 8년(925) 12월조에 실었다. 백과 발췌는 926년 초로 적는다."
+  },
+  {
+   "id": "claim-balhae-households-kds",
+   "subject": "polity-balhae",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 100000,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1650_0010",
+   "quote": "地方二千里, 編戶十餘萬, 勝兵數萬人",
+   "note": "十餘萬을 10만 호로 환산했다. 원문은 \"10여만\"이므로 하한값이다."
+  },
+  {
+   "id": "claim-balhae-households-sds",
+   "subject": "polity-balhae",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 100000,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "地方五千里, 戶十餘萬, 勝兵數萬",
+   "note": "신당서도 같은 수치를 적었다."
+  },
+  {
+   "id": "claim-balhae-households-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 698
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1650_0010",
+   "quote": "聖曆中, 自立爲振國王",
+   "note": "호구 서술이 붙은 시점은 성력 연간(698~700) 진국왕 자립 무렵이다."
+  },
+  {
+   "id": "claim-balhae-influx",
+   "subject": "polity-balhae",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-dongmosan"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1650_0010",
+   "quote": "祚榮驍勇善用兵, 靺鞨之衆及高麗餘燼, 稍稍歸之",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-influx-sds",
+   "subject": "polity-balhae",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-dongmosan"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "築城郭以居, 高麗逋殘稍歸之",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-influx-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 698
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "高麗滅, 率衆保挹婁之東牟山",
+   "note": "chunk 에 date 가 없어 건국 연도 698 을 따랐다."
+  },
+  {
+   "id": "claim-balhae-100ho-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 925
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_001_0090_0020_0020",
+   "quote": "率民一百戶來附",
+   "note": "chunk date.raw 0925-09-10."
+  },
+  {
+   "id": "claim-balhae-100ho",
+   "subject": "polity-balhae",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 100,
+    "unit": "戶"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_001_0090_0020_0020",
+   "quote": "渤海禮部卿 大和鈞·均老司政 大元鈞·工部卿 大福謨·左右衛將軍 大審理等, 率民一百戶來附",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-1000ho-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十二月",
+    "year": 925,
+    "precision": "month",
+    "earliest": 925,
+    "latest": 925
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_001_0090_0050_0010",
+   "quote": "十二月 戊子 渤海左首衛小將 冒豆干, 檢校開國男 朴漁等, 率民一千戶, 來附.",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-1000ho",
+   "subject": "polity-balhae",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 1000,
+    "unit": "戶"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_001_0090_0050_0010",
+   "quote": "率民一千戶, 來附",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-manho-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 925
+   },
+   "sourceId": "src-goryeosa-jeolyo",
+   "citesChunk": "chunk_goryeosa-jeolyo_kj_001_0010_0090_0050_0010",
+   "quote": "十二月. 契丹滅渤海",
+   "note": "고려사절요 태조 8년(925) 12월조."
+  },
+  {
+   "id": "claim-balhae-manho",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goryeo"
+   },
+   "sourceId": "src-goryeosa-jeolyo",
+   "citesChunk": "chunk_goryeosa-jeolyo_kj_001_0010_0090_0050_0010",
+   "quote": "其世子大光顯及將軍 申德 禮部卿 大和鈞",
+   "note": "세자 대광현 이하가 무리를 이끌고 왔다."
+  },
+  {
+   "id": "claim-balhae-manho-scale",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goryeo"
+   },
+   "sourceId": "src-goryeosa-jeolyo",
+   "citesChunk": "chunk_goryeosa-jeolyo_kj_001_0010_0090_0050_0010",
+   "quote": "前後來奔者數萬戶",
+   "note": "고려사절요 '前後來奔者數萬戶'. 어림수라 숫자로 환산하지 않았고, 앞서 온 100호·1000호 무리를 포함한 총계다. 호수 어림수는 원문의 행정 단위 표기가 아니므로 syj:relatedTo 로 둔다."
+  },
+  {
+   "id": "claim-balhae-sindeok",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goryeo"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_001_0090_0020_0010",
+   "quote": "秋九月 丙申 渤海將軍 申德等五百人來投.",
+   "note": "고려사 태조 8년 9월 병신(925-09-06)."
+  },
+  {
+   "id": "claim-balhae-suByeok-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "萬歲通天",
+    "year": 696,
+    "precision": "year",
+    "earliest": 696,
+    "latest": 697
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "萬歲通天 (696-697)中, 契丹 盡忠殺營州都督趙翽反",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-suByeok",
+   "subject": "polity-balhae",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-aoluha"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "東走, 度遼水, 保太白山之東北, 阻奧婁河, 樹壁自固",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-suByeok-bgo",
+   "subject": "polity-balhae",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-aoluha"
+   },
+   "sourceId": "src-zhws-balhaego",
+   "citesChunk": "chunk_zhws_balhaego_113277_325287",
+   "quote": "保太白山之東北阻奧婁河.樹壁自固",
+   "note": "정약용은 오루하를 지금의 액둔산에서 나오는 두 강으로 보았다."
+  },
+  {
+   "id": "claim-balhae-sangyeongseong-scale",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-sangyeong"
+   },
+   "sourceId": "src-zhws-balhaego",
+   "citesChunk": "chunk_zhws_balhaego_113277_325287",
+   "quote": "古大城在寧古塔西南六十里.虎兒哈河之南.週三十里.四面七門.內城週五里.東西南各一門.內有宮殿基",
+   "note": "발해고가 성경지를 인용한 대목. 옛 큰 성은 둘레 30리, 사면 7문, 내성 둘레 5리, 안에 궁전터가 있다. 정약용은 이 성을 발해 상경 용천부(=금 회령부)로 보았다. 성곽 규모는 원문의 행정 단위 표기가 아니므로 syj:administeredAs 대신 syj:relatedTo 로 둔다."
+  },
+  {
+   "id": "claim-balhae-sangyeongseong-time",
+   "subject": "place-balhae-sangyeong",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 755
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "欽茂徙上京, 直舊國三百里忽汗河之東",
+   "note": "축조 연도를 적은 기록이 없다. 상경 천도(天寶 말, 755년경)를 기준 해로 삼았을 뿐 성곽을 755년에 쌓았다는 뜻이 아니어서 syj:builtIn 을 쓰지 않는다."
+  },
+  {
+   "id": "claim-balhae-sangyeong-prod",
+   "subject": "place-balhae-sangyeong",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "上京 龍泉府 領龍·湖·渤三州"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "以肅愼故地爲上京, 曰龍泉府, 領龍·湖·渤三州",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-buyeobu-garrison",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-buyeobu"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "扶餘故地爲扶餘府, 常屯勁兵扞契丹, 領扶·仙二州",
+   "note": "부여부에 늘 날쌘 군사를 주둔시켜 거란을 막게 했다는 서술. 주둔은 원문의 행정 단위 표기가 아니므로 syj:relatedTo 로 둔다."
+  },
+  {
+   "id": "claim-balhae-buyeobu-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 830
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "大和四年(830), 仁秀死, 謚宣王",
+   "note": "신당서가 5경 15부 62주를 서술한 기준 해(선왕 사망 830)일 뿐 부여부 설치 연도가 아니다. 원문에 15부 설치 시점은 없다."
+  },
+  {
+   "id": "claim-balhae-738-trade-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "開元二十六年",
+    "year": 738,
+    "precision": "month",
+    "earliest": 738,
+    "latest": 738
+   },
+   "sourceId": "src-jipseong-ko_044",
+   "citesChunk": "chunk_jipseong-ko_044_ko_044_0680_0550",
+   "quote": "(唐玄宗 開元二十六年(738)) 閏八月, 渤海靺鞨遣使獻豹鼠皮一千張 · 乾文魚一白口.",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-738-trade",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-tang"
+   },
+   "sourceId": "src-jipseong-ko_044",
+   "citesChunk": "chunk_jipseong-ko_044_ko_044_0680_0550",
+   "quote": "渤海靺鞨遣使獻豹鼠皮一千張 · 乾文魚一白口",
+   "note": "豹鼠皮 1000장과 乾文魚 100마리(一白口는 一百口의 표기)."
+  },
+  {
+   "id": "claim-balhae-836-market-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "開成元年",
+    "year": 836,
+    "precision": "month",
+    "earliest": 836,
+    "latest": 836
+   },
+   "sourceId": "src-jipseong-ko_044",
+   "citesChunk": "chunk_jipseong-ko_044_ko_044_0950_0010",
+   "quote": "(唐文宗) 開成元年(836) 六月, 淄 · 靑節度使奏:「新羅 · 渤海將到, 熟銅請不禁斷.」",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-836-market",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-tang"
+   },
+   "sourceId": "src-jipseong-ko_044",
+   "citesChunk": "chunk_jipseong-ko_044_ko_044_0950_0010",
+   "quote": "新羅 · 渤海將到, 熟銅請不禁斷",
+   "note": "같은 달 경조부는 비단·진주·은·구리·철 등의 번객 호시를 금하자고 아뢰었다."
+  },
+  {
+   "id": "claim-balhae-926-goods-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "天成元年四月",
+    "year": 926,
+    "precision": "month",
+    "earliest": 926,
+    "latest": 926
+   },
+   "sourceId": "src-jipseong-ko_040",
+   "citesChunk": "chunk_jipseong-ko_040_ko_040_0050_0010",
+   "quote": "天成元年四月, 遣使大陳林等一百十六人來朝貢, 進男口·女口各三人, 幷人蔘·昆布·白附子等.",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-926-goods",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-tang"
+   },
+   "sourceId": "src-jipseong-ko_040",
+   "citesChunk": "chunk_jipseong-ko_040_ko_040_0050_0010",
+   "quote": "幷人蔘·昆布·白附子等",
+   "note": "오대회요 발해조. 후당 천성 원년(926) 4월."
+  },
+  {
+   "id": "claim-balhae-products",
+   "subject": "polity-balhae",
+   "predicate": "syj:producedAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-nosung"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "顯州之布, 沃州之緜, 龍州之紬, 位城之鐵, 盧城之稻, 湄沱湖之鯽",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-products2",
+   "subject": "polity-balhae",
+   "predicate": "syj:producedAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-namgyeong"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "俗所貴者, 曰太白山之菟, 南海之昆布, 柵城之豉, 扶餘之鹿, 鄚頡之豕, 率賓之馬",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-products-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 830
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "大和四年(830), 仁秀死, 謚宣王",
+   "note": "신당서 발해전이 산물을 적은 시점은 해동성국기(선왕 이후)다. 선왕 사망 연도 830 을 기준 해로 잡았다."
+  },
+  {
+   "id": "claim-balhae-roads",
+   "subject": "polity-balhae",
+   "predicate": "syj:routeConnects",
+   "object": {
+    "kind": "entity",
+    "id": "polity-japan"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "龍原東南瀕海, 日本道也. 南海, 新羅道也. 鴨淥, 朝貢道也. 長嶺, 營州道也. 扶餘, 契丹道也.",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-roads-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "大和四年",
+    "year": 830,
+    "precision": "year",
+    "earliest": 830,
+    "latest": 830
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "大和四年(830), 仁秀死, 謚宣王",
+   "note": "다섯 길은 신당서가 5경 15부와 함께 적은 제도 서술이다. 기준 해를 선왕 사망 830 으로 잡았다."
+  },
+  {
+   "id": "claim-balhae-sillado",
+   "subject": "polity-balhae",
+   "predicate": "syj:routeConnects",
+   "object": {
+    "kind": "entity",
+    "id": "place-silla-cheonjeonggun"
+   },
+   "sourceId": "src-zhws-balhaego",
+   "citesChunk": "chunk_zhws_balhaego_113277_325287",
+   "quote": "自新羅泉井郡.今德源.至柵城府.凡三十九驛.一千一百七十里",
+   "note": "발해고가 가탐 군국지를 인용한 대목."
+  },
+  {
+   "id": "claim-balhae-sillado-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 800
+   },
+   "sourceId": "src-zhws-balhaego",
+   "citesChunk": "chunk_zhws_balhaego_113277_325287",
+   "quote": "賈耽郡國志云",
+   "note": "가탐의 군국지는 정원 연간(785~805) 편찬이라 800년을 기준 해로 잡았다."
+  },
+  {
+   "id": "claim-balhae-777-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十二年",
+    "year": 777,
+    "precision": "month",
+    "earliest": 777,
+    "latest": 777
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_0110_0110",
+   "quote": "(大曆) 十二年(777)春正月甲寅朔. 辛酉, …… 渤海使獻日本國舞女十一人.",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-777",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-japan"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_0110_0110",
+   "quote": "渤海使獻日本國舞女十一人",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-790-time",
+   "subject": "polity-silla",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三月",
+    "year": 790,
+    "precision": "month",
+    "earliest": 790,
+    "latest": 790
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0020_0310",
+   "quote": "三月, 以一吉湌伯魚使北國.",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-790",
+   "subject": "polity-silla",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-balhae"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_010_0020_0310",
+   "quote": "以一吉湌伯魚使北國",
+   "note": "삼국사기 신라본기 원성왕 6년. 北國은 발해를 가리킨다."
+  },
+  {
+   "id": "claim-balhae-738-books-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十六年",
+    "year": 738,
+    "precision": "day",
+    "earliest": 738,
+    "latest": 738
+   },
+   "sourceId": "src-jipseong-ko_039",
+   "citesChunk": "chunk_jipseong-ko_039_ko_039_0110_0020",
+   "quote": "(開元)二十六年(738)六月二十七日, 渤海遣使求寫唐禮及三國志·晉書·三十六國春秋, 許之.",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-738-books",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-tang"
+   },
+   "sourceId": "src-jipseong-ko_039",
+   "citesChunk": "chunk_jipseong-ko_039_ko_039_0110_0020",
+   "quote": "渤海遣使求寫唐禮及三國志·晉書·三十六國春秋, 許之",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-833-students-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "七年正月",
+    "year": 833,
+    "precision": "month",
+    "earliest": 833,
+    "latest": 833
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1650_0010",
+   "quote": "七年正月, 遣同中書右平章事高寶英來謝册命, 仍遣學生三人, 隨寶英請赴上都學問",
+   "note": "구당서 발해말갈전의 大和 7년(833) 기사."
+  },
+  {
+   "id": "claim-balhae-833-students",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-tang"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1650_0010",
+   "quote": "先遣學生三人, 事業稍成, 請歸本國, 許之",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-students-sds",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-tang"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "初, 其王數遣諸生詣京師太學, 習識古今制度",
+   "note": ""
+  },
+  {
+   "id": "claim-balhae-buyeobu-unit",
+   "subject": "place-balhae-buyeobu",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "扶餘府 領扶·仙二州"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "扶餘故地爲扶餘府, 常屯勁兵扞契丹, 領扶·仙二州",
+   "note": "신당서 발해전의 행정 단위 표기. 부여 옛 땅을 부여부로 삼고 부주·선주 두 주를 거느리게 했다."
+  },
+  {
+   "id": "claim-balhae-namhaebu-unit",
+   "subject": "place-balhae-namgyeong",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "南京 南海府 領沃·睛·椒三州"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "沃沮故地爲南京, 曰南海府, 領沃·睛·椒三州",
+   "note": "신당서 발해전. 옥저 옛 땅을 남경 남해부로 삼았다."
+  },
+  {
+   "id": "claim-balhae-namhaebu-wall",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-balhae-namgyeong"
+   },
+   "sourceId": "src-zhws-balhaego",
+   "citesChunk": "chunk_zhws_balhaego_113277_325287",
+   "quote": "海州渤海南京.疊石爲城.幅員九里.都督沃晴椒三州",
+   "note": "발해고가 인용한 대목. 요 해주를 발해 남경으로 보고 돌을 쌓아 만든 둘레 9리 성이라 적었다. 정약용은 같은 책에서 남해부를 금주·여순 쪽에 놓는 비정이 맞지 않는다고 보아 위치에 이견이 있다."
+  },
+  {
+   "id": "claim-balhae-namhaebu-time",
+   "subject": "polity-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 830
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+   "quote": "大和四年(830), 仁秀死, 謚宣王",
+   "note": "신당서가 5경 15부를 서술한 기준 해일 뿐 축성 연도가 아니다."
+  },
+  {
+   "id": "claim-balhae-georan-relocate",
+   "subject": "polity-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-georan"
+   },
+   "sourceId": "src-zhws-balhaego",
+   "citesChunk": "chunk_zhws_balhaego_113277_325287",
+   "quote": "契丹旣滅渤海.虜其部落.多徙遼東.遂取渤海州縣之名",
+   "note": "발해고. 거란이 발해를 멸한 뒤 그 부락을 사로잡아 상당수를 요동으로 옮기고 발해 주현의 이름을 요동 여러 고을에 옮겨 붙였다는 서술."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "scene-balhae-sangyeong-move-755",
+   "eventId": "event-balhae-sangyeong-move",
+   "title": "문왕이 상경 용천부로 도읍을 옮기다 (天寶 말)",
+   "startYear": 755,
+   "endYear": 755,
+   "kind": "migration",
+   "category": "administration",
+   "region": "north",
+   "decade": 750,
+   "sceneFunction": "migration",
+   "summary": "문왕 대흠무가 天寶 말에 옛 도읍에서 북쪽으로 300리 떨어진 홀한하 동쪽 상경으로 도읍을 옮겼다. 이후 정원 연간에 동경으로 옮겼다가 성왕 때 다시 상경으로 돌아왔다.",
+   "dateClaimIds": [
+    "claim-balhae-sangyeong-time"
+   ],
+   "actionClaimIds": [
+    "claim-balhae-sangyeong-move",
+    "claim-balhae-sangyeong-king"
+   ],
+   "place": {
+    "label": "상경 용천부(홀한성)",
+    "medium": "land",
+    "precision": "site",
+    "lon": 129.1417,
+    "lat": 44.1306,
+    "claimIds": [
+     "claim-balhae-sangyeong-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-shangjing"
+    ],
+    "coordinateNote": "영어 위키백과 Shangjing Longquanfu 문서 머리의 십진 표시 좌표(44.1306; 129.1417)를 그대로 썼다. 지금의 헤이룽장성 닝안시 발해진 상경성터다."
+   },
+   "participants": [
+    {
+     "entityId": "person-balhae-daeheummu",
+     "role": "도읍을 옮긴 왕",
+     "side": "civilian",
+     "presence": "on-site",
+     "claimIds": [
+      "claim-balhae-sangyeong-king"
+     ]
+    },
+    {
+     "entityId": "polity-balhae",
+     "role": "도읍을 옮긴 나라",
+     "side": "civilian",
+     "presence": "related",
+     "claimIds": [
+      "claim-balhae-sangyeong-move"
+     ]
+    }
+   ],
+   "participantGroups": [
+    {
+     "label": "옮겨간 조정과 관인",
+     "role": "왕을 따라 새 도읍으로 옮긴 무리",
+     "stance": "neutral",
+     "side": "civilian",
+     "count": null,
+     "claimIds": [
+      "claim-balhae-sangyeong-move"
+     ]
+    }
+   ],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "persistence": {
+    "kind": "city",
+    "from": 755,
+    "to": 926,
+    "basisClaimIds": [
+     "claim-balhae-sangyeong-move",
+     "claim-balhae-fall-siege"
+    ]
+   }
+  },
+  {
+   "id": "scene-balhae-sangyeong-wall-755",
+   "eventId": "event-balhae-sangyeong-wall",
+   "title": "상경성 성곽 — 둘레 30리, 문 7개, 내성 둘레 5리",
+   "startYear": 755,
+   "endYear": 926,
+   "kind": "construction",
+   "category": "facility",
+   "region": "north",
+   "decade": 750,
+   "sceneFunction": "fortress",
+   "summary": "발해고가 인용한 성경지는 영고탑 서남 60리 호아합하 남쪽의 옛 큰 성을 둘레 30리, 사면 7문, 내성 둘레 5리, 안에 궁전터가 있다고 적었다. 정약용은 이 성을 발해 상경 용천부로 보았다.",
+   "dateClaimIds": [
+    "claim-balhae-sangyeongseong-time"
+   ],
+   "actionClaimIds": [
+    "claim-balhae-sangyeongseong-scale",
+    "claim-balhae-sangyeong-prod"
+   ],
+   "place": {
+    "label": "상경 용천부(홀한성)",
+    "medium": "land",
+    "precision": "site",
+    "lon": 129.1417,
+    "lat": 44.1306,
+    "claimIds": [
+     "claim-balhae-sangyeong-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-shangjing"
+    ],
+    "coordinateNote": "영어 위키백과 Shangjing Longquanfu 문서 머리의 십진 표시 좌표(44.1306; 129.1417)를 그대로 썼다. 지금의 헤이룽장성 닝안시 발해진 상경성터다."
+   },
+   "participants": [
+    {
+     "entityId": "polity-balhae",
+     "role": "성을 두고 도읍으로 삼은 나라",
+     "side": "civilian",
+     "presence": "related",
+     "claimIds": [
+      "claim-balhae-sangyeong-prod"
+     ]
+    }
+   ],
+   "participantGroups": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "persistence": {
+    "kind": "facility",
+    "from": 755,
+    "to": 926,
+    "basisClaimIds": [
+     "claim-balhae-sangyeongseong-scale",
+     "claim-balhae-fall-siege"
+    ]
+   }
+  },
+  {
+   "id": "scene-balhae-fall-926",
+   "eventId": "event-balhae-fall",
+   "title": "거란이 홀한성을 에워싸고 발해가 무너지다 (925~926)",
+   "startYear": 926,
+   "endYear": 926,
+   "kind": "siege",
+   "category": "war",
+   "region": "north",
+   "decade": 920,
+   "sceneFunction": "fortress",
+   "summary": "거란이 크게 군사를 일으켜 발해 대인선을 치고 홀한성을 에워쌌다. 대인선이 싸움에 져 항복을 빌면서 발해가 무너졌고 거란은 그 땅을 동단국으로 고쳤다.",
+   "dateClaimIds": [
+    "claim-balhae-fall-time"
+   ],
+   "actionClaimIds": [
+    "claim-balhae-fall-siege",
+    "claim-balhae-fall-dongdan"
+   ],
+   "place": {
+    "label": "상경 용천부(홀한성)",
+    "medium": "land",
+    "precision": "site",
+    "lon": 129.1417,
+    "lat": 44.1306,
+    "claimIds": [
+     "claim-balhae-sangyeong-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-enwiki-shangjing"
+    ],
+    "coordinateNote": "영어 위키백과 Shangjing Longquanfu 문서 머리의 십진 표시 좌표(44.1306; 129.1417)를 그대로 썼다. 지금의 헤이룽장성 닝안시 발해진 상경성터다."
+   },
+   "participants": [
+    {
+     "entityId": "polity-georan",
+     "role": "홀한성을 에워싼 쪽",
+     "side": "attacker",
+     "presence": "on-site",
+     "claimIds": [
+      "claim-balhae-fall-siege"
+     ]
+    },
+    {
+     "entityId": "person-balhae-daeinseon",
+     "role": "성에서 항복한 발해 왕",
+     "side": "defender",
+     "presence": "on-site",
+     "claimIds": [
+      "claim-balhae-fall-king"
+     ]
+    }
+   ],
+   "participantGroups": [
+    {
+     "label": "거란 군사",
+     "role": "성을 에워싼 군사",
+     "stance": "hostile",
+     "side": "attacker",
+     "count": null,
+     "claimIds": [
+      "claim-balhae-fall-siege"
+     ]
+    },
+    {
+     "label": "홀한성 안의 발해 사람들",
+     "role": "성 안에서 항복을 맞은 쪽",
+     "stance": "defensive",
+     "side": "defender",
+     "count": null,
+     "claimIds": [
+      "claim-balhae-fall-king"
+     ]
+    }
+   ],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": true,
+     "claimIds": [
+      "claim-balhae-fall-siege"
+     ]
+    }
+   },
+   "persistence": {
+    "kind": "city",
+    "from": 755,
+    "to": 926,
+    "basisClaimIds": [
+     "claim-balhae-sangyeong-move",
+     "claim-balhae-fall-siege"
+    ]
+   }
+  },
+  {
+   "id": "scene-balhae-aoluha-696",
+   "eventId": "event-balhae-aoluha-wall",
+   "title": "오루하에 기대어 성벽을 세우다 (萬歲通天 연간)",
+   "startYear": 696,
+   "endYear": 697,
+   "kind": "construction",
+   "category": "facility",
+   "region": "north",
+   "decade": 690,
+   "sceneFunction": "fortress",
+   "summary": "걸걸중상과 걸사비우가 무리를 이끌고 요수를 건너 태백산 동북으로 가서 오루하를 막아 성벽을 세우고 스스로 지켰다. 발해가 서기 전 첫 근거지다.",
+   "dateClaimIds": [
+    "claim-balhae-suByeok-time"
+   ],
+   "actionClaimIds": [
+    "claim-balhae-suByeok",
+    "claim-balhae-suByeok-bgo"
+   ],
+   "place": null,
+   "participants": [
+    {
+     "entityId": "polity-balhae",
+     "role": "성벽을 세운 무리(뒤에 발해가 된다)",
+     "side": "civilian",
+     "presence": "on-site",
+     "claimIds": [
+      "claim-balhae-suByeok"
+     ]
+    }
+   ],
+   "participantGroups": [
+    {
+     "label": "동쪽으로 달아난 고구려 유민과 말갈 무리",
+     "role": "성벽을 세워 스스로 지킨 사람들",
+     "stance": "defensive",
+     "side": "civilian",
+     "count": null,
+     "claimIds": [
+      "claim-balhae-suByeok"
+     ]
+    }
+   ],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "persistence": {
+    "kind": "facility",
+    "from": 696,
+    "to": null,
+    "basisClaimIds": [
+     "claim-balhae-suByeok"
+    ]
+   }
+  },
+  {
+   "id": "scene-balhae-exodus-925",
+   "eventId": "event-balhae-exodus-925",
+   "title": "발해 사람들이 무리를 이끌고 남쪽으로 떠나다 (925)",
+   "startYear": 925,
+   "endYear": 925,
+   "kind": "migration",
+   "category": "settlement",
+   "region": "north",
+   "decade": 920,
+   "sceneFunction": "migration",
+   "summary": "925년 나라가 무너지는 동안 예부경 대화균 무리가 백성 100호를, 좌수위소장 모두간과 검교개국남 박어가 백성 1000호를 이끌고 발해를 떠났다. 세자 대광현 이하 앞뒤로 온 사람이 수만 호였다.",
+   "dateClaimIds": [
+    "claim-balhae-1000ho-time"
+   ],
+   "actionClaimIds": [
+    "claim-balhae-1000ho",
+    "claim-balhae-100ho",
+    "claim-balhae-manho-scale"
+   ],
+   "place": null,
+   "participants": [
+    {
+     "entityId": "polity-balhae",
+     "role": "사람들이 떠나간 나라",
+     "side": "civilian",
+     "presence": "related",
+     "claimIds": [
+      "claim-balhae-manho-scale"
+     ]
+    }
+   ],
+   "participantGroups": [
+    {
+     "label": "모두간·박어를 따라간 백성",
+     "role": "무리를 이끌고 떠난 주민",
+     "stance": "neutral",
+     "side": "civilian",
+     "count": 1000,
+     "claimIds": [
+      "claim-balhae-1000ho"
+     ]
+    },
+    {
+     "label": "대화균 무리를 따라간 백성",
+     "role": "무리를 이끌고 떠난 주민",
+     "stance": "neutral",
+     "side": "civilian",
+     "count": 100,
+     "claimIds": [
+      "claim-balhae-100ho"
+     ]
+    }
+   ],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "persistence": {
+    "kind": "none",
+    "from": 925,
+    "to": 925,
+    "basisClaimIds": []
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "fact-balhae-001",
+   "category": "administration",
+   "region": "north",
+   "decade": 690,
+   "year": 698,
+   "yearVerbatim": "698년",
+   "placeLabel": "동모산",
+   "modernPlace": "중국 지린성 둔화 일대로 보는 설이 있으나 확정되지 않았다",
+   "what": "대조영이 무리를 이끌고 계루의 옛 땅 동모산에 성을 쌓고 자리 잡아 나라를 세웠다. 성력 연간에 스스로 진국왕이라 했다.",
+   "claimIds": [
+    "claim-balhae-found-time",
+    "claim-balhae-found-site",
+    "claim-balhae-found-person"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "같은 사건을 다루는 장면이 services/host/app/history-scenes.json 의 scene-anc-balhae-698 에 이미 있어 새 장면을 만들지 않았다. 브리프 규칙 8은 이때 sceneId 에 기존 장면 id 를 적으라고 하지만 check_fact_research.py 430~431 행은 fact.sceneId 를 같은 result.json 의 scenes 안에서만 찾으므로 기존 id 를 넣으면 검증이 실패한다. 규칙과 검증기가 충돌해 sceneId 를 null 로 두었다(missing miss-balhae-6). 동모산 좌표는 확정 출처가 없어 넣지 않았다.",
+   "persistence": {
+    "kind": "institution",
+    "from": 698,
+    "to": 926
+   },
+   "density": null
+  },
+  {
+   "id": "fact-balhae-002",
+   "category": "administration",
+   "region": "north",
+   "decade": 710,
+   "year": 713,
+   "yearVerbatim": "713년",
+   "placeLabel": "홀한주(발해 전역)",
+   "modernPlace": "",
+   "what": "당이 대조영을 발해군왕으로 책봉하고 그가 다스리는 땅을 홀한주로 삼아 홀한주도독을 겸하게 했다. 이때부터 말갈 이름을 버리고 발해라고만 불렀다.",
+   "claimIds": [
+    "claim-balhae-713-time",
+    "claim-balhae-holhanju"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "구당서는 睿宗 先天 2년(713) 최흔을 보내 책봉했다고 적었다.",
+   "persistence": {
+    "kind": "institution",
+    "from": 713,
+    "to": 926
+   },
+   "density": null
+  },
+  {
+   "id": "fact-balhae-003",
+   "category": "administration",
+   "region": "north",
+   "decade": 750,
+   "year": 755,
+   "yearVerbatim": "天寶末",
+   "placeLabel": "상경 용천부",
+   "modernPlace": "중국 헤이룽장성 닝안시 발해진 상경성터",
+   "what": "문왕 대흠무가 天寶 말에 옛 도읍에서 300리 떨어진 홀한하 동쪽 상경으로 도읍을 옮겼다.",
+   "claimIds": [
+    "claim-balhae-sangyeong-time",
+    "claim-balhae-sangyeong-move",
+    "claim-balhae-sangyeong-king",
+    "claim-balhae-sangyeong-loc"
+   ],
+   "sceneId": "scene-balhae-sangyeong-move-755",
+   "confidence": "medium",
+   "note": "天寶(742~756) 말이라고만 적혀 있어 연도를 755년으로 잡고 주장의 범위를 742~756으로 두었다.",
+   "lon": 129.1417,
+   "lat": 44.1306,
+   "coordinateBasis": "claim-balhae-sangyeong-loc",
+   "persistence": {
+    "kind": "city",
+    "from": 755,
+    "to": 926
+   },
+   "density": null
+  },
+  {
+   "id": "fact-balhae-004",
+   "category": "administration",
+   "region": "north",
+   "decade": 780,
+   "year": 785,
+   "yearVerbatim": "貞元時",
+   "placeLabel": "동경 용원부(책성부)",
+   "modernPlace": "중국 지린성 훈춘 팔련성으로 보는 설이 있으나 확정하지 않았다",
+   "what": "문왕 말년 정원 연간에 도읍을 동남쪽 동경 용원부로 옮겼다. 동경은 경·염·목·하 네 주를 거느렸고 책성부라고도 했다.",
+   "claimIds": [
+    "claim-balhae-donggyeong-time",
+    "claim-balhae-donggyeong-move",
+    "claim-balhae-donggyeong-name"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "貞元(785~805) 연간이라고만 적혀 있다. 785년으로 잡았고 좌표는 비정이 갈려 넣지 않았다.",
+   "persistence": {
+    "kind": "city",
+    "from": 785,
+    "to": 794
+   },
+   "density": null
+  },
+  {
+   "id": "fact-balhae-005",
+   "category": "administration",
+   "region": "north",
+   "decade": 790,
+   "year": 794,
+   "yearVerbatim": "改年中興",
+   "placeLabel": "상경 용천부",
+   "modernPlace": "중국 헤이룽장성 닝안시 발해진 상경성터",
+   "what": "대원의가 죽은 뒤 국인이 굉림의 아들 화여를 왕으로 세우니 도읍을 다시 상경으로 옮기고 연호를 중흥으로 고쳤다.",
+   "claimIds": [
+    "claim-balhae-return-time",
+    "claim-balhae-return-move",
+    "claim-balhae-sangyeong-loc"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "신당서는 연도를 적지 않았다. 성왕 즉위와 중흥 개원을 794년으로 보는 통설을 따랐다.",
+   "lon": 129.1417,
+   "lat": 44.1306,
+   "coordinateBasis": "claim-balhae-sangyeong-loc",
+   "persistence": {
+    "kind": "city",
+    "from": 794,
+    "to": 926
+   },
+   "density": null
+  },
+  {
+   "id": "fact-balhae-006",
+   "category": "administration",
+   "region": "north",
+   "decade": 830,
+   "year": 830,
+   "yearVerbatim": "大和四年",
+   "placeLabel": "발해 전역(5경 15부 62주)",
+   "modernPlace": "",
+   "what": "선왕 대인수가 해북 여러 부를 쳐서 강역을 크게 넓혔고, 발해는 해동성국으로 불리며 5경 15부 62주의 지방 제도를 갖추었다.",
+   "claimIds": [
+    "claim-balhae-5gyeong",
+    "claim-balhae-5gyeong-gs",
+    "claim-balhae-seonwang-time",
+    "claim-balhae-seonwang-expand"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "신당서는 제도가 갖춰진 시점을 선왕 이후로만 적었다. 기준 해를 선왕이 죽은 大和 4년(830)으로 잡았다. 고려사도 같은 5경 15부 62주를 적는다.",
+   "persistence": {
+    "kind": "institution",
+    "from": 830,
+    "to": 926
+   },
+   "density": null
+  },
+  {
+   "id": "fact-balhae-007",
+   "category": "war",
+   "region": "north",
+   "decade": 920,
+   "year": 926,
+   "yearVerbatim": "926년",
+   "placeLabel": "홀한성(상경 용천부)",
+   "modernPlace": "중국 헤이룽장성 닝안시 발해진 상경성터",
+   "what": "거란이 크게 군사를 일으켜 발해 대인선을 치고 홀한성을 에워쌌다. 대인선이 싸움에 져 항복하면서 발해가 무너졌고 거란은 그 땅을 동단국으로 고쳤다.",
+   "claimIds": [
+    "claim-balhae-fall-time",
+    "claim-balhae-fall-siege",
+    "claim-balhae-fall-king",
+    "claim-balhae-fall-dongdan"
+   ],
+   "sceneId": "scene-balhae-fall-926",
+   "confidence": "high",
+   "note": "고려사절요는 태조 8년(925) 12월조에, 한국민족문화대백과는 925년 12월 침공·926년 초 멸망으로 적는다. 연도는 926으로 잡았다. 인용 원문이 '乃大擧, 攻渤海大諲譔, 圍忽汗城' 이고 장면(scene-balhae-fall-926)도 포위·항복을 다루는 전쟁 사건이라 갈래를 war 로 둔다. 이 칸에서 전투 사실은 이 1건뿐이고 926년 만주는 기존 장면이 없는 지역·시기다.",
+   "lon": 129.1417,
+   "lat": 44.1306,
+   "coordinateBasis": "claim-balhae-sangyeong-loc",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-008",
+   "category": "settlement",
+   "region": "north",
+   "decade": 690,
+   "year": 698,
+   "yearVerbatim": "編戶十餘萬",
+   "placeLabel": "발해(진국) 전역",
+   "modernPlace": "",
+   "what": "대조영이 진국왕으로 선 무렵 발해의 편호가 10여만, 싸울 수 있는 군사가 수만이었다.",
+   "claimIds": [
+    "claim-balhae-households-kds",
+    "claim-balhae-households-sds",
+    "claim-balhae-households-time"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "十餘萬을 10만 호로 환산했으므로 하한값이다. 구당서는 地方二千里, 신당서는 地方五千里로 영역 수치가 다르다.",
+   "persistence": null,
+   "density": {
+    "households": 100000,
+    "unit": "戶",
+    "claimIds": [
+     "claim-balhae-households-kds",
+     "claim-balhae-households-sds"
+    ]
+   }
+  },
+  {
+   "id": "fact-balhae-009",
+   "category": "settlement",
+   "region": "north",
+   "decade": 690,
+   "year": 698,
+   "yearVerbatim": "稍稍歸之",
+   "placeLabel": "동모산 일대",
+   "modernPlace": "중국 지린성 둔화 일대로 보는 설이 있다",
+   "what": "대조영이 싸움을 잘하니 말갈 무리와 고구려 유민이 점차 모여들었고, 성곽을 쌓고 살자 고구려의 남은 사람들이 계속 붙어 왔다.",
+   "claimIds": [
+    "claim-balhae-influx",
+    "claim-balhae-influx-sds",
+    "claim-balhae-influx-time"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "구당서·신당서가 모두 같은 흐름을 적는다. 좌표를 얻지 못해 장면을 만들지 않았다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-010",
+   "category": "settlement",
+   "region": "north",
+   "decade": 920,
+   "year": 925,
+   "yearVerbatim": "率民一百戶來附",
+   "placeLabel": "발해(예부경 대화균 등이 떠난 곳)",
+   "modernPlace": "",
+   "what": "발해 예부경 대화균, 균로사정 대원균, 공부경 대복모, 좌우위장군 대심리 등이 백성 100호를 이끌고 발해를 떠나 고려에 붙었다.",
+   "claimIds": [
+    "claim-balhae-100ho-time",
+    "claim-balhae-100ho"
+   ],
+   "sceneId": "scene-balhae-exodus-925",
+   "confidence": "high",
+   "note": "고려사 태조 8년 9월 경자(925-09-10). 기록은 고려 쪽에 남았지만 인구가 빠져나간 곳은 발해다. 사흘 전(9월 병신)에는 발해 장군 신덕 등 500인이 왔다.",
+   "persistence": null,
+   "density": {
+    "households": 100,
+    "unit": "戶",
+    "claimIds": [
+     "claim-balhae-100ho"
+    ]
+   }
+  },
+  {
+   "id": "fact-balhae-011",
+   "category": "settlement",
+   "region": "north",
+   "decade": 920,
+   "year": 925,
+   "yearVerbatim": "十二月",
+   "placeLabel": "발해(모두간·박어가 떠난 곳)",
+   "modernPlace": "",
+   "what": "발해 좌수위소장 모두간과 검교개국남 박어 등이 백성 1000호를 이끌고 발해를 떠나 고려에 붙었다.",
+   "claimIds": [
+    "claim-balhae-1000ho-time",
+    "claim-balhae-1000ho"
+   ],
+   "sceneId": "scene-balhae-exodus-925",
+   "confidence": "high",
+   "note": "고려사 태조 8년 12월 무자(925-12-29).",
+   "persistence": null,
+   "density": {
+    "households": 1000,
+    "unit": "戶",
+    "claimIds": [
+     "claim-balhae-1000ho"
+    ]
+   }
+  },
+  {
+   "id": "fact-balhae-012",
+   "category": "settlement",
+   "region": "north",
+   "decade": 920,
+   "year": 925,
+   "yearVerbatim": "前後來奔者數萬戶",
+   "placeLabel": "발해(세자 대광현 등이 떠난 곳)",
+   "modernPlace": "",
+   "what": "거란이 발해를 멸하자 세자 대광현과 장군 신덕, 예부경 대화균, 소장 모두간, 검교개국남 박어 등이 남은 무리를 이끌고 앞뒤로 떠나니 수만 호였다.",
+   "claimIds": [
+    "claim-balhae-manho-time",
+    "claim-balhae-manho",
+    "claim-balhae-manho-scale",
+    "claim-balhae-sindeok"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "\"數萬戶\"는 어림수라 숫자로 환산하지 않고 density 를 비웠다. 고려사절요 태조 8년(925) 12월조. 이 수만 호는 fact-balhae-010(100호)·fact-balhae-011(1000호) 무리를 이름까지 나열해 포함한 총계다. 같은 이주를 두 번 세지 않도록 이 사실에는 density 를 두지 않았고, 겹치지 않는 취락 사실은 fact-balhae-008·009·026 이다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-013",
+   "category": "facility",
+   "region": "north",
+   "decade": 690,
+   "year": 696,
+   "yearVerbatim": "萬歲通天",
+   "placeLabel": "태백산 동북 오루하 가",
+   "modernPlace": "백두산 동북. 정약용은 액둔산 일대로 보았다",
+   "what": "걸걸중상과 걸사비우가 무리를 이끌고 요수를 건너 태백산 동북으로 가서 오루하를 막고 성벽을 세워 스스로 지켰다.",
+   "claimIds": [
+    "claim-balhae-suByeok-time",
+    "claim-balhae-suByeok",
+    "claim-balhae-suByeok-bgo"
+   ],
+   "sceneId": "scene-balhae-aoluha-696",
+   "confidence": "medium",
+   "note": "萬歲通天은 696~697년이다. 위치 비정이 갈려 좌표를 넣지 않았다. 연도 696 은 이 칸의 범위(698~926) 밖이다 — 발해가 서기 전 단계라 칸 안 시설 할당에는 세지 않고, 범위 안 시설은 fact-balhae-014·015·027 3건으로 채웠다.",
+   "persistence": {
+    "kind": "facility",
+    "from": 696,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-balhae-014",
+   "category": "facility",
+   "region": "north",
+   "decade": 750,
+   "year": 755,
+   "yearVerbatim": "週三十里",
+   "placeLabel": "상경성(홀한성) 성곽",
+   "modernPlace": "중국 헤이룽장성 닝안시 발해진 상경성터",
+   "what": "발해고가 인용한 성경지는 영고탑 서남 60리 호아합하 남쪽 옛 큰 성을 둘레 30리, 사면 7문, 내성 둘레 5리, 동·서·남 각 1문, 안에 궁전터가 있다고 적었다.",
+   "claimIds": [
+    "claim-balhae-sangyeongseong-scale",
+    "claim-balhae-sangyeongseong-time",
+    "claim-balhae-sangyeong-prod",
+    "claim-balhae-sangyeong-loc"
+   ],
+   "sceneId": "scene-balhae-sangyeong-wall-755",
+   "confidence": "medium",
+   "note": "성곽 축조 연대를 적은 사료가 없어 상경 천도(天寶 말, 755년경)를 기준 해로 잡았다. 규모는 청대 성경지를 옮긴 기술이다.",
+   "lon": 129.1417,
+   "lat": 44.1306,
+   "coordinateBasis": "claim-balhae-sangyeong-loc",
+   "persistence": {
+    "kind": "facility",
+    "from": 755,
+    "to": 926
+   },
+   "density": null
+  },
+  {
+   "id": "fact-balhae-015",
+   "category": "facility",
+   "region": "north",
+   "decade": 830,
+   "year": 830,
+   "yearVerbatim": "常屯勁兵",
+   "placeLabel": "부여부",
+   "modernPlace": "옛 부여 땅. 정약용은 지금의 개원 일대로 보았다",
+   "what": "발해는 옛 부여 땅에 부여부를 두고 늘 날쌘 군사를 주둔시켜 거란을 막게 했다. 부여부는 부주와 선주 두 주를 거느렸다.",
+   "claimIds": [
+    "claim-balhae-buyeobu-unit",
+    "claim-balhae-buyeobu-garrison",
+    "claim-balhae-buyeobu-time"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "원문에는 부여부 설치 시점이 없다. 연도 830 은 신당서가 5경 15부 62주 제도를 서술한 기준 해(선왕 사망)일 뿐 설치 연도가 아니어서 persistence 를 비웠다. 좌표 비정이 갈려 넣지 않았다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-016",
+   "category": "economy",
+   "region": "north",
+   "decade": 830,
+   "year": 830,
+   "yearVerbatim": "俗所貴者",
+   "placeLabel": "노성·위성·현주·옥주·용주·솔빈부·남해부·미타호",
+   "modernPlace": "",
+   "what": "발해에서 값지게 치는 것으로 노성의 벼, 위성의 쇠, 현주의 베, 옥주의 솜, 용주의 명주, 미타호의 붕어, 솔빈부의 말, 남해부의 다시마, 책성부의 된장, 부여부의 사슴, 막힐부의 돼지를 꼽았다.",
+   "claimIds": [
+    "claim-balhae-products",
+    "claim-balhae-products2",
+    "claim-balhae-products-time"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "신당서 발해전이 해동성국기 제도와 함께 적은 산물 목록이다. 기준 해를 선왕 사망 830 으로 잡았다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-017",
+   "category": "economy",
+   "region": "north",
+   "decade": 730,
+   "year": 738,
+   "yearVerbatim": "開元二十六年",
+   "placeLabel": "발해에서 당으로",
+   "modernPlace": "",
+   "what": "발해가 사신을 보내 표범쥐 가죽 1000장과 말린 문어 100마리(원문 一白口, 一百口의 오기로 본다)를 당에 바쳤다. 조공 물품의 규모를 숫자로 보여주는 기사다.",
+   "claimIds": [
+    "claim-balhae-738-trade-time",
+    "claim-balhae-738-trade"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "책부원구 외신부 조공. 원문은 遣使獻(사신을 보내 바침)이라 매매가 아니라 조공이다. 집계 권역은 주체(발해) 기준이며 실제 장소는 북위 약 34.3도의 당 장안다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-018",
+   "category": "economy",
+   "region": "north",
+   "decade": 830,
+   "year": 836,
+   "yearVerbatim": "開成元年",
+   "placeLabel": "치주·청주(당 치청절도사 관내)",
+   "modernPlace": "중국 산둥성 쯔보·칭저우 일대",
+   "what": "치청절도사가 신라와 발해 사신이 곧 올 터이니 숙동(정련한 구리)만은 금하지 말아 달라고 아뢰었다. 같은 달 경조부는 비단·진주·은·구리·쇠 등을 번객과 사고팔지 못하게 하자고 아뢰었다.",
+   "claimIds": [
+    "claim-balhae-836-market-time",
+    "claim-balhae-836-market"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "당 치청절도사 관내의 교역 허가 요청 기사다. 집계 권역은 주체(발해) 기준이며 실제 장소는 북위 약 36.8도의 중국 산둥(쯔보·칭저우)다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-019",
+   "category": "economy",
+   "region": "north",
+   "decade": 920,
+   "year": 926,
+   "yearVerbatim": "天成元年四月",
+   "placeLabel": "발해에서 후당으로",
+   "modernPlace": "",
+   "what": "발해가 대진림 등 116인을 보내 조공하며 인삼과 다시마, 백부자를 바쳤다. 오대회요는 이 조공을 후당 천성 원년(926) 4월조에 실었다.",
+   "claimIds": [
+    "claim-balhae-926-goods-time",
+    "claim-balhae-926-goods"
+   ],
+   "sceneId": null,
+   "confidence": "low",
+   "note": "오대회요 발해조. 같은 기사에 남녀 각 3인을 함께 바쳤다고 적혀 있다. 시점은 어긋난다 — 한국민족문화대백과 발췌(claim-balhae-fall-time)와 fact-balhae-007 은 925년 12월 침공·926년 초 멸망으로 보는데, 오대회요는 이 4월 조공과 그해 7월 조공을 적은 뒤 '先是 … 是歲率諸番部落攻渤海國 扶餘城, 下之' 라 하여 거란의 침공을 같은 해 뒤쪽에 놓는다. 어느 쪽이 맞는지 인용한 원문만으로는 가릴 수 없어 원문 배치만 적고 confidence 를 low 로 둔다. 집계 권역은 주체(발해) 기준이며 실제 장소는 북위 약 34.8도의 후당 낙양다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-020",
+   "category": "foreign",
+   "region": "north",
+   "decade": 830,
+   "year": 830,
+   "yearVerbatim": "日本道也",
+   "placeLabel": "용원부·남해부·압록부·장령부·부여부",
+   "modernPlace": "",
+   "what": "발해는 용원부에서 일본도, 남해부에서 신라도, 압록부에서 조공도, 장령부에서 영주도, 부여부에서 거란도로 나가는 다섯 대외 통로를 두었다.",
+   "claimIds": [
+    "claim-balhae-roads",
+    "claim-balhae-roads-time"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "신당서가 5경 15부와 함께 적은 제도 서술이다. 기준 해를 선왕 사망 830 으로 잡았다.",
+   "persistence": {
+    "kind": "institution",
+    "from": 830,
+    "to": 926
+   },
+   "density": null
+  },
+  {
+   "id": "fact-balhae-021",
+   "category": "foreign",
+   "region": "north",
+   "decade": 800,
+   "year": 800,
+   "yearVerbatim": "凡三十九驛",
+   "placeLabel": "신라 천정군~발해 책성부",
+   "modernPlace": "원산 덕원에서 두만강 하류 쪽까지",
+   "what": "가탐의 군국지는 신라 천정군에서 발해 책성부까지 역 39개, 1170리라고 적었다. 신라와 발해를 잇는 육로다.",
+   "claimIds": [
+    "claim-balhae-sillado",
+    "claim-balhae-sillado-time"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "발해고가 옮긴 가탐 군국지. 가탐의 저술이 정원 연간(785~805)이라 기준 해를 800 으로 잡았다. 발해고는 이 대목을 동경 용원부(책성부) 항목에 싣고, 신당서는 '南海, 新羅道也' 로 신라도를 남해부에 건다. 천정군~책성부 39역을 신라도로 보는 것은 후대 통설이지 인용한 원문의 주장이 아니다. 역 39개·1170리는 브리프의 transport(驛·나루·우역) 정의에도 맞지만 이 칸에 transport 할당이 없어 대외 통로로 보아 foreign 으로 둔다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-022",
+   "category": "foreign",
+   "region": "north",
+   "decade": 770,
+   "year": 777,
+   "yearVerbatim": "十二年",
+   "placeLabel": "발해 사신이 당에 이름",
+   "modernPlace": "",
+   "what": "발해 사신이 일본에서 온 무녀 11인을 당에 바쳤다. 발해가 일본과 당 사이를 잇고 있었음을 보여준다.",
+   "claimIds": [
+    "claim-balhae-777-time",
+    "claim-balhae-777"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "구당서 대종본기 대력 12년(777) 정월. 신당서 발해전도 大曆中 일본 무녀 11인을 바쳤다고 적는다. 집계 권역은 주체(발해) 기준이며 실제 장소는 북위 약 34.3도의 당 장안다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-023",
+   "category": "foreign",
+   "region": "north",
+   "decade": 790,
+   "year": 790,
+   "yearVerbatim": "三月",
+   "placeLabel": "신라에서 북국(발해)으로",
+   "modernPlace": "",
+   "what": "신라가 일길찬 백어를 북국(발해)에 사신으로 보냈다. 삼국사기에 남은 신라-발해 사이의 직접 왕래 기사다.",
+   "claimIds": [
+    "claim-balhae-790-time",
+    "claim-balhae-790"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "삼국사기 신라본기 원성왕 6년 3월. 헌덕왕 4년(812) 9월에도 급찬 숭정을 북국에 보냈다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-024",
+   "category": "culture",
+   "region": "north",
+   "decade": 730,
+   "year": 738,
+   "yearVerbatim": "二十六年",
+   "placeLabel": "발해에서 당으로",
+   "modernPlace": "",
+   "what": "발해가 사신을 보내 당례와 삼국지·진서·삼십육국춘추를 베껴 가기를 청해 허락받았다.",
+   "claimIds": [
+    "claim-balhae-738-books-time",
+    "claim-balhae-738-books"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "당회요 권36 번이청경사. 날짜는 개원 26년(738) 6월 27일. 집계 권역은 주체(발해) 기준이며 실제 장소는 북위 약 34.3도의 당 장안다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-025",
+   "category": "culture",
+   "region": "north",
+   "decade": 830,
+   "year": 833,
+   "yearVerbatim": "七年正月",
+   "placeLabel": "당 상도(장안) 태학",
+   "modernPlace": "중국 산시성 시안",
+   "what": "발해가 고보영 편에 학생 3인을 상도 태학에 보내 배우게 해 달라고 청했고, 앞서 보낸 학생 3인은 학업을 마쳐 돌아가기를 청해 허락받았다.",
+   "claimIds": [
+    "claim-balhae-833-students-time",
+    "claim-balhae-833-students",
+    "claim-balhae-students-sds"
+   ],
+   "sceneId": null,
+   "confidence": "high",
+   "note": "구당서 발해말갈전 大和 7년(833) 기사. 집계 권역은 주체(발해) 기준이며 실제 장소는 북위 약 34.3도의 당 장안 태학다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-026",
+   "category": "settlement",
+   "region": "north",
+   "decade": 920,
+   "year": 926,
+   "yearVerbatim": "虜其部落",
+   "placeLabel": "발해 옛 땅에서 요동으로",
+   "modernPlace": "중국 랴오닝성 랴오양 일대",
+   "what": "거란은 발해를 멸한 뒤 그 부락을 사로잡아 상당수를 요동으로 옮기고, 발해 주현의 이름을 요동 여러 고을에 옮겨 붙였다.",
+   "claimIds": [
+    "claim-balhae-georan-relocate",
+    "claim-balhae-fall-time"
+   ],
+   "sceneId": null,
+   "confidence": "medium",
+   "note": "발해고가 요사 지리지의 지명 혼란을 설명하며 적은 대목이다. 옮긴 규모를 숫자로 적지 않아 density 를 비웠다. 고려로 간 유민(fact-balhae-010~012)과 방향이 반대인 별개의 인구 이동이라 겹쳐 세지 않는다. 연도는 멸망 해 926 을 따랐다.",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-balhae-027",
+   "category": "facility",
+   "region": "north",
+   "decade": 830,
+   "year": 830,
+   "yearVerbatim": "疊石爲城",
+   "placeLabel": "남경 남해부의 성",
+   "modernPlace": "요사·성경지는 요 해주(중국 랴오닝성 하이청)로 보고 정약용은 함경도 쪽으로 보아 비정이 갈린다",
+   "what": "발해 남경 남해부에는 돌을 쌓아 만든 둘레 9리의 성이 있었고, 남해부는 옥주·정주·초주 세 주를 거느렸다.",
+   "claimIds": [
+    "claim-balhae-namhaebu-wall",
+    "claim-balhae-namhaebu-unit",
+    "claim-balhae-namhaebu-time"
+   ],
+   "sceneId": null,
+   "confidence": "low",
+   "note": "발해고가 인용한 성경지·요사 기술이다. 축성 연도를 적은 기록이 없어 신당서가 5경 15부를 서술한 기준 해 830 을 썼을 뿐 830년에 쌓았다는 뜻이 아니라 persistence 를 비웠다. 정약용은 요 해주를 남해부로 보는 비정을 의심했으므로 위치를 확정하지 않고 좌표도 넣지 않았다.",
+   "persistence": null,
+   "density": null
+  }
+ ],
+ "missing": [
+  {
+   "id": "miss-balhae-1",
+   "topic": "5경의 좌표",
+   "detail": "상경 용천부만 영어 위키백과에서 십진 좌표를 얻었다. 중경 현덕부(서고성)·동경 용원부(팔련성)·남경 남해부·서경 압록부는 ko/en 위키백과에 좌표가 없거나 문서가 없었다.",
+   "neededSource": "국립문화유산연구원 또는 en.wikipedia 의 서고성·팔련성 문서(좌표 포함)"
+  },
+  {
+   "id": "miss-balhae-2",
+   "topic": "동모산 좌표",
+   "detail": "동모산은 위키백과 문서에 표시 좌표가 없어 좌표를 만들지 않았다. 기존 scene-anc-balhae-698 도 같은 이유로 좌표를 비워 두었다.",
+   "neededSource": "동모산(성산자산성) 위치를 십진 좌표로 적은 허용 출처"
+  },
+  {
+   "id": "miss-balhae-3",
+   "topic": "발해 안의 재해·구휼 기사",
+   "detail": "중국 정사 발해전과 고려사에는 발해 내부의 가뭄·홍수·기근·진휼 기사가 없다. 이 칸에서 disaster 갈래를 채우지 못했다.",
+   "neededSource": "발해 관련 금석문 또는 일본 사서(속일본기) 전사본"
+  },
+  {
+   "id": "miss-balhae-4",
+   "topic": "발해의 절·탑 건립 연대",
+   "detail": "상경성 절터·영광탑 같은 불교 시설의 건립 연대를 적은 원문 조각을 로컬 사료에서 찾지 못해 facility 를 성곽·주둔지로만 채웠다.",
+   "neededSource": "국가유산포털 또는 국립문화유산연구원의 발해 불교 유적 해설"
+  },
+  {
+   "id": "miss-balhae-5",
+   "topic": "권역 코드에 국외가 없다",
+   "detail": "권역 코드는 capital·north·central·south·island 뿐이라 발해가 주체이지만 장소가 중국 내지인 사실(fact-balhae-017·018·019·022·024·025)을 north 로 셀 수밖에 없다. region×10년 표의 north 에 실제로는 북위 34~37도인 당 장안·낙양·산둥 사건 6건이 섞인다. 각 사실의 note 에 실제 위도를 통일된 문구로 적어 두었다.",
+   "neededSource": "칸 설계 쪽의 foreign(국외) 권역 코드 추가 또는 사실마다 실제 좌표 권역을 따로 적는 필드"
+  },
+  {
+   "id": "miss-balhae-6",
+   "topic": "브리프 규칙 8과 검증기 refs 검사의 충돌",
+   "detail": "규칙 8은 history-scenes.json 에 이미 있는 장면이면 facts 의 sceneId 에 그 기존 id 를 적으라고 하는데, check_fact_research.py 430~431 행은 fact.sceneId 를 같은 result.json 의 scenes 안에서만 찾아 실패시킨다. fact-balhae-001(scene-anc-balhae-698)이 여기에 해당해 sceneId 를 null 로 두고 note 로만 기존 장면을 가리켰다.",
+   "neededSource": "검증기가 외부 장면 id(services/host/app/history-scenes.json)를 허용하도록 고치는 도구 쪽 수정"
+  },
+  {
+   "id": "miss-balhae-7",
+   "topic": "규모·주둔·현대 지명을 담을 predicate",
+   "detail": "fact_predicates.json 에서 literal 을 받는 predicate 는 administeredAs·householdCount·populationCount 뿐이라 성곽 규모(週三十里)·주둔(常屯勁兵)·호수 어림수(數萬戶)·현대 지명 비정을 담을 자리가 없다. 이번 수정에서는 이런 값을 syj:relatedTo(entity)로 옮기고 원문은 quote 와 note 에 남겼으며, 현대 지명 비정 claim(claim-balhae-sangyeong-modern)은 지웠다.",
+   "neededSource": "scripts/fact_predicates.json 에 규모·주둔용 predicate 추가(예: syj:hasScale, syj:garrisonedAt)"
+  }
+ ]
+}

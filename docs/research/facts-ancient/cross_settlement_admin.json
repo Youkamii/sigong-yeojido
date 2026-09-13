@@ -1,0 +1,144 @@
+{
+  "job": "cross_settlement_admin",
+  "sources": 10,
+  "excerpts": 10,
+  "chunkClaims": 64,
+  "excerptClaims": 0,
+  "facts": 28,
+  "factsByCategory": {
+    "administration": 14,
+    "settlement": 14
+  },
+  "claims": 64,
+  "entities": 28,
+  "rawFilesChecked": [
+    {
+      "source": "src-kowiki-chungju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B6%A9%EC%A3%BC%EC%8B%9C",
+      "sha256": "e5ead90141b0b7025be7cacb3d18b6c64383c5eb47d82616e1f936bd817ff8e2",
+      "rawBytes": 551173,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-wonju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9B%90%EC%A3%BC%EC%8B%9C",
+      "sha256": "cae7ad689ce27604a9aed685b728b764a229a0a13bf4eaaf87ad880a1075a1f3",
+      "rawBytes": 404207,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-cheongju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%A3%BC%EC%8B%9C",
+      "sha256": "8b16fd6b57e6efbf555123545576afde65b011243e513c10925cdef3b4e45a54",
+      "rawBytes": 466863,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-sangju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%83%81%EC%A3%BC%EC%8B%9C",
+      "sha256": "e668bbcc10e96b235fb9c5bb7ef8d641be9f1a07b6c1098db1bdfcc9d84e8b8d",
+      "rawBytes": 440941,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-gangneung",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%EB%A6%89%EC%8B%9C",
+      "sha256": "7e32b5ab888cdef11afefcdece84da9e84bcda04f6d878880f8a19f3e5dc11ba",
+      "rawBytes": 511918,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-kowiki-samcheok",
+      "url": "https://ko.wikipedia.org/wiki/%EC%82%BC%EC%B2%99%EC%8B%9C",
+      "sha256": "2ad0edea68bb60a6ca8763acf925167a0faf1f210e65713963a0ab35d11806f7",
+      "rawBytes": 354488,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-gimhae",
+      "url": "https://en.wikipedia.org/wiki/Gimhae",
+      "sha256": "d8ac3c59ea21c60d64855504dd8c8ca35557525e70a9eb2bbd9a35d177308819",
+      "rawBytes": 213911,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-namwon",
+      "url": "https://en.wikipedia.org/wiki/Namwon",
+      "sha256": "e8f4700295fe4c213aec138e0fce9b6c83ac9d9049526c3fa52d7bba123e0093",
+      "rawBytes": 258455,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-wando",
+      "url": "https://en.wikipedia.org/wiki/Wando_County",
+      "sha256": "0bef8beb53aa9ddbfb98a3a80c9a8fd2d7c726afda8c2529fb15a690c24490c0",
+      "rawBytes": 152726,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-enwiki-changnyeong",
+      "url": "https://en.wikipedia.org/wiki/Changnyeong_County",
+      "sha256": "8f64415f5a7d9efb9a1c8f9c3f86d54d2bc83e9e990c29701b0478d2abfd35df",
+      "rawBytes": 167209,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-1",
+      "topic": "통일신라 호구 총수",
+      "detail": "삼국사기 지리지와 본기에는 9주 전체의 호수·구수 총계가 없다. 신라촌락문서(정창원 문서)의 촌별 호구가 필요하다.",
+      "neededSource": "일본 정창원 신라촌락문서 판독문 또는 한국민족문화대백과 '신라촌락문서' 항목"
+    },
+    {
+      "id": "miss-2",
+      "topic": "아시촌·사도성 위치",
+      "detail": "514년 아시촌 소경과 293년 사도성의 위치가 비정 단계에 머물러 좌표를 넣지 못했다.",
+      "neededSource": "국가유산포털 또는 한국민족문화대백과의 아시촌소경·사도성 항목"
+    },
+    {
+      "id": "miss-3",
+      "topic": "고구려·백제 군현 편제",
+      "detail": "삼국사기 지리지 권37은 고구려·백제 군현의 옛 이름만 나열하고 설치 연대가 없어 연도가 붙는 사실로 만들기 어려웠다.",
+      "neededSource": "당 이적의 고구려 城 목록 원문(집성 구당서·신당서 지리지)과 연대 비정 연구"
+    },
+    {
+      "id": "miss-4",
+      "topic": "삼국지 동이전 동옥저·변진의 연대",
+      "detail": "동옥저전·변진전에는 연호 표기가 하나도 없어 3세기(201~300)라는 century 정밀도로만 연대를 잡았다. 부여·고구려·예·한 조는 각각 正始中·正始三年·正始六年·景初中 을 근거로 댈 수 있었다.",
+      "neededSource": "한국민족문화대백과 '삼국지 동이전'·'동옥저'·'변한' 항목의 편찬 연대 서술(십진 연도 표기가 있는 발췌)"
+    }
+  ],
+  "collection": {
+    "task": "cross_settlement_admin",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789261956,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-cross_settlement_admin"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "place-geumgwan"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}
