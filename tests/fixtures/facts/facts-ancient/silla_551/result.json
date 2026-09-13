@@ -1,0 +1,261 @@
+{
+  "collection": "facts-ancient",
+  "job": "silla_551",
+  "cell": {
+    "polity": "신라",
+    "from": -57,
+    "to": 551,
+    "regions": [
+      "capital",
+      "north",
+      "central",
+      "south"
+    ],
+    "categories": {
+      "administration": 1,
+      "culture": 1,
+      "settlement": 1,
+      "facility": 1
+    }
+  },
+  "sources": [
+    {
+      "id": "src-wiki-fixture",
+      "title": "좌표 검증용 합성 픽스처",
+      "publisher": "테스트 (실제 다운로드 아님)",
+      "license": "test fixture",
+      "excerpts": [
+        {
+          "id": "ex-coordinates",
+          "text": "표시 좌표 126.19 41.13",
+          "locator": "첫 문단"
+        },
+        {
+          "id": "ex-year",
+          "text": "551년 자료 표시용 테스트 페이지.",
+          "locator": "둘째 문단"
+        }
+      ],
+      "url": "https://ko.wikipedia.org/wiki/Fixture",
+      "fetchedUtc": "2026-09-13T00:00:00Z",
+      "httpStatus": 200,
+      "byteLength": 111,
+      "sha256": "9a96e031852ab744826efd3e893265a5056190815e2eb223ebee44f3cda66fd0",
+      "rawFile": "raw/coordinates.html"
+    }
+  ],
+  "entities": [
+    {
+      "id": "polity-silla",
+      "type": "Polity",
+      "label": "신라"
+    },
+    {
+      "id": "person-ureuk",
+      "type": "Person",
+      "label": "우륵"
+    },
+    {
+      "id": "event-era",
+      "type": "Event",
+      "label": "개원"
+    },
+    {
+      "id": "event-music",
+      "type": "Event",
+      "label": "순수"
+    },
+    {
+      "id": "event-web",
+      "type": "Event",
+      "label": "합성 테스트"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-era-time",
+      "subject": "event-era",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十二年",
+        "year": 551,
+        "precision": "month",
+        "earliest": 551,
+        "latest": 551
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0140",
+      "quote": "十二年, 春正月, 改元開國."
+    },
+    {
+      "id": "claim-era-action",
+      "subject": "event-era",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-silla"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0140",
+      "quote": "改元開國"
+    },
+    {
+      "id": "claim-music",
+      "subject": "event-music",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-ureuk"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0150",
+      "quote": "三月, 王巡守次娘城"
+    },
+    {
+      "id": "claim-bce",
+      "subject": "polity-silla",
+      "predicate": "syj:foundedIn",
+      "object": {
+        "kind": "year",
+        "value": -57
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
+      "quote": "前漢 孝宣帝五鳳元年甲子"
+    },
+    {
+      "id": "claim-web-time",
+      "subject": "event-web",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "year",
+        "value": 551
+      },
+      "sourceId": "src-wiki-fixture",
+      "citesExcerpt": "ex-year"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-era",
+      "eventId": "event-era",
+      "title": "개국으로 개원",
+      "startYear": 551,
+      "endYear": 551,
+      "kind": "court",
+      "summary": "연호를 개국으로 바꾸었다",
+      "dateClaimIds": [
+        "claim-era-time"
+      ],
+      "actionClaimIds": [
+        "claim-era-action"
+      ],
+      "place": null,
+      "participants": [],
+      "effects": {},
+      "category": "administration",
+      "region": "capital",
+      "decade": 550,
+      "participantGroups": [
+        {
+          "label": "신라",
+          "role": "주체",
+          "stance": "미상",
+          "side": "신라",
+          "count": null,
+          "claimIds": [
+            "claim-era-action"
+          ]
+        }
+      ],
+      "persistence": {
+        "kind": "none",
+        "from": 551,
+        "to": null,
+        "basisClaimIds": []
+      }
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact-era",
+      "category": "administration",
+      "region": "capital",
+      "decade": 550,
+      "year": 551,
+      "yearVerbatim": "十二年",
+      "placeLabel": "",
+      "modernPlace": "",
+      "what": "연호를 개국으로 바꾸었다",
+      "claimIds": [
+        "claim-era-time",
+        "claim-era-action"
+      ],
+      "density": null,
+      "confidence": "high",
+      "note": "테스트 픽스처",
+      "sceneId": "scene-era"
+    },
+    {
+      "id": "fact-music",
+      "category": "culture",
+      "region": "central",
+      "decade": 550,
+      "year": 551,
+      "yearVerbatim": "三月",
+      "placeLabel": "",
+      "modernPlace": "",
+      "what": "왕이 낭성을 순수하였다",
+      "claimIds": [
+        "claim-music"
+      ],
+      "density": null,
+      "confidence": "high",
+      "note": "테스트 픽스처"
+    },
+    {
+      "id": "fact-bce",
+      "category": "settlement",
+      "region": "south",
+      "decade": -60,
+      "year": -57,
+      "yearVerbatim": "五鳳元年甲子",
+      "placeLabel": "",
+      "modernPlace": "",
+      "what": "혁거세가 즉위하였다",
+      "claimIds": [
+        "claim-bce"
+      ],
+      "density": null,
+      "confidence": "high",
+      "note": "테스트 픽스처",
+      "persistence": {
+        "kind": "institution",
+        "from": -57,
+        "to": null
+      }
+    },
+    {
+      "id": "fact-web",
+      "category": "facility",
+      "region": "north",
+      "decade": 550,
+      "year": 551,
+      "yearVerbatim": "551년",
+      "placeLabel": "",
+      "modernPlace": "",
+      "what": "웹 연도 및 좌표 검사 전용 합성 사실",
+      "claimIds": [
+        "claim-web-time"
+      ],
+      "density": null,
+      "confidence": "high",
+      "note": "테스트 픽스처",
+      "lon": 126.19,
+      "lat": 41.13,
+      "coordinateBasis": "src-wiki-fixture ex-coordinates"
+    }
+  ],
+  "missing": []
+}
