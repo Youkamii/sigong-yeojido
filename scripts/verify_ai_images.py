@@ -1,11 +1,20 @@
 """#188: 실제 로컬 뷰어의 상상도 카드와 다음 렌더 화질을 검사한다."""
+import argparse
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-OUT = Path(__file__).resolve().parent
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--url', default='http://127.0.0.1:8881/')
+parser.add_argument('--chrome', default=r'C:\Program Files\Google\Chrome\Application\chrome.exe')
+parser.add_argument('--out', type=Path, required=True)
+args = parser.parse_args()
+OUT = args.out
+OUT.mkdir(parents=True, exist_ok=True)
+viewer_url = args.url + ('&' if '?' in args.url else '?') + 'q=low'
 READY = 'window.__sigong?.chronicleScene.assets?.scenery.stats.ready&&!__sigong.chronicleScene.chronicle.loading&&!__sigong.engine.fly'
-report = {'checks': [], 'errors': [], 'requests': [], 'captures': []}
+report = {'url': args.url, 'device': 'Headless Chrome; viewport emulation, not physical devices',
+          'checks': [], 'errors': [], 'requests': [], 'captures': []}
 
 
 def check(name, ok, detail=None):
@@ -16,12 +25,12 @@ def check(name, ok, detail=None):
 
 
 with sync_playwright() as pw:
-    browser = pw.chromium.launch(headless=True, executable_path=r'C:\Program Files\Google\Chrome\Application\chrome.exe')
+    browser = pw.chromium.launch(headless=True, executable_path=args.chrome)
     context = browser.new_context(viewport={'width': 1280, 'height': 1360}, device_scale_factor=1)
     page = context.new_page()
     page.set_default_timeout(180000)
     page.on('pageerror', lambda error: report['errors'].append(str(error)))
-    page.on('request', lambda request: report['requests'].append(request.url) if '/ai-images/' in request.url or '/ai-image-map.json' in request.url else None)
+    page.on('request', lambda request: report['requests'].append(request.url) if '/ai-images/' in request.url else None)
 
     def ready():
         page.wait_for_function(READY)
@@ -47,7 +56,7 @@ with sync_playwright() as pw:
         report['captures'].append(name)
 
     try:
-        page.goto('http://127.0.0.1:8881/?q=low', wait_until='domcontentloaded')
+        page.goto(viewer_url, wait_until='domcontentloaded')
         page.locator('#enter').click()
         ready()
         check('viewer ready', page.evaluate(READY))
@@ -56,7 +65,9 @@ with sync_playwright() as pw:
         check('Sejong uses preview at low quality', loaded().endswith('sejong-portrait-512.jpg'))
         check('low quality never requests full portrait', not any(url.endswith('/sejong-portrait.jpg') for url in report['requests']))
         figure = page.locator('#atlasStory .atlas-ai-image')
-        check('AI notice is visible', figure.locator('figcaption').inner_text().startswith('AI 생성 상상도'))
+        check('single overlay uses index label', figure.locator('.atlas-ai-badge').count() == 1 and figure.locator('.atlas-ai-overlay').inner_text() == 'AI 생성 상상도')
+        check('AI notice is visible', figure.locator('figcaption p').is_visible() and '실제 사료' in figure.locator('figcaption p').inner_text())
+        check('intrinsic image dimensions', figure.locator('img').get_attribute('width') == '683' and figure.locator('img').get_attribute('height') == '1024')
         check('full-size link', figure.locator('a').get_attribute('href').endswith('sejong-portrait.jpg') and figure.locator('a').get_attribute('rel') == 'noopener')
         check('details collapsed', not figure.locator('details').evaluate('(node)=>node.open'))
         before = figure.inner_html()
@@ -65,16 +76,17 @@ with sync_playwright() as pw:
         show('person-encykorea-sejong-e0029857')
         check('next render uses full-size at medium', loaded().endswith('sejong-portrait.jpg'))
         figure.locator('summary').click()
+        check('generation date only', figure.locator('dd').nth(2).inner_text() == '2026-09-13')
         check('generation metadata', all(text in figure.locator('details').inner_text() for text in ['바탕 자료', '상상한 부분과 한계', '2026-09-13', 'codex gpt-6-astra']))
         capture('01-sejong-medium.png')
         page.set_viewport_size({'width': 820, 'height': 1180})
         page.evaluate("__sigong.engine.setQuality('low',{manual:true,persist:false})")
         show('person-encykorea-sejong-e0029857')
         check('tablet preview', loaded().endswith('-512.jpg'))
-        dimensions = figure.evaluate('''node=>{const img=node.querySelector('img'),badge=node.querySelector('figcaption .atlas-ai-badge');return {imageHeight:img.clientHeight,imageWidth:img.clientWidth,width:node.clientWidth,badgeFont:parseFloat(getComputedStyle(badge).fontSize),overflow:document.documentElement.scrollWidth>innerWidth};}''')
+        dimensions = figure.evaluate('''node=>{const img=node.querySelector('img'),badge=node.querySelector('.atlas-ai-overlay');return {imageHeight:img.clientHeight,imageWidth:img.clientWidth,width:node.clientWidth,badgeFont:parseFloat(getComputedStyle(badge).fontSize),overflow:document.documentElement.scrollWidth>innerWidth};}''')
         check('tablet image and badge fit', dimensions['imageHeight'] <= 320 and dimensions['imageWidth'] <= dimensions['width'] and dimensions['badgeFont'] >= 12 and not dimensions['overflow'], dimensions)
         capture('02-sejong-tablet-low.png')
-        page.set_viewport_size({'width': 1280, 'height': 900})
+        page.set_viewport_size({'width': 390, 'height': 844})
         year(1592)
         page.locator('#atlasEventsButton').click()
         card = page.locator('.event-strip-card[data-scene-id="scene-hansando-daecheop-1592"]')
@@ -86,14 +98,19 @@ with sync_playwright() as pw:
         page.wait_for_function("()=>{const img=document.querySelector('[data-scene-id=scene-hansando-daecheop-1592] img');return img?.complete&&img.naturalWidth>0;}")
         check('Hansando card uses preview', card.locator('img').get_attribute('src').endswith('hansando-1592-512.jpg'))
         check('Hansando thumbnail is 56 x 56', card.locator('img').evaluate('(img)=>img.clientWidth===56&&img.clientHeight===56'))
+        check('card badge uses index label once', card.locator('.atlas-ai-badge').count() == 1 and card.locator('.atlas-ai-card-label').inner_text() == 'AI 생성 상상도')
         check('card badge is at least 12px', card.locator('.atlas-ai-card-label').evaluate('(node)=>parseFloat(getComputedStyle(node).fontSize)>=12'))
         check('card badge inside card', card.locator('.atlas-ai-card-label').evaluate('(node)=>node.getBoundingClientRect().bottom<=node.closest("button").getBoundingClientRect().bottom'))
         plain_card = page.locator('.event-strip-card').filter(has_not=page.locator('.atlas-ai-thumbnail')).first
         check('unmapped card keeps icon and omits badge', plain_card.locator('.atlas-event-card-body>svg').count() == 1 and plain_card.locator('.atlas-ai-card-label').count() == 0)
+        action = card.locator('.atlas-event-current')
+        bounds = action.evaluate('''node=>{const r=node.getBoundingClientRect(),c=node.closest('button').getBoundingClientRect(),w=node.closest('.event-strip-window').getBoundingClientRect();return {text:node.textContent,visible:getComputedStyle(node).display!=='none',top:r.top,bottom:r.bottom,left:r.left,right:r.right,cardBottom:c.bottom,windowBottom:w.bottom,viewportWidth:innerWidth};}''')
+        check('390px selected event action is fully visible', bounds['text'] == '선택한 사건 보기' and bounds['visible'] and bounds['bottom'] <= min(bounds['cardBottom'], bounds['windowBottom']) and bounds['left'] >= 0 and bounds['right'] <= 390, bounds)
         capture('03-hansando-card.png')
         card.click()
         ready()
         check('Hansando story uses scene mapping', loaded().endswith('hansando-1592-512.jpg'))
+        page.set_viewport_size({'width': 1280, 'height': 900})
         capture('04-hansando-story.png')
         show('person-encykorea-yi-sunsin')
         # 현장 활동이 있으면 장면 매핑이 인물 매핑보다 먼저 적용된다.
@@ -106,14 +123,15 @@ with sync_playwright() as pw:
         check('unmapped test entity exists', bool(unmapped), unmapped)
         show(unmapped)
         check('unmapped entity has no figure', page.locator('#atlasStory .atlas-ai-image').count() == 0)
-        check('index and map fetched once', report['requests'].count('http://127.0.0.1:8881/assets/ai-images/index.json') == 1 and report['requests'].count('http://127.0.0.1:8881/app/ai-image-map.json') == 1)
-        page.route('**/assets/ai-images/index.json', lambda route: route.abort())
-        page.goto('http://127.0.0.1:8881/?q=low', wait_until='domcontentloaded')
+        check('only index fetched once', sum(url.endswith('/assets/ai-images/index.json') for url in report['requests']) == 1)
+        page.route('**/assets/ai-images/index.json', lambda route: route.fulfill(status=404, content_type='text/plain', body='Not found'))
+        page.goto(viewer_url, wait_until='domcontentloaded')
         page.locator('#enter').click()
         ready()
         year(1446)
         show('person-encykorea-sejong-e0029857')
         check('failed image index leaves story usable', page.locator('#atlasStory h2').inner_text() == '세종' and page.locator('#atlasStory .atlas-ai-image').count() == 0)
+        check('404 does not trigger retry', sum(url.endswith('/assets/ai-images/index.json') for url in report['requests']) == 2)
         check('no page errors', not report['errors'], report['errors'])
     finally:
         (OUT / 'browser-results.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')

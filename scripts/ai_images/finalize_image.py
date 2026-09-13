@@ -34,6 +34,11 @@ def select_metadata(path, image_id):
     for field in TEXT_FIELDS:
         if not isinstance(row.get(field), str) or not row[field].strip():
             raise ValueError(f"metadata field {field} must be a nonempty string")
+    subjects = row.get("subjects")
+    if (not isinstance(subjects, list) or not subjects
+            or any(not isinstance(subject, str) or not subject.strip() for subject in subjects)
+            or len(set(subjects)) != len(subjects)):
+        raise ValueError("metadata subjects must be a nonempty array of unique nonempty strings")
     if type(row.get("year")) is not int:
         raise ValueError("metadata year must be an integer (portrait: depicted year)")
     if row["subjectType"] not in ("event", "person"):
@@ -43,7 +48,7 @@ def select_metadata(path, image_id):
     generated_at = datetime.fromisoformat(row["generatedAt"].replace("Z", "+00:00"))
     if generated_at.tzinfo is None:
         raise ValueError("generatedAt must include an ISO timezone")
-    return {key: row[key] for key in (*TEXT_FIELDS, "year")}
+    return {key: row[key] for key in (*TEXT_FIELDS, "year", "subjects")}
 
 
 def encode_jpeg(image, edge, limit):
@@ -92,7 +97,7 @@ def finalize(src, image_id, out, metadata, overwrite=False):
         full, size, quality = encode_jpeg(image, 1024, 250_000)
         preview, preview_size, preview_quality = encode_jpeg(image, 512, 80_000)
     entry = {"id": image_id, "title": row["title"], "year": row["year"],
-             "place": row["place"], "subjectType": row["subjectType"],
+             "place": row["place"], "subjectType": row["subjectType"], "subjects": row["subjects"],
              "file": full_path.name, "preview": preview_path.name,
              "width": size[0], "height": size[1], "bytes": len(full),
              "previewBytes": len(preview), "model": row["model"],

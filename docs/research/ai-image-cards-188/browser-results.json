@@ -1,4 +1,6 @@
 {
+  "url": "http://127.0.0.1:8881/",
+  "device": "Headless Chrome; viewport emulation, not physical devices",
   "checks": [
     {
       "name": "viewer ready",
@@ -16,7 +18,17 @@
       "detail": null
     },
     {
+      "name": "single overlay uses index label",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "AI notice is visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "intrinsic image dimensions",
       "pass": true,
       "detail": null
     },
@@ -41,6 +53,11 @@
       "detail": null
     },
     {
+      "name": "generation date only",
+      "pass": true,
+      "detail": null
+    },
+    {
       "name": "generation metadata",
       "pass": true,
       "detail": null
@@ -48,7 +65,7 @@
     {
       "name": "01-sejong-medium.png <= 1MB",
       "pass": true,
-      "detail": 367488
+      "detail": 366300
     },
     {
       "name": "tablet preview",
@@ -69,7 +86,7 @@
     {
       "name": "02-sejong-tablet-low.png <= 1MB",
       "pass": true,
-      "detail": 211836
+      "detail": 211130
     },
     {
       "name": "Hansando card uses preview",
@@ -78,6 +95,11 @@
     },
     {
       "name": "Hansando thumbnail is 56 x 56",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "card badge uses index label once",
       "pass": true,
       "detail": null
     },
@@ -97,9 +119,24 @@
       "detail": null
     },
     {
+      "name": "390px selected event action is fully visible",
+      "pass": true,
+      "detail": {
+        "text": "선택한 사건 보기",
+        "visible": true,
+        "top": 626.09375,
+        "bottom": 642.09375,
+        "left": 173.9781494140625,
+        "right": 267.5562744140625,
+        "cardBottom": 648,
+        "windowBottom": 649,
+        "viewportWidth": 390
+      }
+    },
+    {
       "name": "03-hansando-card.png <= 1MB",
       "pass": true,
-      "detail": 125937
+      "detail": 57686
     },
     {
       "name": "Hansando story uses scene mapping",
@@ -109,7 +146,7 @@
     {
       "name": "04-hansando-story.png <= 1MB",
       "pass": true,
-      "detail": 254234
+      "detail": 255594
     },
     {
       "name": "second Sejong entity also mapped",
@@ -132,12 +169,17 @@
       "detail": null
     },
     {
-      "name": "index and map fetched once",
+      "name": "only index fetched once",
       "pass": true,
       "detail": null
     },
     {
       "name": "failed image index leaves story usable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "404 does not trigger retry",
       "pass": true,
       "detail": null
     },
@@ -150,13 +192,11 @@
   "errors": [],
   "requests": [
     "http://127.0.0.1:8881/assets/ai-images/index.json",
-    "http://127.0.0.1:8881/app/ai-image-map.json",
     "http://127.0.0.1:8881/assets/ai-images/sejong-portrait-512.jpg",
     "http://127.0.0.1:8881/assets/ai-images/sejong-portrait.jpg",
     "http://127.0.0.1:8881/assets/ai-images/hansando-1592-512.jpg",
     "http://127.0.0.1:8881/assets/ai-images/sejong-hunminjeongeum-1446-512.jpg",
-    "http://127.0.0.1:8881/assets/ai-images/index.json",
-    "http://127.0.0.1:8881/app/ai-image-map.json"
+    "http://127.0.0.1:8881/assets/ai-images/index.json"
   ],
   "captures": [
     "01-sejong-medium.png",

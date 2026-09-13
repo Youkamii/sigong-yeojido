@@ -22,7 +22,7 @@ class FinalizeTests(unittest.TestCase):
         self.out = self.folder / "out"
         self.metadata = self.folder / "items.json"
         self.row = {"id": "one", "title": "상상도", "year": 1446, "place": "조선",
-                    "subjectType": "event", "model": "test-fixture",
+                    "subjectType": "event", "subjects": ["event-one", "scene-one"], "model": "test-fixture",
                     "stylePrefix": "Watercolor.", "prompt": "Watercolor. An imaginary scene.",
                     "generatedAt": "2026-09-13T15:00:00Z", "basis": "fixture",
                     "caveats": "not a generated deliverable"}
@@ -50,6 +50,7 @@ class FinalizeTests(unittest.TestCase):
         first = read_json(self.out / "index.json")["images"][0]
         self.assertEqual(first["bytes"], (self.out / "one.jpg").stat().st_size)
         self.assertEqual(first["prompt"], self.row["prompt"])
+        self.assertEqual(first["subjects"], self.row["subjects"])
         self.run_image("two")
         rows = read_json(self.out / "index.json")["images"]
         self.assertEqual(rows[0], first)
@@ -82,6 +83,20 @@ class FinalizeTests(unittest.TestCase):
         for image_id in ("../escape", "one-512"):
             with self.assertRaises(ValueError):
                 self.run_image(image_id)
+        self.assertFalse(self.out.exists())
+
+    def test_invalid_subjects_write_nothing(self):
+        for subjects in (None, [], "event-one", [""], [" "], [1], [None], [{}],
+                         ["event-one", "event-one"]):
+            with self.subTest(subjects=subjects):
+                self.write_metadata([{**self.row, "subjects": subjects}])
+                with self.assertRaisesRegex(ValueError, "subjects"):
+                    self.run_image()
+                self.assertFalse(self.out.exists())
+        row = {key: value for key, value in self.row.items() if key != "subjects"}
+        self.write_metadata([row])
+        with self.assertRaisesRegex(ValueError, "subjects"):
+            self.run_image()
         self.assertFalse(self.out.exists())
 
     def test_exif_orientation(self):

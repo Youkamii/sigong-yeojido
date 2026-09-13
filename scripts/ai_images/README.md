@@ -1,5 +1,6 @@
 # 사건·인물 AI 이미지 생성 (Pillow 필요: `python -m pip install Pillow`)
 1. 입력 `{id,title,year,place,subjectType,meaning}` 배열을 준비한다. id는 소문자·숫자·하이픈, `-512` 끝은 예약이며 인물 year는 묘사 기준 연도다.
+   `subjects`에는 연결할 개체·장면 id를 비어 있지 않은 문자열 배열로 넣으며 중복을 허용하지 않는다. 이 배열은 index에 그대로 저장된다.
 2. `pilot-items.json`의 공통 `stylePrefix`를 그대로 붙이고 meaning·시대·장소로 장면을 작성해 `prompt` 원문과 근거 `basis`, 고증 한계 `caveats`를 같은 항목에 저장한다.
 3. Codex의 `image_gen.imagegen`에 항목마다 `{"prompt": 항목.prompt}`를 보내 단일 이미지를 생성한다. 사건 1536×1024, 인물 1024×1536을 프롬프트로 요청한다(크기·형식 전용 옵션 없음).
 4. 응답의 실제 도구 이름을 `model`, 생성 완료 시각을 시간대 포함 ISO `generatedAt`으로 기록한다. 호출 시간·실제 형식·실패 원문은 별도 실행 기록에 남긴다. 실패 항목은 index에 넣지 않는다.

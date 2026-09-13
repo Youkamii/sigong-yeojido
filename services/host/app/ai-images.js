@@ -1,35 +1,32 @@
-const imageRoot='/assets/ai-images/';
+const indexUrl=new URL('../assets/ai-images/index.json',import.meta.url);
+const imageRoot=new URL('.',indexUrl).href;
 let catalog=null,loading=null;
 
 export function loadAiImages(){
-  if(!loading)loading=Promise.all([
-    fetch(imageRoot+'index.json'),fetch('/app/ai-image-map.json'),
-  ].map(async response=>{
-    const result=await response;
-    if(!result.ok)throw new Error('AI 이미지 목록을 불러오지 못했습니다.');
-    return result.json();
-  })).then(([index,map])=>{
-    if(!Array.isArray(index?.images)||!map) return null;
-    catalog={index,map};return catalog;
+  // 실패도 저장해 이 페이지에서는 재시도하지 않는다.
+  if(!loading)loading=fetch(indexUrl).then(async response=>{
+    if(!response.ok)throw new Error('AI 이미지 목록을 불러오지 못했습니다.');
+    const index=await response.json();
+    if(!Array.isArray(index?.images))return null;
+    catalog=new Map();
+    for(const image of index.images){
+      if(!image||!['id','file','preview'].every(key=>typeof image[key]==='string')||
+        [image.file,image.preview].some(file=>!file||/[\\/]|\.\./.test(file))||!Array.isArray(image.subjects))continue;
+      const entry={
+        src:imageRoot+image.file,preview:imageRoot+image.preview,
+        alt:image.title,label:index.label||'AI 생성 상상도',
+        notice:index.notice||'실제 사료·유물 사진이 아니라 AI가 만든 상상도입니다.',
+        width:image.width,height:image.height,
+        basis:image.basis||'',caveats:image.caveats||'',
+        generatedAt:typeof image.generatedAt==='string'?image.generatedAt.slice(0,10):'',generator:image.generator||'',
+      };
+      for(const subject of image.subjects)if(typeof subject==='string'&&subject.trim())catalog.set(subject,entry);
+    }
+    return catalog;
   }).catch(()=>null);
   return loading;
 }
 
-// catalog를 넘기면 네트워크나 전역 상태 없이 매핑을 검사할 수 있다.
-export function aiImageFor({entityId,sceneId,itemId}={},data=catalog){
-  if(!data)return null;
-  const {index,map}=data;
-  const ids=[map.scenes?.[sceneId],map.items?.[itemId],map.entities?.[entityId]];
-  const image=ids.filter(Boolean).map(id=>index.images.find(image=>image.id===id)).find(Boolean);
-  if(!image?.file||!image.preview)return null;
-  return {
-    src:imageRoot+image.file,preview:imageRoot+image.preview,
-    alt:`${image.title}의 AI 생성 상상도`,title:image.title,
-    label:index.label||'AI 생성 상상도',
-    notice:index.notice||'실제 사료·유물 사진이 아니라 AI가 만든 상상도입니다.',
-    basis:image.basis||'',caveats:image.caveats||'',
-    generatedAt:image.generatedAt||'',generator:image.generator||'',
-  };
+export function aiImageFor({entityId,sceneId}={}){
+  return [sceneId,entityId].map(id=>catalog?.get(id)).find(Boolean)||null;
 }
-
-export function pickSrc(image,quality){return image?(quality==='low'?image.preview:image.src):null;}
