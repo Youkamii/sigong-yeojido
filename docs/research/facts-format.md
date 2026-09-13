@@ -143,3 +143,30 @@ python -m unittest discover -s tests -p "test_*.py"
 ```
 
 픽스처의 로컬 인용 세 조각은 실제 삼국사기 원문이다. 웹 HTML·URL·run은 자동 검사용 합성 자료이며 실제 웹 다운로드나 모델 실행의 증거가 아니다. 다섯 변형(quote 불일치, chunk 없음, 연도 불일치, predicate 밖, claimIds 참조 오류)은 각각 실패 하나를 기대한다. 추가 테스트는 공백, 구조, 웹 인용·해시, run, 좌표, 선택 필드, CLI exit와 JSON 집계를 검사한다.
+
+## 세계 연결 규칙
+
+`summarize_facts.py`가 만든 요약을 다음 명령으로 세계 표시용 파일에 연결한다.
+
+```console
+python scripts/build_fact_layers.py --summary data/research/<collection>/summary --out services/host/app/fact-layers.json
+python scripts/build_fact_layers.py --summary data/research/<collection>/summary --out services/host/app/fact-layers.json --merge
+```
+
+출력은 `{version:1, generatedFrom:[컬렉션 이름], density:[], administrative:[]}`다. `placeLabel`은 `label`로 옮기며 수치와 `claimIds`를 보존한다. 좌표가 하나라도 없으면 제외하고 stdout의 `excludedMissingCoordinates`에 종류별 개수를 낸다. 좌표·호수·인구는 유한한 수, 연도는 정수여야 한다. 숫자 문자열·불리언은 오류이며, 미상 호수·인구와 종료 연도는 null로 남긴다. `--merge`는 밀도의 `(label, year)`, 행정 기록의 `(label, from)`이 같으면 새 기록으로 교체하고 다른 기록과 컬렉션 이름은 유지한다. 실제 조사 결과가 없는 초기 앱 파일은 빈 배열이며 테스트의 가상 기록은 앱에 넣지 않는다.
+
+세계에 장면을 연결할 때 `chronicle-scenery.js`에서 `fact-layers.json`을 읽어 `world.factLayers`와 밀도 계산 모듈에 같은 데이터를 둔다. 장면과 배경의 구역 생성도 이 데이터를 쓴다. 읽기에 실패하면 콘솔에 알리고 빈 사실 계층으로 기존 표시를 유지한다.
+
+추정 마을은 기존 시대 비율과 위도 계수를 곱한 값에 다음 밀도 계수를 곱한다.
+
+```text
+가구 환산 수 = max(households, population / 5, 100)  (null은 0)
+밀도 계수 = clamp(0.6 + log10(가구 환산 수) / 4, 0.6, 1.8)
+최종 통과 기준 = clamp(기존 시대·위도 기준 × 밀도 계수, 0.05, 0.95)
+```
+
+`world.toWorld(lon, lat)`로 바꾼 기록 좌표가 사이트에서 반경 **40단위 이내**(약 26km)이고 기록 연도와 현재 연도의 차이가 **150년 이내**일 때만 적용한다. 여러 기록이면 공간상 가장 가까운 것 하나를 쓰고, 거리가 같으면 파일에서 먼저 나온 기록을 쓴다. 900호는 약 1.34배, 10,000호는 1.6배, 100호는 1.1배다. 해당 기록이나 위치·연도 문맥이 없으면 기존 값을 그대로 쓴다. 사이트 seed를 이용한 선택 방식은 유지하며 밀도 기록이 있으면 같은 시대 안의 연도 변화도 다시 계산한다.
+
+행정 기록은 `city`를 `regional` 구역(반경 28), `institution`을 `town` 구역(반경 19)으로 만든다. **`facility`는 시설이므로 구역에서 제외하고 콘솔에 개수를 보고**한다. `none`도 구역을 만들지 않는다. 시작은 `from`, 끝은 `to`이며 종료 미상은 `endYear:2100, openEnded:true`로 표시한다. ID는 `inhabited:fact:<slug(label)>:<from>`이고 slug는 한글 등 글자와 숫자를 남기고 공백·구두점을 하이픈으로 바꾼다. `claimIds`는 원본 그대로, `sourceIds`는 `['facts']`다. 기존 구역과 경위도 거리 0.03도 이내이며 기간이 **한 해라도 겹치면** 추가하지 않는다(양 끝 연도 포함). 기존 장면·장소 구역을 우선하며 앞서 추가한 행정 구역과의 중복도 제외한다.
+
+이 연결은 **화면 표현용이며 복원이 아니다**. 인구를 5로 나누는 가정, 거리·연도 창, 구역 크기와 집 수는 당시 가구 규모·행정 경계·인구 분포를 입증하지 않는다. 종료 미상의 2100년은 표시 범위 끝일 뿐 존속을 입증하는 연도가 아니다. 좌표가 없는 기록은 임의 위치를 부여하지 않는다.

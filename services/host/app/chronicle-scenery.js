@@ -4,16 +4,28 @@ import {insideCoastline} from './coastline-index.js';
 import {CountrysidePaths} from './chronicle-paths.js';
 import {sceneryOverview,setOverviewDetails} from './scenery-overview.js';
 import {sceneryPeriod,sitePeriod,sceneryRecipe,sceneryHouseRecipe} from './scenery-period.js';
-import {planSettlementSites,planEstimatedSites,estimatedSitePasses,estimatedIslandSettings,settlementLayout,settlementSiteActive,settlementSiteForYear} from './settlement-regions.js';
+import {loadFactLayers,planSettlementSites,planEstimatedSites,estimatedSitePasses,estimatedIslandSettings,settlementLayout,settlementSiteActive,settlementSiteForYear} from './settlement-regions.js';
 import {planUrbanSites} from './urban-regions.js';
 import {buildSettlementZones} from './inhabited-zones.js';
 
+export async function loadWorldFactLayers(world){
+  if(!world.factLayers){
+    try{
+      const response=await fetch(new URL('./fact-layers.json',import.meta.url));
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      world.factLayers=await response.json();
+    }catch(error){console.warn('[fact-layers]',error);world.factLayers={version:1,generatedFrom:[],density:[],administrative:[]};}
+  }
+  loadFactLayers(world.factLayers);
+  return world.factLayers;
+}
+
 // 문서화·도시·사건에 양보한 뒤 시대 문턱 적용. 작은 섬은 최소 보장 없이 집 몇 채만 남긴다.
-export function selectEstimatedSites(estimated,documented,urban,periodId,available=()=>true){
+export function selectEstimatedSites(estimated,documented,urban,periodId,available=()=>true,context={}){
   const eligible=estimated.filter(s=>documented.every(d=>Math.hypot(s.x-d.x,s.z-d.z)>s.radius+d.radius+6)
     &&urban.every(u=>Math.hypot(s.x-u.x,s.z-u.z)>u.radius)
     &&available(s));
-  const selected=new Set(eligible.filter(s=>estimatedSitePasses(s,typeof periodId==='function'?periodId(s):periodId))),rings=new Map();
+  const selected=new Set(eligible.filter(s=>estimatedSitePasses(s,typeof periodId==='function'?periodId(s):periodId,{...context,x:s.x,z:s.z}))),rings=new Map();
   for(const site of eligible){
     if(!Number.isInteger(site.ringIndex)||site.islandArea<estimatedIslandSettings.mediumArea)continue;
     if(!rings.has(site.ringIndex))rings.set(site.ringIndex,[]);
@@ -48,7 +60,7 @@ export function selectSceneSites(activeSites,estimatedIds,suppressedProfileIds=n
 export class ChronicleScenery{
   constructor(assets){
     this.assets=assets;this.world=assets.world;this.group=new THREE.Group();this.group.name='decorative-scenery';assets.engine.add(this.group);
-    this.urbanSites=planUrbanSites(this.world);this.sites=[...planSettlementSites(this.world,buildSettlementZones(this.world.scenePackets||[],this.world.coordinateRegistry||{},this.world.places||[])),...planEstimatedSites(this.world),...this.urbanSites];this.estimatedIds=new Set();this.cells=[];this.occupied=[];this.wildlife=[];this.showPaths=true;this.detailCache=new Map();this.houseScales=new Map();
+    this.urbanSites=planUrbanSites(this.world);this.sites=[...planSettlementSites(this.world,buildSettlementZones(this.world.scenePackets||[],this.world.coordinateRegistry||{},this.world.places||[],this.world.factLayers)),...planEstimatedSites(this.world),...this.urbanSites];this.estimatedIds=new Set();this.cells=[];this.occupied=[];this.wildlife=[];this.showPaths=true;this.detailCache=new Map();this.houseScales=new Map();
     this.stats={villages:this.sites.length,houses:0,fields:0,tigers:0,ready:false,modelBuilds:0};
     this.paths=new CountrysidePaths(this.world,this.sites.filter(s=>s.kind!=='urban'));this.group.add(this.paths.mesh);
   }
@@ -68,14 +80,14 @@ export class ChronicleScenery{
   nearPath(x,z,margin){return this.paths.near(x,z,margin);}
   start(forest,year){this.setYear(year);if(this.ready)return;this.ready=this.populate(forest).then(()=>{this.initialized=true;this.refreshPeriod();}).catch(e=>this.failed(e));}
   failed(error){this.stats.error=error.message;console.error('[scenery]',error);}
-  setYear(year){this.stats.year=year;const period=sceneryPeriod(year),key=period.id+'|'+this.activeSites().map(s=>s.id+':'+s.kind+':'+sitePeriod(s,year).id).join('|');if(this.periodKey===key)return;this.periodKey=key;this.period=period;this.stats.ready=false;
+  setYear(year){this.stats.year=year;const period=sceneryPeriod(year),key=period.id+(this.world?.factLayers?.density?.length?'|'+year:'')+'|'+this.activeSites().map(s=>s.id+':'+s.kind+':'+sitePeriod(s,year).id).join('|');if(this.periodKey===key)return;this.periodKey=key;this.period=period;this.stats.ready=false;
     if(this.initialized)this.refreshPeriod(true);this.sync(this.occupied,this.areaOccupied);
   }
   refreshPeriod(preserve=false){
     const started=performance.now();
     const suppressedProfileIds=new Set(this.occupied.map(o=>o.urbanRegionId).filter(Boolean));
     const sites=this.activeSites(),{current}=selectSceneSites(sites,this.estimatedIds,suppressedProfileIds);
-    const estimated=selectEstimatedSites(current.filter(s=>s.estimated),current.filter(s=>s.documented&&s.kind!=='urban'),current.filter(s=>s.kind==='urban'),s=>sitePeriod(s,this.stats.year).id,s=>this.available(s));
+    const estimated=selectEstimatedSites(current.filter(s=>s.estimated),current.filter(s=>s.documented&&s.kind!=='urban'),current.filter(s=>s.kind==='urban'),s=>sitePeriod(s,this.stats.year).id,s=>this.available(s),{year:this.stats.year,world:this.world});
     this.estimatedIds=new Set(estimated.map(s=>s.id));
     const {selected}=selectSceneSites(sites,this.estimatedIds,suppressedProfileIds);
     const urban=selected.filter(s=>s.kind==='urban');

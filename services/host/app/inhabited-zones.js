@@ -39,7 +39,7 @@ function scenePoint(scene,registry,places){
 }
 
 /** Display zones supported by dated occupation/activity records; never a national density grid. */
-export function buildSettlementZones(scenePackets=[],coordinateRegistry={},places=[]){
+export function buildSettlementZones(scenePackets=[],coordinateRegistry={},places=[],factLayers=null){
   const zones=[];
   for(const scene of scenePackets){
     if(scene.narrativeType||!bounded(scene.startYear,scene.endYear))continue;
@@ -90,6 +90,22 @@ export function buildSettlementZones(scenePackets=[],coordinateRegistry={},place
         '수집된 도시 이름·지역 기록을 기준으로 익명의 생활 배경을 표시합니다. 현대 지역 대표점이며 집 수와 도시 범위는 복원이 아닙니다.',
         candidate.validTo==null&&place.validTo==null?'종료 기록이 없어 표시 범위 끝까지 생활 배경을 유지합니다. 같은 이름이나 시가지가 계속되었다는 새 주장이 아닙니다.':'이름·행정 역할의 종료 연도는 도시가 사라진 해를 뜻하지 않습니다.'].filter(Boolean).join(' ')});
   }
+  let excludedFacilities=0;
+  for(const record of factLayers?.administrative||[]){
+    if(record.kind==='facility'){excludedFacilities++;continue;}
+    if(!['city','institution'].includes(record.kind))continue;
+    const startYear=record.from,endYear=record.to??2100;
+    if(!point(record)||!bounded(startYear,endYear))continue;
+    if(zones.some(zone=>Math.hypot(zone.lon-record.lon,zone.lat-record.lat)<=.03
+      &&zone.startYear<=endYear&&startYear<=zone.endYear))continue;
+    const kind=record.kind==='city'?'regional':'town';
+    const slug=record.label.normalize('NFKC').trim().toLowerCase().replace(/[^\p{L}\p{N}]+/gu,'-').replace(/^-|-$/g,'');
+    zones.push({id:`inhabited:fact:${slug}:${startYear}`,label:record.label,lon:record.lon,lat:record.lat,
+      startYear,endYear,kind,localityType:kind==='regional'?'city':'town',radius:kind==='regional'?28:19,
+      openEnded:record.to==null,sourceIds:['facts'],claimIds:record.claimIds,contextType:'settlement',
+      basis:'사실 조사(#182) 행정 기록에 근거한 익명 생활 배경. 구역 크기와 집 수는 복원이 아니다.'});
+  }
+  if(excludedFacilities)console.info(`[fact-layers] facility 구역 제외: ${excludedFacilities}`);
   return [...new Map(zones.map(zone=>[zone.id,zone])).values()].sort((a,b)=>a.id.localeCompare(b.id));
 }
 

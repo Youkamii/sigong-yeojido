@@ -38,8 +38,10 @@ export class ChronicleScene {
   }
   async attach(engine,world){
     this.engine=engine;this.world=world;
-    this.settlementZones=buildSettlementZones(world.scenePackets||[],world.coordinateRegistry||{},world.places||[]);
     try{
+      const {loadWorldFactLayers}=await import('./chronicle-scenery.js');
+      const factLayers=await loadWorldFactLayers(world);
+      this.settlementZones=buildSettlementZones(world.scenePackets||[],world.coordinateRegistry||{},world.places||[],factLayers);
       const {ChronicleAssets,loadHistoryAssets}=await import('./chronicle-assets.js');
       this.assets=new ChronicleAssets(engine,world,await loadHistoryAssets());
       world.marks.visible=false;

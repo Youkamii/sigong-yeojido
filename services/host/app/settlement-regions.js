@@ -106,13 +106,27 @@ export function planEstimatedSites(world){
 // 시대 계수: 추정 사이트 중 화면에 올릴 비율. 풍경 밀도 표현용 추정치이며 역사 주장이 아니다.
 const estimatedPeriodRatio={'early-settlement':.10,'early-farming':.18,'three-kingdoms':.30,'goryeo':.38,'joseon':.50,
   'late-joseon':.55,'opening-period':.55,'early-modern':.55,'postwar':.60,'modern-farming':.60,'early-roof-transition':.60,'roof-transition':.60,'mechanized':.60};
-export function estimatedSiteThreshold(periodId,latitude){
+let factLayers=null;
+export function loadFactLayers(json){factLayers=json;}
+export function estimatedSiteThreshold(periodId,latitude,context={}){
   const period=estimatedPeriodRatio[periodId]??.45;
   // 지역 계수: 제주(34.2 미만) 0.6, 북부(38.5 초과) 0.7 — 역시 표현용 추정치.
   const region=!Number.isFinite(latitude)?1:latitude<34.2?.6:latitude>38.5?.7:1;
-  return period*region;
+  const base=period*region,{x,z,year,world}=context;
+  if(!world?.toWorld||![x,z,year].every(Number.isFinite))return base;
+  let nearest=null,distance=Infinity;
+  for(const record of factLayers?.density||[]){
+    if(![record.lon,record.lat,record.year].every(Number.isFinite)||Math.abs(year-record.year)>150)continue;
+    const [rx,rz]=world.toWorld(record.lon,record.lat),d=Math.hypot(x-rx,z-rz);
+    if(d<=40&&d<distance){nearest=record;distance=d;}
+  }
+  if(!nearest)return base;
+  // #184: 호구 기록 주변 40단위·±150년의 표현용 보정. 인구/5는 가구 환산 가정이며 복원이 아니다.
+  const count=Math.max(nearest.households??0,(nearest.population??0)/5,100);
+  const factor=Math.max(.6,Math.min(1.8,.6+Math.log10(count)/4));
+  return Math.max(.05,Math.min(.95,base*factor));
 }
-export function estimatedSitePasses(site,periodId){return site.seed%100<estimatedSiteThreshold(periodId,site.latitude)*100;}
+export function estimatedSitePasses(site,periodId,context={}){return site.seed%100<estimatedSiteThreshold(periodId,site.latitude,context)*100;}
 
 export function settlementSiteActive(site,year){return site.kind==='urban'?year>=site.profile.startYear:site.startYear<=year&&year<=site.endYear;}
 export function settlementSiteForYear(site,year){return site.modernProfile&&year>=site.modernProfile.startYear?{...site,kind:'urban',profile:site.modernProfile}:site;}
