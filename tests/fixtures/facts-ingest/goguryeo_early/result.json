@@ -1,0 +1,26 @@
+{
+  "collection": "facts-ancient",
+  "job": "goguryeo_early",
+  "cell": {"polity": "고구려·백제", "from": 427, "to": 521, "regions": ["north", "south"], "categories": {"administration": 2, "settlement": 1}},
+  "sources": [],
+  "entities": [
+    {"id": "polity-goguryeo", "type": "Polity", "label": "고구려"},
+    {"id": "place-pyeongyang", "type": "Place", "label": "평양"},
+    {"id": "event-pyeongyang-move-427", "type": "Event", "label": "평양 천도"},
+    {"id": "event-baekje-migration-521", "type": "Event", "label": "백제 900호의 신라 이주"}
+  ],
+  "claims": [
+    {"id": "claim-move-time", "subject": "event-pyeongyang-move-427", "predicate": "syj:occurredIn", "object": {"kind": "time", "verbatim": "十五年", "year": 427, "precision": "year", "earliest": 427, "latest": 427}, "sourceId": "src-samguksagi", "citesChunk": "chunk_samguksagi_sg_018_0060_0100", "quote": "十五年, 移都平壤.", "note": "장수왕 15년 평양 천도"},
+    {"id": "claim-move-place", "subject": "polity-goguryeo", "predicate": "syj:capitalMovedTo", "object": {"kind": "entity", "id": "place-pyeongyang"}, "sourceId": "src-samguksagi", "citesChunk": "chunk_samguksagi_sg_018_0060_0100", "quote": "移都平壤", "note": "현대 좌표와 도성 범위는 특정하지 않는다."},
+    {"id": "claim-households", "subject": "event-baekje-migration-521", "predicate": "syj:householdCount", "object": {"kind": "literal", "value": 900, "unit": "戶"}, "sourceId": "src-samguksagi", "citesChunk": "chunk_samguksagi_sg_026_0050_0190", "quote": "亡入新羅者九百戶", "note": "이주한 가구 수이며 전체 인구가 아니다."}
+  ],
+  "scenes": [
+    {"id": "scene-pyeongyang-move-427", "eventId": "event-pyeongyang-move-427", "title": "평양 천도", "startYear": 427, "endYear": 427, "kind": "migration", "summary": "고구려가 평양으로 도읍을 옮겼다.", "dateClaimIds": ["claim-move-time"], "actionClaimIds": ["claim-move-place"], "place": null, "participants": [], "effects": {}, "category": "administration", "region": "north", "decade": 420, "sceneFunction": "migration", "participantGroups": [{"entityId": "polity-goguryeo", "label": "고구려", "role": "천도 주체", "stance": "neutral", "side": "goguryeo", "count": null, "claimIds": ["claim-move-place"]}], "participantGroupsNote": "인원수는 기록에 없어 비워 둔다.", "persistence": {"kind": "city", "from": 427, "to": null, "basisClaimIds": ["claim-move-time", "claim-move-place"]}}
+  ],
+  "facts": [
+    {"id": "fact-move-time", "category": "administration", "region": "north", "decade": 420, "year": 427, "yearVerbatim": "十五年", "placeLabel": "평양", "modernPlace": null, "lon": null, "lat": null, "what": "평양 천도는 장수왕 15년(427)이다.", "claimIds": ["claim-move-time"], "sceneId": "scene-pyeongyang-move-427", "density": null, "confidence": "high", "note": ""},
+    {"id": "fact-move-place", "category": "administration", "region": "north", "decade": 420, "year": 427, "yearVerbatim": "十五年", "placeLabel": "평양", "modernPlace": null, "lon": null, "lat": null, "what": "고구려가 평양으로 도읍을 옮겼다.", "claimIds": ["claim-move-place"], "sceneId": "scene-pyeongyang-move-427", "persistence": {"kind": "city", "from": 427, "to": null}, "density": null, "confidence": "high", "note": "종료 시점은 이 기록만으로 특정하지 않는다."},
+    {"id": "fact-households", "category": "settlement", "region": "south", "decade": 520, "year": 521, "yearVerbatim": "秋八月", "placeLabel": "신라", "modernPlace": null, "lon": null, "lat": null, "what": "흉년으로 백제에서 신라로 이주한 가구가 900호였다.", "claimIds": ["claim-households"], "density": {"households": 900, "unit": "戶", "claimIds": ["claim-households"]}, "confidence": "high", "note": "장면 없이 보존하는 사실. 정착 지점과 인구는 미상."}
+  ],
+  "missing": [{"id": "miss-coordinates", "topic": "표시 좌표", "detail": "이 원문만으로 현대 좌표를 정하지 않는다.", "neededSource": "표시 좌표를 뒷받침하는 별도 출처"}]
+}

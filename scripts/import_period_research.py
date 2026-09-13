@@ -1,13 +1,12 @@
 """Integrate actual Opus-collected people/event excerpts for time exploration (#92)."""
 import argparse
-from collections import defaultdict
+from collections import Counter, defaultdict
 from copy import deepcopy
 from hashlib import sha256
 import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-import shutil
 import sys
 from urllib.parse import unquote
 
@@ -41,6 +40,69 @@ def write(path, text):
     path.write_text(text, encoding='utf-8', newline='\n')
 
 
+def check_run(run, check_only=False):
+    complete = run.get('exitCode') == 0 and not run.get('isError')
+    assert complete or (check_only and 'exitCode' not in run)
+    assert run['modelsObserved'] == ['claude-opus-5']
+    if run.get('runner') == 'workflow':
+        assert complete and run.get('isError') is False, 'workflow must have completed successfully'
+        assert run['effort'] in ('high', 'max'), 'workflow effort must be high or max'
+        assert isinstance(run.get('sessionId'), str) and run['sessionId'].strip(), 'workflow sessionId is required'
+    else:
+        assert run['effort'] == 'max'
+    return complete
+
+
+def local_chunks(data, claims):
+    wanted = {c['citesChunk'] for c in claims if 'citesChunk' in c}
+    found = {}
+    if wanted:
+        for path in sorted((data / 'sources').glob('*/chunks.jsonl')):
+            for line in path.read_text(encoding='utf-8').splitlines():
+                if line.strip():
+                    row = json.loads(line)
+                    if row['id'] in wanted:
+                        found[row['id']] = row
+    assert wanted <= found.keys(), ('missing local chunk', sorted(wanted - found.keys()))
+    return found
+
+
+def check_local_claim(claim, row):
+    norm = lambda text: ''.join(text.split())
+    quote = claim.get('quote')
+    assert isinstance(quote, str) and norm(quote), (claim['id'], 'quote is required')
+    assert norm(quote) in norm(row['text']), (claim['id'], 'quote mismatch')
+    obj = claim['object']
+    if obj['kind'] == 'time':
+        assert norm(obj['verbatim']) and norm(obj['verbatim']) in norm(row['text']) and norm(obj['verbatim']) in norm(quote), (claim['id'], 'verbatim mismatch')
+    raw = (row.get('date') or {}).get('raw')
+    if raw and obj['kind'] in ('time', 'year'):
+        match = re.match(r'^([+-]?\d{4})(?!\d)', raw)
+        assert match, (row['id'], 'invalid date.raw year')
+        year = int(match[1])
+        keys = ('value',) if obj['kind'] == 'year' else ('year', 'earliest', 'latest')
+        for key in keys:
+            if obj.get(key) is not None:
+                assert type(obj[key]) is int and obj[key] == year, (claim['id'], key, 'chunk year mismatch', year)
+
+
+def merge_claims(path, claims, sid, cid):
+    if not path.exists():
+        return markdown({'type':'Claims', 'source':sid, 'chunk':cid, 'generated':'claude-opus-5', 'status':'draft'},
+            '```claims-json\n' + json.dumps(claims, ensure_ascii=False, indent=2) + '\n```')
+    text = path.read_text(encoding='utf-8')
+    meta, _ = parse_front_matter(text)
+    assert meta['source'] == sid and meta['chunk'] == cid, path
+    matches = list(re.finditer(r'^```claims-json[ \t]*\n(.*?)^```[ \t]*$', text, re.MULTILINE | re.DOTALL))
+    assert len(matches) == 1, (path, 'expected one claims-json array')
+    match = matches[0]
+    existing = json.loads(match[1])
+    assert isinstance(existing, list), path
+    merged = {c['id']: c for c in existing}
+    merged.update((c['id'], c) for c in claims)
+    return text[:match.start(1)] + json.dumps(list(merged.values()), ensure_ascii=False, indent=2) + '\n' + text[match.end(1):]
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--research', type=Path, required=True)
@@ -52,15 +114,15 @@ def main():
     job = args.research.name
     prefix = args.collection.replace('periods-', 'period')
     run = json.loads((args.research / 'run.json').read_text(encoding='utf-8'))
-    complete = run.get('exitCode') == 0 and not run.get('isError')
-    assert complete or (args.check_only and 'exitCode' not in run)
-    assert run['modelsObserved'] == ['claude-opus-5'] and run['effort'] == 'max'
+    complete = check_run(run, args.check_only)
     draft = json.loads((args.research / 'result.json').read_text(encoding='utf-8'))
+    local = local_chunks(args.data, draft['claims'])
     source_aliases=source_id_aliases(draft,args.data,args.collection,job)
     for source in draft['sources']:
         source['id']=source_aliases.get(source['id'],source['id'])
     for claim in draft['claims']:
-        claim['sourceId']=source_aliases.get(claim['sourceId'],claim['sourceId'])
+        if 'citesChunk' not in claim:
+            claim['sourceId']=source_aliases.get(claim['sourceId'],claim['sourceId'])
     adjustment_file = args.data / 'research' / args.collection / 'integration-adjustments.json'
     adjustments = json.loads(adjustment_file.read_text(encoding='utf-8')).get(job, {}) if adjustment_file.exists() else {}
     # The unpublished collector IDs refer to these already named AKS entities.
@@ -133,6 +195,7 @@ def main():
         sources[sid] = source
         checks.append({'source':sid, 'url':url, 'sha256':digest, 'rawBytes':len(raw),
                        'excerpts':len(rows), 'quotedWords':sum(len(r['text'].split()) for r in rows)})
+    chunk_claims = excerpt_claims = 0
     for original in draft['claims']:
         claim = deepcopy(original)
         if change := adjustments.get(claim['id']):
@@ -146,15 +209,25 @@ def main():
                 assert claim['object']['latest'] == change['expectedLatest']
                 claim['object']['latest'] = change['latest']
             claim['note'] = claim.get('note', '') + ' 연결 수정(Codex): ' + change['reason']
-        row = chunks[claim.pop('citesExcerpt')]
+        is_local = 'citesChunk' in claim
+        if is_local:
+            row = local[claim['citesChunk']]
+            check_local_claim(claim, row)
+            quote = claim['quote']
+            chunk_claims += 1
+        else:
+            row = chunks[claim.pop('citesExcerpt')]
+            quote = row['text']
+            excerpt_claims += 1
         sid = claim.pop('sourceId')
-        assert row['sourceId'] == sid
+        assert row['sourceId'] == sid, (claim['id'], 'sourceId mismatch')
         claim['id'] = 'claim-' + prefix + '-' + job + '-' + claim['id'].removeprefix('claim-')
         obj = claim['object']
         if obj['kind'] == 'time':
-            assert obj['verbatim'] in row['text'], claim['id']
-            obj['id'] = 'ts-' + prefix + '-' + job + '-' + obj['id'].removeprefix('ts-')
-        for value in ([obj['value']] if obj['kind'] == 'year' else [obj[k] for k in ('earliest','latest','year') if k in obj]):
+            if not is_local:
+                assert obj['verbatim'] in row['text'], claim['id']
+            obj['id'] = 'ts-' + prefix + '-' + job + '-' + obj.get('id', original['id'].removeprefix('claim-')).removeprefix('ts-')
+        for value in ([] if is_local else [obj['value']] if obj['kind'] == 'year' else [obj[k] for k in ('earliest','latest','year') if k in obj]):
             quoted = row['text']
             supported = str(value) in quoted if value >= 0 else str(abs(value)) in quoted and any(marker in quoted for marker in ('기원전', '서기전', 'B.C.', 'BCE', 'BC'))
             if not supported and obj.get('precision') == 'century' and value < 0:
@@ -163,7 +236,7 @@ def main():
             if not supported and obj.get('kind') == 'time' and value == obj.get('latest'):
                 supported = '이듬해' in obj.get('verbatim', '') and value == obj.get('earliest', 0) + 1 and str(obj['earliest']) in row['text']
             assert supported, (claim['id'], 'numeric year absent from quotation', value)
-        claim.update(fromSource=sid, citesChunk=row['id'], quote=row['text'], origin='ai', status='draft',
+        claim.update(fromSource=sid, citesChunk=row['id'], quote=quote, origin='ai', status='draft',
                      generatedBy='claude-opus-5', generatedAt=datetime.fromtimestamp(run['started'],timezone.utc).date().isoformat())
         by_source[sid].append(claim)
     for entity in draft['entities']:
@@ -175,13 +248,18 @@ def main():
             files[path] = markdown({k:entity[k] for k in ('id','type','label')}, entity.get('ambiguity','')).rstrip() + '\n'
     for sid, claims in by_source.items():
         for cid in dict.fromkeys(c['citesChunk'] for c in claims):
-            path = args.data / 'claims' / sid.removeprefix('src-') / prefix / (cid + '.md')
-            files[path] = markdown({'type':'Claims', 'source':sid, 'chunk':cid, 'generated':'claude-opus-5', 'status':'draft'},
-                '```claims-json\n' + json.dumps([c for c in claims if c['citesChunk'] == cid], ensure_ascii=False, indent=2) + '\n```')
+            folder = args.data / 'claims' / sid.removeprefix('src-')
+            existing = sorted(folder.rglob(cid + '.md'))
+            assert len(existing) <= 1, (cid, 'multiple existing claim files', existing)
+            path = existing[0] if existing else folder / prefix / (cid + '.md')
+            files[path] = merge_claims(path, [c for c in claims if c['citesChunk'] == cid], sid, cid)
     report = {'job':job, 'sources':len(sources), 'excerpts':len(chunks),
+              'chunkClaims':chunk_claims, 'excerptClaims':excerpt_claims,
+              'facts':len(draft.get('facts', [])),
+              'factsByCategory':dict(sorted(Counter(f['category'] for f in draft.get('facts', [])).items())),
               'claims':sum(map(len,by_source.values())), 'entities':len(draft['entities']),
               'rawFilesChecked':checks, 'missing':draft.get('missing',[]), 'collection':run,
-              'downloadPerformedBy':'claude-opus-5 via its Bash tool', 'integrationPerformedBy':'Codex',
+              'downloadPerformedBy':'claude-opus-5 via workflow' if run.get('runner') == 'workflow' else 'claude-opus-5 via its Bash tool', 'integrationPerformedBy':'Codex',
               'reviewedEntityIds':ids,
               'reviewedSourceIds':source_aliases,
               'integrationAdjustments':adjustments,
@@ -194,7 +272,8 @@ def main():
         for name in ('run.json','manifest.json','progress.json','result.json','report.md','coverage.json'):
             if (args.research / name).exists():
                 content=(args.research / name).read_text(encoding='utf-8')
-                content=re.sub(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', '[contact omitted]', content)
+                if name != 'result.json':
+                    content=re.sub(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', '[contact omitted]', content)
                 write(saved / name, content)
     write(args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k:v for k,v in report.items() if k not in ('rawFilesChecked','missing','collection')},ensure_ascii=False))

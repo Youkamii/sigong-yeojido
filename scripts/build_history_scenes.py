@@ -5,14 +5,13 @@ from hashlib import sha256
 import json
 import math
 from pathlib import Path
-from shapely.geometry import shape,Point
-from shapely.ops import nearest_points
-from import_period_research import ENTITY_ID_ALIASES,source_id_aliases
+from import_period_research import ENTITY_ID_ALIASES,source_id_aliases,check_run
 
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--research',type=Path,required=True)
 parser.add_argument('--collection',default='scenes-101')
+parser.add_argument('--data',type=Path,default=root/'data')
 parser.add_argument('--job',action='append',help='Completed job names; defaults to the original naval and invasion collection')
 parser.add_argument('--merge',action='store_true',help='Keep existing scenes and replace only matching scene IDs')
 parser.add_argument('--out',type=Path,default=root/'services/host/app/history-scenes.json')
@@ -24,9 +23,9 @@ if args.merge:
 for job in args.job or ['invasion_events','yi_naval']:
     folder=args.research/job
     run=json.loads((folder/'run.json').read_text(encoding='utf-8'))
-    assert run.get('exitCode')==0 and not run['isError'] and run['modelsObserved']==['claude-opus-5'] and run['effort']=='max'
+    check_run(run)
     result=json.loads((folder/'result.json').read_text(encoding='utf-8'))
-    source_aliases=source_id_aliases(result,root/'data',args.collection,job)
+    source_aliases=source_id_aliases(result,args.data,args.collection,job)
     claims={c['id']:c for c in result['claims']}
     prefix=args.collection.replace('periods-','period')
     ids=lambda values:['claim-'+prefix+'-'+job+'-'+value.removeprefix('claim-') for value in values]
@@ -78,6 +77,14 @@ for job in args.job or ['invasion_events','yi_naval']:
                 actor['entityId']='polity-residents-'+scene['eventId'].removeprefix('event-')
             if args.collection=='scenes-101' and scene['id']=='scene-danghangpo-2-1594' and actor['entityId']=='person-yinav-eo-yeongdam':
                 actor['presence']='related'
+        for group in scene.get('participantGroups', []):
+            assert all(c in claims for c in group['claimIds'])
+            group['claimIds']=ids(group['claimIds'])
+        if scene.get('persistence') is not None:
+            basis=scene['persistence'].get('basisClaimIds', [])
+            assert all(c in claims for c in basis)
+            if 'basisClaimIds' in scene['persistence']:
+                scene['persistence']['basisClaimIds']=ids(basis)
         for effect in scene['effects'].values():
             assert not effect['enabled'] or effect['claimIds']
             assert all(c in claims for c in effect['claimIds'])
@@ -109,8 +116,11 @@ if args.collection=='scenes-101' and (position_folder/'run.json').exists():
         missing=[m for m in missing if m.get('job')!='naval_positions']
         missing.extend({'job':'naval_positions','detail':item} for item in result.get('missing',[]))
 
-outline=json.loads((root/'services/host/app/korea-outline.json').read_text(encoding='utf-8'))
-coast=shape(outline['geometry'])
+if any(s.get('place') and s['place'].get('lon') is not None for s in scenes):
+    from shapely.geometry import shape,Point
+    from shapely.ops import nearest_points
+    outline=json.loads((root/'services/host/app/korea-outline.json').read_text(encoding='utf-8'))
+    coast=shape(outline['geometry'])
 for scene in scenes:
     if scene['id']=='scene-city-hanseong-capital-1394-1910':
         registry=json.loads((root/'services/host/app/history-coordinates.json').read_text(encoding='utf-8'))
