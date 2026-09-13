@@ -87,6 +87,19 @@ class HistoricalMapTests(unittest.TestCase):
         self.assertEqual(self.ids(level=4,sources={'src-a','src-date'}),['event'])
         self.assertEqual(self.ids(level=4,origin='human'),[])
 
+    def test_optional_polity_gap_catalog_uses_existing_cache_and_filters(self):
+        self.assertEqual(self.ids(level=0,year=1920),[])
+        path=self.data/'maps/polity-gap-1911-1947.geojson.gz'
+        feature=self.feature('reference','src-hgis-admin-1910-1945',1911,1944)
+        path.write_bytes(gzip.compress(json.dumps({'features':[feature]}).encode()))
+        self.assertEqual(self.ids(level=0,year=1920),['reference'])
+        self.assertEqual(self.ids(level=0,year=1920,origin='human'),[])
+        self.assertEqual(self.ids(level=0,year=1920,sources={'src-clio'}),[])
+        path.write_bytes(gzip.compress(json.dumps({'features':[]}).encode()))
+        self.assertEqual(self.ids(level=0,year=1920),[])
+        path.unlink()
+        self.assertEqual(self.ids(level=0,year=500),['polity-ce'])
+
     def test_route_keeps_disconnected_lines_and_both_required_sources(self):
         self.assertEqual(self.ids(level=5),[])
         feature=self.feature('synthetic-route','src-a',1890,1895)
@@ -101,3 +114,53 @@ class HistoricalMapTests(unittest.TestCase):
         self.assertEqual(self.ids(level=5,sources={'src-a','src-date'}),['synthetic-route'])
         self.assertEqual(self.ids(level=5,origin='human'),[])
         self.assertEqual(self.ids(level=1),['province'])
+
+
+class PublishedPolityGapTests(unittest.TestCase):
+    data=Path(__file__).resolve().parents[1]/'data'
+
+    def features(self,year,**kwargs):
+        return historical_features(self.data,level=0,year=year,**kwargs)['features']
+
+    def test_period_transitions_preserve_original_polities(self):
+        expected={
+            1910:{'Korean Empire'},
+            1911:{'Korea under Japanese rule'},
+            1920:{'Korea under Japanese rule'},
+            1944:{'Korea under Japanese rule'},
+            1945:{'US Army Military Government in Korea','Soviet Civil Administration'},
+            1946:{'US Army Military Government in Korea','Soviet Civil Administration'},
+            1947:{'US Army Military Government in Korea','Soviet Civil Administration'},
+            1948:{'Republic of Korea',"Democratic People's Republic of Korea"},
+        }
+        for year,names in expected.items():
+            with self.subTest(year=year):
+                features=self.features(year)
+                self.assertEqual(len(features),len(names))
+                self.assertEqual({f['properties']['sourceRecord']['Name'] for f in features},names)
+
+    def test_military_reference_polygons_meet_at_38_degrees(self):
+        features=self.features(1946)
+        self.assertEqual(len(features),2)
+        for feature in features:
+            geometry=feature['geometry']
+            polygons=[geometry['coordinates']] if geometry['type']=='Polygon' else geometry['coordinates']
+            latitudes=[point[1] for polygon in polygons for ring in polygon for point in ring]
+            with self.subTest(feature=feature['id']):
+                if feature['id']=='polity-gap-usamgik-1945-1947':
+                    self.assertLess(min(latitudes),38.0)
+                    self.assertEqual(max(latitudes),38.0)
+                else:
+                    self.assertEqual(feature['id'],'polity-gap-soviet-1945-1947')
+                    self.assertEqual(min(latitudes),38.0)
+                    self.assertGreater(max(latitudes),38.0)
+
+    def test_hgis_source_filter_removes_all_reference_polygons(self):
+        sources={'src-cliopatria-korea-v013'}
+        for year in (1911,1920,1945,1946,1947):
+            with self.subTest(year=year):
+                self.assertEqual(self.features(year,sources=sources),[])
+                self.assertEqual(self.features(year,origin='human'),[])
+        for year in (1910,1948):
+            self.assertEqual(self.features(year,sources=sources),self.features(year))
+        self.assertEqual(len(self.features(1946,sources={'src-hgis-admin-1910-1945'})),2)

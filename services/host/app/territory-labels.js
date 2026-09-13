@@ -15,7 +15,7 @@ export class TerritoryLabels{
     for(const feature of features){
       if(!this.cache.has(feature.id))this.cache.set(feature.id,territoryAnchor(feature,(x,y)=>this.world.toWorld(x,y),(x,z)=>this.world.contains(x,z,1)));
       const anchor=this.cache.get(feature.id);if(!anchor)continue;
-      const label=document.createElement('span');label.className='territory-label';label.textContent=territoryName(feature);label.dataset.territory=feature.id;label.hidden=true;
+      const label=document.createElement('span');label.className='territory-label';label.textContent=feature.properties.mapLabel||territoryName(feature);label.dataset.territory=feature.id;label.hidden=true;
       this.host.append(label);
       this.markers.push({label,anchor,position:new THREE.Vector3(anchor.x,this.world.surfaceAt(anchor.x,anchor.z)+.8,anchor.z)});
     }

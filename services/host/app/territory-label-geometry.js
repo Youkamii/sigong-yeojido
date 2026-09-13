@@ -4,7 +4,7 @@ export const territoriesAt=(features,year)=>features.filter(f=>f.properties.vali
   &&!(f.properties.sourceRecord.Name==='Goguryeo'&&year>668));
 export const visibleTerritories=(features,year,{origin='all',sources=null}={})=>
   origin==='human'||sources?.size===0?[]:territoriesAt(features,year);
-export const territoryName=feature=>feature.properties.label.split(' · ')[0];
+export const territoryName=feature=>feature.properties.label.replace(/ · [^·]*$/,'');
 const area=ring=>Math.abs(ring.reduce((sum,p,i)=>{const q=ring[(i+1)%ring.length];return sum+p[0]*q[1]-q[0]*p[1];},0))/2;
 function inRing(x,y,ring){
   let inside=false;

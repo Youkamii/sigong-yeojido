@@ -7,7 +7,7 @@ import json
 CATALOGS={0:'cliopatria-korea-v013',1:'hgis-provinces-1910-1945',2:'hgis-districts-1910-1945',3:'hgis-townships-1883-1945',4:'khs-events',5:'historical-routes'}
 
 
-@lru_cache(maxsize=6)
+@lru_cache(maxsize=7)
 def _catalog(path,mtime,size):
     with gzip.open(path,'rt',encoding='utf-8') as stream:return json.load(stream)
 
@@ -19,14 +19,17 @@ def historical_features(data,sources=None,origin='all',year=None,level=1):
     year=None if year is None else int(year)
     out={'type':'FeatureCollection','features':[],'level':level,'periodRule':'overlaps-selected-year'}
     if sources is not None and not sources:return out
-    path=data/f'maps/{CATALOGS[level]}.geojson.gz'
-    if not path.exists():return out
-    stat=path.stat();catalog=_catalog(path,stat.st_mtime_ns,stat.st_size)
-    for feature in catalog['features']:
-        p=feature['properties']
-        if sources is not None and p['fromSource'] not in sources:continue
-        if sources is not None and not set(p.get('requiredSources',[])).issubset(sources):continue
-        if origin!='all' and p['origin']!=origin:continue
-        if year is not None and not p['validFrom']<=year<=p['validTo']:continue
-        out['features'].append(feature)
+    names=[CATALOGS[level]]
+    if level==0:names.append('polity-gap-1911-1947')
+    for name in names:
+        path=data/f'maps/{name}.geojson.gz'
+        if not path.exists():continue
+        stat=path.stat();catalog=_catalog(path,stat.st_mtime_ns,stat.st_size)
+        for feature in catalog['features']:
+            p=feature['properties']
+            if sources is not None and p['fromSource'] not in sources:continue
+            if sources is not None and not set(p.get('requiredSources',[])).issubset(sources):continue
+            if origin!='all' and p['origin']!=origin:continue
+            if year is not None and not p['validFrom']<=year<=p['validTo']:continue
+            out['features'].append(feature)
     return out
