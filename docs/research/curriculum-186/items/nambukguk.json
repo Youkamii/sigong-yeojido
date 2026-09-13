@@ -5,7 +5,8 @@
     676,
     935
   ],
-  "revision": 2,
+  "boundaryRule": "range 676~935 유지. 918~935 겹치는 창에서는 후삼국 전쟁 쪽(궁예·견훤·공산 전투·고창 전투·견훤의 고려 귀순)과 935년 신라 멸망(경순왕 귀부)만 이 칸이 맡는다. 918년 고려 건국과 고려의 제도·수도·정책은 goryeo-early, 936년 후삼국 통일도 goryeo-early 가 맡는다.",
+  "revision": 3,
   "generatedBy": "claude-opus-5 high",
   "curriculumSources": [
     {
@@ -264,6 +265,46 @@
       "itemId": null,
       "action": "keep",
       "reason": "[검수 근거 오류 기록] 검수 파일이 제시한 encykorea Article ID 3건(E0002532 경덕왕, E0027605 상원사 동종, E0040457 원성왕릉, E0006037 구산선문)은 실제로 열어 보니 각각 '경서자', '서계유사', 404, '구종수'였다. ID 를 그대로 옮겨 쓰지 않고 위키백과·우리역사넷에서 사실을 다시 확인한 뒤 검증된 URL 만 evidence 에 넣었다."
+    },
+    {
+      "itemId": "hs-nambukguk-wanggeon-goryeo",
+      "action": "remove",
+      "reason": "918년 고려 건국은 goryeo-early.json 의 hs-goryeo-early-founding 이 맡는다. 이 칸은 후삼국 전쟁(궁예·견훤·공산·고창·귀순)과 935년 신라 멸망만 맡는다."
+    },
+    {
+      "itemId": "hs-nambukguk-gyeongsunwang",
+      "action": "edit",
+      "reason": "935/936 흐름이 두 파일로 끊기지 않도록 상호 참조 추가."
+    },
+    {
+      "itemId": "hs-nambukguk-buseoksa",
+      "action": "remove",
+      "reason": "같은 절·같은 좌표가 두 시대에 카드로 겹친다. 676년 창건은 hs-nambukguk-uisang(의상) 이 맡고, 건물 카드는 goryeo-late 의 무량수전 하나만 둔다."
+    },
+    {
+      "itemId": "hs-nambukguk-uisang",
+      "action": "merge",
+      "reason": "부석사 중복 카드를 지우고 창건 사실을 의상 카드로 흡수."
+    },
+    {
+      "itemId": "hs-nambukguk-balhae-muwang",
+      "action": "rename",
+      "reason": "백제 무왕과 구분되도록 나라 표기를 '무왕 (발해)' 형식으로 통일했다."
+    },
+    {
+      "itemId": "hs-nambukguk-balhae-seonwang",
+      "action": "rename",
+      "reason": "백제 성왕과 혼동되지 않도록 나라 표기를 '선왕 (발해)' 형식으로 통일했다."
+    },
+    {
+      "itemId": "hs-nambukguk-sillado",
+      "action": "edit",
+      "reason": "좌표가 원리상 확정 불가한 항목이라 approx·notes 로 명시하고 low 를 유지."
+    },
+    {
+      "itemId": "hs-nambukguk-trade-ports",
+      "action": "edit",
+      "reason": "당항성 소재지·시기를 재확인해 confidence 를 low→medium 으로 올리고 연도가 대표값임을 approx 로 유지."
     }
   ],
   "items": [
@@ -368,57 +409,8 @@
         }
       ],
       "priority": "core",
-      "confidence": "medium"
-    },
-    {
-      "id": "hs-nambukguk-buseoksa",
-      "era": "nambukguk",
-      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
-      "title": "부석사",
-      "type": "heritage",
-      "year": 676,
-      "yearEnd": null,
-      "approx": false,
-      "yearNote": "문무왕 16년 의상 창건(삼국사기)",
-      "place": {
-        "label": "영주 부석사",
-        "modern": "경상북도 영주시 부석면 북지리",
-        "lon": 128.6866,
-        "lat": 36.9977,
-        "coordinateBasis": "heritage-portal"
-      },
-      "sceneType": {
-        "kind": "heritage",
-        "sceneFunction": "temple"
-      },
-      "meaning": "의상이 676년에 연 화엄종 절, 지금 남은 무량수전은 고려 때 것",
-      "curriculum": {
-        "edition": "2022",
-        "standard": "[10한사1-02-04]",
-        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
-        "verified": true
-      },
-      "textbookTerms": [
-        "부석사",
-        "무량수전",
-        "화엄 십찰",
-        "산사"
-      ],
-      "evidence": [
-        {
-          "kind": "heritage-portal",
-          "ref": "국가유산포털 '영주 부석사 무량수전' 국보",
-          "note": "소재지 확인"
-        },
-        {
-          "kind": "encykorea",
-          "ref": "한국민족문화대백과사전 표제어 '부석사'",
-          "note": "676년 창건"
-        }
-      ],
-      "priority": "standard",
       "confidence": "medium",
-      "notes": "현존 무량수전은 고려 건물. 화면에는 '의상의 창건'을 앵커로 두고 건물 연대는 주석 처리 권장."
+      "notes": "676년 영주 부석사 창건이 이 인물 카드의 대표 사적이다. 현존 무량수전(1376 중창)은 goryeo-late.json 의 hs-goryeo-late-buseoksa-muryangsujeon."
     },
     {
       "id": "hs-nambukguk-kimheumdol-revolt",
@@ -1243,7 +1235,7 @@
       "id": "hs-nambukguk-balhae-muwang",
       "era": "nambukguk",
       "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
-      "title": "무왕(발해)",
+      "title": "무왕 (발해)",
       "type": "person",
       "year": 732,
       "yearEnd": null,
@@ -2204,7 +2196,7 @@
       "id": "hs-nambukguk-balhae-seonwang",
       "era": "nambukguk",
       "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
-      "title": "선왕(발해)",
+      "title": "선왕 (발해)",
       "type": "person",
       "year": 818,
       "yearEnd": 830,
@@ -2352,7 +2344,7 @@
       ],
       "priority": "standard",
       "confidence": "low",
-      "notes": "교통로는 선(線)이라 단일 좌표가 부정확. 화면에서는 동경 용원부~신라 북변을 잇는 경로로 그리는 편이 맞다."
+      "notes": "교통로는 선(線)이라 단일 좌표가 부정확. 화면에서는 동경 용원부~신라 북변을 잇는 경로로 그리는 편이 맞다. 교통로는 선이라 단일 좌표가 성립하지 않고 790년도 대표 연도다. 외부 출처로 기점을 확정하지 못해 low 유지."
     },
     {
       "id": "hs-nambukguk-goguryeo-succession",
@@ -2656,8 +2648,8 @@
         }
       ],
       "priority": "standard",
-      "confidence": "low",
-      "notes": "울산항과 당항성(화성)을 한 항목으로 묶었다. 화면 분리가 필요하면 당항성(126.784, 37.140)을 별도 항목으로 쪼갤 것."
+      "confidence": "medium",
+      "notes": "울산항과 당항성(화성)을 한 항목으로 묶었다. 화면 분리가 필요하면 당항성(126.784, 37.140)을 별도 항목으로 쪼갤 것. 2026-09-14 위키백과 '당항성(화성 당성)' 재확인 — 경기도 화성시 서신면 상안리 소재, 551년 신라가 차지하고 829년 당성진 설치. 이 카드의 좌표는 울산항 기준이라 당항성은 별도 좌표(126.784, 37.140)로 쪼갤 수 있다."
     },
     {
       "id": "hs-nambukguk-kimheonchang-revolt",
@@ -3405,55 +3397,6 @@
       "notes": "태봉 도성 터는 비무장지대 안이라 접근 불가. 좌표는 알려진 궁예도성 추정 위치."
     },
     {
-      "id": "hs-nambukguk-wanggeon-goryeo",
-      "era": "nambukguk",
-      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
-      "title": "궁예 축출과 왕건의 고려 건국",
-      "type": "event",
-      "year": 918,
-      "yearEnd": null,
-      "approx": false,
-      "yearNote": "918년 6월 궁예를 몰아내고 왕건이 즉위. 송악(개경) 천도는 이듬해 919년",
-      "place": {
-        "label": "철원(태봉 도성, 고려 건국지)",
-        "modern": "강원특별자치도 철원군",
-        "lon": 127.216,
-        "lat": 38.32,
-        "coordinateBasis": "estimated"
-      },
-      "sceneType": {
-        "kind": "court"
-      },
-      "meaning": "왕건이 궁예를 몰아내고 고려를 세워 후삼국 판을 바꾼 해",
-      "curriculum": {
-        "edition": "2022",
-        "standard": "[10한사1-01-01]",
-        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
-        "verified": true
-      },
-      "textbookTerms": [
-        "왕건",
-        "고려 건국",
-        "918",
-        "궁예 축출",
-        "철원",
-        "송악 천도",
-        "홍유",
-        "배현경",
-        "신숭겸",
-        "복지겸"
-      ],
-      "evidence": [
-        {
-          "kind": "urihistory",
-          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m41_0060_0010",
-          "note": "918년 궁예 축출 후 왕건 즉위, 고려 건국"
-        }
-      ],
-      "priority": "core",
-      "confidence": "high"
-    },
-    {
       "id": "hs-nambukguk-balhae-fall",
       "era": "nambukguk",
       "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
@@ -3747,7 +3690,8 @@
         }
       ],
       "priority": "core",
-      "confidence": "high"
+      "confidence": "high",
+      "notes": "935년 신라 멸망은 이 칸의 마감으로 둔다. 이어지는 936년 후삼국 통일은 goryeo-early.json 의 hs-goryeo-early-unification-later-three."
     },
     {
       "id": "hs-nambukguk-jipsabu-sijung",

@@ -5,7 +5,8 @@
     -700000,
     -57
   ],
-  "revision": 2,
+  "boundaryRule": "선사~기원전 108년 고조선 멸망까지 이 칸이 맡는다. 이후 연맹 왕국·삼국 성립기 항목은 samguk 이 맡는다.",
+  "revision": 3,
   "generatedBy": "claude-opus-5 high",
   "changelog": [
     {
@@ -177,6 +178,11 @@
       "itemId": null,
       "action": "edit",
       "reason": "D-major(좌표 중복) 반영. 왕검성 한 점에 포개지던 카드는 좌표를 거짓으로 흩뜨리지 않고 place.clusterId 로 묶어 뷰어가 나선형으로 펼치게 했다(wanggeomseong 11건, amsadong 4건, songgukri 3건 등 10개 묶음). 부여(지린)·졸본·동예 묶음은 하위 풍습 카드를 흡수하면서 겹침 자체가 사라졌다"
+    },
+    {
+      "itemId": "hs-prehistoric-misongni-pottery",
+      "action": "edit",
+      "reason": "출토지를 재확인해 confidence 를 low→medium 으로 올리고, 연대는 대표값임을 approx 로 표시."
     }
   ],
   "curriculumSources": [
@@ -946,8 +952,8 @@
         }
       ],
       "priority": "extended",
-      "confidence": "low",
-      "notes": "북한 소재로 좌표 추정. 의주읍 권역 중심"
+      "confidence": "medium",
+      "notes": "북한 소재로 좌표 추정. 의주읍 권역 중심 2026-09-14 위키백과 '미송리식 토기' 재확인 — 1959년 평안북도 의주군 미송리에서 처음 발견. 연대는 청동기 시대로만 전해 -900은 대표값이고 좌표는 의주읍 권역 추정."
     },
     {
       "id": "hs-prehistoric-gochang-dolmens",

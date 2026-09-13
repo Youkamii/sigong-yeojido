@@ -5,7 +5,8 @@
     918,
     1170
   ],
-  "revision": 2,
+  "boundaryRule": "range 918~1170 유지. 918~935 겹치는 창에서 918년 고려 건국과 고려의 제도·수도·정책은 이 칸이 맡고, 후삼국 전쟁과 935년 신라 멸망은 nambukguk 이 맡는다. 936년 후삼국 통일은 이 칸이 맡는다.",
+  "revision": 3,
   "generatedBy": "claude-opus-5 high",
   "curriculumSources": [
     {
@@ -71,7 +72,8 @@
         }
       ],
       "priority": "core",
-      "confidence": "high"
+      "confidence": "high",
+      "notes": "918년 건국은 이 카드가 단독으로 맡는다. 궁예의 태봉과 후삼국 전쟁은 nambukguk.json 의 hs-nambukguk-gungye·hs-nambukguk-taebong-cheorwon 이 맡는다."
     },
     {
       "id": "hs-goryeo-early-heukchang",
@@ -484,7 +486,7 @@
       ],
       "priority": "core",
       "confidence": "medium",
-      "notes": "일리천 위치는 구미 낙동강 일대로 보는 견해를 따라 권역 중심 좌표."
+      "notes": "일리천 위치는 구미 낙동강 일대로 보는 견해를 따라 권역 중심 좌표. 앞선 935년 신라 멸망은 nambukguk.json 의 hs-nambukguk-gyeongsunwang 이 맡는다."
     },
     {
       "id": "hs-goryeo-early-manbugyo",
@@ -996,7 +998,7 @@
       "id": "hs-goryeo-early-seongjong",
       "era": "goryeo-early",
       "unit": "근대 이전 한국사의 이해 › 고려의 통치 체제와 지배 세력의 변화",
-      "title": "성종",
+      "title": "성종 (고려)",
       "type": "person",
       "year": 981,
       "yearEnd": 997,
@@ -1979,7 +1981,7 @@
       ],
       "priority": "core",
       "confidence": "medium",
-      "notes": "전국에 걸친 제도라 좌표는 한반도 중부 권역 중심 추정. 화면에서는 점 대신 면이나 다수 점으로 연출. 고려 후기 칸의 같은 제목 항목과는 역할을 나눈다 — 이 칸은 제도의 존재와 차별을, 후기 칸은 무신 집권기 봉기와 소의 승격을 다루는 것이 맞다."
+      "notes": "전국에 걸친 제도라 좌표는 한반도 중부 권역 중심 추정. 화면에서는 점 대신 면이나 다수 점으로 연출. 고려 후기 칸의 같은 제목 항목과는 역할을 나눈다 — 이 칸은 제도의 존재와 차별을, 후기 칸은 무신 집권기 봉기와 소의 승격을 다루는 것이 맞다. 고려 전 시기의 제도를 이 카드 하나가 맡는다. 무신 집권기 소의 봉기는 goryeo-late.json 의 hs-goryeo-late-mangi-mangsoi 참고."
     },
     {
       "id": "hs-goryeo-early-hyangdo",
@@ -3114,7 +3116,7 @@
       "id": "hs-goryeo-early-sukjong",
       "era": "goryeo-early",
       "unit": "근대 이전 한국사의 이해 › 고려의 통치 체제와 지배 세력의 변화",
-      "title": "숙종",
+      "title": "숙종 (고려)",
       "type": "person",
       "year": 1095,
       "yearEnd": 1105,
@@ -4198,51 +4200,6 @@
       "priority": "standard",
       "confidence": "high",
       "notes": "1170년 무신정변은 다음 시대 칸(고려 후기)에서 다루도록 여기서는 제외."
-    },
-    {
-      "id": "hs-goryeo-early-sanggam-cheongja",
-      "era": "goryeo-early",
-      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
-      "title": "상감청자",
-      "type": "culture",
-      "year": 1150,
-      "yearEnd": null,
-      "approx": true,
-      "yearNote": "12세기 중엽부터 상감 기법이 본격 등장",
-      "place": {
-        "label": "강진 청자 가마",
-        "modern": "전라남도 강진군 대구면",
-        "lon": 126.719,
-        "lat": 34.617,
-        "coordinateBasis": "heritage-portal"
-      },
-      "sceneType": {
-        "kind": "heritage",
-        "sceneFunction": "kiln"
-      },
-      "meaning": "무늬를 파고 다른 흙을 메워 구운 고려만의 청자 기법",
-      "curriculum": {
-        "edition": "2022",
-        "standard": "[10한사1-02-04]",
-        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
-        "verified": true
-      },
-      "textbookTerms": [
-        "상감청자",
-        "상감 기법",
-        "운학무늬",
-        "강진",
-        "부안"
-      ],
-      "evidence": [
-        {
-          "kind": "heritage-portal",
-          "ref": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1333600680000",
-          "note": "강진 요지에서 상감청자 단계 확인"
-        }
-      ],
-      "priority": "standard",
-      "confidence": "medium"
     }
   ],
   "changelog": [
@@ -4470,6 +4427,36 @@
       "itemId": "hs-goryeo-early-yi-jagyeom",
       "action": "add",
       "reason": "B minor 반영. 사건(이자겸의 난)만 있고 인물이 없던 짝을 맞췄다. 검수가 제시한 encykorea E0044614 는 '이상좌' 항목이어서 쓰지 않고, 우리역사넷 신편 한국사 '이자겸의 난과 서경 천도 운동'을 근거로 삼았다(직접 확인)."
+    },
+    {
+      "itemId": "hs-goryeo-early-sanggam-cheongja",
+      "action": "remove",
+      "reason": "상감청자 카드가 goryeo-late 의 '상감 청자'와 meaning 유사도 0.90으로 같은 뜻. 전성기 서술을 가진 goryeo-late 쪽만 남긴다."
+    },
+    {
+      "itemId": "hs-goryeo-early-hyang-bugok-so",
+      "action": "edit",
+      "reason": "향·부곡·소 중복 해소 후 이 카드를 단일 제도 카드로 확정."
+    },
+    {
+      "itemId": "hs-goryeo-early-founding",
+      "action": "merge",
+      "reason": "nambukguk 의 918 중복 카드를 지우고 소속을 notes 로 못박음."
+    },
+    {
+      "itemId": "hs-goryeo-early-unification-later-three",
+      "action": "edit",
+      "reason": "935/936 흐름이 두 파일로 끊기지 않도록 상호 참조 추가."
+    },
+    {
+      "itemId": "hs-goryeo-early-seongjong",
+      "action": "rename",
+      "reason": "조선 성종과 제목이 같아 나라를 괄호로 붙였다."
+    },
+    {
+      "itemId": "hs-goryeo-early-sukjong",
+      "action": "rename",
+      "reason": "조선 숙종과 제목이 같아 나라를 괄호로 붙였다."
     }
   ]
 }

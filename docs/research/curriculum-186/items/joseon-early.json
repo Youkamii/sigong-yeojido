@@ -5,7 +5,8 @@
     1392,
     1592
   ],
-  "revision": 2,
+  "boundaryRule": "range 1392~1592 유지. 이성계·정도전 인물 카드는 정체성당 1장 규칙에 따라 이 칸이 맡고, 두 사람의 고려 말 활동은 goryeo-late 의 사건 카드가 맡는다.",
+  "revision": 3,
   "generatedBy": "claude-opus-5 high",
   "curriculumSources": [
     {
@@ -97,9 +98,9 @@
       "title": "이성계",
       "type": "person",
       "year": 1392,
-      "yearEnd": 1398,
+      "yearEnd": 1408,
       "approx": false,
-      "yearNote": "재위 1392~1398",
+      "yearNote": "재위 1392~1398, 1408년 사망",
       "place": {
         "label": "개경",
         "modern": "개성특별시",
@@ -137,7 +138,8 @@
         }
       ],
       "priority": "standard",
-      "confidence": "high"
+      "confidence": "high",
+      "notes": "이성계 인물 카드는 이 하나뿐이다. 1380년 황산 대첩·1388년 위화도 회군 등 고려 말 활동은 goryeo-late.json 의 hs-goryeo-late-hwangsan-victory·hs-goryeo-late-wihwado-retreat 가 맡는다."
     },
     {
       "id": "hs-joseon-early-jeong-dojeon",
@@ -187,7 +189,8 @@
         }
       ],
       "priority": "core",
-      "confidence": "high"
+      "confidence": "high",
+      "notes": "정도전 인물 카드는 이 하나뿐이다. 1388년 위화도 회군 뒤의 급진 개혁파 활동과 과전법은 goryeo-late.json 의 hs-goryeo-late-wihwado-retreat·hs-goryeo-late-gwajeonbeop 가 맡는다."
     },
     {
       "id": "hs-joseon-early-hanyang-capital",
@@ -1263,7 +1266,7 @@
       "id": "hs-joseon-early-seongjong",
       "era": "joseon-early",
       "unit": "근대 이전 한국사의 이해 › 조선의 성립과 정치 운영의 변화",
-      "title": "성종",
+      "title": "성종 (조선)",
       "type": "person",
       "year": 1469,
       "yearEnd": 1494,
@@ -1667,7 +1670,7 @@
       ],
       "priority": "extended",
       "confidence": "low",
-      "notes": "설치·복설 연도가 여러 차례라 1428년은 대표값"
+      "notes": "설치·복설 연도가 여러 차례라 1428년은 대표값 2026-09-14 재확인 시도 — 위키백과 '유향소'에서는 1489년 향청 설치만 확인되고 1428년 복설 연도는 확인하지 못했다. confidence 는 low 유지."
     },
     {
       "id": "hs-joseon-early-sillok",
@@ -4652,7 +4655,8 @@
         }
       ],
       "priority": "standard",
-      "confidence": "low"
+      "confidence": "low",
+      "notes": "연도 1500은 16세기 심화를 가리키는 대표값이고 한양 좌표도 대표점이다. 외부 출처로 특정 연도를 확정하지 못해 confidence low 유지."
     },
     {
       "id": "hs-joseon-early-gunjeok-supo",
@@ -5278,7 +5282,8 @@
         }
       ],
       "priority": "extended",
-      "confidence": "low"
+      "confidence": "medium",
+      "notes": "2026-09-14 위키백과 '금오신화' 재확인 — 경주 금오산(남산) 은거기 저술로 추정하며 계유정난(1453) 이후로 본다. 1470년은 대표 연도."
     },
     {
       "id": "hs-joseon-early-sin-sukju",
@@ -6143,6 +6148,36 @@
       "itemId": "hs-joseon-early-gyemija",
       "action": "edit",
       "reason": "E(major) 보정 누락: 갑인자와 좌표가 같아 주자소 권역 안에서 따로 떼어 놓았다."
+    },
+    {
+      "itemId": "hs-joseon-early-yi-seonggye",
+      "action": "merge",
+      "reason": "goryeo-late 중복 카드를 지우고 yearEnd 를 1408(사망)로 넓혀 활동 폭을 한 카드에 담음."
+    },
+    {
+      "itemId": "hs-joseon-early-jeong-dojeon",
+      "action": "merge",
+      "reason": "goryeo-late 중복 카드를 지우고 고려 말 활동을 notes 로 연결."
+    },
+    {
+      "itemId": "hs-joseon-early-seongjong",
+      "action": "rename",
+      "reason": "고려 성종과 제목이 같아 나라를 괄호로 붙였다."
+    },
+    {
+      "itemId": "hs-joseon-early-geumo-sinhwa",
+      "action": "edit",
+      "reason": "저술 장소를 재확인해 confidence 를 low→medium 으로 올리고, 연도는 대표값임을 approx 로 표시."
+    },
+    {
+      "itemId": "hs-joseon-early-yuhyangso",
+      "action": "edit",
+      "reason": "재확인했으나 연도를 확정하지 못해 confidence low 를 유지하고 미확인 사실을 notes 에 남겼다."
+    },
+    {
+      "itemId": "hs-joseon-early-bangnap",
+      "action": "edit",
+      "reason": "특정 연도를 확정할 수 없는 항목이라 approx 와 notes 로 대표값임을 명시하고 low 를 유지."
     }
   ]
 }

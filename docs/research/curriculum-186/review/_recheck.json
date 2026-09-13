@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-09-14",
+  "checkedBy": "claude-opus-5 high (최종 검수)",
+  "method": "items/ 10개 파일 전수 파싱 + HEAD(db209fe0) 판본과 항목 단위 diff 대조. 숫자는 모두 스크립트 실행으로 확인함(확인됨). 중복 판정만 사람 판단(추정).",
+  "totalItems": 988,
+  "perEra": {
+    "prehistoric-gojoseon": 56,
+    "samguk": 118,
+    "nambukguk": 78,
+    "goryeo-early": 91,
+    "goryeo-late": 90,
+    "joseon-early": 115,
+    "joseon-late": 115,
+    "modern-transition": 102,
+    "colonial": 107,
+    "contemporary": 116
+  },
+  "perEraRevision": {
+    "prehistoric-gojoseon": "2 → 3",
+    "samguk": "2 → 3",
+    "nambukguk": "2 → 3",
+    "goryeo-early": "2 → 3",
+    "goryeo-late": "2 → 4",
+    "joseon-early": "2 → 3",
+    "joseon-late": "2 → 3",
+    "modern-transition": "2 → 4",
+    "colonial": "2 → 4",
+    "contemporary": "2 → 4"
+  },
+  "crossEraDuplicates": [
+    "hs-modern-transition-oriental-development-company = hs-colonial-oriental-development-company (동양 척식 주식회사. 제목은 '동양 척식 주식회사'/'…의 토지 집적'으로 갈랐지만 좌표가 126.983,37.565 로 완전히 같아 지도에서 같은 점에 두 장이 겹친다. colonial 에 hs-colonial-oriental-development-busan 까지 새로 들어와 같은 회사 카드가 모두 3장이다. 남은 실질 중복 1건.)",
+    "hs-joseon-early-bibyeonsa = hs-joseon-late-bibyeonsa (비변사 설치 1510 / 비변사의 강화 1592~1865. 같은 기구를 두 파일이 한 장씩 나눠 가졌고 좌표도 126.979,37.574 와 126.98,37.5755 로 150m 차이라 지도에서 사실상 겹친다. 시대 분담이 의도된 것으로 보이나 어느 파일의 boundaryRule 에도 그 규칙이 적혀 있지 않다 — 판단 필요.)",
+    "hs-goryeo-early-gwageo = hs-joseon-early-gwageo (과거제. 고려 958년 도입과 조선 과거제로 meaning·textbookTerms·좌표가 모두 갈라져 있어 중복으로 단정하기 어렵다. 같은 제도가 두 파일에 남아 있다는 사실만 기록 — 판단 필요.)"
+  ],
+  "crossEraDuplicatesResolved": [
+    "_critic 이 지적한 15쌍 중 11쌍은 실제로 해소됨(확인됨): 상감청자, 향·부곡·소, 918 고려 건국, 이성계, 정도전, 홍범도, 안창호, 여운형, 김구, 김규식, 부석사 — 모두 한쪽 id 가 파일에서 사라졌고 changelog 에 사유가 남아 있다.",
+    "신채호·박은식·이승만 3쌍은 id 는 두 파일에 남았지만 대상을 바꿔 해소함: hs-modern-transition-sin-chae-ho 는 '독사신론', hs-modern-transition-park-eun-sik 은 '유교구신론', hs-colonial-syngman-rhee 는 '구미 위원부' 로 재배정됨. 중복은 아니나 id 와 실제 대상이 어긋난다(아래 remainingFlags 참고).",
+    "제목이 완전히 같은 항목은 0건(README 가 적은 10건 전부 해소, 확인됨)."
+  ],
+  "sameTitleDifferentPerson": [
+    "성종: goryeo-early/hs-goryeo-early-seongjong '성종 (고려)' 981~997 ↔ joseon-early/hs-joseon-early-seongjong '성종 (조선)' 1469~1494 — 괄호 나라 표기로 구분됨(해소).",
+    "숙종: goryeo-early/hs-goryeo-early-sukjong '숙종 (고려)' 1095~1105 ↔ joseon-late/hs-joseon-late-sukjong '숙종 (조선)' 1674~1720 — 괄호 나라 표기로 구분됨(해소).",
+    "무왕: samguk/hs-samguk-mu-wang '무왕 (백제)' 600 ↔ nambukguk/hs-nambukguk-balhae-muwang '무왕 (발해)' 732 — 양쪽 모두 나라 표기로 구분됨(해소).",
+    "괄호를 떼고 비교해도 이름이 겹치는 인물 카드는 위 3쌍뿐이고, 3쌍 모두 현재는 제목만으로 구분된다. 남은 미해결 0건(확인됨)."
+  ],
+  "unverified": 0,
+  "remainingFlags": [
+    "[높음] 하위 산출물이 전부 옛 판본이다(확인됨). items.merged.json 은 982건에 멈춰 있어 지금 items/ 의 988건과 어긋난다 — merged 에만 남은 삭제 항목 20건, merged 에 없는 신규 항목 26건. README.md(982건 표·'제목 중복 10건'·'형식 문제 12건')과 table.md(1,002행)도 같은 옛 숫자다. 조사 지침(curriculum-items-brief.md)이 items.merged.json 을 입력으로 쓰라고 적고 있으므로 이대로 다음 단계를 돌리면 삭제한 항목을 다시 조사하게 된다. 재생성 필요.",
+    "[높음] 근거가 위키백과뿐인 항목 305건(988건의 31%, 확인됨). curriculum-items-brief.md 는 '위키백과는 좌표 보조로만' 이라고 못 박았는데 이 항목들은 연도·행위 근거까지 위키백과 하나로 버틴다. samguk·prehistoric-gojoseon 에 특히 몰려 있다.",
+    "[중간] evidence.ref 가 URL 이 아닌 텍스트인 항목 56건, 그중 21건은 evidence 가 전부 비URL 이라 클릭할 수 있는 출처가 하나도 없다(확인됨). nambukguk 35건(전부 비URL 21건 모두 여기), joseon-late 15건, prehistoric-gojoseon 6건. 예: nambukguk/hs-nambukguk-hyecho 의 ref 가 \"한국민족문화대백과사전 표제어 '혜초'\", prehistoric-gojoseon/hs-gojoseon-dangun-myth 의 ref 가 \"『삼국유사』 권1 기이 고조선(왕검조선)\". 같은 evidence 배열 안에서 URL 과 서지 표기가 섞여 스키마가 한 가지 형태가 아니다.",
+    "[중간] overseas 표기 위치가 두 가지다(확인됨). 해외 좌표 83건 중 71건은 place.overseas=true, 12건(goryeo-late 2·modern-transition 11 중 11건)은 항목 최상위 overseas=true 를 쓴다. README 가 지적한 12건을 고치면서 다른 필드 자리에 넣은 것으로 보인다 — 읽는 쪽이 한 자리만 보면 12건을 국내로 오인한다. 해외 좌표인데 표시가 아예 없는 항목은 0건.",
+    "[중간] samguk.json 에만 boundaryRule 키가 없다(확인됨, HEAD 부터 없던 것이라 이번 회차의 회귀는 아님). 다른 9개 파일은 모두 있다. samguk 은 676 경계를 쥔 칸이고 이번에 hs-samguk-unification-676('삼국 통일')을 되살렸는데(nambukguk 은 hs-nambukguk-munmuwang '문무왕(통일 이후)'로 시작), 그 분담 규칙이 어느 파일에도 적혀 있지 않다.",
+    "[중간] id 와 실제 대상이 어긋난 항목 3건(확인됨): hs-modern-transition-sin-chae-ho → 제목 '독사신론', hs-modern-transition-park-eun-sik → '유교구신론', hs-colonial-syngman-rhee → '구미 위원부'. 인물 중복을 없애면서 껍데기 id 를 재활용했다. 조사 단계에서 id 가 slug·entityId 로 쓰이므로 사람 id 가 저작·기구를 가리키면 person-* 엔티티가 잘못 붙는다.",
+    "[중간] 건수 상한이 깨진 칸 2개(확인됨). _critic 이 쓴 칸당 상한은 100±15%=115 인데 samguk 118, contemporary 116 이다. samguk 은 자기 changelog 에 '목표 상한(115) 초과 정리'라며 hs-samguk-danghangseong·hs-samguk-gyeongdang 을 지웠는데도 여전히 3건 초과다.",
+    "[낮음] changelog 가 개정 회차 표시 없이 이어 붙는 append-only 라 같은 id 에 서로 어긋나는 줄이 공존한다(확인됨). samguk: hs-samguk-gyebaek·hs-samguk-unification-676 이 remove 로 적혀 있는데 지금 파일에 둘 다 살아 있다(2회차에 지웠다가 3회차에 되살림). contemporary: hs-contemporary-three-lows-boom·hs-contemporary-hallyu 도 같은 모양. contemporary·colonial 은 '항목 상한에 닿아 반영 못 함'이라는 기각 줄 10개를 그대로 둔 채 뒤이어 17건·5건을 추가했다. changelog 항목에 revision 필드가 없어 어느 회차의 판단인지 읽을 수 없다.",
+    "[낮음] itemId 없이 파일 전체를 가리키는 changelog 줄 38개가 itemId:null 과 itemId:'*' 두 표기를 섞어 쓴다(확인됨, samguk 에 둘 다 있음).",
+    "[낮음] 추정 좌표 비율이 여전히 높다(확인됨). 전체 524/988(53%), contemporary 82%, colonial 70%, joseon-early 68%. 좌표가 빈 항목은 0건.",
+    "[낮음] 한 좌표에 카드가 몰려 있는 문제는 거의 그대로다(확인됨). goryeo-early 개경 한 점(126.554,37.972)에 47건, goryeo-late 39건, samguk 경주 24건, nambukguk 경주 22건. brief 가 '같은 도시 항목이 한 점에 겹치지 않게' 구체 장소를 찾으라고 요구한 부분이 아직 반영되지 않았다.",
+    "[낮음] 같은 파일 안에서 인물 카드와 사건·조직 카드가 같은 연도·같은 좌표를 쓰는 쌍이 남아 있다(확인됨): colonial/hs-colonial-kim-gu ↔ hs-colonial-patriotic-corps(1931, 121.4753/31.2206), colonial/hs-colonial-hong-beomdo ↔ hs-colonial-bongodong-battle(1920, 129.84/42.96), contemporary/hs-contemporary-yeo-unhyeong ↔ hs-contemporary-preparatory-committee(1945, 126.9856/37.5796).",
+    "[낮음] 2015 개정 성취기준을 쓰는 항목 9건이 modern-transition 에만 남아 있다(확인됨, [10한사02-01] 등). 나머지 979건은 2022 개정이라 한 파일 안에서 두 교육과정이 섞인다.",
+    "[정보] confidence:low 16건(samguk 6·joseon-late 7·joseon-early 2·nambukguk 1) — _critic 의 25건에서 줄었으나 연도·좌표 재확인 대상으로 남는다.",
+    "[정보] core 우선순위인데 evidence 가 1건뿐인 항목 26건 — brief 의 '핵심은 근거 3개' 기준에 미달."
+  ],
+  "cleanChecks": [
+    "필수 필드 누락 0건 (id, era, unit, title, type, year, place, sceneType, meaning, curriculum, textbookTerms, evidence, priority, confidence 전수 확인).",
+    "curriculum.verified=false 0건 — samguk 118건 전부 true 로 올라왔고 그 근거가 changelog 의 itemId:'*' 줄에 남아 있다(해냄에듀 교사용 지도서 전재본·충북교육청 공문 대조).",
+    "meaning 41자 초과 0건. 전체 분포 16~40자, 41자 항목도 0건(_critic 이 짚은 2건 모두 40자 이하로 줄었다).",
+    "evidence 배열이 비었거나 없는 항목 0건.",
+    "id 중복 0건, item.era 와 파일명 불일치 0건, place.lon/lat 결측 0건, year 비숫자 0건.",
+    "year 가 파일 range 밖인 항목 0건 (10개 파일 전수).",
+    "revision 을 올리지 않은 파일 0건 — 10개 파일 모두 HEAD 대비 올랐다(2→3 여섯 개, 2→4 네 개).",
+    "changelog 없는 변경 0건 — 추가·삭제 항목은 전부 대응하는 add/remove 줄이 있고, samguk 의 무기재 수정 55건도 curriculum.verified 일괄 변경이라 itemId:'*' 줄이 덮는다.",
+    "해외 좌표인데 표시가 아예 없는 항목 0건 (README 가 적은 12건 전부 표시됨)."
+  ],
+  "summary": "10개 파일 988건을 전수 다시 읽고 HEAD 판본과 항목 단위로 대조했다. 정리 자체는 거의 끝났다 — revision 은 10개 파일 모두 올랐고, curriculum.verified=false 는 0건(samguk 118건이 모두 true 로 올라옴), meaning 41자 초과·evidence 없음·필수 필드 누락·id 중복·range 밖 연도·해외 표시 누락이 전부 0건이며, _critic 이 짚은 제목 중복 10건과 시대 경계 중복 15쌍 중 14쌍이 실제로 해소됐다. 남은 시대 간 중복은 사실상 동양 척식 주식회사 1건(좌표까지 같은 두 장 + 부산지점까지 3장)이고, 비변사와 과거제는 시대 분담이 의도된 것으로 보이나 boundaryRule 에 규칙이 없어 판단이 필요하다. 동명이인 3쌍(성종·숙종·무왕)은 모두 제목에 나라를 적어 구분됐다. 다음 단계로 넘기기 전 반드시 고칠 것은 세 가지다 — items.merged.json·README.md·table.md 가 982건 옛 판본이라 지금 파일과 46건 어긋나는 점(조사 지침이 merged 를 입력으로 쓴다), 근거가 위키백과뿐인 항목 305건과 클릭 가능한 출처가 아예 없는 21건, 그리고 overseas 표기가 두 자리로 갈린 점·samguk 의 boundaryRule 누락·id 와 대상이 어긋난 3건 같은 스키마 불일치다."
+}
