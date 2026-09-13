@@ -1,0 +1,128 @@
+{
+  "issue": 188,
+  "tool": "image_gen.imagegen",
+  "generator": "codex gpt-6-astra",
+  "modelNote": "The built-in tool does not expose its underlying image model/version; model records the actual tool name.",
+  "optionsNote": "Only prompt was supplied; requested dimensions are prompt instructions, not dedicated size/format parameters. No reference images were supplied.",
+  "pillow": {
+    "version": "12.3.0",
+    "installation": "pip --target .tmp-ai-images/pillow Pillow; temporary worktree dependency removed after validation",
+    "initialError": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'PIL'\n"
+  },
+  "runs": [
+    {
+      "id": "sejong-hunminjeongeum-1446",
+      "tool": "image_gen.imagegen",
+      "arguments": {
+        "prompt": "Educational textbook illustration in realistic light ink-and-watercolor washes, soft natural light, restrained harmonious colors and subtle paper texture. Carefully depict Joseon Korea of the 15th–16th centuries: period-appropriate tiled roofs, dancheong, hanbok and armor as applicable. No readable text, letters, captions, logos or watermarks. No graphic violence or blood.\n\nImagine the promulgation of Hunminjeongeum in 1446 in the courtyard of Geunjeongjeon at Gyeongbokgung Palace. King Sejong and scholars of the Hall of Worthies gather around an unfurled scroll. Suggest the presence of early Hangul jamo only through blurred abstract ink marks, never recognizable glyphs or actual rendered text. Reimagine the 15th-century palace rather than claiming an exact reconstruction or a documented ceremony. Landscape composition, requested 1536 x 1024 pixels, a single illustration."
+      },
+      "dedicatedSizeOption": null,
+      "dedicatedFormatOption": null,
+      "requestedSize": "1536x1024",
+      "outputFormat": "PNG",
+      "elapsedSeconds": 42.89,
+      "generatedAt": "2026-09-13T15:01:02.096Z",
+      "status": "succeeded",
+      "error": null,
+      "outputWidth": 1536,
+      "outputHeight": 1024,
+      "conversion": {
+        "id": "sejong-hunminjeongeum-1446",
+        "file": "sejong-hunminjeongeum-1446.jpg",
+        "width": 1024,
+        "height": 683,
+        "bytes": 175672,
+        "quality": 85,
+        "preview": "sejong-hunminjeongeum-1446-512.jpg",
+        "previewWidth": 512,
+        "previewHeight": 341,
+        "previewBytes": 52701,
+        "previewQuality": 85
+      }
+    },
+    {
+      "id": "sejong-portrait",
+      "tool": "image_gen.imagegen",
+      "arguments": {
+        "prompt": "Educational textbook illustration in realistic light ink-and-watercolor washes, soft natural light, restrained harmonious colors and subtle paper texture. Carefully depict Joseon Korea of the 15th–16th centuries: period-appropriate tiled roofs, dancheong, hanbok and armor as applicable. No readable text, letters, captions, logos or watermarks. No graphic violence or blood.\n\nAn imagined half-length portrait of King Sejong as a 15th-century Joseon king wearing a gonryongpo dragon robe and an ikseongwan royal hat. Invent an individual face; do not resemble any identifiable modern person, actor, or the official standardized portrait of Sejong. Calm dignified expression, softly suggested palace background, period-appropriate clothing. This is an imaginative educational portrait, not an authentic likeness. Portrait composition, requested 1024 x 1536 pixels, a single illustration."
+      },
+      "dedicatedSizeOption": null,
+      "dedicatedFormatOption": null,
+      "requestedSize": "1024x1536",
+      "outputFormat": "PNG",
+      "elapsedSeconds": 27.968,
+      "generatedAt": "2026-09-13T15:01:53.374Z",
+      "status": "succeeded",
+      "error": null,
+      "outputWidth": 1024,
+      "outputHeight": 1536,
+      "conversion": {
+        "id": "sejong-portrait",
+        "file": "sejong-portrait.jpg",
+        "width": 683,
+        "height": 1024,
+        "bytes": 170024,
+        "quality": 85,
+        "preview": "sejong-portrait-512.jpg",
+        "previewWidth": 341,
+        "previewHeight": 512,
+        "previewBytes": 48786,
+        "previewQuality": 85
+      }
+    },
+    {
+      "id": "hansando-1592",
+      "tool": "image_gen.imagegen",
+      "arguments": {
+        "prompt": "Educational textbook illustration in realistic light ink-and-watercolor washes, soft natural light, restrained harmonious colors and subtle paper texture. Carefully depict Joseon Korea of the 15th–16th centuries: period-appropriate tiled roofs, dancheong, hanbok and armor as applicable. No readable text, letters, captions, logos or watermarks. No graphic violence or blood.\n\nAn imagined scene of the Battle of Hansando in 1592 on the southern Korean sea. Show Joseon panokseon warships spreading into a clearly readable broad crane-wing crescent formation, with a modest number of turtle ships and small Joseon naval crew figures. Wooden Korean warships with oars and period-appropriate sails; turtle ships have enclosed covered decks, not modern metal battleship hulls. Japanese ships remain small in the far distance. Elevated wide view with coastal islands and ample open water so the formation is visible. No gore, casualties or readable flag markings. Landscape composition, requested 1536 x 1024 pixels, a single illustration."
+      },
+      "dedicatedSizeOption": null,
+      "dedicatedFormatOption": null,
+      "requestedSize": "1536x1024",
+      "outputFormat": "PNG",
+      "elapsedSeconds": 44.351,
+      "generatedAt": "2026-09-13T15:04:05.337Z",
+      "status": "succeeded",
+      "error": null,
+      "outputWidth": 1536,
+      "outputHeight": 1024,
+      "conversion": {
+        "id": "hansando-1592",
+        "file": "hansando-1592.jpg",
+        "width": 1024,
+        "height": 683,
+        "bytes": 197311,
+        "quality": 85,
+        "preview": "hansando-1592-512.jpg",
+        "previewWidth": 512,
+        "previewHeight": 341,
+        "previewBytes": 52148,
+        "previewQuality": 85
+      }
+    }
+  ],
+  "generationFailures": [],
+  "generationRefusals": [],
+  "sourceReferences": [
+    {
+      "title": "훈민정음 — 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065805"
+    },
+    {
+      "title": "한산도대첩 — 한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061676"
+    }
+  ],
+  "verification": {
+    "unitTests": "6 passed",
+    "actualJpegs": "6 decoded; dimensions, bytes, format, index values and exact prompts match",
+    "visualInspection": "All three generated PNGs and six final JPEGs inspected. Soft watercolor tone, blurred scroll marks, imagined portrait and naval crescent visible; no readable captions, watermark or graphic violence observed.",
+    "readmeLines": 10,
+    "totalJpegBytes": 696642
+  },
+  "notRun": [
+    "Expert review of historical clothing, architecture and ship details",
+    "Systematic face comparison against modern people and the standardized Sejong portrait",
+    "Card UI, browser integration and deployment (outside pilot scope)"
+  ]
+}
