@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {isEstimatedSite,setEstimatedMesh} from './scenery-estimated-dim.js';
 
 export function pathSegmentClear(a,b,occupied){
   const dx=b.x-a.x,dz=b.z-a.z,length2=dx*dx+dz*dz;
@@ -14,6 +15,9 @@ export class CountrysidePaths{
     this.world=world;this.routes=[];this.cells=new Map();
     this.mesh=new THREE.Mesh(new THREE.BufferGeometry(),new THREE.MeshStandardMaterial({color:'#a18b62',roughness:1,side:THREE.DoubleSide}));
     this.mesh.name='scenery-lanes';this.mesh.receiveShadow=true;
+    this.estimatedMesh=new THREE.Mesh(new THREE.BufferGeometry(),this.mesh.material);
+    this.estimatedMesh.name='scenery-lanes';this.estimatedMesh.receiveShadow=true;
+    this.estimatedMesh.userData.estimatedBackground=true;setEstimatedMesh(this.estimatedMesh,true);
     const seen=new Set();
     for(const a of sites){
       const nearby=sites.filter(b=>b!==a).map(b=>({b,d:Math.hypot(a.x-b.x,a.z-b.z)})).filter(p=>p.d<150).sort((p,q)=>p.d-q.d).slice(0,2);
@@ -44,9 +48,12 @@ export class CountrysidePaths{
       route.active=route.segments.some(Boolean);
     }
     const key=this.routes.map(r=>r.segments.map(v=>v?'1':'0').join('')).join('|');if(key===this.key)return;this.key=key;
-    const positions=this.routes.flatMap(r=>r.segments.flatMap((active,i)=>active?r.positions.slice(i*18,(i+1)*18):[]));
-    const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.computeVertexNormals();
-    this.mesh.geometry.dispose();this.mesh.geometry=g;
+    for(const [estimated,mesh] of [[false,this.mesh],[true,this.estimatedMesh]]){
+      const positions=this.routes.filter(r=>(isEstimatedSite(r.a)||isEstimatedSite(r.b))===estimated)
+        .flatMap(r=>r.segments.flatMap((active,i)=>active?r.positions.slice(i*18,(i+1)*18):[]));
+      const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.computeVertexNormals();
+      mesh.geometry.dispose();mesh.geometry=g;
+    }
   }
   near(x,z,margin){
     const cx=Math.floor(x/8),cz=Math.floor(z/8);

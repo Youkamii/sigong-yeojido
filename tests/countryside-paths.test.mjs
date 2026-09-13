@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 const source=(await readFile(new URL('../services/host/app/chronicle-paths.js',import.meta.url),'utf8')).replace("'three'",JSON.stringify(new URL('../services/host/vendor/three.module.min.js',import.meta.url).href));
-const {CountrysidePaths,pathSegmentClear}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+const {CountrysidePaths,pathSegmentClear}=await import('data:text/javascript;base64,'+Buffer.from(source.replace("'./scenery-estimated-dim.js'",JSON.stringify(new URL('../services/host/app/scenery-estimated-dim.js',import.meta.url).href))).toString('base64'));
 test('active urban core cuts only intersecting rural street segments and restores on seeking back',()=>{
   const world={surfaceAt:()=>0,contains:()=>true};
   const paths=new CountrysidePaths(world,[{id:'west',x:-30,z:0,seed:50},{id:'east',x:30,z:0,seed:50}]);

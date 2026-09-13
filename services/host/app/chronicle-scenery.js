@@ -9,6 +9,7 @@ import {planUrbanSites} from './urban-regions.js';
 import {buildSettlementZones} from './inhabited-zones.js';
 import {sceneBudget} from './scene-quality.js';
 import {occupancyGrid} from './occupancy-grid.js';
+import {isEstimatedSite,inEstimatedSite,setEstimatedMesh,markEstimatedGroup} from './scenery-estimated-dim.js';
 
 export async function loadWorldFactLayers(world){
   if(!world.factLayers){
@@ -66,7 +67,8 @@ export class ChronicleScenery{
     this.assets=assets;this.world=assets.world;this.group=new THREE.Group();this.group.name='decorative-scenery';assets.engine.add(this.group);
     this.urbanSites=planUrbanSites(this.world);this.sites=[...planSettlementSites(this.world,buildSettlementZones(this.world.scenePackets||[],this.world.coordinateRegistry||{},this.world.places||[],this.world.factLayers)),...planEstimatedSites(this.world),...this.urbanSites];this.estimatedIds=new Set();this.cells=[];this.occupied=[];this.areaOccupied=this.occupied;this.wildlife=[];this.showPaths=true;this.detailCache=new Map();this.houseScales=new Map();
     this.stats={villages:this.sites.length,houses:0,fields:0,tigers:0,ready:false,modelBuilds:0};
-    this.paths=new CountrysidePaths(this.world,this.sites.filter(s=>s.kind!=='urban'));this.group.add(this.paths.mesh);
+    this.estimatedDim=true;
+    this.paths=new CountrysidePaths(this.world,this.sites.filter(s=>s.kind!=='urban'));this.group.add(this.paths.mesh,this.paths.estimatedMesh);
     this.quality=assets.engine.quality;
     globalThis.window?.addEventListener('fan:quality',()=>this.setQuality());
   }
@@ -85,7 +87,12 @@ export class ChronicleScenery{
   point(site,x,z){const c=Math.cos(site.angle),s=Math.sin(site.angle);return [site.x+x*c+z*s,site.z-x*s+z*c];}
   activeSites(){const year=this.stats.year;return this.sites.filter(s=>settlementSiteActive(s,year)).map(s=>settlementSiteForYear(s,year));}
   available(site){return site.id?.startsWith('settlement-region:')||site.kind==='urban'||this.occupied.every(o=>Math.hypot(site.x-o.x,site.z-o.z)>o.radius);}
-  setDisplay(visible,paths){this.group.visible=visible;this.showPaths=paths;this.group.traverse(o=>{if(o.name==='scenery-lanes')o.visible=paths;});}
+  setDisplay(visible,paths,estimatedDim=this.estimatedDim!==false){
+    this.group.visible=visible;this.showPaths=paths;this.estimatedDim=estimatedDim;
+    this.group.traverse(o=>{if(o.name==='scenery-lanes')o.visible=paths;if(o.userData.estimatedBackground)setEstimatedMesh(o,estimatedDim);});
+    this.assets.forest?.traverse(o=>{if(o.userData.estimatedBackground)setEstimatedMesh(o,estimatedDim);});
+  }
+  backgroundSites(){return (this.landscapeCells||[]).map(c=>c.site);}
   sync(occupied,areaOccupied=occupied){
     this.occupied=occupied;this.areaOccupied=areaOccupied;this.clearings=[...this.activeSites(),...this.wildlife].filter(s=>this.available(s));
     // Keep the original scene radii in the refresh key and in forest/path clearances.
@@ -150,6 +157,8 @@ export class ChronicleScenery{
     this.stats.farDraws=overview.children.length;this.stats.farTriangles=overview.children.reduce((n,m)=>n+m.geometry.attributes.position.count/3,0);this.stats.period=this.period.id;this.stats.ready=true;
     this.stats.refreshedSites=changedSites.length;this.stats.reusedSites=retained.size;this.stats.refreshMs=performance.now()-started;
     this.stats.quality=this.quality;
+    for(const c of this.cells||[])markEstimatedGroup(c.group,inEstimatedSite(c.site.x,c.site.z,this.backgroundSites()),this.estimatedDim!==false);
+    if(this.assets.forestOccupied)this.assets.buildForest([...this.assets.forestOccupied,...this.clearings],this.assets.forestScenes);
     this.setDisplay(this.group.visible,this.showPaths);
   }
   buildDetail(cell){
@@ -173,7 +182,7 @@ export class ChronicleScenery{
     }
     add('human',0,2,.23);add('handcart',2,0,.18);
     const field=this.assets.field(recipes.filter(Boolean),anchors,{regional:false});field.group.position.set(site.x,0,site.z);field.group.rotation.y=site.angle;
-    this.assets.engine._tagShadows(field.group);this.group.add(field.group);const detail={site,indices:houses.map(h=>h.index),group:field.group,animated:field.animated};this.detailCache.set(site.id,detail);this.stats.modelBuilds++;return detail;
+    this.assets.engine._tagShadows(field.group);markEstimatedGroup(field.group,isEstimatedSite(site),this.estimatedDim!==false);this.group.add(field.group);const detail={site,indices:houses.map(h=>h.index),group:field.group,animated:field.animated};this.detailCache.set(site.id,detail);this.stats.modelBuilds++;return detail;
   }
   buildUrbanDetail({site,layout}){
     // Keep the merged building body visible at both distances; only add facade

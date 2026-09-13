@@ -20,7 +20,7 @@ export function sceneDestinationOptions(rows){
 export class ChronicleScene {
   constructor(host,onSelect){
     this.host=host;this.onSelect=onSelect;this.markers=[];
-    this.display={regions:true,geography:true,morePlaces:false,territories:true,siteNames:false,siteBackground:false,people:true,events:true,scenery:true,forest:true,paths:true};
+    this.display={regions:true,geography:true,morePlaces:false,territories:true,siteNames:false,siteBackground:false,people:true,events:true,scenery:true,estimatedDim:true,forest:true,paths:true};
     this.traditionId='';
     try{const saved=JSON.parse(localStorage.getItem('sigong-map-display-v1')||'{}');for(const key in this.display)if(typeof saved[key]==='boolean')this.display[key]=saved[key];}catch{}
     for(const input of document.querySelectorAll('[data-map-display]')){
@@ -42,7 +42,7 @@ export class ChronicleScene {
   applyDisplay(){
     this.layoutKey=null;
     if(this.world?.geography)this.world.geography.display=this.display;
-    if(this.assets?.scenery)this.assets.scenery.setDisplay(this.display.scenery,this.display.paths);
+    if(this.assets?.scenery)this.assets.scenery.setDisplay(this.display.scenery,this.display.paths,this.display.estimatedDim);
     if(this.assets?.forest)this.assets.forest.visible=this.display.forest;
     this.world?.territories?.setDisplay(this.display.territories);
     const paths=this.assets?.group.getObjectByName('settlement-footpaths');if(paths)paths.visible=this.display.paths;
