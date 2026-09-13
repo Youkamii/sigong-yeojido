@@ -1,0 +1,2943 @@
+{
+  "job": "prehistoric-gojoseon",
+  "era": "prehistoric-gojoseon",
+  "range": [
+    -700000,
+    -57
+  ],
+  "revision": 2,
+  "generatedBy": "claude-opus-5 high",
+  "changelog": [
+    {
+      "itemId": "hs-prehistoric-buyeo-dongmyeong",
+      "action": "remove",
+      "reason": "A-minor 반영. 부여 시조 '동명'은 2022·2015 개정 고등 한국사 교과서 본문 용어가 아니고 근거도 『논형』·『위략』 원문뿐이라 삭제. 건국 전승은 hs-prehistoric-buyeo 의 notes 로 흡수"
+    },
+    {
+      "itemId": "hs-gojoseon-wiman-seizure",
+      "action": "remove",
+      "reason": "E-minor 반영. hs-gojoseon-wiman 과 좌표·연도·근거가 같고 사실상 한 사건이라 삭제하고 '철기 문화 본격 수용'이라는 핵심을 hs-gojoseon-wiman 의 meaning·textbookTerms 로 옮김"
+    },
+    {
+      "itemId": "hs-prehistoric-buyeo-sachulto",
+      "action": "remove",
+      "reason": "E-major 반영(옵션 2). 지도 카드 단위를 '나라'로 통일해 상위 나라 항목에 흡수. 사출도·마가·우가·저가·구가·대사자·사자는 hs-prehistoric-buyeo 의 textbookTerms 로 남김"
+    },
+    {
+      "itemId": "hs-prehistoric-buyeo-laws",
+      "action": "remove",
+      "reason": "E-major 반영(옵션 2). hs-prehistoric-buyeo 에 흡수. 1책 12법·순장·형사취수제·우제점법은 상위 항목 textbookTerms 로 남김"
+    },
+    {
+      "itemId": "hs-prehistoric-goguryeo-jega-council",
+      "action": "remove",
+      "reason": "E-major·D-minor 동시 반영(옵션 2). hs-prehistoric-early-goguryeo 에 흡수. 제가 회의·서옥제·대가·사자·조의·선인을 상위 항목 textbookTerms 로 남기면서 파일에 하나뿐이던 2015 개정 성취기준 코드 문제도 함께 사라짐"
+    },
+    {
+      "itemId": "hs-prehistoric-okjeo-customs",
+      "action": "remove",
+      "reason": "E-major 반영(옵션 2). hs-prehistoric-okjeo 에 흡수. 민며느리제·가족 공동 무덤·골장제는 상위 항목에 이미 있음"
+    },
+    {
+      "itemId": "hs-prehistoric-dongye-chaekhwa",
+      "action": "remove",
+      "reason": "E-major 반영(옵션 2). hs-prehistoric-dongye 에 흡수. 책화·족외혼은 상위 항목에 이미 있음"
+    },
+    {
+      "itemId": "hs-prehistoric-iron-diffusion",
+      "action": "edit",
+      "reason": "D-major·C-minor 반영. sceneType 'kiln' 은 병합기 SCENE_TYPES 밖이라 'construction'(쇠를 벼리는 장면)으로 바꾸고 가마 성격은 sceneFunction 'kiln' 으로 남김. yearNote 를 year -400 에 맞춰 '기원전 4세기'로 좁히고 yearEnd -1 → -57 로 잘라 시대 칸 안에 가둠"
+    },
+    {
+      "itemId": "hs-prehistoric-early-goguryeo",
+      "action": "edit",
+      "reason": "D-major·C-major·E-major 반영. sceneType 'fortress' → 'settlement'(같은 좌표의 assembly 카드와 겹치지 않게), 산성 성격은 sceneFunction 으로 남김. 근거 없던 year -75 에 '기원전 75년 현도군 치소 이동' 근거(위키백과 현도군)를 달아 추적 가능하게 하고, 제가 회의·서옥제 하위 카드를 흡수"
+    },
+    {
+      "itemId": "hs-prehistoric-buyeo",
+      "action": "edit",
+      "reason": "A-minor·E-major 반영. yearEnd 494 → -57 로 잘라 뷰어가 이 카드를 삼국 칸까지 끌고 가지 않게 하고, 사출도·1책 12법 하위 카드를 흡수해 textbookTerms 로 정리"
+    },
+    {
+      "itemId": "hs-prehistoric-okjeo",
+      "action": "edit",
+      "reason": "E-major 반영. 하위 풍습 카드를 흡수하고 근거의 교육과정 판을 note 에 밝힘"
+    },
+    {
+      "itemId": "hs-prehistoric-dongye",
+      "action": "edit",
+      "reason": "E-major 반영. 하위 풍습 카드를 흡수하고 근거의 교육과정 판을 note 에 밝힘"
+    },
+    {
+      "itemId": "hs-prehistoric-dahori-brush",
+      "action": "edit",
+      "reason": "C-minor·D-minor 반영. 좌표를 실제 위치(128.6708/35.2986)로 1.6km 보정하고 지번을 채움. 국가유산포털 링크를 옛 VdkVgwKey 형식에서 현행 ccbaCpno 형식으로 갱신하고 공식 명칭·사적 번호를 note 에 병기"
+    },
+    {
+      "itemId": "hs-prehistoric-slim-dagger-mold",
+      "action": "edit",
+      "reason": "C-minor 반영. place 가 송국리(청동기, 청동도끼 거푸집) 좌표를 그대로 복사해 세형동검 거푸집의 근거가 되지 못했다. 실제로 세형동검 거푸집이 나온 완주 갈동 유적으로 옮기고 근거도 우리역사넷 갈동 유적·보물 지정 자료로 교체. 출토품 편년(기원전 2세기)에 맞춰 year -300 → -200"
+    },
+    {
+      "itemId": "hs-prehistoric-bronze-age-begins",
+      "action": "edit",
+      "reason": "C-minor 반영. 신석기(yearEnd -1500)와 청동기(year -2000) 구간이 500년 겹쳐 타임라인에 배경 카드 두 장이 동시에 뜨던 문제를 한반도 기준으로 통일해 없앰. 만주 기준은 yearNote 에 남김"
+    },
+    {
+      "itemId": "hs-prehistoric-ganghwa-dolmens",
+      "action": "edit",
+      "reason": "C-minor 반영. core 항목인데 없던 year -700 의 근거 메모를 달아 다른 고인돌 항목과 근거 수준을 맞춤"
+    },
+    {
+      "itemId": "hs-gojoseon-han-commanderies",
+      "action": "edit",
+      "reason": "C-minor 2건 반영. 『한서』 지리지 출전 표기를 '낙랑군 조' → '연군(燕郡) 조'로 바로잡고, 임둔군 설치 연도를 단정하지 않도록 yearNote 를 확실한 것만 적게 고친 뒤 한사군 연도 근거를 추가"
+    },
+    {
+      "itemId": "hs-gojoseon-eight-laws",
+      "action": "edit",
+      "reason": "C-minor 반영. 같은 출전을 쓰는 항목에 '낙랑군 조' 오표기가 퍼지지 않도록 연군(燕郡) 조로 바로잡음"
+    },
+    {
+      "itemId": "hs-gojoseon-lelang-society-change",
+      "action": "edit",
+      "reason": "C-minor 반영. 『한서』 지리지 출전 표기를 연군(燕郡) 조로 바로잡음"
+    },
+    {
+      "itemId": "hs-gojoseon-yan-jingae-invasion",
+      "action": "edit",
+      "reason": "A-minor 반영. '진개'·'만번한'은 고등 한국사 교과서 본문 용어가 아니라 한능검 고급·전공 수준이므로 제목에서 인명을 빼고 priority 를 standard → extended 로 내림. 두 용어는 notes 로 옮김"
+    },
+    {
+      "itemId": "hs-gojoseon-wiman",
+      "action": "edit",
+      "reason": "E-minor 반영. 삭제한 hs-gojoseon-wiman-seizure 의 핵심('철기 문화 본격 수용', 정변)을 core 인 이 인물 카드로 옮김"
+    },
+    {
+      "itemId": "hs-gojoseon-dangun",
+      "action": "edit",
+      "reason": "E-minor 반영(제시된 두 방안 중 '인물 카드 유지' 쪽). 단군은 필수 앵커이고 이 시대 칸에 인물 카드가 적어 삭제 대신 meaning 을 제정일치 한 가지로 좁히고 신화 카드와 겹치던 용어를 덜어 냄"
+    },
+    {
+      "itemId": "hs-gojoseon-dangun-myth",
+      "action": "edit",
+      "reason": "E-minor 반영. 단군왕검 카드가 맡은 제정일치 설명을 빼 두 카드의 내용이 겹치지 않게 함"
+    },
+    {
+      "itemId": "hs-prehistoric-amsadong",
+      "action": "edit",
+      "reason": "E-minor 반영(제시된 두 방안 중 '암사동 meaning 좁히기' 쪽). 빗살무늬 토기를 실제 출토지에서 떼어 국립중앙박물관 좌표로 옮기면 지도의 역사적 의미가 흐려지므로, 토기 카드는 암사동에 두고 마을터 카드 쪽 설명을 움집으로 좁힌 뒤 place.clusterId 로 화면에서 펼치게 함"
+    },
+    {
+      "itemId": null,
+      "action": "keep",
+      "reason": "D-minor(국가유산포털 링크) 일부 기각. ccbaCpno 형식 링크 4건은 지적과 달리 현행 국가유산포털에서 그대로 열리는 현재 형식임을 검색으로 확인해 URL 은 유지했다. 다만 지적의 취지대로 사적 지정번호를 evidence.note 에 모두 병기해 링크가 죽어도 추적되게 했고, 정말 구형이던 다호리 VdkVgwKey 링크는 갱신했다"
+    },
+    {
+      "itemId": null,
+      "action": "keep",
+      "reason": "D-minor(근거 출처 격) 부분 반영. 6·7차 교육과정 국사 페이지(ta_h61_/ta_h71_)를 쓴 근거에는 note 에 '6차 교육과정 국사 페이지, 보조 근거'임을 밝히고 curriculumSources 에 NCIC 원문 PDF 화면과 우리역사넷 한국사 연대기를 추가했다. NCIC PDF 본문은 이번에도 직접 열지 못해 미확인으로 표시했다"
+    },
+    {
+      "itemId": "hs-gojoseon-junwang",
+      "action": "keep",
+      "reason": "E-minor 의 '준왕 카드 병합 검토' 는 기각. hs-gojoseon-junwang(왕검성, 평양)과 hs-gojoseon-jun-migration-south(익산 일대 남하)는 좌표가 서로 다른 지점이라 지도에서 겹치지 않고, 남하는 삼한과 이어지는 별도 사건이다"
+    },
+    {
+      "itemId": "hs-prehistoric-spindle-whorl",
+      "action": "add",
+      "reason": "B-major 반영. 교과서가 신석기 생활에서 농경·토기·움집과 나란히 반드시 넣는 원시 수공업(가락바퀴·뼈바늘)이 57건 어디에도 없어 새 항목으로 추가"
+    },
+    {
+      "itemId": "hs-prehistoric-wooden-coffin-jar-burial",
+      "action": "add",
+      "reason": "B-major 반영. 청동기 고인돌에 이어 초기 철기 무덤 변화로 반드시 다루는 널무덤(목관묘)·독무덤(옹관묘)이 빠져 있어 추가. 좌표는 위키백과 창원 다호리 고분군 값(35.29861/128.67083)으로 확인"
+    },
+    {
+      "itemId": "hs-prehistoric-durubong-cave",
+      "action": "add",
+      "reason": "B-minor 반영. 교과서 구석기 유적 지도에 실리는 동굴 유적이 하나도 없었다. 소재지·좌표를 디지털청주문화대전에서 확인(문의면 노현리 산57-1, 북위 36°30′35″ 동경 127°32′21″)해 검수의 추정 좌표를 보정"
+    },
+    {
+      "itemId": "hs-prehistoric-coarse-mirror-ritual-bronze",
+      "action": "add",
+      "reason": "B-minor 반영. 잔무늬 거울(초기 철기) 앞 단계인 거친무늬 거울과 군장의 제사 권위를 보여 주는 청동 의기가 빠져 있어 추가. 출토 유적·유물 구성을 위키백과 대전 괴정동 유적과 우리역사넷 이형동기 항목으로 확인"
+    },
+    {
+      "itemId": "hs-prehistoric-neolithic-clan-society",
+      "action": "add",
+      "reason": "B-minor 반영. 청동기 '계급 발생' 카드의 짝이 되는 신석기 평등 사회가 없어 교과서의 '평등 → 계급' 축이 반쪽이었다"
+    },
+    {
+      "itemId": "hs-prehistoric-samhan-rice-reservoir",
+      "action": "add",
+      "reason": "B-minor 반영. 삼한 항목이 정치(신지·읍차)와 철만 다루고 교과서가 삼한 경제로 반드시 적는 벼농사·저수지·두레가 빠져 있었다"
+    },
+    {
+      "itemId": null,
+      "action": "edit",
+      "reason": "D-major(좌표 중복) 반영. 왕검성 한 점에 포개지던 카드는 좌표를 거짓으로 흩뜨리지 않고 place.clusterId 로 묶어 뷰어가 나선형으로 펼치게 했다(wanggeomseong 11건, amsadong 4건, songgukri 3건 등 10개 묶음). 부여(지린)·졸본·동예 묶음은 하위 풍습 카드를 흡수하면서 겹침 자체가 사라졌다"
+    }
+  ],
+  "curriculumSources": [
+    {
+      "title": "2022 개정 교육과정 사회과(고등학교 한국사1) 성취기준 정리",
+      "url": "https://namu.wiki/w/2022%20%EA%B0%9C%EC%A0%95%20%EA%B5%90%EC%9C%A1%EA%B3%BC%EC%A0%95/%EC%82%AC%ED%9A%8C%EA%B3%BC/%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90/%ED%95%9C%EA%B5%AD%EC%82%AC",
+      "note": "교육부 고시 제2022-33호 [별책 7] 사회과 교육과정을 옮긴 공개 자료. 한국사1 대단원 (1) 근대 이전 한국사의 이해, 성취기준 [10한사1-01-01] '고대 국가의 형성과 성장 과정을 파악한다.'와 그 해설(한반도와 그 주변 지역의 선사 문화를 유적·유물을 통해 이해)을 확인. NCIC 원문 PDF는 이번 조사에서 직접 열지 못함"
+    },
+    {
+      "title": "2015 개정 교육과정 고등학교 한국사 성취기준 정리",
+      "url": "https://namu.wiki/w/2015%20%EA%B0%9C%EC%A0%95%20%EA%B5%90%EC%9C%A1%EA%B3%BC%EC%A0%95/%EC%82%AC%ED%9A%8C%EA%B3%BC/%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90/%ED%95%9C%EA%B5%AD%EC%82%AC",
+      "note": "교육부 고시 제2015-74호 [별책 7]을 옮긴 공개 자료. 대단원 '전근대 한국사의 이해', 성취기준 [10한사01-01] '고대 국가의 성립·발전 과정을 파악하고, 지배 체제의 성격을 이해한다.' 확인"
+    },
+    {
+      "title": "우리역사넷 - 고조선의 성장과 변천 (교과서 연계 서술)",
+      "url": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+      "note": "국사편찬위원회 공개 서비스. 위만 집권(기원전 194), 왕검성 함락과 고조선 멸망(기원전 108) 연도 확인"
+    },
+    {
+      "title": "우리역사넷 - (3) 여러 나라의 성장",
+      "url": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h61_0030_0020_0030",
+      "note": "부여·고구려·옥저·동예·삼한의 정치·풍습·제천 행사 항목 범위 확인"
+    },
+    {
+      "title": "우리역사넷 - 사료로 본 한국사: 고조선의 범금 8조",
+      "url": "https://contents.history.go.kr/mobile/mid/hm_001_0060?tabId=e",
+      "note": "『한서』 권28하 「지리지」8하 연군(燕郡) 조 — 고조선의 범금 8조와 낙랑군 설치 뒤 법금 60여 조 기사. 교과서 용어 '8조법/8조의 법' 표기 확인(출전 표기를 '낙랑군 조'에서 바로잡음)"
+    },
+    {
+      "title": "우리역사넷 - 여러 나라의 성장 요약정리표",
+      "url": "https://contents.history.go.kr/eh_kk/teach/notebook/data/05_d01_1.htm",
+      "note": "영고(12월)·동맹(10월)·무천(10월)·수릿날(5월)·계절제(10월) 제천 행사 대조표"
+    },
+    {
+      "title": "국가교육과정정보센터(NCIC) — 2022 개정 사회과 교육과정 [별책 7]",
+      "url": "https://ncic.re.kr/mobile.dwn.ogf.inventoryList.do",
+      "note": "교육부 고시 제2022-33호 원문 PDF 내려받기 화면. 이번 조사에서도 PDF 본문을 직접 열지 못해 성취기준 문장은 공개 정리본으로 확인했다. 범위 판정의 1차 근거로 삼되 미확인 상태임을 밝힌다"
+    },
+    {
+      "title": "우리역사넷 - 한국사 연대기(유적·유물)",
+      "url": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_r000650",
+      "note": "완주 갈동 유적 등 초기 철기 유적·유물 해설. 6·7차 교육과정 국사 교과서 페이지(ta_h61_/ta_h71_)는 보조 근거로 내리고 evidence.note 에 교육과정 판을 밝혀 둔다"
+    }
+  ],
+  "items": [
+    {
+      "id": "hs-prehistoric-paleolithic-begins",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "구석기 시대의 시작",
+      "type": "culture",
+      "year": -700000,
+      "yearEnd": -10000,
+      "approx": true,
+      "yearNote": "한반도 구석기 유적의 상한을 약 70만 년 전으로 보는 교과서 서술",
+      "place": {
+        "label": "한반도와 만주 일대",
+        "modern": "대한민국·중국 동북 지역",
+        "lon": 127.065,
+        "lat": 38.012,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "뗀석기를 쓰며 사냥과 채집으로 살던 가장 오랜 시기",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "구석기 시대",
+        "뗀석기",
+        "동굴",
+        "막집",
+        "이동 생활"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r000640&code=kc_age_10",
+          "note": "우리역사넷 한국사 연대기 - 연천 전곡리 유적(구석기 문화 개관 포함)"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%97%B0%EC%B2%9C_%EC%A0%84%EA%B3%A1%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+          "note": "구석기 유적의 위치·연대"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "좌표는 대표 유적(전곡리)에 임시로 붙인 것. 화면에서는 시대 배경 카드로 쓰는 편이 자연스럽다"
+    },
+    {
+      "id": "hs-prehistoric-jeongokri-handaxe",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "연천 전곡리 유적과 주먹도끼",
+      "type": "heritage",
+      "year": -300000,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "아슐리안형 주먹도끼 출토층의 연대 추정폭이 넓다(수십만 년 전)",
+      "place": {
+        "label": "연천 전곡리 유적",
+        "modern": "경기도 연천군 전곡읍 전곡리 178-1",
+        "lon": 127.0655,
+        "lat": 38.0117,
+        "coordinateBasis": "wikipedia"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "동아시아에서 처음 나온 아슐리안형 주먹도끼가 묻혀 있던 곳",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "주먹도끼",
+        "아슐리안형 석기",
+        "한탄강",
+        "사적"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1333102680000",
+          "note": "국가유산포털 - 사적 제268호 연천 전곡리 유적(1979-10-02 지정), 경기 연천군 전곡읍 전곡리 178-1"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%97%B0%EC%B2%9C_%EC%A0%84%EA%B3%A1%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+          "note": "좌표 북위 38°0′42.1″ 동경 127°3′55.9″, 1978년 발견·1979년 사적 지정"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r000640&code=kc_age_10",
+          "note": "우리역사넷 연천 전곡리 유적"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-seokjangri",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "공주 석장리 유적",
+      "type": "heritage",
+      "year": -28000,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "집터 숯의 방사성탄소 연대 약 2만 5천~3만 년 전",
+      "place": {
+        "label": "공주 석장리 유적",
+        "modern": "충청남도 공주시 석장리동",
+        "lon": 127.1897,
+        "lat": 36.4467,
+        "coordinateBasis": "wikipedia"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "남한에서 처음으로 구석기 문화를 확인한 발굴 현장",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "석장리",
+        "구석기",
+        "집터",
+        "발굴"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%A3%BC_%EC%84%9D%EC%9E%A5%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+          "note": "좌표 36.44667/127.18972, 1964~1992년 13차 발굴"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-suyanggae",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "단양 수양개 유적",
+      "type": "heritage",
+      "year": -18000,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "후기 구석기 석기 제작터 중심 연대 추정",
+      "place": {
+        "label": "단양 수양개 유적",
+        "modern": "충청북도 단양군 적성면 애곡리 182-1",
+        "lon": 128.3319,
+        "lat": 36.9589,
+        "coordinateBasis": "wikipedia"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "슴베찌르개 등 후기 구석기 석기를 무더기로 만들던 자리",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "수양개",
+        "슴베찌르개",
+        "좀돌날",
+        "석기 제작터"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%96%91_%EC%88%98%EC%96%91%EA%B0%9C_%EC%9C%A0%EC%A0%81",
+          "note": "좌표 36.95889/128.33194, 소재지 단양군 적성면 애곡리"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-neolithic-begins",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "신석기 시대의 시작과 간석기",
+      "type": "culture",
+      "year": -8000,
+      "yearEnd": -1500,
+      "approx": true,
+      "yearNote": "한반도 신석기 시작을 기원전 8000년경으로 보는 교과서 서술",
+      "place": {
+        "label": "제주 고산리 유적",
+        "modern": "제주특별자치도 제주시 한경면 고산리",
+        "lon": 126.1668,
+        "lat": 33.3056,
+        "coordinateBasis": "wikipedia"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "돌을 갈아 쓰고 토기를 빚기 시작한 새로운 시대",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "신석기 시대",
+        "간석기",
+        "토기",
+        "정착 생활"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%A3%BC_%EA%B3%A0%EC%82%B0%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+          "note": "구석기 후기에서 신석기 전기로 넘어가는 과정을 보여주는 유적"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-prehistoric-amsadong",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "서울 암사동 유적",
+      "type": "heritage",
+      "year": -4000,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "약 6천 년 전 신석기 주거 유적",
+      "place": {
+        "label": "서울 암사동 유적",
+        "modern": "서울특별시 강동구 올림픽로 875(암사동)",
+        "lon": 127.1303,
+        "lat": 37.5606,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "amsadong"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "움집 100여 기가 드러난 신석기 마을터",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "암사동",
+        "빗살무늬 토기",
+        "움집",
+        "신석기 마을"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1331102670000",
+          "note": "국가유산포털 - 사적 제267호 서울 암사동 유적, 서울 강동구 올림픽로 875"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EC%95%94%EC%82%AC%EB%8F%99_%EC%9C%A0%EC%A0%81",
+          "note": "좌표 37.56056/127.13028, 약 6000년 전 신석기"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-comb-pattern-pottery",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "빗살무늬 토기",
+      "type": "heritage",
+      "year": -4000,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "서울 암사동 유적",
+        "modern": "서울특별시 강동구 암사동",
+        "lon": 127.1303,
+        "lat": 37.5606,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "amsadong"
+      },
+      "sceneType": {
+        "kind": "heritage"
+      },
+      "meaning": "곡식을 담고 조리하던, 신석기를 대표하는 뾰족바닥 토기",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "빗살무늬 토기",
+        "뾰족밑",
+        "저장",
+        "신석기"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1331102670000",
+          "note": "국가유산포털 - 사적 제267호 서울 암사동 유적, 빗살무늬 토기 출토"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%8F%99%EC%82%BC%EB%8F%99_%ED%8C%A8%EC%B4%9D",
+          "note": "동삼동 패총에서도 대표 토기로 출토"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-osanri",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "양양 오산리 유적",
+      "type": "heritage",
+      "year": -6000,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "양양 오산리 유적",
+        "modern": "강원특별자치도 양양군 손양면 오산리",
+        "lon": 128.6614,
+        "lat": 38.0869,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "osanri"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "동해안 신석기 집터와 흑요석으로 교류를 보여 주는 유적",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "오산리",
+        "집터",
+        "흑요석",
+        "얼굴 모양 토제품"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%96%91%EC%96%91_%EC%98%A4%EC%82%B0%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+          "note": "좌표 38.08694/128.66139, 사적 제394호, 백두산계 흑요석"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-dongsamdong-shellmound",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "부산 동삼동 패총",
+      "type": "heritage",
+      "year": -5000,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "부산 동삼동 패총",
+        "modern": "부산광역시 영도구 동삼동 750-1",
+        "lon": 129.0794,
+        "lat": 35.0708,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "dongsamdong"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "조개껍데기 더미에서 바닷가 생활과 일본과의 교류가 드러난 곳",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "동삼동",
+        "조개더미",
+        "패총",
+        "흑요석",
+        "조개껍데기 가면"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%8F%99%EC%82%BC%EB%8F%99_%ED%8C%A8%EC%B4%9D",
+          "note": "좌표 35.07083/129.07944, 일본산 흑요석 출토"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-neolithic-farming",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "농경과 목축의 시작",
+      "type": "economy",
+      "year": -5000,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "조·기장 등 잡곡 농사의 시작 시점 추정",
+      "place": {
+        "label": "서울 암사동 유적",
+        "modern": "서울특별시 강동구 암사동",
+        "lon": 127.1303,
+        "lat": 37.5606,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "amsadong"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "조·기장을 심고 가축을 기르며 한곳에 눌러앉기 시작함",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "농경",
+        "목축",
+        "조",
+        "기장",
+        "갈돌과 갈판",
+        "정착 생활"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1331102670000",
+          "note": "국가유산포털 - 사적 제267호 서울 암사동 유적 해설(신석기 주거·생업)"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-prehistoric-primitive-beliefs",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "원시 신앙(애니미즘·토테미즘·샤머니즘)",
+      "type": "culture",
+      "year": -4000,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "부산 동삼동 패총",
+        "modern": "부산광역시 영도구 동삼동",
+        "lon": 129.0794,
+        "lat": 35.0708,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "dongsamdong"
+      },
+      "sceneType": {
+        "kind": "ritual"
+      },
+      "meaning": "자연물과 동물에 영혼이 있다고 믿고 무당에게 빌던 신앙",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "애니미즘",
+        "토테미즘",
+        "샤머니즘",
+        "영혼 숭배",
+        "조상 숭배"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_004_0040_0040_0010",
+          "note": "우리역사넷 신편 한국사 - 신앙과 제의"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-prehistoric-bangudae-petroglyphs",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "울주 대곡리 반구대 암각화",
+      "type": "heritage",
+      "year": -3000,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "신석기~청동기에 걸쳐 여러 차례 새긴 것으로 추정",
+      "place": {
+        "label": "울주 대곡리 반구대 암각화",
+        "modern": "울산광역시 울주군 언양읍 대곡리",
+        "lon": 129.176,
+        "lat": 35.604,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "ritual"
+      },
+      "meaning": "고래와 사냥 장면을 바위에 새겨 풍요를 빌던 그림",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "반구대 암각화",
+        "고래",
+        "국보",
+        "사냥 그림"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%A3%BC_%EB%8C%80%EA%B3%A1%EB%A6%AC_%EB%B0%98%EA%B5%AC%EB%8C%80_%EC%95%94%EA%B0%81%ED%99%94",
+          "note": "국보 제285호, 1971년 발견, 2025년 세계유산 등재, 약 237점 형상"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "좌표는 대곡천 반구대 지점 추정치. 국가유산포털 소재지로 다시 확인 필요"
+    },
+    {
+      "id": "hs-prehistoric-cheonjeonri-petroglyphs",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "울주 천전리 각석",
+      "type": "heritage",
+      "year": -2000,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "울주 천전리 각석",
+        "modern": "울산광역시 울주군 두동면 천전리 산210-2",
+        "lon": 129.1742,
+        "lat": 35.6144,
+        "coordinateBasis": "wikipedia"
+      },
+      "sceneType": {
+        "kind": "ritual"
+      },
+      "meaning": "기하무늬와 훗날 신라인의 글씨까지 겹쳐 새겨진 바위",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "천전리 각석",
+        "기하무늬",
+        "암각화",
+        "국보"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%A3%BC_%EC%B2%9C%EC%A0%84%EB%A6%AC_%EA%B0%81%EC%84%9D",
+          "note": "좌표 35.61444/129.17417, 신석기~신라에 걸친 새김"
+        }
+      ],
+      "priority": "extended",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-bronze-age-begins",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "청동기 시대의 시작",
+      "type": "culture",
+      "year": -1500,
+      "yearEnd": -400,
+      "approx": true,
+      "yearNote": "한반도 청동기 시작을 기원전 1500년경으로 보는 교과서 서술(만주는 기원전 2000년경부터)",
+      "place": {
+        "label": "부여 송국리 유적",
+        "modern": "충청남도 부여군 초촌면 송국리",
+        "lon": 127.0342,
+        "lat": 36.2667,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "songgukri"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "청동기를 쓰면서 농사가 커지고 사람 사이에 차이가 생겨남",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "청동기 시대",
+        "민무늬 토기",
+        "반달 돌칼",
+        "계급"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC_%EC%86%A1%EA%B5%AD%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+          "note": "기원전 9~6세기 청동기 취락, 청동도끼 거푸집 출토"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-prehistoric-mandolin-dagger",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "비파형 동검",
+      "type": "heritage",
+      "year": -1000,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "요령 지역(랴오닝)",
+        "modern": "중국 랴오닝성 차오양 일대",
+        "lon": 120.451,
+        "lat": 41.576,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "heritage"
+      },
+      "meaning": "요령에서 한반도까지 퍼진, 고조선의 세력 범위를 알려 주는 칼",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "비파형 동검",
+        "요령식 동검",
+        "고조선 세력 범위"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+          "note": "우리역사넷 고조선의 성장과 변천 - 청동기 문화와 세력 범위"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%A1%B0%EC%84%A0",
+          "note": "비파형 동검 분포와 고조선"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "좌표는 요령 지역 권역 중심 추정. 한반도 출토품으로 옮겨 표시해도 된다"
+    },
+    {
+      "id": "hs-prehistoric-misongni-pottery",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "미송리식 토기와 민무늬 토기",
+      "type": "heritage",
+      "year": -900,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "의주 미송리 유적",
+        "modern": "북한 평안북도 의주군 의주읍 미송리",
+        "lon": 124.55,
+        "lat": 40.15,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "heritage"
+      },
+      "meaning": "고조선 문화권을 나타내는 손잡이 달린 청동기 시대 토기",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "미송리식 토기",
+        "민무늬 토기",
+        "붉은 간토기",
+        "고조선 문화권"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+          "note": "우리역사넷 고조선 문화 범위 지표 유물"
+        }
+      ],
+      "priority": "extended",
+      "confidence": "low",
+      "notes": "북한 소재로 좌표 추정. 의주읍 권역 중심"
+    },
+    {
+      "id": "hs-prehistoric-gochang-dolmens",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "고창 죽림리 지석묘군(고인돌)",
+      "type": "heritage",
+      "year": -500,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "기원전 5~4세기 무렵 축조로 보는 국가유산포털 해설",
+      "place": {
+        "label": "고창 죽림리 지석묘군",
+        "modern": "전북특별자치도 고창군 고창읍 죽림리 산63 일대",
+        "lon": 126.6461,
+        "lat": 35.4475,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "gochang-dolmens"
+      },
+      "sceneType": {
+        "kind": "construction"
+      },
+      "meaning": "440여 기가 줄지어 선, 지배자의 힘을 보여 주는 무덤 떼",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "고인돌",
+        "지석묘",
+        "탁자식",
+        "바둑판식",
+        "군장",
+        "세계유산"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%B0%BD_%EC%A3%BD%EB%A6%BC%EB%A6%AC_%EC%A7%80%EC%84%9D%EB%AC%98%EA%B5%B0",
+          "note": "좌표 35.44750/126.64611, 사적 제391호(1994)"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%B0%BD_%ED%99%94%EC%88%9C_%EA%B0%95%ED%99%94_%EA%B3%A0%EC%9D%B8%EB%8F%8C_%EC%9C%A0%EC%A0%81",
+          "note": "2000년 유네스코 세계유산 등재(등재번호 977)"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-hwasun-dolmens",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "화순 효산리와 대신리 지석묘군",
+      "type": "heritage",
+      "year": -500,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "화순 효산리·대신리 지석묘군",
+        "modern": "전라남도 화순군 도곡면 효산리·춘양면 대신리",
+        "lon": 126.9194,
+        "lat": 34.9864,
+        "coordinateBasis": "wikipedia"
+      },
+      "sceneType": {
+        "kind": "construction"
+      },
+      "meaning": "돌을 떼어 낸 채석장까지 남아 고인돌 만드는 과정을 보여 준다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "고인돌",
+        "바둑판식",
+        "채석장",
+        "세계유산"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%ED%99%94%EC%88%9C_%ED%9A%A8%EC%82%B0%EB%A6%AC%EC%99%80_%EB%8C%80%EC%8B%A0%EB%A6%AC_%EC%A7%80%EC%84%9D%EB%AC%98%EA%B5%B0",
+          "note": "좌표 34.98639/126.91944, 사적 제410호(1998), 596기"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-ganghwa-dolmens",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "강화 부근리 지석묘",
+      "type": "heritage",
+      "year": -700,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "강화 부근리 지석묘",
+        "modern": "인천광역시 강화군 하점면 부근리 317",
+        "lon": 126.4375,
+        "lat": 37.7731,
+        "coordinateBasis": "wikipedia"
+      },
+      "sceneType": {
+        "kind": "construction"
+      },
+      "meaning": "우리나라 탁자식 고인돌을 대표하는 거대한 돌무덤",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "고인돌",
+        "탁자식",
+        "북방식",
+        "세계유산",
+        "사적"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B0%95%ED%99%94_%EB%B6%80%EA%B7%BC%EB%A6%AC_%EC%A7%80%EC%84%9D%EB%AC%98",
+          "note": "좌표 37.77306/126.43750, 사적 제137호(1964)"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high",
+      "yearNote": "축조 연대가 특정되지 않아 청동기 시대(기원전 1000~기원전 300년경)로 본다. 화면 배치를 위해 기원전 7세기로 표기"
+    },
+    {
+      "id": "hs-prehistoric-songgukri",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "부여 송국리 유적",
+      "type": "heritage",
+      "year": -700,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "기원전 9~6세기 청동기 취락",
+      "place": {
+        "label": "부여 송국리 유적",
+        "modern": "충청남도 부여군 초촌면 송국리 산24-1",
+        "lon": 127.0342,
+        "lat": 36.2667,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "songgukri"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "벼농사와 거푸집·비파형 동검이 함께 나온 청동기 마을",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "송국리",
+        "송국리형 토기",
+        "탄화미",
+        "거푸집",
+        "비파형 동검"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC_%EC%86%A1%EA%B5%AD%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+          "note": "좌표 36.26667/127.03417, 불탄 쌀·청동도끼 거푸집·비파형 동검 출토"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-rice-farming",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "벼농사의 확산과 반달 돌칼",
+      "type": "economy",
+      "year": -1000,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "부여 송국리 유적",
+        "modern": "충청남도 부여군 초촌면 송국리",
+        "lon": 127.0342,
+        "lat": 36.2667,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "songgukri"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "논에서 벼를 길러 남는 곡식이 생기고 빈부 차이가 벌어짐",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "벼농사",
+        "반달 돌칼",
+        "바퀴날 도끼",
+        "잉여 생산물"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC_%EC%86%A1%EA%B5%AD%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+          "note": "불탄 쌀·돌칼 출토"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B4%91%EC%A3%BC_%EC%8B%A0%EC%B0%BD%EB%8F%99_%EC%9C%A0%EC%A0%81",
+          "note": "벼·조·밀 등 재배작물 확인"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-prehistoric-class-and-chieftain",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "계급의 발생과 군장의 등장",
+      "type": "society",
+      "year": -1000,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "고창 죽림리 지석묘군",
+        "modern": "전북특별자치도 고창군 고창읍 죽림리",
+        "lon": 126.6461,
+        "lat": 35.4475,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "gochang-dolmens"
+      },
+      "sceneType": {
+        "kind": "assembly"
+      },
+      "meaning": "남는 곡식과 청동기를 쥔 사람이 군장이 되어 마을을 다스림",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "계급",
+        "군장",
+        "족장",
+        "고인돌",
+        "선민사상",
+        "환호",
+        "목책"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%B0%BD_%EC%A3%BD%EB%A6%BC%EB%A6%AC_%EC%A7%80%EC%84%9D%EB%AC%98%EA%B5%B0",
+          "note": "지배 족장 가족 무덤으로 보는 해설"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-gojoseon-founding-dangun",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "고조선 건국",
+      "type": "event",
+      "year": -2333,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "『삼국유사』·『동국통감』이 전하는 기원전 2333년 건국 전승",
+      "place": {
+        "label": "아사달(왕검성으로 전해지는 평양 일대)",
+        "modern": "북한 평양직할시",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "우리 역사에 처음 등장한 나라, 단군왕검이 세웠다고 전한다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "고조선",
+        "단군왕검",
+        "아사달",
+        "삼국유사",
+        "건국"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_001_0020",
+          "note": "우리역사넷 사료로 본 한국사 - 고조선의 성장과 변화"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%A1%B0%EC%84%A0",
+          "note": "건국 전승과 연대"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "연대는 전승 연대이며 고고학적 실증 연대와 다름. 화면 표기 시 '전해지는 건국 연대'로 안내 필요"
+    },
+    {
+      "id": "hs-gojoseon-dangun",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "단군왕검",
+      "type": "person",
+      "year": -2333,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "아사달",
+        "modern": "북한 평양직할시 일대",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "제사장 단군과 우두머리 왕검이 한 사람이었음을 보여 주는 이름",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "단군왕검",
+        "제정일치"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_001_0020",
+          "note": "우리역사넷 고조선 관련 사료 해설"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%A1%B0%EC%84%A0",
+          "note": "단군 전승"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-gojoseon-dangun-myth",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "단군 신화",
+      "type": "culture",
+      "year": -2333,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "태백산 신단수(전승지)",
+        "modern": "북한 평양·묘향산 일대(전승)",
+        "lon": 126.33,
+        "lat": 40.0,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "ritual"
+      },
+      "meaning": "환웅과 곰 이야기 속에 농경 사회와 부족의 결합이 담겨 있다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "단군 신화",
+        "환웅",
+        "홍익인간",
+        "풍백·우사·운사",
+        "삼국유사",
+        "제왕운기"
+      ],
+      "evidence": [
+        {
+          "kind": "other",
+          "ref": "『삼국유사』 권1 기이 고조선(왕검조선)",
+          "note": "원문 전거"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%A1%B0%EC%84%A0",
+          "note": "단군 신화의 구성과 해석"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "장소는 전승지라 추정. 화면에서는 무대 좌표를 평양으로 통일해도 무방"
+    },
+    {
+      "id": "hs-gojoseon-cultural-range",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "고조선의 세력 범위",
+      "type": "place",
+      "year": -700,
+      "yearEnd": -400,
+      "approx": true,
+      "place": {
+        "label": "만주 요령~한반도 서북부",
+        "modern": "중국 랴오닝성~북한 평안도",
+        "lon": 124.0,
+        "lat": 40.3,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "survey"
+      },
+      "meaning": "비파형 동검·탁자식 고인돌·미송리식 토기가 겹치는 지역",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "세력 범위",
+        "비파형 동검",
+        "탁자식 고인돌",
+        "미송리식 토기"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+          "note": "우리역사넷 고조선의 성장과 변천"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "면(영역)으로 그리는 편이 맞고 점 좌표는 편의상 중심점"
+    },
+    {
+      "id": "hs-gojoseon-eight-laws",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "8조법(범금 8조)",
+      "type": "institution",
+      "year": -400,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "『한서』 지리지가 전한 고조선 사회의 법. 시행 연도는 알 수 없어 추정",
+      "place": {
+        "label": "고조선(왕검성)",
+        "modern": "북한 평양직할시",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "살인·상해·절도를 다룬 조항으로 계급과 사유 재산을 알 수 있다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "8조법",
+        "범금 8조",
+        "한서 지리지",
+        "사유 재산",
+        "노비",
+        "계급 사회"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/mid/hm_001_0060?tabId=e",
+          "note": "우리역사넷 사료로 본 한국사 - 고조선의 범금 8조. 출전은 『한서』 권28하 「지리지」8하 연군(燕郡) 조. 교과서 표기 '8조법' 확인"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_006_0050_0040_0020_0010",
+          "note": "신편 한국사 - 『한서』 지리지의 8조법금 해설"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-gojoseon-kingship-offices",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "고조선의 왕위 세습과 관직",
+      "type": "institution",
+      "year": -300,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "기원전 4~3세기 왕호 사용과 부왕·준왕의 세습",
+      "place": {
+        "label": "고조선(왕검성)",
+        "modern": "북한 평양직할시",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "왕 자리를 자식에게 물려주고 상·대부·장군을 두어 나라 꼴을 갖춤",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "왕위 세습",
+        "부왕",
+        "준왕",
+        "상",
+        "대부",
+        "장군"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_001_0020",
+          "note": "우리역사넷 사료로 본 한국사 - 고조선의 성장과 변화"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%A1%B0%EC%84%A0%EC%9D%98_%EC%97%AD%EC%82%AC",
+          "note": "부왕·준왕과 관직"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-gojoseon-yan-jingae-invasion",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "연의 공격과 고조선의 서쪽 영토 상실",
+      "type": "war",
+      "year": -290,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "연 소왕(기원전 311~279) 때로 전해져 기원전 3세기 초로 추정",
+      "place": {
+        "label": "고조선 서쪽 변경(만번한 일대)",
+        "modern": "중국 랴오닝성 랴오둥 지역",
+        "lon": 122.9,
+        "lat": 40.6,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "battle"
+      },
+      "meaning": "연의 공격으로 서쪽 땅을 크게 잃고 중심지가 동쪽으로 밀려남",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "연",
+        "요서",
+        "요동",
+        "중심지 이동"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%A1%B0%EC%84%A0%EC%9D%98_%EC%97%AD%EC%82%AC",
+          "note": "진개가 서방 2천 리를 빼앗고 만번한을 경계로 삼음"
+        },
+        {
+          "kind": "other",
+          "ref": "『삼국지』 위서 동이전 인용 『위략』",
+          "note": "원문 전거"
+        }
+      ],
+      "priority": "extended",
+      "confidence": "medium",
+      "notes": "교과서는 '기원전 3세기 초 연의 공격으로 서쪽 땅을 잃었다' 정도로만 적는다. 인명 진개와 지명 만번한은 『위략』 기반 학술 용어라 본문 용어에서 뺐다"
+    },
+    {
+      "id": "hs-gojoseon-junwang",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "준왕",
+      "type": "person",
+      "year": -194,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "위만에게 왕위를 빼앗긴 해",
+      "place": {
+        "label": "왕검성",
+        "modern": "북한 평양직할시",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "위만을 받아들였다가 나라를 빼앗기고 남쪽으로 달아난 왕",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "준왕",
+        "위만",
+        "박사",
+        "남하"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h71_0030_0020_0010_0060",
+          "note": "우리역사넷 - 위만의 집권"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%9C%84%EB%A7%8C%EC%A1%B0%EC%84%A0",
+          "note": "준왕 축출과 기원전 194년"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-gojoseon-wiman",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "위만",
+      "type": "person",
+      "year": -194,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "왕검성에 들어가 준왕을 몰아내고 왕이 된 해",
+      "place": {
+        "label": "왕검성",
+        "modern": "북한 평양직할시",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "무리를 이끌고 들어와 왕이 된 뒤 철기 문화를 본격 받아들인 인물",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "위만",
+        "위만 조선",
+        "상투",
+        "흰옷",
+        "철기 문화 수용",
+        "정변"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h71_0030_0020_0010_0060",
+          "note": "우리역사넷 - 위만의 집권(기원전 194)"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+          "note": "우리역사넷 - 고조선의 성장과 변천"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-gojoseon-jun-migration-south",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "준왕의 남하",
+      "type": "event",
+      "year": -194,
+      "yearEnd": null,
+      "approx": false,
+      "place": {
+        "label": "한(韓) 지역(익산 일대 전승)",
+        "modern": "전북특별자치도 익산시",
+        "lon": 126.958,
+        "lat": 35.948,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "migration"
+      },
+      "meaning": "쫓겨난 준왕이 남쪽 한 지역으로 내려가 한왕이 되었다고 전한다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "준왕",
+        "남하",
+        "한왕",
+        "삼한"
+      ],
+      "evidence": [
+        {
+          "kind": "other",
+          "ref": "『삼국지』 위서 동이전 한(韓) 조",
+          "note": "준왕이 바다를 건너 한 지역으로 갔다는 기록"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%9C%84%EB%A7%8C%EC%A1%B0%EC%84%A0",
+          "note": "준왕 축출과 남하"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "남하 지점은 전승이라 좌표 추정"
+    },
+    {
+      "id": "hs-gojoseon-intermediary-trade",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "위만 조선의 중계 무역",
+      "type": "economy",
+      "year": -150,
+      "yearEnd": -109,
+      "approx": true,
+      "place": {
+        "label": "고조선(왕검성)",
+        "modern": "북한 평양직할시",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "market"
+      },
+      "meaning": "남쪽 나라와 한나라 사이를 가로막고 이익을 챙겨 힘을 키움",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "중계 무역",
+        "예",
+        "진",
+        "한",
+        "철기"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+          "note": "우리역사넷 - 철기 확산과 중계 무역 이익"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-gojoseon-ugeo",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "우거왕",
+      "type": "person",
+      "year": -109,
+      "yearEnd": -108,
+      "approx": false,
+      "yearNote": "한의 침공에 맞서 1년간 항전한 시기",
+      "place": {
+        "label": "왕검성",
+        "modern": "북한 평양직할시",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "한의 대군에 1년을 버틴 고조선의 마지막 왕",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "우거왕",
+        "왕검성",
+        "항전",
+        "한 무제"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+          "note": "우리역사넷 - 우거왕의 1년 항전과 왕검성 함락"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-gojoseon-han-wudi",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "한 무제",
+      "type": "person",
+      "year": -109,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "고조선 침공을 명한 해",
+      "place": {
+        "label": "한 장안",
+        "modern": "중국 산시성 시안시",
+        "lon": 108.94,
+        "lat": 34.343,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "수군과 육군을 함께 보내 고조선을 무너뜨린 한나라 황제",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "한 무제",
+        "수륙 양면 공격",
+        "한 군현"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+          "note": "우리역사넷 - 한 무제의 수륙 양면 침략"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-gojoseon-fall-wanggeomseong",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "왕검성 함락과 고조선 멸망",
+      "type": "war",
+      "year": -108,
+      "yearEnd": null,
+      "approx": false,
+      "place": {
+        "label": "왕검성",
+        "modern": "북한 평양직할시",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "siege"
+      },
+      "meaning": "1년 항전 끝에 도읍이 무너지며 고조선이 문을 닫았다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "왕검성",
+        "함락",
+        "고조선 멸망",
+        "기원전 108년"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+          "note": "우리역사넷 - 왕검성 함락과 고조선 멸망(기원전 108)"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%9C%84%EB%A7%8C%EC%A1%B0%EC%84%A0",
+          "note": "기원전 108년 멸망"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-gojoseon-han-commanderies",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "한 군현 설치",
+      "type": "foreign",
+      "year": -108,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "한이 고조선 옛 땅에 네 군을 두었다. 낙랑군은 기원전 108년(원봉 3년), 현도군은 기원전 107년(원봉 4년)에 설치되었고 진번·임둔의 설치 연도는 기록이 갈린다",
+      "place": {
+        "label": "낙랑군 치소(고조선 옛 땅)",
+        "modern": "북한 평양직할시 일대",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "survey"
+      },
+      "meaning": "고조선 땅에 한나라가 네 개의 군을 두어 직접 다스리려 함",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "한 군현",
+        "낙랑군",
+        "진번군",
+        "임둔군",
+        "현도군"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0020_0020_0010_0020",
+          "note": "우리역사넷 - 고조선 멸망 뒤 군현 설치"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/mid/hm_001_0060?tabId=e",
+          "note": "『한서』 권28하 「지리지」8하 연군(燕郡) 조 — 고조선 법금과 낙랑군 설치 뒤 사회 변화 기사"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%82%AC%EA%B5%B0",
+          "note": "『한서』 지리지는 낙랑군 원봉 3년(기원전 108), 현도군 원봉 4년(기원전 107)만 명시"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-gojoseon-lelang-society-change",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "낙랑군과 토착 사회의 변화",
+      "type": "society",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "군현 설치 이후 법 조항이 60여 조로 늘었다는 『한서』 기록",
+      "place": {
+        "label": "낙랑군",
+        "modern": "북한 평양직할시 일대",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated",
+        "clusterId": "wanggeomseong"
+      },
+      "sceneType": {
+        "kind": "market"
+      },
+      "meaning": "법 조항이 60여 조로 늘고 풍속이 각박해졌다고 전한다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "낙랑군",
+        "60여 조",
+        "풍속",
+        "토착 사회",
+        "교역"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/mid/hm_001_0060?tabId=e",
+          "note": "우리역사넷 - 『한서』 권28하 「지리지」8하 연군(燕郡) 조의 법금 60여 조 기사"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_006_0050_0040_0020_0010",
+          "note": "신편 한국사 - 8조법금과 사회 변화"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-prehistoric-iron-diffusion",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "철기의 보급",
+      "type": "economy",
+      "year": -400,
+      "yearEnd": -57,
+      "approx": true,
+      "yearNote": "기원전 4세기 무렵 한반도에 철기가 본격 보급되기 시작한 것으로 보는 교과서 서술",
+      "place": {
+        "label": "당진 소소리 유적 등 서해안 철기 유적",
+        "modern": "충청남도 당진시",
+        "lon": 126.646,
+        "lat": 36.889,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "construction"
+      },
+      "sceneFunction": "kiln",
+      "meaning": "쇠 농기구로 생산이 늘고 쇠 무기로 정복 전쟁이 잦아짐",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "철기",
+        "철제 농기구",
+        "철제 무기",
+        "정복 전쟁",
+        "연맹 왕국"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "http://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r000200&code=kc_age_10",
+          "note": "우리역사넷 한국사 연대기 - 당진 소소리 유적(초기 철기)"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h61_0030_0020_0030",
+          "note": "우리역사넷 - 철기 보급과 여러 나라의 성장"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "철기 확산 자체는 기원전 1세기 이후까지 이어지지만, 시대 칸 범위(-57)를 넘지 않게 yearEnd 를 잘랐다"
+    },
+    {
+      "id": "hs-prehistoric-slim-dagger-mold",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "세형동검과 거푸집",
+      "type": "heritage",
+      "year": -200,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "완주 갈동 유적",
+        "modern": "전북특별자치도 완주군 이서면 반교리",
+        "lon": 127.075,
+        "lat": 35.836,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "heritage"
+      },
+      "meaning": "한반도에서 독자적으로 만든 좁은 청동검과 그 주조 틀",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "세형동검",
+        "한국식 동검",
+        "거푸집",
+        "잔무늬 거울",
+        "독자적 청동기 문화"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_r000650",
+          "note": "우리역사넷 한국사 연대기 - 완주 갈동 유적. 1호 움무덤에서 한국식 동검(세형동검) 거푸집 2점 출토"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%99%84%EC%A3%BC_%EA%B0%88%EB%8F%99_%EC%B6%9C%ED%86%A0_%EB%8F%99%EA%B2%80%EB%8F%99%EA%B3%BC_%EA%B1%B0%ED%91%B8%EC%A7%91_%EC%9D%BC%EA%B4%84",
+          "note": "보물 제2033호(2019-06-26) 완주 갈동 출토 동검동과 거푸집 일괄"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "yearNote": "갈동 1호 널무덤 출토 세형동검 거푸집을 기원전 2세기경 실제 사용품으로 보는 해설",
+      "notes": "좌표는 이서면 반교리 갈동마을 권역 추정치. 유적이 전주시 덕진구와 완주군 이서면 경계에 걸쳐 있다"
+    },
+    {
+      "id": "hs-prehistoric-dahori-brush",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "창원 다호리 유적과 붓",
+      "type": "heritage",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "기원전 1세기 삼한 시기 목관묘",
+      "place": {
+        "label": "창원 다호리 유적",
+        "modern": "경상남도 창원시 의창구 동읍 다호리 237-3",
+        "lon": 128.6708,
+        "lat": 35.2986,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "dahori"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "붓과 중국 화폐가 함께 나와 한자 사용과 교역을 보여 준다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "다호리",
+        "붓",
+        "한자 사용",
+        "통나무 목관",
+        "오수전",
+        "명도전",
+        "반량전",
+        "사적"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1333803270000",
+          "note": "국가유산포털 - 사적 제327호 창원 다호리 고분군(1988-09-03 지정), 경남 창원시 의창구 동읍 다호리 237-3"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EC%9B%90_%EB%8B%A4%ED%98%B8%EB%A6%AC_%EA%B3%A0%EB%B6%84%EA%B5%B0",
+          "note": "좌표 북위 35°17′55″ 동경 128°40′15″(35.29861/128.67083), 사적 제327호, 1988년 국립중앙박물관 발굴, 붓·오수전 출토, 기원전 1세기"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-sinchangdong",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "광주 신창동 유적",
+      "type": "heritage",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "광주 신창동 유적",
+        "modern": "광주광역시 광산구 신창동 512-1",
+        "lon": 126.8487,
+        "lat": 35.1947,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "sinchangdong"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "나무 농기구와 현악기까지 썩지 않고 남은 초기 철기 마을",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "신창동",
+        "저습지 유적",
+        "목제 농기구",
+        "현악기",
+        "벼"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B4%91%EC%A3%BC_%EC%8B%A0%EC%B0%BD%EB%8F%99_%EC%9C%A0%EC%A0%81",
+          "note": "좌표 35.19472/126.84872, 초기 철기, 목제 농기구·현악기 출토"
+        }
+      ],
+      "priority": "extended",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-buyeo",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "부여",
+      "type": "society",
+      "year": -100,
+      "yearEnd": -57,
+      "approx": true,
+      "yearNote": "기원전 1세기 무렵 중국 기록에 등장, 494년 고구려에 항복",
+      "place": {
+        "label": "쑹화강 유역(부여 중심지)",
+        "modern": "중국 지린성 지린시 일대",
+        "lon": 126.549,
+        "lat": 43.838,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "assembly"
+      },
+      "meaning": "만주 평야에서 왕과 마가·우가가 함께 다스린 연맹 국가",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "부여",
+        "연맹 왕국",
+        "쑹화강",
+        "사출도",
+        "마가",
+        "우가",
+        "저가",
+        "구가",
+        "대사자",
+        "사자",
+        "영고",
+        "순장",
+        "1책 12법",
+        "형사취수제",
+        "우제점법"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h61_0030_0020_0030",
+          "note": "우리역사넷 - (3) 여러 나라의 성장 (6차 교육과정 국사 페이지, 보조 근거)"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/eh_kk/teach/notebook/data/05_d01_1.htm",
+          "note": "여러 나라의 성장 요약정리표 - 영고(12월)"
+        },
+        {
+          "kind": "other",
+          "ref": "『삼국지』 위서 동이전 부여전",
+          "note": "원문 전거"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "중심지 좌표는 지린시 일대 통설을 따른 추정. 494년 고구려 항복은 다음 칸(samguk)에서 다루고 yearEnd 는 시대 칸 안(-57)으로 잘랐다. 시조 동명 전승은 고구려 주몽 설화와 닮았다는 심화 설명으로만 남긴다. 사출도·1책 12법 하위 카드를 흡수했다"
+    },
+    {
+      "id": "hs-prehistoric-early-goguryeo",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "고구려(초기)",
+      "type": "society",
+      "year": -75,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "기원전 75년 현도군 치소가 토착 고구려 세력의 공격에 밀려 흥경(興京) 노성 방면으로 옮겨 간 해. 건국 전승은 기원전 37년이나 여러 나라 단원에서는 기원전 1세기 압록강 유역 세력으로 다룸",
+      "place": {
+        "label": "졸본(오녀산성 일대)",
+        "modern": "중국 랴오닝성 환런만족자치현",
+        "lon": 125.41,
+        "lat": 41.312,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "sceneFunction": "fortress",
+      "meaning": "산골짜기에 자리해 일찍부터 정복에 나선 5부 연맹 국가",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "고구려",
+        "졸본",
+        "5부",
+        "제가 회의",
+        "서옥제",
+        "동맹",
+        "대가",
+        "사자",
+        "조의",
+        "선인",
+        "약탈 경제"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h61_0030_0020_0030",
+          "note": "우리역사넷 - (3) 여러 나라의 성장 (6차 교육과정 국사 페이지, 보조 근거)"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/eh_kk/teach/notebook/data/05_d01_1.htm",
+          "note": "여러 나라의 성장 요약정리표 - 동맹(10월)"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%ED%98%84%EB%8F%84%EA%B5%B0",
+          "note": "제1현도군이 기원전 75년 토착 세력의 공격으로 흥경 노성 부근으로 옮겨 감(year -75 의 근거)"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "건국 연도 기원전 37년은 이 칸 범위(-57) 밖이라 여러 나라 단계 시점으로 배치. 제가 회의·서옥제 카드를 흡수했다"
+    },
+    {
+      "id": "hs-prehistoric-okjeo",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "옥저",
+      "type": "society",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "함흥 일대(동해안 옥저 지역)",
+        "modern": "북한 함경남도 함흥시",
+        "lon": 127.536,
+        "lat": 39.918,
+        "coordinateBasis": "estimated",
+        "clusterId": "okjeo-hamhung"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "바닷가 땅이 기름졌지만 고구려에 눌려 왕을 세우지 못한 나라",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "옥저",
+        "읍군",
+        "삼로",
+        "민며느리제",
+        "가족 공동 무덤",
+        "골장제"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h61_0030_0020_0030",
+          "note": "우리역사넷 - (3) 여러 나라의 성장 (6차 교육과정 국사 페이지, 보조 근거)"
+        },
+        {
+          "kind": "other",
+          "ref": "『삼국지』 위서 동이전 동옥저전",
+          "note": "원문 전거"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "민며느리제·가족 공동 무덤 하위 카드를 흡수했다"
+    },
+    {
+      "id": "hs-prehistoric-dongye",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "동예",
+      "type": "society",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "강릉 일대(동예 지역)",
+        "modern": "강원특별자치도 강릉시",
+        "lon": 128.876,
+        "lat": 37.752,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "ritual"
+      },
+      "meaning": "무천을 열고 마을 경계를 지키는 책화가 있던 나라",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "동예",
+        "무천",
+        "책화",
+        "족외혼",
+        "단궁",
+        "과하마",
+        "반어피",
+        "읍군",
+        "삼로"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/eh_kk/teach/notebook/data/05_d01_1.htm",
+          "note": "여러 나라의 성장 요약정리표 - 무천(10월), 책화"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h61_0030_0020_0030",
+          "note": "우리역사넷 - (3) 여러 나라의 성장 (6차 교육과정 국사 페이지, 보조 근거)"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "책화·족외혼 하위 카드를 흡수했다"
+    },
+    {
+      "id": "hs-prehistoric-samhan",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "삼한(마한·진한·변한)",
+      "type": "society",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "목지국(마한 중심지로 전해지는 천안 직산 일대)",
+        "modern": "충청남도 천안시 서북구 직산읍",
+        "lon": 127.144,
+        "lat": 36.878,
+        "coordinateBasis": "estimated",
+        "clusterId": "samhan-mokjiguk"
+      },
+      "sceneType": {
+        "kind": "assembly"
+      },
+      "meaning": "한반도 남부의 여러 소국이 마한·진한·변한으로 묶인 연맹체",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "삼한",
+        "마한",
+        "진한",
+        "변한",
+        "목지국",
+        "신지",
+        "읍차",
+        "소국"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "http://contents.history.go.kr/mobile/mid/ta_h71_0030_0020_0020_0040",
+          "note": "우리역사넷 - 삼한(한)"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h61_0030_0020_0030",
+          "note": "우리역사넷 - (3) 여러 나라의 성장"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "목지국 위치는 천안·익산·나주 설이 갈려 좌표는 추정"
+    },
+    {
+      "id": "hs-prehistoric-sodo-cheongun",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "소도와 천군",
+      "type": "institution",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "삼한 지역",
+        "modern": "충청남도 천안시 직산읍 일대(추정)",
+        "lon": 127.144,
+        "lat": 36.878,
+        "coordinateBasis": "estimated",
+        "clusterId": "samhan-mokjiguk"
+      },
+      "sceneType": {
+        "kind": "ritual"
+      },
+      "meaning": "군장의 힘이 닿지 않는 신성 구역, 제사와 정치가 갈라졌음을 보여 준다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "소도",
+        "천군",
+        "제정 분리",
+        "솟대",
+        "신성 지역"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "http://contents.history.go.kr/mobile/mid/ta_h71_0030_0020_0020_0040",
+          "note": "우리역사넷 - 삼한(한)의 제의와 소도"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_004_0040_0040_0010",
+          "note": "신편 한국사 - 신앙과 제의"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-prehistoric-byeonhan-iron",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "변한의 철 생산과 수출",
+      "type": "economy",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "변한(구야국) 지역",
+        "modern": "경상남도 김해시",
+        "lon": 128.889,
+        "lat": 35.229,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "market"
+      },
+      "sceneFunction": "harbor",
+      "meaning": "철이 많이 나 낙랑과 왜에까지 팔고 덩이쇠를 돈처럼 썼다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "변한",
+        "철",
+        "덩이쇠",
+        "낙랑",
+        "왜",
+        "구야국"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "http://contents.history.go.kr/mobile/mid/ta_h71_0030_0020_0020_0040",
+          "note": "우리역사넷 - 삼한(한)의 철 생산과 교역"
+        },
+        {
+          "kind": "other",
+          "ref": "『삼국지』 위서 동이전 한전 변진 조",
+          "note": "원문 전거"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-prehistoric-heaven-rituals",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "여러 나라의 제천 행사",
+      "type": "culture",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "여러 나라(부여·고구려·동예·삼한)",
+        "modern": "한반도·만주 일대",
+        "lon": 127.536,
+        "lat": 39.918,
+        "coordinateBasis": "estimated",
+        "clusterId": "okjeo-hamhung"
+      },
+      "sceneType": {
+        "kind": "ritual"
+      },
+      "meaning": "영고·동맹·무천·계절제로 하늘에 제사 지내고 함께 먹고 놀았다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "제천 행사",
+        "영고",
+        "동맹",
+        "무천",
+        "수릿날",
+        "계절제",
+        "국중대회"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/eh_kk/teach/notebook/data/05_d01_1.htm",
+          "note": "여러 나라의 성장 요약정리표 - 영고 12월, 동맹 10월, 무천 10월, 삼한 5월·10월"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_004_0040_0040_0010",
+          "note": "신편 한국사 - 신앙과 제의"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high",
+      "notes": "좌표는 대표 지점(옥저·동예 방면)으로 임시 지정. 화면에서는 나라별로 흩뿌리는 편이 낫다"
+    },
+    {
+      "id": "hs-prehistoric-spindle-whorl",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "가락바퀴와 뼈바늘",
+      "type": "economy",
+      "year": -4000,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "신석기 중기 암사동 단계의 생활 도구",
+      "place": {
+        "label": "서울 암사동 유적",
+        "modern": "서울특별시 강동구 올림픽로 875(암사동)",
+        "lon": 127.1303,
+        "lat": 37.5606,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "amsadong"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "실을 자아 옷과 그물을 지어 쓰던 신석기의 손기술",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "가락바퀴",
+        "뼈바늘",
+        "원시 수공업",
+        "옷",
+        "그물"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1331102670000",
+          "note": "국가유산포털 - 사적 제267호 서울 암사동 유적 해설(신석기 생활 도구)"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EC%95%94%EC%82%AC%EB%8F%99_%EC%9C%A0%EC%A0%81",
+          "note": "좌표 37.56056/127.13028, 신석기 수혈 주거지 100여 기"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "연대는 신석기 중기 폭넓은 추정치. 좌표는 암사동 카드와 겹치므로 clusterId 로 묶었다"
+    },
+    {
+      "id": "hs-prehistoric-wooden-coffin-jar-burial",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "널무덤과 독무덤",
+      "type": "heritage",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "기원전 1세기 무렵 초기 철기 시대 무덤 양식",
+      "place": {
+        "label": "창원 다호리 유적",
+        "modern": "경상남도 창원시 의창구 동읍 다호리 237-3",
+        "lon": 128.6708,
+        "lat": 35.2986,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "dahori"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "통나무 관과 큰 독에 주검을 묻던 초기 철기 시대 무덤",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "널무덤",
+        "목관묘",
+        "독무덤",
+        "옹관묘",
+        "초기 철기"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EC%9B%90_%EB%8B%A4%ED%98%B8%EB%A6%AC_%EA%B3%A0%EB%B6%84%EA%B5%B0",
+          "note": "철기시대 목관묘, 기원전 1세기, 좌표 35.29861/128.67083, 사적 제327호"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1333803270000",
+          "note": "국가유산포털 - 사적 제327호 창원 다호리 고분군(통나무 목관묘 유적)"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-prehistoric-durubong-cave",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "청주 두루봉 동굴과 흥수아이",
+      "type": "heritage",
+      "year": -40000,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "흥수아이 화석을 약 4만 년 전으로 보는 추정. 동굴 퇴적층 자체는 더 이른 시기까지 올려 보기도 한다",
+      "place": {
+        "label": "청주 두루봉 동굴 유적",
+        "modern": "충청북도 청주시 상당구 문의면 노현리 산57-1",
+        "lon": 127.5392,
+        "lat": 36.5097,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "구석기 아이의 뼈가 온전히 나온 석회암 동굴",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "두루봉 동굴",
+        "흥수아이",
+        "동굴 유적",
+        "석회암 동굴",
+        "구석기"
+      ],
+      "evidence": [
+        {
+          "kind": "other",
+          "ref": "https://cheongju.grandculture.net/cheongju/toc/GC00203994",
+          "note": "디지털청주문화대전(한국학중앙연구원 향토문화전자대전) - 소재지 청주시 상당구 문의면 노현리 산57-1, 좌표 북위 36°30′35″ 동경 127°32′21″, 1976~1983년 10차 발굴"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%ED%9D%A5%EC%88%98%EC%95%84%EC%9D%B4",
+          "note": "1983년 발견, 약 4만 년 전 어린이 인골"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "교과서 구석기 유적 지도의 동굴 유적을 대표하는 자리. 연대 추정폭이 커 approx 로 둔다"
+    },
+    {
+      "id": "hs-prehistoric-coarse-mirror-ritual-bronze",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "거친무늬 거울과 청동 의기",
+      "type": "heritage",
+      "year": -400,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "한국식 동검 유적 가운데 가장 이른 단계로 보는 괴정동 돌널무덤 출토품",
+      "place": {
+        "label": "대전 괴정동 유적",
+        "modern": "대전광역시 서구 괴정동",
+        "lon": 127.381,
+        "lat": 36.328,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "ritual"
+      },
+      "meaning": "군장이 하늘에 제사 지낼 때 쥐던 청동 거울과 방울",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "거친무늬 거울",
+        "조문경",
+        "청동 방울",
+        "방패형 동기",
+        "의기",
+        "제사장"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%8C%80%EC%A0%84_%EA%B4%B4%EC%A0%95%EB%8F%99_%EC%9C%A0%EC%A0%81",
+          "note": "대전 서구 괴정동 돌널무덤, 1967년 발견. 청동 거울·방패형 동기·동탁(청동 방울)·세형동검 출토"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r000210&code=kc_age_10",
+          "note": "우리역사넷 한국사 연대기 - 대전 괴정동 무덤 출토 이형동기(의기)"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "좌표는 서구 괴정동 권역 추정치. 유적이 지정 문화유산이 아니라 국가유산포털 소재지 좌표가 없다"
+    },
+    {
+      "id": "hs-prehistoric-neolithic-clan-society",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "신석기의 씨족 사회와 평등 생활",
+      "type": "society",
+      "year": -4000,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "양양 오산리 유적",
+        "modern": "강원특별자치도 양양군 손양면 오산리",
+        "lon": 128.6614,
+        "lat": 38.0869,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "osanri"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "핏줄로 묶인 씨족이 모여 살며 위아래 없이 나누어 쓰던 사회",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "씨족",
+        "부족",
+        "족외혼",
+        "평등 사회",
+        "공동 생산",
+        "공동 분배"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%96%91%EC%96%91_%EC%98%A4%EC%82%B0%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+          "note": "사적 제394호, 신석기 집터 11기가 겹쳐 드러난 마을 유적"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_004_0040_0040_0010",
+          "note": "우리역사넷 신편 한국사 - 신석기 사회의 신앙과 제의"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "청동기 카드 hs-prehistoric-class-and-chieftain(계급 발생)과 짝을 이루는 '평등 → 계급' 축의 앞쪽"
+    },
+    {
+      "id": "hs-prehistoric-samhan-rice-reservoir",
+      "era": "prehistoric-gojoseon",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "삼한의 벼농사와 저수지",
+      "type": "economy",
+      "year": -100,
+      "yearEnd": null,
+      "approx": true,
+      "place": {
+        "label": "삼한 남부 벼농사 지대(광주 신창동 저습지)",
+        "modern": "광주광역시 광산구 신창동",
+        "lon": 126.8487,
+        "lat": 35.1947,
+        "coordinateBasis": "wikipedia",
+        "clusterId": "sinchangdong"
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "sceneFunction": "irrigation",
+      "meaning": "물을 가둬 논에 대며 벼를 길러 낸 남부의 농사",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "벼농사",
+        "저수지",
+        "두레",
+        "귀틀집",
+        "삼한"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h61_0030_0020_0030",
+          "note": "우리역사넷 - 삼한의 농경과 저수지 건설 서술 (6차 교육과정 국사 페이지, 보조 근거)"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B4%91%EC%A3%BC_%EC%8B%A0%EC%B0%BD%EB%8F%99_%EC%9C%A0%EC%A0%81",
+          "note": "좌표 35.19472/126.84872, 저습지에서 벼 껍질층·목제 농기구 확인"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "김제 벽골제는 4세기 축조 기록이라 이 칸에 쓰지 않았다"
+    }
+  ]
+}

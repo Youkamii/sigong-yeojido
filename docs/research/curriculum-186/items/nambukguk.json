@@ -1,0 +1,4135 @@
+{
+  "job": "nambukguk",
+  "era": "nambukguk",
+  "range": [
+    676,
+    935
+  ],
+  "revision": 2,
+  "generatedBy": "claude-opus-5 high",
+  "curriculumSources": [
+    {
+      "title": "2022 개정 교육과정 사회과 고등학교 한국사1·한국사2 단원 구성과 성취기준 코드",
+      "url": "https://namu.wiki/w/2022%20%EA%B0%9C%EC%A0%95%20%EA%B5%90%EC%9C%A1%EA%B3%BC%EC%A0%95/%EC%82%AC%ED%9A%8C%EA%B3%BC/%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90/%ED%95%9C%EA%B5%AD%EC%82%AC",
+      "note": "교육부 고시 제2022-33호 [별책 7] 사회과 교육과정을 옮긴 공개 정리본. [10한사1-01-01]~[10한사1-03-04], [10한사2-01-01]~[10한사2-03-03] 코드와 성취기준 문장을 확인. 원문 고시 PDF와 NCIC(ncic.re.kr) 원문 페이지는 이번 개정에서도 열리지 않아 대조하지 못했다. 따라서 각 항목의 curriculum.verified=true 는 '이 공개 전재본과 두 차례 대조해 코드·문장이 일치함'을 뜻하며 원문 고시 직접 대조는 아니다."
+    },
+    {
+      "title": "2015 개정 교육과정 사회과 고등학교 한국사 성취기준([10한사01-01]~[10한사01-04])",
+      "url": "https://namu.wiki/w/2015%20%EA%B0%9C%EC%A0%95%20%EA%B5%90%EC%9C%A1%EA%B3%BC%EC%A0%95/%EC%82%AC%ED%9A%8C%EA%B3%BC/%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90/%ED%95%9C%EA%B5%AD%EC%82%AC",
+      "note": "1단원 '전근대 한국사의 이해' 중 [10한사01-01] 고대 국가의 지배 체제, [10한사01-02] 고대 사회의 종교와 사상을 확인. 남북국 시대는 2015 개정에서 이 두 성취기준에 배당됨."
+    },
+    {
+      "title": "교육부 고시 제2015-74호 [별책 7] 사회과 교육과정 (원문 PDF)",
+      "url": "https://ceri.knue.ac.kr/pds/2015_04_society.pdf",
+      "note": "2015 개정 사회과 교육과정 고시 원문. 검색으로 위치는 확인했으나 본문 전체를 내려받아 대조하지는 않음."
+    },
+    {
+      "title": "우리역사넷 교과서 용어 해설 / 한국사 연대기 (국사편찬위원회)",
+      "url": "https://contents.history.go.kr/mobile/kc/main.do",
+      "note": "항목 후보의 교과서 용어 수준 확인과 연도·장소 검증에 사용."
+    }
+  ],
+  "changelog": [
+    {
+      "itemId": "hs-nambukguk-maesoseong-battle",
+      "action": "remove",
+      "reason": "[E-major/A-minor] samguk.json 의 hs-nambukguk 대응 항목(hs-samguk-maesoseong, 675)과 같은 대상이고 year 675 는 이 파일 range [676,935] 밖이다. 삼국 파일 소관으로 넘기고 삭제."
+    },
+    {
+      "itemId": "hs-nambukguk-gibeolpo-battle",
+      "action": "remove",
+      "reason": "[E-major] samguk.json hs-samguk-gibeolpo(676)와 같은 사건. 나당 전쟁은 삼국 파일 소관이므로 삭제."
+    },
+    {
+      "itemId": "hs-nambukguk-munmu-unification",
+      "action": "remove",
+      "reason": "[E-major] samguk.json hs-samguk-unification-676 과 같은 사건(표기만 다름). merge 시 지도에 두 번 찍히므로 삭제."
+    },
+    {
+      "itemId": "hs-nambukguk-balhae-refugees",
+      "action": "remove",
+      "reason": "[E-major] goryeo-early.json hs-goryeo-early-balhae-refugees(934)와 완전 중복. 발해 멸망 항목 textbookTerms 에 '대광현'을 남기고 삭제."
+    },
+    {
+      "itemId": "hs-nambukguk-jeokjeokjeok-revolt",
+      "action": "remove",
+      "reason": "[A-minor] 고등 한국사 교과서 본문 밖(수능특강 층위)이고 confidence low. hs-nambukguk-wonjong-aeno-revolt 의 textbookTerms 에 '적고적'을 넣어 흔적만 남기고 삭제."
+    },
+    {
+      "itemId": "hs-nambukguk-daeyaseong-fall",
+      "action": "remove",
+      "reason": "[A-minor] 교과서 본문 밖이고 confidence low. hs-nambukguk-gongsan-battle 의 textbookTerms 에 '대야성'을 넣고 삭제."
+    },
+    {
+      "itemId": "hs-nambukguk-wanggeon-naju",
+      "action": "remove",
+      "reason": "[A-minor] 교과서 본문 밖이고 confidence low. hs-nambukguk-gungye 의 textbookTerms 에 '나주'를 넣어 흡수하고 삭제."
+    },
+    {
+      "itemId": "hs-nambukguk-jangbogo-assassination",
+      "action": "remove",
+      "reason": "[E-minor] 장보고·청해진과 좌표(126.7784/34.3227)가 완전히 같은 세 번째 항목. 암살(846)·혁파(851)를 hs-nambukguk-cheonghaejin 의 yearNote·textbookTerms 로 흡수하고 삭제."
+    },
+    {
+      "itemId": "hs-nambukguk-munmuwang",
+      "action": "edit",
+      "reason": "[E-major] samguk.json hs-samguk-munmu-wang(661)과 제목이 정규화 중복. 필수 앵커라 남기되 title 을 '문무왕(통일 이후)'로 바꾸고 year 676~681(통일 이후 재위)로 좁혀 삼국 파일과 역할을 갈랐다."
+    },
+    {
+      "itemId": "hs-nambukguk-sinmunwang",
+      "action": "edit",
+      "reason": "[B-major] 중앙 정치 기구의 핵심축인 집사부·시중·상대등이 textbookTerms 에 없어 추가. 우리역사넷 '남북국의 통치 체제'에서 '집사부 시중의 지위를 높였고' 서술 확인(확인됨)."
+    },
+    {
+      "itemId": "hs-nambukguk-wanggeon-goryeo",
+      "action": "edit",
+      "reason": "[E-major/C-minor] goryeo-early.json 의 hs-goryeo-early-taejo-wanggeon(인물)·hs-goryeo-early-founding(사건)과 정면 중복. 인물 소개는 goryeo-early 에 맡기고 여기서는 후삼국 서사의 종결 사건으로 성격을 바꿨다. 아울러 918년 6월 즉위지는 궁예의 도읍 철원이고 송악 천도는 919년이므로 좌표를 개성에서 철원으로 옮겼다."
+    },
+    {
+      "itemId": "hs-nambukguk-seongdeok-bell",
+      "action": "edit",
+      "reason": "[C-minor] meaning 의 '34년'은 성덕왕 사망(737)부터 센 수치로 근거가 없다. 경덕왕이 742년 무렵 주조를 시작해 혜공왕 7년(771)에 완성했으므로 기간 표현을 빼고 착수·완성 주체로 고쳤다."
+    },
+    {
+      "itemId": "hs-nambukguk-balhae-japan-exchange",
+      "action": "edit",
+      "reason": "[C-minor] 727년 첫 사신과 '고려국왕' 국서를 한 문장에 붙여 727년 국서에 고려국왕이 쓰인 것처럼 읽혔다. '고려국왕 대흠무'는 759년 문왕대의 표현이므로 분리하고 textbookTerms 에서 '고려국왕'을 빼 hs-nambukguk-goguryeo-succession(759)로 넘겼다."
+    },
+    {
+      "itemId": "hs-nambukguk-wangocheonchukgukjeon",
+      "action": "edit",
+      "reason": "[C-minor] '세계 최초급 여행기'는 법현 『불국기』(5세기)·현장 『대당서역기』(646)가 앞서므로 근거 없는 과장. 교과서 서술대로 '현존 유일의 기록'으로 고쳤다. [D-minor] standard [10한사1-02-04]에 맞춰 unit 을 '사상과 문화'로 통일."
+    },
+    {
+      "itemId": "hs-nambukguk-hyecho",
+      "action": "edit",
+      "reason": "[D-minor] standard [10한사1-02-04]에 맞춰 unit 을 '사상과 문화'로 통일. [E-minor] 왕오천축국전과 좌표(94.81/40.04)가 완전히 같아 인물은 순례 무대(인도 천축)로, 책은 발견지(둔황)로 갈랐다."
+    },
+    {
+      "itemId": "hs-nambukguk-jingol-throne-struggle",
+      "action": "edit",
+      "reason": "[C-minor] year 822~887(65년)과 yearNote 의 '하대 150여 년·왕 20명'이 어긋났다. 신라 하대는 선덕왕 즉위(780)~경순왕 귀부(935)이므로 구간을 780~935로 넓혀 설명과 맞췄다."
+    },
+    {
+      "itemId": "hs-nambukguk-hojok-rise",
+      "action": "edit",
+      "reason": "[C-minor] place.modern '대한민국 전역'은 신라 9주(대동강 이남 한반도)와 어긋나고 label '신라 지방(9주 전역)'과도 맞지 않아 '한반도 중·남부(옛 신라 9주)'로 고쳤다. [D-minor] core 인데 evidence 가 표제어 문자열뿐이라 검증 가능한 URL 을 보탰다."
+    },
+    {
+      "itemId": "hs-nambukguk-seon-nine-schools",
+      "action": "edit",
+      "reason": "[C-minor] label '진전사지(가지산문의 출발지)'는 틀렸다. 가지산문을 연 절은 전남 장흥 보림사(체징, 840년대)이고 양양 진전사는 도의가 당에서 돌아와 은거한 절이다(위키백과 구산선문 확인). 좌표 근거가 확실한 진전사지 삼층석탑(국보)을 유지하되 label 을 '진전사지(도의가 은거한 절)'로 고치고 보림사를 textbookTerms 에 넣었다. [D-minor] core 인데 evidence 에 URL 이 없어 보강."
+    },
+    {
+      "itemId": "hs-nambukguk-dokseosampumgwa",
+      "action": "edit",
+      "reason": "[D-minor] standard [10한사1-02-03](사회 구조·신분제)와 unit('고대 국가의 형성과 성장')이 어긋나 unit 을 맞췄다."
+    },
+    {
+      "itemId": "hs-nambukguk-wonseongwang-accession",
+      "action": "edit",
+      "reason": "[D-minor] standard [10한사1-02-03]에 맞춰 unit 을 '사회 구조와 신분제'로 고쳤다."
+    },
+    {
+      "itemId": "hs-nambukguk-gukhak",
+      "action": "edit",
+      "reason": "[D-minor] standard [10한사1-02-04]에 맞춰 unit 을 '사상과 문화'로 고쳤다."
+    },
+    {
+      "itemId": "hs-nambukguk-trade-ports",
+      "action": "edit",
+      "reason": "[D-minor] standard [10한사1-02-01](국제 관계와 대외 교류)와 unit('수취 체제와 경제생활')이 어긋나 unit 을 맞췄다. 서역 교류의 시각 자료는 새로 넣은 hs-nambukguk-wonseongwangneung 이 맡는다."
+    },
+    {
+      "itemId": "hs-nambukguk-seokguram",
+      "action": "edit",
+      "reason": "[D-minor] evidence 의 옛 문화재청 URL(heritage.go.kr/heri/cul/culSelectDetail.do)이 접속되지 않아 문자열 근거로 통일. 좌표는 실제 위치와 맞아 그대로 두었다."
+    },
+    {
+      "itemId": "hs-nambukguk-cheonghaejin",
+      "action": "edit",
+      "reason": "[E-minor/D-minor] 삭제한 hs-nambukguk-jangbogo-assassination(846 암살·851 혁파)을 yearNote·textbookTerms 로 흡수했다. 접속되지 않는 옛 문화재청 URL 도 문자열 근거로 통일."
+    },
+    {
+      "itemId": "hs-nambukguk-buseoksa",
+      "action": "edit",
+      "reason": "[C-minor] year 676·type heritage 라 676년의 건물로 읽혔다. 현존 무량수전은 고려 건물이므로 meaning 에 이를 밝혔다(항목 성격은 '의상의 창건'으로 유지)."
+    },
+    {
+      "itemId": "hs-nambukguk-wonhyo",
+      "action": "edit",
+      "reason": "[D-minor] core 인데 evidence 가 '한국민족문화대백과사전 표제어' 문자열뿐이라 다음 사람이 재확인할 길이 없었다. 실제로 열리는 URL 을 보탰다."
+    },
+    {
+      "itemId": "hs-nambukguk-uisang",
+      "action": "edit",
+      "reason": "[D-minor] core 인데 evidence 에 URL 이 없어 실제로 열리는 URL 을 보탰다."
+    },
+    {
+      "itemId": "hs-nambukguk-balhae-sanggyeong-move",
+      "action": "edit",
+      "reason": "[E-minor] hs-nambukguk-balhae-munwang(문왕)과 좌표가 소수점까지 같아 지도에 겹쳤다. 천도는 이동이므로 출발지인 중경 현덕부(허룽시 서고성)를 대표점으로 두고 문왕 항목이 상경을 맡게 했다."
+    },
+    {
+      "itemId": "hs-nambukguk-balhae-5gyeong15bu",
+      "action": "edit",
+      "reason": "[E-minor] hs-nambukguk-balhae-seonwang(선왕)과 좌표가 같아 겹쳤다. 5경을 대표하도록 서경 압록부(지린성 린장시 비정)로 옮기고 선왕이 상경을 맡게 했다."
+    },
+    {
+      "itemId": "hs-nambukguk-choechiwon",
+      "action": "edit",
+      "reason": "[E-minor] hs-nambukguk-simu-ten-articles(시무 10여 조)와 좌표가 같아 겹쳤다. 시무책 사건은 왕경에 두고, 인물은 규칙 4('인물은 대표 활동지')에 따라 만년 은거지인 합천 해인사로 옮겼다."
+    },
+    {
+      "itemId": "hs-nambukguk-wonjong-aeno-revolt",
+      "action": "edit",
+      "reason": "[A-minor] 삭제한 적고적의 난(896)을 textbookTerms 로 흡수했다."
+    },
+    {
+      "itemId": "hs-nambukguk-gongsan-battle",
+      "action": "edit",
+      "reason": "[A-minor] 삭제한 견훤의 대야성 함락(920)을 textbookTerms 로 흡수했다."
+    },
+    {
+      "itemId": "hs-nambukguk-gungye",
+      "action": "edit",
+      "reason": "[A-minor] 삭제한 왕건의 나주 공략(903)을 textbookTerms 로 흡수했다."
+    },
+    {
+      "itemId": "hs-nambukguk-balhae-fall",
+      "action": "edit",
+      "reason": "[E-major] goryeo-early.json 과 중복되어 삭제한 '발해 유민의 고려 귀부'(934)를 yearNote·textbookTerms 로 흡수했다."
+    },
+    {
+      "itemId": "hs-nambukguk-jipsabu-sijung",
+      "action": "add",
+      "reason": "[B-major] 통일신라 중앙 정치 기구의 핵심축(집사부·시중 강화, 상대등 약화)이 통째로 빠져 있었다. 우리역사넷 '남북국의 통치 체제'에서 서술을 직접 확인해 추가(확인됨)."
+    },
+    {
+      "itemId": "hs-nambukguk-sangsuri-oesajeong",
+      "action": "add",
+      "reason": "[B-minor] 지방 통제 장치인 상수리 제도·외사정이 9주 5소경 항목의 textbookTerms 에만 묻혀 있었다. 우리역사넷에서 서술 확인 후 독립 항목으로 추가."
+    },
+    {
+      "itemId": "hs-nambukguk-seosi-namsi",
+      "action": "add",
+      "reason": "[B-minor] 수취·경제 갈래에 왕경 시장이 없었다. 695년 서시전·남시전 설치를 위키백과 '효소왕'에서 확인해 추가(연도 확인됨, 좌표는 왕경 대표점이라 confidence medium)."
+    },
+    {
+      "itemId": "hs-nambukguk-gyeongdeokwang",
+      "action": "add",
+      "reason": "[B-minor] 녹읍 부활(757)·불국사와 석굴암(751)·성덕대왕 신종 착수가 모두 경덕왕대인데 그 왕이 목록에 없어 서사가 끊겼다. 재위 연도와 757년 한화 정책을 확인해 추가(확인됨)."
+    },
+    {
+      "itemId": "hs-nambukguk-sangwonsa-bell",
+      "action": "add",
+      "reason": "[B-minor] 통일신라 범종 갈래가 성덕대왕 신종 한 건뿐이었다. 725년 주조된 현존 최고 범종을 확인해 추가(연도·소재지 확인됨, 좌표는 추정)."
+    },
+    {
+      "itemId": "hs-nambukguk-wonseongwangneung",
+      "action": "add",
+      "reason": "[B-minor] 신라와 서역의 교류를 보여 주는 유물이 없어(울산항 항목은 confidence low) 교과서 사진 자료인 원성왕릉 무인석을 추가. 소재지·좌표 확인됨."
+    },
+    {
+      "itemId": "hs-nambukguk-balhae-ibulbyeongjwasang",
+      "action": "add",
+      "reason": "[B-major] 발해 문화재가 도성·고분 셋뿐이고 불교 문화재가 하나도 없었다. 우리역사넷 '발해 문화'에서 출토지·크기·양식을 확인해 추가(확인됨)."
+    },
+    {
+      "itemId": "hs-nambukguk-balhae-seokdeung",
+      "action": "add",
+      "reason": "[B-major] 발해 불교 문화재 보강. 우리역사넷 '발해 문화'에서 소재지·높이를 확인해 추가(확인됨, 좌표는 추정)."
+    },
+    {
+      "itemId": null,
+      "action": "keep",
+      "reason": "[D-minor 기각] evidence.kind 에 'encykorea-title' 같은 값을 새로 만들라는 제안은 스키마(kind: urihistory|encykorea|heritage-portal|primary-local|primary-web|wikipedia|other)를 벗어나고 작업 지시 4('다른 구조·규칙은 그대로')와 충돌한다. 대신 core 항목(원효·의상·선종과 9산 선문·호족)에 실제로 열리는 URL 을 evidence 로 보태 재확인 경로를 만들었다. 남은 표제어 문자열 근거는 kind 를 그대로 둔다."
+    },
+    {
+      "itemId": null,
+      "action": "keep",
+      "reason": "[D-minor 기각] curriculum.verified 를 'secondary' 로 낮추라는 제안도 스키마상 boolean 이라 넣을 수 없다. NCIC(ncic.re.kr) 원문 페이지는 이번에도 열리지 않아 대조하지 못했으므로 verified 는 true 로 두되, curriculumSources[0].note 에 '2차 전재본 대조'임을 더 분명히 적었다. 5개 성취기준 코드와 문장은 조사자·검수자가 같은 공개 정리본으로 두 번 대조해 일치를 확인한 상태다."
+    },
+    {
+      "itemId": null,
+      "action": "keep",
+      "reason": "[E-minor 일부 기각] 최치원과 시무 10여 조를 한 항목으로 합치라는 제안은 받지 않았다. 인물(최치원)과 사건(894년 시무책)은 교과서에서 따로 다루고 필수 앵커도 '최치원'이라, 합치는 대신 인물 좌표를 만년 은거지 해인사로 옮겨 좌표 겹침만 풀었다. 장보고·청해진 3건 가운데는 암살 항목만 청해진에 흡수했다(장보고·청해진은 둘 다 core 앵커라 유지)."
+    },
+    {
+      "itemId": "hs-nambukguk-bodeokguk-abolished",
+      "action": "keep",
+      "reason": "[A-minor 일부 기각] 보덕국의 폐지는 683년으로 이 파일 range 안이고 고구려 유민 처리 서사의 매듭이라 삭제하지 않고 priority extended 그대로 두었다(검수자도 유지를 허용)."
+    },
+    {
+      "itemId": null,
+      "action": "keep",
+      "reason": "[검수 근거 오류 기록] 검수 파일이 제시한 encykorea Article ID 3건(E0002532 경덕왕, E0027605 상원사 동종, E0040457 원성왕릉, E0006037 구산선문)은 실제로 열어 보니 각각 '경서자', '서계유사', 404, '구종수'였다. ID 를 그대로 옮겨 쓰지 않고 위키백과·우리역사넷에서 사실을 다시 확인한 뒤 검증된 URL 만 evidence 에 넣었다."
+    }
+  ],
+  "items": [
+    {
+      "id": "hs-nambukguk-munmuwang",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "문무왕(통일 이후)",
+      "type": "person",
+      "year": 676,
+      "yearEnd": 681,
+      "approx": false,
+      "yearNote": "재위 661~681. 통일(676) 이후 마지막 5년의 통치를 다룬다. 통일 과정 자체는 samguk.json 소관",
+      "place": {
+        "label": "신라 왕경(월성)",
+        "modern": "경상북도 경주시 인왕동",
+        "lon": 129.2247,
+        "lat": 35.8348,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "통일을 이룬 뒤 나라의 틀을 새로 짜고 동해에 묻힌 임금",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "문무왕",
+        "삼국 통일",
+        "대왕암",
+        "외사정",
+        "안압지"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m11_0040_0010",
+          "note": "676년 통일 완성"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '문무왕'",
+          "note": "재위 661~681"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-uisang",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "의상",
+      "type": "person",
+      "year": 676,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "676년 부석사 창건, 화엄 사상 정립",
+      "place": {
+        "label": "부석사",
+        "modern": "경상북도 영주시 부석면 북지리",
+        "lon": 128.6866,
+        "lat": 36.9977,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "화엄 사상을 펴고 부석사를 세운 통일신라 승려",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "의상",
+        "화엄종",
+        "화엄일승법계도",
+        "부석사",
+        "관음 신앙"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '의상'",
+          "note": "화엄종 개창, 부석사 창건 676"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '영주 부석사 무량수전'(국보) 소재지: 경북 영주시 부석면 북지리",
+          "note": "좌표 근거"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%9D%98%EC%83%81_(%EC%8B%A0%EB%9D%BC)",
+          "note": "625~702, 지엄에게 화엄을 배우고 676년 부석사 창건(검증 가능한 URL 보강)"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-buseoksa",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "부석사",
+      "type": "heritage",
+      "year": 676,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "문무왕 16년 의상 창건(삼국사기)",
+      "place": {
+        "label": "영주 부석사",
+        "modern": "경상북도 영주시 부석면 북지리",
+        "lon": 128.6866,
+        "lat": 36.9977,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "heritage",
+        "sceneFunction": "temple"
+      },
+      "meaning": "의상이 676년에 연 화엄종 절, 지금 남은 무량수전은 고려 때 것",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "부석사",
+        "무량수전",
+        "화엄 십찰",
+        "산사"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '영주 부석사 무량수전' 국보",
+          "note": "소재지 확인"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '부석사'",
+          "note": "676년 창건"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "현존 무량수전은 고려 건물. 화면에는 '의상의 창건'을 앵커로 두고 건물 연대는 주석 처리 권장."
+    },
+    {
+      "id": "hs-nambukguk-kimheumdol-revolt",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "김흠돌의 난",
+      "type": "event",
+      "year": 681,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷 신문왕 항목: 681년 즉위 직후 진압",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "battle",
+        "sceneFunction": "civil_conflict"
+      },
+      "meaning": "신문왕이 장인의 반란을 눌러 진골 귀족을 제압한 사건",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "김흠돌",
+        "신문왕",
+        "진골 귀족",
+        "전제 왕권"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101240",
+          "note": "681년 김흠돌의 난 진압"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-munmu-underwater-tomb",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "문무대왕릉",
+      "type": "heritage",
+      "year": 681,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "문무왕 사망 681년, 유언에 따른 동해 산골",
+      "place": {
+        "label": "경주 문무대왕릉(대왕암)",
+        "modern": "경상북도 경주시 문무대왕면 봉길리",
+        "lon": 129.4786,
+        "lat": 35.729,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "heritage"
+      },
+      "meaning": "바다의 용이 되어 나라를 지키겠다는 문무왕의 수중릉",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "문무대왕릉",
+        "대왕암",
+        "호국 불교",
+        "수중릉"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '경주 문무대왕릉' 사적, 소재지 경북 경주시 문무대왕면 봉길리",
+          "note": "좌표 근거"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-gukhak",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "국학",
+      "type": "institution",
+      "year": 682,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷 신문왕 항목: 682년(신문왕 2) 6월 설치",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "assembly"
+      },
+      "meaning": "유학을 가르쳐 왕에게 충성할 관리를 기른 국립 학교",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "국학",
+        "신문왕",
+        "유학",
+        "논어",
+        "효경"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101240",
+          "note": "682년 6월 국학 설치"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-gameunsa-pagodas",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "감은사지 삼층석탑",
+      "type": "heritage",
+      "year": 682,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷 신문왕 항목: 682년(신문왕 2) 감은사 건립",
+      "place": {
+        "label": "경주 감은사지",
+        "modern": "경상북도 경주시 문무대왕면 용당리",
+        "lon": 129.4776,
+        "lat": 35.7374,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "heritage",
+        "sceneFunction": "temple"
+      },
+      "meaning": "문무왕을 기려 세운 절터에 남은 통일신라 초기 쌍탑",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "감은사지",
+        "삼층석탑",
+        "쌍탑 가람",
+        "호국 불교"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101240",
+          "note": "682년 감은사 건립"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '경주 감은사지 동·서 삼층석탑' 국보, 소재지 경북 경주시 문무대왕면 용당리",
+          "note": "좌표 근거"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-bodeokguk-abolished",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "보덕국의 폐지",
+      "type": "event",
+      "year": 683,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "안승을 경주로 옮기고 683~684년 금마저의 보덕국 해체",
+      "place": {
+        "label": "금마저(보덕국)",
+        "modern": "전라북도 익산시 금마면",
+        "lon": 127.057,
+        "lat": 36.01,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "고구려 유민을 품던 속국을 없애고 신라에 흡수한 조치",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "보덕국",
+        "안승",
+        "금마저",
+        "고구려 유민"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '보덕국'",
+          "note": "안승·금마저·683~684 해체"
+        }
+      ],
+      "priority": "extended",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-sinmunwang",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "신문왕",
+      "type": "person",
+      "year": 681,
+      "yearEnd": 692,
+      "approx": false,
+      "yearNote": "재위 681~692",
+      "place": {
+        "label": "신라 왕경(월성)",
+        "modern": "경상북도 경주시 인왕동",
+        "lon": 129.2247,
+        "lat": 35.8348,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "귀족을 누르고 통일신라 통치 제도를 완성한 임금",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "신문왕",
+        "집사부",
+        "시중",
+        "상대등",
+        "국학",
+        "9주 5소경",
+        "관료전",
+        "녹읍 폐지",
+        "9서당 10정"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101240",
+          "note": "재위 681~692, 주요 정책 연도"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-9ju-5sogyeong",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "9주 5소경",
+      "type": "institution",
+      "year": 685,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 685년(신문왕 5) 완산주·청주 설치로 9주, 3월 서원소경·남원소경 설치로 5소경 완성",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "survey"
+      },
+      "meaning": "전국을 9주로 나누고 5개 작은 수도를 둔 지방 제도",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "9주",
+        "5소경",
+        "서원경",
+        "남원경",
+        "중원경",
+        "상수리 제도",
+        "외사정"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101240",
+          "note": "685년 9주·5소경 완성"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-9seodang-10jeong",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "9서당 10정",
+      "type": "institution",
+      "year": 687,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "우리역사넷: 9서당은 신문왕대에 거의 갖춰졌고 10정은 9주 완비 뒤 완성",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "assembly"
+      },
+      "meaning": "중앙 9개 부대와 지방 10개 부대로 짠 통일신라 군사 제도",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "9서당",
+        "10정",
+        "고구려인",
+        "백제인",
+        "말갈인",
+        "민족 융합"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101240",
+          "note": "9서당·10정 신문왕대 완성"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-gwallyojeon",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 수취 체제와 경제생활",
+      "title": "관료전 지급",
+      "type": "economy",
+      "year": 687,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 687년(신문왕 7) 관료전 지급",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "survey",
+        "sceneFunction": "irrigation"
+      },
+      "meaning": "관리에게 조세만 걷는 땅을 주어 귀족의 힘을 줄인 제도",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-02]",
+        "standardText": "근대 이전의 수취 체제 변화를 농업 중심의 경제생활과 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "관료전",
+        "조세",
+        "수조권",
+        "신문왕"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101240",
+          "note": "687년 관료전 지급"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-nogeup-abolished",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 수취 체제와 경제생활",
+      "title": "녹읍 폐지",
+      "type": "economy",
+      "year": 689,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 689년(신문왕 9) 1월 녹읍 폐지",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "귀족이 마을 사람까지 부리던 녹읍을 없애 왕권을 세운 조치",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-02]",
+        "standardText": "근대 이전의 수취 체제 변화를 농업 중심의 경제생활과 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "녹읍",
+        "관료전",
+        "세조(歲租)",
+        "신문왕"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101240",
+          "note": "689년 1월 녹읍 폐지"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-dalgubeol-capital-move",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "달구벌 천도 시도",
+      "type": "event",
+      "year": 689,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 689년(신문왕 9) 시도했으나 무산",
+      "place": {
+        "label": "달구벌",
+        "modern": "대구광역시",
+        "lon": 128.6014,
+        "lat": 35.8714,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "귀족의 터전인 경주를 벗어나려다 좌절된 수도 옮기기",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "달구벌",
+        "천도",
+        "진골 귀족",
+        "신문왕"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101240",
+          "note": "689년 달구벌 천도 시도, 무산"
+        }
+      ],
+      "priority": "extended",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-wonhyo",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "원효",
+      "type": "person",
+      "year": 686,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "617~686, 사망 연도를 활동의 기준 시점으로 둠",
+      "place": {
+        "label": "분황사",
+        "modern": "경상북도 경주시 구황동",
+        "lon": 129.2337,
+        "lat": 35.842,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "종파 다툼을 화해시키고 불교를 백성에게 퍼뜨린 승려",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "원효",
+        "일심 사상",
+        "화쟁",
+        "대승기신론소",
+        "아미타 신앙",
+        "무애가"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '원효'",
+          "note": "617~686, 화쟁 사상"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '경주 분황사 모전석탑' 국보, 소재지 경북 경주시 구황동",
+          "note": "좌표 근거"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%9B%90%ED%9A%A8",
+          "note": "617~686, 분황사 저술과 무애가(검증 가능한 URL 보강)"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-seolchong",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "설총",
+      "type": "person",
+      "year": 692,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "신문왕대 활동, 화왕계 지어 올림",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "이두를 정리하고 임금에게 바른 정치를 권한 6두품 학자",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "설총",
+        "이두",
+        "화왕계",
+        "6두품",
+        "유학"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '설총'",
+          "note": "이두 정리, 화왕계"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-jeongjeon",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 수취 체제와 경제생활",
+      "title": "정전 지급",
+      "type": "economy",
+      "year": 722,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "성덕왕 21년, 백성에게 정전 지급",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "survey",
+        "sceneFunction": "irrigation"
+      },
+      "meaning": "농민에게 땅을 주고 세금을 걷어 나라 살림을 다진 제도",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-02]",
+        "standardText": "근대 이전의 수취 체제 변화를 농업 중심의 경제생활과 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "정전",
+        "성덕왕",
+        "수취 체제",
+        "조·용·조"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '정전(丁田)'",
+          "note": "722년 성덕왕대 지급"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-hyecho",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "혜초",
+      "type": "person",
+      "year": 727,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "727년 인도 순례를 마치고 왕오천축국전 저술",
+      "place": {
+        "label": "천축 순례길(갠지스 중류 마가다 일대)",
+        "modern": "인도 비하르주",
+        "lon": 85.3,
+        "lat": 25.15,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "migration",
+        "sceneFunction": "migration"
+      },
+      "meaning": "인도까지 걸어가 여행기를 남긴 신라 승려",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "혜초",
+        "왕오천축국전",
+        "천축",
+        "구법 순례"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '혜초'",
+          "note": "704~787, 727년 왕오천축국전"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "활동 무대가 인도~중앙아시아라 단일 좌표가 부정확. 순례 무대를 대표점으로 두고, 기록이 발견된 둔황은 왕오천축국전 항목이 맡는다. 화면에서는 이동선으로 표현 권장."
+    },
+    {
+      "id": "hs-nambukguk-wangocheonchukgukjeon",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "왕오천축국전",
+      "type": "culture",
+      "year": 727,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "1908년 둔황 막고굴에서 펠리오가 발견, 현재 프랑스 국립도서관 소장",
+      "place": {
+        "label": "둔황 막고굴(발견지)",
+        "modern": "중국 간쑤성 둔황시",
+        "lon": 94.81,
+        "lat": 40.04,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "publication"
+      },
+      "meaning": "8세기 인도와 서역을 직접 보고 적은, 지금 남은 유일한 기록",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "왕오천축국전",
+        "혜초",
+        "둔황",
+        "펠리오"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '왕오천축국전'",
+          "note": "727년 저술, 둔황 출토"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-paegang-south-recognized",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "패강 이남 영유 인정",
+      "type": "event",
+      "year": 735,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "성덕왕 34년, 당이 대동강 이남 땅을 신라 영토로 공인",
+      "place": {
+        "label": "패강(대동강) 유역",
+        "modern": "북한 평양직할시",
+        "lon": 125.7625,
+        "lat": 39.0392,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "당이 대동강 남쪽을 신라 땅으로 인정해 국경이 굳어진 일",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "패강",
+        "성덕왕",
+        "나당 관계",
+        "대동강"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '패강진'",
+          "note": "735년 패강 이남 영유 공인, 이후 패강진 설치"
+        }
+      ],
+      "priority": "extended",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-daejoyeong",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "대조영",
+      "type": "person",
+      "year": 698,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷 '발해 건국 698': 동모산에서 진국 건국, 713년 발해군왕 책봉",
+      "place": {
+        "label": "동모산(성산자산성)",
+        "modern": "중국 지린성 둔화시",
+        "lon": 128.205,
+        "lat": 43.363,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "settlement"
+      },
+      "meaning": "고구려 유민을 이끌고 만주에 발해를 세운 인물",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "대조영",
+        "발해",
+        "진국",
+        "동모산",
+        "고구려 유민",
+        "말갈"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i100800&code=kc_age_10",
+          "note": "698년 동모산에서 건국, 현 지린성 둔화시 성산자산성"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "건국 연도·국호"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-balhae-muwang",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "무왕(발해)",
+      "type": "person",
+      "year": 732,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "재위 719~737, 732년 등주 공격",
+      "place": {
+        "label": "구국(동모산 일대)",
+        "modern": "중국 지린성 둔화시",
+        "lon": 128.205,
+        "lat": 43.363,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "인안 연호를 쓰고 당과 맞서며 영토를 넓힌 발해 2대 왕",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "무왕",
+        "인안",
+        "장문휴",
+        "흑수말갈",
+        "돌궐",
+        "일본"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m61_0050_0030",
+          "note": "발해의 발전 서술"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "재위 719~737"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-jangmunhyu-dengzhou",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "장문휴의 등주 공격",
+      "type": "event",
+      "year": 732,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "무왕 14년, 수군으로 당의 등주 습격",
+      "place": {
+        "label": "등주(登州)",
+        "modern": "중국 산둥성 옌타이시 펑라이구",
+        "lon": 120.758,
+        "lat": 37.81,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "naval",
+        "sceneFunction": "naval_expedition"
+      },
+      "meaning": "발해 수군이 바다를 건너 당의 항구를 친 사건",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "장문휴",
+        "등주",
+        "무왕",
+        "당",
+        "흑수말갈"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m61_0050_0030",
+          "note": "무왕대 대당 강경책"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "732년 등주 공격"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-balhae-japan-exchange",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "발해와 일본의 교류",
+      "type": "foreign",
+      "year": 727,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "727년(무왕 9) 제1차 견일본사 파견. 국서의 '고려국왕' 표현은 759년 문왕대의 일",
+      "place": {
+        "label": "일본 나라(헤이조쿄)",
+        "modern": "일본 나라현 나라시",
+        "lon": 135.8048,
+        "lat": 34.6911,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "market",
+        "sceneFunction": "harbor"
+      },
+      "meaning": "발해가 일본에 사신을 보내 당·신라를 견제하고 교역한 길",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "일본도",
+        "발해 사신",
+        "견일본사",
+        "무왕",
+        "교역"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "727년 일본 사신 파견, 국서의 고려 표기"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m61_0050_0030",
+          "note": "발해의 대외 관계"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-balhae-munwang",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "문왕(발해)",
+      "type": "person",
+      "year": 756,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "재위 737~793, 756년 상경 용천부 천도",
+      "place": {
+        "label": "상경 용천부",
+        "modern": "중국 헤이룽장성 닝안시 발해진",
+        "lon": 129.143,
+        "lat": 44.121,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "당 제도를 들여 나라 틀을 짜고 상경으로 도읍을 옮긴 왕",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "문왕",
+        "대흥",
+        "상경 용천부",
+        "3성 6부",
+        "주자감",
+        "신라도"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i101000&code=kc_age_10",
+          "note": "문왕이 756년(문왕 20) 상경 용천부로 천도"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-balhae-sanggyeong-move",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "발해의 상경 천도",
+      "type": "event",
+      "year": 756,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 문왕이 756년 홀한하 동쪽으로 천도. 이후 동경 이도(780년대), 성왕의 상경 환도(793년 무렵)",
+      "place": {
+        "label": "중경 현덕부(서고성) → 상경 용천부",
+        "modern": "중국 지린성 옌볜조선족자치주 허룽시",
+        "lon": 129.02,
+        "lat": 42.6,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "migration",
+        "sceneFunction": "migration"
+      },
+      "meaning": "발해가 도읍을 넓은 들판으로 옮겨 나라 중심을 다잡은 일",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "상경 용천부",
+        "중경 현덕부",
+        "동경 용원부",
+        "천도",
+        "문왕"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i101000&code=kc_age_10",
+          "note": "천도 연도와 현재 위치(흑룡강성 영안시)"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-balhae-3seong6bu",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "발해 3성 6부와 주자감",
+      "type": "institution",
+      "year": 756,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "문왕대 당 제도를 받아들여 정비",
+      "place": {
+        "label": "상경 용천부",
+        "modern": "중국 헤이룽장성 닝안시 발해진",
+        "lon": 129.143,
+        "lat": 44.121,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "assembly"
+      },
+      "meaning": "당 제도를 본떴지만 이름과 운영은 발해식으로 바꾼 중앙 기구",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "3성 6부",
+        "정당성",
+        "대내상",
+        "중정대",
+        "주자감",
+        "문적원"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m61_0050_0030",
+          "note": "발해의 통치 조직"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "3성 6부·주자감"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-balhae-sanggyeongseong",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "발해 상경성",
+      "type": "heritage",
+      "year": 756,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "756년 천도 이후 발해의 주된 도성",
+      "place": {
+        "label": "상경 용천부 유적",
+        "modern": "중국 헤이룽장성 닝안시 발해진",
+        "lon": 129.143,
+        "lat": 44.121,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "heritage",
+        "sceneFunction": "fortress"
+      },
+      "meaning": "당 장안성을 본떠 주작대로를 낸 발해의 계획 도성",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "상경성",
+        "주작대로",
+        "외성",
+        "궁성",
+        "온돌",
+        "발해 석등"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i101000&code=kc_age_10",
+          "note": "상경 용천부 위치"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "도성 구조"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-nogeup-restored",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 수취 체제와 경제생활",
+      "title": "녹읍 부활",
+      "type": "event",
+      "year": 757,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "경덕왕 16년, 월봉을 없애고 녹읍을 되살림",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "귀족의 힘이 되살아나 녹읍이 다시 주어진 전환점",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-02]",
+        "standardText": "근대 이전의 수취 체제 변화를 농업 중심의 경제생활과 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "녹읍 부활",
+        "경덕왕",
+        "월봉",
+        "진골 귀족",
+        "한화 정책"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '녹읍'",
+          "note": "757년 부활"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-silla-village-register",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 수취 체제와 경제생활",
+      "title": "신라 촌락 문서",
+      "type": "economy",
+      "year": 755,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "작성 연대는 695·755·815년 설이 갈림. 1933년 일본 도다이사 쇼소인에서 발견",
+      "place": {
+        "label": "서원경 부근 4개 촌",
+        "modern": "충청북도 청주시",
+        "lon": 127.489,
+        "lat": 36.6424,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "survey"
+      },
+      "meaning": "사람·논밭·가축·나무까지 세어 적은 신라의 마을 장부",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-02]",
+        "standardText": "근대 이전의 수취 체제 변화를 농업 중심의 경제생활과 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "신라 촌락 문서",
+        "민정문서",
+        "서원경",
+        "연수유전답",
+        "공연",
+        "계연",
+        "9등호제",
+        "정창원"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "https://encykorea.aks.ac.kr/Article/E0032861",
+          "note": "서원경 4개 촌 장적, 쇼소인 발견 경위"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%8B%A0%EB%9D%BC%EC%9E%A5%EC%A0%81",
+          "note": "1933년 도다이사 쇼소인 화엄경론 책갑에서 발견"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "화면 좌표는 문서가 다룬 대상지(서원경=청주)로 두고, 보관지(일본 쇼소인)는 주석으로 병기하는 편이 학습에 유리."
+    },
+    {
+      "id": "hs-nambukguk-kimdaeseong",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "김대성",
+      "type": "person",
+      "year": 751,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 700~774, 751년(경덕왕 10) 불국사·석굴암 조성 시작",
+      "place": {
+        "label": "토함산 일대",
+        "modern": "경상북도 경주시 진현동",
+        "lon": 129.3321,
+        "lat": 35.79,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "construction",
+        "sceneFunction": "construction_site"
+      },
+      "meaning": "부모를 위해 불국사와 석굴암을 짓게 한 재상",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "김대성",
+        "불국사",
+        "석굴암",
+        "경덕왕",
+        "삼국유사"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_r0070_0010&code=eh_age_10",
+          "note": "751년 김대성의 불국사·석굴암 조성, 774년 사망"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-bulguksa",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "불국사",
+      "type": "heritage",
+      "year": 751,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "751년 창건 시작, 혜공왕대 완성. 삼층석탑 중수 문서에는 742년 착공설도 있음",
+      "place": {
+        "label": "경주 불국사",
+        "modern": "경상북도 경주시 불국로 385(진현동)",
+        "lon": 129.3321,
+        "lat": 35.79,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "heritage",
+        "sceneFunction": "temple"
+      },
+      "meaning": "부처의 나라를 땅 위에 세우려 한 통일신라 대표 사찰",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "불국사",
+        "다보탑",
+        "삼층석탑",
+        "청운교",
+        "백운교",
+        "세계유산"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_r0070_0010&code=eh_age_10",
+          "note": "751년 조성, 774년 이후 국가가 마무리"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '경주 불국사' 사적, 소재지 경북 경주시 불국로 385",
+          "note": "좌표 근거"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-seokguram",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "석굴암",
+      "type": "heritage",
+      "year": 751,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "751년 석불사로 조성 시작",
+      "place": {
+        "label": "경주 석굴암 석굴",
+        "modern": "경상북도 경주시 석굴로 238(진현동)",
+        "lon": 129.3496,
+        "lat": 35.7951,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "heritage",
+        "sceneFunction": "temple"
+      },
+      "meaning": "돌을 쌓아 만든 인공 석굴 사원, 본존불의 균형이 뛰어난 유산",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "석굴암",
+        "석불사",
+        "본존불",
+        "토함산",
+        "세계유산"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '경주 석굴암 석굴' 국보, 소재지 경북 경주시 석굴로 238(진현동)",
+          "note": "2024년 국가유산청 개편으로 옛 heritage.go.kr/heri/cul 경로가 응답하지 않아 다른 heritage-portal 근거와 같은 문자열 형태로 통일"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_r0070_0010&code=eh_age_10",
+          "note": "751년 조성"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-mugujeonggwang-sutra",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "무구정광대다라니경",
+      "type": "culture",
+      "year": 751,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "불국사 삼층석탑 조성(751년 무렵) 시 봉안, 1966년 발견",
+      "place": {
+        "label": "불국사 삼층석탑(석가탑)",
+        "modern": "경상북도 경주시 진현동",
+        "lon": 129.3321,
+        "lat": 35.79,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "publication",
+        "sceneFunction": "print_workshop"
+      },
+      "meaning": "석가탑에서 나온, 지금 남은 가장 오래된 목판 인쇄물",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "무구정광대다라니경",
+        "목판 인쇄",
+        "석가탑",
+        "불국사 삼층석탑"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '무구정광대다라니경'",
+          "note": "751년 무렵, 현존 최고 목판 인쇄물"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '경주 불국사 삼층석탑' 국보 및 사리장엄구",
+          "note": "출토 위치"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-daegongs-revolt",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "대공의 난",
+      "type": "event",
+      "year": 768,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "혜공왕 4년, 96각간의 난으로도 불림",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "battle",
+        "sceneFunction": "civil_conflict"
+      },
+      "meaning": "진골 귀족들이 3년간 뒤엉켜 싸운 대혼란의 시작",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "대공의 난",
+        "96각간의 난",
+        "혜공왕",
+        "진골 귀족"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '대공의 난'",
+          "note": "768년 혜공왕대 발생"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-hyegongwang-killed",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "혜공왕 피살과 신라 하대의 시작",
+      "type": "event",
+      "year": 780,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "780년 김지정의 난 중 혜공왕 피살, 무열왕계 왕통 단절",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "battle",
+        "sceneFunction": "civil_conflict"
+      },
+      "meaning": "무열왕 자손의 왕위가 끊기고 하대의 혼란이 열린 해",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "혜공왕",
+        "김지정의 난",
+        "무열왕계",
+        "신라 하대",
+        "선덕왕"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '혜공왕'",
+          "note": "780년 피살, 하대 개막"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-wonseongwang-accession",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사회 구조와 신분제",
+      "title": "원성왕의 즉위",
+      "type": "event",
+      "year": 785,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "선덕왕 사후 김주원을 제치고 김경신(원성왕)이 즉위",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "왕위를 두고 진골끼리 다투기 시작한 하대의 분기점",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-03]",
+        "standardText": "근대 이전 사회 구조를 신분제를 중심으로 분석한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "원성왕",
+        "김주원",
+        "원성왕계",
+        "왕위 쟁탈전",
+        "독서삼품과"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '원성왕'",
+          "note": "785년 즉위, 김주원과의 경쟁"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-dokseosampumgwa",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사회 구조와 신분제",
+      "title": "독서삼품과",
+      "type": "institution",
+      "year": 788,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "원성왕 4년(788) 설치",
+      "place": {
+        "label": "국학(신라 왕경)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "assembly"
+      },
+      "meaning": "유교 경전 실력을 셋으로 나눠 관리를 뽑으려 한 시도",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-03]",
+        "standardText": "근대 이전 사회 구조를 신분제를 중심으로 분석한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "독서삼품과",
+        "국학",
+        "원성왕",
+        "골품제",
+        "상품·중품·하품"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "https://encykorea.aks.ac.kr/Article/E0016013",
+          "note": "788년 설치, 3등급 관리 선발"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/tg/view.do?levelId=tg_001_0670",
+          "note": "교과서 용어 해설 '독서삼품과'"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-seongdeok-bell",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "성덕대왕 신종",
+      "type": "heritage",
+      "year": 771,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "742년 무렵 경덕왕이 주조를 시작, 771년(혜공왕 7) 완성. 명문에 주조 경위 기록",
+      "place": {
+        "label": "국립경주박물관",
+        "modern": "경상북도 경주시 일정로 186(인왕동)",
+        "lon": 129.2277,
+        "lat": 35.8289,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "heritage"
+      },
+      "meaning": "경덕왕이 시작해 혜공왕 때 완성한 통일신라 최대의 종",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "성덕대왕 신종",
+        "에밀레종",
+        "비천상",
+        "봉덕사종",
+        "금속 공예"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '성덕대왕신종' 국보, 소재지 국립경주박물관",
+          "note": "771년 완성, 소재지"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '성덕대왕신종'",
+          "note": "주조 연도"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-jeonghye-tomb",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "정혜공주 묘",
+      "type": "heritage",
+      "year": 777,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 문왕의 둘째 딸, 737년 출생 777년 4월 사망",
+      "place": {
+        "label": "육정산 고분군",
+        "modern": "중국 지린성 둔화시 강동향 승리촌",
+        "lon": 128.234,
+        "lat": 43.354,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "고구려식 굴식 돌방과 모줄임천장을 쓴 발해 공주 무덤",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "정혜공주 묘",
+        "육정산 고분군",
+        "굴식 돌방무덤",
+        "모줄임천장",
+        "고구려 계승"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r101100&code=kc_age_10",
+          "note": "정혜공주묘 777, 길림성 돈화시 육정산 고분군"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-jeonghyo-tomb",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "정효공주 묘",
+      "type": "heritage",
+      "year": 792,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 792년 6월 36세로 사망, 1980년 발견",
+      "place": {
+        "label": "용두산 고분군",
+        "modern": "중국 지린성 옌볜조선족자치주 허룽시",
+        "lon": 129.03,
+        "lat": 42.55,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "excavation"
+      },
+      "meaning": "당식 벽돌무덤에 고구려식 천장을 얹고 벽화를 남긴 무덤",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "정효공주 묘",
+        "용두산 고분군",
+        "벽돌무덤",
+        "벽화",
+        "묘지석"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r101200&code=kc_age_10",
+          "note": "정효공주묘 792, 화룡시 용두산 고분군"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-balhae-seonwang",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "선왕(발해)",
+      "type": "person",
+      "year": 818,
+      "yearEnd": 830,
+      "approx": false,
+      "yearNote": "재위 818~830, 당이 '해동성국'이라 부른 전성기",
+      "place": {
+        "label": "상경 용천부",
+        "modern": "중국 헤이룽장성 닝안시 발해진",
+        "lon": 129.143,
+        "lat": 44.121,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "영토를 최대로 넓혀 해동성국 소리를 들은 발해 왕",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "선왕",
+        "건흥",
+        "해동성국",
+        "5경 15부 62주",
+        "요동"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101175&code=kc_age_10",
+          "note": "선왕 항목, 해동성국 칭호"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m61_0050_0030",
+          "note": "5경 15부 62주 편제"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-balhae-5gyeong15bu",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "발해 5경 15부 62주",
+      "type": "institution",
+      "year": 818,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "선왕대 전국을 5경 15부 62주로 편제",
+      "place": {
+        "label": "서경 압록부(5경 가운데 하나)",
+        "modern": "중국 지린성 린장시",
+        "lon": 126.91,
+        "lat": 41.8,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "survey"
+      },
+      "meaning": "만주와 연해주까지 다섯 수도와 열다섯 부로 나눈 지방 제도",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "5경 15부 62주",
+        "상경 용천부",
+        "중경 현덕부",
+        "동경 용원부",
+        "남경 남해부",
+        "서경 압록부",
+        "해동성국"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m61_0050_0030",
+          "note": "선왕이 5경 15부 62주로 편제"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "5경 명칭"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-sillado",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "신라도",
+      "type": "foreign",
+      "year": 790,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "790년 신라가 발해에 사신을 보낸 기록 등으로 8세기 후반 이후 이용 확인",
+      "place": {
+        "label": "동경 용원부(신라도 기점)",
+        "modern": "중국 지린성 훈춘시",
+        "lon": 130.45,
+        "lat": 42.89,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "migration",
+        "sceneFunction": "migration"
+      },
+      "meaning": "발해와 신라를 잇던 교통로, 두 나라가 닿아 있었음을 보여 준다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "신라도",
+        "조공도",
+        "영주도",
+        "일본도",
+        "거란도"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '신라도'",
+          "note": "발해의 5대 교통로 가운데 하나"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "대외 교통로"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "low",
+      "notes": "교통로는 선(線)이라 단일 좌표가 부정확. 화면에서는 동경 용원부~신라 북변을 잇는 경로로 그리는 편이 맞다."
+    },
+    {
+      "id": "hs-nambukguk-goguryeo-succession",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "발해의 고구려 계승 의식",
+      "type": "culture",
+      "year": 759,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "759년 일본에 보낸 국서에서 '고려국왕 대흠무'라 칭한 사례",
+      "place": {
+        "label": "상경 용천부",
+        "modern": "중국 헤이룽장성 닝안시 발해진",
+        "lon": 129.143,
+        "lat": 44.121,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "발해가 스스로를 고구려를 이은 나라로 밝힌 근거들",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "고려국왕",
+        "국서",
+        "온돌",
+        "굴식 돌방무덤",
+        "치미",
+        "고구려 계승"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "일본에 보낸 국서의 고려 표기"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m61_0050_0030",
+          "note": "발해의 성격 논의"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-jangbogo",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "장보고",
+      "type": "person",
+      "year": 828,
+      "yearEnd": 846,
+      "approx": false,
+      "yearNote": "828년 청해진 설치, 846년 염장에게 암살",
+      "place": {
+        "label": "청해진(완도 장도)",
+        "modern": "전라남도 완도군 완도읍 장좌리",
+        "lon": 126.7784,
+        "lat": 34.3227,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "바다를 지키고 당·신라·일본 무역을 쥔 해상 세력가",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "장보고",
+        "청해진",
+        "대사",
+        "법화원",
+        "해상 무역",
+        "염장"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "https://encykorea.aks.ac.kr/Article/E0048474",
+          "note": "장보고 생애"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r101460",
+          "note": "청해진 828"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-cheonghaejin",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "청해진",
+      "type": "institution",
+      "year": 828,
+      "yearEnd": 851,
+      "approx": false,
+      "yearNote": "흥덕왕 3년(828) 설치. 846년 장보고가 염장에게 암살된 뒤 851년(문성왕 13) 혁파되고 주민은 벽골군으로 옮겨짐",
+      "place": {
+        "label": "완도 청해진 유적(장도)",
+        "modern": "전라남도 완도군 완도읍 장좌리 734",
+        "lon": 126.7784,
+        "lat": 34.3227,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "naval",
+        "sceneFunction": "harbor"
+      },
+      "meaning": "해적을 없애고 동아시아 바닷길을 관리한 신라의 해군 기지",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "청해진",
+        "장보고",
+        "흥덕왕",
+        "장도",
+        "해상 무역",
+        "군진",
+        "염장",
+        "청해진 혁파",
+        "문성왕"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '완도 청해진 유적' 사적, 소재지 전남 완도군 완도읍 장좌리 734",
+          "note": "옛 heritage.go.kr/heri/cul 경로가 응답하지 않아 문자열 근거로 통일"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "https://encykorea.aks.ac.kr/Article/E0056856",
+          "note": "828년 설치, 851년 폐지"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-sillabang-beophwawon",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "신라방과 법화원",
+      "type": "foreign",
+      "year": 824,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "장보고가 산둥 적산촌에 법화원을 세운 시기(820년대)",
+      "place": {
+        "label": "적산 법화원",
+        "modern": "중국 산둥성 웨이하이시 룽청 스다오",
+        "lon": 122.427,
+        "lat": 36.88,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "settlement",
+        "sceneFunction": "temple"
+      },
+      "meaning": "당에 건너간 신라 사람들이 모여 살던 마을과 절",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "신라방",
+        "신라소",
+        "신라원",
+        "법화원",
+        "신라관",
+        "엔닌"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '법화원'",
+          "note": "장보고가 세운 적산 법화원"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "https://encykorea.aks.ac.kr/Article/E0048474",
+          "note": "장보고의 재당 신라인 사회"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-bingongwa",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "빈공과와 견당 유학생",
+      "type": "foreign",
+      "year": 821,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "821년 김운경이 신라인 최초로 빈공과 급제",
+      "place": {
+        "label": "당 장안",
+        "modern": "중국 산시성 시안시",
+        "lon": 108.94,
+        "lat": 34.34,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "assembly"
+      },
+      "meaning": "6두품 자제들이 당의 외국인 과거에 붙어 이름을 낸 길",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "빈공과",
+        "숙위 학생",
+        "견당 유학생",
+        "6두품",
+        "최치원",
+        "김운경"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '빈공과'",
+          "note": "당의 외국인 대상 과거, 신라인 급제자"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-trade-ports",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "울산항과 당항성",
+      "type": "economy",
+      "year": 800,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "통일신라기 대외 무역항으로 기능, 특정 연도 확정 불가",
+      "place": {
+        "label": "울산항(개운포 일대)",
+        "modern": "울산광역시 남구",
+        "lon": 129.39,
+        "lat": 35.5,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "market",
+        "sceneFunction": "harbor"
+      },
+      "meaning": "아라비아 상인까지 드나들었다는 통일신라의 국제 항구",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "울산항",
+        "당항성",
+        "동시전",
+        "서시",
+        "남시",
+        "아라비아 상인"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '울산항'",
+          "note": "통일신라 국제 무역항"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '당항성'",
+          "note": "대당 교통 요충"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "low",
+      "notes": "울산항과 당항성(화성)을 한 항목으로 묶었다. 화면 분리가 필요하면 당항성(126.784, 37.140)을 별도 항목으로 쪼갤 것."
+    },
+    {
+      "id": "hs-nambukguk-kimheonchang-revolt",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사회 구조와 신분제",
+      "title": "김헌창의 난",
+      "type": "event",
+      "year": 822,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "헌덕왕 14년, 웅천주 도독 김헌창이 국호 장안·연호 경운을 내걺",
+      "place": {
+        "label": "웅천주",
+        "modern": "충청남도 공주시",
+        "lon": 127.119,
+        "lat": 36.4465,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "battle",
+        "sceneFunction": "civil_conflict"
+      },
+      "meaning": "아버지가 왕이 못 된 원한으로 지방에서 일으킨 대규모 반란",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-03]",
+        "standardText": "근대 이전 사회 구조를 신분제를 중심으로 분석한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "김헌창의 난",
+        "웅천주",
+        "김주원",
+        "장안",
+        "경운",
+        "지방 세력"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '김헌창의 난'",
+          "note": "822년 웅천주에서 발생"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-jingol-throne-struggle",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사회 구조와 신분제",
+      "title": "진골 귀족의 왕위 쟁탈전",
+      "type": "society",
+      "year": 780,
+      "yearEnd": 935,
+      "approx": true,
+      "yearNote": "신라 하대(780년 선덕왕 즉위~935년 경순왕 귀부) 155년 동안 20명의 왕이 교체된 상황을 묶은 항목",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "진골끼리 왕위를 다투며 중앙 정치가 흔들린 하대의 모습",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-03]",
+        "standardText": "근대 이전 사회 구조를 신분제를 중심으로 분석한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "신라 하대",
+        "왕위 쟁탈전",
+        "진골 귀족",
+        "상대등",
+        "시중"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_011_0040_0010",
+          "note": "후삼국기의 신라, 하대 정치 상황"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-golpum-6dupum",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사회 구조와 신분제",
+      "title": "골품제와 6두품의 동향",
+      "type": "society",
+      "year": 800,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "통일신라 전 시기에 걸친 현상. 하대에 6두품의 이탈이 두드러짐",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "assembly"
+      },
+      "meaning": "타고난 신분이 벼슬을 막자 6두품이 신라를 등지게 된 구조",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-03]",
+        "standardText": "근대 이전 사회 구조를 신분제를 중심으로 분석한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "골품제",
+        "6두품",
+        "진골",
+        "득난",
+        "관등",
+        "중위제"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_011_0040_0010",
+          "note": "신라 말 신분제의 한계"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '골품제도'",
+          "note": "신분별 관등·생활 규제"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-seon-nine-schools",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "선종과 9산 선문",
+      "type": "culture",
+      "year": 821,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "도의가 당에서 남종선을 배워 돌아온 뒤(귀국 연도는 821·826년 설) 9산 선문으로 퍼짐. 가지산문은 체징이 장흥 보림사에서 엶",
+      "place": {
+        "label": "진전사지(도의가 은거한 절)",
+        "modern": "강원특별자치도 양양군 강현면 둔전리",
+        "lon": 128.5748,
+        "lat": 38.1224,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "tradition",
+        "sceneFunction": "temple"
+      },
+      "meaning": "경전보다 참선을 앞세운 불교로, 호족의 지지를 받아 퍼졌다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "선종",
+        "9산 선문",
+        "도의",
+        "체징",
+        "가지산문",
+        "보림사",
+        "불립문자",
+        "승탑",
+        "탑비",
+        "호족"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '구산선문'",
+          "note": "9산 선문의 성립"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '양양 진전사지 삼층석탑' 국보, 소재지 강원 양양군 강현면 둔전리",
+          "note": "좌표 근거"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%82%B0%EC%84%A0%EB%AC%B8",
+          "note": "가지산문 개창 사찰은 장흥 보림사(체징), 도의→염거→체징 계보"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-ssangbongsa-stupa",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "쌍봉사 철감선사탑",
+      "type": "heritage",
+      "year": 868,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "철감선사 도윤 입적(868) 직후 건립으로 추정",
+      "place": {
+        "label": "화순 쌍봉사",
+        "modern": "전라남도 화순군 이양면 증리",
+        "lon": 126.9887,
+        "lat": 34.967,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "heritage",
+        "sceneFunction": "temple"
+      },
+      "meaning": "선종이 퍼지며 유행한 팔각원당형 승탑의 대표작",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "승탑",
+        "팔각원당형",
+        "철감선사",
+        "쌍봉사",
+        "선종"
+      ],
+      "evidence": [
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '화순 쌍봉사 철감선사탑' 국보, 소재지 전남 화순군 이양면 증리",
+          "note": "소재지·연대"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '화순 쌍봉사 철감선사탑'",
+          "note": "9세기 후반 건립"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-doseon",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "도선",
+      "type": "person",
+      "year": 875,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "827~898, 활동 절정기를 9세기 후반으로 둠",
+      "place": {
+        "label": "영암 도갑사 일대",
+        "modern": "전라남도 영암군 군서면 도갑리",
+        "lon": 126.67,
+        "lat": 34.766,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "땅의 기운을 따지는 풍수지리를 퍼뜨린 신라 말 승려",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "도선",
+        "풍수지리설",
+        "비보 사탑",
+        "지방 중시",
+        "호족"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '도선'",
+          "note": "827~898, 풍수지리"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '영암 도갑사 해탈문' 국보, 소재지 전남 영암군 군서면 도갑리",
+          "note": "좌표 근거"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-samdaemok",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "삼대목",
+      "type": "culture",
+      "year": 888,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "진성여왕 2년, 각간 위홍과 대구화상이 편찬. 현재 전하지 않음",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "publication"
+      },
+      "meaning": "향가를 모아 엮은 신라의 노래집, 이름만 전한다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "삼대목",
+        "향가",
+        "위홍",
+        "대구화상",
+        "진성여왕"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '삼대목'",
+          "note": "888년 편찬, 현전하지 않음"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-jinseong-queen",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사회 구조와 신분제",
+      "title": "진성여왕",
+      "type": "person",
+      "year": 889,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "재위 887~897, 889년 조세 독촉으로 전국적 봉기 촉발",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "세금 독촉이 농민 봉기를 불러 신라가 무너지기 시작한 때의 왕",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-03]",
+        "standardText": "근대 이전 사회 구조를 신분제를 중심으로 분석한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "진성여왕",
+        "조세 독촉",
+        "원종과 애노",
+        "삼대목",
+        "시무 10여 조"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/id/hm_038_0020",
+          "note": "889년 진성여왕대 봉기 사료"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "https://encykorea.aks.ac.kr/Article/E0032357",
+          "note": "894년 시무 10여 조 수용"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-wonjong-aeno-revolt",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사회 구조와 신분제",
+      "title": "원종·애노의 난",
+      "type": "event",
+      "year": 889,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "진성여왕 3년, 사벌주(경북 상주)에서 일어남",
+      "place": {
+        "label": "사벌주",
+        "modern": "경상북도 상주시",
+        "lon": 128.1591,
+        "lat": 36.415,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "battle",
+        "sceneFunction": "uprising_battle"
+      },
+      "meaning": "세금 독촉에 못 견딘 농민들이 처음 크게 들고일어난 사건",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-03]",
+        "standardText": "근대 이전 사회 구조를 신분제를 중심으로 분석한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "원종",
+        "애노",
+        "사벌주",
+        "농민 봉기",
+        "적고적",
+        "초적",
+        "진성여왕",
+        "후삼국"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/id/hm_038_0020",
+          "note": "사료로 본 한국사 '원종과 애노의 봉기'"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_011_0040_0010",
+          "note": "889년 사벌주 봉기와 후삼국 분열"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-hojok-rise",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사회 구조와 신분제",
+      "title": "호족의 성장",
+      "type": "society",
+      "year": 890,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "9세기 말 전국적 현상. 성주·장군을 칭하며 지방을 장악",
+      "place": {
+        "label": "신라 지방(9주 전역)",
+        "modern": "한반도 중·남부(옛 신라 9주)",
+        "lon": 128.2,
+        "lat": 36.3,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "settlement",
+        "sceneFunction": "fortress"
+      },
+      "meaning": "성을 쌓고 군사를 거느리며 지방을 실제로 다스린 새 세력",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-03]",
+        "standardText": "근대 이전 사회 구조를 신분제를 중심으로 분석한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "호족",
+        "성주",
+        "장군",
+        "촌주",
+        "선종",
+        "풍수지리설",
+        "6두품"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_011_0040_0010",
+          "note": "후삼국기 지방 세력의 대두"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '호족'",
+          "note": "성주·장군 칭호"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%A1%B1",
+          "note": "성주·장군을 칭한 신라 말 지방 세력(검증 가능한 URL 보강)"
+        }
+      ],
+      "priority": "core",
+      "confidence": "medium",
+      "notes": "특정 지점이 없는 전국 현상이라 좌표는 한반도 중부 임의점. 화면에서는 범례/오버레이 처리 권장."
+    },
+    {
+      "id": "hs-nambukguk-choechiwon",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "최치원",
+      "type": "person",
+      "year": 894,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "857~미상. 894년 시무 10여 조를 올렸고, 좌절 뒤 만년에 합천 해인사에 은거",
+      "place": {
+        "label": "합천 해인사(최치원 만년 은거지)",
+        "modern": "경상남도 합천군 가야면 치인리",
+        "lon": 128.098,
+        "lat": 35.801,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "당의 과거에 급제한 6두품 문인, 신라 개혁을 건의했으나 좌절",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "최치원",
+        "빈공과",
+        "토황소격문",
+        "계원필경",
+        "시무 10여 조",
+        "6두품",
+        "해인사"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n101780&code=kc_age_10",
+          "note": "최치원 857~미상"
+        },
+        {
+          "kind": "encykorea",
+          "ref": "https://encykorea.aks.ac.kr/Article/E0032357",
+          "note": "894년 시무 10여 조"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-simu-ten-articles",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사회 구조와 신분제",
+      "title": "시무 10여 조",
+      "type": "event",
+      "year": 894,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "진성여왕 8년 2월, 최치원이 올림. 내용은 전하지 않음",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "6두품 지식인의 개혁안이 진골의 반대로 묻힌 사건",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-03]",
+        "standardText": "근대 이전 사회 구조를 신분제를 중심으로 분석한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "시무 10여 조",
+        "최치원",
+        "진성여왕",
+        "아찬",
+        "진골 귀족"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "https://encykorea.aks.ac.kr/Article/E0032357",
+          "note": "894년 시무십여조, 진골 귀족의 반대로 실현 좌절"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-gyeonhwon",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "견훤",
+      "type": "person",
+      "year": 900,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 867~936, 900년 완산주에서 후백제 건국",
+      "place": {
+        "label": "완산주(후백제 도읍)",
+        "modern": "전라북도 전주시",
+        "lon": 127.148,
+        "lat": 35.8242,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "서남해 군인 출신으로 후백제를 세운 인물",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "견훤",
+        "후백제",
+        "완산주",
+        "전주",
+        "백제 계승",
+        "후당",
+        "오월"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i101700&code=kc_age_10",
+          "note": "900년 완산주 도읍, 전라도·충청도 일부 장악"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n100200&code=kc_age_10",
+          "note": "견훤 867~936"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-gungye",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "궁예",
+      "type": "person",
+      "year": 901,
+      "yearEnd": 918,
+      "approx": false,
+      "yearNote": "901년 송악에서 후고구려 건국, 918년 축출",
+      "place": {
+        "label": "송악(후고구려 첫 도읍)",
+        "modern": "북한 개성특별시",
+        "lon": 126.552,
+        "lat": 37.97,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "고구려를 잇겠다며 후고구려를 세운 승려 출신 군웅",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "궁예",
+        "후고구려",
+        "송악",
+        "마진",
+        "태봉",
+        "철원",
+        "광평성",
+        "미륵 신앙",
+        "나주",
+        "왕건"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i101600&code=kc_age_10",
+          "note": "901년 송악 중심 후고구려 건국, 이후 태봉으로 국호 변경·철원 천도"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-taebong-cheorwon",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "궁예의 철원 천도와 태봉",
+      "type": "event",
+      "year": 911,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "905년 철원 천도, 911년 국호를 태봉으로 고침",
+      "place": {
+        "label": "태봉 도성(풍천원)",
+        "modern": "강원특별자치도 철원군 비무장지대",
+        "lon": 127.216,
+        "lat": 38.32,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "settlement",
+        "sceneFunction": "fortress"
+      },
+      "meaning": "궁예가 도읍을 옮기고 나라 이름을 태봉으로 바꾼 일",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "철원",
+        "태봉",
+        "마진",
+        "무태",
+        "광평성",
+        "궁예"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i101600&code=kc_age_10",
+          "note": "국호 변경과 철원 천도"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "태봉 도성 터는 비무장지대 안이라 접근 불가. 좌표는 알려진 궁예도성 추정 위치."
+    },
+    {
+      "id": "hs-nambukguk-wanggeon-goryeo",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "궁예 축출과 왕건의 고려 건국",
+      "type": "event",
+      "year": 918,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "918년 6월 궁예를 몰아내고 왕건이 즉위. 송악(개경) 천도는 이듬해 919년",
+      "place": {
+        "label": "철원(태봉 도성, 고려 건국지)",
+        "modern": "강원특별자치도 철원군",
+        "lon": 127.216,
+        "lat": 38.32,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "왕건이 궁예를 몰아내고 고려를 세워 후삼국 판을 바꾼 해",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "왕건",
+        "고려 건국",
+        "918",
+        "궁예 축출",
+        "철원",
+        "송악 천도",
+        "홍유",
+        "배현경",
+        "신숭겸",
+        "복지겸"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m41_0060_0010",
+          "note": "918년 궁예 축출 후 왕건 즉위, 고려 건국"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-balhae-fall",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "발해 멸망",
+      "type": "event",
+      "year": 926,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 926년 거란(요)에 의해 멸망, 동란국 설치. 934년 세자 대광현이 유민을 이끌고 고려로 망명",
+      "place": {
+        "label": "상경 용천부(홀한성)",
+        "modern": "중국 헤이룽장성 닝안시 발해진",
+        "lon": 129.143,
+        "lat": 44.121,
+        "coordinateBasis": "wikipedia",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "siege",
+        "sceneFunction": "fortress"
+      },
+      "meaning": "거란의 공격으로 발해가 무너지고 만주의 우리 역사가 닫힌 해",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "발해 멸망",
+        "거란",
+        "야율아보기",
+        "동란국",
+        "애왕",
+        "대인선",
+        "대광현",
+        "발해 유민"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i100900&code=kc_age_10",
+          "note": "926년 거란에 멸망"
+        },
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EB%B0%9C%ED%95%B4",
+          "note": "멸망 연도와 동란국"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-gongsan-battle",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "공산 전투",
+      "type": "war",
+      "year": 927,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "경주를 친 견훤을 막으러 온 왕건이 크게 패한 싸움",
+      "place": {
+        "label": "공산(팔공산) 일대",
+        "modern": "대구광역시 동구 팔공산",
+        "lon": 128.63,
+        "lat": 35.97,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "battle"
+      },
+      "meaning": "신숭겸이 왕건 대신 죽으며 고려가 참패한 전투",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "공산 전투",
+        "신숭겸",
+        "김락",
+        "견훤",
+        "왕건",
+        "팔공산",
+        "대야성"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '공산전투'",
+          "note": "927년 대구 공산에서 고려군 대패"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-gyeonhwon-gyeongju-raid",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "견훤의 경주 침공",
+      "type": "event",
+      "year": 927,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "포석정에서 경애왕을 죽이고 경순왕을 세움",
+      "place": {
+        "label": "경주 포석정지",
+        "modern": "경상북도 경주시 배동",
+        "lon": 129.2093,
+        "lat": 35.8156,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "battle",
+        "sceneFunction": "civil_conflict"
+      },
+      "meaning": "후백제가 신라 수도를 짓밟고 왕을 갈아치운 사건",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "경애왕",
+        "포석정",
+        "견훤",
+        "경순왕",
+        "후백제"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '경애왕'",
+          "note": "927년 견훤의 경주 침공과 경애왕 사망"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '경주 포석정지' 사적, 소재지 경북 경주시 배동",
+          "note": "좌표 근거"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-gochang-battle",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "고창 전투",
+      "type": "war",
+      "year": 930,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "고창(안동)에서 고려가 후백제에 크게 이겨 형세가 뒤집힘",
+      "place": {
+        "label": "고창군",
+        "modern": "경상북도 안동시",
+        "lon": 128.7294,
+        "lat": 36.5684,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "battle"
+      },
+      "meaning": "고려가 후백제를 꺾고 경상도 호족의 지지를 얻은 전환점",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "고창 전투",
+        "안동",
+        "김선평",
+        "권행",
+        "장길",
+        "왕건",
+        "견훤"
+      ],
+      "evidence": [
+        {
+          "kind": "encykorea",
+          "ref": "한국민족문화대백과사전 표제어 '고창전투'",
+          "note": "930년 고려의 승리"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i101800&code=kc_age_10",
+          "note": "후삼국 통일 과정"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-gyeonhwon-surrender",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "견훤의 고려 귀순",
+      "type": "event",
+      "year": 935,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "아들 신검에게 금산사에 갇혔다가 탈출해 고려로 감",
+      "place": {
+        "label": "김제 금산사",
+        "modern": "전라북도 김제시 금산면 금산리",
+        "lon": 127.0293,
+        "lat": 35.7448,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "migration",
+        "sceneFunction": "migration"
+      },
+      "meaning": "아들에게 갇혔던 견훤이 탈출해 왕건에게 몸을 맡긴 일",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "견훤",
+        "신검",
+        "금산사",
+        "왕건",
+        "상보"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n100200&code=kc_age_10",
+          "note": "견훤의 금산사 유폐와 고려 귀순"
+        },
+        {
+          "kind": "heritage-portal",
+          "ref": "국가유산포털 '김제 금산사 미륵전' 국보, 소재지 전북 김제시 금산면 금산리",
+          "note": "좌표 근거"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-gyeongsunwang",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "경순왕",
+      "type": "person",
+      "year": 935,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "우리역사넷: 935년 10월 귀부 결정, 11월 개경에서 왕건이 맞이함",
+      "place": {
+        "label": "신라 왕경(금성) → 개경",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "천 년 신라의 문을 스스로 닫고 고려에 나라를 넘긴 마지막 왕",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "경순왕",
+        "귀부",
+        "935",
+        "낙랑공주",
+        "마의태자",
+        "경주 사심관"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m41_0060_0010",
+          "note": "935년 10월 귀부 결정, 11월 개경 입경과 낙랑공주 혼인"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-jipsabu-sijung",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "집사부와 시중",
+      "type": "institution",
+      "year": 681,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "집사부 자체는 651년(진덕여왕 5) 설치. 신문왕이 즉위한 681년 무렵 시중의 지위를 높이고 상대등을 눌렀다",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "court"
+      },
+      "meaning": "왕의 명을 받드는 집사부에 힘을 실어 귀족 회의를 누른 장치",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "집사부",
+        "시중",
+        "중시",
+        "상대등",
+        "화백 회의",
+        "13부",
+        "전제 왕권"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/id/ta_h71_0040_0010_0050_0030",
+          "note": "'집사부 시중의 지위를 높였고, 그 아래에는 위화부를 비롯한 13부를 두고 행정 업무를 분담하게 하였다'"
+        }
+      ],
+      "priority": "core",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-sangsuri-oesajeong",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "상수리 제도와 외사정",
+      "type": "institution",
+      "year": 685,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "외사정은 673년(문무왕 13) 파견 시작, 상수리 제도는 연대 미상. 9주 5소경 완비(685)와 묶어 둠",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "survey"
+      },
+      "meaning": "지방 유력자를 수도에 붙잡아 두고 감찰관을 보내 지방을 묶은 장치",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "상수리 제도",
+        "외사정",
+        "9주 5소경",
+        "기인 제도",
+        "지방 통제",
+        "촌주"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/id/ta_h71_0040_0010_0050_0030",
+          "note": "'지방 세력을 일정 기간 서울에 와서 거주하게 하던' 상수리 제도, '지방관을 감찰하기 위하여 외사정을 파견'"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "외사정 파견 연도(673)와 상수리 제도의 시행 연대가 달라 9주 5소경 완비 시점에 묶었다. approx true."
+    },
+    {
+      "id": "hs-nambukguk-seosi-namsi",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 수취 체제와 경제생활",
+      "title": "서시와 남시 설치",
+      "type": "economy",
+      "year": 695,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "효소왕 4년(695) 서시전·남시전을 두어 서시와 남시를 관할케 함(동시전은 509년 설치)",
+      "place": {
+        "label": "신라 왕경(금성)",
+        "modern": "경상북도 경주시",
+        "lon": 129.2265,
+        "lat": 35.8347,
+        "coordinateBasis": "encykorea"
+      },
+      "sceneType": {
+        "kind": "market",
+        "sceneFunction": "market"
+      },
+      "meaning": "수도의 시장이 셋으로 늘어 통일 뒤 커진 살림을 보여 준다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-02]",
+        "standardText": "근대 이전의 수취 체제 변화를 농업 중심의 경제생활과 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "동시전",
+        "서시전",
+        "남시전",
+        "효소왕",
+        "왕경",
+        "시전"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%ED%9A%A8%EC%86%8C%EC%99%95",
+          "note": "'695년(재위 4년)에 서시전과 남시전을 설치해 각각 서시와 남시를 관할케 했다'"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/id/ta_h71_0040_0010_0050_0030",
+          "note": "통일신라 왕경의 관부 편제 배경"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium"
+    },
+    {
+      "id": "hs-nambukguk-gyeongdeokwang",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 이해 › 고대 국가의 형성과 성장",
+      "title": "경덕왕",
+      "type": "person",
+      "year": 757,
+      "yearEnd": 765,
+      "approx": false,
+      "yearNote": "재위 742~765. 757년(경덕왕 16) 군현 이름을 중국식으로 고치고 녹읍을 되살렸으며, 이어 관직명도 당식으로 바꿈",
+      "place": {
+        "label": "신라 왕경(월성)",
+        "modern": "경상북도 경주시 인왕동",
+        "lon": 129.2247,
+        "lat": 35.8348,
+        "coordinateBasis": "heritage-portal"
+      },
+      "sceneType": {
+        "kind": "portrait"
+      },
+      "meaning": "이름을 당식으로 고쳐 왕권을 세우려 했으나 귀족에 밀린 임금",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-01-01]",
+        "standardText": "고대 국가의 형성과 성장 과정을 파악한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "경덕왕",
+        "한화 정책",
+        "녹읍 부활",
+        "태학감",
+        "불국사",
+        "석굴암",
+        "성덕대왕 신종"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%8D%95%EC%99%95",
+          "note": "재위 742~765, 757년 행정 명칭 한화와 녹읍 재지급, 국학을 태학감으로 개칭"
+        },
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_r0070_0010&code=eh_age_10",
+          "note": "751년 김대성의 불국사·석굴암 조성이 경덕왕대의 일임"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-sangwonsa-bell",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "상원사 동종",
+      "type": "heritage",
+      "year": 725,
+      "yearEnd": null,
+      "approx": false,
+      "yearNote": "성덕왕 24년(725) 주조. 명문으로 연대가 확정된 현존 최고 범종으로 성덕대왕 신종보다 46년 빠름",
+      "place": {
+        "label": "평창 상원사",
+        "modern": "강원특별자치도 평창군 진부면 오대산로 1211-50(동산리)",
+        "lon": 128.594,
+        "lat": 37.794,
+        "coordinateBasis": "estimated"
+      },
+      "sceneType": {
+        "kind": "heritage",
+        "sceneFunction": "temple"
+      },
+      "meaning": "지금 남은 가장 오래된 종, 악기를 연주하는 비천상이 새겨졌다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "상원사 동종",
+        "비천상",
+        "당좌",
+        "범종",
+        "성덕왕",
+        "금속 공예"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EC%83%81%EC%9B%90%EC%82%AC_%EB%8F%99%EC%A2%85",
+          "note": "725년(성덕왕 24) 주조, 현존 최고 범종, 소재지 강원 평창군 진부면 오대산로 1211-50"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "주조 연도·소재지 주소는 확인했으나 국가유산포털 좌표를 직접 대조하지 못해 coordinateBasis 를 estimated 로 둠."
+    },
+    {
+      "id": "hs-nambukguk-wonseongwangneung",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 국제 관계와 대외 교류",
+      "title": "원성왕릉 무인석",
+      "type": "heritage",
+      "year": 798,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "원성왕 재위(785~798) 무렵 조성으로 추정. 괘릉으로도 불린다",
+      "place": {
+        "label": "경주 원성왕릉(괘릉)",
+        "modern": "경상북도 경주시 외동읍 괘릉리 산17",
+        "lon": 129.3194,
+        "lat": 35.7581,
+        "coordinateBasis": "wikipedia"
+      },
+      "sceneType": {
+        "kind": "heritage"
+      },
+      "meaning": "서역 사람 얼굴을 한 무인상이 신라의 넓은 교류를 보여 준다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-01]",
+        "standardText": "근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "원성왕릉",
+        "괘릉",
+        "무인석",
+        "서역",
+        "페르시아",
+        "십이지신상",
+        "유리그릇"
+      ],
+      "evidence": [
+        {
+          "kind": "wikipedia",
+          "ref": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%9B%90%EC%84%B1%EC%99%95%EB%A6%89",
+          "note": "소재지 경북 경주시 외동읍 괘릉리 산17, 좌표 35.75806/129.31944, '무인석은 서역인의 얼굴을 하고 있어 페르시아인이라는 주장도 있다'"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "high"
+    },
+    {
+      "id": "hs-nambukguk-balhae-ibulbyeongjwasang",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "발해 이불병좌상",
+      "type": "heritage",
+      "year": 800,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "8~9세기. 동경 용원부 터인 훈춘 팔련성 절터에서 출토, 높이 10.8cm",
+      "place": {
+        "label": "동경 용원부 팔련성 절터",
+        "modern": "중국 지린성 옌볜조선족자치주 훈춘시",
+        "lon": 130.373,
+        "lat": 42.868,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "heritage",
+        "sceneFunction": "temple"
+      },
+      "meaning": "두 부처가 나란히 앉은 발해 불상, 고구려 불상 솜씨를 이었다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "이불병좌상",
+        "동경 용원부",
+        "팔련성",
+        "고구려 양식",
+        "발해 불교"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_r0120_0010&code=eh_age_10",
+          "note": "출토지 지린성 훈춘 팔련성, 높이 10.8cm, '두 부처님이 나란히 앉아 있는 모습'으로 고구려 불상의 전통 계승"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "팔련성 터의 대략 좌표라 coordinateBasis 는 estimated. 현물은 일본 도쿄대학 등에 흩어져 있어 화면 좌표는 출토지로 둔다."
+    },
+    {
+      "id": "hs-nambukguk-balhae-seokdeung",
+      "era": "nambukguk",
+      "unit": "근대 이전 한국사의 탐구 › 사상과 문화",
+      "title": "발해 상경성 석등",
+      "type": "heritage",
+      "year": 800,
+      "yearEnd": null,
+      "approx": true,
+      "yearNote": "8~9세기. 상경 용천부 절터(흥륭사)에 남은 높이 약 6.3m 석등",
+      "place": {
+        "label": "상경 용천부 절터 석등",
+        "modern": "중국 헤이룽장성 닝안시 발해진",
+        "lon": 129.151,
+        "lat": 44.115,
+        "coordinateBasis": "estimated",
+        "overseas": true
+      },
+      "sceneType": {
+        "kind": "heritage",
+        "sceneFunction": "temple"
+      },
+      "meaning": "절터에 우뚝 선 6미터 석등, 발해 불교의 규모를 보여 준다",
+      "curriculum": {
+        "edition": "2022",
+        "standard": "[10한사1-02-04]",
+        "standardText": "근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.",
+        "verified": true
+      },
+      "textbookTerms": [
+        "발해 석등",
+        "상경성",
+        "흥륭사",
+        "연꽃무늬",
+        "발해 불교",
+        "절터"
+      ],
+      "evidence": [
+        {
+          "kind": "urihistory",
+          "ref": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_r0120_0010&code=eh_age_10",
+          "note": "헤이룽장성 닝안 상경성 절터 석등, 원래 높이 약 6.3m(광개토대왕릉비 6.39m와 비슷), 상경성에서 10여 개 절터 확인"
+        }
+      ],
+      "priority": "standard",
+      "confidence": "medium",
+      "notes": "상경성 도성 항목과 점이 겹치지 않도록 성 안 절터(흥륭사) 쪽 추정 좌표를 썼다. coordinateBasis estimated."
+    }
+  ]
+}

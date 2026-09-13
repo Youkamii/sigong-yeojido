@@ -1,0 +1,57 @@
+{
+  "totalItems": 982,
+  "perEra": {
+    "prehistoric-gojoseon": 56,
+    "samguk": 126,
+    "nambukguk": 80,
+    "goryeo-early": 92,
+    "goryeo-late": 92,
+    "joseon-early": 115,
+    "joseon-late": 115,
+    "modern-transition": 103,
+    "colonial": 103,
+    "contemporary": 100
+  },
+  "mustHaveMissing": [],
+  "crossEraDuplicates": [
+    "hs-goryeo-early-sanggam-cheongja = hs-goryeo-late-sanggam-celadon (상감청자 / 상감 청자. meaning 유사도 0.90으로 사실상 같은 문장. 1170 경계 기준으로 한쪽만 남겨야 함)",
+    "hs-goryeo-early-hyang-bugok-so = hs-goryeo-late-hyang-bugok-so (향·부곡·소. 같은 제도를 1000년·1176년으로 두 번 배치)",
+    "hs-nambukguk-wanggeon-goryeo = hs-goryeo-early-founding (918년 고려 건국이 두 시대 파일에 각각 존재)",
+    "hs-goryeo-late-yi-seonggye = hs-joseon-early-yi-seonggye (이성계. 1380 무장 / 1392 초대 왕으로 분리)",
+    "hs-goryeo-late-jeong-dojeon = hs-joseon-early-jeong-dojeon (정도전. 1388 / 1394로 분리)",
+    "hs-modern-transition-hong-beom-do = hs-colonial-hong-beomdo (홍범도. 1907 의병장 / 1920 독립군 사령관)",
+    "hs-modern-transition-ahn-chang-ho = hs-colonial-ahn-changho (안창호. 1907 / 1913)",
+    "hs-modern-transition-sin-chae-ho = hs-colonial-sin-chaeho (신채호. 1908 / 1923)",
+    "hs-modern-transition-park-eun-sik = hs-colonial-park-eunsik (박은식. 1909 / 1920)",
+    "hs-modern-transition-oriental-development-company = hs-colonial-oriental-development-company (동양 척식 주식회사. 1908 설립 / 1918 토지 집적)",
+    "hs-colonial-yeo-unhyeong = hs-contemporary-yeo-unhyeong (여운형. 1944 조선 건국 동맹 / 1945 건국 준비 위원회)",
+    "hs-colonial-syngman-rhee = hs-contemporary-syngman-rhee (이승만. 1919 구미 위원부 / 1948 제1공화국)",
+    "hs-colonial-kim-gu = hs-contemporary-kim-gu (김구. 1931 한인 애국단 / 1948 남북 협상)",
+    "hs-colonial-paris-peace-conference = hs-contemporary-kim-gyusik (김규식이 1919 파리 강화 회의 항목과 1946 인물 항목으로 두 번 등장. 부분 중복)",
+    "hs-nambukguk-buseoksa = hs-goryeo-late-buseoksa-muryangsujeon (부석사. 676 창건 / 1376 무량수전. 같은 장소·좌표를 두 시대가 각각 카드로 씀. 경계상 허용 가능하나 지도에서는 겹침)"
+  ],
+  "boundaryIssues": [
+    "918~935 구간이 nambukguk(range 676~935)과 goryeo-early(range 918~1170)에 동시에 열려 있어 16개 항목이 겹치는 창에 들어간다. nambukguk: hs-nambukguk-wanggeon-goryeo(918), hs-nambukguk-balhae-fall(926), hs-nambukguk-gongsan-battle(927), hs-nambukguk-gyeonhwon-gyeongju-raid(927), hs-nambukguk-gochang-battle(930), hs-nambukguk-gyeonhwon-surrender(935), hs-nambukguk-gyeongsunwang(935). goryeo-early: hs-goryeo-early-founding(918), hs-goryeo-early-heukchang(918), hs-goryeo-early-palgwanhoe(918), hs-goryeo-early-taejo-wanggeon(918), hs-goryeo-early-manwoldae(919), hs-goryeo-early-songak-capital(919), hs-goryeo-early-seogyeong-development(922), hs-goryeo-early-balhae-refugees(934), hs-goryeo-early-sasimgwan-giin(935).",
+    "918 고려 건국 자체가 두 파일에 각각 카드로 존재한다(hs-nambukguk-wanggeon-goryeo, hs-goryeo-early-founding). 후삼국 전쟁(공산·고창·견훤 귀순)은 nambukguk, 고려의 건국·제도는 goryeo-early로 갈려 기준이 하나가 아니다.",
+    "935 신라 멸망(hs-nambukguk-gyeongsunwang)은 nambukguk, 936 후삼국 통일(hs-goryeo-early-unification-later-three)은 goryeo-early에 있어 한 흐름이 파일 두 개로 끊긴다. 935를 어느 쪽 마감으로 볼지 규칙을 명시해야 한다.",
+    "676 통일을 직접 가리키는 항목이 없다. samguk은 hs-samguk-gibeolpo(676 기벌포 전투)로 끝나고 nambukguk은 hs-nambukguk-munmuwang(676 문무왕, 통일 이후)으로 시작한다. 경계는 깨끗하지만 '삼국 통일 완성'이라는 사건 카드가 비어 있어 676의 의미가 인물 카드로만 전달된다.",
+    "1392는 hs-goryeo-late-goryeo-fall(고려의 멸망)과 hs-joseon-early-founding-1392(조선 건국)로 한 사건을 두 장 카드로 나눴다. 그 자체는 자연스럽지만, 이성계·정도전까지 양쪽에 중복되어 경계 인물 처리 규칙이 없다.",
+    "1945는 colonial이 hs-colonial-domestic-advance-operation(1945 국내 진공 작전)까지, contemporary가 hs-contemporary-liberation-815(1945 8·15 광복)부터로 나뉘어 소속이 옳다. 다만 여운형은 1944(colonial)·1945(contemporary)로 쪼개져 인물 카드가 두 장이다.",
+    "1592·1863·1910 경계는 문제 없음. 전 항목 year가 각 파일의 range 안에 들어가며 범위 밖 항목은 0건이다."
+  ],
+  "qualityFlags": [
+    "samguk.json: 126개 전 항목의 curriculum.verified가 false다. 나머지 9개 파일은 전 항목 true. 성취기준 검증이 통째로 미완이므로 최우선 보완 대상.",
+    "좌표 estimated 비율이 높은 파일: contemporary 81%(81/100), colonial 71%(73/103), joseon-early 68%(78/115), joseon-late 57%(66/115), prehistoric-gojoseon 55%(31/56), modern-transition 54%(56/103). 좌표가 비어 있는 항목은 0건이지만 절반 이상이 추정 좌표다.",
+    "좌표 한 점 밀집(지도에서 카드가 겹침): goryeo-early 92건 중 47건이 (126.554, 37.972) 개경 한 점, goryeo-late 92건 중 41건이 (126.555, 37.972), samguk 126건 중 26건이 (129.217, 35.85) 경주, nambukguk 80건 중 22건이 (129.2265, 35.8347) 경주, colonial 서울 좌표 3개 점에 22건, modern-transition 서울 3개 점에 18건.",
+    "meaning 40자 초과(2건, 모두 41자로 경미): hs-joseon-late-neutral-diplomacy(41자), hs-modern-transition-dokdo-edict41(41자). 빈 meaning은 0건이고 전체가 16~41자 범위 안이라 40자를 크게 넘는 항목은 없다.",
+    "교과서 문장 전재로 볼 만한 항목은 없다(전 항목이 30자 내외 자체 서술). 다만 표현 재사용 3쌍: hs-goryeo-early-sanggam-cheongja ↔ hs-goryeo-late-sanggam-celadon(유사도 0.90), hs-samguk-andong-protectorate ↔ hs-samguk-ungjin-dodokbu(0.82), hs-samguk-jindaebeop ↔ hs-goryeo-early-uichang(0.80).",
+    "필수 인물인데 독립 카드 없이 textbookTerms/meaning 안에만 있는 항목: 조준(hs-goryeo-late-gwajeonbeop의 textbookTerms), 계백(hs-samguk-hwangsanbeol의 meaning·textbookTerms). 지도에서는 카드로 노출되지 않는다.",
+    "동명 제목이 서로 다른 인물을 가리켜 지도에서 구분되지 않는다: '성종'(hs-goryeo-early-seongjong 981 / hs-joseon-early-seongjong 1469), '숙종'(hs-goryeo-early-sukjong 1095 / hs-joseon-late-sukjong 1674), '무왕'(hs-samguk-mu-wang 백제 600 / hs-nambukguk-balhae-muwang 발해 732 — 발해 쪽만 나라 표기), '성왕'(hs-samguk-seong-wang)과 '선왕'(hs-nambukguk-balhae-seonwang). 제목에 나라를 함께 적는 규칙이 필요하다.",
+    "같은 시대 파일 안에서 인물 카드와 조직·사건 카드가 겹친다: colonial hs-colonial-kim-gu ↔ hs-colonial-patriotic-corps, hs-colonial-yeo-unhyeong ↔ hs-colonial-joseon-founding-alliance, hs-colonial-hong-beomdo ↔ hs-colonial-bongodong-battle. contemporary hs-contemporary-yeo-unhyeong ↔ hs-contemporary-preparatory-committee, hs-contemporary-kim-gu ↔ hs-contemporary-north-south-negotiation.",
+    "confidence가 low인 항목 25건(samguk 8, joseon-late 8, joseon-early 3, colonial 2, nambukguk 2, prehistoric-gojoseon 1, goryeo-late 1) — 연도·좌표 재확인 필요.",
+    "교과서 핵심인데 빠진 추가 후보: 위정척사 운동(hs-modern-transition-choe-ik-hyeon의 용어로만 존재, 독립 항목 없음), 1980년대 3저 호황·1996 OECD 가입 등 광복 이후 경제 구조 변화 항목, 국가보안법 제정(1948), 북한 사회 변화(천리마 운동·주체사상). contemporary 100건이 민주화·남북 관계에 쏠려 있고 경제·사회 변화 축이 얇다.",
+    "type 분포 편중: colonial은 heritage가 2건(hs-colonial-seodaemun-prison, hs-colonial-tapgol-park)뿐이고 institution 25·event 29, contemporary도 heritage 3건뿐이다. 지도 기반 화면에서 근현대 구간만 장소성 있는 카드가 급격히 줄어든다.",
+    "samguk 126건은 목표 상한(100±15%=115)을 넘고 nambukguk 80건·prehistoric 56건은 상대적으로 얇아, 고대 구간 안에서도 밀도가 고르지 않다."
+  ],
+  "summary": "10개 시대 파일 총 982건을 전수 점검했다. 지정된 필수 인물·사건 목록은 전부 어느 한 파일에 들어 있어 mustHaveMissing은 0건이다(단 조준·계백은 독립 카드가 아니라 다른 항목의 textbookTerms 안에만 있다). 시대 경계 중복은 15쌍으로, 상감청자·향부곡소처럼 같은 시대 안 이중 배치와, 이성계·정도전·홍범도·안창호·신채호·박은식·여운형·이승만·김구처럼 경계 인물을 양쪽에 한 장씩 둔 사례가 섞여 있다. 경계 규칙에서 가장 큰 문제는 918~935 구간이 nambukguk과 goryeo-early에 동시에 열려 16개 항목이 겹치고 918 고려 건국이 두 파일에 각각 카드로 존재한다는 점이며, 676 통일을 직접 가리키는 사건 카드가 비어 있는 것도 보완이 필요하다. 품질 면에서는 samguk 126건 전체의 curriculum.verified가 false인 점이 가장 시급하고, 추정 좌표 비율(contemporary 81%, colonial 71%, joseon-early 68%)과 개경·경주 한 점에 40~47건이 겹쳐 찍힌 좌표 밀집이 그다음이다. 교과서 문장 전재로 의심할 항목은 없었고 meaning은 전부 16~41자로 40자를 크게 넘는 항목이 없다."
+}

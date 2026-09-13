@@ -1,0 +1,281 @@
+{
+  "job": "goryeo-late",
+  "reviewer": "claude-opus-5 high",
+  "verdict": "fix",
+  "issues": [
+    {
+      "code": "D",
+      "severity": "major",
+      "itemId": "hs-goryeo-late-jinpo-victory",
+      "problem": "type 값 \"naval\" 이 이 작업의 종류 어휘 밖이다. 같은 폴더의 table.md 가 정의한 종류는 event·person·institution·heritage·culture·economy·society·foreign·war·place 열 가지이고, 나란히 있는 prehistoric-gojoseon.json(57건)·modern-transition.json(100건)은 이 열 가지만 쓴다. goryeo-late.json 만 type=\"naval\" 을 3건(hs-goryeo-late-jinpo-victory, hs-goryeo-late-gwaneumpo-victory, hs-goryeo-late-tsushima-expedition) 쓴다. 이대로면 시대별 파일을 합칠 때 종류 집계(표의 사건/인물/문화재 칸)가 깨진다.",
+      "fix": "세 항목의 type 을 \"war\" 로 바꾼다. 해전이라는 성격은 이미 sceneType.kind=\"naval\" 과 sceneFunction(harbor/naval_expedition)이 담고 있으므로 type 을 따로 늘릴 필요가 없다. 굳이 늘리려면 table.md 의 종류 목록과 나머지 두 파일을 함께 고쳐야 한다.",
+      "evidence": "C:/Users/gkfkd/Git/sigong-curriculum/docs/research/curriculum-186/table.md (종류 정의), 같은 폴더 items/prehistoric-gojoseon.json·items/modern-transition.json 의 type 집합"
+    },
+    {
+      "code": "D",
+      "severity": "major",
+      "itemId": null,
+      "problem": "evidence 가 사실상 비어 있는 항목이 89건 중 45건(51%)이다. 이 45건은 evidence 의 모든 ref 가 (가) 우리역사넷 교과서 용어 해설 '목록' 페이지 https://contents.history.go.kr/front/tg/list.do?treeId=0104 (파일 전체에서 55회 인용)이거나 (나) https://www.heritage.go.kr/ (20회)·https://encykorea.aks.ac.kr/ (4회) 같은 도메인 루트다. (가)를 직접 열어 확인한 결과 이 URL 은 '고려 시대(총 122건)' 목록의 첫 10건(12목·2군·2성·3경·5도·6위·9성·9재 학당·간쟁·감찰사)만 보여 주며, note 에 인용한 '만적의 난'·'팔만대장경'·'중방'·'도방' 은 그 URL 에 나타나지 않는다. 즉 적어 놓은 근거를 그 주소로는 확인할 수 없다. core 항목 8건(hs-goryeo-late-yi-gyubo, -manjeok-rebellion, -jinul, -ganghwa-capital-move, -palman-daejanggyeong, -samguk-yusa, -gwajeonbeop, -jeong-mongju)도 여기에 포함된다.",
+      "fix": "목록 URL 대신 개별 용어 상세 URL(https://contents.history.go.kr/front/tg/view.do?treeId=0104&levelId=... 형식)로 바꾸고, 국가유산포털은 종목별 상세 URL(.../culSelectDetail.do?ccbaCpno=...), 한국민족문화대백과는 항목 URL(https://encykorea.aks.ac.kr/Article/E0000000)로 바꾼다. 같은 파일의 hs-goryeo-late-jikji(ccbaCpno=1333303150000)·hs-goryeo-late-munikjeom-cotton(ccbaCpno=1333801080000)·hs-goryeo-late-hangpaduri(ccbaCpno=1333903960000)가 이미 올바른 형식이므로 그 방식으로 통일한다. 최소한 core 33건은 전부 개별 URL 이어야 한다.",
+      "evidence": "https://contents.history.go.kr/front/tg/list.do?treeId=0104 (직접 확인: 총 122건 중 첫 10건만 표시되는 페이지네이션 목록)"
+    },
+    {
+      "code": "D",
+      "severity": "minor",
+      "itemId": null,
+      "problem": "sceneType.kind 에 \"portrait\"(23건)와 \"heritage\"(5건)가 쓰였는데, docs/research/facts-format.md 가 허용한 kind 목록(settlement|construction|battle|siege|naval|fire|court|assembly|publication|excavation|tradition + disaster|relief|market|ritual|migration|survey)에 없는 값이다. 합쳐 28건, 전체의 31%다. 문서에는 허용 밖 kind 가 검증기 실패(exit 1) 사유로 적혀 있다.",
+      "fix": "두 값은 prehistoric-gojoseon.json·modern-transition.json 에서도 같은 뜻으로 쓰이므로 이 작업 공통의 확장으로 보인다. 셋 중 하나를 고른다. (1) facts-format.md 의 kind 목록에 portrait·heritage 를 추가하고 조립기 처리 규칙을 적는다(권장), (2) portrait→court/assembly, heritage→construction 등 기존 값으로 환원한다, (3) 이 목록 파일은 장면 스키마와 별개임을 README 에 명시한다. 지금처럼 말없이 어긋난 채 두면 나중에 검증기에서 한꺼번에 막힌다.",
+      "evidence": "C:/Users/gkfkd/Git/sigong-curriculum/docs/research/facts-format.md 55행(허용 kind 목록)·108행(허용 밖 kind 는 실패)"
+    },
+    {
+      "code": "D",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-dopyeonguisasa",
+      "problem": "파일 머리의 range 는 [1170, 1392]인데 yearEnd 가 그 밖으로 나가는 항목이 2건이다. hs-goryeo-late-dopyeonguisasa 는 yearEnd 1400(의정부 개편), hs-goryeo-late-yi-saek 은 yearEnd 1396(이색 사망)이다. 조선 초 시대 파일이 만들어지면 같은 대상이 두 파일에 걸친다.",
+      "fix": "도평의사사는 yearEnd 를 1392 로 끊고 notes 에 '1400년 의정부로 개편' 을 적는다. 이색도 yearEnd 1392 로 끊고 notes 에 '1396년 사망' 을 적는다. 또는 range 밖 yearEnd 를 허용한다는 규칙과 시대 파일 간 중복 판정 기준을 README 에 명시한다.",
+      "evidence": "items/goryeo-late.json 의 range 필드와 두 항목의 yearEnd 값"
+    },
+    {
+      "code": "C",
+      "severity": "major",
+      "itemId": "hs-goryeo-late-mangi-mangsoi",
+      "problem": "place.modern 과 좌표가 틀렸다. 명학소(鳴鶴所)의 현재 위치는 대전광역시 서구 탄방동 일대로 비정되며(탄방동 1084번지 남선근린공원에 '명학소 민중봉기 기념탑'이 서 있다), 고려 때 그 땅이 공주목 관할이었기 때문에 사료에 '공주 명학소'로 적힌 것이다. 지금 값 modern=\"충청남도 공주시\", lon 127.119 / lat 36.447 은 공주시청 부근을 가리켜 실제 봉기 터와 약 80km 떨어진 다른 도시를 찍는다. core 항목이라 지도에 그대로 나간다.",
+      "fix": "place 를 {\"label\":\"공주 명학소\",\"modern\":\"대전광역시 서구 탄방동 일대(옛 공주목 명학소)\",\"lon\":127.377,\"lat\":36.351,\"coordinateBasis\":\"estimated\"} 로 고치고, notes 에 '고려 때는 공주목 관할이어서 사료에 공주 명학소로 적힘, 현 위치는 대전 서구 탄방동으로 비정' 을 적는다.",
+      "evidence": "https://ko.wikipedia.org/wiki/망이·망소이의_난 , https://www.cctoday.co.kr/news/articleView.html?idxno=2045765 (명학소 터=대전 서구 탄방동 남선공원, 기념탑 소재)"
+    },
+    {
+      "code": "C",
+      "severity": "major",
+      "itemId": "hs-goryeo-late-hyang-bugok-so",
+      "problem": "같은 오류가 옮겨 붙었다. 향·부곡·소 항목도 대표 좌표를 '공주 명학소'로 잡으면서 modern=\"충청남도 공주시\", lon 127.119 / lat 36.447 을 그대로 썼다. 명학소의 현 행정구역은 대전광역시 서구다.",
+      "fix": "hs-goryeo-late-mangi-mangsoi 와 같은 값(lon 127.377 / lat 36.351, modern \"대전광역시 서구 탄방동 일대\")으로 맞춘다. 제도 전체를 가리키는 항목이므로 notes 의 '좌표는 대표 사례(명학소)' 설명에 현 행정구역을 함께 적는다.",
+      "evidence": "https://ko.wikipedia.org/wiki/망이·망소이의_난"
+    },
+    {
+      "code": "C",
+      "severity": "major",
+      "itemId": "hs-goryeo-late-nongsang-jipyo",
+      "problem": "연도와 인물이 함께 틀렸다. year 1286, yearNote '충렬왕 대 이암이 원에서 들여온 농서' 라고 적었는데 이암(李嵒)은 1297~1364년 사람이라 1286년에는 태어나지도 않았다. 『농상집요』는 1349년(충정왕 1) 이암이 충정왕을 따라 원에 갔을 때 구해 왔고, 1372년(공민왕 21) 합천에서 다시 찍은 것이 『원조정본농상집요』다. 충렬왕 대(1274~1308)와는 관계가 없다.",
+      "fix": "year 를 1349, approx 를 true 로 바꾸고 yearNote 를 '충정왕 1년 이암이 원에서 들여옴, 1372년(공민왕 21) 합천에서 간행' 으로 고친다. yearEnd 를 1372 로 두어도 좋다. evidence 에 https://encykorea.aks.ac.kr/Article/E0080261 (원조정본농상집요)을 넣는다.",
+      "evidence": "https://encykorea.aks.ac.kr/Article/E0080261 , https://ko.wikipedia.org/wiki/농상집요 , https://ko.wikipedia.org/wiki/이암_(고려)"
+    },
+    {
+      "code": "C",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-iryeon",
+      "problem": "연도와 장소가 서로 맞지 않는다. year 1281(충렬왕 7)에 place 를 군위 인각사로 잡았는데, 일연이 인각사에 들어간 것은 1284년(충렬왕 10)이고 거기서 임종할 때까지 5년을 머물며 『삼국유사』를 지었다. 1281년의 일연은 아직 인각사에 없었다.",
+      "fix": "둘 중 하나를 고른다. (1) year 를 1284 로 올리고 yearNote 를 '충렬왕 10년 인각사에 들어가 임종까지 5년간 삼국유사를 지음' 으로 바꾼다(장소 유지), (2) year 1281 을 유지하려면 place 를 청도 운문사로 바꾼다. 교과서 서술이 보통 '1281년 무렵 편찬'이므로 (1)에 notes 로 '편찬 시기를 1281년 무렵으로 적는 서술도 있음' 을 덧붙이는 쪽을 권한다.",
+      "evidence": "https://ko.wikipedia.org/wiki/인각사 (1284년부터 5년간 인각사에서 삼국유사 저술), https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1333703740000 (군위 인각사지 해설)"
+    },
+    {
+      "code": "C",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-samguk-yusa",
+      "problem": "hs-goryeo-late-iryeon 과 같은 연도·장소 불일치(1281년 + 인각사)를 그대로 안고 있다. 더해 evidence 의 국가유산포털 ref 가 도메인 루트여서 '국보로 지정된 판본' 이라는 note 를 그 주소로 확인할 수 없다. core 항목이다.",
+      "fix": "연도·장소는 hs-goryeo-late-iryeon 과 같은 방식으로 맞추고, evidence 는 국가유산포털의 삼국유사 국보 상세 페이지(ccbaCpno 포함 URL)로 교체한다.",
+      "evidence": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1333703740000"
+    },
+    {
+      "code": "C",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-yi-gyubo",
+      "problem": "연도와 장소가 어긋난다. year 1193(「동명왕편」 저술)인데 place 를 강화로 잡았다. 강화가 도읍이 된 것은 1232년으로 39년 뒤이고 1193년의 이규보는 개경에 있었다. 게다가 좌표(lon 126.443 / lat 37.700)는 evidence 가 근거로 든 '이규보 묘'(인천광역시 기념물, 강화군 길상면 길직리, 약 lon 126.51 / lat 37.63)와도 9km 가까이 어긋나 강화도 서북쪽 엉뚱한 지점을 찍는다. core 항목이다.",
+      "fix": "place 를 개경(lon 126.555 / lat 37.972)으로 바꾸고 notes 에 '1232년 강화 천도 뒤 강화에서 활동했고 묘는 인천 강화군 길상면 길직리에 있음' 을 적는다. 강화를 유지하려면 year 를 1232년 이후로 옮기고 좌표를 길상면 길직리(약 lon 126.51 / lat 37.63)로 고친다.",
+      "evidence": "https://ko.wikipedia.org/wiki/이규보_묘 , http://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=2332300150000 (강화군 길상면 길직리)"
+    },
+    {
+      "code": "C",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-chojo-tripitaka-loss",
+      "problem": "좌표가 실제 부인사와 9km 가까이 어긋난다. 부인사는 대구광역시 동구 팔공산로 967-28(신무동)로 북위 35.9942 / 동경 128.6731 인데, 항목 값은 lon 128.590 / lat 35.949 로 팔공산 남서쪽 다른 지점을 가리킨다. coordinateBasis 를 heritage-portal 이라고 적었지만 포털·백과의 값과 다르다.",
+      "fix": "place 의 lon 을 128.673, lat 을 35.994 로 고친다. modern '대구광역시 동구 신무동' 은 그대로 두면 된다.",
+      "evidence": "https://ko.wikipedia.org/wiki/부인사 (북위 35°59′39″ 동경 128°40′23″ = 35.99417, 128.67306)"
+    },
+    {
+      "code": "C",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-jeongdonghaengseong",
+      "problem": "yearEnd 1356 을 approx:false 로 단정했다. 1356년에 폐지된 것은 정동행성의 산하 기관인 이문소 등이고, 정동행성 자체는 좌우사·유학제거사 중심으로 축소되어 대원·대왜 외교 사무를 맡으며 고려 말까지 존속했다. 항목의 textbookTerms·meaning 이 이문소를 따로 적고 있어 항목 안에서도 어긋난다. core 항목이다.",
+      "fix": "yearEnd 1356 은 두되 approx 를 true 로 바꾸고, notes 에 '1356년 공민왕이 이문소 등 산하 기관을 혁파했고 정동행성 자체는 축소된 형태로 고려 말까지 존속' 을 적는다.",
+      "evidence": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_020_0030_0020_0010_0020 (신편 한국사 '정동행성의 존재형태와 운영실태')"
+    },
+    {
+      "code": "C",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-jungbang",
+      "problem": "year 1170 으로 잡아 중방이 무신정변과 함께 생긴 기구처럼 읽힌다. 중방은 고려 전기부터 2군 6위의 상장군·대장군이 모이던 무신 합좌 기구였고, 무신정변 뒤에 최고 권력 기구로 '기능'이 바뀐 것이다. yearNote 는 기능이라고 맞게 썼지만 year 와 meaning 이 설치 시점처럼 보이게 한다.",
+      "fix": "approx 는 이미 true 이니 notes 에 '고려 전기부터 있던 무신 합좌 기구로, 1170년 이후 최고 권력 기구가 되었다가 최씨 정권기에 교정도감에 밀려 위상이 낮아짐' 을 추가한다. meaning 도 '무신들이 원래 모이던 회의 기구로, 정변 뒤 실제 나랏일을 결정하게 됨' 처럼 고친다.",
+      "evidence": "우리역사넷 교과서 용어 해설 '중방'(개별 URL 로 교체 필요) 및 교과서 공통 서술"
+    },
+    {
+      "code": "C",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-dobang",
+      "problem": "1179~1270 을 approx:false 로 적었으나 도방은 중간에 끊겼다. 경대승이 1179년에 두었다가 1183년 그가 죽으면서 해체되었고 1200년 최충헌이 다시 두어 확대 운영했다. 17년 공백을 정확한 존속 기간처럼 적은 셈이다.",
+      "fix": "approx 를 true 로 바꾸고 notes 에 '1183년 경대승 사후 해체, 1200년 최충헌이 부활시켜 확대' 를 적는다.",
+      "evidence": "우리역사넷 교과서 용어 해설 '도방'(개별 URL 로 교체 필요) 및 교과서 공통 서술"
+    },
+    {
+      "code": "C",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-tamna-chonggwanbu",
+      "problem": "1273~1301 사이의 끊김이 빠졌다. 1273년 삼별초 진압 뒤 탐라국초토사가 설치되고 1275년 총관부로 바뀌었으며, 1294년(충렬왕 20) 원이 탐라를 고려에 돌려주었다가 1300년 다시 설치되고 1301년 탐라군민만호부로 바뀌며 폐지되었다. 지금은 28년 내내 원의 직할이었던 것처럼 읽힌다.",
+      "fix": "approx 는 true 그대로 두고 notes 에 '1273년 탐라국초토사 → 1275년 총관부, 1294년 고려에 반환, 1300년 재설치 뒤 1301년 탐라군민만호부로 개편되며 폐지' 를 적는다.",
+      "evidence": "https://ko.wikipedia.org/wiki/탐라 , https://namu.wiki/w/탐라총관부"
+    },
+    {
+      "code": "C",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-waegu-invasion",
+      "problem": "yearEnd 1389 을 approx:false 로 적었다. 1389년은 박위의 쓰시마 정벌이 있었던 해일 뿐 왜구 침입이 끝난 해가 아니다. 왜구는 고려가 망한 뒤 조선 초까지 이어졌고(1419년 기해동정), 같은 파일의 hs-goryeo-late-tsushima-expedition 이 인용한 근거 제목도 '대마도 정벌 1389~1419' 여서 서로 어긋난다. core 항목이다.",
+      "fix": "yearEnd 를 1392(시대 범위 끝)로 두고 approx 를 true 로 바꾼 뒤 notes 에 '1350년 경인년부터 본격화했고 조선 초까지 계속됨' 을 적는다.",
+      "evidence": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i302200 (대마도 정벌 1389~1419)"
+    },
+    {
+      "code": "B",
+      "severity": "major",
+      "itemId": null,
+      "problem": "고려 후기 목조 건축의 교과서 대표 3건(안동 봉정사 극락전·영주 부석사 무량수전·예산 수덕사 대웅전) 가운데 부석사 무량수전만 들어 있고 봉정사 극락전이 빠졌다. 봉정사 극락전은 현존 최고(最古) 목조 건축으로 2015·2022 개정 교과서 고려 문화 단원의 고정 자료다.",
+      "fix": "{\"id\": \"hs-goryeo-late-bongjeongsa-geungnakjeon\", \"era\": \"goryeo-late\", \"unit\": \"근대 이전 한국사의 탐구 › 사상과 문화의 국제 교류\", \"title\": \"안동 봉정사 극락전\", \"type\": \"heritage\", \"year\": 1363, \"yearEnd\": null, \"approx\": true, \"yearNote\": \"1972년 해체 수리 때 나온 상량문에 1363년(공민왕 12) 지붕 중수 기록이 있어 13세기 이전 건립으로 추정\", \"place\": {\"label\": \"안동 봉정사\", \"modern\": \"경상북도 안동시 서후면 태장리\", \"lon\": 128.634, \"lat\": 36.621, \"coordinateBasis\": \"heritage-portal\"}, \"sceneType\": {\"kind\": \"heritage\", \"sceneFunction\": \"temple\"}, \"meaning\": \"지금 남아 있는 가장 오래된 나무 건물로 꼽히는 고려 불전\", \"curriculum\": {\"edition\": \"2022\", \"standard\": \"[10한사1-02-04]\", \"standardText\": \"근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.\", \"verified\": true}, \"textbookTerms\": [\"봉정사 극락전\", \"주심포 양식\", \"배흘림기둥\", \"현존 최고 목조 건축\", \"국보\"], \"evidence\": [{\"kind\": \"heritage-portal\", \"ref\": \"https://www.heritage.go.kr/heri/cul/culSelectDetail.do\", \"note\": \"안동 봉정사 극락전(국보), 경상북도 안동시 서후면 태장리 — ccbaCpno 는 포털에서 확인해 채울 것\"}], \"priority\": \"core\", \"confidence\": \"medium\", \"notes\": \"좌표와 ccbaCpno 는 국가유산포털 상세 페이지에서 최종 확인 필요.\"}",
+      "evidence": "https://ko.wikipedia.org/wiki/봉정사 (경상북도 안동시 서후면 태장리, 극락전은 고려 시대 건축물)"
+    },
+    {
+      "code": "B",
+      "severity": "major",
+      "itemId": null,
+      "problem": "예산 수덕사 대웅전(1308년 건립)이 빠졌다. 건립 연대가 묵서로 확인되는 몇 안 되는 고려 목조 건축이라, 교과서에서 주심포 양식·배흘림기둥을 설명할 때 봉정사 극락전·부석사 무량수전과 나란히 실린다.",
+      "fix": "{\"id\": \"hs-goryeo-late-sudeoksa-daeungjeon\", \"era\": \"goryeo-late\", \"unit\": \"근대 이전 한국사의 탐구 › 사상과 문화의 국제 교류\", \"title\": \"예산 수덕사 대웅전\", \"type\": \"heritage\", \"year\": 1308, \"yearEnd\": null, \"approx\": false, \"yearNote\": \"1937년 해체 수리 때 나온 묵서로 1308년(충렬왕 34) 건립이 확인됨\", \"place\": {\"label\": \"예산 수덕사\", \"modern\": \"충청남도 예산군 덕산면 사천리\", \"lon\": 126.623, \"lat\": 36.663, \"coordinateBasis\": \"wikipedia\"}, \"sceneType\": {\"kind\": \"heritage\", \"sceneFunction\": \"temple\"}, \"meaning\": \"지은 해가 기록으로 확인되는 고려 목조 건축의 대표작\", \"curriculum\": {\"edition\": \"2022\", \"standard\": \"[10한사1-02-04]\", \"standardText\": \"근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.\", \"verified\": true}, \"textbookTerms\": [\"수덕사 대웅전\", \"주심포 양식\", \"배흘림기둥\", \"맞배지붕\", \"국보\"], \"evidence\": [{\"kind\": \"wikipedia\", \"ref\": \"https://ko.wikipedia.org/wiki/수덕사\", \"note\": \"충청남도 예산군 덕산면 수덕사안길 79, 북위 36.662889 동경 126.622611, 대웅전 1308년 건립\"}], \"priority\": \"standard\", \"confidence\": \"high\"}",
+      "evidence": "https://ko.wikipedia.org/wiki/수덕사 (주소·좌표·대웅전 1308년 건립)"
+    },
+    {
+      "code": "B",
+      "severity": "major",
+      "itemId": null,
+      "problem": "원 간섭기 문화의 한 갈래인 고려 불화가 통째로 빠졌다. 상감 청자와 경천사지 십층석탑은 들어 있는데, 교과서가 원 간섭기 귀족 불교 문화의 상징으로 싣는 수월관음도(양류관음도) 계열 불화가 없다.",
+      "fix": "{\"id\": \"hs-goryeo-late-goryeo-bulhwa\", \"era\": \"goryeo-late\", \"unit\": \"근대 이전 한국사의 탐구 › 사상과 문화의 국제 교류\", \"title\": \"고려 불화(수월관음도)\", \"type\": \"culture\", \"year\": 1310, \"yearEnd\": null, \"approx\": true, \"yearNote\": \"현존 최대작인 1310년(충선왕 2) 김우문 등이 그린 수월관음도를 대표 연도로 삼음\", \"place\": {\"label\": \"개경\", \"modern\": \"개성특별시\", \"lon\": 126.555, \"lat\": 37.972, \"coordinateBasis\": \"estimated\"}, \"sceneType\": {\"kind\": \"heritage\", \"sceneFunction\": \"temple\"}, \"meaning\": \"금가루와 비단으로 그린 고려 귀족 불교의 대표 그림\", \"curriculum\": {\"edition\": \"2022\", \"standard\": \"[10한사1-02-04]\", \"standardText\": \"근대 이전의 사상과 문화를 국제 교류와 관련하여 탐구한다.\", \"verified\": true}, \"textbookTerms\": [\"고려 불화\", \"수월관음도\", \"양류관음도\", \"혜허\", \"금니\"], \"evidence\": [{\"kind\": \"encykorea\", \"ref\": \"https://encykorea.aks.ac.kr/Article/\", \"note\": \"고려 불화·수월관음도 항목 — 항목 번호는 확인해 채울 것\"}], \"priority\": \"standard\", \"confidence\": \"medium\", \"notes\": \"대표작 다수가 일본 소장(1310년 수월관음도는 가가미진자 소장). 연도와 작가는 조사자가 다시 확인할 것.\"}",
+      "evidence": "교과서 고려 문화 단원 공통 수록 자료(수월관음도) / 한국민족문화대백과 '고려 불화' 항목"
+    },
+    {
+      "code": "B",
+      "severity": "minor",
+      "itemId": null,
+      "problem": "무신 집권자 계보에서 이의방만 빠졌다. 정중부·경대승·이의민·최충헌·최우는 모두 항목이 있는데, 교과서가 표로 싣는 '이의방→정중부→경대승→이의민→최충헌' 의 첫 자리가 비어 있다. hs-goryeo-late-musin-jeongbyeon 의 textbookTerms 에는 이의방이 들어 있어 목록 안에서 낱말로만 뜬다.",
+      "fix": "{\"id\": \"hs-goryeo-late-yi-uibang\", \"era\": \"goryeo-late\", \"unit\": \"근대 이전 한국사의 이해 › 고려의 통치 체제와 지배 세력의 변화\", \"title\": \"이의방\", \"type\": \"person\", \"year\": 1170, \"yearEnd\": 1174, \"approx\": false, \"yearNote\": \"무신정변을 주도해 집권, 1174년 정중부의 아들 정균에게 제거됨\", \"place\": {\"label\": \"개경\", \"modern\": \"개성특별시\", \"lon\": 126.555, \"lat\": 37.972, \"coordinateBasis\": \"estimated\"}, \"sceneType\": {\"kind\": \"portrait\"}, \"meaning\": \"무신정변을 앞장서 일으키고 가장 먼저 권력을 쥔 무신\", \"curriculum\": {\"edition\": \"2022\", \"standard\": \"[10한사1-01-02]\", \"standardText\": \"고려의 통치 체제와 지배 세력의 변화를 이해한다.\", \"verified\": true}, \"textbookTerms\": [\"이의방\", \"무신정변\", \"중방\", \"정중부\"], \"evidence\": [{\"kind\": \"urihistory\", \"ref\": \"https://contents.history.go.kr/front/tg/view.do?treeId=0104\", \"note\": \"교과서 용어 해설 '무신정변' 항목 — levelId 를 채워 개별 URL 로 쓸 것\"}], \"priority\": \"extended\", \"confidence\": \"medium\"}",
+      "evidence": "items/goryeo-late.json 의 무신 집권자 항목 집합(정중부·경대승·이의민·최충헌·최우)에 이의방만 없음"
+    },
+    {
+      "code": "B",
+      "severity": "minor",
+      "itemId": null,
+      "problem": "김보당의 난(1173)이 빠졌다. 교과서는 무신 정권에 대한 반발을 '문신의 반발(김보당의 난·조위총의 난)'과 '하층민 봉기'로 나누어 서술하는데, 조위총의 난만 있고 그보다 앞선 김보당의 난이 없다. 이 난의 실패로 의종이 살해되는 연결 고리도 함께 빠져 있다.",
+      "fix": "{\"id\": \"hs-goryeo-late-kim-bodang-rebellion\", \"era\": \"goryeo-late\", \"unit\": \"근대 이전 한국사의 이해 › 고려의 통치 체제와 지배 세력의 변화\", \"title\": \"김보당의 난\", \"type\": \"event\", \"year\": 1173, \"yearEnd\": null, \"approx\": false, \"yearNote\": \"명종 3년, 동북면병마사 김보당이 의종 복위를 내걸고 거병\", \"place\": {\"label\": \"동계(강릉)\", \"modern\": \"강원특별자치도 강릉시\", \"lon\": 128.896, \"lat\": 37.752, \"coordinateBasis\": \"estimated\"}, \"sceneType\": {\"kind\": \"battle\", \"sceneFunction\": \"civil_conflict\"}, \"meaning\": \"문신이 쫓겨난 임금을 되세우려 일으킨 무신 정권 최초의 반란\", \"curriculum\": {\"edition\": \"2022\", \"standard\": \"[10한사1-01-02]\", \"standardText\": \"고려의 통치 체제와 지배 세력의 변화를 이해한다.\", \"verified\": true}, \"textbookTerms\": [\"김보당의 난\", \"의종\", \"동북면병마사\", \"계사의 난\"], \"evidence\": [{\"kind\": \"urihistory\", \"ref\": \"https://contents.history.go.kr/front/tg/view.do?treeId=0104\", \"note\": \"교과서 용어 해설 '김보당의 난' — levelId 를 채워 개별 URL 로 쓸 것\"}], \"priority\": \"extended\", \"confidence\": \"medium\", \"notes\": \"난이 실패한 뒤 경주에 있던 의종이 이의민에게 살해됨.\"}",
+      "evidence": "교과서 공통 서술(무신 정권에 대한 반발: 김보당의 난·조위총의 난) / items/goryeo-late.json 에 조위총의 난만 존재"
+    },
+    {
+      "code": "B",
+      "severity": "minor",
+      "itemId": null,
+      "problem": "1259년 몽골과의 강화가 빠졌다. 40년 전쟁이 끝난 시점이자 원 간섭기가 시작되는 분기점인데, 목록은 1253년 충주성 전투와 1258년 쌍성총관부에서 곧바로 1270년 개경 환도로 건너뛴다. 교과서는 '태자(뒤의 원종)의 입조와 강화(1259)'를 대몽 항쟁의 끝으로 반드시 짚는다.",
+      "fix": "{\"id\": \"hs-goryeo-late-mongol-peace-1259\", \"era\": \"goryeo-late\", \"unit\": \"근대 이전 한국사의 탐구 › 근대 이전 국제 관계와 대외 교류\", \"title\": \"몽골과의 강화\", \"type\": \"event\", \"year\": 1259, \"yearEnd\": null, \"approx\": false, \"yearNote\": \"고종 46년, 태자 전(뒤의 원종)이 몽골에 들어가 강화가 이루어짐\", \"place\": {\"label\": \"강화 고려궁지\", \"modern\": \"인천광역시 강화군 강화읍\", \"lon\": 126.485, \"lat\": 37.748, \"coordinateBasis\": \"heritage-portal\"}, \"sceneType\": {\"kind\": \"court\"}, \"meaning\": \"40년 가까이 이어진 전쟁을 끝내고 원의 간섭이 시작된 분기점\", \"curriculum\": {\"edition\": \"2022\", \"standard\": \"[10한사1-02-01]\", \"standardText\": \"근대 이전 국제 관계와 대외 교류의 시대적 특징을 비교한다.\", \"verified\": true}, \"textbookTerms\": [\"강화\", \"태자 전\", \"원종\", \"쿠빌라이\", \"불개토풍\"], \"evidence\": [{\"kind\": \"urihistory\", \"ref\": \"https://contents.history.go.kr/front/tg/view.do?treeId=0104\", \"note\": \"교과서 용어 해설 몽골과의 강화 관련 항목 — levelId 를 채워 개별 URL 로 쓸 것\"}], \"priority\": \"standard\", \"confidence\": \"medium\", \"notes\": \"고려의 풍속을 바꾸지 않는다는 '불개토풍'을 약속받았다는 서술이 교과서에 자주 함께 실림.\"}",
+      "evidence": "items/goryeo-late.json 연표상 1258→1270 사이 공백"
+    },
+    {
+      "code": "B",
+      "severity": "minor",
+      "itemId": null,
+      "problem": "권문세족의 농장(農莊)이 독립 항목으로 없다. 전민변정도감(1366)과 과전법(1391)이 둘 다 농장 혁파를 목표로 하는데 정작 농장이 무엇인지 설명하는 항목이 없어 수취 체제 단원([10한사1-02-02], 현재 4건뿐)의 앞뒤가 끊긴다. 지금은 hs-goryeo-late-gwonmun-sejok 의 textbookTerms 에 낱말로만 있다.",
+      "fix": "{\"id\": \"hs-goryeo-late-nongjang\", \"era\": \"goryeo-late\", \"unit\": \"근대 이전 한국사의 탐구 › 수취 체제와 농업 중심의 경제생활\", \"title\": \"농장의 확대\", \"type\": \"economy\", \"year\": 1300, \"yearEnd\": 1391, \"approx\": true, \"yearNote\": \"원 간섭기에 권문세족이 토지를 빼앗아 대규모 농장을 이룸, 과전법으로 혁파\", \"place\": {\"label\": \"개경\", \"modern\": \"개성특별시\", \"lon\": 126.555, \"lat\": 37.972, \"coordinateBasis\": \"estimated\"}, \"sceneType\": {\"kind\": \"survey\", \"sceneFunction\": \"irrigation\"}, \"meaning\": \"권세가가 남의 땅을 빼앗아 산과 내를 경계로 삼을 만큼 넓힌 사유지\", \"curriculum\": {\"edition\": \"2022\", \"standard\": \"[10한사1-02-02]\", \"standardText\": \"근대 이전의 수취 체제 변화를 농업 중심의 경제생활과 관련하여 탐구한다.\", \"verified\": true}, \"textbookTerms\": [\"농장\", \"토지 탈점\", \"전시과 붕괴\", \"전민변정도감\", \"과전법\"], \"evidence\": [{\"kind\": \"urihistory\", \"ref\": \"https://contents.history.go.kr/front/tg/view.do?treeId=0104\", \"note\": \"교과서 용어 해설 '농장' — levelId 를 채워 개별 URL 로 쓸 것\"}], \"priority\": \"standard\", \"confidence\": \"medium\"}",
+      "evidence": "items/goryeo-late.json 의 [10한사1-02-02] 항목 4건, 전민변정도감·과전법의 배경 설명 부재"
+    },
+    {
+      "code": "B",
+      "severity": "minor",
+      "itemId": null,
+      "problem": "원 간섭기 정치 변화의 핵심인 관제 격하와 부마국 체제가 독립 항목으로 없다. 교과서는 '중서문하성·상서성 → 첨의부, 중추원 → 밀직사, 6부 → 4사, 왕 이름에 忠 자, 조·종 → 왕, 폐하 → 전하, 태자 → 세자'를 표로 싣는다. 지금은 hs-goryeo-late-chungnyeolwang 의 textbookTerms 에 '관제 격하'·'부마국' 두 낱말로만 있다.",
+      "fix": "{\"id\": \"hs-goryeo-late-gwanje-gyeokha\", \"era\": \"goryeo-late\", \"unit\": \"근대 이전 한국사의 이해 › 고려의 통치 체제와 지배 세력의 변화\", \"title\": \"관제 격하와 부마국 체제\", \"type\": \"institution\", \"year\": 1275, \"yearEnd\": 1356, \"approx\": false, \"yearNote\": \"충렬왕 1년 관제 개편으로 격하, 1356년 공민왕이 복구\", \"place\": {\"label\": \"개경\", \"modern\": \"개성특별시\", \"lon\": 126.555, \"lat\": 37.972, \"coordinateBasis\": \"estimated\"}, \"sceneType\": {\"kind\": \"court\"}, \"meaning\": \"원의 요구로 나라 기구와 임금 호칭의 격이 한 단계씩 내려간 체제\", \"curriculum\": {\"edition\": \"2022\", \"standard\": \"[10한사1-01-02]\", \"standardText\": \"고려의 통치 체제와 지배 세력의 변화를 이해한다.\", \"verified\": true}, \"textbookTerms\": [\"첨의부\", \"밀직사\", \"부마국\", \"충렬왕\", \"전하\", \"세자\"], \"evidence\": [{\"kind\": \"urihistory\", \"ref\": \"https://contents.history.go.kr/front/tg/view.do?treeId=0104\", \"note\": \"교과서 용어 해설 '첨의부'·'부마국' — levelId 를 채워 개별 URL 로 쓸 것\"}], \"priority\": \"core\", \"confidence\": \"medium\", \"notes\": \"1356년 공민왕의 관제 복구(hs-goryeo-late-banwon-policy)와 짝을 이룬다.\"}",
+      "evidence": "items/goryeo-late.json 의 원 간섭기 항목 집합(정동행성·다루가치·동녕부·탐라총관부·공녀·몽골풍)에 관제 격하 항목 부재"
+    },
+    {
+      "code": "E",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-seongnihak-acceptance",
+      "problem": "hs-goryeo-late-an-hyang(core)과 사실상 같은 항목이다. 연도 1290 동일, 장소 개경 동일, 좌표 동일, evidence 의 핵심 URL(km_024_0040_0010_0020) 동일, meaning 도 '원에서 성리학을 들여옴'과 '새 학문이 들어와 신진 사대부의 논리가 됨'으로 겹친다. 지도에서 같은 점에 두 개가 찍힌다.",
+      "fix": "둘 중 하나를 고른다. (1) hs-goryeo-late-seongnihak-acceptance 를 지우고 백이정·이제현으로 이어지는 흐름을 hs-goryeo-late-an-hyang 의 notes 로 옮긴다, (2) 남기려면 연도를 1314년(만권당) 또는 1367년(성균관 개편)으로 옮기고 place 도 달리해 '수용→확산'의 다음 단계로 분명히 구분한다. 같은 파일의 다른 인물·성과 짝(일연/삼국유사, 지눌/수선사 결사)은 대상이 서로 달라 문제가 없지만 이 둘은 대상이 같다.",
+      "evidence": "items/goryeo-late.json 두 항목의 year·place·evidence 비교"
+    },
+    {
+      "code": "A",
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-gwaneumpo-victory",
+      "problem": "priority 가 standard 인데 교과서 본문 수준을 넘는다. 왜구 격퇴 전투 가운데 교과서 본문에 이름이 오르는 것은 홍산(최영)·진포(최무선)·황산(이성계) 셋이고, 정지의 관음포 대첩은 대개 심화·자료 수준이다.",
+      "fix": "priority 를 extended 로 내린다. 왜구 4대 대첩을 함께 보여 주려면 notes 에 '홍산·진포·황산과 함께 왜구 4대 대첩으로 묶임' 을 적어 맥락만 남긴다.",
+      "evidence": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i302200&code=kc_age_30 (왜구 4대 대첩을 묶어 소개하는 서술)"
+    }
+  ],
+  "checkedItems": [
+    "hs-goryeo-late-musin-jeongbyeon",
+    "hs-goryeo-late-mangi-mangsoi",
+    "hs-goryeo-late-kim-sami-hyosim",
+    "hs-goryeo-late-yi-gyubo",
+    "hs-goryeo-late-choe-chunghon",
+    "hs-goryeo-late-manjeok-rebellion",
+    "hs-goryeo-late-jinul",
+    "hs-goryeo-late-gyojeong-dogam",
+    "hs-goryeo-late-mongol-invasion-1",
+    "hs-goryeo-late-ganghwa-capital-move",
+    "hs-goryeo-late-sambyeolcho",
+    "hs-goryeo-late-cheoinseong-battle",
+    "hs-goryeo-late-palman-daejanggyeong",
+    "hs-goryeo-late-ssangseong-chonggwanbu",
+    "hs-goryeo-late-jeongdonghaengseong",
+    "hs-goryeo-late-samguk-yusa",
+    "hs-goryeo-late-an-hyang",
+    "hs-goryeo-late-waegu-invasion",
+    "hs-goryeo-late-sinjin-sadaebu",
+    "hs-goryeo-late-gongminwang",
+    "hs-goryeo-late-banwon-policy",
+    "hs-goryeo-late-hongeonjeok-invasion",
+    "hs-goryeo-late-munikjeom-cotton",
+    "hs-goryeo-late-sindon",
+    "hs-goryeo-late-jeonmin-byeonjeong-dogam",
+    "hs-goryeo-late-hongsan-victory",
+    "hs-goryeo-late-hwatong-dogam",
+    "hs-goryeo-late-jikji",
+    "hs-goryeo-late-jinpo-victory",
+    "hs-goryeo-late-hwangsan-victory",
+    "hs-goryeo-late-wihwado-retreat",
+    "hs-goryeo-late-gwajeonbeop",
+    "hs-goryeo-late-jeong-mongju",
+    "hs-goryeo-late-jungbang",
+    "hs-goryeo-late-dobang",
+    "hs-goryeo-late-jeongbang",
+    "hs-goryeo-late-seobang",
+    "hs-goryeo-late-hyang-bugok-so",
+    "hs-goryeo-late-nongsang-jipyo",
+    "hs-goryeo-late-tamna-chonggwanbu",
+    "hs-goryeo-late-dongnyeongbu",
+    "hs-goryeo-late-chojo-tripitaka-loss",
+    "hs-goryeo-late-iryeon",
+    "hs-goryeo-late-seongnihak-acceptance",
+    "hs-goryeo-late-gwaneumpo-victory",
+    "hs-goryeo-late-dopyeonguisasa",
+    "hs-goryeo-late-yi-saek",
+    "hs-goryeo-late-jowichong-rebellion",
+    "hs-goryeo-late-gyeong-daeseung",
+    "hs-goryeo-late-yi-uimin",
+    "hs-goryeo-late-gwiju-siege",
+    "hs-goryeo-late-chungjuseong-battle",
+    "hs-goryeo-late-sambyeolcho-resistance",
+    "hs-goryeo-late-hangpaduri",
+    "hs-goryeo-late-jewang-ungi",
+    "hs-goryeo-late-mangwondang",
+    "hs-goryeo-late-yi-jehyeon",
+    "hs-goryeo-late-buseoksa-muryangsujeon",
+    "hs-goryeo-late-tsushima-expedition",
+    "hs-goryeo-late-goryeo-fall",
+    "hs-goryeo-late-chungseonwang",
+    "hs-goryeo-late-gyeongcheonsa-pagoda",
+    "hs-goryeo-late-japan-expedition"
+  ],
+  "summary": "89건·core 33건으로 건수(80±15%)와 핵심 비율은 기준 안이고, 지시받은 필수 앵커 29개는 모두 들어 있으며 쓰인 성취기준 코드 6종([10한사1-01-02]·[10한사1-01-03]·[10한사1-02-01]~[10한사1-02-04])은 문장까지 2022 개정 고시와 일치함을 직접 확인했다. 그러나 evidence 45건(core 8건 포함)이 우리역사넷 용어 '목록' 페이지나 도메인 루트만 가리켜 그 주소로는 인용 내용을 확인할 수 없고(목록 페이지를 직접 열어 확인), type=\"naval\" 3건은 이 작업의 종류 어휘 밖이라 시대별 파일 합산이 깨진다. 사실 오류 12건 가운데 명학소의 현재 행정구역(대전 서구 탄방동인데 충남 공주시로 적음, 2건)과 농상집요 전래(1286년 충렬왕이라 했으나 이암은 1297년생, 실제 1349년) 3건이 중대하고, 일연·삼국유사의 1281년+인각사, 이규보의 1193년+강화, 부인사 좌표 9km 오차 등 9건이 그다음이다. 누락 8건 중 봉정사 극락전·수덕사 대웅전·고려 불화 3건이 중대하고 이의방·김보당의 난·1259년 몽골과의 강화·농장·관제 격하 5건이 더 필요하다. 총 26건(major 8, minor 18)이라 verdict 는 fix."
+}
