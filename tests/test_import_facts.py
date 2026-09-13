@@ -40,11 +40,14 @@ class FactsIngestTests(unittest.TestCase):
         self.data = self.root / 'data'
         self.job = self.root / 'input' / JOB
         shutil.copytree(FIXTURES / JOB, self.job)
+        # The importer writes UTF-8/LF; keep the copied input independent of checkout line endings.
+        draft_path = self.job / 'result.json'
+        draft_path.write_text(draft_path.read_text(encoding='utf-8'), encoding='utf-8', newline='\n')
         source = self.data / 'sources/samguksagi'
         source.mkdir(parents=True)
         shutil.copy2(ROOT / 'data/sources/samguksagi/chunks.jsonl', source / 'chunks.jsonl')
         shutil.copy2(ROOT / 'data/sources/samguksagi.md', source.parent / 'samguksagi.md')
-        shutil.copytree(ROOT / 'data/claims/samguksagi', self.data / 'claims/samguksagi')
+        (self.data / 'claims').mkdir()
         self.draft = read_json(self.job / 'result.json')
         self.source_path = source / 'chunks.jsonl'
         self.source_digest = hashlib.sha256(self.source_path.read_bytes()).hexdigest()
@@ -84,17 +87,22 @@ class FactsIngestTests(unittest.TestCase):
         self.assertEqual(len(claims), 2)
         self.assertEqual(claims[1]['quote'], '移都平壤')
         self.assertEqual(claims[0]['object']['id'], 'ts-facts-ancient-goguryeo_early-move-time')
-        self.assertEqual(claims_in(self.claim_path(HOUSEHOLDS))[0]['object']['value'], 900)
+        self.assertEqual(claims_in(self.claim_path(HOUSEHOLDS))[0]['object']['value'], '900')
         output = self.root / 'scenes.json'
         build = self.run_script('build_history_scenes.py', '--research', self.saved_root(), '--collection', COLLECTION,
                                 '--job', JOB, '--data', self.data, '--out', output)
         scene = read_json(output)['scenes'][0]
         expected = copy.deepcopy(self.draft['scenes'][0])
         prefix = 'claim-facts-ancient-goguryeo_early-'
-        for key in ('category', 'region', 'decade', 'sceneFunction', 'participantGroupsNote'):
+        for key in ('category', 'region', 'decade', 'sceneFunction'):
             self.assertEqual(scene[key], expected[key])
         expected['participantGroups'][0]['claimIds'] = [prefix + 'move-place']
         expected['persistence']['basisClaimIds'] = [prefix + 'move-time', prefix + 'move-place']
+        self.assertEqual(scene['participantGroupsNote'], 'count 는 화면 표현값이며 사료의 인원수가 아니다')
+        expected['participantGroups'][0].update(
+            entityId=None, role='ruler', stance='bystander', side='a', count=1,
+            sourceRole='천도 주체', sourceStance='neutral', sourceSide='goguryeo',
+            basis='조사 장면의 집단(원문 역할: 천도 주체, 자세: neutral, 편: goguryeo) — count 는 표현값')
         self.assertEqual(scene['participantGroups'], expected['participantGroups'])
         self.assertEqual(scene['persistence'], expected['persistence'])
         self.assertEqual(scene['kind'], 'migration')
@@ -220,6 +228,23 @@ class FactsIngestTests(unittest.TestCase):
         self.assertEqual(scenes[0]['id'], 'existing')
         self.assertNotIn('participantGroups', scenes[1])
         self.assertNotIn('persistence', scenes[1])
+
+    def test_build_omits_empty_groups_and_preserves_nonfacts_vocabulary(self):
+        self.import_job()
+        output = self.root / 'scenes.json'
+        self.run_script('build_history_scenes.py', '--research', self.saved_root(), '--collection', 'scenes-fixture',
+                        '--job', JOB, '--data', self.data, '--out', output)
+        group = read_json(output)['scenes'][0]['participantGroups'][0]
+        self.assertEqual((group['role'], group['stance'], group['side'], group['count']),
+                         ('천도 주체', 'neutral', 'goguryeo', None))
+        self.assertNotIn('sourceRole', group)
+        self.draft['scenes'][0]['participantGroups'] = []
+        write_json(self.saved_root() / JOB / 'result.json', self.draft)
+        self.run_script('build_history_scenes.py', '--research', self.saved_root(), '--collection', COLLECTION,
+                        '--job', JOB, '--data', self.data, '--out', output)
+        scene = read_json(output)['scenes'][0]
+        self.assertNotIn('participantGroups', scene)
+        self.assertNotIn('participantGroupsNote', scene)
 
     def test_summary_rejects_strings_booleans_and_nonfinite_numbers(self):
         self.import_job()

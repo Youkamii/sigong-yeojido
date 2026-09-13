@@ -6,7 +6,7 @@ registerHooks({resolve(specifier,context,next){return specifier==='three'?{url:n
 const THREE=await import('three');
 const {ChronicleAssets}=await import('../services/host/app/chronicle-assets.js');
 const {compileAssetCatalog}=await import('../services/host/app/assetcatalog.js');
-const {extendBuildingCatalog}=await import('../services/host/app/period-buildings.js');
+const {extendBuildingCatalog,buildingArchetype}=await import('../services/host/app/period-buildings.js');
 const {extendFigureCatalog}=await import('../services/host/app/period-figures.js');
 const {sceneVisualKey}=await import('../services/host/app/chronicle-persistence.js');
 const {urbanRegionAt}=await import('../services/host/app/urban-regions.js');
@@ -140,6 +140,48 @@ test('4: 축소 박해 장면의 대표 인물도 입력 집단의 역할과 동
   const scene=composeHistoricalEvent(row,new THREE.Vector3(),flat),primary=scene.models.find(m=>m.primary);
   assert.ok(primary);assert.equal(primary.role,'soldier');assert.equal(primary.action,'walking');
   assert.equal(scene.models.filter(m=>m.role).length,1);
+});
+
+const factFunctions={market:'market',relief:'grain_stack',construction_site:'korean_courtyard',
+  fortress:'korean_gate',harbor:'korean_courtyard',kiln:'rural_store',irrigation:'rural_hut'};
+for(const [fn,primary] of Object.entries(factFunctions))test(`사실 조사 ${fn}은 키워드·archetype보다 우선하고 집단을 한 번 조립한다`,()=>{
+  for(const archetype of ['court','construction','battle','settlement','excavation']){
+    const row={...event('facts-'+fn,archetype,0,0),year:600,sceneFunction:fn,
+      label:'구휼 곡식 백자 관개 황룡사 시장',visualActions:{fortress:true},
+      participantGroups:[{role:'worker',stance:'worker',side:'a',count:3,label:'역부'}]};
+    const scene=composeHistoricalEvent(row,new THREE.Vector3(),flat);
+    assert.equal(scene.compositionKind,fn==='construction_site'?'construction':fn);
+    assert.equal(scene.models.find(m=>m.primary)?.archetype,buildingArchetype(primary,600,{seed:0,latitude:0}),archetype);
+    const actors=scene.models.filter(m=>m.groupIndex===0&&m.role);
+    assert.equal(actors.length,3);
+    assert.ok(actors.every(m=>m.archetype==='field_worker'&&m.action==='working'));
+    assert.equal(scene.models.filter(m=>m.action==='working').length,3);
+    if(fn==='construction_site')assert.ok(scene.models.some(m=>m.archetype==='handcart'));
+    if(fn==='fortress')assert.ok(scene.models.some(m=>/wall/.test(m.archetype)));
+  }
+});
+
+test('새 함수가 있어도 시설의 외형과 모델은 기존 facilityLook을 따른다',()=>{
+  for(const facilityLook of ['palace','industry','temple','rail_station']){
+    const row={...event('facility','construction',0,0),year:600,endYear:600,
+      continuing:{kind:'facility',facilityLook,sinceYear:601},
+      participantGroups:[{role:'worker',stance:'worker',side:'a',count:3}]};
+    const before=composeHistoricalEvent(row,new THREE.Vector3(),flat);
+    for(const sceneFunction of Object.keys(factFunctions)){
+      const after=composeHistoricalEvent({...row,sceneFunction},new THREE.Vector3(),flat);
+      assert.equal(after.compositionKind,before.compositionKind);
+      assert.deepEqual(after.models,before.models);
+    }
+  }
+});
+
+test('새 함수의 기본 공사 인력과 성곽은 보조 필드 없이도 조립된다',()=>{
+  const row={...event('facts','court',0,0),year:600};
+  const construction=composeHistoricalEvent({...row,sceneFunction:'construction_site'},new THREE.Vector3(),flat);
+  assert.equal(construction.models.filter(m=>m.action==='working').length,6);
+  assert.ok(construction.models.some(m=>m.archetype==='handcart'));
+  const fortress=composeHistoricalEvent({...row,sceneFunction:'fortress',scenePlace:undefined},new THREE.Vector3(),flat);
+  assert.equal(fortress.models.find(m=>m.primary)?.archetype,buildingArchetype('korean_gate',600,{seed:0}));
 });
 
 test('5: 장면 정보 문구에 추정 배경 마을 수와 사료 없음을 표시한다',()=>{

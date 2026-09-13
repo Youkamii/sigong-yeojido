@@ -6,6 +6,7 @@ import json
 import math
 from pathlib import Path
 from import_period_research import ENTITY_ID_ALIASES,source_id_aliases,check_run
+from scene_vocabulary import normalize_group,PARTICIPANT_GROUPS_NOTE
 
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
@@ -83,8 +84,19 @@ for job in args.job or ['invasion_events','yi_naval']:
             if args.collection=='scenes-101' and scene['id']=='scene-danghangpo-2-1594' and actor['entityId']=='person-yinav-eo-yeongdam':
                 actor['presence']='related'
         for group in scene.get('participantGroups', []):
-            assert all(c in claims for c in group['claimIds'])
-            group['claimIds']=ids(group['claimIds'])
+            if args.collection.startswith('facts-'):
+                group['claimIds']=ids([c for c in group.get('claimIds', []) if c in claims])
+                group['entityId']=ENTITY_ID_ALIASES.get(group.get('entityId'),group.get('entityId'))
+            else:
+                assert all(c in claims for c in group['claimIds'])
+                group['claimIds']=ids(group['claimIds'])
+        if args.collection.startswith('facts-') and 'participantGroups' in scene:
+            if scene['participantGroups']:
+                scene['participantGroups']=[normalize_group(group,scene) for group in scene['participantGroups']]
+                scene['participantGroupsNote']=PARTICIPANT_GROUPS_NOTE
+            else:
+                scene.pop('participantGroups')
+                scene.pop('participantGroupsNote',None)
         if scene.get('persistence') is not None:
             basis=scene['persistence'].get('basisClaimIds', [])
             assert all(c in claims for c in basis)
@@ -121,11 +133,17 @@ if args.collection=='scenes-101' and (position_folder/'run.json').exists():
         missing=[m for m in missing if m.get('job')!='naval_positions']
         missing.extend({'job':'naval_positions','detail':item} for item in result.get('missing',[]))
 
+coast=None
 if any(s.get('place') and s['place'].get('lon') is not None for s in scenes):
-    from shapely.geometry import shape,Point
-    from shapely.ops import nearest_points
-    outline=json.loads((root/'services/host/app/korea-outline.json').read_text(encoding='utf-8'))
-    coast=shape(outline['geometry'])
+    try:
+        from shapely.geometry import shape,Point
+        from shapely.ops import nearest_points
+    except ModuleNotFoundError as error:
+        if error.name!='shapely':raise
+        print('Shapely unavailable: skipping display coordinate correction')
+    else:
+        outline=json.loads((root/'services/host/app/korea-outline.json').read_text(encoding='utf-8'))
+        coast=shape(outline['geometry'])
 for scene in scenes:
     if scene['id']=='scene-city-hanseong-capital-1394-1910':
         registry=json.loads((root/'services/host/app/history-coordinates.json').read_text(encoding='utf-8'))
@@ -137,6 +155,7 @@ for scene in scenes:
     if scene['id']=='scene-myeongnyang-1597':
         scene['sides']=[{'side':'invader','label':'일본 수군','claimIds':['claim-scenes-101-yi_naval-my-ships-enemy']}]
     place=scene.get('place')
+    if coast is None:continue
     if place and place['medium']=='sea' and place['precision']=='area' and place.get('lon') is not None:
         point=Point(place['lon'],place['lat'])
         if coast.covers(point):

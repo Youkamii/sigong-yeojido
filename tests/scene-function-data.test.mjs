@@ -8,7 +8,7 @@ const here=path.dirname(fileURLToPath(import.meta.url));
 const data=JSON.parse(fs.readFileSync(path.join(here,'../services/host/app/history-scenes.json'),'utf8'));
 const scenes=new Map(data.scenes.map(s=>[s.id,s]));
 
-const SCENE_FUNCTIONS=new Set(['rail_station','temple','print_workshop','migration','persecution','naval_expedition','civil_conflict','uprising_battle']);
+const SCENE_FUNCTIONS=new Set(['rail_station','temple','print_workshop','migration','persecution','naval_expedition','civil_conflict','uprising_battle','market','relief','construction_site','fortress','harbor','kiln','irrigation']);
 const ROLES=new Set(['militia','soldier','police','civilian','monk','printer','scholar','commoner','ruler','commander','worker']);
 const STANCES=new Set(['attacker','defender','bystander','worker','victim','marching']);
 const SIDES=new Set(['a','b','c']);
@@ -39,7 +39,7 @@ test('every sceneFunction and participantGroups in the file use the allowed voca
     if(s.participantGroups===undefined)continue;
     assert.ok(Array.isArray(s.participantGroups)&&s.participantGroups.length>0,`${s.id}: participantGroups must be a non-empty array`);
     assert.equal(s.participantGroupsNote,'count 는 화면 표현값이며 사료의 인원수가 아니다',`${s.id}: participantGroupsNote`);
-    const known=new Set((s.participants||[]).flatMap(p=>p.claimIds||[]));
+    const known=new Set([...(s.dateClaimIds||[]),...(s.actionClaimIds||[]),...(s.relatedClaimIds||[]),...(s.participants||[]).flatMap(p=>p.claimIds||[])]);
     const entities=new Set((s.participants||[]).map(p=>p.entityId));
     for(const g of s.participantGroups){
       assert.ok(ROLES.has(g.role),`${s.id}: role ${g.role}`);
@@ -49,7 +49,8 @@ test('every sceneFunction and participantGroups in the file use the allowed voca
       assert.ok(Number.isInteger(g.count)&&g.count>0,`${s.id}: count`);
       assert.ok(g.entityId===null||entities.has(g.entityId),`${s.id}: entityId ${g.entityId} not in participants`);
       assert.ok(Array.isArray(g.claimIds),`${s.id}: claimIds array`);
-      for(const c of g.claimIds)assert.ok(known.has(c),`${s.id}: claim ${c} not in participants[].claimIds`);
+      if(s.researchCollection?.startsWith('facts-'))assert.ok(g.claimIds.length>0,`${s.id}: facts claimIds must not be empty`);
+      for(const c of g.claimIds)assert.ok(known.has(c),`${s.id}: claim ${c} not in scene claim ids`);
       if(g.entityId===null)assert.ok(typeof g.basis==='string'&&g.basis.length>0,`${s.id}: null-entity group needs basis`);
     }
   }

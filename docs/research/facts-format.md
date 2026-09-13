@@ -56,6 +56,39 @@ predicate 허용 목록(검증기가 파일 `scripts/fact_predicates.json` 로 �
 추가(모두 검증기가 확인): `category`(아래 10개 중 하나) · `region`(`capital|north|central|south|island`) · `decade`(startYear 를 10으로 내림) · 선택 `sceneFunction`(`rail_station|temple|print_workshop|migration|persecution|naval_expedition|civil_conflict|uprising_battle|market|relief|construction_site|fortress|harbor|kiln|irrigation`) · 선택 `participantGroups[{entityId?,label,role,stance,side,count,claimIds[]}]` · 선택 `persistence {kind:'city'|'facility'|'institution'|'none', from, to|null, basisClaimIds[]}`.
 place: `{label, medium('land'|'sea'), precision('site'|'area'), lon, lat, claimIds[], coordinateSourceIds[], coordinateNote}` — 좌표는 반드시 sources[] 의 발췌(위키 표시 좌표 등)나 location 주장에 근거를 둔다.
 
+### 집단 어휘 정규화
+
+`build_history_scenes.py`는 `--collection`이 `facts-`로 시작할 때만 `scene_vocabulary.normalize_group(group, scene)`으로 집단을 정규화한다. 조사 원본은 그대로 두고 세계 표시용 `history-scenes.json`에 적용한다. 다른 컬렉션은 기존 어휘를 유지한다.
+
+| 필드 | 원문 키워드 예 | 표시 값 |
+|---|---|---|
+| role | 승려·주지·법사·monk·출가 | monk |
+| role | 왕·군주·천도 주체·추장 | ruler |
+| role | 관인·official·감독·통치·사절·host·주체·state | scholar |
+| role | 인부·역부·노동·부역·축성 인력·builder·worker·기술 인력·수축 | worker |
+| role | 군사·garrison·병·soldier·주둔 | soldier |
+| role | 피해자·victim·수급자·recipient·beneficiary·유민·이재민·수혜 | civilian |
+| role | 이주민·migrant·정착민·주민·거주자·상인·trader·행상·guest·참석·미상 | commoner |
+| stance | 피해·피동·유망·victim | victim |
+| stance | 이주·정착·이탈·항해·marching·귀부·도래 | marching |
+| stance | 동원·부역·시공·노동·징발·수축·축성·worker | worker |
+| stance | 방어·주둔·defend·defensive·항복 | defender |
+| stance | hostile·attacker·공격 | attacker |
+| stance | neutral·미상·주도·의례·참석 등 나머지 | bystander |
+| side | civilian·피해·수급·주민 등 민간 집단 | c |
+| side | 장면에서 처음 나오는 정치체 및 state·defender | a |
+| side | 다른 정치체 및 attacker, 그 밖의 값 | b |
+
+영문은 대소문자를 구별하지 않는다. 이미 통제 어휘인 role과 side는 유지한다. 역할 키워드가 겹치면 위 표 순서로 고르되, 일반적인 `주체`·`state`는 구체적인 역할 키워드가 없을 때 scholar로 둔다. stance는 role에서 추측하지 않고 원문 stance로만 정한다.
+
+주체 정치체는 제목 → 요약 → participants의 entityId·label·role·side → 집단의 원문 side 순으로 읽으며, 각 문자열에서 처음 나오는 정치체를 택한다. 고구려/goguryeo, 백제/baekje, 신라/silla/사로국, 가락/가야/gaya, 발해/balhae 등은 같은 정치체로 본다. 같은 장면의 같은 원문 side는 역할이나 처리 순서가 달라도 같은 코드가 된다. a·b는 화면의 편 구분이며 역사적 적대 관계를 새로 주장하지 않는다.
+
+기존 label은 보존하고, 비어 있으면 원문 side와 role을 합친다(예: `고구려 이주민`). 원문 값은 각 집단의 `sourceRole/sourceStance/sourceSide`에 남긴다. basis가 없거나 비어 있으면 `조사 장면의 집단(원문 역할: <role>, 자세: <stance>, 편: <side>) — count 는 표현값`을 채운다. count는 정수로 바꾸고 0 이하·누락·변환 불가 값은 1로 둔다. 소수는 소수점 아래를 버린다.
+
+집단 claimIds는 장면의 `dateClaimIds ∪ actionClaimIds ∪ relatedClaimIds ∪ participants[].claimIds` 안의 값만 남기고, 비면 actionClaimIds로 채운다. entityId가 participants에 없으면 null로 둔다. 집단이 있는 장면의 participantGroupsNote는 정확히 `count 는 화면 표현값이며 사료의 인원수가 아니다`다. 빈 집단 배열은 participantGroups와 participantGroupsNote를 생략한다.
+
+조립기는 sceneFunction을 우선한다. `construction_site`는 기존 construction 구성(공사 인력·손수레), `fortress`, `relief`, `market`, `irrigation`, `kiln`, `harbor`는 각각 기존 구성을 사용한다. 기존 8개 함수의 동작을 유지하고 지속 시설 행은 facilityLook을 우선한다.
+
 ### facts[] (평면 목록, 커버리지 집계용 — 장면이 없어도 사실은 남긴다)
 
 ```json
