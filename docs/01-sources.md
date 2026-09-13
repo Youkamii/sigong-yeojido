@@ -4,12 +4,6 @@
 
 ## 현재 수집 상태 (2026-09-07)
 
-1911–1947년 국가 영역의 참고 도형은 `src-hgis-admin-1910-1945`의 HGIS 13도 중 1940년에 유효한 경계를 사용한다.
-`scripts/build_polity_gap_1911_1947.py`가 이를 합치고 작은 틈을 닫은 뒤 0.0005도로 단순화해 `data/maps/polity-gap-1911-1947.geojson.gz`를 만든다.
-1945–1947년 도형은 이 경계를 위도 38.0도 이남·이북 반평면과 교차시킨 결과다. 연 단위 화면에서 1945년은 8월 광복 이후를 기준으로 하므로 조선 참고 도형은 1911–1944년에 표시한다.
-13개 입력 경계의 주장과 기존 HGIS 청크를 함께 연결하며, 합치기·분할 방법과 표시 연도는 도형 메타데이터로 구분한다.
-이는 시기별 실제 국경·통치 범위의 복원이 아니며, 입력 자료의 단순화와 1940년 경계 재사용에 따른 한계가 있다.
-
 c2 Source **1,075개·chunk 2,601,351개**, Git 추적 chunk **83,348개**다.
 [시대별 전체 대조표](research/corpus-gaps-52.md)에 전문·발췌·번역·저본·결손을 구분했다.
 아래 표는 직전 999 Source·2,567,757 chunks에서 늘어난 실제 자료다.
@@ -22,6 +16,7 @@ c2 Source **1,075개·chunk 2,601,351개**, Git 추적 chunk **83,348개**다.
 | 위키문헌 고전 6종 | 6 | 113 | 공개 HTML 전사·실제 결손 [#80](research/wikisource-corpus-80.md) |
 | HGIS 읍·면 등 | 0, 기존 Source 확장 | 8,176 | [#75](research/hgis-townships-75.md) |
 | Cliopatria 국가·정치집단 경계 | 1 | 94 | [#79](research/cliopatria-79.md) |
+| 1911–1947 국가 영역 참고 도형 | 기존 HGIS Source 파생 | #189 | [설명](research/polity-gap-189.md) |
 | 시대별 해설·평양 동일성·사건 장소 | 22 | 43 | [#51](research/era-spine-51.md), [#61](research/pyongyang-direct-61.md), [#81](research/khs-events-81.md) |
 | 경국대전 1934년판 스캔 | 1 | 319 | 원 스캔 전체·이미지 참조. 전사문 0 [#87](research/ndl-scan-87.md) |
 | 대관령옛길 현재 코스·기관 설명 | 2 | 2 | 932점 참고선과 별도 인용 [#88](research/preserved-route-88.md) |

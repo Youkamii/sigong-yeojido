@@ -15,7 +15,7 @@ def main():
         page.on('pageerror',lambda e:errors.append(str(e)))
         page.add_init_script("window.__historyStrokes=0;const stroke=CanvasRenderingContext2D.prototype.stroke;CanvasRenderingContext2D.prototype.stroke=function(...a){if(this.canvas.id==='map'&&this.strokeStyle.toLowerCase()==='#d8b463')window.__historyStrokes++;return stroke.apply(this,a);};")
         get=lambda query:page.request.get(args.base+'/api/history-map?level=0'+query,timeout=180000).json()['features']
-        all_rows=get('');assert len(all_rows)==94
+        all_rows=[f for f in get('') if f['properties']['fromSource']=='src-cliopatria-korea-v013'];assert len(all_rows)==94
         assert len({f['properties']['sourceRecord']['Name'] for f in all_rows})==17
         assert all(f['properties']['originalGeometryValid'] and f['properties']['displayGeometryValid'] for f in all_rows)
         rows=get('&year=500');assert {f['properties']['sourceRecord']['Name'] for f in rows}=={'Byeonhan','Goguryeo','Silla','Baekje'}

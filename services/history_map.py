@@ -4,7 +4,8 @@ import gzip
 import json
 
 
-CATALOGS={0:'cliopatria-korea-v013',1:'hgis-provinces-1910-1945',2:'hgis-districts-1910-1945',3:'hgis-townships-1883-1945',4:'khs-events',5:'historical-routes'}
+CATALOGS={0:('cliopatria-korea-v013','polity-gap-1911-1947'),1:('hgis-provinces-1910-1945',),
+          2:('hgis-districts-1910-1945',),3:('hgis-townships-1883-1945',),4:('khs-events',),5:('historical-routes',)}
 
 
 @lru_cache(maxsize=7)
@@ -19,9 +20,7 @@ def historical_features(data,sources=None,origin='all',year=None,level=1):
     year=None if year is None else int(year)
     out={'type':'FeatureCollection','features':[],'level':level,'periodRule':'overlaps-selected-year'}
     if sources is not None and not sources:return out
-    names=[CATALOGS[level]]
-    if level==0:names.append('polity-gap-1911-1947')
-    for name in names:
+    for name in CATALOGS[level]:
         path=data/f'maps/{name}.geojson.gz'
         if not path.exists():continue
         stat=path.stat();catalog=_catalog(path,stat.st_mtime_ns,stat.st_size)

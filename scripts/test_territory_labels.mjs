@@ -22,6 +22,18 @@ assert.equal(visibleTerritories(rows,600,{origin:'human'}).length,0);
 assert.equal(visibleTerritories(rows,600,{sources:new Set()}).length,0);
 assert.equal(visibleTerritories(rows,600,{origin:'ai',sources:new Set(['selected-source'])}).length,3);
 assert.equal(visibleTerritories(rows,500).length,3);assert.equal(visibleTerritories(rows,660).length,3);
+const sourceRows=[
+  {...rows[0],properties:{...rows[0].properties,fromSource:'src-cliopatria-korea-v013'}},
+  {...rows[1],properties:{...rows[1].properties,fromSource:'src-hgis-admin-1910-1945'}},
+];
+assert.deepEqual(visibleTerritories(sourceRows,600),sourceRows);
+assert.deepEqual(visibleTerritories(sourceRows,600,{sources:new Set(['src-samguksagi'])}),sourceRows);
+assert.deepEqual(visibleTerritories(sourceRows,600,{sources:new Set(['src-cliopatria-korea-v013'])}),[sourceRows[0]]);
+assert.deepEqual(visibleTerritories(sourceRows,600,{sources:new Set(['src-hgis-admin-1910-1945'])}),[sourceRows[1]]);
+assert.deepEqual(visibleTerritories(sourceRows,600,{sources:new Set()}),[]);
+assert.deepEqual(visibleTerritories(sourceRows,600,{origin:'human'}),[]);
+assert.deepEqual(visibleTerritories([...sourceRows.slice(0,1),{...sourceRows[1],properties:{...sourceRows[1].properties,validFrom:1911}}],600,
+  {sources:new Set(['src-hgis-admin-1910-1945'])}),[],'source selection uses the whole catalog, not only the selected year');
 console.log('PASS: concavity, holes, largest component, land rejection, transform, Korean names, temporal boundaries, source/origin filters');
 import {readFileSync} from 'node:fs';
 import {gunzipSync} from 'node:zlib';

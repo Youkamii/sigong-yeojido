@@ -489,7 +489,7 @@ function refreshHistoryMap(){historyMap.refresh({sources:state.on,origin:state.o
 function showHistoricalList(reveal=true){
   if(reveal)openEvidence();++panelSeq;state.panel='history';state.sel=null;
   const el=document.getElementById('evi');
-  const description=historyLevel.value==='5'?'출처에 있는 선을 표시한다. 현재 옛길 안내 코스는 제공 자료의 기준연도에만 참고 표시하며 과거 노선과의 동일성은 각 근거에서 확인할 수 있다. 서로 떨어진 선을 잇거나 역참 점으로 길을 만들지 않는다.':historyLevel.value==='4'?'기록의 기준연도에 맞춰 사건 관련 장소를 표시한다. 점은 국가유산청의 현재 목록 좌표이며 전투 범위가 아니다. 사건 전체의 시작·끝을 이 연도로 정하지 않는다.':historyLevel.value==='0'?'Cliopatria v0.1.3의 시기별 경계 견해다. 원 데이터에 없는 해는 비어 있다. 도형 적용 기간을 국가의 건국·멸망 연도로 판정하지 않는다.':`${historyLevel.value==='3'?'1883':'1910'}~1945년 기관 레코드 중 선택한 해와 기간이 겹치는 경계를 표시한다. 같은 해에 바뀐 경계는 함께 보이며, 변경일과 기관의 추정 표기는 각 근거에 남아 있다.`;
+  const description=historyLevel.value==='5'?'출처에 있는 선을 표시한다. 현재 옛길 안내 코스는 제공 자료의 기준연도에만 참고 표시하며 과거 노선과의 동일성은 각 근거에서 확인할 수 있다. 서로 떨어진 선을 잇거나 역참 점으로 길을 만들지 않는다.':historyLevel.value==='4'?'기록의 기준연도에 맞춰 사건 관련 장소를 표시한다. 점은 국가유산청의 현재 목록 좌표이며 전투 범위가 아니다. 사건 전체의 시작·끝을 이 연도로 정하지 않는다.':historyLevel.value==='0'?'Cliopatria v0.1.3의 시기별 경계 견해다. 1911~1947년은 국사편찬위원회 1910~1945 행정구역(13도)을 합친 참고 도형으로 보충하며, 그 출처를 끄면 비어 있다. 도형 적용 기간을 국가의 건국·멸망 연도로 판정하지 않는다.':`${historyLevel.value==='3'?'1883':'1910'}~1945년 기관 레코드 중 선택한 해와 기간이 겹치는 경계를 표시한다. 같은 해에 바뀐 경계는 함께 보이며, 변경일과 기관의 추정 표기는 각 근거에 남아 있다.`;
   el.innerHTML=`<h3>선택한 해의 ${{0:'국가·정치집단 경계',1:'도 경계',2:'군·부 등 경계',3:'읍·면 등 경계',4:'사건 관련 장소',5:'역로·옛길'}[historyLevel.value]}</h3><p class="empty">${description}</p>`;
   const search=document.createElement('input');search.className='q';search.placeholder=historyLevel.value==='5'?'역로 이름 찾기':'경계 이름 찾기';search.setAttribute('aria-label',historyLevel.value==='5'?'역로 이름 찾기':'역사 경계 이름 찾기');
   el.append(search);const list=document.createElement('div');el.append(list);
@@ -503,6 +503,19 @@ function showHistoricalList(reveal=true){
 function showHistoricalFeature(feature){
   openEvidence();++panelSeq;state.panel='history-feature';state.sel=null;
   const p=feature.properties,r=p.sourceRecord,el=document.getElementById('evi'),polity=p.kind==='polity-boundary',route=['historical-route','current-old-road-track'].includes(p.kind);
+  if(polity&&r.derived){
+    el.innerHTML=`<h3>${escH(p.label)} · 역사 국가 경계 (참고 도형)</h3><p>${escH(p.begin)} ~ ${escH(p.end)}</p>
+      <p class="empty">국사편찬위원회 1910~1945 행정구역 13도를 합쳐 만든 참고 도형이며 실제 국경·통치 범위가 아닙니다. 1945~1947년은 위도 38도선으로 나눈 구역입니다.</p>`;
+    p.derivedFrom.forEach((id,i)=>{
+      const row=document.createElement('p'),button=document.createElement('button');button.className='card-btn';
+      row.append(document.createTextNode(p.derivedLabels[i]+' '));button.textContent='근거';
+      button.onclick=()=>showChunk('chunk_'+id);row.append(button);el.append(row);
+    });
+    const source=document.createElement('button'),list=document.createElement('button');
+    source.className=list.className='card-btn';source.textContent='사료 카드';list.textContent='경계 목록';
+    source.onclick=()=>showSource(p.fromSource);list.onclick=()=>showHistoricalList();el.append(source,list);
+    return;
+  }
   if(p.kind==='event-catalog-point'){
     el.innerHTML=`<h3>${escH(p.label)}</h3><p>${escH(p.begin)}년 기록 · ${escH(srcLabelOf(p.fromSource))} · AI 연결</p>
       <p class="empty">${escH(p.basis)}</p><p>${escH(p.siteNature)}</p>

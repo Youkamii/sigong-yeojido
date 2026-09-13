@@ -95,12 +95,18 @@ export class ChronicleTerritories{
       row.title=yearLabel(p.validFrom)+' – '+yearLabel(p.validTo)+' 적용 도형';this.legend.append(row);
     }
     const note=document.createElement('p');note.textContent='시기별 연구 지도와 행정구역 경계를 바탕으로 한 근사 영역입니다. 도형 적용 기간은 건국·멸망 연도와 다를 수 있습니다.';this.legend.append(note);
-    const link=document.createElement('a');link.href='https://zenodo.org/records/14714684';link.target='_blank';link.rel='noopener';link.textContent='Cliopatria v0.1.3 · CC BY 4.0';this.legend.append(link);
-    this.note.textContent=this.features.length&&this.year>=500&&this.year<=681
-      ?'이 시기 영역은 일부 확장·정복 시점이 맞지 않는 참고도입니다.':this.features.length&&this.year>=1950&&this.year<=1953?'국가 영역 참고도이며, 한국전쟁의 전선은 아닙니다.':'';
+    const links=[['src-cliopatria-korea-v013','https://zenodo.org/records/14714684','Cliopatria v0.1.3 · CC BY 4.0'],
+      ['src-hgis-admin-1910-1945','https://hgis.history.go.kr/pro_g1/dataset.do','국사편찬위원회 HGIS 1910~1945 행정구역']];
+    for(const [source,href,label] of links){
+      if(!this.features.some(f=>f.properties.fromSource===source))continue;
+      const link=document.createElement('a');link.href=href;link.target='_blank';link.rel='noopener';link.textContent=label;this.legend.append(link);
+    }
+    const notes=[[500,681,'이 시기 영역은 일부 확장·정복 시점이 맞지 않는 참고도입니다.'],
+      [1911,1947,'1911–1947년은 행정구역 경계(13도)를 합친 참고도이며, 1945–1947년은 38도선으로 나눈 미·소 군정 구역입니다. 실제 국경·통치 범위가 아닙니다.'],
+      [1950,1953,'국가 영역 참고도이며, 한국전쟁의 전선은 아닙니다.']];
+    this.note.textContent=this.features.length?(notes.find(([start,end])=>start<=this.year&&this.year<=end)?.[2]||''):'';
     if(this.year>=669&&this.year<=681)this.note.textContent+=' 멸망 이후의 고구려 도형은 제외했습니다.';
-    if(this.features.length&&this.year>=1911&&this.year<=1947)this.note.textContent='1911–1947년은 행정구역 경계를 바탕으로 한 참고도이며, 실제 국경·통치 범위를 나타내지 않습니다.';
-    const omitted=document.createElement('p');omitted.textContent='가야 시기까지 변한 이름을 이어 쓴 도형과 668년 뒤의 고구려 도형은 제외했습니다. 1260–1362년은 이 자료의 전체 공백입니다. 1911–1947년은 국사편찬위원회 1910~1945 행정구역 경계(13도)를 합친 참고 도형이며, 1945–1947년은 위도 38도선으로 나눈 미·소 군정 구역입니다.';this.legend.append(omitted);
+    const omitted=document.createElement('p');omitted.textContent='가야 시기까지 변한 이름을 이어 쓴 도형과 668년 뒤의 고구려 도형은 제외했습니다. 1260–1362년은 이 자료의 전체 공백입니다.';this.legend.append(omitted);
     this.note.hidden=!this.visible||!this.note.textContent;
     this.legend.hidden=!this.visible;
   }

@@ -122,6 +122,41 @@ class PublishedPolityGapTests(unittest.TestCase):
     def features(self,year,**kwargs):
         return historical_features(self.data,level=0,year=year,**kwargs)['features']
 
+    def test_reference_properties_link_existing_province_evidence(self):
+        with gzip.open(self.data/'maps/hgis-provinces-1910-1945.geojson.gz','rt',encoding='utf-8') as stream:
+            provinces=sorted((f for f in json.load(stream)['features']
+                              if f['properties']['validFrom']<=1940<=f['properties']['validTo']),key=lambda f:f['id'])
+        with gzip.open(self.data/'maps/polity-gap-1911-1947.geojson.gz','rt',encoding='utf-8') as stream:
+            catalog=json.load(stream)
+        ids=[f['id'] for f in provinces]
+        self.assertEqual(len(ids),13)
+        self.assertEqual(catalog['name'],'polity-gap-1911-1947')
+        self.assertEqual(catalog['generated']['inputs'],ids)
+        self.assertEqual(catalog['generated']['referenceYear'],1940)
+        for feature in catalog['features']:
+            p=feature['properties']
+            with self.subTest(feature=feature['id']):
+                self.assertEqual(p['kind'],'polity-boundary')
+                self.assertEqual(p['precision'],'reference-union-0.002-degrees')
+                self.assertEqual(p['begin'],str(p['validFrom']))
+                self.assertEqual(p['end'],str(p['validTo']))
+                self.assertTrue(feature['id'].endswith(p['begin']+'-'+p['end']))
+                self.assertEqual(p['derivedFrom'],ids)
+                self.assertEqual(p['derivedLabels'],[f['properties']['label'] for f in provinces])
+                self.assertEqual(p['claimId'],provinces[0]['properties']['claimId'])
+                self.assertEqual(p['citesChunk'],provinces[0]['properties']['citesChunk'])
+                self.assertTrue(p['sourceRecord']['derived'])
+                self.assertTrue(p['displayGeometryValid'] and p['originalGeometryValid'])
+                self.assertIsNone(p['displayGeometryIssue'])
+                self.assertIsNone(p['originalGeometryIssue'])
+                self.assertFalse(p['outsideDiorama'])
+                self.assertFalse({'claimIds','citesChunks','note','sourceSha256','referenceYear','method'}&p.keys())
+                geometry=feature['geometry']
+                polygons=[geometry['coordinates']] if geometry['type']=='Polygon' else geometry['coordinates']
+                points=[point for polygon in polygons for ring in polygon for point in ring]
+                self.assertEqual(p['bounds'],[min(x[0] for x in points),min(x[1] for x in points),
+                                               max(x[0] for x in points),max(x[1] for x in points)])
+
     def test_period_transitions_preserve_original_polities(self):
         expected={
             1910:{'Korean Empire'},

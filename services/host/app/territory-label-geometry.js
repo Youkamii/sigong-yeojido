@@ -2,9 +2,14 @@
 export const territoriesAt=(features,year)=>features.filter(f=>f.properties.validFrom<=year&&year<=f.properties.validTo
   &&f.properties.sourceRecord.Name!=='Byeonhan'
   &&!(f.properties.sourceRecord.Name==='Goguryeo'&&year>668));
-export const visibleTerritories=(features,year,{origin='all',sources=null}={})=>
-  origin==='human'||sources?.size===0?[]:territoriesAt(features,year);
-export const territoryName=feature=>feature.properties.label.replace(/ · [^·]*$/,'');
+export const visibleTerritories=(features,year,{origin='all',sources=null}={})=>{
+  if(origin==='human'||sources?.size===0)return [];
+  // 기본 사료 선택에는 지도 출처가 없어 전체 표시/숨김을 기본으로 한다.
+  // 국가 영역 카탈로그의 지도 출처를 고르면 해당 출처의 도형만 표시한다.
+  const filterSources=sources instanceof Set&&features.some(f=>sources.has(f.properties.fromSource));
+  return territoriesAt(features,year).filter(f=>!filterSources||sources.has(f.properties.fromSource));
+};
+export const territoryName=feature=>feature.properties.label.split(' · ')[0];
 const area=ring=>Math.abs(ring.reduce((sum,p,i)=>{const q=ring[(i+1)%ring.length];return sum+p[0]*q[1]-q[0]*p[1];},0))/2;
 function inRing(x,y,ring){
   let inside=false;
