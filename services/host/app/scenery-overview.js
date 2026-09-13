@@ -1,11 +1,10 @@
 import * as THREE from 'three';
 import {sitePeriod,sceneryHouseRecipe} from './scenery-period.js';
 import {sceneryHouseForm} from './scenery-house-form.js';
-import {isEstimatedSite,setEstimatedMesh} from './scenery-estimated-dim.js';
+import {isEstimatedSite} from './scenery-estimated-dim.js';
 
 const bucketFor=site=>Math.floor(site.x/480)+':'+Math.floor(site.z/480);
 const overviewMaterial=new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,side:THREE.DoubleSide});
-overviewMaterial.userData.sceneryShared=true;
 
 // The distant landscape is built directly, never cloned from detailed assets.
 export function sceneryOverview(world,cells,periodOrYear,previous=null,changedSites=null){
@@ -69,7 +68,7 @@ export function sceneryOverview(world,cells,periodOrYear,previous=null,changedSi
   if(previous&&dirty)for(const mesh of [...previous.children])if(!dirty.has(mesh.userData.bucket))group.add(mesh);
   for(const b of buckets.values())if(b.positions.length){const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(b.positions,3));geometry.setAttribute('color',new THREE.Float32BufferAttribute(b.colors,3));geometry.computeVertexNormals();
     const mesh=new THREE.Mesh(geometry,overviewMaterial);mesh.name=b.kind==='lanes'?'scenery-lanes':b.kind==='fields'?'decorative-fields':'settlement-roofs';mesh.receiveShadow=false;mesh.castShadow=false;
-    mesh.userData.estimatedBackground=b.estimated;mesh.userData.estimatedOpaque=b.kind==='houses';setEstimatedMesh(mesh,true);
+    mesh.userData.estimatedBackground=b.estimated;mesh.userData.estimatedOpaque=b.kind==='houses';
     mesh.userData.bucket=b.bucket;
     if(b.ranges.length){mesh.userData.houseRanges=b.ranges;mesh.userData.originalPositions=geometry.attributes.position.array.slice();}group.add(mesh);}
   return group;

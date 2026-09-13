@@ -1,0 +1,2645 @@
+TAP version 13
+# Subtest: 1910~1944 selects 일제강점기, not 대한제국
+ok 1 - 1910~1944 selects 일제강점기, not 대한제국
+  ---
+  duration_ms: 1.0047
+  type: 'test'
+  ...
+# Subtest: eras are sorted by start year
+ok 2 - eras are sorted by start year
+  ---
+  duration_ms: 0.1691
+  type: 'test'
+  ...
+# Subtest: pickableRow excludes background primaries and parts but keeps events, people and documented settlements
+ok 3 - pickableRow excludes background primaries and parts but keeps events, people and documented settlements
+  ---
+  duration_ms: 2.2376
+  type: 'test'
+  ...
+# Subtest: dropdown options exclude background rows and retain documented settlements and duplicate entity destinations
+ok 4 - dropdown options exclude background rows and retain documented settlements and duplicate entity destinations
+  ---
+  duration_ms: 0.576
+  type: 'test'
+  ...
+# Subtest: select ignores background entity IDs, row IDs and part IDs without changing selection
+ok 5 - select ignores background entity IDs, row IDs and part IDs without changing selection
+  ---
+  duration_ms: 0.9089
+  type: 'test'
+  ...
+# Subtest: select also ignores unlocated background plan entries
+ok 6 - select also ignores unlocated background plan entries
+  ---
+  duration_ms: 0.2806
+  type: 'test'
+  ...
+# Subtest: select still selects and focuses documented Hanseong
+ok 7 - select still selects and focuses documented Hanseong
+  ---
+  duration_ms: 0.3789
+  type: 'test'
+  ...
+# Subtest: 배경 행은 실제 rebuild에서 렌더링·점유·재사용을 유지하고 picks에서만 빠진다
+ok 8 - 배경 행은 실제 rebuild에서 렌더링·점유·재사용을 유지하고 picks에서만 빠진다
+  ---
+  duration_ms: 750.6182
+  type: 'test'
+  ...
+# Subtest: 시설 외형 변경은 실제 rebuild의 대표 모델을 교체하고 이후 재사용한다
+ok 9 - 시설 외형 변경은 실제 rebuild의 대표 모델을 교체하고 이후 재사용한다
+  ---
+  duration_ms: 21.7953
+  type: 'test'
+  ...
+# Subtest: 1: 도시 (0,1) 옆 바다 사건 (0,-5)을 rebuild해도 바다에 남는다 (sea)
+ok 10 - 1: 도시 (0,1) 옆 바다 사건 (0,-5)을 rebuild해도 바다에 남는다 (sea)
+  ---
+  duration_ms: 131.806
+  type: 'test'
+  ...
+# Subtest: 1: 도시 (0,1) 옆 바다 사건 (0,-5)을 rebuild해도 바다에 남는다 (naval fallback)
+ok 11 - 1: 도시 (0,1) 옆 바다 사건 (0,-5)을 rebuild해도 바다에 남는다 (naval fallback)
+  ---
+  duration_ms: 117.512
+  type: 'test'
+  ...
+# Subtest: 1: 바다 이동 후보 네 곳이 모두 육지면 원래 바다 위치를 보존한다
+ok 12 - 1: 바다 이동 후보 네 곳이 모두 육지면 원래 바다 위치를 보존한다
+  ---
+  duration_ms: 129.4498
+  type: 'test'
+  ...
+# Subtest: 1: 육지 사건은 바다 후보를 건너뛰고 육지에 남는다
+ok 13 - 1: 육지 사건은 바다 후보를 건너뛰고 육지에 남는다
+  ---
+  duration_ms: 56.8441
+  type: 'test'
+  ...
+# Subtest: 2: 참여 집단 attacker/8 → victim/2 변경은 재사용 키를 바꾼다
+ok 14 - 2: 참여 집단 attacker/8 → victim/2 변경은 재사용 키를 바꾼다
+  ---
+  duration_ms: 1.1604
+  type: 'test'
+  ...
+# Subtest: 2: rebuild는 집단 변경 뒤 8명 공격 장면을 2명 피해 장면으로 교체하고 다음에는 재사용한다
+ok 15 - 2: rebuild는 집단 변경 뒤 8명 공격 장면을 2명 피해 장면으로 교체하고 다음에는 재사용한다
+  ---
+  duration_ms: 25.2075
+  type: 'test'
+  ...
+# Subtest: 3: 겹치는 활성 현대 도시 구역에서는 가까운 중심을 고른다
+ok 16 - 3: 겹치는 활성 현대 도시 구역에서는 가까운 중심을 고른다
+  ---
+  duration_ms: 1.0129
+  type: 'test'
+  ...
+# Subtest: 3: 중심 거리가 같으면 id 사전순으로 고른다
+ok 17 - 3: 중심 거리가 같으면 id 사전순으로 고른다
+  ---
+  duration_ms: 1.5934
+  type: 'test'
+  ...
+# Subtest: 4: 실제 print_workshop 패킷의 집단별 역할·동작·인원수를 rebuild에 반영한다
+ok 18 - 4: 실제 print_workshop 패킷의 집단별 역할·동작·인원수를 rebuild에 반영한다
+  ---
+  duration_ms: 49.6917
+  type: 'test'
+  ...
+# Subtest: 4: 실제 persecution 패킷의 집단별 역할·동작·인원수를 rebuild에 반영한다
+ok 19 - 4: 실제 persecution 패킷의 집단별 역할·동작·인원수를 rebuild에 반영한다
+  ---
+  duration_ms: 47.1246
+  type: 'test'
+  ...
+# Subtest: 4: 집단이 없으면 작업장 6명·박해 10+3명 고정 구성을 유지한다
+ok 20 - 4: 집단이 없으면 작업장 6명·박해 10+3명 고정 구성을 유지한다
+  ---
+  duration_ms: 1.1299
+  type: 'test'
+  ...
+# Subtest: 4: 축소 박해 장면의 대표 인물도 입력 집단의 역할과 동작을 따른다
+ok 21 - 4: 축소 박해 장면의 대표 인물도 입력 집단의 역할과 동작을 따른다
+  ---
+  duration_ms: 0.4163
+  type: 'test'
+  ...
+# Subtest: 사실 조사 market은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 22 - 사실 조사 market은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 1.7657
+  type: 'test'
+  ...
+# Subtest: 사실 조사 relief은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 23 - 사실 조사 relief은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 0.5299
+  type: 'test'
+  ...
+# Subtest: 사실 조사 construction_site은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 24 - 사실 조사 construction_site은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 0.7618
+  type: 'test'
+  ...
+# Subtest: 사실 조사 fortress은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 25 - 사실 조사 fortress은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 0.8698
+  type: 'test'
+  ...
+# Subtest: 사실 조사 harbor은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 26 - 사실 조사 harbor은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 3.7831
+  type: 'test'
+  ...
+# Subtest: 사실 조사 kiln은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 27 - 사실 조사 kiln은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 5.9824
+  type: 'test'
+  ...
+# Subtest: 사실 조사 irrigation은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 28 - 사실 조사 irrigation은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 3.1726
+  type: 'test'
+  ...
+# Subtest: 새 함수가 있어도 시설의 외형과 모델은 기존 facilityLook을 따른다
+ok 29 - 새 함수가 있어도 시설의 외형과 모델은 기존 facilityLook을 따른다
+  ---
+  duration_ms: 2.4735
+  type: 'test'
+  ...
+# Subtest: 새 함수의 기본 공사 인력과 성곽은 보조 필드 없이도 조립된다
+ok 30 - 새 함수의 기본 공사 인력과 성곽은 보조 필드 없이도 조립된다
+  ---
+  duration_ms: 1.7306
+  type: 'test'
+  ...
+# Subtest: 5: 장면 정보 문구에 추정 배경 마을 수와 사료 없음을 표시한다
+ok 31 - 5: 장면 정보 문구에 추정 배경 마을 수와 사료 없음을 표시한다
+  ---
+  duration_ms: 0.379
+  type: 'test'
+  ...
+# Subtest: 5: 지도 표시 체크박스에 추정 배경과 사료 없음 설명을 표시한다
+ok 32 - 5: 지도 표시 체크박스에 추정 배경과 사료 없음 설명을 표시한다
+  ---
+  duration_ms: 1.3602
+  type: 'test'
+  ...
+# Subtest: Hanyang/Hanseong name and capital role follow checked 1394–1405 changes
+ok 33 - Hanyang/Hanseong name and capital role follow checked 1394–1405 changes
+  ---
+  duration_ms: 5.7328
+  type: 'test'
+  ...
+# Subtest: court scribes use era scholars in actual composition
+ok 34 - court scribes use era scholars in actual composition
+  ---
+  duration_ms: 7.168
+  type: 'test'
+  ...
+# Subtest: a coastal city keeps its primary on the unchanged land anchor
+ok 35 - a coastal city keeps its primary on the unchanged land anchor
+  ---
+  duration_ms: 8.4332
+  type: 'test'
+  ...
+# Subtest: 2010 city uses urban buildings and roads without fields; 1960 has no tower family
+ok 36 - 2010 city uses urban buildings and roads without fields; 1960 has no tower family
+  ---
+  duration_ms: 4.0097
+  type: 'test'
+  ...
+# Subtest: Jeju keeps a full city district within the shared local urban extent
+ok 37 - Jeju keeps a full city district within the shared local urban extent
+  ---
+  duration_ms: 2.9945
+  type: 'test'
+  ...
+# Subtest: actual far instance matrices retain near apartment, commercial and lowrise height at Seoul and Jeju scales
+ok 38 - actual far instance matrices retain near apartment, commercial and lowrise height at Seoul and Jeju scales
+  ---
+  duration_ms: 112.2689
+  type: 'test'
+  ...
+# Subtest: LOD switches visibility without rebuilding or changing instance matrices
+ok 39 - LOD switches visibility without rebuilding or changing instance matrices
+  ---
+  duration_ms: 15.5516
+  type: 'test'
+  ...
+# Subtest: 1969 Gaegyeong continues as six low-rise town wards with fewer people and cars
+ok 40 - 1969 Gaegyeong continues as six low-rise town wards with fewer people and cars
+  ---
+  duration_ms: 8.3772
+  type: 'test'
+  ...
+# Subtest: 1900 continuing residential wards keep courtyard houses and low-rise homes
+ok 41 - 1900 continuing residential wards keep courtyard houses and low-rise homes
+  ---
+  duration_ms: 1.4133
+  type: 'test'
+  ...
+# Subtest: continuing ports keep only two warehouses and no transit
+ok 42 - continuing ports keep only two warehouses and no transit
+  ---
+  duration_ms: 2.4932
+  type: 'test'
+  ...
+# Subtest: continuing flag does not change layouts before 1876
+ok 43 - continuing flag does not change layouts before 1876
+  ---
+  duration_ms: 2.8304
+  type: 'test'
+  ...
+# Subtest: visual reuse keys distinguish continuing and documented cities at the same location
+ok 44 - visual reuse keys distinguish continuing and documented cities at the same location
+  ---
+  duration_ms: 3.2172
+  type: 'test'
+  ...
+# Subtest: 1970 and later have no continuing cities anywhere in the actual packets
+ok 45 - 1970 and later have no continuing cities anywhere in the actual packets
+  ---
+  duration_ms: 0.7974
+  type: 'test'
+  ...
+# Subtest: Jeju keeps its 1955-2005 documented interval and has no modern continuation
+ok 46 - Jeju keeps its 1955-2005 documented interval and has no modern continuation
+  ---
+  duration_ms: 1.416
+  type: 'test'
+  ...
+# Subtest: urban growth takes over even when its start falls inside the Jeju record
+ok 47 - urban growth takes over even when its start falls inside the Jeju record
+  ---
+  duration_ms: 0.3844
+  type: 'test'
+  ...
+# Subtest: Busan: the 1950-1953 record excludes 1945 and continues until urban growth in 1970
+ok 48 - Busan: the 1950-1953 record excludes 1945 and continues until urban growth in 1970
+  ---
+  duration_ms: 1.2532
+  type: 'test'
+  ...
+# Subtest: 700 Sabi continues as a town, not a capital
+ok 49 - 700 Sabi continues as a town, not a capital
+  ---
+  duration_ms: 0.789
+  type: 'test'
+  ...
+# Subtest: Seoul: 1350 yields to the newer zone, Hanseong continues until urban Seoul grows in 1970
+ok 50 - Seoul: 1350 yields to the newer zone, Hanseong continues until urban Seoul grows in 1970
+  ---
+  duration_ms: 5.6632
+  type: 'test'
+  ...
+# Subtest: 1300 Gaegyeong is active in its second interval
+ok 51 - 1300 Gaegyeong is active in its second interval
+  ---
+  duration_ms: 0.7383
+  type: 'test'
+  ...
+# Subtest: rows keep the anonymous-city format used by the scene and context panels
+ok 52 - rows keep the anonymous-city format used by the scene and context panels
+  ---
+  duration_ms: 18.9177
+  type: 'test'
+  ...
+# Subtest: 1450 Gongju: the documented zone starts with the record (475), so the Ungjin continuation coexists instead of yielding
+ok 53 - 1450 Gongju: the documented zone starts with the record (475), so the Ungjin continuation coexists instead of yielding
+  ---
+  duration_ms: 0.9991
+  type: 'test'
+  ...
+# Subtest: zone precedence depends on its start year relative to the record end, even when open-ended
+ok 54 - zone precedence depends on its start year relative to the record end, even when open-ended
+  ---
+  duration_ms: 0.4914
+  type: 'test'
+  ...
+# Subtest: omitting zones preserves previous callers and latest-ended-record selection
+ok 55 - omitting zones preserves previous callers and latest-ended-record selection
+  ---
+  duration_ms: 4.7897
+  type: 'test'
+  ...
+# Subtest: continuing towns use half scale for composition, radius and occupied space
+ok 56 - continuing towns use half scale for composition, radius and occupied space
+  ---
+  duration_ms: 30.9623
+  type: 'test'
+  ...
+# Subtest: active urban core cuts only intersecting rural street segments and restores on seeking back
+ok 57 - active urban core cuts only intersecting rural street segments and restores on seeking back
+  ---
+  duration_ms: 8.8726
+  type: 'test'
+  ...
+# Subtest: segment crossing a core is excluded even with both endpoints outside it
+ok 58 - segment crossing a core is excluded even with both endpoints outside it
+  ---
+  duration_ms: 0.292
+  type: 'test'
+  ...
+# Subtest: only boolean estimated true marks a site for dimming
+ok 59 - only boolean estimated true marks a site for dimming
+  ---
+  duration_ms: 1.4059
+  type: 'test'
+  ...
+# Subtest: dim material keeps its source intact, shares variants and restores the exact source
+ok 60 - dim material keeps its source intact, shares variants and restores the exact source
+  ---
+  duration_ms: 3.2511
+  type: 'test'
+  ...
+# Subtest: the color shader desaturates combined vertex/instance colors once and retains existing shader hooks
+ok 61 - the color shader desaturates combined vertex/instance colors once and retains existing shader hooks
+  ---
+  duration_ms: 6.5929
+  type: 'test'
+  ...
+# Subtest: mesh toggles preserve geometry, instance colors, material arrays and original shadow settings
+ok 62 - mesh toggles preserve geometry, instance colors, material arrays and original shadow settings
+  ---
+  duration_ms: 3.4048
+  type: 'test'
+  ...
+# Subtest: overview splits estimated and documented sites at most in two, sharing three materials across buckets
+ok 63 - overview splits estimated and documented sites at most in two, sharing three materials across buckets
+  ---
+  duration_ms: 15.6079
+  type: 'test'
+  ...
+# Subtest: only paths with two estimated endpoints dim and toggling preserves geometry
+ok 64 - only paths with two estimated endpoints dim and toggling preserves geometry
+  ---
+  duration_ms: 5.7967
+  type: 'test'
+  ...
+# Subtest: display toggle is idempotent and preserves geometry and documented materials
+ok 65 - display toggle is idempotent and preserves geometry and documented materials
+  ---
+  duration_ms: 2.0629
+  type: 'test'
+  ...
+# Subtest: estimated sites are deterministic and marked as undocumented background
+ok 66 - estimated sites are deterministic and marked as undocumented background
+  ---
+  duration_ms: 57.0109
+  type: 'test'
+  ...
+# Subtest: medium island grids preserve mainland sites even when the largest ring is not first
+ok 67 - medium island grids preserve mainland sites even when the largest ring is not first
+  ---
+  duration_ms: 48.6099
+  type: 'test'
+  ...
+# Subtest: island minimum does not override invalid elevation, nonfinite terrain or steep slopes
+ok 68 - island minimum does not override invalid elevation, nonfinite terrain or steep slopes
+  ---
+  duration_ms: 318.9915
+  type: 'test'
+  ...
+# Subtest: medium and large empty rings select their lowest eligible seed in prehistory and Joseon
+ok 69 - medium and large empty rings select their lowest eligible seed in prehistory and Joseon
+  ---
+  duration_ms: 1.1086
+  type: 'test'
+  ...
+# Subtest: real ChronicleWorld islands reach their area minimum and preserve mainland counts
+ok 70 - real ChronicleWorld islands reach their area minimum and preserve mainland counts
+  ---
+  duration_ms: 3171.3234
+  type: 'test'
+  ...
+# Subtest: area boundaries omit tiny rings and never guarantee small island candidates or selection
+ok 71 - area boundaries omit tiny rings and never guarantee small island candidates or selection
+  ---
+  duration_ms: 56.0276
+  type: 'test'
+  ...
+# Subtest: small island layouts have 2 to 4 full-size houses within radius 6 and no village roads or fields
+ok 72 - small island layouts have 2 to 4 full-size houses within radius 6 and no village roads or fields
+  ---
+  duration_ms: 0.5441
+  type: 'test'
+  ...
+# Subtest: island cell cap is deterministic across rings and boundaries, with mainland unaffected
+ok 73 - island cell cap is deterministic across rings and boundaries, with mainland unaffected
+  ---
+  duration_ms: 0.5858
+  type: 'test'
+  ...
+# Subtest: real world Mokpo density is bounded, Jeju survives and mainland stays at 110
+ok 74 - real world Mokpo density is bounded, Jeju survives and mainland stays at 110
+  ---
+  duration_ms: 2308.0009
+  type: 'test'
+  ...
+# Subtest: same-period year changes reuse candidates and do not refresh selection
+ok 75 - same-period year changes reuse candidates and do not refresh selection
+  ---
+  duration_ms: 58.5577
+  type: 'test'
+  ...
+# Subtest: threshold grows with period and shrinks for Jeju and the north
+ok 76 - threshold grows with period and shrinks for Jeju and the north
+  ---
+  duration_ms: 8.794
+  type: 'test'
+  ...
+# Subtest: estimated sites yield to documented, urban and occupied areas
+ok 77 - estimated sites yield to documented, urban and occupied areas
+  ---
+  duration_ms: 10.5922
+  type: 'test'
+  ...
+# Subtest: a known wrong world fails acceptance even when its structure is valid
+ok 78 - a known wrong world fails acceptance even when its structure is valid
+  ---
+  duration_ms: 1.1168
+  type: 'test'
+  ...
+# Subtest: an active city cannot be empty or contain fields and invalid dimensions
+ok 79 - an active city cannot be empty or contain fields and invalid dimensions
+  ---
+  duration_ms: 1.1526
+  type: 'test'
+  ...
+# Subtest: year zero and future never receive historical support
+ok 80 - year zero and future never receive historical support
+  ---
+  duration_ms: 0.4048
+  type: 'test'
+  ...
+# Subtest: stale and unsupported plan rows fail even with no runtime errors
+ok 81 - stale and unsupported plan rows fail even with no runtime errors
+  ---
+  duration_ms: 0.4623
+  type: 'test'
+  ...
+# Subtest: empty and truncated snapshots cannot pass
+ok 82 - empty and truncated snapshots cannot pass
+  ---
+  duration_ms: 3.6349
+  type: 'test'
+  ...
+# Subtest: 실제 패킷의 사찰·역·궁궐·산업 시설만 해당 외형과 기간으로 남는다
+ok 83 - 실제 패킷의 사찰·역·궁궐·산업 시설만 해당 외형과 기간으로 남는다
+  ---
+  duration_ms: 111.8588
+  type: 'test'
+  ...
+# Subtest: 실제 성곽·준천·비석·철거·복원·사리 봉안은 완료 뒤에도 시설 행이 없다
+ok 84 - 실제 성곽·준천·비석·철거·복원·사리 봉안은 완료 뒤에도 시설 행이 없다
+  ---
+  duration_ms: 186.4989
+  type: 'test'
+  ...
+# Subtest: 시설 외형이 바뀌면 재사용 키도 바뀐다
+ok 85 - 시설 외형이 바뀌면 재사용 키도 바뀐다
+  ---
+  duration_ms: 20.7354
+  type: 'test'
+  ...
+# Subtest: 산업 시설은 공장·발전·항만 경로로 조립하고 주변 사건 설명에 흔들리지 않는다
+ok 86 - 산업 시설은 공장·발전·항만 경로로 조립하고 주변 사건 설명에 흔들리지 않는다
+  ---
+  duration_ms: 2.7714
+  type: 'test'
+  ...
+# Subtest: 황룡사는 646·1237년에 존속하고 1238년 소실부터 사라진다
+ok 87 - 황룡사는 646·1237년에 존속하고 1238년 소실부터 사라진다
+  ---
+  duration_ms: 21.492
+  type: 'test'
+  ...
+# Subtest: 경성역은 원 패킷이 활성인 1925년에는 중복하지 않고 1926년부터 존속한다
+ok 88 - 경성역은 원 패킷이 활성인 1925년에는 중복하지 않고 1926년부터 존속한다
+  ---
+  duration_ms: 26.7237
+  type: 'test'
+  ...
+# Subtest: 금성 축조 전승과 narrativeType·tradition 패킷은 어느 표시 연도에도 시설이 아니다
+ok 89 - 금성 축조 전승과 narrativeType·tradition 패킷은 어느 표시 연도에도 시설이 아니다
+  ---
+  duration_ms: 36.2169
+  type: 'test'
+  ...
+# Subtest: 남경 궁궐은 1300·1391년에 있고 1392년부터 없다
+ok 90 - 남경 궁궐은 1300·1391년에 있고 1392년부터 없다
+  ---
+  duration_ms: 14.7588
+  type: 'test'
+  ...
+# Subtest: 소멸 패킷 없는 사찰은 2020·2100년에도 남는다
+ok 91 - 소멸 패킷 없는 사찰은 2020·2100년에도 남는다
+  ---
+  duration_ms: 18.5799
+  type: 'test'
+  ...
+# Subtest: 행정 시설 상한은 착공이 아닌 건립 종료 뒤 첫 경계이며 1945년 경계도 적용한다
+ok 92 - 행정 시설 상한은 착공이 아닌 건립 종료 뒤 첫 경계이며 1945년 경계도 적용한다
+  ---
+  duration_ms: 2.601
+  type: 'test'
+  ...
+# Subtest: 1795년 한성에서는 남경 궁궐과 북한산성 시설 행이 없다
+ok 93 - 1795년 한성에서는 남경 궁궐과 북한산성 시설 행이 없다
+  ---
+  duration_ms: 5.403
+  type: 'test'
+  ...
+# 1795 HANSEONG radius=1deg: facilities=1
+# Subtest: 경복궁 건립 시설은 1592년 소실 이후인 1593년에 없다
+ok 94 - 경복궁 건립 시설은 1592년 소실 이후인 1593년에 없다
+  ---
+  duration_ms: 12.322
+  type: 'test'
+  ...
+# Subtest: 2100년 상한 시설만 openEnded이고 2101년부터 표시하지 않는다
+ok 95 - 2100년 상한 시설만 openEnded이고 2101년부터 표시하지 않는다
+  ---
+  duration_ms: 10.2769
+  type: 'test'
+  ...
+# Subtest: 실제 건립 패킷의 시설 조립에는 공사 인력·손수레·건설 효과가 없고 반경은 12 이하이다
+ok 96 - 실제 건립 패킷의 시설 조립에는 공사 인력·손수레·건설 효과가 없고 반경은 12 이하이다
+  ---
+  duration_ms: 300.3493
+  type: 'test'
+  ...
+# Subtest: 시설 표시 연도와 시대가 바뀌어도 재사용 키와 조립 외형은 같다
+ok 97 - 시설 표시 연도와 시대가 바뀌어도 재사용 키와 조립 외형은 같다
+  ---
+  duration_ms: 33.8236
+  type: 'test'
+  ...
+# Subtest: 시설 표시는 남아 있는 건설 플래그·참여 집단·화재 효과보다 우선한다
+ok 98 - 시설 표시는 남아 있는 건설 플래그·참여 집단·화재 효과보다 우선한다
+  ---
+  duration_ms: 8.8943
+  type: 'test'
+  ...
+# Subtest: 좌표·이름을 함께 대조하고 가장 이른 소멸 기록을 선택한다
+ok 99 - 좌표·이름을 함께 대조하고 가장 이른 소멸 기록을 선택한다
+  ---
+  duration_ms: 0.7487
+  type: 'test'
+  ...
+# Subtest: 사찰은 소멸 기록까지, 궁궐은 소멸 기록과 왕조 경계 중 이른 때까지 남는다
+ok 100 - 사찰은 소멸 기록까지, 궁궐은 소멸 기록과 왕조 경계 중 이른 때까지 남는다
+  ---
+  duration_ms: 0.6759
+  type: 'test'
+  ...
+# Subtest: 실제 제주·강화 좌표에 둔 사찰도 링 폭을 시설 조립과 재사용 키에 반영한다
+ok 101 - 실제 제주·강화 좌표에 둔 사찰도 링 폭을 시설 조립과 재사용 키에 반영한다
+  ---
+  duration_ms: 2294.1668
+  type: 'test'
+  ...
+# Jeju: ringWidth=93.90625962475995, displayScale=0.5869141226547497
+# Ganghwa: ringWidth=21.944382706450085, displayScale=0.13715239191531303
+# Mainland: ringWidth=760.8770174538174, displayScale=0.7
+# Subtest: 외형 키워드는 제목·기능·요약·행동에서 순서대로 분류한다
+ok 102 - 외형 키워드는 제목·기능·요약·행동에서 순서대로 분류한다
+  ---
+  duration_ms: 2.4697
+  type: 'test'
+  ...
+# Subtest: 구별 외형 없는 시설과 철거·복원·행사 제목은 하위 필드가 사찰이어도 제외한다
+ok 103 - 구별 외형 없는 시설과 철거·복원·행사 제목은 하위 필드가 사찰이어도 제외한다
+  ---
+  duration_ms: 0.734
+  type: 'test'
+  ...
+# Subtest: 상위 필드의 외형은 주변·부속 시설 설명보다 우선한다
+ok 104 - 상위 필드의 외형은 주변·부속 시설 설명보다 우선한다
+  ---
+  duration_ms: 0.3531
+  type: 'test'
+  ...
+# Subtest: 해안선 밖 표시 좌표는 제외하며 원 좌표·패킷은 바꾸지 않는다
+ok 105 - 해안선 밖 표시 좌표는 제외하며 원 좌표·패킷은 바꾸지 않는다
+  ---
+  duration_ms: 0.4473
+  type: 'test'
+  ...
+# Subtest: 링 안 시설도 표시 좌표 고도가 해수면 여유 높이 이하이거나 유한하지 않으면 제외한다
+ok 106 - 링 안 시설도 표시 좌표 고도가 해수면 여유 높이 이하이거나 유한하지 않으면 제외한다
+  ---
+  duration_ms: 0.7045
+  type: 'test'
+  ...
+# Subtest: 실제 ChronicleWorld로 바다 시설을 제외하고 1450년 전주 반경 1도의 시설은 모두 육지에 둔다
+ok 107 - 실제 ChronicleWorld로 바다 시설을 제외하고 1450년 전주 반경 1도의 시설은 모두 육지에 둔다
+  ---
+  duration_ms: 53.7194
+  type: 'test'
+  ...
+# 1450 JEONJU radius=1deg: {"before":6,"after":6,"seaLevel":7,"excluded":[],"land":[{"id":"scene-syj128-haeinsa-802","title":"해인사 창건 착수 — 합천 가야산 (802)","coordinates":[128.09833333333333,35.801111111111105],"insideRing":true,"surface":9.449225580193582},{"id":"scene-syj128-silsangsa-828","title":"실상사 창건과 실상산문 개산 — 남원 지리산 (828)","coordinates":[127.6363888888889,35.41694444444444],"insideRing":true,"surface":18.981498727229717},{"id":"scene-bj-wangheungsa-600","title":"왕흥사 창건과 준공 — 부여 규암 (600~634)","coordinates":[126.90694,36.29639],"insideRing":true,"surface":7.92787215773094},{"id":"scene-cfc-daetongsa-527","title":"대통사 창건 — 웅천주(공주) (527)","coordinates":[127.117,36.45],"insideRing":true,"surface":8.091842407399815},{"id":"scene-cfc-wangheungsa-600","title":"왕흥사 창건 — 부여 (600)","coordinates":[126.90694,36.29639],"insideRing":true,"surface":7.92787215773094},{"id":"scene-us2-gaeseonsa-868","title":"개선사 석등과 기름값 조 300석 (868)","coordinates":[126.98278,35.18556],"insideRing":true,"surface":8.315849158443}]}
+# 2020 BUSAN excluded: {"title":"부산항 개항과 축항 공사 (1876)","coordinates":[129.07889,35.10389]}
+# Subtest: 링 순서와 꼭짓점 수 대신 면적으로 본토를 고르고 캐시 키는 링 폭 변경을 따른다
+ok 108 - 링 순서와 꼭짓점 수 대신 면적으로 본토를 고르고 캐시 키는 링 폭 변경을 따른다
+  ---
+  duration_ms: 5.538
+  type: 'test'
+  ...
+# Subtest: 장소명 대체·근거 필터를 적용하고 원 패킷은 바꾸지 않는다
+ok 109 - 장소명 대체·근거 필터를 적용하고 원 패킷은 바꾸지 않는다
+  ---
+  duration_ms: 16.3342
+  type: 'test'
+  ...
+# Subtest: without context all legacy period and latitude thresholds remain exact
+ok 110 - without context all legacy period and latitude thresholds remain exact
+  ---
+  duration_ms: 3.1986
+  type: 'test'
+  ...
+# Subtest: 900 households multiply nearby threshold by about 1.34 with inclusive distance and year boundaries
+ok 111 - 900 households multiply nearby threshold by about 1.34 with inclusive distance and year boundaries
+  ---
+  duration_ms: 0.8573
+  type: 'test'
+  ...
+# Subtest: nearest eligible record wins; population conversion, count floor and final clamp apply
+ok 112 - nearest eligible record wins; population conversion, count floor and final clamp apply
+  ---
+  duration_ms: 0.3981
+  type: 'test'
+  ...
+# Subtest: selection forwards site coordinates and current year and preserves seed determinism
+ok 113 - selection forwards site coordinates and current year and preserves seed determinism
+  ---
+  duration_ms: 3.5678
+  type: 'test'
+  ...
+# Subtest: administrative cities and institutions become dated zones and planned sites
+ok 114 - administrative cities and institutions become dated zones and planned sites
+  ---
+  duration_ms: 20.0951
+  type: 'test'
+  ...
+# Subtest: existing scene and place zones win within .03 degrees and overlapping dates
+ok 115 - existing scene and place zones win within .03 degrees and overlapping dates
+  ---
+  duration_ms: 1.6146
+  type: 'test'
+  ...
+# Subtest: facility is excluded and counted, and none is not a settlement zone
+ok 116 - facility is excluded and counted, and none is not a settlement zone
+  ---
+  duration_ms: 0.8698
+  type: 'test'
+  ...
+# Subtest: world loading fetches once and shares the same object with density and both zone consumers
+ok 117 - world loading fetches once and shares the same object with density and both zone consumers
+  ---
+  duration_ms: 7.2193
+  type: 'test'
+  ...
+# Subtest: failed fact fetch reports the failure and keeps legacy scenery available
+ok 118 - failed fact fetch reports the failure and keeps legacy scenery available
+  ---
+  duration_ms: 1.4692
+  type: 'test'
+  ...
+# Subtest: same-era year changes refresh density selection across the record window
+ok 119 - same-era year changes refresh density selection across the record window
+  ---
+  duration_ms: 0.63
+  type: 'test'
+  ...
+# Subtest: capital has many small houses, separate wards, market and peripheral hamlets
+ok 120 - capital has many small houses, separate wards, market and peripheral hamlets
+  ---
+  duration_ms: 1.756
+  type: 'test'
+  ...
+# Subtest: port, fortified, capital and town have distinct reproducible layouts
+ok 121 - port, fortified, capital and town have distinct reproducible layouts
+  ---
+  duration_ms: 3.6851
+  type: 'test'
+  ...
+# Subtest: compact scenes keep exactly one primary and layout never changes dates or evidence
+ok 122 - compact scenes keep exactly one primary and layout never changes dates or evidence
+  ---
+  duration_ms: 0.9816
+  type: 'test'
+  ...
+# Subtest: capital role keeps evidence interval separate from city existence
+ok 123 - capital role keeps evidence interval separate from city existence
+  ---
+  duration_ms: 0.7541
+  type: 'test'
+  ...
+# Subtest: scene identity reuses years inside an era and changes at building or dress boundaries
+ok 124 - scene identity reuses years inside an era and changes at building or dress boundaries
+  ---
+  duration_ms: 84.8492
+  type: 'test'
+  ...
+# Subtest: modern role endings retain anonymous city without extending named roles or actors
+ok 125 - modern role endings retain anonymous city without extending named roles or actors
+  ---
+  duration_ms: 19.3551
+  type: 'test'
+  ...
+# Subtest: modern city has connected varied blocks without a rural ward template
+ok 126 - modern city has connected varied blocks without a rural ward template
+  ---
+  duration_ms: 0.6218
+  type: 'test'
+  ...
+# Subtest: only dated settlements and explicitly selected livelihoods create zones
+ok 127 - only dated settlements and explicitly selected livelihoods create zones
+  ---
+  duration_ms: 2.9772
+  type: 'test'
+  ...
+# Subtest: missing dates, missing evidence and between-record estimates do not invent occupation
+ok 128 - missing dates, missing evidence and between-record estimates do not invent occupation
+  ---
+  duration_ms: 0.5878
+  type: 'test'
+  ...
+# Subtest: institutional coordinates take priority but conflicting institutional points are not chosen arbitrarily
+ok 129 - institutional coordinates take priority but conflicting institutional points are not chosen arbitrarily
+  ---
+  duration_ms: 13.2626
+  type: 'test'
+  ...
+# Subtest: broad geographic places and undated candidates do not generate cities
+ok 130 - broad geographic places and undated candidates do not generate cities
+  ---
+  duration_ms: 0.6784
+  type: 'test'
+  ...
+# Subtest: documented regional city points can support anonymous scenery without an archaeological grounded flag
+ok 131 - documented regional city points can support anonymous scenery without an archaeological grounded flag
+  ---
+  duration_ms: 0.6311
+  type: 'test'
+  ...
+# Subtest: 점유 격자는 칸 경계·음수 좌표·큰 원·접점에서 전수 검사와 같다
+ok 132 - 점유 격자는 칸 경계·음수 좌표·큰 원·접점에서 전수 검사와 같다
+  ---
+  duration_ms: 130.2518
+  type: 'test'
+  ...
+# Subtest: 패드는 낮음을 추천한다
+ok 133 - 패드는 낮음을 추천한다
+  ---
+  duration_ms: 4.4068
+  type: 'test'
+  ...
+# Subtest: 저사양 노트북은 낮음을 추천한다
+ok 134 - 저사양 노트북은 낮음을 추천한다
+  ---
+  duration_ms: 0.4253
+  type: 'test'
+  ...
+# Subtest: 데스크톱은 높음을 추천한다
+ok 135 - 데스크톱은 높음을 추천한다
+  ---
+  duration_ms: 0.1606
+  type: 'test'
+  ...
+# Subtest: Mac UA 아이패드도 터치로 판별한다
+ok 136 - Mac UA 아이패드도 터치로 판별한다
+  ---
+  duration_ms: 0.3863
+  type: 'test'
+  ...
+# Subtest: 저장값은 추천보다 우선하며 자동 결과를 보존한다
+ok 137 - 저장값은 추천보다 우선하며 자동 결과를 보존한다
+  ---
+  duration_ms: 1.5447
+  type: 'test'
+  ...
+# Subtest: 추천값도 자동 시작점이다
+ok 138 - 추천값도 자동 시작점이다
+  ---
+  duration_ms: 0.213
+  type: 'test'
+  ...
+# Subtest: 수동 저장값은 복원하고 query는 저장하지 않는다
+ok 139 - 수동 저장값은 복원하고 query는 저장하지 않는다
+  ---
+  duration_ms: 0.3139
+  type: 'test'
+  ...
+# Subtest: 4코어 16GB 데스크톱은 보통이다
+ok 140 - 4코어 16GB 데스크톱은 보통이다
+  ---
+  duration_ms: 0.1669
+  type: 'test'
+  ...
+# Subtest: 16코어 Windows 터치 노트북은 높음이다
+ok 141 - 16코어 Windows 터치 노트북은 높음이다
+  ---
+  duration_ms: 0.4263
+  type: 'test'
+  ...
+# Subtest: 정보 없는 8코어 Safari도 높음이며 2코어는 낮음이다
+ok 142 - 정보 없는 8코어 Safari도 높음이며 2코어는 낮음이다
+  ---
+  duration_ms: 0.5071
+  type: 'test'
+  ...
+# Subtest: 검증용 query는 저장값보다 우선한다
+ok 143 - 검증용 query는 저장값보다 우선한다
+  ---
+  duration_ms: 0.2171
+  type: 'test'
+  ...
+# Subtest: 정보 누락, 잘못된 저장값, 고밀도 화면은 보통으로 시작한다
+ok 144 - 정보 누락, 잘못된 저장값, 고밀도 화면은 보통으로 시작한다
+  ---
+  duration_ms: 0.2134
+  type: 'test'
+  ...
+# Subtest: all 13 actual imported city packets appear only inside their reviewed intervals
+ok 145 - all 13 actual imported city packets appear only inside their reviewed intervals
+  ---
+  duration_ms: 13.1681
+  type: 'test'
+  ...
+# Subtest: native supported-claim checks remove a city when its source is deselected
+ok 146 - native supported-claim checks remove a city when its source is deselected
+  ---
+  duration_ms: 1.8582
+  type: 'test'
+  ...
+# Subtest: issue \#173 packets carry the expected sceneFunction
+ok 147 - issue \#173 packets carry the expected sceneFunction
+  ---
+  duration_ms: 1.4257
+  type: 'test'
+  ...
+# Subtest: every sceneFunction and participantGroups in the file use the allowed vocabulary and known claim ids
+ok 148 - every sceneFunction and participantGroups in the file use the allowed vocabulary and known claim ids
+  ---
+  duration_ms: 3.733
+  type: 'test'
+  ...
+# Subtest: packets that were given participantGroups have the requested groups
+ok 149 - packets that were given participantGroups have the requested groups
+  ---
+  duration_ms: 1.8647
+  type: 'test'
+  ...
+# Subtest: sceneFunction rail_station: station 포함, korean_hall/palace 없음
+ok 150 - sceneFunction rail_station: station 포함, korean_hall/palace 없음
+  ---
+  duration_ms: 8.5406
+  type: 'test'
+  ...
+# Subtest: uprising_battle + participantGroups: attacker 8·defender 6, archetype 이 다름
+ok 151 - uprising_battle + participantGroups: attacker 8·defender 6, archetype 이 다름
+  ---
+  duration_ms: 4.1983
+  type: 'test'
+  ...
+# Subtest: civil_conflict: civilian bystander 군집은 soldier archetype 을 쓰지 않는다
+ok 152 - civil_conflict: civilian bystander 군집은 soldier archetype 을 쓰지 않는다
+  ---
+  duration_ms: 2.2783
+  type: 'test'
+  ...
+# Subtest: migration: handcart 포함, 12명 walking 한 줄
+ok 153 - migration: handcart 포함, 12명 walking 한 줄
+  ---
+  duration_ms: 0.5311
+  type: 'test'
+  ...
+# Subtest: sceneFunction 없는 기존 battle 패킷은 10+10 그대로 (회귀)
+ok 154 - sceneFunction 없는 기존 battle 패킷은 10+10 그대로 (회귀)
+  ---
+  duration_ms: 0.9343
+  type: 'test'
+  ...
+# Subtest: activityFigure: 비구니 → monk
+ok 155 - activityFigure: 비구니 → monk
+  ---
+  duration_ms: 0.3511
+  type: 'test'
+  ...
+# Subtest: figureArchetype: 새 역할은 카탈로그에 있는 archetype 또는 commoner 폴백
+ok 156 - figureArchetype: 새 역할은 카탈로그에 있는 archetype 또는 commoner 폴백
+  ---
+  duration_ms: 0.182
+  type: 'test'
+  ...
+# Subtest: 모든 sceneFunction 이 평지·해안 stub 에서 예외 없이 구성된다
+ok 157 - 모든 sceneFunction 이 평지·해안 stub 에서 예외 없이 구성된다
+  ---
+  duration_ms: 8.718
+  type: 'test'
+  ...
+# Subtest: low budget and shared medium/high object
+ok 158 - low budget and shared medium/high object
+  ---
+  duration_ms: 3.9576
+  type: 'test'
+  ...
+# Subtest: scale defaults to the old threshold and low is one quarter
+ok 159 - scale defaults to the old threshold and low is one quarter
+  ---
+  duration_ms: 0.5878
+  type: 'test'
+  ...
+# Subtest: real planner/selector: deterministic subset, mixed layouts, island retained
+ok 160 - real planner/selector: deterministic subset, mixed layouts, island retained
+  ---
+  duration_ms: 23.4088
+  type: 'test'
+  ...
+# Subtest: fallback and cell cap cannot introduce sites missing from medium
+ok 161 - fallback and cell cap cannot introduce sites missing from medium
+  ---
+  duration_ms: 0.7359
+  type: 'test'
+  ...
+# Subtest: medium/high and automatic downgrade skip rebuilds; low invalidates once
+ok 162 - medium/high and automatic downgrade skip rebuilds; low invalidates once
+  ---
+  duration_ms: 0.4009
+  type: 'test'
+  ...
+# Subtest: original Seoul and Gangnam survive a larger documented urban site at the Seoul center
+ok 163 - original Seoul and Gangnam survive a larger documented urban site at the Seoul center
+  ---
+  duration_ms: 2.8535
+  type: 'test'
+  ...
+# Subtest: documented urban stays alone and inside a major radius at a different center
+ok 164 - documented urban stays alone and inside a major radius at a different center
+  ---
+  duration_ms: 0.4374
+  type: 'test'
+  ...
+# Subtest: same-center priority applies below 0.1 and leaves the boundary and different kinds intact
+ok 165 - same-center priority applies below 0.1 and leaves the boundary and different kinds intact
+  ---
+  duration_ms: 0.3975
+  type: 'test'
+  ...
+# Subtest: estimated sites remain selected only when their IDs are present
+ok 166 - estimated sites remain selected only when their IDs are present
+  ---
+  duration_ms: 0.6477
+  type: 'test'
+  ...
+# Subtest: other duplicates keep radius priority and the ID tie-break
+ok 167 - other duplicates keep radius priority and the ID tie-break
+  ---
+  duration_ms: 15.2128
+  type: 'test'
+  ...
+# Subtest: documented Jeju remains when its original urban profile is suppressed by an active scene
+ok 168 - documented Jeju remains when its original urban profile is suppressed by an active scene
+  ---
+  duration_ms: 0.6856
+  type: 'test'
+  ...
+# Subtest: site availability uses only occupied radius and preserves documented/urban exemptions
+ok 169 - site availability uses only occupied radius and preserves documented/urban exemptions
+  ---
+  duration_ms: 26.3586
+  type: 'test'
+  ...
+# Subtest: a radius 3 footprint removes only overlapping settlementLayout houses and retains the village
+ok 170 - a radius 3 footprint removes only overlapping settlementLayout houses and retains the village
+  ---
+  duration_ms: 32.8467
+  type: 'test'
+  ...
+# Subtest: scene radii persist for paths and the original occupancy refresh conditions
+ok 171 - scene radii persist for paths and the original occupancy refresh conditions
+  ---
+  duration_ms: 18.5593
+  type: 'test'
+  ...
+# Subtest: 1795 Jeju retains estimated villages with actual Kim Mandeok scene occupancy
+ok 172 - 1795 Jeju retains estimated villages with actual Kim Mandeok scene occupancy
+  ---
+  duration_ms: 5983.4448
+  type: 'test'
+  ...
+# Subtest: near homes match coarse footprint area using measured era geometry, with cached measurements
+ok 173 - near homes match coarse footprint area using measured era geometry, with cached measurements
+  ---
+  duration_ms: 391.8395
+  type: 'test'
+  ...
+# Subtest: urban near facades preserve the same tall bodies and same-period scrubs reuse geometry
+ok 174 - urban near facades preserve the same tall bodies and same-period scrubs reuse geometry
+  ---
+  duration_ms: 19.9478
+  type: 'test'
+  ...
+# Subtest: one event occupancy clips individual city parcels without erasing its neighborhood
+ok 175 - one event occupancy clips individual city parcels without erasing its neighborhood
+  ---
+  duration_ms: 28.7021
+  type: 'test'
+  ...
+# Subtest: documented zone activation uses its actual year and reuses geometry between boundaries
+ok 176 - documented zone activation uses its actual year and reuses geometry between boundaries
+  ---
+  duration_ms: 0.5389
+  type: 'test'
+  ...
+# Subtest: year scrubs rebuild only changed site layouts, details and affected far batches
+ok 177 - year scrubs rebuild only changed site layouts, details and affected far batches
+  ---
+  duration_ms: 126.7736
+  type: 'test'
+  ...
+# Subtest: filtered and distance-sorted detail houses keep their far variant, yaw and site-period people
+ok 178 - filtered and distance-sorted detail houses keep their far variant, yaw and site-period people
+  ---
+  duration_ms: 29.3378
+  type: 'test'
+  ...
+# Subtest: far scenery uses direct bounded geometry for thousands of homes in all periods
+ok 179 - far scenery uses direct bounded geometry for thousands of homes in all periods
+  ---
+  duration_ms: 1570.945
+  type: 'test'
+  ...
+# Subtest: near selection hides and restores only matching coarse homes
+ok 180 - near selection hides and restores only matching coarse homes
+  ---
+  duration_ms: 5.0722
+  type: 'test'
+  ...
+# Subtest: asset recipes preserve planned house yaw and default existing recipes to zero
+ok 181 - asset recipes preserve planned house yaw and default existing recipes to zero
+  ---
+  duration_ms: 10.3356
+  type: 'test'
+  ...
+# Subtest: early period has no fields and different roof palettes remain visible
+ok 182 - early period has no fields and different roof palettes remain visible
+  ---
+  duration_ms: 1.9223
+  type: 'test'
+  ...
+# Subtest: far homes retain cone, gable and flat topology within twenty percent of the old triangle budget
+ok 183 - far homes retain cone, gable and flat topology within twenty percent of the old triangle budget
+  ---
+  duration_ms: 1789.8464
+  type: 'test'
+  ...
+# Subtest: actual vertex peaks distinguish prehistoric cones, Joseon ridges and modern flat boxes
+ok 184 - actual vertex peaks distinguish prehistoric cones, Joseon ridges and modern flat boxes
+  ---
+  duration_ms: 1.3907
+  type: 'test'
+  ...
+# Subtest: far roofs use the selected detailed blueprint proportions and preserve combined site and house yaw
+ok 185 - far roofs use the selected detailed blueprint proportions and preserve combined site and house yaw
+  ---
+  duration_ms: 16.2388
+  type: 'test'
+  ...
+# Subtest: site periods deterministically scatter every boundary without reversing nearby transitions
+ok 186 - site periods deterministically scatter every boundary without reversing nearby transitions
+  ---
+  duration_ms: 5.2412
+  type: 'test'
+  ...
+# Subtest: rural layouts and people follow the site period while urban dates stay exact
+ok 187 - rural layouts and people follow the site period while urban dates stay exact
+  ---
+  duration_ms: 9.5401
+  type: 'test'
+  ...
+# Subtest: 1980 Pyongyang outskirts use the same modern rural housing and stores as the south
+ok 188 - 1980 Pyongyang outskirts use the same modern rural housing and stores as the south
+  ---
+  duration_ms: 22.2203
+  type: 'test'
+  ...
+# Subtest: background settlements exist only at supplied documented locations, with provenance
+ok 189 - background settlements exist only at supplied documented locations, with provenance
+  ---
+  duration_ms: 30.9061
+  type: 'test'
+  ...
+# Subtest: documented period boundaries control habitation without moving or inventing sites
+ok 190 - documented period boundaries control habitation without moving or inventing sites
+  ---
+  duration_ms: 2.7456
+  type: 'test'
+  ...
+# Subtest: anonymous parcels vary inside source-backed zones while ancient settlements stay smaller
+ok 191 - anonymous parcels vary inside source-backed zones while ancient settlements stay smaller
+  ---
+  duration_ms: 13.3863
+  type: 'test'
+  ...
+# PASS: concavity, holes, largest component, land rejection, transform, Korean names, temporal boundaries, source/origin filters
+# PASS: checked-in catalog names and interior anchors at 600 and 1500
+# Subtest: tests/territory-labels.test.mjs
+ok 28 - tests/territory-labels.test.mjs
+  ---
+  duration_ms: 379.0396
+  type: 'test'
+  ...
+# Subtest: text and attributes escape all HTML delimiters
+ok 193 - text and attributes escape all HTML delimiters
+  ---
+  duration_ms: 1.4864
+  type: 'test'
+  ...
+# Subtest: external links permit HTTP(S) and escape attributes and captions
+ok 194 - external links permit HTTP(S) and escape attributes and captions
+  ---
+  duration_ms: 2.1867
+  type: 'test'
+  ...
+# Subtest: highlighting works on original text, never generated markup
+ok 195 - highlighting works on original text, never generated markup
+  ---
+  duration_ms: 0.7988
+  type: 'test'
+  ...
+# Subtest: scan image links preserve HTTP URLs and escape captions without executable markup
+ok 196 - scan image links preserve HTTP URLs and escape captions without executable markup
+  ---
+  duration_ms: 0.3782
+  type: 'test'
+  ...
+# Subtest: a shared coordinate source does not turn another historical opinion into the main lens
+ok 197 - a shared coordinate source does not turn another historical opinion into the main lens
+  ---
+  duration_ms: 2.5572
+  type: 'test'
+  ...
+# Subtest: each coordinate follows its own source and derived points require both sources
+ok 198 - each coordinate follows its own source and derived points require both sources
+  ---
+  duration_ms: 0.5257
+  type: 'test'
+  ...
+# Subtest: date boundaries and undated candidates are shared
+ok 199 - date boundaries and undated candidates are shared
+  ---
+  duration_ms: 0.2802
+  type: 'test'
+  ...
+# Subtest: place and candidate periods must both contain the year
+ok 200 - place and candidate periods must both contain the year
+  ---
+  duration_ms: 0.2324
+  type: 'test'
+  ...
+# Subtest: source omission, all-off and matching selection have distinct behavior
+ok 201 - source omission, all-off and matching selection have distinct behavior
+  ---
+  duration_ms: 0.3316
+  type: 'test'
+  ...
+# Subtest: a researched place remains scoped to its source even without text matches
+ok 202 - a researched place remains scoped to its source even without text matches
+  ---
+  duration_ms: 0.1823
+  type: 'test'
+  ...
+# Subtest: origin filter inherits provenance without treating missing authorship as human
+ok 203 - origin filter inherits provenance without treating missing authorship as human
+  ---
+  duration_ms: 0.3548
+  type: 'test'
+  ...
+# Subtest: outside candidates retain dates, sources and authorship instead of vanishing
+not ok 204 - outside candidates retain dates, sources and authorship instead of vanishing
+  ---
+  duration_ms: 1.3555
+  type: 'test'
+  location: 'tests/test_place_state.mjs:63:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (tests/test_place_state.mjs:69:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: small collections keep individual rows and order
+ok 205 - small collections keep individual rows and order
+  ---
+  duration_ms: 2.191
+  type: 'test'
+  ...
+# Subtest: groups retain every edition and distinguish partial selection
+ok 206 - groups retain every edition and distinguish partial selection
+  ---
+  duration_ms: 1.8638
+  type: 'test'
+  ...
+# Subtest: urban families compile concrete geometry, with low postwar and taller modern blocks
+ok 207 - urban families compile concrete geometry, with low postwar and taller modern blocks
+  ---
+  duration_ms: 16.2044
+  type: 'test'
+  ...
+# Subtest: 2010 major city cores contain neighborhoods, public space and workplaces, not fields
+ok 208 - 2010 major city cores contain neighborhoods, public space and workplaces, not fields
+  ---
+  duration_ms: 10.1308
+  type: 'test'
+  ...
+# Subtest: growth bands retain low-rise 1960 and distinguish 1975 from later skylines
+ok 209 - growth bands retain low-rise 1960 and distinguish 1975 from later skylines
+  ---
+  duration_ms: 0.8961
+  type: 'test'
+  ...
+# Subtest: north remains modern and cities persist across event and administrative end years
+ok 210 - north remains modern and cities persist across event and administrative end years
+  ---
+  duration_ms: 8.3845
+  type: 'test'
+  ...
+# Subtest: tap is exactly one year and release cancels all future movement
+ok 211 - tap is exactly one year and release cancels all future movement
+  ---
+  duration_ms: 2.8642
+  type: 'test'
+  ...
+# Subtest: sustained input accelerates progressively and reversal resets acceleration
+ok 212 - sustained input accelerates progressively and reversal resets acceleration
+  ---
+  duration_ms: 0.6324
+  type: 'test'
+  ...
+# Subtest: BCE crossing has no zero and boundaries stop the scheduler
+ok 213 - BCE crossing has no zero and boundaries stop the scheduler
+  ---
+  duration_ms: 0.2546
+  type: 'test'
+  ...
+# Subtest: repeated keydown does not restart hold and external navigation can cancel without commit
+ok 214 - repeated keydown does not restart hold and external navigation can cancel without commit
+  ---
+  duration_ms: 0.3244
+  type: 'test'
+  ...
+# Subtest: pointer cancellation, lost capture, key release, blur and hidden tab stop immediately
+ok 215 - pointer cancellation, lost capture, key release, blur and hidden tab stop immediately
+  ---
+  duration_ms: 0.9776
+  type: 'test'
+  ...
+# Subtest: slider uses relative movement, starts with one year, accelerates and resets on reversal
+ok 216 - slider uses relative movement, starts with one year, accelerates and resets on reversal
+  ---
+  duration_ms: 0.9585
+  type: 'test'
+  ...
+1..216
+# tests 216
+# suites 0
+# pass 215
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7189.3386
+
+# Verification excluding the single known failure
+# command: node --test --test-skip-pattern="^outside candidates retain dates, sources and authorship instead of vanishing$" tests/*.mjs
+TAP version 13
+# Subtest: 1910~1944 selects 일제강점기, not 대한제국
+ok 1 - 1910~1944 selects 일제강점기, not 대한제국
+  ---
+  duration_ms: 0.9792
+  type: 'test'
+  ...
+# Subtest: eras are sorted by start year
+ok 2 - eras are sorted by start year
+  ---
+  duration_ms: 0.87
+  type: 'test'
+  ...
+# Subtest: pickableRow excludes background primaries and parts but keeps events, people and documented settlements
+ok 3 - pickableRow excludes background primaries and parts but keeps events, people and documented settlements
+  ---
+  duration_ms: 2.3254
+  type: 'test'
+  ...
+# Subtest: dropdown options exclude background rows and retain documented settlements and duplicate entity destinations
+ok 4 - dropdown options exclude background rows and retain documented settlements and duplicate entity destinations
+  ---
+  duration_ms: 0.5908
+  type: 'test'
+  ...
+# Subtest: select ignores background entity IDs, row IDs and part IDs without changing selection
+ok 5 - select ignores background entity IDs, row IDs and part IDs without changing selection
+  ---
+  duration_ms: 0.9934
+  type: 'test'
+  ...
+# Subtest: select also ignores unlocated background plan entries
+ok 6 - select also ignores unlocated background plan entries
+  ---
+  duration_ms: 0.3572
+  type: 'test'
+  ...
+# Subtest: select still selects and focuses documented Hanseong
+ok 7 - select still selects and focuses documented Hanseong
+  ---
+  duration_ms: 0.4811
+  type: 'test'
+  ...
+# Subtest: 배경 행은 실제 rebuild에서 렌더링·점유·재사용을 유지하고 picks에서만 빠진다
+ok 8 - 배경 행은 실제 rebuild에서 렌더링·점유·재사용을 유지하고 picks에서만 빠진다
+  ---
+  duration_ms: 867.3213
+  type: 'test'
+  ...
+# Subtest: 시설 외형 변경은 실제 rebuild의 대표 모델을 교체하고 이후 재사용한다
+ok 9 - 시설 외형 변경은 실제 rebuild의 대표 모델을 교체하고 이후 재사용한다
+  ---
+  duration_ms: 12.3102
+  type: 'test'
+  ...
+# Subtest: 1: 도시 (0,1) 옆 바다 사건 (0,-5)을 rebuild해도 바다에 남는다 (sea)
+ok 10 - 1: 도시 (0,1) 옆 바다 사건 (0,-5)을 rebuild해도 바다에 남는다 (sea)
+  ---
+  duration_ms: 126.581
+  type: 'test'
+  ...
+# Subtest: 1: 도시 (0,1) 옆 바다 사건 (0,-5)을 rebuild해도 바다에 남는다 (naval fallback)
+ok 11 - 1: 도시 (0,1) 옆 바다 사건 (0,-5)을 rebuild해도 바다에 남는다 (naval fallback)
+  ---
+  duration_ms: 110.7091
+  type: 'test'
+  ...
+# Subtest: 1: 바다 이동 후보 네 곳이 모두 육지면 원래 바다 위치를 보존한다
+ok 12 - 1: 바다 이동 후보 네 곳이 모두 육지면 원래 바다 위치를 보존한다
+  ---
+  duration_ms: 126.9827
+  type: 'test'
+  ...
+# Subtest: 1: 육지 사건은 바다 후보를 건너뛰고 육지에 남는다
+ok 13 - 1: 육지 사건은 바다 후보를 건너뛰고 육지에 남는다
+  ---
+  duration_ms: 64.3196
+  type: 'test'
+  ...
+# Subtest: 2: 참여 집단 attacker/8 → victim/2 변경은 재사용 키를 바꾼다
+ok 14 - 2: 참여 집단 attacker/8 → victim/2 변경은 재사용 키를 바꾼다
+  ---
+  duration_ms: 1.2053
+  type: 'test'
+  ...
+# Subtest: 2: rebuild는 집단 변경 뒤 8명 공격 장면을 2명 피해 장면으로 교체하고 다음에는 재사용한다
+ok 15 - 2: rebuild는 집단 변경 뒤 8명 공격 장면을 2명 피해 장면으로 교체하고 다음에는 재사용한다
+  ---
+  duration_ms: 31.2137
+  type: 'test'
+  ...
+# Subtest: 3: 겹치는 활성 현대 도시 구역에서는 가까운 중심을 고른다
+ok 16 - 3: 겹치는 활성 현대 도시 구역에서는 가까운 중심을 고른다
+  ---
+  duration_ms: 0.5323
+  type: 'test'
+  ...
+# Subtest: 3: 중심 거리가 같으면 id 사전순으로 고른다
+ok 17 - 3: 중심 거리가 같으면 id 사전순으로 고른다
+  ---
+  duration_ms: 1.2634
+  type: 'test'
+  ...
+# Subtest: 4: 실제 print_workshop 패킷의 집단별 역할·동작·인원수를 rebuild에 반영한다
+ok 18 - 4: 실제 print_workshop 패킷의 집단별 역할·동작·인원수를 rebuild에 반영한다
+  ---
+  duration_ms: 50.4543
+  type: 'test'
+  ...
+# Subtest: 4: 실제 persecution 패킷의 집단별 역할·동작·인원수를 rebuild에 반영한다
+ok 19 - 4: 실제 persecution 패킷의 집단별 역할·동작·인원수를 rebuild에 반영한다
+  ---
+  duration_ms: 34.3107
+  type: 'test'
+  ...
+# Subtest: 4: 집단이 없으면 작업장 6명·박해 10+3명 고정 구성을 유지한다
+ok 20 - 4: 집단이 없으면 작업장 6명·박해 10+3명 고정 구성을 유지한다
+  ---
+  duration_ms: 1.2111
+  type: 'test'
+  ...
+# Subtest: 4: 축소 박해 장면의 대표 인물도 입력 집단의 역할과 동작을 따른다
+ok 21 - 4: 축소 박해 장면의 대표 인물도 입력 집단의 역할과 동작을 따른다
+  ---
+  duration_ms: 0.4496
+  type: 'test'
+  ...
+# Subtest: 사실 조사 market은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 22 - 사실 조사 market은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 1.6461
+  type: 'test'
+  ...
+# Subtest: 사실 조사 relief은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 23 - 사실 조사 relief은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 0.9506
+  type: 'test'
+  ...
+# Subtest: 사실 조사 construction_site은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 24 - 사실 조사 construction_site은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 0.8145
+  type: 'test'
+  ...
+# Subtest: 사실 조사 fortress은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 25 - 사실 조사 fortress은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 0.977
+  type: 'test'
+  ...
+# Subtest: 사실 조사 harbor은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 26 - 사실 조사 harbor은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 5.9838
+  type: 'test'
+  ...
+# Subtest: 사실 조사 kiln은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 27 - 사실 조사 kiln은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 6.9253
+  type: 'test'
+  ...
+# Subtest: 사실 조사 irrigation은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+ok 28 - 사실 조사 irrigation은 키워드·archetype보다 우선하고 집단을 한 번 조립한다
+  ---
+  duration_ms: 4.951
+  type: 'test'
+  ...
+# Subtest: 새 함수가 있어도 시설의 외형과 모델은 기존 facilityLook을 따른다
+ok 29 - 새 함수가 있어도 시설의 외형과 모델은 기존 facilityLook을 따른다
+  ---
+  duration_ms: 2.8278
+  type: 'test'
+  ...
+# Subtest: 새 함수의 기본 공사 인력과 성곽은 보조 필드 없이도 조립된다
+ok 30 - 새 함수의 기본 공사 인력과 성곽은 보조 필드 없이도 조립된다
+  ---
+  duration_ms: 0.8368
+  type: 'test'
+  ...
+# Subtest: 5: 장면 정보 문구에 추정 배경 마을 수와 사료 없음을 표시한다
+ok 31 - 5: 장면 정보 문구에 추정 배경 마을 수와 사료 없음을 표시한다
+  ---
+  duration_ms: 0.2371
+  type: 'test'
+  ...
+# Subtest: 5: 지도 표시 체크박스에 추정 배경과 사료 없음 설명을 표시한다
+ok 32 - 5: 지도 표시 체크박스에 추정 배경과 사료 없음 설명을 표시한다
+  ---
+  duration_ms: 1.1002
+  type: 'test'
+  ...
+# Subtest: Hanyang/Hanseong name and capital role follow checked 1394–1405 changes
+ok 33 - Hanyang/Hanseong name and capital role follow checked 1394–1405 changes
+  ---
+  duration_ms: 5.5278
+  type: 'test'
+  ...
+# Subtest: court scribes use era scholars in actual composition
+ok 34 - court scribes use era scholars in actual composition
+  ---
+  duration_ms: 6.4443
+  type: 'test'
+  ...
+# Subtest: a coastal city keeps its primary on the unchanged land anchor
+ok 35 - a coastal city keeps its primary on the unchanged land anchor
+  ---
+  duration_ms: 7.0254
+  type: 'test'
+  ...
+# Subtest: 2010 city uses urban buildings and roads without fields; 1960 has no tower family
+ok 36 - 2010 city uses urban buildings and roads without fields; 1960 has no tower family
+  ---
+  duration_ms: 5.9132
+  type: 'test'
+  ...
+# Subtest: Jeju keeps a full city district within the shared local urban extent
+ok 37 - Jeju keeps a full city district within the shared local urban extent
+  ---
+  duration_ms: 2.9713
+  type: 'test'
+  ...
+# Subtest: actual far instance matrices retain near apartment, commercial and lowrise height at Seoul and Jeju scales
+ok 38 - actual far instance matrices retain near apartment, commercial and lowrise height at Seoul and Jeju scales
+  ---
+  duration_ms: 192.3268
+  type: 'test'
+  ...
+# Subtest: LOD switches visibility without rebuilding or changing instance matrices
+ok 39 - LOD switches visibility without rebuilding or changing instance matrices
+  ---
+  duration_ms: 25.6474
+  type: 'test'
+  ...
+# Subtest: 1969 Gaegyeong continues as six low-rise town wards with fewer people and cars
+ok 40 - 1969 Gaegyeong continues as six low-rise town wards with fewer people and cars
+  ---
+  duration_ms: 10.6583
+  type: 'test'
+  ...
+# Subtest: 1900 continuing residential wards keep courtyard houses and low-rise homes
+ok 41 - 1900 continuing residential wards keep courtyard houses and low-rise homes
+  ---
+  duration_ms: 4.096
+  type: 'test'
+  ...
+# Subtest: continuing ports keep only two warehouses and no transit
+ok 42 - continuing ports keep only two warehouses and no transit
+  ---
+  duration_ms: 2.8118
+  type: 'test'
+  ...
+# Subtest: continuing flag does not change layouts before 1876
+ok 43 - continuing flag does not change layouts before 1876
+  ---
+  duration_ms: 3.2288
+  type: 'test'
+  ...
+# Subtest: visual reuse keys distinguish continuing and documented cities at the same location
+ok 44 - visual reuse keys distinguish continuing and documented cities at the same location
+  ---
+  duration_ms: 3.2593
+  type: 'test'
+  ...
+# Subtest: 1970 and later have no continuing cities anywhere in the actual packets
+ok 45 - 1970 and later have no continuing cities anywhere in the actual packets
+  ---
+  duration_ms: 1.0071
+  type: 'test'
+  ...
+# Subtest: Jeju keeps its 1955-2005 documented interval and has no modern continuation
+ok 46 - Jeju keeps its 1955-2005 documented interval and has no modern continuation
+  ---
+  duration_ms: 1.8275
+  type: 'test'
+  ...
+# Subtest: urban growth takes over even when its start falls inside the Jeju record
+ok 47 - urban growth takes over even when its start falls inside the Jeju record
+  ---
+  duration_ms: 0.4639
+  type: 'test'
+  ...
+# Subtest: Busan: the 1950-1953 record excludes 1945 and continues until urban growth in 1970
+ok 48 - Busan: the 1950-1953 record excludes 1945 and continues until urban growth in 1970
+  ---
+  duration_ms: 1.4279
+  type: 'test'
+  ...
+# Subtest: 700 Sabi continues as a town, not a capital
+ok 49 - 700 Sabi continues as a town, not a capital
+  ---
+  duration_ms: 1.955
+  type: 'test'
+  ...
+# Subtest: Seoul: 1350 yields to the newer zone, Hanseong continues until urban Seoul grows in 1970
+ok 50 - Seoul: 1350 yields to the newer zone, Hanseong continues until urban Seoul grows in 1970
+  ---
+  duration_ms: 16.6246
+  type: 'test'
+  ...
+# Subtest: 1300 Gaegyeong is active in its second interval
+ok 51 - 1300 Gaegyeong is active in its second interval
+  ---
+  duration_ms: 0.8706
+  type: 'test'
+  ...
+# Subtest: rows keep the anonymous-city format used by the scene and context panels
+ok 52 - rows keep the anonymous-city format used by the scene and context panels
+  ---
+  duration_ms: 14.9804
+  type: 'test'
+  ...
+# Subtest: 1450 Gongju: the documented zone starts with the record (475), so the Ungjin continuation coexists instead of yielding
+ok 53 - 1450 Gongju: the documented zone starts with the record (475), so the Ungjin continuation coexists instead of yielding
+  ---
+  duration_ms: 1.1388
+  type: 'test'
+  ...
+# Subtest: zone precedence depends on its start year relative to the record end, even when open-ended
+ok 54 - zone precedence depends on its start year relative to the record end, even when open-ended
+  ---
+  duration_ms: 0.518
+  type: 'test'
+  ...
+# Subtest: omitting zones preserves previous callers and latest-ended-record selection
+ok 55 - omitting zones preserves previous callers and latest-ended-record selection
+  ---
+  duration_ms: 0.9723
+  type: 'test'
+  ...
+# Subtest: continuing towns use half scale for composition, radius and occupied space
+ok 56 - continuing towns use half scale for composition, radius and occupied space
+  ---
+  duration_ms: 17.6707
+  type: 'test'
+  ...
+# Subtest: active urban core cuts only intersecting rural street segments and restores on seeking back
+ok 57 - active urban core cuts only intersecting rural street segments and restores on seeking back
+  ---
+  duration_ms: 8.6417
+  type: 'test'
+  ...
+# Subtest: segment crossing a core is excluded even with both endpoints outside it
+ok 58 - segment crossing a core is excluded even with both endpoints outside it
+  ---
+  duration_ms: 0.3646
+  type: 'test'
+  ...
+# Subtest: only boolean estimated true marks a site for dimming
+ok 59 - only boolean estimated true marks a site for dimming
+  ---
+  duration_ms: 1.313
+  type: 'test'
+  ...
+# Subtest: dim material keeps its source intact, shares variants and restores the exact source
+ok 60 - dim material keeps its source intact, shares variants and restores the exact source
+  ---
+  duration_ms: 3.0243
+  type: 'test'
+  ...
+# Subtest: the color shader desaturates combined vertex/instance colors once and retains existing shader hooks
+ok 61 - the color shader desaturates combined vertex/instance colors once and retains existing shader hooks
+  ---
+  duration_ms: 1.0026
+  type: 'test'
+  ...
+# Subtest: mesh toggles preserve geometry, instance colors, material arrays and original shadow settings
+ok 62 - mesh toggles preserve geometry, instance colors, material arrays and original shadow settings
+  ---
+  duration_ms: 4.3391
+  type: 'test'
+  ...
+# Subtest: overview splits estimated and documented sites at most in two, sharing three materials across buckets
+ok 63 - overview splits estimated and documented sites at most in two, sharing three materials across buckets
+  ---
+  duration_ms: 19.4186
+  type: 'test'
+  ...
+# Subtest: only paths with two estimated endpoints dim and toggling preserves geometry
+ok 64 - only paths with two estimated endpoints dim and toggling preserves geometry
+  ---
+  duration_ms: 21.9764
+  type: 'test'
+  ...
+# Subtest: display toggle is idempotent and preserves geometry and documented materials
+ok 65 - display toggle is idempotent and preserves geometry and documented materials
+  ---
+  duration_ms: 7.3712
+  type: 'test'
+  ...
+# Subtest: estimated sites are deterministic and marked as undocumented background
+ok 66 - estimated sites are deterministic and marked as undocumented background
+  ---
+  duration_ms: 61.9288
+  type: 'test'
+  ...
+# Subtest: medium island grids preserve mainland sites even when the largest ring is not first
+ok 67 - medium island grids preserve mainland sites even when the largest ring is not first
+  ---
+  duration_ms: 52.2298
+  type: 'test'
+  ...
+# Subtest: island minimum does not override invalid elevation, nonfinite terrain or steep slopes
+ok 68 - island minimum does not override invalid elevation, nonfinite terrain or steep slopes
+  ---
+  duration_ms: 366.2625
+  type: 'test'
+  ...
+# Subtest: medium and large empty rings select their lowest eligible seed in prehistory and Joseon
+ok 69 - medium and large empty rings select their lowest eligible seed in prehistory and Joseon
+  ---
+  duration_ms: 1.1633
+  type: 'test'
+  ...
+# Subtest: real ChronicleWorld islands reach their area minimum and preserve mainland counts
+ok 70 - real ChronicleWorld islands reach their area minimum and preserve mainland counts
+  ---
+  duration_ms: 3432.8668
+  type: 'test'
+  ...
+# Subtest: area boundaries omit tiny rings and never guarantee small island candidates or selection
+ok 71 - area boundaries omit tiny rings and never guarantee small island candidates or selection
+  ---
+  duration_ms: 74.422
+  type: 'test'
+  ...
+# Subtest: small island layouts have 2 to 4 full-size houses within radius 6 and no village roads or fields
+ok 72 - small island layouts have 2 to 4 full-size houses within radius 6 and no village roads or fields
+  ---
+  duration_ms: 0.8935
+  type: 'test'
+  ...
+# Subtest: island cell cap is deterministic across rings and boundaries, with mainland unaffected
+ok 73 - island cell cap is deterministic across rings and boundaries, with mainland unaffected
+  ---
+  duration_ms: 1.0944
+  type: 'test'
+  ...
+# Subtest: real world Mokpo density is bounded, Jeju survives and mainland stays at 110
+ok 74 - real world Mokpo density is bounded, Jeju survives and mainland stays at 110
+  ---
+  duration_ms: 2575.1079
+  type: 'test'
+  ...
+# Subtest: same-period year changes reuse candidates and do not refresh selection
+ok 75 - same-period year changes reuse candidates and do not refresh selection
+  ---
+  duration_ms: 58.2241
+  type: 'test'
+  ...
+# Subtest: threshold grows with period and shrinks for Jeju and the north
+ok 76 - threshold grows with period and shrinks for Jeju and the north
+  ---
+  duration_ms: 13.119
+  type: 'test'
+  ...
+# Subtest: estimated sites yield to documented, urban and occupied areas
+ok 77 - estimated sites yield to documented, urban and occupied areas
+  ---
+  duration_ms: 7.9644
+  type: 'test'
+  ...
+# Subtest: a known wrong world fails acceptance even when its structure is valid
+ok 78 - a known wrong world fails acceptance even when its structure is valid
+  ---
+  duration_ms: 1.129
+  type: 'test'
+  ...
+# Subtest: an active city cannot be empty or contain fields and invalid dimensions
+ok 79 - an active city cannot be empty or contain fields and invalid dimensions
+  ---
+  duration_ms: 0.4859
+  type: 'test'
+  ...
+# Subtest: year zero and future never receive historical support
+ok 80 - year zero and future never receive historical support
+  ---
+  duration_ms: 0.2135
+  type: 'test'
+  ...
+# Subtest: stale and unsupported plan rows fail even with no runtime errors
+ok 81 - stale and unsupported plan rows fail even with no runtime errors
+  ---
+  duration_ms: 1.6796
+  type: 'test'
+  ...
+# Subtest: empty and truncated snapshots cannot pass
+ok 82 - empty and truncated snapshots cannot pass
+  ---
+  duration_ms: 2.7345
+  type: 'test'
+  ...
+# Subtest: 실제 패킷의 사찰·역·궁궐·산업 시설만 해당 외형과 기간으로 남는다
+ok 83 - 실제 패킷의 사찰·역·궁궐·산업 시설만 해당 외형과 기간으로 남는다
+  ---
+  duration_ms: 176.6656
+  type: 'test'
+  ...
+# Subtest: 실제 성곽·준천·비석·철거·복원·사리 봉안은 완료 뒤에도 시설 행이 없다
+ok 84 - 실제 성곽·준천·비석·철거·복원·사리 봉안은 완료 뒤에도 시설 행이 없다
+  ---
+  duration_ms: 195.4057
+  type: 'test'
+  ...
+# Subtest: 시설 외형이 바뀌면 재사용 키도 바뀐다
+ok 85 - 시설 외형이 바뀌면 재사용 키도 바뀐다
+  ---
+  duration_ms: 5.8875
+  type: 'test'
+  ...
+# Subtest: 산업 시설은 공장·발전·항만 경로로 조립하고 주변 사건 설명에 흔들리지 않는다
+ok 86 - 산업 시설은 공장·발전·항만 경로로 조립하고 주변 사건 설명에 흔들리지 않는다
+  ---
+  duration_ms: 4.0674
+  type: 'test'
+  ...
+# Subtest: 황룡사는 646·1237년에 존속하고 1238년 소실부터 사라진다
+ok 87 - 황룡사는 646·1237년에 존속하고 1238년 소실부터 사라진다
+  ---
+  duration_ms: 23.0113
+  type: 'test'
+  ...
+# Subtest: 경성역은 원 패킷이 활성인 1925년에는 중복하지 않고 1926년부터 존속한다
+ok 88 - 경성역은 원 패킷이 활성인 1925년에는 중복하지 않고 1926년부터 존속한다
+  ---
+  duration_ms: 34.5122
+  type: 'test'
+  ...
+# Subtest: 금성 축조 전승과 narrativeType·tradition 패킷은 어느 표시 연도에도 시설이 아니다
+ok 89 - 금성 축조 전승과 narrativeType·tradition 패킷은 어느 표시 연도에도 시설이 아니다
+  ---
+  duration_ms: 32.2754
+  type: 'test'
+  ...
+# Subtest: 남경 궁궐은 1300·1391년에 있고 1392년부터 없다
+ok 90 - 남경 궁궐은 1300·1391년에 있고 1392년부터 없다
+  ---
+  duration_ms: 27.6809
+  type: 'test'
+  ...
+# Subtest: 소멸 패킷 없는 사찰은 2020·2100년에도 남는다
+ok 91 - 소멸 패킷 없는 사찰은 2020·2100년에도 남는다
+  ---
+  duration_ms: 17.1391
+  type: 'test'
+  ...
+# Subtest: 행정 시설 상한은 착공이 아닌 건립 종료 뒤 첫 경계이며 1945년 경계도 적용한다
+ok 92 - 행정 시설 상한은 착공이 아닌 건립 종료 뒤 첫 경계이며 1945년 경계도 적용한다
+  ---
+  duration_ms: 2.6228
+  type: 'test'
+  ...
+# Subtest: 1795년 한성에서는 남경 궁궐과 북한산성 시설 행이 없다
+ok 93 - 1795년 한성에서는 남경 궁궐과 북한산성 시설 행이 없다
+  ---
+  duration_ms: 8.4183
+  type: 'test'
+  ...
+# 1795 HANSEONG radius=1deg: facilities=1
+# Subtest: 경복궁 건립 시설은 1592년 소실 이후인 1593년에 없다
+ok 94 - 경복궁 건립 시설은 1592년 소실 이후인 1593년에 없다
+  ---
+  duration_ms: 14.5466
+  type: 'test'
+  ...
+# Subtest: 2100년 상한 시설만 openEnded이고 2101년부터 표시하지 않는다
+ok 95 - 2100년 상한 시설만 openEnded이고 2101년부터 표시하지 않는다
+  ---
+  duration_ms: 10.5162
+  type: 'test'
+  ...
+# Subtest: 실제 건립 패킷의 시설 조립에는 공사 인력·손수레·건설 효과가 없고 반경은 12 이하이다
+ok 96 - 실제 건립 패킷의 시설 조립에는 공사 인력·손수레·건설 효과가 없고 반경은 12 이하이다
+  ---
+  duration_ms: 322.5057
+  type: 'test'
+  ...
+# Subtest: 시설 표시 연도와 시대가 바뀌어도 재사용 키와 조립 외형은 같다
+ok 97 - 시설 표시 연도와 시대가 바뀌어도 재사용 키와 조립 외형은 같다
+  ---
+  duration_ms: 41.5135
+  type: 'test'
+  ...
+# Subtest: 시설 표시는 남아 있는 건설 플래그·참여 집단·화재 효과보다 우선한다
+ok 98 - 시설 표시는 남아 있는 건설 플래그·참여 집단·화재 효과보다 우선한다
+  ---
+  duration_ms: 8.7118
+  type: 'test'
+  ...
+# Subtest: 좌표·이름을 함께 대조하고 가장 이른 소멸 기록을 선택한다
+ok 99 - 좌표·이름을 함께 대조하고 가장 이른 소멸 기록을 선택한다
+  ---
+  duration_ms: 1.2213
+  type: 'test'
+  ...
+# Subtest: 사찰은 소멸 기록까지, 궁궐은 소멸 기록과 왕조 경계 중 이른 때까지 남는다
+ok 100 - 사찰은 소멸 기록까지, 궁궐은 소멸 기록과 왕조 경계 중 이른 때까지 남는다
+  ---
+  duration_ms: 0.8334
+  type: 'test'
+  ...
+# Subtest: 실제 제주·강화 좌표에 둔 사찰도 링 폭을 시설 조립과 재사용 키에 반영한다
+ok 101 - 실제 제주·강화 좌표에 둔 사찰도 링 폭을 시설 조립과 재사용 키에 반영한다
+  ---
+  duration_ms: 2520.6163
+  type: 'test'
+  ...
+# Jeju: ringWidth=93.90625962475995, displayScale=0.5869141226547497
+# Ganghwa: ringWidth=21.944382706450085, displayScale=0.13715239191531303
+# Mainland: ringWidth=760.8770174538174, displayScale=0.7
+# Subtest: 외형 키워드는 제목·기능·요약·행동에서 순서대로 분류한다
+ok 102 - 외형 키워드는 제목·기능·요약·행동에서 순서대로 분류한다
+  ---
+  duration_ms: 2.8436
+  type: 'test'
+  ...
+# Subtest: 구별 외형 없는 시설과 철거·복원·행사 제목은 하위 필드가 사찰이어도 제외한다
+ok 103 - 구별 외형 없는 시설과 철거·복원·행사 제목은 하위 필드가 사찰이어도 제외한다
+  ---
+  duration_ms: 1.2176
+  type: 'test'
+  ...
+# Subtest: 상위 필드의 외형은 주변·부속 시설 설명보다 우선한다
+ok 104 - 상위 필드의 외형은 주변·부속 시설 설명보다 우선한다
+  ---
+  duration_ms: 0.5206
+  type: 'test'
+  ...
+# Subtest: 해안선 밖 표시 좌표는 제외하며 원 좌표·패킷은 바꾸지 않는다
+ok 105 - 해안선 밖 표시 좌표는 제외하며 원 좌표·패킷은 바꾸지 않는다
+  ---
+  duration_ms: 0.6463
+  type: 'test'
+  ...
+# Subtest: 링 안 시설도 표시 좌표 고도가 해수면 여유 높이 이하이거나 유한하지 않으면 제외한다
+ok 106 - 링 안 시설도 표시 좌표 고도가 해수면 여유 높이 이하이거나 유한하지 않으면 제외한다
+  ---
+  duration_ms: 1.2275
+  type: 'test'
+  ...
+# Subtest: 실제 ChronicleWorld로 바다 시설을 제외하고 1450년 전주 반경 1도의 시설은 모두 육지에 둔다
+ok 107 - 실제 ChronicleWorld로 바다 시설을 제외하고 1450년 전주 반경 1도의 시설은 모두 육지에 둔다
+  ---
+  duration_ms: 49.1661
+  type: 'test'
+  ...
+# 1450 JEONJU radius=1deg: {"before":6,"after":6,"seaLevel":7,"excluded":[],"land":[{"id":"scene-syj128-haeinsa-802","title":"해인사 창건 착수 — 합천 가야산 (802)","coordinates":[128.09833333333333,35.801111111111105],"insideRing":true,"surface":9.449225580193582},{"id":"scene-syj128-silsangsa-828","title":"실상사 창건과 실상산문 개산 — 남원 지리산 (828)","coordinates":[127.6363888888889,35.41694444444444],"insideRing":true,"surface":18.981498727229717},{"id":"scene-bj-wangheungsa-600","title":"왕흥사 창건과 준공 — 부여 규암 (600~634)","coordinates":[126.90694,36.29639],"insideRing":true,"surface":7.92787215773094},{"id":"scene-cfc-daetongsa-527","title":"대통사 창건 — 웅천주(공주) (527)","coordinates":[127.117,36.45],"insideRing":true,"surface":8.091842407399815},{"id":"scene-cfc-wangheungsa-600","title":"왕흥사 창건 — 부여 (600)","coordinates":[126.90694,36.29639],"insideRing":true,"surface":7.92787215773094},{"id":"scene-us2-gaeseonsa-868","title":"개선사 석등과 기름값 조 300석 (868)","coordinates":[126.98278,35.18556],"insideRing":true,"surface":8.315849158443}]}
+# 2020 BUSAN excluded: {"title":"부산항 개항과 축항 공사 (1876)","coordinates":[129.07889,35.10389]}
+# Subtest: 링 순서와 꼭짓점 수 대신 면적으로 본토를 고르고 캐시 키는 링 폭 변경을 따른다
+ok 108 - 링 순서와 꼭짓점 수 대신 면적으로 본토를 고르고 캐시 키는 링 폭 변경을 따른다
+  ---
+  duration_ms: 6.9892
+  type: 'test'
+  ...
+# Subtest: 장소명 대체·근거 필터를 적용하고 원 패킷은 바꾸지 않는다
+ok 109 - 장소명 대체·근거 필터를 적용하고 원 패킷은 바꾸지 않는다
+  ---
+  duration_ms: 16.8206
+  type: 'test'
+  ...
+# Subtest: without context all legacy period and latitude thresholds remain exact
+ok 110 - without context all legacy period and latitude thresholds remain exact
+  ---
+  duration_ms: 2.1114
+  type: 'test'
+  ...
+# Subtest: 900 households multiply nearby threshold by about 1.34 with inclusive distance and year boundaries
+ok 111 - 900 households multiply nearby threshold by about 1.34 with inclusive distance and year boundaries
+  ---
+  duration_ms: 0.6717
+  type: 'test'
+  ...
+# Subtest: nearest eligible record wins; population conversion, count floor and final clamp apply
+ok 112 - nearest eligible record wins; population conversion, count floor and final clamp apply
+  ---
+  duration_ms: 0.4831
+  type: 'test'
+  ...
+# Subtest: selection forwards site coordinates and current year and preserves seed determinism
+ok 113 - selection forwards site coordinates and current year and preserves seed determinism
+  ---
+  duration_ms: 1.5201
+  type: 'test'
+  ...
+# Subtest: administrative cities and institutions become dated zones and planned sites
+ok 114 - administrative cities and institutions become dated zones and planned sites
+  ---
+  duration_ms: 25.7261
+  type: 'test'
+  ...
+# Subtest: existing scene and place zones win within .03 degrees and overlapping dates
+ok 115 - existing scene and place zones win within .03 degrees and overlapping dates
+  ---
+  duration_ms: 2.7048
+  type: 'test'
+  ...
+# Subtest: facility is excluded and counted, and none is not a settlement zone
+ok 116 - facility is excluded and counted, and none is not a settlement zone
+  ---
+  duration_ms: 1.1204
+  type: 'test'
+  ...
+# Subtest: world loading fetches once and shares the same object with density and both zone consumers
+ok 117 - world loading fetches once and shares the same object with density and both zone consumers
+  ---
+  duration_ms: 8.4914
+  type: 'test'
+  ...
+# Subtest: failed fact fetch reports the failure and keeps legacy scenery available
+ok 118 - failed fact fetch reports the failure and keeps legacy scenery available
+  ---
+  duration_ms: 1.0638
+  type: 'test'
+  ...
+# Subtest: same-era year changes refresh density selection across the record window
+ok 119 - same-era year changes refresh density selection across the record window
+  ---
+  duration_ms: 0.7229
+  type: 'test'
+  ...
+# Subtest: capital has many small houses, separate wards, market and peripheral hamlets
+ok 120 - capital has many small houses, separate wards, market and peripheral hamlets
+  ---
+  duration_ms: 2.1216
+  type: 'test'
+  ...
+# Subtest: port, fortified, capital and town have distinct reproducible layouts
+ok 121 - port, fortified, capital and town have distinct reproducible layouts
+  ---
+  duration_ms: 4.2027
+  type: 'test'
+  ...
+# Subtest: compact scenes keep exactly one primary and layout never changes dates or evidence
+ok 122 - compact scenes keep exactly one primary and layout never changes dates or evidence
+  ---
+  duration_ms: 0.8691
+  type: 'test'
+  ...
+# Subtest: capital role keeps evidence interval separate from city existence
+ok 123 - capital role keeps evidence interval separate from city existence
+  ---
+  duration_ms: 0.6206
+  type: 'test'
+  ...
+# Subtest: scene identity reuses years inside an era and changes at building or dress boundaries
+ok 124 - scene identity reuses years inside an era and changes at building or dress boundaries
+  ---
+  duration_ms: 90.2176
+  type: 'test'
+  ...
+# Subtest: modern role endings retain anonymous city without extending named roles or actors
+ok 125 - modern role endings retain anonymous city without extending named roles or actors
+  ---
+  duration_ms: 22.1722
+  type: 'test'
+  ...
+# Subtest: modern city has connected varied blocks without a rural ward template
+ok 126 - modern city has connected varied blocks without a rural ward template
+  ---
+  duration_ms: 0.7782
+  type: 'test'
+  ...
+# Subtest: only dated settlements and explicitly selected livelihoods create zones
+ok 127 - only dated settlements and explicitly selected livelihoods create zones
+  ---
+  duration_ms: 10.1115
+  type: 'test'
+  ...
+# Subtest: missing dates, missing evidence and between-record estimates do not invent occupation
+ok 128 - missing dates, missing evidence and between-record estimates do not invent occupation
+  ---
+  duration_ms: 0.4187
+  type: 'test'
+  ...
+# Subtest: institutional coordinates take priority but conflicting institutional points are not chosen arbitrarily
+ok 129 - institutional coordinates take priority but conflicting institutional points are not chosen arbitrarily
+  ---
+  duration_ms: 23.5077
+  type: 'test'
+  ...
+# Subtest: broad geographic places and undated candidates do not generate cities
+ok 130 - broad geographic places and undated candidates do not generate cities
+  ---
+  duration_ms: 0.6949
+  type: 'test'
+  ...
+# Subtest: documented regional city points can support anonymous scenery without an archaeological grounded flag
+ok 131 - documented regional city points can support anonymous scenery without an archaeological grounded flag
+  ---
+  duration_ms: 1.2605
+  type: 'test'
+  ...
+# Subtest: 점유 격자는 칸 경계·음수 좌표·큰 원·접점에서 전수 검사와 같다
+ok 132 - 점유 격자는 칸 경계·음수 좌표·큰 원·접점에서 전수 검사와 같다
+  ---
+  duration_ms: 138.7332
+  type: 'test'
+  ...
+# Subtest: 패드는 낮음을 추천한다
+ok 133 - 패드는 낮음을 추천한다
+  ---
+  duration_ms: 1.5365
+  type: 'test'
+  ...
+# Subtest: 저사양 노트북은 낮음을 추천한다
+ok 134 - 저사양 노트북은 낮음을 추천한다
+  ---
+  duration_ms: 0.3187
+  type: 'test'
+  ...
+# Subtest: 데스크톱은 높음을 추천한다
+ok 135 - 데스크톱은 높음을 추천한다
+  ---
+  duration_ms: 0.263
+  type: 'test'
+  ...
+# Subtest: Mac UA 아이패드도 터치로 판별한다
+ok 136 - Mac UA 아이패드도 터치로 판별한다
+  ---
+  duration_ms: 0.2443
+  type: 'test'
+  ...
+# Subtest: 저장값은 추천보다 우선하며 자동 결과를 보존한다
+ok 137 - 저장값은 추천보다 우선하며 자동 결과를 보존한다
+  ---
+  duration_ms: 1.2882
+  type: 'test'
+  ...
+# Subtest: 추천값도 자동 시작점이다
+ok 138 - 추천값도 자동 시작점이다
+  ---
+  duration_ms: 0.2661
+  type: 'test'
+  ...
+# Subtest: 수동 저장값은 복원하고 query는 저장하지 않는다
+ok 139 - 수동 저장값은 복원하고 query는 저장하지 않는다
+  ---
+  duration_ms: 0.2807
+  type: 'test'
+  ...
+# Subtest: 4코어 16GB 데스크톱은 보통이다
+ok 140 - 4코어 16GB 데스크톱은 보통이다
+  ---
+  duration_ms: 0.1356
+  type: 'test'
+  ...
+# Subtest: 16코어 Windows 터치 노트북은 높음이다
+ok 141 - 16코어 Windows 터치 노트북은 높음이다
+  ---
+  duration_ms: 0.38
+  type: 'test'
+  ...
+# Subtest: 정보 없는 8코어 Safari도 높음이며 2코어는 낮음이다
+ok 142 - 정보 없는 8코어 Safari도 높음이며 2코어는 낮음이다
+  ---
+  duration_ms: 0.5183
+  type: 'test'
+  ...
+# Subtest: 검증용 query는 저장값보다 우선한다
+ok 143 - 검증용 query는 저장값보다 우선한다
+  ---
+  duration_ms: 0.2122
+  type: 'test'
+  ...
+# Subtest: 정보 누락, 잘못된 저장값, 고밀도 화면은 보통으로 시작한다
+ok 144 - 정보 누락, 잘못된 저장값, 고밀도 화면은 보통으로 시작한다
+  ---
+  duration_ms: 0.1997
+  type: 'test'
+  ...
+# Subtest: all 13 actual imported city packets appear only inside their reviewed intervals
+ok 145 - all 13 actual imported city packets appear only inside their reviewed intervals
+  ---
+  duration_ms: 16.8346
+  type: 'test'
+  ...
+# Subtest: native supported-claim checks remove a city when its source is deselected
+ok 146 - native supported-claim checks remove a city when its source is deselected
+  ---
+  duration_ms: 2.0363
+  type: 'test'
+  ...
+# Subtest: issue \#173 packets carry the expected sceneFunction
+ok 147 - issue \#173 packets carry the expected sceneFunction
+  ---
+  duration_ms: 8.0713
+  type: 'test'
+  ...
+# Subtest: every sceneFunction and participantGroups in the file use the allowed vocabulary and known claim ids
+ok 148 - every sceneFunction and participantGroups in the file use the allowed vocabulary and known claim ids
+  ---
+  duration_ms: 6.3683
+  type: 'test'
+  ...
+# Subtest: packets that were given participantGroups have the requested groups
+ok 149 - packets that were given participantGroups have the requested groups
+  ---
+  duration_ms: 1.6258
+  type: 'test'
+  ...
+# Subtest: sceneFunction rail_station: station 포함, korean_hall/palace 없음
+ok 150 - sceneFunction rail_station: station 포함, korean_hall/palace 없음
+  ---
+  duration_ms: 10.8805
+  type: 'test'
+  ...
+# Subtest: uprising_battle + participantGroups: attacker 8·defender 6, archetype 이 다름
+ok 151 - uprising_battle + participantGroups: attacker 8·defender 6, archetype 이 다름
+  ---
+  duration_ms: 6.6228
+  type: 'test'
+  ...
+# Subtest: civil_conflict: civilian bystander 군집은 soldier archetype 을 쓰지 않는다
+ok 152 - civil_conflict: civilian bystander 군집은 soldier archetype 을 쓰지 않는다
+  ---
+  duration_ms: 1.3603
+  type: 'test'
+  ...
+# Subtest: migration: handcart 포함, 12명 walking 한 줄
+ok 153 - migration: handcart 포함, 12명 walking 한 줄
+  ---
+  duration_ms: 0.5168
+  type: 'test'
+  ...
+# Subtest: sceneFunction 없는 기존 battle 패킷은 10+10 그대로 (회귀)
+ok 154 - sceneFunction 없는 기존 battle 패킷은 10+10 그대로 (회귀)
+  ---
+  duration_ms: 1.0198
+  type: 'test'
+  ...
+# Subtest: activityFigure: 비구니 → monk
+ok 155 - activityFigure: 비구니 → monk
+  ---
+  duration_ms: 0.3962
+  type: 'test'
+  ...
+# Subtest: figureArchetype: 새 역할은 카탈로그에 있는 archetype 또는 commoner 폴백
+ok 156 - figureArchetype: 새 역할은 카탈로그에 있는 archetype 또는 commoner 폴백
+  ---
+  duration_ms: 0.1855
+  type: 'test'
+  ...
+# Subtest: 모든 sceneFunction 이 평지·해안 stub 에서 예외 없이 구성된다
+ok 157 - 모든 sceneFunction 이 평지·해안 stub 에서 예외 없이 구성된다
+  ---
+  duration_ms: 7.2188
+  type: 'test'
+  ...
+# Subtest: low budget and shared medium/high object
+ok 158 - low budget and shared medium/high object
+  ---
+  duration_ms: 2.5252
+  type: 'test'
+  ...
+# Subtest: scale defaults to the old threshold and low is one quarter
+ok 159 - scale defaults to the old threshold and low is one quarter
+  ---
+  duration_ms: 0.5463
+  type: 'test'
+  ...
+# Subtest: real planner/selector: deterministic subset, mixed layouts, island retained
+ok 160 - real planner/selector: deterministic subset, mixed layouts, island retained
+  ---
+  duration_ms: 26.034
+  type: 'test'
+  ...
+# Subtest: fallback and cell cap cannot introduce sites missing from medium
+ok 161 - fallback and cell cap cannot introduce sites missing from medium
+  ---
+  duration_ms: 1.7551
+  type: 'test'
+  ...
+# Subtest: medium/high and automatic downgrade skip rebuilds; low invalidates once
+ok 162 - medium/high and automatic downgrade skip rebuilds; low invalidates once
+  ---
+  duration_ms: 0.8498
+  type: 'test'
+  ...
+# Subtest: original Seoul and Gangnam survive a larger documented urban site at the Seoul center
+ok 163 - original Seoul and Gangnam survive a larger documented urban site at the Seoul center
+  ---
+  duration_ms: 5.3323
+  type: 'test'
+  ...
+# Subtest: documented urban stays alone and inside a major radius at a different center
+ok 164 - documented urban stays alone and inside a major radius at a different center
+  ---
+  duration_ms: 0.5148
+  type: 'test'
+  ...
+# Subtest: same-center priority applies below 0.1 and leaves the boundary and different kinds intact
+ok 165 - same-center priority applies below 0.1 and leaves the boundary and different kinds intact
+  ---
+  duration_ms: 0.5481
+  type: 'test'
+  ...
+# Subtest: estimated sites remain selected only when their IDs are present
+ok 166 - estimated sites remain selected only when their IDs are present
+  ---
+  duration_ms: 0.3211
+  type: 'test'
+  ...
+# Subtest: other duplicates keep radius priority and the ID tie-break
+ok 167 - other duplicates keep radius priority and the ID tie-break
+  ---
+  duration_ms: 13.2594
+  type: 'test'
+  ...
+# Subtest: documented Jeju remains when its original urban profile is suppressed by an active scene
+ok 168 - documented Jeju remains when its original urban profile is suppressed by an active scene
+  ---
+  duration_ms: 0.7063
+  type: 'test'
+  ...
+# Subtest: site availability uses only occupied radius and preserves documented/urban exemptions
+ok 169 - site availability uses only occupied radius and preserves documented/urban exemptions
+  ---
+  duration_ms: 23.6992
+  type: 'test'
+  ...
+# Subtest: a radius 3 footprint removes only overlapping settlementLayout houses and retains the village
+ok 170 - a radius 3 footprint removes only overlapping settlementLayout houses and retains the village
+  ---
+  duration_ms: 35.8472
+  type: 'test'
+  ...
+# Subtest: scene radii persist for paths and the original occupancy refresh conditions
+ok 171 - scene radii persist for paths and the original occupancy refresh conditions
+  ---
+  duration_ms: 18.6588
+  type: 'test'
+  ...
+# Subtest: 1795 Jeju retains estimated villages with actual Kim Mandeok scene occupancy
+ok 172 - 1795 Jeju retains estimated villages with actual Kim Mandeok scene occupancy
+  ---
+  duration_ms: 6535.5589
+  type: 'test'
+  ...
+# Subtest: near homes match coarse footprint area using measured era geometry, with cached measurements
+ok 173 - near homes match coarse footprint area using measured era geometry, with cached measurements
+  ---
+  duration_ms: 428.7511
+  type: 'test'
+  ...
+# Subtest: urban near facades preserve the same tall bodies and same-period scrubs reuse geometry
+ok 174 - urban near facades preserve the same tall bodies and same-period scrubs reuse geometry
+  ---
+  duration_ms: 18.1923
+  type: 'test'
+  ...
+# Subtest: one event occupancy clips individual city parcels without erasing its neighborhood
+ok 175 - one event occupancy clips individual city parcels without erasing its neighborhood
+  ---
+  duration_ms: 27.6836
+  type: 'test'
+  ...
+# Subtest: documented zone activation uses its actual year and reuses geometry between boundaries
+ok 176 - documented zone activation uses its actual year and reuses geometry between boundaries
+  ---
+  duration_ms: 0.6279
+  type: 'test'
+  ...
+# Subtest: year scrubs rebuild only changed site layouts, details and affected far batches
+ok 177 - year scrubs rebuild only changed site layouts, details and affected far batches
+  ---
+  duration_ms: 135.5392
+  type: 'test'
+  ...
+# Subtest: filtered and distance-sorted detail houses keep their far variant, yaw and site-period people
+ok 178 - filtered and distance-sorted detail houses keep their far variant, yaw and site-period people
+  ---
+  duration_ms: 24.9728
+  type: 'test'
+  ...
+# Subtest: far scenery uses direct bounded geometry for thousands of homes in all periods
+ok 179 - far scenery uses direct bounded geometry for thousands of homes in all periods
+  ---
+  duration_ms: 1734.7136
+  type: 'test'
+  ...
+# Subtest: near selection hides and restores only matching coarse homes
+ok 180 - near selection hides and restores only matching coarse homes
+  ---
+  duration_ms: 4.8977
+  type: 'test'
+  ...
+# Subtest: asset recipes preserve planned house yaw and default existing recipes to zero
+ok 181 - asset recipes preserve planned house yaw and default existing recipes to zero
+  ---
+  duration_ms: 10.824
+  type: 'test'
+  ...
+# Subtest: early period has no fields and different roof palettes remain visible
+ok 182 - early period has no fields and different roof palettes remain visible
+  ---
+  duration_ms: 2.8357
+  type: 'test'
+  ...
+# Subtest: far homes retain cone, gable and flat topology within twenty percent of the old triangle budget
+ok 183 - far homes retain cone, gable and flat topology within twenty percent of the old triangle budget
+  ---
+  duration_ms: 2022.1758
+  type: 'test'
+  ...
+# Subtest: actual vertex peaks distinguish prehistoric cones, Joseon ridges and modern flat boxes
+ok 184 - actual vertex peaks distinguish prehistoric cones, Joseon ridges and modern flat boxes
+  ---
+  duration_ms: 13.8077
+  type: 'test'
+  ...
+# Subtest: far roofs use the selected detailed blueprint proportions and preserve combined site and house yaw
+ok 185 - far roofs use the selected detailed blueprint proportions and preserve combined site and house yaw
+  ---
+  duration_ms: 16.8404
+  type: 'test'
+  ...
+# Subtest: site periods deterministically scatter every boundary without reversing nearby transitions
+ok 186 - site periods deterministically scatter every boundary without reversing nearby transitions
+  ---
+  duration_ms: 5.4786
+  type: 'test'
+  ...
+# Subtest: rural layouts and people follow the site period while urban dates stay exact
+ok 187 - rural layouts and people follow the site period while urban dates stay exact
+  ---
+  duration_ms: 11.3974
+  type: 'test'
+  ...
+# Subtest: 1980 Pyongyang outskirts use the same modern rural housing and stores as the south
+ok 188 - 1980 Pyongyang outskirts use the same modern rural housing and stores as the south
+  ---
+  duration_ms: 37.8589
+  type: 'test'
+  ...
+# Subtest: background settlements exist only at supplied documented locations, with provenance
+ok 189 - background settlements exist only at supplied documented locations, with provenance
+  ---
+  duration_ms: 17.6313
+  type: 'test'
+  ...
+# Subtest: documented period boundaries control habitation without moving or inventing sites
+ok 190 - documented period boundaries control habitation without moving or inventing sites
+  ---
+  duration_ms: 1.7692
+  type: 'test'
+  ...
+# Subtest: anonymous parcels vary inside source-backed zones while ancient settlements stay smaller
+ok 191 - anonymous parcels vary inside source-backed zones while ancient settlements stay smaller
+  ---
+  duration_ms: 25.9477
+  type: 'test'
+  ...
+# PASS: concavity, holes, largest component, land rejection, transform, Korean names, temporal boundaries, source/origin filters
+# PASS: checked-in catalog names and interior anchors at 600 and 1500
+# Subtest: tests\\territory-labels.test.mjs
+ok 28 - tests\\territory-labels.test.mjs
+  ---
+  duration_ms: 462.0654
+  type: 'test'
+  ...
+# Subtest: text and attributes escape all HTML delimiters
+ok 193 - text and attributes escape all HTML delimiters
+  ---
+  duration_ms: 1.4405
+  type: 'test'
+  ...
+# Subtest: external links permit HTTP(S) and escape attributes and captions
+ok 194 - external links permit HTTP(S) and escape attributes and captions
+  ---
+  duration_ms: 21.2606
+  type: 'test'
+  ...
+# Subtest: highlighting works on original text, never generated markup
+ok 195 - highlighting works on original text, never generated markup
+  ---
+  duration_ms: 1.1757
+  type: 'test'
+  ...
+# Subtest: scan image links preserve HTTP URLs and escape captions without executable markup
+ok 196 - scan image links preserve HTTP URLs and escape captions without executable markup
+  ---
+  duration_ms: 0.471
+  type: 'test'
+  ...
+# Subtest: a shared coordinate source does not turn another historical opinion into the main lens
+ok 197 - a shared coordinate source does not turn another historical opinion into the main lens
+  ---
+  duration_ms: 3.2517
+  type: 'test'
+  ...
+# Subtest: each coordinate follows its own source and derived points require both sources
+ok 198 - each coordinate follows its own source and derived points require both sources
+  ---
+  duration_ms: 0.5368
+  type: 'test'
+  ...
+# Subtest: date boundaries and undated candidates are shared
+ok 199 - date boundaries and undated candidates are shared
+  ---
+  duration_ms: 0.3342
+  type: 'test'
+  ...
+# Subtest: place and candidate periods must both contain the year
+ok 200 - place and candidate periods must both contain the year
+  ---
+  duration_ms: 0.3636
+  type: 'test'
+  ...
+# Subtest: source omission, all-off and matching selection have distinct behavior
+ok 201 - source omission, all-off and matching selection have distinct behavior
+  ---
+  duration_ms: 0.4155
+  type: 'test'
+  ...
+# Subtest: a researched place remains scoped to its source even without text matches
+ok 202 - a researched place remains scoped to its source even without text matches
+  ---
+  duration_ms: 0.2437
+  type: 'test'
+  ...
+# Subtest: origin filter inherits provenance without treating missing authorship as human
+ok 203 - origin filter inherits provenance without treating missing authorship as human
+  ---
+  duration_ms: 0.2994
+  type: 'test'
+  ...
+# Subtest: small collections keep individual rows and order
+ok 204 - small collections keep individual rows and order
+  ---
+  duration_ms: 2.063
+  type: 'test'
+  ...
+# Subtest: groups retain every edition and distinguish partial selection
+ok 205 - groups retain every edition and distinguish partial selection
+  ---
+  duration_ms: 1.9207
+  type: 'test'
+  ...
+# Subtest: urban families compile concrete geometry, with low postwar and taller modern blocks
+ok 206 - urban families compile concrete geometry, with low postwar and taller modern blocks
+  ---
+  duration_ms: 22.5734
+  type: 'test'
+  ...
+# Subtest: 2010 major city cores contain neighborhoods, public space and workplaces, not fields
+ok 207 - 2010 major city cores contain neighborhoods, public space and workplaces, not fields
+  ---
+  duration_ms: 11.1865
+  type: 'test'
+  ...
+# Subtest: growth bands retain low-rise 1960 and distinguish 1975 from later skylines
+ok 208 - growth bands retain low-rise 1960 and distinguish 1975 from later skylines
+  ---
+  duration_ms: 0.8003
+  type: 'test'
+  ...
+# Subtest: north remains modern and cities persist across event and administrative end years
+ok 209 - north remains modern and cities persist across event and administrative end years
+  ---
+  duration_ms: 13.071
+  type: 'test'
+  ...
+# Subtest: tap is exactly one year and release cancels all future movement
+ok 210 - tap is exactly one year and release cancels all future movement
+  ---
+  duration_ms: 3.3897
+  type: 'test'
+  ...
+# Subtest: sustained input accelerates progressively and reversal resets acceleration
+ok 211 - sustained input accelerates progressively and reversal resets acceleration
+  ---
+  duration_ms: 0.8819
+  type: 'test'
+  ...
+# Subtest: BCE crossing has no zero and boundaries stop the scheduler
+ok 212 - BCE crossing has no zero and boundaries stop the scheduler
+  ---
+  duration_ms: 0.4588
+  type: 'test'
+  ...
+# Subtest: repeated keydown does not restart hold and external navigation can cancel without commit
+ok 213 - repeated keydown does not restart hold and external navigation can cancel without commit
+  ---
+  duration_ms: 0.2657
+  type: 'test'
+  ...
+# Subtest: pointer cancellation, lost capture, key release, blur and hidden tab stop immediately
+ok 214 - pointer cancellation, lost capture, key release, blur and hidden tab stop immediately
+  ---
+  duration_ms: 3.1902
+  type: 'test'
+  ...
+# Subtest: slider uses relative movement, starts with one year, accelerates and resets on reversal
+ok 215 - slider uses relative movement, starts with one year, accelerates and resets on reversal
+  ---
+  duration_ms: 1.9313
+  type: 'test'
+  ...
+1..215
+# tests 215
+# suites 0
+# pass 215
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7920.9008

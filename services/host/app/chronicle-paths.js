@@ -49,7 +49,7 @@ export class CountrysidePaths{
     }
     const key=this.routes.map(r=>r.segments.map(v=>v?'1':'0').join('')).join('|');if(key===this.key)return;this.key=key;
     for(const [estimated,mesh] of [[false,this.mesh],[true,this.estimatedMesh]]){
-      const positions=this.routes.filter(r=>(isEstimatedSite(r.a)||isEstimatedSite(r.b))===estimated)
+      const positions=this.routes.filter(r=>(isEstimatedSite(r.a)&&isEstimatedSite(r.b))===estimated)
         .flatMap(r=>r.segments.flatMap((active,i)=>active?r.positions.slice(i*18,(i+1)*18):[]));
       const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.computeVertexNormals();
       mesh.geometry.dispose();mesh.geometry=g;

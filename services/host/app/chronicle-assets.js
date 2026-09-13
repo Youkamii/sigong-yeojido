@@ -13,7 +13,7 @@ import {createCityLOD} from './city-lod.js';
 import {sceneVisualKey} from './chronicle-persistence.js';
 import {urbanRegionAt} from './urban-regions.js';
 import {sceneBudget} from './scene-quality.js';
-import {inEstimatedSite,setEstimatedMesh,sharedSceneryMaterial,originalEstimatedMaterial} from './scenery-estimated-dim.js';
+import {originalEstimatedMaterial} from './scenery-estimated-dim.js';
 
 export function pickableRow(row){
   const background=row.siteBackground;
@@ -34,7 +34,7 @@ function release(group){
     if(o.geometry)geometries.add(o.geometry);
     for(const m of [o.material,o.customDepthMaterial,o.customDistanceMaterial].flat())if(m)materials.add(originalEstimatedMaterial(m));
   });
-  geometries.forEach(g=>g.dispose());materials.forEach(m=>{if(!m.userData.sceneryShared)m.dispose();});group.removeFromParent();
+  geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());group.removeFromParent();
 }
 
 // Fantology terrain.js: the trees actually used in its world scene.
@@ -86,8 +86,7 @@ export class ChronicleAssets{
   }
   buildForest(occupied,scenes=[]){
     const budget=sceneBudget(this.engine.quality);
-    const backgroundSites=this.scenery.backgroundSites();
-    const forestKey=JSON.stringify([occupied.map(o=>[o.x,o.z,o.radius]),scenes,this.scenery.paths.key,budget.treeTrials,backgroundSites.map(s=>[s.id,s.estimated,s.documented,s.kind])]);
+    const forestKey=JSON.stringify([occupied.map(o=>[o.x,o.z,o.radius]),scenes,this.scenery.paths.key,budget.treeTrials]);
     if(this.forestKey===forestKey)return;
     const group=new THREE.Group();group.name='peninsula-woods';
     const b=this.world.bounds,candidates=this.treeCandidates||[];
@@ -136,9 +135,9 @@ export class ChronicleAssets{
       if(crowded(x,z,2.8*scene.scale))continue;
       const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=scene.scale;positions.push(p);register(p);
     }
-    const geometry=makeTreeGeometry(),material=sharedSceneryMaterial(makeSurface({preset:'MAT_FOLIAGE',vertexColors:true,color:WHITE},{wind:.9,windAxis:'y',key:'tree'}));
+    const geometry=makeTreeGeometry(),material=makeSurface({preset:'MAT_FOLIAGE',vertexColors:true,color:WHITE},{wind:.9,windAxis:'y',key:'tree'});
     const regions=new Map();
-    for(const p of positions){p.estimatedBackground=inEstimatedSite(p.x,p.z,backgroundSites);const key=Math.floor(p.x/96)+':'+Math.floor(p.z/96)+':'+p.estimatedBackground;
+    for(const p of positions){const key=Math.floor(p.x/96)+':'+Math.floor(p.z/96);
       if(!regions.has(key))regions.set(key,[]);regions.get(key).push(p);}
     const matrix=new THREE.Matrix4(),q=new THREE.Quaternion(),scale=new THREE.Vector3(),biome=biomeByName('forest');
     for(const [key,region] of regions){
@@ -151,13 +150,10 @@ export class ChronicleAssets{
       });
       trees.instanceMatrix.needsUpdate=true;if(trees.instanceColor)trees.instanceColor.needsUpdate=true;
       trees.name='fan-trees:'+key;trees.computeBoundingSphere();group.add(trees);
-      trees.userData.estimatedBackground=region[0].estimatedBackground;
     }
-    if(!positions.length)geometry.dispose();
+    if(!positions.length){geometry.dispose();material.dispose();}
     if(this.forest){this.engine.remove(this.forest);release(this.forest);}
-    this.forest=group;this.forestPositions=positions;this.engine.add(group);
-    group.traverse(o=>{if(o.userData.estimatedBackground)setEstimatedMesh(o,this.scenery.estimatedDim!==false);});
-    this.forestKey=forestKey;
+    this.forest=group;this.forestPositions=positions;this.engine.add(group);this.forestKey=forestKey;
   }
   rebuild(plan){
     const next=new THREE.Group();next.name='chronicle-assets';

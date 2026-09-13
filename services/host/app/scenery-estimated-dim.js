@@ -1,24 +1,6 @@
-const variants=new WeakMap(),originals=new WeakMap(),meshStates=new WeakMap();
-const sceneryMaterials=new Map();
+const variants=new WeakMap(),originals=new WeakMap();
 
-export const isEstimatedSite=site=>site?.estimated===true&&site.documented!==true&&site.kind!=='urban';
-
-export function inEstimatedSite(x,z,sites){
-  const inside=site=>Math.hypot(x-site.x,z-site.z)<=site.radius;
-  return !sites.some(site=>(site.documented===true||site.kind==='urban')&&inside(site))
-    &&sites.some(site=>isEstimatedSite(site)&&inside(site));
-}
-
-// Scenery factories use the same family presets, without per-scene time uniforms.
-export function sharedSceneryMaterial(material){
-  const patch=material.userData.fanPatch;
-  if(!patch)return material;
-  const key=material.type+'|'+material.customProgramCacheKey();
-  if(!sceneryMaterials.has(key)){material.userData.sceneryShared=true;sceneryMaterials.set(key,material);}
-  const shared=sceneryMaterials.get(key);
-  if(shared!==material)material.dispose();
-  return shared;
-}
+export const isEstimatedSite=site=>site?.estimated===true;
 
 // Transform the combined material, vertex and instance color once, before lighting.
 export function dimmedMaterialFor(material,on,opaque=false){
@@ -47,23 +29,14 @@ export function dimmedMaterialFor(material,on,opaque=false){
 
 export function setEstimatedMesh(mesh,on){
   if(!mesh.isMesh)return;
-  let state=meshStates.get(mesh);
-  if(!state){state={material:mesh.material,castShadow:mesh.castShadow};meshStates.set(mesh,state);}
+  mesh.userData.castShadowBase??=mesh.castShadow;
   const dim=!!on&&mesh.userData.estimatedBackground===true;
   const material=m=>dimmedMaterialFor(m,dim,mesh.userData.estimatedOpaque===true);
-  mesh.material=Array.isArray(state.material)?state.material.map(material):material(state.material);
-  mesh.castShadow=dim?false:state.castShadow;
+  mesh.material=Array.isArray(mesh.material)?mesh.material.map(material):material(mesh.material);
+  mesh.castShadow=dim?false:mesh.userData.castShadowBase;
 }
 
 export function markEstimatedGroup(group,estimated,on){
-  if(!group.userData.sceneryMaterialsShared){
-    const shared=new Map();
-    group.traverse(mesh=>{if(mesh.isMesh){
-      const material=m=>{if(!shared.has(m))shared.set(m,sharedSceneryMaterial(m));return shared.get(m);};
-      mesh.material=Array.isArray(mesh.material)?mesh.material.map(material):material(mesh.material);
-    }});
-    group.userData.sceneryMaterialsShared=true;
-  }
   group.traverse(mesh=>{if(mesh.isMesh){mesh.userData.estimatedBackground=estimated;setEstimatedMesh(mesh,on);}});
 }
 
