@@ -12,18 +12,15 @@ import re
 import sys
 from urllib.parse import unquote, urlparse
 
-from scene_vocabulary import HERITAGE_TYPES
+from scene_vocabulary import KINDS, PLACE_SETTINGS, scene_kind_errors
 from search_chunks import ROOT, SOURCES, iter_chunks, year_of
 
 CATEGORIES = ('settlement', 'administration', 'facility', 'economy', 'disaster',
               'culture', 'transport', 'foreign', 'person', 'war')
 REGIONS = ('capital', 'north', 'central', 'south', 'island')
-KINDS = ('settlement', 'construction', 'battle', 'siege', 'naval', 'fire', 'court',
-         'assembly', 'publication', 'excavation', 'tradition', 'disaster', 'relief',
-         'market', 'ritual', 'migration', 'survey', 'portrait', 'heritage')
 FUNCTIONS = ('rail_station', 'temple', 'print_workshop', 'migration', 'persecution',
              'naval_expedition', 'civil_conflict', 'uprising_battle', 'market', 'relief',
-             'construction_site', 'fortress', 'harbor', 'kiln', 'irrigation', 'portrait', 'heritage')
+             'construction_site', 'fortress', 'harbor', 'kiln', 'irrigation')
 WEB_HOSTS = ('encykorea.aks.ac.kr', 'ko.wikipedia.org', 'en.wikipedia.org',
              'heritage.go.kr', 'museum.go.kr', 'nrich.go.kr')
 
@@ -379,11 +376,8 @@ class Check:
     def scene(self, scene):
         item = f'scenes[{scene["id"]}]'
         self.category_decade(scene, 'startYear', item)
-        self.enum(scene['kind'], KINDS, item + '.kind')
-        if scene['kind'] == 'heritage' or 'heritageType' in scene:
-            self.enum(scene.get('heritageType'), HERITAGE_TYPES, item + '.heritageType')
-        if 'heritageFloors' in scene and (type(scene['heritageFloors']) is not int or scene['heritageFloors'] not in (3, 5)):
-            self.fail(item + '.heritageFloors', '3 또는 5가 필요합니다')
+        for field, message in scene_kind_errors(scene):
+            self.fail(item + '.' + field, message)
         if scene['startYear'] > scene['endYear']:
             self.fail(item, 'startYear > endYear')
         for key in ('dateClaimIds', 'actionClaimIds'):
@@ -391,7 +385,7 @@ class Check:
         if 'relatedClaimIds' in scene:
             self.refs(scene['relatedClaimIds'], self.claims, item + '.relatedClaimIds')
         if 'sceneFunction' in scene:
-            self.enum(scene['sceneFunction'], FUNCTIONS + (('palace', 'office', 'battle', 'village') if scene['kind'] == 'portrait' else ()), item + '.sceneFunction')
+            self.enum(scene['sceneFunction'], FUNCTIONS, item + '.sceneFunction')
         for i, actor in enumerate(scene['participants']):
             path = f'{item}.participants[{i}]'
             if self.shape(actor, dict(entityId='str', claimIds=list), path):
@@ -405,6 +399,8 @@ class Check:
         place = scene['place']
         if place is not None and self.shape(place, dict(label='str', medium='str', precision='str',
                 lon='number', lat='number', claimIds=list, coordinateSourceIds=list, coordinateNote='str'), item + '.place'):
+            if 'setting' in place:
+                self.enum(place['setting'], PLACE_SETTINGS, item + '.place.setting')
             self.enum(place['medium'], ('land', 'sea'), item + '.place.medium')
             self.enum(place['precision'], ('site', 'area'), item + '.place.precision')
             self.coordinates(place, item + '.place')

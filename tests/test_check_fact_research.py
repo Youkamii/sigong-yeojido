@@ -10,6 +10,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import check_fact_research as C
+from scene_vocabulary import HERITAGE_TYPES
 import search_chunks as S
 
 FIXTURES = ROOT / 'tests' / 'fixtures' / 'facts'
@@ -38,14 +39,12 @@ class FactResearchTests(unittest.TestCase):
 
     def test_portrait_and_heritage_kinds(self):
         for kind in ('portrait', 'heritage'):
-            for heritage_type in C.HERITAGE_TYPES:
+            for heritage_type in HERITAGE_TYPES:
                 result = copy.deepcopy(self.original)
                 scene = result['scenes'][0]
                 scene['kind'] = kind
                 if kind == 'heritage':
                     scene['heritageType'] = heritage_type
-                else:
-                    scene['sceneFunction'] = 'palace'
                 self.assertEqual(self.check(result).failures, [], (kind, heritage_type))
 
     def test_heritage_requires_valid_type_and_optional_floors(self):
@@ -231,6 +230,23 @@ class FactResearchTests(unittest.TestCase):
             self.assertEqual(report['failures'], [])
             self.assertEqual(report['coverage']['totals']['facts'], 8)
             self.assertEqual(report['coverage']['byRegionDecade']['capital']['550'], 2)
+    def test_portrait_setting_and_scene_function_vocabulary(self):
+        result = copy.deepcopy(self.original)
+        scene = result['scenes'][0]
+        scene['kind'] = 'portrait'
+        scene['place'] = dict(label='표시 테스트', medium='land', precision='site', lon=126.19,
+                              lat=41.13, claimIds=[], coordinateSourceIds=['src-wiki-fixture'], coordinateNote='십진수 좌표')
+        for setting in ('palace', 'office', 'temple', 'battle', 'village', 'academy'):
+            scene['place']['setting'] = setting
+            self.assertEqual(self.check(result).failures, [])
+        for setting in ('court', '사찰', '', None, 3):
+            scene['place']['setting'] = setting
+            self.assertIn('place.setting', '\n'.join(self.check(result).failures))
+        del scene['place']['setting']
+        for function in ('portrait', 'heritage', 'palace', 'office', 'battle', 'village'):
+            scene['sceneFunction'] = function
+            self.assertIn('sceneFunction', '\n'.join(self.check(result).failures))
+
     def test_cli_report_and_raw_tampering(self):
         with tempfile.TemporaryDirectory(dir=FIXTURES) as temporary:
             collection = Path(temporary) / 'facts-ancient'

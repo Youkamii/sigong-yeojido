@@ -5,6 +5,8 @@
 // 통째로 물질화하면 부팅에 수십 MB 를 먹는다. 대신 개수와 지연 접근자(archetypeAt)만 준다 —
 // 도감은 화면에 필요한 만큼만 꺼내 쓴다.
 
+import {extendHeritageCatalog} from './heritage-models.js';
+
 const MAX_STATES = 8;
 const MAX_EFFECTS = 6;
 const MAX_SCENE_ASSETS = 160;
@@ -41,7 +43,7 @@ function compatible(def, capabilities) {
 
 /** 원본 JSON을 빠르게 조회할 수 있는 불변에 가까운 런타임 카탈로그로 펼친다. */
 export function compileAssetCatalog(raw) {
-  const source = raw && typeof raw === 'object' ? raw : {};
+  const source = extendHeritageCatalog(raw && typeof raw === 'object' ? raw : {});
   const familyDefs = source.families && typeof source.families === 'object' ? source.families : {};
   const overrides = source.coreOverrides && typeof source.coreOverrides === 'object' ? source.coreOverrides : {};
   const blueprintDefs = source.blueprints && typeof source.blueprints === 'object' ? source.blueprints : {};

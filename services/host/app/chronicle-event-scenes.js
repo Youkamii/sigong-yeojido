@@ -4,10 +4,12 @@ import {buildingArchetype} from './period-buildings.js';
 import {settlementLayout,SETTLEMENT_RADIUS} from './historical-regions.js';
 import {urbanRegionAt} from './urban-regions.js';
 import {facilityDisplayScale} from './facility-scale.js';
+import {HERITAGE_TYPES,HERITAGE_DISPLAY} from './heritage-models.js';
+import {sceneRadius} from './chronicle-persistence.js';
 import {hash32} from './util.js';
 
 /** #173: 패킷의 sceneFunction 이 문자열 분기보다 먼저 구성을 정한다. */
-export const SCENE_FUNCTIONS=['rail_station','temple','print_workshop','migration','persecution','naval_expedition','civil_conflict','uprising_battle','market','relief','construction_site','fortress','harbor','kiln','irrigation','portrait','heritage'];
+export const SCENE_FUNCTIONS=['rail_station','temple','print_workshop','migration','persecution','naval_expedition','civil_conflict','uprising_battle','market','relief','construction_site','fortress','harbor','kiln','irrigation'];
 const CONFLICT_FUNCTIONS=['civil_conflict','uprising_battle'];
 const STANCE_ACTIONS={attacker:'attacking',defender:'defending',bystander:'idle',victim:'idle',marching:'walking',worker:'working'};
 
@@ -67,7 +69,8 @@ export function composeHistoricalEvent(event,position,world){
   const sceneFunction=(facility?['temple','rail_station']:SCENE_FUNCTIONS).includes(event.sceneFunction)&&(!facility||['temple','rail_station'].includes(facilityLook))?event.sceneFunction:null;
   const compositionKind=['portrait','heritage'].includes(event.archetype)?event.archetype:facilityLook==='palace'?'palace':(sceneFunction==='construction_site'?'construction':sceneFunction)||(fortress?'fortress':music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype);
   const kindIs=(kind,fallback)=>sceneFunction?compositionKind===kind:fallback;
-  let displayScale=event.scenePlace?.displayScale||1;
+  const singleModel=['portrait','heritage'].includes(event.archetype);
+  let displayScale=singleModel?HERITAGE_DISPLAY.scale:event.scenePlace?.displayScale||1;
   const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates
     &&urbanRegionAt(...event.scenePlace.coordinates,event.year);
   if(urbanRegion)displayScale*=urbanRegion.radius/SETTLEMENT_RADIUS;
@@ -78,10 +81,10 @@ export function composeHistoricalEvent(event,position,world){
     }
     displayScale=Math.min(displayScale,clearance/48);
   }
-  if(facility)displayScale=facilityDisplayScale(displayScale,position,world);
-  if(event.compact)displayScale*=.16;
-  const radius=event.archetype==='portrait'?7:event.archetype==='heritage'?8:facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
-  if(!event.compact&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,event.maxRadius/radius);
+  if(facility&&!singleModel)displayScale=facilityDisplayScale(displayScale,position,world);
+  if(event.compact&&!singleModel)displayScale*=.16;
+  const radius=sceneRadius(event,facility,sea);
+  if((singleModel||!event.compact)&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,event.maxRadius/radius);
   const model=(archetype,dx,dz,scale=1,extra={})=>{
     if(facility&&(/worker|handcart|groundbreaking|building_frame|human|figure|monk|scribe|spearman|soldier|commander|ruler|scholar/.test(archetype)||extra.person||extra.role||extra.action==='working'))return;
     if(!modern)archetype=({palace:'korean_hall',house:'korean_house',gatehouse:'korean_gate',academy_hall:'korean_academy',courtyard_house:'korean_courtyard'})[archetype]||archetype;
@@ -150,15 +153,10 @@ export function composeHistoricalEvent(event,position,world){
       }
     });
   };
-  const composeFortress=(small=false)=>{
-    model('gatehouse',0,small?0:10,small?.8:1.4,{primary:true});
-    if(small){for(const x of [-4,4])model('wall',x,0,.65);}
-  };
   if(compositionKind==='portrait'){
-    const hint=event.sceneFunction==='portrait'?event.scenePlace?.setting:event.sceneFunction||event.scenePlace?.setting||'';
-    const stage=/palace|궁궐|궁/.test(hint)?'palace':/office|court|관아/.test(hint)?'academy_hall':/temple|사찰/.test(hint)?'academy_hall':/battle|전장/.test(hint)?'wall':/village|마을/.test(hint)?'house':null;
-    if(!event.compact&&stage)model(stage,0,-4,.65);
-    else if(!event.compact)model('heritage_site',0,-2,.65);
+    const stages={palace:'palace',office:'academy_hall',temple:'pagoda',battle:'wall',village:'house',academy:'academy_hall'};
+    const stage=Object.hasOwn(stages,event.scenePlace?.setting)?stages[event.scenePlace.setting]:'heritage_site';
+    model(stage,0,-4,.65,{primary:true});
     if(!event.compact&&groups){
       let count=0;
       for(const g of groups)for(let i=0;i<Math.max(0,Math.trunc(Number(g.count)||0))&&count<4;i++){
@@ -166,9 +164,12 @@ export function composeHistoricalEvent(event,position,world){
       }
     }
   }else if(compositionKind==='heritage'){
-    if(event.heritageType==='fortress')composeFortress(true);
-    else model(event.heritageType==='hall'?buildingArchetype('korean_hall',Math.min(event.year,1875)):
-      event.heritageType==='pagoda'?'heritage_pagoda_'+(event.heritageFloors===5?5:3):'heritage_'+event.heritageType,0,0,1.4,{primary:true});
+    const type=HERITAGE_TYPES.includes(event.heritageType)?event.heritageType:'site';
+    if(type==='fortress'){
+      model('gatehouse',0,0,.8,{primary:true});
+      for(const x of [-4,4])model('wall',x,0,.65);
+    }else model(type==='hall'?buildingArchetype('korean_hall',Math.min(event.year,1875)):
+      type==='pagoda'?'heritage_pagoda_'+(event.heritageFloors===5?5:3):'heritage_'+type,0,0,1,{primary:true});
   }else if(facilityLook==='palace'){
     model(modern?'civic_hall':'palace',0,0,1.8,{primary:true});
   }else if(sceneFunction==='rail_station'){
@@ -287,7 +288,7 @@ export function composeHistoricalEvent(event,position,world){
       for(const [x,z] of [[-8,3],[5,-7],[12,6]])model('modern_figure',x,z,1.6,{action:'working'});
     }
   }else if(kindIs('fortress',fortress)){
-    composeFortress();
+    model('gatehouse',0,10,1.4,{primary:true});
     if(!event.compact){
       const width=18+((event.scenePlace?.label||event.label||'').length%3)*3;
       for(const x of [-width,-9,9,width]){model('wall',x,10,1);model('wall',x,-17,1);}
@@ -320,7 +321,8 @@ export function composeHistoricalEvent(event,position,world){
   }else if(kindIs('kiln',kiln)){
     model('rural_store',0,-9,2,{primary:true});
     if(!event.compact){
-      model('heritage_kiln',-10,0,1);
+      const kiln=new THREE.Mesh(new THREE.CylinderGeometry(3,4,3.5,10),new THREE.MeshStandardMaterial({color:'#a48768',roughness:1}));
+      kiln.scale.setScalar(displayScale);kiln.position.set(position.x-10*displayScale,world.surfaceAt(position.x-10*displayScale,position.z)+1.75*displayScale,position.z);group.add(kiln);
       for(const x of [-1,8,17]){model('table',x,5,1.5);for(let i=0;i<3;i++){
         const jar=new THREE.Mesh(new THREE.SphereGeometry(.6,8,6),new THREE.MeshStandardMaterial({color:'#e4dfc9',roughness:.6}));
         jar.scale.set(displayScale*.8,displayScale,displayScale*.8);jar.position.set(position.x+(x+i*1.4-1.4)*displayScale,world.surfaceAt(position.x+x*displayScale,position.z+5*displayScale)+2.8*displayScale,position.z+5*displayScale);group.add(jar);
@@ -506,5 +508,5 @@ export function composeHistoricalEvent(event,position,world){
     row.archetype=role?figureArchetype(role,event.year):buildingArchetype(row.archetype,event.year,{seed,latitude:event.scenePlace?.coordinates?.[1]});
   }
   return {group,animated,models,occupied,compositionKind,displayScale,radius:radius*displayScale,
-    focusDistance:Math.max(.1,(event.archetype==='settlement'?220:sea?145:harbor?150:groundbreaking?60:music||['publication','tradition'].includes(event.archetype)?85:relief||power?95:115)*displayScale)};
+    focusDistance:Math.max(.1,(singleModel?HERITAGE_DISPLAY.focus:event.archetype==='settlement'?220:sea?145:harbor?150:groundbreaking?60:music||['publication','tradition'].includes(event.archetype)?85:relief||power?95:115)*displayScale)};
 }

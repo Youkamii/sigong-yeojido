@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import {compileAssetCatalog} from './assetcatalog.js';
 import {buildAssetField} from './assetforge.js';
 import {stableSeed,woodlandDensity} from './chronicle-world.js';
-import {extendHeritageCatalog} from './heritage-models.js';
 import {composeHistoricalEvent} from './chronicle-event-scenes.js';
 import {PALETTE,mix,FOLIAGE,WHITE} from './artbible.js';
 import {makeSurface,biomeByName} from './style.js';
@@ -25,7 +24,7 @@ let catalogPromise;
 export function loadHistoryAssets(){
   if(!catalogPromise)catalogPromise=fetch('./app/history-asset-catalog.json')
     .then(r=>{if(!r.ok)throw Error('인물 조형을 불러오지 못했습니다.');return r.json();})
-    .then(extendFigureCatalog).then(extendBuildingCatalog).then(extendHeritageCatalog).then(compileAssetCatalog).catch(error=>{catalogPromise=null;throw error;});
+    .then(extendFigureCatalog).then(extendBuildingCatalog).then(compileAssetCatalog).catch(error=>{catalogPromise=null;throw error;});
   return catalogPromise;
 }
 function release(group){
@@ -204,7 +203,9 @@ export class ChronicleAssets{
           if(this.world.contains(x,z)!==sea){loc.position.set(x,sea?this.world.seaLevel:this.world.surfaceAt(x,z),z);break;}
         }
       }
-      const nearest=city?Infinity:Math.min(Infinity,...fullScenes.map(p=>p.distanceTo(loc.position)));
+      // 단일 모형은 도시 안에 놓인다. 도시 중심점은 모형의 여유 반경을 제한하지 않는다.
+      const singleModel=['portrait','heritage'].includes(event.archetype);
+      const nearest=city?Infinity:Math.min(Infinity,...fullScenes.filter(p=>!singleModel||!p.city).map(p=>p.position.distanceTo(loc.position)));
       const compact=!city&&nearest<3;
       const key=sceneVisualKey(event,loc.position,compact,nearest*.45,this.world);
       const cached=this.sceneCache.get(event.id);
@@ -213,7 +214,7 @@ export class ChronicleAssets{
       if(!scene.models.some(m=>m.primary)){release(scene.group);unlocated.push(event);continue;}
       nextScenes.set(event.id,{key,scene});
       next.add(scene.group);eventAnimations.push(...scene.animated);
-      if(!compact){fullScenes.push(loc.position);sceneWoods.push({id:event.id,x:loc.position.x,z:loc.position.z,scale:scene.displayScale});}
+      if(!compact){fullScenes.push({position:loc.position,city});sceneWoods.push({id:event.id,x:loc.position.x,z:loc.position.z,scale:scene.displayScale});}
       if(!city){
         occupied.push({...loc.position,radius:0});
         areaOccupied.push({...loc.position,radius:scene.radius});

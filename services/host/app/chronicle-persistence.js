@@ -1,3 +1,4 @@
+import {HERITAGE_DISPLAY} from './heritage-models.js';
 import {figureArchetype} from './period-figures.js';
 import {buildingArchetype} from './period-buildings.js';
 import {settlementStyle,SETTLEMENT_RADIUS} from './historical-regions.js';
@@ -11,6 +12,9 @@ const actionPatterns=[/누리호|발사체/,/황룡사|불국사|감은사|흥�
   /분신|자해/,/대장경판|경판|판목/,/화형식|법전.*태/,/백자|관요|사기제조장|분원리/,
   /벽골제|청못|청제|수리 시설|관개/,/강학|강의|교육|서당|서원|성균관|학교|학사/,
   /장시|시장|교역|무역|상업/];
+export function sceneRadius(event,facility,sea){
+  return ['portrait','heritage'].includes(event.archetype)?HERITAGE_DISPLAY.radius:facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
+}
 export function sceneVisualKey(event,position,compact,maxRadius,world){
   const facility=event.continuing?.kind==='facility';
   // 조립기와 같은 건립 종료 연도를 써서 연도 이동만으로 시설을 다시 만들지 않는다.
@@ -20,11 +24,12 @@ export function sceneVisualKey(event,position,compact,maxRadius,world){
   const actions=[facility?event.title||event.label:event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
   const sea=event.scenePlace?event.scenePlace.medium==='sea':event.archetype==='naval';
   const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates&&urbanRegionAt(...event.scenePlace.coordinates,event.year);
-  const radius=event.archetype==='portrait'?7:event.archetype==='heritage'?8:facility?12:event.archetype==='settlement'?SETTLEMENT_RADIUS:event.archetype==='tradition'?16:sea?45:['siege','battle'].includes(event.archetype)?36:24;
-  const scale=facility?facilityDisplayScale(event.scenePlace?.displayScale||1,position,world):event.scenePlace?.displayScale;
+  const radius=sceneRadius(event,facility,sea);
+  const singleModel=['portrait','heritage'].includes(event.archetype);
+  const scale=singleModel?HERITAGE_DISPLAY.scale:facility?facilityDisplayScale(event.scenePlace?.displayScale||1,position,world):event.scenePlace?.displayScale;
   return JSON.stringify({continuing:Boolean(event.continuing),facility,facilityLook:facility?event.continuing.facilityLook:undefined,sceneFunction:event.sceneFunction,position:position.toArray(),compact,
     facilityIndustry:facility&&event.continuing.facilityLook==='industry'?[/발전소/.test(actions),/항만|부두|축항/.test(actions)]:undefined,
-    maxRadius:compact?null:Math.min(maxRadius,radius*(facility?scale:scale||1)),
+    maxRadius:compact&&!singleModel?null:Math.min(maxRadius,radius*(facility?scale:scale||1)),
     cityStyle:event.archetype==='settlement'?settlementStyle(event):null,
     cityRegion:urbanRegion?[urbanRegion.id,urbanRegion.radius]:null,
     figureStyle:figureArchetype('commoner',event.year),buildingStyle:buildingArchetype('house',event.year),

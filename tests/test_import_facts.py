@@ -54,8 +54,9 @@ class FactsIngestTests(unittest.TestCase):
 
     def run_script(self, script, *args, success=True):
         env = dict(os.environ, PYTHONIOENCODING='utf-8', PYTHONDONTWRITEBYTECODE='1')
-        result = subprocess.run([sys.executable, '-S', '-B', str(ROOT / 'scripts' / script), *map(str, args)],
-                                cwd=self.root, env=env, capture_output=True, text=True, encoding='utf-8')
+        env['PYTHONUTF8'] = '1'  # 자식 프로세스의 stderr 한글이 콘솔 코드페이지와 무관하게 UTF-8 이 되도록
+        result = subprocess.run([sys.executable, '-X', 'utf8', '-S', '-B', str(ROOT / 'scripts' / script), *map(str, args)],
+                                cwd=self.root, env=env, capture_output=True, text=True, encoding='utf-8', errors='replace')
         if success:
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         else:
@@ -250,24 +251,30 @@ class FactsIngestTests(unittest.TestCase):
         self.import_job()
         saved = self.saved_root() / JOB / 'result.json'
         output = self.root / 'scene-kinds.json'
-        for kind, heritage_type in [('portrait', None), ('heritage', 'pagoda'), ('heritage', None),
-                                    ('heritage', 'castle'), ('unknown', None)]:
+        cases = [('portrait', None, None, None), ('heritage', 'pagoda', 5, None),
+                 ('heritage', None, None, 'heritageType'), ('heritage', 'castle', None, 'heritageType'),
+                 ('unknown', None, None, 'kind')]
+        cases += [('heritage', 'pagoda', floors, 'heritageFloors') for floors in (3.0, True, '3', 4)]
+        for kind, heritage_type, floors, error in cases:
             draft = copy.deepcopy(self.draft)
             draft['scenes'][0]['kind'] = kind
             if heritage_type:
-                draft['scenes'][0].update(heritageType=heritage_type, heritageFloors=5)
+                draft['scenes'][0].update(heritageType=heritage_type, heritageFloors=floors)
             write_json(saved, draft)
-            valid = kind == 'portrait' or heritage_type == 'pagoda'
-            result = self.run_script('build_history_scenes.py', '--research', self.saved_root(),
-                                    '--collection', COLLECTION, '--job', JOB, '--data', self.data,
-                                    '--out', output, success=valid)
-            if valid:
+            command = [sys.executable, '-X', 'utf8', '-O', str(ROOT / 'scripts' / 'build_history_scenes.py'),
+                       '--research', str(self.saved_root()), '--collection', COLLECTION, '--job', JOB,
+                       '--data', str(self.data), '--out', str(output)]
+            result = subprocess.run(command, capture_output=True, encoding='utf-8', errors='replace')
+            if error:
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn('ValueError:', result.stderr)
+                self.assertIn(error, result.stderr)
+            else:
+                self.assertEqual(result.returncode, 0, result.stderr)
                 scene = read_json(output)['scenes'][0]
                 self.assertEqual(scene['kind'], kind)
                 if heritage_type:
                     self.assertEqual((scene['heritageType'], scene['heritageFloors']), ('pagoda', 5))
-            else:
-                self.assertIn('heritageType' if kind == 'heritage' else 'kind', result.stderr)
 
     def test_summary_rejects_strings_booleans_and_nonfinite_numbers(self):
         self.import_job()

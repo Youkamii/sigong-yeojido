@@ -6,6 +6,8 @@ const DYNASTY_BOUNDARIES=[918,1392,1910,1945];
 const destruction=/소실|철거|파괴|훼철|폐사|붕괴/;
 const coordinates=place=>Number.isFinite(place?.lon)&&Number.isFinite(place?.lat);
 
+// heritage는 persistence.from/to를 명시한다. to:null은 현존으로 END_YEAR까지 표시한다.
+// 왕조 경계 상한을 적용하지 않는다. 항목 조사가 소실 연도를 명시하는 계약이다.
 // 건립 동사 앞 명사구를 이름으로 쓰고, 없으면 장소 이름을 쓴다.
 // 괄호 설명을 뺀 이름의 단어 중 하나라도 후속 제목/요약에 있고 좌표 거리가
 // 0.01도 이내면 같은 시설로 추정한다(황룡사 구층목탑 → 황룡사 소실).
@@ -64,6 +66,7 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
     const heritage=scene.kind==='heritage'&&scene.persistence?.kind==='facility';
     if((scene.kind!=='construction'&&!heritage)||scene.narrativeType!=null||scene.title?.includes('전승')
       ||!coordinates(scene.place)||!Number.isFinite(scene.endYear))continue;
+    if(heritage&&!Number.isFinite(scene.persistence.from))continue;
     const look=facilityLook(scene);
     if(!look)continue;
     const sinceYear=heritage?Math.max(scene.endYear+1,scene.persistence.from):scene.endYear+1;
@@ -88,16 +91,18 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
     if(plan.year>untilYear)continue;
     const claimIds=[...new Set([...(scene.dateClaimIds||[]),...(scene.actionClaimIds||[]),...(scene.place.claimIds||[]),...(heritage?scene.persistence.basisClaimIds||[]:[])])];
     if(claims&&!claimIds.every(id=>claims.has(id)))continue;
+    const recorded=heritage&&(scene.persistence.basisClaimIds?.length||0);
+    const description=recorded?`기록된 존속(근거 ${recorded}건)`:'추정 존속';
     const id='background-facility-'+scene.id;
     rows.push({...scene,id,entityId:id,kind:'event',year:plan.year,archetype:scene.archetype||scene.kind,
       facilityLook:look,...(['temple','rail_station'].includes(look)?{sceneFunction:look}:{}),
-      label:name+' · 시설(추정 존속)',setting:true,detail:'건립 기록 뒤 존속 추정',
-      summary:(scene.summary?scene.summary+'\n':'')+'건립 기록을 근거로 시설이 남아 있다고 추정한 배경이며 이후 변형·훼손 기록은 반영하지 않았다.',
+      label:recorded?name+' · 시설 · '+description:name+' · 시설(추정 존속)',setting:true,detail:recorded?description:'건립 기록 뒤 존속 추정',
+      summary:(scene.summary?scene.summary+'\n':'')+(recorded?description:'건립 기록을 근거로 시설이 남아 있다고 추정한 배경이며 이후 변형·훼손 기록은 반영하지 않았다.'),
       continuing:{kind:'facility',facilityLook:look,facilityType:type,sinceYear,untilYear,openEnded:!ending&&untilYear===END_YEAR,
         ...(boundary&&untilYear===boundary-1?{cappedBy:'dynasty-boundary'}:{}),
-        basis:'건립 기록과 시설 유형에 따른 존속 추정',endedBy:ending?.id||null},
+        basis:recorded?description:'건립 기록과 시설 유형에 따른 존속 추정',endedBy:ending?.id||null},
       siteBackground:{scope:'facility',sourceSceneId:scene.id,recordedStartYear:scene.startYear,recordedEndYear:scene.endYear,episodes:[]},
-      scenePlace:{...scene.place,coordinates:displayCoordinates,displayBasis:'시설 · 추정 존속'},
+      scenePlace:{...scene.place,coordinates:displayCoordinates,displayBasis:'시설 · '+description},
       claimIds,sites:[],locationReference:null,participants:[],participantGroups:[],sides:[]});
   }
   return rows;

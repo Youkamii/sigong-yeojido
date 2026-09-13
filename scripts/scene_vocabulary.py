@@ -1,7 +1,24 @@
 """Display vocabulary for facts collections; source wording is retained."""
 import re
 
+KINDS = ('settlement', 'construction', 'battle', 'siege', 'naval', 'fire', 'court',
+         'assembly', 'publication', 'excavation', 'tradition', 'disaster', 'relief',
+         'market', 'ritual', 'migration', 'survey', 'portrait', 'heritage')
+PLACE_SETTINGS = ('palace', 'office', 'temple', 'battle', 'village', 'academy')
 HERITAGE_TYPES = ('pagoda', 'stele', 'hall', 'tomb', 'fortress', 'site', 'artifact', 'bridge', 'kiln')
+
+
+def scene_kind_errors(scene):
+    """Shared kind/heritage checks for validation and builds."""
+    errors = []
+    if scene.get('kind') not in KINDS:
+        errors.append(('kind', '허용된 장면 종류가 필요합니다'))
+    if scene.get('kind') == 'heritage' or 'heritageType' in scene:
+        if scene.get('heritageType') not in HERITAGE_TYPES:
+            errors.append(('heritageType', '허용된 문화재 유형이 필요합니다'))
+    if 'heritageFloors' in scene and (type(scene['heritageFloors']) is not int or scene['heritageFloors'] not in (3, 5)):
+        errors.append(('heritageFloors', '3 또는 5가 필요합니다'))
+    return errors
 
 
 PARTICIPANT_GROUPS_NOTE = 'count 는 화면 표현값이며 사료의 인원수가 아니다'

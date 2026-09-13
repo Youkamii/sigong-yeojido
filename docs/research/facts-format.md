@@ -53,11 +53,11 @@ predicate 허용 목록(검증기가 파일 `scripts/fact_predicates.json` 로 �
 ### scenes[] (기존 build_history_scenes 형식 + 추가 필드)
 
 기존 필수: `id, eventId, title, startYear<=endYear, kind, summary, dateClaimIds(비지 않음), actionClaimIds(비지 않음), place|null, participants[], effects{}`. kind 는 기존 값(`settlement|construction|battle|siege|naval|fire|court|assembly|publication|excavation|tradition`)에 `disaster|relief|market|ritual|migration|survey|portrait|heritage` 를 더해 쓴다.
-`heritageType`: heritage일 때 필수. `pagoda|stele|hall|tomb|fortress|site|artifact|bridge|kiln` 중 하나이며, `heritageFloors`는 석탑 층수 3(기본) 또는 5다.
-`portrait`: 참여 인물 1명을 중심에 놓는다. `sceneFunction` 또는 `place.setting`의 palace/office/temple/battle/village(궁궐/관아/사찰/전장/마을) 힌트로 작은 무대를 고르며, participantGroups 수행원은 전체 4명까지다.
-`heritage.persistence`: `{kind:"facility", from, to, basisClaimIds}`가 있으면 건립 장면 이후 지정 기간에 같은 외형으로 존속한다. 카드의 문화재 근거 설명은 summary와 place.coordinateNote에 기록한다.
+`heritageType`: heritage일 때 필수. `pagoda|stele|hall|tomb|fortress|site|artifact|bridge|kiln` 중 하나이며, `heritageFloors`는 석탑의 표시용 층수로 정수 3(기본) 또는 5다. 실제 층수를 새로 주장하는 값이 아니다.
+`portrait`: 참여 인물 1명을 중심에 놓는다. `place.setting`만 무대 힌트로 쓰며 허용값은 `palace|office|temple|battle|village|academy`(궁궐·관아·사찰·전장·마을·서원)다. 사찰은 목탑 무대다. 무대는 항상 사건 행으로 남으며 인물 정보가 없거나 가까운 이웃 때문에 compact로 표시해도 사라지지 않는다. participantGroups 수행원은 전체 4명까지다. `portrait|heritage`는 kind로만 쓰고 sceneFunction에는 쓰지 않는다.
+`heritage.persistence`: `{kind:"facility", from, to, basisClaimIds}`가 있으면 건립 장면 이후 지정 기간에 같은 외형·크기로 존속한다. from/to를 명시하며 `to:null`은 현존으로 2100년 상한까지 표시한다. 왕조 경계 상한은 적용하지 않으며 항목 조사가 소실 연도를 명시해야 한다. basisClaimIds가 있으면 “기록된 존속(근거 n건)”으로 표시한다. 카드의 문화재 근거 설명은 summary와 place.coordinateNote에 기록한다.
 추가(모두 검증기가 확인): `category`(아래 10개 중 하나) · `region`(`capital|north|central|south|island`) · `decade`(startYear 를 10으로 내림) · 선택 `sceneFunction`(`rail_station|temple|print_workshop|migration|persecution|naval_expedition|civil_conflict|uprising_battle|market|relief|construction_site|fortress|harbor|kiln|irrigation`) · 선택 `participantGroups[{entityId?,label,role,stance,side,count,claimIds[]}]` · 선택 `persistence {kind:'city'|'facility'|'institution'|'none', from, to|null, basisClaimIds[]}`.
-place: `{label, medium('land'|'sea'), precision('site'|'area'), lon, lat, claimIds[], coordinateSourceIds[], coordinateNote}` — 좌표는 반드시 sources[] 의 발췌(위키 표시 좌표 등)나 location 주장에 근거를 둔다.
+place: `{label, medium('land'|'sea'), precision('site'|'area'), lon, lat, claimIds[], coordinateSourceIds[], coordinateNote, setting?(palace|office|temple|battle|village|academy)}` — 좌표는 반드시 sources[] 의 발췌(위키 표시 좌표 등)나 location 주장에 근거를 둔다.
 
 ### 집단 어휘 정규화
 
