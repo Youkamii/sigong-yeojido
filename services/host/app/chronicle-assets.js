@@ -13,6 +13,11 @@ import {createCityLOD} from './city-lod.js';
 import {sceneVisualKey} from './chronicle-persistence.js';
 import {urbanRegionAt} from './urban-regions.js';
 
+export function pickableRow(row){
+  const background=row.siteBackground;
+  return !background||(background.scope!==undefined&&background.scope!=='anonymous-city'&&background.scope!=='facility');
+}
+
 let catalogPromise;
 export function loadHistoryAssets(){
   if(!catalogPromise)catalogPromise=fetch('./app/history-asset-catalog.json')
@@ -296,7 +301,8 @@ export class ChronicleAssets{
       row.labelPosition.y+=row.kind==='event'?Math.min(18,row.focusDistance*.16):row.scale*2;
     }
     const previous=this.group;
-    this.engine.add(next);this.group=next;this.rows=rows;this.picks=field.picks;
+    this.engine.add(next);this.group=next;this.rows=rows;
+    this.picks=field.picks.filter(pick=>pickableRow(byRecipe.get(pick.userData.fanAssetId)));
     this.cityLODs=cityLODs;this.animated=[...field.animated,...eventAnimations];this.stats=field.stats;this.plan=plan;this.revision++;
     this.engine.remove(previous);release(previous);
     this.sceneCache=nextScenes;this.fieldCache=nextFields;this.reuse=reuse;

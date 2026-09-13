@@ -31,6 +31,29 @@ function assetsFor(world){
 }
 const rebuild=(assets,events)=>assets.rebuild({year:1801,events,people:[]});
 
+test('배경 행은 실제 rebuild에서 렌더링·점유·재사용을 유지하고 picks에서만 빠진다',()=>{
+  for(const siteBackground of [{scope:'anonymous-city'},{scope:'facility'},{}]){
+    const assets=assetsFor(flat),row={...event('background','settlement',0,0),setting:true,siteBackground};
+    rebuild(assets,[row]);
+    const scene=assets.sceneCache.get(row.id).scene,field=assets.fieldCache.get('scene:'+row.id).field;
+    const occupied=JSON.stringify(assets.forestOccupied);
+    assert.ok(scene.group.parent);assert.ok(field.group.parent);
+    assert.ok(scene.occupied.length>0);assert.ok(field.picks.length>0);
+    assert.ok(assets.rows.some(row=>row.id.includes(':part:')));
+    assert.ok(assets.rows.every(row=>row.pick&&row.labelPosition));
+    assert.deepEqual(assets.picks,[]);
+    rebuild(assets,[row]);
+    assert.equal(assets.sceneCache.get(row.id).scene,scene);
+    assert.equal(assets.fieldCache.get('scene:'+row.id).field,field);
+    assert.equal(JSON.stringify(assets.forestOccupied),occupied);
+    assert.deepEqual(assets.picks,[]);
+  }
+  const assets=assetsFor(flat);
+  rebuild(assets,[{...event('documented','settlement',0,0),setting:true}]);
+  assert.ok(assets.picks.length>0);
+  assert.equal(assets.picks.length,assets.rows.length);
+});
+
 test('시설 외형 변경은 실제 rebuild의 대표 모델을 교체하고 이후 재사용한다',()=>{
   const packet=packets.find(p=>p.id==='scene-mod-seoul-station-1925');
   const [row]=planContinuingFacilities([packet],{year:1926,events:[]});

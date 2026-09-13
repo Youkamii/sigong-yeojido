@@ -1,6 +1,8 @@
 import {settlementStyle} from './historical-regions.js';
 import {urbanRegionAt} from './urban-regions.js';
 
+// 이어지는 도시는 1970년 전까지만 만든다. 현대 배경은 도시 구역과 실제 기록이 맡는다 (#170 #172).
+// 도시 구역의 성장 연도부터는 기록 기간과 무관하게 양보해, 연장 행의 점유 마커가 도시를 줄이지 않게 한다.
 // Yield to a same-place active zone only if it starts after the record ends (a newer documented record supersedes the old one);
 // a zone that already covered the record (Seoul 1308~2100 vs Hanseong 1394~1910) does not cancel its continuation.
 // These packets describe continuing use of a place, rather than a recurring event.
@@ -38,17 +40,16 @@ export function planHistoricalSites(data,packets,plan){
 }
 
 // A former name or administrative role ending does not remove the anonymous town.
-// Every dated settlement record continues as an anonymous town after its recorded end year;
+// Before 1970, every dated settlement record continues as an anonymous town after its recorded end year;
 // the record's end marks a name, role or archive boundary, not the disappearance of the city.
 // Capital and fortified roles end with the record, so the continuation is drawn as a plain town.
 const continuingStyle=scene=>settlementStyle(scene)==='port'?'port':'town';
 const samePlace=(a,b)=>Math.hypot(a.lon-b.lon,a.lat-b.lat)<.03;
-// A modern urban profile takes over the spot unless the record itself covers the profile's start
-// (the record is then the documented basis of that modern city and its continuation keeps it).
 // 원 구역은 성장 연도 전에는 축소·저밀도라 이어지는 도시가 그 전까지 배경을 잇는다.
 // 성장 연도부터 원 구역이 넘겨받으며, 이어지는 도시의 점유 마커가 원 구역을 쉬게 하므로 겹치지 않는다.
-const yieldsToUrban=(scene,urban,year)=>Boolean(urban)&&year>=(urban.growthYear??urban.startYear)&&!(scene.startYear<=urban.startYear&&urban.startYear<=scene.endYear);
+export const yieldsToUrban=(urban,year)=>Boolean(urban)&&year>=(urban.growthYear??urban.startYear);
 export function planContinuingCities(packets,plan,claims,settlementZones=[]){
+  if(plan.year>=1970)return [];
   const activeZones=settlementZones.filter(zone=>zone.startYear<=plan.year&&plan.year<=zone.endYear);
   const ended=[];
   for(const scene of packets){
@@ -59,7 +60,7 @@ export function planContinuingCities(packets,plan,claims,settlementZones=[]){
     if(claims&&!claimIds.every(id=>claims.has(id)))continue;
     if(plan.events.some(event=>event.archetype==='settlement'&&event.scenePlace
       &&Math.hypot(event.scenePlace.coordinates[0]-place.lon,event.scenePlace.coordinates[1]-place.lat)<.03))continue;
-    if(yieldsToUrban(scene,urbanRegionAt(place.lon,place.lat,plan.year),plan.year))continue;
+    if(yieldsToUrban(urbanRegionAt(place.lon,place.lat,plan.year),plan.year))continue;
     if(activeZones.some(zone=>samePlace(zone,place)&&zone.startYear>scene.endYear))continue;
     ended.push({scene,place,claimIds});
   }

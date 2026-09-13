@@ -5,6 +5,17 @@ import {planTraditions} from './chronicle-traditions.js';
 import {planHistoricalSites,planContinuingCities} from './chronicle-sites.js';
 import {planContinuingFacilities} from './facility-persistence.js';
 import {buildSettlementZones} from './inhabited-zones.js';
+import {pickableRow} from './chronicle-assets.js';
+
+export function sceneDestinationOptions(rows){
+  const listed=new Set();
+  return rows.filter(row=>row.kind!=='building'&&pickableRow(row)).map(row=>{
+    const duplicate=listed.has(row.entityId);
+    const option={label:(row.setting||row.siteBackground?'도시·시설 · ':'')+row.label+(duplicate?' · '+(row.locationReference?.label||row.detail):''),
+      value:duplicate?row.id:row.entityId,sceneRow:row.id,sceneEntity:row.entityId};
+    listed.add(row.entityId);return option;
+  });
+}
 
 export class ChronicleScene {
   constructor(host,onSelect){
@@ -75,7 +86,7 @@ export class ChronicleScene {
     this.layoutKey=null;
     this.host.replaceChildren();this.markers=[];
     for(const row of this.assets.rows){
-      if(row.kind==='building')continue;
+      if(row.kind==='building'||!pickableRow(row))continue;
       const button=document.createElement('button');button.className=row.kind==='event'?'scene-event':'scene-person';
       if(row.narrative){button.classList.add('scene-tradition');button.dataset.narrative=row.narrative.id;}
       button.dataset.sceneEntity=row.entityId;
@@ -91,13 +102,13 @@ export class ChronicleScene {
     }
     const destination=document.getElementById('sceneDestination'),previous=destination.value;
     destination.replaceChildren(new Option('인물·사건을 골라 이동',''));
-    const listed=new Set();
-    for(const row of this.assets.rows)if(row.kind!=='building'){
-      const option=new Option((row.setting||row.siteBackground?'도시·시설 · ':'')+row.label+(listed.has(row.entityId)?' · '+(row.locationReference?.label||row.detail):''),listed.has(row.entityId)?row.id:row.entityId);
-      option.dataset.sceneRow=row.id;option.dataset.sceneEntity=row.entityId;destination.add(option);listed.add(row.entityId);
+    const options=sceneDestinationOptions(this.assets.rows);
+    for(const item of options){
+      const option=new Option(item.label,item.value);
+      option.dataset.sceneRow=item.sceneRow;option.dataset.sceneEntity=item.sceneEntity;destination.add(option);
     }
     if([...destination.options].some(option=>option.value===previous))destination.value=previous;
-    destination.disabled=!this.assets.rows.length;
+    destination.disabled=!options.length;
     this.syncPicks();
     const sceneInView=this.assets.rows.some(row=>{
       const p=row.position.clone().project(this.engine.camera);return Math.abs(p.x)<.85&&Math.abs(p.y)<.85&&Math.abs(p.z)<1;
@@ -151,6 +162,9 @@ export class ChronicleScene {
   select(id){
     const preferred=this.preferredRow||(this.assets?.selected===id?this.assets.selectedRow:null);
     const row=this.assets?.rowFor(id,preferred);
+    const target=this.assets?.rows.find(r=>r.id===id)||row
+      ||this.assets?.plan.events.find(e=>e.id===id||e.entityId===id);
+    if(target&&!pickableRow(target))return false;
     const sceneId=row?.sceneId
       ||this.assets?.plan.events.find(e=>e.participants.some(p=>p.entityId===id&&p.presence==='on-site'))?.id;
     if(sceneId&&this.assets.activeScene!==sceneId){this.assets.activeScene=sceneId;this.refresh(this.world,this.chronicle);}

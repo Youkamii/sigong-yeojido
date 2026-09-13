@@ -51,6 +51,7 @@ test('modern role endings retain anonymous city without extending named roles or
   const source={id,kind:'settlement',startYear:endYear-10,endYear,dateClaimIds:['date'],actionClaimIds:['role'],place:{lon:127,lat:37,claimIds:['place']},participants:[{id:'old-person'}]};
   const before=JSON.stringify(source);
   assert.equal(planContinuingCities([source],{year:endYear,events:[]}).length,0);
+  if(endYear+1>=1970){assert.equal(planContinuingCities([source],{year:endYear+1,events:[]}).length,0,id+': 1970년 이후에는 이어지는 도시를 만들지 않는다');continue;}
   const [background]=planContinuingCities([source],{year:endYear+1,events:[]});
   assert.equal(background.archetype,'settlement');assert.equal(background.label,'이름 없는 도시 생활 배경');
   assert.deepEqual(background.participants,[]);assert.equal(background.endYear,undefined);
