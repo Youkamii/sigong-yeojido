@@ -12,6 +12,7 @@ import {extendBuildingCatalog} from './period-buildings.js';
 import {createCityLOD} from './city-lod.js';
 import {sceneVisualKey} from './chronicle-persistence.js';
 import {urbanRegionAt} from './urban-regions.js';
+import {sceneBudget} from './scene-quality.js';
 
 export function pickableRow(row){
   const background=row.siteBackground;
@@ -83,12 +84,13 @@ export class ChronicleAssets{
     return result;
   }
   buildForest(occupied,scenes=[]){
-    const forestKey=JSON.stringify([occupied.map(o=>[o.x,o.z,o.radius]),scenes,this.scenery.paths.key]);
+    const budget=sceneBudget(this.engine.quality);
+    const forestKey=JSON.stringify([occupied.map(o=>[o.x,o.z,o.radius]),scenes,this.scenery.paths.key,budget.treeTrials]);
     if(this.forestKey===forestKey)return;
     const group=new THREE.Group();group.name='peninsula-woods';
     const b=this.world.bounds,candidates=this.treeCandidates||[];
     const cells=new Map(),cellSize=1.5;
-    if(!this.treeCandidates)for(let i=0;i<180000&&candidates.length<18000;i++){
+    if(!this.treeCandidates)for(let i=0;i<budget.treeTrials&&candidates.length<budget.trees;i++){
       const seed=stableSeed('wood:'+i),x=b.minX+(b.maxX-b.minX)*(seed%10000)/10000;
       const z=b.minZ+(b.maxZ-b.minZ)*(Math.floor(seed/10000)%10000)/10000;
       if(!this.world.contains(x,z,1.2))continue;
@@ -117,14 +119,14 @@ export class ChronicleAssets{
       return false;
     };
     positions.forEach(register);
-    for(const site of this.scenery.sites)for(let i=0;i<36;i++){
+    for(const site of this.scenery.sites)for(let i=0;i<budget.edgeTrees;i++){
       const seed=stableSeed(site.id+':edge:'+i),angle=(seed%1000)/1000*Math.PI*2,radius=12+(Math.floor(seed/1000)%1000)/100;
       const x=site.x+Math.cos(angle)*radius,z=site.z+Math.sin(angle)*radius;
       if(seed%3||!this.world.contains(x,z,1)||this.world.ridgeAt(x,z)>.8||this.scenery.nearPath?.(x,z,1.1)
         ||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+.8)||crowded(x,z,1.45))continue;
       const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=treeScale(p);positions.push(p);register(p);
     }
-    for(const scene of scenes.filter(s=>s.scale<.5))for(let i=0;i<180;i++){
+    for(const scene of scenes.filter(s=>s.scale<.5))for(let i=0;i<budget.groveTrees;i++){
       const seed=stableSeed(scene.id+':grove:'+i),angle=(seed%10000)/10000*Math.PI*2;
       const radius=(27+(Math.floor(seed/10000)%1000)/1000*48)*scene.scale;
       const x=scene.x+Math.cos(angle)*radius,z=scene.z+Math.sin(angle)*radius;

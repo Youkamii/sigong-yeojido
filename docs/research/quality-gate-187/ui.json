@@ -1,0 +1,187 @@
+{
+  "checks": [
+    {
+      "name": "gate-820: no horizontal overflow",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "gate-1180: no horizontal overflow",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "gate-390: no horizontal overflow",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "no saved preference: automatic recommendation",
+      "actual": {
+        "name": "medium",
+        "manual": false
+      },
+      "expected": {
+        "name": "medium",
+        "manual": false
+      },
+      "pass": true
+    },
+    {
+      "name": "saved automatic result remains automatic",
+      "actual": {
+        "name": "low",
+        "manual": false
+      },
+      "expected": {
+        "name": "low",
+        "manual": false
+      },
+      "pass": true
+    },
+    {
+      "name": "engine restores automatic adaptation",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "button selection is manual",
+      "actual": {
+        "name": "low",
+        "manual": true
+      },
+      "expected": {
+        "name": "low",
+        "manual": true
+      },
+      "pass": true
+    },
+    {
+      "name": "query disables all three buttons",
+      "actual": 3,
+      "expected": 3,
+      "pass": true
+    },
+    {
+      "name": "query message",
+      "actual": "검증용 화질(q=낮음)이 적용됩니다",
+      "expected": "검증용 화질(q=낮음)이 적용됩니다",
+      "pass": true
+    },
+    {
+      "name": "query applies low",
+      "actual": "low",
+      "expected": "low",
+      "pass": true
+    },
+    {
+      "name": "query never writes preference",
+      "actual": "{\"name\": \"high\", \"manual\": false}",
+      "expected": "{\"name\": \"high\", \"manual\": false}",
+      "pass": true
+    },
+    {
+      "name": "live estimated sites are a medium subset",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "live low layouts include 0 through 3",
+      "actual": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "expected": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "pass": true
+    },
+    {
+      "name": "settings switches to high",
+      "actual": "high",
+      "expected": "high",
+      "pass": true
+    },
+    {
+      "name": "medium to high modelBuilds unchanged",
+      "actual": 14,
+      "expected": 14,
+      "pass": true
+    },
+    {
+      "name": "medium to high refreshPeriod calls",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "medium to high buildForest calls",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "medium scenery unchanged",
+      "actual": [
+        58,
+        1619,
+        427
+      ],
+      "expected": [
+        58,
+        1619,
+        427
+      ],
+      "pass": true
+    },
+    {
+      "name": "automatic event does not change gate selection",
+      "actual": "high",
+      "expected": "high",
+      "pass": true
+    },
+    {
+      "name": "missing recommendation and detail do not throw",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "lowScene": {
+    "villages": 33,
+    "houses": 948,
+    "fields": 221,
+    "estimated": 17,
+    "normalEstimated": 42,
+    "subset": true,
+    "layouts": {
+      "0": 5,
+      "1": 4,
+      "2": 5,
+      "3": 3
+    }
+  },
+  "beforeSwitch": {
+    "modelBuilds": 14,
+    "villages": 58,
+    "houses": 1619,
+    "fields": 427
+  },
+  "afterSwitch": {
+    "quality": "high",
+    "modelBuilds": 14,
+    "refreshPeriod": 0,
+    "buildForest": 0
+  }
+}

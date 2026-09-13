@@ -1,0 +1,200 @@
+{
+  "url": "http://127.0.0.1:8876?q=medium",
+  "quality": "medium",
+  "cpu": 6.0,
+  "preference": "both",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "runs": [
+    {
+      "run": 1,
+      "pageErrors": [],
+      "readyMs": 89617.5,
+      "error": null,
+      "actualQuality": "medium",
+      "stats": {
+        "villages": 58,
+        "houses": 1619,
+        "fields": 427,
+        "tigers": 17,
+        "ready": true,
+        "modelBuilds": 11,
+        "year": 1593,
+        "detailCells": 4,
+        "estimatedSites": 42,
+        "documentedZones": 18,
+        "zoneIds": {
+          "count": 18,
+          "sha256": "f7d201318244ec51d1c4dbf3dfec35bf7b484a74458145108e73c90d6da15421"
+        },
+        "farDraws": 21,
+        "farTriangles": 33438,
+        "period": "joseon",
+        "refreshedSites": 60,
+        "reusedSites": 0,
+        "refreshMs": 6228.800000011921
+      },
+      "historyRows": {
+        "count": 2239,
+        "sha256": "fca606847de13234223744fc33ce06fc5b6f23abfa88eb406e8a9f7b9b30f9dd"
+      },
+      "estimatedIds": {
+        "count": 42,
+        "sha256": "cdd51763dee317dd4bae06534b598390c7e3ea21265e2e2ce24e31d0a7238901"
+      },
+      "estimatedLayouts": {
+        "0": 12,
+        "1": 9,
+        "2": 13,
+        "3": 8
+      },
+      "trees": 8856,
+      "stages": [
+        {
+          "stage": "terrain",
+          "start": 9288.599999964237,
+          "ms": 9547.400000035763
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 19196.399999976158,
+          "ms": 2.900000035762787
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 19208.69999998808,
+          "ms": 0
+        },
+        {
+          "stage": "firstRender",
+          "start": 19530,
+          "ms": 899
+        },
+        {
+          "stage": "forest",
+          "start": 22840,
+          "ms": 23118.399999976158
+        },
+        {
+          "stage": "sceneAssemblyInclusive",
+          "start": 21644.599999964237,
+          "ms": 24417.400000035763
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 21330.899999976158,
+          "ms": 24733.400000035763
+        },
+        {
+          "stage": "forest",
+          "start": 48212.30000001192,
+          "ms": 823.5999999642372
+        },
+        {
+          "stage": "estimatedBackground",
+          "start": 49036.69999998808,
+          "ms": 1649.1000000238419
+        },
+        {
+          "stage": "estimatedBackground",
+          "start": 67379.30000001192,
+          "ms": 6230.599999964237
+        },
+        {
+          "stage": "forest",
+          "start": 74074,
+          "ms": 10858
+        },
+        {
+          "stage": "sceneAssemblyInclusive",
+          "start": 52102.80000001192,
+          "ms": 32873.09999996424
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 51936.80000001192,
+          "ms": 33057.799999952316
+        }
+      ],
+      "marks": [],
+      "data": {
+        "count": 17,
+        "sha256": "138e90d599ee63b0ca816b4b9f18f83d77e4b03606729eb96ac4ccbe4aee2b37",
+        "endpoints": {
+          "/api/places": {
+            "count": 1,
+            "totalMs": 2187.600000023842,
+            "maxMs": 2187.600000023842,
+            "lastEndMs": 1409.0
+          },
+          "/api/geo": {
+            "count": 1,
+            "totalMs": 249.5999999642372,
+            "maxMs": 249.5999999642372,
+            "lastEndMs": 0
+          },
+          "/api/sources": {
+            "count": 1,
+            "totalMs": 3979.699999988079,
+            "maxMs": 3979.699999988079,
+            "lastEndMs": 3204.0
+          },
+          "/api/entities": {
+            "count": 1,
+            "totalMs": 5869.800000011921,
+            "maxMs": 5869.800000011921,
+            "lastEndMs": 5094.899999976158
+          },
+          "/api/lenses": {
+            "count": 1,
+            "totalMs": 251.79999995231628,
+            "maxMs": 251.79999995231628,
+            "lastEndMs": 0
+          },
+          "/api/density": {
+            "count": 1,
+            "totalMs": 1631.699999988079,
+            "maxMs": 1631.699999988079,
+            "lastEndMs": 6820.5
+          },
+          "/api/year": {
+            "count": 2,
+            "totalMs": 5548.199999928474,
+            "maxMs": 3452.099999964237,
+            "lastEndMs": 10929.399999976158
+          },
+          "/api/time": {
+            "count": 1,
+            "totalMs": 773.1999999880791,
+            "maxMs": 773.1999999880791,
+            "lastEndMs": 7934.5
+          },
+          "/api/chronicle": {
+            "count": 5,
+            "totalMs": 9591.99999988079,
+            "maxMs": 2435.099999964237,
+            "lastEndMs": 49009.69999998808
+          },
+          "/api/history-map": {
+            "count": 2,
+            "totalMs": 30.899999976158142,
+            "maxMs": 16.100000023841858,
+            "lastEndMs": 18973.099999964237
+          },
+          "/api/elevation": {
+            "count": 1,
+            "totalMs": 11.100000023841858,
+            "maxMs": 11.100000023841858,
+            "lastEndMs": 8144.0
+          }
+        }
+      }
+    }
+  ],
+  "browserVersion": "152.0.7977.76",
+  "medianReadyMs": 89617.5,
+  "sourceRevision": "724eb5aa5fe732d13b20ebfd64f838ff176ee152",
+  "sourceMethod": "Playwright serves five changed host files from git show; worktree and other resources remain current."
+}

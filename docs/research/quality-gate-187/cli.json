@@ -1,0 +1,20 @@
+[
+  {
+    "case": "remote",
+    "exitCode": 2,
+    "stdout": "",
+    "error": "measure_first_screen.py: error: --url must be a localhost HTTP(S) URL unless --allow-remote is supplied"
+  },
+  {
+    "case": "negative-runs",
+    "exitCode": 2,
+    "stdout": "",
+    "error": "measure_first_screen.py: error: --cpu and --runs must be at least 1; --timeout must be positive"
+  },
+  {
+    "case": "negative-timeout",
+    "exitCode": 2,
+    "stdout": "",
+    "error": "measure_first_screen.py: error: --cpu and --runs must be at least 1; --timeout must be positive"
+  }
+]

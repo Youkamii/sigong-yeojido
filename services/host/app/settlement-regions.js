@@ -112,7 +112,7 @@ export function estimatedSiteThreshold(periodId,latitude,context={}){
   const period=estimatedPeriodRatio[periodId]??.45;
   // 지역 계수: 제주(34.2 미만) 0.6, 북부(38.5 초과) 0.7 — 역시 표현용 추정치.
   const region=!Number.isFinite(latitude)?1:latitude<34.2?.6:latitude>38.5?.7:1;
-  const base=period*region,{x,z,year,world}=context;
+  const base=period*region*(context.scale??1),{x,z,year,world}=context;
   if(!world?.toWorld||![x,z,year].every(Number.isFinite))return base;
   let nearest=null,distance=Infinity;
   for(const record of factLayers?.density||[]){

@@ -40,11 +40,11 @@ test('one event occupancy clips individual city parcels without erasing its neig
   const site={id:'urban-region:seoul',kind:'urban',profile:URBAN_REGIONS[0],radius:20,seed:1822,x:0,z:0,angle:0,latitude:37.56};
   const terrain={...world,rings:[[[-100,-100],[100,-100],[100,100],[-100,100]]],contains:()=>true};
   const c=Object.create(ChronicleScenery.prototype);
-  Object.assign(c,{world:terrain,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),period:sceneryPeriod(2010),sites:[site],urbanSites:[site],occupied:[],detailCache:new Map(),stats:{year:2010},showPaths:true});
+  Object.assign(c,{world:terrain,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),period:sceneryPeriod(2010),sites:[site],urbanSites:[site],occupied:[],areaOccupied:[],detailCache:new Map(),stats:{year:2010},showPaths:true});
   c.refreshPeriod();const before=c.stats.houses,first=c.landscapeCells[0].layout.houses[0];
-  c.occupied=[{x:first.x,z:first.z,radius:1}];c.refreshPeriod();
+  c.occupied=[{x:first.x,z:first.z,radius:1}];c.areaOccupied=c.occupied;c.refreshPeriod();
   assert.ok(c.stats.houses<before);assert.ok(c.stats.houses>before*.8);assert.equal(c.landscapeCells.length,1);
-  c.occupied=[{x:0,z:0,radius:0,urbanRegionId:'seoul'}];c.refreshPeriod();
+  c.occupied=[{x:0,z:0,radius:0,urbanRegionId:'seoul'}];c.areaOccupied=c.occupied;c.refreshPeriod();
   assert.equal(c.stats.houses,0,'explicit named city owns the shared district instead of duplicate geometry');
 });
 
@@ -66,7 +66,7 @@ test('year scrubs rebuild only changed site layouts, details and affected far ba
   const assets={engine:{_tagShadows(){}},release:g=>{g.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});g.removeFromParent();},
     field:(recipes,anchors)=>buildAssetField({world:{...terrain,anchorOf:id=>anchors.get(id)},catalog,recipes,seed:'sigong-history'})};
   const c=Object.create(ChronicleScenery.prototype);
-  Object.assign(c,{world:terrain,assets,group:new THREE.Group(),sites,urbanSites:[],occupied:[],detailCache:new Map(),houseScales:new Map(),
+  Object.assign(c,{world:terrain,assets,group:new THREE.Group(),sites,urbanSites:[],occupied:[],areaOccupied:[],detailCache:new Map(),houseScales:new Map(),
     stats:{modelBuilds:0},initialized:true,showPaths:true,sync(){}});
   c.setYear(1400);
   const before=new Map(c.landscapeCells.map(cell=>[cell.site.id,cell]));

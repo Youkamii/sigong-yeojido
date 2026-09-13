@@ -57,6 +57,11 @@ export class AtlasUI{
       const engine=this.runtime()?.engine;if(!engine)return;
       if(e.target.value==='auto')engine.resetQualityAuto();else engine.setQuality(e.target.value,{manual:true,persist:true});
     };
+    window.addEventListener('fan:quality',event=>{
+      const {quality,manual}=event.detail||{};
+      const select=this.root.querySelector('#atlasQuality');
+      select.value=manual?quality:'auto';
+    });
   }
   buildTime(){
     const controls=this.chronicle.controls;

@@ -36,7 +36,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 #gate .veil{position:absolute;inset:0;
   background:radial-gradient(ellipse at 50% 43%,rgba(250,245,230,.96) 0%,rgba(248,240,219,.87) 35%,rgba(239,226,198,.28) 78%),
     linear-gradient(0deg,rgba(246,237,216,.92),transparent 24%)}
-#gate .inner{position:relative;text-align:center;padding:0 28px;max-width:760px}
+#gate .inner{position:relative;text-align:center;padding:0 28px;width:100%;max-width:760px}
 #gate .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.34em;color:#695d48;
   text-transform:uppercase}
 #gate h1{font-family:var(--serif);font-weight:800;font-size:clamp(52px,11vw,116px);
@@ -44,7 +44,18 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 #gate .rom{font-family:var(--mono);font-size:12px;letter-spacing:.42em;color:#71634c;margin-top:18px}
 #gate p{font-family:var(--serif);font-size:clamp(15px,2.1vw,19px);line-height:1.75;
   color:#65543e;margin-top:26px;max-width:52ch;margin-inline:auto}
-#gate .enter{margin-top:38px;border:1px solid #285247;padding:13px 34px;border-radius:2px;
+#gate .quality-choice{margin:28px auto 0;max-width:650px}
+#gate .quality-options{display:flex;border:1px solid #8a806b;border-radius:2px;overflow:hidden}
+#gate .quality-options button{flex:1;min-height:76px;padding:12px 9px;border:0;background:rgba(255,249,233,.65);color:#4e4535;font-family:var(--serif)}
+#gate .quality-options button+button{border-left:1px solid #8a806b}
+#gate .quality-options button[aria-pressed="true"]{background:#285247;color:#fff9e9}
+#gate .quality-options button:focus-visible{outline:2px solid currentColor;outline-offset:-5px}
+#gate .quality-options strong{display:block;font-size:17px}
+#gate .quality-options span{display:block;font-size:12px;margin-top:5px;white-space:nowrap}
+#gate #qualityRecommendation{font-size:13px;margin-top:10px}
+@media(max-width:600px){#gate .quality-options{flex-direction:column}#gate .quality-options button{min-height:56px;padding:8px 12px;text-align:left;display:flex;align-items:center;gap:12px}#gate .quality-options button+button{border-left:0;border-top:1px solid #8a806b}#gate .quality-options span{margin:0}}
+@media(max-height:700px){#gate{overflow-y:auto;place-items:start center}#gate .inner{padding-block:28px 65px}#gate .credit{position:relative;padding-bottom:16px}#gate .quality-choice{margin-top:16px}}
+#gate .enter{margin-top:22px;min-height:44px;border:1px solid #285247;padding:13px 34px;border-radius:2px;
   font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:#fff9e9;
   background:#285247;transition:background .25s,border-color .25s}
 #gate .enter:hover{background:#1d4138;border-color:#1d4138}
@@ -271,6 +282,14 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
     <div class="rom">SIGONG YEOJIDO</div>
     <p>김정호는 자기 시대의 조선을 목판에 새겼다. 대동여지도는 한 시점의 공간이다.
        여기서는 거기에 시간을 얹는다 — 그리고 모든 선에 어느 사료가 그렇게 말했는지를 달아둔다.</p>
+    <div class="quality-choice" role="group" aria-label="시작 화질" aria-describedby="qualityRecommendation">
+      <div class="quality-options">
+        <button type="button" data-gate-quality="low" aria-pressed="false"><strong>낮음</strong><span>패드·오래된 기기, 빠른 시작</span></button>
+        <button type="button" data-gate-quality="medium" aria-pressed="false"><strong>보통</strong><span>노트북</span></button>
+        <button type="button" data-gate-quality="high" aria-pressed="false"><strong>높음</strong><span>데스크톱·고성능</span></button>
+      </div>
+      <p id="qualityRecommendation" role="status"></p>
+    </div>
     <button class="enter" id="enter">들어가기</button>
   </div>
   <div class="credit">대동여지도 (규장각 소장본) · Public domain · commons.wikimedia.org</div>
@@ -384,6 +403,8 @@ import { GraphExplorer } from './app/graph.js';
 import { PeopleSearch } from './app/people.js';
 import { Chronicle, REFERENCE_GROUPS, yearLabel, sceneContextLabel } from './app/chronicle.js';
 import { AtlasUI } from './app/atlas-ui.js';
+import { mountQualityChoice } from './app/quality-gate.js';
+import { qualityNames } from './app/quality-choice.js';
 import { ChronicleScene } from './app/chronicle-scene.js';
 import { EvidenceChat } from './app/chat.js';
 import { SourceComparison } from './app/compare.js';
@@ -1297,7 +1318,12 @@ document.getElementById('evi').addEventListener('click',event=>{
   if(chunk)showChunk(chunk.dataset.candidateChunk);
   else if(source)showSource(source.dataset.candidateSource);
 });
+let qualityChoice;
+try{qualityChoice=mountQualityChoice();}catch(error){console.warn('[quality-gate]',error);}
+let entryQuality;
 document.getElementById('enter').onclick = async () => {
+  entryQuality=qualityChoice?.enter();
+  if(R&&qualityNames.includes(entryQuality?.name))R.engine.setQuality(entryQuality.name,{manual:entryQuality.manual,persist:entryQuality.persist});
   document.getElementById('gate').classList.add('out');
   document.getElementById('app').classList.add('in');
   await loaded;
@@ -1369,14 +1395,15 @@ async function init3d(){
   ]);
 
   const engine = new Engine(host);
+  // 저장소가 막힌 경우도 게이트에서 결정한 화질과 자동 여부로 시작한다.
+  if(qualityNames.includes(entryQuality?.name))engine.setQuality(entryQuality.name,{manual:entryQuality.manual,persist:entryQuality.persist});
   // 시공여지도의 분위기 — 판톨로지 기본은 '황금빛 오후의 브리튼'이다.
   // 우리는 낮으로 올려 지형이 읽히게 하고, 안개는 아트 바이블 값을 따른다.
   const mood = { ...DEFAULT_STYLE.mood };
   engine.applyMood(mood);
   if(engine.bakeEnvironment) engine.bakeEnvironment(mood);
 
-  // 실측 고도 격자(#9) — 없으면 폴리곤 판으로 떨어진다. ?q=low 는 격자를 1/3 로 솎는다(검증·저사양).
-  const q = new URLSearchParams(location.search).get('q');
+  // 실측 고도 격자(#9) — 없으면 폴리곤 판으로 떨어진다.
   let elev = null;
   try{ elev = await fetch('/api/elevation').then(r => r.ok ? r.json() : null); }
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
@@ -1415,7 +1442,6 @@ async function init3d(){
   const {ChronicleGeography}=await import('./app/chronicle-geography.js');
   world.geography=new ChronicleGeography(world,engine,geography);
   world.geography.setActivities(chronicleScene.assets?.plan);
-  if(q && engine.setQuality) engine.setQuality(q);   // 검증·저사양용 ?q=low
   let ssaoBeforeMaterialize = null;
   engine.start((dt, t) => {
     world.update(t, engine.camera, engine.renderer.domElement);

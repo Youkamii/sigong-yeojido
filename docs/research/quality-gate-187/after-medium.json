@@ -1,0 +1,569 @@
+{
+  "url": "http://127.0.0.1:8876?q=medium",
+  "quality": "medium",
+  "cpu": 6.0,
+  "preference": "both",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "runs": [
+    {
+      "run": 1,
+      "pageErrors": [],
+      "readyMs": 69887.19999998808,
+      "error": null,
+      "actualQuality": "medium",
+      "stats": {
+        "villages": 58,
+        "houses": 1619,
+        "fields": 427,
+        "tigers": 17,
+        "ready": true,
+        "modelBuilds": 11,
+        "year": 1593,
+        "detailCells": 4,
+        "estimatedSites": 42,
+        "documentedZones": 18,
+        "zoneIds": {
+          "count": 18,
+          "sha256": "f7d201318244ec51d1c4dbf3dfec35bf7b484a74458145108e73c90d6da15421"
+        },
+        "farDraws": 21,
+        "farTriangles": 33438,
+        "period": "joseon",
+        "refreshedSites": 60,
+        "reusedSites": 0,
+        "refreshMs": 782.3000000119209,
+        "quality": "medium"
+      },
+      "historyRows": {
+        "count": 2239,
+        "sha256": "fca606847de13234223744fc33ce06fc5b6f23abfa88eb406e8a9f7b9b30f9dd"
+      },
+      "estimatedIds": {
+        "count": 42,
+        "sha256": "cdd51763dee317dd4bae06534b598390c7e3ea21265e2e2ce24e31d0a7238901"
+      },
+      "estimatedLayouts": {
+        "0": 12,
+        "1": 9,
+        "2": 13,
+        "3": 8
+      },
+      "trees": 8856,
+      "stages": [
+        {
+          "stage": "terrain",
+          "start": 8015.800000011921,
+          "ms": 8355.100000023842
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 16773.80000001192,
+          "ms": 1.399999976158142
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 16781.100000023842,
+          "ms": 0
+        },
+        {
+          "stage": "firstRender",
+          "start": 16972,
+          "ms": 760.3000000119209
+        },
+        {
+          "stage": "forest",
+          "start": 19729.69999998808,
+          "ms": 21492.200000047684
+        },
+        {
+          "stage": "sceneAssemblyInclusive",
+          "start": 18634.30000001192,
+          "ms": 22684.899999976158
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 18317.600000023842,
+          "ms": 23007
+        },
+        {
+          "stage": "forest",
+          "start": 43292.40000003576,
+          "ms": 941.6999999880791
+        },
+        {
+          "stage": "estimatedBackground",
+          "start": 44234.5,
+          "ms": 1341.300000011921
+        },
+        {
+          "stage": "estimatedBackground",
+          "start": 57792.69999998808,
+          "ms": 782.4000000357628
+        },
+        {
+          "stage": "forest",
+          "start": 58826.5,
+          "ms": 6754.800000011921
+        },
+        {
+          "stage": "sceneAssemblyInclusive",
+          "start": 46765.19999998808,
+          "ms": 18869.100000023842
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 46637,
+          "ms": 19021.19999998808
+        }
+      ],
+      "marks": [],
+      "data": {
+        "count": 17,
+        "sha256": "1c8f2aab4b53537fdec99dc89229fccee84a828bab2a9fc134728a285b9c4357",
+        "endpoints": {
+          "/api/places": {
+            "count": 1,
+            "totalMs": 2076.199999988079,
+            "maxMs": 2076.199999988079,
+            "lastEndMs": 983.8000000119209
+          },
+          "/api/geo": {
+            "count": 1,
+            "totalMs": 2.300000011920929,
+            "maxMs": 2.300000011920929,
+            "lastEndMs": 0
+          },
+          "/api/sources": {
+            "count": 1,
+            "totalMs": 3742.2000000476837,
+            "maxMs": 3742.2000000476837,
+            "lastEndMs": 2651.400000035763
+          },
+          "/api/entities": {
+            "count": 1,
+            "totalMs": 5329.5,
+            "maxMs": 5329.5,
+            "lastEndMs": 4239.5
+          },
+          "/api/lenses": {
+            "count": 1,
+            "totalMs": 1.699999988079071,
+            "maxMs": 1.699999988079071,
+            "lastEndMs": 0
+          },
+          "/api/density": {
+            "count": 1,
+            "totalMs": 1567.5999999642372,
+            "maxMs": 1567.5999999642372,
+            "lastEndMs": 5942.0
+          },
+          "/api/year": {
+            "count": 2,
+            "totalMs": 4529.600000023842,
+            "maxMs": 2889.600000023842,
+            "lastEndMs": 9502.600000023842
+          },
+          "/api/time": {
+            "count": 1,
+            "totalMs": 647,
+            "maxMs": 647,
+            "lastEndMs": 6925.300000011921
+          },
+          "/api/chronicle": {
+            "count": 5,
+            "totalMs": 9771.399999976158,
+            "maxMs": 2387.600000023842,
+            "lastEndMs": 44145.5
+          },
+          "/api/history-map": {
+            "count": 2,
+            "totalMs": 16.80000001192093,
+            "maxMs": 14.5,
+            "lastEndMs": 16519.100000023842
+          },
+          "/api/elevation": {
+            "count": 1,
+            "totalMs": 2.800000011920929,
+            "maxMs": 2.800000011920929,
+            "lastEndMs": 7090.900000035763
+          }
+        }
+      }
+    },
+    {
+      "run": 2,
+      "pageErrors": [],
+      "readyMs": 69484.89999997616,
+      "error": null,
+      "actualQuality": "medium",
+      "stats": {
+        "villages": 58,
+        "houses": 1619,
+        "fields": 427,
+        "tigers": 17,
+        "ready": true,
+        "modelBuilds": 11,
+        "year": 1593,
+        "detailCells": 4,
+        "estimatedSites": 42,
+        "documentedZones": 18,
+        "zoneIds": {
+          "count": 18,
+          "sha256": "f7d201318244ec51d1c4dbf3dfec35bf7b484a74458145108e73c90d6da15421"
+        },
+        "farDraws": 21,
+        "farTriangles": 33438,
+        "period": "joseon",
+        "refreshedSites": 60,
+        "reusedSites": 0,
+        "refreshMs": 834.8999999761581,
+        "quality": "medium"
+      },
+      "historyRows": {
+        "count": 2239,
+        "sha256": "fca606847de13234223744fc33ce06fc5b6f23abfa88eb406e8a9f7b9b30f9dd"
+      },
+      "estimatedIds": {
+        "count": 42,
+        "sha256": "cdd51763dee317dd4bae06534b598390c7e3ea21265e2e2ce24e31d0a7238901"
+      },
+      "estimatedLayouts": {
+        "0": 12,
+        "1": 9,
+        "2": 13,
+        "3": 8
+      },
+      "trees": 8856,
+      "stages": [
+        {
+          "stage": "terrain",
+          "start": 7841.5,
+          "ms": 8529.199999988079
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 16731.600000023842,
+          "ms": 1.2999999523162842
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 16740.69999998808,
+          "ms": 0.19999998807907104
+        },
+        {
+          "stage": "firstRender",
+          "start": 16952.899999976158,
+          "ms": 339.80000001192093
+        },
+        {
+          "stage": "forest",
+          "start": 19167.30000001192,
+          "ms": 19618.80000001192
+        },
+        {
+          "stage": "sceneAssemblyInclusive",
+          "start": 18201.899999976158,
+          "ms": 20677.30000001192
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 17903.19999998808,
+          "ms": 20978.5
+        },
+        {
+          "stage": "forest",
+          "start": 40245.19999998808,
+          "ms": 899.3000000119209
+        },
+        {
+          "stage": "estimatedBackground",
+          "start": 41144.89999997616,
+          "ms": 1220.9000000357628
+        },
+        {
+          "stage": "estimatedBackground",
+          "start": 55155.60000002384,
+          "ms": 835.0999999642372
+        },
+        {
+          "stage": "forest",
+          "start": 56263.5,
+          "ms": 9295.300000011921
+        },
+        {
+          "stage": "sceneAssemblyInclusive",
+          "start": 43705.69999998808,
+          "ms": 21894.30000001192
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 43543.10000002384,
+          "ms": 22075.19999998808
+        }
+      ],
+      "marks": [],
+      "data": {
+        "count": 17,
+        "sha256": "978b26a761a826fc23959a503a1b36ff6f653c976f9e6dd6a0a3c9b130c3f456",
+        "endpoints": {
+          "/api/places": {
+            "count": 1,
+            "totalMs": 1846.699999988079,
+            "maxMs": 1846.699999988079,
+            "lastEndMs": 817.3999999761581
+          },
+          "/api/geo": {
+            "count": 1,
+            "totalMs": 2.800000011920929,
+            "maxMs": 2.800000011920929,
+            "lastEndMs": 0
+          },
+          "/api/sources": {
+            "count": 1,
+            "totalMs": 3555.699999988079,
+            "maxMs": 3555.699999988079,
+            "lastEndMs": 2528.0
+          },
+          "/api/entities": {
+            "count": 1,
+            "totalMs": 5011.300000011921,
+            "maxMs": 5011.300000011921,
+            "lastEndMs": 3984.699999988079
+          },
+          "/api/lenses": {
+            "count": 1,
+            "totalMs": 2.800000011920929,
+            "maxMs": 2.800000011920929,
+            "lastEndMs": 0
+          },
+          "/api/density": {
+            "count": 1,
+            "totalMs": 1631,
+            "maxMs": 1631,
+            "lastEndMs": 5703
+          },
+          "/api/year": {
+            "count": 2,
+            "totalMs": 4643.700000047684,
+            "maxMs": 3003.800000011921,
+            "lastEndMs": 9423.300000011921
+          },
+          "/api/time": {
+            "count": 1,
+            "totalMs": 571.3000000119209,
+            "maxMs": 571.3000000119209,
+            "lastEndMs": 6654.199999988079
+          },
+          "/api/chronicle": {
+            "count": 5,
+            "totalMs": 9393.300000011921,
+            "maxMs": 2333.2999999523163,
+            "lastEndMs": 41287.60000002384
+          },
+          "/api/history-map": {
+            "count": 2,
+            "totalMs": 12.600000023841858,
+            "maxMs": 9.5,
+            "lastEndMs": 16495.399999976158
+          },
+          "/api/elevation": {
+            "count": 1,
+            "totalMs": 2.699999988079071,
+            "maxMs": 2.699999988079071,
+            "lastEndMs": 6862.699999988079
+          }
+        }
+      }
+    },
+    {
+      "run": 3,
+      "pageErrors": [],
+      "readyMs": 70257.69999998808,
+      "error": null,
+      "actualQuality": "medium",
+      "stats": {
+        "villages": 58,
+        "houses": 1619,
+        "fields": 427,
+        "tigers": 17,
+        "ready": true,
+        "modelBuilds": 11,
+        "year": 1593,
+        "detailCells": 4,
+        "estimatedSites": 42,
+        "documentedZones": 18,
+        "zoneIds": {
+          "count": 18,
+          "sha256": "f7d201318244ec51d1c4dbf3dfec35bf7b484a74458145108e73c90d6da15421"
+        },
+        "farDraws": 21,
+        "farTriangles": 33438,
+        "period": "joseon",
+        "refreshedSites": 60,
+        "reusedSites": 0,
+        "refreshMs": 938.5,
+        "quality": "medium"
+      },
+      "historyRows": {
+        "count": 2239,
+        "sha256": "fca606847de13234223744fc33ce06fc5b6f23abfa88eb406e8a9f7b9b30f9dd"
+      },
+      "estimatedIds": {
+        "count": 42,
+        "sha256": "cdd51763dee317dd4bae06534b598390c7e3ea21265e2e2ce24e31d0a7238901"
+      },
+      "estimatedLayouts": {
+        "0": 12,
+        "1": 9,
+        "2": 13,
+        "3": 8
+      },
+      "trees": 8856,
+      "stages": [
+        {
+          "stage": "terrain",
+          "start": 8569.599999964237,
+          "ms": 8370.900000035763
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 17371.30000001192,
+          "ms": 1.2999999523162842
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 17379.80000001192,
+          "ms": 0.19999998807907104
+        },
+        {
+          "stage": "firstRender",
+          "start": 17552.5,
+          "ms": 371.80000001192093
+        },
+        {
+          "stage": "forest",
+          "start": 19724.399999976158,
+          "ms": 21025.80000001192
+        },
+        {
+          "stage": "sceneAssemblyInclusive",
+          "start": 18758.30000001192,
+          "ms": 22117.299999952316
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 18504.899999976158,
+          "ms": 22377.30000001192
+        },
+        {
+          "stage": "forest",
+          "start": 42480.30000001192,
+          "ms": 985.5999999642372
+        },
+        {
+          "stage": "estimatedBackground",
+          "start": 43466.69999998808,
+          "ms": 1558.300000011921
+        },
+        {
+          "stage": "estimatedBackground",
+          "start": 58418.69999998808,
+          "ms": 938.8000000119209
+        },
+        {
+          "stage": "forest",
+          "start": 59610,
+          "ms": 6663.199999988079
+        },
+        {
+          "stage": "sceneAssemblyInclusive",
+          "start": 46433,
+          "ms": 19884.599999964237
+        },
+        {
+          "stage": "sceneRefreshInclusive",
+          "start": 46285.09999996424,
+          "ms": 20051
+        }
+      ],
+      "marks": [],
+      "data": {
+        "count": 17,
+        "sha256": "2a63c80c90c9597298217419e5032bdec6099c6cafe94c670a2a2033068e4b4a",
+        "endpoints": {
+          "/api/places": {
+            "count": 1,
+            "totalMs": 1764.3999999761581,
+            "maxMs": 1764.3999999761581,
+            "lastEndMs": 673.8999999761581
+          },
+          "/api/geo": {
+            "count": 1,
+            "totalMs": 2.5,
+            "maxMs": 2.5,
+            "lastEndMs": 0
+          },
+          "/api/sources": {
+            "count": 1,
+            "totalMs": 3477.100000023842,
+            "maxMs": 3477.100000023842,
+            "lastEndMs": 2387.800000011921
+          },
+          "/api/entities": {
+            "count": 1,
+            "totalMs": 5278.900000035763,
+            "maxMs": 5278.900000035763,
+            "lastEndMs": 4190.0
+          },
+          "/api/lenses": {
+            "count": 1,
+            "totalMs": 2.399999976158142,
+            "maxMs": 2.399999976158142,
+            "lastEndMs": 0
+          },
+          "/api/density": {
+            "count": 1,
+            "totalMs": 1746,
+            "maxMs": 1746,
+            "lastEndMs": 6037.599999964237
+          },
+          "/api/year": {
+            "count": 2,
+            "totalMs": 5041.699999928474,
+            "maxMs": 3130.099999964237,
+            "lastEndMs": 10105.899999976158
+          },
+          "/api/time": {
+            "count": 1,
+            "totalMs": 582.6999999880791,
+            "maxMs": 582.6999999880791,
+            "lastEndMs": 7174.699999988079
+          },
+          "/api/chronicle": {
+            "count": 5,
+            "totalMs": 9706.0,
+            "maxMs": 2267.5,
+            "lastEndMs": 43502.19999998808
+          },
+          "/api/history-map": {
+            "count": 2,
+            "totalMs": 14.399999976158142,
+            "maxMs": 11.299999952316284,
+            "lastEndMs": 17115.099999964237
+          },
+          "/api/elevation": {
+            "count": 1,
+            "totalMs": 3.599999964237213,
+            "maxMs": 3.599999964237213,
+            "lastEndMs": 7495.599999964237
+          }
+        }
+      }
+    }
+  ],
+  "browserVersion": "152.0.7977.76",
+  "medianReadyMs": 69887.19999998808
+}
