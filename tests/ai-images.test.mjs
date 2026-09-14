@@ -49,8 +49,8 @@ test('pilot subjects refer to real scenes and existing image files',async t=>{
   const history=JSON.parse(await readFile(new URL('app/history-scenes.json',root),'utf8'));
   const {aiImageFor}=await load(t,pilot);
   for(const [subject,file] of [
-    ['person-joseon-sejong','sejong-portrait.jpg'],
-    ['person-encykorea-sejong-e0029857','sejong-portrait.jpg'],
+    ['person-joseon-sejong','je-sejong.jpg'],
+    ['person-encykorea-sejong-e0029857','je-sejong.jpg'],
     ['scene-hansando-daecheop-1592','hansando-1592.jpg'],
     ['event-encykorea-hunminjeongeum-banpo-1446','sejong-hunminjeongeum-1446.jpg'],
   ])assert.ok(aiImageFor({entityId:subject}).src.endsWith('/'+file));
