@@ -581,6 +581,59 @@
      "locator": "문서 머리 표시 좌표(class=geo)"
     }
    ]
+  },
+  {
+   "id": "src-hs-ko-gangneung",
+   "title": "강릉시 — 위키백과",
+   "publisher": "위키백과",
+   "url": "https://ko.wikipedia.org/wiki/강릉시",
+   "rawFile": "raw/kowiki-gangneung.html",
+   "sha256": "7e32b5ab888cdef11afefcdece84da9e84bcda04f6d878880f8a19f3e5dc11ba",
+   "httpStatus": 200,
+   "byteLength": 511918,
+   "fetchedUtc": "2026-09-14T23:08:15Z",
+   "license": "위키백과 CC BY-SA 4.0 — 표시 좌표와 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-geo-gangneung",
+     "text": "37.750; 128.900",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    },
+    {
+     "id": "ex-gangneung-haseulla",
+     "text": "이곳을 하서량(河西良) 또는 하슬라(河瑟羅)라 부르고",
+     "locator": "본문 「역사」 — 하슬라 지명"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-en-wani",
+   "title": "Wani (scholar) — Wikipedia",
+   "publisher": "위키백과",
+   "url": "https://en.wikipedia.org/wiki/Wani_(scholar)",
+   "rawFile": "raw/enwiki-wani.html",
+   "sha256": "691e98609e8c18b9d1b90fbf8e64eb9808fbd0745370f5e0e6da89bb94444ac4",
+   "httpStatus": 200,
+   "byteLength": 180339,
+   "fetchedUtc": "2026-09-14T23:14:40Z",
+   "license": "위키백과 CC BY-SA 4.0 — 표시 좌표와 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-wani-nihonshoki",
+     "text": "In the 16th year, in spring, in February, Wani had come.",
+     "locator": "본문 Original sources and analysis — 일본서기 권10 번역"
+    },
+    {
+     "id": "ex-wani-405",
+     "text": "it would be 405",
+     "locator": "본문 Original sources and analysis — 아신왕 사망 기사로 맞춘 연대"
+    },
+    {
+     "id": "ex-wani-kojiki372",
+     "text": "The Kojiki suggests that Wani arrived sometime after 372.",
+     "locator": "본문 Original sources and analysis — 고사기 기준 상한"
+    }
+   ]
   }
  ],
  "entities": [
@@ -668,6 +721,16 @@
    "id": "place-hs-sg2-myeonghwalseong",
    "type": "Place",
    "label": "경주 명활성"
+  },
+  {
+   "id": "place-hs-sg2-haseulla",
+   "type": "Place",
+   "label": "하슬라(신라 북변, 지금의 강릉)"
+  },
+  {
+   "id": "event-hs-sg2-haseulla-tax",
+   "type": "Event",
+   "label": "하슬라의 조·조 한 해 면제(397)"
   }
  ],
  "claims": [
@@ -2236,6 +2299,198 @@
    "citesChunk": "chunk_jipseong-ko_035_ko_035_1850_0030",
    "quote": "其族名第一骨·第二骨以自別",
    "note": "신당서 신라전. 겨레붙이를 제1골·제2골로 나눠 스스로를 구별했고, 재상 등 열일곱 등급의 관직은 제2골까지 오를 수 있었다고 적었다."
+  },
+  {
+   "id": "claim-gap-strata-1",
+   "subject": "polity-silla",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-encykorea-gyeongju"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_033_0020_0020",
+   "quote": "至第二十三葉法興王, 始定六部人服色尊卑之制",
+   "note": "삼국사기 잡지 제2 색복의 머리말. 스물세 번째 임금 법흥왕(재위 514~540)이 6부 사람의 옷 색으로 높고 낮음을 가르는 제도를 처음 정했다고 적었다. 신라가 신분에 따라 겉모습을 갈랐음을 보여준다."
+  },
+  {
+   "id": "claim-gap-strata-2",
+   "subject": "polity-silla",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-encykorea-gyeongju"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_033_0020_0130",
+   "quote": "六頭品. 幞頭用繐羅·絁·絹·布",
+   "note": "삼국사기 잡지 제2 색복의 6두품 규정. 등급마다 쓸 수 있는 옷감을 달리 정했다. 조문 자체는 흥덕왕 9년(834) 교서라 이 칸의 시기보다 뒤다."
+  },
+  {
+   "id": "claim-gap-strata-3",
+   "subject": "polity-silla",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-encykorea-gyeongju"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_033_0030_0100",
+   "quote": "四頭品至百姓. 鞍橋禁紫檀·沉香·黄楊·槐·柘",
+   "note": "삼국사기 잡지 제2 거기(車騎)의 4두품 이하 백성 규정. 안장에 쓸 나무까지 막았다. 4두품 아래를 「백성」으로 묶어 부른 대목이다."
+  },
+  {
+   "id": "claim-gap-strata-4",
+   "subject": "polity-silla",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-encykorea-gyeongju"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_033_0050_0010",
+   "quote": "屋舍 眞骨. 室長廣不得過二十四尺",
+   "note": "삼국사기 잡지 제2 옥사의 진골 규정. 가장 높은 진골도 방의 길이와 너비가 24자를 넘지 못했다."
+  },
+  {
+   "id": "claim-gap-strata-5",
+   "subject": "polity-silla",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-encykorea-gyeongju"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_033_0050_0040",
+   "quote": "四頭品至百姓. 室長廣不過十五尺",
+   "note": "삼국사기 잡지 제2 옥사의 4두품 이하 백성 규정. 진골 24자·6두품 21자에 견줘 15자로 묶였다. 집 크기까지 신분으로 갈랐음을 보여준다."
+  },
+  {
+   "id": "claim-gap-strata-6",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-pyongyang"
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0020",
+   "quote": "皆聽評其子女爲奴婢以償之",
+   "note": "주서 고려전. 도둑질한 값을 못 물거나 빚을 진 사람은 자녀를 노비로 쳐서 갚게 했다고 적었다. 고구려에 노비가 있었음을 알려주는 대목이다."
+  },
+  {
+   "id": "claim-gap-taxation-1",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-pyongyang"
+   },
+   "sourceId": "src-jipseong-ko_033",
+   "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0010",
+   "quote": "人稅布五匹, 穀五石. 遊人則三年一稅, 十人共細布一匹. 租戶一石, 次七斗, 下五斗",
+   "note": "수서 고려전의 세제 조항. 사람마다 베 다섯 필과 곡식 다섯 섬을 걷고, 떠도는 사람은 세 해에 한 번 열 사람이 가는 베 한 필을 냈으며, 조(租)는 호를 상·중·하로 갈라 한 섬·일곱 말·다섯 말을 매겼다. 6세기 말~7세기 초 수나라가 본 고구려의 제도다."
+  },
+  {
+   "id": "claim-gap-taxation-2",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-pyongyang"
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0020",
+   "quote": "賦稅則絹布及粟, 隨其所有, 量貧富差等輸之",
+   "note": "주서 고려전. 세금은 비단·베와 조로 걷되 가진 것에 따라 가난하고 넉넉한 정도를 헤아려 등급을 두어 냈다고 적었다."
+  },
+  {
+   "id": "claim-gap-taxation-3",
+   "subject": "polity-baekje",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-gongsanseong"
+   },
+   "sourceId": "src-jipseong-ko_030",
+   "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0030",
+   "quote": "賦稅以布絹絲麻及米等, 量歲豐儉, 差等輸之",
+   "note": "주서 백제전. 세금은 베·비단·실·삼과 쌀로 걷고 그해 풍년과 흉년을 헤아려 등급을 두어 냈다고 적었다. 같은 책이 백제의 도읍을 고마성(웅진)으로 적었다."
+  },
+  {
+   "id": "claim-gap-taxation-4",
+   "subject": "event-hs-sg2-haseulla-tax",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 397
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0020_0260",
+   "quote": "四十二年, 秋七月, 北邊何瑟羅旱·蝗, 年荒民飢",
+   "note": "삼국사기 신라본기 내물이사금 42년(397) 7월. 북쪽 변방 하슬라에 가뭄과 메뚜기 피해가 겹쳐 흉년이 들고 백성이 굶주렸다."
+  },
+  {
+   "id": "claim-gap-taxation-5",
+   "subject": "place-hs-sg2-haseulla",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lon": 128.9,
+    "lat": 37.75,
+    "precision": "area"
+   },
+   "sourceId": "src-hs-ko-gangneung",
+   "citesExcerpt": "ex-geo-gangneung",
+   "note": "위키백과 강릉시 문서의 표시 좌표. 하슬라의 관아 자리는 확인되지 않아 시 전체의 대표점을 썼다."
+  },
+  {
+   "id": "claim-gap-taxation-6",
+   "subject": "place-hs-sg2-haseulla",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-hs-ko-gangneung",
+   "citesExcerpt": "ex-gangneung-haseulla",
+   "note": "위키백과 강릉시 문서. 지금의 강릉을 하서량 또는 하슬라로 불렀다고 적었다. 삼국사기의 「북변 하슬라」를 강릉으로 보는 근거다."
+  },
+  {
+   "id": "claim-gap-wangin-1",
+   "subject": "person-hs-wangin",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-sg2-yamato"
+   },
+   "sourceId": "src-hs-en-wani",
+   "citesExcerpt": "ex-wani-nihonshoki",
+   "note": "영문 위키백과가 옮긴 일본서기 권10. 응신 16년 봄 2월에 왕인이 왔다고 적었다. 아직기 도래는 그 전해인 응신 15년 가을 8월 기사다."
+  },
+  {
+   "id": "claim-gap-wangin-2",
+   "subject": "event-hs-sg2-wangin",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 405
+   },
+   "sourceId": "src-hs-en-wani",
+   "citesExcerpt": "ex-wani-405",
+   "note": "일본서기가 응신 16년에 죽었다고 적은 백제 아화왕(아신왕, 405년 사망)에 맞추면 응신 16년은 405년이 된다는 정리. 일본서기 자체의 기년 285년을 그대로 쓰지 않는 이유다."
+  },
+  {
+   "id": "claim-gap-wangin-3",
+   "subject": "event-hs-sg2-wangin",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-baekje"
+   },
+   "sourceId": "src-hs-en-wani",
+   "citesExcerpt": "ex-wani-kojiki372",
+   "note": "같은 문서의 고사기 쪽 정리. 고사기는 왕인을 보낸 임금을 조고왕(근초고왕, 재위 346~375)으로 적어 도왜를 372년 이후로만 좁힌다. 일본서기 쪽 405년과 어긋나 연대는 여전히 갈린다."
   }
  ],
  "scenes": [
@@ -2488,21 +2743,89 @@
    "decade": 390
   },
   {
+   "id": "scene-hs-sg2-taxation",
+   "itemId": "hs-samguk-taxation",
+   "eventId": "event-hs-sg2-haseulla-tax",
+   "title": "하슬라의 조·조 한 해 면제",
+   "startYear": 397,
+   "endYear": 397,
+   "kind": "survey",
+   "summary": "신라 북쪽 변방 하슬라에 가뭄과 메뚜기 피해가 겹쳐 흉년이 들자, 나라가 그해 걷을 조(租)와 조(調)를 한 해 동안 면제했다. 곡식과 베를 해마다 걷고 있었기에 면제할 것도 있었다.",
+   "dateClaimIds": [
+    "claim-gap-taxation-4"
+   ],
+   "actionClaimIds": [
+    "claim-hs-sg2-tax-jojo"
+   ],
+   "place": {
+    "label": "하슬라(신라 북변, 지금의 강릉)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.9,
+    "lat": 37.75,
+    "claimIds": [
+     "claim-gap-taxation-5"
+    ],
+    "coordinateSourceIds": [
+     "src-hs-ko-gangneung"
+    ],
+    "coordinateNote": "삼국사기가 적은 「북변 하슬라」를 위키백과 강릉시 문서의 하서량·하슬라 지명 설명에 따라 지금의 강릉으로 보고, 같은 문서의 표시 좌표(37.750; 128.900)를 대표점으로 썼다. 세금을 걷고 면제한 관아의 자리는 확인되지 않아 더 좁히지 않았다.",
+    "setting": "office"
+   },
+   "participants": [],
+   "participantGroups": [
+    {
+     "label": "하슬라의 굶주린 백성",
+     "role": "civilian",
+     "stance": "victim",
+     "side": "c",
+     "count": 12,
+     "claimIds": [
+      "claim-gap-taxation-4",
+      "claim-hs-sg2-tax-jojo"
+     ]
+    }
+   ],
+   "participantGroupsNote": "count 는 화면 표현값이며 사료의 인원수가 아니다",
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gap-taxation-4"
+     ],
+     "level": "standard"
+    }
+   },
+   "category": "economy",
+   "region": "central",
+   "decade": 390,
+   "sceneFunction": "relief",
+   "relatedClaimIds": [
+    "claim-gap-taxation-1",
+    "claim-gap-taxation-2",
+    "claim-gap-taxation-3",
+    "claim-gap-taxation-6",
+    "claim-hs-sg2-tax-yeok",
+    "claim-hs-sg2-tax-jinheung"
+   ]
+  },
+  {
    "id": "scene-hs-sg2-wangin",
    "itemId": "hs-samguk-ajikgi-wangin",
    "eventId": "event-hs-sg2-wangin",
    "title": "아직기와 왕인의 도왜 전승",
-   "startYear": 397,
-   "endYear": 397,
+   "startYear": 405,
+   "endYear": 405,
    "kind": "migration",
-   "summary": "백제의 학자들이 바다를 건너 왜에 한자와 유학을 전했다는 이야기다. 고사기와 일본서기에만 나오고 우리 기록에는 이름이 보이지 않는다. 전승은 근구수왕대를 가리킬 뿐 건너간 해를 못 박지 않는다.",
+   "summary": "백제의 학자들이 바다를 건너 왜에 한자와 유학을 전했다는 이야기다. 일본서기는 아직기가 응신 15년 가을에, 왕인이 이듬해 봄 2월에 왔다고 적었고, 응신 16년을 백제 아신왕이 죽은 해에 맞추면 405년이 된다. 고사기는 근초고왕이 보냈다고 하여 372년 이후를 가리켜 두 기록의 연대가 갈린다.",
    "dateClaimIds": [
-    "claim-hs-sg2-baekje-wa-397"
+    "claim-gap-wangin-2"
    ],
    "actionClaimIds": [
     "claim-hs-sg2-wangin-role",
     "claim-hs-sg2-wangin-ajikgi",
-    "claim-hs-sg2-wangin-geungusu-order"
+    "claim-hs-sg2-wangin-geungusu-order",
+    "claim-gap-wangin-1"
    ],
    "place": {
     "label": "야마토(나라 일대)",
@@ -2544,17 +2867,19 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-sg2-baekje-wa-397"
+      "claim-gap-wangin-2"
      ],
      "level": "extended"
     }
    },
    "category": "foreign",
    "region": "south",
-   "decade": 390,
+   "decade": 400,
    "sceneFunction": "migration",
    "relatedClaimIds": [
-    "claim-hs-sg2-wangin-geungusu"
+    "claim-hs-sg2-wangin-geungusu",
+    "claim-gap-wangin-3",
+    "claim-hs-sg2-baekje-wa-397"
    ]
   },
   {
@@ -3705,9 +4030,9 @@
    "itemId": "hs-samguk-ajikgi-wangin",
    "category": "foreign",
    "region": "south",
-   "decade": 390,
-   "year": 397,
-   "yearVerbatim": "4세기 말~5세기 초(전승)",
+   "decade": 400,
+   "year": 405,
+   "yearVerbatim": "응신 16년 봄 2월(일본서기)",
    "placeLabel": "야마토(나라 일대)",
    "modernPlace": "일본 나라현 나라시",
    "what": "백제 학자들이 왜에 한자와 유학을 전함",
@@ -3716,11 +4041,14 @@
     "claim-hs-sg2-wangin-geungusu",
     "claim-hs-sg2-wangin-geungusu-order",
     "claim-hs-sg2-wangin-role",
-    "claim-hs-sg2-wangin-ajikgi"
+    "claim-hs-sg2-wangin-ajikgi",
+    "claim-gap-wangin-1",
+    "claim-gap-wangin-2",
+    "claim-gap-wangin-3"
    ],
    "sceneId": "scene-hs-sg2-wangin",
    "confidence": "low",
-   "note": "[10한사1-02-01] · extended · 해외(일본 나라현) 항목이다. 도왜 연대를 짚는 사료는 없다. 표시 연도 397은 항목이 잡은 기준 연도로, 백제와 왜의 통교가 확인되는 해(삼국사기 아신왕 6년)를 배경으로 삼았을 뿐이다. 근거로 확인한 것은 근구수왕대(375 즉위)라는 전승뿐이며 그 전승 서술은 위키백과 정리에 기댄다.",
+   "note": "[10한사1-02-01] · extended · 해외(일본 나라현) 항목이다. 도왜 연대는 일본 사서에만 있다. 일본서기는 아직기를 응신 15년 가을 8월, 왕인을 응신 16년 봄 2월로 적었고, 응신 16년에 죽었다는 백제 아화왕(아신왕)에 맞추면 405년이 된다. 고사기는 근초고왕(재위 346~375)이 보냈다고 하여 372년 이후를 가리킨다. 표시 연도는 앞의 계통을 따라 405로 바꿨다(이전 397은 근거 없는 기준 연도였다). 두 계통이 어긋나므로 confidence 는 low 로 둔다. 삼국사기·삼국유사에는 두 사람이 나오지 않는다.",
    "lon": 135.805,
    "lat": 34.68444,
    "coordinateBasis": "location claim-hs-sg2-nara-loc"
@@ -3793,11 +4121,17 @@
     "claim-hs-sg2-strata-golsinbun",
     "claim-hs-sg2-strata-sunjang",
     "claim-hs-sg2-strata-sumyo",
-    "claim-hs-sg2-strata-golpum"
+    "claim-hs-sg2-strata-golpum",
+    "claim-gap-strata-1",
+    "claim-gap-strata-2",
+    "claim-gap-strata-3",
+    "claim-gap-strata-4",
+    "claim-gap-strata-5",
+    "claim-gap-strata-6"
    ],
    "sceneId": null,
    "confidence": "low",
-   "note": "[10한사1-02-03] · standard · 삼국 전체의 신분 질서를 묶은 항목이라 한 지점으로 좁힐 수 없어 장면을 만들지 않았다. 근거는 신라의 골 구분을 적은 신당서 신라전, 능비의 수묘인 연호(415년 무렵), 지증왕 3년(502) 순장 금지다. 골품제 서술은 위키백과 정리에 기댄 보조 근거다."
+   "note": "[10한사1-02-03] · standard · 삼국 전체의 신분 질서를 묶은 항목이라 한 지점·한 해로 좁힐 수 없어 장면을 만들지 않았다. 이번에 삼국사기 잡지 제2의 색복·거기·옥사 원문을 근거로 넣었다: 색복 머리말의 법흥왕 복색 존비 제도, 6두품 색복 규정, 거기와 옥사의 「四頭品至百姓」 규정, 진골 옥사 규정이 진골 → 6두품 → 4두품 이하 백성으로 이어지는 층을 보여준다. 천민은 주서 고려전의 「빚을 못 갚으면 자녀를 노비로 쳐서 갚게 했다」로 뒷받침한다. 다만 잡지의 조문은 흥덕왕 9년(834) 교서라 4~6세기로 곧장 옮길 수 없어 confidence 는 low 로 둔다."
   },
   {
    "id": "fact-hs-sg2-009",
@@ -4239,47 +4573,31 @@
    "id": "fact-hs-sg2-024",
    "itemId": "hs-samguk-taxation",
    "category": "economy",
-   "region": "south",
-   "decade": 500,
-   "year": 500,
-   "yearVerbatim": "5세기 말~6세기 초",
-   "placeLabel": "삼국의 군현",
-   "modernPlace": "경상북도 경주시 일원",
+   "region": "central",
+   "decade": 390,
+   "year": 397,
+   "yearVerbatim": "四十二年, 秋七月",
+   "placeLabel": "하슬라(신라 북변)",
+   "modernPlace": "강원특별자치도 강릉시",
    "what": "곡식·베를 걷고 노동력을 동원한 고대의 세금",
    "claimIds": [
     "claim-hs-sg2-tax-yeok",
     "claim-hs-sg2-tax-jojo",
-    "claim-hs-sg2-tax-jinheung"
+    "claim-hs-sg2-tax-jinheung",
+    "claim-gap-taxation-1",
+    "claim-gap-taxation-2",
+    "claim-gap-taxation-3",
+    "claim-gap-taxation-4",
+    "claim-gap-taxation-5",
+    "claim-gap-taxation-6"
    ],
-   "sceneId": null,
-   "confidence": "low",
-   "note": "[10한사1-02-02] · standard · 삼국 전체의 수취 제도를 묶은 항목이라 한 지점으로 좁힐 수 없어 장면을 만들지 않았다. 근거는 조(租)·조(調)를 한 해 면제한 397년·555년 기사와 역부를 징발해 열두 성을 쌓은 504년 기사이며, 항목 자체를 짚은 근거는 못 찾아 confidence 를 low 로 내렸다."
+   "sceneId": "scene-hs-sg2-taxation",
+   "confidence": "medium",
+   "note": "[10한사1-02-02] · standard · 제도 전반을 묶은 항목이라 대표 지점이 없었으나, 이번에 장소와 해가 함께 적힌 사례를 찾아 장면을 만들었다: 삼국사기 신라본기 내물이사금 42년(397) 북변 하슬라의 조(租)·조(調)를 한 해 면제한 기사이며, 하슬라는 위키백과 강릉시 문서의 지명 설명에 따라 강릉으로 보았다. 제도 조항은 수서 고려전(사람마다 베 다섯 필·곡식 다섯 섬, 호를 상·중·하로 나눈 조), 주서 고려전·백제전(가진 것과 그해 풍흉에 따라 등급을 두어 냄)으로 채웠다. 다만 두 중국 사서는 6~7세기 기록이라 5세기 신라 사례와 시기가 다르고, 역(役)은 지증왕 5년(504) 역부 징발 기사로 남긴다. 표시 연도·좌표·region 을 397·강릉·central 로 고쳤다(이전 500·경주·south 는 근거 없는 대표값이었다).",
+   "lon": 128.9,
+   "lat": 37.75,
+   "coordinateBasis": "location claim-gap-taxation-5"
   }
  ],
- "missing": [
-  {
-   "id": "miss-hs-sg2-1",
-   "itemId": "hs-samguk-social-strata",
-   "topic": "삼국의 신분 구조",
-   "detail": "귀족·평민·천민의 구분을 한 지점·한 해로 짚을 근거를 찾지 못해 장면 없이 사실만 남겼다. 능비의 수묘인 연호와 지증왕 3년 순장 금지로 계층의 존재만 확인했다.",
-   "neededSource": "삼국사기 잡지(색복·거기·옥사) 또는 민족문화대백과 골품제도 항목의 발췌",
-   "reason": "제도 전반이라 한 지점으로 좁힐 수 없다"
-  },
-  {
-   "id": "miss-hs-sg2-2",
-   "itemId": "hs-samguk-taxation",
-   "topic": "삼국의 수취 제도",
-   "detail": "조·조·역의 수취 사례는 확인했으나 거두는 장소를 짚을 좌표 근거가 없어 장면을 만들지 않았다.",
-   "neededSource": "수서·주서 고구려·백제전의 세제 조항이나 민족문화대백과 수취체제 항목의 발췌",
-   "reason": "제도 전반이라 한 지점으로 좁힐 수 없다"
-  },
-  {
-   "id": "miss-hs-sg2-3",
-   "itemId": "hs-samguk-ajikgi-wangin",
-   "topic": "아직기와 왕인의 도왜 연대",
-   "detail": "전승은 근구수왕대(375~384)를 가리킬 뿐이고 표시 연도 397은 항목이 잡은 기준 연도다. 도왜 자체를 연월로 적은 사료를 찾지 못했다.",
-   "neededSource": "일본서기·고사기 원문 번역 또는 민족문화대백과 왕인 항목의 발췌",
-   "reason": "도왜 연대를 짚는 사료 근거 없음"
-  }
- ]
+ "missing": []
 }

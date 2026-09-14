@@ -90,6 +90,11 @@
      "id": "ex-suchang-place",
      "text": "수창궁은 고려시대 개경의 서소문 안에 있었던 궁궐이다",
      "locator": "본문 요약문"
+    },
+    {
+     "id": "ex-suchang-sipjaga",
+     "text": "개경 중심인 서소문 안 십자가(十字街) 서북쪽에 있었다",
+     "locator": "본문 「변천」"
     }
    ]
   },
@@ -511,6 +516,11 @@
      "id": "ex-gwanghwamun-geo",
      "text": "37.5760222; 126.9769000",
      "locator": "문서 머리 표시 좌표(geo)"
+    },
+    {
+     "id": "ex-gwanghwamun-yukjo",
+     "text": "조선의 주요 관청이 밀집한 육조거리의 기준점으로 자리잡았다",
+     "locator": "문서 머리말"
     }
    ]
   },
@@ -922,6 +932,11 @@
      "id": "ex-gbg-geo",
      "text": "37.57861; 126.97722",
      "locator": "문서 머리 표시 좌표(geo)"
+    },
+    {
+     "id": "ex-gbg-jongmyo-1593",
+     "text": "계사년(1593년) 4월 20일이었는데, 이때 종묘는 불타고 세 궁궐은 모두 무너진 후였다",
+     "locator": "본문 「임진왜란과 소실」"
     }
    ]
   },
@@ -960,6 +975,25 @@
      "id": "ex-dongsipjagak-geo",
      "text": "37.5761070; 126.9794232",
      "locator": "문서 위치 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-web-kowiki-paldo",
+   "title": "팔도 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%ED%8C%94%EB%8F%84",
+   "rawFile": "raw/ko-paldo.html",
+   "sha256": "aba42ecd3b3449d83e5a8d68b97214e62fa361d3213d126018602873992f2d5a",
+   "httpStatus": 200,
+   "byteLength": 193117,
+   "fetchedUtc": "2026-09-14T23:14:56Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-paldo-1413",
+     "text": "1413년 태종은 한반도를 여덟 개의 도로 분할하였는데",
+     "locator": "문서 머리말"
     }
    ]
   }
@@ -1184,6 +1218,11 @@
    "id": "event-hs-imjin-war",
    "type": "Event",
    "label": "임진왜란"
+  },
+  {
+   "id": "place-hs-uijeongbu-gwana",
+   "type": "Place",
+   "label": "의정부 관아"
   }
  ],
  "claims": [
@@ -1956,7 +1995,7 @@
    "sourceId": "src-je-encykorea-e0063914",
    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-honil-roles",
    "quote": "좌정승 김사형, 우정승 이무가 발의하고 의정부 검상 이회가 실무를 맡아 제작한 세계지도이다",
-   "note": "제작 주체가 의정부라는 서술이다. 의정부 관아 자리를 밝힌 근거는 찾지 못했고, 육조거리 동편이라는 것은 조사자의 추정이다."
+   "note": "제작 주체가 의정부라는 서술이다. 의정부 관아 자리는 『신증동국여지승람』의 “광화문 남쪽의 왼편” 기록으로 뒷받침한다(claim-gap-honil-1)."
   },
   {
    "id": "claim-je1-loc-gwanghwamun",
@@ -2026,7 +2065,7 @@
    "sourceId": "src-je-encykorea-e0053405",
    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-jujaso-loc",
    "quote": "그 위치는 훈도방에 있었던 것으로 보인다",
-   "note": "주자소 자리를 훈도방으로 본다."
+   "note": "주자소 자리를 훈도방으로 본다는 서술이다. 훈도방은 한양 남부의 방이므로 1405년 환도 뒤의 자리이고, 1403년 주조 장소로는 쓰지 않는다."
   },
   {
    "id": "claim-je1-loc-hundobang",
@@ -2342,7 +2381,7 @@
    },
    "sourceId": "src-web-enc-sillok",
    "citesExcerpt": "ex-sillok-gwan",
-   "note": "사초를 춘추관에 모아 실록을 엮었다. 춘추관은 경복궁 안에 있었다."
+   "note": "사초를 춘추관에 모아 실록을 엮었다. 춘추관이 경복궁 안에 있었다는 것은 『신증동국여지승람』의 조서강 기문으로 뒷받침한다(claim-gap-sillok-1)."
   },
   {
    "id": "claim-je1-gbg-burn",
@@ -2483,6 +2522,122 @@
    "sourceId": "src-web-kowiki-dongsipjagak",
    "citesExcerpt": "ex-dongsipjagak-geo",
    "note": "경복궁 동남쪽 모서리 동십자각의 표시 좌표. 춘추관이 있던 경복궁 동편을 가리키는 대푯값으로 쓴다."
+  },
+  {
+   "id": "claim-gap-founding-1",
+   "subject": "place-hs-suchanggung",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-gaegyeong"
+   },
+   "sourceId": "src-web-enc-suchanggung",
+   "citesExcerpt": "ex-suchang-sipjaga",
+   "note": "수창궁은 개경 서소문 안, 도심 십자가(十字街) 서북쪽에 있었다는 서술이다. 실측 좌표가 아니므로 개성시 표시 좌표를 개경 도심 대푯값으로 쓰는 근거로만 삼는다."
+  },
+  {
+   "id": "claim-gap-honil-1",
+   "subject": "place-hs-uijeongbu-gwana",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-gwanghwamun"
+   },
+   "sourceId": "src-zhws-sinjeung-yeoji",
+   "citesChunk": "chunk_zhws_sinjeung-yeoji_1142262_2487663",
+   "quote": "在光化門南之左，一在昌德宮仁政殿西",
+   "note": "『신증동국여지승람』 경도 문직공서 조: 의정부는 광화문 남쪽의 왼편(동편)에 있었고 창덕궁 인정전 서쪽에도 하나가 있었다. 1481년에 엮은 지리지의 기록이라 1402년 당시 배치와 똑같다고 단정하지는 않는다."
+  },
+  {
+   "id": "claim-gap-honil-2",
+   "subject": "place-hs-gwanghwamun",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-hanyang"
+   },
+   "sourceId": "src-web-kowiki-gwanghwamun",
+   "citesExcerpt": "ex-gwanghwamun-yukjo",
+   "note": "광화문은 주요 관청이 밀집한 육조거리의 기준점이었다. 의정부 관아 자리를 광화문 표시 좌표로 대신하는 근거다."
+  },
+  {
+   "id": "claim-gap-sillok-1",
+   "subject": "institution-hs-chunchugwan",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-gyeongbokgung"
+   },
+   "sourceId": "src-zhws-sinjeung-yeoji",
+   "citesChunk": "chunk_zhws_sinjeung-yeoji_1142262_2487663",
+   "quote": "集賢殿北，報漏閣南，厥地閑曠。一日，上命繕工監，構春秋館、尙瑞司于東西。以藏實錄與寶璽",
+   "note": "『신증동국여지승람』이 실은 조서강의 기문: 경복궁 집현전 북쪽·보루각 남쪽 빈터에 춘추관과 상서사를 동서로 지어 실록과 보새를 보관했다. 세종대의 신축 기사이므로 1413년 『태조실록』 편찬 당시의 건물 자리로 단정하지 않는다."
+  },
+  {
+   "id": "claim-gap-gyemija-1",
+   "subject": "place-hs-gaegyeong",
+   "predicate": "syj:capitalOf",
+   "object": {
+    "kind": "entity",
+    "id": "polity-joseon"
+   },
+   "sourceId": "src-web-kowiki-gaeseong",
+   "citesExcerpt": "ex-gaeseong-capital",
+   "note": "1399년부터 1405년까지 조선의 수도는 다시 개경이었다. 주자소를 1403년 대궐 안 아문으로 두었다는 서술과 묶으면 계미자를 주조한 대궐은 개경의 궁궐이다."
+  },
+  {
+   "id": "claim-gap-gyemija-2",
+   "subject": "institution-hs-jujaso",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-gyeongbokgung"
+   },
+   "sourceId": "src-hs-enc-jujaso",
+   "citesChunk": "chunk_curriculum-joseon-early_joseon-early-2_jujaso-1435",
+   "quote": "1435년(세종 17) 9월에 주자소를 경복궁 안으로 옮겼다.",
+   "note": "주자소는 1435년 경복궁 안으로 옮겼다. 훈도방 자리는 한양 환도(1405) 뒤 주자소가 있던 곳이므로 1403년 주조 장소로 쓰지 않는다."
+  },
+  {
+   "id": "claim-gap-8do-1",
+   "subject": "polity-joseon",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "八道"
+   },
+   "sourceId": "src-zhws-sinjeung-yeoji",
+   "citesChunk": "chunk_zhws_sinjeung-yeoji_66265_2462093",
+   "quote": "定為八道。處四方之中曰京畿、西南曰忠清、東南曰慶尚、偏南曰全羅、正東曰江原、正西曰黃海、東北曰永安、西北曰平安",
+   "note": "『신증동국여지승람』 서문: 태조가 한양에 도읍한 뒤 강역을 팔도로 정하고 사방의 중앙을 경기, 서남을 충청, 동남을 경상, 남쪽을 전라, 정동을 강원, 정서를 황해, 동북을 영안(뒤의 함경), 서북을 평안이라 했다. 1481년 기준 도 이름이라 1413년 개편 당시와 일부 다르다."
+  },
+  {
+   "id": "claim-gap-8do-2",
+   "subject": "event-hs-8do-1413",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1413년",
+    "year": 1413,
+    "precision": "year",
+    "earliest": 1413,
+    "latest": 1413
+   },
+   "sourceId": "src-web-kowiki-paldo",
+   "citesExcerpt": "ex-paldo-1413",
+   "note": "1413년 태종이 한반도를 여덟 개의 도로 나누었다는 서술이다."
+  },
+  {
+   "id": "claim-gap-jongmyo-1",
+   "subject": "place-hs-jongmyo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "event-hs-imjin-war"
+   },
+   "sourceId": "src-web-kowiki-gyeongbokgung",
+   "citesExcerpt": "ex-gbg-jongmyo-1593",
+   "note": "조·명 연합군이 한성을 되찾은 1593년 4월 20일에 종묘는 이미 불탄 뒤였다는 서술이다. 소실 시점은 1592년 5월 왜군의 한성 점령과 1593년 4월 사이로 좁혀지며, 연월을 못 박은 사료는 아직 찾지 못했다."
   }
  ],
  "scenes": [
@@ -2512,12 +2667,13 @@
     "lon": 126.55,
     "lat": 37.966667,
     "claimIds": [
-     "claim-je1-loc-gaeseong"
+     "claim-je1-loc-gaeseong",
+     "claim-gap-founding-1"
     ],
     "coordinateSourceIds": [
      "src-web-kowiki-gaeseong"
     ],
-    "coordinateNote": "수창궁 터의 개별 좌표를 찾지 못해 위키백과 개성시 표시 좌표를 개경 도심 대푯값으로 썼다. 정확도는 area다.",
+    "coordinateNote": "한국민족문화대백과 「수창궁」은 수창궁이 개경 서소문 안, 도심 십자가(十字街) 서북쪽에 있었다고 적는다. 터의 실측 좌표는 찾지 못해 위키백과 개성시 표시 좌표를 개경 도심 대푯값으로 쓰고 정확도를 area로 둔다.",
     "setting": "palace"
    },
    "participants": [
@@ -3013,7 +3169,7 @@
     "coordinateSourceIds": [
      "src-web-kowiki-jongmyo"
     ],
-    "coordinateNote": "위키백과 종묘 표시 좌표다. 국가유산포털 주소(종로 157)와 같은 자리를 가리킨다. 임진왜란으로 불탄 뒤 1608년에 다시 지었다.",
+    "coordinateNote": "위키백과 종묘 표시 좌표다. 국가유산포털 주소(종로 157)와 같은 자리를 가리킨다. 임진왜란으로 불탄 뒤 1608년에 다시 지었고, 1593년 4월 한성 탈환 때는 이미 불탄 뒤였다.",
     "setting": "temple"
    },
    "participants": [],
@@ -3045,7 +3201,8 @@
     "basisClaimIds": [
      "claim-je1-jongmyo-1395",
      "claim-je1-jongmyo-burn",
-     "claim-je1-imjin-1592"
+     "claim-je1-imjin-1592",
+     "claim-gap-jongmyo-1"
     ]
    }
   },
@@ -3550,7 +3707,7 @@
    "id": "scene-je1-honil-1402",
    "itemId": "hs-joseon-early-honil-gangni",
    "eventId": "event-je1-honil-1402",
-   "title": "혼일강리역대국도지도 — 한양 의정부(경복궁 광화문 앞 육조거리) (1402)",
+   "title": "혼일강리역대국도지도 — 한양 의정부(광화문 남쪽 육조거리) (1402)",
    "startYear": 1402,
    "endYear": 1402,
    "kind": "publication",
@@ -3562,21 +3719,24 @@
     "claim-je1-honil-time"
    ],
    "actionClaimIds": [
-    "claim-je1-honil-roles"
+    "claim-je1-honil-roles",
+    "claim-gap-honil-1"
    ],
    "place": {
-    "label": "한양 의정부(경복궁 광화문 앞 육조거리)",
+    "label": "한양 의정부(광화문 남쪽 육조거리)",
     "medium": "land",
-    "precision": "site",
+    "precision": "area",
     "lon": 126.9769,
     "lat": 37.5760222,
     "claimIds": [
-     "claim-je1-loc-gwanghwamun"
+     "claim-je1-loc-gwanghwamun",
+     "claim-gap-honil-1",
+     "claim-gap-honil-2"
     ],
     "coordinateSourceIds": [
      "src-web-kowiki-gwanghwamun"
     ],
-    "coordinateNote": "지도를 만든 곳은 의정부다. 의정부 관아 자리를 밝힌 근거를 찾지 못해 제작 주체의 관아가 있던 육조거리로 보고 광화문 표시 좌표를 대푯값으로 썼다. 육조거리 동편이라는 것은 조사자의 추정이다.",
+    "coordinateNote": "지도를 만든 곳은 의정부다. 『신증동국여지승람』 경도 문직공서 조는 의정부 관아가 광화문 남쪽의 왼편(동편)에 있었다고 적고, 광화문은 관청이 밀집한 육조거리의 기준점이었다. 관아 건물의 실측 좌표가 없어 광화문 표시 좌표를 육조거리 대푯값으로 쓰고 정확도를 area로 둔다.",
     "setting": "office"
    },
    "participants": [],
@@ -3618,35 +3778,37 @@
    "id": "scene-je1-gyemija-1403",
    "itemId": "hs-joseon-early-gyemija",
    "eventId": "event-je1-gyemija-1403",
-   "title": "계미자 — 한양 주자소(훈도방) (1403)",
+   "title": "계미자 — 개경 대궐 안 주자소 (1403)",
    "startYear": 1403,
    "endYear": 1403,
    "kind": "publication",
    "category": "culture",
    "region": "central",
    "decade": 1400,
-   "summary": "1403년 2월 주자소를 세우고 같은 달 19일 활자 주조를 시작했다. 이때 만든 동활자가 계미자다.",
+   "summary": "1403년 2월 대궐 안에 주자소를 두고 같은 달 19일 활자 주조를 시작했다. 이때 만든 동활자가 계미자다. 1399년부터 1405년까지 조선의 도읍은 개경이었으므로 이 대궐은 개경의 궁궐이다.",
    "dateClaimIds": [
     "claim-je1-gyemija-time"
    ],
    "actionClaimIds": [
     "claim-je1-gyemija-cast",
     "claim-je1-gyemija-name",
-    "claim-je1-gyemija-loc"
+    "claim-gap-gyemija-1",
+    "claim-gap-gyemija-2"
    ],
    "place": {
-    "label": "한양 주자소(훈도방)",
+    "label": "개경 대궐 안 주자소",
     "medium": "land",
     "precision": "area",
-    "lon": 126.984,
-    "lat": 37.5637,
+    "lon": 126.55,
+    "lat": 37.966667,
     "claimIds": [
-     "claim-je1-loc-hundobang"
+     "claim-je1-loc-gaeseong",
+     "claim-gap-gyemija-1"
     ],
     "coordinateSourceIds": [
-     "src-web-enwiki-myeongdong"
+     "src-web-kowiki-gaeseong"
     ],
-    "coordinateNote": "주자소는 처음 대궐 안 아문으로 두었고 뒤에 훈도방에 있었다고 전한다. 훈도방 자리의 개별 좌표가 없어 명동 표시 좌표를 area로 썼다.",
+    "coordinateNote": "주자소는 1403년 2월 대궐 안 아문으로 신설되었고, 그때 도읍은 개경이었다(1399~1405). 어느 궁궐인지는 밝히지 못해 개성시 표시 좌표를 개경 도심 대푯값으로 쓰고 정확도를 area로 둔다. 한양 남부 훈도방의 주자소 자리는 1405년 환도 뒤의 자리이며 1435년에는 경복궁 안으로 옮겼다.",
     "setting": "office"
    },
    "participants": [],
@@ -3856,13 +4018,15 @@
    "category": "administration",
    "region": "south",
    "decade": 1410,
-   "summary": "1413년 지방제도를 고쳐 완산을 전주로, 계림을 경주로, 서북면을 평안도로, 동북면을 영길도로 바꾸었다. 각 도에는 지방 통치를 관할하는 관찰사를 두었다.",
+   "summary": "1413년 태종이 전국을 여덟 도로 나누고, 같은 해 완산을 전주로, 계림을 경주로, 서북면을 평안도로, 동북면을 영길도로 바꾸었다. 각 도에는 지방 통치를 관할하는 관찰사를 두었다.",
    "dateClaimIds": [
-    "claim-je1-8do-time"
+    "claim-je1-8do-time",
+    "claim-gap-8do-2"
    ],
    "actionClaimIds": [
     "claim-je1-8do-gwanchalsa",
-    "claim-je1-8do-jeonju"
+    "claim-je1-8do-jeonju",
+    "claim-gap-8do-1"
    ],
    "place": {
     "label": "전주(옛 완산)",
@@ -3876,7 +4040,7 @@
     "coordinateSourceIds": [
      "src-web-enwiki-jeonju"
     ],
-    "coordinateNote": "8도 확정은 전국에 걸친 일이라 한 점이 없다. 같은 개편에서 완산이 전주로 바뀌었으므로 전주 표시 좌표를 대표 지점으로 썼다.",
+    "coordinateNote": "8도 확정은 전국에 걸친 일이라 한 점이 없다. 여덟 도의 이름과 방위는 『신증동국여지승람』 서문에, 1413년 태종의 8도 분할은 위키백과 「팔도」에 적혀 있다. 같은 개편에서 완산이 전주로 바뀌었으므로 전주 표시 좌표를 대표 지점으로 쓴다.",
     "setting": "office"
    },
    "participants": [],
@@ -4064,7 +4228,7 @@
    "id": "scene-je1-sillok-1413",
    "itemId": "hs-joseon-early-sillok",
    "eventId": "event-je1-sillok-1413",
-   "title": "조선왕조실록 — 한양 춘추관(경복궁 동편) (1413)",
+   "title": "조선왕조실록 — 한양 춘추관(경복궁 집현전 북쪽) (1413)",
    "startYear": 1413,
    "endYear": 1413,
    "kind": "publication",
@@ -4077,21 +4241,23 @@
    ],
    "actionClaimIds": [
     "claim-je1-sillok-span",
-    "claim-je1-sillok-place"
+    "claim-je1-sillok-place",
+    "claim-gap-sillok-1"
    ],
    "place": {
-    "label": "한양 춘추관(경복궁 동편)",
+    "label": "한양 춘추관(경복궁 집현전 북쪽)",
     "medium": "land",
     "precision": "area",
-    "lon": 126.9794232,
-    "lat": 37.576107,
+    "lon": 126.975889,
+    "lat": 37.57975,
     "claimIds": [
-     "claim-je1-loc-dongsipjagak"
+     "claim-je1-loc-gyeonghoeru",
+     "claim-gap-sillok-1"
     ],
     "coordinateSourceIds": [
-     "src-web-kowiki-dongsipjagak"
+     "src-web-kowiki-gyeonghoeru"
     ],
-    "coordinateNote": "『태조실록』을 엮은 춘추관은 경복궁 안 궐내각사가 있던 동편에 있었다. 춘추관 건물의 개별 좌표가 없어 경복궁 동남쪽 모서리인 동십자각 표시 좌표를 area 대푯값으로 썼다. 경복궁 항목 좌표와 340m쯤 떨어져 한 점에 겹치지 않는다.",
+    "coordinateNote": "『신증동국여지승람』이 실은 조서강의 기문은 춘추관을 경복궁 집현전 북쪽·보루각 남쪽에 지어 실록을 보관했다고 적는다. 이 자리는 경복궁 서쪽 경회루 남편에 해당해 경회루 표시 좌표를 area 대푯값으로 쓴다. 세종대 신축 기사이므로 1413년 편찬 당시의 건물 자리로 단정하지 않으며, 앞서 쓰던 동십자각(경복궁 동편) 좌표는 근거가 없어 물렸다.",
     "setting": "office"
    },
    "participants": [],
@@ -4150,11 +4316,12 @@
     "claim-je1-founding-time",
     "claim-je1-founding-gaegyeong",
     "claim-je1-founding-suchang",
-    "claim-je1-loc-gaeseong"
+    "claim-je1-loc-gaeseong",
+    "claim-gap-founding-1"
    ],
    "sceneId": "scene-je1-founding-1392",
    "confidence": "high",
-   "note": "[10한사1-01-03] · 우선순위 core",
+   "note": "[10한사1-01-03] · 우선순위 core · 수창궁 위치는 개경 서소문 안 십자가 서북쪽이라는 서술까지만 확인했고 실측 좌표는 미확인이다.",
    "persistence": null,
    "density": null
   },
@@ -4341,11 +4508,12 @@
     "claim-je1-jongmyo-1394",
     "claim-je1-loc-jongmyo",
     "claim-je1-jongmyo-burn",
-    "claim-je1-imjin-1592"
+    "claim-je1-imjin-1592",
+    "claim-gap-jongmyo-1"
    ],
    "sceneId": "scene-je1-jongmyo-1395",
    "confidence": "high",
-   "note": "[10한사1-02-04] · 우선순위 standard · 원문에 소실 연도 숫자가 없어 “임진왜란 때 소실” 서술과 임진왜란 시작 연도(1592) 주장을 묶어 존속을 닫았다.",
+   "note": "[10한사1-02-04] · 우선순위 standard · 소실 연월을 못 박은 사료는 찾지 못했다. 1593년 4월 20일 조·명 연합군의 한성 탈환 때 종묘가 이미 불탄 뒤였다는 서술로 소실 시점을 1592년 5월 한성 점령과 1593년 4월 사이로 좁히고, 표시에는 임진왜란이 시작된 1592년을 쓴다.",
    "persistence": {
     "kind": "facility",
     "from": 1395,
@@ -4560,7 +4728,7 @@
    "decade": 1400,
    "year": 1402,
    "yearVerbatim": "1402년",
-   "placeLabel": "한양 의정부(경복궁 광화문 앞 육조거리)",
+   "placeLabel": "한양 의정부(광화문 남쪽 육조거리)",
    "modernPlace": "서울특별시 종로구 세종대로",
    "lon": 126.9769,
    "lat": 37.5760222,
@@ -4569,11 +4737,13 @@
    "claimIds": [
     "claim-je1-honil-time",
     "claim-je1-honil-roles",
+    "claim-gap-honil-1",
+    "claim-gap-honil-2",
     "claim-je1-loc-gwanghwamun"
    ],
    "sceneId": "scene-je1-honil-1402",
    "confidence": "high",
-   "note": "[10한사1-02-01] · 우선순위 standard · 제작 장소 기록이 없어 제작 주체(의정부)의 관아 자리를 대푯값으로 썼다. 관아 위치 근거는 찾지 못했다.",
+   "note": "[10한사1-02-01] · 우선순위 standard · 제작 장소 기록은 없으나 제작 주체인 의정부의 관아가 『신증동국여지승람』에 “광화문 남쪽의 왼편”으로 적혀 있어 광화문 표시 좌표를 육조거리 대푯값으로 쓴다.",
    "persistence": null,
    "density": null
   },
@@ -4585,22 +4755,23 @@
    "decade": 1400,
    "year": 1403,
    "yearVerbatim": "1403년 2월",
-   "placeLabel": "한양 주자소(훈도방)",
-   "modernPlace": "서울특별시 중구 명동·을지로 일대",
-   "lon": 126.984,
-   "lat": 37.5637,
-   "coordinateBasis": "location claim-je1-loc-hundobang",
+   "placeLabel": "개경 대궐 안 주자소",
+   "modernPlace": "북한 개성특별시",
+   "lon": 126.55,
+   "lat": 37.966667,
+   "coordinateBasis": "location claim-je1-loc-gaeseong",
    "what": "태종이 주자소를 세우고 처음 만든 금속 활자",
    "claimIds": [
     "claim-je1-gyemija-time",
     "claim-je1-gyemija-cast",
     "claim-je1-gyemija-name",
-    "claim-je1-gyemija-loc",
-    "claim-je1-loc-hundobang"
+    "claim-gap-gyemija-1",
+    "claim-gap-gyemija-2",
+    "claim-je1-loc-gaeseong"
    ],
    "sceneId": "scene-je1-gyemija-1403",
-   "confidence": "high",
-   "note": "[10한사1-02-04] · 우선순위 extended",
+   "confidence": "medium",
+   "note": "[10한사1-02-04] · 우선순위 extended · 항목 목록은 장소를 한양 주자소(훈도방)로 적었으나 1403년 도읍은 개경이었고 주자소는 대궐 안 아문으로 신설되었다. 훈도방 자리는 환도(1405) 뒤의 자리이므로 개경 대푯값으로 옮겼다. 어느 궁궐인지는 확인하지 못해 확신도를 medium 으로 낮춘다.",
    "persistence": null,
    "density": null
   },
@@ -4677,13 +4848,15 @@
    "what": "전국을 여덟 도로 나누고 수령을 모두 보냈다",
    "claimIds": [
     "claim-je1-8do-time",
+    "claim-gap-8do-2",
     "claim-je1-8do-gwanchalsa",
     "claim-je1-8do-jeonju",
+    "claim-gap-8do-1",
     "claim-je1-loc-jeonju"
    ],
    "sceneId": "scene-je1-8do-1413",
    "confidence": "medium",
-   "note": "[10한사1-01-03] · 우선순위 standard · 관찰사 항목이 말하는 “8도 관찰사 제도 확립”은 1417년(태종 17)이므로 1413년 개편의 근거로 쓰지 않았다.",
+   "note": "[10한사1-01-03] · 우선순위 standard · 여덟 도의 이름과 방위는 『신증동국여지승람』 서문(1481년 기준, 함경도는 영안도)으로, 1413년 8도 분할은 위키백과 「팔도」로 뒷받침한다. 전국 개편이라 대표 지점이 없어 같은 해 이름이 바뀐 전주를 대표로 삼았다. 관찰사 항목이 말하는 “8도 관찰사 제도 확립”은 1417년(태종 17)이므로 1413년 개편의 근거로 쓰지 않았다.",
    "persistence": null,
    "density": null
   },
@@ -4751,21 +4924,22 @@
    "decade": 1410,
    "year": 1413,
    "yearVerbatim": "1413년(태종 13) 3월",
-   "placeLabel": "한양 춘추관(경복궁 동편)",
+   "placeLabel": "한양 춘추관(경복궁 집현전 북쪽)",
    "modernPlace": "서울특별시 종로구 세종로",
-   "lon": 126.9794232,
-   "lat": 37.576107,
-   "coordinateBasis": "location claim-je1-loc-dongsipjagak",
+   "lon": 126.975889,
+   "lat": 37.57975,
+   "coordinateBasis": "location claim-je1-loc-gyeonghoeru",
    "what": "임금이 죽은 뒤 사관이 정리한 왕조 공식 기록",
    "claimIds": [
     "claim-je1-sillok-time",
     "claim-je1-sillok-span",
     "claim-je1-sillok-place",
-    "claim-je1-loc-dongsipjagak"
+    "claim-gap-sillok-1",
+    "claim-je1-loc-gyeonghoeru"
    ],
    "sceneId": "scene-je1-sillok-1413",
    "confidence": "high",
-   "note": "[10한사1-02-04] · 우선순위 standard · 춘추관 건물 좌표가 없어 경복궁 동편(동십자각) 표시 좌표를 썼다. 근정전 좌표는 경복궁 항목과 25m 차이라 쓰지 않았다.",
+   "note": "[10한사1-02-04] · 우선순위 standard · 춘추관은 『신증동국여지승람』의 조서강 기문에 경복궁 집현전 북쪽·보루각 남쪽으로 적혀 있어 그 근방인 경회루 표시 좌표를 대푯값으로 썼다. 세종대 기사라 1413년 당시 건물 자리는 단정하지 않는다.",
    "persistence": null,
    "density": null
   }
@@ -4775,56 +4949,28 @@
    "id": "miss-je1-1",
    "itemId": "hs-joseon-early-founding-1392",
    "topic": "개경 수창궁 터의 정확한 좌표",
-   "detail": "즉위 장소인 수창궁 터의 십진 좌표를 공개 자료에서 찾지 못해 개성시 표시 좌표를 대푯값으로 썼다. 1400년 태종 장면도 같은 좌표를 쓴다(연도는 겹치지 않는다).",
+   "detail": "즉위 장소인 수창궁 터의 십진 좌표를 공개 자료에서 찾지 못해 개성시 표시 좌표를 대푯값으로 썼다. 1400년 태종 장면도 같은 좌표를 쓴다(연도는 겹치지 않는다). 이번에 추가로 찾아본 것: 위키백과 「수창궁」 문서는 없고(404), 한국민족문화대백과 「수창궁」은 위치를 “개경 서소문 안, 도심 십자가(十字街) 서북쪽”까지만 적는다(발췌 ex-suchang-sipjaga 로 추가). 국가유산포털(heritage.go.kr)은 접속되지 않았고 북한 개성 실측 좌표는 허용 출처에서 찾지 못했다.",
    "neededSource": "북한 개성 유적 실측 자료 또는 국가유산포털·학술 보고서의 수창궁지 좌표"
-  },
-  {
-   "id": "miss-je1-2",
-   "itemId": "hs-joseon-early-gyemija",
-   "topic": "한양 훈도방 주자소 터의 좌표",
-   "detail": "주자소가 있던 훈도방의 위치를 지금 중구 명동·을지로 일대로만 알 수 있어 명동 표시 좌표로 대신했다.",
-   "neededSource": "서울역사박물관·국가유산포털의 주자소 터 표석 좌표"
   },
   {
    "id": "miss-je1-3",
    "itemId": "hs-joseon-early-hyanggyo",
    "topic": "향교 전국 설치 연도",
-   "detail": "항목 목록은 1413년을 적었으나 향교 전국 설치를 한 해로 못박은 근거를 찾지 못했다. 대신 건립 연대가 밝혀진 나주향교(1398)를 대표 사례로 삼았다.",
+   "detail": "항목 목록은 1413년을 적었으나 향교 전국 설치를 한 해로 못박은 근거를 찾지 못했다. 대신 건립 연대가 밝혀진 나주향교(1398)를 대표 사례로 삼았다. 이번에 추가로 찾아본 것: 한국민족문화대백과 「향교」 본문에는 전국 일괄 설치 연도가 없고, 1413년(태종 13)은 학전·학노비 지급 표의 열 이름으로만 나온다. 로컬 원문 조각(신증동국여지승람·고려사)에도 조선 초 군현별 향교 설치 시기를 정리한 대목이 없다. 조선왕조실록은 로컬에 citation-chunks.jsonl 형식으로만 있어 검증기가 읽지 못하므로 인용하지 않았다. 나주향교(1398) 대표 사례를 그대로 둔다.",
    "neededSource": "조선 초 군현별 향교 설치 시기를 정리한 학술 자료"
-  },
-  {
-   "id": "miss-je1-4",
-   "itemId": "hs-joseon-early-8do",
-   "topic": "8도 확정을 한 점으로 나타낼 장소",
-   "detail": "8도 확정은 전국 규모의 개편이라 대표 지점이 없어 같은 개편에서 이름이 바뀐 전주를 썼다.",
-   "neededSource": "태종 13년 지방제도 개편을 도별로 정리한 자료"
-  },
-  {
-   "id": "miss-je1-5",
-   "itemId": "hs-joseon-early-sillok",
-   "topic": "경복궁 춘추관 건물 자리",
-   "detail": "『태조실록』을 엮은 춘추관 건물의 개별 좌표가 없어 경복궁 동편의 동십자각 표시 좌표를 대푯값으로 썼다.",
-   "neededSource": "경복궁 발굴 보고서의 춘추관 터 좌표"
-  },
-  {
-   "id": "miss-je1-6",
-   "itemId": "hs-joseon-early-honil-gangni",
-   "topic": "의정부 관아 자리",
-   "detail": "지도를 만든 의정부 관아의 위치를 밝힌 발췌를 찾지 못해 육조거리(광화문 앞) 표시 좌표를 대푯값으로 썼다.",
-   "neededSource": "한국민족문화대백과 「의정부」 항목 또는 서울역사박물관의 육조거리 관아 배치 자료"
   },
   {
    "id": "miss-je1-7",
    "itemId": "hs-joseon-early-gwageo",
    "topic": "1392년 과거 제도 정비 장소",
-   "detail": "제도 정비가 이루어진 관아를 특정할 근거가 없어 당시 도읍인 개경의 궁성터 표시 좌표를 대푯값으로 썼다.",
+   "detail": "제도 정비가 이루어진 관아를 특정할 근거가 없어 당시 도읍인 개경의 궁성터 표시 좌표를 대푯값으로 썼다. 이번에 추가로 찾아본 것: 『신증동국여지승람』 경도 문직공서 조에 예조·성균관·춘추관 등 관아의 자리가 적혀 있으나 모두 한양 기준이라 1392년 개경에는 쓸 수 없다. 고려사 백관지·선거지에서도 과거를 치른 장소를 밝힌 대목을 찾지 못했다. 개경 궁성터(만월대) 대푯값을 그대로 둔다.",
    "neededSource": "조선 초 과거 시행 관서(예조·성균관)의 위치를 밝힌 학술 자료"
   },
   {
    "id": "miss-je1-8",
    "itemId": "hs-joseon-early-jongmyo",
    "topic": "종묘 소실 연도",
-   "detail": "원문이 “임진왜란 때 소실”이라고만 적어 소실 연도를 임진왜란 시작 연도(1592)로 잡았다.",
+   "detail": "원문이 “임진왜란 때 소실”이라고만 적어 소실 연도를 임진왜란 시작 연도(1592)로 잡았다. 이번에 추가로 찾아본 것: 한국민족문화대백과 「종묘」는 “임진왜란으로 불에 타자 1604년부터 중건이 논의되어”라고만 적고 소실 연월이 없다. 위키백과 「경복궁」에서 1593년 4월 20일 한성 탈환 때 종묘가 이미 불탄 뒤였다는 서술을 찾아 claim-gap-jongmyo-1 로 추가했고, 이로써 소실 시점은 1592년 5월~1593년 4월 사이로 좁혀진다. 연월을 못 박은 사료는 여전히 미확인이다.",
    "neededSource": "종묘 소실 시점을 연월로 적은 사료 또는 발굴·수리 보고서"
   }
  ]

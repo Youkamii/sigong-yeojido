@@ -617,6 +617,30 @@
      "locator": "문서 표시 좌표(geo)"
     }
    ]
+  },
+  {
+   "id": "src-hs-museum-hasachang",
+   "title": "철조 석가불좌상(보물 하남 하사창동 철조석가여래좌상) — 국립중앙박물관 소장품",
+   "publisher": "국립중앙박물관",
+   "url": "https://www.museum.go.kr/site/main/relic/treasure/view?relicId=1200",
+   "rawFile": "raw/museum-hasachang-iron-buddha.html",
+   "sha256": "5997bbf9c83e1abc36cddbc1d90e2f5be1c6d00bf1dc0b8aec011069ef6fb358",
+   "httpStatus": 200,
+   "byteLength": 78329,
+   "fetchedUtc": "2026-09-14T23:03:47Z",
+   "license": "공공누리 제1유형(출처표시) — 국립중앙박물관",
+   "excerpts": [
+    {
+     "id": "ex-museum-hasachang-date",
+     "text": "철불은 왕건이 즉위하고 고려가 발흥하기 시작한 920~930년대에 조성된 불상으로 경기도 광주군 하사창리(현 경기도 하남시 하사창동)에서 출토되었다",
+     "locator": "소장품 해설 본문"
+    },
+    {
+     "id": "ex-museum-hasachang-patron",
+     "text": "이 철불은 고려 태조와 혜종의 장인이었던 왕규(王規)의 후원으로 조성되었고",
+     "locator": "소장품 해설 본문"
+    }
+   ]
   }
  ],
  "entities": [
@@ -854,6 +878,11 @@
    "id": "event-hs-ge2-byeongmasa",
    "type": "Event",
    "label": "동·서북면 병마사 설치"
+  },
+  {
+   "id": "person-hs-wanggyu",
+   "type": "Person",
+   "label": "왕규"
   }
  ],
  "claims": [
@@ -2458,6 +2487,34 @@
    "citesChunk": "chunk_goryeosa_kr_003_0090_0040_0030",
    "quote": "以崔承老爲門下守侍中",
    "note": "성종 7년(988) 문하수시중에 올랐다"
+  },
+  {
+   "id": "claim-gap-hasachang-1",
+   "subject": "thing-hs-ge2-hasachang-buddha",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "920~930년대",
+    "year": 930,
+    "precision": "decade",
+    "earliest": 920,
+    "latest": 930
+   },
+   "sourceId": "src-hs-museum-hasachang",
+   "citesExcerpt": "ex-museum-hasachang-date",
+   "note": "국립중앙박물관 소장품 해설은 이 철불을 왕건 즉위 뒤 고려가 일어서던 920~930년대에 만든 것으로 본다. 절대 연도를 적은 기록은 없어 표시 연도는 그 범위의 끝인 930년으로 잡았다."
+  },
+  {
+   "id": "claim-gap-hasachang-2",
+   "subject": "thing-hs-ge2-hasachang-buddha",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "person-hs-wanggyu"
+   },
+   "sourceId": "src-hs-museum-hasachang",
+   "citesExcerpt": "ex-museum-hasachang-patron",
+   "note": "국립중앙박물관 해설은 태조·혜종의 장인 왕규의 후원으로 조성된 것으로 본다. 후원자 비정은 이 해설의 견해다."
   }
  ],
  "scenes": [
@@ -3383,16 +3440,18 @@
    "itemId": "hs-goryeo-early-hasachang-iron-buddha",
    "eventId": "event-hs-ge2-hasachang",
    "title": "하남 하사창동 철조석가여래좌상",
-   "startYear": 1000,
-   "endYear": 1000,
+   "startYear": 930,
+   "endYear": 930,
    "kind": "heritage",
-   "summary": "경기도 하남 하사창동 절터에서 나온 고려 초의 철불이다. 높이 2.88m, 무게 6.2t으로 지방에서 이만한 불상을 세울 힘이 있었음을 보여 준다. 지금은 국립중앙박물관에 있다.",
+   "summary": "경기도 하남 하사창동 절터에서 나온 고려 초의 철불이다. 국립중앙박물관 해설은 왕건이 즉위하고 고려가 일어서던 920~930년대에 만든 것으로 보고, 태조·혜종의 장인 왕규의 후원을 든다. 높이 2.88m, 무게 6.2t으로 지방에서 이만한 불상을 세울 힘이 있었음을 보여 준다. 지금은 국립중앙박물관에 있다.",
    "dateClaimIds": [
-    "claim-ge2-hasachang-def"
+    "claim-gap-hasachang-1"
    ],
    "actionClaimIds": [
     "claim-ge2-hasachang-size",
-    "claim-ge2-hasachang-place"
+    "claim-ge2-hasachang-place",
+    "claim-ge2-hasachang-def",
+    "claim-gap-hasachang-2"
    ],
    "place": {
     "label": "하남 하사창동 절터",
@@ -3420,14 +3479,15 @@
    },
    "category": "culture",
    "region": "central",
-   "decade": 1000,
+   "decade": 930,
    "sceneFunction": "temple",
    "heritageType": "artifact",
    "persistence": {
     "kind": "facility",
-    "from": 1000,
+    "from": 930,
     "to": null,
     "basisClaimIds": [
+     "claim-gap-hasachang-1",
      "claim-ge2-hasachang-def",
      "claim-ge2-hasachang-size"
     ],
@@ -4125,27 +4185,29 @@
    "itemId": "hs-goryeo-early-hasachang-iron-buddha",
    "category": "culture",
    "region": "central",
-   "decade": 1000,
-   "year": 1000,
-   "yearVerbatim": "1000년",
+   "decade": 930,
+   "year": 930,
+   "yearVerbatim": "920~930년대",
    "placeLabel": "하남 하사창동 절터",
    "modernPlace": "경기도 하남시 하사창동",
    "what": "쇠로 만든 거대한 부처, 고려 초 지방 세력의 힘을 보여 줌",
    "claimIds": [
+    "claim-gap-hasachang-1",
     "claim-ge2-hasachang-def",
     "claim-ge2-hasachang-size",
     "claim-ge2-hasachang-place",
+    "claim-gap-hasachang-2",
     "claim-ge2-loc-hasachang"
    ],
    "sceneId": "scene-hs-ge2-hasachang",
-   "confidence": "low",
-   "note": "[10한사1-02-04] · extended · 연도 근거가 없어 1000년은 표시용 값이다. 절터는 폐사지이고 현존하는 것은 국립중앙박물관의 철불이며 이 자리의 전각이 아니다.",
+   "confidence": "medium",
+   "note": "[10한사1-02-04] · extended · 제작 시기는 국립중앙박물관 소장품 해설의 920~930년대 서술을 따랐고 표시 연도는 그 범위의 끝인 930년이다. 절터는 폐사지이고 현존하는 것은 국립중앙박물관의 철불이며 이 자리의 전각이 아니다.",
    "lon": 127.2,
    "lat": 37.517,
    "coordinateBasis": "location claim-ge2-loc-hasachang",
    "persistence": {
     "kind": "facility",
-    "from": 1000,
+    "from": 930,
     "to": null
    }
   },
@@ -4275,14 +4337,5 @@
    "coordinateBasis": "location claim-ge2-loc-sonjuk"
   }
  ],
- "missing": [
-  {
-   "id": "miss-ge2-1",
-   "itemId": "hs-goryeo-early-hasachang-iron-buddha",
-   "reason": "제작 연도를 짚어 주는 근거를 찾지 못했다",
-   "topic": "하남 하사창동 철조석가여래좌상의 제작 연도",
-   "detail": "로컬 원문과 허용 웹 출처 어디에도 이 철불의 제작 연도를 적은 기록이 없어 장면 연도 1000년은 표시용 값이다. 이 때문에 사실의 confidence 를 low 로 낮추었다.",
-   "neededSource": "국가유산포털 보물 지정 해설 또는 국립중앙박물관 소장품 해설의 제작 시기 서술"
-  }
- ]
+ "missing": []
 }

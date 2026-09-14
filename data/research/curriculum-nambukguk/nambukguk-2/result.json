@@ -3254,6 +3254,49 @@
    "sourceId": "src-nb2-enc-wonseong",
    "citesExcerpt": "ex-wonseong-juwon",
    "note": "선덕왕이 죽자 김주원과 왕위계승 다툼이 벌어졌고 원성왕이 즉위했다. 진골 사이의 왕위 다툼 사례다."
+  },
+  {
+   "id": "claim-gap-goguryeo-succession-1",
+   "subject": "polity-hs-balhae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "759년",
+    "year": 759,
+    "precision": "year",
+    "earliest": 759,
+    "latest": 759
+   },
+   "sourceId": "src-geumseok-gskh_006_0040_0010",
+   "citesChunk": "chunk_geumseok-gskh_006_0040_0010_gskh_006_0040_0010_0010",
+   "quote": "『續日本紀』에 759년 1월 1일조에서 발해 사신을 ‘高麗蕃客’이라 한",
+   "note": "역주 한국고대금석문 발해 목간 해제: 속일본기 759년 정월 1일조가 발해 사신을 고려 번객이라 적었다. 항목이 든 759년 표기의 연도 근거다."
+  },
+  {
+   "id": "claim-gap-goguryeo-succession-2",
+   "subject": "polity-hs-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-hs-goguryeo"
+   },
+   "sourceId": "src-geumseok-gskh_006_0040_0010",
+   "citesChunk": "chunk_geumseok-gskh_006_0040_0010_gskh_006_0040_0010_0010",
+   "quote": "이러한 일본의 고려국 칭호는 발해에서 스스로 고려국이라 칭하였던 데에서 연유한 것으로 여겨진다.",
+   "note": "같은 해제: 일본이 쓴 고려국 칭호는 발해가 스스로 고려국이라 칭한 데서 나온 것으로 본다. 발해의 고구려 계승 의식의 근거다."
+  },
+  {
+   "id": "claim-gap-goguryeo-succession-3",
+   "subject": "polity-hs-balhae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-hs-goguryeo"
+   },
+   "sourceId": "src-geumseok-gskh_006_0020_0010",
+   "citesChunk": "chunk_geumseok-gskh_006_0020_0010_gskh_006_0020_0010_0010",
+   "quote": "발해를 고려라 칭한 예로서는 『續日本紀』와 平城宮에서 출토된 ‘遣高麗使’ 木簡, 그리고 이 古文書가 있다.",
+   "note": "역주 한국고대금석문 정창원 고문서 해제: 발해를 고려라 칭한 예로 속일본기·견고려사 목간·이 고문서를 든다."
   }
  ],
  "scenes": [
@@ -3936,12 +3979,15 @@
    "startYear": 759,
    "endYear": 759,
    "kind": "court",
-   "summary": "발해는 일본에 보낸 국서에서 고구려의 옛 터전을 되찾았다고 밝혔고, 문왕은 771년 국서에서 스스로를 천손이라 했다. 배는 동해안 항구에서 떠났다.",
+   "summary": "일본 기록은 759년 정월 발해 사신을 고려 번객이라 적었고, 이 고려국 칭호는 발해가 스스로 고려국이라 한 데서 나온 것으로 본다. 앞서 727년 국서는 고구려의 옛 터전을 되찾았다고 밝혔고, 문왕은 771년 국서에서 스스로를 천손이라 했다. 배는 동해안 항구에서 떠났다.",
    "dateClaimIds": [
+    "claim-gap-goguryeo-succession-1",
     "claim-nb2-gsu-date",
     "claim-nb2-gsu-771"
    ],
    "actionClaimIds": [
+    "claim-gap-goguryeo-succession-2",
+    "claim-gap-goguryeo-succession-3",
     "claim-nb2-gsu-727",
     "claim-nb2-gsu-port"
    ],
@@ -3966,8 +4012,8 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-nb2-gsu-date",
-      "claim-nb2-gsu-771"
+      "claim-gap-goguryeo-succession-1",
+      "claim-nb2-gsu-date"
      ],
      "level": "standard"
     }
@@ -5012,11 +5058,14 @@
    "region": "north",
    "decade": 750,
    "year": 759,
-   "yearVerbatim": "문왕대(737~793)",
+   "yearVerbatim": "759년",
    "placeLabel": "발해 동해안 항구(염주 일대)",
    "modernPlace": "러시아 연해주 크라스키노 일대",
    "what": "발해가 스스로를 고구려를 이은 나라로 밝힌 근거들",
    "claimIds": [
+    "claim-gap-goguryeo-succession-1",
+    "claim-gap-goguryeo-succession-2",
+    "claim-gap-goguryeo-succession-3",
     "claim-nb2-gsu-date",
     "claim-nb2-gsu-771",
     "claim-nb2-gsu-727",
@@ -5025,7 +5074,7 @@
    ],
    "sceneId": "scene-hs-nb2-gsu",
    "confidence": "medium",
-   "note": "[10한사1-02-01] · standard · 해외(러시아 연해주) 항목이다. 항목이 든 759년 국서의 고려국왕 표기는 이 칸의 근거로 확인하지 못해 missing 에 남겼고, 727년·771년 국서의 표현으로 대신했다. 표시 연도 759년은 항목을 따른 값이다.",
+   "note": "[10한사1-02-01] · standard · 해외(러시아 연해주) 항목이다. 759년 연도 근거는 역주 한국고대금석문 발해 목간 해제가 인용한 속일본기 759년 정월 1일조의 고려 번객 표기이며, 같은 해제는 일본의 고려국 칭호가 발해의 자칭에서 연유한다고 본다. 교과서가 드는 '고려국왕 대흠무'라는 국서 문구 자체는 이 칸의 허용 출처에서 그대로 확인하지 못해 727년·771년 국서 표현을 함께 근거로 삼았다.",
    "lon": 130.78194,
    "lat": 42.70833,
    "coordinateBasis": "src-nb2-en-kraskino ex-geo-en-kraskino"
@@ -5387,14 +5436,5 @@
    "coordinateBasis": "src-nb2-en-namsan ex-geo-en-namsan"
   }
  ],
- "missing": [
-  {
-   "id": "miss-nb2-1",
-   "itemId": "hs-nambukguk-goguryeo-succession",
-   "topic": "759년 발해 국서의 고려국왕 대흠무 표기",
-   "detail": "항목 근거인 759년(대흥 23) 일본에 보낸 국서의 고려국왕 자칭을 이 칸의 허용 출처에서 확인하지 못했다. 민백 발해·문왕 항목 본문에는 759 와 고려국왕 문자열이 없다.",
-   "neededSource": "속일본기 해당 기사 원문 chunk 또는 우리역사넷 한국사 연대기의 759년 국서 서술",
-   "reason": "759년 국서 표기의 1·2순위 근거를 찾지 못함"
-  }
- ]
+ "missing": []
 }

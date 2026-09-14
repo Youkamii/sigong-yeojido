@@ -578,6 +578,11 @@
      "id": "ex-hs4-enc-seosan-smile",
      "text": "널리 알려진 이 마애불은 부처를 중심으로 좌우에 보살입상과 반가사유상이 배치된",
      "locator": "항목 요약 — 삼존 형식"
+    },
+    {
+     "id": "ex-hs4-enc-seosan-600",
+     "text": "600년 당시 중국 불교 문화의 자극을 받아",
+     "locator": "개설 — 마애불이 놓인 옛길과 조성 무렵"
     }
    ]
   },
@@ -616,6 +621,49 @@
      "id": "ex-hs4-kangso-geo",
      "text": "38.917; 125.533",
      "locator": "문서 머리 표시 좌표(class=geo) — 강서구역 대표점"
+    }
+   ]
+  },
+  {
+   "id": "src-hs4-en-kangso-tombs",
+   "title": "Kangso Three Tombs — English Wikipedia",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Kangso_Three_Tombs",
+   "rawFile": "raw/en-kangso-tombs.html",
+   "sha256": "e5858edc777393b50a5037078e02214633e0020f2b5002e8bb37b98a07d31a05",
+   "httpStatus": 200,
+   "byteLength": 89200,
+   "fetchedUtc": "2026-09-14T23:11:09Z",
+   "license": "Wikipedia CC BY-SA — short quotation",
+   "excerpts": [
+    {
+     "id": "ex-hs4-kangso-tombs-geo",
+     "text": "38.96472; 125.42500",
+     "locator": "문서 머리 표시 좌표(class=geo) — 강서삼묘 자리"
+    }
+   ]
+  },
+  {
+   "id": "src-hs4-enc-jeongnimsa",
+   "title": "정림사 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0050161",
+   "rawFile": "raw/enc-jeongnimsa.html",
+   "sha256": "1823ac7d13b4362da5891b0505f3c886eccd2e7f5171a8881b5c1e3ec6c2c0b7",
+   "httpStatus": 200,
+   "byteLength": 106621,
+   "fetchedUtc": "2026-09-14T23:11:09Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-hs4-enc-jeongnim-sabi",
+     "text": "백제 사비 시기[538년~660년]에 창건되었다고 본다",
+     "locator": "원건물 건립 경위 — 창건 시기"
+    },
+    {
+     "id": "ex-hs4-enc-jeongnim-7c",
+     "text": "부여 정림사지 오층석탑의 건립 시기를 7세기 중반으로 보기도 한다",
+     "locator": "발굴경위 및 결과 — 석탑 건립 시기"
     }
    ]
   }
@@ -2274,6 +2322,76 @@
    "citesChunk": "chunk_samguksagi_sg_004_0060_0260",
    "quote": "二十二年, 高僧圓光随朝聘使奈麻諸文·大舍橫川還.",
    "note": "삼국사기 진평왕 22년(600): 고승 원광이 조빙사를 따라 돌아왔다 — 계를 주기 전 귀국 시점이다."
+  },
+  {
+   "id": "claim-gap-seosan-1",
+   "subject": "place-hs4-seosan-triad",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "600년 당시",
+    "year": 600,
+    "precision": "year",
+    "earliest": 600,
+    "latest": 600
+   },
+   "sourceId": "src-hs4-enc-seosan-triad",
+   "citesExcerpt": "ex-hs4-enc-seosan-600",
+   "note": "민족문화대백과 '서산 용현리 마애여래삼존상'(집필 문명대, 미술사)은 이 마애불이 놓인 옛길 어귀를 두고 '600년 당시 중국 불교 문화의 자극을 받아' 불교 문화가 꽃폈다고 적는다. 못 박은 조성 연도가 아니라 집필자가 잡은 조성 무렵이며, 표시 연도를 이 600년에 맞췄다."
+  },
+  {
+   "id": "claim-gap-jeongnimsa-1",
+   "subject": "place-hs4-jeongnimsaji",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "백제 사비 시기[538년~660년]에 창건되었다고 본다",
+    "year": 538,
+    "precision": "year",
+    "earliest": 538,
+    "latest": 660
+   },
+   "sourceId": "src-hs4-enc-jeongnimsa",
+   "citesExcerpt": "ex-hs4-enc-jeongnim-sabi",
+   "note": "민족문화대백과 '정림사': 창건 연대는 538년 사비 천도 직후설과 7세기설로 갈리며 사비 시기 538~660년 안으로 본다. year 538 은 이 범위의 시작값이지 창건 연도가 아니다."
+  },
+  {
+   "id": "claim-gap-jeongnimsa-2",
+   "subject": "place-hs4-jeongnimsaji",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs4-mireuksaji"
+   },
+   "sourceId": "src-hs4-enc-jeongnimsa",
+   "citesExcerpt": "ex-hs4-enc-jeongnim-7c",
+   "note": "민족문화대백과 '정림사': 익산 미륵사지 석탑의 창건 연대가 639년으로 밝혀진 뒤 정림사지 오층석탑의 건립 시기를 7세기 중반으로 보기도 한다. 표시 연도 640년이 이 견해 쪽에 있음을 알려 준다."
+  },
+  {
+   "id": "claim-gap-gangseo-1",
+   "subject": "place-hs4-gangseo-daemyo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-hs4-goguryeo"
+   },
+   "sourceId": "src-hs4-ko-gangseo-daemyo",
+   "citesExcerpt": "ex-hs4-gangseo-7c",
+   "note": "위키백과도 고분 축조와 벽화 연대를 7세기 초로 적어 민족문화대백과와 같은 범위를 준다. 두 출처 모두 연도 숫자를 못 박지 않는다."
+  },
+  {
+   "id": "claim-gap-gangseo-2",
+   "subject": "place-hs4-gangseo-daemyo",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 38.96472,
+    "lon": 125.425,
+    "precision": "site"
+   },
+   "sourceId": "src-hs4-en-kangso-tombs",
+   "citesExcerpt": "ex-hs4-kangso-tombs-geo",
+   "note": "영어 위키백과 'Kangso Three Tombs' 문서의 표시 좌표로, 강서구역 대표점(38.917; 125.533) 대신 무덤 세 기가 있는 삼묘리 자리를 가리킨다."
   }
  ],
  "scenes": [
@@ -2929,7 +3047,8 @@
    "kind": "heritage",
    "summary": "남포 강서구역의 굴식 돌방무덤으로 이웃한 두 무덤과 함께 강서삼묘를 이룬다. 회칠 없이 다듬은 화강암 벽에 청룡·백호·주작·현무를 바로 그렸고, 축조와 벽화 연대는 7세기 초로 본다.",
    "dateClaimIds": [
-    "claim-hs4-gangseo-7c"
+    "claim-hs4-gangseo-7c",
+    "claim-gap-gangseo-1"
    ],
    "actionClaimIds": [
     "claim-hs4-gangseo-def",
@@ -2938,23 +3057,24 @@
    "place": {
     "label": "강서대묘(강서삼묘)",
     "medium": "land",
-    "precision": "area",
-    "lon": 125.533,
-    "lat": 38.917,
+    "precision": "site",
+    "lon": 125.425,
+    "lat": 38.96472,
     "claimIds": [
-     "claim-hs4-gangseo-loc"
+     "claim-gap-gangseo-2"
     ],
     "coordinateSourceIds": [
-     "src-hs4-en-kangso"
+     "src-hs4-en-kangso-tombs"
     ],
-    "coordinateNote": "개별 무덤의 좌표 근거를 찾지 못해 강서구역 표시 좌표를 대표점으로 썼다. 실제 강서삼묘(삼묘리)에서 남동쪽으로 약 11km 떨어져 있다."
+    "coordinateNote": "영어 위키백과 'Kangso Three Tombs' 문서의 표시 좌표다. 앞서 쓰던 강서구역 대표점(38.917; 125.533)과 달리 무덤 세 기가 있는 삼묘리 자리를 가리킨다."
    },
    "participants": [],
    "effects": {
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs4-gangseo-7c"
+      "claim-hs4-gangseo-7c",
+      "claim-gap-gangseo-1"
      ],
      "level": "standard"
     }
@@ -2968,7 +3088,8 @@
     "from": 610,
     "to": null,
     "basisClaimIds": [
-     "claim-hs4-gangseo-def"
+     "claim-hs4-gangseo-def",
+     "claim-gap-gangseo-2"
     ]
    }
   },
@@ -3095,14 +3216,15 @@
    "itemId": "hs-samguk-seosan-triad",
    "eventId": "place-hs4-seosan-triad",
    "title": "서산 용현리 마애여래삼존상",
-   "startYear": 620,
-   "endYear": 620,
+   "startYear": 600,
+   "endYear": 600,
    "kind": "heritage",
-   "summary": "중국·고구려와 바닷길로 통하던 서산의 가야산 절벽에 새긴 백제 후기 마애불이다. 가운데 여래 입상을 두고 오른쪽에 보살 입상, 왼쪽에 반가사유형 보살좌상을 배치했고, 그 수더분한 미소를 백제 불상의 특징으로 꼽는다.",
+   "summary": "중국·고구려와 바닷길로 통하던 서산의 가야산 절벽에 새긴 백제 후기 마애불이다. 가운데 여래 입상을 두고 오른쪽에 보살 입상, 왼쪽에 반가사유형 보살좌상을 배치했고, 민족문화대백과는 이 옛길 어귀가 600년 무렵 중국 불교 문화의 자극을 받아 꽃폈다고 적는다.",
    "dateClaimIds": [
-    "claim-hs4-seosan-def"
+    "claim-gap-seosan-1"
    ],
    "actionClaimIds": [
+    "claim-hs4-seosan-def",
     "claim-hs4-seosan-smile"
    ],
    "place": {
@@ -3124,21 +3246,21 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs4-seosan-def"
+      "claim-gap-seosan-1"
      ],
      "level": "standard"
     }
    },
    "category": "culture",
    "region": "central",
-   "decade": 620,
+   "decade": 600,
    "heritageType": "site",
    "persistence": {
     "kind": "facility",
-    "from": 620,
+    "from": 600,
     "to": null,
     "basisClaimIds": [
-     "claim-hs4-seosan-def"
+     "claim-gap-seosan-1"
     ]
    }
   },
@@ -3540,13 +3662,15 @@
    "startYear": 640,
    "endYear": 640,
    "kind": "heritage",
-   "summary": "사비 도성 한가운데 있던 절터에 남은 백제의 대표 석탑이다. 얇은 지붕돌과 가는 기둥으로 목탑의 멋을 돌로 옮겼고, 백제가 무너진 뒤 1층 탑신에 당의 전승 기념 명문이 새겨졌다.",
+   "summary": "사비 도성 한가운데 있던 절터에 남은 백제의 대표 석탑이다. 얇은 지붕돌과 가는 기둥으로 목탑의 멋을 돌로 옮겼고, 절은 사비 시기(538~660년) 안에 세워졌으며 탑의 건립을 7세기 중반으로 보는 견해도 있다. 백제가 무너진 뒤 1층 탑신에 당의 전승 기념 명문이 새겨졌다.",
    "dateClaimIds": [
-    "claim-hs4-jeongnim-def"
+    "claim-gap-jeongnimsa-1"
    ],
    "actionClaimIds": [
+    "claim-hs4-jeongnim-def",
     "claim-hs4-jeongnim-two",
-    "claim-hs4-jeongnim-660"
+    "claim-hs4-jeongnim-660",
+    "claim-gap-jeongnimsa-2"
    ],
    "place": {
     "label": "부여 정림사지",
@@ -3567,7 +3691,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs4-jeongnim-def"
+      "claim-gap-jeongnimsa-1"
      ],
      "level": "standard"
     }
@@ -3582,6 +3706,7 @@
     "from": 640,
     "to": null,
     "basisClaimIds": [
+     "claim-gap-jeongnimsa-1",
      "claim-hs4-jeongnim-660"
     ]
    }
@@ -3915,16 +4040,17 @@
    "what": "청룡·백호 등 네 방위 신을 그린 도교풍 벽화의 절정",
    "claimIds": [
     "claim-hs4-gangseo-7c",
+    "claim-gap-gangseo-1",
     "claim-hs4-gangseo-def",
     "claim-hs4-gangseo-sasin",
-    "claim-hs4-gangseo-loc"
+    "claim-gap-gangseo-2"
    ],
    "sceneId": "scene-hs4-gangseo-daemyo",
    "confidence": "low",
-   "note": "[10한사1-02-04] · standard · 연도 숫자를 담은 근거를 찾지 못했다. 민족문화대백과는 6세기 후반~7세기 초로 보며 610년은 표시용 기준점이다. 좌표는 강서구역 대표점으로 실제 삼묘리에서 남동쪽으로 약 11km 떨어져 있다",
-   "lon": 125.533,
-   "lat": 38.917,
-   "coordinateBasis": "location claim-hs4-gangseo-loc",
+   "note": "[10한사1-02-04] · standard · 연도 숫자를 담은 근거는 아직 없다. 민족문화대백과는 6세기 후반~7세기 초, 위키백과는 7세기 초로 적으며 610년은 그 안의 표시용 기준점이다. 좌표는 강서구역 대표점에서 강서삼묘 자리(38.96472; 125.425)로 고쳤다.",
+   "lon": 125.425,
+   "lat": 38.96472,
+   "coordinateBasis": "location claim-gap-gangseo-2",
    "persistence": {
     "kind": "facility",
     "from": 610,
@@ -3988,26 +4114,27 @@
    "itemId": "hs-samguk-seosan-triad",
    "category": "culture",
    "region": "central",
-   "decade": 620,
-   "year": 620,
-   "yearVerbatim": "백제 후기(6세기 말~7세기 초 추정)",
+   "decade": 600,
+   "year": 600,
+   "yearVerbatim": "600년 당시(민족문화대백과)",
    "placeLabel": "서산 용현리 마애여래삼존상",
    "modernPlace": "충청남도 서산시 운산면 용현리",
    "what": "바위에 새긴 부드러운 미소, '백제의 미소'",
    "claimIds": [
+    "claim-gap-seosan-1",
     "claim-hs4-seosan-def",
     "claim-hs4-seosan-smile",
     "claim-hs4-seosan-loc"
    ],
    "sceneId": "scene-hs4-seosan-triad",
-   "confidence": "low",
-   "note": "[10한사1-02-04] · standard · 조성 연도를 담은 숫자 근거를 찾지 못했다. 620년은 표시용 기준점이다",
+   "confidence": "medium",
+   "note": "항목 목록의 연도(620)와 다름 — [10한사1-02-04] · standard · 민족문화대백과(집필 문명대, 미술사)가 이 마애불 자리를 '600년 당시'로 적어 표시 연도를 600년으로 맞췄다. 못 박은 조성 연도가 아니라 조성 무렵이다.",
    "lon": 126.60528,
    "lat": 36.77389,
    "coordinateBasis": "location claim-hs4-seosan-loc",
    "persistence": {
     "kind": "facility",
-    "from": 620,
+    "from": 600,
     "to": null
    }
   },
@@ -4202,19 +4329,21 @@
    "region": "central",
    "decade": 640,
    "year": 640,
-   "yearVerbatim": "7세기 전반(추정)",
+   "yearVerbatim": "사비 시기 538년~660년(창건 범위)",
    "placeLabel": "부여 정림사지",
    "modernPlace": "충청남도 부여군 부여읍 동남리",
    "what": "목탑의 멋을 돌로 옮긴 백제 석탑의 대표작",
    "claimIds": [
+    "claim-gap-jeongnimsa-1",
+    "claim-gap-jeongnimsa-2",
     "claim-hs4-jeongnim-def",
     "claim-hs4-jeongnim-two",
     "claim-hs4-jeongnim-660",
     "claim-hs4-jeongnim-loc"
    ],
    "sceneId": "scene-hs4-jeongnimsa-pagoda",
-   "confidence": "low",
-   "note": "[10한사1-02-04] · standard · 조성 연도를 담은 근거는 없어 confidence 를 low 로 둔다. 660년 이후 새겨진 당평백제국비가 그 이전에 탑이 서 있었음을 보여줄 뿐이며 640년은 표시용 기준점이다",
+   "confidence": "medium",
+   "note": "[10한사1-02-04] · standard · 민족문화대백과 '정림사'가 창건을 사비 시기 538~660년 안으로 적고, 미륵사지 석탑의 639년이 밝혀진 뒤 이 탑의 건립을 7세기 중반으로 보는 견해도 전한다. 660년 이후 새겨진 당평백제국비가 그 이전에 탑이 서 있었음을 뒷받침한다. 640년은 그 범위 안의 표시용 기준점이다.",
    "lon": 126.91333,
    "lat": 36.27944,
    "coordinateBasis": "location claim-hs4-jeongnim-loc",
@@ -4231,31 +4360,15 @@
    "itemId": "hs-samguk-gangseo-daemyo",
    "topic": "강서대묘 축조·벽화 연대",
    "reason": "조성 연도를 담은 근거 없음 — 표시용 기준 연도(610)",
-   "detail": "민족문화대백과는 6세기 후반~7세기 초로만 적어 연도 숫자 주장을 만들지 못했다. 장면의 610년은 표시용 기준점이다.",
+   "detail": "민족문화대백과는 6세기 후반~7세기 초, 위키백과는 7세기 초로만 적어 연도 숫자 주장을 만들지 못했다. 이번에 국가유산포털(heritage.go.kr)은 이 환경에서 접속 자체가 되지 않았고, 영어 위키백과 'Kangso Three Tombs'·'Complex of Koguryo Tombs', 한국어 위키백과 '강서대묘'·'강서고분', 민족문화대백과 '강서대묘', 로컬 원문 chunk(삼국사기·금석문)를 다시 뒤졌으나 축조 연도를 적은 대목은 없었다. 대신 위키백과의 7세기 초 서술을 두 번째 근거로 달고(claim-gap-gangseo-1), 좌표를 강서삼묘 자리로 고쳤다(claim-gap-gangseo-2). 장면의 610년은 여전히 표시용 기준점이다.",
    "neededSource": "국가유산포털 또는 북한 고고 보고의 축조 연대 서술"
-  },
-  {
-   "id": "miss-hs4-2",
-   "itemId": "hs-samguk-seosan-triad",
-   "topic": "서산 용현리 마애여래삼존상 조성 연대",
-   "reason": "조성 연도를 담은 근거 없음 — 표시용 기준 연도(620)",
-   "detail": "민족문화대백과는 백제시대 불상이라고만 적고 조성 연도를 밝히지 않는다. 장면의 620년은 표시용 기준점이다.",
-   "neededSource": "국가유산포털 지정 사유 또는 조성 시기를 밝힌 미술사 해설"
-  },
-  {
-   "id": "miss-hs4-3",
-   "itemId": "hs-samguk-jeongnimsa-pagoda",
-   "topic": "부여 정림사지 오층석탑 건립 연대",
-   "reason": "조성 연도를 담은 근거 없음 — 표시용 기준 연도(640)",
-   "detail": "660년 이후 새겨진 당평백제국비로 그 이전 존재만 확인된다. 장면의 640년은 표시용 기준점이다.",
-   "neededSource": "국가유산포털 또는 발굴 보고의 창건 시기 서술"
   },
   {
    "id": "miss-hs4-4",
    "itemId": "hs-samguk-bangasayusang",
    "topic": "금동미륵보살반가사유상(국보 83호) 제작국·제작 연도",
    "reason": "제작국과 연도가 갈려 확정 근거 없음 — 표시용 기준 연도(602)",
-   "detail": "민족문화대백과는 백제설과 신라설이 있고 제작 연대는 대체로 7세기 전반으로만 적는다.",
+   "detail": "민족문화대백과는 백제설과 신라설이 있고 제작 연대는 '대체로 7세기 전반'으로만 적는다. 이번에 민족문화대백과 '금동미륵보살반가사유상'(E0007681) 전문과 한국어 위키백과 해당 문서를 다시 읽고 로컬 금석문·집성 chunk 에서 반가사유상 명문을 찾아봤으나, 제작국이나 제작 연도를 못 박은 명문·발굴 자료는 없었다. 출토지 자체가 알려지지 않아 발굴 근거가 나올 자리도 없다. 장면의 602년은 백제 무왕대(602~641)설을 기준점으로 삼은 표시값이다.",
    "neededSource": "제작 연도를 못 박은 명문 또는 발굴 자료"
   }
  ]

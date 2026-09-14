@@ -834,6 +834,64 @@
      "locator": "문서 정보상자 표시 좌표(geo)"
     }
    ]
+  },
+  {
+   "id": "src-enc-gunjeong",
+   "title": "군정 - 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원",
+   "url": "https://encykorea.aks.ac.kr/Article/E0006712",
+   "rawFile": "raw/enc-gunjeong.html",
+   "sha256": "685897c7d197ff0451ed9d4192f2991b11b2ab6b317aae847ca586472ffc6347",
+   "httpStatus": 200,
+   "byteLength": 126713,
+   "fetchedUtc": "2026-09-14T23:09:59Z",
+   "license": "공공누리 제4유형(출처표시-상업적이용금지-변경금지) · 한국민족문화대백과사전",
+   "excerpts": [
+    {
+     "id": "ex-gj-1541",
+     "text": "1541년(중종 36)에는 군적수포제(軍籍收布制)를 법제화하였는데",
+     "locator": "본문 「내용」"
+    },
+    {
+     "id": "ex-gj-levy",
+     "text": "지방 수령이 관할 지역의 군정(軍丁)으로부터 일괄해서 군포 2필을 징수하여 중앙에 올리는 것이다",
+     "locator": "본문 「내용」"
+    },
+    {
+     "id": "ex-gj-byeongjo",
+     "text": "병조에서 다시 군사력이 필요한 각 지방에 보내어",
+     "locator": "본문 「내용」"
+    }
+   ]
+  },
+  {
+   "id": "src-enc-daedongbeop",
+   "title": "대동법 - 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원",
+   "url": "https://encykorea.aks.ac.kr/Article/E0014246",
+   "rawFile": "raw/enc-daedongbeop.html",
+   "sha256": "fe05f2270f4df79a45182f961d1334a3a828345b6e93f16f2f336a3e1490ff26",
+   "httpStatus": 200,
+   "byteLength": 141264,
+   "fetchedUtc": "2026-09-14T23:09:59Z",
+   "license": "공공누리 제4유형(출처표시-상업적이용금지-변경금지) · 한국민족문화대백과사전",
+   "excerpts": [
+    {
+     "id": "ex-ddb-1569",
+     "text": "1569년(선조 2) 전국의 모든 공납을 쌀로 대신 수납하게 하는 대공수미법(代貢收米法) 시행을 건의했다",
+     "locator": "본문 「내용」"
+    },
+    {
+     "id": "ex-ddb-16c",
+     "text": "16세기 초부터 공물 수취와 관련된 폐단들",
+     "locator": "본문 「내용」"
+    },
+    {
+     "id": "ex-ddb-hanyang",
+     "text": "한양의 행정 관서 사이에 유착이 발생했다",
+     "locator": "본문 「내용」"
+    }
+   ]
   }
  ],
  "entities": [
@@ -1071,6 +1129,11 @@
    "id": "place-hs-ungcheondong",
    "type": "Place",
    "label": "창원 진해구 웅천동"
+  },
+  {
+   "id": "event-hs-daegong-sumibeop-1569",
+   "type": "Event",
+   "label": "이이의 대공수미법 건의(1569)"
   }
  ],
  "claims": [
@@ -2395,6 +2458,90 @@
    "sourceId": "src-enc-tongsinsa",
    "citesExcerpt": "ex-tss-kyoto",
    "note": "사행은 육로로 교토로 향했다 — 통신사 일반 노정 서술이며 1590년 사행의 경로를 특정한 것은 아니다"
+  },
+  {
+   "id": "claim-gap-bangnap-1",
+   "subject": "event-hs-daegong-sumibeop-1569",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1569년(선조 2)",
+    "year": 1569,
+    "precision": "year",
+    "earliest": 1569,
+    "latest": 1569
+   },
+   "sourceId": "src-enc-daedongbeop",
+   "citesExcerpt": "ex-ddb-1569",
+   "note": "이이가 방납 폐단을 고치려고 공물을 쌀로 대신 걷는 대공수미법 시행을 건의한 해"
+  },
+  {
+   "id": "claim-gap-bangnap-2",
+   "subject": "institution-hs-bangnap",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "event-hs-daegong-sumibeop-1569"
+   },
+   "sourceId": "src-enc-daedongbeop",
+   "citesExcerpt": "ex-ddb-16c",
+   "note": "16세기 초부터 방납이 공물 수취의 폐단으로 떠올랐고 그 대응이 대공수미법 건의였다"
+  },
+  {
+   "id": "claim-gap-bangnap-3",
+   "subject": "place-hs-hanyang-sijeon",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.5701,
+    "lon": 126.9801,
+    "precision": "area"
+   },
+   "sourceId": "src-enc-daedongbeop",
+   "citesExcerpt": "ex-ddb-hanyang",
+   "note": "공물을 대신 바친 상인과 한양 관서가 얽혔다는 서술에 따른 종로 일대 대표점(창고의 정확한 위치 기록은 없다)"
+  },
+  {
+   "id": "claim-gap-gunjeok-supo-1",
+   "subject": "institution-hs-gunjeok-supo",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1541년(중종 36)",
+    "year": 1541,
+    "precision": "year",
+    "earliest": 1541,
+    "latest": 1541
+   },
+   "sourceId": "src-enc-gunjeong",
+   "citesExcerpt": "ex-gj-1541",
+   "note": "민족문화대백과 「군정」 — 1541년(중종 36) 군적수포제를 법제화했다"
+  },
+  {
+   "id": "claim-gap-gunjeok-supo-2",
+   "subject": "institution-hs-gunjeok-supo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "institution-hs-gunhyeon"
+   },
+   "sourceId": "src-enc-gunjeong",
+   "citesExcerpt": "ex-gj-levy",
+   "note": "지방 수령이 관할 군정에게서 군포 2필을 일괄 징수해 중앙에 올렸다"
+  },
+  {
+   "id": "claim-gap-gunjeok-supo-3",
+   "subject": "place-hs-hanyang-byeongjo",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.5748,
+    "lon": 126.9775,
+    "precision": "site"
+   },
+   "sourceId": "src-enc-gunjeong",
+   "citesExcerpt": "ex-gj-byeongjo",
+   "note": "거둔 군포를 각 지방에 보낸 병조의 대표점 — 청사의 정확한 지점 기록이 없어 육조 거리 안의 점을 썼다"
   }
  ],
  "scenes": [
@@ -3006,6 +3153,84 @@
    "itemId": "hs-joseon-early-sin-saimdang"
   },
   {
+   "id": "scene-je5-gunjeok-supo",
+   "eventId": "institution-hs-gunjeok-supo",
+   "title": "군적수포제 법제화",
+   "startYear": 1541,
+   "endYear": 1541,
+   "kind": "survey",
+   "summary": "군역을 직접 서는 대신 베를 내는 관행이 굳어지자, 조정은 수령이 군적에 오른 장정에게서 군포 두 필씩을 거둬 중앙에 올리고 병조가 그것을 필요한 지방으로 돌리도록 법으로 정했다.",
+   "dateClaimIds": [
+    "claim-gap-gunjeok-supo-1"
+   ],
+   "actionClaimIds": [
+    "claim-gap-gunjeok-supo-2",
+    "claim-je5-gunjeok-act",
+    "claim-je5-gunjeok-register"
+   ],
+   "place": {
+    "label": "한양 병조",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.9775,
+    "lat": 37.5748,
+    "claimIds": [
+     "claim-gap-gunjeok-supo-3"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "군포를 받아 각 지방에 보낸 병조 청사의 정확한 지점 기록이 없어 관청이 늘어선 육조 거리 안의 대표점을 썼다.",
+    "setting": "office"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-jungjong-e0053932",
+     "role": "ruler",
+     "presence": "off-site",
+     "side": "a",
+     "claimIds": [
+      "claim-gap-gunjeok-supo-1"
+     ]
+    }
+   ],
+   "participantGroups": [
+    {
+     "label": "군포를 거둔 지방 수령과 아전",
+     "role": "scholar",
+     "stance": "bystander",
+     "side": "a",
+     "count": 2,
+     "claimIds": [
+      "claim-gap-gunjeok-supo-2"
+     ],
+     "basis": "「군정」의 수령 일괄 징수 서술 — count 는 표현값"
+    },
+    {
+     "label": "군포를 낸 군정",
+     "role": "civilian",
+     "stance": "victim",
+     "side": "c",
+     "count": 4,
+     "claimIds": [
+      "claim-gap-gunjeok-supo-2"
+     ],
+     "basis": "군정에게서 군포 2필을 징수했다는 서술 — count 는 표현값"
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gap-gunjeok-supo-1"
+     ],
+     "value": "standard"
+    }
+   },
+   "category": "settlement",
+   "region": "central",
+   "decade": 1540,
+   "itemId": "hs-joseon-early-gunjeok-supo"
+  },
+  {
    "id": "scene-je5-baegundong-seowon",
    "eventId": "facility-hs-baegundong-seowon",
    "title": "백운동 서원",
@@ -3544,6 +3769,84 @@
    "itemId": "hs-joseon-early-yi-hwang"
   },
   {
+   "id": "scene-je5-bangnap",
+   "eventId": "institution-hs-bangnap",
+   "title": "방납의 폐단",
+   "startYear": 1569,
+   "endYear": 1569,
+   "kind": "market",
+   "summary": "고을이 바쳐야 할 공물을 상인과 관아 사람들이 대신 내주고 시가보다 훨씬 높은 값을 받아 백성의 부담이 커졌다. 1569년 이이는 공물을 쌀로 대신 걷자고 건의했으나 받아들여지지 않았다.",
+   "dateClaimIds": [
+    "claim-gap-bangnap-1"
+   ],
+   "actionClaimIds": [
+    "claim-je5-bangnap-act",
+    "claim-je5-bangnap-price",
+    "claim-gap-bangnap-2"
+   ],
+   "place": {
+    "label": "한양 시전 거리",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.9801,
+    "lat": 37.5701,
+    "claimIds": [
+     "claim-gap-bangnap-3"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "방납이 이루어진 특정 창고나 가게의 위치 기록이 없어, 공물 상납과 시전 상인이 모이던 종로 일대를 area 정밀도의 대표점으로 잡았다."
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-yi-i-e0045546",
+     "role": "scholar",
+     "presence": "off-site",
+     "side": "a",
+     "claimIds": [
+      "claim-gap-bangnap-1"
+     ]
+    }
+   ],
+   "participantGroups": [
+    {
+     "label": "공물을 대신 바친 방납인",
+     "role": "commoner",
+     "stance": "bystander",
+     "side": "b",
+     "count": 3,
+     "claimIds": [
+      "claim-je5-bangnap-price"
+     ],
+     "basis": "민족문화대백과 「방납」의 시가보다 높은 값 서술 — count 는 표현값"
+    },
+    {
+     "label": "공물을 짊어진 고을 백성",
+     "role": "civilian",
+     "stance": "victim",
+     "side": "c",
+     "count": 4,
+     "claimIds": [
+      "claim-je5-bangnap-act"
+     ],
+     "basis": "군현이 값을 치르고 공물을 대납시켰다는 서술 — count 는 표현값"
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gap-bangnap-1"
+     ],
+     "value": "standard"
+    }
+   },
+   "category": "economy",
+   "region": "central",
+   "decade": 1560,
+   "itemId": "hs-joseon-early-bangnap",
+   "sceneFunction": "market"
+  },
+  {
    "id": "scene-je5-dosan-seowon",
    "eventId": "facility-hs-dosan-seowon",
    "title": "도산서원",
@@ -3803,20 +4106,26 @@
    "id": "fact-je5-001",
    "category": "economy",
    "region": "central",
-   "decade": 1500,
-   "year": 1500,
-   "yearVerbatim": "16세기(대표 연도)",
-   "placeLabel": "한양 공물 창고·시전 거리",
-   "modernPlace": "서울특별시 종로구",
+   "decade": 1560,
+   "year": 1569,
+   "yearVerbatim": "1569년(선조 2)",
+   "placeLabel": "한양 시전 거리",
+   "modernPlace": "서울특별시 종로구 종로 일대",
    "what": "남이 대신 공물을 바치고 값을 부풀려 백성이 시달렸다",
    "claimIds": [
     "claim-je5-bangnap-act",
-    "claim-je5-bangnap-price"
+    "claim-je5-bangnap-price",
+    "claim-gap-bangnap-1",
+    "claim-gap-bangnap-2",
+    "claim-gap-bangnap-3"
    ],
-   "confidence": "low",
-   "note": "[10한사1-02-02] 우선순위 standard. 방납의 존재와 폐단은 민족문화대백과로 확인했으나 항목이 대표값으로 잡은 1500년을 뒷받침하는 연도 근거를 허용 출처에서 찾지 못해 장면을 만들지 않았다.",
+   "confidence": "medium",
+   "note": "[10한사1-02-02] 우선순위 standard. 항목의 1500년은 16세기 심화를 가리키는 대표값이라 연도 근거가 없었는데, 민족문화대백과 「대동법」이 적은 1569년(선조 2) 이이의 대공수미법 건의를 방납 폐단이 조정 문제로 불거진 해로 잡아 장면 연도로 삼았다. 좌표는 창고 위치가 아니라 종로 일대 대표점이다.",
    "itemId": "hs-joseon-early-bangnap",
-   "sceneId": null
+   "sceneId": "scene-je5-bangnap",
+   "lon": 126.9801,
+   "lat": 37.5701,
+   "coordinateBasis": "location claim-gap-bangnap-3"
   },
   {
    "id": "fact-je5-002",
@@ -4043,18 +4352,24 @@
    "region": "central",
    "decade": 1540,
    "year": 1541,
-   "yearVerbatim": "중종 36년(1541, 미확인)",
+   "yearVerbatim": "1541년(중종 36)",
    "placeLabel": "한양 병조",
    "modernPlace": "서울특별시 종로구",
    "what": "군대에 가는 대신 베를 내게 하여 군역이 세금이 됐다",
    "claimIds": [
     "claim-je5-gunjeok-act",
-    "claim-je5-gunjeok-register"
+    "claim-je5-gunjeok-register",
+    "claim-gap-gunjeok-supo-1",
+    "claim-gap-gunjeok-supo-2",
+    "claim-gap-gunjeok-supo-3"
    ],
-   "confidence": "low",
-   "note": "[10한사1-02-03] 우선순위 standard. 군역을 베로 대신 걷는 관행(방군수포제)은 민족문화대백과로 확인했으나 항목이 적은 1541년 시행 연도를 허용 출처에서 확인하지 못해 장면을 만들지 않았다. 항목 type 이 society 라서 brief 대응표(society→settlement)에 맞춰 category 를 settlement 로 두었다.",
+   "confidence": "high",
+   "note": "[10한사1-02-03] 우선순위 standard. 민족문화대백과 「군정」이 1541년(중종 36) 군적수포제 법제화를 적어 시행 연도를 확인했다. 항목 type 이 society 라서 brief 대응표(society→settlement)에 맞춰 category 를 settlement 로 두었다. 좌표는 병조 청사 실측 위치가 아니라 육조 거리 안의 대표점이다.",
    "itemId": "hs-joseon-early-gunjeok-supo",
-   "sceneId": null
+   "sceneId": "scene-je5-gunjeok-supo",
+   "lon": 126.9775,
+   "lat": 37.5748,
+   "coordinateBasis": "location claim-gap-gunjeok-supo-3"
   },
   {
    "id": "fact-je5-012",
@@ -4358,22 +4673,5 @@
    "sceneId": "scene-je5-tongsinsa-1590"
   }
  ],
- "missing": [
-  {
-   "id": "miss-je5-1",
-   "itemId": "hs-joseon-early-bangnap",
-   "topic": "방납의 폐단 연도",
-   "detail": "항목의 1500년은 16세기 심화를 가리키는 대표값이고, 허용 출처(민족문화대백과·위키백과)에서 특정 연도를 확인하지 못했다.",
-   "neededSource": "조선왕조실록 공물·방납 기사(로컬 chunk 필요) 또는 연도가 적힌 우리역사넷 해설",
-   "reason": "연도 근거 없음 — 장면 생략"
-  },
-  {
-   "id": "miss-je5-2",
-   "itemId": "hs-joseon-early-gunjeok-supo",
-   "topic": "군적수포제 시행 연도(1541)",
-   "detail": "민족문화대백과 「방군수포제」는 제도의 내용만 서술하고 1541년이라는 연도를 적지 않으며, 위키백과에도 해당 항목이 없다.",
-   "neededSource": "중종실록 군적수포 관련 기사(로컬 chunk) 또는 연도를 명시한 국사편찬위원회 해설",
-   "reason": "연도 근거 없음 — 장면 생략"
-  }
- ]
+ "missing": []
 }
