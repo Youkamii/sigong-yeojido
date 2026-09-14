@@ -11,6 +11,8 @@ const {planChronicleAssets}=await import('../services/host/app/chronicle-asset-p
 const {ChronicleAssets,pickableRow}=await import('../services/host/app/chronicle-assets.js');
 const {ChronicleScene}=await import('../services/host/app/chronicle-scene.js');
 const {Chronicle,contextAt}=await import('../services/host/app/chronicle.js');
+const {AtlasStory}=await import('../services/host/app/atlas-story.js');
+const {AtlasData}=await import('../services/host/app/atlas-data.js');
 const {compileAssetCatalog}=await import('../services/host/app/assetcatalog.js');
 const {buildAssetField}=await import('../services/host/app/assetforge.js');
 const {extendFigureCatalog}=await import('../services/host/app/period-figures.js');
@@ -34,6 +36,38 @@ function eventFor(packet){
   return planChronicleAssets(context,sample,[],[],[packet]).events.find(e=>e.id===packet.id);
 }
 const compose=e=>composeHistoricalEvent(e,new THREE.Vector3(0,10,0),world);
+
+test('항목 portrait와 heritage는 빈 사료에서도 실제 모형과 양쪽 카드에 좌표와 누락 안내를 표시한다',()=>{
+  for(const original of sample.scenes.slice(0,2))for(const partial of [false,true]){
+    const packet={...original,itemId:'hs-test',place:{...original.place,coordinateNote:partial?'항목 좌표 조사':undefined}};
+    const data={entities:[],claims:partial?sample.claims.filter(c=>packet.dateClaimIds.includes(c.id)):[],scenePackets:[packet]};
+    const context=contextAt(data,packet.startYear),plan=planChronicleAssets(context,data,[],[],[packet]);
+    const assets=assetsFor(plan),row=assets.rows.find(r=>r.itemId);
+    assert.ok(row);assert.ok(assets.picks.includes(row.pick));
+    assert.equal(plan.events[0].participants.length,0);
+    const sceneView=Object.assign(Object.create(ChronicleScene.prototype),{assets,world,chronicle:{data}});
+    const card=Object.assign(Object.create(Chronicle.prototype),{data,context,year:packet.startYear,host:{},stopPlay(){},relations:()=>[],
+      callbacks:{entity(){},activity:id=>sceneView.activity(id)}});
+    const activity=sceneView.activity(row.entityId);
+    const missing=[...new Set([...packet.dateClaimIds,...packet.actionClaimIds,...packet.place.claimIds])].filter(id=>!data.claims.some(c=>c.id===id));
+    assert.deepEqual(activity.missingClaimIds,missing);
+    assert.equal(activity.placement,'항목 조사에서 확인한 좌표');
+    if(partial)assert.equal(activity.coordinateNote,'항목 좌표 조사');
+    card.showEntity(row.entityId);
+    assert.ok(card.host.innerHTML.includes(packet.title));
+    assert.ok(card.host.innerHTML.includes('항목 조사에서 확인한 좌표'));
+    assert.ok(card.host.innerHTML.includes(`근거 ${missing.length}건은 현재 선택한 사료 밖`));
+    const atlas=new AtlasData();atlas.update(data,context,[packet]);
+    const story=Object.assign(Object.create(AtlasStory.prototype),{entity:{id:row.entityId,type:'Event',label:packet.title},activity,history:[],pane:{},
+      ui:{data:atlas,chronicle:card,scene:sceneView}});
+    story.render();
+    assert.ok(story.pane.innerHTML.includes('항목 조사에서 확인한 좌표'));
+    assert.ok(story.pane.innerHTML.includes(`근거 ${missing.length}건은 현재 선택한 사료 밖`));
+    for(const claim of data.claims)assert.ok(story.pane.innerHTML.includes(`data-story-claim="${claim.id}"`));
+    sceneView.chronicle.data={claims:[...new Set([...packet.dateClaimIds,...packet.actionClaimIds,...packet.place.claimIds])].map(id=>({id}))};
+    assert.equal(sceneView.activity(row.entityId).missingClaimsNote,'');
+  }
+});
 for(const packet of sample.scenes.slice(0,2))test(`${packet.title}: packet → row → mesh → pick → existing card`,()=>{
   const event=eventFor(packet);assert.ok(event);
   const scene=compose(event);assert.equal(scene.compositionKind,packet.kind);assert.ok(scene.models.some(m=>m.primary));

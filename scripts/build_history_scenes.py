@@ -4,7 +4,9 @@ from copy import deepcopy
 from hashlib import sha256
 import json
 import math
+import sys
 from pathlib import Path
+from scene_supersede import supersede_scenes
 from import_period_research import ENTITY_ID_ALIASES,source_id_aliases,check_run
 from scene_vocabulary import normalize_group,PARTICIPANT_GROUPS_NOTE,KINDS,scene_kind_errors
 
@@ -13,13 +15,31 @@ FACT_COLLECTIONS = ('facts-', 'curriculum-')
 
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--research',type=Path,required=True)
+parser.add_argument('--research',type=Path)
 parser.add_argument('--collection',default='scenes-101')
 parser.add_argument('--data',type=Path,default=root/'data')
 parser.add_argument('--job',action='append',help='Completed job names; defaults to the original naval and invasion collection')
 parser.add_argument('--merge',action='store_true',help='Keep existing scenes and replace only matching scene IDs')
 parser.add_argument('--out',type=Path,default=root/'services/host/app/history-scenes.json')
+parser.add_argument('--supersede-only',action='store_true',help='Only recompute supersededBy in the existing output')
+parser.add_argument('--supersede-report',type=Path,help='Pair report path; defaults to docs/research for the app output')
 args=parser.parse_args()
+def apply_supersede(scenes):
+    pairs=supersede_scenes(scenes)
+    report=args.supersede_report or (root/'docs/research/scene-supersede-186.json'
+        if args.out.resolve()==root/'services/host/app/history-scenes.json' else args.out.with_suffix('.supersede.json'))
+    report.parent.mkdir(parents=True,exist_ok=True)
+    report.write_text(json.dumps(pairs,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    return len(pairs)
+
+if args.supersede_only:
+    previous=json.loads(args.out.read_text(encoding='utf-8'))
+    count=apply_supersede(previous['scenes'])
+    args.out.write_text(json.dumps(previous,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({'scenes':len(previous['scenes']),'superseded':count}))
+    sys.exit(0)
+if args.research is None:
+    parser.error('--research is required unless --supersede-only is used')
 scenes=[];sources={};missing=[]
 if args.merge:
     previous=json.loads(args.out.read_text(encoding='utf-8'))
@@ -204,5 +224,6 @@ for scene in scenes:
 
 output={'scenes':scenes,'sources':list(sources.values()),'missing':missing,
         'renderingNote':'해당 연도에 있었던 사건을 각각 표현합니다. 모형의 간격·수량은 실제 진형이나 병력 수가 아닙니다.'}
+superseded=apply_supersede(scenes)
 args.out.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-print(json.dumps({'scenes':len(scenes),'sources':len(sources),'missing':len(missing)},ensure_ascii=False))
+print(json.dumps({'scenes':len(scenes),'sources':len(sources),'missing':len(missing),'superseded':superseded},ensure_ascii=False))

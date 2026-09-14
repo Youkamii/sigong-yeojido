@@ -230,6 +230,29 @@ class FactsIngestTests(unittest.TestCase):
         self.assertNotIn('participantGroups', scenes[1])
         self.assertNotIn('persistence', scenes[1])
 
+    def test_merge_marks_old_scene_and_keeps_its_evidence(self):
+        self.draft['scenes'][0]['itemId'] = 'hs-fixture'
+        write_json(self.job / 'result.json', self.draft)
+        self.import_job()
+        output = self.root / 'scenes.json'
+        command = ('--research', self.saved_root(), '--collection', COLLECTION,
+                   '--job', JOB, '--data', self.data, '--out', output)
+        self.run_script('build_history_scenes.py', *command)
+        document = read_json(output)
+        old = copy.deepcopy(document['scenes'][0])
+        old['id'] = 'old-fixture'
+        old.pop('itemId')
+        old['place'] = {'lon': 129.23, 'lat': 35.84, 'medium': 'land', 'precision': 'site'}
+        replacement = {**copy.deepcopy(old), 'id': 'new-fixture', 'itemId': 'hs-fixture-saved'}
+        document['scenes'].extend([old, replacement])
+        write_json(output, document)
+        self.run_script('build_history_scenes.py', *command, '--merge')
+        updated = read_json(output)
+        marked = next(scene for scene in updated['scenes'] if scene['id'] == old['id'])
+        self.assertEqual(marked.pop('supersededBy'), replacement['id'])
+        self.assertEqual(marked, old)
+        self.assertTrue(read_json(output.with_suffix('.supersede.json')))
+
     def test_build_omits_empty_groups_and_preserves_nonfacts_vocabulary(self):
         self.import_job()
         output = self.root / 'scenes.json'

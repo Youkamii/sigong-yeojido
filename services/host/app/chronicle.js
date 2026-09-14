@@ -3,6 +3,7 @@ import {loadChronicle} from './chronicle-load.js';
 import {createYearHold,bindYearHold,bindYearSlider,stepYear} from './year-hold.js';
 import {EventTimeline} from './event-timeline.js';
 import {isHistoricalSetting} from './chronicle-sites.js';
+import {visiblePackets,visiblePacketEvents} from './scene-packets.js';
 
 const sourceHost=source=>{try{return new URL(source.resource||'').hostname;}catch{return '';}};
 const publicRecord=source=>{
@@ -74,13 +75,14 @@ export function contextAt(data,year,span=50){
   }
   const byClaim=new Map(data.claims.map(claim=>[claim.id,claim]));
   const curatedEvents=[];
-  for(const scene of data.scenePackets||[]){
+  for(const scene of visiblePackets(data.scenePackets)){
     if(!Number.isInteger(scene.startYear)||!Number.isInteger(scene.endYear)||scene.place?.settlement?.scope==='between-records')continue;
-    const ids=[...scene.dateClaimIds,...scene.actionClaimIds],entity=entities.get(scene.eventId);
-    if(!entity||entity.type==='Narrative'||scene.narrativeType||!ids.length||ids.some(id=>!byClaim.has(id)))continue;
+    const ids=[...scene.dateClaimIds,...scene.actionClaimIds],entity=entities.get(scene.eventId)
+      ||(scene.itemId?{id:scene.eventId,type:'Event',label:scene.title}:null);
+    if(!entity||entity.type==='Narrative'||scene.narrativeType||!scene.itemId&&(!ids.length||ids.some(id=>!byClaim.has(id))))continue;
     const setting=isHistoricalSetting(scene);
     curatedEvents.push({...entity,sceneId:scene.id,placeLabel:scene.place?.label,lo:scene.startYear,hi:scene.endYear,claim:byClaim.get(scene.dateClaimIds[0]),
-      basis:[...new Set(ids)].map(id=>byClaim.get(id)),title:scene.title,setting,
+      basis:[...new Set(ids)].map(id=>byClaim.get(id)).filter(Boolean),title:scene.title,setting,
       current:setting?scene.startYear===year:scene.startYear<=year&&scene.endYear>=year});
   }
   const correctedEntities=new Set((data.scenePackets||[]).filter(scene=>scene.roleCorrection&&scene.actionClaimIds.every(id=>byClaim.has(id))).map(scene=>scene.eventId));
@@ -124,12 +126,12 @@ export function contextAt(data,year,span=50){
     }
   }
   const unique=new Map();
-  for(const event of events){
+  for(const event of visiblePacketEvents(events,data.scenePackets)){
   const key=[event.id,event.lo,event.hi,event.sceneId||''].join('|');
     if(unique.has(key))unique.get(key).basis.push(...event.basis);else unique.set(key,{...event,basis:[...event.basis]});
   }
   const grouped=[...unique.values()].filter(e=>!events.some(other=>other!==e&&other.id===e.id&&other.sceneId===e.sceneId
-    &&other.claim.fromSource===e.claim.fromSource&&other.claim.predicate===e.claim.predicate
+    &&other.claim?.fromSource===e.claim?.fromSource&&other.claim?.predicate===e.claim?.predicate
     &&other.lo<=e.lo&&other.hi>=e.hi&&(other.lo<e.lo||other.hi>e.hi)));
   grouped.sort((a,b)=>a.lo-b.lo||a.title.localeCompare(b.title,'ko'));
   const nearby=grouped.filter(e=>e.lo<=to&&(e.setting?e.lo:e.hi)>=from);
@@ -234,6 +236,7 @@ export class Chronicle {
     this.stopPlay();
     const background=this.callbacks.activity?.(id);
     const entity=this.data.entities.find(e=>e.id===id)
+      ||(background?.itemId?{id,type:'Event',label:background.label}:null)
       ||(['anonymous-city','facility'].includes(background?.siteBackground?.scope)?{id,type:'Place',labels:[]}:null);
     if(!entity)return;
     const dates=datedClaims(this.data).filter(d=>d.claim.subject===id);
@@ -255,6 +258,7 @@ export class Chronicle {
         <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동입니다.')}</p>
         ${activity.narrative?`<dl class="narrative-times"><dt>이야기 속 시기</dt><dd>${esc(activity.narrative.storyTime.label)}</dd><dt>관련 문헌·기록 시기</dt><dd>${esc(activity.narrative.recordingTime.label)}</dd></dl><p class="activity-location">이야기와 기록 시기는 다릅니다. 이 표시가 선택한 연도의 실제 사건을 뜻하지는 않습니다.</p>`:''}
         ${activity.narrative?'':`<p class="activity-location">${esc(activity.placement)}</p>`}
+        ${activity.missingClaimsNote?`<p class="activity-missing-claims">${esc(activity.missingClaimsNote)}</p>`:''}
         ${activity.coordinates?`<p class="activity-coordinates">${esc(activity.coordinates)}</p>`:''}
         ${activity.sides.map(s=>`<p class="activity-side"><strong>${esc(s.label)}</strong> · ${esc(s.role)}</p>`).join('')}
         <details><summary>활동·장소의 근거 ${activityClaims.length}개</summary>${activityClaims.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.quote)} ↗</button>`).join('')}

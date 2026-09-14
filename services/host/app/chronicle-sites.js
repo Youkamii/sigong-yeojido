@@ -1,5 +1,6 @@
 import {settlementStyle} from './historical-regions.js';
 import {urbanRegionAt} from './urban-regions.js';
+import {visiblePackets} from './scene-packets.js';
 
 // 이어지는 도시는 1970년 전까지만 만든다. 현대 배경은 도시 구역과 실제 기록이 맡는다 (#170 #172).
 // 도시 구역의 성장 연도부터는 기록 기간과 무관하게 양보해, 연장 행의 점유 마커가 도시를 줄이지 않게 한다.
@@ -17,6 +18,7 @@ export const isHistoricalSetting=scene=>scene.kind==='settlement'||SETTINGS.has(
 
 // These display intervals join dated records; they are not assertions of continuous occupation.
 export function planHistoricalSites(data,packets,plan){
+  packets=visiblePackets(packets);
   const claims=new Map(data.claims.map(c=>[c.id,c])),entities=new Map(data.entities.map(e=>[e.id,e]));
   const sites=[];
   for(const entityId of ['syj135-place-samnyeonsanseong','syj135-place-myeonghwalsanseong']){
@@ -52,7 +54,7 @@ export function planContinuingCities(packets,plan,claims,settlementZones=[]){
   if(plan.year>=1970)return [];
   const activeZones=settlementZones.filter(zone=>zone.startYear<=plan.year&&plan.year<=zone.endYear);
   const ended=[];
-  for(const scene of packets){
+  for(const scene of visiblePackets(packets)){
     if(scene.kind!=='settlement'||!Number.isFinite(scene.endYear)||plan.year<=scene.endYear)continue;
     const place=scene.place;
     if(!Number.isFinite(place?.lon)||!Number.isFinite(place?.lat))continue;

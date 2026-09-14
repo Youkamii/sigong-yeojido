@@ -3,6 +3,7 @@ import {inDiorama} from './place-state.js';
 import {regionalCoordinate} from './history-coordinates.js';
 import {isHistoricalSetting} from './chronicle-sites.js';
 import {figureArchetype} from './period-figures.js';
+import {visiblePackets} from './scene-packets.js';
 
 export function personArchetype(id,claims){
   const text=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle','syj:activeIn'].includes(c.predicate))
@@ -42,6 +43,7 @@ const yearOf=value=>typeof value==='string'?Number(value.slice(0,4)):null;
 
 /** A geographic placement requires the selected activity's own place evidence. */
 export function planChronicleAssets(context,data,features,places=[],scenePackets=[],registry={}){
+  scenePackets=visiblePackets(scenePackets);
   const claims=new Map(data.claims.map(c=>[c.id,c])),entities=new Map(data.entities.map(e=>[e.id,e]));
   const supported=ids=>Array.isArray(ids)&&ids.length>0&&ids.every(id=>claims.has(id));
   const sceneReference=(placeId)=>{
@@ -96,7 +98,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
   const present=new Map(people.map(p=>[p.entityId,p]));
   const current=[...new Map(context.allEvents.filter(e=>e.type!=='Narrative'&&e.lo<=context.year&&e.hi>=context.year).map(e=>[e.id,e])).values()];
   const researched=scenePackets.filter(s=>!s.narrativeType&&s.startYear<=context.year&&s.endYear>=context.year
-    &&supported(s.dateClaimIds)&&supported(s.actionClaimIds));
+    &&(s.itemId||supported(s.dateClaimIds)&&supported(s.actionClaimIds)));
   const covered=new Set(researched.map(s=>s.eventId));
   const events=current.filter(e=>!covered.has(e.id)).map(event=>{
     const sites=features.filter(f=>f.geometry?.type==='Point'&&f.properties.eventId===event.id
@@ -107,24 +109,32 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       locationReference,participants:[],effects:{},
       claimIds:[...new Set([...event.basis.map(c=>c.id),...(locationReference?.claimIds||[])])]};
   });
-  for(const scene of researched){
-    const place=scene.place&&(supported(scene.place.claimIds)||scene.place.placementType==='context-region')?scene.place:null;
-    const feature=place?.featureId&&features.find(f=>f.id===place.featureId&&within(f.properties,context.year));
-    const anchor=place?.medium!=='sea'&&place?.anchorPlaceId&&places.find(p=>p.id===place.anchorPlaceId);
-    const region=place?.medium!=='sea'&&place?.precision==='area'
-      ?regionalCoordinate(registry,place.anchorPlaceId,place.label):null;
-    const direct=place&&Number.isFinite(place.lon)&&Number.isFinite(place.lat)&&place.coordinateSourceIds?.length;
-    const coordinates=place?.displayCoordinates||feature?.geometry?.coordinates||(direct?[place.lon,place.lat]:anchor?.candidates?.length===1
+  // Evidence-backed placement: display coordinates, a dated feature, direct coordinates, a single anchor candidate, or a region.
+  const locate=place=>{
+    if(!place)return {coordinates:null};
+    const feature=place.featureId&&features.find(f=>f.id===place.featureId&&within(f.properties,context.year));
+    const anchor=place.medium!=='sea'&&place.anchorPlaceId&&places.find(p=>p.id===place.anchorPlaceId);
+    const region=place.medium!=='sea'&&place.precision==='area'?regionalCoordinate(registry,place.anchorPlaceId,place.label):null;
+    const direct=Number.isFinite(place.lon)&&Number.isFinite(place.lat)&&place.coordinateSourceIds?.length;
+    const coordinates=place.displayCoordinates||feature?.geometry?.coordinates||(direct?[place.lon,place.lat]:anchor?.candidates?.length===1
       ?[anchor.candidates[0].lon,anchor.candidates[0].lat]:region?[region.lon,region.lat]:null);
-    const regionalPlacement=region&&!place?.displayCoordinates&&!feature&&!direct&&!anchor;
+    return {coordinates,region,regionalPlacement:Boolean(region&&!place.displayCoordinates&&!feature&&!direct&&!anchor)};
+  };
+  for(const scene of researched){
+    // #186: 교과서 항목 패킷은 조사 검증기가 좌표 근거를 확인했으므로 사료 선택과 무관하게 패킷 좌표로 놓는다.
+    const itemCoordinates=Boolean(scene.itemId&&scene.place?.claimIds?.length&&Number.isFinite(scene.place.lon)&&Number.isFinite(scene.place.lat));
+    const place=scene.place&&(itemCoordinates||supported(scene.place.claimIds)||scene.place.placementType==='context-region')?scene.place:null;
+    const {coordinates,region,regionalPlacement}=itemCoordinates?{coordinates:[place.lon,place.lat]}:locate(place);
     const activeParticipants=scene.participants.filter(p=>(p.startYear==null||p.startYear<=context.year)&&(p.endYear==null||p.endYear>=context.year));
     const participants=activeParticipants.filter(p=>supported(p.claimIds)&&present.has(p.entityId)).map(p=>({
       ...present.get(p.entityId),...p,archetype:activityFigure(p.entityId,p.role,context.year,data.claims),
       relationClaims:p.claimIds,detail:p.role+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
     events.push({id:scene.id,entityId:scene.eventId,kind:'event',year:context.year,label:scene.title,setting:isHistoricalSetting(scene),
+      ...(scene.itemId?{itemId:scene.itemId}:{}),
       archetype:scene.kind,startYear:scene.startYear,endYear:scene.endYear,detail:yearLabel(scene.startYear),summary:scene.summary,
       scenePlace:coordinates?{...place,coordinates,precision:place.displayPrecision||place.precision,...(regionalPlacement?{
-        coordinateNote:'지역 기준 추정 배치 · '+region.coordinateNote,coordinateSourceIds:region.sourceIds}: {})}:null,
+        coordinateNote:'지역 기준 추정 배치 · '+region.coordinateNote,coordinateSourceIds:region.sourceIds}: {}),
+        ...(itemCoordinates?{placementType:'item-packet'}: {})}:null,
       sites:[],locationReference:null,visualActions:scene.visualActions,
       // #173: 장면 기능과 참여 집단은 패킷 값을 그대로 넘긴다. participantGroups 는 Person 여부와 무관하게 통과(entityId 가 Polity·null 이어도 됨).
       // count 는 화면 표현값이며 사료의 인원수 주장이 아니다.

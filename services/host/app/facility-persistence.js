@@ -62,15 +62,19 @@ function facilityName(scene){
 
 export function planContinuingFacilities(packets,plan,claims,world=null){
   const rows=[];
+  // 숨긴 기존 시설: 항목 장면이 존속을 명시하면 그것을 쓰고, 없으면 기존 존속을 유지한다.
+  const byId=new Map(packets.map(packet=>[packet.id,packet]));
   for(const scene of packets){
+    if(scene.supersededBy&&byId.get(scene.supersededBy)?.persistence)continue;
+    const persistence=scene.persistence?.kind==='facility'?scene.persistence:null;
     const heritage=scene.kind==='heritage'&&scene.persistence?.kind==='facility';
     if((scene.kind!=='construction'&&!heritage)||scene.narrativeType!=null||scene.title?.includes('전승')
       ||!coordinates(scene.place)||!Number.isFinite(scene.endYear))continue;
     if(heritage&&!Number.isFinite(scene.persistence.from))continue;
     const look=facilityLook(scene);
     if(!look)continue;
-    const sinceYear=heritage?Math.max(scene.endYear+1,scene.persistence.from):scene.endYear+1;
-    if(plan.year<sinceYear||plan.year>END_YEAR||plan.events.some(event=>event.id===scene.id))continue;
+    const sinceYear=Math.max(scene.endYear+1,persistence?.from??scene.endYear+1);
+    if(plan.year<sinceYear||plan.year>END_YEAR||plan.events.some(event=>event.id===scene.id||event.id===scene.supersededBy))continue;
     const displayCoordinates=scene.place.displayCoordinates||[scene.place.lon,scene.place.lat];
     if(world){
       const [x,z]=world.toWorld(...displayCoordinates);
@@ -87,10 +91,10 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
       .sort((a,b)=>a.startYear-b.startYear||a.id.localeCompare(b.id))[0];
     const type=look==='palace'?'dynasty-boundary':'openEnded';
     const boundary=type==='dynasty-boundary'?DYNASTY_BOUNDARIES.find(year=>year>scene.endYear):undefined;
-    const untilYear=Math.min(heritage?(scene.persistence.to??END_YEAR):END_YEAR,ending?ending.startYear-1:END_YEAR,boundary?boundary-1:END_YEAR);
+    const untilYear=Math.min(persistence?.to??END_YEAR,ending?ending.startYear-1:END_YEAR,boundary?boundary-1:END_YEAR);
     if(plan.year>untilYear)continue;
     const claimIds=[...new Set([...(scene.dateClaimIds||[]),...(scene.actionClaimIds||[]),...(scene.place.claimIds||[]),...(heritage?scene.persistence.basisClaimIds||[]:[])])];
-    if(claims&&!claimIds.every(id=>claims.has(id)))continue;
+    if(claims&&!scene.itemId&&!claimIds.every(id=>claims.has(id)))continue;  // #186: 항목 장면은 조사 검증기가 근거를 확인했다
     const recorded=heritage&&(scene.persistence.basisClaimIds?.length||0);
     const description=recorded?`기록된 존속(근거 ${recorded}건)`:'추정 존속';
     const id='background-facility-'+scene.id;
@@ -105,5 +109,7 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
       scenePlace:{...scene.place,coordinates:displayCoordinates,displayBasis:'시설 · '+description},
       claimIds,sites:[],locationReference:null,participants:[],participantGroups:[],sides:[]});
   }
-  return rows;
+  // 항목에 명시한 존속이 없으면 기존 시설을 남긴다. 항목의 추정 시설을 또 만들지 않는다.
+  const inherited=new Set(rows.map(row=>row.supersededBy).filter(Boolean));
+  return rows.filter(row=>!inherited.has(row.siteBackground.sourceSceneId));
 }
