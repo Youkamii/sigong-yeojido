@@ -28,7 +28,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-samguk-samguk-3-hs-s3-gaya-act",
@@ -45,24 +45,24 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-samguk-samguk-3-hs-s3-gaya-treat",
     "subject": "person-hs-s3-gim-guhae",
-    "predicate": "syj:administeredAs",
+    "predicate": "syj:relatedTo",
     "object": {
-      "kind": "literal",
-      "value": "上等"
+      "kind": "entity",
+      "id": "polity-hs-s3-silla"
     },
     "citesChunk": "chunk_samguksagi_sg_004_0030_0150",
     "quote": "授位上等, 以本國爲食邑",
-    "note": "항복한 왕에게 상등의 지위를 주고 본국을 식읍으로 삼게 했다.",
+    "note": "항복한 금관국왕에게 신라가 지위를 주고 본국을 식읍으로 삼게 했다. 원문 표기는 '上等'이며 행정 단위 표기가 아니다.",
     "fromSource": "src-samguksagi",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

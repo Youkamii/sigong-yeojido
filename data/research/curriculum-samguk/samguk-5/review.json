@@ -1,7 +1,7 @@
 {
  "job": "samguk-5",
  "checker": "claude-opus-5 high",
- "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-samguk --job samguk-5 -> exit 0, PASS: failures=0 warnings=0 (facts=22, scenes=22, claims=98, chunkClaims=75, excerptClaims=23). category x decade: administration 4, facility 1, foreign 2, person 5, war 10. region x decade: north 6, central 5, south 11.",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-samguk --job samguk-5 -> exit 0, 'PASS: failures=0 warnings=0' (samguk-5 | facts 22 | scenes 22 | claims 98 | chunkClaims 75 | excerptClaims 23). category x decade: administration 4, facility 1, foreign 2, person 5, war 10. region x decade: north 6, central 5, south 11.",
  "verdict": "fix",
  "issues": [
   {
@@ -9,107 +9,94 @@
    "itemId": "hs-samguk-yeon-coup-642",
    "factId": "fact-hs-sg5-002",
    "sceneId": "scene-hs-sg5-yeon-coup",
-   "claimId": "claim-hs-sg5-yeon-coup-palace",
-   "problem": "642년 연개소문 정변의 장소를 '평양 왕궁(안학궁터)'로 잡고 claim-hs-sg5-yeon-coup-palace 가 tookPlaceAt place-hs-sg5-anhakgung 을 주장한다. 안학궁은 427년 장수왕 평양 천도 때 지은 궁으로 586년(평원왕 28) 장안성 천도 이후에는 왕궁이 아니다. 642년의 왕궁은 장안성(평양성)이므로 시대 착오다. 인용 근거(민족문화대백과)는 '왕궁에 돌입해'라고만 적어 안학궁을 지목하지 않으며, 오히려 '평양성 남쪽 성 밖'이라고 적어 무대가 평양성임을 가리킨다. 같은 result 안에서 연개소문 초상(scene-hs-sg5-yeongaesomun)은 장안성 좌표를 쓰고 있어 내부 모순이기도 하다.",
-   "fix": "정변 장면의 place 를 평양성(장안성) 계열 좌표로 옮기고(예: src-hs-ko-pyongyangseong 의 ex-geo-pyongyangseong), 연개소문 초상은 다른 대표점(평양 도시 좌표 src-hs-en-pyongyang 또는 대성산 일대)으로 나눠 겹침을 피한다. place-hs-sg5-anhakgung 엔티티와 claim-hs-sg5-yeon-coup-palace 의 object 를 바꾸고, coordinateNote 에서 '안학궁 = 642년 왕궁'이라는 서술을 삭제한다.",
-   "evidence": "chunk_samguksagi_sg_019_0060_0340 '二十八年, 移都長安城'(평원왕 28년=586); chunk_samguksagi_sg_037_0020_0030 '平原王二十八年, 移都長安城, 歴八十三年, 寳臧王二十七年而滅'; raw/ko-anhakgung.html 본문 '평원왕이 ... 장안성으로 천도할 때까지 고구려의 왕궁으로 사용되었다'; chunk_scenes-103_ancient_scenes_yeongae-coup '642년 평양성 남쪽 성 밖에서 ... 왕궁에 돌입해'"
+   "claimId": "claim-hs-sg5-anhakgung-loc",
+   "problem": "642년 연개소문 정변의 장소를 '평양 왕궁(안학궁터)' 로 적고 안학궁 좌표(125.834, 39.0618)를 썼다. 안학궁은 장수왕 15년(427) 평양 천도 때의 왕궁이고 586년 장안성(평양성) 천도 뒤에는 왕궁이 아니었다. 정변이 일어난 642년의 고구려 왕궁은 장안성 안에 있었으므로 placeLabel 과 좌표가 사실과 어긋난다. 게다가 이 장면이 근거로 인용한 민족문화대백과 발췌 자체가 '평양성 남쪽 성 밖' 의 열병식 뒤 '왕궁에 돌입' 이라고 적어 왕궁을 평양성(장안성)과 묶는다 — 인용 근거와 배치되는 비정이다.",
+   "fix": "정변 장면의 place 를 평양성(장안성) 좌표(claim-hs-sg5-pyongyangseong-loc, 125.757/39.0235)로 옮기고, 겹침을 피하려면 연개소문 인물 장면(scene-hs-sg5-yeongaesomun)을 평양의 다른 근거 지점(대성산성·을밀대 등 위키 표시 좌표를 새 source 로 받아)으로 분산한다. 안학궁 좌표를 계속 쓰려면 placeLabel 을 '평양 도성 일대(안학궁터 좌표 대용)' 로 바꾸고 coordinateNote 에 642년 왕궁은 장안성이었고 안학궁터는 표시용 대표점이라는 단서를 넣는다.",
+   "evidence": "raw/ko-anhakgung.html 인포박스 '시대 장수왕 15년 서기 427'; raw/ko-pyongyangseong.html(평양성=장안성) 문서; chunk_scenes-103_ancient_scenes_yeongae-coup '642년 평양성 남쪽 성 밖에서 부병(部兵)의 열병식을 구실로 귀족들을 부른 뒤, 정변을 일으켜 이들을 모두 죽이고 왕궁에 돌입해 왕을 시해하고 보장왕을 세웠다.'"
   },
   {
    "severity": "major",
    "itemId": "hs-samguk-ansi-siege",
-   "factId": "fact-hs-sg5-005",
    "sceneId": "scene-hs-sg5-ansi",
-   "claimId": "claim-hs-sg5-ansi-hold",
-   "problem": "장면 요약이 '성 사람들은 항복하면 몰살하겠다는 말을 듣고 더 굳게 지켰고'라고 적었다. 삼국사기 원문은 이세적이 '성을 함락하는 날 남자를 모두 구덩이에 묻자'고 청한 것을 안시성 사람들이 듣고 더 굳게 지켰다는 내용이다. '항복하면'과 '함락하면'은 인과가 정반대이고, 대상도 '남자'이지 성 전체 몰살이 아니다. 인용 quote 자체는 정확하지만 화면에 나가는 요약이 사료를 왜곡한다.",
-   "fix": "요약을 '당의 이세적이 성을 깨뜨리는 날 남자를 모두 묻어 버리자고 청했다는 말이 성안에 알려지자 사람들은 더 굳게 지켰고' 정도로 고친다. claim-hs-sg5-ansi-hold 의 note 는 이미 정확하므로 그대로 둔다.",
-   "evidence": "chunk_samguksagi_sg_021_0020_0221 '安市人望見帝旗蓋, 輙乘城鼓噪. 帝怒, 世勣請克城之日, 男子皆坑之. 安市人聞之, 益堅守, 攻久不下.'"
+   "problem": "해외 장면 3건(안시성=랴오닝 하이청, 요동성=랴오양, 당 장안=시안)의 scene.place 에 overseas 표시가 없다. items.json 의 같은 항목 place 에는 overseas:true 가 붙어 있고, 같은 컬렉션 방식의 다른 칸(curriculum-colonial/colonial-5/result.json)은 해외 장면 place 에 overseas:true 를 넣는다. 검증기는 이 필드를 보지 않아 PASS 했지만 조립·표시 단계에서 한반도 밖 좌표가 국내 장면과 같게 취급될 수 있다.",
+   "fix": "scene-hs-sg5-ansi, scene-hs-sg5-tang-invasion, scene-hs-sg5-nadang-alliance 의 place 에 \"overseas\": true 를 추가한다. region(north/north/south)과 fact.note 의 해외 표시는 그대로 둔다.",
+   "evidence": "items.json 의 hs-samguk-ansi-siege·hs-samguk-tang-invasion·hs-samguk-nadang-alliance place.overseas=true; data/research/curriculum-colonial/colonial-5/result.json 의 scene-hs-c5-cairo 등 10개 장면 place.overseas=true; samguk-5/result.json 전체에 'overseas' 문자열 0건"
   },
   {
    "severity": "major",
-   "itemId": "hs-samguk-ungjin-dodokbu",
-   "factId": "fact-hs-sg5-014",
-   "sceneId": "scene-hs-sg5-ungjin-dodokbu",
-   "claimId": "claim-hs-sg5-ungjin-end",
-   "problem": "claim-hs-sg5-ungjin-end 가 syj:endedIn 670 을 주장하는데 인용한 chunk(문무왕 10년 7월)는 '신라가 웅진도독부에 화친을 청했으나 듣지 않아 군사를 냈다'일 뿐 도독부의 종료를 전혀 말하지 않는다. 근거가 주장을 받치지 못한다. 그 결과 scene·fact 의 persistence 가 660~670 으로 찍혀, 항목이 적은 677년까지의 존속보다 7년 짧게 표시된다.",
-   "fix": "종료 근거를 실제 기사로 바꾼다. 671년 소부리주 설치(chunk_samguksagi_sg_007_0020_0111 '置所夫里州, 以阿湌眞王爲都督')를 endedIn 671 근거로 쓰거나, 종료 연도를 항목대로 두고 to 를 677 로 올린 뒤 근거 claim 을 새로 단다. 670 을 유지하려면 predicate 를 relatedTo 로 낮추고 persistence 의 to 를 근거 있는 연도로 고친다.",
-   "evidence": "chunk_samguksagi_sg_006_0020_1020 '秋七月, 王疑百濟殘衆反覆, 遣大阿湌儒敦於熊津都督府請和, 不從, 乃遣司馬稱軍窺覘 ... 舉兵討百濟' — 종료 언급 없음. 대안 근거 chunk_samguksagi_sg_007_0020_0111(671년 7월 소부리주 설치)"
-  },
-  {
-   "severity": "major",
-   "itemId": "hs-samguk-goguryeo-revival",
-   "factId": "fact-hs-sg5-018",
-   "sceneId": "scene-hs-sg5-goguryeo-revival",
-   "claimId": "claim-hs-sg5-gogu-revival-end",
-   "problem": "고구려 부흥 운동의 끝 연도를 항목의 673 대신 671 로 내리면서 note 에 '인용한 삼국사기 기사로 확인되는 마지막 국면은 671년 안시성 패전'이라고 적었다. 그러나 로컬 chunk 에 673년 윤5월 '고구려 부흥군이 패배하다' 기사가 그대로 있다. note 의 근거 주장이 사실과 다르고, 근거를 찾을 수 있는데도 항목 범위를 2년 줄였다.",
-   "fix": "claim-hs-sg5-gogu-revival-end 의 근거를 chunk_samguksagi_sg_022_0020_0540(673년 윤5월, 고구려 부흥군 패배)로 바꾸고 endedIn 673, scene.endYear 673 으로 되돌린다. fact.note 의 잘못된 문장도 지운다.",
-   "evidence": "chunk_samguksagi_sg_022_0020_0540 date raw '0673-05-99L1', locator '卷第二十二 髙句麗本紀 第十 › 寶藏王 › 고구려 부흥군이 패배하다'"
-  },
-  {
-   "severity": "major",
-   "itemId": "hs-samguk-ansi-siege,hs-samguk-tang-invasion,hs-samguk-nadang-alliance",
-   "sceneId": "scene-hs-sg5-ansi,scene-hs-sg5-tang-invasion,scene-hs-sg5-nadang-alliance",
-   "problem": "해외 장면 3건(안시성=랴오닝 하이청, 요동성=랴오양, 당 장안=시안)의 place 에 overseas 플래그가 없다. result.json 전체에 'overseas' 문자열이 0회 등장한다. 지시는 해외 장소를 place.overseas=true 로 두고 region 은 위도 규칙으로 적으라고 못박았다. region 과 fact.note 의 해외 표기는 규칙대로 되어 있으나 플래그만 빠졌다.",
-   "fix": "세 장면의 place 에 \"overseas\": true 를 넣는다. region(north/north/south)과 note 는 그대로 두면 된다.",
-   "evidence": "grep -c overseas data/research/curriculum-samguk/samguk-5/result.json -> 0; scene-hs-sg5-ansi place lat 40.8824 lon 122.6852, scene-hs-sg5-tang-invasion 41.279/123.176, scene-hs-sg5-nadang-alliance 34.26111/108.94222"
+   "itemId": "hs-samguk-goguryeo-fall",
+   "sceneId": "scene-hs-sg5-goguryeo-fall",
+   "problem": "이미 저장소에 있는 인물 개체를 재사용하지 않고 새 id 를 만들어 같은 인물이 두 노드로 갈라졌다. person-hs-sg5-bojangwang(기존 person-encykorea-bojang), person-hs-sg5-anseung(기존 person-anseung), person-hs-sg5-abiji(기존 person-abiji) 3건이다. 기존 개체는 이번 작업보다 앞선 커밋에 있다.",
+   "fix": "result.json 의 entities[]·participants[]·claims[] 에서 person-hs-sg5-bojangwang -> person-encykorea-bojang, person-hs-sg5-anseung -> person-anseung, person-hs-sg5-abiji -> person-abiji 로 바꾸고 이번 작업이 만든 data/entities/person/person-hs-sg5-{bojangwang,anseung,abiji}.md 를 지운다. 흑치상지(person-hs-sg5-heukchi-sangji)는 기존 개체가 없어 그대로 둔다.",
+   "evidence": "grep -rl '보장' data/entities/person -> person-encykorea-bojang.md, person-hs-sg5-bojangwang.md / '안승' -> person-anseung.md, person-hs-sg5-anseung.md / '아비지' -> person-abiji.md, person-hs-sg5-abiji.md. git log -1: person-anseung.md=2e12bc9a(#182), person-abiji.md=56f1afbc(#103), person-hs-sg5-anseung.md=75357259(#186)"
   },
   {
    "severity": "minor",
    "itemId": "hs-samguk-hwangnyongsa-pagoda",
    "factId": "fact-hs-sg5-006",
    "sceneId": "scene-hs-sg5-hwangnyongsa-tap",
-   "problem": "persistence 를 {facility, 645~1238} 로 두어 목탑이 594년간 끊김 없이 같은 모습으로 존속한 것처럼 표시된다. 정작 근거로 쓴 같은 위키 문서가 고려 광종 5년(954) 벼락으로 목탑이 소멸했고 1012년 재건을 시작해 9년 만에 완공했다고 적는다.",
-   "fix": "persistence 는 645~1238 로 두더라도 fact.note 와 scene.place.coordinateNote 에 '954년 소실·1012~1021년 재건을 거쳤고 1238년 최종 소실'을 명시한다.",
-   "evidence": "raw/ko-hwangnyongsa.html '광종 5년(954)때에 벼락으로 목탑이 소멸하자 60여년이 지난 1012년 다시 재건을 시작하여 9년만에 완공했고 ... 고종 25년(1238) 몽고의 난으로 말미암아 회진되고 말았다'"
+   "claimId": "claim-hs-sg5-hwangnyong-burn",
+   "problem": "persistence 를 {facility, 645~1238} 로 두어 목탑이 645년부터 1238년까지 같은 모습으로 서 있던 것으로 표시된다. 그러나 근거로 쓴 같은 위키백과 문서가 '광종 5년(954)때에 벼락으로 목탑이 소멸하자 ... 1012년 다시 재건을 시작하여 9년만에 완공했고' 라고 적는다. 645~1238 연속 존속은 인용 출처와 어긋난다.",
+   "fix": "fact.note 와 scene 의 coordinateNote 에 '954년 벼락으로 소실되었다가 1012~1021년 재건되었고 1238년 몽골 침입 때 다시 불탔다' 를 적어 연속 존속이 아님을 밝히거나, persistence 를 645~954 로 줄이고 재건분은 별도 근거로 다룬다.",
+   "evidence": "raw/ko-hwangnyongsa.html 본문: '광종 5년(954)때에 벼락으로 목탑이 소멸하자 60여년이 지난 1012년 다시 재건을 시작하여 9년만에 완공했고 ... 고종 25년(1238) 몽고의 난으로 말미암아 회진되고 말았다.'"
   },
   {
    "severity": "minor",
-   "itemId": "hs-samguk-unification-676",
-   "factId": "fact-hs-sg5-022",
-   "sceneId": "scene-hs-sg5-unification",
-   "claimId": "claim-hs-sg5-unify-boundary",
-   "problem": "장면 요약이 '문무왕은 대동강 남쪽 땅을 신라에 준다던 약속을 들어 당과의 다툼을 매듭지었다'고 676년 서술로 적었다. 원문은 '平壤已南百濟土地'(평양 이남의 백제 땅)이고, 이 답서 자체가 671년 7월 26일 설인귀에게 보낸 글이다. 범위(백제 토지)와 시점(671)이 함께 어긋난다.",
-   "fix": "요약을 '문무왕은 671년 답서에서 평양 이남의 백제 땅을 신라에 준다던 당 태종의 말을 들어 명분을 세웠다'처럼 시점과 범위를 살려 고치고, claim note 의 '대동강 이남'도 '평양 이남의 백제 땅'으로 맞춘다.",
-   "evidence": "chunk_samguksagi_sg_007_0020_0100 date raw '0671-07-26L0', '我平定兩國, 平壤已南百濟土地, 並乞你新羅, 永爲安逸'"
+   "itemId": "hs-samguk-hwangnyongsa-pagoda",
+   "claimId": "claim-hs-sg5-hwangnyong-burn",
+   "problem": "1238년 소실이라는 연도 주장을 위키백과 발췌로 달았다. 지침의 근거 우선순위는 로컬 원문 chunk 가 첫째이고 위키백과는 좌표 보조로만 쓰게 되어 있는데, 로컬에 같은 내용의 민족문화대백과 chunk 가 있다.",
+   "fix": "claim-hs-sg5-hwangnyong-burn 을 citesChunk 'chunk_scenes-122_early_localities_hns-1238'(sourceId src-syj122-aks-hwangnyongsaji), quote '황룡사는 1238년(고종 25) 몽고병의 침입 때 모두 불타 버리고' 로 바꾼다. 위키 발췌 ex-hwangnyongsa-1238 을 지워도 좌표 발췌가 남아 source 는 유지된다.",
+   "evidence": "python scripts/search_chunks.py --keyword 황룡사 --keyword 1238 -> chunk_scenes-122_early_localities_hns-1238 / src-syj122-aks-hwangnyongsaji / '황룡사는 1238년(고종 25) 몽고병의 침입 때 모두 불타 버리고'"
   },
   {
    "severity": "minor",
    "itemId": "hs-samguk-nadang-alliance",
    "claimId": "claim-hs-sg5-alliance-accept",
-   "problem": "note 에 '당 태종이 청병을 허락하고 소정방에게 백제 정벌을 명했다'를 648년 일로 적었다. 인용한 김유신 열전 대목은 648년 기사 안에서 660년 소정방 20만 출정을 미리 끌어다 붙인 소급 서술이다. 그대로 두면 648년에 소정방 원정이 있었던 것처럼 읽힌다.",
-   "fix": "note 에 '실제 소정방의 출정은 660년이며 열전이 648년 기사에 소급해 적은 것'이라는 단서를 붙이거나, 수락 근거를 같은 648년 진덕왕 본기의 '太宗深然之, 許以出師'(chunk_samguksagi_sg_005_0030_0130)로 바꾼다.",
-   "evidence": "chunk_samguksagi_sg_041_0020_0340 '真徳王大和元年戊申 ... 乃詔許, 勑將軍蘇定方, 以師二十萬, 徂征百濟'; chunk_samguksagi_sg_005_0030_0130 '太宗深然之, 許以出師'"
+   "problem": "claim note 를 '당 태종이 청병을 허락하고 소정방에게 백제 정벌을 명했다' 로 적었다. 인용 chunk(삼국사기 김유신 열전, 진덕왕 대화 원년 무신=648 조)의 서술을 그대로 옮긴 것이지만 소정방의 백제 원정은 실제로는 660년 당 고종 때의 일이라, 열전이 뒤의 일을 648년 기사에 이어 붙인 압축 서술이다. 그대로 두면 648년에 소정방 파병 명령이 있었던 것처럼 읽힌다.",
+   "fix": "note 에 '삼국사기 열전이 뒤의 일(660년 소정방 원정)을 648년 청병 기사에 이어 적은 서술' 이라는 단서를 붙인다. 장면 요약은 청병 허락만 적고 있어 손대지 않아도 된다.",
+   "evidence": "chunk_samguksagi_sg_041_0020_0340 (date.raw 0648-99-99L0, 卷第四十一 列傳 第一 金庾信 上 '김춘추의 청병을 당태종이 허락하다'): '真徳王大和元年戊申 ... 乃詔許, 勑將軍蘇定方, 以師二十萬, 徂征百濟.'"
   },
   {
    "severity": "minor",
-   "itemId": "hs-samguk-goguryeo-fall",
-   "sceneId": "scene-hs-sg5-goguryeo-fall",
-   "claimId": "claim-hs-sg5-goguryeo-north-gate",
-   "problem": "요약이 '북문에서의 싸움이 마지막이 되었다'고 단정한다. 인용한 668년 10월 22일 포상 기사는 평양성 大門·북문·남교·소성·군영 전공을 나란히 적을 뿐, 북문 싸움이 마지막이었다는 말은 없다.",
-   "fix": "'평양성 북문 싸움의 전공이 따로 기록될 만큼 성벽 곳곳에서 싸움이 있었다' 정도로 낮춘다. 좌표를 모란봉으로 둔 근거 설명은 coordinateNote 에 이미 있으니 그대로 둔다.",
-   "evidence": "chunk_samguksagi_sg_006_0020_0840 '黒嶽令宣極, 平壤城大門戰功第一 ... 軍師南漢山 北渠, 平壤城北門戰功第一 ... 軍師斧壤 仇杞, 平壤南橋戰功第一 ... 假軍師比列忽 世活, 平壤少城戰功第一'"
+   "itemId": "hs-samguk-unification-676",
+   "claimId": "claim-hs-sg5-unify-boundary",
+   "problem": "claim note 와 scene summary 가 '대동강 이남 / 대동강 남쪽 땅을 신라에 준다던 약속' 이라고 적지만 인용한 원문은 '平壤已南百濟土地'(평양 이남의 백제 땅)다. 원문에 없는 강 이름으로 바꾼 표현이다. 또 이 약속은 671년 답설인귀서 기사인데 676년 장면의 행위 근거로 쓰였다.",
+   "fix": "summary 와 note 의 '대동강 남쪽' 을 '평양 이남의 백제 땅' 으로 고치거나 '뒷날 대동강선으로 불리는' 같은 단서를 붙이고, 671년 답서 기사임을 note 에 밝힌다.",
+   "evidence": "chunk_samguksagi_sg_007_0020_0100 (date.raw 0671-07-26L0): '我平定兩國, 平壤已南百濟土地, 並乞你新羅, 永爲安逸.'"
   },
   {
    "severity": "minor",
-   "itemId": "hs-samguk-yeon-coup-642",
-   "problem": "새로 만든 인물 엔티티 id 가 person-hs-sg5-bojangwang 처럼 job 약어를 끼워 넣었다. 지시와 이미 PASS 한 참고 칸(curriculum-joseon-early/joseon-early-2 의 person-hs-hwang-hui, person-hs-choe-yundeok)은 person-hs-<slug> 규약이다. 기존 저장소 인물 7명(person-jajang, person-gyebaek, person-kim-yusin, person-encykorea-* 4건)은 실제로 존재하는 id 를 올바르게 재사용했다.",
-   "fix": "person-hs-sg5-bojangwang / -abiji / -heukchi-sangji / -anseung 를 person-hs-bojangwang 등으로 바꾸고 참조하는 claims·participants 도 함께 고친다. 시대 간 중복이 걱정되면 규약 자체를 facts-format.md 에 먼저 반영한다.",
-   "evidence": "data/research/curriculum-joseon-early/joseon-early-2/result.json 의 person-hs-hwang-hui, person-hs-choe-yundeok; data/entities/person/ 에 person-jajang.md, person-gyebaek.md, person-kim-yusin.md, person-encykorea-uija.md 등 존재 확인"
+   "itemId": "hs-samguk-goguryeo-revival",
+   "factId": "fact-hs-sg5-018",
+   "sceneId": "scene-hs-sg5-goguryeo-revival",
+   "claimId": "claim-hs-sg5-gogu-revival-end",
+   "problem": "항목의 기간 670~673 을 670~671 로 줄이고 note 에 '인용한 삼국사기 기사로 확인되는 마지막 국면은 671년 안시성 패전' 이라 적었다. 그러나 673년 고구려 부흥군 패배 기사가 로컬 chunk 에 그대로 있어 항목의 673 을 근거와 함께 살릴 수 있다. 항목 목록이 정한 기간을 근거 부족이 아닌 이유로 줄인 셈이다.",
+   "fix": "claim 을 하나 더 달아(citesChunk chunk_samguksagi_sg_022_0020_0540, quote '燕山道㧾管·大将軍李謹行破我人於瓠瀘河', time 673) endYear 를 673 으로 되돌리고 note 의 축소 설명을 지운다.",
+   "evidence": "chunk_samguksagi_sg_022_0020_0540 (date.raw 0673-05-99L1, 卷第二十二 髙句麗本紀 第十 寶藏王 '고구려 부흥군이 패배하다'): '四年癸酉歳, 夏閠五月, 燕山道㧾管·大将軍李謹行破我人於瓠瀘河, 俘獲數千人, 餘衆皆奔新羅.'"
   },
   {
    "severity": "minor",
    "itemId": "hs-samguk-uija-wang",
    "sceneId": "scene-hs-sg5-uija",
-   "problem": "부여의 두 장면이 0.42km 떨어져 있다. 관북리 유적(126.9125, 36.28444)과 부소산성(126.91528, 36.2875)은 실제로 붙어 있는 유적이라 사료상 문제는 없지만, 지도에서는 사실상 한 점으로 겹쳐 보일 수 있다. 같은 도시 항목을 나누라는 규칙의 취지에 비해 분리 폭이 작다.",
-   "fix": "그대로 둘 수 있으나, 뷰어 캡처에서 두 점이 겹치면 의자왕 초상을 사비 도성 남쪽(정림사지·궁남지 등 좌표 근거가 있는 다른 지점)으로 더 벌린다.",
-   "evidence": "scene-hs-sg5-uija 126.9125/36.28444 vs scene-hs-sg5-baekje-fall 126.91528/36.2875 — 약 0.42km"
+   "problem": "의자왕 장면(관북리 유적 126.9125/36.28444)과 백제 멸망 장면(부소산성 126.91528/36.2875)이 420m 떨어져 있어 지도에서는 사실상 한 점으로 겹친다. 두 coordinateNote 가 '따로 두었다' 고 적은 의도와 실제 거리가 맞지 않는다. 평양에서도 연개소문 인물(평양성)과 안동도호부(평양시)가 1.1km, 고구려 멸망(모란봉)과 2.2km 로 가깝다.",
+   "fix": "의자왕 인물 장면을 부여 안의 다른 근거 지점(정림사지·능산리 고분군 등)이나 부여 밖 지점의 표시 좌표로 옮긴다. 겹쳐도 되는 범위라면 coordinateNote 의 '따로 두었다' 를 '같은 도성 안 400m 거리' 로 정정한다.",
+   "evidence": "scene-hs-sg5-uija place(126.9125, 36.28444) 와 scene-hs-sg5-baekje-fall place(126.91528, 36.2875) 사이 거리 0.42km (경도 1도=88km, 위도 1도=111km 근사)"
   },
   {
    "severity": "minor",
    "itemId": "hs-samguk-baekgang-battle",
-   "claimId": "claim-hs-sg5-baekgang-fleet",
-   "problem": "백강 전투의 행위 근거로 쓴 chunk_samguksagi_sg_028_0020_0410 의 date.raw 가 0662-07 이다. 백제본기가 용삭 2년(662) 7월 항목 아래 663년 백강구 전투까지 이어 적은 긴 서술이라 tookPlaceAt(비시간 주장)이어서 검증기는 통과하지만, 연도 근거가 다른 chunk 라는 점이 파일 어디에도 적혀 있지 않다.",
-   "fix": "claim note 에 '백제본기 662년 7월 조에 이어 적힌 663년 백강구 기사'임을 한 줄로 밝힌다. 연도 주장은 이미 chunk_samguksagi_sg_006_0020_0370(663)으로 따로 달려 있어 구조는 문제없다.",
-   "evidence": "chunk_samguksagi_sg_028_0020_0410 date raw '0662-07-99L0', 본문 '二年七月 ... 遇倭人白江口, 四戰皆克, 焚其舟四百艘'"
+   "claimId": "claim-hs-sg5-baekgang-year",
+   "problem": "백강 전투의 연도 근거(dateClaimIds 유일 항목)가 해전 기사가 아니라 두릉윤성·주류성 함락 기사다. 정작 해전을 적은 claim-hs-sg5-baekgang-fleet 이 인용한 chunk 는 date.raw 가 0662-07-99L0 이라 663년을 직접 뒷받침하지 않는다. 연도 근거와 행위 근거가 서로 다른 기사를 가리킨다.",
+   "fix": "663년 백강 해전을 직접 적은 기사를 date claim 으로 추가하거나, claim-hs-sg5-baekgang-year 의 note 에 '주류성 함락 기사로 663년을 잡았고 해전 기사 자체의 연대는 백제본기 서술을 따른다' 를 밝힌다.",
+   "evidence": "claim-hs-sg5-baekgang-year -> chunk_samguksagi_sg_006_0020_0370 (0663, '복신과 도침이 부여풍과 함께 백제를 부흥하려 하다'), quote '與之合攻豆陵 尹城·周留城等諸城, 皆下之'. claim-hs-sg5-baekgang-fleet -> chunk_samguksagi_sg_028_0020_0410 (date.raw 0662-07-99L0)"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-ungjin-dodokbu",
+   "factId": "fact-hs-sg5-014",
+   "problem": "웅진도독부 존속을 660~670 으로 두었다. 항목은 677년 축출을 적고 실제로도 671년 소부리주 설치·676년 요동 이전까지 이어진다. 670년 기사는 신라가 화친을 청했다가 거절당해 군사를 낸 시점일 뿐 관부가 사라진 해가 아니어서 persistence 의 끝 연도로 쓰기에는 약하다.",
+   "fix": "670 을 그대로 둘 경우 note 를 '670년은 신라의 공격이 시작된 해이며 관부가 없어진 해가 아니다' 로 정정하거나, 671년 소부리주 설치 기사(삼국사기 신라본기 문무왕 11년)를 근거로 끝 연도를 671 로 올린다.",
+   "evidence": "claim-hs-sg5-ungjin-end -> chunk_samguksagi_sg_006_0020_1020 (date.raw 0670-07-99L0, '백제의 남은 무리를 물리치다'), quote '遣大阿湌儒敦於熊津都督府請和, 不從'"
   }
  ],
  "checkedItems": [
@@ -136,5 +123,5 @@
   "hs-samguk-gibeolpo",
   "hs-samguk-unification-676"
  ],
- "summary": "검증기는 PASS(실패 0, 경고 0)이고 구조·형식은 거의 흠이 없다. 항목 22건이 fact 22 + scene 22 + claim 98 로 1:1 대응하고, kind/sceneFunction/category/region/decade/priority/성취기준 코드가 items.json 과 모두 일치하며, 인물 엔티티 7건은 data/entities/person 의 기존 id 를 정확히 재사용했다. claim 98건이 인용한 로컬 chunk 를 전부 다시 열어 읽었고, 웹 출처 22건 중 4건(안학궁·청산면·Sinwon·Haicheng)은 실제 URL 을 다시 받아 좌표가 그대로 있음을 확인했다. 좌표는 22개 장면이 한 점에 겹치지 않게 나뉘어 있다. 그럼에도 고칠 것이 다섯 가지다. (1) 642년 연개소문 정변을 안학궁터에 놓았는데 안학궁은 586년 장안성 천도 전의 왕궁이라 시대 착오이고 인용 근거도 안학궁을 지목하지 않는다. (2) 안시성 장면 요약이 '항복하면 몰살'이라고 적어 원문의 '성을 함락하는 날 남자를 모두 묻겠다'를 뒤집었다. (3) 웅진도독부의 endedIn 670 은 인용 기사가 받치지 못하는 주장이다. (4) 고구려 부흥 운동을 671년으로 줄이며 '673년 근거가 없다'고 적었으나 673년 chunk 가 로컬에 있다. (5) 해외 장면 3건에 place.overseas 플래그가 빠졌다. 나머지 일곱은 요약 문구·note 보강·엔티티 id 규약 수준의 소소한 수정이다."
+ "summary": "검증기는 PASS(실패 0, 경고 0)다. 22개 항목 전부를 표본으로 잡아 75개 로컬 chunk 인용은 search_chunks 로 chunk 의 locator·date.raw·본문을 다시 읽어 인용문과 연도·문맥을 대조했고(12개 chunk 는 전문 확인), 23개 위키 좌표 발췌 가운데 9건은 raw/ HTML 에서 그 좌표가 해당 문서 자신의 표시 좌표인지 직접 확인했다. manifest 22건은 모두 200·sha256 일치이고 db.history.go.kr 수집물은 없다. 교과서 문장 전재는 없고 summary·what 은 직접 서술이며, images.json 22건은 접두어·인물 초상 문구·근거·주의를 모두 갖췄다. kind 와 sceneFunction 은 항목 sceneType 과 22건 모두 일치하고 portrait 5건은 참여 인물 1명씩이며 region 은 위도 규칙과 어긋나는 것이 없다. 다만 (1) 연개소문 정변을 642년에는 왕궁이 아니었던 안학궁터에 놓아 인용 근거와 어긋나고, (2) 해외 장면 3건에 place.overseas 표시가 빠졌으며, (3) 보장왕·안승·아비지를 기존 개체 대신 새 id 로 만들어 인물이 두 노드로 갈라졌다. 이 셋은 고쳐야 한다. 나머지 8건은 존속 기간·근거 우선순위·표현 정정 수준의 경미한 사항이다."
 }

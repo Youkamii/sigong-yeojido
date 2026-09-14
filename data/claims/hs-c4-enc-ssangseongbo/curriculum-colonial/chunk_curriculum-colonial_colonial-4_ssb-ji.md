@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",
-      "id": "person-hs-c4-ji-cheongcheon"
+      "id": "person-hs-ji-cheongcheon"
     },
     "note": "한국독립군 총사령 지청천이 지휘했다.",
     "fromSource": "src-hs-c4-enc-ssangseongbo",

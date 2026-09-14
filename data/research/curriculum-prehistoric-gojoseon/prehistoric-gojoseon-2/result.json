@@ -449,6 +449,11 @@
           "id": "ex-hsg-75",
           "text": "서기전 75년에는 토착세력의 저항으로 현도군의 치소(治所)가",
           "locator": "본문 '내용' — 현도군 치소 이동"
+        },
+        {
+          "id": "ex-hsg-313",
+          "text": "낙랑군은 313년에 고구려 미천왕의 공격으로 멸망하면서",
+          "locator": "본문 '내용' — 낙랑군의 소멸"
         }
       ]
     },
@@ -608,6 +613,11 @@
           "id": "ex-dongye-108",
           "text": "서기전 108년 한(漢)나라의 침략으로 위만조선이 멸망되고",
           "locator": "본문 '연원 및 변천'"
+        },
+        {
+          "id": "ex-dongye-75",
+          "text": "서기전 75년에는 현도군(玄免郡)이 고구려족의 저항에 의해 요동으로 물러나게",
+          "locator": "본문 '연원 및 변천' — 고구려족의 저항"
         }
       ]
     },
@@ -882,6 +892,11 @@
           "id": "ex-uirimji-samhan",
           "text": "축조 시기에 대해서는 삼한시대 축조설",
           "locator": "본문 '내용 요약'"
+        },
+        {
+          "id": "ex-uirimji-geo",
+          "text": "지질학적 학술 조사의 결과로는 AD 800~900년인",
+          "locator": "본문 '내용 요약' — 축조 연대 조사 결과"
         }
       ]
     },
@@ -978,6 +993,11 @@
           "id": "ex-ydr-guya",
           "text": "변한의 구야국부터 금관가야가 가장 발전한",
           "locator": "본문 '의의 및 평가'"
+        },
+        {
+          "id": "ex-ydr-dok",
+          "text": "널무덤주2 10기, 덧널무덤주3 453기, 구덩식돌덧널무덤주4 41기, 독무덤주5 83기",
+          "locator": "본문 — 여덟 차례 발굴 조사의 무덤 종류별 수"
         }
       ]
     },
@@ -1536,6 +1556,25 @@
           "locator": "문서 머리 표시 좌표(십진)"
         }
       ]
+    },
+    {
+      "id": "src-hs-en-haicheng",
+      "title": "Haicheng, Liaoning — Wikipedia",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Haicheng,_Liaoning",
+      "rawFile": "raw/en-haicheng.html",
+      "sha256": "8b4a60cc6352b7bce291523fa6cef039b39bb606bef8896e0389755236f8d841",
+      "httpStatus": 200,
+      "byteLength": 190160,
+      "fetchedUtc": "2026-09-14T08:32:39Z",
+      "license": "CC BY-SA 4.0 (Wikipedia)",
+      "excerpts": [
+        {
+          "id": "ex-geo-haicheng",
+          "text": "40.8824; 122.6852",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
     }
   ],
   "entities": [
@@ -1620,8 +1659,8 @@
       "label": "한 무제"
     },
     {
-      "id": "person-hs-cheongun",
-      "type": "Person",
+      "id": "office-hs-cheongun",
+      "type": "Office",
       "label": "천군"
     },
     {
@@ -1702,7 +1741,7 @@
     {
       "id": "place-hs-liaodong",
       "type": "Place",
-      "label": "요동"
+      "label": "고조선 서쪽 변경(만번한 비정지 일대)"
     },
     {
       "id": "place-hs-wanggeomseong",
@@ -1712,27 +1751,27 @@
     {
       "id": "place-hs-wanggeomseong-court",
       "type": "Place",
-      "label": "왕검성 조정(평양 중구역)"
+      "label": "왕검성 일원 대표점(평양 중구역)"
     },
     {
       "id": "place-hs-wanggeomseong-palace",
       "type": "Place",
-      "label": "왕검성 왕궁(평양 모란봉)"
+      "label": "왕검성 일원 대표점(평양 모란봉 일대)"
     },
     {
       "id": "place-hs-wanggeomseong-west",
       "type": "Place",
-      "label": "왕검성 일원(평양 만경대구역)"
+      "label": "왕검성 일원 대표점(평양 만경대구역)"
     },
     {
       "id": "place-hs-wanggeomseong-east",
       "type": "Place",
-      "label": "왕검성 일원(평양 대동강구역)"
+      "label": "왕검성 일원 대표점(평양 대동강구역)"
     },
     {
       "id": "place-hs-wanggeomseong-southeast",
       "type": "Place",
-      "label": "왕검성 일원(평양 사동구역)"
+      "label": "왕검성 일원 대표점(평양 사동구역)"
     },
     {
       "id": "place-hs-paesu-mouth",
@@ -1928,6 +1967,16 @@
       "id": "thing-hs-beopgeum-nobi",
       "type": "Thing",
       "label": "절도죄 조항"
+    },
+    {
+      "id": "polity-hs-hyeondo",
+      "type": "Polity",
+      "label": "현도군"
+    },
+    {
+      "id": "place-hs-sinchangdong-wetland",
+      "type": "Place",
+      "label": "광주 신창동 저습지 일대"
     }
   ],
   "claims": [
@@ -2061,7 +2110,7 @@
       },
       "sourceId": "src-hs-en-chung",
       "citesExcerpt": "ex-geo-chung",
-      "note": "왕검성의 정확한 위치는 확정되지 않았다. 평양 중구역 표시 좌표를 조정 대표점으로 썼다."
+      "note": "평양 중구역의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다."
     },
     {
       "id": "claim-hs-gwae-date",
@@ -2077,7 +2126,7 @@
       },
       "sourceId": "src-hs-enc-donggeom",
       "citesExcerpt": "ex-hgd-4c",
-      "note": "한국식동검 문화가 성립하는 시기. 괴정동 돌널무덤은 그 가장 이른 단계로 본다."
+      "note": "한국식동검 문화가 성립하는 시기(서기전 4세기경 전후). 괴정동 돌널무덤을 그 이른 단계로 보며, 유적 자체의 연대관은 claim-hs-gwae-view 에 실었다."
     },
     {
       "id": "claim-hs-gwae-def",
@@ -2125,7 +2174,7 @@
       },
       "sourceId": "src-hs-enc-gwaejeong",
       "citesExcerpt": "ex-gwae-date",
-      "note": "유적 연대를 서기전 4~3세기로 보는 견해가 유력하다."
+      "note": "괴정동 유적 기사 자체의 연대관 — “연대에 대해서는 이설이 많으나 서기전 4~3세기로 보는 견해가 유력하다”. 연도 표기가 “4~3세기”라 time 주장으로는 쓰지 못하고 유적 연대 근거로 함께 단다."
     },
     {
       "id": "claim-hs-gwae-loc",
@@ -2263,7 +2312,7 @@
       },
       "sourceId": "src-hs-ko-moranbong",
       "citesExcerpt": "ex-geo-moranbong",
-      "note": "대동강 북안 평양 중심부의 모란봉 표시 좌표를 왕검성 왕궁 대표점으로 썼다."
+      "note": "평양 모란봉의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다."
     },
     {
       "id": "claim-hs-yan-date",
@@ -2315,29 +2364,13 @@
       "predicate": "syj:locatedAt",
       "object": {
         "kind": "location",
-        "lon": 123.176,
-        "lat": 41.279,
+        "lon": 122.6852,
+        "lat": 40.8824,
         "precision": "area"
       },
-      "sourceId": "src-hs-en-liaoyang",
-      "citesExcerpt": "ex-geo-liaoyang",
-      "note": "만번한의 위치는 학설이 갈린다. 연이 차지한 요동의 중심지인 랴오양시 표시 좌표를 대표점으로 썼다."
-    },
-    {
-      "id": "claim-hs-mold-date",
-      "subject": "thing-hs-sehyeong-donggeom",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "서기전 200년경",
-        "year": -200,
-        "precision": "year",
-        "earliest": -200,
-        "latest": -200
-      },
-      "sourceId": "src-hs-enc-donggeom",
-      "citesExcerpt": "ex-hgd-200",
-      "note": "한국식동검이 일본 규슈로 전해지던 무렵의 연대."
+      "sourceId": "src-hs-en-haicheng",
+      "citesExcerpt": "ex-geo-haicheng",
+      "note": "민백 고조선 기사는 만번한을 “해성현 서남쪽과 개현을 잇는 일대”로 비정한다. 그 비정 범위에 드는 하이청시(해성)의 표시 좌표를 대표점으로 썼다. 만번한의 위치 자체는 학설이 갈린다."
     },
     {
       "id": "claim-hs-mold-galdong",
@@ -2512,7 +2545,7 @@
       },
       "sourceId": "src-hs-en-mangyongdae",
       "citesExcerpt": "ex-geo-mangyongdae",
-      "note": "왕검성 일원 항목을 한 점에 겹치지 않게 나누어, 평양 만경대구역 표시 좌표를 준왕 항목 대표점으로 썼다."
+      "note": "평양 만경대구역의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다."
     },
     {
       "id": "claim-hs-wiman-date",
@@ -2580,7 +2613,7 @@
       },
       "sourceId": "src-hs-en-taedonggang",
       "citesExcerpt": "ex-geo-taedonggang",
-      "note": "평양 대동강구역 표시 좌표를 위만 항목 대표점으로 썼다."
+      "note": "평양 대동강구역의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다."
     },
     {
       "id": "claim-hs-trade-date",
@@ -2667,7 +2700,7 @@
       "sourceId": "src-samgukyusa",
       "citesChunk": "chunk_samgukyusa_sy_001_0020_0030_0020",
       "quote": "天子遣楼舡將軍楊僕從齊浮渤海兵五万",
-      "note": "『삼국유사』 위만조선 조 — 천자가 누선장군 양복에게 제에서 발해를 건너게 하고 군사 5만을 보냈다(수륙 양면 공격)."
+      "note": "『삼국유사』 위만조선 조가 인용한 『한서』 조선전 — 천자가 누선장군 양복을 제에서 발해로 건너게 하고 좌장군 순체에게 병력 5만을 주어 요동으로 보냈다."
     },
     {
       "id": "claim-hs-wudi-4gun",
@@ -2760,7 +2793,7 @@
       },
       "sourceId": "src-hs-en-sadong",
       "citesExcerpt": "ex-geo-sadong",
-      "note": "평양 사동구역 표시 좌표를 우거왕 항목 대표점으로 썼다."
+      "note": "평양 사동구역의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다."
     },
     {
       "id": "claim-hs-fall-date",
@@ -2814,7 +2847,7 @@
       },
       "sourceId": "src-hs-en-pyongyang",
       "citesExcerpt": "ex-geo-pyongyang",
-      "note": "왕검성을 평양 일대로 보는 통설에 따라 평양시 표시 좌표를 대표점으로 썼다."
+      "note": "평양시의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다."
     },
     {
       "id": "claim-hs-hansagun-date",
@@ -3470,7 +3503,7 @@
       },
       "sourceId": "src-hs-enc-uirimji",
       "citesExcerpt": "ex-uirimji-samhan",
-      "note": "의림지의 축조 시기에 삼한시대 축조설이 있다."
+      "note": "의림지 축조 시기로 삼한시대 축조설이 전하나, 같은 기사는 지질 조사 결과 AD 800~900년 축조로 본다 — 삼한설은 여러 전승 가운데 하나다(claim-hs-rice-uirimji-late)."
     },
     {
       "id": "claim-hs-rice-def",
@@ -3498,17 +3531,17 @@
     },
     {
       "id": "claim-hs-rice-loc",
-      "subject": "place-hs-uirimji",
+      "subject": "place-hs-sinchangdong-wetland",
       "predicate": "syj:locatedAt",
       "object": {
         "kind": "location",
-        "lon": 128.21056,
-        "lat": 37.17444,
-        "precision": "site"
+        "lon": 126.8454,
+        "lat": 35.192,
+        "precision": "area"
       },
-      "sourceId": "src-hs-ko-uirimji",
-      "citesExcerpt": "ex-geo-uirimji",
-      "note": "제천 의림지의 표시 좌표."
+      "sourceId": "src-hs-ko-sinchangdong",
+      "citesExcerpt": "ex-geo-sinchangdong",
+      "note": "광주 신창동 유적의 표시 좌표(35.19472/126.848722)를 기준점으로 쓰되, 같은 유적을 다루는 fact-hs-pg2-025 와 한 점에 겹치지 않도록 저습지 쪽으로 약 400m 옮긴 표시용 대표점이다. 저습지 지점을 특정한 실측 좌표가 아니다."
     },
     {
       "id": "claim-hs-scd-date",
@@ -3618,7 +3651,7 @@
     },
     {
       "id": "claim-hs-sodo-cheongun",
-      "subject": "person-hs-cheongun",
+      "subject": "office-hs-cheongun",
       "predicate": "syj:relatedTo",
       "object": {
         "kind": "entity",
@@ -3626,7 +3659,7 @@
       },
       "sourceId": "src-hs-enc-cheongun",
       "citesExcerpt": "ex-cheongun-def",
-      "note": "천군은 소국 안에서 제사의식을 주관하던 제사장이다."
+      "note": "천군은 삼한 소국 안에서 제사의식을 주관하던 제사장 직책이다(개인 이름이 아니다)."
     },
     {
       "id": "claim-hs-sodo-loc",
@@ -3672,15 +3705,15 @@
     },
     {
       "id": "claim-hs-tomb-dok",
-      "subject": "thing-hs-dokmudeom",
+      "subject": "place-hs-yangdongri",
       "predicate": "syj:relatedTo",
       "object": {
         "kind": "entity",
-        "id": "place-hs-yangdongri"
+        "id": "thing-hs-dokmudeom"
       },
-      "sourceId": "src-hs-enc-dokmudeom",
-      "citesExcerpt": "ex-dm-def",
-      "note": "독무덤은 큰 독이나 항아리에 주검을 넣어 묻는 무덤 양식이다."
+      "sourceId": "src-hs-enc-yangdongri",
+      "citesExcerpt": "ex-ydr-dok",
+      "note": "양동리 고분군 여덟 차례 발굴에서 독무덤 83기가 확인되었다 — 이 유적에 독무덤이 있다는 직접 근거."
     },
     {
       "id": "claim-hs-tomb-1c",
@@ -3736,9 +3769,9 @@
         "earliest": -75,
         "latest": -75
       },
-      "sourceId": "src-hs-enc-hansagun",
-      "citesExcerpt": "ex-hsg-75",
-      "note": "토착 세력의 저항으로 현도군 치소가 밀려난 해."
+      "sourceId": "src-hs-enc-dongye",
+      "citesExcerpt": "ex-dongye-75",
+      "note": "서기전 75년 현도군이 고구려족의 저항으로 요동으로 물러났다 — 발췌 안에 고구려족이 명시된 근거."
     },
     {
       "id": "claim-hs-gogu-jolbon",
@@ -3789,6 +3822,71 @@
       "sourceId": "src-hs-ko-onyeosanseong",
       "citesExcerpt": "ex-geo-onyeosanseong",
       "note": "오녀산성의 표시 좌표."
+    },
+    {
+      "id": "claim-hs-wudi-navy",
+      "subject": "person-hs-han-wudi",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-wanggeomseong"
+      },
+      "sourceId": "src-samgukyusa",
+      "citesChunk": "chunk_samgukyusa_sy_001_0020_0030_0020",
+      "quote": "樓舡將軍將齊七千人先到王倹",
+      "note": "『삼국유사』 위만조선 조 — 누선장군이 제의 군사 7천을 거느리고 먼저 왕검에 이르렀다(수군 7천의 근거)."
+    },
+    {
+      "id": "claim-hs-mold-japan",
+      "subject": "thing-hs-donggeom",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "thing-hs-sehyeong-donggeom"
+      },
+      "sourceId": "src-hs-enc-donggeom",
+      "citesExcerpt": "ex-hgd-200",
+      "note": "한국식동검이 서기전 200년경 전후 일본 구주 지역으로 전해졌다는 서술. 세형동검·거푸집 자체의 연대 근거가 아니라 확산 경로 서술이다(연대는 claim-hs-mold-2c)."
+    },
+    {
+      "id": "claim-hs-gogu-hyeondo",
+      "subject": "polity-hs-hyeondo",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-goguryeo"
+      },
+      "sourceId": "src-hs-enc-hansagun",
+      "citesExcerpt": "ex-hsg-75",
+      "note": "같은 사건을 한사군 쪽에서 적은 서술 — 서기전 75년 토착세력의 저항으로 현도군 치소가 옮겨 갔다."
+    },
+    {
+      "id": "claim-hs-hansagun-313",
+      "subject": "polity-hs-nangnang",
+      "predicate": "syj:endedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "313년",
+        "year": 313,
+        "precision": "year",
+        "earliest": 313,
+        "latest": 313
+      },
+      "sourceId": "src-hs-enc-hansagun",
+      "citesExcerpt": "ex-hsg-313",
+      "note": "낙랑군이 313년 고구려 미천왕의 공격으로 멸망했다 — 군현 존속 종료 연도의 근거."
+    },
+    {
+      "id": "claim-hs-rice-uirimji-late",
+      "subject": "place-hs-uirimji",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "thing-hs-jeosuji"
+      },
+      "sourceId": "src-hs-enc-uirimji",
+      "citesExcerpt": "ex-uirimji-geo",
+      "note": "두 차례의 지질학적 학술 조사는 의림지 축조를 AD 800~900년(삼국시대 말기~통일신라)으로 본다. 이 항목의 장면 무대로 쓰지 않은 이유다."
     }
   ],
   "scenes": [
@@ -3867,7 +3965,7 @@
         "claim-hs-palj-nobi"
       ],
       "place": {
-        "label": "왕검성 조정(평양 중구역 일대)",
+        "label": "왕검성 일원 대표점(평양 중구역)",
         "medium": "land",
         "precision": "area",
         "lon": 125.74,
@@ -3878,7 +3976,7 @@
         "coordinateSourceIds": [
           "src-hs-en-chung"
         ],
-        "coordinateNote": "왕검성의 위치는 확정되지 않았다. 평양 중구역 표시 좌표를 조정 대표점으로 썼다.",
+        "coordinateNote": "왕검성의 위치는 낙랑토성·대성산성·청암리토성 등 비정설이 갈린다. 이 점은 평양 일원을 나타내는 표시용 대표점이며 해당 구역을 왕검성으로 비정한 것이 아니다.",
         "setting": "palace"
       },
       "participants": [],
@@ -4012,7 +4110,7 @@
         "claim-hs-kingship-sang"
       ],
       "place": {
-        "label": "왕검성 왕궁(평양 모란봉 일대)",
+        "label": "왕검성 일원 대표점(평양 모란봉 일대)",
         "medium": "land",
         "precision": "area",
         "lon": 125.762194,
@@ -4023,7 +4121,7 @@
         "coordinateSourceIds": [
           "src-hs-ko-moranbong"
         ],
-        "coordinateNote": "왕검성 위치가 확정되지 않아 평양 모란봉 표시 좌표를 왕궁 대표점으로 썼다.",
+        "coordinateNote": "왕검성의 위치는 낙랑토성·대성산성·청암리토성 등 비정설이 갈린다. 이 점은 평양 일원을 나타내는 표시용 대표점이며 해당 구역을 왕검성으로 비정한 것이 아니다.",
         "setting": "palace"
       },
       "participants": [],
@@ -4041,7 +4139,8 @@
       "decade": -300,
       "relatedClaimIds": [
         "claim-hs-kingship-sang2",
-        "claim-hs-kingship-loc"
+        "claim-hs-kingship-loc",
+        "claim-hs-fall-date"
       ],
       "persistence": {
         "kind": "institution",
@@ -4049,7 +4148,8 @@
         "to": -108,
         "basisClaimIds": [
           "claim-hs-kingship-date",
-          "claim-hs-kingship-succ"
+          "claim-hs-kingship-succ",
+          "claim-hs-fall-date"
         ]
       }
     },
@@ -4069,18 +4169,18 @@
         "claim-hs-yan-act"
       ],
       "place": {
-        "label": "고조선 서쪽 변경(요동 일대)",
+        "label": "고조선 서쪽 변경(만번한 비정지 일대)",
         "medium": "land",
         "precision": "area",
-        "lon": 123.176,
-        "lat": 41.279,
+        "lon": 122.6852,
+        "lat": 40.8824,
         "claimIds": [
           "claim-hs-yan-loc"
         ],
         "coordinateSourceIds": [
-          "src-hs-en-liaoyang"
+          "src-hs-en-haicheng"
         ],
-        "coordinateNote": "만번한 비정지가 갈려 연이 차지한 요동의 중심지 랴오양 표시 좌표를 대표점으로 썼다.",
+        "coordinateNote": "민백 고조선 기사가 만번한을 해성현 서남쪽과 개현을 잇는 일대로 비정한 데 따라 하이청시(해성) 표시 좌표를 대표점으로 썼다. 만번한의 위치는 학설이 갈린다.",
         "setting": "battle",
         "overseas": true
       },
@@ -4147,7 +4247,7 @@
       "decade": -200,
       "heritageType": "artifact",
       "relatedClaimIds": [
-        "claim-hs-mold-date",
+        "claim-hs-mold-japan",
         "claim-hs-mold-loc"
       ],
       "persistence": {
@@ -4242,7 +4342,7 @@
         "claim-hs-junwang-baksa"
       ],
       "place": {
-        "label": "왕검성(평양 만경대구역 일대)",
+        "label": "왕검성 일원 대표점(평양 만경대구역)",
         "medium": "land",
         "precision": "area",
         "lon": 125.64444,
@@ -4253,7 +4353,7 @@
         "coordinateSourceIds": [
           "src-hs-en-mangyongdae"
         ],
-        "coordinateNote": "왕검성 위치가 확정되지 않아 평양 만경대구역 표시 좌표를 대표점으로 썼다.",
+        "coordinateNote": "왕검성의 위치는 낙랑토성·대성산성·청암리토성 등 비정설이 갈린다. 이 점은 평양 일원을 나타내는 표시용 대표점이며 해당 구역을 왕검성으로 비정한 것이 아니다.",
         "setting": "palace"
       },
       "participants": [
@@ -4304,7 +4404,7 @@
         "claim-hs-wiman-capital"
       ],
       "place": {
-        "label": "왕검성(평양 대동강구역 일대)",
+        "label": "왕검성 일원 대표점(평양 대동강구역)",
         "medium": "land",
         "precision": "area",
         "lon": 125.79722,
@@ -4315,7 +4415,7 @@
         "coordinateSourceIds": [
           "src-hs-en-taedonggang"
         ],
-        "coordinateNote": "왕검성 위치가 확정되지 않아 평양 대동강구역 표시 좌표를 대표점으로 썼다.",
+        "coordinateNote": "왕검성의 위치는 낙랑토성·대성산성·청암리토성 등 비정설이 갈린다. 이 점은 평양 일원을 나타내는 표시용 대표점이며 해당 구역을 왕검성으로 비정한 것이 아니다.",
         "setting": "palace"
       },
       "participants": [
@@ -4387,7 +4487,7 @@
         }
       },
       "category": "economy",
-      "region": "north",
+      "region": "central",
       "decade": -200,
       "sceneFunction": "harbor",
       "relatedClaimIds": [
@@ -4468,7 +4568,8 @@
       "decade": -110,
       "relatedClaimIds": [
         "claim-hs-wudi-4gun",
-        "claim-hs-wudi-loc"
+        "claim-hs-wudi-loc",
+        "claim-hs-wudi-navy"
       ]
     },
     {
@@ -4488,7 +4589,7 @@
         "claim-hs-ugeo-chunk"
       ],
       "place": {
-        "label": "왕검성 성벽(평양 사동구역 일대)",
+        "label": "왕검성 일원 대표점(평양 사동구역)",
         "medium": "land",
         "precision": "area",
         "lon": 125.9,
@@ -4499,7 +4600,7 @@
         "coordinateSourceIds": [
           "src-hs-en-sadong"
         ],
-        "coordinateNote": "왕검성 위치가 확정되지 않아 평양 사동구역 표시 좌표를 대표점으로 썼다.",
+        "coordinateNote": "왕검성의 위치는 낙랑토성·대성산성·청암리토성 등 비정설이 갈린다. 이 점은 평양 일원을 나타내는 표시용 대표점이며 해당 구역을 왕검성으로 비정한 것이 아니다.",
         "setting": "battle"
       },
       "participants": [
@@ -4525,7 +4626,7 @@
         }
       },
       "category": "person",
-      "region": "north",
+      "region": "central",
       "decade": -110,
       "relatedClaimIds": [
         "claim-hs-ugeo-1y",
@@ -4548,7 +4649,7 @@
         "claim-hs-fall-act"
       ],
       "place": {
-        "label": "왕검성(평양)",
+        "label": "왕검성 일원 대표점(평양시 중심)",
         "medium": "land",
         "precision": "area",
         "lon": 125.7475,
@@ -4559,7 +4660,7 @@
         "coordinateSourceIds": [
           "src-hs-en-pyongyang"
         ],
-        "coordinateNote": "왕검성의 위치는 평양 일대로 보는 통설을 따라 평양시 표시 좌표를 대표점으로 썼다."
+        "coordinateNote": "왕검성의 위치는 낙랑토성·대성산성·청암리토성 등 비정설이 갈린다. 이 점은 평양 일원을 나타내는 표시용 대표점이며 해당 구역을 왕검성으로 비정한 것이 아니다."
       },
       "participants": [],
       "effects": {
@@ -4650,12 +4751,13 @@
         }
       },
       "category": "foreign",
-      "region": "north",
+      "region": "central",
       "decade": -110,
       "relatedClaimIds": [
         "claim-hs-hansagun-4",
         "claim-hs-hansagun-toseong",
-        "claim-hs-hansagun-loc"
+        "claim-hs-hansagun-loc",
+        "claim-hs-hansagun-313"
       ],
       "persistence": {
         "kind": "institution",
@@ -4663,7 +4765,8 @@
         "to": 313,
         "basisClaimIds": [
           "claim-hs-hansagun-date",
-          "claim-hs-hansagun-act"
+          "claim-hs-hansagun-act",
+          "claim-hs-hansagun-313"
         ]
       }
     },
@@ -4708,7 +4811,7 @@
         }
       },
       "category": "settlement",
-      "region": "north",
+      "region": "central",
       "decade": -110,
       "sceneFunction": "market",
       "relatedClaimIds": [
@@ -4869,7 +4972,7 @@
       "startYear": -100,
       "endYear": -100,
       "kind": "excavation",
-      "summary": "통나무를 파서 만든 관 아래 구덩이에서 붓 다섯 자루와 손칼, 중국 돈이 함께 나왔다. 이 무렵 남쪽에서도 글자를 쓰고 셈을 적었다는 뜻이다.",
+      "summary": "통나무를 파서 만든 관 아래 구덩이에서 붓과 손칼, 중국 돈이 함께 나왔다. 이 무렵 남쪽에서도 글자를 쓰고 셈을 적었다는 뜻이다.",
       "dateClaimIds": [
         "claim-hs-dahori-date"
       ],
@@ -5183,27 +5286,27 @@
       "startYear": -100,
       "endYear": -57,
       "kind": "settlement",
-      "summary": "골짜기를 막아 물을 가두고 그 물을 논에 댔다. 광주 신창동 저습지에서 나온 한 길 넘는 벼 껍질층은 이 무렵 남부의 벼농사 규모를 짐작하게 한다.",
+      "summary": "물을 가두어 논에 대며 벼를 길렀다. 광주 신창동 저습지에 두껍게 쌓인 벼 껍질층이 이 무렵 남부 벼농사의 규모를 보여 준다.",
       "dateClaimIds": [
         "claim-hs-rice-date"
       ],
       "actionClaimIds": [
-        "claim-hs-rice-uirimji",
-        "claim-hs-rice-grain"
+        "claim-hs-rice-grain",
+        "claim-hs-scd-rice"
       ],
       "place": {
-        "label": "제천 의림지",
+        "label": "광주 신창동 저습지 일대",
         "medium": "land",
-        "precision": "site",
-        "lon": 128.21056,
-        "lat": 37.17444,
+        "precision": "area",
+        "lon": 126.8454,
+        "lat": 35.192,
         "claimIds": [
           "claim-hs-rice-loc"
         ],
         "coordinateSourceIds": [
-          "src-hs-ko-uirimji"
+          "src-hs-ko-sinchangdong"
         ],
-        "coordinateNote": "의림지의 표시 좌표. 삼한시대 축조는 여러 설 가운데 하나다."
+        "coordinateNote": "광주 신창동 유적 표시 좌표를 기준으로, 같은 유적의 다른 항목(fact-hs-pg2-025)과 한 점에 겹치지 않게 저습지 쪽으로 약 400m 옮긴 표시용 대표점이다. 저습지 지점의 실측 좌표가 아니다."
       },
       "participants": [],
       "effects": {
@@ -5216,25 +5319,27 @@
         }
       },
       "category": "economy",
-      "region": "central",
+      "region": "south",
       "decade": -100,
       "sceneFunction": "irrigation",
       "relatedClaimIds": [
+        "claim-hs-rice-loc",
         "claim-hs-rice-def",
-        "claim-hs-rice-loc"
+        "claim-hs-rice-uirimji",
+        "claim-hs-rice-uirimji-late"
       ],
       "participantGroups": [
         {
-          "label": "둑을 쌓는 사람들",
-          "role": "인부",
-          "stance": "동원",
+          "label": "논에서 일하는 사람들",
+          "role": "주민",
+          "stance": "주도",
           "side": "삼한",
-          "count": 30,
+          "count": 20,
           "claimIds": [
-            "claim-hs-rice-uirimji"
+            "claim-hs-rice-grain"
           ],
-          "sourceRole": "인부",
-          "sourceStance": "동원",
+          "sourceRole": "주민",
+          "sourceStance": "주도",
           "sourceSide": "삼한"
         }
       ],
@@ -5466,7 +5571,8 @@
       "sceneFunction": "fortress",
       "relatedClaimIds": [
         "claim-hs-gogu-dongmaeng",
-        "claim-hs-gogu-loc"
+        "claim-hs-gogu-loc",
+        "claim-hs-gogu-hyeondo"
       ],
       "participantGroups": [
         {
@@ -5487,7 +5593,7 @@
       "persistence": {
         "kind": "city",
         "from": -75,
-        "to": 3,
+        "to": -57,
         "basisClaimIds": [
           "claim-hs-gogu-date",
           "claim-hs-gogu-jolbon"
@@ -5534,7 +5640,7 @@
       "decade": -400,
       "year": -400,
       "yearVerbatim": "서기전 4세기",
-      "placeLabel": "왕검성 조정(평양 중구역 일대)",
+      "placeLabel": "왕검성 일원 대표점(평양 중구역)",
       "modernPlace": "북한 평양직할시 중구역",
       "what": "살인·상해·절도를 다룬 조항으로 계급과 사유 재산을 알 수 있다",
       "claimIds": [
@@ -5546,7 +5652,7 @@
       ],
       "sceneId": "scene-hs-gojoseon-eight-laws",
       "confidence": "medium",
-      "note": "[10한사1-01-01] · core · 시행 연도는 전하지 않는다. 조선이 중국 기록에 나타나는 서기전 4세기를 기준점으로 삼았다. 왕검성 위치는 학설이 갈려 평양 중구역 표시 좌표를 대표점으로 썼다",
+      "note": "[10한사1-01-01] · core · 시행 연도는 전하지 않는다. 조선이 중국 기록에 나타나는 서기전 4세기를 기준점으로 삼았다. 왕검성 위치는 비정설이 갈려 평양 중구역 표시 좌표를 표시용 대표점으로 썼다(구역을 왕검성으로 비정한 것이 아니다)",
       "lon": 125.74,
       "lat": 39.0,
       "coordinateBasis": "location claim-hs-palj-loc"
@@ -5572,7 +5678,7 @@
       ],
       "sceneId": "scene-hs-prehistoric-coarse-mirror-ritual-bronze",
       "confidence": "medium",
-      "note": "[10한사1-01-01] · standard · 괴정동 유적의 십진 좌표를 찾지 못해 소재지 대전 서구 표시 좌표를 대표점으로 썼다",
+      "note": "[10한사1-01-01] · standard · 괴정동 유적의 십진 좌표를 찾지 못해 소재지 대전 서구 표시 좌표를 대표점으로 썼다 · 괴정동 유적 자체의 연대관은 \"서기전 4~3세기로 보는 견해가 유력하다\"(claim-hs-gwae-view)이며, 대표 연도 -400 은 한국식동검 성립 시기 발췌로 뒷받침했다",
       "lon": 127.38,
       "lat": 36.35,
       "coordinateBasis": "location claim-hs-gwae-loc"
@@ -5609,7 +5715,7 @@
       "decade": -300,
       "year": -300,
       "yearVerbatim": "서기전 3세기 중반경",
-      "placeLabel": "왕검성 왕궁(평양 모란봉 일대)",
+      "placeLabel": "왕검성 일원 대표점(평양 모란봉 일대)",
       "modernPlace": "북한 평양직할시 모란봉구역",
       "what": "왕 자리를 자식에게 물려주고 상·대부·장군을 두어 나라 꼴을 갖춤",
       "claimIds": [
@@ -5617,11 +5723,12 @@
         "claim-hs-kingship-succ",
         "claim-hs-kingship-sang",
         "claim-hs-kingship-sang2",
-        "claim-hs-kingship-loc"
+        "claim-hs-kingship-loc",
+        "claim-hs-fall-date"
       ],
       "sceneId": "scene-hs-gojoseon-kingship-offices",
       "confidence": "medium",
-      "note": "[10한사1-01-01] · standard · 왕검성 위치는 학설이 갈려 평양 모란봉 표시 좌표를 대표점으로 썼다",
+      "note": "[10한사1-01-01] · standard · 왕검성 위치는 비정설이 갈려 평양 모란봉 표시 좌표를 표시용 대표점으로 썼다(구역을 왕검성으로 비정한 것이 아니다). 제도 존속 종료 -108년은 위만조선 멸망 주장(claim-hs-fall-date)에 근거한다",
       "lon": 125.762194,
       "lat": 39.043111,
       "coordinateBasis": "location claim-hs-kingship-loc",
@@ -5639,8 +5746,8 @@
       "decade": -300,
       "year": -300,
       "yearVerbatim": "서기전 3세기 초",
-      "placeLabel": "고조선 서쪽 변경(요동 일대)",
-      "modernPlace": "중국 랴오닝성 랴오양시",
+      "placeLabel": "고조선 서쪽 변경(만번한 비정지 일대)",
+      "modernPlace": "중국 랴오닝성 하이청시",
       "what": "연의 공격으로 서쪽 땅을 크게 잃고 중심지가 동쪽으로 밀려남",
       "claimIds": [
         "claim-hs-yan-date",
@@ -5650,9 +5757,9 @@
       ],
       "sceneId": "scene-hs-gojoseon-yan-jingae-invasion",
       "confidence": "medium",
-      "note": "[10한사1-01-01] · extended · 해외(중국 랴오닝성). 항목 원안의 서기전 290년 대신 근거 문헌의 \"서기전 3세기 초\"를 대표 연도로 삼았다. 만번한의 위치는 학설이 갈려 요동 중심지 랴오양 표시 좌표를 대표점으로 썼다",
-      "lon": 123.176,
-      "lat": 41.279,
+      "note": "[10한사1-01-01] · extended · 해외(중국 랴오닝성). 항목 원안의 서기전 290년 대신 근거 문헌의 \"서기전 3세기 초\"를 대표 연도로 삼았다. 좌표는 민백 고조선 기사의 만번한 비정(해성현 서남쪽~개현)에 맞춰 하이청시 표시 좌표를 대표점으로 썼다. 만번한의 위치는 학설이 갈린다",
+      "lon": 122.6852,
+      "lat": 40.8824,
       "coordinateBasis": "location claim-hs-yan-loc"
     },
     {
@@ -5670,12 +5777,12 @@
         "claim-hs-mold-2c",
         "claim-hs-mold-galdong",
         "claim-hs-mold-def",
-        "claim-hs-mold-date",
+        "claim-hs-mold-japan",
         "claim-hs-mold-loc"
       ],
       "sceneId": "scene-hs-prehistoric-slim-dagger-mold",
       "confidence": "medium",
-      "note": "[10한사1-01-01] · standard · 유적의 십진 좌표가 없어 완주군 표시 좌표를 대표점으로 썼다",
+      "note": "[10한사1-01-01] · standard · 유적의 십진 좌표가 없어 완주군 표시 좌표를 대표점으로 썼다 · 연대는 갈동 거푸집을 서기전 2세기로 본 주장(claim-hs-mold-2c)에 근거한다. 일본 규슈 전파 서술은 연대 근거가 아니라 확산 서술로만 남겼다",
       "lon": 127.253895,
       "lat": 35.891275,
       "coordinateBasis": "location claim-hs-mold-loc",
@@ -5718,7 +5825,7 @@
       "decade": -200,
       "year": -194,
       "yearVerbatim": "기원전 194",
-      "placeLabel": "왕검성(평양 만경대구역 일대)",
+      "placeLabel": "왕검성 일원 대표점(평양 만경대구역)",
       "modernPlace": "북한 평양직할시 만경대구역",
       "what": "위만을 받아들였다가 나라를 빼앗기고 남쪽으로 달아난 왕",
       "claimIds": [
@@ -5729,7 +5836,7 @@
       ],
       "sceneId": "scene-hs-gojoseon-junwang",
       "confidence": "high",
-      "note": "[10한사1-01-01] · standard · 왕검성 위치는 확정되지 않았다. 평양 일원 항목이 한 점에 겹치지 않도록 만경대구역 표시 좌표를 대표점으로 썼다",
+      "note": "[10한사1-01-01] · standard · 왕검성 위치는 비정설이 갈린다. 평양 일원 항목이 한 점에 겹치지 않도록 만경대구역 표시 좌표를 표시용 대표점으로 썼을 뿐 이 구역을 왕검성으로 비정한 것이 아니다",
       "lon": 125.64444,
       "lat": 39.02222,
       "coordinateBasis": "location claim-hs-junwang-loc"
@@ -5742,7 +5849,7 @@
       "decade": -200,
       "year": -194,
       "yearVerbatim": "기원전 194년",
-      "placeLabel": "왕검성(평양 대동강구역 일대)",
+      "placeLabel": "왕검성 일원 대표점(평양 대동강구역)",
       "modernPlace": "북한 평양직할시 대동강구역",
       "what": "무리를 이끌고 들어와 왕이 된 뒤 철기 문화를 본격 받아들인 인물",
       "claimIds": [
@@ -5754,7 +5861,7 @@
       ],
       "sceneId": "scene-hs-gojoseon-wiman",
       "confidence": "high",
-      "note": "[10한사1-01-01] · core · 왕검성 위치는 확정되지 않았다. 평양 일원 항목 분산을 위해 대동강구역 표시 좌표를 대표점으로 썼다",
+      "note": "[10한사1-01-01] · core · 왕검성 위치는 비정설이 갈린다. 평양 일원 항목이 한 점에 겹치지 않도록 대동강구역 표시 좌표를 표시용 대표점으로 썼을 뿐 이 구역을 왕검성으로 비정한 것이 아니다",
       "lon": 125.79722,
       "lat": 39.03056,
       "coordinateBasis": "location claim-hs-wiman-loc"
@@ -5763,22 +5870,23 @@
       "id": "fact-hs-pg2-011",
       "itemId": "hs-gojoseon-intermediary-trade",
       "category": "economy",
-      "region": "north",
+      "region": "central",
       "decade": -200,
       "year": -194,
-      "yearVerbatim": "서기전 2세기 초",
+      "yearVerbatim": "기원전 194년",
       "placeLabel": "패수(대동강) 물길의 나루",
       "modernPlace": "북한 평안남도 대동강 하류",
       "what": "남쪽 나라와 한나라 사이를 가로막고 이익을 챙겨 힘을 키움",
       "claimIds": [
         "claim-hs-trade-date",
+        "claim-hs-wiman-date",
         "claim-hs-trade-act",
         "claim-hs-trade-end",
         "claim-hs-trade-loc"
       ],
       "sceneId": "scene-hs-gojoseon-intermediary-trade",
       "confidence": "medium",
-      "note": "[10한사1-01-01] · standard · 항목 원안의 서기전 150년 대신 위만 집권(기원전 194) 이후 한의 침공(서기전 109)까지를 기간으로 잡았다. 나루 위치는 전하지 않아 대동강 표시 좌표를 대표점으로 썼다",
+      "note": "[10한사1-01-01] · standard · 항목 원안의 서기전 150년 대신 위만 집권(기원전 194, claim-hs-wiman-date)부터 한의 침공(서기전 109)까지를 기간으로 잡았다. 나루 위치는 전하지 않아 대동강 표시 좌표를 대표점으로 썼다. 위도 38.865도라 권역 규칙(≥39 north)에 따라 central 로 적었다",
       "lon": 125.52556,
       "lat": 38.865,
       "coordinateBasis": "location claim-hs-trade-loc"
@@ -5811,11 +5919,11 @@
       "id": "fact-hs-pg2-013",
       "itemId": "hs-gojoseon-ugeo",
       "category": "person",
-      "region": "north",
+      "region": "central",
       "decade": -110,
       "year": -109,
       "yearVerbatim": "서기전 109년",
-      "placeLabel": "왕검성 성벽(평양 사동구역 일대)",
+      "placeLabel": "왕검성 일원 대표점(평양 사동구역)",
       "modernPlace": "북한 평양직할시 사동구역",
       "what": "한의 대군에 1년을 버틴 고조선의 마지막 왕",
       "claimIds": [
@@ -5827,7 +5935,7 @@
       ],
       "sceneId": "scene-hs-gojoseon-ugeo",
       "confidence": "high",
-      "note": "[10한사1-01-01] · standard · 왕검성 위치는 확정되지 않았다. 평양 일원 항목 분산을 위해 사동구역 표시 좌표를 대표점으로 썼다",
+      "note": "[10한사1-01-01] · standard · 왕검성 위치는 비정설이 갈린다. 평양 일원 항목이 한 점에 겹치지 않도록 사동구역 표시 좌표를 표시용 대표점으로 썼을 뿐 이 구역을 왕검성으로 비정한 것이 아니다. 위도 38.983도라 권역 규칙(≥39 north)에 따라 central 로 적었다",
       "lon": 125.9,
       "lat": 38.983,
       "coordinateBasis": "location claim-hs-ugeo-loc"
@@ -5840,7 +5948,7 @@
       "decade": -110,
       "year": -108,
       "yearVerbatim": "서기전 108년",
-      "placeLabel": "왕검성(평양)",
+      "placeLabel": "왕검성 일원 대표점(평양시 중심)",
       "modernPlace": "북한 평양직할시",
       "what": "1년 항전 끝에 도읍이 무너지며 고조선이 문을 닫았다",
       "claimIds": [
@@ -5851,7 +5959,7 @@
       ],
       "sceneId": "scene-hs-gojoseon-fall-wanggeomseong",
       "confidence": "high",
-      "note": "[10한사1-01-01] · core · 왕검성을 평양 일대로 보는 통설을 따랐다",
+      "note": "[10한사1-01-01] · core · 왕검성을 평양 일대로 보는 통설에 따라 평양시 표시 좌표를 표시용 대표점으로 썼다. 성의 정확한 위치는 낙랑토성·대성산성·청암리토성 등으로 비정설이 갈린다",
       "lon": 125.7475,
       "lat": 39.01667,
       "coordinateBasis": "location claim-hs-fall-loc"
@@ -5860,7 +5968,7 @@
       "id": "fact-hs-pg2-015",
       "itemId": "hs-gojoseon-han-commanderies",
       "category": "foreign",
-      "region": "north",
+      "region": "central",
       "decade": -110,
       "year": -108,
       "yearVerbatim": "서기전 108년",
@@ -5873,11 +5981,12 @@
         "claim-hs-hansagun-chunk",
         "claim-hs-hansagun-4",
         "claim-hs-hansagun-toseong",
-        "claim-hs-hansagun-loc"
+        "claim-hs-hansagun-loc",
+        "claim-hs-hansagun-313"
       ],
       "sceneId": "scene-hs-gojoseon-han-commanderies",
       "confidence": "high",
-      "note": "[10한사1-01-01] · core · 낙랑군은 서기전 108년, 현도군은 서기전 107년 설치로 전하며 진번·임둔의 설치 연도는 기록이 갈린다. 위도 38.96도이나 평양 일원이므로 north로 적었다",
+      "note": "[10한사1-01-01] · core · 낙랑군은 서기전 108년, 현도군은 서기전 107년 설치로 전하며 진번·임둔의 설치 연도는 기록이 갈린다. 존속 종료 313년은 낙랑군 멸망 주장(claim-hs-hansagun-313)에 근거한다. 위도 38.96도라 권역 규칙(≥39 north)에 따라 central 로 적었다",
       "lon": 125.69,
       "lat": 38.96,
       "coordinateBasis": "location claim-hs-hansagun-loc",
@@ -5891,7 +6000,7 @@
       "id": "fact-hs-pg2-016",
       "itemId": "hs-gojoseon-lelang-society-change",
       "category": "settlement",
-      "region": "north",
+      "region": "central",
       "decade": -110,
       "year": -108,
       "yearVerbatim": "서기전 108년",
@@ -5908,7 +6017,7 @@
       ],
       "sceneId": "scene-hs-gojoseon-lelang-society-change",
       "confidence": "medium",
-      "note": "[10한사1-01-01] · standard · 법금이 60여 조로 늘어난 시점은 기록에 연도가 없다. 군현 설치(서기전 108)부터 진번군 통폐합(서기전 82)까지를 기간으로 잡았다. 위도 38.93도이나 평양 일원이므로 north로 적었다",
+      "note": "[10한사1-01-01] · standard · 법금이 60여 조로 늘어난 시점은 기록에 연도가 없다. 군현 설치(서기전 108)부터 진번군 통폐합(서기전 82)까지를 기간으로 잡았다. 위도 38.93도라 권역 규칙(≥39 north)에 따라 central 로 적었다",
       "lon": 125.83,
       "lat": 38.93,
       "coordinateBasis": "location claim-hs-lelang-loc"
@@ -6012,17 +6121,10 @@
       ],
       "sceneId": "scene-hs-prehistoric-dongye",
       "confidence": "medium",
-      "note": "[10한사1-01-01] · core · 항목 원안의 서기전 100년 대신 임둔군 설치(서기전 108)를 기준점으로 삼았다. 호수 2만여 호는 3세기 전반 『삼국지』 기록이다",
+      "note": "[10한사1-01-01] · core · 항목 원안의 서기전 100년 대신 임둔군 설치(서기전 108)를 기준점으로 삼았다. 호수 2만여 호는 3세기 전반 『삼국지』 기록이라 서기전 108년 시점의 밀도로 쓸 수 없어 density 에서 빼고 주장(claim-hs-dongye-ho)으로만 남겼다",
       "lon": 128.89167,
       "lat": 37.75278,
-      "coordinateBasis": "location claim-hs-dongye-loc",
-      "density": {
-        "households": 20000,
-        "unit": "戶",
-        "claimIds": [
-          "claim-hs-dongye-ho"
-        ]
-      }
+      "coordinateBasis": "location claim-hs-dongye-loc"
     },
     {
       "id": "fact-hs-pg2-021",
@@ -6104,25 +6206,24 @@
       "id": "fact-hs-pg2-024",
       "itemId": "hs-prehistoric-samhan-rice-reservoir",
       "category": "economy",
-      "region": "central",
+      "region": "south",
       "decade": -100,
       "year": -100,
       "yearVerbatim": "서기전 1세기",
-      "placeLabel": "제천 의림지",
-      "modernPlace": "충청북도 제천시 모산동",
+      "placeLabel": "광주 신창동 저습지 일대",
+      "modernPlace": "광주광역시 광산구 신창동",
       "what": "물을 가둬 논에 대며 벼를 길러 낸 남부의 농사",
       "claimIds": [
         "claim-hs-rice-date",
-        "claim-hs-rice-uirimji",
         "claim-hs-rice-grain",
-        "claim-hs-rice-def",
+        "claim-hs-scd-rice",
         "claim-hs-rice-loc"
       ],
       "sceneId": "scene-hs-prehistoric-samhan-rice-reservoir",
-      "confidence": "low",
-      "note": "[10한사1-01-01] · standard · 의림지의 삼한시대 축조설은 여러 설 가운데 하나이며 확정된 연대가 아니다. 항목 원안의 광주 신창동 저습지는 벼 껍질층 근거로 함께 인용했다",
-      "lon": 128.21056,
-      "lat": 37.17444,
+      "confidence": "medium",
+      "note": "[10한사1-01-01] · standard · 항목 원안대로 광주 신창동 저습지를 무대로 삼았다. 제천 의림지는 삼한시대 축조설이 전하나 같은 기사의 지질 조사 결과가 AD 800~900년 축조로 보아 무대에서 뺐고 관련 주장으로만 남겼다. 좌표는 신창동 유적 표시 좌표를 기준으로 fact-hs-pg2-025 와 겹치지 않게 약 400m 옮긴 표시용 대표점이다",
+      "lon": 126.8454,
+      "lat": 35.192,
       "coordinateBasis": "location claim-hs-rice-loc"
     },
     {
@@ -6201,7 +6302,7 @@
       ],
       "sceneId": "scene-hs-prehistoric-wooden-coffin-jar-burial",
       "confidence": "high",
-      "note": "[10한사1-01-01] · standard · 항목 원안의 창원 다호리와 겹치지 않도록, 서기전 1세기 나무널무덤이 확인된 김해 양동리 고분군을 대표 유적으로 썼다",
+      "note": "[10한사1-01-01] · standard · 항목 원안의 창원 다호리와 좌표가 겹치지 않도록 김해 양동리 고분군을 대표 유적으로 썼다. 이 유적의 독무덤은 발굴에서 확인된 83기(claim-hs-tomb-dok)를 직접 근거로 삼았다",
       "lon": 128.80944,
       "lat": 35.22222,
       "coordinateBasis": "location claim-hs-tomb-loc",
@@ -6227,18 +6328,19 @@
         "claim-hs-gogu-jolbon",
         "claim-hs-gogu-onyeo",
         "claim-hs-gogu-dongmaeng",
-        "claim-hs-gogu-loc"
+        "claim-hs-gogu-loc",
+        "claim-hs-gogu-hyeondo"
       ],
       "sceneId": "scene-hs-prehistoric-early-goguryeo",
       "confidence": "medium",
-      "note": "[10한사1-01-01] · core · 해외(중국 랴오닝성). 건국 전승은 서기전 37년이나, 근거를 댈 수 있는 서기전 75년(현도군 치소 이동)을 대표 연도로 삼았다",
+      "note": "[10한사1-01-01] · core · 해외(중국 랴오닝성). 건국 전승은 서기전 37년이나, 근거를 댈 수 있는 서기전 75년(고구려족의 저항으로 현도군 치소가 물러난 해)을 대표 연도로 삼았다. 졸본 도읍의 종료 연도는 이 칸의 근거로 댈 수 없어 존속 표시를 이 칸의 상한(서기전 57년)까지로 끊었다",
       "lon": 125.417417,
       "lat": 41.328002,
       "coordinateBasis": "location claim-hs-gogu-loc",
       "persistence": {
         "kind": "city",
         "from": -75,
-        "to": 3
+        "to": -57
       }
     }
   ],

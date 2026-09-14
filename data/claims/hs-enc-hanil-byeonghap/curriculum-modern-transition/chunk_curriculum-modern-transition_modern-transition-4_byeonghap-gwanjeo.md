@@ -23,26 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
-  },
-  {
-    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-gwanjeo-loc",
-    "subject": "place-hs-tonggam-gwanjeo",
-    "predicate": "syj:locatedAt",
-    "object": {
-      "kind": "location",
-      "lon": 126.987,
-      "lat": 37.553,
-      "precision": "area"
-    },
-    "note": "통감 관저 터(지금 서울 중구 예장동)의 십진 좌표를 공개 출처에서 얻지 못해 항목 목록의 대표점을 썼다.",
-    "fromSource": "src-hs-enc-hanil-byeonghap",
-    "citesChunk": "chunk_curriculum-modern-transition_modern-transition-4_byeonghap-gwanjeo",
-    "quote": "통감관저로 불러 이른바 병합조약의 초안을 보여 주고는",
-    "origin": "ai",
-    "status": "draft",
-    "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

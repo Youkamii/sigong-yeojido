@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-jeju-shooting",
+    "subject": "event-hs-c1-jeju43",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-c1-jeju-31"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_jeju43-shooting",
+    "quote": "군중들에게 경찰이 총을 발사함으로써 민간인 6명이 숨지는 사건이 발생했다.",
+    "note": "1947년 3·1절 발포 사건이 도화선이었다.",
+    "fromSource": "src-encykorea-jeju43",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

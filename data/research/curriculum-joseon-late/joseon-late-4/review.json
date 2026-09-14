@@ -1,0 +1,134 @@
+{
+ "job": "joseon-late-4",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "category × 10년\nbyCategoryDecade | 1710 | 1720 | 1740 | 1750 | 1760 | 1770 | 1780 | total\n-----------------+------+------+------+------+------+------+------+------\nsettlement       | 0    | 0    | 0    | 0    | 0    | 1    | 0    | 1\nadministration   | 0    | 1    | 1    | 0    | 0    | 1    | 1    | 4\nfacility         | 0    | 0    | 1    | 0    | 0    | 0    | 0    | 1\neconomy          | 0    | 0    | 0    | 1    | 0    | 0    | 0    | 1\ndisaster         | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0\nculture          | 0    | 0    | 0    | 2    | 0    | 1    | 0    | 3\ntransport        | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0\nforeign          | 1    | 0    | 0    | 0    | 0    | 0    | 1    | 2\nperson           | 0    | 1    | 1    | 2    | 2    | 3    | 1    | 10\nwar              | 0    | 1    | 0    | 0    | 0    | 0    | 0    | 1\n\nregion × 10년\nbyRegionDecade | 1710 | 1720 | 1740 | 1750 | 1760 | 1770 | 1780 | total\n---------------+------+------+------+------+------+------+------+------\ncapital        | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0\nnorth          | 1    | 0    | 0    | 0    | 0    | 0    | 0    | 1\ncentral        | 0    | 3    | 3    | 5    | 2    | 5    | 3    | 21\nsouth          | 0    | 0    | 0    | 0    | 0    | 1    | 0    | 1\nisland         | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0\n\njob 별 집계\njob           | facts | scenes | claims | chunkClaims | excerptClaims\n--------------+-------+--------+--------+-------------+--------------\njoseon-late-4 | 23    | 23     | 117    | 12          | 105\n\nPASS: failures=0 warnings=0",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-kim-hongdo",
+   "factId": "fact-hs-jl4-020",
+   "sceneId": "scene-hs4-kim-hongdo",
+   "claimId": "claim-hs4-kimhd-born",
+   "problem": "core 항목인데 표시 연도를 항목의 대표 활동 연도(1780) 대신 출생 연도 1745로 바꿔 decade 가 1740 으로 내려갔다. fact.what·scene.summary·images.json 프롬프트는 모두 풍속화를 그리는 30대 화가를 묘사하는데(프롬프트 원문 'A painter in his thirties ... sketching wrestlers'), 그 장면의 유일한 dateClaim 은 출생 claim 이고 scene.endYear 1780 을 뒷받침하는 time claim 은 하나도 없다. 항목 지침 4(인물 항목은 대표 활동 연도의 장면 1개)와도 어긋난다.",
+   "fix": "활동 연도를 근거와 함께 세운다. 이미 받아 둔 규장각도 출처(src-hs4-enc-gyujanggakdo, '김홍도가 32세에 그린 그림' = 1776)나 김홍도 항목의 1773년 영조 어진 동참화사 서술로 time claim 을 하나 더 만들고, fact.year·scene.startYear 를 그 활동 연도(1776~1780)로 되돌린 뒤 dateClaimIds 를 그 claim 으로 바꾼다. 출생 claim 은 relatedClaimIds 로 남긴다.",
+   "evidence": "result.json fact-hs-jl4-020 year=1745 decade=1740 / scene-hs4-kim-hongdo startYear=1745 endYear=1780 dateClaimIds=[claim-hs4-kimhd-born] / images.json hs-joseon-late-kim-hongdo prompt 'A painter in his thirties ... sketching wrestlers' / items.json year=1780"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-talchum",
+   "factId": "fact-hs-jl4-010",
+   "sceneId": "scene-hs4-talchum",
+   "claimId": "claim-hs4-talchum-1778",
+   "problem": "연도 근거와 장소 근거가 서로 다른 사건이다. 1778년은 강이천이 한양 남대문 밖 산대놀이를 보고 남성관희자에 적은 기록이고(raw/enc-talnori.html), 장면 좌표는 안동 하회(128.52056, 36.53806)다. 1778년 하회에서 탈놀이가 열렸다는 근거는 어디에도 없고, 오히려 하회별신굿탈놀이 출처는 '10년에 한 번씩 혹은 신탁(神託)에 따라 임시로 거행', '하회별신굿은 1928년(戊辰) 이래 중단', '하회의 탈놀이는 고려시대부터 유래한다'고만 말한다. 지도에는 근거 없는 '1778년 안동 하회의 탈춤'이 찍힌다.",
+   "fix": "둘 중 하나로 맞춘다. (가) 장소를 연도 근거에 맞춰 한양 남대문 밖으로 옮기고 좌표 근거를 새로 단다. (나) 하회를 유지하려면 1778 연도 claim 을 dateClaimIds 에서 빼고 항목이 준 1750년을 표시 기준점으로 되돌린 뒤, 연도 근거는 '조선 후기' 서술(ex-talnori-late)에 기댄다는 점을 note 에 명시한다. 어느 쪽이든 fact.note 와 scene.summary 에서 한양 산대놀이 기록과 하회 전승이 섞이지 않게 쓴다.",
+   "evidence": "claim-hs4-talchum-1778 note '1778년 강이천이 남대문 밖 산대놀이를 보고 기록' / scene-hs4-talchum place 안동 하회 별신굿 놀이마당 / raw/enc-hahoe-talnori.html '10년에 한 번씩 혹은 신탁(神託)에 따라 임시로 거행', raw/enc-talnori.html '하회의 탈놀이는 고려시대부터 유래한다'"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-jeong-seon",
+   "factId": "fact-hs-jl4-011",
+   "sceneId": "scene-hs4-jeong-seon",
+   "claimId": "claim-hs4-jeongseon-loc",
+   "problem": "같은 Place 엔티티 place-hs4-inwangsan 에 서로 다른 좌표를 주장하는 location claim 이 둘 있다. claim-hs4-inwangsan-loc 는 (126.9612, 37.5848), claim-hs4-jeongseon-loc 는 (126.959, 37.582)이며 validFrom/validTo 구분도 없다. 적재하면 한 장소가 모순된 좌표 둘을 갖는다. 게다가 두 장면(진경산수화·정선)은 367m 거리에 같은 1751년, 같은 인왕제색도 근거라 사실상 겹친다.",
+   "fix": "정선 장면의 장소를 별도 엔티티(예: place-hs4-inwangsan-hyoja, '효자동에서 본 인왕산 시점')로 분리해 좌표 충돌을 없애고 두 점을 화면에서 구분될 만큼 벌린다(진경산수화는 인왕산 주봉 또는 금강산 권역, 정선은 효자동 시점). 아니면 한쪽 좌표로 통일하고 남는 location claim 을 지운다.",
+   "evidence": "claim-hs4-inwangsan-loc subject=place-hs4-inwangsan lat 37.5848 lon 126.9612 / claim-hs4-jeongseon-loc subject=place-hs4-inwangsan lat 37.582 lon 126.959 / fact-hs-jl4-009 와 fact-hs-jl4-011 좌표 간 거리 367m"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-yi-ik",
+   "factId": "fact-hs-jl4-013",
+   "sceneId": "scene-hs4-yi-ik",
+   "claimId": "claim-hs4-yiik-born",
+   "problem": "장면이 1760~1763년으로 표시되는데 dateClaimIds 는 출생 claim(1681년) 하나뿐이라 표시 연도를 뒷받침하는 시간 근거가 없다(79년 차이). fact.yearVerbatim '18세기 중엽' 은 어느 발췌에도 없는 조사자의 편집 표현이다. 사망 claim(claim-hs4-yiik-died, 1763)과 로컬 chunk claim(claim-hs4-yiik-died-chunk)이 이미 있는데도 dateClaimIds 가 아니라 relatedClaimIds 에만 들어가 있다.",
+   "fix": "dateClaimIds 를 claim-hs4-yiik-died(1763)로 바꾸고 fact.year 를 근거 있는 연도로 맞춘다. 1760 을 유지하려면 yearVerbatim 을 발췌 표기('1681년(숙종 7)에 태어나 1763년(영조 39)에 사망했다')로 바꾸고, 1760 이 출처가 말한 연도가 아니라 생몰 구간 안의 표시 기준점임을 note 에 그대로 밝힌다.",
+   "evidence": "scene-hs4-yi-ik startYear=1760 endYear=1763 dateClaimIds=[claim-hs4-yiik-born] / claim-hs4-yiik-born year=1681 / fact-hs-jl4-013 yearVerbatim='18세기 중엽'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "(좌표 미확인 항목 10건)",
+   "factId": "fact-hs-jl4-006/007/008/009/011/013/014/017/019/022",
+   "sceneId": "(해당 장면 10건)",
+   "claimId": "claim-hs4-gyoseogwan-loc 외 9건",
+   "problem": "좌표 근거가 장식적이다. location claim 10건이 sourceId+citesExcerpt 를 달고 있지만 그 발췌에는 십진 좌표가 없고 좌표와 무관한 정의문·소재지 문장이다(예: claim-hs4-gyoseogwan-loc → ex-gyoseogwan-def '조선시대 경적(經籍)의 인쇄와 제사 때 쓰이는 향과'). 실제 숫자는 items.json 추정점을 그대로 옮긴 것이고 검증기는 location claim 의 존재만 확인한다. note·coordinateNote 에 추정임을 밝혀 둔 점은 좋다.",
+   "fix": "그대로 두어도 검증은 통과하지만, 좌표를 구할 수 있는 곳은 교체한다(인왕산·광주 분원리 백자 가마터·안산 이익 선생 묘는 위키백과 표시 좌표나 국가유산포털 소재지가 있다). 교서관 터·균역청 터·검서청·서향각·이문원처럼 구할 수 없는 곳은 현재처럼 note 에 추정임을 남기고 confidence 를 medium 이하로 유지한다(지금 지켜지고 있다).",
+   "evidence": "claim-hs4-gyoseogwan-loc, claim-hs4-gyunyeokcheong-loc, claim-hs4-inwangsan-loc, claim-hs4-jeongseon-loc, claim-hs4-bunwon-loc, claim-hs4-yiik-loc, claim-hs4-hong-loc, claim-hs4-geomseocheong-loc, claim-hs4-seohyanggak-loc, claim-hs4-imunwon-loc"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-seoeol-movement, hs-joseon-late-chogyemunsin, hs-joseon-late-park-jega",
+   "factId": "fact-hs-jl4-017/022/019",
+   "sceneId": "scene-hs4-seoeol, scene-hs4-chogyemunsin, scene-hs4-park-jega",
+   "claimId": "claim-hs4-geomseocheong-loc",
+   "problem": "창덕궁 권역 항목 5건이 한 덩어리로 몰려 있다. 검서청↔이문원 71m, 서향각↔이문원 208m, 검서청↔서향각 222m 이고 셋 다 출처 좌표가 아닌 추정점이며 실제로는 모두 같은 규장각 권역이다(검서관은 1781년 이문원으로 옮겨졌다). '같은 도시 항목이 한 점에 겹치지 않게' 라는 요건에 아슬아슬하다.",
+   "fix": "세 항목을 규장각 권역 안에서 뜻이 다른 지점으로 벌린다(초계문신제는 이문원, 서얼 통청은 상소가 오른 인정전 앞이나 승정원 쪽, 박제가는 검서관 자리). 좌표를 바꿀 근거가 없으면 최소 200m 이상 간격을 유지하고 왜 그 자리인지 coordinateNote 에 적는다.",
+   "evidence": "fact 좌표 거리 계산: 검서청(126.9906, 37.5818)-이문원(126.9911, 37.5813) 71m, 서향각(126.993, 37.5824)-이문원 208m, 인정전-주합루 149m"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-seoeol-movement",
+   "factId": "fact-hs-jl4-017",
+   "sceneId": "scene-hs4-seoeol",
+   "claimId": "claim-hs4-seoeol-1777",
+   "problem": "scene.summary 의 '서얼들이 함께 상소를 올려 길을 열어 달라고 했다' 는 인용한 발췌(ex-seoeol-1777 정유절목, ex-seoeol-jeongjo 서얼허통)에 없는 서술이다. 근거는 정부 조치만 말하고 집단 상소는 말하지 않는다. scene.endYear 1781 도 뒷받침하는 time claim 이 없다(ex-geomseo-1781 을 인용하는 claim-hs4-geomseocheong-loc 은 location claim 이다).",
+   "fix": "summary 를 근거 범위(1777년 정유절목으로 나아갈 자리를 넓혔고 1779년 검서관에 서얼을 뽑았다)로 줄이거나, 서얼 집단 상소를 말하는 발췌를 하나 더 내려받아 claim 을 만든다. endYear 는 1779 로 맞추고 그 연도의 time claim(claim-hs4-geomseo-1779)을 dateClaimIds 에 넣는다.",
+   "evidence": "scene-hs4-seoeol summary / dateClaimIds=[claim-hs4-seoeol-1777] endYear=1781 / raw/enc-seoeol.html 발췌 2건에 '상소' 없음"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-gyujanggak",
+   "factId": "fact-hs-jl4-015",
+   "sceneId": "scene-hs4-gyujanggak",
+   "claimId": "claim-hs4-gyujanggak-1910",
+   "problem": "설치 사건 장면(kind=publication)의 endYear 가 1910 이라 한 사건이 134년 동안 화면에 떠 있게 된다. 존속은 이미 persistence{kind:'institution', from:1776, to:1910} 가 맡고 있어 중복이다. 같은 방식이 탕평책(1725~1800)·초계문신제(1781~1800)에도 있으나 그쪽은 제도·정책이라 덜 어색하다.",
+   "fix": "scene.startYear=endYear=1776 으로 두고 지속 표시는 persistence 에만 맡긴다.",
+   "evidence": "scene-hs4-gyujanggak startYear=1776 endYear=1910 persistence to=1910"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-catholicism, hs-joseon-late-tangpyeong",
+   "factId": "fact-hs-jl4-023, fact-hs-jl4-003",
+   "sceneId": "scene-hs4-catholicism, scene-hs4-tangpyeong",
+   "claimId": "claim-hs4-gyeonghuigung-loc",
+   "problem": "발췌 밖의 살이 조금씩 붙었다. 천주교 장면의 '1784년 겨울부터' 에서 '겨울' 은 어느 발췌에도 없다(출처는 '1784년에서 1785년' 이라고만 한다). 탕평책 장소 claim 의 note '영조가 오래 머문 경희궁' 도 인용한 발췌(경희궁 표시 좌표)가 말하지 않는 내용이다.",
+   "fix": "'겨울' 을 빼고 '1784년부터' 로 고친다. 경희궁을 영조의 궁궐로 부르려면 영조 항목에서 경희궁 거처를 말하는 발췌를 하나 더 뽑아 붙이거나, note 를 '항목이 지정한 경희궁 자정전의 대표점' 으로만 적는다.",
+   "evidence": "scene-hs4-catholicism summary '1784년 겨울부터' vs ex-myeongnye-1784 '1784년에서 1785년' / claim-hs4-gyeonghuigung-loc note vs ex-geo-gyeonghuigung(좌표만)"
+  },
+  {
+   "severity": "minor",
+   "itemId": "(작업 전체)",
+   "factId": "run.json",
+   "sceneId": null,
+   "claimId": null,
+   "problem": "run.json 의 started 1789948800 은 2026-09-21 00:00:00Z 로, 실제 수집 시각(manifest·sources 의 fetchedUtc 2026-09-14T03:49~03:52Z)보다 일주일 뒤이고 검수 시점(2026-09-14)보다 미래다. 검증기는 '0 이상의 유한한 수' 만 보므로 통과한다.",
+   "fix": "started 를 실제 실행 epoch(수집 시각 2026-09-14T03:49Z 전후, 약 1789703000)로 고친다.",
+   "evidence": "run.json started=1789948800 / manifest fetchedUtc 2026-09-14T03:49:29Z"
+  }
+ ],
+ "checkedItems": [
+  "hs-joseon-late-baekdusan-stele",
+  "hs-joseon-late-yeongjo",
+  "hs-joseon-late-tangpyeong",
+  "hs-joseon-late-yiinjwa-rebellion",
+  "hs-joseon-late-tangpyeongbi",
+  "hs-joseon-late-sokdaejeon",
+  "hs-joseon-late-cheonghwa-baekja",
+  "hs-joseon-late-gyunyeokbeop",
+  "hs-joseon-late-jingyeong-landscape",
+  "hs-joseon-late-talchum",
+  "hs-joseon-late-jeong-seon",
+  "hs-joseon-late-yi-junghwan",
+  "hs-joseon-late-yi-ik",
+  "hs-joseon-late-hong-daeyong",
+  "hs-joseon-late-gyujanggak",
+  "hs-joseon-late-jeongjo",
+  "hs-joseon-late-seoeol-movement",
+  "hs-joseon-late-an-jeongbok",
+  "hs-joseon-late-park-jega",
+  "hs-joseon-late-kim-hongdo",
+  "hs-joseon-late-park-jiwon",
+  "hs-joseon-late-chogyemunsin",
+  "hs-joseon-late-catholicism"
+ ],
+ "summary": "검증기는 PASS(실패 0·경고 0, 사실 23·장면 23·claim 117 중 chunk 인용 12·웹 발췌 105)다. 표본은 항목 23건 전부(core 8건 포함, 100%)다. 웹 발췌 94건을 raw/ HTML 원문에서 앞뒤 문맥까지 다시 읽었고, 로컬 chunk 인용 12건을 search_chunks --id 로 모두 재확인했으며, 출처 11곳(민족문화대백과 9·위키백과 2)을 실제 URL 로 다시 내려받아 발췌 17개가 지금도 그대로 있음을 확인했다. manifest 53건과 sources 53건의 URL 집합이 일치하고, 장면 kind 23건이 모두 항목 sceneType 과 같으며, portrait 9건은 모두 인물 1명을 참여자로 갖고, 인물 엔티티 12개는 전부 저장소에 이미 있는 id 를 재사용했다. images.json 23건도 항목·장면 id 가 모두 맞고 접두어와 인물 얼굴 문구가 규정대로 붙어 있다. 교과서 문장 전재는 없었다. 그럼에도 고칠 것이 넷이다. 김홍도(core)는 표시 연도가 활동기(1780)가 아니라 출생년(1745)이라 장면 요약·이미지 프롬프트와 어긋나고, 탈춤은 한양 산대놀이 기록의 연도(1778)를 안동 하회 좌표에 붙였으며, 인왕산 Place 엔티티 하나에 서로 다른 좌표 주장이 둘 달려 있고(두 장면도 367m로 겹친다), 이익 장면은 표시 연도 1760 을 뒷받침하는 시간 근거가 없다(dateClaim 이 1681년 출생). 좌표 10건이 출처 발췌가 아닌 항목 추정점이라는 점과 창덕궁 권역 5건이 71~500m 안에 몰린 점은 note 에 밝혀져 있어 minor 로 둔다."
+}

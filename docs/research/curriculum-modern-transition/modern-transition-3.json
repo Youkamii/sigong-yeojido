@@ -1,9 +1,9 @@
 {
   "job": "modern-transition-3",
-  "sources": 51,
-  "excerpts": 95,
+  "sources": 52,
+  "excerpts": 98,
   "chunkClaims": 16,
-  "excerptClaims": 97,
+  "excerptClaims": 98,
   "facts": 26,
   "factsByCategory": {
     "administration": 10,
@@ -15,8 +15,8 @@
     "transport": 2,
     "war": 2
   },
-  "claims": 113,
-  "entities": 71,
+  "claims": 114,
+  "entities": 52,
   "rawFilesChecked": [
     {
       "source": "src-hs-enc-hongbeom",
@@ -175,8 +175,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0064926",
       "sha256": "2235d48b8a04c661c2ac6a5c36c7a3af068e8d5694e05ba6f8e0fa7d21578176",
       "rawBytes": 112062,
-      "excerpts": 2,
-      "quotedWords": 18
+      "excerpts": 4,
+      "quotedWords": 25
     },
     {
       "source": "src-hs-enc-eulsa-uibyeong",
@@ -425,6 +425,14 @@
       "rawBytes": 158182,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-tapgol",
+      "url": "https://ko.wikipedia.org/wiki/%ED%83%91%EA%B3%A8%EA%B3%B5%EC%9B%90",
+      "sha256": "40b8800a2db1694902ff973a9865baede46fbb74fec2694bb8ad52114e82f968",
+      "rawBytes": 212647,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -436,15 +444,16 @@
     "modelsObserved": [
       "claude-opus-5"
     ],
-    "started": 1789819200,
+    "started": 1789357744,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-modern-transition-3"
+    "sessionId": "workflow-modern-transition-3",
+    "revised": 1789380369
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-jungmyeongjeon"
+    "event-mt3-currency"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

@@ -57,7 +57,7 @@ status: "draft"
     },
     "citesChunk": "chunk_samguksagi_sg_006_0020_1020",
     "quote": "遣大阿湌儒敦於熊津都督府請和, 不從",
-    "note": "670년 신라가 웅진도독부에 화친을 청했으나 듣지 않자 군사를 냈다",
+    "note": "670년 신라가 웅진도독부에 화친을 청했으나 듣지 않자 군사를 냈다 — 신라의 공격이 시작된 해이며 관부가 없어진 해가 아니다",
     "fromSource": "src-samguksagi",
     "origin": "ai",
     "status": "draft",

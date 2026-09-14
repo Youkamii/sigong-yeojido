@@ -1,18 +1,18 @@
 {
   "job": "joseon-late-1",
   "sources": 44,
-  "excerpts": 80,
+  "excerpts": 82,
   "chunkClaims": 49,
-  "excerptClaims": 79,
+  "excerptClaims": 80,
   "facts": 23,
   "factsByCategory": {
     "administration": 3,
     "culture": 2,
     "person": 6,
-    "settlement": 1,
-    "war": 11
+    "settlement": 2,
+    "war": 10
   },
-  "claims": 128,
+  "claims": 129,
   "entities": 45,
   "rawFilesChecked": [
     {
@@ -20,8 +20,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0025147",
       "sha256": "862a3d1139af401f850e68c8f525502a2dc25f0499d104a5da1ac4c88e033463",
       "rawBytes": 154142,
-      "excerpts": 3,
-      "quotedWords": 15
+      "excerpts": 4,
+      "quotedWords": 21
     },
     {
       "source": "src-hs-jl1-enc-songsanghyeon",
@@ -132,8 +132,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0041805",
       "sha256": "9e4a4ba2cd1148530551b037f2507849b856d33c7be6fc598cc6c9c742fcfcb8",
       "rawBytes": 131685,
-      "excerpts": 3,
-      "quotedWords": 18
+      "excerpts": 4,
+      "quotedWords": 25
     },
     {
       "source": "src-hs-jl1-enc-pyochungsa",
@@ -380,12 +380,14 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-joseon-late-1"
+    "sessionId": "workflow-joseon-late-1",
+    "revised": 1789722400
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-jl1-gwaneumpo"
+    "person-hs-hyujeong",
+    "institution-hs-jl1-uiseunggun"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

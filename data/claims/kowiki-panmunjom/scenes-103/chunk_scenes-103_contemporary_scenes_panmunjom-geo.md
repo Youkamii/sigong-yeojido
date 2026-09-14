@@ -24,6 +24,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-pmj-loc",
+    "subject": "place-hs-c5-panmunjom",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 37.95556,
+      "lon": 126.67778,
+      "precision": "site"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_panmunjom-geo",
+    "quote": "37.95556; 126.67778",
+    "note": "판문점 표시 좌표",
+    "fromSource": "src-kowiki-panmunjom",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -1,0 +1,120 @@
+{
+  "job": "modern-transition-1",
+  "checker": "claude-opus-5 high",
+  "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-modern-transition --job modern-transition-1 -> PASS: failures=0 warnings=0 (facts=26, scenes=26, claims=110, chunkClaims=28, excerptClaims=82; category x decade / region x decade 표 정상, region capital 0건)",
+  "verdict": "pass",
+  "issues": [
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-gyeongbokgung-rebuild",
+      "sceneId": "scene-mt1-gyeongbokgung-rebuild",
+      "claimId": "claim-mt1-gyeongbok-daebi",
+      "problem": "entities[] 에 person-hs-sinjeong-wanghu 를 새로 만들었는데 저장소에 이미 같은 인물의 개체 person-jl-sinjeong-wanghu('대왕대비[신정왕후]', #103 커밋 56f1afbc)가 있다. 항목 지침은 기존 person-* id 재사용이다. 같은 result 안에서 양헌수·어재연·박규수·신헌은 기존 id 를 재사용했으므로 이 건만 어긋난다.",
+      "fix": "claim-mt1-gyeongbok-daebi 의 object.id 와 entities[] 항목을 person-jl-sinjeong-wanghu 로 바꾸거나, 두 id 를 하나로 합치는 정리를 별도 이슈로 남긴다.",
+      "evidence": "data/entities/person/person-jl-sinjeong-wanghu.md(git log 56f1afbc, data/research/scenes-103/joseon_late_scenes/result.json 에서 사용 중) vs data/entities/person/person-hs-sinjeong-wanghu.md(git log 75357259)"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-seowon-abolition",
+      "sceneId": "scene-mt1-seowon-abolition",
+      "claimId": "claim-mt1-seowon-1864",
+      "problem": "장면 요약이 '1864년 서원 현황을 조사한 뒤 만동묘를 없앴고'로 되어 있어 만동묘 철폐가 1864년처럼 읽힌다. 출처는 '1864년 … 현황 조사를 시작으로 이듬해 만동묘가 철폐되었고'(=1865년)이고 같은 문서의 다른 대목은 '이듬해 1865년(고종 2) 만동묘의 철폐를 명하였다'로 못박는다. claim note 는 '이듬해'를 정확히 적었으므로 요약 문장만 어긋난다. 더해 장면 연도는 1871년인데 표시점은 1865년에 철폐된 만동묘 터여서 연도와 장소의 대상이 다르다(의도는 coordinateNote 에 밝혀 둠).",
+      "fix": "요약을 '1864년 현황 조사에 이어 이듬해 만동묘를 없앴고, 1871년에는 사액서원까지 훼철령을 내려 47개소만 남겼다'로 고치고, note 에 표시점 만동묘가 1865년 철폐 대상임을 덧붙인다.",
+      "evidence": "raw/enc-seowon-hwecheollyeong.html 본문 '1864년 전국 서원에 대한 현황 조사를 시작으로 이듬해 만동묘(萬東廟)가 철폐되었고', '이듬해 1865년(고종 2) 만동묘의 철폐를 명하였다' — 2026-09-14 원 URL(encykorea E0076385) 재조회로 동일 확인"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-open-ports",
+      "sceneId": "scene-mt1-open-ports",
+      "claimId": "claim-mt1-wonsan-1883",
+      "problem": "claim id 가 'wonsan-1883' 이지만 인용문은 원산 개항이 아니라 '1883년 함경도 원산에 설치된 근대적 관세 징수 기구'(원산 해관)다. 이 claim 이 장면의 행위 근거로 쓰여 endYear 1883 을 떠받치는데, 항목이 말하는 1883년은 인천 개항이어서 근거와 대상이 어긋난다. 연도 근거로 쓴 개항장 발췌는 '1876년 부산, 1879년 원산, 1880년 인천'이라 교과서 표기(1880·1883)와 다르며, 이 불일치는 fact.note 에 스스로 밝혀 두었다(적절한 처리).",
+      "fix": "claim id 를 claim-mt1-wonsan-haegwan-1883 처럼 내용에 맞게 바꾸고, endYear 1883 의 근거로 인천 개항(또는 인천해관 1883) 발췌를 하나 더 붙이거나 endYear 를 근거 있는 연도로 맞춘다.",
+      "evidence": "chunk_scenes-122_modern_localities_wonsanhaegwan-def(src-aks-wonsan-haegwan, encykorea E0078154) 전문 확인; src-mt1-enc-gaehangjang ex-gaehang-years 2026-09-14 재조회 LIVE-OK"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-open-ports",
+      "factId": "fact-mt1-open-ports",
+      "problem": "항목 type 이 place 인데 category 를 economy 로 두었다(대응표는 place→administration). note 에 이유를 적어 둔 의도적 이탈이지만 대응표와 다르다. 같은 성격으로 hs-modern-transition-gyeongbokgung-rebuild 는 type 이 event 인데 category 가 facility 다(대응표의 event 목록에 facility 는 없다).",
+      "fix": "대응표대로 바꾸거나, 대응표에 '무역항 항목은 economy, 궁궐 중건 같은 건축 사건은 facility' 예외를 명문화한다.",
+      "evidence": "docs/research/curriculum-items-brief.md 항목→사실·장면 대응표; result.json facts 의 category 값"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-wijeong-cheoksa",
+      "factId": "fact-mt1-wijeong-cheoksa",
+      "problem": "권역 판정 근거가 항목마다 다르다. 오페르트(예산, 위도 36.719)는 note 에 '대전 북쪽이어서 central'이라고 위도 기준을 적었는데, 거의 같은 위도인 안동 도산서원(36.727)은 south 로 두고 근거를 적지 않았다. 브리프의 35~37도 구간 규칙(경도로 가른다)을 따르면 영남=south 로 볼 수 있어 값 자체는 방어 가능하나 같은 칸 안에서 설명이 엇갈린다.",
+      "fix": "note 에 '35~37도 구간은 경도로 갈라 영남(경도 128도 이상)은 south' 같은 한 가지 기준을 적고 예산·괴산·안동에 같은 문장을 쓴다.",
+      "evidence": "result.json facts: oppert note '예산은 대전 북쪽이어서 권역을 central 로 두었다' / wijeong-cheoksa note 에는 권역 설명 없음"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-josa-sichaldan",
+      "sceneId": "scene-mt1-josa-sichaldan",
+      "problem": "항목의 place 는 도쿄인데 표시점을 경유지 오사카로 옮겼다. 수신사 항목과 점이 겹치지 않게 하려는 의도는 coordinateNote·fact.note 에 밝혀 두었으나 시찰의 본무대(도쿄 관청·공장)와 표시점이 달라 카드와 지도가 어긋날 수 있다. 서원 철폐(한성→괴산)도 같은 성격의 이동이다.",
+      "fix": "발췌에 나오는 다른 도쿄권 지명(요코하마 등)의 십진 좌표를 따로 받아 도쿄권에 남기거나, 요약 첫 문장을 오사카에서 시작하도록 고쳐 표시점과 서술을 맞춘다.",
+      "evidence": "items.json hs-modern-transition-josa-sichaldan.place.label='도쿄'; raw/enc-josa-sichaldan.html '나가사키 · 아카마세키 · 오사카 · 고베 · 요코하마 · 에도를 거쳐 4월 28일 동경에 도착하였다'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-daewongun-reform",
+      "sceneId": "scene-mt1-daewongun-reform",
+      "problem": "장면 persistence 를 kind 'institution', 1865~1871 로 두었다. 존속 대상이 관청·시설이 아니라 '제도 개편'이라는 추상 과정이어서 조립기가 창덕궁 인정전 자리에 town 규모 구역을 만들면 뜻이 흐려진다. 통리기무아문·별기군의 institution 사용은 실제 관청·부대라 문제없다.",
+      "fix": "이 장면의 persistence 를 빼거나 kind 를 none 으로 둔다(현재 fact 에는 persistence 가 없어 사실 계층에는 영향이 없다).",
+      "evidence": "result.json scene-mt1-daewongun-reform.persistence; docs/research/facts-format.md 세계 연결 규칙(institution→town 구역 반경 19)"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-choe-ik-hyeon",
+      "sceneId": "scene-mt1-choe-ik-hyeon",
+      "problem": "요약의 '1873년 상소로 대원군을 물러나게 했고'라는 인과가 이 장면이 인용한 claim 에는 없다(claim-mt1-choe-1873 의 발췌는 '1873년부터 3년간의 유배생활'만 말한다). 같은 result 의 claim-mt1-daewongun-1873 과 출처 본문에는 근거가 있으나 장면 claimIds 에 연결돼 있지 않다.",
+      "fix": "claim-mt1-daewongun-1873 을 이 장면의 관련 claim 으로 연결하거나, 요약을 '1873년 계유상소를 올린 뒤 3년간 유배되었다'로 낮춘다.",
+      "evidence": "raw/enc-choe-ikhyeon.html '1873년에 올린 「계유상소(癸酉上疏)」는 … 대원군이 그 위세를 몰아 만동묘를 비롯한 서원의 철폐를 대거 단행하자'; result.json scene-mt1-choe-ik-hyeon.dateClaimIds/actionClaimIds"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-byeongin-persecution",
+      "sceneId": "scene-mt1-byeongin-persecution",
+      "problem": "요약의 '프랑스 신부와 조선인 신자가 많이 죽었고', '잠두봉은 그 뒤 절두산으로 불리게 되었다'는 서술이 인용한 claim 세 건(발생 시기 1866·박해 정의·박해령)에 없다. 절두산 유래는 좌표용으로만 쓴 위키 문서에 있고 순교 규모는 이 칸의 어떤 발췌에도 없다.",
+      "fix": "민족문화대백과 병인박해 본문에서 순교 규모·절두산 유래에 해당하는 짧은 발췌를 받아 claim 으로 세우거나 요약에서 두 서술을 덜어낸다.",
+      "evidence": "result.json scene-mt1-byeongin-persecution.actionClaimIds=[claim-mt1-bakhae-def, claim-mt1-bakhae-daewongun]; raw/ko-jeoldusan.html 에 '절두산 순교' 절은 있으나 claim 으로 인용되지 않음"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-modern-transition-gojong",
+      "sceneId": "scene-mt1-gojong",
+      "problem": "images.json 의 고종 프롬프트가 'A young Korean king in his late teens' 인데 같은 항목의 장면 요약은 '1863년 열두 살에 왕위에 올라'라고 적는다. 그림과 카드 설명의 나이가 어긋난다(검증기 대상은 아니다).",
+      "fix": "프롬프트를 'a boy king of about twelve' 로 바꾸거나, 재위 후반을 그린다는 뜻이면 basis 에 표현 시점을 적는다.",
+      "evidence": "images.json hs-modern-transition-gojong.prompt; result.json scene-mt1-gojong.summary; claim-mt1-gojong-birth(1852년 출생)+claim-mt1-gojong-from(1863 즉위)"
+    }
+  ],
+  "checkedItems": [
+    "hs-modern-transition-gojong",
+    "hs-modern-transition-heungseon-daewongun",
+    "hs-modern-transition-daewongun-reform",
+    "hs-modern-transition-gyeongbokgung-rebuild",
+    "hs-modern-transition-byeongin-persecution",
+    "hs-modern-transition-byeongin-yangyo",
+    "hs-modern-transition-general-sherman",
+    "hs-modern-transition-oppert",
+    "hs-modern-transition-cheokhwabi",
+    "hs-modern-transition-seowon-abolition",
+    "hs-modern-transition-sinmi-yangyo",
+    "hs-modern-transition-choe-ik-hyeon",
+    "hs-modern-transition-myeongseong",
+    "hs-modern-transition-unyo-incident",
+    "hs-modern-transition-ganghwa-treaty",
+    "hs-modern-transition-open-ports",
+    "hs-modern-transition-susinsa",
+    "hs-modern-transition-joseon-chaengnyak",
+    "hs-modern-transition-tongni-gimu-amun",
+    "hs-modern-transition-byeolgigun",
+    "hs-modern-transition-josa-sichaldan",
+    "hs-modern-transition-wijeong-cheoksa",
+    "hs-modern-transition-yeongseonsa",
+    "hs-modern-transition-imo-mutiny",
+    "hs-modern-transition-jemulpo-treaty",
+    "hs-modern-transition-korea-us-treaty"
+  ],
+  "summary": "검증기 PASS(실패 0·경고 0). 표본이 아니라 전수로 재확인했다 — 웹 출처 51건을 2026-09-14 에 원 URL 로 다시 내려받아 발췌 82건이 모두 현재 본문에 그대로 있음을 확인했고(LIVE-MISS 0, FETCH-FAIL 0), 로컬 chunk 28건은 search_chunks 로 전문을 열어 quote 가 부분 문자열인지와 문맥 왜곡 여부를 보았으며 경복궁 중건·병인양요·별기군 3건은 encykorea 원 페이지에서 문장 단위로 다시 대조했다. 요약에만 있던 서술(척화비 1915년 보신각 발굴, 별기군 오군문 80여 명·무위영·호리모토 소위, 임오군란 13개월 군료 체불, 조사시찰단 60명·암행어사·부산 출발, 영선사 학도 20+공장 18=38명, 명성황후의 러시아 의존)도 raw HTML 본문에서 하나씩 찾아 확인했다. 26개 항목 전부에서 fact.year=item.year, 성취기준 코드, priority, scene.kind/heritageType/sceneFunction 이 items.json 과 일치했고 좌표 26개가 모두 다른 지점이며 한성 11건·강화 4건·제물포 2건이 겹치지 않는다. 해외 3건(도쿄·오사카·톈진)은 overseas=true 와 note 표기가 있고 톈진만 위도 39 이상이라 north 가 맞다. region 'capital' 은 쓰지 않았고 db.history.go.kr 이나 교과서 문장 전재도 없다. 남은 것은 모두 경미한 사항 10건이다: 신정왕후 개체 중복 생성, 서원 철폐 요약의 '이듬해' 누락, 원산 해관 claim 의 id·용도 어긋남, category 대응표 이탈 2건, 권역 근거 설명 불일치, 조사시찰단 표시점 이동, 대원군 개혁의 institution persistence, 근거 없이 요약에만 있는 서술 2건, 고종 이미지 나이 불일치. 적재를 막을 결함은 확인되지 않았다."
+}

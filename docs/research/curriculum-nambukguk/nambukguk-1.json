@@ -1,9 +1,9 @@
 {
   "job": "nambukguk-1",
-  "sources": 40,
-  "excerpts": 53,
-  "chunkClaims": 59,
-  "excerptClaims": 54,
+  "sources": 47,
+  "excerpts": 64,
+  "chunkClaims": 61,
+  "excerptClaims": 68,
   "facts": 26,
   "factsByCategory": {
     "administration": 5,
@@ -14,8 +14,8 @@
     "person": 8,
     "war": 2
   },
-  "claims": 113,
-  "entities": 44,
+  "claims": 129,
+  "entities": 51,
   "rawFilesChecked": [
     {
       "source": "src-hs-enc-munmuwang",
@@ -160,22 +160,6 @@
       "rawBytes": 83745,
       "excerpts": 2,
       "quotedWords": 17
-    },
-    {
-      "source": "src-hs-ko-hyecho",
-      "url": "https://ko.wikipedia.org/wiki/%ED%98%9C%EC%B4%88",
-      "sha256": "0be3e92d55651d8bf7e6d85b75502bea894e97d15dea4b3bf59e102b35422a28",
-      "rawBytes": 173898,
-      "excerpts": 2,
-      "quotedWords": 14
-    },
-    {
-      "source": "src-hs-ko-wangocheonchuk",
-      "url": "https://ko.wikipedia.org/wiki/%EC%99%95%EC%98%A4%EC%B2%9C%EC%B6%95%EA%B5%AD%EC%A0%84",
-      "sha256": "363a09d7fb61a489829c884115151284f40e3fea945f2a1534c667cc21c0a478",
-      "rawBytes": 144488,
-      "excerpts": 1,
-      "quotedWords": 10
     },
     {
       "source": "src-hs-ko-wolseong",
@@ -336,6 +320,78 @@
       "rawBytes": 225000,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs-enc-hyecho",
+      "url": "https://encykorea.aks.ac.kr/Article/E0063646",
+      "sha256": "f7128a941924f0052451a4af1a8f371aad245d323e8bffc1257bd39360d603ab",
+      "rawBytes": 109975,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-hs-enc-wangocheonchuk",
+      "url": "https://encykorea.aks.ac.kr/Article/E0039126",
+      "sha256": "05225296005c897a9631fd79e6e7fab1e872fd44be272e7ee40195a3b6eef757",
+      "rawBytes": 118760,
+      "excerpts": 4,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-hs-enc-sangsuri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0027170",
+      "sha256": "5eec5f93df77e483481cb5af40da9cfaf3b08801b75cb4c5d6fdcb7b9253cbd1",
+      "rawBytes": 94685,
+      "excerpts": 1,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-ko-oreung",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC%20%EC%98%A4%EB%A6%89",
+      "sha256": "898de9610c62b49995a6edf0c07e41864af201751899630863f51395b4ff747c",
+      "rawBytes": 125463,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-sacheonwangsaji",
+      "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EC%B2%9C%EC%99%95%EC%82%AC%EC%A7%80",
+      "sha256": "34155494638c8b462df649f1bb40c73da7b1078dadc75f6cf77f6f47e44ab7f2",
+      "rawBytes": 133360,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-woljeonggyo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9B%94%EC%A0%95%EA%B5%90",
+      "sha256": "b9b8e04508ad3f9f159a452a39f18e249268faabce1c0415479af5195dfdcc1c",
+      "rawBytes": 105417,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-myeonghwalseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC%20%EB%AA%85%ED%99%9C%EC%84%B1",
+      "sha256": "aa5a6830ca30fd66ad858c34129a0fc19560f2a482e0e9c7a9e32530eef24307",
+      "rawBytes": 98294,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-chungju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B6%A9%EC%A3%BC%EC%8B%9C",
+      "sha256": "e5ead90141b0b7025be7cacb3d18b6c64383c5eb47d82616e1f936bd817ff8e2",
+      "rawBytes": 551173,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-en-liuding",
+      "url": "https://en.wikipedia.org/wiki/Liuding_Mountain",
+      "sha256": "0819abe9c22f93e638f637ecf2e5065b0b92f12fe5dae890ecc71a3f13722cb5",
+      "rawBytes": 74907,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -350,13 +406,13 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-nambukguk-1"
+    "sessionId": "workflow-nambukguk-1",
+    "revised": 1789379741
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "person-encykorea-jangmunhyu",
-    "event-hs-nb1-dengzhou"
+    "institution-hs-nb1-sangsuri"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

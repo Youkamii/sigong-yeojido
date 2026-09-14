@@ -474,6 +474,11 @@
      "id": "ex-wangin-ajikgi",
      "text": "왕인은 백제 학자 아직기(阿直岐, 아치키)의 추천을 받아",
      "locator": "본문 「일본서기」 — 아직기의 추천"
+    },
+    {
+     "id": "ex-wangin-geungusu",
+     "text": "근구수왕의 칙명으로 왕의 손자 진손왕과 함께 일본으로 건너갔다",
+     "locator": "본문 첫 문단 — 도왜 시기 전승"
     }
    ]
   },
@@ -517,6 +522,63 @@
      "id": "ex-hwabaek-daedeung",
      "text": "화백 회의에는 20명의 진골 출신자만이 참석했으며 각각 대등(大等)이라고 불렀다",
      "locator": "본문 — 참석자"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-ko-jusanseong",
+   "title": "고령 주산성 — 위키백과",
+   "publisher": "위키백과",
+   "url": "https://ko.wikipedia.org/wiki/고령_주산성",
+   "rawFile": "raw/kowiki-goryeong-jusanseong.html",
+   "sha256": "7304d9e54c47fbe3f38bfdadeb3f511158ffab0e14323eb51951a4dd150deacc",
+   "httpStatus": 200,
+   "byteLength": 104536,
+   "fetchedUtc": "2026-09-14T08:33:53Z",
+   "license": "위키백과 CC BY-SA 4.0 — 표시 좌표와 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-geo-jusanseong",
+     "text": "35.729833; 128.253806",
+     "locator": "문서 머리 표시 좌표(class=geo)"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-en-namsan",
+   "title": "Namsan (Gyeongju) — Wikipedia",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Namsan_(Gyeongju)",
+   "rawFile": "raw/enwiki-namsan-gyeongju.html",
+   "sha256": "aa90f75ea28d2d20972b51ddf9632ce2153cc4236f3e2c1e5787e2692854b491",
+   "httpStatus": 200,
+   "byteLength": 114349,
+   "fetchedUtc": "2026-09-14T08:33:54Z",
+   "license": "위키백과 CC BY-SA 4.0 — 표시 좌표와 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-geo-namsan",
+     "text": "35.76806; 129.22556",
+     "locator": "문서 머리 표시 좌표(class=geo)"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-ko-myeonghwalseong",
+   "title": "경주 명활성 — 위키백과",
+   "publisher": "위키백과",
+   "url": "https://ko.wikipedia.org/wiki/경주_명활성",
+   "rawFile": "raw/kowiki-gyeongju-myeonghwalseong.html",
+   "sha256": "aa5a6830ca30fd66ad858c34129a0fc19560f2a482e0e9c7a9e32530eef24307",
+   "httpStatus": 200,
+   "byteLength": 98294,
+   "fetchedUtc": "2026-09-14T08:41:15Z",
+   "license": "위키백과 CC BY-SA 4.0 — 표시 좌표와 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-geo-myeonghwal",
+     "text": "35.83556; 129.25528",
+     "locator": "문서 머리 표시 좌표(class=geo)"
     }
    ]
   }
@@ -581,6 +643,31 @@
    "id": "place-hs-sg2-yamato",
    "type": "Place",
    "label": "야마토(나라 일대)"
+  },
+  {
+   "id": "person-hs-geungusu",
+   "type": "Person",
+   "label": "근구수왕"
+  },
+  {
+   "id": "event-hs-sg2-baekje-wa",
+   "type": "Event",
+   "label": "백제와 왜국의 통교(397)"
+  },
+  {
+   "id": "place-hs-sg2-namsan",
+   "type": "Place",
+   "label": "경주 남산"
+  },
+  {
+   "id": "place-hs-sg2-jusanseong",
+   "type": "Place",
+   "label": "고령 주산성"
+  },
+  {
+   "id": "place-hs-sg2-myeonghwalseong",
+   "type": "Place",
+   "label": "경주 명활성"
   }
  ],
  "claims": [
@@ -856,16 +943,20 @@
   },
   {
    "id": "claim-hs-sg2-wangin-geungusu",
-   "subject": "event-hs-sg2-wangin",
-   "predicate": "syj:occurredIn",
+   "subject": "person-hs-geungusu",
+   "predicate": "syj:reignedFrom",
    "object": {
-    "kind": "year",
-    "value": 375
+    "kind": "time",
+    "verbatim": "近仇首王",
+    "year": 375,
+    "precision": "year",
+    "earliest": 375,
+    "latest": 375
    },
    "sourceId": "src-samguksagi",
    "citesChunk": "chunk_samguksagi_sg_024_0090_0010",
    "quote": "近仇首王, 近肖古王之子",
-   "note": "삼국사기 백제본기 근구수왕 즉위(375). 왕인 전승이 가리키는 왕대의 시작이다."
+   "note": "삼국사기 백제본기 근구수왕 원년(375) 즉위 기사. 왕인 전승이 가리키는 왕대의 시작을 짚을 뿐 도왜를 말하지 않는다."
   },
   {
    "id": "claim-hs-sg2-wangin-role",
@@ -1450,15 +1541,19 @@
   {
    "id": "claim-hs-sg2-chungju-date",
    "subject": "place-chungju-bi",
-   "predicate": "syj:relatedTo",
+   "predicate": "syj:builtIn",
    "object": {
-    "kind": "entity",
-    "id": "person-jangsu"
+    "kind": "time",
+    "verbatim": "5세기 전후",
+    "year": 475,
+    "precision": "century",
+    "earliest": 401,
+    "latest": 500
    },
    "sourceId": "src-geumseok-gskh_001_0010_0030",
    "citesChunk": "chunk_geumseok-gskh_001_0010_0030_gskh_001_0010_0030_0010",
    "quote": "발견된 곳이 중원지역이란 점은 건립시기를 고구려가 이 지역을 차지한 5세기 전후로 좁혀볼 수 있게 한다",
-   "note": "한국고대금석문 해제. 건립 시기를 5세기 전후로 좁혀 본다. 연도를 못 박은 기록은 없다."
+   "note": "한국고대금석문 해제. 건립 시기를 5세기 전후로만 좁힌다. 표시 연도 475는 항목의 기준 연도다."
   },
   {
    "id": "claim-hs-sg2-chungju-place",
@@ -1957,6 +2052,190 @@
    "citesChunk": "chunk_samguksagi_sg_004_0040_0250",
    "quote": "敎所經州郡復一年租調",
    "note": "삼국사기 진흥왕 16년(555). 지나온 주·군의 조·조를 한 해 면제했다. 같은 수취 용어가 이어진다."
+  },
+  {
+   "id": "claim-hs-sg2-wangin-geungusu-order",
+   "subject": "person-hs-wangin",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "person-hs-geungusu"
+   },
+   "sourceId": "src-hs-ko-wangin",
+   "citesExcerpt": "ex-wangin-geungusu",
+   "note": "위키백과 왕인 문서가 정리한 전승. 근구수왕의 칙명으로 건너갔다고 하여 도왜 시기는 왕대(375~384)까지만 좁혀진다."
+  },
+  {
+   "id": "claim-hs-sg2-baekje-wa-397",
+   "subject": "event-hs-sg2-baekje-wa",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 397
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_025_0030_0110",
+   "quote": "六年, 夏五月, 王與倭國結好, 以太子腆支爲質",
+   "note": "삼국사기 백제본기 아신왕 6년(397). 백제가 왜국과 우호를 맺고 태자 전지를 볼모로 보냈다. 항목이 잡은 기준 연도 397의 배경일 뿐 왕인·아직기를 말하지 않는다."
+  },
+  {
+   "id": "claim-hs-sg2-namsan-loc",
+   "subject": "place-hs-sg2-namsan",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lon": 129.22556,
+    "lat": 35.76806,
+    "precision": "area"
+   },
+   "sourceId": "src-hs-en-namsan",
+   "citesExcerpt": "ex-geo-namsan",
+   "note": "영문 위키백과 경주 남산 문서의 표시 좌표."
+  },
+  {
+   "id": "claim-hs-sg2-hwabaek-yeongji",
+   "subject": "event-hs-sg2-hwabaek",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-sg2-namsan"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_001_0020_0340_0030",
+   "quote": "新羅有四霊地, 将議大事則大臣必㑹其地謀之",
+   "note": "삼국유사 기이 진덕왕 조. 큰일을 의논할 때 대신이 반드시 모였다는 네 영지 가운데 둘째가 남쪽 우지산이며, 이를 왕경 남쪽 남산으로 보는 견해를 따라 대표점을 잡았다."
+  },
+  {
+   "id": "claim-hs-sg2-jusanseong-loc",
+   "subject": "place-hs-sg2-jusanseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lon": 128.253806,
+    "lat": 35.729833,
+    "precision": "area"
+   },
+   "sourceId": "src-hs-ko-jusanseong",
+   "citesExcerpt": "ex-geo-jusanseong",
+   "note": "위키백과 고령 주산성 문서의 표시 좌표. 고령 대가야읍을 내려다보는 산성이다."
+  },
+  {
+   "id": "claim-hs-sg2-dg-562",
+   "subject": "polity-daegaya",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 562
+   },
+   "sourceId": "src-encykorea-daegaya",
+   "citesChunk": "chunk_era51_encykorea-daegaya-562",
+   "quote": "562년(진흥왕 23) 가야가 배반했기 때문에 이사부",
+   "note": "민족문화대백과 대가야 항목. 562년 신라가 쳐서 없앤 가야를 고령의 대가야로 본다."
+  },
+  {
+   "id": "claim-hs-sg2-goguryeo-end-668",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 668
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_022_0020_0460",
+   "quote": "秋九月, 李勣拔平壤",
+   "note": "삼국사기 고구려본기 보장왕 27년(668) 평양성 함락. 태학과 율령의 존속 상한을 나라가 끝난 해로 잡는 근거다."
+  },
+  {
+   "id": "claim-hs-sg2-silla-end-935",
+   "subject": "polity-silla",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 935
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_012_0060_0270",
+   "quote": "王率百寮, 發自王都, 歸于太祖",
+   "note": "삼국사기 신라본기 경순왕 9년(935) 귀순. 화백 회의의 존속 상한을 나라가 끝난 해로 잡는 근거다."
+  },
+  {
+   "id": "claim-hs-sg2-myeonghwal-loc",
+   "subject": "place-hs-sg2-myeonghwalseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lon": 129.25528,
+    "lat": 35.83556,
+    "precision": "area"
+   },
+   "sourceId": "src-hs-ko-myeonghwalseong",
+   "citesExcerpt": "ex-geo-myeonghwal",
+   "note": "위키백과 경주 명활성 문서의 표시 좌표."
+  },
+  {
+   "id": "claim-hs-sg2-myeonghwal-east",
+   "subject": "place-hs-sg2-myeonghwalseong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_034_0020_0140",
+   "quote": "又新月城東有明活城",
+   "note": "삼국사기 지리지. 신월성 동쪽에 명활성이 있다고 적어 왕경 안의 성임을 알려준다."
+  },
+  {
+   "id": "claim-hs-sg2-myeonghwal-move",
+   "subject": "polity-silla",
+   "predicate": "syj:capitalMovedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-sg2-myeonghwalseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_003_0050_0260",
+   "quote": "十八年, 春正月, 王移居明活城",
+   "note": "삼국사기 자비마립간 18년(475). 나제 동맹이 이어지던 동안 신라 왕이 명활성으로 거처를 옮겼다."
+  },
+  {
+   "id": "claim-hs-sg2-hwabaek-ujiam",
+   "subject": "event-hs-sg2-hwabaek",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-sg2-namsan"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_001_0020_0340_0020",
+   "quote": "㑹于南山亐知巖議國事",
+   "note": "삼국유사 진덕왕 조. 알천공·유신공 등 여섯 공이 남산 우지암에 모여 나랏일을 의논했다. 진덕왕대(647~654) 일화이므로 500년 무렵의 회의 장소를 적은 기록은 아니다."
+  },
+  {
+   "id": "claim-hs-sg2-hwabaek-sindangseo",
+   "subject": "event-hs-sg2-hwabaek",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1850_0030",
+   "quote": "事必與衆議, 號「和白」, 一人異則罷",
+   "note": "신당서 동이 신라전. 일은 반드시 여럿이 의논하며 이를 화백이라 하고 한 사람이라도 달리 말하면 그만두었다. 당대에 중국이 적은 기록이라 500년 무렵의 회의를 직접 적은 것은 아니다."
+  },
+  {
+   "id": "claim-hs-sg2-strata-golsinbun",
+   "subject": "polity-silla",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-gyeongju-wolseong"
+   },
+   "sourceId": "src-jipseong-ko_035",
+   "citesChunk": "chunk_jipseong-ko_035_ko_035_1850_0030",
+   "quote": "其族名第一骨·第二骨以自別",
+   "note": "신당서 신라전. 겨레붙이를 제1골·제2골로 나눠 스스로를 구별했고, 재상 등 열일곱 등급의 관직은 제2골까지 오를 수 있었다고 적었다."
   }
  ],
  "scenes": [
@@ -1988,7 +2267,8 @@
     ],
     "coordinateSourceIds": [],
     "coordinateNote": "태학 터의 좌표 근거가 없어 도읍 국내성의 표시 좌표를 대표점으로 썼다.",
-    "setting": "academy"
+    "setting": "academy",
+    "overseas": true
    },
    "participants": [
     {
@@ -2020,10 +2300,11 @@
    "persistence": {
     "kind": "institution",
     "from": 372,
-    "to": null,
+    "to": 668,
     "basisClaimIds": [
      "claim-hs-sg2-taehak-372",
-     "claim-hs-sg2-taehak-teach"
+     "claim-hs-sg2-taehak-teach",
+     "claim-hs-sg2-goguryeo-end-668"
     ]
    }
   },
@@ -2054,7 +2335,8 @@
     ],
     "coordinateSourceIds": [],
     "coordinateNote": "국내성 왕궁 터의 십진 좌표 근거가 없어 국내성이 있던 지안시 표시 좌표를 대표점으로 썼다.",
-    "setting": "palace"
+    "setting": "palace",
+    "overseas": true
    },
    "participants": [
     {
@@ -2083,10 +2365,11 @@
    "persistence": {
     "kind": "institution",
     "from": 373,
-    "to": null,
+    "to": 668,
     "basisClaimIds": [
      "claim-hs-sg2-code-373",
-     "claim-hs-sg2-code-enc"
+     "claim-hs-sg2-code-enc",
+     "claim-hs-sg2-goguryeo-end-668"
     ]
    }
   },
@@ -2174,7 +2457,8 @@
     ],
     "coordinateSourceIds": [],
     "coordinateNote": "국내성 왕궁 터의 좌표 근거가 없어 짝을 이루던 환도산성의 표시 좌표를 대표점으로 썼다.",
-    "setting": "palace"
+    "setting": "palace",
+    "overseas": true
    },
    "participants": [
     {
@@ -2211,13 +2495,14 @@
    "startYear": 397,
    "endYear": 397,
    "kind": "migration",
-   "summary": "백제의 학자들이 바다를 건너 왜에 한자와 유학을 전했다는 이야기다. 고사기와 일본서기에만 나오고 우리 기록에는 이름이 보이지 않는다.",
+   "summary": "백제의 학자들이 바다를 건너 왜에 한자와 유학을 전했다는 이야기다. 고사기와 일본서기에만 나오고 우리 기록에는 이름이 보이지 않는다. 전승은 근구수왕대를 가리킬 뿐 건너간 해를 못 박지 않는다.",
    "dateClaimIds": [
-    "claim-hs-sg2-wangin-geungusu"
+    "claim-hs-sg2-baekje-wa-397"
    ],
    "actionClaimIds": [
     "claim-hs-sg2-wangin-role",
-    "claim-hs-sg2-wangin-ajikgi"
+    "claim-hs-sg2-wangin-ajikgi",
+    "claim-hs-sg2-wangin-geungusu-order"
    ],
    "place": {
     "label": "야마토(나라 일대)",
@@ -2232,7 +2517,8 @@
      "src-hs-en-nara"
     ],
     "coordinateNote": "도착지가 특정되지 않아 야마토 왕권의 중심인 나라의 표시 좌표를 대표점으로 썼다.",
-    "setting": "village"
+    "setting": "village",
+    "overseas": true
    },
    "participants": [
     {
@@ -2258,7 +2544,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-sg2-wangin-geungusu"
+      "claim-hs-sg2-baekje-wa-397"
      ],
      "level": "extended"
     }
@@ -2266,7 +2552,10 @@
    "category": "foreign",
    "region": "south",
    "decade": 390,
-   "sceneFunction": "migration"
+   "sceneFunction": "migration",
+   "relatedClaimIds": [
+    "claim-hs-sg2-wangin-geungusu"
+   ]
   },
   {
    "id": "scene-hs-sg2-janggunchong",
@@ -2296,7 +2585,8 @@
     "coordinateSourceIds": [
      "src-hs-en-janggunchong"
     ],
-    "coordinateNote": "영문 위키백과 장군총 문서의 표시 좌표."
+    "coordinateNote": "영문 위키백과 장군총 문서의 표시 좌표.",
+    "overseas": true
    },
    "participants": [],
    "effects": {
@@ -2330,7 +2620,7 @@
    "startYear": 400,
    "endYear": 400,
    "kind": "battle",
-   "summary": "영락 10년 경자년, 고구려가 보병과 기병 5만을 보내 신라를 구했다. 군대는 왜병을 쫓아 임나가라까지 내려갔고 그 성이 곧 항복했다.",
+   "summary": "영락 10년 경자년, 고구려가 보병과 기병 5만을 보내 신라를 구했다. 왕이 명을 내려 보냈을 뿐 친히 갔다는 기록은 없다. 군대는 왜병을 쫓아 임나가라까지 내려갔고 그 성이 곧 항복했다.",
    "dateClaimIds": [
     "claim-hs-sg2-rescue-400"
    ],
@@ -2357,7 +2647,7 @@
     {
      "entityId": "person-gwanggaeto",
      "role": "ruler",
-     "presence": "on-site",
+     "presence": "off-site",
      "side": "a",
      "claimIds": [
       "claim-hs-sg2-rescue-400"
@@ -2462,7 +2752,8 @@
     "coordinateSourceIds": [
      "src-hs-ko-gwanggaeto-stele"
     ],
-    "coordinateNote": "위키백과 광개토대왕릉비 문서의 표시 좌표."
+    "coordinateNote": "위키백과 광개토대왕릉비 문서의 표시 좌표.",
+    "overseas": true
    },
    "participants": [
     {
@@ -2515,7 +2806,7 @@
     "claim-hs-sg2-hou-1946"
    ],
    "place": {
-    "label": "경주 호우총 출토품 보관 일원",
+    "label": "국립경주박물관 일원(호우총 출토품 보관)",
     "medium": "land",
     "precision": "area",
     "lon": 129.228361,
@@ -2636,16 +2927,18 @@
     "claim-hs-sg2-naje-web"
    ],
    "place": {
-    "label": "신라 왕경(서라벌)",
+    "label": "경주 명활성(신라 왕경 동쪽 성)",
     "medium": "land",
     "precision": "area",
-    "lon": 129.217,
-    "lat": 35.85,
+    "lon": 129.25528,
+    "lat": 35.83556,
     "claimIds": [
-     "claim-hs-sg2-gyeongju-loc"
+     "claim-hs-sg2-myeonghwal-loc"
     ],
-    "coordinateSourceIds": [],
-    "coordinateNote": "사신을 맞은 전각을 알 수 없어 신라 왕경의 표시 좌표를 대표점으로 썼다.",
+    "coordinateSourceIds": [
+     "src-hs-ko-myeonghwalseong"
+    ],
+    "coordinateNote": "433년 사신을 맞은 전각을 알 수 없다. 월성과 계림은 이미 다른 항목이 쓰고 있어, 동맹이 이어지던 475년 신라 왕이 옮겨 거처한 왕경 동쪽 명활성의 표시 좌표를 대표점으로 썼다.",
     "setting": "palace"
    },
    "participants": [
@@ -2682,7 +2975,9 @@
    "decade": 430,
    "relatedClaimIds": [
     "claim-hs-sg2-naje-553",
-    "claim-hs-sg2-naje-break"
+    "claim-hs-sg2-naje-break",
+    "claim-hs-sg2-myeonghwal-move",
+    "claim-hs-sg2-myeonghwal-east"
    ],
    "persistence": {
     "kind": "institution",
@@ -2721,7 +3016,8 @@
     "coordinateSourceIds": [
      "src-hs-ko-muyongchong"
     ],
-    "coordinateNote": "위키백과 무용총 문서의 표시 좌표."
+    "coordinateNote": "위키백과 무용총 문서의 표시 좌표.",
+    "overseas": true
    },
    "participants": [],
    "effects": {
@@ -2952,18 +3248,18 @@
     "claim-hs-sg2-dg-place"
    ],
    "place": {
-    "label": "고령 대가야 중심지",
+    "label": "고령 주산성(대가야 중심지)",
     "medium": "land",
     "precision": "area",
-    "lon": 128.25275,
-    "lat": 35.724694,
+    "lon": 128.253806,
+    "lat": 35.729833,
     "claimIds": [
-     "claim-hs-sg2-jisandong-loc"
+     "claim-hs-sg2-jusanseong-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs-ko-jisandong"
+     "src-hs-ko-jusanseong"
     ],
-    "coordinateNote": "대가야 왕성 터의 십진 좌표 근거가 없어 왕들의 무덤이 늘어선 지산동 고분군 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "대가야 왕성 터의 좌표 근거가 없어 고령 대가야읍을 내려다보는 주산성의 표시 좌표를 중심지 대표점으로 썼다. 무덤 떼인 지산동 고분군과 점이 겹치지 않게 했다.",
     "setting": "village"
    },
    "participants": [
@@ -2995,9 +3291,13 @@
     "to": 562,
     "basisClaimIds": [
      "claim-hs-sg2-dg-goryeong",
-     "claim-hs-sg2-dg-479"
+     "claim-hs-sg2-dg-479",
+     "claim-hs-sg2-dg-562"
     ]
-   }
+   },
+   "relatedClaimIds": [
+    "claim-hs-sg2-dg-562"
+   ]
   },
   {
    "id": "scene-hs-sg2-cheonmachong",
@@ -3069,20 +3369,25 @@
     "claim-hs-sg2-hwabaek-sunjang"
    ],
    "actionClaimIds": [
+    "claim-hs-sg2-hwabaek-sindangseo",
     "claim-hs-sg2-hwabaek-def",
-    "claim-hs-sg2-hwabaek-daedeung"
+    "claim-hs-sg2-hwabaek-daedeung",
+    "claim-hs-sg2-hwabaek-yeongji",
+    "claim-hs-sg2-hwabaek-ujiam"
    ],
    "place": {
-    "label": "신라 왕경의 귀족 회의",
+    "label": "경주 남산(신라 사령지의 남쪽 산)",
     "medium": "land",
     "precision": "area",
-    "lon": 129.217,
-    "lat": 35.85,
+    "lon": 129.22556,
+    "lat": 35.76806,
     "claimIds": [
-     "claim-hs-sg2-gyeongju-loc"
+     "claim-hs-sg2-namsan-loc"
     ],
-    "coordinateSourceIds": [],
-    "coordinateNote": "회의 장소로 전하는 사영지의 좌표 근거가 없어 신라 왕경의 표시 좌표를 대표점으로 썼다.",
+    "coordinateSourceIds": [
+     "src-hs-en-namsan"
+    ],
+    "coordinateNote": "삼국유사가 적은 네 영지 가운데 남쪽 산이자 여섯 공이 모여 나랏일을 의논한 남산 우지암을 따라 경주 남산의 표시 좌표를 대표점으로 썼다. 우지암 자체의 자리는 확인되지 않았고, 경주의 다른 항목과 점이 겹치지 않게 했다.",
     "setting": "palace"
    },
    "participants": [],
@@ -3101,10 +3406,11 @@
    "persistence": {
     "kind": "institution",
     "from": 500,
-    "to": null,
+    "to": 935,
     "basisClaimIds": [
      "claim-hs-sg2-hwabaek-def",
-     "claim-hs-sg2-hwabaek-daedeung"
+     "claim-hs-sg2-hwabaek-daedeung",
+     "claim-hs-sg2-silla-end-935"
     ]
    }
   },
@@ -3300,18 +3606,19 @@
     "claim-hs-sg2-taehak-teach",
     "claim-hs-sg2-taehak-place",
     "claim-hs-sg2-taehak-king",
-    "claim-hs-sg2-gungnae-loc"
+    "claim-hs-sg2-gungnae-loc",
+    "claim-hs-sg2-goguryeo-end-668"
    ],
    "sceneId": "scene-hs-sg2-taehak",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 해외(중국 지린성 지안시) 항목이다. 태학 건물 터의 좌표 근거는 찾지 못했다.",
+   "note": "[10한사1-02-04] · standard · 해외(중국 지린성 지안시) 항목이다. 태학 건물 터의 좌표 근거는 찾지 못했다. 항목 type 은 institution 이지만 교육기관이라 category 를 culture 로 두었다. 존속 종료 668년은 제도 폐지를 적은 기록이 아니라 고구려가 무너진 해를 상한으로 잡은 값이다.",
    "lon": 126.17861,
    "lat": 41.12083,
    "coordinateBasis": "location claim-hs-sg2-gungnae-loc",
    "persistence": {
     "kind": "institution",
     "from": 372,
-    "to": null
+    "to": 668
    }
   },
   {
@@ -3329,18 +3636,19 @@
     "claim-hs-sg2-code-373",
     "claim-hs-sg2-code-enc",
     "claim-hs-sg2-code-king",
-    "claim-hs-sg2-jian-loc"
+    "claim-hs-sg2-jian-loc",
+    "claim-hs-sg2-goguryeo-end-668"
    ],
    "sceneId": "scene-hs-sg2-goguryeo-code",
    "confidence": "high",
-   "note": "[10한사1-01-01] · core · 해외(중국 지린성 지안시) 항목이다. 율령의 조문은 전하지 않는다.",
+   "note": "[10한사1-01-01] · core · 해외(중국 지린성 지안시) 항목이다. 율령의 조문은 전하지 않는다. 존속 종료 668년은 율령 폐지를 적은 기록이 아니라 고구려가 무너진 해를 상한으로 잡은 값이다.",
    "lon": 126.194,
    "lat": 41.1253,
    "coordinateBasis": "location claim-hs-sg2-jian-loc",
    "persistence": {
     "kind": "institution",
     "from": 373,
-    "to": null
+    "to": 668
    }
   },
   {
@@ -3404,14 +3712,15 @@
    "modernPlace": "일본 나라현 나라시",
    "what": "백제 학자들이 왜에 한자와 유학을 전함",
    "claimIds": [
+    "claim-hs-sg2-baekje-wa-397",
     "claim-hs-sg2-wangin-geungusu",
+    "claim-hs-sg2-wangin-geungusu-order",
     "claim-hs-sg2-wangin-role",
-    "claim-hs-sg2-wangin-ajikgi",
-    "claim-hs-sg2-nara-loc"
+    "claim-hs-sg2-wangin-ajikgi"
    ],
    "sceneId": "scene-hs-sg2-wangin",
    "confidence": "low",
-   "note": "[10한사1-02-01] · extended · 해외(일본 나라현) 항목이다. 연대는 전승마다 달라 항목의 기준 연도 397을 그대로 두고, 근거로는 근구수왕 즉위(375)만 확인했다.",
+   "note": "[10한사1-02-01] · extended · 해외(일본 나라현) 항목이다. 도왜 연대를 짚는 사료는 없다. 표시 연도 397은 항목이 잡은 기준 연도로, 백제와 왜의 통교가 확인되는 해(삼국사기 아신왕 6년)를 배경으로 삼았을 뿐이다. 근거로 확인한 것은 근구수왕대(375 즉위)라는 전승뿐이며 그 전승 서술은 위키백과 정리에 기댄다.",
    "lon": 135.805,
    "lat": 34.68444,
    "coordinateBasis": "location claim-hs-sg2-nara-loc"
@@ -3435,7 +3744,7 @@
    ],
    "sceneId": "scene-hs-sg2-janggunchong",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 해외(중국 지린성 지안시) 항목이다. 축조 연도를 못 박은 기록이 없어 항목의 기준 연도 400을 썼다.",
+   "note": "[10한사1-02-04] · standard · 해외(중국 지린성 지안시) 항목이다. 축조 연도를 못 박은 기록이 없어 항목의 기준 연도 400을 썼다. 피장자와 형태 서술은 위키백과 정리에 기댄다.",
    "lon": 126.196917,
    "lat": 41.145944,
    "coordinateBasis": "location claim-hs-sg2-janggun-loc",
@@ -3481,13 +3790,14 @@
    "modernPlace": "경상북도 경주시 일원",
    "what": "귀족·평민·천민으로 나뉜 고대 사회의 계층",
    "claimIds": [
+    "claim-hs-sg2-strata-golsinbun",
     "claim-hs-sg2-strata-sunjang",
     "claim-hs-sg2-strata-sumyo",
     "claim-hs-sg2-strata-golpum"
    ],
    "sceneId": null,
    "confidence": "low",
-   "note": "[10한사1-02-03] · standard · 제도 전반을 다루는 항목이라 한 지점을 짚을 좌표 근거가 없어 장면을 만들지 않았다. 근거는 능비의 수묘인 연호(415년 무렵)와 지증왕 3년(502) 순장 금지다."
+   "note": "[10한사1-02-03] · standard · 삼국 전체의 신분 질서를 묶은 항목이라 한 지점으로 좁힐 수 없어 장면을 만들지 않았다. 근거는 신라의 골 구분을 적은 신당서 신라전, 능비의 수묘인 연호(415년 무렵), 지증왕 3년(502) 순장 금지다. 골품제 서술은 위키백과 정리에 기댄 보조 근거다."
   },
   {
    "id": "fact-hs-sg2-009",
@@ -3551,8 +3861,8 @@
    "decade": 410,
    "year": 415,
    "yearVerbatim": "415년(을묘년)",
-   "placeLabel": "경주 호우총(노서동 140호분)",
-   "modernPlace": "경상북도 경주시 노서동",
+   "placeLabel": "국립경주박물관 일원(호우총 출토품 보관)",
+   "modernPlace": "경상북도 경주시 인왕동",
    "what": "광개토대왕 이름이 새겨진 채 신라 무덤에서 나온 청동 그릇",
    "claimIds": [
     "claim-hs-sg2-hou-415",
@@ -3562,7 +3872,7 @@
    ],
    "sceneId": "scene-hs-sg2-houmyeong",
    "confidence": "high",
-   "note": "[10한사1-02-01] · standard · 그릇은 415년에 만들어졌고 무덤은 1946년에 발굴되었다. 장면의 연도는 제작 연도를 썼다.",
+   "note": "[10한사1-02-01] · standard · 그릇은 415년에 만들어졌고 무덤은 1946년에 발굴되었다. 장면의 연도는 제작 연도를 썼다. 호우총(노서동 140호분)의 십진 좌표를 얻지 못해 좌표와 장소 이름을 국립경주박물관 일원으로 맞추었다. 호우 자체는 국립중앙박물관에 있다.",
    "lon": 129.228361,
    "lat": 35.828983,
    "coordinateBasis": "location claim-hs-sg2-gjmuseum-loc",
@@ -3609,8 +3919,8 @@
    "decade": 430,
    "year": 433,
    "yearVerbatim": "433년(눌지마립간 17년)",
-   "placeLabel": "신라 왕경(서라벌)",
-   "modernPlace": "경상북도 경주시",
+   "placeLabel": "경주 명활성(신라 왕경 동쪽 성)",
+   "modernPlace": "경상북도 경주시 천군동",
    "what": "고구려 남진에 맞서 백제와 신라가 120년간 손을 잡음",
    "claimIds": [
     "claim-hs-sg2-naje-433",
@@ -3619,14 +3929,16 @@
     "claim-hs-sg2-naje-web",
     "claim-hs-sg2-naje-553",
     "claim-hs-sg2-naje-break",
-    "claim-hs-sg2-gyeongju-loc"
+    "claim-hs-sg2-gyeongju-loc",
+    "claim-hs-sg2-myeonghwal-move",
+    "claim-hs-sg2-myeonghwal-east"
    ],
    "sceneId": "scene-hs-sg2-naje",
    "confidence": "high",
-   "note": "[10한사1-01-01] · standard · 두 나라 기록이 같은 해 7월 화친을 적었다. 553년 신주 설치를 동맹의 끝으로 보았다.",
-   "lon": 129.217,
-   "lat": 35.85,
-   "coordinateBasis": "location claim-hs-sg2-gyeongju-loc",
+   "note": "[10한사1-01-01] · standard · 두 나라 기록이 같은 해 7월 화친을 적었다. 553년 신주 설치를 동맹의 끝으로 보았다. 사신을 맞은 전각을 알 수 없어, 동맹기에 신라 왕이 옮겨 거처한 명활성(475)의 표시 좌표를 왕경 대표점으로 썼다.",
+   "lon": 129.25528,
+   "lat": 35.83556,
+   "coordinateBasis": "location claim-hs-sg2-myeonghwal-loc",
    "persistence": {
     "kind": "institution",
     "from": 433,
@@ -3652,7 +3964,7 @@
    ],
    "sceneId": "scene-hs-sg2-muyongchong",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 해외(중국 지린성 지안시) 항목이다. 축조 연도를 못 박은 기록이 없어 항목의 기준 연도 450을 썼다. 벽화 관행은 같은 시기 덕흥리 벽화고분(408) 해제로 보탰다.",
+   "note": "[10한사1-02-04] · standard · 해외(중국 지린성 지안시) 항목이다. 축조 연도를 못 박은 기록이 없어 항목의 기준 연도 450을 썼다. 벽화 관행은 같은 시기 덕흥리 벽화고분(408) 해제로 보탰고, 무용총 자체의 서술은 위키백과 정리에 기댄다.",
    "lon": 126.18722,
    "lat": 41.15694,
    "coordinateBasis": "location claim-hs-sg2-muyong-loc",
@@ -3752,7 +4064,7 @@
    "decade": 470,
    "year": 479,
    "yearVerbatim": "479년(남제 견사)",
-   "placeLabel": "고령 대가야 중심지",
+   "placeLabel": "고령 주산성(대가야 중심지)",
    "modernPlace": "경상북도 고령군 대가야읍",
    "what": "고령의 대가야가 금관가야를 대신해 가야를 이끌던 때",
    "claimIds": [
@@ -3760,14 +4072,15 @@
     "claim-hs-sg2-dg-goryeong",
     "claim-hs-sg2-dg-481",
     "claim-hs-sg2-dg-place",
-    "claim-hs-sg2-jisandong-loc"
+    "claim-hs-sg2-jisandong-loc",
+    "claim-hs-sg2-dg-562"
    ],
    "sceneId": "scene-hs-sg2-daegaya",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 건국 전승은 42년이지만 이 칸은 5세기 후반의 활동을 다룬다. 남제 견사는 위키백과 정리에 기댔다.",
-   "lon": 128.25275,
-   "lat": 35.724694,
-   "coordinateBasis": "location claim-hs-sg2-jisandong-loc",
+   "note": "[10한사1-01-01] · standard · 건국 전승은 42년이지만 이 칸은 5세기 후반의 활동을 다룬다. 남제 견사는 위키백과 정리에 기댔다. 존속 종료 562년은 민족문화대백과 대가야 항목의 멸망 서술을 근거로 삼았다. 왕성 터의 좌표 근거가 없어 주산성 표시 좌표를 중심지 대표점으로 썼다.",
+   "lon": 128.253806,
+   "lat": 35.729833,
+   "coordinateBasis": "location claim-hs-sg2-jusanseong-loc",
    "persistence": {
     "kind": "city",
     "from": 479,
@@ -3794,7 +4107,7 @@
    ],
    "sceneId": "scene-hs-sg2-cheonmachong",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · extended · 축조 연도를 못 박은 기록이 없어 항목의 기준 연도 500을 썼다. 무덤 양식은 같은 대릉원 일원 금관총의 금석문 해제로 보탰다.",
+   "note": "[10한사1-02-04] · extended · 축조 연도를 못 박은 기록이 없어 항목의 기준 연도 500을 썼다. 근거 발췌는 5~6세기로만 좁힌다. 무덤 양식은 같은 대릉원 일원 금관총의 금석문 해제로 보탰고, 천마총 자체의 서술은 위키백과 정리에 기댄다.",
    "lon": 129.2125,
    "lat": 35.83778,
    "coordinateBasis": "location claim-hs-sg2-cm-loc",
@@ -3812,25 +4125,28 @@
    "decade": 500,
    "year": 500,
    "yearVerbatim": "6세기 전후",
-   "placeLabel": "신라 왕경의 귀족 회의",
-   "modernPlace": "경상북도 경주시",
+   "placeLabel": "경주 남산(신라 사령지의 남쪽 산)",
+   "modernPlace": "경상북도 경주시 남산",
    "what": "한 사람이라도 반대하면 못 정한 신라 귀족 회의",
    "claimIds": [
-    "claim-hs-sg2-hwabaek-sunjang",
+    "claim-hs-sg2-hwabaek-sindangseo",
     "claim-hs-sg2-hwabaek-def",
     "claim-hs-sg2-hwabaek-daedeung",
-    "claim-hs-sg2-gyeongju-loc"
+    "claim-hs-sg2-hwabaek-yeongji",
+    "claim-hs-sg2-hwabaek-ujiam",
+    "claim-hs-sg2-hwabaek-sunjang",
+    "claim-hs-sg2-silla-end-935"
    ],
    "sceneId": "scene-hs-sg2-hwabaek",
    "confidence": "medium",
-   "note": "[10한사1-02-03] · standard · 만장일치와 대등 서술은 수서·당서를 인용한 정리에 기댔다. 회의 장소는 확인되지 않았다.",
-   "lon": 129.217,
-   "lat": 35.85,
-   "coordinateBasis": "location claim-hs-sg2-gyeongju-loc",
+   "note": "[10한사1-01-01] · standard · 만장일치는 신당서 신라전 원문(事必與衆議, 號「和白」, 一人異則罷)으로 받쳤고, 참석자를 진골 20명 대등으로 적은 서술은 위키백과 정리에 기댄다. 표시 연도 500은 항목이 잡은 기준 연도이며 이 해를 짚은 사료는 없다. 회의 장소는 삼국유사의 네 영지와 남산 우지암 회의 기록을 따라 경주 남산을 대표점으로 잡았고, 우지암 자리는 확인되지 않았다. 존속 종료 935년은 제도 폐지를 적은 기록이 아니라 신라가 끝난 해를 상한으로 잡은 값이다.",
+   "lon": 129.22556,
+   "lat": 35.76806,
+   "coordinateBasis": "location claim-hs-sg2-namsan-loc",
    "persistence": {
     "kind": "institution",
     "from": 500,
-    "to": null
+    "to": 935
    }
   },
   {
@@ -3878,7 +4194,7 @@
    ],
    "sceneId": "scene-hs-sg2-jisandong",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 조성 시기가 4~6세기에 걸쳐 항목의 기준 연도 500을 썼다. 대가야 항목과 같은 좌표를 쓰되 시기를 달리 잡았다. 고령이 대가야였다는 근거는 삼국사기 지리지 고령군 조다.",
+   "note": "[10한사1-02-04] · standard · 조성 시기가 4~6세기에 걸쳐 항목의 기준 연도 500을 썼고, 이 해를 짚은 근거는 없다. 고령이 대가야였다는 근거는 삼국사기 지리지 고령군 조이며 고분군 서술은 위키백과 정리에 기댄다. 대가야 항목은 주산성으로 옮겨 점이 겹치지 않는다.",
    "lon": 128.25275,
    "lat": 35.724694,
    "coordinateBasis": "location claim-hs-sg2-jisandong-loc",
@@ -3909,7 +4225,7 @@
    ],
    "sceneId": "scene-hs-sg2-gold-crown",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 근거는 천마총 금관(국보 제188호) 출토 기록과 금관총·서봉총의 금석문 해제다. 제작 연도를 못 박은 기록은 없다.",
+   "note": "[10한사1-02-04] · standard · 근거는 천마총 금관(국보 제188호) 출토 기록과 금관총·서봉총의 금석문 해제다. 제작 연도를 못 박은 기록은 없고 표시 연도 500은 항목이 잡은 기준 연도다. 출토 무덤과 양식 서술은 위키백과 정리에 기댄다.",
    "lon": 129.212,
    "lat": 35.838,
    "coordinateBasis": "location claim-hs-sg2-crown-loc",
@@ -3936,8 +4252,8 @@
     "claim-hs-sg2-tax-jinheung"
    ],
    "sceneId": null,
-   "confidence": "medium",
-   "note": "[10한사1-02-02] · standard · 제도 전반을 다루는 항목이라 한 지점을 짚을 좌표 근거가 없어 장면을 만들지 않았다. 근거는 조(租)·조(調)를 한 해 면제한 397년·555년 기사와 역부를 징발해 열두 성을 쌓은 504년 기사다."
+   "confidence": "low",
+   "note": "[10한사1-02-02] · standard · 삼국 전체의 수취 제도를 묶은 항목이라 한 지점으로 좁힐 수 없어 장면을 만들지 않았다. 근거는 조(租)·조(調)를 한 해 면제한 397년·555년 기사와 역부를 징발해 열두 성을 쌓은 504년 기사이며, 항목 자체를 짚은 근거는 못 찾아 confidence 를 low 로 내렸다."
   }
  ],
  "missing": [
@@ -3947,7 +4263,7 @@
    "topic": "삼국의 신분 구조",
    "detail": "귀족·평민·천민의 구분을 한 지점·한 해로 짚을 근거를 찾지 못해 장면 없이 사실만 남겼다. 능비의 수묘인 연호와 지증왕 3년 순장 금지로 계층의 존재만 확인했다.",
    "neededSource": "삼국사기 잡지(색복·거기·옥사) 또는 민족문화대백과 골품제도 항목의 발췌",
-   "reason": "제도 전반 항목이라 장면 좌표의 근거가 없다"
+   "reason": "제도 전반이라 한 지점으로 좁힐 수 없다"
   },
   {
    "id": "miss-hs-sg2-2",
@@ -3955,7 +4271,15 @@
    "topic": "삼국의 수취 제도",
    "detail": "조·조·역의 수취 사례는 확인했으나 거두는 장소를 짚을 좌표 근거가 없어 장면을 만들지 않았다.",
    "neededSource": "수서·주서 고구려·백제전의 세제 조항이나 민족문화대백과 수취체제 항목의 발췌",
-   "reason": "제도 전반 항목이라 장면 좌표의 근거가 없다"
+   "reason": "제도 전반이라 한 지점으로 좁힐 수 없다"
+  },
+  {
+   "id": "miss-hs-sg2-3",
+   "itemId": "hs-samguk-ajikgi-wangin",
+   "topic": "아직기와 왕인의 도왜 연대",
+   "detail": "전승은 근구수왕대(375~384)를 가리킬 뿐이고 표시 연도 397은 항목이 잡은 기준 연도다. 도왜 자체를 연월로 적은 사료를 찾지 못했다.",
+   "neededSource": "일본서기·고사기 원문 번역 또는 민족문화대백과 왕인 항목의 발췌",
+   "reason": "도왜 연대를 짚는 사료 근거 없음"
   }
  ]
 }

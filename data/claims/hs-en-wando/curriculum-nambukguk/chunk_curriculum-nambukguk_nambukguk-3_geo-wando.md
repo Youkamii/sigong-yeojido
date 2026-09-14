@@ -9,8 +9,8 @@ status: "draft"
 ```claims-json
 [
   {
-    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-loc-cheonghaejin",
-    "subject": "place-hs-nbg3-cheonghaejin",
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-loc-wando",
+    "subject": "place-hs-nbg3-wando",
     "predicate": "syj:locatedAt",
     "object": {
       "kind": "location",
@@ -18,7 +18,7 @@ status: "draft"
       "lon": 126.75,
       "precision": "area"
     },
-    "note": "청해진 본영이 있던 완도군 표시 좌표. 장도 유적 자체의 십진 좌표 근거는 찾지 못했다.",
+    "note": "청해진이 놓였던 완도(완도군) 표시 좌표.",
     "fromSource": "src-hs-en-wando",
     "citesChunk": "chunk_curriculum-nambukguk_nambukguk-3_geo-wando",
     "quote": "34.317; 126.750",

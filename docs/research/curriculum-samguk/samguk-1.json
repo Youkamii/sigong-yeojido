@@ -1,22 +1,21 @@
 {
   "job": "samguk-1",
-  "sources": 35,
-  "excerpts": 56,
-  "chunkClaims": 51,
-  "excerptClaims": 54,
+  "sources": 42,
+  "excerpts": 65,
+  "chunkClaims": 57,
+  "excerptClaims": 63,
   "facts": 24,
   "factsByCategory": {
-    "administration": 3,
+    "administration": 4,
     "culture": 2,
-    "disaster": 1,
     "economy": 1,
     "facility": 3,
     "foreign": 1,
     "person": 11,
     "war": 2
   },
-  "claims": 105,
-  "entities": 49,
+  "claims": 120,
+  "entities": 59,
   "rawFilesChecked": [
     {
       "source": "src-hs-enc-hyeokgeose",
@@ -111,8 +110,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0077924",
       "sha256": "6032a6b6ead3cd0cf3f48c1c82bce75f8759e6df7ae6bb19bf21251a9657abaa",
       "rawBytes": 84513,
-      "excerpts": 2,
-      "quotedWords": 12
+      "excerpts": 3,
+      "quotedWords": 19
     },
     {
       "source": "src-hs-enc-goi",
@@ -135,8 +134,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0010976",
       "sha256": "5d1576b4b57d63c23ce31760ceb33f1dce87012d59b52518e541e3342f4f46e7",
       "rawBytes": 119073,
-      "excerpts": 2,
-      "quotedWords": 13
+      "excerpts": 3,
+      "quotedWords": 23
     },
     {
       "source": "src-hs-enc-gaya",
@@ -215,8 +214,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0058547",
       "sha256": "b8700d4a2c8d4cc5f8dc38793fcff62103290329cf5a0b07ea055ebd73a8d76b",
       "rawBytes": 87105,
-      "excerpts": 3,
-      "quotedWords": 17
+      "excerpts": 2,
+      "quotedWords": 14
     },
     {
       "source": "src-hs-enc-mahan",
@@ -297,6 +296,62 @@
       "rawBytes": 97517,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs-en-koguryo-capitals",
+      "url": "https://en.wikipedia.org/wiki/Capital_Cities_and_Tombs_of_the_Ancient_Koguryo_Kingdom",
+      "sha256": "7a53267b0d8c73617971d29ef323fb0b4e15750ee437a999718e6508f66bd469",
+      "rawBytes": 149263,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-en-tomb-general",
+      "url": "https://en.wikipedia.org/wiki/Tomb_of_the_General",
+      "sha256": "3ccbea35a4cd5a2bb6e2c1fe21f456d4f36e2aba1ee53b9d167f33d009229c10",
+      "rawBytes": 115600,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-en-dandong",
+      "url": "https://en.wikipedia.org/wiki/Dandong",
+      "sha256": "339fc8ee15a479a3ff8e2acc031aa72da13c267e7732fe511e4a2aa2df7ee923",
+      "rawBytes": 464722,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-en-manpo",
+      "url": "https://en.wikipedia.org/wiki/Manpo",
+      "sha256": "9993b0eea8217d5f101dd7573d5c93e9bf96dbbf5ddf30a1ae9a902c00360845",
+      "rawBytes": 175811,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-seokchondong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EC%84%9D%EC%B4%8C%EB%8F%99_%EA%B3%A0%EB%B6%84%EA%B5%B0",
+      "sha256": "382aef976db00199f1d32a7b23004aa9064f47134df7eab5514c9b9621a16af1",
+      "rawBytes": 146304,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-bangidong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EB%B0%A9%EC%9D%B4%EB%8F%99_%EA%B3%A0%EB%B6%84%EA%B5%B0",
+      "sha256": "8e749f2c2c8b517c21fd027d4d9b224dcfed087fa52a2ae89abbe070e41c199b",
+      "rawBytes": 81777,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-enc-deongiswe",
+      "url": "https://encykorea.aks.ac.kr/Article/E0015461",
+      "sha256": "6ddaa6dba00a73a83b8713d79277cf25bf6aec6c1e249bda9b074f0464bbfeba",
+      "rawBytes": 103967,
+      "excerpts": 2,
+      "quotedWords": 23
     }
   ],
   "missing": [],
@@ -311,12 +366,13 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-samguk-1"
+    "sessionId": "workflow-samguk-1",
+    "revised": 1789722400
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "event-hs-goguryeo-buddhism"
+    "polity-hs-goguryeo"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

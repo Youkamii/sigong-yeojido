@@ -66,7 +66,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-19"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

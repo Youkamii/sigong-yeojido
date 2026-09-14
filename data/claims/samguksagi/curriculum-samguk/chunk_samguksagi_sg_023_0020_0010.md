@@ -46,6 +46,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-1-hs-onjo-buaak",
+    "subject": "person-onjo",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-buaak"
+    },
+    "citesChunk": "chunk_samguksagi_sg_023_0020_0010",
+    "quote": "遂至漢山, 登負兒嶽, 望可居之地",
+    "note": "온조·비류가 한산 부아악에 올라 살 만한 땅을 바라보았다는 건국 기사.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

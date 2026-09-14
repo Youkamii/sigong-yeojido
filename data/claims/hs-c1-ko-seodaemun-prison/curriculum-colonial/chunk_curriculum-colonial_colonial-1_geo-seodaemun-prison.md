@@ -26,6 +26,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-17"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-em-loc",
+    "subject": "place-hs-c4-seodaemun-prison",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 37.57442,
+      "lon": 126.95663,
+      "precision": "site"
+    },
+    "citesChunk": "chunk_curriculum-colonial_colonial-1_geo-seodaemun-prison",
+    "quote": "37.57442; 126.95663",
+    "note": "서대문형무소(현 서대문형무소역사관)의 문서 표시 좌표.",
+    "fromSource": "src-hs-c1-ko-seodaemun-prison",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

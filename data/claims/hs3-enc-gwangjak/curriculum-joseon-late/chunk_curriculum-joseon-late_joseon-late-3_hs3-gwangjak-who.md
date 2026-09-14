@@ -14,9 +14,9 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "place-hs3-byeokgolje"
+      "id": "polity-hs-joseon"
     },
-    "note": "지주·자작농뿐 아니라 소작농도 광작에 뛰어들었다.",
+    "note": "지주·자작농뿐 아니라 소작농도 광작에 뛰어들었다. 발췌는 벽골제나 특정 들녘을 말하지 않는다.",
     "fromSource": "src-hs3-enc-gwangjak",
     "citesChunk": "chunk_curriculum-joseon-late_joseon-late-3_hs3-gwangjak-who",
     "quote": "지주, 자작농뿐 아니라 소작농도 광작에 참여할",

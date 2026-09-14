@@ -24,11 +24,11 @@ status: "draft"
     "note": "1907년 6월 헤이그 특사 사건을 빌미로 황제 폐위가 추진되었다.",
     "fromSource": "src-hs-enc-hanil-sinhyeopyak",
     "citesChunk": "chunk_curriculum-modern-transition_modern-transition-4_gojong-abdication",
-    "quote": "1907년 6월 헤이그특사사건이 일어나자 이를 빌미로 황제 폐위를 추진하고",
+    "quote": "1907년 6월 헤이그특사사건이 일어나자",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

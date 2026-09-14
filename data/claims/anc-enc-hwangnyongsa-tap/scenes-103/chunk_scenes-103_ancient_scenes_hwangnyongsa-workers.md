@@ -82,7 +82,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "person-hs-sg5-abiji"
+      "id": "person-abiji"
     },
     "citesChunk": "chunk_scenes-103_ancient_scenes_hwangnyongsa-workers",
     "quote": "백제의 장인(匠人) 아비지(阿非知)를 초청하여 기술지도를 받고",

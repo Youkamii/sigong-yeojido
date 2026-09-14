@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-buma-masan",
+    "subject": "event-hs-c4-buma",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-rok"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_buma-masan",
+    "quote": "민주화운동은 18일에 마산으로 확산됐다",
+    "note": "10월 18일 마산으로 번졌다.",
+    "fromSource": "src-encykorea-buma",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

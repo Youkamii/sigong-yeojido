@@ -9,23 +9,6 @@ status: "draft"
 ```claims-json
 [
   {
-    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-neobegin-tool",
-    "subject": "event-hs-pg1-neobegin",
-    "predicate": "syj:relatedTo",
-    "object": {
-      "kind": "entity",
-      "id": "thing-hs-pg1-ganseokgi"
-    },
-    "note": "잡곡 농경이 퍼지면서 먹을거리와 도구가 달라졌다.",
-    "fromSource": "src-hs-pg1-enc-neolithic",
-    "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-1_neo-farm",
-    "quote": "신석기 전기부터 잡곡 농경이 전국적으로 널리 보급되면서 조, 기장, 콩, 팥 등은 새로운 식단에 추가되었다.",
-    "origin": "ai",
-    "status": "draft",
-    "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
-  },
-  {
     "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-farming-act",
     "subject": "event-hs-pg1-farming",
     "predicate": "syj:relatedTo",
@@ -40,7 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-garak-period",
@@ -57,7 +40,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

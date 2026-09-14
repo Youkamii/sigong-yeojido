@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-imf-request",
+    "subject": "person-encykorea-kim-youngsam",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-c5-imf-crisis"
+    },
+    "citesChunk": "chunk_period96_modern_kys-1997",
+    "quote": "1997년 11월 국제통화기금(IMF)에 구제금융을 요청하였다.",
+    "note": "김영삼 정부가 구제금융을 요청했다",
+    "fromSource": "src-encykorea-kim-youngsam",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

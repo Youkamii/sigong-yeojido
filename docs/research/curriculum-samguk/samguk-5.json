@@ -1,9 +1,9 @@
 {
   "job": "samguk-5",
-  "sources": 22,
-  "excerpts": 23,
-  "chunkClaims": 75,
-  "excerptClaims": 23,
+  "sources": 23,
+  "excerpts": 25,
+  "chunkClaims": 79,
+  "excerptClaims": 25,
   "facts": 22,
   "factsByCategory": {
     "administration": 4,
@@ -12,8 +12,8 @@
     "person": 5,
     "war": 10
   },
-  "claims": 98,
-  "entities": 55,
+  "claims": 104,
+  "entities": 56,
   "rawFilesChecked": [
     {
       "source": "src-hs-ko-busosanseong",
@@ -69,7 +69,7 @@
       "sha256": "e819b8d445ce00271e0e1ba1edfde97122fdc7b6264069db5571b089a5d95d89",
       "rawBytes": 224622,
       "excerpts": 2,
-      "quotedWords": 5
+      "quotedWords": 7
     },
     {
       "source": "src-hs-ko-tongdosa",
@@ -190,6 +190,14 @@
       "rawBytes": 98416,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-buyeo-wangneungwon",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC_%EC%99%95%EB%A6%89%EC%9B%90",
+      "sha256": "989cbd5d7c2576347947248e2c9353dd88a7577fb33920a98db18616fa13fcdb",
+      "rawBytes": 125585,
+      "excerpts": 2,
+      "quotedWords": 8
     }
   ],
   "missing": [],
@@ -204,12 +212,14 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-samguk-5"
+    "sessionId": "workflow-samguk-5",
+    "revised": 1789379626
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-sg5-wolseong"
+    "person-encykorea-uija",
+    "place-hs-sg5-buyeo-wangneungwon"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

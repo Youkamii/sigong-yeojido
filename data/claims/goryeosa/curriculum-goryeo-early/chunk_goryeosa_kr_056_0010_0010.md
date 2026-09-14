@@ -27,15 +27,15 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-5do-define",
-    "subject": "polity-hs-goryeo",
+    "subject": "event-hs-5do-yanggye",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "place-hs-gaegyeong-court"
+      "id": "polity-hs-goryeo"
     },
     "citesChunk": "chunk_goryeosa_kr_056_0010_0010",
     "quote": "自是以後, 定爲五道·兩界",
-    "note": "고려사 지리지 서문: 이 뒤로 양광·경상·전라·교주·서해의 5도와 동계·북계의 양계로 정해졌다.",
+    "note": "고려사 지리지 서문: 이 뒤로 양광·경상·전라·교주·서해의 5도와 동계·북계의 양계로 정해졌다. 서문에 연도는 없다.",
     "fromSource": "src-goryeosa",
     "origin": "ai",
     "status": "draft",

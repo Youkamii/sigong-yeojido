@@ -1,0 +1,148 @@
+{
+  "job": "contemporary-1",
+  "checker": "claude-opus-5 high",
+  "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-contemporary --job contemporary-1 -> PASS: failures=0 warnings=0 (facts 24, scenes 24, claims 104, chunkClaims 15, excerptClaims 89; category administration 13 / foreign 3 / person 6 / war 2, region central 16 / north 5 / south 2 / island 1, decade 1940)",
+  "verdict": "fix",
+  "issues": [
+    {
+      "severity": "major",
+      "itemId": "hs-contemporary-dprk-establishment",
+      "claimId": "claim-hs-c1-dprk-1948",
+      "problem": "조선민주주의인민공화국의 수립일을 'syj:foundedIn 1948년 8월 25일(precision day)'로 단언했는데, 인용한 발췌는 북조선인민회의가 '1948년 8월 25일에 진행된 총선거에 의하여 최고인민회의가 설치될 때까지' 존속했다는 서술이다. 8월 25일은 최고인민회의 대의원 선거일이지 공화국 수립일이 아니다. 같은 result 의 fact.yearVerbatim 과 scene.summary 는 9월 9일로 적고 있어 result 안에서도 어긋난다.",
+      "fix": "claim-hs-c1-dprk-1948 의 predicate 를 syj:occurredIn 으로 바꾸고 대상을 최고인민회의 총선거로 고쳐 적거나, foundedIn 근거를 이미 확보한 로컬 조각 chunk_era51_encykorea-bukhan-99(src-encykorea-bukhan, date null 이라 연도 대조 생략)로 옮긴다.",
+      "evidence": "raw/enc-bukjoseon-inminhoeui.html 본문: 북조선인민회의는 1948년 8월 25일에 진행된 총선거에 의하여 조선민주주의인민공화국 최고인민회의가 설치될 때까지 입법권과 아울러 국가의 최고 권력을 행사하는 국가기관으로서 / python scripts/search_chunks.py --id chunk_era51_encykorea-bukhan-99 -> text: 9월 9일 김일성을 수상으로 하는 정권이 수립되었다."
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-contemporary-left-right-coalition",
+      "sceneId": "scene-hs-c1-jwau",
+      "problem": "core 항목인 좌우 합작 운동의 장면 장소를 서울 덕수궁 일원(좌우합작 회담)으로 잡고 summary 에 회담은 덕수궁과 김규식의 사저 삼청장을 오갔다고 적었으나, 덕수궁이 회담 장소라는 근거가 result 의 어느 claim·발췌에도 없고 raw/enc-jwauhapjak.html·raw/enc-samcheongjang.html 에는 덕수궁이라는 글자 자체가 없다. 오히려 이 장면이 actionClaimIds 로 인용한 claim-hs-c1-jwau-place 의 발췌는 좌우합작운동을 위한 논의들은 대부분 삼청장에서 열렸다고 적어 장면 장소와 정면으로 어긋난다. 좌표 근거(claim-hs-c1-jwau-loc)도 덕수궁 위키백과 표시 좌표일 뿐 회담과 무관하다.",
+      "fix": "(가) 덕수궁 회담을 뒷받침하는 발췌(우리역사넷·민족문화대백과 등)를 새로 확보해 claim 으로 달거나, (나) 인용한 근거대로 장소를 삼청장으로 옮기고 김규식 초상(scene-hs-c1-kgs, 현재 삼청동 좌표)과 겹치지 않게 초상 좌표를 다른 근거지로 분리한다. 어느 쪽이든 근거가 생기기 전에는 summary 의 덕수궁 서술을 뺀다. images.json 의 basis(논의는 덕수궁·삼청장)도 같이 고친다.",
+      "evidence": "grep -c 덕수궁 raw/enc-jwauhapjak.html -> 0, raw/enc-samcheongjang.html -> 0 / claim-hs-c1-jwau-place 발췌: 좌우합작운동을 위한 논의들은 대부분 삼청장에서 열렸다."
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-contemporary-north-south-negotiation",
+      "sceneId": "scene-hs-c1-nambuk",
+      "problem": "core 항목 남북 협상의 핵심 인물인 김구(person-encykorea-gim-gu)를 participants 에 넣고 fact.what·summary 에 김구와 김규식이 평양까지 간 마지막 시도라고 적었으나, 참여 근거로 단 두 claim(claim-hs-c1-nambuk-1948 = 남북협상 정의, claim-hs-c1-nambuk-place = 4월 14일부터 평양에서 연석회의 개최) 어디에도 김구가 나오지 않는다. 인물 참여 주장이 무근거다.",
+      "fix": "raw/enc-nambukhyeopsang.html 본문에 김구와 김규식이 보낸 서신, 김구와 김규식은 총선거에 같은 문장이 있으므로 25단어 이내 발췌를 하나 더 떠서 김구의 syj:participatedIn(event-hs-c1-nambuk) claim 을 만들고 participants[김구].claimIds 에 넣는다.",
+      "evidence": "result.json scene-hs-c1-nambuk participants[0].claimIds = [claim-hs-c1-nambuk-1948, claim-hs-c1-nambuk-place] / 두 claim 의 발췌 원문에 김구 없음 / raw/enc-nambukhyeopsang.html 본문에는 김구와 김규식이 보낸 서신 구절이 있음"
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-contemporary-pak-heonyeong",
+      "sceneId": "scene-hs-c1-pak",
+      "problem": "박헌영 장면의 place.label(서울 소공동(조선정판사 터 일원))·fact.placeLabel·summary(같은 해 조선정판사 위폐 사건으로 좌익이 크게 눌리자 북으로 넘어갔다)·images.json 프롬프트(인쇄소 배경)가 모두 조선정판사 위폐 사건과 월북을 전제로 하는데, 등록된 출처 raw/enc-pakheonyeong.html 에는 정판사도 월북도 없고 result 의 claim 3건(남로당 부위원장·민주주의민족전선·소공동 좌표)은 어느 것도 이를 말하지 않는다. 장소 선정의 이유 자체가 무근거 주장 위에 서 있다.",
+      "fix": "조선정판사 위폐 사건(민족문화대백과 조선정판사위조지폐사건 항목 등)을 출처로 추가해 연도·장소 claim 을 달아 placeLabel 을 근거 있게 만들거나, 근거가 없으면 placeLabel 을 서울 소공동으로 낮추고 summary 에서 위폐 사건·월북 서술을 뺀다. 지금은 images.json 의 caveats(인쇄소는 위폐 사건을 암시하는 배경이 아니다)와도 모순된다.",
+      "evidence": "grep 정판사 raw/enc-pakheonyeong.html -> 없음, grep 월북 -> 없음. result.json 안의 정판사 3회는 모두 fact.placeLabel·scene.place.label·scene.summary 이고 claim·발췌에는 없음"
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-contemporary-north-south-negotiation",
+      "claimId": "claim-hs-c1-nambuk-kgs",
+      "problem": "김규식의 남북협상 참여(syj:participatedIn event-hs-c1-nambuk)를 주장하면서 인용한 발췌가 1948년 1월 유엔한국임시위원단의 서울 도착을 계기로 에서 끊겨 있어 남북협상을 언급하지 않는다. 발췌가 주장을 뒷받침하지 못한다(같은 발췌는 연도 claim claim-hs-c1-kgs-1948 에는 적절하다).",
+      "fix": "같은 문장의 뒷부분까지 포함한 발췌(계기로 더욱 자기의 정치노선에 정열을 쏟아, 남북협상의 정치활동을 펼쳤다)로 바꾸거나, 김구와 연합하여 그 해 2월 남북협상을 제안하였다 구절을 새 발췌로 떠서 붙인다(25단어 이내).",
+      "evidence": "raw/enc-kimgyusik.html 본문: 1948년 1월 유엔한국임시위원단 의 서울 도착을 계기로 더욱 자기의 정치노선에 정열을 쏟아, 남북협상의 정치활동을 펼쳤다. 그 해 2월 이승만 의 남한단독정부수립안에 반대하고, 김구 와 연합하여 그 해 2월 남북협상 을 제안하였다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "(전 항목)",
+      "factId": "fact-hs-c1-001~024",
+      "problem": "fact.note 의 성취기준 표기가 [[10한사2-02-01]] 로 대괄호가 이중이다. 형식 정본과 검증 통과 실물(curriculum-joseon-early/joseon-early-2)은 [10한사1-01-03] · core 처럼 홑대괄호다. 카드의 교육과정 표시 파싱이 어긋날 수 있다.",
+      "fix": "24건 전부 [10한사2-02-01] · <priority> 형태로 고친다.",
+      "evidence": "joseon-early-2 fact-hs-je2-001.note = [10한사1-01-03] · core · … 대 contemporary-1 fact-hs-c1-001.note = [[10한사2-02-01]] · standard · …"
+    },
+    {
+      "severity": "minor",
+      "itemId": "(9개 장면)",
+      "sceneId": "scene-hs-c1-an-jaehong 외 8건",
+      "problem": "scene.eventId 에 person-·org-·polity- 접두어 id 를 쓴 장면이 9건이다(an-jaehong, geonjun, yeoun, kgs, jwau, pak, miso, banmin, dprk, kim, rhee 계열). 검증 통과 실물은 23건 모두 event-* 이고, import_period_research 는 미선언 id 를 접두어로 유형을 정해 껍데기 개체를 만드는 구조라 규약을 벗어나면 뒤 단계에서 예상 밖으로 동작할 수 있다(지금은 entities[] 에 선언돼 있어 당장은 통과한다).",
+      "fix": "각 장면에 event-hs-c1-* eventId 를 만들어 통일하고(제목을 label 로), 인물·조직 id 는 participants·claims 의 주체로만 쓴다.",
+      "evidence": "contemporary-1 eventId 접두어: event 15 / person 4 / org 4 / polity 1. joseon-early-2: event 23"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-contemporary-anti-national-committee, hs-contemporary-national-security-act, hs-contemporary-founding-constitution, hs-contemporary-rok-establishment",
+      "factId": "fact-hs-c1-015/017/020/022",
+      "problem": "중앙청 권역 항목 4건이 58~190m 안에 몰려 있어 지도에서 사실상 한 점으로 보인다. 그중 2건은 겹침을 피하려고 사건이 일어난 곳이 아닌 좌표를 썼다 — 반민특위 사무실은 중앙청 안인데 경복궁 권역 좌표(37.57861/126.97722), 국가보안법은 제헌국회(중앙청)인데 광화문 좌표(37.5760222/126.9769). note 에 공개돼 있으나 카드 좌표가 사건 장소가 아니게 된다.",
+      "fix": "제헌 헌법·정부 수립·국가보안법은 실제로 같은 건물이므로 좌표를 억지로 흩기보다 조립기의 compact 표시에 맡기고, 회피용 좌표를 쓸 때는 place.label 을 중앙청 … 으로 두지 말고 실제 좌표가 가리키는 지점 이름으로 적는다.",
+      "evidence": "거리 계산: 017<->022 58m, 020<->022 102m, 015<->017 135m, 017<->020 155m"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-contemporary-510-election, hs-contemporary-anti-national-committee",
+      "sceneId": "scene-hs-c1-510, scene-hs-c1-banmin",
+      "problem": "장면 summary 가 인용 근거에 없는 구체 사실을 단언한다. 5·10 총선거: 제주도 두 선거구는 4·3 사건으로 미뤄졌다(raw/enc-510.html 에 제주 없음). 반민특위: 1949년 특별경찰대가 강제로 해산되며 힘을 잃었다(raw/enc-banmin.html 에 특별경찰대 없음). 둘 다 역사적으로는 맞지만 이 패킷 안에 근거가 없다.",
+      "fix": "해당 서술의 발췌를 추가하거나(반민특위 항목 본문에 습격·해산 서술이 있다) summary 를 인용 근거 범위로 줄인다.",
+      "evidence": "grep 제주 raw/enc-510.html -> 0회, grep 특별경찰대 raw/enc-banmin.html -> 0회 (박흥식·최남선은 각각 1회 등장해 근거 있음)"
+    },
+    {
+      "severity": "minor",
+      "itemId": "(칸 전체)",
+      "problem": "raw/ 에 102개 HTML 이 있는데 manifest.json 은 55개, sources 는 53개만 참조한다. 47개가 어디에도 등록되지 않은 고아 파일이고, manifest 에만 있고 쓰이지 않는 원본도 2개(enc-choego.html, enc-moranbong.html)다. 검증 통과 실물 joseon-early-2 는 raw 52 / manifest 52 로 고아가 없다.",
+      "fix": "쓰지 않은 원본은 지우거나(같은 URL 중복 수집분 포함) manifest 에 등록해 raw/ 와 manifest 를 1:1로 맞춘다.",
+      "evidence": "raw files 102, manifest 55, sources 53. 고아 예: wiki-pak-heonyeong.html, enc-nsl.html, wiki-kim-ilsung.html"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-contemporary-trusteeship-debate, hs-contemporary-an-jaehong, hs-contemporary-kim-ilsung",
+      "factId": "fact-hs-c1-011",
+      "problem": "items.json 의 연도와 어긋나는 값이 4곳이다. 신탁 통치 논쟁 fact.year 1946->1945 와 scene 1945~1946(note 로 공개), 안재홍 scene 1945~1947(항목은 1945 단년, 공개 없음), 김일성 scene 1946~1948(항목은 1948 단년, 공개 없음). 연도 변경 자체는 근거상 타당하나 공개되지 않은 것이 있다.",
+      "fix": "항목 연도와 다르게 잡은 경우는 모두 fact.note 에 이유를 남긴다(joseon-early-2 fact-hs-je2-002·005 의 방식).",
+      "evidence": "items.json an-jaehong year 1945 / yearEnd null 대 scene-hs-c1-an-jaehong 1945~1947, kim-ilsung 1948 / null 대 scene-hs-c1-kim 1946~1948"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-contemporary-un-resolution-temporary-commission",
+      "claimId": "claim-hs-c1-un-1947",
+      "problem": "항목은 유엔 총회 결의인데 연도 claim 과 fact.yearVerbatim 은 1947년 10월로, 이는 미국이 한반도 문제를 총회에 상정한 시점이다. 결의는 1947년 11월 14일이고 같은 출처(유엔 한국임시위원단) 정의문에 제2차 유엔(UN) 총회(1947.11.14) 결정이라고 적혀 있다.",
+      "fix": "(1947.11.14) 결정이 들어간 발췌로 결의 시점 claim 을 하나 더 달고 fact.yearVerbatim 을 1947년 11월 14일로 바꾼다(연도는 그대로 1947).",
+      "evidence": "raw/enc-untcok.html 정의: 제2차 유엔(UN) 총회(1947.11.14) 결정에 따라 5·10 총선거의 공정한 감시 및 관리를 위해 입국한 유엔 산하의 임시기구"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-contemporary-jeongeup-statement",
+      "claimId": "claim-hs-c1-jeongeup-wiki",
+      "problem": "위키백과 정읍 발언 문서를 좌표 보조가 아니라 날짜 근거로 썼다. 근거 우선순위 문서는 위키백과를 좌표 보조로만 쓰라고 정한다(같은 날짜가 민족문화대백과 claim-hs-c1-jeongeup-1946 으로 이미 확보돼 있어 실질 위험은 낮다).",
+      "fix": "중복 확인이 필요하면 우리역사넷 등 1·2순위 출처로 바꾸거나 이 claim 을 뺀다.",
+      "evidence": "docs/research/curriculum-items-brief.md 근거의 우선순위 — 위키백과는 좌표 보조로만"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-contemporary-an-jaehong",
+      "factId": "fact-hs-c1-002",
+      "problem": "placeLabel 이 평택 고덕면 안재홍 생가 일원인데 좌표(127.112821/36.992236)는 평택시 표시 좌표로 고덕면 두릉리에서 약 6.8km 떨어져 있다. note 에 공개는 돼 있으나 라벨과 점이 가리키는 곳이 다르다.",
+      "fix": "라벨을 평택시(안재홍 생가 소재지)처럼 좌표가 가리키는 범위로 맞추거나, 국가유산포털·지자체 공개 자료에서 생가 좌표를 확보한다.",
+      "evidence": "items.json 의 생가 추정 좌표 127.052/37.03 과 result 좌표 127.112821/36.992236 사이 거리 약 6.8km"
+    }
+  ],
+  "checkedItems": [
+    "hs-contemporary-38th-parallel-military-government",
+    "hs-contemporary-an-jaehong",
+    "hs-contemporary-liberation-815",
+    "hs-contemporary-moscow-conference",
+    "hs-contemporary-preparatory-committee",
+    "hs-contemporary-yeo-unhyeong",
+    "hs-contemporary-jeongeup-statement",
+    "hs-contemporary-kim-gyusik",
+    "hs-contemporary-left-right-coalition",
+    "hs-contemporary-pak-heonyeong",
+    "hs-contemporary-trusteeship-debate",
+    "hs-contemporary-us-soviet-joint-commission",
+    "hs-contemporary-un-resolution-temporary-commission",
+    "hs-contemporary-510-election",
+    "hs-contemporary-anti-national-committee",
+    "hs-contemporary-dprk-establishment",
+    "hs-contemporary-founding-constitution",
+    "hs-contemporary-jeju-43",
+    "hs-contemporary-kim-ilsung",
+    "hs-contemporary-national-security-act",
+    "hs-contemporary-north-south-negotiation",
+    "hs-contemporary-rok-establishment",
+    "hs-contemporary-syngman-rhee",
+    "hs-contemporary-yeosu-suncheon"
+  ],
+  "summary": "검증기는 PASS(실패 0·경고 0)이고 항목 24건이 모두 fact·scene·images 1:1 로 덮였다. 로컬 조각 6건을 search_chunks 로 직접 확인했고, 웹 발췌는 raw HTML 에서 앞뒤 문맥을 뽑아 전부 읽었으며 5·10 총선거·반민특위·유엔 한국임시위원단·뉴욕시 빌딩·흥례문 5개 URL 은 실제로 다시 내려받아 발췌가 그대로 있는 것을 확인했다. 좌표는 24건 모두 location claim 에 근거가 있고 십진 좌표가 출처 HTML 에 실재한다. 그러나 근거가 주장을 뒷받침하지 못하는 곳이 5군데 있다: 북한 수립일을 최고인민회의 선거일(8월 25일)로 단언한 claim, 근거가 삼청장을 가리키는데 장면은 덕수궁으로 잡은 좌우 합작 운동(core), 근거에 이름이 없는 김구의 남북 협상 참여(core), 출처에 정판사·월북이 아예 없는데 장소·요약·그림 프롬프트가 그 위에 선 박헌영, 문장 중간에서 잘려 남북협상을 담지 못한 김규식 참여 발췌. 이 5건은 모두 이미 가진 출처 안에서 발췌를 고치거나 더 뜨면 해결된다. 그 밖에 성취기준 표기 이중 대괄호(24건), event-* 가 아닌 eventId 9건, 중앙청 권역 4건의 58~190m 군집과 회피용 좌표, 근거 없는 요약 문장 2건, raw/ 고아 파일 47개 등 사소한 어긋남 9건을 적었다. 교과서 문장 전재는 발견되지 않았고 kind·category·region·participants 는 항목 sceneType 과 모두 일치한다.",
+  "majorCount": 5,
+  "minorCount": 9
+}

@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-colonial-colonial-2-c2-park-enc-pres",
-    "subject": "person-hs-park-eunsik",
+    "subject": "person-hs-bak-eunsik",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",

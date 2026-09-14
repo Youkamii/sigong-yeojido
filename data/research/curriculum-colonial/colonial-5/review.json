@@ -1,0 +1,108 @@
+{
+ "job": "colonial-5",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-colonial --job colonial-5 -> PASS: failures=0 warnings=0 (facts 19, scenes 19, claims 82, chunkClaims 1, excerptClaims 81; category culture5/war6/administration3/economy1/person2/foreign2; region north3/central5/south11). items.json 은 19건이며 지시문의 '21건'과 다르다 — 19건 전부 fact+scene 으로 처리되어 누락 항목은 없다(missing[] 비어 있음).",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-colonial-imperial-subject-oath",
+   "factId": "fact-hs-c5-001",
+   "sceneId": "scene-hs-c5-seosa",
+   "problem": "장면을 '경성 남산 조선신궁'에 놓았는데 (1) 인용한 어느 출처에도 조선신궁이 나오지 않는다. 장소 연결 주장 claim-hs-c5-seosa-singsa 의 발췌는 '총독부는 각급 학교에 일본의 관제미신인 신사참배를 강요하였고' 뿐으로 조선신궁을 지목하지 않으며, 좌표는 위키백과 조선신궁 문서에서 따로 가져온 것이다. (2) 그 좌표 126.98278/37.55361 은 같은 컬렉션 colonial-4 의 fact-hs-c4-019 '조선신궁(남산)'(항목 hs-colonial-shrine-worship, 1935년 신사참배)과 소수점까지 완전히 같고 1937~1945 기간이 겹쳐 지도에서 두 카드가 한 점에 포개진다. 항목 본래 장소는 '경성(서울) 및 전국 학교'였다.",
+   "fix": "서사 제창의 실제 무대인 학교·관공서 가운데 십진 좌표 근거가 있는 지점으로 대표점을 옮긴다. 조선신궁을 유지해야 한다면 colonial-4 신사참배 카드와 좌표가 겹치지 않도록 다른 근거 좌표를 쓰고, fact.note 와 place.coordinateNote 에 '신사참배 항목과 별개 대표점'임을 명시한다.",
+   "evidence": "result.json claim-hs-c5-seosa-singsa(ex-seosa-singsa) — raw/enc-hwangguk-seosa.html '제정 목적' 문맥 재확인 결과 조선신궁 언급 없음 / raw/ko-joseon-singung.html wgCoordinates lat 37.55361111 lon 126.98277778 / data/research/curriculum-colonial/colonial-4/result.json fact-hs-c4-019 lon 126.98278 lat 37.55361"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-colonial-korean-liberation-army",
+   "factId": "fact-hs-c5-007",
+   "sceneId": "scene-hs-c5-gwangbokgun",
+   "claimId": "claim-hs-c5-gwangbokgun-ji",
+   "problem": "지청천을 새 개체 person-hs-ji-cheongcheon 으로 만들어 썼는데, 같은 컬렉션 colonial-4 가 이미 person-hs-c4-ji-cheongcheon 을 7곳에서 쓰고 있고 저장소에도 두 개체 파일이 함께 있다(data/entities/person/person-hs-c4-ji-cheongcheon.md, person-hs-ji-cheongcheon.md). 지시문의 '기존 개체 id 재사용' 규칙을 어긴 것이며, 적재하면 같은 인물이 그래프에서 둘로 쪼개진다. 조소앙·김두봉·이육사·윤동주는 중복이 없고 김원봉(person-encykorea-kim-wonbong)·여운형(person-encykorea-yeo-unhyeong)은 기존 id 를 바르게 재사용했다.",
+   "fix": "colonial-5 의 participants 와 entities 에서 지청천 id 를 colonial-4 와 같은 값으로 통일하고, 남는 개체 껍데기와 중복 .md 파일은 적재 전에 정리한다.",
+   "evidence": "grep -ril '지청천' data/entities/person -> person-hs-c4-ji-cheongcheon.md, person-hs-ji-cheongcheon.md / colonial-4 result.json 내 person-hs-c4-ji-cheongcheon 7회, colonial-5 result.json 내 person-hs-ji-cheongcheon 3회"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-womens-labor-corps",
+   "factId": "fact-hs-c5-018",
+   "claimId": "claim-hs-c5-jeongsin-act",
+   "problem": "근거와 대상이 서로 뒤바뀌었다. claim-hs-c5-jeongsin-act 는 대상이 place-hs-c5-nagoya(미쓰비시 나고야 항공기제작소)인데 발췌는 나고야가 없는 '군수공장 등에 투입되었다' 이고, claim-hs-c5-jeongsin-nagoya 는 대상이 inst-hs-c5-jeongsin(여자 정신 근로령)인데 발췌는 '미쓰비시 나고야항공기제작소 도토쿠 공장' 이다. 그대로 두면 장소 주장이 근거 없이 서게 된다.",
+   "fix": "두 claim 의 object 를 맞바꾸거나, 나고야 장소 주장에 ex-jeongsindae-nagoya 를, 동원 행위 주장에 ex-jeongsindae-act 를 붙인다.",
+   "evidence": "raw/ko-yeoja-geunro-jeongsindae.html '사례' 절 '… 미쓰비시 나고야항공기제작소 도토쿠 공장 …' 와 '개요' 절 '… 군수공장 등에 투입되었다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-founding-principles",
+   "factId": "fact-hs-c5-011",
+   "claimId": "claim-hs-c5-gangnyeong-josoang",
+   "problem": "발췌 '삼균주의를 국시로 한 대한민국임시정부건국강령을 채택하게 하였다' 는 원문에서 '1934년 임시정부 국무회의에서' 로 시작한다. 앞의 연도를 잘라내고 1941년 건국 강령 장면의 근거로 붙여 연도 충돌을 가렸다.",
+   "fix": "조소앙 참여 근거를 ex-encimsi-gangnyeong('1941년 11월에 조소앙의 삼균주의를 국정에 반영한 건국강령을 발표하고')로 바꾸거나, claim.note 에 백과 조소앙 항목이 1934년으로 적고 있다는 차이를 남긴다.",
+   "evidence": "raw/enc-jo-soang.html: '1934년 임시정부 국무회의에서 삼균주의를 국시로 한 대한민국임시정부건국강령을 채택하게 하였다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-student-soldiers-conscription",
+   "factId": "fact-hs-c5-016",
+   "sceneId": "scene-hs-c5-hakdo",
+   "problem": "연도 근거(1943년 10월 20일 학도지원병제 공포 — 공포 주체는 총독부, 무대는 경성)와 좌표 근거(1944년 8월 대구 24부대 학병 의거)가 서로 다른 사건이다. 대구를 대표점으로 고른 이유는 scene.summary 에만 있고 fact.note 와 place.coordinateNote 에는 '전국에서 징집되었다'만 적혀 있어 카드에서 좌표 근거를 읽을 수 없다.",
+   "fix": "fact.note 와 place.coordinateNote 에 '1944년 8월 대구 24부대(대구 80연대) 학병 의거를 대표 장면으로 삼아 대구를 점으로 썼다'를 명시한다.",
+   "evidence": "claim-hs-c5-hakdo-1943(ex-hakbyeong-1943, raw/enc-hakbyeong-geobu.html) vs claim-hs-c5-hakdo-daegu(ex-daeguhak-1944, raw/enc-daegu-hakbyeong.html)"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-yun-dongju",
+   "factId": "fact-hs-c5-012",
+   "sceneId": "scene-hs-c5-yundongju",
+   "problem": "같은 카드 안에서 나이가 어긋난다. fact.what 은 항목 문구대로 '스물일곱 시인'(만 나이), scene.summary 는 백과 표기를 따라 '스물여덟에 숨졌다'(세는 나이)로 적었다.",
+   "fix": "scene.summary 를 '스물일곱'으로 맞추거나, note 에 백과가 세는 나이 28세로 적는다는 점을 한 줄 남긴다.",
+   "evidence": "raw/enc-yun-dongju.html '1945년 2월 28세의 젊은 나이로 일본의 후쿠오카형무소에서 생을 마쳤다' 와 머리 정보 '출생 연도1917년 12월 30일 사망 연도1945년 2월 16일'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-joseon-volunteer-corps",
+   "factId": "fact-hs-c5-003",
+   "problem": "docs/research/curriculum-items-brief.md 의 항목 type→category 대응표를 다섯 건에서 벗어났다. institution 3건(조선 의용대·한국광복군·조선 독립 동맹)을 administration 대신 war 로, society 2건(황국 신민 서사·창씨개명)을 settlement 대신 culture 로 넣었다. 내용상으로는 오히려 타당하지만 대응표와 달라 커버리지 집계가 규정과 다르게 나온다(settlement 0, administration 3).",
+   "fix": "대응표를 따르거나, 벗어난 다섯 건의 fact.note 에 '군사 조직이라 war 로 두었다'처럼 이유를 한 줄 남긴다. 정본 문서를 고칠 일이면 #186 쪽으로 넘긴다.",
+   "evidence": "items.json type: institution(hs-colonial-joseon-volunteer-corps, hs-colonial-korean-liberation-army, hs-colonial-joseon-independence-league), society(hs-colonial-imperial-subject-oath, hs-colonial-name-change) / result.json 해당 fact.category"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-yi-yuksa",
+   "factId": "fact-hs-c5-006",
+   "problem": "대표점 라벨과 좌표가 떨어져 있다. 이육사 장면은 '안동 도산면 원촌 일대'라면서 도산서원 좌표(36.72722/128.83778, 원촌에서 약 10km)를 쓰고 이 점은 fact-je5-020·fact-mt1-022 '안동 도산서원'과 소수점까지 같다. 윤동주 장면도 '북간도 명동촌'이면서 룽징 시가 좌표(42.767/129.433, 명동촌에서 약 15km)를 쓴다.",
+   "fix": "위키백과에 이육사문학관·홍원군 표시 좌표가 없음을 재확인했으므로 현 좌표를 유지해도 되나, 라벨을 '안동 도산면(도산서원 표시점)'처럼 점의 정체가 드러나게 고치는 편이 낫다. 근거 좌표를 새로 찾으면 원촌·명동촌으로 옮긴다.",
+   "evidence": "ko.wikipedia 이육사문학관·홍원군 문서에 wgCoordinates 없음(재조회 확인) / raw/ko-dosanseowon.html wgCoordinates 36.7272222/128.8377778 / fact-je5-020, fact-mt1-022 동일 좌표"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-imperial-subject-oath",
+   "problem": "run.json 의 started 1789689600 은 2026-09-18 UTC 로, 실제 수집 시각(manifest fetchedUtc 46건 모두 2026-09-14)보다 나흘 뒤 미래값이다. 검증기는 0 이상이면 통과하므로 차단 사유는 아니고 다른 칸도 같은 값을 쓰지만 기록으로서는 부정확하다.",
+   "fix": "started 를 실제 조사 시각(2026-09-14 대)으로 맞춘다. 다른 칸과 함께 일괄로 고칠 일이면 #186 쪽으로 넘긴다.",
+   "evidence": "run.json started=1789689600 / manifest.json fetchedUtc 46건 모두 2026-09-14"
+  }
+ ],
+ "checkedItems": [
+  "hs-colonial-imperial-subject-oath",
+  "hs-colonial-northeast-anti-japanese-army",
+  "hs-colonial-joseon-volunteer-corps",
+  "hs-colonial-national-mobilization-law",
+  "hs-colonial-forced-labor",
+  "hs-colonial-yi-yuksa",
+  "hs-colonial-korean-liberation-army",
+  "hs-colonial-name-change",
+  "hs-colonial-newspaper-closure",
+  "hs-colonial-declaration-of-war",
+  "hs-colonial-founding-principles",
+  "hs-colonial-yun-dongju",
+  "hs-colonial-joseon-independence-league",
+  "hs-colonial-joseoneo-hakhoe-incident",
+  "hs-colonial-cairo-declaration",
+  "hs-colonial-student-soldiers-conscription",
+  "hs-colonial-joseon-founding-alliance",
+  "hs-colonial-womens-labor-corps",
+  "hs-colonial-domestic-advance-operation"
+ ],
+ "summary": "19개 항목 전부(core 7건 포함)를 출처에서 재확인했다. 근거의 질은 높다 — 웹 발췌 46건은 모두 raw HTML 본문 문맥에서 그대로 확인되고 왜곡 없이 인용했으며, 좌표 19개는 전부 위키백과 문서의 표시 좌표(wgCoordinates·geo)와 소수점까지 일치했다. 로컬 chunk 인용 1건(카이로 선언 논설, chunk_independence-kd-003_kd_003_0010_0010_0150)도 원문과 일치한다. 표본 3건(encykorea E0073803·E0005134, 위키백과 조선신궁)은 실제 URL 을 다시 받아 raw 와 같은 내용임을 확인했다. 연도·행위는 항목과 모두 맞고 scene.kind·sceneFunction 은 19건 모두 항목 sceneType 과 같으며 교과서 문장 전재는 없다. 칸 안에서 같은 점에 겹치는 항목도 없다(서울 5개 점, 충칭 3개 점이 모두 다르다). 검증기 PASS. 다만 (1) 황국신민서사 장면이 어느 출처에도 없는 조선신궁에 놓였고 그 좌표가 colonial-4 신사참배 카드와 완전히 같아 시기까지 겹치는 점, (2) 지청천이 colonial-4 의 기존 개체를 두고 새 id 로 만들어진 점은 적재 전에 고쳐야 한다. 나머지 일곱 건은 근거-대상 뒤바뀜, 발췌의 연도 절단, 대표점 근거 표기 누락 같은 작은 수정이다."
+}

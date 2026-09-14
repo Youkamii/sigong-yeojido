@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-md-statement",
+    "subject": "place-hs-c4-myeongdong-cathedral",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-park-jongchul"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_md-statement",
+    "quote": "정의구현사제단에 의해",
+    "note": "그 미사에서 박종철 사건 진상 조작을 폭로하는 성명이 나왔다.",
+    "fromSource": "src-archives-myeongdong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

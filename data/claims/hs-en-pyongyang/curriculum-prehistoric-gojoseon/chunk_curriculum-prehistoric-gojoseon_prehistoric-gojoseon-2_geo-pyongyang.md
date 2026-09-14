@@ -18,7 +18,7 @@ status: "draft"
       "lat": 39.01667,
       "precision": "area"
     },
-    "note": "왕검성을 평양 일대로 보는 통설에 따라 평양시 표시 좌표를 대표점으로 썼다.",
+    "note": "평양시의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다.",
     "fromSource": "src-hs-en-pyongyang",
     "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-2_geo-pyongyang",
     "quote": "39.01667; 125.74750",

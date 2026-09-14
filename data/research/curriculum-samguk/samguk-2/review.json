@@ -1,0 +1,139 @@
+{
+ "job": "samguk-2",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-samguk --job samguk-2 -> PASS: failures=0 warnings=0 (exit 0). job 집계: facts=24, scenes=22, claims=102, chunkClaims=66, excerptClaims=36. category x 10년 합계 24건(administration 5, culture 5, facility 5, person 3, foreign 2, war 2, settlement 1, economy 1), region x 10년 합계 24건(south 12, north 7, central 3, capital 2).",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-samguk-ajikgi-wangin",
+   "claimId": "claim-hs-sg2-wangin-geungusu",
+   "problem": "장면의 유일한 연도 근거가 사건과 무관하고 표시 연도와도 어긋난다. 이 claim 은 subject=event-hs-sg2-wangin, predicate=syj:occurredIn, object={kind:'year', value:375} 로 '아직기·왕인의 도왜가 375년에 일어났다'고 주장하는데, 인용문 '近仇首王, 近肖古王之子' 는 근구수왕이 근초고왕의 아들이라는 계보 서술일 뿐 도왜를 전혀 언급하지 않는다. 게다가 fact-hs-sg2-005 와 scene-hs-sg2-wangin 은 397년으로 표시되어 근거(375)와 표시(397)가 22년 어긋난다. 발췌 문맥 왜곡에 해당한다.",
+   "fix": "이 claim 을 연도 주장에서 빼고 subject=person-geungusu, predicate=syj:reignedFrom 같은 왕대 주장으로 바꾸거나, 이미 받아 둔 raw/kowiki-wangin.html 의 '근구수왕의 칙명으로 왕의 손자 진손왕과 함께 일본으로 건너갔다' 를 발췌(citesExcerpt)로 추가해 '근구수왕대의 전승' 까지만 근거로 삼는다. 그 뒤 397 은 항목 기준 연도일 뿐 사료 근거가 없음을 fact.note 에 명시하고(confidence 'low' 유지), missing[] 에 {itemId:'hs-samguk-ajikgi-wangin', reason:'도왜 연대를 짚는 사료 근거 없음'} 을 추가한다.",
+   "evidence": "python scripts/search_chunks.py --id chunk_samguksagi_sg_024_0090_0010 -> locator '卷第二十四 百濟本紀 第二 › 近仇首王 › 근구수왕이 즉위하다', date.raw '0375-11-99L0', 본문 전문에 王仁·阿直岐·倭 어느 글자도 없음. result.json: scene-hs-sg2-wangin.startYear=397, dateClaimIds=['claim-hs-sg2-wangin-geungusu']."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-samguk-hwabaek",
+   "sceneId": "scene-hs-sg2-hwabaek",
+   "problem": "같은 도시(서라벌) 항목 두 건이 한 점에 완전히 겹친다. scene-hs-sg2-hwabaek 와 scene-hs-sg2-naje 가 둘 다 lon 129.217 / lat 35.85(영문 위키백과 경주 문서 표시 좌표)를 쓴다. '사건은 구체 장소로 두어 같은 도시 항목이 한 점에 겹치지 않게' 라는 규칙 위반이며 지도에서 두 마커가 완전히 포개진다. 같은 좌표를 samguk-1(scene-hs-hyeokgeose)·samguk-3(scene-hs-s3-ox-plowing)·samguk-4(scene-hs4-sesok-ogye)도 써서 실제로는 다섯 장면이 한 점에 쌓인다.",
+   "fix": "두 장면 중 하나를 구체 장소로 옮긴다. 화백은 회의 장소 전승(남산 사영지 등)을 따라 경주 남산의 표시 좌표를 새 발췌로 받아 쓰고, 나제 동맹은 사신 접견 무대인 왕성(월성)이 이미 지증왕 항목에 쓰였으므로 왕경 안의 다른 지점을 잡는다. 새 좌표는 sources[] 발췌(십진 좌표 두 수)나 location claim 으로 근거를 달고 coordinateNote 에 대표점임을 적는다.",
+   "evidence": "result.json: scene-hs-sg2-naje.place={lon:129.217, lat:35.85}, scene-hs-sg2-hwabaek.place={lon:129.217, lat:35.85}, 둘 다 claimIds=['claim-hs-sg2-gyeongju-loc']. 컬렉션 전체 좌표 충돌 점검에서 (129.217, 35.85)에 samguk-1/2/3/4 의 장면 5개가 모였다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-samguk-jisandong-tombs",
+   "sceneId": "scene-hs-sg2-jisandong",
+   "problem": "대가야 항목과 고분군 항목이 한 점에 완전히 겹친다. scene-hs-sg2-daegaya 와 scene-hs-sg2-jisandong 이 둘 다 lon 128.25275 / lat 35.724694(위키백과 지산동 고분군 표시 좌표)를 쓴다. fact-hs-sg2-022 의 note 도 '대가야 항목과 같은 좌표를 쓰되 시기를 달리 잡았다'고 스스로 인정한다. 시기가 달라도 지도에서는 같은 자리에 겹치며, samguk-4 의 scene-hs4-daegaya-fall 까지 같은 점이라 세 장면이 쌓인다.",
+   "fix": "대가야 주도 항목(scene-hs-sg2-daegaya)을 고분군이 아니라 왕성·중심 취락 쪽 지점으로 옮긴다. 고령 주산성이나 대가야읍(고령군 중심) 문서의 표시 좌표를 raw/ 에 새로 받아 발췌 근거를 달고, 고분군 좌표는 지산동 항목에만 남긴다.",
+   "evidence": "result.json: scene-hs-sg2-daegaya.place.lon/lat = 128.25275/35.724694, scene-hs-sg2-jisandong.place.lon/lat = 128.25275/35.724694, 두 장면 모두 claimIds=['claim-hs-sg2-jisandong-loc']."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-samguk-taehak",
+   "sceneId": "scene-hs-sg2-taehak",
+   "problem": "해외 장면 7건에 place.overseas 표시가 없다. 지시는 '해외(만주·중국·일본 등)는 place.overseas=true 로 둔다' 인데 samguk-2 의 22개 장면 중 해외 장면 7건(태학·고구려 율령 반포·광개토대왕·장군총·광개토대왕릉비·무용총 = 중국 지린성 지안, 아직기와 왕인 = 일본 나라) 어디에도 이 필드가 없다. fact.note 에 '해외' 라고 적어 두었지만 산문이라 기계가 읽지 못한다. 같은 규칙을 curriculum-nambukguk·colonial·modern-transition 등 다른 칸은 place.overseas:true 로 지키고 있어 이 칸만 어긋난다.",
+   "fix": "scene-hs-sg2-taehak, -goguryeo-code, -gwanggaeto, -janggunchong, -gwanggaeto-stele, -muyongchong, -wangin 의 place 객체에 \"overseas\": true 를 넣는다. region 값(north 6건, south 1건)은 위도 규칙대로 이미 맞으므로 그대로 둔다.",
+   "evidence": "grep '\"overseas\"' data/research/curriculum-samguk/samguk-2/result.json -> 0건. 같은 검사에서 nambukguk-1 6건, nambukguk-2 9건, colonial-5 10건. nambukguk-1 예: {\"label\":\"동모산 일대(중국 둔화)\", ..., \"overseas\": true}."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-samguk-taehak",
+   "factId": "fact-hs-sg2-001",
+   "problem": "사라진 제도 3건의 존속 종료 연도를 null 로 두어 '현재까지 존속' 으로 표시된다. facts-format.md 는 persistence 의 to:null 을 '현존으로 2100년 상한까지 표시' 로 정의하고 '왕조 경계 상한은 적용하지 않으며 항목 조사가 소실 연도를 명시해야 한다' 고 못박았다. 그런데 태학(fact-hs-sg2-001, institution 372→null), 고구려 율령 반포(fact-hs-sg2-002, 373→null), 화백 회의(fact-hs-sg2-020, 500→null)가 모두 to:null 이다. 고구려 태학·율령은 668년 고구려 멸망과 함께, 화백은 신라 멸망과 함께 끝났으므로 2100년까지 존속하는 제도로 표시되는 것은 사실과 다르다. 참고 실물인 joseon-early-2 는 육조 직계제를 institution 1414→1436 으로 끝을 적었다.",
+   "fix": "세 건의 종료 연도를 근거와 함께 채우거나, 근거를 못 찾으면 persistence 를 빼고(또는 kind 'none' 으로) 둔다. fact 와 scene 양쪽을 같이 고친다. 문화재 7건과 도시 2건(평양·웅진)의 to:null 은 현존·존속이므로 그대로 두어도 된다.",
+   "evidence": "result.json: fact-hs-sg2-001.persistence={kind:'institution',from:372,to:null}, fact-hs-sg2-002 동일(373), fact-hs-sg2-020 동일(500). docs/research/facts-format.md 58행 'to:null은 현존으로 2100년 상한까지 표시한다 ... 항목 조사가 소실 연도를 명시해야 한다'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-hwabaek",
+   "factId": "fact-hs-sg2-020",
+   "problem": "성취기준 코드가 항목과 다르다. items.json 의 hs-samguk-hwabaek 은 curriculum.standard 가 '[10한사1-01-01]' 인데 fact.note 는 '[10한사1-02-03] · standard' 로 적었다. 이 코드는 hs-samguk-social-strata 의 것이다. 24개 항목 중 코드가 어긋난 것은 이 하나뿐이다.",
+   "fix": "fact-hs-sg2-020.note 의 '[10한사1-02-03]' 을 '[10한사1-01-01]' 로 고친다.",
+   "evidence": "items.json hs-samguk-hwabaek.curriculum.standard = '[10한사1-01-01]'; result.json fact-hs-sg2-020.note = '[10한사1-02-03] · standard · 만장일치와 대등 서술은 ...'. 나머지 23건은 대조 스크립트에서 전부 일치."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-houmyeong-vessel",
+   "factId": "fact-hs-sg2-011",
+   "problem": "사실의 장소 이름과 좌표가 약 2.2km 어긋난다. placeLabel 은 '경주 호우총(노서동 140호분)', modernPlace 는 '경상북도 경주시 노서동' 인데 lon/lat 은 국립경주박물관(129.228361, 35.828983, 인왕동)이다. 좌표를 바꾼 사정은 scene.place.coordinateNote 와 claim note 에만 있고 fact.note 에는 없어, 카드만 보면 노서동 고분에 점이 찍힌 것으로 읽힌다. 이미 받아 둔 대릉원 좌표(129.212, 35.838)가 노서동에 훨씬 가깝다.",
+   "fix": "좌표를 노서동 쪽(대릉원 일원 표시 좌표 등)으로 옮기거나, 좌표를 그대로 둔다면 placeLabel/modernPlace 를 '국립경주박물관 일원' 으로 바꾸고 fact.note 에 대표점 사정을 적는다.",
+   "evidence": "result.json fact-hs-sg2-011: placeLabel '경주 호우총(노서동 140호분)', modernPlace '경상북도 경주시 노서동', lon 129.228361, lat 35.828983, coordinateBasis 'location claim-hs-sg2-gjmuseum-loc'(= src-hs-ko-gyeongju-museum ex-geo-gjmuseum, 국립경주박물관 문서 좌표)."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-janggunchong",
+   "sceneId": "scene-hs-sg2-janggunchong",
+   "problem": "연도 근거 자리에 연도가 없는 주장을 넣은 장면이 7건이다. dateClaimIds 는 장면의 표시 연도를 받치는 자리인데 scene-hs-sg2-janggunchong(claim-hs-sg2-janggun-who), -muyongchong(muyong-place), -chungju-stele(chungju-date), -cheonmachong(cm-age), -hwabaek(hwabaek-sunjang), -jisandong(jsd-age), -gold-crown(crown-type) 의 date claim 은 모두 object.kind 가 'entity' 라 연도를 담고 있지 않다. 특히 신라 금관의 crown-type 은 인용문('천마총은 신라시대의 대표적 돌무지 덧널무덤이다')에 시간 표현이 아예 없고, 화백의 hwabaek-sunjang 은 502년 순장 금지 기사라 장면 연도 500 과도 어긋난다. 검증기는 dateClaimIds 가 비지 않은지만 보므로 통과했다.",
+   "fix": "인용문에 시기 표현이 있는 claim(cm-age '5~6세기경', jsd-age '4∼6세기', chungju-date '5세기 전후')은 object 를 time(precision 'century', earliest/latest 를 그 범위로)으로 바꿔 연도 근거로 삼고, 시기 표현이 없는 janggun-who·muyong-place·crown-type·hwabaek-sunjang 은 시기를 말하는 발췌·chunk 를 새로 달거나 표시 연도가 항목 기준 연도일 뿐임을 fact.note 에 명시한다(무용총·장군총·천마총은 이미 적혀 있고 금관·화백은 없다).",
+   "evidence": "result.json 의 각 scene.dateClaimIds 와 해당 claim.object.kind 대조: janggun-who / muyong-place / chungju-date / cm-age / hwabaek-sunjang / jsd-age / crown-type 이 모두 {kind:'entity'}."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-daegaya-founding",
+   "factId": "fact-hs-sg2-018",
+   "problem": "존속 종료 연도 562 에 근거가 없다. persistence {kind:'city', from:479, to:562} 의 basisClaimIds 는 claim-hs-sg2-dg-goryeong 과 claim-hs-sg2-dg-479 인데, 앞의 인용문(삼국사기 지리지 '髙靈郡, 夲 大加耶國 ... 五百二十年')에는 562 가 없고 뒤의 것은 479 남제 견사다. 562 를 받치는 주장이 하나도 없다.",
+   "fix": "로컬에 이미 있는 민족문화대백과 대가야 발췌 chunk 로 562 종료 주장을 만든다: chunk_era51_encykorea-daegaya-562 (src-encykorea-daegaya), 인용 가능한 문자열 '562년(진흥왕 23) 가야가 배반했기 때문에 이사부'. syj:endedIn(year 562) 주장을 추가하고 basisClaimIds 에 넣는다.",
+   "evidence": "python scripts/search_chunks.py --id chunk_era51_encykorea-daegaya-562 -> text '『삼국사기』신라본기에는 562년(진흥왕 23) 가야가 배반했기 때문에 이사부(異斯夫)에게 명해 사다함(斯多含)과 함께 쳐서 멸망시켰다고 했는데, 여기에서 말하는 가야는 고령의 대가야임에 틀림없다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-silla-rescue-400",
+   "sceneId": "scene-hs-sg2-silla-rescue",
+   "problem": "광개토왕을 임나가라 전장에 서 있는 것으로 표시했다. participants 에 person-gwanggaeto 가 presence 'on-site' 로 들어가 있는데, 근거인 능비 2면 8행은 '教遣步騎五萬, 往救新羅'(명을 내려 보냈다)이고 왕이 친히 갔다는 기록은 없다. 장면 요약은 '보내' 라고 바르게 적었는데 참여자 표시만 어긋난다.",
+   "fix": "presence 를 'off-site'(같은 컬렉션에서 13회 쓰인 값)로 바꾸거나, 왕을 빼고 participantGroups 로 고구려 보기 5만을 넣는다.",
+   "evidence": "result.json scene-hs-sg2-silla-rescue.participants[0] = {entityId:'person-gwanggaeto', presence:'on-site'}; claim-hs-sg2-rescue-400 quote '十年庚子，教遣步騎五萬，往救新羅'(chunk_gwanggaeto_2-08)."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-muyongchong",
+   "factId": "fact-hs-sg2-014",
+   "problem": "실질 근거가 위키백과뿐인 항목이 여럿이다. docs/research/curriculum-items-brief.md 의 근거 우선순위는 위키백과를 '좌표 보조로만' 쓰라고 한다. 그런데 무용총(ex-muyong-place·ex-muyong-hunt), 천마총(ex-cheonma-type/find/age), 신라 금관(천마총 문서 발췌 재사용), 화백 회의(ex-hwabaek·ex-hwabaek-daedeung), 지산동 고분군(ex-jisandong-age·ex-jisandong-sunjang), 장군총(ex-janggun-form·ex-janggun-who), 아직기와 왕인(ex-wangin-role·ex-wangin-ajikgi)은 좌표가 아닌 내용 주장까지 위키백과 발췌로 받친다. 함께 단 로컬 chunk 는 덕흥리 벽화고분(408, 무용총이 아닌 다른 무덤)·금관총 해제·지리지 고령군 조처럼 항목 자체가 아닌 방증이다. 다만 core 5건(율령 반포·광개토대왕·장수왕·능비·평양 천도)은 모두 삼국사기·금석문·민족문화대백과 chunk 로 받쳐 있다.",
+   "fix": "적어도 무용총·천마총·화백 회의 세 건은 한국민족문화대백과(encykorea.aks.ac.kr) 항목 페이지를 raw/ 에 새로 받아 25단어 이내 발췌로 바꿔 단다. 교체가 어려우면 fact.note 에 '근거가 위키백과 정리에 기댄다' 를 명시한다(대가야·화백은 이미 그런 문장이 있다).",
+   "evidence": "result.json sources[] 23건이 전부 ko/en 위키백과이고 우리역사넷·민족문화대백과 웹 출처는 0건. 로컬 chunk 근거 66건은 충분하지만 위 7항목의 핵심 서술에는 닿지 않는다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-social-strata",
+   "factId": "fact-hs-sg2-008",
+   "problem": "장면을 만들지 않은 사유가 같은 파일의 다른 항목과 어긋난다. missing[] 두 건(신분 구조·수취 제도)은 '제도 전반 항목이라 장면 좌표의 근거가 없다' 를 사유로 들지만, 좌표 근거인 claim-hs-sg2-gyeongju-loc(경주 표시 좌표)는 이미 이 result.json 안에 있고 똑같이 제도 전반을 다루는 화백 회의는 바로 그 좌표로 장면을 만들었다. 두 항목 모두 claim 을 3건씩 갖추고 있어 '근거가 하나도 없는 항목' 에도 해당하지 않는다. 또 수취 제도는 confidence 가 'medium' 인데 missing[] 에 올라 있어 '근거를 못 찾은 항목은 low 로만 둔다' 는 규칙과 어긋난다.",
+   "fix": "두 항목도 장면을 만들어 24개 항목이 모두 지도에 오르게 하거나(신분 구조는 지산동 순장 고분, 수취 제도는 지증왕 5년 12성 축조 같은 구체 지점도 후보다), 장면을 계속 두지 않겠다면 missing[].reason 을 '제도 전반이라 한 지점으로 좁힐 수 없다' 로 고치고 수취 제도의 confidence 를 low 로 내린다.",
+   "evidence": "result.json missing[0].reason·missing[1].reason = '제도 전반 항목이라 장면 좌표의 근거가 없다'; scene-hs-sg2-hwabaek 은 같은 claim-hs-sg2-gyeongju-loc 로 좌표를 붙였다; fact-hs-sg2-024.confidence = 'medium'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-taehak",
+   "factId": "fact-hs-sg2-001",
+   "problem": "category 가 brief 의 항목 타입 대응표와 다르다. items.json 의 태학은 type 'institution' 이고 brief 는 institution→administration 으로 적었는데 fact 는 'culture' 를 썼다. 같은 파일의 다른 institution 항목(고구려 율령 반포, 화백 회의)은 administration 을 써서 칸 안에서도 일관되지 않다. 교육기관이라 culture 로 볼 여지는 있다.",
+   "fix": "administration 으로 바꾸거나, culture 를 유지한다면 fact.note 에 '교육기관이라 culture 로 분류' 를 적어 판단 근거를 남긴다. 바꾸면 cell.categories 의 culture 5→4, administration 5→6 도 함께 고친다.",
+   "evidence": "items.json hs-samguk-taehak.type = 'institution'; docs/research/curriculum-items-brief.md 대응표 'institution→administration'; result.json fact-hs-sg2-001.category = 'culture'."
+  }
+ ],
+ "checkedItems": [
+  "hs-samguk-taehak",
+  "hs-samguk-goguryeo-code",
+  "hs-samguk-baekje-buddhism",
+  "hs-samguk-gwanggaeto",
+  "hs-samguk-ajikgi-wangin",
+  "hs-samguk-janggunchong",
+  "hs-samguk-silla-rescue-400",
+  "hs-samguk-social-strata",
+  "hs-samguk-jangsu-wang",
+  "hs-samguk-gwanggaeto-stele",
+  "hs-samguk-houmyeong-vessel",
+  "hs-samguk-pyongyang-move",
+  "hs-samguk-naje-alliance",
+  "hs-samguk-muyongchong",
+  "hs-samguk-chungju-stele",
+  "hs-samguk-hanseong-fall-475",
+  "hs-samguk-ungjin-move",
+  "hs-samguk-daegaya-founding",
+  "hs-samguk-cheonmachong",
+  "hs-samguk-hwabaek",
+  "hs-samguk-jijeung-wang",
+  "hs-samguk-jisandong-tombs",
+  "hs-samguk-silla-gold-crown",
+  "hs-samguk-taxation"
+ ],
+ "summary": "검증기는 PASS(failures=0, warnings=0)이고 형식·인용·해시·좌표 근거는 규칙을 지켰다. 표본은 24개 항목 전부로 잡았다. 인용된 로컬 chunk 55개를 search_chunks 로 하나씩 열어 원문 문맥과 date.raw 를 대조했고(삼국사기 22건, 광개토대왕릉비 6행, 한국고대금석문 해제 6건, 민족문화대백과·우리역사넷 발췌 11건이 모두 일치), 좌표가 아닌 웹 발췌 20건은 raw/ HTML 텍스트 문맥에서 확인한 뒤 나제동맹·화백·대가야·왕인 네 페이지는 실제 URL 을 다시 내려받아 문장이 지금도 그대로 있는지 확인했다. 항목 대조에서 what=meaning, 연도, sceneType kind·sceneFunction, priority, endYear 는 24건 전부 일치했다. 남은 결함은 사실관계 1건(왕인 항목의 연도 근거가 사건과 무관한 계보 기사이고 표시 연도 397 과 22년 어긋남), 표시 결함 4건(서라벌 두 장면과 고령 두 장면의 좌표 완전 중복, 해외 7장면의 place.overseas 누락, 사라진 제도 3건의 존속 종료 연도 null), 그리고 성취기준 코드 오기·호우총 라벨과 좌표 불일치 등 minor 8건이다. major 를 고치면 적재 가능하다고 본다."
+}

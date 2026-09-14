@@ -16,10 +16,10 @@ status: "draft"
       "kind": "entity",
       "id": "polity-gl3-goryeo"
     },
-    "note": "남아 있는 고려 불화 가운데 수월관음도가 가장 많다.",
+    "note": "전 세계에 약 160여 점이 남은 고려 불화.",
     "fromSource": "src-gl3-enc-suwolgwaneum",
     "citesChunk": "chunk_curriculum-goryeo-late_goryeo-late-3_gl3-swg-160",
-    "quote": "전세계 약 160여점 남은 고려 불화 중에서 수월관음도는 가장 많은 수량을 차지하고",
+    "quote": "전세계 약 160여점 남은 고려 불화",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",

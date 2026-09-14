@@ -1,0 +1,139 @@
+{
+ "job": "prehistoric-gojoseon-1",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-prehistoric-gojoseon --job prehistoric-gojoseon-1 -> exit 0, \"PASS: failures=0 warnings=0\" (facts 28 / scenes 28 / claims 120 / chunkClaims 6 / excerptClaims 114). category x 10년, region x 10년, job 집계 표 3종 정상 출력.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-prehistoric-neolithic-farming",
+   "factId": "fact-hs-pg1-009",
+   "sceneId": "scene-hs-pg1-farming",
+   "claimId": "claim-hs-pg1-farming-loc",
+   "problem": "placeLabel·modernPlace 는 '봉산 지탑리(북한 황해북도 봉산군 지탑리)'라고 적었는데 좌표(125.52556, 38.865)는 위키백과 '대동강' 문서의 강 대표 좌표다. 그 점은 대동강 하류(평양 서쪽) 쪽이라 봉산군이 아니며 수십 km 떨어져 있다. 게다가 같은 좌표를 가락바퀴 항목(fact-hs-pg1-014, modernPlace '평안남도 온천군 궁산리')에도 그대로 써서 서로 다른 두 유적이 지도에서 완전히 같은 한 점(거리 0.00 km)에 겹친다.",
+   "fix": "두 항목의 표시점을 분리한다. (1) 지탑리 좌표 근거를 못 찾으면 placeLabel·modernPlace 를 좌표가 실제로 가리키는 범위('대동강 하류 일대')로 바꾸고 유적명은 summary·note 에만 남긴다. (2) 가락바퀴 항목은 좌표 근거가 이미 있는 다른 출토지(예: 양양 오산리 — ex-geo-osanri 보유)로 옮기거나, 최소한 두 항목이 같은 점이 되지 않도록 서로 다른 근거 좌표를 쓴다.",
+   "evidence": "raw/ko-daedonggang.html 의 wgCoordinates:{\"lat\":38.865,\"lon\":125.52555555555556} (실서버 재조회 sha256 일치). raw/ko-jitapri.html 에는 wgCoordinates·class=\"geo\" 가 전혀 없어 지탑리 자체 좌표 근거는 없음. scene-hs-pg1-farming 과 scene-hs-pg1-garak 의 place 좌표 거리 = 0.00 km."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-prehistoric-bronze-age-begins",
+   "factId": "fact-hs-pg1-020",
+   "sceneId": "scene-hs-pg1-bronze",
+   "claimId": "claim-hs-pg1-bronze-def",
+   "problem": "fact.year 와 scene.startYear 는 -1500 인데, 이 장면의 유일한 dateClaim(claim-hs-pg1-bronze-def)의 time object 는 {verbatim:'서기전 1000년', year:-1000} 이고 fact.yearVerbatim 도 '서기전 1000년 대 전반(민족문화대백과 표기)' 이다. 카드에 표시될 연도(-1500)와 그 근거로 달린 인용 연도(-1000)가 서로 다른 값을 가리킨다. note 에 차이를 적어 두었지만 데이터 자체의 연도·근거 불일치는 그대로 남아 있다.",
+   "fix": "둘 중 하나로 맞춘다. (가) 사전 근거를 따라 fact.year·scene.startYear·decade 를 -1000 으로 내리고 note 에 '교과서는 기원전 1500년경으로 잡는다'를 남긴다. (나) -1500 을 유지하되 yearVerbatim 을 '기원전 1500년경(교육과정 항목 기준, 근거 미확보)'으로 바꾸고, claim-hs-pg1-bronze-def 를 dateClaimIds 에서 빼거나 -1500 을 뒷받침하는 별도 근거를 단다.",
+   "evidence": "result.json claim-hs-pg1-bronze-def object={\"kind\":\"time\",\"verbatim\":\"서기전 1000년\",\"year\":-1000,...}; 발췌 ex-bronze-def='서기전 1000년 대 전반을 중심으로 무문토기와 함께 청동기를 제작 사용하고' (raw/enc-bronze-age.html 및 실서버 재조회로 원문 확인). fact-hs-pg1-020.year=-1500, decade=-1500."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-prehistoric-misongni-pottery",
+   "factId": "fact-hs-pg1-024",
+   "sceneId": "scene-hs-pg1-misong",
+   "problem": "북한 소재 장면의 '해외' 처리가 지시문·참고 칸과 어긋나고 칸 안에서도 일관되지 않다. 지시문의 해외는 '만주·중국·일본·미국 등'이고, 이미 검증기 PASS 한 참고 칸 curriculum-joseon-early/joseon-early-2 는 압록강·두만강·함길도(모두 북한) 장면에 overseas 를 달지 않았다. 그런데 이 칸은 의주 미송리(평안북도)에만 place.overseas=true 를 달고, 같은 북한인 평양(scene-hs-pg1-dangun·scene-hs-pg1-founding)·묘향산(scene-hs-pg1-myth)·대동강(scene-hs-pg1-farming·scene-hs-pg1-garak)에는 달지 않았다. fact.note 도 016·017·018·024 는 '해외(북한)'라고 쓰고 009·014 는 아무 말이 없다.",
+   "fix": "북한 지역은 참고 칸과 같이 국내(한반도)로 보고 scene-hs-pg1-misong 의 place.overseas 를 제거하며, fact 016·017·018·024 note 의 '해외(북한)' 문구를 '현재 북한 지역'처럼 바꾼다. overseas=true 는 중국 랴오닝 장면(scene-hs-pg1-bipa, scene-hs-pg1-range)에만 남긴다. 반대로 북한을 해외로 보겠다면 북한 소재 6개 장면 전부에 같은 처리를 적용한다.",
+   "evidence": "result.json 에서 overseas=true 인 scene 은 bipa(중국 차오양)·misong(북한 의주)·range(중국 요하) 3건. data/research/curriculum-joseon-early/joseon-early-2/result.json 의 scene-hs-4gun(41.4608/126.6414)·scene-hs-6jin(42.95556/129.99167) 등 북한 장면에는 overseas 필드가 없다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-comb-pattern-pottery",
+   "sceneId": "scene-hs-pg1-jeulmun",
+   "problem": "좌표가 완전히 같은(거리 0.00 km) 장면 쌍이 위 major 건 말고도 4쌍 더 있다: amsa/jeulmun(127.13028, 37.56056), osanri/clan(128.66139, 38.08694), dongsam/belief(129.07944, 35.07083), dangun/founding(125.7475, 39.01667). '같은 도시 항목이 한 점에 겹치지 않게' 규칙에 어긋나 지도에서 서로 가려진다.",
+   "fix": "개념 항목(빗살무늬토기·씨족사회·원시신앙)은 같은 유적 안의 다른 지점이나 근거 좌표가 따로 있는 동류 유적으로 옮긴다. 단군 초상(portrait)과 고조선 건국은 전승상 같은 아사달이므로 한쪽을 별도 근거 좌표로 조금 어긋나게 두거나, 겹침을 유지한다면 두 note 에 '의도한 동일 지점'이라고 분명히 적는다.",
+   "evidence": "28개 장면 좌표의 쌍별 거리 계산 결과 0.00 km 가 5쌍(위 major 1쌍 포함). 반구대/천전리는 1.95 km, 금굴/수양개는 4.73 km 로 분리돼 있어 문제가 아니다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-neolithic-clan-society",
+   "claimId": "claim-hs-pg1-clan-clan",
+   "problem": "brief 의 근거 우선순위는 '위키백과는 좌표 보조로만' 인데, 좌표가 아닌 실질 주장 7건이 위키백과 발췌에만 기대고 있다: claim-hs-pg1-paleo-site(금굴이 가장 오래된 구석기 유적), claim-hs-pg1-osanri-house·claim-hs-pg1-clan-house(움집 정착), claim-hs-pg1-clan-clan(연장자가 이끄는 부족사회), claim-hs-pg1-bronze-hwanho(환호), claim-hs-pg1-rice-rice(12호 집자리 불탄 쌀), claim-hs-pg1-farming-place(지탑리 소재지).",
+   "fix": "같은 내용을 민족문화대백과·우리역사넷 발췌로 바꿔 단다(검단리 환호는 이미 로컬 chunk chunk_scenes-135_forts_settlements_syj135-geomdan-place 가 있고, 오산리 집터는 ex-osanri-def 로 대체 가능하다). 대체가 안 되면 해당 fact 의 confidence 를 medium 이하로 내리고 note 에 '위키백과 개설 의존'을 적는다 — 지금은 fact-hs-pg1-012 에만 적혀 있다.",
+   "evidence": "해당 claim 들의 sourceId 가 src-hs-pg1-ko-neolithic-korea / ko-geumgul / ko-geomdanri / ko-heunamri / ko-jitapri. 발췌 문장 자체는 실서버 재조회로 전부 원문 일치를 확인했다(내용 조작은 없다)."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-paleolithic-begins",
+   "problem": "run.json 의 started=1789700000 은 2026-09-18T02:53:20Z 로 오늘(2026-09-14) 보다 나흘 뒤이고 끝자리가 0 으로 반올림된 자리표시자 값이다. 같은 폴더 manifest.json 의 fetchedUtc 는 70건 전부 2026-09-14 다. 검증기는 '0 이상 유한한 수' 만 보므로 통과하지만 실행 기록으로서는 사실이 아니다.",
+   "fix": "started 를 실제 조사 실행 시각의 epoch 초(manifest 의 fetchedUtc 와 같은 날짜대)로 바꾼다.",
+   "evidence": "run.json started=1789700000; manifest.json 의 fetchedUtc 날짜 분포 = {'2026-09-14': 70}."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-gojoseon-founding-dangun",
+   "factId": "fact-hs-pg1-018",
+   "problem": "region 을 'capital' 로 두었다. 지시문은 capital 을 '도읍 자체를 다루는 항목(천도·도읍 건설)' 에만 쓰라고 한다. 고조선 건국은 도읍을 정한 내용을 품고 있지만 항목 자체는 건국(administration)이고 좌표(39.01667N)는 위도 규칙상 north 다. 참고 칸에서 capital 은 한성 같은 실제 도읍 항목에 쓰였다.",
+   "fix": "region 을 north 로 바꾸고 '아사달에 도읍을 정했다'는 내용은 summary 와 claim-hs-pg1-founding-yusa 에 남긴다. capital 을 유지하려면 왜 도읍 항목으로 보는지 note 에 더 분명히 적는다.",
+   "evidence": "fact-hs-pg1-018 region='capital', lat=39.01667. docs/research/curriculum-items-brief.md 의 region 규칙: '위도 ≥ 39 north … capital 은 도읍 항목만'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-seokjangri",
+   "claimId": "claim-hs-pg1-seokjang-tool",
+   "problem": "claim 의 object 는 thing-hs-pg1-handaxe(주먹도끼)인데 발췌(ex-paleo-def)는 구석기시대 일반 정의뿐이라 '석장리에서 주먹도끼가 나왔다'는 연결을 뒷받침하지 않는다. claim-hs-pg1-neobegin-tool 도 object 가 thing-hs-pg1-ganseokgi(간석기)인데 발췌(ex-neo-farm)는 잡곡 농경 이야기라서 간석기를 전혀 지지하지 않는다. 항목 제목이 '신석기 시대의 시작과 간석기' 인데 칸 전체에 간석기 근거가 한 건도 없다.",
+   "fix": "석장리 claim 은 object 를 period-hs-paleolithic 으로 바꾸거나 석장리 출토 석기를 적은 enc-seokjangri 발췌로 교체한다. 간석기는 민족문화대백과 '간석기(마제석기)' 항목 발췌를 새로 받아 근거를 달고, 못 달면 fact-hs-pg1-006 note 에 '간석기는 근거 미확보'를 적는다.",
+   "evidence": "result.json claim-hs-pg1-seokjang-tool sourceId=src-hs-pg1-enc-paleolithic, citesExcerpt=ex-paleo-def; claim-hs-pg1-neobegin-tool citesExcerpt=ex-neo-farm('신석기 전기부터 잡곡 농경이 전국적으로 널리 보급되면서 …')."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-jeongokri-handaxe",
+   "sceneId": "scene-hs-pg1-jeongok",
+   "problem": "장면의 dateClaimIds 가 장면 연도를 가리키지 않는 경우가 많다. (가) 현대 발굴·지정 연도형: jeongok(1978)·durubong(1976)·seokjang(1964)·osanri(1981)·dongsam(1969∼1971)·amsa(1966)·neobegin(1998)·misong(1959)·songguk(1974) 은 startYear(-300000 ∼ -700)와 무관하다. (나) 시간 object 가 아예 없는 relatedTo claim 을 dateClaim 으로 쓴 장면: paleo·jeulmun·clan·belief·garak·bangudae·myth·cheonjeon·chief·bipa·range·ganghwa·gochang.",
+   "fix": "선사 항목은 연도 근거를 세울 수 없다는 점을 인정하되, (가) 유형은 발굴 연도 claim 을 actionClaimIds 로 옮기고 dateClaimIds 에는 시대 규정 claim 을 둔다. (나) 유형은 fact.note 에 '연도는 추정이며 시간 근거 주장 없음' 을 같은 문구로 통일해 남긴다. 지금은 일부 note 에만 적혀 있다.",
+   "evidence": "scene-hs-pg1-jeongok dateClaimIds=['claim-hs-pg1-jeongok-find'](time year=1978) vs startYear=-300000. scene-hs-pg1-ganghwa dateClaimIds=['claim-hs-pg1-ganghwa-def'](object.kind='entity', 시간 값 없음)."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-rice-farming",
+   "factId": "fact-hs-pg1-023",
+   "problem": "fact.year 는 -1000 인데 이 항목의 유일한 연대 근거인 흔암리 탄화미 발췌는 '서기전 6, 5세기경'(약 -600∼-400)이다. 400∼600년 차이가 note 에만 적혀 있고 표시 연도에는 반영되지 않았다. fact.what 의 '논에서 벼를 길러'와 '빈부 차이' 도 근거가 없다(note 에 미확인이라고 적혀 있다).",
+   "fix": "표시 연도를 -600 으로 내려 근거와 맞추거나, -1000 을 유지한다면 yearVerbatim 을 '청동기시대(항목 기준 연도, 근거 미확보)' 로 고쳐 근거 연도와 표시 연도를 한 칸에 섞어 적지 않는다.",
+   "evidence": "ex-byeo-heunam='경기도 여주시 흔암리에서 서기전 6, 5세기경으로 추정되는 탄화미(炭化米)가 발견되었을' (raw/enc-byeonongsa.html 문맥은 우리나라 벼농사 기원 논의 대목으로 왜곡 없음). fact-hs-pg1-023.year=-1000."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-bangudae-petroglyphs",
+   "factId": "fact-hs-pg1-015",
+   "problem": "yearVerbatim 이 '약 7000년 전∼기원전 3000년경(추정)' 인데 원문은 '약 7,000년~3,500년 전에 조성된 것으로 보인다' 이다. '기원전 3000년경' 은 사전 표기가 아니라 조사자가 만든 값이라 verbatim 으로 보기 어렵다. 표시 연도 -3000 자체는 사전이 준 범위(-5000 ∼ -1500) 안에 들어 사실 오류는 아니다.",
+   "fix": "yearVerbatim 을 '약 7,000년~3,500년 전(민족문화대백과 표기)' 로 바꾸고, 그 범위에서 -3000 을 고른 이유는 note 에 적는다.",
+   "evidence": "raw/enc-bangudae.html: '우리나라 선사시대 암각화 유적 중 가장 오래된 것으로, 약 7,000년~3,500년 전에 조성된 것으로 보인다.' 및 ex-bangu-whale='고래를 사냥하는 매우 사실적인 그림은 약 7000년 전 신석기시대에 제작된 것으로서'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-ganghwa-dolmens",
+   "factId": "fact-hs-pg1-026",
+   "problem": "연도가 전적으로 추정인데 confidence 가 'high' 인 fact 가 6건 있다: 002(전곡리 -300000), 015(반구대 -3000), 019(천전리 -2000), 024(미송리 -900), 026(강화 -700), 027(송국리 -700). note 에 '연도는 사료로 고정 못 함' 이라고 적으면서 confidence 는 최고값이라 카드에서 확신도가 과장돼 보인다.",
+   "fix": "장소·성격 근거만 확실하고 연도는 추정인 경우 confidence 를 medium 으로 내리거나, high 가 '장소·성격 근거 기준' 이라는 뜻임을 note 첫머리에 통일된 문구로 밝힌다. 칸 안에서 기준이 같아야 한다.",
+   "evidence": "fact-hs-pg1-026 confidence='high', note='축조 연도는 사료로 고정할 수 없어 청동기시대 추정값을 썼다'. 같은 성격인 fact-hs-pg1-001·006 은 medium 이라 기준이 엇갈린다."
+  }
+ ],
+ "checkedItems": [
+  "hs-prehistoric-jeongokri-handaxe (core · 실서버 재조회)",
+  "hs-prehistoric-amsadong (core · 실서버 재조회 + 로컬 chunk 대조)",
+  "hs-prehistoric-comb-pattern-pottery (core · 실서버 재조회)",
+  "hs-gojoseon-dangun-myth (core · 실서버 재조회 + 삼국유사 chunk 원문 대조)",
+  "hs-gojoseon-founding-dangun (core · 실서버 재조회 + 삼국유사 chunk 원문 대조)",
+  "hs-prehistoric-mandolin-dagger (core · 실서버 재조회)",
+  "hs-gojoseon-cultural-range (core · 실서버 재조회)",
+  "hs-prehistoric-ganghwa-dolmens (core · 실서버 재조회)",
+  "hs-prehistoric-gochang-dolmens (core · 실서버 재조회)",
+  "hs-prehistoric-paleolithic-begins (실서버 재조회)",
+  "hs-prehistoric-durubong-cave (실서버 재조회)",
+  "hs-prehistoric-seokjangri (실서버 재조회)",
+  "hs-prehistoric-suyanggae (실서버 재조회)",
+  "hs-prehistoric-neolithic-begins (실서버 재조회)",
+  "hs-prehistoric-osanri (실서버 재조회)",
+  "hs-prehistoric-dongsamdong-shellmound (실서버 재조회)",
+  "hs-prehistoric-neolithic-farming (실서버 재조회 + 좌표 대조)",
+  "hs-prehistoric-neolithic-clan-society (실서버 재조회)",
+  "hs-prehistoric-primitive-beliefs (실서버 재조회)",
+  "hs-prehistoric-spindle-whorl (실서버 재조회 + 좌표 대조)",
+  "hs-prehistoric-bangudae-petroglyphs (실서버 재조회 + 원문 문맥 확인)",
+  "hs-gojoseon-dangun (실서버 재조회 + 로컬 chunk 대조)",
+  "hs-prehistoric-cheonjeonri-petroglyphs (실서버 재조회 + 원문 문맥 확인)",
+  "hs-prehistoric-bronze-age-begins (실서버 재조회 + 로컬 chunk 대조)",
+  "hs-prehistoric-class-and-chieftain (실서버 재조회 + 원문 문맥 확인)",
+  "hs-prehistoric-rice-farming (실서버 재조회 + 원문 문맥 확인)",
+  "hs-prehistoric-misongni-pottery (실서버 재조회)",
+  "hs-prehistoric-songgukri (실서버 재조회)"
+ ],
+ "summary": "검증기는 PASS(실패 0, 경고 0)다. 웹 출처 45개를 실제 URL 로 다시 내려받아 발췌 57개가 전부 원문에 그대로 있음을 확인했고(FAIL 0), 위키백과 raw 는 대부분 sha256 까지 비트 단위로 일치했다. 로컬 chunk 6건(삼국유사 2 · 민족문화대백과 발췌 4)도 원문과 대조해 quote 가 정확했다. 장면 요약 28건 가운데 원문을 그대로 옮긴 문장은 없었고, 항목 28건이 fact·scene 과 1:1 로 대응하며 kind·heritageType·participants·priority 는 항목 sceneType 과 모두 일치했다(person-dangun 은 기존 저장소 개체 재사용). 남은 문제는 주로 좌표·연도 정합이다. 중대 3건: (1) 봉산 지탑리 항목이 위키백과 '대동강' 문서의 강 대표 좌표를 써서 modernPlace 가 가리키는 군과 수십 km 어긋나고 가락바퀴 항목과 같은 한 점에 겹친다, (2) 청동기 시작 항목의 표시 연도(-1500)와 근거 claim 의 연도(-1000)가 다르다, (3) 북한 소재 장면의 overseas 처리가 지시문·참고 칸(joseon-early-2) 관례와 어긋나고 6개 중 1개에만 붙어 있다. 그 밖에 좌표가 완전히 겹치는 장면 4쌍, 위키백과를 좌표 외 실질 근거로 쓴 claim 7건, 미래 시각으로 채운 run.json started, capital region 의 애매한 사용, 근거가 지지하지 않는 claim 2건, 연도 근거 없이 confidence high 인 fact 6건이 있다. 발췌 조작·문맥 왜곡·교과서 문장 전재는 발견되지 않았다."
+}

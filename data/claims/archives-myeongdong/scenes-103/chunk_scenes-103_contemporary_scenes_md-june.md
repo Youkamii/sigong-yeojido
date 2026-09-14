@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-md-june",
+    "subject": "place-hs-c4-myeongdong-cathedral",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-c4-june"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_md-june",
+    "quote": "6월 항쟁 도중 학생과 시민시위대의",
+    "note": "6월 항쟁 때 시위대가 몸을 숨긴 곳이 되었다.",
+    "fromSource": "src-archives-myeongdong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

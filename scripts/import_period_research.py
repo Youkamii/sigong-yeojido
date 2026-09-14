@@ -171,7 +171,8 @@ def main():
         old = {r['id']: r for r in existing}
         for row in rows:
             if row['id'] in old:
-                assert old[row['id']] == row
+                # 같은 칸을 검수 수정본으로 다시 적재할 때는 발췌 행을 새 값으로 바꾼다(id 에 칸 이름이 들어 있어 다른 칸과 겹치지 않는다).
+                existing[existing.index(old[row['id']])] = row
             else:
                 existing.append(row)
         files[path] = ''.join(json.dumps(r, ensure_ascii=False, sort_keys=True) + '\n' for r in existing)

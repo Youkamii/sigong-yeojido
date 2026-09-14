@@ -62,6 +62,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-rok-1948",
+    "subject": "event-hs-c1-rok",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1948년 8월 15일",
+      "year": 1948,
+      "precision": "day",
+      "earliest": 1948,
+      "latest": 1948,
+      "id": "ts-curriculum-contemporary-contemporary-1-hs-c1-rok-1948"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_jc-1948",
+    "quote": "1948년 8월 15일에는 중앙청 앞뜰에서 대한민국 정부수립 선포식이 거행되었다.",
+    "note": "중앙청 앞뜰에서 선포식이 열렸다.",
+    "fromSource": "src-archives-joseonchong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

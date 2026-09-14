@@ -1,135 +1,138 @@
 {
- "job": "samguk-3",
- "checker": "claude-opus-5 high",
- "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-samguk --job samguk-3 -> PASS: failures=0 warnings=0 (facts 24, scenes 24, claims 94, chunkClaims 61, excerptClaims 33). manifest 28건 sha256/byteLength 전건 재계산 일치, raw/ 파일 28개와 1:1, 중복 URL 없음, db.history.go.kr 원본 없음.",
- "verdict": "fix",
- "issues": [
-  {
-   "severity": "major",
-   "itemId": "hs-samguk-beopheung-wang / hs-samguk-silla-code / hs-samguk-sangdaedeung",
-   "factId": "fact-hs-s3-006 / fact-hs-s3-010 / fact-hs-s3-014",
-   "sceneId": "scene-hs-s3-beopheung-wang / scene-hs-s3-silla-code / scene-hs-s3-sangdaedeung",
-   "claimId": "claim-hs-s3-loc-wolseong",
-   "problem": "세 항목이 경주 월성 좌표(129.22611, 35.83083) 한 점에 정확히 겹친다. '같은 도시 항목이 한 점에 겹치지 않게' 규칙 위반이며 지도에서 마커 셋이 포개진다. 두 장면의 coordinateNote 가 겹침을 스스로 밝혀 두었으나 해소하지는 않았다.",
-   "fix": "율령 반포(scene-hs-s3-silla-code)만 월성에 남기고 나머지 두 건은 아직 쓰지 않은, 십진 좌표 근거가 있는 왕경 지점으로 옮긴다. 법흥왕 초상은 매장지 기사(삼국사기 '葬於哀公寺北峯', chunk_samguksagi_sg_004_0030_0190)에 맞춘 지점, 상대등 임명은 왕경 관아 구역의 다른 표지물을 새 위키 좌표 출처로 받아 쓴다. 새 좌표 근거를 구하지 못하면 좌표를 지어내지 말고 fact.note 와 coordinateNote 세 곳 모두에 겹침을 남겨 조립 단계에서 분산할 수 있게 표시한다.",
-   "evidence": "result.json: scene-hs-s3-beopheung-wang.place / scene-hs-s3-silla-code.place / scene-hs-s3-sangdaedeung.place 의 lon/lat 가 모두 129.22611, 35.83083. 경주 항목 10건이 8개 지점만 쓴다."
-  },
-  {
-   "severity": "major",
-   "itemId": "hs-samguk-sabi-move",
-   "factId": "fact-hs-s3-016",
-   "sceneId": "scene-hs-s3-sabi-move",
-   "claimId": "",
-   "problem": "사비 천도는 도읍 자체를 다루는 항목인데 region 이 'central' 이다. 지침은 region 'capital' 을 천도·도읍 건설 항목에 쓰도록 정하고 있어, 지금은 이 칸의 capital 권역 사실 수가 0으로 집계된다.",
-   "fix": "fact-hs-s3-016.region 과 scene-hs-s3-sabi-move.region 을 'capital' 로 고치고 result.cell.regions 에 'capital' 을 추가한다. 성왕 초상·정사암 등 나머지 부여 항목은 도읍 자체를 다루는 항목이 아니므로 central 을 유지한다.",
-   "evidence": "검증기 region×10년 표의 capital 행이 전부 0. 지침 원문: \"region 'capital' 은 도읍 자체를 다루는 항목(천도·도읍 건설)에만 쓴다\", curriculum-items-brief.md 의 region 규칙."
-  },
-  {
-   "severity": "minor",
-   "itemId": "hs-samguk-muryeong-wang",
-   "factId": "fact-hs-s3-001",
-   "sceneId": "",
-   "claimId": "",
-   "problem": "fact.what 이 항목 meaning 과 다르게 다시 쓰였다. 24건 가운데 이 1건만 어긋난다(나머지 23건은 항목 meaning 그대로).",
-   "fix": "what 을 항목 meaning 인 '22담로에 왕족을 보내 지방을 다잡고 백제를 되살린 왕' 으로 되돌린다. 다시 쓴 문장이 필요하면 scene.summary 쪽에 둔다.",
-   "evidence": "items.json hs-samguk-muryeong-wang.meaning vs result.json fact-hs-s3-001.what = '흔들리던 백제를 다시 일으키고 지방을 왕이 직접 챙긴 임금'."
-  },
-  {
-   "severity": "minor",
-   "itemId": "hs-samguk-jeongsaam",
-   "factId": "fact-hs-s3-019",
-   "sceneId": "scene-hs-s3-jeongsaam",
-   "claimId": "",
-   "problem": "confidence 가 'low' 인데 missing[] 은 비어 있고 장면까지 만들어져 있다. 지침은 근거를 못 찾은 항목만 low 로 두고 missing[] 에 사유를 남기며 장면을 만들지 않도록 한다. 실제로는 삼국유사 정사암 기사와 민족문화대백과 항목 두 근거가 붙어 있어 low 가 과소 평가다.",
-   "fix": "근거가 둘이므로 confidence 를 'medium' 으로 올린다(연도 미상은 note 에 이미 밝혀 둠). low 를 유지하려면 missing[] 에 {itemId: hs-samguk-jeongsaam, reason: 회의 개최 연도를 적은 사료 없음} 을 넣는다.",
-   "evidence": "result.json facts[18].confidence='low', missing=[]. 근거 claim: claim-hs-s3-jeongsaam-sy(chunk_samgukyusa_sy_002_0010_0200_0050), claim-hs-s3-jeongsaam-enc(encykorea E0050314)."
-  },
-  {
-   "severity": "minor",
-   "itemId": "hs-samguk-jeongsaam",
-   "factId": "fact-hs-s3-019",
-   "sceneId": "scene-hs-s3-jeongsaam",
-   "claimId": "claim-hs-s3-nambuyeo-period",
-   "problem": "항목 연도 550 을 538~660 으로 바꿔 122년짜리 회의 장면이 되었다. assembly 장면이 한 세기 넘게 이어지는 형태로 표시되고 시작 연도가 사비 천도 장면과 같은 해가 된다.",
-   "fix": "startYear/endYear 를 한 해(항목의 550 또는 근거가 있는 538)로 두고, 사비 시기 내내 이어졌다는 사실은 persistence {kind:'institution', from:538, to:660, basisClaimIds:[claim-hs-s3-sabi-538, claim-hs-s3-nambuyeo-period]} 로 옮긴다.",
-   "evidence": "result.json scene-hs-s3-jeongsaam.startYear=538, endYear=660 / items.json hs-samguk-jeongsaam.year=550."
-  },
-  {
-   "severity": "minor",
-   "itemId": "hs-samguk-silla-name-503 / hs-samguk-geumgwan-gaya-fall / hs-samguk-muryeong-tomb",
-   "factId": "fact-hs-s3-003 / fact-hs-s3-015 / fact-hs-s3-012",
-   "sceneId": "",
-   "claimId": "claim-hs-s3-sillaname-act / claim-hs-s3-gaya-treat / claim-hs-s3-tomb-land",
-   "problem": "syj:administeredAs 는 州·郡·縣·京·小京 같은 행정 단위 표기를 담는 술어인데 왕호('新羅國王')·인물 예우 등급('上等')·매지권 문구('買申地爲墓')에 쓰였다. 검증기는 통과하지만 적재 뒤 행정 단위 질의에 잡음이 섞인다.",
-   "fix": "세 건을 syj:relatedTo(entity) 로 바꾸고 원문 표기는 note 에 남긴다. 왕호는 polity-hs-s3-silla, 김구해 예우는 person-hs-s3-gim-guhae, 매지권은 place-hs-s3-muryeongneung 에 건다.",
-   "evidence": "facts-format.md 의 predicate 목록: syj:administeredAs(literal: 州·郡·縣·京·小京 등 원문 표기)."
-  },
-  {
-   "severity": "minor",
-   "itemId": "hs-samguk-golpumje / hs-samguk-silla-17-ranks / hs-samguk-sangdaedeung / hs-samguk-hangang-553 / hs-samguk-silla-buddhism 등",
-   "factId": "",
-   "sceneId": "",
-   "claimId": "claim-hs-s3-golpum-scope / claim-hs-s3-golpum-tang / claim-hs-s3-ranks-sg / claim-hs-s3-sangdaedeung-role / claim-hs-s3-hangang-act / claim-hs-s3-usan-ships / claim-hs-s3-heungnyunsa-place",
-   "problem": "syj:relatedTo 주장 여러 건의 object 엔티티가 인용문과 무관하다. 골품의 생활 규제 서술(혼인·가옥·의복)이 place-hs-s3-wolseong 에, 17관등 기사가 place-hs-s3-najeong 에, '흥륜사는 경상북도 경주시에 있었던' 이라는 장소 서술이 polity-hs-s3-silla 에 걸려 있다. 인용문 자체는 정확해 사실 왜곡은 아니지만 그래프에 근거와 대상이 어긋난 관계가 남는다.",
-   "fix": "object 를 인용문이 실제로 가리키는 엔티티로 바꾼다(골품 규제·17관등→polity-hs-s3-silla, 흥륜사 소재→place-hs-s3-heungnyunsa, 신주 설치→polity-hs-s3-silla). 좌표를 붙이려고 장소 엔티티를 object 로 끌어다 쓰지 않는다 — 좌표는 이미 별도 location claim 이 맡고 있다.",
-   "evidence": "result.json claims 의 object.id 와 각 claim 의 quote·note 대조."
-  },
-  {
-   "severity": "minor",
-   "itemId": "hs-samguk-danyang-stele / hs-samguk-yeonga-buddha",
-   "factId": "fact-hs-s3-020 / fact-hs-s3-017",
-   "sceneId": "scene-hs-s3-danyang-stele / scene-hs-s3-yeonga-buddha",
-   "claimId": "claim-hs-s3-loc-danyang / claim-hs-s3-loc-uiryeong",
-   "problem": "좌표가 실제 소재지·출토지가 아니라 군 중심점이다. 적성비는 단성면 하방리 산3-1 인데 쓰인 좌표는 단양읍 군 중심점으로 약 9~10km 떨어진 강 건너편이고, 연가 7년명 불상 출토지 대의면 하촌리도 의령읍 군 중심점에서 약 10km 떨어져 있다. placeLabel 이 '비석 소재지 일원'·'출토지 일원' 이라 지도에서 실제 지점으로 읽힌다.",
-   "fix": "국가유산포털 소재지 좌표를 받을 수 있으면 그것으로 바꾸고(접속 불가면 note 에 기록), 받지 못하면 placeLabel 을 '단양군 일원(적성비 소재지 대표점)'·'의령군 일원(하촌리 출토지 대표점)' 처럼 군 단위로 바꿔 오차를 라벨에서도 드러낸다. precision 은 'area' 유지.",
-   "evidence": "ko.wikipedia '단양 신라 적성비' 문서에는 십진 좌표가 없고 주소만 '충청북도 단양군 단성면 하방리 산3-1' 이다. 쓰인 좌표는 '단양군'(36.984695, 128.3658033)·'Uiryeong County'(35.3191666767, 128.261111121) 문서 머리의 표시 좌표다."
-  },
-  {
-   "severity": "minor",
-   "itemId": "hs-samguk-jinheung-wang",
-   "factId": "fact-hs-s3-018",
-   "sceneId": "scene-hs-s3-jinheung-wang",
-   "claimId": "",
-   "problem": "fact.note 와 place.coordinateNote 가 '명활성은 진흥왕 15년(554) 수축 기록이 있는 왕경 방어성' 이라고 단언하는데 이를 뒷받침하는 claim 이 없다. 서술 자체는 맞지만 근거 없는 문장이 카드에 나간다.",
-   "fix": "chunk_samguksagi_sg_004_0040_0210('十五年, 秋七月, 修築明活城', date.raw 0554-07-99L0)로 claim 을 하나 만들어 scene.relatedClaimIds 에 넣거나, note 에서 연도 단언을 뺀다.",
-   "evidence": "result.json fact-hs-s3-018.note 와 scene-hs-s3-jinheung-wang.place.coordinateNote 를 claims 목록과 대조. 해당 chunk 는 search_chunks 로 존재 확인."
-  },
-  {
-   "severity": "minor",
-   "itemId": "(칸 전체)",
-   "factId": "",
-   "sceneId": "",
-   "claimId": "",
-   "problem": "manifest.json 28건의 fetchedUtc 가 모두 '2026-09-14T03:20:00Z' 로 같고, run.json 의 started 1789700000 은 검수 시점(2026-09-14)보다 나흘 뒤를 가리키는 반올림 값이다. 실제 기록이 아니라 손으로 넣은 값으로 보인다.",
-   "fix": "다음 칸부터 fetchedUtc 는 내려받은 실제 시각을, run.started 는 실제 시작 epoch 을 적는다. 이 칸은 원본이 재확인되었으므로 재수집까지는 필요 없다.",
-   "evidence": "manifest.json 전건 fetchedUtc 동일, run.json started=1789700000. 원본 자체는 진짜다 — sha256·byteLength 28건 전건 일치, encykorea E0027042·E0012733 과 ko.wikipedia 경주 월성·단양군·아스카사를 실제 URL 로 다시 받아 발췌 문자열 그대로 확인(모두 200)."
-  }
- ],
- "checkedItems": [
-  "hs-samguk-muryeong-wang",
-  "hs-samguk-ox-plowing",
-  "hs-samguk-silla-name-503",
-  "hs-samguk-22-damno",
-  "hs-samguk-usanguk",
-  "hs-samguk-beopheung-wang",
-  "hs-samguk-byeongbu",
-  "hs-samguk-golpumje",
-  "hs-samguk-silla-17-ranks",
-  "hs-samguk-silla-code",
-  "hs-samguk-seong-wang",
-  "hs-samguk-muryeong-tomb",
-  "hs-samguk-silla-buddhism",
-  "hs-samguk-sangdaedeung",
-  "hs-samguk-geumgwan-gaya-fall",
-  "hs-samguk-sabi-move",
-  "hs-samguk-yeonga-buddha",
-  "hs-samguk-jinheung-wang",
-  "hs-samguk-jeongsaam",
-  "hs-samguk-danyang-stele",
-  "hs-samguk-ureuk",
-  "hs-samguk-norisachigye",
-  "hs-samguk-hangang-553",
-  "hs-samguk-hwangnyongsa"
- ],
- "summary": "항목 24건 전부(core 10건 포함, 표본 100%)를 출처에서 직접 재확인했다. 로컬 chunk 인용 61건은 search_chunks 로 원문을 열어 인용문·연도·문맥을 맞춰 보았고 어긋난 것이 없었다. 삼국사기의 무령왕 즉위/사망·우경·국호 신라·우산국·병부·율령·상대등·금관가야 항복·사비 천도·신주 설치·황룡사 창건과 완공 기사, 무령왕 지석의 乙巳年八月, 연가7년명 광배의 延嘉七年歲在己未, 단양 적성비 해제의 551년 상한설, 고려사절요의 1238년 황룡사 탑 소실까지 원문과 일치한다. 웹 발췌 33건은 raw HTML 에서 앞뒤 문맥을 확인해 왜곡이 없었고, 그중 5건(민백 상대등·노리사치계, 위키 경주 월성·단양군·아스카사)은 실제 URL 로 다시 받아 같은 문자열을 확인했다. 위키 좌표 22건은 모두 해당 문서 머리의 표시 좌표이며 문서 제목도 의도한 장소와 맞았다. 재사용한 인물 엔티티 8건은 data/entities/person 의 기존 파일과 id·label 이 정확히 같다. kind·sceneFunction 은 24건 모두 항목 sceneType 과 일치하고, heritage 2건은 heritageType(artifact·stele)과 persistence 를 갖췄으며 초상 4건은 참여 인물이 한 명씩이다. 교과서 문장 전재는 없고 이차돈 527/528, 노리사치계 552/538, 담로·골품제·17관등·적성비의 연도 불확실, 아스카사가 596년 창건이라는 시대 어긋남까지 note 에 성실히 밝혀 두었다. 남은 문제는 사실 오류가 아니라 규칙·표시 문제다. 큰 것 둘은 경주 월성 좌표가 세 항목에 그대로 겹치는 것과 사비 천도의 region 이 capital 이 아닌 것이고, 작은 것 여덟은 fact.what 1건 이탈, 정사암의 confidence·기간 처리, administeredAs·relatedTo 술어 오용, 문화재 좌표의 군 중심점 사용, 근거 없는 note 한 줄, 손으로 넣은 fetchedUtc·started 다. 검증기는 PASS 라 구조상 적재는 가능하지만 큰 것 둘을 고친 뒤 적재하는 것이 맞다."
+  "job": "samguk-3",
+  "checker": "claude-opus-5 high",
+  "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-samguk --job samguk-3 -> PASS: failures=0 warnings=0 (facts 24, scenes 24, claims 94, chunkClaims 61, excerptClaims 33). category x 10년 표와 region x 10년 표 정상 출력. 별도 확인: items 24건 <-> facts 24건 <-> scenes 24건 1:1, manifest 28건 URL 중복 없음, raw/ 파일 28개와 1:1, db.history.go.kr 원본 없음, images.json 24건 전부 접두어·subjectType·sceneId 일치(인물 4건은 얼굴 문구 포함).",
+  "verdict": "fix",
+  "issues": [
+    {
+      "severity": "major",
+      "itemId": "hs-samguk-beopheung-wang / hs-samguk-silla-code / hs-samguk-sangdaedeung",
+      "sceneId": "scene-hs-s3-beopheung-wang / scene-hs-s3-silla-code / scene-hs-s3-sangdaedeung",
+      "problem": "세 항목이 경주 월성 표시 좌표(lon 129.22611, lat 35.83083) 한 점에 소수점까지 똑같이 놓였다. '사건은 구체 장소로, 같은 도시 항목이 한 점에 겹치지 않게' 규칙 위반이고 지도에서 마커 셋이 완전히 포개진다. 이 칸에서 정확히 겹치는 좌표 묶음은 이것 하나이며, 3중 중복은 curriculum-samguk 다섯 칸 가운데 samguk-1 다음으로 나쁘다.",
+      "fix": "셋 중 둘을 왕경 안의 다른 근거 지점으로 옮긴다(법흥왕 초상만 월성에 남긴다). 새 지점을 쓰려면 그 문서 HTML 을 raw/ 에 추가하고 sources·manifest·location claim 을 함께 만든 뒤 coordinateNote 에 대표점을 고른 이유를 적는다. 이 칸이 이미 받아 둔 경주 좌표원(오릉·계림·나정·첨성대·명활성·흥륜사·황룡사지) 가운데 다른 항목이 쓰지 않은 것을 먼저 본다.",
+      "evidence": "result.json place.lon/lat 비교: scene-hs-s3-beopheung-wang(2564-2578행), scene-hs-s3-silla-code(2766-2779행), scene-hs-s3-sangdaedeung(3017-3030행) 모두 129.22611/35.83083 이고 claim-hs-s3-loc-wolseong 하나를 공유한다. 두 장면의 coordinateNote 는 '같은 왕궁에서 벌어진 다른 항목과 지점이 겹친다' 고 스스로 적어 두었다."
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-samguk-sabi-move",
+      "factId": "fact-hs-s3-016",
+      "problem": "도읍을 옮긴 항목인데 region 이 'central' 이다. 지침은 region 'capital' 을 도읍 자체를 다루는 항목(천도·도읍 건설)에 쓰라고 정했고 같은 컬렉션의 다른 칸은 실제로 그렇게 했다. 지금 이 칸의 capital 권역 사실 수가 0 이라 region x 10년 표에서 삼국 시대 도읍 이동의 흐름이 samguk-3 구간만 끊긴다.",
+      "fix": "fact-hs-s3-016 의 region 과 scene-hs-s3-sabi-move 의 region 을 'capital' 로 바꾼다(둘은 같아야 한다). 사비를 무대로 쓴 다른 항목(성왕 초상·정사암 회의)은 도읍 자체를 다루는 항목이 아니므로 central 을 유지한다.",
+      "evidence": "samguk-1 의 fact-hs-sg1-004(국내성 천도) region=capital, samguk-2 의 fact-hs-sg2-012(평양 천도)·fact-hs-sg2-017(웅진 천도) region=capital. samguk-3 는 capital 사실 0건(검증기 region 표 capital 행 전부 0)."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-jinheung-wang",
+      "factId": "fact-hs-s3-018",
+      "problem": "core 항목인데 근거 주장이 즉위(reignedFrom)와 재위 기간(reignedTo) 둘뿐이고 행위 근거가 없다. 그런데 fact.what 과 장면 요약은 '한강과 낙동강, 함경도까지 넓혔다'는 영토 확장을 말한다. 함경도(황초령·마운령비)는 물론 한강 확보도 이 항목에 연결된 근거가 없다. 24건 가운데 행위 성격의 주장이 하나도 없는 항목은 이것뿐이다.",
+      "fix": "같은 result 안에 이미 있는 claim-hs-s3-hangang-553(백제 동북 변경 탈취)이나 claim-hs-s3-stele-content(적성 공략 기록)를 relatedClaimIds 로 걸어 행위 근거를 만든다. 함경도까지 넓혔다는 서술을 장면 요약에 남기려면 순수비 근거를 따로 찾고, 못 찾으면 요약에서 뺀다.",
+      "evidence": "fact-hs-s3-018 의 claimIds 는 claim-hs-s3-jinheung-540(reignedFrom)·claim-hs-s3-jinheung-enc(reignedTo)·claim-hs-s3-loc-myeonghwal(locatedAt) 뿐이다. 나머지 23건은 모두 행위 성격 주장을 하나 이상 갖고 있다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-muryeong-tomb",
+      "sceneId": "scene-hs-s3-muryeong-tomb",
+      "problem": "장면 kind 가 항목대로 'excavation' 인데 heritageType:'tomb' 과 persistence{kind:'facility'} 를 함께 달았다. 표시 조립기는 kind 가 'construction' 이거나 'heritage' 인 장면만 시설 존속 행으로 만들므로 이 두 필드는 화면에서 아무 일도 하지 않는다. 게다가 비-heritage 경로의 제외 정규식이 '릉' 으로 끝나는 제목을 걸러내 무령왕릉은 어차피 시설 행이 되지 않는다.",
+      "fix": "항목 sceneType 은 바꿀 수 없으므로 둘 중 하나로 정리한다. (가) heritageType 을 빼고 존속은 fact.persistence 기록으로만 남기거나, (나) 무덤을 현존 시설로 지도에 세울 것인지 항목 담당과 먼저 정한 뒤 kind 를 손댄다. 지금처럼 동작하지 않는 필드를 근거 있는 존속 표시처럼 두지 않는다.",
+      "evidence": "services/host/app/facility-persistence.js 71행 `if((scene.kind!=='construction'&&!heritage)||...)continue;`, 42행 `if(scene.kind==='heritage')return ...`, 40행 excluded 정규식의 '(?:비|능|묘|릉|진)'. result.json 2919-2928행."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-yeonga-buddha",
+      "sceneId": "scene-hs-s3-yeonga-buddha",
+      "problem": "높이 16.2cm 의 옮길 수 있는 불상인데 kind='heritage' + heritageType='artifact' + persistence{facility, from:539, to:null} 이라, 조립기가 출토지인 의령 좌표에 '기록된 존속(근거 2건)' 시설 행을 만들어 2100년까지 세워 둔다. 실물은 1963년 출토 뒤 국립중앙박물관에 있고 그 사실은 fact.note 에만 적혀 있다.",
+      "fix": "이동 유물임이 화면에 드러나게 한다. persistence.to 를 출토·이관 연도(1963)로 끊거나, 유물에는 시설 존속 행을 만들지 않기로 정하고 persistence 를 뺀 뒤 소장처를 scene.summary 와 place.coordinateNote 에 적는다. 어느 쪽이든 다른 칸의 유물 항목과 같은 방식으로 통일한다.",
+      "evidence": "services/host/app/facility-persistence.js 42행에서 kind==='heritage' 면 heritageType 을 그대로 facilityLook 으로 쓴다(HERITAGE_TYPES 에 artifact 포함). result.json 3242-3250행, 4088행 note. 금석문 해제 chunk 도 '지금은 국보 119호로 지정되어 국립중앙박물관에 소장' 이라고 적는다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-silla-name-503 / hs-samguk-geumgwan-gaya-fall / hs-samguk-muryeong-tomb",
+      "claimId": "claim-hs-s3-sillaname-act / claim-hs-s3-gaya-treat / claim-hs-s3-tomb-land",
+      "problem": "syj:administeredAs 는 州·郡·縣·京·小京 같은 행정 단위 표기를 담는 술어인데 왕호('新羅國王')·항복한 왕의 예우 등급('上等')·매지권 문구('買申地爲墓')에 썼다. 검증기는 값의 자료형만 보므로 통과하지만, 적재 뒤 행정 단위로 집계되면 신라의 행정 표기가 '新羅國王' 이 되는 식의 잘못된 자료가 된다. 이 술어를 제 뜻대로 쓴 것은 담로('檐魯') 하나뿐이다.",
+      "fix": "세 건의 predicate 를 syj:relatedTo 로 바꾸고 원문 표기는 note 에 남긴다. 인용문과 citesChunk 는 그대로 두어도 된다.",
+      "evidence": "docs/research/facts-format.md 51행 predicate 표: syj:administeredAs(literal: 州·郡·縣·京·小京 등 원문 표기). result.json 1408-1416행, 1885-1893행, 1715-1723행."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-golpumje / hs-samguk-silla-17-ranks / hs-samguk-norisachigye 등",
+      "claimId": "claim-hs-s3-golpum-scope / claim-hs-s3-ranks-sg / claim-hs-s3-nori-king",
+      "problem": "syj:relatedTo 주장 37건 가운데 여러 건의 object 엔티티가 인용문과 무관하다. 골품이 혼인·가옥·의복을 규제했다는 발췌가 place-hs-s3-wolseong 에 걸리고, 유리 이사금의 17관등 기사가 place-hs-s3-najeong 에 걸리며, '聖王, 諱明穠, 武寧王之子也' 를 근거로 '노리사치계를 보낸 주체는 성왕' 이라고 적었다(파견 근거는 같은 패킷의 민백 발췌 ex-nori-552 에 따로 있다). 주장 수를 채우려고 엔티티를 임의로 붙인 모양이 반복된다.",
+      "fix": "object 를 인용문이 실제로 말하는 대상으로 바꾼다(골품 규제 -> polity-hs-s3-silla, 17관등 -> polity-hs-s3-silla, 성왕 계보 -> person-baekje-seongwang). 바꿀 대상이 마땅치 않으면 그 주장을 지우고 장면의 claimIds 에서도 뺀다. 사실 자체는 다른 주장으로 이미 뒷받침되므로 지워도 근거가 부족해지지 않는다.",
+      "evidence": "result.json 1598-1608행(golpum-scope), 1610-1621행(ranks-sg), 2150-2161행(nori-king). 인용문은 모두 원문에 실재하지만 object 엔티티를 가리키는 내용이 아니다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-jeongsaam",
+      "factId": "fact-hs-s3-019",
+      "problem": "항목 연도 550 을 538 로 바꾸고 장면을 538~660 으로 잡아, 귀족 회의 한 장면이 122년 동안 이어지는 형태가 되었다. 시작 연도가 사비 천도 장면과 같은 해가 되어 두 장면이 한 해에 함께 뜬다. 근거 처리 자체는 성실하지만(연도 주장이 사비 천도와 남부여 국호 기간) 같은 칸의 다른 institution 항목은 모두 한 해짜리 장면이라 처리가 어긋난다.",
+      "fix": "연도는 근거가 있는 538 을 유지하되 장면은 538~538 한 해로 두고, 사비 시기 내내 이어진 제도라는 점은 summary·note 로 적는다. 제도 존속을 표시하고 싶으면 persistence{kind:'institution', from:538, to:660, basisClaimIds} 로 옮겨 회의 장면의 길이와 제도 존속을 분리한다.",
+      "evidence": "items.json 의 hs-samguk-jeongsaam 은 year 550, approx true. result.json 3312-3313행 startYear 538 endYear 660, 4127-4128행 year 538. 병부·상대등·율령 장면은 모두 한 해짜리다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-silla-buddhism",
+      "sceneId": "scene-hs-s3-silla-buddhism",
+      "problem": "장소 라벨이 '경주 흥륜사(천경림 절터)' 인데 '천경림' 을 뒷받침하는 근거가 패킷에도 좌표원 HTML 에도 없다(raw/wiki-heungnyunsa.html 본문에 '천경림' 이 한 번도 나오지 않는다). 좌표도 현재의 흥륜사 위치이며 이차돈이 처형된 자리라는 뜻은 아니다.",
+      "fix": "라벨에서 '(천경림 절터)' 를 빼거나, 천경림 창건 전승을 담은 근거(삼국유사 chunk 등)를 찾아 claim 으로 달고 라벨을 유지한다. coordinateNote 에 '처형 장소가 아니라 순교의 계기가 된 절터의 현재 위치' 라는 한 줄을 더한다.",
+      "evidence": "raw/wiki-heungnyunsa.html 텍스트에 '천경림' 0회. 같은 문서는 '법흥왕 14년(527)에 이차돈의 순교로 다시 짓기 시작하여 진흥왕 5년(544)에 완성' 이라고만 적는다. result.json 2947행 라벨, 2958행 coordinateNote."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-jinheung-wang",
+      "factId": "fact-hs-s3-018",
+      "problem": "fact.note 와 place.coordinateNote 가 '명활성은 진흥왕 15년(554) 수축 기록이 있는 왕경 방어성' 이라고 단언하는데 이를 받치는 claim 이 없다. 좌표원으로 쓴 위키백과 문서는 같은 일을 '진흥왕 15년(544)에 다시 쌓았고' 로 적어 서기 연도가 다르다(진흥왕 15년은 554년이므로 위키 쪽 오기로 보이나 어느 쪽도 이 패킷의 근거가 아니다).",
+      "fix": "삼국사기 신라본기의 명활성 수축 기사를 search_chunks 로 찾아 claim 으로 달거나, 근거를 달지 않을 것이면 note 에서 연도를 빼고 '왕경 동쪽 방어성' 정도로만 적는다.",
+      "evidence": "result.json 3279행 coordinateNote, 4116행 note. raw/wiki-myeonghwal.html: '진흥왕 15년(544)에 다시 쌓았고, 진평왕 15년(593)에는 성을 확장했다.'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-danyang-stele / hs-samguk-yeonga-buddha",
+      "factId": "fact-hs-s3-020 / fact-hs-s3-017",
+      "problem": "문화재 좌표가 실제 소재지·출토지가 아니라 군 중심점이다. 적성비는 단양군 단성면 하방리 적성 안에 있는데 쓰인 좌표는 단양군 표시 좌표(단양읍)로 약 5km 떨어졌고, 연가 7년명 불상 출토지 대의면 하촌리도 의령군 표시 좌표와 약 9km 차이가 난다. fact.modernPlace 는 '단성면'·'의령군' 으로 적혀 좌표가 가리키는 행정 구역과 어긋난다.",
+      "fix": "지점 좌표를 구하면 바꾼다. 다만 검수 중 다시 확인한 바로는 ko 위키백과의 '단양 신라 적성비'·'연가7년명 금동여래입상' 문서에 표시 좌표가 없고 국가유산포털은 접속되지 않는다. 근거를 못 구하면 현재 좌표를 유지하되 modernPlace 를 좌표가 가리키는 행정 구역으로 맞추고 coordinateNote 의 '군 표시 좌표를 대표점으로 썼다' 를 그대로 남긴다.",
+      "evidence": "검수 중 재조회: ko.wikipedia.org/wiki/단양_신라_적성비 200 OK 이나 본문에 '좌표'·'북위' 없음, ko.wikipedia.org/wiki/연가7년명_금동여래입상 200 OK 이나 좌표 없음, www.heritage.go.kr 타임아웃(WinError 10060). 금석문 해제 chunk 는 '충청북도 단양군 하방리의 적성(赤城) 내에 위치' 라고만 적는다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-muryeong-wang",
+      "factId": "fact-hs-s3-001",
+      "problem": "fact.what 이 항목 meaning 과 다르게 다시 쓰였다. 항목은 '22담로에 왕족을 보내 지방을 다잡고 백제를 되살린 왕', fact 는 '흔들리던 백제를 다시 일으키고 지방을 왕이 직접 챙긴 임금' 이다. 24건 가운데 이 1건만 어긋나고 나머지 23건은 meaning 을 그대로 옮겼다.",
+      "fix": "fact.what 을 항목 meaning 그대로 되돌린다. 다시 쓴 문장은 장면 summary 에 두면 된다.",
+      "evidence": "docs/research/curriculum-items-brief.md 대응표: meaning -> fact.what(그대로). items.json 31행 vs result.json 3680행."
+    },
+    {
+      "severity": "minor",
+      "itemId": "(칸 전체)",
+      "problem": "run.json 의 started 1789700000 은 2026-09-18T02:53:20Z 로 검수 시점(2026-09-14)보다 나흘 뒤이고, manifest.json 28건의 fetchedUtc 가 모두 '2026-09-14T03:20:00Z' 로 같다. 실제 실행·수집 시각이 아니라 손으로 넣은 값으로 보인다. 검증기는 형식만 보므로 통과하지만 나중에 원본을 다시 받을 때 기준 시각이 되지 못한다.",
+      "fix": "started 를 실제 실행 시각(과거)으로 고친다. 원본을 다시 받을 일이 있으면 fetchedUtc 도 파일별 실제 수집 시각으로 적고, 다시 받지 않을 것이면 최소한 미래 시각인 started 만 바로잡는다.",
+      "evidence": "run.json started=1789700000 -> 2026-09-18T02:53:20Z. manifest.json 28건 fetchedUtc 고유값 1개('2026-09-14T03:20:00Z')."
+    }
+  ],
+  "checkedItems": [
+    "hs-samguk-muryeong-wang",
+    "hs-samguk-ox-plowing",
+    "hs-samguk-silla-name-503",
+    "hs-samguk-22-damno",
+    "hs-samguk-usanguk",
+    "hs-samguk-beopheung-wang",
+    "hs-samguk-byeongbu",
+    "hs-samguk-golpumje",
+    "hs-samguk-silla-17-ranks",
+    "hs-samguk-silla-code",
+    "hs-samguk-seong-wang",
+    "hs-samguk-muryeong-tomb",
+    "hs-samguk-silla-buddhism",
+    "hs-samguk-sangdaedeung",
+    "hs-samguk-geumgwan-gaya-fall",
+    "hs-samguk-sabi-move",
+    "hs-samguk-yeonga-buddha",
+    "hs-samguk-jinheung-wang",
+    "hs-samguk-jeongsaam",
+    "hs-samguk-danyang-stele",
+    "hs-samguk-ureuk",
+    "hs-samguk-norisachigye",
+    "hs-samguk-hangang-553",
+    "hs-samguk-hwangnyongsa"
+  ],
+  "summary": "항목 24건 전부(core 10건 포함, 표본 100%)를 출처에서 직접 다시 확인했다. 로컬 chunk 인용 61건은 search_chunks 로 원문을 열어 인용문·연도·앞뒤 문맥을 맞춰 보았고 어긋난 것이 없었다. 삼국사기의 무령왕 즉위(0501-11)와 사망(0523-05), 우경(0502-03), 국호 신라(0503-10), 우산국 귀복(0512-06), 병부(0517-04), 율령·공복(0520-01), 상대등 철부(0531-04), 금관국 항복(0532), 사비 천도(0538), 신주 설치(0553-07), 황룡사 착공(0553-02)과 완공(0566) 기사, 무령왕 지석의 '到乙巳年八月…安厝', 연가7년명 광배의 '延嘉七年歲在己未高麗國樂良', 양서 백제전의 '其國有二十二檐魯', 삼국유사의 '又虎嵓寺有政事嵓', 고려사절요의 1238년 '燒皇龍寺塔' 까지 원문과 일치했다. 웹 발췌 33건은 raw HTML 에서 앞뒤 문맥을 읽어 왜곡이 없음을 확인했고, 민백 상대등·노리사치계와 위키 경주 월성은 실제 URL 로 다시 받아 같은 문자열을 확인했다(월성 문서는 byteLength 277688 까지 일치). 위키 좌표 22건은 모두 해당 문서 머리의 표시 좌표이며 문서 주제도 의도한 장소와 맞았고, 정사암 좌표로 쓴 천정대는 위키 본문이 '삼국유사에 따르면 천정대를 정사암이라 불렀다' 고 적어 대체 지점 선택이 근거를 갖췄다. kind·sceneFunction 은 24건 모두 항목 sceneType 과 일치하고 초상 4건은 참여 인물이 한 명씩이며, 재사용한 인물 엔티티 8건은 data/entities/person 의 기존 파일과 id 가 같다. images.json 24건도 접두어·인물 얼굴 문구·sceneId 가 모두 맞다. 교과서 문장 전재는 없었고 이차돈 527/528, 노리사치계 552/538, 담로·골품제·17관등·적성비의 연도 불확실, 아스카사가 596년 창건이라는 시대 어긋남까지 note 로 밝혀 두었다. 남은 문제는 사실 오류가 아니라 규칙·표시 문제다. 큰 것 둘은 경주 월성 한 점에 세 항목이 그대로 겹치는 것과 사비 천도의 region 이 capital 이 아닌 것(같은 컬렉션의 국내성·평양·웅진 천도는 모두 capital)이다. 작은 것 열하나는 진흥왕 항목의 행위 근거 부재, 무령왕릉·연가 불상의 존속 표시가 조립기 규칙과 어긋나는 문제, administeredAs·relatedTo 술어 오용, 정사암의 122년 장면, 흥륜사 라벨의 근거 없는 '천경림', 근거 없는 명활성 note, 문화재 좌표의 군 중심점(대체 좌표원이 실제로 없음을 재확인), fact.what 1건 이탈, 미래 시각으로 적힌 run.json started 다. 검증기는 PASS 라 구조상 적재는 가능하지만 큰 것 둘은 고치고 적재하는 것이 맞다."
 }

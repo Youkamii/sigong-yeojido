@@ -45,6 +45,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-buma-date",
+    "subject": "event-hs-c4-buma",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1979년 10월 16일",
+      "year": 1979,
+      "precision": "year",
+      "earliest": 1979,
+      "latest": 1979,
+      "id": "ts-curriculum-contemporary-contemporary-4-hs-c4-buma-date"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_buma-start",
+    "quote": "1979년 10월 16일 아침 10시경, 부산대학교 구내 도서관 앞에서",
+    "note": "1979년 10월 16일 아침 부산대학교 도서관 앞에서 시작되었다.",
+    "fromSource": "src-encykorea-buma",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

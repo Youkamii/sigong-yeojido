@@ -1,9 +1,9 @@
 {
   "job": "goryeo-early-2",
-  "sources": 27,
-  "excerpts": 32,
-  "chunkClaims": 77,
-  "excerptClaims": 33,
+  "sources": 30,
+  "excerpts": 35,
+  "chunkClaims": 80,
+  "excerptClaims": 34,
   "facts": 23,
   "factsByCategory": {
     "administration": 5,
@@ -16,8 +16,8 @@
     "transport": 1,
     "war": 2
   },
-  "claims": 110,
-  "entities": 46,
+  "claims": 114,
+  "entities": 47,
   "rawFilesChecked": [
     {
       "source": "src-hs-en-manwoldae",
@@ -234,9 +234,42 @@
       "rawBytes": 87690,
       "excerpts": 2,
       "quotedWords": 12
+    },
+    {
+      "source": "src-hs-en-gyeongju",
+      "url": "https://en.wikipedia.org/wiki/Gyeongju",
+      "sha256": "b026135658a0bf993a47cbbd3978a68234ef72fd97e6fcbd2f7e2ff2d81c9551",
+      "rawBytes": 1018634,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-gwangju",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%91%EC%A3%BC%EC%8B%9C_(%EA%B2%BD%EA%B8%B0%EB%8F%84)",
+      "sha256": "154750ba4c2df0dadddc4c6e8d86f3e87833ca1db0fe626d3dddba0bbfc3f340",
+      "rawBytes": 277481,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-en-sungyang",
+      "url": "https://en.wikipedia.org/wiki/Sungyang_Sowon",
+      "sha256": "099c5b171faebb8b320ef624199f173a7daacee4f93fe8aad361bc7572c926ab",
+      "rawBytes": 88834,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
-  "missing": [],
+  "missing": [
+    {
+      "id": "miss-ge2-1",
+      "itemId": "hs-goryeo-early-hasachang-iron-buddha",
+      "reason": "제작 연도를 짚어 주는 근거를 찾지 못했다",
+      "topic": "하남 하사창동 철조석가여래좌상의 제작 연도",
+      "detail": "로컬 원문과 허용 웹 출처 어디에도 이 철불의 제작 연도를 적은 기록이 없어 장면 연도 1000년은 표시용 값이다. 이 때문에 사실의 confidence 를 low 로 낮추었다.",
+      "neededSource": "국가유산포털 보물 지정 해설 또는 국립중앙박물관 소장품 해설의 제작 시기 서술"
+    }
+  ],
   "collection": {
     "task": "goryeo-early-2",
     "runner": "workflow",
@@ -248,12 +281,13 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-goryeo-early-2"
+    "sessionId": "workflow-goryeo-early-2",
+    "revised": 1789380364
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "event-hs-ge2-gangjo-coup",
+    "person-hs-choe-seungno",
     "polity-goryeo"
   ],
   "reviewedSourceIds": {},

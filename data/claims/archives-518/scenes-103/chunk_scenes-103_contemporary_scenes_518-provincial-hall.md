@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-518-hall",
+    "subject": "event-hs-c4-518",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-c4-jeonnam-hall"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_518-provincial-hall",
+    "quote": "전남도청을 사수하며 계엄군과 맞서 싸웠다",
+    "note": "시민군이 전남도청을 사수하며 맞섰다.",
+    "fromSource": "src-archives-518",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

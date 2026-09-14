@@ -46,6 +46,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-4-hs-c4-sinsa-act",
+    "subject": "event-hs-c4-sinsa-chambae",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "inst-hs-c4-joseon-chongdokbu"
+    },
+    "note": "총독부가 1935년 11월 평양 기독교계 사립학교장 거부 사건을 계기로 참배 아니면 폐교라는 강경책을 폈다.",
+    "fromSource": "src-hs-c4-enc-sinsa-chambae",
+    "citesChunk": "chunk_curriculum-colonial_colonial-4_sinsa-1935",
+    "quote": "총독부가 1935년 11월 평양 기독교계 사립학교장 신사참배 거부사건을 계기로, 신사에 참배하든가 폐교하게 하는 강경책으로 나오자",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

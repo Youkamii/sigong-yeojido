@@ -1,0 +1,506 @@
+
+
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>교과서 용어해설 | 우리역사넷</title>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+	
+
+
+<link rel="shortcut icon" href="/resources/favicon.ico">
+
+<link type="text/css" rel="stylesheet" href="/resources/front/css/common.css" />
+<link type="text/css" rel="stylesheet" href="/resources/front/css/content.css" />
+<link type="text/css" rel="stylesheet" href="/resources/front/css/2017/default.css" />
+<link type="text/css" rel="stylesheet" href="/resources/front/css/2017/main.css" />
+
+<script language="javascript" src="/resources/js/makePCookie.js"></script><!-- 웹로그 분석 -->
+
+<script type="text/javascript" src="/resources/front/libs/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="/resources/front/libs/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="/resources/front/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="/resources/front/libs/jquery.banner.js"></script>
+<script type="text/javascript" src="/resources/front/libs/jquery.autocomplete.js"></script>
+
+<script type="text/javascript">
+	var LANG = "ko";
+	
+</script>
+
+<script type="text/javascript" src="/resources/front/js/common.js?ver=1.5"></script>
+	
+</head>
+
+<body class="snb_toggle ">
+<div id="wrap">
+	
+
+
+
+
+
+
+<script type="text/javascript">
+	function openYunhoPop() {
+		window.open('/front/yunho.do', 'yunhoPop', 'width=800,height=650,toolbar=no,location=no,menubar=no,scrollbars=auto');
+	}
+	
+	// util
+	$(document).ready(function() {
+		$('.utilRight ul li').hover(function() {
+			$(this).find('.intro_sub').stop(true, true).slideDown('');
+		}, function() {
+			$(this).find('.intro_sub').stop(true, true).slideUp('fast');
+		});
+		
+		var url = window.location.pathname;
+		
+		if (url.indexOf("/ta/")>-1 || url.indexOf("/eh/") > -1) {
+			$('.m1').addClass('on'); $('.m2').removeClass('on'); $('.m3').removeClass('on'); $('.m4').removeClass('on');
+		} else if (url.indexOf("/nh/")>-1 || url.indexOf("/km/")>-1 || url.indexOf("/ht/")>-1 || url.indexOf("/hm/")>-1 || url.indexOf("/kh/")>-1) {
+			$('.m2').addClass('on'); $('.m1').removeClass('on'); $('.m3').removeClass('on'); $('.m4').removeClass('on');
+		} else if(url.indexOf("/ti/")>-1 || url.indexOf("/photo")>-1 || url.indexOf("/ts/")>-1 || url.indexOf("/tt/")>-1) {
+			$('.m3').addClass('on'); $('.m2').removeClass('on'); $('.m1').removeClass('on'); $('.m4').removeClass('on');
+		} else if(url.indexOf("/th/")>-1 || url.indexOf("/kc/")>-1 || url.indexOf("/tg/")>-1 || url.indexOf("/hg/")>-1) {
+			$('.m4').addClass('on'); $('.m2').removeClass('on'); $('.m3').removeClass('on'); $('.m1').removeClass('on');
+		}
+	});
+</script>
+
+<!--header -->
+<div id="m_header" class="sub">
+	<!--util menu -->
+	<div class="m_util">
+		<div class="utilCenter"><a href="/"><img src="/resources/front/images/main_2017/m_logo.png" alt="우리역사넷" /></a></div>
+		<div class="utilLeft"><a href="http://www.history.go.kr/" target="_blank"><img src="/resources/front/images/main_2017/m_logo_history.png" alt="국사편찬위원회" /></a></div>
+		<div class="utilRight">
+			<ul>
+				<li>
+					<a class="intro" href="#self">소개</a>
+					<ul class="intro_sub">
+						<li><a href="/front/about/intro.do">사이트 소개</a></li>
+						<li><a href="/front/about/service.do">자료별 소개</a></li>
+					</ul>
+				</li>
+				<li><a href="/front/about/use.do">이용안내</a></li>
+				<li>
+					<a href="/front/notice/list.do">
+						
+						공지사항
+					</a>
+				</li>
+				<li class="noback"><a href="/front/errorReport/list.do">오류신고</a></li>
+				<li class="eng noback" style="clear:none;margin: 0;"><a href="/front/eng/main.do?lang=en">ENG</a></li>
+			</ul>
+			<div class="era"><a href="javascript:openYunhoPop();"><img src="/resources/front/images/main_2017/m_bt_era.png" alt="연호검색" /></a></div>
+		</div>
+	</div>
+	<!--//util menu -->
+	
+	<!-- gnb -->
+	<div class="m_gnbWrap">
+		<!-- nav -->
+		<nav id="gnb" class="gnb">
+			<ul>
+				<li class="m1">
+					<a href="javascript:;">교과서 속 우리 역사</a>
+					<ul class="gnb_sub">
+						<li><a href="/front/ta/main.do">역대 국사교과서</a></li>
+						<li><a href="/front/newEh/main.do">재미있는 초등역사</a></li>
+					</ul>
+				</li>
+				<li class="m2">
+					<a href="javascript:;">교양 우리 역사</a>
+					<ul class="gnb_sub">
+						<li><a href="/front/nh/main.do">신편 한국사</a></li>
+						<li><a href="/front/km/main.do">한국문화사</a></li>
+						<li><a href="/front/ht/main.do">주제로 본 한국사</a></li>
+						<li><a href="/front/hm/main.do">사료로 본 한국사</a></li>
+						<li><a href="/front/kh/main.do">영문 한국사</a></li>
+						<li><a href="http://contents.nahf.or.kr/dokdo/education/main.do" target="_blank">독도 교육자료</a></li>
+					</ul>
+				</li>
+				<li class="m3">
+					<a href="javascript:;">영상 · 이미지 속 우리 역사</a>
+					<ul class="gnb_sub">
+						<li><a href="/front/ki/main.do">한국사 이미지 자료</a></li>
+						<li><a href="/play/main.do?itemId=ts" target="_blank">영상 책 이야기</a></li>
+						<li><a href="/play/main.do?itemId=tt" target="_blank">영상 문화 · 예술 이야기</a></li>
+					</ul>
+				</li>
+				<li class="m4 last">
+					<a href="javascript:;">우리 역사 나침반</a>
+					<ul class="gnb_sub">
+						<li><a href="/front/th/list.do">오늘의 역사(연표)</a></li>
+						<li><a href="/front/kc/main.do" target="_blank">한국사 연대기</a></li>
+						<li><a href="/front/tg/main.do">교과서 용어 해설</a></li>
+						<li><a href="/front/hg/main.do">역사 지리</a></li>
+					</ul>
+				</li>
+				<!--171120 콘텐츠 내 검색/결과 내 재 검색 추가 -->
+				
+					
+					
+					
+						<li class="h_check">
+							<input type="checkbox" id="input_item_search" />
+							<label for="input_item_search" style="text-indent: 0; position: initial;"><em>콘텐츠 내 검색</em></label>
+						</li>
+					
+				
+				<!--//171120 콘텐츠 내 검색/결과 내 재 검색 추가 -->
+				<li class="h_search">
+					<input type="text" id="input_query" value="" title="검색어 입력" onkeypress="keypressSearch(event);" autocomplete="off" style="padding-top: 0; padding-bottom: 0;" />
+					<a href="javascript:totalSearch();">검색</a>
+				</li>
+			</ul>
+		</nav>
+		<!--//nav -->
+	</div>
+	<!--//gnb -->
+</div>
+<!--//header -->
+ 
+<!-- 오류신고 레이어 -->
+<div class="pop_fixed pop_error" style="top:50%; left:50%; width:660px; margin:-265px 0 0 -330px; display:none;">	
+</div>
+<div class="pop_overlay"></div>
+<!--// 오류신고 레이어 -->
+
+<!-- 연호검색 레이어 -->
+<div class="pop_yunhofixed pop_yunho" style="top:50%; left:50%; width:800px; margin:-265px 0 0 -400px; display:none;">	
+</div>
+<div class="yunho_overlay"></div>
+<!--// 연호검색 레이어 -->
+
+<form id="searchForm" name="searchForm" method="get" action="/front/search/result.do">
+	<!-- <input type="hidden" id="newSearch" name="newSearch" value="false" />
+	<input type="hidden" id="qCond" name="qCond" value="all" /> -->
+	<input type="hidden" id="query" name="q" />
+	<input type="hidden" id="searchItemId" name="searchItemId" value="tg" />
+	<input type="hidden" id="itemSearch" name="itemSearch" value="false" /> 
+	<input type="hidden" id="reSearch" name="reSearch" value="false" />
+	<input type="hidden" id="whereStr" name="whereStr" value="" />
+	<input type="hidden" name="lang" value="ko" />
+</form>
+
+<input type="hidden" id="moreSearch" value="false" />
+
+	<div id="container">
+		<div class="contWrap">
+			
+
+<a class="option_btn1"></a>
+
+<section class="sub_visual">
+	<div class="tit"><a href="/front/tg/main.do">교과서 용어 해설</a> <a href="javascript:popupIntro('/front/about/tg.do')"><img src="/resources/front/images/btn_info.png" alt="" /></a></div>			
+</section>
+
+<section class="lnb">
+	<a href="/front/" ><img src="/resources/front/images/btn_home.png" alt="" /></a>
+	&gt;&nbsp;<a href="/front/tg/main.do">교과서 용어 해설</a>
+	
+		&gt;&nbsp;<a href="/front/tg/list.do?treeId=0100">시대별</a>
+	
+	
+		&gt;&nbsp;전체
+	
+</section>
+
+	
+
+			
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// snb 탭 on/off
+	$('.snb_tab li a').click(function() {
+		$('.snb_tab li a').not($(this)).removeClass('on');
+		$(this).addClass('on');
+
+		$('.treeWrap').not($('.cont_' + $(this).attr("id"))).hide();
+		$('.cont_' + $(this).attr("id")).show();
+
+		return false;
+	});
+	
+	// snb 선택
+	$('.sub_tree2 > li').click(function() {
+		location.href = $(this).find('a').attr('href');
+
+		return false;	
+	});
+});
+</script>
+
+<!-- snb -->
+<div class="snb">
+	<ul class="snb_tab two">
+		<li><a id="view_01" class="on">시대별</a></li>
+		<li><a id="view_02" class="">유형별</a></li>
+	</ul>
+	
+	<section class="treeWrap d2 cont_view_01" style="display:block">
+		<ul class="sub_tree2">
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0100">전체</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0101">삼국 이전</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0102">삼국 시대</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0103">통일 신라와 발해</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0104">고려 시대</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0105">조선 시대</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0106">근대</a></li>
+			
+		</ul>
+	</section>
+
+	<section class="treeWrap d2 cont_view_02" style="">
+		<ul class="sub_tree2">
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0200">전체</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0201">개념용어</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0202">단체</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0203">문헌</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0204">사건</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0205">사상</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0206">유물·유적</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0207">인물</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0208">작품</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0209">제도</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0210">지명</a></li>
+			
+				
+	    		<li class=""><a href="/front/tg/list.do?treeId=0211">행사</a></li>
+			
+		</ul>
+	</section>
+</div>
+<!--// snb -->
+
+			
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+function goPrint() {
+	window.open("/front/tg/print.do?treeId=0100&levelId=tg_003_0610&whereStr=",'인쇄','width=1000,height=840,toolbar=no,location=no,menubar=no');
+}
+</script>
+
+<!-- content area -->
+<div class="content">
+	<div class="btn_utilWrap mt10">
+		<div class="btn_util">
+			
+				
+					<a href="/front/tg/view.do?treeId=0100&levelId=tg_001_0880&ganada=&pageUnit=10" class="m1" title="이전">이전</a>
+				
+				            		
+			
+			
+				
+					<a href="/front/tg/view.do?treeId=0100&levelId=tg_001_0890&ganada=&pageUnit=10" class="m2" title="다음">다음</a>
+				 
+				            		
+			
+			<a href="/front/tg/list.do?treeId=0100&ganada=&pageUnit=10" class="m3" title="상위">상위</a>
+			<a href="javascript:changeFontSize(1)" class="m4" title="확대">확대</a>
+			<a href="javascript:changeFontSize(-1)" class="m5" title="축소">축소</a>
+ 			<a href="javascript:goPrint()" class="m10" title="인쇄">인쇄</a>
+ 			<a href="javascript:openErrorReport('tg_003_0610');" class="m11 btn_pop" title="오류신고">오류신고</a>
+		</div>
+	</div>
+
+	<h1 class="tit2 mt10">중인</h1>
+
+	<div class="zoomWrap">
+		<table class="htable1">
+			<col width="130" /><col />
+			<tr>
+				<th>제목</th>
+				<td>중인</td>
+			</tr>
+			<tr>
+				<th>한자명</th>
+				<td>中人</td>
+			</tr>
+			<tr>
+				<th>유형</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>시대</th>
+				<td>조선 시대</td>
+			</tr>
+			<tr>
+				<th>관련국가</th>
+				<td>조선</td>
+			</tr>
+			<tr>
+				<th>유의어</th>
+				<td> </td>
+			</tr>
+			<tr>
+				<th>별칭•이칭</th>
+				<td></td>
+			</tr>
+		</table>
+	
+		<section class="view_detail mt30">
+			<div class="article">
+				<h2 class="fwb">[정의]</h2>
+				<p>서얼, 양반(兩班)과 일반 양인(良人) 사이의 중간 신분 계층을 총칭하는 용어.</p>
+			</div>
+		</section>
+		
+		<section class="view_detail">
+<div class="article">
+			
+<h2 class="fwb mt30">[내용]</h2>
+			
+<p>중인은 양반은 아니지만 문자 해독이 가능하며, 일반 양인보다는 우월한 사회&sdot;경제적 지위를 가지고 있었던 사람들이었다. 주로 과거(科擧)의 잡과(雜科)에 합격하여 선발된 역관(譯官), 의관(醫官) 등의 기술관(技術官)과 서리(書吏), 향리(鄕吏) 등의 하급 관리, 양반 첩의 자식인 서얼(庶孼) 등이 여기에 해당하였는데, 그 신분과 직역(職役)은 세습되었다. 이처럼 다양한 직역을 지는 사람들이었기 때문에 조선 초기에는 이들이 하나의 신분 계층으로 포괄되지 않다가, 17세기경부터는 이들을 중인으로 지칭하기 시작하였다. </p>
+			
+<p>이들의 존재는 조선의 국가 운영에 절대적으로 필요한 것이었지만, 양반들에게는 멸시와 천대를 받았으며, 관직의 승진에도 제약이 있었다. 또한 이들은 주로 중앙과 지방의 관아에서 대민과 관련된 실무를 맡았기 때문에, 일반 백성들로부터는 부정부패의 온상으로 지목되는 등 부정적 이미지가 강하였다. 그러나 이들은 통청 운동(通淸運動)을 전개하여 신분 상승을 꾀하는 등 조선 후기 신분 체제의 동요에도 영향을 끼쳤고, 시문이나 회화 등의 예술 분야에서 이름을 떨침으로써 서민 문화의 발달에도 기여하였다. 또한 이들은 한자 해독 능력과 본인들이 습득한 지식 및 행정 실무 능력 등을 바탕으로 양반보다도 수월하게 근대 사회에 적응하기도 하였다.</p>
+		
+</div>
+</section><section class="view_detail3">
+<div class="article">
+<h3 class="fwb">▶ 관련자료</h3>
+<dl>
+					
+<dt>ㆍ중인(中人)</dt>
+					
+<dd class="link">사료로 보는 한국사 해설:
+			<a title="양인과 천인을 구분하는 법규" href="/id/hm_084_0020?tabId=e">양인과 천인을 구분하는 법규</a>
+</dd>
+					
+<dd class="link">사료로 보는 한국사 해설:
+			<a title="중인에 대한 차별-기술관의 동서반 입사를 반대하는 상소" href="/id/hm_084_0040?tabId=e">중인에 대한 차별-기술관의 동서반 입사를 반대하는 상소</a>
+</dd>
+					
+<dd class="link">사료로 보는 한국사 국문:
+			<a title="여성의 재혼 금지" href="/id/hm_086_0030?tabId=r">여성의 재혼 금지</a>
+</dd>
+					
+<dd class="link">사료로 보는 한국사 해설:
+			<a title="서얼 허통론" href="/id/hm_107_0040?tabId=e">서얼 허통론</a>
+</dd>
+					
+<dd class="link">사료로 보는 한국사 해설:
+			<a title="신분 제도의 폐지와 사회 관습의 개혁" href="/id/hm_133_0010?tabId=e">신분 제도의 폐지와 사회 관습의 개혁</a>
+</dd>
+					
+<dd class="link">주제로 보는 한국사:
+			<a title="1) 최상층 중인 역관과 의관" href="/id/ht_005_0020_0010">1) 최상층 중인 역관과 의관</a>
+</dd>
+					
+<dd class="link">주제로 보는 한국사:
+			<a title="3) 중인 아닌 중인 서얼" href="/id/ht_005_0020_0030">3) 중인 아닌 중인 서얼</a>
+</dd>
+					
+<dd class="link">한국의 역사:
+			<a title="가. 양반이 사회를 다스리다(A. The Society Ruled by the Yangban class)" href="/id/kh_001_0050_0020_0010">가. 양반이 사회를 다스리다(A. The Society Ruled by the Yangban class)</a>
+</dd>
+					
+<dd class="link">7차 교육과정 중학교 국사:
+			<a title="교육과 과거 제도" href="/id/ta_m71_0060_0010_0020_0030">교육과 과거 제도</a>
+</dd>
+					
+<dd class="link">7차 교육과정 고등학교 국사:
+			<a title="양반과 중인" href="/id/ta_h71_0060_0030_0010_0020">양반과 중인</a>
+</dd>
+					
+<dd class="link">7차 교육과정 고등학교 국사:
+			<a title="중간 계층의 신분 상승 운동" href="/id/ta_h71_0060_0040_0010_0020">중간 계층의 신분 상승 운동</a>
+</dd>
+				
+</dl>
+</div>
+</section>
+
+			
+		<p class="message">&nbsp;&nbsp;* 이 글의 내용은 집필자의 개인적 견해이며, 국사편찬위원회의 공식적 견해와 다를 수 있습니다.</p>
+
+	</div>
+</div>
+<!--// content area -->
+
+		</div>
+	</div>
+	
+
+
+	<!--footer--> 
+    <div id="m_footer"> 
+        <div class="wrap">
+            <div class="f_menu">
+            	<a href="http://www.history.go.kr/contents/contentsPage.do?groupId=000000000571&menuId=000000000572&pageId=000000000213" target="_blank">저작권 정책</a>
+            	<a href="http://www.history.go.kr/contents/contentsPage.do?groupId=000000000931&menuId=000000000992&pageId=000000000541" target="_blank">데이터 개방</a>
+            	<a href="http://www.history.go.kr/contents/contentsPage.do?groupId=000000000571&menuId=000000000572&pageId=000000000211" target="_blank" style="color: #86AD36; font-weight: bold;">개인정보 처리방침</a>
+            	<a href="/front/about/use.do?tabId=04">이미지 이용 안내</a>
+            </div>
+            <div class="cont">
+                <address>13809 경기도 과천시 교육원로 86 국사편찬위원회&nbsp;&nbsp;&nbsp;<span class="copy">COPYRIGHT © NATIONAL INSTITUTE OF KOREAN HISTORY ALL RIGHT RESERVED.</span></address>
+            </div>
+        </div>
+    </div>
+    <!--//footer--> 
+
+<script type="text/javascript" src="/resources/front/js/webLog.js"></script>
+
+
+</div>	
+</body>
+</html>

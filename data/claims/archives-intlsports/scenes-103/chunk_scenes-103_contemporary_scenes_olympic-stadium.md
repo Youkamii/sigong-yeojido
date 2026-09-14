@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-so-stadium",
+    "subject": "event-hs-c4-olympics",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-c4-olympic-stadium"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_olympic-stadium",
+    "quote": "잠실 올림픽 주경기장은",
+    "note": "개회식 무대는 잠실 올림픽 주경기장이었다.",
+    "fromSource": "src-archives-intlsports",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -40,7 +40,7 @@ generated_by: claude-opus-5
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

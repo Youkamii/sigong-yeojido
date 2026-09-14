@@ -14,16 +14,16 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "place-hs-c5-nagoya"
+      "id": "polity-hs-c5-joseon"
     },
-    "note": "동원된 여성들은 군수공장 등에 투입되었다.",
+    "note": "조선에서 동원된 여성들이 군수공장 등에 투입되었다. 나고야 공장 주장은 claim-hs-c5-jeongsin-nagoya 가 맡는다.",
     "fromSource": "src-hs-ko-jeongsindae",
     "citesChunk": "chunk_curriculum-colonial_colonial-5_jeongsindae-act",
     "quote": "군수공장 등에 투입되었다.",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

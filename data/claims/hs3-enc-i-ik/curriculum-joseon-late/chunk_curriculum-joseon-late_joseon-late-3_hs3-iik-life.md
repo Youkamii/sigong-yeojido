@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-iik-life",
-    "subject": "person-hs-i-ik",
+    "subject": "person-encykorea-yi-ik-e0045562",
     "predicate": "syj:endedIn",
     "object": {
       "kind": "time",
@@ -32,7 +32,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-iik-born",
-    "subject": "person-hs-i-ik",
+    "subject": "person-encykorea-yi-ik-e0045562",
     "predicate": "syj:bornIn",
     "object": {
       "kind": "time",

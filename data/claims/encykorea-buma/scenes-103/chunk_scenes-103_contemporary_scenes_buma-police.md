@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-buma-police",
+    "subject": "event-hs-c4-buma",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-rok"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_buma-police",
+    "quote": "이를 막으려는 경찰과 곳곳에서 충돌하였다",
+    "note": "막아선 경찰과 곳곳에서 충돌했다.",
+    "fromSource": "src-encykorea-buma",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -60,6 +60,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-518-1980",
+    "subject": "event-hs-c5-518-movement",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1980년 5월 18일",
+      "year": 1980,
+      "precision": "day",
+      "earliest": 1980,
+      "latest": 1980,
+      "id": "ts-curriculum-contemporary-contemporary-5-hs-c5-518-1980"
+    },
+    "citesChunk": "chunk_period96_modern_518-1980",
+    "quote": "1980년 5월 18일부터 27일까지 광주광역시(당시 광주시)와 전라남도 지역의 시민들이 벌인 민주화 운동.",
+    "note": "묘지와 기록물이 기리는 5·18 민주화 운동",
+    "fromSource": "src-encykorea-518",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

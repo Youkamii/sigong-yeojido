@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-518-may27",
+    "subject": "event-hs-c4-518",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-rok"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_518-may27",
+    "quote": "5월 27일 계엄군은 도청을 향해 재진입하였고",
+    "note": "5월 27일 계엄군이 도청으로 다시 들어왔다.",
+    "fromSource": "src-archives-518",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

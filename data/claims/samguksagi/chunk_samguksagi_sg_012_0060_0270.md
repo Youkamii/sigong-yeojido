@@ -60,6 +60,23 @@ generated_by: claude-opus-5
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-silla-end-935",
+    "subject": "polity-silla",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "year",
+      "value": 935
+    },
+    "citesChunk": "chunk_samguksagi_sg_012_0060_0270",
+    "quote": "王率百寮, 發自王都, 歸于太祖",
+    "note": "삼국사기 신라본기 경순왕 9년(935) 귀순. 화백 회의의 존속 상한을 나라가 끝난 해로 잡는 근거다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

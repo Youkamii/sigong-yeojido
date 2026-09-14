@@ -14,9 +14,9 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "group-hs-gongin"
+      "id": "polity-hs-joseon"
     },
-    "note": "시전은 도성에 늘어선 상설 점포다. 시전 상인 가운데 공인을 겸한 이들이 있었다.",
+    "note": "시전은 성읍이나 도시에 있던 상설 점포라는 정의다. 공인과의 관계는 이 발췌가 말하지 않는다.",
     "fromSource": "src-hs-jl2-enc-sijeon",
     "citesChunk": "chunk_curriculum-joseon-late_joseon-late-2_sijeon-def",
     "quote": "옛날 전통 사회의 성읍(城邑)이나 도시에 있던 상설 점포.",

@@ -1,0 +1,117 @@
+{
+ "job": "modern-transition-2",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-modern-transition --job modern-transition-2 -> PASS: failures=0 warnings=0 (facts=26, scenes=26, claims=97, chunkClaims=0, excerptClaims=97). manifest 56건 전부 sha256/byteLength/httpStatus/fetchedUtc 일치, raw 파일 56개와 sources 56개 1:1. 발췌 70여 건을 raw HTML 본문에서 앞뒤 문맥까지 재확인, 표시 좌표 26건 전부 위키 문서 상단 좌표와 일치. 라이브 재조회 4건(encykorea E0000922·E0039816, en.wikipedia Battle_of_Pungdo, ko.wikipedia 을미사변) 모두 발췌 문자열 현존 확인.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-modern-transition-jeonju-truce",
+   "factId": "fact-hs-mt2-019",
+   "claimId": "claim-hs-jt-1894",
+   "problem": "전주 화약의 유일한 연도 근거가 다른 사건을 서술한 문장이다. claim-hs-jt-1894 는 subject 가 event-hs-jeonju-truce 인데 인용한 발췌(ex-gb-jeonju, 갑오개혁 항목 '역사적 배경')는 '1894년 봄 호남에서 동학농민운동이 일어났다' 로 농민운동 발발을 말할 뿐 화약을 말하지 않는다. 그 결과 time.verbatim 이 '1894년 봄' 이 되어 fact.yearVerbatim 에도 그대로 들어가는데, 같은 묶음의 ex-dh-hwayak 이 밝히듯 전주화약 성립일은 양력 6월 11일(음력 5월 8일)이라 '봄' 은 화면 카드에 잘못된 시점으로 표시된다. precision 도 'month' 인데 값은 달이 아니라 계절이다. claim note '1894년 봄 농민군이 전주성을 점거했다' 역시 발췌 문자열에는 없는 내용(원문 바로 다음 문장)이다.",
+   "fix": "claim-hs-jt-1894 의 object.verbatim 을 '1894년'(precision 'year')으로 바꾸고 note 를 발췌가 실제로 말하는 내용으로 고친다. fact-hs-mt2-019 의 yearVerbatim 도 '1894년' 으로 맞춘다. 더 나은 방법은 encykorea 「전주화약」 표제어(또는 연도와 화약이 한 문장에 있는 구절)를 새 출처로 받아 raw/·manifest 에 넣고 화약 자체의 연도 근거로 바꾸는 것이다. 6월 11일 근거인 claim-hs-jt-act 는 그대로 두면 된다.",
+   "evidence": "raw/enc-gabo.html 문맥: '역사적 배경닫기 1894년 봄 호남에서 동학농민운동이 일어났다. 농민들은 폐정개혁(弊政改革)을 조건으로 내세워 전라도를 휩쓸고 전주성(全州城)을 점거하였다.' / raw/enc-donghak.html 문맥: '6월 11일(음력 5월 8일) 전주화약이 성립되고, 동학농민군은 전주성을 점거한 지 10여일 만에 철수하고'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-gabo-reform",
+   "factId": "fact-hs-mt2-015",
+   "claimId": "claim-hs-gb-loc",
+   "problem": "fact.note 와 scene.place.coordinateNote 가 '군국기무처의 전각 지정은 이 묶음의 출처로 확인하지 못한 추정이다' 라고 적었지만, 이미 묶음 안에 있는 src-hs-ko-sujeongjeon(raw/ko-sujeongjeon.html)이 '1894년 갑오개혁 때에는 대한제국의 군국기무처를 여기에 두었으며' 라고 명시한다. 가진 근거를 스스로 없다고 적어 카드 설명이 실제보다 약해졌다.",
+   "fix": "src-hs-ko-sujeongjeon 에 그 문장을 발췌로 추가하고 event-hs-gabo → place-hs-sujeongjeon 의 syj:tookPlaceAt claim 을 만들어 scene.actionClaimIds 에 넣는다. note 와 coordinateNote 의 '확인하지 못한 추정' 문구를 근거 있는 서술로 바꾼다.",
+   "evidence": "raw/ko-sujeongjeon.html: '고종 때 중건되어 이후에도 외조공간에 자리 잡은 왕의 편전으로 사용되었으며, 1894년 갑오개혁 때에는 대한제국의 군국기무처를 여기에 두었으며, 이후 내각청사로 사용되었다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-eulmi-righteous-army",
+   "factId": "fact-hs-mt2-026",
+   "claimId": "claim-hs-ea-loc",
+   "problem": "fact.note 가 '자양영당은 유인석을 모신 사당으로 창의 지점 자체의 근거는 아니다' 라며 confidence 를 medium 으로 낮췄는데, 묶음 안의 src-hs-ko-jayang(raw/ko-jayang.html)에 '고종 32년(1895)에는 의병장 유인석(1842∼1915)이 팔도 유림들을 모아 비밀회의를 하던 곳' 이라는 1895년 연결 근거가 있다. 근거를 쓰지 않은 채 신뢰도를 스스로 깎았고, '유인석을 모신 사당' 이라는 성격 규정도 원문(유중교의 창주정사, 1906년 자양영당으로 재건)과 어긋난다.",
+   "fix": "그 문장을 발췌로 추가해 place-hs-jayangyeongdang 과 1895년 유인석을 잇는 claim 을 만들고, note 를 '자양영당은 1895년 유인석이 팔도 유림을 모은 곳' 으로 고친다. confidence 를 high 로 올릴지 재검토한다.",
+   "evidence": "raw/ko-jayang.html: '조선 후기 성리학자인 유중교(1821∼1893)가 후진을 양성했던 곳으로 고종 26년(1889)에 창주정사로 세웠는데 1906년 유림에서 자양영당으로 새롭게 세웠다. 고종 32년(1895)에는 의병장 유인석(1842∼1915)이 팔도 유림들을 모아 비밀회의를 하던 곳이기도 하다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-hwangtohyeon",
+   "factId": "fact-hs-mt2-017",
+   "claimId": "claim-hs-hth-loc",
+   "problem": "fact.note 가 '좌표는 기념관 표시값이라 실제 전적 중심과 몇 km 차이가 날 수 있다' 라고 했지만, 같은 출처(src-hs-ko-donghak-museum)의 발췌 ex-museum-loc 이 기념관을 '동학농민군의 최초 전승지인 황토현전적지(사적 295호)내' 라고 못 박는다. encykorea 소재 서술(덕천면 하학리~이평면 도계리)과도 1km 안쪽이라 '몇 km' 는 과장이고 confidence medium 도 근거보다 낮다.",
+   "fix": "ex-museum-loc 을 근거로 한 claim 을 추가하거나 최소한 note 를 '기념관은 전적지 안에 있어 전적 중심과 1km 이내' 로 고치고 confidence 를 재검토한다.",
+   "evidence": "raw/ko-donghak-museum.html: '동학농민혁명기념관은 동학농민군의 최초 전승지인 황토현전적지(사적 295호)내 전북특별자치도 정읍시 덕천면 동학로 742에서 2004년 5월 11일 개관한 기념관이다.' / raw/enc-hwangtohyeon-site.html: '황토현은 해발 35m 정도의 나지막한 구릉으로, 정읍시 덕천면 하학리와 이평면 도계리 사이에 위치한다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-park-yeong-hyo",
+   "factId": "fact-hs-mt2-006",
+   "sceneId": "scene-hs-park-yeong-hyo",
+   "problem": "박영효 인물 무대 좌표(126.97722, 37.57861 경복궁 대표점)가 갑오개혁 장면의 수정전 좌표(126.975954, 37.578964)와 118m 밖에 떨어져 있지 않다. 둘 다 precision 'site' 라 3D 지도에서 사실상 한 점에 겹쳐 보인다(이 칸에서 가장 가까운 두 지점).",
+   "fix": "박영효 무대를 다른 근거 좌표로 옮기거나, 경복궁을 유지한다면 precision 을 'area' 로 낮추고 coordinateNote 에 갑오개혁 장면과 같은 궁궐 안이라는 점을 적는다.",
+   "evidence": "fact-hs-mt2-006 lon/lat 126.97722/37.57861 vs fact-hs-mt2-015 lon/lat 126.975954/37.578964 → 약 0.118km. 다음으로 가까운 쌍은 정동 배재학당과 서소문동 육영공원 0.157km, 광화문과 경복궁 0.289km."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-kim-hong-jip",
+   "factId": "fact-hs-mt2-021",
+   "sceneId": "scene-hs-kim-hong-jip",
+   "problem": "fact.year 는 1894(갑오개혁 내각)인데 무대 좌표는 1896년 아관파천 직후 피살 지점인 광화문이다. coordinateNote 와 summary 에만 사정이 적혀 있고 fact.note 에는 없어 카드만 보면 1894년 활동 장소로 오해할 수 있다.",
+   "fix": "fact.note 에 '무대는 1894년 활동지가 아니라 1896년 피살 지점(광화문)이며 서술에 좌표 근거가 있는 곳을 골랐다' 를 한 줄 덧붙인다.",
+   "evidence": "claim-hs-khj-act 인용문 '친일 대신으로 지목되어 광화문에서 군중들에게 타살되었다'(raw/enc-kimhongjip.html) — 이 사건은 1896년이다. 현재 설명은 scene-hs-kim-hong-jip.place.coordinateNote 에만 있다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-jeon-bong-jun",
+   "sceneId": "scene-hs-jeon-bong-jun",
+   "problem": "항목의 year 는 1894, yearEnd 는 null 인데 장면 endYear 가 1895 다. 처형 연도(claim-hs-jbj-life)라는 근거는 있으나 항목→장면 대응 규칙(year/yearEnd → startYear/endYear)에서 벗어난 이 칸의 유일한 사례이고 사유가 어디에도 적혀 있지 않다.",
+   "fix": "endYear 를 1894 로 되돌리거나, 1895 를 유지한다면 fact.note 에 '1895년 처형까지 포함해 장면 기간을 늘렸다' 를 적는다.",
+   "evidence": "items.json hs-modern-transition-jeon-bong-jun: year 1894, yearEnd null. result.json scene-hs-jeon-bong-jun: startYear 1894, endYear 1895. 나머지 25개 항목은 항목 연도와 정확히 일치한다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-gwanghyewon",
+   "factId": "fact-hs-mt2-008",
+   "problem": "항목 type 이 society 인데 category 를 disaster 로 두었다. curriculum-items-brief 의 대응표는 society→settlement 다. note 에 사유('질병 진료 시설')를 적어 두었고 판단 자체는 합리적이지만 대응표와 어긋나, 커버리지 표에서 1880년대 disaster 1건이 의료 항목 하나로 잡힌다.",
+   "fix": "대응표대로 settlement 로 바꾸거나, disaster 를 유지한다면 예외로 기록해 다른 칸의 의료·구휼 항목과 처리를 통일한다.",
+   "evidence": "docs/research/curriculum-items-brief.md 항목→사실 대응표: 'society→settlement'. fact-hs-mt2-008 category 'disaster', note '질병 진료 시설이라 category 를 disaster(재해·질병·구휼)로 두었다'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-son-byeong-hui",
+   "claimId": "claim-hs-sbh-1894",
+   "problem": "subject 가 인물(person-encykorea-son-byeonghui)인데 predicate 가 사건 시간 술어 syj:occurredIn 이다. 의미상 '손병희가 1894년에 일어났다' 가 되어 어색하다(검증기는 통과). 같은 묶음의 다른 인물 시간 주장은 syj:bornIn(claim-hs-kog-life)·syj:endedIn(claim-hs-jbj-life, claim-hs-khj-1896)으로 인물에 맞는 술어를 썼다.",
+   "fix": "subject 를 event-hs-donghak 같은 사건으로 바꾸거나, 인물 참여를 말하려면 syj:participatedIn claim 과 사건 쪽 연도 claim 으로 나눈다.",
+   "evidence": "claim-hs-sbh-1894: subject 'person-encykorea-son-byeonghui', predicate 'syj:occurredIn', 발췌 '1894년 보국안민의 기치 아래 타협해'(남·북접 갈등 해소 문맥, raw/enc-sonbyeonghui.html)."
+  }
+ ],
+ "checkedItems": [
+  "hs-modern-transition-bobingsa",
+  "hs-modern-transition-hanseong-sunbo",
+  "hs-modern-transition-wonsan-haksa",
+  "hs-modern-transition-gapsin-coup",
+  "hs-modern-transition-kim-ok-gyun",
+  "hs-modern-transition-park-yeong-hyo",
+  "hs-modern-transition-geomundo-incident",
+  "hs-modern-transition-gwanghyewon",
+  "hs-modern-transition-mission-schools",
+  "hs-modern-transition-tianjin-convention",
+  "hs-modern-transition-yugyeong-gongwon",
+  "hs-modern-transition-banggongnyeong",
+  "hs-modern-transition-donghak-peasant-movement",
+  "hs-modern-transition-first-sino-japanese-war",
+  "hs-modern-transition-gabo-reform",
+  "hs-modern-transition-gobu-uprising",
+  "hs-modern-transition-hwangtohyeon",
+  "hs-modern-transition-jeon-bong-jun",
+  "hs-modern-transition-jeonju-truce",
+  "hs-modern-transition-jipgangso",
+  "hs-modern-transition-kim-hong-jip",
+  "hs-modern-transition-son-byeong-hui",
+  "hs-modern-transition-ugeumchi",
+  "hs-modern-transition-eulmi-incident",
+  "hs-modern-transition-eulmi-reform",
+  "hs-modern-transition-eulmi-righteous-army"
+ ],
+ "summary": "26개 항목 전부(core 10건 포함, 표본 100%)를 출처에서 직접 재확인했다. 검증기는 PASS(failures=0, warnings=0)이고 manifest 56건의 sha256·byteLength·httpStatus·fetchedUtc 가 sources 와 완전히 일치하며 raw 파일 56개가 1:1로 남아 있다. 웹 발췌 70여 건을 raw HTML 본문에서 앞뒤 문맥까지 펼쳐 읽었고 의미 왜곡은 전주 화약 한 건 말고는 없었다. 좌표 26건은 모두 위키 문서 상단 표시 좌표와 자릿수까지 일치했고(풍도는 en.wikipedia Battle of Pungdo 문서의 해전 좌표), encykorea 2건·위키 2건을 라이브로 다시 받아 발췌 문자열이 지금도 살아 있음을 확인했다. 장면 kind·sceneFunction 은 26건 모두 항목 sceneType 과 같고, portrait 4건은 참여 인물이 정확히 1명이며 entity id 는 data/entities/person 의 기존 파일(person-kim-okgyun, person-pak-yeonghyo, person-encykorea-jeon-bongjun-e0049437, person-encykorea-son-byeonghui, person-hs-kim-hongjip, person-queen-1895 등)을 그대로 재사용했다. 좌표가 똑같이 겹치는 항목은 없고 가장 가까운 쌍도 118m 떨어져 있다. images.json 26건은 접두어·인물 초상 문구·sceneId 연결이 모두 규격대로다. 교과서 문장 전재는 발견되지 않았다(fact.what 은 항목 meaning, summary 는 조사자 서술). 남은 결함은 전주 화약의 연도 근거가 다른 사건 문장에서 왔고 '1894년 봄' 이라는 잘못된 시점 표기가 카드로 나가는 major 1건과, 이미 가진 근거를 스스로 없다고 적어 신뢰도를 낮춘 사례(수정전·자양영당·황토현)를 포함한 minor 8건이다.",
+ "majorCount": 1,
+ "minorCount": 8
+}

@@ -4,7 +4,7 @@
  "cell": {
   "polity": "통일신라·발해",
   "from": 735,
-  "to": 935,
+  "to": 800,
   "regions": [
    "south",
    "central",
@@ -1200,12 +1200,12 @@
    "label": "원성왕 (민족문화대백과)"
   },
   {
-   "id": "person-nb2-jeonghye",
+   "id": "person-hs-jeonghye",
    "type": "Person",
    "label": "정혜공주"
   },
   {
-   "id": "person-nb2-jeonghyo",
+   "id": "person-hs-jeonghyo",
    "type": "Person",
    "label": "정효공주"
   },
@@ -1257,7 +1257,7 @@
   {
    "id": "place-nb2-sanggyeong-area",
    "type": "Place",
-   "label": "상경 용천부 관청 구역"
+   "label": "상경 용천부 도성(궁성·관청 구역)"
   },
   {
    "id": "place-nb2-junggyeong",
@@ -1581,7 +1581,7 @@
    },
    "sourceId": "src-nb2-en-pyongyang",
    "citesExcerpt": "ex-geo-en-pyongyang",
-   "note": "패강은 대동강이다. 대동강가 평양의 표시 좌표를 경계 지역 대표점으로 썼다."
+   "note": "패강은 예성강 또는 대동강으로 보는 견해가 갈린다. 여기서는 대동강으로 보아 대동강가 평양의 표시 좌표를 경계 지역 대표점으로 썼다."
   },
   {
    "id": "claim-nb2-bulguk-751",
@@ -1738,15 +1738,15 @@
   {
    "id": "claim-nb2-mugu-751",
    "subject": "facility-nb2-bulguksa-tap",
-   "predicate": "syj:occurredIn",
+   "predicate": "syj:relatedTo",
    "object": {
-    "kind": "year",
-    "value": 751
+    "kind": "entity",
+    "id": "facility-nb2-bulguksa"
    },
    "sourceId": "src-samgukyusa",
    "citesChunk": "chunk_samgukyusa_sy_005_0040_0020_0040",
    "quote": "其佛國寺雲梯石塔彫鏤石木之㓛東都諸刹未有加也",
-   "note": "삼국유사: 불국사의 구름다리와 석탑을 새긴 솜씨가 경주의 어느 절보다 낫다고 했다."
+   "note": "삼국유사: 불국사의 구름다리와 석탑을 새긴 솜씨가 경주의 어느 절보다 낫다고 했다. 연도를 말하는 대목은 아니어서 탑이 불국사에 속한다는 관계로만 둔다."
   },
   {
    "id": "claim-nb2-mugu-loc",
@@ -1794,15 +1794,15 @@
   {
    "id": "claim-nb2-seok-stone",
    "subject": "facility-nb2-seokguram",
-   "predicate": "syj:occurredIn",
+   "predicate": "syj:relatedTo",
    "object": {
-    "kind": "year",
-    "value": 751
+    "kind": "entity",
+    "id": "polity-hs-silla"
    },
    "sourceId": "src-samgukyusa",
    "citesChunk": "chunk_samgukyusa_sy_005_0040_0020_0050",
    "quote": "國家乃畢成之",
-   "note": "석불사와 불국사 모두 김대성 사후 나라가 마무리했다는 서술."
+   "note": "김대성이 죽은 뒤(774년 이후) 나라가 마무리했다는 서술이다. 751년을 뒷받침하는 대목은 아니다."
   },
   {
    "id": "claim-nb2-seok-loc",
@@ -1984,13 +1984,13 @@
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lat": 44.5514,
-    "lon": 129.6329,
+    "lat": 44.1306,
+    "lon": 129.1417,
     "precision": "area"
    },
-   "sourceId": "src-nb2-en-mudanjiang",
-   "citesExcerpt": "ex-geo-en-mudanjiang",
-   "note": "상경성 안 관청 터의 십진 좌표를 찾지 못해 상경성이 속한 무단장 지역 표시 좌표를 대표점으로 썼다."
+   "sourceId": "src-nb2-en-sanggyeong",
+   "citesExcerpt": "ex-geo-en-sanggyeong",
+   "note": "3성 6부의 관청은 상경성 도성 안에 있었다. 관청 터의 십진 좌표가 없어 상경 용천부 유적의 표시 좌표를 대표점으로 썼다. 유적 자체의 좌표이며 관청 건물 자리의 좌표가 아니다."
   },
   {
    "id": "claim-nb2-mw-reign",
@@ -2058,7 +2058,7 @@
    },
    "sourceId": "src-nb2-en-helong",
    "citesExcerpt": "ex-geo-en-helong",
-   "note": "중경 현덕부(서고성) 터가 있는 허룽시 표시 좌표를 대표점으로 썼다."
+   "note": "중경 현덕부(서고성) 터가 있는 허룽시 표시 좌표를 대표점으로 썼다. 서고성 유적 자체의 좌표는 아니다."
   },
   {
    "id": "claim-nb2-move-756",
@@ -2498,7 +2498,7 @@
   },
   {
    "id": "claim-nb2-jh-777",
-   "subject": "person-nb2-jeonghye",
+   "subject": "person-hs-jeonghye",
    "predicate": "syj:endedIn",
    "object": {
     "kind": "time",
@@ -2553,7 +2553,7 @@
   },
   {
    "id": "claim-nb2-jh-web777",
-   "subject": "person-nb2-jeonghye",
+   "subject": "person-hs-jeonghye",
    "predicate": "syj:endedIn",
    "object": {
     "kind": "time",
@@ -2699,7 +2699,7 @@
   {
    "id": "claim-nb2-jg-move",
    "subject": "event-nb2-jingol-struggle",
-   "predicate": "syj:tookPlaceAt",
+   "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
     "id": "place-nb2-paegangjin"
@@ -2707,7 +2707,7 @@
    "sourceId": "src-samguksagi",
    "citesChunk": "chunk_samguksagi_sg_009_0050_0090",
    "quote": "二月, 王巡幸漢山州, 移民戸於浿江鎭.",
-   "note": "선덕왕 3년(782) 한산주를 돌아보고 패강진으로 민호를 옮겼다. 하대 초 왕권의 움직임이다."
+   "note": "선덕왕 3년(782) 한산주를 돌아보고 패강진으로 민호를 옮겼다. 하대 초 왕권의 움직임을 보여 주는 곁 자료이며 왕위 쟁탈전이 벌어진 장소를 말하지 않는다."
   },
   {
    "id": "claim-nb2-jg-loc",
@@ -2907,7 +2907,7 @@
   },
   {
    "id": "claim-nb2-jhyo-792",
-   "subject": "person-nb2-jeonghyo",
+   "subject": "person-hs-jeonghyo",
    "predicate": "syj:endedIn",
    "object": {
     "kind": "time",
@@ -3242,6 +3242,18 @@
    "sourceId": "src-nb2-en-namsan",
    "citesExcerpt": "ex-geo-en-namsan",
    "note": "골품제는 왕경 전체의 제도다. 왕경 남쪽 남산 표시 좌표를 대표점으로 썼다."
+  },
+  {
+   "id": "claim-nb2-jg-juwon",
+   "subject": "event-nb2-jingol-struggle",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "person-encykorea-wonseong"
+   },
+   "sourceId": "src-nb2-enc-wonseong",
+   "citesExcerpt": "ex-wonseong-juwon",
+   "note": "선덕왕이 죽자 김주원과 왕위계승 다툼이 벌어졌고 원성왕이 즉위했다. 진골 사이의 왕위 다툼 사례다."
   }
  ],
  "scenes": [
@@ -3253,7 +3265,7 @@
    "startYear": 735,
    "endYear": 735,
    "kind": "court",
-   "summary": "성덕왕 34년, 당이 패강(대동강) 이남 땅을 신라 영토로 인정했다. 신라는 이듬해 사은 표문을 올렸고 뒤이어 이 지역 개척에 나섰다.",
+   "summary": "성덕왕 34년, 당이 패강(예성강 또는 대동강으로 보는 견해가 갈린다) 이남 땅을 신라 영토로 인정했다. 신라는 이듬해 사은 표문을 올렸고 뒤이어 이 지역 개척에 나섰다.",
    "dateClaimIds": [
     "claim-nb2-paegang-735",
     "claim-nb2-paegang-web"
@@ -3274,7 +3286,7 @@
     "coordinateSourceIds": [
      "src-nb2-en-pyongyang"
     ],
-    "coordinateNote": "패강은 대동강이다. 경계가 아니라 지역을 가리키므로 대동강가 평양 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "패강은 예성강 또는 대동강으로 보는 견해가 갈린다. 여기서는 대동강으로 보아 대동강가 평양의 표시 좌표를 경계 지역 대표점으로 썼다. 경계선이 아니라 지역을 가리키는 점이다.",
     "setting": "office"
    },
    "participants": [],
@@ -3323,7 +3335,7 @@
     "coordinateSourceIds": [
      "src-nb2-ko-bulguksa"
     ],
-    "coordinateNote": "불국사 문서의 표시 좌표를 썼다.",
+    "coordinateNote": "불국사 문서의 표시 좌표를 썼다. 경내에 있는 석가탑 장면과는 실제로 약 40m 떨어져 있어 두 점이 지도에서 가깝게 찍힌다. 경내 다른 지점의 공인 좌표가 없어 임의로 벌리지 않았다.",
     "setting": "temple"
    },
    "participants": [],
@@ -3426,10 +3438,11 @@
    "summary": "석가탑을 세우며 탑 안에 넣은 두루마리 경전이다. 1966년 탑을 해체하다 나왔고 현존 최고의 목판 인쇄물로 꼽힌다.",
    "dateClaimIds": [
     "claim-nb2-mugu-742",
-    "claim-nb2-mugu-751"
+    "claim-nb2-bulguk-751"
    ],
    "actionClaimIds": [
-    "claim-nb2-mugu-def"
+    "claim-nb2-mugu-def",
+    "claim-nb2-mugu-751"
    ],
    "place": {
     "label": "불국사 삼층석탑(석가탑)",
@@ -3443,7 +3456,7 @@
     "coordinateSourceIds": [
      "src-nb2-ko-bulguksa-tap"
     ],
-    "coordinateNote": "석가탑 문서의 표시 좌표를 썼다.",
+    "coordinateNote": "석가탑 문서의 표시 좌표를 썼다. 석가탑은 불국사 경내에 서 있어 불국사 장면과 약 40m 거리다. 실제 거리를 그대로 두고 겹침 해소는 표시 단계에 맡긴다.",
     "setting": "temple"
    },
    "participants": [],
@@ -3452,7 +3465,7 @@
      "enabled": true,
      "claimIds": [
       "claim-nb2-mugu-742",
-      "claim-nb2-mugu-751"
+      "claim-nb2-bulguk-751"
      ],
      "level": "standard"
     }
@@ -3602,18 +3615,18 @@
     "claim-nb2-3s6b-dang"
    ],
    "place": {
-    "label": "상경 용천부 관청 구역",
+    "label": "상경 용천부 도성(궁성·관청 구역)",
     "medium": "land",
     "precision": "area",
-    "lon": 129.6329,
-    "lat": 44.5514,
+    "lon": 129.1417,
+    "lat": 44.1306,
     "claimIds": [
      "claim-nb2-3s6b-loc"
     ],
     "coordinateSourceIds": [
-     "src-nb2-en-mudanjiang"
+     "src-nb2-en-sanggyeong"
     ],
-    "coordinateNote": "상경성 안 관청 터의 십진 좌표를 찾지 못해 상경성이 속한 무단장 지역 표시 좌표를 대표점으로 썼다. 실제 관청 자리가 아니다.",
+    "coordinateNote": "3성 6부의 관청은 상경성 도성 안에 있었다. 관청 터의 십진 좌표를 허용 출처에서 찾지 못해 상경 용천부 유적의 표시 좌표를 대표점으로 썼고, 그래서 상경성 장면과 같은 점이 된다. 발해진(44.109, 129.215)은 석등 장면이 쓰고 있어 비워 두지 않았다.",
     "setting": "office",
     "overseas": true
    },
@@ -3653,7 +3666,7 @@
     "claim-nb2-mw-move"
    ],
    "place": {
-    "label": "중경 현덕부(서고성) 궁성",
+    "label": "중경 현덕부 일원(허룽 일대)",
     "medium": "land",
     "precision": "area",
     "lon": 129.00278,
@@ -3664,7 +3677,7 @@
     "coordinateSourceIds": [
      "src-nb2-en-helong"
     ],
-    "coordinateNote": "즉위 뒤 도읍이던 중경 현덕부(서고성) 터가 있는 허룽시 표시 좌표를 대표점으로 썼다. 다른 상경 항목과 겹치지 않게 중경을 무대로 잡았다.",
+    "coordinateNote": "즉위 뒤 도읍이던 중경 현덕부(서고성) 터가 있는 허룽시 표시 좌표를 대표점으로 썼다. 서고성 유적 자체의 좌표가 아니어서 라벨을 일원으로 두었다. 다른 상경 항목과 겹치지 않게 중경을 무대로 잡았다.",
     "setting": "palace",
     "overseas": true
    },
@@ -4196,14 +4209,14 @@
    "startYear": 780,
    "endYear": 935,
    "kind": "court",
-   "summary": "780년 선덕왕이 즉위하며 하대가 열린다. 이후 155년 동안 스무 명의 왕이 갈렸고, 골품의 벽은 그대로여서 다툼은 진골 안에서만 벌어졌다.",
+   "summary": "780년 선덕왕이 즉위하며 하대가 열린다. 이후 진골 사이에서 왕위가 자주 바뀌었고, 골품의 벽은 그대로여서 다툼은 진골 안에서만 벌어졌다.",
    "dateClaimIds": [
     "claim-nb2-jg-780",
     "claim-nb2-jg-sdw"
    ],
    "actionClaimIds": [
     "claim-nb2-jg-golpum",
-    "claim-nb2-jg-move"
+    "claim-nb2-jg-juwon"
    ],
    "place": {
     "label": "경주 오릉 일원",
@@ -4235,6 +4248,7 @@
    "region": "south",
    "decade": 780,
    "relatedClaimIds": [
+    "claim-nb2-jg-move",
     "claim-nb2-jg-loc"
    ]
   },
@@ -4571,7 +4585,7 @@
    "startYear": 800,
    "endYear": 800,
    "kind": "heritage",
-   "summary": "옛 상경성 절터에 지금도 서 있는 큰 돌 등이다. 굵은 기둥 위에 화사석을 올린 형태로 발해 불교의 규모를 짐작하게 한다.",
+   "summary": "옛 상경성 절터에 지금도 서 있는 큰 돌 등이다. 굵은 기둥 위에 화사석을 올린 형태로 발해 불교의 규모를 짐작하게 한다. 석등 자체의 제작 연대를 짚는 기록은 없어 표시 연도 800년은 8~9세기를 가리키는 어림값이다.",
    "dateClaimIds": [
     "claim-nb2-sk-755"
    ],
@@ -4591,7 +4605,7 @@
     "coordinateSourceIds": [
      "src-nb2-en-ningan"
     ],
-    "coordinateNote": "석등이 선 흥륭사 절터의 십진 좌표를 찾지 못해 상경성이 있는 닝안시 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "석등이 선 흥륭사 절터의 십진 좌표를 찾지 못해 상경성 터가 있는 발해진의 표시 좌표를 대표점으로 썼다. 석등의 제작 연대는 미상이다.",
     "setting": "temple",
     "overseas": true
    },
@@ -4615,10 +4629,9 @@
    "heritageType": "artifact",
    "persistence": {
     "kind": "facility",
-    "from": 755,
+    "from": 800,
     "to": null,
     "basisClaimIds": [
-     "claim-nb2-sk-755",
      "claim-nb2-sk-lamp"
     ]
    }
@@ -4633,7 +4646,7 @@
    "kind": "assembly",
    "summary": "신라는 사람을 쓸 때 골품을 따져 그 족속이 아니면 아무리 뛰어나도 넘어설 수 없었다. 6두품은 아찬까지만 오를 수 있었고, 길이 막힌 이들은 당으로 떠나거나 다른 길을 찾았다.",
    "dateClaimIds": [
-    "claim-nb2-gp-834"
+    "claim-nb2-ds-788"
    ],
    "actionClaimIds": [
     "claim-nb2-gp-golpum",
@@ -4659,7 +4672,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-nb2-gp-834"
+      "claim-nb2-ds-788"
      ],
      "level": "standard"
     }
@@ -4668,6 +4681,7 @@
    "region": "south",
    "decade": 800,
    "relatedClaimIds": [
+    "claim-nb2-gp-834",
     "claim-nb2-gp-leave",
     "claim-nb2-gp-loc"
    ]
@@ -4718,7 +4732,7 @@
    ],
    "sceneId": "scene-hs-nb2-bulguksa",
    "confidence": "high",
-   "note": "[10한사1-02-04] · core · 창건 연대는 삼국유사의 751년과 묵서지편의 742년이 갈린다. 항목은 751년을 따랐다.",
+   "note": "[10한사1-02-04] · core · 창건 연대는 삼국유사의 751년과 묵서지편의 742년이 갈린다. 항목은 751년을 따랐다. 경내의 석가탑 항목과 실제 거리가 약 40m라 지도에서 두 점이 가깝다.",
    "lon": 129.33194,
    "lat": 35.79028,
    "coordinateBasis": "src-nb2-ko-bulguksa ex-geo-ko-bulguksa",
@@ -4766,13 +4780,14 @@
    "what": "석가탑에서 나온, 지금 남은 가장 오래된 목판 인쇄물",
    "claimIds": [
     "claim-nb2-mugu-742",
+    "claim-nb2-bulguk-751",
     "claim-nb2-mugu-751",
     "claim-nb2-mugu-def",
     "claim-nb2-mugu-loc"
    ],
    "sceneId": "scene-hs-nb2-mugu",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 봉안 시점은 탑 조성 연대를 따르며 742년설과 751년설이 갈린다.",
+   "note": "[10한사1-02-04] · standard · 봉안 시점은 탑 조성 연대를 따르며 742년설과 751년설이 갈린다. 석가탑은 불국사 경내에 있어 불국사 항목과 약 40m 거리다.",
    "lon": 129.33222,
    "lat": 35.79,
    "coordinateBasis": "src-nb2-ko-bulguksa-tap ex-geo-ko-bulguksa-tap",
@@ -4845,8 +4860,8 @@
    "decade": 750,
    "year": 756,
    "yearVerbatim": "문왕대(737~793)",
-   "placeLabel": "상경 용천부 관청 구역",
-   "modernPlace": "중국 헤이룽장성 무단장시 닝안 일대",
+   "placeLabel": "상경 용천부 도성(궁성·관청 구역)",
+   "modernPlace": "중국 헤이룽장성 닝안시 발해진(상경성 유적)",
    "what": "당 제도를 본떴지만 이름과 운영은 발해식으로 바꾼 중앙 기구",
    "claimIds": [
     "claim-nb2-3s6b-date",
@@ -4859,10 +4874,10 @@
    ],
    "sceneId": "scene-hs-nb2-3s6b",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 해외(중국) 항목이다. 제도 정비 시점은 문왕대로만 잡을 수 있어 항목의 756년을 표시 연도로 썼다.",
-   "lon": 129.6329,
-   "lat": 44.5514,
-   "coordinateBasis": "src-nb2-en-mudanjiang ex-geo-en-mudanjiang"
+   "note": "[10한사1-01-01] · standard · 해외(중국) 항목이다. 제도 정비 시점은 문왕대로만 잡을 수 있어 항목의 756년을 표시 연도로 썼다. 좌표는 상경 용천부 유적의 표시 좌표이며 관청 터의 좌표가 아니다. 허용 출처에 상경 일대의 다른 십진 좌표가 없어 상경성 항목과 같은 점이다.",
+   "lon": 129.1417,
+   "lat": 44.1306,
+   "coordinateBasis": "src-nb2-en-sanggyeong ex-geo-en-sanggyeong"
   },
   {
    "id": "fact-hs-nb2-008",
@@ -4872,7 +4887,7 @@
    "decade": 750,
    "year": 756,
    "yearVerbatim": "재위 737~793년",
-   "placeLabel": "중경 현덕부(서고성) 궁성",
+   "placeLabel": "중경 현덕부 일원(허룽 일대)",
    "modernPlace": "중국 지린성 옌볜조선족자치주 허룽시",
    "what": "당 제도를 들여 나라 틀을 짜고 상경으로 도읍을 옮긴 왕",
    "claimIds": [
@@ -4884,7 +4899,7 @@
    ],
    "sceneId": "scene-hs-nb2-munwang",
    "confidence": "high",
-   "note": "[10한사1-01-01] · core · 해외(중국) 항목이다. 상경 천도는 별도 항목으로 두었다.",
+   "note": "[10한사1-01-01] · core · 해외(중국) 항목이다. 좌표는 허룽 시가지 표시 좌표이며 서고성 유적 자체의 좌표가 아니다. 상경 천도는 별도 항목으로 두었다.",
    "lon": 129.00278,
    "lat": 42.54361,
    "coordinateBasis": "src-nb2-en-helong ex-geo-en-helong"
@@ -4997,7 +5012,7 @@
    "region": "north",
    "decade": 750,
    "year": 759,
-   "yearVerbatim": "759년(대흥 23)",
+   "yearVerbatim": "문왕대(737~793)",
    "placeLabel": "발해 동해안 항구(염주 일대)",
    "modernPlace": "러시아 연해주 크라스키노 일대",
    "what": "발해가 스스로를 고구려를 이은 나라로 밝힌 근거들",
@@ -5010,7 +5025,7 @@
    ],
    "sceneId": "scene-hs-nb2-gsu",
    "confidence": "medium",
-   "note": "[10한사1-02-01] · standard · 해외(러시아 연해주) 항목이다. 759년 국서의 '고려국왕' 표기는 이 칸의 근거로 확인하지 못했고, 727년·771년 국서의 표현으로 대신했다.",
+   "note": "[10한사1-02-01] · standard · 해외(러시아 연해주) 항목이다. 항목이 든 759년 국서의 고려국왕 표기는 이 칸의 근거로 확인하지 못해 missing 에 남겼고, 727년·771년 국서의 표현으로 대신했다. 표시 연도 759년은 항목을 따른 값이다.",
    "lon": 130.78194,
    "lat": 42.70833,
    "coordinateBasis": "src-nb2-en-kraskino ex-geo-en-kraskino"
@@ -5141,12 +5156,13 @@
     "claim-nb2-jg-780",
     "claim-nb2-jg-sdw",
     "claim-nb2-jg-golpum",
+    "claim-nb2-jg-juwon",
     "claim-nb2-jg-move",
     "claim-nb2-jg-loc"
    ],
    "sceneId": "scene-hs-nb2-jingol",
    "confidence": "medium",
-   "note": "[10한사1-02-03] · standard · 935년까지 이어지는 긴 흐름을 한 항목으로 묶었다. 왕 스무 명 교체 수치는 이 칸의 근거로 확인하지 못했다.",
+   "note": "[10한사1-02-03] · standard · 935년까지 이어지는 긴 흐름을 한 항목으로 묶었다. 왕이 몇 번 바뀌었는지는 이 칸의 근거로 세지 않았고 요약에도 수치를 적지 않았다.",
    "lon": 129.20889,
    "lat": 35.82333,
    "coordinateBasis": "src-nb2-ko-oreung ex-geo-ko-oreung"
@@ -5333,13 +5349,13 @@
    ],
    "sceneId": "scene-hs-nb2-seokdeung",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 해외(중국) 항목이다. 석등 자체의 제작 연대를 정확히 짚는 근거는 찾지 못했다.",
+   "note": "[10한사1-02-04] · standard · 해외(중국) 항목이다. 석등 자체의 제작 연대를 정확히 짚는 근거는 찾지 못해 존속 시작을 표시 연도 800년으로 두었다. 755년 상경 천도는 절터의 상한을 가리키는 곁 근거다.",
    "lon": 129.215,
    "lat": 44.109,
    "coordinateBasis": "src-nb2-en-ningan ex-geo-en-ningan",
    "persistence": {
     "kind": "facility",
-    "from": 755,
+    "from": 800,
     "to": null
    }
   },
@@ -5355,20 +5371,30 @@
    "modernPlace": "경상북도 경주시 남산",
    "what": "타고난 신분이 벼슬을 막자 6두품이 신라를 등지게 된 구조",
    "claimIds": [
-    "claim-nb2-gp-834",
+    "claim-nb2-ds-788",
     "claim-nb2-gp-golpum",
     "claim-nb2-gp-web",
     "claim-nb2-gp-achan",
     "claim-nb2-gp-leave",
+    "claim-nb2-gp-834",
     "claim-nb2-gp-loc"
    ],
    "sceneId": "scene-hs-nb2-golpum",
    "confidence": "medium",
-   "note": "[10한사1-02-03] · standard · 표시 연도 800년은 통일신라 후반을 가리키는 어림값이다. 834년 규정은 신분별 제한을 보여 주는 자료다.",
+   "note": "[10한사1-02-03] · standard · 표시 연도 800년은 통일신라 후반을 가리키는 어림값이며, 8세기 후반의 시점 근거로 788년 독서삼품과 시행을 썼다. 834년 규정은 신분별 제한을 보여 주는 곁 자료다.",
    "lon": 129.22556,
    "lat": 35.76806,
    "coordinateBasis": "src-nb2-en-namsan ex-geo-en-namsan"
   }
  ],
- "missing": []
+ "missing": [
+  {
+   "id": "miss-nb2-1",
+   "itemId": "hs-nambukguk-goguryeo-succession",
+   "topic": "759년 발해 국서의 고려국왕 대흠무 표기",
+   "detail": "항목 근거인 759년(대흥 23) 일본에 보낸 국서의 고려국왕 자칭을 이 칸의 허용 출처에서 확인하지 못했다. 민백 발해·문왕 항목 본문에는 759 와 고려국왕 문자열이 없다.",
+   "neededSource": "속일본기 해당 기사 원문 chunk 또는 우리역사넷 한국사 연대기의 759년 국서 서술",
+   "reason": "759년 국서 표기의 1·2순위 근거를 찾지 못함"
+  }
+ ]
 }

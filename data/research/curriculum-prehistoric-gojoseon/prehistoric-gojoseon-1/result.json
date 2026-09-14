@@ -6,11 +6,10 @@
   "from": -700000,
   "to": -300,
   "regions": [
-   "capital",
-   "central",
-   "island",
    "north",
-   "south"
+   "central",
+   "south",
+   "island"
   ],
   "categories": {
    "culture": 10,
@@ -62,11 +61,6 @@
      "id": "ex-geo-geumgul",
      "text": "36.99639; 128.35750",
      "locator": "표시 좌표"
-    },
-    {
-     "id": "ex-geumgul-oldest",
-     "text": "우리나라에서 가장 오래된 구석기 문화 유적으로 전기구석기부터 청동기시대에 이르는 거의 모든 시기의 유물층이 발견되어",
-     "locator": "개요"
     }
    ]
   },
@@ -378,6 +372,11 @@
      "id": "ex-osanri-dig",
      "text": "1981년부터 1985년까지 서울대학교 고고인류학과에서 본격적인 발굴 조사를 실시하여",
      "locator": "개설"
+    },
+    {
+     "id": "ex-osanri-house",
+     "text": "여기서는 6기의 주거지가 확인되었다.",
+     "locator": "내용"
     }
    ]
   },
@@ -554,6 +553,11 @@
     {
      "id": "ex-bangu-whale",
      "text": "고래를 사냥하는 매우 사실적인 그림은 약 7000년 전 신석기시대에 제작된 것으로서",
+     "locator": "개설"
+    },
+    {
+     "id": "ex-bangu-age",
+     "text": "약 7,000년~3,500년 전에 조성된",
      "locator": "개설"
     }
    ]
@@ -842,11 +846,6 @@
      "id": "ex-geo-geomdan",
      "text": "35.44917; 129.18167",
      "locator": "표시 좌표"
-    },
-    {
-     "id": "ex-geomdan-hwanho",
-     "text": "마을 둘레에 못(환호)을 파 놓았는데, 이것은 당시 마을의 방위개념을 보여주는 자료로",
-     "locator": "개요"
     }
    ]
   },
@@ -1153,11 +1152,6 @@
      "id": "ex-geo-heunam",
      "text": "37.23917; 127.68556",
      "locator": "표시 좌표"
-    },
-    {
-     "id": "ex-heunam-rice",
-     "text": "12호 집자리에서 확인된 불탄 쌀은",
-     "locator": "집자리와 유물"
     }
    ]
   },
@@ -1224,49 +1218,6 @@
    ]
   },
   {
-   "id": "src-hs-pg1-ko-jitapri",
-   "title": "봉산지탑리유적 — 위키백과",
-   "publisher": "위키백과(한국어)",
-   "url": "https://ko.wikipedia.org/wiki/%EB%B4%89%EC%82%B0%EC%A7%80%ED%83%91%EB%A6%AC%EC%9C%A0%EC%A0%81",
-   "rawFile": "raw/ko-jitapri.html",
-   "sha256": "cdbd452c5ea66103f7247e5f3fcc3567f655401a7b1597d190cffa7eded2c6dc",
-   "httpStatus": 200,
-   "byteLength": 63088,
-   "fetchedUtc": "2026-09-14T03:23:18Z",
-   "license": "CC BY-SA 4.0 — 좌표·보조 인용",
-   "excerpts": [
-    {
-     "id": "ex-jitap-place",
-     "text": "북한 황해북도 봉산군에 있는 석기시대 이후 팽이형토기·도끼·그물추 등이 출토된 집터이다.",
-     "locator": "개요"
-    }
-   ]
-  },
-  {
-   "id": "src-hs-pg1-ko-neolithic-korea",
-   "title": "한국의 신석기 시대 — 위키백과",
-   "publisher": "위키백과(한국어)",
-   "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EA%B5%AD%EC%9D%98_%EC%8B%A0%EC%84%9D%EA%B8%B0_%EC%8B%9C%EB%8C%80",
-   "rawFile": "raw/ko-neolithic-korea.html",
-   "sha256": "56d75aa6cbec81971231544a179eda10c51076160932b5ef022748fd52a4905b",
-   "httpStatus": 200,
-   "byteLength": 146240,
-   "fetchedUtc": "2026-09-14T03:23:26Z",
-   "license": "CC BY-SA 4.0 — 좌표·보조 인용",
-   "excerpts": [
-    {
-     "id": "ex-neokr-house",
-     "text": "강가나 바닷가에 움집을 짓고 정착 생활하였다.",
-     "locator": "개요"
-    },
-    {
-     "id": "ex-neokr-clan",
-     "text": "연장자나 경험이 많은 사람이 부족을 이끄는 부족 사회였다.",
-     "locator": "개요"
-    }
-   ]
-  },
-  {
    "id": "src-hs-pg1-ko-liaohe",
    "title": "랴오허 — 위키백과",
    "publisher": "위키백과(한국어)",
@@ -1284,9 +1235,460 @@
      "locator": "표시 좌표"
     }
    ]
+  },
+  {
+   "id": "src-hs-pg1-enc-geumgul",
+   "title": "단양 금굴 구석기 유적 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0013622",
+   "rawFile": "raw/enc-geumgul.html",
+   "sha256": "dfcc6b1427696d2d7adb9be8ee283fd156bb7547b5e14d6371649e9461f15405",
+   "httpStatus": 200,
+   "byteLength": 145809,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-geumgul-def",
+     "text": "충청북도 단양군 가곡면에 있는 석기시대 구석기에 사람이 살았던 석회암 동굴.",
+     "locator": "정의"
+    },
+    {
+     "id": "ex-geumgul-age",
+     "text": "우리나라에서 가장 이른 시기(약 70만 년 전)부터 3000년 전까지 사람이 살았던 석회암동굴 유적으로",
+     "locator": "개설"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-enc-ganseokgi",
+   "title": "간석기 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0000531",
+   "rawFile": "raw/enc-ganseokgi.html",
+   "sha256": "c2134299dc97fdfe6c076f9624fec1c7fce9297407c39ce78a66bb9075f09843",
+   "httpStatus": 200,
+   "byteLength": 100730,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-ganseokgi-def",
+     "text": "날 부분 또는 표면 전체를 갈아 만든 신석기시대 및 청동기시대에 주로 사용된 석기.",
+     "locator": "정의"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-enc-oido",
+   "title": "시흥 오이도 유적 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0038475",
+   "rawFile": "raw/enc-oido.html",
+   "sha256": "16ea912978348ff2c6f50fa06ce7351dbe6eed0b1828820768f2a065a292d172",
+   "httpStatus": 200,
+   "byteLength": 100998,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-oido-def",
+     "text": "경기도 시흥시 오이도 내 각지에 조성된 패총과 생활유적.",
+     "locator": "정의"
+    },
+    {
+     "id": "ex-oido-date",
+     "text": "빗살무늬토기주1에 대한 상대편년 및 탄소연대측정법(炭素年代測定法)주2 결과로 미루어 조성 시기는 대체로 3500cal BC를 전후한다.",
+     "locator": "형태와 특징"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-enc-munamri",
+   "title": "고성 문암리 유적 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0070958",
+   "rawFile": "raw/enc-munamri.html",
+   "sha256": "3dcd5ebd93cd0dbd07aeb88a9914e1c1e7da4bb49303e00a25a6de4a871fa2db",
+   "httpStatus": 200,
+   "byteLength": 143032,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-munam-def",
+     "text": "강원특별자치도 고성군 죽왕면에 있는 석기시대 신석기의 집터와 널무덤 관련 복합유적.",
+     "locator": "정의"
+    },
+    {
+     "id": "ex-munam-house",
+     "text": "주거지 5기, 야외노지 5기, 널무덤 1기, 밭이 확인되었고",
+     "locator": "요약"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-enc-yeondaedo",
+   "title": "통영 연대도 패총 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0059373",
+   "rawFile": "raw/enc-yeondaedo.html",
+   "sha256": "13a29721672e30085b5ade602694a133967843f0ea656e380a415b77df8f3cad",
+   "httpStatus": 200,
+   "byteLength": 100974,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-yeondae-def",
+     "text": "경상남도 통영시 산양읍 연곡리에 있는 신석기시대의 조개더미.",
+     "locator": "정의"
+    },
+    {
+     "id": "ex-yeondae-tomb",
+     "text": "15기의 무덤이 모여 있는 매장 시설군으로, 신석기시대에 이미 묘소의 경계를 정한 구역이 따로 있었음을 알려 주는 유적이다.",
+     "locator": "요약"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-enc-jitapri",
+   "title": "봉산 지탑리 유적 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0023901",
+   "rawFile": "raw/enc-jitapri.html",
+   "sha256": "89fd43c780d56bf5f02b1f0a0d47480561e1382fdc02bdb46b9b4a2b9606f634",
+   "httpStatus": 200,
+   "byteLength": 93037,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-jitap-def",
+     "text": "북한 황해북도 봉산군에 있는 석기시대 이후 팽이형토기·도끼·그물추 등이 출토된 집터.",
+     "locator": "정의"
+    },
+    {
+     "id": "ex-jitap-farm",
+     "text": "돌보습, 돌낫, 탄화곡물 등의 출토 유물을 통해 한반도 최초의 농경 가능성을 확인할 수 있다.",
+     "locator": "요약"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-enc-gungsanri",
+   "title": "용강 궁산리 유적 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0039358",
+   "rawFile": "raw/enc-gungsanri.html",
+   "sha256": "12778a2860f5d0c28ac2502d4ca51e79a662a364781e561f2d927e26581affdf",
+   "httpStatus": 200,
+   "byteLength": 94230,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-gungsan-def",
+     "text": "북한 평안남도 온천군 궁산마을에 있는 석기시대 신석기의 빗살무늬토기 등이 출토된 조개더미.",
+     "locator": "정의"
+    },
+    {
+     "id": "ex-gungsan-house",
+     "text": "움집 5기와 6개의 구덩을 찾았다",
+     "locator": "개설"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-enc-geomdanri-site",
+   "title": "울주 검단리 유적 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0040495",
+   "rawFile": "raw/enc-geomdanri.html",
+   "sha256": "13ed1d3488c58af506b6130a225e34da21daa9937c21e7a40d5fd39845492bc2",
+   "httpStatus": 200,
+   "byteLength": 123289,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-geomdan-def",
+     "text": "울산광역시 울주군 웅촌면에 있는 청동기시대 집터와 환호(環濠)·화덕자리·고인돌 관련 복합유적.",
+     "locator": "정의"
+    },
+    {
+     "id": "ex-geomdan-first",
+     "text": "이 유적은 우리나라 환호 취락 유적 조사의 시발점으로 평가 받는다.",
+     "locator": "요약"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-enc-heunamri-site",
+   "title": "여주 흔암리 선사유적 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0036508",
+   "rawFile": "raw/enc-heunamri.html",
+   "sha256": "52da124e36862cd1fe1afc11d8304fcddaab754217d18bfffca94ab886e2f08e",
+   "httpStatus": 200,
+   "byteLength": 160005,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-heunamsite-def",
+     "text": "경기도 여주시 점동면에 있는 청동기시대 쌀·보리·수수·조 등의 곡물이 발견된 집터.",
+     "locator": "정의"
+    },
+    {
+     "id": "ex-heunamsite-grain",
+     "text": "쌀·보리·수수·조 등의 곡물이 발견되어 유명해진 유적이다.",
+     "locator": "개설"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-enc-tribal",
+   "title": "부족국가 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0024564",
+   "rawFile": "raw/enc-tribal.html",
+   "sha256": "3fce8155817711b5dbb0e80a4388e28bb126ef475c94030fa842db16c90e36cc",
+   "httpStatus": 200,
+   "byteLength": 79597,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 제1유형, 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-tribal-def",
+     "text": "원시사회부터 중앙집권적 귀족국가에 이르는 과도기적 단계에 나타나는 정치조직체.",
+     "locator": "정의"
+    },
+    {
+     "id": "ex-tribal-clan",
+     "text": "씨족사회의 공산체적 성격이 사회분화와 교역의 증대에 따라 해체되어 보다 큰 단위로서 부족이 생활영위의 중심이 되며",
+     "locator": "내용"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-en-ryonggang",
+   "title": "Ryonggang County — Wikipedia",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Ryonggang_County",
+   "rawFile": "raw/en-ryonggang.html",
+   "sha256": "d321cd39334e3db6ca5003daf0bdc6cd7ba5cc3d6883873dcf326c323da18925",
+   "httpStatus": 200,
+   "byteLength": 116904,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "CC BY-SA 4.0 — 좌표·보조 인용",
+   "excerpts": [
+    {
+     "id": "ex-geo-ryonggang",
+     "text": "\"lat\":38.85722222222223,\"lon\":125.42194444444445",
+     "locator": "문서 표시 좌표(스크립트 자료)"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-ko-oido",
+   "title": "시흥 오이도 유적 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%9D%A5%20%EC%98%A4%EC%9D%B4%EB%8F%84%20%EC%9C%A0%EC%A0%81",
+   "rawFile": "raw/ko-oido-site.html",
+   "sha256": "14179e64ae2cc67ae0f53c4d442a76f3bbbaaff09d3de96b0666d84791a2cdc5",
+   "httpStatus": 200,
+   "byteLength": 75969,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "CC BY-SA 4.0 — 좌표·보조 인용",
+   "excerpts": [
+    {
+     "id": "ex-geo-oido",
+     "text": "37.34556; 126.69333",
+     "locator": "표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-ko-munamri",
+   "title": "고성 문암리 유적 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%84%B1%20%EB%AC%B8%EC%95%94%EB%A6%AC%20%EC%9C%A0%EC%A0%81",
+   "rawFile": "raw/ko-munamri.html",
+   "sha256": "75995576fcf177b53ea5394b23598ec394f37d7a31eacf9a2addbc26229fe004",
+   "httpStatus": 200,
+   "byteLength": 79607,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "CC BY-SA 4.0 — 좌표·보조 인용",
+   "excerpts": [
+    {
+     "id": "ex-geo-munam",
+     "text": "38.30472; 128.54361",
+     "locator": "표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-pg1-ko-yeondaedo",
+   "title": "통영 연대도 패총 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%ED%86%B5%EC%98%81%20%EC%97%B0%EB%8C%80%EB%8F%84%20%ED%8C%A8%EC%B4%9D",
+   "rawFile": "raw/ko-yeondaedo.html",
+   "sha256": "1eb1a386ce5a8a7b9a82b19dfc2dd2eefd651518b64cc6c2e2d65a7708312428",
+   "httpStatus": 200,
+   "byteLength": 75093,
+   "fetchedUtc": "2026-09-14T08:05:00Z",
+   "license": "CC BY-SA 4.0 — 좌표·보조 인용",
+   "excerpts": [
+    {
+     "id": "ex-geo-yeondae",
+     "text": "34.73861; 128.40083",
+     "locator": "표시 좌표"
+    }
+   ]
   }
  ],
  "entities": [
+  {
+   "id": "event-hs-pg1-amsa",
+   "type": "Event",
+   "label": "서울 암사동 유적"
+  },
+  {
+   "id": "event-hs-pg1-bangudae",
+   "type": "Event",
+   "label": "울주 대곡리 반구대 암각화"
+  },
+  {
+   "id": "event-hs-pg1-belief",
+   "type": "Event",
+   "label": "원시 신앙(애니미즘·토테미즘·샤머니즘)"
+  },
+  {
+   "id": "event-hs-pg1-bipa",
+   "type": "Event",
+   "label": "비파형 동검"
+  },
+  {
+   "id": "event-hs-pg1-bronze",
+   "type": "Event",
+   "label": "청동기 시대의 시작"
+  },
+  {
+   "id": "event-hs-pg1-cheonjeon",
+   "type": "Event",
+   "label": "울주 천전리 각석"
+  },
+  {
+   "id": "event-hs-pg1-chief",
+   "type": "Event",
+   "label": "계급의 발생과 군장의 등장"
+  },
+  {
+   "id": "event-hs-pg1-clan",
+   "type": "Event",
+   "label": "신석기의 씨족 사회와 평등 생활"
+  },
+  {
+   "id": "event-hs-pg1-dangun",
+   "type": "Event",
+   "label": "단군왕검"
+  },
+  {
+   "id": "event-hs-pg1-dongsam",
+   "type": "Event",
+   "label": "부산 동삼동 패총"
+  },
+  {
+   "id": "event-hs-pg1-durubong",
+   "type": "Event",
+   "label": "청주 두루봉 동굴과 흥수아이"
+  },
+  {
+   "id": "event-hs-pg1-farming",
+   "type": "Event",
+   "label": "농경과 목축의 시작"
+  },
+  {
+   "id": "event-hs-pg1-founding",
+   "type": "Event",
+   "label": "고조선 건국"
+  },
+  {
+   "id": "event-hs-pg1-ganghwa",
+   "type": "Event",
+   "label": "강화 부근리 지석묘"
+  },
+  {
+   "id": "event-hs-pg1-garak",
+   "type": "Event",
+   "label": "가락바퀴와 뼈바늘"
+  },
+  {
+   "id": "event-hs-pg1-gochang",
+   "type": "Event",
+   "label": "고창 죽림리 지석묘군(고인돌)"
+  },
+  {
+   "id": "event-hs-pg1-jeongok",
+   "type": "Event",
+   "label": "연천 전곡리 유적과 주먹도끼"
+  },
+  {
+   "id": "event-hs-pg1-jeulmun",
+   "type": "Event",
+   "label": "빗살무늬 토기"
+  },
+  {
+   "id": "event-hs-pg1-misong",
+   "type": "Event",
+   "label": "미송리식 토기와 민무늬 토기"
+  },
+  {
+   "id": "event-hs-pg1-myth",
+   "type": "Event",
+   "label": "단군 신화"
+  },
+  {
+   "id": "event-hs-pg1-neobegin",
+   "type": "Event",
+   "label": "신석기 시대의 시작과 간석기"
+  },
+  {
+   "id": "event-hs-pg1-osanri",
+   "type": "Event",
+   "label": "양양 오산리 유적"
+  },
+  {
+   "id": "event-hs-pg1-paleo",
+   "type": "Event",
+   "label": "구석기 시대의 시작"
+  },
+  {
+   "id": "event-hs-pg1-range",
+   "type": "Event",
+   "label": "고조선의 세력 범위"
+  },
+  {
+   "id": "event-hs-pg1-rice",
+   "type": "Event",
+   "label": "벼농사의 확산과 반달 돌칼"
+  },
+  {
+   "id": "event-hs-pg1-seokjang",
+   "type": "Event",
+   "label": "공주 석장리 유적"
+  },
+  {
+   "id": "event-hs-pg1-songguk",
+   "type": "Event",
+   "label": "부여 송국리 유적"
+  },
+  {
+   "id": "event-hs-pg1-suyang",
+   "type": "Event",
+   "label": "단양 수양개 유적"
+  },
   {
    "id": "group-hs-pg1-chiefdom",
    "type": "Group",
@@ -1403,9 +1805,159 @@
    "label": "의주 미송리 동굴 유적"
   },
   {
+   "id": "place-hs-pg1-munamri",
+   "type": "Place",
+   "label": "고성 문암리 유적"
+  },
+  {
+   "id": "place-hs-pg1-oido",
+   "type": "Place",
+   "label": "시흥 오이도 유적"
+  },
+  {
    "id": "place-hs-pg1-osanri",
    "type": "Place",
    "label": "양양 오산리 유적"
+  },
+  {
+   "id": "place-hs-pg1-scene-amsa",
+   "type": "Place",
+   "label": "서울 암사동 유적"
+  },
+  {
+   "id": "place-hs-pg1-scene-bangudae",
+   "type": "Place",
+   "label": "울주 대곡리 반구대 암각화"
+  },
+  {
+   "id": "place-hs-pg1-scene-belief",
+   "type": "Place",
+   "label": "통영 연대도 패총(신석기 묘역)"
+  },
+  {
+   "id": "place-hs-pg1-scene-bipa",
+   "type": "Place",
+   "label": "요령 지역 조양 일대(비파형 동검 분포 중심)"
+  },
+  {
+   "id": "place-hs-pg1-scene-bronze",
+   "type": "Place",
+   "label": "울주 검단리 유적(환호 마을)"
+  },
+  {
+   "id": "place-hs-pg1-scene-cheonjeon",
+   "type": "Place",
+   "label": "울주 천전리 각석"
+  },
+  {
+   "id": "place-hs-pg1-scene-chief",
+   "type": "Place",
+   "label": "화순 고인돌 유적(고창·화순·강화 고인돌 표시점)"
+  },
+  {
+   "id": "place-hs-pg1-scene-clan",
+   "type": "Place",
+   "label": "고성 문암리 유적(신석기 집터 마을)"
+  },
+  {
+   "id": "place-hs-pg1-scene-dangun",
+   "type": "Place",
+   "label": "아사달(평양 일대)"
+  },
+  {
+   "id": "place-hs-pg1-scene-dongsam",
+   "type": "Place",
+   "label": "부산 동삼동 패총"
+  },
+  {
+   "id": "place-hs-pg1-scene-durubong",
+   "type": "Place",
+   "label": "청주 두루봉 동굴 유적(문의면 일대)"
+  },
+  {
+   "id": "place-hs-pg1-scene-farming",
+   "type": "Place",
+   "label": "대동강 하류 일대(신석기 농경 유적 권역)"
+  },
+  {
+   "id": "place-hs-pg1-scene-founding",
+   "type": "Place",
+   "label": "아사달(왕검성으로 비정되는 평양 일대)"
+  },
+  {
+   "id": "place-hs-pg1-scene-ganghwa",
+   "type": "Place",
+   "label": "강화 부근리 지석묘"
+  },
+  {
+   "id": "place-hs-pg1-scene-garak",
+   "type": "Place",
+   "label": "용강 궁산리 유적 일대(옛 용강군 표시점)"
+  },
+  {
+   "id": "place-hs-pg1-scene-gochang",
+   "type": "Place",
+   "label": "고창 죽림리 고인돌군(고창고인돌박물관 표시점)"
+  },
+  {
+   "id": "place-hs-pg1-scene-jeongok",
+   "type": "Place",
+   "label": "연천 전곡리 유적"
+  },
+  {
+   "id": "place-hs-pg1-scene-jeulmun",
+   "type": "Place",
+   "label": "시흥 오이도 유적(빗살무늬토기 조개더미)"
+  },
+  {
+   "id": "place-hs-pg1-scene-misong",
+   "type": "Place",
+   "label": "의주 미송리 동굴 유적"
+  },
+  {
+   "id": "place-hs-pg1-scene-myth",
+   "type": "Place",
+   "label": "태백산 신단수(묘향산 비정)"
+  },
+  {
+   "id": "place-hs-pg1-scene-neobegin",
+   "type": "Place",
+   "label": "제주 고산리 유적"
+  },
+  {
+   "id": "place-hs-pg1-scene-osanri",
+   "type": "Place",
+   "label": "양양 오산리 유적"
+  },
+  {
+   "id": "place-hs-pg1-scene-paleo",
+   "type": "Place",
+   "label": "단양 금굴 유적(구석기 이른 시기 동굴)"
+  },
+  {
+   "id": "place-hs-pg1-scene-range",
+   "type": "Place",
+   "label": "요하 유역(고조선 문화 범위의 서쪽)"
+  },
+  {
+   "id": "place-hs-pg1-scene-rice",
+   "type": "Place",
+   "label": "여주 흔암리 선사유적"
+  },
+  {
+   "id": "place-hs-pg1-scene-seokjang",
+   "type": "Place",
+   "label": "공주 석장리 유적"
+  },
+  {
+   "id": "place-hs-pg1-scene-songguk",
+   "type": "Place",
+   "label": "부여 송국리 유적"
+  },
+  {
+   "id": "place-hs-pg1-scene-suyang",
+   "type": "Place",
+   "label": "단양 수양개 유적"
   },
   {
    "id": "place-hs-pg1-seokjangri",
@@ -1431,6 +1983,11 @@
    "id": "place-hs-pg1-suyanggae",
    "type": "Place",
    "label": "단양 수양개 유적"
+  },
+  {
+   "id": "place-hs-pg1-yeondaedo",
+   "type": "Place",
+   "label": "통영 연대도 패총"
   },
   {
    "id": "polity-hs-gojoseon",
@@ -1546,9 +2103,9 @@
     "kind": "entity",
     "id": "place-hs-pg1-geumgul"
    },
-   "sourceId": "src-hs-pg1-ko-geumgul",
-   "citesExcerpt": "ex-geumgul-oldest",
-   "note": "단양 금굴은 전기 구석기부터 여러 시기의 유물층이 확인된 유적이다."
+   "sourceId": "src-hs-pg1-enc-geumgul",
+   "citesExcerpt": "ex-geumgul-age",
+   "note": "민족문화대백과 금굴 항목은 이 동굴에 약 70만 년 전부터 사람이 살았다고 적는다."
   },
   {
    "id": "claim-hs-pg1-paleo-loc",
@@ -1734,11 +2291,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "thing-hs-pg1-handaxe"
+    "id": "period-hs-paleolithic"
    },
    "sourceId": "src-hs-pg1-enc-paleolithic",
    "citesExcerpt": "ex-paleo-def",
-   "note": "뗀석기를 쓰던 구석기시대의 유적이다."
+   "note": "석장리 유적이 속한 구석기시대의 정의다. 석장리에서 주먹도끼가 나왔다는 연결은 이번 근거로 확인하지 못했다."
   },
   {
    "id": "claim-hs-pg1-seokjang-loc",
@@ -1824,9 +2381,9 @@
     "kind": "entity",
     "id": "thing-hs-pg1-ganseokgi"
    },
-   "sourceId": "src-hs-pg1-enc-neolithic",
-   "citesExcerpt": "ex-neo-farm",
-   "note": "잡곡 농경이 퍼지면서 먹을거리와 도구가 달라졌다."
+   "sourceId": "src-hs-pg1-enc-ganseokgi",
+   "citesExcerpt": "ex-ganseokgi-def",
+   "note": "간석기는 날이나 표면을 갈아 만든 신석기·청동기시대의 석기다."
   },
   {
    "id": "claim-hs-pg1-neobegin-desig",
@@ -1894,9 +2451,9 @@
     "kind": "entity",
     "id": "thing-hs-pg1-umjip"
    },
-   "sourceId": "src-hs-pg1-ko-neolithic-korea",
-   "citesExcerpt": "ex-neokr-house",
-   "note": "강가나 바닷가에 움집을 짓고 정착 생활을 했다."
+   "sourceId": "src-hs-pg1-enc-osanri",
+   "citesExcerpt": "ex-osanri-house",
+   "note": "오산리 신석기 하층에서 주거지 6기가 확인되었다."
   },
   {
    "id": "claim-hs-pg1-osanri-loc",
@@ -1986,9 +2543,9 @@
     "kind": "entity",
     "id": "place-hs-pg1-jitapri"
    },
-   "sourceId": "src-hs-pg1-ko-jitapri",
-   "citesExcerpt": "ex-jitap-place",
-   "note": "봉산 지탑리 유적은 황해북도 봉산군에 있는 석기시대 집터다."
+   "sourceId": "src-hs-pg1-enc-jitapri",
+   "citesExcerpt": "ex-jitap-def",
+   "note": "봉산 지탑리 유적은 황해북도 봉산군의 집터 유적이다."
   },
   {
    "id": "claim-hs-pg1-farming-tool",
@@ -2098,14 +2655,14 @@
   {
    "id": "claim-hs-pg1-jeulmun-site",
    "subject": "event-hs-pg1-jeulmun",
-   "predicate": "syj:producedAt",
+   "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs-pg1-amsadong"
+    "id": "place-hs-pg1-oido"
    },
-   "sourceId": "src-hs-pg1-enc-amsadong",
-   "citesExcerpt": "ex-amsa-def",
-   "note": "암사동 집터에서 빗살무늬토기가 출토되었다."
+   "sourceId": "src-hs-pg1-enc-oido",
+   "citesExcerpt": "ex-oido-def",
+   "note": "장면 표시점으로 삼은 시흥 오이도 유적의 성격이다."
   },
   {
    "id": "claim-hs-pg1-jeulmun-loc",
@@ -2113,13 +2670,13 @@
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lon": 127.13028,
-    "lat": 37.56056,
+    "lon": 126.69333,
+    "lat": 37.34556,
     "precision": "site"
    },
-   "sourceId": "src-hs-pg1-ko-amsadong",
-   "citesExcerpt": "ex-geo-amsa",
-   "note": "장면 표시 좌표의 근거 발췌(ex-geo-amsa)."
+   "sourceId": "src-hs-pg1-ko-oido",
+   "citesExcerpt": "ex-geo-oido",
+   "note": "장면 표시 좌표의 근거 발췌(ex-geo-oido)."
   },
   {
    "id": "claim-hs-pg1-clan-house",
@@ -2129,9 +2686,9 @@
     "kind": "entity",
     "id": "thing-hs-pg1-umjip"
    },
-   "sourceId": "src-hs-pg1-ko-neolithic-korea",
-   "citesExcerpt": "ex-neokr-house",
-   "note": "강가나 바닷가에 움집을 짓고 정착 생활을 했다."
+   "sourceId": "src-hs-pg1-enc-munamri",
+   "citesExcerpt": "ex-munam-house",
+   "note": "문암리 유적에서 주거지 5기와 야외 화덕, 밭이 확인되었다."
   },
   {
    "id": "claim-hs-pg1-clan-clan",
@@ -2141,21 +2698,21 @@
     "kind": "entity",
     "id": "group-hs-pg1-clan"
    },
-   "sourceId": "src-hs-pg1-ko-neolithic-korea",
-   "citesExcerpt": "ex-neokr-clan",
-   "note": "연장자나 경험 많은 사람이 이끄는 부족 사회였다."
+   "sourceId": "src-hs-pg1-enc-tribal",
+   "citesExcerpt": "ex-tribal-clan",
+   "note": "사전은 씨족사회가 사회 분화와 교역 증대로 해체되어 부족이 생활의 중심이 되었다고 적는다. 연장자가 이끌었다는 서술은 이번 근거로 확인하지 못했다."
   },
   {
    "id": "claim-hs-pg1-clan-site",
    "subject": "event-hs-pg1-clan",
-   "predicate": "syj:tookPlaceAt",
+   "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs-pg1-osanri"
+    "id": "place-hs-pg1-munamri"
    },
-   "sourceId": "src-hs-pg1-enc-osanri",
-   "citesExcerpt": "ex-osanri-def",
-   "note": "양양 오산리의 신석기 집터가 그런 마을의 자취다."
+   "sourceId": "src-hs-pg1-enc-munamri",
+   "citesExcerpt": "ex-munam-def",
+   "note": "장면 표시점으로 삼은 고성 문암리 유적의 성격이다."
   },
   {
    "id": "claim-hs-pg1-clan-loc",
@@ -2163,13 +2720,13 @@
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lon": 128.66139,
-    "lat": 38.08694,
+    "lon": 128.54361,
+    "lat": 38.30472,
     "precision": "site"
    },
-   "sourceId": "src-hs-pg1-ko-osanri",
-   "citesExcerpt": "ex-geo-osanri",
-   "note": "장면 표시 좌표의 근거 발췌(ex-geo-osanri)."
+   "sourceId": "src-hs-pg1-ko-munamri",
+   "citesExcerpt": "ex-geo-munam",
+   "note": "장면 표시 좌표의 근거 발췌(ex-geo-munam)."
   },
   {
    "id": "claim-hs-pg1-belief-belief",
@@ -2186,14 +2743,14 @@
   {
    "id": "claim-hs-pg1-belief-site",
    "subject": "event-hs-pg1-belief",
-   "predicate": "syj:tookPlaceAt",
+   "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs-pg1-dongsamdong"
+    "id": "place-hs-pg1-yeondaedo"
    },
-   "sourceId": "src-hs-pg1-enc-dongsamdong",
-   "citesExcerpt": "ex-dongsam-def",
-   "note": "동삼동 패총은 신석기 바닷가 마을의 생활 자취다."
+   "sourceId": "src-hs-pg1-enc-yeondaedo",
+   "citesExcerpt": "ex-yeondae-def",
+   "note": "장면 표시점으로 삼은 통영 연대도 패총의 성격이다."
   },
   {
    "id": "claim-hs-pg1-belief-pot",
@@ -2213,13 +2770,13 @@
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lon": 129.07944,
-    "lat": 35.07083,
+    "lon": 128.40083,
+    "lat": 34.73861,
     "precision": "site"
    },
-   "sourceId": "src-hs-pg1-ko-dongsamdong",
-   "citesExcerpt": "ex-geo-dongsam",
-   "note": "장면 표시 좌표의 근거 발췌(ex-geo-dongsam)."
+   "sourceId": "src-hs-pg1-ko-yeondaedo",
+   "citesExcerpt": "ex-geo-yeondae",
+   "note": "장면 표시 좌표의 근거 발췌(ex-geo-yeondae)."
   },
   {
    "id": "claim-hs-pg1-garak-def",
@@ -2263,13 +2820,13 @@
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lon": 125.52556,
-    "lat": 38.865,
+    "lon": 125.42194444444445,
+    "lat": 38.85722222222223,
     "precision": "area"
    },
-   "sourceId": "src-hs-pg1-ko-daedonggang",
-   "citesExcerpt": "ex-geo-daedong",
-   "note": "장면 표시 좌표의 근거 발췌(ex-geo-daedong)."
+   "sourceId": "src-hs-pg1-en-ryonggang",
+   "citesExcerpt": "ex-geo-ryonggang",
+   "note": "궁산리가 속한 옛 용강군의 문서 표시 좌표를 장면 표시점으로 썼다."
   },
   {
    "id": "claim-hs-pg1-bangudae-def",
@@ -2610,9 +3167,9 @@
     "kind": "entity",
     "id": "thing-hs-pg1-hwanho"
    },
-   "sourceId": "src-hs-pg1-ko-geomdanri",
-   "citesExcerpt": "ex-geomdan-hwanho",
-   "note": "마을 둘레에 판 못(환호)은 방위 개념을 보여 준다."
+   "sourceId": "src-hs-pg1-enc-geomdanri-site",
+   "citesExcerpt": "ex-geomdan-def",
+   "note": "검단리 유적은 청동기시대 집터와 환호가 함께 확인된 복합유적이다."
   },
   {
    "id": "claim-hs-pg1-bronze-loc",
@@ -2748,9 +3305,9 @@
     "kind": "entity",
     "id": "thing-hs-pg1-rice"
    },
-   "sourceId": "src-hs-pg1-ko-heunamri",
-   "citesExcerpt": "ex-heunam-rice",
-   "note": "12호 집자리에서 불탄 쌀이 확인되었다."
+   "sourceId": "src-hs-pg1-enc-heunamri-site",
+   "citesExcerpt": "ex-heunamsite-grain",
+   "note": "흔암리 집터에서 쌀·보리·수수·조 등 곡물이 나왔다."
   },
   {
    "id": "claim-hs-pg1-rice-knife",
@@ -3071,6 +3628,106 @@
    "sourceId": "src-hs-pg1-ko-gochang-museum",
    "citesExcerpt": "ex-geo-gochang",
    "note": "장면 표시 좌표의 근거 발췌(ex-geo-gochang)."
+  },
+  {
+   "id": "claim-hs-pg1-jeulmun-date",
+   "subject": "thing-hs-pg1-jeulmun",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "3500cal BC",
+    "year": -3500,
+    "precision": "year",
+    "earliest": -3500,
+    "latest": -3500
+   },
+   "sourceId": "src-hs-pg1-enc-oido",
+   "citesExcerpt": "ex-oido-date",
+   "note": "오이도 신석기 조개더미의 빗살무늬토기 편년과 탄소연대는 대체로 3500cal BC 전후다."
+  },
+  {
+   "id": "claim-hs-pg1-farming-agri",
+   "subject": "event-hs-pg1-farming",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-pg1-jitapri"
+   },
+   "sourceId": "src-hs-pg1-enc-jitapri",
+   "citesExcerpt": "ex-jitap-farm",
+   "note": "지탑리에서 돌보습·돌낫·탄화곡물이 나와 한반도 최초의 농경 가능성을 보여 준다."
+  },
+  {
+   "id": "claim-hs-pg1-garak-place",
+   "subject": "thing-hs-pg1-garakbakwi",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-pg1-gungsanri"
+   },
+   "sourceId": "src-hs-pg1-enc-gungsanri",
+   "citesExcerpt": "ex-gungsan-def",
+   "note": "궁산리 유적은 평안남도 온천군(옛 용강군)에 있는 신석기 조개더미다."
+  },
+  {
+   "id": "claim-hs-pg1-garak-house",
+   "subject": "place-hs-pg1-gungsanri",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "thing-hs-pg1-umjip"
+   },
+   "sourceId": "src-hs-pg1-enc-gungsanri",
+   "citesExcerpt": "ex-gungsan-house",
+   "note": "궁산리에서 움집 5기와 구덩 6개가 확인되었다."
+  },
+  {
+   "id": "claim-hs-pg1-bronze-first",
+   "subject": "place-hs-pg1-geomdanri",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "thing-hs-pg1-hwanho"
+   },
+   "sourceId": "src-hs-pg1-enc-geomdanri-site",
+   "citesExcerpt": "ex-geomdan-first",
+   "note": "검단리는 우리나라 환호 취락 조사의 시발점으로 평가된다."
+  },
+  {
+   "id": "claim-hs-pg1-belief-tomb",
+   "subject": "place-hs-pg1-yeondaedo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "period-hs-neolithic"
+   },
+   "sourceId": "src-hs-pg1-enc-yeondaedo",
+   "citesExcerpt": "ex-yeondae-tomb",
+   "note": "연대도에서 무덤 15기가 한 구역에 모여 있어 신석기 사람들이 묘역을 따로 두었음을 보여 준다."
+  },
+  {
+   "id": "claim-hs-pg1-bangudae-age",
+   "subject": "place-hs-pg1-bangudae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "period-hs-neolithic"
+   },
+   "sourceId": "src-hs-pg1-enc-bangudae",
+   "citesExcerpt": "ex-bangu-age",
+   "note": "사전은 반구대 암각화를 약 7,000년~3,500년 전에 조성된 것으로 본다."
+  },
+  {
+   "id": "claim-hs-pg1-rice-grain",
+   "subject": "place-hs-pg1-heunamri",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "thing-hs-pg1-rice"
+   },
+   "sourceId": "src-hs-pg1-enc-heunamri-site",
+   "citesExcerpt": "ex-heunamsite-def",
+   "note": "흔암리는 청동기시대 곡물이 발견된 집터 유적이다."
   }
  ],
  "scenes": [
@@ -3131,11 +3788,12 @@
    "kind": "excavation",
    "summary": "한탄강이 감아 도는 현무암 대지 위에서 주먹도끼와 긁개가 무더기로 나왔다. 1978년에 발견되어 이듬해 사적으로 지정되었다.",
    "dateClaimIds": [
-    "claim-hs-pg1-jeongok-find"
+    "claim-hs-pg1-jeongok-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-jeongok-def",
-    "claim-hs-pg1-jeongok-tool"
+    "claim-hs-pg1-jeongok-tool",
+    "claim-hs-pg1-jeongok-find",
+    "claim-hs-pg1-jeongok-desig"
    ],
    "place": {
     "label": "연천 전곡리 유적",
@@ -3156,7 +3814,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-jeongok-find"
+      "claim-hs-pg1-jeongok-def"
      ],
      "level": "core"
     }
@@ -3188,11 +3846,12 @@
    "kind": "excavation",
    "summary": "석회암이 녹아 생긴 여러 굴에서 집터와 짐승 뼈, 사람 뼈가 나왔다. 그 가운데 흥수굴에서 나온 어린아이 뼈가 흥수아이다.",
    "dateClaimIds": [
-    "claim-hs-pg1-durubong-dig"
+    "claim-hs-pg1-durubong-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-durubong-def",
-    "claim-hs-pg1-durubong-child"
+    "claim-hs-pg1-durubong-child",
+    "claim-hs-pg1-durubong-first",
+    "claim-hs-pg1-durubong-dig"
    ],
    "place": {
     "label": "청주 두루봉 동굴 유적(문의면 일대)",
@@ -3213,7 +3872,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-durubong-dig"
+      "claim-hs-pg1-durubong-def"
      ],
      "level": "standard"
     }
@@ -3245,10 +3904,11 @@
    "kind": "excavation",
    "summary": "금강이 산기슭과 만나는 강 언덕에서 집터와 석기가 층층이 나왔다. 1964년 큰물이 지나간 뒤 드러난 언덕에서 확인되어 남한 구석기 연구가 시작되었다.",
    "dateClaimIds": [
-    "claim-hs-pg1-seokjang-find"
+    "claim-hs-pg1-seokjang-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-seokjang-def"
+    "claim-hs-pg1-seokjang-tool",
+    "claim-hs-pg1-seokjang-find"
    ],
    "place": {
     "label": "공주 석장리 유적",
@@ -3269,7 +3929,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-seokjang-find"
+      "claim-hs-pg1-seokjang-def"
      ],
      "level": "standard"
     }
@@ -3360,7 +4020,8 @@
     "claim-hs-pg1-neobegin-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-neobegin-tool"
+    "claim-hs-pg1-neobegin-tool",
+    "claim-hs-pg1-neobegin-desig"
    ],
    "place": {
     "label": "제주 고산리 유적",
@@ -3404,10 +4065,11 @@
    "kind": "excavation",
    "summary": "바닷가에서 조금 들어온 호숫가 모래언덕 위에 집터가 겹겹이 남았다. 우리나라에서 가장 이른 시기에 속하는 신석기 주거지 가운데 하나다.",
    "dateClaimIds": [
-    "claim-hs-pg1-osanri-dig"
+    "claim-hs-pg1-osanri-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-osanri-def"
+    "claim-hs-pg1-osanri-house",
+    "claim-hs-pg1-osanri-dig"
    ],
    "place": {
     "label": "양양 오산리 유적",
@@ -3428,7 +4090,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-osanri-dig"
+      "claim-hs-pg1-osanri-def"
      ],
      "level": "standard"
     }
@@ -3460,10 +4122,11 @@
    "kind": "excavation",
    "summary": "영도 남동쪽 바닷가에 조개껍질과 살림살이가 층층이 쌓였다. 빗살무늬토기와 뼈연장이 함께 나와 신석기 바닷가 생활을 보여 준다.",
    "dateClaimIds": [
-    "claim-hs-pg1-dongsam-dig"
+    "claim-hs-pg1-dongsam-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-dongsam-def"
+    "claim-hs-pg1-dongsam-pot",
+    "claim-hs-pg1-dongsam-dig"
    ],
    "place": {
     "label": "부산 동삼동 패총",
@@ -3484,7 +4147,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-dongsam-dig"
+      "claim-hs-pg1-dongsam-def"
      ],
      "level": "standard"
     }
@@ -3514,16 +4177,16 @@
    "startYear": -5000,
    "endYear": -5000,
    "kind": "settlement",
-   "summary": "신석기 전기부터 조와 기장 같은 잡곡을 심어 먹거리에 보탰다. 봉산 지탑리처럼 대동강 유역 집터에서 그 자취가 나왔다.",
+   "summary": "신석기 전기부터 조와 기장 같은 잡곡을 심어 먹거리에 보탰다. 봉산 지탑리 집터에서는 돌보습·돌낫과 함께 탄 곡식이 나왔다.",
    "dateClaimIds": [
     "claim-hs-pg1-farming-act"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-farming-act",
-    "claim-hs-pg1-farming-place"
+    "claim-hs-pg1-farming-place",
+    "claim-hs-pg1-farming-agri"
    ],
    "place": {
-    "label": "대동강 유역(봉산 지탑리 일대)",
+    "label": "대동강 하류 일대(신석기 농경 유적 권역)",
     "medium": "land",
     "precision": "area",
     "lon": 125.52556,
@@ -3534,7 +4197,7 @@
     "coordinateSourceIds": [
      "src-hs-pg1-ko-daedonggang"
     ],
-    "coordinateNote": "지탑리 유적의 십진 좌표 근거를 찾지 못해 대동강 표시 좌표를 대표점으로 썼다. 항목 설명의 가축 사육은 이번 근거에서 확인하지 못했다"
+    "coordinateNote": "봉산 지탑리 유적 자체의 십진 좌표 근거를 찾지 못했다. 표시점은 위키백과 대동강 문서의 강 대표 좌표(대동강 하류)여서 지탑리가 있는 봉산군을 가리키지 않으며, 유적 이름은 summary 와 claim 에만 둔다"
    },
    "participants": [],
    "effects": {
@@ -3564,11 +4227,11 @@
    "kind": "excavation",
    "summary": "한강 아래쪽 하안단구에 둥근 움집이 여러 채 모여 마을을 이루었다. 빗살무늬토기와 돌도끼, 그물추가 함께 나왔다.",
    "dateClaimIds": [
-    "claim-hs-pg1-amsa-dig"
+    "claim-hs-pg1-amsa-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-amsa-def",
-    "claim-hs-pg1-amsa-village"
+    "claim-hs-pg1-amsa-village",
+    "claim-hs-pg1-amsa-dig"
    ],
    "place": {
     "label": "서울 암사동 유적",
@@ -3589,7 +4252,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-amsa-dig"
+      "claim-hs-pg1-amsa-def"
      ],
      "level": "core"
     }
@@ -3615,54 +4278,55 @@
    "itemId": "hs-prehistoric-comb-pattern-pottery",
    "eventId": "event-hs-pg1-jeulmun",
    "title": "빗살무늬 토기",
-   "startYear": -4000,
-   "endYear": -4000,
+   "startYear": -3500,
+   "endYear": -3500,
    "kind": "heritage",
-   "summary": "겉면에 빗 같은 도구로 점과 선을 새긴 토기다. 신석기시대를 대표하는 유물로 암사동 집터에서 무더기로 나왔다.",
+   "summary": "겉면에 빗 같은 도구로 점과 선을 새긴 토기다. 서해안 조개더미인 시흥 오이도에서는 이 토기층의 연대가 3500cal BC 전후로 측정되었다.",
    "dateClaimIds": [
-    "claim-hs-pg1-jeulmun-def"
+    "claim-hs-pg1-jeulmun-date"
    ],
    "actionClaimIds": [
+    "claim-hs-pg1-jeulmun-def",
     "claim-hs-pg1-jeulmun-rep",
     "claim-hs-pg1-jeulmun-site"
    ],
    "place": {
-    "label": "서울 암사동 유적(빗살무늬토기 출토지)",
+    "label": "시흥 오이도 유적(빗살무늬토기 조개더미)",
     "medium": "land",
     "precision": "site",
-    "lon": 127.13028,
-    "lat": 37.56056,
+    "lon": 126.69333,
+    "lat": 37.34556,
     "claimIds": [
      "claim-hs-pg1-jeulmun-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs-pg1-ko-amsadong"
+     "src-hs-pg1-ko-oido"
     ],
-    "coordinateNote": "제작 연도를 특정할 수 없어 신석기 전 시기를 존속 기간으로 두었다. 암사동 유적 항목과 같은 표시점을 쓴다"
+    "coordinateNote": "대표 출토지인 암사동은 별도 항목이 이미 그 점을 쓰고 있어, 연대 측정값이 있는 서해안 조개더미 유적인 시흥 오이도의 표시 좌표를 표시점으로 썼다"
    },
    "participants": [],
    "effects": {
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-jeulmun-def"
+      "claim-hs-pg1-jeulmun-date"
      ],
      "level": "core"
     }
    },
    "category": "culture",
    "region": "central",
-   "decade": -4000,
+   "decade": -3500,
    "relatedClaimIds": [
     "claim-hs-pg1-jeulmun-loc"
    ],
    "heritageType": "artifact",
    "persistence": {
     "kind": "facility",
-    "from": -4000,
+    "from": -3500,
     "to": -1500,
     "basisClaimIds": [
-     "claim-hs-pg1-jeulmun-def",
+     "claim-hs-pg1-jeulmun-date",
      "claim-hs-pg1-jeulmun-rep"
     ]
    }
@@ -3675,7 +4339,7 @@
    "startYear": -4000,
    "endYear": -4000,
    "kind": "settlement",
-   "summary": "강가나 바닷가에 땅을 파 움집을 짓고 여러 집이 모여 살았다. 나이 많고 경험 많은 사람이 무리를 이끄는 씨족·부족 사회였다.",
+   "summary": "강가나 바닷가에 땅을 파 움집을 짓고 여러 집이 모여 살았다. 고성 문암리에서는 주거지와 야외 화덕, 밭이 함께 드러났다.",
    "dateClaimIds": [
     "claim-hs-pg1-clan-house"
    ],
@@ -3684,18 +4348,18 @@
     "claim-hs-pg1-clan-site"
    ],
    "place": {
-    "label": "양양 오산리 유적(신석기 움집 마을)",
+    "label": "고성 문암리 유적(신석기 집터 마을)",
     "medium": "land",
     "precision": "site",
-    "lon": 128.66139,
-    "lat": 38.08694,
+    "lon": 128.54361,
+    "lat": 38.30472,
     "claimIds": [
      "claim-hs-pg1-clan-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs-pg1-ko-osanri"
+     "src-hs-pg1-ko-munamri"
     ],
-    "coordinateNote": "사회 구조 서술은 위키백과 개설에 기댄 부분이 있어 confidence 를 medium 으로 두었다"
+    "coordinateNote": "오산리 항목과 표시점이 겹치지 않도록 같은 동해안 신석기 집터 유적인 고성 문암리의 표시 좌표를 썼다. 연장자가 무리를 이끌었다는 서술은 이번 근거로 확인하지 못했다"
    },
    "participants": [],
    "effects": {
@@ -3722,27 +4386,28 @@
    "startYear": -4000,
    "endYear": -4000,
    "kind": "ritual",
-   "summary": "산과 바다, 나무와 돌에 영혼이 있다고 믿었고 특정 동식물을 무리의 조상으로 섬기기도 했다. 무당이 하늘과 사람을 잇는다고 여겼다.",
+   "summary": "산과 바다, 나무와 돌에 영혼이 있다고 믿었고 특정 동식물을 무리의 조상으로 섬기기도 했다. 통영 연대도에서는 무덤 15기가 한 구역에 모여 있었다.",
    "dateClaimIds": [
     "claim-hs-pg1-belief-belief"
    ],
    "actionClaimIds": [
     "claim-hs-pg1-belief-belief",
-    "claim-hs-pg1-belief-site"
+    "claim-hs-pg1-belief-site",
+    "claim-hs-pg1-belief-tomb"
    ],
    "place": {
-    "label": "부산 동삼동 패총(신석기 바닷가 마을)",
+    "label": "통영 연대도 패총(신석기 묘역)",
     "medium": "land",
     "precision": "site",
-    "lon": 129.07944,
-    "lat": 35.07083,
+    "lon": 128.40083,
+    "lat": 34.73861,
     "claimIds": [
      "claim-hs-pg1-belief-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs-pg1-ko-dongsamdong"
+     "src-hs-pg1-ko-yeondaedo"
     ],
-    "coordinateNote": "신앙은 물건으로 증명하기 어렵다는 사전의 단서를 그대로 둔다. 동삼동 패총을 신석기 생활 무대의 표시점으로 썼다"
+    "coordinateNote": "동삼동 항목과 표시점이 겹치지 않도록 신석기 묘역이 확인된 통영 연대도 패총의 표시 좌표를 썼다. 신앙 자체는 물건으로 증명하기 어렵다는 사전의 단서를 그대로 둔다"
    },
    "participants": [],
    "effects": {
@@ -3770,26 +4435,28 @@
    "startYear": -4000,
    "endYear": -4000,
    "kind": "settlement",
-   "summary": "가운데 구멍을 뚫은 둥근 가락바퀴에 막대를 끼워 실을 꼬았다. 지탑리·궁산리·오산리 같은 집터에서 나온다.",
+   "summary": "가운데 구멍을 뚫은 둥근 가락바퀴에 막대를 끼워 실을 꼬았다. 평안남도 궁산리 조개더미의 움집 자리에서 이런 방적구가 나왔다.",
    "dateClaimIds": [
     "claim-hs-pg1-garak-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-garak-sites"
+    "claim-hs-pg1-garak-sites",
+    "claim-hs-pg1-garak-place",
+    "claim-hs-pg1-garak-house"
    ],
    "place": {
-    "label": "대동강 유역(온천 궁산리 일대)",
+    "label": "용강 궁산리 유적 일대(옛 용강군 표시점)",
     "medium": "land",
     "precision": "area",
-    "lon": 125.52556,
-    "lat": 38.865,
+    "lon": 125.42194444444445,
+    "lat": 38.85722222222223,
     "claimIds": [
      "claim-hs-pg1-garak-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs-pg1-ko-daedonggang"
+     "src-hs-pg1-en-ryonggang"
     ],
-    "coordinateNote": "궁산리 유적의 십진 좌표 근거를 찾지 못해 대동강 표시 좌표를 대표점으로 썼다. 신석기 농경 항목과 같은 표시점이다"
+    "coordinateNote": "궁산리 유적 자체의 십진 좌표를 찾지 못해 유적이 속한 옛 용강군(현 온천군)의 문서 표시 좌표를 대표점으로 썼다. 신석기 농경 항목과 표시점이 겹치지 않게 분리했다"
    },
    "participants": [],
    "effects": {
@@ -3819,10 +4486,11 @@
    "kind": "ritual",
    "summary": "대곡천 가 깎아지른 절벽에 고래와 짐승, 사람이 300여 점 새겨져 있다. 고래잡이를 새긴 그림으로는 세계에서 가장 오래된 것으로 평가된다.",
    "dateClaimIds": [
-    "claim-hs-pg1-bangudae-whale"
+    "claim-hs-pg1-bangudae-age"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-bangudae-def"
+    "claim-hs-pg1-bangudae-def",
+    "claim-hs-pg1-bangudae-whale"
    ],
    "place": {
     "label": "울주 대곡리 반구대 암각화",
@@ -3843,7 +4511,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-bangudae-whale"
+      "claim-hs-pg1-bangudae-age"
      ],
      "level": "standard"
     }
@@ -3893,7 +4561,7 @@
     "coordinateSourceIds": [
      "src-hs-pg1-en-pyongyang"
     ],
-    "coordinateNote": "신화·전승 기록에 근거한 인물이며 실존을 확인하는 사료는 없다. 해외(북한) 지역이라 평양 표시 좌표를 썼다",
+    "coordinateNote": "신화·전승 기록에 근거한 인물이며 실존을 확인하는 사료는 없다. 현재 북한 지역이라 평양 표시 좌표를 썼고, 고조선 건국 장면과 의도적으로 같은 지점을 쓴다",
     "setting": "palace"
    },
    "participants": [
@@ -3955,7 +4623,7 @@
     "coordinateSourceIds": [
      "src-hs-pg1-en-myohyangsan"
     ],
-    "coordinateNote": "태백산의 위치는 묘향산·백두산 등 여러 설이 있어 묘향산 표시 좌표를 대표점으로 썼다. 해외(북한) 지역이다"
+    "coordinateNote": "태백산의 위치는 묘향산·백두산 등 여러 설이 있어 묘향산 표시 좌표를 대표점으로 썼다. 현재 북한 지역이다"
    },
    "participants": [],
    "effects": {
@@ -4003,7 +4671,7 @@
     "coordinateSourceIds": [
      "src-hs-pg1-en-pyongyang"
     ],
-    "coordinateNote": "건국 연도는 전승 기록의 연대이며 고고학 연대와 다르다. 도읍을 정한 사건이라 region 을 capital 로 두었고, 실제 위치는 해외(북한) 평양 일대다",
+    "coordinateNote": "건국 연도는 전승 기록의 연대이며 고고학 연대와 다르다. 현재 북한 지역인 평양 일대이며, 단군왕검 초상 장면과 의도적으로 같은 지점을 쓴다",
     "setting": "palace"
    },
    "participants": [],
@@ -4017,7 +4685,7 @@
     }
    },
    "category": "administration",
-   "region": "capital",
+   "region": "north",
    "decade": -2340,
    "relatedClaimIds": [
     "claim-hs-pg1-founding-asadal",
@@ -4094,7 +4762,7 @@
    "itemId": "hs-prehistoric-bronze-age-begins",
    "eventId": "event-hs-pg1-bronze",
    "title": "청동기 시대의 시작",
-   "startYear": -1500,
+   "startYear": -1000,
    "endYear": -400,
    "kind": "settlement",
    "summary": "청동을 녹여 검과 거울을 만들고 민무늬 토기를 썼다. 마을 둘레에 도랑을 두른 검단리 같은 취락이 나타난다.",
@@ -4103,7 +4771,8 @@
    ],
    "actionClaimIds": [
     "claim-hs-pg1-bronze-site",
-    "claim-hs-pg1-bronze-hwanho"
+    "claim-hs-pg1-bronze-hwanho",
+    "claim-hs-pg1-bronze-first"
    ],
    "place": {
     "label": "울주 검단리 유적(환호 마을)",
@@ -4117,7 +4786,7 @@
     "coordinateSourceIds": [
      "src-hs-pg1-ko-geomdanri"
     ],
-    "coordinateNote": "교과서가 잡는 시작 연도(기원전 1500년경)와 사전이 적은 중심 연대(서기전 1000년 대 전반)가 달라 note 에 함께 남긴다"
+    "coordinateNote": "표시 연도는 사전이 적은 중심 연대(서기전 1000년 대 전반)에 맞췄다. 교과서가 잡는 시작 연도(기원전 1500년경)는 이번 근거로 뒷받침하지 못했다"
    },
    "participants": [],
    "effects": {
@@ -4131,7 +4800,7 @@
    },
    "category": "culture",
    "region": "south",
-   "decade": -1500,
+   "decade": -1000,
    "relatedClaimIds": [
     "claim-hs-pg1-bronze-loc"
    ]
@@ -4246,8 +4915,8 @@
    "itemId": "hs-prehistoric-rice-farming",
    "eventId": "event-hs-pg1-rice",
    "title": "벼농사의 확산과 반달 돌칼",
-   "startYear": -1000,
-   "endYear": -1000,
+   "startYear": -600,
+   "endYear": -600,
    "kind": "settlement",
    "summary": "남한강이 내려다보이는 언덕 집터에서 불에 탄 쌀이 나왔다. 반달 모양 돌칼로 이삭만 잘라 거두었다.",
    "dateClaimIds": [
@@ -4255,6 +4924,7 @@
    ],
    "actionClaimIds": [
     "claim-hs-pg1-rice-rice",
+    "claim-hs-pg1-rice-grain",
     "claim-hs-pg1-rice-knife"
    ],
    "place": {
@@ -4269,7 +4939,7 @@
     "coordinateSourceIds": [
      "src-hs-pg1-ko-heunamri"
     ],
-    "coordinateNote": "탄화미 연대는 사전이 '서기전 6, 5세기경'으로 적어 한 해를 고정하지 못했다. 논농사 여부와 빈부 차이는 이번 근거에서 확인하지 못했다"
+    "coordinateNote": "표시 연도는 흔암리 탄화미의 추정 연대(서기전 6, 5세기경) 가운데 이른 쪽에 맞췄다. 논농사 여부와 빈부 차이는 이번 근거에서 확인하지 못했다"
    },
    "participants": [],
    "effects": {
@@ -4283,7 +4953,7 @@
    },
    "category": "economy",
    "region": "central",
-   "decade": -1000,
+   "decade": -600,
    "relatedClaimIds": [
     "claim-hs-pg1-rice-spread",
     "claim-hs-pg1-rice-loc"
@@ -4299,11 +4969,12 @@
    "kind": "heritage",
    "summary": "조롱박 위아래를 자른 듯한 몸통에 가로줄 무늬를 새기고 손잡이를 붙였다. 1959년 압록강 하류 의주 미송리 동굴에서 처음 나왔다.",
    "dateClaimIds": [
-    "claim-hs-pg1-misong-found"
+    "claim-hs-pg1-misong-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-misong-def",
-    "claim-hs-pg1-misong-site"
+    "claim-hs-pg1-misong-site",
+    "claim-hs-pg1-misong-layer",
+    "claim-hs-pg1-misong-found"
    ],
    "place": {
     "label": "의주 미송리 동굴 유적",
@@ -4317,15 +4988,14 @@
     "coordinateSourceIds": [
      "src-hs-pg1-en-uiju"
     ],
-    "coordinateNote": "해외(북한)다. 유적의 십진 좌표를 찾지 못해 의주군 표시 좌표를 대표점으로 썼다",
-    "overseas": true
+    "coordinateNote": "현재 북한 지역이다. 유적의 십진 좌표를 찾지 못해 의주군 표시 좌표를 대표점으로 썼다"
    },
    "participants": [],
    "effects": {
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-misong-found"
+      "claim-hs-pg1-misong-def"
      ],
      "level": "extended"
     }
@@ -4463,10 +5133,11 @@
    "kind": "settlement",
    "summary": "완만한 언덕에 둥근 집터가 빼곡히 들어선 대규모 취락이다. 돌널무덤에서는 비파형 동검과 간돌검이 함께 나왔다.",
    "dateClaimIds": [
-    "claim-hs-pg1-songguk-find"
+    "claim-hs-pg1-songguk-def"
    ],
    "actionClaimIds": [
-    "claim-hs-pg1-songguk-def"
+    "claim-hs-pg1-songguk-dagger",
+    "claim-hs-pg1-songguk-find"
    ],
    "place": {
     "label": "부여 송국리 유적",
@@ -4487,7 +5158,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-pg1-songguk-find"
+      "claim-hs-pg1-songguk-def"
      ],
      "level": "standard"
     }
@@ -4576,7 +5247,7 @@
    "year": -700000,
    "yearVerbatim": "약 70만 년 전(교과서가 잡는 한반도 구석기 상한)",
    "placeLabel": "단양 금굴 유적(구석기 이른 시기 동굴)",
-   "modernPlace": "충청북도 단양군 단양읍 도담리",
+   "modernPlace": "충청북도 단양군 단양읍 도담리(민족문화대백과는 가곡면으로 적는다)",
    "what": "뗀석기를 쓰며 사냥과 채집으로 살던 가장 오랜 시기",
    "claimIds": [
     "claim-hs-pg1-paleo-def",
@@ -4586,7 +5257,7 @@
    ],
    "sceneId": "scene-hs-pg1-paleo",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 좌표는 대표 유적(단양 금굴)에 붙인 표시점이고, 70만 년 전이라는 상한 연도 자체를 인용으로 확인하지는 못했다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 좌표는 대표 유적(단양 금굴)에 붙인 표시점이다. 민족문화대백과 금굴 항목의 “약 70만 년 전”이라는 서술을 상한 근거로 인용했다.",
    "lon": 128.3575,
    "lat": 36.99639,
    "coordinateBasis": "location claim-hs-pg1-paleo-loc"
@@ -4611,7 +5282,7 @@
    ],
    "sceneId": "scene-hs-pg1-jeongok",
    "confidence": "high",
-   "note": "[10한사1-01-01] · core · 연대는 추정폭이 넓어 사료 인용으로 고정하지 못했다. 국가유산포털 접속이 되지 않아 소재지는 민족문화대백과, 좌표는 위키백과 표시 좌표를 썼다",
+   "note": "[10한사1-01-01] · core · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 국가유산포털 접속이 되지 않아 소재지는 민족문화대백과, 좌표는 위키백과 표시 좌표를 썼다.",
    "lon": 127.065528,
    "lat": 38.011694,
    "coordinateBasis": "location claim-hs-pg1-jeongok-loc",
@@ -4641,7 +5312,7 @@
    ],
    "sceneId": "scene-hs-pg1-durubong",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 동굴 자체의 십진 좌표 근거를 찾지 못해 소재지인 청주시 상당구 문의면 표시점을 대표 좌표로 썼다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 동굴 자체의 십진 좌표 근거를 찾지 못해 소재지인 청주시 상당구 문의면 표시점을 대표 좌표로 썼다.",
    "lon": 127.51119,
    "lat": 36.47787,
    "coordinateBasis": "location claim-hs-pg1-durubong-loc",
@@ -4670,7 +5341,7 @@
    ],
    "sceneId": "scene-hs-pg1-seokjang",
    "confidence": "high",
-   "note": "[10한사1-01-01] · standard · 연대는 추정폭이 커 사료 인용으로 고정하지 못했다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 출토 석기를 주먹도끼로 특정하는 근거를 찾지 못해 구석기시대 규정 근거만 달았다.",
    "lon": 127.18972,
    "lat": 36.44667,
    "coordinateBasis": "location claim-hs-pg1-seokjang-loc",
@@ -4699,7 +5370,7 @@
    ],
    "sceneId": "scene-hs-pg1-suyang",
    "confidence": "high",
-   "note": "[10한사1-01-01] · standard · 연대는 문화층마다 달라 사료 인용으로 한 해를 고정하지 못했다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 연대는 문화층마다 달라 한 해를 고정하지 못했다.",
    "lon": 128.33194,
    "lat": 36.95889,
    "coordinateBasis": "location claim-hs-pg1-suyang-loc",
@@ -4728,7 +5399,7 @@
    ],
    "sceneId": "scene-hs-pg1-neobegin",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 시작 연도 자체는 인용으로 확인하지 못했고, 표지 유적인 고산리에 표시점을 두었다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 표지 유적인 고산리에 표시점을 두었다. 간석기 근거는 민족문화대백과 “간석기” 항목으로 달았다.",
    "lon": 126.16675,
    "lat": 33.30556,
    "coordinateBasis": "location claim-hs-pg1-neobegin-loc"
@@ -4752,7 +5423,7 @@
    ],
    "sceneId": "scene-hs-pg1-osanri",
    "confidence": "high",
-   "note": "[10한사1-01-01] · standard · 연대는 추정이며 발굴 연도만 인용으로 확인했다. 항목 설명의 흑요석 교류는 이번 근거에서 확인하지 못했다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 항목 설명의 흑요석 교류는 이번 근거에서 확인하지 못했다.",
    "lon": 128.66139,
    "lat": 38.08694,
    "coordinateBasis": "location claim-hs-pg1-osanri-loc",
@@ -4781,7 +5452,7 @@
    ],
    "sceneId": "scene-hs-pg1-dongsam",
    "confidence": "high",
-   "note": "[10한사1-01-01] · standard · 패총 형성 연대는 층마다 달라 인용으로 한 해를 고정하지 못했다. 항목 설명의 일본과의 교류는 이번 근거에서 확인하지 못했다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 항목 설명의 일본과의 교류는 이번 근거에서 확인하지 못했다.",
    "lon": 129.07944,
    "lat": 35.07083,
    "coordinateBasis": "location claim-hs-pg1-dongsam-loc",
@@ -4799,8 +5470,8 @@
    "decade": -5000,
    "year": -5000,
    "yearVerbatim": "신석기 전기(기원전 5000년경 추정)",
-   "placeLabel": "대동강 유역(봉산 지탑리 일대)",
-   "modernPlace": "북한 황해북도 봉산군 지탑리",
+   "placeLabel": "대동강 하류 일대(신석기 농경 유적 권역)",
+   "modernPlace": "북한 대동강 하류(평양 서쪽)",
    "what": "조·기장을 심고 가축을 기르며 한곳에 눌러앉기 시작함",
    "claimIds": [
     "claim-hs-pg1-farming-act",
@@ -4810,7 +5481,7 @@
    ],
    "sceneId": "scene-hs-pg1-farming",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 지탑리 유적의 십진 좌표 근거를 찾지 못해 대동강 표시 좌표를 대표점으로 썼다. 항목 설명의 가축 사육은 이번 근거에서 확인하지 못했다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 봉산 지탑리 유적의 십진 좌표 근거를 찾지 못했다. 표시점은 대동강 문서의 강 대표 좌표(대동강 하류)여서 유적명 대신 권역 이름을 적었고, 지탑리는 summary·claim 에 남겼다. 항목 설명의 가축 사육은 이번 근거에서 확인하지 못했다. 현재 북한 지역이다.",
    "lon": 125.52556,
    "lat": 38.865,
    "coordinateBasis": "location claim-hs-pg1-farming-loc"
@@ -4834,7 +5505,7 @@
    ],
    "sceneId": "scene-hs-pg1-amsa",
    "confidence": "high",
-   "note": "[10한사1-01-01] · core · 연대는 추정이며 발굴 경위만 인용으로 확인했다. 항목 설명의 '움집 100여 기'라는 수치는 이번 근거에서 확인하지 못했다",
+   "note": "[10한사1-01-01] · core · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 항목 설명의 “움집 100여 기”라는 수치는 이번 근거에서 확인하지 못했다.",
    "lon": 127.13028,
    "lat": 37.56056,
    "coordinateBasis": "location claim-hs-pg1-amsa-loc",
@@ -4849,11 +5520,11 @@
    "itemId": "hs-prehistoric-comb-pattern-pottery",
    "category": "culture",
    "region": "central",
-   "decade": -4000,
-   "year": -4000,
-   "yearVerbatim": "신석기시대(기원전 4000년경 추정)",
-   "placeLabel": "서울 암사동 유적(빗살무늬토기 출토지)",
-   "modernPlace": "서울특별시 강동구 암사동",
+   "decade": -3500,
+   "year": -3500,
+   "yearVerbatim": "3500cal BC(민족문화대백과 시흥 오이도 유적 표기)",
+   "placeLabel": "시흥 오이도 유적(빗살무늬토기 조개더미)",
+   "modernPlace": "경기도 시흥시 정왕동 오이도",
    "what": "곡식을 담고 조리하던, 신석기를 대표하는 뾰족바닥 토기",
    "claimIds": [
     "claim-hs-pg1-jeulmun-def",
@@ -4863,13 +5534,13 @@
    ],
    "sceneId": "scene-hs-pg1-jeulmun",
    "confidence": "high",
-   "note": "[10한사1-01-01] · core · 제작 연도를 특정할 수 없어 신석기 전 시기를 존속 기간으로 두었다. 암사동 유적 항목과 같은 표시점을 쓴다",
-   "lon": 127.13028,
-   "lat": 37.56056,
+   "note": "[10한사1-01-01] · core · confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 표시 연도는 시흥 오이도 유적의 빗살무늬토기층 연대(3500cal BC 전후)를 따랐다. 암사동 항목과 표시점이 겹치지 않도록 오이도 좌표를 썼다.",
+   "lon": 126.69333,
+   "lat": 37.34556,
    "coordinateBasis": "location claim-hs-pg1-jeulmun-loc",
    "persistence": {
     "kind": "facility",
-    "from": -4000,
+    "from": -3500,
     "to": -1500
    }
   },
@@ -4881,8 +5552,8 @@
    "decade": -4000,
    "year": -4000,
    "yearVerbatim": "신석기시대(기원전 4000년경 추정)",
-   "placeLabel": "양양 오산리 유적(신석기 움집 마을)",
-   "modernPlace": "강원특별자치도 양양군 손양면 오산리",
+   "placeLabel": "고성 문암리 유적(신석기 집터 마을)",
+   "modernPlace": "강원특별자치도 고성군 죽왕면 문암리",
    "what": "핏줄로 묶인 씨족이 모여 살며 위아래 없이 나누어 쓰던 사회",
    "claimIds": [
     "claim-hs-pg1-clan-house",
@@ -4892,9 +5563,9 @@
    ],
    "sceneId": "scene-hs-pg1-clan",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 사회 구조 서술은 위키백과 개설에 기댄 부분이 있어 confidence 를 medium 으로 두었다",
-   "lon": 128.66139,
-   "lat": 38.08694,
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 표시점은 오산리 항목과 겹치지 않게 고성 문암리 유적으로 옮겼다. 연장자가 무리를 이끌었다는 서술은 이번 근거로 확인하지 못했다.",
+   "lon": 128.54361,
+   "lat": 38.30472,
    "coordinateBasis": "location claim-hs-pg1-clan-loc"
   },
   {
@@ -4905,8 +5576,8 @@
    "decade": -4000,
    "year": -4000,
    "yearVerbatim": "신석기시대(기원전 4000년경 추정)",
-   "placeLabel": "부산 동삼동 패총(신석기 바닷가 마을)",
-   "modernPlace": "부산광역시 영도구 동삼동",
+   "placeLabel": "통영 연대도 패총(신석기 묘역)",
+   "modernPlace": "경상남도 통영시 산양읍 연곡리",
    "what": "자연물과 동물에 영혼이 있다고 믿고 무당에게 빌던 신앙",
    "claimIds": [
     "claim-hs-pg1-belief-belief",
@@ -4916,9 +5587,9 @@
    ],
    "sceneId": "scene-hs-pg1-belief",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 신앙은 물건으로 증명하기 어렵다는 사전의 단서를 그대로 둔다. 동삼동 패총을 신석기 생활 무대의 표시점으로 썼다",
-   "lon": 129.07944,
-   "lat": 35.07083,
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 표시점은 동삼동 항목과 겹치지 않게 통영 연대도 패총으로 옮겼다. 신앙은 물건으로 증명하기 어렵다는 사전의 단서를 그대로 둔다.",
+   "lon": 128.40083,
+   "lat": 34.73861,
    "coordinateBasis": "location claim-hs-pg1-belief-loc"
   },
   {
@@ -4929,8 +5600,8 @@
    "decade": -4000,
    "year": -4000,
    "yearVerbatim": "신석기시대(기원전 4000년경 추정)",
-   "placeLabel": "대동강 유역(온천 궁산리 일대)",
-   "modernPlace": "북한 평안남도 온천군 궁산리",
+   "placeLabel": "용강 궁산리 유적 일대(옛 용강군 표시점)",
+   "modernPlace": "북한 평안남도 온천군 궁산마을(옛 용강군 해운면 궁산리)",
    "what": "실을 자아 옷과 그물을 지어 쓰던 신석기의 손기술",
    "claimIds": [
     "claim-hs-pg1-garak-def",
@@ -4940,9 +5611,9 @@
    ],
    "sceneId": "scene-hs-pg1-garak",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 궁산리 유적의 십진 좌표 근거를 찾지 못해 대동강 표시 좌표를 대표점으로 썼다. 신석기 농경 항목과 같은 표시점이다",
-   "lon": 125.52556,
-   "lat": 38.865,
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 궁산리 유적의 십진 좌표를 찾지 못해 유적이 속한 옛 용강군(현 온천군)의 표시 좌표를 대표점으로 썼다. 현재 북한 지역이다.",
+   "lon": 125.42194444444445,
+   "lat": 38.85722222222223,
    "coordinateBasis": "location claim-hs-pg1-garak-loc"
   },
   {
@@ -4952,7 +5623,7 @@
    "region": "south",
    "decade": -3000,
    "year": -3000,
-   "yearVerbatim": "약 7000년 전∼기원전 3000년경(추정)",
+   "yearVerbatim": "약 7,000년~3,500년 전(민족문화대백과 표기)",
    "placeLabel": "울주 대곡리 반구대 암각화",
    "modernPlace": "울산광역시 울주군 언양읍 대곡리",
    "what": "고래와 사냥 장면을 바위에 새겨 풍요를 빌던 그림",
@@ -4964,7 +5635,7 @@
    ],
    "sceneId": "scene-hs-pg1-bangudae",
    "confidence": "high",
-   "note": "[10한사1-01-01] · standard · 제작 연대는 사전이 '약 7000년 전'으로만 적어 한 해를 고정하지 못했다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 사전은 제작 시기를 “약 7,000년~3,500년 전”으로 적는다. 표시 연도 -3000 은 그 범위 안에서 고른 값이다.",
    "lon": 129.185,
    "lat": 35.5991,
    "coordinateBasis": "location claim-hs-pg1-bangudae-loc",
@@ -4994,7 +5665,7 @@
    ],
    "sceneId": "scene-hs-pg1-dangun",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 신화·전승 기록에 근거한 인물이며 실존을 확인하는 사료는 없다. 해외(북한) 지역이라 평양 표시 좌표를 썼다",
+   "note": "[10한사1-01-01] · standard · confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 신화·전승 기록에 근거한 인물이며 실존을 확인하는 사료는 없다. 현재 북한 지역이라 평양 표시 좌표를 썼고, 고조선 건국 항목과 의도적으로 같은 지점을 쓴다.",
    "lon": 125.7475,
    "lat": 39.01667,
    "coordinateBasis": "location claim-hs-pg1-dangun-loc"
@@ -5018,8 +5689,8 @@
     "claim-hs-pg1-myth-loc"
    ],
    "sceneId": "scene-hs-pg1-myth",
-   "confidence": "high",
-   "note": "[10한사1-01-01] · core · 태백산의 위치는 묘향산·백두산 등 여러 설이 있어 묘향산 표시 좌표를 대표점으로 썼다. 해외(북한) 지역이다",
+   "confidence": "medium",
+   "note": "[10한사1-01-01] · core · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 태백산의 위치는 묘향산·백두산 등 여러 설이 있어 묘향산 표시 좌표를 대표점으로 썼다. 현재 북한 지역이다.",
    "lon": 126.333056,
    "lat": 40.018611,
    "coordinateBasis": "location claim-hs-pg1-myth-loc"
@@ -5028,7 +5699,7 @@
    "id": "fact-hs-pg1-018",
    "itemId": "hs-gojoseon-founding-dangun",
    "category": "administration",
-   "region": "capital",
+   "region": "north",
    "decade": -2340,
    "year": -2333,
    "yearVerbatim": "서기전 2333년(민족문화대백과 표기)",
@@ -5044,7 +5715,7 @@
    ],
    "sceneId": "scene-hs-pg1-founding",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · core · 건국 연도는 전승 기록의 연대이며 고고학 연대와 다르다. 도읍을 정한 사건이라 region 을 capital 로 두었고, 실제 위치는 해외(북한) 평양 일대다",
+   "note": "[10한사1-01-01] · core · confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 건국 연도는 전승 기록의 연대이며 고고학 연대와 다르다. 도읍을 정한 내용은 summary 와 claim-hs-pg1-founding-yusa 에 남기고 region 은 좌표 위도에 따라 north 로 두었다. 현재 북한 지역이다. 단군왕검 초상 항목과 의도적으로 같은 지점을 쓴다.",
    "lon": 125.7475,
    "lat": 39.01667,
    "coordinateBasis": "location claim-hs-pg1-founding-loc",
@@ -5073,7 +5744,7 @@
    ],
    "sceneId": "scene-hs-pg1-cheonjeon",
    "confidence": "high",
-   "note": "[10한사1-01-01] · extended · 상부 선사 무늬의 제작 연도를 사료로 고정하지 못해 기원전 2000년경은 추정값이다",
+   "note": "[10한사1-01-01] · extended · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 상부 선사 무늬의 제작 연도를 사료로 고정하지 못해 기원전 2000년경은 추정값이다.",
    "lon": 129.17417,
    "lat": 35.61444,
    "coordinateBasis": "location claim-hs-pg1-cheonjeon-loc",
@@ -5088,8 +5759,8 @@
    "itemId": "hs-prehistoric-bronze-age-begins",
    "category": "culture",
    "region": "south",
-   "decade": -1500,
-   "year": -1500,
+   "decade": -1000,
+   "year": -1000,
    "yearVerbatim": "서기전 1000년 대 전반(민족문화대백과 표기)",
    "placeLabel": "울주 검단리 유적(환호 마을)",
    "modernPlace": "울산광역시 울주군 웅촌면 검단리",
@@ -5102,7 +5773,7 @@
    ],
    "sceneId": "scene-hs-pg1-bronze",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 교과서가 잡는 시작 연도(기원전 1500년경)와 사전이 적은 중심 연대(서기전 1000년 대 전반)가 달라 note 에 함께 남긴다",
+   "note": "[10한사1-01-01] · standard · confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 표시 연도는 사전이 적은 중심 연대(서기전 1000년 대 전반)에 맞췄다. 교과서가 잡는 기원전 1500년경은 이번 근거로 뒷받침하지 못해 쓰지 않았다.",
    "lon": 129.18167,
    "lat": 35.44917,
    "coordinateBasis": "location claim-hs-pg1-bronze-loc"
@@ -5126,7 +5797,7 @@
    ],
    "sceneId": "scene-hs-pg1-chief",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 좌표는 고창·화순·강화 고인돌 유적 전체의 표시점(화순 일원)이며 특정 무덤의 자리가 아니다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 좌표는 고창·화순·강화 고인돌 유적 전체의 표시점(화순 일원)이며 특정 무덤의 자리가 아니다.",
    "lon": 126.92917,
    "lat": 34.96667,
    "coordinateBasis": "location claim-hs-pg1-chief-loc"
@@ -5149,8 +5820,8 @@
     "claim-hs-pg1-bipa-loc"
    ],
    "sceneId": "scene-hs-pg1-bipa",
-   "confidence": "high",
-   "note": "[10한사1-01-01] · core · 해외(중국 랴오닝성)다. 표시점은 요령 지역을 대표하는 차오양시 좌표이며 특정 출토 지점이 아니다. 분포를 고조선 세력 범위로 곧바로 읽는 해석은 학설이며 근거로 확정하지 않았다",
+   "confidence": "medium",
+   "note": "[10한사1-01-01] · core · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 해외(중국 랴오닝성)다. 표시점은 요령 지역을 대표하는 차오양시 좌표이며 특정 출토 지점이 아니다. 분포를 고조선 세력 범위로 곧바로 읽는 해석은 학설이며 근거로 확정하지 않았다.",
    "lon": 120.453,
    "lat": 41.571,
    "coordinateBasis": "location claim-hs-pg1-bipa-loc",
@@ -5165,9 +5836,9 @@
    "itemId": "hs-prehistoric-rice-farming",
    "category": "economy",
    "region": "central",
-   "decade": -1000,
-   "year": -1000,
-   "yearVerbatim": "청동기시대(흔암리 탄화미는 서기전 6·5세기경 추정)",
+   "decade": -600,
+   "year": -600,
+   "yearVerbatim": "서기전 6, 5세기경(민족문화대백과 벼농사 항목 표기)",
    "placeLabel": "여주 흔암리 선사유적",
    "modernPlace": "경기도 여주시 점동면 흔암리",
    "what": "논에서 벼를 길러 남는 곡식이 생기고 빈부 차이가 벌어짐",
@@ -5180,7 +5851,7 @@
    ],
    "sceneId": "scene-hs-pg1-rice",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 탄화미 연대는 사전이 '서기전 6, 5세기경'으로 적어 한 해를 고정하지 못했다. 논농사 여부와 빈부 차이는 이번 근거에서 확인하지 못했다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 표시 연도는 사전이 적은 흔암리 탄화미 연대(서기전 6, 5세기경)의 이른 쪽에 맞췄다. 논농사 여부와 빈부 차이는 이번 근거에서 확인하지 못했다.",
    "lon": 127.68556,
    "lat": 37.23917,
    "coordinateBasis": "location claim-hs-pg1-rice-loc"
@@ -5204,8 +5875,8 @@
     "claim-hs-pg1-misong-loc"
    ],
    "sceneId": "scene-hs-pg1-misong",
-   "confidence": "high",
-   "note": "[10한사1-01-01] · extended · 해외(북한)다. 유적의 십진 좌표를 찾지 못해 의주군 표시 좌표를 대표점으로 썼다",
+   "confidence": "medium",
+   "note": "[10한사1-01-01] · extended · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 현재 북한 지역이다. 유적의 십진 좌표를 찾지 못해 의주군 표시 좌표를 대표점으로 썼다.",
    "lon": 124.53194,
    "lat": 40.19694,
    "coordinateBasis": "location claim-hs-pg1-misong-loc",
@@ -5235,7 +5906,7 @@
    ],
    "sceneId": "scene-hs-pg1-range",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · core · 해외(중국 랴오닝성)다. 문화 범위는 유물 분포로 그린 것이지 국경선이 아니다",
+   "note": "[10한사1-01-01] · core · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 해외(중국 랴오닝성)다. 문화 범위는 유물 분포로 그린 것이지 국경선이 아니다.",
    "lon": 122.14889,
    "lat": 40.66917,
    "coordinateBasis": "location claim-hs-pg1-range-loc"
@@ -5259,7 +5930,7 @@
    ],
    "sceneId": "scene-hs-pg1-ganghwa",
    "confidence": "high",
-   "note": "[10한사1-01-01] · core · 축조 연도는 사료로 고정할 수 없어 청동기시대 추정값을 썼다",
+   "note": "[10한사1-01-01] · core · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 축조 연도는 사료로 고정할 수 없어 청동기시대 추정값을 썼다.",
    "lon": 126.4375,
    "lat": 37.77306,
    "coordinateBasis": "location claim-hs-pg1-ganghwa-loc",
@@ -5288,7 +5959,7 @@
    ],
    "sceneId": "scene-hs-pg1-songguk",
    "confidence": "high",
-   "note": "[10한사1-01-01] · standard · 취락 연대는 층위마다 달라 사료로 한 해를 고정하지 못했다. 항목 설명의 벼농사·거푸집은 이번 근거에서 확인하지 못했다",
+   "note": "[10한사1-01-01] · standard · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 항목 설명의 벼농사·거푸집은 이번 근거에서 확인하지 못했다.",
    "lon": 127.03417,
    "lat": 36.26667,
    "coordinateBasis": "location claim-hs-pg1-songguk-loc",
@@ -5317,7 +5988,7 @@
    ],
    "sceneId": "scene-hs-pg1-gochang",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · core · 고인돌군 자체의 십진 좌표를 찾지 못해 바로 옆 고창고인돌박물관 표시점을 대표 좌표로 썼다. 항목 설명의 '440여 기'라는 수치는 이번 근거에서 확인하지 못했다",
+   "note": "[10한사1-01-01] · core · 연도는 추정이며 이를 뒷받침하는 시간 근거 주장이 없다. confidence 는 장소·성격 근거 기준이며 연도 확실성을 뜻하지 않는다. 고인돌군 자체의 십진 좌표를 찾지 못해 바로 옆 고창고인돌박물관 표시점을 대표 좌표로 썼다. 항목 설명의 “440여 기”라는 수치는 이번 근거에서 확인하지 못했다.",
    "lon": 126.6153976,
    "lat": 35.4415639,
    "coordinateBasis": "location claim-hs-pg1-gochang-loc",

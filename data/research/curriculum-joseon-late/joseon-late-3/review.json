@@ -1,0 +1,121 @@
+{
+ "job": "joseon-late-3",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-joseon-late --job joseon-late-3 → PASS: failures=0 warnings=0 (facts=23, scenes=23, claims=96, chunkClaims=14, excerptClaims=82)",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-silhak",
+   "claimId": "claim-hs3-iik-life",
+   "problem": "이익을 새 껍데기 개체 person-hs-i-ik 로 만들었다. 이 조사가 근거로 쓴 바로 그 민족문화대백과 문서(E0045562)에 대응하는 기존 개체 person-encykorea-yi-ik-e0045562 가 저장소에 이미 있고(참조 39건), 같은 컬렉션의 joseon-late-4 도 그 id 를 쓴다. 이대로 적재하면 이익이 그래프에서 두 인물로 쪼개진다. '기존 개체 id 재사용' 규칙 위반이다.",
+   "fix": "claim-hs3-iik-life·claim-hs3-iik-born 의 subject 와 scene-hs3-silhak.participants[0].entityId 를 person-encykorea-yi-ik-e0045562 로 바꾸고 entities[] 의 person-hs-i-ik 항목을 지운다. data/entities/person/person-hs-i-ik.md 도 다른 참조가 없으면 정리한다.",
+   "evidence": "data/entities/person/person-encykorea-yi-ik-e0045562.md 존재 / grep -ro person-encykorea-yi-ik-e0045562 data → 39건 / data/research/curriculum-joseon-late/joseon-late-4/result.json entities 에 person-encykorea-yi-ik-e0045562 / result.json 의 src-hs3-enc-i-ik url = https://encykorea.aks.ac.kr/Article/E0045562"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-gyeongsin-hwanguk",
+   "sceneId": "scene-hs3-gyeongsin-hwanguk",
+   "problem": "항목이 지정한 구체 지점(금호문·선정전·성정각·명정전)을 궁궐 전체 대표 좌표로 바꾸면서 서울 장면들이 사실상 한 점에 겹쳤다. 경신환국(창덕궁 126.99278,37.57944)은 북벌(창덕궁 희정당 126.9924583,37.5797556)에서 45m, 환국(창경궁 126.99598,37.57843)은 갑술환국(홍화문)에서 63m·기사환국(문정전)에서 98m 떨어져 있다. 창경궁 세 점이 반경 130m 안에 뭉쳐 지도에서 구분되지 않는다. 지침의 '같은 도시 항목이 한 점에 겹치지 않게'를 어긴다.",
+   "fix": "경신환국과 환국(총괄)을 좌표 근거가 있는 다른 지점으로 옮겨 인접 장면과 200~300m 이상 벌린다. 예: en.wikipedia Donhwamun 표시 좌표(37.577, 126.989)로 창덕궁 돈화문, 또는 en.wikipedia Gyeonghuigung(37.57144444, 126.96813889) 같은 별개 지점. 옮긴 지점은 place.coordinateSourceIds·location claim·fact.coordinateBasis 를 함께 갱신한다.",
+   "evidence": "좌표 거리 계산: 북벌~경신환국 0.045km, 환국~갑술환국 0.063km, 환국~기사환국 0.098km, 기사~갑술 0.126km / ko.wikipedia 창덕궁 선정전·창경궁 명정전·창덕궁 돈화문 문서에는 표시 좌표(geo)가 없고, en.wikipedia API 는 Donhwamun 37.577/126.989, Gyeonghuigung 37.57144444/126.96813889 를 준다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-mining",
+   "claimId": "claim-hs3-deokdae-sageum",
+   "problem": "발췌가 말하지 않는 장소를 claim 의 object 로 붙였다. 광산 항목의 producedAt 대상은 place-hs3-tancheon-eungwang(단천 은광)인데, 인용 발췌 '사금광업(沙金鑛業)의 경우 물주의 지원 아래 장인(匠人)으로서의 덕대에 의한 생산이 이루어졌다'에는 단천도 은도 없다(사금광은 금을 캐는 광업이다). 장면 요약의 '단천은 은이 나기로 이름난 곳이었다'도 이 칸의 어떤 근거로도 뒷받침되지 않는다. 같은 형태가 claim-hs3-sptb-last(운종가)·claim-hs3-ogun-outer(숭례문)·claim-hs3-bobusang-defi(예산 덕산)·claim-hs3-jangmun-5day(안성장)·claim-hs3-gwangjak-who(벽골제)에도 있다.",
+   "fix": "단천 은광·연은분리법을 다루는 민족문화대백과나 우리역사넷 항목에서 발췌를 하나 더 받아 장소 근거를 달거나, producedAt 대상을 polity-hs-joseon 으로 낮추고 요약에서 단천 단정을 뺀다. 나머지 5건도 object 를 발췌가 실제로 말하는 주체(대개 polity-hs-joseon 또는 해당 event)로 바꾼다.",
+   "evidence": "raw/ HTML 본문 재확인: 덕대제 문서의 해당 문장 앞뒤에 단천·은광 언급 없음. 상평통보·오군영·보부상·장문·광작 발췌 원문에도 각각 운종가·숭례문·예산·안성·벽골제가 나오지 않는다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-naseon-expedition",
+   "sceneId": "scene-hs3-naseon",
+   "problem": "items.json 이 지정한 sceneFunction 이 빠지거나 바뀌었다. 나선 정벌은 naval_expedition 이 빠졌고, 기사환국은 civil_conflict 가 빠졌으며, 사상은 market→harbor 로 바뀌었고, 광산은 항목에 없던 kiln(가마)이 붙었다. 은광을 가마 구성으로 조립하면 화면이 사실과 어긋난다.",
+   "fix": "scene-hs3-naseon 에 sceneFunction 'naval_expedition', scene-hs3-gisa-hwanguk 에 'civil_conflict' 를 되살린다. scene-hs3-mining 의 'kiln' 은 지운다(갱도에 맞는 값이 없으면 생략). scene-hs3-sasang 의 harbor 는 무대를 마포나루로 옮긴 결과이므로 유지해도 되나 fact.note 에 항목값과 달라진 이유를 적는다.",
+   "evidence": "items.json: naseon {kind:battle, sceneFunction:naval_expedition}, gisa-hwanguk {court, civil_conflict}, sasang {market, market}, mining {excavation, 없음} / result.json scenes 의 실제 값"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-yu-hyeongwon",
+   "factId": "fact-hs-jl3-006",
+   "problem": "라벨은 구체 지점인데 좌표는 시·군 중심점이라 항목 좌표에서 크게 벗어났다. 부안 우반동(반계서당) 14.1km, 의주 중강 10.8km, 강화 하곡 8.9km, 평택 대동법시행기념비 5.8km. note 로 공개는 했지만 지도에서는 다른 곳을 가리킨다.",
+   "fix": "국가유산포털 소재지나 위키백과 하위 문서에서 십진 좌표를 더 찾아보고, 끝내 없으면 place.label 을 권역 표기로 낮춘다(예: '부안 보안면 일대', '의주 압록강 하류', '강화도 남부'). 라벨과 좌표의 정밀도를 맞춘다.",
+   "evidence": "items.json 좌표 대비 result 좌표 거리: yu-hyeongwon 14.10km, gaesi-husi 10.76km, yangmyeonghak 8.91km, kim-yuk 5.80km"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-mining",
+   "sceneId": "scene-hs3-mining",
+   "problem": "장면 기간 밖의 연도 근거를 dateClaimIds 로 썼다. 광산 장면(1700~1800)의 유일한 날짜 근거가 1651년 설점수세, 보부상·장시 장면(1700~1800)의 날짜 근거가 1679년 대구약령시 번창, 개시·후시 장면(1700~1800)의 근거 하나가 1660년 책문후시다.",
+   "fix": "장면 startYear 를 근거 연도까지 넓히거나(예: 광산 1651~1800) 1700~1800 안에 드는 연도 근거를 하나 더 받아 dateClaimIds 에 넣는다. 항목이 준 어림 기간을 유지한다면 fact.note 에 적어 둔 설명을 scene.summary 에도 반영한다.",
+   "evidence": "scene-hs3-mining 1700-1800 ← claim-hs3-deokdae-1651(1651), scene-hs3-bobusang·scene-hs3-jangsi ← claim-hs3-sijang-1679(1679), scene-hs3-gaesi-husi ← claim-hs3-chaekmun-1660(1660)"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-song-siyeol",
+   "factId": "fact-hs-jl3-004",
+   "problem": "fact.year 1659(기해예송)를 뒷받침하는 claim 이 이 사실의 claimIds 안에 없다. 들어 있는 연도 주장은 1607·1689·1695뿐이다. 같은 식으로 yearVerbatim 을 '18세기'로 적은 8건(fact-hs-jl3-015~022)도 fact.year 1700 을 직접 말하는 근거가 없다(note 로 어림임을 밝혀 두었다).",
+   "fix": "fact-hs-jl3-004 의 claimIds 에 claim-hs3-yesong-1659 를 넣는다. '18세기' 사실들은 지금의 note 공개를 유지하되 yearVerbatim 을 '18세기(어림)'처럼 어림임이 드러나게 적는다.",
+   "evidence": "fact-hs-jl3-004.claimIds = [song-born, song-died, song-defi, song-exile, hwayang-1695, yesong-act, bukbeol-song, loc-hwayang] — 1659년 주장 없음"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-gaesi-husi",
+   "factId": "fact-hs-jl3-017",
+   "problem": "fact.what 은 항목 문구 그대로 '공식·비공식 청·일 무역'인데 근거와 장면 요약은 중강·책문·회령 등 청 쪽만 다룬다. 일본(동래 왜관 개시) 근거가 하나도 없다.",
+   "fix": "민족문화대백과 '왜관'이나 '동래부' 항목에서 왜관 개시 발췌를 하나 받아 claim 을 추가하거나, note 에 '이 칸의 근거는 대청 무역에 한정된다'고 적는다.",
+   "evidence": "fact-hs-jl3-017 claims: junggang-1700, chaekmun-1660, hoeryeong-1638, mansang-1754 — 모두 대청 무역"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-silhak",
+   "claimId": "claim-hs3-silhak-three",
+   "problem": "핵심(core) 항목의 행위 근거 발췌가 문맥상 1961년 이기백 『국사신론』이 세 갈래를 묶어 실학이라 부르기 시작했다는 학설사 서술인데, 앞의 '이기백의 『국사신론』(1961)은 처음으로'를 잘라내 실학의 일반 정의처럼 읽히게 썼다. 결론 자체는 통설과 어긋나지 않지만 발췌의 원래 주어가 사라졌다.",
+   "fix": "claim 의 note 에 '이 문장은 이기백 「국사신론」(1961)의 용어 통합을 서술한 대목'이라고 밝히거나, 실학 항목 본문에서 조선 후기 학풍 자체를 서술한 문장으로 발췌를 바꾼다.",
+   "evidence": "raw/ 원문: '이기백의 『국사신론』(1961)은 처음으로 실사구시의 학문, 경세치용의 학문, 이용후생의 학문을 모두 실학이라고 말하였다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-yesong-dispute",
+   "sceneId": "scene-hs3-yesong",
+   "problem": "항목이 준 창경궁 명정전 대신 종묘를 무대로 잡았다. 예송은 조정에서 벌어진 복제 논쟁이고 종묘는 제례 공간이라, 장면 카드만 보면 종묘에서 논쟁이 벌어진 것처럼 읽힌다(fact.note 에는 대표 무대라고 밝혀 두었다).",
+   "fix": "place.coordinateNote 와 scene.summary 에도 '논쟁 자체는 조정에서 벌어졌고 종묘는 왕실 상례를 대표하는 무대'라는 한 문장을 넣거나, 창경궁 권역 좌표로 되돌리고 대신 환국 장면들의 좌표를 다시 벌린다.",
+   "evidence": "items.json place '창경궁 명정전' vs result '종묘'(0.48km) / fact-hs-jl3-005.note"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-sukjong",
+   "problem": "entities[] 에 선언한 event-hs3-sukjong-reign 이 어떤 claim·장면에서도 쓰이지 않는다.",
+   "fix": "숙종 재위 주장(claim-hs3-sukjong-from·claim-hs3-sukjong-to)의 대상으로 쓰거나 entities[] 에서 지운다.",
+   "evidence": "claims·scenes 전체에서 event-hs3-sukjong-reign 참조 0건"
+  }
+ ],
+ "checkedItems": [
+  "hs-joseon-late-kim-yuk",
+  "hs-joseon-late-bukbeol",
+  "hs-joseon-late-naseon-expedition",
+  "hs-joseon-late-song-siyeol",
+  "hs-joseon-late-yesong-dispute",
+  "hs-joseon-late-yu-hyeongwon",
+  "hs-joseon-late-sukjong",
+  "hs-joseon-late-sangpyeong-tongbo",
+  "hs-joseon-late-gyeongsin-hwanguk",
+  "hs-joseon-late-hwanguk",
+  "hs-joseon-late-ogunyeong",
+  "hs-joseon-late-gisa-hwanguk",
+  "hs-joseon-late-gapsul-hwanguk",
+  "hs-joseon-late-an-yongbok",
+  "hs-joseon-late-bobusang",
+  "hs-joseon-late-cash-crops",
+  "hs-joseon-late-gaesi-husi",
+  "hs-joseon-late-gwangjak-imnodong",
+  "hs-joseon-late-jangsi",
+  "hs-joseon-late-mining",
+  "hs-joseon-late-sasang",
+  "hs-joseon-late-silhak",
+  "hs-joseon-late-yangmyeonghak"
+ ],
+ "summary": "검증기는 PASS(실패 0·경고 0)다. 항목 23건을 전부 원문에서 다시 봤다. 웹 발췌 56개 출처를 raw/ HTML 본문에서 문맥째 확인했고 그중 6개 출처(경신환국·나선정벌·중강후시·덕대제·의주군·안성시)는 실제 URL 을 다시 받아 발췌가 살아 있는지 대조했다. 로컬 chunk 근거 6건도 search_chunks 로 원문과 sourceId 를 확인했다. 연도·행위 서술에서 사실 오류는 찾지 못했고 발췌는 모두 원문 그대로였으며 교과서 문장 전재도 없었다. 다만 적재 전에 고쳐야 할 것이 셋이다. (1) 이익을 기존 개체 person-encykorea-yi-ik-e0045562 대신 새 껍데기 person-hs-i-ik 로 만들어 같은 인물이 둘로 갈라진다(형제 칸 joseon-late-4 는 기존 id 를 쓴다). (2) 궁궐 지점을 궁 전체 좌표로 바꾼 탓에 북벌~경신환국 45m, 환국~갑술환국 63m 로 사실상 한 점에 겹친다. (3) 단천 은광에 붙인 근거가 사금광업 문장이라 장소도 광종도 어긋나고, 같은 식으로 발췌에 없는 장소를 object 로 붙인 claim 이 5건 더 있다. 그 밖에 항목이 준 sceneFunction 이탈 4건, 시·군 중심 좌표와 구체 라벨의 어긋남 4건, 장면 기간 밖 날짜 근거 4건, 미참조 엔티티 1건은 경미한 정리 사항이다."
+}

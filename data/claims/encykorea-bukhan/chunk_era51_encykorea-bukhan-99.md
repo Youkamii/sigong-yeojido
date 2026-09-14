@@ -46,6 +46,62 @@ generated_by: "claude-opus-5"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-dprk-premier",
+    "subject": "polity-hs-c1-dprk",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-kimilsung"
+    },
+    "citesChunk": "chunk_era51_encykorea-bukhan-99",
+    "quote": "9월 9일 김일성을 수상으로 하는 정권이 수립되었다.",
+    "note": "9월 9일 김일성을 수상으로 하는 정권이 세워졌다.",
+    "fromSource": "src-encykorea-bukhan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-kim-premier",
+    "subject": "person-encykorea-kimilsung",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-c1-dprk"
+    },
+    "citesChunk": "chunk_era51_encykorea-bukhan-99",
+    "quote": "김일성을 수상으로 하는 정권이 수립되었다",
+    "note": "김일성이 수상이 되었다.",
+    "fromSource": "src-encykorea-bukhan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-dprk-founded",
+    "subject": "polity-hs-c1-dprk",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "9월 9일",
+      "year": 1948,
+      "precision": "day",
+      "earliest": 1948,
+      "latest": 1948,
+      "id": "ts-curriculum-contemporary-contemporary-1-hs-c1-dprk-founded"
+    },
+    "citesChunk": "chunk_era51_encykorea-bukhan-99",
+    "quote": "9월 9일 김일성을 수상으로 하는 정권이 수립되었다",
+    "note": "1948년 9월 9일 김일성을 수상으로 하는 정권이 수립되었다.",
+    "fromSource": "src-encykorea-bukhan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

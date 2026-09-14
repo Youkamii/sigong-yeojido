@@ -16,9 +16,9 @@ status: "draft"
       "kind": "location",
       "lat": 37.57861,
       "lon": 126.97722,
-      "precision": "site"
+      "precision": "area"
     },
-    "note": "위키백과 경복궁 문서의 표시 좌표.",
+    "note": "위키백과 경복궁 문서의 표시 좌표(궁역 대표점).",
     "fromSource": "src-hs-ko-gyeongbok",
     "citesChunk": "chunk_curriculum-modern-transition_modern-transition-2_geo-gyeongbok",
     "quote": "37.57861; 126.97722",

@@ -12,12 +12,11 @@
     ],
     "categories": {
       "person": 4,
-      "administration": 4,
-      "facility": 2,
+      "administration": 6,
+      "facility": 1,
       "culture": 3,
       "war": 3,
-      "foreign": 9,
-      "economy": 1
+      "foreign": 9
     }
   },
   "sources": [
@@ -191,6 +190,11 @@
           "id": "ex-choe-1906",
           "text": "1906년 윤4월 전라북도 태인(현, 전북특별자치도 정읍시)에서 궐기하였다.",
           "locator": "「생애 및 활동사항」"
+        },
+        {
+          "id": "ex-choe-gyeyu",
+          "text": "대원군의 10년 집권이 무너지고",
+          "locator": "「생애 및 활동사항」 계유상소"
         }
       ]
     },
@@ -273,6 +277,11 @@
           "id": "ex-gaehang-years",
           "text": "1876년에 부산, 1879년에 원산, 1880년에 인천 등 3개 항구가 개항되기에 이르렀다.",
           "locator": "「제정 목적」"
+        },
+        {
+          "id": "ex-gaehang-1883-incheon",
+          "text": "1883년 6월 16일에는 인천해관",
+          "locator": "「변천 사항」 해관 창설"
         }
       ]
     },
@@ -1124,6 +1133,30 @@
           "locator": "문서 표시 좌표(geo)"
         }
       ]
+    },
+    {
+      "id": "src-mt1-enc-byeongin-bakhae",
+      "title": "병인박해 — 한국민족문화대백과사전",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0023139",
+      "rawFile": "raw/enc-byeongin-bakhae.html",
+      "sha256": "b9f94e10eb9c0dcd2ede7e18af3f78240d914a5404fe7b21754c5a504fe5e8ac",
+      "httpStatus": 200,
+      "byteLength": 111539,
+      "fetchedUtc": "2026-09-14T10:03:00Z",
+      "license": "한국학중앙연구원 한국민족문화대백과사전 — 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-bakhae-martyr",
+          "text": "베르뇌 주교를 비롯한 프랑스 선교사제들과 남종삼 등 대표적 신자들이 서울 및 그 밖의 지역에서 잡혀 순교하였다",
+          "locator": "「경과 및 결과」"
+        },
+        {
+          "id": "ex-bakhae-yanghwajin",
+          "text": "양화진 이 신자들의 처형 장소로 사용되었다",
+          "locator": "「경과 및 결과」"
+        }
+      ]
     }
   ],
   "entities": [
@@ -1213,9 +1246,9 @@
       "label": "이만손"
     },
     {
-      "id": "person-hs-sinjeong-wanghu",
+      "id": "person-jl-sinjeong-wanghu",
       "type": "Person",
-      "label": "신정왕후 조대비"
+      "label": "대왕대비[신정왕후] (경복궁 중건 항목 표기)"
     },
     {
       "id": "place-mt1-gyeongungung",
@@ -1743,12 +1776,12 @@
       "predicate": "syj:relatedTo",
       "object": {
         "kind": "entity",
-        "id": "person-hs-sinjeong-wanghu"
+        "id": "person-jl-sinjeong-wanghu"
       },
       "sourceId": "src-ek-gyeongbokgung-e0002434",
       "citesChunk": "chunk_scenes-103_joseon_late_scenes_gbg-daebi",
       "quote": "수렴청정 중인 대왕대비[신정왕후]의 강력한 의지로",
-      "note": "중건을 밀어붙인 주체."
+      "note": "중건을 분부한 주체. 저장소에 이미 있는 개체 person-jl-sinjeong-wanghu 를 재사용했다."
     },
     {
       "id": "claim-mt1-gyeongbokgung-loc",
@@ -2478,7 +2511,7 @@
       "note": "부산항 개항 연도."
     },
     {
-      "id": "claim-mt1-wonsan-1883",
+      "id": "claim-mt1-wonsan-haegwan-1883",
       "subject": "place-mt1-wonsanhang",
       "predicate": "syj:relatedTo",
       "object": {
@@ -2488,7 +2521,7 @@
       "sourceId": "src-aks-wonsan-haegwan",
       "citesChunk": "chunk_scenes-122_modern_localities_wonsanhaegwan-def",
       "quote": "1883년 함경도 원산에 설치된 근대적 관세(關稅) 징수 기구를 말한다.",
-      "note": "원산 해관 설치로 개항장 운영이 자리 잡은 시점."
+      "note": "1883년 원산에 설치된 해관(관세 징수 기구)이다. 원산 개항 자체의 연도 근거가 아니다."
     },
     {
       "id": "claim-mt1-busanhang-loc",
@@ -3053,6 +3086,58 @@
       "sourceId": "src-mt1-ko-hwadojin",
       "citesExcerpt": "ex-geo-hwadojin",
       "note": "화도진 표시 좌표."
+    },
+    {
+      "id": "claim-mt1-incheon-haegwan-1883",
+      "subject": "place-mt1-jemulpo",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "1883년",
+        "year": 1883,
+        "precision": "year",
+        "earliest": 1883,
+        "latest": 1883
+      },
+      "sourceId": "src-mt1-enc-gaehangjang",
+      "citesExcerpt": "ex-gaehang-1883-incheon",
+      "note": "1883년 6월 16일 인천해관 창설 — 장면 끝 연도 1883년의 근거. 교과서도 인천 개항을 1883년으로 적는다."
+    },
+    {
+      "id": "claim-mt1-choe-gyeyu",
+      "subject": "person-hs-choe-ikhyeon",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-encykorea-yi-haeung-e0046384"
+      },
+      "sourceId": "src-mt1-enc-choe-ikhyeon",
+      "citesExcerpt": "ex-choe-gyeyu",
+      "note": "1873년 계유상소를 계기로 대원군의 10년 집권이 무너졌다고 적는다."
+    },
+    {
+      "id": "claim-mt1-bakhae-martyr",
+      "subject": "event-mt1-byeongin-bakhae",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-france"
+      },
+      "sourceId": "src-mt1-enc-byeongin-bakhae",
+      "citesExcerpt": "ex-bakhae-martyr",
+      "note": "베르뇌 주교 등 프랑스 선교사제와 남종삼 등 조선인 신자가 붙잡혀 순교했다."
+    },
+    {
+      "id": "claim-mt1-bakhae-yanghwajin",
+      "subject": "event-mt1-byeongin-bakhae",
+      "predicate": "syj:tookPlaceAt",
+      "object": {
+        "kind": "entity",
+        "id": "place-mt1-jeoldusan"
+      },
+      "sourceId": "src-mt1-enc-byeongin-bakhae",
+      "citesExcerpt": "ex-bakhae-yanghwajin",
+      "note": "양화진(오늘날 절두산 일대)이 서울의 처형 장소로 쓰였다."
     }
   ],
   "scenes": [
@@ -3228,16 +3313,7 @@
       },
       "category": "administration",
       "region": "central",
-      "decade": 1860,
-      "persistence": {
-        "kind": "institution",
-        "from": 1865,
-        "to": 1871,
-        "basisClaimIds": [
-          "claim-mt1-bibyeonsa-1865",
-          "claim-mt1-daejeon-1865"
-        ]
-      }
+      "decade": 1860
     },
     {
       "id": "scene-mt1-gyeongbokgung-rebuild",
@@ -3281,7 +3357,7 @@
           "level": "core"
         }
       },
-      "category": "facility",
+      "category": "administration",
       "region": "central",
       "decade": 1860,
       "sceneFunction": "construction_site",
@@ -3303,13 +3379,15 @@
       "startYear": 1866,
       "endYear": 1866,
       "kind": "ritual",
-      "summary": "1866년 나라가 천주교를 크게 잡아들였다. 프랑스 신부와 조선인 신자가 많이 죽었고, 양화나루 잠두봉은 그 뒤 절두산으로 불리게 되었다.",
+      "summary": "1866년부터 나라가 천주교를 크게 잡아들였다. 베르뇌 주교를 비롯한 프랑스 선교사제와 남종삼 등 조선인 신자들이 붙잡혀 순교했고, 한강 가 양화진이 서울의 처형 장소로 쓰였다.",
       "dateClaimIds": [
         "claim-mt1-bakhae-start"
       ],
       "actionClaimIds": [
         "claim-mt1-bakhae-def",
-        "claim-mt1-bakhae-daewongun"
+        "claim-mt1-bakhae-daewongun",
+        "claim-mt1-bakhae-martyr",
+        "claim-mt1-bakhae-yanghwajin"
       ],
       "place": {
         "label": "절두산(양화진 잠두봉)",
@@ -3323,7 +3401,7 @@
         "coordinateSourceIds": [
           "src-mt1-ko-jeoldusan"
         ],
-        "coordinateNote": "절두산(잠두봉) 표시 좌표.",
+        "coordinateNote": "처형 장소로 쓰인 양화진 자리, 곧 절두산(잠두봉) 표시 좌표.",
         "setting": "village"
       },
       "participants": [],
@@ -3565,7 +3643,7 @@
       "startYear": 1871,
       "endYear": 1871,
       "kind": "court",
-      "summary": "1864년 서원 현황을 조사한 뒤 만동묘를 없앴고, 1871년에는 사액서원까지 훼철령을 내려 전국에 47개소만 남겼다.",
+      "summary": "1864년 전국 서원 현황 조사에 이어 이듬해 만동묘를 없앴고, 1871년에는 사액서원까지 훼철령을 내려 전국에 47개소만 남겼다.",
       "dateClaimIds": [
         "claim-mt1-seowon-1871"
       ],
@@ -3585,7 +3663,7 @@
         "coordinateSourceIds": [
           "src-mt1-ko-mandongmyo"
         ],
-        "coordinateNote": "명령은 한성 조정에서 내렸지만 한성 안 다른 항목과 표시점이 겹치지 않도록, 서원 정리의 첫 대상이던 괴산 만동묘 좌표를 썼다.",
+        "coordinateNote": "명령은 한성 조정에서 내렸지만 한성 안 다른 항목과 표시점이 겹치지 않도록, 서원 정리의 첫 대상이던 괴산 만동묘 좌표를 썼다. 만동묘는 1865년에 철폐되었고 장면 연도 1871년은 사액서원 훼철령 시행 해다.",
         "setting": "academy"
       },
       "participants": [],
@@ -3669,13 +3747,14 @@
       "startYear": 1873,
       "endYear": 1906,
       "kind": "portrait",
-      "summary": "1873년 상소로 대원군을 물러나게 했고 1876년에는 도끼를 지고 개항을 반대했다. 1906년 일흔넷의 나이로 태인에서 의병을 일으켰다.",
+      "summary": "1873년 올린 상소를 계기로 대원군의 10년 집권이 무너졌고, 그 자신은 이어 3년간 유배되었다. 1876년에는 도끼를 지고 개항을 반대했고, 1906년 태인에서 의병을 일으켰다.",
       "dateClaimIds": [
         "claim-mt1-choe-1873",
         "claim-mt1-choe-1906"
       ],
       "actionClaimIds": [
-        "claim-mt1-choe-1876"
+        "claim-mt1-choe-1876",
+        "claim-mt1-choe-gyeyu"
       ],
       "place": {
         "label": "태인 무성서원",
@@ -3701,7 +3780,8 @@
           "claimIds": [
             "claim-mt1-choe-1873",
             "claim-mt1-choe-1876",
-            "claim-mt1-choe-1906"
+            "claim-mt1-choe-1906",
+            "claim-mt1-choe-gyeyu"
           ]
         }
       ],
@@ -3891,7 +3971,8 @@
       ],
       "actionClaimIds": [
         "claim-mt1-gaehang-def",
-        "claim-mt1-wonsan-1883"
+        "claim-mt1-wonsan-haegwan-1883",
+        "claim-mt1-incheon-haegwan-1883"
       ],
       "place": {
         "label": "부산항(부산포)",
@@ -3919,7 +4000,7 @@
           "level": "extended"
         }
       },
-      "category": "economy",
+      "category": "administration",
       "region": "south",
       "decade": 1870,
       "sceneFunction": "harbor"
@@ -4154,7 +4235,7 @@
       "startYear": 1881,
       "endYear": 1881,
       "kind": "survey",
-      "summary": "1881년 4월 예순 명이 암행어사 차림으로 부산에서 배를 탔다. 나가사키와 오사카, 고베를 거쳐 도쿄에 이르러 관청과 공장을 나눠 보고 보고서를 썼다.",
+      "summary": "표시점으로 삼은 오사카를 지나 고베·요코하마·에도까지 일본의 관청과 공장을 나눠 보고 보고서를 썼다. 1881년 4월 예순 명 남짓이 암행어사 차림으로 부산에서 배를 타고 건너간 걸음이었다.",
       "dateClaimIds": [
         "claim-mt1-josa-1881"
       ],
@@ -4531,7 +4612,7 @@
     {
       "id": "fact-mt1-004",
       "itemId": "hs-modern-transition-gyeongbokgung-rebuild",
-      "category": "facility",
+      "category": "administration",
       "region": "central",
       "decade": 1860,
       "year": 1865,
@@ -4547,7 +4628,7 @@
       ],
       "sceneId": "scene-mt1-gyeongbokgung-rebuild",
       "confidence": "high",
-      "note": "[10한사02-01] · core · 인용한 출처는 중건 완료를 1867년 말로 적고 1868년에 왕이 옮겨 갔다고 적는다",
+      "note": "[10한사02-01] · core · 항목 type 이 event 여서 대응표대로 category 를 administration 으로 두었다(대응표의 event 목록에 facility 는 없다). 인용한 출처는 중건 완료를 1867년 말로 적고 1868년에 왕이 옮겨 갔다고 적는다",
       "lon": 126.97722,
       "lat": 37.57861,
       "coordinateBasis": "location claim-mt1-gyeongbokgung-loc",
@@ -4572,12 +4653,14 @@
         "claim-mt1-bakhae-start",
         "claim-mt1-bakhae-def",
         "claim-mt1-bakhae-daewongun",
+        "claim-mt1-bakhae-martyr",
+        "claim-mt1-bakhae-yanghwajin",
         "claim-mt1-daewongun-1873",
         "claim-mt1-jeoldusan-loc"
       ],
       "sceneId": "scene-mt1-byeongin-persecution",
       "confidence": "high",
-      "note": "[10한사02-01] · standard · 인용한 출처는 박해가 1866년부터 1873년까지 이어졌다고 적는다",
+      "note": "[10한사02-01] · standard · 인용한 출처는 박해가 1866년부터 1873년까지 이어졌다고 적는다. 표시점 양화진(절두산)은 병인양요 뒤 서울의 처형 장소로 쓰인 곳이다",
       "lon": 126.91167,
       "lat": 37.54444,
       "coordinateBasis": "location claim-mt1-jeoldusan-loc"
@@ -4650,7 +4733,7 @@
       ],
       "sceneId": "scene-mt1-oppert",
       "confidence": "high",
-      "note": "[10한사02-01] · standard · 예산은 대전 북쪽이어서 권역을 central 로 두었다",
+      "note": "[10한사02-01] · standard · 권역은 35~37도 구간에서 대전(위도 36.35) 이남이면 south, 그보다 북쪽이라도 영남(경도 128도 이상)이면 south, 나머지는 central 로 통일해 판정했다(예산은 위도 36.719·경도 126.624 여서 central)",
       "lon": 126.62389,
       "lat": 36.71861,
       "coordinateBasis": "location claim-mt1-namyeongun-loc"
@@ -4703,7 +4786,7 @@
       ],
       "sceneId": "scene-mt1-seowon-abolition",
       "confidence": "high",
-      "note": "[10한사02-01] · standard · 표시점은 한성 조정이 아니라 철폐 대상이던 만동묘 자리다",
+      "note": "[10한사02-01] · standard · 표시점은 한성 조정이 아니라 철폐 대상이던 만동묘 자리이며, 만동묘 철폐는 1865년이고 장면 연도 1871년은 사액서원 훼철령 해다. 권역은 35~37도 구간에서 대전(위도 36.35) 이남이면 south, 그보다 북쪽이라도 영남(경도 128도 이상)이면 south, 나머지는 central 로 통일해 판정했다",
       "lon": 127.8111139,
       "lat": 36.6686921,
       "coordinateBasis": "location claim-mt1-mandongmyo-loc"
@@ -4749,11 +4832,12 @@
         "claim-mt1-choe-1873",
         "claim-mt1-choe-1906",
         "claim-mt1-choe-1876",
+        "claim-mt1-choe-gyeyu",
         "claim-mt1-museong-loc"
       ],
       "sceneId": "scene-mt1-choe-ik-hyeon",
       "confidence": "high",
-      "note": "[10한사1-03-02] · standard · 표시점은 1906년 의병을 일으킨 태인이며 앞선 상소는 한성의 일이다",
+      "note": "[10한사1-03-02] · standard · 표시점은 1906년 의병을 일으킨 태인이며 앞선 상소는 한성의 일이다. 권역은 35~37도 구간에서 대전(위도 36.35) 이남이면 south, 그보다 북쪽이라도 영남(경도 128도 이상)이면 south, 나머지는 central 로 통일해 판정했다(태인은 위도 35.602 여서 south)",
       "lon": 126.98361,
       "lat": 35.60194,
       "coordinateBasis": "location claim-mt1-museong-loc"
@@ -4833,7 +4917,7 @@
     {
       "id": "fact-mt1-016",
       "itemId": "hs-modern-transition-open-ports",
-      "category": "economy",
+      "category": "administration",
       "region": "south",
       "decade": 1870,
       "year": 1876,
@@ -4845,12 +4929,13 @@
         "claim-mt1-gaehang-1876",
         "claim-mt1-busan-1876",
         "claim-mt1-gaehang-def",
-        "claim-mt1-wonsan-1883",
+        "claim-mt1-wonsan-haegwan-1883",
+        "claim-mt1-incheon-haegwan-1883",
         "claim-mt1-busanhang-loc"
       ],
       "sceneId": "scene-mt1-open-ports",
       "confidence": "medium",
-      "note": "[10한사1-03-03] · extended · 항목 분류는 place 지만 내용이 무역항이어서 category 를 economy 로 두었다. 인용한 개항장 항목은 원산 1879년·인천 1880년으로 적어 교과서 표기(1880·1883)와 다르다",
+      "note": "[10한사1-03-03] · extended · 항목 type 이 place 여서 대응표대로 category 를 administration 으로 두었다. 인용한 개항장 항목은 원산 1879년·인천 1880년으로 적어 교과서 표기(1880·1883)와 다르며, 장면 끝 연도 1883년은 1883년 6월 인천해관 창설에 근거한다",
       "lon": 129.07889,
       "lat": 35.10389,
       "coordinateBasis": "location claim-mt1-busanhang-loc"
@@ -4979,7 +5064,7 @@
       ],
       "sceneId": "scene-mt1-josa-sichaldan",
       "confidence": "high",
-      "note": "[10한사1-03-02] · standard · 해외(일본) 항목이며 표시점은 경유지 오사카다",
+      "note": "[10한사1-03-02] · standard · 해외(일본) 항목이며 표시점은 경유지 오사카다. 시찰의 본무대는 도쿄지만 수신사 항목과 표시점이 겹치지 않도록 오사카로 옮기고 요약도 오사카에서 시작하도록 맞췄다",
       "lon": 135.502111,
       "lat": 34.69375,
       "coordinateBasis": "location claim-mt1-osaka-loc"
@@ -5004,7 +5089,7 @@
       ],
       "sceneId": "scene-mt1-wijeong-cheoksa",
       "confidence": "high",
-      "note": "[10한사1-03-02] · core · 항목의 sceneFunction 'study' 는 허용 목록에 없어 비웠다",
+      "note": "[10한사1-03-02] · core · 항목의 sceneFunction 'study' 는 허용 목록에 없어 비웠다. 권역은 35~37도 구간에서 대전(위도 36.35) 이남이면 south, 그보다 북쪽이라도 영남(경도 128도 이상)이면 south, 나머지는 central 로 통일해 판정했다(안동은 위도 36.727·경도 128.838 이어서 south)",
       "lon": 128.83778,
       "lat": 36.72722,
       "coordinateBasis": "location claim-mt1-dosan-loc"

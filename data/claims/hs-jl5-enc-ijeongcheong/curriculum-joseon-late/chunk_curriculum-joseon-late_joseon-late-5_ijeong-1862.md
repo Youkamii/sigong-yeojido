@@ -36,9 +36,9 @@ status: "draft"
     "predicate": "syj:tookPlaceAt",
     "object": {
       "kind": "entity",
-      "id": "place-hs-jl5-yukjo-geori"
+      "id": "place-hs-jl5-injeongjeon"
     },
-    "note": "육조 거리의 관청가를 무대로 잡는다",
+    "note": "설치를 결정한 조정의 무대를 철종 대 정궁인 창덕궁 인정전으로 잡는다",
     "fromSource": "src-hs-jl5-enc-ijeongcheong",
     "citesChunk": "chunk_curriculum-joseon-late_joseon-late-5_ijeong-1862",
     "quote": "1862년 5월 26일 삼정이정청을 설치할 것을 결정하고",

@@ -28,7 +28,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-21"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-yijh-died",
@@ -50,7 +50,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-21"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

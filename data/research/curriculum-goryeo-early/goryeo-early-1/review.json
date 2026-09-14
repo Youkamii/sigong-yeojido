@@ -1,0 +1,122 @@
+{
+ "job": "goryeo-early-1",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-goryeo-early --job goryeo-early-1 -> exit 0, 'PASS: failures=0 warnings=0'. 집계: facts 23 / scenes 23 / claims 88 (chunkClaims 67, excerptClaims 21). category x decade, region x decade 표 정상 출력.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-early-2seong-6bu",
+   "claimId": "claim-hs-6bu",
+   "problem": "982년(성종 원년) 2성 6부 항목의 행위 근거로 고려사 백관지 서문의 '二年, 立三省·六尙書·九寺·六衛, 略倣唐制'를 붙였는데, 이 '二年'은 성종 2년이 아니라 앞 문장 '高麗太祖, 開國之初…'에 이어지는 태조 2년(919)이다. 같은 result.json 이 claim-hs-songak-org 에서 태조 2년 세가의 '置三省·六尙書官·九寺'를 919년 근거로 이미 쓰고 있어 내부에서도 어긋난다. claim.note 에 연도 문맥이 없어 982년 근거처럼 읽히고, scene-hs-gy1-2seong 의 summary '그 아래 6부가 붙어'도 과장이다 — 고려사 백관지 이조 연혁은 '國初稱選官, 有御事·侍郞·郞中·員外郞. 成宗十四年, 改爲尙書吏部'라 하여 상서 6부 명칭은 성종 14년(995)이다.",
+   "fix": "claim-hs-6bu 를 성종대 근거로 교체한다(예: chunk_goryeosa_kr_076_0010_0080_0010 의 '國初稱選官, 有御事·侍郞·郞中·員外郞. 成宗十四年, 改爲尙書吏部'). 태조 2년 서문을 계속 쓰려면 note 에 '태조 2년(919) 기사'임을 명시하고 982년 장면의 행위 근거에서 뺀다. scene summary 는 '982년에 2성의 틀이 잡히고 그 아래 6관이 놓였으며, 상서 6부라는 이름은 성종 14년에 붙었다'처럼 고친다.",
+   "evidence": "chunk_goryeosa_kr_076_0010_0010 (卷七十六 百官 一 백관 서문): '高麗太祖, 開國之初, 叅用新羅·泰封之制… 二年, 立三省·六尙書·九寺·六衛, 略倣唐制. 成宗, 大新制作…' / chunk_goryeosa_kr_076_0010_0080_0010 (이조 연혁): '國初稱選官, 有御事·侍郞·郞中·員外郞. 成宗十四年, 改爲尙書吏部.'"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-early-manbugyo",
+   "claimId": "claim-hs-loc-seonjukgyo",
+   "problem": "선죽교 좌표(126.5081, 37.9817)가 근거 문서 자체와 어긋난다. raw/ko-seonjukgyo.html 본문은 '개성 남대문에서 동쪽 약 1km 거리의 자남산 남쪽 개울에 있는 다리'라고 적었는데, 같은 칸이 쓴 개성 남대문 표시 좌표(126.5581, 37.9692)에서 이 좌표는 동쪽 1km 가 아니라 서북쪽 약 4.6km 다(위키 인포박스 좌표 자체의 오류로 보인다). 이 좌표를 쓴 두 장면 scene-hs-gy1-manbugyo 와 core 항목 scene-hs-gy1-nobi 의 라벨은 '개경 도성 안'인데 실제 표시점은 도성 서쪽 왕건릉(126.506, 37.9847) 바로 옆으로 밀린다.",
+   "fix": "선죽교 좌표를 쓰지 말고 개경 도성 안임을 확인할 수 있는 다른 표시 좌표(예: 이미 쓰는 지점과 겹치지 않는 개성 숭양서원·개성 관음사 등 위키 문서 geo)로 두 장면의 좌표 근거를 교체한다. 부득이 유지한다면 coordinateNote 에 '문서 본문(남대문 동쪽 1km)과 인포박스 좌표가 어긋난다'를 적고 '도성 안' 표현을 뺀다.",
+   "evidence": "raw/ko-seonjukgyo.html 본문: '개성 남대문에서 동쪽 약 1km 거리의 자남산 남쪽 개울에 있는 다리이다.' / 같은 파일 인포박스: '\"coordinates\":[126.5081,37.9817]' (라이브 재조회에서도 동일 확인)"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-early-heukchang",
+   "sceneId": "scene-hs-gy1-heukchang",
+   "problem": "장면 23건이 좌표 13개에 몰려 있고, 네 지점에는 각각 3건이 소수점까지 똑같은 좌표로 겹친다: (126.5581, 37.9692) 흑창·발해 유민·광군, (126.54083, 37.98694) 팔관회·공복·2성 6부, (126.543333, 37.985) 만월대·송악 천도·훈요 10조, (126.552778, 37.971667) 광종·칭제건원·전시과. 여기에 선죽교 2건, 성균관 2건이 더 겹친다. 지침의 '같은 도시 항목이 한 점에 겹치지 않게'에 어긋나고, 이미 검증기를 통과한 참고 칸(curriculum-joseon-early/joseon-early-2)은 장면 23건이 모두 서로 다른 좌표다.",
+   "fix": "개경 항목마다 서로 다른 근거 지점을 하나씩 배정한다(개성 남대문·첨성대·만월대·성균관·왕건릉·영통사 외에 개성 숭양서원·개성 관음사·개성 남계원지 칠층석탑 등 위키 표시 좌표가 있는 개경권 지점을 더 찾아 쓰고, 각 coordinateNote 에 대표점임을 적는다). 한 지점을 두 항목 이상에 쓰지 않는 것을 기준으로 삼는다.",
+   "evidence": "result.json scenes[].place 좌표 집계: 23 장면 / 13 고유 좌표, 3건 중복 4쌍. 대조: data/research/curriculum-joseon-early/joseon-early-2/result.json 은 23 장면 / 23 고유 좌표."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-heukchang",
+   "claimId": "claim-hs-heukchang-918",
+   "problem": "설치 주장(syj:establishedIn 918-08)의 인용이 고려사 오행지의 변괴 기사 '太祖元年八月戊辰 虎入都城黑倉垣內'다. 이 기사는 918년에 흑창이 이미 있었음을 보여줄 뿐 설치를 말하지 않는다. 로컬 chunk 를 훑어도 설치 연도를 밝힌 기사는 없다(식화지 서문은 '國初'로만 적는다).",
+   "fix": "predicate 를 syj:occurredIn 으로 낮추고 설치 서술은 식화지 인용(claim-hs-heukchang-act, '國初, 祖其意, 而創置黑倉')에 맡기거나, claim.note 에 '설치 기사가 아니라 918년 존재를 보이는 기사'라고 적는다. fact.note 의 설명을 claim 쪽에도 옮기면 충분하다.",
+   "evidence": "chunk_goryeosa_kr_054_0010_0020_0060_0010 (五行 二 › 호랑이가 도성 흑창에 들어오다), chunk_goryeosa_kr_080_0010_0020_0010 (상평의창 서: '國初, 祖其意, 而創置黑倉.'). --keyword 黑倉 전수 검색 결과 918년 설치 기사는 없다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-sasimgwan-giin",
+   "sceneId": "scene-hs-gy1-sasimgwan",
+   "problem": "항목 목록의 장소(개경)를 경주로 332km 옮겼다. 첫 사심관이 경주였다는 근거는 정확하지만, 이 항목은 사심관과 기인 제도를 함께 담고 기인은 향리 자제를 개경에 볼모로 둔 제도여서 표시점이 한쪽으로만 쏠린다. region 도 central 에서 south 로 바뀌어 칸의 권역 분포에 영향을 준다.",
+   "fix": "이대로 두려면 fact.note 의 설명을 scene.summary·coordinateNote 에도 남겨 '제도가 처음 적용된 고을을 표시점으로 삼았고 기인은 개경 사안'임을 밝힌다. 항목 목록의 장소를 지키는 쪽이면 개경 좌표로 되돌리고 경주는 claim(claim-hs-sasim-act)으로만 남긴다.",
+   "evidence": "items.json hs-goryeo-early-sasimgwan-giin.place = 개경(126.554, 37.972) / result.json fact-hs-gy1-009 lon/lat = 129.217, 35.85 (경주). chunk_goryeosa_kr_075_0010_0010_0170_0010: '其人. 國初, 選鄕吏子弟, 爲質於京…'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-gyunyeo",
+   "sceneId": "scene-hs-gy1-gyunyeo",
+   "problem": "인물 장면의 대표점을 항목이 지정한 귀법사에서 영통사로 6.4km 옮겼다. 장면 연도(963~973)는 균여가 귀법사에 머문 기간이고, 영통사 근거 발췌는 '937년 이후'다. coordinateNote 에 사정을 적었으나 연도와 장소가 서로 다른 시기를 가리킨다.",
+   "fix": "장면 연도를 그대로 둘 경우 summary 에 '963년 이후는 귀법사, 표시점은 좌표가 확인되는 영통사'임을 한 문장 더 밝히거나, 개경권의 다른 근거 지점을 귀법사 대표점으로 쓴다.",
+   "evidence": "items.json place = 귀법사(개경) 126.566/37.985 / scene place = 영통사 126.577055/38.042035. 발췌 ex-gyunyeo-yeongtongsa = '937년 이후 영통사에서 수도에 힘쓰는 한편' (라이브 재조회 확인)"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-balhae-refugees",
+   "sceneId": "scene-hs-gy1-balhae",
+   "problem": "918~947년 장면 세 건의 대표점으로 쓴 '개성 남대문'은 근거 문서가 '시대: 1394년(태조 3년)'이라고 적은 조선 초 건물이고, 개경 나성 자체도 현종대에 쌓았다. 라벨과 coordinateNote 는 '도성 남문'이라고만 해 시기 차이가 드러나지 않는다(같은 문제로 과거제·성종 장면의 '개성 성균관'은 문서상 시대가 조선이다).",
+   "fix": "coordinateNote 에 '현재 남아 있는 건물은 후대의 것이며 도성 남쪽을 가리키는 대표점'이라는 한 줄을 덧붙인다. 라벨의 '도성 남문' 표현도 '도성 남쪽 일대'로 완화한다.",
+   "evidence": "raw/ko-gaeseong-namdaemun.html 인포박스: '\"주소\":{\"wt\":\"[[개성직할시]] 북안동\"},\"시대\":{\"wt\":\"1394년(태조 3년)\"}' / raw/ko-gaeseong-seonggyungwan.html: '\"주소\":{\"wt\":\"개성시 방직동\"},\"시대\":{\"wt\":\"조선\"}'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-palgwanhoe",
+   "sceneId": "scene-hs-gy1-palgwanhoe",
+   "problem": "장면 표시 구간의 끝 연도에 근거가 없다. 팔관회는 endYear 1170, 서경 경영은 endYear 943 인데 claim 은 각각 918·987년, 919·922년까지만 있다. fact.note 에 '표시 구간'이라고 적어 두었으나 장면 카드에는 근거 없는 구간이 그대로 보인다.",
+   "fix": "항목 목록이 준 구간을 유지하되 scene.summary 에도 '표시 구간이며 조사 근거는 …까지'를 한 문장 남기거나, 끝 연도를 근거가 있는 해(팔관회 987, 서경 922)로 줄인다.",
+   "evidence": "scene-hs-gy1-palgwanhoe startYear 918 endYear 1170, dateClaimIds=[claim-hs-palgwan-918] / scene-hs-gy1-seogyeong endYear 943, dateClaimIds=[claim-hs-seogyeong-922]"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-founding",
+   "sceneId": "scene-hs-gy1-founding",
+   "problem": "23개 장면 전부의 scene.eventId(event-hs-gy1-*)가 같은 result.json 의 entities[] 에 선언한 사건 개체 id(event-hs-goryeo-founding 등)와 다르다. claims 의 subject 는 선언한 id 를 쓰므로 장면의 사건 노드와 그 사건의 주장이 서로 연결되지 않는다. 검증기는 잡지 않고 뷰어는 scene.itemId 가 있을 때 제목으로 임시 개체를 만들어 넘어가지만, 검증기를 통과한 참고 칸(joseon-early-2)은 eventId 를 선언 개체와 맞춰 두었다.",
+   "fix": "scene.eventId 를 entities[] 에 선언한 사건 id 로 바꾼다(scene-hs-gy1-founding → event-hs-goryeo-founding 식으로 23건).",
+   "evidence": "result.json entities[]: event-hs-goryeo-founding 등 23건 / scenes[].eventId: event-hs-gy1-founding 등 23건, 교집합 없음. services/host/app/chronicle.js:80-81 의 대체 경로 확인."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-balhae-refugees",
+   "claimId": "claim-hs-balhae-act",
+   "problem": "대광현 개체를 새 id(person-hs-dae-gwanghyeon)로 썼는데 저장소에는 #51 때 만든 기존 개체 person-daegwanghyeon 이 이미 있다. 지침은 기존 person-* id 가 있으면 재사용하라고 했고, 현재 저장소에는 대광현 개체가 셋(person-daegwanghyeon, person-hs-daegwanghyeon, person-hs-dae-gwanghyeon)이 되어 있다.",
+   "fix": "participants 와 claim subject 의 entityId 를 person-daegwanghyeon 으로 바꾸고, 중복 개체 정리는 별도 이슈로 올린다. 왕·태조·광종·성종 개체는 기존 person-encykorea-goryeo-* 를 제대로 재사용했다.",
+   "evidence": "git log --diff-filter=A: data/entities/person/person-daegwanghyeon.md = 7441c6c2(#51), person-hs-dae-gwanghyeon.md·person-hs-daegwanghyeon.md = 75357259(#186)"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-gwangun",
+   "factId": "fact-hs-gy1-013",
+   "problem": "항목 type 이 institution 인 세 건의 fact.category 가 대응표(institution→administration)와 다르다: 흑창 disaster, 광군 war, 전시과 economy. 내용상 각각 구휼·군사·수취로 읽을 여지는 있으나 대응표와 어긋나 커버리지 표(administration 10 vs 대응표 기준 13)가 달라진다.",
+   "fix": "대응표대로 administration 으로 맞추거나, 세 건 모두 fact.note 에 '대응표 예외: 제도지만 내용이 구휼/군사/수취라 …로 분류'를 적어 근거를 남긴다. cell.categories 도 최종 값과 맞춘다.",
+   "evidence": "docs/research/curriculum-items-brief.md 항목→사실 대응표: 'institution→administration' / result.json fact-hs-gy1-002 category=disaster, fact-hs-gy1-013 category=war, fact-hs-gy1-021 category=economy"
+  }
+ ],
+ "checkedItems": [
+  "hs-goryeo-early-founding",
+  "hs-goryeo-early-heukchang",
+  "hs-goryeo-early-palgwanhoe",
+  "hs-goryeo-early-taejo-wanggeon",
+  "hs-goryeo-early-manwoldae",
+  "hs-goryeo-early-songak-capital",
+  "hs-goryeo-early-seogyeong-development",
+  "hs-goryeo-early-balhae-refugees",
+  "hs-goryeo-early-sasimgwan-giin",
+  "hs-goryeo-early-unification-later-three",
+  "hs-goryeo-early-manbugyo",
+  "hs-goryeo-early-hunyo-sipjo",
+  "hs-goryeo-early-gwangun",
+  "hs-goryeo-early-gwangjong",
+  "hs-goryeo-early-chingje-geonwon",
+  "hs-goryeo-early-nobi-angeom",
+  "hs-goryeo-early-gwageo",
+  "hs-goryeo-early-gongbok",
+  "hs-goryeo-early-gyunyeo",
+  "hs-goryeo-early-gwanchoksa",
+  "hs-goryeo-early-jeonsigwa",
+  "hs-goryeo-early-seongjong",
+  "hs-goryeo-early-2seong-6bu"
+ ],
+ "summary": "검증기는 PASS(failures=0, warnings=0)이고 항목 23건이 모두 fact+scene+claim 3건 이상으로 채워져 있다. core 12건 전부와 나머지 11건까지 23건 모두를 출처에서 직접 재확인했다: 고려사 chunk 22개를 search_chunks 로 열어 인용문과 연도(태조 원년 6월 즉위, 918년 11월 팔관회, 922년 서경 재성, 934년 대광현 귀부, 935년 사심관, 936년 일리천, 942년 만부교, 943년 훈요, 947년 광군, 950년 광덕, 956년 노비안검, 958년 과거, 960년 공복, 976년 전시과, 981년 성종 즉위, 982년 개백관호)를 대조했고, 위키백과 10개 문서를 라이브 재조회해 좌표와 서술 발췌가 지금도 원문에 그대로 있음을 확인했다. 교과서 문장 전재, kind/heritageType/participants 와 항목 sceneType 불일치, 핵심 항목 누락은 없었다. 고칠 것은 셋이다. (1) 2성 6부(core) 항목의 행위 근거가 태조 2년(919) 백관지 서문이라 982년 근거로 쓸 수 없다. (2) 선죽교 좌표가 같은 위키 문서 본문(남대문 동쪽 1km)과 4.6km 어긋나 만부교와 노비안검법(core) 두 장면이 도성 밖으로 밀린다. (3) 장면 23건이 좌표 13개에 몰려 네 지점에 3건씩 정확히 겹친다 — 검증기를 통과한 joseon-early-2 는 23건 모두 좌표가 다르다. 나머지 8건은 근거 문맥, 표시 구간, 개체 id 정리 수준의 minor 다."
+}

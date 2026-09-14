@@ -1,9 +1,9 @@
 {
   "job": "modern-transition-4",
-  "sources": 48,
-  "excerpts": 79,
+  "sources": 54,
+  "excerpts": 93,
   "chunkClaims": 14,
-  "excerptClaims": 94,
+  "excerptClaims": 102,
   "facts": 24,
   "factsByCategory": {
     "administration": 4,
@@ -14,8 +14,8 @@
     "person": 6,
     "war": 3
   },
-  "claims": 108,
-  "entities": 72,
+  "claims": 116,
+  "entities": 78,
   "rawFilesChecked": [
     {
       "source": "src-hs-enc-gyeongbuseon",
@@ -94,8 +94,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0006598",
       "sha256": "728ff0239d7fab4e7fb66f3a4600452312d852a33a1197f16dc7613e77777a9a",
       "rawBytes": 117248,
-      "excerpts": 3,
-      "quotedWords": 24
+      "excerpts": 4,
+      "quotedWords": 25
     },
     {
       "source": "src-hs-ko-souimun",
@@ -110,8 +110,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0061918",
       "sha256": "988a232c0f49d0be7bd1108be1551e400d07a7b9054ba3e1f4115c25b26bedcb",
       "rawBytes": 97190,
-      "excerpts": 3,
-      "quotedWords": 23
+      "excerpts": 4,
+      "quotedWords": 21
     },
     {
       "source": "src-hs-ko-deoksugung",
@@ -134,8 +134,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0063241",
       "sha256": "ccf9f674a1fd2a0f9e46fbc1032ecf4cd6140c42d2b7b0a3065bc2077bf7ca63",
       "rawBytes": 115223,
-      "excerpts": 2,
-      "quotedWords": 16
+      "excerpts": 3,
+      "quotedWords": 21
     },
     {
       "source": "src-hs-en-binnenhof",
@@ -198,8 +198,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0032974",
       "sha256": "7aa240c06a50ba7881111a48c4849c56516c5b653d3fe026fde26333ded0144d",
       "rawBytes": 118793,
-      "excerpts": 3,
-      "quotedWords": 19
+      "excerpts": 5,
+      "quotedWords": 25
     },
     {
       "source": "src-hs-enc-sangdong-church",
@@ -400,6 +400,54 @@
       "rawBytes": 318372,
       "excerpts": 2,
       "quotedWords": 9
+    },
+    {
+      "source": "src-hs-en-seoul-animation-center",
+      "url": "https://en.wikipedia.org/wiki/Seoul_Animation_Center",
+      "sha256": "e83e34562df944bf38abaaa71cef3470370221d16c86c1460118dfcefa788ef5",
+      "rawBytes": 206910,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-chongdokbu-cheongsa",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%B4%9D%EB%8F%85%EB%B6%80_%EC%B2%AD%EC%82%AC%EC%99%80_%EA%B4%80%EC%82%AC",
+      "sha256": "d4e84e73cb2c294b0a49735580c4290fc80e8242b31f8eeaa5a47c4b527520b6",
+      "rawBytes": 328639,
+      "excerpts": 2,
+      "quotedWords": 25
+    },
+    {
+      "source": "src-hs-ko-namsan",
+      "url": "https://ko.wikipedia.org/wiki/%EB%82%A8%EC%82%B0_%28%EC%84%9C%EC%9A%B8%29",
+      "sha256": "cafdc65ecab68a0c64d84e20e732c1a29488bb2ab0fa14112625cd0fdf2c0b23",
+      "rawBytes": 281622,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-en-jogyesa",
+      "url": "https://en.wikipedia.org/wiki/Jogyesa",
+      "sha256": "5930ef5e3dfcb447f3e9665720683e5393a49d2993d167ecd75ac5f0b150d4e5",
+      "rawBytes": 197668,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-yijun-museum",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A4%80_%EC%97%B4%EC%82%AC_%EA%B8%B0%EB%85%90%EA%B4%80",
+      "sha256": "dec4eb34c69d6ade88e0c3b9ea7464c958f1745f713df26716db3ebe73c4e1b1",
+      "rawBytes": 85673,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-en-chinatown-hague",
+      "url": "https://en.wikipedia.org/wiki/Chinatown,_The_Hague",
+      "sha256": "be7c044528feffafd4fa6b7e43f7645d7429c01311230ea32a930dd75ed145c3",
+      "rawBytes": 96864,
+      "excerpts": 2,
+      "quotedWords": 14
     }
   ],
   "missing": [],
@@ -411,15 +459,16 @@
     "modelsObserved": [
       "claude-opus-5"
     ],
-    "started": 1789700000,
+    "started": 1789356600,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-modern-transition-4"
+    "sessionId": "workflow-modern-transition-4",
+    "revised": 1789381276
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-seokjojeon"
+    "place-hs-dejong-hotel"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

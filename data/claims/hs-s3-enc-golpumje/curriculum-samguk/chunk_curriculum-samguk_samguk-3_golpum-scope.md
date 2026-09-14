@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "place-hs-s3-wolseong"
+      "id": "thing-hs-s3-golpumje"
     },
     "note": "혼인·집 크기·옷 색깔까지 규제했다는 서술.",
     "fromSource": "src-hs-s3-enc-golpumje",
@@ -23,7 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

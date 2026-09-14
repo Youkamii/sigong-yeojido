@@ -21,7 +21,7 @@ status: "draft"
       "latest": -400,
       "id": "ts-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-2-hs-gwae-date"
     },
-    "note": "한국식동검 문화가 성립하는 시기. 괴정동 돌널무덤은 그 가장 이른 단계로 본다.",
+    "note": "한국식동검 문화가 성립하는 시기(서기전 4세기경 전후). 괴정동 돌널무덤을 그 이른 단계로 보며, 유적 자체의 연대관은 claim-hs-gwae-view 에 실었다.",
     "fromSource": "src-hs-enc-donggeom",
     "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-2_hgd-4c",
     "quote": "서기전 4세기경을 전후하여",

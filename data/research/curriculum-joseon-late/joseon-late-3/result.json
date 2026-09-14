@@ -1200,6 +1200,87 @@
      "locator": "문서 표시 좌표(geo)"
     }
    ]
+  },
+  {
+   "id": "src-hs3-en-donhwamun",
+   "title": "Donhwamun — Wikipedia",
+   "publisher": "위키백과",
+   "url": "https://en.wikipedia.org/wiki/Donhwamun",
+   "rawFile": "raw/en-donhwamun.html",
+   "sha256": "8d02da1a83659e2643a4bfc5e7bcc7b92b6c8e9ed318cc494b36f4d6a1d0663b",
+   "httpStatus": 200,
+   "byteLength": 110812,
+   "fetchedUtc": "2026-09-14T10:04:22Z",
+   "license": "위키백과 CC BY-SA — 표시 좌표 인용",
+   "excerpts": [
+    {
+     "id": "ex-hs3-geo-donhwamun",
+     "text": "37.577; 126.989",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-hs3-ko-gyeonghuigung",
+   "title": "경희궁 — 위키백과",
+   "publisher": "위키백과",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%ED%9D%AC%EA%B6%81",
+   "rawFile": "raw/ko-gyeonghuigung.html",
+   "sha256": "6b0967d43bb1ee9cfd23e9bbb2325b2a15a164172f32529dde2da38a58127f4c",
+   "httpStatus": 200,
+   "byteLength": 226504,
+   "fetchedUtc": "2026-09-14T10:04:25Z",
+   "license": "위키백과 CC BY-SA — 표시 좌표 인용",
+   "excerpts": [
+    {
+     "id": "ex-hs3-geo-gyeonghuigung",
+     "text": "37.5711917; 126.9683194",
+     "locator": "문서 머리 표시 좌표"
+    }
+   ]
+  },
+  {
+   "id": "src-hs3-enc-waegwan",
+   "title": "왜관무역 — 한국민족문화대백과사전",
+   "publisher": "한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0039199",
+   "rawFile": "raw/enc-waegwan-trade.html",
+   "sha256": "374028ca5bdbdc02df3657b0b6a51e37fa42d84bb9b5bb0b8d88b227057fdbff",
+   "httpStatus": 200,
+   "byteLength": 108008,
+   "fetchedUtc": "2026-09-14T10:04:27Z",
+   "license": "한국학중앙연구원 한국민족문화대백과사전 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-hs3-waegwan-defi",
+     "text": "왜관무역은 조선시대에 왜관에서 조선과 일본 사이에 이루어진 무역이다.",
+     "locator": "본문 「내용 요약」"
+    },
+    {
+     "id": "ex-hs3-waegwan-dongnae",
+     "text": "개시에 참여하는 상인들은 동래부(東萊府)가 발급하는",
+     "locator": "본문 「사무역 - 개시 무역」"
+    }
+   ]
+  },
+  {
+   "id": "src-hs3-ko-tancheon",
+   "title": "단천시 — 위키백과",
+   "publisher": "위키백과",
+   "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%B2%9C%EC%8B%9C",
+   "rawFile": "raw/ko-tancheon.html",
+   "sha256": "10bfb56a25e42cffc16bc640f8c7cc19eaae1441196fa8aeff922ec86aa8065c",
+   "httpStatus": 200,
+   "byteLength": 127493,
+   "fetchedUtc": "2026-09-14T10:04:29Z",
+   "license": "위키백과 CC BY-SA — 짧은 인용(보조)",
+   "excerpts": [
+    {
+     "id": "ex-hs3-tancheon-eungwang",
+     "text": "조선 시대에는 주로 은광이 유명하였으며",
+     "locator": "본문 「산업 - 자원」"
+    }
+   ]
   }
  ],
  "entities": [
@@ -1239,11 +1320,6 @@
    "label": "정제두"
   },
   {
-   "id": "person-hs-i-ik",
-   "type": "Person",
-   "label": "이익"
-  },
-  {
    "id": "polity-hs-joseon",
    "type": "Polity",
    "label": "조선"
@@ -1277,11 +1353,6 @@
    "id": "event-hs3-bangyesurok",
    "type": "Event",
    "label": "반계수록 저술"
-  },
-  {
-   "id": "event-hs3-sukjong-reign",
-   "type": "Event",
-   "label": "숙종의 치세"
   },
   {
    "id": "event-hs3-sangpyeong",
@@ -1477,6 +1548,31 @@
    "id": "place-hs3-ganghwa-hagok",
    "type": "Place",
    "label": "강화 하곡"
+  },
+  {
+   "id": "place-hs3-donhwamun",
+   "type": "Place",
+   "label": "창덕궁 돈화문"
+  },
+  {
+   "id": "place-hs3-gyeonghuigung",
+   "type": "Place",
+   "label": "경희궁"
+  },
+  {
+   "id": "place-hs3-dongnae-waegwan",
+   "type": "Place",
+   "label": "동래 왜관"
+  },
+  {
+   "id": "polity-hs-ilbon",
+   "type": "Polity",
+   "label": "일본"
+  },
+  {
+   "id": "person-encykorea-yi-ik-e0045562",
+   "type": "Person",
+   "label": "이익"
   }
  ],
  "claims": [
@@ -2259,11 +2355,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs3-unjonga"
+    "id": "polity-hs-joseon"
    },
    "sourceId": "src-hs3-enc-sangpyeong",
    "citesExcerpt": "ex-hs3-sptb-last",
-   "note": "상평통보는 조선 말기까지 유일한 법화로 통용되었다. 소멸 연도는 이 조사에서 확정하지 않았다."
+   "note": "상평통보는 조선 말기까지 유일한 법화로 통용되었다. 발췌는 장소를 말하지 않는다. 소멸 연도는 이 조사에서 확정하지 않았다."
   },
   {
    "id": "claim-hs3-gyeongsin-1680",
@@ -2383,11 +2479,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs3-sungnyemun"
+    "id": "polity-hs-joseon"
    },
    "sourceId": "src-hs3-enc-ogunyeong",
    "citesExcerpt": "ex-hs3-ogun-outer",
-   "note": "총융청·수어청이 도성 외곽을 맡아 다섯 군영이 되었다."
+   "note": "총융청·수어청이 도성 외곽을 맡아 다섯 군영이 되었다. 발췌는 숭례문 같은 구체 지점을 말하지 않는다."
   },
   {
    "id": "claim-hs3-an-1693",
@@ -2454,11 +2550,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs3-yesan-deoksan"
+    "id": "polity-hs-joseon"
    },
    "sourceId": "src-hs3-enc-bobusang",
    "citesExcerpt": "ex-hs3-bobusang-defi",
-   "note": "보부상은 장시를 돌며 봇짐·등짐으로 물건을 옮긴 전문 상인이다."
+   "note": "보부상은 장시를 돌며 봇짐·등짐으로 물건을 옮긴 전문 상인이다. 발췌는 예산·덕산을 말하지 않는다."
   },
   {
    "id": "claim-hs3-busangcheong-defi",
@@ -2618,11 +2714,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs3-byeokgolje"
+    "id": "polity-hs-joseon"
    },
    "sourceId": "src-hs3-enc-gwangjak",
    "citesExcerpt": "ex-hs3-gwangjak-who",
-   "note": "지주·자작농뿐 아니라 소작농도 광작에 뛰어들었다."
+   "note": "지주·자작농뿐 아니라 소작농도 광작에 뛰어들었다. 발췌는 벽골제나 특정 들녘을 말하지 않는다."
   },
   {
    "id": "claim-hs3-jangmun-5day",
@@ -2630,11 +2726,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs3-anseongjang"
+    "id": "polity-hs-joseon"
    },
    "sourceId": "src-hs3-enc-jangmun",
    "citesExcerpt": "ex-hs3-jangmun-5day",
-   "note": "17세기 이후 장시가 퍼지며 대개 닷새마다 열렸다."
+   "note": "17세기 이후 장시가 퍼지며 대개 닷새마다 열렸다. 발췌는 안성장을 말하지 않는다."
   },
   {
    "id": "claim-hs3-jangmun-count",
@@ -2679,14 +2775,14 @@
   {
    "id": "claim-hs3-deokdae-sageum",
    "subject": "event-hs3-mining",
-   "predicate": "syj:producedAt",
+   "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs3-tancheon-eungwang"
+    "id": "polity-hs-joseon"
    },
    "sourceId": "src-hs3-enc-deokdaeje",
    "citesExcerpt": "ex-hs3-deokdae-sageum",
-   "note": "물주가 자본을 대고 덕대가 생산을 맡았다."
+   "note": "물주가 자본을 대고 덕대가 생산을 맡았다. 발췌는 사금광업의 예이며 단천이나 은광을 가리키지 않는다."
   },
   {
    "id": "claim-hs3-gyeonggang-1785",
@@ -2750,11 +2846,11 @@
    },
    "sourceId": "src-hs3-enc-silhak",
    "citesExcerpt": "ex-hs3-silhak-three",
-   "note": "실사구시·경세치용·이용후생을 묶어 실학이라 부른다."
+   "note": "실사구시·경세치용·이용후생을 묶어 실학이라 부른다. 이 문장은 이기백 『국사신론』(1961)이 세 갈래를 모두 실학이라 부른 대목을 옮긴 학설사 서술이다."
   },
   {
    "id": "claim-hs3-iik-life",
-   "subject": "person-hs-i-ik",
+   "subject": "person-encykorea-yi-ik-e0045562",
    "predicate": "syj:endedIn",
    "object": {
     "kind": "time",
@@ -2770,7 +2866,7 @@
   },
   {
    "id": "claim-hs3-iik-born",
-   "subject": "person-hs-i-ik",
+   "subject": "person-encykorea-yi-ik-e0045562",
    "predicate": "syj:bornIn",
    "object": {
     "kind": "time",
@@ -2823,6 +2919,70 @@
    "sourceId": "src-hs3-enc-yangmyeonghak",
    "citesExcerpt": "ex-hs3-yangmyeong-defi",
    "note": "양명학은 명의 왕수인이 주창한 학문이다."
+  },
+  {
+   "id": "claim-hs3-loc-donhwamun",
+   "subject": "place-hs3-donhwamun",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.577,
+    "lon": 126.989,
+    "precision": "site"
+   },
+   "sourceId": "src-hs3-en-donhwamun",
+   "citesExcerpt": "ex-hs3-geo-donhwamun",
+   "note": "창덕궁 정문 돈화문의 표시 좌표."
+  },
+  {
+   "id": "claim-hs3-loc-gyeonghuigung",
+   "subject": "place-hs3-gyeonghuigung",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.5711917,
+    "lon": 126.9683194,
+    "precision": "area"
+   },
+   "sourceId": "src-hs3-ko-gyeonghuigung",
+   "citesExcerpt": "ex-hs3-geo-gyeonghuigung",
+   "note": "경희궁 표시 좌표."
+  },
+  {
+   "id": "claim-hs3-tancheon-eungwang",
+   "subject": "place-hs3-tancheon-eungwang",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-hs-joseon"
+   },
+   "sourceId": "src-hs3-ko-tancheon",
+   "citesExcerpt": "ex-hs3-tancheon-eungwang",
+   "note": "단천은 조선시대에 은광으로 이름났다. 위키백과 항목의 보조 근거다."
+  },
+  {
+   "id": "claim-hs3-waegwan-defi",
+   "subject": "event-hs3-gaesi-husi",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-hs-ilbon"
+   },
+   "sourceId": "src-hs3-enc-waegwan",
+   "citesExcerpt": "ex-hs3-waegwan-defi",
+   "note": "왜관에서 조선과 일본 사이의 무역이 이루어졌다. 이 칸의 일본 쪽 근거다."
+  },
+  {
+   "id": "claim-hs3-waegwan-dongnae",
+   "subject": "event-hs3-gaesi-husi",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs3-dongnae-waegwan"
+   },
+   "sourceId": "src-hs3-enc-waegwan",
+   "citesExcerpt": "ex-hs3-waegwan-dongnae",
+   "note": "왜관 개시에 참여하는 상인은 동래부가 발급한 패를 받아야 했다."
   }
  ],
  "scenes": [
@@ -2843,7 +3003,7 @@
     "claim-hs3-kimyuk-1654"
    ],
    "place": {
-    "label": "평택 대동법시행기념비",
+    "label": "평택시 일대",
     "medium": "land",
     "precision": "area",
     "lon": 127.112821,
@@ -2854,7 +3014,7 @@
     "coordinateSourceIds": [
      "src-hs3-ko-pyeongtaek"
     ],
-    "coordinateNote": "대동법시행기념비는 평택시 소사동에 있다. 기념비 자체의 십진 좌표를 못 구해 평택시 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "대동법시행기념비는 평택시 소사동에 있다. 기념비 자체의 십진 좌표를 구하지 못해 평택시 표시 좌표를 권역 대표점으로 썼고, 소사동과는 약 6km 떨어져 있다.",
     "setting": "office"
    },
    "participants": [
@@ -3000,7 +3160,8 @@
    },
    "category": "war",
    "region": "north",
-   "decade": 1650
+   "decade": 1650,
+   "sceneFunction": "naval_expedition"
   },
   {
    "id": "scene-hs3-song-siyeol",
@@ -3074,7 +3235,7 @@
    "startYear": 1659,
    "endYear": 1674,
    "kind": "ritual",
-   "summary": "효종과 효종비의 국상에서 자의대비가 몇 해 상복을 입어야 하는지를 두고 서인과 남인이 맞섰다. 1659년 기해예송, 1674년 갑인예송으로 두 차례 벌어졌다.",
+   "summary": "효종과 효종비의 국상에서 자의대비가 몇 해 상복을 입어야 하는지를 두고 서인과 남인이 맞섰다. 1659년 기해예송, 1674년 갑인예송으로 두 차례 벌어졌다. 논쟁 자체는 조정에서 벌어졌고, 종묘는 다툼의 뿌리인 왕실 상례를 대표하는 무대로 잡은 것이다.",
    "dateClaimIds": [
     "claim-hs3-yesong-1659",
     "claim-hs3-yesong-1674"
@@ -3094,7 +3255,7 @@
     "coordinateSourceIds": [
      "src-hs3-ko-jongmyo"
     ],
-    "coordinateNote": "종묘 표시 좌표.",
+    "coordinateNote": "종묘 표시 좌표. 논쟁 자체는 조정에서 벌어졌고 종묘는 왕실 상례를 대표하는 무대로 잡았다.",
     "setting": "palace"
    },
    "participants": [
@@ -3142,7 +3303,7 @@
     "claim-hs3-yu-1653"
    ],
    "place": {
-    "label": "부안 우반동(반계서당)",
+    "label": "부안군 일대",
     "medium": "land",
     "precision": "area",
     "lon": 126.731944454,
@@ -3153,7 +3314,7 @@
     "coordinateSourceIds": [
      "src-hs3-en-buan"
     ],
-    "coordinateNote": "반계선생유적지는 부안군 보안면 우동리에 있다. 유적 자체의 십진 좌표를 못 구해 부안군 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "유형원이 내려와 산 우반동(현 부안군 보안면 우동리)의 십진 좌표를 구하지 못해 부안군 표시 좌표를 권역 대표점으로 썼고, 우반동과는 약 14km 떨어져 있다.",
     "setting": "academy"
    },
    "participants": [
@@ -3257,7 +3418,7 @@
    "startYear": 1678,
    "endYear": 1678,
    "kind": "market",
-   "summary": "1678년 영의정 허적의 건의로 상평통보를 찍어 돌리기 시작했다. 조선 말기까지 쓰인 유일한 법화로, 시전이 늘어선 운종가에서 가장 활발히 오갔다.",
+   "summary": "1678년 영의정 허적의 건의로 상평통보를 찍어 돌리기 시작했다. 조선 말기까지 쓰인 유일한 법화였고, 무대는 동전이 오간 자리를 보이려고 시전이 늘어선 한양 운종가로 잡았다.",
    "dateClaimIds": [
     "claim-hs3-sptb-1678"
    ],
@@ -3313,18 +3474,18 @@
     "claim-hs3-gyeongsin-act"
    ],
    "place": {
-    "label": "창덕궁",
+    "label": "창덕궁 돈화문",
     "medium": "land",
-    "precision": "area",
-    "lon": 126.99278,
-    "lat": 37.57944,
+    "precision": "site",
+    "lon": 126.989,
+    "lat": 37.577,
     "claimIds": [
-     "claim-hs3-loc-changdeokgung"
+     "claim-hs3-loc-donhwamun"
     ],
     "coordinateSourceIds": [
-     "src-hs3-en-changdeokgung"
+     "src-hs3-en-donhwamun"
     ],
-    "coordinateNote": "창덕궁 전체의 표시 좌표.",
+    "coordinateNote": "창덕궁 정문 돈화문의 표시 좌표. 경신환국의 처분이 내려진 전각을 특정할 수 없어, 같은 궁궐 안 다른 장면과 자리가 겹치지 않도록 궁의 정문을 대표점으로 썼다.",
     "setting": "palace"
    },
    "participants": [
@@ -3372,18 +3533,18 @@
     "claim-hs3-sukjong-hwanguk"
    ],
    "place": {
-    "label": "창경궁",
+    "label": "경희궁(조선 후기 경덕궁)",
     "medium": "land",
     "precision": "area",
-    "lon": 126.99598,
-    "lat": 37.57843,
+    "lon": 126.9683194,
+    "lat": 37.5711917,
     "claimIds": [
-     "claim-hs3-loc-changgyeonggung"
+     "claim-hs3-loc-gyeonghuigung"
     ],
     "coordinateSourceIds": [
-     "src-hs3-en-changgyeonggung"
+     "src-hs3-ko-gyeonghuigung"
     ],
-    "coordinateNote": "창경궁 전체의 표시 좌표.",
+    "coordinateNote": "환국은 한 건물에서 벌어진 일이 아니라 숙종 대 정국 전체에 걸친 변동이다. 개별 환국 장면(창덕궁 돈화문·창경궁 문정전·창경궁 홍화문)과 자리가 겹치지 않도록 한양의 또 다른 궁궐인 경희궁 표시 좌표를 총괄 장면의 대표점으로 썼다.",
     "setting": "palace"
    },
    "participants": [
@@ -3528,7 +3689,8 @@
    "relatedClaimIds": [
     "claim-hs3-song-exile",
     "claim-hs3-song-died"
-   ]
+   ],
+   "sceneFunction": "civil_conflict"
   },
   {
    "id": "scene-hs3-gapsul-hwanguk",
@@ -3650,10 +3812,10 @@
    "itemId": "hs-joseon-late-bobusang",
    "eventId": "event-hs3-bobusang",
    "title": "보부상",
-   "startYear": 1700,
+   "startYear": 1679,
    "endYear": 1800,
    "kind": "market",
-   "summary": "봇짐을 진 보상과 등짐을 진 부상이 장을 돌며 생산자와 소비자를 이었다. 저희끼리 조합을 꾸려 규율과 두령을 두었고, 예산·덕산 일대는 그 근거지 가운데 하나였다.",
+   "summary": "봇짐을 진 보상과 등짐을 진 부상이 장을 돌며 생산자와 소비자를 이었다. 저희끼리 조합을 꾸려 규율과 두령을 두었다. 장면 기간은 시장 번창이 확인되는 1679년부터 항목이 잡은 18세기 끝까지로 잡았고, 무대는 항목이 지정한 예산·덕산 일대를 따랐다.",
    "dateClaimIds": [
     "claim-hs3-sijang-1679"
    ],
@@ -3688,7 +3850,7 @@
    },
    "category": "settlement",
    "region": "central",
-   "decade": 1700,
+   "decade": 1670,
    "relatedClaimIds": [
     "claim-hs3-sijang-haengsang",
     "claim-hs3-jangmun-5day"
@@ -3749,19 +3911,21 @@
    "itemId": "hs-joseon-late-gaesi-husi",
    "eventId": "event-hs3-gaesi-husi",
    "title": "개시와 후시",
-   "startYear": 1700,
+   "startYear": 1660,
    "endYear": 1800,
    "kind": "market",
-   "summary": "나라가 허락한 공무역이 개시, 사신 행렬에 붙어 몰래 벌인 사무역이 후시다. 압록강 중강과 책문, 두만강 회령에서 청과의 거래가 이어졌고 1700년 중강개시가 닫히자 후시 쪽으로 무게가 옮겨갔다.",
+   "summary": "나라가 허락한 공무역이 개시, 사신 행렬에 붙어 몰래 벌인 사무역이 후시다. 압록강 중강과 책문, 두만강 회령에서 청과의 거래가 이어졌고 1700년 중강개시가 닫히자 후시 쪽으로 무게가 옮겨갔다. 남쪽 동래 왜관에서는 일본과의 무역이 따로 열렸다. 장면 기간은 책문후시가 열린 1660년부터 항목이 잡은 18세기 끝까지로 잡았다.",
    "dateClaimIds": [
     "claim-hs3-junggang-1700",
     "claim-hs3-chaekmun-1660"
    ],
    "actionClaimIds": [
-    "claim-hs3-hoeryeong-1638"
+    "claim-hs3-hoeryeong-1638",
+    "claim-hs3-waegwan-defi",
+    "claim-hs3-waegwan-dongnae"
    ],
    "place": {
-    "label": "의주 중강",
+    "label": "의주군 일대(압록강 하류)",
     "medium": "land",
     "precision": "area",
     "lon": 124.53194,
@@ -3772,7 +3936,7 @@
     "coordinateSourceIds": [
      "src-hs3-en-uiju"
     ],
-    "coordinateNote": "중강은 의주 맞은편 압록강 가운데 섬이다. 중강 자체의 좌표를 못 구해 의주군 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "중강은 의주 맞은편 압록강 가운데 섬이다. 중강 자체의 십진 좌표를 구하지 못해 의주군 표시 좌표를 권역 대표점으로 썼고, 항목이 잡은 중강 추정 지점과는 약 11km 떨어져 있다.",
     "setting": "office"
    },
    "participants": [],
@@ -3788,7 +3952,7 @@
    },
    "category": "foreign",
    "region": "north",
-   "decade": 1700,
+   "decade": 1660,
    "relatedClaimIds": [
     "claim-hs3-mansang-1754"
    ],
@@ -3845,10 +4009,10 @@
    "itemId": "hs-joseon-late-jangsi",
    "eventId": "event-hs3-jangsi",
    "title": "장시",
-   "startYear": 1700,
+   "startYear": 1679,
    "endYear": 1800,
    "kind": "market",
-   "summary": "닷새마다 서는 장이 고을마다 열려 가까운 네댓 개가 한 상권을 이루었다. 18세기 후반 전국 장문은 1,062개에 이르렀고, 안성장은 그 가운데 이름난 큰 장이었다.",
+   "summary": "닷새마다 서는 장이 고을마다 열려 가까운 네댓 개가 한 상권을 이루었다. 18세기 후반 전국 장문은 1,062개에 이르렀다. 장면 기간은 시장 번창이 확인되는 1679년부터 항목이 잡은 18세기 끝까지로 잡았고, 무대는 항목이 대표 장시로 잡은 안성장을 따랐다.",
    "dateClaimIds": [
     "claim-hs3-sijang-1679"
    ],
@@ -3883,7 +4047,7 @@
    },
    "category": "economy",
    "region": "central",
-   "decade": 1700,
+   "decade": 1670,
    "relatedClaimIds": [
     "claim-hs3-sijang-haengsang"
    ],
@@ -3894,10 +4058,10 @@
    "itemId": "hs-joseon-late-mining",
    "eventId": "event-hs3-mining",
    "title": "민영 광산과 덕대",
-   "startYear": 1700,
+   "startYear": 1651,
    "endYear": 1800,
    "kind": "excavation",
-   "summary": "1651년 설점수세 정책으로 채굴권이 민간에 넘어가자 민영 광업이 커졌다. 물주가 돈을 대고 덕대가 일꾼을 부려 캐는 방식이 자리 잡았고, 단천은 은이 나기로 이름난 곳이었다.",
+   "summary": "1651년 설점수세 정책으로 채굴권이 민간에 넘어가자 민영 광업이 커졌다. 물주가 돈을 대고 덕대가 일꾼을 부려 캐는 방식이 자리 잡았고, 단천은 조선시대에 은광으로 이름난 곳이었다. 장면 기간은 근거 연도인 1651년부터 항목이 잡은 18세기 끝까지로 잡았다.",
    "dateClaimIds": [
     "claim-hs3-deokdae-1651"
    ],
@@ -3932,8 +4096,10 @@
    },
    "category": "economy",
    "region": "north",
-   "decade": 1700,
-   "sceneFunction": "kiln"
+   "decade": 1650,
+   "relatedClaimIds": [
+    "claim-hs3-tancheon-eungwang"
+   ]
   },
   {
    "id": "scene-hs3-sasang",
@@ -4016,7 +4182,7 @@
    },
    "participants": [
     {
-     "entityId": "person-hs-i-ik",
+     "entityId": "person-encykorea-yi-ik-e0045562",
      "role": "scholar",
      "presence": "on-site",
      "side": "a",
@@ -4061,7 +4227,7 @@
     "claim-hs3-yangmyeong-defi"
    ],
    "place": {
-    "label": "강화 하곡",
+    "label": "강화도 일대",
     "medium": "land",
     "precision": "area",
     "lon": 126.433,
@@ -4072,7 +4238,7 @@
     "coordinateSourceIds": [
      "src-hs3-ko-ganghwado"
     ],
-    "coordinateNote": "정제두가 옮겨 산 하곡은 강화도 안이다. 하곡 자체의 좌표를 못 구해 강화도 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "정제두가 옮겨 산 하곡(현 강화군 양도면 하일리)의 십진 좌표를 구하지 못해 강화도 표시 좌표를 권역 대표점으로 썼고, 하곡과는 약 9km 떨어져 있다.",
     "setting": "academy"
    },
    "participants": [
@@ -4110,8 +4276,8 @@
    "decade": 1650,
    "year": 1651,
    "yearVerbatim": "1651년(효종 2)",
-   "placeLabel": "평택 대동법시행기념비",
-   "modernPlace": "경기도 평택시 소사동",
+   "placeLabel": "평택시 일대",
+   "modernPlace": "경기도 평택시(대동법시행기념비는 소사동)",
    "what": "대동법을 충청·전라로 넓히자고 밀어붙인 관료",
    "claimIds": [
     "claim-hs3-daedong-1651",
@@ -4123,7 +4289,7 @@
    ],
    "sceneId": "scene-hs3-kim-yuk",
    "confidence": "high",
-   "note": "[10한사1-02-02] · standard",
+   "note": "[10한사1-02-02] · standard · 기념비 자체의 십진 좌표를 구하지 못해 평택시 표시 좌표를 권역 대표점으로 썼다. 소사동과는 약 6km 떨어져 라벨을 권역으로 낮췄다.",
    "lon": 127.112821,
    "lat": 36.992236,
    "coordinateBasis": "location claim-hs3-loc-pyeongtaek"
@@ -4172,7 +4338,7 @@
    ],
    "sceneId": "scene-hs3-naseon",
    "confidence": "medium",
-   "note": "[10한사1-02-01] · standard · 해외(중국 헤이룽장성) 사건이다. 전투 지점의 좌표가 남아 있지 않아 쑹화강이 헤이룽강에 합류하는 퉁장 일대를 대표점으로 썼다.",
+   "note": "[10한사1-02-01] · standard · 해외(중국 헤이룽장성) 사건이다. 전투 지점의 좌표가 남아 있지 않아 쑹화강이 헤이룽강에 합류하는 퉁장 일대를 대표점으로 썼다. 항목이 준 sceneFunction naval_expedition 을 되살렸다.",
    "lon": 132.5,
    "lat": 47.65,
    "coordinateBasis": "location claim-hs3-loc-tongjiang"
@@ -4189,6 +4355,7 @@
    "modernPlace": "충청북도 괴산군 청천면",
    "what": "북벌과 예송을 이끈 서인·노론의 우두머리 학자",
    "claimIds": [
+    "claim-hs3-yesong-1659",
     "claim-hs3-song-born",
     "claim-hs3-song-died",
     "claim-hs3-song-defi",
@@ -4200,7 +4367,7 @@
    ],
    "sceneId": "scene-hs3-song-siyeol",
    "confidence": "high",
-   "note": "[10한사1-01-04] · standard · 연도는 기해예송이 일어난 1659년을 활동의 대표 시점으로 잡았다.",
+   "note": "[10한사1-01-04] · standard · 연도는 기해예송이 일어난 1659년을 활동의 대표 시점으로 잡았고, 그 연도 근거(claim-hs3-yesong-1659)를 이 사실의 근거에 넣었다.",
    "lon": 127.81194,
    "lat": 36.66917,
    "coordinateBasis": "location claim-hs3-loc-hwayang"
@@ -4225,7 +4392,7 @@
    ],
    "sceneId": "scene-hs3-yesong",
    "confidence": "high",
-   "note": "[10한사1-01-04] · standard · 왕실 상례가 걸린 논쟁이라 종묘를 대표 무대로 잡았다. 논쟁 자체는 조정에서 벌어졌다.",
+   "note": "[10한사1-01-04] · standard · 왕실 상례가 걸린 논쟁이라 종묘를 대표 무대로 잡았다. 논쟁 자체는 조정에서 벌어졌으며, 이 사실은 장면 요약과 좌표 설명에도 적었다.",
    "lon": 126.99417,
    "lat": 37.57444,
    "coordinateBasis": "location claim-hs3-loc-jongmyo"
@@ -4238,8 +4405,8 @@
    "decade": 1670,
    "year": 1670,
    "yearVerbatim": "1670년(현종 12년)",
-   "placeLabel": "부안 우반동(반계서당)",
-   "modernPlace": "전북특별자치도 부안군 보안면 우동리",
+   "placeLabel": "부안군 일대",
+   "modernPlace": "전북특별자치도 부안군(반계서당은 보안면 우동리)",
    "what": "신분에 따라 땅을 나누자는 균전론을 편 실학의 선구",
    "claimIds": [
     "claim-hs3-yu-1670",
@@ -4251,7 +4418,7 @@
    ],
    "sceneId": "scene-hs3-yu-hyeongwon",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard",
+   "note": "[10한사1-02-04] · standard · 반계서당·우반동의 십진 좌표를 구하지 못해 부안군 표시 좌표를 권역 대표점으로 썼다. 우반동과는 약 14km 떨어져 라벨을 권역으로 낮췄다.",
    "lon": 126.731944454,
    "lat": 35.7280555656,
    "coordinateBasis": "location claim-hs3-loc-buan"
@@ -4316,21 +4483,21 @@
    "decade": 1680,
    "year": 1680,
    "yearVerbatim": "1680년(숙종 6)",
-   "placeLabel": "창덕궁",
+   "placeLabel": "창덕궁 돈화문",
    "modernPlace": "서울특별시 종로구 와룡동",
    "what": "남인이 밀려나고 서인이 권력을 잡은 첫 환국",
    "claimIds": [
     "claim-hs3-gyeongsin-1680",
     "claim-hs3-gyeongsin-act",
     "claim-hs3-sukjong-hwanguk",
-    "claim-hs3-loc-changdeokgung"
+    "claim-hs3-loc-donhwamun"
    ],
    "sceneId": "scene-hs3-gyeongsin-hwanguk",
    "confidence": "high",
-   "note": "[10한사1-01-04] · standard",
-   "lon": 126.99278,
-   "lat": 37.57944,
-   "coordinateBasis": "location claim-hs3-loc-changdeokgung"
+   "note": "[10한사1-01-04] · standard · 처분이 내려진 전각을 특정할 수 없어 창덕궁 정문 돈화문을 대표점으로 썼다. 궁 전체 좌표를 쓰면 같은 권역의 다른 장면과 자리가 겹친다.",
+   "lon": 126.989,
+   "lat": 37.577,
+   "coordinateBasis": "location claim-hs3-loc-donhwamun"
   },
   {
    "id": "fact-hs-jl3-010",
@@ -4340,7 +4507,7 @@
    "decade": 1680,
    "year": 1680,
    "yearVerbatim": "1680년(숙종 6)",
-   "placeLabel": "창경궁",
+   "placeLabel": "경희궁(조선 후기 경덕궁)",
    "modernPlace": "서울특별시 종로구 와룡동",
    "what": "집권 붕당이 한꺼번에 뒤바뀐 정치 격변",
    "claimIds": [
@@ -4349,14 +4516,14 @@
     "claim-hs3-gapsul-1694",
     "claim-hs3-sukjong-hwanguk",
     "claim-hs3-gapsul-act",
-    "claim-hs3-loc-changgyeonggung"
+    "claim-hs3-loc-gyeonghuigung"
    ],
    "sceneId": "scene-hs3-hwanguk",
    "confidence": "high",
-   "note": "[10한사1-01-04] · core",
-   "lon": 126.99598,
-   "lat": 37.57843,
-   "coordinateBasis": "location claim-hs3-loc-changgyeonggung"
+   "note": "[10한사1-01-04] · core · 세 차례 환국을 묶은 총괄 항목이다. 실제 처분은 창덕궁·창경궁 등에서 이루어졌고, 개별 환국 장면과 자리가 겹치지 않도록 경희궁 표시 좌표를 대표점으로 썼다.",
+   "lon": 126.9683194,
+   "lat": 37.5711917,
+   "coordinateBasis": "location claim-hs3-loc-gyeonghuigung"
   },
   {
    "id": "fact-hs-jl3-011",
@@ -4403,7 +4570,7 @@
    ],
    "sceneId": "scene-hs3-gisa-hwanguk",
    "confidence": "high",
-   "note": "[10한사1-01-04] · standard",
+   "note": "[10한사1-01-04] · standard · 항목이 준 sceneFunction civil_conflict 를 되살렸다.",
    "lon": 126.9949722,
    "lat": 37.5787833,
    "coordinateBasis": "location claim-hs3-loc-munjeongjeon"
@@ -4464,7 +4631,7 @@
    "region": "central",
    "decade": 1700,
    "year": 1700,
-   "yearVerbatim": "18세기",
+   "yearVerbatim": "18세기(어림)",
    "placeLabel": "예산 덕산 보부상 근거지",
    "modernPlace": "충청남도 예산군 덕산면",
    "what": "장시를 돌며 물건을 나른 봇짐·등짐 장수",
@@ -4478,7 +4645,7 @@
    ],
    "sceneId": "scene-hs3-bobusang",
    "confidence": "medium",
-   "note": "[10한사1-02-03] · standard · 연도 1700~1800은 항목이 잡은 어림 기간이다. 근거로 삼은 확실한 연도는 1679년(경상도 대동법 시행 뒤 시장 번창)이다.",
+   "note": "[10한사1-02-03] · standard · 연도 1700은 항목이 잡은 18세기 어림값이다. 근거로 삼은 확실한 연도는 1679년(경상도 대동법 시행 뒤 시장 번창)이라 장면 기간만 1679년부터로 넓혔다.",
    "lon": 126.84500001,
    "lat": 36.6791666767,
    "coordinateBasis": "location claim-hs3-loc-yesan"
@@ -4490,7 +4657,7 @@
    "region": "central",
    "decade": 1700,
    "year": 1700,
-   "yearVerbatim": "18세기",
+   "yearVerbatim": "18세기(어림)",
    "placeLabel": "개성 인삼밭",
    "modernPlace": "개성특별시",
    "what": "팔기 위해 인삼·담배 같은 작물을 기르기 시작",
@@ -4515,8 +4682,8 @@
    "region": "north",
    "decade": 1700,
    "year": 1700,
-   "yearVerbatim": "18세기",
-   "placeLabel": "의주 중강",
+   "yearVerbatim": "18세기(어림)",
+   "placeLabel": "의주군 일대(압록강 하류)",
    "modernPlace": "평안북도 의주군",
    "what": "국경에서 열린 공식·비공식 청·일 무역",
    "claimIds": [
@@ -4524,11 +4691,13 @@
     "claim-hs3-chaekmun-1660",
     "claim-hs3-hoeryeong-1638",
     "claim-hs3-mansang-1754",
-    "claim-hs3-loc-uiju"
+    "claim-hs3-loc-uiju",
+    "claim-hs3-waegwan-defi",
+    "claim-hs3-waegwan-dongnae"
    ],
    "sceneId": "scene-hs3-gaesi-husi",
    "confidence": "high",
-   "note": "[10한사1-02-01] · standard · 중강은 의주 맞은편 압록강의 섬이다. 좌표는 의주군 표시 좌표를 대표점으로 썼다.",
+   "note": "[10한사1-02-01] · standard · 좌표는 중강 자체가 아니라 의주군 표시 좌표를 권역 대표점으로 쓴 값이며, 항목이 잡은 중강 추정 지점과는 약 11km 떨어져 라벨을 권역으로 낮췄다. 청 쪽 근거(중강·책문·회령)에 더해 일본 쪽은 동래 왜관 무역 근거를 넣었다. 장면 기간은 책문후시가 열린 1660년부터로 넓혔다.",
    "lon": 124.53194,
    "lat": 40.19694,
    "coordinateBasis": "location claim-hs3-loc-uiju"
@@ -4540,7 +4709,7 @@
    "region": "south",
    "decade": 1700,
    "year": 1700,
-   "yearVerbatim": "18세기",
+   "yearVerbatim": "18세기(어림)",
    "placeLabel": "김제 벽골제 들녘",
    "modernPlace": "전북특별자치도 김제시 부량면",
    "what": "한 사람이 넓은 땅을 부치는 사이 땅을 잃고 품을 파는 농민이 늘어남",
@@ -4564,7 +4733,7 @@
    "region": "central",
    "decade": 1700,
    "year": 1700,
-   "yearVerbatim": "18세기",
+   "yearVerbatim": "18세기(어림)",
    "placeLabel": "안성장",
    "modernPlace": "경기도 안성시",
    "what": "닷새마다 열려 지역을 잇던 정기 시장",
@@ -4577,7 +4746,7 @@
    ],
    "sceneId": "scene-hs3-jangsi",
    "confidence": "medium",
-   "note": "[10한사1-02-02] · standard · 연도 1700~1800은 항목이 잡은 어림 기간이다. 근거로 삼은 확실한 연도는 1679년(경상도 대동법 시행 뒤 시장 번창)이다.",
+   "note": "[10한사1-02-02] · standard · 연도 1700은 항목이 잡은 18세기 어림값이다. 근거로 삼은 확실한 연도는 1679년(경상도 대동법 시행 뒤 시장 번창)이라 장면 기간만 1679년부터로 넓혔다.",
    "lon": 127.267,
    "lat": 37.0,
    "coordinateBasis": "location claim-hs3-loc-anseong"
@@ -4589,7 +4758,7 @@
    "region": "north",
    "decade": 1700,
    "year": 1700,
-   "yearVerbatim": "18세기",
+   "yearVerbatim": "18세기(어림)",
    "placeLabel": "단천 은광",
    "modernPlace": "함경남도 단천시",
    "what": "상인이 자본을 대고 덕대가 일꾼을 부린 광산 경영",
@@ -4597,11 +4766,12 @@
     "claim-hs3-deokdae-1651",
     "claim-hs3-deokdae-defi",
     "claim-hs3-deokdae-sageum",
-    "claim-hs3-loc-tanchon"
+    "claim-hs3-loc-tanchon",
+    "claim-hs3-tancheon-eungwang"
    ],
    "sceneId": "scene-hs3-mining",
    "confidence": "medium",
-   "note": "[10한사1-02-02] · extended · 연도 1700~1800은 항목이 잡은 어림 기간이다. 근거로 삼은 확실한 연도는 1651년(설점수세 정책 실시)이다. 단천 은광의 갱구 좌표는 못 구해 단천시 표시 좌표를 썼다.",
+   "note": "[10한사1-02-02] · extended · 연도 1700은 항목이 잡은 18세기 어림값이다. 근거로 삼은 확실한 연도는 1651년(설점수세 정책 실시)이라 장면 기간만 1651년부터로 넓혔다. 단천이 조선시대 은광으로 이름났다는 것은 위키백과 「단천시」의 보조 발췌로 뒷받침했고, 갱구 좌표는 구하지 못해 단천시 표시 좌표를 썼다. 항목에 없던 sceneFunction kiln(가마)은 은광 갱도와 맞지 않아 뺐다.",
    "lon": 128.911,
    "lat": 40.458,
    "coordinateBasis": "location claim-hs3-loc-tanchon"
@@ -4613,7 +4783,7 @@
    "region": "central",
    "decade": 1700,
    "year": 1700,
-   "yearVerbatim": "18세기",
+   "yearVerbatim": "18세기(어림)",
    "placeLabel": "한양 마포나루(경강)",
    "modernPlace": "서울특별시 마포구",
    "what": "관청에 매이지 않고 전국 유통을 쥔 큰 상인들",
@@ -4626,7 +4796,7 @@
    ],
    "sceneId": "scene-hs3-sasang",
    "confidence": "medium",
-   "note": "[10한사1-02-02] · standard · 연도 1700~1800은 항목이 잡은 어림 기간이다. 근거로 삼은 확실한 연도는 1785년(작대사목 반포)이다.",
+   "note": "[10한사1-02-02] · standard · 연도 1700은 항목이 잡은 18세기 어림값이다. 근거로 삼은 확실한 연도는 1785년(작대사목 반포)이다. 항목이 준 sceneFunction 은 market 이지만 무대를 경강상인의 마포나루로 잡았기에 harbor 로 두었다.",
    "lon": 126.9084,
    "lat": 37.5638,
    "coordinateBasis": "location claim-hs3-loc-mapo"
@@ -4638,7 +4808,7 @@
    "region": "central",
    "decade": 1700,
    "year": 1700,
-   "yearVerbatim": "18세기",
+   "yearVerbatim": "18세기(어림)",
    "placeLabel": "한양 남촌(목멱산 아래)",
    "modernPlace": "서울특별시 중구 필동",
    "what": "현실 문제를 풀려고 토지·상공업 개혁을 파고든 학풍",
@@ -4652,7 +4822,7 @@
    ],
    "sceneId": "scene-hs3-silhak",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · core · 연도 1700~1800은 항목이 잡은 어림 기간이다. 근거로 삼은 확실한 연도는 1763년(이익 사망)과 1741년(반계수록이 영조에게 올라감)이다.",
+   "note": "[10한사1-02-04] · core · 연도 1700은 항목이 잡은 18세기 어림값이다. 근거로 삼은 확실한 연도는 1763년(이익 사망)과 1741년(반계수록이 영조에게 올라감)이다. 이익은 저장소에 이미 있는 개체 person-encykorea-yi-ik-e0045562 를 재사용했다.",
    "lon": 126.991911,
    "lat": 37.549681,
    "coordinateBasis": "location claim-hs3-loc-namsan"
@@ -4665,8 +4835,8 @@
    "decade": 1700,
    "year": 1709,
    "yearVerbatim": "1709년",
-   "placeLabel": "강화 하곡",
-   "modernPlace": "인천광역시 강화군",
+   "placeLabel": "강화도 일대",
+   "modernPlace": "인천광역시 강화군(하곡은 양도면 하일리)",
    "what": "앎과 행함은 하나라며 성리학 한 갈래만 옳다는 분위기를 비판한 학문",
    "claimIds": [
     "claim-hs3-jeongjedu-1709",
@@ -4676,7 +4846,7 @@
    ],
    "sceneId": "scene-hs3-yangmyeonghak",
    "confidence": "high",
-   "note": "[10한사1-02-04] · extended",
+   "note": "[10한사1-02-04] · extended · 하곡 자체의 십진 좌표를 구하지 못해 강화도 표시 좌표를 권역 대표점으로 썼다. 하곡과는 약 9km 떨어져 라벨을 권역으로 낮췄다.",
    "lon": 126.433,
    "lat": 37.7,
    "coordinateBasis": "location claim-hs3-loc-ganghwa"

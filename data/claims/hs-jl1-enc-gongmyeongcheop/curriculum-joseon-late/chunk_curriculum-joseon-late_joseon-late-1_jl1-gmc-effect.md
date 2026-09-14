@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "polity-imjin-japanese-force"
+      "id": "polity-hs-joseon"
     },
     "note": "공명첩이 조선 후기 신분 제도를 문란하게 하는 요인이 되었다.",
     "fromSource": "src-hs-jl1-enc-gongmyeongcheop",

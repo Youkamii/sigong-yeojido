@@ -18,7 +18,7 @@ status: "draft"
       "lat": 39.043111,
       "precision": "area"
     },
-    "note": "대동강 북안 평양 중심부의 모란봉 표시 좌표를 왕검성 왕궁 대표점으로 썼다.",
+    "note": "평양 모란봉의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다.",
     "fromSource": "src-hs-ko-moranbong",
     "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-2_geo-moranbong",
     "quote": "39.043111; 125.762194",

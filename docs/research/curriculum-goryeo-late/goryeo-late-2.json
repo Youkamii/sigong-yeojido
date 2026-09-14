@@ -1,9 +1,9 @@
 {
   "job": "goryeo-late-2",
-  "sources": 15,
-  "excerpts": 19,
-  "chunkClaims": 87,
-  "excerptClaims": 19,
+  "sources": 16,
+  "excerpts": 20,
+  "chunkClaims": 89,
+  "excerptClaims": 20,
   "facts": 23,
   "factsByCategory": {
     "administration": 4,
@@ -14,8 +14,8 @@
     "settlement": 1,
     "war": 6
   },
-  "claims": 106,
-  "entities": 56,
+  "claims": 109,
+  "entities": 59,
   "rawFilesChecked": [
     {
       "source": "src-gl2-enc-sangjeong",
@@ -136,6 +136,14 @@
       "rawBytes": 176903,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-gl2-en-aewol",
+      "url": "https://en.wikipedia.org/wiki/Aewol",
+      "sha256": "9e05125cfe1b4194ab8f8f864d8483962889664914956c010ad530aa2cf08a30",
+      "rawBytes": 92074,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -150,12 +158,14 @@
     "started": 1789704000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-goryeo-late-2"
+    "sessionId": "workflow-goryeo-late-2",
+    "revised": 1789740000
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-gl2-happo"
+    "event-gl2-gwiju",
+    "place-gl2-gwijuseong"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-gwangbok-def",
+    "subject": "event-hs-c1-gwangbok",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-c1-korea"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_gwangbok-def",
+    "quote": "일제의 식민통치로부터 벗어나 독립을 되찾은 사건",
+    "note": "식민통치가 끝나고 국권을 되찾았다는 서술.",
+    "fromSource": "src-ek-gwangbok",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

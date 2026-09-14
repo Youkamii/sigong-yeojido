@@ -1,0 +1,151 @@
+{
+ "job": "goryeo-late-4",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-goryeo-late --job goryeo-late-4 -> exit 0. 'PASS: failures=0 warnings=0'. 집계: facts 21 / scenes 21 / claims 82 (chunkClaims 58, excerptClaims 24). category x 10년: person 6, war 6, administration 4, facility 2, economy 2, culture 1. region x 10년: central 11, south 9, north 1. 검수자 추가 검증: 로컬 chunk 인용 58건 전부를 data/sources/*/chunks.jsonl 에서 재조회해 quote 부분 문자열·sourceId 일치·time.verbatim 포함·date.raw 서기연 일치를 확인(불일치 0). 웹 원본 21개 파일의 sha256·byteLength 재계산 전부 일치. ko.wikipedia/en.wikipedia 5개 URL 을 urllib 로 실시간 재조회해 발췌 좌표 문자열이 현재 문서에도 그대로 있음을 확인(Bongjeongsa, 흥덕사지, 위화도, Sonjuk Bridge, 홍산면 모두 LIVE-OK). images.json 21건 접두어·인물 조항·sceneId 대응 전부 정상.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-late-hongsan-victory",
+   "items": [
+    "hs-goryeo-late-hongsan-victory",
+    "hs-goryeo-late-hwatong-dogam",
+    "hs-goryeo-late-choe-museon",
+    "hs-goryeo-late-hwangsan-victory",
+    "hs-goryeo-late-jinpo-victory",
+    "hs-goryeo-late-gwaneumpo-victory",
+    "hs-goryeo-late-tsushima-expedition",
+    "hs-goryeo-late-goryeo-fall"
+   ],
+   "factId": "fact-hs-gl4-009, fact-hs-gl4-010, fact-hs-gl4-012, fact-hs-gl4-013, fact-hs-gl4-014, fact-hs-gl4-015, fact-hs-gl4-017, fact-hs-gl4-020",
+   "problem": "fact.note 의 성취기준 코드가 항목(items.json)과 다르다. 8건 중 7건은 항목의 [10한사1-02-01] 을 [10한사1-01-02] 로 숫자를 뒤바꿔 적었고(홍산 대첩·화통도감·최무선·황산 대첩·진포 대첩·관음포 대첩·박위의 쓰시마 정벌), 고려의 멸망은 항목의 [10한사1-01-03] 을 [10한사1-01-02] 로 적었다. 두 코드 모두 실제로 존재하는 성취기준이라 화면 카드의 교육과정 표시가 조용히 틀린 단원을 가리킨다. 21건 중 8건(38%)이 해당한다.",
+   "fix": "fact-hs-gl4-009/010/012/013/014/015/017 의 note 앞머리를 [10한사1-02-01] 로, fact-hs-gl4-020 을 [10한사1-01-03] 으로 고친다. 나머지 13건은 항목과 일치하므로 건드리지 않는다.",
+   "evidence": "items.json hs-goryeo-late-hongsan-victory.curriculum.standard = '[10한사1-02-01]' (verified true) 인데 result.json fact-hs-gl4-009.note = '[10한사1-01-02] · core · 최영이 입술에 화살을 맞고도 …'. items.json hs-goryeo-late-goryeo-fall.curriculum.standard = '[10한사1-01-03]' 인데 fact-hs-gl4-020.note = '[10한사1-01-02] · standard · 7월 12일 폐위…'. 대조는 21건 전부에 대해 스크립트로 수행했고 위 8건만 불일치했다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-late-seonggyungwan-reform",
+   "items": [
+    "hs-goryeo-late-seonggyungwan-reform",
+    "hs-goryeo-late-yi-saek",
+    "hs-goryeo-late-buseoksa-muryangsujeon",
+    "hs-goryeo-late-choe-yeong",
+    "hs-goryeo-late-hongsan-victory",
+    "hs-goryeo-late-hwatong-dogam",
+    "hs-goryeo-late-jikji",
+    "hs-goryeo-late-choe-museon",
+    "hs-goryeo-late-hwangsan-victory",
+    "hs-goryeo-late-jinpo-victory",
+    "hs-goryeo-late-gwaneumpo-victory",
+    "hs-goryeo-late-wihwado-retreat",
+    "hs-goryeo-late-tsushima-expedition",
+    "hs-goryeo-late-gwajeonbeop",
+    "hs-goryeo-late-jo-jun",
+    "hs-goryeo-late-goryeo-fall",
+    "hs-goryeo-late-jeong-mongju"
+   ],
+   "factId": "fact-hs-gl4-005 외 16건",
+   "problem": "fact.what 이 항목의 meaning 을 그대로 옮기지 않고 다시 쓴 것이 21건 중 17건이다. 형식 정본(docs/research/curriculum-items-brief.md 항목 대응표)은 meaning → fact.what(그대로) 로 못박았고, 이미 검증을 통과한 참조 칸 curriculum-joseon-early/joseon-early-2 는 23건 전부 meaning 과 글자까지 같다. 뜻이 크게 어긋난 곳은 없지만 몇 건은 항목이 강조한 대목이 사라졌다 — 관음포 대첩은 항목의 '정지가 화포로' 가 빠져 주체와 화포가 모두 지워졌고, 과전법은 '권문세족의 농장을 없애고 … 수조권' 이 '땅 문서를 새로 정리해' 로 바뀌어 제도의 핵심이 흐려졌으며, 최무선은 '우리 손으로 화포를 만든 과학자이자 장수' 가 '기술자' 로 좁아졌다.",
+   "fix": "17건의 fact.what 을 items.json 의 meaning 문자열로 되돌린다. 조사자가 새로 쓴 문장은 scene.summary 와 fact.note 에서 살린다(그쪽은 조사자 서술이 정본이다).",
+   "evidence": "항목 hs-goryeo-late-gwaneumpo-victory.meaning='정지가 화포로 왜구 함대를 무찌른 남해 해전' vs fact-hs-gl4-015.what='적은 배로 큰 왜구 함대를 깨뜨린 남해의 싸움'. 항목 hs-goryeo-late-gwajeonbeop.meaning='권문세족의 농장을 없애고 관리에게 수조권을 다시 나눈 토지 제도' vs fact-hs-gl4-018.what='땅 문서를 새로 정리해 벼슬아치에게 나눠 준 새 토지 제도'. 참조 칸 joseon-early-2 는 what!=meaning 이 0건."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-late-jo-jun",
+   "items": [
+    "hs-goryeo-late-jo-jun",
+    "hs-goryeo-late-choe-yeong",
+    "hs-goryeo-late-goryeo-fall",
+    "hs-goryeo-late-gwajeonbeop"
+   ],
+   "sceneId": "scene-gl4-jojun, scene-gl4-choeyeong, scene-gl4-fall, scene-gl4-gwajeon",
+   "problem": "개경 항목끼리 좌표가 소수점까지 똑같아 지도에서 한 점에 겹친다. (1) 최영 scene-gl4-choeyeong 과 조준 scene-gl4-jojun 이 둘 다 개성시 표시 좌표 126.55 / 37.966667 로 거리 0km, (2) 과전법 scene-gl4-gwajeon 과 고려의 멸망 scene-gl4-fall 이 둘 다 만월대 126.543333 / 37.985 로 거리 0km. 지침은 사건은 도시 중심점이 아니라 구체 장소(궁궐·관아·성문·전장·항구)를 찾아 같은 도시 항목이 한 점에 겹치지 않게 다. 조사자도 coordinateNote 에 최영 장면과 같은 대표점이다 라고 겹침을 인정만 하고 넘어갔다. 화통도감(126.5528/37.9717)까지 포함하면 개경 9건 중 5건이 반경 0.8km 안에 몰린다.",
+   "fix": "네 항목 가운데 최소 두 곳을 이미 확보한 다른 개경 대표점으로 옮긴다. 조준은 이미 발췌가 있는 개경 남대문(src-gl4-en-namdaemun, 126.5581/37.9692)이나 성균관 쪽으로, 고려의 멸망은 만월대를 유지하되 과전법을 다른 지점(개성 첨성대·남대문 발췌)으로 옮기는 식이 간단하다. 옮긴 근거는 place.claimIds·coordinateSourceIds·coordinateNote 와 fact.lon/lat·coordinateBasis 를 함께 고친다.",
+   "evidence": "scene-gl4-choeyeong.place = {lon 126.55, lat 37.966667, claimIds ['claim-gl4-loc-gaeseong']}, scene-gl4-jojun.place 도 동일. scene-gl4-gwajeon.place = {lon 126.543333, lat 37.985, claimIds ['claim-gl4-loc-manwoldae']}, scene-gl4-fall.place 도 동일. 21개 장면 좌표 전수 거리 계산에서 0.0km 쌍이 세 쌍 나왔다(나머지 한 쌍은 별도 minor 항목)."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-late-bongjeongsa-geungnakjeon",
+   "items": [
+    "hs-goryeo-late-bongjeongsa-geungnakjeon",
+    "hs-goryeo-late-buseoksa-muryangsujeon"
+   ],
+   "factId": "fact-hs-gl4-001, fact-hs-gl4-007",
+   "problem": "두 문화재 항목의 근거가 좌표까지 포함해 전부 위키백과다. 봉정사 극락전(core)은 claim 3건(claim-gl4-bongjeong-1363 / claim-gl4-bongjeong-oldest / claim-gl4-loc-bongjeongsa)이 모두 ko/en 위키백과 발췌이고, 부석사 무량수전도 3건 모두 위키백과다. 근거 우선순위(docs/research/curriculum-items-brief.md)는 로컬 chunk → 우리역사넷·민백·국가유산포털 순이고 위키백과는 좌표 보조로만 이라고 못박았다. 로컬 chunk 에는 두 건물 관련 원문이 없다는 점은 확인했으나(search_chunks 로 봉정사 극락전·무량수전 검색 결과 0건), 참조 칸 joseon-early-2 가 encykorea 문서 27건을 직접 내려받아 쓴 것처럼 웹 2순위 출처를 받아 쓸 여지가 남아 있었다. 다만 두 발췌 문장 자체는 국가유산청 해설을 옮긴 위키백과 본문이고 사실관계(1363년 상량문 중수, 1358년 소실·1376년 중창)는 원문 문맥에서 확인했다.",
+   "fix": "한국민족문화대백과(encykorea.aks.ac.kr) 또는 우리역사넷의 안동 봉정사 극락전·영주 부석사 무량수전 문서를 raw/ 에 내려받아 연대·성격 claim 의 근거를 그쪽 발췌로 바꾸고, 위키백과는 좌표 claim(claim-gl4-loc-bongjeongsa, claim-gl4-loc-buseoksa)에만 남긴다. heritage.go.kr 이 열리지 않으면 그 사실을 fact.note 에 적는다.",
+   "evidence": "result.json sources 21건이 모두 wikipedia.org 이고 encykorea·contents.history.go.kr 웹 출처는 0건. fact-hs-gl4-001.claimIds 3건 전부 citesExcerpt. raw/ko-bongjeongsa-geungnakjeon.html 본문 문맥: '1972년 보수공사때 고려 공민왕 12년(1363)에 지붕을 크게 수리하였다는 기록이 담긴 상량문을 발견하였는데 … 건립연대를 1200년대 초로 추정할 수 있어 우리나라에서 가장 오래된 목조 건물로 보고 있다' — 발췌 왜곡은 없다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-yi-saek",
+   "items": [
+    "hs-goryeo-late-yi-saek",
+    "hs-goryeo-late-seonggyungwan-reform"
+   ],
+   "sceneId": "scene-gl4-yisaek",
+   "problem": "이색 초상 장면과 성균관 중영 장면의 좌표가 126.57072 / 37.992 로 똑같아 지도에서 두 표지가 완전히 포개진다. 이색이 대사성으로 이끈 곳이 바로 그 성균관이라 근거상으로는 맞지만 표시상으로는 한 점 겹침이다.",
+   "fix": "이색 초상을 성균관 경내 안에서 다른 지점으로 두거나(좌표 근거를 새로 대야 한다), 이색은 1392년 한주 유배·판개성부사 같은 다른 활동 지점으로 옮긴다. 그대로 두려면 place.coordinateNote 의 현재 설명을 fact.note 에도 남겨 화면 검수 때 중복 신고가 반복되지 않게 한다.",
+   "evidence": "scene-gl4-seonggyungwan.place 와 scene-gl4-yisaek.place 의 lon/lat 가 동일(둘 다 claim-gl4-loc-songgyungwan). 거리 0.0km."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-tsushima-expedition",
+   "claimId": "claim-gl4-daemado-bakwi",
+   "sceneId": "scene-gl4-daemado",
+   "problem": "쓰시마 정벌 장면의 유일한 행위 근거(actionClaimIds 1건)가 위키백과 홍산대첩 문서 머리말의 나열 문장 '박위의 대마도 정벌' 세 단어다. 다른 사건을 다루는 문서에서 이름만 스쳐 지나가는 대목이라 정벌의 내용을 뒷받침하지 못한다. 실제 행위 근거는 dateClaimIds 쪽 고려사 chunk(慶尙道元帥 朴葳擊對馬島)가 혼자 지고 있다. 덧붙여 scene.summary 의 '왜구를 바다에서 막던 방어를 넘어 근거지를 직접 친 첫 시도다' 는 어느 claim 에도 근거가 없다.",
+   "fix": "claim-gl4-daemado-bakwi 를 로컬 고려사 박위 열전 chunk 로 바꾼다 — chunk_goryeosa_kr_116_0010_0040_0020(卷116 列傳 諸臣 박위 › 창왕이 박위의 공을 치하하는 교서를 내리다)에 정벌의 전과가 적혀 있다. summary 의 '첫 시도' 는 근거를 달거나 문장을 뺀다.",
+   "evidence": "raw/ko-hongsan-daecheop.html 머리말: '최무선의 진포 대첩, 이성계의 황산대첩, 정지의 관음포 전투, 박위의 대마도 정벌 등과 함께 고려 말 왜구와의 전투 가운데 뛰어난 성과로 평가받고 있다'. scene-gl4-daemado.actionClaimIds = ['claim-gl4-daemado-bakwi'] 하나뿐."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-buseoksa-muryangsujeon",
+   "factId": "fact-hs-gl4-007",
+   "problem": "region 배정이 같은 위도대 안에서 엇갈린다. 부석사 무량수전(위도 36.9989)은 central 인데, 그보다 0.35도 남쪽일 뿐인 봉정사 극락전(36.6533)과 흥덕사(36.6439)는 south 다. 지침의 35~37도 구간 기준(대전 이남을 south)으로 보면 세 곳 모두 대전(약 36.35도)보다 북쪽이라 같은 권역이어야 하고, 37도 절단으로 보면 세 곳 모두 south 여야 한다. 어느 쪽으로 읽어도 부석사만 혼자 다르다.",
+   "fix": "세 항목의 기준을 하나로 맞춘다. 부석사를 south 로 내리거나(봉정사·흥덕사와 같은 처리) 봉정사·흥덕사를 central 로 올린다. 어느 쪽을 골랐는지 fact.note 에 한 줄 남기고 fact 와 scene 의 region 을 같이 고친다.",
+   "evidence": "fact-hs-gl4-007 region 'central' (lat 36.9988527), fact-hs-gl4-001 region 'south' (lat 36.65333), fact-hs-gl4-011 region 'south' (lat 36.64389). 집계표 central 11 / south 9."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-hwangsan-victory",
+   "items": [
+    "hs-goryeo-late-hwangsan-victory",
+    "hs-goryeo-late-jinpo-victory"
+   ],
+   "factId": "fact-hs-gl4-013, fact-hs-gl4-014",
+   "problem": "modernPlace 의 행정구역 이름이 항목과 다르다. 항목은 전북특별자치도 남원시 운봉읍 화수리·전북특별자치도 군산시 인데 fact 는 전라북도 남원시 운봉읍 화수리·전라북도 군산시·충청남도 서천군 일대 로 옛 이름을 썼다. 화면 카드에 그대로 나가는 문자열이다.",
+   "fix": "fact-hs-gl4-013.modernPlace 를 '전북특별자치도 남원시 운봉읍 화수리', fact-hs-gl4-014.modernPlace 를 '전북특별자치도 군산시·충청남도 서천군 일대' 로 바꾼다.",
+   "evidence": "items.json hs-goryeo-late-hwangsan-victory.place.modern = '전북특별자치도 남원시 운봉읍 화수리', hs-goryeo-late-jinpo-victory.place.modern = '전북특별자치도 군산시 · 충청남도 서천군'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-sindon",
+   "problem": "신돈 개체를 person-hs-sindon 으로 새로 만들었는데, 같은 컬렉션의 이웃 칸 curriculum-goryeo-late/goryeo-late-3 은 같은 인물을 person-gl3-sindon 으로 쓰고 있다. 저장소에 person-gl3-sindon.md 와 person-hs-sindon.md 가 둘 다 들어가 있어 신돈이 지도·개체 그래프에서 두 사람으로 갈린다. 지침은 기존 개체 id 재사용 이다. 이색·조준·박위의 person-hs-* 는 저장소에 다른 id 가 없어 문제 없다.",
+   "fix": "두 칸 가운데 하나로 id 를 맞춘다. goryeo-late-4 쪽을 person-gl3-sindon 으로 바꾸는 편이 변경 폭이 작다(claim-gl4-sindon-* 4건, scene-gl4-sindon·scene-gl4-jeonmin 의 participants, claim-gl4-jeonmin-act 의 object, entities[]). 어느 쪽으로 통일하든 남는 껍데기 .md 를 정리한다.",
+   "evidence": "data/entities/person/person-gl3-sindon.md 와 person-hs-sindon.md 가 모두 label 신돈 으로 존재하고 같은 커밋(75357259)에서 들어왔다. data/research 전체 grep: person-hs-sindon 8회(goryeo-late-4), person-gl3-sindon 2회(goryeo-late-3)."
+  }
+ ],
+ "checkedItems": [
+  "hs-goryeo-late-bongjeongsa-geungnakjeon",
+  "hs-goryeo-late-munikjeom-cotton",
+  "hs-goryeo-late-sindon",
+  "hs-goryeo-late-jeonmin-byeonjeong-dogam",
+  "hs-goryeo-late-seonggyungwan-reform",
+  "hs-goryeo-late-yi-saek",
+  "hs-goryeo-late-buseoksa-muryangsujeon",
+  "hs-goryeo-late-choe-yeong",
+  "hs-goryeo-late-hongsan-victory",
+  "hs-goryeo-late-hwatong-dogam",
+  "hs-goryeo-late-jikji",
+  "hs-goryeo-late-choe-museon",
+  "hs-goryeo-late-hwangsan-victory",
+  "hs-goryeo-late-jinpo-victory",
+  "hs-goryeo-late-gwaneumpo-victory",
+  "hs-goryeo-late-wihwado-retreat",
+  "hs-goryeo-late-tsushima-expedition",
+  "hs-goryeo-late-gwajeonbeop",
+  "hs-goryeo-late-jo-jun",
+  "hs-goryeo-late-goryeo-fall",
+  "hs-goryeo-late-jeong-mongju"
+ ],
+ "summary": "검증기는 PASS(exit 0, failures 0, warnings 0)다. 항목 21건(items.json range 1363~1392, 지시문의 22건 1360~1392 와는 입력 파일 기준으로 차이가 있다)이 fact 21 / scene 21 / claim 82 로 빠짐없이 대응하고 missing[] 은 비어 있다. 근거 자체의 품질은 좋다 — 로컬 chunk 인용 58건을 전수 재조회해 quote·sourceId·time.verbatim·date.raw 연도가 모두 맞았고, 고려사·고려사절요 원문 문맥을 직접 읽어 본 결과 요약·note 의 세부(최영이 입술에 화살을 맞은 대목, 정지의 전함 47척 대 왜선 120척, 성균관 중영 때 품계에 따라 베를 거둔 일)가 모두 인용 chunk 본문에 실제로 있었다. 웹 원본 21개의 sha256·byteLength 가 전부 일치하고, 위키백과 5개 문서를 실시간 재조회해 좌표 발췌가 지금도 그대로임을 확인했다. 발췌 문맥 왜곡·교과서 문장 전재는 발견하지 못했고, 참여 인물 개체 id 12개는 모두 저장소에 실재하며, images.json 21건의 접두어·인물 조항·sceneId 대응도 정상이다. 고쳐야 할 것은 넷이다. (1) 성취기준 코드가 8건 틀렸다 — 7건은 [10한사1-02-01] 을 [10한사1-01-02] 로 숫자를 뒤바꿨고 고려의 멸망은 [10한사1-01-03] 을 잘못 적었다. 둘 다 실재하는 코드라 화면에서 조용히 틀린 단원을 가리킨다. (2) fact.what 이 항목 meaning 과 다른 것이 17건이다. 형식 정본은 그대로 이고 검증 통과한 참조 칸 joseon-early-2 는 23건 전부 일치한다. 관음포(정지가 화포로 가 사라짐)·과전법(수조권이 사라짐)처럼 항목이 강조한 대목이 빠진 곳이 있다. (3) 개경 항목 좌표가 소수점까지 같은 쌍이 셋이다(최영↔조준, 과전법↔고려의 멸망, 성균관 중영↔이색). 앞의 둘은 일반 대표점끼리의 겹침이라 고쳐야 한다. (4) 봉정사 극락전(core)·부석사 무량수전의 근거가 좌표까지 포함해 전부 위키백과다 — 근거 우선순위상 민백·우리역사넷 발췌로 바꿔야 한다. 이 밖에 쓰시마 정벌의 행위 근거가 위키백과 나열 문장 한 줄인 점, 부석사만 region 기준이 어긋난 점, 전북 행정구역 표기, 신돈 개체 id 가 이웃 칸과 갈린 점이 minor 다. major 4 / minor 5, verdict=fix."
+}

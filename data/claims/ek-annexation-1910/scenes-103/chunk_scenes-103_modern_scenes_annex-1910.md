@@ -130,7 +130,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-byeonghap-yiwanyong",
@@ -147,7 +147,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-byeonghap-sunjong",
@@ -164,7 +164,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

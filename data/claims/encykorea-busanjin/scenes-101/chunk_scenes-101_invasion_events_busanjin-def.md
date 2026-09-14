@@ -60,28 +60,6 @@ status: "draft"
     "generatedAt": "2026-09-07"
   },
   {
-    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-dn-1592",
-    "subject": "event-hs-jl1-dongnae",
-    "predicate": "syj:occurredIn",
-    "object": {
-      "kind": "time",
-      "verbatim": "1592년(선조 25) 4월 14일",
-      "year": 1592,
-      "precision": "day",
-      "earliest": 1592,
-      "latest": 1592,
-      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-dn-1592"
-    },
-    "citesChunk": "chunk_scenes-101_invasion_events_busanjin-def",
-    "quote": "1592년(선조 25) 4월 14일 정발(鄭撥) 등이 부산진에서 일본군과 싸운 전투.",
-    "note": "부산진 전투와 같은 날짜 기준. 동래성은 그 다음 날 함락되었다.",
-    "fromSource": "src-encykorea-busanjin",
-    "origin": "ai",
-    "status": "draft",
-    "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
-  },
-  {
     "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-im-busanjin",
     "subject": "event-hs-jl1-imjin-war",
     "predicate": "syj:tookPlaceAt",

@@ -1,9 +1,9 @@
 {
   "job": "goryeo-early-3",
-  "sources": 18,
-  "excerpts": 23,
-  "chunkClaims": 73,
-  "excerptClaims": 22,
+  "sources": 16,
+  "excerpts": 17,
+  "chunkClaims": 87,
+  "excerptClaims": 17,
   "facts": 23,
   "factsByCategory": {
     "administration": 3,
@@ -15,8 +15,8 @@
     "settlement": 1,
     "war": 4
   },
-  "claims": 95,
-  "entities": 69,
+  "claims": 104,
+  "entities": 57,
   "rawFilesChecked": [
     {
       "source": "src-hs-en-manwoldae",
@@ -71,8 +71,8 @@
       "url": "https://en.wikipedia.org/wiki/Kaesong_Walls",
       "sha256": "bd0c94cdd931cd50fe723ec8b4d20e5422191df3f44ff0d82dd58a0bfe5548c6",
       "rawBytes": 103192,
-      "excerpts": 2,
-      "quotedWords": 10
+      "excerpts": 1,
+      "quotedWords": 2
     },
     {
       "source": "src-hs-ko-byeollando",
@@ -95,8 +95,8 @@
       "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%9D%B8%EC%82%AC",
       "sha256": "d3494a1e66a86f4f540f894142ffda9e39bd29e48848d203ca40a442d933890e",
       "rawBytes": 129085,
-      "excerpts": 3,
-      "quotedWords": 20
+      "excerpts": 1,
+      "quotedWords": 2
     },
     {
       "source": "src-hs-ko-geumseonggwan",
@@ -139,28 +139,12 @@
       "quotedWords": 2
     },
     {
-      "source": "src-hs-ko-gyojang",
-      "url": "https://ko.wikipedia.org/wiki/%EA%B5%90%EC%9E%A5%EB%8F%84%EA%B0%90",
-      "sha256": "547973dbe41905c4f7da4afa0585fae4bd9a9fdedf06822d8d0cf837f873f8c6",
-      "rawBytes": 57553,
+      "source": "src-hs-en-namdaemun",
+      "url": "https://en.wikipedia.org/wiki/Kaesong_Namdaemun",
+      "sha256": "5daf09a270dba811d70fda427b592d1832e9fbab9b027836615dd1ed69711bc5",
+      "rawBytes": 91984,
       "excerpts": 1,
-      "quotedWords": 7
-    },
-    {
-      "source": "src-hs-ko-munbeol",
-      "url": "https://ko.wikipedia.org/wiki/%EB%AC%B8%EB%B2%8C%EA%B7%80%EC%A1%B1",
-      "sha256": "fcba288db7c75d72b34113f266303d2d81b6da52abbabe5be63488f47186899d",
-      "rawBytes": 50808,
-      "excerpts": 2,
-      "quotedWords": 22
-    },
-    {
-      "source": "src-hs-ko-uicheon",
-      "url": "https://ko.wikipedia.org/wiki/%EC%9D%98%EC%B2%9C",
-      "sha256": "71540680e2af3d3f11b7722194bbb4fa59d778bb3c2d01df215f75a88ef54139",
-      "rawBytes": 335729,
-      "excerpts": 1,
-      "quotedWords": 8
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -175,13 +159,14 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-goryeo-early-3"
+    "sessionId": "workflow-goryeo-early-3",
+    "revised": 1789380496
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "person-encykorea-uicheon",
-    "place-hs-gukcheongsa"
+    "event-hs-gyojang",
+    "place-hs-heungwangsa"
   ],
   "reviewedSourceIds": {
     "src-hs-ko-cheomseongdae": "src-curriculum-goryeo-early-goryeo-early-3-hs-ko-cheomseongdae"

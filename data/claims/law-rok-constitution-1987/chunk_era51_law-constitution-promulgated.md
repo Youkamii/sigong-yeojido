@@ -29,6 +29,28 @@ generated_by: "claude-opus-5"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-const-promul",
+    "subject": "event-hs-c4-constitution",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1987. 10. 29.",
+      "year": 1987,
+      "precision": "year",
+      "earliest": 1987,
+      "latest": 1987,
+      "id": "ts-curriculum-contemporary-contemporary-4-hs-c4-const-promul"
+    },
+    "citesChunk": "chunk_era51_law-constitution-promulgated",
+    "quote": "1987. 10. 29.",
+    "note": "현행 헌법의 공포일자다.",
+    "fromSource": "src-law-rok-constitution-1987",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

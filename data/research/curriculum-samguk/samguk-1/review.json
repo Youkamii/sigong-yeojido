@@ -1,0 +1,115 @@
+{
+ "job": "samguk-1",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-samguk --job samguk-1 → PASS: failures=0 warnings=0 (facts 24, scenes 24, claims 105, chunkClaims 51, excerptClaims 54). manifest 37건의 sha256·byteLength 재계산 전부 일치, raw 고아 파일 없음, run.json 키·모델·effort 규격 일치.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-samguk-onjo, hs-samguk-goi-wang, hs-samguk-pungnap-toseong, hs-samguk-gungnaeseong-move, hs-samguk-gogukcheon-wang, hs-samguk-micheon-wang, hs-samguk-goguryeo-buddhism, hs-samguk-taejo-wang, hs-samguk-jindaebeop, hs-samguk-sosurim-wang, hs-samguk-baekje-16-ranks, hs-samguk-geunchogo-wang",
+   "factId": "fact-hs-sg1-003, fact-hs-sg1-004, fact-hs-sg1-006, fact-hs-sg1-007, fact-hs-sg1-008, fact-hs-sg1-010, fact-hs-sg1-011, fact-hs-sg1-014, fact-hs-sg1-015, fact-hs-sg1-017, fact-hs-sg1-023, fact-hs-sg1-024",
+   "problem": "24개 항목 가운데 12개가 네 개의 좌표에 그대로 겹쳐 있다. 국내성(126.17861, 41.12083)에 천도·고국천왕·미천왕·불교 수용 4건, 지안(126.194, 41.1253)에 태조왕·진대법·소수림왕 3건, 풍납토성(127.12083, 37.53889)에 온조·고이왕·풍납토성 3건, 몽촌토성(127.12278, 37.52167)에 16관등제·근초고왕 2건이다. 게다가 국내성 점과 지안 점은 서로 2.5km 남짓이라 화면에서는 고구려 7개 항목이 사실상 두 점에 쌓인다. 지침의 '사건은 구체 장소로 잡아 같은 도시 항목이 한 점에 겹치지 않게' 규칙 위반이고, 이미 PASS 한 참고 칸(curriculum-joseon-early/joseon-early-2)은 23건 전부 좌표가 달라 경복궁 안에서도 사정전·근정전·수정전·간의대 터·보루각 터로 나눠 각각 location claim 을 따로 달았다.",
+   "fix": "항목마다 근거 있는 별도 지점을 잡고 location claim 을 각각 새로 만든다. 지안 권역에는 위키백과 표시 좌표가 있는 지점이 더 있다(환도산성 41.146528/126.163194 는 이미 제가회의가 사용, 그 밖에 광개토왕릉비·태왕릉·장군총·국동대혈 등). 예컨대 천도는 국내성 성터, 고국천왕(을파소 등용)과 소수림왕(태학)은 국내성 안의 서로 다른 표시점, 진대법은 왕이 사냥 나간 질양을 대신할 국내성 외곽 표시점으로 나눈다. 한성권은 온조=풍납토성, 풍납토성 항목=풍납토성 본체를 두고 고이왕은 몽촌토성이나 석촌동 고분군 쪽 표시점으로 옮기며, 16관등제와 근초고왕도 서로 다른 점을 쓴다. 별개 지점의 근거를 못 찾으면 대표점을 고른 이유를 place.coordinateNote 와 fact.note 에 적는다.",
+   "evidence": "result.json facts 좌표 집계: (127.12083,37.53889)×3, (126.17861,41.12083)×4, (126.194,41.1253)×3, (127.12278,37.52167)×2. 비교군 data/research/curriculum-joseon-early/joseon-early-2/result.json 은 23건 중 중복 좌표 0건."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-samguk-chiljido",
+   "claimId": "claim-hs-chiljido-taehwa-enc",
+   "problem": "칠지도 패킷 안에서 연도가 갈린다. fact-hs-sg1-020 과 scene-hs-chiljido 는 369년(startYear 369, persistence.from 369)인데, 제작 연도를 말하는 유일한 근거 claim-hs-chiljido-taehwa-enc 의 time 은 year 371(earliest 366, latest 371)이다. 근거 발췌('동진의 태화(太和, 366∼371)')에 369 라는 숫자가 없어 연호 범위의 끝을 연도 값으로 넣은 것으로 보이는데, 그 결과 '칠지도는 371년에 만들어졌다'는 주장이 되어 항목·장면의 369년과 충돌하고 명문 '태△ 4년'을 태화 4년=369년으로 읽는 통설과도 어긋난다. raw/enc-chiljido.html 본문에는 369 가 한 번도 나오지 않는다(라이브 재조회로도 확인).",
+   "fix": "369 를 직접 적은 허용 출처를 하나 더 받아(예: 우리역사넷 contents.history.go.kr 한국사 연대기 '칠지도') 발췌를 넣고 claim 의 time 을 year 369 / earliest 366 / latest 371 로 고친다. 그런 출처를 못 찾으면 반대로 fact.year·scene.startYear·persistence.from 을 근거대로 371 로 맞추고 369설과의 차이를 note 에 적는다. 어느 쪽이든 한 패킷 안에 두 연도가 남아 있게 두지 않는다.",
+   "evidence": "result.json: fact-hs-sg1-020.year=369, scene-hs-chiljido.startYear=369, persistence.from=369 vs claim-hs-chiljido-taehwa-enc.object.year=371. raw/enc-chiljido.html 텍스트에서 '369' 검색 0건."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-samguk-jumong, hs-samguk-gungnaeseong-move, hs-samguk-taejo-wang, hs-samguk-gogukcheon-wang, hs-samguk-jindaebeop, hs-samguk-jega-council, hs-samguk-micheon-wang, hs-samguk-chiljido, hs-samguk-sosurim-wang, hs-samguk-goguryeo-buddhism",
+   "sceneId": "scene-hs-jumong, scene-hs-gungnae-move, scene-hs-taejo-wang, scene-hs-gogukcheon-wang, scene-hs-jindaebeop, scene-hs-jega-council, scene-hs-micheon-wang, scene-hs-chiljido, scene-hs-sosurim-wang, scene-hs-goguryeo-buddhism",
+   "problem": "해외 항목 10건의 scene.place 에 overseas 표시가 하나도 없다. items.json 은 이 10건을 place.overseas=true 로 표시해 두었고, 작업 지침도 '해외는 place.overseas=true 로 두고 region 은 위도 규칙으로 적되 fact.note 에 해외임을 적는다'로 두 가지를 함께 요구한다. fact.note 의 해외 표기는 10건 모두 들어 있는데 플래그만 빠졌다. 같은 #186 배치의 다른 칸(curriculum-goryeo-late/goryeo-late-3·4, curriculum-joseon-late/joseon-late-2, curriculum-colonial/colonial-5)은 result.json 에 overseas:true 를 넣고 있어 칸마다 형식이 어긋난다.",
+   "fix": "졸본·국내성·지안·환도산성·이소노카미 신궁을 쓰는 장면 10건의 place 에 \"overseas\": true 를 넣는다. region 값은 지금대로 위도 규칙(39 이상 north, 칠지도는 가장 가까운 권역 south)을 유지한다.",
+   "evidence": "items.json 의 place.overseas=true 항목 10건 vs result.json scenes[].place.overseas 0건. grep -rl '\"overseas\": true' data/research 에서 goryeo-late-3·4, joseon-late-2, colonial-5 의 result.json 은 해당 키를 가지고 있음."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-naemul",
+   "sceneId": "scene-hs-naemul",
+   "problem": "장면 요약이 '이때부터 김씨가 왕위를 이어 갔고 임금의 칭호도 마립간으로 바뀌었다'고 단정하는데, 근거로 단 삼국사기 조각은 '奈勿尼師今立'(내물 이사금이 즉위했다)이라 오히려 이사금으로 적고 있다. fact.note 스스로 '마립간 칭호의 사용 시점은 눌지왕부터로 보는 견해도 있다'고 적었으므로 요약만 근거를 넘어선다.",
+   "fix": "요약을 '삼국유사는 마립간이라 적고 삼국사기는 이사금이라 적는다'처럼 사료 차이가 드러나게 고치거나 단정 표현을 낮춘다.",
+   "evidence": "claim-hs-naemul-acc quote='奈勿尼師今立. 姓金, 仇道葛文王之孫也.' (chunk_samguksagi_sg_003_0020_0010, locator '奈勿 尼師今 › 나물이사금이 즉위하다') vs scene-hs-naemul.summary."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-pungnap-toseong",
+   "factId": "fact-hs-sg1-015",
+   "problem": "confidence 가 'high' 인데 정작 이 패킷의 연도 300년을 받치는 근거가 없다. 달린 시간 주장은 claim-hs-pungnap-end-enc(475년 소멸) 하나뿐이고 장면의 dateClaimIds 도 그 475년 주장이다. fact.note 도 '축조 시기는 서기 전후로 보는 견해와 3~4세기로 보는 견해가 갈린다'고 적고 있다.",
+   "fix": "confidence 를 medium 으로 내리거나, 3~4세기 축조를 직접 말하는 발췌를 더해 연도 근거를 만든다.",
+   "evidence": "fact-hs-sg1-015.confidence='high', claimIds 안의 유일한 time 주장은 claim-hs-pungnap-end-enc(year 475)."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-daeseongdong-tombs, hs-samguk-gaya-iron",
+   "factId": "fact-hs-sg1-012, fact-hs-sg1-013",
+   "problem": "두 항목의 what 에 나오는 핵심 물증인 '철제 갑옷'과 '덩이쇠'를 받치는 claim 이 하나도 없다. 대성동 근거는 널무덤·덧널무덤 편년(제29호분 3세기 후반)과 항목 정의뿐이고, 가야 철 근거도 '질 좋은 철광산 분포'와 '낙랑·왜 중계 교역'뿐이다. 정작 manifest 에는 쓰지 않은 raw/enc-deongiswe.html(민족문화대백과 '덩이쇠')가 들어 있다.",
+   "fix": "이미 내려받은 enc-deongiswe.html 에서 덩이쇠의 쓰임·유통을 말하는 25단어 이내 발췌를 뽑아 sources 에 넣고 두 항목에 claim 을 단다. 대성동의 철제 갑옷은 대성동 항목 본문의 출토 유물 서술에서 발췌를 하나 더 뽑는다.",
+   "evidence": "manifest.json 에 https://encykorea.aks.ac.kr/Article/E0015461 (raw/enc-deongiswe.html)가 있으나 result.json sources 에는 없고, fact-hs-sg1-012/013 의 claimIds 어디에도 갑옷·덩이쇠 근거가 없음."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-gogukcheon-wang",
+   "sceneId": "scene-hs-gogukcheon-wang",
+   "problem": "참여자 person-eulpaso 의 claimIds 가 claim-hs-gogukcheon-reign-enc·claim-hs-gogukcheon-acc 로, 둘 다 고국천왕의 재위와 즉위에 관한 주장이라 을파소가 그 자리에 있었다는 근거가 되지 않는다. 정작 을파소 근거인 claim-hs-eulpaso-appoint 는 actionClaimIds 에만 있고 참여자와 연결되지 않았다.",
+   "fix": "person-eulpaso 의 claimIds 를 [claim-hs-eulpaso-appoint, claim-hs-eulpaso-time] 으로 바꾼다.",
+   "evidence": "scene-hs-gogukcheon-wang.participants[1].claimIds = ['claim-hs-gogukcheon-reign-enc','claim-hs-gogukcheon-acc']."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-jega-council",
+   "sceneId": "scene-hs-jega-council",
+   "problem": "연도 근거가 항목 연도와 맞지 않는다. fact.year 는 200, scene 은 200~300 인데 dateClaimIds 의 유일한 주장 claim-hs-eulpaso-time 은 191년이고 endYear 300 을 받치는 주장도 없다. 발췌 원문에 '3세기 즉 초기까지 나부는 국가운영의 중요한 정치단위였다'는 문장이 있는데 claim 으로 세우지 않았다. note 에 사정은 적어 두었다.",
+   "fix": "제가회의 항목에서 '3세기까지 나부가 국정 단위였다'는 문장을 25단어 이내로 뽑아 존속 근거 claim 을 세우거나, scene.startYear 를 근거가 있는 191 로 맞추고 fact.year 는 항목값 200 을 유지하되 차이를 note 에 적는다.",
+   "evidence": "scene-hs-jega-council.dateClaimIds=['claim-hs-eulpaso-time'](year 191), startYear 200, endYear 300."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-micheon-wang",
+   "factId": "fact-hs-sg1-014",
+   "problem": "what 의 앞 절 '서안평을 차지하고'를 받치는 근거가 없다. 달린 주장은 재위 기간, 창조리의 옹립, 즉위 연월, 313년 낙랑군 침공, 좌표뿐이다.",
+   "fix": "삼국사기 미천왕 12년(311) 서안평 점령 기사를 로컬 chunk 에서 찾아 claim 을 하나 더 단다. 못 찾으면 note 에 근거를 달지 못했다고 적는다.",
+   "evidence": "fact-hs-sg1-014.claimIds = ['claim-hs-micheon-reign-enc','claim-hs-micheon-acc-time','claim-hs-micheon-acc','claim-hs-nangnang-attack','claim-hs-loc-gungnaeseong']."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-samguk-jindaebeop",
+   "factId": "fact-hs-sg1-008",
+   "problem": "category 를 disaster 로 두었다. 항목 type 은 institution 이고 대응표(docs/research/curriculum-items-brief.md)는 institution→administration 으로 정해 두었다. 구휼 제도라는 해석은 이해되지만 대응표를 벗어나면 커버리지 표의 카테고리 집계가 칸마다 달라진다.",
+   "fix": "administration 으로 바꾸거나, 구휼 제도를 disaster 로 두는 예외를 brief 규칙에 못 박고 note 에 그 합의를 적는다.",
+   "evidence": "items.json hs-samguk-jindaebeop.type='institution'; result.json fact-hs-sg1-008.category='disaster'."
+  }
+ ],
+ "checkedItems": [
+  "hs-samguk-bak-hyeokgeose",
+  "hs-samguk-jumong",
+  "hs-samguk-onjo",
+  "hs-samguk-gungnaeseong-move",
+  "hs-samguk-kim-suro",
+  "hs-samguk-taejo-wang",
+  "hs-samguk-gogukcheon-wang",
+  "hs-samguk-jindaebeop",
+  "hs-samguk-jega-council",
+  "hs-samguk-goi-wang",
+  "hs-samguk-baekje-16-ranks",
+  "hs-samguk-daeseongdong-tombs",
+  "hs-samguk-gaya-iron",
+  "hs-samguk-micheon-wang",
+  "hs-samguk-pungnap-toseong",
+  "hs-samguk-nangnang-expulsion",
+  "hs-samguk-geunchogo-wang",
+  "hs-samguk-naemul",
+  "hs-samguk-anak-tomb3",
+  "hs-samguk-chiljido",
+  "hs-samguk-mahan-annex",
+  "hs-samguk-gogugwon-death",
+  "hs-samguk-sosurim-wang",
+  "hs-samguk-goguryeo-buddhism"
+ ],
+ "summary": "검증기는 PASS(실패 0, 경고 0)이고 근거 자체의 품질은 높다. 24개 항목 전부를 출처에서 직접 재확인했다. 로컬 chunk 인용은 search_chunks 로 원문을 꺼내 인용문이 글자 그대로 있고 chunk 의 date.raw 서기연이 주장 연도와 같음을 확인했다(혁거세 -0057, 국내성 천도 0003, 동옥저 0056, 을파소 0191, 진대법 0194, 미천왕 0300·0313, 고이왕 0260·0260, 근초고왕 0346·0371, 고국원왕 0371-10-23, 소수림왕 0371·0372, 내물 0356 등). 웹 발췌 37건은 raw/ HTML 에서 앞뒤 문맥까지 읽어 왜곡이 없음을 확인했고 그중 4건(칠지도·진대법·풍납토성·안악 3호분 좌표)은 실제 URL 을 다시 받아 같은 문장이 살아 있음을 확인했다. manifest 37건의 sha256·byteLength 를 재계산해 전부 일치했고 좌표 근거 10건의 geo chunk 도 원문에서 다시 읽었다. 인물 개체 11명은 기존 data/entities/person 의 id 를 그대로 재사용했고 새 3명만 entities 에 껍데기를 만들었다. kind·heritageType·participants 는 항목 sceneType 과 24건 모두 일치하고, 성취기준 코드·priority 도 24건 모두 항목과 같다. 교과서 문장 전재는 없고 what·summary 는 조사자 서술이다. 다만 (1) 24건 중 12건이 네 좌표에 그대로 겹쳐 같은 도시 항목이 한 점에 쌓이고, (2) 칠지도는 장면·사실이 369년인데 유일한 제작 연도 주장은 371년이라 패킷 안에서 연도가 갈리며, (3) 해외 10건에 place.overseas 표시가 빠져 다른 칸과 형식이 어긋난다. 이 셋은 고쳐야 하고 나머지 7건은 근거 연결·신뢰도 표기·요약 수위를 다듬는 수준이다."
+}

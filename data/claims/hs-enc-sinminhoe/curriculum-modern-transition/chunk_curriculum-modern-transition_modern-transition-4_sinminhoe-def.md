@@ -19,11 +19,11 @@ status: "draft"
     "note": "서울에서 만들어진 비밀결사다.",
     "fromSource": "src-hs-enc-sinminhoe",
     "citesChunk": "chunk_curriculum-modern-transition_modern-transition-4_sinminhoe-def",
-    "quote": "1907년 서울에서 조직된 비밀결사.",
+    "quote": "1907년 서울에서 조직된",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

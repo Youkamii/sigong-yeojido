@@ -45,6 +45,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-jeju-end",
+    "subject": "event-hs-c1-jeju43",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1954년 9월 21일",
+      "year": 1954,
+      "precision": "day",
+      "earliest": 1954,
+      "latest": 1954,
+      "id": "ts-curriculum-contemporary-contemporary-1-hs-c1-jeju-end"
+    },
+    "citesChunk": "chunk_period96_modern_jj43",
+    "quote": "1947년 3월 1일부터 1954년 9월 21일까지 제주도에서 발생한",
+    "note": "사건의 끝을 1954년 9월 21일로 본다.",
+    "fromSource": "src-encykorea-jeju43",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

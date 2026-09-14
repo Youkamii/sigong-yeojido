@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-colonial-colonial-4-hs-c4-son-1936",
-    "subject": "person-hs-c4-son-kijung",
+    "subject": "person-hs-son-kijung",
     "predicate": "syj:occurredIn",
     "object": {
       "kind": "time",

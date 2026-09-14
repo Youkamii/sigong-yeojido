@@ -10,11 +10,11 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-samguk-samguk-4-hs4-anju-river",
-    "subject": "place-hs4-salsu",
+    "subject": "place-hs4-anju",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "polity-hs4-goguryeo"
+      "id": "place-hs4-cheongcheongang"
     },
     "note": "안주에 청천강이 흐른다.",
     "fromSource": "src-hs4-ko-anju",

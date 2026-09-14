@@ -1,0 +1,169 @@
+{
+ "job": "prehistoric-gojoseon-2",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-prehistoric-gojoseon --job prehistoric-gojoseon-2 → exit 0, \"PASS: failures=0 warnings=0\". 집계: facts 28 / scenes 28 / claims 138 (chunkClaims 10, excerptClaims 128). category×10년·region×10년 표 정상 출력. manifest 65건 = raw/ 65개 = sources 65개, httpStatus 전부 200, 중복 URL 0건, sources↔manifest rawFile 불일치 0건, run.json 키·값 규격 일치. 별도 검수 스크립트로 확인한 것: (1) fact 28건의 what 이 items.json 의 meaning 과 글자 단위로 일치, (2) scene.kind 28건이 items.json sceneType.kind 와 전부 일치, (3) effects.priority.level 28건이 items.json priority 와 전부 일치, (4) fact 좌표와 scene.place 좌표 28쌍 전부 일치, (5) fact 좌표 중복 0건, (6) claim 이 참조하는 개체 id 가 전부 entities[] 에 있고 미참조 개체 0건, (7) images.json 28건 모두 접두어·sceneId·itemId·인물 얼굴 문구·키 구성 정상이고 누락 항목 0건, (8) missing[] 비어 있음. 원본 재확인: 로컬 chunk 10건 전부 search_chunks --id 로 본문 대조해 quote 일치(삼국유사 5건, 우리역사넷·민백 발췌 chunk 5건). 웹 출처 9건(민백 의림지·고조선·소도·다호리·부여·우거왕, 위키 화순·평양·오녀산성)을 urllib 로 실시간 재조회해 발췌 24건이 살아 있는 HTML 에 그대로 존재함을 확인(위키 3건은 sha256 완전 일치, 민백 6건은 세션 토큰 때문에 312바이트 차이가 나지만 본문 동일). 발췌 22건은 앞뒤 문맥 260~320자를 뽑아 왜곡 여부를 직접 읽었다.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-prehistoric-samhan-rice-reservoir",
+   "factId": "fact-hs-pg2-024",
+   "sceneId": "scene-hs-prehistoric-samhan-rice-reservoir",
+   "claimId": "claim-hs-rice-uirimji",
+   "problem": "근거 문헌이 스스로 부정한 연대를 골라 썼다. 발췌 ex-uirimji-samhan 은 '축조 시기에 대해서는 삼한시대 축조설' 까지만 잘라 왔는데, 같은 민백 의림지 기사의 바로 다음 문장이 '두 차례에 걸쳐 이루어진 지질학적 학술 조사의 결과로는 AD 800~900년인 삼국시대 말기~통일신라시대에 축조된 것으로 본다' 이다. 출처의 결론은 통일신라 축조이고 삼한설은 나열된 전승 가운데 하나다. 그런데 이 항목은 서기전 100년 장면(startYear -100, endYear -57)을 의림지 좌표(37.17444/128.21056)에 세우고 participantGroups 로 '둑을 쌓는 사람들' 30명까지 배치했다. 항목 원안의 장소였던 광주 신창동 저습지는 벼 껍질층 155cm 라는 직접 근거가 있는데도 버리고 근거가 가장 약한 쪽으로 좌표를 옮긴 셈이다. fact.note 는 '여러 설 가운데 하나' 라고만 적고 출처의 AD 800~900년 조사 결과는 감췄다. 덤으로 region 이 south→central 로 바뀌어 fact.what 의 '남부의 농사' 와 실제 위치(충북 제천)가 어긋난다.",
+   "fix": "둘 중 하나. (가) 장면 좌표를 항목 원안대로 광주 신창동 저습지로 되돌린다. fact-hs-pg2-025 와 좌표가 겹치지 않게 신창동 유적 안의 저습지 지점을 따로 잡거나 25번 항목 좌표를 유적 대표점에서 조금 옮기고, 근거는 claim-hs-rice-grain(ex-scd-rice)과 claim-hs-rice-date 로 유지한다. (나) 의림지를 계속 쓰려면 삼한 축조설이 소수설임을 claim 과 fact.note 에 명시하고 민백 의림지 '내용 요약' 의 AD 800~900 문장을 발췌로 함께 실으며, 장면은 '둑을 쌓는' 공사 장면 대신 저수지 존재를 서술하는 형태로 바꾼다. 어느 쪽이든 confidence 'low' 인 항목이 축조 장면으로 지도에 뜨지 않게 한다.",
+   "evidence": "raw/enc-uirimji.html 본문: '산곡형 저수지로 축조 시기에 대해서는 삼한시대 축조설, 우륵 축조설, 정인지 축조설 등이 있다. 두 차례에 걸쳐 이루어진 지질학적 학술 조사의 결과로는 AD 800~900년인 삼국시대 말기~통일신라시대에 축조된 것으로 본다.' (2026-09-14 실시간 재조회로도 동일 문장 확인). raw/enc-sinchangdong.html: '중심 소재는 벼 껍질(왕겨)이며 두께는 155㎝이다.'"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-gojoseon-junwang",
+   "factId": "fact-hs-pg2-009",
+   "sceneId": "scene-hs-gojoseon-junwang",
+   "claimId": "claim-hs-junwang-loc",
+   "problem": "왕검성 관련 5개 항목(fact-hs-pg2-002 중구역, 005 모란봉, 009 만경대구역, 010 대동강구역, 013 사동구역)이 평양시 행정구역 다섯 곳에 흩어져 찍히는데, placeLabel 이 '왕검성(평양 만경대구역 일대)', '왕검성 성벽(평양 사동구역 일대)', '왕검성 조정(평양 중구역 일대)' 처럼 그 구역이 곧 왕검성인 것처럼 단정한다. 만경대구역(125.64444/39.02222)은 평양 중심에서 서쪽으로 8km 남짓 떨어진 교외이고 사동구역(125.900/38.983)은 동남쪽 외곽으로, 어느 왕검성 비정설(낙랑토성·대성산성·청암리토성·평양 내성)과도 관계가 없다. 결과적으로 지도에는 서로 22km 떨어진 두 점이 동시에 '왕검성' 이라는 이름을 달고 뜬다. fact.note 에 '분산을 위해 썼다' 고 적혀 있으나 화면 카드에 보이는 것은 라벨이라 학생에게는 근거 있는 비정으로 읽힌다. 한 점에 겹치지 않게 하라는 요구는 지켰지만 그 방법으로 실재하지 않는 구체성을 만들었다.",
+   "fix": "좌표 근거(위키 구역 표시 좌표)는 그대로 두더라도 라벨에서 왕검성 단정을 뺀다. 예: '왕검성 일원 대표점(평양 만경대구역)' 처럼 대표점임을 라벨 자체에 적는다. 더 나은 방법은 실제 비정 후보지로 점을 나누는 것이다 — 준왕·우거왕 항목을 대성산성·청암리토성처럼 위키백과에 십진 좌표가 있는 평양 일원 고대 성곽으로 옮기고 새 coordinateSourceIds·발췌를 raw/ 에 추가한다. 라벨 3건(002·009·013)을 고치고 scene.place.coordinateNote 도 같은 문구로 맞춘다.",
+   "evidence": "result.json facts 002/005/009/010/013 의 placeLabel 과 lon/lat. 만경대구역 125.64444/39.02222(raw/en-mangyongdae-guyok.html), 사동구역 125.900/38.983(raw/en-sadong-guyok.html) — 두 점 거리 약 22km. 인용한 출처 어디에도 두 구역과 왕검성을 잇는 서술은 없다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-gojoseon-intermediary-trade",
+   "factId": "fact-hs-pg2-011",
+   "claimId": "claim-hs-trade-date",
+   "problem": "fact.year 가 -194 인데 yearVerbatim 은 '서기전 2세기 초' 이고, claimIds 에 들어 있는 유일한 시작 연도 주장 claim-hs-trade-date 는 year -200(ex-wj-2c '위만이 집권한 서기전 2세기 초부터')이다. -194 를 뒷받침하는 주장이 이 fact 의 claimIds 안에 없다.",
+   "fix": "claim-hs-wiman-date(기원전 194년, ex-wiman-194)를 fact-hs-pg2-011 의 claimIds 에 추가하고 yearVerbatim 을 '기원전 194년' 으로 바꾸거나, 반대로 fact.year 를 -200 으로 맞춘다.",
+   "evidence": "result.json fact-hs-pg2-011: year -194, yearVerbatim '서기전 2세기 초', claimIds [claim-hs-trade-date(-200), claim-hs-trade-act, claim-hs-trade-end(-109), claim-hs-trade-loc]"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-gojoseon-kingship-offices",
+   "factId": "fact-hs-pg2-005",
+   "problem": "persistence 의 종료 연도가 basisClaimIds 어디에도 없다. fact-005 는 institution -300~-108 인데 basisClaimIds 는 claim-hs-kingship-date(-300)·claim-hs-kingship-succ(연도 없음)뿐이다. 같은 문제가 fact-hs-pg2-015(institution -108~313, 313 근거 없음)와 fact-hs-pg2-028(city -75~3, 3 근거 없음)에도 있다.",
+   "fix": "종료 연도마다 근거 주장을 붙인다. -108 은 claim-hs-fall-date(ex-wj-108)를 basisClaimIds 에 넣고, 313 은 이미 내려받은 민백 한사군 기사의 '낙랑군은 313년에 고구려 미천왕의 공' 문장을 발췌로 추가해 쓴다. 졸본의 3년은 근거를 댈 수 없으면 to 를 null 이나 -57 로 바꾼다.",
+   "evidence": "raw/enc-hansagun.html 에 '그 뒤, 낙랑군은 313년에 고구려 미천왕의 공' 문장이 있으나 발췌로 뽑히지 않았다. result.json scenes 의 persistence.basisClaimIds 확인."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-gojoseon-yan-jingae-invasion",
+   "factId": "fact-hs-pg2-006",
+   "claimId": "claim-hs-yan-loc",
+   "problem": "좌표가 출처 자신의 비정보다 멀어졌다. 인용한 민백 고조선 기사는 만번한을 '오늘날의 해성현(海成縣) 서남쪽과 개현(蓋縣)을 잇는 일대' 로 비정하는데 좌표는 랴오양시(123.176/41.279)를 썼다. 해성·개현은 북위 40.4~40.9 로 랴오양보다 남쪽이며, 항목 원안 좌표(122.9/40.6)가 오히려 출처 비정에 가깝다.",
+   "fix": "위키백과 Haicheng, Liaoning 또는 Gaizhou 문서의 표시 좌표를 raw/ 에 새로 저장해 발췌·location 주장으로 쓰고 좌표를 그쪽으로 옮긴다. 라벨도 '고조선 서쪽 변경(만번한 비정지 일대)' 로 맞춘다.",
+   "evidence": "raw/enc-gojoseon.html: '서기전 3세기 초 고조선과 연과의 첫 충돌 당시 연군의 진출선이었던 만번한(滿潘汗), 즉 오늘날의 해성현(海成縣) 서남쪽과 개현(蓋縣)을 잇는 일대 지역으로 비정해볼 수 있다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-wooden-coffin-jar-burial",
+   "factId": "fact-hs-pg2-027",
+   "claimId": "claim-hs-tomb-dok",
+   "problem": "항목을 창원 다호리에서 김해 양동리로 옮기면서 독무덤 근거가 사라졌다. 양동리 발췌(ex-ydr-def)는 '서기전 1세기의 나무널무덤과 서기 2세기 이후부터 5세기 전반의 덧널무덤' 만 말하고 독무덤을 말하지 않는다. claim-hs-tomb-dok 은 독무덤의 일반 정의(ex-dm-def)를 근거로 양동리와 연결하는데 이는 그 유적에 독무덤이 있다는 근거가 아니다. 반면 버린 다호리 기사에는 '널무덤·독무덤 등이 발굴된 무덤군' 이라는 직접 서술이 있다.",
+   "fix": "양동리를 유지하려면 양동리 옹관묘를 말하는 발췌를 새로 확보한다. 없으면 다호리로 되돌리되 fact-hs-pg2-019(다호리 붓)와 좌표가 겹치지 않게 다호리 유적 안에서 다른 지점을 잡고 coordinateNote 에 사유를 적는다.",
+   "evidence": "raw/enc-yangdongri.html 정의문에 독무덤 언급 없음. raw/enc-dahori.html: '경상남도 창원시 의창구 동읍에 있는 철기시대 이후 널무덤·독무덤 등이 발굴된 무덤군'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-slim-dagger-mold",
+   "claimId": "claim-hs-mold-date",
+   "problem": "연대 주장을 문맥이 다른 문장에서 끌어왔다. ex-hgd-200 '서기전 200년경 전후 일본 구주 지역으로 전해져서' 는 한국식동검이 일본 규슈로 전해진 시기를 말하는 문장인데 이를 세형동검 자체의 연대(-200) 주장 근거로 썼다. 같은 fact 에 직접 근거인 claim-hs-mold-2c(ex-galdong-2c '서기전 2세기의 유물로 판단된다')가 이미 있어 이 주장은 필요도 없다.",
+   "fix": "claim-hs-mold-date 를 지우거나 object 를 시간 주장이 아닌 '일본 규슈 전파' 를 뜻하는 relatedTo 주장으로 바꾼다. fact 의 yearVerbatim '서기전 2세기' 는 ex-galdong-2c 로 이미 뒷받침된다.",
+   "evidence": "raw/enc-hanguksik-donggeom.html 문맥: '특히 한국식은 서기전 200년경 전후 일본 구주 지역으로 전해져서 중세형(中細形)-중광형(中廣形)의 변형 동검으로 바뀌기도 한다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-coarse-mirror-ritual-bronze",
+   "factId": "fact-hs-pg2-003",
+   "claimId": "claim-hs-gwae-date",
+   "problem": "괴정동 유적의 연대를 그 유적 기사가 아니라 한국식동검 일반론 기사('서기전 4세기경을 전후하여')에서 끌어왔다. 정작 괴정동 기사 자체의 연대 문장 '연대에 대해서는 이설이 많으나 서기전 4~3세기로 보는 견해가 유력하다' 는 발췌(ex-gwae-date)로 확보해 놓고도 시간 주장이 아닌 claim-hs-gwae-view(relatedTo)로 써 버려 연대 근거로 쓰이지 않는다.",
+   "fix": "claim-hs-gwae-view 를 시간 주장(time verbatim '서기전 4~3세기', year -400, earliest -400, latest -300)으로 바꿔 fact 의 date 근거로 삼고 claim-hs-gwae-date 는 지우거나 보조로 남긴다.",
+   "evidence": "raw/enc-gwaejeongdong.html '의의와 평가': '연대에 대해서는 이설이 많으나 서기전 4~3세기로 보는 견해가 유력하다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-gojoseon-han-commanderies",
+   "factId": "fact-hs-pg2-015",
+   "problem": "region 규칙 이탈이 3건 있다. 위도 39 미만은 central 인데 fact-hs-pg2-011(38.865)·015(38.96)·016(38.93)을 north 로 적었다. 주석에 '평양 일원이므로' 라는 사유가 있고 평양 항목을 한 권역으로 묶는다는 점에서 이해는 가지만 규칙과 다른 처리라 확정이 필요하다.",
+   "fix": "평양 일원 예외를 규칙으로 인정하려면 docs/research/curriculum-items-brief.md 의 region 규칙에 '평양 일원(대동강 하류)은 north' 를 한 줄 추가하고, 아니면 세 fact 의 region 을 central 로 되돌린다. 어느 쪽이든 다른 칸과 같게 처리해야 권역×10년 표가 왜곡되지 않는다.",
+   "evidence": "facts 011(lat 38.865, north) / 015(38.96, north) / 016(38.93, north) vs brief 의 '위도 ≥39 north, 37~39 central'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-sodo-cheongun",
+   "claimId": "claim-hs-sodo-cheongun",
+   "problem": "entities[] 에 'person-hs-cheongun'(type Person, label 천군)을 만들었다. 천군은 개인이 아니라 삼한 소국의 제사장 직책이고 인용한 발췌도 '삼한시대 소국(小國)내에서 제사의식을 주관하던 제사장' 이라는 직책 정의다. 적재되면 data/entities/person 아래 인물 개체로 남는다.",
+   "fix": "'office-hs-cheongun'(type Office)으로 바꾸고 claim-hs-sodo-cheongun 의 subject 를 함께 고친다. 같은 result 의 office-hs-sang 이 이미 그 방식을 쓰고 있다.",
+   "evidence": "result.json entities: {\"id\":\"person-hs-cheongun\",\"type\":\"Person\",\"label\":\"천군\"}. ex-cheongun-def: '삼한시대 소국(小國)내에서 제사의식을 주관하던 제사장'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-dongye",
+   "factId": "fact-hs-pg2-020",
+   "claimId": "claim-hs-dongye-ho",
+   "problem": "density.households 20000 은 3세기 전반 『삼국지』가 전한 수치인데 서기전 108년 fact 에 붙어 있다. fact.note 에 사유를 적어 두긴 했으나 build_fact_layers.py 가 이 값을 읽어 -108 시점 마을 밀도 계수(약 1.6배)로 쓴다 — 300년 앞선 인구를 화면 밀도로 되돌리는 셈이다.",
+   "fix": "density 를 빼고 호수는 claim 과 note 로만 남기거나, 3세기 기록 시점의 별도 fact 로 옮긴다. 유지한다면 density 를 세계 연결 단계에서 제외할지 판단하고 그 결정을 note 에 적는다.",
+   "evidence": "raw/enc-dongye.html '개설': '3세기 전반 무렵 동예는 … 인구는 2만여 호(戶)'. fact-hs-pg2-020 은 year -108, density {households: 20000}"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-early-goguryeo",
+   "claimId": "claim-hs-gogu-date",
+   "problem": "고구려를 주어로 한 연도 주장인데 인용 발췌에 고구려가 나오지 않는다. ex-hsg-75 는 '서기전 75년에는 토착세력의 저항으로 현도군의 치소(治所)가' 까지만 인용해 그 토착세력이 고구려라는 연결이 발췌 안에서 끊긴다.",
+   "fix": "이미 내려받아 둔 raw/enc-dongye.html 의 '서기전 75년에는 현도군(玄免郡)이 고구려족의 저항에 의해 요동으로 물러나게' 문장을 발췌로 추가해 claim-hs-gogu-date 의 근거로 바꾸거나 함께 단다.",
+   "evidence": "raw/enc-dongye.html '연원 및 변천': '서기전 82년 임둔군이 폐해졌고, 서기전 75년에는 현도군(玄免郡)이 고구려족의 저항에 의해 요동으로 물러나게 됨에 따라'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-gojoseon-han-wudi",
+   "sceneId": "scene-hs-gojoseon-han-wudi",
+   "claimId": "claim-hs-wudi-chunk",
+   "problem": "장면 요약은 '육군 5만과 수군 7천' 이라 적었는데(원문 해석상 이쪽이 맞다), 같은 근거 주장 claim-hs-wudi-chunk 의 note 는 '누선장군 양복에게 … 군사 5만을 보냈다' 로 5만을 수군 지휘관에게 돌린다. 둘이 서로 어긋난다.",
+   "fix": "claim-hs-wudi-chunk 의 note 를 '천자가 누선장군 양복을 제에서 발해로 건너게 하고 좌장군 순체에게 병력 5만을 주어 요동으로 보냈다' 로 고친다. 필요하면 같은 chunk 의 '樓舡將軍將齊七千人先到王倹' 을 인용한 주장을 하나 더 만들어 7천의 근거로 삼는다.",
+   "evidence": "chunk_samgukyusa_sy_001_0020_0030_0020: '天子遣楼舡將軍楊僕從齊浮渤海兵五万. 左將軍荀彘岀遼討右渠 … 樓舡將軍將齊七千人先到王倹.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-dahori-brush",
+   "sceneId": "scene-hs-prehistoric-dahori-brush",
+   "problem": "장면 요약의 '붓 다섯 자루' 는 인용한 민백 다호리 기사에 없는 수량이다. 기사는 '붓과 손칼' 이라고만 적는다. 나머지 서술(통나무 관, 중국 돈)은 출처에 있다.",
+   "fix": "'붓 다섯 자루' 를 '붓과 손칼' 로 고치거나 수량을 밝힌 출처(국립중앙박물관 다호리 해설 등)를 발췌로 추가한다.",
+   "evidence": "raw/enc-dahori.html: '출토유물 중 붓과 손칼은 연필과 지우개같은 문방구 역할을 한 것으로 교역시 영수증 작성에 사용되었을 것이다.' 수량 표기 없음."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-prehistoric-samhan-rice-reservoir",
+   "sceneId": "scene-hs-prehistoric-samhan-rice-reservoir",
+   "problem": "images.json 의 이 항목 프롬프트에 'farmers transplant rice'(모내기)가 들어 있다. 이앙법은 고려 말~조선 전기에 퍼진 농법이라 서기전 1세기 장면에 맞지 않는다. 시대 고증을 지키라고 접두어에서 요구해 놓고 본문에서 어긋난다.",
+   "fix": "'farmers transplant rice' 를 'farmers broadcasting seed and tending flooded paddies'(직파) 같은 표현으로 바꾸고 caveats 에 농법이 표현임을 적는다.",
+   "evidence": "images.json hs-prehistoric-samhan-rice-reservoir prompt 끝부분: '… into terraced paddies where farmers transplant rice.'"
+  }
+ ],
+ "checkedItems": [
+  "hs-prehistoric-hwasun-dolmens",
+  "hs-gojoseon-eight-laws",
+  "hs-prehistoric-coarse-mirror-ritual-bronze",
+  "hs-prehistoric-iron-diffusion",
+  "hs-gojoseon-kingship-offices",
+  "hs-gojoseon-yan-jingae-invasion",
+  "hs-prehistoric-slim-dagger-mold",
+  "hs-gojoseon-jun-migration-south",
+  "hs-gojoseon-junwang",
+  "hs-gojoseon-wiman",
+  "hs-gojoseon-intermediary-trade",
+  "hs-gojoseon-han-wudi",
+  "hs-gojoseon-ugeo",
+  "hs-gojoseon-fall-wanggeomseong",
+  "hs-gojoseon-han-commanderies",
+  "hs-gojoseon-lelang-society-change",
+  "hs-prehistoric-buyeo",
+  "hs-prehistoric-byeonhan-iron",
+  "hs-prehistoric-dahori-brush",
+  "hs-prehistoric-dongye",
+  "hs-prehistoric-heaven-rituals",
+  "hs-prehistoric-okjeo",
+  "hs-prehistoric-samhan",
+  "hs-prehistoric-samhan-rice-reservoir",
+  "hs-prehistoric-sinchangdong",
+  "hs-prehistoric-sodo-cheongun",
+  "hs-prehistoric-wooden-coffin-jar-burial",
+  "hs-prehistoric-early-goguryeo"
+ ],
+ "summary": "검증기는 PASS(failures 0, warnings 0)이고 형식·구조는 흠이 없다. 항목 28건이 fact 28·scene 28·claim 138 로 빠짐없이 대응하고, what 은 items.json 의 meaning 과 글자까지 같으며 scene.kind·priority·좌표도 전부 항목과 일치한다. 좌표 중복 0건, missing[] 비어 있음. 출처는 진짜다 — 로컬 chunk 10건을 본문 대조해 전부 일치했고 웹 출처 9건을 실시간으로 다시 받아 발췌 24건이 살아 있는 HTML 에 그대로 있음을 확인했다(위키 3건은 sha256 까지 일치, 민백은 세션 토큰 312바이트 차이만 있고 본문 동일). 해외 항목 5건은 place.overseas 와 note 처리가 되어 있고 교과서 문장 전재 흔적도 없다. 다만 내용 쪽에서 반드시 고쳐야 할 것이 둘 있다. 첫째, 삼한 벼농사·저수지 항목이 제천 의림지로 옮겨졌는데 인용한 바로 그 민백 기사가 의림지를 통일신라(AD 800~900) 축조로 결론짓고 있다 — 출처가 부정한 연대를 골라 서기전 100년 축조 장면을 세운 셈이고 근거가 확실한 원안 장소(광주 신창동 저습지)를 버렸다. 둘째, 왕검성 관련 5개 항목이 평양 행정구역 다섯 곳으로 흩어지면서 만경대구역·사동구역까지 '왕검성' 이라는 라벨을 달았다 — 두 곳은 어느 비정설과도 무관하고 서로 22km 떨어져 있어 지도에 왕검성이 여러 곳으로 보인다. 좌표를 나누라는 요구 자체는 맞지만 방법이 실재하지 않는 구체성을 만들었다. 그 밖에 연도·근거 정합에서 잔손질 13건이 있다: fact.year 를 뒷받침하는 주장이 claimIds 에 없는 경우(중계 무역), persistence 종료 연도(-108·3·313)가 근거 없는 경우, 만번한 좌표가 출처 비정보다 멀어진 경우, 독무덤 근거가 사라진 경우, 연대 주장을 문맥 다른 문장에서 끌어온 두 건(세형동검·괴정동), region 규칙 이탈 3건, 천군을 인물 개체로 둔 것, 3세기 호수를 -108 밀도로 쓴 것, 요약과 주석의 병력 서술 충돌, 출처에 없는 '붓 다섯 자루', 이미지 프롬프트의 모내기 표현. 전부 result.json·images.json 안에서 고칠 수 있고 새 웹 수집이 필요한 것은 만번한 좌표와(선택) 왕검성 후보지 좌표뿐이다."
+}

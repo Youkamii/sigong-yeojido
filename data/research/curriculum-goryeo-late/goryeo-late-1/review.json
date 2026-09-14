@@ -1,0 +1,128 @@
+{
+ "job": "goryeo-late-1",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-goryeo-late --job goryeo-late-1 (exit 0)\njob 별 집계: goryeo-late-1 | facts 23 | scenes 23 | claims 102 | chunkClaims 41 | excerptClaims 61\ncategory x 10년: person 8, administration 5, war 4, culture 3, settlement 1, facility 1, foreign 1\nregion x 10년: central 16, south 5, north 2, capital 0, island 0\nPASS: failures=0 warnings=0",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-late-choe-chunghon",
+   "factId": "fact-hs-gl-014",
+   "claimId": "claim-hs-gl-loc-seonjukgyo",
+   "problem": "선죽교 표시 좌표(126.5081, 37.9817)를 개경 동부 대표점으로 썼는데 이 위키 좌표 자체가 실제 위치와 어긋난다. 선죽교는 자남산 아래 숭양서원 바로 옆인데 이 값은 숭양서원 위키 좌표(126.5678, 37.9739)보다 경도 0.0597도, 약 5.3km 서쪽이다. 개성 시가지 중심 좌표(126.5528, 37.9717)와 견줘도 4km 서쪽이라 나성 바깥으로 나간다. 그 결과 최충헌(core)·교정도감(core)·정방 세 항목이 궁성(만월대 126.5433)보다도 서쪽에 찍혀 라벨의 '개경 동부'와 정반대 자리에 표시된다.",
+   "fix": "src-hs-ko-seonjukgyo 를 좌표 근거에서 빼고 개경 동부 대표점을 다른 검증 가능한 좌표로 바꾼다. 예를 들어 숭양서원(126.5678, 37.9739 — 선죽교와 붙어 있는 정몽주 집터)을 동부 대표점으로 올리고 경대승·이의민은 개성 남대문(126.5581, 37.9692) 등 다른 성안 지점으로 옮긴다. 어느 쪽이든 fact.note·place.coordinateNote 에 '선죽교 위키 좌표는 인접 유적과 5km 어긋나 쓰지 않았다'를 남긴다.",
+   "evidence": "raw/ko-seonjukgyo.html 의 \"coordinates\":[126.5081,37.9817] / en.wikipedia Sonjuk_Bridge 의 class=geo 37.9817; 126.5081(같은 값) / raw/ko-sungyang.html \"coordinates\":[126.5678,37.9739] / ko.wikipedia 개성특급시 \"coordinates\":[126.55277777777778,37.971666666666664] — 2026-09-14 재조회"
+  },
+  {
+   "severity": "major",
+   "itemId": "(칸 전체)",
+   "factId": "fact-hs-gl-001/002 · 003/004 · 008/015 · 009/010 · 011/013 · 014/019/022 · 016/018",
+   "problem": "23개 항목이 16개 좌표만 써서 7개 지점에서 완전히 겹친다(겹친 항목 15건). 개경 13건이 6개 점을 나눠 쓰고 선죽교 점 하나에는 세 항목(최충헌·교정도감·정방)이 겹친다. 지침의 '같은 도시 항목이 한 점에 겹치지 않게'에 어긋난다. 검증기를 통과한 참고 칸 joseon-early-2 는 23건이 23개 서로 다른 점을 쓴다.",
+   "fix": "겹치는 항목마다 근거 있는 별도 지점을 찾는다. 개경은 이미 쓰는 만월대·첨성대·남대문·숭양서원·성균관 말고도 항목 고유 장소(만적의 북산·흥국사, 교정도감의 영은관, 최우 사저의 이현)를 다시 찾아본다. 끝내 근거를 못 찾으면 최소한 항목마다 서로 다른 기존 지점을 배정해 한 점 중복은 없앤다.",
+   "evidence": "result.json facts 좌표 집계 — (126.54333,37.985)x2, (126.54083,37.98694)x2, (126.5581,37.9692)x2, (126.5678,37.9739)x2, (126.57072,37.992)x2, (126.5081,37.9817)x3, (127.2761,35.00219)x2. 대조: data/research/curriculum-joseon-early/joseon-early-2/result.json — facts 23, 서로 다른 좌표 23"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-late-mangi-mangsoi 외 9건",
+   "sceneId": "scene-hs-gl-mangi-mangsoi 외 9건",
+   "problem": "items.json 이 지정한 sceneFunction 이 장면에 하나도 옮겨지지 않았다. 10건이 비어 있다 — musin-jeongbyeon·kim-bodang·jowichong(civil_conflict), mangi-mangsoi·kim-sami·manjeok(uprising_battle), jinul·suseonsa·yose-baengnyeonsa(temple), sanggam-celadon(kiln). facts-format.md 는 '조립기는 sceneFunction 을 우선한다'고 적어 두었으므로 봉기·사찰·가마 구성이 기본 kind 구성으로 떨어진다.",
+   "fix": "각 scene 에 items.json 의 sceneType.sceneFunction 값을 그대로 넣는다. 열 값 모두 허용 목록 안에 있다.",
+   "evidence": "items.json sceneType.sceneFunction 10건 대 result.json scenes sceneFunction 0건. 대조: joseon-early-2 는 items 7건 중 7건(naval_expedition·harbor·irrigation·fortress 2·print_workshop 2)을 그대로 옮겼다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-jungbang",
+   "sceneId": "scene-hs-gl-jungbang",
+   "factId": "fact-hs-gl-003",
+   "problem": "persistence 를 1170~1270 으로 두었는데 이 패킷에서 중방의 종료를 말하는 유일한 근거 claim-hs-gl-jungbang-end 는 '1393년에 폐지되었다'이다. basisClaimIds(musin-def, jungbang-1177)는 1270 을 뒷받침하지 않고 note 에도 이 어긋남이 없다.",
+   "fix": "persistence.to 를 근거대로 1393 으로 올리거나, 1270(무신정권 종식)을 표시 상한으로 쓰는 이유와 '민족문화대백과의 폐지 연도는 1393년'을 fact.note·scene.summary 에 밝힌다. 어느 쪽이든 종료 연도를 뒷받침하는 claim 을 basisClaimIds 에 넣는다.",
+   "evidence": "result.json claim-hs-gl-jungbang-end(time 1393) 대 scene-hs-gl-jungbang.persistence{from:1170,to:1270}. raw/enc-jungbang.html 본문 '폐지 시기 1393년(태조 2)'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-gyojeong-dogam",
+   "sceneId": "scene-hs-gl-gyojeong-dogam",
+   "factId": "fact-hs-gl-019",
+   "problem": "persistence 1209~1270 의 basisClaimIds 가 claim-hs-gl-gjd-1209(설치)와 claim-hs-gl-gjd-def(정의)뿐이라 종료 연도 1270 에 근거가 없다. 화면에는 '기록된 존속(근거 2건)'으로 나오지만 그 2건은 1270 을 말하지 않는다.",
+   "fix": "이미 내려받은 raw/enc-gyojeongdogam.html 본문에 '1270년(원종 11)에 무신정권의 붕괴와 함께 소멸됐다'가 있다. 이 문장을 발췌로 추가하고 endedIn 1270 claim 을 만들어 basisClaimIds 에 넣는다.",
+   "evidence": "raw/enc-gyojeongdogam.html 텍스트 '1270년(원종 11)에 무신정권의 붕괴와 함께 소멸됐다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-dobang",
+   "sceneId": "scene-hs-gl-dobang",
+   "factId": "fact-hs-gl-008",
+   "problem": "persistence 1179~1270 의 basisClaimIds 가 claim-hs-gl-gdn-1179w(1179년 경대승의 결심)와 claim-hs-gl-dobang-1183(1183년 도방 사람들 유배)이다. 뒤엣것은 오히려 1183년 해체를 보여주는 기사라 1270 까지의 존속 근거가 못 된다. 최충헌 대의 도방 재건 근거도 없다.",
+   "fix": "최충헌·최우 대 도방의 재건과 존속을 말하는 발췌(민족문화대백과 '도방' 본문 후반)를 추가해 basisClaimIds 에 넣거나, persistence.to 를 근거가 닿는 연도로 줄이고 그 사정을 note 에 적는다.",
+   "evidence": "result.json claim-hs-gl-dobang-1183 의 quote '捕慶大升都房, 並流遠島'(고려사 권20, 1183-08-16) 대 scene persistence{from:1179,to:1270}"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-manjeok-rebellion",
+   "claimId": "claim-hs-gl-manjeok-c",
+   "factId": "fact-hs-gl-015",
+   "problem": "predicate syj:tookPlaceAt 의 object 가 place-hs-gaegyeong-namdaemun(개경 남대문)인데 근거로 단 인용은 '私僮萬積等六人, 樵北山'(북산에서 나무하다)이다. 인용은 성 북쪽을, 주장은 성 남쪽 문을 가리켜 삼중항 자체가 근거와 어긋난다. 같은 남대문 점을 도방 항목과 나눠 쓰기도 한다.",
+   "fix": "tookPlaceAt 의 object 를 북산·흥국사에 해당하는 장소 개체로 바꾸고 남대문은 좌표 대표점(place.claimIds) 역할만 하게 둔다. 또는 predicate 를 syj:relatedTo 로 낮추고 대표점 사정을 note 로 남긴다.",
+   "evidence": "chunk_goryeosa_kr_129_0010_0010_0050 '元年, 私僮萬積等六人, 樵北山, 招集公私奴隷謀曰 … 吾輩自興國寺步廊, 至毬庭'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-manjeok-rebellion",
+   "factId": "fact-hs-gl-015",
+   "problem": "category 를 settlement(취락·인구)로 잡았다. 같은 성취기준 [10한사1-02-03] 의 다른 두 봉기(망이·망소이, 김사미·효심)는 war 라서 커버리지 표에 1190년대 settlement 1건이라는 오해가 남는다.",
+   "fix": "실행되지 못한 모의라 war 가 어색하다면 administration 등으로 바꾸되 세 봉기의 분류 기준을 하나로 맞추고, 고른 기준을 fact.note 에 적는다.",
+   "evidence": "result.json facts — fact-hs-gl-007 war, fact-hs-gl-012 war, fact-hs-gl-015 settlement, 셋 다 [10한사1-02-03]"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-sanggam-celadon",
+   "factId": "fact-hs-gl-017",
+   "problem": "항목 type 이 culture 인데 fact.category 를 facility 로 잡았다. curriculum-items-brief.md 대응표는 culture→culture 이고, 검증기를 통과한 참고 칸 joseon-early-2 는 culture 항목 4건을 모두 culture 로 두었다(facility 는 heritage 항목 1건뿐).",
+   "fix": "category 를 culture 로 바꾼다. 가마터라는 무대는 scene.kind heritage + heritageType kiln 으로 이미 표현된다.",
+   "evidence": "items.json hs-goryeo-late-sanggam-celadon 의 type 'culture' / docs/research/curriculum-items-brief.md 대응표 / joseon-early-2 result.json 의 (culture,culture) 4건"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-sanggam-celadon",
+   "factId": "fact-hs-gl-017",
+   "problem": "연대를 항목의 1200~1350 대신 1150~1250 으로 바꿔 fact.year 1150, decade 1150 이 되었다. 근거로 든 '고려청자의 최성기인 제2기 1150년~1250년'은 고려청자 전체를 말하는 문장이라 상감청자 자체의 시작·끝으로 바로 쓰기에는 범위가 넓다.",
+   "fix": "같은 문단의 '상감청자의 발생은 대체로 의종대(毅宗代 1147-1170년)일 것으로 추측된다'를 발췌로 더해 시작 연도를 상감청자에 직접 붙이고, 1250 이라는 하한이 고려청자 최성기 기준임을 note 에 그대로 적는다.",
+   "evidence": "raw/ko-goryeo-cheongja.html — '고려청자의 최성기인 제2기 1150년~1250년이며 서긍의 《고려도경》의 기록으로 미루어 상감청자의 발생은 대체로 의종대(毅宗代 1147-1170년)일 것으로 추측된다'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-choe-u",
+   "sceneId": "scene-hs-gl-choe-u",
+   "factId": "fact-hs-gl-021",
+   "problem": "장면 기간이 1219~1249 인데 좌표는 1232년 천도 뒤에야 쓰인 강화 고려궁지다. 1219~1232 구간은 실제 무대인 개경과 다른 자리에 표시된다. 항목 place 지정을 따른 것이고 note·coordinateNote 에 밝혀 두기는 했다.",
+   "fix": "장면 시작 연도를 천도(1232)에 맞추거나 좌표를 개경 지점으로 두고 강화 천도는 요약 문장으로만 다룬다. 항목 place 를 지키려면 어긋남을 카드에 보이는 summary 에도 한 줄 남긴다.",
+   "evidence": "result.json scene-hs-gl-choe-u startYear 1219, place '강화 고려궁지'(126.48472, 37.75111), coordinateNote '1219년 집권 당시의 무대는 개경이므로 연도와 장소가 어긋난다'"
+  }
+ ],
+ "checkedItems": [
+  "hs-goryeo-late-musin-jeongbyeon",
+  "hs-goryeo-late-jeong-jungbu",
+  "hs-goryeo-late-jungbang",
+  "hs-goryeo-late-yi-uibang",
+  "hs-goryeo-late-kim-bodang-rebellion",
+  "hs-goryeo-late-jowichong-rebellion",
+  "hs-goryeo-late-mangi-mangsoi",
+  "hs-goryeo-late-dobang",
+  "hs-goryeo-late-gyeong-daeseung",
+  "hs-goryeo-late-yi-uimin",
+  "hs-goryeo-late-dongmyeongwangpyeon",
+  "hs-goryeo-late-kim-sami-hyosim",
+  "hs-goryeo-late-yi-gyubo",
+  "hs-goryeo-late-choe-chunghon",
+  "hs-goryeo-late-manjeok-rebellion",
+  "hs-goryeo-late-jinul",
+  "hs-goryeo-late-sanggam-celadon",
+  "hs-goryeo-late-suseonsa-gyeolsa",
+  "hs-goryeo-late-gyojeong-dogam",
+  "hs-goryeo-late-yose-baengnyeonsa",
+  "hs-goryeo-late-choe-u",
+  "hs-goryeo-late-jeongbang",
+  "hs-goryeo-late-darughachi"
+ ],
+ "summary": "검증기는 PASS(failures 0, warnings 0)다. 표본이 아니라 23개 항목 전부를 출처에서 다시 확인했다. 고려사·민족문화대백과 로컬 chunk 34개를 search_chunks 로 모두 꺼내 quote·연도·locator 를 대조했고 불일치가 없었다. 웹 발췌 14개 지점의 십진 좌표를 raw HTML 에서 문자열로 직접 찾아 14/14 일치했고, 민족문화대백과·위키 8개 문서는 실제 URL 을 다시 내려받아 발췌 14개가 지금도 원문에 있는지 확인했다(14/14). manifest 40건의 sha256·byteLength 도 재계산해 전부 맞았고 raw 40개 파일이 남거나 모자라지 않았다. 항목과 어긋난 연도 3건(상감청자 1200→1150, 정방 1388→1352, 다루가치 1231→1232)은 모두 출처 근거를 달고 note 에 적혀 있어 정당한 수정이다. 교과서 문장 전재는 없었고 발췌 문맥 왜곡도 상감청자 한 건 말고는 보이지 않았다. 다만 적재 전에 고칠 것이 셋 있다. 첫째, 개경 동부 대표점으로 쓴 선죽교 위키 좌표가 붙어 있어야 할 숭양서원·개성 시가지 중심과 5km 어긋나 core 2건을 포함한 3건이 성 서쪽 밖에 찍힌다. 둘째, 23개 항목이 16개 점만 써서 7개 지점이 겹친다(참고 칸 joseon-early-2 는 23건 23점). 셋째, items.json 이 지정한 sceneFunction 10건이 장면에 하나도 옮겨지지 않아 봉기·사찰·가마 구성이 사라진다. 그 밖에 존속 기간 근거 누락 3건, 인용과 주장 불일치 1건, 분류 2건, 연대 근거 범위 1건, 연도와 장소 어긋남 1건을 경미로 남긴다."
+}

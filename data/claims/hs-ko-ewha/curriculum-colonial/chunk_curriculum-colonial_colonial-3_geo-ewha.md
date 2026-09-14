@@ -18,7 +18,7 @@ status: "draft"
       "lon": 126.970326,
       "precision": "area"
     },
-    "note": "정동 일대 대표 좌표",
+    "note": "정동 일대의 표시용 대표 좌표다. 근우회 창립총회 개최지를 밝히는 근거가 아니다",
     "fromSource": "src-hs-ko-ewha",
     "citesChunk": "chunk_curriculum-colonial_colonial-3_geo-ewha",
     "quote": "37.5647235; 126.9703260",

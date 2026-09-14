@@ -1,0 +1,123 @@
+{
+  "job": "samguk-4",
+  "checker": "claude-opus-5 high",
+  "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-samguk --job samguk-4 -> PASS: failures=0 warnings=0 (facts 24 / scenes 24 / claims 97 / chunkClaims 60 / excerptClaims 37). 표본 재확인: 인용 chunk 51건 전부를 scripts/search_chunks.py --id 로 다시 읽어 quote·연도·문맥을 대조했고, 웹 출처 20건 중 12건(core 항목이 쓰는 출처 전부 포함)을 실제 URL 에서 재조회해 발췌 문자열이 지금도 본문에 그대로 있는지 확인했다 — 모두 일치.",
+  "verdict": "fix",
+  "issues": [
+    {
+      "severity": "major",
+      "itemId": "hs-samguk-bangasayusang",
+      "factId": "fact-hs4-008",
+      "problem": "근거 우선순위 위반. 브리프(docs/research/curriculum-items-brief.md '근거의 우선순위')는 로컬 원문 chunk 를 먼저 쓰고 그다음 우리역사넷·민족문화대백과·국가유산포털을 쓰되 위키백과는 좌표·보조로만 쓰라고 못 박았는데, 5개 항목(fact-hs4-008 반가사유상, fact-hs4-009 금동대향로, fact-hs4-012 담징, fact-hs4-013 강서대묘, fact-hs4-016 서산 마애여래삼존상)은 연도·정의·행위 주장이 전부 위키백과 본문 발췌뿐이다. 특히 fact-hs4-009 의 기준 연도 567년은 로컬 금석문 chunk 에 판독문이 그대로 있는데도 위키백과 문장으로 대신했다.",
+      "fix": "이 5건은 연도 또는 행위 주장 1건 이상을 로컬 chunk 나 민족문화대백과·우리역사넷 발췌로 교체한다. 능산리(fact-hs4-009)는 chunk_geumseok-gskh_002_0030_0010_gskh_002_0030_0010_0020 (date.raw 0567-99-99, 판독문 '百濟昌王十三秊太歲在丁亥') 을 citesChunk 로 쓰면 바로 해결된다. 나머지는 encykorea.aks.ac.kr(재조회 200 확인)·contents.history.go.kr(재조회 200 확인) 항목 발췌를 새 source 로 받아 raw/·manifest.json 에 추가한다. 위키백과 발췌는 좌표와 보조 서술로 남긴다.",
+      "evidence": "fact-hs4-008/009/012/013/016 의 claimIds 가 모두 citesExcerpt(src-hs4-ko-*) 다. 대체 근거 실재: python scripts/search_chunks.py --id chunk_geumseok-gskh_002_0030_0010_gskh_002_0030_0010_0020 -> date {\"label\":\"567년(백제 위덕왕 13)\",\"raw\":\"0567-99-99\"}, text '判讀文 百濟昌王十三秊太歲在丁亥, 妹兄公主供養舍利'."
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-samguk-sui-invasion",
+      "sceneId": "scene-hs4-sui-invasion",
+      "problem": "해외 장면에 place.overseas 플래그가 없다. 지시문은 '해외(만주·중국·일본·미국 등)는 place.overseas=true 로 두고' 라고 했는데 요동성(scene-hs4-sui-invasion, 중국 랴오양), 호류지(scene-hs4-damjing, 일본 나라), 부여성(scene-hs4-cheolli-jangseong, 중국 지린 눙안) 세 장면 모두 place 에 overseas 키가 없다. fact.note 에 '해외' 라고만 적혀 있다. 같은 컬렉션의 samguk-3 과 nambukguk-1 은 이미 이 필드를 쓰고 있어 표시 계층에서 처리가 갈린다.",
+      "fix": "scene-hs4-sui-invasion, scene-hs4-damjing, scene-hs4-cheolli-jangseong 의 place 에 \"overseas\": true 를 넣는다. region(north/south/north)과 fact.note 의 해외 표기는 그대로 둔다.",
+      "evidence": "samguk-4 result.json 전체에 \"overseas\" 문자열이 없다. 대조: data/research/curriculum-samguk/samguk-3/result.json 의 scene-hs-s3-norisachigye(왜 아스카 일원, lat 34.478731)와 curriculum-nambukguk/nambukguk-1 의 해외 장면 6건은 place.overseas=true 를 갖는다."
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-samguk-eulji-mundeok",
+      "sceneId": "scene-hs4-eulji-mundeok",
+      "problem": "을지문덕 초상(scene-hs4-eulji-mundeok)과 살수대첩(scene-hs4-salsu-battle)의 좌표가 소수점까지 같다(lon 125.66, lat 39.62 — 둘 다 claim-hs4-salsu-loc). 지시문의 '같은 도시 항목이 한 점에 겹치지 않게' 를 정면으로 어겨 지도에서 두 표식이 완전히 포개진다. scene-hs4-salsu-battle 의 coordinateNote 도 '을지문덕 항목과 같은 점을 쓴다' 라고 스스로 적었다.",
+      "fix": "둘 중 하나를 근거 있는 다른 점으로 옮긴다. 예: 을지문덕 초상 무대를 고구려 도읍 평양성(claim-hs4-pyongyang-loc, 125.7475/39.01667)으로 옮기고 setting 을 palace 나 office 로 둔다. 이때 이미 평양성을 쓰는 scene-hs4-daoism 과 다시 겹치므로 도교 전래 장면에는 별도 좌표 근거를 새로 받는다(raw/ko-anhakgung.html 에는 표시 좌표가 없다). 또는 살수대첩을 청천강 도하 지점에 해당하는 다른 근거 좌표로 옮긴다. 어느 쪽이든 두 장면이 같은 좌표를 쓰지 않게 한다.",
+      "evidence": "scene-hs4-eulji-mundeok.place = {lon 125.66, lat 39.62}, scene-hs4-salsu-battle.place = {lon 125.66, lat 39.62}. 24개 장면 중 완전 중복은 이 한 쌍뿐이며, 경주 6건은 남산·재매정·월성·분황사·첨성대·서라벌로 0.75~1.9km 씩 벌려 두었다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-gangseo-daemyo",
+      "sceneId": "scene-hs4-gangseo-daemyo",
+      "problem": "연도 근거가 없는 장면이 dateClaimIds 에 시간(time) claim 대신 relatedTo claim 을 넣어 표시 연도가 근거 있는 값처럼 보인다. scene-hs4-gangseo-daemyo(610, claim-hs4-gangseo-7c), scene-hs4-seosan-triad(620, claim-hs4-seosan-def), scene-hs4-jeongnimsa-pagoda(640, claim-hs4-jeongnim-def)가 그렇고 scene-hs4-eulji-mundeok(612)도 participatedIn claim 을 날짜 자리에 쓴다. 게다가 missing[] 이 비어 있어 '연도 근거를 못 찾았다' 는 사실이 fact.note 밖에는 남지 않는다.",
+      "fix": "세 항목을 missing[] 에 {itemId, reason:'조성 연도를 담은 근거 없음 — 표시용 기준 연도'} 로 남긴다. fact-hs4-024(정림사지 오층석탑)는 연도 근거가 0건인데 confidence 가 medium 이므로 low 로 내린다(fact-hs4-013·016 은 이미 low). 가능하면 국가유산포털·민족문화대백과에서 조성 시기 서술을 받아 time claim 을 만든다.",
+      "evidence": "scene.dateClaimIds 의 object.kind 점검 결과 gangseo/seosan/jeongnimsa/eulji 는 entity 다. fact-hs4-024.confidence='medium', note='조성 연도를 담은 근거는 없다. 660년 이후 새겨진 당평백제국비가 그 이전에 탑이 서 있었음을 보여줄 뿐이다'."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-gangseo-daemyo",
+      "sceneId": "scene-hs4-gangseo-daemyo",
+      "problem": "강서대묘 좌표(125.415/38.86306)가 en-wiki 'Goguryeo tombs'(고구려 고분군 전체) 문서의 대표점이라 실제 강서삼묘(남포 강서구역 삼묘리, items.json 값 125.44/38.99)에서 약 14km 남쪽이다. coordinateNote 는 '대표점을 썼다' 고만 하고 오차 크기를 밝히지 않는다. 같은 패킷의 북한산 순수비는 '약 2km' 라고 적어 두어 기준이 서로 다르다.",
+      "fix": "raw/ko-gangseo-guyeok.html 에 표시 좌표가 없으므로 en.wikipedia Kangso-guyok 의 표시 좌표(38.917; 125.533)를 새 발췌로 받아 강서구역 대표점으로 쓰거나, 현 좌표를 유지하되 coordinateNote 에 '실제 삼묘리에서 남쪽으로 약 14km' 처럼 오차를 적는다.",
+      "evidence": "ex-hs4-goguryeo-tombs-geo = '38.86306; 125.41500'(재조회 확인). raw/ko-gangseo-daemyo.html·raw/ko-gangseo-guyeok.html 에는 class=\"geo\" 좌표가 없다. en.wikipedia.org/wiki/Kangso-guyok 재조회 결과 '38.917; 125.533'."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-bukhansan-stele",
+      "sceneId": "scene-hs4-bukhansan-stele",
+      "problem": "북한산 진흥왕 순수비의 persistence 가 {from:555, to:null} 이라 비봉 좌표에 2100년까지 비가 서 있는 것으로 표시된다. 그런데 이 패킷이 인용한 금석문 해제(claim-hs4-bukhan-bibong)가 바로 '지금은 국립중앙박물관 고대관 신라실에 전시되어 있다' 고 적는다. scene.summary 에는 이 사실이 있으나 persistence 값과 어긋난다.",
+      "fix": "persistence.to 를 이전 연도(1972)로 두거나, to:null 을 유지하려면 place.coordinateNote 에 '원위치 표시이며 실물은 국립중앙박물관으로 옮겨졌다' 를 명시한다. fact-hs4-002 의 persistence 도 같이 맞춘다.",
+      "evidence": "claim-hs4-bukhan-bibong quote: '이 비는 국보 제3호로 서울특별시 종로구 구기동의 비봉(碑峰)에 있었으나 지금은 국립중앙박물관 고대관 신라실에 전시되어 있다.' / fact-hs4-002.persistence = {\"kind\":\"facility\",\"from\":555,\"to\":null}"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-gwansanseong-battle",
+      "claimId": "claim-hs4-gwansan-okcheon",
+      "problem": "relatedTo claim 의 object 가 인용문이 말하는 바와 어긋난다. claim-hs4-gwansan-okcheon 은 인용이 '관산성은 지금의 충청북도 옥천이다'(장소 서술)인데 object 는 polity-hs4-silla 다. 같은 형태로 claim-hs4-salsu-river·claim-hs4-anju-river 는 청천강 서술인데 object 가 polity-hs4-goguryeo, claim-hs4-banga-def 는 인용이 '삼국 시대에 만들어진' 인데 object 가 polity-hs4-baekje 다(반가사유상 제작국은 신라설·백제설이 갈리는 쟁점이다).",
+      "fix": "object 를 인용문이 실제로 가리키는 개체로 바꾼다. 장소 서술은 place 엔티티(place-hs4-gwansanseong, place-hs4-salsu)를, 반가사유상 정의는 artifact-hs4-banga 를 object 로 둔다. 백제 제작설을 주장하려면 그 견해를 명시한 ex-hs4-banga-muwang 를 근거로 별도 claim 을 만든다.",
+      "evidence": "claim-hs4-gwansan-okcheon.object = {\"kind\":\"entity\",\"id\":\"polity-hs4-silla\"}, quote='관산성은 지금의 충청북도 옥천이다.' / claim-hs4-banga-def.object = polity-hs4-baekje, 발췌 = '금동미륵보살반가사유상(金銅彌勒菩薩半跏思惟像)은 삼국 시대에 만들어진 금동 미륵보살반가사유상이다.'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-sesok-ogye",
+      "claimId": "claim-hs4-ogye-602",
+      "problem": "세속 5계 장면의 날짜 근거가 계를 준 시점 기사가 아니라 귀산·추항이 전사한 아막성 전투 기사다. fact.note 에 사정을 적었지만 장면 연도 602년이 '계를 준 해' 로 읽히기 쉽다.",
+      "fix": "claim.note 와 scene.summary 에 '602년은 계를 받은 두 사람이 전사한 해' 임을 더 분명히 하거나, 원광의 귀국(600년) 기사를 별도 time claim 으로 추가해 600~602 범위로 둔다.",
+      "evidence": "chunk_samguksagi_sg_045_0090_0060 text = '眞平王建福十九年壬戌秋八月, 百濟大發兵, 來圍阿莫城…'(date.raw 0602-99-99L0), claim-hs4-ogye-602.predicate='syj:occurredIn', subject='event-hs4-sesok-ogye'."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-cheolli-jangseong",
+      "factId": "fact-hs4-019",
+      "problem": "천리장성 대표점이 북위 44.435(지린성 눙안 = 부여성 북단)라 fact.what 의 '요동에 쌓은 긴 방어선' 과 지도상 위치가 어긋나 보인다. 또 category 가 facility 인데 items.json 의 type 은 institution 이고 브리프 대응표는 institution -> administration 이다(강서대묘·서산 마애삼존상도 heritage 를 culture 로 두어 표와 갈린다).",
+      "fix": "좌표는 근거가 있으니 유지하되 fact.note 에 '표시점은 장성 북단 부여성이며 본문의 요동 구간이 아니다' 를 덧붙인다. category 는 대응표에 맞추거나, 시설로 본 이유를 note 에 한 줄 남겨 커버리지 표의 일관성을 지킨다.",
+      "evidence": "fact-hs4-019.lat=44.435 (ex-hs4-nongan-geo '44.435; 125.175'), items.json hs-samguk-cheolli-jangseong.type='institution', result category='facility'. 같은 institution 인 화랑도(fact-hs4-005)는 administration 으로 두었다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-gilt-bronze-incense-burner",
+      "factId": "fact-hs4-009",
+      "problem": "items.json 의 연도와 다른 값을 쓴 항목이 4건이다: 금동대향로 600 -> 567(decade 600 -> 560), 반가사유상 600 -> 602, 세속 5계 600 -> 602, 수의 고구려 침입 endYear 614 -> 612. 모두 note 에 사유가 있어 수용할 만하지만, 무엇을 넣을지는 항목 목록이 정한다는 원칙상 연도 변경은 더 눈에 띄게 남겨야 한다.",
+      "fix": "현 값을 유지하려면 각 note 첫머리에 '항목 목록의 연도(600/614)와 다름' 을 명시한다. 금동대향로는 decade 가 560 으로 가면서 6세기 칸으로 옮겨가므로 항목 관리자와 기준을 맞추는 편이 안전하다.",
+      "evidence": "items.json year 600/600/600, yearEnd 614. result: fact-hs4-009.year=567(decade 560), fact-hs4-008.year=602, fact-hs4-011.year=602, scene-hs4-sui-invasion.endYear=612."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-samguk-daoism",
+      "factId": "fact-hs4-017",
+      "problem": "raw/ 에 manifest.json 에 없는 HTML 5개가 남아 있다(ko-anhakgung.html, ko-cheongcheongang.html, ko-daeseongsanseong.html, ko-pyongyangseong.html, ko-seokseongsanseong.html). 형식 정본은 raw/ 를 '내려받은 원본 목록' 인 manifest 와 짝지으라고 하므로 목록과 실물이 어긋난다(검증기는 이 방향을 보지 않는다).",
+      "fix": "쓰지 않은 원본은 지우거나, 받은 사실을 남기려면 manifest 에 url·fetchedUtc·httpStatus·byteLength·sha256 과 함께 추가한다(이미 manifest 에만 있고 sources 에는 없는 4건 ko-liaoyang·ko-nongan·ko-okcheon·ko-gangseo-guyeok 과 같은 방식).",
+      "evidence": "raw 파일 29개, manifest 항목 24개, sources rawFile 20개. 차집합: manifest 에 없는 raw 5건 / sources 가 안 쓰는 manifest 4건."
+    }
+  ],
+  "checkedItems": [
+    "hs-samguk-gwansanseong-battle",
+    "hs-samguk-bukhansan-stele",
+    "hs-samguk-changnyeong-stele",
+    "hs-samguk-daegaya-fall",
+    "hs-samguk-hwarangdo",
+    "hs-samguk-kim-yusin",
+    "hs-samguk-sui-invasion",
+    "hs-samguk-bangasayusang",
+    "hs-samguk-gilt-bronze-incense-burner",
+    "hs-samguk-mu-wang",
+    "hs-samguk-sesok-ogye",
+    "hs-samguk-damjing",
+    "hs-samguk-gangseo-daemyo",
+    "hs-samguk-eulji-mundeok",
+    "hs-samguk-salsu-battle",
+    "hs-samguk-seosan-triad",
+    "hs-samguk-daoism",
+    "hs-samguk-iksan-project",
+    "hs-samguk-cheolli-jangseong",
+    "hs-samguk-seondeok-queen",
+    "hs-samguk-bunhwangsa-pagoda",
+    "hs-samguk-mireuksa-pagoda",
+    "hs-samguk-cheomseongdae",
+    "hs-samguk-jeongnimsa-pagoda"
+  ],
+  "summary": "검증기는 PASS(failures=0, warnings=0)다. 인용 chunk 51건을 전부 원문에서 다시 읽었고 연도·행위·문맥이 모두 맞았다(관산성 554, 북한산 순행 555, 창녕비 561, 대가야 562, 화랑 576, 김유신 595·673, 수 598·612, 세속5계 602, 도교 624, 천리장성 631~647, 선덕 632~647, 분황사 634, 미륵사 사리봉안 639). 웹 발췌는 20개 출처 중 12개(core 항목이 쓰는 출처 전부)를 실제 URL 에서 재조회해 문자열이 지금도 본문에 그대로 있음을 확인했고 좌표 발췌도 모두 살아 있었다. 인물 4건의 participants 엔티티는 모두 저장소에 실재하며 portrait 1인 규칙, heritage 9건의 heritageType·persistence, images.json 24건의 접두어와 초상 문구도 규칙대로다. 고칠 것은 세 가지다. (1) 5개 항목이 위키백과 본문에만 기대고 있는데 브리프는 위키백과를 좌표·보조로 제한했고, 능산리 567 은 로컬 금석문 판독문이 있는데도 쓰지 않았다. (2) 해외 장면 3건(요동성·호류지·부여성)에 place.overseas=true 가 빠졌다 — 같은 컬렉션 samguk-3 은 쓰고 있다. (3) 을지문덕 초상과 살수대첩이 소수점까지 같은 좌표를 써 지도에서 포개진다. 나머지 8건은 연도 근거 없는 장면의 missing[] 기록, 강서대묘 좌표 14km 오차, 북한산비 존속 표시, relatedTo object 불일치, 항목 연도 변경 표시, raw/manifest 불일치 같은 마감 문제다. 참고로 부여(위도 36.28)의 region 이 samguk-3·samguk-4 는 central, samguk-5 는 south 로 갈리는데 이 칸만의 문제가 아니어서 이슈로 세지 않았다."
+}

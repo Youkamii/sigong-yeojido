@@ -1,9 +1,9 @@
 {
   "job": "samguk-4",
-  "sources": 20,
-  "excerpts": 37,
-  "chunkClaims": 60,
-  "excerptClaims": 37,
+  "sources": 26,
+  "excerpts": 47,
+  "chunkClaims": 62,
+  "excerptClaims": 39,
   "facts": 24,
   "factsByCategory": {
     "administration": 2,
@@ -13,8 +13,8 @@
     "person": 4,
     "war": 3
   },
-  "claims": 97,
-  "entities": 43,
+  "claims": 101,
+  "entities": 46,
   "rawFilesChecked": [
     {
       "source": "src-hs4-ko-jungang-museum",
@@ -175,9 +175,90 @@
       "rawBytes": 169448,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-enc-banga-83",
+      "url": "https://encykorea.aks.ac.kr/Article/E0007681",
+      "sha256": "8a00bbfaab362ebd7d6df65dccd26e2a8bc0d9bd8bb710078d5e4ec3cfae6361",
+      "rawBytes": 119875,
+      "excerpts": 2,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs4-enc-damjing",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013838",
+      "sha256": "9c11aed3667edd85bd713744ca8b6d737c656e745a5714446d24ba3894ee94c8",
+      "rawBytes": 88724,
+      "excerpts": 2,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs4-enc-gangseo-daemyo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0001199",
+      "sha256": "63addf945b4e1c371573f403ec86726d0fa9d1f6278dbf19b30e1939a4a47fb2",
+      "rawBytes": 239310,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-hs4-enc-seosan-triad",
+      "url": "https://encykorea.aks.ac.kr/Article/E0027818",
+      "sha256": "1fc8a01007ea8f4d8aaf64ac372b23894cb289a48d7a74a6ae798d1e4622d6be",
+      "rawBytes": 133285,
+      "excerpts": 2,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs4-en-anhak",
+      "url": "https://en.wikipedia.org/wiki/Anhak_Palace",
+      "sha256": "42fc704626d89885c690de4f1d43c9af63db560d0b9fab99e27cf977530897c9",
+      "rawBytes": 95557,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-en-kangso",
+      "url": "https://en.wikipedia.org/wiki/Kangso-guyok",
+      "sha256": "38e70ffdde611de7a01ffaa3b7ebed36a3525c8adb9f66a6c87e69e1fe210f1c",
+      "rawBytes": 108165,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
-  "missing": [],
+  "missing": [
+    {
+      "id": "miss-hs4-1",
+      "itemId": "hs-samguk-gangseo-daemyo",
+      "topic": "강서대묘 축조·벽화 연대",
+      "reason": "조성 연도를 담은 근거 없음 — 표시용 기준 연도(610)",
+      "detail": "민족문화대백과는 6세기 후반~7세기 초로만 적어 연도 숫자 주장을 만들지 못했다. 장면의 610년은 표시용 기준점이다.",
+      "neededSource": "국가유산포털 또는 북한 고고 보고의 축조 연대 서술"
+    },
+    {
+      "id": "miss-hs4-2",
+      "itemId": "hs-samguk-seosan-triad",
+      "topic": "서산 용현리 마애여래삼존상 조성 연대",
+      "reason": "조성 연도를 담은 근거 없음 — 표시용 기준 연도(620)",
+      "detail": "민족문화대백과는 백제시대 불상이라고만 적고 조성 연도를 밝히지 않는다. 장면의 620년은 표시용 기준점이다.",
+      "neededSource": "국가유산포털 지정 사유 또는 조성 시기를 밝힌 미술사 해설"
+    },
+    {
+      "id": "miss-hs4-3",
+      "itemId": "hs-samguk-jeongnimsa-pagoda",
+      "topic": "부여 정림사지 오층석탑 건립 연대",
+      "reason": "조성 연도를 담은 근거 없음 — 표시용 기준 연도(640)",
+      "detail": "660년 이후 새겨진 당평백제국비로 그 이전 존재만 확인된다. 장면의 640년은 표시용 기준점이다.",
+      "neededSource": "국가유산포털 또는 발굴 보고의 창건 시기 서술"
+    },
+    {
+      "id": "miss-hs4-4",
+      "itemId": "hs-samguk-bangasayusang",
+      "topic": "금동미륵보살반가사유상(국보 83호) 제작국·제작 연도",
+      "reason": "제작국과 연도가 갈려 확정 근거 없음 — 표시용 기준 연도(602)",
+      "detail": "민족문화대백과는 백제설과 신라설이 있고 제작 연대는 대체로 7세기 전반으로만 적는다.",
+      "neededSource": "제작 연도를 못 박은 명문 또는 발굴 자료"
+    }
+  ],
   "collection": {
     "task": "samguk-4",
     "runner": "workflow",
@@ -189,12 +270,13 @@
     "started": 1789660000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-samguk-4"
+    "sessionId": "workflow-samguk-4",
+    "revised": 1789379637
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs4-jeongnimsaji"
+    "event-hs4-sesok-ogye"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

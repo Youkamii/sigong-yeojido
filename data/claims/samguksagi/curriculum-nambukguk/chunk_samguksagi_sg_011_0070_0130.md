@@ -61,7 +61,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-wonjong-person",
-    "subject": "person-hs-wonjong",
+    "subject": "person-syj128-wonjong-sabeolju",
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",
-      "id": "person-hs-c4-yang-sebong"
+      "id": "person-hs-yang-sebong"
     },
     "note": "총사령 양세봉의 부대가 중국 의용군과 연합했다.",
     "fromSource": "src-hs-c4-enc-joseon-hyeongmyeonggun",

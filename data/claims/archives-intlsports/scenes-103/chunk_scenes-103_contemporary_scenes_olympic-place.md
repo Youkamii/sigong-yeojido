@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-so-place",
+    "subject": "event-hs-c4-olympics",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-rok"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_olympic-place",
+    "quote": "대한민국 서울에서 제24회 하계올림픽이 열렸다",
+    "note": "서울에서 제24회 하계올림픽이 열렸다.",
+    "fromSource": "src-archives-intlsports",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

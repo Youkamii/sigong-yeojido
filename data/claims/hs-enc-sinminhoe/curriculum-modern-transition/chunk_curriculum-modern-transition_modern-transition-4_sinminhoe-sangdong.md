@@ -19,11 +19,11 @@ status: "draft"
     "note": "상동교회를 중심으로 한 집단이 창립의 한 갈래였다.",
     "fromSource": "src-hs-enc-sinminhoe",
     "citesChunk": "chunk_curriculum-modern-transition_modern-transition-4_sinminhoe-sangdong",
-    "quote": "상동교회(尙洞敎會)를 중심으로 애국계몽운동을 전개하던 집단 세력이다.",
+    "quote": "상동교회(尙洞敎會)를 중심으로",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -1,9 +1,9 @@
 {
   "job": "joseon-late-5",
-  "sources": 35,
-  "excerpts": 63,
+  "sources": 37,
+  "excerpts": 66,
   "chunkClaims": 31,
-  "excerptClaims": 69,
+  "excerptClaims": 70,
   "facts": 23,
   "factsByCategory": {
     "administration": 3,
@@ -14,8 +14,8 @@
     "settlement": 3,
     "war": 2
   },
-  "claims": 100,
-  "entities": 56,
+  "claims": 101,
+  "entities": 59,
   "rawFilesChecked": [
     {
       "source": "src-hs-jl5-enc-balhaego",
@@ -296,6 +296,22 @@
       "rawBytes": 83267,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs-jl5-en-hyeongok",
+      "url": "https://en.wikipedia.org/wiki/Hyeongok-myeon",
+      "sha256": "13da6c97a19765ccb3753827fd21e15d00d4d8bd6f489b719a163659793bebad",
+      "rawBytes": 117310,
+      "excerpts": 2,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-hs-jl5-ko-donhwamun",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8F%88%ED%99%94%EB%AC%B8",
+      "sha256": "7d57b7187454a2ff85cd90701cc647b60cf968920eb7ab0aa015e51d4c9ce480",
+      "rawBytes": 167943,
+      "excerpts": 1,
+      "quotedWords": 1
     }
   ],
   "missing": [
@@ -303,9 +319,9 @@
       "id": "miss-jl5-1",
       "itemId": "hs-joseon-late-jungin-socheong",
       "topic": "중인 통청 상소(1851)",
-      "detail": "중인 기술관이 1851년에 올린 통청 상소의 연도·장소를 공개 사전에서 찾지 못해 같은 시기 서얼 허통 기록으로 대신했다.",
-      "neededSource": "한국민족문화대백과사전 '통청운동' 계열 항목 또는 우리역사넷 신편 한국사 해당 절",
-      "reason": "중인 통청 상소 자체의 근거 부족"
+      "detail": "중인 기술관의 통청 상소를 연도·장소와 함께 적은 공개 출처를 찾지 못했다. 한국민족문화대백과사전에는 '통청운동' 표제 항목이 없고 '중인' 항목 본문에도 통청 서술이 없다. 우리역사넷 교과서 용어 해설 '중인'은 통청 운동을 적지만 공공누리 표시가 없어 이 형식의 웹 출처로 쓸 수 없고 연도도 없다.",
+      "neededSource": "우리역사넷 신편 한국사 조선 후기 신분편 또는 공공누리 표시가 있는 국사편찬위원회 해설",
+      "reason": "중인 통청 상소의 연도·장소 근거를 찾지 못해 장면 없이 사실만 남겼다"
     },
     {
       "id": "miss-jl5-2",
@@ -335,13 +351,13 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-joseon-late-5"
+    "sessionId": "workflow-joseon-late-5",
+    "revised": 1789381074
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "event-hs-jl5-ijeongcheong",
-    "place-hs-jl5-yukjo-geori"
+    "place-hs-jl5-donhwamun"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

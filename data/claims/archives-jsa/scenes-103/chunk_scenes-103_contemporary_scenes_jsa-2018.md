@@ -96,6 +96,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-pmj-kju",
+    "subject": "person-kim-jongun-2018",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-c5-panmunjom-2018"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_jsa-2018",
+    "quote": "김정은 북한 국무위원장이 판문점 군사분계선을 넘어",
+    "note": "군사분계선을 넘어 평화의 집으로 왔다",
+    "fromSource": "src-archives-jsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

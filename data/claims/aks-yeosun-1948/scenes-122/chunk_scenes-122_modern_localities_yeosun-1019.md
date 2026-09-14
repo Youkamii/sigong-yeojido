@@ -75,6 +75,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-yeosun-refuse",
+    "subject": "event-hs-c1-yeosun",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "org-hs-c1-14th"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_yeosun-1019",
+    "quote": "1948년 10월 19일 여수에 주둔하고 있던 국방경비대 제14연대 소속 군인들이 진압 명령을 거부하고",
+    "note": "10월 19일 제14연대 군인들이 명령을 거부했다.",
+    "fromSource": "src-aks-yeosun-1948",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

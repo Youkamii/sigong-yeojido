@@ -1,9 +1,9 @@
 {
   "job": "samguk-3",
-  "sources": 28,
-  "excerpts": 33,
-  "chunkClaims": 61,
-  "excerptClaims": 33,
+  "sources": 30,
+  "excerpts": 35,
+  "chunkClaims": 66,
+  "excerptClaims": 35,
   "facts": 24,
   "factsByCategory": {
     "administration": 8,
@@ -15,8 +15,8 @@
     "settlement": 1,
     "war": 3
   },
-  "claims": 94,
-  "entities": 66,
+  "claims": 101,
+  "entities": 75,
   "rawFilesChecked": [
     {
       "source": "src-hs-s3-wiki-gongsanseong",
@@ -163,14 +163,6 @@
       "quotedWords": 2
     },
     {
-      "source": "src-hs-s3-wiki-danyang",
-      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%96%91%EA%B5%B0",
-      "sha256": "decf7d911c5fd269ca43d7a6dff0b8d0360656d21698a38b168e5f128789418a",
-      "rawBytes": 219456,
-      "excerpts": 1,
-      "quotedWords": 2
-    },
-    {
       "source": "src-hs-s3-wiki-tangeumdae",
       "url": "https://ko.wikipedia.org/wiki/%ED%83%84%EA%B8%88%EB%8C%80",
       "sha256": "a346aa9fc18218beb16cddc844575cddaf70088a8eb54c05064e9dde95028f0b",
@@ -241,6 +233,30 @@
       "rawBytes": 74032,
       "excerpts": 1,
       "quotedWords": 5
+    },
+    {
+      "source": "src-hs-s3-wiki-jeokseong",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%96%91%20%EC%A0%81%EC%84%B1",
+      "sha256": "2c6bab8802a1a1c5bec86ce2878389eb2401c377f0b66cc097a0f9b77ab9dfda",
+      "rawBytes": 110182,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-s3-wiki-namsan",
+      "url": "https://en.wikipedia.org/wiki/Namsan%20%28Gyeongju%29",
+      "sha256": "aa90f75ea28d2d20972b51ddf9632ce2153cc4236f3e2c1e5787e2692854b491",
+      "rawBytes": 114349,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-s3-wiki-donggung",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC%20%EB%8F%99%EA%B6%81%EA%B3%BC%20%EC%9B%94%EC%A7%80",
+      "sha256": "7e012fa36e9a21f3694cba199ba0b71e7ceb1eb47dc6b031b5667b8611c0e9b0",
+      "rawBytes": 244251,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -252,15 +268,16 @@
     "modelsObserved": [
       "claude-opus-5"
     ],
-    "started": 1789700000,
+    "started": 1789351200,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-samguk-3"
+    "sessionId": "workflow-samguk-3",
+    "revised": 1789379653
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-s3-hwangnyongsa"
+    "polity-hs-s3-silla"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

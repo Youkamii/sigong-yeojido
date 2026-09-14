@@ -18,7 +18,7 @@ status: "draft"
     },
     "citesChunk": "chunk_samguksagi_sg_007_0020_0100",
     "quote": "平壤已南百濟土地, 並乞你新羅",
-    "note": "대동강 이남 땅을 신라에 준다는 당 태종의 약속을 문무왕이 답서에서 들었다",
+    "note": "원문은 '평양 이남의 백제 땅'을 신라에 준다고 적는다. 671년 문무왕이 설인귀에게 보낸 답서가 당 태종의 옛 약속을 상기한 대목이며, 뒷날 흔히 대동강선으로 부르는 경계를 원문이 직접 적은 것은 아니다",
     "fromSource": "src-samguksagi",
     "origin": "ai",
     "status": "draft",

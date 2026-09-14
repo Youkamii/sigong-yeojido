@@ -24,11 +24,11 @@ status: "draft"
     "note": "1907년 4월 안창호의 발기로 양기탁 등 7인이 창건위원이 되었다.",
     "fromSource": "src-hs-enc-sinminhoe",
     "citesChunk": "chunk_curriculum-modern-transition_modern-transition-4_sinminhoe-1907",
-    "quote": "1907년 4월 안창호(安昌浩)의 발기로 양기탁(梁起鐸)·전덕기(全德基)·이동휘(李東輝)·이동녕(李東寧)·이갑(李甲)·유동열(柳東說)·안창호 등 7인이 창건위원이 되고,",
+    "quote": "1907년 4월 안창호(安昌浩)의 발기로 양기탁(梁起鐸)·전덕기(全德基)·이동휘(李東輝)·이동녕(李東寧)·이갑(李甲)·유동열(柳東說)·안창호 등 7인이 창건위원이",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-sinminhoe-ahn",
@@ -41,11 +41,11 @@ status: "draft"
     "note": "안창호가 창립을 발의했다.",
     "fromSource": "src-hs-enc-sinminhoe",
     "citesChunk": "chunk_curriculum-modern-transition_modern-transition-4_sinminhoe-1907",
-    "quote": "1907년 4월 안창호(安昌浩)의 발기로 양기탁(梁起鐸)·전덕기(全德基)·이동휘(李東輝)·이동녕(李東寧)·이갑(李甲)·유동열(柳東說)·안창호 등 7인이 창건위원이 되고,",
+    "quote": "1907년 4월 안창호(安昌浩)의 발기로 양기탁(梁起鐸)·전덕기(全德基)·이동휘(李東輝)·이동녕(李東寧)·이갑(李甲)·유동열(柳東說)·안창호 등 7인이 창건위원이",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-yanggitak-sinminhoe",
@@ -58,11 +58,11 @@ status: "draft"
     "note": "1907년 신민회 창건위원 7인에 들었다.",
     "fromSource": "src-hs-enc-sinminhoe",
     "citesChunk": "chunk_curriculum-modern-transition_modern-transition-4_sinminhoe-1907",
-    "quote": "1907년 4월 안창호(安昌浩)의 발기로 양기탁(梁起鐸)·전덕기(全德基)·이동휘(李東輝)·이동녕(李東寧)·이갑(李甲)·유동열(柳東說)·안창호 등 7인이 창건위원이 되고,",
+    "quote": "1907년 4월 안창호(安昌浩)의 발기로 양기탁(梁起鐸)·전덕기(全德基)·이동휘(李東輝)·이동녕(李東寧)·이갑(李甲)·유동열(柳東說)·안창호 등 7인이 창건위원이",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

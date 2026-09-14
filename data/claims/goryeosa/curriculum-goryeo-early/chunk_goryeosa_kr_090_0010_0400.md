@@ -75,6 +75,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2025-09-14"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-cheontae-jiji",
+    "subject": "person-encykorea-uicheon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-gukcheongsa"
+    },
+    "note": "의천이 천태종을 처음 열고 국청사에 두었다.",
+    "citesChunk": "chunk_goryeosa_kr_090_0010_0400",
+    "quote": "始創天台宗, 置于國淸寺",
+    "fromSource": "src-goryeosa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

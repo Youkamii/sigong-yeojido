@@ -45,6 +45,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-labor-interval",
+    "subject": "event-hs-c4-labor",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-rok"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_worker87-interval",
+    "quote": "1987년 7월부터 9월까지 전국적으로 분출한 노동자들의 노동쟁의와 민주화운동",
+    "note": "석 달 사이 전국에서 노동 쟁의가 분출했다.",
+    "fromSource": "src-aks-worker-1987",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -1,9 +1,9 @@
 {
   "job": "colonial-4",
-  "sources": 46,
-  "excerpts": 79,
+  "sources": 49,
+  "excerpts": 85,
   "chunkClaims": 8,
-  "excerptClaims": 81,
+  "excerptClaims": 86,
   "facts": 22,
   "factsByCategory": {
     "administration": 2,
@@ -13,8 +13,8 @@
     "person": 7,
     "war": 4
   },
-  "claims": 89,
-  "entities": 52,
+  "claims": 94,
+  "entities": 54,
   "rawFilesChecked": [
     {
       "source": "src-hs-c4-enc-brnarod",
@@ -373,8 +373,8 @@
       "url": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%8B%A0%EA%B6%81",
       "sha256": "3c934153076d45608944b329f6f446bf1e9fcd6e9843d2620bc23713df022239",
       "rawBytes": 116669,
-      "excerpts": 1,
-      "quotedWords": 2
+      "excerpts": 2,
+      "quotedWords": 11
     },
     {
       "source": "src-hs-c4-ko-namsan-seoul",
@@ -383,6 +383,30 @@
       "rawBytes": 281622,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c4-ko-dongailbo-saok",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8F%99%EC%95%84%EC%9D%BC%EB%B3%B4_%EC%82%AC%EC%98%A5",
+      "sha256": "bf3a92843545ca35d261a136f8f59114218c9b0e7071a740f20da60c97f323a8",
+      "rawBytes": 82362,
+      "excerpts": 2,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-hs-c4-ko-suwon",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%98%EC%9B%90%EC%8B%9C",
+      "sha256": "9b209d5d282c01cfe4f2b73151a475bd33087cad4c8e1173f7908e722cde116b",
+      "rawBytes": 578775,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-c4-ko-nammyeon-bugyang",
+      "url": "https://ko.wikipedia.org/wiki/%EB%82%A8%EB%A9%B4%EB%B6%81%EC%96%91",
+      "sha256": "4bcfa1a5ec80cb8e901f294fcc9d3c607202d72562bdeb346064d696f21c49d3",
+      "rawBytes": 71595,
+      "excerpts": 1,
+      "quotedWords": 10
     }
   ],
   "missing": [],
@@ -397,12 +421,14 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-colonial-4"
+    "sessionId": "workflow-colonial-4",
+    "revised": 1789381063
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-c4-namsan"
+    "inst-hs-c4-joseon-chongdokbu",
+    "place-hs-c4-singung"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

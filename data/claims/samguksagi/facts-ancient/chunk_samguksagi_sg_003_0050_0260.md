@@ -46,6 +46,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-myeonghwal-move",
+    "subject": "polity-silla",
+    "predicate": "syj:capitalMovedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-sg2-myeonghwalseong"
+    },
+    "citesChunk": "chunk_samguksagi_sg_003_0050_0260",
+    "quote": "十八年, 春正月, 王移居明活城",
+    "note": "삼국사기 자비마립간 18년(475). 나제 동맹이 이어지던 동안 신라 왕이 명활성으로 거처를 옮겼다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

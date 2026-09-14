@@ -48,11 +48,11 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "person-hs-sinjeong-wanghu"
+      "id": "person-jl-sinjeong-wanghu"
     },
     "citesChunk": "chunk_scenes-103_joseon_late_scenes_gbg-daebi",
     "quote": "수렴청정 중인 대왕대비[신정왕후]의 강력한 의지로",
-    "note": "중건을 밀어붙인 주체.",
+    "note": "중건을 분부한 주체. 저장소에 이미 있는 개체 person-jl-sinjeong-wanghu 를 재사용했다.",
     "fromSource": "src-ek-gyeongbokgung-e0002434",
     "origin": "ai",
     "status": "draft",

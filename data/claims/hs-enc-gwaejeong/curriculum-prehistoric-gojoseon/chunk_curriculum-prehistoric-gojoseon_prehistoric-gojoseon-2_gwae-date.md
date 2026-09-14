@@ -16,7 +16,7 @@ status: "draft"
       "kind": "entity",
       "id": "thing-hs-donggeom"
     },
-    "note": "유적 연대를 서기전 4~3세기로 보는 견해가 유력하다.",
+    "note": "괴정동 유적 기사 자체의 연대관 — “연대에 대해서는 이설이 많으나 서기전 4~3세기로 보는 견해가 유력하다”. 연도 표기가 “4~3세기”라 time 주장으로는 쓰지 못하고 유적 연대 근거로 함께 단다.",
     "fromSource": "src-hs-enc-gwaejeong",
     "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-2_gwae-date",
     "quote": "서기전 4~3세기로 보는 견해가 유력하다",

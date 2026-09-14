@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",
-      "id": "person-hs-c4-son-kijung"
+      "id": "person-hs-son-kijung"
     },
     "note": "손기정의 사진이 사건의 중심이다.",
     "fromSource": "src-hs-c4-enc-iljanggi",

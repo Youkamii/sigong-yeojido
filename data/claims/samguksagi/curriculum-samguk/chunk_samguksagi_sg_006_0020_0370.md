@@ -35,7 +35,7 @@ status: "draft"
     },
     "citesChunk": "chunk_samguksagi_sg_006_0020_0370",
     "quote": "王領金庾信等二十八將軍, 與之合攻豆陵 尹城·周留城等諸城, 皆下之",
-    "note": "663년 신라와 당이 주류성 등을 함께 쳐서 모두 함락했다",
+    "note": "663년 신라와 당이 두릉윤성·주류성 등을 함께 쳐서 모두 함락했다 — 해전 자체가 아니라 같은 해 육상 작전 기사다. 해전의 연대 근거는 claim-hs-sg5-baekgang-663(자치통감 663년 9월)에 따로 달았다",
     "fromSource": "src-samguksagi",
     "origin": "ai",
     "status": "draft",

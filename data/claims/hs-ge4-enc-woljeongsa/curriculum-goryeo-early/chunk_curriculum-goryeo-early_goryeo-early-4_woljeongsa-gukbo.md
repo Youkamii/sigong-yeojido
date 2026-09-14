@@ -11,17 +11,12 @@ status: "draft"
   {
     "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-woljeongsa-gukbo",
     "subject": "place-hs-ge4-woljeongsa-tap",
-    "predicate": "syj:establishedIn",
+    "predicate": "syj:relatedTo",
     "object": {
-      "kind": "time",
-      "verbatim": "1962년",
-      "year": 1962,
-      "precision": "year",
-      "earliest": 1962,
-      "latest": 1962,
-      "id": "ts-curriculum-goryeo-early-goryeo-early-4-hs-ge4-woljeongsa-gukbo"
+      "kind": "entity",
+      "id": "place-hs-ge4-woljeongsa"
     },
-    "note": "1962년 국보로 지정되었다.",
+    "note": "1962년 12월 국보로 지정되어 지금도 월정사 경내에 서 있다. 지정 연도는 건립 연도가 아니다.",
     "fromSource": "src-hs-ge4-enc-woljeongsa",
     "citesChunk": "chunk_curriculum-goryeo-early_goryeo-early-4_woljeongsa-gukbo",
     "quote": "1962년에 국보로 지정되었다",

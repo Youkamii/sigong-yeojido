@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-hwangnyong-burn",
+    "subject": "facility-hs-sg5-hwangnyongsa-tap",
+    "predicate": "syj:destroyedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1238년(고종 25)",
+      "year": 1238,
+      "precision": "year",
+      "earliest": 1238,
+      "latest": 1238,
+      "id": "ts-curriculum-samguk-samguk-5-hs-sg5-hwangnyong-burn"
+    },
+    "note": "1238년 몽골 침입 때 절과 탑이 모두 불탔다 — 민족문화대백과 황룡사지 항목",
+    "citesChunk": "chunk_scenes-122_early_localities_hns-1238",
+    "quote": "황룡사는 1238년(고종 25) 몽고병의 침입 때 모두 불타 버리고",
+    "fromSource": "src-syj122-aks-hwangnyongsaji",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

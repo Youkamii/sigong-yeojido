@@ -32,11 +32,11 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-sinhae-act",
-    "subject": "event-hs-jl5-sinhae-tonggong",
+    "subject": "person-jl2-chae-jegong",
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",
-      "id": "person-jl2-chae-jegong"
+      "id": "event-hs-jl5-sinhae-tonggong"
     },
     "note": "채제공의 건의로 시행되었다",
     "fromSource": "src-hs-jl5-enc-sinhae",

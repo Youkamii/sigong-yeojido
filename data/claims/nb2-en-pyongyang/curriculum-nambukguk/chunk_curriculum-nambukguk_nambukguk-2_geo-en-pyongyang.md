@@ -18,7 +18,7 @@ status: "draft"
       "lon": 125.7475,
       "precision": "area"
     },
-    "note": "패강은 대동강이다. 대동강가 평양의 표시 좌표를 경계 지역 대표점으로 썼다.",
+    "note": "패강은 예성강 또는 대동강으로 보는 견해가 갈린다. 여기서는 대동강으로 보아 대동강가 평양의 표시 좌표를 경계 지역 대표점으로 썼다.",
     "fromSource": "src-nb2-en-pyongyang",
     "citesChunk": "chunk_curriculum-nambukguk_nambukguk-2_geo-en-pyongyang",
     "quote": "39.01667; 125.74750",

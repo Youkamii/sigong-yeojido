@@ -1,21 +1,19 @@
 {
   "job": "goryeo-late-1",
-  "sources": 40,
-  "excerpts": 58,
-  "chunkClaims": 41,
-  "excerptClaims": 61,
+  "sources": 48,
+  "excerpts": 72,
+  "chunkClaims": 42,
+  "excerptClaims": 74,
   "facts": 23,
   "factsByCategory": {
     "administration": 5,
-    "culture": 3,
-    "facility": 1,
+    "culture": 4,
     "foreign": 1,
     "person": 8,
-    "settlement": 1,
-    "war": 4
+    "war": 5
   },
-  "claims": 102,
-  "entities": 51,
+  "claims": 116,
+  "entities": 60,
   "rawFilesChecked": [
     {
       "source": "src-hs-enc-musinran",
@@ -86,8 +84,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0015646",
       "sha256": "b7e476daf88508902c07752c00b144f58461cf2a62bf9da30383b21c2a6eefbe",
       "rawBytes": 94319,
-      "excerpts": 2,
-      "quotedWords": 12
+      "excerpts": 4,
+      "quotedWords": 23
     },
     {
       "source": "src-hs-enc-gyeongdaeseung",
@@ -126,8 +124,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0005565",
       "sha256": "f7e3323f0c5a810c169e405296f73cedab05bd9b9560b70352d690f0dea71a2b",
       "rawBytes": 105660,
-      "excerpts": 2,
-      "quotedWords": 15
+      "excerpts": 3,
+      "quotedWords": 24
     },
     {
       "source": "src-hs-enc-jeongbang",
@@ -214,8 +212,8 @@
       "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EC%B2%AD%EC%9E%90",
       "sha256": "39eb727db5d19386830e29d2b198729cdff6b6d75911e9ee80bd3b3aa66b594f",
       "rawBytes": 103473,
-      "excerpts": 2,
-      "quotedWords": 15
+      "excerpts": 3,
+      "quotedWords": 22
     },
     {
       "source": "src-hs-ko-manwoldae",
@@ -246,14 +244,6 @@
       "url": "https://ko.wikipedia.org/wiki/%EC%88%AD%EC%96%91%EC%84%9C%EC%9B%90",
       "sha256": "532c86a3a1f79bc65aa59ba3c780e62055ca5ee78d817ad714da81a8458bc214",
       "rawBytes": 102855,
-      "excerpts": 1,
-      "quotedWords": 1
-    },
-    {
-      "source": "src-hs-ko-seonjukgyo",
-      "url": "https://ko.wikipedia.org/wiki/%EC%84%A0%EC%A3%BD%EA%B5%90",
-      "sha256": "512b7bac03b6d541c9ac0c84d397b190f1b9cf49698e6b23d52d755595fc7f3a",
-      "rawBytes": 110523,
       "excerpts": 1,
       "quotedWords": 1
     },
@@ -336,6 +326,78 @@
       "rawBytes": 116398,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-curriculum-goryeo-late-goryeo-late-1-hs-ko-gaeseong-seonggwak",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1_%EC%84%B1%EA%B3%BD",
+      "sha256": "a280a4490fd99ce11bfb8d8261132bd482e7727e419a9dcd582530940b098890",
+      "rawBytes": 68334,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-gaeseong-yeok",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1%EC%97%AD",
+      "sha256": "d6ebf9cb1ca38b54c167486278e4874c6cddc15f86f9d21c09234bb7d16cb86d",
+      "rawBytes": 101667,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-gaeseong-si",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1%ED%8A%B9%EA%B8%89%EC%8B%9C",
+      "sha256": "e6db85e19c83a6a397ca5e8fe388f6c63683f4f8ab78b9f5c22678ad3211e941",
+      "rawBytes": 245321,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-curriculum-goryeo-late-goryeo-late-1-hs-en-anhwasa",
+      "url": "https://en.wikipedia.org/wiki/Anhwa_Temple",
+      "sha256": "54ad3507de75682207063ec8f23d908d19e773dfebcd8afa6eb1f3d455722149",
+      "rawBytes": 90414,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-ko-yeongtongsa",
+      "url": "https://ko.wikipedia.org/wiki/%EC%98%81%ED%86%B5%EC%82%AC",
+      "sha256": "c775a671fe64f44c55e4a9e136942f8bbc8c03eebe707807a3bf45ba31d708fb",
+      "rawBytes": 90063,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-gyeongju-wolseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%9B%94%EC%84%B1",
+      "sha256": "e1758d1ef3b417bb45eae97cee684e83bc30cdf4a644e0727d309fcd30cda589",
+      "rawBytes": 277688,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-yigyubo-myo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EA%B7%9C%EB%B3%B4%EB%AC%98",
+      "sha256": "46f2618e9c7ffc4bbf031211032525472862b80ed31769a919e4e40cecf78934",
+      "rawBytes": 81876,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-bojoguksa-bi",
+      "url": "https://ko.wikipedia.org/wiki/%EC%86%A1%EA%B4%91%EC%82%AC_%EB%B3%B4%EC%A1%B0%EA%B5%AD%EC%82%AC%EB%B9%84",
+      "sha256": "1a4a4e013865be750771c095f034bee0eb9a318169032ff7013eac92860a348a",
+      "rawBytes": 77120,
+      "excerpts": 2,
+      "quotedWords": 6
+    },
+    {
+      "source": "src-hs-en-kaesong-stadium",
+      "url": "https://en.wikipedia.org/wiki/Kaesong_Youth_Stadium",
+      "sha256": "5e020553dd9eaa2df271a4f8d1af6821b59ed907daa9505e09173d60aba389a4",
+      "rawBytes": 97306,
+      "excerpts": 1,
+      "quotedWords": 1
     }
   ],
   "missing": [],
@@ -350,16 +412,19 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-goryeo-late-1"
+    "sessionId": "workflow-goryeo-late-1",
+    "revised": 1789379866
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "person-encykorea-choeu",
-    "org-hs-jeongbang"
+    "place-hs-gaegyeong-buksan",
+    "place-hs-gaegyeong-anhwasa"
   ],
   "reviewedSourceIds": {
-    "src-hs-ko-cheomseongdae": "src-curriculum-goryeo-late-goryeo-late-1-hs-ko-cheomseongdae"
+    "src-hs-ko-cheomseongdae": "src-curriculum-goryeo-late-goryeo-late-1-hs-ko-cheomseongdae",
+    "src-hs-ko-gaeseong-seonggwak": "src-curriculum-goryeo-late-goryeo-late-1-hs-ko-gaeseong-seonggwak",
+    "src-hs-en-anhwasa": "src-curriculum-goryeo-late-goryeo-late-1-hs-en-anhwasa"
   },
   "integrationAdjustments": {},
   "checkOnly": false,

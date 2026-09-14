@@ -21,7 +21,7 @@ status: "draft"
       "latest": 1920,
       "id": "ts-curriculum-colonial-colonial-2-c2-gando-1920"
     },
-    "note": "청산리 전투 뒤 1920년 10월부터 벌어졌다.",
+    "note": "1920년 10월부터 벌어졌다. 출처 문장은 「청산리 전투 이후 훈춘 사건이 발생한 날인 1920년 10월부터」로 순서를 뒤섞어 적었으나, 훈춘 사건(10월 2일)과 간도 출병이 청산리 전투(10월 21~26일)보다 앞선다.",
     "fromSource": "src-c2-ko-gando",
     "citesChunk": "chunk_curriculum-colonial_colonial-2_gando-1920",
     "quote": "이 학살은 청산리 전투 이후 훈춘 사건이 발생한 날인 1920년 10월부터 3주간 일어났다",

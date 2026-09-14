@@ -27,11 +27,11 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-samguk-samguk-4-hs4-gwansan-okcheon",
-    "subject": "place-hs4-gwansanseong",
+    "subject": "event-hs4-gwansanseong",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "polity-hs4-silla"
+      "id": "place-hs4-gwansanseong"
     },
     "citesChunk": "chunk_scenes-103_ancient_scenes_gwansan-place",
     "quote": "관산성은 지금의 충청북도 옥천이다.",

@@ -32,7 +32,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-from",
-    "subject": "person-hs-balhae-seonwang",
+    "subject": "person-balhae-daeinsu",
     "predicate": "syj:reignedFrom",
     "object": {
       "kind": "time",
@@ -54,7 +54,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-to",
-    "subject": "person-hs-balhae-seonwang",
+    "subject": "person-balhae-daeinsu",
     "predicate": "syj:reignedTo",
     "object": {
       "kind": "time",

@@ -95,7 +95,7 @@ status: "draft"
     },
     "citesChunk": "chunk_scenes-122_modern_localities_wonsanstrike-def",
     "quote": "1929년 1월 13일부터 4월 6일까지 원산노동연합회 산하 노동조합원 2,200여 명이 참여한",
-    "note": "우리역사넷 계열 발췌 — 파업 기간과 참여 인원",
+    "note": "한국민족문화대백과사전 발췌 chunk — 파업 기간과 참여 인원",
     "fromSource": "src-aks-wonsan-strike",
     "origin": "ai",
     "status": "draft",

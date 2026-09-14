@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-colonial-colonial-4-hs-c4-yang-death",
-    "subject": "person-hs-c4-yang-sebong",
+    "subject": "person-hs-yang-sebong",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",

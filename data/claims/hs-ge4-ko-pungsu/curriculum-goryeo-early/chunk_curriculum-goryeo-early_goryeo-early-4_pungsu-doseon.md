@@ -14,9 +14,9 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "place-hs-ge4-gaegyeong"
+      "id": "polity-hs-ge4-goryeo"
     },
-    "note": "풍수는 신라 말 도선에게서 크게 자리 잡아 고려로 이어졌다.",
+    "note": "신라 말 도선에게서 자리 잡은 풍수가 고려로 이어졌다는 서술이다.",
     "fromSource": "src-hs-ge4-ko-pungsu",
     "citesChunk": "chunk_curriculum-goryeo-early_goryeo-early-4_pungsu-doseon",
     "quote": "신라 말에는 도선(道詵)과 같은 대가가 나왔다.",

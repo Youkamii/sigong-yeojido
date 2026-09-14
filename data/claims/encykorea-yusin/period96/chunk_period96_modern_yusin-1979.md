@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-em-1979",
+    "subject": "event-hs-c4-emergency",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1979년",
+      "year": 1979,
+      "precision": "year",
+      "earliest": 1979,
+      "latest": 1979,
+      "id": "ts-curriculum-contemporary-contemporary-4-hs-c4-em-1979"
+    },
+    "citesChunk": "chunk_period96_modern_yusin-1979",
+    "quote": "1979년까지 지속됐다",
+    "note": "긴급조치가 딛고 선 유신체제가 1979년까지 이어졌다.",
+    "fromSource": "src-encykorea-yusin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

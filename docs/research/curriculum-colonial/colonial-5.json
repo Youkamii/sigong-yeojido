@@ -1,9 +1,9 @@
 {
   "job": "colonial-5",
   "sources": 46,
-  "excerpts": 76,
+  "excerpts": 78,
   "chunkClaims": 1,
-  "excerptClaims": 81,
+  "excerptClaims": 83,
   "facts": 19,
   "factsByCategory": {
     "administration": 3,
@@ -13,24 +13,24 @@
     "person": 2,
     "war": 6
   },
-  "claims": 82,
-  "entities": 54,
+  "claims": 84,
+  "entities": 45,
   "rawFilesChecked": [
     {
       "source": "src-hs-enc-seosa",
       "url": "https://encykorea.aks.ac.kr/Article/E0076120",
       "sha256": "5b5b696032ffa4618e8fb99f00ea2c16000f012aeb2021b38c3becce9d78bd2c",
       "rawBytes": 89178,
-      "excerpts": 3,
-      "quotedWords": 18
+      "excerpts": 4,
+      "quotedWords": 22
     },
     {
-      "source": "src-hs-ko-singung",
-      "url": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%8B%A0%EA%B6%81",
-      "sha256": "3c934153076d45608944b329f6f446bf1e9fcd6e9843d2620bc23713df022239",
-      "rawBytes": 116669,
-      "excerpts": 1,
-      "quotedWords": 2
+      "source": "src-hs-ko-maedong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EB%A7%A4%EB%8F%99%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90",
+      "sha256": "326f053337448c01362c7a6d787b02f384d1d36ade91a90d43174b0e8c8291e1",
+      "rawBytes": 219637,
+      "excerpts": 2,
+      "quotedWords": 9
     },
     {
       "source": "src-hs-enc-bocheonbo",
@@ -230,7 +230,7 @@
       "sha256": "6cfbcec46fc8a6de5da76ca29e4109290b32d302459dccb88bb45d352ca5122b",
       "rawBytes": 144993,
       "excerpts": 1,
-      "quotedWords": 6
+      "quotedWords": 9
     },
     {
       "source": "src-hs-enc-yundongju",
@@ -394,10 +394,11 @@
     "modelsObserved": [
       "claude-opus-5"
     ],
-    "started": 1789689600,
+    "started": 1789357800,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-colonial-5"
+    "sessionId": "workflow-colonial-5",
+    "revised": 1789381200
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",

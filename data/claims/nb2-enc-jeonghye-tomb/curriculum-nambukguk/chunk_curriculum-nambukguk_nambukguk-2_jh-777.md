@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-jh-web777",
-    "subject": "person-nb2-jeonghye",
+    "subject": "person-hs-jeonghye",
     "predicate": "syj:endedIn",
     "object": {
       "kind": "time",

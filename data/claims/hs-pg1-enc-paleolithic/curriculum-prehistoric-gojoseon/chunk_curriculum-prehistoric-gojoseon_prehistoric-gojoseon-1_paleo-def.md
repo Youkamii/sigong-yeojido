@@ -23,7 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-seokjang-tool",
@@ -31,16 +31,16 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "thing-hs-pg1-handaxe"
+      "id": "period-hs-paleolithic"
     },
-    "note": "뗀석기를 쓰던 구석기시대의 유적이다.",
+    "note": "석장리 유적이 속한 구석기시대의 정의다. 석장리에서 주먹도끼가 나왔다는 연결은 이번 근거로 확인하지 못했다.",
     "fromSource": "src-hs-pg1-enc-paleolithic",
     "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-1_paleo-def",
     "quote": "약 1만년 전에 신석기시대가 시작되기 전까지 돌을 깨뜨려 도구를 만들어 사용하던 시기.",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

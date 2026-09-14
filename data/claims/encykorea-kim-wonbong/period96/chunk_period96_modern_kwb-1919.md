@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-1-hs-c1-kwb-chunk",
+    "subject": "person-encykorea-kim-wonbong",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "org-hs-c1-uiyeoldan"
+    },
+    "citesChunk": "chunk_period96_modern_kwb-1919",
+    "quote": "1919년에 의열단을 조직하여 요인 암살, 국내 경찰서 폭파 등 무정부주의적 투쟁을 이끌었다.",
+    "note": "로컬 원문 발췌: 1919년 의열단을 조직해 투쟁을 이끌었다.",
+    "fromSource": "src-encykorea-kim-wonbong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

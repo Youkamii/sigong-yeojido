@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "person-hs-cheoyong"
+      "id": "person-syj136-cheoyong"
     },
     "note": "처용을 아라비아 상인으로 보는 학설이 있다는 서술. 정설이 아니라 학설로만 적는다.",
     "fromSource": "src-hs-ko-cheoyongam",

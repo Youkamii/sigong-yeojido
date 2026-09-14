@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "polity-hs4-goguryeo"
+      "id": "place-hs4-cheongcheongang"
     },
     "citesChunk": "chunk_scenes-103_ancient_scenes_salsu-river",
     "quote": "살수는 지금의 청천강이다.",

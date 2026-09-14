@@ -65,6 +65,23 @@ generated_by: "claude-opus-5"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-dg-562",
+    "subject": "polity-daegaya",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "year",
+      "value": 562
+    },
+    "citesChunk": "chunk_era51_encykorea-daegaya-562",
+    "quote": "562년(진흥왕 23) 가야가 배반했기 때문에 이사부",
+    "note": "민족문화대백과 대가야 항목. 562년 신라가 쳐서 없앤 가야를 고령의 대가야로 본다.",
+    "fromSource": "src-encykorea-daegaya",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

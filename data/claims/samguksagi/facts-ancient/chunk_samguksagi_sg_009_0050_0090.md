@@ -50,14 +50,14 @@ status: "draft"
   {
     "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-jg-move",
     "subject": "event-nb2-jingol-struggle",
-    "predicate": "syj:tookPlaceAt",
+    "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
       "id": "place-nb2-paegangjin"
     },
     "citesChunk": "chunk_samguksagi_sg_009_0050_0090",
     "quote": "二月, 王巡幸漢山州, 移民戸於浿江鎭.",
-    "note": "선덕왕 3년(782) 한산주를 돌아보고 패강진으로 민호를 옮겼다. 하대 초 왕권의 움직임이다.",
+    "note": "선덕왕 3년(782) 한산주를 돌아보고 패강진으로 민호를 옮겼다. 하대 초 왕권의 움직임을 보여 주는 곁 자료이며 왕위 쟁탈전이 벌어진 장소를 말하지 않는다.",
     "fromSource": "src-samguksagi",
     "origin": "ai",
     "status": "draft",

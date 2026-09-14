@@ -1,9 +1,9 @@
 {
   "job": "goryeo-early-1",
-  "sources": 14,
-  "excerpts": 18,
+  "sources": 24,
+  "excerpts": 31,
   "chunkClaims": 67,
-  "excerptClaims": 21,
+  "excerptClaims": 34,
   "facts": 23,
   "factsByCategory": {
     "administration": 10,
@@ -16,8 +16,8 @@
     "settlement": 1,
     "war": 2
   },
-  "claims": 88,
-  "entities": 55,
+  "claims": 101,
+  "entities": 69,
   "rawFilesChecked": [
     {
       "source": "src-hs-ko-manwoldae",
@@ -40,14 +40,6 @@
       "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1%20%EB%82%A8%EB%8C%80%EB%AC%B8",
       "sha256": "2c7d4db2d6a74fe7dda0eac5a2ce92e22399ccd2ebb84e7fba00676f51a5ebf7",
       "rawBytes": 112566,
-      "excerpts": 1,
-      "quotedWords": 1
-    },
-    {
-      "source": "src-hs-ko-seonjukgyo",
-      "url": "https://ko.wikipedia.org/wiki/%EC%84%A0%EC%A3%BD%EA%B5%90",
-      "sha256": "512b7bac03b6d541c9ac0c84d397b190f1b9cf49698e6b23d52d755595fc7f3a",
-      "rawBytes": 110523,
       "excerpts": 1,
       "quotedWords": 1
     },
@@ -130,6 +122,94 @@
       "rawBytes": 129944,
       "excerpts": 2,
       "quotedWords": 17
+    },
+    {
+      "source": "src-hs-ko-sungyangseowon",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1%20%EC%88%AD%EC%96%91%EC%84%9C%EC%9B%90",
+      "sha256": "5fb65b32fc68e1457203e41e90f363c54a19f5620dd83f17a1c51efceb7f048b",
+      "rawBytes": 102499,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-gaeseong-seonggwak",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1%20%EC%84%B1%EA%B3%BD",
+      "sha256": "a280a4490fd99ce11bfb8d8261132bd482e7727e419a9dcd582530940b098890",
+      "rawBytes": 68334,
+      "excerpts": 2,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-hs-en-anhwasa",
+      "url": "https://en.wikipedia.org/wiki/Anhwasa",
+      "sha256": "9c726a18d92809f335549531582f651e27f1cd2bb73252e104007fc8d7a5fd72",
+      "rawBytes": 90129,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-en-kwanumsa",
+      "url": "https://en.wikipedia.org/wiki/Kwanumsa%20%28Kaesong%29",
+      "sha256": "375cc8205a097eee1e5b3a091aefb8b0cd7fae456646e7522f3a3914ff5ba538",
+      "rawBytes": 104784,
+      "excerpts": 2,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-hs-ko-byeongnando",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B2%BD%EB%9E%80%EB%8F%84",
+      "sha256": "bc19cbf372fe7a00f8f22bb765c1550281f2bf2b16a09d8a51f46910680ecff5",
+      "rawBytes": 202852,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-en-koryo-songgyungwan-univ",
+      "url": "https://en.wikipedia.org/wiki/Koryo%20Songgyungwan%20University",
+      "sha256": "996d13483e61de08435097b4d3663026b50cc2e4cff8e575299de3c3fc6853ea",
+      "rawBytes": 106067,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-gaeseongyeok",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1%EC%97%AD",
+      "sha256": "d6ebf9cb1ca38b54c167486278e4874c6cddc15f86f9d21c09234bb7d16cb86d",
+      "rawBytes": 101667,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-en-kaesong-youth-stadium",
+      "url": "https://en.wikipedia.org/wiki/Kaesong%20Youth%20Stadium",
+      "sha256": "5e020553dd9eaa2df271a4f8d1af6821b59ed907daa9505e09173d60aba389a4",
+      "rawBytes": 97306,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-en-kaesong-folk-hotel",
+      "url": "https://en.wikipedia.org/wiki/Kaesong%20Folk%20Hotel",
+      "sha256": "b4aa325d8375065e8e45fbdf6d1d89d3406085350e1fdc615af1b1de0f7456c4",
+      "rawBytes": 108749,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-ko-gongminwangneung",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EB%AF%BC%EC%99%95%EB%A6%89",
+      "sha256": "d692ad6e5626c841186e41f72545f23a818dd4336511ecad4522f07fc5f5693e",
+      "rawBytes": 143753,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-en-sonha-station",
+      "url": "https://en.wikipedia.org/wiki/Sonha%20station",
+      "sha256": "12eae50814e87bbe55301287294607535e1fbc56cec1ea02eea4d9549c0e9cc4",
+      "rawBytes": 107785,
+      "excerpts": 1,
+      "quotedWords": 1
     }
   ],
   "missing": [],
@@ -144,13 +224,13 @@
     "started": 1789693200,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-goryeo-early-1"
+    "sessionId": "workflow-goryeo-early-1",
+    "revised": 1789379666
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "event-hs-2seong-6bu",
-    "polity-hs-goryeo"
+    "place-hs-gaeseong-seonggwak"
   ],
   "reviewedSourceIds": {
     "src-hs-ko-pyongyangseong": "src-curriculum-goryeo-early-goryeo-early-1-hs-ko-pyongyangseong",

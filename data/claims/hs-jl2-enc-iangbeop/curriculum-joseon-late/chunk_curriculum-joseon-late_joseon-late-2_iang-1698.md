@@ -21,7 +21,7 @@ status: "draft"
       "latest": 1838,
       "id": "ts-curriculum-joseon-late-joseon-late-2-jl2-iang-1698"
     },
-    "note": "관이 수리 조건이 나쁜 곳의 이앙을 금한 기록. 17~18세기에 이앙법이 이미 널리 쓰였음을 보여준다.",
+    "note": "관이 수리 조건이 나쁜 곳의 이앙을 금한 기록이다. 이 출처는 같은 기록을 근거로 우리나라 이앙법이 15세기 이전에 비롯되었으나 보급은 한말까지 부진했다고 본다 — 17~18세기 일반화를 뒷받침하는 기록이 아니다.",
     "fromSource": "src-hs-jl2-enc-iangbeop",
     "citesChunk": "chunk_curriculum-joseon-late_joseon-late-2_iang-1698",
     "quote": "1698년(숙종 24)과 1838년(헌종 4)의 기록을 보면 관에서 수리조건이 불비한 곳의 이앙법을 금한",

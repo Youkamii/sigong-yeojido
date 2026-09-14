@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-colonial-colonial-5-hs-c5-gwangbokgun-ji",
-    "subject": "person-hs-ji-cheongcheon",
+    "subject": "person-hs-c4-ji-cheongcheon",
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",
@@ -23,7 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

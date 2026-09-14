@@ -11,7 +11,7 @@
    "south"
   ],
   "categories": {
-   "person": 7,
+   "person": 8,
    "culture": 3,
    "facility": 2,
    "economy": 2,
@@ -879,18 +879,14 @@
   {
    "id": "claim-hs-ge4-gangjin-sajeok",
    "subject": "place-hs-ge4-gangjin-yoji",
-   "predicate": "syj:establishedIn",
+   "predicate": "syj:relatedTo",
    "object": {
-    "kind": "time",
-    "verbatim": "1963년 1월 21일",
-    "year": 1963,
-    "precision": "day",
-    "earliest": 1963,
-    "latest": 1963
+    "kind": "entity",
+    "id": "place-hs-ge4-gangjin-yoji"
    },
    "sourceId": "src-hs-ge4-ko-gangjin",
    "citesExcerpt": "ex-gangjin-sajeok",
-   "note": "1963년 사적으로 지정되었다. 유적의 현재 보호 상태를 보여 주는 근거다."
+   "note": "1963년 사적으로 지정되어 지금까지 보호받는 고려청자 가마터다. 지정 연도는 조업 연도가 아니다."
   },
   {
    "id": "claim-hs-ge4-tamjin-hyeon",
@@ -1002,11 +998,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs-ge4-gaegyeong"
+    "id": "polity-hs-ge4-goryeo"
    },
    "sourceId": "src-hs-ge4-ko-pungsu",
    "citesExcerpt": "ex-pungsu-doseon",
-   "note": "풍수는 신라 말 도선에게서 크게 자리 잡아 고려로 이어졌다."
+   "note": "신라 말 도선에게서 자리 잡은 풍수가 고려로 이어졌다는 서술이다."
   },
   {
    "id": "claim-hs-ge4-loc-cheomseongdae",
@@ -1035,6 +1031,23 @@
    "note": "탑 아래에서 나온 북송 동전으로 조성 연대를 12세기경으로 보았다."
   },
   {
+   "id": "claim-hs-ge4-woljeongsa-12c-time",
+   "subject": "place-hs-ge4-woljeongsa-tap",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "12세기경",
+    "year": 1150,
+    "precision": "century",
+    "earliest": 1101,
+    "latest": 1200
+   },
+   "sourceId": "src-hs-ge4-enc-woljeongsa",
+   "citesChunk": "chunk_curriculum-goryeo-early_goryeo-early-4_woljeongsa-12c",
+   "quote": "석탑 조성 연대가 12세기경임이 밝혀졌다",
+   "note": "탑 아래에서 나온 송 동전으로 조성 연대를 12세기경으로 본다. 항목의 대표 연도 1100년은 표시용 기준점이다."
+  },
+  {
    "id": "claim-hs-ge4-woljeongsa-dagak",
    "subject": "place-hs-ge4-woljeongsa-tap",
    "predicate": "syj:relatedTo",
@@ -1049,18 +1062,14 @@
   {
    "id": "claim-hs-ge4-woljeongsa-gukbo",
    "subject": "place-hs-ge4-woljeongsa-tap",
-   "predicate": "syj:establishedIn",
+   "predicate": "syj:relatedTo",
    "object": {
-    "kind": "time",
-    "verbatim": "1962년",
-    "year": 1962,
-    "precision": "year",
-    "earliest": 1962,
-    "latest": 1962
+    "kind": "entity",
+    "id": "place-hs-ge4-woljeongsa"
    },
    "sourceId": "src-hs-ge4-enc-woljeongsa",
    "citesExcerpt": "ex-woljeongsa-gukbo",
-   "note": "1962년 국보로 지정되었다."
+   "note": "1962년 12월 국보로 지정되어 지금도 월정사 경내에 서 있다. 지정 연도는 건립 연도가 아니다."
   },
   {
    "id": "claim-hs-ge4-loc-woljeongsa",
@@ -1094,11 +1103,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs-ge4-gaegyeong"
+    "id": "polity-hs-ge4-goryeo"
    },
    "sourceId": "src-hs-ge4-ko-goryeo",
    "citesExcerpt": "ex-goryeo-jaehon",
-   "note": "재혼을 흠으로 보지 않았다."
+   "note": "고려에서는 재혼을 흠으로 보지 않았다는 관습 서술이다."
   },
   {
    "id": "claim-hs-ge4-women-1389",
@@ -1247,9 +1256,26 @@
    "note": "개경 거리 양쪽에 점포를 두어 돈이 돌게 하려 했다."
   },
   {
-   "id": "claim-hs-ge4-jujeon-1101",
+   "id": "claim-hs-ge4-jujeon-1097",
    "subject": "event-hs-ge4-jujeondogam",
    "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "肅宗二年十二月",
+    "year": 1097,
+    "precision": "month",
+    "earliest": 1097,
+    "latest": 1097
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_079_0010_0030_0040",
+   "quote": "肅宗二年十二月 敎曰, “自昔, 我邦風俗朴略, 迄于文宗, 文物·禮樂, 於斯爲盛. 朕承先王之業, 將欲興民閒大利, 其立鑄錢官, 使百姓通用.",
+   "note": "숙종 2년(1097) 12월 교서에서 주전관을 세우라고 명했다. 주전도감 설치의 근거다."
+  },
+  {
+   "id": "claim-hs-ge4-jujeon-1101",
+   "subject": "event-hs-ge4-jujeondogam",
+   "predicate": "syj:occurredIn",
    "object": {
     "kind": "time",
     "verbatim": "六年四月",
@@ -1261,7 +1287,7 @@
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_079_0010_0030_0050",
    "quote": "六年四月 鑄錢都監奏, “國人始知用錢之利",
-   "note": "숙종 6년(1101) 4월 기록에 주전도감이 이미 활동하고 있다."
+   "note": "숙종 6년(1101) 4월 주전도감이 돈 쓰는 이로움을 아뢰었다. 설치 연도가 아니라 그해 활동 기록이다."
   },
   {
    "id": "claim-hs-ge4-loc-sonjuk",
@@ -1296,16 +1322,16 @@
   },
   {
    "id": "claim-hs-ge4-byeolmuban-units",
-   "subject": "event-hs-ge4-byeolmuban",
+   "subject": "polity-hs-ge4-goryeo",
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "person-yungwan"
+    "id": "event-hs-ge4-byeolmuban"
    },
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_096_0010_0030_0030",
    "quote": "凡有馬者爲神騎, 無馬者爲神步·跳蕩·梗弓·精弩·發火等軍",
-   "note": "말이 있는 사람은 신기군, 없는 사람은 신보군 등에 넣었다."
+   "note": "말이 있는 사람은 신기군, 없는 사람은 신보군 등에 넣어 별무반을 짰다는 편성 기사다."
   },
   {
    "id": "claim-hs-ge4-byeolmuban-monk",
@@ -1819,6 +1845,23 @@
    "note": "척준경의 군사력을 빌려 난을 일으켰다."
   },
   {
+   "id": "claim-hs-ge4-myocheong-1128",
+   "subject": "event-hs-ge4-myocheong",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "仁宗六年",
+    "year": 1128,
+    "precision": "year",
+    "earliest": 1128,
+    "latest": 1128
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_127_0010_0100_0010",
+   "quote": "仁宗六年, 日者白壽翰, 以檢校少監分司西京, 謂妙淸爲師.",
+   "note": "인종 6년(1128) 백수한이 서경에 분사하며 묘청을 스승으로 삼았다. 묘청이 조정에 나선 시작이다."
+  },
+  {
    "id": "claim-hs-ge4-myocheong-death",
    "subject": "person-myocheong",
    "predicate": "syj:occurredIn",
@@ -2112,7 +2155,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-kaesong"
     ],
-    "coordinateNote": "국청사 터의 좌표 근거가 없어 개성 표시 좌표를 썼다. 유적 실측점이 아니다.",
+    "coordinateNote": "국청사 터의 좌표 근거가 없어 개성 표시 좌표를 썼다. 유적 실측점이 아니다. 이 칸에서 개성 도심 표시점을 쓰는 항목이 3건이다. 국청사 터·이자겸 집 터의 공개 좌표를 찾지 못해 항목별로 나누지 못했고, 표시 분산은 조립 단계에서 푼다.",
     "setting": "temple"
    },
    "participants": [
@@ -2245,16 +2288,7 @@
    "decade": 1100,
    "relatedClaimIds": [
     "claim-hs-ge4-gangjin-concentration"
-   ],
-   "persistence": {
-    "kind": "facility",
-    "to": null,
-    "basisClaimIds": [
-     "claim-hs-ge4-cheongja-era",
-     "claim-hs-ge4-cheongja-1157"
-    ],
-    "from": 1100
-   }
+   ]
   },
   {
    "id": "scene-hs-ge4-pungsu",
@@ -2317,7 +2351,7 @@
    "sceneFunction": "temple",
    "summary": "월정사 대웅전 앞뜰에 선 높이 15.2m의 돌탑이다. 네모꼴에서 벗어나 팔각으로 아홉 층을 올린 고려 석탑의 새 흐름을 보여 준다.",
    "dateClaimIds": [
-    "claim-hs-ge4-yejong-reign"
+    "claim-hs-ge4-woljeongsa-12c-time"
    ],
    "actionClaimIds": [
     "claim-hs-ge4-woljeongsa-12c",
@@ -2352,13 +2386,15 @@
    "region": "central",
    "decade": 1100,
    "relatedClaimIds": [
-    "claim-hs-ge4-woljeongsa-gukbo"
+    "claim-hs-ge4-woljeongsa-12c",
+    "claim-hs-ge4-woljeongsa-gukbo",
+    "claim-hs-ge4-yejong-reign"
    ],
    "persistence": {
     "kind": "facility",
     "to": null,
     "basisClaimIds": [
-     "claim-hs-ge4-woljeongsa-12c",
+     "claim-hs-ge4-woljeongsa-12c-time",
      "claim-hs-ge4-woljeongsa-gukbo"
     ],
     "from": 1100
@@ -2464,12 +2500,13 @@
    "itemId": "hs-goryeo-early-jujeondogam-haedongtongbo",
    "eventId": "event-hs-ge4-haedongtongbo",
    "title": "주전도감과 해동통보",
-   "startYear": 1102,
+   "startYear": 1097,
    "endYear": 1102,
    "kind": "market",
    "sceneFunction": "market",
-   "summary": "돈 만드는 관청 주전도감을 두고 숙종 7년에 해동통보를 찍었다. 개경 거리 양쪽에 점포를 세워 돈을 쓰게 했지만 백성은 여전히 곡식과 베로 값을 치렀다.",
+   "summary": "숙종 2년 교서로 주전관을 세워 돈 만드는 관청 주전도감을 두고, 숙종 7년에 해동통보를 찍었다. 개경 거리 양쪽에 점포를 세워 돈을 쓰게 했지만 백성은 여전히 곡식과 베로 값을 치렀다.",
    "dateClaimIds": [
+    "claim-hs-ge4-jujeon-1097",
     "claim-hs-ge4-haedong-1102",
     "claim-hs-ge4-jujeon-1101"
    ],
@@ -2504,7 +2541,7 @@
    },
    "category": "economy",
    "region": "central",
-   "decade": 1100
+   "decade": 1090
   },
   {
    "id": "scene-hs-ge4-byeolmuban",
@@ -2535,7 +2572,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-manwoldae"
     ],
-    "coordinateNote": "윤관이 임금에게 건의한 자리로 고려 궁성 터 표시 좌표를 썼다.",
+    "coordinateNote": "윤관이 임금에게 건의한 자리로 고려 궁성 터 표시 좌표를 썼다. 이 칸에서 개경 궁성 안 항목 6건이 같은 표시점을 쓴다. 전각(중광전·대관전·선정전) 터의 공개 좌표가 없어 항목별로 나누지 못했고, 표시 분산은 조립 단계에서 푼다.",
     "setting": "palace"
    },
    "participants": [
@@ -2561,15 +2598,7 @@
    },
    "category": "administration",
    "region": "central",
-   "decade": 1100,
-   "persistence": {
-    "kind": "institution",
-    "to": null,
-    "basisClaimIds": [
-     "claim-hs-ge4-byeolmuban-1104"
-    ],
-    "from": 1104
-   }
+   "decade": 1100
   },
   {
    "id": "scene-hs-ge4-yejong",
@@ -2600,7 +2629,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-manwoldae"
     ],
-    "coordinateNote": "즉위한 전각이 궁성 안 중광전이다. 전각 터의 좌표가 없어 고려 궁성 터 표시 좌표를 썼다.",
+    "coordinateNote": "즉위한 전각이 궁성 안 중광전이다. 전각 터의 좌표가 없어 고려 궁성 터 표시 좌표를 썼다. 이 칸에서 개경 궁성 안 항목 6건이 같은 표시점을 쓴다. 전각(중광전·대관전·선정전) 터의 공개 좌표가 없어 항목별로 나누지 못했고, 표시 분산은 조립 단계에서 푼다.",
     "setting": "palace"
    },
    "participants": [
@@ -2723,7 +2752,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-gilju"
     ],
-    "coordinateNote": "동북 9성 항목과 점이 겹치지 않도록 9성 가운데 길주의 표시 좌표를 썼다. 윤관의 활동 범위를 한 점으로 줄인 표현이다.",
+    "coordinateNote": "동북 9성 항목과 점이 겹치지 않도록 9성 가운데 길주의 표시 좌표를 썼다. 다만 고려 길주를 지금의 함경북도 길주군으로 보는 것은 학설의 하나이며, 9성의 위치는 함흥 평야설·두만강설로 갈린다. 윤관의 활동 범위를 한 점으로 줄인 표현이다.",
     "setting": "battle"
    },
    "participants": [
@@ -2806,15 +2835,7 @@
    },
    "category": "administration",
    "region": "central",
-   "decade": 1110,
-   "persistence": {
-    "kind": "institution",
-    "to": null,
-    "basisClaimIds": [
-     "claim-hs-ge4-yanghyeongo-1119"
-    ],
-    "from": 1119
-   }
+   "decade": 1110
   },
   {
    "id": "scene-hs-ge4-injong",
@@ -2901,7 +2922,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-manwoldae"
     ],
-    "coordinateNote": "백관 회의와 표문 발송이 이루어진 조정의 자리로 고려 궁성 터 표시 좌표를 썼다.",
+    "coordinateNote": "백관 회의와 표문 발송이 이루어진 조정의 자리로 고려 궁성 터 표시 좌표를 썼다. 이 칸에서 개경 궁성 안 항목 6건이 같은 표시점을 쓴다. 전각(중광전·대관전·선정전) 터의 공개 좌표가 없어 항목별로 나누지 못했고, 표시 분산은 조립 단계에서 푼다.",
     "setting": "palace"
    },
    "participants": [
@@ -2960,7 +2981,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-kaesong"
     ],
-    "coordinateNote": "이자겸의 집 터 좌표 근거가 없어 개성 도심 표시 좌표를 썼다.",
+    "coordinateNote": "이자겸의 집 터 좌표 근거가 없어 개성 도심 표시 좌표를 썼다. 이 칸에서 개성 도심 표시점을 쓰는 항목이 3건이다. 국청사 터·이자겸 집 터의 공개 좌표를 찾지 못해 항목별로 나누지 못했고, 표시 분산은 조립 단계에서 푼다.",
     "setting": "village"
    },
    "participants": [
@@ -3017,7 +3038,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-manwoldae"
     ],
-    "coordinateNote": "불탄 궁궐의 자리로 고려 궁성 터 표시 좌표를 썼다.",
+    "coordinateNote": "불탄 궁궐의 자리로 고려 궁성 터 표시 좌표를 썼다. 이 칸에서 개경 궁성 안 항목 6건이 같은 표시점을 쓴다. 전각(중광전·대관전·선정전) 터의 공개 좌표가 없어 항목별로 나누지 못했고, 표시 분산은 조립 단계에서 푼다.",
     "setting": "palace"
    },
    "participants": [
@@ -3067,6 +3088,7 @@
    "kind": "portrait",
    "summary": "서경 출신 승려로 정지상과 백수한의 힘을 업고 조정에 나섰다. 개경의 터가 쇠했고 서경에 왕기가 있다며 도읍을 옮기고 금을 치자고 주장했다.",
    "dateClaimIds": [
+    "claim-hs-ge4-myocheong-1128",
     "claim-hs-ge4-myocheong-death"
    ],
    "actionClaimIds": [
@@ -3085,7 +3107,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-pyongyang"
     ],
-    "coordinateNote": "평양 표시 좌표를 서경의 대표점으로 썼다.",
+    "coordinateNote": "평양 표시 좌표를 서경의 대표점으로 썼다. 서경을 무대로 한 항목 2건이 같은 평양 표시점을 쓴다. 서경 궁궐·성문의 공개 좌표가 없어 항목별로 나누지 못했다.",
     "setting": "temple"
    },
    "participants": [
@@ -3146,7 +3168,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-pyongyang"
     ],
-    "coordinateNote": "평양 표시 좌표를 서경성의 대표점으로 썼다.",
+    "coordinateNote": "평양 표시 좌표를 서경성의 대표점으로 썼다. 서경을 무대로 한 항목 2건이 같은 평양 표시점을 쓴다. 서경 궁궐·성문의 공개 좌표가 없어 항목별로 나누지 못했다.",
     "setting": "battle"
    },
    "participants": [
@@ -3193,7 +3215,7 @@
    "kind": "portrait",
    "summary": "문벌 귀족의 대표로 묘청의 난을 진압한 뒤, 인종의 명을 받아 1145년 『삼국사기』 50권을 지어 바쳤다.",
    "dateClaimIds": [
-    "claim-hs-ge4-gimbusik-life"
+    "claim-hs-ge4-samguksagi-1145"
    ],
    "actionClaimIds": [
     "claim-hs-ge4-gimbusik-sagi",
@@ -3211,7 +3233,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-kaesong"
     ],
-    "coordinateNote": "개성 도심 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "개성 도심 표시 좌표를 대표점으로 썼다. 이 칸에서 개성 도심 표시점을 쓰는 항목이 3건이다. 국청사 터·이자겸 집 터의 공개 좌표를 찾지 못해 항목별로 나누지 못했고, 표시 분산은 조립 단계에서 푼다.",
     "setting": "office"
    },
    "participants": [
@@ -3230,7 +3252,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs-ge4-gimbusik-life"
+      "claim-hs-ge4-samguksagi-1145"
      ],
      "level": "standard"
     }
@@ -3239,6 +3261,7 @@
    "region": "central",
    "decade": 1130,
    "relatedClaimIds": [
+    "claim-hs-ge4-gimbusik-life",
     "claim-hs-ge4-seogyeong-fall"
    ]
   },
@@ -3271,7 +3294,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-manwoldae"
     ],
-    "coordinateNote": "임금에게 바친 자리로 고려 궁성 터 표시 좌표를 썼다.",
+    "coordinateNote": "임금에게 바친 자리로 고려 궁성 터 표시 좌표를 썼다. 이 칸에서 개경 궁성 안 항목 6건이 같은 표시점을 쓴다. 전각(중광전·대관전·선정전) 터의 공개 좌표가 없어 항목별로 나누지 못했고, 표시 분산은 조립 단계에서 푼다.",
     "setting": "palace"
    },
    "participants": [
@@ -3328,7 +3351,7 @@
     "coordinateSourceIds": [
      "src-hs-ge4-en-manwoldae"
     ],
-    "coordinateNote": "즉위한 전각이 궁성 안 대관전이다. 전각 터의 좌표가 없어 고려 궁성 터 표시 좌표를 썼다.",
+    "coordinateNote": "즉위한 전각이 궁성 안 대관전이다. 전각 터의 좌표가 없어 고려 궁성 터 표시 좌표를 썼다. 이 칸에서 개경 궁성 안 항목 6건이 같은 표시점을 쓴다. 전각(중광전·대관전·선정전) 터의 공개 좌표가 없어 항목별로 나누지 못했고, 표시 분산은 조립 단계에서 푼다.",
     "setting": "palace"
    },
    "participants": [
@@ -3381,7 +3404,7 @@
    ],
    "sceneId": "scene-hs-ge4-uicheon",
    "confidence": "high",
-   "note": "[10한사1-02-04] · core · 국청사 터의 좌표 근거를 찾지 못해 개성 표시 좌표를 썼다",
+   "note": "[10한사1-02-04] · core · 국청사 터의 좌표 근거를 찾지 못해 개성 표시 좌표를 썼다 개성 도심 표시점을 쓰는 항목이 3건이다(국청사·집 터 좌표 근거 없음).",
    "lon": 126.5528,
    "lat": 37.9717,
    "coordinateBasis": "location claim-hs-ge4-loc-gukcheongsa"
@@ -3480,7 +3503,7 @@
    "modernPlace": "강원특별자치도 평창군 진부면",
    "what": "네모꼴을 벗어난 팔각 아홉 층 탑, 고려 석탑의 새 흐름",
    "claimIds": [
-    "claim-hs-ge4-yejong-reign",
+    "claim-hs-ge4-woljeongsa-12c-time",
     "claim-hs-ge4-woljeongsa-12c",
     "claim-hs-ge4-woljeongsa-dagak",
     "claim-hs-ge4-woljeongsa-gukbo",
@@ -3488,7 +3511,7 @@
    ],
    "sceneId": "scene-hs-ge4-woljeongsa-tap",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 조성 연대는 발굴 동전으로 12세기경으로 본다. 시기 기준점은 예종 재위(1105~1122)로 잡았다",
+   "note": "[10한사1-02-04] · standard · 조성 연대는 발굴된 송 동전으로 12세기경(1101~1200)으로 본다. 표시 연도 1100년은 항목이 잡은 대표 연도다",
    "lon": 128.59194,
    "lat": 37.73139,
    "coordinateBasis": "location claim-hs-ge4-loc-woljeongsa",
@@ -3563,12 +3586,13 @@
     "claim-hs-ge4-haedong-1102",
     "claim-hs-ge4-haedong-name",
     "claim-hs-ge4-haedong-shop",
+    "claim-hs-ge4-jujeon-1097",
     "claim-hs-ge4-jujeon-1101",
     "claim-hs-ge4-loc-sonjuk"
    ],
    "sceneId": "scene-hs-ge4-haedongtongbo",
    "confidence": "high",
-   "note": "[10한사1-02-02] · standard · 주전도감 청사 터의 좌표 근거가 없어 개경 시가 표시점을 썼다",
+   "note": "[10한사1-02-02] · standard · 주전도감은 1097년(숙종 2) 교서로 세웠고 해동통보 주조는 1102년이다. 청사 터의 좌표 근거가 없어 개경 시가 표시점을 썼다",
    "lon": 126.5081,
    "lat": 37.9817,
    "coordinateBasis": "location claim-hs-ge4-loc-sonjuk"
@@ -3593,7 +3617,7 @@
    ],
    "sceneId": "scene-hs-ge4-byeolmuban",
    "confidence": "high",
-   "note": "[10한사1-02-01] · core · 해산 연도를 밝힌 기록을 찾지 못해 존속 끝은 비워 둔다",
+   "note": "[10한사1-02-01] · core · 해산 연도를 밝힌 기록을 찾지 못해 존속 표시를 달지 않았다. 빈 값은 현존을 뜻하므로 존속 행을 만들지 않는다 개경 궁성 안 항목 6건이 같은 표시점을 쓴다(전각 터 좌표 근거 없음).",
    "lon": 126.543333,
    "lat": 37.985,
    "coordinateBasis": "location claim-hs-ge4-loc-manwoldae"
@@ -3618,7 +3642,7 @@
    ],
    "sceneId": "scene-hs-ge4-yejong",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard",
+   "note": "[10한사1-01-02] · standard 개경 궁성 안 항목 6건이 같은 표시점을 쓴다(전각 터 좌표 근거 없음).",
    "lon": 126.543333,
    "lat": 37.985,
    "coordinateBasis": "location claim-hs-ge4-loc-manwoldae"
@@ -3673,7 +3697,7 @@
    ],
    "sceneId": "scene-hs-ge4-yungwan",
    "confidence": "high",
-   "note": "[10한사1-02-01] · core · 좌표는 9성의 하나인 길주 표시점이며, 항목 원안의 함주와 다르다",
+   "note": "[10한사1-02-01] · core · 좌표는 9성의 하나인 길주 표시점이며, 항목 원안의 함주와 다르다. 고려 길주와 지금의 길주군을 같은 곳으로 보는 것은 학설의 하나이고, 9성의 위치는 함흥 평야설·두만강설로 갈린다",
    "lon": 129.33667,
    "lat": 40.96194,
    "coordinateBasis": "location claim-hs-ge4-loc-gilju"
@@ -3698,7 +3722,7 @@
    ],
    "sceneId": "scene-hs-ge4-yanghyeongo",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 좌표는 고려 국자감 자리를 이은 개성 성균관 표시점이다",
+   "note": "[10한사1-02-04] · standard · 좌표는 고려 국자감 자리를 이은 개성 성균관 표시점이다. 폐지 연도를 밝힌 기록을 찾지 못해 존속 표시를 달지 않았다",
    "lon": 126.57072,
    "lat": 37.992,
    "coordinateBasis": "location claim-hs-ge4-loc-gukjagam"
@@ -3748,7 +3772,7 @@
    ],
    "sceneId": "scene-hs-ge4-jin-sadae",
    "confidence": "high",
-   "note": "[10한사1-02-01] · standard · 고려사 인종 4년 3월 논의와 4월 칭신 표문이 근거다",
+   "note": "[10한사1-02-01] · standard · 고려사 인종 4년 3월 논의와 4월 칭신 표문이 근거다 개경 궁성 안 항목 6건이 같은 표시점을 쓴다(전각 터 좌표 근거 없음).",
    "lon": 126.543333,
    "lat": 37.985,
    "coordinateBasis": "location claim-hs-ge4-loc-manwoldae"
@@ -3772,7 +3796,7 @@
    ],
    "sceneId": "scene-hs-ge4-ijagyeom",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 출생 연도가 전하지 않아 대표 연도는 난을 일으킨 1126년이다",
+   "note": "[10한사1-01-02] · standard · 출생 연도가 전하지 않아 대표 연도는 난을 일으킨 1126년이다 개성 도심 표시점을 쓰는 항목이 3건이다(국청사·집 터 좌표 근거 없음).",
    "lon": 126.5528,
    "lat": 37.9717,
    "coordinateBasis": "location claim-hs-ge4-loc-kaesong-city"
@@ -3797,7 +3821,7 @@
    ],
    "sceneId": "scene-hs-ge4-ijagyeom-nan",
    "confidence": "high",
-   "note": "[10한사1-01-02] · core · 고려사 인종 4년 2월 26일 궁궐 방화 기사가 직접 근거다",
+   "note": "[10한사1-01-02] · core · 고려사 인종 4년 2월 26일 궁궐 방화 기사가 직접 근거다 개경 궁성 안 항목 6건이 같은 표시점을 쓴다(전각 터 좌표 근거 없음).",
    "lon": 126.543333,
    "lat": 37.985,
    "coordinateBasis": "location claim-hs-ge4-loc-manwoldae"
@@ -3814,6 +3838,7 @@
    "modernPlace": "북한 평양직할시",
    "what": "서경으로 도읍을 옮기고 금을 치자고 주장한 승려",
    "claimIds": [
+    "claim-hs-ge4-myocheong-1128",
     "claim-hs-ge4-myocheong-death",
     "claim-hs-ge4-myocheong-cheondo",
     "claim-hs-ge4-myocheong-seungryeo",
@@ -3822,7 +3847,7 @@
    ],
    "sceneId": "scene-hs-ge4-myocheong",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 출생 연도가 전하지 않는다. 좌표는 평양 표시점이다",
+   "note": "[10한사1-01-02] · standard · 출생 연도가 전하지 않는다. 활동 시작은 인종 6년(1128), 사망은 1135년이다. 좌표는 평양 표시점이다 서경 항목 2건이 같은 평양 표시점을 쓴다(궁궐·성문 좌표 근거 없음).",
    "lon": 125.7475,
    "lat": 39.01667,
    "coordinateBasis": "location claim-hs-ge4-loc-seogyeong"
@@ -3847,7 +3872,7 @@
    ],
    "sceneId": "scene-hs-ge4-seogyeong-nan",
    "confidence": "high",
-   "note": "[10한사1-01-02] · core · 고려사 인종 13년 1월 봉기와 14년 2월 함락 기사가 근거다",
+   "note": "[10한사1-01-02] · core · 고려사 인종 13년 1월 봉기와 14년 2월 함락 기사가 근거다 서경 항목 2건이 같은 평양 표시점을 쓴다(궁궐·성문 좌표 근거 없음).",
    "lon": 125.7475,
    "lat": 39.01667,
    "coordinateBasis": "location claim-hs-ge4-loc-seogyeong"
@@ -3859,20 +3884,21 @@
    "region": "central",
    "decade": 1140,
    "year": 1145,
-   "yearVerbatim": "1075년(문종 29)",
+   "yearVerbatim": "十二月 壬戌",
    "placeLabel": "개경(김부식의 활동지)",
    "modernPlace": "북한 개성특별시",
    "what": "묘청을 진압하고 삼국사기를 지은 문벌 귀족의 대표",
    "claimIds": [
-    "claim-hs-ge4-gimbusik-life",
+    "claim-hs-ge4-samguksagi-1145",
     "claim-hs-ge4-gimbusik-sagi",
     "claim-hs-ge4-gimbusik-myocheong",
     "claim-hs-ge4-seogyeong-fall",
+    "claim-hs-ge4-gimbusik-life",
     "claim-hs-ge4-loc-kaesong-city"
    ],
    "sceneId": "scene-hs-ge4-gimbusik",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 좌표는 개성 도심 표시점이며 특정 관아 터가 아니다",
+   "note": "[10한사1-02-04] · standard · 연도는 1145년 12월 삼국사를 바친 기사다. 생몰년(1075~1151)은 보조 근거로 둔다. 좌표는 개성 도심 표시점이며 특정 관아 터가 아니다 개성 도심 표시점을 쓰는 항목이 3건이다(국청사·집 터 좌표 근거 없음).",
    "lon": 126.5528,
    "lat": 37.9717,
    "coordinateBasis": "location claim-hs-ge4-loc-kaesong-city"
@@ -3897,7 +3923,7 @@
    ],
    "sceneId": "scene-hs-ge4-samguksagi",
    "confidence": "high",
-   "note": "[10한사1-02-04] · core · 고려사 인종 23년 12월 22일 진헌 기사가 직접 근거다",
+   "note": "[10한사1-02-04] · core · 고려사 인종 23년 12월 22일 진헌 기사가 직접 근거다 개경 궁성 안 항목 6건이 같은 표시점을 쓴다(전각 터 좌표 근거 없음).",
    "lon": 126.543333,
    "lat": 37.985,
    "coordinateBasis": "location claim-hs-ge4-loc-manwoldae"
@@ -3923,7 +3949,7 @@
    ],
    "sceneId": "scene-hs-ge4-uijong",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 1170년 무신정변은 다음 시대 칸에서 다룬다",
+   "note": "[10한사1-01-02] · standard · 1170년 무신정변은 다음 시대 칸에서 다룬다 개경 궁성 안 항목 6건이 같은 표시점을 쓴다(전각 터 좌표 근거 없음).",
    "lon": 126.543333,
    "lat": 37.985,
    "coordinateBasis": "location claim-hs-ge4-loc-manwoldae"

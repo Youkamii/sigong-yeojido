@@ -151,9 +151,9 @@
      "locator": "문서 상단 표시 좌표(geo)"
     },
     {
-     "id": "ex-hwangnyongsa-1238",
-     "text": "고려 고종 25년(1238년)",
-     "locator": "본문 — 몽골 침입으로 소실된 해"
+     "id": "ex-hwangnyongsa-954",
+     "text": "광종 5년(954)때에 벼락으로 목탑이 소멸하자",
+     "locator": "본문 — 목탑이 벼락으로 소멸한 해"
     }
    ]
   },
@@ -441,6 +441,30 @@
      "locator": "문서 상단 표시 좌표(geo)"
     }
    ]
+  },
+  {
+   "id": "src-hs-ko-buyeo-wangneungwon",
+   "title": "부여 왕릉원(능산리 고분군) — 위키백과",
+   "publisher": "위키백과",
+   "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC_%EC%99%95%EB%A6%89%EC%9B%90",
+   "rawFile": "raw/ko-buyeo-wangneungwon.html",
+   "sha256": "989cbd5d7c2576347947248e2c9353dd88a7577fb33920a98db18616fa13fcdb",
+   "httpStatus": 200,
+   "byteLength": 125585,
+   "fetchedUtc": "2026-09-14T08:21:44Z",
+   "license": "위키백과 CC BY-SA — 좌표·연도 표시를 짧게 인용",
+   "excerpts": [
+    {
+     "id": "ex-geo-wangneungwon",
+     "text": "36.27611; 126.94250",
+     "locator": "문서 상단 표시 좌표(geo)"
+    },
+    {
+     "id": "ex-uija-gamyo",
+     "text": "의자왕과 그의 아들 부여융의 가묘가 있다",
+     "locator": "본문 — 고분군 서쪽의 의자왕 가묘"
+    }
+   ]
   }
  ],
  "entities": [
@@ -480,14 +504,14 @@
    "label": "문무왕"
   },
   {
-   "id": "person-hs-sg5-bojangwang",
+   "id": "person-encykorea-bojang",
    "type": "Person",
-   "label": "보장왕"
+   "label": "보장왕 (민족문화대백과)"
   },
   {
-   "id": "person-hs-sg5-abiji",
+   "id": "person-abiji",
    "type": "Person",
-   "label": "아비지"
+   "label": "아비지(阿非知)"
   },
   {
    "id": "person-hs-sg5-heukchi-sangji",
@@ -495,9 +519,9 @@
    "label": "흑치상지"
   },
   {
-   "id": "person-hs-sg5-anseung",
+   "id": "person-anseung",
    "type": "Person",
-   "label": "안승"
+   "label": "안승(安勝)"
   },
   {
    "id": "polity-hs-sg5-silla",
@@ -718,6 +742,11 @@
    "id": "event-hs-sg5-unification",
    "type": "Event",
    "label": "삼국 통일"
+  },
+  {
+   "id": "place-hs-sg5-buyeo-wangneungwon",
+   "type": "Place",
+   "label": "부여 왕릉원(능산리 고분군)"
   }
  ],
  "claims": [
@@ -806,12 +835,12 @@
    "predicate": "syj:tookPlaceAt",
    "object": {
     "kind": "entity",
-    "id": "place-hs-sg5-anhakgung"
+    "id": "place-hs-sg5-pyongyangseong"
    },
    "sourceId": "src-anc-enc-yeongaesomun",
    "citesChunk": "chunk_scenes-103_ancient_scenes_yeongae-coup",
    "quote": "정변을 일으켜 이들을 모두 죽이고 왕궁에 돌입해 왕을 시해하고 보장왕을 세웠다",
-   "note": "평양성 남쪽에서 귀족을 죽인 뒤 왕궁으로 들어갔다는 서술"
+   "note": "평양성 남쪽 성 밖에서 귀족들을 죽인 뒤 왕궁으로 들어갔다는 서술 — 642년의 왕궁은 586년 옮긴 장안성(평양성) 안에 있었다"
   },
   {
    "id": "claim-hs-sg5-yeon-bojang",
@@ -819,7 +848,7 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "person-hs-sg5-bojangwang"
+    "id": "person-encykorea-bojang"
    },
    "sourceId": "src-samguksagi",
    "citesChunk": "chunk_samguksagi_sg_049_0030_0060",
@@ -838,7 +867,7 @@
    },
    "sourceId": "src-hs-ko-anhakgung",
    "citesExcerpt": "ex-geo-anhakgung",
-   "note": "고구려 평양 왕궁으로 보는 안학궁터의 표시 좌표"
+   "note": "평양 안학궁터의 표시 좌표. 안학궁은 427년 평양 천도 때의 왕궁이고 586년 장안성 천도 뒤로는 왕궁이 아니므로, 7세기 항목에서는 평양 도성 일대의 표시용 대표점으로만 쓴다"
   },
   {
    "id": "claim-hs-sg5-yeon-power",
@@ -1043,7 +1072,7 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "person-hs-sg5-abiji"
+    "id": "person-abiji"
    },
    "sourceId": "src-anc-enc-hwangnyongsa-tap",
    "citesChunk": "chunk_scenes-103_ancient_scenes_hwangnyongsa-workers",
@@ -1056,15 +1085,16 @@
    "predicate": "syj:destroyedIn",
    "object": {
     "kind": "time",
-    "verbatim": "고려 고종 25년(1238년)",
+    "verbatim": "1238년(고종 25)",
     "year": 1238,
     "precision": "year",
     "earliest": 1238,
     "latest": 1238
    },
-   "sourceId": "src-hs-ko-hwangnyongsa",
-   "citesExcerpt": "ex-hwangnyongsa-1238",
-   "note": "1238년 몽골 침입으로 불탔다 — 목탑 존속의 끝 연도 근거"
+   "sourceId": "src-syj122-aks-hwangnyongsaji",
+   "note": "1238년 몽골 침입 때 절과 탑이 모두 불탔다 — 민족문화대백과 황룡사지 항목",
+   "citesChunk": "chunk_scenes-122_early_localities_hns-1238",
+   "quote": "황룡사는 1238년(고종 25) 몽고병의 침입 때 모두 불타 버리고"
   },
   {
    "id": "claim-hs-sg5-hwangnyongsa-loc",
@@ -1170,7 +1200,7 @@
    "sourceId": "src-samguksagi",
    "citesChunk": "chunk_samguksagi_sg_041_0020_0340",
    "quote": "乃詔許, 勑將軍蘇定方, 以師二十萬, 徂征百濟",
-   "note": "당 태종이 청병을 허락하고 소정방에게 백제 정벌을 명했다"
+   "note": "당 태종이 청병을 허락했다는 삼국사기 김유신 열전 서술. 이어 붙은 소정방의 백제 정벌 명령은 실제로는 660년 당 고종 때의 일로, 열전이 뒤의 일을 648년 청병 기사에 이어 적은 압축 서술이다"
   },
   {
    "id": "claim-hs-sg5-changan-loc",
@@ -1561,7 +1591,7 @@
    "sourceId": "src-samguksagi",
    "citesChunk": "chunk_samguksagi_sg_006_0020_1020",
    "quote": "遣大阿湌儒敦於熊津都督府請和, 不從",
-   "note": "670년 신라가 웅진도독부에 화친을 청했으나 듣지 않자 군사를 냈다"
+   "note": "670년 신라가 웅진도독부에 화친을 청했으나 듣지 않자 군사를 냈다 — 신라의 공격이 시작된 해이며 관부가 없어진 해가 아니다"
   },
   {
    "id": "claim-hs-sg5-gongsanseong-loc",
@@ -1588,7 +1618,7 @@
    "sourceId": "src-samguksagi",
    "citesChunk": "chunk_samguksagi_sg_006_0020_0370",
    "quote": "王領金庾信等二十八將軍, 與之合攻豆陵 尹城·周留城等諸城, 皆下之",
-   "note": "663년 신라와 당이 주류성 등을 함께 쳐서 모두 함락했다"
+   "note": "663년 신라와 당이 두릉윤성·주류성 등을 함께 쳐서 모두 함락했다 — 해전 자체가 아니라 같은 해 육상 작전 기사다. 해전의 연대 근거는 claim-hs-sg5-baekgang-663(자치통감 663년 9월)에 따로 달았다"
   },
   {
    "id": "claim-hs-sg5-baekgang-fleet",
@@ -1781,7 +1811,7 @@
   },
   {
    "id": "claim-hs-sg5-gogu-revival-silla",
-   "subject": "person-hs-sg5-anseung",
+   "subject": "person-anseung",
    "predicate": "syj:participatedIn",
    "object": {
     "kind": "entity",
@@ -2032,7 +2062,7 @@
    "sourceId": "src-samguksagi",
    "citesChunk": "chunk_samguksagi_sg_007_0020_0100",
    "quote": "平壤已南百濟土地, 並乞你新羅",
-   "note": "대동강 이남 땅을 신라에 준다는 당 태종의 약속을 문무왕이 답서에서 들었다"
+   "note": "원문은 '평양 이남의 백제 땅'을 신라에 준다고 적는다. 671년 문무왕이 설인귀에게 보낸 답서가 당 태종의 옛 약속을 상기한 대목이며, 뒷날 흔히 대동강선으로 부르는 경계를 원문이 직접 적은 것은 아니다"
   },
   {
    "id": "claim-hs-sg5-wolseong-loc",
@@ -2047,6 +2077,87 @@
    "sourceId": "src-hs-ko-wolseong",
    "citesExcerpt": "ex-geo-wolseong",
    "note": "신라 왕궁 터인 경주 월성의 표시 좌표"
+  },
+  {
+   "id": "claim-hs-sg5-hwangnyong-burn954",
+   "subject": "facility-hs-sg5-hwangnyongsa-tap",
+   "predicate": "syj:destroyedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "광종 5년(954)",
+    "year": 954,
+    "precision": "year",
+    "earliest": 954,
+    "latest": 954
+   },
+   "sourceId": "src-hs-ko-hwangnyongsa",
+   "citesExcerpt": "ex-hwangnyongsa-954",
+   "note": "954년 벼락으로 목탑이 소멸했다 — 645년에 세운 탑의 존속은 여기서 한 번 끊긴다(1012년 재건 시작, 9년 만에 완공)"
+  },
+  {
+   "id": "claim-hs-sg5-gogu-revival-end673",
+   "subject": "event-hs-sg5-goguryeo-revival",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 673
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_022_0020_0540",
+   "quote": "燕山道㧾管·大将軍李謹行破我人於瓠瀘河",
+   "note": "673년 윤5월 이근행이 호로하에서 고구려 부흥군을 깨뜨렸고 남은 무리는 신라로 달아났다 — 부흥 운동의 마지막 국면"
+  },
+  {
+   "id": "claim-hs-sg5-baekgang-663",
+   "subject": "event-hs-sg5-baekgang",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 663
+   },
+   "sourceId": "src-jipseong-ko_038",
+   "citesChunk": "chunk_jipseong-ko_038_ko_038_1090_0030",
+   "quote": "孫仁師等破百濟餘衆及倭兵於白江, 拔其周留城",
+   "note": "자치통감 용삭 3년(663) 9월 무오 — 백강에서 백제 유민과 왜병을 깨뜨리고 주류성을 뽑았다는 해전 기사 자체의 연대"
+  },
+  {
+   "id": "claim-hs-sg5-ungjin-sobuli",
+   "subject": "institution-hs-sg5-ungjin-dodokbu",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 671
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_007_0020_0111",
+   "quote": "置所夫里州, 以阿湌眞王爲都督",
+   "note": "671년 7월 신라가 사비에 소부리주를 두고 도독을 보냈다 — 웅진도독부의 옛 백제 땅 지배가 끝난 시점으로 보았다. 관부 자체는 뒤에 요동으로 옮겨 간다"
+  },
+  {
+   "id": "claim-hs-sg5-wangneungwon-loc",
+   "subject": "place-hs-sg5-buyeo-wangneungwon",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lon": 126.9425,
+    "lat": 36.27611,
+    "precision": "site"
+   },
+   "sourceId": "src-hs-ko-buyeo-wangneungwon",
+   "citesExcerpt": "ex-geo-wangneungwon",
+   "note": "부여 왕릉원(옛 능산리 고분군)의 표시 좌표"
+  },
+  {
+   "id": "claim-hs-sg5-uija-gamyo",
+   "subject": "person-encykorea-uija",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-sg5-buyeo-wangneungwon"
+   },
+   "sourceId": "src-hs-ko-buyeo-wangneungwon",
+   "citesExcerpt": "ex-uija-gamyo",
+   "note": "부여 왕릉원 서쪽에 의자왕과 아들 부여융의 가묘가 있다 — 인물 카드의 대표점 근거(당대 무덤이 아니라 뒷날 만든 가묘다)"
   }
  ],
  "scenes": [
@@ -2067,18 +2178,18 @@
     "claim-hs-sg5-uija-surrender-act"
    ],
    "place": {
-    "label": "사비 왕궁터(부여 관북리 유적)",
+    "label": "부여 왕릉원(능산리 고분군)",
     "medium": "land",
     "precision": "site",
-    "lon": 126.9125,
-    "lat": 36.28444,
+    "lon": 126.9425,
+    "lat": 36.27611,
     "claimIds": [
-     "claim-hs-sg5-sabi-palace-loc"
+     "claim-hs-sg5-wangneungwon-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs-ko-gwanbukri"
+     "src-hs-ko-buyeo-wangneungwon"
     ],
-    "coordinateNote": "왕궁 건물터의 십진 좌표 근거가 없어 사비 왕궁터로 보는 부여 관북리 유적의 표시 좌표를 썼다. 같은 부여의 백제 멸망 항목은 부소산성 좌표로 따로 두었다.",
+    "coordinateNote": "사비 왕궁터로 보는 관북리 유적은 백제 멸망 항목의 부소산성과 420m 거리라 지도에서 한 점으로 겹친다. 그래서 인물 카드의 대표점은 나성 밖 부여 왕릉원의 표시 좌표로 옮겼다. 이곳의 의자왕 가묘는 뒷날 만든 것이며 당대의 무덤이 아니다.",
     "setting": "palace"
    },
    "participants": [
@@ -2105,7 +2216,11 @@
    },
    "category": "person",
    "region": "south",
-   "decade": 640
+   "decade": 640,
+   "relatedClaimIds": [
+    "claim-hs-sg5-sabi-palace-loc",
+    "claim-hs-sg5-uija-gamyo"
+   ]
   },
   {
    "id": "scene-hs-sg5-yeon-coup",
@@ -2125,18 +2240,18 @@
     "claim-hs-sg5-yeon-bojang"
    ],
    "place": {
-    "label": "평양 왕궁(안학궁터)",
+    "label": "고구려 평양성(장안성)",
     "medium": "land",
-    "precision": "site",
-    "lon": 125.834,
-    "lat": 39.0618,
+    "precision": "area",
+    "lon": 125.757,
+    "lat": 39.0235,
     "claimIds": [
-     "claim-hs-sg5-anhakgung-loc"
+     "claim-hs-sg5-pyongyangseong-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs-ko-anhakgung"
+     "src-hs-ko-pyongyangseong"
     ],
-    "coordinateNote": "열병식이 열린 평양성 남쪽 성 밖의 좌표 근거가 없어, 연개소문이 들이닥친 왕궁으로 보는 안학궁터의 표시 좌표를 썼다.",
+    "coordinateNote": "586년 장안성으로 옮긴 뒤의 왕궁은 평양성 안에 있었다. 성 안 왕궁 자리의 십진 좌표 근거가 없어 평양성 자체의 표시 좌표를 대표점으로 썼다.",
     "setting": "palace"
    },
    "participants": [
@@ -2182,18 +2297,18 @@
     "claim-hs-sg5-yeon-hardline"
    ],
    "place": {
-    "label": "고구려 평양성(장안성)",
+    "label": "평양 안학궁터",
     "medium": "land",
-    "precision": "area",
-    "lon": 125.757,
-    "lat": 39.0235,
+    "precision": "site",
+    "lon": 125.834,
+    "lat": 39.0618,
     "claimIds": [
-     "claim-hs-sg5-pyongyangseong-loc"
+     "claim-hs-sg5-anhakgung-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs-ko-pyongyangseong"
+     "src-hs-ko-anhakgung"
     ],
-    "coordinateNote": "평양성 안 관아 터의 좌표 근거가 없어 평양성 자체의 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "그가 정사를 본 관아 터의 좌표 근거가 없다. 정변 항목이 평양성(장안성) 좌표를 쓰므로 인물 카드는 평양 도성 일대의 다른 점인 안학궁터 표시 좌표로 두었다. 안학궁은 427년 평양 천도 때의 왕궁이고 7세기의 왕궁은 아니다 — 표시용 대표점이다.",
     "setting": "palace"
    },
    "participants": [
@@ -2307,7 +2422,8 @@
     "coordinateSourceIds": [
      "src-hs-en-haicheng"
     ],
-    "coordinateNote": "안시성 터가 확정되지 않아, 비정지로 유력한 하이청시의 표시 좌표를 대표점으로 썼다."
+    "coordinateNote": "안시성 터가 확정되지 않아, 비정지로 유력한 하이청시의 표시 좌표를 대표점으로 썼다.",
+    "overseas": true
    },
    "participants": [],
    "effects": {
@@ -2332,7 +2448,7 @@
    "startYear": 645,
    "endYear": 645,
    "kind": "construction",
-   "summary": "자장의 건의로 645년 황룡사에 아홉 층 목탑을 세웠다. 백제 장인 아비지가 건너와 기술을 이끌었다. 탑은 고려 고종 25년(1238) 몽골 침입 때 불타 없어졌다.",
+   "summary": "자장의 건의로 645년 황룡사에 아홉 층 목탑을 세웠다. 백제 장인 아비지가 건너와 기술을 이끌었다. 이 탑은 954년 벼락으로 소멸했고, 1012년 다시 짓기 시작해 9년 만에 세운 탑이 1238년 몽골 침입 때 불탔다.",
    "dateClaimIds": [
     "claim-hs-sg5-hwangnyong-build",
     "claim-hs-sg5-hwangnyong-done"
@@ -2352,7 +2468,7 @@
     "coordinateSourceIds": [
      "src-hs-ko-hwangnyongsa"
     ],
-    "coordinateNote": "황룡사지의 표시 좌표를 썼다. 목탑 심초석 자리는 절터 안에 있다."
+    "coordinateNote": "황룡사지의 표시 좌표를 썼다. 목탑 심초석 자리는 절터 안에 있다. 645년에 세운 탑은 954년 벼락으로 소멸했고 1012~1021년 다시 세웠으므로, 지도에 표시하는 존속 기간은 645~954년으로 끊었다."
    },
    "participants": [],
    "effects": {
@@ -2370,15 +2486,16 @@
    "decade": 640,
    "sceneFunction": "temple",
    "relatedClaimIds": [
+    "claim-hs-sg5-hwangnyong-burn954",
     "claim-hs-sg5-hwangnyong-burn"
    ],
    "persistence": {
     "kind": "facility",
     "from": 645,
-    "to": 1238,
+    "to": 954,
     "basisClaimIds": [
      "claim-hs-sg5-hwangnyong-done",
-     "claim-hs-sg5-hwangnyong-burn"
+     "claim-hs-sg5-hwangnyong-burn954"
     ]
    }
   },
@@ -2410,7 +2527,8 @@
     "coordinateSourceIds": [
      "src-hs-en-liaoyang"
     ],
-    "coordinateNote": "요동성 터가 지금 랴오양 시가지 아래에 있어 랴오양시의 표시 좌표를 대표점으로 썼다."
+    "coordinateNote": "요동성 터가 지금 랴오양 시가지 아래에 있어 랴오양시의 표시 좌표를 대표점으로 썼다.",
+    "overseas": true
    },
    "participants": [],
    "effects": {
@@ -2456,7 +2574,8 @@
      "src-hs-en-xian"
     ],
     "coordinateNote": "장안 태극궁 터의 좌표 근거가 없어 시안시의 표시 좌표를 대표점으로 썼다.",
-    "setting": "palace"
+    "setting": "palace",
+    "overseas": true
    },
    "participants": [
     {
@@ -2569,7 +2688,7 @@
     "coordinateSourceIds": [
      "src-hs-ko-busosanseong"
     ],
-    "coordinateNote": "사비 도성의 산성 구역인 부소산성의 표시 좌표를 썼다. 같은 부여의 의자왕 항목은 왕궁터인 관북리 유적 좌표로 따로 두었다."
+    "coordinateNote": "사비 도성의 산성 구역인 부소산성의 표시 좌표를 썼다. 같은 부여의 의자왕 인물 항목은 나성 밖 왕릉원 좌표로 따로 두었다."
    },
    "participants": [
     {
@@ -2786,12 +2905,12 @@
    "eventId": "event-hs-sg5-ungjin-dodokbu",
    "title": "웅진도독부 설치",
    "startYear": 660,
-   "endYear": 670,
+   "endYear": 671,
    "kind": "court",
-   "summary": "백제가 무너진 660년 당은 왕문도를 웅진도독으로 보내 옛 백제 땅을 직접 다스리려 했다. 신라는 670년 화친이 받아들여지지 않자 군사를 내어 옛 백제 땅의 성들을 거두었다.",
+   "summary": "백제가 무너진 660년 당은 왕문도를 웅진도독으로 보내 옛 백제 땅을 직접 다스리려 했다. 신라는 670년 화친이 받아들여지지 않자 군사를 냈고, 671년에는 사비에 소부리주를 두어 그 땅을 직접 다스렸다.",
    "dateClaimIds": [
     "claim-hs-sg5-ungjin-year",
-    "claim-hs-sg5-ungjin-end"
+    "claim-hs-sg5-ungjin-sobuli"
    ],
    "actionClaimIds": [
     "claim-hs-sg5-ungjin-setup",
@@ -2829,12 +2948,15 @@
    "persistence": {
     "kind": "institution",
     "from": 660,
-    "to": 670,
+    "to": 671,
     "basisClaimIds": [
      "claim-hs-sg5-ungjin-year",
-     "claim-hs-sg5-ungjin-end"
+     "claim-hs-sg5-ungjin-sobuli"
     ]
-   }
+   },
+   "relatedClaimIds": [
+    "claim-hs-sg5-ungjin-end"
+   ]
   },
   {
    "id": "scene-hs-sg5-baekgang",
@@ -2846,6 +2968,7 @@
    "kind": "naval",
    "summary": "663년 백제를 돕겠다며 왜의 배들이 바다를 건너왔다. 백강 어귀에서 네 차례 부딪친 끝에 왜의 배 400척이 불탔고, 부흥군의 마지막 힘도 꺾였다.",
    "dateClaimIds": [
+    "claim-hs-sg5-baekgang-663",
     "claim-hs-sg5-baekgang-year"
    ],
    "actionClaimIds": [
@@ -2909,7 +3032,7 @@
     "coordinateSourceIds": [
      "src-hs-en-pyongyang"
     ],
-    "coordinateNote": "안동도호부 관아 터의 좌표 근거가 없어 평양시의 표시 좌표를 대표점으로 썼다. 같은 평양의 다른 항목과 겹치지 않게 도시 중심점을 골랐다.",
+    "coordinateNote": "안동도호부 관아 터의 좌표 근거가 없어 평양시의 표시 좌표를 대표점으로 썼다. 정변 항목이 쓰는 평양성(장안성) 좌표에서 남서쪽으로 1km 남짓 떨어진 점이다.",
     "setting": "office"
    },
    "participants": [],
@@ -2965,11 +3088,11 @@
     "coordinateSourceIds": [
      "src-hs-ko-moranbong"
     ],
-    "coordinateNote": "평양성 안 어느 지점인지 좌표 근거가 없어, 북문 전공 기록에 맞추어 평양성 북성이 놓인 모란봉의 표시 좌표를 썼다. 같은 평양의 다른 항목과 점을 나누려는 뜻도 있다."
+    "coordinateNote": "평양성 안 어느 지점인지 좌표 근거가 없어, 북문 전공 기록에 맞추어 평양성 북성이 놓인 모란봉의 표시 좌표를 썼다. 정변 항목이 쓰는 평양성 좌표에서 북동쪽으로 2km 남짓 떨어진 점이다."
    },
    "participants": [
     {
-     "entityId": "person-hs-sg5-bojangwang",
+     "entityId": "person-encykorea-bojang",
      "role": "ruler",
      "presence": "on-site",
      "side": "a",
@@ -2999,12 +3122,12 @@
    "eventId": "event-hs-sg5-goguryeo-revival",
    "title": "고구려 부흥 운동",
    "startYear": 670,
-   "endYear": 671,
+   "endYear": 673,
    "kind": "battle",
-   "summary": "670년 4월 검모잠이 나라를 되살리겠다며 당에 맞섰고, 6월에는 안승을 한성으로 맞아 임금으로 받들었다. 신라가 안승을 고구려왕으로 책봉해 뒤를 받쳤으나 671년 남은 무리는 안시성에서 깨졌다.",
+   "summary": "670년 4월 검모잠이 나라를 되살리겠다며 당에 맞섰고, 6월에는 안승을 한성으로 맞아 임금으로 받들었다. 신라가 안승을 고구려왕으로 책봉해 뒤를 받쳤으나 671년 안시성에서 한 차례 꺾였고, 673년 호로하 싸움에서 남은 무리가 신라로 흩어지며 끝났다.",
    "dateClaimIds": [
     "claim-hs-sg5-gogu-revival-year",
-    "claim-hs-sg5-gogu-revival-end"
+    "claim-hs-sg5-gogu-revival-end673"
    ],
    "actionClaimIds": [
     "claim-hs-sg5-gogu-revival-hanseong",
@@ -3026,7 +3149,7 @@
    },
    "participants": [
     {
-     "entityId": "person-hs-sg5-anseung",
+     "entityId": "person-anseung",
      "role": "ruler",
      "presence": "on-site",
      "side": "a",
@@ -3048,7 +3171,10 @@
    "category": "war",
    "region": "central",
    "decade": 670,
-   "sceneFunction": "uprising_battle"
+   "sceneFunction": "uprising_battle",
+   "relatedClaimIds": [
+    "claim-hs-sg5-gogu-revival-end"
+   ]
   },
   {
    "id": "scene-hs-sg5-nadang-war",
@@ -3194,7 +3320,7 @@
    "startYear": 676,
    "endYear": 676,
    "kind": "assembly",
-   "summary": "676년 기벌포 싸움을 끝으로 당군이 물러나고 신라는 서해 바닷길을 잡았다. 문무왕은 대동강 남쪽 땅을 신라에 준다던 약속을 들어 당과의 다툼을 매듭지었다.",
+   "summary": "676년 기벌포 싸움을 끝으로 당군이 물러나고 신라는 서해 바닷길을 잡았다. 문무왕은 평양 이남의 백제 땅을 신라에 준다던 당 태종의 옛 약속을 들어 당과의 다툼을 매듭지었다.",
    "dateClaimIds": [
     "claim-hs-sg5-unify-year"
    ],
@@ -3251,21 +3377,23 @@
    "decade": 640,
    "year": 641,
    "yearVerbatim": "641년(의자왕 원년)",
-   "placeLabel": "사비 왕궁터(부여 관북리 유적)",
-   "modernPlace": "충청남도 부여군 부여읍 관북리",
+   "placeLabel": "부여 왕릉원(능산리 고분군)",
+   "modernPlace": "충청남도 부여군 부여읍 능산리",
    "what": "신라를 몰아붙였으나 끝내 나라를 잃은 마지막 왕",
    "claimIds": [
     "claim-hs-sg5-uija-accession",
     "claim-hs-sg5-uija-surrender-year",
     "claim-hs-sg5-uija-surrender-act",
-    "claim-hs-sg5-sabi-palace-loc"
+    "claim-hs-sg5-sabi-palace-loc",
+    "claim-hs-sg5-wangneungwon-loc",
+    "claim-hs-sg5-uija-gamyo"
    ],
    "sceneId": "scene-hs-sg5-uija",
    "confidence": "high",
-   "note": "[10한사1-01-01] · standard",
-   "lon": 126.9125,
-   "lat": 36.28444,
-   "coordinateBasis": "location claim-hs-sg5-sabi-palace-loc"
+   "note": "[10한사1-01-01] · standard · 인물 카드의 대표점은 백제 멸망 항목(부소산성)과 420m로 겹쳐 나성 밖 부여 왕릉원으로 옮겼다. 왕릉원의 의자왕 가묘는 뒷날 만든 것이다",
+   "lon": 126.9425,
+   "lat": 36.27611,
+   "coordinateBasis": "location claim-hs-sg5-wangneungwon-loc"
   },
   {
    "id": "fact-hs-sg5-002",
@@ -3275,22 +3403,22 @@
    "decade": 640,
    "year": 642,
    "yearVerbatim": "642년(영류왕 25) 겨울 10월",
-   "placeLabel": "평양 왕궁(안학궁터)",
-   "modernPlace": "북한 평양직할시 대성구역",
+   "placeLabel": "고구려 평양성(장안성)",
+   "modernPlace": "북한 평양직할시 중구역 일대",
    "what": "왕을 죽이고 권력을 독점해 당과의 충돌로 나아감",
    "claimIds": [
     "claim-hs-sg5-yeon-coup-year",
     "claim-hs-sg5-yeon-coup-act",
     "claim-hs-sg5-yeon-coup-palace",
     "claim-hs-sg5-yeon-bojang",
-    "claim-hs-sg5-anhakgung-loc"
+    "claim-hs-sg5-pyongyangseong-loc"
    ],
    "sceneId": "scene-hs-sg5-yeon-coup",
    "confidence": "high",
-   "note": "[10한사1-01-01] · standard",
-   "lon": 125.834,
-   "lat": 39.0618,
-   "coordinateBasis": "location claim-hs-sg5-anhakgung-loc"
+   "note": "[10한사1-01-01] · standard · 642년의 왕궁은 586년 옮긴 장안성(평양성) 안에 있었다. 427년 천도 때의 왕궁인 안학궁터가 아니라 평양성 표시 좌표를 대표점으로 썼다",
+   "lon": 125.757,
+   "lat": 39.0235,
+   "coordinateBasis": "location claim-hs-sg5-pyongyangseong-loc"
   },
   {
    "id": "fact-hs-sg5-003",
@@ -3300,21 +3428,21 @@
    "decade": 640,
    "year": 642,
    "yearVerbatim": "642년~666년",
-   "placeLabel": "고구려 평양성(장안성)",
-   "modernPlace": "북한 평양직할시 중구역 일대",
+   "placeLabel": "평양 안학궁터",
+   "modernPlace": "북한 평양직할시 대성구역",
    "what": "정변으로 권력을 잡고 당에 강경하게 맞선 실권자",
    "claimIds": [
     "claim-hs-sg5-yeon-power",
     "claim-hs-sg5-yeon-death",
     "claim-hs-sg5-yeon-hardline",
-    "claim-hs-sg5-pyongyangseong-loc"
+    "claim-hs-sg5-anhakgung-loc"
    ],
    "sceneId": "scene-hs-sg5-yeongaesomun",
    "confidence": "high",
-   "note": "[10한사1-01-01] · core · 항목은 665년경 사망으로 적지만 삼국사기 열전은 건봉 원년(666)이라 끝 연도를 666으로 두었다",
-   "lon": 125.757,
-   "lat": 39.0235,
-   "coordinateBasis": "location claim-hs-sg5-pyongyangseong-loc"
+   "note": "[10한사1-01-01] · core · 항목은 665년경 사망으로 적지만 삼국사기 열전은 건봉 원년(666)이라 끝 연도를 666으로 두었다. 인물 카드의 대표점은 정변 항목과 점을 나누려고 평양 도성 일대의 안학궁터 표시 좌표로 두었다(7세기의 왕궁은 아니다)",
+   "lon": 125.834,
+   "lat": 39.0618,
+   "coordinateBasis": "location claim-hs-sg5-anhakgung-loc"
   },
   {
    "id": "fact-hs-sg5-004",
@@ -3379,19 +3507,20 @@
     "claim-hs-sg5-hwangnyong-build",
     "claim-hs-sg5-hwangnyong-done",
     "claim-hs-sg5-hwangnyong-abiji",
+    "claim-hs-sg5-hwangnyong-burn954",
     "claim-hs-sg5-hwangnyong-burn",
     "claim-hs-sg5-hwangnyongsa-loc"
    ],
    "sceneId": "scene-hs-sg5-hwangnyongsa-tap",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 존속 645~1238년(몽골 침입으로 소실)",
+   "note": "[10한사1-02-04] · standard · 645년에 세운 탑의 존속은 954년 벼락 소실까지다. 1012년 다시 짓기 시작해 9년 만에 세운 탑이 1238년 몽골 침입 때 불탔으므로 645~1238년을 이어진 하나로 보지 않았다",
    "lon": 129.2325,
    "lat": 35.83694,
    "coordinateBasis": "location claim-hs-sg5-hwangnyongsa-loc",
    "persistence": {
     "kind": "facility",
     "from": 645,
-    "to": 1238
+    "to": 954
    }
   },
   {
@@ -3583,20 +3712,21 @@
    "claimIds": [
     "claim-hs-sg5-ungjin-year",
     "claim-hs-sg5-ungjin-end",
+    "claim-hs-sg5-ungjin-sobuli",
     "claim-hs-sg5-ungjin-setup",
     "claim-hs-sg5-ungjin-silla",
     "claim-hs-sg5-gongsanseong-loc"
    ],
    "sceneId": "scene-hs-sg5-ungjin-dodokbu",
    "confidence": "high",
-   "note": "[10한사1-02-01] · standard · 항목은 677년 축출을 적지만, 인용한 삼국사기 기사로 확인되는 신라의 공격은 670년부터라 존속 끝을 670으로 두었다",
+   "note": "[10한사1-02-01] · standard · 항목은 677년 축출을 적는다. 670년은 신라의 공격이 시작된 해일 뿐이라 671년 소부리주 설치(사비를 신라가 직접 다스림)를 존속의 끝으로 잡았다",
    "lon": 127.12694,
    "lat": 36.46333,
    "coordinateBasis": "location claim-hs-sg5-gongsanseong-loc",
    "persistence": {
     "kind": "institution",
     "from": 660,
-    "to": 670
+    "to": 671
    }
   },
   {
@@ -3611,6 +3741,7 @@
    "modernPlace": "전북특별자치도 군산시 앞 금강 하구",
    "what": "왜가 보낸 함대까지 무너지며 부흥 운동이 끝난 해전",
    "claimIds": [
+    "claim-hs-sg5-baekgang-663",
     "claim-hs-sg5-baekgang-year",
     "claim-hs-sg5-baekgang-fleet",
     "claim-hs-sg5-baekgang-wa",
@@ -3618,7 +3749,7 @@
    ],
    "sceneId": "scene-hs-sg5-baekgang",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 백강의 위치는 확정되지 않았다",
+   "note": "[10한사1-01-01] · standard · 백강의 위치는 확정되지 않았다. 해전의 연대는 자치통감 663년 9월 기사로 따로 근거를 달았다",
    "lon": 126.717,
    "lat": 35.983,
    "coordinateBasis": "location claim-hs-sg5-baekgang-loc"
@@ -3691,13 +3822,14 @@
    "claimIds": [
     "claim-hs-sg5-gogu-revival-year",
     "claim-hs-sg5-gogu-revival-end",
+    "claim-hs-sg5-gogu-revival-end673",
     "claim-hs-sg5-gogu-revival-hanseong",
     "claim-hs-sg5-gogu-revival-silla",
     "claim-hs-sg5-hanseong-loc"
    ],
    "sceneId": "scene-hs-sg5-goguryeo-revival",
    "confidence": "medium",
-   "note": "[10한사1-01-01] · standard · 항목은 673년까지로 적지만, 인용한 삼국사기 기사로 확인되는 마지막 국면은 671년 안시성 패전이라 끝 연도를 671로 두었다",
+   "note": "[10한사1-01-01] · standard · 673년 호로하 패전 기사까지 근거를 달아 항목의 기간(670~673)을 그대로 두었다",
    "lon": 125.76111,
    "lat": 38.23583,
    "coordinateBasis": "location claim-hs-sg5-hanseong-loc"
@@ -3794,7 +3926,7 @@
    ],
    "sceneId": "scene-hs-sg5-unification",
    "confidence": "high",
-   "note": "[10한사1-01-01] · core",
+   "note": "[10한사1-01-01] · core · fact.what 은 항목의 설명 그대로다. 인용한 원문(671년 답설인귀서)은 '평양 이남의 백제 땅'이라 적으며 대동강이라는 강 이름은 원문에 없다",
    "lon": 129.22611,
    "lat": 35.83083,
    "coordinateBasis": "location claim-hs-sg5-wolseong-loc"

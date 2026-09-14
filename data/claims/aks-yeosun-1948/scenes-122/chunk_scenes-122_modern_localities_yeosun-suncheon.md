@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-yeosun-suncheon",
+    "subject": "event-hs-c1-yeosun",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-c1-suncheon"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_yeosun-suncheon",
+    "quote": "20일 오후 순천도 함락되었다.",
+    "note": "이튿날 순천까지 넘어갔다.",
+    "fromSource": "src-aks-yeosun-1948",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

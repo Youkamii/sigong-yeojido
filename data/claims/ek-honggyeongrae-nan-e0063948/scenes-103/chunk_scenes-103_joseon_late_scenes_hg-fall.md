@@ -44,15 +44,15 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-hong-fall",
-    "subject": "event-hs-jl5-hong-gyeongnae",
+    "subject": "person-jl-honggyeongrae",
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",
-      "id": "person-jl-honggyeongrae"
+      "id": "event-hs-jl5-hong-gyeongnae"
     },
     "citesChunk": "chunk_scenes-103_joseon_late_scenes_hg-fall",
     "quote": "관군의 화약 매설에 의한 성의 폭파로 농민군은 진압되고",
-    "note": "관군이 성을 폭파해 진압했다",
+    "note": "홍경래가 이끈 봉기는 관군이 정주성을 폭파하며 진압되었다",
     "fromSource": "src-ek-honggyeongrae-nan-e0063948",
     "origin": "ai",
     "status": "draft",

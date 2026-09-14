@@ -1,0 +1,439 @@
+{
+  "job": "contemporary-5",
+  "sources": 43,
+  "excerpts": 61,
+  "chunkClaims": 20,
+  "excerptClaims": 62,
+  "facts": 20,
+  "factsByCategory": {
+    "administration": 2,
+    "culture": 3,
+    "economy": 4,
+    "facility": 1,
+    "foreign": 4,
+    "person": 3,
+    "settlement": 3
+  },
+  "claims": 82,
+  "entities": 59,
+  "rawFilesChecked": [
+    {
+      "source": "src-hs-c5-enc-suyo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0079680",
+      "sha256": "5c02104a4f736234b829311ee5a0cc229c87d2b547b30fe02a5a7c2e44c912f3",
+      "rawBytes": 78807,
+      "excerpts": 2,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs-c5-enc-sonyeosang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0079679",
+      "sha256": "354a655f144a9426e9fe7b85830fffb6d2e291753ca3527185a23b2666d88dd0",
+      "rawBytes": 99057,
+      "excerpts": 1,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-c5-enc-wianbu-2015",
+      "url": "https://encykorea.aks.ac.kr/Article/E0079675",
+      "sha256": "09c98ea4bfbb6ddb79eb2076e4f038c3a52039ff4becf943e58fdab9e0923798",
+      "rawBytes": 103824,
+      "excerpts": 1,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-c5-enc-geumyung",
+      "url": "https://encykorea.aks.ac.kr/Article/E0007935",
+      "sha256": "4af84cdb414ceb6b85abc836eb710abbbc64775f89bab63c09b21e83068f462c",
+      "rawBytes": 95001,
+      "excerpts": 1,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-c5-enc-ur",
+      "url": "https://encykorea.aks.ac.kr/Article/E0066652",
+      "sha256": "6ee935cff020ca1115a21482bb900c9156a6b7853355943f1efa6cf33d1959fa",
+      "rawBytes": 94446,
+      "excerpts": 4,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-hs-c5-enc-kctu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0049274",
+      "sha256": "7b754ea23bc4707c52d373448437bde9da35201b4e197d84610a90111875c0b0",
+      "rawBytes": 86907,
+      "excerpts": 2,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-hs-c5-enc-jibang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054202",
+      "sha256": "113bab6a2aaea039f6bd7c8a8112cb3dd08105951b244205636a1e5e268d26c2",
+      "rawBytes": 136758,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-c5-enc-oecd",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002801",
+      "sha256": "69aa85c0645ba587a38d88f25993b1c39d33ff3fbe4004bc9548677b6ae4272d",
+      "rawBytes": 83868,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-hs-c5-enc-hallyu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0066892",
+      "sha256": "fd14b52268041a8cec31b022cf73ff00e04667c5516c5aa17806d995c86e7cb6",
+      "rawBytes": 78921,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-c5-enc-tourism",
+      "url": "https://encykorea.aks.ac.kr/Article/E0070255",
+      "sha256": "81636c93303cd49179f25740b2b31d5a8b0bf4eabe0883d4b9d8d64b34813e52",
+      "rawBytes": 95525,
+      "excerpts": 2,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-hs-c5-enc-kaesong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0070226",
+      "sha256": "e2009538ca57fb38ac8a0aa3ab50e6c1b173c8cf03f25c4bff00a9be860fa457",
+      "rawBytes": 104594,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-c5-enc-dokdo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0015953",
+      "sha256": "44aaf04c945152dca87be0bb19d1e6027fe515a18a63091d7bef9c35a4453e3f",
+      "rawBytes": 222154,
+      "excerpts": 3,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-c5-enc-lowbirth",
+      "url": "https://encykorea.aks.ac.kr/Article/E0079694",
+      "sha256": "263a638d755674efedd80a49210fc44ee04e8e82c8200be4ccdea956a90357dc",
+      "rawBytes": 78337,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-hs-c5-enc-aging",
+      "url": "https://encykorea.aks.ac.kr/Article/E0067748",
+      "sha256": "f99fcc941595db1150b7276646467b18f9cb45cfe5a7fcc24ba242009628cd44",
+      "rawBytes": 82491,
+      "excerpts": 1,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-hs-c5-enc-615",
+      "url": "https://encykorea.aks.ac.kr/Article/E0070107",
+      "sha256": "6052411b23fbc0b80528f7bed299d5047d9303e533e0f5c7190579aefe047e89",
+      "rawBytes": 102233,
+      "excerpts": 1,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-c5-enc-impeach",
+      "url": "https://encykorea.aks.ac.kr/Article/E0080714",
+      "sha256": "363f2db80747aff29b67bbbfde314e4f40a7527ceee68fd9f9ddc1ae57b31587",
+      "rawBytes": 114614,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-hs-c5-enc-toejin",
+      "url": "https://encykorea.aks.ac.kr/Article/E0078965",
+      "sha256": "31766778109207911db0e60205e29b2c9d836a8fbe158e1be23e6018b4641cc9",
+      "rawBytes": 102224,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-hs-c5-enc-518-law",
+      "url": "https://encykorea.aks.ac.kr/Article/E0078661",
+      "sha256": "e617e1347c4ec4c48a522ca373bf77ff5927e5495b6fa50173ce54dd5a5b44f4",
+      "rawBytes": 103706,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-hs-c5-ko-518-cemetery",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD5%C2%B718%EB%AF%BC%EC%A3%BC%EB%AC%98%EC%A7%80",
+      "sha256": "c5a39021254eb5e6ee270d21284aec3c70a9f223b72a0eb5fbf8a3ef777fbbaa",
+      "rawBytes": 193430,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs-c5-ko-518-records",
+      "url": "https://ko.wikipedia.org/wiki/5%C2%B718_%EA%B4%91%EC%A3%BC%EB%AF%BC%EC%A3%BC%ED%99%94%EC%9A%B4%EB%8F%99_%EA%B8%B0%EB%A1%9D%EB%AC%BC",
+      "sha256": "10dc4ebd85dbcc34b54930d9eaac7beb331c5f9a10f64bf43f73a2484d863603",
+      "rawBytes": 141438,
+      "excerpts": 2,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-hs-c5-ko-518-hall",
+      "url": "https://ko.wikipedia.org/wiki/5%C2%B718%EB%AF%BC%EC%A3%BC%ED%99%94%EC%9A%B4%EB%8F%99%EA%B8%B0%EB%A1%9D%EA%B4%80",
+      "sha256": "f8f6472e8155813900411a0bfe50728be4c2e1cdf97b90eac852db70d4826e88",
+      "rawBytes": 143993,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-hs-c5-ko-embassy",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A3%BC%ED%95%9C%EC%9D%BC%EB%B3%B8%EB%8C%80%EC%82%AC%EA%B4%80",
+      "sha256": "26c7ba5e58be172ded808897831326c804c41f65efd8bd41b9d20b5813515d8c",
+      "rawBytes": 249732,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-gimje",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B9%80%EC%A0%9C%EC%8B%9C",
+      "sha256": "1b093be86bce1afa83c0251d6486394fc19c0dcfe61917f350cf4960af5ebef8",
+      "rawBytes": 249577,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-cityhall",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%EC%B2%AD",
+      "sha256": "539d4639053176f2b4503c6b1e7dc49bf1a01247ff6a689a71e16adbb0bcd436",
+      "rawBytes": 315292,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-bok",
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EA%B5%AD%EC%9D%80%ED%96%89",
+      "sha256": "0bf649738dd050d9b10fd31544af4d80c1f2602ef189d8d60927609e7925efd5",
+      "rawBytes": 349693,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-yeouido",
+      "url": "https://ko.wikipedia.org/wiki/%EC%97%AC%EC%9D%98%EB%8F%84",
+      "sha256": "01a3ce410917625f02d12dddca78afe3e19c950adedd8d3b6d91d49b19599cd0",
+      "rawBytes": 235575,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-stadium",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EC%9B%94%EB%93%9C%EC%BB%B5%EA%B2%BD%EA%B8%B0%EC%9E%A5",
+      "sha256": "b265188b46292ebebf20d3ccef15c5c29b738100c0174c468c209f01ff414e6c",
+      "rawBytes": 404008,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-kaesong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%9C%EC%84%B1%EA%B3%B5%EC%97%85%EC%A7%80%EA%B5%AC",
+      "sha256": "719c51f5b38e08911cecca37bbd94588bc6a52c7a284b89a492e06167d560e12",
+      "rawBytes": 251270,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-dokdo",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8F%85%EB%8F%84",
+      "sha256": "c4e9cc90be79b4d22c72a67879bb06a59ea211ce4e86020c570b9e5257b5fa41",
+      "rawBytes": 553676,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-c5-ko-mohw",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B3%B4%EA%B1%B4%EB%B3%B5%EC%A7%80%EB%B6%80",
+      "sha256": "dc50c6c77befcbf22d92fa8aba2ca97c4d67afcac6e4b8050ed6382250e04ed3",
+      "rawBytes": 220347,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-sunan",
+      "url": "https://ko.wikipedia.org/wiki/%ED%8F%89%EC%96%91_%EC%88%9C%EC%95%88_%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD",
+      "sha256": "cd6a2fd3fd83774de6e390e1a92f8ce3f64fbebf54cb7de4c443217035cc5905",
+      "rawBytes": 191806,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-cheongwadae",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%99%80%EB%8C%80",
+      "sha256": "dfdda7dedde1b0d8085edd60eb0e17ba90506bb0a6a1a034ca00f9289456e5e7",
+      "rawBytes": 587538,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-kdj-library",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B9%80%EB%8C%80%EC%A4%91%EB%8F%84%EC%84%9C%EA%B4%80",
+      "sha256": "fe9c07a8820feb8079b74536a69a5a29a718a83c40a21daa9d2fa211a818278f",
+      "rawBytes": 90234,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-kctu",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%84%EA%B5%AD%EB%AF%BC%EC%A3%BC%EB%85%B8%EB%8F%99%EC%A1%B0%ED%95%A9%EC%B4%9D%EC%97%B0%EB%A7%B9",
+      "sha256": "cb2b43f80ceded643661acdb8840124abe44be8e9cc128bbfaad7ec256c7ac82",
+      "rawBytes": 365265,
+      "excerpts": 2,
+      "quotedWords": 11
+    },
+    {
+      "source": "src-hs-c5-en-bongha",
+      "url": "https://en.wikipedia.org/wiki/Bongha_Village",
+      "sha256": "da5a02a8253f80072907ad8c89c9a1e3144b614db14c15a1db812c498bf6ebda",
+      "rawBytes": 93805,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-en-gwanghwamun",
+      "url": "https://en.wikipedia.org/wiki/Gwanghwamun_Plaza",
+      "sha256": "bc2dd116b82b9a810873f87fb303e9f86a9485c6c399599775f45f0f0f231062",
+      "rawBytes": 247275,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-en-kumgang",
+      "url": "https://en.wikipedia.org/wiki/Kumgangsan_Tourist_Region",
+      "sha256": "a8a32c4f91908f92f7daa541b8fb77fbabd667222e09b7d22d3e4befb7c25c8c",
+      "rawBytes": 193812,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-en-muette",
+      "url": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_de_la_Muette",
+      "sha256": "d228276c1c367aba1ed042849a3a9667ec101e233e1740a2741c77920bb72adb",
+      "rawBytes": 159118,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-geumnamno4ga",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B8%88%EB%82%A8%EB%A1%9C4%EA%B0%80%EC%97%AD",
+      "sha256": "e781a4a5836c358297935f8ad3916dfd0d078af6680a1cde70a1f05e0ad53f6e",
+      "rawBytes": 127568,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-sangdo-station",
+      "url": "https://ko.wikipedia.org/wiki/%EC%83%81%EB%8F%84%EC%97%AD",
+      "sha256": "bf6c177dde839952c1ff3922e263811b1458abc79bef091f6e187e5e8797a767",
+      "rawBytes": 123118,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-ko-gyeonggi-office",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EA%B8%B0%EB%8F%84%EC%B2%AD",
+      "sha256": "4b624c0ac8d8962629805377e06539778fff1782152684dc3098e409d5b38dc6",
+      "rawBytes": 191622,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-enc-worldcup",
+      "url": "https://encykorea.aks.ac.kr/Article/E0068367",
+      "sha256": "e3ce9a3e092afad8b13bd6112edab1d3f2555ff6417608f0c62a45a86b603936",
+      "rawBytes": 103842,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs-c5-enc-kys",
+      "url": "https://encykorea.aks.ac.kr/Article/E0078653",
+      "sha256": "6212a981599df781e5e07764a48ca15361a65829eff607179d8b9ae4fe8543b5",
+      "rawBytes": 105559,
+      "excerpts": 1,
+      "quotedWords": 5
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-hs-c5-1",
+      "itemId": "hs-contemporary-kctu",
+      "reason": "창립 대의원 대회 장소를 확인하지 못해 좌표와 장면을 만들지 않았다",
+      "topic": "1995년 11월 11일 민주노총 창립대의원대회 장소",
+      "detail": "민백·위키백과 어느 쪽도 창립 대회가 열린 자리를 적지 않는다(위키의 창립대회 절은 1990년 전노협 건이다). 본부 소재지인 정동길 3을 덕수궁 좌표로 대신 쓰던 것을 거두고 좌표 없이 사실만 남겼다.",
+      "neededSource": "민주화운동기념사업회·국가기록원 공개 해설 또는 창립 대회장을 적은 우리역사넷 해설"
+    },
+    {
+      "id": "miss-hs-c5-2",
+      "itemId": "hs-contemporary-518-archives",
+      "reason": "5·18 민주화 운동 기록관 건물의 십진 좌표를 얻지 못했다",
+      "topic": "광주 동구 금남로 221 기록관의 좌표",
+      "detail": "위키백과 기록관 문서에는 소재지만 있고 표시 좌표가 없다. 같은 거리의 금남로4가역 표시 좌표를 대표점으로 썼다.",
+      "neededSource": "국가유산포털·광주광역시 공공누리 해설의 기록관 좌표"
+    },
+    {
+      "id": "miss-hs-c5-3",
+      "itemId": "hs-contemporary-geumgangsan-tour",
+      "reason": "장전항(고성항)의 십진 좌표를 얻지 못했다",
+      "topic": "북측 고성군 장전항의 좌표",
+      "detail": "허용 출처에 장전항 문서가 없어 금강산 관광지구의 표시 좌표를 썼고, 해안에서 20km쯤 떨어져 있어 항구 장면 표현을 거뒀다.",
+      "neededSource": "장전항·고성항의 좌표를 적은 공개 지명 자료"
+    },
+    {
+      "id": "miss-hs-c5-4",
+      "itemId": "hs-contemporary-2000-summit",
+      "reason": "6·15 공동 선언이 나온 백화원 영빈관의 좌표를 얻지 못했다",
+      "topic": "평양 백화원 영빈관의 좌표",
+      "detail": "위키백과 백화원 영빈관 문서에는 표시 좌표가 없다. 근거가 분명한 6월 13일 첫 만남 장소(순안 공항) 좌표를 쓰고 장면의 날짜 근거도 그에 맞췄다.",
+      "neededSource": "백화원 영빈관의 좌표를 적은 공개 자료"
+    },
+    {
+      "id": "miss-hs-c5-5",
+      "itemId": "hs-contemporary-low-birthrate-aging",
+      "reason": "고령 사회 진입 연도의 확정 근거를 찾지 못했다",
+      "topic": "고령 사회(65세 이상 14%) 진입 연도",
+      "detail": "민백 고령화 항목의 2018년 14.3%는 집필 시점의 전망치여서 일어난 일로 담지 않았다. 항목은 2017년을 적는다.",
+      "neededSource": "통계청 장래인구추계·국가기록원 공개 해설의 실제 진입 연도"
+    },
+    {
+      "id": "miss-hs-c5-6",
+      "itemId": "hs-contemporary-kim-youngsam",
+      "reason": "1993년 2월 취임일의 근거를 허용 출처에서 찾지 못했다",
+      "topic": "김영삼의 대통령 취임일",
+      "detail": "민백 김영삼 항목은 1992년 당선과 1998년 2월 25일 임기 종료만 적는다. reignedFrom 은 달지 않았다.",
+      "neededSource": "대통령기록관 역대 대통령 재임 기간 또는 취임일을 적은 공공누리 해설"
+    }
+  ],
+  "collection": {
+    "task": "contemporary-5",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789689600,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-contemporary-5",
+    "revised": 1789696800
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "event-hs-c5-worldcup-2002",
+    "place-hs-c5-worldcup-stadium"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

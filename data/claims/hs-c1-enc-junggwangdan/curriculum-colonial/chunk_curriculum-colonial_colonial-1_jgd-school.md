@@ -14,9 +14,9 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "person-hs-c1-seo-il"
+      "id": "org-hs-c1-junggwangdan-schools"
     },
-    "note": "1911~1916년 25개 학교를 세워 인재를 길렀다.",
+    "note": "중광단이 1911년부터 1916년까지 학교 25개를 세웠다.",
     "fromSource": "src-hs-c1-enc-junggwangdan",
     "citesChunk": "chunk_curriculum-colonial_colonial-1_jgd-school",
     "quote": "1911년부터 1916년까지 25개에 이르는 학교를 설립하여",

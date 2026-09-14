@@ -62,24 +62,24 @@ generated_by: claude-opus-5
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-samguk-samguk-3-hs-s3-sillaname-act",
-    "subject": "polity-hs-s3-silla",
-    "predicate": "syj:administeredAs",
+    "subject": "person-encykorea-jijeung",
+    "predicate": "syj:relatedTo",
     "object": {
-      "kind": "literal",
-      "value": "新羅國王"
+      "kind": "entity",
+      "id": "polity-hs-s3-silla"
     },
     "citesChunk": "chunk_samguksagi_sg_004_0020_0060",
     "quote": "謹上號新羅國王",
-    "note": "국호 신라와 왕호를 함께 정했다.",
+    "note": "지증마립간 4년, 신하들이 국호를 신라로 정하고 왕호를 올렸다. 원문 표기는 '新羅國王'이며 행정 단위 표기가 아니다.",
     "fromSource": "src-samguksagi",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-samguk-samguk-3-hs-s3-sillaname-reason",
@@ -96,7 +96,7 @@ generated_by: claude-opus-5
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

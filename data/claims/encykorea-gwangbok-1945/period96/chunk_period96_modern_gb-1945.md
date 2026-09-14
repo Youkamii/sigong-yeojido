@@ -44,6 +44,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-gwangbok-1945",
+    "subject": "event-hs-c1-gwangbok",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1945년 8월 15일",
+      "year": 1945,
+      "precision": "day",
+      "earliest": 1945,
+      "latest": 1945,
+      "id": "ts-curriculum-contemporary-contemporary-1-hs-c1-gwangbok-1945"
+    },
+    "citesChunk": "chunk_period96_modern_gb-1945",
+    "quote": "8·15광복은 1945년 8월 15일 우리나라가 일제의 식민통치로부터 벗어나 독립을 되찾은 사건이다.",
+    "note": "로컬 원문 조각(민족문화대백과 8·15광복 요약).",
+    "fromSource": "src-encykorea-gwangbok-1945",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

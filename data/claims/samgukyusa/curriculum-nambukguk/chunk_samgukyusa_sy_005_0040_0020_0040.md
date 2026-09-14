@@ -11,14 +11,14 @@ status: "draft"
   {
     "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-mugu-751",
     "subject": "facility-nb2-bulguksa-tap",
-    "predicate": "syj:occurredIn",
+    "predicate": "syj:relatedTo",
     "object": {
-      "kind": "year",
-      "value": 751
+      "kind": "entity",
+      "id": "facility-nb2-bulguksa"
     },
     "citesChunk": "chunk_samgukyusa_sy_005_0040_0020_0040",
     "quote": "其佛國寺雲梯石塔彫鏤石木之㓛東都諸刹未有加也",
-    "note": "삼국유사: 불국사의 구름다리와 석탑을 새긴 솜씨가 경주의 어느 절보다 낫다고 했다.",
+    "note": "삼국유사: 불국사의 구름다리와 석탑을 새긴 솜씨가 경주의 어느 절보다 낫다고 했다. 연도를 말하는 대목은 아니어서 탑이 불국사에 속한다는 관계로만 둔다.",
     "fromSource": "src-samgukyusa",
     "origin": "ai",
     "status": "draft",

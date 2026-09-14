@@ -18,7 +18,7 @@ status: "draft"
       "lat": 39.0,
       "precision": "area"
     },
-    "note": "왕검성의 정확한 위치는 확정되지 않았다. 평양 중구역 표시 좌표를 조정 대표점으로 썼다.",
+    "note": "평양 중구역의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다.",
     "fromSource": "src-hs-en-chung",
     "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-2_geo-chung",
     "quote": "39.00000; 125.74000",

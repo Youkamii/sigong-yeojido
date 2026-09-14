@@ -92,6 +92,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-1-hs-c1-jeamni-chunk",
+    "subject": "event-hs-c1-jeamni",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1919년 4월 15일",
+      "year": 1919,
+      "precision": "day",
+      "earliest": 1919,
+      "latest": 1919,
+      "id": "ts-curriculum-colonial-colonial-1-hs-c1-jeamni-chunk"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_jeamri-arrival",
+    "quote": "1919년 4월 15일(화요일) 오후, 일본군 보병 중위 아리다 도시오[有田俊夫]가 이끄는 보병 11명과 순사 2명이 제암리에 도착하여",
+    "note": "로컬 원문 발췌: 1919년 4월 15일 오후 일본군 보병과 순사가 제암리에 도착하였다.",
+    "fromSource": "src-ek-jeamri",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

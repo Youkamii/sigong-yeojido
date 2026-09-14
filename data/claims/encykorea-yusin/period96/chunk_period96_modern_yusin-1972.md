@@ -60,6 +60,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-em-yusin",
+    "subject": "event-hs-c4-emergency",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-park-chunghee"
+    },
+    "citesChunk": "chunk_period96_modern_yusin-1972",
+    "quote": "1972년 10월 17일 박정희 정권의 장기 집권과 지배체제 강화를 위하여 단행한",
+    "note": "긴급조치의 근거가 된 유신헌법은 1972년 박정희 정권이 단행한 비상조치였다.",
+    "fromSource": "src-encykorea-yusin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

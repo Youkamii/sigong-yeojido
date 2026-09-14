@@ -1,0 +1,120 @@
+{
+  "job": "goryeo-early-4",
+  "checker": "claude-opus-5 high",
+  "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-goryeo-early --job goryeo-early-4 -> PASS: failures=0 warnings=0 (facts 22 / scenes 22 / claims 96 / chunkClaims 64 / excerptClaims 32). 표본 재확인: 고려사 로컬 chunk 22건 원문 재조회, 민족문화대백과 로컬 chunk 5건 재조회, 웹 원문 4건(ko 강진 고려청자 요지, en Manwoldae, encykorea E0042821, en Anhwa Temple) 실제 URL 재수집 후 발췌 일치 확인(바이트 길이도 manifest 와 동일), raw/ HTML 발췌 문맥 11건 확인. 항목 22건 전부 fact·scene 1:1 대응, priority·year 는 items.json 과 완전 일치, images.json 22건 접두어·인물 문구·sceneId 모두 정상.",
+  "verdict": "fix",
+  "issues": [
+    {
+      "severity": "major",
+      "itemId": "hs-goryeo-early-jujeondogam-haedongtongbo",
+      "claimId": "claim-hs-ge4-jujeon-1101",
+      "problem": "주전도감을 syj:establishedIn 1101년으로 주장했다. 인용한 고려사 식화지 기사(六年四月 鑄錢都監奏, 國人始知用錢之利)는 1101년에 주전도감이 이미 활동 중이었음을 보일 뿐 설치 연도가 아니며, claim 의 note 자체도 '이미 활동하고 있다'라고 적어 predicate 와 모순된다. 항목 yearNote 와 통설은 1097년(숙종 2) 설치다. 이 claim 이 scene-hs-ge4-haedongtongbo 의 dateClaimIds 에 들어 있어 '주전도감 설치=1101'이 그대로 적재된다.",
+      "fix": "설치 근거를 1097년 기사로 바꾼다. 로컬에 이미 있다: chunk_goryeosa_kr_079_0010_0030_0040 (date raw 1097-12-99L0, 卷七十九 食貨 二 화폐) 의 '肅宗二年十二月 敎曰 … 其立鑄錢官' 을 quote 로 써서 establishedIn 1097 주장을 만들거나, 현 claim 은 predicate 를 syj:occurredIn(1101년 유통 건의)으로 낮춘다.",
+      "evidence": "chunk_goryeosa_kr_079_0010_0030_0040: '肅宗二年十二月 敎曰, \"自昔, 我邦風俗朴略… 其立鑄錢官, 使百姓通用.\"' / 현 claim 이 인용한 chunk_goryeosa_kr_079_0010_0030_0050 에는 설치를 뜻하는 문구가 없다."
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-goryeo-early-byeolmuban",
+      "sceneId": "scene-hs-ge4-byeolmuban",
+      "problem": "이미 사라진 기관에 persistence{kind:'institution', from:1104, to:null} 을 달았다. 형식 정본은 to:null 을 '현존'으로 규정하고 2100년 상한까지 표시하며 '항목 조사가 소실 연도를 명시해야 한다'고 못 박았다. 같은 문제가 scene-hs-ge4-yanghyeongo(양현고, to:null)에도 있다. 화면에서는 별무반·양현고가 지금까지 존속하는 기관으로 나온다.",
+      "fix": "종료 연도 근거를 찾아 to 를 채우거나(별무반은 9성 반환 뒤 해체, 양현고는 고려 말 재원 고갈 이후로 이어지는 서술이 있다), 종료 근거가 없으면 persistence 를 빼고 fact.note 로만 '해산 연도 미상'을 남긴다. 현재 fact-hs-ge4-009 note 는 '해산 연도를 밝힌 기록을 찾지 못해 존속 끝은 비워 둔다'라고 적었으나, 정본에서 빈 값은 '미상'이 아니라 '현존'을 뜻한다.",
+      "evidence": "docs/research/facts-format.md: 'from/to를 명시하며 to:null은 현존으로 2100년 상한까지 표시한다. … 항목 조사가 소실 연도를 명시해야 한다' / raw/ko-yanghyeongo.html: '고려 말에 와서 국학이 쇠퇴하고 양현고의 재원도 고갈되자 안향(安珦)은 섬학전을…'"
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-goryeo-early-yungwan",
+      "sceneId": "scene-hs-ge4-yungwan",
+      "problem": "윤관 장면을 '길주(동북 9성의 하나)'라는 이름으로 현 함경북도 길주군 좌표(lon 129.33667, lat 40.96194)에 찍었다. 같은 패킷의 동북 9성(fact-hs-ge4-011)은 '9성의 위치는 학설이 갈린다(함흥 평야설·두만강설)'라고 밝히고 함흥(39.916667)을 썼다. 두 항목이 서로 다른 학설을 말없이 나눠 채택해, 지도에서는 9성이 함흥과 두만강 가까이까지 동시에 뻗은 것처럼 보인다. 고려 길주와 현 길주군의 동일성은 확정된 사실이 아니다.",
+      "fix": "좌표를 유지하려면 scene.place.coordinateNote 와 fact.note 에 '고려 길주와 현 길주군을 같은 곳으로 보는 것은 학설의 하나'라는 단서를 9성 항목과 같은 수준으로 적는다. 아니면 윤관 장면을 함주(claim-hs-ge4-loc-hamju) 또는 별무반을 건의한 개경 궁성으로 옮기고 겹침은 조립 단계에서 푼다.",
+      "evidence": "fact-hs-ge4-011 note '9성의 위치는 학설이 갈린다(함흥 평야설·두만강설)' vs fact-hs-ge4-012 note '좌표는 9성의 하나인 길주 표시점이며, 항목 원안의 함주와 다르다' / 고려사 지리지 길주 조(chunk_goryeosa_kr_058_0010_0030_0110_0040)는 함주대도독부 아래에 실려 있고 '睿宗三年, 置州… 尋以地, 還女眞' 이라고만 적는다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-early-yejong",
+      "sceneId": "scene-hs-ge4-yejong",
+      "problem": "만월대 한 점(126.543333, 37.985)에 여섯 항목이 겹친다: 별무반·예종·금의 사대 요구 수용·이자겸의 난·삼국사기·의종. 개성 도심 한 점(126.5528, 37.9717)에 세 항목(의천·이자겸·김부식), 평양 한 점에 두 항목(묘청·서경 천도 운동)이 더 겹쳐 22장면이 14점에 몰린다. 브리프의 '같은 도시 항목이 한 점에 겹치지 않게'에 어긋난다.",
+      "fix": "여섯 건 모두 실제 궁성 안 사건이라 좌표 자체는 옳다. 전각(중광전·대관전·선정전) 좌표 근거를 새로 구하기 어렵다면 조립 단계의 분산 표시 규칙으로 풀고, 최소한 개성 도심 3중첩(의천의 국청사는 개경 안 다른 사찰 좌표를 찾을 여지가 있다)만이라도 줄인다.",
+      "evidence": "facts 좌표 집계: (126.543333, 37.985)×6, (126.5528, 37.9717)×3, (125.7475, 39.01667)×2, 전체 22건 중 서로 다른 점 14개"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-early-woljeongsa-pagoda",
+      "claimId": "claim-hs-ge4-woljeongsa-gukbo",
+      "problem": "문화재 지정 연도를 syj:establishedIn 으로 달았다. 트리플만 읽으면 '월정사 팔각 구층석탑이 1962년에 세워졌다'가 된다. 강진 요지도 같다(claim-hs-ge4-gangjin-sajeok, establishedIn 1963).",
+      "fix": "두 claim 의 predicate 를 syj:relatedTo 로 낮추고 지정 사실은 note 로 남긴다. persistence.basisClaimIds 근거로 쓰는 것 자체는 타당하다(지정 사실이 존속을 보여 준다).",
+      "evidence": "claim-hs-ge4-woljeongsa-gukbo: predicate 'syj:establishedIn', object time 1962, quote '1962년에 국보로 지정되었다' / claim-hs-ge4-gangjin-sajeok: establishedIn 1963, quote '1963년 1월 21일 대한민국의 사적 제68호로 지정되었다.'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-early-woljeongsa-pagoda",
+      "sceneId": "scene-hs-ge4-woljeongsa-tap",
+      "problem": "장면의 dateClaimIds 가 claim-hs-ge4-yejong-reign(예종 재위 1105~1122) 하나뿐이다. 탑과 예종 재위를 잇는 근거는 어디에도 없고, 실제 근거 발췌는 '석탑 조성 연대가 12세기경임이 밝혀졌다'이다. 왕 재위를 시기 대용으로 쓰는 같은 방식이 풍수(인종 재위)·여성 지위(인종 재위)에도 쓰였다(고려청자는 발췌가 예종·인종 대를 명시해 무방하다).",
+      "fix": "'12세기경' 발췌를 time object(year 1100 안팎, precision 'century' 또는 earliest 1101 latest 1200)로 만든 time claim 을 세워 dateClaim 으로 쓴다. 왕 재위 claim 은 relatedClaimIds 로 내린다.",
+      "evidence": "raw/enc-e0041063.html: '…숭녕중보(崇寧重寶)와 성송원보(聖宋元寶)를 발굴하여 석탑 조성 연대가 12세기경임이 밝혀졌다' / scene-hs-ge4-woljeongsa-tap.dateClaimIds = ['claim-hs-ge4-yejong-reign']"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-early-kim-busik",
+      "factId": "fact-hs-ge4-020",
+      "problem": "year 는 1145인데 yearVerbatim 은 '1075년(문종 29)'(김부식의 생년)이다. scene-hs-ge4-gimbusik 의 dateClaimIds 도 생년 주장(claim-hs-ge4-gimbusik-life, 1075) 하나뿐이라 장면 기간 1135~1145 를 뒷받침하지 못한다. 같은 방식이 scene-hs-ge4-uicheon 의 dateClaim(생년 1055 포함)에도 약하게 있다.",
+      "fix": "yearVerbatim 을 1145년 근거 표기('十二月 壬戌' 또는 '1145년경')로 바꾸고, 장면의 dateClaim 에 claim-hs-ge4-samguksagi-1145 를 넣는다. 생몰년 claim 은 relatedClaimIds 로 둔다.",
+      "evidence": "fact-hs-ge4-020: year 1145, yearVerbatim '1075년(문종 29)' / chunk_goryeosa_kr_017_0070_0130_0010(1145-12-22): '十二月 壬戌 金富軾進所撰三國史.'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-early-myocheong",
+      "sceneId": "scene-hs-ge4-myocheong",
+      "problem": "startYear 1128 을 뒷받침하는 claim 이 없다(dateClaim 은 1135년 사망 주장뿐). 1128 자체는 인용한 고려사 묘청 열전 chunk 의 '仁宗六年' 에 있으나 claim 으로 뽑히지 않았다.",
+      "fix": "chunk_goryeosa_kr_127_0010_0100_0010 의 '仁宗六年, 日者白壽翰, 以檢校少監分司西京, 謂妙淸爲師' 를 quote 로 하는 time claim(1128)을 만들어 dateClaimIds 에 넣는다.",
+      "evidence": "scene-hs-ge4-myocheong: startYear 1128, dateClaimIds ['claim-hs-ge4-myocheong-death'](1135)"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-early-byeolmuban",
+      "claimId": "claim-hs-ge4-byeolmuban-units",
+      "problem": "인용 내용과 object 가 어긋나는 relatedTo claim 이 몇 건 있다. claim-hs-ge4-byeolmuban-units 는 신기·신보군 편성 기사인데 object 가 person-yungwan, claim-hs-ge4-women-remarry 는 재혼 관습인데 object 가 place-hs-ge4-gaegyeong, claim-hs-ge4-pungsu-silla 는 신라 말 도선 서술인데 object 가 place-hs-ge4-gaegyeong 이다. 사실을 틀리게 말하지는 않지만 그래프에 엉뚱한 연결이 남는다.",
+      "fix": "object 를 인용이 실제로 말하는 대상(별무반 편성은 event-hs-ge4-byeolmuban, 재혼·도선 서술은 polity-hs-ge4-goryeo)으로 바꾼다.",
+      "evidence": "claim-hs-ge4-byeolmuban-units quote '凡有馬者爲神騎, 無馬者爲神步…' object person-yungwan / claim-hs-ge4-pungsu-silla quote '신라 말에는 도선(道詵)과 같은 대가가 나왔다.' object place-hs-ge4-gaegyeong"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-early-uicheon",
+      "problem": "cell.categories 의 합이 21 로 facts 22 와 맞지 않는다(person 을 7로 적었으나 실제 person fact 는 의천·예종·윤관·인종·이자겸·묘청·김부식·의종 8건이다).",
+      "fix": "cell.categories.person 을 8 로 고친다(검증기 실패 항목은 아니지만 커버리지 집계 표와 어긋난다).",
+      "evidence": "검증기 category×10년 표 person 합계 8 / result.json cell.categories {'person': 7, …} 합 21"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-early-goryeo-cheongja",
+      "sceneId": "scene-hs-ge4-goryeo-cheongja",
+      "problem": "장면에는 persistence{kind:'facility', from:1100, to:null} 이 있는데 대응하는 fact-hs-ge4-003 에는 persistence 가 없다. 문화재 항목인 강진 요지(fact-002)·월정사 탑(fact-005)은 fact 에도 persistence 를 달아 두어 처리가 엇갈린다. 더구나 고려청자는 건물이 아니라 유물 개념이라 'facility' 존속 행으로 개경에 계속 남게 된다.",
+      "fix": "fact 와 scene 중 한쪽으로 맞춘다. 개념 항목이라 존속을 표시하지 않기로 했다면 scene 의 persistence 를 빼고, 표시하기로 했다면 fact-003 에도 같은 persistence 를 넣는다.",
+      "evidence": "scene-hs-ge4-goryeo-cheongja.persistence {kind 'facility', to null} / fact-hs-ge4-003 에는 persistence 키 없음"
+    }
+  ],
+  "checkedItems": [
+    "hs-goryeo-early-uicheon",
+    "hs-goryeo-early-gangjin-kiln",
+    "hs-goryeo-early-goryeo-cheongja",
+    "hs-goryeo-early-pungsu-docham",
+    "hs-goryeo-early-woljeongsa-pagoda",
+    "hs-goryeo-early-women-status",
+    "hs-goryeo-early-eunbyeong",
+    "hs-goryeo-early-jujeondogam-haedongtongbo",
+    "hs-goryeo-early-byeolmuban",
+    "hs-goryeo-early-yejong",
+    "hs-goryeo-early-dongbuk-9seong",
+    "hs-goryeo-early-yungwan",
+    "hs-goryeo-early-yanghyeon-go",
+    "hs-goryeo-early-injong",
+    "hs-goryeo-early-jin-tribute",
+    "hs-goryeo-early-yi-jagyeom",
+    "hs-goryeo-early-yi-jagyeom-rebellion",
+    "hs-goryeo-early-myocheong",
+    "hs-goryeo-early-seogyeong-cheondo",
+    "hs-goryeo-early-kim-busik",
+    "hs-goryeo-early-samguksagi",
+    "hs-goryeo-early-uijong"
+  ],
+  "summary": "검증기는 PASS(실패 0, 경고 0)이고 항목 22건이 빠짐없이 fact·scene 1:1 로 붙었다. 인용은 표본이 아니라 사실상 전수로 다시 봤는데(고려사 로컬 chunk 22건, 민족문화대백과 chunk 5건, 웹 원문 4건 실제 재수집, raw HTML 발췌 문맥 11건) 연도·인물·행위가 원문과 어긋나는 곳은 없었고 교과서 문장 전재도 없었다. 다만 적재 전에 고쳐야 할 것이 셋이다. (1) 주전도감을 1101년 설치로 주장했는데 인용문은 그해 활동을 보일 뿐이고, 1097년 설치 근거(고려사 식화지 '其立鑄錢官')가 로컬에 이미 있다. (2) 별무반·양현고에 to:null 존속을 달아 지금도 있는 기관으로 표시된다 — 정본에서 to:null 은 '미상'이 아니라 '현존'이다. (3) 윤관 장면을 현 길주군 좌표에 찍어, 같은 패킷의 동북 9성 항목이 밝힌 위치 논쟁과 반대되는 학설을 말없이 채택했다. 그 밖에 만월대 한 점 6중첩, 문화재 지정 연도에 establishedIn 술어 사용, 개념·문화재 항목의 시기 근거를 왕 재위로 대신한 점 등 8건은 개선 권장이다. 참고: 이 칸의 claim 은 이미 data/claims/*/curriculum-goryeo-early/ 로 적재된 흔적이 있어, 수정하면 재적재가 필요하다."
+}

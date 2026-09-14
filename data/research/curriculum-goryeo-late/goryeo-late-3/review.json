@@ -1,0 +1,118 @@
+{
+ "job": "goryeo-late-3",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-goryeo-late --job goryeo-late-3 -> PASS: failures=0 warnings=0 (facts 23, scenes 23, claims 104, chunkClaims 55, excerptClaims 49; category x decade / region x decade 표 정상, region 'capital' 미사용)",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-late-gwanje-gyeokha, hs-goryeo-late-chungseonwang, hs-goryeo-late-gongminwang, hs-goryeo-late-nongjang, hs-goryeo-late-goryeo-bulhwa, hs-goryeo-late-nongsang-jipyo, hs-goryeo-late-jeongdonghaengseong, hs-goryeo-late-banwon-policy",
+   "sceneId": "scene-gl3-gwanje-gyeokha, scene-gl3-chungseonwang, scene-gl3-gongminwang, scene-gl3-nongjang, scene-gl3-goryeo-bulhwa, scene-gl3-nongsang-jipyo, scene-gl3-jeongdonghaengseong, scene-gl3-banwon-policy",
+   "problem": "지시문·brief 의 '같은 도시 항목이 한 점에 겹치지 않게' 규칙 위반. 23개 장면 가운데 8개가 3개 좌표를 그대로 공유하고, 그중 6쌍은 표시 기간까지 겹친다. (1) 만월대 126.543333/37.985 — 관제 격하(1275~1356, institution 존속), 충선왕(1308~1313), 공민왕(1351~1374): 1308~1313, 1351~1356 겹침. (2) 영통사 126.5770545/38.0420351 — 농장(1279~1391), 고려 불화(1310~, facility 존속 null), 농상집요(1349~1372): 1310~1391 구간 3중 겹침. (3) 개성 남대문 126.5581/37.9692 — 정동행성(1280~1356), 반원 자주 정책(1356): 1356년 겹침.",
+   "fix": "이미 PASS 한 참고 칸 data/research/curriculum-joseon-early/joseon-early-2/result.json 은 23개 장면 좌표가 모두 다르다(경복궁 안에서도 근정전·사정전·수정전·경회루·보루각을 각각 위키 좌표로 따로 잡았다). 같은 방식으로 개경 안의 다른 지점을 위키백과 표시 좌표와 함께 새 source/excerpt 로 추가해 분리한다. 예: 충선왕·공민왕은 즉위처인 강안전 또는 수창궁, 반원 자주 정책은 기철이 참살된 궁성 구역 또는 도성 안 별도 지점, 농상집요는 개경 근교 농지 대신 간행지 합천, 고려 불화는 아래 major 항목과 함께 좌표 자체를 재검토한다.",
+   "evidence": "result.json scenes[].place.lon/lat 집계 결과 4개 좌표가 10개 장면에 재사용(성균관 2건 포함), 그중 6쌍은 startYear~endYear/persistence 구간이 겹친다. 대조군 joseon-early-2 는 중복 좌표 0건."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-late-goryeo-bulhwa",
+   "factId": "fact-hs-gl3-013",
+   "sceneId": "scene-gl3-goryeo-bulhwa",
+   "problem": "연도·장소·존속 세 가지가 모두 근거 밖이다. (1) fact.year 1310, yearVerbatim '1310년 무렵(충선왕 대)' 인데 1310 이라는 숫자는 이 칸의 어떤 chunk·발췌에도 없다. 장면의 dateClaimIds 는 claim-gl3-chungseon-reign(year 1308) 하나뿐이다. (2) claim-gl3-bulhwa-46 은 object 가 place-gl3-yeongtongsa 인데, 인용한 발췌 '고려 수월관음도의 현존 작품은 14세기에 제작된 46점이 알려져 있다.' 는 영통사를 언급하지 않는다 — 근거 없는 장소 연결이다. (3) scene.persistence {kind:'facility', from:1310, to:null} 의 basisClaimIds 가 이 claim 하나인데, 같은 백과 원문은 바로 다음 문장에서 '대부분 일본을 비롯하여 미국, 유럽 등 해외에 소장 중'이라고 적는다. 영통사 자리에 1310년부터 현재까지 존속한다는 표시는 출처와 반대다. 또 scene.summary 의 '대부분 사찰에 봉안하려고 그렸다' 는 인용한 두 발췌 어디에도 없는 서술이다.",
+   "fix": "연도는 근거가 있는 값으로 내린다 — 충선왕 재위 시작 1308 을 쓰거나, 발췌 '14세기에 제작된 46점'에 맞춰 yearVerbatim 을 '14세기'로 고친다. claim-gl3-bulhwa-46 의 object 는 polity-gl3-goryeo 또는 heritage-gl3-suwolgwaneum 으로 바꿔 영통사와의 허위 연결을 끊는다. persistence 는 삭제하거나 kind:'none' 로 두고 fact.confidence 를 'low' 로 내린다. summary 의 '사찰 봉안' 문장은 근거 발췌를 추가하든지 지운다.",
+   "evidence": "raw/enc-suwolgwaneum.html 본문: '고려 수월관음도의 현존 작품은 14세기에 제작된 46점이 알려져 있다. 대부분 일본을 비롯하여 미국, 유럽 등 해외에 소장 중이며,' — 1310 도, 영통사도, 국내 존속도 없다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-an-hyang, hs-goryeo-late-sinjin-sadaebu",
+   "sceneId": "scene-gl3-an-hyang, scene-gl3-sinjin-sadaebu",
+   "problem": "개경 성균관 좌표(126.57072/37.992)를 두 장면이 그대로 공유한다. 표시 기간(1289 / 1367~1392)은 겹치지 않아 동시 중첩은 없지만 지도에서 같은 점에 두 항목이 쌓인다.",
+   "fix": "안향은 섬학전으로 세운 국학 재정이나 집 뒤 정사(精舍) 등 다른 지점을 별도 좌표 근거로 잡고, 성균관 좌표는 국학 중영(1367) 항목인 신진 사대부에만 남긴다.",
+   "evidence": "scene-gl3-an-hyang.place 와 scene-gl3-sinjin-sadaebu.place 의 lon/lat 가 동일."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-jeongdonghaengseong",
+   "factId": "fact-hs-gl3-003",
+   "sceneId": "scene-gl3-jeongdonghaengseong",
+   "problem": "persistence {kind:'institution', from:1280, to:1356} 의 basisClaimIds 가 claim-gl3-jdhs-1280 과 claim-gl3-jdhs-imunso 인데, 뒤의 것은 '罷征東行中書省理問所'(이문소 폐지)일 뿐 정동행성 자체의 소멸 근거가 아니다. fact.note 도 '1356년에 혁파된 것은 이문소 등 산하 기관이고 정동행성 자체는 축소된 채 고려 말까지 남았다'고 적어 존속 값과 모순된다. 인용한 백과 본문도 '정동행성은 몽골 제국 말까지 명의상 엄연한 관서로서 존속되었다'고 한다.",
+   "fix": "persistence.to 를 고려 말(1392)로 고치고 note 를 그에 맞춰 정리하거나, 1356 을 유지하려면 basisClaimIds 에서 imunso 를 빼고 '이문소 혁파로 내정 간섭 기능이 끝난 해'임을 note 로만 남긴다.",
+   "evidence": "raw/enc-jeongdonghaengseong.html '정동행성은 몽골 제국 말까지 명의상 엄연한 관서로서 존속되었다.' / result.json fact-hs-gl3-003.note"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-yi-jehyeon",
+   "factId": "fact-hs-gl3-015",
+   "sceneId": "scene-gl3-yi-jehyeon",
+   "problem": "장면 연도 1314 와 장소가 어긋난다. dateClaimIds(claim-gl3-yjh-1314 '연경의 만권당에 머물면서')와 actionClaimIds(claim-gl3-yjh-goryeosa '召齊賢至都', claim-gl3-mgd-yijehyeon)가 모두 연경에서의 일인데 place 는 개경 선죽교다. fact.note 가 사정을 밝혀 두었지만 화면에서는 1314년 이제현이 개경에 있는 것으로 표시된다.",
+   "fix": "연도를 개경 활동이 확인되는 해로 바꾸고 그 해의 근거 claim 을 date 로 쓰거나, 1314 를 유지한다면 place 를 연경의 별도 지점(overseas:true)으로 옮기고 region·note 를 해외 규칙에 맞춘다.",
+   "evidence": "scene-gl3-yi-jehyeon.dateClaimIds/actionClaimIds 대비 place.label '개경 선죽교 일대'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-mongolpung",
+   "sceneId": "scene-gl3-mongolpung",
+   "problem": "scene.endYear 1356 을 뒷받침하는 claim 이 없다. 인용된 근거는 1274년 변발 책망 기사와 '事元以來, 開剃辮髮, 襲胡服, 殆將百年' 뿐이고 items.json 에도 yearEnd 가 없다.",
+   "fix": "endYear 1356 을 두려면 공민왕이 호복·변발을 고친 근거 claim 을 하나 더 달고, 아니면 endYear 를 startYear 와 같게 하거나 note 에 표시용 구간임을 적는다.",
+   "evidence": "scene-gl3-mongolpung.endYear=1356, dateClaimIds=[claim-gl3-mongol-1274], relatedClaimIds 에 1356 근거 없음"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-mangwondang",
+   "factId": "fact-hs-gl3-014",
+   "problem": "항목 type 이 institution 인데 fact.category 를 'culture' 로 잡았다. brief 의 항목→사실 대응표는 institution→administration 이다.",
+   "fix": "category 를 administration 으로 바꾸고 cell.categories 집계를 맞추거나(administration 5, culture 4), culture 를 유지할 근거를 fact.note 에 적는다.",
+   "evidence": "docs/research/curriculum-items-brief.md 대응표 'institution→administration' / items.json hs-goryeo-late-mangwondang.type='institution'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-nongjang",
+   "claimId": "claim-gl3-nongjang-sindon",
+   "problem": "같은 인물이 컬렉션 안에서 두 엔티티로 갈린다. 이 칸은 person-gl3-sindon 을 새로 만들었는데 같은 컬렉션의 goryeo-late-4 는 person-hs-sindon 을 쓴다(두 파일 모두 data/entities/person 에 있다). 지시문의 새 인물 id 규칙도 'person-hs-<slug>' 다. 공민왕도 이 칸은 person-goryeo-gongminwang, goryeo-late-4 는 person-encykorea-gongmin 으로 갈려 있다.",
+   "fix": "신돈은 person-hs-sindon 으로 통일하고 entities[] 와 claim object 를 고친다. 공민왕은 두 칸 중 하나로 맞추되(labelHanja 까지 있는 person-goryeo-gongminwang 이 정본으로 보인다) 적재 전에 컬렉션 차원에서 한 번에 정한다.",
+   "evidence": "data/entities/person/person-gl3-sindon.md 와 person-hs-sindon.md 가 모두 존재, goryeo-late-4/result.json 은 person-hs-sindon·person-encykorea-gongmin 사용"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-gyeongcheonsa-pagoda",
+   "factId": "fact-hs-gl3-016",
+   "sceneId": "scene-gl3-gyeongcheonsa-pagoda",
+   "problem": "1348년 건립 장면을 현 소재지인 서울 용산 국립중앙박물관 좌표(126.9803/37.5239)에 놓고 persistence {facility, 1348, null} 을 달았다. 지도에서는 1348년부터 서울 용산에 이 탑이 서 있는 것으로 표시된다. fact.note 에 사정을 밝혔고 brief 의 '문화재는 국가유산포털 소재지' 규칙을 따른 결과이지만 건립 장면으로서는 시점·지점이 어긋난다.",
+   "fix": "원 소재지 개풍 경천사지 좌표를 확보해 건립 장면을 그 자리에 두고 현 소재지는 coordinateNote·note 로만 남긴다. 확보가 안 되면 현재 처리를 유지하되 '표시 좌표는 현 소재지이며 1348년 자리가 아니다'를 더 분명히 적는다.",
+   "evidence": "scene-gl3-gyeongcheonsa-pagoda.place.coordinateNote '원래 자리인 개풍 경천사지의 좌표 근거는 찾지 못했다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-late-gwonmun-sejok, hs-goryeo-late-nongjang",
+   "claimId": "claim-gl3-gws-sapae, claim-gl3-nongjang-1279",
+   "problem": "두 claim 이 같은 chunk(chunk_goryeosa_kr_078_0010_0020_0060_0050)에서 사실상 같은 문장을 인용한다(앞의 '時,' 유무 차이). 중복 근거라 claim 수가 실제보다 많아 보인다.",
+   "fix": "하나로 합치고 두 항목의 fact.claimIds 에서 같은 id 를 공유한다(이미 claim-gl3-gws-nongjang 등을 공유하는 방식과 같게).",
+   "evidence": "claim-gl3-gws-sapae.quote '畿縣之田, 權貴皆以賜牌各占故' / claim-gl3-nongjang-1279.quote '時, 畿縣之田, 權貴皆以賜牌各占故'"
+  }
+ ],
+ "checkedItems": [
+  "hs-goryeo-late-gwanje-gyeokha",
+  "hs-goryeo-late-dopyeonguisasa",
+  "hs-goryeo-late-jeongdonghaengseong",
+  "hs-goryeo-late-iryeon",
+  "hs-goryeo-late-samguk-yusa",
+  "hs-goryeo-late-jewang-ungi",
+  "hs-goryeo-late-an-hyang",
+  "hs-goryeo-late-gwonmun-sejok",
+  "hs-goryeo-late-mongolpung",
+  "hs-goryeo-late-nongjang",
+  "hs-goryeo-late-chungseonwang",
+  "hs-goryeo-late-sudeoksa-daeungjeon",
+  "hs-goryeo-late-goryeo-bulhwa",
+  "hs-goryeo-late-mangwondang",
+  "hs-goryeo-late-yi-jehyeon",
+  "hs-goryeo-late-gyeongcheonsa-pagoda",
+  "hs-goryeo-late-nongsang-jipyo",
+  "hs-goryeo-late-sinjin-sadaebu",
+  "hs-goryeo-late-waegu-invasion",
+  "hs-goryeo-late-gongminwang",
+  "hs-goryeo-late-banwon-policy",
+  "hs-goryeo-late-ssangseong-recovery",
+  "hs-goryeo-late-hongeonjeok-invasion"
+ ],
+ "summary": "검증기는 PASS(failures 0, warnings 0)이고 근거 자체의 품질은 높다. 표본이 아니라 전수로 재확인했다. 로컬 chunk 인용 45건 전부를 scripts/search_chunks.py --id 로 열어 quote 가 원문 부분 문자열인지와 date.raw 연도 일치를 확인했고 모두 맞았다. 웹 발췌 49건 전부를 raw/ HTML 본문 텍스트에서 문맥과 함께 찾아 왜곡이 없음을 확인했고, raw 32개 파일의 title 이 주장한 문서와 일치하는지, 좌표 17개가 실제 위키백과 표시 좌표(geo/coordinates)와 같은지도 확인했다. encykorea 4건과 위키 2건은 실제 URL 을 다시 내려받아 발췌가 지금도 그대로 있음을 확인했다. 항목 23건 전부에서 fact.what=items.meaning, scene.kind/sceneFunction=items.sceneType, note 의 성취기준 코드, effects.priority.level 이 items.json 과 일치한다. portrait 5건의 participants 인물 id(person-encykorea-iryeon, person-je-an-hyang, person-encykorea-chungseon, person-encykorea-yijehyeon, person-goryeo-gongminwang)와 이승휴·유인우 id 는 모두 data/entities/person 에 실재하는 기존 엔티티다. 교과서 문장 전재는 보이지 않고 금지된 db.history.go.kr 출처도 없다. images.json 23건은 접두어와 인물 초상 문구까지 규격대로다. 남은 문제는 사료 해석이 아니라 지도 표시 쪽이다. 첫째, 개경 항목 8건이 만월대·영통사·남대문 세 좌표를 그대로 겹쳐 쓰고 6쌍은 표시 기간까지 겹친다(대조군 joseon-early-2 는 중복 0건). 둘째, 고려 불화 항목은 연도 1310, 제작지 영통사, 1310년부터 현재까지의 존속이 모두 근거 밖이고 인용한 백과 원문은 오히려 대부분 해외 소장이라고 적는다. 이 둘을 major 로 보고 나머지 8건(성균관 좌표 중복, 정동행성 존속 근거 불일치, 이제현 연도-장소 어긋남, 몽골풍 endYear 무근거, 만권당 category 대응표 이탈, 신돈·공민왕 엔티티 id 분기, 경천사탑 현 소재지 좌표, 동일 chunk 중복 claim)을 minor 로 남긴다. 두 major 를 고치면 적재해도 좋다고 본다."
+}

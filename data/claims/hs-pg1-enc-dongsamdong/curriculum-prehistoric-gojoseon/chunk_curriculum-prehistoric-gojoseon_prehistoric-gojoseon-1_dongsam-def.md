@@ -23,24 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
-  },
-  {
-    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-belief-site",
-    "subject": "event-hs-pg1-belief",
-    "predicate": "syj:tookPlaceAt",
-    "object": {
-      "kind": "entity",
-      "id": "place-hs-pg1-dongsamdong"
-    },
-    "note": "동삼동 패총은 신석기 바닷가 마을의 생활 자취다.",
-    "fromSource": "src-hs-pg1-enc-dongsamdong",
-    "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-1_dongsam-def",
-    "quote": "부산광역시 영도구에 있는 석기시대 신석기의 빗살무늬토기 등이 출토된 조개더미.",
-    "origin": "ai",
-    "status": "draft",
-    "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

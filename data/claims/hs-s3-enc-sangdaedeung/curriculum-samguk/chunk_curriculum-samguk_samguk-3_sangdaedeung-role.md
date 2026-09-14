@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "place-hs-s3-wolseong"
+      "id": "thing-hs-s3-sangdaedeung"
     },
     "note": "상대등이 대등으로 구성된 귀족회의를 주재했다는 서술.",
     "fromSource": "src-hs-s3-enc-sangdaedeung",
@@ -23,7 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

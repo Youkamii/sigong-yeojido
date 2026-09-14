@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "institution-hs-jl1-bibyeonsa"
+      "id": "polity-hs-joseon"
     },
     "note": "곡식을 내면 노비의 신분을 풀어 주는 납속 면천이 있었다.",
     "fromSource": "src-hs-jl1-enc-napsokchaek",

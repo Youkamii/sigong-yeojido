@@ -1,9 +1,9 @@
 {
   "job": "goryeo-late-4",
-  "sources": 21,
-  "excerpts": 24,
-  "chunkClaims": 58,
-  "excerptClaims": 24,
+  "sources": 25,
+  "excerpts": 30,
+  "chunkClaims": 59,
+  "excerptClaims": 26,
   "facts": 21,
   "factsByCategory": {
     "administration": 4,
@@ -13,8 +13,8 @@
     "person": 6,
     "war": 6
   },
-  "claims": 82,
-  "entities": 22,
+  "claims": 85,
+  "entities": 23,
   "rawFilesChecked": [
     {
       "source": "src-gl4-ko-bongjeongsa-geungnakjeon",
@@ -69,8 +69,8 @@
       "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EC%82%B0%EB%8C%80%EC%B2%A9",
       "sha256": "f7734baec356ceffa01ec6cf6091ca5988a88c5a441cc3200810a6e60e9f15cd",
       "rawBytes": 138649,
-      "excerpts": 2,
-      "quotedWords": 8
+      "excerpts": 1,
+      "quotedWords": 5
     },
     {
       "source": "src-gl4-ko-hongsanmyeon",
@@ -183,6 +183,38 @@
       "rawBytes": 106096,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-gl4-enc-bongjeongsa-geungnakjeon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024004",
+      "sha256": "9268b1e11f1e37557faeab8c5368b7143dee84d00075a2280242b2596a28ac6f",
+      "rawBytes": 207650,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-gl4-enc-buseoksa-muryangsujeon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024299",
+      "sha256": "0abdc24d1acfcf0cbfa7286a5af815fea6681dda2ab9f01a14e5c74783f5d064",
+      "rawBytes": 207681,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-gl4-ko-sungyangseowon",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%AD%EC%96%91%EC%84%9C%EC%9B%90",
+      "sha256": "532c86a3a1f79bc65aa59ba3c780e62055ca5ee78d817ad714da81a8458bc214",
+      "rawBytes": 102855,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-gl4-en-kaesong-walls",
+      "url": "https://en.wikipedia.org/wiki/Kaesong_city_walls",
+      "sha256": "af26ceda9b229321a64f8cc6fc91c67a53fc64750c0f15e34f21126f18c840c4",
+      "rawBytes": 102892,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -197,13 +229,13 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-goryeo-late-4"
+    "sessionId": "workflow-goryeo-late-4",
+    "revised": 1789379904
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "person-encykorea-jeong-mongju",
-    "person-goryeo-gongyangwang"
+    "place-gl4-gaegyeong"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

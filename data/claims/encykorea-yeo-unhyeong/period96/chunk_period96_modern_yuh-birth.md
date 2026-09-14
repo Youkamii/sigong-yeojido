@@ -23,6 +23,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-yeoun-born",
+    "subject": "person-encykorea-yeo-unhyeong",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1886년",
+      "year": 1886,
+      "precision": "year",
+      "earliest": 1886,
+      "latest": 1886,
+      "id": "ts-curriculum-contemporary-contemporary-1-hs-c1-yeoun-born"
+    },
+    "citesChunk": "chunk_period96_modern_yuh-birth",
+    "quote": "출생 연도1886년(고종 23)",
+    "note": "출생 연도.",
+    "fromSource": "src-encykorea-yeo-unhyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

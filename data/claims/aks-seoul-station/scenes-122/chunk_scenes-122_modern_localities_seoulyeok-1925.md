@@ -74,7 +74,7 @@ status: "draft"
     },
     "citesChunk": "chunk_scenes-122_modern_localities_seoulyeok-1925",
     "quote": "1925년 9월 30일에 서울역사가 준공되었는데,",
-    "note": "우리역사넷 계열 발췌 — 1925년 9월 30일 준공",
+    "note": "한국민족문화대백과사전 발췌 chunk — 1925년 9월 30일 준공",
     "fromSource": "src-aks-seoul-station",
     "origin": "ai",
     "status": "draft",

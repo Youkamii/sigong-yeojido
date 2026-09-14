@@ -12,10 +12,10 @@
   ],
   "categories": {
    "administration": 3,
-   "war": 11,
+   "war": 10,
    "culture": 2,
    "person": 6,
-   "settlement": 1
+   "settlement": 2
   }
  },
  "sources": [
@@ -45,6 +45,11 @@
      "id": "ex-jl1-bbs-1865",
      "text": "1865년(고종 2)에 폐지되었다",
      "locator": "본문 '내용 요약' — 비변사 폐지"
+    },
+    {
+     "id": "ex-jl1-bbs-hd",
+     "text": "군량 운반, 훈련도감의 설치, 산천 제사",
+     "locator": "본문 '내용' — 비변사가 처리한 사무 목록"
     }
    ]
   },
@@ -421,6 +426,11 @@
      "id": "ex-jl1-yj-1604",
      "text": "1604년에는 일본에 탐적사로 파견되어",
      "locator": "본문 '주요 활동' — 일본 파견"
+    },
+    {
+     "id": "ex-jl1-yj-gyeokmun",
+     "text": "휴정이 평안도 순안 법흥사(法興寺)에서 전국에 격문을 보내자",
+     "locator": "본문 '주요 활동' — 휴정의 격문과 유정의 기병"
     }
    ]
   },
@@ -1358,16 +1368,16 @@
    "predicate": "syj:occurredIn",
    "object": {
     "kind": "time",
-    "verbatim": "1592년(선조 25) 4월 14일",
+    "verbatim": "1592년(선조 25) 4월 15일",
     "year": 1592,
     "precision": "day",
     "earliest": 1592,
     "latest": 1592
    },
-   "sourceId": "src-encykorea-busanjin",
-   "citesChunk": "chunk_scenes-101_invasion_events_busanjin-def",
-   "quote": "1592년(선조 25) 4월 14일 정발(鄭撥) 등이 부산진에서 일본군과 싸운 전투.",
-   "note": "부산진 전투와 같은 날짜 기준. 동래성은 그 다음 날 함락되었다."
+   "sourceId": "src-encykorea-dongnae",
+   "citesChunk": "chunk_scenes-101_invasion_events_dongnae-outline",
+   "quote": "1592년(선조 25) 4월 15일 동래성을 지키던 조선군이 일본군과 맞서 싸우다 함락당한 전투이다.",
+   "note": "동래성 전투는 1592년 4월 15일이다. 부산진 함락(4월 14일)의 이튿날이다."
   },
   {
    "id": "claim-hs-jl1-dn-song",
@@ -1541,16 +1551,16 @@
    "predicate": "syj:occurredIn",
    "object": {
     "kind": "time",
-    "verbatim": "1592년 4월 14일",
+    "verbatim": "1592년 4월",
     "year": 1592,
-    "precision": "day",
+    "precision": "month",
     "earliest": 1592,
     "latest": 1592
    },
    "sourceId": "src-encykorea-gwakjaeu",
    "citesChunk": "chunk_period92_imjin-contemporaries_gwakjaeu-1592",
    "quote": "1592년 4월 14일에 임진왜란이 일어났고 관군이 대패하자, 같은 달 22일에 의병을 일으켜",
-   "note": "1592년 4월 22일 의령에서 의병을 일으켰다."
+   "note": "곽재우의 기병은 1592년 4월 22일이다. 인용 조각의 날짜 표기 4월 14일은 개전일이라 대표 값은 달까지만 둔다."
   },
   {
    "id": "claim-hs-jl1-gjw-birth",
@@ -1905,15 +1915,19 @@
   {
    "id": "claim-hs-jl1-jj-days",
    "subject": "event-hs-jl1-jinju",
-   "predicate": "syj:relatedTo",
+   "predicate": "syj:occurredIn",
    "object": {
-    "kind": "entity",
-    "id": "person-encykorea-kim-simin-e0009658"
+    "kind": "time",
+    "verbatim": "1592년(선조 25) 10월 5일부터 11일까지",
+    "year": 1592,
+    "precision": "day",
+    "earliest": 1592,
+    "latest": 1592
    },
    "sourceId": "src-encykorea-jinju-jeontu",
    "citesChunk": "chunk_period92_imjin-contemporaries_jinju-first",
    "quote": "1592년(선조 25) 10월 5일부터 11일까지 7일 간 계속되었다.",
-   "note": "1592년 10월 5일부터 11일까지 7일간 계속되었다."
+   "note": "제1차 진주성 전투는 1592년 10월 5일부터 11일까지 이레 동안 계속되었다."
   },
   {
    "id": "claim-hs-jl1-jj-win",
@@ -2360,15 +2374,19 @@
   {
    "id": "claim-hs-jl1-hjb-day",
    "subject": "event-hs-jl1-haengju",
-   "predicate": "syj:relatedTo",
+   "predicate": "syj:occurredIn",
    "object": {
-    "kind": "entity",
-    "id": "person-encykorea-gwon-yul-e0007022"
+    "kind": "time",
+    "verbatim": "1593년 2월 12일",
+    "year": 1593,
+    "precision": "day",
+    "earliest": 1593,
+    "latest": 1593
    },
    "sourceId": "src-encykorea-haengju-daecheop",
    "citesChunk": "chunk_period92_imjin-contemporaries_haengju-day",
    "quote": "1593년 2월 12일",
-   "note": "행주대첩 날짜는 1593년 2월 12일이다."
+   "note": "행주대첩은 1593년 2월 12일에 있었다."
   },
   {
    "id": "claim-hs-jl1-hjb-women",
@@ -2463,8 +2481,8 @@
     "id": "institution-hs-jl1-bibyeonsa"
    },
    "sourceId": "src-hs-jl1-enc-bibyeonsa",
-   "citesExcerpt": "ex-jl1-bbs-role",
-   "note": "비변사가 훈련도감의 설치까지 처리했다는 서술로 두 기구의 연결을 확인한다."
+   "citesExcerpt": "ex-jl1-bbs-hd",
+   "note": "비변사가 처리한 사무에 훈련도감의 설치가 들어 있어 두 기구의 연결을 확인한다."
   },
   {
    "id": "claim-hs-jl1-hd-loc",
@@ -2514,7 +2532,7 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "institution-hs-jl1-bibyeonsa"
+    "id": "polity-hs-joseon"
    },
    "sourceId": "src-hs-jl1-enc-napsokchaek",
    "citesExcerpt": "ex-jl1-nsc-myeoncheon",
@@ -2538,7 +2556,7 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "polity-imjin-japanese-force"
+    "id": "polity-hs-joseon"
    },
    "sourceId": "src-hs-jl1-enc-gongmyeongcheop",
    "citesExcerpt": "ex-jl1-gmc-effect",
@@ -3070,6 +3088,18 @@
    "sourceId": "src-hs-jl1-ko-gwaneumpo-yujeok",
    "citesExcerpt": "ex-jl1-geo-gwaneumpo",
    "note": "남해 관음포 이충무공 유적 표시 좌표."
+  },
+  {
+   "id": "claim-hs-jl1-hj-gyeokmun",
+   "subject": "person-hs-hyujeong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "institution-hs-jl1-uiseunggun"
+   },
+   "sourceId": "src-hs-jl1-enc-yujeong",
+   "citesExcerpt": "ex-jl1-yj-gyeokmun",
+   "note": "휴정이 평안도 순안 법흥사에서 전국에 격문을 보내 의승군을 불러 모았다. 휴정 항목이 아니라 유정 항목에 실린 서술이다."
   }
  ],
  "scenes": [
@@ -3386,13 +3416,14 @@
    "endYear": 1592,
    "kind": "portrait",
    "sceneFunction": "temple",
-   "summary": "묘향산 보현사에 머물던 일흔 넘은 노승이 1592년 8도 16종 선교도총섭이 되어 전국 절에 격문을 보냈다. 평안도 법흥사에서 의승군 5,000명이 모였다.",
+   "summary": "묘향산 보현사에 머물던 일흔 넘은 노승이 1592년 8도 16종 선교도총섭이 되었다. 평안도 순안 법흥사에서 전국에 격문을 보내 의승군 5,000명을 일으켰고, 각지의 승장들이 승군을 이끌고 모여들었다.",
    "dateClaimIds": [
     "claim-hs-jl1-hj-1592"
    ],
    "actionClaimIds": [
     "claim-hs-jl1-hj-raise",
-    "claim-hs-jl1-hj-temple"
+    "claim-hs-jl1-hj-temple",
+    "claim-hs-jl1-hj-gyeokmun"
    ],
    "place": {
     "label": "묘향산 보현사",
@@ -3517,7 +3548,7 @@
     "coordinateSourceIds": [
      "src-hs-jl1-ko-jinjuseong"
     ],
-    "coordinateNote": "진주성의 위키백과 표시 좌표."
+    "coordinateNote": "진주성의 위키백과 표시 좌표. 김시민 항목의 촉석루와 같은 성 안이라 두 점이 근접해 보인다."
    },
    "participants": [
     {
@@ -3526,7 +3557,7 @@
      "presence": "on-site",
      "side": "a",
      "claimIds": [
-      "claim-hs-jl1-jj-days",
+      "claim-hs-jl1-jj-def",
       "claim-hs-jl1-jj-win"
      ]
     }
@@ -3577,7 +3608,7 @@
     "coordinateSourceIds": [
      "src-hs-jl1-ko-chokseongnu"
     ],
-    "coordinateNote": "진주성 남쪽 지휘 누각인 촉석루의 표시 좌표.",
+    "coordinateNote": "진주성 남쪽 지휘 누각인 촉석루의 표시 좌표. 진주 대첩 항목의 진주성 표시점과 같은 성 안이라 두 점이 근접해 보인다.",
     "setting": "battle"
    },
    "participants": [
@@ -3711,7 +3742,7 @@
      "level": "core"
     }
    },
-   "category": "war",
+   "category": "settlement",
    "region": "south",
    "decade": 1590,
    "relatedClaimIds": [
@@ -3881,7 +3912,7 @@
      "presence": "on-site",
      "side": "a",
      "claimIds": [
-      "claim-hs-jl1-hjb-day",
+      "claim-hs-jl1-hjb-def",
       "claim-hs-jl1-gy-haengju"
      ]
     }
@@ -4168,7 +4199,7 @@
     }
    },
    "category": "administration",
-   "region": "south",
+   "region": "central",
    "decade": 1590,
    "relatedClaimIds": [
     "claim-hs-jl1-sg-loc"
@@ -4443,7 +4474,7 @@
    "region": "south",
    "decade": 1590,
    "year": 1592,
-   "yearVerbatim": "1592년(선조 25) 4월 14일",
+   "yearVerbatim": "1592년(선조 25) 4월 15일",
    "placeLabel": "동래읍성",
    "modernPlace": "부산광역시 동래구",
    "what": "송상현이 끝까지 버티다 무너진 남부 관문",
@@ -4457,7 +4488,7 @@
    ],
    "sceneId": "scene-hs-jl1-dongnae-battle",
    "confidence": "high",
-   "note": "[10한사1-02-01] · standard · 연도 근거는 같은 날 벌어진 부산진 전투 서술이고, 동래성 함락은 이튿날(4월 15일)이다.",
+   "note": "[10한사1-02-01] · standard · 날짜 근거는 동래성 전투 항목의 개설 문장(4월 15일)이다. 부산진 함락은 그 전날이다.",
    "lon": 129.09389,
    "lat": 35.20389,
    "coordinateBasis": "location claim-hs-jl1-dn-loc"
@@ -4501,7 +4532,7 @@
    "region": "south",
    "decade": 1590,
    "year": 1592,
-   "yearVerbatim": "1592년 4월 14일",
+   "yearVerbatim": "1592년 4월 22일",
    "placeLabel": "의령 정암진 일대",
    "modernPlace": "경상남도 의령군",
    "what": "붉은 옷을 입고 의병을 일으킨 경상도 선비",
@@ -4516,7 +4547,7 @@
    ],
    "sceneId": "scene-hs-jl1-gwak-jaeu",
    "confidence": "high",
-   "note": "[10한사1-02-03] · standard · 기병은 1592년 4월 22일이고, 인용한 원문 조각의 날짜 표기는 개전일 4월 14일을 포함한다.",
+   "note": "[10한사1-02-03] · standard · 기병일은 1592년 4월 22일이다. 인용 원문 조각은 개전일(4월 14일)과 기병일(같은 달 22일)을 한 문장에 담고 있어 연도 주장은 달 단위로 두었다.",
    "lon": 128.261111121,
    "lat": 35.3191666767,
    "coordinateBasis": "location claim-hs-jl1-gjw-loc"
@@ -4564,11 +4595,12 @@
     "claim-hs-jl1-hj-raise",
     "claim-hs-jl1-hj-lead",
     "claim-hs-jl1-hj-usg-1592",
-    "claim-hs-jl1-hj-loc"
+    "claim-hs-jl1-hj-loc",
+    "claim-hs-jl1-hj-gyeokmun"
    ],
    "sceneId": "scene-hs-jl1-hyujeong",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 장면 자리는 주석하던 보현사이고, 실제 기병 장소는 평안도 순안 법흥사다.",
+   "note": "[10한사1-02-04] · standard · 장면 자리는 주석하던 보현사이고, 실제 기병 장소는 평안도 순안 법흥사다. 격문 대목의 근거는 휴정 항목이 아니라 같은 사전의 유정 항목 서술이다.",
    "lon": 126.235,
    "lat": 40.00833,
    "coordinateBasis": "location claim-hs-jl1-hj-loc"
@@ -4619,7 +4651,7 @@
    ],
    "sceneId": "scene-hs-jl1-jinju-battle",
    "confidence": "high",
-   "note": "[10한사1-02-01] · core · 1592년 10월의 제1차 진주성 전투. 1593년 6월의 제2차 전투와 구별한다.",
+   "note": "[10한사1-02-01] · core · 1592년 10월의 제1차 진주성 전투. 1593년 6월의 제2차 전투와 구별한다. 진주 대첩(진주성)과 김시민(촉석루) 두 항목은 같은 성 안이라 지도에서 근접 표시된다 — 성 안 개별 지점의 좌표 근거를 얻지 못해 현행 표시 좌표를 유지한다.",
    "lon": 128.07333,
    "lat": 35.19,
    "coordinateBasis": "location claim-hs-jl1-jj-loc"
@@ -4645,7 +4677,7 @@
    ],
    "sceneId": "scene-hs-jl1-kim-simin",
    "confidence": "high",
-   "note": "[10한사1-02-01] · standard · 촉석루는 진주성 안 지휘 누각으로 진주성 항목과 좌표를 달리 잡았다.",
+   "note": "[10한사1-02-01] · standard · 촉석루는 진주성 안 지휘 누각으로 진주성 항목과 좌표를 달리 잡았다. 진주 대첩(진주성)과 김시민(촉석루) 두 항목은 같은 성 안이라 지도에서 근접 표시된다 — 성 안 개별 지점의 좌표 근거를 얻지 못해 현행 표시 좌표를 유지한다.",
    "lon": 128.0725,
    "lat": 35.18944,
    "coordinateBasis": "location claim-hs-jl1-km-loc"
@@ -4677,11 +4709,11 @@
   {
    "id": "fact-hs-jl1-011",
    "itemId": "hs-joseon-late-uibyeong",
-   "category": "war",
+   "category": "settlement",
    "region": "south",
    "decade": 1590,
    "year": 1592,
-   "yearVerbatim": "1592년 4월 14일",
+   "yearVerbatim": "1592년 4월",
    "placeLabel": "경상우도 의병 권역(합천 표시점)",
    "modernPlace": "경상남도 합천군·의령군, 경상북도 고령군 일대",
    "what": "양반과 농민이 고장을 지키려 스스로 일어난 군대",
@@ -4696,7 +4728,7 @@
    ],
    "sceneId": "scene-hs-jl1-uibyeong",
    "confidence": "high",
-   "note": "[10한사1-02-03] · core · 항목 분류는 society지만 내용이 군사 행동이라 category는 war로 두었다. 규모 근거 연도는 1593년 정월이고 봉기 자체는 1592년 4월부터다.",
+   "note": "[10한사1-02-03] · core · 항목 type이 society라 brief 대응표대로 category는 settlement로 둔다. 봉기 시작은 1592년 4월이고 규모 근거(2만 2천여 명)는 1593년 정월 것이다.",
    "lon": 128.166007,
    "lat": 35.566497,
    "coordinateBasis": "location claim-hs-jl1-ub-loc"
@@ -4833,7 +4865,7 @@
     "claim-hs-jl1-ns-loc"
    ],
    "sceneId": "scene-hs-jl1-napsok",
-   "confidence": "high",
+   "confidence": "medium",
    "note": "[10한사1-02-03] · standard · 항목은 1800년까지로 잡았으나 종료 연도의 근거를 찾지 못해 장면은 납속사목이 나온 1593년 한 해로 두었다. 공명첩 남발이 조선 후기 신분제를 흔들었다는 서술만 확인했다.",
    "lon": 126.971745,
    "lat": 37.5623,
@@ -4885,7 +4917,7 @@
     "claim-hs-jl1-yj-loc"
    ],
    "sceneId": "scene-hs-jl1-yujeong",
-   "confidence": "high",
+   "confidence": "medium",
    "note": "[10한사1-02-04] · standard · 항목은 1593년을 시작 연도로 잡았으나 인용 출처는 1592년 기병과 1604년 일본 파견을 적는다. 표충사는 1839년에 옮겨 온 연고지 표시점이다.",
    "lon": 128.96083,
    "lat": 35.5325,
@@ -4895,7 +4927,7 @@
    "id": "fact-hs-jl1-019",
    "itemId": "hs-joseon-late-sogogun",
    "category": "administration",
-   "region": "south",
+   "region": "central",
    "decade": 1590,
    "year": 1594,
    "yearVerbatim": "1594년(선조 27)",
@@ -4911,7 +4943,7 @@
    ],
    "sceneId": "scene-hs-jl1-sogogun",
    "confidence": "high",
-   "note": "[10한사1-01-04] · standard · 전국 진관에 편성된 제도라 상주는 대표 표시점일 뿐이다.",
+   "note": "[10한사1-01-04] · standard · 전국 진관에 편성된 제도라 상주는 대표 표시점일 뿐이다. region은 이 칸 전체에서 위도 기준을 쓴다 — 상주(36.44)는 대전(36.35)보다 북쪽이라 central이며, 탄금대·현충사와 같은 기준이다.",
    "lon": 128.17,
    "lat": 36.44,
    "coordinateBasis": "location claim-hs-jl1-sg-loc"
@@ -4973,8 +5005,8 @@
    "category": "culture",
    "region": "central",
    "decade": 1590,
-   "year": 1598,
-   "yearVerbatim": "1598년 10월 7일",
+   "year": 1592,
+   "yearVerbatim": "1592년(선조 25) 5월 1일부터 1598년 10월 7일까지",
    "placeLabel": "아산 현충사",
    "modernPlace": "충청남도 아산시 염치읍",
    "what": "이순신이 전장에서 매일 남긴 기록, 세계기록유산",
@@ -4987,8 +5019,8 @@
     "claim-hs-jl1-nj-loc"
    ],
    "sceneId": "scene-hs-jl1-nanjung-ilgi",
-   "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 좌표는 기록한 장소가 아니라 친필 초고를 보관한 현충사다. 세계기록유산 등재는 이번 조사에서 따로 확인하지 못했다.",
+   "confidence": "medium",
+   "note": "[10한사1-02-04] · standard · 장면·존속 표시와 맞추어 집필을 시작한 1592년을 대표 연도로 둔다(기록 종료는 1598년 10월 7일). 좌표는 기록한 장소가 아니라 친필 초고를 보관한 현충사다. 세계기록유산 등재는 근거를 얻지 못했다 — 국가유산포털(heritage.go.kr·khs.go.kr)은 접속이 시간 초과였고 우리역사넷 해당 주소는 404였다. 확인된 지정은 1962년 국보뿐이라 confidence를 medium으로 둔다.",
    "lon": 127.04167,
    "lat": 36.79806,
    "coordinateBasis": "location claim-hs-jl1-nj-loc",

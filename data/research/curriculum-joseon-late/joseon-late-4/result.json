@@ -605,6 +605,11 @@
      "id": "ex-gyujanggakdo-juhap",
      "text": "1층이 규장각이고, 2층 누각이 주합루(宙合樓)였다",
      "locator": "본문 '특징'"
+    },
+    {
+     "id": "ex-gyujanggakdo-1776",
+     "text": "1776년 김홍도가 창덕궁 규장각을 그린 그림",
+     "locator": "항목 머리 정의문 — 제작 연도와 화가"
     }
    ]
   },
@@ -807,6 +812,11 @@
      "id": "ex-kimhd-ansan",
      "text": "유생(儒生) 강세황의 안산 집에 드나들며",
      "locator": "본문 '주요 활동'"
+    },
+    {
+     "id": "ex-kimhd-1778",
+     "text": "1778년(정조 2)에는 역관 이민식",
+     "locator": "본문 '주요 활동' — 34세 무렵의 주문 그림"
     }
    ]
   },
@@ -1233,6 +1243,25 @@
      "locator": "신상정보 표 — 출생"
     }
    ]
+  },
+  {
+   "id": "src-hs4-ko-sungnyemun",
+   "title": "숭례문 — 위키백과",
+   "publisher": "위키백과",
+   "url": "https://ko.wikipedia.org/wiki/%EC%88%AD%EB%A1%80%EB%AC%B8",
+   "rawFile": "raw/ko-sungnyemun.html",
+   "sha256": "c4faf744c22ee8bb35a4bc9868e06ce626436ef8d5ac842e27a1b03ca0da3b8f",
+   "httpStatus": 200,
+   "byteLength": 427111,
+   "fetchedUtc": "2026-09-14T08:49:22Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-geo-sungnyemun",
+     "text": "37.55972; 126.97528",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
   }
  ],
  "entities": [
@@ -1535,6 +1564,26 @@
    "id": "heritage-hs4-tangpyeongbi",
    "type": "Place",
    "label": "탕평비"
+  },
+  {
+   "id": "place-hs4-namdaemun",
+   "type": "Place",
+   "label": "한양 남대문 밖 놀이판"
+  },
+  {
+   "id": "place-hs4-inwangsan-hyoja",
+   "type": "Place",
+   "label": "효자동(인왕제색도를 그린 시점)"
+  },
+  {
+   "id": "work-hs4-seowonajipdo",
+   "type": "Work",
+   "label": "김홍도 서원아집도 부채"
+  },
+  {
+   "id": "work-hs4-gyujanggakdo",
+   "type": "Work",
+   "label": "규장각도"
   }
  ],
  "claims": [
@@ -1714,7 +1763,7 @@
    },
    "sourceId": "src-hs4-ko-gyeonghuigung",
    "citesExcerpt": "ex-geo-gyeonghuigung",
-   "note": "영조가 오래 머문 경희궁. 위키백과 경희궁 표시 좌표."
+   "note": "항목이 지정한 경희궁 자정전의 대표점. 위키백과 경희궁 문서의 표시 좌표다."
   },
   {
    "id": "claim-hs4-yiinjwa-1728",
@@ -2152,17 +2201,17 @@
   },
   {
    "id": "claim-hs4-jeongseon-loc",
-   "subject": "place-hs4-inwangsan",
+   "subject": "place-hs4-inwangsan-hyoja",
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lat": 37.582,
-    "lon": 126.959,
+    "lat": 37.5835,
+    "lon": 126.972,
     "precision": "area"
    },
    "sourceId": "src-hs4-enc-inwangjesaek",
    "citesExcerpt": "ex-inwang-hyoja",
-   "note": "지금의 효자동 방면에서 인왕산을 보고 그렸다는 서술. 십진 좌표는 항목이 제시한 추정점이다."
+   "note": "지금의 효자동 방면에서 인왕산을 보고 그렸다는 서술에 맞춘 시점 위치다. 십진 좌표 근거는 없고 효자동 일대의 추정점이며, 인왕산 자체(place-hs4-inwangsan)와는 다른 장소로 둔다."
   },
   {
    "id": "claim-hs4-yijh-born",
@@ -2596,13 +2645,13 @@
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lat": 37.5818,
-    "lon": 126.9906,
+    "lat": 37.5823,
+    "lon": 126.99,
     "precision": "area"
    },
    "sourceId": "src-hs4-enc-geomseogwan",
    "citesExcerpt": "ex-geomseo-1781",
-   "note": "검서관은 1781년 내각인 규장각으로 옮겨졌다. 검서청 건물 좌표는 창덕궁 권역 안의 항목 추정점이다."
+   "note": "검서관은 1781년 내각인 규장각으로 옮겨졌다. 검서청 건물의 좌표 근거는 없으며, 같은 창덕궁 권역의 다른 항목과 화면에서 겹치지 않도록 규장각 북쪽으로 300m 넘게 띄운 표시용 추정점이다."
   },
   {
    "id": "claim-hs4-anjb-born",
@@ -2756,13 +2805,13 @@
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lat": 37.5824,
-    "lon": 126.993,
+    "lat": 37.5827,
+    "lon": 126.994,
     "precision": "area"
    },
    "sourceId": "src-hs4-enc-park-jega",
    "citesExcerpt": "ex-jega-gyujanggak",
-   "note": "박제가가 근무한 규장각은 창덕궁 안에 있다. 서향각 건물 좌표는 창덕궁 권역 안의 항목 추정점이다."
+   "note": "박제가가 근무한 규장각은 창덕궁 안에 있다. 서향각 건물의 좌표 근거는 없으며, 같은 권역의 다른 항목과 200m 이상 떨어지도록 후원 동북쪽에 둔 표시용 추정점이다."
   },
   {
    "id": "claim-hs4-kimhd-born",
@@ -2938,13 +2987,13 @@
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lat": 37.5813,
-    "lon": 126.9911,
+    "lat": 37.5778,
+    "lon": 126.9868,
     "precision": "area"
    },
    "sourceId": "src-hs4-enc-chogyemunsin",
    "citesExcerpt": "ex-chogye-gyujanggak",
-   "note": "초계문신은 규장각에 위탁 교육을 받았다. 이문원 건물 좌표는 창덕궁 권역 안의 항목 추정점이다."
+   "note": "초계문신은 규장각에 위탁 교육을 받았다. 이문원 건물의 좌표 근거는 없으며, 규장각 청사가 있던 궐내각사(인정전 서남쪽) 방면에 둔 표시용 추정점이다."
   },
   {
    "id": "claim-hs4-catholic-1784",
@@ -3195,6 +3244,64 @@
    "citesChunk": "chunk_period96_joseon_society_bak-jiwon-born",
    "quote": "출생 연도1737년(영조 13)",
    "note": "로컬 chunk로 박지원 출생 연도를 확인한다."
+  },
+  {
+   "id": "claim-hs4-namdaemun-loc",
+   "subject": "place-hs4-namdaemun",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.55972,
+    "lon": 126.97528,
+    "precision": "area"
+   },
+   "sourceId": "src-hs4-ko-sungnyemun",
+   "citesExcerpt": "ex-geo-sungnyemun",
+   "note": "산대놀이가 벌어진 남대문 밖 자리를 특정할 수 없어 위키백과 숭례문 표시 좌표를 대표점으로 썼다."
+  },
+  {
+   "id": "claim-hs4-talchum-sandae",
+   "subject": "work-hs4-talchum",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs4-namdaemun"
+   },
+   "sourceId": "src-hs4-enc-talnori",
+   "citesExcerpt": "ex-talnori-1778",
+   "note": "강이천이 본 산대놀이가 남대문 밖에서 벌어졌다는 서술."
+  },
+  {
+   "id": "claim-hs4-kimhd-1778",
+   "subject": "work-hs4-seowonajipdo",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1778년(정조 2)",
+    "year": 1778,
+    "precision": "year",
+    "earliest": 1778,
+    "latest": 1778
+   },
+   "sourceId": "src-hs4-enc-kim-hongdo",
+   "citesExcerpt": "ex-kimhd-1778",
+   "note": "서른네 살이던 1778년 역관 이민식을 위해 서원아집도 부채를 그렸다는 서술. 김홍도의 30대 활동 연도 근거다."
+  },
+  {
+   "id": "claim-hs4-kimhd-gyujanggakdo",
+   "subject": "work-hs4-gyujanggakdo",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1776년",
+    "year": 1776,
+    "precision": "year",
+    "earliest": 1776,
+    "latest": 1776
+   },
+   "sourceId": "src-hs4-enc-gyujanggakdo",
+   "citesExcerpt": "ex-gyujanggakdo-1776",
+   "note": "1776년 김홍도가 창덕궁 규장각을 그렸다는 서술. 30대 초의 활동을 보여 주는 참고 근거다."
   }
  ],
  "scenes": [
@@ -3323,7 +3430,7 @@
     "claim-hs4-tangpyeong-jeongjo"
    ],
    "place": {
-    "label": "경희궁(영조의 궁궐)",
+    "label": "경희궁(항목이 지정한 자정전 권역)",
     "medium": "land",
     "precision": "area",
     "lon": 126.9683194,
@@ -3334,7 +3441,7 @@
     "coordinateSourceIds": [
      "src-hs4-ko-gyeonghuigung"
     ],
-    "coordinateNote": "항목이 지정한 자정전의 개별 좌표가 없어 경희궁 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "항목이 지정한 자정전의 개별 좌표가 없어 위키백과 경희궁 표시 좌표를 대표점으로 썼다.",
     "setting": "palace"
    },
    "participants": [
@@ -3698,28 +3805,27 @@
    "startYear": 1778,
    "endYear": 1778,
    "kind": "tradition",
-   "summary": "탈을 쓰고 양반과 중을 꼬집던 마을 놀이다. 조선 후기에 현실을 비꼬는 성격이 짙어졌고, 안동 하회에서는 별신굿과 함께 열렸다.",
+   "summary": "탈을 쓰고 양반과 중을 꼬집던 놀이다. 조선 후기에 현실을 비꼬는 성격이 짙어졌고, 1778년 강이천은 한양 남대문 밖에서 벌어진 산대놀이를 보고 글로 남겼다.",
    "dateClaimIds": [
     "claim-hs4-talchum-1778"
    ],
    "actionClaimIds": [
     "claim-hs4-talchum-late",
-    "claim-hs4-talchum-hahoe",
-    "claim-hs4-talchum-cycle"
+    "claim-hs4-talchum-sandae"
    ],
    "place": {
-    "label": "안동 하회 별신굿 놀이마당",
+    "label": "한양 남대문 밖 놀이판",
     "medium": "land",
     "precision": "area",
-    "lon": 128.52056,
-    "lat": 36.53806,
+    "lon": 126.97528,
+    "lat": 37.55972,
     "claimIds": [
-     "claim-hs4-hahoe-loc"
+     "claim-hs4-namdaemun-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs4-ko-hahoe"
+     "src-hs4-ko-sungnyemun"
     ],
-    "coordinateNote": "놀이마당의 개별 좌표가 없어 안동 하회마을 표시 좌표를 썼다.",
+    "coordinateNote": "놀이판 자리를 특정할 수 없어 위키백과 숭례문 표시 좌표를 남대문 밖 대표점으로 썼다.",
     "setting": "village"
    },
    "participants": [],
@@ -3733,8 +3839,12 @@
     }
    },
    "category": "culture",
-   "region": "south",
-   "decade": 1770
+   "region": "central",
+   "decade": 1770,
+   "relatedClaimIds": [
+    "claim-hs4-talchum-hahoe",
+    "claim-hs4-talchum-cycle"
+   ]
   },
   {
    "id": "scene-hs4-jeong-seon",
@@ -3753,18 +3863,18 @@
     "claim-hs4-jeongseon-born"
    ],
    "place": {
-    "label": "인왕산(인왕제색도 시점)",
+    "label": "효자동(인왕제색도를 그린 시점)",
     "medium": "land",
     "precision": "area",
-    "lon": 126.959,
-    "lat": 37.582,
+    "lon": 126.972,
+    "lat": 37.5835,
     "claimIds": [
      "claim-hs4-jeongseon-loc"
     ],
     "coordinateSourceIds": [
      "src-hs4-enc-inwangjesaek"
     ],
-    "coordinateNote": "그림을 그린 지점의 십진 좌표 근거가 없다. 항목이 제시한 옥인동 쪽 추정점이다.",
+    "coordinateNote": "그림을 그린 지점의 십진 좌표 근거가 없다. 출처가 말한 '지금의 효자동 방면'에 맞춘 추정점이며, 진경산수화 항목이 쓰는 인왕산 지점과는 약 1km 떨어뜨려 겹치지 않게 했다.",
     "setting": "village"
    },
    "participants": [
@@ -3854,12 +3964,12 @@
    "itemId": "hs-joseon-late-yi-ik",
    "eventId": "event-hs4-yi-ik",
    "title": "이익",
-   "startYear": 1760,
+   "startYear": 1763,
    "endYear": 1763,
    "kind": "portrait",
-   "summary": "벼슬을 접고 안산 첨성리에 눌러앉아 평생 책을 읽고 썼다. 성호사설에 정치·경제·풍속을 두루 적었고, 생계에 필요한 땅은 팔지 못하게 하자는 한전론을 폈다.",
+   "summary": "벼슬을 접고 선영이 있는 안산 첨성리로 돌아와 평생 책을 읽고 썼다. 성호사설에 정치·경제·풍속을 두루 적었고, 생계에 필요한 땅은 팔지 못하게 하자는 한전론을 폈다. 1681년에 태어나 1763년에 세상을 떠났다.",
    "dateClaimIds": [
-    "claim-hs4-yiik-born"
+    "claim-hs4-yiik-died"
    ],
    "actionClaimIds": [
     "claim-hs4-yiik-works",
@@ -3887,7 +3997,7 @@
      "presence": "on-site",
      "side": "a",
      "claimIds": [
-      "claim-hs4-yiik-born",
+      "claim-hs4-yiik-died",
       "claim-hs4-yiik-works",
       "claim-hs4-yiik-ansan"
      ]
@@ -3897,7 +4007,7 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs4-yiik-born"
+      "claim-hs4-yiik-died"
      ],
      "level": "standard"
     }
@@ -3906,6 +4016,7 @@
    "region": "central",
    "decade": 1760,
    "relatedClaimIds": [
+    "claim-hs4-yiik-born",
     "claim-hs4-yiik-died-chunk",
     "claim-hs4-yiik-def-chunk"
    ]
@@ -3973,7 +4084,7 @@
    "eventId": "event-hs4-gyujanggak",
    "title": "규장각 설치",
    "startYear": 1776,
-   "endYear": 1910,
+   "endYear": 1776,
    "kind": "publication",
    "summary": "정조가 즉위하자마자 궐 안에 세운 기구다. 역대 임금의 글과 책을 모아 두는 서고이면서 학문과 정책을 연구하고 인재를 기르는 정치의 중추였다. 창덕궁 부용지 옆 2층 누각으로, 아래층이 규장각이고 위층이 주합루다.",
    "dateClaimIds": [
@@ -4100,30 +4211,30 @@
    "eventId": "event-hs4-seoeol",
    "title": "서얼 통청 운동",
    "startYear": 1777,
-   "endYear": 1781,
+   "endYear": 1779,
    "kind": "assembly",
-   "summary": "첩의 자식이라는 이유로 벼슬길이 막힌 서얼들이 함께 상소를 올려 길을 열어 달라고 했다. 정조는 1777년 정유절목으로 나아갈 수 있는 자리를 넓혔고, 뒤이어 규장각 검서관에 서얼 출신을 뽑았다.",
+   "summary": "첩의 자식이라는 이유로 벼슬길이 막혀 있던 서얼의 처지를 정조가 손댔다. 1777년 정유절목으로 서얼이 나아갈 수 있는 자리를 넓혔고, 1779년에는 규장각 검서관 자리를 서얼 출신을 위해 두었다.",
    "dateClaimIds": [
-    "claim-hs4-seoeol-1777"
+    "claim-hs4-seoeol-1777",
+    "claim-hs4-geomseo-1779"
    ],
    "actionClaimIds": [
     "claim-hs4-seoeol-jeongjo",
-    "claim-hs4-geomseo-1779",
     "claim-hs4-geomseo-seoeol"
    ],
    "place": {
     "label": "창덕궁 검서청 일원",
     "medium": "land",
     "precision": "area",
-    "lon": 126.9906,
-    "lat": 37.5818,
+    "lon": 126.99,
+    "lat": 37.5823,
     "claimIds": [
      "claim-hs4-geomseocheong-loc"
     ],
     "coordinateSourceIds": [
      "src-hs4-enc-geomseogwan"
     ],
-    "coordinateNote": "검서청 건물의 십진 좌표 근거가 없다. 창덕궁 권역 안에서 항목이 제시한 추정점이다.",
+    "coordinateNote": "검서청 건물의 십진 좌표 근거가 없다. 같은 창덕궁 권역의 규장각·이문원 항목과 화면에서 겹치지 않도록 규장각 북쪽으로 300m 넘게 띄운 표시용 추정점이다.",
     "setting": "office"
    },
    "participants": [
@@ -4227,15 +4338,15 @@
     "label": "창덕궁 서향각 일원",
     "medium": "land",
     "precision": "area",
-    "lon": 126.993,
-    "lat": 37.5824,
+    "lon": 126.994,
+    "lat": 37.5827,
     "claimIds": [
      "claim-hs4-seohyanggak-loc"
     ],
     "coordinateSourceIds": [
      "src-hs4-enc-park-jega"
     ],
-    "coordinateNote": "서향각 건물의 십진 좌표 근거가 없다. 창덕궁 권역 안에서 항목이 제시한 추정점이다.",
+    "coordinateNote": "서향각 건물의 십진 좌표 근거가 없다. 같은 창덕궁 권역의 다른 항목과 200m 이상 떨어지도록 후원 동북쪽에 둔 표시용 추정점이다.",
     "setting": "office"
    },
    "participants": [
@@ -4269,12 +4380,12 @@
    "itemId": "hs-joseon-late-kim-hongdo",
    "eventId": "event-hs4-kim-hongdo",
    "title": "김홍도",
-   "startYear": 1745,
-   "endYear": 1780,
+   "startYear": 1778,
+   "endYear": 1778,
    "kind": "portrait",
-   "summary": "안산에서 강세황에게 그림을 배워 화원이 되었다. 씨름과 서당, 우물터와 혼례처럼 서민이 살아가는 장면을 익살스럽게 그려 풍속화의 격을 끌어올렸다.",
+   "summary": "안산에서 강세황에게 그림을 배워 도화서 화원이 되었고, 서른네 살이던 1778년에는 주문을 받아 그림을 그릴 만큼 이름이 났다. 씨름과 서당, 우물터와 혼례처럼 서민이 살아가는 장면을 익살스럽게 그려 풍속화의 격을 끌어올렸다.",
    "dateClaimIds": [
-    "claim-hs4-kimhd-born"
+    "claim-hs4-kimhd-1778"
    ],
    "actionClaimIds": [
     "claim-hs4-kimhd-ansan",
@@ -4293,7 +4404,7 @@
     "coordinateSourceIds": [
      "src-hs4-ko-ansan"
     ],
-    "coordinateNote": "출생지와 수학지가 안산이라는 서술에 맞춰 안산시 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "출생지와 수학지가 안산이라는 서술에 맞춰 안산시 표시 좌표를 연고지 대표점으로 썼다. 표시 연도 1778년은 활동 근거이고 그해 그림을 그린 자리를 가리키지 않는다.",
     "setting": "village"
    },
    "participants": [
@@ -4303,7 +4414,7 @@
      "presence": "on-site",
      "side": "a",
      "claimIds": [
-      "claim-hs4-kimhd-born",
+      "claim-hs4-kimhd-1778",
       "claim-hs4-kimhd-ansan",
       "claim-hs4-kimhd-pungsok"
      ]
@@ -4313,14 +4424,18 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-hs4-kimhd-born"
+      "claim-hs4-kimhd-1778"
      ],
      "level": "core"
     }
    },
    "category": "person",
    "region": "central",
-   "decade": 1740
+   "decade": 1770,
+   "relatedClaimIds": [
+    "claim-hs4-kimhd-born",
+    "claim-hs4-kimhd-gyujanggakdo"
+   ]
   },
   {
    "id": "scene-hs4-park-jiwon",
@@ -4401,15 +4516,15 @@
     "label": "창덕궁 이문원(규장각 청사)",
     "medium": "land",
     "precision": "area",
-    "lon": 126.9911,
-    "lat": 37.5813,
+    "lon": 126.9868,
+    "lat": 37.5778,
     "claimIds": [
      "claim-hs4-imunwon-loc"
     ],
     "coordinateSourceIds": [
      "src-hs4-enc-chogyemunsin"
     ],
-    "coordinateNote": "이문원 건물의 십진 좌표 근거가 없다. 창덕궁 권역 안에서 항목이 제시한 추정점이다.",
+    "coordinateNote": "이문원 건물의 십진 좌표 근거가 없다. 규장각 청사가 있던 궐내각사(인정전 서남쪽) 방면에 둔 표시용 추정점이다.",
     "setting": "office"
    },
    "participants": [
@@ -4452,7 +4567,7 @@
    "startYear": 1784,
    "endYear": 1785,
    "kind": "ritual",
-   "summary": "북경에서 세례를 받고 돌아온 이승훈이 교리서를 들고 와 벗들에게 세례를 주었다. 1784년 겨울부터 한성 명례방 김범우의 집에 모여 정기적으로 집회를 열면서 신앙 공동체가 생겼다.",
+   "summary": "북경에서 세례를 받고 돌아온 이승훈이 교리서를 들고 와 벗들에게 세례를 주었다. 1784년부터 한성 명례방 김범우의 집에 모여 정기적으로 집회를 열면서 신앙 공동체가 생겼다.",
    "dateClaimIds": [
     "claim-hs4-catholic-1784"
    ],
@@ -4684,7 +4799,7 @@
    ],
    "sceneId": "scene-hs4-cheonghwa-baekja",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 항목의 1750년 대신 분원 고정 연도인 1751년을 기준점으로 잡았다",
+   "note": "[10한사1-02-04] · standard · 항목의 1750년 대신 분원 고정 연도인 1751년을 기준점으로 잡았다 좌표는 분원리 가마터의 추정점이다. 국가유산포털이 열리지 않고 위키백과 문서에도 표시 좌표가 없어 십진 좌표 출처를 구하지 못했다.",
    "lon": 127.314,
    "lat": 37.518,
    "coordinateBasis": "location claim-hs4-bunwon-loc",
@@ -4736,7 +4851,7 @@
    ],
    "sceneId": "scene-hs4-jingyeong",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 화풍은 18세기 전체에 걸치며 연도는 대표작 인왕제색도의 1751년을 기준점으로 잡았다",
+   "note": "[10한사1-02-04] · standard · 화풍은 18세기 전체에 걸치며 연도는 대표작 인왕제색도의 1751년을 기준점으로 잡았다 좌표는 인왕산의 추정점이다. 위키백과 인왕산 문서에 본문 표시 좌표가 없고 국가유산포털도 열리지 않아 십진 좌표 출처를 구하지 못했다.",
    "lon": 126.9612,
    "lat": 37.5848,
    "coordinateBasis": "location claim-hs4-inwangsan-loc"
@@ -4745,26 +4860,27 @@
    "id": "fact-hs-jl4-010",
    "itemId": "hs-joseon-late-talchum",
    "category": "culture",
-   "region": "south",
+   "region": "central",
    "decade": 1770,
    "year": 1778,
    "yearVerbatim": "1778년(산대놀이 기록)",
-   "placeLabel": "안동 하회 별신굿 놀이마당",
-   "modernPlace": "경상북도 안동시 풍천면",
+   "placeLabel": "한양 남대문 밖",
+   "modernPlace": "서울특별시 중구 남대문로4가",
    "what": "탈을 쓰고 양반을 꼬집던 마을 놀이",
    "claimIds": [
     "claim-hs4-talchum-1778",
     "claim-hs4-talchum-late",
+    "claim-hs4-talchum-sandae",
+    "claim-hs4-namdaemun-loc",
     "claim-hs4-talchum-hahoe",
-    "claim-hs4-talchum-cycle",
-    "claim-hs4-hahoe-loc"
+    "claim-hs4-talchum-cycle"
    ],
    "sceneId": "scene-hs4-talchum",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 1778년은 한양 남대문 밖 산대놀이 기록이고 장소는 지금도 전승되는 안동 하회다",
-   "lon": 128.52056,
-   "lat": 36.53806,
-   "coordinateBasis": "location claim-hs4-hahoe-loc"
+   "note": "[10한사1-02-04] · standard · 연도와 장소를 같은 기록에 맞췄다. 1778년 강이천이 본 산대놀이는 한양 남대문 밖에서 벌어졌다. 안동 하회 전승은 그 자체로는 18세기 연도 근거가 없어 참고 주장으로만 남겼다.",
+   "lon": 126.97528,
+   "lat": 37.55972,
+   "coordinateBasis": "location claim-hs4-namdaemun-loc"
   },
   {
    "id": "fact-hs-jl4-011",
@@ -4774,8 +4890,8 @@
    "decade": 1750,
    "year": 1751,
    "yearVerbatim": "1751년(영조 27)",
-   "placeLabel": "인왕산",
-   "modernPlace": "서울특별시 종로구 옥인동",
+   "placeLabel": "효자동(인왕제색도 시점)",
+   "modernPlace": "서울특별시 종로구 효자동",
    "what": "중국 그림을 흉내 내지 않고 우리 산천을 그린 화가",
    "claimIds": [
     "claim-hs4-jeongseon-born",
@@ -4786,9 +4902,9 @@
    ],
    "sceneId": "scene-hs4-jeong-seon",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 좌표는 항목이 제시한 추정점이며 효자동 방면이라는 서술만 출처로 확인했다",
-   "lon": 126.959,
-   "lat": 37.582,
+   "note": "[10한사1-02-04] · standard · 좌표는 출처가 말한 효자동 방면에 맞춘 추정점이다. 인왕산 자체를 가리키는 진경산수화 항목과 장소 개체를 나누어 좌표가 충돌하지 않게 했다.",
+   "lon": 126.972,
+   "lat": 37.5835,
    "coordinateBasis": "location claim-hs4-jeongseon-loc"
   },
   {
@@ -4822,8 +4938,8 @@
    "category": "person",
    "region": "central",
    "decade": 1760,
-   "year": 1760,
-   "yearVerbatim": "18세기 중엽",
+   "year": 1763,
+   "yearVerbatim": "1763년(영조 39)",
    "placeLabel": "안산 첨성리",
    "modernPlace": "경기도 안산시 상록구 일동",
    "what": "생계에 필요한 땅은 팔지 못하게 하자는 한전론을 주장",
@@ -4838,7 +4954,7 @@
    ],
    "sceneId": "scene-hs4-yi-ik",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 연도 1760 은 성호사설 저술기를 가리키는 표시 기준점이고 출처가 직접 밝힌 연도가 아니다",
+   "note": "[10한사1-02-04] · standard · 표시 연도 1763년은 출처가 밝힌 사망 연도이며 안산 첨성리에서 보낸 만년을 가리킨다. 성호사설의 저술 연도를 밝힌 근거는 찾지 못했다. 좌표는 묘 소재지(안산시 상록구 일동 555번지)에 맞춘 추정점이다. 국가유산포털이 열리지 않아 묘의 십진 좌표 출처는 구하지 못했다.",
    "lon": 126.856,
    "lat": 37.3186,
    "coordinateBasis": "location claim-hs4-yiik-loc"
@@ -4889,7 +5005,7 @@
    ],
    "sceneId": "scene-hs4-gyujanggak",
    "confidence": "high",
-   "note": "[10한사1-01-04] · core · 1910년 폐지까지를 존속 구간으로 두었다",
+   "note": "[10한사1-01-04] · core · 설치 장면은 1776년 한 해로 두고 1910년 폐지까지의 존속은 persistence 로만 표시한다.",
    "lon": 126.9895,
    "lat": 37.579028,
    "coordinateBasis": "location claim-hs4-juhabru-loc",
@@ -4946,9 +5062,9 @@
    ],
    "sceneId": "scene-hs4-seoeol",
    "confidence": "medium",
-   "note": "[10한사1-02-03] · standard · 좌표는 창덕궁 권역 안의 추정점이며 출처로 확인한 것이 아니다",
-   "lon": 126.9906,
-   "lat": 37.5818,
+   "note": "[10한사1-02-03] · standard · 근거로 확인한 것은 1777년 정유절목과 1779년 검서관 등용 같은 정부 조치이고, 서얼의 집단 상소 자체를 말하는 발췌는 찾지 못했다. 좌표는 창덕궁 권역 안의 표시용 추정점이다.",
+   "lon": 126.99,
+   "lat": 37.5823,
    "coordinateBasis": "location claim-hs4-geomseocheong-loc"
   },
   {
@@ -4998,8 +5114,8 @@
    "sceneId": "scene-hs4-park-jega",
    "confidence": "medium",
    "note": "[10한사1-02-04] · standard · 좌표는 창덕궁 권역 안의 추정점이며 출처로 확인한 것이 아니다",
-   "lon": 126.993,
-   "lat": 37.5824,
+   "lon": 126.994,
+   "lat": 37.5827,
    "coordinateBasis": "location claim-hs4-seohyanggak-loc"
   },
   {
@@ -5007,22 +5123,24 @@
    "itemId": "hs-joseon-late-kim-hongdo",
    "category": "person",
    "region": "central",
-   "decade": 1740,
-   "year": 1745,
-   "yearVerbatim": "1745년(영조 21) 출생",
+   "decade": 1770,
+   "year": 1778,
+   "yearVerbatim": "1778년(정조 2)",
    "placeLabel": "안산",
    "modernPlace": "경기도 안산시",
    "what": "씨름·서당 같은 서민의 일상을 그린 풍속화가",
    "claimIds": [
+    "claim-hs4-kimhd-1778",
     "claim-hs4-kimhd-born",
     "claim-hs4-kimhd-ansan",
     "claim-hs4-kimhd-birthplace",
     "claim-hs4-kimhd-pungsok",
+    "claim-hs4-kimhd-gyujanggakdo",
     "claim-hs4-ansan-loc"
    ],
    "sceneId": "scene-hs4-kim-hongdo",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · core · 항목의 1780년 대신 출처가 밝힌 출생 연도 1745년을 기준점으로 잡았다",
+   "note": "[10한사1-02-04] · core · 표시 연도는 서른네 살이던 1778년의 활동(서원아집도 부채)이고, 1776년 규장각도도 30대 초 활동 근거로 함께 달았다. 좌표는 출생·수학지인 안산 연고지 대표점이다.",
    "lon": 126.830889,
    "lat": 37.321861,
    "coordinateBasis": "location claim-hs4-ansan-loc"
@@ -5072,8 +5190,8 @@
    "sceneId": "scene-hs4-chogyemunsin",
    "confidence": "high",
    "note": "[10한사1-01-04] · standard · 1848년에 잠시 되살아났으나 표시 구간은 정조 대(1781~1800)로 두었다",
-   "lon": 126.9911,
-   "lat": 37.5813,
+   "lon": 126.9868,
+   "lat": 37.5778,
    "coordinateBasis": "location claim-hs4-imunwon-loc",
    "persistence": {
     "kind": "institution",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "person-beopheung"
+      "id": "thing-hs-s3-golpumje"
     },
     "note": "민족문화대백과 골품제도 항목. 6세기 초에 이미 법제화되었다고 본다.",
     "fromSource": "src-hs-s3-enc-golpumje",
@@ -23,7 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

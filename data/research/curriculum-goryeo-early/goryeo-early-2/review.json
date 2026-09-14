@@ -1,0 +1,130 @@
+{
+ "job": "goryeo-early-2",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-goryeo-early --job goryeo-early-2 -> exit 0, PASS: failures=0 warnings=0 (facts 23 / scenes 23 / claims 110 / chunkClaims 77 / excerptClaims 33). category x 10년: settlement 3, administration 5, facility 0, economy 4, disaster 1, culture 3, transport 1, foreign 2, person 2, war 2. region x 10년: capital 0, north 4, central 16, south 3, island 0.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-early-hyangni 외 16건",
+   "factId": "fact-hs-ge2-004, 005, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 020, 021, 022",
+   "problem": "fact.note 의 성취기준 코드가 23건 모두 [10한사1-01-02] 로 고정돼 있다. items.json 의 curriculum.standard 와 대조하면 17건이 틀렸다(향리·음서·향부곡소·향도·신분구조 = [10한사1-02-03], 의창·상평창·건원중보·전시과·조운 = [10한사1-02-02], 거란 1차 침입·서희·담판·강동 6주·벽란도 = [10한사1-02-01], 국자감·하사창동 철불 = [10한사1-02-04]). 참고 실물인 curriculum-joseon-early/joseon-early-2 는 항목마다 다른 코드를 적어 두었으므로 형식 이탈이 분명하다. 화면 카드의 교육과정 표시가 전부 틀린 단원을 가리키게 된다.",
+   "fix": "각 fact.note 앞머리의 코드를 items.json 의 해당 항목 curriculum.standard 값으로 바꾼다. 나머지 note 문장(priority·해설)은 그대로 둔다.",
+   "evidence": "items.json 의 standard 와 result.json 의 fact.note 를 전건 대조한 결과 17건 불일치. 예: hs-goryeo-early-gukjagam standard=[10한사1-02-04] vs fact-hs-ge2-008 note 앞머리=[10한사1-01-02]"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-early-sangpyeongchang, hs-goryeo-early-geonwon-jungbo",
+   "factId": "fact-hs-ge2-010, fact-hs-ge2-014",
+   "problem": "두 항목이 같은 좌표(lon 126.5581, lat 37.9692 = 개성 남대문)를 그대로 공유한다. fact-hs-ge2-014 의 note 도 상평창 장면과 같은 점을 쓴다고 적어 의도적 중복임을 밝히고 있다. 브리프의 '사건은 도시 중심점이 아니라 구체 장소를 찾는다 - 같은 도시 항목이 한 점에 겹치지 않게' 규칙을 정면으로 어긴다. 덧붙여 개경권 11건 가운데 네 쌍이 600m 이내다(최승로-시무 28조 0.31km, 도병마사-상평창/건원중보 0.54km, 중추원-국자감 0.42km, 음서-강조의 정변 0.40km). 지도 표시 단위가 1단위 약 0.65km 이므로 사실상 겹친다.",
+   "fix": "건원중보(주조)는 시전 거리 대신 주전 성격의 별도 지점이나 최소한 상평창과 다른 좌표 근거를 쓴다. 개경 항목 11건은 이미 확보한 만월대·첨성대·성균관·나성·남대문·현릉·선죽교·안화사 여덟 지점을 1건씩 배분하고, 남는 항목은 개경 밖 근거지(서경·12목 등)로 옮겨 600m 이내 쌍이 남지 않게 재배치한다.",
+   "evidence": "result.json facts 좌표 집계: (126.5581, 37.9692) -> ['hs-goryeo-early-sangpyeongchang', 'hs-goryeo-early-geonwon-jungbo']"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-hyangdo, hs-goryeo-early-joun, hs-goryeo-early-sinbun-gujo",
+   "sceneId": "scene-hs-ge2-hyangdo, scene-hs-ge2-joun, scene-hs-ge2-sinbun",
+   "problem": "dateClaimIds 가 가리키는 연도 주장이 장면의 startYear~endYear 밖이다. 향도는 1131년 주장에 장면 1000~1000, 조운은 992년 주장에 1000~1000, 신분 구조는 982년 주장에 1000~1000 이다. 검증기는 이 관계를 보지 않지만 카드에서 근거 연도와 표시 연도가 어긋난다. note 에 설명은 달려 있다.",
+   "fix": "조운은 startYear/endYear/fact.year 를 992(운임 규정 연도)로, 신분 구조는 982(최승로 상서 연월)로 내려 근거와 맞춘다. 둘 다 칸 범위(982~1009) 안이다. 향도는 근거(1131)가 칸 범위 밖이므로 연도는 두되 endYear 를 넓히거나 범위 안 근거를 dateClaim 으로 하나 더 찾는다.",
+   "evidence": "claim-ge2-joun-992 year=992 vs scene-hs-ge2-joun 1000~1000; claim-ge2-sinbun-982 year=982 vs scene-hs-ge2-sinbun 1000~1000; claim-ge2-hyangdo-1131 year=1131 vs scene-hs-ge2-hyangdo 1000~1000"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-hasachang-iron-buddha",
+   "sceneId": "scene-hs-ge2-hasachang",
+   "problem": "첫째, dateClaimIds 가 claim-ge2-hasachang-def 인데 이 주장은 syj:relatedTo 이고 시간 object 가 없다. 장면 연도 1000 을 뒷받침하는 시간 주장이 하나도 없다(note 에 표시용 값임은 밝혀 둠). 둘째, persistence {kind:facility, from:1000, to:null} 을 하사창동 절터 좌표에 달아 두어 facts-format 규칙대로면 그 자리에 같은 외형의 시설이 2100년까지 서 있는 것으로 표시된다. 실제로는 절터는 폐사지이고 철불은 국립중앙박물관에 있다(장면 summary 와 coordinateNote 에도 그렇게 적혀 있다).",
+   "fix": "persistence.to 를 항목 표시 범위 끝으로 닫거나, to:null 을 유지한다면 place.coordinateNote 와 fact.note 에 현존하는 것은 불상이며 이 자리의 전각이 아님을 명시해 조립기 표시와 어긋나지 않게 한다. 연도 근거가 아예 없으므로 fact.confidence 를 low 로 낮추는 편이 정직하다.",
+   "evidence": "scene-hs-ge2-hasachang dateClaimIds=['claim-ge2-hasachang-def'](predicate syj:relatedTo, object entity), persistence={'kind':'facility','from':1000,'to':null}"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-seohui-negotiation",
+   "sceneId": "scene-hs-ge2-seohui-dampan",
+   "problem": "993년 담판 장소를 귀주(구성) 일원이라 이름 붙이고 coordinateNote 에 강동 6주의 귀주(구성) 표시 좌표라고 적었다. 귀주는 994년 이후 서희가 성을 쌓아 확보한 강동 6주의 하나이고, 993년 시점에는 인용한 바로 그 chunk(고려사 서희 열전)가 自契丹東京, 至我安北府, 數百里之地, 皆爲生女眞所據 라고 적은 생여진 점거지다. 아직 고려 땅이 아니던 곳의 후대 이름으로 담판 지점을 부르면 시간 순서가 뒤엉켜 보인다. items.json 이 준 힌트는 봉산군 진영(청천강 이북) 125.5/39.7 이었다.",
+   "fix": "좌표는 그대로 두더라도 placeLabel 을 거란 진영(봉산군 일대)처럼 993년 시점 표기로 바꾸고, coordinateNote 에서 강동 6주의 귀주 수식을 빼고 봉산군 비정지에 가까운 청천강 이북 대표점으로 고쳐 적는다.",
+   "evidence": "chunk_goryeosa_kr_094_0010_0010_0040 본문 自契丹東京, 至我安北府, 數百里之地, 皆爲生女眞所據 / ko.wikipedia 강동 6주 라이브 재조회 본문 '고려 건국 이후 줄곧 생여진이 차지하여 고려의 북방 진출에 장애가 되었다'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-sangpyeongchang, hs-goryeo-early-geonwon-jungbo, hs-goryeo-early-gangjo-coup, hs-goryeo-early-jungchuwon",
+   "sceneId": "scene-hs-ge2-sangpyeongchang, scene-hs-ge2-geonwon-jungbo, scene-hs-ge2-gangjo-coup, scene-hs-ge2-jungchuwon",
+   "problem": "placeLabel 에 항목 연도보다 뒤에 세워진 건조물 이름이 들어가 있다. 개성 남대문은 1391~1393년, 선죽교는 1216년 축조 전승, 개경 나성(개성 성곽)은 1009~1029년 축성이다. 993·996·1009·991년 항목의 장소 이름으로 쓰면 카드에서 시대착오로 읽힌다. coordinateNote 에 표시 좌표 대표점이라는 설명은 있으나 라벨 자체가 화면에 그대로 나온다.",
+   "fix": "placeLabel 에서 후대 건조물 이름을 빼고 기능 이름만 남긴다(예: 개경 시전 거리, 개경 도성 남쪽 거리, 개경 궁성 일원, 개경 시가). 건조물 이름은 coordinateNote 의 좌표 출처 설명에만 남긴다.",
+   "evidence": "fact-hs-ge2-010/014 placeLabel='개경 시전 거리(남대문 일원)', fact-hs-ge2-023 placeLabel='개경 시가(선죽교 일원)', fact-hs-ge2-007 placeLabel='개경 성곽'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-eumseo",
+   "sceneId": "scene-hs-ge2-eumseo",
+   "problem": "음서(제도) 장면을 태조 왕건의 현릉 좌표에 놓고 개경 문벌의 뿌리를 보이려고라고 적었다. 인용한 근거 네 건(고려사 선거지 음서조 두 건, 최승로 시무책 공신 자손 조항)은 모두 현릉과 무관하다. 같은 항목의 이미지 프롬프트는 관아 앞 임용 장면을 그리게 돼 있어 지도 위치와 그림이 어긋난다. 음서와 강조의 정변 좌표 거리도 0.40km 로 가깝다.",
+   "fix": "관아·궁성 성격의 지점(만월대 또는 개경 도성 좌표)으로 옮기거나 개경 항목 재배치 과정에서 근거와 맞는 지점을 준다. 현릉을 계속 쓸 이유가 없다면 coordinateNote 의 문벌의 뿌리 수사도 뺀다.",
+   "evidence": "scene-hs-ge2-eumseo place.coordinateSourceIds=['src-hs-en-wanggon-tomb'] vs claimIds 는 chunk_goryeosa_kr_075_0010_0010_0080_0010/0020 과 최승로 열전"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-gaejeong-jeonsigwa, hs-goryeo-early-sinbun-gujo, hs-goryeo-early-hyang-bugok-so, hs-goryeo-early-hyangni",
+   "factId": "fact-hs-ge2-016, fact-hs-ge2-022, fact-hs-ge2-019, fact-hs-ge2-004",
+   "problem": "전국 제도 항목을 12목 가운데 임의의 한 곳(진주·전주·나주·상주)에 대표점으로 흩어 놓았다. 표현 의도는 이해되고 note 에 밝혀 두었지만 결과적으로 region 집계의 south 3건이 실제로 그곳에서 일어난 일이 아니다. 목종 원년 전시과 개정은 개경 조정의 조치인데 region=south, placeLabel=진주목으로 잡혀 있다.",
+   "fix": "분산 자체는 유지해도 좋다. 다만 fact.note 문구를 실제 사건 장소가 아니라 전국 제도의 표시용 대표점이라고 못 박고, 개정 전시과처럼 조정의 단일 조치인 항목은 개경 계열 좌표로 되돌린다. region 집계를 커버리지 근거로 읽지 않도록 칸 summary 에도 남긴다.",
+   "evidence": "fact-hs-ge2-016 region='south', placeLabel='진주목', note='전지와 시지는 전국 주현에 분급되었다. 좌표는 12목 가운데 하나인 진주목을 대표점으로 잡은 값이다'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-seohui-negotiation",
+   "claimId": "claim-ge2-dampan-goguryeo, claim-ge2-dampan-result",
+   "problem": "소손녕을 person-hs-so-sonnyeong 으로 참조하고 entities[] 에도 새 껍데기로 선언했는데, 저장소에는 이미 person-sososonnyeong(label 소손녕, labelHanja 蕭遜寧)이 있다. 같은 인물이 두 개체로 갈린다. 서희는 기존 person-seohui 를, 강조·성종·목종은 기존 encykorea 개체를 제대로 재사용했으므로 소손녕만 어긋난다.",
+   "fix": "person-hs-so-sonnyeong 참조를 person-sososonnyeong 으로 바꾸고 entities[] 에서 해당 껍데기를 뺀다. 이미 import 된 person-hs-so-sonnyeong.md 는 적재 단계에서 정리한다.",
+   "evidence": "data/entities/person/person-sososonnyeong.md(커밋 7441c6c2, 이번 조사보다 앞섬)와 data/entities/person/person-hs-so-sonnyeong.md 가 함께 존재"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-dobyeongmasa",
+   "claimId": "claim-ge2-dobyeong-989",
+   "problem": "subject 가 event-hs-ge2-dobyeongmasa(도병마사와 식목도감)인데 predicate 가 syj:establishedIn, object 가 989년이다. 그런데 인용한 원문은 兵馬使. 成宗八年 置於東·西北面 으로 도병마사가 아니라 병마사 설치 기사다. 그래프로 읽으면 도병마사가 989년에 설치되었다는 문장이 되어 근거보다 센 주장이 된다. fact.note 와 claim.note 에 학설 차이를 밝혀 두었고 confidence 도 medium 이라 은폐는 아니다.",
+   "fix": "claim 을 syj:relatedTo 로 낮추고 별도의 연도 근거(고려사 백관지 도평의사사 연혁)를 dateClaim 으로 쓰거나, subject 를 병마사 설치 사건으로 분리한 뒤 장면에서 relatedClaimIds 로 연결한다.",
+   "evidence": "chunk_goryeosa_kr_077_0010_0550_0020 兵馬使. 成宗八年 置於東·西北面 兵馬使一人三品 / claim-ge2-dobyeong-989 predicate=syj:establishedIn subject=event-hs-ge2-dobyeongmasa"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-choe-seungno",
+   "sceneId": "scene-hs-ge2-choe-seungno",
+   "problem": "장면 summary 의 '태조 때 열두 살로 논어를 읽어 이름을 얻었고'와 '988년 문하시중에 올랐고' 두 서술이 이 result.json 의 claim 어디에도 근거가 없다. 고려사 열전에 있는 내용이지만 인용한 네 claim(982 상서, 983 문하시랑평장사, 989 졸, 목종 원년 배향)은 이를 담지 않는다.",
+   "fix": "두 서술을 뒷받침하는 chunk 인용을 claim 으로 추가하거나(최승로 열전 앞부분) summary 에서 해당 문장을 뺀다.",
+   "evidence": "scene-hs-ge2-choe-seungno.summary vs claimIds ['claim-ge2-choe-982','claim-ge2-choe-983','claim-ge2-choe-989','claim-ge2-choe-baehyang']"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-uichang, hs-goryeo-early-gukjagam, hs-goryeo-early-sangpyeongchang, hs-goryeo-early-joun, hs-goryeo-early-hyangdo",
+   "factId": "fact-hs-ge2-005, fact-hs-ge2-008, fact-hs-ge2-010, fact-hs-ge2-021, fact-hs-ge2-020",
+   "problem": "브리프의 항목 type -> fact.category 대응표에서 institution 은 administration, society 는 settlement, economy 는 economy 인데 의창(institution)->disaster, 국자감(institution)->culture, 상평창(institution)->economy, 조운(economy)->transport, 향도(society)->culture 로 벗어났다. 다섯 건 모두 내용상 더 맞는 분류라 결과 자체는 낫고 cell.categories 와도 맞지만 대응표와 다르므로 다른 칸과 집계 기준이 어긋날 수 있다. 별개로 claim 110건 중 58건이 만능 술어 syj:relatedTo 라 그래프에서 관계가 흐려진다.",
+   "fix": "분류를 되돌릴 필요는 없다고 본다. 다만 brief 대응표에 내용이 더 맞으면 벗어날 수 있다는 단서를 남겨 다른 칸과 기준을 맞춘다. syj:relatedTo 는 가능한 곳에서 syj:tookPlaceAt·syj:participatedIn·syj:administeredAs 로 좁힌다.",
+   "evidence": "docs/research/curriculum-items-brief.md 대응표 vs result.json facts category; predicate 집계 relatedTo 58 / locatedAt 22 / occurredIn 11 / establishedIn 10 / participatedIn 3 / endedIn 3 / builtIn 2 / tookPlaceAt 1"
+  }
+ ],
+ "checkedItems": [
+  "hs-goryeo-early-choe-seungno",
+  "hs-goryeo-early-simu-28",
+  "hs-goryeo-early-12mok",
+  "hs-goryeo-early-hyangni",
+  "hs-goryeo-early-uichang",
+  "hs-goryeo-early-dobyeongmasa",
+  "hs-goryeo-early-jungchuwon",
+  "hs-goryeo-early-gukjagam",
+  "hs-goryeo-early-khitan-first-invasion",
+  "hs-goryeo-early-sangpyeongchang",
+  "hs-goryeo-early-seohui",
+  "hs-goryeo-early-seohui-negotiation",
+  "hs-goryeo-early-gangdong-6ju",
+  "hs-goryeo-early-geonwon-jungbo",
+  "hs-goryeo-early-eumseo",
+  "hs-goryeo-early-gaejeong-jeonsigwa",
+  "hs-goryeo-early-byeongnando",
+  "hs-goryeo-early-hasachang-iron-buddha",
+  "hs-goryeo-early-hyang-bugok-so",
+  "hs-goryeo-early-hyangdo",
+  "hs-goryeo-early-joun",
+  "hs-goryeo-early-sinbun-gujo",
+  "hs-goryeo-early-gangjo-coup"
+ ],
+ "summary": "검증기는 PASS(failures 0, warnings 0)이고 근거 품질은 대체로 높다. 로컬 chunk 인용 77건 전부를 search_chunks 로 다시 뽑아 quote 부분 문자열·sourceId·date.raw 연도를 독립 대조했고 불일치가 없었다. 웹 출처 27건은 raw HTML 의 sha256·byteLength 를 다시 계산해 manifest·sources 와 모두 일치했고 발췌 31건이 raw HTML 본문에 그대로 있음을 확인했으며, 위키 강동 6주·민백 흥화진·위키 하사창동 철불 세 건은 실제 URL 을 다시 내려받아 문맥 왜곡이 없음까지 확인했다. 항목 23건 전부(core 8건 포함, 표본 100%)를 출처 수준에서 재확인했다. 교과서 문장 전재는 없고 scene.kind·sceneFunction·heritageType·participants 는 items.json 의 sceneType 과 23건 모두 일치하며 images.json 23건은 접두어와 인물 초상 문구까지 규격에 맞다. 누락 항목도 없다. 다만 적재 전에 반드시 고칠 major 가 둘이다. 첫째, fact.note 의 성취기준 코드가 23건 모두 [10한사1-01-02] 로 고정돼 17건이 items.json 의 standard 와 다르다. 둘째, 상평창과 건원중보가 같은 좌표를 그대로 쓰고 개경권에 600m 이내 근접 쌍이 네 개 더 있어 같은 도시 항목이 한 점에 겹치지 않게 규칙을 어긴다. 그 밖에 장면 연도와 근거 연도가 어긋난 3건, 하사창동 철불의 시간 근거 부재와 persistence 표시, 993년 담판 장소를 994년 이후 이름인 귀주로 부른 라벨, 후대 건조물 이름을 장소 라벨에 쓴 4건, 음서를 태조 현릉에 놓은 배치, 소손녕 개체 중복, 도병마사 설치 주장의 과잉, 최승로 summary 의 무근거 두 문장이 minor 다."
+}

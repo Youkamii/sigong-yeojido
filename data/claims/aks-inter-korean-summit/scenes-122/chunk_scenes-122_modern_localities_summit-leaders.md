@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-summit-leaders",
+    "subject": "person-encykorea-kim-jongil",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-c5-summit-2000"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_summit-leaders",
+    "quote": "2000년 6월 제1차 정상회담 때 김대중 대통령과 김정일 위원장.",
+    "note": "두 정상의 참여",
+    "fromSource": "src-aks-inter-korean-summit",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

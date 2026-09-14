@@ -1,0 +1,154 @@
+{
+ "job": "colonial-2",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-colonial --job colonial-2 → PASS: failures=0 warnings=0 (facts 22 / scenes 22 / claims 95 / chunkClaims 35 / excerptClaims 60). 독립 재검증: 로컬 chunk 인용 35건 전부 search_chunks --id 로 quote·sourceId 일치 확인, 웹 발췌 60건 전부 raw/ HTML 본문에서 앞뒤 문맥과 함께 확인, 그중 ko.wikipedia 봉오동 전투·의열단·간도 참변·구 조선은행 군산지점과 encykorea 구미위원부 5개 URL 은 2026-09-14 재조회로 현재 웹 문서와 일치함을 확인.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-colonial-uiyeoldan",
+   "factId": "fact-c2-006",
+   "sceneId": "scene-c2-uiyeoldan",
+   "claimId": "claim-c2-jilin-loc",
+   "problem": "core 항목인데 결성지 '만주 지린'을 뒷받침하는 근거 주장이 패킷 안에 하나도 없다. 장소 관련 유일한 주장(claim-c2-jilin-loc)은 en.wikipedia Jilin City 의 표시 좌표일 뿐 의열단과 연결되지 않고, 같은 패킷이 인용한 ko.wikipedia 의열단 문서는 오히려 상하이만 적는다. 연도(1919-11-09)와 행위(김원봉 조직) 근거는 있으나 장소 근거가 비어 있어 핵심 항목의 근거 3건 규칙을 못 채운다.",
+   "fix": "한국민족문화대백과사전 또는 우리역사넷 '의열단' 항목에서 길림(지린) 창단 서술을 25단어 이내로 발췌해 syj:tookPlaceAt 주장을 만들고 place.claimIds 에 넣는다. 허용 출처에서 못 구하면 장소를 인용 출처가 말하는 상하이로 바꾸고(좌표는 src-c2-en-shanghai 발췌 재사용, 임시정부 장면과 같은 점이 되지 않게 별도 지점 필요) note 에 지린 이설을 남기며 fact.confidence 를 low 로 내린다.",
+   "evidence": "2026-09-14 재조회한 https://ko.wikipedia.org/wiki/의열단 본문 텍스트에 '길림'·'지린' 문자열이 존재하지 않음(검색 MISSING). raw/ko-uiyeoldan.html 의 발췌 ex-uiyeoldan-1919 문맥도 '1919년 11월 9일 설립됐다. 이들은 프랑스 조계지역인 중국 상하이에서 …' 다. result.json missing[] miss-c2-2 도 결성지 미확정을 자인한다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-colonial-hong-beomdo",
+   "factId": "fact-c2-011",
+   "sceneId": "scene-c2-hong-beomdo",
+   "claimId": "claim-c2-tumen-loc",
+   "problem": "인물 장면 좌표가 같은 칸의 봉오동 전투 장면과 소수점까지 동일하다(lon 129.85 / lat 42.967, 거리 0.000km). '같은 도시 항목이 한 점에 겹치지 않게' 라는 배치 규칙 위반이고 지도에서 두 카드가 완전히 포개진다. 같은 칸의 김좌진(홍성)·박은식(황주)·방정환(종로)은 겹침을 피해 옮겼는데 홍범도만 그대로 뒀다.",
+   "fix": "홍범도 인물 카드를 다른 근거 좌표로 옮긴다. 예: ko/en.wikipedia 평양(출생지) 또는 크즐오르다(1937년 강제 이주 뒤 거주·사망지, 이미 claim-c2-hong-1937 로 이주 근거 보유) 표시 좌표를 새 발췌로 받아 location 주장을 만들고 fact.coordinateBasis 를 그 주장으로 바꾼다. 평양을 쓰면 물산 장려 운동(125.7475/39.01667)과 또 겹치므로 같은 점은 피한다.",
+   "evidence": "result.json 의 fact-c2-008 과 fact-c2-011 의 lon/lat 가 동일하고, fact-c2-011 note 에 '좌표가 봉오동 전투 장면과 겹친다' 고 적혀 있다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-colonial-gunsan-modern-buildings",
+   "factId": "fact-c2-020",
+   "sceneId": "scene-c2-gunsan-buildings",
+   "claimId": "claim-c2-gunsan-bank-built",
+   "problem": "장면의 startYear·endYear 와 persistence.from 이 1923 인데 1923 을 말하는 근거 주장이 하나도 없다. dateClaimIds 는 2008년 등록문화재 지정 주장(claim-c2-gunsan-bank-reg)이고, persistence.basisClaimIds 에 넣은 두 주장도 1923 을 언급하지 않는다. 화면에 뜨는 연도가 무근거인데 persistence 는 '기록된 존속(근거 2건)' 으로 표시된다.",
+   "fix": "허용 출처(한국민족문화대백과 '구 조선은행 군산지점', 국가유산포털 등록문화유산 제374호 상세, 군산시 공공누리 해설)에서 건립·준공 연도를 확보해 syj:builtIn 주장을 추가한다. 끝내 못 구하면 fact.confidence 를 low 로 내리고 persistence.from 과 장면 연도를 근거 있는 연도(등록 근거만 있으면 그에 맞춘 표기)로 바꾼다.",
+   "evidence": "2026-09-14 재조회한 https://ko.wikipedia.org/wiki/구_조선은행_군산지점 본문에 '1923' 문자열이 없음(MISSING). result.json missing[] miss-c2-1 도 준공 연도 미확인을 자인한다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-colonial-park-eunsik",
+   "factId": "fact-c2-013",
+   "sceneId": "scene-c2-park-eunsik",
+   "claimId": "claim-c2-park-birth",
+   "problem": "박은식 개체 id 가 저장소 안에서 둘로 갈라진다. 이 칸은 person-hs-park-eunsik 을 쓰지만 data/entities/person/person-hs-bak-eunsik.md 가 이미 있고 curriculum-modern-transition/modern-transition-4 result.json 과 data/claims 가 그 id 를 쓴다. 같은 인물의 카드·주장·삽화가 두 id 로 쪼개져 #188 삽화 연결에서 세종 때와 같은 문제가 난다.",
+   "fix": "두 칸 중 한 id 로 통일한다(참조가 많은 person-hs-park-eunsik 쪽으로 모으고 modern-transition-4 를 고치거나 반대로). 이 칸만 고칠 경우 entities[] 의 person-hs-park-eunsik 과 scene participants·claim subject 를 기존 id 로 바꾸고 중복 엔티티 파일 하나는 정리 대상으로 남긴다.",
+   "evidence": "grep -rl person-hs-bak-eunsik → data/research/curriculum-modern-transition/modern-transition-4/result.json, data/claims/hs-enc-yugyo-gusinron/... ; grep -rl person-hs-park-eunsik → data/research/curriculum-colonial/colonial-2/result.json, data/claims/c2-*. 두 엔티티 파일 모두 label 이 '박은식' 이다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-park-eunsik",
+   "factId": "fact-c2-013",
+   "sceneId": "scene-c2-park-eunsik",
+   "claimId": "claim-c2-hwangju-loc",
+   "problem": "items.json 이 지정한 장소(상하이)를 907km 떨어진 황주 출생지로 바꿨다. 장면 연도는 1920 인데 그해 『한국독립운동지혈사』 간행과 임시정부 활동은 상하이에서 이루어졌으므로 학습자는 1920년의 박은식을 황해도에서 보게 된다. 겹침 회피라는 이유는 note 에 있으나 같은 칸의 홍범도는 겹침을 그대로 뒀다는 점에서 기준이 일관되지 않다.",
+   "fix": "상하이 안의 다른 지점 좌표 근거를 받아 상하이로 되돌리거나, 황주를 유지한다면 summary·placeLabel 에 '출생지이며 1920년 활동지는 상하이' 임을 분명히 적고 fact.note 에 항목 place 를 바꾼 사실과 이유를 남긴다.",
+   "evidence": "items.json hs-colonial-park-eunsik.place = 상하이(121.4753/31.2206), result.json fact-c2-013 lon/lat = 125.72444/38.66278. raw/ko-park-eunsik.html 발췌 ex-park-death 문맥의 사망지도 '중화민국 장쑤성 상하이' 다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-march-first-movement",
+   "factId": "fact-c2-002",
+   "sceneId": "scene-c2-samil",
+   "claimId": "claim-c2-samil-1919",
+   "problem": "3·1 운동의 category 가 administration(행정·도읍)이다. brief 대응표에서 event 는 행위에 따라 고르게 되어 있는데 거족적 만세 시위는 행정 행위가 아니고, 같은 성격의 형평 운동은 settlement 로 갔다. 커버리지 표에서도 1910년대 administration 2건이 임시정부와 3·1 운동으로 채워져 왜곡된다.",
+   "fix": "settlement(사회) 또는 culture 로 바꾸고 cell.categories 의 개수를 함께 조정한다. 바꾸지 않겠다면 fact.note 에 대응표를 벗어난 이유를 적는다.",
+   "evidence": "result.json fact-c2-002.category='administration', fact-c2-021(형평 운동).category='settlement'. docs/research/curriculum-items-brief.md 의 항목→사실 대응표."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-korean-commission-usa",
+   "factId": "fact-c2-001",
+   "claimId": "claim-c2-gumi-enc",
+   "problem": "항목 type 이 institution 이라 대응표는 administration 인데 category 를 foreign 으로 뒀다. 외교 기관이라는 해석은 설득력이 있으나 대응표 이탈을 note 에 적지 않아 다른 칸과 기준이 어긋난 채 남는다.",
+   "fix": "foreign 을 유지한다면 fact.note 에 '대응표의 institution→administration 대신 외교 기관이라 foreign 으로 두었다' 고 한 줄 남긴다.",
+   "evidence": "items.json type='institution', result.json fact-c2-001.category='foreign'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-gando-massacre",
+   "factId": "fact-c2-010",
+   "sceneId": "scene-c2-gando",
+   "claimId": "claim-c2-gando-1920",
+   "problem": "장면 요약이 '봉오동·청산리에서 진 일본군이 1920년 10월부터 …' 로 시작해 시간 순서를 뒤집는다. 훈춘 사건(1920-10-02)과 간도 출병은 청산리 전투(10-21~26)보다 앞서므로 학살의 시작을 청산리 패배 뒤로 두면 틀린다. 인용한 위키 문장 자체가 '청산리 전투 이후 훈춘 사건이 발생한 날인 1920년 10월부터' 로 엉켜 있는데 그대로 옮겼다.",
+   "fix": "요약을 '훈춘 사건을 구실로 간도에 출병한 일본군이 봉오동·청산리 패전의 보복으로 한인 마을을 습격해 1921년 봄까지 학살했다' 처럼 순서가 맞게 고치고, claim note 에 출처 문장이 순서를 뒤섞고 있다는 단서를 남긴다.",
+   "evidence": "raw/ko-gando.html 및 2026-09-14 재조회 본문: '간도 참변은 훈춘 사건 이후 … 이 학살은 청산리 전투 이후 훈춘 사건이 발생한 날인 1920년 10월부터 3주간 일어났다.' 정보상자 기간은 1920-10 ~ 1921-04."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-bang-jeonghwan",
+   "sceneId": "scene-c2-bang-jeonghwan",
+   "claimId": "claim-c2-bang-1923",
+   "problem": "장면 요약의 '1923년 잡지 『어린이』를 내고' 를 받치는 주장이 claims 에 없다. 이 칸의 1923년 근거는 색동회 창설(1923-05-01, 일본 도쿄)뿐이어서 근거 없는 서술이 카드 본문에 그대로 나간다.",
+   "fix": "raw/ko-bang-jeonghwan.html 에서 『어린이』 창간 문장을 25단어 이내로 발췌해 주장을 추가하거나, 요약에서 해당 구절을 뺀다.",
+   "evidence": "result.json scene-c2-bang-jeonghwan.summary 와 claims 목록(claim-c2-bang-birth/death/1923) 대조."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-childrens-movement",
+   "sceneId": "scene-c2-children-day",
+   "claimId": "claim-c2-cheondogyo-loc",
+   "problem": "장소를 천도교 중앙 대교당으로 잡았으나 첫 어린이날 행사와 그 건물을 잇는 근거 주장이 없다. claim-c2-cheondogyo-loc 은 좌표 주장일 뿐이고 연결 근거는 coordinateNote 의 '천도교 소년회의 본거지' 라는 추론뿐이다.",
+   "fix": "허용 출처에서 1923년 어린이날 행사·조선소년운동협회와 천도교당을 잇는 문장을 발췌해 syj:tookPlaceAt 주장을 추가하거나, place.label 을 '천도교 중앙 대교당 일대(천도교 소년회 본거지)' 로 낮춰 적고 근거 한계를 fact.note 에 남긴다.",
+   "evidence": "result.json scene-c2-children-day.place.claimIds = [claim-c2-cheondogyo-loc] 하나뿐이며 그 주장은 좌표만 말한다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-kim-jwajin",
+   "claimId": "claim-c2-kjj-unit",
+   "problem": "주장은 김좌진과 북로 군정서의 관계(object: org-hs-bungno-gunjeongseo)인데 인용문은 '관련 사건청산리 대첩|어랑촌전투' 로 북로군정서를 전혀 말하지 않는다. 인용과 주장이 어긋난다.",
+   "fix": "같은 출처의 '김좌진은 북로군정서를 이끌고 청산리 대첩을 승리로 이끈 독립운동가이다'(chunk_period96_modern_kjj-desc) 로 quote·citesChunk 를 바꾸거나 주장 object 를 관련 사건으로 고친다.",
+   "evidence": "search_chunks --id chunk_period96_modern_kjj-relevent → text '관련 사건청산리 대첩|어랑촌전투'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-tapgol-park",
+   "factId": "fact-c2-005",
+   "problem": "images.json 의 basis 출처 표기가 틀렸다. 탑골 공원은 '우리역사넷 탑골공원', 유관순은 '우리역사넷 천안 아우내 만세운동' 이라고 적었지만 실제 근거 chunk(src-ek-tapgol, src-ek-cheonan-samil)의 permalink 는 encykorea.aks.ac.kr(한국민족문화대백과사전)이다.",
+   "fix": "images.json 의 두 basis 문자열을 '한국민족문화대백과사전' 으로 고친다.",
+   "evidence": "search_chunks --id chunk_scenes-103_modern_scenes_tapgol-1919 → permalink https://encykorea.aks.ac.kr/Article/E0058835; chunk_scenes-103_modern_scenes_aunae-date → https://encykorea.aks.ac.kr/Article/E0055955."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-provisional-government",
+   "factId": "fact-c2-004",
+   "problem": "칸 밖 사정이지만 기록해 둔다. 이 칸의 좌표 6개가 다른 일제강점기 칸의 항목과 소수점까지 같다(임시정부=colonial-3 국민 대표 회의·colonial-4 김구, 의열단=colonial-1 대한 독립 선언·colonial-3 3부, 조선 혁명 선언=colonial-3 신채호, 어린이날=colonial-3 노농 총동맹·colonial-5 조선 건국 동맹, 탑골 공원=colonial-3 신간회). 도시 표시 좌표를 여러 칸이 공유해 생긴 일로 적재 단계에서 시대 전체가 한 점에 겹친다.",
+   "fix": "일제강점기 칸을 합칠 때 도시 대표점 재사용 현황을 한 번 점검하고 같은 도시 안에서 구체 지점(청사·회의장·경찰서 등)의 좌표 근거를 나눠 붙인다. 이 칸 단독으로는 고칠 수 없으므로 적재 담당에게 넘긴다.",
+   "evidence": "curriculum-colonial/*/result.json 의 facts 좌표를 소수점 4자리로 맞춰 비교한 결과 위 8쌍이 일치."
+  }
+ ],
+ "checkedItems": [
+  "hs-colonial-korean-commission-usa",
+  "hs-colonial-march-first-movement",
+  "hs-colonial-paris-peace-conference",
+  "hs-colonial-provisional-government",
+  "hs-colonial-tapgol-park",
+  "hs-colonial-uiyeoldan",
+  "hs-colonial-yu-gwansun",
+  "hs-colonial-bongodong-battle",
+  "hs-colonial-cheongsanri-battle",
+  "hs-colonial-gando-massacre",
+  "hs-colonial-hong-beomdo",
+  "hs-colonial-kim-jwajin",
+  "hs-colonial-park-eunsik",
+  "hs-colonial-product-promotion-movement",
+  "hs-colonial-rice-production-plan",
+  "hs-colonial-free-city-incident",
+  "hs-colonial-amtaedo-tenant-dispute",
+  "hs-colonial-bang-jeonghwan",
+  "hs-colonial-childrens-movement",
+  "hs-colonial-gunsan-modern-buildings",
+  "hs-colonial-hyeongpyeong-movement",
+  "hs-colonial-joseon-revolution-declaration"
+ ],
+ "summary": "검증기는 PASS(실패 0·경고 0)이고 22개 항목이 items.json 과 1:1로 맞는다. fact.what 은 항목 meaning 과 글자까지 같고 scene.kind·sceneFunction·priority 도 전부 일치한다. 근거는 표본이 아니라 전수로 다시 확인했다: 로컬 chunk 인용 35건은 search_chunks 로 quote·sourceId 가 모두 맞고, 웹 발췌 60건은 raw/ HTML 본문에서 앞뒤 문맥까지 확인했으며 그중 5개 URL 은 오늘 다시 받아 현재 문서와 같음을 확인했다. 교과서 문장 전재나 발췌 문맥 왜곡은 보이지 않았고, heritage 2건은 heritageType·persistence 를, portrait 5건은 참여 인물 1명 규칙을 지켰다. 다만 (1) core 항목 의열단의 결성지 '지린' 은 패킷 안에 근거가 없고 인용한 위키 문서는 오히려 상하이를 적으며, (2) 홍범도 인물 좌표가 봉오동 전투와 완전히 같은 점이고, (3) 군산 근대 건축물의 1923년은 어떤 주장으로도 뒷받침되지 않은 채 persistence 근거로 표시되며, (4) 박은식이 저장소 안에서 person-hs-park-eunsik·person-hs-bak-eunsik 두 id 로 갈라진다. 이 넷은 고친 뒤 적재해야 한다. 그 밖에 3·1 운동 category, 간도 참변 요약의 시간 순서, 근거 없는 방정환·어린이날 서술, images.json 출처 표기 등 minor 9건을 남긴다."
+}

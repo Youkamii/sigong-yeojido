@@ -1,0 +1,90 @@
+{
+ "job": "joseon-late-2",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-joseon-late --job joseon-late-2 -> PASS: failures=0 warnings=0 (exit 0). 집계: facts 23, scenes 23, claims 109 (chunkClaims 55, excerptClaims 54). category x 10년: administration 2, facility 2, economy 4, culture 4, foreign 5, person 4, war 2 = 23. region x 10년: central 18, south 4, north 1.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-moneagi",
+   "claimId": "claim-jl2-iang-1698",
+   "problem": "core 항목 '모내기법의 확대'의 유일한 연도 근거가 출처의 결론을 뒤집어 쓰였다. 민족문화대백과 '이앙법' 본문은 1698·1838년 이앙 금령 기록을 근거로 '우리 나라의 이앙법은 적어도 15세기 이전에 비롯되었으나, 그 보급은 한말까지도 부진하였던 것 같다'고 결론짓는데, claim note 는 같은 기록이 '17~18세기에 이앙법이 이미 널리 쓰였음을 보여준다'고 정반대로 적었다. 장면 요약의 '삼남에 퍼졌다'와 fact.what 의 '수확과 일손 효율을 크게 올림'도 이 칸의 어떤 발췌·chunk 로도 뒷받침되지 않는다. 항목의 핵심 주장(17~18세기 삼남 일반화)이 사실상 무근거로 남았고, 인용한 출처는 오히려 반대 방향을 말한다.",
+   "fix": "① claim-jl2-iang-1698 의 note 에서 '널리 쓰였음을 보여준다'를 지우고, 이 기록은 관이 수리 조건이 나쁜 곳의 이앙을 금했다는 사실만 말하며 출처 자신은 보급이 부진했다고 본다는 점을 그대로 적는다. ② 조선 후기 이앙법 보급·광작을 직접 서술한 민족문화대백과 항목(예: '광작', '견종법', '농가집성')의 발췌를 새 source 로 추가해 scene 요약의 삼남 확산과 노동력 절감 서술에 근거를 붙인다. ③ 끝내 근거를 못 찾으면 scene.summary 에서 확산 단정을 빼고 fact.note 에 보급 시기는 출처마다 다르게 본다는 점을 남긴다.",
+   "evidence": "raw/enc-iangbeop.html 본문: '1698년(숙종 24)과 1838년(헌종 4)의 기록을 보면 관에서 수리조건이 불비한 곳의 이앙법을 금한 사실에 비추어 우리 나라의 이앙법은 적어도 15세기 이전에 비롯되었으나, 그 보급은 한말까지도 부진하였던 것 같다.' / result.json claim-jl2-iang-1698.note: '관이 수리 조건이 나쁜 곳의 이앙을 금한 기록. 17~18세기에 이앙법이 이미 널리 쓰였음을 보여준다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-daedongbeop",
+   "factId": "fact-hs-jl2-005",
+   "problem": "sources[] 31건과 manifest.json 31건의 fetchedUtc 가 모두 2026-09-14T04:20:00Z 한 값이다. 실제 내려받은 시각이 아니라 손으로 채운 상수로 보인다. 같은 규약을 통과한 참고 칸은 파일마다 초 단위가 다르다(joseon-early-2 는 52건 중 36개, joseon-late-1 은 58건 중 46개가 서로 다른 값).",
+   "fix": "내려받기 스크립트가 기록한 실제 시각으로 다시 채운다. 재수집이 어려우면 재조회한 실제 시각으로 갱신하고 sha256·byteLength 를 다시 계산해 맞춘다. 값을 모를 때 상수로 채우지 않는다.",
+   "evidence": "manifest.json 전 항목 fetchedUtc=2026-09-14T04:20:00Z (서로 다른 값 1/31). 대조: data/research/curriculum-joseon-early/joseon-early-2/manifest.json 36/52."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-donguibogam",
+   "factId": "fact-hs-jl2-010",
+   "problem": "좌표 lat 37.583333 / lon 127.0 은 위키데이터 한성부 대표점(도시 중심점)인데 placeLabel 은 '한양 도성(내의원 간행)', modernPlace 는 '서울특별시 종로구 와룡동 일원'으로 적혀 있다. 실제 창덕궁 궐내각사와 약 0.9km 떨어져 있어 표시 지명과 좌표가 가리키는 곳이 다르다. 지침의 '사건은 도시 중심점이 아니라 구체 장소'에도 어긋난다.",
+   "fix": "modernPlace 를 '서울특별시 종로구 일원(한성부 대표점)'처럼 좌표가 실제로 가리키는 범위로 고치거나, 창덕궁 궐내각사 가까이의 별도 좌표 근거(예: 창덕궁 금천교·궐내각사 표시 좌표)를 찾아 정밀도를 올린다. coordinateNote 의 설명은 그대로 두어도 된다.",
+   "evidence": "result.json fact-hs-jl2-010 의 lon=127, lat=37.583333333333336, modernPlace='서울특별시 종로구 와룡동 일원'. 근거인 claim-jl2-hanseongbu-loc 은 chunk_scenes-103_joseon_late_scenes_coord-hanseongbu(한성부 위키데이터 좌표)다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-hangeul-novel",
+   "factId": "fact-hs-jl2-001",
+   "problem": "fact.year 는 1600 인데 yearVerbatim 은 '1618년(광해군 10) 허균 사망 이후'이고, 장면의 유일한 dateClaim(claim-jl2-heogyun-death)도 1618년이다. 카드에 뜨는 연도와 그 옆의 원문 표기가 서로 다른 해를 가리킨다.",
+   "fix": "yearVerbatim 을 연도 1600 의 성격을 그대로 말하는 문구(예: 17세기 대표값 — 근거 기록은 1618년 허균 사망)로 다듬거나, fact.year 를 근거가 있는 1618 로 올리고 scene.startYear 도 맞춘다. note 에 이미 대표값 설명이 있으니 표기만 정리하면 된다.",
+   "evidence": "result.json fact-hs-jl2-001: year=1600, yearVerbatim='1618년(광해군 10) 허균 사망 이후'. scene-hs-jl2-hangeul-novel.dateClaimIds=[claim-jl2-heogyun-death] 의 time.year=1618."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-giyu-treaty",
+   "claimId": "claim-jl2-giyu-ship",
+   "problem": "claim 의 object 가 place-hs-jl2-dongnae(동래부)인데 인용한 발췌 '대마도주의 세견선은 20척으로 제한하고 특송선은 3척으로 하되,'에는 동래부가 나오지 않는다. 발췌는 세견선 수만 말하고 동래부와의 관계는 근거가 없다.",
+   "fix": "object 를 event-hs-jl2-giyu 나 polity-hs-joseon 으로 바꾸거나, 동래부와의 관계를 말하는 발췌(같은 항목의 왜관·동래 관련 문장)를 따로 인용해 연결한다.",
+   "evidence": "result.json claim-jl2-giyu-ship 의 object 는 entity place-hs-jl2-dongnae, citesExcerpt 는 ex-giyu-ship. raw/enc-giyu.html 에서 이 문장 앞뒤는 통문관지 13조 조문 나열이다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-gongin",
+   "claimId": "claim-jl2-sijeon-def",
+   "problem": "claim 의 object 가 group-hs-gongin(공인)인데 인용한 발췌 '옛날 전통 사회의 성읍(城邑)이나 도시에 있던 상설 점포.'는 시전의 정의일 뿐 공인과의 관계를 말하지 않는다. note 의 '시전 상인 가운데 공인을 겸한 이들이 있었다'도 이 발췌로는 확인되지 않는다.",
+   "fix": "object 를 facility-hs-sijeon 과 polity-hs-joseon 의 관계로 낮추거나, 공인과 시전의 관계를 말하는 발췌를 민족문화대백과 '공인' 본문(도성 안팎 국역 담당층의 공인화 서술)에서 따로 인용한다. note 의 겸업 서술도 근거에 맞게 줄인다.",
+   "evidence": "result.json claim-jl2-sijeon-def 의 object 는 entity group-hs-gongin, citesExcerpt 는 ex-sijeon-def(text: 옛날 전통 사회의 성읍(城邑)이나 도시에 있던 상설 점포.)."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-neutral-diplomacy",
+   "sceneId": "scene-hs-jl2-neutral",
+   "problem": "scene.kind 는 항목 sceneType 을 따라 court 인데 무대는 항목이 지정한 창덕궁 빈청이 아니라 547km 떨어진 사르후 전투터이고 place.setting 도 battle 이다. 조정의 결정을 다루는 court 장면이 전장에서 열리는 모습으로 조립될 수 있다. overseas=true 와 해외 표기는 제대로 되어 있어 규칙 위반은 아니다.",
+   "fix": "둘 중 하나를 고른다. (가) 무대를 다시 한양 조정(다른 항목과 겹치지 않는 궐내각사 좌표)으로 돌리고 사르후는 요약·note 로만 언급한다. (나) 전투터를 유지하되 scene.summary 와 place.coordinateNote 에 무대는 파병 현장이고 결정은 한양 조정에서 내려졌다는 점을 분명히 적는다.",
+   "evidence": "result.json scene-hs-jl2-neutral: kind=court, place.label=사르후(심하) 전투터, setting=battle, lon=123.95694, lat=41.88111, overseas=true. items.json 의 place 는 창덕궁 빈청(궐내각사) lon 126.9898 / lat 37.5796."
+  }
+ ],
+ "checkedItems": [
+  "hs-joseon-late-hangeul-novel",
+  "hs-joseon-late-moneagi",
+  "hs-joseon-late-jingbirok",
+  "hs-joseon-late-tongsinsa",
+  "hs-joseon-late-daedongbeop",
+  "hs-joseon-late-gongin",
+  "hs-joseon-late-gwanghaegun",
+  "hs-joseon-late-giyu-treaty",
+  "hs-joseon-late-heo-jun",
+  "hs-joseon-late-donguibogam",
+  "hs-joseon-late-neutral-diplomacy",
+  "hs-joseon-late-bungdang-politics",
+  "hs-joseon-late-injo",
+  "hs-joseon-late-injo-restoration",
+  "hs-joseon-late-beopjusa-palsangjeon",
+  "hs-joseon-late-namhansanseong",
+  "hs-joseon-late-jeongmyo-horan",
+  "hs-joseon-late-western-learning",
+  "hs-joseon-late-yeongjeongbeop",
+  "hs-joseon-late-byeongja-horan",
+  "hs-joseon-late-juhwa-cheokhwa",
+  "hs-joseon-late-samjeondo",
+  "hs-joseon-late-hyojong"
+ ],
+ "summary": "검증기는 PASS(실패 0, 경고 0)다. 항목 23건이 fact 23 + scene 23 + claim 109(로컬 chunk 55, 웹 발췌 54)로 빠짐없이 대응하고, 고아 claim 이 없으며 장면마다 근거 claim 이 3건 이상이다. 표본 검증으로 인용 chunk 55건이 모두 data/sources 에 실재함을 확인했고(위조된 조각 없음, 전부 #81·#103·#122 커밋의 기존 출처), 웹 발췌 28건은 raw HTML 에서 앞뒤 문맥을 직접 읽어 왜곡 여부를 봤으며, 출처 5곳(선혜청·남한산성·경희궁·법주사·Battle of Sarhu)은 실제 URL 로 재조회해 HTTP 200 과 발췌 존속을 확인했다. 개체 id 11건은 모두 data/entities 에 실재한다. 좌표는 23건 모두 location claim 근거가 있고 가장 가까운 두 점도 0.12km(창덕궁 인정전-희정당) 떨어져 한 점에 겹치는 항목이 없으며, 해외 항목(사르후)은 overseas=true 와 note 의 해외 표기를 갖췄다. kind·heritageType·participants 는 항목 sceneType 과 모두 일치하고(팔상전 heritageType=pagoda, heritageFloors=5), 문화재 4건에 persistence 가 붙어 있다. images.json 은 23건 전부가 접두어와 인물 초상 문구를 갖췄다. 교과서 문장 전재는 발견되지 않았다. 다만 core 항목 '모내기법의 확대'는 인용한 민족문화대백과 '이앙법' 본문이 '보급은 한말까지도 부진'이라 결론짓는 대목을 '17~18세기에 널리 쓰였음을 보여준다'로 뒤집어 달아 항목의 핵심 주장이 근거 없이 남았다(major 1건). 그 밖에 manifest 의 fetchedUtc 31건이 모두 같은 상수인 점, 동의보감 좌표와 표시 지명의 불일치, 한글 소설 항목의 연도·원문 표기 어긋남, 근거가 받쳐 주지 않는 claim object 2건, 사르후로 옮긴 court 장면의 무대 설명 부족을 minor 6건으로 남긴다."
+}

@@ -16,14 +16,14 @@ status: "draft"
       "kind": "entity",
       "id": "inst-hs-c5-jeongsin"
     },
-    "note": "미쓰비시 나고야항공기제작소 도토쿠 공장이 동원처의 하나였다.",
+    "note": "미쓰비시 나고야항공기제작소 도토쿠 공장이 동원처의 하나였고 이 장면의 대표 장소다.",
     "fromSource": "src-hs-ko-jeongsindae",
     "citesChunk": "chunk_curriculum-colonial_colonial-5_jeongsindae-nagoya",
     "quote": "미쓰비시 나고야항공기제작소 도토쿠 공장",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

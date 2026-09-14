@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-samguk-samguk-5-hs-sg5-gogu-revival-silla",
-    "subject": "person-hs-sg5-anseung",
+    "subject": "person-anseung",
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",

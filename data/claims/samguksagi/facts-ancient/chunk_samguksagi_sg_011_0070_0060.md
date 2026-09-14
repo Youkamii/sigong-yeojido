@@ -68,8 +68,8 @@ status: "draft"
       "id": "event-hs-nbg3-samdaemok"
     },
     "citesChunk": "chunk_samguksagi_sg_011_0070_0060",
-    "quote": "王素與角干魏弘通",
-    "note": "각간 위홍이 왕의 명을 받아 편찬을 맡았다.",
+    "quote": "至是常入内用事. 仍命與大矩和尚",
+    "note": "삼국사기 진성왕 2년 기사: 위홍이 늘 궁에 들어와 정사를 맡았고, 이때 대구화상과 함께 향가를 모으라는 명이 내렸다.",
     "fromSource": "src-samguksagi",
     "origin": "ai",
     "status": "draft",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "person-hs-yeomjang"
+      "id": "person-encykorea-yeomjang"
     },
     "citesChunk": "chunk_samguksagi_sg_011_0020_0210",
     "quote": "奪弓福劒斬訖",

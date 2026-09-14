@@ -43,28 +43,38 @@
      "locator": "본문 '제정 목적'"
     },
     {
-     "id": "ex-seosa-singsa",
-     "text": "총독부는 각급 학교에 일본의 관제미신인 신사참배를 강요하였고",
-     "locator": "본문 '제정 목적'"
+     "id": "ex-seosa-tap",
+     "text": "조선신궁 경내에 황국신민서사의 탑[皇國臣民誓詞之柱]을 세웠다",
+     "locator": "본문 '내용'"
+    },
+    {
+     "id": "ex-seosa-school",
+     "text": "각 교실 정면에 서약 액자를 걸어",
+     "locator": "본문 '내용'"
     }
    ]
   },
   {
-   "id": "src-hs-ko-singung",
-   "title": "조선신궁 — 위키백과",
+   "id": "src-hs-ko-maedong",
+   "title": "서울매동초등학교 — 위키백과",
    "publisher": "위키백과",
-   "url": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%8B%A0%EA%B6%81",
-   "rawFile": "raw/ko-joseon-singung.html",
-   "sha256": "3c934153076d45608944b329f6f446bf1e9fcd6e9843d2620bc23713df022239",
+   "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EB%A7%A4%EB%8F%99%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90",
+   "rawFile": "raw/ko-maedong-school.html",
+   "sha256": "326f053337448c01362c7a6d787b02f384d1d36ade91a90d43174b0e8c8291e1",
    "httpStatus": 200,
-   "byteLength": 116669,
-   "fetchedUtc": "2026-09-14T03:59:05Z",
-   "license": "CC BY-SA 4.0 — 표시 좌표만 인용",
+   "byteLength": 219637,
+   "fetchedUtc": "2026-09-14T10:09:33Z",
+   "license": "CC BY-SA 4.0 — 표시 좌표와 짧은 인용",
    "excerpts": [
     {
-     "id": "ex-geo-singung",
-     "text": "37.55361; 126.98278",
+     "id": "ex-geo-maedong",
+     "text": "37.5773161; 126.9667696",
      "locator": "문서 표시 좌표(geo)"
+    },
+    {
+     "id": "ex-maedong-site",
+     "text": "1933년 1월 19일 현 위치로 교사 이전",
+     "locator": "본문 '학교 연혁'"
     }
    ]
   },
@@ -613,7 +623,7 @@
    "excerpts": [
     {
      "id": "ex-josoang-gangnyeong",
-     "text": "삼균주의를 국시로 한 ‘대한민국임시정부건국강령’을 채택하게 하였다.",
+     "text": "1934년 임시정부 국무회의에서 삼균주의를 국시로 한 ‘대한민국임시정부건국강령’을 채택하게 하였다.",
      "locator": "본문 '생애 및 활동사항'"
     }
    ]
@@ -1057,7 +1067,7 @@
    "label": "윤동주"
   },
   {
-   "id": "person-hs-ji-cheongcheon",
+   "id": "person-hs-c4-ji-cheongcheon",
    "type": "Person",
    "label": "지청천"
   },
@@ -1165,6 +1175,11 @@
    "id": "place-hs-c5-singung",
    "type": "Place",
    "label": "조선신궁(경성 남산)"
+  },
+  {
+   "id": "place-hs-c5-maedong",
+   "type": "Place",
+   "label": "경성매동공립국민학교(현 서울매동초등학교)"
   },
   {
    "id": "place-hs-c5-bocheonbo",
@@ -1305,22 +1320,50 @@
     "id": "place-hs-c5-singung"
    },
    "sourceId": "src-hs-enc-seosa",
-   "citesExcerpt": "ex-seosa-singsa",
-   "note": "각급 학교에 신사 참배를 강요했고 서사 제창이 이와 연동되었다."
+   "citesExcerpt": "ex-seosa-tap",
+   "note": "1939년 11월 조선신궁 경내에 황국신민서사의 탑을 세웠다. 서사 정책의 상징물일 뿐 제창 장면의 무대는 아니어서 대표점으로 쓰지 않았다."
+  },
+  {
+   "id": "claim-hs-c5-seosa-school",
+   "subject": "event-hs-c5-seosa",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-c5-maedong"
+   },
+   "sourceId": "src-hs-enc-seosa",
+   "citesExcerpt": "ex-seosa-school",
+   "note": "서사는 교실 정면에 액자로 걸리고 조회에서 제창되었다. 전국 학교가 무대이므로 경성의 공립학교 한 곳(매동)을 대표점으로 골랐다."
+  },
+  {
+   "id": "claim-hs-c5-seosa-maedong-1933",
+   "subject": "place-hs-c5-maedong",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1933년 1월 19일",
+    "year": 1933,
+    "precision": "year",
+    "earliest": 1933,
+    "latest": 1933
+   },
+   "sourceId": "src-hs-ko-maedong",
+   "citesExcerpt": "ex-maedong-site",
+   "note": "1933년 현 위치로 교사를 옮긴 뒤 1938년 경성매동공립심상소학교, 1941년 경성매동공립국민학교로 이름이 바뀌며 서사 제창 시기 내내 이 자리에 있었다."
   },
   {
    "id": "claim-hs-c5-seosa-loc",
-   "subject": "place-hs-c5-singung",
+   "subject": "place-hs-c5-maedong",
    "predicate": "syj:locatedAt",
    "object": {
     "kind": "location",
-    "lat": 37.55361,
-    "lon": 126.98278,
-    "precision": "area"
+    "lat": 37.5773161,
+    "lon": 126.9667696,
+    "precision": "site"
    },
-   "sourceId": "src-hs-ko-singung",
-   "citesExcerpt": "ex-geo-singung",
-   "note": "조선신궁 위키백과 표시 좌표."
+   "sourceId": "src-hs-ko-maedong",
+   "citesExcerpt": "ex-geo-maedong",
+   "note": "경성매동공립국민학교(현 서울매동초등학교) 위키백과 표시 좌표."
   },
   {
    "id": "claim-hs-c5-bocheonbo-1937",
@@ -1654,7 +1697,7 @@
   },
   {
    "id": "claim-hs-c5-gwangbokgun-ji",
-   "subject": "person-hs-ji-cheongcheon",
+   "subject": "person-hs-c4-ji-cheongcheon",
    "predicate": "syj:participatedIn",
    "object": {
     "kind": "entity",
@@ -1886,7 +1929,7 @@
    },
    "sourceId": "src-hs-enc-josoang",
    "citesExcerpt": "ex-josoang-gangnyeong",
-   "note": "조소앙이 삼균주의를 국시로 한 건국 강령을 채택하게 했다."
+   "note": "조소앙이 삼균주의를 국시로 한 건국 강령을 채택하게 했다. 백과 '조소앙' 항목은 1934년 국무회의의 채택으로 적고 '대한민국 임시정부' 항목은 1941년 11월 발표로 적는다. 이 장면의 연도는 1941년 발표(claim-hs-c5-gangnyeong-1941·-enc)를 따른다."
   },
   {
    "id": "claim-hs-c5-gangnyeong-enc",
@@ -2317,11 +2360,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-hs-c5-nagoya"
+    "id": "polity-hs-c5-joseon"
    },
    "sourceId": "src-hs-ko-jeongsindae",
    "citesExcerpt": "ex-jeongsindae-act",
-   "note": "동원된 여성들은 군수공장 등에 투입되었다."
+   "note": "조선에서 동원된 여성들이 군수공장 등에 투입되었다. 나고야 공장 주장은 claim-hs-c5-jeongsin-nagoya 가 맡는다."
   },
   {
    "id": "claim-hs-c5-jeongsin-nagoya",
@@ -2333,7 +2376,7 @@
    },
    "sourceId": "src-hs-ko-jeongsindae",
    "citesExcerpt": "ex-jeongsindae-nagoya",
-   "note": "미쓰비시 나고야항공기제작소 도토쿠 공장이 동원처의 하나였다."
+   "note": "미쓰비시 나고야항공기제작소 도토쿠 공장이 동원처의 하나였고 이 장면의 대표 장소다."
   },
   {
    "id": "claim-hs-c5-jeongsin-law",
@@ -2425,28 +2468,28 @@
    "startYear": 1937,
    "endYear": 1945,
    "kind": "ritual",
-   "summary": "조선총독부가 1937년 10월 2일 황국 신민 서사를 만들어 학교 조회와 각종 의식에서 날마다 외우게 했다. 신사 참배 강요와 한 묶음으로 이루어진 정책이라 남산 조선신궁을 무대로 삼았다.",
+   "summary": "조선총독부가 1937년 10월 2일 황국 신민 서사를 만들어 학교 조회와 각종 의식에서 날마다 외우게 했고 교실 정면에는 서약 액자를 걸게 했다. 전국 학교가 무대여서 경성의 공립보통학교 한 곳을 대표 자리로 삼았다.",
    "dateClaimIds": [
     "claim-hs-c5-seosa-1937"
    ],
    "actionClaimIds": [
     "claim-hs-c5-seosa-act",
-    "claim-hs-c5-seosa-singsa"
+    "claim-hs-c5-seosa-school"
    ],
    "place": {
-    "label": "경성 남산 조선신궁",
+    "label": "경성매동공립국민학교(현 서울매동초등학교)",
     "medium": "land",
-    "precision": "area",
-    "lon": 126.98278,
-    "lat": 37.55361,
+    "precision": "site",
+    "lon": 126.9667696,
+    "lat": 37.5773161,
     "claimIds": [
      "claim-hs-c5-seosa-loc"
     ],
     "coordinateSourceIds": [
-     "src-hs-ko-singung"
+     "src-hs-ko-maedong"
     ],
-    "coordinateNote": "서사 제창은 전국 학교에서 이루어졌다. 신사 참배와 묶인 정책이라 경성의 대표 신사인 조선신궁의 위키백과 표시 좌표를 대표점으로 썼다.",
-    "setting": "temple"
+    "coordinateNote": "서사 제창은 전국 학교와 관공서에서 이루어졌다. 특정 학교를 지목한 기록이 아니라, 1933년부터 같은 자리를 지킨 경성의 공립보통학교(매동)의 위키백과 표시 좌표를 대표점으로 썼다. 신사참배 항목(조선신궁)과는 별개 대표점이다.",
+    "setting": "academy"
    },
    "participants": [],
    "effects": {
@@ -2462,7 +2505,9 @@
    "region": "central",
    "decade": 1930,
    "relatedClaimIds": [
-    "claim-hs-c5-seosa-loc"
+    "claim-hs-c5-seosa-singsa",
+    "claim-hs-c5-seosa-loc",
+    "claim-hs-c5-seosa-maedong-1933"
    ],
    "persistence": {
     "kind": "institution",
@@ -2713,7 +2758,7 @@
     "claim-hs-c5-yuksa-death"
    ],
    "place": {
-    "label": "안동 도산면 원촌 일대",
+    "label": "안동 도산면 원촌(도산서원 표시점)",
     "medium": "land",
     "precision": "area",
     "lon": 128.83778,
@@ -2789,7 +2834,7 @@
    },
    "participants": [
     {
-     "entityId": "person-hs-ji-cheongcheon",
+     "entityId": "person-hs-c4-ji-cheongcheon",
      "role": "commander",
      "presence": "on-site",
      "side": "a",
@@ -3038,7 +3083,7 @@
    "startYear": 1941,
    "endYear": 1945,
    "kind": "portrait",
-   "summary": "북간도 명동촌에서 태어나 1941년 연희전문 문과를 마치고 일본으로 건너갔다. 1943년 붙잡혀 2년형을 받고 1945년 2월 후쿠오카 형무소에서 스물여덟에 숨졌다.",
+   "summary": "북간도 명동촌에서 태어나 1941년 연희전문 문과를 마치고 일본으로 건너갔다. 1943년 붙잡혀 2년형을 받고 1945년 2월 후쿠오카 형무소에서 스물일곱에 숨졌다.",
    "dateClaimIds": [
     "claim-hs-c5-yundongju-1941"
    ],
@@ -3047,7 +3092,7 @@
     "claim-hs-c5-yundongju-death"
    ],
    "place": {
-    "label": "북간도 명동촌",
+    "label": "북간도 명동촌(룽징 시가 표시점)",
     "medium": "land",
     "precision": "area",
     "lon": 129.433,
@@ -3287,7 +3332,7 @@
     "coordinateSourceIds": [
      "src-hs-ko-daegu"
     ],
-    "coordinateNote": "학도 지원병은 전국에서 징집되었다. 부대 터의 십진 좌표 근거를 찾지 못해 대구광역시 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "학도 지원병은 전국에서 징집되었다. 1943년 10월 20일 제도 공포의 무대는 경성의 총독부였으나, 십진 좌표 근거가 있는 구체 장소로 1944년 8월 대구 24부대(대구 80연대) 학병 의거를 대표 장면으로 삼아 대구를 점으로 썼다. 부대 터의 십진 좌표 근거를 찾지 못해 대구광역시 표시 좌표를 썼다.",
     "setting": "battle"
    },
    "participants": [],
@@ -3484,20 +3529,22 @@
    "decade": 1930,
    "year": 1937,
    "yearVerbatim": "1937년 10월 2일",
-   "placeLabel": "경성 남산 조선신궁",
-   "modernPlace": "서울특별시 중구 남산",
+   "placeLabel": "경성매동공립국민학교(현 서울매동초등학교)",
+   "modernPlace": "서울특별시 종로구 필운동",
    "what": "학교와 직장에서 날마다 외우게 한 충성 맹세문",
    "claimIds": [
     "claim-hs-c5-seosa-1937",
     "claim-hs-c5-seosa-act",
+    "claim-hs-c5-seosa-school",
     "claim-hs-c5-seosa-singsa",
+    "claim-hs-c5-seosa-maedong-1933",
     "claim-hs-c5-seosa-loc"
    ],
    "sceneId": "scene-hs-c5-seosa",
    "confidence": "high",
-   "note": "[10한사2-01-04] · standard · 서사 제창은 전국 학교에서 이루어졌다. 신사 참배와 묶인 정책이라 경성의 대표 신사인 조선신궁의 위키백과 표시 좌표를 대표점으로 썼다.",
-   "lon": 126.98278,
-   "lat": 37.55361,
+   "note": "[10한사2-01-04] · standard · 서사 제창은 전국 학교와 관공서에서 이루어졌다. 특정 학교를 지목한 기록이 아니라 1933년부터 같은 자리를 지킨 경성의 공립보통학교(매동)의 위키백과 표시 좌표를 대표점으로 썼다. 신사참배 항목(colonial-4 조선신궁)과 좌표가 겹치지 않도록 별개 대표점을 골랐다. · 항목 type 은 society 지만 민족 말살·교육 정책이라 category 는 settlement 대신 culture 로 두었다.",
+   "lon": 126.9667696,
+   "lat": 37.5773161,
    "coordinateBasis": "location claim-hs-c5-seosa-loc",
    "persistence": {
     "kind": "institution",
@@ -3549,7 +3596,7 @@
    ],
    "sceneId": "scene-hs-c5-uiyongdae",
    "confidence": "high",
-   "note": "[10한사2-01-05] · core · 한커우는 현재 우한시의 일부다. 구체 창설 장소의 십진 좌표 근거를 찾지 못해 우한시 표시 좌표를 대표점으로 썼다. · 해외(국외) 항목이다",
+   "note": "[10한사2-01-05] · core · 한커우는 현재 우한시의 일부다. 구체 창설 장소의 십진 좌표 근거를 찾지 못해 우한시 표시 좌표를 대표점으로 썼다. · 해외(국외) 항목이다 · 항목 type 은 institution 이지만 무장 부대라 category 는 administration 대신 war 로 두었다.",
    "lon": 114.2975,
    "lat": 30.595,
    "coordinateBasis": "location claim-hs-c5-uiyongdae-loc",
@@ -3620,7 +3667,7 @@
    "decade": 1930,
    "year": 1939,
    "yearVerbatim": "1939.8.",
-   "placeLabel": "안동 도산면 원촌",
+   "placeLabel": "안동 도산면 원촌(도산서원 표시점)",
    "modernPlace": "경상북도 안동시 도산면",
    "what": "의열단원이자 시인으로 저항의 언어를 남긴 사람",
    "claimIds": [
@@ -3632,7 +3679,7 @@
    ],
    "sceneId": "scene-hs-c5-yuksa",
    "confidence": "high",
-   "note": "[10한사2-01-04] · standard · 생가 터는 안동댐 수몰로 옮겨졌고 원촌의 십진 좌표 근거를 찾지 못해 같은 도산면의 도산서원 표시 좌표를 대표점으로 썼다.",
+   "note": "[10한사2-01-04] · standard · 생가 터는 안동댐 수몰로 옮겨졌고 원촌의 십진 좌표 근거를 찾지 못해 같은 도산면의 도산서원 표시 좌표를 대표점으로 썼다. 점의 정체가 드러나도록 라벨에 표시점을 밝혔다.",
    "lon": 128.83778,
    "lat": 36.72722,
    "coordinateBasis": "location claim-hs-c5-yuksa-loc"
@@ -3655,7 +3702,7 @@
    ],
    "sceneId": "scene-hs-c5-gwangbokgun",
    "confidence": "high",
-   "note": "[10한사2-01-05] · core · 가릉빈관 자체의 십진 좌표 근거를 찾지 못해 충칭시 표시 좌표를 대표점으로 썼다. · 해외(국외) 항목이다",
+   "note": "[10한사2-01-05] · core · 가릉빈관 자체의 십진 좌표 근거를 찾지 못해 충칭시 표시 좌표를 대표점으로 썼다. · 해외(국외) 항목이다 · 항목 type 은 institution 이지만 정규군이라 category 는 administration 대신 war 로 두었다.",
    "lon": 106.5504,
    "lat": 29.5637,
    "coordinateBasis": "location claim-hs-c5-gwangbokgun-loc",
@@ -3684,7 +3731,7 @@
    ],
    "sceneId": "scene-hs-c5-changssi",
    "confidence": "high",
-   "note": "[10한사2-01-04] · core · 창씨 신고는 전국 부·읍·면 호적계에서 받았다. 경성부청 자리에 선 현 서울특별시청의 표시 좌표를 대표점으로 썼다.",
+   "note": "[10한사2-01-04] · core · 창씨 신고는 전국 부·읍·면 호적계에서 받았다. 경성부청 자리에 선 현 서울특별시청의 표시 좌표를 대표점으로 썼다. · 항목 type 은 society 지만 민족 말살 정책이라 category 는 settlement 대신 culture 로 두었다.",
    "lon": 126.977717,
    "lat": 37.566381,
    "coordinateBasis": "location claim-hs-c5-changssi-loc"
@@ -3757,7 +3804,7 @@
    ],
    "sceneId": "scene-hs-c5-gangnyeong",
    "confidence": "high",
-   "note": "[10한사2-01-05] · standard · 같은 충칭 청사에서 나온 다른 항목과 화면에서 겹치지 않도록 충칭시 표시 좌표 가운데 행정 중심 값을 대표점으로 썼다. · 해외(국외) 항목이다",
+   "note": "[10한사2-01-05] · standard · 같은 충칭 청사에서 나온 다른 항목과 화면에서 겹치지 않도록 충칭시 표시 좌표 가운데 행정 중심 값을 대표점으로 썼다. · 해외(국외) 항목이다 · 백과 '조소앙' 항목은 건국 강령 채택을 1934년 국무회의로 적어 1941년 11월 발표와 연도가 다르다. 장면은 1941년 발표를 따랐다.",
    "lon": 106.567,
    "lat": 29.55,
    "coordinateBasis": "location claim-hs-c5-gangnyeong-loc"
@@ -3770,7 +3817,7 @@
    "decade": 1940,
    "year": 1941,
    "yearVerbatim": "1941년",
-   "placeLabel": "북간도 명동촌",
+   "placeLabel": "북간도 명동촌(룽징 시가 표시점)",
    "modernPlace": "중국 지린성 룽징시 지신진",
    "what": "부끄러움을 노래하다 일본 감옥에서 숨진 스물일곱 시인",
    "claimIds": [
@@ -3782,7 +3829,7 @@
    ],
    "sceneId": "scene-hs-c5-yundongju",
    "confidence": "high",
-   "note": "[10한사2-01-04] · standard · 명동촌은 룽징 서남 15km에 있다. 마을의 십진 좌표 근거를 찾지 못해 룽징시 표시 좌표를 대표점으로 썼다. · 해외(국외) 항목이다",
+   "note": "[10한사2-01-04] · standard · 명동촌은 룽징 서남 15km에 있다. 마을의 십진 좌표 근거를 찾지 못해 룽징시 표시 좌표를 대표점으로 썼다. · 해외(국외) 항목이다 · 백과사전은 세는 나이로 28세라 적고 항목 문구의 '스물일곱'은 만 나이다.",
    "lon": 129.433,
    "lat": 42.767,
    "coordinateBasis": "location claim-hs-c5-yundongju-loc"
@@ -3807,7 +3854,7 @@
    ],
    "sceneId": "scene-hs-c5-dongmaeng",
    "confidence": "high",
-   "note": "[10한사2-01-05] · standard · 결성지는 화북 타이항산 일대였고 본부는 뒤에 옌안으로 옮겼다. 타이항산 근거지의 십진 좌표 근거를 찾지 못해 옌안 표시 좌표를 대표점으로 썼다. · 해외(국외) 항목이다",
+   "note": "[10한사2-01-05] · standard · 결성지는 화북 타이항산 일대였고 본부는 뒤에 옌안으로 옮겼다. 타이항산 근거지의 십진 좌표 근거를 찾지 못해 옌안 표시 좌표를 대표점으로 썼다. · 해외(국외) 항목이다 · 항목 type 은 institution 이지만 무장 조직이라 category 는 administration 대신 war 로 두었다.",
    "lon": 109.494,
    "lat": 36.65,
    "coordinateBasis": "location claim-hs-c5-dongmaeng-loc",
@@ -3885,7 +3932,7 @@
    ],
    "sceneId": "scene-hs-c5-hakdo",
    "confidence": "high",
-   "note": "[10한사2-01-01] · standard · 학도 지원병은 전국에서 징집되었다. 부대 터의 십진 좌표 근거를 찾지 못해 대구광역시 표시 좌표를 대표점으로 썼다.",
+   "note": "[10한사2-01-01] · standard · 학도 지원병은 전국에서 징집되었다. 1943년 10월 20일 제도 공포의 무대는 경성의 총독부였으나, 십진 좌표 근거가 있는 구체 장소로 1944년 8월 대구 24부대(대구 80연대) 학병 의거를 대표 장면으로 삼아 대구를 점으로 썼다. 부대 터의 십진 좌표 근거를 찾지 못해 대구광역시 표시 좌표를 썼다. · 항목 type 은 event 지만 병력 동원이라 category 는 war 로 두었다.",
    "lon": 128.60139,
    "lat": 35.87139,
    "coordinateBasis": "location claim-hs-c5-hakdo-loc"
@@ -3939,7 +3986,7 @@
    ],
    "sceneId": "scene-hs-c5-jeongsin",
    "confidence": "high",
-   "note": "[10한사2-01-04] · standard · 공장 터의 십진 좌표 근거를 찾지 못해 나고야시 표시 좌표를 대표점으로 썼다. · 해외(국외) 항목이다",
+   "note": "[10한사2-01-04] · standard · 공장 터의 십진 좌표 근거를 찾지 못해 나고야시 표시 좌표를 대표점으로 썼다. · 동원 행위 주장(claim-hs-c5-jeongsin-act)과 나고야 장소 주장(claim-hs-c5-jeongsin-nagoya)의 근거를 각각 맞는 발췌에 붙였다. · 해외(국외) 항목이다",
    "lon": 136.9,
    "lat": 35.183,
    "coordinateBasis": "location claim-hs-c5-jeongsin-loc"

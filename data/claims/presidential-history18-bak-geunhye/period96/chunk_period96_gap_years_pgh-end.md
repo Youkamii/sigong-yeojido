@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-pgh-end",
+    "subject": "person-presidential-bak-geunhye",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "2017년 3월 10일",
+      "year": 2017,
+      "precision": "day",
+      "earliest": 2017,
+      "latest": 2017,
+      "id": "ts-curriculum-contemporary-contemporary-5-hs-c5-pgh-end"
+    },
+    "citesChunk": "chunk_period96_gap_years_pgh-end",
+    "quote": "파면 (2017년 3월 10일, 헌법재판소 탄핵결정으로 파면)",
+    "note": "대통령기록관의 재임 종료 기록",
+    "fromSource": "src-presidential-history18-bak-geunhye",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

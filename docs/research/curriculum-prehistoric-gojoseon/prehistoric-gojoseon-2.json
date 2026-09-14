@@ -1,9 +1,9 @@
 {
   "job": "prehistoric-gojoseon-2",
-  "sources": 65,
-  "excerpts": 121,
-  "chunkClaims": 10,
-  "excerptClaims": 128,
+  "sources": 66,
+  "excerpts": 126,
+  "chunkClaims": 11,
+  "excerptClaims": 131,
   "facts": 28,
   "factsByCategory": {
     "administration": 3,
@@ -15,8 +15,8 @@
     "settlement": 7,
     "war": 2
   },
-  "claims": 138,
-  "entities": 78,
+  "claims": 142,
+  "entities": 80,
   "rawFilesChecked": [
     {
       "source": "src-hs-enc-goindol",
@@ -135,8 +135,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0061664",
       "sha256": "50b6e44cc114e8cc7673080120b3960ba7fc34e27386fa10f989edaf15de5362",
       "rawBytes": 77739,
-      "excerpts": 4,
-      "quotedWords": 19
+      "excerpts": 5,
+      "quotedWords": 25
     },
     {
       "source": "src-hs-enc-nangnang",
@@ -183,8 +183,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0016693",
       "sha256": "ec02a5674da7d59d2cbb0e7c28f1d5027127c4203a98bc64fa8f62848c42c026",
       "rawBytes": 102252,
-      "excerpts": 3,
-      "quotedWords": 16
+      "excerpts": 4,
+      "quotedWords": 24
     },
     {
       "source": "src-hs-enc-chaekhwa",
@@ -271,8 +271,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0043208",
       "sha256": "3351d36fdad5537b456d92dacbe7ba5b9c5b07da8e416c9039d675a4edb5cdd7",
       "rawBytes": 115181,
-      "excerpts": 2,
-      "quotedWords": 11
+      "excerpts": 3,
+      "quotedWords": 17
     },
     {
       "source": "src-hs-enc-sinchangdong",
@@ -303,8 +303,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0010994",
       "sha256": "85f4679f8c09bbd356ae6d73f2d6dc006351971e138812da31076d7f84184c1e",
       "rawBytes": 114229,
-      "excerpts": 2,
-      "quotedWords": 14
+      "excerpts": 3,
+      "quotedWords": 22
     },
     {
       "source": "src-hs-enc-jolbon",
@@ -537,6 +537,14 @@
       "rawBytes": 114049,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs-en-haicheng",
+      "url": "https://en.wikipedia.org/wiki/Haicheng,_Liaoning",
+      "sha256": "8b4a60cc6352b7bce291523fa6cef039b39bb606bef8896e0389755236f8d841",
+      "rawBytes": 190160,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -551,12 +559,14 @@
     "started": 1789689600,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-prehistoric-gojoseon-2"
+    "sessionId": "workflow-prehistoric-gojoseon-2",
+    "revised": 1789379666
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-onyeosanseong"
+    "place-hs-uirimji",
+    "thing-hs-jeosuji"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

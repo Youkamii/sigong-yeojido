@@ -1,0 +1,164 @@
+{
+ "job": "joseon-late-5",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-joseon-late --job joseon-late-5 -> PASS: failures=0 warnings=0 (facts=23, scenes=23, claims=100, chunkClaims=31, excerptClaims=69). category x decade / region x decade 표 정상 출력, exit 0.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-jungin-socheong",
+   "factId": "fact-hs-jl5-016",
+   "sceneId": "scene-hs-jl5-jungin-socheong",
+   "claimId": "claim-jl5-jungin-1851",
+   "problem": "중인(역관·의관 등 기술관)의 통청 상소 항목인데, 연도·행위 근거 3건이 모두 다른 신분층인 서얼의 허통 기록이다. claim-jl5-jungin-1851 은 '1851년(철종 2)에는 지금까지 사족만이 들어갈 수 있던 승문원(承文院)과 선천'(한국민족문화대백과사전 '허통'), claim-jl5-jungin-1823 은 '1823년(순조 23) 만 여명에 달하는 서얼 유생들이 집단적으로 허통 요청을 상소하였다'로 둘 다 서얼 대상이고, claim-jl5-jungin-def 는 중인의 정의문일 뿐 상소 사실을 말하지 않는다. scene.summary 도 '역관·의관 같은 기술직과 서얼은 벼슬길이 막혀 있었다 … 1823년에는 서얼 유생 만여 명이 함께 상소했고, 1851년에는 승문원과 선천의 문이 열렸다'로 서얼 사례를 중인 신분 상승 운동으로 읽히게 이어 붙였다. 서얼 허통과 중인 통청운동은 대상 신분과 법적 근거가 다른 별개 사안이다.",
+   "fix": "중인 통청운동 자체의 근거(한국민족문화대백과사전 '통청운동'·'서얼허통' 외 중인 소청 관련 항목, 우리역사넷 신편 한국사 근세 신분편)를 새로 받아 claims 를 교체한다. 근거를 끝내 못 찾으면 curriculum-items-brief 의 조사 규칙 1(근거 없는 항목은 facts 에 confidence 'low' 로만 남기고 장면은 만들지 않는다)에 따라 scene-hs-jl5-jungin-socheong 과 images.json 의 같은 itemId 항목을 지우고 missing[] 만 남긴다. 장면을 유지한다면 summary 에서 '서얼'과 '중인'을 한 문장으로 잇지 말고, 인용한 1823·1851 기록이 서얼 사례임을 문장 안에 분명히 적는다.",
+   "evidence": "raw/enc-heotong.html 본문: '이에 1823년(순조 23) 만 여명에 달하는 서얼 유생들이 집단적으로 허통 요청을 상소하였다. … 1851년(철종 2)에는 지금까지 사족만이 들어갈 수 있던 승문원(承文院)과 선천(宣薦…)에 허통되었다.' — 문단 전체가 서얼 허통 서술이다. raw/enc-jungin.html 을 텍스트로 펴서 검색하면 '1851'·'통청'·'소청' 문자열이 하나도 없다(중인 항목에는 통청운동 서술 자체가 없음)."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-choe-jeu",
+   "factId": "fact-hs-jl5-017",
+   "sceneId": "scene-hs-jl5-choe-jeu",
+   "claimId": "claim-jl5-choe-gamyeong",
+   "problem": "fact.year 1860 · scene.startYear 1860 인 최제우 인물 장면을 1864년 처형지인 대구 경상감영(128.59222, 35.87222)에 놓았다. 1860년의 최제우는 경주 용담정에 있었음이 같은 조사의 근거로 확인된다(chunk cj-yongdam: '1859년 10월 처자를 거느리고 경주로 돌아온 뒤 구미산 용담정(龍潭亭)에서 계속 수련하였다'). 화면 카드에는 '최제우 · 1860년 · 대구 경상감영'으로 나와 연도와 장소가 어긋난다. place.coordinateNote 가 든 이유('용담정은 동학 창시 장면이 쓰고 있어서')도 성립하지 않는다 — 항목 items.json 이 준 최제우 좌표(경주 가정리 생가 터 129.1552/35.9098)와 용담정(129.1463/35.9181)은 약 1.2 km 떨어져 있어 같은 점으로 겹치지 않는다.",
+   "fix": "경주 가정리(생가 터·최제우 유허지) 또는 용담정 인근의 별도 좌표 근거(위키백과 '최제우'·'경주 최제우 유허지' 표시 좌표)를 raw/ 에 받아 location claim 을 만들고 장면을 경주로 되돌린다. 1864년 대구 처형은 지금처럼 claim-jl5-choe-1864·claim-jl5-choe-gamyeong 과 summary 로만 남긴다. 부득이 대구를 쓰려면 fact.year·scene.startYear 를 1864로 바꾸고 항목 연도(1860)를 바꾼 이유를 note 에 적는다.",
+   "evidence": "result.json scene-hs-jl5-choe-jeu.place = {lon 128.59222, lat 35.87222, label '대구 경상감영'}, startYear 1860. 근거 chunk_scenes-103_joseon_late_scenes_cj-yongdam(src-ek-choe-jeu-e0057640) 원문 '1859년 10월 처자를 거느리고 경주로 돌아온 뒤 구미산 용담정(龍潭亭)에서 계속 수련하였다.' / raw/enc-donghak.html '1864년 봄, 대구감영에서 혹세무민죄로 사형에 처하여졌다.' / items.json 의 최제우 place lon 129.1552 lat 35.9098, 동학 창시 place lon 129.1463 lat 35.9181 (약 1.2 km)."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-late-jungin-socheong",
+   "factId": "fact-hs-jl5-016",
+   "sceneId": "scene-hs-jl5-jungin-socheong",
+   "claimId": "claim-jl5-loc-injeongjeon",
+   "problem": "서울 항목의 좌표가 한 점에 겹친다. scene-hs-jl5-jungin-socheong(창덕궁 인정전 126.99111/37.57944)과 scene-hs-jl5-gongnobi-emancipation(창덕궁 126.991175/37.57948333)의 거리가 약 7.5 m로 지도에서 완전히 같은 점이 된다. 같은 창덕궁 권역의 scene-hs-jl5-yu-deukgong(규장각 126.9895/37.579028)도 149~156 m 안쪽이라 세 항목이 한 덩어리로 뭉친다. brief 의 '같은 도시 항목이 한 점에 겹치지 않게' 규칙 위반이다.",
+   "fix": "두 장면 가운데 하나를 다른 구체 장소로 옮긴다. 예: 공노비 해방은 항목이 준 창덕궁 돈화문 앞 월대(돈화문 표시 좌표를 새 location claim 으로) 로, 중인 상소 장면은 승문원·육조 거리 쪽 좌표로 분리한다. 어느 쪽이든 옮긴 좌표에 새 좌표 근거(위키백과 표시 좌표 등)를 붙이고 fact.coordinateBasis·place.claimIds 를 함께 고친다. (중인 항목을 첫 번째 major 지적대로 장면 없이 남기면 이 겹침도 함께 해소된다.)",
+   "evidence": "result.json 좌표로 계산한 장면 간 거리: 공노비(창덕궁) ↔ 중인(창덕궁 인정전) 7.5 m, 유득공(규장각) ↔ 중인 149.3 m, 유득공 ↔ 공노비 156.2 m."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-sedo-politics",
+   "factId": "fact-hs-jl5-008",
+   "sceneId": "scene-hs-jl5-sedo-politics",
+   "claimId": "claim-jl5-sedo-1802",
+   "problem": "persistence 를 1800~1863 으로 두었는데, 근거로 든 한국민족문화대백과사전 '세도정치' 본문은 순조 즉위 직후 정순왕후 수렴청정기를 두고 '이들의 정국 운영은 앞 시기 붕당인 노론 중심의 정치를 재현하려는 것이었으므로 세도정치라고 불리지 않는다'고 명시한다. 시작 연도가 인용 출처와 어긋나는데 note 에는 '항목의 범위'라고만 적혀 있다.",
+   "fix": "persistence.from 을 김조순이 국구가 된 1802(또는 안동김씨 권력이 굳어진 1804·1812)로 조정하거나, from 1800 을 유지하려면 note 에 '인용 출처는 1800~1804 수렴청정기를 세도정치로 보지 않는다'는 단서를 적는다.",
+   "evidence": "raw/enc-sedo.html: '순조가 11세의 나이로 즉위하자 … 벽파(僻派)가 정치를 주도했다. 하지만 이들의 정국 운영은 … 세도정치라고 불리지 않는다.' / '김조순은 … 1802년(순조 2) 자기 딸을 왕비로 들이는 데 성공하여 국구(國舅)의 지위를 얻었다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-pansori",
+   "factId": "fact-hs-jl5-007",
+   "sceneId": "scene-hs-jl5-pansori",
+   "claimId": "claim-jl5-loc-sinjaehyo",
+   "problem": "1800년 장면을 고창 신재효 고택에 놓았는데, 좌표 근거로 쓴 바로 그 위키백과 문서가 신재효의 생몰을 1812~1884, 고택 건립을 '철종 1년(1850)에 지은 것으로 짐작'이라고 적는다. 1800년에는 그 인물도 그 집도 없었다. note 는 연도가 대표값이라는 점만 밝히고 장소의 시대 불일치는 언급하지 않는다.",
+   "fix": "fact.year·scene.startYear 를 신재효 활동기(1850년대)로 옮기거나, 1800 을 유지하려면 note·place.coordinateNote 에 '신재효(1812~1884)와 고택(1850년경)은 뒤 시기이며 좌표는 판소리 집대성지를 가리키는 표시점'이라고 적는다.",
+   "evidence": "raw/ko-sinjaehyo-gotaek.html: '판소리 이론가면서 판소리를 집대성한 신재효(1812∼1884)가 살던 집이다. 철종 1년(1850)에 지은 것으로 짐작하며…'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-daedong-yeojido",
+   "factId": "fact-hs-jl5-019",
+   "sceneId": "scene-hs-jl5-daedong-yeojido",
+   "claimId": "claim-jl5-loc-seoul-museum",
+   "problem": "heritage 장면에 persistence {kind:'facility', from:1861, to:null} 을 걸어 두고 좌표는 2002년 개관한 서울역사박물관에 두었다. facts-format 의 facility persistence 는 '건립 장면 이후 지정 기간에 같은 자리에 존속'을 뜻하므로, 1861년부터 새문안로 자리에 시설이 있었다는 표시가 된다. 참고 칸(joseon-early-2)은 혼천의·자격루 같은 유물을 당대 소재지인 경복궁에 두었다.",
+   "fix": "제작 당시 위치(한양 도성 안 표시점)로 옮기거나 — 김정호 장면과 겹치지 않는 점을 고른다 — 좌표를 현 소장처로 유지한다면 fact.note 와 place.coordinateNote 에 '좌표는 현재 소장처이며 1861년에 그 자리에 있었다는 뜻이 아니다'를 명시한다.",
+   "evidence": "raw/ko-seoul-museum.html: '2002년 5월 21일 개관하였다.' / result.json scene-hs-jl5-daedong-yeojido.persistence = {kind 'facility', from 1861, to null}. 대조: curriculum-joseon-early/joseon-early-2 의 scene-hs-honcheonui(artifact)는 경복궁 좌표에 1433~1592 로 두었다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-sin-yunbok",
+   "factId": "fact-hs-jl5-011",
+   "sceneId": "scene-hs-jl5-sin-yunbok",
+   "claimId": "claim-jl5-sinyunbok-1758",
+   "problem": "유일한 연도 근거인 bornIn 1758 이 같은 문서의 도판 설명('신윤복(申潤福, 1758~?)이 그린 여인의 모습')에서 나왔는데, 같은 문서 본문 인적사항은 '출생 연도 미상 / 사망 연도 미상'이라고 적는다. 출처 안에서 상충하는 값을 단일 근거로 삼았고, 그 생년이 1805년 장면의 dateClaim 노릇까지 하고 있다.",
+   "fix": "note 에 '출처 본문은 생몰 연도를 미상으로 적고 도판 설명만 1758년생으로 적는다'는 단서를 넣거나, 활동 시기를 말하는 다른 근거(도화서 화원 활동·주요 관직 첨절제사 등)를 dateClaim 으로 보강한다.",
+   "evidence": "raw/enc-sin-yunbok.html 인적사항: '성별 남성 출생 연도 미상 사망 연도 미상 본관 고령(高靈)' / 도판 설명: '신윤복(申潤福, 1758~?)이 그린 여인의 모습'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-jeonggamrok",
+   "factId": "fact-hs-jl5-005",
+   "sceneId": "scene-hs-jl5-jeonggamrok",
+   "claimId": "claim-jl5-jeonggam-1862",
+   "problem": "fact.year 가 그 장면의 dateClaim 연도와 다른 항목이 4건이다 — 정감록(fact.year 1800 / dateClaim 1862), 판소리(1800 / 1754), 세도 정치(1800 / 1802), 신윤복(1805 / 1758). note 에 대표값이라고 적어 두어 은폐는 아니지만, 카드에 뜨는 연도와 근거 연도가 서로 다른 상태가 그대로 남는다.",
+   "fix": "가능한 항목은 fact.year 를 근거 연도에 맞추고(세도 정치 1800→1802 등), 대표값을 유지해야 하는 항목은 yearVerbatim 과 note 에 '표시 연도는 대표값, 근거 연도는 NNNN' 형식으로 한 줄로 통일해 적는다.",
+   "evidence": "fact-hs-jl5-005(year 1800, dateClaim claim-jl5-jeonggam-1862=1862), fact-hs-jl5-007(1800 / claim-jl5-pansori-1754=1754), fact-hs-jl5-008(1800 / claim-jl5-sedo-1802=1802), fact-hs-jl5-011(1805 / claim-jl5-sinyunbok-1758=1758)."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-choe-jeu",
+   "factId": "fact-hs-jl5-017",
+   "sceneId": "scene-hs-jl5-choe-jeu",
+   "claimId": "claim-jl5-choe-1864",
+   "problem": "cell.to 가 1863 인데 최제우 장면의 endYear 는 1864 다(항목 items.json 의 yearEnd 도 1864). 칸 범위를 벗어난 장면이 하나 남는다.",
+   "fix": "cell.to 를 1864 로 넓히거나, 장면 endYear 를 1863 으로 자르고 1864년 처형은 claim·summary 로만 남긴다. 어느 쪽이든 한쪽으로 맞춘다.",
+   "evidence": "result.json cell = {from 1784, to 1863}; scene-hs-jl5-choe-jeu.endYear = 1864; items.json hs-joseon-late-choe-jeu.yearEnd = 1864."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-samjeong-ijeongcheong",
+   "factId": "fact-hs-jl5-023",
+   "sceneId": "scene-hs-jl5-samjeong-ijeongcheong",
+   "claimId": "claim-jl5-loc-gyeongbokgung",
+   "problem": "세도 정치(광화문 126.9770194/37.5760444)와 삼정이정청(경복궁 126.97722222/37.57861111)이 약 286 m 거리이고 라벨도 '한양 육조 거리(광화문 앞)' / '한양 육조 거리 북쪽'으로 사실상 같은 거리를 두 번 가리킨다. 겹침 판정까지는 아니지만 지도에서 두 카드가 붙어 보인다.",
+   "fix": "삼정이정청은 비변사·의정부 쪽(육조 거리 동편) 표시점으로 옮기거나 라벨을 서로 구분되게 고쳐 같은 거리를 두 번 쓰지 않는다. 옮기면 좌표 근거도 함께 교체한다.",
+   "evidence": "result.json 좌표 거리 계산: scene-hs-jl5-sedo-politics ↔ scene-hs-jl5-samjeong-ijeongcheong = 286.3 m."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-gongnobi-emancipation",
+   "factId": "fact-hs-jl5-009",
+   "sceneId": "scene-hs-jl5-gongnobi-emancipation",
+   "claimId": "claim-jl5-gongnobi-1801",
+   "problem": "scene.kind 가 'fire' 이고 summary 도 '노비의 문서를 불태우고'라고 쓰는데, 이 칸의 claim 셋(1801년 6만 6067구 해방 / 공노비 정의 / 창덕궁 무대) 어디에도 노비안 소각 사실이 없다. 소각은 항목 meaning 에서 온 서술이다. images.json 의 프롬프트도 소각 장면을 전제로 한다.",
+   "fix": "노비안 소각을 적은 근거(한국민족문화대백과사전 '내시노비'·'노비안' 항목 등)를 한 건 더 붙이거나, 근거가 없으면 summary 에서 소각을 단정하지 말고 '문서를 없애고 양인으로 풀었다' 수준으로 낮춘 뒤 note 에 소각 서술의 출처가 항목 meaning 임을 적는다.",
+   "evidence": "raw/enc-gongnobi.html 해당 문단은 '1801년(순조 1) 내수사 노비와 사노비들을 해방, 종량시켰는데, 그 수는 모두 6만 6067구였다.' 까지만 말하고 소각은 언급하지 않는다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-suwon-hwaseong",
+   "factId": "fact-hs-jl5-004",
+   "sceneId": "scene-hs-jl5-suwon-hwaseong",
+   "claimId": "claim-jl5-hwaseong-jyy",
+   "problem": "fact.what 이 '거중기까지 써서 2년 반 만에 쌓은'(항목 meaning 그대로)인데, 이 칸의 claim 은 공사 기간(1794~1796)과 정약용의 규모 구상('당초 정약용 이 생각했던 4㎞보다')·소재지뿐이고 거중기를 말하는 근거가 없다. confidence 는 high 다.",
+   "fix": "거중기 근거(한국민족문화대백과사전 '거중기'·'화성성역의궤' 항목)를 claim 으로 한 건 추가하거나, note 에 '거중기는 항목 meaning 의 서술이며 이 칸에서 근거를 달지 못했다'고 적는다.",
+   "evidence": "result.json fact-hs-jl5-004.claimIds = [hwaseong-1796, hwaseong-jyy, hwaseong-place, loc-hwaseong, jangyong-naeyoung]; 각 quote 는 '이듬해 정월부터 시작해 2년 반 만인 1796년에 완성', '당초 정약용 이 생각했던 4㎞보다', '경기도 수원시에 있는 조선후기에 축조된 성곽.' 으로 거중기 언급이 없다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-late-sinhae-tonggong",
+   "factId": "fact-hs-jl5-002",
+   "sceneId": "scene-hs-jl5-sinhae-tonggong",
+   "claimId": "claim-jl5-sinhae-act",
+   "problem": "syj:participatedIn 의 방향이 참고 칸과 반대인 claim 이 3건 있다 — claim-jl5-sinhae-act(event-hs-jl5-sinhae-tonggong → person-jl2-chae-jegong), claim-jl5-hong-fall(event → person-jl-honggyeongrae), claim-jl5-imsul-yu(event → person-jl-yu-gyechun). 검증기는 통과하지만 적재하면 '신해통공이 채제공에 참여했다'는 트리플이 된다. 같은 파일의 claim-jl5-yudeukgong-gyujanggak·claim-jl5-kjh-daejeong 은 반대로 person → place 방향이라 파일 안에서도 일관되지 않는다.",
+   "fix": "참고 칸(joseon-early-2: person-je-yi-jongmu → event-hs-tsushima 등)과 같게 subject 를 인물로, object 를 사건으로 뒤집는다. 인용·발췌는 그대로 두고 subject/object 만 교체하면 된다.",
+   "evidence": "curriculum-joseon-early/joseon-early-2/result.json 의 participatedIn 4건은 모두 person → event/thing 방향이다(claim-hs-tsushima-cmd, claim-hs-4gun-choe, claim-hs-jang-1434, claim-hs-6jin-kim)."
+  }
+ ],
+ "checkedItems": [
+  "hs-joseon-late-yu-deukgong",
+  "hs-joseon-late-sinhae-tonggong",
+  "hs-joseon-late-jangyongyeong",
+  "hs-joseon-late-suwon-hwaseong",
+  "hs-joseon-late-jeonggamrok",
+  "hs-joseon-late-minhwa",
+  "hs-joseon-late-pansori",
+  "hs-joseon-late-sedo-politics",
+  "hs-joseon-late-gongnobi-emancipation",
+  "hs-joseon-late-sinyu-persecution",
+  "hs-joseon-late-sin-yunbok",
+  "hs-joseon-late-hong-gyeongnae-rebellion",
+  "hs-joseon-late-jeong-yagyong",
+  "hs-joseon-late-gihae-persecution",
+  "hs-joseon-late-kim-jeonghui",
+  "hs-joseon-late-jungin-socheong",
+  "hs-joseon-late-choe-jeu",
+  "hs-joseon-late-donghak-founding",
+  "hs-joseon-late-daedong-yeojido",
+  "hs-joseon-late-kim-jeongho",
+  "hs-joseon-late-imsul-uprising",
+  "hs-joseon-late-samjeong-disorder",
+  "hs-joseon-late-samjeong-ijeongcheong"
+ ],
+ "summary": "검증기는 PASS(실패 0·경고 0, fact 23·scene 23·claim 100)이고 항목 23건이 모두 fact·scene·images 로 덮였다. 표본은 core 11건 전부와 나머지 12건 중 11건(총 22/23, 96%)을 로컬 chunk(search_chunks --id)와 raw/ HTML 원문으로 직접 재확인했다 — 인용 문자열, 연도, 좌표 발췌(위키백과 geo)는 모두 출처에 그대로 있었고 문맥도 맞았다. 다만 셋은 고쳐야 한다: (1) 중인 통청 항목의 근거 3건이 모두 서얼 허통 기록이라 다른 신분층의 사실을 중인 운동으로 제시한다(인용한 중인 항목 원문에는 '통청'·'1851' 문자열이 아예 없다), (2) 최제우 인물 장면이 1860년 기록인데 1864년 처형지인 대구 경상감영에 놓여 연도와 장소가 어긋나고 이동 사유로 든 좌표 중복도 실제로는 없다(용담정과 생가 터는 1.2 km), (3) 공노비 해방(창덕궁)과 중인 통청(창덕궁 인정전)이 7.5 m로 한 점에 겹친다. 그 밖에 세도 정치 존속 시작 연도가 인용 출처 서술과 충돌, 판소리 1800년 장면이 1850년경 지어진 신재효 고택에 놓인 점, 대동여지도 facility 존속을 2002년 개관 박물관 좌표에 건 점, 신윤복 생년 근거가 같은 문서 본문과 상충하는 점, fact.year 와 dateClaim 연도가 어긋난 4건, participatedIn 방향이 참고 칸과 반대인 3건 등 minor 10건을 남긴다. 교과서 본문 전재나 db.history.go.kr 사용은 없었고 manifest 35건의 URL·sha256·수집 시각도 검증기 검사에서 문제가 없었다."
+}

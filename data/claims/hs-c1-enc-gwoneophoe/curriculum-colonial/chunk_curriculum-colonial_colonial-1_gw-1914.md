@@ -21,10 +21,10 @@ status: "draft"
       "latest": 1914,
       "id": "ts-curriculum-colonial-colonial-1-hs-c1-gwoneop-1914"
     },
-    "note": "1914년 러시아 당국에 의해 해산되었다.",
+    "note": "1914년 6월 러시아 당국이 일본의 요구를 받아들여 강제로 해산시켰다.",
     "fromSource": "src-hs-c1-enc-gwoneophoe",
     "citesChunk": "chunk_curriculum-colonial_colonial-1_gw-1914",
-    "quote": "1914년 6월 대일 외교관계 악화하여",
+    "quote": "1914년 6월 대일 외교관계 악화하여 일본의 요구를 받아 들인 러시아 당국에 의해 강제로 해산되었다",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",

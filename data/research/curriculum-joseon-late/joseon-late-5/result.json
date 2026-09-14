@@ -826,6 +826,49 @@
      "locator": "article coordinates (geo)"
     }
    ]
+  },
+  {
+   "id": "src-hs-jl5-en-hyeongok",
+   "title": "Hyeongok-myeon — Wikipedia",
+   "publisher": "Wikimedia Foundation",
+   "url": "https://en.wikipedia.org/wiki/Hyeongok-myeon",
+   "rawFile": "raw/en-hyeongok-myeon.html",
+   "sha256": "13da6c97a19765ccb3753827fd21e15d00d4d8bd6f489b719a163659793bebad",
+   "httpStatus": 200,
+   "byteLength": 117310,
+   "fetchedUtc": "2026-09-14T10:14:07Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
+    {
+     "id": "ex-geo-hyeongok",
+     "text": "35.89373; 129.1699",
+     "locator": "문서 머리 좌표"
+    },
+    {
+     "id": "ex-hyeongok-gyeongju",
+     "text": "Myeon in Gyeongju, South Korea",
+     "locator": "문서 첫 줄 설명"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-jl5-ko-donhwamun",
+   "title": "돈화문 — 위키백과",
+   "publisher": "위키미디어 재단",
+   "url": "https://ko.wikipedia.org/wiki/%EB%8F%88%ED%99%94%EB%AC%B8",
+   "rawFile": "raw/ko-donhwamun.html",
+   "sha256": "7d57b7187454a2ff85cd90701cc647b60cf968920eb7ab0aa015e51d4c9ce480",
+   "httpStatus": 200,
+   "byteLength": 167943,
+   "fetchedUtc": "2026-09-14T10:14:08Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
+    {
+     "id": "ex-geo-donhwamun",
+     "text": "126.98993411424948,37.577822049476346",
+     "locator": "지도 표시 좌표"
+    }
+   ]
   }
  ],
  "entities": [
@@ -1108,6 +1151,21 @@
    "id": "event-hs-jl5-ijeongcheong",
    "type": "Event",
    "label": "삼정이정청"
+  },
+  {
+   "id": "place-hs-jl5-hyeongok",
+   "type": "Place",
+   "label": "경주 현곡면 가정리 일대"
+  },
+  {
+   "id": "place-hs-jl5-donhwamun",
+   "type": "Place",
+   "label": "창덕궁 돈화문"
+  },
+  {
+   "id": "place-hs-jl5-gyeongju",
+   "type": "Place",
+   "label": "경주"
   }
  ],
  "claims": [
@@ -1498,11 +1556,11 @@
   },
   {
    "id": "claim-jl5-sinhae-act",
-   "subject": "event-hs-jl5-sinhae-tonggong",
+   "subject": "person-jl2-chae-jegong",
    "predicate": "syj:participatedIn",
    "object": {
     "kind": "entity",
-    "id": "person-jl2-chae-jegong"
+    "id": "event-hs-jl5-sinhae-tonggong"
    },
    "sourceId": "src-hs-jl5-enc-sinhae",
    "citesExcerpt": "ex-sinhae-1791",
@@ -1964,16 +2022,16 @@
   },
   {
    "id": "claim-jl5-hong-fall",
-   "subject": "event-hs-jl5-hong-gyeongnae",
+   "subject": "person-jl-honggyeongrae",
    "predicate": "syj:participatedIn",
    "object": {
     "kind": "entity",
-    "id": "person-jl-honggyeongrae"
+    "id": "event-hs-jl5-hong-gyeongnae"
    },
    "sourceId": "src-ek-honggyeongrae-nan-e0063948",
    "citesChunk": "chunk_scenes-103_joseon_late_scenes_hg-fall",
    "quote": "관군의 화약 매설에 의한 성의 폭파로 농민군은 진압되고",
-   "note": "관군이 성을 폭파해 진압했다"
+   "note": "홍경래가 이끈 봉기는 관군이 정주성을 폭파하며 진압되었다"
   },
   {
    "id": "claim-jl5-jyy-born",
@@ -2118,34 +2176,6 @@
    "citesChunk": "chunk_period96_joseon_society_kim-jeonghui-defi",
    "quote": "조선 금석학파를 성립하고 추사체를 완성한",
    "note": "금석학과 추사체"
-  },
-  {
-   "id": "claim-jl5-jungin-1851",
-   "subject": "event-hs-jl5-jungin-socheong",
-   "predicate": "syj:occurredIn",
-   "object": {
-    "kind": "time",
-    "verbatim": "1851년(철종 2)",
-    "year": 1851,
-    "precision": "year",
-    "earliest": 1851,
-    "latest": 1851
-   },
-   "sourceId": "src-hs-jl5-enc-heotong",
-   "citesExcerpt": "ex-heotong-1851",
-   "note": "1851년 승문원·선천 허통"
-  },
-  {
-   "id": "claim-jl5-jungin-1823",
-   "subject": "event-hs-jl5-jungin-socheong",
-   "predicate": "syj:relatedTo",
-   "object": {
-    "kind": "entity",
-    "id": "place-hs-jl5-injeongjeon"
-   },
-   "sourceId": "src-hs-jl5-enc-heotong",
-   "citesExcerpt": "ex-heotong-1823",
-   "note": "1823년 서얼 유생 만여 명의 집단 상소"
   },
   {
    "id": "claim-jl5-jungin-def",
@@ -2370,11 +2400,11 @@
   },
   {
    "id": "claim-jl5-imsul-yu",
-   "subject": "event-hs-jl5-imsul",
+   "subject": "person-jl-yu-gyechun",
    "predicate": "syj:participatedIn",
    "object": {
     "kind": "entity",
-    "id": "person-jl-yu-gyechun"
+    "id": "event-hs-jl5-imsul"
    },
    "sourceId": "src-ek-jinju-millan-e0054895",
    "citesChunk": "chunk_scenes-103_joseon_late_scenes_jj-yu",
@@ -2498,11 +2528,51 @@
    "predicate": "syj:tookPlaceAt",
    "object": {
     "kind": "entity",
-    "id": "place-hs-jl5-yukjo-geori"
+    "id": "place-hs-jl5-injeongjeon"
    },
    "sourceId": "src-hs-jl5-enc-ijeongcheong",
    "citesExcerpt": "ex-ijeong-1862",
-   "note": "육조 거리의 관청가를 무대로 잡는다"
+   "note": "설치를 결정한 조정의 무대를 철종 대 정궁인 창덕궁 인정전으로 잡는다"
+  },
+  {
+   "id": "claim-jl5-loc-hyeongok",
+   "subject": "place-hs-jl5-hyeongok",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.89373,
+    "lon": 129.1699,
+    "precision": "area"
+   },
+   "sourceId": "src-hs-jl5-en-hyeongok",
+   "citesExcerpt": "ex-geo-hyeongok",
+   "note": "최제우가 나고 자란 가정리가 속한 경주 현곡면의 위키백과 표시 좌표"
+  },
+  {
+   "id": "claim-jl5-hyeongok-gyeongju",
+   "subject": "place-hs-jl5-hyeongok",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-jl5-gyeongju"
+   },
+   "sourceId": "src-hs-jl5-en-hyeongok",
+   "citesExcerpt": "ex-hyeongok-gyeongju",
+   "note": "현곡면은 경주에 속한 면이다"
+  },
+  {
+   "id": "claim-jl5-loc-donhwamun",
+   "subject": "place-hs-jl5-donhwamun",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.577822049476346,
+    "lon": 126.98993411424948,
+    "precision": "site"
+   },
+   "sourceId": "src-hs-jl5-ko-donhwamun",
+   "citesExcerpt": "ex-geo-donhwamun",
+   "note": "창덕궁 정문 돈화문의 위키백과 표시 좌표"
   }
  ],
  "scenes": [
@@ -2845,7 +2915,7 @@
     "coordinateSourceIds": [
      "src-hs-jl5-ko-sinjaehyo-gotaek"
     ],
-    "coordinateNote": "신재효 고택의 위키백과 표시 좌표."
+    "coordinateNote": "신재효 고택의 위키백과 표시 좌표. 신재효(1812~1884)와 고택(1850년경)은 표시 연도보다 뒤 시기이며, 좌표는 판소리 집대성지를 가리키는 표시점이다."
    },
    "participants": [],
    "effects": {
@@ -2869,7 +2939,7 @@
    "itemId": "hs-joseon-late-sedo-politics",
    "eventId": "event-hs-jl5-sedo-politics",
    "title": "세도 정치",
-   "startYear": 1800,
+   "startYear": 1802,
    "endYear": 1863,
    "kind": "court",
    "summary": "순조·헌종·철종 세 임금 동안 왕의 외척 몇 집안이 국정을 쥐었다. 1802년 김조순이 임금의 장인이 되면서 그 틀이 잡혔고, 육조 거리의 관청이 그 무대였다.",
@@ -2912,7 +2982,7 @@
    ],
    "persistence": {
     "kind": "institution",
-    "from": 1800,
+    "from": 1802,
     "to": 1863,
     "basisClaimIds": [
      "claim-jl5-sedo-def",
@@ -2927,8 +2997,8 @@
    "title": "공노비 해방",
    "startYear": 1801,
    "endYear": 1801,
-   "kind": "fire",
-   "summary": "1801년 관청에 매여 있던 노비의 문서를 불태우고 6만 6067명을 양인으로 풀었다. 순조가 갓 즉위한 해의 일이다.",
+   "kind": "court",
+   "summary": "1801년 관청에 매여 있던 노비의 문서를 없애고 6만 6067명을 양인으로 풀었다. 순조가 갓 즉위한 해에 창덕궁에서 내려진 조치다.",
    "dateClaimIds": [
     "claim-jl5-gongnobi-1801"
    ],
@@ -2937,16 +3007,18 @@
     "claim-jl5-gongnobi-place"
    ],
    "place": {
-    "label": "창덕궁",
+    "label": "창덕궁 돈화문 앞",
     "medium": "land",
     "precision": "site",
-    "lon": 126.991175,
-    "lat": 37.57948333,
+    "lon": 126.98993411424948,
+    "lat": 37.577822049476346,
     "claimIds": [
-     "claim-jl5-loc-changdeokgung"
+     "claim-jl5-loc-donhwamun"
     ],
-    "coordinateSourceIds": [],
-    "coordinateNote": "노비안을 태운 자리의 좌표 근거가 없어 순조 대의 정궁인 창덕궁 표시 좌표를 대표점으로 썼다.",
+    "coordinateSourceIds": [
+     "src-hs-jl5-ko-donhwamun"
+    ],
+    "coordinateNote": "반포 자리의 좌표 근거가 없어 항목이 든 창덕궁 돈화문 앞을 대표점으로 삼아 돈화문의 위키백과 표시 좌표를 썼다. 같은 창덕궁 권역의 다른 장면(인정전·규장각)과 140m 이상 떨어뜨렸다.",
     "setting": "palace"
    },
    "participants": [],
@@ -2963,7 +3035,7 @@
    "region": "central",
    "decade": 1800,
    "relatedClaimIds": [
-    "claim-jl5-loc-changdeokgung"
+    "claim-jl5-loc-donhwamun"
    ]
   },
   {
@@ -3299,62 +3371,14 @@
    ]
   },
   {
-   "id": "scene-hs-jl5-jungin-socheong",
-   "itemId": "hs-joseon-late-jungin-socheong",
-   "eventId": "event-hs-jl5-jungin-socheong",
-   "title": "중인의 신분 상승 운동",
-   "startYear": 1851,
-   "endYear": 1851,
-   "kind": "assembly",
-   "summary": "역관·의관 같은 기술직과 서얼은 벼슬길이 막혀 있었다. 1823년에는 서얼 유생 만여 명이 함께 상소했고, 1851년에는 승문원과 선천의 문이 열렸다.",
-   "dateClaimIds": [
-    "claim-jl5-jungin-1851"
-   ],
-   "actionClaimIds": [
-    "claim-jl5-jungin-1823",
-    "claim-jl5-jungin-def"
-   ],
-   "place": {
-    "label": "창덕궁 인정전",
-    "medium": "land",
-    "precision": "site",
-    "lon": 126.99111,
-    "lat": 37.57944,
-    "claimIds": [
-     "claim-jl5-loc-injeongjeon"
-    ],
-    "coordinateSourceIds": [
-     "src-hs-jl5-ko-injeongjeon"
-    ],
-    "coordinateNote": "상소를 올린 자리의 좌표 근거가 없어 철종 대 정궁인 창덕궁의 정전(인정전) 표시 좌표를 썼다.",
-    "setting": "palace"
-   },
-   "participants": [],
-   "effects": {
-    "priority": {
-     "enabled": true,
-     "claimIds": [
-      "claim-jl5-jungin-1851"
-     ],
-     "level": "standard"
-    }
-   },
-   "category": "settlement",
-   "region": "central",
-   "decade": 1850,
-   "relatedClaimIds": [
-    "claim-jl5-loc-injeongjeon"
-   ]
-  },
-  {
    "id": "scene-hs-jl5-choe-jeu",
    "itemId": "hs-joseon-late-choe-jeu",
    "eventId": "event-hs-jl5-choe-jeu",
    "title": "최제우",
    "startYear": 1860,
-   "endYear": 1864,
+   "endYear": 1860,
    "kind": "portrait",
-   "summary": "1860년 4월 5일 종교 체험을 하고 동학을 열었다. 교세가 커지자 조정은 그를 잡아들였고, 1864년 봄 대구 감영에서 목숨을 잃었다.",
+   "summary": "1860년 4월 5일 경주 구미산 자락에서 종교 체험을 하고 동학을 열었다. 교세가 커지자 조정은 그를 잡아들였고, 1864년 봄 대구 감영에서 목숨을 잃었다.",
    "dateClaimIds": [
     "claim-jl5-choe-1860"
    ],
@@ -3364,19 +3388,19 @@
     "claim-jl5-choe-gamyeong"
    ],
    "place": {
-    "label": "대구 경상감영",
+    "label": "경주 현곡면(가정리 일대)",
     "medium": "land",
-    "precision": "site",
-    "lon": 128.59222,
-    "lat": 35.87222,
+    "precision": "area",
+    "lon": 129.1699,
+    "lat": 35.89373,
     "claimIds": [
-     "claim-jl5-loc-gamyeong"
+     "claim-jl5-loc-hyeongok"
     ],
     "coordinateSourceIds": [
-     "src-hs-jl5-ko-gamyeong"
+     "src-hs-jl5-en-hyeongok"
     ],
-    "coordinateNote": "용담정은 동학 창시 장면이 쓰고 있어, 최제우 장면은 1864년 처형지인 대구 경상감영 표시 좌표에 두었다.",
-    "setting": "office"
+    "coordinateNote": "최제우가 나고 자란 경주 현곡면 가정리의 개별 좌표 근거가 없어 현곡면의 위키백과 표시 좌표를 대표점으로 썼다. 동학 창시 장면이 쓰는 용담정(129.14444/35.89)과는 2km쯤 떨어진 다른 점이다.",
+    "setting": "village"
    },
    "participants": [
     {
@@ -3403,7 +3427,8 @@
    "region": "south",
    "decade": 1860,
    "relatedClaimIds": [
-    "claim-jl5-loc-gamyeong"
+    "claim-jl5-loc-hyeongok",
+    "claim-jl5-hyeongok-gyeongju"
    ]
   },
   {
@@ -3493,7 +3518,7 @@
     "coordinateSourceIds": [
      "src-hs-jl5-ko-seoul-museum"
     ],
-    "coordinateNote": "현존 소장처 가운데 근거에 이름이 적힌 서울역사박물관의 표시 좌표를 썼다."
+    "coordinateNote": "현존 소장처 가운데 근거에 이름이 적힌 서울역사박물관의 표시 좌표를 썼다. 좌표는 현재 소장처이며 1861년에 그 자리에 있었다는 뜻이 아니다."
    },
    "participants": [],
    "effects": {
@@ -3707,17 +3732,19 @@
     "claim-jl5-ijeong-place"
    ],
    "place": {
-    "label": "한양 육조 거리 북쪽(삼정이정청 표시점)",
+    "label": "창덕궁 인정전(철종 대 정궁의 정전)",
     "medium": "land",
-    "precision": "area",
-    "lon": 126.97722222,
-    "lat": 37.57861111,
+    "precision": "site",
+    "lon": 126.99111,
+    "lat": 37.57944,
     "claimIds": [
-     "claim-jl5-loc-gyeongbokgung"
+     "claim-jl5-loc-injeongjeon"
     ],
-    "coordinateSourceIds": [],
-    "coordinateNote": "청사 터의 좌표 근거가 없어 육조 거리 북쪽 끝인 경복궁 표시 좌표를 대표점으로 썼다.",
-    "setting": "office"
+    "coordinateSourceIds": [
+     "src-hs-jl5-ko-injeongjeon"
+    ],
+    "coordinateNote": "청사 터의 좌표 근거가 없어 설치를 결정한 조정이 있던 철종 대 정궁 창덕궁의 정전(인정전) 표시 좌표를 대표점으로 썼다. 세도 정치 장면과 같은 육조 거리를 두 번 쓰지 않기 위해 옮겼다.",
+    "setting": "palace"
    },
    "participants": [],
    "effects": {
@@ -3734,7 +3761,7 @@
    "decade": 1860,
    "relatedClaimIds": [
     "claim-jl5-ijeong-end",
-    "claim-jl5-loc-gyeongbokgung"
+    "claim-jl5-loc-injeongjeon"
    ],
    "persistence": {
     "kind": "institution",
@@ -3845,7 +3872,7 @@
    ],
    "sceneId": "scene-hs-jl5-suwon-hwaseong",
    "confidence": "high",
-   "note": "[10한사1-01-04] · core",
+   "note": "[10한사1-01-04] · core · 항목 meaning 의 '거중기'는 이 칸에서 근거를 달지 못했다. 한국민족문화대백과사전 '화성'·'정약용' 항목 본문에 거중기 서술이 없어 claim 으로 남기지 않았다. 근거가 있는 것은 1794년 착공·1796년 완성과 정약용의 규모 구상, 소재지다.",
    "lon": 127.00833,
    "lat": 37.27222,
    "coordinateBasis": "location claim-jl5-loc-hwaseong",
@@ -3875,7 +3902,7 @@
    ],
    "sceneId": "scene-hs-jl5-jeonggamrok",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · extended · 연도 1800은 세도 정치기를 가리키는 대표값이고, 근거로 든 연도는 1862년이다.",
+   "note": "[10한사1-02-04] · extended · 표시 연도는 대표값 1800(세도 정치기), 근거 연도는 1862. 좌표는 『정감록』의 대표 십승지로 꼽히는 계룡산 표시점이다.",
    "lon": 127.20611,
    "lat": 36.34333,
    "coordinateBasis": "location claim-jl5-loc-gyeryongsan"
@@ -3923,7 +3950,7 @@
    ],
    "sceneId": "scene-hs-jl5-pansori",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · core · 연도 1800은 성행기를 가리키는 대표값이고, 근거로 든 연도는 1754년 기록이다.",
+   "note": "[10한사1-02-04] · core · 표시 연도는 대표값 1800, 근거 연도는 1754. 좌표로 쓴 고창 신재효 고택은 신재효(1812~1884)가 살던 집으로 1850년경에 지은 것으로 짐작되므로 1800년에는 그 인물도 그 집도 없었다. 좌표는 판소리 집대성지를 가리키는 표시점이다.",
    "lon": 126.702889,
    "lat": 35.432139,
    "coordinateBasis": "location claim-jl5-loc-sinjaehyo"
@@ -3934,7 +3961,7 @@
    "category": "administration",
    "region": "central",
    "decade": 1800,
-   "year": 1800,
+   "year": 1802,
    "yearVerbatim": "1802년(순조 2)",
    "placeLabel": "한양 육조 거리(광화문 앞)",
    "modernPlace": "서울특별시 종로구 세종로",
@@ -3947,13 +3974,13 @@
    ],
    "sceneId": "scene-hs-jl5-sedo-politics",
    "confidence": "medium",
-   "note": "[10한사1-01-04] · core · 1800~1863년 존속 표시는 순조 즉위부터 철종 승하까지를 가리키는 항목의 범위다.",
+   "note": "[10한사1-01-04] · core · 표시 연도는 근거 연도와 같은 1802년이다. 인용한 한국민족문화대백과사전 '세도정치' 항목은 순조 즉위 직후 정순왕후 수렴청정기(1800~1804)를 세도정치로 보지 않으므로, 존속 시작을 김조순이 국구가 된 1802년으로 잡았다. 끝 연도 1863은 철종 승하까지를 가리키는 항목의 범위다.",
    "lon": 126.9770194,
    "lat": 37.5760444,
    "coordinateBasis": "location claim-jl5-loc-gwanghwamun",
    "persistence": {
     "kind": "institution",
-    "from": 1800,
+    "from": 1802,
     "to": 1863
    }
   },
@@ -3965,21 +3992,21 @@
    "decade": 1800,
    "year": 1801,
    "yearVerbatim": "1801년(순조 1)",
-   "placeLabel": "창덕궁",
+   "placeLabel": "창덕궁 돈화문 앞",
    "modernPlace": "서울특별시 종로구 와룡동",
    "what": "관청 노비 문서를 불태워 6만여 명을 양인으로",
    "claimIds": [
     "claim-jl5-gongnobi-1801",
     "claim-jl5-gongnobi-def",
     "claim-jl5-gongnobi-place",
-    "claim-jl5-loc-changdeokgung"
+    "claim-jl5-loc-donhwamun"
    ],
    "sceneId": "scene-hs-jl5-gongnobi-emancipation",
    "confidence": "high",
-   "note": "[10한사1-02-03] · standard · 6만 6067구는 조사 근거에 적힌 숫자다.",
-   "lon": 126.991175,
-   "lat": 37.57948333,
-   "coordinateBasis": "location claim-jl5-loc-changdeokgung"
+   "note": "[10한사1-02-03] · standard · 6만 6067구는 조사 근거에 적힌 숫자다. 항목 meaning 의 '문서를 불태워'는 이 칸의 근거(한국민족문화대백과사전 공노비 항목)에 없어 요약에서는 단정하지 않았고, 장면 종류도 fire 대신 court 로 두었다.",
+   "lon": 126.98993411424948,
+   "lat": 37.577822049476346,
+   "coordinateBasis": "location claim-jl5-loc-donhwamun"
   },
   {
    "id": "fact-hs-jl5-010",
@@ -4025,7 +4052,7 @@
    ],
    "sceneId": "scene-hs-jl5-sin-yunbok",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 연도 1805는 활동기를 가리키는 대표값이고, 근거로 확인한 것은 1758년생이라는 기록이다.",
+   "note": "[10한사1-02-04] · standard · 표시 연도는 대표값 1805, 근거 연도는 1758. 다만 인용한 한국민족문화대백과사전 '신윤복' 항목은 본문 인적사항에 출생·사망 연도를 모두 미상으로 적고 도판 설명만 '신윤복(申潤福, 1758~?)'으로 적는다. 1758년은 그 도판 설명에 기댄 값이다.",
    "lon": 127,
    "lat": 37.583333333333336,
    "coordinateBasis": "location claim-jl5-loc-hanseongbu"
@@ -4135,22 +4162,15 @@
    "region": "central",
    "decade": 1850,
    "year": 1851,
-   "yearVerbatim": "1851년(철종 2)",
-   "placeLabel": "창덕궁 인정전",
-   "modernPlace": "서울특별시 종로구 와룡동",
+   "yearVerbatim": "철종 대(전하는 연도 1851)",
+   "placeLabel": "",
+   "modernPlace": "",
    "what": "역관·의관 같은 중인이 벼슬길의 벽을 낮춰 달라며 함께 올린 상소",
    "claimIds": [
-    "claim-jl5-jungin-1851",
-    "claim-jl5-jungin-1823",
-    "claim-jl5-jungin-def",
-    "claim-jl5-loc-injeongjeon"
+    "claim-jl5-jungin-def"
    ],
-   "sceneId": "scene-hs-jl5-jungin-socheong",
    "confidence": "low",
-   "note": "[10한사1-02-03] · standard · 중인 통청 상소 자체의 연도·장소 근거는 찾지 못했고, 같은 시기 서얼 허통 기록으로 대신했다.",
-   "lon": 126.99111,
-   "lat": 37.57944,
-   "coordinateBasis": "location claim-jl5-loc-injeongjeon"
+   "note": "[10한사1-02-03] · standard · 중인 통청 상소 자체의 연도·장소 근거를 공개 사전에서 찾지 못했다. 앞선 판에서 근거로 쓴 1823년 집단 상소와 1851년 승문원·선천 허통은 모두 서얼 허통 기록이어서 다른 신분층의 사실이므로 뺐다. 근거가 남지 않아 장면과 좌표도 두지 않는다."
   },
   {
    "id": "fact-hs-jl5-017",
@@ -4160,22 +4180,22 @@
    "decade": 1860,
    "year": 1860,
    "yearVerbatim": "1860년 4월 5일",
-   "placeLabel": "대구 경상감영",
-   "modernPlace": "대구광역시 중구 포정동",
+   "placeLabel": "경주 현곡면(가정리 일대)",
+   "modernPlace": "경상북도 경주시 현곡면",
    "what": "한울님을 내 안에 모신다며 신분을 넘어선 평등을 말한 동학의 창시자",
    "claimIds": [
     "claim-jl5-choe-1860",
     "claim-jl5-choe-founder",
     "claim-jl5-choe-1864",
     "claim-jl5-choe-gamyeong",
-    "claim-jl5-loc-gamyeong"
+    "claim-jl5-loc-hyeongok"
    ],
    "sceneId": "scene-hs-jl5-choe-jeu",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard",
-   "lon": 128.59222,
-   "lat": 35.87222,
-   "coordinateBasis": "location claim-jl5-loc-gamyeong"
+   "note": "[10한사1-02-04] · standard · 1860년 기록에 맞춰 장소를 경주로 되돌렸다. 1864년 대구 감영의 처형은 claim(claim-jl5-choe-1864·claim-jl5-choe-gamyeong)과 요약으로만 남긴다. 항목의 yearEnd 1864는 이 칸의 범위(1784~1863) 밖이어서 장면의 끝 연도를 1860으로 잡았다.",
+   "lon": 129.1699,
+   "lat": 35.89373,
+   "coordinateBasis": "location claim-jl5-loc-hyeongok"
   },
   {
    "id": "fact-hs-jl5-018",
@@ -4220,7 +4240,7 @@
    ],
    "sceneId": "scene-hs-jl5-daedong-yeojido",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · core · 항목의 소장처(국립중앙박물관)는 근거에서 확인하지 못해 서울역사박물관 소장본으로 바꿨다.",
+   "note": "[10한사1-02-04] · core · 항목의 소장처(국립중앙박물관)는 근거에서 확인하지 못해 서울역사박물관 소장본으로 바꿨다. 좌표는 현재 소장처이며 1861년에 그 자리에 지도가 있었다는 뜻이 아니다(서울역사박물관은 2002년 개관). 존속 표시는 지도첩 자체가 현존한다는 뜻이다.",
    "lon": 126.97056,
    "lat": 37.570599,
    "coordinateBasis": "location claim-jl5-loc-seoul-museum",
@@ -4314,22 +4334,22 @@
    "decade": 1860,
    "year": 1862,
    "yearVerbatim": "1862년 5월 26일",
-   "placeLabel": "한양 육조 거리 북쪽(삼정이정청 표시점)",
-   "modernPlace": "서울특별시 종로구 세종로",
+   "placeLabel": "창덕궁 인정전",
+   "modernPlace": "서울특별시 종로구 와룡동",
    "what": "봉기에 놀란 정부가 급히 세운 세금 개혁 기구",
    "claimIds": [
     "claim-jl5-ijeong-1862",
     "claim-jl5-ijeong-bak",
     "claim-jl5-ijeong-place",
     "claim-jl5-ijeong-end",
-    "claim-jl5-loc-gyeongbokgung"
+    "claim-jl5-loc-injeongjeon"
    ],
    "sceneId": "scene-hs-jl5-samjeong-ijeongcheong",
    "confidence": "medium",
-   "note": "[10한사1-02-03] · standard · 1862년 당시 경복궁은 중건 전이었고, 좌표는 육조 거리 위치를 가리키는 표시점이다.",
-   "lon": 126.97722222,
-   "lat": 37.57861111,
-   "coordinateBasis": "location claim-jl5-loc-gyeongbokgung",
+   "note": "[10한사1-02-03] · standard · 청사 터의 좌표 근거가 없어 철종 대 정궁인 창덕궁 인정전을 대표점으로 썼다. 앞선 판의 경복궁 표시점은 세도 정치 장면(광화문)과 286m 거리로 같은 거리를 두 번 가리켜 옮겼다.",
+   "lon": 126.99111,
+   "lat": 37.57944,
+   "coordinateBasis": "location claim-jl5-loc-injeongjeon",
    "persistence": {
     "kind": "institution",
     "from": 1862,
@@ -4342,9 +4362,9 @@
    "id": "miss-jl5-1",
    "itemId": "hs-joseon-late-jungin-socheong",
    "topic": "중인 통청 상소(1851)",
-   "detail": "중인 기술관이 1851년에 올린 통청 상소의 연도·장소를 공개 사전에서 찾지 못해 같은 시기 서얼 허통 기록으로 대신했다.",
-   "neededSource": "한국민족문화대백과사전 '통청운동' 계열 항목 또는 우리역사넷 신편 한국사 해당 절",
-   "reason": "중인 통청 상소 자체의 근거 부족"
+   "detail": "중인 기술관의 통청 상소를 연도·장소와 함께 적은 공개 출처를 찾지 못했다. 한국민족문화대백과사전에는 '통청운동' 표제 항목이 없고 '중인' 항목 본문에도 통청 서술이 없다. 우리역사넷 교과서 용어 해설 '중인'은 통청 운동을 적지만 공공누리 표시가 없어 이 형식의 웹 출처로 쓸 수 없고 연도도 없다.",
+   "neededSource": "우리역사넷 신편 한국사 조선 후기 신분편 또는 공공누리 표시가 있는 국사편찬위원회 해설",
+   "reason": "중인 통청 상소의 연도·장소 근거를 찾지 못해 장면 없이 사실만 남겼다"
   },
   {
    "id": "miss-jl5-2",

@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-colonial-colonial-2-c2-park-death",
-    "subject": "person-hs-park-eunsik",
+    "subject": "person-hs-bak-eunsik",
     "predicate": "syj:endedIn",
     "object": {
       "kind": "time",

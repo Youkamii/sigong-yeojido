@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-colonial-colonial-4-hs-c4-baek-1933",
-    "subject": "person-hs-c4-baek-namun",
+    "subject": "person-hs-baek-namun",
     "predicate": "syj:occurredIn",
     "object": {
       "kind": "time",
@@ -32,7 +32,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-colonial-colonial-4-hs-c4-baek-work",
-    "subject": "person-hs-c4-baek-namun",
+    "subject": "person-hs-baek-namun",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",

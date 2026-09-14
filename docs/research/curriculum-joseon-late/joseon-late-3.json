@@ -1,9 +1,9 @@
 {
   "job": "joseon-late-3",
-  "sources": 56,
-  "excerpts": 79,
+  "sources": 60,
+  "excerpts": 84,
   "chunkClaims": 14,
-  "excerptClaims": 82,
+  "excerptClaims": 87,
   "facts": 23,
   "factsByCategory": {
     "administration": 6,
@@ -14,8 +14,8 @@
     "settlement": 1,
     "war": 1
   },
-  "claims": 96,
-  "entities": 55,
+  "claims": 101,
+  "entities": 58,
   "rawFilesChecked": [
     {
       "source": "src-hs3-enc-kim-yuk",
@@ -464,6 +464,38 @@
       "rawBytes": 1120794,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs3-en-donhwamun",
+      "url": "https://en.wikipedia.org/wiki/Donhwamun",
+      "sha256": "8d02da1a83659e2643a4bfc5e7bcc7b92b6c8e9ed318cc494b36f4d6a1d0663b",
+      "rawBytes": 110812,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs3-ko-gyeonghuigung",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%ED%9D%AC%EA%B6%81",
+      "sha256": "6b0967d43bb1ee9cfd23e9bbb2325b2a15a164172f32529dde2da38a58127f4c",
+      "rawBytes": 226504,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs3-enc-waegwan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0039199",
+      "sha256": "374028ca5bdbdc02df3657b0b6a51e37fa42d84bb9b5bb0b8d88b227057fdbff",
+      "rawBytes": 108008,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs3-ko-tancheon",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%B2%9C%EC%8B%9C",
+      "sha256": "10bfb56a25e42cffc16bc640f8c7cc19eaae1441196fa8aeff922ec86aa8065c",
+      "rawBytes": 127493,
+      "excerpts": 1,
+      "quotedWords": 5
     }
   ],
   "missing": [],
@@ -478,13 +510,14 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-joseon-late-3"
+    "sessionId": "workflow-joseon-late-3",
+    "revised": 1789380580
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "event-hs3-yangmyeonghak",
-    "polity-hs-joseon"
+    "event-hs3-gaesi-husi",
+    "place-hs3-dongnae-waegwan"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

@@ -18,7 +18,7 @@ status: "draft"
       "lat": 39.02222,
       "precision": "area"
     },
-    "note": "왕검성 일원 항목을 한 점에 겹치지 않게 나누어, 평양 만경대구역 표시 좌표를 준왕 항목 대표점으로 썼다.",
+    "note": "평양 만경대구역의 위키백과 표시 좌표. 왕검성 일원 항목이 한 점에 겹치지 않게 나눈 표시용 대표점이며 이 구역을 왕검성으로 비정한 것이 아니다.",
     "fromSource": "src-hs-en-mangyongdae",
     "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-2_geo-mangyongdae",
     "quote": "39.02222; 125.64444",

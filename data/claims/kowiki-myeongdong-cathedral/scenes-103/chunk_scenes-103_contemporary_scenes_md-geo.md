@@ -24,6 +24,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-md-loc",
+    "subject": "place-hs-c4-myeongdong-cathedral",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 37.56417,
+      "lon": 126.987306,
+      "precision": "site"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_md-geo",
+    "quote": "37.56417; 126.987306",
+    "note": "명동성당 문서의 표시 좌표.",
+    "fromSource": "src-kowiki-myeongdong-cathedral",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

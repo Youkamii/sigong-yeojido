@@ -1,21 +1,21 @@
 {
   "job": "colonial-2",
-  "sources": 41,
-  "excerpts": 55,
+  "sources": 45,
+  "excerpts": 62,
   "chunkClaims": 35,
-  "excerptClaims": 60,
+  "excerptClaims": 67,
   "facts": 22,
   "factsByCategory": {
-    "administration": 2,
+    "administration": 1,
     "culture": 2,
     "economy": 3,
     "facility": 2,
     "foreign": 2,
     "person": 5,
-    "settlement": 1,
+    "settlement": 2,
     "war": 5
   },
-  "claims": 95,
+  "claims": 102,
   "entities": 60,
   "rawFilesChecked": [
     {
@@ -199,8 +199,8 @@
       "url": "https://ko.wikipedia.org/wiki/%EB%B0%A9%EC%A0%95%ED%99%98",
       "sha256": "f07f0562a0ec69040eee7c93f7a62b42cc0a54d19a5faaa6d881e41caa99ae60",
       "rawBytes": 324956,
-      "excerpts": 3,
-      "quotedWords": 17
+      "excerpts": 4,
+      "quotedWords": 23
     },
     {
       "source": "src-c2-en-jongno",
@@ -345,24 +345,56 @@
       "rawBytes": 87858,
       "excerpts": 1,
       "quotedWords": 10
+    },
+    {
+      "source": "src-c2-ko-kim-wonbong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B9%80%EC%9B%90%EB%B4%89",
+      "sha256": "6b19e9b8d078b6e3eba32650a0fc066add9cad1f79f3aeadf7412b8c48d0ac56",
+      "rawBytes": 354971,
+      "excerpts": 2,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-c2-ko-hong",
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EB%B2%94%EB%8F%84",
+      "sha256": "0e49937b3088114bf2840f678ce6df11ed3dee0c5bd7467162ead078bb77ccd4",
+      "rawBytes": 300820,
+      "excerpts": 2,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-c2-en-kyzylorda",
+      "url": "https://en.wikipedia.org/wiki/Kyzylorda",
+      "sha256": "7e8711f7618c25b3a2e877a9566d1d093e1c933062f6529be11acab8028892bd",
+      "rawBytes": 237526,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-modern-arch",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98%20%EA%B7%BC%EB%8C%80%20%EA%B1%B4%EC%B6%95%EB%AC%BC",
+      "sha256": "51ed81141c0bd0644cf56248da6ffbc819847df99135a8f23a7cced7f9f76763",
+      "rawBytes": 136728,
+      "excerpts": 1,
+      "quotedWords": 5
     }
   ],
   "missing": [
     {
       "id": "miss-c2-1",
-      "itemId": "hs-colonial-gunsan-modern-buildings",
-      "topic": "구 조선은행 군산지점 준공 연도",
-      "detail": "통설은 1923년이나 허용 출처에서 준공 연도를 확인하지 못했다. 확인된 것은 2008년 7월 3일 국가등록문화유산 지정과 장미동 소재지뿐이다.",
-      "neededSource": "국가유산포털 등록문화유산 제374호 상세(접속 불가) 또는 군산시 공식 해설",
-      "reason": "준공 연도 1923년을 허용 출처로 확인하지 못했다"
+      "itemId": "hs-colonial-uiyeoldan",
+      "topic": "의열단 결성 지점 좌표",
+      "detail": "길림성 창단 근거는 위키백과 김원봉 문서로 확보했으나, 결성 장소(길림 파호문 밖)의 십진 좌표는 허용 출처에서 찾지 못해 지린시 표시 좌표를 대표점으로 썼다.",
+      "neededSource": "한국민족문화대백과사전 의열단 항목 또는 독립기념관 공개 해설의 결성지 상세",
+      "reason": "결성 지점의 구체 좌표를 확보하지 못했다"
     },
     {
       "id": "miss-c2-2",
-      "itemId": "hs-colonial-uiyeoldan",
-      "topic": "의열단 결성지",
-      "detail": "교과서와 백과는 만주 지린(길림) 창단을 적고 한국어 위키백과는 상하이 본부를 적는다. 결성 장소의 좌표 근거는 찾지 못했다.",
-      "neededSource": "한국민족문화대백과사전 의열단 항목 원문 또는 독립기념관 공개 해설",
-      "reason": "결성지 지린·상하이 이설을 한 출처로 확정하지 못했다"
+      "itemId": "hs-colonial-childrens-movement",
+      "topic": "첫 어린이날 행사 장소",
+      "detail": "1923년 5월 1일 제1회 어린이날 행사장을 천도교 중앙 대교당으로 잇는 서술을 허용 출처에서 찾지 못했다. 천도교소년회가 주도했다는 사실만 확인된다.",
+      "neededSource": "한국민족문화대백과사전 어린이날·조선소년운동협회 항목",
+      "reason": "행사 장소와 건물을 잇는 근거가 없다"
     },
     {
       "id": "miss-c2-3",
@@ -384,12 +416,13 @@
     "started": 1789351921,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-colonial-2"
+    "sessionId": "workflow-colonial-2",
+    "revised": 1789381158
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "event-hs-sanmi"
+    "person-hs-bang-jeonghwan"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

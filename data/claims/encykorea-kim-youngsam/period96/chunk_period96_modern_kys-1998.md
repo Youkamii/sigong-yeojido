@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-kys-end",
+    "subject": "person-encykorea-kim-youngsam",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "1998년 2월 25일",
+      "year": 1998,
+      "precision": "day",
+      "earliest": 1998,
+      "latest": 1998,
+      "id": "ts-curriculum-contemporary-contemporary-5-hs-c5-kys-end"
+    },
+    "citesChunk": "chunk_period96_modern_kys-1998",
+    "quote": "1998년 2월 25일 임기를 마쳤다.",
+    "note": "임기 종료",
+    "fromSource": "src-encykorea-kim-youngsam",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-gwiju-siege30",
+    "subject": "event-gl2-gwiju",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl2-gwijuseong"
+    },
+    "citesChunk": "chunk_goryeosa-jeolyo_kj_016_0010_0020_0030_0020",
+    "quote": "蒙兵圍城三旬, 百計攻之",
+    "note": "몽골군이 30일 동안 성을 포위하고 온갖 방법으로 공격했다.",
+    "fromSource": "src-goryeosa-jeolyo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

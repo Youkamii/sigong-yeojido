@@ -44,6 +44,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-wc-2002",
+    "subject": "event-hs-c5-worldcup-2002",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "2002년 5월 31일",
+      "year": 2002,
+      "precision": "day",
+      "earliest": 2002,
+      "latest": 2002,
+      "id": "ts-curriculum-contemporary-contemporary-5-hs-c5-wc-2002"
+    },
+    "citesChunk": "chunk_period96_modern_wc-2002",
+    "quote": "국제축구연맹(FIFA) 주관으로 2002년 5월 31일부터 6월 30일까지 한국과 일본이 공동 개최한 월드컵 경기대회.",
+    "note": "한일 공동 개최 기간",
+    "fromSource": "src-encykorea-worldcup2002",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

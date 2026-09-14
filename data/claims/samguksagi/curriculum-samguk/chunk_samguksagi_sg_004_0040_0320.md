@@ -46,6 +46,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-17"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-jinheung-daegaya",
+    "subject": "polity-hs-s3-silla",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "九月",
+      "year": 562,
+      "precision": "month",
+      "earliest": 562,
+      "latest": 562,
+      "id": "ts-curriculum-samguk-samguk-3-hs-s3-jinheung-daegaya"
+    },
+    "citesChunk": "chunk_samguksagi_sg_004_0040_0320",
+    "quote": "九月, 加耶叛, 王命異斯夫討之",
+    "note": "삼국사기 신라본기 진흥왕 23년(562) 가야 병합 기사. 낙동강 서쪽까지 신라 영역이 넓어진 근거로 든다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

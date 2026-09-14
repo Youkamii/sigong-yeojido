@@ -28,24 +28,24 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-samguk-samguk-3-hs-s3-nori-king",
-    "subject": "person-hs-s3-norisachigye",
+    "subject": "person-baekje-seongwang",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "person-baekje-seongwang"
+      "id": "polity-hs-s3-baekje"
     },
     "citesChunk": "chunk_samguksagi_sg_026_0060_0010",
     "quote": "聖王, 諱明穠, 武寧王之子也",
-    "note": "노리사치계를 보낸 주체는 백제 성왕이다.",
+    "note": "삼국사기 백제본기 성왕 즉위조. 성왕은 무령왕의 아들이다. 노리사치계를 보낸 주체가 성왕이라는 근거는 같은 패킷의 민족문화대백과 발췌(ex-nori-552)에 있다.",
     "fromSource": "src-samguksagi",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

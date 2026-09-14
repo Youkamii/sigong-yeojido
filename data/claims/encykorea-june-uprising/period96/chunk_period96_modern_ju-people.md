@@ -109,6 +109,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-june-people",
+    "subject": "event-hs-c4-june",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yi-hanyeol"
+    },
+    "citesChunk": "chunk_period96_modern_ju-people",
+    "quote": "관련 인물박종철|이한열",
+    "note": "항목 정보 표가 박종철·이한열을 관련 인물로 든다.",
+    "fromSource": "src-encykorea-june-uprising",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

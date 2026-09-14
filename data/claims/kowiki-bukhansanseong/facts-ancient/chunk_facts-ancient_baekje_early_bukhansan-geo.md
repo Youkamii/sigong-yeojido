@@ -45,6 +45,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-17"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-1-hs-loc-buaak",
+    "subject": "place-hs-buaak",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 37.647056,
+      "lon": 126.973222,
+      "precision": "area"
+    },
+    "citesChunk": "chunk_facts-ancient_baekje_early_bukhansan-geo",
+    "quote": "37.647056; 126.973222",
+    "note": "위키백과 북한산성 문서의 표시 좌표를 온조·비류가 올랐다는 한산 부아악(북한산) 일대의 대표점으로 썼다.",
+    "fromSource": "src-kowiki-bukhansanseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

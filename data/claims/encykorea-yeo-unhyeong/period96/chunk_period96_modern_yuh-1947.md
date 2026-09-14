@@ -82,6 +82,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-yeoun-1947",
+    "subject": "person-encykorea-yeo-unhyeong",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1947년 7월 19일",
+      "year": 1947,
+      "precision": "day",
+      "earliest": 1947,
+      "latest": 1947,
+      "id": "ts-curriculum-contemporary-contemporary-1-hs-c1-yeoun-1947"
+    },
+    "citesChunk": "chunk_period96_modern_yuh-1947",
+    "quote": "1947년 7월 19일 서울 혜화동 로터리에서 한지근(韓智根)에게 저격을 당해 서거하였다.",
+    "note": "1947년 혜화동 로터리에서 암살되었다.",
+    "fromSource": "src-encykorea-yeo-unhyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

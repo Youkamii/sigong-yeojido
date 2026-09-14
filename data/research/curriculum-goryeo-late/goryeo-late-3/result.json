@@ -11,14 +11,14 @@
    "north"
   ],
   "categories": {
-   "administration": 4,
+   "administration": 5,
    "person": 5,
-   "culture": 5,
-   "settlement": 2,
+   "culture": 4,
    "economy": 2,
    "facility": 2,
-   "foreign": 1,
-   "war": 2
+   "settlement": 2,
+   "war": 2,
+   "foreign": 1
   }
  },
  "sources": [
@@ -115,6 +115,11 @@
      "id": "ex-gl3-jdhs-building",
      "text": "정동행성은 독자적인 관서 건물을 가지고 있었으며,",
      "locator": "본문 기능과 역할 — 관서 건물"
+    },
+    {
+     "id": "ex-gl3-jdhs-exist",
+     "text": "몽골 제국 말기까지 존속하였다.",
+     "locator": "본문 내용 요약 — 존속 기간"
     }
    ]
   },
@@ -310,13 +315,18 @@
    "excerpts": [
     {
      "id": "ex-gl3-swg-160",
-     "text": "전세계 약 160여점 남은 고려 불화 중에서 수월관음도는 가장 많은 수량을 차지하고",
+     "text": "전세계 약 160여점 남은 고려 불화",
      "locator": "본문 현황 — 남은 고려 불화"
     },
     {
      "id": "ex-gl3-swg-46",
      "text": "고려 수월관음도의 현존 작품은 14세기에 제작된 46점이 알려져 있다.",
      "locator": "본문 현황 — 14세기 제작"
+    },
+    {
+     "id": "ex-gl3-swg-overseas",
+     "text": "대부분 일본을 비롯하여 미국, 유럽 등 해외에 소장 중이며,",
+     "locator": "본문 현황 — 소장처"
     }
    ]
   },
@@ -709,6 +719,120 @@
      "locator": "문서 표시 좌표(geo)"
     }
    ]
+  },
+  {
+   "id": "src-gl3-en-kongmin-tomb",
+   "title": "Mausoleum of King Kongmin — Wikipedia",
+   "publisher": "위키백과",
+   "url": "https://en.wikipedia.org/wiki/Mausoleum_of_King_Kongmin",
+   "rawFile": "raw/en-kongmin-tomb.html",
+   "sha256": "3a9c6efa2b65234974ba81dc55b7be944c7712a8a74d9b19890705fc29bcb726",
+   "httpStatus": 200,
+   "byteLength": 110121,
+   "fetchedUtc": "2026-09-14T08:48:18Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-gl3-geo-kongmin",
+     "text": "37.98194; 126.47306",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
+  },
+  {
+   "id": "src-gl3-en-kwanumsa",
+   "title": "Kwanumsa (Kaesong) — Wikipedia",
+   "publisher": "위키백과",
+   "url": "https://en.wikipedia.org/wiki/Kwanumsa_(Kaesong)",
+   "rawFile": "raw/en-kwanumsa.html",
+   "sha256": "375cc8205a097eee1e5b3a091aefb8b0cd7fae456646e7522f3a3914ff5ba538",
+   "httpStatus": 200,
+   "byteLength": 104784,
+   "fetchedUtc": "2026-09-14T08:48:18Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-gl3-geo-kwanumsa",
+     "text": "38.08528; 126.57250",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
+  },
+  {
+   "id": "src-gl3-en-kaesong-walls",
+   "title": "Kaesong city walls — Wikipedia",
+   "publisher": "위키백과",
+   "url": "https://en.wikipedia.org/wiki/Kaesong_city_walls",
+   "rawFile": "raw/en-kaesong-walls.html",
+   "sha256": "af26ceda9b229321a64f8cc6fc91c67a53fc64750c0f15e34f21126f18c840c4",
+   "httpStatus": 200,
+   "byteLength": 102892,
+   "fetchedUtc": "2026-09-14T08:48:18Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-gl3-geo-kaesongwalls",
+     "text": "37.9886; 126.5728",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
+  },
+  {
+   "id": "src-gl3-en-dadu",
+   "title": "Dadu (Beijing) — Wikipedia",
+   "publisher": "위키백과",
+   "url": "https://en.wikipedia.org/wiki/Dadu_(Beijing)",
+   "rawFile": "raw/en-dadu.html",
+   "sha256": "f41385d7f663063c4b8c8877055eb8028820f196a97c1b55aeedc91ddc246f74",
+   "httpStatus": 200,
+   "byteLength": 226974,
+   "fetchedUtc": "2026-09-14T08:48:19Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-gl3-geo-dadu",
+     "text": "39.93333; 116.40000",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
+  },
+  {
+   "id": "src-gl3-en-dadu-wall",
+   "title": "Yuan Dadu City Wall Ruins Park — Wikipedia",
+   "publisher": "위키백과",
+   "url": "https://en.wikipedia.org/wiki/Yuan_Dadu_City_Wall_Ruins_Park",
+   "rawFile": "raw/en-dadu-wall-park.html",
+   "sha256": "f25f7b2a749a71d44256a84b131983be8269127ed659f68d8122d7d59e559510",
+   "httpStatus": 200,
+   "byteLength": 103749,
+   "fetchedUtc": "2026-09-14T08:48:20Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-gl3-geo-daduwall",
+     "text": "39.9651; 116.3479",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
+  },
+  {
+   "id": "src-gl3-ko-hapcheon",
+   "title": "합천군 — 위키백과",
+   "publisher": "위키백과",
+   "url": "https://ko.wikipedia.org/wiki/%ED%95%A9%EC%B2%9C%EA%B5%B0",
+   "rawFile": "raw/ko-hapcheon.html",
+   "sha256": "c46248df3e742a28b75f60dea86e60f05ebf008e2928b6a41d67c217faceb550",
+   "httpStatus": 200,
+   "byteLength": 245970,
+   "fetchedUtc": "2026-09-14T08:48:20Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-gl3-geo-hapcheon",
+     "text": "35.5666486; 128.1661187",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
   }
  ],
  "entities": [
@@ -848,7 +972,7 @@
    "label": "홍건적의 침입"
   },
   {
-   "id": "person-gl3-sindon",
+   "id": "person-hs-sindon",
    "type": "Person",
    "label": "신돈"
   },
@@ -976,6 +1100,36 @@
    "id": "place-gl3-masan",
    "type": "Place",
    "label": "합포 앞바다(고성·거제 연안)"
+  },
+  {
+   "id": "place-gl3-daduwall",
+   "type": "Place",
+   "label": "원 대도 북쪽 성벽 유적 일대"
+  },
+  {
+   "id": "place-gl3-dadu",
+   "type": "Place",
+   "label": "원 대도(연경) 성안"
+  },
+  {
+   "id": "place-gl3-kongmin-tomb",
+   "type": "Place",
+   "label": "개성 공민왕릉(현릉·정릉)"
+  },
+  {
+   "id": "place-gl3-kaesongwalls",
+   "type": "Place",
+   "label": "개경 도성 성곽 일대"
+  },
+  {
+   "id": "place-gl3-kwanumsa",
+   "type": "Place",
+   "label": "개경 북쪽 관음사"
+  },
+  {
+   "id": "place-gl3-hapcheon",
+   "type": "Place",
+   "label": "합천(원조정본농상집요 간행지)"
   }
  ],
  "claims": [
@@ -1711,19 +1865,6 @@
    "note": "경제 기반이 대토지를 모은 농장이었다."
   },
   {
-   "id": "claim-gl3-gws-sapae",
-   "subject": "group-gl3-gwonmun",
-   "predicate": "syj:occurredIn",
-   "object": {
-    "kind": "year",
-    "value": 1279
-   },
-   "sourceId": "src-goryeosa",
-   "citesChunk": "chunk_goryeosa_kr_078_0010_0020_0060_0050",
-   "quote": "畿縣之田, 權貴皆以賜牌各占故",
-   "note": "충렬왕 5년 기록: 경기 여러 현의 땅을 권귀가 사패를 빌미로 차지했다."
-  },
-  {
    "id": "claim-gl3-mongol-1274",
    "subject": "event-gl3-mongolpung",
    "predicate": "syj:occurredIn",
@@ -1797,7 +1938,7 @@
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_078_0010_0020_0060_0050",
    "quote": "時, 畿縣之田, 權貴皆以賜牌各占故",
-   "note": "충렬왕 5년 2월, 권귀가 사패를 내세워 경기 현의 땅을 차지했다."
+   "note": "충렬왕 5년 2월, 권귀가 사패를 내세워 경기 여러 현의 땅을 차지했다. 권문세족 항목과 농장 항목이 함께 쓰는 근거다."
   },
   {
    "id": "claim-gl3-nongjang-sindon",
@@ -1818,7 +1959,7 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "person-gl3-sindon"
+    "id": "person-hs-sindon"
    },
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_132_0010_0010_0120",
@@ -1968,7 +2109,7 @@
    },
    "sourceId": "src-gl3-enc-suwolgwaneum",
    "citesExcerpt": "ex-gl3-swg-160",
-   "note": "남아 있는 고려 불화 가운데 수월관음도가 가장 많다."
+   "note": "전 세계에 약 160여 점이 남은 고려 불화."
   },
   {
    "id": "claim-gl3-bulhwa-46",
@@ -1976,11 +2117,11 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "place-gl3-yeongtongsa"
+    "id": "polity-gl3-goryeo"
    },
    "sourceId": "src-gl3-enc-suwolgwaneum",
    "citesExcerpt": "ex-gl3-swg-46",
-   "note": "현존 고려 수월관음도 46점은 14세기 작품이다."
+   "note": "현존 고려 수월관음도 46점은 14세기 작품이다. 제작 지점을 가리키는 서술은 아니다."
   },
   {
    "id": "claim-gl3-gct-1348",
@@ -2435,6 +2576,192 @@
    "citesChunk": "chunk_goryeosa_kr_110_0010_0060_0020",
    "quote": "召齊賢至都",
    "note": "고려사 열전: 충선왕이 이제현을 연경으로 불러들였다."
+  },
+  {
+   "id": "claim-gl3-loc-kongmin-tomb",
+   "subject": "place-gl3-kongmin-tomb",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.98194,
+    "lon": 126.47306,
+    "precision": "site"
+   },
+   "sourceId": "src-gl3-en-kongmin-tomb",
+   "citesExcerpt": "ex-gl3-geo-kongmin",
+   "note": "공민왕이 노국대장공주와 함께 묻힌 현릉·정릉(공민왕릉)의 위키백과 표시 좌표."
+  },
+  {
+   "id": "claim-gl3-loc-kaesongwalls",
+   "subject": "place-gl3-kaesongwalls",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.9886,
+    "lon": 126.5728,
+    "precision": "area"
+   },
+   "sourceId": "src-gl3-en-kaesong-walls",
+   "citesExcerpt": "ex-gl3-geo-kaesongwalls",
+   "note": "개성 도성 성곽(나성)의 위키백과 표시 좌표를 도성 대표점으로 썼다."
+  },
+  {
+   "id": "claim-gl3-loc-kwanumsa",
+   "subject": "place-gl3-kwanumsa",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 38.08528,
+    "lon": 126.5725,
+    "precision": "area"
+   },
+   "sourceId": "src-gl3-en-kwanumsa",
+   "citesExcerpt": "ex-gl3-geo-kwanumsa",
+   "note": "개경 북쪽 관음사의 위키백과 표시 좌표. 불화 제작지를 가리키는 좌표가 아니라 표시용 대표점이다."
+  },
+  {
+   "id": "claim-gl3-loc-dadu",
+   "subject": "place-gl3-dadu",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 39.93333,
+    "lon": 116.4,
+    "precision": "area"
+   },
+   "sourceId": "src-gl3-en-dadu",
+   "citesExcerpt": "ex-gl3-geo-dadu",
+   "note": "원 대도(연경)의 위키백과 표시 좌표. 해외 지점이다."
+  },
+  {
+   "id": "claim-gl3-loc-daduwall",
+   "subject": "place-gl3-daduwall",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 39.9651,
+    "lon": 116.3479,
+    "precision": "area"
+   },
+   "sourceId": "src-gl3-en-dadu-wall",
+   "citesExcerpt": "ex-gl3-geo-daduwall",
+   "note": "원 대도 북쪽 성벽 유적의 위키백과 표시 좌표를 대도 체류 표시점으로 썼다. 해외 지점이다."
+  },
+  {
+   "id": "claim-gl3-loc-hapcheon",
+   "subject": "place-gl3-hapcheon",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.5666486,
+    "lon": 128.1661187,
+    "precision": "area"
+   },
+   "sourceId": "src-gl3-ko-hapcheon",
+   "citesExcerpt": "ex-gl3-geo-hapcheon",
+   "note": "『원조정본농상집요』를 간행한 합천의 위키백과 표시 좌표."
+  },
+  {
+   "id": "claim-gl3-yjh-1351",
+   "subject": "person-encykorea-yijehyeon",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 1351
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_038_0020_0010_0020",
+   "quote": "以李齊賢爲都僉議政丞",
+   "note": "공민왕 즉위년(1351) 11월, 이제현을 도첨의정승으로 삼았다."
+  },
+  {
+   "id": "claim-gl3-yjh-1357",
+   "subject": "person-encykorea-yijehyeon",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 1357
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_039_0020_0050_0020",
+   "quote": "李齊賢上箋請老, 遂致仕.",
+   "note": "공민왕 6년(1357) 5월, 이제현이 글을 올려 벼슬에서 물러났다."
+  },
+  {
+   "id": "claim-gl3-mongol-1387",
+   "subject": "event-gl3-mongolpung",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 1387
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_072_0010_0020_0100_0160",
+   "quote": "始革胡服, 依大明制",
+   "note": "우왕 13년(1387) 6월, 호복을 처음 혁파하고 명의 제도를 따랐다."
+  },
+  {
+   "id": "claim-gl3-mongol-gongmin",
+   "subject": "event-gl3-mongolpung",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "person-goryeo-gongminwang"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_106_0010_0080_0020",
+   "quote": "辮髮胡服, 非先王制, 願殿下勿效",
+   "note": "이연종이 변발과 호복은 선왕의 제도가 아니라고 간하자 공민왕이 곧 변발을 풀었다. 기사에 연도 표시가 없다."
+  },
+  {
+   "id": "claim-gl3-jdhs-exist",
+   "subject": "org-gl3-jeongdonghaengseong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-gl3-won"
+   },
+   "sourceId": "src-gl3-enc-jeongdonghaengseong",
+   "citesExcerpt": "ex-gl3-jdhs-exist",
+   "note": "치폐를 거친 뒤 몽골 제국 말기까지 존속했다는 서술. 존속 끝은 원이 대도를 잃은 1368년으로 잡았다."
+  },
+  {
+   "id": "claim-gl3-bulhwa-overseas",
+   "subject": "heritage-gl3-suwolgwaneum",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-gl3-wae"
+   },
+   "sourceId": "src-gl3-enc-suwolgwaneum",
+   "citesExcerpt": "ex-gl3-swg-overseas",
+   "note": "현존작 대부분이 일본을 비롯한 해외에 있다. 국내에 남아 존속한다고 볼 근거가 없다."
+  },
+  {
+   "id": "claim-gl3-anhyang-won1289",
+   "subject": "person-je-an-hyang",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 1289
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_030_0050_0120_0030",
+   "quote": "王及公主·世子如元. 趙仁規·印侯·廉承益·安珦等從行.",
+   "note": "충렬왕 15년(1289) 11월, 왕·공주·세자가 원으로 떠날 때 안향 등이 따라갔다."
+  },
+  {
+   "id": "claim-gl3-yjh-govern",
+   "subject": "person-encykorea-yijehyeon",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 1351
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_038_0020_0010_0030",
+   "quote": "李齊賢下理問 裴佺及朴守明于行省獄",
+   "note": "공민왕 즉위년(1351) 11월, 이제현이 정동행성 옥에 이문 배전 등을 가두고 인사를 정리했다. 개경에서의 국정 집행이다."
   }
  ],
  "scenes": [
@@ -2566,7 +2893,7 @@
    "startYear": 1280,
    "endYear": 1356,
    "kind": "court",
-   "summary": "1280년 2차 일본 원정을 준비하려고 세운 원의 기구다. 설치 직후 군량과 무기를 갖추고 병력을 징발했으며, 1356년 공민왕이 산하 이문소를 폐지했다.",
+   "summary": "1280년 2차 일본 원정을 준비하려고 세운 원의 기구다. 설치 직후 군량과 무기를 갖추고 병력을 징발했으며, 1356년 공민왕이 산하 이문소를 폐지했다. 기구 자체는 치폐를 거치며 몽골 제국 말기까지 남았다.",
    "dateClaimIds": [
     "claim-gl3-jdhs-1280"
    ],
@@ -2604,15 +2931,16 @@
    "decade": 1280,
    "relatedClaimIds": [
     "claim-gl3-jdhs-building",
+    "claim-gl3-jdhs-exist",
     "claim-gl3-loc-namdaemun"
    ],
    "persistence": {
     "kind": "institution",
     "from": 1280,
-    "to": 1356,
+    "to": 1368,
     "basisClaimIds": [
      "claim-gl3-jdhs-1280",
-     "claim-gl3-jdhs-imunso"
+     "claim-gl3-jdhs-exist"
     ]
    }
   },
@@ -2808,28 +3136,30 @@
    "startYear": 1289,
    "endYear": 1289,
    "kind": "portrait",
-   "summary": "1289년 정동행성 원외랑이 되어 왕을 따라 원에 갔고, 주자서를 손수 베끼고 공자와 주자의 화상을 그려 이듬해 돌아왔다. 1304년에는 섬학전을 마련해 국학의 재정을 세웠다.",
+   "summary": "1289년 2월 정동행성 원외랑이 되었고, 그해 11월 왕과 공주를 따라 원에 가서 주자서를 손수 베끼고 공자와 주자의 화상을 그려 이듬해 돌아왔다. 1304년에는 섬학전을 마련해 국학의 재정을 세웠다.",
    "dateClaimIds": [
-    "claim-gl3-anhyang-1289"
+    "claim-gl3-anhyang-1289",
+    "claim-gl3-anhyang-won1289"
    ],
    "actionClaimIds": [
     "claim-gl3-anhyang-juja",
     "claim-gl3-anhyang-seomhak"
    ],
    "place": {
-    "label": "개경 국자감 터(고려 성균관)",
+    "label": "원 대도 북쪽 성벽 유적 일대",
     "medium": "land",
-    "precision": "site",
-    "lon": 126.57072,
-    "lat": 37.992,
+    "precision": "area",
+    "lon": 116.3479,
+    "lat": 39.9651,
     "claimIds": [
-     "claim-gl3-loc-songgyungwan"
+     "claim-gl3-loc-daduwall"
     ],
     "coordinateSourceIds": [
-     "src-gl3-en-songgyungwan"
+     "src-gl3-en-dadu-wall"
     ],
-    "coordinateNote": "고려의 국학이 있던 자리로 전하는 개성 성균관의 표시 좌표를 썼다.",
-    "setting": "academy"
+    "coordinateNote": "안향이 머문 원 대도 안의 지점 근거가 없어 원 대도 성벽 유적의 표시 좌표를 대표점으로 썼다. 해외 지점이며, 개경 성균관 표시점은 국학 중영 항목(신진 사대부)에 남겼다.",
+    "setting": "academy",
+    "overseas": true
    },
    "participants": [
     {
@@ -2839,6 +3169,7 @@
      "side": "a",
      "claimIds": [
       "claim-gl3-anhyang-1289",
+      "claim-gl3-anhyang-won1289",
       "claim-gl3-anhyang-juja"
      ]
     }
@@ -2853,11 +3184,11 @@
     }
    },
    "category": "person",
-   "region": "central",
+   "region": "north",
    "decade": 1280,
    "relatedClaimIds": [
     "claim-gl3-seongnihak-intro",
-    "claim-gl3-loc-songgyungwan"
+    "claim-gl3-loc-daduwall"
    ]
   },
   {
@@ -2905,7 +3236,7 @@
    "region": "central",
    "decade": 1300,
    "relatedClaimIds": [
-    "claim-gl3-gws-sapae",
+    "claim-gl3-nongjang-1279",
     "claim-gl3-loc-sungyang"
    ]
   },
@@ -2915,11 +3246,12 @@
    "eventId": "event-gl3-009",
    "title": "몽골풍과 고려양",
    "startYear": 1274,
-   "endYear": 1356,
+   "endYear": 1387,
    "kind": "tradition",
-   "summary": "충렬왕 즉위년 10월 왕이 변발하지 않은 신하들을 나무랐다. 고려사는 원을 섬긴 뒤 백 년 가까이 변발과 호복을 따랐다고 적었고, 고려의 복식과 음식은 원에 퍼져 고려양이라 불렸다.",
+   "summary": "충렬왕 즉위년 10월 왕이 변발하지 않은 신하들을 나무랐다. 고려사는 원을 섬긴 뒤 백 년 가까이 변발과 호복을 따랐다고 적었고, 고려의 복식과 음식은 원에 퍼져 고려양이라 불렸다. 공민왕은 간언을 듣고 변발을 풀었으며 1387년에는 호복을 혁파하고 명의 제도를 따랐다.",
    "dateClaimIds": [
-    "claim-gl3-mongol-1274"
+    "claim-gl3-mongol-1274",
+    "claim-gl3-mongol-1387"
    ],
    "actionClaimIds": [
     "claim-gl3-mongol-custom",
@@ -2956,6 +3288,7 @@
    "relatedClaimIds": [
     "claim-gl3-mongol-century",
     "claim-gl3-goryeoyang-items",
+    "claim-gl3-mongol-gongmin",
     "claim-gl3-loc-kaesong"
    ],
    "sceneFunction": "market"
@@ -3026,19 +3359,20 @@
     "claim-gl3-mgd-1314"
    ],
    "place": {
-    "label": "개경 만월대(고려 궁성)",
+    "label": "원 대도(연경) 성안",
     "medium": "land",
-    "precision": "site",
-    "lon": 126.543333,
-    "lat": 37.985,
+    "precision": "area",
+    "lon": 116.4,
+    "lat": 39.93333,
     "claimIds": [
-     "claim-gl3-loc-manwoldae"
+     "claim-gl3-loc-dadu"
     ],
     "coordinateSourceIds": [
-     "src-gl3-en-manwoldae"
+     "src-gl3-en-dadu"
     ],
-    "coordinateNote": "고려 궁성 터(만월대)의 위키백과 표시 좌표를 궁궐 대표점으로 썼다.",
-    "setting": "palace"
+    "coordinateNote": "충선왕은 1308년 복위 뒤에도 대부분 원 연경에 머물렀다. 연경(대도)의 표시 좌표를 대표점으로 썼고 해외 지점이다.",
+    "setting": "palace",
+    "overseas": true
    },
    "participants": [
     {
@@ -3062,12 +3396,12 @@
     }
    },
    "category": "person",
-   "region": "central",
+   "region": "north",
    "decade": 1300,
    "relatedClaimIds": [
     "claim-gl3-chungseon-birth",
     "claim-gl3-chungseon-death",
-    "claim-gl3-loc-manwoldae"
+    "claim-gl3-loc-dadu"
    ]
   },
   {
@@ -3133,10 +3467,10 @@
    "itemId": "hs-goryeo-late-goryeo-bulhwa",
    "eventId": "event-gl3-013",
    "title": "고려 불화(수월관음도)",
-   "startYear": 1310,
-   "endYear": 1310,
+   "startYear": 1308,
+   "endYear": 1308,
    "kind": "heritage",
-   "summary": "남아 있는 고려 불화 가운데 수월관음도가 가장 많고, 현존하는 46점은 모두 14세기 작품이다. 대부분 사찰에 봉안하려고 그렸다.",
+   "summary": "남아 있는 고려 불화는 전 세계에 약 160여 점이고, 그 가운데 수월관음도 46점은 14세기 작품이다. 현존작은 대부분 일본을 비롯한 해외에 있다.",
    "dateClaimIds": [
     "claim-gl3-chungseon-reign"
    ],
@@ -3145,18 +3479,18 @@
     "claim-gl3-bulhwa-46"
    ],
    "place": {
-    "label": "개경 북쪽 오관산 영통사 일대",
+    "label": "개경 북쪽 관음사",
     "medium": "land",
     "precision": "area",
-    "lon": 126.5770545,
-    "lat": 38.0420351,
+    "lon": 126.5725,
+    "lat": 38.08528,
     "claimIds": [
-     "claim-gl3-loc-yeongtongsa"
+     "claim-gl3-loc-kwanumsa"
     ],
     "coordinateSourceIds": [
-     "src-gl3-ko-yeongtongsa"
+     "src-gl3-en-kwanumsa"
     ],
-    "coordinateNote": "농장·사원전과 불화 제작은 특정 지점이 아니어서 개경 근교 사찰(영통사)의 지도 좌표를 대표점으로 썼다.",
+    "coordinateNote": "제작 지점의 근거가 없어 수월관음 신앙과 이어지는 개경 북쪽 관음사의 표시 좌표를 대표점으로 썼다. 실제 제작지나 소장처가 아니다.",
     "setting": "temple"
    },
    "participants": [],
@@ -3171,20 +3505,13 @@
    },
    "category": "culture",
    "region": "central",
-   "decade": 1310,
+   "decade": 1300,
    "relatedClaimIds": [
-    "claim-gl3-loc-yeongtongsa"
+    "claim-gl3-bulhwa-overseas",
+    "claim-gl3-loc-kwanumsa"
    ],
    "sceneFunction": "temple",
-   "heritageType": "artifact",
-   "persistence": {
-    "kind": "facility",
-    "from": 1310,
-    "to": null,
-    "basisClaimIds": [
-     "claim-gl3-bulhwa-46"
-    ]
-   }
+   "heritageType": "artifact"
   },
   {
    "id": "scene-gl3-mangwondang",
@@ -3250,15 +3577,16 @@
    "itemId": "hs-goryeo-late-yi-jehyeon",
    "eventId": "event-gl3-015",
    "title": "이제현",
-   "startYear": 1314,
-   "endYear": 1314,
+   "startYear": 1351,
+   "endYear": 1357,
    "kind": "portrait",
-   "summary": "1287년에 태어나 1367년에 죽은 학자다. 1314년 상왕 충선왕의 부름으로 연경 만권당에 들어가 원의 학자들과 어울리며 학문을 넓혔다.",
+   "summary": "1287년에 태어나 1367년에 죽은 학자다. 1314년 상왕 충선왕의 부름으로 연경 만권당에서 원의 학자들과 어울렸고, 1351년 공민왕이 즉위하자 도첨의정승이 되어 개경에서 국정을 맡았다가 1357년 물러났다.",
    "dateClaimIds": [
-    "claim-gl3-yjh-1314"
+    "claim-gl3-yjh-1351",
+    "claim-gl3-yjh-1357"
    ],
    "actionClaimIds": [
-    "claim-gl3-yjh-goryeosa",
+    "claim-gl3-yjh-govern",
     "claim-gl3-mgd-yijehyeon"
    ],
    "place": {
@@ -3273,7 +3601,7 @@
     "coordinateSourceIds": [
      "src-gl3-en-sonjuk"
     ],
-    "coordinateNote": "개인 저택·관청의 좌표 근거가 없어 도성 동남부 선죽교의 표시 좌표를 대표점으로 썼다.",
+    "coordinateNote": "개경에서의 저택·관청 좌표 근거가 없어 도성 안 선죽교의 표시 좌표를 대표점으로 썼다. 1314~1320년 만권당 시기는 연경 일이라 이 장면의 연도에서 뺐다.",
     "setting": "office"
    },
    "participants": [
@@ -3283,8 +3611,9 @@
      "presence": "on-site",
      "side": "a",
      "claimIds": [
-      "claim-gl3-yjh-1314",
-      "claim-gl3-yjh-goryeosa"
+      "claim-gl3-yjh-1351",
+      "claim-gl3-yjh-govern",
+      "claim-gl3-mgd-yijehyeon"
      ]
     }
    ],
@@ -3292,15 +3621,17 @@
     "priority": {
      "enabled": true,
      "claimIds": [
-      "claim-gl3-yjh-1314"
+      "claim-gl3-yjh-1351"
      ],
      "level": "standard"
     }
    },
    "category": "person",
    "region": "central",
-   "decade": 1310,
+   "decade": 1350,
    "relatedClaimIds": [
+    "claim-gl3-yjh-1314",
+    "claim-gl3-yjh-goryeosa",
     "claim-gl3-yjh-birth",
     "claim-gl3-yjh-death",
     "claim-gl3-yjh-def",
@@ -3334,7 +3665,7 @@
     "coordinateSourceIds": [
      "src-gl3-en-nmk"
     ],
-    "coordinateNote": "탑이 지금 서 있는 국립중앙박물관의 표시 좌표를 썼다. 원래 자리인 개풍 경천사지의 좌표 근거는 찾지 못했다."
+    "coordinateNote": "표시 좌표는 탑이 지금 서 있는 국립중앙박물관이며 1348년에 세운 자리가 아니다. 원래 자리인 개풍 경천사지는 위키백과에 문서가 없고 백과사전 소재지도 현 위치만 적어 좌표를 확보하지 못했다."
    },
    "participants": [],
    "effects": {
@@ -3380,19 +3711,19 @@
     "claim-gl3-nsj-1372"
    ],
    "place": {
-    "label": "개경 북쪽 오관산 영통사 일대",
+    "label": "합천(원조정본농상집요 간행지)",
     "medium": "land",
     "precision": "area",
-    "lon": 126.5770545,
-    "lat": 38.0420351,
+    "lon": 128.1661187,
+    "lat": 35.5666486,
     "claimIds": [
-     "claim-gl3-loc-yeongtongsa"
+     "claim-gl3-loc-hapcheon"
     ],
     "coordinateSourceIds": [
-     "src-gl3-ko-yeongtongsa"
+     "src-gl3-ko-hapcheon"
     ],
-    "coordinateNote": "농장·사원전과 불화 제작은 특정 지점이 아니어서 개경 근교 사찰(영통사)의 지도 좌표를 대표점으로 썼다.",
-    "setting": "temple"
+    "coordinateNote": "1372년 『원조정본농상집요』를 간행한 합천의 표시 좌표를 썼다. 1349년 전래는 개경 일이다.",
+    "setting": "village"
    },
    "participants": [],
    "effects": {
@@ -3405,10 +3736,10 @@
     }
    },
    "category": "economy",
-   "region": "central",
+   "region": "south",
    "decade": 1340,
    "relatedClaimIds": [
-    "claim-gl3-loc-yeongtongsa"
+    "claim-gl3-loc-hapcheon"
    ],
    "sceneFunction": "irrigation"
   },
@@ -3551,18 +3882,18 @@
     "claim-gl3-ss-recover"
    ],
    "place": {
-    "label": "개경 만월대(고려 궁성)",
+    "label": "개성 공민왕릉(현릉·정릉)",
     "medium": "land",
     "precision": "site",
-    "lon": 126.543333,
-    "lat": 37.985,
+    "lon": 126.47306,
+    "lat": 37.98194,
     "claimIds": [
-     "claim-gl3-loc-manwoldae"
+     "claim-gl3-loc-kongmin-tomb"
     ],
     "coordinateSourceIds": [
-     "src-gl3-en-manwoldae"
+     "src-gl3-en-kongmin-tomb"
     ],
-    "coordinateNote": "고려 궁성 터(만월대)의 위키백과 표시 좌표를 궁궐 대표점으로 썼다.",
+    "coordinateNote": "개경 궁성 표시점은 관제 격하 항목이 같은 기간을 쓰고 있어, 공민왕이 노국대장공주와 함께 묻힌 현릉·정릉의 표시 좌표를 인물 장면 대표점으로 썼다. 재위 중 활동 지점이 아니다.",
     "setting": "palace"
    },
    "participants": [
@@ -3593,7 +3924,7 @@
    "relatedClaimIds": [
     "claim-gl3-gmw-from-web",
     "claim-gl3-hong-flight",
-    "claim-gl3-loc-manwoldae"
+    "claim-gl3-loc-kongmin-tomb"
    ]
   },
   {
@@ -3613,18 +3944,18 @@
     "claim-gl3-gwanje-restore"
    ],
    "place": {
-    "label": "개경 도성 남대문 일대 관부",
+    "label": "개경 도성 성곽 일대",
     "medium": "land",
     "precision": "area",
-    "lon": 126.5581,
-    "lat": 37.9692,
+    "lon": 126.5728,
+    "lat": 37.9886,
     "claimIds": [
-     "claim-gl3-loc-namdaemun"
+     "claim-gl3-loc-kaesongwalls"
     ],
     "coordinateSourceIds": [
-     "src-gl3-en-namdaemun"
+     "src-gl3-en-kaesong-walls"
     ],
-    "coordinateNote": "정동행성 관서 건물의 좌표 근거가 없어 도성 중심인 개성 남대문의 표시 좌표를 관부 구역 대표점으로 썼다.",
+    "coordinateNote": "기철 일파 제거와 이문소 혁파가 일어난 지점의 좌표 근거가 없어 개성 도성 성곽의 표시 좌표를 도성 대표점으로 썼다. 정동행성 항목과 점이 겹치지 않게 따로 잡았다.",
     "setting": "office"
    },
    "participants": [
@@ -3653,7 +3984,7 @@
    "relatedClaimIds": [
     "claim-gl3-cheomuibu-restore-web",
     "claim-gl3-ss-recover",
-    "claim-gl3-loc-namdaemun"
+    "claim-gl3-loc-kaesongwalls"
    ]
   },
   {
@@ -3863,18 +4194,19 @@
     "claim-gl3-jdhs-supply",
     "claim-gl3-jdhs-imunso",
     "claim-gl3-jdhs-building",
+    "claim-gl3-jdhs-exist",
     "claim-gl3-loc-namdaemun"
    ],
    "sceneId": "scene-gl3-jeongdonghaengseong",
    "confidence": "high",
-   "note": "[10한사1-02-01] · core · 1356년에 혁파된 것은 이문소 등 산하 기관이고 정동행성 자체는 축소된 채 고려 말까지 남았다.",
+   "note": "[10한사1-02-01] · core · 1356년에 혁파된 것은 이문소 등 산하 기관이고 정동행성 자체는 축소된 채 남았다. 백과사전이 “몽골 제국 말기까지 존속”이라 적어 존속 끝은 원이 대도를 잃은 1368년으로 잡았다. 장면의 끝 연도 1356년은 내정 간섭 기능이 끝난 해다.",
    "lon": 126.5581,
    "lat": 37.9692,
    "coordinateBasis": "location claim-gl3-loc-namdaemun",
    "persistence": {
     "kind": "institution",
     "from": 1280,
-    "to": 1356
+    "to": 1368
    }
   },
   {
@@ -3959,26 +4291,27 @@
    "id": "fact-hs-gl3-007",
    "itemId": "hs-goryeo-late-an-hyang",
    "category": "person",
-   "region": "central",
+   "region": "north",
    "decade": 1280,
    "year": 1289,
    "yearVerbatim": "1289년 2월",
-   "placeLabel": "개경 국자감 터(고려 성균관)",
-   "modernPlace": "개성특별시 방직동",
+   "placeLabel": "원 대도 북쪽 성벽 유적 일대",
+   "modernPlace": "중국 베이징시",
    "what": "원에서 성리학을 들여와 고려에 처음 소개한 학자",
    "claimIds": [
     "claim-gl3-anhyang-1289",
+    "claim-gl3-anhyang-won1289",
     "claim-gl3-anhyang-juja",
     "claim-gl3-anhyang-seomhak",
     "claim-gl3-seongnihak-intro",
-    "claim-gl3-loc-songgyungwan"
+    "claim-gl3-loc-daduwall"
    ],
    "sceneId": "scene-gl3-an-hyang",
    "confidence": "high",
-   "note": "[10한사1-02-04] · core · 항목의 1290년은 귀국 시점이며, 장면은 근거가 분명한 1289년 원행으로 잡았다.",
-   "lon": 126.57072,
-   "lat": 37.992,
-   "coordinateBasis": "location claim-gl3-loc-songgyungwan"
+   "note": "[10한사1-02-04] · core · 1289년 2월 정동행성 원외랑 제수는 개경 일이고, 그해 11월 왕을 호종해 원에 가 주자서를 베낀 뒤 이듬해 돌아왔다. 성리학 도입의 계기가 된 원 체류를 표시점으로 삼았다. 해외(중국 베이징) 지점이라 권역은 위도 규칙에 따라 north로 적었다.",
+   "lon": 116.3479,
+   "lat": 39.9651,
+   "coordinateBasis": "location claim-gl3-loc-daduwall"
   },
   {
    "id": "fact-hs-gl3-008",
@@ -3995,7 +4328,7 @@
     "claim-gl3-gws-1308",
     "claim-gl3-gws-dop",
     "claim-gl3-gws-nongjang",
-    "claim-gl3-gws-sapae",
+    "claim-gl3-nongjang-1279",
     "claim-gl3-loc-sungyang"
    ],
    "sceneId": "scene-gl3-gwonmun-sejok",
@@ -4022,11 +4355,13 @@
     "claim-gl3-goryeoyang-exchange",
     "claim-gl3-mongol-century",
     "claim-gl3-goryeoyang-items",
+    "claim-gl3-mongol-gongmin",
+    "claim-gl3-mongol-1387",
     "claim-gl3-loc-kaesong"
    ],
    "sceneId": "scene-gl3-mongolpung",
    "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 항목의 1300년은 원 간섭기 전체를 대표하는 추정값이어서, 근거가 분명한 1274년 변발 기사를 장면 연도로 삼았다.",
+   "note": "[10한사1-02-04] · standard · 항목의 1300년은 원 간섭기 전체를 대표하는 추정값이어서 근거가 분명한 1274년 변발 기사를 장면 연도로 삼았다. 표시 끝 연도는 호복을 혁파하고 명 제도를 따른 1387년 기사에 맞췄고, 공민왕이 변발을 푼 기사에는 연도 표시가 없다.",
    "lon": 126.5528,
    "lat": 37.9717,
    "coordinateBasis": "location claim-gl3-loc-kaesong"
@@ -4060,12 +4395,12 @@
    "id": "fact-hs-gl3-011",
    "itemId": "hs-goryeo-late-chungseonwang",
    "category": "person",
-   "region": "central",
+   "region": "north",
    "decade": 1300,
    "year": 1308,
    "yearVerbatim": "1308년",
-   "placeLabel": "개경 만월대(고려 궁성)",
-   "modernPlace": "개성특별시 만월동",
+   "placeLabel": "원 대도(연경) 성안",
+   "modernPlace": "중국 베이징시",
    "what": "개혁을 시도하고 원에 만권당을 세워 학문 교류를 이끈 임금",
    "claimIds": [
     "claim-gl3-chungseon-reign",
@@ -4073,14 +4408,14 @@
     "claim-gl3-mgd-1314",
     "claim-gl3-chungseon-birth",
     "claim-gl3-chungseon-death",
-    "claim-gl3-loc-manwoldae"
+    "claim-gl3-loc-dadu"
    ],
    "sceneId": "scene-gl3-chungseonwang",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard",
-   "lon": 126.543333,
-   "lat": 37.985,
-   "coordinateBasis": "location claim-gl3-loc-manwoldae"
+   "note": "[10한사1-01-02] · standard · 1308년 복위 뒤 대부분 원 연경에 머물며 전지로 정치했고 1314년 그곳에 만권당을 세웠다. 개경 궁성 표시점은 관제 격하 항목이 같은 기간을 쓰고 있어 연경을 표시점으로 삼았다. 해외(중국 베이징) 지점이라 권역은 north로 적었다.",
+   "lon": 116.4,
+   "lat": 39.93333,
+   "coordinateBasis": "location claim-gl3-loc-dadu"
   },
   {
    "id": "fact-hs-gl3-012",
@@ -4115,34 +4450,30 @@
    "itemId": "hs-goryeo-late-goryeo-bulhwa",
    "category": "culture",
    "region": "central",
-   "decade": 1310,
-   "year": 1310,
-   "yearVerbatim": "1310년 무렵(충선왕 대)",
-   "placeLabel": "개경 북쪽 오관산 영통사 일대",
-   "modernPlace": "개성특별시 용흥동",
+   "decade": 1300,
+   "year": 1308,
+   "yearVerbatim": "1308년(충선왕 복위)",
+   "placeLabel": "개경 북쪽 관음사",
+   "modernPlace": "개성특별시 북부 대흥산 일대",
    "what": "금가루와 비단으로 그린 고려 귀족 불교의 대표 그림",
    "claimIds": [
     "claim-gl3-chungseon-reign",
     "claim-gl3-bulhwa-160",
     "claim-gl3-bulhwa-46",
-    "claim-gl3-loc-yeongtongsa"
+    "claim-gl3-bulhwa-overseas",
+    "claim-gl3-loc-kwanumsa"
    ],
    "sceneId": "scene-gl3-goryeo-bulhwa",
-   "confidence": "medium",
-   "note": "[10한사1-02-04] · standard · 1310년작 수월관음도를 대표 연도로 삼았으나 그 연도의 근거는 찾지 못했다. 시기 근거는 충선왕 재위(1308~1313)와 14세기 제작이라는 서술이다. 대표작 상당수가 해외에 있어 제작지인 개경 근교를 좌표로 썼다.",
-   "lon": 126.5770545,
-   "lat": 38.0420351,
-   "coordinateBasis": "location claim-gl3-loc-yeongtongsa",
-   "persistence": {
-    "kind": "facility",
-    "from": 1310,
-    "to": null
-   }
+   "confidence": "low",
+   "note": "[10한사1-02-04] · standard · 항목의 1310년은 이번 조사에서 근거를 찾지 못해 쓰지 않았다. 연도 근거는 충선왕 재위 시작(1308)과 “14세기에 제작”이라는 서술뿐이라 표시 연도만 1308년으로 두었다. 제작지·소장처 근거가 없어 좌표는 표시용 대표점이고, 현존작 대부분이 해외에 있어 존속 표시는 달지 않았다.",
+   "lon": 126.5725,
+   "lat": 38.08528,
+   "coordinateBasis": "location claim-gl3-loc-kwanumsa"
   },
   {
    "id": "fact-hs-gl3-014",
    "itemId": "hs-goryeo-late-mangwondang",
-   "category": "culture",
+   "category": "administration",
    "region": "north",
    "decade": 1310,
    "year": 1314,
@@ -4159,7 +4490,7 @@
    ],
    "sceneId": "scene-gl3-mangwondang",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 해외(중국 베이징) 지점이다. 좌표는 연경의 자리인 베이징 표시 좌표이며 위도 39도 이상이라 권역은 north로 적었다.",
+   "note": "[10한사1-02-04] · standard · 해외(중국 베이징) 지점이다. 좌표는 연경의 자리인 베이징 표시 좌표이며 위도 39도 이상이라 권역은 north로 적었다. 항목 type이 institution이라 대응표에 맞춰 category를 administration으로 적었다.",
    "lon": 116.3975,
    "lat": 39.90667,
    "coordinateBasis": "location claim-gl3-loc-beijing"
@@ -4169,13 +4500,16 @@
    "itemId": "hs-goryeo-late-yi-jehyeon",
    "category": "person",
    "region": "central",
-   "decade": 1310,
-   "year": 1314,
-   "yearVerbatim": "1314년(충숙왕 1)",
+   "decade": 1350,
+   "year": 1351,
+   "yearVerbatim": "1351년(공민왕 즉위년)",
    "placeLabel": "개경 선죽교 일대",
    "modernPlace": "개성특별시 선죽동",
    "what": "만권당에서 원 학자들과 교류하며 성리학을 넓힌 학자",
    "claimIds": [
+    "claim-gl3-yjh-1351",
+    "claim-gl3-yjh-govern",
+    "claim-gl3-yjh-1357",
     "claim-gl3-yjh-1314",
     "claim-gl3-yjh-goryeosa",
     "claim-gl3-mgd-yijehyeon",
@@ -4186,7 +4520,7 @@
    ],
    "sceneId": "scene-gl3-yi-jehyeon",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 1314년에는 연경에 있었고, 이 장면은 귀국 뒤 개경에서의 활동을 대표하는 자리로 도성 안 대표점을 썼다.",
+   "note": "[10한사1-02-04] · standard · 항목의 1314년은 연경 만권당 시기라 장면 연도로 쓰지 않고, 개경 활동이 기록으로 확인되는 1351년 도첨의정승 임명~1357년 치사를 장면 기간으로 삼았다. 만권당 교유는 근거로 남겼다.",
    "lon": 126.5081,
    "lat": 37.9817,
    "coordinateBasis": "location claim-gl3-loc-sonjuk"
@@ -4209,7 +4543,7 @@
    ],
    "sceneId": "scene-gl3-gyeongcheonsa-pagoda",
    "confidence": "high",
-   "note": "[10한사1-02-04] · standard · 좌표는 지금 자리인 국립중앙박물관이며 원래 자리는 개풍 경천사지다.",
+   "note": "[10한사1-02-04] · standard · 표시 좌표와 존속 표시는 탑이 지금 서 있는 국립중앙박물관 기준이며, 1348년 건립 자리인 개풍 경천사지가 아니다. 개풍 경천사지의 좌표 근거는 이번 조사에서도 찾지 못했다.",
    "lon": 126.9803,
    "lat": 37.5239,
    "coordinateBasis": "location claim-gl3-loc-nmk",
@@ -4223,24 +4557,24 @@
    "id": "fact-hs-gl3-017",
    "itemId": "hs-goryeo-late-nongsang-jipyo",
    "category": "economy",
-   "region": "central",
+   "region": "south",
    "decade": 1340,
    "year": 1349,
    "yearVerbatim": "1349년(충정왕 1)",
-   "placeLabel": "개경 북쪽 오관산 영통사 일대",
-   "modernPlace": "개성특별시 용흥동",
+   "placeLabel": "합천(원조정본농상집요 간행지)",
+   "modernPlace": "경상남도 합천군",
    "what": "원에서 들여온 농업 기술서로 농사법 개선에 쓰임",
    "claimIds": [
     "claim-gl3-nsj-1349",
     "claim-gl3-nsj-1372",
-    "claim-gl3-loc-yeongtongsa"
+    "claim-gl3-loc-hapcheon"
    ],
    "sceneId": "scene-gl3-nongsang-jipyo",
    "confidence": "medium",
-   "note": "[10한사1-02-02] · extended · 농서의 쓰임은 특정 지점이 아니어서 개경 근교 농지 대표점을 썼다.",
-   "lon": 126.5770545,
-   "lat": 38.0420351,
-   "coordinateBasis": "location claim-gl3-loc-yeongtongsa"
+   "note": "[10한사1-02-02] · extended · 1349년 전래는 개경 일이지만 지점 근거가 없어, 근거가 분명한 1372년 간행지 합천을 좌표로 삼았다.",
+   "lon": 128.1661187,
+   "lat": 35.5666486,
+   "coordinateBasis": "location claim-gl3-loc-hapcheon"
   },
   {
    "id": "fact-hs-gl3-018",
@@ -4302,8 +4636,8 @@
    "decade": 1350,
    "year": 1351,
    "yearVerbatim": "1351년(충정왕 3)",
-   "placeLabel": "개경 만월대(고려 궁성)",
-   "modernPlace": "개성특별시 만월동",
+   "placeLabel": "개성 공민왕릉(현릉·정릉)",
+   "modernPlace": "개성특별시 개풍구역 해선리",
    "what": "원의 간섭을 끊고 왕권을 세우려 개혁에 나선 임금",
    "claimIds": [
     "claim-gl3-gmw-1351",
@@ -4312,14 +4646,14 @@
     "claim-gl3-ss-recover",
     "claim-gl3-gmw-from-web",
     "claim-gl3-hong-flight",
-    "claim-gl3-loc-manwoldae"
+    "claim-gl3-loc-kongmin-tomb"
    ],
    "sceneId": "scene-gl3-gongminwang",
    "confidence": "high",
-   "note": "[10한사1-01-02] · core",
-   "lon": 126.543333,
-   "lat": 37.985,
-   "coordinateBasis": "location claim-gl3-loc-manwoldae"
+   "note": "[10한사1-01-02] · core · 즉위는 궁성 안 강안전이지만 개경 궁성 표시점은 관제 격하 항목이 같은 기간을 쓰고 있어, 공민왕릉(현릉·정릉)의 표시 좌표를 인물 장면 대표점으로 썼다. 재위 중 활동 지점이 아니다.",
+   "lon": 126.47306,
+   "lat": 37.98194,
+   "coordinateBasis": "location claim-gl3-loc-kongmin-tomb"
   },
   {
    "id": "fact-hs-gl3-021",
@@ -4329,8 +4663,8 @@
    "decade": 1350,
    "year": 1356,
    "yearVerbatim": "1356년(공민왕 5)",
-   "placeLabel": "개경 도성 남대문 일대 관부",
-   "modernPlace": "개성특별시 북안동",
+   "placeLabel": "개경 도성 성곽 일대",
+   "modernPlace": "개성특별시",
    "what": "친원 세력을 몰아내고 옛 제도를 되살린 자주 개혁",
    "claimIds": [
     "claim-gl3-banwon-gicheol",
@@ -4338,14 +4672,14 @@
     "claim-gl3-gwanje-restore",
     "claim-gl3-cheomuibu-restore-web",
     "claim-gl3-ss-recover",
-    "claim-gl3-loc-namdaemun"
+    "claim-gl3-loc-kaesongwalls"
    ],
    "sceneId": "scene-gl3-banwon-policy",
    "confidence": "high",
-   "note": "[10한사1-01-02] · core",
-   "lon": 126.5581,
-   "lat": 37.9692,
-   "coordinateBasis": "location claim-gl3-loc-namdaemun"
+   "note": "[10한사1-01-02] · core · 1356년 일들이 일어난 지점의 좌표 근거가 없어 도성 성곽을 대표점으로 썼다. 정동행성 항목이 쓰는 남대문 표시점과 겹치지 않게 나눴다.",
+   "lon": 126.5728,
+   "lat": 37.9886,
+   "coordinateBasis": "location claim-gl3-loc-kaesongwalls"
   },
   {
    "id": "fact-hs-gl3-022",

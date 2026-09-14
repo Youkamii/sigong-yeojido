@@ -1,21 +1,21 @@
 {
   "job": "modern-transition-2",
-  "sources": 56,
-  "excerpts": 93,
+  "sources": 57,
+  "excerpts": 97,
   "chunkClaims": 0,
-  "excerptClaims": 97,
+  "excerptClaims": 102,
   "facts": 26,
   "factsByCategory": {
     "administration": 5,
     "culture": 4,
-    "disaster": 1,
     "economy": 1,
     "foreign": 4,
     "person": 5,
+    "settlement": 1,
     "war": 6
   },
-  "claims": 97,
-  "entities": 67,
+  "claims": 102,
+  "entities": 69,
   "rawFilesChecked": [
     {
       "source": "src-hs-enc-bobingsa",
@@ -150,8 +150,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0000925",
       "sha256": "a21ccae0978e91ad986cce3bd0ea2cfe4f79566c7c5b703ede6d84f86ae95df4",
       "rawBytes": 120465,
-      "excerpts": 4,
-      "quotedWords": 24
+      "excerpts": 3,
+      "quotedWords": 19
     },
     {
       "source": "src-hs-enc-gobu",
@@ -374,8 +374,8 @@
       "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%EC%88%98%EC%A0%95%EC%A0%84",
       "sha256": "15a40b9b3d2dcce10b36a9d903097c11e0a6f442bc0d2c1a1664410a362cf7f4",
       "rawBytes": 93500,
-      "excerpts": 1,
-      "quotedWords": 2
+      "excerpts": 2,
+      "quotedWords": 9
     },
     {
       "source": "src-hs-ko-manseokbo",
@@ -390,8 +390,8 @@
       "url": "https://ko.wikipedia.org/wiki/%EB%8F%99%ED%95%99%EB%86%8D%EB%AF%BC%ED%98%81%EB%AA%85%EA%B8%B0%EB%85%90%EA%B4%80",
       "sha256": "d9c8ae0f984a58ae616351b08bd690f00db3a2c513daa22701be083dcfa96499",
       "rawBytes": 69186,
-      "excerpts": 2,
-      "quotedWords": 12
+      "excerpts": 3,
+      "quotedWords": 17
     },
     {
       "source": "src-hs-ko-jeon-house",
@@ -462,8 +462,16 @@
       "url": "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%96%91%EC%98%81%EB%8B%B9",
       "sha256": "7e54bbd90ed20510e9100803d07037b06ea26cb4ab780ae4e6014da82107bc51",
       "rawBytes": 78547,
-      "excerpts": 1,
-      "quotedWords": 2
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-enc-pyejeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0060112",
+      "sha256": "fe2e968e0f49ddce4ac1050492f3b1492fb2a5654788e7252432b883cdabffdb",
+      "rawBytes": 106301,
+      "excerpts": 2,
+      "quotedWords": 16
     }
   ],
   "missing": [],
@@ -478,12 +486,14 @@
     "started": 1789740000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-modern-transition-2"
+    "sessionId": "workflow-modern-transition-2",
+    "revised": 1789380112
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-jayangyeongdang"
+    "person-encykorea-son-byeonghui",
+    "event-hs-donghak"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

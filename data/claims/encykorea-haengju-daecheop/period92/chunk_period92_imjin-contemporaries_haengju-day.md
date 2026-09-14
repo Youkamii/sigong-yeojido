@@ -32,14 +32,19 @@ status: "draft"
   {
     "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-hjb-day",
     "subject": "event-hs-jl1-haengju",
-    "predicate": "syj:relatedTo",
+    "predicate": "syj:occurredIn",
     "object": {
-      "kind": "entity",
-      "id": "person-encykorea-gwon-yul-e0007022"
+      "kind": "time",
+      "verbatim": "1593년 2월 12일",
+      "year": 1593,
+      "precision": "day",
+      "earliest": 1593,
+      "latest": 1593,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-hjb-day"
     },
     "citesChunk": "chunk_period92_imjin-contemporaries_haengju-day",
     "quote": "1593년 2월 12일",
-    "note": "행주대첩 날짜는 1593년 2월 12일이다.",
+    "note": "행주대첩은 1593년 2월 12일에 있었다.",
     "fromSource": "src-encykorea-haengju-daecheop",
     "origin": "ai",
     "status": "draft",

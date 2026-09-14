@@ -1,0 +1,153 @@
+{
+ "job": "modern-transition-4",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-modern-transition --job modern-transition-4 -> PASS: failures=0 warnings=0 (facts 24, scenes 24, claims 108, chunkClaims 14, excerptClaims 94). category×10년: administration 4, economy 3, culture 2, foreign 5, person 6, war 3, facility 1. region×10년: north 4, central 17, south 3.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-modern-transition-annexation-treaty",
+   "sceneId": "scene-hs-mt4-annexation-treaty",
+   "problem": "장면 장소가 '남산 통감 관저 터'인데 순종을 presence 'on-site' 참여자로 넣었다. 근거로 단 claim-hs-mt4-byeonghap-sunjong 의 인용은 '순종 앞에서 형식상의 어전회의를 개최'이며, 이 어전회의는 궁궐에서 열렸고 통감 관저는 이완용·데라우치가 조인한 자리다. 지도에서 마지막 황제가 통감 관저에 서 있는 것으로 표시된다.",
+   "fix": "순종 참여자의 presence 를 'related'(조립기가 이미 쓰는 값)로 바꾸거나 participants 에서 빼고 relatedClaimIds 로만 남긴다. 또는 장면 장소를 어전회의가 열린 궁궐로 바꾸고 조인 사실은 summary·claim 으로만 남긴다.",
+   "evidence": "raw/enc-hanil-byeonghap.html 본문: '8월 16일 데라우치는 이완용과 조중응을 통감관저로 불러 … 1910년 8월 22일 … 순종 앞에서 형식상의 어전회의를 개최 … 그 날 내각총리대신 이완용과 일본 통감 데라우치의 이름으로 … 조인되었다.' (presence 'related' 사용례는 scripts/build_history_scenes.py:110)"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-modern-transition-annexation-treaty",
+   "claimId": "claim-hs-mt4-gwanjeo-loc",
+   "problem": "core 항목의 좌표 근거가 비어 있다. location 주장(126.987, 37.553)이 citesExcerpt ex-byeonghap-gwanjeo('통감관저로 불러 이른바 병합조약의 초안을 보여 주고는')를 근거로 달았는데 그 발췌에는 좌표 숫자가 없다. note 에 '항목 목록의 대표점을 썼다'고 적혀 있어 사실상 items.json 값을 옮긴 것이다. 검증기는 fact.coordinateBasis 가 location claim 을 가리키면 통과시키므로 잡히지 않는다.",
+   "fix": "십진 좌표가 본문에 있는 허용 출처(예: ko.wikipedia 예장동·남산 통감관저 터 관련 문서, 접속되면 국가유산포털 소재지)를 raw/ 에 새로 받아 sources·manifest 에 넣고 그 발췌를 citesExcerpt 로 단다. 끝내 못 구하면 좌표를 빼고 fact 에서 lon/lat·coordinateBasis 를 생략한다.",
+   "evidence": "이미 PASS 한 기준 칸 data/research/curriculum-joseon-early/joseon-early-2/result.json 은 location 주장 23건 전부가 십진 좌표가 들어간 발췌를 인용한다(23/23). 이 칸은 24건 중 2건이 어긋난다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-modern-transition-residency-general",
+   "claimId": "claim-hs-mt4-waeseongdae-loc",
+   "problem": "위와 같은 결함. location 주장(126.985, 37.554)이 ex-tonggambu-seoul('서울에 설치한 통치기구')을 근거로 달렸는데 발췌에 좌표가 없고 '서울'이라는 도시 이름만 있다. note 도 항목 목록 대표점을 썼다고 밝힌다.",
+   "fix": "남산 왜성대 통감부 청사 터(현 중구 예장동)의 십진 좌표가 든 허용 출처를 받아 인용하거나, 좌표를 빼고 사실만 남긴다.",
+   "evidence": "result.json claim-hs-mt4-waeseongdae-loc / sources[src-hs-enc-tonggambu].excerpts[ex-tonggambu-seoul]; 재검사 결과 location 주장 24건 중 이 건과 claim-hs-mt4-gwanjeo-loc 2건만 좌표 발췌가 없다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-modern-transition-jeongmi-treaty",
+   "sceneId": "scene-hs-mt4-jeongmi-treaty",
+   "problem": "core 항목의 참여자 이완용이 근거 claim 과 어긋난다. participants[0].claimIds 가 claim-hs-mt4-sinhyeopyak-tonggam 하나인데, 그 발췌('1907년 7월 24일, 일본이 대한제국을 강점하기 위해 체결한 불평등조약.')에는 이완용이 나오지 않는다. 인물 참여 주장에 대한 근거가 사실상 없다.",
+   "fix": "같은 raw 문서(enc-hanil-sinhyeopyak.html)에 조인 서명란이 그대로 있다 — '광무 11년 7월 24일 / 내각 총리대신 이완용'. 이 대목을 25단어 이내 발췌로 새로 넣고 person-yi-wanyong 의 syj:participatedIn claim 을 만들어 participants.claimIds 에 건다.",
+   "evidence": "raw/enc-hanil-sinhyeopyak.html 본문: '광무 11년 7월 24일 / 내각 총리대신 이완용 // 메이지 40년 7월 24일 / 통감후작 이토 히로부미'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-yi-jun",
+   "sceneId": "scene-hs-mt4-yi-jun",
+   "problem": "헤이그 두 항목이 사실상 한 점에 겹친다. scene-hs-mt4-hague-envoys(비넨호프 4.313035/52.079631)와 이 장면(헤이그 시 대표점 4.31/52.08)의 거리가 약 212m 다. '같은 도시 항목이 한 점에 겹치지 않게' 규칙에 걸린다.",
+   "fix": "이준 초상은 순국 장소(헤이그 De Jong 호텔, Wagenstraat 일대)나 이준 기념관 좌표를 좌표 발췌와 함께 잡아 비넨호프와 떨어뜨린다.",
+   "evidence": "facts 좌표 거리 계산: fact-hs-mt4-008 ↔ fact-hs-mt4-015 = 212m"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-seokjojeon",
+   "sceneId": "scene-hs-mt4-seokjojeon",
+   "problem": "fact-hs-mt4-007(경운궁 126.97472/37.56583)과 fact-hs-mt4-024(석조전 126.9742/37.5664)가 78m 로 화면에서 겹칠 수 있다. 두 점 모두 덕수궁 권역이라 물리적으로는 맞지만 카드가 포개진다.",
+   "fix": "고종 퇴위 장면을 양위식이 열린 중화전·함녕전 쪽 좌표로 잡거나, 석조전을 궁역 서쪽 실제 위치로 미세 조정해 간격을 벌린다.",
+   "evidence": "facts 좌표 거리 계산: fact-hs-mt4-007 ↔ fact-hs-mt4-024 = 78m"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-doksasillon",
+   "sceneId": "scene-hs-mt4-doksasillon",
+   "problem": "좌표가 사건과 무관한 곳에 찍혔다. coordinateNote 가 '연재 지면을 낸 신문사 터와 겹치지 않게 한성 종로 탑골공원 표시 좌표를 대표점으로 썼다'고 밝히듯, 겹침을 피하려고 탑골공원을 골랐을 뿐 독사신론 연재와 탑골공원은 관계가 없다.",
+   "fix": "대한매일신보사 터(전동·수송동) 좌표를 쓰되 양기탁 초상(fact-014)과 수십 m 단위로 다르게 두거나, placeLabel 을 '한성 종로 일대'로만 두고 coordinateNote 에 '연재 지면의 대표점이며 특정 지점을 주장하지 않는다'로 고쳐 쓴다.",
+   "evidence": "result.json scene-hs-mt4-doksasillon.place.coordinateNote / claim-hs-mt4-tapgol-loc.note"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-gando-convention",
+   "claimId": "claim-hs-mt4-gando-place",
+   "problem": "claim-hs-mt4-gando-place(tookPlaceAt 베이징)가 fact·scene 어디에서도 참조되지 않는 고아 claim 이다. 결과적으로 이 장면에는 장소 행위 근거가 실리지 않고, 그 claim 자체도 발췌가 조인 도시를 말하지 않는다(note 가 추론임을 밝힌다).",
+   "fix": "claim 을 장면 relatedClaimIds 나 fact.claimIds 에 넣어 근거 사슬을 잇고, 조인 도시 근거를 못 찾으면 claim 을 지우고 fact.note 의 '조인 장소 근거 미확보' 서술만 남긴다.",
+   "evidence": "참조 검사 결과 orphan claims = ['claim-hs-mt4-gando-place']"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-army-disbandment",
+   "sceneId": "scene-hs-mt4-army-disbandment",
+   "problem": "장면 장소 '서소문 시위대 병영 터'를 뒷받침하는 claim 이 없다. 유일한 행위 claim 은 동대문 훈련원 해산식이고, 출처 본문은 항전 장소를 '남대문과 창의문 일대'로 적는다. 좌표 claim 은 소의문(문루) 위치만 근거한다.",
+   "fix": "시위대 제1연대 제1대대 병영 위치를 밝히는 발췌를 찾아 claim 으로 달거나, place.label 을 '서소문·남대문 일대 시가전'으로 바꾸고 coordinateNote 에 출처가 말하는 항전 지역을 적는다.",
+   "evidence": "raw/enc-gundae-haesan.html: '특히 남대문과 창의문 일대에서 벌어진 제1연대 제1대대와 제2연대 제1대대 장병들의 저항은…' / claim-hs-mt4-seosomun-loc.note"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-sinminhoe",
+   "sceneId": "scene-hs-mt4-sinminhoe",
+   "problem": "persistence.to 1911(해체)의 근거가 창건 claim(claim-hs-mt4-sinminhoe-1907) 하나뿐이다. 1911년 105인 사건 해체를 말하는 근거는 이 칸에 없고 fact.note 도 그렇게 밝힌다. 근거 없는 종료 연도가 지도에 존속 기간으로 표시된다.",
+   "fix": "raw/enc-sinminhoe.html 에 105인 사건 서술이 있으면 발췌를 떠 종료 claim 을 만들고 basisClaimIds 에 넣는다. 없으면 persistence.to 를 null 로 두거나 persistence 를 빼고 note 로만 남긴다.",
+   "evidence": "result.json scene-hs-mt4-sinminhoe.persistence.basisClaimIds = ['claim-hs-mt4-sinminhoe-1907'] / fact-hs-mt4-012.note"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-jeongmi-treaty",
+   "factId": "fact-hs-mt4-010",
+   "problem": "장소가 조인 장소가 아닌데 confidence 가 high 다. note 에 '조인 장소의 좌표 근거는 확보하지 못했다'고 적으면서도 high 를 주었다. 같은 사정의 fact-hs-mt4-019(간도 협약)는 medium 이라 기준이 엇갈린다.",
+   "fix": "장소 근거가 없는 항목은 confidence 를 medium 으로 낮춰 fact-019 와 기준을 맞추거나, 조인 장소 발췌를 찾아 high 를 정당화한다.",
+   "evidence": "fact-hs-mt4-010.note vs fact-hs-mt4-019.note·confidence"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-yang-gi-tak",
+   "claimId": "claim-hs-mt4-jeondong-loc",
+   "problem": "좌표 발췌가 '37.57389; -126.98194'(서경)인데 claim 은 부호를 뒤집어 동경 126.98194 로 썼다. note 에 위키백과의 오기라고 밝혀 두었고 실제로도 조계사는 동경이 맞지만, 발췌 숫자와 주장 값이 그대로 일치하지 않는 유일한 사례다. 좌표 발췌 일치를 엄격히 보는 검사가 들어오면 깨진다.",
+   "fix": "부호가 올바른 다른 출처(종로구 수송동·조계사 관련 다른 문서)로 좌표 발췌를 갈아 끼우고, 그래도 없으면 현재의 note 를 유지한다.",
+   "evidence": "raw/ko-jogyesa.html: '북위 37.57389° 서경 126.98194° / 37.57389; -126.98194' / claim-hs-mt4-jeondong-loc.object.lon = 126.98194"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-harbin-assassination",
+   "problem": "이토 히로부미 엔티티 id 가 컬렉션 안에서 갈린다. 이 칸은 person-ito-hirobumi 를, 같은 컬렉션의 modern-transition-3 은 person-hs-ito 를 쓴다. 두 껍데기 모두 data/entities/person 에 있어 적재하면 같은 인물이 둘로 갈라진다.",
+   "fix": "컬렉션 전체에서 하나로 정한다(기존 저장소 자산인 person-ito-hirobumi 쪽이 자연스럽다). 이 칸을 고치든 mt-3 을 고치든 한쪽으로 맞추고 나머지 껍데기는 별칭으로 정리한다.",
+   "evidence": "data/entities/person/person-hs-ito.md, data/entities/person/person-ito-hirobumi.md; modern-transition-3/result.json 은 person-hs-ito, modern-transition-4/result.json 은 person-ito-hirobumi 사용"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-doksasillon",
+   "sceneId": "scene-hs-mt4-doksasillon",
+   "problem": "items.json 의 sceneType.kind 가 'study' 인데 장면은 'publication' 으로 바뀌었다(유교구신론도 같다). 'study' 는 형식 정본의 허용 kind 가 아니므로 변경 자체는 옳지만 어디에도 기록이 없어 다음 사람이 항목 목록과 대조할 때 원인을 알 수 없다.",
+   "fix": "fact.note 에 '항목 sceneType study 는 허용 kind 가 아니어서 publication 으로 옮겼다' 한 줄을 남긴다(유교구신론 fact-hs-mt4-022 도 동일).",
+   "evidence": "items.json hs-modern-transition-doksasillon.sceneType.kind='study' vs scene-hs-mt4-doksasillon.kind='publication'; docs/research/facts-format.md 의 kind 허용 목록"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-modern-transition-gyeongbu-line",
+   "problem": "run.json 의 started 1789700000 은 2026-09-18T02:53Z 로, 실제 원문 수집 시각(manifest fetchedUtc 2026-09-14T03:52∼04:02Z)보다 나흘 뒤이며 검수 시점(2026-09-14) 기준 미래다. 검증기는 '0 이상 유한한 수'만 보므로 통과하지만 실행 기록으로는 쓸 수 없는 값이다.",
+   "fix": "실제 실행 시작 epoch 초로 바꾼다(수집 시각과 앞뒤가 맞는 값).",
+   "evidence": "run.json.started=1789700000 → 2026-09-18T02:53:20Z; manifest.json fetchedUtc 최소 2026-09-14T03:52:05Z, 최대 2026-09-14T04:02:12Z"
+  }
+ ],
+ "checkedItems": [
+  "hs-modern-transition-gyeongbu-line",
+  "hs-modern-transition-taft-katsura",
+  "hs-modern-transition-daehan-jaganghoe",
+  "hs-modern-transition-residency-general",
+  "hs-modern-transition-sin-dol-seok",
+  "hs-modern-transition-army-disbandment",
+  "hs-modern-transition-gojong-abdication",
+  "hs-modern-transition-hague-envoys",
+  "hs-modern-transition-jeongmi-righteous-army",
+  "hs-modern-transition-jeongmi-treaty",
+  "hs-modern-transition-national-debt-repayment",
+  "hs-modern-transition-sinminhoe",
+  "hs-modern-transition-sunjong",
+  "hs-modern-transition-yang-gi-tak",
+  "hs-modern-transition-yi-jun",
+  "hs-modern-transition-doksasillon",
+  "hs-modern-transition-oriental-development-company",
+  "hs-modern-transition-ahn-jung-geun",
+  "hs-modern-transition-gando-convention",
+  "hs-modern-transition-harbin-assassination",
+  "hs-modern-transition-na-cheol",
+  "hs-modern-transition-yugyo-gusinron",
+  "hs-modern-transition-annexation-treaty",
+  "hs-modern-transition-seokjojeon"
+ ],
+ "summary": "검증기는 PASS(실패 0, 경고 0)이고 24개 항목 모두 fact 1 + scene 1 + claim 3건 이상을 갖췄다. 표본은 24건 전부(core 8건 포함)를 출처에서 직접 재확인했다 — 로컬 chunk 인용 14건은 scripts/search_chunks.py --id 로 문장까지 일치했고, 웹 발췌 94건은 raw HTML 문맥으로 확인했으며 그 가운데 encykorea 4개 문서는 실제 URL 을 다시 받아(HTTP 200) 발췌가 지금도 그대로 있음을 확인했다. 48개 원문의 <title> 이 모두 선언한 표제어와 맞고, 장면 요약과 원문의 최장 공통 문자열은 15자(연월일·인명)라 전재 흔적은 없다. 교과서 문장 인용도 없다. 다만 네 가지는 적재 전에 고쳐야 한다: (1) 한일 병합 장면이 순종을 통감 관저에 on-site 로 세운 것, (2)(3) 통감부·통감 관저 좌표 두 건이 좌표 없는 발췌를 근거로 달아 사실상 items.json 값을 옮긴 것(기준 칸 joseon-early-2 는 23/23 이 좌표 발췌를 인용한다), (4) 정미 7조약의 이완용 참여 근거 claim 에 이완용이 나오지 않는 것 — 이 건은 같은 raw 문서의 조인 서명란으로 바로 보완할 수 있다. 그 밖에 좌표 근접(헤이그 212m, 덕수궁·석조전 78m), 독사신론의 탑골공원 대표점, 고아 claim 1건, 신민회 1911년 존속 근거 부재, run.json 의 미래 시각, 이토 엔티티 id 분열 등 11건은 minor 다."
+}

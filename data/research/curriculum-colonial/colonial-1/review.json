@@ -1,0 +1,110 @@
+{
+ "job": "colonial-1",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-colonial --job colonial-1 -> exit 0\ncategory × 10년\nbyCategoryDecade | 1910 | total\n-----------------+------+------\nsettlement       | 0    | 0\nadministration   | 9    | 9\nfacility         | 2    | 2\neconomy          | 3    | 3\ndisaster         | 0    | 0\nculture          | 4    | 4\ntransport        | 0    | 0\nforeign          | 0    | 0\nperson           | 2    | 2\nwar              | 2    | 2\n\nregion × 10년\nbyRegionDecade | 1910 | total\n---------------+------+------\ncapital        | 0    | 0\nnorth          | 5    | 5\ncentral        | 13   | 13\nsouth          | 4    | 4\nisland         | 0    | 0\n\njob 별 집계\njob        | facts | scenes | claims | chunkClaims | excerptClaims\n-----------+-------+--------+--------+-------------+--------------\ncolonial-1 | 22    | 22     | 97     | 0           | 97\n\nPASS: failures=0 warnings=0",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-colonial-kim-wonbong",
+   "factId": "fact-hs-c1-022",
+   "sceneId": "scene-hs-c1-kim-wonbong",
+   "claimId": "claim-hs-c1-wuhan-loc",
+   "problem": "연도와 장소가 서로 다른 사건을 가리킨다. fact.year=1919, yearVerbatim='1919년 11월'이고 장면의 dateClaim 은 의열단 결성(1919년 11월, 만주 지린)인데 좌표와 placeLabel 은 1938년 조선의용대 창설지인 한커우(우한, 114.2975/30.595)다. items.json 이 준 좌표는 지린(126.553/43.8436)이고 인용한 발췌(claim-hs-c1-kwb-jilin, '만주 길림성 파호문 밖 …')도 지린을 가리킨다. 지도와 카드에서 '1919년 김원봉 = 한커우'로 읽히고, region 도 그 때문에 south 가 되었다(지린이면 north).",
+   "fix": "portrait 좌표를 1919년 근거와 맞는 지린으로 되돌린다. 대한 독립 선언서(scene-hs-c1-daehan-seoneon)가 이미 지린 시 표시 좌표를 쓰고 있어 한 점에 겹치므로, 둘 중 하나는 지린 안의 다른 지점(위키백과 표시 좌표가 있는 지린 시내 별도 지물 등)을 새 근거로 받아 떨어뜨린다. region 은 north 로 고치고 1938년 한커우 활동은 fact.note 문장으로 남긴다. 한커우를 유지하려면 연도 근거를 1938년(claim-hs-c1-kwb-1938)으로 바꿔야 하는데 항목 year 가 1919 라 불가하다.",
+   "evidence": "result.json fact-hs-c1-022 lon/lat=114.2975/30.595, yearVerbatim='1919년 11월'; claim-hs-c1-kwb-jilin 발췌='만주 길림성 파호문(把虎門) 밖 중국인 반모(潘某)의 집에 모인 독립지사들은'(encykorea E0043334 실제 URL 재조회로 본문 존재 확인); items.json hs-colonial-kim-wonbong place.lon/lat=126.553/43.8436"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-colonial-oriental-development-company",
+   "factId": "fact-hs-c1-016",
+   "sceneId": "scene-hs-c1-dongcheok",
+   "claimId": "claim-hs-c1-dc-1918",
+   "problem": "장면의 유일한 연도 근거가 주어와 맞지 않는 발췌에 걸려 있고, 요약이 인용 출처에 없는 내용을 주장한다. claim-hs-c1-dc-1918 은 subject=org-hs-c1-dongcheok, predicate=syj:occurredIn(1918)인데 인용한 발췌는 토지조사사업 문서의 '1910년부터 1918년까지 대규모로 실시되었다'로 동척과 무관하다. 장면 summary 의 '토지 조사 사업이 1918년에 끝나면서 국유지로 넘어간 땅을 넘겨받아 식민지 최대 지주가 되었다'도 이 칸 어느 출처에도 없다. raw/enc-dongcheok.html 본문에는 '국유지'와 '토지조사'와 '최대 지주'가 한 번도 나오지 않고, 오히려 '토지·건물이 차지하는 비중은 1910년대 말 10% 선까지 하락'이라고 적혀 있다.",
+   "fix": "동척의 토지 집적을 직접 말하는 근거를 새로 받는다(우리역사넷 한국사 연대기·교과서 용어 해설의 동양척식주식회사 항목, 또는 encykorea 동척 본문의 매수지·출자지·이민 사업 서술). 그때까지는 claim-hs-c1-dc-1918 을 지우고 1908년 설립과 1909년 경성 본점 개업 근거로 장면을 세우되 fact.year 는 항목값 1918 을 유지하며 note 에 근거 공백을 명시하고 confidence 를 low 로 내린다. scene.summary 에서 근거 없는 '국유지를 넘겨받아 최대 지주' 문장은 빼거나 새 근거로 교체한다.",
+   "evidence": "raw/enc-dongcheok.html 텍스트 검색 결과 '국유지' 0건, '토지조사' 0건, 본문에 '1917년 이후 동척 자금 운용의 중심이 농업에서 금융으로 전환'; claim-hs-c1-dc-1918 의 citesExcerpt=ex-tj-period(sourceId=src-hs-c1-enc-toji-josa)"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-first-education-ordinance",
+   "factId": "fact-hs-c1-006",
+   "sceneId": "scene-hs-c1-gyoyungnyeong",
+   "problem": "경성 안 대표점 두 개가 157m 거리로 사실상 한 점에 겹친다. 배재학당(126.97222/37.56333, 교육령)과 옛 경성재판소 자리(126.973746/37.564061, 태형령)는 둘 다 실제 무대가 아닌 대표점인데 같은 정동 안에 놓였다. 경복궁(총독부)과 광화문(임시 토지 조사국)도 285m 로 가깝다.",
+   "fix": "둘 중 하나를 다른 구역의 대표점으로 옮긴다. 태형령은 종로경찰서나 경성감옥 쪽, 교육령은 경성고등보통학교 자리나 총독부 학무국 쪽처럼 좌표 근거를 새로 받아 400m 이상 떨어뜨린다. 경복궁·광화문 쌍도 한쪽을 옮기거나 precision 을 맞춰 카드가 겹치지 않게 한다.",
+   "evidence": "fact-hs-c1-006 대 fact-hs-c1-010 거리 157m, fact-hs-c1-002 대 fact-hs-c1-012 거리 285m (좌표 직접 계산)"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-land-survey",
+   "factId": "fact-hs-c1-012",
+   "claimId": "claim-hs-c1-toji-1912",
+   "problem": "core 항목의 연도·행위 근거 두 건(claim-hs-c1-toji-1912, claim-hs-c1-toji-guk)이 모두 위키백과다. 지침은 위키백과를 좌표·보조로만 쓰라고 한다. 다만 이 칸이 받아둔 encykorea 토지조사사업 문서(raw/enc-toji-josa.html)에는 '토지조사령'과 '1912'와 '임시토지조사국'이 없어 그 파일로는 바로 대체되지 않는다.",
+   "fix": "우리역사넷 토지조사사업·토지조사령 해설이나 encykorea 「토지조사령」 별도 항목을 새로 받아 1912년 토지조사령과 임시 토지 조사국 근거를 갈아 끼우고, 위키백과는 좌표 보조로만 남긴다.",
+   "evidence": "claim-hs-c1-toji-1912 와 claim-hs-c1-toji-guk 의 sourceId=src-hs-c1-ko-toji-josa(ko.wikipedia); raw/enc-toji-josa.html 에 '토지조사령' 0건"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-jeamni-massacre",
+   "problem": "근거 우선순위 1번(로컬 원문 chunk)을 한 건도 쓰지 않았다(chunkClaims=0, excerptClaims=97). 이 칸의 여러 항목에 쓸 수 있는 로컬 chunk 가 실제로 있다. 제암리는 src-ek-jeamri 의 chunk_scenes-103_modern_scenes_jeamri-arrival('1919년 4월 15일(화요일) 오후, 일본군 보병 중위 아리다 도시오…'), 권업회는 src-independence-kd-034 의 '20. 권업회', 총독부 청사는 src-archives-joseonchong('조선총독부 청사는 … 경복궁을 가로막고 세워졌다'), 김원봉은 src-encykorea-kim-wonbong 이다.",
+   "fix": "적어도 core 항목(제암리·총독부·김원봉)은 로컬 chunk 인용(sourceId+citesChunk+quote)으로 근거를 하나씩 보강한다. 지금의 웹 발췌는 그대로 두어도 된다.",
+   "evidence": "scripts/search_chunks.py --id chunk_scenes-103_modern_scenes_jeamri-arrival / chunk_independence-kd-034_kd_034_0200 / chunk_scenes-103_contemporary_scenes_jc-place 로 본문 확인; 검증기 집계 chunkClaims=0"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-first-education-ordinance",
+   "factId": "fact-hs-c1-006",
+   "problem": "category 가 대응표와 다르다. 항목 type 이 institution 이므로 brief 표대로면 administration 인데 culture 로 넣었다. 같은 institution 인 태형령·총독부·신흥 무관 학교는 administration 을 썼다.",
+   "fix": "administration 으로 바꾸고 cell.categories 집계를 함께 맞춘다(administration 9→10, culture 4→3). 교육 항목은 culture 가 낫다고 판단했다면 fact.note 에 그 이유를 적는다.",
+   "evidence": "docs/research/curriculum-items-brief.md 대응표의 institution→administration; items.json hs-colonial-first-education-ordinance.type='institution'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-105-incident",
+   "sceneId": "scene-hs-c1-105in",
+   "problem": "장면 구간이 항목 구간과 다르다. items.json 은 1911~1912 인데 scene.endYear 가 1913 이다. 1913년 대구복심법원 석방을 반영한 것으로 보이고 그 사실 자체는 출처에 있다.",
+   "fix": "항목 구간대로 endYear 를 1912 로 되돌리거나, 1913 을 유지한다면 1913년 7월 99명 무죄 석방 근거를 발췌로 받아 relatedClaimIds 에 넣고 note 에 구간을 넘긴 이유를 적는다.",
+   "evidence": "items.json year=1911, yearEnd=1912; scene-hs-c1-105in startYear/endYear=1911/1913; raw/enc-105in.html 에 '1913년 7월 15일 대구복심법원에서는 105명 중 99명을 무죄로 석방하였고'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-gwoneophoe",
+   "claimId": "claim-hs-c1-gwoneop-1914",
+   "problem": "claim.note 가 인용한 발췌보다 더 나간다. 발췌는 '1914년 6월 대일 외교관계 악화하여'에서 끊겨 해산 사실이 없는데 note 는 '1914년 러시아 당국에 의해 해산되었다'라고 적었다. claim-hs-c1-105-1912 도 같은 유형이다(발췌는 기소·재판 일자만인데 note 는 '105명이 유죄 판결').",
+   "fix": "발췌를 해산·유죄가 실제로 들어간 문장으로 바꾼다. 두 문장 모두 이미 받아둔 raw 안에 있어 25단어 제한 안에서 잘라 쓰면 된다.",
+   "evidence": "raw/enc-gwoneophoe.html '그러나 1914년 6월 대일 외교관계 악화하여 일본의 요구를 받아 들인 러시아 당국에 의해 강제로 해산되었다'; raw/enc-105in.html '전국적으로 600여 명을 검거하고 122인을 기소, 105인을 유죄로 투옥했으나'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-colonial-daejonggyo-junggwangdan",
+   "claimId": "claim-hs-c1-jgd-school",
+   "problem": "주어·술어·목적이 맞물리지 않는다. 발췌는 중광단이 1911~1916년 학교 25개를 세웠다는 내용인데 object 가 person-hs-c1-seo-il 이고 predicate 는 relatedTo 라서 사람이 학교 설립의 목적어로 붙었다.",
+   "fix": "object 를 단체(event-hs-c1-junggwangdan 또는 대종교 org)로 바꾸거나, 학교 설립을 별도 사실로 두고 서일의 참여는 claim-hs-c1-jgd-seoil 하나로 정리한다.",
+   "evidence": "claim-hs-c1-jgd-school 의 object={kind:entity, id:person-hs-c1-seo-il}, 발췌 '1911년부터 1916년까지 25개에 이르는 학교를 설립하여'"
+  }
+ ],
+ "checkedItems": [
+  "hs-colonial-company-ordinance",
+  "hs-colonial-government-general",
+  "hs-colonial-military-police-rule",
+  "hs-colonial-105-incident",
+  "hs-colonial-daejonggyo-junggwangdan",
+  "hs-colonial-first-education-ordinance",
+  "hs-colonial-gwoneophoe",
+  "hs-colonial-imcheonggak",
+  "hs-colonial-sinheung-military-school",
+  "hs-colonial-flogging-ordinance",
+  "hs-colonial-independence-uigunbu",
+  "hs-colonial-land-survey",
+  "hs-colonial-seodaemun-prison",
+  "hs-colonial-ahn-changho",
+  "hs-colonial-korean-restoration-association",
+  "hs-colonial-oriental-development-company",
+  "hs-colonial-cultural-rule",
+  "hs-colonial-daehan-independence-declaration",
+  "hs-colonial-feb8-declaration",
+  "hs-colonial-gang-ugyu",
+  "hs-colonial-jeamni-massacre",
+  "hs-colonial-kim-wonbong"
+ ],
+ "summary": "검증기는 PASS(실패 0, 경고 0)이고 manifest 57건의 sha256·byteLength·HTTP 200 이 모두 원본 파일과 일치했다. encykorea 2건과 위키백과 2건은 실제 URL 로 다시 받아 발췌 문자열이 살아 있는 것까지 확인했다. 항목 22건이 fact 22·scene 22·claim 97 로 1:1 대응하고 kind·sceneFunction·heritageType·priority 가 items.json 과 모두 맞으며 인물 2건은 기존 개체 id(person-encykorea-*)를 재사용했다. images.json 22건도 접두어와 인물 문구가 규격대로다. 다만 두 가지는 고쳐야 한다. 김원봉 초상이 1919년 의열단 근거를 달고 1938년 무대인 한커우 좌표에 놓여 연도와 장소가 어긋나고, 동양 척식 주식회사 항목은 연도 근거가 토지조사사업 발췌에 잘못 걸린 데다 '국유지를 넘겨받아 최대 지주가 되었다'는 요약이 이 칸 어느 출처에도 없다(인용한 encykorea 문서는 오히려 1910년대 말 토지 비중 하락을 적었다). 그 밖에 정동 대표점 두 개가 157m 로 겹치는 점, core 항목인 토지 조사 사업의 핵심 근거가 위키백과인 점, 쓸 수 있는 로컬 chunk(제암리·권업회·총독부 청사)가 있는데도 chunk 인용이 0건인 점 등 7건이 minor 다."
+}

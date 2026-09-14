@@ -40,6 +40,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-yeoun-1945",
+    "subject": "person-encykorea-yeo-unhyeong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1945년",
+      "year": 1945,
+      "precision": "year",
+      "earliest": 1945,
+      "latest": 1945,
+      "id": "ts-curriculum-contemporary-contemporary-1-hs-c1-yeoun-1945"
+    },
+    "citesChunk": "chunk_period96_modern_yuh-1945",
+    "quote": "1945년 광복이 되자 건국 준비를 위해 조선건국준비위원회(朝鮮建國準備委員會)의 결성을 주도하고 위원장으로 활동하였다.",
+    "note": "1945년 건준 결성을 주도했다.",
+    "fromSource": "src-encykorea-yeo-unhyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

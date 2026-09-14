@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "place-hs-s3-najeong"
+      "id": "thing-hs-s3-17ranks"
     },
     "citesChunk": "chunk_samguksagi_sg_001_0040_0050",
     "quote": "又設官有十七䓁",
@@ -23,7 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

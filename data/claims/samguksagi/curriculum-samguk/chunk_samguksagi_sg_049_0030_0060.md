@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "person-hs-sg5-bojangwang"
+      "id": "person-encykorea-bojang"
     },
     "citesChunk": "chunk_samguksagi_sg_049_0030_0060",
     "quote": "立王弟之子臧爲王, 自爲莫離攴",

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-518-geumnamno",
+    "subject": "event-hs-c4-518",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-rok"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_518-geumnamno",
+    "quote": "5월 21일 금남로와 충정로에서 시민군과 계엄군의 공방이 벌어지고",
+    "note": "5월 21일 금남로에서 시민군과 계엄군이 맞붙었다.",
+    "fromSource": "src-archives-518",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

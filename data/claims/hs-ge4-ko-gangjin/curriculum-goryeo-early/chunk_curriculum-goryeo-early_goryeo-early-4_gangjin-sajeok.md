@@ -11,17 +11,12 @@ status: "draft"
   {
     "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-gangjin-sajeok",
     "subject": "place-hs-ge4-gangjin-yoji",
-    "predicate": "syj:establishedIn",
+    "predicate": "syj:relatedTo",
     "object": {
-      "kind": "time",
-      "verbatim": "1963년 1월 21일",
-      "year": 1963,
-      "precision": "day",
-      "earliest": 1963,
-      "latest": 1963,
-      "id": "ts-curriculum-goryeo-early-goryeo-early-4-hs-ge4-gangjin-sajeok"
+      "kind": "entity",
+      "id": "place-hs-ge4-gangjin-yoji"
     },
-    "note": "1963년 사적으로 지정되었다. 유적의 현재 보호 상태를 보여 주는 근거다.",
+    "note": "1963년 사적으로 지정되어 지금까지 보호받는 고려청자 가마터다. 지정 연도는 조업 연도가 아니다.",
     "fromSource": "src-hs-ge4-ko-gangjin",
     "citesChunk": "chunk_curriculum-goryeo-early_goryeo-early-4_gangjin-sajeok",
     "quote": "1963년 1월 21일 대한민국의 사적 제68호로 지정되었다.",

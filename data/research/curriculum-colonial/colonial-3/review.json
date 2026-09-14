@@ -1,0 +1,119 @@
+{
+  "job": "colonial-3",
+  "checker": "claude-opus-5 high",
+  "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-colonial --job colonial-3 → PASS: failures=0 warnings=0 (facts 22, scenes 22, claims 99, chunkClaims 5, excerptClaims 94; region north 4 / central 13 / south 5, decade 1920)",
+  "verdict": "fix",
+  "issues": [
+    {
+      "severity": "major",
+      "itemId": "hs-colonial-geunuhoe",
+      "factId": "fact-hs-c3-018",
+      "sceneId": "scene-hs-geunuhoe",
+      "claimId": "claim-hs-geunuhoe-loc",
+      "problem": "근우회 창립총회 장소를 '정동'으로 특정했으나 어느 근거에도 정동이 없다. 인용한 발췌(위키 ex-geunuhoe-1927, 민백 ex-geunuhoe-def)는 '조선여자기독교청년회연합회 강당'만 말하고 소재지를 밝히지 않는다. 그런데 fact.placeLabel '조선여자기독교청년회연합회 강당(정동 일대)', fact.modernPlace '서울특별시 중구 정동', 엔티티 place-hs-jeongdong(정동)은 정동을 확인된 사실처럼 표기한다. 좌표는 '여성 교육의 거점'이라는 이유로 고른 이화여고(정동길 26) 표시 좌표이며, 이는 장소 근거가 아니라 검수 대상 조사자의 추정이다. 1927년 조선여자기독교청년회연합회 회관이 정동에 있었다는 근거는 찾지 못했다.",
+      "fix": "placeLabel을 '조선여자기독교청년회연합회 강당(소재지 미상)'으로 고치고 modernPlace는 '서울'로 낮추거나 비운다. coordinateNote와 fact.note에 '정동 이화여고 좌표는 표시용 대표점일 뿐 개최지 근거가 아니다'를 명시하고 confidence를 high에서 medium으로 낮춘다. 엔티티 place-hs-jeongdong 라벨도 '정동(대표점)'으로 조정한다. 정동 소재를 밝힌 발췌를 찾으면 그 발췌를 sources에 추가하고 현 표기를 유지해도 된다.",
+      "evidence": "raw/ko-geunuhoe.html 및 라이브 재조회(200): '1927년 5월 27일 에 조선여자기독교청년회연합회 강당에서 창립총회를 열고' — 소재지 없음. raw/enc-geunuhoe.html: 창립 장소 언급 없음. ko.wikipedia.org/wiki/한국YWCA연합회 라이브(200): 1922년 조선여자기독교청년회연합회 출범 서술만 있고 당시 소재지 없음. raw/ko-ewha-girls.html: '서울특별시 중구 정동길 26'은 이화여고 주소일 뿐 근우회와 무관."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-colonial-labor-farmer-federation",
+      "factId": "fact-hs-c3-007",
+      "sceneId": "scene-hs-nonong",
+      "problem": "항목 기간은 1924~1930('농민·노동 운동의 확산')인데 장면은 조선 노농 총동맹이 갈라진 1927년에 끝난다. 항목이 담으려던 1928~1930년 확산 국면이 화면에서 사라진다.",
+      "fix": "scene.endYear를 1930으로 두고 1927년 분리는 persistence와 요약으로 남기거나, 1928~1930 구간을 뒷받침하는 발췌를 한 건 더 붙인다. 현행을 유지한다면 fact.note에 '장면은 총동맹 존속 기간(1924~1927)만 표시한다'를 적는다.",
+      "evidence": "items.json hs-colonial-labor-farmer-federation year=1924 yearEnd=1930 vs scene-hs-nonong startYear 1924 endYear 1927(claim-hs-nonong-split, 1927년 9월 6일 분리)."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-colonial-kim-sangok",
+      "factId": "fact-hs-c3-002",
+      "sceneId": "scene-hs-kim-sangok",
+      "problem": "항목이 준 '종로 경찰서 터 / 서울특별시 종로구 종로 2가'를 근거 인용 없이 '종로 경찰서(종로 1가) / 종로구 종로1가'로 바꿨다. 인용한 두 민백 문서(종로경찰서 투탄 의거·김상옥)에는 번지 정보가 없다.",
+      "fix": "구 표기를 '종로 일대'로 낮추거나, 종로1가임을 밝힌 근거(표지석 안내·민백 종로경찰서 항목 등)를 발췌로 추가한다.",
+      "evidence": "raw/enc-jongno-bombing.html·raw/enc-kim-sangok.html 본문 검색 결과 소재지(종로1가·종로2가) 표기 없음. 좌표는 종각역 표시 좌표(ex-geo-jonggak) 대표점."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-colonial-han-yongun",
+      "factId": "fact-hs-c3-013",
+      "sceneId": "scene-hs-han-yongun",
+      "problem": "초상 장면이 1926년에 시작하는데 무대(place)는 1933년에 지은 심우장이다. claim-hs-han-yongun-built(1933년 건립)가 relatedClaimIds에 들어 있어 자기모순처럼 읽힌다.",
+      "fix": "place.coordinateNote에 '심우장은 1933년 건립으로 1926년 시점의 건물이 아니라 말년 거처를 표시한 대표점'이라고 적거나, 장면 시작 연도를 1933으로 올린다(fact.year 1926은 항목대로 유지).",
+      "evidence": "scene-hs-han-yongun startYear 1926, place 심우장; raw/enc-simujang.html 정보표 '건립 시기 1933년'."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-colonial-old-seoul-station",
+      "claimId": "claim-hs-seoul-station-chunk",
+      "problem": "로컬 chunk 인용 두 건의 note가 '우리역사넷 계열 발췌'라고 적었으나 두 chunk의 sourceUrl·permalink는 encykorea.aks.ac.kr(한국민족문화대백과사전)이다. 출처 계통 표기가 틀렸다.",
+      "fix": "note를 '한국민족문화대백과사전 발췌 chunk'로 고친다(claim-hs-seoul-station-chunk, claim-hs-wonsan-chunk).",
+      "evidence": "python scripts/search_chunks.py --id chunk_scenes-122_modern_localities_seoulyeok-1925 → permalink https://encykorea.aks.ac.kr/Article/E0068162 ; --id chunk_scenes-122_modern_localities_wonsanstrike-def → https://encykorea.aks.ac.kr/Article/E0040696."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-colonial-shanghai-provisional-office",
+      "factId": "fact-hs-c3-017",
+      "sceneId": "scene-hs-kpg-office",
+      "problem": "persistence.to가 null(현존)인데 basisClaimIds의 두 주장은 1926년 7월~1932년 4월 사용 기간만 말한다. 건물이 지금도 남아 있다는 근거가 없다.",
+      "fix": "위키백과 '대한민국 임시정부 유적지(상하이시)'에서 보존·기념관 서술을 발췌로 한 건 더 뽑아 붙이거나 persistence.to를 1932로 좁힌다.",
+      "evidence": "scene-hs-kpg-office.persistence {from:1926, to:null, basisClaimIds:[claim-hs-kpg-office-year, claim-hs-kpg-office-act]}; ex-kpg-1926 '1926년 7월부터 1932년 4월까지 정부 청사로 사용되었다.'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-colonial-peoples-university-movement",
+      "sceneId": "scene-hs-minlip",
+      "problem": "coordinateNote가 승동교회를 '같은 종로2가 일대'라고 했으나 승동교회 주소는 종로구 인사동 137이다. 대표점 선택 자체는 타당하지만 설명이 부정확하다.",
+      "fix": "'바로 남쪽 인사동의 승동교회 표시 좌표를 대표점으로 썼다'로 문구를 고친다.",
+      "evidence": "raw/ko-seungdong-church.html 정보상자 '주소 서울특별시 종로구 인사동 137'."
+    },
+    {
+      "severity": "minor",
+      "itemId": "(공통)",
+      "problem": "claim subject와 scene eventId로 쓰인 event-hs-610, -gwangju, -wonsan, -kanto, -kim-sangok, -minlip, -mitsuya, -na-seokju, -natrep, -chianbeop 10건이 entities[]에 선언되지 않았다. 같은 성격의 event-hs-arirang 등 5건은 선언돼 있어 기준이 엇갈린다.",
+      "fix": "선언 기준을 하나로 정한다 — 모두 entities[]에 껍데기로 넣거나, 장면 eventId 계열은 모두 빼고 claim subject를 기존 개체에 맞춘다. 검증기는 통과하지만 적재 뒤 참조가 떠 있게 된다.",
+      "evidence": "result.json entities 56건 중 Event 타입은 event-hs-arirang, -joseon-revolution-declaration, -nim-ui-chimmuk, -samil-declaration, -seoul-station-designation 5건뿐."
+    },
+    {
+      "severity": "minor",
+      "itemId": "(공통)",
+      "problem": "raw/ 에 manifest·sources 어디서도 참조하지 않는 HTML 26건(enc-kim-gu·enc-yun-bonggil·enc-wianbu·enc-heungnam-si 등 1930~40년대 주제)이 남아 있다. 이 칸(1923~1929)의 근거가 아니다.",
+      "fix": "해당 칸으로 옮기거나 지운다. 남겨야 한다면 manifest에 넣어 출처 검증 대상으로 만든다.",
+      "evidence": "raw/ 81개 파일 중 manifest 참조 55개, 미참조 26개."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-colonial-old-seoul-station",
+      "sceneId": "scene-hs-seoul-station",
+      "problem": "항목 sceneFunction 'construction'이 허용값이 아니어서 장면에서 뺀 판단은 옳지만, 허용값 가운데 'rail_station'이 이 건물에 그대로 맞는다.",
+      "fix": "scene.sceneFunction을 'rail_station'으로 채운다.",
+      "evidence": "docs/research/facts-format.md sceneFunction 허용 목록에 rail_station 포함; items.json sceneType.sceneFunction='construction'."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-colonial-june-tenth-movement",
+      "factId": "fact-hs-c3-014",
+      "problem": "6·10 만세 운동과 광주 학생 항일 운동을 category 'culture'로 뒀다. 대응표가 사건은 행위에 따라 고르게 하므로 규칙 위반은 아니나, 두 항목은 정치 시위이고 같은 성격의 김상옥 의거는 'war'로 갈려 분류가 엇갈려 보인다.",
+      "fix": "현행 유지도 가능하되 fact.note에 '학생 운동으로 보아 culture' 같은 분류 근거를 한 줄 남긴다(fact-hs-c3-014, fact-hs-c3-020).",
+      "evidence": "docs/research/curriculum-items-brief.md 항목→사실 대응표; result.json fact-hs-c3-014·fact-hs-c3-020 category=culture, fact-hs-c3-002 category=war."
+    }
+  ],
+  "checkedItems": [
+    "hs-colonial-june-tenth-movement",
+    "hs-colonial-singanhoe",
+    "hs-colonial-gwangju-student-movement",
+    "hs-colonial-wonsan-general-strike",
+    "hs-colonial-peace-preservation-law",
+    "hs-colonial-mitsuya-agreement",
+    "hs-colonial-keijo-imperial-university",
+    "hs-colonial-shanghai-provisional-office",
+    "hs-colonial-oriental-development-busan",
+    "hs-colonial-labor-farmer-federation",
+    "hs-colonial-peoples-university-movement",
+    "hs-colonial-geunuhoe",
+    "hs-colonial-kim-sangok",
+    "hs-colonial-na-seokju",
+    "hs-colonial-han-yongun",
+    "hs-colonial-old-seoul-station"
+  ],
+  "summary": "검증기는 PASS(실패 0·경고 0)이고 22개 항목이 모두 fact 1건·scene 1건·claim 4~6건 패킷을 갖췄다. 표본 16/22(73%, core 4건 전부 포함)를 출처에서 다시 확인했다. 웹 출처 18건의 발췌 28개를 실제 URL에서 재조회해 모두 원문에 그대로 있었고(HTTP 200), 로컬 chunk 3건도 search_chunks로 본문 일치를 확인했다. 연도·행위는 인용과 어긋난 곳이 없었고 광주(나주역 댕기머리 사건)·6·10(돈화문~홍릉 도열, 단성사 앞 만세)·원산(1929.1.13~4.6, 조합원 2,200여 명) 서술은 문맥 왜곡 없이 원문과 맞았다. 서울 안 항목들은 서로 최소 0.22km 떨어져 한 점에 겹치지 않고, kind·heritageType·participants도 항목 sceneType과 모두 일치하며 images.json 22건도 접두어·초상 문구·sceneId 연결이 온전하다. 다만 근우회는 근거에 없는 '정동'을 장소로 특정해 화면 표기가 사실처럼 읽히므로 고쳐야 한다(major 1건). 나머지 10건은 기간 축소, 근거 없는 번지 표기, 출처 계통 오기, 미참조 raw 파일 같은 경미한 손질이다."
+}

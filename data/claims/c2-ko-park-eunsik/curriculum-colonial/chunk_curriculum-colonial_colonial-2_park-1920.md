@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-colonial-colonial-2-c2-park-1920",
-    "subject": "person-hs-park-eunsik",
+    "subject": "person-hs-bak-eunsik",
     "predicate": "syj:occurredIn",
     "object": {
       "kind": "time",

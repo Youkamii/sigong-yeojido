@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-colonial-colonial-4-hs-c4-ji-def",
-    "subject": "person-hs-c4-ji-cheongcheon",
+    "subject": "person-hs-ji-cheongcheon",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",

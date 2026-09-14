@@ -1,20 +1,20 @@
 {
   "job": "colonial-1",
-  "sources": 57,
-  "excerpts": 91,
-  "chunkClaims": 0,
-  "excerptClaims": 97,
+  "sources": 58,
+  "excerpts": 95,
+  "chunkClaims": 3,
+  "excerptClaims": 100,
   "facts": 22,
   "factsByCategory": {
-    "administration": 9,
-    "culture": 4,
+    "administration": 10,
+    "culture": 3,
     "economy": 3,
     "facility": 2,
     "person": 2,
     "war": 2
   },
-  "claims": 97,
-  "entities": 55,
+  "claims": 103,
+  "entities": 46,
   "rawFilesChecked": [
     {
       "source": "src-hs-c1-enc-hoesaryeong",
@@ -53,8 +53,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0022233",
       "sha256": "68105d900ca2f3737f7ac51653cb1f08b6e4b30ab1f9183b1b72d7fd947080fd",
       "rawBytes": 120051,
-      "excerpts": 2,
-      "quotedWords": 18
+      "excerpts": 3,
+      "quotedWords": 24
     },
     {
       "source": "src-hs-c1-enc-daejonggyo",
@@ -94,7 +94,7 @@
       "sha256": "752afa0783b4f960498b47895ce2f960b3aa4ce77a77156d85ad6147e9c742d0",
       "rawBytes": 87157,
       "excerpts": 3,
-      "quotedWords": 15
+      "quotedWords": 24
     },
     {
       "source": "src-hs-c1-enc-gwangbokgun-jeongbu",
@@ -165,16 +165,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0059218",
       "sha256": "c00d184e07c25a891d7c1e224e3b0599e444e32a5cf2b5eaac1c42b3fcbe7517",
       "rawBytes": 115883,
-      "excerpts": 2,
-      "quotedWords": 10
-    },
-    {
-      "source": "src-hs-c1-ko-toji-josa",
-      "url": "https://ko.wikipedia.org/wiki/%ED%86%A0%EC%A7%80_%EC%A1%B0%EC%82%AC_%EC%82%AC%EC%97%85",
-      "sha256": "03d2bd95590c32fd9b10c4962c556d20cc1cf0a645ea70ce482ecf94f9982f3a",
-      "rawBytes": 75383,
-      "excerpts": 2,
-      "quotedWords": 12
+      "excerpts": 3,
+      "quotedWords": 22
     },
     {
       "source": "src-hs-c1-enc-seodaemun",
@@ -221,8 +213,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0016671",
       "sha256": "44df7f0542c166bdfdcaf731bc7de01bf7fe7ab8c2f4920e4f7d7429aebf9f55",
       "rawBytes": 138136,
-      "excerpts": 2,
-      "quotedWords": 12
+      "excerpts": 3,
+      "quotedWords": 20
     },
     {
       "source": "src-hs-c1-enc-daehan-seoneon",
@@ -369,14 +361,6 @@
       "quotedWords": 2
     },
     {
-      "source": "src-hs-c1-ko-baejae",
-      "url": "https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%9E%AC%ED%95%99%EB%8B%B9",
-      "sha256": "b00ae39b78e89478013803402da71af2c755153135369317187c915df3ef8af2",
-      "rawBytes": 95991,
-      "excerpts": 1,
-      "quotedWords": 2
-    },
-    {
       "source": "src-hs-c1-ko-imcheonggak",
       "url": "https://ko.wikipedia.org/wiki/%EC%95%88%EB%8F%99_%EC%9E%84%EC%B2%AD%EA%B0%81",
       "sha256": "b2f5a9fd3924507c1d82c0698fda459a81ddf0a07c8d830a414d400af93165b4",
@@ -471,6 +455,30 @@
       "rawBytes": 521365,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c1-enc-toji-jedo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059217",
+      "sha256": "c04c5b048586163176d8558132c958a1769e0d6b5118f4a4ce5abc1b23a3d3c8",
+      "rawBytes": 261762,
+      "excerpts": 2,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs-c1-en-beishan",
+      "url": "https://en.wikipedia.org/wiki/Beishan_Park",
+      "sha256": "2a56b4cf55e9f6d5a1d738c9f1804ec4d21e652acf1604d118164c27c9c61d64",
+      "rawBytes": 131645,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c1-ko-jungang",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%95%99%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90",
+      "sha256": "c8aeceb85d11b758e9b932e27c3d456f630a255ef131c3194e744152784acb53",
+      "rawBytes": 139477,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -485,12 +493,14 @@
     "started": 1789640000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-colonial-1"
+    "sessionId": "workflow-colonial-1",
+    "revised": 1789661600
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "org-hs-c1-uiyongdae"
+    "person-encykorea-kim-wonbong",
+    "org-hs-c1-uiyeoldan"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

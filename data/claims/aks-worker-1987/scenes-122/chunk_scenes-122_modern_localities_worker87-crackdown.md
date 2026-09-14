@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-labor-crack",
+    "subject": "event-hs-c4-labor",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-rok"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_worker87-crackdown",
+    "quote": "9월 4일 대우자동차와 현대중공업 파업농성장에 공권력이 투입되어",
+    "note": "9월 4일 파업 농성장에 공권력이 투입되었다.",
+    "fromSource": "src-aks-worker-1987",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

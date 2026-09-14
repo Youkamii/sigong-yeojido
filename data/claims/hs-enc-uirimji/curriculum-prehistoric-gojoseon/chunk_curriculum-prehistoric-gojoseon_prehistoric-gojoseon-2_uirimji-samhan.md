@@ -16,7 +16,7 @@ status: "draft"
       "kind": "entity",
       "id": "polity-hs-samhan"
     },
-    "note": "의림지의 축조 시기에 삼한시대 축조설이 있다.",
+    "note": "의림지 축조 시기로 삼한시대 축조설이 전하나, 같은 기사는 지질 조사 결과 AD 800~900년 축조로 본다 — 삼한설은 여러 전승 가운데 하나다(claim-hs-rice-uirimji-late).",
     "fromSource": "src-hs-enc-uirimji",
     "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-2_uirimji-samhan",
     "quote": "축조 시기에 대해서는 삼한시대 축조설",

@@ -3,7 +3,7 @@
   "sources": 55,
   "excerpts": 76,
   "chunkClaims": 44,
-  "excerptClaims": 81,
+  "excerptClaims": 82,
   "facts": 26,
   "factsByCategory": {
     "administration": 4,
@@ -15,7 +15,7 @@
     "settlement": 2,
     "war": 2
   },
-  "claims": 125,
+  "claims": 126,
   "entities": 67,
   "rawFilesChecked": [
     {
@@ -459,7 +459,16 @@
       "quotedWords": 15
     }
   ],
-  "missing": [],
+  "missing": [
+    {
+      "id": "miss-nb2-1",
+      "itemId": "hs-nambukguk-goguryeo-succession",
+      "topic": "759년 발해 국서의 고려국왕 대흠무 표기",
+      "detail": "항목 근거인 759년(대흥 23) 일본에 보낸 국서의 고려국왕 자칭을 이 칸의 허용 출처에서 확인하지 못했다. 민백 발해·문왕 항목 본문에는 759 와 고려국왕 문자열이 없다.",
+      "neededSource": "속일본기 해당 기사 원문 chunk 또는 우리역사넷 한국사 연대기의 759년 국서 서술",
+      "reason": "759년 국서 표기의 1·2순위 근거를 찾지 못함"
+    }
+  ],
   "collection": {
     "task": "nambukguk-2",
     "runner": "workflow",
@@ -471,12 +480,14 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-nambukguk-2"
+    "sessionId": "workflow-nambukguk-2",
+    "revised": 1789379788
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-nb2-namsan"
+    "event-nb2-jingol-struggle",
+    "person-encykorea-wonseong"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

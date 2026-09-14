@@ -560,6 +560,63 @@
      "locator": "위치"
     }
    ]
+  },
+  {
+   "id": "src-hs-en-gyeongju",
+   "title": "Gyeongju — 영문 위키백과",
+   "publisher": "위키백과(영어)",
+   "url": "https://en.wikipedia.org/wiki/Gyeongju",
+   "rawFile": "raw/en-gyeongju.html",
+   "sha256": "b026135658a0bf993a47cbbd3978a68234ef72fd97e6fcbd2f7e2ff2d81c9551",
+   "httpStatus": 200,
+   "byteLength": 1018634,
+   "fetchedUtc": "2026-09-14T08:42:49Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-geo-gyeongju",
+     "text": "35.850; 129.217",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-ko-gwangju",
+   "title": "광주시 (경기도) — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B4%91%EC%A3%BC%EC%8B%9C_(%EA%B2%BD%EA%B8%B0%EB%8F%84)",
+   "rawFile": "raw/ko-gwangju-gyeonggi.html",
+   "sha256": "154750ba4c2df0dadddc4c6e8d86f3e87833ca1db0fe626d3dddba0bbfc3f340",
+   "httpStatus": 200,
+   "byteLength": 277481,
+   "fetchedUtc": "2026-09-14T08:42:50Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-geo-gwangju",
+     "text": "37.367; 127.283",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
+  },
+  {
+   "id": "src-hs-en-sungyang",
+   "title": "Sungyang Sowon — 영문 위키백과",
+   "publisher": "위키백과(영어)",
+   "url": "https://en.wikipedia.org/wiki/Sungyang_Sowon",
+   "rawFile": "raw/en-sungyang-sowon.html",
+   "sha256": "099c5b171faebb8b320ef624199f173a7daacee4f93fe8aad361bc7572c926ab",
+   "httpStatus": 200,
+   "byteLength": 88834,
+   "fetchedUtc": "2026-09-14T08:42:50Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-geo-sungyang",
+     "text": "37.9739; 126.5678",
+     "locator": "문서 표시 좌표(geo)"
+    }
+   ]
   }
  ],
  "entities": [
@@ -567,11 +624,6 @@
    "id": "person-hs-choe-seungno",
    "type": "Person",
    "label": "최승로"
-  },
-  {
-   "id": "person-hs-so-sonnyeong",
-   "type": "Person",
-   "label": "소손녕"
   },
   {
    "id": "event-hs-ge2-choe-seungno",
@@ -714,19 +766,9 @@
    "label": "개경 시가(선죽교 일원)"
   },
   {
-   "id": "place-hs-ge2-walls",
-   "type": "Place",
-   "label": "개경 성곽"
-  },
-  {
    "id": "place-hs-ge2-anhwasa",
    "type": "Place",
    "label": "개경 안화사"
-  },
-  {
-   "id": "place-hs-ge2-wanggon-tomb",
-   "type": "Place",
-   "label": "개경 태조 현릉 일원"
   },
   {
    "id": "place-hs-ge2-byeongnando",
@@ -792,6 +834,26 @@
    "id": "place-hs-ge2-hasachang",
    "type": "Place",
    "label": "하남 하사창동 절터"
+  },
+  {
+   "id": "place-hs-ge2-gyeongju",
+   "type": "Place",
+   "label": "경주"
+  },
+  {
+   "id": "place-hs-ge2-gwangju",
+   "type": "Place",
+   "label": "광주목"
+  },
+  {
+   "id": "place-hs-ge2-gaegyeong-east",
+   "type": "Place",
+   "label": "개경 도성 동부 관아 일원"
+  },
+  {
+   "id": "event-hs-ge2-byeongmasa",
+   "type": "Event",
+   "label": "동·서북면 병마사 설치"
   }
  ],
  "claims": [
@@ -880,20 +942,6 @@
    "note": "개경 시가(선죽교 일원) 표시 좌표. 목종이 궁문 밖으로 나온 개경 시가의 대표점으로 선죽교 표시 좌표를 썼다. 정변의 정확한 지점은 남아 있지 않다."
   },
   {
-   "id": "claim-ge2-loc-walls",
-   "subject": "place-hs-ge2-walls",
-   "predicate": "syj:locatedAt",
-   "object": {
-    "kind": "location",
-    "lat": 37.9886,
-    "lon": 126.5728,
-    "precision": "site"
-   },
-   "sourceId": "src-hs-en-kaesong-walls",
-   "citesExcerpt": "ex-geo-walls",
-   "note": "개경 성곽 표시 좌표. 궁성 숙위를 맡은 기구의 자리를 특정할 수 없어 개경 성곽 표시 좌표를 대표점으로 썼다."
-  },
-  {
    "id": "claim-ge2-loc-anhwasa",
    "subject": "place-hs-ge2-anhwasa",
    "predicate": "syj:locatedAt",
@@ -906,20 +954,6 @@
    "sourceId": "src-hs-en-anhwa",
    "citesExcerpt": "ex-geo-anhwa",
    "note": "개경 안화사 표시 좌표. 향도는 전국에 있었다. 불사를 함께한 모습을 보이려고 개경 부근 안화사의 표시 좌표를 대표점으로 썼다."
-  },
-  {
-   "id": "claim-ge2-loc-wanggon",
-   "subject": "place-hs-ge2-wanggon-tomb",
-   "predicate": "syj:locatedAt",
-   "object": {
-    "kind": "location",
-    "lat": 37.98472,
-    "lon": 126.50556,
-    "precision": "site"
-   },
-   "sourceId": "src-hs-en-wanggon-tomb",
-   "citesExcerpt": "ex-geo-wanggon",
-   "note": "개경 태조 현릉 일원 표시 좌표. 음서는 공신과 5품 이상 관료의 후손에게 주어졌다. 개경 문벌의 뿌리를 보이려고 태조 현릉의 표시 좌표를 대표점으로 썼다."
   },
   {
    "id": "claim-ge2-loc-byeongnando",
@@ -961,7 +995,7 @@
    },
    "sourceId": "src-hs-en-kusong",
    "citesExcerpt": "ex-geo-kusong",
-   "note": "귀주(구성) 일원 표시 좌표. 담판이 열린 거란 진영의 지점은 남아 있지 않다. 강동 6주의 귀주(구성) 표시 좌표를 청천강 이북 대표점으로 썼다."
+   "note": "청천강 이북 대표점의 표시 좌표. 담판이 열린 거란 진영의 지점은 남아 있지 않다. 993년 당시 이 일대는 아직 고려 땅이 아니었으므로 뒷날 강동 6주의 이름을 쓰지 않고, 구성시 표시 좌표를 청천강 이북(봉산군 비정지에 가까운) 대표점으로만 썼다."
   },
   {
    "id": "claim-ge2-loc-heunghwajin",
@@ -1182,16 +1216,16 @@
   },
   {
    "id": "claim-ge2-simu-28jo",
-   "subject": "event-hs-ge2-simu28",
-   "predicate": "syj:relatedTo",
+   "subject": "person-hs-choe-seungno",
+   "predicate": "syj:participatedIn",
    "object": {
     "kind": "entity",
-    "id": "person-hs-choe-seungno"
+    "id": "event-hs-ge2-simu28"
    },
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_093_0010_0020_0040",
    "quote": "不出時務計二十有八條, 隨狀別封以進",
-   "note": "시무 28조를 봉하여 올렸다는 최승로 열전의 서술."
+   "note": "최승로가 시무 28조를 봉해 올렸다"
   },
   {
    "id": "claim-ge2-simu-confucian",
@@ -1238,16 +1272,16 @@
   },
   {
    "id": "claim-ge2-12mok-request",
-   "subject": "event-hs-ge2-12mok",
-   "predicate": "syj:relatedTo",
+   "subject": "person-hs-choe-seungno",
+   "predicate": "syj:participatedIn",
    "object": {
     "kind": "entity",
-    "id": "person-hs-choe-seungno"
+    "id": "event-hs-ge2-12mok"
    },
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_093_0010_0020_0040",
    "quote": "今竊見, 鄕豪每假公務, 侵暴百姓, 民不堪命, 請置外官",
-   "note": "향호의 침탈을 막으려면 외관을 두어야 한다는 시무책의 조항."
+   "note": "최승로가 호족의 침탈을 들어 외관 파견을 건의했고 12목 설치로 이어졌다"
   },
   {
    "id": "claim-ge2-12mok-baksa",
@@ -1363,7 +1397,7 @@
   },
   {
    "id": "claim-ge2-dobyeong-989",
-   "subject": "event-hs-ge2-dobyeongmasa",
+   "subject": "event-hs-ge2-byeongmasa",
    "predicate": "syj:establishedIn",
    "object": {
     "kind": "time",
@@ -1376,7 +1410,7 @@
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_077_0010_0550_0020",
    "quote": "兵馬使. 成宗八年 置於東·西北面 兵馬使一人三品",
-   "note": "성종 8년(989) 동·서북면에 병마사를 두었다. 도병마사의 출발로 본다."
+   "note": "고려사 백관지 병마사조. 성종 8년 동·서북면에 병마사를 두었다는 기사이며 도병마사 자체의 설치 기사가 아니다. 도병마사 설치 시점은 학설이 갈린다."
   },
   {
    "id": "claim-ge2-dobyeong-name",
@@ -1549,15 +1583,19 @@
   {
    "id": "claim-ge2-anyungjin-city",
    "subject": "place-hs-ge2-anyungjin",
-   "predicate": "syj:relatedTo",
+   "predicate": "syj:builtIn",
    "object": {
-    "kind": "entity",
-    "id": "polity-goryeo"
+    "kind": "time",
+    "verbatim": "光宗二十五年",
+    "year": 974,
+    "precision": "year",
+    "earliest": 974,
+    "latest": 974
    },
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_058_0010_0040_0030_0380",
    "quote": "安戎鎭 光宗二十五年, 築城",
-   "note": "안융진은 광종 25년에 성을 쌓았다."
+   "note": "고려사 지리지: 안융진은 광종 25년(974)에 성을 쌓았다"
   },
   {
    "id": "claim-ge2-sangpyeong-993",
@@ -1677,16 +1715,16 @@
   },
   {
    "id": "claim-ge2-seogyeong-visit",
-   "subject": "place-hs-ge2-seogyeong",
-   "predicate": "syj:relatedTo",
+   "subject": "event-hs-ge2-khitan-first",
+   "predicate": "syj:tookPlaceAt",
    "object": {
     "kind": "entity",
-    "id": "polity-goryeo"
+    "id": "place-hs-ge2-seogyeong"
    },
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_003_0140_0050_0010",
    "quote": "閏月 丁亥 幸西京, 進次安北府",
-   "note": "성종이 서경에 가고 안북부까지 나아갔다."
+   "note": "거란 1차 침입 때 성종이 서경에 가 안북부까지 나아갔다"
   },
   {
    "id": "claim-ge2-dampan-993",
@@ -1711,7 +1749,7 @@
    "predicate": "syj:relatedTo",
    "object": {
     "kind": "entity",
-    "id": "person-hs-so-sonnyeong"
+    "id": "person-sososonnyeong"
    },
    "sourceId": "src-goryeosa",
    "citesChunk": "chunk_goryeosa_kr_094_0010_0010_0040",
@@ -2339,6 +2377,87 @@
    "citesChunk": "chunk_goryeosa_kr_003_0330_0020_0020",
    "quote": "俄而, 兪義等奉院君而至, 遂卽位",
    "note": "대량원군이 들어와 곧 즉위했다. 현종이다."
+  },
+  {
+   "id": "claim-ge2-loc-gyeongju",
+   "subject": "place-hs-ge2-gyeongju",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.85,
+    "lon": 129.217,
+    "precision": "area"
+   },
+   "sourceId": "src-hs-en-gyeongju",
+   "citesExcerpt": "ex-geo-gyeongju",
+   "note": "경주의 표시 좌표"
+  },
+  {
+   "id": "claim-ge2-loc-gwangju",
+   "subject": "place-hs-ge2-gwangju",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.367,
+    "lon": 127.283,
+    "precision": "area"
+   },
+   "sourceId": "src-hs-ko-gwangju",
+   "citesExcerpt": "ex-geo-gwangju",
+   "note": "12목 가운데 광주목(지금 경기도 광주시)의 표시 좌표"
+  },
+  {
+   "id": "claim-ge2-loc-gaegyeong-east",
+   "subject": "place-hs-ge2-gaegyeong-east",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.9739,
+    "lon": 126.5678,
+    "precision": "site"
+   },
+   "sourceId": "src-hs-en-sungyang",
+   "citesExcerpt": "ex-geo-sungyang",
+   "note": "개경 도성 동쪽 자남산 기슭의 표시 좌표(뒷날 숭양서원이 선 자리)"
+  },
+  {
+   "id": "claim-ge2-choe-gyeongju",
+   "subject": "person-hs-choe-seungno",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-ge2-gyeongju"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_093_0010_0020_0010",
+   "quote": "崔承老, 慶州人",
+   "note": "고려사 열전은 최승로를 경주 사람이라 했다"
+  },
+  {
+   "id": "claim-ge2-choe-noneo",
+   "subject": "person-hs-choe-seungno",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goryeo"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_093_0010_0020_0020",
+   "quote": "年十二, 太祖召見, 使讀論語",
+   "note": "열두 살에 태조 앞에서 논어를 읽고 원봉성학생이 되었다"
+  },
+  {
+   "id": "claim-ge2-choe-988",
+   "subject": "person-hs-choe-seungno",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goryeo"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_003_0090_0040_0030",
+   "quote": "以崔承老爲門下守侍中",
+   "note": "성종 7년(988) 문하수시중에 올랐다"
   }
  ],
  "scenes": [
@@ -2350,28 +2469,29 @@
    "startYear": 982,
    "endYear": 989,
    "kind": "portrait",
-   "summary": "태조 때 열두 살로 논어를 읽어 이름을 얻었고, 성종 원년에 유교로 나라를 다스리자는 글을 올렸다. 983년 문하시랑평장사, 988년 문하시중에 올랐고 989년에 죽었다.",
+   "summary": "경주 사람으로 열두 살에 태조 앞에서 논어를 읽어 이름을 얻었다. 성종 원년에 유교로 나라를 다스리자는 글을 올렸고, 983년 문하시랑평장사, 988년 문하수시중에 올랐다가 989년에 죽었다.",
    "dateClaimIds": [
     "claim-ge2-choe-982"
    ],
    "actionClaimIds": [
     "claim-ge2-choe-983",
+    "claim-ge2-choe-988",
     "claim-ge2-choe-989"
    ],
    "place": {
-    "label": "개경 궁성(첨성대 일원)",
+    "label": "경주",
     "medium": "land",
-    "precision": "site",
-    "lon": 126.54083,
-    "lat": 37.98694,
+    "precision": "area",
+    "lon": 129.217,
+    "lat": 35.85,
     "claimIds": [
-     "claim-ge2-loc-chomsongdae"
+     "claim-ge2-loc-gyeongju"
     ],
     "coordinateSourceIds": [
-     "src-hs-ko-chomsongdae"
+     "src-hs-en-gyeongju"
     ],
-    "coordinateNote": "개경 궁성 안 첨성대의 표시 좌표를 궁성 영역의 대표점으로 썼다. 개별 관아 터의 좌표는 남아 있지 않다.",
-    "setting": "palace"
+    "coordinateNote": "고려사 열전은 최승로를 경주 사람이라 했다. 경주시 표시 좌표를 출신지 대표점으로 썼다. 벼슬살이는 개경에서 했으며 항목 힌트의 개경 좌표는 개경 항목이 한 점에 몰리지 않도록 쓰지 않았다.",
+    "setting": "office"
    },
    "participants": [
     {
@@ -2382,7 +2502,10 @@
      "claimIds": [
       "claim-ge2-choe-982",
       "claim-ge2-choe-983",
-      "claim-ge2-choe-989"
+      "claim-ge2-choe-988",
+      "claim-ge2-choe-989",
+      "claim-ge2-choe-gyeongju",
+      "claim-ge2-choe-noneo"
      ]
     }
    ],
@@ -2396,10 +2519,12 @@
     }
    },
    "category": "person",
-   "region": "central",
+   "region": "south",
    "decade": 980,
    "relatedClaimIds": [
-    "claim-ge2-choe-baehyang"
+    "claim-ge2-choe-baehyang",
+    "claim-ge2-choe-gyeongju",
+    "claim-ge2-choe-noneo"
    ]
   },
   {
@@ -2624,7 +2749,7 @@
     "claim-ge2-singmok"
    ],
    "place": {
-    "label": "개경",
+    "label": "개경 도성",
     "medium": "land",
     "precision": "area",
     "lon": 126.5528,
@@ -2635,7 +2760,7 @@
     "coordinateSourceIds": [
      "src-hs-en-kaesong"
     ],
-    "coordinateNote": "개경 도성 전체의 대표점으로 개성시 표시 좌표를 썼다."
+    "coordinateNote": "재신과 추밀이 모인 자리는 남아 있지 않다. 개성시 표시 좌표를 개경 도성 전체의 대표점으로 썼다. 건원중보 장면(개경 시전 거리)과는 540m쯤 떨어져 있다."
    },
    "participants": [],
    "effects": {
@@ -2668,18 +2793,18 @@
     "claim-ge2-jungchu-duty"
    ],
    "place": {
-    "label": "개경 성곽",
+    "label": "개경 궁성 일원",
     "medium": "land",
     "precision": "site",
-    "lon": 126.5728,
-    "lat": 37.9886,
+    "lon": 126.54083,
+    "lat": 37.98694,
     "claimIds": [
-     "claim-ge2-loc-walls"
+     "claim-ge2-loc-chomsongdae"
     ],
     "coordinateSourceIds": [
-     "src-hs-en-kaesong-walls"
+     "src-hs-ko-chomsongdae"
     ],
-    "coordinateNote": "궁성 숙위를 맡은 기구의 자리를 특정할 수 없어 개경 성곽 표시 좌표를 대표점으로 썼다."
+    "coordinateNote": "중추원은 왕명 출납과 궁성 숙위를 맡았다. 관아 자리가 남아 있지 않아 궁성 안 첨성대의 표시 좌표를 궁성 구역 대표점으로 썼다. 같은 궁성 안이라 시무 28조 장면(만월대)과 300m 남짓 떨어져 있다."
    },
    "participants": [],
    "effects": {
@@ -2712,7 +2837,7 @@
     "claim-ge2-gukjagam-jeolyo"
    ],
    "place": {
-    "label": "개경 국자감 터(개성 성균관)",
+    "label": "개경 국자감 터",
     "medium": "land",
     "precision": "site",
     "lon": 126.57072,
@@ -2841,18 +2966,18 @@
     "claim-ge2-sangpyeong-price"
    ],
    "place": {
-    "label": "개경 시전 거리(남대문 일원)",
+    "label": "광주목",
     "medium": "land",
-    "precision": "site",
-    "lon": 126.5581,
-    "lat": 37.9692,
+    "precision": "area",
+    "lon": 127.283,
+    "lat": 37.367,
     "claimIds": [
-     "claim-ge2-loc-namdaemun"
+     "claim-ge2-loc-gwangju"
     ],
     "coordinateSourceIds": [
-     "src-hs-en-kaesong-namdae"
+     "src-hs-ko-gwangju"
     ],
-    "coordinateNote": "개경 시전과 경시서가 있던 도성 남쪽 거리의 대표점으로 개성 남대문 표시 좌표를 썼다."
+    "coordinateNote": "상평창은 양경(개경·서경)과 12목에 두었다. 12목 가운데 하나인 광주목(지금 경기도 광주) 표시 좌표를 전국 제도의 표시용 대표점으로 썼다. 실제 창고 자리를 가리키는 좌표가 아니다."
    },
    "participants": [],
    "effects": {
@@ -2867,9 +2992,6 @@
    "category": "economy",
    "region": "central",
    "decade": 990,
-   "relatedClaimIds": [
-    "claim-ge2-sijeon"
-   ],
    "sceneFunction": "market"
   },
   {
@@ -2950,7 +3072,7 @@
     "claim-ge2-dampan-yeojin"
    ],
    "place": {
-    "label": "귀주(구성) 일원",
+    "label": "거란 진영(청천강 이북)",
     "medium": "land",
     "precision": "area",
     "lon": 125.167,
@@ -2961,7 +3083,7 @@
     "coordinateSourceIds": [
      "src-hs-en-kusong"
     ],
-    "coordinateNote": "담판이 열린 거란 진영의 지점은 남아 있지 않다. 강동 6주의 귀주(구성) 표시 좌표를 청천강 이북 대표점으로 썼다.",
+    "coordinateNote": "담판이 열린 거란 진영의 지점은 남아 있지 않다. 993년 당시 이 일대는 아직 고려 땅이 아니었으므로 뒷날 강동 6주의 이름을 쓰지 않고, 구성 표시 좌표를 청천강 이북(봉산군 비정지에 가까운) 대표점으로 썼다.",
     "setting": "battle"
    },
    "participants": [
@@ -2975,7 +3097,7 @@
      ]
     },
     {
-     "entityId": "person-hs-so-sonnyeong",
+     "entityId": "person-sososonnyeong",
      "role": "commander",
      "presence": "on-site",
      "side": "b",
@@ -3076,7 +3198,7 @@
     "claim-ge2-cheoljeon-1002"
    ],
    "place": {
-    "label": "개경 시전 거리(남대문 일원)",
+    "label": "개경 시전 거리",
     "medium": "land",
     "precision": "site",
     "lon": 126.5581,
@@ -3087,7 +3209,7 @@
     "coordinateSourceIds": [
      "src-hs-en-kaesong-namdae"
     ],
-    "coordinateNote": "개경 시전과 경시서가 있던 도성 남쪽 거리의 대표점으로 개성 남대문 표시 좌표를 썼다."
+    "coordinateNote": "철전을 주조·유통한 지점은 남아 있지 않다. 개경 시전과 경시서가 있던 도성 남쪽 거리의 대표점으로 개성 남대문의 표시 좌표를 썼다(남대문 건물 자체는 1391~1393년 것이다)."
    },
    "participants": [],
    "effects": {
@@ -3103,7 +3225,8 @@
    "region": "central",
    "decade": 990,
    "relatedClaimIds": [
-    "claim-ge2-cheoljeon-stop"
+    "claim-ge2-cheoljeon-stop",
+    "claim-ge2-sijeon"
    ],
    "sceneFunction": "market",
    "persistence": {
@@ -3133,18 +3256,18 @@
     "claim-ge2-eumseo-age"
    ],
    "place": {
-    "label": "개경 태조 현릉 일원",
+    "label": "개경 도성 동부 관아 일원",
     "medium": "land",
     "precision": "site",
-    "lon": 126.50556,
-    "lat": 37.98472,
+    "lon": 126.5678,
+    "lat": 37.9739,
     "claimIds": [
-     "claim-ge2-loc-wanggon"
+     "claim-ge2-loc-gaegyeong-east"
     ],
     "coordinateSourceIds": [
-     "src-hs-en-wanggon-tomb"
+     "src-hs-en-sungyang"
     ],
-    "coordinateNote": "음서는 공신과 5품 이상 관료의 후손에게 주어졌다. 개경 문벌의 뿌리를 보이려고 태조 현릉의 표시 좌표를 대표점으로 썼다."
+    "coordinateNote": "음직을 다룬 관아 자리는 남아 있지 않다. 개경 도성 동쪽 자남산 기슭(뒷날 숭양서원이 선 자리)의 표시 좌표를 도성 안 관아 구역의 대표점으로 썼다. 숭양서원 건물은 1573년 것이므로 라벨에는 쓰지 않았다."
    },
    "participants": [],
    "effects": {
@@ -3283,7 +3406,7 @@
     "coordinateSourceIds": [
      "src-hs-ko-hanam"
     ],
-    "coordinateNote": "철불이 나온 하사창동 절터의 좌표가 없어 하남시 표시 좌표를 썼다. 불상 자체는 지금 국립중앙박물관에 있다."
+    "coordinateNote": "철불이 나온 하남 하사창동 절터의 정확한 좌표가 없어 하남시 표시 좌표를 썼다. 절터는 폐사지이고 지금 남아 있는 것은 국립중앙박물관의 철불이며 이 자리의 전각이 아니다."
    },
    "participants": [],
    "effects": {
@@ -3307,7 +3430,8 @@
     "basisClaimIds": [
      "claim-ge2-hasachang-def",
      "claim-ge2-hasachang-size"
-    ]
+    ],
+    "note": "존속하는 것은 철불이며 절터의 전각이 아니다. 소실 연도 근거가 없어 to 를 닫지 않았다."
    }
   },
   {
@@ -3363,7 +3487,7 @@
    "eventId": "event-hs-ge2-hyangdo",
    "title": "향도",
    "startYear": 1000,
-   "endYear": 1000,
+   "endYear": 1131,
    "kind": "ritual",
    "summary": "마을 사람들이 무리를 이루어 불상과 석탑, 절을 세우는 일을 함께 맡았다. 1131년 기록에는 승려와 속인이 섞여 만불향도라 부르며 염불하고 경을 읽었다고 적혀 있다.",
    "dateClaimIds": [
@@ -3410,8 +3534,8 @@
    "itemId": "hs-goryeo-early-joun",
    "eventId": "event-hs-ge2-joun",
    "title": "조운 제도",
-   "startYear": 1000,
-   "endYear": 1000,
+   "startYear": 992,
+   "endYear": 992,
    "kind": "naval",
    "summary": "나라 초에 남도의 물가 고을에 열두 창을 두고 충주의 것을 덕흥창이라 했다. 주군의 조세를 가까운 창에 모았다가 이듬해 2월부터 배에 실어 개경 창고로 날랐다. 성종 11년에는 운임까지 정했다.",
    "dateClaimIds": [
@@ -3447,7 +3571,7 @@
    },
    "category": "transport",
    "region": "central",
-   "decade": 1000,
+   "decade": 990,
    "relatedClaimIds": [
     "claim-ge2-joun-ships"
    ],
@@ -3458,8 +3582,8 @@
    "itemId": "hs-goryeo-early-sinbun-gujo",
    "eventId": "event-hs-ge2-sinbun",
    "title": "고려의 신분 구조",
-   "startYear": 1000,
-   "endYear": 1000,
+   "startYear": 982,
+   "endYear": 982,
    "kind": "assembly",
    "summary": "고려는 양인과 천인을 갈랐다. 사족의 집에서 대물림하며 부린 이를 사노비, 관아와 주군에서 부린 이를 공노비라 했다. 양인이라도 잡로·공상·악인과 향·부곡 사람은 국학에 들어가지 못했다.",
    "dateClaimIds": [
@@ -3495,7 +3619,7 @@
    },
    "category": "settlement",
    "region": "south",
-   "decade": 1000,
+   "decade": 980,
    "relatedClaimIds": [
     "claim-ge2-sinbun-jabro"
    ]
@@ -3517,7 +3641,7 @@
     "claim-ge2-gangjo-depose"
    ],
    "place": {
-    "label": "개경 시가(선죽교 일원)",
+    "label": "개경 시가",
     "medium": "land",
     "precision": "site",
     "lon": 126.5081,
@@ -3528,7 +3652,7 @@
     "coordinateSourceIds": [
      "src-hs-en-sonjuk"
     ],
-    "coordinateNote": "목종이 궁문 밖으로 나온 개경 시가의 대표점으로 선죽교 표시 좌표를 썼다. 정변의 정확한 지점은 남아 있지 않다."
+    "coordinateNote": "정변의 정확한 지점은 남아 있지 않다. 목종이 궁문 밖으로 나온 개경 시가의 대표점으로 선죽교 표시 좌표를 썼다(선죽교 다리 자체는 1216년 축조 전승이다)."
    },
    "participants": [
     {
@@ -3573,26 +3697,28 @@
    "id": "fact-hs-ge2-001",
    "itemId": "hs-goryeo-early-choe-seungno",
    "category": "person",
-   "region": "central",
+   "region": "south",
    "decade": 980,
    "year": 982,
    "yearVerbatim": "982년",
-   "placeLabel": "개경 궁성(첨성대 일원)",
-   "modernPlace": "북한 개성특별시 만월동",
+   "placeLabel": "경주",
+   "modernPlace": "경상북도 경주시",
    "what": "유교 정치의 밑그림을 왕에게 올린 신하",
    "claimIds": [
     "claim-ge2-choe-982",
     "claim-ge2-choe-983",
+    "claim-ge2-choe-988",
     "claim-ge2-choe-989",
     "claim-ge2-choe-baehyang",
-    "claim-ge2-loc-chomsongdae"
+    "claim-ge2-choe-gyeongju",
+    "claim-ge2-choe-noneo"
    ],
    "sceneId": "scene-hs-ge2-choe-seungno",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 인물 장면의 연도는 시무 28조를 올린 982년을 기준으로 잡았다",
-   "lon": 126.54083,
-   "lat": 37.98694,
-   "coordinateBasis": "location claim-ge2-loc-chomsongdae"
+   "note": "[10한사1-01-02] · standard · 고려사 열전의 慶州人 기록에 따라 출신지 경주를 표시점으로 삼았다. 상서·벼슬살이는 개경에서 있었던 일이다.",
+   "lon": 129.217,
+   "lat": 35.85,
+   "coordinateBasis": "src-hs-en-gyeongju ex-geo-gyeongju"
   },
   {
    "id": "fact-hs-ge2-002",
@@ -3638,7 +3764,7 @@
    ],
    "sceneId": "scene-hs-ge2-12mok",
    "confidence": "high",
-   "note": "[10한사1-01-02] · core · 장면 좌표는 12목 가운데 청주목을 대표점으로 잡은 값이다",
+   "note": "[10한사1-01-02] · core · 표시 좌표는 12목 가운데 청주목을 고른 전국 제도의 표시용 대표점이며 실제 사건 장소가 아니다.",
    "lon": 127.48333,
    "lat": 36.63333,
    "coordinateBasis": "location claim-ge2-loc-cheongju"
@@ -3662,7 +3788,7 @@
    ],
    "sceneId": "scene-hs-ge2-hyangni",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 좌표는 12목의 하나인 상주목을 지방 관아의 대표점으로 잡은 값이다",
+   "note": "[10한사1-02-03] · standard · 향리는 전국 군현에 있었다. 표시 좌표는 12목 가운데 상주목을 고른 표시용 대표점이며 실제 사건 장소가 아니다.",
    "lon": 128.1590393,
    "lat": 36.4107986,
    "coordinateBasis": "location claim-ge2-loc-sangju"
@@ -3687,7 +3813,7 @@
    ],
    "sceneId": "scene-hs-ge2-uichang",
    "confidence": "high",
-   "note": "[10한사1-01-02] · core · 좌표는 지방 주부의 의창을 나타내려고 서해도 해주를 대표점으로 잡은 값이다",
+   "note": "[10한사1-02-02] · core · 의창은 개경과 여러 주부에 두었다. 표시 좌표는 서해도 주부의 표시용 대표점(해주)이며 실제 창고 자리가 아니다.",
    "lon": 125.717,
    "lat": 38.033,
    "coordinateBasis": "location claim-ge2-loc-haeju"
@@ -3700,7 +3826,7 @@
    "decade": 980,
    "year": 989,
    "yearVerbatim": "989년",
-   "placeLabel": "개경",
+   "placeLabel": "개경 도성",
    "modernPlace": "북한 개성특별시",
    "what": "재신과 추밀이 모여 국방·법제를 결정한 고려만의 회의 기구",
    "claimIds": [
@@ -3711,7 +3837,7 @@
    ],
    "sceneId": "scene-hs-ge2-dobyeongmasa",
    "confidence": "medium",
-   "note": "[10한사1-01-02] · standard · 설치 시점은 학설이 갈린다. 병마사를 둔 989년을 출발점으로 잡았고 식목도감의 관원은 문종 때 정해졌다",
+   "note": "[10한사1-01-02] · standard · 설치 시점은 학설이 갈린다. 인용한 989년 기사는 동·서북면 병마사 설치 기사여서 주장의 주체를 병마사 설치 사건으로 따로 두었고, 도병마사 자체의 연도 근거는 아니다.",
    "lon": 126.5528,
    "lat": 37.9717,
    "coordinateBasis": "location claim-ge2-loc-kaesong"
@@ -3724,21 +3850,21 @@
    "decade": 990,
    "year": 991,
    "yearVerbatim": "991년",
-   "placeLabel": "개경 성곽",
+   "placeLabel": "개경 궁성 일원",
    "modernPlace": "북한 개성특별시",
    "what": "왕명 전달과 군사 기밀, 궁궐 경비를 맡은 핵심 기구",
    "claimIds": [
     "claim-ge2-jungchu-991",
     "claim-ge2-jungchu-found",
     "claim-ge2-jungchu-duty",
-    "claim-ge2-loc-walls"
+    "claim-ge2-loc-chomsongdae"
    ],
    "sceneId": "scene-hs-ge2-jungchuwon",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 좌표는 궁성 영역을 나타내려고 개경 성곽을 대표점으로 잡은 값이다",
-   "lon": 126.5728,
-   "lat": 37.9886,
-   "coordinateBasis": "location claim-ge2-loc-walls"
+   "note": "[10한사1-01-02] · standard · 표시 좌표는 궁성 안 첨성대를 쓴 궁성 구역 대표점이다. 중추원 관아 자리는 남아 있지 않다.",
+   "lon": 126.54083,
+   "lat": 37.98694,
+   "coordinateBasis": "src-hs-ko-chomsongdae ex-geo-chomsongdae"
   },
   {
    "id": "fact-hs-ge2-008",
@@ -3748,7 +3874,7 @@
    "decade": 990,
    "year": 992,
    "yearVerbatim": "992년",
-   "placeLabel": "개경 국자감 터(개성 성균관)",
+   "placeLabel": "개경 국자감 터",
    "modernPlace": "북한 개성특별시 방직동",
    "what": "나라가 세운 최고 학교로 유학과 기술학을 가르침",
    "claimIds": [
@@ -3760,7 +3886,7 @@
    ],
    "sceneId": "scene-hs-ge2-gukjagam",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 좌표는 국자감의 후신인 개성 성균관 자리다",
+   "note": "[10한사1-02-04] · standard · 좌표는 국자감의 후신인 개성 성균관 자리다",
    "lon": 126.57072,
    "lat": 37.992,
    "coordinateBasis": "location claim-ge2-loc-gukjagam"
@@ -3785,7 +3911,7 @@
    ],
    "sceneId": "scene-hs-ge2-khitan-first",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 안융진 성터의 좌표가 없어 안주시 표시 좌표를 썼다",
+   "note": "[10한사1-02-01] · standard · 안융진 성터의 좌표가 없어 안주시 표시 좌표를 썼다",
    "lon": 125.66,
    "lat": 39.62,
    "coordinateBasis": "location claim-ge2-loc-anyungjin"
@@ -3798,22 +3924,20 @@
    "decade": 990,
    "year": 993,
    "yearVerbatim": "993년",
-   "placeLabel": "개경 시전 거리(남대문 일원)",
-   "modernPlace": "북한 개성특별시 북안동",
+   "placeLabel": "광주목",
+   "modernPlace": "경기도 광주시",
    "what": "곡식값이 오르내릴 때 사고팔아 물가를 잡던 창고",
    "claimIds": [
     "claim-ge2-sangpyeong-993",
     "claim-ge2-sangpyeong-gyeongsiseo",
-    "claim-ge2-sangpyeong-price",
-    "claim-ge2-sijeon",
-    "claim-ge2-loc-namdaemun"
+    "claim-ge2-sangpyeong-price"
    ],
    "sceneId": "scene-hs-ge2-sangpyeongchang",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 개경 몫을 경시서가 맡았으므로 시전 거리를 대표점으로 잡았다",
-   "lon": 126.5581,
-   "lat": 37.9692,
-   "coordinateBasis": "location claim-ge2-loc-namdaemun"
+   "note": "[10한사1-02-02] · standard · 상평창은 양경과 12목에 두었다. 표시 좌표는 12목 가운데 광주목을 고른 표시용 대표점이며 실제 창고 자리가 아니다. 개경 몫 5천 석은 경시서가 맡아 사고팔았다.",
+   "lon": 127.283,
+   "lat": 37.367,
+   "coordinateBasis": "src-hs-ko-gwangju ex-geo-gwangju"
   },
   {
    "id": "fact-hs-ge2-011",
@@ -3836,7 +3960,7 @@
    ],
    "sceneId": "scene-hs-ge2-seohui",
    "confidence": "high",
-   "note": "[10한사1-01-02] · core · 성종이 서경까지 나아갔고 서희를 강두에서 전송했으므로 서경을 인물 장면의 무대로 잡았다. 장면 범위는 담판(993)부터 죽은 해(998)까지다",
+   "note": "[10한사1-02-01] · core · 성종이 서경까지 나아갔고 서희를 강두에서 전송했으므로 서경을 인물 장면의 무대로 잡았다. 장면 범위는 담판(993)부터 죽은 해(998)까지다",
    "lon": 125.7475,
    "lat": 39.01667,
    "coordinateBasis": "location claim-ge2-loc-seogyeong"
@@ -3849,7 +3973,7 @@
    "decade": 990,
    "year": 993,
    "yearVerbatim": "993년",
-   "placeLabel": "귀주(구성) 일원",
+   "placeLabel": "거란 진영(청천강 이북)",
    "modernPlace": "북한 평안북도 구성시",
    "what": "고려가 고구려를 잇는다며 거란을 설득한 담판",
    "claimIds": [
@@ -3861,7 +3985,7 @@
    ],
    "sceneId": "scene-hs-ge2-seohui-dampan",
    "confidence": "medium",
-   "note": "[10한사1-01-02] · standard · 담판이 열린 거란 진영의 정확한 지점은 남아 있지 않아 귀주(구성) 좌표를 대표점으로 썼다",
+   "note": "[10한사1-02-01] · standard · 담판이 열린 거란 진영의 정확한 지점은 남아 있지 않다. 993년 시점에는 아직 고려 땅이 아니었으므로 뒷날의 강동 6주 지명 대신 청천강 이북 대표점으로 구성시 표시 좌표를 썼다.",
    "lon": 125.167,
    "lat": 39.967,
    "coordinateBasis": "location claim-ge2-loc-guju"
@@ -3887,7 +4011,7 @@
    ],
    "sceneId": "scene-hs-ge2-gangdong6",
    "confidence": "high",
-   "note": "[10한사1-01-02] · core · 여섯 고을이 넓게 흩어져 있어 흥화진이 있던 의주를 대표점으로 썼다",
+   "note": "[10한사1-02-01] · core · 여섯 고을이 넓게 흩어져 있어 흥화진이 있던 의주를 대표점으로 썼다",
    "lon": 124.53194,
    "lat": 40.19694,
    "coordinateBasis": "location claim-ge2-loc-heunghwajin"
@@ -3900,7 +4024,7 @@
    "decade": 990,
    "year": 996,
    "yearVerbatim": "996년",
-   "placeLabel": "개경 시전 거리(남대문 일원)",
+   "placeLabel": "개경 시전 거리",
    "modernPlace": "북한 개성특별시 북안동",
    "what": "우리 손으로 만든 첫 쇠돈, 널리 쓰이지는 못함",
    "claimIds": [
@@ -3908,11 +4032,11 @@
     "claim-ge2-cheoljeon-use",
     "claim-ge2-cheoljeon-1002",
     "claim-ge2-cheoljeon-stop",
-    "claim-ge2-loc-namdaemun"
+    "claim-ge2-sijeon"
    ],
    "sceneId": "scene-hs-ge2-geonwon-jungbo",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 좌표는 개경 시전 거리를 대표점으로 잡은 값이며 상평창 장면과 같은 점을 쓴다",
+   "note": "[10한사1-02-02] · standard · 표시 좌표는 개경 시전 거리의 대표점이며 주전 지점을 가리키는 좌표가 아니다. 철전은 목종 5년에 쓰임이 끊겼다.",
    "lon": 126.5581,
    "lat": 37.9692,
    "coordinateBasis": "location claim-ge2-loc-namdaemun",
@@ -3930,7 +4054,7 @@
    "decade": 990,
    "year": 997,
    "yearVerbatim": "997년",
-   "placeLabel": "개경 태조 현릉 일원",
+   "placeLabel": "개경 도성 동부 관아 일원",
    "modernPlace": "북한 개성특별시 해선리",
    "what": "높은 관리의 자손이 시험 없이 벼슬에 오르던 길",
    "claimIds": [
@@ -3938,14 +4062,14 @@
     "claim-ge2-eumseo-5pum",
     "claim-ge2-eumseo-age",
     "claim-ge2-eumseo-gongsin",
-    "claim-ge2-loc-wanggon"
+    "claim-ge2-loc-gaegyeong-east"
    ],
    "sceneId": "scene-hs-ge2-eumseo",
    "confidence": "high",
-   "note": "[10한사1-01-02] · core · 좌표는 개경 문벌의 뿌리를 보이려고 태조 현릉 일원을 대표점으로 잡은 값이다",
-   "lon": 126.50556,
-   "lat": 37.98472,
-   "coordinateBasis": "location claim-ge2-loc-wanggon"
+   "note": "[10한사1-02-03] · core · 표시 좌표는 개경 도성 동부 관아 구역의 표시용 대표점이며 실제 관아 자리가 아니다. 태조 현릉 좌표는 근거와 무관해 쓰지 않았다.",
+   "lon": 126.5678,
+   "lat": 37.9739,
+   "coordinateBasis": "src-hs-en-sungyang ex-geo-sungyang"
   },
   {
    "id": "fact-hs-ge2-016",
@@ -3966,7 +4090,7 @@
    ],
    "sceneId": "scene-hs-ge2-jeonsigwa",
    "confidence": "high",
-   "note": "[10한사1-01-02] · standard · 전지와 시지는 전국 주현에 분급되었다. 좌표는 12목의 하나인 진주목을 대표점으로 잡은 값이다",
+   "note": "[10한사1-02-02] · standard · 개정 전시과는 개경 조정의 조치이고 전지와 시지는 전국 주현에 분급되었다. 표시 좌표는 12목 가운데 진주목을 고른 표시용 대표점이며 실제 사건 장소가 아니다. 개경 항목이 한 점에 겹치지 않도록 개경 좌표를 쓰지 않았다.",
    "lon": 128.083,
    "lat": 35.2,
    "coordinateBasis": "location claim-ge2-loc-jinju"
@@ -3991,7 +4115,7 @@
    ],
    "sceneId": "scene-hs-ge2-byeongnando",
    "confidence": "medium",
-   "note": "[10한사1-01-02] · core · 장면 연도는 항목의 표시 범위(1000~1170)이며, 벽란정을 직접 적은 기록은 1128년의 것이다",
+   "note": "[10한사1-02-01] · core · 장면 연도는 항목의 표시 범위(1000~1170)이며, 벽란정을 직접 적은 기록은 1128년의 것이다",
    "lon": 126.39432139,
    "lat": 37.94855444,
    "coordinateBasis": "location claim-ge2-loc-byeongnando"
@@ -4014,8 +4138,8 @@
     "claim-ge2-loc-hasachang"
    ],
    "sceneId": "scene-hs-ge2-hasachang",
-   "confidence": "medium",
-   "note": "[10한사1-01-02] · extended · 제작 연도 기록이 없다. 1000년은 \"고려 초\"를 나타내는 표시용 값이며 제작 연도를 주장하지 않는다",
+   "confidence": "low",
+   "note": "[10한사1-02-04] · extended · 연도 근거가 없어 1000년은 표시용 값이다. 절터는 폐사지이고 현존하는 것은 국립중앙박물관의 철불이며 이 자리의 전각이 아니다.",
    "lon": 127.2,
    "lat": 37.517,
    "coordinateBasis": "location claim-ge2-loc-hasachang",
@@ -4045,7 +4169,7 @@
    ],
    "sceneId": "scene-hs-ge2-hyang-bugok-so",
    "confidence": "medium",
-   "note": "[10한사1-01-02] · core · 장면 연도는 항목의 표시 범위(1000~1170)이며, 인용한 부곡 기록은 1078년의 것이다",
+   "note": "[10한사1-02-03] · core · 향·부곡·소는 전국에 흩어져 있었다. 표시 좌표는 12목 가운데 나주목을 고른 표시용 대표점이며 실제 사건 장소가 아니다.",
    "lon": 126.717,
    "lat": 35.033,
    "coordinateBasis": "location claim-ge2-loc-naju"
@@ -4070,7 +4194,7 @@
    ],
    "sceneId": "scene-hs-ge2-hyangdo",
    "confidence": "medium",
-   "note": "[10한사1-01-02] · standard · 장면 연도는 항목의 대표 연도이며, 인용한 향도 기록은 1131년의 것이다",
+   "note": "[10한사1-02-03] · standard · 향도는 전국에 있었다. 표시 좌표는 개경 부근 안화사를 고른 표시용 대표점이고, 인용한 기록은 1131년의 일이다.",
    "lon": 126.55,
    "lat": 38.0022,
    "coordinateBasis": "location claim-ge2-loc-anhwasa"
@@ -4080,9 +4204,9 @@
    "itemId": "hs-goryeo-early-joun",
    "category": "transport",
    "region": "central",
-   "decade": 1000,
-   "year": 1000,
-   "yearVerbatim": "1000년",
+   "decade": 990,
+   "year": 992,
+   "yearVerbatim": "成宗十一年",
    "placeLabel": "충주 덕흥창",
    "modernPlace": "충청북도 충주시",
    "what": "지방에서 걷은 세곡을 배에 실어 수도로 나르는 길",
@@ -4095,7 +4219,7 @@
    ],
    "sceneId": "scene-hs-ge2-joun",
    "confidence": "medium",
-   "note": "[10한사1-01-02] · standard · 장면 연도는 항목의 대표 연도이며, 운임을 정한 기록은 992년의 것이다",
+   "note": "[10한사1-02-02] · standard · 연도는 운임을 정한 성종 11년(992)에 맞추었다. 표시 좌표는 12조창 가운데 충주 덕흥창을 고른 표시용 대표점이다.",
    "lon": 127.9259673,
    "lat": 36.9906949,
    "coordinateBasis": "location claim-ge2-loc-chungju"
@@ -4105,9 +4229,9 @@
    "itemId": "hs-goryeo-early-sinbun-gujo",
    "category": "settlement",
    "region": "south",
-   "decade": 1000,
-   "year": 1000,
-   "yearVerbatim": "1000년",
+   "decade": 980,
+   "year": 982,
+   "yearVerbatim": "成宗元年六月",
    "placeLabel": "전주",
    "modernPlace": "대한민국 전라북도 전주시(지방 고을의 대표점)",
    "what": "귀족·중류층·양민·천민으로 나뉘되 신분 이동이 아주 막히진 않음",
@@ -4120,7 +4244,7 @@
    ],
    "sceneId": "scene-hs-ge2-sinbun",
    "confidence": "medium",
-   "note": "[10한사1-01-02] · standard · 장면 연도는 항목의 대표 연도이며, 인용한 양천 논의는 982년의 것이다",
+   "note": "[10한사1-02-03] · standard · 연도는 최승로가 양천의 법규를 아뢴 성종 원년(982)에 맞추었다. 표시 좌표는 지방 고을의 표시용 대표점(전주)이며 실제 사건 장소가 아니다.",
    "lon": 127.14889,
    "lat": 35.82194,
    "coordinateBasis": "location claim-ge2-loc-jeonju"
@@ -4133,7 +4257,7 @@
    "decade": 1000,
    "year": 1009,
    "yearVerbatim": "1009년",
-   "placeLabel": "개경 시가(선죽교 일원)",
+   "placeLabel": "개경 시가",
    "modernPlace": "북한 개성특별시 선죽동",
    "what": "장수가 임금을 갈아치운 사건이 거란 침입의 빌미가 됨",
    "claimIds": [
@@ -4151,5 +4275,14 @@
    "coordinateBasis": "location claim-ge2-loc-sonjuk"
   }
  ],
- "missing": []
+ "missing": [
+  {
+   "id": "miss-ge2-1",
+   "itemId": "hs-goryeo-early-hasachang-iron-buddha",
+   "reason": "제작 연도를 짚어 주는 근거를 찾지 못했다",
+   "topic": "하남 하사창동 철조석가여래좌상의 제작 연도",
+   "detail": "로컬 원문과 허용 웹 출처 어디에도 이 철불의 제작 연도를 적은 기록이 없어 장면 연도 1000년은 표시용 값이다. 이 때문에 사실의 confidence 를 low 로 낮추었다.",
+   "neededSource": "국가유산포털 보물 지정 해설 또는 국립중앙박물관 소장품 해설의 제작 시기 서술"
+  }
+ ]
 }

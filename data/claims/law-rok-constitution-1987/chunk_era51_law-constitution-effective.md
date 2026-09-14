@@ -29,6 +29,23 @@ generated_by: "claude-opus-5"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-const-effect",
+    "subject": "event-hs-c4-constitution",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-rok"
+    },
+    "citesChunk": "chunk_era51_law-constitution-effective",
+    "quote": "1988. 2. 25.",
+    "note": "1988년 2월 25일부터 시행되었다.",
+    "fromSource": "src-law-rok-constitution-1987",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -92,6 +92,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-geonjun-yeoun",
+    "subject": "org-hs-c1-geonjun",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yeo-unhyeong"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_geonjun-1945",
+    "quote": "조선건국준비위원회(朝鮮建國準備委員會)의 결성을 주도하고 위원장으로 활동하였다",
+    "note": "여운형이 결성을 주도하고 위원장을 맡았다.",
+    "fromSource": "src-ek-yeo-unhyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

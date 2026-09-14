@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-summit-first",
+    "subject": "event-hs-c5-summit-2000",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "2000년 6월",
+      "year": 2000,
+      "precision": "month",
+      "earliest": 2000,
+      "latest": 2000,
+      "id": "ts-curriculum-contemporary-contemporary-5-hs-c5-summit-first"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_summit-first",
+    "quote": "제1차는 2000년 6월 열렸다.",
+    "note": "제1차 남북정상회담 시기",
+    "fromSource": "src-aks-inter-korean-summit",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

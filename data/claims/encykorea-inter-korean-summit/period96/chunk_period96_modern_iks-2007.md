@@ -60,6 +60,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-rmh-2007",
+    "subject": "person-encykorea-roh-moohyun",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-c5-summit-2007"
+    },
+    "citesChunk": "chunk_period96_modern_iks-2007",
+    "quote": "2007년 10월 제2차 정상회담 때의 노무현 대통령과 김정일 위원장.",
+    "note": "제2차 남북정상회담 참여",
+    "fromSource": "src-encykorea-inter-korean-summit",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

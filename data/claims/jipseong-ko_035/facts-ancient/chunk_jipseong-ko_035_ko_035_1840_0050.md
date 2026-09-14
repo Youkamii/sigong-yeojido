@@ -563,7 +563,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-xin",
-    "subject": "person-hs-balhae-seonwang",
+    "subject": "person-balhae-daeinsu",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
@@ -580,7 +580,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-xin2",
-    "subject": "person-hs-balhae-seonwang",
+    "subject": "person-balhae-daeinsu",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
@@ -597,7 +597,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-death",
-    "subject": "person-hs-balhae-seonwang",
+    "subject": "person-balhae-daeinsu",
     "predicate": "syj:reignedTo",
     "object": {
       "kind": "time",
@@ -611,6 +611,23 @@ status: "draft"
     "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
     "quote": "大和四年(830), 仁秀死, 謚宣王",
     "note": "신당서 발해전: 태화 4년(830) 인수가 죽고 시호를 선왕이라 했다.",
+    "fromSource": "src-jipseong-ko_035",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-muwang-inan",
+    "subject": "person-encykorea-balhae-mu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-nb1-balhae"
+    },
+    "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+    "quote": "子武藝立, 斥大土宇, 東北諸夷畏臣之, 私改年曰仁安.",
+    "note": "신당서 발해전: 아들 무예가 서서 땅을 크게 넓히니 동북의 여러 이(夷)가 두려워 신하가 되었고, 스스로 연호를 인안(仁安)으로 고쳤다.",
     "fromSource": "src-jipseong-ko_035",
     "origin": "ai",
     "status": "draft",

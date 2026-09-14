@@ -19,11 +19,11 @@ status: "draft"
     "note": "해산식은 8월 1일 아침 동대문 훈련원에서 열렸다.",
     "fromSource": "src-hs-enc-gundae-haesan",
     "citesChunk": "chunk_curriculum-modern-transition_modern-transition-4_gundae-haesansik",
-    "quote": "그 다음날인 8월 1일 오전 8시에 동대문 훈련원에서 군대 해산식이 거행되었다.",
+    "quote": "8월 1일 오전 8시에 동대문 훈련원에서 군대 해산식이 거행되었다.",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

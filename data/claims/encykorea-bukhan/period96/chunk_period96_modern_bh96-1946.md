@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-1-hs-c1-dprk-imsi",
+    "subject": "polity-hs-c1-dprk",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "org-hs-c1-bukimsi"
+    },
+    "citesChunk": "chunk_period96_modern_bh96-1946",
+    "quote": "1946년 2월 8일에는 김일성을 책임자로 하는 ‘북조선임시인민위원회’가 발족되어",
+    "note": "1946년 북조선임시인민위원회가 앞선 단계였다.",
+    "fromSource": "src-encykorea-bukhan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

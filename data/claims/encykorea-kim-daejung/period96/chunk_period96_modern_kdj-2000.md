@@ -78,6 +78,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-kdj-2000",
+    "subject": "person-encykorea-kim-daejung",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-c5-summit-2000"
+    },
+    "citesChunk": "chunk_period96_modern_kdj-2000",
+    "quote": "2000년 6월 13일부터 6월 15일까지 평양을 방문하여 김정일 위원장과 남북정상회담을 갖고",
+    "note": "평양 방문과 남북정상회담",
+    "fromSource": "src-encykorea-kim-daejung",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

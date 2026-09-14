@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-colonial-colonial-4-hs-c4-ji-1940",
-    "subject": "person-hs-c4-ji-cheongcheon",
+    "subject": "person-hs-ji-cheongcheon",
     "predicate": "syj:occurredIn",
     "object": {
       "kind": "time",
@@ -32,7 +32,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-colonial-colonial-4-hs-c4-ji-1945",
-    "subject": "person-hs-c4-ji-cheongcheon",
+    "subject": "person-hs-ji-cheongcheon",
     "predicate": "syj:endedIn",
     "object": {
       "kind": "time",

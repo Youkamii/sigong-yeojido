@@ -99,6 +99,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-1026-pch",
+    "subject": "event-hs-c4-1026",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-park-chunghee"
+    },
+    "citesChunk": "chunk_period96_modern_pch-1979",
+    "quote": "박정희는 1979년 유신체제에 항거하는 부마민주항쟁이 절정을 이루던 때, 10월 26일 궁정동 만찬석상에서",
+    "note": "부마항쟁이 절정이던 때 궁정동 만찬 자리에서 벌어진 일이다.",
+    "fromSource": "src-encykorea-park-chunghee",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

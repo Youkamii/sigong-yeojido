@@ -116,11 +116,11 @@ status: "draft"
     "predicate": "syj:tookPlaceAt",
     "object": {
       "kind": "entity",
-      "id": "place-hs-sg5-anhakgung"
+      "id": "place-hs-sg5-pyongyangseong"
     },
     "citesChunk": "chunk_scenes-103_ancient_scenes_yeongae-coup",
     "quote": "정변을 일으켜 이들을 모두 죽이고 왕궁에 돌입해 왕을 시해하고 보장왕을 세웠다",
-    "note": "평양성 남쪽에서 귀족을 죽인 뒤 왕궁으로 들어갔다는 서술",
+    "note": "평양성 남쪽 성 밖에서 귀족들을 죽인 뒤 왕궁으로 들어갔다는 서술 — 642년의 왕궁은 586년 옮긴 장안성(평양성) 안에 있었다",
     "fromSource": "src-anc-enc-yeongaesomun",
     "origin": "ai",
     "status": "draft",

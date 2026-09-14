@@ -1,0 +1,149 @@
+{
+  "job": "nambukguk-1",
+  "checker": "claude-opus-5 high",
+  "checkerOutput": "category × 10년\nbyCategoryDecade | 670 | 680 | 690 | 720 | 730 | total\n-----------------+-----+-----+-----+-----+-----+------\nsettlement       | 0   | 0   | 0   | 0   | 0   | 0\nadministration   | 0   | 5   | 0   | 0   | 0   | 5\nfacility         | 0   | 2   | 0   | 0   | 0   | 2\neconomy          | 0   | 2   | 1   | 1   | 0   | 4\ndisaster         | 0   | 0   | 0   | 0   | 0   | 0\nculture          | 0   | 1   | 0   | 2   | 0   | 3\ntransport        | 0   | 0   | 0   | 0   | 0   | 0\nforeign          | 0   | 0   | 0   | 1   | 1   | 2\nperson           | 2   | 2   | 2   | 1   | 1   | 8\nwar              | 0   | 2   | 0   | 0   | 0   | 2\n\nregion × 10년\nbyRegionDecade | 670 | 680 | 690 | 720 | 730 | total\n---------------+-----+-----+-----+-----+-----+------\ncapital        | 0   | 1   | 0   | 0   | 0   | 1\nnorth          | 0   | 0   | 1   | 1   | 1   | 3\ncentral        | 1   | 1   | 0   | 2   | 1   | 5\nsouth          | 1   | 12  | 2   | 2   | 0   | 17\nisland         | 0   | 0   | 0   | 0   | 0   | 0\n\njob 별 집계\njob         | facts | scenes | claims | chunkClaims | excerptClaims\n------------+-------+--------+--------+-------------+--------------\nnambukguk-1 | 26    | 26     | 113    | 59          | 54\n\nPASS: failures=0 warnings=0",
+  "verdict": "fix",
+  "issues": [
+    {
+      "severity": "major",
+      "itemId": "hs-nambukguk-balhae-muwang",
+      "factId": "fact-hs-nb1-025",
+      "problem": "fact.what 이 항목 meaning 을 그대로 쓰지 않고 26건 중 22건이 다시 쓰였다. 무왕 항목은 교과서 용어인 '인안 연호를 쓰고' 가 통째로 빠졌고(인안 관련 claim 도 없다), 국학·보덕국·서시남시 등도 문구가 바뀌었다. 검증기 PASS 한 참고 실물(joseon-early-2)은 23/23 이 meaning 과 글자까지 같다.",
+      "fix": "fact.what 을 items.json 의 meaning 문자열 그대로 복사한다(풀어 쓰기는 scene.summary 에서만 한다). 무왕은 '인안 연호를 쓰고 당과 맞서며 영토를 넓힌 발해 2대 왕' 으로 되돌리고, 연호 서술을 살리려면 인안 근거 claim 을 하나 더 단다.",
+      "evidence": "items.json hs-nambukguk-balhae-muwang.meaning='인안 연호를 쓰고 당과 맞서며 영토를 넓힌 발해 2대 왕' vs result.json fact-hs-nb1-025.what='당과 맞서며 영토를 넓히고 일본과 통한 발해 2대 왕'. 불일치 22/26건. 대조군 data/research/curriculum-joseon-early/joseon-early-2 는 0/23 불일치."
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-nambukguk-wangocheonchukgukjeon",
+      "factId": "fact-hs-nb1-024",
+      "problem": "항목 meaning '8세기 인도와 서역을 직접 보고 적은, 지금 남은 유일한 기록' 을 '가장 오래된 기행문' 으로 바꿨다. 근거 claim 이 없는 최상급 주장이며, 인도 기행문만 보아도 법현 '불국기'(5세기)·현장 '대당서역기'(646)가 앞서므로 문장 그대로는 사실과 다르다.",
+      "fix": "what 을 항목 meaning 그대로 되돌린다. '유일/최고' 를 굳이 쓰려면 '8세기 인도·중앙아시아를 직접 보고 적은 현존 유일의 기록' 처럼 범위를 한정하고 그 서술을 담은 발췌 claim 을 단다.",
+      "evidence": "fact-hs-nb1-024.what='8세기 인도와 중앙아시아를 직접 보고 적은 가장 오래된 기행문'. claimIds 4건(claim-hs-nb1-wangocheon-727/-found/-author, loc) 어디에도 '가장 오래된'·'유일' 을 뒷받침하는 인용이 없다."
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-nambukguk-sinmunwang",
+      "claimId": "claim-hs-nb1-sinmun-death",
+      "problem": "신문왕 사망(syj:endedIn 692) 근거로 인용한 chunk 가 사망 기사가 아니라 '대나무가 마르다'(十二年, 春, 竹枯) 조다. note 는 '692년 7월 죽어 낭산 동쪽에 묻혔다' 고 적었는데 인용문에는 7월도 낭산도 없다. 발췌 문맥 왜곡이다.",
+      "fix": "citesChunk 를 chunk_samguksagi_sg_008_0020_0560 으로 바꾸고 quote 를 '秋七月, 王薨. 謚曰神文, 葬狼山東.' 로, verbatim 을 '秋七月'(precision month)로 고친다.",
+      "evidence": "search_chunks --id chunk_samguksagi_sg_008_0020_0530 → text '十二年, 春, 竹枯.', locator '神文王 › 대나무가 마르다'. 실제 사망 기사는 chunk_samguksagi_sg_008_0020_0560 (date 0692-07-99L0, locator '神文王 › 신문왕이 죽다')."
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-nambukguk-sangwonsa-bell",
+      "claimId": "claim-hs-nb1-bell-korean",
+      "problem": "syj:producedAt 으로 종의 제작지를 상원사(place-hs-nb1-sangwonsa)라고 주장했는데, 같은 chunk 의 해제가 '상원사 동종은 상원사에서 제작한 것은 아니며, 제작 장소 및 시납된 사찰이 어디인지 알 수 없다' 고 명시한다. 인용한 출처가 주장을 정면으로 부정하고, 붙인 인용문(명문 구성 설명)도 제작지와 무관하다.",
+      "fix": "producedAt claim 을 지우거나 predicate 를 syj:relatedTo(polity-hs-nb1-silla)로 바꾼다. 제작지 미상을 남기려면 해제의 '제작 장소 및 시납된 사찰이 어디인지 알 수 없다' 를 인용한 claim 으로 대체한다.",
+      "evidence": "chunk_geumseok-gskh_005_0070_0010_gskh_005_0070_0010_0010 해제: '한편 「상원사 동종」은 상원사에서 제작한 것은 아니며, 제작 장소 및 시납된 사찰이 어디인지 알 수 없다.'"
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-nambukguk-hyecho",
+      "factId": "fact-hs-nb1-023",
+      "problem": "혜초·왕오천축국전 두 항목의 실질 근거(생몰·727년 귀환·기행문 저술·발견 경위)가 모두 위키백과(src-hs-ko-hyecho, src-hs-ko-wangocheonchuk)다. 지침은 위키백과를 좌표·보조로만 쓰라고 못박았고 나머지 24개 항목은 삼국사기·삼국유사·금석문·민족문화대백과로 받쳤다.",
+      "fix": "민족문화대백과 '혜초'·'왕오천축국전' 표제어나 우리역사넷 한국사 연대기 항목을 raw/ 에 받아 발췌 claim 을 갈아끼우고 위키백과는 좌표 보조로만 남긴다. 대체 출처를 못 찾으면 confidence 를 low 로 내리고 missing[] 에 사유를 남긴다.",
+      "evidence": "claim-hs-nb1-hyecho-727/-life/-route, claim-hs-nb1-wangocheon-727/-found/-author 의 sourceId 가 전부 ko.wikipedia.org 문서다. fact-hs-nb1-023.note 도 '근거가 위키백과에 치우친 항목이다' 라고 자인한다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-nambukguk-seosi-namsi",
+      "factId": "fact-hs-nb1-018",
+      "problem": "같은 도시 항목이 한 점에 겹치지 말라는 규칙을 어겨 좌표가 5쌍 겹친다. 계림 좌표(129.21889, 35.83278)에 집사부·관료전·서시남시 3건이 포개지고, 월성에 신문왕·녹읍, 경주향교에 국학·설총, 청주에 상수리외사정·정전, 둔화에 대조영·무왕이 각각 2건씩 겹친다.",
+      "fix": "겹친 항목 중 하나씩을 다른 구체 지점으로 옮긴다(예: 서시·남시는 왕경 서편·남편 시장 추정지, 녹읍 교서는 월성 대신 남산 일대, 설총은 향교 대신 감산사·낭산 일대). 근거 좌표를 새로 못 구하면 coordinateNote 에 대표점 공유임을 적고 precision 을 area 로 둔다.",
+      "evidence": "fact-hs-nb1-003/014/018 lon=129.21889 lat=35.83278 동일, 006/016 동일, 008/017 동일, 011/020 동일, 019/025 동일."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-nambukguk-sangwonsa-bell",
+      "sceneId": "scene-hs-nb1-sangwonsa-bell",
+      "problem": "persistence 를 from 725, to null 로 두고 좌표를 평창 상원사로 잡아 725년부터 오대산 상원사에 있었던 것처럼 표시된다. 인용한 해제는 '영가지'를 들어 1469년(조선 예종 1) 안동부 누문의 종을 상원사로 옮겼다고 적는다.",
+      "fix": "fact.note·scene.summary·place.coordinateNote 에 '1469년 안동에서 상원사로 옮겨졌다' 를 명시하고 표시 좌표가 현재 소재지임을 밝힌다. 존속 표시를 정확히 하려면 persistence.from 을 1469 로 하거나 이관 사실을 basis 근거로 붙인다.",
+      "evidence": "chunk_geumseok-gskh_005_0070_0010_gskh_005_0070_0010_0010: '『永嘉誌』(1608)에 의하면 安東府 樓門에 있던 종을 成化 己丑년에 國命에 의해 강원도 상원사 곧 內願堂으로 옮겼다고 한다' — 성화 기축은 1469년."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-nambukguk-kimheumdol-revolt",
+      "sceneId": "scene-hs-nb1-kimheumdol-revolt",
+      "problem": "items.json 의 sceneType.sceneFunction 이 장면에 반영되지 않거나 임의로 바뀌었다. 김흠돌의 난은 항목이 지정한 civil_conflict 가 빠졌고, 9주 5소경에는 없던 construction_site 가, 9서당 10정에는 없던 fortress 가 붙었다.",
+      "fix": "scene-hs-nb1-kimheumdol-revolt 에 sceneFunction 'civil_conflict' 를 넣는다. 9주 5소경·9서당 10정은 항목에 없던 sceneFunction 을 뺄지 정하고, 표현을 위해 유지한다면 fact.note 에 사유를 적는다.",
+      "evidence": "items.json hs-nambukguk-kimheumdol-revolt.sceneType={'kind':'battle','sceneFunction':'civil_conflict'} 인데 scene-hs-nb1-kimheumdol-revolt 에는 sceneFunction 이 없다. hs-nambukguk-9ju-5sogyeong·hs-nambukguk-9seodang-10jeong 은 항목에 sceneFunction 이 없는데 장면에는 construction_site·fortress 가 있다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-nambukguk-gukhak",
+      "factId": "fact-hs-nb1-008",
+      "problem": "brief 의 항목→category 대응표는 institution 을 administration 으로 보내는데 국학은 culture, 9서당 10정은 war 로 잡았다. 같은 institution 인 집사부·9주 5소경·상수리 외사정은 administration 이라 한 칸 안에서 기준이 갈린다.",
+      "fix": "대응표대로 administration 으로 맞추거나, 교육·군사 기관을 culture·war 로 보내는 예외를 정해 두 항목을 같은 기준으로 처리하고 cell.categories 집계를 다시 맞춘다.",
+      "evidence": "docs/research/curriculum-items-brief.md 대응표 'institution→administration'. fact-hs-nb1-008.category='culture', fact-hs-nb1-013.category='war'."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-nambukguk-sangsuri-oesajeong",
+      "factId": "fact-hs-nb1-011",
+      "problem": "항목의 두 축 가운데 상수리 제도는 근거를 못 찾았다고 note 에 적었으면서 missing[] 은 비어 있다. 장면 summary 는 '지방 유력자를 서울에 머물게 하는 상수리' 를 근거 claim 없이 서술한다.",
+      "fix": "missing[] 에 {itemId: hs-nambukguk-sangsuri-oesajeong, reason: 상수리 제도의 당대 기록 근거 미확보 — 외사정 근거로 대체} 를 넣는다. 가능하면 민족문화대백과 '상수리' 표제어 발췌를 추가한다.",
+      "evidence": "fact-hs-nb1-011.note='상수리 제도 자체의 당대 기록은 찾지 못해 외사정 근거로 대신했다', result.json missing=[]."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-nambukguk-9seodang-10jeong",
+      "claimId": "claim-hs-nb1-9seodang-687",
+      "problem": "time.verbatim 이 날짜 표기로 읽히지 않는다. '文王七年' 은 원문 구두점이 '九曰青衿誓幢神. 文王七年' 으로 잘못 찍힌 탓에 '神文王七年' 에서 神 자가 떨어져 나온 조각이고, claim-hs-nb1-seolchong-sinmun 의 verbatim '神文大王' 은 연도 표기가 아니라 왕호다.",
+      "fix": "verbatim 을 '神文王七年' 처럼 온전한 연기(年紀)로 바꾸고(quote 를 '九曰青衿誓幢神. 文王七年, 以百濟殘民爲幢.' 로 두면 공백 제거 비교를 통과한다), 설총은 연도 근거가 없으므로 verbatim 없는 year object 로 바꾸거나 대표 연도임을 note 에 더 분명히 적는다.",
+      "evidence": "chunk_samguksagi_sg_040_0020_0670 text='九曰青衿誓幢神. 文王七年, 以百濟殘民爲幢. 衿色青白.' / claim-hs-nb1-seolchong-sinmun.object.verbatim='神文大王'."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-nambukguk-gukhak",
+      "sceneId": "scene-hs-nb1-gukhak",
+      "problem": "장면 요약의 '골품이 아니라 배움으로 관리를 기르려는 자리였다' 는 근거 claim 이 없는 해석이다. 국학 입학 자격은 대사 이하 관등의 자제로 신분 제한이 있었으므로 문장 그대로는 사실과 어긋난다.",
+      "fix": "'유학 경전을 가르쳐 왕권에 충실한 관리를 길렀다' 처럼 근거 범위 안으로 줄이거나 국학 입학 자격을 다룬 발췌 근거를 추가한다.",
+      "evidence": "scene-hs-nb1-gukhak.summary 마지막 문장. 이 장면의 claim 은 국학 설치(682)·경 1인 배치·정의뿐이며 신분 관련 인용이 없다."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-nambukguk-sangsuri-oesajeong",
+      "sceneId": "scene-hs-nb1-sangsuri-oesajeong",
+      "problem": "images.json 의 이 항목 프롬프트에 한자 '京' 이 섞여 'A small-京 provincial office compound' 로 적혔다. 접두어가 글자·문자를 그리지 말라고 지시하는데 프롬프트 자체에 문자를 넣어 생성 결과에 글자가 들어갈 위험이 있다.",
+      "fix": "'A small provincial capital (sogyeong) office compound' 처럼 영문으로 바꾼다.",
+      "evidence": "images.json hs-nambukguk-sangsuri-oesajeong.prompt 중 'A small-京 provincial office compound'."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-nambukguk-9ju-5sogyeong",
+      "claimId": "claim-hs-nb1-9ju-enc",
+      "problem": "claim-hs-nb1-9ju-enc 가 어떤 fact·scene 에도 연결되지 않은 고아 claim 이다. 발췌도 ex-seolchong-idu, ex-jipsabu-651, ex-heumdol-role, ex-9seodang-687, ex-10jeong-687 5건이 쓰이지 않은 채 남았다.",
+      "fix": "claim-hs-nb1-9ju-enc 를 fact-hs-nb1-010.claimIds 나 장면 relatedClaimIds 에 넣는다(685년 9주 완비 웹 근거라 넣는 편이 낫다). 쓰지 않을 발췌는 sources 에서 지우거나 claim 으로 살린다.",
+      "evidence": "result.json claims 113건 중 claim-hs-nb1-9ju-enc 만 facts/scenes 참조가 없다. 미사용 excerpt 5건."
+    }
+  ],
+  "checkedItems": [
+    "hs-nambukguk-munmuwang",
+    "hs-nambukguk-uisang",
+    "hs-nambukguk-jipsabu-sijung",
+    "hs-nambukguk-kimheumdol-revolt",
+    "hs-nambukguk-munmu-underwater-tomb",
+    "hs-nambukguk-sinmunwang",
+    "hs-nambukguk-gameunsa-pagodas",
+    "hs-nambukguk-gukhak",
+    "hs-nambukguk-bodeokguk-abolished",
+    "hs-nambukguk-9ju-5sogyeong",
+    "hs-nambukguk-sangsuri-oesajeong",
+    "hs-nambukguk-wonhyo",
+    "hs-nambukguk-9seodang-10jeong",
+    "hs-nambukguk-gwallyojeon",
+    "hs-nambukguk-dalgubeol-capital-move",
+    "hs-nambukguk-nogeup-abolished",
+    "hs-nambukguk-seolchong",
+    "hs-nambukguk-seosi-namsi",
+    "hs-nambukguk-daejoyeong",
+    "hs-nambukguk-jeongjeon",
+    "hs-nambukguk-sangwonsa-bell",
+    "hs-nambukguk-balhae-japan-exchange",
+    "hs-nambukguk-hyecho",
+    "hs-nambukguk-wangocheonchukgukjeon",
+    "hs-nambukguk-balhae-muwang",
+    "hs-nambukguk-jangmunhyu-dengzhou"
+  ],
+  "summary": "검증기는 PASS(failures=0, warnings=0, facts 26·scenes 26·claims 113·chunk 59·excerpt 54)다. 항목 26건 전부를 출처까지 되짚었다 — core 9건과 나머지 17건의 인용 chunk 를 search_chunks 로 다시 열어 연도·행위·장소를 대조하고, 웹 발췌는 encykorea 5건·위키백과 2건을 실제 URL 에서 다시 받아 검증기와 같은 방식(텍스트 노드 결합 3변형)으로 그대로 있는지 확인했다. 대부분의 근거는 정확했다. 다만 (1) fact.what 이 항목 meaning 과 22/26 어긋나 무왕의 '인안 연호' 가 사라지고 왕오천축국전은 '유일한 기록' 이 근거 없는 '가장 오래된 기행문' 으로 바뀌었고, (2) 신문왕 사망 근거가 '대나무가 마르다' 조에 붙어 있으며, (3) 상원사 동종은 해제가 '상원사에서 제작한 것이 아니다' 라고 못박은 것을 producedAt 으로 주장했고, (4) 혜초·왕오천축국전 두 항목의 실질 근거가 전부 위키백과다. 이 넷은 고쳐야 한다. 좌표 5쌍 겹침, 상원사 동종 1469년 이관 미기재, sceneFunction 불일치, category 대응표 이탈, missing[] 누락, 고아 claim 등은 표시·형식 품질 문제다."
+}

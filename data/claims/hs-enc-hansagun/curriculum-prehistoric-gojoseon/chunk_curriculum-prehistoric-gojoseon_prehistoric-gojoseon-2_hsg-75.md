@@ -9,19 +9,14 @@ status: "draft"
 ```claims-json
 [
   {
-    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-2-hs-gogu-date",
-    "subject": "polity-hs-goguryeo",
-    "predicate": "syj:occurredIn",
+    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-2-hs-gogu-hyeondo",
+    "subject": "polity-hs-hyeondo",
+    "predicate": "syj:relatedTo",
     "object": {
-      "kind": "time",
-      "verbatim": "서기전 75년",
-      "year": -75,
-      "precision": "year",
-      "earliest": -75,
-      "latest": -75,
-      "id": "ts-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-2-hs-gogu-date"
+      "kind": "entity",
+      "id": "polity-hs-goguryeo"
     },
-    "note": "토착 세력의 저항으로 현도군 치소가 밀려난 해.",
+    "note": "같은 사건을 한사군 쪽에서 적은 서술 — 서기전 75년 토착세력의 저항으로 현도군 치소가 옮겨 갔다.",
     "fromSource": "src-hs-enc-hansagun",
     "citesChunk": "chunk_curriculum-prehistoric-gojoseon_prehistoric-gojoseon-2_hsg-75",
     "quote": "서기전 75년에는 토착세력의 저항으로 현도군의 치소(治所)가",

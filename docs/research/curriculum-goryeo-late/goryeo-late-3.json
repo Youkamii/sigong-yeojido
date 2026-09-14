@@ -1,13 +1,13 @@
 {
   "job": "goryeo-late-3",
-  "sources": 32,
-  "excerpts": 48,
-  "chunkClaims": 55,
-  "excerptClaims": 49,
+  "sources": 38,
+  "excerpts": 56,
+  "chunkClaims": 60,
+  "excerptClaims": 57,
   "facts": 23,
   "factsByCategory": {
-    "administration": 4,
-    "culture": 5,
+    "administration": 5,
+    "culture": 4,
     "economy": 2,
     "facility": 2,
     "foreign": 1,
@@ -15,8 +15,8 @@
     "settlement": 2,
     "war": 2
   },
-  "claims": 104,
-  "entities": 53,
+  "claims": 117,
+  "entities": 59,
   "rawFilesChecked": [
     {
       "source": "src-gl3-enc-cheomuibu",
@@ -47,8 +47,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0050111",
       "sha256": "de606b500d183250d54c67d2202ffdddf98500028280440a45d860fabf47cf7a",
       "rawBytes": 111001,
-      "excerpts": 2,
-      "quotedWords": 20
+      "excerpts": 3,
+      "quotedWords": 24
     },
     {
       "source": "src-gl3-enc-an-hyang",
@@ -111,8 +111,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0069589",
       "sha256": "a6a84982970dbe29e55d4b701e494f8a7080a76a64f4d0316bbe1b9bd2517e31",
       "rawBytes": 118393,
-      "excerpts": 2,
-      "quotedWords": 21
+      "excerpts": 3,
+      "quotedWords": 24
     },
     {
       "source": "src-gl3-enc-nongsangjipyo",
@@ -273,6 +273,54 @@
       "rawBytes": 154953,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-gl3-en-kongmin-tomb",
+      "url": "https://en.wikipedia.org/wiki/Mausoleum_of_King_Kongmin",
+      "sha256": "3a9c6efa2b65234974ba81dc55b7be944c7712a8a74d9b19890705fc29bcb726",
+      "rawBytes": 110121,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-gl3-en-kwanumsa",
+      "url": "https://en.wikipedia.org/wiki/Kwanumsa_(Kaesong)",
+      "sha256": "375cc8205a097eee1e5b3a091aefb8b0cd7fae456646e7522f3a3914ff5ba538",
+      "rawBytes": 104784,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-gl3-en-kaesong-walls",
+      "url": "https://en.wikipedia.org/wiki/Kaesong_city_walls",
+      "sha256": "af26ceda9b229321a64f8cc6fc91c67a53fc64750c0f15e34f21126f18c840c4",
+      "rawBytes": 102892,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-gl3-en-dadu",
+      "url": "https://en.wikipedia.org/wiki/Dadu_(Beijing)",
+      "sha256": "f41385d7f663063c4b8c8877055eb8028820f196a97c1b55aeedc91ddc246f74",
+      "rawBytes": 226974,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-gl3-en-dadu-wall",
+      "url": "https://en.wikipedia.org/wiki/Yuan_Dadu_City_Wall_Ruins_Park",
+      "sha256": "f25f7b2a749a71d44256a84b131983be8269127ed659f68d8122d7d59e559510",
+      "rawBytes": 103749,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-gl3-ko-hapcheon",
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%A9%EC%B2%9C%EA%B5%B0",
+      "sha256": "c46248df3e742a28b75f60dea86e60f05ebf008e2928b6a41d67c217faceb550",
+      "rawBytes": 245970,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -287,13 +335,13 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-goryeo-late-3"
+    "sessionId": "workflow-goryeo-late-3",
+    "revised": 1789730000
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "person-encykorea-yijehyeon",
-    "org-gl3-mangwondang"
+    "person-encykorea-yijehyeon"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

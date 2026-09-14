@@ -23,7 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-21"
+    "generatedAt": "2026-09-14"
   },
   {
     "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-seohyanggak-loc",
@@ -31,18 +31,18 @@ status: "draft"
     "predicate": "syj:locatedAt",
     "object": {
       "kind": "location",
-      "lat": 37.5824,
-      "lon": 126.993,
+      "lat": 37.5827,
+      "lon": 126.994,
       "precision": "area"
     },
-    "note": "박제가가 근무한 규장각은 창덕궁 안에 있다. 서향각 건물 좌표는 창덕궁 권역 안의 항목 추정점이다.",
+    "note": "박제가가 근무한 규장각은 창덕궁 안에 있다. 서향각 건물의 좌표 근거는 없으며, 같은 권역의 다른 항목과 200m 이상 떨어지도록 후원 동북쪽에 둔 표시용 추정점이다.",
     "fromSource": "src-hs4-enc-park-jega",
     "citesChunk": "chunk_curriculum-joseon-late_joseon-late-4_jega-gyujanggak",
     "quote": "서얼 출신으로 1779년부터 13년간 규장각 내외직에 근무하며",
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-21"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

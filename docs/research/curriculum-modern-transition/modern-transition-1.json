@@ -1,20 +1,19 @@
 {
   "job": "modern-transition-1",
-  "sources": 51,
-  "excerpts": 78,
+  "sources": 52,
+  "excerpts": 82,
   "chunkClaims": 28,
-  "excerptClaims": 82,
+  "excerptClaims": 86,
   "facts": 26,
   "factsByCategory": {
-    "administration": 4,
+    "administration": 6,
     "culture": 3,
-    "economy": 1,
-    "facility": 2,
+    "facility": 1,
     "foreign": 9,
     "person": 4,
     "war": 3
   },
-  "claims": 110,
+  "claims": 114,
   "entities": 73,
   "rawFilesChecked": [
     {
@@ -70,8 +69,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0057582",
       "sha256": "51c30e10e0a2087670aa034fc8ecf082b20c817bcad716d8e03ff359e2350c4a",
       "rawBytes": 163652,
-      "excerpts": 3,
-      "quotedWords": 21
+      "excerpts": 4,
+      "quotedWords": 25
     },
     {
       "source": "src-mt1-enc-myeongseong",
@@ -94,8 +93,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0001753",
       "sha256": "d96daaaa50f1143796824aeff06aad240368fb4a7faa043a857f77c2fe6ab475",
       "rawBytes": 122956,
-      "excerpts": 2,
-      "quotedWords": 19
+      "excerpts": 3,
+      "quotedWords": 23
     },
     {
       "source": "src-mt1-enc-susinsa",
@@ -424,6 +423,14 @@
       "rawBytes": 79065,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-mt1-enc-byeongin-bakhae",
+      "url": "https://encykorea.aks.ac.kr/Article/E0023139",
+      "sha256": "b9f94e10eb9c0dcd2ede7e18af3f78240d914a5404fe7b21754c5a504fe5e8ac",
+      "rawBytes": 111539,
+      "excerpts": 2,
+      "quotedWords": 22
     }
   ],
   "missing": [],
@@ -438,12 +445,14 @@
     "started": 1789750000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-modern-transition-1"
+    "sessionId": "workflow-modern-transition-1",
+    "revised": 1789380456
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-mt1-hwadojin"
+    "event-mt1-byeongin-bakhae",
+    "place-mt1-jeoldusan"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

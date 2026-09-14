@@ -1,9 +1,9 @@
 {
   "job": "joseon-late-4",
-  "sources": 53,
-  "excerpts": 94,
+  "sources": 54,
+  "excerpts": 97,
   "chunkClaims": 12,
-  "excerptClaims": 105,
+  "excerptClaims": 109,
   "facts": 23,
   "factsByCategory": {
     "administration": 4,
@@ -15,8 +15,8 @@
     "settlement": 1,
     "war": 1
   },
-  "claims": 117,
-  "entities": 60,
+  "claims": 121,
+  "entities": 64,
   "rawFilesChecked": [
     {
       "source": "src-hs4-enc-baekdusan",
@@ -207,8 +207,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0076248",
       "sha256": "5a35f72e74c29935e6bfd787ce15f99a45fcd7e58d46bc69f37174b2d4d4b891",
       "rawBytes": 77847,
-      "excerpts": 2,
-      "quotedWords": 12
+      "excerpts": 3,
+      "quotedWords": 18
     },
     {
       "source": "src-hs4-enc-jeongjo",
@@ -271,8 +271,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0011079",
       "sha256": "5156be8f880d37af2de813df94473bd0cdf9d8f63af99c6ab6a3ed49a3cf7e9f",
       "rawBytes": 119197,
-      "excerpts": 2,
-      "quotedWords": 8
+      "excerpts": 3,
+      "quotedWords": 12
     },
     {
       "source": "src-hs4-enc-pungsokdo",
@@ -441,6 +441,14 @@
       "rawBytes": 234879,
       "excerpts": 1,
       "quotedWords": 5
+    },
+    {
+      "source": "src-hs4-ko-sungnyemun",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%AD%EB%A1%80%EB%AC%B8",
+      "sha256": "c4faf744c22ee8bb35a4bc9868e06ce626436ef8d5ac842e27a1b03ca0da3b8f",
+      "rawBytes": 427111,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [],
@@ -452,15 +460,16 @@
     "modelsObserved": [
       "claude-opus-5"
     ],
-    "started": 1789948800,
+    "started": 1789357500,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-joseon-late-4"
+    "sessionId": "workflow-joseon-late-4",
+    "revised": 1789380223
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "person-encykorea-bak-jiwon-e0021216"
+    "work-hs4-gyujanggakdo"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

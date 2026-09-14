@@ -61,11 +61,11 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-imsul-yu",
-    "subject": "event-hs-jl5-imsul",
+    "subject": "person-jl-yu-gyechun",
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",
-      "id": "person-jl-yu-gyechun"
+      "id": "event-hs-jl5-imsul"
     },
     "citesChunk": "chunk_scenes-103_joseon_late_scenes_jj-yu",
     "quote": "유계춘, 김수만 등이 2월 18일에 봉기하였다.",

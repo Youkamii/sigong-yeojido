@@ -1,0 +1,114 @@
+{
+ "job": "contemporary-4",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-contemporary --job contemporary-4 -> PASS: failures=0 warnings=0 (facts 24 / scenes 24 / claims 106 / chunkClaims 29 / excerptClaims 77). items.json 24건 = facts 24 = scenes 24, missing[] 비어 있음.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-contemporary-roh-taewoo",
+   "sceneId": "scene-hs-c4-roh",
+   "problem": "장면 제목이 '노태우 — 직선제로 뽑힌 첫 대통령'이다. 노태우는 직선제로 뽑힌 첫 대통령이 아니다. 이승만(1952·1956·1960)과 박정희(1963·1967·1971)가 직선으로 당선된 바 있고, 노태우는 1987년 제9차 개헌 뒤 처음 치러진 직선 선거의 당선자다. 항목의 meaning(= fact.what)에는 '첫'이 없고 조사자가 제목에만 덧붙인 말이라, 카드에 사실 오류가 그대로 노출된다.",
+   "fix": "제목을 '노태우 — 1987년 개헌 뒤 첫 직선 대통령' 또는 '노태우 — 16년 만의 직선제 대통령'처럼 한정한다. summary 첫 문장('6·29 선언을 발표한 뒤 1987년 직선제 선거로 당선되어 1988년 취임했다')은 사실이므로 그대로 둔다.",
+   "evidence": "result.json scenes[].id=scene-hs-c4-roh 의 title. 같은 파일 src-hs-c4-enc-constitution 의 ex-c4-const-9th('1948년 7월 17일 제정·공포된 이래 9차례의 개정을 거쳐 1987년의 제9차 개헌을 통해 현행 헌법에 이르고 있다')와 ex-c4-const-content('대통령직선제 도입, 대통령 5년 단임제, 헌법재판소 설치 등')는 1987년 개헌으로 직선제가 다시 들어간 것임을 보여 준다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-contemporary-three-party-merger",
+   "factId": "fact-hs-c4-021",
+   "sceneId": "scene-hs-c4-merger",
+   "problem": "3당 합당(126.9763/37.5867)과 노태우 인물 카드(126.97611/37.58667)의 거리가 17m다. 사실상 한 점이라 '같은 도시 항목이 한 점에 겹치지 않게' 규칙을 어긴다. scene-hs-c4-merger 의 coordinateNote 는 '노태우 인물 카드와 점이 겹치지 않도록 같은 청와대를 영문 위키백과 표시 좌표로 찍었다'고 적었으나 두 위키 표시 좌표 차이가 17m뿐이라 분리 효과가 없고 설명도 사실과 다르다. 더구나 3당 합당 장면에는 tookPlaceAt 계열 주장이 하나도 없어(claim 3건이 연도·합당 협상·좌표뿐) '청와대 발표'라는 장소가 근거 없이 placeLabel 과 coordinateNote 에만 적혀 있다.",
+   "fix": "3당 합당의 무대를 근거 있는 다른 지점으로 옮긴다. 예컨대 이미 가진 src-hs-c4-enc-dlp 의 ex-c4-dlp-1990('민주자유당은 1990년 민주정의당, 통일민주당, 신민주공화당 3개 정당이 합당해 창당된 정당이다')을 근거로 창당 무대나 국회의사당(src-hs-c4-ko-assembly · ex-c4-geo-assembly)을 쓰고, 청와대를 유지한다면 노태우 인물 카드를 재임 중 다른 무대(1989년 9월 11일 국회 특별연설 → 국회의사당)로 옮겨 최소 수백 m 이상 떼어 놓는다. 어느 쪽이든 coordinateNote 에서 사실과 다른 '겹치지 않도록' 설명을 지운다.",
+   "evidence": "fact-hs-c4-019 lon/lat 126.97611/37.58667(claim-hs-c4-roh-loc, src-hs-c4-ko-cheongwadae ex-c4-geo-cheongwadae) vs fact-hs-c4-021 lon/lat 126.9763/37.5867(claim-hs-c4-merger-loc, src-hs-c4-en-bluehouse ex-c4-geo-bluehouse). 두 점 사이 거리 17m(직접 계산). scene-hs-c4-merger.place.coordinateNote 원문. scene-hs-c4-merger 의 actionClaimIds 에 장소 주장 없음."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-contemporary-chun-doohwan",
+   "factId": "fact-hs-c4-008",
+   "problem": "fact-hs-c4-008 의 coordinateBasis 가 'location claim-hs-c4-chun-loc' 인데 정작 claimIds 에는 claim-hs-c4-chun-loc 이 빠져 있다. 나머지 23건은 모두 좌표 주장을 claimIds 에 넣었다. 검증기는 통과하지만 카드의 근거 목록에서 좌표 출처가 사라진다.",
+   "fix": "fact-hs-c4-008 의 claimIds 끝에 'claim-hs-c4-chun-loc' 를 추가한다.",
+   "evidence": "result.json facts[].id=fact-hs-c4-008 의 claimIds=[claim-hs-c4-chun-1980, claim-hs-c4-chun-1981, claim-hs-c4-chun-629], coordinateBasis='location claim-hs-c4-chun-loc'. 다른 23건은 예외 없이 *-loc 주장을 claimIds 에 포함한다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-contemporary-lee-hanyeol",
+   "sceneId": "scene-hs-c4-lee",
+   "problem": "요약이 이한열을 '스물한 살 학생'이라 적었다. 출처(한국민족문화대백과사전 '이한열')의 출생 연도는 1966년 8월 29일이고 피격은 1987년 6월 9일이므로 만 20세, 세는나이로는 22세다. 어느 계산으로도 스물한 살이 아니다. 같은 칸의 박종철 카드는 '스물셋'(1965년 4월 1일생 → 세는나이 23)으로 세는나이를 썼으니 기준도 엇갈린다.",
+   "fix": "'스물한 살'을 덜어내 '1986년 연세대에 들어간 학생이다'로 줄이거나, 박종철 카드와 같은 세는나이 기준으로 '스물두 살'로 고친다. 나이를 남긴다면 출생 연도 발췌를 sources 에 추가해 근거를 붙인다.",
+   "evidence": "raw/enc-lee-hanyeol.html 본문 '출생 연도 1966년 8월 29일 사망 연도 1987년 7월 5일', '1987년 6월 9일 6·10대회 출정을 위한 연세인 결의대회 집회에 참가'. raw/enc-park-jongchul.html '출생 연도 1965년 4월 1일 사망 연도 1987년 1월 14일'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-contemporary-31-democratic-declaration",
+   "factId": "fact-hs-c4-002",
+   "problem": "3·1 민주 구국 선언(126.9873/37.5633)과 명동성당 문화재 카드(126.987306/37.56417)가 96m 떨어져 있다. 같은 건물을 다루는 두 카드라 지도에서 사실상 겹친다. 게다가 분리 방법이 같은 건물의 영문 위키백과 표시 좌표와 한국어 위키백과 표시 좌표를 각각 고른 것이어서, 좌표 차이가 새 근거가 아니라 두 위키의 표기 오차를 표시 조정에 쓴 셈이다.",
+   "fix": "둘 중 하나를 성당 경내의 다른 지점(예: 계단 앞 광장)으로 두되 coordinateNote 에 '같은 건물 안의 표시용 분리 지점이며 근거 좌표가 아니다'라고 분명히 적는다. 또는 사건 카드를 성당 좌표 그대로 두고 겹침을 허용한다고 note 에 밝혀 의도를 남긴다.",
+   "evidence": "claim-hs-c4-31-loc(37.5633/126.9873, src-hs-c4-en-myeongdong ex-c4-geo-md-en) vs claim-hs-c4-md-loc(37.56417/126.987306, src-kowiki-myeongdong-cathedral chunk_scenes-103_contemporary_scenes_md-geo). 거리 96m. scene-hs-c4-31decl.place.coordinateNote='같은 성당을 다루는 문화재 항목과 점이 겹치지 않도록 영문 위키백과 표시 좌표를 썼다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-contemporary-myeongdong-cathedral",
+   "claimId": "claim-hs-c4-md-addr",
+   "problem": "claim-hs-c4-md-addr 의 subject 와 object 가 모두 place-hs-c4-myeongdong-cathedral 이다. '명동성당이 명동성당과 관련된다'는 자기 참조 주장이라 의미가 없고, 발췌 ex-c4-md-place('소재지 서울 중구 명동2가 1-1번지')가 담은 소재지 정보가 주장으로 표현되지 못했다.",
+   "fix": "predicate 를 syj:locatedAt 으로 바꾸고 object 를 좌표 location 으로 두거나, object.kind 를 literal 로 바꿔 value 에 '서울 중구 명동2가 1-1번지'를 담는다. 그대로 둘 거라면 object 를 polity-rok 같은 다른 개체로 바꾼다.",
+   "evidence": "result.json claims[].id=claim-hs-c4-md-addr: subject='place-hs-c4-myeongdong-cathedral', object={kind:'entity', id:'place-hs-c4-myeongdong-cathedral'}."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-contemporary-inter-korean-basic-agreement",
+   "claimId": "claim-hs-c4-ba-5th",
+   "problem": "claim-hs-c4-ba-5th 는 predicate 가 syj:tookPlaceAt 이고 object 가 place-hs-c4-jangchung(서울 중구 장충동)인데, 근거로 든 발췌 ex-c4-kc-5th('1991년 12월에는 제5차 남북고위급 회담에서 남북한 기본합의서를 채택하고,')에는 장소가 한 글자도 없다. 장면 요약의 '1991년 12월 서울에서 열린 제5차 회담'도 같은 이유로 근거가 없다.",
+   "fix": "제5차 회담이 서울에서 열렸다는 발췌(우리역사넷 남북기본합의서 항목, 통일부·국가기록원 공개 해설)를 하나 더 받아 claim 을 보강하거나, predicate 를 syj:relatedTo 로 낮추고 장소는 coordinateNote 에 '회담 개최지 근거를 찾지 못해 서울 대표점을 썼다'로 명시한다.",
+   "evidence": "result.json claim-hs-c4-ba-5th 와 src-hs-c4-enc-korchina 의 ex-c4-kc-5th 원문 재확인(raw/enc-korea-china.html 해당 단락에 장소 언급 없음). 후보였던 raw/ko-shilla-hotel.html 에는 표시 좌표(class=\"geo\")가 없다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-contemporary-yh-incident",
+   "problem": "장면 요약에 이 result.json 의 어떤 주장으로도 뒷받침되지 않는 서술이 여럿 있다. scene-hs-c4-yh '노동자 한 명이 숨졌다', scene-hs-c4-phenol '대구 수돗물에서 악취가 나면서 영남 사람들의 식수가 멈췄다', scene-hs-c4-northern '1990년 소련과 국교를 맺었다', scene-hs-c4-1212 '육군참모총장을 잡아갔다', scene-hs-c4-pjc '물고문으로 숨졌다'. 모두 교과서 수준에서 맞는 사실이지만 근거가 달리지 않아 카드의 근거 표시와 본문이 어긋난다.",
+   "fix": "각 서술을 뒷받침할 발췌를 추가하거나(이미 받아 둔 raw/enc-park-torture.html · raw/ko-phenol-1991.html 등을 sources 로 승격) 요약 문장에서 덜어낸다. 특히 12·12 는 core 항목인데 실질 주장이 연도와 육군본부 점령 둘뿐이라, 반란의 핵심 행위(육군참모총장 연행)에 근거를 하나 더 붙이는 편이 낫다.",
+   "evidence": "각 장면의 summary 와 dateClaimIds·actionClaimIds·relatedClaimIds 대조. YH 주장 3건(ex-c4-yh-def, ex-c4-yh-sit, ex-c4-yh-crack)에 사망 언급 없음, 페놀 주장 2건(ex-c4-doosan-1991, ex-c4-doosan-resign)에 수돗물 언급 없음, 북방외교 주장 4건에 1990년 한·소 수교 언급 없음."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-contemporary-518-democratic-movement",
+   "claimId": "claim-hs-c4-518-decl",
+   "problem": "claim-hs-c4-518-decl 이 인용한 로컬 chunk(chunk_scenes-103_contemporary_scenes_518-decl)의 본문 전체가 '신군부는 1980년 5월 17일' 이라는 조각뿐이다. 주장 note 와 장면 요약은 '5월 17일 비상계엄이 전국으로 넓혀졌다'까지 말하는데 인용문은 그 내용을 담고 있지 않다.",
+   "fix": "국가기록원 5·18 해설에서 '비상계엄 전국 확대'가 들어간 문장으로 chunk 인용을 교체하거나, 이미 있는 src-hs-c4-enc-518 에서 계엄 확대 문장을 25단어 이내 발췌로 추가해 근거를 바꾼다.",
+   "evidence": "python scripts/search_chunks.py --id chunk_scenes-103_contemporary_scenes_518-decl → text='신군부는 1980년 5월 17일'. claim-hs-c4-518-decl.note='신군부의 5월 17일 비상계엄 확대가 불씨였다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-contemporary-emergency-measures",
+   "problem": "raw/ 에 파일이 103개 있는데 manifest.json 에는 48개만 적혀 있다. 55개(enc-economy · enc-singunbu · ko-shilla-hotel · ko-gungjeong-dong · ko-gwanhun-dong 등)가 내려받혔지만 URL·sha256·fetchedUtc 기록 없이 남아 있다. facts-format 의 manifest 정의('웹에서 내려받은 원본 목록 배열')와 어긋나고, 다음 사람이 어떤 후보 출처를 이미 확인했는지 알 수 없다.",
+   "fix": "쓰지 않은 원본을 지우거나 manifest.json 에 항목을 추가해 남긴다(검증기는 sources 에 없는 manifest 항목도 허용한다 — ko-myeongdong-cathedral·ko-seodaemun-prison 이 이미 그렇게 들어가 있다). 좌표가 없어 버린 후보는 그 사실을 note 나 report 에 남기면 재조사 낭비를 막는다.",
+   "evidence": "raw 디렉터리 103개 파일 vs manifest.json 48개 항목(직접 대조). 확인 결과 ko-gungjeong-dong.html·ko-shilla-hotel.html·ko-gwanhun-dong.html·ko-yeonhui-dong.html 에는 class=\"geo\" 표시 좌표가 없고, en-mapo.html(37.5638;126.9084)·en-insadong.html(37.572972;126.986180) 에는 있다."
+  }
+ ],
+ "checkedItems": [
+  "hs-contemporary-emergency-measures",
+  "hs-contemporary-31-democratic-declaration",
+  "hs-contemporary-1026-incident",
+  "hs-contemporary-1212-military-mutiny",
+  "hs-contemporary-buma-uprising",
+  "hs-contemporary-yh-incident",
+  "hs-contemporary-518-democratic-movement",
+  "hs-contemporary-chun-doohwan",
+  "hs-contemporary-seoul-spring",
+  "hs-contemporary-three-lows-boom",
+  "hs-contemporary-1987-constitution",
+  "hs-contemporary-1987-great-labor-struggle",
+  "hs-contemporary-629-declaration",
+  "hs-contemporary-june-democratic-struggle",
+  "hs-contemporary-lee-hanyeol",
+  "hs-contemporary-myeongdong-cathedral",
+  "hs-contemporary-park-jongchul",
+  "hs-contemporary-northern-diplomacy",
+  "hs-contemporary-roh-taewoo",
+  "hs-contemporary-seoul-olympics",
+  "hs-contemporary-three-party-merger",
+  "hs-contemporary-inter-korean-basic-agreement",
+  "hs-contemporary-nakdonggang-phenol",
+  "hs-contemporary-un-simultaneous-membership"
+ ],
+ "summary": "검증기는 PASS(실패 0·경고 0)이고 항목 24건이 빠짐없이 fact 24·scene 24·images 24 로 대응한다(missing[] 없음). 웹 발췌 26건을 raw/ HTML 본문에서 문맥째 다시 읽고 로컬 chunk 29건 가운데 10건을 search_chunks 로 원문 확인했는데 인용 왜곡이나 교과서 전재는 없었다. kind·sceneFunction·priority·연도·성취기준 코드는 items.json 과 전부 일치했고(3저 호황의 'naval', 명동성당의 'assembly' 두 sceneFunction 은 허용 목록 밖 항목 값이라 harbor·생략으로 고친 것이 옳다), 인물 엔티티 6건은 모두 data/entities/person 의 기존 파일을 재사용했다. 다만 카드에 그대로 노출되는 사실 오류 1건(노태우 '직선제로 뽑힌 첫 대통령')과 좌표 겹침 1건(3당 합당–노태우 17m, 게다가 청와대 발표를 뒷받침하는 장소 주장 자체가 없음)이 남아 major 2건이다. 그 밖에 좌표 근거 claim 누락, 이한열 나이 오기, 명동성당 두 카드 96m, 자기 참조 주장, 장소를 뒷받침하지 못하는 발췌, 근거 없는 요약 문장 다섯 곳, 조각뿐인 chunk 인용, manifest 에 빠진 다운로드 55건이 minor 8건이다. major 2건을 고치면 적재해도 된다."
+}

@@ -18,7 +18,7 @@ status: "draft"
       "lon": 126.983056,
       "precision": "site"
     },
-    "note": "종로1가 대표 좌표",
+    "note": "종로 일대(종각) 표시용 대표 좌표 — 번지 근거는 없다",
     "fromSource": "src-hs-ko-jonggak",
     "citesChunk": "chunk_curriculum-colonial_colonial-3_geo-jonggak",
     "quote": "37.570278; 126.983056",

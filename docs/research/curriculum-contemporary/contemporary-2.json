@@ -1,0 +1,510 @@
+{
+  "job": "contemporary-2",
+  "sources": 58,
+  "excerpts": 90,
+  "chunkClaims": 0,
+  "excerptClaims": 93,
+  "facts": 24,
+  "factsByCategory": {
+    "administration": 6,
+    "economy": 2,
+    "facility": 4,
+    "foreign": 1,
+    "person": 2,
+    "settlement": 2,
+    "war": 7
+  },
+  "claims": 93,
+  "entities": 35,
+  "rawFilesChecked": [
+    {
+      "source": "src-hs-enc-gyeonggyojang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002294",
+      "sha256": "ffc77098fcede2bc0cf25b5f7e51ec97d47b6b71c0027e33525eb890b80d0807",
+      "rawBytes": 164262,
+      "excerpts": 3,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-hs-enc-gimgu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0008753",
+      "sha256": "04333f784453d3fc2e7f1c3d009087c9bca9089e4f19dea2bcdc6d34c9c7434c",
+      "rawBytes": 152637,
+      "excerpts": 1,
+      "quotedWords": 5
+    },
+    {
+      "source": "src-hs-ko-gyeonggyojang",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EA%B5%90%EC%9E%A5",
+      "sha256": "a809896bd8630a77b25f2b721cd41f0d2e8050bc816e3a171b42ab642db45c6f",
+      "rawBytes": 107137,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-busan-govt",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%82%B0_%EC%9E%84%EC%8B%9C%EC%88%98%EB%8F%84_%EC%A0%95%EB%B6%80%EC%B2%AD%EC%82%AC",
+      "sha256": "3d5e4eec3d51d46e5c5714f537c6d1ab74ac64ace811c6a894178c83480111a5",
+      "rawBytes": 80296,
+      "excerpts": 3,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-ko-imsisudo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9E%84%EC%8B%9C%EC%88%98%EB%8F%84%EA%B8%B0%EB%85%90%EA%B4%80",
+      "sha256": "39284af8f3216796ddc27b43ec6628681cd9467cf92e179f947b9b4f6a37eab8",
+      "rawBytes": 127942,
+      "excerpts": 1,
+      "quotedWords": 6
+    },
+    {
+      "source": "src-hs-enc-14-retreat",
+      "url": "https://encykorea.aks.ac.kr/Article/E0047221",
+      "sha256": "fcfa0e13fd2b70e08409fd2435b970ed9cedcf9dfb5ce72999b7b7f4774bdda0",
+      "rawBytes": 75136,
+      "excerpts": 2,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-hs-ko-amnok-bridge",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%95%EB%A1%9D%EA%B0%95%EC%B2%A0%EA%B5%90",
+      "sha256": "7ebddec96b69d74bb1c17f3300b0bcfa9eba10a316775a3a234cc008e9d563d8",
+      "rawBytes": 180252,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-enc-jojung-hq",
+      "url": "https://encykorea.aks.ac.kr/Article/E0066768",
+      "sha256": "1835a4a8e890aba8aa439c3cd8426fda44912c2c7bfaeedf496e0cfd0d63d9bf",
+      "rawBytes": 94685,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-enc-hungnam",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065977",
+      "sha256": "d688778283e6cd2116a6fd850f80d43e753720e78702f8a45d55ef4a36a892eb",
+      "rawBytes": 89848,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-en-hungnam",
+      "url": "https://en.wikipedia.org/wiki/Hungnam",
+      "sha256": "7779464265326f91ef402ed63a50f43d07657d1480ffa1ae1c16aebdc7bd75e8",
+      "rawBytes": 114815,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-incheon-landing",
+      "url": "https://encykorea.aks.ac.kr/Article/E0047085",
+      "sha256": "12c867215967319dc7086bd8bd17165f521c3c01639b9145d521f8b7c485a72c",
+      "rawBytes": 152528,
+      "excerpts": 3,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-ko-wolmido",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9B%94%EB%AF%B8%EB%8F%84",
+      "sha256": "0eb417eb8492c213e36e6c8be7d494eaedea76997a4f1ef8c6cc12414a08aa50",
+      "rawBytes": 661895,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-hs-enc-korean-war",
+      "url": "https://encykorea.aks.ac.kr/Article/E0042143",
+      "sha256": "1262858672ecf43d65135ccf73e37b296256a8a4dc654f455b0bcbafdff9de7f",
+      "rawBytes": 420017,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-en-war-memorial",
+      "url": "https://en.wikipedia.org/wiki/War_Memorial_of_Korea",
+      "sha256": "e19131faaa15fc372c6676afc7d19ce6710ae5cd950bf6e58939e15e8e9248f3",
+      "rawBytes": 201492,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-nongji",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013191",
+      "sha256": "2832550d5f5b3bf6239c83a6eaaf7816f85630c0664e7f73151ff67ca75172f5",
+      "rawBytes": 117898,
+      "excerpts": 1,
+      "quotedWords": 11
+    },
+    {
+      "source": "src-hs-enc-nongjibeop",
+      "url": "https://encykorea.aks.ac.kr/Article/E0080662",
+      "sha256": "99e926f5ca01a0f38b08ada3e7a2c68bb62ccb72fcc39863fc5a1a470333dca4",
+      "rawBytes": 123016,
+      "excerpts": 1,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-hs-ko-byeokgolje",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B2%BD%EA%B3%A8%EC%A0%9C",
+      "sha256": "94ec8428c95b1e5bc7d6099ffebed478e73a5547798d34aaae17104330350a3c",
+      "rawBytes": 171604,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-nakdong-line",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011567",
+      "sha256": "b0f62b82fdb1d3c143830067379c974aacf6472dcd10b4d3385352a16b1bc649",
+      "rawBytes": 81716,
+      "excerpts": 1,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-enc-dabudong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013458",
+      "sha256": "b333d7fefbc5118351f03836bc13de0233b36895c1740a1b150ebdc3bae98f20",
+      "rawBytes": 93786,
+      "excerpts": 1,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-en-waegwan",
+      "url": "https://en.wikipedia.org/wiki/Waegwan",
+      "sha256": "c734f2d0f455cc7bb89402f333cc2f6dd22c7ac870ccbb83d54a5c77204ae0ad",
+      "rawBytes": 113432,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-geoje-pow",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A0%9C%EB%8F%84%ED%8F%AC%EB%A1%9C%EC%88%98%EC%9A%A9%EC%86%8C",
+      "sha256": "e641eb278949893d68582a6a64795399ebd5402ae3d16b234541ea7fbc108a97",
+      "rawBytes": 179192,
+      "excerpts": 1,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-enc-geoje-pow",
+      "url": "https://encykorea.aks.ac.kr/Article/E0001874",
+      "sha256": "0daa051278b0c181210d434cfef359a86e6aeba3488170841f06f336bd591e21",
+      "rawBytes": 107240,
+      "excerpts": 1,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-en-geoje-pow",
+      "url": "https://en.wikipedia.org/wiki/Geoje_POW_camp",
+      "sha256": "5b907427d6cb3e009845d5c830c2473ac15bbccd0a59600aa8ecc0bce8189855",
+      "rawBytes": 205804,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-ko-seoul-station",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EC%97%AD",
+      "sha256": "83c418e0d2245570617c7963052ef0e55792a2761e47fc9eceb5b3f187dd41c1",
+      "rawBytes": 1081370,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-hs-enc-un-park",
+      "url": "https://encykorea.aks.ac.kr/Article/E0041653",
+      "sha256": "e40345676bd12990f57f32df3773dd623da4f5ff40273bed460c7bc1603f27b1",
+      "rawBytes": 121281,
+      "excerpts": 1,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-hs-ko-un-park",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9E%AC%ED%95%9C%EC%9C%A0%EC%97%94%EA%B8%B0%EB%85%90%EA%B3%B5%EC%9B%90",
+      "sha256": "f270941c99ff99989b7faa24f597eaefe8b71ae29a08a56470a6752ad4c1404f",
+      "rawBytes": 548832,
+      "excerpts": 2,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-hs-enc-balchwe",
+      "url": "https://encykorea.aks.ac.kr/Article/E0021623",
+      "sha256": "d0b2d49e930449d198794b3fb9f14b11ad9b1635c809fe907df9a9d0e9d15b6f",
+      "rawBytes": 79661,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-enc-busan-jeongchi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024272",
+      "sha256": "78f7dc299f429a5da393a0a1ddf36a19e79c3548c5f1f47f732c1f33d6fb1104",
+      "rawBytes": 87324,
+      "excerpts": 1,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-en-provisional-capital",
+      "url": "https://en.wikipedia.org/wiki/Provisional_Capital_Memorial_Hall",
+      "sha256": "e71e2780553578db9618bd8af01ecf1577d5dca1f4e2d44f5b485cb3224d8d01",
+      "rawBytes": 105911,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-hyujeon-hoedam",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065859",
+      "sha256": "c9476464cb8c005d743d8d938337facbee84454148d19d1c2921c787aa220cf1",
+      "rawBytes": 116864,
+      "excerpts": 1,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-enc-panmunjeom",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059650",
+      "sha256": "aea765fdd255740a16d0474109647b5f72001c458517d14a9b8c8adf9e97a8c3",
+      "rawBytes": 105157,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-ko-panmunjeom",
+      "url": "https://ko.wikipedia.org/wiki/%ED%8C%90%EB%AC%B8%EC%A0%90",
+      "sha256": "35e4e00325afc9f012a76d114c5aa8c6fbdfb184c7a0bfc152d06d3e1aaec96e",
+      "rawBytes": 138958,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-rok-us-treaty",
+      "url": "https://encykorea.aks.ac.kr/Article/E0061616",
+      "sha256": "06d053d0d92da32bec55a8c635f01ffba59b09dca30fd70bcea67d4c667d802a",
+      "rawBytes": 87153,
+      "excerpts": 1,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs-en-washington-dc",
+      "url": "https://en.wikipedia.org/wiki/Washington,_D.C.",
+      "sha256": "f251c1c56bd432d97ac9098e13dbb8e04d427b37bdd761d8881f8dd98c45dad1",
+      "rawBytes": 2182587,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-isan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0068913",
+      "sha256": "37751152a7a63718a7a28f7e367058f8b07e8283a4de66e1c223f966ddf7bb2b",
+      "rawBytes": 131202,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-hs-enc-isan-broadcast",
+      "url": "https://encykorea.aks.ac.kr/Article/E0068362",
+      "sha256": "a2ca5a93f8c20521f8d4af08466833c6b354c47aa01032d35a7c32ee81b44afa",
+      "rawBytes": 113505,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-enc-sasaoip",
+      "url": "https://encykorea.aks.ac.kr/Article/E0025681",
+      "sha256": "0a6fa8d512f4df78d1cdda7fcdb621a8f630075b10ecbaf647fa4e389e6cf8a1",
+      "rawBytes": 97828,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-ko-buminkwan",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EB%AF%BC%EA%B4%80",
+      "sha256": "2baaf09190ddb9d14d3f20a7ad227f26d205b10641cef95284b5d935389fe427",
+      "rawBytes": 98925,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-enc-daehan-jebun",
+      "url": "https://encykorea.aks.ac.kr/Article/E0079904",
+      "sha256": "6c43a5b62f57d7621d626c759de395791a6ed0c104cf591c2bc76af8b1526caa",
+      "rawBytes": 89726,
+      "excerpts": 1,
+      "quotedWords": 11
+    },
+    {
+      "source": "src-hs-enc-surplus-agri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0075718",
+      "sha256": "bc225b5b31bceb23acc2536d40cb68cb2c7cd283771a0ea2713da109eaa68d46",
+      "rawBytes": 98794,
+      "excerpts": 1,
+      "quotedWords": 11
+    },
+    {
+      "source": "src-hs-en-gukje-market",
+      "url": "https://en.wikipedia.org/wiki/Gukje_Market",
+      "sha256": "11b4c12f5f79c828d6f6580e68ce07bc912c768fdba838aa89fcc516adee27b5",
+      "rawBytes": 163803,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-enc-cho-bongam",
+      "url": "https://encykorea.aks.ac.kr/Article/E0051827",
+      "sha256": "95d56dab13a4950cc8ea1967cac70ca93166043787496902580381cb90f7621b",
+      "rawBytes": 119970,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-hs-en-ganghwa",
+      "url": "https://en.wikipedia.org/wiki/Ganghwa_County",
+      "sha256": "19a8ca34b3caea716f59134ff9287cab22b9c2f10fb2888b8e4e54452f182e5e",
+      "rawBytes": 165202,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-sin-ikhui",
+      "url": "https://encykorea.aks.ac.kr/Article/E0033294",
+      "sha256": "f0e6981a65427ca134d15c95b888961b5988bcc8c24e1de55f86d2866dff635a",
+      "rawBytes": 145203,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-hs-en-nodeul",
+      "url": "https://en.wikipedia.org/wiki/Nodeul_Island",
+      "sha256": "b7535eb9c1f6f9d67c9fcd96ec12bb051a4d54877656e85835d9f0ce35ea46ce",
+      "rawBytes": 117898,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-chollima",
+      "url": "https://encykorea.aks.ac.kr/Article/E0055845",
+      "sha256": "fc3c885a3e553819b7fd8c30b705d9b8867fa889ccd2820da79398f7dce75bf4",
+      "rawBytes": 76334,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-en-pyongyang",
+      "url": "https://en.wikipedia.org/wiki/Pyongyang",
+      "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+      "rawBytes": 897617,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-jinbodang-incident",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054703",
+      "sha256": "b7823d1139bf1bfde1ebbaf424a33c6368492682d969bcd0d96018b4f9162885",
+      "rawBytes": 100731,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-hs-enc-jinbodang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054702",
+      "sha256": "a3b3c585f6ae4e38dc028af081d07fd67858a8d89ce16b288d5ee3a1ad5d18c6",
+      "rawBytes": 79561,
+      "excerpts": 1,
+      "quotedWords": 11
+    },
+    {
+      "source": "src-hs-ko-seoul-museum-art",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80",
+      "sha256": "68be5ca06c8b95e89fa06451023b90a1dcb640c7242a289366a3793ec9506698",
+      "rawBytes": 373491,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-enc-315",
+      "url": "https://encykorea.aks.ac.kr/Article/E0026771",
+      "sha256": "a3472c15bb689439e3d585b4c46908014712f4e1b3782dfd2567aa66f35e6a7f",
+      "rawBytes": 137356,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-en-masan",
+      "url": "https://en.wikipedia.org/wiki/Masan",
+      "sha256": "509c4394ee7ad1881492fb433c58083b9371fb457cc5eff643542fa2843eb083",
+      "rawBytes": 154953,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-419",
+      "url": "https://encykorea.aks.ac.kr/Article/E0025902",
+      "sha256": "29bdbdc0efbdeaf83b1d350fdc02d93c75a88c478bee53113d47a38dbd523684",
+      "rawBytes": 179233,
+      "excerpts": 3,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-hs-enc-cheongwadae",
+      "url": "https://encykorea.aks.ac.kr/Article/E0056565",
+      "sha256": "121c7f2dcb5511eb723e8556b124afd08989ccf9a20f380fccab4d3402653dfb",
+      "rawBytes": 120512,
+      "excerpts": 1,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-ko-cheongwadae",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%99%80%EB%8C%80",
+      "sha256": "dfdda7dedde1b0d8085edd60eb0e17ba90506bb0a6a1a034ca00f9289456e5e7",
+      "rawBytes": 587538,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-enc-jang-myon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0048442",
+      "sha256": "b5ed7f81bf5ccd05bbf9dec1395c1c5548cbe7d4eab32c4d59ae08799f41979a",
+      "rawBytes": 94734,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs-ko-jang-myon-house",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EB%AA%85%EB%A5%9C%EB%8F%99_%EC%9E%A5%EB%A9%B4_%EA%B0%80%EC%98%A5",
+      "sha256": "5ac3eacc749a36e32c0d8bab63a1bf497c41f980f809e38563a8510e223a5c5c",
+      "rawBytes": 83807,
+      "excerpts": 2,
+      "quotedWords": 6
+    },
+    {
+      "source": "src-hs-ko-yeongdo-bridge",
+      "url": "https://ko.wikipedia.org/wiki/%EC%98%81%EB%8F%84%EB%8C%80%EA%B5%90",
+      "sha256": "a5d4800243d05e65751e7339094c2a26166d4be23cd66db9a4927def92554dc3",
+      "rawBytes": 216566,
+      "excerpts": 2,
+      "quotedWords": 17
+    }
+  ],
+  "missing": [],
+  "collection": {
+    "task": "contemporary-2",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789704000,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-contemporary-2",
+    "revised": 1789380767
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "person-encykorea-yi-seungman",
+    "polity-hs-daehanminguk"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",
-      "id": "polity-hs-s3-silla"
+      "id": "thing-hs-s3-17ranks"
     },
     "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0030",
     "quote": "其官有十七等",
@@ -23,7 +23,7 @@ status: "draft"
     "origin": "ai",
     "status": "draft",
     "generatedBy": "claude-opus-5",
-    "generatedAt": "2026-09-18"
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

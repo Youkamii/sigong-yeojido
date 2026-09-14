@@ -45,14 +45,14 @@ status: "draft"
   {
     "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-seok-stone",
     "subject": "facility-nb2-seokguram",
-    "predicate": "syj:occurredIn",
+    "predicate": "syj:relatedTo",
     "object": {
-      "kind": "year",
-      "value": 751
+      "kind": "entity",
+      "id": "polity-hs-silla"
     },
     "citesChunk": "chunk_samgukyusa_sy_005_0040_0020_0050",
     "quote": "國家乃畢成之",
-    "note": "석불사와 불국사 모두 김대성 사후 나라가 마무리했다는 서술.",
+    "note": "김대성이 죽은 뒤(774년 이후) 나라가 마무리했다는 서술이다. 751년을 뒷받침하는 대목은 아니다.",
     "fromSource": "src-samgukyusa",
     "origin": "ai",
     "status": "draft",

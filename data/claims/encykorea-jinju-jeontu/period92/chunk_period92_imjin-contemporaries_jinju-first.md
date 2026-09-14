@@ -32,14 +32,19 @@ status: "draft"
   {
     "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-jj-days",
     "subject": "event-hs-jl1-jinju",
-    "predicate": "syj:relatedTo",
+    "predicate": "syj:occurredIn",
     "object": {
-      "kind": "entity",
-      "id": "person-encykorea-kim-simin-e0009658"
+      "kind": "time",
+      "verbatim": "1592년(선조 25) 10월 5일부터 11일까지",
+      "year": 1592,
+      "precision": "day",
+      "earliest": 1592,
+      "latest": 1592,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-jj-days"
     },
     "citesChunk": "chunk_period92_imjin-contemporaries_jinju-first",
     "quote": "1592년(선조 25) 10월 5일부터 11일까지 7일 간 계속되었다.",
-    "note": "1592년 10월 5일부터 11일까지 7일간 계속되었다.",
+    "note": "제1차 진주성 전투는 1592년 10월 5일부터 11일까지 이레 동안 계속되었다.",
     "fromSource": "src-encykorea-jinju-jeontu",
     "origin": "ai",
     "status": "draft",

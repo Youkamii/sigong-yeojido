@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-buma-students",
+    "subject": "event-hs-c4-buma",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-c4-pnu"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_buma-students",
+    "quote": "약 500명의 학생들이 모여 반정부 시위를",
+    "note": "학생 약 500명이 모여 시위를 벌였다.",
+    "fromSource": "src-encykorea-buma",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

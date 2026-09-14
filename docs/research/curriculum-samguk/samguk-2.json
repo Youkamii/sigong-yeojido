@@ -1,9 +1,9 @@
 {
   "job": "samguk-2",
-  "sources": 23,
-  "excerpts": 35,
-  "chunkClaims": 66,
-  "excerptClaims": 36,
+  "sources": 26,
+  "excerpts": 39,
+  "chunkClaims": 76,
+  "excerptClaims": 40,
   "facts": 24,
   "factsByCategory": {
     "administration": 5,
@@ -15,8 +15,8 @@
     "settlement": 1,
     "war": 2
   },
-  "claims": 102,
-  "entities": 22,
+  "claims": 116,
+  "entities": 17,
   "rawFilesChecked": [
     {
       "source": "src-hs-ko-gwanggaeto-stele",
@@ -183,8 +183,8 @@
       "url": "https://ko.wikipedia.org/wiki/왕인",
       "sha256": "21209f9a849d47058e67624e9dc83d1098dc7bb6a912d89d4dfefe12120c2426",
       "rawBytes": 181508,
-      "excerpts": 2,
-      "quotedWords": 14
+      "excerpts": 3,
+      "quotedWords": 22
     },
     {
       "source": "src-hs-ko-golpum",
@@ -201,6 +201,30 @@
       "rawBytes": 124019,
       "excerpts": 2,
       "quotedWords": 22
+    },
+    {
+      "source": "src-hs-ko-jusanseong",
+      "url": "https://ko.wikipedia.org/wiki/고령_주산성",
+      "sha256": "7304d9e54c47fbe3f38bfdadeb3f511158ffab0e14323eb51951a4dd150deacc",
+      "rawBytes": 104536,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-en-namsan",
+      "url": "https://en.wikipedia.org/wiki/Namsan_(Gyeongju)",
+      "sha256": "aa90f75ea28d2d20972b51ddf9632ce2153cc4236f3e2c1e5787e2692854b491",
+      "rawBytes": 114349,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-curriculum-samguk-samguk-2-hs-ko-myeonghwalseong",
+      "url": "https://ko.wikipedia.org/wiki/경주_명활성",
+      "sha256": "aa5a6830ca30fd66ad858c34129a0fc19560f2a482e0e9c7a9e32530eef24307",
+      "rawBytes": 98294,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [
@@ -210,7 +234,7 @@
       "topic": "삼국의 신분 구조",
       "detail": "귀족·평민·천민의 구분을 한 지점·한 해로 짚을 근거를 찾지 못해 장면 없이 사실만 남겼다. 능비의 수묘인 연호와 지증왕 3년 순장 금지로 계층의 존재만 확인했다.",
       "neededSource": "삼국사기 잡지(색복·거기·옥사) 또는 민족문화대백과 골품제도 항목의 발췌",
-      "reason": "제도 전반 항목이라 장면 좌표의 근거가 없다"
+      "reason": "제도 전반이라 한 지점으로 좁힐 수 없다"
     },
     {
       "id": "miss-hs-sg2-2",
@@ -218,7 +242,15 @@
       "topic": "삼국의 수취 제도",
       "detail": "조·조·역의 수취 사례는 확인했으나 거두는 장소를 짚을 좌표 근거가 없어 장면을 만들지 않았다.",
       "neededSource": "수서·주서 고구려·백제전의 세제 조항이나 민족문화대백과 수취체제 항목의 발췌",
-      "reason": "제도 전반 항목이라 장면 좌표의 근거가 없다"
+      "reason": "제도 전반이라 한 지점으로 좁힐 수 없다"
+    },
+    {
+      "id": "miss-hs-sg2-3",
+      "itemId": "hs-samguk-ajikgi-wangin",
+      "topic": "아직기와 왕인의 도왜 연대",
+      "detail": "전승은 근구수왕대(375~384)를 가리킬 뿐이고 표시 연도 397은 항목이 잡은 기준 연도다. 도왜 자체를 연월로 적은 사료를 찾지 못했다.",
+      "neededSource": "일본서기·고사기 원문 번역 또는 민족문화대백과 왕인 항목의 발췌",
+      "reason": "도왜 연대를 짚는 사료 근거 없음"
     }
   ],
   "collection": {
@@ -232,15 +264,18 @@
     "started": 1789700000,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-samguk-2"
+    "sessionId": "workflow-samguk-2",
+    "revised": 1789379883
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
     "polity-silla",
-    "place-encykorea-gyeongju"
+    "place-gyeongju-wolseong"
   ],
-  "reviewedSourceIds": {},
+  "reviewedSourceIds": {
+    "src-hs-ko-myeonghwalseong": "src-curriculum-samguk-samguk-2-hs-ko-myeonghwalseong"
+  },
   "integrationAdjustments": {},
   "checkOnly": false,
   "collectionComplete": true

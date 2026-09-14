@@ -18,7 +18,7 @@ status: "draft"
       "lon": 126.991911,
       "precision": "area"
     },
-    "note": "단일 지점으로 놓을 수 없어 기억 공간이 모인 서울 남산의 표시 좌표를 대표점으로 썼다.",
+    "note": "전역에 걸친 항목이어서 화면 표시용 대표점으로 쓴 경성 남산의 표시 좌표.",
     "fromSource": "src-hs-c4-ko-namsan-seoul",
     "citesChunk": "chunk_curriculum-colonial_colonial-4_geo-namsan",
     "quote": "37.549681; 126.991911",

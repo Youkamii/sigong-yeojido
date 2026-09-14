@@ -1037,6 +1037,11 @@
           "id": "ex-geo-singung",
           "text": "37.55361; 126.98278",
           "locator": "문서 표시 좌표(geo)"
+        },
+        {
+          "id": "ex-singung-chongdokbu",
+          "text": "조선신궁 건립 예산을 편성하여 경성부 남산 한양공원에 자리를 정했다",
+          "locator": "역사 — 일본의 민족종교 장려"
         }
       ]
     },
@@ -1056,6 +1061,73 @@
           "id": "ex-geo-namsan",
           "text": "37.549681; 126.991911",
           "locator": "문서 표시 좌표(geo)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-c4-ko-dongailbo-saok",
+      "title": "동아일보 사옥 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8F%99%EC%95%84%EC%9D%BC%EB%B3%B4_%EC%82%AC%EC%98%A5",
+      "rawFile": "raw/c4-ko-dongailbo-saok.html",
+      "sha256": "bf3a92843545ca35d261a136f8f59114218c9b0e7071a740f20da60c97f323a8",
+      "httpStatus": 200,
+      "byteLength": 82362,
+      "fetchedUtc": "2026-09-14T10:14:59Z",
+      "license": "위키백과 CC BY-SA — 문서 표시 좌표와 준공 연도",
+      "excerpts": [
+        {
+          "id": "ex-geo-dongailbo-saok",
+          "text": "126.977606,37.5698517",
+          "locator": "문서 지도 표시 좌표"
+        },
+        {
+          "id": "ex-dongailbo-saok-1926",
+          "text": "1926년 12월에 건축되어",
+          "locator": "개요"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-c4-ko-suwon",
+      "title": "수원시 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%98%EC%9B%90%EC%8B%9C",
+      "rawFile": "raw/c4-ko-suwon.html",
+      "sha256": "9b209d5d282c01cfe4f2b73151a475bd33087cad4c8e1173f7908e722cde116b",
+      "httpStatus": 200,
+      "byteLength": 578775,
+      "fetchedUtc": "2026-09-14T10:15:00Z",
+      "license": "위키백과 CC BY-SA — 문서 표시 좌표와 농업 연구 배경",
+      "excerpts": [
+        {
+          "id": "ex-geo-suwon",
+          "text": "37.26222; 127.02889",
+          "locator": "문서 표시 좌표(geo)"
+        },
+        {
+          "id": "ex-suwon-nongeop",
+          "text": "1906년 권업모범장이 설치된 이후 수원은 농업 연구의 중심지였고",
+          "locator": "산업"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-c4-ko-nammyeon-bugyang",
+      "title": "남면북양 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EB%82%A8%EB%A9%B4%EB%B6%81%EC%96%91",
+      "rawFile": "raw/c4-ko-nammyeon-bugyang.html",
+      "sha256": "4bcfa1a5ec80cb8e901f294fcc9d3c607202d72562bdeb346064d696f21c49d3",
+      "httpStatus": 200,
+      "byteLength": 71595,
+      "fetchedUtc": "2026-09-14T10:15:00Z",
+      "license": "위키백과 CC BY-SA — 병참 기지화 정책 서술",
+      "excerpts": [
+        {
+          "id": "ex-byeongcham-gije",
+          "text": "일본은 식민지 조선을 대륙 진출을 위한 병참 기지로 사용할 계획이었다",
+          "locator": "일제의 조선 군사적 지배 및 병참기지화 정책들"
         }
       ]
     }
@@ -1082,22 +1154,22 @@
       "label": "강주룡"
     },
     {
-      "id": "person-hs-c4-ji-cheongcheon",
+      "id": "person-hs-ji-cheongcheon",
       "type": "Person",
       "label": "지청천"
     },
     {
-      "id": "person-hs-c4-yang-sebong",
+      "id": "person-hs-yang-sebong",
       "type": "Person",
       "label": "양세봉"
     },
     {
-      "id": "person-hs-c4-baek-namun",
+      "id": "person-hs-baek-namun",
       "type": "Person",
       "label": "백남운"
     },
     {
-      "id": "person-hs-c4-son-kijung",
+      "id": "person-hs-son-kijung",
       "type": "Person",
       "label": "손기정"
     },
@@ -1320,6 +1392,16 @@
       "id": "place-hs-c4-namsan",
       "type": "Place",
       "label": "서울 남산"
+    },
+    {
+      "id": "place-hs-c4-dongailbo-saok",
+      "type": "Place",
+      "label": "동아일보사 광화문 사옥"
+    },
+    {
+      "id": "place-hs-c4-suwon",
+      "type": "Place",
+      "label": "수원"
     }
   ],
   "claims": [
@@ -1745,7 +1827,7 @@
       "predicate": "syj:participatedIn",
       "object": {
         "kind": "entity",
-        "id": "person-hs-c4-ji-cheongcheon"
+        "id": "person-hs-ji-cheongcheon"
       },
       "sourceId": "src-hs-c4-enc-ssangseongbo",
       "citesExcerpt": "ex-ssb-ji",
@@ -1767,7 +1849,7 @@
     },
     {
       "id": "claim-hs-c4-ji-def",
-      "subject": "person-hs-c4-ji-cheongcheon",
+      "subject": "person-hs-ji-cheongcheon",
       "predicate": "syj:relatedTo",
       "object": {
         "kind": "entity",
@@ -1779,7 +1861,7 @@
     },
     {
       "id": "claim-hs-c4-ji-1940",
-      "subject": "person-hs-c4-ji-cheongcheon",
+      "subject": "person-hs-ji-cheongcheon",
       "predicate": "syj:occurredIn",
       "object": {
         "kind": "time",
@@ -1795,7 +1877,7 @@
     },
     {
       "id": "claim-hs-c4-ji-1945",
-      "subject": "person-hs-c4-ji-cheongcheon",
+      "subject": "person-hs-ji-cheongcheon",
       "predicate": "syj:endedIn",
       "object": {
         "kind": "time",
@@ -1845,7 +1927,7 @@
       "predicate": "syj:participatedIn",
       "object": {
         "kind": "entity",
-        "id": "person-hs-c4-yang-sebong"
+        "id": "person-hs-yang-sebong"
       },
       "sourceId": "src-hs-c4-enc-joseon-hyeongmyeonggun",
       "citesExcerpt": "ex-jhg-yang",
@@ -1883,7 +1965,7 @@
     },
     {
       "id": "claim-hs-c4-yang-role",
-      "subject": "person-hs-c4-yang-sebong",
+      "subject": "person-hs-yang-sebong",
       "predicate": "syj:relatedTo",
       "object": {
         "kind": "entity",
@@ -1895,7 +1977,7 @@
     },
     {
       "id": "claim-hs-c4-yang-1934",
-      "subject": "person-hs-c4-yang-sebong",
+      "subject": "person-hs-yang-sebong",
       "predicate": "syj:endedIn",
       "object": {
         "kind": "time",
@@ -1911,7 +1993,7 @@
     },
     {
       "id": "claim-hs-c4-yang-death",
-      "subject": "person-hs-c4-yang-sebong",
+      "subject": "person-hs-yang-sebong",
       "predicate": "syj:relatedTo",
       "object": {
         "kind": "entity",
@@ -2147,7 +2229,7 @@
     },
     {
       "id": "claim-hs-c4-baek-1933",
-      "subject": "person-hs-c4-baek-namun",
+      "subject": "person-hs-baek-namun",
       "predicate": "syj:occurredIn",
       "object": {
         "kind": "time",
@@ -2163,7 +2245,7 @@
     },
     {
       "id": "claim-hs-c4-baek-work",
-      "subject": "person-hs-c4-baek-namun",
+      "subject": "person-hs-baek-namun",
       "predicate": "syj:relatedTo",
       "object": {
         "kind": "entity",
@@ -2175,7 +2257,7 @@
     },
     {
       "id": "claim-hs-c4-baek-yonhui",
-      "subject": "person-hs-c4-baek-namun",
+      "subject": "person-hs-baek-namun",
       "predicate": "syj:relatedTo",
       "object": {
         "kind": "entity",
@@ -2456,16 +2538,16 @@
       "note": "1937년 중일전쟁 뒤 황민화 운동과 함께 교회까지 강요가 번졌다."
     },
     {
-      "id": "claim-hs-c4-sinsa-place",
+      "id": "claim-hs-c4-sinsa-act",
       "subject": "event-hs-c4-sinsa-chambae",
       "predicate": "syj:relatedTo",
       "object": {
         "kind": "entity",
-        "id": "place-hs-c4-singung"
+        "id": "inst-hs-c4-joseon-chongdokbu"
       },
       "sourceId": "src-hs-c4-enc-sinsa-chambae",
       "citesExcerpt": "ex-sinsa-1935",
-      "note": "학교와 교회에 신사 참배를 강요했다."
+      "note": "총독부가 1935년 11월 평양 기독교계 사립학교장 거부 사건을 계기로 참배 아니면 폐교라는 강경책을 폈다."
     },
     {
       "id": "claim-hs-c4-singung-loc",
@@ -2483,7 +2565,7 @@
     },
     {
       "id": "claim-hs-c4-son-1936",
-      "subject": "person-hs-c4-son-kijung",
+      "subject": "person-hs-son-kijung",
       "predicate": "syj:occurredIn",
       "object": {
         "kind": "time",
@@ -2531,7 +2613,7 @@
       "predicate": "syj:participatedIn",
       "object": {
         "kind": "entity",
-        "id": "person-hs-c4-son-kijung"
+        "id": "person-hs-son-kijung"
       },
       "sourceId": "src-hs-c4-enc-iljanggi",
       "citesExcerpt": "ex-ilj-act",
@@ -2577,7 +2659,75 @@
       },
       "sourceId": "src-hs-c4-ko-namsan-seoul",
       "citesExcerpt": "ex-geo-namsan",
-      "note": "단일 지점으로 놓을 수 없어 기억 공간이 모인 서울 남산의 표시 좌표를 대표점으로 썼다."
+      "note": "전역에 걸친 항목이어서 화면 표시용 대표점으로 쓴 경성 남산의 표시 좌표."
+    },
+    {
+      "id": "claim-hs-c4-dongailbo-saok-loc",
+      "subject": "place-hs-c4-dongailbo-saok",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 37.5698517,
+        "lon": 126.977606,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-c4-ko-dongailbo-saok",
+      "citesExcerpt": "ex-geo-dongailbo-saok",
+      "note": "일장기 말소 지면을 만든 광화문 사옥 건물의 표시 좌표."
+    },
+    {
+      "id": "claim-hs-c4-dongailbo-saok-1926",
+      "subject": "place-hs-c4-dongailbo-saok",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "1926년",
+        "year": 1926,
+        "precision": "year",
+        "earliest": 1926,
+        "latest": 1926
+      },
+      "sourceId": "src-hs-c4-ko-dongailbo-saok",
+      "citesExcerpt": "ex-dongailbo-saok-1926",
+      "note": "1926년 12월 준공된 사옥으로 서울시 유형문화재 제131호다."
+    },
+    {
+      "id": "claim-hs-c4-suwon-loc",
+      "subject": "place-hs-c4-suwon",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 37.26222,
+        "lon": 127.02889,
+        "precision": "area"
+      },
+      "sourceId": "src-hs-c4-ko-suwon",
+      "citesExcerpt": "ex-geo-suwon",
+      "note": "전국 농촌을 대표하는 화면 표시용 지점으로 쓴 수원시 표시 좌표."
+    },
+    {
+      "id": "claim-hs-c4-byeongcham-jp",
+      "subject": "event-hs-c4-byeongcham",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-c4-japan"
+      },
+      "sourceId": "src-hs-c4-ko-nammyeon-bugyang",
+      "citesExcerpt": "ex-byeongcham-gije",
+      "note": "일본이 식민지 조선을 대륙 진출의 병참 기지로 삼으려 했다."
+    },
+    {
+      "id": "claim-hs-c4-singung-chongdokbu",
+      "subject": "inst-hs-c4-joseon-chongdokbu",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-c4-singung"
+      },
+      "sourceId": "src-hs-c4-ko-joseon-singung",
+      "citesExcerpt": "ex-singung-chongdokbu",
+      "note": "총독부가 경성부 남산 한양공원에 조선신궁 자리를 정했다."
     }
   ],
   "scenes": [
@@ -2609,7 +2759,7 @@
         "coordinateSourceIds": [
           "src-hs-c4-ko-dongailbo"
         ],
-        "coordinateNote": "동아일보 문서의 표시 좌표를 1920~30년대 광화문 사옥의 대표점으로 썼다. 같은 사옥에서 일어난 일장기 말소 사건 장면과 좌표가 겹친다.",
+        "coordinateNote": "동아일보 문서의 표시 좌표를 계몽대를 보낸 동아일보사의 대표점으로 썼다. 실제 무대는 전국 농촌이며, 일장기 말소 장면은 사건이 일어난 1926년 준공 광화문 사옥의 좌표로 따로 두었다.",
         "setting": "office"
       },
       "participants": [],
@@ -2782,7 +2932,8 @@
           "src-hs-c4-en-shanghai"
         ],
         "coordinateNote": "임시정부 청사 터의 십진 좌표를 허용 출처에서 찾지 못해 상하이시의 표시 좌표를 대표점으로 썼다. 해외 항목이다.",
-        "setting": "office"
+        "setting": "office",
+        "overseas": true
       },
       "participants": [
         {
@@ -2844,7 +2995,8 @@
           "src-hs-c4-en-mukden-incident"
         ],
         "coordinateNote": "영문 위키백과 Mukden Incident 문서의 표시 좌표. 해외 항목이며 위도가 39도 이상이라 북부 권역으로 적었다.",
-        "setting": "battle"
+        "setting": "battle",
+        "overseas": true
       },
       "participants": [],
       "effects": {
@@ -2870,7 +3022,7 @@
       "eventId": "event-fact-hs-c4-006",
       "title": "한인 애국단",
       "startYear": 1931,
-      "endYear": 1935,
+      "endYear": 1931,
       "kind": "assembly",
       "summary": "1931년 상하이에서 임시정부의 특무 조직으로 꾸려졌다. 김구가 책임을 맡았고 그해 12월 이봉창의 선서식을 계기로 한인 애국단이라는 이름이 쓰였다.",
       "dateClaimIds": [
@@ -2893,7 +3045,8 @@
           "src-hs-c4-en-huangpu"
         ],
         "coordinateNote": "임시정부 청사가 있던 황푸구의 표시 좌표를 대표점으로 썼다. 해외 항목이다.",
-        "setting": "office"
+        "setting": "office",
+        "overseas": true
       },
       "participants": [
         {
@@ -2954,11 +3107,12 @@
           "src-hs-c4-ko-harbin"
         ],
         "coordinateNote": "한국 독립군이 움직인 북만주의 대표점으로 하얼빈시 표시 좌표를 썼다. 쌍성보 전투 장면은 솽청구에 따로 두었다. 해외 항목이다.",
-        "setting": "battle"
+        "setting": "battle",
+        "overseas": true
       },
       "participants": [
         {
-          "entityId": "person-hs-c4-ji-cheongcheon",
+          "entityId": "person-hs-ji-cheongcheon",
           "role": "commander",
           "presence": "on-site",
           "side": "a",
@@ -3005,7 +3159,7 @@
         "claim-hs-c4-jhg-yang"
       ],
       "place": {
-        "label": "흥경현 영릉가",
+        "label": "흥경현(현 신빈 만족 자치현) 일대",
         "medium": "land",
         "precision": "area",
         "lon": 125.039,
@@ -3016,12 +3170,13 @@
         "coordinateSourceIds": [
           "src-hs-c4-en-xinbin"
         ],
-        "coordinateNote": "영릉가는 흥경현(현 신빈 만족 자치현)에 있다. 융링진 자체의 십진 좌표를 허용 출처에서 찾지 못해 현 소재지 표시 좌표를 썼다. 해외 항목이다.",
-        "setting": "battle"
+        "coordinateNote": "영릉가가 속한 흥경현의 현 소재지(신빈 만족 자치현) 표시 좌표다. 융링진 자체의 십진 좌표를 허용 출처에서 찾지 못해 라벨을 현 단위로 맞췄다. 실제 영릉가는 여기서 서쪽으로 약 19km 떨어져 있다. 해외 항목이다.",
+        "setting": "battle",
+        "overseas": true
       },
       "participants": [
         {
-          "entityId": "person-hs-c4-yang-sebong",
+          "entityId": "person-hs-yang-sebong",
           "role": "commander",
           "presence": "on-site",
           "side": "a",
@@ -3078,11 +3233,12 @@
           "src-hs-c4-en-shuangcheng"
         ],
         "coordinateNote": "쌍성보가 있던 솽청구의 표시 좌표. 해외 항목이다.",
-        "setting": "battle"
+        "setting": "battle",
+        "overseas": true
       },
       "participants": [
         {
-          "entityId": "person-hs-c4-ji-cheongcheon",
+          "entityId": "person-hs-ji-cheongcheon",
           "role": "commander",
           "presence": "on-site",
           "side": "a",
@@ -3138,7 +3294,8 @@
           "src-hs-c4-ko-sakuradamon-uigeo"
         ],
         "coordinateNote": "사쿠라다몬 의거 문서의 표시 좌표. 해외 항목이다.",
-        "setting": "palace"
+        "setting": "palace",
+        "overseas": true
       },
       "participants": [
         {
@@ -3186,19 +3343,19 @@
         "claim-hs-c4-nongchon-act"
       ],
       "place": {
-        "label": "조선 총독부 청사",
+        "label": "수원 농촌(진흥 운동 현장 대표점)",
         "medium": "land",
-        "precision": "site",
-        "lon": 126.97725,
-        "lat": 37.577393,
+        "precision": "area",
+        "lon": 127.02889,
+        "lat": 37.26222,
         "claimIds": [
-          "claim-hs-c4-chongdokbu-loc"
+          "claim-hs-c4-suwon-loc"
         ],
         "coordinateSourceIds": [
-          "src-hs-c4-en-ggb-seoul"
+          "src-hs-c4-ko-suwon"
         ],
-        "coordinateNote": "운동을 주관한 조선 총독부 청사의 표시 좌표. 같은 청사를 무대로 한 황국 신민화 장면과 좌표가 겹친다.",
-        "setting": "office"
+        "coordinateNote": "운동이 전국 농촌에서 벌어져 단일 지점이 없다. 정책을 만든 총독부 청사는 황국 신민화 장면이 쓰고 있어 농촌 현장 대표점으로 수원시 표시 좌표를 썼다. 수원은 1906년 권업모범장이 설치된 뒤 농업 연구 중심지였다(src-hs-c4-ko-suwon ex-suwon-nongeop). 특정 시범 부락의 위치가 아니다.",
+        "setting": "village"
       },
       "participants": [],
       "effects": {
@@ -3216,7 +3373,7 @@
       "decade": 1930,
       "relatedClaimIds": [
         "claim-hs-c4-nongchon-ugaki",
-        "claim-hs-c4-chongdokbu-loc"
+        "claim-hs-c4-suwon-loc"
       ],
       "persistence": {
         "kind": "institution",
@@ -3257,11 +3414,12 @@
           "src-hs-c4-en-huanren"
         ],
         "coordinateNote": "양세봉이 전사한 환인현의 표시 좌표. 그가 이끈 영릉가 전투 장면은 흥경현에 따로 두었다. 해외 항목이다.",
-        "setting": "battle"
+        "setting": "battle",
+        "overseas": true
       },
       "participants": [
         {
-          "entityId": "person-hs-c4-yang-sebong",
+          "entityId": "person-hs-yang-sebong",
           "role": "commander",
           "presence": "on-site",
           "side": "a",
@@ -3319,7 +3477,8 @@
           "src-hs-c4-ko-luxun-park"
         ],
         "coordinateNote": "루쉰 공원 문서의 표시 좌표. 해외 항목이다.",
-        "setting": "village"
+        "setting": "village",
+        "overseas": true
       },
       "participants": [
         {
@@ -3382,7 +3541,7 @@
       },
       "participants": [
         {
-          "entityId": "person-hs-c4-baek-namun",
+          "entityId": "person-hs-baek-namun",
           "role": "scholar",
           "presence": "on-site",
           "side": "a",
@@ -3546,7 +3705,8 @@
           "src-hs-c4-ko-nanjing"
         ],
         "coordinateNote": "난징시의 표시 좌표. 해외 항목이다.",
-        "setting": "office"
+        "setting": "office",
+        "overseas": true
       },
       "participants": [],
       "effects": {
@@ -3579,7 +3739,7 @@
         "claim-hs-c4-gunsu-1937"
       ],
       "actionClaimIds": [
-        "claim-hs-c4-gunsu-byeongcham"
+        "claim-hs-c4-byeongcham-jp"
       ],
       "place": {
         "label": "흥남 질소 비료 공장 일대",
@@ -3610,6 +3770,7 @@
       "decade": 1930,
       "sceneFunction": "construction_site",
       "relatedClaimIds": [
+        "claim-hs-c4-gunsu-byeongcham",
         "claim-hs-c4-heungnam-1927",
         "claim-hs-c4-heungnam-loc"
       ]
@@ -3627,7 +3788,7 @@
         "claim-hs-c4-sinsa-1935"
       ],
       "actionClaimIds": [
-        "claim-hs-c4-sinsa-place"
+        "claim-hs-c4-sinsa-act"
       ],
       "place": {
         "label": "조선신궁(남산)",
@@ -3641,7 +3802,7 @@
         "coordinateSourceIds": [
           "src-hs-c4-ko-joseon-singung"
         ],
-        "coordinateNote": "조선신궁 문서의 표시 좌표.",
+        "coordinateNote": "조선신궁 문서의 표시 좌표. 1935년 11월의 계기가 된 거부 사건은 평양에서 일어났고, 좌표는 총독부가 경성부 남산에 세운 대표 신사인 조선신궁이다. persistence 의 1945년은 일제강점기 종료를 표시용으로 쓴 값이며 별도 근거 발췌가 없다.",
         "setting": "temple"
       },
       "participants": [],
@@ -3660,6 +3821,7 @@
       "sceneFunction": "temple",
       "relatedClaimIds": [
         "claim-hs-c4-sinsa-1937",
+        "claim-hs-c4-singung-chongdokbu",
         "claim-hs-c4-singung-loc"
       ],
       "persistence": {
@@ -3688,23 +3850,23 @@
         "claim-hs-c4-ilj-act"
       ],
       "place": {
-        "label": "동아일보사 사옥(광화문)",
+        "label": "동아일보사 광화문 사옥(1926년 준공)",
         "medium": "land",
         "precision": "site",
-        "lon": 126.9779333,
-        "lat": 37.5695306,
+        "lon": 126.977606,
+        "lat": 37.5698517,
         "claimIds": [
-          "claim-hs-c4-dongailbo-loc"
+          "claim-hs-c4-dongailbo-saok-loc"
         ],
         "coordinateSourceIds": [
-          "src-hs-c4-ko-dongailbo"
+          "src-hs-c4-ko-dongailbo-saok"
         ],
-        "coordinateNote": "사건이 일어난 동아일보 사옥의 대표점으로 동아일보 문서의 표시 좌표를 썼다. 같은 사옥을 무대로 한 브나로드 운동 장면과 좌표가 겹친다.",
+        "coordinateNote": "일장기를 지운 지면을 만든 1926년 준공 광화문 사옥(서울시 유형문화재 제131호)의 표시 좌표. 브나로드 운동 장면은 동아일보사 대표점을 그대로 두어 약 40m 떨어진 다른 지점이다.",
         "setting": "office"
       },
       "participants": [
         {
-          "entityId": "person-hs-c4-son-kijung",
+          "entityId": "person-hs-son-kijung",
           "role": "commoner",
           "presence": "off-site",
           "side": "c",
@@ -3729,7 +3891,8 @@
       "decade": 1930,
       "relatedClaimIds": [
         "claim-hs-c4-ilj-son",
-        "claim-hs-c4-dongailbo-loc"
+        "claim-hs-c4-dongailbo-saok-loc",
+        "claim-hs-c4-dongailbo-saok-1926"
       ]
     },
     {
@@ -3759,7 +3922,7 @@
         "coordinateSourceIds": [
           "src-hs-c4-en-ggb-seoul"
         ],
-        "coordinateNote": "정책을 만든 조선 총독부 청사의 표시 좌표. 같은 청사를 무대로 한 농촌 진흥 운동 장면과 좌표가 겹친다.",
+        "coordinateNote": "정책을 만든 조선 총독부 청사의 표시 좌표. 농촌 진흥 운동 장면은 농촌 현장 대표점으로 옮겨 겹치지 않는다. persistence 의 1945년은 일제강점기 종료를 표시용으로 쓴 값이며 별도 근거 발췌가 없다.",
         "setting": "office"
       },
       "participants": [],
@@ -3805,7 +3968,7 @@
         "claim-hs-c4-wianbu-def"
       ],
       "place": {
-        "label": "서울 남산(기억 공간 일대)",
+        "label": "경성 남산 일대(전역 사건의 대표점)",
         "medium": "land",
         "precision": "area",
         "lon": 126.991911,
@@ -3816,7 +3979,7 @@
         "coordinateSourceIds": [
           "src-hs-c4-ko-namsan-seoul"
         ],
-        "coordinateNote": "조선과 일본군 점령지 전역에 걸친 일이어서 단일 지점으로 놓을 수 없다. 기억 공간이 모인 서울 남산의 표시 좌표를 대표점으로 삼았다.",
+        "coordinateNote": "조선과 일본군 점령지 전역에 걸친 일이어서 단일 지점으로 놓을 수 없다. 화면 표시용 대표점으로 경성 남산의 표시 좌표를 썼다. 특정 위안소나 현대 기념 공간의 위치가 아니다.",
         "setting": "village"
       },
       "participants": [],
@@ -3988,7 +4151,7 @@
       ],
       "sceneId": "scene-hs-c4-006",
       "confidence": "high",
-      "note": "[10한사2-01-03] · core · 해외(중국 상하이) 항목. 항목 목록의 종료 연도 1935년은 별도 근거를 찾지 못했다",
+      "note": "[10한사2-01-03] · core · 해외(중국 상하이) 항목. 결성 장면이라 1931년으로 닫았고, 항목 목록의 종료 연도 1935년은 허용 출처에서 근거를 찾지 못했다",
       "lon": 121.485,
       "lat": 31.2331,
       "coordinateBasis": "location claim-hs-c4-huangpu-loc"
@@ -4027,7 +4190,7 @@
       "decade": 1930,
       "year": 1932,
       "yearVerbatim": "1932년",
-      "placeLabel": "흥경현 영릉가",
+      "placeLabel": "흥경현(현 신빈 만족 자치현) 일대",
       "modernPlace": "중국 랴오닝성 푸순시 신빈만족자치현",
       "what": "남만주에서 중국 의용군과 함께 싸운 양세봉 부대",
       "claimIds": [
@@ -4039,7 +4202,7 @@
       ],
       "sceneId": "scene-hs-c4-008",
       "confidence": "high",
-      "note": "[10한사2-01-03] · standard · 해외(중국 남만주) 항목",
+      "note": "[10한사2-01-03] · standard · 해외(중국 남만주) 항목. 좌표는 현 소재지 표시 좌표이고 영릉가(융링진)는 서쪽으로 약 19km다",
       "lon": 125.039,
       "lat": 41.728,
       "coordinateBasis": "location claim-hs-c4-xinbin-loc"
@@ -4101,22 +4264,22 @@
       "decade": 1930,
       "year": 1932,
       "yearVerbatim": "1932년",
-      "placeLabel": "조선 총독부 청사",
-      "modernPlace": "서울특별시 종로구 세종로",
+      "placeLabel": "수원 농촌(진흥 운동 현장 대표점)",
+      "modernPlace": "경기도 수원시",
       "what": "농민의 불만을 달래려 총독부가 벌인 관제 농촌 개선 운동",
       "claimIds": [
         "claim-hs-c4-nongchon-1932",
         "claim-hs-c4-nongchon-1940",
         "claim-hs-c4-nongchon-act",
         "claim-hs-c4-nongchon-ugaki",
-        "claim-hs-c4-chongdokbu-loc"
+        "claim-hs-c4-suwon-loc"
       ],
       "sceneId": "scene-hs-c4-011",
       "confidence": "high",
-      "note": "[10한사2-01-02] · standard · 우가키 총독의 농산어촌진흥·병참기지화 정책과 한 묶음이다",
-      "lon": 126.97725,
-      "lat": 37.577393,
-      "coordinateBasis": "location claim-hs-c4-chongdokbu-loc",
+      "note": "[10한사2-01-02] · standard · 우가키 총독의 농산어촌진흥·병참기지화 정책과 한 묶음이다. 좌표는 전국 농촌을 대표하는 표시용 지점(수원)이며 총독부 청사는 황국 신민화 장면이 쓴다",
+      "lon": 127.02889,
+      "lat": 37.26222,
+      "coordinateBasis": "location claim-hs-c4-suwon-loc",
       "persistence": {
         "kind": "institution",
         "from": 1932,
@@ -4269,7 +4432,7 @@
       ],
       "sceneId": "scene-hs-c4-017",
       "confidence": "high",
-      "note": "[10한사2-01-05] · standard · 해외(중국 난징) 항목. 1937년 조선 민족 전선 연맹으로 이어진다",
+      "note": "[10한사2-01-05] · standard · 해외(중국 난징) 항목. 1935년 7월 결성 장면이라 종료 연도를 결성 연도로 닫았다(항목 목록의 1945년은 정당의 존속 기간이다). 1937년 조선 민족 전선 연맹으로 이어진다",
       "lon": 118.767,
       "lat": 32.05,
       "coordinateBasis": "location claim-hs-c4-nanjing-loc"
@@ -4287,13 +4450,14 @@
       "what": "조선을 전쟁 물자 공장으로 바꿔 놓은 공업화 정책",
       "claimIds": [
         "claim-hs-c4-gunsu-1937",
+        "claim-hs-c4-byeongcham-jp",
         "claim-hs-c4-gunsu-byeongcham",
         "claim-hs-c4-heungnam-1927",
         "claim-hs-c4-heungnam-loc"
       ],
       "sceneId": "scene-hs-c4-018",
       "confidence": "high",
-      "note": "[10한사2-01-02] · standard · 항목 목록은 1936년으로 잡았으나 확인된 근거는 1937년 군수공업동원법 발동이다",
+      "note": "[10한사2-01-02] · standard · 항목 목록은 1936년으로 잡았으나 확인된 연도 근거는 1937년 9월 군수공업동원법 발동이다. 우가키 총독기(1931~1936)의 대륙병참기지화는 앞 단계여서 관련 주장으로 옮겼다",
       "lon": 127.6,
       "lat": 39.833,
       "coordinateBasis": "location claim-hs-c4-heungnam-loc"
@@ -4311,13 +4475,14 @@
       "what": "일본 신을 절하게 강요해 신앙과 양심을 짓밟은 정책",
       "claimIds": [
         "claim-hs-c4-sinsa-1935",
-        "claim-hs-c4-sinsa-place",
+        "claim-hs-c4-sinsa-act",
         "claim-hs-c4-sinsa-1937",
+        "claim-hs-c4-singung-chongdokbu",
         "claim-hs-c4-singung-loc"
       ],
       "sceneId": "scene-hs-c4-019",
       "confidence": "high",
-      "note": "[10한사2-01-04] · standard · 항목 목록은 1936년으로 잡았으나 확인된 근거는 1935년 11월 총독부의 강경책이다",
+      "note": "[10한사2-01-04] · standard · 항목 목록은 1936년으로 잡았으나 확인된 근거는 1935년 11월 총독부의 강경책이다. 그 계기가 된 거부 사건은 평양에서 일어났고 좌표는 대표 신사인 경성 조선신궁이다. 존속 종료 1945년은 표시용 값이다",
       "lon": 126.98278,
       "lat": 37.55361,
       "coordinateBasis": "location claim-hs-c4-singung-loc",
@@ -4335,22 +4500,23 @@
       "decade": 1930,
       "year": 1936,
       "yearVerbatim": "1936년",
-      "placeLabel": "동아일보사 사옥(광화문)",
-      "modernPlace": "서울특별시 종로구 세종대로",
+      "placeLabel": "동아일보사 광화문 사옥(1926년 준공)",
+      "modernPlace": "서울특별시 종로구 세종로 139-8",
       "what": "우승 사진의 일장기를 지워 총독부에 맞선 언론 저항",
       "claimIds": [
         "claim-hs-c4-ilj-1936",
         "claim-hs-c4-son-1936",
         "claim-hs-c4-ilj-act",
         "claim-hs-c4-ilj-son",
-        "claim-hs-c4-dongailbo-loc"
+        "claim-hs-c4-dongailbo-saok-loc",
+        "claim-hs-c4-dongailbo-saok-1926"
       ],
       "sceneId": "scene-hs-c4-020",
       "confidence": "high",
-      "note": "[10한사2-01-04] · standard · 우승 자체는 베를린에서 일어났고 장면은 사건 현장인 동아일보사로 잡았다",
-      "lon": 126.9779333,
-      "lat": 37.5695306,
-      "coordinateBasis": "location claim-hs-c4-dongailbo-loc"
+      "note": "[10한사2-01-04] · standard · 우승 자체는 베를린에서 일어났고 장면은 사건 현장인 동아일보사 광화문 사옥으로 잡았다. 브나로드 장면과 겹치지 않게 옛 사옥 건물 좌표를 썼다",
+      "lon": 126.977606,
+      "lat": 37.5698517,
+      "coordinateBasis": "location claim-hs-c4-dongailbo-saok-loc"
     },
     {
       "id": "fact-hs-c4-021",
@@ -4371,7 +4537,7 @@
       ],
       "sceneId": "scene-hs-c4-021",
       "confidence": "high",
-      "note": "[10한사2-01-01] · core · 1937년 10월 2일 황국신민서사 제정",
+      "note": "[10한사2-01-01] · core · 1937년 10월 2일 황국신민서사 제정. 존속 종료 1945년은 표시용 값이다",
       "lon": 126.97725,
       "lat": 37.577393,
       "coordinateBasis": "location claim-hs-c4-chongdokbu-loc",
@@ -4389,7 +4555,7 @@
       "decade": 1930,
       "year": 1937,
       "yearVerbatim": "1937년",
-      "placeLabel": "서울 남산(기억 공간 일대)",
+      "placeLabel": "경성 남산 일대(전역 사건의 대표점)",
       "modernPlace": "서울특별시 중구·용산구 남산",
       "what": "일본군이 여성을 전쟁터로 끌고 가 저지른 조직적 인권 침해",
       "claimIds": [
@@ -4399,7 +4565,7 @@
       ],
       "sceneId": "scene-hs-c4-022",
       "confidence": "high",
-      "note": "[10한사2-01-04] · core · 시작 시점은 연구에 따라 1931~1938년으로 갈린다. 한반도와 해외 점령지 전역에 걸친 항목이다",
+      "note": "[10한사2-01-04] · core · 시작 시점은 연구에 따라 1931~1938년으로 갈린다. 한반도와 해외 점령지 전역에 걸친 항목이라 좌표는 표시용 대표점이며 특정 위안소 위치가 아니다",
       "lon": 126.991911,
       "lat": 37.549681,
       "coordinateBasis": "location claim-hs-c4-namsan-loc"

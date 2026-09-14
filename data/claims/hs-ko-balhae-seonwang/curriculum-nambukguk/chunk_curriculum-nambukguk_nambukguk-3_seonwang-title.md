@@ -10,7 +10,7 @@ status: "draft"
 [
   {
     "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-title",
-    "subject": "person-hs-balhae-seonwang",
+    "subject": "person-balhae-daeinsu",
     "predicate": "syj:relatedTo",
     "object": {
       "kind": "entity",

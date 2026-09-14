@@ -62,6 +62,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-4-hs-c4-md-1987",
+    "subject": "place-hs-c4-myeongdong-cathedral",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1987년 5월 18일",
+      "year": 1987,
+      "precision": "year",
+      "earliest": 1987,
+      "latest": 1987,
+      "id": "ts-curriculum-contemporary-contemporary-4-hs-c4-md-1987"
+    },
+    "citesChunk": "chunk_scenes-103_contemporary_scenes_md-mass",
+    "quote": "1987년 5월 18일 김수환 추기경 집전으로 명동대성당에서 열린",
+    "note": "1987년 5월 18일 김수환 추기경이 미사를 집전했다.",
+    "fromSource": "src-archives-myeongdong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

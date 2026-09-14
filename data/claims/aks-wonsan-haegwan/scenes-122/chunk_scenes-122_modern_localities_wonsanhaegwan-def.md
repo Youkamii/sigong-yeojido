@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-wonsan-haegwan-1883",
+    "subject": "place-mt1-wonsanhang",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_wonsanhaegwan-def",
+    "quote": "1883년 함경도 원산에 설치된 근대적 관세(關稅) 징수 기구를 말한다.",
+    "note": "1883년 원산에 설치된 해관(관세 징수 기구)이다. 원산 개항 자체의 연도 근거가 아니다.",
+    "fromSource": "src-aks-wonsan-haegwan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

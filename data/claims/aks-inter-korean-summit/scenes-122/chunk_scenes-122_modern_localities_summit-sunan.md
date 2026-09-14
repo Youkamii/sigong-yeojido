@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-contemporary-contemporary-5-hs-c5-summit-sunan",
+    "subject": "event-hs-c5-summit-2000",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-c5-sunan"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_summit-sunan",
+    "quote": "6월 13일 평양 순안 공항 에서 역사적인 첫 만남을 가진 양 정상은",
+    "note": "평양 순안 공항에서의 첫 만남",
+    "fromSource": "src-aks-inter-korean-summit",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

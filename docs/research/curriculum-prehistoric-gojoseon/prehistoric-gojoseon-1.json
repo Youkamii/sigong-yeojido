@@ -1,9 +1,9 @@
 {
   "job": "prehistoric-gojoseon-1",
-  "sources": 57,
-  "excerpts": 93,
+  "sources": 69,
+  "excerpts": 112,
   "chunkClaims": 6,
-  "excerptClaims": 114,
+  "excerptClaims": 122,
   "facts": 28,
   "factsByCategory": {
     "administration": 2,
@@ -13,8 +13,8 @@
     "person": 1,
     "settlement": 2
   },
-  "claims": 120,
-  "entities": 101,
+  "claims": 128,
+  "entities": 104,
   "rawFilesChecked": [
     {
       "source": "src-hs-pg1-enc-paleolithic",
@@ -29,8 +29,8 @@
       "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%96%91_%EA%B8%88%EA%B5%B4_%EC%9C%A0%EC%A0%81",
       "sha256": "2c23a41e3ed6f498694b77af86c607c4b7ccefab29d69797a665687ecd71b0e8",
       "rawBytes": 94360,
-      "excerpts": 2,
-      "quotedWords": 16
+      "excerpts": 1,
+      "quotedWords": 2
     },
     {
       "source": "src-hs-pg1-enc-jeongokri",
@@ -141,8 +141,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0035655",
       "sha256": "5ace54f3225b7104ad7e34da33ad11e52b7a4ce8afce17ef98c86af95656a8a1",
       "rawBytes": 156540,
-      "excerpts": 2,
-      "quotedWords": 18
+      "excerpts": 3,
+      "quotedWords": 22
     },
     {
       "source": "src-hs-pg1-ko-osanri",
@@ -205,8 +205,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0040463",
       "sha256": "4ce125718e385afa44ff066f4db0b9f84581f67b42b326f1d48e786c646a4000",
       "rawBytes": 162098,
-      "excerpts": 2,
-      "quotedWords": 20
+      "excerpts": 3,
+      "quotedWords": 24
     },
     {
       "source": "src-hs-pg1-en-bangudae",
@@ -309,8 +309,8 @@
       "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%A3%BC_%EA%B2%80%EB%8B%A8%EB%A6%AC_%EC%9C%A0%EC%A0%81",
       "sha256": "297478d1c4896d78b846e67b4f1e134334abac7fb6e8293fbd5e98512c0800b3",
       "rawBytes": 78844,
-      "excerpts": 2,
-      "quotedWords": 13
+      "excerpts": 1,
+      "quotedWords": 2
     },
     {
       "source": "src-hs-pg1-enc-gunjang-state",
@@ -421,8 +421,8 @@
       "url": "https://ko.wikipedia.org/wiki/%EC%97%AC%EC%A3%BC_%ED%9D%94%EC%95%94%EB%A6%AC_%EC%84%A0%EC%82%AC%EC%9C%A0%EC%A0%81",
       "sha256": "b15081d9bcc5370af1572b0bd562472d115732b54ab6a5bf7203a9b3db5b8396",
       "rawBytes": 111590,
-      "excerpts": 2,
-      "quotedWords": 7
+      "excerpts": 1,
+      "quotedWords": 2
     },
     {
       "source": "src-hs-pg1-enc-songgukri",
@@ -449,26 +449,122 @@
       "quotedWords": 2
     },
     {
-      "source": "src-hs-pg1-ko-jitapri",
-      "url": "https://ko.wikipedia.org/wiki/%EB%B4%89%EC%82%B0%EC%A7%80%ED%83%91%EB%A6%AC%EC%9C%A0%EC%A0%81",
-      "sha256": "cdbd452c5ea66103f7247e5f3fcc3567f655401a7b1597d190cffa7eded2c6dc",
-      "rawBytes": 63088,
-      "excerpts": 1,
-      "quotedWords": 10
-    },
-    {
-      "source": "src-hs-pg1-ko-neolithic-korea",
-      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EA%B5%AD%EC%9D%98_%EC%8B%A0%EC%84%9D%EA%B8%B0_%EC%8B%9C%EB%8C%80",
-      "sha256": "56d75aa6cbec81971231544a179eda10c51076160932b5ef022748fd52a4905b",
-      "rawBytes": 146240,
-      "excerpts": 2,
-      "quotedWords": 14
-    },
-    {
       "source": "src-hs-pg1-ko-liaohe",
       "url": "https://ko.wikipedia.org/wiki/%EB%9E%B4%EC%98%A4%ED%97%88",
       "sha256": "b1bd30edbd787a4602bb1f45b0084429f17cfc14b74915eb7742cfa44a42a300",
       "rawBytes": 145815,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-geumgul",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013622",
+      "sha256": "dfcc6b1427696d2d7adb9be8ee283fd156bb7547b5e14d6371649e9461f15405",
+      "rawBytes": 145809,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-hs-pg1-enc-ganseokgi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0000531",
+      "sha256": "c2134299dc97fdfe6c076f9624fec1c7fce9297407c39ce78a66bb9075f09843",
+      "rawBytes": 100730,
+      "excerpts": 1,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-pg1-enc-oido",
+      "url": "https://encykorea.aks.ac.kr/Article/E0038475",
+      "sha256": "16ea912978348ff2c6f50fa06ce7351dbe6eed0b1828820768f2a065a292d172",
+      "rawBytes": 100998,
+      "excerpts": 2,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs-pg1-enc-munamri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0070958",
+      "sha256": "3dcd5ebd93cd0dbd07aeb88a9914e1c1e7da4bb49303e00a25a6de4a871fa2db",
+      "rawBytes": 143032,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-pg1-enc-yeondaedo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059373",
+      "sha256": "13a29721672e30085b5ade602694a133967843f0ea656e380a415b77df8f3cad",
+      "rawBytes": 100974,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-hs-pg1-enc-jitapri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0023901",
+      "sha256": "89fd43c780d56bf5f02b1f0a0d47480561e1382fdc02bdb46b9b4a2b9606f634",
+      "rawBytes": 93037,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-hs-pg1-enc-gungsanri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0039358",
+      "sha256": "12778a2860f5d0c28ac2502d4ca51e79a662a364781e561f2d927e26581affdf",
+      "rawBytes": 94230,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-pg1-enc-geomdanri-site",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040495",
+      "sha256": "13ed1d3488c58af506b6130a225e34da21daa9937c21e7a40d5fd39845492bc2",
+      "rawBytes": 123289,
+      "excerpts": 2,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-hs-pg1-enc-heunamri-site",
+      "url": "https://encykorea.aks.ac.kr/Article/E0036508",
+      "sha256": "52da124e36862cd1fe1afc11d8304fcddaab754217d18bfffca94ab886e2f08e",
+      "rawBytes": 160005,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-pg1-enc-tribal",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024564",
+      "sha256": "3fce8155817711b5dbb0e80a4388e28bb126ef475c94030fa842db16c90e36cc",
+      "rawBytes": 79597,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-hs-pg1-en-ryonggang",
+      "url": "https://en.wikipedia.org/wiki/Ryonggang_County",
+      "sha256": "d321cd39334e3db6ca5003daf0bdc6cd7ba5cc3d6883873dcf326c323da18925",
+      "rawBytes": 116904,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-pg1-ko-oido",
+      "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%ED%9D%A5%20%EC%98%A4%EC%9D%B4%EB%8F%84%20%EC%9C%A0%EC%A0%81",
+      "sha256": "14179e64ae2cc67ae0f53c4d442a76f3bbbaaff09d3de96b0666d84791a2cdc5",
+      "rawBytes": 75969,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-ko-munamri",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%84%B1%20%EB%AC%B8%EC%95%94%EB%A6%AC%20%EC%9C%A0%EC%A0%81",
+      "sha256": "75995576fcf177b53ea5394b23598ec394f37d7a31eacf9a2addbc26229fe004",
+      "rawBytes": 79607,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-ko-yeondaedo",
+      "url": "https://ko.wikipedia.org/wiki/%ED%86%B5%EC%98%81%20%EC%97%B0%EB%8C%80%EB%8F%84%20%ED%8C%A8%EC%B4%9D",
+      "sha256": "1eb1a386ce5a8a7b9a82b19dfc2dd2eefd651518b64cc6c2e2d65a7708312428",
+      "rawBytes": 75093,
       "excerpts": 1,
       "quotedWords": 2
     }
@@ -482,15 +578,17 @@
     "modelsObserved": [
       "claude-opus-5"
     ],
-    "started": 1789700000,
+    "started": 1789355400,
     "exitCode": 0,
     "isError": false,
-    "sessionId": "workflow-prehistoric-gojoseon-1"
+    "sessionId": "workflow-prehistoric-gojoseon-1",
+    "revised": 1789379668
   },
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-pg1-scene-gochang"
+    "place-hs-pg1-heunamri",
+    "thing-hs-pg1-rice"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

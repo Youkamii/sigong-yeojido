@@ -27,7 +27,7 @@ status: "draft"
   },
   {
     "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-clj-yuso",
-    "subject": "person-hs-yu-so",
+    "subject": "person-syj122-yuso",
     "predicate": "syj:participatedIn",
     "object": {
       "kind": "entity",
