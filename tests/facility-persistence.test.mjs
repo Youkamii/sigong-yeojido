@@ -109,7 +109,7 @@ test('정복으로 끝난 나라의 시설은 끝 기록이 없으면 그 나라
   assert.ok(has(goguryeo,660));assert.ok(!has(goguryeo,668));
   assert.ok(has(balhae,900));assert.ok(!has(balhae,926));
   assert.ok(has(silla,935));assert.ok(has(silla,1500));assert.ok(has(silla,2020));  // 신라→고려→조선은 이어졌으므로 끝 기록이 있을 때만 끝난다
-  assert.equal(planContinuingFacilities([baekje],{year:650,events:[]})[0].continuing.type,'polity-end');
+  assert.equal(planContinuingFacilities([baekje],{year:650,events:[]})[0].continuing.facilityType,'polity-end');
 });
 test('황룡사는 646·1237년에 존속하고 1238년 소실부터 사라진다',()=>{
   for(const year of [646,1237]){
