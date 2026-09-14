@@ -1,9 +1,9 @@
 {
   "job": "joseon-late-5",
-  "sources": 37,
-  "excerpts": 66,
+  "sources": 43,
+  "excerpts": 79,
   "chunkClaims": 31,
-  "excerptClaims": 70,
+  "excerptClaims": 83,
   "facts": 23,
   "factsByCategory": {
     "administration": 3,
@@ -14,8 +14,8 @@
     "settlement": 3,
     "war": 2
   },
-  "claims": 101,
-  "entities": 59,
+  "claims": 114,
+  "entities": 60,
   "rawFilesChecked": [
     {
       "source": "src-hs-jl5-enc-balhaego",
@@ -312,6 +312,54 @@
       "rawBytes": 167943,
       "excerpts": 1,
       "quotedWords": 1
+    },
+    {
+      "source": "src-hs-jl5-enc-gwanggyo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0005063",
+      "sha256": "d950d1f67ca326a4036d7ee217d95e63080fb2e1a267c85971313d1d4b3fdddf",
+      "rawBytes": 117862,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-jl5-ko-gwangtonggyo",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%91%ED%86%B5%EA%B5%90",
+      "sha256": "09231f678b1597218ed2830306285ccec16b74895904840306a527f2a0622660",
+      "rawBytes": 143007,
+      "excerpts": 1,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-jl5-enc-samjeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0026794",
+      "sha256": "e39f305aa5fdd41922a395ceb9b234555c371f34091e54685e64cdda33bc1cb3",
+      "rawBytes": 147429,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs-jl5-enc-baekgol",
+      "url": "https://encykorea.aks.ac.kr/Article/E0021985",
+      "sha256": "91c5f0ca69b5e016e6377fe8a9d41c05597f373d0a6bea02bf5163bab5d6eacc",
+      "rawBytes": 74886,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-jl5-enc-hwanggu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0065071",
+      "sha256": "21f67d4f2ad1b1a63a3882d74537b8423d35b3a18cfd5e44b245fc6a43a5dc24",
+      "rawBytes": 94992,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-jl5-enc-yeohang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0041206",
+      "sha256": "1e1cbef637fbe5a2a56112467ef5f23aa3f52401498728d0056cf115d95b6644",
+      "rawBytes": 108758,
+      "excerpts": 2,
+      "quotedWords": 20
     }
   ],
   "missing": [
@@ -319,25 +367,9 @@
       "id": "miss-jl5-1",
       "itemId": "hs-joseon-late-jungin-socheong",
       "topic": "중인 통청 상소(1851)",
-      "detail": "중인 기술관의 통청 상소를 연도·장소와 함께 적은 공개 출처를 찾지 못했다. 한국민족문화대백과사전에는 '통청운동' 표제 항목이 없고 '중인' 항목 본문에도 통청 서술이 없다. 우리역사넷 교과서 용어 해설 '중인'은 통청 운동을 적지만 공공누리 표시가 없어 이 형식의 웹 출처로 쓸 수 없고 연도도 없다.",
-      "neededSource": "우리역사넷 신편 한국사 조선 후기 신분편 또는 공공누리 표시가 있는 국사편찬위원회 해설",
+      "detail": "중인 기술관의 통청 상소를 연도·장소와 함께 적은 공개 출처를 찾지 못했다. 한국민족문화대백과사전에는 '통청운동' 표제 항목이 없고 '중인' 항목 본문에도 통청 서술이 없다. 우리역사넷 교과서 용어 해설 '중인'은 통청 운동을 적지만 공공누리 표시가 없어 이 형식의 웹 출처로 쓸 수 없고 연도도 없다. 이번 보강에서는 한국민족문화대백과사전 검색으로 '통청운동'·'통청'·'중인통청'·'신분상승운동' 표제어가 없음을 확인했고, '중인'(E0053915)·'역관'(E0036568)·'철종'(E0056172) 본문에도 통청 서술이 없었다. 위키백과 한국어판에도 '통청 운동' 문서가 없다. 대신 '여항문학'(E0041206)에서 중인 계층이 한양을 무대로 신분 상승을 도모했다는 근거만 확보해 사실에 붙였고, 1851년이라는 연도와 상소를 올린 장소는 여전히 근거가 없다.",
+      "neededSource": "공공누리 표시가 있는 국사편찬위원회 해설(신편 한국사 조선 후기 신분편) 또는 1851년 중인 통청 상소를 연도와 함께 적은 허용 출처",
       "reason": "중인 통청 상소의 연도·장소 근거를 찾지 못해 장면 없이 사실만 남겼다"
-    },
-    {
-      "id": "miss-jl5-2",
-      "itemId": "hs-joseon-late-minhwa",
-      "topic": "민화가 팔리던 광통교 그림 가게",
-      "detail": "광통교에 서화 가게가 늘어섰다는 서술의 근거를 찾지 못해 좌표는 청계천 표시 좌표를 쓴 표시점이다.",
-      "neededSource": "한국민족문화대백과사전 '광통교' 또는 서울역사편찬원 공개 해설",
-      "reason": "장소 근거 부족"
-    },
-    {
-      "id": "miss-jl5-3",
-      "itemId": "hs-joseon-late-samjeong-disorder",
-      "topic": "전정·군정의 문란",
-      "detail": "환곡의 변질은 근거를 확보했으나 전정(백골징포 등)·군정의 폐단은 이 칸에서 근거를 달지 못했다.",
-      "neededSource": "한국민족문화대백과사전 '백골징포'·'황구첨정' 항목",
-      "reason": "세 부문 가운데 환곡만 근거 확보"
     }
   ],
   "collection": {
@@ -357,7 +389,8 @@
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-jl5-donhwamun"
+    "event-hs-jl5-jungin-socheong",
+    "polity-hs-jl5-joseon"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

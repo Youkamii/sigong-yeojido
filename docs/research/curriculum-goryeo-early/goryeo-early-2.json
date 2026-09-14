@@ -1,9 +1,9 @@
 {
   "job": "goryeo-early-2",
-  "sources": 30,
-  "excerpts": 35,
+  "sources": 31,
+  "excerpts": 37,
   "chunkClaims": 80,
-  "excerptClaims": 34,
+  "excerptClaims": 36,
   "facts": 23,
   "factsByCategory": {
     "administration": 5,
@@ -16,8 +16,8 @@
     "transport": 1,
     "war": 2
   },
-  "claims": 114,
-  "entities": 47,
+  "claims": 116,
+  "entities": 48,
   "rawFilesChecked": [
     {
       "source": "src-hs-en-manwoldae",
@@ -258,18 +258,17 @@
       "rawBytes": 88834,
       "excerpts": 1,
       "quotedWords": 2
-    }
-  ],
-  "missing": [
+    },
     {
-      "id": "miss-ge2-1",
-      "itemId": "hs-goryeo-early-hasachang-iron-buddha",
-      "reason": "제작 연도를 짚어 주는 근거를 찾지 못했다",
-      "topic": "하남 하사창동 철조석가여래좌상의 제작 연도",
-      "detail": "로컬 원문과 허용 웹 출처 어디에도 이 철불의 제작 연도를 적은 기록이 없어 장면 연도 1000년은 표시용 값이다. 이 때문에 사실의 confidence 를 low 로 낮추었다.",
-      "neededSource": "국가유산포털 보물 지정 해설 또는 국립중앙박물관 소장품 해설의 제작 시기 서술"
+      "source": "src-hs-museum-hasachang",
+      "url": "https://www.museum.go.kr/site/main/relic/treasure/view?relicId=1200",
+      "sha256": "5997bbf9c83e1abc36cddbc1d90e2f5be1c6d00bf1dc0b8aec011069ef6fb358",
+      "rawBytes": 78329,
+      "excerpts": 2,
+      "quotedWords": 25
     }
   ],
+  "missing": [],
   "collection": {
     "task": "goryeo-early-2",
     "runner": "workflow",
@@ -287,8 +286,8 @@
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "person-hs-choe-seungno",
-    "polity-goryeo"
+    "thing-hs-ge2-hasachang-buddha",
+    "person-hs-wanggyu"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

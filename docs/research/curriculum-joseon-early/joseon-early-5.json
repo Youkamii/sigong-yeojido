@@ -1,9 +1,9 @@
 {
   "job": "joseon-early-5",
-  "sources": 35,
-  "excerpts": 65,
+  "sources": 37,
+  "excerpts": 71,
   "chunkClaims": 16,
-  "excerptClaims": 79,
+  "excerptClaims": 85,
   "facts": 23,
   "factsByCategory": {
     "administration": 8,
@@ -14,8 +14,8 @@
     "settlement": 2,
     "war": 2
   },
-  "claims": 95,
-  "entities": 49,
+  "claims": 101,
+  "entities": 48,
   "rawFilesChecked": [
     {
       "source": "src-enc-gapja-sahwa",
@@ -296,26 +296,25 @@
       "rawBytes": 392998,
       "excerpts": 1,
       "quotedWords": 2
-    }
-  ],
-  "missing": [
-    {
-      "id": "miss-je5-1",
-      "itemId": "hs-joseon-early-bangnap",
-      "topic": "방납의 폐단 연도",
-      "detail": "항목의 1500년은 16세기 심화를 가리키는 대표값이고, 허용 출처(민족문화대백과·위키백과)에서 특정 연도를 확인하지 못했다.",
-      "neededSource": "조선왕조실록 공물·방납 기사(로컬 chunk 필요) 또는 연도가 적힌 우리역사넷 해설",
-      "reason": "연도 근거 없음 — 장면 생략"
     },
     {
-      "id": "miss-je5-2",
-      "itemId": "hs-joseon-early-gunjeok-supo",
-      "topic": "군적수포제 시행 연도(1541)",
-      "detail": "민족문화대백과 「방군수포제」는 제도의 내용만 서술하고 1541년이라는 연도를 적지 않으며, 위키백과에도 해당 항목이 없다.",
-      "neededSource": "중종실록 군적수포 관련 기사(로컬 chunk) 또는 연도를 명시한 국사편찬위원회 해설",
-      "reason": "연도 근거 없음 — 장면 생략"
+      "source": "src-enc-gunjeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0006712",
+      "sha256": "685897c7d197ff0451ed9d4192f2991b11b2ab6b317aae847ca586472ffc6347",
+      "rawBytes": 126713,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-enc-daedongbeop",
+      "url": "https://encykorea.aks.ac.kr/Article/E0014246",
+      "sha256": "fe05f2270f4df79a45182f961d1334a3a828345b6e93f16f2f336a3e1490ff26",
+      "rawBytes": 141264,
+      "excerpts": 3,
+      "quotedWords": 24
     }
   ],
+  "missing": [],
   "collection": {
     "task": "joseon-early-5",
     "runner": "workflow",
@@ -333,8 +332,7 @@
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "event-hs-tongsinsa-1590",
-    "place-hs-kyoto"
+    "place-hs-hanyang-byeongjo"
   ],
   "reviewedSourceIds": {
     "src-kowiki-gyeongbokgung": "src-curriculum-joseon-early-joseon-early-5-kowiki-gyeongbokgung"

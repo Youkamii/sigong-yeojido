@@ -35,7 +35,7 @@ status: "draft"
     },
     "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-jujaso-loc",
     "quote": "그 위치는 훈도방에 있었던 것으로 보인다",
-    "note": "주자소 자리를 훈도방으로 본다.",
+    "note": "주자소 자리를 훈도방으로 본다는 서술이다. 훈도방은 한양 남부의 방이므로 1405년 환도 뒤의 자리이고, 1403년 주조 장소로는 쓰지 않는다.",
     "fromSource": "src-je-encykorea-e0053405",
     "origin": "ai",
     "status": "draft",

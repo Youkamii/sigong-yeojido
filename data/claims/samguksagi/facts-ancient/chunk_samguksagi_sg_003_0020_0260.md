@@ -62,6 +62,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-gap-taxation-4",
+    "subject": "event-hs-sg2-haseulla-tax",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "year",
+      "value": 397
+    },
+    "citesChunk": "chunk_samguksagi_sg_003_0020_0260",
+    "quote": "四十二年, 秋七月, 北邊何瑟羅旱·蝗, 年荒民飢",
+    "note": "삼국사기 신라본기 내물이사금 42년(397) 7월. 북쪽 변방 하슬라에 가뭄과 메뚜기 피해가 겹쳐 흉년이 들고 백성이 굶주렸다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -1,9 +1,9 @@
 {
   "job": "contemporary-5",
-  "sources": 43,
-  "excerpts": 61,
+  "sources": 52,
+  "excerpts": 74,
   "chunkClaims": 20,
-  "excerptClaims": 62,
+  "excerptClaims": 73,
   "facts": 20,
   "factsByCategory": {
     "administration": 2,
@@ -14,8 +14,8 @@
     "person": 3,
     "settlement": 3
   },
-  "claims": 82,
-  "entities": 59,
+  "claims": 93,
+  "entities": 44,
   "rawFilesChecked": [
     {
       "source": "src-hs-c5-enc-suyo",
@@ -62,8 +62,8 @@
       "url": "https://encykorea.aks.ac.kr/Article/E0049274",
       "sha256": "7b754ea23bc4707c52d373448437bde9da35201b4e197d84610a90111875c0b0",
       "rawBytes": 86907,
-      "excerpts": 2,
-      "quotedWords": 9
+      "excerpts": 3,
+      "quotedWords": 14
     },
     {
       "source": "src-hs-c5-enc-jibang",
@@ -360,56 +360,96 @@
       "rawBytes": 105559,
       "excerpts": 1,
       "quotedWords": 5
+    },
+    {
+      "source": "src-hs-c5-ko-kwon",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B6%8C%EC%98%81%EA%B8%B8",
+      "sha256": "afe8a5fc24a4427b425f2e28d4f70e110ebdfd296429cf2f429127c59a707f61",
+      "rawBytes": 275893,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-c5-ko-yonsei",
+      "url": "https://ko.wikipedia.org/wiki/%EC%97%B0%EC%84%B8%EB%8C%80%ED%95%99%EA%B5%90",
+      "sha256": "dc7dcccbb234305675220ceb32488f2f146ed7d9f10f70f65b384dbf27713bc6",
+      "rawBytes": 723500,
+      "excerpts": 2,
+      "quotedWords": 6
+    },
+    {
+      "source": "src-hs-c5-ko-kys",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B9%80%EC%98%81%EC%82%BC",
+      "sha256": "41ae6e70bf8af8b9c041954da5fd4fe4b6130cdf9be22e28b7b7b15a50c77001",
+      "rawBytes": 1379067,
+      "excerpts": 1,
+      "quotedWords": 6
+    },
+    {
+      "source": "src-hs-c5-en-kosong-station",
+      "url": "https://en.wikipedia.org/wiki/Kosong_station",
+      "sha256": "5a1cc3e1e4f44da2acadb9ec64239f96e92fcbecea013e12e65c9f6b4d4cdc72",
+      "rawBytes": 100525,
+      "excerpts": 2,
+      "quotedWords": 5
+    },
+    {
+      "source": "src-hs-c5-ko-goseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%84%B1%EA%B5%B0_(%EA%B0%95%EC%9B%90%EB%8F%84)",
+      "sha256": "bb923709bf1797793e96db01b6cda3306d6d5a4fa28da00109ce7a01d494f9fe",
+      "rawBytes": 97571,
+      "excerpts": 1,
+      "quotedWords": 5
+    },
+    {
+      "source": "src-hs-c5-ko-paekhwawon",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B0%B1%ED%99%94%EC%9B%90_%EC%98%81%EB%B9%88%EA%B4%80",
+      "sha256": "b05b115ee4aaf459b56b893b4e81b3d55ebcc8c2bcf9e19f4392e387c6840fc0",
+      "rawBytes": 71801,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-hs-c5-en-taesong",
+      "url": "https://en.wikipedia.org/wiki/Taesong-guyok",
+      "sha256": "915bd36248a923b27d236bc53b753be8561fd0441ce4e1f2625e9ea599e6c4ab",
+      "rawBytes": 150256,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-c5-en-summit2000",
+      "url": "https://en.wikipedia.org/wiki/2000_inter-Korean_summit",
+      "sha256": "2771804fbd9ae934e4ffae0678bc2f03497b13f55125b1260f3540ac60d2692d",
+      "rawBytes": 515490,
+      "excerpts": 1,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-c5-ko-population",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%9D%B8%EA%B5%AC",
+      "sha256": "0a3340088c0e415eca7f0adc7ff8e3d4f4859ae4f03c2b6dc83477de2caf4a43",
+      "rawBytes": 987125,
+      "excerpts": 1,
+      "quotedWords": 21
     }
   ],
   "missing": [
-    {
-      "id": "miss-hs-c5-1",
-      "itemId": "hs-contemporary-kctu",
-      "reason": "창립 대의원 대회 장소를 확인하지 못해 좌표와 장면을 만들지 않았다",
-      "topic": "1995년 11월 11일 민주노총 창립대의원대회 장소",
-      "detail": "민백·위키백과 어느 쪽도 창립 대회가 열린 자리를 적지 않는다(위키의 창립대회 절은 1990년 전노협 건이다). 본부 소재지인 정동길 3을 덕수궁 좌표로 대신 쓰던 것을 거두고 좌표 없이 사실만 남겼다.",
-      "neededSource": "민주화운동기념사업회·국가기록원 공개 해설 또는 창립 대회장을 적은 우리역사넷 해설"
-    },
     {
       "id": "miss-hs-c5-2",
       "itemId": "hs-contemporary-518-archives",
       "reason": "5·18 민주화 운동 기록관 건물의 십진 좌표를 얻지 못했다",
       "topic": "광주 동구 금남로 221 기록관의 좌표",
-      "detail": "위키백과 기록관 문서에는 소재지만 있고 표시 좌표가 없다. 같은 거리의 금남로4가역 표시 좌표를 대표점으로 썼다.",
+      "detail": "위키백과 기록관 문서에는 소재지(금남로 221)만 있고 표시 좌표가 없다. 이번에 위키백과 금남로 문서(좌표 없음)와 기록관 자리 반경 500m 지리 검색(해당 건물 문서 없음)을 확인했고, 국가유산포털(heritage.go.kr)은 접속이 되지 않았다. 같은 거리의 금남로4가역 표시 좌표를 대표점으로 그대로 쓴다.",
       "neededSource": "국가유산포털·광주광역시 공공누리 해설의 기록관 좌표"
-    },
-    {
-      "id": "miss-hs-c5-3",
-      "itemId": "hs-contemporary-geumgangsan-tour",
-      "reason": "장전항(고성항)의 십진 좌표를 얻지 못했다",
-      "topic": "북측 고성군 장전항의 좌표",
-      "detail": "허용 출처에 장전항 문서가 없어 금강산 관광지구의 표시 좌표를 썼고, 해안에서 20km쯤 떨어져 있어 항구 장면 표현을 거뒀다.",
-      "neededSource": "장전항·고성항의 좌표를 적은 공개 지명 자료"
-    },
-    {
-      "id": "miss-hs-c5-4",
-      "itemId": "hs-contemporary-2000-summit",
-      "reason": "6·15 공동 선언이 나온 백화원 영빈관의 좌표를 얻지 못했다",
-      "topic": "평양 백화원 영빈관의 좌표",
-      "detail": "위키백과 백화원 영빈관 문서에는 표시 좌표가 없다. 근거가 분명한 6월 13일 첫 만남 장소(순안 공항) 좌표를 쓰고 장면의 날짜 근거도 그에 맞췄다.",
-      "neededSource": "백화원 영빈관의 좌표를 적은 공개 자료"
     },
     {
       "id": "miss-hs-c5-5",
       "itemId": "hs-contemporary-low-birthrate-aging",
       "reason": "고령 사회 진입 연도의 확정 근거를 찾지 못했다",
       "topic": "고령 사회(65세 이상 14%) 진입 연도",
-      "detail": "민백 고령화 항목의 2018년 14.3%는 집필 시점의 전망치여서 일어난 일로 담지 않았다. 항목은 2017년을 적는다.",
+      "detail": "민백 고령화 항목의 2018년 14.3%는 집필 시점의 전망치여서 담지 않았다. 이번에 위키백과 '대한민국의 인구'(2016년 이후 14% 초과로 고령사회 진입), 영어 위키백과 Aging of South Korea·Demographics of South Korea(Since 2016 … an 'aged society'), 위키백과 '대한민국의 고령화'를 확인했고 2017년을 적은 허용 출처는 찾지 못했다. '2016년 이후' 서술만 주장으로 담았다.",
       "neededSource": "통계청 장래인구추계·국가기록원 공개 해설의 실제 진입 연도"
-    },
-    {
-      "id": "miss-hs-c5-6",
-      "itemId": "hs-contemporary-kim-youngsam",
-      "reason": "1993년 2월 취임일의 근거를 허용 출처에서 찾지 못했다",
-      "topic": "김영삼의 대통령 취임일",
-      "detail": "민백 김영삼 항목은 1992년 당선과 1998년 2월 25일 임기 종료만 적는다. reignedFrom 은 달지 않았다.",
-      "neededSource": "대통령기록관 역대 대통령 재임 기간 또는 취임일을 적은 공공누리 해설"
     }
   ],
   "collection": {
@@ -429,8 +469,7 @@
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "event-hs-c5-worldcup-2002",
-    "place-hs-c5-worldcup-stadium"
+    "event-hs-c5-aging"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

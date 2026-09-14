@@ -86,7 +86,7 @@ status: "draft"
     },
     "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-honil-roles",
     "quote": "좌정승 김사형, 우정승 이무가 발의하고 의정부 검상 이회가 실무를 맡아 제작한 세계지도이다",
-    "note": "제작 주체가 의정부라는 서술이다. 의정부 관아 자리를 밝힌 근거는 찾지 못했고, 육조거리 동편이라는 것은 조사자의 추정이다.",
+    "note": "제작 주체가 의정부라는 서술이다. 의정부 관아 자리는 『신증동국여지승람』의 “광화문 남쪽의 왼편” 기록으로 뒷받침한다(claim-gap-honil-1).",
     "fromSource": "src-je-encykorea-e0063914",
     "origin": "ai",
     "status": "draft",

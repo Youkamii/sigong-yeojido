@@ -1,9 +1,9 @@
 {
   "job": "joseon-early-4",
-  "sources": 42,
-  "excerpts": 65,
-  "chunkClaims": 21,
-  "excerptClaims": 65,
+  "sources": 48,
+  "excerpts": 75,
+  "chunkClaims": 23,
+  "excerptClaims": 72,
   "facts": 23,
   "factsByCategory": {
     "administration": 4,
@@ -14,8 +14,8 @@
     "settlement": 3,
     "war": 1
   },
-  "claims": 86,
-  "entities": 72,
+  "claims": 95,
+  "entities": 77,
   "rawFilesChecked": [
     {
       "source": "src-hs-enc-wongaksaji",
@@ -352,56 +352,72 @@
       "rawBytes": 113502,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-hs-enc-saongwon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0025831",
+      "sha256": "c4e56fe9cbb24e866de5f4444b20197921b4fc98af6744b37f06605a39d2abaa",
+      "rawBytes": 76282,
+      "excerpts": 1,
+      "quotedWords": 5
+    },
+    {
+      "source": "src-hs-enc-seoul-wongaksa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040579",
+      "sha256": "f656eb63dbaa4354ce55d809004586745f18a2d60b61b75e521112c1033df024",
+      "rawBytes": 143245,
+      "excerpts": 2,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-hs-enc-jangagwon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0048643",
+      "sha256": "8be8f4b3ed5cefd06c644dadde322d6fe817f2251850fdcd0a26407622cd2bea",
+      "rawBytes": 136526,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs-kowiki-toechon",
+      "url": "https://ko.wikipedia.org/wiki/%ED%87%B4%EC%B4%8C%EB%A9%B4",
+      "sha256": "e7117efb2b18f863e715b9cd2badeaf6a9d8b89958c4ba61b7d5935dde869b25",
+      "rawBytes": 95084,
+      "excerpts": 2,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-hs-kowiki-gongjo",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%A1%B0_(%ED%96%89%EC%A0%95%EA%B8%B0%EA%B4%80)",
+      "sha256": "06c3a539307b9b1d4cf47517ded60bfbcd100129da1e531ba080aa3d6689b5dc",
+      "rawBytes": 287001,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-kowiki-sejong-center",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%B8%EC%A2%85%EB%AC%B8%ED%99%94%ED%9A%8C%EA%B4%80",
+      "sha256": "aed09ae1d95e1147b4bd7c9bd10d4c6cf3ce5351190a4a045475655af8d8f40b",
+      "rawBytes": 176781,
+      "excerpts": 1,
+      "quotedWords": 2
     }
   ],
   "missing": [
-    {
-      "id": "miss-hs-je4-1",
-      "itemId": "hs-joseon-early-nobi",
-      "reason": "장예원 터의 십진 좌표를 공개 출처에서 얻지 못했다",
-      "topic": "한성 장예원 터 좌표",
-      "detail": "노비 문서와 소송을 맡은 장예원의 자리를 십진 좌표로 밝힌 공개 자료를 찾지 못해 도성 안의 다른 지점으로 대신했다.",
-      "neededSource": "국가유산포털 또는 서울역사편찬원의 관아 터 좌표(국가유산포털은 이 세션에서 접속 불가)"
-    },
     {
       "id": "miss-hs-je4-2",
       "itemId": "hs-joseon-early-akhak-gwebeom",
       "reason": "장악원 터의 십진 좌표를 얻지 못했다",
       "topic": "한성 장악원 터 좌표",
-      "detail": "악학궤범을 엮은 장악원의 위치를 십진 좌표로 제시한 공개 자료를 찾지 못했다.",
-      "neededSource": "서울역사편찬원 한성부 관아 터 위치 자료"
-    },
-    {
-      "id": "miss-hs-je4-3",
-      "itemId": "hs-joseon-early-baekja",
-      "reason": "퇴촌면 도마리 가마터의 십진 좌표를 얻지 못했다",
-      "topic": "광주 도마리 가마터 좌표",
-      "detail": "사적 「광주 조선백자 요지」의 개별 가마터 좌표를 얻지 못해 광주시 표시 좌표로 대신했다.",
-      "neededSource": "국가유산포털 사적 제314호 소재지 좌표(이 세션에서 heritage.go.kr 접속 불가)"
+      "detail": "악학궤범을 엮은 장악원의 자리를 글로는 확인했다 — 민족문화대백과 「장악원」은 \"위치는 한성부 서부 소속의 여경방에 있었다\"고 적고, 신증동국여지승람 권2 문직공서도 \"掌樂院 在西部餘慶坊\"이라 하며 성현의 제명기는 태상시 동쪽 수십 보로 옮겼다고 한다. 그러나 여경방이나 그 자리의 십진 좌표를 주는 허용 출처를 찾지 못했다: 국가유산포털(heritage.go.kr·khs.go.kr)은 이번에도 TCP 연결이 되지 않았고, 위키백과에 「여경방」 문서가 없으며, 민족문화대백과 검색에도 여경방 항목이 없다. 위키백과 「장악서」가 적는 을지로2가 181번지는 임진왜란으로 여경방 청사가 불탄 뒤의 명례방 청사여서 1493년 장면에 쓸 수 없다. 좌표는 사직단 표시 지점으로 남긴다.",
+      "neededSource": "국가유산포털 또는 공공누리 표시가 있는 기관 해설의 장악원 터(서부 여경방) 좌표"
     },
     {
       "id": "miss-hs-je4-4",
       "itemId": "hs-joseon-early-ojukheon",
       "reason": "오죽헌 건립 연도를 밝힌 기록이 없다",
       "topic": "오죽헌 건립 연도",
-      "detail": "백과사전도 \"적어도 15세기 후반\"이라고만 하며 연도 기록을 제시하지 못한다.",
+      "detail": "백과사전도 \"적어도 15세기 후반\"이라고만 하며 연도 기록을 제시하지 못한다. 이번 보완에서 로컬 원문 조각을 烏竹軒·竹軒·崔應賢·오죽헌·몽룡실로 다시 검색했으나 건립 기사는 없고 1908년 의병 자료의 지명 언급뿐이었으며, 신증동국여지승람에도 오죽헌 기사가 없다. 강릉 지역 읍지·문집은 허용 출처(로컬 조각·encykorea·위키백과·국가유산포털)에 들어 있지 않다.",
       "neededSource": "강릉 지역 읍지·문집의 건립 기사"
-    },
-    {
-      "id": "miss-hs-je4-5",
-      "itemId": "hs-joseon-early-wongaksaji-pagoda",
-      "reason": "석탑 건립 연도 1467을 적은 허용 출처를 확보하지 못했다",
-      "topic": "원각사지 십층석탑 건립 연도(1467)의 허용 출처",
-      "detail": "우리역사넷 한국사 연대기(contents.history.go.kr, kc_r300756)에 \"원각사지 십층석탑은 1467년(세조 13)에 건립된 조선시대의 석탑이다\"가 실제로 있으나 그 HTML에 공공누리 표시가 없어 검증 규칙이 받지 않는다. 국가유산포털(heritage.go.kr·khs.go.kr)은 이 세션에서 TCP 연결이 되지 않았다. 지금 근거는 위키백과 머리말이다.",
-      "neededSource": "국가유산포털 국보 지정 설명 또는 공공누리 표시가 있는 우리역사넷/기관 해설"
-    },
-    {
-      "id": "miss-hs-je4-6",
-      "itemId": "hs-joseon-early-baekja",
-      "reason": "사옹원 설치 연도 1467을 적은 허용 출처를 확보하지 못했다",
-      "topic": "사옹원 설치 연도(1467)의 허용 출처",
-      "detail": "민족문화대백과 「광주 조선백자 요지」는 \"15세기 후반\"이라고만 해 연도 숫자가 없고, 로컬 원문 조각에도 사옹원 항목이 없다. 현재 연도 주장은 위키백과 「사옹원」 머리말에 기댄다.",
-      "neededSource": "한국민족문화대백과 「사옹원」 항목 또는 공공누리 표시가 있는 기관 해설"
     }
   ],
   "collection": {
@@ -421,7 +437,8 @@
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "place-hs-yeonsangun-myo"
+    "institution-hs-jangagwon",
+    "place-hs-yeogyeongbang"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

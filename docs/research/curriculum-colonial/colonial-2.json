@@ -1,9 +1,9 @@
 {
   "job": "colonial-2",
-  "sources": 45,
-  "excerpts": 62,
+  "sources": 50,
+  "excerpts": 72,
   "chunkClaims": 35,
-  "excerptClaims": 67,
+  "excerptClaims": 75,
   "facts": 22,
   "factsByCategory": {
     "administration": 1,
@@ -15,8 +15,8 @@
     "settlement": 2,
     "war": 5
   },
-  "claims": 102,
-  "entities": 60,
+  "claims": 110,
+  "entities": 65,
   "rawFilesChecked": [
     {
       "source": "src-c2-ko-gumi",
@@ -377,6 +377,46 @@
       "rawBytes": 136728,
       "excerpts": 1,
       "quotedWords": 5
+    },
+    {
+      "source": "src-c2-gap-enc-uiyeoldan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0043334",
+      "sha256": "020b57ecef0708d203dd65e474cfd6bde355372722d670268feaf7785d6ebbc9",
+      "rawBytes": 114569,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-c2-gap-enc-soyeon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0029975",
+      "sha256": "176d97d47e6100ffc1fc18844d41c5a1bc887154220660ef24657bc55193e79d",
+      "rawBytes": 91723,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-c2-gap-enc-cheondogyo-soyeon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0078226",
+      "sha256": "fc0aa4192eab403508338cdc48d01809e1632c98bd3622d40970a600d23fca3f",
+      "rawBytes": 82403,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-c2-gap-enc-aunae",
+      "url": "https://encykorea.aks.ac.kr/Article/E0034380",
+      "sha256": "2944147f72f3ce9e42453297c9abd79fe79679a2a966df1ede871c6b82fd3663",
+      "rawBytes": 101084,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-c2-gap-ko-byeongcheon",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B3%91%EC%B2%9C%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90",
+      "sha256": "a06df5e0ea0ba27a20a8fc1b26e9258829ee9752aef0724565d8101e57421ccb",
+      "rawBytes": 161217,
+      "excerpts": 2,
+      "quotedWords": 10
     }
   ],
   "missing": [
@@ -384,7 +424,7 @@
       "id": "miss-c2-1",
       "itemId": "hs-colonial-uiyeoldan",
       "topic": "의열단 결성 지점 좌표",
-      "detail": "길림성 창단 근거는 위키백과 김원봉 문서로 확보했으나, 결성 장소(길림 파호문 밖)의 십진 좌표는 허용 출처에서 찾지 못해 지린시 표시 좌표를 대표점으로 썼다.",
+      "detail": "길림성 창단 근거는 위키백과 김원봉 문서로 확보했으나, 결성 장소(길림 파호문 밖)의 십진 좌표는 허용 출처에서 찾지 못해 지린시 표시 좌표를 대표점으로 썼다. / 2026-09-15 재조사: 한국민족문화대백과사전 의열단 항목(E0043334)에서 「1919년 11월 9일 밤, 만주 길림성 파호문(把虎門) 밖 중국인 반모(潘某)의 집에 모인」을 확보해 결성 지점 이름과 날짜 근거(claim-gap-uiyeoldan-1·2)를 더했다. 그러나 파호문 자리의 십진 좌표는 백과사전에도 없고 ko/en 위키백과에 해당 문서·좌표가 없어(지린 일대 좌표 검색 포함) 지린시 표시 좌표를 그대로 둔다.",
       "neededSource": "한국민족문화대백과사전 의열단 항목 또는 독립기념관 공개 해설의 결성지 상세",
       "reason": "결성 지점의 구체 좌표를 확보하지 못했다"
     },
@@ -392,7 +432,7 @@
       "id": "miss-c2-2",
       "itemId": "hs-colonial-childrens-movement",
       "topic": "첫 어린이날 행사 장소",
-      "detail": "1923년 5월 1일 제1회 어린이날 행사장을 천도교 중앙 대교당으로 잇는 서술을 허용 출처에서 찾지 못했다. 천도교소년회가 주도했다는 사실만 확인된다.",
+      "detail": "1923년 5월 1일 제1회 어린이날 행사장을 천도교 중앙 대교당으로 잇는 서술을 허용 출처에서 찾지 못했다. 천도교소년회가 주도했다는 사실만 확인된다. / 2026-09-15 재조사: 한국민족문화대백과사전 어린이날(E0035938)·소년운동협회(E0029975)·천도교소년운동(E0078226) 세 항목을 모두 확인했다. 1923년 첫 어린이날 행사장은 어느 항목에도 없고, 천도교당에서 열린 행사는 1927년 것으로만 적힌다. 대신 협회 결성 장소가 천도교소년회 사무실이라는 근거(claim-gap-children-1)를 확보해 좌표 대표점의 이유를 보강했다. 행사장 자체의 근거는 여전히 없다.",
       "neededSource": "한국민족문화대백과사전 어린이날·조선소년운동협회 항목",
       "reason": "행사 장소와 건물을 잇는 근거가 없다"
     },
@@ -400,7 +440,7 @@
       "id": "miss-c2-3",
       "itemId": "hs-colonial-yu-gwansun",
       "topic": "아우내 장터 좌표",
-      "detail": "병천면 아우내 장터와 사적 「천안 유관순 열사 유적」의 십진 좌표를 허용 출처에서 찾지 못해 천안 표시 좌표를 대표점으로 썼다.",
+      "detail": "병천면 아우내 장터와 사적 「천안 유관순 열사 유적」의 십진 좌표를 허용 출처에서 찾지 못해 천안 표시 좌표를 대표점으로 썼다. / 2026-09-15 재조사: heritage.go.kr 은 이 환경에서 연결 자체가 되지 않았다(연결 시간 초과, 샌드박스를 풀어도 같다). ko·en 위키백과에는 「천안 유관순 열사 유적」·「병천면」·「아우내장터 만세운동」 문서에 좌표가 없고 반경 10km 좌표 검색에도 사적지 문서가 없다. 대신 한국민족문화대백과사전 아우내 3·1운동 독립사적지 항목(소재지 병천면 병천리)과 같은 병천리에 있는 병천초등학교의 위키백과 좌표로 대표점을 천안시 중심에서 병천리로 옮겼다(claim-gap-yu-gwansun-2). 장터 자체의 좌표는 아직 없다.",
       "neededSource": "국가유산포털 사적 상세 좌표(heritage.go.kr, 이번 조사 때 접속 시간 초과)",
       "reason": "구체 장소 좌표 대신 시 단위 대표점을 썼다"
     }
@@ -422,7 +462,8 @@
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "person-hs-bang-jeonghwan"
+    "place-hs-aunae-market",
+    "place-hs-byeongcheon-school"
   ],
   "reviewedSourceIds": {},
   "integrationAdjustments": {},

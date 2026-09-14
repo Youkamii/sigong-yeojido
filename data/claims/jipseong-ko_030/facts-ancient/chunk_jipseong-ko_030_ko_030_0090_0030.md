@@ -131,6 +131,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-gap-taxation-3",
+    "subject": "polity-baekje",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-gongsanseong"
+    },
+    "citesChunk": "chunk_jipseong-ko_030_ko_030_0090_0030",
+    "quote": "賦稅以布絹絲麻及米等, 量歲豐儉, 差等輸之",
+    "note": "주서 백제전. 세금은 베·비단·실·삼과 쌀로 걷고 그해 풍년과 흉년을 헤아려 등급을 두어 냈다고 적었다. 같은 책이 백제의 도읍을 고마성(웅진)으로 적었다.",
+    "fromSource": "src-jipseong-ko_030",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

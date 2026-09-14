@@ -16,7 +16,7 @@ status: "draft"
       "kind": "entity",
       "id": "institution-hs-chunchugwan"
     },
-    "note": "사초를 춘추관에 모아 실록을 엮었다. 춘추관은 경복궁 안에 있었다.",
+    "note": "사초를 춘추관에 모아 실록을 엮었다. 춘추관이 경복궁 안에 있었다는 것은 『신증동국여지승람』의 조서강 기문으로 뒷받침한다(claim-gap-sillok-1).",
     "fromSource": "src-web-enc-sillok",
     "citesChunk": "chunk_curriculum-joseon-early_joseon-early-1_sillok-gwan",
     "quote": "춘추관에 제출해야 했다",
