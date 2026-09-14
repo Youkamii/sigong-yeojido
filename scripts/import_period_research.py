@@ -243,7 +243,7 @@ def main():
                      generatedBy='claude-opus-5', generatedAt=datetime.fromtimestamp(run['started'],timezone.utc).date().isoformat())
         by_source[sid].append(claim)
     # 장면의 eventId 처럼 entities[] 에 선언되지 않은 주체·대상 id 는 접두어로 유형을 정해 껍데기 개체를 만든다.
-    entity_types = {'event':'Event','place':'Place','person':'Person','polity':'Polity','facility':'Facility',
+    entity_types = {'event':'Event','place':'Place','person':'Person','polity':'Polity','facility':'Facility','heritage':'Facility',
                     'institution':'Institution','group':'Group','organization':'Organization','org':'Organization','work':'Work','office':'Office'}
     declared = {e['id'] for e in draft['entities']}
     scene_labels = {s.get('eventId'): s.get('title') for s in draft.get('scenes', []) if s.get('eventId')}

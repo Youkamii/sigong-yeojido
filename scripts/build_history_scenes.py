@@ -8,6 +8,9 @@ from pathlib import Path
 from import_period_research import ENTITY_ID_ALIASES,source_id_aliases,check_run
 from scene_vocabulary import normalize_group,PARTICIPANT_GROUPS_NOTE,KINDS,scene_kind_errors
 
+# 사실 조사 컬렉션(좌표 배치·집단 정규화 규칙 적용): 파일럿 facts-* 와 교과서 항목 curriculum-*
+FACT_COLLECTIONS = ('facts-', 'curriculum-')
+
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--research',type=Path,required=True)
@@ -50,7 +53,7 @@ for job in args.job or ['invasion_events','yi_naval']:
         if place:
             assert all(c in claims for c in place['claimIds'])
             if not place['claimIds']:
-                if place.get('lon') is not None and args.collection.startswith('facts-'):
+                if place.get('lon') is not None and args.collection.startswith(FACT_COLLECTIONS):
                     # 사실 조사 장면: 활동 장소 주장 없이 조사 출처의 표시 좌표(coordinateSourceIds)만 있는 경우.
                     assert place.get('coordinateSourceIds') or place.get('coordinateNote'),(scene['id'],'coordinate basis missing')
                     place['placementType']='fact-coordinate'
@@ -86,13 +89,13 @@ for job in args.job or ['invasion_events','yi_naval']:
             if args.collection=='scenes-101' and scene['id']=='scene-danghangpo-2-1594' and actor['entityId']=='person-yinav-eo-yeongdam':
                 actor['presence']='related'
         for group in scene.get('participantGroups', []):
-            if args.collection.startswith('facts-'):
+            if args.collection.startswith(FACT_COLLECTIONS):
                 group['claimIds']=ids([c for c in group.get('claimIds', []) if c in claims])
                 group['entityId']=ENTITY_ID_ALIASES.get(group.get('entityId'),group.get('entityId'))
             else:
                 assert all(c in claims for c in group['claimIds'])
                 group['claimIds']=ids(group['claimIds'])
-        if args.collection.startswith('facts-') and 'participantGroups' in scene:
+        if args.collection.startswith(FACT_COLLECTIONS) and 'participantGroups' in scene:
             if scene['participantGroups']:
                 scene['participantGroups']=[normalize_group(group,scene) for group in scene['participantGroups']]
                 scene['participantGroupsNote']=PARTICIPANT_GROUPS_NOTE
