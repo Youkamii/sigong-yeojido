@@ -91,6 +91,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-js-move",
+    "subject": "person-jangsu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-pyongyang"
+    },
+    "citesChunk": "chunk_period92_ancient-medieval_jangsu-pyongyang",
+    "quote": "427년에는 평양성으로 천도를 단행했다",
+    "note": "427년 평양성으로 도읍을 옮겼다.",
+    "fromSource": "src-encykorea-jangsu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

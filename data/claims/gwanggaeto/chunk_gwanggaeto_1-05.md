@@ -46,6 +46,23 @@ claim 으로 만들지 않은 것: 二九 = 18세 라는 환산(표기만 보존
     "origin": "ai",
     "status": "draft",
     "note": "주어는 1면 4줄 끝의 國岡上廣開土境平安好太王 에서 이어진다. 이 永樂 이 뒤의 永樂五年 같은 기년의 연호라는 말은 비문에 없다 — 연호 규정은 claim 으로 만들지 않았다."
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-gg-title",
+    "subject": "person-gwanggaeto",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-goguryeo"
+    },
+    "citesChunk": "chunk_gwanggaeto_1-05",
+    "quote": "二九登祚，號為永樂太王",
+    "note": "광개토대왕릉비 1면 5행. 열여덟에 왕위에 올라 영락태왕이라 불렸다.",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-byeongin-yangyo-repel",
+    "subject": "event-mt1-byeongin-yangyo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-france"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_by-repel",
+    "quote": "정족산성에서 프랑스 군대를 격퇴했다.",
+    "note": "전투 결과.",
+    "fromSource": "src-ek-byeongin-yangyo-e0023142",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

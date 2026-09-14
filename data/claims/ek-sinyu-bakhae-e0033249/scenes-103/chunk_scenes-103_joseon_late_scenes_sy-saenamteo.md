@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-sinyu-saenamteo",
+    "subject": "event-hs-jl5-sinyu",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jl5-saenamteo"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_sy-saenamteo",
+    "quote": "새남터 에서 군문효수(軍門梟首)",
+    "note": "새남터 처형 기록",
+    "fromSource": "src-ek-sinyu-bakhae-e0033249",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

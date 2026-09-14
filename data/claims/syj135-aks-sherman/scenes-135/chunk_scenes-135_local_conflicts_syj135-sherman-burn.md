@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-09"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-bak-gyusu",
+    "subject": "person-syj135-bak-gyusu",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-mt1-sherman"
+    },
+    "citesChunk": "chunk_scenes-135_local_conflicts_syj135-sherman-burn",
+    "quote": "평양감사 박규수(朴珪壽) 가 화공으로 셔먼호를 불태우고, 선원은 몰살하였다.",
+    "note": "화공을 지휘한 평양감사.",
+    "fromSource": "src-syj135-aks-sherman",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

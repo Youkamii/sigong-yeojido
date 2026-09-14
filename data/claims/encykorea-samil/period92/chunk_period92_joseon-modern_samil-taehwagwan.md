@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-samil-taehwagwan",
+    "subject": "event-hs-samil",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-taehwagwan"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_samil-taehwagwan",
+    "quote": "서울 인사동 태화관(泰華館)에 모여",
+    "note": "민족 대표가 모인 장소가 인사동 태화관이다.",
+    "fromSource": "src-encykorea-samil",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

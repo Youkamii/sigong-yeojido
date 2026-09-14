@@ -39,6 +39,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-sbch-def",
+    "subject": "event-gl2-sbc-hangjaeng",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "institution-gl2-sambyeolcho"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_sbchangjaeng-def",
+    "quote": "1270년 6월 삼별초 해산령에 불만을 가진 삼별초 장병들이 개경환도(開京還都)를 거부하고",
+    "note": "개경 환도를 거부하고 3년간 항쟁했다.",
+    "fromSource": "src-encykorea-sambyeolcho-hangjaeng",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

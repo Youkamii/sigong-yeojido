@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-hs-row",
+    "subject": "event-hs-jl1-hansando",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-imjin-japanese-force"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_hs-jp-commander",
+    "quote": "지휘관은 수군장수 와키자카였다.",
+    "note": "일본 수군의 지휘관은 와키자카였다.",
+    "fromSource": "src-encykorea-hansando-daecheop",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

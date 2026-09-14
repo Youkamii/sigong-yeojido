@@ -79,6 +79,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-jyy-1818",
+    "subject": "person-encykorea-jeong-yagyong-e0050549",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1818년",
+      "year": 1818,
+      "precision": "year",
+      "earliest": 1818,
+      "latest": 1818,
+      "id": "ts-curriculum-joseon-late-joseon-late-5-jl5-jyy-1818"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-dasan-stay",
+    "quote": "1818년 귀양에서 풀릴 때까지 10여 년간 생활하면서, 《목민심서》 등을 저술하고",
+    "note": "1808년부터 다산초당에 머물며 1818년 해배 때까지 『목민심서』 등을 썼다",
+    "fromSource": "src-jl2-aks-dasanchodang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

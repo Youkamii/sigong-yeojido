@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-gjw-jinju",
+    "subject": "person-encykorea-gwak-jaeu-e0004695",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-jl1-jinju"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_gwakjaeu-jinju",
+    "quote": "임진왜란이 발발하자 1차 진주성전투를 지원하고",
+    "note": "1차 진주성 전투를 지원했다.",
+    "fromSource": "src-encykorea-gwakjaeu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

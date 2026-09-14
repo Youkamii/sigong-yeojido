@@ -118,6 +118,45 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-1-hs-jindaebeop-time",
+    "subject": "institution-hs-jindaebeop",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "冬十月",
+      "year": 194,
+      "precision": "year",
+      "earliest": 194,
+      "latest": 194,
+      "id": "ts-curriculum-samguk-samguk-1-hs-jindaebeop-time"
+    },
+    "citesChunk": "chunk_samguksagi_sg_016_0030_0140",
+    "quote": "冬十月, 王畋于質陽, 路見坐而哭者.",
+    "note": "고국천왕 16년 10월 기사. 봄 3월부터 가을 7월까지 관곡을 내어 진대하고 10월에 갚게 했다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-1-hs-jindaebeop-rule",
+    "subject": "institution-hs-jindaebeop",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-goguryeo"
+    },
+    "citesChunk": "chunk_samguksagi_sg_016_0030_0140",
+    "quote": "命有司, 每年自春三月, 至秋七月, 出官糓, 以百姓家口多小, 賑貸有差, 至冬十月還納, 以爲恒式, 内外大恱.",
+    "note": "매년 봄 3월부터 가을 7월까지 관곡을 집집 식구 수에 따라 빌려주고 겨울 10월에 갚게 한 상례.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

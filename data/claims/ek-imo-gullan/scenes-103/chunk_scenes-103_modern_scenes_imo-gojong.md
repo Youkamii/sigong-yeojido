@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-imo-gojong",
+    "subject": "person-encykorea-gojong-e0003939",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-mt1-imo-gullan"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_imo-gojong",
+    "quote": "군병이 궁궐에 침입하자 고종은 대원군에게 사태 수습을 맡겼고",
+    "note": "수습을 대원군에게 맡긴 임금.",
+    "fromSource": "src-ek-imo-gullan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

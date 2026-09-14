@@ -45,6 +45,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-gd-reign",
+    "subject": "person-encykorea-gyeongdeok",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "742~765년",
+      "year": 742,
+      "precision": "year",
+      "earliest": 742,
+      "latest": 765,
+      "id": "ts-curriculum-nambukguk-nambukguk-2-nb2-gd-reign"
+    },
+    "citesChunk": "chunk_period96_three_kingdoms_late_gyeongdeok-def",
+    "quote": "경덕왕은 742~765년에 재위한 신라의 제35대 왕으로서, 이름은 김헌영이다.",
+    "note": "민백 경덕왕 항목 발췌 chunk.",
+    "fromSource": "src-encykorea-gyeongdeok",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

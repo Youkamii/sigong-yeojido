@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-gyeongbok-daebi",
+    "subject": "event-mt1-gyeongbok-junggeon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-hs-sinjeong-wanghu"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_gbg-daebi",
+    "quote": "수렴청정 중인 대왕대비[신정왕후]의 강력한 의지로",
+    "note": "중건을 밀어붙인 주체.",
+    "fromSource": "src-ek-gyeongbokgung-e0002434",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

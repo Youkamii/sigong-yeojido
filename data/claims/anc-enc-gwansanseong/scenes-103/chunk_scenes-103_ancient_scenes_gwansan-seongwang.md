@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-gwansan-seongwang",
+    "subject": "event-hs4-gwansanseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs4-baekje"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_gwansan-seongwang",
+    "quote": "성왕이 신라의 기습공격으로 전사하며 패배하였다.",
+    "note": "백제 성왕이 이 싸움에서 전사했다.",
+    "fromSource": "src-anc-enc-gwansanseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-heojun-birth",
+    "subject": "person-encykorea-heo-jun-e0063152",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1539년(중종 32)",
+      "year": 1539,
+      "precision": "year",
+      "earliest": 1539,
+      "latest": 1539,
+      "id": "ts-curriculum-joseon-late-joseon-late-2-jl2-heojun-birth"
+    },
+    "citesChunk": "chunk_period96_joseon_society_heo-jun-born",
+    "quote": "출생 연도1539년(중종 32)",
+    "note": "허준 출생.",
+    "fromSource": "src-encykorea-heo-jun-e0063152",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

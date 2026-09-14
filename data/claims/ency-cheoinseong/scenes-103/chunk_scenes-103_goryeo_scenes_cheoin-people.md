@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-cheoin-people",
+    "subject": "event-gl2-cheoin",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "group-gl2-cheoin-bugok"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_cheoin-people",
+    "quote": "안에 피란하였던 처인부곡민과 승려들의",
+    "note": "성 안에 처인 부곡민과 승려들이 피란해 있었다.",
+    "fromSource": "src-ency-cheoinseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-3-hs-seoul-station-chunk",
+    "subject": "place-hs-old-seoul-station",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1925년",
+      "year": 1925,
+      "precision": "year",
+      "earliest": 1925,
+      "latest": 1925,
+      "id": "ts-curriculum-colonial-colonial-3-hs-seoul-station-chunk"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_seoulyeok-1925",
+    "quote": "1925년 9월 30일에 서울역사가 준공되었는데,",
+    "note": "우리역사넷 계열 발췌 — 1925년 9월 30일 준공",
+    "fromSource": "src-aks-seoul-station",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

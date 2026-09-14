@@ -1,0 +1,5 @@
+---
+id: "event-hs-s3-silla-name"
+type: "Event"
+label: "국호 신라·왕호 제정(503)"
+---

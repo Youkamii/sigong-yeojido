@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-dgbg-order",
+    "subject": "work-hs-donguibogam",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "institution-hs-naeuiwon"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_dgbg-order",
+    "quote": "왕은 곧 내의원에 명하여 인출(印出), 널리 반포하게 하였다.",
+    "note": "왕이 내의원에 찍어 널리 펴게 했다.",
+    "fromSource": "src-ek-donguibogam-e0016731",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

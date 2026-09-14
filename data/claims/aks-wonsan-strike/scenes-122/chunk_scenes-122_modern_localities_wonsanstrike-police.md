@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-3-hs-wonsan-police",
+    "subject": "event-hs-wonsan",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-japan-empire"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_wonsanstrike-police",
+    "quote": "일본 경찰은 우선 원산노동연합회 간부 7, 8명을 구속하고",
+    "note": "일본 경찰이 간부를 구속했다",
+    "fromSource": "src-aks-wonsan-strike",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-chungseon-birth",
+    "subject": "person-encykorea-chungseon",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1275년(충렬왕 1)",
+      "year": 1275,
+      "precision": "year",
+      "earliest": 1275,
+      "latest": 1275,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-chungseon-birth"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_chungseon-birth",
+    "quote": "출생 연도1275년(충렬왕 1)",
+    "note": "충선왕 출생 연도.",
+    "fromSource": "src-encykorea-chungseon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

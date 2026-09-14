@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-samjeong-attack",
+    "subject": "event-hs-jl5-samjeong",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jl5-jinju"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_jj-attack",
+    "quote": "부호들의 집을 파괴하고 재물을 빼앗았다.",
+    "note": "농민들이 부호가를 공격했다",
+    "fromSource": "src-ek-jinju-millan-e0054895",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

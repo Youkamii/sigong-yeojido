@@ -62,6 +62,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-jj-def",
+    "subject": "event-hs-jl1-jinju",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1592년 10월",
+      "year": 1592,
+      "precision": "month",
+      "earliest": 1592,
+      "latest": 1592,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-jj-def"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_jinju-def",
+    "quote": "임진왜란 때인 1592년 10월과 1593년 6월 김시민(金時敏)·김명원(金命元) 등이 진주에서 왜군과 싸운 두 차례의 큰 전투.",
+    "note": "1592년 10월과 1593년 6월 두 차례 진주 전투 중 첫 번째.",
+    "fromSource": "src-encykorea-jinju-jeontu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

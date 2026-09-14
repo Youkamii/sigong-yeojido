@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-1-hs-pyongyangseong-local",
+    "subject": "place-hs-pyongyangseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-pyongyang-battle-371"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_sosurim-371-death",
+    "quote": "371년 10월 부왕이 평양성(平壤城 : 지금의 평양 大城山城)까지 진격해 온 백제군을 맞아 싸우다 전사하자",
+    "note": "로컬 원문 조각 — 371년 전사 현장인 평양성을 지금의 평양 대성산성으로 비정한 서술.",
+    "fromSource": "src-anc-enc-sosurim",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

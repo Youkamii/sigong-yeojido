@@ -43,6 +43,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-seondeok-reign",
+    "subject": "person-encykorea-seondeok",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "재위: 632년~647년",
+      "year": 632,
+      "precision": "year",
+      "earliest": 632,
+      "latest": 647,
+      "id": "ts-curriculum-samguk-samguk-4-hs4-seondeok-reign"
+    },
+    "citesChunk": "chunk_period96_three_kingdoms_late_seondeok-def",
+    "quote": "신라의 제27대(재위: 632년~647년) 왕.",
+    "note": "민족문화대백과의 선덕여왕 재위 기간.",
+    "fromSource": "src-encykorea-seondeok-yeowang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

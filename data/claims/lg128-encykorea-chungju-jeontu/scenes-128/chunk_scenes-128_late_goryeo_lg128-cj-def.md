@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-chungju-def",
+    "subject": "event-gl2-chungju",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1253년(고종 40)",
+      "year": 1253,
+      "precision": "year",
+      "earliest": 1253,
+      "latest": 1253,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-2-gl2-chungju-def"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-cj-def",
+    "quote": "1253년(고종 40), 몽골의 제5차 침입 때 충주성(忠州城)에서 승리를 거둔 전투.",
+    "note": "몽골 5차 침입 때의 충주성 승전.",
+    "fromSource": "src-lg128-encykorea-chungju-jeontu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

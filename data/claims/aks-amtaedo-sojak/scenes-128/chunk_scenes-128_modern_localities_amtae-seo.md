@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-amtae-seo",
+    "subject": "event-hs-amtaedo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-mod128-seo-taeseok"
+    },
+    "citesChunk": "chunk_scenes-128_modern_localities_amtae-seo",
+    "quote": "서태석(徐邰晳)의 주도로 암태소작인회를 조직하고",
+    "note": "서태석이 소작인회를 조직했다.",
+    "fromSource": "src-aks-amtaedo-sojak",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

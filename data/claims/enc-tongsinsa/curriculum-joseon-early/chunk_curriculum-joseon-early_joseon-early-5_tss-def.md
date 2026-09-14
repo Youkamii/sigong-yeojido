@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-tss-def",
+    "subject": "event-hs-jl2-tongsinsa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_curriculum-joseon-early_joseon-early-5_tss-def",
+    "quote": "조선 국왕의 명의로 일본의 막부장군",
+    "note": "통신사는 조선 국왕이 일본 막부장군에게 보낸 공식 외교사절이다.",
+    "fromSource": "src-enc-tongsinsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-bj-chulseong",
+    "subject": "event-hs-jl2-samjeondo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-injo-e0047028"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_bj-chulseong",
+    "quote": "1월 30일 인조는",
+    "note": "1월 30일 인조가 성을 나섰다.",
+    "fromSource": "src-ek-byeongja-horan-e0023151",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

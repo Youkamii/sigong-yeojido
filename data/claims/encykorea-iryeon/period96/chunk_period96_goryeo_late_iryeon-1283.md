@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-iryeon-guksa",
+    "subject": "person-encykorea-iryeon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-gl3-goryeo"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_iryeon-1283",
+    "quote": "1283년에 국사가 되었다.",
+    "note": "1283년 국사가 되었다.",
+    "fromSource": "src-encykorea-iryeon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

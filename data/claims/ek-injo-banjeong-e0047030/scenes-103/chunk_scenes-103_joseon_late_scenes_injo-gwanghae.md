@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-banjeong-gwanghae",
+    "subject": "event-hs-jl2-injo-banjeong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-gwanghaegun-e0005335"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_injo-gwanghae",
+    "quote": "광해군은 반군이 대궐에 들어간 뒤에야 피신하였다.",
+    "note": "광해군은 반군이 대궐에 들어간 뒤에야 피했다.",
+    "fromSource": "src-ek-injo-banjeong-e0047030",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

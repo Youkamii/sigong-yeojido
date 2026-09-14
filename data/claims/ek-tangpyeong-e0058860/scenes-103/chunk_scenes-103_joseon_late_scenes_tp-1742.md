@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-tangpyeongbi-chunk-1742",
+    "subject": "heritage-hs4-tangpyeongbi",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1742년",
+      "year": 1742,
+      "precision": "year",
+      "earliest": 1742,
+      "latest": 1742,
+      "id": "ts-curriculum-joseon-late-joseon-late-4-hs4-tangpyeongbi-chunk-1742"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_tp-1742",
+    "quote": "1742년 영조는",
+    "note": "로컬 chunk로 탕평비 건립 연도를 확인한다.",
+    "fromSource": "src-ek-tangpyeong-e0058860",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-21"
   }
 ]
 ```

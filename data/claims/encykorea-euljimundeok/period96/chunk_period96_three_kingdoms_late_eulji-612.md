@@ -60,6 +60,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-eulji-612",
+    "subject": "person-encykorea-euljimundeok",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs4-salsu"
+    },
+    "citesChunk": "chunk_period96_three_kingdoms_late_eulji-612",
+    "quote": "612년 살수(薩水: 지금의 청천강)에서 수나라 별동대(別動隊) 30만을 격멸시킨 이른바 살수대첩을 거둬",
+    "note": "을지문덕이 612년 살수에서 수의 별동대를 무너뜨렸다.",
+    "fromSource": "src-encykorea-euljimundeok",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

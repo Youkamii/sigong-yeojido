@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-jwu-write",
+    "subject": "person-lg128-yi-seunghyu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "work-gl3-jewang-ungi"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-ss-write",
+    "quote": "『제왕운기』 · 『내전록』을 저술하였다",
+    "note": "삼화사의 불경을 빌려 읽으며 제왕운기를 지었다.",
+    "fromSource": "src-lg128-encykorea-samcheok-yiseunghyu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

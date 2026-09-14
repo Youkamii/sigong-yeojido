@@ -26,6 +26,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-waegwan-resident",
+    "subject": "place-hs-jl2-waegwan",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jl2-dongnae"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-waegwan-resident",
+    "quote": "왜관에 상주하면서 외교 · 무역을 담당하는 대마도 사람들이 지냈고",
+    "note": "왜관에는 외교와 무역을 맡은 대마도 사람들이 상주했다.",
+    "fromSource": "src-jl2-aks-waegwan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

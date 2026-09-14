@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-jwu-def",
+    "subject": "work-gl3-jewang-ungi",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-lg128-yi-seunghyu"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-jwu-def",
+    "quote": "고려후기 문신 이승휴가 우리나라와 중국의 역사를 운율시 형식으로 서술한 역사서",
+    "note": "지은이와 성격.",
+    "fromSource": "src-lg128-encykorea-jewang-ungi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

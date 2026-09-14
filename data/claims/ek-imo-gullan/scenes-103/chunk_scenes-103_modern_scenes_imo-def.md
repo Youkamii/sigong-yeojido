@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-imo-1882",
+    "subject": "event-mt1-imo-gullan",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1882년(고종 19) 6월 9일",
+      "year": 1882,
+      "precision": "day",
+      "earliest": 1882,
+      "latest": 1882,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-imo-1882"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_imo-def",
+    "quote": "1882년(고종 19) 6월 9일 훈국병(訓局兵)들의 군료분쟁(軍料紛爭)에서 발단해",
+    "note": "봉기가 커진 날.",
+    "fromSource": "src-ek-imo-gullan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

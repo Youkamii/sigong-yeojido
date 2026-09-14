@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-tamna-place",
+    "subject": "institution-gl2-tamna-chonggwanbu",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl2-jeju"
+    },
+    "citesChunk": "chunk_scenes-128_middle_kingdoms_tamna-place",
+    "quote": "지금의 제주도에 있었던 옛 나라.",
+    "note": "탐라는 지금의 제주도다.",
+    "fromSource": "src-syj128-aks-tamnaguk",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

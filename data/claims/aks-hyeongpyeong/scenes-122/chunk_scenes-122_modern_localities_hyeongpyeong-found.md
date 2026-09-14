@@ -126,6 +126,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-hyeongpyeong-found",
+    "subject": "event-hs-hyeongpyeong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "org-hs-hyeongpyeongsa"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_hyeongpyeong-found",
+    "quote": "진주 대안동(大安洞)에서, 회원 80여 명과 더불어 창립총회를 열어 형평사를 설립했다",
+    "note": "진주 대안동 창립총회에서 형평사가 섰다.",
+    "fromSource": "src-aks-hyeongpyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

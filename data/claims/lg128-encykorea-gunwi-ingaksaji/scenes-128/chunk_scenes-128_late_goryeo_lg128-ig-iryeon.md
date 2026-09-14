@@ -58,6 +58,45 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-sgy-1284",
+    "subject": "work-gl3-samguk-yusa",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1284년(충렬왕 10)",
+      "year": 1284,
+      "precision": "year",
+      "earliest": 1284,
+      "latest": 1284,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-sgy-1284"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-ig-iryeon",
+    "quote": "일연(一然) 스님이 1284년(충렬왕 10)부터 임종할 때까지 5년 동안 이곳에 머물면서 『삼국유사』를 저술하였다.",
+    "note": "인각사지 항목: 1284년부터 임종까지 인각사에서 삼국유사를 지었다.",
+    "fromSource": "src-lg128-encykorea-gunwi-ingaksaji",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-sgy-write",
+    "subject": "work-gl3-samguk-yusa",
+    "predicate": "syj:producedAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl3-ingaksa"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-ig-iryeon",
+    "quote": "이곳에 머물면서 『삼국유사』를 저술하였다",
+    "note": "삼국유사를 지은 자리가 인각사임을 밝힌 서술.",
+    "fromSource": "src-lg128-encykorea-gunwi-ingaksaji",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

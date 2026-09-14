@@ -89,6 +89,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-cheondo-end",
+    "subject": "place-gl2-ganghwa-gungji",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1270년",
+      "year": 1270,
+      "precision": "year",
+      "earliest": 1270,
+      "latest": 1270,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-2-gl2-cheondo-end"
+    },
+    "citesChunk": "chunk_activity-96_later_capital_activity_ganghwa-1270",
+    "quote": "1270년(원종 11) 개경(開京)으로 환도(還都)할 때까지 고려의 국도가 되었다",
+    "note": "강화는 1270년 환도 때까지 고려의 국도였다.",
+    "fromSource": "src-encykorea-ganghwa-cheondo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

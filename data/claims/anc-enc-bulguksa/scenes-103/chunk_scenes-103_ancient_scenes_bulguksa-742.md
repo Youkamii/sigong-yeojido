@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-bulguk-742",
+    "subject": "facility-nb2-bulguksa",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "year",
+      "value": 742
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_bulguksa-742",
+    "quote": "경덕왕이 즉위한 742년 불국사의 두 탑 공사를 시작하였다고",
+    "note": "석가탑 묵서지편은 742년 착공을 전한다. 창건 연대의 다른 설이다.",
+    "fromSource": "src-anc-enc-bulguksa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

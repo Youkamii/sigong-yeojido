@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-sunjong-birth",
+    "subject": "person-encykorea-sunjong-e0031947",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1874년",
+      "year": 1874,
+      "precision": "year",
+      "earliest": 1874,
+      "latest": 1874,
+      "id": "ts-curriculum-modern-transition-modern-transition-4-hs-mt4-sunjong-birth"
+    },
+    "citesChunk": "chunk_period96_joseon_rulers_encykorea-sunjong-birth",
+    "quote": "출생 연도 1874년(고종 11)",
+    "note": "1874년에 태어났다.",
+    "fromSource": "src-encykorea-sunjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -72,6 +72,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-mokhwa-1363",
+    "subject": "place-gl4-mokmyeon",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1363년(공민왕 12)",
+      "year": 1363,
+      "precision": "year",
+      "earliest": 1363,
+      "latest": 1363,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-4-gl4-mokhwa-1363"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_munikjeom-1363",
+    "quote": "1363년(공민왕 12) 서장관으로 원나라에 갔다가 귀국할 때 몰래 목화씨 종자를",
+    "note": "목화씨를 들여온 해.",
+    "fromSource": "src-encykorea-munikjeom",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

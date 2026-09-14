@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-ggc-heunghwa",
+    "subject": "person-ganggamchan",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-heunghwajin"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_ggc-place",
+    "quote": "흥화진(興化鎭: 현재 평안북도 의주군 위원면)으로 나아갔다.",
+    "note": "강감찬이 나아간 흥화진의 오늘날 위치.",
+    "fromSource": "src-syj122-aks-ganggamchan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

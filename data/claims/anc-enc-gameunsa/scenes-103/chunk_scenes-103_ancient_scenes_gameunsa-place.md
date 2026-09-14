@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-gameunsa-place",
+    "subject": "place-hs-nb1-gameunsa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-sinmun"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_gameunsa-place",
+    "quote": "경상북도 경주시 양북면에 있었던 남북국시대 통일신라의 제31대 신문왕이 창건한 사찰.",
+    "note": "경주시 양북면에 있던 신문왕 창건 사찰이다.",
+    "fromSource": "src-anc-enc-gameunsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-yu-part",
+    "subject": "person-encykorea-yu-gwansun",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-aunae-manse"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_aunae-yu",
+    "quote": "이화학당(梨花學堂) 여학생 유관순(柳寬順)이 끼어 있어",
+    "note": "유관순이 아우내 시위에 참여했다.",
+    "fromSource": "src-ek-cheonan-samil",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

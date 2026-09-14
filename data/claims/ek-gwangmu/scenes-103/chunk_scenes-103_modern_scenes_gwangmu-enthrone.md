@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-dhj-rite",
+    "subject": "event-mt3-daehanjeguk",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-hwangudan"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_gwangmu-enthrone",
+    "quote": "다음날인 10월 12일에 환구단에서 황제 즉위식을 거행하였다.",
+    "note": "환구단에서 황제 즉위식을 거행하였다.",
+    "fromSource": "src-ek-gwangmu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

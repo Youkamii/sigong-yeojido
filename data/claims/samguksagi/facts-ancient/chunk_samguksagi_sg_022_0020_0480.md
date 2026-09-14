@@ -80,6 +80,40 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-andong-year",
+    "subject": "institution-hs-sg5-andong-dohobu",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "year",
+      "value": 668
+    },
+    "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
+    "quote": "置安東都護府於平壤, 以統之",
+    "note": "668년 12월 당이 평양에 안동도호부를 두고 다스리게 했다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-andong-seol",
+    "subject": "institution-hs-sg5-andong-dohobu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-sg5-tang"
+    },
+    "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
+    "quote": "以右威衞大將軍薛仁貴檢校安東都護, 㧾兵二萬人",
+    "note": "설인귀가 안동도호를 맡고 군사 2만으로 진무했다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

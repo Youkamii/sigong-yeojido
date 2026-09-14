@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-4-hs-c4-yun-1932",
+    "subject": "person-encykorea-yun-bonggil",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1932년",
+      "year": 1932,
+      "precision": "year",
+      "earliest": 1932,
+      "latest": 1932,
+      "id": "ts-curriculum-colonial-colonial-4-hs-c4-yun-1932"
+    },
+    "citesChunk": "chunk_period96_modern_yun-1932",
+    "quote": "1932년 한인애국단에 입단, 김구의 주관 하에 전승축하기념식에 폭탄을 투척하기로 계획하고 실행에 옮겼다.",
+    "note": "1932년 한인애국단에 들어가 김구의 주관 아래 의거를 실행했다.",
+    "fromSource": "src-encykorea-yun-bonggil",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-uiyeoldan-kim",
+    "subject": "person-encykorea-kim-wonbong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "org-hs-uiyeoldan"
+    },
+    "citesChunk": "chunk_period96_modern_kwb-1919",
+    "quote": "1919년에 의열단을 조직하여 요인 암살, 국내 경찰서 폭파 등",
+    "note": "김원봉이 의열단을 조직했다.",
+    "fromSource": "src-encykorea-kim-wonbong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

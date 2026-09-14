@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-gjw-death",
+    "subject": "person-encykorea-gwak-jaeu-e0004695",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1617년(광해군 9)",
+      "year": 1617,
+      "precision": "year",
+      "earliest": 1617,
+      "latest": 1617,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-gjw-death"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_gwakjaeu-death",
+    "quote": "사망 연도1617년(광해군 9)",
+    "note": "사망 연도.",
+    "fromSource": "src-encykorea-gwakjaeu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-gukchae-danyeon",
+    "subject": "event-hs-gukchae-bosang",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "org-hs-danyeonhoe"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_gukchae-danyeon",
+    "quote": "민회소(民會所), 즉 단연회(斷煙會)를 설립하여 직접 모금 운동에 나섰다",
+    "note": "담배를 끊어 모은 돈으로 국채를 갚자며 단연회를 세웠다.",
+    "fromSource": "src-ek-gukchae-bosang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

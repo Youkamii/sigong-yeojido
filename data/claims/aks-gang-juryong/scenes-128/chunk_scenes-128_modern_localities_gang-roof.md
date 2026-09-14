@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-4-hs-c4-gang-roof",
+    "subject": "person-mod128-gang-juryong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-c4-eulmildae"
+    },
+    "citesChunk": "chunk_scenes-128_modern_localities_gang-roof",
+    "quote": "을밀대(乙密台) 지붕으로 올라가",
+    "note": "파업 중 을밀대 지붕에 올라 고공 농성을 벌였다.",
+    "fromSource": "src-aks-gang-juryong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

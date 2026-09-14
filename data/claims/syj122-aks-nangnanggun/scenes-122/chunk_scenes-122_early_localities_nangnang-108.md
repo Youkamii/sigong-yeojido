@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-2-hs-hansagun-date",
+    "subject": "polity-hs-nangnang",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "서기전 108년",
+      "year": -108,
+      "precision": "year",
+      "earliest": -108,
+      "latest": -108,
+      "id": "ts-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-2-hs-hansagun-date"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_nangnang-108",
+    "quote": "낙랑군은 서기전 108년 한 무제(武帝)에 의해 옛 고조선의 중심부에 설치되어",
+    "note": "우리역사넷 계열 발췌 chunk — 낙랑군 설치 연도와 위치.",
+    "fromSource": "src-syj122-aks-nangnanggun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

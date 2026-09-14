@@ -96,6 +96,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-09"
+  },
+  {
+    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-amsa-village",
+    "subject": "event-hs-pg1-amsa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-pg1-amsadong"
+    },
+    "citesChunk": "chunk_scenes-135_forts_settlements_syj135-amsa-1971",
+    "quote": "신석기시대 집자리가 취락을 이루고",
+    "note": "국립중앙박물관 조사로 신석기 집자리가 취락을 이룬 것이 확인되었다.",
+    "fromSource": "src-syj135-aks-amsadong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

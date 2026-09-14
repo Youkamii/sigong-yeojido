@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-bbs-make",
+    "subject": "institution-hs-jl1-bibyeonsa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_curriculum-joseon-early_joseon-early-5_bbs-make",
+    "quote": "임시적으로 비변사라는 비상 시국에 대비하는 기구를 만들었다",
+    "note": "비변사는 본래 임시 대비 기구로 만들어졌다는 로컬 원문 조각.",
+    "fromSource": "src-enc-bibyeonsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

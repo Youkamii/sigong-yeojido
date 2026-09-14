@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-jyy-chodang",
+    "subject": "person-encykorea-jeong-yagyong-e0050549",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jl5-dasanchodang"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-dasan-place",
+    "quote": "전남 강진군 도암면 만덕리 산103-2번지",
+    "note": "다산초당의 소재지",
+    "fromSource": "src-jl2-aks-dasanchodang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

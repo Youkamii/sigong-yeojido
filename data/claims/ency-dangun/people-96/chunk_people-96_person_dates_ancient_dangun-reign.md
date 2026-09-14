@@ -49,6 +49,50 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-dangun-reign-from",
+    "subject": "event-hs-pg1-dangun",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "BCE.2333",
+      "year": -2333,
+      "precision": "year",
+      "earliest": -2333,
+      "latest": -2333,
+      "id": "ts-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-dangun-reign-from"
+    },
+    "citesChunk": "chunk_people-96_person_dates_ancient_dangun-reign",
+    "quote": "고조선의 제1대(재위:BCE.2333~BCE.1122) 왕.",
+    "note": "민족문화대백과가 적은 단군의 재위 시작 표기다.",
+    "fromSource": "src-ency-dangun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-dangun-reign-to",
+    "subject": "event-hs-pg1-dangun",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "BCE.1122",
+      "year": -1122,
+      "precision": "year",
+      "earliest": -1122,
+      "latest": -1122,
+      "id": "ts-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-dangun-reign-to"
+    },
+    "citesChunk": "chunk_people-96_person_dates_ancient_dangun-reign",
+    "quote": "고조선의 제1대(재위:BCE.2333~BCE.1122) 왕.",
+    "note": "같은 표기의 재위 마지막 해다.",
+    "fromSource": "src-ency-dangun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

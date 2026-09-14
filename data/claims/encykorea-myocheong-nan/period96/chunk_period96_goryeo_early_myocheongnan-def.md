@@ -72,6 +72,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-seogyeong-enc",
+    "subject": "event-hs-ge4-seogyeong-nan",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-ge4-seogyeong"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_myocheongnan-def",
+    "quote": "1135년(인종 13), 묘청 등이 서경(西京: 지금의 평양)에서 일으킨 반란.",
+    "note": "서경은 지금의 평양이다.",
+    "fromSource": "src-encykorea-myocheong-nan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

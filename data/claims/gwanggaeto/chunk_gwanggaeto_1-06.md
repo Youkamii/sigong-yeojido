@@ -98,6 +98,23 @@ claim 으로 만들지 않은 것: 사망 연도(비문은 나이만 말한다),
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-stele-erect",
+    "subject": "person-jangsu",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "place-gwanggaeto-stele"
+    },
+    "citesChunk": "chunk_gwanggaeto_1-06",
+    "quote": "以甲寅年九月廿九日乙酉遷就山陵於是立碑銘記勳績",
+    "note": "능비 1면 6행. 갑인년(414) 9월 29일 산릉으로 옮기고 비를 세워 공적을 새겼다.",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

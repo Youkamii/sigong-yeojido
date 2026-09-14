@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-sinyu-martyrs",
+    "subject": "event-hs-jl5-sinyu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-jl5-seohak"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_sy-martyrs",
+    "quote": "300여 명의 순교자가 생겼다.",
+    "note": "순교자 규모",
+    "fromSource": "src-ek-sinyu-bakhae-e0033249",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

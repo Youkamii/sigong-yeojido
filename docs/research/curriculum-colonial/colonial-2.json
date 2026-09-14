@@ -1,0 +1,398 @@
+{
+  "job": "colonial-2",
+  "sources": 41,
+  "excerpts": 55,
+  "chunkClaims": 35,
+  "excerptClaims": 60,
+  "facts": 22,
+  "factsByCategory": {
+    "administration": 2,
+    "culture": 2,
+    "economy": 3,
+    "facility": 2,
+    "foreign": 2,
+    "person": 5,
+    "settlement": 1,
+    "war": 5
+  },
+  "claims": 95,
+  "entities": 60,
+  "rawFilesChecked": [
+    {
+      "source": "src-c2-ko-gumi",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EB%AF%B8%EC%9C%84%EC%9B%90%EB%B6%80",
+      "sha256": "cb226eb43e6ab959ea5a9241a35a7d2d9c5986d601df55e3967ddde744738d32",
+      "rawBytes": 272216,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-c2-en-washington",
+      "url": "https://en.wikipedia.org/wiki/Washington%2C_D.C.",
+      "sha256": "f251c1c56bd432d97ac9098e13dbb8e04d427b37bdd761d8881f8dd98c45dad1",
+      "rawBytes": 2182587,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-en-paris",
+      "url": "https://en.wikipedia.org/wiki/Paris",
+      "sha256": "2683c7eb3ecac5f79f544701975869455b3e74eefb4839b84b6951ff207be2ef",
+      "rawBytes": 1871276,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-en-shanghai",
+      "url": "https://en.wikipedia.org/wiki/Shanghai",
+      "sha256": "cca71e351339942b8f2953b348b30b98b1e7fd2e3771e6adcfe1391d37739e00",
+      "rawBytes": 2157829,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-kpg",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EC%9E%84%EC%8B%9C%EC%A0%95%EB%B6%80",
+      "sha256": "fc830a35d723547f5f545c463a2fd0d7fdf5bfcee775b0e826783d4a3f0e7dd6",
+      "rawBytes": 1270909,
+      "excerpts": 1,
+      "quotedWords": 6
+    },
+    {
+      "source": "src-c2-ko-tapgol",
+      "url": "https://ko.wikipedia.org/wiki/%ED%83%91%EA%B3%A8%EA%B3%B5%EC%9B%90",
+      "sha256": "40b8800a2db1694902ff973a9865baede46fbb74fec2694bb8ad52114e82f968",
+      "rawBytes": 212647,
+      "excerpts": 2,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-c2-en-jilin",
+      "url": "https://en.wikipedia.org/wiki/Jilin_City",
+      "sha256": "28de22a13976935147bccb4dee851bdb21ff511dc6962a0ea5f40786054336a3",
+      "rawBytes": 522022,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-uiyeoldan",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%98%EC%97%B4%EB%8B%A8",
+      "sha256": "b20f5e6e2bc0aaf5ae95ad887afd9a256639bde6c667b72708ea6d4c40a66c9b",
+      "rawBytes": 281837,
+      "excerpts": 1,
+      "quotedWords": 4
+    },
+    {
+      "source": "src-c2-en-cheonan",
+      "url": "https://en.wikipedia.org/wiki/Cheonan",
+      "sha256": "eb6d0fc0d831505ba47e8a06dbacae4f21a4dd24a24dd0e095c16a07520ba87d",
+      "rawBytes": 292893,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-en-tumen",
+      "url": "https://en.wikipedia.org/wiki/Tumen%2C_Jilin",
+      "sha256": "52246810f4d096474e04799277ca49fb65dbba2bab84431721477d3ca7332afb",
+      "rawBytes": 194861,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-en-helong",
+      "url": "https://en.wikipedia.org/wiki/Helong",
+      "sha256": "2b20dfac99c1205737330b92b2f8715333f1f70bbfa054659b577db86bb68406",
+      "rawBytes": 183264,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-gando",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%84%EB%8F%84_%EC%B0%B8%EB%B3%80",
+      "sha256": "aa8adea4391da7d03a9472ae19365258b0963a9b3b6a0cfd31345e215df7c973",
+      "rawBytes": 125082,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-c2-en-yanji",
+      "url": "https://en.wikipedia.org/wiki/Yanji",
+      "sha256": "2da9c705fc47ae6b3abe06a0f0518703d229ea4382cd9ec7261ff03011d8f268",
+      "rawBytes": 370325,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-en-hongseong",
+      "url": "https://en.wikipedia.org/wiki/Hongseong_County",
+      "sha256": "72d36fa1d0b374b273d7ed2b10e7fba4b977d472aa632bd8caa00e22a8ff0b45",
+      "rawBytes": 178715,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-park-eunsik",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B0%95%EC%9D%80%EC%8B%9D",
+      "sha256": "3480ef86db1e15648494211dee3169e94bceb5a1641c61cc0043ef86e8bda6a6",
+      "rawBytes": 332936,
+      "excerpts": 3,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-c2-en-hwangju",
+      "url": "https://en.wikipedia.org/wiki/Hwangju_County",
+      "sha256": "d6a5cfe77f4f109842bd3ac71281ac40b6ddacba25449b4a251b8db87df4b2f4",
+      "rawBytes": 117208,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-mulsan",
+      "url": "https://ko.wikipedia.org/wiki/%EB%AC%BC%EC%82%B0%EC%9E%A5%EB%A0%A4%EC%9A%B4%EB%8F%99",
+      "sha256": "e69777ee00fa8e9163f3b3a31745a928aa4bd5ea34e50fa140feb9445b5d7b24",
+      "rawBytes": 98014,
+      "excerpts": 3,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-c2-en-pyongyang",
+      "url": "https://en.wikipedia.org/wiki/Pyongyang",
+      "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+      "rawBytes": 897617,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-sanmi",
+      "url": "https://ko.wikipedia.org/wiki/%EC%82%B0%EB%AF%B8%EC%A6%9D%EC%8B%9D%EA%B3%84%ED%9A%8D",
+      "sha256": "d1eb10e6ce33ecf7db092ea6e3fb59ce19043f9390875c873322588f8292f2d4",
+      "rawBytes": 55463,
+      "excerpts": 1,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-c2-en-gunsan",
+      "url": "https://en.wikipedia.org/wiki/Gunsan",
+      "sha256": "eec6af8233600a63eb87cf0125ca389abaed67ce223c51cf91f39158a3bc6241",
+      "rawBytes": 279654,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-jayusi",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%9C%A0%EC%8B%9C_%EC%B0%B8%EB%B3%80",
+      "sha256": "07036fc754a189cb7903a30b964e628338b94807fcbd9256b4251f40f2cc037a",
+      "rawBytes": 224100,
+      "excerpts": 1,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-c2-ko-svobodny",
+      "url": "https://ko.wikipedia.org/wiki/%EC%8A%A4%EB%B3%B4%EB%B3%B4%EB%93%9C%EB%8B%88",
+      "sha256": "0184ce0fd786f572c5d13fc25b055a5f0c0125b756ecb0356900b0025cf1e000",
+      "rawBytes": 144952,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-bang",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B0%A9%EC%A0%95%ED%99%98",
+      "sha256": "f07f0562a0ec69040eee7c93f7a62b42cc0a54d19a5faaa6d881e41caa99ae60",
+      "rawBytes": 324956,
+      "excerpts": 3,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-c2-en-jongno",
+      "url": "https://en.wikipedia.org/wiki/Jongno_District",
+      "sha256": "842b6b175712c245ec1c05bcb0101887fdcca4fe731fb5582ca990ee37369cdb",
+      "rawBytes": 317196,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-children",
+      "url": "https://ko.wikipedia.org/wiki/%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%82%A0",
+      "sha256": "580274a7e72c1f5b2b5a131e6d21549ae57450c423aa12af2da6af40a9af4acb",
+      "rawBytes": 529790,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-c2-ko-cheondogyo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%9C%EB%8F%84%EA%B5%90_%EC%A4%91%EC%95%99%EB%8C%80%EA%B5%90%EB%8B%B9",
+      "sha256": "8236d839b0b3e7bc0828b65c843fd1ea6ab0d24a3b0c88d62fa6898a9f7f2db1",
+      "rawBytes": 90689,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-gunsan-bank",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC_%EC%A1%B0%EC%84%A0%EC%9D%80%ED%96%89_%EA%B5%B0%EC%82%B0%EC%A7%80%EC%A0%90",
+      "sha256": "04ef91c0903f087d4d737fcba44ef71b7227009f2f901b1d3edebabd610ccae5",
+      "rawBytes": 68985,
+      "excerpts": 3,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-c2-ko-gunsan-customs",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC_%EA%B5%B0%EC%82%B0%EC%84%B8%EA%B4%80_%EB%B3%B8%EA%B4%80",
+      "sha256": "b469f9f4dcaa887a9780bc72d6aada24281e638a538c053c784a900c56eacb14",
+      "rawBytes": 92645,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-jinju",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A7%84%EC%A3%BC%EC%8B%9C",
+      "sha256": "583e38eeb69ac4921a9d3fd4595db17d18b644ba3dc36a36bcb33ae7bf9ecac1",
+      "rawBytes": 389871,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-jrd",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%ED%98%81%EB%AA%85%EC%84%A0%EC%96%B8",
+      "sha256": "f692c0d1f7e6f84b61732d342460deb397a0bf0fbc9584b273b77ecbb9271479",
+      "rawBytes": 116392,
+      "excerpts": 1,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-c2-en-beijing",
+      "url": "https://en.wikipedia.org/wiki/Beijing",
+      "sha256": "4be592131736c024b363d84a60e5f951b2f6e4abafbe5bbbacdd071c9321bfae",
+      "rawBytes": 2374700,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-en-insadong",
+      "url": "https://en.wikipedia.org/wiki/Insa-dong",
+      "sha256": "c5f35d2ad1d606cb16b8db8f795b7ecdf9dce0664902353873e81c4ac741ef5e",
+      "rawBytes": 250803,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-c2-ko-cheongsanri",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%82%B0%EB%A6%AC_%EC%A0%84%ED%88%AC",
+      "sha256": "86b9432179e592a72cda1f353c0e8d59dd60dd21f23f0fa894dfd1d166a4699c",
+      "rawBytes": 324825,
+      "excerpts": 1,
+      "quotedWords": 11
+    },
+    {
+      "source": "src-c2-ko-bongodong",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B4%89%EC%98%A4%EB%8F%99_%EC%A0%84%ED%88%AC",
+      "sha256": "0454fc75bf8551f95f8c9971989a950b935a06af72c8a54144066201827bea5b",
+      "rawBytes": 217273,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-c2-enc-gyeongsin",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002635",
+      "sha256": "70058709535440aa5313336c0c1dc9f31b5424ffc82562ee4b91b316ab059cb5",
+      "rawBytes": 99658,
+      "excerpts": 1,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-c2-enc-gumi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0005776",
+      "sha256": "5999cffa2c30f03010f8f68843cf4f53dc7bec105a535a04d45f7e7893a9afd3",
+      "rawBytes": 79654,
+      "excerpts": 1,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-c2-enc-mulsan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0052020",
+      "sha256": "e6e419d85cc92cfbd20318d41b3d9eb5a022af7cea92e31b0dc7d30017bf6ad1",
+      "rawBytes": 102977,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-c2-enc-jayusi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0072193",
+      "sha256": "c94df5e150b50f99f45d01bbe0047cb59812ead6b48b0ab5192ca05f2e3b9813",
+      "rawBytes": 113096,
+      "excerpts": 1,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-c2-enc-sinchaeho",
+      "url": "https://encykorea.aks.ac.kr/Article/E0033432",
+      "sha256": "8e21d92c810a617570b3dbdc909ec7072f59e5d35f4cf0dc693e0f1a21e236b4",
+      "rawBytes": 171565,
+      "excerpts": 1,
+      "quotedWords": 5
+    },
+    {
+      "source": "src-c2-enc-park",
+      "url": "https://encykorea.aks.ac.kr/Article/E0021025",
+      "sha256": "1dbf75d3c124a5ba52e71434d9eb4a30e30edef7c66c3ecfa258122d1663c455",
+      "rawBytes": 152982,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-c2-enc-sanmi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0026227",
+      "sha256": "287571c89c26d97fdb0a9221bd5017b16df84849e8935e64e1965430778af9e8",
+      "rawBytes": 87858,
+      "excerpts": 1,
+      "quotedWords": 10
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-c2-1",
+      "itemId": "hs-colonial-gunsan-modern-buildings",
+      "topic": "구 조선은행 군산지점 준공 연도",
+      "detail": "통설은 1923년이나 허용 출처에서 준공 연도를 확인하지 못했다. 확인된 것은 2008년 7월 3일 국가등록문화유산 지정과 장미동 소재지뿐이다.",
+      "neededSource": "국가유산포털 등록문화유산 제374호 상세(접속 불가) 또는 군산시 공식 해설",
+      "reason": "준공 연도 1923년을 허용 출처로 확인하지 못했다"
+    },
+    {
+      "id": "miss-c2-2",
+      "itemId": "hs-colonial-uiyeoldan",
+      "topic": "의열단 결성지",
+      "detail": "교과서와 백과는 만주 지린(길림) 창단을 적고 한국어 위키백과는 상하이 본부를 적는다. 결성 장소의 좌표 근거는 찾지 못했다.",
+      "neededSource": "한국민족문화대백과사전 의열단 항목 원문 또는 독립기념관 공개 해설",
+      "reason": "결성지 지린·상하이 이설을 한 출처로 확정하지 못했다"
+    },
+    {
+      "id": "miss-c2-3",
+      "itemId": "hs-colonial-yu-gwansun",
+      "topic": "아우내 장터 좌표",
+      "detail": "병천면 아우내 장터와 사적 「천안 유관순 열사 유적」의 십진 좌표를 허용 출처에서 찾지 못해 천안 표시 좌표를 대표점으로 썼다.",
+      "neededSource": "국가유산포털 사적 상세 좌표(heritage.go.kr, 이번 조사 때 접속 시간 초과)",
+      "reason": "구체 장소 좌표 대신 시 단위 대표점을 썼다"
+    }
+  ],
+  "collection": {
+    "task": "colonial-2",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789351921,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-colonial-2"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "event-hs-sanmi"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

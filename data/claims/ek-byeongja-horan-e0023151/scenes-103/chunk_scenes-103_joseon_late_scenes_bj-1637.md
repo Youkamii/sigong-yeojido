@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-bj-1637",
+    "subject": "event-hs-jl2-samjeondo",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1637년",
+      "year": 1637,
+      "precision": "year",
+      "earliest": 1637,
+      "latest": 1637,
+      "id": "ts-curriculum-joseon-late-joseon-late-2-jl2-bj-1637"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_bj-1637",
+    "quote": "1637년",
+    "note": "항복은 1637년의 일이다.",
+    "fromSource": "src-ek-byeongja-horan-e0023151",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

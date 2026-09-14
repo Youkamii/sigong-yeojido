@@ -24,6 +24,45 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-1-hs-gwangjong-reform",
+    "subject": "person-encykorea-goryeo-gwangjong",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-gwangjong-reform"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_gwangjong-reform",
+    "quote": "956년(광종 7)에 노비안검법(奴婢按檢法)을 실시하였고, 958(광종 9)년에는 과거(科擧)제도를 시행하였다.",
+    "note": "노비안검법과 과거제.",
+    "fromSource": "src-encykorea-goryeo-gwangjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-1-hs-nobi-956w",
+    "subject": "event-hs-nobi-angeom",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "956년(광종 7)",
+      "year": 956,
+      "precision": "year",
+      "earliest": 956,
+      "latest": 956,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-1-hs-nobi-956w"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_gwangjong-reform",
+    "quote": "956년(광종 7)에 노비안검법(奴婢按檢法)을 실시하였고",
+    "note": "시행 연도.",
+    "fromSource": "src-encykorea-goryeo-gwangjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

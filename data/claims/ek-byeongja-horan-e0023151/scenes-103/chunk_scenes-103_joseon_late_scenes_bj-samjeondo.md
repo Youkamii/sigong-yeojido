@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-bj-samjeondo",
+    "subject": "event-hs-jl2-samjeondo",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jl2-samjeondo"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_bj-samjeondo",
+    "quote": "삼전도(三田渡)에서 성하(城下)의 맹(盟)의 예를 행한",
+    "note": "삼전도에서 성 아래의 맹세 의식을 치렀다.",
+    "fromSource": "src-ek-byeongja-horan-e0023151",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

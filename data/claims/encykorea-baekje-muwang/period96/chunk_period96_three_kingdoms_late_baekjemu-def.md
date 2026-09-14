@@ -44,6 +44,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-muwang-reign",
+    "subject": "person-encykorea-baekje-mu",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "재위: 600년~641년",
+      "year": 600,
+      "precision": "year",
+      "earliest": 600,
+      "latest": 641,
+      "id": "ts-curriculum-samguk-samguk-4-hs4-muwang-reign"
+    },
+    "citesChunk": "chunk_period96_three_kingdoms_late_baekjemu-def",
+    "quote": "백제의 제30대(재위: 600년~641년) 왕.",
+    "note": "민족문화대백과의 무왕 재위 기간.",
+    "fromSource": "src-encykorea-baekje-muwang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

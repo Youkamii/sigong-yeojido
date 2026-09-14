@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-yi-wins",
+    "subject": "person-encykorea-yi-sunsin",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-imjin-japanese-force"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_yisunsin-imjin",
+    "quote": "임진왜란이 나자 옥포·노량·당포·당항포에서 연전연승을 거듭했다",
+    "note": "옥포·노량·당포·당항포에서 연전연승했다.",
+    "fromSource": "src-encykorea-yisunsin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-nr-burn",
+    "subject": "event-hs-jl1-noryang",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-imjin-japanese-force"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_no-burn",
+    "quote": "왜의 수군 선박 200여척이 불에 타 침몰하거나",
+    "note": "왜 수군 선박 200여 척이 불타거나 가라앉았다.",
+    "fromSource": "src-encykorea-noryang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

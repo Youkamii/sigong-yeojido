@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-banjeong-date",
+    "subject": "event-hs-jl2-injo-banjeong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1623년 3월 13일",
+      "year": 1623,
+      "precision": "day",
+      "earliest": 1623,
+      "latest": 1623,
+      "id": "ts-curriculum-joseon-late-joseon-late-2-jl2-banjeong-date"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_injo-date",
+    "quote": "1623년 3월 13일 밤에",
+    "note": "반정은 1623년 3월 13일 밤에 일어났다.",
+    "fromSource": "src-ek-injo-banjeong-e0047030",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

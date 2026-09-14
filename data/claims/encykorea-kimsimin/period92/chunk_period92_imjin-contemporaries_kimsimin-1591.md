@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-km-1591",
+    "subject": "person-encykorea-kim-simin-e0009658",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1591년",
+      "year": 1591,
+      "precision": "year",
+      "earliest": 1591,
+      "latest": 1591,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-km-1591"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_kimsimin-1591",
+    "quote": "1591년 진주판관이 되어",
+    "note": "1591년 진주판관이 되었다.",
+    "fromSource": "src-encykorea-kimsimin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-baekje-fall-siege",
+    "subject": "event-hs-sg5-baekje-fall",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-sg5-sabiseong"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_uija-siege",
+    "quote": "두 나라의 군대가 합류하여 7월 12일 사비성(泗沘城)을 포위하였다",
+    "note": "나당 연합군이 사비성을 포위했다",
+    "fromSource": "src-anc-enc-uija",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

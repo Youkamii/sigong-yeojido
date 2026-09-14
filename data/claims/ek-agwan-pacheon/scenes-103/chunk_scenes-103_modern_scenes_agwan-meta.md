@@ -45,6 +45,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-agwan-date",
+    "subject": "event-mt3-agwan",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1896년 2월 11일",
+      "year": 1896,
+      "precision": "day",
+      "earliest": 1896,
+      "latest": 1896,
+      "id": "ts-curriculum-modern-transition-modern-transition-3-mt3-agwan-date"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_agwan-meta",
+    "quote": "일시 1896년 2월 11일 장소 러시아공사관",
+    "note": "사건 정보란의 일시와 장소.",
+    "fromSource": "src-ek-agwan-pacheon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

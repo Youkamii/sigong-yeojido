@@ -62,6 +62,23 @@ claim 으로 만들지 않은 것: 韓穢 가 어느 지역 사람들인지(엔�
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-strata-sumyo",
+    "subject": "polity-goguryeo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-gwanggaeto-stele"
+    },
+    "citesChunk": "chunk_gwanggaeto_4-06",
+    "quote": "取韓穢二百廿家",
+    "note": "능비 4면 6행. 무덤을 지킬 사람으로 한·예 220가를 데려왔다.",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

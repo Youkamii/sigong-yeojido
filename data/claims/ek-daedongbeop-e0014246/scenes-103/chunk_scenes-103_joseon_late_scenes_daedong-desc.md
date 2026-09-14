@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-daedong-desc",
+    "subject": "event-hs-jl2-daedongbeop",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "institution-hs-seonhyecheong"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_daedong-desc",
+    "quote": "지역별로 쌀·베·돈으로 납부하게 한 세금 및 재정 제도.",
+    "note": "공물을 쌀·베·돈으로 내게 한 제도다.",
+    "fromSource": "src-ek-daedongbeop-e0014246",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

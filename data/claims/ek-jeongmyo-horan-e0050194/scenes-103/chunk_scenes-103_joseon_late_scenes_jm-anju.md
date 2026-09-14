@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-jm-anju",
+    "subject": "event-hs-jl2-jeongmyo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_jm-anju",
+    "quote": "후금군은 남진을 계속, 안주성을 점령하고 다시 평양을 거쳐 황주까지 진출하였다.",
+    "note": "후금군은 안주·평양을 거쳐 황주까지 내려왔다.",
+    "fromSource": "src-ek-jeongmyo-horan-e0050194",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

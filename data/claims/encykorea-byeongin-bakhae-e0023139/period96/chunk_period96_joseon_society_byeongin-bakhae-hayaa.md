@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-daewongun-1873",
+    "subject": "event-mt1-byeongin-bakhae",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1873년",
+      "year": 1873,
+      "precision": "year",
+      "earliest": 1873,
+      "latest": 1873,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-daewongun-1873"
+    },
+    "citesChunk": "chunk_period96_joseon_society_byeongin-bakhae-hayaa",
+    "quote": "1873년 흥선대원군의 하야로 박해가 끝났다",
+    "note": "대원군 하야 연도.",
+    "fromSource": "src-encykorea-byeongin-bakhae-e0023139",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

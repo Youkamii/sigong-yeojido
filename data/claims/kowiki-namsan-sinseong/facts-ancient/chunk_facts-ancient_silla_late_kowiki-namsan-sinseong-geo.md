@@ -26,6 +26,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-namsan-loc",
+    "subject": "place-hs4-seorabeol-namsan",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 35.81694,
+      "lon": 129.22861,
+      "precision": "area"
+    },
+    "citesChunk": "chunk_facts-ancient_silla_late_kowiki-namsan-sinseong-geo",
+    "quote": "35.81694; 129.22861",
+    "note": "화랑이 유람한 곳을 특정할 수 없어 서라벌 남산의 표시 좌표(남산신성)를 대표점으로 썼다.",
+    "fromSource": "src-kowiki-namsan-sinseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

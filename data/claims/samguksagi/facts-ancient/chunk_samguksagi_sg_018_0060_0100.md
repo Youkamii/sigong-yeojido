@@ -61,6 +61,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-pyong-427",
+    "subject": "event-hs-sg2-pyongyang-move",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "year",
+      "value": 427
+    },
+    "citesChunk": "chunk_samguksagi_sg_018_0060_0100",
+    "quote": "十五年, 移都平壤",
+    "note": "삼국사기 고구려본기 장수왕 15년(427). 평양으로 도읍을 옮겼다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

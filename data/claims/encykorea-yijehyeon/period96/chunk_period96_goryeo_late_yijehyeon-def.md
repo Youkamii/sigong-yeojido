@@ -23,6 +23,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-yjh-def",
+    "subject": "person-encykorea-yijehyeon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-gl3-goryeo"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_yijehyeon-def",
+    "quote": "고려후기 정당문학, 판삼사사, 정승 등을 역임한 관리",
+    "note": "이제현의 관력.",
+    "fromSource": "src-encykorea-yijehyeon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

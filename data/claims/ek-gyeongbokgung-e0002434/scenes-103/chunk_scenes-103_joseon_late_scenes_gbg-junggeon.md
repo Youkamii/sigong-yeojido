@@ -45,6 +45,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-gyeongbok-start",
+    "subject": "place-mt1-gyeongbokgung",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "중건공사 개시: 1865년",
+      "year": 1865,
+      "precision": "year",
+      "earliest": 1865,
+      "latest": 1865,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-gyeongbok-start"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_gbg-junggeon",
+    "quote": "소실된 지 약 270년이 흐른 1867년의 일이다[중건공사 개시: 1865년, 중건공사 완료: 1867년 말].",
+    "note": "중건 착공 연도. 같은 문장이 1867년 말 완공을 함께 적는다.",
+    "fromSource": "src-ek-gyeongbokgung-e0002434",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

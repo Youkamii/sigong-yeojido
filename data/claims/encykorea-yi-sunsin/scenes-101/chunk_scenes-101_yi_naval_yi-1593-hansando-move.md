@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-yi-hansando",
+    "subject": "person-encykorea-yi-sunsin",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jl1-jeseungdang"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_yi-1593-hansando-move",
+    "quote": "한산도로 진을 옮겨 본영으로 삼고,",
+    "note": "한산도로 진을 옮겨 본영으로 삼았다.",
+    "fromSource": "src-encykorea-yi-sunsin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

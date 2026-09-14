@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-sukjong-died",
+    "subject": "person-encykorea-sukjong-e0031837",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1720년(숙종 46)",
+      "year": 1720,
+      "precision": "year",
+      "earliest": 1720,
+      "latest": 1720,
+      "id": "ts-curriculum-joseon-late-joseon-late-3-hs3-sukjong-died"
+    },
+    "citesChunk": "chunk_period96_joseon_rulers_encykorea-sukjong-death",
+    "quote": "사망 연도 1720년(숙종 46)",
+    "note": "숙종의 사망 연도.",
+    "fromSource": "src-encykorea-sukjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

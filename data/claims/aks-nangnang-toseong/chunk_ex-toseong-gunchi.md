@@ -24,6 +24,23 @@ generated_by: "claude-opus-5"
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07",
     "note": "집필자가 발굴 결과로부터 추정한 견해다. 이 인용 앞에 이로 미루어 보아가 있으며 뒷부분은 추정된다로 끝난다. 낙랑토성 좌표는 미상이며 CHGIS 낙랑군 점과 같은 곳이라고 연결하지 않았다."
+  },
+  {
+    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-2-hs-hansagun-toseong",
+    "subject": "place-hs-nangnang-toseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-nangnang"
+    },
+    "citesChunk": "chunk_ex-toseong-gunchi",
+    "quote": "낙랑군청과 조선현청이 모두 이 성 안에 있었고",
+    "note": "낙랑토성이 낙랑군 치소였다는 서술.",
+    "fromSource": "src-aks-nangnang-toseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

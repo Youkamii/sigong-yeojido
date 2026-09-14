@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-jm-1627",
+    "subject": "event-hs-jl2-jeongmyo",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1627년(인조 5)",
+      "year": 1627,
+      "precision": "year",
+      "earliest": 1627,
+      "latest": 1627,
+      "id": "ts-curriculum-joseon-late-joseon-late-2-jl2-jm-1627"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_jm-def",
+    "quote": "1627년(인조 5) 후금(後金 : 뒤의 淸)의 침입으로 일어난",
+    "note": "정묘호란은 1627년 후금의 침입으로 일어났다.",
+    "fromSource": "src-ek-jeongmyo-horan-e0050194",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

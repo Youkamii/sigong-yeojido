@@ -75,6 +75,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-gwansan-554",
+    "subject": "event-hs4-gwansanseong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "554년",
+      "year": 554,
+      "precision": "year",
+      "earliest": 554,
+      "latest": 554,
+      "id": "ts-curriculum-samguk-samguk-4-hs4-gwansan-554"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_gwansan-year",
+    "quote": "554년에 관산성(管山城)에서 백제와 신라가 싸워 백제가 대패한 전투.",
+    "note": "554년 관산성에서 백제와 신라가 싸웠고 백제가 크게 졌다.",
+    "fromSource": "src-anc-enc-gwansanseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

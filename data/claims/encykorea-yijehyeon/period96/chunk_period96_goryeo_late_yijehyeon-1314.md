@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-yjh-1314",
+    "subject": "person-encykorea-yijehyeon",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1314년(충숙왕 1)",
+      "year": 1314,
+      "precision": "year",
+      "earliest": 1314,
+      "latest": 1314,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-yjh-1314"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_yijehyeon-1314",
+    "quote": "1314년(충숙왕 1) 상왕 충선왕의 부름을 받고 연경의 만권당에 머물면서",
+    "note": "1314년 만권당에 들어갔다.",
+    "fromSource": "src-encykorea-yijehyeon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-dn-ruin",
+    "subject": "place-hs-jl1-dongnae-eupseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-imjin-japanese-force"
+    },
+    "citesChunk": "chunk_scenes-103_harbors_and_presence_dng-fall",
+    "quote": "임진왜란 때 함락되어 폐성 된 것으로 보인다",
+    "note": "동래읍성이 임진왜란 때 함락되어 폐성되었다는 지지 서술.",
+    "fromSource": "src-syj103-grandculture-dongnae-eupseongji",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

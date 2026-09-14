@@ -109,6 +109,62 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-byeonghap-1910",
+    "subject": "event-hs-annexation-treaty",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1910년 8월 22일",
+      "year": 1910,
+      "precision": "day",
+      "earliest": 1910,
+      "latest": 1910,
+      "id": "ts-curriculum-modern-transition-modern-transition-4-hs-mt4-byeonghap-1910"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_annex-1910",
+    "quote": "1910년 8월 22일 서울거리에 15간마다 일본 헌병들을 배치해 놓고 순종 앞에서 형식상의 어전회의를 개최",
+    "note": "1910년 8월 22일 조인되었다.",
+    "fromSource": "src-ek-annexation-1910",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-byeonghap-yiwanyong",
+    "subject": "person-yi-wanyong",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-annexation-treaty"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_annex-1910",
+    "quote": "이른바 한일병합이란 안건을 이완용 내각이 결의하는 형식을 갖추었다",
+    "note": "이완용 내각이 결의하는 형식을 밟았다.",
+    "fromSource": "src-ek-annexation-1910",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-byeonghap-sunjong",
+    "subject": "person-encykorea-sunjong-e0031947",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-annexation-treaty"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_annex-1910",
+    "quote": "순종 앞에서 형식상의 어전회의를 개최",
+    "note": "순종 앞에서 형식만 갖춘 어전회의가 열렸다.",
+    "fromSource": "src-ek-annexation-1910",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

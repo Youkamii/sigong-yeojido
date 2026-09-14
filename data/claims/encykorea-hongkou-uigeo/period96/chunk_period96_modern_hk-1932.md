@@ -60,6 +60,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-4-hs-c4-yun-hongkou",
+    "subject": "person-encykorea-yun-bonggil",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-c4-hongkou"
+    },
+    "citesChunk": "chunk_period96_modern_hk-1932",
+    "quote": "기념식을 상해 훙커우공원(虹口公園)에서 거행하였다.",
+    "note": "기념식이 훙커우공원에서 열렸다.",
+    "fromSource": "src-encykorea-hongkou-uigeo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

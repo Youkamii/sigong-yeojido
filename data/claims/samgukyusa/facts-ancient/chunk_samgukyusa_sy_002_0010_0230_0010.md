@@ -162,6 +162,45 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-1-hs-suro-found",
+    "subject": "person-syj136-suro",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "建㱏十八年壬寅三月",
+      "year": 42,
+      "precision": "year",
+      "earliest": 42,
+      "latest": 42,
+      "id": "ts-curriculum-samguk-samguk-1-hs-suro-found"
+    },
+    "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+    "quote": "屬後漢世祖光㱏帝建㱏十八年壬寅三月禊洛之日, 所居北龜㫖有殊常聲氣呼喚.",
+    "note": "삼국유사 가락국기. 후한 광무제 건무 18년 임인(42년) 3월 계락일 기사.",
+    "fromSource": "src-samgukyusa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-1-hs-suro-garak",
+    "subject": "person-syj136-suro",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-garak-founding"
+    },
+    "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+    "quote": "國稱大駕洛又稱伽耶國, 即六伽耶之一也.",
+    "note": "나라 이름을 대가락 또는 가야국이라 했다는 기사.",
+    "fromSource": "src-samgukyusa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

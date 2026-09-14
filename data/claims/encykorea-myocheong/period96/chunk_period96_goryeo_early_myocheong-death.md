@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-myocheong-death",
+    "subject": "person-myocheong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1135년(인종 13)",
+      "year": 1135,
+      "precision": "year",
+      "earliest": 1135,
+      "latest": 1135,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-4-hs-ge4-myocheong-death"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_myocheong-death",
+    "quote": "출생 연도미상 사망 연도1135년(인종 13)",
+    "note": "묘청은 태어난 해가 전하지 않고 1135년에 죽었다.",
+    "fromSource": "src-encykorea-myocheong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

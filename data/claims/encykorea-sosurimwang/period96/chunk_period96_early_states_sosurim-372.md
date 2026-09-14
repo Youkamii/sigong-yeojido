@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-taehak-king",
+    "subject": "person-encykorea-sosurimwang",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-sg2-taehak"
+    },
+    "citesChunk": "chunk_period96_early_states_sosurim-372",
+    "quote": "372년에는 유교 교육 기관인 태학(太學)을 설립해",
+    "note": "소수림왕이 태학을 세웠다.",
+    "fromSource": "src-encykorea-sosurimwang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

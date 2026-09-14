@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-hwangsan-place",
+    "subject": "event-hs-sg5-hwangsanbeol",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-sg5-hwangsanbeol"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_hwangsan-place",
+    "quote": "황산은 지금의 충청남도 논산시 연산(連山) 지방이다",
+    "note": "황산벌은 지금의 논산시 연산 지역이다",
+    "fromSource": "src-anc-enc-hwangsanbeol",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

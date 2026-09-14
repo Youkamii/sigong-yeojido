@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-09"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-sherman-river",
+    "subject": "event-mt1-sherman",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-mt1-daedonggang"
+    },
+    "citesChunk": "chunk_scenes-135_local_conflicts_syj135-sherman-river",
+    "quote": "이양선(異樣船) 1척이 대동강을 거슬러 평양까지 올라왔다.",
+    "note": "배가 올라온 물길.",
+    "fromSource": "src-syj135-aks-sherman",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

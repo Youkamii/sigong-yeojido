@@ -24,6 +24,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-yongdusan-loc",
+    "subject": "place-hs-jl2-busanpo",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 35.10056,
+      "lon": 129.03278,
+      "precision": "area"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-geo-yongdusan",
+    "quote": "35.10056; 129.03278",
+    "note": "부산포 사행 출발지의 대표점으로 용두산 일대 표시 좌표를 썼다.",
+    "fromSource": "src-jl2-kowiki-yongdusan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

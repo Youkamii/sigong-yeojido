@@ -47,6 +47,23 @@ generated_by: "claude-opus-5"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-fall-joseon",
+    "subject": "polity-gl4-goryeo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yi-seonggye"
+    },
+    "citesChunk": "chunk_era51_encykorea-joseon-1392",
+    "quote": "1392년 음력 7월 이성계가 새 왕조의 첫 군주로 즉위하였으나, 국호는 그대로 고려라 하였다.",
+    "note": "이성계가 7월에 즉위했고 국호는 한동안 고려 그대로였다.",
+    "fromSource": "src-encykorea-joseon-dynasty",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

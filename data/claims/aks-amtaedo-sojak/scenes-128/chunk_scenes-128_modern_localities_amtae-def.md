@@ -75,6 +75,50 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-amtae-1923",
+    "subject": "event-hs-amtaedo",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1923년 8월",
+      "year": 1923,
+      "precision": "month",
+      "earliest": 1923,
+      "latest": 1923,
+      "id": "ts-curriculum-colonial-colonial-2-c2-amtae-1923"
+    },
+    "citesChunk": "chunk_scenes-128_modern_localities_amtae-def",
+    "quote": "1923년 8월부터 1924년 8월까지 전라남도[현 전남광주통합특별시] 신안군 암태도의 소작인들이 벌인 소작농민항쟁",
+    "note": "1923년 8월 시작.",
+    "fromSource": "src-aks-amtaedo-sojak",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-amtae-1924",
+    "subject": "event-hs-amtaedo",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1924년 8월",
+      "year": 1924,
+      "precision": "month",
+      "earliest": 1924,
+      "latest": 1924,
+      "id": "ts-curriculum-colonial-colonial-2-c2-amtae-1924"
+    },
+    "citesChunk": "chunk_scenes-128_modern_localities_amtae-def",
+    "quote": "1923년 8월부터 1924년 8월까지 전라남도[현 전남광주통합특별시] 신안군 암태도의 소작인들이 벌인 소작농민항쟁",
+    "note": "1924년 8월까지 이어졌다.",
+    "fromSource": "src-aks-amtaedo-sojak",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

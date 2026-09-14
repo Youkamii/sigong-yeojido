@@ -56,6 +56,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-samguksagi-def",
+    "subject": "event-hs-ge4-samguksagi",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-gimbusik"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_samguksagi-def",
+    "quote": "1145년경에 김부식 등이 고려 인종의 명을 받아 편찬한 삼국시대의 역사서.",
+    "note": "인종의 명으로 김부식 등이 편찬한 삼국시대 역사서다.",
+    "fromSource": "src-encykorea-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

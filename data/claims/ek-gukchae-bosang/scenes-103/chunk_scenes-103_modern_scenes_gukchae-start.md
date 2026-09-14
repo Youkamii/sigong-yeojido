@@ -92,6 +92,45 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-gukchae-1907",
+    "subject": "event-hs-gukchae-bosang",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1907년 2월",
+      "year": 1907,
+      "precision": "month",
+      "earliest": 1907,
+      "latest": 1907,
+      "id": "ts-curriculum-modern-transition-modern-transition-4-hs-mt4-gukchae-1907"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_gukchae-start",
+    "quote": "1907년 2월 중순대구의 광문사(廣文社) 사장",
+    "note": "1907년 2월 대구 광문사에서 제창되었다.",
+    "fromSource": "src-ek-gukchae-bosang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-gukchae-place",
+    "subject": "event-hs-gukchae-bosang",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-daegu-gwangmunsa"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_gukchae-start",
+    "quote": "중순대구의 광문사(廣文社) 사장",
+    "note": "대구 광문사가 운동의 출발점이다.",
+    "fromSource": "src-ek-gukchae-bosang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

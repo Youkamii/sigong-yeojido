@@ -26,6 +26,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-hwando-loc",
+    "subject": "place-guknae-jian",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lon": 126.163194,
+      "lat": 41.146528,
+      "precision": "site"
+    },
+    "citesChunk": "chunk_facts-ancient_goguryeo_middle_hwando-geo",
+    "quote": "41.146528; 126.163194",
+    "note": "영문 위키백과 환도산성 표시 좌표. 국내성과 짝을 이루던 왕성이다.",
+    "fromSource": "src-enwiki-hwando",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

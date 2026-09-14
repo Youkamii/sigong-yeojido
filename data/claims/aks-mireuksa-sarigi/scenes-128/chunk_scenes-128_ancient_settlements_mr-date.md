@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-mireuk-639",
+    "subject": "place-hs4-mireuksaji",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "기해년(639)",
+      "year": 639,
+      "precision": "year",
+      "earliest": 639,
+      "latest": 639,
+      "id": "ts-curriculum-samguk-samguk-4-hs4-mireuk-639"
+    },
+    "citesChunk": "chunk_scenes-128_ancient_settlements_mr-date",
+    "quote": "여기선 기해년(639) 정월 29일로 밝혀져",
+    "note": "서탑 금제 사리봉안기의 날짜가 기해년(639) 정월 29일로 밝혀졌다.",
+    "fromSource": "src-aks-mireuksa-sarigi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

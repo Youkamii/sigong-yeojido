@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-kpg-president",
+    "subject": "org-hs-kpg",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yi-seungman"
+    },
+    "citesChunk": "chunk_period92_founding-contemporaries_yiseungman-1919",
+    "quote": "상해 임시정부 의정원은 1919년 9월 6일 이승만을 임시 대통령으로 추대하여",
+    "note": "1919년 9월 통합 임시정부의 첫 대통령.",
+    "fromSource": "src-encykorea-yi-seungman",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -79,6 +79,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-3-hs-wonsan-chunk",
+    "subject": "event-hs-wonsan",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1929년",
+      "year": 1929,
+      "precision": "year",
+      "earliest": 1929,
+      "latest": 1929,
+      "id": "ts-curriculum-colonial-colonial-3-hs-wonsan-chunk"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_wonsanstrike-def",
+    "quote": "1929년 1월 13일부터 4월 6일까지 원산노동연합회 산하 노동조합원 2,200여 명이 참여한",
+    "note": "우리역사넷 계열 발췌 — 파업 기간과 참여 인원",
+    "fromSource": "src-aks-wonsan-strike",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

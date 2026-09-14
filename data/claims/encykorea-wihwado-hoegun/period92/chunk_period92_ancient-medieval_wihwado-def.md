@@ -74,6 +74,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-wihwado-ency",
+    "subject": "place-gl4-wihwado",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-ency-uwang"
+    },
+    "citesChunk": "chunk_period92_ancient-medieval_wihwado-def",
+    "quote": "1388년(우왕 14), 명나라의 요동(遼東)을 공략하기 위해 출정했던 이성계(李成桂) 등이 위화도에서 회군해 우왕을 폐위하고 정권을 장악한 사건.",
+    "note": "회군의 결과를 요약한 서술.",
+    "fromSource": "src-encykorea-wihwado-hoegun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

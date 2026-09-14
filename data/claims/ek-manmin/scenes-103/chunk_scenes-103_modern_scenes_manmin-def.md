@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-mm-1898",
+    "subject": "event-mt3-manmin",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1898년",
+      "year": 1898,
+      "precision": "year",
+      "earliest": 1898,
+      "latest": 1898,
+      "id": "ts-curriculum-modern-transition-modern-transition-3-mt3-mm-1898"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_manmin-def",
+    "quote": "1898년 열강의 이권 침탈에 대항하여 자주 독립의 수호와 자유 민권의 신장을 위해 조직, 개최되었던 민중 대회.",
+    "note": "1898년에 열린 민중 대회다.",
+    "fromSource": "src-ek-manmin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

@@ -40,6 +40,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-eulji-def",
+    "subject": "person-encykorea-euljimundeok",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs4-goguryeo"
+    },
+    "citesChunk": "chunk_period96_three_kingdoms_late_eulji-def",
+    "quote": "삼국시대 살수에서 수나라 군대를 물리친 고구려의 관리. 무신.",
+    "note": "을지문덕은 고구려의 무신이다.",
+    "fromSource": "src-encykorea-euljimundeok",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

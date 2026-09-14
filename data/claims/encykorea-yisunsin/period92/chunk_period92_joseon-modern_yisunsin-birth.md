@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-yi-birth",
+    "subject": "person-encykorea-yi-sunsin",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1545년(인종 1)",
+      "year": 1545,
+      "precision": "year",
+      "earliest": 1545,
+      "latest": 1545,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-yi-birth"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_yisunsin-birth",
+    "quote": "출생 연도1545년(인종 1)",
+    "note": "출생 연도.",
+    "fromSource": "src-encykorea-yisunsin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

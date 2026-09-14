@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-yi-tongjesa",
+    "subject": "person-encykorea-yi-sunsin",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1593년",
+      "year": 1593,
+      "precision": "year",
+      "earliest": 1593,
+      "latest": 1593,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-yi-tongjesa"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_yisunsin-tongjesa",
+    "quote": "1593년 삼도수군통제사가 되었다",
+    "note": "1593년 삼도수군통제사가 되었다.",
+    "fromSource": "src-encykorea-yisunsin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-im-jeongbal",
+    "subject": "place-hs-jl1-busanjin",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_scenes-103_harbors_and_presence_bjg-jeongbal",
+    "quote": "부산진 첨사 정발 이 성안의 군민과 더불어 왜군의 선봉대와 싸워",
+    "note": "부산진 첨사 정발이 성안 군민과 함께 일본군 선봉대와 싸웠다.",
+    "fromSource": "src-syj103-grandculture-busanjinseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

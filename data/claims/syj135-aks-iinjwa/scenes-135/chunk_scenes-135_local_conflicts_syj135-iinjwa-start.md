@@ -75,6 +75,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-09"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-yiinjwa-chunk",
+    "subject": "event-hs4-yiinjwa",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs4-cheongjuseong"
+    },
+    "citesChunk": "chunk_scenes-135_local_conflicts_syj135-iinjwa-start",
+    "quote": "난은 3월 15일 이인좌가 청주성을 함락함으로써 시작되었다",
+    "note": "로컬 chunk로 청주성 함락을 다시 확인한다.",
+    "fromSource": "src-syj135-aks-iinjwa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-21"
   }
 ]
 ```

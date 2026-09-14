@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-daejo-dongmosan",
+    "subject": "person-encykorea-daejoyeong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-nb1-dunhua"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_daejoyeong-dongmosan",
+    "quote": "지금의 길림성(吉林省) 돈화현(敦化縣)인 동모산(東牟山)에 성을 쌓고 도읍을 정하였다.",
+    "note": "지금의 지린성 둔화현인 동모산에 성을 쌓고 도읍을 정했다.",
+    "fromSource": "src-anc-enc-daejoyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

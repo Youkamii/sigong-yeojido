@@ -29,6 +29,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-bbs-1555",
+    "subject": "institution-hs-jl1-bibyeonsa",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1555년",
+      "year": 1555,
+      "precision": "year",
+      "earliest": 1555,
+      "latest": 1555,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-bbs-1555"
+    },
+    "citesChunk": "chunk_curriculum-joseon-early_joseon-early-5_bbs-1555",
+    "quote": "1555년 관제상의 상설 관아로 정제화된 비변사",
+    "note": "1555년 관제상의 상설 관아가 되었다.",
+    "fromSource": "src-enc-bibyeonsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

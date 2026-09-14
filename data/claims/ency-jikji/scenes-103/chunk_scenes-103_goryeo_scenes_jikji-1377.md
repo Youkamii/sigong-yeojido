@@ -109,6 +109,45 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-jikji-1377",
+    "subject": "place-gl4-heungdeoksa",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "3년 후(1377)",
+      "year": 1377,
+      "precision": "year",
+      "earliest": 1377,
+      "latest": 1377,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-4-gl4-jikji-1377"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_jikji-1377",
+    "quote": "백운화상이 입적한 3년 후(1377) 석찬(釋璨)의 주도로 성사달(成士達)의 서문을 받아 청주목 흥덕사(興德寺)에서",
+    "note": "청주목 흥덕사에서 찍은 해.",
+    "fromSource": "src-ency-jikji",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-jikji-act",
+    "subject": "place-gl4-heungdeoksa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-gl4-goryeo"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_jikji-1377",
+    "quote": "비구니 묘덕(妙德)의 시주에 의해서 주자(鑄字)로 인쇄하였음은 알려진 사실이다.",
+    "note": "금속활자로 찍었다는 서술.",
+    "fromSource": "src-ency-jikji",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-taehak-teach",
+    "subject": "event-hs-sg2-taehak",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-goguryeo"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_taehak-teaching",
+    "quote": "박사나 조교가 교수자였고, 귀족 자제들이 학생이었으며",
+    "note": "박사·조교가 가르치고 귀족 자제가 배웠다.",
+    "fromSource": "src-anc-enc-taehak",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

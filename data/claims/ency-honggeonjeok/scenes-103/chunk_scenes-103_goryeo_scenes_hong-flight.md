@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-hong-flight",
+    "subject": "person-goryeo-gongminwang",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-gl3-hongeonjeok"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_hong-flight",
+    "quote": "공민왕 은 광주(廣州)를 거쳐 복주(福州)[현 경상북도 안동]로 파천(播遷)",
+    "note": "2차 침입 때 공민왕이 안동(복주)까지 피란했다.",
+    "fromSource": "src-ency-honggeonjeok",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

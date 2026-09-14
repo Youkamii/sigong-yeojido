@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-byeongin-yangyo-enter",
+    "subject": "event-mt1-byeongin-yangyo",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-mt1-jeongjoksanseong"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_by-enter",
+    "quote": "549명의 군대가 정족산성에 들어갔다.",
+    "note": "조선군이 들어간 성.",
+    "fromSource": "src-ek-byeongin-yangyo-e0023142",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

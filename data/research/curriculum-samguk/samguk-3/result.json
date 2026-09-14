@@ -1,0 +1,4282 @@
+{
+  "collection": "curriculum-samguk",
+  "job": "samguk-3",
+  "cell": {
+    "polity": "삼국·가야",
+    "from": 501,
+    "to": 553,
+    "regions": [
+      "central",
+      "south",
+      "island"
+    ],
+    "categories": {
+      "person": 4,
+      "economy": 1,
+      "administration": 8,
+      "war": 3,
+      "settlement": 1,
+      "facility": 3,
+      "culture": 3,
+      "foreign": 1
+    }
+  },
+  "sources": [
+    {
+      "id": "src-hs-s3-wiki-gongsanseong",
+      "title": "공산성 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%82%B0%EC%84%B1",
+      "rawFile": "raw/wiki-gongsanseong.html",
+      "sha256": "2c5744207bf7a7675c9e16efde5840e445a7fe614227934abb05bb41f130d75d",
+      "httpStatus": 200,
+      "byteLength": 207270,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-gongsanseong",
+          "text": "36.46333; 127.12694",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-songsanri",
+      "title": "공주 무령왕릉과 왕릉원 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%A3%BC_%EB%AC%B4%EB%A0%B9%EC%99%95%EB%A6%89%EA%B3%BC_%EC%99%95%EB%A6%89%EC%9B%90",
+      "rawFile": "raw/wiki-songsanri.html",
+      "sha256": "5cfb22cfffdfb7356aa045f029ab5e129505eb26389d08b6779c58362d66bc75",
+      "httpStatus": 200,
+      "byteLength": 158653,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-songsanri",
+          "text": "36.46139; 127.11278",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-gongju",
+      "title": "Gongju — Wikipedia",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gongju",
+      "rawFile": "raw/wiki-en-gongju.html",
+      "sha256": "75d8af0d54ac6cf024732d45754b95f0b52222f2c20b19cf71aac58bacdfe4ad",
+      "httpStatus": 200,
+      "byteLength": 156593,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-gongju",
+          "text": "36.450; 127.117",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-gyeongju",
+      "title": "Gyeongju — Wikipedia",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gyeongju",
+      "rawFile": "raw/wiki-en-gyeongju.html",
+      "sha256": "b026135658a0bf993a47cbbd3978a68234ef72fd97e6fcbd2f7e2ff2d81c9551",
+      "httpStatus": 200,
+      "byteLength": 1018634,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-gyeongju",
+          "text": "35.850; 129.217",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-oreung",
+      "title": "경주 오릉 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%98%A4%EB%A6%89",
+      "rawFile": "raw/wiki-oreung.html",
+      "sha256": "898de9610c62b49995a6edf0c07e41864af201751899630863f51395b4ff747c",
+      "httpStatus": 200,
+      "byteLength": 125463,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-oreung",
+          "text": "35.82333; 129.20889",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-wolseong",
+      "title": "경주 월성 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%9B%94%EC%84%B1",
+      "rawFile": "raw/wiki-wolseong.html",
+      "sha256": "e1758d1ef3b417bb45eae97cee684e83bc30cdf4a644e0727d309fcd30cda589",
+      "httpStatus": 200,
+      "byteLength": 277688,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-wolseong",
+          "text": "35.83083; 129.22611",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-cheomseongdae",
+      "title": "첨성대 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%A8%EC%84%B1%EB%8C%80",
+      "rawFile": "raw/wiki-cheomseongdae.html",
+      "sha256": "c2f9dc549e2c5cfa6ad76096cfd7b85edea1ffba52f4fb8484f592744d33b69d",
+      "httpStatus": 200,
+      "byteLength": 239234,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-cheomseongdae",
+          "text": "35.83472; 129.21917",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-gyerim",
+      "title": "경주 계림 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EA%B3%84%EB%A6%BC",
+      "rawFile": "raw/wiki-gyerim.html",
+      "sha256": "1fdc948812bdc3e91075b367f8e93f58fab1e38f77465f5e353d0f84edab77b5",
+      "httpStatus": 200,
+      "byteLength": 108901,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-gyerim",
+          "text": "35.83278; 129.21889",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-najeong",
+      "title": "경주 나정 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EB%82%98%EC%A0%95",
+      "rawFile": "raw/wiki-najeong.html",
+      "sha256": "bf764aaa17be79d1491d6552f45ba4651e128bc8f262821fa0a45617cf5e82ff",
+      "httpStatus": 200,
+      "byteLength": 106468,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-najeong",
+          "text": "35.81583; 129.21250",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-heungnyunsa",
+      "title": "흥륜사 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%ED%9D%A5%EB%A5%9C%EC%82%AC",
+      "rawFile": "raw/wiki-heungnyunsa.html",
+      "sha256": "6e16e36560ba2aed96c281ed9e9bfe5529fe5cba76c8196d52a95c45b2a2a019",
+      "httpStatus": 200,
+      "byteLength": 140257,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-heungnyunsa",
+          "text": "35.82833; 129.20694",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-myeonghwal",
+      "title": "경주 명활성 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EB%AA%85%ED%99%9C%EC%84%B1",
+      "rawFile": "raw/wiki-myeonghwal.html",
+      "sha256": "aa5a6830ca30fd66ad858c34129a0fc19560f2a482e0e9c7a9e32530eef24307",
+      "httpStatus": 200,
+      "byteLength": 98294,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-myeonghwal",
+          "text": "35.83556; 129.25528",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-hwangnyongsa",
+      "title": "황룡사 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%A9%EB%A3%A1%EC%82%AC",
+      "rawFile": "raw/wiki-hwangnyongsa.html",
+      "sha256": "e819b8d445ce00271e0e1ba1edfde97122fdc7b6264069db5571b089a5d95d89",
+      "httpStatus": 200,
+      "byteLength": 224622,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-hwangnyongsa",
+          "text": "35.83694; 129.23250",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-ulleungdo",
+      "title": "울릉도 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EB%A6%89%EB%8F%84",
+      "rawFile": "raw/wiki-ulleungdo.html",
+      "sha256": "5730b97ae25bc879300f967019b325347042c4e868a47bcdc7546ce83eb0e798",
+      "httpStatus": 200,
+      "byteLength": 475370,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-ulleungdo",
+          "text": "37.50000; 130.86667",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-bonghwangdong",
+      "title": "김해 봉황동 유적 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B9%80%ED%95%B4_%EB%B4%89%ED%99%A9%EB%8F%99_%EC%9C%A0%EC%A0%81",
+      "rawFile": "raw/wiki-bonghwangdong.html",
+      "sha256": "fc23c13ed0fbe679a8c11e17b08997855451dba2f7de8c61117a0602c401d835",
+      "httpStatus": 200,
+      "byteLength": 114049,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-bonghwangdong",
+          "text": "35.2297709; 128.8784676",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-busosanseong",
+      "title": "부소산성 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%86%8C%EC%82%B0%EC%84%B1",
+      "rawFile": "raw/wiki-busosanseong.html",
+      "sha256": "94e92a5be3be0ff4bb215748668dd6ed3d263248d401adfc83218c1c68b08190",
+      "httpStatus": 200,
+      "byteLength": 199617,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-busosanseong",
+          "text": "36.28750; 126.91528",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-gwanbukri",
+      "title": "부여 관북리 유적 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC_%EA%B4%80%EB%B6%81%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+      "rawFile": "raw/wiki-gwanbukri.html",
+      "sha256": "765151da50a1cdea1866818fb2cb6ae665dabeee81788cee7d499c9ac22b6b25",
+      "httpStatus": 200,
+      "byteLength": 117113,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-gwanbukri",
+          "text": "36.28444; 126.91250",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-cheonjeongdae",
+      "title": "천정대 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%9C%EC%A0%95%EB%8C%80",
+      "rawFile": "raw/wiki-cheonjeongdae.html",
+      "sha256": "08df0813205cfd24c159e5372520f1b1067dc6efa918d04793bf056bb285f624",
+      "httpStatus": 200,
+      "byteLength": 71443,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-cheonjeongdae",
+          "text": "36.31389; 126.91917",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-uiryeong",
+      "title": "Uiryeong County — Wikipedia",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Uiryeong_County",
+      "rawFile": "raw/wiki-en-uiryeong.html",
+      "sha256": "5d900cf4af8c867502fca7766ac1fb279565c3c44e7575d86d577aefb69f5454",
+      "httpStatus": 200,
+      "byteLength": 161494,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-uiryeong",
+          "text": "35.3191666767; 128.261111121",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-danyang",
+      "title": "단양군 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%96%91%EA%B5%B0",
+      "rawFile": "raw/wiki-danyang.html",
+      "sha256": "decf7d911c5fd269ca43d7a6dff0b8d0360656d21698a38b168e5f128789418a",
+      "httpStatus": 200,
+      "byteLength": 219456,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-danyang",
+          "text": "36.984695; 128.3658033",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-tangeumdae",
+      "title": "탄금대 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%ED%83%84%EA%B8%88%EB%8C%80",
+      "rawFile": "raw/wiki-tangeumdae.html",
+      "sha256": "a346aa9fc18218beb16cddc844575cddaf70088a8eb54c05064e9dde95028f0b",
+      "httpStatus": 200,
+      "byteLength": 111829,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-tangeumdae",
+          "text": "36.98833; 127.89778",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-asukadera",
+      "title": "아스카사 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%8A%A4%EC%B9%B4%EC%82%AC",
+      "rawFile": "raw/wiki-asukadera.html",
+      "sha256": "12695c4e8b14ee30d0a5da6ae8f221115229418f9dd5a35160cca8287b5e2590",
+      "httpStatus": 200,
+      "byteLength": 115302,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-asukadera",
+          "text": "34.478731; 135.820214",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-wiki-achasanseong",
+      "title": "아차산성 — 위키백과",
+      "publisher": "위키백과",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EC%B0%A8%EC%82%B0%EC%84%B1",
+      "rawFile": "raw/wiki-achasanseong.html",
+      "sha256": "f60ab9c5f1bb7613e022d2324732b498da630cf2e8a33533fc26617fbc098503",
+      "httpStatus": 200,
+      "byteLength": 116996,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "위키백과 CC BY-SA 4.0 — 표시 좌표 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-geo-achasanseong",
+          "text": "37.55444; 127.10278",
+          "locator": "문서 머리 표시 좌표(십진)"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-enc-damno",
+      "title": "담로 — 한국민족문화대백과사전",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013778",
+      "rawFile": "raw/enc-damno.html",
+      "sha256": "4112f70179ee86ece69cd8a0d52e93e7c1575cb55c4ab7df34c4cff7a49f4793",
+      "httpStatus": 200,
+      "byteLength": 72724,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 표시, 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-damno-22",
+          "text": "전국적으로 22개의 담로가 존재하였음을 알 수 있다",
+          "locator": "본문 '내용' — 양서 백제전의 22담로"
+        },
+        {
+          "id": "ex-damno-ungjin",
+          "text": "웅진으로 천도한 이후에도 계속 시행되었으나",
+          "locator": "본문 '내용' — 웅진기 담로제 존속"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-enc-golpumje",
+      "title": "골품제도 — 한국민족문화대백과사전",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004196",
+      "rawFile": "raw/enc-golpumje.html",
+      "sha256": "10e8cccbb5fe9c168cef8bad5b553cd848c3373c6d71be3fd4095f744a7c28d8",
+      "httpStatus": 200,
+      "byteLength": 94077,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 표시, 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-golpum-6c",
+          "text": "6세기 초는 이미 법제화되었으며",
+          "locator": "본문 '개설' — 골품제의 법제화 시기"
+        },
+        {
+          "id": "ex-golpum-scope",
+          "text": "혼인, 가옥의 규모, 의복의 빛깔",
+          "locator": "본문 '개설' — 골품이 규제한 생활 영역"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-enc-sangdaedeung",
+      "title": "상대등 — 한국민족문화대백과사전",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0027042",
+      "rawFile": "raw/enc-sangdaedeung.html",
+      "sha256": "ae92bd70e852592af66270af98aafb632d7c1e2ffd33669451aa88a627860139",
+      "httpStatus": 200,
+      "byteLength": 92898,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 표시, 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-sangdaedeung-531",
+          "text": "531년에 법흥왕이 처음 설치하였다.",
+          "locator": "본문 '내용' — 설치 연도"
+        },
+        {
+          "id": "ex-sangdaedeung-role",
+          "text": "대등(大等)으로 구성된 귀족회의의 주재자로서",
+          "locator": "본문 '내용' — 귀족회의 주재"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-enc-jeongsaam",
+      "title": "정사암 — 한국민족문화대백과사전",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0050314",
+      "rawFile": "raw/enc-jeongsaam.html",
+      "sha256": "f80b1c57bd2a3ef7973e733811d1e00fc2f00c13551ecaf08f8eb4f55a231014",
+      "httpStatus": 200,
+      "byteLength": 86726,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 표시, 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-jeongsaam-hoam",
+          "text": "정사암은 백제 후기의 수도인 사비(泗沘 : 현재의 충남남도 부여) 부근의 호암사(虎巖寺)에 있었다고",
+          "locator": "본문 '내용' — 정사암의 위치"
+        },
+        {
+          "id": "ex-jeongsaam-select",
+          "text": "좌평(佐平)을 선출할 때",
+          "locator": "본문 '내용' — 재상 선출 기능"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-enc-norisachigye",
+      "title": "노리사치계 — 한국민족문화대백과사전",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0012733",
+      "rawFile": "raw/enc-norisachigye.html",
+      "sha256": "6b4a2d976dbc30ba31ab8510f9b1087583548123046512b93b63eb933663460c",
+      "httpStatus": 200,
+      "byteLength": 77064,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 표시, 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-nori-552",
+          "text": "552년(성왕 30) 10월 성왕의 명에 의하여",
+          "locator": "본문 '내용' — 파견 연도"
+        },
+        {
+          "id": "ex-nori-act",
+          "text": "일본에 불교를 전수하였다.",
+          "locator": "본문 '내용' — 전한 내용"
+        }
+      ]
+    },
+    {
+      "id": "src-hs-s3-enc-nambuyeo",
+      "title": "남부여 — 한국민족문화대백과사전",
+      "publisher": "한국민족문화대백과사전",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011923",
+      "rawFile": "raw/enc-nambuyeo.html",
+      "sha256": "e6ca2bc0f445a868b48fd0d5b42e370a05c4955720071a469bcd1e4f35586a33",
+      "httpStatus": 200,
+      "byteLength": 74032,
+      "fetchedUtc": "2026-09-14T03:20:00Z",
+      "license": "한국학중앙연구원 한국민족문화대백과사전 — 공공누리 표시, 짧은 인용",
+      "excerpts": [
+        {
+          "id": "ex-nambuyeo-period",
+          "text": "538년부터 660년까지 불린 백제의 별칭",
+          "locator": "항목 정의 — 남부여 국호의 사용 기간"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "place-hs-s3-gongsanseong",
+      "type": "Place",
+      "label": "웅진 공산성(백제 왕성)"
+    },
+    {
+      "id": "place-hs-s3-muryeongneung",
+      "type": "Place",
+      "label": "공주 무령왕릉과 왕릉원"
+    },
+    {
+      "id": "place-hs-s3-gongju",
+      "type": "Place",
+      "label": "웅진 일원(공주)"
+    },
+    {
+      "id": "place-hs-s3-gyeongju",
+      "type": "Place",
+      "label": "신라 왕경 일원의 들판"
+    },
+    {
+      "id": "place-hs-s3-oreung",
+      "type": "Place",
+      "label": "경주 오릉(신라 시조릉 전승지)"
+    },
+    {
+      "id": "place-hs-s3-wolseong",
+      "type": "Place",
+      "label": "경주 월성(신라 왕궁)"
+    },
+    {
+      "id": "place-hs-s3-cheomseongdae",
+      "type": "Place",
+      "label": "경주 첨성대 일원(월성 북편 왕경 관아 구역)"
+    },
+    {
+      "id": "place-hs-s3-gyerim",
+      "type": "Place",
+      "label": "경주 계림(김씨 시조 전승지)"
+    },
+    {
+      "id": "place-hs-s3-najeong",
+      "type": "Place",
+      "label": "경주 나정(신라 건국 전승지)"
+    },
+    {
+      "id": "place-hs-s3-heungnyunsa",
+      "type": "Place",
+      "label": "경주 흥륜사(천경림 절터)"
+    },
+    {
+      "id": "place-hs-s3-myeonghwalseong",
+      "type": "Place",
+      "label": "경주 명활성(왕경 동쪽 방어성)"
+    },
+    {
+      "id": "place-hs-s3-hwangnyongsa",
+      "type": "Place",
+      "label": "경주 황룡사지"
+    },
+    {
+      "id": "place-hs-s3-ulleungdo",
+      "type": "Place",
+      "label": "우산국(울릉도) 앞바다"
+    },
+    {
+      "id": "place-hs-s3-bonghwangdong",
+      "type": "Place",
+      "label": "김해 봉황동 유적(금관가야 중심지)"
+    },
+    {
+      "id": "place-hs-s3-busosanseong",
+      "type": "Place",
+      "label": "사비 부소산성"
+    },
+    {
+      "id": "place-hs-s3-gwanbukri",
+      "type": "Place",
+      "label": "부여 관북리 유적(사비 왕궁터)"
+    },
+    {
+      "id": "place-hs-s3-cheonjeongdae",
+      "type": "Place",
+      "label": "부여 천정대(정사암 전승지)"
+    },
+    {
+      "id": "place-hs-s3-uiryeong",
+      "type": "Place",
+      "label": "의령 대의면 하촌리 출토지 일원"
+    },
+    {
+      "id": "place-hs-s3-danyang",
+      "type": "Place",
+      "label": "단양 적성(비석 소재지) 일원"
+    },
+    {
+      "id": "place-hs-s3-tangeumdae",
+      "type": "Place",
+      "label": "충주 탄금대(국원 전승지)"
+    },
+    {
+      "id": "place-hs-s3-asuka",
+      "type": "Place",
+      "label": "왜 아스카 일원"
+    },
+    {
+      "id": "place-hs-s3-achasanseong",
+      "type": "Place",
+      "label": "한강 하류 아차산성"
+    },
+    {
+      "id": "polity-hs-s3-baekje",
+      "type": "Polity",
+      "label": "백제"
+    },
+    {
+      "id": "polity-hs-s3-silla",
+      "type": "Polity",
+      "label": "신라"
+    },
+    {
+      "id": "polity-hs-s3-goguryeo",
+      "type": "Polity",
+      "label": "고구려"
+    },
+    {
+      "id": "polity-hs-s3-geumgwan-gaya",
+      "type": "Polity",
+      "label": "금관가야(금관국)"
+    },
+    {
+      "id": "polity-hs-s3-wa",
+      "type": "Polity",
+      "label": "왜"
+    },
+    {
+      "id": "person-muryeong",
+      "type": "Person",
+      "label": "무령왕(사마왕)"
+    },
+    {
+      "id": "person-baekje-seongwang",
+      "type": "Person",
+      "label": "성왕 (백제 제26대)"
+    },
+    {
+      "id": "person-beopheung",
+      "type": "Person",
+      "label": "법흥왕"
+    },
+    {
+      "id": "person-encykorea-jinheung",
+      "type": "Person",
+      "label": "진흥왕 (민족문화대백과)"
+    },
+    {
+      "id": "person-encykorea-jijeung",
+      "type": "Person",
+      "label": "지증왕 (민족문화대백과)"
+    },
+    {
+      "id": "person-ichadon",
+      "type": "Person",
+      "label": "이차돈"
+    },
+    {
+      "id": "person-isabu",
+      "type": "Person",
+      "label": "이사부"
+    },
+    {
+      "id": "person-encykorea-ureuk",
+      "type": "Person",
+      "label": "우륵 (민족문화대백과)"
+    },
+    {
+      "id": "person-hs-s3-gim-guhae",
+      "type": "Person",
+      "label": "김구해(금관국 마지막 왕)"
+    },
+    {
+      "id": "person-hs-s3-cheolbu",
+      "type": "Person",
+      "label": "철부(신라 첫 상대등)"
+    },
+    {
+      "id": "person-hs-s3-norisachigye",
+      "type": "Person",
+      "label": "노리사치계"
+    },
+    {
+      "id": "thing-hs-s3-yeonga-buddha",
+      "type": "Thing",
+      "label": "연가 7년명 금동여래입상"
+    },
+    {
+      "id": "thing-hs-s3-danyang-stele",
+      "type": "Thing",
+      "label": "단양 신라 적성비"
+    },
+    {
+      "id": "place-hs-s3-sabi",
+      "type": "Place",
+      "label": "사비(백제 도읍)"
+    },
+    {
+      "id": "place-hs-s3-hoamsa",
+      "type": "Place",
+      "label": "호암사(정사암이 있던 절)"
+    },
+    {
+      "id": "event-hs-s3-muryeong-wang",
+      "type": "Event",
+      "label": "무령왕 재위(501~523)"
+    },
+    {
+      "id": "event-hs-s3-ox-plowing",
+      "type": "Event",
+      "label": "신라 우경 시행(502)"
+    },
+    {
+      "id": "event-hs-s3-silla-name",
+      "type": "Event",
+      "label": "국호 신라·왕호 제정(503)"
+    },
+    {
+      "id": "event-hs-s3-22-damno",
+      "type": "Event",
+      "label": "백제 22담로 운영"
+    },
+    {
+      "id": "event-hs-s3-usanguk",
+      "type": "Event",
+      "label": "이사부의 우산국 복속(512)"
+    },
+    {
+      "id": "event-hs-s3-beopheung-wang",
+      "type": "Event",
+      "label": "법흥왕 재위(514~540)"
+    },
+    {
+      "id": "event-hs-s3-byeongbu",
+      "type": "Event",
+      "label": "신라 병부 설치(517)"
+    },
+    {
+      "id": "event-hs-s3-golpumje",
+      "type": "Event",
+      "label": "신라 골품제"
+    },
+    {
+      "id": "event-hs-s3-silla-17-ranks",
+      "type": "Event",
+      "label": "신라 17관등제"
+    },
+    {
+      "id": "event-hs-s3-silla-code",
+      "type": "Event",
+      "label": "신라 율령 반포(520)"
+    },
+    {
+      "id": "event-hs-s3-seong-wang",
+      "type": "Event",
+      "label": "성왕 재위(523~554)"
+    },
+    {
+      "id": "event-hs-s3-muryeong-tomb",
+      "type": "Event",
+      "label": "무령왕릉 안장(525)"
+    },
+    {
+      "id": "event-hs-s3-silla-buddhism",
+      "type": "Event",
+      "label": "이차돈 순교와 신라 불교 공인(527)"
+    },
+    {
+      "id": "event-hs-s3-sangdaedeung",
+      "type": "Event",
+      "label": "상대등 설치(531)"
+    },
+    {
+      "id": "event-hs-s3-geumgwan-gaya-fall",
+      "type": "Event",
+      "label": "금관가야 멸망(532)"
+    },
+    {
+      "id": "event-hs-s3-sabi-move",
+      "type": "Event",
+      "label": "사비 천도(538)"
+    },
+    {
+      "id": "event-hs-s3-yeonga-buddha",
+      "type": "Event",
+      "label": "연가 7년명 금동여래입상 제작(539)"
+    },
+    {
+      "id": "event-hs-s3-jinheung-wang",
+      "type": "Event",
+      "label": "진흥왕 재위(540~576)"
+    },
+    {
+      "id": "event-hs-s3-jeongsaam",
+      "type": "Event",
+      "label": "백제 정사암 회의"
+    },
+    {
+      "id": "event-hs-s3-danyang-stele",
+      "type": "Event",
+      "label": "단양 신라 적성비 건립"
+    },
+    {
+      "id": "event-hs-s3-ureuk",
+      "type": "Event",
+      "label": "우륵의 하림궁 연주(551)"
+    },
+    {
+      "id": "event-hs-s3-norisachigye",
+      "type": "Event",
+      "label": "노리사치계의 불교 전파(552)"
+    },
+    {
+      "id": "event-hs-s3-hangang-553",
+      "type": "Event",
+      "label": "신라의 한강 유역 장악(553)"
+    },
+    {
+      "id": "event-hs-s3-hwangnyongsa",
+      "type": "Event",
+      "label": "황룡사 창건(553)"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-hs-s3-loc-gongsanseong",
+      "subject": "place-hs-s3-gongsanseong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 36.46333,
+        "lon": 127.12694,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-gongsanseong",
+      "citesExcerpt": "ex-geo-gongsanseong",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-songsanri",
+      "subject": "place-hs-s3-muryeongneung",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 36.46139,
+        "lon": 127.11278,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-songsanri",
+      "citesExcerpt": "ex-geo-songsanri",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-gongju",
+      "subject": "place-hs-s3-gongju",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 36.45,
+        "lon": 127.117,
+        "precision": "area"
+      },
+      "sourceId": "src-hs-s3-wiki-gongju",
+      "citesExcerpt": "ex-geo-gongju",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-gyeongju",
+      "subject": "place-hs-s3-gyeongju",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.85,
+        "lon": 129.217,
+        "precision": "area"
+      },
+      "sourceId": "src-hs-s3-wiki-gyeongju",
+      "citesExcerpt": "ex-geo-gyeongju",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-oreung",
+      "subject": "place-hs-s3-oreung",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.82333,
+        "lon": 129.20889,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-oreung",
+      "citesExcerpt": "ex-geo-oreung",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-wolseong",
+      "subject": "place-hs-s3-wolseong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.83083,
+        "lon": 129.22611,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-wolseong",
+      "citesExcerpt": "ex-geo-wolseong",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-cheomseongdae",
+      "subject": "place-hs-s3-cheomseongdae",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.83472,
+        "lon": 129.21917,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-cheomseongdae",
+      "citesExcerpt": "ex-geo-cheomseongdae",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-gyerim",
+      "subject": "place-hs-s3-gyerim",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.83278,
+        "lon": 129.21889,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-gyerim",
+      "citesExcerpt": "ex-geo-gyerim",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-najeong",
+      "subject": "place-hs-s3-najeong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.81583,
+        "lon": 129.2125,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-najeong",
+      "citesExcerpt": "ex-geo-najeong",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-heungnyunsa",
+      "subject": "place-hs-s3-heungnyunsa",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.82833,
+        "lon": 129.20694,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-heungnyunsa",
+      "citesExcerpt": "ex-geo-heungnyunsa",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-myeonghwal",
+      "subject": "place-hs-s3-myeonghwalseong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.83556,
+        "lon": 129.25528,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-myeonghwal",
+      "citesExcerpt": "ex-geo-myeonghwal",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-hwangnyongsa",
+      "subject": "place-hs-s3-hwangnyongsa",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.83694,
+        "lon": 129.2325,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-hwangnyongsa",
+      "citesExcerpt": "ex-geo-hwangnyongsa",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-ulleungdo",
+      "subject": "place-hs-s3-ulleungdo",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 37.5,
+        "lon": 130.86667,
+        "precision": "area"
+      },
+      "sourceId": "src-hs-s3-wiki-ulleungdo",
+      "citesExcerpt": "ex-geo-ulleungdo",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-bonghwangdong",
+      "subject": "place-hs-s3-bonghwangdong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.2297709,
+        "lon": 128.8784676,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-bonghwangdong",
+      "citesExcerpt": "ex-geo-bonghwangdong",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-busosanseong",
+      "subject": "place-hs-s3-busosanseong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 36.2875,
+        "lon": 126.91528,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-busosanseong",
+      "citesExcerpt": "ex-geo-busosanseong",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-gwanbukri",
+      "subject": "place-hs-s3-gwanbukri",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 36.28444,
+        "lon": 126.9125,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-gwanbukri",
+      "citesExcerpt": "ex-geo-gwanbukri",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-cheonjeongdae",
+      "subject": "place-hs-s3-cheonjeongdae",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 36.31389,
+        "lon": 126.91917,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-cheonjeongdae",
+      "citesExcerpt": "ex-geo-cheonjeongdae",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-uiryeong",
+      "subject": "place-hs-s3-uiryeong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 35.3191666767,
+        "lon": 128.261111121,
+        "precision": "area"
+      },
+      "sourceId": "src-hs-s3-wiki-uiryeong",
+      "citesExcerpt": "ex-geo-uiryeong",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-danyang",
+      "subject": "place-hs-s3-danyang",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 36.984695,
+        "lon": 128.3658033,
+        "precision": "area"
+      },
+      "sourceId": "src-hs-s3-wiki-danyang",
+      "citesExcerpt": "ex-geo-danyang",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-tangeumdae",
+      "subject": "place-hs-s3-tangeumdae",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 36.98833,
+        "lon": 127.89778,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-tangeumdae",
+      "citesExcerpt": "ex-geo-tangeumdae",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-asuka",
+      "subject": "place-hs-s3-asuka",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 34.478731,
+        "lon": 135.820214,
+        "precision": "area"
+      },
+      "sourceId": "src-hs-s3-wiki-asukadera",
+      "citesExcerpt": "ex-geo-asukadera",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-loc-achasanseong",
+      "subject": "place-hs-s3-achasanseong",
+      "predicate": "syj:locatedAt",
+      "object": {
+        "kind": "location",
+        "lat": 37.55444,
+        "lon": 127.10278,
+        "precision": "site"
+      },
+      "sourceId": "src-hs-s3-wiki-achasanseong",
+      "citesExcerpt": "ex-geo-achasanseong",
+      "note": "위키백과 문서의 표시 좌표(십진)를 대표점으로 썼다."
+    },
+    {
+      "id": "claim-hs-s3-muryeong-acc-501",
+      "subject": "person-muryeong",
+      "predicate": "syj:reignedFrom",
+      "object": {
+        "kind": "time",
+        "verbatim": "牟大在位二十三年薨",
+        "year": 501,
+        "precision": "year",
+        "earliest": 501,
+        "latest": 501
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0050_0010",
+      "quote": "牟大在位二十三年薨, 即位",
+      "note": "동성왕이 죽은 뒤 무령왕이 즉위했다. 삼국사기 백제본기."
+    },
+    {
+      "id": "claim-hs-s3-muryeong-end-523",
+      "subject": "person-muryeong",
+      "predicate": "syj:reignedTo",
+      "object": {
+        "kind": "time",
+        "verbatim": "夏五月",
+        "year": 523,
+        "precision": "month",
+        "earliest": 523,
+        "latest": 523
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0050_0260",
+      "quote": "夏五月, 王薨. 謚曰武寧",
+      "note": "무령왕 23년 5월 사망."
+    },
+    {
+      "id": "claim-hs-s3-damno-liangshu",
+      "subject": "polity-hs-s3-baekje",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "檐魯"
+      },
+      "sourceId": "src-jipseong-ko_026",
+      "citesChunk": "chunk_jipseong-ko_026_ko_026_0040_0030",
+      "quote": "其國有二十二檐魯, 皆以子弟宗族分據之",
+      "note": "양서 백제전. 22담로를 왕족·종족이 나누어 다스렸다."
+    },
+    {
+      "id": "claim-hs-s3-damno-enc",
+      "subject": "polity-hs-s3-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-gongju"
+      },
+      "sourceId": "src-hs-s3-enc-damno",
+      "citesExcerpt": "ex-damno-22",
+      "note": "민족문화대백과 담로 항목이 양서의 22담로를 확인한다."
+    },
+    {
+      "id": "claim-hs-s3-damno-ungjin",
+      "subject": "polity-hs-s3-baekje",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-gongsanseong"
+      },
+      "sourceId": "src-hs-s3-enc-damno",
+      "citesExcerpt": "ex-damno-ungjin",
+      "note": "담로제가 웅진 천도 뒤에도 이어졌다는 서술."
+    },
+    {
+      "id": "claim-hs-s3-silla-code-520",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "七年",
+        "year": 520,
+        "precision": "year",
+        "earliest": 520,
+        "latest": 520
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0060",
+      "quote": "七年, 春正月, 頒示律令, 始制百官公服朱紫之秩",
+      "note": "법흥왕 7년 율령 반포와 백관 공복 제정."
+    },
+    {
+      "id": "claim-hs-s3-sabi-538",
+      "subject": "polity-hs-s3-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十六年",
+        "year": 538,
+        "precision": "year",
+        "earliest": 538,
+        "latest": 538
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0060_0100",
+      "quote": "十六年, 春, 移都於泗沘, 國號南扶餘",
+      "note": "성왕 16년 사비 천도와 국호 남부여."
+    },
+    {
+      "id": "claim-hs-s3-sabi-act",
+      "subject": "polity-hs-s3-baekje",
+      "predicate": "syj:capitalMovedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-sabi"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0060_0100",
+      "quote": "移都於泗沘",
+      "note": "도읍을 사비로 옮겼다."
+    },
+    {
+      "id": "claim-hs-s3-nambuyeo-period",
+      "subject": "polity-hs-s3-baekje",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "538년부터 660년까지",
+        "year": 538,
+        "precision": "year",
+        "earliest": 538,
+        "latest": 660
+      },
+      "sourceId": "src-hs-s3-enc-nambuyeo",
+      "citesExcerpt": "ex-nambuyeo-period",
+      "note": "남부여 국호가 쓰인 기간. 사비 시기의 존속 근거로 쓴다."
+    },
+    {
+      "id": "claim-hs-s3-ox-502",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "三月",
+        "year": 502,
+        "precision": "month",
+        "earliest": 502,
+        "latest": 502
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0020_0050",
+      "quote": "三月, 分命州郡主勸農, 始用牛耕",
+      "note": "지증왕 3년 3월, 주·군에 명해 농사를 권하고 처음으로 소를 부려 밭을 갈았다."
+    },
+    {
+      "id": "claim-hs-s3-ox-act",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-encykorea-jijeung"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0020_0050",
+      "quote": "分命州郡主勸農, 始用牛耕",
+      "note": "주·군의 관리에게 권농을 맡긴 주체는 지증왕이다."
+    },
+    {
+      "id": "claim-hs-s3-sillaname-503",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "四年",
+        "year": 503,
+        "precision": "year",
+        "earliest": 503,
+        "latest": 503
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0020_0060",
+      "quote": "四年, 冬十月, 羣臣上言",
+      "note": "지증마립간 4년 10월 신하들이 국호와 왕호를 올렸다."
+    },
+    {
+      "id": "claim-hs-s3-sillaname-act",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "新羅國王"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0020_0060",
+      "quote": "謹上號新羅國王",
+      "note": "국호 신라와 왕호를 함께 정했다."
+    },
+    {
+      "id": "claim-hs-s3-sillaname-reason",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-encykorea-jijeung"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0020_0060",
+      "quote": "始祖創業已來, 國名未定",
+      "note": "시조 이래 국명이 정해지지 않았다는 신하들의 말."
+    },
+    {
+      "id": "claim-hs-s3-usan-512",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十三年",
+        "year": 512,
+        "precision": "year",
+        "earliest": 512,
+        "latest": 512
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0020_0180",
+      "quote": "十三年, 夏六月, 于山國歸服",
+      "note": "지증마립간 13년 6월 우산국이 항복했다."
+    },
+    {
+      "id": "claim-hs-s3-usan-act",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-isabu"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0020_0180",
+      "quote": "伊湌異斯夫爲何瑟羅州軍主",
+      "note": "이사부가 하슬라주 군주로서 우산국을 계책으로 복속시켰다."
+    },
+    {
+      "id": "claim-hs-s3-usan-enc",
+      "subject": "person-isabu",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "512년",
+        "year": 512,
+        "precision": "year",
+        "earliest": 512,
+        "latest": 512
+      },
+      "sourceId": "src-anc-enc-isabu",
+      "citesChunk": "chunk_scenes-103_ancient_scenes_isabu-512",
+      "quote": "512년에는 우산국(于山國 : 지금의 울릉도)을 점령하였다.",
+      "note": "민족문화대백과 이사부 항목. 우산국이 지금의 울릉도임을 밝힌다."
+    },
+    {
+      "id": "claim-hs-s3-usan-ships",
+      "subject": "person-isabu",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-ulleungdo"
+      },
+      "sourceId": "src-anc-enc-isabu",
+      "citesChunk": "chunk_scenes-103_ancient_scenes_isabu-ships",
+      "quote": "나무로 사자(獅子)를 많이 만들어 전선에 가득 싣고",
+      "note": "나무 사자를 전선에 싣고 해안을 오갔다는 서술."
+    },
+    {
+      "id": "claim-hs-s3-beopheung-514",
+      "subject": "person-beopheung",
+      "predicate": "syj:reignedFrom",
+      "object": {
+        "kind": "time",
+        "verbatim": "法興王立",
+        "year": 514,
+        "precision": "year",
+        "earliest": 514,
+        "latest": 514
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0010",
+      "quote": "法興王立. 諱原宗",
+      "note": "법흥왕 즉위. 지증왕의 맏아들."
+    },
+    {
+      "id": "claim-hs-s3-beopheung-540",
+      "subject": "person-beopheung",
+      "predicate": "syj:reignedTo",
+      "object": {
+        "kind": "time",
+        "verbatim": "二十七年",
+        "year": 540,
+        "precision": "year",
+        "earliest": 540,
+        "latest": 540
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0190",
+      "quote": "二十七年, 秋七月, 王薨. 諡曰法興",
+      "note": "법흥왕 27년 7월 사망."
+    },
+    {
+      "id": "claim-hs-s3-beopheung-enc",
+      "subject": "person-beopheung",
+      "predicate": "syj:reignedFrom",
+      "object": {
+        "kind": "time",
+        "verbatim": "514년",
+        "year": 514,
+        "precision": "year",
+        "earliest": 514,
+        "latest": 514
+      },
+      "sourceId": "src-encykorea-beopheung",
+      "citesChunk": "chunk_encykorea-beopheung_01",
+      "quote": "신라의 제23대(재위: 514년~540년) 왕.",
+      "note": "민족문화대백과 법흥왕 항목의 재위 기간."
+    },
+    {
+      "id": "claim-hs-s3-byeongbu-517",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "四年",
+        "year": 517,
+        "precision": "year",
+        "earliest": 517,
+        "latest": 517
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0040",
+      "quote": "四年, 夏四月, 始置兵部",
+      "note": "법흥왕 4년 4월 병부를 처음 두었다."
+    },
+    {
+      "id": "claim-hs-s3-byeongbu-act",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-beopheung"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0040",
+      "quote": "始置兵部",
+      "note": "병부 설치의 주체는 법흥왕이다."
+    },
+    {
+      "id": "claim-hs-s3-golpum-tang",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-gyerim"
+      },
+      "sourceId": "src-jipseong-ko_035",
+      "citesChunk": "chunk_jipseong-ko_035_ko_035_1850_0030",
+      "quote": "其族名第一骨·第二骨以自別",
+      "note": "신당서 신라전. 제1골·제2골로 가문을 구분했다."
+    },
+    {
+      "id": "claim-hs-s3-golpum-enc",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-beopheung"
+      },
+      "sourceId": "src-hs-s3-enc-golpumje",
+      "citesExcerpt": "ex-golpum-6c",
+      "note": "민족문화대백과 골품제도 항목. 6세기 초에 이미 법제화되었다고 본다."
+    },
+    {
+      "id": "claim-hs-s3-golpum-scope",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-wolseong"
+      },
+      "sourceId": "src-hs-s3-enc-golpumje",
+      "citesExcerpt": "ex-golpum-scope",
+      "note": "혼인·집 크기·옷 색깔까지 규제했다는 서술."
+    },
+    {
+      "id": "claim-hs-s3-ranks-sg",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-najeong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_001_0040_0050",
+      "quote": "又設官有十七䓁",
+      "note": "삼국사기는 유리 이사금 대에 17관등을 두었다고 전한다."
+    },
+    {
+      "id": "claim-hs-s3-ranks-sui",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-silla"
+      },
+      "sourceId": "src-jipseong-ko_033",
+      "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0030",
+      "quote": "其官有十七等",
+      "note": "수서 신라전도 관등이 열일곱 등급임을 적었다."
+    },
+    {
+      "id": "claim-hs-s3-code-act",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-beopheung"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0060",
+      "quote": "頒示律令, 始制百官公服朱紫之秩",
+      "note": "율령을 반포하고 백관의 공복 등급을 처음 정했다."
+    },
+    {
+      "id": "claim-hs-s3-seong-523",
+      "subject": "person-baekje-seongwang",
+      "predicate": "syj:reignedFrom",
+      "object": {
+        "kind": "time",
+        "verbatim": "繼位",
+        "year": 523,
+        "precision": "year",
+        "earliest": 523,
+        "latest": 523
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0060_0010",
+      "quote": "武寧薨, 繼位, 國人稱為聖王",
+      "note": "무령왕이 죽고 성왕이 왕위를 이었다."
+    },
+    {
+      "id": "claim-hs-s3-seong-554",
+      "subject": "person-baekje-seongwang",
+      "predicate": "syj:reignedTo",
+      "object": {
+        "kind": "time",
+        "verbatim": "三十二年",
+        "year": 554,
+        "precision": "year",
+        "earliest": 554,
+        "latest": 554
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0060_0210",
+      "quote": "三十二年, 秋七月, 王欲襲新羅",
+      "note": "성왕 32년 관산성 싸움에서 전사했다."
+    },
+    {
+      "id": "claim-hs-s3-tomb-525",
+      "subject": "place-hs-s3-muryeongneung",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "乙巳年八月",
+        "year": 525,
+        "precision": "month",
+        "earliest": 525,
+        "latest": 525
+      },
+      "sourceId": "src-geumseok-gskh_002_0010_0010",
+      "citesChunk": "chunk_geumseok-gskh_002_0010_0010_gskh_002_0010_0010_0030",
+      "quote": "到乙巳年八月癸酉朔十二日甲申安厝",
+      "note": "무령왕 지석. 을사년(525) 8월 12일에 대묘에 안장했다."
+    },
+    {
+      "id": "claim-hs-s3-tomb-act",
+      "subject": "place-hs-s3-muryeongneung",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-muryeong"
+      },
+      "sourceId": "src-geumseok-gskh_002_0010_0010",
+      "citesChunk": "chunk_geumseok-gskh_002_0010_0010_gskh_002_0010_0010_0030",
+      "quote": "寧東大將軍百濟斯",
+      "note": "지석이 무덤 주인을 영동대장군 백제 사마왕이라 적어 무령왕릉임을 확정한다."
+    },
+    {
+      "id": "claim-hs-s3-tomb-land",
+      "subject": "place-hs-s3-muryeongneung",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "買申地爲墓"
+      },
+      "sourceId": "src-geumseok-gskh_002_0010_0010",
+      "citesChunk": "chunk_geumseok-gskh_002_0010_0010_gskh_002_0010_0010_0030",
+      "quote": "買申地爲墓故立券爲明",
+      "note": "매지권. 땅값 1만 문을 치르고 무덤 자리를 샀다고 적었다."
+    },
+    {
+      "id": "claim-hs-s3-ichadon-527",
+      "subject": "person-ichadon",
+      "predicate": "syj:endedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "527년",
+        "year": 527,
+        "precision": "year",
+        "earliest": 527,
+        "latest": 527
+      },
+      "sourceId": "src-anc-enc-ichadon",
+      "citesChunk": "chunk_scenes-103_ancient_scenes_ichadon-year",
+      "quote": "사망 연도527년(법흥왕 14)",
+      "note": "민족문화대백과 이차돈 항목의 사망 연도."
+    },
+    {
+      "id": "claim-hs-s3-ichadon-exec",
+      "subject": "person-ichadon",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-beopheung"
+      },
+      "sourceId": "src-anc-enc-ichadon",
+      "citesChunk": "chunk_scenes-103_ancient_scenes_ichadon-execution",
+      "quote": "이를 수락한 법흥왕은 이차돈에게 흥륜사 건립 공사를 강행한 책임을 물어 그를 처형하였다.",
+      "note": "흥륜사 공사 책임을 물어 처형했다는 서술."
+    },
+    {
+      "id": "claim-hs-s3-ichadon-gongin",
+      "subject": "person-ichadon",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-silla"
+      },
+      "sourceId": "src-anc-enc-ichadon",
+      "citesChunk": "chunk_scenes-103_ancient_scenes_ichadon-gongin",
+      "quote": "이차돈의 순교(殉敎)주3로 이루어진 불교 공인은",
+      "note": "순교로 불교 공인이 이루어졌다는 서술."
+    },
+    {
+      "id": "claim-hs-s3-buddhism-sg",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-ichadon"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0110",
+      "quote": "及斬之, 血從斷處湧, 色白如乳",
+      "note": "삼국사기 법흥왕 15년 조의 이차돈 처형 기사. 삼국사기는 불법이 널리 행해진 해를 528년으로 적는다."
+    },
+    {
+      "id": "claim-hs-s3-heungnyunsa-place",
+      "subject": "place-hs-s3-heungnyunsa",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-silla"
+      },
+      "sourceId": "src-anc-enc-heungnyunsa",
+      "citesChunk": "chunk_scenes-103_ancient_scenes_heungnyunsa-place",
+      "quote": "흥륜사는 경상북도 경주시에 있었던",
+      "note": "흥륜사가 경주에 있었다는 서술."
+    },
+    {
+      "id": "claim-hs-s3-sangdaedeung-531",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "夏四月",
+        "year": 531,
+        "precision": "month",
+        "earliest": 531,
+        "latest": 531
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0140",
+      "quote": "夏四月, 拜伊湌哲夫爲上大等, 摠知國事",
+      "note": "법흥왕 18년 4월 이찬 철부를 상대등에 임명했다."
+    },
+    {
+      "id": "claim-hs-s3-sangdaedeung-act",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-hs-s3-cheolbu"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0140",
+      "quote": "上大等官始於此, 如今之宰相",
+      "note": "상대등이라는 관직이 이때 처음 생겼고 재상에 해당한다."
+    },
+    {
+      "id": "claim-hs-s3-sangdaedeung-enc",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:establishedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "531년",
+        "year": 531,
+        "precision": "year",
+        "earliest": 531,
+        "latest": 531
+      },
+      "sourceId": "src-hs-s3-enc-sangdaedeung",
+      "citesExcerpt": "ex-sangdaedeung-531",
+      "note": "민족문화대백과 상대등 항목의 설치 연도."
+    },
+    {
+      "id": "claim-hs-s3-sangdaedeung-role",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-wolseong"
+      },
+      "sourceId": "src-hs-s3-enc-sangdaedeung",
+      "citesExcerpt": "ex-sangdaedeung-role",
+      "note": "상대등이 대등으로 구성된 귀족회의를 주재했다는 서술."
+    },
+    {
+      "id": "claim-hs-s3-gaya-532",
+      "subject": "polity-hs-s3-geumgwan-gaya",
+      "predicate": "syj:endedIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十九年",
+        "year": 532,
+        "precision": "year",
+        "earliest": 532,
+        "latest": 532
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0150",
+      "quote": "十九年, 金官國主金仇亥與妃及三子",
+      "note": "법흥왕 19년 금관국주 김구해가 항복했다."
+    },
+    {
+      "id": "claim-hs-s3-gaya-act",
+      "subject": "person-hs-s3-gim-guhae",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-silla"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0150",
+      "quote": "以國帑寶物來降",
+      "note": "나라의 보물을 가지고 항복했다."
+    },
+    {
+      "id": "claim-hs-s3-gaya-treat",
+      "subject": "person-hs-s3-gim-guhae",
+      "predicate": "syj:administeredAs",
+      "object": {
+        "kind": "literal",
+        "value": "上等"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0030_0150",
+      "quote": "授位上等, 以本國爲食邑",
+      "note": "항복한 왕에게 상등의 지위를 주고 본국을 식읍으로 삼게 했다."
+    },
+    {
+      "id": "claim-hs-s3-yeonga-539",
+      "subject": "thing-hs-s3-yeonga-buddha",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "延嘉七年",
+        "year": 539,
+        "precision": "year",
+        "earliest": 539,
+        "latest": 539
+      },
+      "sourceId": "src-geumseok-gskh_001_0040_0030",
+      "citesChunk": "chunk_geumseok-gskh_001_0040_0030_gskh_001_0040_0030_0020",
+      "quote": "延嘉七年歲在己未高麗國樂良",
+      "note": "광배 명문의 연가 7년 기미년. 서기 539년으로 본다."
+    },
+    {
+      "id": "claim-hs-s3-yeonga-make",
+      "subject": "thing-hs-s3-yeonga-buddha",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-goguryeo"
+      },
+      "sourceId": "src-geumseok-gskh_001_0040_0030",
+      "citesChunk": "chunk_geumseok-gskh_001_0040_0030_gskh_001_0040_0030_0020",
+      "quote": "東寺主敬弟子僧演師徒卌人",
+      "note": "고구려 낙랑 동사의 승려 마흔 명이 천불을 만들어 유포했다는 명문."
+    },
+    {
+      "id": "claim-hs-s3-yeonga-find",
+      "subject": "thing-hs-s3-yeonga-buddha",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-uiryeong"
+      },
+      "sourceId": "src-geumseok-gskh_001_0040_0030",
+      "citesChunk": "chunk_geumseok-gskh_001_0040_0030_gskh_001_0040_0030_0010",
+      "quote": "1963년 慶南 宜寧郡 大義面 下村里의 돌무더기 속에서",
+      "note": "1963년 경남 의령군 대의면 하촌리에서 발견되었다."
+    },
+    {
+      "id": "claim-hs-s3-jinheung-540",
+      "subject": "person-encykorea-jinheung",
+      "predicate": "syj:reignedFrom",
+      "object": {
+        "kind": "time",
+        "verbatim": "眞興王立",
+        "year": 540,
+        "precision": "year",
+        "earliest": 540,
+        "latest": 540
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0010",
+      "quote": "眞興王立. 諱彡麥宗, 時年七歲",
+      "note": "진흥왕 즉위. 일곱 살에 왕위에 올라 태후가 섭정했다."
+    },
+    {
+      "id": "claim-hs-s3-jinheung-enc",
+      "subject": "person-encykorea-jinheung",
+      "predicate": "syj:reignedTo",
+      "object": {
+        "kind": "time",
+        "verbatim": "540~576",
+        "year": 576,
+        "precision": "year",
+        "earliest": 540,
+        "latest": 576
+      },
+      "sourceId": "src-encykorea-jinheung",
+      "citesChunk": "chunk_encykorea-jinheung_01",
+      "quote": "진흥왕은 삼국시대 신라의 제24대(재위: 540~576) 왕이다.",
+      "note": "민족문화대백과 진흥왕 항목의 재위 기간."
+    },
+    {
+      "id": "claim-hs-s3-jeongsaam-sy",
+      "subject": "place-hs-s3-hoamsa",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-baekje"
+      },
+      "sourceId": "src-samgukyusa",
+      "citesChunk": "chunk_samgukyusa_sy_002_0010_0200_0050",
+      "quote": "又虎嵓寺有政事嵓",
+      "note": "삼국유사 남부여 조. 호암사에 정사암이 있었다."
+    },
+    {
+      "id": "claim-hs-s3-jeongsaam-pick",
+      "subject": "place-hs-s3-hoamsa",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-cheonjeongdae"
+      },
+      "sourceId": "src-samgukyusa",
+      "citesChunk": "chunk_samgukyusa_sy_002_0010_0200_0050",
+      "quote": "國家将議宰相, 則書當選者名或三四凾封置嵓上",
+      "note": "재상을 뽑을 때 후보의 이름을 봉해 바위 위에 두었다가 인적이 찍힌 사람을 뽑았다."
+    },
+    {
+      "id": "claim-hs-s3-jeongsaam-enc",
+      "subject": "place-hs-s3-hoamsa",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-sabi"
+      },
+      "sourceId": "src-hs-s3-enc-jeongsaam",
+      "citesExcerpt": "ex-jeongsaam-hoam",
+      "note": "정사암이 사비 부근 호암사에 있었다는 민족문화대백과 서술."
+    },
+    {
+      "id": "claim-hs-s3-jeongsaam-role",
+      "subject": "place-hs-s3-hoamsa",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-baekje"
+      },
+      "sourceId": "src-hs-s3-enc-jeongsaam",
+      "citesExcerpt": "ex-jeongsaam-select",
+      "note": "좌평을 뽑을 때 쓰였다는 서술."
+    },
+    {
+      "id": "claim-hs-s3-stele-551",
+      "subject": "thing-hs-s3-danyang-stele",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "진흥왕 12년(551)",
+        "year": 551,
+        "precision": "year",
+        "earliest": 545,
+        "latest": 551
+      },
+      "sourceId": "src-geumseok-gskh_003_0010_0060",
+      "citesChunk": "chunk_geumseok-gskh_003_0010_0060_gskh_003_0010_0060_0010",
+      "quote": "진흥왕 12년(551)을 비석 건립의 상한으로 보는데",
+      "note": "건립 연대는 확정되지 않았다. 551년을 상한, 545년 이전과 550년 절충설이 함께 제기된다."
+    },
+    {
+      "id": "claim-hs-s3-stele-loc",
+      "subject": "thing-hs-s3-danyang-stele",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-danyang"
+      },
+      "sourceId": "src-geumseok-gskh_003_0010_0060",
+      "citesChunk": "chunk_geumseok-gskh_003_0010_0060_gskh_003_0010_0060_0010",
+      "quote": "충청북도 단양군 하방리의 적성(赤城) 내에 위치하며",
+      "note": "비석은 단양군 하방리 적성 안에 있다."
+    },
+    {
+      "id": "claim-hs-s3-stele-content",
+      "subject": "thing-hs-s3-danyang-stele",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-isabu"
+      },
+      "sourceId": "src-geumseok-gskh_003_0010_0060",
+      "citesChunk": "chunk_geumseok-gskh_003_0010_0060_gskh_003_0010_0060_0010",
+      "quote": "단양지역을 공략한 이사부 등 “대중등(大衆等)”과 장군의 업적을 기록하였으며",
+      "note": "적성을 공략한 이사부 등의 공적과 포상을 적었다."
+    },
+    {
+      "id": "claim-hs-s3-ureuk-551",
+      "subject": "person-encykorea-ureuk",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "三月",
+        "year": 551,
+        "precision": "month",
+        "earliest": 551,
+        "latest": 551
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0150",
+      "quote": "三月, 王巡守次娘城, 聞千勒及其弟子尼文知音樂",
+      "note": "진흥왕 12년 3월 낭성에 순행하다가 우륵의 음악을 들었다."
+    },
+    {
+      "id": "claim-hs-s3-ureuk-act",
+      "subject": "person-encykorea-ureuk",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-encykorea-jinheung"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0150",
+      "quote": "王駐河臨宮, 令奏其樂",
+      "note": "하림궁에 머물며 연주하게 했다."
+    },
+    {
+      "id": "claim-hs-s3-ureuk-gaya",
+      "subject": "person-encykorea-ureuk",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-silla"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0150",
+      "quote": "及其國亂, 操樂器投我. 其樂名加耶琴",
+      "note": "나라가 어지러워지자 악기를 들고 신라로 왔고 그 음악을 가야금이라 한다."
+    },
+    {
+      "id": "claim-hs-s3-ureuk-place",
+      "subject": "person-encykorea-ureuk",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-tangeumdae"
+      },
+      "sourceId": "src-aks-ureuk",
+      "citesChunk": "chunk_scenes-128_ancient_settlements_ur-place",
+      "quote": "왕은 그를 맞아 국원(國原 : 지금의 충주)에 안치시키고",
+      "note": "우륵을 국원, 곧 지금의 충주에 살게 했다."
+    },
+    {
+      "id": "claim-hs-s3-nori-552",
+      "subject": "person-hs-s3-norisachigye",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "552년(성왕 30)",
+        "year": 552,
+        "precision": "year",
+        "earliest": 552,
+        "latest": 552
+      },
+      "sourceId": "src-hs-s3-enc-norisachigye",
+      "citesExcerpt": "ex-nori-552",
+      "note": "민족문화대백과 노리사치계 항목. 성왕의 명으로 일본에 불교를 전했다."
+    },
+    {
+      "id": "claim-hs-s3-nori-act",
+      "subject": "person-hs-s3-norisachigye",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-wa"
+      },
+      "sourceId": "src-hs-s3-enc-norisachigye",
+      "citesExcerpt": "ex-nori-act",
+      "note": "일본에 불교를 전수했다는 서술."
+    },
+    {
+      "id": "claim-hs-s3-nori-king",
+      "subject": "person-hs-s3-norisachigye",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-baekje-seongwang"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0060_0010",
+      "quote": "聖王, 諱明穠, 武寧王之子也",
+      "note": "노리사치계를 보낸 주체는 백제 성왕이다."
+    },
+    {
+      "id": "claim-hs-s3-hangang-553",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:occurredIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "秋七月",
+        "year": 553,
+        "precision": "month",
+        "earliest": 553,
+        "latest": 553
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0190",
+      "quote": "秋七月, 取百濟東北鄙",
+      "note": "진흥왕 14년 7월 백제의 동북 변경을 빼앗았다."
+    },
+    {
+      "id": "claim-hs-s3-hangang-act",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "place-hs-s3-achasanseong"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_026_0060_0190",
+      "quote": "新羅取東北鄙, 置新州",
+      "note": "백제본기도 같은 해 신라가 동북 변경을 빼앗아 신주를 두었다고 적었다."
+    },
+    {
+      "id": "claim-hs-s3-hangang-gov",
+      "subject": "polity-hs-s3-silla",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "polity-hs-s3-baekje"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0190",
+      "quote": "以阿湌武力爲軍主",
+      "note": "아찬 무력을 군주로 삼았다. 무력은 항복한 금관가야 왕의 아들이다."
+    },
+    {
+      "id": "claim-hs-s3-hwangnyongsa-553",
+      "subject": "place-hs-s3-hwangnyongsa",
+      "predicate": "syj:builtIn",
+      "object": {
+        "kind": "time",
+        "verbatim": "十四年",
+        "year": 553,
+        "precision": "year",
+        "earliest": 553,
+        "latest": 553
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0180",
+      "quote": "十四年, 春二月, 王命所司築新宮於月城東",
+      "note": "진흥왕 14년 2월 월성 동쪽에 새 궁을 짓다가 절로 바꾸었다."
+    },
+    {
+      "id": "claim-hs-s3-hwangnyongsa-act",
+      "subject": "place-hs-s3-hwangnyongsa",
+      "predicate": "syj:relatedTo",
+      "object": {
+        "kind": "entity",
+        "id": "person-encykorea-jinheung"
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0180",
+      "quote": "改爲佛寺, 賜號曰皇龍",
+      "note": "황룡이 나타났다 하여 절로 바꾸고 황룡이라는 이름을 내렸다."
+    },
+    {
+      "id": "claim-hs-s3-hwangnyongsa-566",
+      "subject": "place-hs-s3-hwangnyongsa",
+      "predicate": "syj:foundedIn",
+      "object": {
+        "kind": "year",
+        "value": 566
+      },
+      "sourceId": "src-samguksagi",
+      "citesChunk": "chunk_samguksagi_sg_004_0040_0410",
+      "quote": "皇龍寺畢功",
+      "note": "삼국사기는 진흥왕 27년(566) 황룡사가 완공되었다고 적는다."
+    },
+    {
+      "id": "claim-hs-s3-hwangnyongsa-1238",
+      "subject": "place-hs-s3-hwangnyongsa",
+      "predicate": "syj:destroyedIn",
+      "object": {
+        "kind": "year",
+        "value": 1238
+      },
+      "sourceId": "src-goryeosa-jeolyo",
+      "citesChunk": "chunk_goryeosa-jeolyo_kj_016_0010_0090_0010_0020",
+      "quote": "燒皇龍寺塔",
+      "note": "고려사절요. 1238년 몽골군이 동경에 이르러 황룡사 탑을 불태웠다."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-hs-s3-muryeong-wang",
+      "itemId": "hs-samguk-muryeong-wang",
+      "eventId": "event-hs-s3-muryeong-wang",
+      "title": "무령왕",
+      "startYear": 501,
+      "endYear": 523,
+      "kind": "portrait",
+      "summary": "501년에 왕위에 올라 523년까지 나라를 다스렸다. 고구려에 밀려 흔들리던 백제를 다시 세우고, 지방 22담로에 왕족을 보내 왕의 힘이 닿게 했다.",
+      "dateClaimIds": [
+        "claim-hs-s3-muryeong-acc-501",
+        "claim-hs-s3-muryeong-end-523"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-damno-liangshu"
+      ],
+      "place": {
+        "label": "웅진 공산성(백제 왕성)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.12694,
+        "lat": 36.46333,
+        "claimIds": [
+          "claim-hs-s3-loc-gongsanseong"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-gongsanseong"
+        ],
+        "coordinateNote": "무령왕이 머문 웅진 왕성이다. 공산성 표시 좌표를 대표점으로 썼다.",
+        "setting": "palace"
+      },
+      "participants": [
+        {
+          "entityId": "person-muryeong",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-muryeong-acc-501",
+            "claim-hs-s3-muryeong-end-523"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-muryeong-acc-501",
+            "claim-hs-s3-muryeong-end-523"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "person",
+      "region": "central",
+      "decade": 500
+    },
+    {
+      "id": "scene-hs-s3-ox-plowing",
+      "itemId": "hs-samguk-ox-plowing",
+      "eventId": "event-hs-s3-ox-plowing",
+      "title": "우경 보급",
+      "startYear": 502,
+      "endYear": 502,
+      "kind": "tradition",
+      "summary": "지증왕 3년, 주와 군의 관리에게 농사를 권하게 하면서 소로 밭을 가는 방법이 처음 기록에 나온다. 사람 힘으로 갈던 땅을 소가 갈면서 거둘 수 있는 곡식이 늘었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-ox-502"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-ox-act"
+      ],
+      "place": {
+        "label": "신라 왕경 일원의 들판",
+        "medium": "land",
+        "precision": "area",
+        "lon": 129.217,
+        "lat": 35.85,
+        "claimIds": [
+          "claim-hs-s3-loc-gyeongju"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-gyeongju"
+        ],
+        "coordinateNote": "전국의 주·군에 내린 명령이라 한 지점을 특정할 수 없다. 신라 왕경이 있던 경주 일원의 표시 좌표를 대표점으로 썼다."
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-jijeung",
+          "role": "ruler",
+          "presence": "off-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-ox-502",
+            "claim-hs-s3-ox-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-ox-502"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "economy",
+      "region": "south",
+      "decade": 500,
+      "sceneFunction": "irrigation"
+    },
+    {
+      "id": "scene-hs-s3-silla-name",
+      "itemId": "hs-samguk-silla-name-503",
+      "eventId": "event-hs-s3-silla-name",
+      "title": "국호 '신라'와 왕호 사용",
+      "startYear": 503,
+      "endYear": 503,
+      "kind": "court",
+      "summary": "지증마립간 4년 겨울, 신하들이 시조 이래 정해지지 않은 나라 이름을 신라로 정하고 마립간 대신 왕이라는 칭호를 쓰자고 아뢰어 그대로 따랐다.",
+      "dateClaimIds": [
+        "claim-hs-s3-sillaname-503"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-sillaname-act",
+        "claim-hs-s3-sillaname-reason"
+      ],
+      "place": {
+        "label": "경주 오릉(신라 시조릉 전승지)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.20889,
+        "lat": 35.82333,
+        "claimIds": [
+          "claim-hs-s3-loc-oreung"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-oreung"
+        ],
+        "coordinateNote": "조정 논의 장소를 적은 기록은 없다. 신하들이 \"시조가 나라를 세운 이래\"를 근거로 삼았으므로 신라 시조릉 전승지인 오릉 표시 좌표를 대표점으로 썼다.",
+        "setting": "office"
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-jijeung",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-sillaname-503",
+            "claim-hs-s3-sillaname-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-sillaname-503"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "administration",
+      "region": "south",
+      "decade": 500
+    },
+    {
+      "id": "scene-hs-s3-22-damno",
+      "itemId": "hs-samguk-22-damno",
+      "eventId": "event-hs-s3-22-damno",
+      "title": "22담로",
+      "startYear": 510,
+      "endYear": 523,
+      "kind": "court",
+      "summary": "백제는 지방 거점 성 스물두 곳을 담로라 부르고 왕의 자제와 왕족을 보내 다스리게 했다. 양서는 이를 중국의 군현에 해당한다고 적었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-muryeong-acc-501"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-damno-liangshu",
+        "claim-hs-s3-damno-enc"
+      ],
+      "place": {
+        "label": "웅진 일원(공주)",
+        "medium": "land",
+        "precision": "area",
+        "lon": 127.117,
+        "lat": 36.45,
+        "claimIds": [
+          "claim-hs-s3-loc-gongju"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-gongju"
+        ],
+        "coordinateNote": "담로 스물두 곳의 위치는 확정되지 않았다. 무령왕 대 도읍이던 웅진(공주) 일원의 표시 좌표를 대표점으로 썼다.",
+        "setting": "office"
+      },
+      "participants": [
+        {
+          "entityId": "person-muryeong",
+          "role": "ruler",
+          "presence": "off-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-muryeong-acc-501"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-muryeong-acc-501"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "administration",
+      "region": "central",
+      "decade": 510,
+      "relatedClaimIds": [
+        "claim-hs-s3-damno-ungjin"
+      ]
+    },
+    {
+      "id": "scene-hs-s3-usanguk",
+      "itemId": "hs-samguk-usanguk",
+      "eventId": "event-hs-s3-usanguk",
+      "title": "이사부의 우산국 복속",
+      "startYear": 512,
+      "endYear": 512,
+      "kind": "naval",
+      "summary": "하슬라주 군주 이사부가 나무로 만든 사자를 배에 가득 싣고 우산국 해안에 다가가 겁을 주자, 섬 사람들이 두려워하여 항복했다.",
+      "dateClaimIds": [
+        "claim-hs-s3-usan-512",
+        "claim-hs-s3-usan-enc"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-usan-act",
+        "claim-hs-s3-usan-ships"
+      ],
+      "place": {
+        "label": "우산국(울릉도) 앞바다",
+        "medium": "sea",
+        "precision": "area",
+        "lon": 130.86667,
+        "lat": 37.5,
+        "claimIds": [
+          "claim-hs-s3-loc-ulleungdo"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-ulleungdo"
+        ],
+        "coordinateNote": "우산국은 지금의 울릉도다. 섬의 표시 좌표를 앞바다 장면의 대표점으로 썼다."
+      },
+      "participants": [
+        {
+          "entityId": "person-isabu",
+          "role": "commander",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-usan-512",
+            "claim-hs-s3-usan-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-usan-512",
+            "claim-hs-s3-usan-enc"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "war",
+      "region": "island",
+      "decade": 510,
+      "sceneFunction": "naval_expedition"
+    },
+    {
+      "id": "scene-hs-s3-beopheung-wang",
+      "itemId": "hs-samguk-beopheung-wang",
+      "eventId": "event-hs-s3-beopheung-wang",
+      "title": "법흥왕",
+      "startYear": 514,
+      "endYear": 540,
+      "kind": "portrait",
+      "summary": "514년에 즉위해 병부를 두고 율령을 반포했으며, 이차돈의 죽음을 계기로 불교를 나라의 종교로 받아들였다. 신라가 왕 중심으로 짜이는 틀이 이때 갖춰졌다.",
+      "dateClaimIds": [
+        "claim-hs-s3-beopheung-514",
+        "claim-hs-s3-beopheung-540"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-silla-code-520",
+        "claim-hs-s3-beopheung-enc"
+      ],
+      "place": {
+        "label": "경주 월성(신라 왕궁)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.22611,
+        "lat": 35.83083,
+        "claimIds": [
+          "claim-hs-s3-loc-wolseong"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-wolseong"
+        ],
+        "coordinateNote": "법흥왕이 정사를 본 신라 왕궁 월성의 표시 좌표를 대표점으로 썼다.",
+        "setting": "palace"
+      },
+      "participants": [
+        {
+          "entityId": "person-beopheung",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-beopheung-514",
+            "claim-hs-s3-beopheung-540",
+            "claim-hs-s3-silla-code-520"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-beopheung-514",
+            "claim-hs-s3-beopheung-540"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "person",
+      "region": "south",
+      "decade": 510
+    },
+    {
+      "id": "scene-hs-s3-byeongbu",
+      "itemId": "hs-samguk-byeongbu",
+      "eventId": "event-hs-s3-byeongbu",
+      "title": "병부 설치",
+      "startYear": 517,
+      "endYear": 517,
+      "kind": "court",
+      "summary": "법흥왕 4년, 군사 일을 맡는 병부를 처음 두었다. 귀족이 저마다 거느리던 병력을 왕 아래 하나로 모으는 첫걸음이었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-byeongbu-517"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-byeongbu-act"
+      ],
+      "place": {
+        "label": "경주 첨성대 일원(월성 북편 왕경 관아 구역)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.21917,
+        "lat": 35.83472,
+        "claimIds": [
+          "claim-hs-s3-loc-cheomseongdae"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-cheomseongdae"
+        ],
+        "coordinateNote": "병부 관청 터는 확인되지 않았다. 월성 북편 왕경 관아 구역의 표지물인 첨성대 표시 좌표를 대표점으로 썼다.",
+        "setting": "office"
+      },
+      "participants": [
+        {
+          "entityId": "person-beopheung",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-byeongbu-517",
+            "claim-hs-s3-byeongbu-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-byeongbu-517"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "administration",
+      "region": "south",
+      "decade": 510
+    },
+    {
+      "id": "scene-hs-s3-golpumje",
+      "itemId": "hs-samguk-golpumje",
+      "eventId": "event-hs-s3-golpumje",
+      "title": "골품제",
+      "startYear": 520,
+      "endYear": 520,
+      "kind": "assembly",
+      "summary": "신라는 핏줄의 높고 낮음에 따라 오를 수 있는 관등은 물론 혼인, 집 크기, 옷 색깔까지 정해 두었다. 6세기 초 율령이 반포되면서 이 구분이 법으로 굳어졌다.",
+      "dateClaimIds": [
+        "claim-hs-s3-silla-code-520"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-golpum-tang",
+        "claim-hs-s3-golpum-enc",
+        "claim-hs-s3-golpum-scope"
+      ],
+      "place": {
+        "label": "경주 계림(김씨 시조 전승지)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.21889,
+        "lat": 35.83278,
+        "claimIds": [
+          "claim-hs-s3-loc-gyerim"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-gyerim"
+        ],
+        "coordinateNote": "골품제는 특정 장소의 사건이 아니다. 왕족 김씨의 시조 탄생 전승지인 계림 표시 좌표를 핏줄 신분을 나타내는 대표점으로 썼다."
+      },
+      "participants": [],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-silla-code-520"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "settlement",
+      "region": "south",
+      "decade": 520
+    },
+    {
+      "id": "scene-hs-s3-silla-17-ranks",
+      "itemId": "hs-samguk-silla-17-ranks",
+      "eventId": "event-hs-s3-silla-17-ranks",
+      "title": "신라 17관등제",
+      "startYear": 520,
+      "endYear": 520,
+      "kind": "court",
+      "summary": "신라의 관직은 이벌찬에서 조위까지 열일곱 등급으로 나뉘었다. 삼국사기는 유리 이사금 대의 일로 전하지만, 등급마다 옷 색깔이 정해진 것은 520년 율령 반포 때의 기록으로 확인된다.",
+      "dateClaimIds": [
+        "claim-hs-s3-silla-code-520"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-ranks-sg",
+        "claim-hs-s3-ranks-sui"
+      ],
+      "place": {
+        "label": "경주 나정(신라 건국 전승지)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.2125,
+        "lat": 35.81583,
+        "claimIds": [
+          "claim-hs-s3-loc-najeong"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-najeong"
+        ],
+        "coordinateNote": "관등제 제정 장소를 적은 기록은 없다. 삼국사기가 전하는 설치 시기가 신라 초기이므로 건국 전승지인 나정 표시 좌표를 대표점으로 썼다.",
+        "setting": "office"
+      },
+      "participants": [],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-silla-code-520"
+          ],
+          "level": "extended"
+        }
+      },
+      "category": "administration",
+      "region": "south",
+      "decade": 520
+    },
+    {
+      "id": "scene-hs-s3-silla-code",
+      "itemId": "hs-samguk-silla-code",
+      "eventId": "event-hs-s3-silla-code",
+      "title": "신라 율령 반포",
+      "startYear": 520,
+      "endYear": 520,
+      "kind": "court",
+      "summary": "법흥왕 7년 정월, 율령을 널리 알리고 관리들이 입는 옷의 등급을 붉은색과 자주색으로 처음 정했다. 관습으로 굴러가던 나라 일이 문서로 된 법으로 바뀌었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-silla-code-520"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-code-act"
+      ],
+      "place": {
+        "label": "경주 월성(신라 왕궁)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.22611,
+        "lat": 35.83083,
+        "claimIds": [
+          "claim-hs-s3-loc-wolseong"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-wolseong"
+        ],
+        "coordinateNote": "법흥왕이 정사를 본 왕궁 월성의 표시 좌표를 대표점으로 썼다. 같은 왕궁에서 벌어진 다른 항목과 지점이 겹친다.",
+        "setting": "palace"
+      },
+      "participants": [
+        {
+          "entityId": "person-beopheung",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-silla-code-520",
+            "claim-hs-s3-code-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-silla-code-520"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "administration",
+      "region": "south",
+      "decade": 520
+    },
+    {
+      "id": "scene-hs-s3-seong-wang",
+      "itemId": "hs-samguk-seong-wang",
+      "eventId": "event-hs-s3-seong-wang",
+      "title": "성왕",
+      "startYear": 523,
+      "endYear": 554,
+      "kind": "portrait",
+      "summary": "523년에 즉위해 538년 도읍을 사비로 옮기고 국호를 남부여로 고쳤다. 왜에 불교를 전하고 한강 유역을 되찾았으나 신라의 배신으로 관산성에서 목숨을 잃었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-seong-523",
+        "claim-hs-s3-seong-554"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-sabi-act",
+        "claim-hs-s3-sabi-538"
+      ],
+      "place": {
+        "label": "부여 관북리 유적(사비 왕궁터)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.9125,
+        "lat": 36.28444,
+        "claimIds": [
+          "claim-hs-s3-loc-gwanbukri"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-gwanbukri"
+        ],
+        "coordinateNote": "즉위는 웅진에서 했으나 재위 대부분을 사비에서 보냈다. 사비 왕궁터로 보는 부여 관북리 유적 표시 좌표를 대표점으로 썼다.",
+        "setting": "palace"
+      },
+      "participants": [
+        {
+          "entityId": "person-baekje-seongwang",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-seong-523",
+            "claim-hs-s3-seong-554",
+            "claim-hs-s3-sabi-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-seong-523",
+            "claim-hs-s3-seong-554"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "person",
+      "region": "central",
+      "decade": 520
+    },
+    {
+      "id": "scene-hs-s3-muryeong-tomb",
+      "itemId": "hs-samguk-muryeong-tomb",
+      "eventId": "event-hs-s3-muryeong-tomb",
+      "title": "무령왕릉",
+      "startYear": 525,
+      "endYear": 525,
+      "kind": "excavation",
+      "summary": "525년 8월 무령왕을 벽돌로 쌓은 무덤에 모셨다. 함께 넣은 지석이 무덤 주인을 밝혀 주어, 삼국 시대 왕릉 가운데 주인이 확인된 유일한 무덤이 되었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-tomb-525"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-tomb-act",
+        "claim-hs-s3-tomb-land"
+      ],
+      "place": {
+        "label": "공주 무령왕릉과 왕릉원",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.11278,
+        "lat": 36.46139,
+        "claimIds": [
+          "claim-hs-s3-loc-songsanri"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-songsanri"
+        ],
+        "coordinateNote": "공주 무령왕릉과 왕릉원(옛 송산리 고분군)의 표시 좌표를 썼다."
+      },
+      "participants": [
+        {
+          "entityId": "person-muryeong",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-tomb-525",
+            "claim-hs-s3-tomb-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-tomb-525"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "facility",
+      "region": "central",
+      "decade": 520,
+      "heritageType": "tomb",
+      "persistence": {
+        "kind": "facility",
+        "from": 525,
+        "to": null,
+        "basisClaimIds": [
+          "claim-hs-s3-tomb-525",
+          "claim-hs-s3-tomb-act"
+        ]
+      }
+    },
+    {
+      "id": "scene-hs-s3-silla-buddhism",
+      "itemId": "hs-samguk-silla-buddhism",
+      "eventId": "event-hs-s3-silla-buddhism",
+      "title": "이차돈의 순교와 신라 불교 공인",
+      "startYear": 527,
+      "endYear": 527,
+      "kind": "ritual",
+      "summary": "절을 짓는 일을 밀어붙인 책임을 물어 이차돈이 처형당했다. 그의 죽음을 계기로 반대하던 귀족들이 물러섰고 신라는 불교를 나라의 종교로 받아들였다.",
+      "dateClaimIds": [
+        "claim-hs-s3-ichadon-527"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-ichadon-exec",
+        "claim-hs-s3-ichadon-gongin"
+      ],
+      "place": {
+        "label": "경주 흥륜사(천경림 절터)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.20694,
+        "lat": 35.82833,
+        "claimIds": [
+          "claim-hs-s3-loc-heungnyunsa"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-heungnyunsa"
+        ],
+        "coordinateNote": "순교의 계기가 된 절터가 흥륜사다. 흥륜사 표시 좌표를 대표점으로 썼다.",
+        "setting": "temple"
+      },
+      "participants": [
+        {
+          "entityId": "person-ichadon",
+          "role": "scholar",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-ichadon-527",
+            "claim-hs-s3-ichadon-exec"
+          ]
+        },
+        {
+          "entityId": "person-beopheung",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-ichadon-exec"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-ichadon-527"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "culture",
+      "region": "south",
+      "decade": 520,
+      "relatedClaimIds": [
+        "claim-hs-s3-buddhism-sg",
+        "claim-hs-s3-heungnyunsa-place"
+      ],
+      "sceneFunction": "persecution"
+    },
+    {
+      "id": "scene-hs-s3-sangdaedeung",
+      "itemId": "hs-samguk-sangdaedeung",
+      "eventId": "event-hs-s3-sangdaedeung",
+      "title": "상대등 설치",
+      "startYear": 531,
+      "endYear": 531,
+      "kind": "court",
+      "summary": "법흥왕 18년 4월, 이찬 철부를 상대등으로 삼아 나라 일을 총괄하게 했다. 귀족 회의를 이끄는 자리가 처음 만들어진 것이다.",
+      "dateClaimIds": [
+        "claim-hs-s3-sangdaedeung-531",
+        "claim-hs-s3-sangdaedeung-enc"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-sangdaedeung-act",
+        "claim-hs-s3-sangdaedeung-role"
+      ],
+      "place": {
+        "label": "경주 월성(신라 왕궁)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.22611,
+        "lat": 35.83083,
+        "claimIds": [
+          "claim-hs-s3-loc-wolseong"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-wolseong"
+        ],
+        "coordinateNote": "임명이 이루어진 왕궁 월성의 표시 좌표를 대표점으로 썼다. 같은 왕궁에서 벌어진 다른 항목과 지점이 겹친다.",
+        "setting": "palace"
+      },
+      "participants": [
+        {
+          "entityId": "person-hs-s3-cheolbu",
+          "role": "scholar",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-sangdaedeung-531",
+            "claim-hs-s3-sangdaedeung-act"
+          ]
+        },
+        {
+          "entityId": "person-beopheung",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-sangdaedeung-531"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-sangdaedeung-531",
+            "claim-hs-s3-sangdaedeung-enc"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "administration",
+      "region": "south",
+      "decade": 530
+    },
+    {
+      "id": "scene-hs-s3-geumgwan-gaya-fall",
+      "itemId": "hs-samguk-geumgwan-gaya-fall",
+      "eventId": "event-hs-s3-geumgwan-gaya-fall",
+      "title": "금관가야 멸망",
+      "startYear": 532,
+      "endYear": 532,
+      "kind": "court",
+      "summary": "금관국의 왕 김구해가 왕비와 세 아들을 데리고 나라의 보물과 함께 신라에 항복했다. 신라는 그를 예로 맞아 높은 지위를 주고 옛 땅을 식읍으로 삼게 했다.",
+      "dateClaimIds": [
+        "claim-hs-s3-gaya-532"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-gaya-act",
+        "claim-hs-s3-gaya-treat"
+      ],
+      "place": {
+        "label": "김해 봉황동 유적(금관가야 중심지)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 128.8784676,
+        "lat": 35.2297709,
+        "claimIds": [
+          "claim-hs-s3-loc-bonghwangdong"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-bonghwangdong"
+        ],
+        "coordinateNote": "금관가야의 중심지로 보는 김해 봉황동 유적 표시 좌표를 대표점으로 썼다.",
+        "setting": "office"
+      },
+      "participants": [
+        {
+          "entityId": "person-hs-s3-gim-guhae",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "b",
+          "claimIds": [
+            "claim-hs-s3-gaya-532",
+            "claim-hs-s3-gaya-act"
+          ]
+        },
+        {
+          "entityId": "person-beopheung",
+          "role": "ruler",
+          "presence": "off-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-gaya-treat"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-gaya-532"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "war",
+      "region": "south",
+      "decade": 530
+    },
+    {
+      "id": "scene-hs-s3-sabi-move",
+      "itemId": "hs-samguk-sabi-move",
+      "eventId": "event-hs-s3-sabi-move",
+      "title": "사비 천도",
+      "startYear": 538,
+      "endYear": 538,
+      "kind": "migration",
+      "summary": "성왕 16년 봄, 도읍을 웅진에서 사비로 옮기고 국호를 남부여로 고쳤다. 산에 기댄 좁은 웅진을 떠나 넓은 들과 강을 낀 곳에서 다시 일어서려 한 결정이었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-sabi-538"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-sabi-act",
+        "claim-hs-s3-nambuyeo-period"
+      ],
+      "place": {
+        "label": "사비 부소산성",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.91528,
+        "lat": 36.2875,
+        "claimIds": [
+          "claim-hs-s3-loc-busosanseong"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-busosanseong"
+        ],
+        "coordinateNote": "사비 도성의 배후 산성인 부소산성 표시 좌표를 대표점으로 썼다.",
+        "setting": "palace"
+      },
+      "participants": [
+        {
+          "entityId": "person-baekje-seongwang",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-sabi-538",
+            "claim-hs-s3-sabi-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-sabi-538"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "administration",
+      "region": "central",
+      "decade": 530,
+      "sceneFunction": "migration",
+      "persistence": {
+        "kind": "city",
+        "from": 538,
+        "to": 660,
+        "basisClaimIds": [
+          "claim-hs-s3-sabi-538",
+          "claim-hs-s3-nambuyeo-period"
+        ]
+      }
+    },
+    {
+      "id": "scene-hs-s3-yeonga-buddha",
+      "itemId": "hs-samguk-yeonga-buddha",
+      "eventId": "event-hs-s3-yeonga-buddha",
+      "title": "연가 7년명 금동여래입상",
+      "startYear": 539,
+      "endYear": 539,
+      "kind": "heritage",
+      "summary": "광배 뒷면에 연가 7년이라는 연호와 고구려 낙랑 동사 승려들이 천불을 만들어 퍼뜨린다는 글이 새겨져 있다. 고구려에서 만든 불상이 1963년 경남 의령에서 발견되었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-yeonga-539"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-yeonga-make",
+        "claim-hs-s3-yeonga-find"
+      ],
+      "place": {
+        "label": "의령 대의면 하촌리 출토지 일원",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.261111121,
+        "lat": 35.3191666767,
+        "claimIds": [
+          "claim-hs-s3-loc-uiryeong"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-uiryeong"
+        ],
+        "coordinateNote": "출토지인 의령군 대의면 하촌리의 정확한 지점 좌표가 없어 의령군 표시 좌표를 대표점으로 썼다."
+      },
+      "participants": [],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-yeonga-539"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "culture",
+      "region": "south",
+      "decade": 530,
+      "heritageType": "artifact",
+      "persistence": {
+        "kind": "facility",
+        "from": 539,
+        "to": null,
+        "basisClaimIds": [
+          "claim-hs-s3-yeonga-539",
+          "claim-hs-s3-yeonga-find"
+        ]
+      }
+    },
+    {
+      "id": "scene-hs-s3-jinheung-wang",
+      "itemId": "hs-samguk-jinheung-wang",
+      "eventId": "event-hs-s3-jinheung-wang",
+      "title": "진흥왕",
+      "startYear": 540,
+      "endYear": 576,
+      "kind": "portrait",
+      "summary": "일곱 살에 왕위에 올라 태후의 도움으로 나라를 다스렸다. 한강 유역과 낙동강 서쪽, 함경도까지 영토를 넓혀 신라 전성기를 열었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-jinheung-540"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-jinheung-enc"
+      ],
+      "place": {
+        "label": "경주 명활성(왕경 동쪽 방어성)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.25528,
+        "lat": 35.83556,
+        "claimIds": [
+          "claim-hs-s3-loc-myeonghwal"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-myeonghwal"
+        ],
+        "coordinateNote": "왕경 안의 활동 지점을 특정할 수 없어, 진흥왕 대에 고쳐 쌓은 왕경 동쪽 방어성인 명활성 표시 좌표를 대표점으로 썼다.",
+        "setting": "battle"
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-jinheung",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-jinheung-540",
+            "claim-hs-s3-jinheung-enc"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-jinheung-540"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "person",
+      "region": "south",
+      "decade": 540
+    },
+    {
+      "id": "scene-hs-s3-jeongsaam",
+      "itemId": "hs-samguk-jeongsaam",
+      "eventId": "event-hs-s3-jeongsaam",
+      "title": "정사암 회의",
+      "startYear": 538,
+      "endYear": 660,
+      "kind": "assembly",
+      "summary": "사비 부근 호암사에 정사암이라는 바위가 있었다. 나라에서 재상을 뽑을 때 후보 서너 사람의 이름을 봉해 바위 위에 두었다가 꺼내어, 이름 위에 도장 자국이 있는 사람을 재상으로 삼았다고 전한다.",
+      "dateClaimIds": [
+        "claim-hs-s3-sabi-538",
+        "claim-hs-s3-nambuyeo-period"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-jeongsaam-sy",
+        "claim-hs-s3-jeongsaam-enc",
+        "claim-hs-s3-jeongsaam-role"
+      ],
+      "place": {
+        "label": "부여 천정대(정사암 전승지)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 126.91917,
+        "lat": 36.31389,
+        "claimIds": [
+          "claim-hs-s3-loc-cheonjeongdae"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-cheonjeongdae"
+        ],
+        "coordinateNote": "정사암이 있던 호암사의 정확한 위치는 확정되지 않았다. 정사암 전승지로 알려진 부여 천정대 표시 좌표를 대표점으로 썼다."
+      },
+      "participants": [],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-sabi-538",
+            "claim-hs-s3-nambuyeo-period"
+          ],
+          "level": "extended"
+        }
+      },
+      "category": "administration",
+      "region": "central",
+      "decade": 530,
+      "relatedClaimIds": [
+        "claim-hs-s3-jeongsaam-pick"
+      ]
+    },
+    {
+      "id": "scene-hs-s3-danyang-stele",
+      "itemId": "hs-samguk-danyang-stele",
+      "eventId": "event-hs-s3-danyang-stele",
+      "title": "단양 신라 적성비",
+      "startYear": 551,
+      "endYear": 551,
+      "kind": "heritage",
+      "summary": "남한강 상류 적성을 차지한 신라가 세운 비석이다. 적성을 공략한 이사부 등의 공적과 신라를 도운 현지 사람 야이차에 대한 포상, 국법과 적성전사법 같은 율령 용어가 새겨져 있다.",
+      "dateClaimIds": [
+        "claim-hs-s3-stele-551"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-stele-loc",
+        "claim-hs-s3-stele-content"
+      ],
+      "place": {
+        "label": "단양 적성(비석 소재지) 일원",
+        "medium": "land",
+        "precision": "area",
+        "lon": 128.3658033,
+        "lat": 36.984695,
+        "claimIds": [
+          "claim-hs-s3-loc-danyang"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-danyang"
+        ],
+        "coordinateNote": "비석은 단양군 하방리 적성 안에 있다. 지점 좌표를 찾지 못해 단양군 표시 좌표를 대표점으로 썼다."
+      },
+      "participants": [
+        {
+          "entityId": "person-isabu",
+          "role": "commander",
+          "presence": "off-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-stele-content"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-stele-551"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "facility",
+      "region": "central",
+      "decade": 550,
+      "heritageType": "stele",
+      "persistence": {
+        "kind": "facility",
+        "from": 551,
+        "to": null,
+        "basisClaimIds": [
+          "claim-hs-s3-stele-551",
+          "claim-hs-s3-stele-loc"
+        ]
+      }
+    },
+    {
+      "id": "scene-hs-s3-ureuk",
+      "itemId": "hs-samguk-ureuk",
+      "eventId": "event-hs-s3-ureuk",
+      "title": "우륵과 가야금",
+      "startYear": 551,
+      "endYear": 551,
+      "kind": "tradition",
+      "summary": "대가야가 어지러워지자 악사 우륵이 악기를 들고 신라로 왔다. 진흥왕은 낭성에 순행하다 그를 불러 하림궁에서 연주하게 했고, 뒤에 국원(충주)에 살게 했다.",
+      "dateClaimIds": [
+        "claim-hs-s3-ureuk-551"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-ureuk-act",
+        "claim-hs-s3-ureuk-gaya",
+        "claim-hs-s3-ureuk-place"
+      ],
+      "place": {
+        "label": "충주 탄금대(국원 전승지)",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.89778,
+        "lat": 36.98833,
+        "claimIds": [
+          "claim-hs-s3-loc-tangeumdae"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-tangeumdae"
+        ],
+        "coordinateNote": "연주가 열린 하림궁의 위치는 확정되지 않았다. 우륵이 살았다는 국원(충주)의 탄금대 표시 좌표를 대표점으로 썼다."
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-ureuk",
+          "role": "scholar",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-ureuk-551",
+            "claim-hs-s3-ureuk-act"
+          ]
+        },
+        {
+          "entityId": "person-encykorea-jinheung",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-ureuk-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-ureuk-551"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "culture",
+      "region": "central",
+      "decade": 550
+    },
+    {
+      "id": "scene-hs-s3-norisachigye",
+      "itemId": "hs-samguk-norisachigye",
+      "eventId": "event-hs-s3-norisachigye",
+      "title": "노리사치계의 불교 전파",
+      "startYear": 552,
+      "endYear": 552,
+      "kind": "migration",
+      "summary": "성왕의 명을 받은 달솔 노리사치계가 금동 석가불상과 깃발, 경전을 왜에 전했다. 백제를 거쳐 건너간 불교는 아스카 문화의 밑바탕이 되었다.",
+      "dateClaimIds": [
+        "claim-hs-s3-nori-552"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-nori-act",
+        "claim-hs-s3-nori-king"
+      ],
+      "place": {
+        "label": "왜 아스카 일원",
+        "medium": "land",
+        "precision": "area",
+        "lon": 135.820214,
+        "lat": 34.478731,
+        "claimIds": [
+          "claim-hs-s3-loc-asuka"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-asukadera"
+        ],
+        "coordinateNote": "전달이 이루어진 왜 왕궁의 위치를 특정할 수 없어 아스카 일원의 표지물인 아스카사 표시 좌표를 대표점으로 썼다. 아스카사 자체는 596년 창건이다.",
+        "setting": "temple",
+        "overseas": true
+      },
+      "participants": [
+        {
+          "entityId": "person-hs-s3-norisachigye",
+          "role": "scholar",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-nori-552",
+            "claim-hs-s3-nori-act"
+          ]
+        },
+        {
+          "entityId": "person-baekje-seongwang",
+          "role": "ruler",
+          "presence": "off-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-nori-king"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-nori-552"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "foreign",
+      "region": "south",
+      "decade": 550,
+      "sceneFunction": "temple"
+    },
+    {
+      "id": "scene-hs-s3-hangang-553",
+      "itemId": "hs-samguk-hangang-553",
+      "eventId": "event-hs-s3-hangang-553",
+      "title": "신라의 한강 유역 장악",
+      "startYear": 553,
+      "endYear": 553,
+      "kind": "battle",
+      "summary": "백제와 함께 고구려를 밀어낸 지 두 해 만에, 신라가 백제가 되찾은 한강 하류를 빼앗고 신주를 두었다. 120년 이어진 두 나라의 동맹이 여기서 끊어졌다.",
+      "dateClaimIds": [
+        "claim-hs-s3-hangang-553"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-hangang-act",
+        "claim-hs-s3-hangang-gov"
+      ],
+      "place": {
+        "label": "한강 하류 아차산성",
+        "medium": "land",
+        "precision": "site",
+        "lon": 127.10278,
+        "lat": 37.55444,
+        "claimIds": [
+          "claim-hs-s3-loc-achasanseong"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-achasanseong"
+        ],
+        "coordinateNote": "신주의 치소 위치는 확정되지 않았다. 한강 하류를 내려다보는 아차산성 표시 좌표를 대표점으로 썼다.",
+        "setting": "battle"
+      },
+      "participants": [],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-hangang-553"
+          ],
+          "level": "standard"
+        }
+      },
+      "category": "war",
+      "region": "central",
+      "decade": 550
+    },
+    {
+      "id": "scene-hs-s3-hwangnyongsa",
+      "itemId": "hs-samguk-hwangnyongsa",
+      "eventId": "event-hs-s3-hwangnyongsa",
+      "title": "황룡사",
+      "startYear": 553,
+      "endYear": 569,
+      "kind": "construction",
+      "summary": "진흥왕 14년, 월성 동쪽에 새 궁궐을 지으려다 그 자리에 황룡이 나타났다 하여 절로 바꾸고 황룡사라 이름 붙였다. 신라 최대의 국가 사찰로 왕권을 떠받쳤다.",
+      "dateClaimIds": [
+        "claim-hs-s3-hwangnyongsa-553"
+      ],
+      "actionClaimIds": [
+        "claim-hs-s3-hwangnyongsa-act",
+        "claim-hs-s3-hwangnyongsa-566"
+      ],
+      "place": {
+        "label": "경주 황룡사지",
+        "medium": "land",
+        "precision": "site",
+        "lon": 129.2325,
+        "lat": 35.83694,
+        "claimIds": [
+          "claim-hs-s3-loc-hwangnyongsa"
+        ],
+        "coordinateSourceIds": [
+          "src-hs-s3-wiki-hwangnyongsa"
+        ],
+        "coordinateNote": "경주 황룡사지 표시 좌표를 썼다.",
+        "setting": "temple"
+      },
+      "participants": [
+        {
+          "entityId": "person-encykorea-jinheung",
+          "role": "ruler",
+          "presence": "on-site",
+          "side": "a",
+          "claimIds": [
+            "claim-hs-s3-hwangnyongsa-553",
+            "claim-hs-s3-hwangnyongsa-act"
+          ]
+        }
+      ],
+      "effects": {
+        "priority": {
+          "enabled": true,
+          "claimIds": [
+            "claim-hs-s3-hwangnyongsa-553"
+          ],
+          "level": "core"
+        }
+      },
+      "category": "facility",
+      "region": "south",
+      "decade": 550,
+      "relatedClaimIds": [
+        "claim-hs-s3-hwangnyongsa-1238"
+      ],
+      "sceneFunction": "temple",
+      "persistence": {
+        "kind": "facility",
+        "from": 553,
+        "to": 1238,
+        "basisClaimIds": [
+          "claim-hs-s3-hwangnyongsa-553",
+          "claim-hs-s3-hwangnyongsa-566",
+          "claim-hs-s3-hwangnyongsa-1238"
+        ]
+      }
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact-hs-s3-001",
+      "itemId": "hs-samguk-muryeong-wang",
+      "category": "person",
+      "region": "central",
+      "decade": 500,
+      "year": 501,
+      "yearVerbatim": "원년(501)",
+      "placeLabel": "웅진 공산성(백제 왕성)",
+      "modernPlace": "충청남도 공주시 금성동",
+      "what": "흔들리던 백제를 다시 일으키고 지방을 왕이 직접 챙긴 임금",
+      "claimIds": [
+        "claim-hs-s3-muryeong-acc-501",
+        "claim-hs-s3-muryeong-end-523",
+        "claim-hs-s3-damno-liangshu",
+        "claim-hs-s3-loc-gongsanseong"
+      ],
+      "sceneId": "scene-hs-s3-muryeong-wang",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · core · 재위 연도는 삼국사기 백제본기, 22담로는 양서 백제전에 근거한다.",
+      "lon": 127.12694,
+      "lat": 36.46333,
+      "coordinateBasis": "location claim-hs-s3-loc-gongsanseong"
+    },
+    {
+      "id": "fact-hs-s3-002",
+      "itemId": "hs-samguk-ox-plowing",
+      "category": "economy",
+      "region": "south",
+      "decade": 500,
+      "year": 502,
+      "yearVerbatim": "三年 三月(502)",
+      "placeLabel": "신라 왕경 일원의 들판",
+      "modernPlace": "경상북도 경주시",
+      "what": "소로 밭을 갈아 생산량을 크게 늘린 농업 변화",
+      "claimIds": [
+        "claim-hs-s3-ox-502",
+        "claim-hs-s3-ox-act",
+        "claim-hs-s3-loc-gyeongju"
+      ],
+      "sceneId": "scene-hs-s3-ox-plowing",
+      "confidence": "medium",
+      "note": "[10한사1-02-02] · standard · 삼국사기는 502년을 우경의 첫 기록으로 전할 뿐, 이때 처음 시작되었다고 단정하지는 않는다.",
+      "lon": 129.217,
+      "lat": 35.85,
+      "coordinateBasis": "location claim-hs-s3-loc-gyeongju"
+    },
+    {
+      "id": "fact-hs-s3-003",
+      "itemId": "hs-samguk-silla-name-503",
+      "category": "administration",
+      "region": "south",
+      "decade": 500,
+      "year": 503,
+      "yearVerbatim": "四年 冬十月(503)",
+      "placeLabel": "경주 오릉(신라 시조릉 전승지)",
+      "modernPlace": "경상북도 경주시 탑동",
+      "what": "마립간 대신 '왕'을 쓰며 중국식 체제로 나아감",
+      "claimIds": [
+        "claim-hs-s3-sillaname-503",
+        "claim-hs-s3-sillaname-act",
+        "claim-hs-s3-sillaname-reason",
+        "claim-hs-s3-loc-oreung"
+      ],
+      "sceneId": "scene-hs-s3-silla-name",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · standard · 삼국사기 신라본기 지증마립간 4년 기사.",
+      "lon": 129.20889,
+      "lat": 35.82333,
+      "coordinateBasis": "location claim-hs-s3-loc-oreung"
+    },
+    {
+      "id": "fact-hs-s3-004",
+      "itemId": "hs-samguk-22-damno",
+      "category": "administration",
+      "region": "central",
+      "decade": 510,
+      "year": 510,
+      "yearVerbatim": "무령왕 대(501~523)",
+      "placeLabel": "웅진 일원(공주)",
+      "modernPlace": "충청남도 공주시",
+      "what": "지방 22곳에 왕족을 보내 직접 다스린 백제 지방 제도",
+      "claimIds": [
+        "claim-hs-s3-muryeong-acc-501",
+        "claim-hs-s3-damno-liangshu",
+        "claim-hs-s3-damno-enc",
+        "claim-hs-s3-damno-ungjin",
+        "claim-hs-s3-loc-gongju"
+      ],
+      "sceneId": "scene-hs-s3-22-damno",
+      "confidence": "medium",
+      "note": "[10한사1-01-01] · standard · 담로의 정비 연도를 직접 적은 사료는 없다. 항목의 510년은 무령왕 대를 가리키는 추정값이고, 근거로 쓴 연도 주장은 무령왕 즉위(501)다.",
+      "lon": 127.117,
+      "lat": 36.45,
+      "coordinateBasis": "location claim-hs-s3-loc-gongju"
+    },
+    {
+      "id": "fact-hs-s3-005",
+      "itemId": "hs-samguk-usanguk",
+      "category": "war",
+      "region": "island",
+      "decade": 510,
+      "year": 512,
+      "yearVerbatim": "十三年 夏六月(512)",
+      "placeLabel": "우산국(울릉도) 앞바다",
+      "modernPlace": "경상북도 울릉군",
+      "what": "나무 사자로 겁을 주어 울릉도를 신라에 편입",
+      "claimIds": [
+        "claim-hs-s3-usan-512",
+        "claim-hs-s3-usan-act",
+        "claim-hs-s3-usan-enc",
+        "claim-hs-s3-usan-ships",
+        "claim-hs-s3-loc-ulleungdo"
+      ],
+      "sceneId": "scene-hs-s3-usanguk",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · standard · 삼국사기 신라본기와 민족문화대백과 이사부 항목이 같은 해를 전한다.",
+      "lon": 130.86667,
+      "lat": 37.5,
+      "coordinateBasis": "location claim-hs-s3-loc-ulleungdo"
+    },
+    {
+      "id": "fact-hs-s3-006",
+      "itemId": "hs-samguk-beopheung-wang",
+      "category": "person",
+      "region": "south",
+      "decade": 510,
+      "year": 514,
+      "yearVerbatim": "원년(514)",
+      "placeLabel": "경주 월성(신라 왕궁)",
+      "modernPlace": "경상북도 경주시 인왕동",
+      "what": "율령과 불교로 중앙 집권의 틀을 완성한 왕",
+      "claimIds": [
+        "claim-hs-s3-beopheung-514",
+        "claim-hs-s3-beopheung-540",
+        "claim-hs-s3-beopheung-enc",
+        "claim-hs-s3-silla-code-520",
+        "claim-hs-s3-loc-wolseong"
+      ],
+      "sceneId": "scene-hs-s3-beopheung-wang",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · core · 재위 연도는 삼국사기와 민족문화대백과가 같다.",
+      "lon": 129.22611,
+      "lat": 35.83083,
+      "coordinateBasis": "location claim-hs-s3-loc-wolseong"
+    },
+    {
+      "id": "fact-hs-s3-007",
+      "itemId": "hs-samguk-byeongbu",
+      "category": "administration",
+      "region": "south",
+      "decade": 510,
+      "year": 517,
+      "yearVerbatim": "四年 夏四月(517)",
+      "placeLabel": "경주 첨성대 일원(월성 북편 왕경 관아 구역)",
+      "modernPlace": "경상북도 경주시 인왕동",
+      "what": "군사권을 왕 아래 모은 신라 최초의 중앙 관청",
+      "claimIds": [
+        "claim-hs-s3-byeongbu-517",
+        "claim-hs-s3-byeongbu-act",
+        "claim-hs-s3-loc-cheomseongdae"
+      ],
+      "sceneId": "scene-hs-s3-byeongbu",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · standard · 삼국사기 신라본기 법흥왕 4년 기사. 관청 자리는 사료에 없어 왕경 중심부를 대표점으로 썼다.",
+      "lon": 129.21917,
+      "lat": 35.83472,
+      "coordinateBasis": "location claim-hs-s3-loc-cheomseongdae"
+    },
+    {
+      "id": "fact-hs-s3-008",
+      "itemId": "hs-samguk-golpumje",
+      "category": "settlement",
+      "region": "south",
+      "decade": 520,
+      "year": 520,
+      "yearVerbatim": "七年(520) 율령 반포 무렵",
+      "placeLabel": "경주 계림(김씨 시조 전승지)",
+      "modernPlace": "경상북도 경주시 교동",
+      "what": "핏줄로 관직과 집 크기까지 정한 신라의 신분 제도",
+      "claimIds": [
+        "claim-hs-s3-silla-code-520",
+        "claim-hs-s3-golpum-tang",
+        "claim-hs-s3-golpum-enc",
+        "claim-hs-s3-golpum-scope",
+        "claim-hs-s3-loc-gyerim"
+      ],
+      "sceneId": "scene-hs-s3-golpumje",
+      "confidence": "medium",
+      "note": "[10한사1-02-03] · core · 골품제의 제정 연도를 적은 사료는 없다. 520년 율령 반포·공복 제정을 법제화 시점의 근거로 삼았다.",
+      "lon": 129.21889,
+      "lat": 35.83278,
+      "coordinateBasis": "location claim-hs-s3-loc-gyerim"
+    },
+    {
+      "id": "fact-hs-s3-009",
+      "itemId": "hs-samguk-silla-17-ranks",
+      "category": "administration",
+      "region": "south",
+      "decade": 520,
+      "year": 520,
+      "yearVerbatim": "七年(520) 율령·공복 제정",
+      "placeLabel": "경주 나정(신라 건국 전승지)",
+      "modernPlace": "경상북도 경주시 탑동",
+      "what": "이벌찬부터 조위까지 17단계로 나눈 신라의 관직 사다리",
+      "claimIds": [
+        "claim-hs-s3-silla-code-520",
+        "claim-hs-s3-ranks-sg",
+        "claim-hs-s3-ranks-sui",
+        "claim-hs-s3-loc-najeong"
+      ],
+      "sceneId": "scene-hs-s3-silla-17-ranks",
+      "confidence": "medium",
+      "note": "[10한사1-02-03] · extended · 삼국사기는 유리 이사금 대(32년) 설치로 적지만 학계는 뒤에 정비된 것으로 본다. 여기서는 근거가 있는 520년 율령·공복 기사를 연도 주장으로 썼다.",
+      "lon": 129.2125,
+      "lat": 35.81583,
+      "coordinateBasis": "location claim-hs-s3-loc-najeong"
+    },
+    {
+      "id": "fact-hs-s3-010",
+      "itemId": "hs-samguk-silla-code",
+      "category": "administration",
+      "region": "south",
+      "decade": 520,
+      "year": 520,
+      "yearVerbatim": "七年 春正月(520)",
+      "placeLabel": "경주 월성(신라 왕궁)",
+      "modernPlace": "경상북도 경주시 인왕동",
+      "what": "관리의 등급과 옷 색깔까지 법으로 정함",
+      "claimIds": [
+        "claim-hs-s3-silla-code-520",
+        "claim-hs-s3-code-act",
+        "claim-hs-s3-loc-wolseong"
+      ],
+      "sceneId": "scene-hs-s3-silla-code",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · core · 삼국사기 신라본기 법흥왕 7년 기사.",
+      "lon": 129.22611,
+      "lat": 35.83083,
+      "coordinateBasis": "location claim-hs-s3-loc-wolseong"
+    },
+    {
+      "id": "fact-hs-s3-011",
+      "itemId": "hs-samguk-seong-wang",
+      "category": "person",
+      "region": "central",
+      "decade": 520,
+      "year": 523,
+      "yearVerbatim": "원년(523)",
+      "placeLabel": "부여 관북리 유적(사비 왕궁터)",
+      "modernPlace": "충청남도 부여군 부여읍",
+      "what": "사비로 옮기고 국호를 남부여로 바꿔 중흥을 꾀한 왕",
+      "claimIds": [
+        "claim-hs-s3-seong-523",
+        "claim-hs-s3-seong-554",
+        "claim-hs-s3-sabi-538",
+        "claim-hs-s3-sabi-act",
+        "claim-hs-s3-loc-gwanbukri"
+      ],
+      "sceneId": "scene-hs-s3-seong-wang",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · core · 재위 연도와 사비 천도는 삼국사기 백제본기에 근거한다.",
+      "lon": 126.9125,
+      "lat": 36.28444,
+      "coordinateBasis": "location claim-hs-s3-loc-gwanbukri"
+    },
+    {
+      "id": "fact-hs-s3-012",
+      "itemId": "hs-samguk-muryeong-tomb",
+      "category": "facility",
+      "region": "central",
+      "decade": 520,
+      "year": 525,
+      "yearVerbatim": "乙巳年 八月(525)",
+      "placeLabel": "공주 무령왕릉과 왕릉원",
+      "modernPlace": "충청남도 공주시 금성동",
+      "what": "주인이 확인된 유일한 백제 왕릉, 벽돌무덤",
+      "claimIds": [
+        "claim-hs-s3-tomb-525",
+        "claim-hs-s3-tomb-act",
+        "claim-hs-s3-tomb-land",
+        "claim-hs-s3-loc-songsanri"
+      ],
+      "sceneId": "scene-hs-s3-muryeong-tomb",
+      "confidence": "high",
+      "note": "[10한사1-02-04] · core · 무령왕 지석의 안장 연월에 근거한다. 무덤은 1971년에 발굴되었고 지금도 남아 있다.",
+      "lon": 127.11278,
+      "lat": 36.46139,
+      "coordinateBasis": "location claim-hs-s3-loc-songsanri",
+      "persistence": {
+        "kind": "facility",
+        "from": 525,
+        "to": null
+      }
+    },
+    {
+      "id": "fact-hs-s3-013",
+      "itemId": "hs-samguk-silla-buddhism",
+      "category": "culture",
+      "region": "south",
+      "decade": 520,
+      "year": 527,
+      "yearVerbatim": "527년(법흥왕 14)",
+      "placeLabel": "경주 흥륜사(천경림 절터)",
+      "modernPlace": "경상북도 경주시 사정동",
+      "what": "이차돈이 목숨을 내놓은 뒤 신라가 불교를 나라의 종교로 받아들임",
+      "claimIds": [
+        "claim-hs-s3-ichadon-527",
+        "claim-hs-s3-ichadon-exec",
+        "claim-hs-s3-ichadon-gongin",
+        "claim-hs-s3-buddhism-sg",
+        "claim-hs-s3-heungnyunsa-place",
+        "claim-hs-s3-loc-heungnyunsa"
+      ],
+      "sceneId": "scene-hs-s3-silla-buddhism",
+      "confidence": "high",
+      "note": "[10한사1-02-04] · core · 민족문화대백과는 527년, 삼국사기는 불법이 널리 행해진 해를 법흥왕 15년(528)으로 적는다. 항목의 527년을 따랐다.",
+      "lon": 129.20694,
+      "lat": 35.82833,
+      "coordinateBasis": "location claim-hs-s3-loc-heungnyunsa"
+    },
+    {
+      "id": "fact-hs-s3-014",
+      "itemId": "hs-samguk-sangdaedeung",
+      "category": "administration",
+      "region": "south",
+      "decade": 530,
+      "year": 531,
+      "yearVerbatim": "十八年 夏四月(531)",
+      "placeLabel": "경주 월성(신라 왕궁)",
+      "modernPlace": "경상북도 경주시 인왕동",
+      "what": "화백 회의를 이끌며 귀족을 대표한 신라 최고 관직",
+      "claimIds": [
+        "claim-hs-s3-sangdaedeung-531",
+        "claim-hs-s3-sangdaedeung-act",
+        "claim-hs-s3-sangdaedeung-enc",
+        "claim-hs-s3-sangdaedeung-role",
+        "claim-hs-s3-loc-wolseong"
+      ],
+      "sceneId": "scene-hs-s3-sangdaedeung",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · standard · 삼국사기와 민족문화대백과가 같은 해를 전한다.",
+      "lon": 129.22611,
+      "lat": 35.83083,
+      "coordinateBasis": "location claim-hs-s3-loc-wolseong"
+    },
+    {
+      "id": "fact-hs-s3-015",
+      "itemId": "hs-samguk-geumgwan-gaya-fall",
+      "category": "war",
+      "region": "south",
+      "decade": 530,
+      "year": 532,
+      "yearVerbatim": "十九年(532)",
+      "placeLabel": "김해 봉황동 유적(금관가야 중심지)",
+      "modernPlace": "경상남도 김해시 봉황동",
+      "what": "항복한 왕족을 진골로 받아들여 신라가 낙동강을 차지",
+      "claimIds": [
+        "claim-hs-s3-gaya-532",
+        "claim-hs-s3-gaya-act",
+        "claim-hs-s3-gaya-treat",
+        "claim-hs-s3-loc-bonghwangdong"
+      ],
+      "sceneId": "scene-hs-s3-geumgwan-gaya-fall",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · standard · 삼국사기 신라본기 법흥왕 19년 기사. 김구해의 아들 무력은 뒤에 각간에 올랐다.",
+      "lon": 128.8784676,
+      "lat": 35.2297709,
+      "coordinateBasis": "location claim-hs-s3-loc-bonghwangdong"
+    },
+    {
+      "id": "fact-hs-s3-016",
+      "itemId": "hs-samguk-sabi-move",
+      "category": "administration",
+      "region": "central",
+      "decade": 530,
+      "year": 538,
+      "yearVerbatim": "十六年 春(538)",
+      "placeLabel": "사비 부소산성",
+      "modernPlace": "충청남도 부여군 부여읍",
+      "what": "넓은 평야와 강을 낀 사비로 옮겨 재기를 노림",
+      "claimIds": [
+        "claim-hs-s3-sabi-538",
+        "claim-hs-s3-sabi-act",
+        "claim-hs-s3-nambuyeo-period",
+        "claim-hs-s3-loc-busosanseong"
+      ],
+      "sceneId": "scene-hs-s3-sabi-move",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · core · 삼국사기 백제본기 성왕 16년 기사. 남부여라는 국호는 660년까지 쓰였다.",
+      "lon": 126.91528,
+      "lat": 36.2875,
+      "coordinateBasis": "location claim-hs-s3-loc-busosanseong",
+      "persistence": {
+        "kind": "city",
+        "from": 538,
+        "to": 660
+      }
+    },
+    {
+      "id": "fact-hs-s3-017",
+      "itemId": "hs-samguk-yeonga-buddha",
+      "category": "culture",
+      "region": "south",
+      "decade": 530,
+      "year": 539,
+      "yearVerbatim": "延嘉七年(539)",
+      "placeLabel": "의령 대의면 하촌리 출토지 일원",
+      "modernPlace": "경상남도 의령군",
+      "what": "만든 해가 새겨진 고구려 불상이 신라 땅에서 발견됨",
+      "claimIds": [
+        "claim-hs-s3-yeonga-539",
+        "claim-hs-s3-yeonga-make",
+        "claim-hs-s3-yeonga-find",
+        "claim-hs-s3-loc-uiryeong"
+      ],
+      "sceneId": "scene-hs-s3-yeonga-buddha",
+      "confidence": "high",
+      "note": "[10한사1-02-04] · standard · 금석문 명문의 연가 7년 기미를 539년으로 보는 통설을 따랐다. 지도의 점은 출토지이며 불상은 현재 국립중앙박물관에 있다.",
+      "lon": 128.261111121,
+      "lat": 35.3191666767,
+      "coordinateBasis": "location claim-hs-s3-loc-uiryeong",
+      "persistence": {
+        "kind": "facility",
+        "from": 539,
+        "to": null
+      }
+    },
+    {
+      "id": "fact-hs-s3-018",
+      "itemId": "hs-samguk-jinheung-wang",
+      "category": "person",
+      "region": "south",
+      "decade": 540,
+      "year": 540,
+      "yearVerbatim": "원년(540)",
+      "placeLabel": "경주 명활성(왕경 동쪽 방어성)",
+      "modernPlace": "경상북도 경주시 천군동",
+      "what": "한강과 낙동강, 함경도까지 넓힌 신라 전성기의 왕",
+      "claimIds": [
+        "claim-hs-s3-jinheung-540",
+        "claim-hs-s3-jinheung-enc",
+        "claim-hs-s3-loc-myeonghwal"
+      ],
+      "sceneId": "scene-hs-s3-jinheung-wang",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · core · 즉위는 삼국사기, 재위 기간은 민족문화대백과에 근거한다. 무대로 쓴 명활성은 진흥왕 15년(554) 수축 기록이 있는 왕경 방어성이다.",
+      "lon": 129.25528,
+      "lat": 35.83556,
+      "coordinateBasis": "location claim-hs-s3-loc-myeonghwal"
+    },
+    {
+      "id": "fact-hs-s3-019",
+      "itemId": "hs-samguk-jeongsaam",
+      "category": "administration",
+      "region": "central",
+      "decade": 530,
+      "year": 538,
+      "yearVerbatim": "사비 시기(538~660)",
+      "placeLabel": "부여 천정대(정사암 전승지)",
+      "modernPlace": "충청남도 부여군 규암면",
+      "what": "바위에서 재상을 뽑던 백제 귀족들의 합의 기구",
+      "claimIds": [
+        "claim-hs-s3-sabi-538",
+        "claim-hs-s3-nambuyeo-period",
+        "claim-hs-s3-jeongsaam-sy",
+        "claim-hs-s3-jeongsaam-pick",
+        "claim-hs-s3-jeongsaam-enc",
+        "claim-hs-s3-jeongsaam-role",
+        "claim-hs-s3-loc-cheonjeongdae"
+      ],
+      "sceneId": "scene-hs-s3-jeongsaam",
+      "confidence": "low",
+      "note": "[10한사1-01-01] · extended · 회의가 열린 해를 적은 기록은 없다. 항목의 550년은 사비 시기 중간을 잡은 추정값이라, 근거가 있는 사비 천도(538)를 연도로 삼고 남부여 국호가 쓰인 660년까지를 기간으로 두었다.",
+      "lon": 126.91917,
+      "lat": 36.31389,
+      "coordinateBasis": "location claim-hs-s3-loc-cheonjeongdae"
+    },
+    {
+      "id": "fact-hs-s3-020",
+      "itemId": "hs-samguk-danyang-stele",
+      "category": "facility",
+      "region": "central",
+      "decade": 550,
+      "year": 551,
+      "yearVerbatim": "진흥왕 12년(551) 상한",
+      "placeLabel": "단양 적성(비석 소재지) 일원",
+      "modernPlace": "충청북도 단양군 단성면",
+      "what": "남한강까지 진출한 신라가 세운 영역 표시 비석",
+      "claimIds": [
+        "claim-hs-s3-stele-551",
+        "claim-hs-s3-stele-loc",
+        "claim-hs-s3-stele-content",
+        "claim-hs-s3-loc-danyang"
+      ],
+      "sceneId": "scene-hs-s3-danyang-stele",
+      "confidence": "medium",
+      "note": "[10한사1-01-01] · standard · 비문 첫머리가 깨져 건립 연대가 확정되지 않았다. 551년 상한설을 따르되 545년 이전설과 550년 절충설이 함께 있다.",
+      "lon": 128.3658033,
+      "lat": 36.984695,
+      "coordinateBasis": "location claim-hs-s3-loc-danyang",
+      "persistence": {
+        "kind": "facility",
+        "from": 551,
+        "to": null
+      }
+    },
+    {
+      "id": "fact-hs-s3-021",
+      "itemId": "hs-samguk-ureuk",
+      "category": "culture",
+      "region": "central",
+      "decade": 550,
+      "year": 551,
+      "yearVerbatim": "十二年 三月(551)",
+      "placeLabel": "충주 탄금대(국원 전승지)",
+      "modernPlace": "충청북도 충주시 칠금동",
+      "what": "대가야의 악사가 신라로 건너와 가야금을 전함",
+      "claimIds": [
+        "claim-hs-s3-ureuk-551",
+        "claim-hs-s3-ureuk-act",
+        "claim-hs-s3-ureuk-gaya",
+        "claim-hs-s3-ureuk-place",
+        "claim-hs-s3-loc-tangeumdae"
+      ],
+      "sceneId": "scene-hs-s3-ureuk",
+      "confidence": "high",
+      "note": "[10한사1-02-04] · standard · 삼국사기 신라본기 진흥왕 12년 기사와 민족문화대백과 우륵 항목.",
+      "lon": 127.89778,
+      "lat": 36.98833,
+      "coordinateBasis": "location claim-hs-s3-loc-tangeumdae"
+    },
+    {
+      "id": "fact-hs-s3-022",
+      "itemId": "hs-samguk-norisachigye",
+      "category": "foreign",
+      "region": "south",
+      "decade": 550,
+      "year": 552,
+      "yearVerbatim": "552년(성왕 30)",
+      "placeLabel": "왜 아스카 일원",
+      "modernPlace": "일본 나라현 다카이치군",
+      "what": "성왕이 보낸 사신이 왜에 불상과 경전을 전함",
+      "claimIds": [
+        "claim-hs-s3-nori-552",
+        "claim-hs-s3-nori-act",
+        "claim-hs-s3-nori-king",
+        "claim-hs-s3-loc-asuka"
+      ],
+      "sceneId": "scene-hs-s3-norisachigye",
+      "confidence": "medium",
+      "note": "[10한사1-02-01] · standard · 해외(일본 나라현) 항목이다. region 은 위도 34.5도라 가장 가까운 권역인 south 로 두었다. 일본서기는 552년, 원흥사가람연기 등은 538년으로 전해 두 설이 함께 있다.",
+      "lon": 135.820214,
+      "lat": 34.478731,
+      "coordinateBasis": "location claim-hs-s3-loc-asuka"
+    },
+    {
+      "id": "fact-hs-s3-023",
+      "itemId": "hs-samguk-hangang-553",
+      "category": "war",
+      "region": "central",
+      "decade": 550,
+      "year": 553,
+      "yearVerbatim": "十四年 秋七月(553)",
+      "placeLabel": "한강 하류 아차산성",
+      "modernPlace": "서울특별시 광진구 광장동",
+      "what": "백제와의 동맹을 깨고 한강을 독차지한 결정적 사건",
+      "claimIds": [
+        "claim-hs-s3-hangang-553",
+        "claim-hs-s3-hangang-act",
+        "claim-hs-s3-hangang-gov",
+        "claim-hs-s3-loc-achasanseong"
+      ],
+      "sceneId": "scene-hs-s3-hangang-553",
+      "confidence": "high",
+      "note": "[10한사1-01-01] · standard · 삼국사기 신라본기와 백제본기가 같은 해 신주 설치를 적는다.",
+      "lon": 127.10278,
+      "lat": 37.55444,
+      "coordinateBasis": "location claim-hs-s3-loc-achasanseong"
+    },
+    {
+      "id": "fact-hs-s3-024",
+      "itemId": "hs-samguk-hwangnyongsa",
+      "category": "facility",
+      "region": "south",
+      "decade": 550,
+      "year": 553,
+      "yearVerbatim": "十四年 春二月(553)",
+      "placeLabel": "경주 황룡사지",
+      "modernPlace": "경상북도 경주시 구황동",
+      "what": "왕권을 떠받친 신라 최대의 국가 사찰",
+      "claimIds": [
+        "claim-hs-s3-hwangnyongsa-553",
+        "claim-hs-s3-hwangnyongsa-act",
+        "claim-hs-s3-hwangnyongsa-566",
+        "claim-hs-s3-hwangnyongsa-1238",
+        "claim-hs-s3-loc-hwangnyongsa"
+      ],
+      "sceneId": "scene-hs-s3-hwangnyongsa",
+      "confidence": "high",
+      "note": "[10한사1-02-04] · core · 착공은 삼국사기 진흥왕 14년, 완공은 같은 책 27년(566)이다. 항목이 적은 569년은 삼국유사가 전하는 담장 완성 연도다. 1238년 몽골군의 방화로 불탔다.",
+      "lon": 129.2325,
+      "lat": 35.83694,
+      "coordinateBasis": "location claim-hs-s3-loc-hwangnyongsa",
+      "persistence": {
+        "kind": "facility",
+        "from": 553,
+        "to": 1238
+      }
+    }
+  ],
+  "missing": []
+}

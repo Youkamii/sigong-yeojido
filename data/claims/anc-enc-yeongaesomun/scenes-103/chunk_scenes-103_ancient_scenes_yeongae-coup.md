@@ -109,6 +109,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-yeon-coup-palace",
+    "subject": "event-hs-sg5-yeon-coup",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-sg5-anhakgung"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_yeongae-coup",
+    "quote": "정변을 일으켜 이들을 모두 죽이고 왕궁에 돌입해 왕을 시해하고 보장왕을 세웠다",
+    "note": "평양성 남쪽에서 귀족을 죽인 뒤 왕궁으로 들어갔다는 서술",
+    "fromSource": "src-anc-enc-yeongaesomun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

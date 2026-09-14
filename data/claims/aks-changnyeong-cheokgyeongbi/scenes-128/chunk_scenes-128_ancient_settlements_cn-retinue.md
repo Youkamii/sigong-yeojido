@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-changnyeong-retinue",
+    "subject": "place-hs4-changnyeong-stele",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-jinheung"
+    },
+    "citesChunk": "chunk_scenes-128_ancient_settlements_cn-retinue",
+    "quote": "어가(御駕)를 수행한 신료(臣僚)들의 명단이 열거되어 있는",
+    "note": "비문에 어가를 수행한 신료 명단이 적혀 있다.",
+    "fromSource": "src-aks-changnyeong-cheokgyeongbi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

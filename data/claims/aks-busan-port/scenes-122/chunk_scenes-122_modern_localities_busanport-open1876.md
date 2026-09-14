@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-busan-1876",
+    "subject": "place-mt1-busanhang",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1876년",
+      "year": 1876,
+      "precision": "year",
+      "earliest": 1876,
+      "latest": 1876,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-busan-1876"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_busanport-open1876",
+    "quote": "1876년에 개항한 우리나라 최초의 무역항이다.",
+    "note": "부산항 개항 연도.",
+    "fromSource": "src-aks-busan-port",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

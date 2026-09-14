@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-ej-conference",
+    "subject": "event-mt3-eulsa-treaty",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jungmyeongjeon"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_eulsa-conference",
+    "quote": "궁중에 들어가 어전회의(御前會議)를 열게 되었다.",
+    "note": "궁중에서 어전회의가 열렸다.",
+    "fromSource": "src-ek-eulsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

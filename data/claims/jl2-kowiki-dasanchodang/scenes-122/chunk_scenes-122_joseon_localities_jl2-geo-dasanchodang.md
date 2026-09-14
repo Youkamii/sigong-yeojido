@@ -24,6 +24,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-loc-dasanchodang",
+    "subject": "place-hs-jl5-dasanchodang",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 34.58,
+      "lon": 126.74472,
+      "precision": "site"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-geo-dasanchodang",
+    "quote": "34.58000; 126.74472",
+    "note": "강진 다산초당 표시 좌표",
+    "fromSource": "src-jl2-kowiki-dasanchodang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

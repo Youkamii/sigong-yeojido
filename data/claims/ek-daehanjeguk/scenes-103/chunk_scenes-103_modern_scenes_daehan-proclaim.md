@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-dhj-date",
+    "subject": "event-mt3-daehanjeguk",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1897년 10월 12일",
+      "year": 1897,
+      "precision": "day",
+      "earliest": 1897,
+      "latest": 1897,
+      "id": "ts-curriculum-modern-transition-modern-transition-3-mt3-dhj-date"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_daehan-proclaim",
+    "quote": "1897년 10월 12일, 고종이 새롭게 황제국을 선포하고 국호를 ‘대한(大韓)’으로 고쳤다",
+    "note": "1897년 10월 12일 황제국을 선포하였다.",
+    "fromSource": "src-ek-daehanjeguk",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

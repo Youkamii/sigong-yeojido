@@ -28,6 +28,50 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-gg-from",
+    "subject": "person-gwanggaeto",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "391",
+      "year": 391,
+      "precision": "year",
+      "earliest": 391,
+      "latest": 391,
+      "id": "ts-curriculum-samguk-samguk-2-hs-sg2-gg-from"
+    },
+    "citesChunk": "chunk_period92_ancient-medieval_gwanggaeto-reign-bi",
+    "quote": "재위 391∼412",
+    "note": "민족문화대백과 광개토왕 항목 개설의 재위 기간(능비 기년).",
+    "fromSource": "src-encykorea-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-gg-to",
+    "subject": "person-gwanggaeto",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "412",
+      "year": 412,
+      "precision": "year",
+      "earliest": 412,
+      "latest": 412,
+      "id": "ts-curriculum-samguk-samguk-2-hs-sg2-gg-to"
+    },
+    "citesChunk": "chunk_period92_ancient-medieval_gwanggaeto-reign-bi",
+    "quote": "재위 391∼412",
+    "note": "같은 항목. 삼국사기는 413년으로 적어 기년이 갈린다.",
+    "fromSource": "src-encykorea-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

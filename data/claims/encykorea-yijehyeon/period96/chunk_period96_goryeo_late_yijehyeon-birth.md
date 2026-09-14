@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-yjh-birth",
+    "subject": "person-encykorea-yijehyeon",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1287년(충렬왕 14)",
+      "year": 1287,
+      "precision": "year",
+      "earliest": 1287,
+      "latest": 1287,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-yjh-birth"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_yijehyeon-birth",
+    "quote": "출생 연도1287년(충렬왕 14)",
+    "note": "이제현 출생 연도.",
+    "fromSource": "src-encykorea-yijehyeon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

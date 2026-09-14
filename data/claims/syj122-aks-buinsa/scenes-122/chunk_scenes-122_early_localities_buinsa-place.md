@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-chojo-place",
+    "subject": "thing-gl2-chojo-daejanggyeong",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "facility-gl2-buinsa"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_buinsa-place",
+    "quote": "대구광역시 동구 팔공산(八公山)에 있는",
+    "note": "부인사는 대구 동구 팔공산에 있다.",
+    "fromSource": "src-syj122-aks-buinsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

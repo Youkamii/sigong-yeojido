@@ -75,6 +75,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-sinmi-gwangseongbo",
+    "subject": "event-mt1-sinmi-yangyo",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-mt1-gwangseongbo"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_sm-gwangseongbo",
+    "quote": "광성보에는 진무중군 어재연(魚在淵)이 이끄는 조선 수비병 600여 명이 배치되어 있었다.",
+    "note": "전투가 벌어진 진보.",
+    "fromSource": "src-ek-sinmi-yangyo-e0032961",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

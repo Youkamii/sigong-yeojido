@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-baekdu-chunk",
+    "subject": "event-hs4-baekdusan-stele",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs4-cheong"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_bd-def",
+    "quote": "조선과 청국 사이에 국경선을 표시하기 위해 세운 정계비",
+    "note": "로컬 원문 chunk(우리역사넷 계열 발췌)로 조선·청 국경비라는 성격을 확인한다.",
+    "fromSource": "src-ek-baekdusan-jeonggyebi-e0022058",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-21"
   }
 ]
 ```

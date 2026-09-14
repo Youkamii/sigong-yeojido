@@ -39,6 +39,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-ijagyeomnan-cheok",
+    "subject": "event-hs-ge4-ijagyeom-nan",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-cheokjungyeong"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_ijagyeomnan-cheok",
+    "quote": "이자겸은 척준경의 군사력을 동원하여 난을 일으켰다.",
+    "note": "척준경의 군사력을 빌려 난을 일으켰다.",
+    "fromSource": "src-encykorea-ijagyeom-nan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

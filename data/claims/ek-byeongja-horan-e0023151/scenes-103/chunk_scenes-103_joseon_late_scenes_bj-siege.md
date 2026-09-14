@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-bj-siege",
+    "subject": "event-hs-jl2-byeongja",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-cheong"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_bj-siege",
+    "quote": "한강을 건너 남한산성을 포위했다.",
+    "note": "청군이 한강을 건너 남한산성을 에워쌌다.",
+    "fromSource": "src-ek-byeongja-horan-e0023151",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

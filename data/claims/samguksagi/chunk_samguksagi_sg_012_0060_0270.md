@@ -26,6 +26,40 @@ generated_by: claude-opus-5
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-06",
     "note": "'太祖'는 이 문맥에서 고려 태조를 가리키지만 본문이 국명을 적지 않는다. polity-goryeo 연결은 추론이다. 사료 카드의 coversTo 935 는 이 계열 기사에 근거한 삼국사기 자신의 범위다. 조사 초안의 추가 문맥: {\"conversionNote\": \"인용에는 달만 있다. 935 는 국편 date.raw 에서만 온다.\", \"conversionStatus\": \"not-converted\", \"year\": null}"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-gwibu-depart",
+    "subject": "event-hs-nbg3-gwibu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-nbg-goryeo"
+    },
+    "citesChunk": "chunk_samguksagi_sg_012_0060_0270",
+    "quote": "王率百寮, 發自王都, 歸于太祖",
+    "note": "11월 왕이 백관을 거느리고 왕도를 떠나 태조에게 갔다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-gwibu-nangnang",
+    "subject": "person-hs-gyeongsunwang",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-nbg-goryeo"
+    },
+    "citesChunk": "chunk_samguksagi_sg_012_0060_0270",
+    "quote": "以長女樂浪公主妻之",
+    "note": "태조가 맏딸 낙랑공주를 아내로 주었다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

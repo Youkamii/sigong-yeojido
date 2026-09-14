@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-hs-3daecheop",
+    "subject": "event-hs-jl1-hansando",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_hansando-3daecheop",
+    "quote": "임진왜란 3대첩의 하나",
+    "note": "임진왜란 3대첩의 하나로 꼽힌다.",
+    "fromSource": "src-encykorea-hansando-daecheop",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

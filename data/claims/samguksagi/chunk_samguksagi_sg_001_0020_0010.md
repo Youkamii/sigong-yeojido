@@ -98,6 +98,45 @@ generated_by: claude-opus-5
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-1-hs-hyeokgeose-acc",
+    "subject": "person-hyeokgeose",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "前漢 孝宣帝五鳳元年甲子",
+      "year": -57,
+      "precision": "year",
+      "earliest": -57,
+      "latest": -57,
+      "id": "ts-curriculum-samguk-samguk-1-hs-hyeokgeose-acc"
+    },
+    "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
+    "quote": "始祖姓朴氏, 諱赫居世. 前漢 孝宣帝五鳳元年甲子, 四月丙辰即位, 號居西干.",
+    "note": "삼국사기 신라본기 시조 즉위 기사. 오봉 원년 갑자=서기전 57년.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-1-hs-hyeokgeose-6chon",
+    "subject": "person-hyeokgeose",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-silla-founding"
+    },
+    "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
+    "quote": "六部人以其生神異, 推尊之, 至是立爲君焉.",
+    "note": "진한 6부 사람들이 혁거세를 추대해 임금으로 세웠다는 기사.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

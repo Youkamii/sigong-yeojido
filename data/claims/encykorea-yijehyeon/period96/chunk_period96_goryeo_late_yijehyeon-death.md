@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-yjh-death",
+    "subject": "person-encykorea-yijehyeon",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1367년(공민왕 16)",
+      "year": 1367,
+      "precision": "year",
+      "earliest": 1367,
+      "latest": 1367,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-yjh-death"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_yijehyeon-death",
+    "quote": "사망 연도1367년(공민왕 16)",
+    "note": "이제현 사망 연도.",
+    "fromSource": "src-encykorea-yijehyeon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

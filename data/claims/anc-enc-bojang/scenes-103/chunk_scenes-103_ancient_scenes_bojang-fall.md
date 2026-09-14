@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-goguryeo-fall-enc",
+    "subject": "event-hs-sg5-goguryeo-fall",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "668년",
+      "year": 668,
+      "precision": "year",
+      "earliest": 668,
+      "latest": 668,
+      "id": "ts-curriculum-samguk-samguk-5-hs-sg5-goguryeo-fall-enc"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_bojang-fall",
+    "quote": "668년 9월에는 평양성마저 함락당해 멸망하고 말았다",
+    "note": "평양성 함락과 멸망",
+    "fromSource": "src-anc-enc-bojang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-daewongun-born",
+    "subject": "person-encykorea-yi-haeung-e0046384",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1820년(순조 20)",
+      "year": 1820,
+      "precision": "year",
+      "earliest": 1820,
+      "latest": 1820,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-daewongun-born"
+    },
+    "citesChunk": "chunk_period96_joseon_society_yi-haeung-born",
+    "quote": "출생 연도1820년(순조 20)",
+    "note": "이하응 출생.",
+    "fromSource": "src-encykorea-yi-haeung-e0046384",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-mokhwa-act",
+    "subject": "person-encykorea-munikjeom",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-ency-jeongcheonik"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_mokmyeon-jeon",
+    "quote": "그의 장인 정천익(鄭天益)에게 부탁하여 처음으로 목화를 재배하였던 곳이다.",
+    "note": "장인 정천익이 산청에서 목화를 길렀다.",
+    "fromSource": "src-ency-mokmyeon-sibae",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-kjh-def",
+    "subject": "person-encykorea-kim-jeonghui-e0010428",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-jl5-geumseokhak"
+    },
+    "citesChunk": "chunk_period96_joseon_society_kim-jeonghui-defi",
+    "quote": "조선 금석학파를 성립하고 추사체를 완성한",
+    "note": "금석학과 추사체",
+    "fromSource": "src-encykorea-kim-jeonghui-e0010428",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

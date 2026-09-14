@@ -62,6 +62,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-gukhak-682",
+    "subject": "institution-hs-nb1-gukhak",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "神文王二年",
+      "year": 682,
+      "precision": "year",
+      "earliest": 682,
+      "latest": 682,
+      "id": "ts-curriculum-nambukguk-nambukguk-1-hs-nb1-gukhak-682"
+    },
+    "citesChunk": "chunk_samguksagi_sg_038_0020_2120",
+    "quote": "國學, 屬礼部, 神文王二年置.",
+    "note": "국학은 예부에 속하며 신문왕 2년(682)에 두었다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

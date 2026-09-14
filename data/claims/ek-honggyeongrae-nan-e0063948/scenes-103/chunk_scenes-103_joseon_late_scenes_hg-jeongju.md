@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-hong-jeongju",
+    "subject": "event-hs-jl5-hong-gyeongnae",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jl5-jeongjuseong"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_hg-jeongju",
+    "quote": "정주성으로 퇴각한 농민군은 고립된 채",
+    "note": "농민군이 정주성으로 물러났다",
+    "fromSource": "src-ek-honggyeongrae-nan-e0063948",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

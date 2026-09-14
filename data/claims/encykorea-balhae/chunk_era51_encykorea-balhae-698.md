@@ -87,6 +87,28 @@ generated_by: "claude-opus-5"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-daejo-enc",
+    "subject": "polity-hs-nb1-balhae",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "698년",
+      "year": 698,
+      "precision": "year",
+      "earliest": 698,
+      "latest": 698,
+      "id": "ts-curriculum-nambukguk-nambukguk-1-hs-nb1-daejo-enc"
+    },
+    "citesChunk": "chunk_era51_encykorea-balhae-698",
+    "quote": "698년에 고구려 옛 장수인 대조영(大祚榮, ？∼719)이 발해를 건국하였다.",
+    "note": "698년 고구려 옛 장수 대조영이 발해를 세웠다.",
+    "fromSource": "src-encykorea-balhae",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-jwu-1287",
+    "subject": "work-gl3-jewang-ungi",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1287년(충렬왕 13)",
+      "year": 1287,
+      "precision": "year",
+      "earliest": 1287,
+      "latest": 1287,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-jwu-1287"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-jwu-pub",
+    "quote": "『제왕운기』는 1287년(충렬왕 13)에 출간되었고,",
+    "note": "제왕운기의 출간 연도.",
+    "fromSource": "src-lg128-encykorea-jewang-ungi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

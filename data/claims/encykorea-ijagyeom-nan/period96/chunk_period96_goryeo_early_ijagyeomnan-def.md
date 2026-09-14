@@ -55,6 +55,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-ijagyeomnan-1126",
+    "subject": "event-hs-ge4-ijagyeom-nan",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1126년(인종 4)",
+      "year": 1126,
+      "precision": "year",
+      "earliest": 1126,
+      "latest": 1126,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-4-hs-ge4-ijagyeomnan-1126"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_ijagyeomnan-def",
+    "quote": "1126년(인종 4) 왕실의 외척이었던 이자겸",
+    "note": "1126년 이자겸이 일으킨 반란이다.",
+    "fromSource": "src-encykorea-ijagyeom-nan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-banjeong-changuimun",
+    "subject": "event-hs-jl2-injo-banjeong",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jl2-changuimun"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_injo-changdeok",
+    "quote": "창의문(彰義門)을 돌파하고 창덕궁으로 향하였다.",
+    "note": "반정군은 창의문을 부수고 창덕궁으로 갔다.",
+    "fromSource": "src-ek-injo-banjeong-e0047030",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

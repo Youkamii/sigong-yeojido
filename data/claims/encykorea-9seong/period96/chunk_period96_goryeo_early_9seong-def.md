@@ -80,6 +80,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-9seong-enc",
+    "subject": "event-hs-ge4-9seong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-yungwan"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_9seong-def",
+    "quote": "윤관(尹瓘)이 별무반(別武班)을 동원하여 고려 동북쪽의 변경 지역을 개척하기 위하여 축성한 성곽",
+    "note": "윤관이 별무반을 동원해 동북 변경에 쌓은 성곽이다.",
+    "fromSource": "src-encykorea-9seong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

@@ -24,6 +24,40 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-daedong-expand",
+    "subject": "event-hs-jl2-daedongbeop",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_daedong-expand",
+    "quote": "1623년(인조 1) 강원도, 1651년(효종 2) 충청도",
+    "note": "강원도·충청도로 차례로 넓혀 갔다.",
+    "fromSource": "src-ek-daedongbeop-e0014246",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-daedong-expand",
+    "subject": "event-hs3-daedong-chungcheong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_daedong-expand",
+    "quote": "1623년(인조 1) 강원도, 1651년(효종 2) 충청도",
+    "note": "대동법이 강원도에서 충청도로 확대된 순서.",
+    "fromSource": "src-ek-daedongbeop-e0014246",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-heojun-defi",
+    "subject": "person-encykorea-heo-jun-e0063152",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "work-hs-donguibogam"
+    },
+    "citesChunk": "chunk_period96_joseon_society_heo-jun-defi",
+    "quote": "『동의보감』·『언해태산집요』·『언해구급방』 등을 저술한 의관",
+    "note": "허준은 동의보감을 지은 의관이다.",
+    "fromSource": "src-encykorea-heo-jun-e0063152",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

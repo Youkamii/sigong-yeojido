@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-1-hs-gl-choeu-1219c",
+    "subject": "person-encykorea-choeu",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1219년(고종 6)",
+      "year": 1219,
+      "precision": "year",
+      "earliest": 1219,
+      "latest": 1219,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-1-hs-gl-choeu-1219c"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_choeu-1219",
+    "quote": "1219년(고종 6)에 최충헌이 죽자 그 뒤를 이어 교정별감(敎定別監)",
+    "note": "1219년 최우가 교정별감을 이었다.",
+    "fromSource": "src-encykorea-choeu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

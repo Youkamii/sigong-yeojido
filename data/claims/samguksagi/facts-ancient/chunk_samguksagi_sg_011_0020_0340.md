@@ -83,6 +83,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-cheonghae-851",
+    "subject": "event-hs-nbg3-cheonghaejin",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "十三年, 春二月",
+      "year": 851,
+      "precision": "year",
+      "earliest": 851,
+      "latest": 851,
+      "id": "ts-curriculum-nambukguk-nambukguk-3-hs-nbg3-cheonghae-851"
+    },
+    "citesChunk": "chunk_samguksagi_sg_011_0020_0340",
+    "quote": "十三年, 春二月, 罷清海鎮",
+    "note": "문성왕 13년(851) 청해진을 혁파하고 주민을 벽골군으로 옮겼다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

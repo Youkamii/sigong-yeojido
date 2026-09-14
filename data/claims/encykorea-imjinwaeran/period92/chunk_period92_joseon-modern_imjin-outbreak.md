@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-im-outbreak",
+    "subject": "event-hs-jl1-imjin-war",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-imjin-japanese-force"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_imjin-outbreak",
+    "quote": "고니시가 인솔한 제1번대는 1592년 4월 14일에",
+    "note": "고니시의 제1번대가 1592년 4월 14일 상륙했다.",
+    "fromSource": "src-encykorea-imjinwaeran",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

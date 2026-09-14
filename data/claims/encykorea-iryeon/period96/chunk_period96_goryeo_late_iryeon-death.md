@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-iryeon-died",
+    "subject": "person-encykorea-iryeon",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1289",
+      "year": 1289,
+      "precision": "year",
+      "earliest": 1289,
+      "latest": 1289,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-iryeon-died"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_iryeon-death",
+    "quote": "사망 연도1289",
+    "note": "일연의 사망 연도.",
+    "fromSource": "src-encykorea-iryeon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -44,6 +44,23 @@ status: "draft"
     "generatedBy": "codex",
     "generatedAt": "2026-09-07",
     "note": "기관 해설의 사건 기준연도다. 사건 전체 기간과 일별 이동 경로로 확장하지 않는다."
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-nhs-1636",
+    "subject": "facility-hs-namhansanseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-jl2-byeongja"
+    },
+    "citesChunk": "chunk_khs-namhansanseong-event",
+    "quote": "인조 14년(1636) 병자호란 때 왕이 이곳으로 피신하였는데,",
+    "note": "1636년 병자호란 때 인조가 이 성으로 피했다.",
+    "fromSource": "src-khs-namhansanseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-4-hs-c4-hakhoe-1942",
+    "subject": "org-hs-c4-joseoneo-hakhoe",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1942년",
+      "year": 1942,
+      "precision": "year",
+      "earliest": 1942,
+      "latest": 1942,
+      "id": "ts-curriculum-colonial-colonial-4-hs-c4-hakhoe-1942"
+    },
+    "citesChunk": "chunk_scenes-128_modern_localities_joseo-def",
+    "quote": "1942년 10월부터 일제가 조선어학회 회원 및 관련 인물을 검거해 재판에 회부한 사건.",
+    "note": "1942년 조선어학회 사건으로 활동이 끊겼다.",
+    "fromSource": "src-aks-joseoneohakhoe",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

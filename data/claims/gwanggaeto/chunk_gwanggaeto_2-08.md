@@ -75,6 +75,28 @@ claim 으로 만들지 않은 것: 男居城(비정 미정), 倭 의 실체.
     "fromSource": "src-gwanggaeto",
     "origin": "ai",
     "status": "draft"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-rescue-400",
+    "subject": "event-hs-sg2-silla-rescue",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "十年庚子",
+      "year": 400,
+      "precision": "year",
+      "earliest": 400,
+      "latest": 400,
+      "id": "ts-curriculum-samguk-samguk-2-hs-sg2-rescue-400"
+    },
+    "citesChunk": "chunk_gwanggaeto_2-08",
+    "quote": "十年庚子，教遣步騎五萬，往救新羅",
+    "note": "능비 2면 8행. 영락 10년 경자년(400) 보병과 기병 5만을 보내 신라를 구원했다.",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

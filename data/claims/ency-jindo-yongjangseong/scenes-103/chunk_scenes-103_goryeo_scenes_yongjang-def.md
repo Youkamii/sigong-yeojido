@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-sbch-jindo",
+    "subject": "event-gl2-sbc-hangjaeng",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl2-yongjangseong"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_yongjang-def",
+    "quote": "전라남도 진도군 군내면에 있는 고려시대 삼별초가 새로운 거점으로 몽골에 대항하기 위해 축조한 성곽.",
+    "note": "용장성은 삼별초가 새 거점으로 쌓은 성이다.",
+    "fromSource": "src-ency-jindo-yongjangseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

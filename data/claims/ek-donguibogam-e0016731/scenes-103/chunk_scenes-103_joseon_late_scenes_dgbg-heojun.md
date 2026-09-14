@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-dgbg-heojun",
+    "subject": "work-hs-donguibogam",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-heo-jun-e0063152"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_dgbg-heojun",
+    "quote": "조선시대 의관 허준이 중국과 조선의 의서를 집대성하여 1610년에 저술한 의서.",
+    "note": "허준이 중국과 조선의 의서를 모아 1610년에 지었다.",
+    "fromSource": "src-ek-donguibogam-e0016731",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

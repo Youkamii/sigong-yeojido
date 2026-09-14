@@ -62,6 +62,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-hyojong-reign",
+    "subject": "person-encykorea-hyojong-e0065706",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "재위: 1649년~1659년",
+      "year": 1649,
+      "precision": "year",
+      "earliest": 1649,
+      "latest": 1659,
+      "id": "ts-curriculum-joseon-late-joseon-late-2-jl2-hyojong-reign"
+    },
+    "citesChunk": "chunk_period96_joseon_rulers_encykorea-hyojong-reign",
+    "quote": "조선의 제17대(재위: 1649년~1659년) 왕.",
+    "note": "효종의 재위는 1649~1659년이다.",
+    "fromSource": "src-encykorea-hyojong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

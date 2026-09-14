@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-ichadon-gongin",
+    "subject": "person-ichadon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-s3-silla"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_ichadon-gongin",
+    "quote": "이차돈의 순교(殉敎)주3로 이루어진 불교 공인은",
+    "note": "순교로 불교 공인이 이루어졌다는 서술.",
+    "fromSource": "src-anc-enc-ichadon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

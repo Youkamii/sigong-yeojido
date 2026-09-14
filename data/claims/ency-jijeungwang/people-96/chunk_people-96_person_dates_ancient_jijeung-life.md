@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-jj-514",
+    "subject": "person-jijeung",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "514년",
+      "year": 514,
+      "precision": "year",
+      "earliest": 514,
+      "latest": 514,
+      "id": "ts-curriculum-samguk-samguk-2-hs-sg2-jj-514"
+    },
+    "citesChunk": "chunk_people-96_person_dates_ancient_jijeung-life",
+    "quote": "출생 연도 437년 사망 연도 514년",
+    "note": "민족문화대백과 지증왕 항목 정보표.",
+    "fromSource": "src-ency-jijeungwang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

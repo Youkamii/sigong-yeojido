@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-1-hs-gl-ssn-songgwangsa",
+    "subject": "place-hs-songgwangsa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "org-hs-suseonsa"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_suseonsa-songgwangsa",
+    "quote": "고려 말기에 송광사(松廣寺)로 개칭되었다.",
+    "note": "길상사가 뒷날 송광사가 되었다.",
+    "fromSource": "src-syj122-aks-suseonsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

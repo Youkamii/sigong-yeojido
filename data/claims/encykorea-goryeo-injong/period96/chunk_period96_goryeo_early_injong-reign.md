@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-injong-reign",
+    "subject": "person-encykorea-goryeo-injong",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "1122∼1146",
+      "year": 1122,
+      "precision": "year",
+      "earliest": 1122,
+      "latest": 1146,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-4-hs-ge4-injong-reign"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_injong-reign",
+    "quote": "재위 1122∼1146년.",
+    "note": "인종 재위 1122~1146년.",
+    "fromSource": "src-encykorea-goryeo-injong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

@@ -28,6 +28,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-bakhae-daewongun",
+    "subject": "person-encykorea-yi-haeung-e0046384",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-mt1-byeongin-bakhae"
+    },
+    "citesChunk": "chunk_period96_joseon_society_yi-haeung-bakhae",
+    "quote": "천주교도 박해령을 내려 전후 6년간(1866∼1872)에 걸쳐",
+    "note": "박해령을 내린 주체.",
+    "fromSource": "src-encykorea-yi-haeung-e0046384",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

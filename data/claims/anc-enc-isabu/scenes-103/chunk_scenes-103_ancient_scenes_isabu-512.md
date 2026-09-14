@@ -75,6 +75,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-usan-enc",
+    "subject": "person-isabu",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "512년",
+      "year": 512,
+      "precision": "year",
+      "earliest": 512,
+      "latest": 512,
+      "id": "ts-curriculum-samguk-samguk-3-hs-s3-usan-enc"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_isabu-512",
+    "quote": "512년에는 우산국(于山國 : 지금의 울릉도)을 점령하였다.",
+    "note": "민족문화대백과 이사부 항목. 우산국이 지금의 울릉도임을 밝힌다.",
+    "fromSource": "src-anc-enc-isabu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

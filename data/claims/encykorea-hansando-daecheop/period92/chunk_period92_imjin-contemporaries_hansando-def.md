@@ -96,6 +96,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-hs-1592",
+    "subject": "event-hs-jl1-hansando",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1592년 7월",
+      "year": 1592,
+      "precision": "month",
+      "earliest": 1592,
+      "latest": 1592,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-hs-1592"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_hansando-def",
+    "quote": "임진왜란 때인 1592년 7월 한산섬 앞바다에서 전라좌수사 이순신(李舜臣), 전라우수사 이억기(李億祺) 및 경상우수사 원균(元均)이 거느린 조선 수군이 일본 수군의 주력대를 무찌른 해전.",
+    "note": "1592년 7월 한산섬 앞바다에서 벌어진 해전.",
+    "fromSource": "src-encykorea-hansando-daecheop",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

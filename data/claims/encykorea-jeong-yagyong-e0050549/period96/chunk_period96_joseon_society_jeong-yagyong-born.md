@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-jyy-born",
+    "subject": "person-encykorea-jeong-yagyong-e0050549",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1762년(영조 38)",
+      "year": 1762,
+      "precision": "year",
+      "earliest": 1762,
+      "latest": 1762,
+      "id": "ts-curriculum-joseon-late-joseon-late-5-jl5-jyy-born"
+    },
+    "citesChunk": "chunk_period96_joseon_society_jeong-yagyong-born",
+    "quote": "출생 연도1762년(영조 38) 6월 16일",
+    "note": "정약용의 출생 연도",
+    "fromSource": "src-encykorea-jeong-yagyong-e0050549",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

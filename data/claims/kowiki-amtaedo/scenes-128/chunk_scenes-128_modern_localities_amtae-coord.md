@@ -24,6 +24,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-amtae-loc",
+    "subject": "place-hs-amtaedo",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 34.827722,
+      "lon": 126.112139,
+      "precision": "area"
+    },
+    "citesChunk": "chunk_scenes-128_modern_localities_amtae-coord",
+    "quote": "북위 34.827722° 동경 126.112139°",
+    "note": "암태도 문서 표시 좌표.",
+    "fromSource": "src-kowiki-amtaedo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

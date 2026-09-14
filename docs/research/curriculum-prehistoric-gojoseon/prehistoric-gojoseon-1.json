@@ -1,0 +1,499 @@
+{
+  "job": "prehistoric-gojoseon-1",
+  "sources": 57,
+  "excerpts": 93,
+  "chunkClaims": 6,
+  "excerptClaims": 114,
+  "facts": 28,
+  "factsByCategory": {
+    "administration": 2,
+    "culture": 10,
+    "economy": 3,
+    "facility": 10,
+    "person": 1,
+    "settlement": 2
+  },
+  "claims": 120,
+  "entities": 101,
+  "rawFilesChecked": [
+    {
+      "source": "src-hs-pg1-enc-paleolithic",
+      "url": "https://encykorea.aks.ac.kr/Article/E0005842",
+      "sha256": "24de28f1375999ed40b92dd0d4a345a16e2532815f4168e368889ce6c761301c",
+      "rawBytes": 143475,
+      "excerpts": 2,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-hs-pg1-ko-geumgul",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%96%91_%EA%B8%88%EA%B5%B4_%EC%9C%A0%EC%A0%81",
+      "sha256": "2c23a41e3ed6f498694b77af86c607c4b7ccefab29d69797a665687ecd71b0e8",
+      "rawBytes": 94360,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-pg1-enc-jeongokri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0049243",
+      "sha256": "ec4d6f89e528892f6c7e319d987f0b7ced2f185af0f68e5b55c09d88ca8a7a25",
+      "rawBytes": 224433,
+      "excerpts": 3,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-hs-pg1-ko-jeongokri",
+      "url": "https://ko.wikipedia.org/wiki/%EC%97%B0%EC%B2%9C_%EC%A0%84%EA%B3%A1%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+      "sha256": "7f3c2b77fb013f0f72e3374a234fbc33c12db7330e5d401142b2195f8f3ff128",
+      "rawBytes": 92251,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-handaxe",
+      "url": "https://encykorea.aks.ac.kr/Article/E0053231",
+      "sha256": "4db17d2fbc3d222e68beff22ac61502686198b2bcfbeb58f658e9baadab354d6",
+      "rawBytes": 83617,
+      "excerpts": 1,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs-pg1-enc-durubong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0016980",
+      "sha256": "a3caf82ed34bc8779c51cb8781795d0b996162c64b44d0c82759bdf96c625513",
+      "rawBytes": 116876,
+      "excerpts": 2,
+      "quotedWords": 22
+    },
+    {
+      "source": "src-hs-pg1-enc-heungsu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064198",
+      "sha256": "7a3d745cae2adf99a56cb46971c151992a37f462541ccc28c7dddbde4f03b09e",
+      "rawBytes": 76181,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-pg1-ko-munui",
+      "url": "https://ko.wikipedia.org/wiki/%EB%AC%B8%EC%9D%98%EB%A9%B4",
+      "sha256": "e918c275007dc661b7bc47c1d9ccedf273664248aeb20b83454bd87bef4d4f2d",
+      "rawBytes": 91244,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-pg1-enc-seokjangri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0004479",
+      "sha256": "9ac3f4637da469fdfb58b5ae52363dcf1619c48c5ff2e87613baa0c6a5a81982",
+      "rawBytes": 126905,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-pg1-ko-seokjangri",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%A3%BC_%EC%84%9D%EC%9E%A5%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+      "sha256": "189542e6f4584b3394ad7f3da9ecc8d0bacab4ce80027b6a8d2d8dae414c75d3",
+      "rawBytes": 87127,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-suyanggae",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013623",
+      "sha256": "87ed24515f24a62a7d996dcd2267fec2cbe1b5caec0fe1c46a2cd4e9bf0a0077",
+      "rawBytes": 115853,
+      "excerpts": 2,
+      "quotedWords": 23
+    },
+    {
+      "source": "src-hs-pg1-ko-suyanggae",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%96%91_%EC%88%98%EC%96%91%EA%B0%9C_%EC%9C%A0%EC%A0%81",
+      "sha256": "7983c30e4c6351318788d8757509fc7ae3b68bf1ef0e57c60c8f83d27400dfb4",
+      "rawBytes": 76702,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-neolithic",
+      "url": "https://encykorea.aks.ac.kr/Article/E0033063",
+      "sha256": "a2870b4a3e96affcdcbe7d09ae25dbf0fdee2cd325d4213c849fd073ac95b6c0",
+      "rawBytes": 151202,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-hs-pg1-enc-gosanri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024717",
+      "sha256": "6d9ac83507b8c4431cb826811bc01781d6c7f0ec437326c39c15b5da1153f639",
+      "rawBytes": 118799,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-pg1-ko-gosanri",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%A3%BC_%EA%B3%A0%EC%82%B0%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+      "sha256": "57a669dac18ea54e316b026f3954e92ca4c882b382255fca8b658594ed3d8b90",
+      "rawBytes": 89805,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-osanri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0035655",
+      "sha256": "5ace54f3225b7104ad7e34da33ad11e52b7a4ce8afce17ef98c86af95656a8a1",
+      "rawBytes": 156540,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-pg1-ko-osanri",
+      "url": "https://ko.wikipedia.org/wiki/%EC%96%91%EC%96%91_%EC%98%A4%EC%82%B0%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+      "sha256": "ddf32fa09a649f1c8ca93b5b8e40de6a55a41cffcc2fb682e4a344ff5b649611",
+      "rawBytes": 80318,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-dongsamdong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0016571",
+      "sha256": "f13c1feae9ed547e3d82d7c8a2bb82e74022917ebd4d9deeaf11e966f7e18275",
+      "rawBytes": 135614,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-pg1-ko-dongsamdong",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8F%99%EC%82%BC%EB%8F%99_%ED%8C%A8%EC%B4%9D",
+      "sha256": "5d2b8826b38649351019c105149c29ef99ae00df9f5410178a563e09a51f4233",
+      "rawBytes": 92902,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-amsadong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0035155",
+      "sha256": "aed006d92e24bef7ba9bc935f117dadc7231c2c4d1661c03b1c3ae07c6284f2e",
+      "rawBytes": 166780,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs-pg1-ko-amsadong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EC%95%94%EC%82%AC%EB%8F%99_%EC%9C%A0%EC%A0%81",
+      "sha256": "10e149e53ad82616ccf4d08833c495623491823c55974c848fdc049df570eeb6",
+      "rawBytes": 123421,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-jeulmun",
+      "url": "https://encykorea.aks.ac.kr/Article/E0025296",
+      "sha256": "24d8208a80facb1af6e51a989030d751f7442223e9faad5617f73d2903eef1ba",
+      "rawBytes": 110234,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-pg1-enc-garakbakwi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0000090",
+      "sha256": "107a18dd310c65819acdee298571098a3b56e17f7bbaabcac19de28f9e5b31a5",
+      "rawBytes": 110782,
+      "excerpts": 2,
+      "quotedWords": 11
+    },
+    {
+      "source": "src-hs-pg1-enc-bangudae",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040463",
+      "sha256": "4ce125718e385afa44ff066f4db0b9f84581f67b42b326f1d48e786c646a4000",
+      "rawBytes": 162098,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-pg1-en-bangudae",
+      "url": "https://en.wikipedia.org/wiki/Bangudae_Petroglyphs",
+      "sha256": "49bb991893824e90b9aab521553df95ee53186e1abd66ea9f8dc497a7d57563e",
+      "rawBytes": 259466,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-cheonjeonri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040503",
+      "sha256": "b4fa802f1f32a966e1e751496e9b13ad34c097e8e5e2d17eb9ed8f6a608c9cd7",
+      "rawBytes": 165146,
+      "excerpts": 2,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs-pg1-ko-cheonjeonri",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%A3%BC_%EC%B2%9C%EC%A0%84%EB%A6%AC_%EA%B0%81%EC%84%9D",
+      "sha256": "2a30bc199f0c119234921c32a14a6556ca5bb53770d7c4409696f27dd5ce6bad",
+      "rawBytes": 297556,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-dangun",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013538",
+      "sha256": "336daa4450923731b14262e8ccda58676d21ba757daae84e0a881a27bf7bb0f4",
+      "rawBytes": 158138,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-pg1-enc-dangun-myth",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013553",
+      "sha256": "2a22f2008c62d03dbe3bbe6089d5414f8b6931548bffb1b9370e55f3afa14169",
+      "rawBytes": 106801,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-pg1-enc-sindansu",
+      "url": "https://encykorea.aks.ac.kr/Article/E0032738",
+      "sha256": "f64eea6c3c6246c2436ab098197e057469ac34e290f991f84e7227288913e93f",
+      "rawBytes": 94233,
+      "excerpts": 2,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-hs-pg1-enc-asadal",
+      "url": "https://encykorea.aks.ac.kr/Article/E0034327",
+      "sha256": "4f33c55879a958b7cc22c3c11ede19e18ceffe6756c9aafd6e37a1f29b10b9d2",
+      "rawBytes": 72411,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-pg1-enc-gojoseon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003937",
+      "sha256": "aa0ec8861498434ac3cba7595e5c741f7f9e0b526ac661088b1702740eece414",
+      "rawBytes": 143358,
+      "excerpts": 2,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-hs-pg1-enc-wanggeom",
+      "url": "https://encykorea.aks.ac.kr/Article/E0039027",
+      "sha256": "26fe9bb8e6e2b2ea8c02df59c0ffd8b3fc60abf926a73991b942f577c2935319",
+      "rawBytes": 95741,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-pg1-en-pyongyang",
+      "url": "https://en.wikipedia.org/wiki/Pyongyang",
+      "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+      "rawBytes": 897617,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-en-myohyangsan",
+      "url": "https://en.wikipedia.org/wiki/Myohyangsan",
+      "sha256": "906c3d99a91f6e0b1bd6ded212cc83204ff8a18d15052f6723ab63fc44b165f8",
+      "rawBytes": 121665,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-bronze-age",
+      "url": "https://encykorea.aks.ac.kr/Article/E0056357",
+      "sha256": "a5b9b7a254b39fb5a041fc7f09ed6debe356b909986f9c67d99a588fb6e8df30",
+      "rawBytes": 140449,
+      "excerpts": 2,
+      "quotedWords": 19
+    },
+    {
+      "source": "src-hs-pg1-ko-geomdanri",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9A%B8%EC%A3%BC_%EA%B2%80%EB%8B%A8%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+      "sha256": "297478d1c4896d78b846e67b4f1e134334abac7fb6e8293fbd5e98512c0800b3",
+      "rawBytes": 78844,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-pg1-enc-gunjang-state",
+      "url": "https://encykorea.aks.ac.kr/Article/E0006708",
+      "sha256": "6ce02bcc87775236f0e6075a29779a5971b3561c6df8606643fb0962c6854bd5",
+      "rawBytes": 76197,
+      "excerpts": 2,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs-pg1-enc-dolmen",
+      "url": "https://encykorea.aks.ac.kr/Article/E0003901",
+      "sha256": "472085c76eadab437512dbf0bde815bdf05a6cd2e8928a1a04af8937c0bcf9be",
+      "rawBytes": 123259,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-pg1-enc-ganghwa-bugeunri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0001515",
+      "sha256": "9eeaea5f2e2d002e84e9ce5abfe36d6d96794ff30e3c0dece4085a8124febf37",
+      "rawBytes": 152822,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-pg1-ko-ganghwa-bugeunri",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B0%95%ED%99%94_%EB%B6%80%EA%B7%BC%EB%A6%AC_%EC%A7%80%EC%84%9D%EB%AC%98",
+      "sha256": "0105a2b8fb9b2397355e310b1490c4b57db4b6aa501a9da921ff17c02d9558a6",
+      "rawBytes": 76505,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-ko-gochang-museum",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%B0%BD%EA%B3%A0%EC%9D%B8%EB%8F%8C%EB%B0%95%EB%AC%BC%EA%B4%80",
+      "sha256": "0db47c628e3566636d58d6b712451e9fabf5f3e501f23a4c08ecf536af05e218",
+      "rawBytes": 113459,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-pg1-en-dolmen-sites",
+      "url": "https://en.wikipedia.org/wiki/Gochang,_Hwasun_and_Ganghwa_Dolmen_Sites",
+      "sha256": "6074e7b060d8beee6b8a333801da2261a89c36af90a4bf186681957fed22eadd",
+      "rawBytes": 224487,
+      "excerpts": 1,
+      "quotedWords": 1
+    },
+    {
+      "source": "src-hs-pg1-enc-bipa-dagger",
+      "url": "https://encykorea.aks.ac.kr/Article/E0025256",
+      "sha256": "06d7d1e5d4a49003681b72b4deb8ff376599867d06d3b2f4a421c3b08953179e",
+      "rawBytes": 107851,
+      "excerpts": 2,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs-pg1-en-chaoyang",
+      "url": "https://en.wikipedia.org/wiki/Chaoyang,_Liaoning",
+      "sha256": "125e35b5deb60c5999cabaa1725d19dbb4224e84f4123a7a2adbfa51c58c8afe",
+      "rawBytes": 303538,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-misongni-pottery",
+      "url": "https://encykorea.aks.ac.kr/Article/E0019964",
+      "sha256": "a011b921c0f2476b8343f16f4cb00a2fcaec0ae92139af365d1a816740fa1b0a",
+      "rawBytes": 99196,
+      "excerpts": 2,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-hs-pg1-enc-misongni-site",
+      "url": "https://encykorea.aks.ac.kr/Article/E0043407",
+      "sha256": "0d57a162972923d03fb46e3a8256e63c0e8c2d877873c142d896c27a5c9b9d18",
+      "rawBytes": 82679,
+      "excerpts": 2,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs-pg1-en-uiju",
+      "url": "https://en.wikipedia.org/wiki/Uiju_County",
+      "sha256": "c8857b43ab0651b5b44c3719d2f0eb839e5362f63363216332a3a87c598b13ba",
+      "rawBytes": 111478,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-enc-bandal",
+      "url": "https://encykorea.aks.ac.kr/Article/E0021456",
+      "sha256": "088762792320e6202690627671a06f17f9c071536ce8529f592ea013130c9e10",
+      "rawBytes": 102775,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-pg1-enc-byeonongsa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022806",
+      "sha256": "8c7c15ce73cb51eeb715a280dad585cc1ce27ccafc681c9495256393d05c5565",
+      "rawBytes": 174086,
+      "excerpts": 2,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs-pg1-ko-heunamri",
+      "url": "https://ko.wikipedia.org/wiki/%EC%97%AC%EC%A3%BC_%ED%9D%94%EC%95%94%EB%A6%AC_%EC%84%A0%EC%82%AC%EC%9C%A0%EC%A0%81",
+      "sha256": "b15081d9bcc5370af1572b0bd562472d115732b54ab6a5bf7203a9b3db5b8396",
+      "rawBytes": 111590,
+      "excerpts": 2,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-hs-pg1-enc-songgukri",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024420",
+      "sha256": "0274f368d4f18f01ac526fb847b451439a88e610be3b9174b4164ea1742bab01",
+      "rawBytes": 114930,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs-pg1-ko-songgukri",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%97%AC_%EC%86%A1%EA%B5%AD%EB%A6%AC_%EC%9C%A0%EC%A0%81",
+      "sha256": "c73eee39f23b3dec1ee6f15ed1f2ed5427cec30f43c7414017c4dbb08727f5cb",
+      "rawBytes": 89055,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-ko-daedonggang",
+      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EB%8F%99%EA%B0%95",
+      "sha256": "5dd41c6712fca6911c4cc06cb08349df76fd374e39a852fbc52dd1d419a945aa",
+      "rawBytes": 121152,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-pg1-ko-jitapri",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B4%89%EC%82%B0%EC%A7%80%ED%83%91%EB%A6%AC%EC%9C%A0%EC%A0%81",
+      "sha256": "cdbd452c5ea66103f7247e5f3fcc3567f655401a7b1597d190cffa7eded2c6dc",
+      "rawBytes": 63088,
+      "excerpts": 1,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs-pg1-ko-neolithic-korea",
+      "url": "https://ko.wikipedia.org/wiki/%ED%95%9C%EA%B5%AD%EC%9D%98_%EC%8B%A0%EC%84%9D%EA%B8%B0_%EC%8B%9C%EB%8C%80",
+      "sha256": "56d75aa6cbec81971231544a179eda10c51076160932b5ef022748fd52a4905b",
+      "rawBytes": 146240,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs-pg1-ko-liaohe",
+      "url": "https://ko.wikipedia.org/wiki/%EB%9E%B4%EC%98%A4%ED%97%88",
+      "sha256": "b1bd30edbd787a4602bb1f45b0084429f17cfc14b74915eb7742cfa44a42a300",
+      "rawBytes": 145815,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [],
+  "collection": {
+    "task": "prehistoric-gojoseon-1",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789700000,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-prehistoric-gojoseon-1"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "place-hs-pg1-scene-gochang"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

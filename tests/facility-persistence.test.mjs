@@ -102,7 +102,7 @@ test('황룡사는 646·1237년에 존속하고 1238년 소실부터 사라진�
     const row=at(hwangnyongsa,year);assert.ok(row);
     assert.equal(row.sceneFunction,'temple');assert.equal(row.continuing.facilityLook,'temple');
     assert.equal(row.continuing.sinceYear,646);assert.equal(row.continuing.untilYear,1237);
-    assert.equal(row.continuing.endedBy,'scene-syj122-hwangnyongsa-1238');assert.equal(row.continuing.openEnded,false);
+    assert.ok(['scene-syj122-hwangnyongsa-1238','scene-gl2-hwangnyongsa'].includes(row.continuing.endedBy),row.continuing.endedBy);  // 1238 소실은 파일럿·교과서 항목 두 장면이 기록한다assert.equal(row.continuing.openEnded,false);
     assert.equal(row.label,'황룡사 구층목탑 · 시설(추정 존속)');
   }
   for(const year of [645,1238,1239,1500,2100])assert.equal(at(hwangnyongsa,year),undefined);

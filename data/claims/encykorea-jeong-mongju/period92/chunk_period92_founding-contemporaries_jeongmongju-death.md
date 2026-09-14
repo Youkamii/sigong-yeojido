@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-jeongmongju-place",
+    "subject": "person-encykorea-jeong-mongju",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl4-seonjukgyo"
+    },
+    "citesChunk": "chunk_period92_founding-contemporaries_jeongmongju-death",
+    "quote": "선죽교(善竹橋) 에서 이방원의 문객 조영규(趙英珪) 등에게 살해되었다.",
+    "note": "살해된 자리가 선죽교라는 서술.",
+    "fromSource": "src-encykorea-jeong-mongju",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

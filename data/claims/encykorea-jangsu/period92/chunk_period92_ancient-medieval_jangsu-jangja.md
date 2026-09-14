@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-js-son",
+    "subject": "person-jangsu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-gwanggaeto"
+    },
+    "citesChunk": "chunk_period92_ancient-medieval_jangsu-jangja",
+    "quote": "광개토왕의 장자이다",
+    "note": "광개토왕의 맏아들이다.",
+    "fromSource": "src-encykorea-jangsu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

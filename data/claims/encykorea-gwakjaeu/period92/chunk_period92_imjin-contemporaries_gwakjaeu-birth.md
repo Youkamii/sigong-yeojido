@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-gjw-birth",
+    "subject": "person-encykorea-gwak-jaeu-e0004695",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1552년(명종 7)",
+      "year": 1552,
+      "precision": "year",
+      "earliest": 1552,
+      "latest": 1552,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-gjw-birth"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_gwakjaeu-birth",
+    "quote": "출생 연도1552년(명종 7)",
+    "note": "출생 연도.",
+    "fromSource": "src-encykorea-gwakjaeu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

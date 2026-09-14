@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-agwan-move",
+    "subject": "event-mt3-agwan",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-gojong-e0003939"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_agwan-move",
+    "quote": "고종과 왕세자가 비밀리에 러시아공사관으로 거처를 옮긴 사건.",
+    "note": "고종과 왕세자가 거처를 옮겼다.",
+    "fromSource": "src-ek-agwan-pacheon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-hs-burn",
+    "subject": "event-hs-jl1-hansando",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-imjin-japanese-force"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_hs-burn",
+    "quote": "47척을 분파(焚破)하고 12척을 나포하였다.",
+    "note": "47척을 불태우고 12척을 나포했다.",
+    "fromSource": "src-encykorea-hansando-daecheop",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

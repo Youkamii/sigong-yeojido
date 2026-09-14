@@ -44,6 +44,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-code-king",
+    "subject": "person-encykorea-sosurimwang",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-sg2-goguryeo-code"
+    },
+    "citesChunk": "chunk_period96_early_states_sosurim-defi",
+    "quote": "고구려의 제17대(재위: 371년~384년) 왕",
+    "note": "율령을 반포한 소수림왕의 재위 기간.",
+    "fromSource": "src-encykorea-sosurimwang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

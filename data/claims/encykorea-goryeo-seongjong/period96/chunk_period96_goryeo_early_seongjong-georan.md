@@ -77,6 +77,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-1-hs-seongjong-georan",
+    "subject": "person-encykorea-goryeo-seongjong",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-seohui"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_seongjong-georan",
+    "quote": "993년(성종 12) 거란이 침입했을 때 서희를 보내 외교 담판으로 물리치고",
+    "note": "재위 중 대표 사건.",
+    "fromSource": "src-encykorea-goryeo-seongjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

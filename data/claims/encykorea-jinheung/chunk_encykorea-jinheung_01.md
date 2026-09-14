@@ -46,6 +46,28 @@ generated_by: "claude-opus-5"
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-06",
     "note": "직접 적힌 재위 기간만 보존한다. 생몰년을 보충하거나 질의 구간과의 겹침을 별도 역사 사실로 저장하지 않는다."
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-jinheung-enc",
+    "subject": "person-encykorea-jinheung",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "540~576",
+      "year": 576,
+      "precision": "year",
+      "earliest": 540,
+      "latest": 576,
+      "id": "ts-curriculum-samguk-samguk-3-hs-s3-jinheung-enc"
+    },
+    "citesChunk": "chunk_encykorea-jinheung_01",
+    "quote": "진흥왕은 삼국시대 신라의 제24대(재위: 540~576) 왕이다.",
+    "note": "민족문화대백과 진흥왕 항목의 재위 기간.",
+    "fromSource": "src-encykorea-jinheung",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

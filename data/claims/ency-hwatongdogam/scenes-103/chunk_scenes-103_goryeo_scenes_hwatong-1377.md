@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-hwatong-act",
+    "subject": "person-ency-choemuseon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "org-gl4-hwatong-dogam"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_hwatong-1377",
+    "quote": "1377년(우왕 3)에 최무선의 건의로 설치된 것이다.",
+    "note": "화약과 화기를 만들던 임시 관청.",
+    "fromSource": "src-ency-hwatongdogam",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

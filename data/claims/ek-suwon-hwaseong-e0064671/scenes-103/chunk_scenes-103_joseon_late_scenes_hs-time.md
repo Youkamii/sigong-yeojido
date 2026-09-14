@@ -45,6 +45,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-hwaseong-1796",
+    "subject": "place-hs-jl5-suwon-hwaseong",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1796년",
+      "year": 1796,
+      "precision": "year",
+      "earliest": 1796,
+      "latest": 1796,
+      "id": "ts-curriculum-joseon-late-joseon-late-5-jl5-hwaseong-1796"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_hs-time",
+    "quote": "이듬해 정월부터 시작해 2년 반 만인 1796년에 완성",
+    "note": "1794년 정월 착공, 1796년 완성",
+    "fromSource": "src-ek-suwon-hwaseong-e0064671",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

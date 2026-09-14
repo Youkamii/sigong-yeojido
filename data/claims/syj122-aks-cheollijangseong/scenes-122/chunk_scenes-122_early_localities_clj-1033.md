@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-clj-1033",
+    "subject": "place-hs-cheollijangseong",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1033년",
+      "year": 1033,
+      "precision": "year",
+      "earliest": 1033,
+      "latest": 1033,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-3-ge3-clj-1033"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_clj-1033",
+    "quote": "1033년(덕종 2) 8월 왕이 평장사(平章事)",
+    "note": "1033년 8월 덕종이 축성을 명했다.",
+    "fromSource": "src-syj122-aks-cheollijangseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

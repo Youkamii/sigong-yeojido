@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-tangpyeong-chunk-def",
+    "subject": "event-hs4-tangpyeong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs4-joseon"
+    },
+    "citesChunk": "chunk_period96_joseon_society_tangpyeong-defi",
+    "quote": "당쟁을 막기 위해 당파간의 정치세력에 균형을 꾀하려한 정책",
+    "note": "로컬 chunk로 탕평책의 정의를 확인한다.",
+    "fromSource": "src-encykorea-tangpyeong-e0058860",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-21"
   }
 ]
 ```

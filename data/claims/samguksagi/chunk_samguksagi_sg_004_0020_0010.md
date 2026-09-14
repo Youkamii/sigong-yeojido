@@ -24,6 +24,23 @@ generated_by: claude-opus-5
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-06",
     "note": "Q3(6세기 신라 소속 인물) 질의를 위한 시간 앵커는 quote 가 아니라 chunk.date 에서 온다 — 이 점을 데이터에 남겨야 한다. '6세기'라는 구간 자체가 환산 결과에 딸린 판단이다. 조사 초안의 추가 문맥: {\"activeFromChunkDate\": 500, \"roleVerbatim\": \"麻立干\"}"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-jj-500",
+    "subject": "person-jijeung",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "year",
+      "value": 500
+    },
+    "citesChunk": "chunk_samguksagi_sg_004_0020_0010",
+    "quote": "智證麻立干立",
+    "note": "삼국사기 신라본기. 지증마립간이 즉위했다(500). 나이 64세였다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

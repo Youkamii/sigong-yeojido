@@ -26,6 +26,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-dsm-seojaepil",
+    "subject": "event-mt3-dongnip-sinmun",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-mod-seo-jaepil"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_dongnip-seojaepil",
+    "quote": "서재필은 사장 겸 주필로 있으면서",
+    "note": "서재필이 사장 겸 주필이었다.",
+    "fromSource": "src-aks-dongnip-sinmun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

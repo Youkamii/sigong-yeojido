@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-3-hs-610-chunk",
+    "subject": "event-hs-610",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1926년",
+      "year": 1926,
+      "precision": "year",
+      "earliest": 1926,
+      "latest": 1926,
+      "id": "ts-curriculum-colonial-colonial-3-hs-610-chunk"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_610-students",
+    "quote": "1926년 6월 10일 순종의 인산일에 참가한 2만4000여 명의 학생들은",
+    "note": "인산일 학생 도열",
+    "fromSource": "src-aks-610-manse",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-1-hs-gl-choeu-death",
+    "subject": "person-encykorea-choeu",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1249년(고종 36)",
+      "year": 1249,
+      "precision": "year",
+      "earliest": 1249,
+      "latest": 1249,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-1-hs-gl-choeu-death"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_choeu-death",
+    "quote": "사망 연도1249년(고종 36)",
+    "note": "사망 연도 1249년.",
+    "fromSource": "src-encykorea-choeu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

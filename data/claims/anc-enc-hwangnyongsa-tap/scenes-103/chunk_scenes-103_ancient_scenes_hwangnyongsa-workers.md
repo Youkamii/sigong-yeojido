@@ -75,6 +75,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-hwangnyong-abiji",
+    "subject": "facility-hs-sg5-hwangnyongsa-tap",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-hs-sg5-abiji"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_hwangnyongsa-workers",
+    "quote": "백제의 장인(匠人) 아비지(阿非知)를 초청하여 기술지도를 받고",
+    "note": "백제 장인 아비지가 기술을 지도했다",
+    "fromSource": "src-anc-enc-hwangnyongsa-tap",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

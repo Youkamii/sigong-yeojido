@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-injong-life",
+    "subject": "person-encykorea-goryeo-injong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1109년(예종 4)",
+      "year": 1109,
+      "precision": "year",
+      "earliest": 1109,
+      "latest": 1109,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-4-hs-ge4-injong-life"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_injong-life",
+    "quote": "출생 연도1109년(예종 4) 사망 연도1146년(인종 24)",
+    "note": "인종의 생몰년 1109~1146년.",
+    "fromSource": "src-encykorea-goryeo-injong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

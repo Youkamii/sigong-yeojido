@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-gwangseongbo-addr",
+    "subject": "place-mt1-gwangseongbo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-mt1-ganghwa"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_gs-addr",
+    "quote": "소재지 인천 강화군 불은면 덕성리 23-1번지",
+    "note": "광성보 소재지.",
+    "fromSource": "src-ek-ganghwa-gwangseongbo-e0005160",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

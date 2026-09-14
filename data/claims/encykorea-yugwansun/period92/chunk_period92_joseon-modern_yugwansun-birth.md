@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-yu-birth",
+    "subject": "person-encykorea-yu-gwansun",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1902년 12월 16일",
+      "year": 1902,
+      "precision": "day",
+      "earliest": 1902,
+      "latest": 1902,
+      "id": "ts-curriculum-colonial-colonial-2-c2-yu-birth"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_yugwansun-birth",
+    "quote": "출생 연도1902년 12월 16일",
+    "note": "출생.",
+    "fromSource": "src-encykorea-yugwansun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -24,6 +24,28 @@ generated_by: claude-opus-5
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-06",
     "note": "신라를 慶州로 고쳐 公의 食邑으로 삼았다는 기사 서술이다. 이를 신라 국호의 다른 표기나 현재 경주시와의 동일성으로 연결하지 않는다. 正承公을 받은 인물의 연결이나 관직·봉작 구분은 이 Claim에 추가하지 않았다."
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-gwibu-end",
+    "subject": "event-hs-nbg3-gwibu",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "十二月",
+      "year": 935,
+      "precision": "year",
+      "earliest": 935,
+      "latest": 935,
+      "id": "ts-curriculum-nambukguk-nambukguk-3-hs-nbg3-gwibu-end"
+    },
+    "citesChunk": "chunk_samguksagi_sg_012_0060_0280",
+    "quote": "十二月, 封爲正承公",
+    "note": "12월 정승공에 봉하고 신라를 경주로 고쳐 식읍으로 삼았다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

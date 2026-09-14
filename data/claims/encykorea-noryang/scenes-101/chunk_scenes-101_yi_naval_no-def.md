@@ -130,6 +130,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-nr-1598",
+    "subject": "event-hs-jl1-noryang",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1598년(선조 31) 11월 18일",
+      "year": 1598,
+      "precision": "day",
+      "earliest": 1598,
+      "latest": 1598,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-nr-1598"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_no-def",
+    "quote": "1598년(선조 31) 11월 18일부터 19일 이틀 사이에 이순신(李舜臣)과 진린(陳璘)이 이끄는 조·명 연합함대가 노량(경상남도 남해도와 하동 사이의 해협) 앞바다에서",
+    "note": "1598년 11월 18~19일 조·명 연합함대가 노량 앞바다에서 싸웠다.",
+    "fromSource": "src-encykorea-noryang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

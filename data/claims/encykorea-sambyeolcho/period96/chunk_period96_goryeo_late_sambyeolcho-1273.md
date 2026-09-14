@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-sbc-1273",
+    "subject": "institution-gl2-sambyeolcho",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1273년",
+      "year": 1273,
+      "precision": "year",
+      "earliest": 1273,
+      "latest": 1273,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-2-gl2-sbc-1273"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_sambyeolcho-1273",
+    "quote": "1273년 고려·몽골 연합군의 공격을 받아 섬멸당했다.",
+    "note": "1273년 여·몽 연합군에게 섬멸되었다.",
+    "fromSource": "src-encykorea-sambyeolcho",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

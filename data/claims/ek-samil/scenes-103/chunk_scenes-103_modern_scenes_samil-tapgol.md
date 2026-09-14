@@ -75,6 +75,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-samil-tapgol",
+    "subject": "event-hs-samil",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-tapgol-park"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_samil-tapgol",
+    "quote": "탑골공원의 학생들은 나타나지 않는 민족대표를 기다리다가",
+    "note": "학생들은 탑골 공원에서 따로 선언서를 읽었다.",
+    "fromSource": "src-ek-samil",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

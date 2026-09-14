@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-usan-ships",
+    "subject": "person-isabu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-s3-ulleungdo"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_isabu-ships",
+    "quote": "나무로 사자(獅子)를 많이 만들어 전선에 가득 싣고",
+    "note": "나무 사자를 전선에 싣고 해안을 오갔다는 서술.",
+    "fromSource": "src-anc-enc-isabu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

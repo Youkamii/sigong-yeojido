@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-agwan-russia",
+    "subject": "event-mt3-agwan",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-russia"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_agwan-request",
+    "quote": "고종과 측근 인사들의 요청에 러시아공사가 동의하여",
+    "note": "러시아 공사가 동의하였다.",
+    "fromSource": "src-ek-agwan-pacheon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

@@ -75,6 +75,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-daedong-1608",
+    "subject": "event-hs-jl2-daedongbeop",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1608년(광해군 즉위년)",
+      "year": 1608,
+      "precision": "year",
+      "earliest": 1608,
+      "latest": 1608,
+      "id": "ts-curriculum-joseon-late-joseon-late-2-jl2-daedong-1608"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_daedong-1608",
+    "quote": "1608년(광해군 즉위년) 경기도에 선혜법이라는 이름으로 시험적으로 실시되기 시작한",
+    "note": "대동법은 1608년 경기도에서 선혜법이라는 이름으로 처음 시행되었다.",
+    "fromSource": "src-ek-daedongbeop-e0014246",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

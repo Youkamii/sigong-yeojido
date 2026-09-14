@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-bukhan-555",
+    "subject": "place-hs4-bukhansan-bibong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "冬十月",
+      "year": 555,
+      "precision": "year",
+      "earliest": 555,
+      "latest": 555,
+      "id": "ts-curriculum-samguk-samguk-4-hs4-bukhan-555"
+    },
+    "citesChunk": "chunk_samguksagi_sg_004_0040_0240",
+    "quote": "冬十月, 王巡幸北漢山, 拓定封疆.",
+    "note": "삼국사기 진흥왕 16년 겨울 10월: 왕이 북한산을 순행하고 강역을 정했다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

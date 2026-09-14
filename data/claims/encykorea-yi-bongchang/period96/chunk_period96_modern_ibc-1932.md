@@ -45,6 +45,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-4-hs-c4-ibc-1932",
+    "subject": "person-encykorea-yi-bongchang",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1932년",
+      "year": 1932,
+      "precision": "year",
+      "earliest": 1932,
+      "latest": 1932,
+      "id": "ts-curriculum-colonial-colonial-4-hs-c4-ibc-1932"
+    },
+    "citesChunk": "chunk_period96_modern_ibc-1932",
+    "quote": "1932년 1월 8일, 동경 요요키[代代木] 연병장에서",
+    "note": "1932년 1월 8일 도쿄에서 의거를 결행했다.",
+    "fromSource": "src-encykorea-yi-bongchang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

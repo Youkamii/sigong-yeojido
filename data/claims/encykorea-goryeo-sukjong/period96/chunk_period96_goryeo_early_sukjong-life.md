@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-sukjong-life",
+    "subject": "person-encykorea-goryeo-sukjong",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1054년",
+      "year": 1054,
+      "precision": "year",
+      "earliest": 1054,
+      "latest": 1054,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-3-ge3-sukjong-life"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_sukjong-life",
+    "quote": "출생 연도1054년(문종 8) 사망 연도1105년(숙종 10)",
+    "note": "숙종의 생몰 연도.",
+    "fromSource": "src-encykorea-goryeo-sukjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

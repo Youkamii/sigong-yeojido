@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-jeongmongju-fall",
+    "subject": "person-encykorea-jeong-mongju",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-goryeo-gongyangwang"
+    },
+    "citesChunk": "chunk_period92_founding-contemporaries_gongyang-fall",
+    "quote": "정몽주가 살해되면서 이성계가 왕으로 추대되고 공양왕은 폐위되었다.",
+    "note": "정몽주의 죽음이 고려의 마지막 고비였다.",
+    "fromSource": "src-encykorea-gongyangwang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

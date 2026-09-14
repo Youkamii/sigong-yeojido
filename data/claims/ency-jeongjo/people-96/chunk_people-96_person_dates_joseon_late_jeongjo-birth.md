@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-jeongjo-born-chunk",
+    "subject": "person-encykorea-jeongjo-e0050867",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1752년(영조 28)",
+      "year": 1752,
+      "precision": "year",
+      "earliest": 1752,
+      "latest": 1752,
+      "id": "ts-curriculum-joseon-late-joseon-late-4-hs4-jeongjo-born-chunk"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_late_jeongjo-birth",
+    "quote": "출생 연도 1752년(영조 28)",
+    "note": "로컬 인물 연대 chunk로 정조 출생 연도를 확인한다.",
+    "fromSource": "src-ency-jeongjo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-21"
   }
 ]
 ```

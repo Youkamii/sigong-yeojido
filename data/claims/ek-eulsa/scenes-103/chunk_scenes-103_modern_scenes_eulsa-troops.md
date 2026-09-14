@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-ej-troops",
+    "subject": "event-mt3-eulsa-treaty",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-japan"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_eulsa-troops",
+    "quote": "궁궐 주위 및 시내의 요소요소에는 무장한 일본군이 경계를 선",
+    "note": "무장한 일본군이 궁궐 주위를 에워쌌다.",
+    "fromSource": "src-ek-eulsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

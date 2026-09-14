@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-gameunsa-enc",
+    "subject": "place-hs-nb1-gameunsa",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "682년(신문왕 2)",
+      "year": 682,
+      "precision": "year",
+      "earliest": 682,
+      "latest": 682,
+      "id": "ts-curriculum-nambukguk-nambukguk-1-hs-nb1-gameunsa-enc"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_gameunsa-682",
+    "quote": "682년(신문왕 2)에 신문왕이 부왕 문무왕의 뜻을 이어 창건하였으며",
+    "note": "682년 신문왕이 부왕의 뜻을 이어 창건했다.",
+    "fromSource": "src-anc-enc-gameunsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

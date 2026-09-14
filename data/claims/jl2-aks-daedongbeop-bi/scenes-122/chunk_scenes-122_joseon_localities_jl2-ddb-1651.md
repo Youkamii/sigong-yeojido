@@ -58,6 +58,45 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-daedong-1651",
+    "subject": "event-hs3-daedong-chungcheong",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1651년(효종 2)",
+      "year": 1651,
+      "precision": "year",
+      "earliest": 1651,
+      "latest": 1651,
+      "id": "ts-curriculum-joseon-late-joseon-late-3-hs3-daedong-1651"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-ddb-1651",
+    "quote": "1651년(효종 2)에 김육(金堉)이 영의정으로 있을 때 충청도에 대동법을 시행토록 상소하여",
+    "note": "평택 대동법시행기념비 항목의 서술. 1651년 충청도 대동법 시행의 근거.",
+    "fromSource": "src-jl2-aks-daedongbeop-bi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-kimyuk-act",
+    "subject": "person-encykorea-kim-yuk-e0010098",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs3-daedong-chungcheong"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-ddb-1651",
+    "quote": "김육(金堉)이 영의정으로 있을 때 충청도에 대동법을 시행토록 상소하여",
+    "note": "김육이 영의정으로서 충청도 대동법 시행을 상소했다.",
+    "fromSource": "src-jl2-aks-daedongbeop-bi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

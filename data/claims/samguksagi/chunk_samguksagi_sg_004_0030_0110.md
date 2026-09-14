@@ -63,6 +63,23 @@ generated_by: claude-opus-5
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-buddhism-sg",
+    "subject": "polity-hs-s3-silla",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-ichadon"
+    },
+    "citesChunk": "chunk_samguksagi_sg_004_0030_0110",
+    "quote": "及斬之, 血從斷處湧, 色白如乳",
+    "note": "삼국사기 법흥왕 15년 조의 이차돈 처형 기사. 삼국사기는 불법이 널리 행해진 해를 528년으로 적는다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

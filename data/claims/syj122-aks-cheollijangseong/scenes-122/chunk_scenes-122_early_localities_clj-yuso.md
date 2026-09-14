@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-clj-yuso",
+    "subject": "person-hs-yu-so",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-cheollijangseong"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_clj-yuso",
+    "quote": "유소(柳韶, ?~1038) 에게 명해 북쪽 변경에 관방을 쌓게",
+    "note": "유소가 북쪽 변경에 관방을 쌓는 일을 맡았다.",
+    "fromSource": "src-syj122-aks-cheollijangseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

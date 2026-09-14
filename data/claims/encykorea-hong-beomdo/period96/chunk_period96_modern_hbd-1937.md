@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-hong-1937",
+    "subject": "person-encykorea-hong-beomdo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-kazakhstan"
+    },
+    "citesChunk": "chunk_period96_modern_hbd-1937",
+    "quote": "1937년 카자흐스탄으로 강제이주되어",
+    "note": "만년에 카자흐스탄으로 강제 이주되었다.",
+    "fromSource": "src-encykorea-hong-beomdo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

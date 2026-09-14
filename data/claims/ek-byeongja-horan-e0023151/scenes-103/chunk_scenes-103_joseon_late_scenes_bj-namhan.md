@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-bj-namhan",
+    "subject": "event-hs-jl2-byeongja",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "facility-hs-namhansanseong"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_bj-namhan",
+    "quote": "인조는 세자와 백관을 대동하고 남한산성(南漢山城)으로 들어갔다.",
+    "note": "인조가 세자와 백관을 데리고 남한산성으로 들어갔다.",
+    "fromSource": "src-ek-byeongja-horan-e0023151",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-nr-hit",
+    "subject": "person-encykorea-yi-sunsin",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-jl1-noryang"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_yi-noryang-hit",
+    "quote": "선두(船頭)에 나서서 적군을 지휘하다가 애통하게도 적의 유탄에 맞았다.",
+    "note": "선두에서 지휘하다 적의 유탄에 맞았다.",
+    "fromSource": "src-encykorea-yi-sunsin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

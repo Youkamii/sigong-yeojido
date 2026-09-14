@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-09"
+  },
+  {
+    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-bronze-site",
+    "subject": "event-hs-pg1-bronze",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-pg1-geomdanri"
+    },
+    "citesChunk": "chunk_scenes-135_forts_settlements_syj135-geomdan-place",
+    "quote": "울산광역시 울주군 웅촌면에 있는 청동기시대 집터와 환호(環濠)·화덕자리·고인돌 관련 복합유적.",
+    "note": "검단리는 청동기시대 집터와 환호가 함께 있는 복합유적이다.",
+    "fromSource": "src-syj135-aks-geomdanri",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

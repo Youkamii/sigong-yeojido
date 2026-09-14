@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-hjb-cheoyeong",
+    "subject": "event-hs-jl1-haengju",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "institution-hs-jl1-uiseunggun"
+    },
+    "citesChunk": "chunk_scenes-101_invasion_events_haengju-cheoyeong",
+    "quote": "처영은 승의군을 이끌고 용감히 맞섰다.",
+    "note": "처영이 승의군을 이끌고 맞섰다.",
+    "fromSource": "src-encykorea-haengju",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

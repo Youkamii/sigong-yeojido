@@ -45,6 +45,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-9seodang-sabeol",
+    "subject": "institution-hs-nb1-10jeong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-nb1-sangju"
+    },
+    "citesChunk": "chunk_samguksagi_sg_008_0020_0360",
+    "quote": "三月, 罷一善州, 復置沙伐州, 以波珍湌官長爲揔管.",
+    "note": "신문왕 7년(687) 3월 일선주를 없애고 사벌주를 다시 두었다. 같은 해 가을 사벌주성을 쌓았다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

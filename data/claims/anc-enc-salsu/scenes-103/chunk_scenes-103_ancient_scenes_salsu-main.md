@@ -143,6 +143,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-salsu-612",
+    "subject": "event-hs4-salsu",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "612년 7월 24일",
+      "year": 612,
+      "precision": "day",
+      "earliest": 612,
+      "latest": 612,
+      "id": "ts-curriculum-samguk-samguk-4-hs4-salsu-612"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_salsu-main",
+    "quote": "612년 7월 24일에 을지문덕이 지휘한 고구려군이 우중문과 우문술 등이 지휘한 수나라군을 살수에서 크게 격파한 전투였다.",
+    "note": "살수대첩의 연월일과 지휘관.",
+    "fromSource": "src-anc-enc-salsu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

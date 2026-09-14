@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-mm-jongno",
+    "subject": "event-mt3-manmin",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-jongno"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_manmin-jongno",
+    "quote": "독립협회는 3월 10일 종로에서 만민공동회를 개최하여",
+    "note": "독립협회가 종로에서 만민공동회를 열었다.",
+    "fromSource": "src-ek-manmin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

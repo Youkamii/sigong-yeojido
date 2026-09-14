@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-yu-defi",
+    "subject": "person-encykorea-yu-hyeongwon-e0042005",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs3-bangyesurok"
+    },
+    "citesChunk": "chunk_period96_joseon_society_yu-hyeongwon-defi",
+    "quote": "『반계수록』을 저술한 학자",
+    "note": "유형원이 반계수록을 썼다.",
+    "fromSource": "src-encykorea-yu-hyeongwon-e0042005",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

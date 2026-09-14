@@ -96,6 +96,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-1-hs-gl-jwc-1176c",
+    "subject": "event-hs-jowichong-nan",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1176년(명종 6)",
+      "year": 1176,
+      "precision": "year",
+      "earliest": 1176,
+      "latest": 1176,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-1-hs-gl-jwc-1176c"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-jw-fall",
+    "quote": "1176년(명종 6) 6월에 이르러서 윤인첨은 서경의 통양문(通陽門)을, 두경승은 대동문(大東門)을 공격해 서경을 함락시켰다.",
+    "note": "정부군이 대동문·통양문을 쳐서 서경을 함락시켰다.",
+    "fromSource": "src-lg128-encykorea-jowichong-nan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

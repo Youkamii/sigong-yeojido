@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-1-hs-gl-ssn-1200c",
+    "subject": "org-hs-suseonsa",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1200년(신종 3)",
+      "year": 1200,
+      "precision": "year",
+      "earliest": 1200,
+      "latest": 1200,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-1-hs-gl-ssn-1200c"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_suseonsa-1200",
+    "quote": "1200년(신종 3)에 처음으로 길상사로 근거지를 옮겼다.",
+    "note": "1200년 길상사로 근거지를 옮겼다.",
+    "fromSource": "src-syj122-aks-suseonsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

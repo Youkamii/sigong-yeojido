@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-km-birth",
+    "subject": "person-encykorea-kim-simin-e0009658",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1554년(명종 9)",
+      "year": 1554,
+      "precision": "year",
+      "earliest": 1554,
+      "latest": 1554,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-km-birth"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_kimsimin-birth",
+    "quote": "출생 연도1554년(명종 9)",
+    "note": "출생 연도.",
+    "fromSource": "src-encykorea-kimsimin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

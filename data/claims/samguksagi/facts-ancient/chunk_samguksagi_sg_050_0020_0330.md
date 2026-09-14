@@ -64,6 +64,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-taebong-move2",
+    "subject": "event-hs-nbg3-taebong",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-nbg3-cheorwon"
+    },
+    "citesChunk": "chunk_samguksagi_sg_050_0020_0330",
+    "quote": "移青州人戸一千, 入鐡圎城爲京",
+    "note": "904년 청주의 민호 1천을 철원성으로 옮겨 서울로 삼았다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

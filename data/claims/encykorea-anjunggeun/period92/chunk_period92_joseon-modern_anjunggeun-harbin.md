@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-harbin-1909",
+    "subject": "event-hs-harbin-assassination",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1909년 10월 26일",
+      "year": 1909,
+      "precision": "day",
+      "earliest": 1909,
+      "latest": 1909,
+      "id": "ts-curriculum-modern-transition-modern-transition-4-hs-mt4-harbin-1909"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_anjunggeun-harbin",
+    "quote": "1909년 10월 26일, 이토를 태운 특별 열차가 하얼빈에 도착하였다",
+    "note": "1909년 10월 26일 하얼빈에서 벌어졌다.",
+    "fromSource": "src-encykorea-anjunggeun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

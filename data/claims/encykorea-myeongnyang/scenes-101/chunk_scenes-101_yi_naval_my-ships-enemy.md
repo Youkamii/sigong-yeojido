@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-mn-enemy",
+    "subject": "event-hs-jl1-myeongnyang",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-imjin-japanese-force"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_my-ships-enemy",
+    "quote": "일본 수군의 전선은 133척으로 확인되었다.",
+    "note": "일본 수군의 전선은 133척으로 확인되었다.",
+    "fromSource": "src-encykorea-myeongnyang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

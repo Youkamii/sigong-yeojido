@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-yi-death",
+    "subject": "person-encykorea-yi-sunsin",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1598년(선조 31)",
+      "year": 1598,
+      "precision": "year",
+      "earliest": 1598,
+      "latest": 1598,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-yi-death"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_yisunsin-death",
+    "quote": "사망 연도1598년(선조 31)",
+    "note": "사망 연도.",
+    "fromSource": "src-encykorea-yisunsin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

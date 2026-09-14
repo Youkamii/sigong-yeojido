@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-byeongin-yangyo-1866",
+    "subject": "event-mt1-byeongin-yangyo",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1866년(고종 3)",
+      "year": 1866,
+      "precision": "year",
+      "earliest": 1866,
+      "latest": 1866,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-byeongin-yangyo-1866"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_by-def",
+    "quote": "1866년(고종 3) 흥선대원군의 천주교 탄압에 대한 보복으로 프랑스군이 강화도에 침입한",
+    "note": "병인양요 발생 연도.",
+    "fromSource": "src-ek-byeongin-yangyo-e0023142",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

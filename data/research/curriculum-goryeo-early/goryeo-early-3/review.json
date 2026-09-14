@@ -1,0 +1,138 @@
+{
+ "job": "goryeo-early-3",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-goryeo-early --job goryeo-early-3 → PASS: failures=0 warnings=0 (facts 23, scenes 23, claims 95, chunkClaims 73, excerptClaims 22)",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "(전체 19건)",
+   "factId": "fact-ge3-005 외 18건",
+   "problem": "fact.what 이 항목 meaning 을 그대로 옮기지 않고 조사자가 새로 쓴 문장이다(23건 중 19건 불일치). 형식 정본 docs/research/curriculum-items-brief.md 대응표는 meaning → fact.what(그대로) 이고, 이미 PASS 한 참고 실물 data/research/curriculum-joseon-early/joseon-early-2 는 23건 모두 항목 meaning 과 글자 그대로 같다. 다시 쓰는 과정에서 항목이 담고 있던 교과서 핵심어가 빠졌다 — 거란 3차 침입의 '강동 6주', 숙종의 '별무반', 아라비아 상인의 '코리아 이름이 서역에 알려짐'. 카드에 표시될 문장이 교육과정 항목과 달라진다.",
+   "fix": "19건의 fact.what 을 items.json 의 meaning 문자열로 되돌린다. 조사자가 쓴 문장은 scene.summary 에만 둔다(brief 조사 규칙 6 의 '직접 서술'은 summary 를 가리킨다).",
+   "evidence": "items.json meaning 과 result.json facts[].what 대조 결과 19/23 불일치: 2gun-6wi, 5do-yanggye, juhyeon-sokhyeon, khitan-third-invasion, ganggamchan, gwiju-daecheop, arab-merchants, gaegyeong-naseong, cheonri-jangseong, munjong, gongeumjeon, munbeol-gwijok, 9jae-hakdang, choechung, song-trade, gyeongjeong-jeonsigwa, gyojang, sukjong, cheontaejong. 참고 실물 joseon-early-2 는 23/23 일치."
+  },
+  {
+   "severity": "major",
+   "itemId": "(개경 항목 다수)",
+   "sceneId": "scene-ge3-02 / scene-ge3-20 / scene-ge3-23 외",
+   "problem": "같은 좌표에 여러 장면이 겹친다. 23개 장면 중 13개가 6개 좌표에 몰려 있다. (126.55, 37.966667) 한 점에 '개경 도성'(거란 2차 침입)·'개경 조정'(경정 전시과)·'개경 국청사'(천태종 개창) 세 장면이, (126.5528, 37.9717) 한 점에 '개경 조정'(5도 양계)·'개경 조정'(공음전)·'개경 흥왕사 교장도감'(교장) 세 장면이 찍혔다. 라벨은 서로 다른 장소를 말하는데 지도에서는 한 점이라 지시문의 '같은 도시 항목이 한 점에 겹치지 않게'를 어긴다. 참고 실물 joseon-early-2 는 중복 좌표가 0개다.",
+   "fix": "국청사·흥왕사는 실제 절터 좌표(위키백과 해당 문서의 geo 또는 민백 소재지)를 새로 받아 raw/ 에 저장하고 그 좌표를 쓴다. 좌표를 못 찾으면 이미 확보한 개경 안 여러 지점(만월대·첨성대·성균관·선죽교·나성)을 항목별로 나눠 배치해 한 점에 둘 이상이 겹치지 않게 한다.",
+   "evidence": "result.json scenes[].place 좌표 집계 — 중복 그룹 6개: (126.543333,37.985)×2, (126.55,37.966667)×3, (126.54083,37.98694)×2, (126.5528,37.9717)×3, (124.53194,40.19694)×2, (126.57072,37.992)×2."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-early-khitan-second-invasion / hs-goryeo-early-cheonri-jangseong",
+   "claimId": "claim-ge3-khitan2-gangjo / claim-ge3-clj-yuso",
+   "problem": "저장소에 이미 있는 인물 엔티티를 재사용하지 않고 새 껍데기를 만들었다. 강조는 data/entities/person/person-encykorea-gangjo.md(id: person-encykorea-gangjo)가 있는데 person-hs-gangjo 를, 유소는 data/entities/person/person-syj122-yuso.md(id: person-syj122-yuso)가 있는데 person-hs-yu-so 를 새로 만들었다. 적재하면 같은 인물이 두 노드로 갈라진다.",
+   "fix": "entities[] 에서 person-hs-gangjo·person-hs-yu-so 를 지우고 claims 와 scenes[].participants 의 entityId 를 person-encykorea-gangjo·person-syj122-yuso 로 바꾼다.",
+   "evidence": "grep -ril 강조 data/entities/person → person-encykorea-gangjo.md (label '강조'); grep -ril 유소 data/entities/person → person-syj122-yuso.md (label '유소(柳韶)'). 현종·문종·숙종·의천·강감찬은 기존 id 를 제대로 재사용했다."
+  },
+  {
+   "severity": "major",
+   "itemId": "(전체)",
+   "problem": "사건 엔티티가 둘로 갈라졌고 17개는 label 이 id 문자열 그대로다. scenes[].eventId 는 event-ge3-01~23 을 가리키는데 claims[].subject/object 는 event-hs-khitan-2nd 같은 다른 id 를 쓴다. 그래서 claim 이 붙은 사건 노드를 어떤 장면도 가리키지 않는다. 또 event-hs-khitan-2nd 부터 event-hs-cheontaejong 까지 17건은 label 이 id 와 똑같아 화면에 기계 문자열이 그대로 나온다. 참고 실물 joseon-early-2 는 사건 하나에 event-hs-* 하나만 두고 label 을 '대마도 정벌(기해동정, 1419)' 처럼 사람이 읽는 이름으로 적었으며 scene.eventId 도 그 id 를 쓴다.",
+   "fix": "사건 엔티티를 하나로 합친다. event-ge3-NN 을 지우고 scenes[].eventId 를 대응하는 event-hs-* 로 바꾸거나, 반대로 event-hs-* 를 지우고 claims 의 subject/object 를 event-ge3-NN 으로 바꾼다. 남기는 쪽의 label 은 항목 제목과 연도로 채운다.",
+   "evidence": "result.json entities 에 event-ge3-01~23(정상 label)과 event-hs-khitan-2nd 등 17건(label == id)이 함께 있다. scenes[].eventId 는 전부 event-ge3-NN, claims[].subject 는 event-hs-*."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-goryeo-early-sukjong",
+   "factId": "fact-ge3-022",
+   "sceneId": "scene-ge3-22",
+   "problem": "장면 요약과 사실 문장의 핵심 서술을 뒷받침하는 근거가 하나도 없다. summary 는 '주전도감을 두고 해동통보를 찍어 낸 임금이다', what 은 '동전을 찍어 돈을 쓰게 하려 한 임금' 이라고 단정하는데 이 사실에 붙은 claim 은 1095년 신봉루 즉위 사면, 재위 1095~1105, 생몰 1054~1105 세 개뿐이고 화폐·주전도감·해동통보·별무반을 말하는 근거는 없다. 항목당 연도·행위·장소 근거 세 개 규칙에서 행위 근거가 비어 있다.",
+   "fix": "고려사 식화지 화폐 조(주전도감 설치, 숙종 6년 해동통보 주조)나 민백 '숙종' 항목의 화폐 서술을 chunk 로 찾아 행위 claim 을 더한다. 근거를 못 구하면 summary·what 에서 단정을 빼고 근거 있는 서술로 바꾼다.",
+   "evidence": "result.json fact-ge3-022 claimIds = [claim-ge3-sukjong-1095, claim-ge3-sukjong-reign, claim-ge3-sukjong-life, claim-ge3-loc-gungseong] — 즉위·재위·생몰·좌표 주장뿐이다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-gyojang",
+   "factId": "fact-ge3-021",
+   "sceneId": "scene-ge3-21",
+   "problem": "modernPlace 는 '북한 개성특별시 개풍 덕수 일대'(흥왕사 터)인데 좌표는 개성 시내 대표점(126.5528, 37.9717)이다. 흥왕사는 개경 도성이 아니라 남쪽 덕수현에 있었으므로 두 값이 서로 다른 곳을 가리킨다.",
+   "fix": "흥왕사 터 좌표를 확보해 쓰거나, 좌표를 개성 대표점으로 유지할 거면 modernPlace 를 '북한 개성특별시'로 맞춘다.",
+   "evidence": "fact-ge3-021 modernPlace 대 coordinateBasis 'src-hs-en-kaesong ex-geo-kaesong-en'(Kaesong 문서 표시 좌표). scene-ge3-21 의 coordinateNote 도 '흥왕사 터의 좌표를 찾지 못해'라고 적고 있다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-gwiju-daecheop",
+   "claimId": "claim-ge3-gwiju-place",
+   "problem": "장소 주장(syj:tookPlaceAt 귀주)의 quote 가 '生還者僅數千人'(살아 돌아간 자가 수천뿐)으로 장소와 무관한 구절이다. 같은 chunk 안에 '丹兵過龜州' 라는 장소 구절이 그대로 있는데 쓰지 않았다.",
+   "fix": "quote 를 '丹兵過龜州' 로 바꾼다.",
+   "evidence": "chunk_goryeosa_kr_004_0120_0020_0010 본문: 二月 己丑朔 丹兵過龜州, 邯贊等邀戰, 大敗之, 生還者僅數千人."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-9jae-hakdang",
+   "claimId": "claim-ge3-9jae-1055",
+   "problem": "syj:establishedIn 1055 로 9재 학당 개설 연도를 주장하면서 quote 는 '以崔冲爲內史令, 仍令致仕'(최충의 치사 기사)뿐이다. 고려사 최충 열전은 '冲收召後進…遂分九齋' 라고만 적고 연도를 못박지 않으므로 1055년 개설은 인용문이 직접 말하지 않는 추론이다.",
+   "fix": "치사 기사는 syj:occurredIn(1055, 최충 치사)로 두고 9재 개설은 연도 없는 relatedTo 로 옮기거나, 민백 '문헌공도'처럼 개설 시점을 적은 근거를 따로 붙인다.",
+   "evidence": "chunk_goryeosa_kr_007_0110_0040_0020(date 1055-07-04, 치사 기사)와 chunk_goryeosa_kr_095_0010_0010_0100(date null, 9재 서술) 대조."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-2gun-6wi",
+   "factId": "fact-ge3-005",
+   "problem": "fact.year=1018, yearVerbatim='1018년' 인데 이 사실에 붙은 연도 근거는 1017년(용호군 상장군 임명)과 1019년(응양상장군 임명)뿐이고 1018을 말하는 근거가 없다. 장면 startYear/endYear 도 1018인데 dateClaimIds 는 1017 주장 하나다. note 에 사정을 적고 confidence 를 medium 으로 낮춘 점은 정직하지만 화면에는 근거 없는 1018이 연도로 찍힌다.",
+   "fix": "yearVerbatim 을 비우거나 '현종대'처럼 근거에 맞게 고치고, dateClaimIds 에 1017·1019 두 주장을 모두 넣어 범위를 드러낸다.",
+   "evidence": "claim-ge3-2gun-yongho object year 1017(chunk date 1017-11-02), claim-ge3-2gun-eungyang year 1019(chunk date 1019-03-07), fact-ge3-005 year 1018."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-ganggamchan",
+   "sceneId": "scene-ge3-09",
+   "problem": "인물 장면의 연도·무대·근거가 서로 어긋난다. startYear/endYear 는 1019인데 무대는 1018년 12월 흥화진 싸움터이고 dateClaimIds 는 948년 출생 주장 하나다. summary 의 '과거로 벼슬길에 올랐고' 를 뒷받침하는 claim 도 없다(강감찬 급제 기사는 result 에 없다. claim-ge3-choe-1005 는 최충의 급제다).",
+   "fix": "startYear 를 흥화진 싸움에 맞춰 1018로 하거나 무대를 귀주(1019)로 옮겨 연도와 맞춘다. '과거로 벼슬길에 올랐고' 는 민백 강감찬 항목의 급제 서술을 근거로 달거나 문장에서 뺀다.",
+   "evidence": "scene-ge3-09 startYear 1019, place '흥화진 성 동쪽 냇가', dateClaimIds ['claim-ge3-ggc-life'](948년). claim-ge3-khitan3-1018 의 chunk date 는 1018-12-10."
+  },
+  {
+   "severity": "minor",
+   "itemId": "(칸 전체)",
+   "problem": "cell.to 가 1102 인데 items.json 의 range 는 [1009, 1097]이고 실제 장면 최대 연도는 1105(숙종)이다. 어느 쪽과도 맞지 않는다. 참고 실물 joseon-early-2 는 cell 의 from/to 가 items.json range 와 같다.",
+   "fix": "cell.to 를 items.json range 의 1097 로 맞춘다(장면 상한을 쓰기로 정했다면 1105).",
+   "evidence": "result.json cell {from:1009, to:1102}; items.json range [1009,1097]; scene-ge3-22 endYear 1105."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-gyojang",
+   "claimId": "claim-ge3-gyojang-1086",
+   "problem": "근거로 쓴 위키백과 '교장도감' 문서는 본문 맨 위에 '이 문서는 저작권 침해가 의심되는 문서입니다' 경고 틀이 붙은 페이지다(2019년 2월 25일 표시). 전재 의심 문서를 근거로 삼으면 인용 자체가 불안정하고 문장도 옛 백과사전 투 그대로다.",
+   "fix": "우리역사넷 한국사 연대기의 '교장' 항목이나 민족문화대백과 '교장도감' 항목으로 근거를 바꾼다. 고려사 대각국사 열전 chunk(claim-ge3-gyojang-dogam)는 이미 있으므로 연도만 다른 출처로 보완하면 된다.",
+   "evidence": "raw/ko-gyojang.html 본문: 이 문서는 저작권 침해가 의심되는 문서입니다.이 문서의 저작권에 대한 적절한 소명이 없다면 정책에 따라 삭제될 수도 있습니다. (2019년 2월 25일)"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-goryeo-early-chojo-daejanggyeong",
+   "sceneId": "scene-ge3-03",
+   "problem": "kind=publication, sceneFunction=print_workshop 장면을 판각지(개경)가 아니라 보관지 부인사(대구) 좌표에 두어 개경에서 새긴 대장경이 남쪽 사찰의 인쇄 공방으로 그려진다. coordinateNote 에 밝혀 두었지만 지도에서는 그대로 대구가 판각 현장이 된다. 또 같은 근거 문서(위키백과 부인사)는 제작 시작을 1013년으로 적어 이 조사가 채택한 1011년 설과 다르다.",
+   "fix": "판각 장면은 개경 좌표로 두고 부인사 보관은 note·persistence 로 남기거나, 부인사 좌표를 유지할 거면 sceneFunction 을 temple 로 바꾼다. 1011설과 1013설의 차이는 note 에 한 줄 더 적는다.",
+   "evidence": "scene-ge3-03 place '대구 팔공산 부인사'(128.67306, 35.99417) + sceneFunction print_workshop. raw/ko-buinsa.html 연혁: 1013년(현종 4년) : 초조대장경의 제작이 시작되었다."
+  }
+ ],
+ "checkedItems": [
+  "hs-goryeo-early-hyeonjong",
+  "hs-goryeo-early-khitan-second-invasion",
+  "hs-goryeo-early-chojo-daejanggyeong",
+  "hs-goryeo-early-hyeonjong-naju",
+  "hs-goryeo-early-2gun-6wi",
+  "hs-goryeo-early-5do-yanggye",
+  "hs-goryeo-early-juhyeon-sokhyeon",
+  "hs-goryeo-early-khitan-third-invasion",
+  "hs-goryeo-early-ganggamchan",
+  "hs-goryeo-early-gwiju-daecheop",
+  "hs-goryeo-early-arab-merchants",
+  "hs-goryeo-early-gaegyeong-naseong",
+  "hs-goryeo-early-cheonri-jangseong",
+  "hs-goryeo-early-munjong",
+  "hs-goryeo-early-gongeumjeon",
+  "hs-goryeo-early-munbeol-gwijok",
+  "hs-goryeo-early-9jae-hakdang",
+  "hs-goryeo-early-choechung",
+  "hs-goryeo-early-song-trade",
+  "hs-goryeo-early-gyeongjeong-jeonsigwa",
+  "hs-goryeo-early-gyojang",
+  "hs-goryeo-early-sukjong",
+  "hs-goryeo-early-cheontaejong"
+ ],
+ "summary": "검증기는 PASS 다(failures 0, warnings 0). 근거 자체의 품질은 대체로 높다 — 인용한 로컬 chunk 73건의 quote 를 모두 원문에서 다시 뽑아 글자 그대로 일치하는 것을 확인했고, 웹 발췌 22건도 raw/ HTML 에서 앞뒤 문맥까지 읽어 왜곡이 없음을 확인했다. 위키백과 표시 좌표 15개도 전부 원문 geo 값과 일치하고, 연도는 고려사 세가·지·열전의 날짜와 어긋나는 곳이 없었다. 다만 구조에서 고칠 것이 다섯이다: (1) fact.what 23건 중 19건이 항목 meaning 을 그대로 쓰지 않고 새로 쓴 문장이라 '강동 6주'·'별무반' 같은 항목 핵심어가 사라졌다, (2) 23개 장면 중 13개가 6개 좌표에 겹쳐 개경 도성·조정·국청사가 한 점에 찍힌다, (3) 이미 있는 인물 엔티티(person-encykorea-gangjo, person-syj122-yuso)를 두고 새 껍데기를 만들었다, (4) 사건 엔티티가 event-ge3-* 와 event-hs-* 로 갈라졌고 17개는 label 이 id 문자열 그대로다, (5) 숙종 항목은 화폐 서술을 단정하면서 그것을 받치는 claim 이 하나도 없다. 그 밖에 흥왕사 좌표·귀주 장소 인용구·9재 1055년·2군 1018년 등 근거 선택을 다듬을 곳이 8건이다."
+}

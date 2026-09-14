@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-hwayang-1695",
+    "subject": "place-hs3-hwayangdong",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1695년(숙종 21)",
+      "year": 1695,
+      "precision": "year",
+      "earliest": 1695,
+      "latest": 1695,
+      "id": "ts-curriculum-joseon-late-joseon-late-3-hs3-hwayang-1695"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-hys-found",
+    "quote": "1695년(숙종 21)에 노론(老論)의 영수 송시열(宋時烈)을 제향하기 위하여",
+    "note": "송시열 사후 화양동에 화양서원이 세워졌다.",
+    "fromSource": "src-jl2-aks-hwayangdong-seowon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

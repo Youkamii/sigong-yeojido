@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-heungnyunsa-place",
+    "subject": "place-hs-s3-heungnyunsa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-s3-silla"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_heungnyunsa-place",
+    "quote": "흥륜사는 경상북도 경주시에 있었던",
+    "note": "흥륜사가 경주에 있었다는 서술.",
+    "fromSource": "src-anc-enc-heungnyunsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-salsu-half",
+    "subject": "event-hs4-salsu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs4-goguryeo"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_salsu-crossing",
+    "quote": "고구려군은 그들이 살수를 반 정도 건넜을 때",
+    "note": "고구려군은 수군이 살수를 반쯤 건널 때 쳤다.",
+    "fromSource": "src-anc-enc-salsu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

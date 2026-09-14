@@ -43,6 +43,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-hpd-end",
+    "subject": "place-gl2-hangpaduri",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1273년(원종 14)",
+      "year": 1273,
+      "precision": "year",
+      "earliest": 1273,
+      "latest": 1273,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-2-gl2-hpd-end"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_hpd-1273",
+    "quote": "1273년(원종 14) 4월 여몽연합군의 조직적 공격에 의하여 진압되고",
+    "note": "1273년 4월 여·몽 연합군의 공격으로 진압되었다.",
+    "fromSource": "src-syj122-aks-hangpaduri",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

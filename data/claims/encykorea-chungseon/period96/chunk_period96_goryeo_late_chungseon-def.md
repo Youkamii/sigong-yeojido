@@ -82,6 +82,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-chungseon-reign",
+    "subject": "person-encykorea-chungseon",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "1308",
+      "year": 1308,
+      "precision": "year",
+      "earliest": 1308,
+      "latest": 1308,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-chungseon-reign"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_chungseon-def",
+    "quote": "제26대(재위: 1298, 1308~1313) 왕",
+    "note": "충선왕은 1298년에 한 번, 1308년에 다시 즉위했다.",
+    "fromSource": "src-encykorea-chungseon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

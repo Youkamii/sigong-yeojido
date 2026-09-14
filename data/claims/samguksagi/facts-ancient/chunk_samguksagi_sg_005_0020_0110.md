@@ -56,6 +56,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-bunhwang-634",
+    "subject": "place-hs4-bunhwangsa",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "芬皇寺成",
+      "year": 634,
+      "precision": "year",
+      "earliest": 634,
+      "latest": 634,
+      "id": "ts-curriculum-samguk-samguk-4-hs4-bunhwang-634"
+    },
+    "citesChunk": "chunk_samguksagi_sg_005_0020_0110",
+    "quote": "芬皇寺成.",
+    "note": "삼국사기 선덕왕 3년(634): 분황사가 완성되었다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

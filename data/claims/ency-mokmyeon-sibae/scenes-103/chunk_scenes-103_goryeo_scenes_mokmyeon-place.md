@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-mokhwa-place",
+    "subject": "person-encykorea-munikjeom",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl4-mokmyeon"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_mokmyeon-place",
+    "quote": "경상남도 산청군 단성면에 있는 고려후기 문신·학자 문익점이 목화를 재배한 시배지.",
+    "note": "시배지의 소재지.",
+    "fromSource": "src-ency-mokmyeon-sibae",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

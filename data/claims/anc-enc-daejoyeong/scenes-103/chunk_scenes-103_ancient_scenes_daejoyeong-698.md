@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-daejo-698",
+    "subject": "person-encykorea-daejoyeong",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "698년",
+      "year": 698,
+      "precision": "year",
+      "earliest": 698,
+      "latest": 698,
+      "id": "ts-curriculum-nambukguk-nambukguk-1-hs-nb1-daejo-698"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_daejoyeong-698",
+    "quote": "698년에 국호를 진(震), 연호를 천통(天統)이라 하였다.",
+    "note": "698년 국호를 진, 연호를 천통이라 하였다.",
+    "fromSource": "src-anc-enc-daejoyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

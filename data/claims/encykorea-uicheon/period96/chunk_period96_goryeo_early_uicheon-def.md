@@ -40,6 +40,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-cheontae-def",
+    "subject": "person-encykorea-uicheon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-gukcheongsa"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_uicheon-def",
+    "quote": "의천은 고려전기 국사, 승통, 국청사 제1대 주지 등을 역임한 승려이다.",
+    "note": "의천은 국청사의 첫 주지였다.",
+    "fromSource": "src-encykorea-uicheon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

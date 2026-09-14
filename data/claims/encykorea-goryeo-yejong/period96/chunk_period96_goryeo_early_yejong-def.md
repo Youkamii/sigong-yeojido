@@ -61,6 +61,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-yejong-reign",
+    "subject": "person-encykorea-goryeo-yejong",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "1105~1122",
+      "year": 1105,
+      "precision": "year",
+      "earliest": 1105,
+      "latest": 1122,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-4-hs-ge4-yejong-reign"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_yejong-def",
+    "quote": "고려 전기, 제16대(재위: 1105~1122) 왕.",
+    "note": "예종 재위 1105~1122년.",
+    "fromSource": "src-encykorea-goryeo-yejong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

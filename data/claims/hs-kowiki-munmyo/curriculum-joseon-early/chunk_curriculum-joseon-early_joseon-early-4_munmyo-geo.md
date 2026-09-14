@@ -26,6 +26,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-munmyo-loc",
+    "subject": "place-hs-jl2-munmyo",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 37.58528,
+      "lon": 126.99667,
+      "precision": "area"
+    },
+    "citesChunk": "chunk_curriculum-joseon-early_joseon-early-4_munmyo-geo",
+    "quote": "37.58528; 126.99667",
+    "note": "붕당은 전국·전 기간 현상이라 대표점이 필요했다. 사림 공론의 무대인 성균관 문묘 표시 좌표를 썼다.",
+    "fromSource": "src-hs-kowiki-munmyo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

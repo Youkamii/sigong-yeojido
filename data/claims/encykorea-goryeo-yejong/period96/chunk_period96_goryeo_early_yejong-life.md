@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-4-hs-ge4-yejong-life",
+    "subject": "person-encykorea-goryeo-yejong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1079년(문종 33)",
+      "year": 1079,
+      "precision": "year",
+      "earliest": 1079,
+      "latest": 1079,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-4-hs-ge4-yejong-life"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_yejong-life",
+    "quote": "출생 연도1079년(문종 33) 사망 연도1122년(예종 17)",
+    "note": "예종의 생몰년 1079~1122년.",
+    "fromSource": "src-encykorea-goryeo-yejong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2025-09-14"
   }
 ]
 ```

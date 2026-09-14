@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-kimyuk-died",
+    "subject": "person-encykorea-kim-yuk-e0010098",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1658년(효종 9)",
+      "year": 1658,
+      "precision": "year",
+      "earliest": 1658,
+      "latest": 1658,
+      "id": "ts-curriculum-joseon-late-joseon-late-3-hs3-kimyuk-died"
+    },
+    "citesChunk": "chunk_period96_joseon_society_kim-yuk-died",
+    "quote": "사망 연도1658년(효종 9)",
+    "note": "김육은 1658년에 죽었다.",
+    "fromSource": "src-encykorea-kim-yuk-e0010098",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

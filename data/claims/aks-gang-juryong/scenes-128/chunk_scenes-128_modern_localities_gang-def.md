@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-4-hs-c4-gang-def",
+    "subject": "person-mod128-gang-juryong",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-c4-pyeongwon-strike"
+    },
+    "citesChunk": "chunk_scenes-128_modern_localities_gang-def",
+    "quote": "평원(平元)고무공장 여공으로 1931년 동맹파업을 벌인 항일노동운동가.",
+    "note": "평원고무공장 여공으로 동맹파업을 주도했다.",
+    "fromSource": "src-aks-gang-juryong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-hpd-addr",
+    "subject": "place-gl2-hangpaduri",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl2-jeju"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_hpd-addr",
+    "quote": "제주 제주시 애월읍 고성리",
+    "note": "항파두리 소재지.",
+    "fromSource": "src-syj122-aks-hangpaduri",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

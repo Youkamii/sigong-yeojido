@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-4-hs-c4-hakhoe-hongwon",
+    "subject": "org-hs-c4-joseoneo-hakhoe",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-c4-joseoneo-sageon"
+    },
+    "citesChunk": "chunk_scenes-128_modern_localities_joseo-hongwon",
+    "quote": "최현배(崔鉉培) 등 11명이 서울에서 구속되어 다음날 함경남도 홍원으로 압송되었다.",
+    "note": "서울에서 회원이 구속되어 홍원으로 압송되었다.",
+    "fromSource": "src-aks-joseoneohakhoe",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

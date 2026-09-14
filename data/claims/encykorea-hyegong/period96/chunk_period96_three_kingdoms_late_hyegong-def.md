@@ -43,6 +43,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-hg-reign",
+    "subject": "person-encykorea-hyegong",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "765년~780년",
+      "year": 765,
+      "precision": "year",
+      "earliest": 765,
+      "latest": 780,
+      "id": "ts-curriculum-nambukguk-nambukguk-2-nb2-hg-reign"
+    },
+    "citesChunk": "chunk_period96_three_kingdoms_late_hyegong-def",
+    "quote": "통일신라의 제36대(재위: 765년~780년) 왕.",
+    "note": "민백 혜공왕 항목 발췌 chunk.",
+    "fromSource": "src-encykorea-hyegong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

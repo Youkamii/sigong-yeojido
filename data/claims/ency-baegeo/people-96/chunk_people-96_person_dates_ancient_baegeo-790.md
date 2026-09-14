@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-sd-790",
+    "subject": "event-nb2-sillado-mission",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "790년(원성왕 6)",
+      "year": 790,
+      "precision": "year",
+      "earliest": 790,
+      "latest": 790,
+      "id": "ts-curriculum-nambukguk-nambukguk-2-nb2-sd-790"
+    },
+    "citesChunk": "chunk_people-96_person_dates_ancient_baegeo-790",
+    "quote": "790년(원성왕 6)에 발해에 사신으로 파견되었는데",
+    "note": "백어가 790년 발해에 사신으로 갔다. 신라도가 쓰인 기록이다.",
+    "fromSource": "src-ency-baegeo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

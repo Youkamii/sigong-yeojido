@@ -1,0 +1,469 @@
+{
+  "job": "joseon-late-4",
+  "sources": 53,
+  "excerpts": 94,
+  "chunkClaims": 12,
+  "excerptClaims": 105,
+  "facts": 23,
+  "factsByCategory": {
+    "administration": 4,
+    "culture": 3,
+    "economy": 1,
+    "facility": 1,
+    "foreign": 2,
+    "person": 10,
+    "settlement": 1,
+    "war": 1
+  },
+  "claims": 117,
+  "entities": 60,
+  "rawFilesChecked": [
+    {
+      "source": "src-hs4-enc-baekdusan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0022058",
+      "sha256": "a56dac0ebeecda03a0cee6385585a7063e7f07367ddbe262d4045b9db07db294",
+      "rawBytes": 135628,
+      "excerpts": 3,
+      "quotedWords": 9
+    },
+    {
+      "source": "src-hs4-enc-yeongjo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0037669",
+      "sha256": "66e6129bf9feee164562684274f05727284c0324a24e95ad11a0980c8d58d531",
+      "rawBytes": 204229,
+      "excerpts": 3,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs4-enc-tangpyeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0058860",
+      "sha256": "e76450725ec9eb3737e6e483cf22eaa2d4c912b4fc559d30e7be02873d7175b0",
+      "rawBytes": 103041,
+      "excerpts": 2,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs4-enc-yiinjwa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0045630",
+      "sha256": "842090f1437e5d49d5397fc59e99f21f37fc9bb62bd2dd043882d04a3e977efb",
+      "rawBytes": 97264,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs4-enc-tangpyeongbi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0058858",
+      "sha256": "3cf05ac8c430460142eb698b01c46ac22a09fcf3d814b0c5d7100dc9abe64e2c",
+      "rawBytes": 104303,
+      "excerpts": 2,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs4-enc-sokdaejeon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0030393",
+      "sha256": "84b7ab233ce10d792681e3c0c20cd7ddd55baa5f15269e7349d57a8f8acb6c7a",
+      "rawBytes": 133620,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs4-enc-gyoseogwan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0005490",
+      "sha256": "c0a634078f0a4c4ecc56e5c73f2d3287a028a8e9f0b1e9ed666d292f1b04aa7d",
+      "rawBytes": 76336,
+      "excerpts": 1,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-hs4-enc-cheonghwa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0056866",
+      "sha256": "3f7634d413f57e74ee39615339420f1ee59d6140e77a644663fe4092fde0c36e",
+      "rawBytes": 142908,
+      "excerpts": 3,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs4-enc-bunwon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024851",
+      "sha256": "848306eb5fd12490974434cb2cbcd8603ccb8f3e2e8b0a360dffcd3ff0239c22",
+      "rawBytes": 97587,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs4-enc-gyunyeokbeop",
+      "url": "https://encykorea.aks.ac.kr/Article/E0007303",
+      "sha256": "247cd113019332980e816c04f1e067f4883b0b2082d73cb754f7a52d58d0eec2",
+      "rawBytes": 133579,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs4-enc-gyunyeokcheong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0007305",
+      "sha256": "959842dc1087433fe6fb3cb63eec8d88311f3ef4a0c64e798b6b2f3aeb6b4b8a",
+      "rawBytes": 99706,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs4-enc-jingyeong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054575",
+      "sha256": "cd60c928e12abdaf52209079e32e2d5c8688c97df894c5e0825eaa6a6fea9a19",
+      "rawBytes": 145085,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs4-enc-hahoe-talnori",
+      "url": "https://encykorea.aks.ac.kr/Article/E0060751",
+      "sha256": "cb8a86c4068142ddd9ce0e0fb2698e9f51ecc55a7f50f12a212a1a204ae29112",
+      "rawBytes": 129025,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs4-enc-talnori",
+      "url": "https://encykorea.aks.ac.kr/Article/E0058805",
+      "sha256": "ae9062e3932fba96826dbcd8a5b8870000cd487cde6213881fc52ceec5f2c7ae",
+      "rawBytes": 109888,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs4-enc-jeongseon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0050379",
+      "sha256": "7351683d79d3922dc6798a5e617398fc38ec62258f996434798082fa0401fa7c",
+      "rawBytes": 312059,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs4-enc-inwangjesaek",
+      "url": "https://encykorea.aks.ac.kr/Article/E0046984",
+      "sha256": "f9de1d06267b570b34ca2cbb1b3a4ba46f56d2347f2d66d08992683be06150a2",
+      "rawBytes": 85560,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs4-enc-yi-junghwan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0046037",
+      "sha256": "86cf6ee606aa5182c67964d17ce0a74fc16cc491526bc20541e69a17b8471cfb",
+      "rawBytes": 107465,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs4-enc-taengniji",
+      "url": "https://encykorea.aks.ac.kr/Article/E0059125",
+      "sha256": "66f5b6167524c7b6dc27e150d125666d71a3536a77ba18445296717782510f3f",
+      "rawBytes": 103266,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-hs4-enc-yi-ik",
+      "url": "https://encykorea.aks.ac.kr/Article/E0045562",
+      "sha256": "f49dba006b8ab4c1c36908b20b44db8fa3919f5e45b64004705c90dd19ebe8e4",
+      "rawBytes": 251112,
+      "excerpts": 3,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs4-enc-yi-ik-tomb",
+      "url": "https://encykorea.aks.ac.kr/Article/E0045570",
+      "sha256": "ac9778623dd38467a83dd7443aeab34f19a3c9b7d5dd42a4ae1dd25d936ee175",
+      "rawBytes": 116647,
+      "excerpts": 1,
+      "quotedWords": 6
+    },
+    {
+      "source": "src-hs4-enc-hong-daeyong",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064019",
+      "sha256": "b2847802a6e04baa79256e1c20dbc47f8d3d3ca25a3fd26dedc88e2232955c2a",
+      "rawBytes": 122375,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs4-enc-uisanmundap",
+      "url": "https://encykorea.aks.ac.kr/Article/E0043246",
+      "sha256": "354e235d48b7bda1d4600cc3a9d69cc60bc4068fb749dc50411f13cb09bcf682",
+      "rawBytes": 96732,
+      "excerpts": 1,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-hs4-enc-gyujanggak",
+      "url": "https://encykorea.aks.ac.kr/Article/E0007273",
+      "sha256": "486469c7db7c72d90f80e64012ea5fa05c9c169aa3200a2b1142b55460cd29be",
+      "rawBytes": 166706,
+      "excerpts": 3,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs4-enc-gyujanggakdo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0076248",
+      "sha256": "5a35f72e74c29935e6bfd787ce15f99a45fcd7e58d46bc69f37174b2d4d4b891",
+      "rawBytes": 77847,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs4-enc-jeongjo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0050867",
+      "sha256": "692ef682ba5b3d9c1d4edc2278c9cdaecd2b6cbb26435c4ced76b75f814abdd8",
+      "rawBytes": 263478,
+      "excerpts": 4,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs4-enc-geomseogwan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0002076",
+      "sha256": "196347b13997ca64f428dabadb0e81286c9518bbe28bfddf2df1bd7de8d2009e",
+      "rawBytes": 74223,
+      "excerpts": 3,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs4-enc-seoeol",
+      "url": "https://encykorea.aks.ac.kr/Article/E0027919",
+      "sha256": "4321a41f03ffc390a1db50c7a904f6907df46b291b724ae9e3625efa981af193",
+      "rawBytes": 103442,
+      "excerpts": 2,
+      "quotedWords": 12
+    },
+    {
+      "source": "src-hs4-enc-an-jeongbok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0034990",
+      "sha256": "913cdb0ff88a7c1aa8f59adeb182b7f7c9d39e87af185469e988c3ff06b77999",
+      "rawBytes": 140368,
+      "excerpts": 2,
+      "quotedWords": 11
+    },
+    {
+      "source": "src-hs4-enc-dongsagangmok",
+      "url": "https://encykorea.aks.ac.kr/Article/E0016533",
+      "sha256": "2b3c756decbd52f030ea5554e20eebc566280b3762779f1f2bce5314e2519fe4",
+      "rawBytes": 109996,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs4-enc-park-jega",
+      "url": "https://encykorea.aks.ac.kr/Article/E0021136",
+      "sha256": "dd7684a973182b19fec2713a46228dc34610ca525d42c35ee8cfea274008309b",
+      "rawBytes": 118218,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs4-enc-bukhakui",
+      "url": "https://encykorea.aks.ac.kr/Article/E0024784",
+      "sha256": "805674d9f8442f2f8381c7ccb6b8f8d1a7495ccd38f0351abfb1d167ab12600b",
+      "rawBytes": 130121,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-hs4-enc-kim-hongdo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0011079",
+      "sha256": "5156be8f880d37af2de813df94473bd0cdf9d8f63af99c6ab6a3ed49a3cf7e9f",
+      "rawBytes": 119197,
+      "excerpts": 2,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-hs4-enc-pungsokdo",
+      "url": "https://encykorea.aks.ac.kr/Article/E0013639",
+      "sha256": "92a6a0ba4cda1f5471e2206a2e30bb10d9632b9dce0a0004ce23ce99ef42e20e",
+      "rawBytes": 124056,
+      "excerpts": 1,
+      "quotedWords": 10
+    },
+    {
+      "source": "src-hs4-enc-park-jiwon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0021216",
+      "sha256": "fe7bbc2dbdccafdcab19796b4d988e7d6cf3c25d97ec7805045b3663eaaf6b18",
+      "rawBytes": 143363,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs4-enc-yeolha",
+      "url": "https://encykorea.aks.ac.kr/Article/E0037072",
+      "sha256": "a4fb023459d545f93515b693b895cf2f30e9f3b6ee5b9649999582e8bc14135b",
+      "rawBytes": 176675,
+      "excerpts": 1,
+      "quotedWords": 7
+    },
+    {
+      "source": "src-hs4-enc-chogyemunsin",
+      "url": "https://encykorea.aks.ac.kr/Article/E0056940",
+      "sha256": "0e86ee80d21ac3227dbd75acd73991223ab0bdf1c3be96201d6a1d2554779fd4",
+      "rawBytes": 96277,
+      "excerpts": 3,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs4-enc-yi-seunghun",
+      "url": "https://encykorea.aks.ac.kr/Article/E0044963",
+      "sha256": "b375ce753fa28b53ec5903b3490b7577a01d4dd1894e349c430acb6e3d422995",
+      "rawBytes": 119144,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs4-enc-myeongnyebang",
+      "url": "https://encykorea.aks.ac.kr/Article/E0069925",
+      "sha256": "7f29bead3c074b03ab1fc15c0bef57d6bda5a7f15131be6f93088be41f0dc352",
+      "rawBytes": 104347,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs4-en-paektu",
+      "url": "https://en.wikipedia.org/wiki/Paektu_Mountain",
+      "sha256": "8b9692b938408eb278cb88127dd75c852adf84f38b1d75f72c4c921affca8bb1",
+      "rawBytes": 521571,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-injeongjeon",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EB%8D%95%EA%B6%81_%EC%9D%B8%EC%A0%95%EC%A0%84",
+      "sha256": "c8e65cde32d028c618b97dbed6b048f5055c3c35cf3177ae4cd3b71783a4ddcf",
+      "rawBytes": 168921,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-gyeonghuigung",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%ED%9D%AC%EA%B6%81",
+      "sha256": "6b0967d43bb1ee9cfd23e9bbb2325b2a15a164172f32529dde2da38a58127f4c",
+      "rawBytes": 226504,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-cheongju-eupseong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B2%AD%EC%A3%BC%EC%9D%8D%EC%84%B1",
+      "sha256": "e41b4d73af78a32948b746419f8f1b44cd22117510a51deedbae4a8fc8a8c8c5",
+      "rawBytes": 103092,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-munmyo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EB%AC%B8%EB%AC%98%EC%99%80_%EC%84%B1%EA%B7%A0%EA%B4%80",
+      "sha256": "d8d031034728065e06a52011162aad369a0e3cfe97b7ccf3aa3469b3f2f36d39",
+      "rawBytes": 135313,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-gyujanggak",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B7%9C%EC%9E%A5%EA%B0%81",
+      "sha256": "0b71c973ed32535a9d300a3803ae54740c233b50bb5e4761627678544d01d459",
+      "rawBytes": 158175,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-changgyeonggung",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EA%B2%BD%EA%B6%81",
+      "sha256": "b1d1baa4f4f43f73182119b03601460f9da2e6e4aba1403c15be622ee28bd6d6",
+      "rawBytes": 280193,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-tapgol",
+      "url": "https://ko.wikipedia.org/wiki/%ED%83%91%EA%B3%A8%EA%B3%B5%EC%9B%90",
+      "sha256": "40b8800a2db1694902ff973a9865baede46fbb74fec2694bb8ad52114e82f968",
+      "rawBytes": 212647,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-myeongdong",
+      "url": "https://ko.wikipedia.org/wiki/%EB%AA%85%EB%8F%99%EC%84%B1%EB%8B%B9",
+      "sha256": "9eb791430afb4b5c82aaf57d209529195674766db5bbe6571428973baac105ef",
+      "rawBytes": 309700,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-hahoe",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%88%EB%8F%99_%ED%95%98%ED%9A%8C%EB%A7%88%EC%9D%84",
+      "sha256": "bdbbf53db51258de11caeb925fbff076375bbcb29bbe4ddb743d20c2501944ff",
+      "rawBytes": 242902,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-gongsanseong",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%82%B0%EC%84%B1",
+      "sha256": "2c5744207bf7a7675c9e16efde5840e445a7fe614227934abb05bb41f130d75d",
+      "rawBytes": 207270,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-ansan",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%88%EC%82%B0%EC%8B%9C",
+      "sha256": "e1f365e4f078277ac01407cdeb58885860d83d25193b99495670b5191cb939d5",
+      "rawBytes": 704635,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-gwangju",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%91%EC%A3%BC%EC%8B%9C_%28%EA%B2%BD%EA%B8%B0%EB%8F%84%29",
+      "sha256": "838c3ac5a2f4b95dd24a00dfe7cf0651fc168504e593261034296378718d6a1f",
+      "rawBytes": 277477,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs4-ko-hong-daeyong",
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%8D%EB%8C%80%EC%9A%A9",
+      "sha256": "27c0a87053821cb8449476eaf0a70585fb740ab8da558c16901534d55674552d",
+      "rawBytes": 166853,
+      "excerpts": 1,
+      "quotedWords": 8
+    },
+    {
+      "source": "src-hs4-ko-kim-hongdo",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B9%80%ED%99%8D%EB%8F%84",
+      "sha256": "3af6a3ad9addd8d2f52fcd7bd5499a15fa549f1fbe76819870e946d8b4e5f8e8",
+      "rawBytes": 234879,
+      "excerpts": 1,
+      "quotedWords": 5
+    }
+  ],
+  "missing": [],
+  "collection": {
+    "task": "joseon-late-4",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789948800,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-joseon-late-4"
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "person-encykorea-bak-jiwon-e0021216"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

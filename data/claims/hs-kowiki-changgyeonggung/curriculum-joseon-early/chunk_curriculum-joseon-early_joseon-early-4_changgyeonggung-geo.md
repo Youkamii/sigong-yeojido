@@ -26,6 +26,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-changgyeong-loc",
+    "subject": "place-hs-jl2-changgyeonggung",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 37.5787833,
+      "lon": 126.9949722,
+      "precision": "area"
+    },
+    "citesChunk": "chunk_curriculum-joseon-early_joseon-early-4_changgyeonggung-geo",
+    "quote": "37.5787833; 126.9949722",
+    "note": "관상감 터의 좌표 근거가 없어, 관천대가 남아 있는 창경궁 표시 좌표를 대표점으로 썼다.",
+    "fromSource": "src-hs-kowiki-changgyeonggung",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

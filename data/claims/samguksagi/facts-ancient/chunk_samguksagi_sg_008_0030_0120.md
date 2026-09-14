@@ -74,6 +74,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-sinam-695",
+    "subject": "institution-hs-nb1-seosi-namsi",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "year",
+      "value": 695
+    },
+    "citesChunk": "chunk_samguksagi_sg_008_0030_0120",
+    "quote": "置西·南二市.",
+    "note": "효소왕 4년(695) 서시와 남시 두 시장을 두었다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-munjong-reign",
+    "subject": "person-encykorea-goryeo-munjong",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "1046∼1083년",
+      "year": 1083,
+      "precision": "year",
+      "earliest": 1046,
+      "latest": 1083,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-3-ge3-munjong-reign"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_munjong-reign",
+    "quote": "재위 1046∼1083년.",
+    "note": "문종의 재위 기간.",
+    "fromSource": "src-encykorea-goryeo-munjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

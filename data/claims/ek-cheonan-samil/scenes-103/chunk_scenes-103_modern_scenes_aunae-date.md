@@ -92,6 +92,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-aunae-1919",
+    "subject": "event-hs-aunae-manse",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1919년 4월 1일",
+      "year": 1919,
+      "precision": "day",
+      "earliest": 1919,
+      "latest": 1919,
+      "id": "ts-curriculum-colonial-colonial-2-c2-aunae-1919"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_aunae-date",
+    "quote": "1919년 4월 1일에 갈전면 아우내[並川] 장터에서 일어난 독립만세운동이다",
+    "note": "아우내 장터 만세 시위 날짜와 장소.",
+    "fromSource": "src-ek-cheonan-samil",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -91,6 +91,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-1-hs-founding-place",
+    "subject": "event-hs-goryeo-founding",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-pojeongjeon"
+    },
+    "citesChunk": "chunk_period92_ancient-medieval_gtaejo-founding",
+    "quote": "철원의 포정전(布政殿)에서 즉위해 국호를 고려(高麗)",
+    "note": "즉위 장소가 철원의 포정전임을 밝힌 서술.",
+    "fromSource": "src-encykorea-goryeo-taejo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

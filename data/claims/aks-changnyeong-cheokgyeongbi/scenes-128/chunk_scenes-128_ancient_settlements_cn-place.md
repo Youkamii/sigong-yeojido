@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-changnyeong-act",
+    "subject": "place-hs4-changnyeong-stele",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs4-silla"
+    },
+    "citesChunk": "chunk_scenes-128_ancient_settlements_cn-place",
+    "quote": "신라 영토로 편입한 비사벌 가야를 순시하고 세운 비이다.",
+    "note": "비사벌 가야를 편입한 뒤 순시하고 세웠다.",
+    "fromSource": "src-aks-changnyeong-cheokgyeongbi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

@@ -59,6 +59,23 @@ claim 으로 만들지 않은 것: 平穰 의 위치(오늘날 평양인지는 �
     "origin": "ai",
     "status": "draft",
     "note": "신라 사신의 말 안에 나오는 표기(倭人)."
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-rescue-request",
+    "subject": "polity-silla",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-sg2-silla-rescue"
+    },
+    "citesChunk": "chunk_gwanggaeto_2-07",
+    "quote": "新羅遣使白王云，倭人滿其國境",
+    "note": "능비 2면 7행. 신라가 사신을 보내 왜인이 국경에 가득하다고 알렸다.",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

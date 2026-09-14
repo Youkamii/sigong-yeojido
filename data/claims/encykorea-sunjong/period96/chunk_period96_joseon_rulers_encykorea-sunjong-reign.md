@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-sunjong-reign",
+    "subject": "person-encykorea-sunjong-e0031947",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "1907∼1910",
+      "year": 1907,
+      "precision": "year",
+      "earliest": 1907,
+      "latest": 1910,
+      "id": "ts-curriculum-modern-transition-modern-transition-4-hs-mt4-sunjong-reign"
+    },
+    "citesChunk": "chunk_period96_joseon_rulers_encykorea-sunjong-reign",
+    "quote": "대한제국기 제2대(재위: 1907∼1910) 황제",
+    "note": "대한제국의 두 번째이자 마지막 황제다.",
+    "fromSource": "src-encykorea-sunjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

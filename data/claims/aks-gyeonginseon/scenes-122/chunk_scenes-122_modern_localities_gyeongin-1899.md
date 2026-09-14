@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-gi-1899",
+    "subject": "event-mt3-gyeonginseon",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1899년 9월 18일",
+      "year": 1899,
+      "precision": "day",
+      "earliest": 1899,
+      "latest": 1899,
+      "id": "ts-curriculum-modern-transition-modern-transition-3-mt3-gi-1899"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_gyeongin-1899",
+    "quote": "1899년 9월 18일 노량진~인천 간 최초의 영업을 개시한",
+    "note": "노량진~인천 구간이 먼저 영업을 시작하였다.",
+    "fromSource": "src-aks-gyeonginseon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

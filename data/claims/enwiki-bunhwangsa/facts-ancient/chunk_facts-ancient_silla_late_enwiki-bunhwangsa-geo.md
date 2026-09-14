@@ -26,6 +26,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-bunhwang-loc",
+    "subject": "place-hs4-bunhwangsa",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 35.84056,
+      "lon": 129.23361,
+      "precision": "site"
+    },
+    "citesChunk": "chunk_facts-ancient_silla_late_enwiki-bunhwangsa-geo",
+    "quote": "35.84056; 129.23361",
+    "note": "분황사의 표시 좌표.",
+    "fromSource": "src-enwiki-bunhwangsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

@@ -75,6 +75,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-daegaya-act",
+    "subject": "event-hs4-daegaya-fall",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs4-daegaya"
+    },
+    "citesChunk": "chunk_scenes-128_ancient_settlements_dg-event",
+    "quote": "562년(진흥왕 23) 가야가 배반했기 때문에",
+    "note": "562년 가야가 배반해 신라가 쳤다는 삼국사기 기록의 해설.",
+    "fromSource": "src-aks-daegaya",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

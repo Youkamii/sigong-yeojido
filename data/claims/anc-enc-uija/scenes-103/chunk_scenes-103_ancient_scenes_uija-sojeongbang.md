@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-baekje-fall-sojeong",
+    "subject": "event-hs-sg5-baekje-fall",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "660년",
+      "year": 660,
+      "precision": "year",
+      "earliest": 660,
+      "latest": 660,
+      "id": "ts-curriculum-samguk-samguk-5-hs-sg5-baekje-fall-sojeong"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_uija-sojeongbang",
+    "quote": "660년 당의 소정방(蘇定方)",
+    "note": "660년 소정방이 당군을 이끌었다",
+    "fromSource": "src-anc-enc-uija",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

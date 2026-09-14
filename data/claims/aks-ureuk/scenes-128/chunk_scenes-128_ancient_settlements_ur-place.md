@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-ureuk-place",
+    "subject": "person-encykorea-ureuk",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-s3-tangeumdae"
+    },
+    "citesChunk": "chunk_scenes-128_ancient_settlements_ur-place",
+    "quote": "왕은 그를 맞아 국원(國原 : 지금의 충주)에 안치시키고",
+    "note": "우륵을 국원, 곧 지금의 충주에 살게 했다.",
+    "fromSource": "src-aks-ureuk",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

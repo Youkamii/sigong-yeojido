@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-gy-1592",
+    "subject": "person-encykorea-gwon-yul-e0007022",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1592년",
+      "year": 1592,
+      "precision": "year",
+      "earliest": 1592,
+      "latest": 1592,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-gy-1592"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_gwonyul-1592",
+    "quote": "1592년 임진왜란이 일어나자 광주목사에 제수되어",
+    "note": "1592년 임진왜란이 일어나자 광주목사가 되었다.",
+    "fromSource": "src-encykorea-gwonyul",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

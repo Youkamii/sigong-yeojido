@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-choeyeong-wihwado",
+    "subject": "person-encykorea-choeyeong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yi-seonggye"
+    },
+    "citesChunk": "chunk_period92_ancient-medieval_choeyeong-wihwado",
+    "quote": "위화도에서 회군함으로써 정벌은 중단되고 최영은 처형되었다.",
+    "note": "요동 정벌이 회군으로 끝나고 최영은 처형되었다.",
+    "fromSource": "src-encykorea-choeyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

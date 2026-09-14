@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-chungseon-death",
+    "subject": "person-encykorea-chungseon",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1325년(충숙왕 12)",
+      "year": 1325,
+      "precision": "year",
+      "earliest": 1325,
+      "latest": 1325,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-chungseon-death"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_chungseon-death",
+    "quote": "사망 연도1325년(충숙왕 12)",
+    "note": "충선왕 사망 연도.",
+    "fromSource": "src-encykorea-chungseon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

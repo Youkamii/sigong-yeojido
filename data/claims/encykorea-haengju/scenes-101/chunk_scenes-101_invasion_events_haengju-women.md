@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-hjb-women",
+    "subject": "event-hs-jl1-haengju",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_scenes-101_invasion_events_haengju-women",
+    "quote": "이때 부녀자들까지 동원되어 관민이 일치단결해 싸웠다.",
+    "note": "부녀자들까지 동원되어 관민이 함께 싸웠다.",
+    "fromSource": "src-encykorea-haengju",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

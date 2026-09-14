@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-palman-year",
+    "subject": "work-gl2-palman",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1251년",
+      "year": 1251,
+      "precision": "year",
+      "earliest": 1251,
+      "latest": 1251,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-2-gl2-palman-year"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_daejang-1251",
+    "quote": "당시의 집권자 최우 등이 대장도감을 설치하여 16년 만인 1251년에 완성하였다.",
+    "note": "최우 등이 대장도감을 세워 16년 만인 1251년에 마쳤다.",
+    "fromSource": "src-ency-haeinsa-daejanggyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

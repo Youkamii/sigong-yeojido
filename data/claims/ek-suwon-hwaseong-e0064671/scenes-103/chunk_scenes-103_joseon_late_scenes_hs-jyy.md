@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-hwaseong-jyy",
+    "subject": "place-hs-jl5-suwon-hwaseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-jeong-yagyong-e0050549"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_hs-jyy",
+    "quote": "당초 정약용 이 생각했던 4㎞보다",
+    "note": "성의 규모를 두고 정약용의 구상이 언급된다",
+    "fromSource": "src-ek-suwon-hwaseong-e0064671",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -75,6 +75,67 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-an-1693",
+    "subject": "person-jl2-an-yongbok",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1693년(조선 숙종 19)",
+      "year": 1693,
+      "precision": "year",
+      "earliest": 1693,
+      "latest": 1693,
+      "id": "ts-curriculum-joseon-late-joseon-late-3-hs3-an-1693"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-ulleung-events",
+    "quote": "1693년(조선 숙종 19)에는 조선의 안용복 이 일본 어부와 충돌한 사건이 있었고,",
+    "note": "1차 도일의 계기가 된 충돌.",
+    "fromSource": "src-jl2-aks-ulleungdo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-an-1696",
+    "subject": "person-jl2-an-yongbok",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs3-an-yongbok"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-ulleung-events",
+    "quote": "1696년(숙종 22)에는 안용복이 일본으로 건너가 울릉도가 조선의 영토임을 인정받았다.",
+    "note": "1696년 2차 도일과 울릉도 영유 확인.",
+    "fromSource": "src-jl2-aks-ulleungdo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-an-1696-year",
+    "subject": "event-hs3-an-yongbok",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1696년(숙종 22)",
+      "year": 1696,
+      "precision": "year",
+      "earliest": 1696,
+      "latest": 1696,
+      "id": "ts-curriculum-joseon-late-joseon-late-3-hs3-an-1696-year"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-ulleung-events",
+    "quote": "1696년(숙종 22)에는 안용복이 일본으로 건너가",
+    "note": "2차 도일 연도.",
+    "fromSource": "src-jl2-aks-ulleungdo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

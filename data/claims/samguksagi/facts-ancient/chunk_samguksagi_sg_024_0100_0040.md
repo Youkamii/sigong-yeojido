@@ -63,6 +63,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-bud-temple",
+    "subject": "event-hs-sg2-baekje-buddhism",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-baekje"
+    },
+    "citesChunk": "chunk_samguksagi_sg_024_0100_0040",
+    "quote": "創佛寺於漢山, 度僧十人",
+    "note": "이듬해(385) 한산에 절을 세우고 열 사람을 출가시켰다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

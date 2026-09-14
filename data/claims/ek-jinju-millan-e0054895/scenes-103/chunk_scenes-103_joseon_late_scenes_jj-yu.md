@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-imsul-yu",
+    "subject": "event-hs-jl5-imsul",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "person-jl-yu-gyechun"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_jj-yu",
+    "quote": "유계춘, 김수만 등이 2월 18일에 봉기하였다.",
+    "note": "진주 봉기의 주도자",
+    "fromSource": "src-ek-jinju-millan-e0054895",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

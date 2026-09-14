@@ -526,6 +526,96 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-5gyeong-xin",
+    "subject": "polity-hs-nbg-balhae",
+    "predicate": "syj:administeredAs",
+    "object": {
+      "kind": "literal",
+      "value": "五京·十五府·六十二州"
+    },
+    "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+    "quote": "地有五京·十五府·六十二州",
+    "note": "신당서 발해전: 해동성국이 되어 5경 15부 62주의 땅을 두었다. 서경 압록부(西京, 曰鴨淥府)도 같은 대목에 나온다.",
+    "fromSource": "src-jipseong-ko_035",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-5gyeong-seogyeong",
+    "subject": "place-hs-nbg3-seogyeong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-nbg-balhae"
+    },
+    "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+    "quote": "高麗故地爲西京, 曰鴨淥府",
+    "note": "신당서 발해전: 고구려 옛 땅을 서경으로 삼아 압록부라 했다.",
+    "fromSource": "src-jipseong-ko_035",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-xin",
+    "subject": "person-hs-balhae-seonwang",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-nbg-balhae"
+    },
+    "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+    "quote": "從父仁秀立, 改年建興",
+    "note": "신당서 발해전: 인수(선왕)가 왕위에 올라 연호를 건흥으로 고쳤다.",
+    "fromSource": "src-jipseong-ko_035",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-xin2",
+    "subject": "person-hs-balhae-seonwang",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-nbg-balhae"
+    },
+    "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+    "quote": "仁秀頗能討伐海北諸部, 開大境宇",
+    "note": "신당서 발해전: 인수가 바다 북쪽 여러 부를 쳐서 강역을 크게 넓혔다.",
+    "fromSource": "src-jipseong-ko_035",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-death",
+    "subject": "person-hs-balhae-seonwang",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "大和四年(830)",
+      "year": 830,
+      "precision": "year",
+      "earliest": 830,
+      "latest": 830,
+      "id": "ts-curriculum-nambukguk-nambukguk-3-hs-nbg3-seonwang-death"
+    },
+    "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+    "quote": "大和四年(830), 仁秀死, 謚宣王",
+    "note": "신당서 발해전: 태화 4년(830) 인수가 죽고 시호를 선왕이라 했다.",
+    "fromSource": "src-jipseong-ko_035",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

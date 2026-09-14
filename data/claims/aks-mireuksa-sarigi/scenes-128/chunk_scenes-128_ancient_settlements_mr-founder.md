@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-mireuk-founder",
+    "subject": "place-hs4-mireuksaji",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs4-baekje"
+    },
+    "citesChunk": "chunk_scenes-128_ancient_settlements_mr-founder",
+    "quote": "미륵사 창건주체가 선화공주가 아닌 백제의 사택왕후로 기록되어 있다.",
+    "note": "사리봉안기는 창건 주체를 사택왕후로 적었다.",
+    "fromSource": "src-aks-mireuksa-sarigi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

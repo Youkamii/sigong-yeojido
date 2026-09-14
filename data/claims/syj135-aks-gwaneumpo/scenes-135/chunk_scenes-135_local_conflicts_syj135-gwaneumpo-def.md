@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-09"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-gwaneumpo-1383",
+    "subject": "place-gl4-gwaneumpo",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1383년(우왕 9)",
+      "year": 1383,
+      "precision": "year",
+      "earliest": 1383,
+      "latest": 1383,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-4-gl4-gwaneumpo-1383"
+    },
+    "citesChunk": "chunk_scenes-135_local_conflicts_syj135-gwaneumpo-def",
+    "quote": "1383년(우왕 9) 남해현(南海縣) 북방의 관음포 앞바다에서 왜구를 크게 무찌른 전투.",
+    "note": "관음포 해전이 벌어진 해와 자리.",
+    "fromSource": "src-syj135-aks-gwaneumpo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -77,6 +77,45 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-csr-1920",
+    "subject": "event-hs-cheongsanri",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1920년 10월",
+      "year": 1920,
+      "precision": "month",
+      "earliest": 1920,
+      "latest": 1920,
+      "id": "ts-curriculum-colonial-colonial-2-c2-csr-1920"
+    },
+    "citesChunk": "chunk_period96_modern_csr-1920",
+    "quote": "1920년 10월 김좌진(金佐鎭)·나중소(羅仲昭)·이범석(李範奭)이 지휘하는 북로군정서군(北路軍政署軍)",
+    "note": "1920년 10월 청산리 전투.",
+    "fromSource": "src-encykorea-cheongsanri",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-csr-hong",
+    "subject": "event-hs-cheongsanri",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-hong-beomdo"
+    },
+    "citesChunk": "chunk_period96_modern_csr-1920",
+    "quote": "홍범도(洪範圖)가 이끄는 대한독립군(大韓獨立軍)",
+    "note": "홍범도의 대한독립군도 주력으로 참여했다.",
+    "fromSource": "src-encykorea-cheongsanri",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

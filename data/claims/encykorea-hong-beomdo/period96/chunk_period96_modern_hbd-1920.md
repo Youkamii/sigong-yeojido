@@ -40,6 +40,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-hong-1920",
+    "subject": "person-encykorea-hong-beomdo",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1920년",
+      "year": 1920,
+      "precision": "year",
+      "earliest": 1920,
+      "latest": 1920,
+      "id": "ts-curriculum-colonial-colonial-2-c2-hong-1920"
+    },
+    "citesChunk": "chunk_period96_modern_hbd-1920",
+    "quote": "1920년 봉오동에서 일본군 대부대를 전멸시키는 전과를 올렸고, 청산리전투에서 일본군을 크게 격파하였다",
+    "note": "1920년 봉오동·청산리에서 싸웠다.",
+    "fromSource": "src-encykorea-hong-beomdo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

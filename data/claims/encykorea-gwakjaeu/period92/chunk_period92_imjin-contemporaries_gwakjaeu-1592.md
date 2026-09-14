@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-gjw-1592",
+    "subject": "person-encykorea-gwak-jaeu-e0004695",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1592년 4월 14일",
+      "year": 1592,
+      "precision": "day",
+      "earliest": 1592,
+      "latest": 1592,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-gjw-1592"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_gwakjaeu-1592",
+    "quote": "1592년 4월 14일에 임진왜란이 일어났고 관군이 대패하자, 같은 달 22일에 의병을 일으켜",
+    "note": "1592년 4월 22일 의령에서 의병을 일으켰다.",
+    "fromSource": "src-encykorea-gwakjaeu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

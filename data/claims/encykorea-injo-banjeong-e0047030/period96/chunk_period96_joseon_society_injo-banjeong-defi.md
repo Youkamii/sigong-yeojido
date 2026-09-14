@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-banjeong-1623",
+    "subject": "event-hs-jl2-injo-banjeong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1623년(광해군 15)",
+      "year": 1623,
+      "precision": "year",
+      "earliest": 1623,
+      "latest": 1623,
+      "id": "ts-curriculum-joseon-late-joseon-late-2-jl2-banjeong-1623"
+    },
+    "citesChunk": "chunk_period96_joseon_society_injo-banjeong-defi",
+    "quote": "1623년(광해군 15) 이귀(李貴) 등 서인 일파가 광해군 및 집권당인 이이첨(李爾瞻) 등의 대북파를 몰아내고, 능양군 종(綾陽君倧: 인조)을 왕으로 옹립한 정변.",
+    "note": "1623년 서인이 광해군과 대북파를 몰아내고 능양군을 왕으로 세웠다.",
+    "fromSource": "src-encykorea-injo-banjeong-e0047030",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

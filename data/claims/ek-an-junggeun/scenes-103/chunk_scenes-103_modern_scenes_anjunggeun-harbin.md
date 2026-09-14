@@ -92,6 +92,40 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-harbin-station",
+    "subject": "event-hs-harbin-assassination",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-harbin-station"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_anjunggeun-harbin",
+    "quote": "하얼빈역에서 이토를 사살, 현장에서 체포됐다",
+    "note": "하얼빈역이 현장이다.",
+    "fromSource": "src-ek-an-junggeun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-4-hs-mt4-harbin-anjunggeun",
+    "subject": "person-encykorea-an-junggeun",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-harbin-assassination"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_anjunggeun-harbin",
+    "quote": "동지 12명이 모여 이토와 이완용 제거를 단지의 피로써 맹세하고",
+    "note": "단지 동맹을 맺고 거사를 준비했다.",
+    "fromSource": "src-ek-an-junggeun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

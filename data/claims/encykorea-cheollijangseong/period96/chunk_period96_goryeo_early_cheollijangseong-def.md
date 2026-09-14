@@ -23,6 +23,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-clj-line",
+    "subject": "place-hs-cheollijangseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-goryeo"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_cheollijangseong-def",
+    "quote": "압록강에서 원산만에 이르는 북쪽 변경에 쌓은 장성",
+    "note": "장성은 압록강 어귀에서 동해 원산만까지 이어졌다.",
+    "fromSource": "src-encykorea-cheollijangseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

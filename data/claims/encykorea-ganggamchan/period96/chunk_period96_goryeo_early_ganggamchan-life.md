@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-ggc-life",
+    "subject": "person-ganggamchan",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "948년",
+      "year": 948,
+      "precision": "year",
+      "earliest": 948,
+      "latest": 948,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-3-ge3-ggc-life"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_ganggamchan-life",
+    "quote": "출생 연도948년(정종 3) 사망 연도1031년(현종 22)",
+    "note": "강감찬의 생몰 연도.",
+    "fromSource": "src-encykorea-ganggamchan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

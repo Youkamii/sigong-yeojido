@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-changnyeong-561",
+    "subject": "place-hs4-changnyeong-stele",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "561년(진흥왕 22)",
+      "year": 561,
+      "precision": "year",
+      "earliest": 561,
+      "latest": 561,
+      "id": "ts-curriculum-samguk-samguk-4-hs4-changnyeong-561"
+    },
+    "citesChunk": "chunk_scenes-128_ancient_settlements_cn-date",
+    "quote": "561년(진흥왕 22)에 이 비가 세워졌음을",
+    "note": "561년에 비가 세워졌다.",
+    "fromSource": "src-aks-changnyeong-cheokgyeongbi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

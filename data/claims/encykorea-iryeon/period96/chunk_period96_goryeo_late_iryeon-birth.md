@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-iryeon-born",
+    "subject": "person-encykorea-iryeon",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1206",
+      "year": 1206,
+      "precision": "year",
+      "earliest": 1206,
+      "latest": 1206,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-3-gl3-iryeon-born"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_iryeon-birth",
+    "quote": "출생 연도1206",
+    "note": "민족문화대백과 일연 항목의 출생 연도.",
+    "fromSource": "src-encykorea-iryeon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

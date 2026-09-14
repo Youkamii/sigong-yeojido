@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-ichadon-exec",
+    "subject": "person-ichadon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-beopheung"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_ichadon-execution",
+    "quote": "이를 수락한 법흥왕은 이차돈에게 흥륜사 건립 공사를 강행한 책임을 물어 그를 처형하였다.",
+    "note": "흥륜사 공사 책임을 물어 처형했다는 서술.",
+    "fromSource": "src-anc-enc-ichadon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

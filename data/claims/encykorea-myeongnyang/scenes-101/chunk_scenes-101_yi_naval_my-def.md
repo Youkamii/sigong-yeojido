@@ -96,6 +96,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-mn-1597",
+    "subject": "event-hs-jl1-myeongnyang",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1597년(선조 30) 9월 16일",
+      "year": 1597,
+      "precision": "day",
+      "earliest": 1597,
+      "latest": 1597,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-mn-1597"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_my-def",
+    "quote": "1597년(선조 30) 9월 16일 이순신(李舜臣)이 명량(울돌목: 전남광주통합특별시 진도와 육지 사이의 해협)에서",
+    "note": "1597년 9월 16일 명량에서 벌어진 해전.",
+    "fromSource": "src-encykorea-myeongnyang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

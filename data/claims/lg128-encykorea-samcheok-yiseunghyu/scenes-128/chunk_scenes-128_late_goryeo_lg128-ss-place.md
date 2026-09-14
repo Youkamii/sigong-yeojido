@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-jwu-place",
+    "subject": "work-gl3-jewang-ungi",
+    "predicate": "syj:producedAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl3-duta"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-ss-place",
+    "quote": "삼척에 내려와 두타산 자락인 구동 즉, 현재의 삼척시 천은사 경내에 용안당을",
+    "note": "이승휴가 삼척 천은사 자리에 용안당을 짓고 머물렀다.",
+    "fromSource": "src-lg128-encykorea-samcheok-yiseunghyu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

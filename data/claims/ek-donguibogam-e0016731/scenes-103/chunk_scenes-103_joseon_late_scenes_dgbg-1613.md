@@ -62,6 +62,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-dgbg-1613",
+    "subject": "work-hs-donguibogam",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1610년(광해군 2)에 완성하여 1613년",
+      "year": 1613,
+      "precision": "year",
+      "earliest": 1610,
+      "latest": 1613,
+      "id": "ts-curriculum-joseon-late-joseon-late-2-jl2-dgbg-1613"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_dgbg-1613",
+    "quote": "1610년(광해군 2)에 완성하여 1613년 내의원 에서",
+    "note": "1610년에 완성하고 1613년 내의원에서 간행했다.",
+    "fromSource": "src-ek-donguibogam-e0016731",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

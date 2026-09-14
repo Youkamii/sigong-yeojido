@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-gds-cite",
+    "subject": "person-gim-daeseong",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "facility-nb2-bulguksa"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_bulguksa-751",
+    "quote": "751년 김대성이 창건하였다고 기록되었으나",
+    "note": "삼국유사의 751년 김대성 창건 기록.",
+    "fromSource": "src-anc-enc-bulguksa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-loc-hwaseong",
+    "subject": "place-hs-jl5-suwon-hwaseong",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 37.27222,
+      "lon": 127.00833,
+      "precision": "area"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-geo-hwaseong",
+    "quote": "37.27222000; 127.00833000",
+    "note": "수원 화성 표시 좌표",
+    "fromSource": "src-jl2-kowiki-suwon-hwaseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

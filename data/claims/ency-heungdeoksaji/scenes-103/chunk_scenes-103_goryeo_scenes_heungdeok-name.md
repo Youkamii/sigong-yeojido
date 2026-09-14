@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-4-gl4-jikji-place",
+    "subject": "place-gl4-heungdeoksa",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl4-heungdeoksa"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_heungdeok-name",
+    "quote": "청주 흥덕사지 (淸州 興德寺址)",
+    "note": "흥덕사 터는 청주에 있다.",
+    "fromSource": "src-ency-heungdeoksaji",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

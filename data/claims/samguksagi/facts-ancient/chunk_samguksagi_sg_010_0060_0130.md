@@ -46,6 +46,45 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-cheonghae-828",
+    "subject": "event-hs-nbg3-cheonghaejin",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "夏四月",
+      "year": 828,
+      "precision": "year",
+      "earliest": 828,
+      "latest": 828,
+      "id": "ts-curriculum-nambukguk-nambukguk-3-hs-nbg3-cheonghae-828"
+    },
+    "citesChunk": "chunk_samguksagi_sg_010_0060_0130",
+    "quote": "夏四月",
+    "note": "삼국사기 흥덕왕 3년(828) 4월 기사.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-cheonghae-act",
+    "subject": "person-jangbogo",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-nbg3-cheonghaejin"
+    },
+    "citesChunk": "chunk_samguksagi_sg_010_0060_0130",
+    "quote": "清海大使弓福, 姓張氏",
+    "note": "청해진대사 궁복(장보고)이 군사 1만으로 청해를 지켰다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

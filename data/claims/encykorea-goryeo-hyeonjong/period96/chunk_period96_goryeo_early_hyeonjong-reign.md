@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-hyeonjong-reign",
+    "subject": "person-goryeo-hyeonjong",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "1009~1031년",
+      "year": 1031,
+      "precision": "year",
+      "earliest": 1009,
+      "latest": 1031,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-3-ge3-hyeonjong-reign"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_hyeonjong-reign",
+    "quote": "재위 기간은 1009~1031년이며",
+    "note": "현종의 재위 기간.",
+    "fromSource": "src-encykorea-goryeo-hyeonjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

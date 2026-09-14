@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-hong-period",
+    "subject": "event-hs-jl5-hong-gyeongnae",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1811년 12월부터 이듬해 4월까지",
+      "year": 1811,
+      "precision": "month",
+      "earliest": 1811,
+      "latest": 1812,
+      "id": "ts-curriculum-joseon-late-joseon-late-5-jl5-hong-period"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_hg-period",
+    "quote": "1811년 12월부터 이듬해 4월까지",
+    "note": "1811년 12월부터 1812년 4월까지 이어졌다",
+    "fromSource": "src-ek-honggyeongrae-nan-e0063948",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

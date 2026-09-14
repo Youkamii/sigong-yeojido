@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-sinmi-fall",
+    "subject": "event-mt1-sinmi-yangyo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-usa"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_sm-fall",
+    "quote": "미군은 수륙 양면포격을 한 시간 벌인 끝에 광성보를 함락하였다.",
+    "note": "전투 결과.",
+    "fromSource": "src-ek-sinmi-yangyo-e0032961",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-eo-jaeyeon",
+    "subject": "person-jl-eo-jaeyeon",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-mt1-sinmi-yangyo"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_ejy-gwangseongbo",
+    "quote": "진무중군(鎭撫中軍)에 임명되어 광성보(廣城堡)로 급파되어 600여 명의 군사를 거느리고 광성보에 부임, 미군과 대치하였다.",
+    "note": "광성보를 지킨 지휘관.",
+    "fromSource": "src-ek-eo-jaeyeon-e0036069",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

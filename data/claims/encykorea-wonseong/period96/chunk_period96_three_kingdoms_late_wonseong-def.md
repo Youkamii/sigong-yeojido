@@ -44,6 +44,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-2-nb2-ws-785",
+    "subject": "person-encykorea-wonseong",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "785~798",
+      "year": 785,
+      "precision": "year",
+      "earliest": 785,
+      "latest": 798,
+      "id": "ts-curriculum-nambukguk-nambukguk-2-nb2-ws-785"
+    },
+    "citesChunk": "chunk_period96_three_kingdoms_late_wonseong-def",
+    "quote": "원성왕(元聖王)은 통일신라 제38대(재위: 785~798) 왕이다.",
+    "note": "민백 원성왕 항목 발췌 chunk.",
+    "fromSource": "src-encykorea-wonseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -109,6 +109,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-pyong-cap",
+    "subject": "polity-goguryeo",
+    "predicate": "syj:capitalMovedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-pyongyang"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_jangsu-427",
+    "quote": "427년에는 국내성(國內城 : 지금의 吉林省 集安縣)에서 평양성",
+    "note": "국내성에서 평양성으로 옮겼다.",
+    "fromSource": "src-anc-enc-jangsu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -45,6 +45,50 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-hwangnyong-done",
+    "subject": "facility-hs-sg5-hwangnyongsa-tap",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "645년",
+      "year": 645,
+      "precision": "year",
+      "earliest": 645,
+      "latest": 645,
+      "id": "ts-curriculum-samguk-samguk-5-hs-sg5-hwangnyong-done"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_hwangnyongsa-build",
+    "quote": "황룡사구층목탑은 선덕여왕 12년(643)에 착수하여 645년에 완성되었고",
+    "note": "643년 착수, 645년 완성",
+    "fromSource": "src-anc-enc-hwangnyongsa-tap",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-hwang-build",
+    "subject": "facility-gl2-hwangnyongsa-tap",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "645년",
+      "year": 645,
+      "precision": "year",
+      "earliest": 645,
+      "latest": 645,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-2-gl2-hwang-build"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_hwangnyongsa-build",
+    "quote": "황룡사구층목탑은 선덕여왕 12년(643)에 착수하여 645년에 완성되었고",
+    "note": "목탑은 645년에 완성되었다.",
+    "fromSource": "src-anc-enc-hwangnyongsa-tap",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

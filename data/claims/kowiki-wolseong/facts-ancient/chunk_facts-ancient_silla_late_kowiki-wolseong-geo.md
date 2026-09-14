@@ -26,6 +26,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-wolseong-loc",
+    "subject": "place-hs4-wolseong",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 35.83083,
+      "lon": 129.22611,
+      "precision": "site"
+    },
+    "citesChunk": "chunk_facts-ancient_silla_late_kowiki-wolseong-geo",
+    "quote": "35.83083; 129.22611",
+    "note": "신라 왕궁 월성의 표시 좌표.",
+    "fromSource": "src-kowiki-wolseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-chojo-act",
+    "subject": "facility-gl2-buinsa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-gl2-mongol"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_buinsa-burn",
+    "quote": "몽고의 침입 때 대부분 불타 없어지고,",
+    "note": "부인사가 몽골 침입 때 대부분 불탔다.",
+    "fromSource": "src-syj122-aks-buinsa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

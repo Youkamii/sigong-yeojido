@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-tangpyeongbi-chunk-site",
+    "subject": "heritage-hs4-tangpyeongbi",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs4-seonggyungwan"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_tp-bi",
+    "quote": "성균관 반수교(泮水橋) 위에 세워",
+    "note": "로컬 chunk로 성균관 반수교 위에 세웠음을 확인한다.",
+    "fromSource": "src-ek-tangpyeong-e0058860",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-21"
   }
 ]
 ```

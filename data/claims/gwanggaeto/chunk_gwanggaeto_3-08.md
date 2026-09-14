@@ -29,6 +29,23 @@ claim 으로 만들지 않은 것: 煙戶 목록의 성 이름 하나하나(3면
     "origin": "ai",
     "status": "draft",
     "note": "전체 정벌 총계. 攻破 의 주체 이름은 이 줄에 없고 1면 7줄 이래 이어지는 王(광개토왕)으로 읽는다. 2면 5줄의 6년 전과(五十八城、村七百) 와 별개의 숫자다."
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-gg-conquest",
+    "subject": "person-gwanggaeto",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-guknae-jian"
+    },
+    "citesChunk": "chunk_gwanggaeto_3-08",
+    "quote": "凡所攻破城六十四村，一千四百",
+    "note": "능비 3면 8행. 공파한 성이 64개, 촌이 1,400곳이라 새겼다.",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

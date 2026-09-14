@@ -33,6 +33,23 @@ claim 으로 만들지 않은 것:
     "origin": "ai",
     "status": "draft",
     "note": "places.json 에 없는 지명이라 새 껍데기를 세웠다. 위치 비정은 비문에 없다."
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-rescue-imna",
+    "subject": "event-hs-sg2-silla-rescue",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-imna-gara"
+    },
+    "citesChunk": "chunk_gwanggaeto_2-09",
+    "quote": "追至任那加羅，從拔城，城即歸服",
+    "note": "능비 2면 9행. 임나가라까지 쫓아가 성이 곧 항복했다.",
+    "fromSource": "src-gwanggaeto",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

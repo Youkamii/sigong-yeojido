@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-seongnihak-intro",
+    "subject": "concept-gl3-seongnihak",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-gl3-goryeo"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_seongnihak-intro",
+    "quote": "주자학으로서의 성리학의 도입은 충렬왕 때(13세기 후반)로 추정된다.",
+    "note": "성리학 전래 시기.",
+    "fromSource": "src-encykorea-seongnihak",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

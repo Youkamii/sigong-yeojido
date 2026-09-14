@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-4-hs-c4-ibc-hanin",
+    "subject": "person-encykorea-yi-bongchang",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "org-hs-c4-hanin-aegukdan"
+    },
+    "citesChunk": "chunk_period96_modern_ibc-hanin",
+    "quote": "김구가 한인애국단에 가입시킨 뒤",
+    "note": "김구가 한인애국단에 가입시켰다.",
+    "fromSource": "src-encykorea-yi-bongchang",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-ganghwa-1876",
+    "subject": "event-mt1-ganghwa-joyak",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1876년(고종 13) 2월",
+      "year": 1876,
+      "precision": "month",
+      "earliest": 1876,
+      "latest": 1876,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-ganghwa-1876"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_ganghwa-def",
+    "quote": "1876년(고종 13) 2월 강화부에서 조선과 일본 사이에 체결된 조약.",
+    "note": "조약 체결 연월.",
+    "fromSource": "src-ek-ganghwado-joyak",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

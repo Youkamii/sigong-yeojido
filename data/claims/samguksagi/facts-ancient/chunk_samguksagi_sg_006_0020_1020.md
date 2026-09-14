@@ -46,6 +46,40 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-ungjin-end",
+    "subject": "institution-hs-sg5-ungjin-dodokbu",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "year",
+      "value": 670
+    },
+    "citesChunk": "chunk_samguksagi_sg_006_0020_1020",
+    "quote": "遣大阿湌儒敦於熊津都督府請和, 不從",
+    "note": "670년 신라가 웅진도독부에 화친을 청했으나 듣지 않자 군사를 냈다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-nadang-war-start",
+    "subject": "event-hs-sg5-nadang-war",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "year",
+      "value": 670
+    },
+    "citesChunk": "chunk_samguksagi_sg_006_0020_1020",
+    "quote": "舉兵討百濟. 品日·文忠·衆臣·義官·天官等, 攻取城六十三",
+    "note": "670년 신라가 옛 백제 땅의 당 세력을 쳐 성 63개를 빼앗았다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

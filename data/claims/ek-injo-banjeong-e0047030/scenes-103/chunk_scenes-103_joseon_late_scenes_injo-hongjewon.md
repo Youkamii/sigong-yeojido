@@ -109,6 +109,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-banjeong-hongjewon",
+    "subject": "event-hs-jl2-injo-banjeong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "ent-wpa-choe-myeonggil"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_injo-hongjewon",
+    "quote": "이귀·심기원·최명길(崔鳴吉)·김자점 등은 병력 600∼700명으로 홍제원(弘濟院)에 모여",
+    "note": "이귀·최명길 등이 600~700명을 이끌고 홍제원에 모였다.",
+    "fromSource": "src-ek-injo-banjeong-e0047030",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

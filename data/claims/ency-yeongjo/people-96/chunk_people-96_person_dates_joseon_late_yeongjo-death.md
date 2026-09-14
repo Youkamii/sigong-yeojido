@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-yeongjo-death-chunk",
+    "subject": "person-encykorea-yeongjo-e0037669",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1776년(영조 52)",
+      "year": 1776,
+      "precision": "year",
+      "earliest": 1776,
+      "latest": 1776,
+      "id": "ts-curriculum-joseon-late-joseon-late-4-hs4-yeongjo-death-chunk"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_late_yeongjo-death",
+    "quote": "사망 연도 1776년(영조 52)",
+    "note": "로컬 인물 연대 chunk로 영조 사망 연도를 확인한다.",
+    "fromSource": "src-ency-yeongjo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-21"
   }
 ]
 ```

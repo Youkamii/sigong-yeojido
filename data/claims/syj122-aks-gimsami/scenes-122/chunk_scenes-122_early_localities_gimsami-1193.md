@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-1-hs-gl-ksm-place",
+    "subject": "event-hs-gimsami-nan",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-unmunsa"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_gimsami-1193",
+    "quote": "1193년(명종 23) 경상북도 청도의 운문사(雲門寺)를 중심으로 김사미가 일으킨 저항이다.",
+    "note": "운문사를 중심으로 한 봉기라는 서술.",
+    "fromSource": "src-syj122-aks-gimsami",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

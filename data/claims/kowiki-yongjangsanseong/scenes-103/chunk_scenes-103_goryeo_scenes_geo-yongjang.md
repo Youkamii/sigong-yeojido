@@ -24,6 +24,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-yongjang-loc",
+    "subject": "place-gl2-yongjangseong",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 34.51556,
+      "lon": 126.33806,
+      "precision": "site"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_geo-yongjang",
+    "quote": "34.51556; 126.33806",
+    "note": "용장산성 문서의 표시 좌표.",
+    "fromSource": "src-kowiki-yongjangsanseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-goguryeo-split",
+    "subject": "event-hs-sg5-goguryeo-fall",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yeongaesomun"
+    },
+    "citesChunk": "chunk_samguksagi_sg_022_0020_0370",
+    "quote": "蓋蘇文死, 長子男生代爲莫離支",
+    "note": "연개소문이 죽은 뒤 아들들이 갈라섰다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

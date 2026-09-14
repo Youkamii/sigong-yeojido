@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-ss-abolish",
+    "subject": "org-gl3-ssangseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-gl3-goryeo"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-sc-abolish",
+    "quote": "쌍성총관부는 폐지되었다.",
+    "note": "쌍성총관부가 폐지되었다.",
+    "fromSource": "src-lg128-encykorea-ssangseong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

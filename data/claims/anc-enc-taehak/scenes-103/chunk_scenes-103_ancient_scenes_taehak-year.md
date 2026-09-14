@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-taehak-enc",
+    "subject": "event-hs-sg2-taehak",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "372년",
+      "year": 372,
+      "precision": "year",
+      "earliest": 372,
+      "latest": 372,
+      "id": "ts-curriculum-samguk-samguk-2-hs-sg2-taehak-enc"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_taehak-year",
+    "quote": "372년, 고구려에 설립된 우리나라 최초의 교육기관",
+    "note": "민족문화대백과 태학 항목의 정의. 설립 연도 372년.",
+    "fromSource": "src-anc-enc-taehak",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

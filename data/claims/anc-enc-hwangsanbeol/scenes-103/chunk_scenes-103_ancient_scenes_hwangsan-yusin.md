@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-hwangsan-yusin",
+    "subject": "person-kim-yusin",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-sg5-hwangsanbeol"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_hwangsan-yusin",
+    "quote": "김유신도 신라군을 3도(道)로 나누어 이에 대항하였다",
+    "note": "김유신이 신라군을 셋으로 나누어 맞섰다",
+    "fromSource": "src-anc-enc-hwangsanbeol",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

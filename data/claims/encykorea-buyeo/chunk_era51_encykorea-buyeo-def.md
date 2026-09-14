@@ -29,6 +29,23 @@ generated_by: "claude-opus-5"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-2-hs-buyeo-def",
+    "subject": "polity-hs-buyeo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-bukmanju"
+    },
+    "citesChunk": "chunk_era51_encykorea-buyeo-def",
+    "quote": "서기전 2세기경부터 494년까지 북만주지역에 존속했던",
+    "note": "부여의 존속 기간과 지역.",
+    "fromSource": "src-encykorea-buyeo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

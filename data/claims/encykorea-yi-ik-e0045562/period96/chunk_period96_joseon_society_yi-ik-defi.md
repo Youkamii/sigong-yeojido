@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-4-hs4-yiik-def-chunk",
+    "subject": "person-encykorea-yi-ik-e0045562",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "work-hs4-seonghosaseol"
+    },
+    "citesChunk": "chunk_period96_joseon_society_yi-ik-defi",
+    "quote": "『성호사설』, 『이자수어』 등을 저술하였으며",
+    "note": "로컬 chunk로 성호사설 저술을 확인한다.",
+    "fromSource": "src-encykorea-yi-ik-e0045562",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-21"
   }
 ]
 ```

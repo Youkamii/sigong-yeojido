@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-4-hs4-salsu-river",
+    "subject": "place-hs4-salsu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs4-goguryeo"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_salsu-river",
+    "quote": "살수는 지금의 청천강이다.",
+    "note": "살수는 오늘의 청천강이다.",
+    "fromSource": "src-anc-enc-salsu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-17"
   }
 ]
 ```

@@ -45,6 +45,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-bakhae-def",
+    "subject": "event-mt1-byeongin-bakhae",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_period96_joseon_society_byeongin-bakhae-defi",
+    "quote": "1866년부터 1873년까지 8년 동안 국가적 차원에서 지속된 천주교 박해.",
+    "note": "박해의 성격과 기간.",
+    "fromSource": "src-encykorea-byeongin-bakhae-e0023139",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

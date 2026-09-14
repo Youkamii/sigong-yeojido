@@ -143,6 +143,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-baekje-fall-year",
+    "subject": "event-hs-sg5-baekje-fall",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "year",
+      "value": 660
+    },
+    "citesChunk": "chunk_samguksagi_sg_028_0020_0380",
+    "quote": "於是, 王及太子孝與諸城皆降",
+    "note": "660년 의자왕과 태자 효를 비롯해 여러 성이 모두 항복했다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

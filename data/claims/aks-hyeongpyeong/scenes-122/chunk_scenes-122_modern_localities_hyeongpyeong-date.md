@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-hyeongpyeong-1923",
+    "subject": "event-hs-hyeongpyeong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1923년 4월 25일",
+      "year": 1923,
+      "precision": "day",
+      "earliest": 1923,
+      "latest": 1923,
+      "id": "ts-curriculum-colonial-colonial-2-c2-hyeongpyeong-1923"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_hyeongpyeong-date",
+    "quote": "1923년 4월 25일 진주에서 백정의 신분으로 자산가가 된 이학찬(李學贊)이",
+    "note": "1923년 진주에서 시작되었다.",
+    "fromSource": "src-aks-hyeongpyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

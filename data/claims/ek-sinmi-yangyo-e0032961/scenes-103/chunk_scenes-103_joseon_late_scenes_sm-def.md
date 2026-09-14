@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-sinmi-1871",
+    "subject": "event-mt1-sinmi-yangyo",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1871년(고종 8)",
+      "year": 1871,
+      "precision": "year",
+      "earliest": 1871,
+      "latest": 1871,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-sinmi-1871"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_sm-def",
+    "quote": "1871년(고종 8) 미국 아시아함대가 강화도에 쳐들어온",
+    "note": "신미양요 발생 연도.",
+    "fromSource": "src-ek-sinmi-yangyo-e0032961",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

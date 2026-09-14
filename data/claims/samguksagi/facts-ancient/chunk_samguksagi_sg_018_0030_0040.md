@@ -45,6 +45,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-code-373",
+    "subject": "event-hs-sg2-goguryeo-code",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "year",
+      "value": 373
+    },
+    "citesChunk": "chunk_samguksagi_sg_018_0030_0040",
+    "quote": "三年, 始頒律令",
+    "note": "삼국사기 고구려본기 소수림왕 3년(373) 조. 처음으로 율령을 반포했다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

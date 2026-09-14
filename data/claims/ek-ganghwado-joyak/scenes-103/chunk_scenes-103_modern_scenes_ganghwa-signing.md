@@ -75,6 +75,40 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-ganghwa-signing",
+    "subject": "event-mt1-ganghwa-joyak",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-mt1-yeonmudang"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_ganghwa-signing",
+    "quote": "강화 연무당(鍊武堂)에서 전권대신 신헌(申櫶)과 특명전권판리대신(特命全權辦理大臣) 구로다 기요타카[黑田淸隆] 사이에 12조로 된 조일수호조규를 체결하였다.",
+    "note": "조인 장소.",
+    "fromSource": "src-ek-ganghwado-joyak",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-sinheon",
+    "subject": "person-encykorea-sinheon",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-mt1-ganghwa-joyak"
+    },
+    "citesChunk": "chunk_scenes-103_modern_scenes_ganghwa-signing",
+    "quote": "전권대신 신헌(申櫶)",
+    "note": "조선 측 전권대신.",
+    "fromSource": "src-ek-ganghwado-joyak",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-09"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-sherman-1866",
+    "subject": "event-mt1-sherman",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1866년(고종 3) 7월",
+      "year": 1866,
+      "precision": "month",
+      "earliest": 1866,
+      "latest": 1866,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-sherman-1866"
+    },
+    "citesChunk": "chunk_scenes-135_local_conflicts_syj135-sherman-def",
+    "quote": "1866년(고종 3) 7월 미국 상선 제너럴셔먼호가 평양에서 군민(軍民)의 화공(火攻)으로 불타버린 일.",
+    "note": "사건 연월.",
+    "fromSource": "src-syj135-aks-sherman",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

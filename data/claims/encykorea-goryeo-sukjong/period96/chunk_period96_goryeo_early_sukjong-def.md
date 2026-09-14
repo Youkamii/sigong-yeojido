@@ -61,6 +61,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-sukjong-reign",
+    "subject": "person-encykorea-goryeo-sukjong",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "1095~1105",
+      "year": 1105,
+      "precision": "year",
+      "earliest": 1095,
+      "latest": 1105,
+      "id": "ts-curriculum-goryeo-early-goryeo-early-3-ge3-sukjong-reign"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_sukjong-def",
+    "quote": "고려 전기, 제15대(재위: 1095~1105) 왕.",
+    "note": "숙종의 재위 기간.",
+    "fromSource": "src-encykorea-goryeo-sukjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

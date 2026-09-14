@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-3-hs3-song-defi",
+    "subject": "person-encykorea-song-siyeol-e0030898",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_period96_joseon_society_song-siyeol-defi",
+    "quote": "조선 후기 효종~숙종 대의 문신, 학자.",
+    "note": "송시열의 활동 시기.",
+    "fromSource": "src-encykorea-song-siyeol-e0030898",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

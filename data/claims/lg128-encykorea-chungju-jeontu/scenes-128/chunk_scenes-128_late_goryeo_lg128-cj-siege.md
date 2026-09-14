@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-chungju-act",
+    "subject": "event-gl2-chungju",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-gl2-mongol"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-cj-siege",
+    "quote": "몽골 군대가 70여 일 동안 충주성을 포위하고 공격하였으나, 충주의 관민들은 힘을 합쳐 굳게 지켜",
+    "note": "몽골군이 70여 일 포위했으나 관민이 지켜냈다.",
+    "fromSource": "src-lg128-encykorea-chungju-jeontu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

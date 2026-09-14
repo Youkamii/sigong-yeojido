@@ -23,6 +23,23 @@ status: "draft"
     "generatedBy": "codex",
     "generatedAt": "2026-09-07",
     "note": "기관 해설이 이 유산과 연결한 사건이다. 현재 좌표를 사건의 정확한 교전 지점으로 확정하지 않는다."
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-gy-khs",
+    "subject": "place-hs-jl1-haengjusanseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-gwon-yul-e0007022"
+    },
+    "citesChunk": "chunk_khs-haengju-event",
+    "quote": "임진왜란(1592) 때 권율 장군의 행주대첩으로 널리 알려진 곳으로",
+    "note": "행주산성은 권율의 행주대첩으로 알려진 곳이라는 국가유산 해설.",
+    "fromSource": "src-khs-haengju",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

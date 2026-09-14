@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-jj-win",
+    "subject": "event-hs-jl1-jinju",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-imjin-japanese-force"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_kimsimin-jinju",
+    "quote": "7일간의 공방전을 벌여 물리쳤다(진주대첩). 이 전투에서 이마에 맞은 탄환으로 인해 사망했다.",
+    "note": "7일간의 공방전 끝에 물리쳤고 김시민은 탄환에 맞아 죽었다.",
+    "fromSource": "src-encykorea-kimsimin",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

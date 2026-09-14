@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-3-hs-s3-hwangnyongsa-566",
+    "subject": "place-hs-s3-hwangnyongsa",
+    "predicate": "syj:foundedIn",
+    "object": {
+      "kind": "year",
+      "value": 566
+    },
+    "citesChunk": "chunk_samguksagi_sg_004_0040_0410",
+    "quote": "皇龍寺畢功",
+    "note": "삼국사기는 진흥왕 27년(566) 황룡사가 완공되었다고 적는다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

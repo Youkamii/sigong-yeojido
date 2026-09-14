@@ -80,6 +80,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-gogu-revival-hanseong",
+    "subject": "event-hs-sg5-goguryeo-revival",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-sg5-hanseong"
+    },
+    "citesChunk": "chunk_samguksagi_sg_006_0020_1000",
+    "quote": "見髙句麗大臣淵淨土之子安勝, 迎致漢城中, 奉以爲君",
+    "note": "670년 6월 안승을 한성으로 맞아들여 임금으로 받들었다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

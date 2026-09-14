@@ -46,6 +46,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-2-hs-sg2-pyong-425",
+    "subject": "polity-goguryeo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-gungnaeseong"
+    },
+    "citesChunk": "chunk_samguksagi_sg_037_0020_0030",
+    "quote": "都囯内歴四百二十五年, 長壽王十五年, 移都平壤",
+    "note": "삼국사기 지리지. 국내에 도읍한 425년 뒤 장수왕 15년에 평양으로 옮겼다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

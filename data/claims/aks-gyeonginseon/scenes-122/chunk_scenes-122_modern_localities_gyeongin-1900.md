@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-gi-1900",
+    "subject": "event-mt3-gyeonginseon",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1900년 11월 12일",
+      "year": 1900,
+      "precision": "day",
+      "earliest": 1900,
+      "latest": 1900,
+      "id": "ts-curriculum-modern-transition-modern-transition-3-mt3-gi-1900"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_gyeongin-1900",
+    "quote": "1900년 11월 12일 경성역 인근에서 경인선 전 구간의 개통식이 거행되었다.",
+    "note": "1900년 전 구간 개통식이 열렸다.",
+    "fromSource": "src-aks-gyeonginseon",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

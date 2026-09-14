@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-3-gl3-sgy-modern",
+    "subject": "place-gl3-ingaksa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-gl3-goryeo"
+    },
+    "citesChunk": "chunk_scenes-128_late_goryeo_lg128-ig-modern",
+    "quote": "대구광역시 군위군 삼국유사면에 있는",
+    "note": "인각사지의 현재 행정 구역.",
+    "fromSource": "src-lg128-encykorea-gunwi-ingaksaji",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

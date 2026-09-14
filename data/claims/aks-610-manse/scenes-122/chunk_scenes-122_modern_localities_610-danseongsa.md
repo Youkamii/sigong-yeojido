@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-3-hs-610-chunk2",
+    "subject": "event-hs-610",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-danseongsa"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_610-danseongsa",
+    "quote": "순종의 상여가 종로 3가 단성사 앞을 지날 때, 중앙고보생 300여 명이",
+    "note": "상여가 단성사 앞을 지날 때 만세",
+    "fromSource": "src-aks-610-manse",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

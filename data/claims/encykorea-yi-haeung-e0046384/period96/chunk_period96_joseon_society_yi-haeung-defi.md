@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-daewongun-def",
+    "subject": "person-encykorea-yi-haeung-e0046384",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-gojong-e0003939"
+    },
+    "citesChunk": "chunk_period96_joseon_society_yi-haeung-defi",
+    "quote": "조선의 제26대 왕, 고종의 아버지로, 흥선대원군에 봉해진 왕족.",
+    "note": "이하응과 고종의 관계.",
+    "fromSource": "src-encykorea-yi-haeung-e0046384",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

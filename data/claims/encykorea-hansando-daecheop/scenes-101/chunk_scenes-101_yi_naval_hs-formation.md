@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-hs-form",
+    "subject": "event-hs-jl1-hansando",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yi-sunsin"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_hs-formation",
+    "quote": "학익진(鶴翼陣)을 짜서 공격하게 하였다.",
+    "note": "학익진을 짜서 공격했다.",
+    "fromSource": "src-encykorea-hansando-daecheop",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

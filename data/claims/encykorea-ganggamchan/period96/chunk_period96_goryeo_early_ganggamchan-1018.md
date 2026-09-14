@@ -77,6 +77,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-ggc-1018",
+    "subject": "person-ganggamchan",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-khitan-3rd"
+    },
+    "citesChunk": "chunk_period96_goryeo_early_ganggamchan-1018",
+    "quote": "1018년(현종 9) 요나라의 소배압(蕭排押)이 10만 대군을 이끌고 침공하자 상원수대장군으로서 귀주에서 큰 승리를 거두었다.",
+    "note": "강감찬은 상원수로서 귀주에서 크게 이겼다.",
+    "fromSource": "src-encykorea-ganggamchan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

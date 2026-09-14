@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-hong-1811",
+    "subject": "event-hs-jl5-hong-gyeongnae",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1811년(순조 11)",
+      "year": 1811,
+      "precision": "year",
+      "earliest": 1811,
+      "latest": 1811,
+      "id": "ts-curriculum-joseon-late-joseon-late-5-jl5-hong-1811"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_hg-def",
+    "quote": "1811년(순조 11) 홍경래·우군칙(禹君則) 등이 중심이 되어 일으킨",
+    "note": "봉기 연도와 주도자",
+    "fromSource": "src-ek-honggyeongrae-nan-e0063948",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

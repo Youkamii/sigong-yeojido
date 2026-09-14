@@ -60,6 +60,23 @@ generated_by: claude-opus-5
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-06",
     "note": "'虎王'은 고려 혜종 이름 武 를 피휘한 표기다(같은 사료의 다른 기사에 국편 교감주가 붙어 있음). 武王 으로 정규화하지 않았다. 1500년·기묘년을 절대연대로 환산하지 않는다. 箕子 관련 서술의 사실성은 학설 대상이다. 여기서는 '삼국유사가 그렇게 적었다'만 주장한다."
+  },
+  {
+    "id": "claim-curriculum-prehistoric-gojoseon-prehistoric-gojoseon-1-hs-pg1-myth-story",
+    "subject": "event-hs-pg1-myth",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "narrative-hs-pg1-dangun-myth"
+    },
+    "citesChunk": "chunk_samgukyusa_sy_001_0020_0020_0020",
+    "quote": "雄率徒三千降於太伯山頂神壇樹下謂之神市",
+    "note": "삼국유사 고조선조의 환웅 강림 대목이다.",
+    "fromSource": "src-samgukyusa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

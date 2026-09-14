@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-1-mt1-gyeongbok-1868",
+    "subject": "event-mt1-gyeongbok-junggeon",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1868년",
+      "year": 1868,
+      "precision": "year",
+      "earliest": 1868,
+      "latest": 1868,
+      "id": "ts-curriculum-modern-transition-modern-transition-1-mt1-gyeongbok-1868"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_gbg-1868",
+    "quote": "1868년에 왕은 경복궁으로 옮겼다.",
+    "note": "왕의 이어 연도.",
+    "fromSource": "src-ek-gyeongbokgung-e0002434",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

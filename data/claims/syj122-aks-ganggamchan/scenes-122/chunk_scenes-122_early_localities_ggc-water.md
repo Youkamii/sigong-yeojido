@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-early-goryeo-early-3-ge3-ggc-water",
+    "subject": "person-ganggamchan",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-khitan-3rd"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_ggc-water",
+    "quote": "큰 새끼줄로 쇠가죽을 꿰어 성 동쪽의 냇물을 막아두었다가",
+    "note": "흥화진에서 쇠가죽으로 냇물을 막았다가 터뜨린 전술.",
+    "fromSource": "src-syj122-aks-ganggamchan",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

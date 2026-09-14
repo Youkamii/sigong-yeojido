@@ -92,6 +92,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-bjs-end",
+    "subject": "person-ency-baejungson",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1271년",
+      "year": 1271,
+      "precision": "year",
+      "earliest": 1271,
+      "latest": 1271,
+      "id": "ts-curriculum-goryeo-late-goryeo-late-2-gl2-bjs-end"
+    },
+    "citesChunk": "chunk_scenes-103_goryeo_scenes_baejungson-1271",
+    "quote": "1271년 홍다구가 이끄는 몽골군에 의해 진도가 함락되었고, 배중손도 이때 남도석성에서 전사한 것으로 보인다.",
+    "note": "1271년 진도 함락 때 남도석성에서 전사한 것으로 본다.",
+    "fromSource": "src-ency-baejungson",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

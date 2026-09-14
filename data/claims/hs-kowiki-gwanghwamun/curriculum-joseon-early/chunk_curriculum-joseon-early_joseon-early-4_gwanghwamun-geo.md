@@ -26,6 +26,25 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-2-jl2-gwanghwamun-loc",
+    "subject": "place-hs-jl2-yukjogeori",
+    "predicate": "syj:locatedAt",
+    "object": {
+      "kind": "location",
+      "lat": 37.5760444,
+      "lon": 126.9770194,
+      "precision": "area"
+    },
+    "citesChunk": "chunk_curriculum-joseon-early_joseon-early-4_gwanghwamun-geo",
+    "quote": "37.5760444; 126.9770194",
+    "note": "호조가 있던 육조 거리의 대표점으로 광화문 표시 좌표를 썼다.",
+    "fromSource": "src-hs-kowiki-gwanghwamun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

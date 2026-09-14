@@ -28,6 +28,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-jj-days",
+    "subject": "event-hs-jl1-jinju",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-kim-simin-e0009658"
+    },
+    "citesChunk": "chunk_period92_imjin-contemporaries_jinju-first",
+    "quote": "1592년(선조 25) 10월 5일부터 11일까지 7일 간 계속되었다.",
+    "note": "1592년 10월 5일부터 11일까지 7일간 계속되었다.",
+    "fromSource": "src-encykorea-jinju-jeontu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

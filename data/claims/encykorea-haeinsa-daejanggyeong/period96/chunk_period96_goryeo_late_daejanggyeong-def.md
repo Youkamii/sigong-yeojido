@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-palman-place",
+    "subject": "work-gl2-palman",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "facility-gl2-haeinsa"
+    },
+    "citesChunk": "chunk_period96_goryeo_late_daejanggyeong-def",
+    "quote": "경상남도 합천군 가야면 해인사에 소장된 불교경전",
+    "note": "경판은 합천 해인사에 소장되어 있다.",
+    "fromSource": "src-encykorea-haeinsa-daejanggyeong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

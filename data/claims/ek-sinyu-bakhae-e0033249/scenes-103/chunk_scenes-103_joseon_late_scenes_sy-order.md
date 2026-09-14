@@ -62,6 +62,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-5-jl5-sinyu-order",
+    "subject": "event-hs-jl5-sinyu",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-jl5-joseon"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_late_scenes_sy-order",
+    "quote": "대왕대비는 박해령을 선포, 전국의 천주교도를 수색하였다.",
+    "note": "박해령 선포와 전국 수색",
+    "fromSource": "src-ek-sinyu-bakhae-e0033249",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

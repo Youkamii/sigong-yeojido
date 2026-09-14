@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-samil-hanyongun",
+    "subject": "person-encykorea-han-yongun",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-samil"
+    },
+    "citesChunk": "chunk_period92_founding-contemporaries_hanyongun-1919",
+    "quote": "1919년 3·1독립운동 때",
+    "note": "한용운이 민족 대표로 참여했다.",
+    "fromSource": "src-encykorea-han-yongun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

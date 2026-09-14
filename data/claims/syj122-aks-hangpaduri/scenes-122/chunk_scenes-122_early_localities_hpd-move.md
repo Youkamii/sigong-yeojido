@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-goryeo-late-goryeo-late-2-gl2-ktj-move",
+    "subject": "person-syj122-gimtongjeong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-gl2-hangpaduri"
+    },
+    "citesChunk": "chunk_scenes-122_early_localities_hpd-move",
+    "quote": "김통정(金通精, ?~1273)이 지휘하는 삼별초는 다시 제주도로 거점을 이동하였다.",
+    "note": "김통정이 이끄는 삼별초가 제주로 거점을 옮겼다.",
+    "fromSource": "src-syj122-aks-hangpaduri",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

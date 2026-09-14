@@ -75,6 +75,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-3-hs-nbg3-balhae-dongran",
+    "subject": "event-hs-nbg3-balhae-fall",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-nbg-georan"
+    },
+    "citesChunk": "chunk_goryeosa-jeolyo_kj_001_0010_0090_0050_0010",
+    "quote": "圍忽汗城, 滅之, 改爲東丹國",
+    "note": "고려사절요: 홀한성을 에워싸 멸하고 동란국으로 고쳤다.",
+    "fromSource": "src-goryeosa-jeolyo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

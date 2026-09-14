@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-ansi-year",
+    "subject": "event-hs-sg5-ansi-siege",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "year",
+      "value": 645
+    },
+    "citesChunk": "chunk_samguksagi_sg_021_0020_0210",
+    "quote": "帝至安市城, 進兵攻之",
+    "note": "보장왕 4년(645) 당 태종이 안시성에 이르러 공격했다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

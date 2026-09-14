@@ -126,6 +126,67 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-gibeol-sea",
+    "subject": "event-hs-sg5-gibeolpo",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "676년",
+      "year": 676,
+      "precision": "year",
+      "earliest": 676,
+      "latest": 676,
+      "id": "ts-curriculum-samguk-samguk-5-hs-sg5-gibeol-sea"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_munmu-gibeolpo",
+    "quote": "676년 해로로 계속 남하하던 설인귀의 군대를 사찬(沙飡) 시득(施得)이 기벌포(伎伐浦)에서 격파함으로써 신라는 서해의 해상권을 장악하게 되었다",
+    "note": "기벌포 승리로 신라가 서해의 해상권을 잡았다",
+    "fromSource": "src-anc-enc-munmu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-unify-sea",
+    "subject": "event-hs-sg5-unification",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-sg5-silla"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_munmu-gibeolpo",
+    "quote": "신라는 서해의 해상권을 장악하게 되었다",
+    "note": "기벌포 승리 뒤 신라가 서해 바다를 장악했다",
+    "fromSource": "src-anc-enc-munmu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-curriculum-nambukguk-nambukguk-1-hs-nb1-munmu-676",
+    "subject": "person-encykorea-munmu",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "676년",
+      "year": 676,
+      "precision": "year",
+      "earliest": 676,
+      "latest": 676,
+      "id": "ts-curriculum-nambukguk-nambukguk-1-hs-nb1-munmu-676"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_munmu-gibeolpo",
+    "quote": "676년 해로로 계속 남하하던 설인귀의 군대를 사찬(沙飡) 시득(施得)이 기벌포(伎伐浦)에서 격파함으로써 신라는 서해의 해상권을 장악하게 되었다.",
+    "note": "676년 기벌포 싸움으로 서해 해상권을 잡아 당군을 몰아냈다는 서술.",
+    "fromSource": "src-anc-enc-munmu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

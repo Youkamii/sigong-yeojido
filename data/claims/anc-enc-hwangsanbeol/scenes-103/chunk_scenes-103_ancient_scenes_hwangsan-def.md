@@ -92,6 +92,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-hwangsan-def",
+    "subject": "event-hs-sg5-hwangsanbeol",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "660년",
+      "year": 660,
+      "precision": "year",
+      "earliest": 660,
+      "latest": 660,
+      "id": "ts-curriculum-samguk-samguk-5-hs-sg5-hwangsan-def"
+    },
+    "citesChunk": "chunk_scenes-103_ancient_scenes_hwangsan-def",
+    "quote": "660년 황산벌에서 있었던 백제군과 신라군 사이의 큰 싸움",
+    "note": "황산벌 전투의 정의",
+    "fromSource": "src-anc-enc-hwangsanbeol",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

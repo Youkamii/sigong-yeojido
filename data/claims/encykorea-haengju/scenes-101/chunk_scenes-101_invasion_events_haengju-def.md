@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-hjb-def",
+    "subject": "event-hs-jl1-haengju",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1593년 2월",
+      "year": 1593,
+      "precision": "month",
+      "earliest": 1593,
+      "latest": 1593,
+      "id": "ts-curriculum-joseon-late-joseon-late-1-hs-jl1-hjb-def"
+    },
+    "citesChunk": "chunk_scenes-101_invasion_events_haengju-def",
+    "quote": "1593년 2월에 전라도관찰사 권율(權慄)이 행주산성(幸州山城)에서 왜군을 크게 무찌른 전투.",
+    "note": "1593년 2월 권율이 행주산성에서 왜군을 크게 무찔렀다.",
+    "fromSource": "src-encykorea-haengju",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

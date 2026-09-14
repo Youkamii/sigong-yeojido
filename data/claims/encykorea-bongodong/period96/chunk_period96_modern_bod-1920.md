@@ -56,6 +56,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-colonial-colonial-2-c2-bod-1920",
+    "subject": "event-hs-bongodong",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1920년",
+      "year": 1920,
+      "precision": "year",
+      "earliest": 1920,
+      "latest": 1920,
+      "id": "ts-curriculum-colonial-colonial-2-c2-bod-1920"
+    },
+    "citesChunk": "chunk_period96_modern_bod-1920",
+    "quote": "봉오동전투는 1920년 만주 봉오동에서 독립군 부대가 일본 정규군을 대패시킨 전투이다",
+    "note": "1920년 봉오동 전투.",
+    "fromSource": "src-encykorea-bongodong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-curriculum-samguk-samguk-5-hs-sg5-ansi-retreat",
+    "subject": "event-hs-sg5-ansi-siege",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-sg5-tang"
+    },
+    "citesChunk": "chunk_samguksagi_sg_021_0020_0226",
+    "quote": "勑班師",
+    "note": "군량이 떨어지고 추위가 닥치자 당 태종이 회군을 명했다",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```

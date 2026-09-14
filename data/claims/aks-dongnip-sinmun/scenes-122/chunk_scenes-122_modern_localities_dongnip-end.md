@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-modern-transition-modern-transition-3-mt3-dsm-end",
+    "subject": "event-mt3-dongnip-sinmun",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1899년 12월 4일",
+      "year": 1899,
+      "precision": "day",
+      "earliest": 1899,
+      "latest": 1899,
+      "id": "ts-curriculum-modern-transition-modern-transition-3-mt3-dsm-end"
+    },
+    "citesChunk": "chunk_scenes-122_modern_localities_dongnip-end",
+    "quote": "1899년 12월 4일자 신문을 끝으로 종간했다.",
+    "note": "1899년 12월 4일자로 종간하였다.",
+    "fromSource": "src-aks-dongnip-sinmun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-19"
   }
 ]
 ```

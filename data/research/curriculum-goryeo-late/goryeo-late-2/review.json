@@ -1,0 +1,106 @@
+{
+  "job": "goryeo-late-2",
+  "checker": "claude-opus-5 high",
+  "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-goryeo-late --job goryeo-late-2 -> PASS: failures=0 warnings=0 (facts=23, scenes=23, claims=106, chunkClaims=87, excerptClaims=19). category x decade: war 6 / culture 4 / administration 4 / person 4 / foreign 3 / facility 1 / settlement 1. region x decade: central 9 / south 6 / north 3 / island 3 / capital 2.",
+  "verdict": "fix",
+  "issues": [
+    {
+      "severity": "major",
+      "itemId": "hs-goryeo-late-tamna-chonggwanbu",
+      "claimId": "claim-gl2-tamna-1273",
+      "problem": "탐라총관부(institution-gl2-tamna-chonggwanbu)에 syj:establishedIn 1273 을 걸면서 근거로 고려사 원종 14년 윤6월 기사 '元置達魯花赤于耽羅.'(원이 탐라에 다루가치를 두었다)를 인용했다. 이 기사는 다루가치 설치 기록이지 탐라총관부 설치 기록이 아니다. 같은 result 안의 웹 근거(src-gl2-enc-tamna, 한국민족문화대백과 '탐라만호부')는 '1300년(충렬왕 26)에는 목마장 관리 등을 구실로 원은 다시 제주에 탐라총관부(耽羅總管府)를 설치하였다'로 적고, 그 앞 문맥은 1273년 이후 탐라국초토사 → 군민도달로화적총관부 → 1284년 군민안무사 → 1294년 고려 반환 순서다. 따라서 '탐라총관부 1273년 설치'는 근거가 뒷받침하지 않는 주장이며, scene-gl2-tamna 와 fact-hs-gl2-020 의 persistence {institution, 1273~1301} 도 같은 오류를 이어받는다(1294년 반환으로 중간에 끊긴 사실도 지워진다). fact.note 에 불일치를 적어 두었으나, 주장 자체가 근거와 어긋나는 것은 note 로 덮을 수 없다.",
+      "fix": "claim-gl2-tamna-1273 의 subject 를 탐라총관부가 아닌 별도 개체(예: institution-gl2-tamna-darughachi '원의 탐라 다루가치' 또는 event 개체)로 바꾸거나 predicate 를 syj:relatedTo 로 낮춘다. 탐라총관부 자체의 설치 연도 주장은 claim-gl2-tamna-1300(1300년) 하나만 남긴다. scene-gl2-tamna 와 fact-hs-gl2-020 의 persistence 는 원의 탐라 직할을 나타내려면 kind 를 institution 으로 두되 basis 를 1273년 다루가치 claim 으로 바꾸고 note 에 1294년 반환·1300년 총관부 설치를 명시하거나, persistence 를 1300~1301 로 좁히고 1273년은 scene.startYear 로만 남긴다.",
+      "evidence": "python scripts/search_chunks.py --id chunk_goryeosa_kr_027_0030_0070_0010 -> locator '元宗 14年 › 윤6월 › 원이 탐라에 다루가치를 설치하다', text '…元置達魯花赤于耽羅.' / raw/enc-tamna-manhobu.html 본문 '…1294년(충렬왕 20)에 … 원은 충렬왕의 환부 요청을 받고 탐라를 돌려주었다. … 1300년(충렬왕 26)에는 목마장 관리 등을 구실로 원은 다시 제주에 탐라총관부(耽羅總管府)를 설치하였다.' (2026-09-14 https://encykorea.aks.ac.kr/Article/E0070577 재조회로 동일 문장 확인)"
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-goryeo-late-kim-tongjeong",
+      "sceneId": "scene-gl2-kimtongjeong",
+      "problem": "김통정 인물 장면과 제주 항파두리 항몽 유적 문화재 장면(scene-gl2-hangpaduri)의 좌표가 lon 126.4075 / lat 33.4525 로 완전히 같다. 지시의 '같은 도시 항목이 한 점에 겹치지 않게' 규칙을 정면으로 어기며, 지도에서 두 표시가 그대로 포개진다. place.coordinateNote 도 '문화재 항목과 같은 지점이다'라고 스스로 적고 있다. 이 칸에서 완전히 같은 좌표는 이 한 쌍뿐이다(다음으로 가까운 쌍은 개경 환도 ↔ 충렬왕 0.31km).",
+      "fix": "인물 장면을 다른 구체 지점으로 옮긴다. 김통정의 최후 전승지인 붉은오름(제주 서귀포시 남원읍) 또는 항파두리 토성 안 다른 지점(예: 항몽순의비 구역)의 십진 좌표 발췌를 raw/ 에 새로 저장해 coordinateSourceIds 로 달거나, 진도 함락 뒤 탐라로 들어간 경로를 살려 claim-gl2-ktj-1271 을 근거로 제주 입도 지점(제주 화북·조천 포구)을 쓴다. 옮기기 어려우면 최소한 좌표를 항파두리 토성의 다른 모서리로 분리하고 coordinateNote 에 근거를 적는다.",
+      "evidence": "result.json scenes: scene-gl2-kimtongjeong place {lon 126.4075, lat 33.4525}, scene-gl2-hangpaduri place {lon 126.4075, lat 33.4525}; 두 fact(fact-hs-gl2-018, fact-hs-gl2-019)의 lon/lat 도 동일. 좌표 근거는 둘 다 claim-gl2-hpd-loc(chunk_scenes-122_early_localities_kw-hangpaduri-geo, '33.45250; 126.40750')."
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-sangjeong-gogeum-yemun",
+      "claimId": "claim-gl2-sgy-year",
+      "problem": "time object 가 {year 1234, earliest 1234, latest 1234, precision 'year'} 로 특정 연도를 단정한다. 근거 발췌('최이가 진양후에 책봉된 것이 1234년(고종 21)이고')의 원문 문맥은 '…대작한 이규보는 1241년에 죽었으므로 그 사이에 찍어낸 것임을 알 수 있다'이며, 출처가 말하는 것은 1234~1241년 사이라는 범위다. fact.yearVerbatim 은 '1234년(고종 21)~1241년 사이'로 옳게 적었는데 claim 만 1234년으로 좁혀 두 곳이 어긋난다.",
+      "fix": "claim-gl2-sgy-year 의 time object 를 {year 1234, earliest 1234, latest 1241} 로 바꾸고 precision 은 'year' 를 유지한다(검증기는 earliest <= year <= latest 만 본다). scene.summary 에도 '1234~1241년 사이'로 적는다.",
+      "evidence": "raw/enc-sangjeong-gogeum-yemun.html 본문: '… 그 대작(代作)을 명한 최이가 진양후에 책봉된 것이 1234년(고종 21)이고, 대작한 이규보는 1241년에 죽었으므로 그 사이에 찍어낸 것임을 알 수 있다.' (2026-09-14 https://encykorea.aks.ac.kr/Article/E0027284 재조회로 동일 문장 확인)"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-mongol-peace-1259",
+      "claimId": "claim-gl2-peace-inner",
+      "problem": "object 가 place-gl2-ganghwa-oeseong(강화외성)인데 인용한 고려사 기사는 '癸未 始壞江都內城'(강도의 內城을 헐기 시작하다)으로 내성 기록이다. 반대로 외성을 말하는 기사('國家賂以重寶, 卽令都房, 壞外城.')는 claim-gl2-peace-outer 에서 object 가 polity-gl2-mongol 로 쓰여 있어, 장소 주장과 근거가 서로 엇갈렸다. 장면 좌표 자체는 발췌 근거(claim-gl2-oeseong-loc)로 따로 받쳐 있어 검증기는 통과하지만 주장-근거 대응이 틀렸다.",
+      "fix": "claim-gl2-peace-inner 의 citesChunk 를 chunk_goryeosa_kr_024_0090_0060_0070 로, quote 를 '卽令都房, 壞外城' 으로 바꾸어 외성 주장과 근거를 맞춘다. 내성 기사를 살리려면 place-gl2-ganghwa-naeseong 개체를 따로 두고 relatedTo 로 건다.",
+      "evidence": "python scripts/search_chunks.py --id chunk_goryeosa_kr_024_0090_0060_0040 -> '高宗 46年 › 6월 › 강도의 내성을 헐기 시작하다', '癸未 始壞江都內城, …' / --id chunk_goryeosa_kr_024_0090_0060_0070 -> '사절들의 강요로 외성까지 헐다', '… 國家賂以重寶, 卽令都房, 壞外城. …'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-mongol-peace-1259",
+      "sceneId": "scene-gl2-peace1259",
+      "problem": "items.json 의 sceneType 은 {kind 'court', sceneFunction 없음}이고 place 는 '강화 고려궁지'인데, 장면은 sceneFunction 'construction_site' 를 새로 붙이고 장소를 강화외성으로 옮겼다. 조립기는 sceneFunction 을 우선하므로 강화 교섭 항목이 화면에서는 공사장 구성(부역 인력·손수레)으로 표시된다. 또 이 항목의 핵심 인물인 태자 전(뒤의 원종)이 participants 에 없는데, 같은 result 안에 person-encykorea-wonjong 개체가 이미 있다.",
+      "fix": "sceneFunction 을 지워 항목 sceneType(court)과 맞추거나, 공사 구성을 유지해야 한다면 그 근거를 fact.note 에 적고 항목 sceneType 과 다르게 간 이유를 남긴다. 장소를 고려궁지에서 옮긴 것은 scene-gl2-cheondo 와의 겹침을 피한 합리적 판단이므로 유지하되, participants 에 person-encykorea-wonjong 을 claim-gl2-peace-year(태자 전의 몽골행) 근거로 넣어 '강화' 항목의 주체를 살린다.",
+      "evidence": "items.json hs-goryeo-late-mongol-peace-1259: sceneType {kind 'court', sceneFunction null}, place '강화 고려궁지' (126.485, 37.748) / result.json scene-gl2-peace1259: sceneFunction 'construction_site', place '강화외성' (126.51889, 37.68361), participants []"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-gwiju-siege",
+      "sceneId": "scene-gl2-gwiju",
+      "problem": "summary 에 '넉 달 가까이 버텼다'고 적었는데 이를 받치는 claim 이 없고, 인용한 고려사절요 본문은 '蒙兵圍城三旬, 百計攻之'(포위 30일)로 적는다. 항목 meaning 과 근거로 든 민족문화대백과 '박서' 서술도 '한 달 넘게'다. 조사자가 9월·11월·12월 기사를 이어 붙여 만든 수치가 사료가 말하는 포위 기간보다 길게 표현됐다.",
+      "fix": "summary 를 '한 달 남짓 포위를 견뎠고 9월·11월·12월 세 차례 공방이 이어졌다' 처럼 근거가 받치는 표현으로 바꾼다. 여러 차례 공방을 말하려면 11월·12월 기사 claim 을 추가해 근거를 붙인다.",
+      "evidence": "python scripts/search_chunks.py --id chunk_goryeosa-jeolyo_kj_016_0010_0020_0030_0020 -> '… 蒙兵圍城三旬, 百計攻之. 犀輒乘機應變以固守, 蒙兵不克而退.' / items.json evidence note '박서 — 포차와 진흙으로 한 달 넘게 몽골군을 막아냄'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-palman-daejanggyeong",
+      "sceneId": "scene-gl2-palman",
+      "problem": "persistence {kind 'facility', from 1251, to null, basisClaimIds [claim-gl2-palman-year, claim-gl2-palman-place]} 때문에 합천 해인사 자리에 1251년부터 지금까지 시설이 서 있는 것으로 표시된다. 그러나 근거 두 건은 각각 '1251년 완성'(강화 대장도감)과 '경상남도 합천군 가야면 해인사에 소장된'(현재 소장처)이고, 경판이 해인사로 옮겨진 것은 1398년이며 장경판전은 조선 전기 건물이다. 두 근거를 이어 붙여 사료가 말하지 않는 '1251년 해인사 존속'을 만들었다. coordinateNote 는 '경판을 새긴 곳은 강화·남해였고'라고 적어 조사자도 이 점을 알고 있다.",
+      "fix": "persistence.from 을 해인사 이안 연도로 바꾸고 그 연도의 근거 claim 을 추가하거나, from 1251 을 유지한다면 fact.note 와 scene.summary 에 '1251년 완성 당시 보관처는 강화이고 지금의 해인사 소장은 뒤의 일'임을 명시해 화면 카드에서 오해가 생기지 않게 한다.",
+      "evidence": "python scripts/search_chunks.py --id chunk_period96_goryeo_late_daejanggyeong-def -> '고려후기 대장도감에서 판각한 대장경으로 경상남도 합천군 가야면 해인사에 소장된 불교경전.' / --id chunk_scenes-103_goryeo_scenes_daejang-1251 -> '당시의 집권자 최우 등이 대장도감을 설치하여 16년 만인 1251년에 완성하였다.'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-sambyeolcho",
+      "sceneId": "scene-gl2-sambyeolcho",
+      "problem": "scene.startYear 1232 와 persistence.from 1232 를 뒷받침하는 claim 이 하나도 없다(dateClaimIds 는 1270·1273 뿐). 이 result 안의 근거는 오히려 '삼별초의 정확한 설치연대는 알 수 없으나,'다. 또 persistence.to 1273 은 민족문화대백과의 섬멸 연도인데, 부대 자체의 혁파는 고려사 원종 11년(1270) '罷三別抄' 로 기록돼 있어 존속 끝 연도가 두 갈래다. fact.note 가 '시작 연도 1232는 항목 목록의 값이다'라고 적어 둔 점은 좋지만 persistence 는 그대로 1232~1273 을 주장한다.",
+      "fix": "persistence.from 을 야별초 성립이 기록으로 확인되는 연도로 바꾸거나 basisClaimIds 에 claim-gl2-sbc-nodate 를 넣고 fact.note·scene.summary 에 '시작 연도는 확정되지 않았다'를 그대로 드러낸다. 끝 연도는 1270년 혁파와 1273년 섬멸 중 어느 쪽을 쓰는지 note 에 밝힌다.",
+      "evidence": "python scripts/search_chunks.py --id chunk_period96_goryeo_late_sambyeolcho-nodate -> '삼별초의 정확한 설치연대는 알 수 없으나,' / --id chunk_goryeosa_kr_026_0070_0050_0120 -> '戊辰 遣將軍 金之氐入江華, 罷三別抄.' (1270-05-29)"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-goryeo-late-gongnyeo-gyeolhon-dogam",
+      "sceneId": "scene-gl2-gongnyeo",
+      "problem": "좌표를 개성 남대문(37.9692, 126.5581)으로 잡고 coordinateNote 에 '지금 서 있는 문루는 뒤 시기의 것이다'라고만 적었다. 개성 남대문은 고려 말 내성(1391~1393)의 남문이므로 문루뿐 아니라 그 문 자리 자체가 1274년에는 없었다. 같은 도시 항목을 흩기 위한 대표점 선택은 합리적이지만 note 가 시대 불일치를 반만 밝힌다.",
+      "fix": "coordinateNote 를 '개경 도성 남쪽 구역을 가리키는 대표점이며, 지금의 남대문은 고려 말 내성(1391~1393)의 문이라 1274년에는 이 자리에 문이 없었다' 처럼 고쳐 시대 차이를 분명히 적는다. 가능하면 결혼도감이 있었을 개경 관아 구역의 다른 대표점을 찾는다.",
+      "evidence": "raw/en-kaesong-namdaemun.html 문서 머리 좌표 '37.9692; 126.5581', 문서 설명 'South gate of Kaesong, North Korea' / result.json scene-gl2-gongnyeo place.coordinateNote"
+    }
+  ],
+  "checkedItems": [
+    "hs-goryeo-late-gwiju-siege",
+    "hs-goryeo-late-mongol-invasion-1",
+    "hs-goryeo-late-cheoinseong-battle",
+    "hs-goryeo-late-chojo-tripitaka-loss",
+    "hs-goryeo-late-ganghwa-capital-move",
+    "hs-goryeo-late-kim-yunhu",
+    "hs-goryeo-late-sambyeolcho",
+    "hs-goryeo-late-sangjeong-gogeum-yemun",
+    "hs-goryeo-late-hwangnyongsa-pagoda-loss",
+    "hs-goryeo-late-palman-daejanggyeong",
+    "hs-goryeo-late-chungjuseong-battle",
+    "hs-goryeo-late-ssangseong-chonggwanbu",
+    "hs-goryeo-late-mongol-peace-1259",
+    "hs-goryeo-late-bae-jungson",
+    "hs-goryeo-late-dongnyeongbu",
+    "hs-goryeo-late-gaegyeong-return",
+    "hs-goryeo-late-sambyeolcho-resistance",
+    "hs-goryeo-late-kim-tongjeong",
+    "hs-goryeo-late-hangpaduri",
+    "hs-goryeo-late-tamna-chonggwanbu",
+    "hs-goryeo-late-chungnyeolwang",
+    "hs-goryeo-late-gongnyeo-gyeolhon-dogam",
+    "hs-goryeo-late-japan-expedition"
+  ],
+  "summary": "검증기는 PASS(failures=0, warnings=0)다. 항목 23건이 모두 fact 1건 + scene 1건 + claim 4~6건으로 채워졌고 missing[] 은 비어 있다. 표본 검증은 항목 23건 전부(core 6건 포함, 100%)를 출처에서 직접 재확인했다: 고려사·고려사절요 로컬 chunk 34건을 search_chunks 로 원문 대조해 인용문이 글자 그대로 있고 date.raw 의 서기연이 claim 연도와 맞는 것을 확인했고, 민족문화대백과·위키백과 발췌 chunk 16건과 raw/ HTML 15개의 발췌 위치·문맥을 확인했으며, encykorea 2건과 en.wikipedia 1건은 2026-09-14 실제 URL 재조회로 같은 문장이 지금도 있는 것을 확인했다(Kusong 은 sha256 까지 manifest 와 일치). 인물 개체 7건은 모두 data/entities/person 의 기존 id 를 재사용했고, images.json 23건은 접두어·인물 초상 문구·sceneId·subjectType 이 모두 맞는다. category 대응표, region 위도 규칙, decade, run.json 키, manifest sha256 도 어긋난 곳이 없었다. 고쳐야 할 곳은 두 가지가 크다. (1) 탐라총관부를 1273년 설치로 적고 근거로 '다루가치 설치' 기사를 달아 주장과 근거가 어긋났다 — 같은 result 의 민족문화대백과 발췌가 총관부 설치를 1300년으로 적고 1294년 반환까지 말한다. (2) 김통정 인물 장면과 항파두리 문화재 장면의 좌표가 소수점까지 똑같아 지도에서 한 점에 겹친다. 그 밖에 상정고금예문 연도를 출처가 말한 1234~1241 범위 대신 1234년으로 단정한 점, 1259년 강화 장면의 장소 주장이 외성인데 인용은 내성인 점, 같은 장면이 항목에 없던 sceneFunction 'construction_site' 를 붙여 교섭 항목이 공사장으로 표시되는 점, 귀주성 요약의 '넉 달 가까이'가 사료의 '圍城三旬'과 어긋나는 점, 팔만대장경 존속을 1251년부터 해인사에 둔 점(이안은 1398년), 삼별초 시작 연도 1232에 근거 claim 이 없는 점, 공녀 장면 좌표인 개성 남대문이 1391~1393년 내성 문이라는 점을 minor 로 적었다. 교과서 본문 전재나 금지 출처(db.history.go.kr) 직접 수집은 없었다."
+}

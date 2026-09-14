@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-late-joseon-late-1-hs-jl1-yi-tongjeyeong",
+    "subject": "place-hs-jl1-jeseungdang",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_scenes-101_yi_naval_tj-hansando-first",
+    "quote": "통제영(統制營)은 한산도에 최초로 두었는데,",
+    "note": "통제영을 한산도에 처음 두었다.",
+    "fromSource": "src-encykorea-sugun-tongjesa",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-18"
   }
 ]
 ```
