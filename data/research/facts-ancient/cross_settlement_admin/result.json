@@ -205,6 +205,25 @@
      "locator": "문서 머리 표시 좌표(class=\"geo\")"
     }
    ]
+  },
+  {
+   "id": "src-web-end-cross-680-geumgwan",
+   "title": "김해군",
+   "publisher": "한국어 위키백과",
+   "url": "https://ko.wikipedia.org/wiki/김해군",
+   "rawFile": "raw/end-cross-680-geumgwan.html",
+   "sha256": "2008c327b5eba5111126c007f8de6c509c8c11472691436fd332bb96cde9fafb",
+   "httpStatus": 200,
+   "byteLength": 169175,
+   "fetchedUtc": "2026-09-14T22:40:14Z",
+   "license": "짧은 인용(출처 표시)",
+   "excerpts": [
+    {
+     "id": "ex-end-cross-680-geumgwan",
+     "text": "태조 23년(940년) 김해부(金海府)가 된 데에 이어 다시금 임해현(臨海縣)으로 개편되었다가 임해군(臨海郡)으로 개칭하였다.",
+     "locator": "연혁"
+    }
+   ]
   }
  ],
  "entities": [
@@ -1256,6 +1275,48 @@
    "citesChunk": "chunk_samguksagi_sg_007_0020_0800",
    "quote": "二十年, 春二月",
    "note": "삼국사기 본기는 한 해의 기사를 여러 조각으로 나눠 싣고 연월 표기는 그 해 첫 조각에만 있다. 이 사실이 인용한 조각에는 연월 표기가 없어, 같은 해 같은 왕대의 첫 조각에 적힌 연 표기를 연도 표기의 근거로 따로 인용한다. 문무왕 20년(680) 조의 연 표기는 '二十年'이다."
+  },
+  {
+   "id": "claim-end-cross-505-siljikju",
+   "subject": "place-siljik",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 512
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_044_0050_0030",
+   "quote": "至十三年壬辰, 爲阿瑟羅州軍主",
+   "note": "주치 이동으로 폐지(하슬라/아슬라주로 옮김): 505년(지증왕 6년) 실직을 주로 삼고 이사부를 군주로 삼았다. 삼국사기 열전은 지증왕 13년 임진(512년)에 이사부가 아슬라주 군주가 되었다고 적어, 이 무렵 동해안 주치가 실직에서 하슬라로 옮겨가며 실직주가 없어진 것으로 본다. 지리지도 삼척군을 '지증왕 6년에 주로 삼았다'고만 적고 이후에는 군으로 다룬다. 대안 해석: 주치 이동 연도를 기록이 직접 말하지 않아 512년은 통설에 따른 것이고, 실직정(뒤의 하서정) 군단이 남은 점을 들어 더 늦게 보는 견해도 있다."
+  },
+  {
+   "id": "claim-end-cross-678-bugwon",
+   "subject": "place-bugwon",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 940
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_035_0020_0320",
+   "quote": "本髙句麗 平原郡, 文武王置北原小京.",
+   "note": "소경 폐지 — 고려 태조 23년(940) 북원경을 없애고 원주로 개편: 678년 문무왕이 둔 북원소경은 경덕왕 때 북원경으로 이름만 바뀌어 신라 말까지 이어졌고, 삼국사기 지리지도 '今原州'라 하여 고려 때 원주가 되었음을 적었다. 폐지 연도는 고려 태조 23년(940)의 군현 개편이다. 대안 해석: 소경 제도를 둔 신라의 멸망(935) 을 끝으로 볼 수도 있으나, 실제 행정단위 폐지 기록이 940년이라 그쪽을 택했다."
+  },
+  {
+   "id": "claim-end-cross-680-geumgwan",
+   "subject": "place-geumgwan",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "940년",
+    "year": 940,
+    "precision": "year",
+    "earliest": 940,
+    "latest": 940
+   },
+   "sourceId": "src-web-end-cross-680-geumgwan",
+   "citesExcerpt": "ex-end-cross-680-geumgwan",
+   "note": "소경 폐지 — 고려 태조 23년(940) 김해부로 개편: 680년 가야군에 둔 금관소경은 경덕왕 때 김해경으로 이름이 바뀌어 신라 말까지 이어졌다. 삼국유사 가락국기는 '뒤 259년에 고려 태조가 통합한 뒤 대대로 임해현이 되었다'고 하여 소경이 없어지고 현·부로 내려앉은 사정을 전한다(681년 기준 259년 뒤가 940년). 폐지 연도 940년은 고려 태조 23년 군현 개편 기록으로 뒷받침된다. 대안 해석: 신라 멸망 935년을 국가 소멸로 잡을 수도 있으나, 실제 소경 폐지 기록이 940년이라 그쪽을 택했다."
   }
  ],
  "scenes": [
@@ -1327,9 +1388,10 @@
    "persistence": {
     "kind": "institution",
     "from": 505,
-    "to": null,
+    "to": 512,
     "basisClaimIds": [
-     "c-505-a"
+     "c-505-a",
+     "claim-end-cross-505-siljikju"
     ]
    }
   },
@@ -1533,9 +1595,10 @@
    "persistence": {
     "kind": "institution",
     "from": 678,
-    "to": null,
+    "to": 940,
     "basisClaimIds": [
-     "c-678-a"
+     "c-678-a",
+     "claim-end-cross-678-bugwon"
     ]
    }
   },
@@ -1573,9 +1636,10 @@
    "persistence": {
     "kind": "institution",
     "from": 680,
-    "to": null,
+    "to": 940,
     "basisClaimIds": [
-     "c-680-a"
+     "c-680-a",
+     "claim-end-cross-680-geumgwan"
     ]
    }
   },

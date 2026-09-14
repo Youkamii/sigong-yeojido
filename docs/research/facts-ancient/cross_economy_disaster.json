@@ -1,15 +1,15 @@
 {
   "job": "cross_economy_disaster",
-  "sources": 8,
-  "excerpts": 8,
+  "sources": 9,
+  "excerpts": 9,
   "chunkClaims": 71,
-  "excerptClaims": 0,
+  "excerptClaims": 1,
   "facts": 31,
   "factsByCategory": {
     "disaster": 15,
     "economy": 16
   },
-  "claims": 71,
+  "claims": 72,
   "entities": 53,
   "rawFilesChecked": [
     {
@@ -75,6 +75,14 @@
       "rawBytes": 440941,
       "excerpts": 1,
       "quotedWords": 2
+    },
+    {
+      "source": "src-web-end-ced-eco-663",
+      "url": "https://ko.wikipedia.org/wiki/혜공왕",
+      "sha256": "73365236072ab39d3606b926066de130b7d083e29a4c9463f4d5d8d3f12b2fd2",
+      "rawBytes": 164634,
+      "excerpts": 1,
+      "quotedWords": 8
     }
   ],
   "missing": [
@@ -125,8 +133,7 @@
   "downloadPerformedBy": "claude-opus-5 via workflow",
   "integrationPerformedBy": "Codex",
   "reviewedEntityIds": [
-    "event-ced-d817",
-    "polity-silla"
+    "event-ced-e663"
   ],
   "reviewedSourceIds": {
     "src-enwiki-gungnae": "src-facts-ancient-cross_economy_disaster-enwiki-gungnae"

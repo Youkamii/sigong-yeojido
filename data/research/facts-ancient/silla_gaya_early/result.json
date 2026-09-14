@@ -1,3131 +1,3173 @@
 {
-  "collection": "facts-ancient",
-  "job": "silla_gaya_early",
-  "cell": {
-    "polity": "신라·가야",
-    "from": -57,
-    "to": 300,
-    "regions": [
-      "south"
-    ],
-    "categories": {
-      "settlement": 3,
-      "administration": 4,
-      "facility": 3,
-      "economy": 3,
-      "disaster": 2,
-      "culture": 2,
-      "foreign": 2,
-      "person": 1
+ "collection": "facts-ancient",
+ "job": "silla_gaya_early",
+ "cell": {
+  "polity": "신라·가야",
+  "from": -57,
+  "to": 300,
+  "regions": [
+   "south"
+  ],
+  "categories": {
+   "settlement": 3,
+   "administration": 4,
+   "facility": 3,
+   "economy": 3,
+   "disaster": 2,
+   "culture": 2,
+   "foreign": 2,
+   "person": 1
+  }
+ },
+ "sources": [
+  {
+   "id": "src-kowiki-wolseong",
+   "title": "경주 월성 — 위키백과",
+   "publisher": "위키백과 (한국어)",
+   "license": "CC BY-SA 4.0",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%9B%94%EC%84%B1",
+   "rawFile": "raw/gyeongju-wolseong.html",
+   "excerpts": [
+    {
+     "id": "ex-wolseong-geo",
+     "text": "35.83083; 129.22611",
+     "locator": "문서 머리 표시 좌표(geo)"
     }
+   ],
+   "sha256": "e1758d1ef3b417bb45eae97cee684e83bc30cdf4a644e0727d309fcd30cda589",
+   "byteLength": 277688,
+   "httpStatus": 200,
+   "fetchedUtc": "2026-09-13T00:37:57Z"
   },
-  "sources": [
+  {
+   "id": "src-kowiki-gujibong",
+   "title": "구지봉 — 위키백과",
+   "publisher": "위키백과 (한국어)",
+   "license": "CC BY-SA 4.0",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%A7%80%EB%B4%89",
+   "rawFile": "raw/gimhae-gujibong.html",
+   "excerpts": [
     {
-      "id": "src-kowiki-wolseong",
-      "title": "경주 월성 — 위키백과",
-      "publisher": "위키백과 (한국어)",
-      "license": "CC BY-SA 4.0",
-      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EC%9B%94%EC%84%B1",
-      "rawFile": "raw/gyeongju-wolseong.html",
-      "excerpts": [
-        {
-          "id": "ex-wolseong-geo",
-          "text": "35.83083; 129.22611",
-          "locator": "문서 머리 표시 좌표(geo)"
-        }
-      ],
-      "sha256": "e1758d1ef3b417bb45eae97cee684e83bc30cdf4a644e0727d309fcd30cda589",
-      "byteLength": 277688,
-      "httpStatus": 200,
-      "fetchedUtc": "2026-09-13T00:37:57Z"
-    },
-    {
-      "id": "src-kowiki-gujibong",
-      "title": "구지봉 — 위키백과",
-      "publisher": "위키백과 (한국어)",
-      "license": "CC BY-SA 4.0",
-      "url": "https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%A7%80%EB%B4%89",
-      "rawFile": "raw/gimhae-gujibong.html",
-      "excerpts": [
-        {
-          "id": "ex-gujibong-geo",
-          "text": "35.243194; 128.875889",
-          "locator": "문서 머리 표시 좌표(geo)"
-        }
-      ],
-      "sha256": "32fc4704510ea64c80c82ae2b246a17176816557bb49c0de9f09352787e6527d",
-      "byteLength": 91368,
-      "httpStatus": 200,
-      "fetchedUtc": "2026-09-13T00:37:57Z"
-    },
-    {
-      "id": "src-kowiki-dalseong",
-      "title": "대구 달성 — 위키백과",
-      "publisher": "위키백과 (한국어)",
-      "license": "CC BY-SA 4.0",
-      "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EA%B5%AC_%EB%8B%AC%EC%84%B1",
-      "rawFile": "raw/daegu-dalseong.html",
-      "excerpts": [
-        {
-          "id": "ex-dalseong-geo",
-          "text": "35.87361; 128.57694",
-          "locator": "문서 머리 표시 좌표(geo)"
-        }
-      ],
-      "sha256": "5ccc171d65893295cd78d0fc3b8546730fc2bf8ff891da39f78b59f18e26282e",
-      "byteLength": 97221,
-      "httpStatus": 200,
-      "fetchedUtc": "2026-09-13T00:37:57Z"
-    },
-    {
-      "id": "src-encykorea-daebang",
-      "title": "대방군 — 한국민족문화대백과사전",
-      "publisher": "한국학중앙연구원 한국민족문화대백과사전",
-      "license": "한국민족문화대백과사전 (짧은 인용)",
-      "url": "https://encykorea.aks.ac.kr/Article/E0014398",
-      "rawFile": "raw/encykorea-daebang.html",
-      "excerpts": [
-        {
-          "id": "ex-daebang-238",
-          "text": "238년 위나라가 공손씨 정권을 멸망시키고 이 지역을 차지하였다.",
-          "locator": "내용 요약"
-        }
-      ],
-      "sha256": "9fc3506dd77a1991a669b2b2acf884846efafbdee8ca9eb74dba3e018b991bdd",
-      "byteLength": 107960,
-      "httpStatus": 200,
-      "fetchedUtc": "2026-09-13T01:08:11Z"
+     "id": "ex-gujibong-geo",
+     "text": "35.243194; 128.875889",
+     "locator": "문서 머리 표시 좌표(geo)"
     }
-  ],
-  "entities": [
+   ],
+   "sha256": "32fc4704510ea64c80c82ae2b246a17176816557bb49c0de9f09352787e6527d",
+   "byteLength": 91368,
+   "httpStatus": 200,
+   "fetchedUtc": "2026-09-13T00:37:57Z"
+  },
+  {
+   "id": "src-kowiki-dalseong",
+   "title": "대구 달성 — 위키백과",
+   "publisher": "위키백과 (한국어)",
+   "license": "CC BY-SA 4.0",
+   "url": "https://ko.wikipedia.org/wiki/%EB%8C%80%EA%B5%AC_%EB%8B%AC%EC%84%B1",
+   "rawFile": "raw/daegu-dalseong.html",
+   "excerpts": [
     {
-      "id": "polity-silla",
-      "type": "Polity",
-      "label": "신라(사로국)"
-    },
-    {
-      "id": "polity-sgy-garak",
-      "type": "Polity",
-      "label": "가락국(금관가야)"
-    },
-    {
-      "id": "place-seorabeol",
-      "type": "Place",
-      "label": "서라벌(경주 일대)"
-    },
-    {
-      "id": "place-sgy-geumseong",
-      "type": "Place",
-      "label": "금성(金城)"
-    },
-    {
-      "id": "place-sgy-wolseong",
-      "type": "Place",
-      "label": "월성(月城)"
-    },
-    {
-      "id": "place-sgy-dalbeolseong",
-      "type": "Place",
-      "label": "달벌성"
-    },
-    {
-      "id": "place-sgy-sadoseong",
-      "type": "Place",
-      "label": "사도성"
-    },
-    {
-      "id": "place-sgy-gujibong",
-      "type": "Place",
-      "label": "구지봉"
-    },
-    {
-      "id": "place-sgy-gimhae",
-      "type": "Place",
-      "label": "별포 나루(김해)"
-    },
-    {
-      "id": "place-sgy-geumgwanseong",
-      "type": "Place",
-      "label": "금관성(김해)"
-    },
-    {
-      "id": "entity-sgy-jinhan-6bu",
-      "type": "Group",
-      "label": "진한 6부"
-    },
-    {
-      "id": "entity-sgy-gugan",
-      "type": "Group",
-      "label": "가락 아홉 간(九干)"
-    },
-    {
-      "id": "entity-sgy-5gaya",
-      "type": "Group",
-      "label": "다섯 가야"
-    },
-    {
-      "id": "entity-sgy-byeonjin",
-      "type": "Group",
-      "label": "변진(변한) 여러 나라"
-    },
-    {
-      "id": "entity-sgy-byeonjin-iron",
-      "type": "Facility",
-      "label": "변진의 철 산출"
-    },
-    {
-      "id": "entity-sgy-byeonjin-market",
-      "type": "Facility",
-      "label": "변진의 저자(철 교역)"
-    },
-    {
-      "id": "entity-sgy-gungsil",
-      "type": "Facility",
-      "label": "금성 궁실"
-    },
-    {
-      "id": "entity-sgy-sijomyo",
-      "type": "Facility",
-      "label": "시조묘"
-    },
-    {
-      "id": "entity-sgy-jeongsadang",
-      "type": "Facility",
-      "label": "정사당"
-    },
-    {
-      "id": "entity-sgy-garak-raseong",
-      "type": "Facility",
-      "label": "가락국 나성과 궁궐"
-    },
-    {
-      "id": "entity-sgy-sureung-myo",
-      "type": "Facility",
-      "label": "수릉왕묘"
-    },
-    {
-      "id": "entity-sgy-pasa-tap",
-      "type": "Facility",
-      "label": "금관 호계사 파사석탑"
-    },
-    {
-      "id": "entity-sgy-gamul-masan",
-      "type": "Place",
-      "label": "감물현·마산현"
-    },
-    {
-      "id": "entity-sgy-hangibu",
-      "type": "Group",
-      "label": "한기부"
-    },
-    {
-      "id": "entity-sgy-hoesogok",
-      "type": "Work",
-      "label": "회소곡"
-    },
-    {
-      "id": "entity-sgy-ayuta",
-      "type": "Polity",
-      "label": "아유타국"
-    },
-    {
-      "id": "person-sgy-heo-hwangok",
-      "type": "Person",
-      "label": "허황옥"
-    },
-    {
-      "id": "person-sgy-geodeung",
-      "type": "Person",
-      "label": "거등왕"
-    },
-    {
-      "id": "person-sgy-himiko",
-      "type": "Person",
-      "label": "왜 여왕 비미호(히미코)"
-    },
-    {
-      "id": "person-sgy-budo",
-      "type": "Person",
-      "label": "부도(夫道)"
-    },
-    {
-      "id": "event-sgy-jinhan-6chon",
-      "type": "Event",
-      "label": "진한 6촌의 형성"
-    },
-    {
-      "id": "event-sgy-nongsang-bce41",
-      "type": "Event",
-      "label": "6부 순무와 권농"
-    },
-    {
-      "id": "event-sgy-relief-18",
-      "type": "Event",
-      "label": "18년 누리 기근 구휼"
-    },
-    {
-      "id": "event-sgy-relief-108",
-      "type": "Event",
-      "label": "108년 수해 진휼"
-    },
-    {
-      "id": "event-sgy-gabae",
-      "type": "Event",
-      "label": "가배(길쌈 겨루기)"
-    },
-    {
-      "id": "event-sgy-garak-founding",
-      "type": "Event",
-      "label": "가락국 건국"
-    },
-    {
-      "id": "event-sgy-heo-arrival",
-      "type": "Event",
-      "label": "허황옥의 도래"
-    },
-    {
-      "id": "event-sgy-juju-67",
-      "type": "Event",
-      "label": "주주·군주 설치"
-    },
-    {
-      "id": "event-sgy-jebang-144",
-      "type": "Event",
-      "label": "주군 제방 수리와 개간 명령"
-    },
-    {
-      "id": "event-sgy-wae-envoy-173",
-      "type": "Event",
-      "label": "왜 여왕의 견사"
-    },
-    {
-      "id": "event-sgy-wae-migration-193",
-      "type": "Event",
-      "label": "193년 왜인 기근 이주"
-    },
-    {
-      "id": "event-sgy-sado-migration-293",
-      "type": "Event",
-      "label": "사도성 개축과 사민"
-    },
-    {
-      "id": "event-sgy-byeonjin-record",
-      "type": "Event",
-      "label": "삼국지 변진전이 전하는 변진의 상태"
+     "id": "ex-dalseong-geo",
+     "text": "35.87361; 128.57694",
+     "locator": "문서 머리 표시 좌표(geo)"
     }
-  ],
-  "claims": [
-    {
-      "id": "claim-sgy-6chon-time",
-      "subject": "event-sgy-jinhan-6chon",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "五鳳元年甲子",
-        "year": -57,
-        "precision": "year",
-        "earliest": -57,
-        "latest": -57
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
-      "quote": "前漢 孝宣帝五鳳元年甲子, 四月丙辰即位",
-      "note": "혁거세 즉위 기사의 서기전 57년 간지"
-    },
-    {
-      "id": "claim-sgy-6chon-village",
-      "subject": "place-seorabeol",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "entity-sgy-jinhan-6bu"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
-      "quote": "朝鮮遺民分居山谷之間, 爲六村",
-      "note": "조선 유민이 산곡 사이에 나뉘어 살아 여섯 마을을 이루었다"
-    },
-    {
-      "id": "claim-sgy-6chon-admin",
-      "subject": "entity-sgy-jinhan-6bu",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "辰韓六部"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
-      "quote": "是爲辰韓六部"
-    },
-    {
-      "id": "claim-sgy-garak-time",
-      "subject": "event-sgy-garak-founding",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "建㱏十八年壬寅",
-        "year": 42,
-        "precision": "month",
-        "earliest": 42,
-        "latest": 42
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
-      "quote": "屬後漢世祖光㱏帝建㱏十八年壬寅三月禊洛之日"
-    },
-    {
-      "id": "claim-sgy-gugan-households",
-      "subject": "entity-sgy-gugan",
-      "predicate": "syj:householdCount",
-      "object": {
-        "kind": "literal",
-        "value": 100,
-        "unit": "戶"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
-      "quote": "是酋長領緫百姓凢一百户七万五千人",
-      "note": "원문 \"凡一百戶七萬五千人\"; 호수와 인구가 서로 맞지 않는 전승 수치다"
-    },
-    {
-      "id": "claim-sgy-gugan-population",
-      "subject": "entity-sgy-gugan",
-      "predicate": "syj:populationCount",
-      "object": {
-        "kind": "literal",
-        "value": 75000,
-        "unit": "口"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
-      "quote": "是酋長領緫百姓凢一百户七万五千人"
-    },
-    {
-      "id": "claim-sgy-gugan-life",
-      "subject": "entity-sgy-gugan",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "place-sgy-gujibong"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
-      "quote": "多以自都山野鑿井而飲耕田而食",
-      "note": "산야에 저마다 자리잡아 우물을 파 마시고 밭을 갈아 먹었다"
-    },
-    {
-      "id": "claim-sgy-garak-founded",
-      "subject": "polity-sgy-garak",
-      "predicate": "syj:foundedIn",
-      "object": {
-        "kind": "year",
-        "value": 42
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
-      "quote": "國稱大駕洛又稱伽耶國, 即六伽耶之一也"
-    },
-    {
-      "id": "claim-sgy-5gaya",
-      "subject": "entity-sgy-5gaya",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-sgy-garak"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
-      "quote": "餘五人各歸為五伽耶主"
-    },
-    {
-      "id": "claim-sgy-garak-bounds",
-      "subject": "polity-sgy-garak",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "東以黄山江, 西南以濸海, 西北以地理山, 東北以伽耶山"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
-      "quote": "東以黄山江, 西南以濸海, 西北以地理山, 東北以伽耶山"
-    },
-    {
-      "id": "claim-sgy-garak-raseong",
-      "subject": "entity-sgy-garak-raseong",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "一千五百歩周迴羅城"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
-      "quote": "築置一千五百歩周迴羅城, 官禁殿宇及諸有司屋宇虎庫倉廩之地",
-      "note": "둘레 1500보 나성과 궁궐·관사·창고 터를 함께 잡았다"
-    },
-    {
-      "id": "claim-sgy-garak-labor",
-      "subject": "entity-sgy-garak-raseong",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-sgy-garak"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
-      "quote": "徧徴國内丁壯·人夫·工匠",
-      "note": "나라 안의 장정·인부·공장을 두루 징발했다"
-    },
-    {
-      "id": "claim-sgy-wae193-time",
-      "subject": "event-sgy-wae-migration-193",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "六月",
-        "year": 193,
-        "precision": "month",
-        "earliest": 193,
-        "latest": 193
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0030_0180",
-      "quote": "六月, 倭人大饑, 來求食者千餘人"
-    },
-    {
-      "id": "claim-sgy-wae193-count",
-      "subject": "event-sgy-wae-migration-193",
-      "predicate": "syj:populationCount",
-      "object": {
-        "kind": "literal",
-        "value": 1000,
-        "unit": "口"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0030_0180",
-      "quote": "來求食者千餘人",
-      "note": "원문 \"千餘人\"; 1천을 하한으로 잡았다"
-    },
-    {
-      "id": "claim-sgy-wae193-place",
-      "subject": "event-sgy-wae-migration-193",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-seorabeol"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0030_0180",
-      "quote": "倭人大饑, 來求食者千餘人"
-    },
-    {
-      "id": "claim-sgy-byeonjin-states",
-      "subject": "entity-sgy-byeonjin",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "弁·辰韓合二十四國"
-      },
-      "sourceId": "src-jipseong-ko_022",
-      "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
-      "quote": "弁·辰韓合二十四國, 大國四五千家, 小國六七百家, 總四五萬戶"
-    },
-    {
-      "id": "claim-sgy-byeonjin-households",
-      "subject": "entity-sgy-byeonjin",
-      "predicate": "syj:householdCount",
-      "object": {
-        "kind": "literal",
-        "value": 40000,
-        "unit": "戶"
-      },
-      "sourceId": "src-jipseong-ko_022",
-      "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
-      "quote": "總四五萬戶",
-      "note": "원문은 \"總四五萬戶\"(4~5만 호); 하한 4만을 수치로 적었다"
-    },
-    {
-      "id": "claim-sgy-byeonjin-walls",
-      "subject": "entity-sgy-byeonjin",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "亦有城郭"
-      },
-      "sourceId": "src-jipseong-ko_022",
-      "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
-      "quote": "弁辰與辰韓雜居, 亦有城郭"
-    },
-    {
-      "id": "claim-sgy-byeonjin-iron",
-      "subject": "entity-sgy-byeonjin-iron",
-      "predicate": "syj:producedAt",
-      "object": {
-        "kind": "entity",
-        "id": "entity-sgy-byeonjin"
-      },
-      "sourceId": "src-jipseong-ko_022",
-      "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
-      "quote": "國出鐵, 韓·濊·倭皆從取之"
-    },
-    {
-      "id": "claim-sgy-byeonjin-market",
-      "subject": "entity-sgy-byeonjin-market",
-      "predicate": "syj:producedAt",
-      "object": {
-        "kind": "entity",
-        "id": "entity-sgy-byeonjin"
-      },
-      "sourceId": "src-jipseong-ko_022",
-      "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
-      "quote": "諸市買皆用鐵, 如中國用錢, 又以供給二郡",
-      "note": "시장에서 사고팔 때 모두 철을 썼다. 중국에서 돈을 쓰는 것과 같았고 낙랑·대방 두 군에도 공급했다"
-    },
-    {
-      "id": "claim-sgy-byeonjin-farm",
-      "subject": "entity-sgy-byeonjin",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "entity-sgy-byeonjin-iron"
-      },
-      "sourceId": "src-jipseong-ko_022",
-      "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
-      "quote": "土地肥美, 宜種五穀及稻, 曉蠶桑, 作縑布, 乘駕牛馬"
-    },
-    {
-      "id": "claim-sgy-sado293-time",
-      "subject": "event-sgy-sado-migration-293",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "十年",
-        "year": 293,
-        "precision": "month",
-        "earliest": 293,
-        "latest": 293
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0080_0120",
-      "quote": "十年, 春二月, 攺築沙道城, 移沙伐州豪民八十餘家"
-    },
-    {
-      "id": "claim-sgy-sado293-move",
-      "subject": "event-sgy-sado-migration-293",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-sgy-sadoseong"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0080_0120",
-      "quote": "攺築沙道城, 移沙伐州豪民八十餘家"
-    },
-    {
-      "id": "claim-sgy-sado293-households",
-      "subject": "event-sgy-sado-migration-293",
-      "predicate": "syj:householdCount",
-      "object": {
-        "kind": "literal",
-        "value": 80,
-        "unit": "戶"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0080_0120",
-      "quote": "移沙伐州豪民八十餘家",
-      "note": "원문 표기는 \"八十餘家\"(80여 가). 단위는 검증기 규약상 戶로 적었다"
-    },
-    {
-      "id": "claim-sgy-geumseong-time",
-      "subject": "place-sgy-geumseong",
-      "predicate": "syj:builtIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "二十一年",
-        "year": -37,
-        "precision": "year",
-        "earliest": -37,
-        "latest": -37
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0020_0090",
-      "quote": "二十一年, 築京城, 號曰金城"
-    },
-    {
-      "id": "claim-sgy-geumseong-capital",
-      "subject": "place-sgy-geumseong",
-      "predicate": "syj:capitalOf",
-      "object": {
-        "kind": "entity",
-        "id": "polity-silla"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0020_0090",
-      "quote": "築京城, 號曰金城"
-    },
-    {
-      "id": "claim-sgy-gungsil-time",
-      "subject": "entity-sgy-gungsil",
-      "predicate": "syj:builtIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "二十六年",
-        "year": -32,
-        "precision": "month",
-        "earliest": -32,
-        "latest": -32
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0020_0120",
-      "quote": "二十六年, 春正月, 營宮室於金城"
-    },
-    {
-      "id": "claim-sgy-gungsil-place",
-      "subject": "entity-sgy-gungsil",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-sgy-geumseong"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0020_0120",
-      "quote": "營宮室於金城"
-    },
-    {
-      "id": "claim-sgy-sijomyo-time",
-      "subject": "entity-sgy-sijomyo",
-      "predicate": "syj:builtIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "三年",
-        "year": 6,
-        "precision": "month",
-        "earliest": 6,
-        "latest": 6
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0030_0040",
-      "quote": "三年, 春正月, 立始祖廟"
-    },
-    {
-      "id": "claim-sgy-sijomyo-place",
-      "subject": "entity-sgy-sijomyo",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-seorabeol"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0030_0040",
-      "quote": "立始祖廟"
-    },
-    {
-      "id": "claim-sgy-hwang18-time",
-      "subject": "event-sgy-relief-18",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "秋七月",
-        "year": 18,
-        "precision": "month",
-        "earliest": 18,
-        "latest": 18
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0030_0120",
-      "quote": "秋七月, 蝗, 民饑, 發倉廪救之"
-    },
-    {
-      "id": "claim-sgy-hwang18-relief",
-      "subject": "event-sgy-relief-18",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-sgy-geumseong"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0030_0120",
-      "quote": "蝗, 民饑, 發倉廪救之",
-      "note": "누리 피해로 백성이 굶주리자 창고를 열어 구제했다"
-    },
-    {
-      "id": "claim-sgy-gabae-time",
-      "subject": "event-sgy-gabae",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "九年",
-        "year": 32,
-        "precision": "year",
-        "earliest": 32,
-        "latest": 32
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0040_0040",
-      "quote": "九年, 春, 攺六部之名, 仍賜姓"
-    },
-    {
-      "id": "claim-sgy-yukbu-rename",
-      "subject": "entity-sgy-jinhan-6bu",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "梁部·沙梁部·漸梁部·夲彼部·漢祇部·習比部"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0040_0040",
-      "quote": "楊山部為梁部, 姓李, 髙墟部為沙梁部, 姓崔. 大樹部爲漸梁部, 姓孫, 于珍部為夲彼部, 姓鄭. 加利部為漢祇部, 姓裴, 明活部為習比部, 姓薛.",
-      "note": "literal value 의 6부 이름 전부를 덮도록 인용을 6부 개명 대목 전체로 늘렸다."
-    },
-    {
-      "id": "claim-sgy-gabae-act",
-      "subject": "event-sgy-gabae",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "entity-sgy-jinhan-6bu"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0040_0060",
-      "quote": "至八月十五日, 考其功之多小, 負者置酒食, 以謝勝者. 於是, 歌舞百戱皆作, 謂之嘉俳"
-    },
-    {
-      "id": "claim-sgy-gabae-work",
-      "subject": "event-sgy-gabae",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "entity-sgy-hoesogok"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0040_0060",
-      "quote": "自秋七月旣望, 每日早集大部之𨓍, 績麻乙夜而罷",
-      "note": "7월 16일부터 날마다 부의 뜰에 모여 밤늦도록 길쌈했다"
-    },
-    {
-      "id": "claim-sgy-hoesogok",
-      "subject": "entity-sgy-hoesogok",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "event-sgy-gabae"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0040_0060",
-      "quote": "後人因其聲而作歌, 名㑹蘇曲"
-    },
-    {
-      "id": "claim-sgy-heo-time",
-      "subject": "event-sgy-heo-arrival",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "建㱏二十四年戊申七月二十七日",
-        "year": 48,
-        "precision": "day",
-        "earliest": 48,
-        "latest": 48
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
-      "quote": "屬建㱏二十四年戊申七月二十七日, 九干等朝謁之次献言曰"
-    },
-    {
-      "id": "claim-sgy-heo-origin",
-      "subject": "person-sgy-heo-hwangok",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "entity-sgy-ayuta"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
-      "quote": "妾是阿踰陁國公主也, 姓許名黄玉, 年二八矣"
-    },
-    {
-      "id": "claim-sgy-heo-retinue",
-      "subject": "event-sgy-heo-arrival",
-      "predicate": "syj:populationCount",
-      "object": {
-        "kind": "literal",
-        "value": 20,
-        "unit": "口"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
-      "quote": "或臧獲并計二十餘口",
-      "note": "원문 \"二十餘口\"; 20을 하한으로 적었다"
-    },
-    {
-      "id": "claim-sgy-heo-landing",
-      "subject": "event-sgy-heo-arrival",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-sgy-gimhae"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
-      "quote": "王后於山外别浦津頭維舟. 登陸憇於髙嶠",
-      "note": "왕후가 산 밖 별포 나루에 배를 대고 뭍에 올랐다"
-    },
-    {
-      "id": "claim-sgy-heo-gift",
-      "subject": "event-sgy-heo-arrival",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "各賜粮粳米十碩布三十疋"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
-      "quote": "各賜粮粳米十碩布三十疋令歸本國",
-      "note": "돌아가는 뱃사람 15인에게 멥쌀 10섬과 베 30필씩을 주었다"
-    },
-    {
-      "id": "claim-sgy-pasa-time",
-      "subject": "entity-sgy-pasa-tap",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "建武二十四年甲申",
-        "year": 48,
-        "precision": "year",
-        "earliest": 48,
-        "latest": 48
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_003_0020_0030_0010",
-      "quote": "以東漢建武二十四年甲申, 自西域 阿踰陁國所載來"
-    },
-    {
-      "id": "claim-sgy-pasa-place",
-      "subject": "entity-sgy-pasa-tap",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-sgy-geumgwanseong"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_003_0020_0030_0010",
-      "quote": "金官虎溪寺婆娑石塔者昔此邑爲金官國時"
-    },
-    {
-      "id": "claim-sgy-pasa-form",
-      "subject": "entity-sgy-pasa-tap",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "塔方四面五層"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_003_0020_0030_0010",
-      "quote": "塔方四面五層"
-    },
-    {
-      "id": "claim-sgy-juju-time",
-      "subject": "event-sgy-juju-67",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "十一年",
-        "year": 67,
-        "precision": "month",
-        "earliest": 67,
-        "latest": 67
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0050_0140",
-      "quote": "十一年, 春正月, 以朴氏貴戚, 分理國内州郡, 號爲州主·郡主"
-    },
-    {
-      "id": "claim-sgy-juju-admin",
-      "subject": "polity-silla",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "州主·郡主"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0050_0140",
-      "quote": "分理國内州郡, 號爲州主·郡主"
-    },
-    {
-      "id": "claim-sgy-wolseong-time",
-      "subject": "place-sgy-wolseong",
-      "predicate": "syj:builtIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "二十二年",
-        "year": 101,
-        "precision": "month",
-        "earliest": 101,
-        "latest": 101
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0060_0240",
-      "quote": "二十二年, 春二月, 築城, 名月城"
-    },
-    {
-      "id": "claim-sgy-wolseong-move",
-      "subject": "place-sgy-wolseong",
-      "predicate": "syj:capitalOf",
-      "object": {
-        "kind": "entity",
-        "id": "polity-silla"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0060_0250",
-      "quote": "秋七月, 王移居月城"
-    },
-    {
-      "id": "claim-sgy-daesu108-time",
-      "subject": "event-sgy-relief-108",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "二十九年",
-        "year": 108,
-        "precision": "month",
-        "earliest": 108,
-        "latest": 108
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0060_0350",
-      "quote": "二十九年, 夏五月, 大水, 民飢. 發使十道, 開食賑給"
-    },
-    {
-      "id": "claim-sgy-daesu108-relief",
-      "subject": "event-sgy-relief-108",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "發使十道, 開食賑給"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0060_0350",
-      "quote": "發使十道, 開食賑給",
-      "note": "사신을 열 방면으로 보내 창고를 열고 진휼했다"
-    },
-    {
-      "id": "claim-sgy-jsd-time",
-      "subject": "entity-sgy-jeongsadang",
-      "predicate": "syj:builtIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "五年",
-        "year": 138,
-        "precision": "month",
-        "earliest": 138,
-        "latest": 138
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0080_0060",
-      "quote": "五年, 春二月, 置政事堂於金城"
-    },
-    {
-      "id": "claim-sgy-jsd-place",
-      "subject": "entity-sgy-jeongsadang",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-sgy-geumseong"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0080_0060",
-      "quote": "置政事堂於金城"
-    },
-    {
-      "id": "claim-sgy-jebang-time",
-      "subject": "event-sgy-jebang-144",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "十一年",
-        "year": 144,
-        "precision": "month",
-        "earliest": 144,
-        "latest": 144
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0080_0180",
-      "quote": "十一年, 春二月, 下令"
-    },
-    {
-      "id": "claim-sgy-jebang-act",
-      "subject": "event-sgy-jebang-144",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "諸州郡修完堤坊, 廣闢田野"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0080_0180",
-      "quote": "諸州郡修完堤坊, 廣闢田野",
-      "note": "여러 주군에 제방을 고쳐 완성하고 논밭을 넓히라 명했다"
-    },
-    {
-      "id": "claim-sgy-jebang-ban",
-      "subject": "polity-silla",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "禁民間用金銀珠玉"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0080_0180",
-      "quote": "又下令, 禁民間用金銀珠玉"
-    },
-    {
-      "id": "claim-sgy-hyeon157-time",
-      "subject": "entity-sgy-gamul-masan",
-      "predicate": "syj:establishedIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "四年",
-        "year": 157,
-        "precision": "month",
-        "earliest": 157,
-        "latest": 157
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0020_0050",
-      "quote": "四年, 春二月, 始置甘勿·馬山二縣"
-    },
-    {
-      "id": "claim-sgy-hyeon157-admin",
-      "subject": "entity-sgy-gamul-masan",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "縣"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0020_0050",
-      "quote": "始置甘勿·馬山二縣"
-    },
-    {
-      "id": "claim-sgy-bimiho-time",
-      "subject": "event-sgy-wae-envoy-173",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "二十年",
-        "year": 173,
-        "precision": "month",
-        "earliest": 173,
-        "latest": 173
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0020_0230",
-      "quote": "二十年, 夏五月, 倭女王卑彌乎遣使來聘"
-    },
-    {
-      "id": "claim-sgy-bimiho-act",
-      "subject": "person-sgy-himiko",
-      "predicate": "syj:participatedIn",
-      "object": {
-        "kind": "entity",
-        "id": "event-sgy-wae-envoy-173"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0020_0230",
-      "quote": "倭女王卑彌乎遣使來聘"
-    },
-    {
-      "id": "claim-sgy-geodeung-time",
-      "subject": "person-sgy-geodeung",
-      "predicate": "syj:reignedFrom",
-      "object": {
-        "kind": "time",
-        "verbatim": "立安四年己卯",
-        "year": 199,
-        "precision": "day",
-        "earliest": 199,
-        "latest": 199
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0130",
-      "quote": "立安四年己卯三月十三日即位",
-      "note": "거등왕 즉위(건안 4년 기묘 3월 13일) 기사로 199년을 못박는다. fact-sgy-015(수릉왕묘)가 이 주장을 시간 근거로 빌려 쓴다 — 수로왕 붕어·빈궁 기사는 chunk_samgukyusa_sy_002_0010_0230_0050 에 있으나 그 chunk 의 date.raw 가 0189(허왕후 붕어)여서 같은 chunk 로는 199 를 주장할 수 없기 때문이다."
-    },
-    {
-      "id": "claim-sgy-sureung-tomb",
-      "subject": "entity-sgy-sureung-myo",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "首陵王廟"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0050",
-      "quote": "造立殯宫, 髙一丈周三百歩, 而葬之號首陵王廟也",
-      "note": "높이 1장, 둘레 300보의 빈궁을 세워 장사하고 수릉왕묘라 했다"
-    },
-    {
-      "id": "claim-sgy-sureung-rites",
-      "subject": "entity-sgy-sureung-myo",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-sgy-garak"
-      },
-      "sourceId": "src-samgukyusa",
-      "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0050",
-      "quote": "自嗣子居登王洎九代孫仇衝之享是廟"
-    },
-    {
-      "id": "claim-sgy-budo-time",
-      "subject": "person-sgy-budo",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "五年",
-        "year": 251,
-        "precision": "month",
-        "earliest": 251,
-        "latest": 251
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0060_0080",
-      "quote": "五年, 春正月, 始聽政於南堂"
-    },
-    {
-      "id": "claim-sgy-budo-person",
-      "subject": "person-sgy-budo",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "entity-sgy-hangibu"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0060_0080",
-      "quote": "漢祇部人夫道者, 家貧無謟, 工書算, 著名於時",
-      "note": "한기부 사람 부도는 집이 가난해도 아첨하지 않았고 글씨와 셈에 뛰어나 이름이 났다"
-    },
-    {
-      "id": "claim-sgy-budo-office",
-      "subject": "person-sgy-budo",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "阿湌, 物藏庫事務"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0060_0080",
-      "quote": "王徵之爲阿湌, 委以物藏庫事務"
-    },
-    {
-      "id": "claim-sgy-dalbeol-time",
-      "subject": "place-sgy-dalbeolseong",
-      "predicate": "syj:builtIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "十五年",
-        "year": 261,
-        "precision": "month",
-        "earliest": 261,
-        "latest": 261
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0060_0170",
-      "quote": "十五年, 春二月, 築逹伐城, 以奈麻克宗爲城主"
-    },
-    {
-      "id": "claim-sgy-dalbeol-seongju",
-      "subject": "place-sgy-dalbeolseong",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "城主"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_002_0060_0170",
-      "quote": "以奈麻克宗爲城主"
-    },
-    {
-      "id": "claim-sgy-nong-time",
-      "subject": "event-sgy-nongsang-bce41",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "十七年",
-        "year": -41,
-        "precision": "year",
-        "earliest": -41,
-        "latest": -41
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0020_0070",
-      "quote": "十七年, 王巡撫六部, 妃閼英從焉. 勸督農桑, 以盡地利"
-    },
-    {
-      "id": "claim-sgy-nong-act",
-      "subject": "event-sgy-nongsang-bce41",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "entity-sgy-jinhan-6bu"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_001_0020_0070",
-      "quote": "勸督農桑, 以盡地利",
-      "note": "농사와 누에치기를 권하고 땅의 이로움을 다하게 했다"
-    },
-    {
-      "id": "claim-sgy-byeonjin-time",
-      "subject": "event-sgy-byeonjin-record",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "238년",
-        "year": 238,
-        "precision": "year",
-        "earliest": 238,
-        "latest": 238
-      },
-      "sourceId": "src-encykorea-daebang",
-      "citesExcerpt": "ex-daebang-238",
-      "note": "삼국지 변진전 chunk(chunk_jipseong-ko_022_ko_022_0370_0010)에는 date 가 없고 본문에도 연대 표기가 없다. 본문이 철을 낙랑·대방 二郡에 공급했다고 적으므로, 위나라가 공손씨를 멸하고 두 군을 차지한 238년을 이 서술이 놓이는 시점의 기준(하한)으로 삼았다. 사건 자체의 연도가 아니라 기술 시점의 기준 연도다."
+   ],
+   "sha256": "5ccc171d65893295cd78d0fc3b8546730fc2bf8ff891da39f78b59f18e26282e",
+   "byteLength": 97221,
+   "httpStatus": 200,
+   "fetchedUtc": "2026-09-13T00:37:57Z"
+  },
+  {
+   "id": "src-encykorea-daebang",
+   "title": "대방군 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "license": "한국민족문화대백과사전 (짧은 인용)",
+   "url": "https://encykorea.aks.ac.kr/Article/E0014398",
+   "rawFile": "raw/encykorea-daebang.html",
+   "excerpts": [
+    {
+     "id": "ex-daebang-238",
+     "text": "238년 위나라가 공손씨 정권을 멸망시키고 이 지역을 차지하였다.",
+     "locator": "내용 요약"
     }
-  ],
-  "scenes": [
-    {
-      "id": "scene-sgy-6chon-bce57",
-      "eventId": "event-sgy-jinhan-6chon",
-      "title": "조선 유민의 여섯 마을이 진한 6부가 되다 — 경주 일대 (서기전 57)",
-      "startYear": -57,
-      "endYear": -57,
-      "kind": "settlement",
-      "summary": "조선 유민이 산과 골짜기에 나뉘어 살며 알천 양산촌 등 여섯 마을을 이루었고, 이것이 진한 6부가 되었다. 뒷날 신라 왕경의 바탕이 된 취락 구성이다.",
-      "dateClaimIds": [
-        "claim-sgy-6chon-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-6chon-village",
-        "claim-sgy-6chon-admin"
-      ],
-      "place": {
-        "label": "경주 일대 진한 6촌",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "settlement",
-      "region": "south",
-      "decade": -60,
-      "participantGroups": [
-        {
-          "label": "조선 유민 여섯 마을 사람들",
-          "role": "취락 구성원",
-          "stance": "미상",
-          "side": "진한",
-          "count": null,
-          "claimIds": [
-            "claim-sgy-6chon-village"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "institution",
-        "from": -57,
-        "to": null,
-        "basisClaimIds": [
-          "claim-sgy-6chon-admin"
-        ]
-      }
+   ],
+   "sha256": "9fc3506dd77a1991a669b2b2acf884846efafbdee8ca9eb74dba3e018b991bdd",
+   "byteLength": 107960,
+   "httpStatus": 200,
+   "fetchedUtc": "2026-09-13T01:08:11Z"
+  }
+ ],
+ "entities": [
+  {
+   "id": "polity-silla",
+   "type": "Polity",
+   "label": "신라(사로국)"
+  },
+  {
+   "id": "polity-sgy-garak",
+   "type": "Polity",
+   "label": "가락국(금관가야)"
+  },
+  {
+   "id": "place-seorabeol",
+   "type": "Place",
+   "label": "서라벌(경주 일대)"
+  },
+  {
+   "id": "place-sgy-geumseong",
+   "type": "Place",
+   "label": "금성(金城)"
+  },
+  {
+   "id": "place-sgy-wolseong",
+   "type": "Place",
+   "label": "월성(月城)"
+  },
+  {
+   "id": "place-sgy-dalbeolseong",
+   "type": "Place",
+   "label": "달벌성"
+  },
+  {
+   "id": "place-sgy-sadoseong",
+   "type": "Place",
+   "label": "사도성"
+  },
+  {
+   "id": "place-sgy-gujibong",
+   "type": "Place",
+   "label": "구지봉"
+  },
+  {
+   "id": "place-sgy-gimhae",
+   "type": "Place",
+   "label": "별포 나루(김해)"
+  },
+  {
+   "id": "place-sgy-geumgwanseong",
+   "type": "Place",
+   "label": "금관성(김해)"
+  },
+  {
+   "id": "entity-sgy-jinhan-6bu",
+   "type": "Group",
+   "label": "진한 6부"
+  },
+  {
+   "id": "entity-sgy-gugan",
+   "type": "Group",
+   "label": "가락 아홉 간(九干)"
+  },
+  {
+   "id": "entity-sgy-5gaya",
+   "type": "Group",
+   "label": "다섯 가야"
+  },
+  {
+   "id": "entity-sgy-byeonjin",
+   "type": "Group",
+   "label": "변진(변한) 여러 나라"
+  },
+  {
+   "id": "entity-sgy-byeonjin-iron",
+   "type": "Facility",
+   "label": "변진의 철 산출"
+  },
+  {
+   "id": "entity-sgy-byeonjin-market",
+   "type": "Facility",
+   "label": "변진의 저자(철 교역)"
+  },
+  {
+   "id": "entity-sgy-gungsil",
+   "type": "Facility",
+   "label": "금성 궁실"
+  },
+  {
+   "id": "entity-sgy-sijomyo",
+   "type": "Facility",
+   "label": "시조묘"
+  },
+  {
+   "id": "entity-sgy-jeongsadang",
+   "type": "Facility",
+   "label": "정사당"
+  },
+  {
+   "id": "entity-sgy-garak-raseong",
+   "type": "Facility",
+   "label": "가락국 나성과 궁궐"
+  },
+  {
+   "id": "entity-sgy-sureung-myo",
+   "type": "Facility",
+   "label": "수릉왕묘"
+  },
+  {
+   "id": "entity-sgy-pasa-tap",
+   "type": "Facility",
+   "label": "금관 호계사 파사석탑"
+  },
+  {
+   "id": "entity-sgy-gamul-masan",
+   "type": "Place",
+   "label": "감물현·마산현"
+  },
+  {
+   "id": "entity-sgy-hangibu",
+   "type": "Group",
+   "label": "한기부"
+  },
+  {
+   "id": "entity-sgy-hoesogok",
+   "type": "Work",
+   "label": "회소곡"
+  },
+  {
+   "id": "entity-sgy-ayuta",
+   "type": "Polity",
+   "label": "아유타국"
+  },
+  {
+   "id": "person-sgy-heo-hwangok",
+   "type": "Person",
+   "label": "허황옥"
+  },
+  {
+   "id": "person-sgy-geodeung",
+   "type": "Person",
+   "label": "거등왕"
+  },
+  {
+   "id": "person-sgy-himiko",
+   "type": "Person",
+   "label": "왜 여왕 비미호(히미코)"
+  },
+  {
+   "id": "person-sgy-budo",
+   "type": "Person",
+   "label": "부도(夫道)"
+  },
+  {
+   "id": "event-sgy-jinhan-6chon",
+   "type": "Event",
+   "label": "진한 6촌의 형성"
+  },
+  {
+   "id": "event-sgy-nongsang-bce41",
+   "type": "Event",
+   "label": "6부 순무와 권농"
+  },
+  {
+   "id": "event-sgy-relief-18",
+   "type": "Event",
+   "label": "18년 누리 기근 구휼"
+  },
+  {
+   "id": "event-sgy-relief-108",
+   "type": "Event",
+   "label": "108년 수해 진휼"
+  },
+  {
+   "id": "event-sgy-gabae",
+   "type": "Event",
+   "label": "가배(길쌈 겨루기)"
+  },
+  {
+   "id": "event-sgy-garak-founding",
+   "type": "Event",
+   "label": "가락국 건국"
+  },
+  {
+   "id": "event-sgy-heo-arrival",
+   "type": "Event",
+   "label": "허황옥의 도래"
+  },
+  {
+   "id": "event-sgy-juju-67",
+   "type": "Event",
+   "label": "주주·군주 설치"
+  },
+  {
+   "id": "event-sgy-jebang-144",
+   "type": "Event",
+   "label": "주군 제방 수리와 개간 명령"
+  },
+  {
+   "id": "event-sgy-wae-envoy-173",
+   "type": "Event",
+   "label": "왜 여왕의 견사"
+  },
+  {
+   "id": "event-sgy-wae-migration-193",
+   "type": "Event",
+   "label": "193년 왜인 기근 이주"
+  },
+  {
+   "id": "event-sgy-sado-migration-293",
+   "type": "Event",
+   "label": "사도성 개축과 사민"
+  },
+  {
+   "id": "event-sgy-byeonjin-record",
+   "type": "Event",
+   "label": "삼국지 변진전이 전하는 변진의 상태"
+  }
+ ],
+ "claims": [
+  {
+   "id": "claim-sgy-6chon-time",
+   "subject": "event-sgy-jinhan-6chon",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "五鳳元年甲子",
+    "year": -57,
+    "precision": "year",
+    "earliest": -57,
+    "latest": -57
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
+   "quote": "前漢 孝宣帝五鳳元年甲子, 四月丙辰即位",
+   "note": "혁거세 즉위 기사의 서기전 57년 간지"
+  },
+  {
+   "id": "claim-sgy-6chon-village",
+   "subject": "place-seorabeol",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "entity-sgy-jinhan-6bu"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
+   "quote": "朝鮮遺民分居山谷之間, 爲六村",
+   "note": "조선 유민이 산곡 사이에 나뉘어 살아 여섯 마을을 이루었다"
+  },
+  {
+   "id": "claim-sgy-6chon-admin",
+   "subject": "entity-sgy-jinhan-6bu",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "辰韓六部"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0010",
+   "quote": "是爲辰韓六部"
+  },
+  {
+   "id": "claim-sgy-garak-time",
+   "subject": "event-sgy-garak-founding",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "建㱏十八年壬寅",
+    "year": 42,
+    "precision": "month",
+    "earliest": 42,
+    "latest": 42
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+   "quote": "屬後漢世祖光㱏帝建㱏十八年壬寅三月禊洛之日"
+  },
+  {
+   "id": "claim-sgy-gugan-households",
+   "subject": "entity-sgy-gugan",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 100,
+    "unit": "戶"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+   "quote": "是酋長領緫百姓凢一百户七万五千人",
+   "note": "원문 \"凡一百戶七萬五千人\"; 호수와 인구가 서로 맞지 않는 전승 수치다"
+  },
+  {
+   "id": "claim-sgy-gugan-population",
+   "subject": "entity-sgy-gugan",
+   "predicate": "syj:populationCount",
+   "object": {
+    "kind": "literal",
+    "value": 75000,
+    "unit": "口"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+   "quote": "是酋長領緫百姓凢一百户七万五千人"
+  },
+  {
+   "id": "claim-sgy-gugan-life",
+   "subject": "entity-sgy-gugan",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-sgy-gujibong"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+   "quote": "多以自都山野鑿井而飲耕田而食",
+   "note": "산야에 저마다 자리잡아 우물을 파 마시고 밭을 갈아 먹었다"
+  },
+  {
+   "id": "claim-sgy-garak-founded",
+   "subject": "polity-sgy-garak",
+   "predicate": "syj:foundedIn",
+   "object": {
+    "kind": "year",
+    "value": 42
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+   "quote": "國稱大駕洛又稱伽耶國, 即六伽耶之一也"
+  },
+  {
+   "id": "claim-sgy-5gaya",
+   "subject": "entity-sgy-5gaya",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-sgy-garak"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+   "quote": "餘五人各歸為五伽耶主"
+  },
+  {
+   "id": "claim-sgy-garak-bounds",
+   "subject": "polity-sgy-garak",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "東以黄山江, 西南以濸海, 西北以地理山, 東北以伽耶山"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+   "quote": "東以黄山江, 西南以濸海, 西北以地理山, 東北以伽耶山"
+  },
+  {
+   "id": "claim-sgy-garak-raseong",
+   "subject": "entity-sgy-garak-raseong",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "一千五百歩周迴羅城"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+   "quote": "築置一千五百歩周迴羅城, 官禁殿宇及諸有司屋宇虎庫倉廩之地",
+   "note": "둘레 1500보 나성과 궁궐·관사·창고 터를 함께 잡았다"
+  },
+  {
+   "id": "claim-sgy-garak-labor",
+   "subject": "entity-sgy-garak-raseong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-sgy-garak"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0010",
+   "quote": "徧徴國内丁壯·人夫·工匠",
+   "note": "나라 안의 장정·인부·공장을 두루 징발했다"
+  },
+  {
+   "id": "claim-sgy-wae193-time",
+   "subject": "event-sgy-wae-migration-193",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "六月",
+    "year": 193,
+    "precision": "month",
+    "earliest": 193,
+    "latest": 193
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0030_0180",
+   "quote": "六月, 倭人大饑, 來求食者千餘人"
+  },
+  {
+   "id": "claim-sgy-wae193-count",
+   "subject": "event-sgy-wae-migration-193",
+   "predicate": "syj:populationCount",
+   "object": {
+    "kind": "literal",
+    "value": 1000,
+    "unit": "口"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0030_0180",
+   "quote": "來求食者千餘人",
+   "note": "원문 \"千餘人\"; 1천을 하한으로 잡았다"
+  },
+  {
+   "id": "claim-sgy-wae193-place",
+   "subject": "event-sgy-wae-migration-193",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-seorabeol"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0030_0180",
+   "quote": "倭人大饑, 來求食者千餘人"
+  },
+  {
+   "id": "claim-sgy-byeonjin-states",
+   "subject": "entity-sgy-byeonjin",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "弁·辰韓合二十四國"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
+   "quote": "弁·辰韓合二十四國, 大國四五千家, 小國六七百家, 總四五萬戶"
+  },
+  {
+   "id": "claim-sgy-byeonjin-households",
+   "subject": "entity-sgy-byeonjin",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 40000,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
+   "quote": "總四五萬戶",
+   "note": "원문은 \"總四五萬戶\"(4~5만 호); 하한 4만을 수치로 적었다"
+  },
+  {
+   "id": "claim-sgy-byeonjin-walls",
+   "subject": "entity-sgy-byeonjin",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "亦有城郭"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
+   "quote": "弁辰與辰韓雜居, 亦有城郭"
+  },
+  {
+   "id": "claim-sgy-byeonjin-iron",
+   "subject": "entity-sgy-byeonjin-iron",
+   "predicate": "syj:producedAt",
+   "object": {
+    "kind": "entity",
+    "id": "entity-sgy-byeonjin"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
+   "quote": "國出鐵, 韓·濊·倭皆從取之"
+  },
+  {
+   "id": "claim-sgy-byeonjin-market",
+   "subject": "entity-sgy-byeonjin-market",
+   "predicate": "syj:producedAt",
+   "object": {
+    "kind": "entity",
+    "id": "entity-sgy-byeonjin"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
+   "quote": "諸市買皆用鐵, 如中國用錢, 又以供給二郡",
+   "note": "시장에서 사고팔 때 모두 철을 썼다. 중국에서 돈을 쓰는 것과 같았고 낙랑·대방 두 군에도 공급했다"
+  },
+  {
+   "id": "claim-sgy-byeonjin-farm",
+   "subject": "entity-sgy-byeonjin",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "entity-sgy-byeonjin-iron"
+   },
+   "sourceId": "src-jipseong-ko_022",
+   "citesChunk": "chunk_jipseong-ko_022_ko_022_0370_0010",
+   "quote": "土地肥美, 宜種五穀及稻, 曉蠶桑, 作縑布, 乘駕牛馬"
+  },
+  {
+   "id": "claim-sgy-sado293-time",
+   "subject": "event-sgy-sado-migration-293",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十年",
+    "year": 293,
+    "precision": "month",
+    "earliest": 293,
+    "latest": 293
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0080_0120",
+   "quote": "十年, 春二月, 攺築沙道城, 移沙伐州豪民八十餘家"
+  },
+  {
+   "id": "claim-sgy-sado293-move",
+   "subject": "event-sgy-sado-migration-293",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sgy-sadoseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0080_0120",
+   "quote": "攺築沙道城, 移沙伐州豪民八十餘家"
+  },
+  {
+   "id": "claim-sgy-sado293-households",
+   "subject": "event-sgy-sado-migration-293",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 80,
+    "unit": "戶"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0080_0120",
+   "quote": "移沙伐州豪民八十餘家",
+   "note": "원문 표기는 \"八十餘家\"(80여 가). 단위는 검증기 규약상 戶로 적었다"
+  },
+  {
+   "id": "claim-sgy-geumseong-time",
+   "subject": "place-sgy-geumseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十一年",
+    "year": -37,
+    "precision": "year",
+    "earliest": -37,
+    "latest": -37
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0090",
+   "quote": "二十一年, 築京城, 號曰金城"
+  },
+  {
+   "id": "claim-sgy-geumseong-capital",
+   "subject": "place-sgy-geumseong",
+   "predicate": "syj:capitalOf",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0090",
+   "quote": "築京城, 號曰金城"
+  },
+  {
+   "id": "claim-sgy-gungsil-time",
+   "subject": "entity-sgy-gungsil",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十六年",
+    "year": -32,
+    "precision": "month",
+    "earliest": -32,
+    "latest": -32
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0120",
+   "quote": "二十六年, 春正月, 營宮室於金城"
+  },
+  {
+   "id": "claim-sgy-gungsil-place",
+   "subject": "entity-sgy-gungsil",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sgy-geumseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0120",
+   "quote": "營宮室於金城"
+  },
+  {
+   "id": "claim-sgy-sijomyo-time",
+   "subject": "entity-sgy-sijomyo",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三年",
+    "year": 6,
+    "precision": "month",
+    "earliest": 6,
+    "latest": 6
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0030_0040",
+   "quote": "三年, 春正月, 立始祖廟"
+  },
+  {
+   "id": "claim-sgy-sijomyo-place",
+   "subject": "entity-sgy-sijomyo",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-seorabeol"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0030_0040",
+   "quote": "立始祖廟"
+  },
+  {
+   "id": "claim-sgy-hwang18-time",
+   "subject": "event-sgy-relief-18",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "秋七月",
+    "year": 18,
+    "precision": "month",
+    "earliest": 18,
+    "latest": 18
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0030_0120",
+   "quote": "秋七月, 蝗, 民饑, 發倉廪救之"
+  },
+  {
+   "id": "claim-sgy-hwang18-relief",
+   "subject": "event-sgy-relief-18",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sgy-geumseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0030_0120",
+   "quote": "蝗, 民饑, 發倉廪救之",
+   "note": "누리 피해로 백성이 굶주리자 창고를 열어 구제했다"
+  },
+  {
+   "id": "claim-sgy-gabae-time",
+   "subject": "event-sgy-gabae",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "九年",
+    "year": 32,
+    "precision": "year",
+    "earliest": 32,
+    "latest": 32
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0040_0040",
+   "quote": "九年, 春, 攺六部之名, 仍賜姓"
+  },
+  {
+   "id": "claim-sgy-yukbu-rename",
+   "subject": "entity-sgy-jinhan-6bu",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "梁部·沙梁部·漸梁部·夲彼部·漢祇部·習比部"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0040_0040",
+   "quote": "楊山部為梁部, 姓李, 髙墟部為沙梁部, 姓崔. 大樹部爲漸梁部, 姓孫, 于珍部為夲彼部, 姓鄭. 加利部為漢祇部, 姓裴, 明活部為習比部, 姓薛.",
+   "note": "literal value 의 6부 이름 전부를 덮도록 인용을 6부 개명 대목 전체로 늘렸다."
+  },
+  {
+   "id": "claim-sgy-gabae-act",
+   "subject": "event-sgy-gabae",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "entity-sgy-jinhan-6bu"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0040_0060",
+   "quote": "至八月十五日, 考其功之多小, 負者置酒食, 以謝勝者. 於是, 歌舞百戱皆作, 謂之嘉俳"
+  },
+  {
+   "id": "claim-sgy-gabae-work",
+   "subject": "event-sgy-gabae",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "entity-sgy-hoesogok"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0040_0060",
+   "quote": "自秋七月旣望, 每日早集大部之𨓍, 績麻乙夜而罷",
+   "note": "7월 16일부터 날마다 부의 뜰에 모여 밤늦도록 길쌈했다"
+  },
+  {
+   "id": "claim-sgy-hoesogok",
+   "subject": "entity-sgy-hoesogok",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "event-sgy-gabae"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0040_0060",
+   "quote": "後人因其聲而作歌, 名㑹蘇曲"
+  },
+  {
+   "id": "claim-sgy-heo-time",
+   "subject": "event-sgy-heo-arrival",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "建㱏二十四年戊申七月二十七日",
+    "year": 48,
+    "precision": "day",
+    "earliest": 48,
+    "latest": 48
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
+   "quote": "屬建㱏二十四年戊申七月二十七日, 九干等朝謁之次献言曰"
+  },
+  {
+   "id": "claim-sgy-heo-origin",
+   "subject": "person-sgy-heo-hwangok",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "entity-sgy-ayuta"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
+   "quote": "妾是阿踰陁國公主也, 姓許名黄玉, 年二八矣"
+  },
+  {
+   "id": "claim-sgy-heo-retinue",
+   "subject": "event-sgy-heo-arrival",
+   "predicate": "syj:populationCount",
+   "object": {
+    "kind": "literal",
+    "value": 20,
+    "unit": "口"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
+   "quote": "或臧獲并計二十餘口",
+   "note": "원문 \"二十餘口\"; 20을 하한으로 적었다"
+  },
+  {
+   "id": "claim-sgy-heo-landing",
+   "subject": "event-sgy-heo-arrival",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sgy-gimhae"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
+   "quote": "王后於山外别浦津頭維舟. 登陸憇於髙嶠",
+   "note": "왕후가 산 밖 별포 나루에 배를 대고 뭍에 올랐다"
+  },
+  {
+   "id": "claim-sgy-heo-gift",
+   "subject": "event-sgy-heo-arrival",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "各賜粮粳米十碩布三十疋"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0030",
+   "quote": "各賜粮粳米十碩布三十疋令歸本國",
+   "note": "돌아가는 뱃사람 15인에게 멥쌀 10섬과 베 30필씩을 주었다"
+  },
+  {
+   "id": "claim-sgy-pasa-time",
+   "subject": "entity-sgy-pasa-tap",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "建武二十四年甲申",
+    "year": 48,
+    "precision": "year",
+    "earliest": 48,
+    "latest": 48
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_003_0020_0030_0010",
+   "quote": "以東漢建武二十四年甲申, 自西域 阿踰陁國所載來"
+  },
+  {
+   "id": "claim-sgy-pasa-place",
+   "subject": "entity-sgy-pasa-tap",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sgy-geumgwanseong"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_003_0020_0030_0010",
+   "quote": "金官虎溪寺婆娑石塔者昔此邑爲金官國時"
+  },
+  {
+   "id": "claim-sgy-pasa-form",
+   "subject": "entity-sgy-pasa-tap",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "塔方四面五層"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_003_0020_0030_0010",
+   "quote": "塔方四面五層"
+  },
+  {
+   "id": "claim-sgy-juju-time",
+   "subject": "event-sgy-juju-67",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十一年",
+    "year": 67,
+    "precision": "month",
+    "earliest": 67,
+    "latest": 67
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0050_0140",
+   "quote": "十一年, 春正月, 以朴氏貴戚, 分理國内州郡, 號爲州主·郡主"
+  },
+  {
+   "id": "claim-sgy-juju-admin",
+   "subject": "polity-silla",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "州主·郡主"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0050_0140",
+   "quote": "分理國内州郡, 號爲州主·郡主"
+  },
+  {
+   "id": "claim-sgy-wolseong-time",
+   "subject": "place-sgy-wolseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十二年",
+    "year": 101,
+    "precision": "month",
+    "earliest": 101,
+    "latest": 101
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0060_0240",
+   "quote": "二十二年, 春二月, 築城, 名月城"
+  },
+  {
+   "id": "claim-sgy-wolseong-move",
+   "subject": "place-sgy-wolseong",
+   "predicate": "syj:capitalOf",
+   "object": {
+    "kind": "entity",
+    "id": "polity-silla"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0060_0250",
+   "quote": "秋七月, 王移居月城"
+  },
+  {
+   "id": "claim-sgy-daesu108-time",
+   "subject": "event-sgy-relief-108",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十九年",
+    "year": 108,
+    "precision": "month",
+    "earliest": 108,
+    "latest": 108
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0060_0350",
+   "quote": "二十九年, 夏五月, 大水, 民飢. 發使十道, 開食賑給"
+  },
+  {
+   "id": "claim-sgy-daesu108-relief",
+   "subject": "event-sgy-relief-108",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "發使十道, 開食賑給"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0060_0350",
+   "quote": "發使十道, 開食賑給",
+   "note": "사신을 열 방면으로 보내 창고를 열고 진휼했다"
+  },
+  {
+   "id": "claim-sgy-jsd-time",
+   "subject": "entity-sgy-jeongsadang",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "五年",
+    "year": 138,
+    "precision": "month",
+    "earliest": 138,
+    "latest": 138
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0080_0060",
+   "quote": "五年, 春二月, 置政事堂於金城"
+  },
+  {
+   "id": "claim-sgy-jsd-place",
+   "subject": "entity-sgy-jeongsadang",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-sgy-geumseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0080_0060",
+   "quote": "置政事堂於金城"
+  },
+  {
+   "id": "claim-sgy-jebang-time",
+   "subject": "event-sgy-jebang-144",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十一年",
+    "year": 144,
+    "precision": "month",
+    "earliest": 144,
+    "latest": 144
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0080_0180",
+   "quote": "十一年, 春二月, 下令"
+  },
+  {
+   "id": "claim-sgy-jebang-act",
+   "subject": "event-sgy-jebang-144",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "諸州郡修完堤坊, 廣闢田野"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0080_0180",
+   "quote": "諸州郡修完堤坊, 廣闢田野",
+   "note": "여러 주군에 제방을 고쳐 완성하고 논밭을 넓히라 명했다"
+  },
+  {
+   "id": "claim-sgy-jebang-ban",
+   "subject": "polity-silla",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "禁民間用金銀珠玉"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0080_0180",
+   "quote": "又下令, 禁民間用金銀珠玉"
+  },
+  {
+   "id": "claim-sgy-hyeon157-time",
+   "subject": "entity-sgy-gamul-masan",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "四年",
+    "year": 157,
+    "precision": "month",
+    "earliest": 157,
+    "latest": 157
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0020_0050",
+   "quote": "四年, 春二月, 始置甘勿·馬山二縣"
+  },
+  {
+   "id": "claim-sgy-hyeon157-admin",
+   "subject": "entity-sgy-gamul-masan",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "縣"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0020_0050",
+   "quote": "始置甘勿·馬山二縣"
+  },
+  {
+   "id": "claim-sgy-bimiho-time",
+   "subject": "event-sgy-wae-envoy-173",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十年",
+    "year": 173,
+    "precision": "month",
+    "earliest": 173,
+    "latest": 173
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0020_0230",
+   "quote": "二十年, 夏五月, 倭女王卑彌乎遣使來聘"
+  },
+  {
+   "id": "claim-sgy-bimiho-act",
+   "subject": "person-sgy-himiko",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "event-sgy-wae-envoy-173"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0020_0230",
+   "quote": "倭女王卑彌乎遣使來聘"
+  },
+  {
+   "id": "claim-sgy-geodeung-time",
+   "subject": "person-sgy-geodeung",
+   "predicate": "syj:reignedFrom",
+   "object": {
+    "kind": "time",
+    "verbatim": "立安四年己卯",
+    "year": 199,
+    "precision": "day",
+    "earliest": 199,
+    "latest": 199
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0130",
+   "quote": "立安四年己卯三月十三日即位",
+   "note": "거등왕 즉위(건안 4년 기묘 3월 13일) 기사로 199년을 못박는다. fact-sgy-015(수릉왕묘)가 이 주장을 시간 근거로 빌려 쓴다 — 수로왕 붕어·빈궁 기사는 chunk_samgukyusa_sy_002_0010_0230_0050 에 있으나 그 chunk 의 date.raw 가 0189(허왕후 붕어)여서 같은 chunk 로는 199 를 주장할 수 없기 때문이다."
+  },
+  {
+   "id": "claim-sgy-sureung-tomb",
+   "subject": "entity-sgy-sureung-myo",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "首陵王廟"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0050",
+   "quote": "造立殯宫, 髙一丈周三百歩, 而葬之號首陵王廟也",
+   "note": "높이 1장, 둘레 300보의 빈궁을 세워 장사하고 수릉왕묘라 했다"
+  },
+  {
+   "id": "claim-sgy-sureung-rites",
+   "subject": "entity-sgy-sureung-myo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-sgy-garak"
+   },
+   "sourceId": "src-samgukyusa",
+   "citesChunk": "chunk_samgukyusa_sy_002_0010_0230_0050",
+   "quote": "自嗣子居登王洎九代孫仇衝之享是廟"
+  },
+  {
+   "id": "claim-sgy-budo-time",
+   "subject": "person-sgy-budo",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "五年",
+    "year": 251,
+    "precision": "month",
+    "earliest": 251,
+    "latest": 251
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0060_0080",
+   "quote": "五年, 春正月, 始聽政於南堂"
+  },
+  {
+   "id": "claim-sgy-budo-person",
+   "subject": "person-sgy-budo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "entity-sgy-hangibu"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0060_0080",
+   "quote": "漢祇部人夫道者, 家貧無謟, 工書算, 著名於時",
+   "note": "한기부 사람 부도는 집이 가난해도 아첨하지 않았고 글씨와 셈에 뛰어나 이름이 났다"
+  },
+  {
+   "id": "claim-sgy-budo-office",
+   "subject": "person-sgy-budo",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "阿湌, 物藏庫事務"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0060_0080",
+   "quote": "王徵之爲阿湌, 委以物藏庫事務"
+  },
+  {
+   "id": "claim-sgy-dalbeol-time",
+   "subject": "place-sgy-dalbeolseong",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十五年",
+    "year": 261,
+    "precision": "month",
+    "earliest": 261,
+    "latest": 261
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0060_0170",
+   "quote": "十五年, 春二月, 築逹伐城, 以奈麻克宗爲城主"
+  },
+  {
+   "id": "claim-sgy-dalbeol-seongju",
+   "subject": "place-sgy-dalbeolseong",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "城主"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_002_0060_0170",
+   "quote": "以奈麻克宗爲城主"
+  },
+  {
+   "id": "claim-sgy-nong-time",
+   "subject": "event-sgy-nongsang-bce41",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十七年",
+    "year": -41,
+    "precision": "year",
+    "earliest": -41,
+    "latest": -41
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0070",
+   "quote": "十七年, 王巡撫六部, 妃閼英從焉. 勸督農桑, 以盡地利"
+  },
+  {
+   "id": "claim-sgy-nong-act",
+   "subject": "event-sgy-nongsang-bce41",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "entity-sgy-jinhan-6bu"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_001_0020_0070",
+   "quote": "勸督農桑, 以盡地利",
+   "note": "농사와 누에치기를 권하고 땅의 이로움을 다하게 했다"
+  },
+  {
+   "id": "claim-sgy-byeonjin-time",
+   "subject": "event-sgy-byeonjin-record",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "238년",
+    "year": 238,
+    "precision": "year",
+    "earliest": 238,
+    "latest": 238
+   },
+   "sourceId": "src-encykorea-daebang",
+   "citesExcerpt": "ex-daebang-238",
+   "note": "삼국지 변진전 chunk(chunk_jipseong-ko_022_ko_022_0370_0010)에는 date 가 없고 본문에도 연대 표기가 없다. 본문이 철을 낙랑·대방 二郡에 공급했다고 적으므로, 위나라가 공손씨를 멸하고 두 군을 차지한 238년을 이 서술이 놓이는 시점의 기준(하한)으로 삼았다. 사건 자체의 연도가 아니라 기술 시점의 기준 연도다."
+  },
+  {
+   "id": "claim-end-sgy-6chon-bce57",
+   "subject": "event-sgy-jinhan-6chon",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 935
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_012_0060_0260",
+   "quote": "乃使侍郎金封休, 賷書請降於太祖.",
+   "note": "국가 소멸: 진한 6촌은 유리이사금 9년(32) 이름을 고쳐 신라 왕경의 6부가 되었고, 6부가 따로 폐지된 기록은 없다. 따라서 이 제도를 둔 신라가 경순왕 항복으로 사라진 935년을 끝으로 잡았다(지시된 institution 규칙). 대안 해석: '6촌'이라는 이름 자체의 끝을 6부 개명 해인 32년으로 볼 수도 있고, 실제 행정구역 6부는 통일신라 말까지 이어졌다."
+  },
+  {
+   "id": "claim-end-sgy-garak-founding-42",
+   "subject": "event-sgy-garak-founding",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 532
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_004_0030_0150",
+   "quote": "十九年, 金官國主金仇亥與妃及三子, 長曰奴宗, 仲曰武德, 季曰武力, 以國帑寶物來降.",
+   "note": "국가 소멸(금관가야, 구해왕 신라 항복): 42년 구지봉의 계욕일 의례로 수로왕을 세운 것은 가락국(금관가야) 왕권의 성립 의례다. 이 나라는 532년(신라 법흥왕 19년) 10세 구해왕이 백성을 이끌고 신라에 항복하면서 없어졌고, 고려사 지리지도 금주(김해)의 연혁을 같은 내용으로 적는다. 따라서 건국 의례가 지탱하던 가락국 왕실 제도는 532년에 끝난다. 대안 해석: 구지봉 언덕 자체는 김해에 사적으로 남아 있고 수로왕릉 제사도 후대에 이어졌으므로 '장소'로 보면 현존이지만, 판정 대상인 가락국 왕 즉위 의례·왕실은 532년에 "
+  },
+  {
+   "id": "claim-end-sgy-jsd-138",
+   "subject": "entity-sgy-jeongsadang",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 935
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_012_0060_0270",
+   "quote": "王率百寮, 發自王都, 歸于太祖",
+   "note": "국가 소멸: 삼국사기는 일성이사금 5년(138) 2월 금성에 정사당을 두었다고만 적고, 이 관청 건물이 언제 헐렸는지는 어떤 기록에도 없다. 신라의 관청 건물이므로 신라가 935년 고려에 귀순해 왕경이 경주로 격하되면서 존속이 끝난 것으로 잡았다. 로컬 원문에서 政事堂을 AND 검색했으나 폐지·소실(廢·罷·燒) 기사는 나오지 않았다. 대안 해석: 실제로는 6세기 관제 정비(집사부 설치 651 등)로 훨씬 이전에 기능이 사라졌을 수 있다."
+  }
+ ],
+ "scenes": [
+  {
+   "id": "scene-sgy-6chon-bce57",
+   "eventId": "event-sgy-jinhan-6chon",
+   "title": "조선 유민의 여섯 마을이 진한 6부가 되다 — 경주 일대 (서기전 57)",
+   "startYear": -57,
+   "endYear": -57,
+   "kind": "settlement",
+   "summary": "조선 유민이 산과 골짜기에 나뉘어 살며 알천 양산촌 등 여섯 마을을 이루었고, 이것이 진한 6부가 되었다. 뒷날 신라 왕경의 바탕이 된 취락 구성이다.",
+   "dateClaimIds": [
+    "claim-sgy-6chon-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-6chon-village",
+    "claim-sgy-6chon-admin"
+   ],
+   "place": {
+    "label": "경주 일대 진한 6촌",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
     },
-    {
-      "id": "scene-sgy-nongsang-bce41",
-      "eventId": "event-sgy-nongsang-bce41",
-      "title": "왕과 왕비가 6부를 돌며 농사와 누에치기를 권하다 (서기전 41)",
-      "startYear": -41,
-      "endYear": -41,
-      "kind": "survey",
-      "summary": "혁거세와 알영이 6부를 두루 돌며 백성을 위무하고 농사와 누에치기를 권해 땅의 이로움을 다하게 했다.",
-      "dateClaimIds": [
-        "claim-sgy-nong-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-nong-act"
-      ],
-      "place": {
-        "label": "경주 일대 6부",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "economy",
-      "region": "south",
-      "decade": -50,
-      "participantGroups": [
-        {
-          "label": "6부 농민",
-          "role": "권농 대상",
-          "stance": "미상",
-          "side": "사로국",
-          "count": null,
-          "claimIds": [
-            "claim-sgy-nong-act"
-          ]
-        }
-      ]
+    "ships": {
+     "enabled": false,
+     "claimIds": []
     },
-    {
-      "id": "scene-sgy-gungsil-bce32",
-      "eventId": "entity-sgy-gungsil",
-      "title": "금성 안에 궁실을 짓다 (서기전 32)",
-      "startYear": -32,
-      "endYear": -32,
-      "kind": "construction",
-      "summary": "혁거세 26년 정월 금성 안에 궁실을 지었다. 성을 쌓은 지 다섯 해 만에 왕이 머무는 건물이 들어섰다.",
-      "dateClaimIds": [
-        "claim-sgy-gungsil-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-gungsil-place"
-      ],
-      "place": {
-        "label": "금성(경주 왕경)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "facility",
-      "region": "south",
-      "decade": -40,
-      "sceneFunction": "construction_site",
-      "persistence": {
-        "kind": "facility",
-        "from": -32,
-        "to": null,
-        "basisClaimIds": [
-          "claim-sgy-gungsil-place"
-        ]
-      }
-    },
-    {
-      "id": "scene-sgy-sijomyo-6",
-      "eventId": "entity-sgy-sijomyo",
-      "title": "시조묘를 세우다 — 경주 (6년)",
-      "startYear": 6,
-      "endYear": 6,
-      "kind": "ritual",
-      "summary": "남해차차웅 3년 정월 시조 혁거세를 모시는 사당을 세웠다. 이후 신라 왕들은 즉위 초마다 이곳에 제사를 지냈다.",
-      "dateClaimIds": [
-        "claim-sgy-sijomyo-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-sijomyo-place"
-      ],
-      "place": {
-        "label": "시조묘(경주 왕경)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "facility",
-      "region": "south",
-      "decade": 0,
-      "sceneFunction": "temple",
-      "persistence": {
-        "kind": "facility",
-        "from": 6,
-        "to": null,
-        "basisClaimIds": [
-          "claim-sgy-sijomyo-place"
-        ]
-      }
-    },
-    {
-      "id": "scene-sgy-relief-18",
-      "eventId": "event-sgy-relief-18",
-      "title": "누리 피해로 굶주린 백성에게 창고를 열다 (18년)",
-      "startYear": 18,
-      "endYear": 18,
-      "kind": "relief",
-      "summary": "가을 7월 누리가 돌아 백성이 굶주리자 창고를 열어 구제했다. 신라본기에 보이는 이른 시기 구휼 기사다.",
-      "dateClaimIds": [
-        "claim-sgy-hwang18-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-hwang18-relief"
-      ],
-      "place": {
-        "label": "금성(경주 왕경)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "disaster",
-      "region": "south",
-      "decade": 10,
-      "sceneFunction": "relief",
-      "participantGroups": [
-        {
-          "label": "굶주린 백성",
-          "role": "구휼 대상",
-          "stance": "미상",
-          "side": "신라",
-          "count": null,
-          "claimIds": [
-            "claim-sgy-hwang18-relief"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "scene-sgy-gabae-32",
-      "eventId": "event-sgy-gabae",
-      "title": "6부 여자들의 길쌈 겨루기와 가배 — 경주 (32년)",
-      "startYear": 32,
-      "endYear": 32,
-      "kind": "tradition",
-      "summary": "왕이 6부를 둘로 나누고 왕녀 둘이 각기 편을 거느려 7월 16일부터 날마다 부의 뜰에 모여 밤늦도록 길쌈했다. 8월 15일에 성적을 따져 진 편이 술과 음식을 내고 노래와 춤이 벌어졌으니 이를 가배라 했고, 진 편 여자가 부른 탄식에서 회소곡이 나왔다.",
-      "dateClaimIds": [
-        "claim-sgy-gabae-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-gabae-act",
-        "claim-sgy-gabae-work",
-        "claim-sgy-hoesogok"
-      ],
-      "place": {
-        "label": "경주 6부의 뜰",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "culture",
-      "region": "south",
-      "decade": 30,
-      "participantGroups": [
-        {
-          "label": "6부 여자들(두 편)",
-          "role": "길쌈 경쟁 참가",
-          "stance": "경쟁",
-          "side": "신라",
-          "count": null,
-          "claimIds": [
-            "claim-sgy-gabae-work"
-          ]
-        },
-        {
-          "label": "왕녀 두 사람",
-          "role": "편 대표",
-          "stance": "주도",
-          "side": "신라",
-          "count": 2,
-          "claimIds": [
-            "claim-sgy-gabae-act"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "institution",
-        "from": 32,
-        "to": null,
-        "basisClaimIds": [
-          "claim-sgy-gabae-act"
-        ]
-      }
-    },
-    {
-      "id": "scene-sgy-garak-founding-42",
-      "eventId": "event-sgy-garak-founding",
-      "title": "구지봉에서 아홉 간과 백성이 수로를 맞다 — 김해 (42년)",
-      "startYear": 42,
-      "endYear": 42,
-      "kind": "ritual",
-      "summary": "후한 건무 18년 3월 계욕일, 구지봉에 이삼백 명이 모여 노래하고 춤추자 여섯 알이 내려왔고 그 가운데 먼저 나온 이를 수로라 하여 대가락의 임금으로 세웠다. 나머지 다섯은 다섯 가야의 임금이 되었다.",
-      "dateClaimIds": [
-        "claim-sgy-garak-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-garak-founded",
-        "claim-sgy-5gaya",
-        "claim-sgy-garak-bounds"
-      ],
-      "place": {
-        "label": "구지봉(김해)",
-        "medium": "land",
-        "precision": "site",
-        "lon": 128.875889,
-        "lat": 35.243194,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-gujibong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「구지봉」 문서 머리의 표시 좌표다. 가락국 왕성·별포 나루 등 김해 안 지점은 확정되지 않아 구지봉을 김해 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "administration",
-      "region": "south",
-      "decade": 40,
-      "participantGroups": [
-        {
-          "label": "아홉 간(九干)",
-          "role": "추장",
-          "stance": "주도",
-          "side": "가락",
-          "count": 9,
-          "claimIds": [
-            "claim-sgy-gugan-life"
-          ]
-        },
-        {
-          "label": "모여든 백성 이삼백 명",
-          "role": "제의 참가",
-          "stance": "미상",
-          "side": "가락",
-          "count": 300,
-          "claimIds": [
-            "claim-sgy-garak-time"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "institution",
-        "from": 42,
-        "to": null,
-        "basisClaimIds": [
-          "claim-sgy-garak-founded"
-        ]
-      }
-    },
-    {
-      "id": "scene-sgy-garak-raseong-43",
-      "eventId": "entity-sgy-garak-raseong",
-      "title": "둘레 1500보 나성과 궁궐·창고 터를 닦다 — 김해 (43년)",
-      "startYear": 43,
-      "endYear": 44,
-      "kind": "construction",
-      "summary": "수로왕 2년 정월 도읍을 정하고 둘레 1500보의 나성과 궁궐·관사·창고 자리를 잡았다. 나라 안의 장정·인부·공장을 두루 불러 정월 20일에 시작해 3월 10일에 역사를 마쳤고, 궁궐은 농한기를 기다려 지어 이듬해 2월에 완성했다.",
-      "dateClaimIds": [
-        "claim-sgy-garak-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-garak-raseong",
-        "claim-sgy-garak-labor"
-      ],
-      "place": {
-        "label": "가락국 도읍(김해)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 128.875889,
-        "lat": 35.243194,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-gujibong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「구지봉」 문서 머리의 표시 좌표다. 가락국 왕성·별포 나루 등 김해 안 지점은 확정되지 않아 구지봉을 김해 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "facility",
-      "region": "south",
-      "decade": 40,
-      "sceneFunction": "construction_site",
-      "participantGroups": [
-        {
-          "label": "징발된 정장·인부·공장",
-          "role": "축성 노동",
-          "stance": "동원",
-          "side": "가락",
-          "count": null,
-          "claimIds": [
-            "claim-sgy-garak-labor"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "city",
-        "from": 43,
-        "to": null,
-        "basisClaimIds": [
-          "claim-sgy-garak-raseong"
-        ]
-      }
-    },
-    {
-      "id": "scene-sgy-heo-arrival-48",
-      "eventId": "event-sgy-heo-arrival",
-      "title": "아유타국 공주 허황옥이 별포 나루에 닿다 — 김해 (48년)",
-      "startYear": 48,
-      "endYear": 48,
-      "kind": "migration",
-      "summary": "건무 24년 7월 27일 바다 서남쪽에서 붉은 돛을 단 배가 북으로 향해 왔다. 아유타국 공주 허황옥이 산 밖 별포 나루에 배를 대고 뭍에 올라 수로왕의 왕후가 되었고, 따라온 신보·조광 부부와 노비 스무 남짓이 함께 들어왔다.",
-      "dateClaimIds": [
-        "claim-sgy-heo-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-heo-origin",
-        "claim-sgy-heo-landing",
-        "claim-sgy-heo-gift"
-      ],
-      "place": {
-        "label": "별포 나루(김해)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 128.875889,
-        "lat": 35.243194,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-gujibong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「구지봉」 문서 머리의 표시 좌표다. 가락국 왕성·별포 나루 등 김해 안 지점은 확정되지 않아 구지봉을 김해 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": true,
-          "claimIds": [
-            "claim-sgy-heo-landing"
-          ]
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "foreign",
-      "region": "south",
-      "decade": 40,
-      "sceneFunction": "harbor",
-      "participantGroups": [
-        {
-          "label": "허황옥과 수행 잉신·노비",
-          "role": "도래 집단",
-          "stance": "우호",
-          "side": "아유타",
-          "count": 20,
-          "claimIds": [
-            "claim-sgy-heo-retinue"
-          ]
-        },
-        {
-          "label": "배를 돌려보낸 뱃사공",
-          "role": "항해",
-          "stance": "우호",
-          "side": "아유타",
-          "count": 15,
-          "claimIds": [
-            "claim-sgy-heo-gift"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "scene-sgy-relief-108",
-      "eventId": "event-sgy-relief-108",
-      "title": "큰물로 굶주린 백성에게 열 방면으로 사신을 보내 진휼하다 (108년)",
-      "startYear": 108,
-      "endYear": 108,
-      "kind": "relief",
-      "summary": "파사이사금 29년 5월 큰물이 나 백성이 굶주리자 사신을 열 방면으로 보내 창고를 열고 나누어 주었다.",
-      "dateClaimIds": [
-        "claim-sgy-daesu108-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-daesu108-relief"
-      ],
-      "place": {
-        "label": "금성(경주 왕경)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "disaster",
-      "region": "south",
-      "decade": 100,
-      "sceneFunction": "relief",
-      "participantGroups": [
-        {
-          "label": "열 방면으로 보낸 사신",
-          "role": "진휼 집행",
-          "stance": "주도",
-          "side": "신라",
-          "count": 10,
-          "claimIds": [
-            "claim-sgy-daesu108-relief"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "scene-sgy-jsd-138",
-      "eventId": "entity-sgy-jeongsadang",
-      "title": "금성에 정사당을 두다 (138년)",
-      "startYear": 138,
-      "endYear": 138,
-      "kind": "court",
-      "summary": "일성이사금 5년 2월 금성에 정사당을 설치했다. 신라 초기 국정을 논의하던 관청 건물이다.",
-      "dateClaimIds": [
-        "claim-sgy-jsd-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-jsd-place"
-      ],
-      "place": {
-        "label": "금성 정사당(경주 왕경)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "facility",
-      "region": "south",
-      "decade": 130,
-      "persistence": {
-        "kind": "facility",
-        "from": 138,
-        "to": null,
-        "basisClaimIds": [
-          "claim-sgy-jsd-place"
-        ]
-      }
-    },
-    {
-      "id": "scene-sgy-jebang-144",
-      "eventId": "event-sgy-jebang-144",
-      "title": "주군에 제방을 고치고 논밭을 넓히라 명하다 (144년)",
-      "startYear": 144,
-      "endYear": 144,
-      "kind": "construction",
-      "summary": "일성이사금 11년 2월 \"농사는 정치의 근본이고 먹는 것은 백성의 하늘\"이라 하여 여러 주군에 제방을 고쳐 완성하고 논밭을 넓히게 했으며, 민간에서 금·은·주옥을 쓰지 못하게 했다.",
-      "dateClaimIds": [
-        "claim-sgy-jebang-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-jebang-act",
-        "claim-sgy-jebang-ban"
-      ],
-      "place": null,
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "economy",
-      "region": "south",
-      "decade": 140,
-      "sceneFunction": "irrigation",
-      "participantGroups": [
-        {
-          "label": "주군의 백성",
-          "role": "제방 수리·개간",
-          "stance": "동원",
-          "side": "신라",
-          "count": null,
-          "claimIds": [
-            "claim-sgy-jebang-act"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "scene-sgy-bimiho-173",
-      "eventId": "event-sgy-wae-envoy-173",
-      "title": "왜 여왕 비미호가 사신을 보내오다 — 경주 (173년)",
-      "startYear": 173,
-      "endYear": 173,
-      "kind": "court",
-      "summary": "아달라이사금 20년 5월 왜의 여왕 비미호가 사신을 보내 예방했다. 삼국사기가 전하는 왜 여왕의 신라 견사 기사다.",
-      "dateClaimIds": [
-        "claim-sgy-bimiho-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-bimiho-act"
-      ],
-      "place": {
-        "label": "금성(경주 왕경)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "foreign",
-      "region": "south",
-      "decade": 170,
-      "participantGroups": [
-        {
-          "label": "왜 여왕의 사신",
-          "role": "사절",
-          "stance": "우호",
-          "side": "왜",
-          "count": null,
-          "claimIds": [
-            "claim-sgy-bimiho-act"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "scene-sgy-wae-migration-193",
-      "eventId": "event-sgy-wae-migration-193",
-      "title": "왜에 큰 기근이 들어 1천여 명이 먹을 것을 구해 건너오다 (193년)",
-      "startYear": 193,
-      "endYear": 193,
-      "kind": "migration",
-      "summary": "벌휴이사금 10년 6월 왜인에게 큰 기근이 들어 먹을 것을 구하러 온 사람이 1천여 명이었다. 바다를 건넌 기근 이주 기사다.",
-      "dateClaimIds": [
-        "claim-sgy-wae193-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-wae193-place",
-        "claim-sgy-wae193-count"
-      ],
-      "place": {
-        "label": "경주 일대(신라)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "settlement",
-      "region": "south",
-      "decade": 190,
-      "sceneFunction": "migration",
-      "participantGroups": [
-        {
-          "label": "먹을 것을 구해 온 왜인",
-          "role": "기근 이주민",
-          "stance": "의존",
-          "side": "왜",
-          "count": 1000,
-          "claimIds": [
-            "claim-sgy-wae193-count"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "scene-sgy-byeonjin-market",
-      "eventId": "entity-sgy-byeonjin-market",
-      "title": "변진에서 철을 화폐처럼 주고받는 저자 — 낙랑·대방에 철을 대던 때 (238년 기준)",
-      "startYear": 238,
-      "endYear": 238,
-      "kind": "market",
-      "summary": "삼국지 동이전은 변진 땅에서 철이 나 한·예·왜가 모두 가져다 썼고, 저자에서 물건을 사고팔 때 모두 철을 써서 중국에서 돈을 쓰는 것과 같았으며 낙랑·대방 두 군에도 공급했다고 적는다. 원문에 연대가 없어 위나라가 두 군을 차지한 238년을 기준 연도로 삼았다.",
-      "dateClaimIds": [
-        "claim-sgy-byeonjin-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-byeonjin-states",
-        "claim-sgy-byeonjin-iron",
-        "claim-sgy-byeonjin-market"
-      ],
-      "place": null,
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "economy",
-      "region": "south",
-      "decade": 230,
-      "sceneFunction": "market",
-      "participantGroups": [
-        {
-          "label": "철을 가져간 한·예·왜 사람들",
-          "role": "교역 참가",
-          "stance": "거래",
-          "side": "변진",
-          "count": null,
-          "claimIds": [
-            "claim-sgy-byeonjin-iron"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "scene-sgy-sureung-myo-199",
-      "eventId": "entity-sgy-sureung-myo",
-      "title": "수로왕의 빈궁을 세우고 수릉왕묘라 하다 — 김해 (199년)",
-      "startYear": 199,
-      "endYear": 199,
-      "kind": "construction",
-      "summary": "수로왕이 세상을 떠나자 대궐 동북쪽 평지에 높이 1장, 둘레 300보의 빈궁을 세워 장사하고 수릉왕묘라 불렀다. 아들 거등왕부터 9대손 구형왕까지 이 사당에 제사를 이었다.",
-      "dateClaimIds": [
-        "claim-sgy-geodeung-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-sureung-tomb",
-        "claim-sgy-sureung-rites"
-      ],
-      "place": {
-        "label": "수릉왕묘(김해)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 128.875889,
-        "lat": 35.243194,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-gujibong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「구지봉」 문서 머리의 표시 좌표다. 가락국 왕성·별포 나루 등 김해 안 지점은 확정되지 않아 구지봉을 김해 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "facility",
-      "region": "south",
-      "decade": 190,
-      "sceneFunction": "temple",
-      "persistence": {
-        "kind": "facility",
-        "from": 199,
-        "to": null,
-        "basisClaimIds": [
-          "claim-sgy-sureung-tomb"
-        ]
-      }
-    },
-    {
-      "id": "scene-sgy-budo-251",
-      "eventId": "person-sgy-budo",
-      "title": "가난한 한기부 사람 부도가 물장고 사무를 맡다 — 경주 (251년)",
-      "startYear": 251,
-      "endYear": 251,
-      "kind": "court",
-      "summary": "첨해이사금 5년 정월 처음으로 남당에서 정사를 보았다. 한기부 사람 부도는 집이 가난해도 아첨하지 않았고 글씨와 셈에 뛰어나 이름이 났는데, 왕이 불러 아찬으로 삼고 물장고 사무를 맡겼다.",
-      "dateClaimIds": [
-        "claim-sgy-budo-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-budo-person",
-        "claim-sgy-budo-office"
-      ],
-      "place": {
-        "label": "남당(경주 왕경)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 129.22611,
-        "lat": 35.83083,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-wolseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "person",
-      "region": "south",
-      "decade": 250,
-      "participantGroups": [
-        {
-          "label": "한기부 출신 실무 관인",
-          "role": "회계·문서",
-          "stance": "등용",
-          "side": "신라",
-          "count": 1,
-          "claimIds": [
-            "claim-sgy-budo-office"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "scene-sgy-dalbeolseong-261",
-      "eventId": "place-sgy-dalbeolseong",
-      "title": "달벌성을 쌓고 성주를 두다 — 대구 (261년)",
-      "startYear": 261,
-      "endYear": 261,
-      "kind": "construction",
-      "summary": "첨해이사금 15년 2월 달벌성을 쌓고 나마 극종을 성주로 삼았다. 경주 서쪽 낙동강 쪽으로 나아가는 거점이다.",
-      "dateClaimIds": [
-        "claim-sgy-dalbeol-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-dalbeol-seongju"
-      ],
-      "place": {
-        "label": "달벌성(대구 달성)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 128.57694,
-        "lat": 35.87361,
-        "claimIds": [],
-        "coordinateSourceIds": [
-          "src-kowiki-dalseong"
-        ],
-        "coordinateNote": "좌표는 한국어 위키백과 「대구 달성」 문서 머리의 표시 좌표다. 달벌성을 달성으로 보는 통설을 따랐다."
-      },
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "facility",
-      "region": "south",
-      "decade": 260,
-      "sceneFunction": "fortress",
-      "participantGroups": [
-        {
-          "label": "성주 나마 극종과 수비 인력",
-          "role": "성 관리",
-          "stance": "주둔",
-          "side": "신라",
-          "count": 1,
-          "claimIds": [
-            "claim-sgy-dalbeol-seongju"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "facility",
-        "from": 261,
-        "to": null,
-        "basisClaimIds": [
-          "claim-sgy-dalbeol-seongju"
-        ]
-      }
-    },
-    {
-      "id": "scene-sgy-sado-migration-293",
-      "eventId": "event-sgy-sado-migration-293",
-      "title": "사도성을 고쳐 쌓고 사벌주 호민 80여 가를 옮기다 (293년)",
-      "startYear": 293,
-      "endYear": 293,
-      "kind": "migration",
-      "summary": "유례이사금 10년 2월 사도성을 고쳐 쌓고 사벌주의 부유한 백성 80여 가를 그리로 옮겨 살게 했다. 성을 고치고 사람을 채워 넣은 사민 기사다.",
-      "dateClaimIds": [
-        "claim-sgy-sado293-time"
-      ],
-      "actionClaimIds": [
-        "claim-sgy-sado293-move",
-        "claim-sgy-sado293-households"
-      ],
-      "place": null,
-      "participants": [],
-      "effects": {
-        "fire": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "ships": {
-          "enabled": false,
-          "claimIds": []
-        },
-        "attack": {
-          "enabled": false,
-          "claimIds": []
-        }
-      },
-      "category": "settlement",
-      "region": "south",
-      "decade": 290,
-      "sceneFunction": "migration",
-      "participantGroups": [
-        {
-          "label": "사벌주 호민 80여 가",
-          "role": "사민 대상",
-          "stance": "동원",
-          "side": "신라",
-          "count": 80,
-          "claimIds": [
-            "claim-sgy-sado293-households"
-          ]
-        }
-      ]
+    "attack": {
+     "enabled": false,
+     "claimIds": []
     }
-  ],
-  "facts": [
+   },
+   "category": "settlement",
+   "region": "south",
+   "decade": -60,
+   "participantGroups": [
     {
-      "id": "fact-sgy-001",
-      "category": "settlement",
-      "region": "south",
-      "decade": -60,
-      "year": -57,
-      "yearVerbatim": "五鳳元年甲子",
-      "placeLabel": "진한 6촌(알천 양산촌 등)",
-      "modernPlace": "경상북도 경주 일대",
-      "what": "조선 유민이 산과 골짜기에 나뉘어 살며 여섯 마을을 이루었고 이것이 진한 6부가 되었다",
-      "claimIds": [
-        "claim-sgy-6chon-time",
-        "claim-sgy-6chon-village",
-        "claim-sgy-6chon-admin"
-      ],
-      "confidence": "medium",
-      "note": "좌표는 경주 왕경의 지역 기준점(월성)이며 6촌 각각의 위치가 아니다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
-      "sceneId": "scene-sgy-6chon-bce57",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": {
-        "kind": "institution",
-        "from": -57,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-002",
-      "category": "settlement",
-      "region": "south",
-      "decade": 40,
-      "year": 42,
-      "yearVerbatim": "建㱏十八年壬寅",
-      "placeLabel": "구지봉 일대 아홉 간의 마을",
-      "modernPlace": "경상남도 김해",
-      "what": "가락 아홉 간이 백성 1백 호 7만 5천 인을 거느리고 산야에 저마다 자리잡아 우물을 파 마시고 밭을 갈아 먹었다",
-      "claimIds": [
-        "claim-sgy-garak-time",
-        "claim-sgy-gugan-households",
-        "claim-sgy-gugan-population",
-        "claim-sgy-gugan-life"
-      ],
-      "confidence": "low",
-      "note": "원문 \"凡一百戶七萬五千人\"은 호수와 인구가 서로 맞지 않는다(1호당 750인). 건국 전승의 상징 수치로 보아 confidence low 로 두었고, 7만 5천이라는 인구는 density 에 넣지 않고 claim-sgy-gugan-population 과 이 note 에만 남겼다(그대로 내보내면 fact-layers 밀도 계수가 김해 일대에서 상한까지 올라간다). 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이다.",
-      "sceneId": null,
-      "lon": 128.875889,
-      "lat": 35.243194,
-      "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
-      "persistence": null,
-      "density": {
-        "households": 100,
-        "unit": "戶",
-        "claimIds": [
-          "claim-sgy-gugan-households"
-        ]
-      }
-    },
-    {
-      "id": "fact-sgy-003",
-      "category": "foreign",
-      "region": "south",
-      "decade": 190,
-      "year": 193,
-      "yearVerbatim": "十年 六月",
-      "placeLabel": "신라(도착지 미상)",
-      "modernPlace": "경상북도 경주 일대",
-      "what": "왜에 큰 기근이 들어 먹을 것을 구하러 신라로 건너온 사람이 1천여 명이었다",
-      "claimIds": [
-        "claim-sgy-wae193-time",
-        "claim-sgy-wae193-place",
-        "claim-sgy-wae193-count"
-      ],
-      "confidence": "medium",
-      "note": "원문 \"六月, 倭人大饑, 來求食者千餘人\"은 도착지를 적지 않았다. 1천여 명은 신라 왕경의 거주 인구가 아니라 바다를 건너온 일시적 기근 이주민이므로 density 를 달지 않았다(인원은 claim-sgy-wae193-count 와 이 note 에만 남긴다). 갈래도 settlement 가 아니라 원문에 가까운 foreign 으로 고쳤다. 좌표는 경주 왕경의 지역 기준점일 뿐 도착지 근거가 아니다.",
-      "sceneId": "scene-sgy-wae-migration-193",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-sgy-004",
-      "category": "settlement",
-      "region": "south",
-      "decade": 230,
-      "year": 238,
-      "yearVerbatim": "238년",
-      "placeLabel": "변진·진한 24국",
-      "modernPlace": "경상남북도 일원",
-      "what": "변한과 진한을 합쳐 24국이 있었고 큰 나라는 4~5천 가, 작은 나라는 6~7백 가로 모두 4~5만 호였으며 변진은 진한과 섞여 살면서 성곽도 있었다",
-      "claimIds": [
-        "claim-sgy-byeonjin-time",
-        "claim-sgy-byeonjin-states",
-        "claim-sgy-byeonjin-households",
-        "claim-sgy-byeonjin-walls"
-      ],
-      "confidence": "medium",
-      "note": "원문에 연대 표기가 없다. 본문의 \"又以供給二郡\"(낙랑·대방)에 근거해 위나라가 두 군을 차지한 238년(한국민족문화대백과사전 「대방군」 발췌 ex-daebang-238)을 기술 시점의 기준 연도로 삼았고, 그 근거를 claim-sgy-byeonjin-time 으로 달았다. 연도는 사건 연도가 아니라 서술 시점의 기준이다. 호수는 원문 \"四五萬戶\"의 하한 4만이다. 좌표가 없어 fact-layers 밀도 계층에는 들어가지 않는다.",
-      "sceneId": null,
-      "persistence": null,
-      "density": {
-        "households": 40000,
-        "unit": "戶",
-        "claimIds": [
-          "claim-sgy-byeonjin-households"
-        ]
-      }
-    },
-    {
-      "id": "fact-sgy-005",
-      "category": "settlement",
-      "region": "south",
-      "decade": 290,
-      "year": 293,
-      "yearVerbatim": "十年",
-      "placeLabel": "사도성",
-      "modernPlace": "경상북도 영덕 또는 포항 일대(비정 미확정)",
-      "what": "사도성을 고쳐 쌓고 사벌주의 부유한 백성 80여 가를 옮겨 살게 했다",
-      "claimIds": [
-        "claim-sgy-sado293-time",
-        "claim-sgy-sado293-move",
-        "claim-sgy-sado293-households"
-      ],
-      "confidence": "medium",
-      "note": "사도성 위치 비정이 갈려 좌표를 넣지 않았다(영덕 남정·포항 흥해 등 후보). 원문 단위는 \"八十餘家\"의 家 이고 fact.density.unit 도 家 로 적었다. claim-sgy-sado293-households 의 unit 만 \"戶\"인데, 이는 검증기가 syj:householdCount 에 戶 를 요구하기 때문이며 원문 표기와 다르다는 점을 여기에 밝혀 둔다.",
-      "sceneId": "scene-sgy-sado-migration-293",
-      "persistence": null,
-      "density": {
-        "households": 80,
-        "unit": "家",
-        "claimIds": [
-          "claim-sgy-sado293-households"
-        ]
-      }
-    },
-    {
-      "id": "fact-sgy-006",
-      "category": "administration",
-      "region": "south",
-      "decade": -40,
-      "year": -37,
-      "yearVerbatim": "二十一年",
-      "placeLabel": "금성(金城)",
-      "modernPlace": "경상북도 경주",
-      "what": "경성을 쌓고 금성이라 불렀다 — 사로국 첫 도성 기사",
-      "claimIds": [
-        "claim-sgy-geumseong-time",
-        "claim-sgy-geumseong-capital"
-      ],
-      "confidence": "medium",
-      "note": "이 사실에 해당하는 장면은 이미 services/host/app/history-scenes.json 의 scene-anc-geumseong-bce37 이다(존재 확인함). 검증기 check_fact_research.py 는 facts[].sceneId 를 이 result.json 의 scenes 안에서만 찾으므로(fact() → refs([sceneId], scenes)) 외부 장면 id 를 넣으면 '참조 없음'으로 실패한다. 그래서 sceneId 는 null 로 두고 연결 대상 id 를 여기에 적는다. 좌표는 경주 왕경 지역 기준점(월성)이다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
-      "sceneId": null,
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": {
-        "kind": "city",
-        "from": -37,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-007",
-      "category": "administration",
-      "region": "south",
-      "decade": 40,
-      "year": 42,
-      "yearVerbatim": "建㱏十八年壬寅",
-      "placeLabel": "구지봉·대가락",
-      "modernPlace": "경상남도 김해",
-      "what": "구지봉에 내려온 여섯 알에서 먼저 나온 수로가 임금이 되어 나라를 대가락(가야국)이라 하고, 나머지 다섯은 다섯 가야의 임금이 되었으며 동쪽 황산강·서남쪽 바다·서북쪽 지리산·동북쪽 가야산을 경계로 삼았다",
-      "claimIds": [
-        "claim-sgy-garak-time",
-        "claim-sgy-garak-founded",
-        "claim-sgy-5gaya",
-        "claim-sgy-garak-bounds"
-      ],
-      "confidence": "medium",
-      "note": "가락국기는 13세기 편찬 전승이며 건국 설화 형식이다. 연도는 chunk date.raw 의 42년을 따랐다.",
-      "sceneId": "scene-sgy-garak-founding-42",
-      "lon": 128.875889,
-      "lat": 35.243194,
-      "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
-      "persistence": {
-        "kind": "institution",
-        "from": 42,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-008",
-      "category": "administration",
-      "region": "south",
-      "decade": 60,
-      "year": 67,
-      "yearVerbatim": "十一年",
-      "placeLabel": "신라 국내 주군",
-      "modernPlace": "경상북도 일원",
-      "what": "박씨 귀척에게 나라 안의 주·군을 나누어 다스리게 하고 주주·군주라 불렀다",
-      "claimIds": [
-        "claim-sgy-juju-time",
-        "claim-sgy-juju-admin"
-      ],
-      "confidence": "medium",
-      "note": "주·군의 구체적 소재를 적지 않아 좌표를 넣지 않았다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
-      "sceneId": null,
-      "persistence": {
-        "kind": "institution",
-        "from": 67,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-009",
-      "category": "administration",
-      "region": "south",
-      "decade": 100,
-      "year": 101,
-      "yearVerbatim": "二十二年",
-      "placeLabel": "월성(月城)",
-      "modernPlace": "경상북도 경주 월성",
-      "what": "2월에 성을 쌓아 월성이라 하고 7월에 왕이 월성으로 거처를 옮겼다",
-      "claimIds": [
-        "claim-sgy-wolseong-time",
-        "claim-sgy-wolseong-move"
-      ],
-      "confidence": "high",
-      "note": "이 사실에 해당하는 장면은 이미 services/host/app/history-scenes.json 의 scene-city-gyeongju-wolseong-201-935 다(존재 확인함). 검증기가 facts[].sceneId 를 이 result.json 의 scenes 안에서만 찾으므로 외부 장면 id 를 넣으면 실패한다. 그래서 sceneId 는 null 로 두고 연결 대상 id 를 여기에 적는다.",
-      "sceneId": null,
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": {
-        "kind": "city",
-        "from": 101,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-010",
-      "category": "administration",
-      "region": "south",
-      "decade": 150,
-      "year": 157,
-      "yearVerbatim": "四年",
-      "placeLabel": "감물현·마산현",
-      "modernPlace": "경상북도 김천 개령 일대(감물) 등",
-      "what": "감물현과 마산현 두 현을 처음 설치했다",
-      "claimIds": [
-        "claim-sgy-hyeon157-time",
-        "claim-sgy-hyeon157-admin"
-      ],
-      "confidence": "medium",
-      "note": "두 현의 비정이 확정되지 않아 좌표를 넣지 않았다.",
-      "sceneId": null,
-      "persistence": {
-        "kind": "institution",
-        "from": 157,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-011",
-      "category": "facility",
-      "region": "south",
-      "decade": -40,
-      "year": -32,
-      "yearVerbatim": "二十六年",
-      "placeLabel": "금성 궁실",
-      "modernPlace": "경상북도 경주",
-      "what": "혁거세 26년 정월 금성 안에 궁실을 지었다",
-      "claimIds": [
-        "claim-sgy-gungsil-time",
-        "claim-sgy-gungsil-place"
-      ],
-      "confidence": "medium",
-      "note": "좌표는 경주 왕경 지역 기준점(월성)이다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
-      "sceneId": "scene-sgy-gungsil-bce32",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": {
-        "kind": "facility",
-        "from": -32,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-012",
-      "category": "facility",
-      "region": "south",
-      "decade": 0,
-      "year": 6,
-      "yearVerbatim": "三年",
-      "placeLabel": "시조묘",
-      "modernPlace": "경상북도 경주",
-      "what": "남해차차웅 3년 정월 시조 혁거세를 모시는 사당을 세웠다",
-      "claimIds": [
-        "claim-sgy-sijomyo-time",
-        "claim-sgy-sijomyo-place"
-      ],
-      "confidence": "medium",
-      "note": "이후 신라 왕들이 즉위 초에 되풀이해 제사한 시설이다. 좌표는 경주 왕경 지역 기준점이다.",
-      "sceneId": "scene-sgy-sijomyo-6",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": {
-        "kind": "facility",
-        "from": 6,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-013",
-      "category": "facility",
-      "region": "south",
-      "decade": 40,
-      "year": 43,
-      "yearVerbatim": "二年癸卯",
-      "placeLabel": "가락국 나성·궁궐·창고",
-      "modernPlace": "경상남도 김해",
-      "what": "수로왕 2년 도읍을 정하고 둘레 1500보 나성과 궁궐·관사·창고 자리를 잡아, 나라 안의 정장·인부·공장을 징발해 정월 20일 시작해 3월 10일 역사를 마쳤다",
-      "claimIds": [
-        "claim-sgy-garak-raseong",
-        "claim-sgy-garak-labor"
-      ],
-      "confidence": "medium",
-      "note": "chunk date.raw 는 42년이지만 본문의 \"二年癸卯\"는 43년이므로 사실 연도는 43으로 적고 시간 주장은 만들지 않았다. 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이다.",
-      "sceneId": "scene-sgy-garak-raseong-43",
-      "lon": 128.875889,
-      "lat": 35.243194,
-      "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
-      "persistence": {
-        "kind": "city",
-        "from": 43,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-014",
-      "category": "facility",
-      "region": "south",
-      "decade": 130,
-      "year": 138,
-      "yearVerbatim": "五年",
-      "placeLabel": "금성 정사당",
-      "modernPlace": "경상북도 경주",
-      "what": "일성이사금 5년 2월 금성에 정사당을 두었다",
-      "claimIds": [
-        "claim-sgy-jsd-time",
-        "claim-sgy-jsd-place"
-      ],
-      "confidence": "medium",
-      "note": "좌표는 경주 왕경 지역 기준점(월성)이다.",
-      "sceneId": "scene-sgy-jsd-138",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": {
-        "kind": "facility",
-        "from": 138,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-015",
-      "category": "facility",
-      "region": "south",
-      "decade": 190,
-      "year": 199,
-      "yearVerbatim": "立安四年己卯",
-      "placeLabel": "수릉왕묘(수로왕 빈궁)",
-      "modernPlace": "경상남도 김해",
-      "what": "수로왕이 죽자 대궐 동북쪽 평지에 높이 1장 둘레 300보의 빈궁을 세워 장사하고 수릉왕묘라 했으며, 아들 거등왕부터 9대손 구형왕까지 이 사당의 제사를 이었다",
-      "claimIds": [
-        "claim-sgy-geodeung-time",
-        "claim-sgy-sureung-tomb",
-        "claim-sgy-sureung-rites"
-      ],
-      "confidence": "medium",
-      "note": "수로왕 붕어 연도는 같은 chunk(chunk_samgukyusa_sy_002_0010_0230_0050) 본문의 \"献帝立安四年己卯三月二十三日而殂落\"(건안 4년 기묘=199)이지만, 그 chunk 의 date.raw 는 0189 로 허왕후 붕어(중평 6년 기사) 기준이다. 그래서 199 를 뒷받침하는 시간 주장은 같은 가락국기의 거등왕 즉위 chunk(chunk_samgukyusa_sy_002_0010_0230_0130, date.raw 0199)를 인용한 claim-sgy-geodeung-time 에서 빌려 왔다. 시간 근거와 사건 기사가 서로 다른 chunk 라는 점을 밝혀 둔다. 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이며 현재의 김해 수로왕릉 지점이 아니다.",
-      "sceneId": "scene-sgy-sureung-myo-199",
-      "lon": 128.875889,
-      "lat": 35.243194,
-      "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
-      "persistence": {
-        "kind": "facility",
-        "from": 199,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-016",
-      "category": "facility",
-      "region": "south",
-      "decade": 260,
-      "year": 261,
-      "yearVerbatim": "十五年",
-      "placeLabel": "달벌성",
-      "modernPlace": "대구광역시 달성(추정)",
-      "what": "첨해이사금 15년 2월 달벌성을 쌓고 나마 극종을 성주로 삼았다",
-      "claimIds": [
-        "claim-sgy-dalbeol-time",
-        "claim-sgy-dalbeol-seongju"
-      ],
-      "confidence": "medium",
-      "note": "달벌성을 대구 달성으로 보는 통설을 따랐다. 다른 비정(대구 분지 내 별개 토성)도 있어 precision 은 area 다.",
-      "sceneId": "scene-sgy-dalbeolseong-261",
-      "lon": 128.57694,
-      "lat": 35.87361,
-      "coordinateBasis": "src-kowiki-dalseong ex-dalseong-geo",
-      "persistence": {
-        "kind": "facility",
-        "from": 261,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-017",
-      "category": "economy",
-      "region": "south",
-      "decade": -50,
-      "year": -41,
-      "yearVerbatim": "十七年",
-      "placeLabel": "진한 6부",
-      "modernPlace": "경상북도 경주 일대",
-      "what": "왕과 왕비가 6부를 두루 돌며 농사와 누에치기를 권해 땅의 이로움을 다하게 했다",
-      "claimIds": [
-        "claim-sgy-nong-time",
-        "claim-sgy-nong-act"
-      ],
-      "confidence": "medium",
-      "note": "신라본기의 첫 권농 기사다. 좌표는 경주 왕경 지역 기준점이다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
-      "sceneId": "scene-sgy-nongsang-bce41",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-sgy-018",
-      "category": "economy",
-      "region": "south",
-      "decade": 140,
-      "year": 144,
-      "yearVerbatim": "十一年",
-      "placeLabel": "신라 여러 주군",
-      "modernPlace": "경상북도 일원",
-      "what": "여러 주군에 제방을 고쳐 완성하고 논밭을 넓히라 명했으며 민간에서 금·은·주옥을 쓰지 못하게 했다",
-      "claimIds": [
-        "claim-sgy-jebang-time",
-        "claim-sgy-jebang-act",
-        "claim-sgy-jebang-ban"
-      ],
-      "confidence": "medium",
-      "note": "전국 주군 대상 명령이라 특정 지점이 없어 좌표를 넣지 않았다.",
-      "sceneId": "scene-sgy-jebang-144",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-sgy-019",
-      "category": "economy",
-      "region": "south",
-      "decade": 230,
-      "year": 238,
-      "yearVerbatim": "238년",
-      "placeLabel": "변진 여러 나라",
-      "modernPlace": "경상남북도 일원",
-      "what": "변진 땅에서 철이 나 한·예·왜가 모두 가져다 썼고, 저자에서 물건을 사고팔 때 모두 철을 써서 중국에서 돈을 쓰는 것과 같았으며 낙랑·대방 두 군에도 공급했다",
-      "claimIds": [
-        "claim-sgy-byeonjin-time",
-        "claim-sgy-byeonjin-iron",
-        "claim-sgy-byeonjin-market",
-        "claim-sgy-byeonjin-farm"
-      ],
-      "confidence": "medium",
-      "note": "원문에 연대 표기가 없다. 연도는 fact-sgy-004 와 같은 근거(claim-sgy-byeonjin-time, 한국민족문화대백과사전 「대방군」 발췌의 238년)로 못박은 기술 시점의 기준값이다. 같은 대목에 땅이 기름져 오곡과 벼를 심고 누에를 쳐 비단을 짜며 소와 말을 부린다는 기술이 함께 있다.",
-      "sceneId": "scene-sgy-byeonjin-market",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-sgy-020",
-      "category": "disaster",
-      "region": "south",
-      "decade": 10,
-      "year": 18,
-      "yearVerbatim": "秋七月",
-      "placeLabel": "신라 왕경",
-      "modernPlace": "경상북도 경주",
-      "what": "가을 7월 누리가 돌아 백성이 굶주리자 창고를 열어 구제했다",
-      "claimIds": [
-        "claim-sgy-hwang18-time",
-        "claim-sgy-hwang18-relief"
-      ],
-      "confidence": "medium",
-      "note": "원문은 구휼 장소를 적지 않았다. 좌표는 경주 왕경 지역 기준점이다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
-      "sceneId": "scene-sgy-relief-18",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-sgy-021",
-      "category": "disaster",
-      "region": "south",
-      "decade": 100,
-      "year": 108,
-      "yearVerbatim": "二十九年",
-      "placeLabel": "왕경(명령이 내려진 곳)",
-      "modernPlace": "경상북도 경주",
-      "what": "파사이사금 29년 5월 큰물이 나 백성이 굶주리자 사신을 열 방면으로 보내 창고를 열고 나누어 주었다",
-      "claimIds": [
-        "claim-sgy-daesu108-time",
-        "claim-sgy-daesu108-relief"
-      ],
-      "confidence": "medium",
-      "note": "\"發使十道\"의 열 방면이 어디인지는 적혀 있지 않다. 점 좌표가 전국 단위 진휼 범위를 가리키는 것으로 읽히지 않도록 placeLabel 을 사신을 내보낸 왕경으로 좁혔다(같은 성격의 fact-sgy-018 은 지시 지점조차 없어 좌표를 넣지 않았다). 좌표는 경주 왕경의 지역 기준점(월성)이다.",
-      "sceneId": "scene-sgy-relief-108",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-sgy-022",
-      "category": "culture",
-      "region": "south",
-      "decade": 30,
-      "year": 32,
-      "yearVerbatim": "九年",
-      "placeLabel": "6부의 뜰",
-      "modernPlace": "경상북도 경주",
-      "what": "6부를 둘로 나눠 왕녀 둘이 각기 편을 거느리고 7월 16일부터 날마다 길쌈을 겨뤄 8월 15일에 성적을 따졌고, 진 편이 술과 음식을 내며 노래와 춤이 벌어져 이를 가배라 했고 회소곡이 나왔다",
-      "claimIds": [
-        "claim-sgy-gabae-time",
-        "claim-sgy-yukbu-rename",
-        "claim-sgy-gabae-act",
-        "claim-sgy-gabae-work",
-        "claim-sgy-hoesogok"
-      ],
-      "confidence": "medium",
-      "note": "같은 해 6부의 이름을 양부·사량부 등으로 고치고 성을 내린 기사와 이어진다. 좌표는 경주 왕경 지역 기준점이다.",
-      "sceneId": "scene-sgy-gabae-32",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": {
-        "kind": "institution",
-        "from": 32,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-sgy-023",
-      "category": "culture",
-      "region": "south",
-      "decade": 40,
-      "year": 48,
-      "yearVerbatim": "建武二十四年甲申",
-      "placeLabel": "금관 호계사 파사석탑",
-      "modernPlace": "경상남도 김해",
-      "what": "허황후가 아유타국에서 싣고 왔다는 파사석탑이 금관(김해) 호계사에 있었고, 네모 사면 5층으로 이 지방에는 없는 붉은 반점의 돌이었다",
-      "claimIds": [
-        "claim-sgy-pasa-time",
-        "claim-sgy-pasa-place",
-        "claim-sgy-pasa-form"
-      ],
-      "confidence": "low",
-      "note": "삼국유사 탑상편 전승이며 같은 대목이 \"그때 해동에는 절을 세워 불법을 받든 일이 없었다\"고 적어 48년 불교 전래설을 스스로 부정한다. 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이다.",
-      "sceneId": null,
-      "lon": 128.875889,
-      "lat": 35.243194,
-      "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-sgy-024",
-      "category": "foreign",
-      "region": "south",
-      "decade": 40,
-      "year": 48,
-      "yearVerbatim": "建㱏二十四年戊申七月二十七日",
-      "placeLabel": "별포 나루",
-      "modernPlace": "경상남도 김해",
-      "what": "아유타국 공주 허황옥이 배로 건너와 별포 나루에 닿아 수로왕의 왕후가 되었고, 따라온 노비까지 스무 남짓이 들어왔으며 돌아가는 뱃사공 15인에게 멥쌀 10섬과 베 30필씩을 주었다",
-      "claimIds": [
-        "claim-sgy-heo-time",
-        "claim-sgy-heo-origin",
-        "claim-sgy-heo-landing",
-        "claim-sgy-heo-retinue",
-        "claim-sgy-heo-gift"
-      ],
-      "confidence": "low",
-      "note": "가락국기의 전승 기사다. 원문 간지는 戊申(48년)이며 chunk date.raw 도 48이다. 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이고 별포 나루 위치는 미상이다.",
-      "sceneId": "scene-sgy-heo-arrival-48",
-      "lon": 128.875889,
-      "lat": 35.243194,
-      "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
-      "persistence": null,
-      "density": {
-        "population": 20,
-        "unit": "口",
-        "claimIds": [
-          "claim-sgy-heo-retinue"
-        ]
-      }
-    },
-    {
-      "id": "fact-sgy-025",
-      "category": "foreign",
-      "region": "south",
-      "decade": 170,
-      "year": 173,
-      "yearVerbatim": "二十年",
-      "placeLabel": "신라 왕경",
-      "modernPlace": "경상북도 경주",
-      "what": "왜의 여왕 비미호가 사신을 보내 예방했다",
-      "claimIds": [
-        "claim-sgy-bimiho-time",
-        "claim-sgy-bimiho-act"
-      ],
-      "confidence": "medium",
-      "note": "삼국지가 전하는 히미코의 활동 시기(238년 전후)와 어긋나 연대 논쟁이 있다. 좌표는 경주 왕경 지역 기준점이다.",
-      "sceneId": "scene-sgy-bimiho-173",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-sgy-026",
-      "category": "person",
-      "region": "south",
-      "decade": 250,
-      "year": 251,
-      "yearVerbatim": "五年",
-      "placeLabel": "남당(금성)",
-      "modernPlace": "경상북도 경주",
-      "what": "한기부 사람 부도는 집이 가난해도 아첨하지 않고 글씨와 셈에 뛰어나 이름이 났는데, 왕이 불러 아찬으로 삼고 물장고 사무를 맡겼다",
-      "claimIds": [
-        "claim-sgy-budo-time",
-        "claim-sgy-budo-person",
-        "claim-sgy-budo-office"
-      ],
-      "confidence": "medium",
-      "note": "같은 해 처음으로 남당에서 정사를 보았다. 좌표는 경주 왕경 지역 기준점이다.",
-      "sceneId": "scene-sgy-budo-251",
-      "lon": 129.22611,
-      "lat": 35.83083,
-      "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
-      "persistence": null,
-      "density": null
+     "label": "조선 유민 여섯 마을 사람들",
+     "role": "취락 구성원",
+     "stance": "미상",
+     "side": "진한",
+     "count": null,
+     "claimIds": [
+      "claim-sgy-6chon-village"
+     ]
     }
-  ],
-  "missing": [
-    {
-      "id": "miss-sgy-1",
-      "topic": "가야 권역의 호구 수",
-      "detail": "금관가야를 비롯한 가야 각국의 戶·口 수치를 전하는 로컬 chunk 를 찾지 못했다. 삼국지 변진전의 \"總四五萬戶\"가 변·진한 24국 합계일 뿐이다.",
-      "neededSource": "삼국지 변진전 이외의 중국 정사 호수 기사, 또는 발굴 보고의 취락 규모 추정"
+   ],
+   "persistence": {
+    "kind": "institution",
+    "from": -57,
+    "to": 935,
+    "basisClaimIds": [
+     "claim-sgy-6chon-admin",
+     "claim-end-sgy-6chon-bce57"
+    ]
+   }
+  },
+  {
+   "id": "scene-sgy-nongsang-bce41",
+   "eventId": "event-sgy-nongsang-bce41",
+   "title": "왕과 왕비가 6부를 돌며 농사와 누에치기를 권하다 (서기전 41)",
+   "startYear": -41,
+   "endYear": -41,
+   "kind": "survey",
+   "summary": "혁거세와 알영이 6부를 두루 돌며 백성을 위무하고 농사와 누에치기를 권해 땅의 이로움을 다하게 했다.",
+   "dateClaimIds": [
+    "claim-sgy-nong-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-nong-act"
+   ],
+   "place": {
+    "label": "경주 일대 6부",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
     },
-    {
-      "id": "miss-sgy-2",
-      "topic": "가야 고분·토성의 축조 연대",
-      "detail": "대성동 고분군·봉황토성처럼 고고학으로 확인되는 3세기 이전 가야 시설의 축조 연대를 로컬 원문에서 찾지 못했다.",
-      "neededSource": "국가유산포털·국립김해박물관 해설 페이지(웹 발췌 허용 출처)"
+    "ships": {
+     "enabled": false,
+     "claimIds": []
     },
-    {
-      "id": "miss-sgy-3",
-      "topic": "신라 초기 시장(市) 기사",
-      "detail": "-57~300년 구간 신라본기에는 京市·東市 같은 시장 개설 기사가 없다. 시장 근거는 삼국지 변진전의 \"諸市買皆用鐵\"뿐이다.",
-      "neededSource": "삼국사기 신라본기 권3 이후(490년 京師市肆) 또는 고고 자료"
-    },
-    {
-      "id": "miss-sgy-4",
-      "topic": "사도성·감물현·마산현의 위치 비정",
-      "detail": "세 곳 모두 현대 지명 비정이 갈려 좌표를 넣지 못했다.",
-      "neededSource": "한국민족문화대백과 또는 국가유산포털의 위치 서술"
+    "attack": {
+     "enabled": false,
+     "claimIds": []
     }
-  ]
+   },
+   "category": "economy",
+   "region": "south",
+   "decade": -50,
+   "participantGroups": [
+    {
+     "label": "6부 농민",
+     "role": "권농 대상",
+     "stance": "미상",
+     "side": "사로국",
+     "count": null,
+     "claimIds": [
+      "claim-sgy-nong-act"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-sgy-gungsil-bce32",
+   "eventId": "entity-sgy-gungsil",
+   "title": "금성 안에 궁실을 짓다 (서기전 32)",
+   "startYear": -32,
+   "endYear": -32,
+   "kind": "construction",
+   "summary": "혁거세 26년 정월 금성 안에 궁실을 지었다. 성을 쌓은 지 다섯 해 만에 왕이 머무는 건물이 들어섰다.",
+   "dateClaimIds": [
+    "claim-sgy-gungsil-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-gungsil-place"
+   ],
+   "place": {
+    "label": "금성(경주 왕경)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "facility",
+   "region": "south",
+   "decade": -40,
+   "sceneFunction": "construction_site",
+   "persistence": {
+    "kind": "facility",
+    "from": -32,
+    "to": null,
+    "basisClaimIds": [
+     "claim-sgy-gungsil-place"
+    ]
+   }
+  },
+  {
+   "id": "scene-sgy-sijomyo-6",
+   "eventId": "entity-sgy-sijomyo",
+   "title": "시조묘를 세우다 — 경주 (6년)",
+   "startYear": 6,
+   "endYear": 6,
+   "kind": "ritual",
+   "summary": "남해차차웅 3년 정월 시조 혁거세를 모시는 사당을 세웠다. 이후 신라 왕들은 즉위 초마다 이곳에 제사를 지냈다.",
+   "dateClaimIds": [
+    "claim-sgy-sijomyo-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-sijomyo-place"
+   ],
+   "place": {
+    "label": "시조묘(경주 왕경)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "facility",
+   "region": "south",
+   "decade": 0,
+   "sceneFunction": "temple",
+   "persistence": {
+    "kind": "facility",
+    "from": 6,
+    "to": null,
+    "basisClaimIds": [
+     "claim-sgy-sijomyo-place"
+    ]
+   }
+  },
+  {
+   "id": "scene-sgy-relief-18",
+   "eventId": "event-sgy-relief-18",
+   "title": "누리 피해로 굶주린 백성에게 창고를 열다 (18년)",
+   "startYear": 18,
+   "endYear": 18,
+   "kind": "relief",
+   "summary": "가을 7월 누리가 돌아 백성이 굶주리자 창고를 열어 구제했다. 신라본기에 보이는 이른 시기 구휼 기사다.",
+   "dateClaimIds": [
+    "claim-sgy-hwang18-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-hwang18-relief"
+   ],
+   "place": {
+    "label": "금성(경주 왕경)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "disaster",
+   "region": "south",
+   "decade": 10,
+   "sceneFunction": "relief",
+   "participantGroups": [
+    {
+     "label": "굶주린 백성",
+     "role": "구휼 대상",
+     "stance": "미상",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-sgy-hwang18-relief"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-sgy-gabae-32",
+   "eventId": "event-sgy-gabae",
+   "title": "6부 여자들의 길쌈 겨루기와 가배 — 경주 (32년)",
+   "startYear": 32,
+   "endYear": 32,
+   "kind": "tradition",
+   "summary": "왕이 6부를 둘로 나누고 왕녀 둘이 각기 편을 거느려 7월 16일부터 날마다 부의 뜰에 모여 밤늦도록 길쌈했다. 8월 15일에 성적을 따져 진 편이 술과 음식을 내고 노래와 춤이 벌어졌으니 이를 가배라 했고, 진 편 여자가 부른 탄식에서 회소곡이 나왔다.",
+   "dateClaimIds": [
+    "claim-sgy-gabae-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-gabae-act",
+    "claim-sgy-gabae-work",
+    "claim-sgy-hoesogok"
+   ],
+   "place": {
+    "label": "경주 6부의 뜰",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "culture",
+   "region": "south",
+   "decade": 30,
+   "participantGroups": [
+    {
+     "label": "6부 여자들(두 편)",
+     "role": "길쌈 경쟁 참가",
+     "stance": "경쟁",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-sgy-gabae-work"
+     ]
+    },
+    {
+     "label": "왕녀 두 사람",
+     "role": "편 대표",
+     "stance": "주도",
+     "side": "신라",
+     "count": 2,
+     "claimIds": [
+      "claim-sgy-gabae-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "institution",
+    "from": 32,
+    "to": null,
+    "basisClaimIds": [
+     "claim-sgy-gabae-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-sgy-garak-founding-42",
+   "eventId": "event-sgy-garak-founding",
+   "title": "구지봉에서 아홉 간과 백성이 수로를 맞다 — 김해 (42년)",
+   "startYear": 42,
+   "endYear": 42,
+   "kind": "ritual",
+   "summary": "후한 건무 18년 3월 계욕일, 구지봉에 이삼백 명이 모여 노래하고 춤추자 여섯 알이 내려왔고 그 가운데 먼저 나온 이를 수로라 하여 대가락의 임금으로 세웠다. 나머지 다섯은 다섯 가야의 임금이 되었다.",
+   "dateClaimIds": [
+    "claim-sgy-garak-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-garak-founded",
+    "claim-sgy-5gaya",
+    "claim-sgy-garak-bounds"
+   ],
+   "place": {
+    "label": "구지봉(김해)",
+    "medium": "land",
+    "precision": "site",
+    "lon": 128.875889,
+    "lat": 35.243194,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-gujibong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「구지봉」 문서 머리의 표시 좌표다. 가락국 왕성·별포 나루 등 김해 안 지점은 확정되지 않아 구지봉을 김해 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "administration",
+   "region": "south",
+   "decade": 40,
+   "participantGroups": [
+    {
+     "label": "아홉 간(九干)",
+     "role": "추장",
+     "stance": "주도",
+     "side": "가락",
+     "count": 9,
+     "claimIds": [
+      "claim-sgy-gugan-life"
+     ]
+    },
+    {
+     "label": "모여든 백성 이삼백 명",
+     "role": "제의 참가",
+     "stance": "미상",
+     "side": "가락",
+     "count": 300,
+     "claimIds": [
+      "claim-sgy-garak-time"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "institution",
+    "from": 42,
+    "to": 532,
+    "basisClaimIds": [
+     "claim-sgy-garak-founded",
+     "claim-end-sgy-garak-founding-42"
+    ]
+   }
+  },
+  {
+   "id": "scene-sgy-garak-raseong-43",
+   "eventId": "entity-sgy-garak-raseong",
+   "title": "둘레 1500보 나성과 궁궐·창고 터를 닦다 — 김해 (43년)",
+   "startYear": 43,
+   "endYear": 44,
+   "kind": "construction",
+   "summary": "수로왕 2년 정월 도읍을 정하고 둘레 1500보의 나성과 궁궐·관사·창고 자리를 잡았다. 나라 안의 장정·인부·공장을 두루 불러 정월 20일에 시작해 3월 10일에 역사를 마쳤고, 궁궐은 농한기를 기다려 지어 이듬해 2월에 완성했다.",
+   "dateClaimIds": [
+    "claim-sgy-garak-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-garak-raseong",
+    "claim-sgy-garak-labor"
+   ],
+   "place": {
+    "label": "가락국 도읍(김해)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.875889,
+    "lat": 35.243194,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-gujibong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「구지봉」 문서 머리의 표시 좌표다. 가락국 왕성·별포 나루 등 김해 안 지점은 확정되지 않아 구지봉을 김해 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "facility",
+   "region": "south",
+   "decade": 40,
+   "sceneFunction": "construction_site",
+   "participantGroups": [
+    {
+     "label": "징발된 정장·인부·공장",
+     "role": "축성 노동",
+     "stance": "동원",
+     "side": "가락",
+     "count": null,
+     "claimIds": [
+      "claim-sgy-garak-labor"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "city",
+    "from": 43,
+    "to": null,
+    "basisClaimIds": [
+     "claim-sgy-garak-raseong"
+    ]
+   }
+  },
+  {
+   "id": "scene-sgy-heo-arrival-48",
+   "eventId": "event-sgy-heo-arrival",
+   "title": "아유타국 공주 허황옥이 별포 나루에 닿다 — 김해 (48년)",
+   "startYear": 48,
+   "endYear": 48,
+   "kind": "migration",
+   "summary": "건무 24년 7월 27일 바다 서남쪽에서 붉은 돛을 단 배가 북으로 향해 왔다. 아유타국 공주 허황옥이 산 밖 별포 나루에 배를 대고 뭍에 올라 수로왕의 왕후가 되었고, 따라온 신보·조광 부부와 노비 스무 남짓이 함께 들어왔다.",
+   "dateClaimIds": [
+    "claim-sgy-heo-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-heo-origin",
+    "claim-sgy-heo-landing",
+    "claim-sgy-heo-gift"
+   ],
+   "place": {
+    "label": "별포 나루(김해)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.875889,
+    "lat": 35.243194,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-gujibong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「구지봉」 문서 머리의 표시 좌표다. 가락국 왕성·별포 나루 등 김해 안 지점은 확정되지 않아 구지봉을 김해 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": true,
+     "claimIds": [
+      "claim-sgy-heo-landing"
+     ]
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "foreign",
+   "region": "south",
+   "decade": 40,
+   "sceneFunction": "harbor",
+   "participantGroups": [
+    {
+     "label": "허황옥과 수행 잉신·노비",
+     "role": "도래 집단",
+     "stance": "우호",
+     "side": "아유타",
+     "count": 20,
+     "claimIds": [
+      "claim-sgy-heo-retinue"
+     ]
+    },
+    {
+     "label": "배를 돌려보낸 뱃사공",
+     "role": "항해",
+     "stance": "우호",
+     "side": "아유타",
+     "count": 15,
+     "claimIds": [
+      "claim-sgy-heo-gift"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-sgy-relief-108",
+   "eventId": "event-sgy-relief-108",
+   "title": "큰물로 굶주린 백성에게 열 방면으로 사신을 보내 진휼하다 (108년)",
+   "startYear": 108,
+   "endYear": 108,
+   "kind": "relief",
+   "summary": "파사이사금 29년 5월 큰물이 나 백성이 굶주리자 사신을 열 방면으로 보내 창고를 열고 나누어 주었다.",
+   "dateClaimIds": [
+    "claim-sgy-daesu108-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-daesu108-relief"
+   ],
+   "place": {
+    "label": "금성(경주 왕경)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "disaster",
+   "region": "south",
+   "decade": 100,
+   "sceneFunction": "relief",
+   "participantGroups": [
+    {
+     "label": "열 방면으로 보낸 사신",
+     "role": "진휼 집행",
+     "stance": "주도",
+     "side": "신라",
+     "count": 10,
+     "claimIds": [
+      "claim-sgy-daesu108-relief"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-sgy-jsd-138",
+   "eventId": "entity-sgy-jeongsadang",
+   "title": "금성에 정사당을 두다 (138년)",
+   "startYear": 138,
+   "endYear": 138,
+   "kind": "court",
+   "summary": "일성이사금 5년 2월 금성에 정사당을 설치했다. 신라 초기 국정을 논의하던 관청 건물이다.",
+   "dateClaimIds": [
+    "claim-sgy-jsd-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-jsd-place"
+   ],
+   "place": {
+    "label": "금성 정사당(경주 왕경)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "facility",
+   "region": "south",
+   "decade": 130,
+   "persistence": {
+    "kind": "facility",
+    "from": 138,
+    "to": 935,
+    "basisClaimIds": [
+     "claim-sgy-jsd-place",
+     "claim-end-sgy-jsd-138"
+    ]
+   }
+  },
+  {
+   "id": "scene-sgy-jebang-144",
+   "eventId": "event-sgy-jebang-144",
+   "title": "주군에 제방을 고치고 논밭을 넓히라 명하다 (144년)",
+   "startYear": 144,
+   "endYear": 144,
+   "kind": "construction",
+   "summary": "일성이사금 11년 2월 \"농사는 정치의 근본이고 먹는 것은 백성의 하늘\"이라 하여 여러 주군에 제방을 고쳐 완성하고 논밭을 넓히게 했으며, 민간에서 금·은·주옥을 쓰지 못하게 했다.",
+   "dateClaimIds": [
+    "claim-sgy-jebang-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-jebang-act",
+    "claim-sgy-jebang-ban"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "economy",
+   "region": "south",
+   "decade": 140,
+   "sceneFunction": "irrigation",
+   "participantGroups": [
+    {
+     "label": "주군의 백성",
+     "role": "제방 수리·개간",
+     "stance": "동원",
+     "side": "신라",
+     "count": null,
+     "claimIds": [
+      "claim-sgy-jebang-act"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-sgy-bimiho-173",
+   "eventId": "event-sgy-wae-envoy-173",
+   "title": "왜 여왕 비미호가 사신을 보내오다 — 경주 (173년)",
+   "startYear": 173,
+   "endYear": 173,
+   "kind": "court",
+   "summary": "아달라이사금 20년 5월 왜의 여왕 비미호가 사신을 보내 예방했다. 삼국사기가 전하는 왜 여왕의 신라 견사 기사다.",
+   "dateClaimIds": [
+    "claim-sgy-bimiho-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-bimiho-act"
+   ],
+   "place": {
+    "label": "금성(경주 왕경)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "foreign",
+   "region": "south",
+   "decade": 170,
+   "participantGroups": [
+    {
+     "label": "왜 여왕의 사신",
+     "role": "사절",
+     "stance": "우호",
+     "side": "왜",
+     "count": null,
+     "claimIds": [
+      "claim-sgy-bimiho-act"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-sgy-wae-migration-193",
+   "eventId": "event-sgy-wae-migration-193",
+   "title": "왜에 큰 기근이 들어 1천여 명이 먹을 것을 구해 건너오다 (193년)",
+   "startYear": 193,
+   "endYear": 193,
+   "kind": "migration",
+   "summary": "벌휴이사금 10년 6월 왜인에게 큰 기근이 들어 먹을 것을 구하러 온 사람이 1천여 명이었다. 바다를 건넌 기근 이주 기사다.",
+   "dateClaimIds": [
+    "claim-sgy-wae193-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-wae193-place",
+    "claim-sgy-wae193-count"
+   ],
+   "place": {
+    "label": "경주 일대(신라)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "settlement",
+   "region": "south",
+   "decade": 190,
+   "sceneFunction": "migration",
+   "participantGroups": [
+    {
+     "label": "먹을 것을 구해 온 왜인",
+     "role": "기근 이주민",
+     "stance": "의존",
+     "side": "왜",
+     "count": 1000,
+     "claimIds": [
+      "claim-sgy-wae193-count"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-sgy-byeonjin-market",
+   "eventId": "entity-sgy-byeonjin-market",
+   "title": "변진에서 철을 화폐처럼 주고받는 저자 — 낙랑·대방에 철을 대던 때 (238년 기준)",
+   "startYear": 238,
+   "endYear": 238,
+   "kind": "market",
+   "summary": "삼국지 동이전은 변진 땅에서 철이 나 한·예·왜가 모두 가져다 썼고, 저자에서 물건을 사고팔 때 모두 철을 써서 중국에서 돈을 쓰는 것과 같았으며 낙랑·대방 두 군에도 공급했다고 적는다. 원문에 연대가 없어 위나라가 두 군을 차지한 238년을 기준 연도로 삼았다.",
+   "dateClaimIds": [
+    "claim-sgy-byeonjin-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-byeonjin-states",
+    "claim-sgy-byeonjin-iron",
+    "claim-sgy-byeonjin-market"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "economy",
+   "region": "south",
+   "decade": 230,
+   "sceneFunction": "market",
+   "participantGroups": [
+    {
+     "label": "철을 가져간 한·예·왜 사람들",
+     "role": "교역 참가",
+     "stance": "거래",
+     "side": "변진",
+     "count": null,
+     "claimIds": [
+      "claim-sgy-byeonjin-iron"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-sgy-sureung-myo-199",
+   "eventId": "entity-sgy-sureung-myo",
+   "title": "수로왕의 빈궁을 세우고 수릉왕묘라 하다 — 김해 (199년)",
+   "startYear": 199,
+   "endYear": 199,
+   "kind": "construction",
+   "summary": "수로왕이 세상을 떠나자 대궐 동북쪽 평지에 높이 1장, 둘레 300보의 빈궁을 세워 장사하고 수릉왕묘라 불렀다. 아들 거등왕부터 9대손 구형왕까지 이 사당에 제사를 이었다.",
+   "dateClaimIds": [
+    "claim-sgy-geodeung-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-sureung-tomb",
+    "claim-sgy-sureung-rites"
+   ],
+   "place": {
+    "label": "수릉왕묘(김해)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.875889,
+    "lat": 35.243194,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-gujibong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「구지봉」 문서 머리의 표시 좌표다. 가락국 왕성·별포 나루 등 김해 안 지점은 확정되지 않아 구지봉을 김해 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "facility",
+   "region": "south",
+   "decade": 190,
+   "sceneFunction": "temple",
+   "persistence": {
+    "kind": "facility",
+    "from": 199,
+    "to": null,
+    "basisClaimIds": [
+     "claim-sgy-sureung-tomb"
+    ]
+   }
+  },
+  {
+   "id": "scene-sgy-budo-251",
+   "eventId": "person-sgy-budo",
+   "title": "가난한 한기부 사람 부도가 물장고 사무를 맡다 — 경주 (251년)",
+   "startYear": 251,
+   "endYear": 251,
+   "kind": "court",
+   "summary": "첨해이사금 5년 정월 처음으로 남당에서 정사를 보았다. 한기부 사람 부도는 집이 가난해도 아첨하지 않았고 글씨와 셈에 뛰어나 이름이 났는데, 왕이 불러 아찬으로 삼고 물장고 사무를 맡겼다.",
+   "dateClaimIds": [
+    "claim-sgy-budo-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-budo-person",
+    "claim-sgy-budo-office"
+   ],
+   "place": {
+    "label": "남당(경주 왕경)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.22611,
+    "lat": 35.83083,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-wolseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「경주 월성」 문서 머리의 표시 좌표다. 금성·시림·정사당 등 왕경 안 지점은 개별 위치가 확정되지 않아 월성을 경주 왕경의 지역 기준점으로 썼다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "person",
+   "region": "south",
+   "decade": 250,
+   "participantGroups": [
+    {
+     "label": "한기부 출신 실무 관인",
+     "role": "회계·문서",
+     "stance": "등용",
+     "side": "신라",
+     "count": 1,
+     "claimIds": [
+      "claim-sgy-budo-office"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "scene-sgy-dalbeolseong-261",
+   "eventId": "place-sgy-dalbeolseong",
+   "title": "달벌성을 쌓고 성주를 두다 — 대구 (261년)",
+   "startYear": 261,
+   "endYear": 261,
+   "kind": "construction",
+   "summary": "첨해이사금 15년 2월 달벌성을 쌓고 나마 극종을 성주로 삼았다. 경주 서쪽 낙동강 쪽으로 나아가는 거점이다.",
+   "dateClaimIds": [
+    "claim-sgy-dalbeol-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-dalbeol-seongju"
+   ],
+   "place": {
+    "label": "달벌성(대구 달성)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 128.57694,
+    "lat": 35.87361,
+    "claimIds": [],
+    "coordinateSourceIds": [
+     "src-kowiki-dalseong"
+    ],
+    "coordinateNote": "좌표는 한국어 위키백과 「대구 달성」 문서 머리의 표시 좌표다. 달벌성을 달성으로 보는 통설을 따랐다."
+   },
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "facility",
+   "region": "south",
+   "decade": 260,
+   "sceneFunction": "fortress",
+   "participantGroups": [
+    {
+     "label": "성주 나마 극종과 수비 인력",
+     "role": "성 관리",
+     "stance": "주둔",
+     "side": "신라",
+     "count": 1,
+     "claimIds": [
+      "claim-sgy-dalbeol-seongju"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 261,
+    "to": null,
+    "basisClaimIds": [
+     "claim-sgy-dalbeol-seongju"
+    ]
+   }
+  },
+  {
+   "id": "scene-sgy-sado-migration-293",
+   "eventId": "event-sgy-sado-migration-293",
+   "title": "사도성을 고쳐 쌓고 사벌주 호민 80여 가를 옮기다 (293년)",
+   "startYear": 293,
+   "endYear": 293,
+   "kind": "migration",
+   "summary": "유례이사금 10년 2월 사도성을 고쳐 쌓고 사벌주의 부유한 백성 80여 가를 그리로 옮겨 살게 했다. 성을 고치고 사람을 채워 넣은 사민 기사다.",
+   "dateClaimIds": [
+    "claim-sgy-sado293-time"
+   ],
+   "actionClaimIds": [
+    "claim-sgy-sado293-move",
+    "claim-sgy-sado293-households"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "fire": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "ships": {
+     "enabled": false,
+     "claimIds": []
+    },
+    "attack": {
+     "enabled": false,
+     "claimIds": []
+    }
+   },
+   "category": "settlement",
+   "region": "south",
+   "decade": 290,
+   "sceneFunction": "migration",
+   "participantGroups": [
+    {
+     "label": "사벌주 호민 80여 가",
+     "role": "사민 대상",
+     "stance": "동원",
+     "side": "신라",
+     "count": 80,
+     "claimIds": [
+      "claim-sgy-sado293-households"
+     ]
+    }
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "id": "fact-sgy-001",
+   "category": "settlement",
+   "region": "south",
+   "decade": -60,
+   "year": -57,
+   "yearVerbatim": "五鳳元年甲子",
+   "placeLabel": "진한 6촌(알천 양산촌 등)",
+   "modernPlace": "경상북도 경주 일대",
+   "what": "조선 유민이 산과 골짜기에 나뉘어 살며 여섯 마을을 이루었고 이것이 진한 6부가 되었다",
+   "claimIds": [
+    "claim-sgy-6chon-time",
+    "claim-sgy-6chon-village",
+    "claim-sgy-6chon-admin"
+   ],
+   "confidence": "medium",
+   "note": "좌표는 경주 왕경의 지역 기준점(월성)이며 6촌 각각의 위치가 아니다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
+   "sceneId": "scene-sgy-6chon-bce57",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": {
+    "kind": "institution",
+    "from": -57,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-002",
+   "category": "settlement",
+   "region": "south",
+   "decade": 40,
+   "year": 42,
+   "yearVerbatim": "建㱏十八年壬寅",
+   "placeLabel": "구지봉 일대 아홉 간의 마을",
+   "modernPlace": "경상남도 김해",
+   "what": "가락 아홉 간이 백성 1백 호 7만 5천 인을 거느리고 산야에 저마다 자리잡아 우물을 파 마시고 밭을 갈아 먹었다",
+   "claimIds": [
+    "claim-sgy-garak-time",
+    "claim-sgy-gugan-households",
+    "claim-sgy-gugan-population",
+    "claim-sgy-gugan-life"
+   ],
+   "confidence": "low",
+   "note": "원문 \"凡一百戶七萬五千人\"은 호수와 인구가 서로 맞지 않는다(1호당 750인). 건국 전승의 상징 수치로 보아 confidence low 로 두었고, 7만 5천이라는 인구는 density 에 넣지 않고 claim-sgy-gugan-population 과 이 note 에만 남겼다(그대로 내보내면 fact-layers 밀도 계수가 김해 일대에서 상한까지 올라간다). 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이다.",
+   "sceneId": null,
+   "lon": 128.875889,
+   "lat": 35.243194,
+   "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
+   "persistence": null,
+   "density": {
+    "households": 100,
+    "unit": "戶",
+    "claimIds": [
+     "claim-sgy-gugan-households"
+    ]
+   }
+  },
+  {
+   "id": "fact-sgy-003",
+   "category": "foreign",
+   "region": "south",
+   "decade": 190,
+   "year": 193,
+   "yearVerbatim": "十年 六月",
+   "placeLabel": "신라(도착지 미상)",
+   "modernPlace": "경상북도 경주 일대",
+   "what": "왜에 큰 기근이 들어 먹을 것을 구하러 신라로 건너온 사람이 1천여 명이었다",
+   "claimIds": [
+    "claim-sgy-wae193-time",
+    "claim-sgy-wae193-place",
+    "claim-sgy-wae193-count"
+   ],
+   "confidence": "medium",
+   "note": "원문 \"六月, 倭人大饑, 來求食者千餘人\"은 도착지를 적지 않았다. 1천여 명은 신라 왕경의 거주 인구가 아니라 바다를 건너온 일시적 기근 이주민이므로 density 를 달지 않았다(인원은 claim-sgy-wae193-count 와 이 note 에만 남긴다). 갈래도 settlement 가 아니라 원문에 가까운 foreign 으로 고쳤다. 좌표는 경주 왕경의 지역 기준점일 뿐 도착지 근거가 아니다.",
+   "sceneId": "scene-sgy-wae-migration-193",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-sgy-004",
+   "category": "settlement",
+   "region": "south",
+   "decade": 230,
+   "year": 238,
+   "yearVerbatim": "238년",
+   "placeLabel": "변진·진한 24국",
+   "modernPlace": "경상남북도 일원",
+   "what": "변한과 진한을 합쳐 24국이 있었고 큰 나라는 4~5천 가, 작은 나라는 6~7백 가로 모두 4~5만 호였으며 변진은 진한과 섞여 살면서 성곽도 있었다",
+   "claimIds": [
+    "claim-sgy-byeonjin-time",
+    "claim-sgy-byeonjin-states",
+    "claim-sgy-byeonjin-households",
+    "claim-sgy-byeonjin-walls"
+   ],
+   "confidence": "medium",
+   "note": "원문에 연대 표기가 없다. 본문의 \"又以供給二郡\"(낙랑·대방)에 근거해 위나라가 두 군을 차지한 238년(한국민족문화대백과사전 「대방군」 발췌 ex-daebang-238)을 기술 시점의 기준 연도로 삼았고, 그 근거를 claim-sgy-byeonjin-time 으로 달았다. 연도는 사건 연도가 아니라 서술 시점의 기준이다. 호수는 원문 \"四五萬戶\"의 하한 4만이다. 좌표가 없어 fact-layers 밀도 계층에는 들어가지 않는다.",
+   "sceneId": null,
+   "persistence": null,
+   "density": {
+    "households": 40000,
+    "unit": "戶",
+    "claimIds": [
+     "claim-sgy-byeonjin-households"
+    ]
+   }
+  },
+  {
+   "id": "fact-sgy-005",
+   "category": "settlement",
+   "region": "south",
+   "decade": 290,
+   "year": 293,
+   "yearVerbatim": "十年",
+   "placeLabel": "사도성",
+   "modernPlace": "경상북도 영덕 또는 포항 일대(비정 미확정)",
+   "what": "사도성을 고쳐 쌓고 사벌주의 부유한 백성 80여 가를 옮겨 살게 했다",
+   "claimIds": [
+    "claim-sgy-sado293-time",
+    "claim-sgy-sado293-move",
+    "claim-sgy-sado293-households"
+   ],
+   "confidence": "medium",
+   "note": "사도성 위치 비정이 갈려 좌표를 넣지 않았다(영덕 남정·포항 흥해 등 후보). 원문 단위는 \"八十餘家\"의 家 이고 fact.density.unit 도 家 로 적었다. claim-sgy-sado293-households 의 unit 만 \"戶\"인데, 이는 검증기가 syj:householdCount 에 戶 를 요구하기 때문이며 원문 표기와 다르다는 점을 여기에 밝혀 둔다.",
+   "sceneId": "scene-sgy-sado-migration-293",
+   "persistence": null,
+   "density": {
+    "households": 80,
+    "unit": "家",
+    "claimIds": [
+     "claim-sgy-sado293-households"
+    ]
+   }
+  },
+  {
+   "id": "fact-sgy-006",
+   "category": "administration",
+   "region": "south",
+   "decade": -40,
+   "year": -37,
+   "yearVerbatim": "二十一年",
+   "placeLabel": "금성(金城)",
+   "modernPlace": "경상북도 경주",
+   "what": "경성을 쌓고 금성이라 불렀다 — 사로국 첫 도성 기사",
+   "claimIds": [
+    "claim-sgy-geumseong-time",
+    "claim-sgy-geumseong-capital"
+   ],
+   "confidence": "medium",
+   "note": "이 사실에 해당하는 장면은 이미 services/host/app/history-scenes.json 의 scene-anc-geumseong-bce37 이다(존재 확인함). 검증기 check_fact_research.py 는 facts[].sceneId 를 이 result.json 의 scenes 안에서만 찾으므로(fact() → refs([sceneId], scenes)) 외부 장면 id 를 넣으면 '참조 없음'으로 실패한다. 그래서 sceneId 는 null 로 두고 연결 대상 id 를 여기에 적는다. 좌표는 경주 왕경 지역 기준점(월성)이다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
+   "sceneId": null,
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": {
+    "kind": "city",
+    "from": -37,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-007",
+   "category": "administration",
+   "region": "south",
+   "decade": 40,
+   "year": 42,
+   "yearVerbatim": "建㱏十八年壬寅",
+   "placeLabel": "구지봉·대가락",
+   "modernPlace": "경상남도 김해",
+   "what": "구지봉에 내려온 여섯 알에서 먼저 나온 수로가 임금이 되어 나라를 대가락(가야국)이라 하고, 나머지 다섯은 다섯 가야의 임금이 되었으며 동쪽 황산강·서남쪽 바다·서북쪽 지리산·동북쪽 가야산을 경계로 삼았다",
+   "claimIds": [
+    "claim-sgy-garak-time",
+    "claim-sgy-garak-founded",
+    "claim-sgy-5gaya",
+    "claim-sgy-garak-bounds"
+   ],
+   "confidence": "medium",
+   "note": "가락국기는 13세기 편찬 전승이며 건국 설화 형식이다. 연도는 chunk date.raw 의 42년을 따랐다.",
+   "sceneId": "scene-sgy-garak-founding-42",
+   "lon": 128.875889,
+   "lat": 35.243194,
+   "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
+   "persistence": {
+    "kind": "institution",
+    "from": 42,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-008",
+   "category": "administration",
+   "region": "south",
+   "decade": 60,
+   "year": 67,
+   "yearVerbatim": "十一年",
+   "placeLabel": "신라 국내 주군",
+   "modernPlace": "경상북도 일원",
+   "what": "박씨 귀척에게 나라 안의 주·군을 나누어 다스리게 하고 주주·군주라 불렀다",
+   "claimIds": [
+    "claim-sgy-juju-time",
+    "claim-sgy-juju-admin"
+   ],
+   "confidence": "medium",
+   "note": "주·군의 구체적 소재를 적지 않아 좌표를 넣지 않았다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
+   "sceneId": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 67,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-009",
+   "category": "administration",
+   "region": "south",
+   "decade": 100,
+   "year": 101,
+   "yearVerbatim": "二十二年",
+   "placeLabel": "월성(月城)",
+   "modernPlace": "경상북도 경주 월성",
+   "what": "2월에 성을 쌓아 월성이라 하고 7월에 왕이 월성으로 거처를 옮겼다",
+   "claimIds": [
+    "claim-sgy-wolseong-time",
+    "claim-sgy-wolseong-move"
+   ],
+   "confidence": "high",
+   "note": "이 사실에 해당하는 장면은 이미 services/host/app/history-scenes.json 의 scene-city-gyeongju-wolseong-201-935 다(존재 확인함). 검증기가 facts[].sceneId 를 이 result.json 의 scenes 안에서만 찾으므로 외부 장면 id 를 넣으면 실패한다. 그래서 sceneId 는 null 로 두고 연결 대상 id 를 여기에 적는다.",
+   "sceneId": null,
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": {
+    "kind": "city",
+    "from": 101,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-010",
+   "category": "administration",
+   "region": "south",
+   "decade": 150,
+   "year": 157,
+   "yearVerbatim": "四年",
+   "placeLabel": "감물현·마산현",
+   "modernPlace": "경상북도 김천 개령 일대(감물) 등",
+   "what": "감물현과 마산현 두 현을 처음 설치했다",
+   "claimIds": [
+    "claim-sgy-hyeon157-time",
+    "claim-sgy-hyeon157-admin"
+   ],
+   "confidence": "medium",
+   "note": "두 현의 비정이 확정되지 않아 좌표를 넣지 않았다.",
+   "sceneId": null,
+   "persistence": {
+    "kind": "institution",
+    "from": 157,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-011",
+   "category": "facility",
+   "region": "south",
+   "decade": -40,
+   "year": -32,
+   "yearVerbatim": "二十六年",
+   "placeLabel": "금성 궁실",
+   "modernPlace": "경상북도 경주",
+   "what": "혁거세 26년 정월 금성 안에 궁실을 지었다",
+   "claimIds": [
+    "claim-sgy-gungsil-time",
+    "claim-sgy-gungsil-place"
+   ],
+   "confidence": "medium",
+   "note": "좌표는 경주 왕경 지역 기준점(월성)이다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
+   "sceneId": "scene-sgy-gungsil-bce32",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": -32,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-012",
+   "category": "facility",
+   "region": "south",
+   "decade": 0,
+   "year": 6,
+   "yearVerbatim": "三年",
+   "placeLabel": "시조묘",
+   "modernPlace": "경상북도 경주",
+   "what": "남해차차웅 3년 정월 시조 혁거세를 모시는 사당을 세웠다",
+   "claimIds": [
+    "claim-sgy-sijomyo-time",
+    "claim-sgy-sijomyo-place"
+   ],
+   "confidence": "medium",
+   "note": "이후 신라 왕들이 즉위 초에 되풀이해 제사한 시설이다. 좌표는 경주 왕경 지역 기준점이다.",
+   "sceneId": "scene-sgy-sijomyo-6",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 6,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-013",
+   "category": "facility",
+   "region": "south",
+   "decade": 40,
+   "year": 43,
+   "yearVerbatim": "二年癸卯",
+   "placeLabel": "가락국 나성·궁궐·창고",
+   "modernPlace": "경상남도 김해",
+   "what": "수로왕 2년 도읍을 정하고 둘레 1500보 나성과 궁궐·관사·창고 자리를 잡아, 나라 안의 정장·인부·공장을 징발해 정월 20일 시작해 3월 10일 역사를 마쳤다",
+   "claimIds": [
+    "claim-sgy-garak-raseong",
+    "claim-sgy-garak-labor"
+   ],
+   "confidence": "medium",
+   "note": "chunk date.raw 는 42년이지만 본문의 \"二年癸卯\"는 43년이므로 사실 연도는 43으로 적고 시간 주장은 만들지 않았다. 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이다.",
+   "sceneId": "scene-sgy-garak-raseong-43",
+   "lon": 128.875889,
+   "lat": 35.243194,
+   "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
+   "persistence": {
+    "kind": "city",
+    "from": 43,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-014",
+   "category": "facility",
+   "region": "south",
+   "decade": 130,
+   "year": 138,
+   "yearVerbatim": "五年",
+   "placeLabel": "금성 정사당",
+   "modernPlace": "경상북도 경주",
+   "what": "일성이사금 5년 2월 금성에 정사당을 두었다",
+   "claimIds": [
+    "claim-sgy-jsd-time",
+    "claim-sgy-jsd-place"
+   ],
+   "confidence": "medium",
+   "note": "좌표는 경주 왕경 지역 기준점(월성)이다.",
+   "sceneId": "scene-sgy-jsd-138",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 138,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-015",
+   "category": "facility",
+   "region": "south",
+   "decade": 190,
+   "year": 199,
+   "yearVerbatim": "立安四年己卯",
+   "placeLabel": "수릉왕묘(수로왕 빈궁)",
+   "modernPlace": "경상남도 김해",
+   "what": "수로왕이 죽자 대궐 동북쪽 평지에 높이 1장 둘레 300보의 빈궁을 세워 장사하고 수릉왕묘라 했으며, 아들 거등왕부터 9대손 구형왕까지 이 사당의 제사를 이었다",
+   "claimIds": [
+    "claim-sgy-geodeung-time",
+    "claim-sgy-sureung-tomb",
+    "claim-sgy-sureung-rites"
+   ],
+   "confidence": "medium",
+   "note": "수로왕 붕어 연도는 같은 chunk(chunk_samgukyusa_sy_002_0010_0230_0050) 본문의 \"献帝立安四年己卯三月二十三日而殂落\"(건안 4년 기묘=199)이지만, 그 chunk 의 date.raw 는 0189 로 허왕후 붕어(중평 6년 기사) 기준이다. 그래서 199 를 뒷받침하는 시간 주장은 같은 가락국기의 거등왕 즉위 chunk(chunk_samgukyusa_sy_002_0010_0230_0130, date.raw 0199)를 인용한 claim-sgy-geodeung-time 에서 빌려 왔다. 시간 근거와 사건 기사가 서로 다른 chunk 라는 점을 밝혀 둔다. 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이며 현재의 김해 수로왕릉 지점이 아니다.",
+   "sceneId": "scene-sgy-sureung-myo-199",
+   "lon": 128.875889,
+   "lat": 35.243194,
+   "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 199,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-016",
+   "category": "facility",
+   "region": "south",
+   "decade": 260,
+   "year": 261,
+   "yearVerbatim": "十五年",
+   "placeLabel": "달벌성",
+   "modernPlace": "대구광역시 달성(추정)",
+   "what": "첨해이사금 15년 2월 달벌성을 쌓고 나마 극종을 성주로 삼았다",
+   "claimIds": [
+    "claim-sgy-dalbeol-time",
+    "claim-sgy-dalbeol-seongju"
+   ],
+   "confidence": "medium",
+   "note": "달벌성을 대구 달성으로 보는 통설을 따랐다. 다른 비정(대구 분지 내 별개 토성)도 있어 precision 은 area 다.",
+   "sceneId": "scene-sgy-dalbeolseong-261",
+   "lon": 128.57694,
+   "lat": 35.87361,
+   "coordinateBasis": "src-kowiki-dalseong ex-dalseong-geo",
+   "persistence": {
+    "kind": "facility",
+    "from": 261,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-017",
+   "category": "economy",
+   "region": "south",
+   "decade": -50,
+   "year": -41,
+   "yearVerbatim": "十七年",
+   "placeLabel": "진한 6부",
+   "modernPlace": "경상북도 경주 일대",
+   "what": "왕과 왕비가 6부를 두루 돌며 농사와 누에치기를 권해 땅의 이로움을 다하게 했다",
+   "claimIds": [
+    "claim-sgy-nong-time",
+    "claim-sgy-nong-act"
+   ],
+   "confidence": "medium",
+   "note": "신라본기의 첫 권농 기사다. 좌표는 경주 왕경 지역 기준점이다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
+   "sceneId": "scene-sgy-nongsang-bce41",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-sgy-018",
+   "category": "economy",
+   "region": "south",
+   "decade": 140,
+   "year": 144,
+   "yearVerbatim": "十一年",
+   "placeLabel": "신라 여러 주군",
+   "modernPlace": "경상북도 일원",
+   "what": "여러 주군에 제방을 고쳐 완성하고 논밭을 넓히라 명했으며 민간에서 금·은·주옥을 쓰지 못하게 했다",
+   "claimIds": [
+    "claim-sgy-jebang-time",
+    "claim-sgy-jebang-act",
+    "claim-sgy-jebang-ban"
+   ],
+   "confidence": "medium",
+   "note": "전국 주군 대상 명령이라 특정 지점이 없어 좌표를 넣지 않았다.",
+   "sceneId": "scene-sgy-jebang-144",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-sgy-019",
+   "category": "economy",
+   "region": "south",
+   "decade": 230,
+   "year": 238,
+   "yearVerbatim": "238년",
+   "placeLabel": "변진 여러 나라",
+   "modernPlace": "경상남북도 일원",
+   "what": "변진 땅에서 철이 나 한·예·왜가 모두 가져다 썼고, 저자에서 물건을 사고팔 때 모두 철을 써서 중국에서 돈을 쓰는 것과 같았으며 낙랑·대방 두 군에도 공급했다",
+   "claimIds": [
+    "claim-sgy-byeonjin-time",
+    "claim-sgy-byeonjin-iron",
+    "claim-sgy-byeonjin-market",
+    "claim-sgy-byeonjin-farm"
+   ],
+   "confidence": "medium",
+   "note": "원문에 연대 표기가 없다. 연도는 fact-sgy-004 와 같은 근거(claim-sgy-byeonjin-time, 한국민족문화대백과사전 「대방군」 발췌의 238년)로 못박은 기술 시점의 기준값이다. 같은 대목에 땅이 기름져 오곡과 벼를 심고 누에를 쳐 비단을 짜며 소와 말을 부린다는 기술이 함께 있다.",
+   "sceneId": "scene-sgy-byeonjin-market",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-sgy-020",
+   "category": "disaster",
+   "region": "south",
+   "decade": 10,
+   "year": 18,
+   "yearVerbatim": "秋七月",
+   "placeLabel": "신라 왕경",
+   "modernPlace": "경상북도 경주",
+   "what": "가을 7월 누리가 돌아 백성이 굶주리자 창고를 열어 구제했다",
+   "claimIds": [
+    "claim-sgy-hwang18-time",
+    "claim-sgy-hwang18-relief"
+   ],
+   "confidence": "medium",
+   "note": "원문은 구휼 장소를 적지 않았다. 좌표는 경주 왕경 지역 기준점이다. 삼국사기 초기 기록의 연대는 학계에서 논쟁이 있으나, 본 항목은 chunk date.raw 의 서기연을 그대로 따랐다.",
+   "sceneId": "scene-sgy-relief-18",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-sgy-021",
+   "category": "disaster",
+   "region": "south",
+   "decade": 100,
+   "year": 108,
+   "yearVerbatim": "二十九年",
+   "placeLabel": "왕경(명령이 내려진 곳)",
+   "modernPlace": "경상북도 경주",
+   "what": "파사이사금 29년 5월 큰물이 나 백성이 굶주리자 사신을 열 방면으로 보내 창고를 열고 나누어 주었다",
+   "claimIds": [
+    "claim-sgy-daesu108-time",
+    "claim-sgy-daesu108-relief"
+   ],
+   "confidence": "medium",
+   "note": "\"發使十道\"의 열 방면이 어디인지는 적혀 있지 않다. 점 좌표가 전국 단위 진휼 범위를 가리키는 것으로 읽히지 않도록 placeLabel 을 사신을 내보낸 왕경으로 좁혔다(같은 성격의 fact-sgy-018 은 지시 지점조차 없어 좌표를 넣지 않았다). 좌표는 경주 왕경의 지역 기준점(월성)이다.",
+   "sceneId": "scene-sgy-relief-108",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-sgy-022",
+   "category": "culture",
+   "region": "south",
+   "decade": 30,
+   "year": 32,
+   "yearVerbatim": "九年",
+   "placeLabel": "6부의 뜰",
+   "modernPlace": "경상북도 경주",
+   "what": "6부를 둘로 나눠 왕녀 둘이 각기 편을 거느리고 7월 16일부터 날마다 길쌈을 겨뤄 8월 15일에 성적을 따졌고, 진 편이 술과 음식을 내며 노래와 춤이 벌어져 이를 가배라 했고 회소곡이 나왔다",
+   "claimIds": [
+    "claim-sgy-gabae-time",
+    "claim-sgy-yukbu-rename",
+    "claim-sgy-gabae-act",
+    "claim-sgy-gabae-work",
+    "claim-sgy-hoesogok"
+   ],
+   "confidence": "medium",
+   "note": "같은 해 6부의 이름을 양부·사량부 등으로 고치고 성을 내린 기사와 이어진다. 좌표는 경주 왕경 지역 기준점이다.",
+   "sceneId": "scene-sgy-gabae-32",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": {
+    "kind": "institution",
+    "from": 32,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-sgy-023",
+   "category": "culture",
+   "region": "south",
+   "decade": 40,
+   "year": 48,
+   "yearVerbatim": "建武二十四年甲申",
+   "placeLabel": "금관 호계사 파사석탑",
+   "modernPlace": "경상남도 김해",
+   "what": "허황후가 아유타국에서 싣고 왔다는 파사석탑이 금관(김해) 호계사에 있었고, 네모 사면 5층으로 이 지방에는 없는 붉은 반점의 돌이었다",
+   "claimIds": [
+    "claim-sgy-pasa-time",
+    "claim-sgy-pasa-place",
+    "claim-sgy-pasa-form"
+   ],
+   "confidence": "low",
+   "note": "삼국유사 탑상편 전승이며 같은 대목이 \"그때 해동에는 절을 세워 불법을 받든 일이 없었다\"고 적어 48년 불교 전래설을 스스로 부정한다. 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이다.",
+   "sceneId": null,
+   "lon": 128.875889,
+   "lat": 35.243194,
+   "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-sgy-024",
+   "category": "foreign",
+   "region": "south",
+   "decade": 40,
+   "year": 48,
+   "yearVerbatim": "建㱏二十四年戊申七月二十七日",
+   "placeLabel": "별포 나루",
+   "modernPlace": "경상남도 김해",
+   "what": "아유타국 공주 허황옥이 배로 건너와 별포 나루에 닿아 수로왕의 왕후가 되었고, 따라온 노비까지 스무 남짓이 들어왔으며 돌아가는 뱃사공 15인에게 멥쌀 10섬과 베 30필씩을 주었다",
+   "claimIds": [
+    "claim-sgy-heo-time",
+    "claim-sgy-heo-origin",
+    "claim-sgy-heo-landing",
+    "claim-sgy-heo-retinue",
+    "claim-sgy-heo-gift"
+   ],
+   "confidence": "low",
+   "note": "가락국기의 전승 기사다. 원문 간지는 戊申(48년)이며 chunk date.raw 도 48이다. 좌표는 구지봉을 김해 지역 기준점으로 쓴 것이고 별포 나루 위치는 미상이다.",
+   "sceneId": "scene-sgy-heo-arrival-48",
+   "lon": 128.875889,
+   "lat": 35.243194,
+   "coordinateBasis": "src-kowiki-gujibong ex-gujibong-geo",
+   "persistence": null,
+   "density": {
+    "population": 20,
+    "unit": "口",
+    "claimIds": [
+     "claim-sgy-heo-retinue"
+    ]
+   }
+  },
+  {
+   "id": "fact-sgy-025",
+   "category": "foreign",
+   "region": "south",
+   "decade": 170,
+   "year": 173,
+   "yearVerbatim": "二十年",
+   "placeLabel": "신라 왕경",
+   "modernPlace": "경상북도 경주",
+   "what": "왜의 여왕 비미호가 사신을 보내 예방했다",
+   "claimIds": [
+    "claim-sgy-bimiho-time",
+    "claim-sgy-bimiho-act"
+   ],
+   "confidence": "medium",
+   "note": "삼국지가 전하는 히미코의 활동 시기(238년 전후)와 어긋나 연대 논쟁이 있다. 좌표는 경주 왕경 지역 기준점이다.",
+   "sceneId": "scene-sgy-bimiho-173",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-sgy-026",
+   "category": "person",
+   "region": "south",
+   "decade": 250,
+   "year": 251,
+   "yearVerbatim": "五年",
+   "placeLabel": "남당(금성)",
+   "modernPlace": "경상북도 경주",
+   "what": "한기부 사람 부도는 집이 가난해도 아첨하지 않고 글씨와 셈에 뛰어나 이름이 났는데, 왕이 불러 아찬으로 삼고 물장고 사무를 맡겼다",
+   "claimIds": [
+    "claim-sgy-budo-time",
+    "claim-sgy-budo-person",
+    "claim-sgy-budo-office"
+   ],
+   "confidence": "medium",
+   "note": "같은 해 처음으로 남당에서 정사를 보았다. 좌표는 경주 왕경 지역 기준점이다.",
+   "sceneId": "scene-sgy-budo-251",
+   "lon": 129.22611,
+   "lat": 35.83083,
+   "coordinateBasis": "src-kowiki-wolseong ex-wolseong-geo",
+   "persistence": null,
+   "density": null
+  }
+ ],
+ "missing": [
+  {
+   "id": "miss-sgy-1",
+   "topic": "가야 권역의 호구 수",
+   "detail": "금관가야를 비롯한 가야 각국의 戶·口 수치를 전하는 로컬 chunk 를 찾지 못했다. 삼국지 변진전의 \"總四五萬戶\"가 변·진한 24국 합계일 뿐이다.",
+   "neededSource": "삼국지 변진전 이외의 중국 정사 호수 기사, 또는 발굴 보고의 취락 규모 추정"
+  },
+  {
+   "id": "miss-sgy-2",
+   "topic": "가야 고분·토성의 축조 연대",
+   "detail": "대성동 고분군·봉황토성처럼 고고학으로 확인되는 3세기 이전 가야 시설의 축조 연대를 로컬 원문에서 찾지 못했다.",
+   "neededSource": "국가유산포털·국립김해박물관 해설 페이지(웹 발췌 허용 출처)"
+  },
+  {
+   "id": "miss-sgy-3",
+   "topic": "신라 초기 시장(市) 기사",
+   "detail": "-57~300년 구간 신라본기에는 京市·東市 같은 시장 개설 기사가 없다. 시장 근거는 삼국지 변진전의 \"諸市買皆用鐵\"뿐이다.",
+   "neededSource": "삼국사기 신라본기 권3 이후(490년 京師市肆) 또는 고고 자료"
+  },
+  {
+   "id": "miss-sgy-4",
+   "topic": "사도성·감물현·마산현의 위치 비정",
+   "detail": "세 곳 모두 현대 지명 비정이 갈려 좌표를 넣지 못했다.",
+   "neededSource": "한국민족문화대백과 또는 국가유산포털의 위치 서술"
+  }
+ ]
 }

@@ -77,6 +77,40 @@ generated_by: claude-opus-5
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-facts-ancient-cross_facility_culture-end-cfc-wolseong-101",
+    "subject": "event-wolseong-101",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "year",
+      "value": 935
+    },
+    "citesChunk": "chunk_samguksagi_sg_012_0060_0270",
+    "quote": "王率百寮, 發自王都, 歸于太祖",
+    "note": "신라 멸망으로 궁성 폐기(오늘날은 토성 유구와 1741년 옮겨온 석빙고만 남음): 월성은 101년 축조 이래 신라의 궁성이었고, 935년 경순왕이 백관을 거느리고 왕도를 떠나 고려 태조에게 귀순하면서 궁성으로서의 기능이 끝났다. 지금 그 자리에 남은 것은 흙·돌로 쌓은 성벽 유구와 1741년에 옮겨 세운 석빙고뿐이고 신라 궁궐 건물은 남아 있지 않다. 대안 해석: 토성 성벽 자체는 사적으로 현존하므로 '유구는 extant, 궁궐 건물은 935년 종료'로 나눠 볼 수 있으나, 3D 지도의 궁성 모형 기준으로는 935년을 끝으로 보는 ",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-facts-ancient-silla_gaya_early-end-sgy-jsd-138",
+    "subject": "entity-sgy-jeongsadang",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "year",
+      "value": 935
+    },
+    "citesChunk": "chunk_samguksagi_sg_012_0060_0270",
+    "quote": "王率百寮, 發自王都, 歸于太祖",
+    "note": "국가 소멸: 삼국사기는 일성이사금 5년(138) 2월 금성에 정사당을 두었다고만 적고, 이 관청 건물이 언제 헐렸는지는 어떤 기록에도 없다. 신라의 관청 건물이므로 신라가 935년 고려에 귀순해 왕경이 경주로 격하되면서 존속이 끝난 것으로 잡았다. 로컬 원문에서 政事堂을 AND 검색했으나 폐지·소실(廢·罷·燒) 기사는 나오지 않았다. 대안 해석: 실제로는 6세기 관제 정비(집사부 설치 651 등)로 훨씬 이전에 기능이 사라졌을 수 있다.",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

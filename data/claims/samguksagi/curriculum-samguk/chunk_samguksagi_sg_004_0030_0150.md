@@ -63,6 +63,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-facts-ancient-silla_gaya_early-end-sgy-garak-founding-42",
+    "subject": "event-sgy-garak-founding",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "year",
+      "value": 532
+    },
+    "citesChunk": "chunk_samguksagi_sg_004_0030_0150",
+    "quote": "十九年, 金官國主金仇亥與妃及三子, 長曰奴宗, 仲曰武德, 季曰武力, 以國帑寶物來降.",
+    "note": "국가 소멸(금관가야, 구해왕 신라 항복): 42년 구지봉의 계욕일 의례로 수로왕을 세운 것은 가락국(금관가야) 왕권의 성립 의례다. 이 나라는 532년(신라 법흥왕 19년) 10세 구해왕이 백성을 이끌고 신라에 항복하면서 없어졌고, 고려사 지리지도 금주(김해)의 연혁을 같은 내용으로 적는다. 따라서 건국 의례가 지탱하던 가락국 왕실 제도는 532년에 끝난다. 대안 해석: 구지봉 언덕 자체는 김해에 사적으로 남아 있고 수로왕릉 제사도 후대에 이어졌으므로 '장소'로 보면 현존이지만, 판정 대상인 가락국 왕 즉위 의례·왕실은 532년에 ",
+    "fromSource": "src-samguksagi",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```

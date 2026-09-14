@@ -1,2404 +1,2418 @@
 {
-  "collection": "facts-ancient",
-  "job": "goguryeo_late",
-  "cell": {
-    "polity": "고구려",
-    "from": 500,
-    "to": 668,
-    "regions": [
-      "north"
-    ],
-    "categories": {
-      "settlement": 3,
-      "administration": 4,
-      "facility": 3,
-      "economy": 3,
-      "disaster": 2,
-      "culture": 2,
-      "foreign": 2,
-      "person": 1
+ "collection": "facts-ancient",
+ "job": "goguryeo_late",
+ "cell": {
+  "polity": "고구려",
+  "from": 500,
+  "to": 668,
+  "regions": [
+   "north"
+  ],
+  "categories": {
+   "settlement": 3,
+   "administration": 4,
+   "facility": 3,
+   "economy": 3,
+   "disaster": 2,
+   "culture": 2,
+   "foreign": 2,
+   "person": 1
+  }
+ },
+ "sources": [
+  {
+   "id": "src-enwiki-pyongyang",
+   "title": "Pyongyang",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Pyongyang",
+   "rawFile": "raw/pyongyang.html",
+   "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
+   "httpStatus": 200,
+   "byteLength": 897617,
+   "fetchedUtc": "2026-09-13T00:41:24Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
+    {
+     "id": "ex-pyongyang-geo",
+     "text": "39.01667; 125.74750",
+     "locator": "문서 머리의 표시 좌표(class=\"geo\")"
     }
+   ]
   },
-  "sources": [
+  {
+   "id": "src-enwiki-jian",
+   "title": "Ji'an, Jilin",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Ji%27an,_Jilin",
+   "rawFile": "raw/jian-jilin.html",
+   "sha256": "c3cf4499f5ecfa710365ca347dae29736197c5129a98cb4b6ab8b69fa4421a4c",
+   "httpStatus": 200,
+   "byteLength": 189389,
+   "fetchedUtc": "2026-09-13T00:41:24Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
     {
-      "id": "src-enwiki-pyongyang",
-      "title": "Pyongyang",
-      "publisher": "Wikipedia (English)",
-      "url": "https://en.wikipedia.org/wiki/Pyongyang",
-      "rawFile": "raw/pyongyang.html",
-      "sha256": "c9c323f6065eaebe2369d73661dfa84b79b2e943382ea169921bc060588c2f54",
-      "httpStatus": 200,
-      "byteLength": 897617,
-      "fetchedUtc": "2026-09-13T00:41:24Z",
-      "license": "CC BY-SA 4.0",
-      "excerpts": [
-        {
-          "id": "ex-pyongyang-geo",
-          "text": "39.01667; 125.74750",
-          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
-        }
-      ]
-    },
-    {
-      "id": "src-enwiki-jian",
-      "title": "Ji'an, Jilin",
-      "publisher": "Wikipedia (English)",
-      "url": "https://en.wikipedia.org/wiki/Ji%27an,_Jilin",
-      "rawFile": "raw/jian-jilin.html",
-      "sha256": "c3cf4499f5ecfa710365ca347dae29736197c5129a98cb4b6ab8b69fa4421a4c",
-      "httpStatus": 200,
-      "byteLength": 189389,
-      "fetchedUtc": "2026-09-13T00:41:24Z",
-      "license": "CC BY-SA 4.0",
-      "excerpts": [
-        {
-          "id": "ex-jian-geo",
-          "text": "41.1253; 126.1940",
-          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
-        }
-      ]
-    },
-    {
-      "id": "src-enwiki-dengta",
-      "title": "Dengta, Liaoning",
-      "publisher": "Wikipedia (English)",
-      "url": "https://en.wikipedia.org/wiki/Dengta,_Liaoning",
-      "rawFile": "raw/dengta-liaoning.html",
-      "sha256": "63a1a10883433eeef27c562c7b9d451fc24405b3f89827e1eef1af633a6786cf",
-      "httpStatus": 200,
-      "byteLength": 167054,
-      "fetchedUtc": "2026-09-13T00:41:25Z",
-      "license": "CC BY-SA 4.0",
-      "excerpts": [
-        {
-          "id": "ex-dengta-geo",
-          "text": "41.433; 123.333",
-          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
-        }
-      ]
-    },
-    {
-      "id": "src-enwiki-huanren",
-      "title": "Huanren Manchu Autonomous County",
-      "publisher": "Wikipedia (English)",
-      "url": "https://en.wikipedia.org/wiki/Huanren_Manchu_Autonomous_County",
-      "rawFile": "raw/huanren.html",
-      "sha256": "1bfbfdc834a8986e6c63e6db8eee2db0fecfe409aa0ea6996833eaf3d689cb7d",
-      "httpStatus": 200,
-      "byteLength": 220514,
-      "fetchedUtc": "2026-09-13T00:41:25Z",
-      "license": "CC BY-SA 4.0",
-      "excerpts": [
-        {
-          "id": "ex-huanren-geo",
-          "text": "41.267; 125.367",
-          "locator": "문서 머리의 표시 좌표(class=\"geo\")"
-        }
-      ]
+     "id": "ex-jian-geo",
+     "text": "41.1253; 126.1940",
+     "locator": "문서 머리의 표시 좌표(class=\"geo\")"
     }
-  ],
-  "entities": [
+   ]
+  },
+  {
+   "id": "src-enwiki-dengta",
+   "title": "Dengta, Liaoning",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Dengta,_Liaoning",
+   "rawFile": "raw/dengta-liaoning.html",
+   "sha256": "63a1a10883433eeef27c562c7b9d451fc24405b3f89827e1eef1af633a6786cf",
+   "httpStatus": 200,
+   "byteLength": 167054,
+   "fetchedUtc": "2026-09-13T00:41:25Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
     {
-      "id": "polity-goguryeo",
-      "type": "Polity",
-      "label": "고구려"
-    },
-    {
-      "id": "polity-tang",
-      "type": "Polity",
-      "label": "당"
-    },
-    {
-      "id": "place-janganseong",
-      "type": "Place",
-      "label": "장안성(평양성)"
-    },
-    {
-      "id": "place-pyongyang",
-      "type": "Place",
-      "label": "평양"
-    },
-    {
-      "id": "place-guknaeseong",
-      "type": "Place",
-      "label": "국내성"
-    },
-    {
-      "id": "place-baegamseong",
-      "type": "Place",
-      "label": "백암성"
-    },
-    {
-      "id": "place-jolbon",
-      "type": "Place",
-      "label": "졸본"
-    },
-    {
-      "id": "place-cheollijangseong",
-      "type": "Place",
-      "label": "천리장성"
-    },
-    {
-      "id": "place-buyeo",
-      "type": "Place",
-      "label": "부여"
-    },
-    {
-      "id": "person-yeongaesomun",
-      "type": "Person",
-      "label": "연개소문"
-    },
-    {
-      "id": "person-yesilbul",
-      "type": "Person",
-      "label": "예실불"
-    },
-    {
-      "id": "person-i-munjin",
-      "type": "Person",
-      "label": "이문진"
-    },
-    {
-      "id": "event-gg-fall-668",
-      "type": "Event",
-      "label": "고구려 멸망과 호구 편성"
-    },
-    {
-      "id": "event-gg-baegam-645",
-      "type": "Event",
-      "label": "백암성 항복"
-    },
-    {
-      "id": "event-gg-baegam-547",
-      "type": "Event",
-      "label": "백암성 개축"
-    },
-    {
-      "id": "event-gg-move-586",
-      "type": "Event",
-      "label": "장안성 천도"
-    },
-    {
-      "id": "event-gg-andong-668",
-      "type": "Event",
-      "label": "안동도호부 설치"
-    },
-    {
-      "id": "event-gg-jangan-build-552",
-      "type": "Event",
-      "label": "장안성 축조"
-    },
-    {
-      "id": "event-gg-jangseong-631",
-      "type": "Event",
-      "label": "천리장성 축조"
-    },
-    {
-      "id": "event-gg-nongsang-583",
-      "type": "Event",
-      "label": "권농상 명령"
-    },
-    {
-      "id": "event-gg-jeokgok-590",
-      "type": "Event",
-      "label": "군량 비축"
-    },
-    {
-      "id": "event-gg-gungsil-571",
-      "type": "Event",
-      "label": "궁실 중수 파역"
-    },
-    {
-      "id": "event-gg-relief-523",
-      "type": "Event",
-      "label": "523년 발창진구"
-    },
-    {
-      "id": "event-gg-flood-535",
-      "type": "Event",
-      "label": "535년 국남 홍수"
-    },
-    {
-      "id": "event-gg-relief-536",
-      "type": "Event",
-      "label": "536년 가뭄 구휼"
-    },
-    {
-      "id": "event-gg-sinjip-600",
-      "type": "Event",
-      "label": "신집 편찬"
-    },
-    {
-      "id": "event-gg-dogyo-643",
-      "type": "Event",
-      "label": "도교 수용"
-    },
-    {
-      "id": "event-gg-jolbon-619",
-      "type": "Event",
-      "label": "졸본 시조묘 제사"
-    },
-    {
-      "id": "event-gg-yesilbul-504",
-      "type": "Event",
-      "label": "예실불의 북위 사행"
-    },
-    {
-      "id": "event-gg-bongyeokdo-628",
-      "type": "Event",
-      "label": "봉역도 헌상"
-    },
-    {
-      "id": "event-gg-namsaeng-666",
-      "type": "Event",
-      "label": "연개소문 사후 형제 분쟁"
-    },
-    {
-      "id": "event-gg-tang-contact-619",
-      "type": "Event",
-      "label": "고구려의 당 첫 견사(무덕 2년)"
-    },
-    {
-      "id": "event-gg-ansi-645",
-      "type": "Event",
-      "label": "안시성 구원군과 욕살"
+     "id": "ex-dengta-geo",
+     "text": "41.433; 123.333",
+     "locator": "문서 머리의 표시 좌표(class=\"geo\")"
     }
-  ],
-  "claims": [
+   ]
+  },
+  {
+   "id": "src-enwiki-huanren",
+   "title": "Huanren Manchu Autonomous County",
+   "publisher": "Wikipedia (English)",
+   "url": "https://en.wikipedia.org/wiki/Huanren_Manchu_Autonomous_County",
+   "rawFile": "raw/huanren.html",
+   "sha256": "1bfbfdc834a8986e6c63e6db8eee2db0fecfe409aa0ea6996833eaf3d689cb7d",
+   "httpStatus": 200,
+   "byteLength": 220514,
+   "fetchedUtc": "2026-09-13T00:41:25Z",
+   "license": "CC BY-SA 4.0",
+   "excerpts": [
     {
-      "id": "claim-loc-pyongyang",
-      "subject": "place-janganseong",
-      "predicate": "syj:locatedAt",
-      "object": {
-        "kind": "location",
-        "lat": 39.01667,
-        "lon": 125.7475,
-        "precision": "area"
-      },
-      "sourceId": "src-enwiki-pyongyang",
-      "citesExcerpt": "ex-pyongyang-geo",
-      "note": "평양 시가 좌표를 장안성(평양성) 대표 지점으로 사용"
-    },
-    {
-      "id": "claim-loc-guknaeseong",
-      "subject": "place-guknaeseong",
-      "predicate": "syj:locatedAt",
-      "object": {
-        "kind": "location",
-        "lat": 41.1253,
-        "lon": 126.194,
-        "precision": "area"
-      },
-      "sourceId": "src-enwiki-jian",
-      "citesExcerpt": "ex-jian-geo",
-      "note": "국내성 터가 있는 지린성 지안시 좌표"
-    },
-    {
-      "id": "claim-loc-baegamseong",
-      "subject": "place-baegamseong",
-      "predicate": "syj:locatedAt",
-      "object": {
-        "kind": "location",
-        "lat": 41.433,
-        "lon": 123.333,
-        "precision": "area"
-      },
-      "sourceId": "src-enwiki-dengta",
-      "citesExcerpt": "ex-dengta-geo",
-      "note": "백암성(연주성)이 있는 랴닝성 덩타시 좌표"
-    },
-    {
-      "id": "claim-loc-jolbon",
-      "subject": "place-jolbon",
-      "predicate": "syj:locatedAt",
-      "object": {
-        "kind": "location",
-        "lat": 41.267,
-        "lon": 125.367,
-        "precision": "area"
-      },
-      "sourceId": "src-enwiki-huanren",
-      "citesExcerpt": "ex-huanren-geo",
-      "note": "졸본(오녀산성)이 있는 랴닝성 환런현 좌표"
-    },
-    {
-      "id": "claim-gg-668t-time",
-      "subject": "event-gg-fall-668",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "總章元年",
-        "year": 668,
-        "precision": "month",
-        "earliest": 668,
-        "latest": 668
-      },
-      "sourceId": "src-jipseong-ko_041",
-      "citesChunk": "chunk_jipseong-ko_041_ko_041_0010_0010",
-      "quote": "總章元年(668)十月, 司空李勣破高麗國",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-668t-households",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:householdCount",
-      "object": {
-        "kind": "literal",
-        "value": 697200,
-        "unit": "戶"
-      },
-      "sourceId": "src-jipseong-ko_041",
-      "citesChunk": "chunk_jipseong-ko_041_ko_041_0010_0010",
-      "quote": "下城百七十, 戶六十九萬七千二百",
-      "note": "通典 食貨 歷代盛衰戶口"
-    },
-    {
-      "id": "claim-gg-645-time",
-      "subject": "event-gg-baegam-645",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "year",
-        "value": 645
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_021_0020_0190",
-      "quote": "李世勣進攻白巖城西南",
-      "note": "chunk date.raw 0645-99-99L0 -> 645"
-    },
-    {
-      "id": "claim-gg-645-pop",
-      "subject": "place-baegamseong",
-      "predicate": "syj:populationCount",
-      "object": {
-        "kind": "literal",
-        "value": 10000,
-        "unit": "口"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_021_0020_0190",
-      "quote": "得城中男女萬餘口",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-645-amju",
-      "subject": "place-baegamseong",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "巖州"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_021_0020_0190",
-      "quote": "以白巖城爲巖州, 以孫代音爲刺史",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-housing",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-goguryeo"
-      },
-      "sourceId": "src-jipseong-ko_034",
-      "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
-      "quote": "其俗貧窶者多, 冬月皆作長坑, 下燃熅火以取暖.",
-      "note": "온돌(長坑)의 이른 기록"
-    },
-    {
-      "id": "claim-gg-pyscale",
-      "subject": "place-janganseong",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "place-janganseong"
-      },
-      "sourceId": "src-jipseong-ko_033",
-      "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0010",
-      "quote": "都於平壤城, 亦曰長安城, 東西六里, 隨山屈曲, 南臨浿水.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-586-time",
-      "subject": "event-gg-move-586",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "二十八年",
-        "year": 586,
-        "precision": "year",
-        "earliest": 586,
-        "latest": 586
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0060_0340",
-      "quote": "二十八年, 移都長安城.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-586-move",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:capitalMovedTo",
-      "object": {
-        "kind": "entity",
-        "id": "place-janganseong"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0060_0340",
-      "quote": "移都長安城",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-668a-time",
-      "subject": "event-gg-andong-668",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "十二月",
-        "year": 668,
-        "precision": "month",
-        "earliest": 668,
-        "latest": 668
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
-      "quote": "十二月, 帝受俘于含元殿.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-668a-division",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "九都督府·四十二州·百縣"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
-      "quote": "分五部·百七十六城·六十九萬餘戸, 爲九都督府·四十二州·百縣",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-668a-andong",
-      "subject": "event-gg-andong-668",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-pyongyang"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
-      "quote": "置安東都護府於平壤, 以統之",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-samgyeong",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "三京"
-      },
-      "sourceId": "src-jipseong-ko_033",
-      "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0010",
-      "quote": "復有國內城·漢城, 並其都會之所, 其國中呼爲 「三京」.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-yoksal",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "傉薩"
-      },
-      "sourceId": "src-jipseong-ko_034",
-      "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
-      "quote": "外置州縣六十餘城. 大城置傉薩一, 比都督. 諸城置道使, 比刺史.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-547-time",
-      "subject": "event-gg-baegam-547",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "三年",
-        "year": 547,
-        "precision": "month",
-        "earliest": 547,
-        "latest": 547
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0050_0060",
-      "quote": "三年, 秋七月, 攺築白巖城, 葺新城.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-547-build",
-      "subject": "event-gg-baegam-547",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-baegamseong"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0050_0060",
-      "quote": "攺築白巖城, 葺新城",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-552-time",
-      "subject": "event-gg-jangan-build-552",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "八年",
-        "year": 552,
-        "precision": "year",
-        "earliest": 552,
-        "latest": 552
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0050_0190",
-      "quote": "八年, 築長安城.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-552-build",
-      "subject": "event-gg-jangan-build-552",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-janganseong"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0050_0190",
-      "quote": "築長安城",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-631-time",
-      "subject": "event-gg-jangseong-631",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "春二月",
-        "year": 631,
-        "precision": "month",
-        "earliest": 631,
-        "latest": 631
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_020_0030_0160",
-      "quote": "春二月, 王動衆, 築長城",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-631-wall",
-      "subject": "event-gg-jangseong-631",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "place-cheollijangseong"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_020_0030_0160",
-      "quote": "東北自扶餘城, 東南至海, 千有餘里. 凢一十六年畢㓛.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-tax",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "租戶一石, 次七斗, 下五斗"
-      },
-      "sourceId": "src-jipseong-ko_033",
-      "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0010",
-      "quote": "人稅布五匹, 穀五石. 遊人則三年一稅, 十人共細布一匹. 租戶一石, 次七斗, 下五斗.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-583-time",
-      "subject": "event-gg-nongsang-583",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "二月",
-        "year": 583,
-        "precision": "month",
-        "earliest": 583,
-        "latest": 583
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0060_0280",
-      "quote": "二月, 下令, 减不急之事, 發使郡邑, 勸農桒.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-583-act",
-      "subject": "event-gg-nongsang-583",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-goguryeo"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0060_0280",
-      "quote": "發使郡邑, 勸農桒",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-590-time",
-      "subject": "event-gg-jeokgok-590",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "三十二年",
-        "year": 590,
-        "precision": "year",
-        "earliest": 590,
-        "latest": 590
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0060_0350",
-      "quote": "三十二年, 王聞陳亡大懼, 理兵積穀",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-590-act",
-      "subject": "event-gg-jeokgok-590",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-goguryeo"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0060_0350",
-      "quote": "理兵積穀, 爲拒守之䇿",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-571-time",
-      "subject": "event-gg-gungsil-571",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "八月",
-        "year": 571,
-        "precision": "month",
-        "earliest": 571,
-        "latest": 571
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0060_0170",
-      "quote": "八月, 重修宫室, 蝗·旱罷伇.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-571-act",
-      "subject": "event-gg-gungsil-571",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "place-pyongyang"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0060_0170",
-      "quote": "重修宫室, 蝗·旱罷伇",
-      "note": "기사에 장소가 한 글자도 없다. 궁실을 도읍의 왕궁으로 보는 것은 추정이라 장소 주장(tookPlaceAt)으로 단정하지 않는다."
-    },
-    {
-      "id": "claim-gg-523-time",
-      "subject": "event-gg-relief-523",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "冬十月",
-        "year": 523,
-        "precision": "month",
-        "earliest": 523,
-        "latest": 523
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0030_0100",
-      "quote": "冬十月, 饑, 發倉賑救.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-523-act",
-      "subject": "event-gg-relief-523",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-goguryeo"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0030_0100",
-      "quote": "饑, 發倉賑救",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-535-time",
-      "subject": "event-gg-flood-535",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "夏五月",
-        "year": 535,
-        "precision": "month",
-        "earliest": 535,
-        "latest": 535
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0040_0110",
-      "quote": "夏五月, 國南大水, 漂沒民屋, 死者二百餘人.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-535-act",
-      "subject": "event-gg-flood-535",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-goguryeo"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0040_0110",
-      "quote": "國南大水, 漂沒民屋, 死者二百餘人",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-536-time",
-      "subject": "event-gg-relief-536",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "六年",
-        "year": 536,
-        "precision": "year",
-        "earliest": 536,
-        "latest": 536
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0040_0140",
-      "quote": "六年, 春夏大旱, 發使撫恤饑民.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-536-act",
-      "subject": "event-gg-relief-536",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-goguryeo"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0040_0140",
-      "quote": "春夏大旱, 發使撫恤饑民",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-600-time",
-      "subject": "event-gg-sinjip-600",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "year",
-        "value": 600
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_020_0020_0140",
-      "quote": "詔大學愽士李文眞, 約古史爲新集五卷",
-      "note": "chunk date.raw 0600-01-99L0 -> 600"
-    },
-    {
-      "id": "claim-gg-600-act",
-      "subject": "event-gg-sinjip-600",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "person-i-munjin"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_020_0020_0140",
-      "quote": "國初始用文字時, 有人記事一百卷, 名曰留記, 至是刪修.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-643-time",
-      "subject": "event-gg-dogyo-643",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "三月",
-        "year": 643,
-        "precision": "month",
-        "earliest": 643,
-        "latest": 643
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_021_0020_0050",
-      "quote": "三月, 蘇文告王曰",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-643-act",
-      "subject": "event-gg-dogyo-643",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "person-yeongaesomun"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_021_0020_0050",
-      "quote": "太宗遣道士叔逹等八人, 兼賜老子 道徳經. 王喜, 取僧寺館之.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-gyeongdang",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-goguryeo"
-      },
-      "sourceId": "src-jipseong-ko_034",
-      "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
-      "quote": "俗愛書籍, 至於衡門廝養之家, 各於街衢造大屋, 謂之扃堂, 子弟未婚之前, 晝夜於此讀書習射.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-619-time",
-      "subject": "event-gg-jolbon-619",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "夏四月",
-        "year": 619,
-        "precision": "month",
-        "earliest": 619,
-        "latest": 619
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_020_0030_0030",
-      "quote": "夏四月, 王幸卒夲, 祀始祖廟.",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-619-act",
-      "subject": "event-gg-jolbon-619",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-jolbon"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_020_0030_0030",
-      "quote": "王幸卒夲, 祀始祖廟",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-504-time",
-      "subject": "event-gg-yesilbul-504",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "十三年",
-        "year": 504,
-        "precision": "month",
-        "earliest": 504,
-        "latest": 504
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0020_0340",
-      "quote": "十三年, 夏四月, 遣使入魏朝貢",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-504-act",
-      "subject": "event-gg-yesilbul-504",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "person-yesilbul"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0020_0340",
-      "quote": "世宗引見其使芮悉弗於東堂",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-504-goods",
-      "subject": "event-gg-yesilbul-504",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "place-buyeo"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_019_0020_0340",
-      "quote": "伹黄金出自扶餘, 珂則渉羅所産",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-628-time",
-      "subject": "event-gg-bongyeokdo-628",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "十一年",
-        "year": 628,
-        "precision": "month",
-        "earliest": 628,
-        "latest": 628
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_020_0030_0120",
-      "quote": "十一年, 秋九月, 遣使入唐",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-628-act",
-      "subject": "event-gg-bongyeokdo-628",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-tang"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_020_0030_0120",
-      "quote": "賀太宗擒突厥 頡利可汗, 兼上封域圖",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-666-time",
-      "subject": "event-gg-namsaeng-666",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "year",
-        "value": 666
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_022_0020_0370",
-      "quote": "蓋蘇文死, 長子男生代爲莫離支",
-      "note": "chunk date.raw 0666-99-99L0 -> 666"
-    },
-    {
-      "id": "claim-gg-666-act",
-      "subject": "event-gg-namsaeng-666",
-      "predicate": "syj:tookPlaceAt",
-      "object": {
-        "kind": "entity",
-        "id": "place-guknaeseong"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_022_0020_0370",
-      "quote": "男生走, 據國内城, 使其子獻誠, 詣唐求哀",
-      "note": ""
-    },
-    {
-      "id": "claim-gg-housing-roof",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-goguryeo"
-      },
-      "sourceId": "src-jipseong-ko_034",
-      "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
-      "quote": "其所居必依山谷, 皆以茅草葺舍, 唯佛寺·神廟及王宮·官府乃用瓦.",
-      "note": "기와는 절·신묘·왕궁·관청에만 썼다는 대목. 연대 표기는 없다."
-    },
-    {
-      "id": "claim-gg-619t-time",
-      "subject": "event-gg-tang-contact-619",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "武德二年",
-        "year": 619,
-        "precision": "year",
-        "earliest": 619,
-        "latest": 619
-      },
-      "sourceId": "src-jipseong-ko_034",
-      "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
-      "quote": "武德二年, 遣使來朝.",
-      "note": "구당서 고려전이 당과의 교섭을 기록하기 시작하는 해. 연호 武德 2년은 서기 619년이다. 이 열전의 연대 없는 풍속 서술을 표에 놓을 하한 연도로 쓴다."
-    },
-    {
-      "id": "claim-gg-619s-time",
-      "subject": "event-gg-tang-contact-619",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "time",
-        "verbatim": "二年",
-        "year": 619,
-        "precision": "month",
-        "earliest": 619,
-        "latest": 619
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_020_0030_0020",
-      "quote": "二年, 春二月, 遣使如唐朝貢.",
-      "note": "삼국사기 영류왕 2년(chunk date.raw 0619-02-99L0)의 같은 견사 기사. 구당서의 武德 2년이 서기 619년임을 날짜가 붙은 조각으로 확인해 준다."
-    },
-    {
-      "id": "claim-gg-645y-time",
-      "subject": "event-gg-ansi-645",
-      "predicate": "syj:occurredIn",
-      "object": {
-        "kind": "year",
-        "value": 645
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_021_0020_0210",
-      "quote": "北部耨薩髙延壽·南部耨薩髙恵真, 帥我軍及靺鞨兵十五萬, 救安市",
-      "note": "chunk date.raw 0645-05-99L0 -> 645. 욕살(耨薩)이 연대와 함께 나오는 기사"
-    },
-    {
-      "id": "claim-gg-645y-yoksal",
-      "subject": "polity-goguryeo",
-      "predicate": "syj:administeredAs",
-      "object": {
-        "kind": "literal",
-        "value": "耨薩"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_021_0020_0210",
-      "quote": "北部耨薩髙延壽·南部耨薩髙恵真",
-      "note": "북부·남부의 욕살이 실제 지방 장관으로 쓰인 645년 용례"
-    },
-    {
-      "id": "claim-gg-668a-troops",
-      "subject": "event-gg-andong-668",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-tang"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
-      "quote": "以右威衞大將軍薛仁貴檢校安東都護, 㧾兵二萬人, 以鎮撫之.",
-      "note": "안동도호부에 남긴 당 주둔군 2만의 근거"
-    },
-    {
-      "id": "claim-gg-645-withdraw",
-      "subject": "event-gg-baegam-645",
-      "predicate": "syj:relatedTo",
-      "object": {
-        "kind": "entity",
-        "id": "polity-tang"
-      },
-      "sourceId": "src-samguksagi",
-      "citesChunk": "chunk_samguksagi_sg_021_0020_0226",
-      "quote": "勑班師. 先拔遼·蓋二州戸口度遼, 乃耀兵於安市城下而旋.",
-      "note": "645년 안에 당군이 물러나면서 요주·개주의 호구만 데리고 갔다. 암주가 오래가지 못했음을 보여준다."
+     "id": "ex-huanren-geo",
+     "text": "41.267; 125.367",
+     "locator": "문서 머리의 표시 좌표(class=\"geo\")"
     }
-  ],
-  "scenes": [
-    {
-      "id": "scene-gg-jangan-build-552",
-      "eventId": "event-gg-jangan-build-552",
-      "title": "장안성 축조 시작 — 평양 (552)",
-      "startYear": 552,
-      "endYear": 552,
-      "kind": "construction",
-      "summary": "양원왕 8년에 장안성을 쌓기 시작하였다.",
-      "dateClaimIds": [
-        "claim-gg-552-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-552-build"
-      ],
-      "place": {
-        "label": "장안성(평양성)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 125.7475,
-        "lat": 39.01667,
-        "claimIds": [
-          "claim-loc-pyongyang"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "평양 시가 좌표를 대표 지점으로 사용"
-      },
-      "participants": [],
-      "effects": {
-        "construction": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-552-build"
-          ]
-        }
-      },
-      "category": "facility",
-      "region": "north",
-      "decade": 550,
-      "sceneFunction": "construction_site",
-      "participantGroups": [
-        {
-          "label": "고구려 역부",
-          "role": "축성 인력",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-552-build"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "facility",
-        "from": 552,
-        "to": null,
-        "basisClaimIds": [
-          "claim-gg-552-build"
-        ]
-      }
-    },
-    {
-      "id": "scene-gg-jangan-move-586",
-      "eventId": "event-gg-move-586",
-      "title": "장안성 천도 — 평양 (586)",
-      "startYear": 586,
-      "endYear": 586,
-      "kind": "migration",
-      "summary": "평원왕 28년에 도읍을 장안성으로 옮겼다.",
-      "dateClaimIds": [
-        "claim-gg-586-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-586-move"
-      ],
-      "place": {
-        "label": "장안성(평양성)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 125.7475,
-        "lat": 39.01667,
-        "claimIds": [
-          "claim-loc-pyongyang"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "평양 시가 좌표를 대표 지점으로 사용"
-      },
-      "participants": [],
-      "effects": {
-        "capital": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-586-move"
-          ]
-        }
-      },
-      "category": "administration",
-      "region": "north",
-      "decade": 580,
-      "sceneFunction": "migration",
-      "participantGroups": [
-        {
-          "label": "고구려 왕실과 관인",
-          "role": "천도 주체",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-586-move"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "city",
-        "from": 586,
-        "to": 668,
-        "basisClaimIds": [
-          "claim-gg-586-move",
-          "claim-gg-668a-andong"
-        ]
-      }
-    },
-    {
-      "id": "scene-gg-baegam-repair-547",
-      "eventId": "event-gg-baegam-547",
-      "title": "백암성 개축과 신성 수리 (547)",
-      "startYear": 547,
-      "endYear": 547,
-      "kind": "construction",
-      "summary": "양원왕 3년 7월에 백암성을 고쳐 쌓고 신성을 수리하였다.",
-      "dateClaimIds": [
-        "claim-gg-547-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-547-build"
-      ],
-      "place": {
-        "label": "백암성",
-        "medium": "land",
-        "precision": "area",
-        "lon": 123.333,
-        "lat": 41.433,
-        "claimIds": [
-          "claim-loc-baegamseong"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "백암성(연주성)이 있는 랴오닝성 덩타시 좌표"
-      },
-      "participants": [],
-      "effects": {
-        "fortification": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-547-build"
-          ]
-        }
-      },
-      "category": "facility",
-      "region": "north",
-      "decade": 540,
-      "sceneFunction": "fortress",
-      "participantGroups": [
-        {
-          "label": "고구려 역부",
-          "role": "수축 인력",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-547-build"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "facility",
-        "from": 547,
-        "to": null,
-        "basisClaimIds": [
-          "claim-gg-547-build"
-        ]
-      }
-    },
-    {
-      "id": "scene-gg-jangseong-631",
-      "eventId": "event-gg-jangseong-631",
-      "title": "천리장성 축조 시작 (631)",
-      "startYear": 631,
-      "endYear": 647,
-      "kind": "construction",
-      "summary": "영류왕 14년 2월에 부여성에서 바다에 이르는 천여 리 장성을 쌓기 시작해 16년 만에 마쳤다.",
-      "dateClaimIds": [
-        "claim-gg-631-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-631-wall"
-      ],
-      "place": null,
-      "participants": [],
-      "effects": {
-        "fortification": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-631-wall"
-          ]
-        }
-      },
-      "category": "facility",
-      "region": "north",
-      "decade": 630,
-      "sceneFunction": "construction_site",
-      "participantGroups": [
-        {
-          "label": "동원된 백성",
-          "role": "축성 인력",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-631-wall"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "facility",
-        "from": 631,
-        "to": null,
-        "basisClaimIds": [
-          "claim-gg-631-wall"
-        ]
-      }
-    },
-    {
-      "id": "scene-gg-relief-523",
-      "eventId": "event-gg-relief-523",
-      "title": "창고를 열어 굶주린 백성을 구제하다 (523)",
-      "startYear": 523,
-      "endYear": 523,
-      "kind": "relief",
-      "summary": "안장왕 5년 10월에 기근이 들자 창고를 열어 진휼하였다. 기사에 장소가 없어 장면에도 좌표를 두지 않는다.",
-      "dateClaimIds": [
-        "claim-gg-523-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-523-act"
-      ],
-      "place": null,
-      "participants": [],
-      "effects": {
-        "relief": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-523-act"
-          ]
-        }
-      },
-      "category": "disaster",
-      "region": "north",
-      "decade": 520,
-      "sceneFunction": "relief",
-      "participantGroups": [
-        {
-          "label": "굶주린 백성",
-          "role": "수혜",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-523-act"
-          ]
-        },
-        {
-          "label": "관청 창고",
-          "role": "진휼 주체",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-523-act"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "none",
-        "from": 523,
-        "to": 523,
-        "basisClaimIds": []
-      }
-    },
-    {
-      "id": "scene-gg-relief-536",
-      "eventId": "event-gg-relief-536",
-      "title": "가뭄에 사신을 보내 굶주린 백성을 위무하다 (536)",
-      "startYear": 536,
-      "endYear": 536,
-      "kind": "relief",
-      "summary": "안원왕 6년 봄여름 큰 가뭄이 들자 사신을 보내 굶주린 백성을 어루만져 구제하였다.",
-      "dateClaimIds": [
-        "claim-gg-536-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-536-act"
-      ],
-      "place": null,
-      "participants": [],
-      "effects": {
-        "relief": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-536-act"
-          ]
-        }
-      },
-      "category": "disaster",
-      "region": "north",
-      "decade": 530,
-      "sceneFunction": "relief",
-      "participantGroups": [
-        {
-          "label": "파견된 사신",
-          "role": "구휼 주체",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-536-act"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "none",
-        "from": 536,
-        "to": 536,
-        "basisClaimIds": []
-      }
-    },
-    {
-      "id": "scene-gg-sinjip-600",
-      "eventId": "event-gg-sinjip-600",
-      "title": "태학박사 이문진의 신집 5권 편찬 (600)",
-      "startYear": 600,
-      "endYear": 600,
-      "kind": "publication",
-      "summary": "영양왕 11년에 태학박사 이문진이 옛 역사를 간추려 신집 5권을 지었다.",
-      "dateClaimIds": [
-        "claim-gg-600-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-600-act"
-      ],
-      "place": {
-        "label": "평양(도읍)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 125.7475,
-        "lat": 39.01667,
-        "claimIds": [
-          "claim-loc-pyongyang"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "태학이 있던 당시 도읍 평양을 대표 지점으로 표시"
-      },
-      "participants": [
-        {
-          "entityId": "person-i-munjin",
-          "claimIds": [
-            "claim-gg-600-act"
-          ]
-        }
-      ],
-      "effects": {
-        "publication": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-600-act"
-          ]
-        }
-      },
-      "category": "culture",
-      "region": "north",
-      "decade": 600,
-      "sceneFunction": "print_workshop",
-      "participantGroups": [
-        {
-          "label": "태학박사와 서리",
-          "role": "편찬",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-600-act"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "none",
-        "from": 600,
-        "to": 600,
-        "basisClaimIds": []
-      }
-    },
-    {
-      "id": "scene-gg-dogyo-643",
-      "eventId": "event-gg-dogyo-643",
-      "title": "도사 8인이 오고 절을 도관으로 삼다 (643)",
-      "startYear": 643,
-      "endYear": 643,
-      "kind": "ritual",
-      "summary": "보장왕 2년 3월 연개소문의 청으로 당에서 도사 8인과 도덕경이 왔고 왕이 절을 도관으로 삼았다.",
-      "dateClaimIds": [
-        "claim-gg-643-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-643-act"
-      ],
-      "place": {
-        "label": "평양(도읍)",
-        "medium": "land",
-        "precision": "area",
-        "lon": 125.7475,
-        "lat": 39.01667,
-        "claimIds": [
-          "claim-loc-pyongyang"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "왕이 머문 도읍 평양을 대표 지점으로 표시"
-      },
-      "participants": [
-        {
-          "entityId": "person-yeongaesomun",
-          "claimIds": [
-            "claim-gg-643-act"
-          ]
-        }
-      ],
-      "effects": {
-        "ritual": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-643-act"
-          ]
-        }
-      },
-      "category": "culture",
-      "region": "north",
-      "decade": 640,
-      "sceneFunction": "temple",
-      "participantGroups": [
-        {
-          "label": "당에서 온 도사",
-          "role": "의례 주체",
-          "stance": "미상",
-          "side": "당",
-          "count": 8,
-          "claimIds": [
-            "claim-gg-643-act"
-          ]
-        },
-        {
-          "label": "절에 머물던 승려",
-          "role": "자리 내줌",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-643-act"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "institution",
-        "from": 643,
-        "to": null,
-        "basisClaimIds": [
-          "claim-gg-643-act"
-        ]
-      }
-    },
-    {
-      "id": "scene-gg-jolbon-ritual-619",
-      "eventId": "event-gg-jolbon-619",
-      "title": "졸본 시조 사당 제사 (619)",
-      "startYear": 619,
-      "endYear": 619,
-      "kind": "ritual",
-      "summary": "영류왕 2년 4월에 왕이 졸본에 가서 시조 사당에 제사지냈다.",
-      "dateClaimIds": [
-        "claim-gg-619-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-619-act"
-      ],
-      "place": {
-        "label": "졸본",
-        "medium": "land",
-        "precision": "area",
-        "lon": 125.367,
-        "lat": 41.267,
-        "claimIds": [
-          "claim-loc-jolbon"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "졸본(오녀산성)이 있는 랴오닝성 환런현 좌표"
-      },
-      "participants": [],
-      "effects": {
-        "ritual": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-619-act"
-          ]
-        }
-      },
-      "category": "culture",
-      "region": "north",
-      "decade": 610,
-      "sceneFunction": "temple",
-      "participantGroups": [
-        {
-          "label": "왕과 수행 신료",
-          "role": "제사 주체",
-          "stance": "미상",
-          "side": "고구려",
-          "count": null,
-          "claimIds": [
-            "claim-gg-619-act"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "none",
-        "from": 619,
-        "to": 619,
-        "basisClaimIds": []
-      }
-    },
-    {
-      "id": "scene-gg-amju-645",
-      "eventId": "event-gg-baegam-645",
-      "title": "백암성을 암주로 삼고 손대음을 자사로 삼다 (645)",
-      "startYear": 645,
-      "endYear": 645,
-      "kind": "court",
-      "summary": "백암성이 항복하자 당이 그 성을 암주로 삼고 성주 손대음을 자사로 삼았으나, 같은 해 가을 당군이 물러가면서 오래가지 못했다.",
-      "dateClaimIds": [
-        "claim-gg-645-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-645-amju",
-        "claim-gg-645-withdraw"
-      ],
-      "place": {
-        "label": "백암성",
-        "medium": "land",
-        "precision": "area",
-        "lon": 123.333,
-        "lat": 41.433,
-        "claimIds": [
-          "claim-loc-baegamseong"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "백암성(연주성)이 있는 랴오닝성 덩타시 좌표"
-      },
-      "participants": [],
-      "effects": {
-        "administration": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-645-amju"
-          ]
-        }
-      },
-      "category": "administration",
-      "region": "north",
-      "decade": 640,
-      "sceneFunction": "fortress",
-      "participantGroups": [
-        {
-          "label": "백암성 성민",
-          "role": "편입 대상",
-          "stance": "항복",
-          "side": "고구려",
-          "count": 10000,
-          "claimIds": [
-            "claim-gg-645-pop"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "institution",
-        "from": 645,
-        "to": 645,
-        "basisClaimIds": [
-          "claim-gg-645-amju",
-          "claim-gg-645-withdraw"
-        ]
-      }
-    },
-    {
-      "id": "scene-gg-andong-668",
-      "eventId": "event-gg-andong-668",
-      "title": "안동도호부 설치 — 평양 (668)",
-      "startYear": 668,
-      "endYear": 668,
-      "kind": "court",
-      "summary": "당이 고구려 5부 176성 69만여 호를 9도독부·42주·100현으로 나누고 평양에 안동도호부를 두었다.",
-      "dateClaimIds": [
-        "claim-gg-668a-time"
-      ],
-      "actionClaimIds": [
-        "claim-gg-668a-andong",
-        "claim-gg-668a-division",
-        "claim-gg-668a-troops"
-      ],
-      "place": {
-        "label": "평양",
-        "medium": "land",
-        "precision": "area",
-        "lon": 125.7475,
-        "lat": 39.01667,
-        "claimIds": [
-          "claim-loc-pyongyang"
-        ],
-        "coordinateSourceIds": [],
-        "coordinateNote": "평양 시가 좌표를 대표 지점으로 사용"
-      },
-      "participants": [],
-      "effects": {
-        "administration": {
-          "enabled": true,
-          "claimIds": [
-            "claim-gg-668a-division"
-          ]
-        }
-      },
-      "category": "administration",
-      "region": "north",
-      "decade": 660,
-      "participantGroups": [
-        {
-          "label": "당의 도호부 주둔군",
-          "role": "통치",
-          "stance": "미상",
-          "side": "당",
-          "count": 20000,
-          "claimIds": [
-            "claim-gg-668a-troops"
-          ]
-        },
-        {
-          "label": "고구려 장수 출신 도독·자사·현령",
-          "role": "현지 관인",
-          "stance": "미상",
-          "side": "당",
-          "count": null,
-          "claimIds": [
-            "claim-gg-668a-division"
-          ]
-        }
-      ],
-      "persistence": {
-        "kind": "institution",
-        "from": 668,
-        "to": null,
-        "basisClaimIds": [
-          "claim-gg-668a-andong"
-        ]
-      }
+   ]
+  }
+ ],
+ "entities": [
+  {
+   "id": "polity-goguryeo",
+   "type": "Polity",
+   "label": "고구려"
+  },
+  {
+   "id": "polity-tang",
+   "type": "Polity",
+   "label": "당"
+  },
+  {
+   "id": "place-janganseong",
+   "type": "Place",
+   "label": "장안성(평양성)"
+  },
+  {
+   "id": "place-pyongyang",
+   "type": "Place",
+   "label": "평양"
+  },
+  {
+   "id": "place-guknaeseong",
+   "type": "Place",
+   "label": "국내성"
+  },
+  {
+   "id": "place-baegamseong",
+   "type": "Place",
+   "label": "백암성"
+  },
+  {
+   "id": "place-jolbon",
+   "type": "Place",
+   "label": "졸본"
+  },
+  {
+   "id": "place-cheollijangseong",
+   "type": "Place",
+   "label": "천리장성"
+  },
+  {
+   "id": "place-buyeo",
+   "type": "Place",
+   "label": "부여"
+  },
+  {
+   "id": "person-yeongaesomun",
+   "type": "Person",
+   "label": "연개소문"
+  },
+  {
+   "id": "person-yesilbul",
+   "type": "Person",
+   "label": "예실불"
+  },
+  {
+   "id": "person-i-munjin",
+   "type": "Person",
+   "label": "이문진"
+  },
+  {
+   "id": "event-gg-fall-668",
+   "type": "Event",
+   "label": "고구려 멸망과 호구 편성"
+  },
+  {
+   "id": "event-gg-baegam-645",
+   "type": "Event",
+   "label": "백암성 항복"
+  },
+  {
+   "id": "event-gg-baegam-547",
+   "type": "Event",
+   "label": "백암성 개축"
+  },
+  {
+   "id": "event-gg-move-586",
+   "type": "Event",
+   "label": "장안성 천도"
+  },
+  {
+   "id": "event-gg-andong-668",
+   "type": "Event",
+   "label": "안동도호부 설치"
+  },
+  {
+   "id": "event-gg-jangan-build-552",
+   "type": "Event",
+   "label": "장안성 축조"
+  },
+  {
+   "id": "event-gg-jangseong-631",
+   "type": "Event",
+   "label": "천리장성 축조"
+  },
+  {
+   "id": "event-gg-nongsang-583",
+   "type": "Event",
+   "label": "권농상 명령"
+  },
+  {
+   "id": "event-gg-jeokgok-590",
+   "type": "Event",
+   "label": "군량 비축"
+  },
+  {
+   "id": "event-gg-gungsil-571",
+   "type": "Event",
+   "label": "궁실 중수 파역"
+  },
+  {
+   "id": "event-gg-relief-523",
+   "type": "Event",
+   "label": "523년 발창진구"
+  },
+  {
+   "id": "event-gg-flood-535",
+   "type": "Event",
+   "label": "535년 국남 홍수"
+  },
+  {
+   "id": "event-gg-relief-536",
+   "type": "Event",
+   "label": "536년 가뭄 구휼"
+  },
+  {
+   "id": "event-gg-sinjip-600",
+   "type": "Event",
+   "label": "신집 편찬"
+  },
+  {
+   "id": "event-gg-dogyo-643",
+   "type": "Event",
+   "label": "도교 수용"
+  },
+  {
+   "id": "event-gg-jolbon-619",
+   "type": "Event",
+   "label": "졸본 시조묘 제사"
+  },
+  {
+   "id": "event-gg-yesilbul-504",
+   "type": "Event",
+   "label": "예실불의 북위 사행"
+  },
+  {
+   "id": "event-gg-bongyeokdo-628",
+   "type": "Event",
+   "label": "봉역도 헌상"
+  },
+  {
+   "id": "event-gg-namsaeng-666",
+   "type": "Event",
+   "label": "연개소문 사후 형제 분쟁"
+  },
+  {
+   "id": "event-gg-tang-contact-619",
+   "type": "Event",
+   "label": "고구려의 당 첫 견사(무덕 2년)"
+  },
+  {
+   "id": "event-gg-ansi-645",
+   "type": "Event",
+   "label": "안시성 구원군과 욕살"
+  }
+ ],
+ "claims": [
+  {
+   "id": "claim-loc-pyongyang",
+   "subject": "place-janganseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 39.01667,
+    "lon": 125.7475,
+    "precision": "area"
+   },
+   "sourceId": "src-enwiki-pyongyang",
+   "citesExcerpt": "ex-pyongyang-geo",
+   "note": "평양 시가 좌표를 장안성(평양성) 대표 지점으로 사용"
+  },
+  {
+   "id": "claim-loc-guknaeseong",
+   "subject": "place-guknaeseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 41.1253,
+    "lon": 126.194,
+    "precision": "area"
+   },
+   "sourceId": "src-enwiki-jian",
+   "citesExcerpt": "ex-jian-geo",
+   "note": "국내성 터가 있는 지린성 지안시 좌표"
+  },
+  {
+   "id": "claim-loc-baegamseong",
+   "subject": "place-baegamseong",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 41.433,
+    "lon": 123.333,
+    "precision": "area"
+   },
+   "sourceId": "src-enwiki-dengta",
+   "citesExcerpt": "ex-dengta-geo",
+   "note": "백암성(연주성)이 있는 랴닝성 덩타시 좌표"
+  },
+  {
+   "id": "claim-loc-jolbon",
+   "subject": "place-jolbon",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 41.267,
+    "lon": 125.367,
+    "precision": "area"
+   },
+   "sourceId": "src-enwiki-huanren",
+   "citesExcerpt": "ex-huanren-geo",
+   "note": "졸본(오녀산성)이 있는 랴닝성 환런현 좌표"
+  },
+  {
+   "id": "claim-gg-668t-time",
+   "subject": "event-gg-fall-668",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "總章元年",
+    "year": 668,
+    "precision": "month",
+    "earliest": 668,
+    "latest": 668
+   },
+   "sourceId": "src-jipseong-ko_041",
+   "citesChunk": "chunk_jipseong-ko_041_ko_041_0010_0010",
+   "quote": "總章元年(668)十月, 司空李勣破高麗國",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-668t-households",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:householdCount",
+   "object": {
+    "kind": "literal",
+    "value": 697200,
+    "unit": "戶"
+   },
+   "sourceId": "src-jipseong-ko_041",
+   "citesChunk": "chunk_jipseong-ko_041_ko_041_0010_0010",
+   "quote": "下城百七十, 戶六十九萬七千二百",
+   "note": "通典 食貨 歷代盛衰戶口"
+  },
+  {
+   "id": "claim-gg-645-time",
+   "subject": "event-gg-baegam-645",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 645
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_021_0020_0190",
+   "quote": "李世勣進攻白巖城西南",
+   "note": "chunk date.raw 0645-99-99L0 -> 645"
+  },
+  {
+   "id": "claim-gg-645-pop",
+   "subject": "place-baegamseong",
+   "predicate": "syj:populationCount",
+   "object": {
+    "kind": "literal",
+    "value": 10000,
+    "unit": "口"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_021_0020_0190",
+   "quote": "得城中男女萬餘口",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-645-amju",
+   "subject": "place-baegamseong",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "巖州"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_021_0020_0190",
+   "quote": "以白巖城爲巖州, 以孫代音爲刺史",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-housing",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goguryeo"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
+   "quote": "其俗貧窶者多, 冬月皆作長坑, 下燃熅火以取暖.",
+   "note": "온돌(長坑)의 이른 기록"
+  },
+  {
+   "id": "claim-gg-pyscale",
+   "subject": "place-janganseong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-janganseong"
+   },
+   "sourceId": "src-jipseong-ko_033",
+   "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0010",
+   "quote": "都於平壤城, 亦曰長安城, 東西六里, 隨山屈曲, 南臨浿水.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-586-time",
+   "subject": "event-gg-move-586",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二十八年",
+    "year": 586,
+    "precision": "year",
+    "earliest": 586,
+    "latest": 586
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0060_0340",
+   "quote": "二十八年, 移都長安城.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-586-move",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:capitalMovedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-janganseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0060_0340",
+   "quote": "移都長安城",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-668a-time",
+   "subject": "event-gg-andong-668",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十二月",
+    "year": 668,
+    "precision": "month",
+    "earliest": 668,
+    "latest": 668
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
+   "quote": "十二月, 帝受俘于含元殿.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-668a-division",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "九都督府·四十二州·百縣"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
+   "quote": "分五部·百七十六城·六十九萬餘戸, 爲九都督府·四十二州·百縣",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-668a-andong",
+   "subject": "event-gg-andong-668",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-pyongyang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
+   "quote": "置安東都護府於平壤, 以統之",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-samgyeong",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "三京"
+   },
+   "sourceId": "src-jipseong-ko_033",
+   "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0010",
+   "quote": "復有國內城·漢城, 並其都會之所, 其國中呼爲 「三京」.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-yoksal",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "傉薩"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
+   "quote": "外置州縣六十餘城. 大城置傉薩一, 比都督. 諸城置道使, 比刺史.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-547-time",
+   "subject": "event-gg-baegam-547",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三年",
+    "year": 547,
+    "precision": "month",
+    "earliest": 547,
+    "latest": 547
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0050_0060",
+   "quote": "三年, 秋七月, 攺築白巖城, 葺新城.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-547-build",
+   "subject": "event-gg-baegam-547",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-baegamseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0050_0060",
+   "quote": "攺築白巖城, 葺新城",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-552-time",
+   "subject": "event-gg-jangan-build-552",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "八年",
+    "year": 552,
+    "precision": "year",
+    "earliest": 552,
+    "latest": 552
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0050_0190",
+   "quote": "八年, 築長安城.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-552-build",
+   "subject": "event-gg-jangan-build-552",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-janganseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0050_0190",
+   "quote": "築長安城",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-631-time",
+   "subject": "event-gg-jangseong-631",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "春二月",
+    "year": 631,
+    "precision": "month",
+    "earliest": 631,
+    "latest": 631
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_020_0030_0160",
+   "quote": "春二月, 王動衆, 築長城",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-631-wall",
+   "subject": "event-gg-jangseong-631",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-cheollijangseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_020_0030_0160",
+   "quote": "東北自扶餘城, 東南至海, 千有餘里. 凢一十六年畢㓛.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-tax",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "租戶一石, 次七斗, 下五斗"
+   },
+   "sourceId": "src-jipseong-ko_033",
+   "citesChunk": "chunk_jipseong-ko_033_ko_033_0550_0010",
+   "quote": "人稅布五匹, 穀五石. 遊人則三年一稅, 十人共細布一匹. 租戶一石, 次七斗, 下五斗.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-583-time",
+   "subject": "event-gg-nongsang-583",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二月",
+    "year": 583,
+    "precision": "month",
+    "earliest": 583,
+    "latest": 583
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0060_0280",
+   "quote": "二月, 下令, 减不急之事, 發使郡邑, 勸農桒.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-583-act",
+   "subject": "event-gg-nongsang-583",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goguryeo"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0060_0280",
+   "quote": "發使郡邑, 勸農桒",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-590-time",
+   "subject": "event-gg-jeokgok-590",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三十二年",
+    "year": 590,
+    "precision": "year",
+    "earliest": 590,
+    "latest": 590
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0060_0350",
+   "quote": "三十二年, 王聞陳亡大懼, 理兵積穀",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-590-act",
+   "subject": "event-gg-jeokgok-590",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goguryeo"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0060_0350",
+   "quote": "理兵積穀, 爲拒守之䇿",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-571-time",
+   "subject": "event-gg-gungsil-571",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "八月",
+    "year": 571,
+    "precision": "month",
+    "earliest": 571,
+    "latest": 571
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0060_0170",
+   "quote": "八月, 重修宫室, 蝗·旱罷伇.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-571-act",
+   "subject": "event-gg-gungsil-571",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-pyongyang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0060_0170",
+   "quote": "重修宫室, 蝗·旱罷伇",
+   "note": "기사에 장소가 한 글자도 없다. 궁실을 도읍의 왕궁으로 보는 것은 추정이라 장소 주장(tookPlaceAt)으로 단정하지 않는다."
+  },
+  {
+   "id": "claim-gg-523-time",
+   "subject": "event-gg-relief-523",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "冬十月",
+    "year": 523,
+    "precision": "month",
+    "earliest": 523,
+    "latest": 523
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0030_0100",
+   "quote": "冬十月, 饑, 發倉賑救.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-523-act",
+   "subject": "event-gg-relief-523",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goguryeo"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0030_0100",
+   "quote": "饑, 發倉賑救",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-535-time",
+   "subject": "event-gg-flood-535",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "夏五月",
+    "year": 535,
+    "precision": "month",
+    "earliest": 535,
+    "latest": 535
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0040_0110",
+   "quote": "夏五月, 國南大水, 漂沒民屋, 死者二百餘人.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-535-act",
+   "subject": "event-gg-flood-535",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goguryeo"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0040_0110",
+   "quote": "國南大水, 漂沒民屋, 死者二百餘人",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-536-time",
+   "subject": "event-gg-relief-536",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "六年",
+    "year": 536,
+    "precision": "year",
+    "earliest": 536,
+    "latest": 536
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0040_0140",
+   "quote": "六年, 春夏大旱, 發使撫恤饑民.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-536-act",
+   "subject": "event-gg-relief-536",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goguryeo"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0040_0140",
+   "quote": "春夏大旱, 發使撫恤饑民",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-600-time",
+   "subject": "event-gg-sinjip-600",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 600
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_020_0020_0140",
+   "quote": "詔大學愽士李文眞, 約古史爲新集五卷",
+   "note": "chunk date.raw 0600-01-99L0 -> 600"
+  },
+  {
+   "id": "claim-gg-600-act",
+   "subject": "event-gg-sinjip-600",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "person-i-munjin"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_020_0020_0140",
+   "quote": "國初始用文字時, 有人記事一百卷, 名曰留記, 至是刪修.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-643-time",
+   "subject": "event-gg-dogyo-643",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "三月",
+    "year": 643,
+    "precision": "month",
+    "earliest": 643,
+    "latest": 643
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_021_0020_0050",
+   "quote": "三月, 蘇文告王曰",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-643-act",
+   "subject": "event-gg-dogyo-643",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "person-yeongaesomun"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_021_0020_0050",
+   "quote": "太宗遣道士叔逹等八人, 兼賜老子 道徳經. 王喜, 取僧寺館之.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-gyeongdang",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goguryeo"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
+   "quote": "俗愛書籍, 至於衡門廝養之家, 各於街衢造大屋, 謂之扃堂, 子弟未婚之前, 晝夜於此讀書習射.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-619-time",
+   "subject": "event-gg-jolbon-619",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "夏四月",
+    "year": 619,
+    "precision": "month",
+    "earliest": 619,
+    "latest": 619
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_020_0030_0030",
+   "quote": "夏四月, 王幸卒夲, 祀始祖廟.",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-619-act",
+   "subject": "event-gg-jolbon-619",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-jolbon"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_020_0030_0030",
+   "quote": "王幸卒夲, 祀始祖廟",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-504-time",
+   "subject": "event-gg-yesilbul-504",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十三年",
+    "year": 504,
+    "precision": "month",
+    "earliest": 504,
+    "latest": 504
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0020_0340",
+   "quote": "十三年, 夏四月, 遣使入魏朝貢",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-504-act",
+   "subject": "event-gg-yesilbul-504",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "person-yesilbul"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0020_0340",
+   "quote": "世宗引見其使芮悉弗於東堂",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-504-goods",
+   "subject": "event-gg-yesilbul-504",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-buyeo"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_019_0020_0340",
+   "quote": "伹黄金出自扶餘, 珂則渉羅所産",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-628-time",
+   "subject": "event-gg-bongyeokdo-628",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "十一年",
+    "year": 628,
+    "precision": "month",
+    "earliest": 628,
+    "latest": 628
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_020_0030_0120",
+   "quote": "十一年, 秋九月, 遣使入唐",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-628-act",
+   "subject": "event-gg-bongyeokdo-628",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-tang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_020_0030_0120",
+   "quote": "賀太宗擒突厥 頡利可汗, 兼上封域圖",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-666-time",
+   "subject": "event-gg-namsaeng-666",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 666
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_022_0020_0370",
+   "quote": "蓋蘇文死, 長子男生代爲莫離支",
+   "note": "chunk date.raw 0666-99-99L0 -> 666"
+  },
+  {
+   "id": "claim-gg-666-act",
+   "subject": "event-gg-namsaeng-666",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-guknaeseong"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_022_0020_0370",
+   "quote": "男生走, 據國内城, 使其子獻誠, 詣唐求哀",
+   "note": ""
+  },
+  {
+   "id": "claim-gg-housing-roof",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-goguryeo"
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
+   "quote": "其所居必依山谷, 皆以茅草葺舍, 唯佛寺·神廟及王宮·官府乃用瓦.",
+   "note": "기와는 절·신묘·왕궁·관청에만 썼다는 대목. 연대 표기는 없다."
+  },
+  {
+   "id": "claim-gg-619t-time",
+   "subject": "event-gg-tang-contact-619",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "武德二年",
+    "year": 619,
+    "precision": "year",
+    "earliest": 619,
+    "latest": 619
+   },
+   "sourceId": "src-jipseong-ko_034",
+   "citesChunk": "chunk_jipseong-ko_034_ko_034_1550_0010",
+   "quote": "武德二年, 遣使來朝.",
+   "note": "구당서 고려전이 당과의 교섭을 기록하기 시작하는 해. 연호 武德 2년은 서기 619년이다. 이 열전의 연대 없는 풍속 서술을 표에 놓을 하한 연도로 쓴다."
+  },
+  {
+   "id": "claim-gg-619s-time",
+   "subject": "event-gg-tang-contact-619",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "二年",
+    "year": 619,
+    "precision": "month",
+    "earliest": 619,
+    "latest": 619
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_020_0030_0020",
+   "quote": "二年, 春二月, 遣使如唐朝貢.",
+   "note": "삼국사기 영류왕 2년(chunk date.raw 0619-02-99L0)의 같은 견사 기사. 구당서의 武德 2년이 서기 619년임을 날짜가 붙은 조각으로 확인해 준다."
+  },
+  {
+   "id": "claim-gg-645y-time",
+   "subject": "event-gg-ansi-645",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "year",
+    "value": 645
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_021_0020_0210",
+   "quote": "北部耨薩髙延壽·南部耨薩髙恵真, 帥我軍及靺鞨兵十五萬, 救安市",
+   "note": "chunk date.raw 0645-05-99L0 -> 645. 욕살(耨薩)이 연대와 함께 나오는 기사"
+  },
+  {
+   "id": "claim-gg-645y-yoksal",
+   "subject": "polity-goguryeo",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "耨薩"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_021_0020_0210",
+   "quote": "北部耨薩髙延壽·南部耨薩髙恵真",
+   "note": "북부·남부의 욕살이 실제 지방 장관으로 쓰인 645년 용례"
+  },
+  {
+   "id": "claim-gg-668a-troops",
+   "subject": "event-gg-andong-668",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-tang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_022_0020_0480",
+   "quote": "以右威衞大將軍薛仁貴檢校安東都護, 㧾兵二萬人, 以鎮撫之.",
+   "note": "안동도호부에 남긴 당 주둔군 2만의 근거"
+  },
+  {
+   "id": "claim-gg-645-withdraw",
+   "subject": "event-gg-baegam-645",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-tang"
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_021_0020_0226",
+   "quote": "勑班師. 先拔遼·蓋二州戸口度遼, 乃耀兵於安市城下而旋.",
+   "note": "645년 안에 당군이 물러나면서 요주·개주의 호구만 데리고 갔다. 암주가 오래가지 못했음을 보여준다."
+  },
+  {
+   "id": "claim-end-gg-jangseong-631",
+   "subject": "event-gg-jangseong-631",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 668
+   },
+   "sourceId": "src-anc-enc-bojang",
+   "citesChunk": "chunk_scenes-103_ancient_scenes_bojang-fall",
+   "quote": "마침내 668년 9월에는 평양성마저 함락당해 멸망하고 말았다.",
+   "note": "고구려 멸망과 함께 폐기(국가 소멸): 영류왕 14년(631) 2월 부여성에서 바다에 이르는 천여 리 장성을 쌓기 시작해 16년 만에(646~647년 무렵) 마쳤고, 642년에는 연개소문이 축성 감독을 맡았다. 이 장성은 고구려의 대당 방어선이었으므로 668년 9월 평양성 함락·고구려 멸망과 함께 방어 시설로서 기능이 끝났고, 이후 유지·보수 기록이 없다. 현재는 위치조차 학설이 갈리고 연속된 성벽 실물이 확인되지 않는다. 대안 해석: 완공 연도(646 또는 647)를 '완성' 으로 보고 끝은 그보다 늦다고 볼 수 있으나, 축조 종"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "scene-gg-jangan-build-552",
+   "eventId": "event-gg-jangan-build-552",
+   "title": "장안성 축조 시작 — 평양 (552)",
+   "startYear": 552,
+   "endYear": 552,
+   "kind": "construction",
+   "summary": "양원왕 8년에 장안성을 쌓기 시작하였다.",
+   "dateClaimIds": [
+    "claim-gg-552-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-552-build"
+   ],
+   "place": {
+    "label": "장안성(평양성)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 125.7475,
+    "lat": 39.01667,
+    "claimIds": [
+     "claim-loc-pyongyang"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "평양 시가 좌표를 대표 지점으로 사용"
+   },
+   "participants": [],
+   "effects": {
+    "construction": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-552-build"
+     ]
     }
-  ],
-  "facts": [
+   },
+   "category": "facility",
+   "region": "north",
+   "decade": 550,
+   "sceneFunction": "construction_site",
+   "participantGroups": [
     {
-      "id": "fact-gg-set-001",
-      "category": "settlement",
-      "region": "north",
-      "decade": 660,
-      "year": 668,
-      "yearVerbatim": "總章元年",
-      "placeLabel": "고구려 전역",
-      "modernPlace": "한반도 북부와 중국 동북부",
-      "what": "고구려가 무너질 때 호 69만 7200호가 당에 편입되었다",
-      "claimIds": [
-        "claim-gg-668t-time",
-        "claim-gg-668t-households"
-      ],
-      "confidence": "high",
-      "note": "通典은 성 170·호 69만 7200, 삼국사기는 176성·69만여 호로 적어 성 수가 다르다. 호구 통계는 fact-gg-set-001 에서만 세고 fact-gg-adm-002 는 편제만 다룬다.",
-      "sceneId": null,
-      "persistence": null,
-      "density": {
-        "households": 697200,
-        "unit": "戶",
-        "claimIds": [
-          "claim-gg-668t-households"
-        ]
-      }
-    },
-    {
-      "id": "fact-gg-set-002",
-      "category": "settlement",
-      "region": "north",
-      "decade": 640,
-      "year": 645,
-      "yearVerbatim": "(4년)",
-      "placeLabel": "백암성",
-      "modernPlace": "중국 랴오닝성 덩타시 옌저우산성",
-      "what": "백암성이 항복하자 성 안의 남녀 1만여 구가 당군에게 넘어갔다",
-      "claimIds": [
-        "claim-gg-645-time",
-        "claim-gg-645-pop"
-      ],
-      "confidence": "medium",
-      "note": "성 하나의 인구 규모를 보여주는 드문 수치. 좌표는 백암성 비정지인 덩타시 좌표라 precision은 area",
-      "sceneId": null,
-      "lon": 123.333,
-      "lat": 41.433,
-      "coordinateBasis": "claim-loc-baegamseong",
-      "persistence": null,
-      "density": {
-        "population": 10000,
-        "unit": "口",
-        "claimIds": [
-          "claim-gg-645-pop"
-        ]
-      }
-    },
-    {
-      "id": "fact-gg-set-003",
-      "category": "settlement",
-      "region": "north",
-      "decade": 610,
-      "year": 619,
-      "yearVerbatim": "武德二年",
-      "placeLabel": "고구려 전역",
-      "modernPlace": "한반도 북부와 중국 동북부",
-      "what": "집은 산골짜기에 기대어 짓고 지붕은 띠풀로 이었으며 절·신묘·왕궁·관청만 기와를 썼고, 겨울에는 긴 구들을 놓고 불을 때 방을 덥혔다",
-      "claimIds": [
-        "claim-gg-619t-time",
-        "claim-gg-619s-time",
-        "claim-gg-housing-roof",
-        "claim-gg-housing"
-      ],
-      "confidence": "low",
-      "note": "구당서 고려전의 풍속 서술에는 연대가 없다. 연대를 주장하는 claim 은 두지 않았고, 이 열전이 당과의 교섭을 적기 시작하는 武德 2년(619)을 하한으로 잡아 619~668년 사이의 사정으로 표에 배치했다. 619 는 배치 기준이지 이 풍속이 시작된 해가 아니다. 온돌(長坑)의 이른 기록.",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-set-004",
-      "category": "settlement",
-      "region": "north",
-      "decade": 580,
-      "year": 586,
-      "yearVerbatim": "二十八年",
-      "placeLabel": "평양성(장안성)",
-      "modernPlace": "북한 평양직할시",
-      "what": "도읍 평양성은 장안성이라고도 했고 동서 6리에 산세를 따라 굽었으며 남쪽으로 패수에 닿았다",
-      "claimIds": [
-        "claim-gg-586-time",
-        "claim-gg-pyscale"
-      ],
-      "confidence": "low",
-      "note": "수서 동이 고려전. 내용은 원문 그대로이나 서술에 연대가 없다. 연대를 주장하는 claim 은 두지 않았고, 도읍을 장안성이라 부르는 상태가 성립하는 하한인 586년 천도(claim-gg-586-time)에 맞춰 표에 배치했다. 실제로는 586~618년(수대) 사이의 사정이다.",
-      "sceneId": null,
-      "lon": 125.7475,
-      "lat": 39.01667,
-      "coordinateBasis": "claim-loc-pyongyang",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-adm-001",
-      "category": "administration",
-      "region": "north",
-      "decade": 580,
-      "year": 586,
-      "yearVerbatim": "二十八年",
-      "placeLabel": "장안성(평양성)",
-      "modernPlace": "북한 평양직할시",
-      "what": "평원왕 28년에 도읍을 장안성으로 옮겼다",
-      "claimIds": [
-        "claim-gg-586-time",
-        "claim-gg-586-move"
-      ],
-      "confidence": "high",
-      "note": "552년에 쌓기 시작한 성으로 34년 뒤 옮겨갔다. 기존 장면 scene-city-pyongyang-capital-427-668 은 427~668년 도읍기 전체를 담은 기간 장면이고, 여기 만든 scene-gg-jangan-move-586 은 586년 천도라는 한 해의 사건 장면이라 겹치지 않는다.",
-      "sceneId": "scene-gg-jangan-move-586",
-      "lon": 125.7475,
-      "lat": 39.01667,
-      "coordinateBasis": "claim-loc-pyongyang",
-      "persistence": {
-        "kind": "city",
-        "from": 586,
-        "to": 668
-      },
-      "density": null
-    },
-    {
-      "id": "fact-gg-adm-002",
-      "category": "administration",
-      "region": "north",
-      "decade": 660,
-      "year": 668,
-      "yearVerbatim": "十二月",
-      "placeLabel": "평양",
-      "modernPlace": "북한 평양직할시",
-      "what": "당이 고구려 땅을 9도독부·42주·100현으로 나누고 평양에 안동도호부를 두어 설인귀에게 2만 병으로 지키게 하였다",
-      "claimIds": [
-        "claim-gg-668a-time",
-        "claim-gg-668a-division",
-        "claim-gg-668a-andong",
-        "claim-gg-668a-troops"
-      ],
-      "confidence": "high",
-      "note": "안동도호부는 뒤에 요동으로 옮겨가지만 그 기록은 이 칸 밖이라 to 는 null 로 두었다. 通典은 성 170·호 69만 7200, 삼국사기는 176성·69만여 호로 적어 성 수가 다르다. 호구 통계는 fact-gg-set-001 에서만 세고 fact-gg-adm-002 는 편제만 다룬다.",
-      "sceneId": "scene-gg-andong-668",
-      "lon": 125.7475,
-      "lat": 39.01667,
-      "coordinateBasis": "claim-loc-pyongyang",
-      "persistence": {
-        "kind": "institution",
-        "from": 668,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-gg-adm-003",
-      "category": "administration",
-      "region": "north",
-      "decade": 640,
-      "year": 645,
-      "yearVerbatim": "(4년)",
-      "placeLabel": "백암성",
-      "modernPlace": "중국 랴오닝성 덩타시 옌저우산성",
-      "what": "당이 백암성을 암주로 삼고 성주 손대음을 자사로 삼았다",
-      "claimIds": [
-        "claim-gg-645-time",
-        "claim-gg-645-amju",
-        "claim-gg-645-withdraw"
-      ],
-      "confidence": "high",
-      "note": "고구려 성이 당의 주(州)로 편성된 사례다. 같은 원정에서 개모성은 蓋州, 요동성은 遼州가 되었다. 645년 가을 당군이 물러나면서 요주·개주의 호구만 데려갔으므로 존속을 645년으로 닫았다.",
-      "sceneId": "scene-gg-amju-645",
-      "lon": 123.333,
-      "lat": 41.433,
-      "coordinateBasis": "claim-loc-baegamseong",
-      "persistence": {
-        "kind": "institution",
-        "from": 645,
-        "to": 645
-      },
-      "density": null
-    },
-    {
-      "id": "fact-gg-adm-004",
-      "category": "administration",
-      "region": "north",
-      "decade": 580,
-      "year": 586,
-      "yearVerbatim": "二十八年",
-      "placeLabel": "평양성·국내성·한성",
-      "modernPlace": "평양 · 중국 지린성 지안 · 황해도 재령 일대(비정 갈림)",
-      "what": "평양성 외에 국내성과 한성이 도회로 있어 나라 안에서 이를 삼경이라 불렀다",
-      "claimIds": [
-        "claim-gg-586-time",
-        "claim-gg-samgyeong"
-      ],
-      "confidence": "low",
-      "note": "수서 동이 고려전. 서술에 연대가 없어 연대를 주장하는 claim 은 두지 않았고, 평양성이 도읍인 상태가 성립하는 하한인 586년 천도에 맞춰 표에 배치했다. 한성의 위치는 재령설·황주설 등으로 갈려 좌표를 넣지 않았다.",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-adm-005",
-      "category": "administration",
-      "region": "north",
-      "decade": 640,
-      "year": 645,
-      "yearVerbatim": "(보장왕 4년)",
-      "placeLabel": "고구려 전역",
-      "modernPlace": "한반도 북부와 중국 동북부",
-      "what": "주현 60여 성을 두고 큰 성에는 욕살 한 명을 두어 도독에, 나머지 성에는 도사를 두어 자사에 견주었다",
-      "claimIds": [
-        "claim-gg-645y-time",
-        "claim-gg-645y-yoksal",
-        "claim-gg-yoksal"
-      ],
-      "confidence": "medium",
-      "note": "구당서 고려전의 지방관제 서술 자체에는 연대가 없다. 욕살(耨薩)이 연대와 함께 실제로 쓰인 삼국사기 645년 안시성 기사(北部耨薩髙延壽·南部耨薩髙恵真)에 맞춰 연도를 645로 두었다.",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-fac-001",
-      "category": "facility",
-      "region": "north",
-      "decade": 540,
-      "year": 547,
-      "yearVerbatim": "三年",
-      "placeLabel": "백암성·신성",
-      "modernPlace": "중국 랴오닝성 덩타시(백암성) · 푸순 일대(신성)",
-      "what": "양원왕 3년 7월에 백암성을 고쳐 쌓고 신성을 수리하였다",
-      "claimIds": [
-        "claim-gg-547-time",
-        "claim-gg-547-build"
-      ],
-      "confidence": "high",
-      "note": "좌표는 백암성 쪽만 표시했다",
-      "sceneId": "scene-gg-baegam-repair-547",
-      "lon": 123.333,
-      "lat": 41.433,
-      "coordinateBasis": "claim-loc-baegamseong",
-      "persistence": {
-        "kind": "facility",
-        "from": 547,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-gg-fac-002",
-      "category": "facility",
-      "region": "north",
-      "decade": 550,
-      "year": 552,
-      "yearVerbatim": "八年",
-      "placeLabel": "장안성(평양성)",
-      "modernPlace": "북한 평양직할시",
-      "what": "양원왕 8년에 장안성을 쌓았다",
-      "claimIds": [
-        "claim-gg-552-time",
-        "claim-gg-552-build"
-      ],
-      "confidence": "high",
-      "note": "586년 천도의 기반이 된 공사",
-      "sceneId": "scene-gg-jangan-build-552",
-      "lon": 125.7475,
-      "lat": 39.01667,
-      "coordinateBasis": "claim-loc-pyongyang",
-      "persistence": {
-        "kind": "facility",
-        "from": 552,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-gg-fac-003",
-      "category": "facility",
-      "region": "north",
-      "decade": 630,
-      "year": 631,
-      "yearVerbatim": "春二月",
-      "placeLabel": "천리장성(부여성~바다)",
-      "modernPlace": "중국 지린성 눙안 부근에서 랴오둥반도 바다까지(노선 비정 갈림)",
-      "what": "영류왕 14년 2월에 백성을 동원해 부여성에서 동남쪽 바다까지 천여 리 장성을 쌓기 시작해 16년 만에 마쳤다",
-      "claimIds": [
-        "claim-gg-631-time",
-        "claim-gg-631-wall"
-      ],
-      "confidence": "high",
-      "note": "노선이 선형이고 비정이 갈려 좌표를 넣지 않았다. 완공은 16년 뒤인 647년으로 계산된다",
-      "sceneId": "scene-gg-jangseong-631",
-      "persistence": {
-        "kind": "facility",
-        "from": 631,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-gg-eco-001",
-      "category": "economy",
-      "region": "north",
-      "decade": 580,
-      "year": 586,
-      "yearVerbatim": "二十八年",
-      "placeLabel": "고구려 전역",
-      "modernPlace": "한반도 북부와 중국 동북부",
-      "what": "사람마다 베 5필과 곡식 5석을 세로 내고 떠돌이는 3년에 한 번 열 사람이 세포 1필을 함께 냈으며, 조는 호마다 1석·다음 7두·아래 5두였다",
-      "claimIds": [
-        "claim-gg-586-time",
-        "claim-gg-tax"
-      ],
-      "confidence": "low",
-      "note": "수서 동이 고려전의 조세 서술. 수치는 원문과 같으나 서술에 연대가 없어 연대를 주장하는 claim 은 두지 않았고, 같은 서술 문단이 전제하는 장안성 도읍의 하한 586년에 맞춰 표에 배치했다. 586 은 조세 제도가 시작된 해가 아니라 이 서술이 확실히 유효한 구간의 하한이다.",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-eco-002",
-      "category": "economy",
-      "region": "north",
-      "decade": 580,
-      "year": 583,
-      "yearVerbatim": "二月",
-      "placeLabel": "고구려 군읍",
-      "modernPlace": "한반도 북부와 중국 동북부",
-      "what": "평원왕 25년 2월에 급하지 않은 일을 줄이라 명하고 사신을 군읍에 보내 농사와 누에치기를 권하였다",
-      "claimIds": [
-        "claim-gg-583-time",
-        "claim-gg-583-act"
-      ],
-      "confidence": "high",
-      "note": "군읍 단위로 권농이 내려간 기록",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-eco-003",
-      "category": "economy",
-      "region": "north",
-      "decade": 590,
-      "year": 590,
-      "yearVerbatim": "三十二年",
-      "placeLabel": "고구려 전역",
-      "modernPlace": "한반도 북부와 중국 동북부",
-      "what": "평원왕 32년에 진이 망했다는 소식에 병사를 정비하고 곡식을 쌓아 지킬 계책을 삼았다",
-      "claimIds": [
-        "claim-gg-590-time",
-        "claim-gg-590-act"
-      ],
-      "confidence": "high",
-      "note": "수와의 전쟁에 앞선 군량 비축",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-dis-001",
-      "category": "disaster",
-      "region": "north",
-      "decade": 520,
-      "year": 523,
-      "yearVerbatim": "冬十月",
-      "placeLabel": "고구려 전역",
-      "modernPlace": "한반도 북부와 중국 동북부",
-      "what": "안장왕 5년 10월에 기근이 들어 창고를 열어 진휼하였다",
-      "claimIds": [
-        "claim-gg-523-time",
-        "claim-gg-523-act"
-      ],
-      "confidence": "medium",
-      "note": "기사에 장소가 한 글자도 없어 좌표를 넣지 않았다. fact-gg-dis-002·003 과 같은 기준이다.",
-      "sceneId": "scene-gg-relief-523",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-dis-002",
-      "category": "disaster",
-      "region": "north",
-      "decade": 530,
-      "year": 535,
-      "yearVerbatim": "夏五月",
-      "placeLabel": "나라 남쪽(國南)",
-      "modernPlace": "대동강 이남 고구려 영역(구체적 비정 없음)",
-      "what": "안원왕 5년 5월에 나라 남쪽에 큰물이 나 민가가 떠내려가고 200여 명이 죽었다",
-      "claimIds": [
-        "claim-gg-535-time",
-        "claim-gg-535-act"
-      ],
-      "confidence": "high",
-      "note": "사망자 수가 적힌 드문 수해 기사. 위치가 \"國南\"뿐이라 좌표를 넣지 않았다",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-dis-003",
-      "category": "disaster",
-      "region": "north",
-      "decade": 530,
-      "year": 536,
-      "yearVerbatim": "六年",
-      "placeLabel": "고구려 전역",
-      "modernPlace": "한반도 북부와 중국 동북부",
-      "what": "안원왕 6년 봄여름에 큰 가뭄이 들자 사신을 보내 굶주린 백성을 위무하고 구제하였다",
-      "claimIds": [
-        "claim-gg-536-time",
-        "claim-gg-536-act"
-      ],
-      "confidence": "high",
-      "note": "창고를 여는 대신 사신을 각지로 보낸 구휼",
-      "sceneId": "scene-gg-relief-536",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-dis-004",
-      "category": "disaster",
-      "region": "north",
-      "decade": 570,
-      "year": 571,
-      "yearVerbatim": "八月",
-      "placeLabel": "고구려 왕궁(위치 기록 없음)",
-      "modernPlace": "북한 평양직할시",
-      "what": "평원왕 13년 8월에 궁실을 고쳐 짓다가 메뚜기와 가뭄으로 부역을 파하였다",
-      "claimIds": [
-        "claim-gg-571-time",
-        "claim-gg-571-act"
-      ],
-      "confidence": "medium",
-      "note": "메뚜기와 가뭄으로 국가 토목 부역이 중단된 사례다. 기사에 장소가 한 글자도 없어 좌표를 넣지 않았고, 궁실을 도읍의 왕궁으로 보는 것은 추정이라 장소 주장도 relatedTo 로 낮췄다. 蝗·旱으로 부역을 파한 기사여서 economy 가 아니라 disaster 로 옮겼다.",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-cul-001",
-      "category": "culture",
-      "region": "north",
-      "decade": 600,
-      "year": 600,
-      "yearVerbatim": "(11년 정월)",
-      "placeLabel": "평양(태학)",
-      "modernPlace": "북한 평양직할시",
-      "what": "영양왕 11년에 태학박사 이문진이 옛 역사를 간추려 신집 5권을 지었다",
-      "claimIds": [
-        "claim-gg-600-time",
-        "claim-gg-600-act"
-      ],
-      "confidence": "high",
-      "note": "건국 초의 유기 100권을 줄여 다듬은 것이다. 좌표는 태학이 있던 도읍 평양을 표시",
-      "sceneId": "scene-gg-sinjip-600",
-      "lon": 125.7475,
-      "lat": 39.01667,
-      "coordinateBasis": "claim-loc-pyongyang",
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-cul-002",
-      "category": "culture",
-      "region": "north",
-      "decade": 640,
-      "year": 643,
-      "yearVerbatim": "三月",
-      "placeLabel": "평양",
-      "modernPlace": "북한 평양직할시",
-      "what": "보장왕 2년 3월 연개소문의 청으로 당에서 도사 8명과 도덕경이 왔고 왕이 절을 도관으로 삼았다",
-      "claimIds": [
-        "claim-gg-643-time",
-        "claim-gg-643-act"
-      ],
-      "confidence": "high",
-      "note": "절이 도관으로 바뀐 기록으로 650년 보덕의 남행 배경이 된다",
-      "sceneId": "scene-gg-dogyo-643",
-      "lon": 125.7475,
-      "lat": 39.01667,
-      "coordinateBasis": "claim-loc-pyongyang",
-      "persistence": {
-        "kind": "institution",
-        "from": 643,
-        "to": null
-      },
-      "density": null
-    },
-    {
-      "id": "fact-gg-cul-003",
-      "category": "culture",
-      "region": "north",
-      "decade": 610,
-      "year": 619,
-      "yearVerbatim": "武德二年",
-      "placeLabel": "고구려의 거리(街衢)",
-      "modernPlace": "한반도 북부와 중국 동북부",
-      "what": "천한 집안까지 거리마다 큰 집을 지어 경당이라 하고 혼인 전의 자제가 밤낮으로 글을 읽고 활쏘기를 익혔다",
-      "claimIds": [
-        "claim-gg-619t-time",
-        "claim-gg-619s-time",
-        "claim-gg-gyeongdang"
-      ],
-      "confidence": "low",
-      "note": "구당서 고려전. 마을 단위 교육 시설인 경당의 근거 기록이다. 서술에 연대가 없어 연대를 주장하는 claim 은 두지 않았고, 이 열전이 당과의 교섭을 적기 시작하는 武德 2년(619)을 하한으로 잡아 619~668년 사이의 사정으로 배치했다. 619 는 배치 기준이지 경당이 생긴 해가 아니다.",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-cul-004",
-      "category": "culture",
-      "region": "north",
-      "decade": 610,
-      "year": 619,
-      "yearVerbatim": "夏四月",
-      "placeLabel": "졸본 시조 사당",
-      "modernPlace": "중국 랴오닝성 환런만족자치현(오녀산성 일대)",
-      "what": "영류왕 2년 4월에 왕이 졸본에 가서 시조 사당에 제사지냈다",
-      "claimIds": [
-        "claim-gg-619-time",
-        "claim-gg-619-act"
-      ],
-      "confidence": "high",
-      "note": "평양 도읍기에도 옛 도읍 졸본의 시조묘가 유지되었음을 보여준다. 인용문은 619년의 제사만 말하고 사당이 언제 생겼는지는 말하지 않으므로 존속(persistence) 기록은 두지 않았다.",
-      "sceneId": "scene-gg-jolbon-ritual-619",
-      "lon": 125.367,
-      "lat": 41.267,
-      "coordinateBasis": "claim-loc-jolbon",
-      "density": null
-    },
-    {
-      "id": "fact-gg-for-001",
-      "category": "foreign",
-      "region": "north",
-      "decade": 500,
-      "year": 504,
-      "yearVerbatim": "十三年",
-      "placeLabel": "북위 동당(낙양)",
-      "modernPlace": "중국 허난성 뤄양",
-      "what": "문자명왕 13년 4월 사신 예실불이 북위 세종을 만나 황금은 부여에서, 가(珂)는 섭라에서 나는데 두 곳이 물길과 백제에 막혀 공물이 끊겼다고 아뢰었다",
-      "claimIds": [
-        "claim-gg-504-time",
-        "claim-gg-504-act",
-        "claim-gg-504-goods"
-      ],
-      "confidence": "high",
-      "note": "고구려가 부여·섭라의 산물을 중계하던 사정을 보여준다. 사행지는 고구려 밖이라 좌표를 넣지 않았다 region 코드는 사행지가 아니라 주체인 고구려를 가리킨다(낙양·장안은 위도 34도대라 north 가 아니다).",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-for-002",
-      "category": "foreign",
-      "region": "north",
-      "decade": 620,
-      "year": 628,
-      "yearVerbatim": "十一年",
-      "placeLabel": "당 장안",
-      "modernPlace": "중국 산시성 시안",
-      "what": "영류왕 11년 9월에 당에 사신을 보내 힐리가한을 사로잡은 것을 하례하고 봉역도를 올렸다",
-      "claimIds": [
-        "claim-gg-628-time",
-        "claim-gg-628-act"
-      ],
-      "confidence": "high",
-      "note": "고구려가 자기 영역 지도를 당에 올린 기록 region 코드는 사행지가 아니라 주체인 고구려를 가리킨다(낙양·장안은 위도 34도대라 north 가 아니다).",
-      "sceneId": null,
-      "persistence": null,
-      "density": null
-    },
-    {
-      "id": "fact-gg-per-001",
-      "category": "person",
-      "region": "north",
-      "decade": 660,
-      "year": 666,
-      "yearVerbatim": "(25년)",
-      "placeLabel": "국내성",
-      "modernPlace": "중국 지린성 지안시",
-      "what": "연개소문이 죽고 막리지를 이은 맏아들 남생이 두 아우와 다투다 국내성에 웅거하고 아들 헌성을 당에 보내 구원을 청하였다",
-      "claimIds": [
-        "claim-gg-666-time",
-        "claim-gg-666-act"
-      ],
-      "confidence": "high",
-      "note": "고구려 멸망 2년 전의 지배층 분열. 642년 연개소문의 정변 장면은 기존 scene-anc-yeongaesomun-642에 이미 있어 새로 만들지 않았다",
-      "sceneId": null,
-      "lon": 126.194,
-      "lat": 41.1253,
-      "coordinateBasis": "claim-loc-guknaeseong",
-      "persistence": null,
-      "density": null
+     "label": "고구려 역부",
+     "role": "축성 인력",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-552-build"
+     ]
     }
-  ],
-  "missing": [
-    {
-      "id": "miss-1",
-      "topic": "고구려 후기 시장(市)",
-      "detail": "500~668년 고구려본기에 市 개설 기사가 없어 economy를 조세·권농·비축으로 채웠다",
-      "neededSource": "집성 수서·구당서의 교역 서술 추가 발췌 또는 고고 보고서"
-    },
-    {
-      "id": "miss-2",
-      "topic": "저수지·둑(堤)",
-      "detail": "이 시기 고구려의 築堤·作橋 기사를 찾지 못했다",
-      "neededSource": "금석문 또는 발굴 보고(국립문화유산연구원)"
-    },
-    {
-      "id": "miss-3",
-      "topic": "한성(漢城)의 위치",
-      "detail": "수서의 三京 가운데 한성 위치가 재령설·황주설로 갈려 좌표를 넣지 못했다",
-      "neededSource": "한국민족문화대백과 또는 국가유산포털의 위치 서술"
-    },
-    {
-      "id": "miss-4",
-      "topic": "국내성·요동성 개별 좌표",
-      "detail": "국내성은 지안시, 백암성은 덩타시 좌표로 대신해 precision을 area로 두었다",
-      "neededSource": "ko/en 위키백과 개별 성 문서의 표시 좌표"
-    },
-    {
-      "id": "miss-5",
-      "topic": "연대 없는 중국 정사 서술의 연도",
-      "detail": "수서·구당서 고려전의 풍속·제도·조세 서술에는 연대가 없다. 임의 중간값을 쓰지 않고 연대 주장 claim 을 뺀 뒤, 서술이 확실히 유효한 구간의 하한(수서 586, 구당서 619)에 배치하고 confidence 를 low 로 두었다.",
-      "neededSource": "한국민족문화대백과의 해당 항목 발췌(/Article/Search 가 robots 로 막혀 문서 id 를 찾지 못했다)"
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 552,
+    "to": null,
+    "basisClaimIds": [
+     "claim-gg-552-build"
+    ]
+   }
+  },
+  {
+   "id": "scene-gg-jangan-move-586",
+   "eventId": "event-gg-move-586",
+   "title": "장안성 천도 — 평양 (586)",
+   "startYear": 586,
+   "endYear": 586,
+   "kind": "migration",
+   "summary": "평원왕 28년에 도읍을 장안성으로 옮겼다.",
+   "dateClaimIds": [
+    "claim-gg-586-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-586-move"
+   ],
+   "place": {
+    "label": "장안성(평양성)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 125.7475,
+    "lat": 39.01667,
+    "claimIds": [
+     "claim-loc-pyongyang"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "평양 시가 좌표를 대표 지점으로 사용"
+   },
+   "participants": [],
+   "effects": {
+    "capital": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-586-move"
+     ]
     }
-  ]
+   },
+   "category": "administration",
+   "region": "north",
+   "decade": 580,
+   "sceneFunction": "migration",
+   "participantGroups": [
+    {
+     "label": "고구려 왕실과 관인",
+     "role": "천도 주체",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-586-move"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "city",
+    "from": 586,
+    "to": 668,
+    "basisClaimIds": [
+     "claim-gg-586-move",
+     "claim-gg-668a-andong"
+    ]
+   }
+  },
+  {
+   "id": "scene-gg-baegam-repair-547",
+   "eventId": "event-gg-baegam-547",
+   "title": "백암성 개축과 신성 수리 (547)",
+   "startYear": 547,
+   "endYear": 547,
+   "kind": "construction",
+   "summary": "양원왕 3년 7월에 백암성을 고쳐 쌓고 신성을 수리하였다.",
+   "dateClaimIds": [
+    "claim-gg-547-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-547-build"
+   ],
+   "place": {
+    "label": "백암성",
+    "medium": "land",
+    "precision": "area",
+    "lon": 123.333,
+    "lat": 41.433,
+    "claimIds": [
+     "claim-loc-baegamseong"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "백암성(연주성)이 있는 랴오닝성 덩타시 좌표"
+   },
+   "participants": [],
+   "effects": {
+    "fortification": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-547-build"
+     ]
+    }
+   },
+   "category": "facility",
+   "region": "north",
+   "decade": 540,
+   "sceneFunction": "fortress",
+   "participantGroups": [
+    {
+     "label": "고구려 역부",
+     "role": "수축 인력",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-547-build"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 547,
+    "to": null,
+    "basisClaimIds": [
+     "claim-gg-547-build"
+    ]
+   }
+  },
+  {
+   "id": "scene-gg-jangseong-631",
+   "eventId": "event-gg-jangseong-631",
+   "title": "천리장성 축조 시작 (631)",
+   "startYear": 631,
+   "endYear": 647,
+   "kind": "construction",
+   "summary": "영류왕 14년 2월에 부여성에서 바다에 이르는 천여 리 장성을 쌓기 시작해 16년 만에 마쳤다.",
+   "dateClaimIds": [
+    "claim-gg-631-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-631-wall"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "fortification": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-631-wall"
+     ]
+    }
+   },
+   "category": "facility",
+   "region": "north",
+   "decade": 630,
+   "sceneFunction": "construction_site",
+   "participantGroups": [
+    {
+     "label": "동원된 백성",
+     "role": "축성 인력",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-631-wall"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "facility",
+    "from": 631,
+    "to": 668,
+    "basisClaimIds": [
+     "claim-gg-631-wall",
+     "claim-end-gg-jangseong-631"
+    ]
+   }
+  },
+  {
+   "id": "scene-gg-relief-523",
+   "eventId": "event-gg-relief-523",
+   "title": "창고를 열어 굶주린 백성을 구제하다 (523)",
+   "startYear": 523,
+   "endYear": 523,
+   "kind": "relief",
+   "summary": "안장왕 5년 10월에 기근이 들자 창고를 열어 진휼하였다. 기사에 장소가 없어 장면에도 좌표를 두지 않는다.",
+   "dateClaimIds": [
+    "claim-gg-523-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-523-act"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "relief": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-523-act"
+     ]
+    }
+   },
+   "category": "disaster",
+   "region": "north",
+   "decade": 520,
+   "sceneFunction": "relief",
+   "participantGroups": [
+    {
+     "label": "굶주린 백성",
+     "role": "수혜",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-523-act"
+     ]
+    },
+    {
+     "label": "관청 창고",
+     "role": "진휼 주체",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-523-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 523,
+    "to": 523,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-gg-relief-536",
+   "eventId": "event-gg-relief-536",
+   "title": "가뭄에 사신을 보내 굶주린 백성을 위무하다 (536)",
+   "startYear": 536,
+   "endYear": 536,
+   "kind": "relief",
+   "summary": "안원왕 6년 봄여름 큰 가뭄이 들자 사신을 보내 굶주린 백성을 어루만져 구제하였다.",
+   "dateClaimIds": [
+    "claim-gg-536-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-536-act"
+   ],
+   "place": null,
+   "participants": [],
+   "effects": {
+    "relief": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-536-act"
+     ]
+    }
+   },
+   "category": "disaster",
+   "region": "north",
+   "decade": 530,
+   "sceneFunction": "relief",
+   "participantGroups": [
+    {
+     "label": "파견된 사신",
+     "role": "구휼 주체",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-536-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 536,
+    "to": 536,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-gg-sinjip-600",
+   "eventId": "event-gg-sinjip-600",
+   "title": "태학박사 이문진의 신집 5권 편찬 (600)",
+   "startYear": 600,
+   "endYear": 600,
+   "kind": "publication",
+   "summary": "영양왕 11년에 태학박사 이문진이 옛 역사를 간추려 신집 5권을 지었다.",
+   "dateClaimIds": [
+    "claim-gg-600-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-600-act"
+   ],
+   "place": {
+    "label": "평양(도읍)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 125.7475,
+    "lat": 39.01667,
+    "claimIds": [
+     "claim-loc-pyongyang"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "태학이 있던 당시 도읍 평양을 대표 지점으로 표시"
+   },
+   "participants": [
+    {
+     "entityId": "person-i-munjin",
+     "claimIds": [
+      "claim-gg-600-act"
+     ]
+    }
+   ],
+   "effects": {
+    "publication": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-600-act"
+     ]
+    }
+   },
+   "category": "culture",
+   "region": "north",
+   "decade": 600,
+   "sceneFunction": "print_workshop",
+   "participantGroups": [
+    {
+     "label": "태학박사와 서리",
+     "role": "편찬",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-600-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 600,
+    "to": 600,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-gg-dogyo-643",
+   "eventId": "event-gg-dogyo-643",
+   "title": "도사 8인이 오고 절을 도관으로 삼다 (643)",
+   "startYear": 643,
+   "endYear": 643,
+   "kind": "ritual",
+   "summary": "보장왕 2년 3월 연개소문의 청으로 당에서 도사 8인과 도덕경이 왔고 왕이 절을 도관으로 삼았다.",
+   "dateClaimIds": [
+    "claim-gg-643-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-643-act"
+   ],
+   "place": {
+    "label": "평양(도읍)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 125.7475,
+    "lat": 39.01667,
+    "claimIds": [
+     "claim-loc-pyongyang"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "왕이 머문 도읍 평양을 대표 지점으로 표시"
+   },
+   "participants": [
+    {
+     "entityId": "person-yeongaesomun",
+     "claimIds": [
+      "claim-gg-643-act"
+     ]
+    }
+   ],
+   "effects": {
+    "ritual": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-643-act"
+     ]
+    }
+   },
+   "category": "culture",
+   "region": "north",
+   "decade": 640,
+   "sceneFunction": "temple",
+   "participantGroups": [
+    {
+     "label": "당에서 온 도사",
+     "role": "의례 주체",
+     "stance": "미상",
+     "side": "당",
+     "count": 8,
+     "claimIds": [
+      "claim-gg-643-act"
+     ]
+    },
+    {
+     "label": "절에 머물던 승려",
+     "role": "자리 내줌",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-643-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "institution",
+    "from": 643,
+    "to": null,
+    "basisClaimIds": [
+     "claim-gg-643-act"
+    ]
+   }
+  },
+  {
+   "id": "scene-gg-jolbon-ritual-619",
+   "eventId": "event-gg-jolbon-619",
+   "title": "졸본 시조 사당 제사 (619)",
+   "startYear": 619,
+   "endYear": 619,
+   "kind": "ritual",
+   "summary": "영류왕 2년 4월에 왕이 졸본에 가서 시조 사당에 제사지냈다.",
+   "dateClaimIds": [
+    "claim-gg-619-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-619-act"
+   ],
+   "place": {
+    "label": "졸본",
+    "medium": "land",
+    "precision": "area",
+    "lon": 125.367,
+    "lat": 41.267,
+    "claimIds": [
+     "claim-loc-jolbon"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "졸본(오녀산성)이 있는 랴오닝성 환런현 좌표"
+   },
+   "participants": [],
+   "effects": {
+    "ritual": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-619-act"
+     ]
+    }
+   },
+   "category": "culture",
+   "region": "north",
+   "decade": 610,
+   "sceneFunction": "temple",
+   "participantGroups": [
+    {
+     "label": "왕과 수행 신료",
+     "role": "제사 주체",
+     "stance": "미상",
+     "side": "고구려",
+     "count": null,
+     "claimIds": [
+      "claim-gg-619-act"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "none",
+    "from": 619,
+    "to": 619,
+    "basisClaimIds": []
+   }
+  },
+  {
+   "id": "scene-gg-amju-645",
+   "eventId": "event-gg-baegam-645",
+   "title": "백암성을 암주로 삼고 손대음을 자사로 삼다 (645)",
+   "startYear": 645,
+   "endYear": 645,
+   "kind": "court",
+   "summary": "백암성이 항복하자 당이 그 성을 암주로 삼고 성주 손대음을 자사로 삼았으나, 같은 해 가을 당군이 물러가면서 오래가지 못했다.",
+   "dateClaimIds": [
+    "claim-gg-645-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-645-amju",
+    "claim-gg-645-withdraw"
+   ],
+   "place": {
+    "label": "백암성",
+    "medium": "land",
+    "precision": "area",
+    "lon": 123.333,
+    "lat": 41.433,
+    "claimIds": [
+     "claim-loc-baegamseong"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "백암성(연주성)이 있는 랴오닝성 덩타시 좌표"
+   },
+   "participants": [],
+   "effects": {
+    "administration": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-645-amju"
+     ]
+    }
+   },
+   "category": "administration",
+   "region": "north",
+   "decade": 640,
+   "sceneFunction": "fortress",
+   "participantGroups": [
+    {
+     "label": "백암성 성민",
+     "role": "편입 대상",
+     "stance": "항복",
+     "side": "고구려",
+     "count": 10000,
+     "claimIds": [
+      "claim-gg-645-pop"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "institution",
+    "from": 645,
+    "to": 645,
+    "basisClaimIds": [
+     "claim-gg-645-amju",
+     "claim-gg-645-withdraw"
+    ]
+   }
+  },
+  {
+   "id": "scene-gg-andong-668",
+   "eventId": "event-gg-andong-668",
+   "title": "안동도호부 설치 — 평양 (668)",
+   "startYear": 668,
+   "endYear": 668,
+   "kind": "court",
+   "summary": "당이 고구려 5부 176성 69만여 호를 9도독부·42주·100현으로 나누고 평양에 안동도호부를 두었다.",
+   "dateClaimIds": [
+    "claim-gg-668a-time"
+   ],
+   "actionClaimIds": [
+    "claim-gg-668a-andong",
+    "claim-gg-668a-division",
+    "claim-gg-668a-troops"
+   ],
+   "place": {
+    "label": "평양",
+    "medium": "land",
+    "precision": "area",
+    "lon": 125.7475,
+    "lat": 39.01667,
+    "claimIds": [
+     "claim-loc-pyongyang"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "평양 시가 좌표를 대표 지점으로 사용"
+   },
+   "participants": [],
+   "effects": {
+    "administration": {
+     "enabled": true,
+     "claimIds": [
+      "claim-gg-668a-division"
+     ]
+    }
+   },
+   "category": "administration",
+   "region": "north",
+   "decade": 660,
+   "participantGroups": [
+    {
+     "label": "당의 도호부 주둔군",
+     "role": "통치",
+     "stance": "미상",
+     "side": "당",
+     "count": 20000,
+     "claimIds": [
+      "claim-gg-668a-troops"
+     ]
+    },
+    {
+     "label": "고구려 장수 출신 도독·자사·현령",
+     "role": "현지 관인",
+     "stance": "미상",
+     "side": "당",
+     "count": null,
+     "claimIds": [
+      "claim-gg-668a-division"
+     ]
+    }
+   ],
+   "persistence": {
+    "kind": "institution",
+    "from": 668,
+    "to": null,
+    "basisClaimIds": [
+     "claim-gg-668a-andong"
+    ]
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "fact-gg-set-001",
+   "category": "settlement",
+   "region": "north",
+   "decade": 660,
+   "year": 668,
+   "yearVerbatim": "總章元年",
+   "placeLabel": "고구려 전역",
+   "modernPlace": "한반도 북부와 중국 동북부",
+   "what": "고구려가 무너질 때 호 69만 7200호가 당에 편입되었다",
+   "claimIds": [
+    "claim-gg-668t-time",
+    "claim-gg-668t-households"
+   ],
+   "confidence": "high",
+   "note": "通典은 성 170·호 69만 7200, 삼국사기는 176성·69만여 호로 적어 성 수가 다르다. 호구 통계는 fact-gg-set-001 에서만 세고 fact-gg-adm-002 는 편제만 다룬다.",
+   "sceneId": null,
+   "persistence": null,
+   "density": {
+    "households": 697200,
+    "unit": "戶",
+    "claimIds": [
+     "claim-gg-668t-households"
+    ]
+   }
+  },
+  {
+   "id": "fact-gg-set-002",
+   "category": "settlement",
+   "region": "north",
+   "decade": 640,
+   "year": 645,
+   "yearVerbatim": "(4년)",
+   "placeLabel": "백암성",
+   "modernPlace": "중국 랴오닝성 덩타시 옌저우산성",
+   "what": "백암성이 항복하자 성 안의 남녀 1만여 구가 당군에게 넘어갔다",
+   "claimIds": [
+    "claim-gg-645-time",
+    "claim-gg-645-pop"
+   ],
+   "confidence": "medium",
+   "note": "성 하나의 인구 규모를 보여주는 드문 수치. 좌표는 백암성 비정지인 덩타시 좌표라 precision은 area",
+   "sceneId": null,
+   "lon": 123.333,
+   "lat": 41.433,
+   "coordinateBasis": "claim-loc-baegamseong",
+   "persistence": null,
+   "density": {
+    "population": 10000,
+    "unit": "口",
+    "claimIds": [
+     "claim-gg-645-pop"
+    ]
+   }
+  },
+  {
+   "id": "fact-gg-set-003",
+   "category": "settlement",
+   "region": "north",
+   "decade": 610,
+   "year": 619,
+   "yearVerbatim": "武德二年",
+   "placeLabel": "고구려 전역",
+   "modernPlace": "한반도 북부와 중국 동북부",
+   "what": "집은 산골짜기에 기대어 짓고 지붕은 띠풀로 이었으며 절·신묘·왕궁·관청만 기와를 썼고, 겨울에는 긴 구들을 놓고 불을 때 방을 덥혔다",
+   "claimIds": [
+    "claim-gg-619t-time",
+    "claim-gg-619s-time",
+    "claim-gg-housing-roof",
+    "claim-gg-housing"
+   ],
+   "confidence": "low",
+   "note": "구당서 고려전의 풍속 서술에는 연대가 없다. 연대를 주장하는 claim 은 두지 않았고, 이 열전이 당과의 교섭을 적기 시작하는 武德 2년(619)을 하한으로 잡아 619~668년 사이의 사정으로 표에 배치했다. 619 는 배치 기준이지 이 풍속이 시작된 해가 아니다. 온돌(長坑)의 이른 기록.",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-set-004",
+   "category": "settlement",
+   "region": "north",
+   "decade": 580,
+   "year": 586,
+   "yearVerbatim": "二十八年",
+   "placeLabel": "평양성(장안성)",
+   "modernPlace": "북한 평양직할시",
+   "what": "도읍 평양성은 장안성이라고도 했고 동서 6리에 산세를 따라 굽었으며 남쪽으로 패수에 닿았다",
+   "claimIds": [
+    "claim-gg-586-time",
+    "claim-gg-pyscale"
+   ],
+   "confidence": "low",
+   "note": "수서 동이 고려전. 내용은 원문 그대로이나 서술에 연대가 없다. 연대를 주장하는 claim 은 두지 않았고, 도읍을 장안성이라 부르는 상태가 성립하는 하한인 586년 천도(claim-gg-586-time)에 맞춰 표에 배치했다. 실제로는 586~618년(수대) 사이의 사정이다.",
+   "sceneId": null,
+   "lon": 125.7475,
+   "lat": 39.01667,
+   "coordinateBasis": "claim-loc-pyongyang",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-adm-001",
+   "category": "administration",
+   "region": "north",
+   "decade": 580,
+   "year": 586,
+   "yearVerbatim": "二十八年",
+   "placeLabel": "장안성(평양성)",
+   "modernPlace": "북한 평양직할시",
+   "what": "평원왕 28년에 도읍을 장안성으로 옮겼다",
+   "claimIds": [
+    "claim-gg-586-time",
+    "claim-gg-586-move"
+   ],
+   "confidence": "high",
+   "note": "552년에 쌓기 시작한 성으로 34년 뒤 옮겨갔다. 기존 장면 scene-city-pyongyang-capital-427-668 은 427~668년 도읍기 전체를 담은 기간 장면이고, 여기 만든 scene-gg-jangan-move-586 은 586년 천도라는 한 해의 사건 장면이라 겹치지 않는다.",
+   "sceneId": "scene-gg-jangan-move-586",
+   "lon": 125.7475,
+   "lat": 39.01667,
+   "coordinateBasis": "claim-loc-pyongyang",
+   "persistence": {
+    "kind": "city",
+    "from": 586,
+    "to": 668
+   },
+   "density": null
+  },
+  {
+   "id": "fact-gg-adm-002",
+   "category": "administration",
+   "region": "north",
+   "decade": 660,
+   "year": 668,
+   "yearVerbatim": "十二月",
+   "placeLabel": "평양",
+   "modernPlace": "북한 평양직할시",
+   "what": "당이 고구려 땅을 9도독부·42주·100현으로 나누고 평양에 안동도호부를 두어 설인귀에게 2만 병으로 지키게 하였다",
+   "claimIds": [
+    "claim-gg-668a-time",
+    "claim-gg-668a-division",
+    "claim-gg-668a-andong",
+    "claim-gg-668a-troops"
+   ],
+   "confidence": "high",
+   "note": "안동도호부는 뒤에 요동으로 옮겨가지만 그 기록은 이 칸 밖이라 to 는 null 로 두었다. 通典은 성 170·호 69만 7200, 삼국사기는 176성·69만여 호로 적어 성 수가 다르다. 호구 통계는 fact-gg-set-001 에서만 세고 fact-gg-adm-002 는 편제만 다룬다.",
+   "sceneId": "scene-gg-andong-668",
+   "lon": 125.7475,
+   "lat": 39.01667,
+   "coordinateBasis": "claim-loc-pyongyang",
+   "persistence": {
+    "kind": "institution",
+    "from": 668,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-gg-adm-003",
+   "category": "administration",
+   "region": "north",
+   "decade": 640,
+   "year": 645,
+   "yearVerbatim": "(4년)",
+   "placeLabel": "백암성",
+   "modernPlace": "중국 랴오닝성 덩타시 옌저우산성",
+   "what": "당이 백암성을 암주로 삼고 성주 손대음을 자사로 삼았다",
+   "claimIds": [
+    "claim-gg-645-time",
+    "claim-gg-645-amju",
+    "claim-gg-645-withdraw"
+   ],
+   "confidence": "high",
+   "note": "고구려 성이 당의 주(州)로 편성된 사례다. 같은 원정에서 개모성은 蓋州, 요동성은 遼州가 되었다. 645년 가을 당군이 물러나면서 요주·개주의 호구만 데려갔으므로 존속을 645년으로 닫았다.",
+   "sceneId": "scene-gg-amju-645",
+   "lon": 123.333,
+   "lat": 41.433,
+   "coordinateBasis": "claim-loc-baegamseong",
+   "persistence": {
+    "kind": "institution",
+    "from": 645,
+    "to": 645
+   },
+   "density": null
+  },
+  {
+   "id": "fact-gg-adm-004",
+   "category": "administration",
+   "region": "north",
+   "decade": 580,
+   "year": 586,
+   "yearVerbatim": "二十八年",
+   "placeLabel": "평양성·국내성·한성",
+   "modernPlace": "평양 · 중국 지린성 지안 · 황해도 재령 일대(비정 갈림)",
+   "what": "평양성 외에 국내성과 한성이 도회로 있어 나라 안에서 이를 삼경이라 불렀다",
+   "claimIds": [
+    "claim-gg-586-time",
+    "claim-gg-samgyeong"
+   ],
+   "confidence": "low",
+   "note": "수서 동이 고려전. 서술에 연대가 없어 연대를 주장하는 claim 은 두지 않았고, 평양성이 도읍인 상태가 성립하는 하한인 586년 천도에 맞춰 표에 배치했다. 한성의 위치는 재령설·황주설 등으로 갈려 좌표를 넣지 않았다.",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-adm-005",
+   "category": "administration",
+   "region": "north",
+   "decade": 640,
+   "year": 645,
+   "yearVerbatim": "(보장왕 4년)",
+   "placeLabel": "고구려 전역",
+   "modernPlace": "한반도 북부와 중국 동북부",
+   "what": "주현 60여 성을 두고 큰 성에는 욕살 한 명을 두어 도독에, 나머지 성에는 도사를 두어 자사에 견주었다",
+   "claimIds": [
+    "claim-gg-645y-time",
+    "claim-gg-645y-yoksal",
+    "claim-gg-yoksal"
+   ],
+   "confidence": "medium",
+   "note": "구당서 고려전의 지방관제 서술 자체에는 연대가 없다. 욕살(耨薩)이 연대와 함께 실제로 쓰인 삼국사기 645년 안시성 기사(北部耨薩髙延壽·南部耨薩髙恵真)에 맞춰 연도를 645로 두었다.",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-fac-001",
+   "category": "facility",
+   "region": "north",
+   "decade": 540,
+   "year": 547,
+   "yearVerbatim": "三年",
+   "placeLabel": "백암성·신성",
+   "modernPlace": "중국 랴오닝성 덩타시(백암성) · 푸순 일대(신성)",
+   "what": "양원왕 3년 7월에 백암성을 고쳐 쌓고 신성을 수리하였다",
+   "claimIds": [
+    "claim-gg-547-time",
+    "claim-gg-547-build"
+   ],
+   "confidence": "high",
+   "note": "좌표는 백암성 쪽만 표시했다",
+   "sceneId": "scene-gg-baegam-repair-547",
+   "lon": 123.333,
+   "lat": 41.433,
+   "coordinateBasis": "claim-loc-baegamseong",
+   "persistence": {
+    "kind": "facility",
+    "from": 547,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-gg-fac-002",
+   "category": "facility",
+   "region": "north",
+   "decade": 550,
+   "year": 552,
+   "yearVerbatim": "八年",
+   "placeLabel": "장안성(평양성)",
+   "modernPlace": "북한 평양직할시",
+   "what": "양원왕 8년에 장안성을 쌓았다",
+   "claimIds": [
+    "claim-gg-552-time",
+    "claim-gg-552-build"
+   ],
+   "confidence": "high",
+   "note": "586년 천도의 기반이 된 공사",
+   "sceneId": "scene-gg-jangan-build-552",
+   "lon": 125.7475,
+   "lat": 39.01667,
+   "coordinateBasis": "claim-loc-pyongyang",
+   "persistence": {
+    "kind": "facility",
+    "from": 552,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-gg-fac-003",
+   "category": "facility",
+   "region": "north",
+   "decade": 630,
+   "year": 631,
+   "yearVerbatim": "春二月",
+   "placeLabel": "천리장성(부여성~바다)",
+   "modernPlace": "중국 지린성 눙안 부근에서 랴오둥반도 바다까지(노선 비정 갈림)",
+   "what": "영류왕 14년 2월에 백성을 동원해 부여성에서 동남쪽 바다까지 천여 리 장성을 쌓기 시작해 16년 만에 마쳤다",
+   "claimIds": [
+    "claim-gg-631-time",
+    "claim-gg-631-wall"
+   ],
+   "confidence": "high",
+   "note": "노선이 선형이고 비정이 갈려 좌표를 넣지 않았다. 완공은 16년 뒤인 647년으로 계산된다",
+   "sceneId": "scene-gg-jangseong-631",
+   "persistence": {
+    "kind": "facility",
+    "from": 631,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-gg-eco-001",
+   "category": "economy",
+   "region": "north",
+   "decade": 580,
+   "year": 586,
+   "yearVerbatim": "二十八年",
+   "placeLabel": "고구려 전역",
+   "modernPlace": "한반도 북부와 중국 동북부",
+   "what": "사람마다 베 5필과 곡식 5석을 세로 내고 떠돌이는 3년에 한 번 열 사람이 세포 1필을 함께 냈으며, 조는 호마다 1석·다음 7두·아래 5두였다",
+   "claimIds": [
+    "claim-gg-586-time",
+    "claim-gg-tax"
+   ],
+   "confidence": "low",
+   "note": "수서 동이 고려전의 조세 서술. 수치는 원문과 같으나 서술에 연대가 없어 연대를 주장하는 claim 은 두지 않았고, 같은 서술 문단이 전제하는 장안성 도읍의 하한 586년에 맞춰 표에 배치했다. 586 은 조세 제도가 시작된 해가 아니라 이 서술이 확실히 유효한 구간의 하한이다.",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-eco-002",
+   "category": "economy",
+   "region": "north",
+   "decade": 580,
+   "year": 583,
+   "yearVerbatim": "二月",
+   "placeLabel": "고구려 군읍",
+   "modernPlace": "한반도 북부와 중국 동북부",
+   "what": "평원왕 25년 2월에 급하지 않은 일을 줄이라 명하고 사신을 군읍에 보내 농사와 누에치기를 권하였다",
+   "claimIds": [
+    "claim-gg-583-time",
+    "claim-gg-583-act"
+   ],
+   "confidence": "high",
+   "note": "군읍 단위로 권농이 내려간 기록",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-eco-003",
+   "category": "economy",
+   "region": "north",
+   "decade": 590,
+   "year": 590,
+   "yearVerbatim": "三十二年",
+   "placeLabel": "고구려 전역",
+   "modernPlace": "한반도 북부와 중국 동북부",
+   "what": "평원왕 32년에 진이 망했다는 소식에 병사를 정비하고 곡식을 쌓아 지킬 계책을 삼았다",
+   "claimIds": [
+    "claim-gg-590-time",
+    "claim-gg-590-act"
+   ],
+   "confidence": "high",
+   "note": "수와의 전쟁에 앞선 군량 비축",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-dis-001",
+   "category": "disaster",
+   "region": "north",
+   "decade": 520,
+   "year": 523,
+   "yearVerbatim": "冬十月",
+   "placeLabel": "고구려 전역",
+   "modernPlace": "한반도 북부와 중국 동북부",
+   "what": "안장왕 5년 10월에 기근이 들어 창고를 열어 진휼하였다",
+   "claimIds": [
+    "claim-gg-523-time",
+    "claim-gg-523-act"
+   ],
+   "confidence": "medium",
+   "note": "기사에 장소가 한 글자도 없어 좌표를 넣지 않았다. fact-gg-dis-002·003 과 같은 기준이다.",
+   "sceneId": "scene-gg-relief-523",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-dis-002",
+   "category": "disaster",
+   "region": "north",
+   "decade": 530,
+   "year": 535,
+   "yearVerbatim": "夏五月",
+   "placeLabel": "나라 남쪽(國南)",
+   "modernPlace": "대동강 이남 고구려 영역(구체적 비정 없음)",
+   "what": "안원왕 5년 5월에 나라 남쪽에 큰물이 나 민가가 떠내려가고 200여 명이 죽었다",
+   "claimIds": [
+    "claim-gg-535-time",
+    "claim-gg-535-act"
+   ],
+   "confidence": "high",
+   "note": "사망자 수가 적힌 드문 수해 기사. 위치가 \"國南\"뿐이라 좌표를 넣지 않았다",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-dis-003",
+   "category": "disaster",
+   "region": "north",
+   "decade": 530,
+   "year": 536,
+   "yearVerbatim": "六年",
+   "placeLabel": "고구려 전역",
+   "modernPlace": "한반도 북부와 중국 동북부",
+   "what": "안원왕 6년 봄여름에 큰 가뭄이 들자 사신을 보내 굶주린 백성을 위무하고 구제하였다",
+   "claimIds": [
+    "claim-gg-536-time",
+    "claim-gg-536-act"
+   ],
+   "confidence": "high",
+   "note": "창고를 여는 대신 사신을 각지로 보낸 구휼",
+   "sceneId": "scene-gg-relief-536",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-dis-004",
+   "category": "disaster",
+   "region": "north",
+   "decade": 570,
+   "year": 571,
+   "yearVerbatim": "八月",
+   "placeLabel": "고구려 왕궁(위치 기록 없음)",
+   "modernPlace": "북한 평양직할시",
+   "what": "평원왕 13년 8월에 궁실을 고쳐 짓다가 메뚜기와 가뭄으로 부역을 파하였다",
+   "claimIds": [
+    "claim-gg-571-time",
+    "claim-gg-571-act"
+   ],
+   "confidence": "medium",
+   "note": "메뚜기와 가뭄으로 국가 토목 부역이 중단된 사례다. 기사에 장소가 한 글자도 없어 좌표를 넣지 않았고, 궁실을 도읍의 왕궁으로 보는 것은 추정이라 장소 주장도 relatedTo 로 낮췄다. 蝗·旱으로 부역을 파한 기사여서 economy 가 아니라 disaster 로 옮겼다.",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-cul-001",
+   "category": "culture",
+   "region": "north",
+   "decade": 600,
+   "year": 600,
+   "yearVerbatim": "(11년 정월)",
+   "placeLabel": "평양(태학)",
+   "modernPlace": "북한 평양직할시",
+   "what": "영양왕 11년에 태학박사 이문진이 옛 역사를 간추려 신집 5권을 지었다",
+   "claimIds": [
+    "claim-gg-600-time",
+    "claim-gg-600-act"
+   ],
+   "confidence": "high",
+   "note": "건국 초의 유기 100권을 줄여 다듬은 것이다. 좌표는 태학이 있던 도읍 평양을 표시",
+   "sceneId": "scene-gg-sinjip-600",
+   "lon": 125.7475,
+   "lat": 39.01667,
+   "coordinateBasis": "claim-loc-pyongyang",
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-cul-002",
+   "category": "culture",
+   "region": "north",
+   "decade": 640,
+   "year": 643,
+   "yearVerbatim": "三月",
+   "placeLabel": "평양",
+   "modernPlace": "북한 평양직할시",
+   "what": "보장왕 2년 3월 연개소문의 청으로 당에서 도사 8명과 도덕경이 왔고 왕이 절을 도관으로 삼았다",
+   "claimIds": [
+    "claim-gg-643-time",
+    "claim-gg-643-act"
+   ],
+   "confidence": "high",
+   "note": "절이 도관으로 바뀐 기록으로 650년 보덕의 남행 배경이 된다",
+   "sceneId": "scene-gg-dogyo-643",
+   "lon": 125.7475,
+   "lat": 39.01667,
+   "coordinateBasis": "claim-loc-pyongyang",
+   "persistence": {
+    "kind": "institution",
+    "from": 643,
+    "to": null
+   },
+   "density": null
+  },
+  {
+   "id": "fact-gg-cul-003",
+   "category": "culture",
+   "region": "north",
+   "decade": 610,
+   "year": 619,
+   "yearVerbatim": "武德二年",
+   "placeLabel": "고구려의 거리(街衢)",
+   "modernPlace": "한반도 북부와 중국 동북부",
+   "what": "천한 집안까지 거리마다 큰 집을 지어 경당이라 하고 혼인 전의 자제가 밤낮으로 글을 읽고 활쏘기를 익혔다",
+   "claimIds": [
+    "claim-gg-619t-time",
+    "claim-gg-619s-time",
+    "claim-gg-gyeongdang"
+   ],
+   "confidence": "low",
+   "note": "구당서 고려전. 마을 단위 교육 시설인 경당의 근거 기록이다. 서술에 연대가 없어 연대를 주장하는 claim 은 두지 않았고, 이 열전이 당과의 교섭을 적기 시작하는 武德 2년(619)을 하한으로 잡아 619~668년 사이의 사정으로 배치했다. 619 는 배치 기준이지 경당이 생긴 해가 아니다.",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-cul-004",
+   "category": "culture",
+   "region": "north",
+   "decade": 610,
+   "year": 619,
+   "yearVerbatim": "夏四月",
+   "placeLabel": "졸본 시조 사당",
+   "modernPlace": "중국 랴오닝성 환런만족자치현(오녀산성 일대)",
+   "what": "영류왕 2년 4월에 왕이 졸본에 가서 시조 사당에 제사지냈다",
+   "claimIds": [
+    "claim-gg-619-time",
+    "claim-gg-619-act"
+   ],
+   "confidence": "high",
+   "note": "평양 도읍기에도 옛 도읍 졸본의 시조묘가 유지되었음을 보여준다. 인용문은 619년의 제사만 말하고 사당이 언제 생겼는지는 말하지 않으므로 존속(persistence) 기록은 두지 않았다.",
+   "sceneId": "scene-gg-jolbon-ritual-619",
+   "lon": 125.367,
+   "lat": 41.267,
+   "coordinateBasis": "claim-loc-jolbon",
+   "density": null
+  },
+  {
+   "id": "fact-gg-for-001",
+   "category": "foreign",
+   "region": "north",
+   "decade": 500,
+   "year": 504,
+   "yearVerbatim": "十三年",
+   "placeLabel": "북위 동당(낙양)",
+   "modernPlace": "중국 허난성 뤄양",
+   "what": "문자명왕 13년 4월 사신 예실불이 북위 세종을 만나 황금은 부여에서, 가(珂)는 섭라에서 나는데 두 곳이 물길과 백제에 막혀 공물이 끊겼다고 아뢰었다",
+   "claimIds": [
+    "claim-gg-504-time",
+    "claim-gg-504-act",
+    "claim-gg-504-goods"
+   ],
+   "confidence": "high",
+   "note": "고구려가 부여·섭라의 산물을 중계하던 사정을 보여준다. 사행지는 고구려 밖이라 좌표를 넣지 않았다 region 코드는 사행지가 아니라 주체인 고구려를 가리킨다(낙양·장안은 위도 34도대라 north 가 아니다).",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-for-002",
+   "category": "foreign",
+   "region": "north",
+   "decade": 620,
+   "year": 628,
+   "yearVerbatim": "十一年",
+   "placeLabel": "당 장안",
+   "modernPlace": "중국 산시성 시안",
+   "what": "영류왕 11년 9월에 당에 사신을 보내 힐리가한을 사로잡은 것을 하례하고 봉역도를 올렸다",
+   "claimIds": [
+    "claim-gg-628-time",
+    "claim-gg-628-act"
+   ],
+   "confidence": "high",
+   "note": "고구려가 자기 영역 지도를 당에 올린 기록 region 코드는 사행지가 아니라 주체인 고구려를 가리킨다(낙양·장안은 위도 34도대라 north 가 아니다).",
+   "sceneId": null,
+   "persistence": null,
+   "density": null
+  },
+  {
+   "id": "fact-gg-per-001",
+   "category": "person",
+   "region": "north",
+   "decade": 660,
+   "year": 666,
+   "yearVerbatim": "(25년)",
+   "placeLabel": "국내성",
+   "modernPlace": "중국 지린성 지안시",
+   "what": "연개소문이 죽고 막리지를 이은 맏아들 남생이 두 아우와 다투다 국내성에 웅거하고 아들 헌성을 당에 보내 구원을 청하였다",
+   "claimIds": [
+    "claim-gg-666-time",
+    "claim-gg-666-act"
+   ],
+   "confidence": "high",
+   "note": "고구려 멸망 2년 전의 지배층 분열. 642년 연개소문의 정변 장면은 기존 scene-anc-yeongaesomun-642에 이미 있어 새로 만들지 않았다",
+   "sceneId": null,
+   "lon": 126.194,
+   "lat": 41.1253,
+   "coordinateBasis": "claim-loc-guknaeseong",
+   "persistence": null,
+   "density": null
+  }
+ ],
+ "missing": [
+  {
+   "id": "miss-1",
+   "topic": "고구려 후기 시장(市)",
+   "detail": "500~668년 고구려본기에 市 개설 기사가 없어 economy를 조세·권농·비축으로 채웠다",
+   "neededSource": "집성 수서·구당서의 교역 서술 추가 발췌 또는 고고 보고서"
+  },
+  {
+   "id": "miss-2",
+   "topic": "저수지·둑(堤)",
+   "detail": "이 시기 고구려의 築堤·作橋 기사를 찾지 못했다",
+   "neededSource": "금석문 또는 발굴 보고(국립문화유산연구원)"
+  },
+  {
+   "id": "miss-3",
+   "topic": "한성(漢城)의 위치",
+   "detail": "수서의 三京 가운데 한성 위치가 재령설·황주설로 갈려 좌표를 넣지 못했다",
+   "neededSource": "한국민족문화대백과 또는 국가유산포털의 위치 서술"
+  },
+  {
+   "id": "miss-4",
+   "topic": "국내성·요동성 개별 좌표",
+   "detail": "국내성은 지안시, 백암성은 덩타시 좌표로 대신해 precision을 area로 두었다",
+   "neededSource": "ko/en 위키백과 개별 성 문서의 표시 좌표"
+  },
+  {
+   "id": "miss-5",
+   "topic": "연대 없는 중국 정사 서술의 연도",
+   "detail": "수서·구당서 고려전의 풍속·제도·조세 서술에는 연대가 없다. 임의 중간값을 쓰지 않고 연대 주장 claim 을 뺀 뒤, 서술이 확실히 유효한 구간의 하한(수서 586, 구당서 619)에 배치하고 confidence 를 low 로 두었다.",
+   "neededSource": "한국민족문화대백과의 해당 항목 발췌(/Article/Search 가 robots 로 막혀 문서 id 를 찾지 못했다)"
+  }
+ ]
 }

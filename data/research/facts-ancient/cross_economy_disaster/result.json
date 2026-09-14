@@ -167,6 +167,25 @@
      "locator": "표시 좌표 (class=\"geo\")"
     }
    ]
+  },
+  {
+   "id": "src-web-end-ced-eco-663",
+   "title": "혜공왕",
+   "publisher": "한국어 위키백과",
+   "url": "https://ko.wikipedia.org/wiki/혜공왕",
+   "rawFile": "raw/end-ced-eco-663.html",
+   "sha256": "73365236072ab39d3606b926066de130b7d083e29a4c9463f4d5d8d3f12b2fd2",
+   "httpStatus": 200,
+   "byteLength": 164634,
+   "fetchedUtc": "2026-09-14T22:40:08Z",
+   "license": "짧은 인용(출처 표시)",
+   "excerpts": [
+    {
+     "id": "ex-end-ced-eco-663",
+     "text": "768년 일길찬 김대공과 아찬 김대렴이 반란을 일으켜다가 진압되었고",
+     "locator": "생애"
+    }
+   ]
   }
  ],
  "entities": [
@@ -1451,6 +1470,22 @@
    "citesChunk": "chunk_samguksagi_sg_010_0050_0380",
    "quote": "人多飢死, 教州郡, 發倉穀存恤",
    "note": "굶어 죽는 사람이 많자 주군에 명해 창고 곡식을 내어 구제하게 하였다"
+  },
+  {
+   "id": "claim-end-ced-eco-663",
+   "subject": "event-ced-e663",
+   "predicate": "syj:destroyedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "768년",
+    "year": 768,
+    "precision": "year",
+    "earliest": 768,
+    "latest": 768
+   },
+   "sourceId": "src-web-end-ced-eco-663",
+   "citesExcerpt": "ex-end-ced-eco-663",
+   "note": "대공의 난 때 불탐(新城長倉火燒): 삼국사기 문무왕 3년(663) 정월 '作長倉扵南山新城'으로 지은 창고다. 삼국유사 혜공왕 조는 대공 각간이 난을 일으켜 96각간이 서로 싸운 대란을 적으면서 '新城長倉火燒'라 하여 남산신성의 장창이 불탔다고 분명히 밝힌다. 이 대공의 난은 삼국사기 혜공왕 4년(768) 7월 기사(chunk date 0768-07)와 같은 사건이므로 endYear를 768로 잡았다. 대안 해석: 삼국유사는 같은 대목에서 '二年丁未'(767)를 언급해 기년이 한 해 어긋나므로 767로 볼 여지도 있다. 불탄 뒤 다시"
   }
  ],
  "scenes": [
@@ -1968,9 +2003,10 @@
    "persistence": {
     "kind": "facility",
     "from": 663,
-    "to": null,
+    "to": 768,
     "basisClaimIds": [
-     "claim-ced-e663-act"
+     "claim-ced-e663-act",
+     "claim-end-ced-eco-663"
     ]
    }
   },

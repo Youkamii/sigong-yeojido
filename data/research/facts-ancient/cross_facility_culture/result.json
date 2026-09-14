@@ -1550,6 +1550,19 @@
    "sourceId": "src-enwiki-namsanfortress",
    "citesExcerpt": "ex-namsanseong-built591",
    "note": "영어 위키백과 Namsansinseong 문서가 삼국사기에 따라 591년 축성이라고 명시한다"
+  },
+  {
+   "id": "claim-end-cfc-wolseong-101",
+   "subject": "event-wolseong-101",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 935
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_012_0060_0270",
+   "quote": "王率百寮, 發自王都, 歸于太祖",
+   "note": "신라 멸망으로 궁성 폐기(오늘날은 토성 유구와 1741년 옮겨온 석빙고만 남음): 월성은 101년 축조 이래 신라의 궁성이었고, 935년 경순왕이 백관을 거느리고 왕도를 떠나 고려 태조에게 귀순하면서 궁성으로서의 기능이 끝났다. 지금 그 자리에 남은 것은 흙·돌로 쌓은 성벽 유구와 1741년에 옮겨 세운 석빙고뿐이고 신라 궁궐 건물은 남아 있지 않다. 대안 해석: 토성 성벽 자체는 사적으로 현존하므로 '유구는 extant, 궁궐 건물은 935년 종료'로 나눠 볼 수 있으나, 3D 지도의 궁성 모형 기준으로는 935년을 끝으로 보는 "
   }
  ],
  "scenes": [
@@ -1603,9 +1616,10 @@
    "persistence": {
     "kind": "facility",
     "from": 101,
-    "to": null,
+    "to": 935,
     "basisClaimIds": [
-     "claim-wolseong-act"
+     "claim-wolseong-act",
+     "claim-end-cfc-wolseong-101"
     ]
    }
   },

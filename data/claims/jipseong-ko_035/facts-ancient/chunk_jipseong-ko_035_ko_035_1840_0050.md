@@ -633,6 +633,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-18"
+  },
+  {
+    "id": "claim-facts-ancient-balhae-end-balhae-aoluha-696",
+    "subject": "event-balhae-aoluha-wall",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "year",
+      "value": 698
+    },
+    "citesChunk": "chunk_jipseong-ko_035_ko_035_1840_0050",
+    "quote": "是時仲象已死, 其子祚榮引殘痍遁去, 楷固窮躡, 度天門嶺, 祚榮因高麗·靺鞨兵拒楷固, 楷固敗還.",
+    "note": "근거지 포기 — 걸사비우 피살·당군 추격으로 버리고 동모산으로 옮겨 축성(698 건국): 신당서 발해전에 따르면 만세통천(696~697) 연간에 요수를 건너 태백산 동북에서 오루하를 막아 성벽을 세웠으나(阻奧婁河, 樹壁自固), 걸사비우가 당군에게 참살되고 걸걸중상도 죽자 대조영이 남은 무리를 이끌고 달아나 천문령을 넘었다. 이후 698년 동모산에 성을 쌓고 도읍을 정해 진(震)을 세우므로, 오루하 성벽은 2년 남짓 쓰인 임시 근거지로 보고 698년을 끝으로 잡았다. 위치가 비정되지 않아 남은 유구도 확인되지 않는다. 대안 해석: 걸",
+    "fromSource": "src-jipseong-ko_035",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-13"
   }
 ]
 ```
