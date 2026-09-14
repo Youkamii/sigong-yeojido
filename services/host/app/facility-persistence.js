@@ -3,6 +3,16 @@ import {insideCoastline} from './coastline-index.js';
 
 const END_YEAR=2100;
 const DYNASTY_BOUNDARIES=[918,1392,1910,1945];
+// 정복으로 끝난 나라의 시설은 그 나라의 끝에서 사라진다(추정): 고구려(북위 39도 이상, 668)·백제(서남부, 660)·발해(북위 39도 이상, 926).
+// 신라→고려, 고려→조선, 조선→근대는 절·건물이 이어졌으므로 끝 기록이 있을 때만 끝낸다(불국사·해인사가 남는 이유).
+export function polityEnd(scene){
+  const year=scene.endYear,lat=scene.place?.lat,lon=scene.place?.lon;
+  if(!Number.isFinite(lat)||!Number.isFinite(lon))return undefined;
+  if(year<668&&lat>=39)return 668;
+  if(year<660&&lon<127.6&&lat<37.3)return 660;
+  if(year<926&&year>=668&&lat>=39)return 926;
+  return undefined;
+}
 const destruction=/소실|철거|파괴|훼철|폐사|붕괴/;
 const coordinates=place=>Number.isFinite(place?.lon)&&Number.isFinite(place?.lat);
 
@@ -92,8 +102,11 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
       &&(other.kind==='fire'||destruction.test(other.title||''))
       &&tokens.some(token=>[other.title,other.summary].join(' ').includes(token)))
       .sort((a,b)=>a.startYear-b.startYear||a.id.localeCompare(b.id))[0];
-    const type=look==='palace'?'dynasty-boundary':'openEnded';
-    const boundary=type==='dynasty-boundary'?DYNASTY_BOUNDARIES.find(year=>year>scene.endYear):undefined;
+    // #186: 끝 기록이 없는 시설은 세운 나라가 끝나는 해까지만 둔다(백제 왕흥사가 1894년 공주에 서 있었다).
+    // 존속을 기록으로 명시한 문화재(persistence)는 기록을 따르고, 궁궐은 종전대로 왕조 교체에서 끝난다.
+    const conquered=!persistence&&!ending&&look!=='palace'?polityEnd(scene):undefined;
+    const type=look==='palace'?'dynasty-boundary':conquered?'polity-end':'openEnded';
+    const boundary=type==='dynasty-boundary'?DYNASTY_BOUNDARIES.find(year=>year>scene.endYear):conquered;
     const untilYear=Math.min(persistence?.to??END_YEAR,ending?ending.startYear-1:END_YEAR,boundary?boundary-1:END_YEAR);
     if(plan.year>untilYear)continue;
     const claimIds=[...new Set([...(scene.dateClaimIds||[]),...(scene.actionClaimIds||[]),...(scene.place.claimIds||[]),...(heritage?scene.persistence.basisClaimIds||[]:[])])];
