@@ -28,7 +28,8 @@ export function extendHeritageCatalog(raw){
       {k:'tor',R:.2,t:.08,y:3.8,m:'iron',c:'iron',tag:'ornament'}]);
     if(type==='bridge')add(type,2.3,5,[...[-3,0,3].flatMap(x=>[box(2.9,.4,2.8,x,1.8,0),box(.7,1.6,2.2,x-1,.8,0,'base','base')]),
       ...[-1.3,1.3].map(z=>box(9,.3,.2,0,2.15,z,'ledge','top'))]);
-    if(type==='kiln')add(type,3.8,4,[cyl(3,4,3.5,0,1.75,0,'stone','timber'),box(1.5,1.5,.3,0,.75,3.8,'iron','ornament'),cyl(.5,.7,1.5,0,3.05,-1,'stone','timber','top')]);
+    // 가마는 랜드마크 축척(×2.2)으로 그려지므로 탑·비석과 같은 크기 급으로 둔다(반지름 4 였을 때 집 4~5채 폭으로 보였다, #186).
+    if(type==='kiln')add(type,2.1,2,[cyl(1.4,1.8,1.6,0,.8,0,'stone','timber'),box(.8,.8,.25,0,.4,1.8,'iron','ornament'),cyl(.25,.35,.8,0,2,-.5,'stone','timber','top')]);
     // hall과 fortress는 조립기에서 기존 전각·성문·성벽을 쓴다.
   }
   return {...raw,blueprints,categories:{...raw.categories,buildings:{...raw.categories.buildings,cores}}};
