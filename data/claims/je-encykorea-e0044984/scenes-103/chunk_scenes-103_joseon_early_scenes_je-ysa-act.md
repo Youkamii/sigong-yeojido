@@ -75,6 +75,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-yisiae-act",
+    "subject": "person-je-yi-siae",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-je-yisiae-nan-1467"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-ysa-act",
+    "quote": "길주 에 와 있던 함길도절도사 강효문(康孝文) 을 베고 길주를 근거지로 반란을 일으켰다",
+    "note": "이시애가 절도사를 죽이고 길주를 근거지로 삼았다는 경과 서술.",
+    "fromSource": "src-je-encykorea-e0044984",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

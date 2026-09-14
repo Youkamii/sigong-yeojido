@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-hun-act",
+    "subject": "person-encykorea-sejong-e0029857",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-hunminjeongeum-creation"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_sejong-hunmin",
+    "quote": "훈민정음의 창제는 세종이 남긴 문화유산 가운데 가장 빛나는 업적이다",
+    "note": "세종의 업적으로 든 서술",
+    "fromSource": "src-encykorea-sejong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

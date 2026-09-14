@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-taejong-jeongan",
+    "subject": "person-encykorea-taejong-e0059039",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1392년(태조 1) 8월",
+      "year": 1392,
+      "precision": "month",
+      "earliest": 1392,
+      "latest": 1392,
+      "id": "ts-curriculum-joseon-early-joseon-early-1-je1-taejong-jeongan"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_early_taejong-jeongangun",
+    "quote": "1392년(태조 1) 8월에 정안군(靖安君)으로 책봉되었다",
+    "note": "건국 직후 정안군 책봉.",
+    "fromSource": "src-enc-taejong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

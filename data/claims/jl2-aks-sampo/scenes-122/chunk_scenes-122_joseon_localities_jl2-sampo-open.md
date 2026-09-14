@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-sampo-1423",
+    "subject": "event-hs-sampo",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1423년(세종 5)",
+      "year": 1423,
+      "precision": "year",
+      "earliest": 1423,
+      "latest": 1423,
+      "id": "ts-curriculum-joseon-early-joseon-early-2-hs-sampo-1423"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-sampo-open",
+    "quote": "1423년(세종 5) 부산포와 제포(내이포)를 개항하여 왜인들의 거주를 허락하였다.",
+    "note": "부산포·제포 개항.",
+    "fromSource": "src-jl2-aks-sampo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```

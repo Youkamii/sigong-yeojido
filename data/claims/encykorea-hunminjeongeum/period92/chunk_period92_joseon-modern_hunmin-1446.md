@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-hj-t1446",
+    "subject": "work-hs-hunminjeongeum-haerye",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1446",
+      "year": 1446,
+      "precision": "year",
+      "earliest": 1446,
+      "latest": 1446,
+      "id": "ts-curriculum-joseon-early-joseon-early-3-be3-hj-t1446"
+    },
+    "citesChunk": "chunk_period92_joseon-modern_hunmin-1446",
+    "quote": "11년(1446) 9월 상한",
+    "note": "해례본에 적힌 정통 11년 9월 상한의 반포일",
+    "fromSource": "src-encykorea-hunminjeongeum",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

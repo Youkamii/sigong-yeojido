@@ -45,6 +45,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-doseong-time",
+    "subject": "facility-hs-hanyang-doseong",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1396년(조선 태조 5)",
+      "year": 1396,
+      "precision": "year",
+      "earliest": 1396,
+      "latest": 1398,
+      "id": "ts-curriculum-joseon-early-joseon-early-1-je1-doseong-time"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-doseong-build",
+    "quote": "1396년(조선 태조 5) 축성을 시작하여 2년 뒤인 1398년에 완공하였다",
+    "note": "도성 축조 기간.",
+    "fromSource": "src-je-encykorea-e0028013",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

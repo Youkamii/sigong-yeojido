@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-5-je5-baegun-saek",
+    "subject": "facility-hs-baegundong-seowon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yi-hwang-e0046626"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-js-1550",
+    "quote": "1550년에 풍기군수로 부임한 이황의 청원으로",
+    "note": "이황의 청원으로 사액",
+    "fromSource": "src-je-encykorea-e0053318",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

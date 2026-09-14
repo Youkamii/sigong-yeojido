@@ -1,0 +1,144 @@
+{
+ "job": "joseon-early-1",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-joseon-early --job joseon-early-1 → exit 0, 'PASS: failures=0 warnings=0'. 집계: facts 23, scenes 23, claims 85 (chunkClaims 21, excerptClaims 64). category×10년 = administration 6(1390:3,1400:1,1410:2) · facility 6(1390:5,1400:1) · culture 5(1390:2,1400:2,1410:1) · person 3(1390:2,1400:1) · foreign 2(1390:1,1400:1) · war 1(1390:1). region×10년 = capital 1 · north 1 · central 18 · south 3 · island 0. manifest 42행 = sources 42 = raw/ 42파일, db.history.go.kr 인용 0건.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-8do",
+   "factId": "fact-je1-020",
+   "claimId": "claim-je1-8do-gwanchalsa",
+   "problem": "발췌 ex-gwanchalsa-8do('도관찰출척사를 파견함으로써 8도 관찰사 제도가 확립되었다')를 1413년 8도 확정 장면의 근거로 썼으나, 원문 문맥은 1417년(태종 17)이다. 원문은 '1417년(태종 17)에 그동안 군사적 성격의 도순문사를 임명하던 함길도·평안도에도 도관찰출척사를 파견함으로써 8도 관찰사 제도가 확립되었다'이므로 4년 뒤 사건을 1413년 근거로 끌어온 문맥 왜곡이다. scene-je1-8do-1413 의 summary '이로써 8도 관찰사 체제가 자리 잡는다'와 images.json 의 basis('관찰사 항목: 8도 관찰사 제도가 확립되었다')에도 그대로 퍼졌다.",
+   "fix": "claim-je1-8do-gwanchalsa 를 빼거나, 연도를 주장하지 않는 형태로 바꾸고 note 에 '관찰사 항목이 말하는 8도 관찰사 제도 확립은 1417년'임을 명시한다. 1413년 개편의 행위 근거는 이미 확보한 enc-taejong 문맥('1413년에 개편하였다 … 같은 해 10월에 완산을 전주, 계림을 경주, 서북면을 평안도, 동북면을 영길도로 고쳤다')으로 충분하므로 그 문장을 발췌로 넓혀 쓰고, scene summary 와 images.json basis 의 '8도 관찰사 체제 확립' 표현을 '8도 이름·행정구역 개편'으로 고친다.",
+   "evidence": "raw/enc-gwanchalsa.html 본문: '1417년(태종 17)에 그동안 군사적 성격의 도순문사(都巡問使) 를 임명하던 함길도(지금의 함경도) · 평안도에도 도관찰출척사를 파견함으로써 8도 관찰사 제도가 확립되었다.' / raw/enc-taejong.html 본문: '1403년과 1406년에 … 시행되지 못하다가 1413년에 개편하였다. 즉, 같은 해 10월에 완산을 전주, 계림을 경주, 서북면을 평안도, 동북면을 영길도(永吉道)로 고쳤다.'"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-taejong",
+   "sceneId": "scene-je1-taejong-1400",
+   "factId": "fact-je1-015",
+   "problem": "태종 초상 장면(startYear 1400)을 '한양 수강궁 터(뒷날 창경궁)' 좌표(126.99598, 37.57843)에 두었다. 수강궁은 1418년 세종이 상왕 태종을 위해 지은 궁이라 1400년에는 없던 건물이다. 게다가 태종을 그 장소와 잇는 주장이 하나도 없다 — place.claimIds 의 claim-je1-loc-sugang 은 창경궁 표시 좌표만 말하고, 나머지 세 claim(재위·정안군 책봉·1413 개편) 중 장소 근거는 없다. 반면 같은 조사가 확보한 ex-suchang-enthrone 은 태종의 즉위처를 개경 수창궁으로 못박는다(수창궁 ≠ 수강궁).",
+   "fix": "둘 중 하나. (가) 장면 연도를 1400 그대로 두고 장소를 개경 수창궁(claim-je1-founding-suchang·claim-je1-loc-gaeseong 재사용, 건국 장면과 겹치지 않게 좌표를 분리)으로 옮긴다. (나) 1405년 이후 태종의 실제 거처(창덕궁 인정전 등)로 옮기고 fact.year·scene.startYear 를 그 연도에 맞춘 뒤 태종이 그 장소에 있었다는 행위 주장을 하나 붙인다. 어느 쪽이든 '수강궁'은 1418년 건물이므로 1400년 라벨에서 뺀다.",
+   "evidence": "raw/en-changgyeonggung.html: 'The palace was built in the mid-15th century by King Sejong for his father, Taejong. It was originally named \"Suganggung\"' / raw/enc-suchanggung.html: '우왕 대 중수된 이후로 수창궁은 조선 초까지 주요 궁궐로 활용되어, 공양왕과 조선의 태조와 태종이 모두 이 궁에서 즉위하였다.'"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-sillok",
+   "factId": "fact-je1-023",
+   "sceneId": "scene-je1-sillok-1413",
+   "problem": "실록 장면 좌표(126.97694, 37.57861 · 근정전 표시 좌표)가 경복궁 장면 좌표(126.97722, 37.57861 · fact-je1-007)와 위도가 소수점 다섯 자리까지 같고 경도만 0.00028° 달라 실거리 약 25 m다. '같은 도시 항목이 한 점에 겹치지 않게'라는 지침을 사실상 위반해 두 장면이 지도에서 한 점에 포개진다.",
+   "fix": "춘추관은 경복궁 동쪽 궐내각사 구역에 있었으므로 근정전 좌표 대신 경복궁 동편(건춘문·동십자각 부근 등)의 십진 좌표 발췌를 새로 확보해 최소 100 m 이상 떼어 놓는다. 새 좌표 근거를 못 찾으면 실록 장면을 다른 지점(사고·의정부 등)으로 옮기고 coordinateNote 에 사유를 적는다.",
+   "evidence": "result.json fact-je1-007 lon/lat 126.97722/37.57861, fact-je1-023 lon/lat 126.97694/37.57861 — 위도차 0, 경도차 0.00028°(약 25 m). missing[] miss-je1-5 도 '춘추관 건물의 개별 좌표가 없어 근정전 표시 좌표를 썼다'고 스스로 적었다."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-gyeongbokgung",
+   "sceneId": "scene-je1-gyeongbokgung-1395",
+   "problem": "문화재 장면의 persistence 를 모두 {kind:'facility', from:<건립연도>, to:null} 로 두어 '지금까지 같은 모습으로 끊김 없이 존속'을 주장한다. 그러나 조사자가 직접 내려받은 raw 원문이 1592년 임진왜란 전소를 명시한다. 경복궁(1395~)·창덕궁(1405~, fact-je1-018)·종묘(1395~, fact-je1-008)·성균관(1398~, fact-je1-011)이 모두 해당하며, facts-format 은 'to:null 은 현존으로 2100년 상한까지 표시한다 … 항목 조사가 소실 연도를 명시해야 한다'고 못박는다. 이대로면 1592~1867년 폐허였던 경복궁이 지도에 온전한 궁궐로 계속 서 있게 된다.",
+   "fix": "소실 연도가 원문에 있는 문화재는 to 를 소실 연도(경복궁·창덕궁·종묘 = 1592)로 닫고, 소실 근거 claim(enc-gyeongbokgung 의 '1592년 임진왜란으로 궁은 전소되고 말았다' 발췌 신설)을 basisClaimIds 에 넣는다. 중건까지 표현하려면 별도 사실·장면으로 나눈다. 한양도성·숭례문·사직단·나주향교처럼 소실 서술을 못 찾은 것은 to:null 을 유지하되 fact.note 에 '소실·중건 여부 미확인'을 남긴다.",
+   "evidence": "raw/enc-gyeongbokgung.html: '그러나 1592년 임진왜란으로 궁은 전소되고 말았다. 이때 창덕궁 · 창경궁 등도 모두 불에 타버려…' / raw/ko-gyeonghoeru.html 현지 안내문: '그 후 임진왜란으로 불에 타 돌기둥만 남은 상태로 유지되어 오다가 270여 년이 지난 고종 4년(1867) 경복궁을 다시 지으면서…'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-gwageo",
+   "factId": "fact-je1-002",
+   "problem": "과거제 좌표(문묘 126.99667/37.58528)와 성균관 좌표(126.99583/37.58556, fact-je1-011)가 약 80 m 떨어져 있는데 두 지점은 실제로 같은 시설(서울 문묘와 성균관, 종로구 명륜동 성균관대학교 구내)이다. 지도에서 두 카드가 한 점에 겹친다.",
+   "fix": "과거제 장면은 시험을 주관한 예조(육조거리)나 문과 시험장 쪽으로 옮기거나, 성균관 항목과 묶어 한 지점만 남기고 다른 하나는 좌표 없는 사실로 둔다. 둘 다 남긴다면 최소 150 m 이상 벌리고 coordinateNote 에 사유를 적는다.",
+   "evidence": "raw/enc-sungkyunkwan.html: '새 도읍지의 동북부지역인 숭교방(崇敎坊) 부근(지금의 종로구 명륜동 성균관대학교 구내)에 터가 정해져서' — 문묘와 성균관이 같은 구내임을 원문이 밝힌다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-gyeongbokgung",
+   "factId": "fact-je1-007",
+   "claimId": "claim-je1-gbg-time",
+   "problem": "fact-je1-007 의 claimIds 가 [\"claim-je1-gbg-time\", \"claim-je1-gbg-dogam\", \"claim-je1-gbg-time\", \"claim-je1-loc-gbg\"] 로 claim-je1-gbg-time 을 두 번 넣었다. 검증기는 통과하지만 근거가 4건처럼 보여 집계가 부풀고 실제 고유 근거는 3건이다.",
+   "fix": "중복을 지워 [\"claim-je1-gbg-time\", \"claim-je1-gbg-dogam\", \"claim-je1-loc-gbg\"] 로 고친다.",
+   "evidence": "result.json facts[6].claimIds 의 인덱스 0 과 2 가 같은 id."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-jeong-dojeon",
+   "sceneId": "scene-je1-jeong-dojeon-1394",
+   "problem": "1394년 정도전 초상 장면의 장소를 '한양 경복궁(경회루 일원)'으로 적었다. 경복궁 완공은 1395년 9월(같은 조사의 claim-je1-gbg-time), 경회루는 1412년(태종 12) 연못을 넓히며 크게 다시 지은 것이므로 1394년에는 그 이름의 무대가 없다. 정도전을 그 지점에 잇는 주장도 없고(claim 은 place-hs-hanyang 답사·천도 계획), 경복궁 장면과 172 m 거리다.",
+   "fix": "라벨을 '한양(새 도읍 터)'처럼 1394년에 맞는 표현으로 바꾸거나, claim-je1-jd-survey 가 가리키는 place-hs-hanyang 쪽으로 좌표를 옮긴다. '경회루'라는 이름은 1412년 이후의 것이므로 뺀다.",
+   "evidence": "raw/ko-gyeonghoeru.html 현지 안내문: '경복궁을 처음 지을 때의 경회루는 작은 규모였으나, 조선 태종 12년(1412)에 연못을 넓히면서 크게 다시 지었다.' / claim-je1-gbg-time quote: '1395년(태조 4) 9월에 경복궁이 완공되었다'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-sabyeong-hyeokpa",
+   "factId": "fact-je1-014",
+   "claimId": "claim-je1-sabyeong-time",
+   "problem": "연도 주장의 발췌 '1398년(태조 7)과 1400년(정종 2)의 두 차례에 걸친'은 원문에서 왕자의 난이 일어난 두 해를 가리키는 말이지 사병 혁파의 연도가 아니다. 원문은 혁파 시점을 '제2차 왕자의 난 이후'로만 적는다. 또 장면을 개경(만월대 일대)에 두었으나 개경임을 말하는 주장은 없고 좌표 주장(claim-je1-loc-manwoldae)뿐이며, items.json 이 적은 장소(한양)를 바꾼 사유도 fact.note 나 missing[] 어디에도 없다(향교·8도는 사유를 남겼다).",
+   "fix": "연도 근거를 '제2차 왕자의 난 이후 실권을 장악한 이방원 은 국왕과 세자의 시위(侍衛)를 제외한 모든 사병을 혁파하였다' 쪽 발췌로 바꾸고, note 에 '혁파 연도는 제2차 왕자의 난(1400) 이후라는 서술에서 잡았다'는 근거의 성격을 적는다. 1399년 개경 환도로 1400년 도읍이 개경이었다는 점은 별도 근거를 붙이고, 장소를 한양에서 개경으로 옮긴 사유를 기록한다.",
+   "evidence": "raw/enc-sabyeong.html: '…이 때문에 1398년(태조 7)과 1400년(정종 2)의 두 차례에 걸친 왕자의 난 이 일어나게 되었다. 제2차 왕자의 난 이후 실권을 장악한 이방원 은 국왕과 세자의 시위(侍衛)를 제외한 모든 사병을 혁파하였다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-jongmyo",
+   "sceneId": "scene-je1-jongmyo-1395",
+   "problem": "sceneFunction 을 'temple' 로 두었다. facts-format 은 '사찰은 목탑 무대다'라고 적고 있어 조립기가 종묘 자리에 불교 목탑을 세울 수 있다. 종묘는 유교 왕실 사당이므로 잘못된 그림이 된다. items.json 의 sceneType 을 그대로 옮긴 결과지만 sceneFunction 은 선택 항목이다.",
+   "fix": "sceneFunction 을 생략하고 kind 'ritual' 만 남긴다(같은 성격의 사직단 장면은 이미 sceneFunction 이 없다). 제단·사당 무대가 생기면 그때 붙인다.",
+   "evidence": "docs/research/facts-format.md: 'place.setting만 무대 힌트로 쓰며 허용값은 palace|office|temple|battle|village|academy(궁궐·관아·사찰·전장·마을·서원)다. 사찰은 목탑 무대다.'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-sungkyunkwan",
+   "factId": "fact-je1-011",
+   "problem": "성균관(fact-je1-011)과 향교(fact-je1-022)의 category 를 culture 로 두었으나 두 항목의 items.json type 은 institution 이고 curriculum-items-brief 의 대응표는 institution → administration 이다. 같은 파일 안의 과거제·호패법·8도(모두 institution)는 administration 으로 두어 기준이 항목마다 갈린다.",
+   "fix": "대응표대로 administration 으로 통일하거나, 교육 기관은 culture 로 둔다는 예외를 brief 에 명시하고 cell.categories 목표치(culture 5 / administration 6)를 함께 고친다. 어느 쪽이든 한 칸 안에서 같은 type 은 같은 category 로 맞춘다.",
+   "evidence": "docs/research/curriculum-items-brief.md 대응표 'institution→administration' / items.json: hs-joseon-early-sungkyunkwan.type = institution, hs-joseon-early-hyanggyo.type = institution."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-sadae-ming",
+   "factId": "fact-je1-003",
+   "problem": "난징(위도 32.06)을 region 'south' 로 넣어 한반도 남부 사실과 같은 칸에 집계된다. brief 의 region 규칙은 '해외(overseas)는 north(만주)·foreign(그 밖)'이라고 적지만 검증기의 허용 region 에 foreign 이 없어(capital|north|central|south|island) 규칙 자체가 어긋나 있다. 그 결과 region×10년 표의 south 3건 중 1건이 중국 난징이다.",
+   "fix": "규칙 충돌이라 조사가 단독으로 정할 일이 아니므로 brief·검증기 중 어느 쪽을 고칠지 올린다(REGIONS 에 foreign 추가, 또는 brief 에 해외를 위도 규칙대로 둔다는 예외 명시). 그때까지는 fact.note 에 '해외 항목이라 위도 규칙만으로 south 에 넣었다'를 적어 집계 오해를 막는다.",
+   "evidence": "scripts/check_fact_research.py:20 REGIONS = ('capital', 'north', 'central', 'south', 'island') / docs/research/curriculum-items-brief.md: '해외(overseas)는 north(만주)·foreign(그 밖)'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-jurchen-muyeokso",
+   "sceneId": "scene-je1-muyeokso-1406",
+   "problem": "장면 summary 의 '소금과 철을 사가게 해 변방의 근심을 덜려는 조치였다'가 저장된 발췌 두 건(ex-muyeokso-1406, ex-muyeokso-purpose) 어디에도 없다. raw HTML 에는 있어 사실 자체는 맞지만 인용 범위를 넘어 서술했다. 같은 성격의 초과 서술이 8도 장면('서북면과 동북면을 평안도·영길도로 삼았다')과 성균관 장면('한양 숭교방에 터를 정해')에도 있다.",
+   "fix": "각 장면의 서술을 발췌 범위 안으로 줄이거나, 뒷받침 발췌를 25단어 한도 안에서 더 넣는다(예: enc-muyeokso 의 '여진인들이 생활에 필요한 염철(鹽鐵)을 자유롭게 사들이게 하여 변방의 근심을 방지하자는 데 있었다').",
+   "evidence": "raw/enc-muyeokso.html: '그가 주장한 설치의 목적과 동기는, 여진인들이 생활에 필요한 염철(鹽鐵)을 자유롭게 사들이게 하여 변방의 근심을 방지하자는 데 있었다.' — 문장은 원문에 있으나 sources[].excerpts 에는 없다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-honil-gangni",
+   "factId": "fact-je1-016",
+   "claimId": "claim-je1-honil-roles",
+   "problem": "지도 제작 장소를 '한양 의정부(경복궁 광화문 앞 육조거리)'로 잡았는데, 근거 chunk 는 제작 주체가 의정부 관인이라는 사실만 말하고 '의정부 관아가 육조거리에 있었다'는 부분은 claim.note 의 조사자 서술이다. 근거 없는 위치 추론이 그대로 장면 좌표가 되었다.",
+   "fix": "의정부 관아 위치를 밝힌 발췌(민족문화대백과 '의정부' 항목 등)를 하나 붙이거나, place.coordinateNote 에 '제작 장소 기록이 없어 제작 주체의 관아 자리를 대푯값으로 썼다'는 한계를 적고 missing[] 에 항목을 추가한다.",
+   "evidence": "claim-je1-honil-roles 의 quote 는 '좌정승 김사형, 우정승 이무가 발의하고 의정부 검상 이회가 실무를 맡아 제작한 세계지도이다' 뿐이고, 장소 서술은 note 에만 있다."
+  }
+ ],
+ "checkedItems": [
+  "hs-joseon-early-founding-1392",
+  "hs-joseon-early-gwageo",
+  "hs-joseon-early-sadae-ming",
+  "hs-joseon-early-yi-seonggye",
+  "hs-joseon-early-hanyang-capital",
+  "hs-joseon-early-jeong-dojeon",
+  "hs-joseon-early-gyeongbokgung",
+  "hs-joseon-early-jongmyo",
+  "hs-joseon-early-sajikdan",
+  "hs-joseon-early-hanyang-doseong",
+  "hs-joseon-early-sungkyunkwan",
+  "hs-joseon-early-sungnyemun",
+  "hs-joseon-early-wangja-nan",
+  "hs-joseon-early-sabyeong-hyeokpa",
+  "hs-joseon-early-taejong",
+  "hs-joseon-early-honil-gangni",
+  "hs-joseon-early-gyemija",
+  "hs-joseon-early-changdeokgung",
+  "hs-joseon-early-jurchen-muyeokso",
+  "hs-joseon-early-8do",
+  "hs-joseon-early-hopae",
+  "hs-joseon-early-hyanggyo",
+  "hs-joseon-early-sillok"
+ ],
+ "summary": "검증기는 PASS(failures=0, warnings=0, facts 23·scenes 23·claims 85)이고 구조·인용·좌표 근거·해시가 모두 규격에 맞는다. 로컬 chunk 주장 21건은 scripts/search_chunks.py --id 로 하나씩 다시 꺼내 quote 가 chunk 본문의 부분 문자열인지, sourceId 가 chunk 의 sourceId 와 같은지 전부 확인했다(21/21 일치). 인용한 chunk 들은 커밋 56f1afbc(#103)에 이미 들어 있던 저장소 원문이라 이번 조사가 지어낸 것이 아니다. 웹 발췌는 검증기가 42개 원문 전부의 sha256·바이트 수·verbatim 일치를 확인했고, 그 위에 핵심 발췌 13건의 raw HTML 앞뒤 문맥을 직접 읽어 왜곡 여부를 봤다. 인물 개체 3명(태조·태종·정도전)은 data/entities/person 의 기존 id 를 그대로 재사용했고, 항목 23건 모두 what=meaning·note 의 성취기준 코드·우선순위·scene.effects.priority 가 items.json 과 일치하며, 미사용 claim 0건, db.history.go.kr 인용 0건, 교과서 문장 전재는 찾지 못했다. 이 칸의 범위가 1392~1413이라 세종·훈민정음·측우기는 대상이 아니다(1418년 이후). 그럼에도 고칠 것이 4건 있다. (1) 8도 항목이 1417년 서술을 1413년 근거로 끌어 써 문맥을 왜곡했고 그 표현이 장면 요약과 이미지 프롬프트까지 퍼졌다. (2) 태종 초상이 1418년에야 지어진 수강궁 자리에 1400년 장면으로 놓였고 태종을 그 장소와 잇는 주장이 하나도 없다. (3) 경복궁과 실록 장면 좌표가 25 m 차이로 사실상 한 점에 겹친다(문묘·성균관도 80 m). (4) 문화재 persistence 를 모두 to:null 로 두어 끊김 없는 현존을 주장하는데 조사자가 받은 같은 원문이 경복궁·창덕궁·종묘의 1592년 전소를 명시한다. 나머지 9건은 중복 claimId, 1412년 경회루를 1394년 무대로 쓴 표기, 발췌 범위를 넘은 요약 서술, institution 항목의 category 기준 불일치, 해외 항목 region 규칙 충돌 같은 경미한 문제다. major 4건을 고치면 적재해도 된다고 본다."
+}

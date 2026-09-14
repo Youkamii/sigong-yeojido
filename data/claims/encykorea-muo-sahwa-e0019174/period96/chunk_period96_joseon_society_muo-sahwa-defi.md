@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-muo-defi2",
+    "subject": "person-je-yu-jagwang",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-muo-sahwa"
+    },
+    "citesChunk": "chunk_period96_joseon_society_muo-sahwa-defi",
+    "quote": "유자광(柳子光)을 중심으로 한 훈구파(勳舊派)에 의해 화를 입은 사건",
+    "note": "훈구파의 중심 인물로 유자광을 든다. 이 조각은 claim-hs-muo-1498이 인용한 민족문화대백과 「무오사화」(E0019174)와 같은 문장의 중복 적재본이므로 독립된 근거로 세지 않는다.",
+    "fromSource": "src-encykorea-muo-sahwa-e0019174",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

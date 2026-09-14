@@ -143,6 +143,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-5-je5-gimyo-year",
+    "subject": "event-hs-gimyo-sahwa",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1519년",
+      "year": 1519,
+      "precision": "year",
+      "earliest": 1519,
+      "latest": 1519,
+      "id": "ts-curriculum-joseon-early-joseon-early-5-je5-gimyo-year"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-gm-defi",
+    "quote": "1519년(중종 14) 11월 조광조(趙光祖)·김정(金淨)·김식(金湜) 등 신진사류가 남곤(南袞)·심정(沈貞)·홍경주(洪景舟) 등의 훈구 재상에 의해 화를 입은 사건",
+    "note": "기묘사화의 연도와 인물",
+    "fromSource": "src-je-encykorea-e0008223",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

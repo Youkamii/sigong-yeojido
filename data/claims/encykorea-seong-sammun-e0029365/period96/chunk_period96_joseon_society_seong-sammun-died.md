@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-sy-seong",
+    "subject": "person-encykorea-seong-sammun-e0029365",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1456년(세조 2)",
+      "year": 1456,
+      "precision": "year",
+      "earliest": 1456,
+      "latest": 1456,
+      "id": "ts-curriculum-joseon-early-joseon-early-3-be3-sy-seong"
+    },
+    "citesChunk": "chunk_period96_joseon_society_seong-sammun-died",
+    "quote": "사망 연도1456년(세조 2)",
+    "note": "성삼문의 사망 연도",
+    "fromSource": "src-encykorea-seong-sammun-e0029365",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

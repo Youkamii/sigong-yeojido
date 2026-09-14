@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-juwonbangpo",
+    "subject": "place-hs-juwonbangpo",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-tsushima"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-dm-depart",
+    "quote": "정벌군은 6월 19일 주원방포(周原防浦: 현재의 경상남도 통영)를 출발하였다",
+    "note": "출항지는 지금의 통영이다.",
+    "fromSource": "src-je-encykorea-e0014343",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```

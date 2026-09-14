@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-wr-sejong",
+    "subject": "person-encykorea-sejong-e0029857",
+    "predicate": "syj:reignedTo",
+    "object": {
+      "kind": "time",
+      "verbatim": "1450년(세종 32)",
+      "year": 1450,
+      "precision": "year",
+      "earliest": 1450,
+      "latest": 1450,
+      "id": "ts-curriculum-joseon-early-joseon-early-3-be3-wr-sejong"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_early_sejong-life",
+    "quote": "출생 연도 1397년(태조 6) 사망 연도 1450년(세종 32)",
+    "note": "세종의 생몰 연도",
+    "fromSource": "src-enc-sejong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

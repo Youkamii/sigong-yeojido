@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-hun-je",
+    "subject": "event-hs-hunminjeongeum-creation",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "work-hs-hunminjeongeum-haerye"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-hun-1443",
+    "quote": "세종이 1443년(세종 25) 겨울에 훈민정음을 창제하였다는 것",
+    "note": "해례본 서문 해설",
+    "fromSource": "src-je-encykorea-e0065805",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

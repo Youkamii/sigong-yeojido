@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-yisiae-time-1467",
+    "subject": "event-je-yisiae-nan-1467",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1467년(세조 13)",
+      "year": 1467,
+      "precision": "year",
+      "earliest": 1467,
+      "latest": 1467,
+      "id": "ts-curriculum-joseon-early-joseon-early-4-hs-yisiae-time-1467"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-ysa-defi",
+    "quote": "1467년(세조 13) 세조의 집권 정책에 반대해 함길도에서 이시애가 일으킨 반란이다",
+    "note": "민족문화대백과 「이시애의 난」 요약문.",
+    "fromSource": "src-je-encykorea-e0044984",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

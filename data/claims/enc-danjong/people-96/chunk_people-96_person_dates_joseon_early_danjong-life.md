@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-dj-life",
+    "subject": "person-encykorea-danjong-e0013661",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1457년(세조 3)",
+      "year": 1457,
+      "precision": "year",
+      "earliest": 1457,
+      "latest": 1457,
+      "id": "ts-curriculum-joseon-early-joseon-early-3-be3-dj-life"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_early_danjong-life",
+    "quote": "출생 연도 1441년(세종 23) 사망 연도 1457년(세조 3)",
+    "note": "단종의 생몰 연도",
+    "fromSource": "src-enc-danjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

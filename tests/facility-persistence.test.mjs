@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {registerHooks} from 'node:module';
 import {planContinuingFacilities} from '../services/host/app/facility-persistence.js';
+import {HERITAGE_TYPES} from '../services/host/app/heritage-models.js';
 import {sceneVisualKey} from '../services/host/app/chronicle-persistence.js';
 import {insideCoastline} from '../services/host/app/coastline-index.js';
 registerHooks({resolve(specifier,context,next){return specifier==='three'?{url:new URL('../services/host/vendor/three.module.min.js',import.meta.url).href,shortCircuit:true,format:'module'}:next(specifier,context);}});
@@ -199,7 +200,7 @@ test('실제 건립 패킷의 시설 조립에는 공사 인력·손수레·건�
   }
   const eligible=packets.filter(s=>s.kind==='construction'&&s.narrativeType==null&&!s.title?.includes('전승')&&Number.isFinite(s.place?.lon)&&Number.isFinite(s.place?.lat));
   assert.ok(count>0&&count<eligible.length);
-  assert.ok(rows(2020).every(row=>['temple','rail_station','palace','industry'].includes(row.continuing.facilityLook)));
+  assert.ok(rows(2020).every(row=>['temple','rail_station','palace','industry',...HERITAGE_TYPES].includes(row.continuing.facilityLook)));
   assert.ok(compose(at(station,1926)).models.some(m=>m.archetype==='station'));
   assert.ok(compose(at(hwangnyongsa,646)).models.some(m=>m.archetype==='pagoda'));
   assert.ok(!compose(at(hwangnyongsa,646)).models.some(m=>/monk/.test(m.archetype)));

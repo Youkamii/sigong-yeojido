@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-5-je5-jungjong-act",
+    "subject": "event-hs-jungjong-banjeong",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yeonsangun-e0036803"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-jj-depose",
+    "quote": "학정을 거듭하던 연산군을 폐위시킨 사건이다",
+    "note": "연산군 폐위",
+    "fromSource": "src-je-encykorea-e0053933",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

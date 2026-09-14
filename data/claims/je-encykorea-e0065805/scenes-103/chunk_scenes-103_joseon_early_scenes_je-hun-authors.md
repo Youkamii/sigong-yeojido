@@ -177,6 +177,40 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-hj-je",
+    "subject": "person-encykorea-seong-sammun-e0029365",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "work-hs-hunminjeongeum-haerye"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-hun-authors",
+    "quote": "1446년 세종의 명으로 정인지, 신숙주, 성삼문, 최항, 박팽년, 강희안, 이개, 이선로 등 집현전의 8학자가 집필하였다",
+    "note": "집현전 8학자가 집필",
+    "fromSource": "src-je-encykorea-e0065805",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-sinsukju-hunmin",
+    "subject": "person-encykorea-sin-sukju-e0065805",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "work-hs-hunminjeongeum-haerye"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-hun-authors",
+    "quote": "정인지, 신숙주, 성삼문, 최항, 박팽년, 강희안, 이개, 이선로 등 집현전의 8학자가 집필하였다",
+    "note": "훈민정음 해례 집필에 참여한 집현전 학사 명단.",
+    "fromSource": "src-je-encykorea-e0065805",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

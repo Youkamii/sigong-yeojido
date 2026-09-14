@@ -75,6 +75,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-muo-1498",
+    "subject": "event-hs-muo-sahwa",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1498년(연산군 4)",
+      "year": 1498,
+      "precision": "year",
+      "earliest": 1498,
+      "latest": 1498,
+      "id": "ts-curriculum-joseon-early-joseon-early-4-hs-muo-1498"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-muo-defi",
+    "quote": "1498년(연산군 4) 김일손(金馹孫) 등 신진사류(新進士類)가 유자광(柳子光)을 중심으로 한 훈구파(勳舊派)에 의해 화를 입은 사건",
+    "note": "민족문화대백과 무오사화 항목의 정의.",
+    "fromSource": "src-je-encykorea-e0019174",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

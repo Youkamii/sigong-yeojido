@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-muo-cause",
+    "subject": "event-hs-muo-sahwa",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "thing-hs-sacho"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-muo-cause",
+    "quote": "사초문제(史草問題)로 발단되었기에 무오사화라고 한다",
+    "note": "사초에서 발단했다는 설명.",
+    "fromSource": "src-je-encykorea-e0019174",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

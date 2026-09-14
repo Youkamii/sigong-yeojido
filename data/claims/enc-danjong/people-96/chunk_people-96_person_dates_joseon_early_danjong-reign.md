@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-dj-reign",
+    "subject": "person-encykorea-danjong-e0013661",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "1452년",
+      "year": 1452,
+      "precision": "year",
+      "earliest": 1452,
+      "latest": 1452,
+      "id": "ts-curriculum-joseon-early-joseon-early-3-be3-dj-reign"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_early_danjong-reign",
+    "quote": "조선의 제6대(재위: 1452년~1455년) 왕",
+    "note": "단종의 재위",
+    "fromSource": "src-enc-danjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

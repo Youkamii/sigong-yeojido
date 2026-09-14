@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-sinsukju-life",
+    "subject": "person-encykorea-sin-sukju-e0065805",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1417년(태종 17)에 태어나 1475년(성종 6)에 사망했다",
+      "year": 1417,
+      "precision": "year",
+      "earliest": 1417,
+      "latest": 1475,
+      "id": "ts-curriculum-joseon-early-joseon-early-4-hs-sinsukju-life"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_middle_sinsukju-life",
+    "quote": "1417년(태종 17)에 태어나 1475년(성종 6)에 사망했다.",
+    "note": "민족문화대백과 신숙주 항목의 생몰.",
+    "fromSource": "src-ency-sin-sukju",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

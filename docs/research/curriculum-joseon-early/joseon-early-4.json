@@ -1,0 +1,430 @@
+{
+  "job": "joseon-early-4",
+  "sources": 42,
+  "excerpts": 65,
+  "chunkClaims": 21,
+  "excerptClaims": 65,
+  "facts": 23,
+  "factsByCategory": {
+    "administration": 4,
+    "culture": 6,
+    "economy": 1,
+    "facility": 3,
+    "person": 5,
+    "settlement": 3,
+    "war": 1
+  },
+  "claims": 86,
+  "entities": 72,
+  "rawFilesChecked": [
+    {
+      "source": "src-hs-enc-wongaksaji",
+      "url": "https://encykorea.aks.ac.kr/Article/E0040581",
+      "sha256": "b0acdc8be2c347973e142036666bba926699e81de6b9af22e07c9e506de472f1",
+      "rawBytes": 186069,
+      "excerpts": 3,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-enc-gwangju-baekja",
+      "url": "https://encykorea.aks.ac.kr/Article/E0005291",
+      "sha256": "13b485354cc01becafb5fe48201fbe344bccdb6fd40743875ed06127845a88cc",
+      "rawBytes": 121006,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-enc-geumo-sinhwa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0007915",
+      "sha256": "fb67f6189a75ae2dbb90d8f8cadf2625feb43eaedaac8a0652103a15d9f144fe",
+      "rawBytes": 148160,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-enc-kim-siseup",
+      "url": "https://encykorea.aks.ac.kr/Article/E0009666",
+      "sha256": "d8f6d025c28251e81e1d4ecebb81715f974b73967340c41da9d09bc3ebbafb2f",
+      "rawBytes": 176757,
+      "excerpts": 3,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs-enc-jikjeon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0054533",
+      "sha256": "685869e9ac430ff3d062eabecb291d1e598d85e19c954916c58c1d7ae4051ea7",
+      "rawBytes": 105147,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-enc-sarimpa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0025559",
+      "sha256": "015be087ca3ff383b2c6137e19a79638f5f2541e8f7da90e2158b2866ef1422f",
+      "rawBytes": 99393,
+      "excerpts": 2,
+      "quotedWords": 21
+    },
+    {
+      "source": "src-hs-enc-haedong-jegukgi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0073217",
+      "sha256": "8b1bf29980e9d788a7aa600fd208d67b95aeb0eea5925726a0a5e0d899c6a9e5",
+      "rawBytes": 98559,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-enc-gukjo-oryeui",
+      "url": "https://encykorea.aks.ac.kr/Article/E0006512",
+      "sha256": "e13aae52ddf9b86a2587e362c95a6d5b23b82c4d1cdfd884c65acfc4fbef0484",
+      "rawBytes": 224952,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-enc-hongmungwan",
+      "url": "https://encykorea.aks.ac.kr/Article/E0064081",
+      "sha256": "79d7bea906f96dc43824b1e88774d8653f81c7bff11c035b98789c39b9f0cdd7",
+      "rawBytes": 142066,
+      "excerpts": 2,
+      "quotedWords": 17
+    },
+    {
+      "source": "src-hs-enc-kim-jongjik",
+      "url": "https://encykorea.aks.ac.kr/Article/E0010507",
+      "sha256": "e03c91bccb84708f9f8fca591689558335b57f65fe483125ba84309ff76609b1",
+      "rawBytes": 156681,
+      "excerpts": 3,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-enc-samsa",
+      "url": "https://encykorea.aks.ac.kr/Article/E0026631",
+      "sha256": "f67b3c2ddded3ea00a5aa4b468839709d5bac80da2fb58cbc630b676ff4e282b",
+      "rawBytes": 74025,
+      "excerpts": 2,
+      "quotedWords": 15
+    },
+    {
+      "source": "src-hs-enc-ojukheon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0001111",
+      "sha256": "61ffa7b4c9a76d6805a8f061c29e144c690342d0e00ce59a003f99cb2d843007",
+      "rawBytes": 190338,
+      "excerpts": 2,
+      "quotedWords": 18
+    },
+    {
+      "source": "src-hs-enc-sinjeung-yeoji",
+      "url": "https://encykorea.aks.ac.kr/Article/E0033401",
+      "sha256": "e2c5c85ac660a1b3573b18ef27b708aca7c5a0a90f161d12ef404e280f2fb03d",
+      "rawBytes": 135548,
+      "excerpts": 2,
+      "quotedWords": 11
+    },
+    {
+      "source": "src-hs-enc-changgyeonggung",
+      "url": "https://encykorea.aks.ac.kr/Article/E0055319",
+      "sha256": "d5690db5323b7e4a5aea170700c737e6a71506b48b7f8adf9ee284375bc908f0",
+      "rawBytes": 175789,
+      "excerpts": 2,
+      "quotedWords": 20
+    },
+    {
+      "source": "src-hs-enc-dongguk-tonggam",
+      "url": "https://encykorea.aks.ac.kr/Article/E0016304",
+      "sha256": "f4343e458b2e4546424c99469687a2f1d0d41aa80b3ec44ccb053d3dbb10268b",
+      "rawBytes": 125181,
+      "excerpts": 2,
+      "quotedWords": 14
+    },
+    {
+      "source": "src-hs-enc-nobi",
+      "url": "https://encykorea.aks.ac.kr/Article/E0012757",
+      "sha256": "2ef5fea4d28272fdeabff7a65ac3d389edf5b51e9a6c7788862460ba0bcac690",
+      "rawBytes": 158470,
+      "excerpts": 3,
+      "quotedWords": 24
+    },
+    {
+      "source": "src-hs-enc-jangyewon",
+      "url": "https://encykorea.aks.ac.kr/Article/E0076386",
+      "sha256": "393126bd93dbc63991834d037a59ef72341ec8af768bd9a2031bfb39d74d7bde",
+      "rawBytes": 109890,
+      "excerpts": 2,
+      "quotedWords": 13
+    },
+    {
+      "source": "src-hs-enc-sinbun",
+      "url": "https://encykorea.aks.ac.kr/Article/E0033021",
+      "sha256": "468a2465bbcbfba34dd066bf402b81970eacc23d936b62b7127a669cdfdfbda7",
+      "rawBytes": 213776,
+      "excerpts": 2,
+      "quotedWords": 16
+    },
+    {
+      "source": "src-hs-kowiki-wongaksaji",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EC%9B%90%EA%B0%81%EC%82%AC%EC%A7%80_%EC%8B%AD%EC%B8%B5%EC%84%9D%ED%83%91",
+      "sha256": "047d1c1d2502b5762cd90a303cd1d12bb71970a5a39e7fe6450c03442aaabf11",
+      "rawBytes": 186601,
+      "excerpts": 2,
+      "quotedWords": 6
+    },
+    {
+      "source": "src-hs-enwiki-kilju",
+      "url": "https://en.wikipedia.org/wiki/Kilju_County",
+      "sha256": "4347df9282f8041cef0234c266cec8dc8d604ed6f2135a912528eaa5e87610b5",
+      "rawBytes": 139035,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-geunjeongjeon",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B7%BC%EC%A0%95%EC%A0%84",
+      "sha256": "92d0b6727377988df3d2f0c1e2176106180706112fb2b42c02aff8c28c3c0688",
+      "rawBytes": 230309,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-gwangju-si",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EA%B8%B0%EB%8F%84_%EA%B4%91%EC%A3%BC%EC%8B%9C",
+      "sha256": "dfaaacd19e1379f78ed48142d6df187974d38e694524710238c634f19b9d251f",
+      "rawBytes": 277878,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-saongwon",
+      "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EC%98%B9%EC%9B%90",
+      "sha256": "95c139c20ac94b937253dfc7fbc171077f61948fa9d5401ccc7f8ae12c5bdb64",
+      "rawBytes": 101712,
+      "excerpts": 1,
+      "quotedWords": 5
+    },
+    {
+      "source": "src-hs-kowiki-yongjangsagok",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EB%82%A8%EC%82%B0_%EC%9A%A9%EC%9E%A5%EC%82%AC%EA%B3%A1_%EC%82%BC%EC%B8%B5%EC%84%9D%ED%83%91",
+      "sha256": "78aecff14e36efa40dd5f50913012da1f4462454ed7382f4f129b664e133e005",
+      "rawBytes": 78643,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-chilbulam",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%A3%BC_%EB%82%A8%EC%82%B0_%EC%B9%A0%EB%B6%88%EC%95%94_%EB%A7%88%EC%95%A0%EB%B6%88%EC%83%81%EA%B5%B0",
+      "sha256": "09f3f512f53b6719bd9d220de7dd2c21ed76790630795c6d5963fa27749fa41c",
+      "rawBytes": 292508,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-gwangheungchang",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%91%ED%9D%A5%EC%B0%BD%EC%97%AD",
+      "sha256": "277a7d998c62d7fccd7f3c26e2c810c9020d4eaee81de58a6e2cc5021eb73fcc",
+      "rawBytes": 117833,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-andong",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%88%EB%8F%99%EC%8B%9C",
+      "sha256": "79dd97a2e0df489240db10d3dae07a11884d236456b0b33957c167fbcf63accc",
+      "rawBytes": 509201,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-jongmyo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A2%85%EB%AC%98",
+      "sha256": "ec237f82520f677d941c5300499d6a58c6057e81f0cf46f39874c58f58164abf",
+      "rawBytes": 439057,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-sujeongjeon",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%EC%88%98%EC%A0%95%EC%A0%84",
+      "sha256": "15a40b9b3d2dcce10b36a9d903097c11e0a6f442bc0d2c1a1664410a362cf7f4",
+      "rawBytes": 93500,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-yeongnamnu",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B0%80%EC%96%91_%EC%98%81%EB%82%A8%EB%A3%A8",
+      "sha256": "a76cb69efd871394857f6a89671ad7f9dcc549dabab58136139726c20e5c6d18",
+      "rawBytes": 186821,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-gwanghwamun",
+      "url": "https://ko.wikipedia.org/wiki/%EA%B4%91%ED%99%94%EB%AC%B8",
+      "sha256": "903151f77f2c524e15aa37cc20c91a9455fb91de65caa80c004009675c9634de",
+      "rawBytes": 276440,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-ojukheon",
+      "url": "https://ko.wikipedia.org/wiki/%EC%98%A4%EC%A3%BD%ED%97%8C",
+      "sha256": "341dbf1507b72dd389bed177aeef7d2b10b15833468a89c83613af3458c51792",
+      "rawBytes": 147826,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-munmyo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EB%AC%B8%EB%AC%98_%EB%B0%8F_%EC%84%B1%EA%B7%A0%EA%B4%80",
+      "sha256": "7dc5ea7cc9bc6db47fc9506e1372e3278ac226e5706cf2af07119fc85bbecf6e",
+      "rawBytes": 135318,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-changgyeonggung",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EA%B2%BD%EA%B6%81",
+      "sha256": "b1d1baa4f4f43f73182119b03601460f9da2e6e4aba1403c15be622ee28bd6d6",
+      "rawBytes": 280193,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-huijeongdang",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EB%8D%95%EA%B6%81_%ED%9D%AC%EC%A0%95%EB%8B%B9",
+      "sha256": "e5f36bc887eb2689ae03f780bc254f80f81d2da6d4689310116062e2c650c1bf",
+      "rawBytes": 91101,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-injeongjeon",
+      "url": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EB%8D%95%EA%B6%81_%EC%9D%B8%EC%A0%95%EC%A0%84",
+      "sha256": "c8e65cde32d028c618b97dbed6b048f5055c3c35cf3177ae4cd3b71783a4ddcf",
+      "rawBytes": 168921,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-heunginjimun",
+      "url": "https://ko.wikipedia.org/wiki/%ED%9D%A5%EC%9D%B8%EC%A7%80%EB%AC%B8",
+      "sha256": "f2de570bbedc85179a0a7c954d8b4f099da54829eec8b75152d39adaad1981e3",
+      "rawBytes": 179664,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-sungnyemun",
+      "url": "https://ko.wikipedia.org/wiki/%EC%88%AD%EB%A1%80%EB%AC%B8",
+      "sha256": "c4faf744c22ee8bb35a4bc9868e06ce626436ef8d5ac842e27a1b03ca0da3b8f",
+      "rawBytes": 427111,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-sajikdan",
+      "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8_%EC%82%AC%EC%A7%81%EB%8B%A8",
+      "sha256": "2b66116587e0f9a437bfa52a43e27355757ae577bbb7f9adb3d213750225f7b4",
+      "rawBytes": 153384,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-jonggak",
+      "url": "https://ko.wikipedia.org/wiki/%EC%A2%85%EA%B0%81%EC%97%AD",
+      "sha256": "f0248e3241a47fe088671b2a968fdd124f87399585bef1645d8f495aa1410919",
+      "rawBytes": 151354,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-sinsukju-myo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%8B%A0%EC%88%99%EC%A3%BC%EC%84%A0%EC%83%9D%EB%AC%98",
+      "sha256": "376bf92f73cfe4c717b2b81d5bed66587b17a961e7a155dc1cc2c94a302ed85f",
+      "rawBytes": 78295,
+      "excerpts": 1,
+      "quotedWords": 2
+    },
+    {
+      "source": "src-hs-kowiki-yeonsangun-myo",
+      "url": "https://ko.wikipedia.org/wiki/%EC%97%B0%EC%82%B0%EA%B5%B0%EB%AC%98",
+      "sha256": "3094565a6c8dfd1fc12db05a3fc3cbad407969f8648bddb9b748fcd2d43f0b8e",
+      "rawBytes": 113502,
+      "excerpts": 1,
+      "quotedWords": 2
+    }
+  ],
+  "missing": [
+    {
+      "id": "miss-hs-je4-1",
+      "itemId": "hs-joseon-early-nobi",
+      "reason": "장예원 터의 십진 좌표를 공개 출처에서 얻지 못했다",
+      "topic": "한성 장예원 터 좌표",
+      "detail": "노비 문서와 소송을 맡은 장예원의 자리를 십진 좌표로 밝힌 공개 자료를 찾지 못해 도성 안의 다른 지점으로 대신했다.",
+      "neededSource": "국가유산포털 또는 서울역사편찬원의 관아 터 좌표(국가유산포털은 이 세션에서 접속 불가)"
+    },
+    {
+      "id": "miss-hs-je4-2",
+      "itemId": "hs-joseon-early-akhak-gwebeom",
+      "reason": "장악원 터의 십진 좌표를 얻지 못했다",
+      "topic": "한성 장악원 터 좌표",
+      "detail": "악학궤범을 엮은 장악원의 위치를 십진 좌표로 제시한 공개 자료를 찾지 못했다.",
+      "neededSource": "서울역사편찬원 한성부 관아 터 위치 자료"
+    },
+    {
+      "id": "miss-hs-je4-3",
+      "itemId": "hs-joseon-early-baekja",
+      "reason": "퇴촌면 도마리 가마터의 십진 좌표를 얻지 못했다",
+      "topic": "광주 도마리 가마터 좌표",
+      "detail": "사적 「광주 조선백자 요지」의 개별 가마터 좌표를 얻지 못해 광주시 표시 좌표로 대신했다.",
+      "neededSource": "국가유산포털 사적 제314호 소재지 좌표(이 세션에서 heritage.go.kr 접속 불가)"
+    },
+    {
+      "id": "miss-hs-je4-4",
+      "itemId": "hs-joseon-early-ojukheon",
+      "reason": "오죽헌 건립 연도를 밝힌 기록이 없다",
+      "topic": "오죽헌 건립 연도",
+      "detail": "백과사전도 \"적어도 15세기 후반\"이라고만 하며 연도 기록을 제시하지 못한다.",
+      "neededSource": "강릉 지역 읍지·문집의 건립 기사"
+    },
+    {
+      "id": "miss-hs-je4-5",
+      "itemId": "hs-joseon-early-wongaksaji-pagoda",
+      "reason": "석탑 건립 연도 1467을 적은 허용 출처를 확보하지 못했다",
+      "topic": "원각사지 십층석탑 건립 연도(1467)의 허용 출처",
+      "detail": "우리역사넷 한국사 연대기(contents.history.go.kr, kc_r300756)에 \"원각사지 십층석탑은 1467년(세조 13)에 건립된 조선시대의 석탑이다\"가 실제로 있으나 그 HTML에 공공누리 표시가 없어 검증 규칙이 받지 않는다. 국가유산포털(heritage.go.kr·khs.go.kr)은 이 세션에서 TCP 연결이 되지 않았다. 지금 근거는 위키백과 머리말이다.",
+      "neededSource": "국가유산포털 국보 지정 설명 또는 공공누리 표시가 있는 우리역사넷/기관 해설"
+    },
+    {
+      "id": "miss-hs-je4-6",
+      "itemId": "hs-joseon-early-baekja",
+      "reason": "사옹원 설치 연도 1467을 적은 허용 출처를 확보하지 못했다",
+      "topic": "사옹원 설치 연도(1467)의 허용 출처",
+      "detail": "민족문화대백과 「광주 조선백자 요지」는 \"15세기 후반\"이라고만 해 연도 숫자가 없고, 로컬 원문 조각에도 사옹원 항목이 없다. 현재 연도 주장은 위키백과 「사옹원」 머리말에 기댄다.",
+      "neededSource": "한국민족문화대백과 「사옹원」 항목 또는 공공누리 표시가 있는 기관 해설"
+    }
+  ],
+  "collection": {
+    "task": "joseon-early-4",
+    "runner": "workflow",
+    "modelRequested": "claude-opus-5",
+    "effort": "high",
+    "modelsObserved": [
+      "claude-opus-5"
+    ],
+    "started": 1789352646,
+    "exitCode": 0,
+    "isError": false,
+    "sessionId": "workflow-joseon-early-4",
+    "revised": 1789354290
+  },
+  "downloadPerformedBy": "claude-opus-5 via workflow",
+  "integrationPerformedBy": "Codex",
+  "reviewedEntityIds": [
+    "place-hs-yeonsangun-myo"
+  ],
+  "reviewedSourceIds": {},
+  "integrationAdjustments": {},
+  "checkOnly": false,
+  "collectionComplete": true
+}

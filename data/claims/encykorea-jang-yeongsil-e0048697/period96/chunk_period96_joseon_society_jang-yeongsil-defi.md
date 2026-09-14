@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-jang-def",
+    "subject": "person-encykorea-jang-yeongsil-e0048697",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "thing-hs-honcheonui"
+    },
+    "citesChunk": "chunk_period96_joseon_society_jang-yeongsil-defi",
+    "quote": "천문관측기계인 혼천의, 물시계인 자격루와 옥루 등을 제작한 학자",
+    "note": "혼천의·자격루·옥루를 만들었다.",
+    "fromSource": "src-encykorea-jang-yeongsil-e0048697",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```

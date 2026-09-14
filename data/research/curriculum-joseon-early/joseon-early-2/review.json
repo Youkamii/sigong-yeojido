@@ -1,0 +1,162 @@
+{
+  "job": "joseon-early-2",
+  "checker": "claude-opus-5 high",
+  "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-joseon-early --job joseon-early-2 → PASS: failures=0 warnings=0. 집계: facts 23, scenes 23, claims 89 (chunkClaims 18, excerptClaims 71). category×10년: administration 5(1410:2, 1420:3) · facility 1(1430) · culture 7(1420:1, 1430:6) · foreign 1(1420) · person 6(1410:2, 1430:4) · war 3(1410:1, 1430:2). region×10년: capital 14 · north 4 · central 1 · south 3 · island 1.",
+  "verdict": "fix",
+  "issues": [
+    {
+      "severity": "major",
+      "itemId": "공통 14건 (yukjo-jikgye, gyeongyeon, sejong, jiphyeonjeon, eokbul, nongsajikseol, honcheonui, hyangyak-jipseongbang, angbuilgu, gabinja, ganuidae, jagyeongnu, jang-yeongsil, samgang-haengsildo)",
+      "factId": "fact-hs-je2-001 외 13건",
+      "problem": "한성(위도 37.56~37.58) 항목 14건에 region 'capital' 을 줬다. brief 의 좌표 규칙은 '37~39 central(한성·개경·강화 포함 → capital 은 도읍 항목만)' 이므로 한성에 있다는 이유만으로 capital 을 쓸 수 없다. 같은 컬렉션의 나머지 네 칸은 모두 한성 항목을 central 로 넣었고(joseon-early-1 18건 · 3 21건 · 4 19건 · 5 18건), capital 은 joseon-early-1 의 '한양 천도'(hs-joseon-early-hanyang-capital) 한 건뿐이다. 이 칸만 규칙과 관행에서 벗어나 region×10년 커버리지 표가 칸 사이에 어긋난다.",
+      "fix": "이 14건의 fact.region 과 scene.region 을 'central' 로 바꾸고 cell.regions 에서 'capital' 을 뺀다. 이 칸에는 도읍 자체를 다루는 항목이 없다.",
+      "evidence": "docs/research/curriculum-items-brief.md 34행 region 규칙 / data/research/curriculum-joseon-early/joseon-early-{1,3,4,5}/result.json 의 region 집계"
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-joseon-early-angbuilgu",
+      "factId": "fact-hs-je2-017 / scene-hs-angbuilgu",
+      "problem": "persistence 가 {kind:'facility', from:1434, to:null} 이라 화면에서 1434년 앙부일구가 종로 거리에 2100년까지 서 있는 것으로 그려진다. 그런데 이 항목이 인용한 바로 그 출처(raw/enc-angbuilgu.html)가 '세종 때 제작된 앙부일구는 현재 남아 있지 않다. 현존하는 앙부일구는 모두 조선 후기에 제작된 것이다' 라고 명시한다. 같은 칸의 혼천의·자격루는 1592년으로 닫았는데 앙부일구만 현존으로 열어 두어 내부 일관성도 없다. fact.note 의 단서는 구조 필드가 만드는 표시를 되돌리지 못한다.",
+      "fix": "persistence.to 를 소실 근거가 있는 해(혼천의·자격루와 같은 1592)로 닫거나, 소실 연도를 확정할 근거가 없으면 persistence 를 빼고 제작 장면만 남긴다. 후자를 고르면 위 문장을 발췌해 claim 으로 남긴다.",
+      "evidence": "raw/enc-angbuilgu.html 본문 '연원 및 변천': '그런데 세종 때 제작된 앙부일구는 현재 남아 있지 않다. 현존하는 앙부일구는 모두 조선 후기에 제작된 것이다.'"
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-joseon-early-4gun",
+      "factId": "fact-hs-je2-012 / claim-hs-4gun-1433",
+      "problem": "core 항목인데 '4군을 설치했다' 는 핵심 주장을 말하는 claim 이 없다. 연도 claim(claim-hs-4gun-1433)은 '1433년(세종 15)에 압록강 중류 지방의 여진인을 정벌한 사건' 이라는 파저강 정벌 정의문이고, 장소 claim 은 위키백과 자성군 좌표이며, 남은 하나(claim-hs-4gun-setup)는 최윤덕 항목 정보표의 '관련 사건 4군 설치' 라는 꼬리표뿐이다. scene.summary 가 적은 '여연·자성·무창·우예 네 고을' 도 인용된 발췌 어디에도 없다.",
+      "fix": "이미 내려받아 둔 raw/enc-pajeogang.html 끝부분의 '여연·자성·무창·우예 등 4군을 설치하기에 이르렀다' 를 발췌로 추가하고 event-hs-4gun 의 syj:establishedIn 또는 syj:relatedTo claim 으로 인용한다. src-hs-enc-pajeogang 의 현재 발췌 단어 합계는 25단어에 여유가 있다.",
+      "evidence": "raw/enc-pajeogang.html 본문 '내용' 마지막 문단: '이로써, 조선은 태종 이래 북진 정책의 일환으로 추진하였던 압록강 유역을 개척하고 여연·자성·무창·우예 등 4군을 설치하기에 이르렀다.'"
+    },
+    {
+      "severity": "major",
+      "itemId": "hs-joseon-early-ganuidae",
+      "factId": "fact-hs-je2-019 / scene-hs-ganuidae",
+      "problem": "fact.what 이 '궁궐 안에 세운 천문대' 인데 fact.year 와 scene.startYear 는 1432다. 인용 출처는 1432년을 '이천과 장영실에게 목제로 간의를 만들게 하여 실험에 성공' 한 해(기구 제작)로, 1438년을 '경복궁 경회루 북쪽에 간의대를 세워 대간의를 설치' 한 해(천문대 축조)로 적는다. 1432는 천문대를 세운 해가 아니며 항목이 적은 1434도 아니다. 지도에는 1432년에 아직 없던 천문대가 서 있는 것으로 표시되고, 같은 장면의 persistence.from 1438 과도 어긋난다.",
+      "fix": "fact.year·yearVerbatim·scene.startYear 를 인용 출처가 말하는 1438로 바꾸거나, 항목의 1434를 뒷받침하는 근거를 새로 찾아 1434로 맞춘다. 1432년 간의 제작은 보조 claim 으로만 남긴다.",
+      "evidence": "raw/enc-ganui.html: '우리나라에서는 1432년(세종 14)에 이천(李蕆)과 장영실(蔣英實)에게 목제로 간의를 만들게 하여 실험에 성공하자 … 1438년에 경복궁경회루 북쪽에 간의대를 세워 대간의(大簡儀)를 설치하는'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-angbuilgu",
+      "factId": "fact-hs-je2-017 / claim-hs-tapgol-loc",
+      "problem": "fact.modernPlace 는 '서울특별시 종로구 종로1가' 인데 좌표는 탑골공원(126.98861, 37.57111)이고, 그 출처 HTML 자체가 탑골공원 주소를 '서울 종로 99, 외 (종로2가)' 로 적는다. 좌표와 현대 지명이 서로 다른 동을 가리킨다. 혜정교 터는 종로1가 쪽이므로(추정) 실제 거리도 약 0.9km 어긋난다.",
+      "fix": "modernPlace 를 '서울특별시 종로구 종로2가' 로 맞추거나, 혜정교 터에 더 가까운 종로1가 지점(십진 좌표 발췌를 구할 수 있는 곳)으로 좌표를 옮긴다.",
+      "evidence": "raw/ko-tapgol.html 정보상자: '위치주소서울 종로구 종로 99, 외 (종로2가)' / result.json fact-hs-je2-017.modernPlace"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-yi-jongmu",
+      "factId": "fact-hs-je2-005 / scene-hs-yi-jongmu",
+      "problem": "fact.what(항목 meaning 그대로)은 '거제에서 배를 띄워 대마도를 친 장수' 인데 장면 장소는 '주원방포(지금의 통영)' 이고 좌표도 통영시다. 카드에서 본문과 장소가 나란히 놓여 모순으로 읽힌다. 출처를 따른 판단 자체는 옳다 — 로컬 chunk 가 '주원방포(周原防浦: 현재의 경상남도 통영)' 라고 적는다.",
+      "fix": "scene.summary 나 fact.note 에 '항목은 거제로 적으나 인용 출처는 주원방포를 지금의 통영으로 본다' 는 한 줄을 더한다. 지금 note 는 장소 선택만 밝히고 what 과의 충돌은 다루지 않는다.",
+      "evidence": "chunk_scenes-103_joseon_early_scenes_je-dm-depart: '정벌군은 6월 19일 주원방포(周原防浦: 현재의 경상남도 통영)를 출발하였다' / items.json hs-joseon-early-yi-jongmu.place.label = '거제도 견내량'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-6jin",
+      "factId": "scene-hs-6jin participants[0].claimIds",
+      "problem": "김종서를 6진 장면의 참여자(commander)로 넣으면서 근거로 claim-hs-6jin-def 하나만 달았는데, 그 발췌는 '두만강 하류 남안에 설치된 군사 행정구역.' 이라는 육진 정의문이라 김종서를 전혀 언급하지 않는다. 참여 근거가 사실상 비어 있다.",
+      "fix": "raw/enc-yukjin.html 의 '김종서(金宗瑞)를 함길도도절제사에 임명하는 한편' 을 발췌로 추가해 syj:participatedIn claim 을 만들고 participants[0].claimIds 에 넣는다.",
+      "evidence": "raw/enc-yukjin.html: '세종은 이러한 여진족 내분의 기회를 포착해 김종서(金宗瑞)를 함길도도절제사에 임명하는 한편'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-nongsajikseol, hs-joseon-early-hyangyak-jipseongbang, hs-joseon-early-samgang-haengsildo",
+      "factId": "claim-hs-nongsa-1429/claim-hs-nongsa-act, claim-hs-hyangyak-1433/claim-hs-hyangyak-act, claim-hs-samgang-1434/claim-hs-samgang-act",
+      "problem": "세 항목 모두 연도 claim 과 행위 claim 이 같은 발췌 하나(ex-nongsa-1429 · ex-hyangyak-1433 · ex-samgang-1434)를 두 번 인용한다. 좌표 발췌를 빼면 독립된 근거는 실질 1건이라 brief 의 '핵심은 3개(연도·장소·행위)' 에 못 미친다. 농사직설은 core 항목이다.",
+      "fix": "이미 내려받은 raw 에서 편찬 경위 문장(농사직설 '편찬/발간 경위' 문단, 향약집성방의 간행·분간 서술 등)을 별도 발췌로 뽑아 행위 claim 의 근거를 분리한다.",
+      "evidence": "result.json: claim-hs-nongsa-1429 와 claim-hs-nongsa-act 의 citesExcerpt 가 모두 'ex-nongsa-1429'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-ganuidae",
+      "factId": "scene-hs-ganuidae actionClaimIds",
+      "problem": "actionClaimIds 가 claim-hs-gyeonghoeru-loc, 곧 경회루 좌표 claim 하나다. 축조 행위를 말하는 claim 이 없고 장소 claim 을 행위 자리에 넣었다.",
+      "fix": "claim-hs-ganui-1438(간의대를 세워 대간의를 설치)을 행위 claim 으로 돌리거나 축조를 서술하는 별도 claim 을 만들고, 좌표 claim 은 place.claimIds 에만 남긴다.",
+      "evidence": "result.json scene-hs-ganuidae.actionClaimIds = ['claim-hs-gyeonghoeru-loc']"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-yukjo-jikgye",
+      "factId": "fact-hs-je2-001 / scene-hs-yukjo-jikgye",
+      "problem": "출처가 육조직계제의 운영 기간(1414~1436)을 명시하고 이미 claim-hs-yukjo-act 로 1436년 회복을 인용해 두었는데도 persistence 를 달지 않았다. 같은 칸의 집현전은 persistence{institution, 1420, 1456} 을 달았다. 제도 항목끼리 처리가 갈린다.",
+      "fix": "scene/fact 에 persistence {kind:'institution', from:1414, to:1436, basisClaimIds:['claim-hs-yukjo-1414','claim-hs-yukjo-act']} 를 더하거나, 집현전 쪽과 기준을 하나로 맞춘다.",
+      "evidence": "raw/enc-yukjo.html: '의정부서사제는 1414년(태종 14)년 육조직계제로 바뀌었다. 이후 1436년(세종 18) 의정부서사제를 회복하였다.'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-eokbul",
+      "factId": "claim-hs-eokbul-year2",
+      "problem": "subject 가 event-hs-eokbul('선교양종 통합과 승록사 혁파(1424)', 항목 제목은 '숭유억불 정책')인데 predicate 가 syj:endedIn 1512 다. 1512년은 선교양종이 해체된 해이지 숭유억불 정책이 끝난 해가 아니어서, 그대로 읽으면 '숭유억불이 1512년에 끝났다' 는 주장이 된다.",
+      "fix": "subject 를 선교양종을 가리키는 별도 개체로 나누거나, predicate 를 syj:relatedTo 로 낮추고 note 에 '선교양종 해체 연도' 임을 명시한다.",
+      "evidence": "result.json claim-hs-eokbul-year2 (object.year = 1512, citesExcerpt ex-seongyo-1424 '설립 시기 1424년 해체 시기 1512년')"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-honcheonui",
+      "factId": "scene-hs-honcheonui / fact-hs-je2-014",
+      "problem": "1433년 혼천의의 장소 이름을 '경복궁 흠경각 터 일대' 로 붙였다. 인용한 흠경각 항목에는 건립 연도 발췌가 없고, 같은 칸의 간의 항목은 간의대를 1438년에 세운 것으로 적어 1433년에 흠경각을 무대로 삼는 것은 연대가 앞선다. 좌표는 경복궁 대표점이라 위치 오차는 없지만 이름이 연대 착오를 부른다.",
+      "fix": "place.label 을 '경복궁 일원(혼천의 설치 표시점)' 처럼 연도 중립으로 바꾸거나, 흠경각 건립 연도 발췌를 확보해 관계를 명시한다.",
+      "evidence": "result.json scene-hs-honcheonui.place.label / raw/enc-ganui.html 의 1438년 간의대 서술"
+    },
+    {
+      "severity": "minor",
+      "itemId": "경복궁 권역 14건",
+      "factId": "fact-hs-je2-002 / 003 / 014 / 021 / 022 등",
+      "problem": "경복궁 권역 항목들이 서로 25~400m 안에 몰려 있다(세종↔혼천의 25m, 장영실↔삼강행실도 46m, 경연↔세종 51m). 한 점에 완전히 겹치지는 않으나 지도 축척에서 한 덩어리로 보일 수 있다. 이 가운데 농사직설·향약집성방·삼강행실도·장영실 네 건은 자선당·교태전·소주방·자경전 좌표를 빌린 임의 표시점이라고 note 에 스스로 밝혀 두었으므로 자유롭게 벌릴 수 있다.",
+      "fix": "임의 표시점 4건을 서로 100m 이상 떨어지게 재배치하거나, 편찬 관서 근거가 있는 지점(집현전=수정전 자리 등)으로 옮긴다.",
+      "evidence": "result.json 좌표 쌍 거리 계산(세종 126.97694/37.57861 ↔ 혼천의 126.97722/37.57861 ≈ 25m)"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-honcheonui, hs-joseon-early-angbuilgu, hs-joseon-early-jagyeongnu",
+      "factId": "images.json",
+      "problem": "images.json 이 20건이라 heritage 장면 3건(혼천의·앙부일구·자격루)에 이미지 프롬프트가 없다. 지시문이 '사건·인물 항목마다' 이므로 규칙 위반은 아니지만 앙부일구·자격루는 core 항목이라 #188 카드 이미지가 빈 채로 남는다.",
+      "fix": "heritage 항목도 subjectType 'event' 로 유물·설치 장면 프롬프트를 넣을지 결정하고, 넣지 않기로 하면 그 판단을 보고에 남긴다.",
+      "evidence": "images.json 20건 vs result.json scenes 23건"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-tsushima-expedition",
+      "factId": "fact-hs-je2-004",
+      "problem": "대마도를 region 'island' 로 넣었는데 같은 컬렉션 joseon-early-3 의 대마도 항목(계해약조)은 'south' 다. 칸 사이 어휘가 갈려 region×10년 표에서 같은 장소가 두 구역으로 잡힌다.",
+      "fix": "컬렉션 차원에서 해외 섬 처리 기준을 하나로 정한다. brief 의 'island' 는 제주·울릉을 예로 들고 해외는 north/foreign 으로 적어 대마도를 직접 다루지 않으므로 결정이 필요하다.",
+      "evidence": "joseon-early-2 fact-hs-je2-004.region = 'island' / joseon-early-3 hs-joseon-early-gyehae-treaty.region = 'south'"
+    },
+    {
+      "severity": "minor",
+      "itemId": "hs-joseon-early-gyeongyeon",
+      "factId": "claim-hs-gyeongyeon-1418",
+      "problem": "claim-hs-gyeongyeon-1418 은 claim-hs-sejong-reign-from 과 subject·predicate·object·sourceId·citesChunk·quote 가 모두 같은 완전 중복 claim 이다. 또 경연 장면의 유일한 날짜 근거가 '세종 즉위' 라 경연 자체의 연대 근거는 아니다(항목이 approx:true 라 허용 범위이긴 하다).",
+      "fix": "중복 claim 을 지우고 scene.dateClaimIds 에 claim-hs-sejong-reign-from 을 재사용한다. fact.note 에 이미 적힌 단서는 유지한다.",
+      "evidence": "result.json claim-hs-gyeongyeon-1418 과 claim-hs-sejong-reign-from 비교"
+    }
+  ],
+  "checkedItems": [
+    "hs-joseon-early-yukjo-jikgye",
+    "hs-joseon-early-gyeongyeon",
+    "hs-joseon-early-sejong",
+    "hs-joseon-early-tsushima-expedition",
+    "hs-joseon-early-yi-jongmu",
+    "hs-joseon-early-jiphyeonjeon",
+    "hs-joseon-early-eokbul",
+    "hs-joseon-early-sampo-opening",
+    "hs-joseon-early-yuhyangso",
+    "hs-joseon-early-nongsajikseol",
+    "hs-joseon-early-hwang-hui",
+    "hs-joseon-early-4gun",
+    "hs-joseon-early-choe-yundeok",
+    "hs-joseon-early-honcheonui",
+    "hs-joseon-early-hyangyak-jipseongbang",
+    "hs-joseon-early-6jin",
+    "hs-joseon-early-angbuilgu",
+    "hs-joseon-early-gabinja",
+    "hs-joseon-early-ganuidae",
+    "hs-joseon-early-jagyeongnu",
+    "hs-joseon-early-jang-yeongsil",
+    "hs-joseon-early-samgang-haengsildo",
+    "hs-joseon-early-kim-jongseo"
+  ],
+  "summary": "검증기는 PASS(실패 0 · 경고 0)다. 항목 23건 전부를 근거까지 되짚었고 그 가운데 18건은 raw HTML 과 로컬 chunk 의 앞뒤 문단까지 읽어 발췌가 문맥을 비틀지 않았음을 확인했다(core 10건 전부 포함). 인용문은 모두 원문에 그대로 있었고 왜곡이나 교과서 문장 전재는 없었으며, 연도·장소가 항목과 다른 세 건(간의대·김종서·이종무 출항지)은 note 에 이유가 적혀 있다. 세종·집현전·4군·6진·자격루·장영실 같은 핵심 항목은 빠지지 않았다(훈민정음 1443·측우기 1441 은 이 칸 범위 1414~1435 밖이다). 좌표는 모두 location claim 근거를 갖췄고 한 점에 완전히 겹치는 항목도 없다. 고쳐야 할 것은 넷이다. (1) 한성 항목 14건에 region capital 을 준 것은 brief 규칙과 다른 네 칸의 관행에 어긋난다. (2) 앙부일구의 persistence to:null 은 '세종 때 앙부일구는 남아 있지 않다' 는 자기 출처와 정면으로 어긋난다. (3) core 항목인 4군에 '4군을 설치했다' 는 claim 자체가 없다 — 근거 문장은 이미 받아 둔 raw 안에 있다. (4) 간의대의 기준 연도 1432 는 인용 출처가 말하는 천문대 축조 연도(1438)도, 항목의 1434 도 아니다. 나머지 12건은 일관성·근거 보강 수준의 minor 다."
+}

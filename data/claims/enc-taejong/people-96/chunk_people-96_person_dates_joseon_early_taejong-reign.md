@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-taejong-reign",
+    "subject": "person-encykorea-taejong-e0059039",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "1400년~1418년",
+      "year": 1400,
+      "precision": "year",
+      "earliest": 1400,
+      "latest": 1418,
+      "id": "ts-curriculum-joseon-early-joseon-early-1-je1-taejong-reign"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_early_taejong-reign",
+    "quote": "조선의 제3대(재위: 1400년~1418년) 왕",
+    "note": "태종의 재위 기간.",
+    "fromSource": "src-enc-taejong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

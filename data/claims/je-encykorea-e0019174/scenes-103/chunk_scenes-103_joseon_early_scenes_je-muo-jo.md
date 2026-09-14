@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-muo-jouije",
+    "subject": "person-je-kim-ilson",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-muo-sahwa"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-muo-jo",
+    "quote": "1498년 『성종실록』 편찬 때 김종직이 쓴 「조의제문(弔義帝文)」",
+    "note": "성종실록 편찬 중 사초에 실린 조의제문이 문제가 되었다.",
+    "fromSource": "src-je-encykorea-e0019174",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

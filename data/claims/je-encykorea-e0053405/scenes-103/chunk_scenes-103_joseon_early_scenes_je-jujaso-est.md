@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-gyemija-time",
+    "subject": "institution-hs-jujaso",
+    "predicate": "syj:establishedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1403년 2월",
+      "year": 1403,
+      "precision": "month",
+      "earliest": 1403,
+      "latest": 1403,
+      "id": "ts-curriculum-joseon-early-joseon-early-1-je1-gyemija-time"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-jujaso-est",
+    "quote": "1403년 2월에 주자소의 명칭을 붙인 인쇄기관을 대궐 안 아문(衙門)으로 신설하고",
+    "note": "주자소 신설.",
+    "fromSource": "src-je-encykorea-e0053405",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

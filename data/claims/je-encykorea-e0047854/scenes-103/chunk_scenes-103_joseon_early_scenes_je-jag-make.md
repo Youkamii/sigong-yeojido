@@ -75,6 +75,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-jagyeongnu-1434",
+    "subject": "thing-hs-jagyeongnu",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1434년(세종 16)",
+      "year": 1434,
+      "precision": "year",
+      "earliest": 1434,
+      "latest": 1434,
+      "id": "ts-curriculum-joseon-early-joseon-early-2-hs-jagyeongnu-1434"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-jag-make",
+    "quote": "1434년(세종 16) 왕명을 받아 장영실(蔣英實) · 이천(李蕆) · 김조(金銚) 등이 처음으로 물시계를 만들었는데",
+    "note": "장영실·이천·김조가 물시계를 만들었다.",
+    "fromSource": "src-je-encykorea-e0047854",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```

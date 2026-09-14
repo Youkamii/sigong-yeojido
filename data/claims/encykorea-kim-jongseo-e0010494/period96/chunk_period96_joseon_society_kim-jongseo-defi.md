@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-kim-office",
+    "subject": "person-encykorea-kim-jongseo-e0010494",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-6jin"
+    },
+    "citesChunk": "chunk_period96_joseon_society_kim-jongseo-defi",
+    "quote": "조선 전기에, 함길도도관찰사, 우의정, 좌의정 등을 역임한 문신.",
+    "note": "함길도 도관찰사와 정승을 지냈다.",
+    "fromSource": "src-encykorea-kim-jongseo-e0010494",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```

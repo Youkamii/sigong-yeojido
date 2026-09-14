@@ -1,0 +1,156 @@
+{
+ "job": "joseon-early-5",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-joseon-early --job joseon-early-5 → 'PASS: failures=0 warnings=0'. 집계: joseon-early-5 | facts 23 | scenes 21 | claims 93 | chunkClaims 16 | excerptClaims 77. category×10년 합계 administration 8, person 7, facility 2, economy 2, war 2, settlement 1, foreign 1. region×10년 합계 central 18, south 5 (capital·north·island 0). manifest 35건 전부 sha256·byteLength 일치, raw/ 파일 35개 모두 존재.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-yi-hwang",
+   "factId": "fact-je5-019",
+   "sceneId": "scene-je5-yi-hwang",
+   "problem": "core 항목인데 표시 연도 1561을 뒷받침하는 주장이 하나도 없다. scene.dateClaimIds 는 생몰(1501·1570) 주장뿐이고, 같은 result 안의 claim-je5-yh-seodang 은 도산서당 건립을 1560년으로 적으며 relatedClaimIds 로만 달려 있다. 저장된 원문 raw/enc-yi-hwang.html 에는 1561 이 한 번도 나오지 않는다. 지도에는 근거 없는 1561년이 그대로 표시된다.",
+   "fix": "fact.year 와 scene.startYear/endYear 를 1560 으로 맞추고 claim-je5-yh-seodang 을 dateClaimIds 에 넣는다. 항목의 1561 을 유지해야 한다면 1561 을 말하는 주장을 새로 달고, 근거를 못 찾으면 confidence 를 low 로 낮추고 note 에 연도 근거 없음을 명시한다.",
+   "evidence": "raw/enc-yi-hwang.html 본문 '1560년 도산서당(陶山書堂)을 짓고 아호를 도옹(陶翁)이라 정했다' / 같은 파일에서 '1561' 검색 0건. claim-je5-yh-seodang 의 object year=1560."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-hyangyak",
+   "factId": "fact-je5-006",
+   "sceneId": "scene-je5-hyangyak",
+   "problem": "1517년 장면에 이황(1501~1570)을 presence 'on-site' 참여자로 넣고 장소를 안동 예안으로 잡았다. 그런데 인용한 근거는 예안향약이 명종 11년(1556) 이황이 예안에 낙향한 뒤 제정되었다고 적는다. 1517년이면 이황은 열여섯이고 예안향약은 아직 없어, 1517년 예안에 이황이 서 있는 시대착오가 화면에 그대로 나온다.",
+   "fix": "1517년 장면은 조광조의 여씨향약 팔도 시행으로 한정하고 이황 참여자(claim-je5-hyangyak-yean 연결)를 뺀다. 예안향약을 살리려면 1556년 별도 장면으로 나누거나, 예안 좌표를 유지하되 summary·coordinateNote 에 '뒤 시기 사례의 고장을 대표점으로 썼고 1517년 장면의 참여자가 아니다' 를 명시한다.",
+   "evidence": "raw/enc-hyangyak.html '「예안향약」은 명종 11년 퇴계가 향리인 예안에 낙향한 후 …' (명종 11년 = 1556년). scene-je5-hyangyak participants 에 person-encykorea-yi-hwang-e0046626 presence 'on-site'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-hyangyak",
+   "claimId": "claim-je5-hyangyak-year",
+   "problem": "연도 주장이 인용한 발췌 ex-jgj-1517('1517년에는 교리로 경연시독관')에는 향약이 없다. 향약 시행은 별개 발췌 ex-jgj-hyangyak 에 있어 '1517년 = 향약 팔도 시행' 연결이 발췌 안에서 보이지 않는다.",
+   "fix": "원문의 한 문장 '1517년에는 교리로 경연시독관 · 춘추관기주관을 겸임했으며, 향촌의 상호부조를 위해 『여씨향약(呂氏鄕約)』을 8도에 실시하도록 하였다'(약 12단어)를 발췌 하나로 잡아 두 주장이 같은 문장을 인용하게 한다. src-enc-jo-gwangjo 의 현재 발췌 합계는 20단어라 교체해도 25단어 제한 안에 든다.",
+   "evidence": "raw/enc-jo-gwangjo.html 본문 '생애 및 활동사항' 의 해당 문장."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-hyeollyanggwa",
+   "claimId": "claim-je5-hyeollyang-act",
+   "problem": "장면 참여자로 조광조를 세웠는데 참여 근거로 붙인 주장의 발췌(ex-hlg-exam '문과는 서울과 지방에서 추천받은 이들을 대책으로 시험하여')에는 조광조가 없다.",
+   "fix": "같은 페이지의 '현량과는 조광조를 위시한 기묘인들의' 를 발췌로 추가해 참여자 주장에 붙인다(현재 이 출처 발췌 합계 14단어라 여유가 있다).",
+   "evidence": "raw/enc-hyeollyanggwa.html 내용 요약 '현량과는 조광조를 위시한 기묘인들의 사장 위주의 기존의 제도와 관행을 수정하여…'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-bungdang",
+   "claimId": "claim-je5-bungdang-act",
+   "problem": "참여자 김효원·심의겸 주장이 모두 ex-si-jeonrang('인사권을 쥐고 있는 전랑직을 둘러싼 대립이 직접적인 분란의 동기였다')을 인용하는데 이 발췌에는 두 사람 이름이 없다.",
+   "fix": "같은 페이지 앞 문장 '심의겸(沈義謙)과 신진사류 김효원(金孝元)과의 반목·질시가 동기가 되어 일어났다' 를 발췌로 추가해 인물 주장에 연결한다.",
+   "evidence": "raw/enc-seoin.html 내용 첫 문단."
+  },
+  {
+   "severity": "minor",
+   "itemId": "(공통)",
+   "factId": "fact-je5-002 / 006 / 007 / 009 / 013 / 014 / 015 / 016 / 019 / 021",
+   "problem": "좌표 근거가 발췌 안의 십진 좌표가 아니라 조사자가 잡은 표시점인 location 주장이 10건이다(claim-je5-gapja-loc, gimyo-loc, eulsa-loc, hyangyak-loc, jgj-loc, bibyeonsa-loc2, eulmyo-loc, bungdang-loc, yh-loc, mjw-loc). 인용한 발췌에 좌표 수가 없어 검증기는 통과하지만 좌표 자체의 출처는 없다.",
+   "fix": "치명적이지는 않다 — 모든 장면의 coordinateNote 에 표시점임을 밝혀 두었다. 다만 공개 좌표가 있는 곳(화순 조광조 적려유허비, 해남 달량진성, 안동 도산면 온혜리 노송정 종택 등)은 국가유산포털·위키백과 좌표 발췌로 바꿔 실제 근거를 붙이는 편이 좋다.",
+   "evidence": "각 location 주장의 citesExcerpt 본문에 십진 좌표 두 수가 없음(예: ex-ugb-loc '의금부의 위치는 한성부 중부 견평방(堅平坊 : 현재 종로구 견지동)에 있었다.')."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-tongsinsa-1590",
+   "claimId": "claim-je5-tss-route",
+   "problem": "경로 근거 ex-tss-kyoto('육로로 교토(京都)로 향했다')는 표 1 뒤의 '사행 노정' 문단으로, 대마도→세토내해→오사카→요도우라를 거치는 조선 후기(에도 막부) 노정 서술이다. 1590년 사행의 경로 근거로 쓰면 확대 해석이다.",
+   "fix": "fact.note 와 scene.coordinateNote 에 '교토 좌표는 통신사 일반 노정 서술에 따른 표시점이며 1590년 사행 경로를 특정한 근거는 아니다' 를 적는다.",
+   "evidence": "raw/enc-tongsinsa.html '사행 노정' 문단 — '무로마치(室町) 막부 때에는 여기가 종점이었지만, 에도 막부 때에는 … 모두 에도까지 갔다'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-sin-saimdang",
+   "sceneId": "scene-je5-sin-saimdang",
+   "problem": "장면 startYear 1540 에 대응하는 주장이 없다(dateClaimIds 는 1504 출생·1551 사망). fact.note 에는 대표값이라 적었으나 장면 쪽에는 표시가 없다.",
+   "fix": "scene.summary 나 coordinateNote 에 '1540년은 활동기를 가리키는 대표값' 임을 적거나, startYear 를 근거 있는 연도로 맞춘다.",
+   "evidence": "scene-je5-sin-saimdang.dateClaimIds = [claim-je5-ssd-birth(1504), claim-je5-ssd-death(1551)]."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-gunjeok-supo",
+   "factId": "fact-je5-011",
+   "problem": "items.json 의 type 은 society 인데 fact.category 를 economy 로 두었다. brief 대응표는 society→settlement 이고, 같은 society 인 향약은 settlement 로 넣어 칸 안에서도 일관성이 깨졌다.",
+   "fix": "category 를 settlement 로 바꾸거나, economy 로 두는 이유를 note 에 적어 대응표 예외로 남긴다.",
+   "evidence": "items.json hs-joseon-early-gunjeok-supo type='society'; docs/research/curriculum-items-brief.md 대응표 'society→settlement'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-tongsinsa-1590",
+   "factId": "fact-je5-023",
+   "problem": "일본 교토 장면의 region 이 'south' 다. brief 는 해외를 foreign 으로 두라 하지만 검증기 어휘에는 capital|north|central|south|island 뿐이라 규칙이 충돌한다. 그대로 두면 조선 남부 통계에 일본 장면이 섞인다.",
+   "fix": "조사 쪽에서는 fact.note 에 '해외 항목이라 좌표 위도로 south 를 넣었을 뿐 한반도 남부 사실이 아니다' 를 명시하고, 어휘 충돌 자체는 형식 문서(facts-format·brief) 이슈로 따로 올린다.",
+   "evidence": "fact-je5-023 region='south', lon 135.768111 / lat 35.011611(교토). brief region 규칙 '해외(overseas)는 north(만주)·foreign(그 밖)'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "(공통)",
+   "claimId": "claim-je5-bangnap-price / claim-je5-gunjeok-register / claim-je5-jepo-where / claim-je5-hyangyak-four",
+   "problem": "subject 와 object 가 같은 자기참조 relatedTo 주장이 4건이다(예: institution-hs-bangnap syj:relatedTo institution-hs-bangnap). 트리플로 적재되면 아무 정보도 남기지 못한다.",
+   "fix": "object 를 실제 대상 개체(장소·인물·사건)로 바꾸거나, 수치·표기라면 literal object 로 바꾼다.",
+   "evidence": "result.json claims 해당 4건의 subject·object 값."
+  },
+  {
+   "severity": "minor",
+   "itemId": "(공통)",
+   "claimId": "claim-je5-ssd-birth / claim-je5-yh-birth / claim-je5-yii-birth",
+   "problem": "출생 연도에 syj:reignedFrom(재위 시작)을 썼다. 검증기는 시간 술어라 통과시키지만 적재 뒤 '신사임당이 1504년부터 재위' 같은 잘못된 뜻이 남는다.",
+   "fix": "출생에 맞는 술어로 바꾼다(fact_predicates.json 확장 또는 출생 사건 주체로 occurredIn 사용). 문정왕후의 수렴청정 시작(claim-je5-mjw-year)처럼 '시작' 의미가 맞는 곳은 그대로 두어도 된다.",
+   "evidence": "result.json claims 3건의 predicate='syj:reignedFrom'."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-baegundong-seowon",
+   "sceneId": "scene-je5-baegundong-seowon",
+   "problem": "persistence.basisClaimIds 에 위치 주장 claim-je5-baegun-loc 이 존속 근거로 들어가 있다. 좌표 주장은 존속의 근거가 아닌데 카드에는 '기록된 존속(근거 n건)' 으로 표시된다.",
+   "fix": "1550년 사액 주장(claim-je5-baegun-1550 / claim-je5-baegun-saek)처럼 존속을 말하는 주장으로 바꾼다.",
+   "evidence": "scene-je5-baegundong-seowon.persistence.basisClaimIds = [claim-je5-baegun-year, claim-je5-baegun-loc]."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-dosan-seowon",
+   "factId": "fact-je5-020",
+   "problem": "발췌 ex-dss-1574('건립 시기1574년')가 어떤 주장에도 쓰이지 않는다(도산서원 연도는 로컬 chunk 로 잡았다). 출처 25단어 예산만 소비한다.",
+   "fix": "연도 주장의 보조 근거로 붙이거나 발췌에서 뺀다.",
+   "evidence": "result.json 전체 claims 중 citesExcerpt='ex-dss-1574' 인 주장 없음."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-gapja-sahwa / hs-joseon-early-gimyo-sahwa / hs-joseon-early-eulsa-sahwa",
+   "sceneId": "scene-je5-gapja-sahwa / scene-je5-gimyo-sahwa / scene-je5-eulsa-sahwa",
+   "problem": "요약이 '의금부로 끌려와 벌을 받았다', '한꺼번에 붙잡혀 갔다' 처럼 의금부 연행을 사실로 서술하는데, 근거는 '의금부는 죄인 심문을 담당한 특별사법 관청' 이라는 일반 서술뿐이다(coordinateNote 에는 표시점이라 밝혀 두었다).",
+   "fix": "summary 를 사건 자체(숙청·처벌)로 쓰고 장소 단정은 빼거나, 요약에도 의금부 터가 표시점임을 드러낸다.",
+   "evidence": "claim-je5-uigeumbu-role 의 발췌 ex-ugb-role '조선시대, 죄인 심문을 담당한 특별사법 관청.'"
+  }
+ ],
+ "checkedItems": [
+  "hs-joseon-early-bangnap",
+  "hs-joseon-early-gapja-sahwa",
+  "hs-joseon-early-jungjong-banjeong",
+  "hs-joseon-early-bibyeonsa",
+  "hs-joseon-early-sampo-waeran",
+  "hs-joseon-early-hyangyak",
+  "hs-joseon-early-gimyo-sahwa",
+  "hs-joseon-early-hyeollyanggwa",
+  "hs-joseon-early-jo-gwangjo",
+  "hs-joseon-early-sin-saimdang",
+  "hs-joseon-early-gunjeok-supo",
+  "hs-joseon-early-baegundong-seowon",
+  "hs-joseon-early-eulsa-sahwa",
+  "hs-joseon-early-munjeong-queen",
+  "hs-joseon-early-bibyeonsa-permanent",
+  "hs-joseon-early-eulmyo-waebyeon",
+  "hs-joseon-early-im-kkeokjeong",
+  "hs-joseon-early-jo-sik",
+  "hs-joseon-early-yi-hwang",
+  "hs-joseon-early-dosan-seowon",
+  "hs-joseon-early-bungdang",
+  "hs-joseon-early-yi-i",
+  "hs-joseon-early-tongsinsa-1590"
+ ],
+ "summary": "검증기는 PASS(failures 0, warnings 0)다. 항목 23건 전부(core 12건 포함, 표본 100%)를 출처에서 다시 확인했다. 로컬 chunk 14건은 scripts/search_chunks.py --id 로 원문과 인용을 대조해 전부 일치했고, 웹 발췌는 raw/ HTML 35개의 sha256·byteLength 를 다시 계산해 manifest·sources 와 맞춰 전부 일치했으며, encykorea 3건(갑자사화·비변사·통신사)은 실제 URL 을 다시 내려받아 발췌가 지금도 살아 있음을 확인했다. 위키백과 좌표 발췌 6건은 각 문서 자체의 geo 좌표에서 뽑은 것이 맞았다. 교과서 문장 전재는 없고 what 은 항목 meaning 그대로, summary 는 조사자 서술이다. 한양 항목 8건은 최소 70m 이상 떨어져 한 점에 겹치지 않으며, 항목 좌표에서 옮긴 6건은 모두 출처 좌표 쪽으로 옮기고 이유를 coordinateNote 에 밝혔다. images.json 19건은 접두어와 초상 문구가 모두 맞고 사건·인물 장면만 대상으로 한다(문화재 2건 제외는 규정대로). run.json 도 규격대로다. 근거를 못 찾은 방납·군적수포제 2건은 저장된 원문에 해당 연도(1500·1541)가 실제로 없음을 확인했으므로 confidence low·장면 생략·missing 처리가 타당하다. 고쳐야 할 것은 둘이다. 이황(core) 장면·사실의 1561년은 어떤 주장도 뒷받침하지 않고 조사자 자신의 주장은 1560년을 가리키며, 향약 장면은 1517년 예안에 이황을 현장 참여자로 세워 시대착오를 만든다(예안향약은 1556년). 나머지 13건은 발췌와 주장의 연결, 술어 의미, 좌표 근거 표기 수준의 minor 다."
+}

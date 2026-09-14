@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-sj-death",
+    "subject": "person-encykorea-sejo-e0029849",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1468년(세조 14)",
+      "year": 1468,
+      "precision": "year",
+      "earliest": 1468,
+      "latest": 1468,
+      "id": "ts-curriculum-joseon-early-joseon-early-3-be3-sj-death"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_middle_sejo-death",
+    "quote": "1468년(세조 14)",
+    "note": "세조의 사망 연도",
+    "fromSource": "src-ency-sejo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

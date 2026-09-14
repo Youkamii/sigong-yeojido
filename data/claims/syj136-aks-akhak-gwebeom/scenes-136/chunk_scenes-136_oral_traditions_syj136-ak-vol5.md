@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-09"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-akhak-vol5",
+    "subject": "work-hs-akhak-gwebeom",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-syj136-seong-hyeon"
+    },
+    "citesChunk": "chunk_scenes-136_oral_traditions_syj136-ak-vol5",
+    "quote": "한글로 적힌 ＜동동＞·＜정읍＞·＜처용가＞·＜진작 眞勺＞의 노래를 보여 준다.",
+    "note": "권5에 한글 노래가 실려 있다는 내용.",
+    "fromSource": "src-syj136-aks-akhak-gwebeom",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

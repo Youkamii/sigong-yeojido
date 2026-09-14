@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-tsushima-fleet",
+    "subject": "event-hs-tsushima",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-dm-fleet",
+    "quote": "동원된 병선은 모두 227척",
+    "note": "동원 병선 227척.",
+    "fromSource": "src-je-encykorea-e0014343",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```

@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-5-je5-baegun-ju",
+    "subject": "facility-hs-baegundong-seowon",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "person-je-ju-sebung"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-js-1541",
+    "quote": "1541년 풍기 군수에 임명되어",
+    "note": "주세붕이 풍기군수로 부임",
+    "fromSource": "src-je-encykorea-e0053318",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

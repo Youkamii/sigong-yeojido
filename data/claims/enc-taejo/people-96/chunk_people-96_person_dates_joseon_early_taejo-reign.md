@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-taejo-reign",
+    "subject": "person-encykorea-taejo-e0059033",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "1392년~1398년",
+      "year": 1392,
+      "precision": "year",
+      "earliest": 1392,
+      "latest": 1398,
+      "id": "ts-curriculum-joseon-early-joseon-early-1-je1-taejo-reign"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_early_taejo-reign",
+    "quote": "조선의 제1대(재위: 1392년~1398년) 왕",
+    "note": "태조의 재위 기간.",
+    "fromSource": "src-enc-taejo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

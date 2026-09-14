@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-sj-birth",
+    "subject": "person-encykorea-sejo-e0029849",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1417년(태종 17)",
+      "year": 1417,
+      "precision": "year",
+      "earliest": 1417,
+      "latest": 1417,
+      "id": "ts-curriculum-joseon-early-joseon-early-3-be3-sj-birth"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_middle_sejo-birth",
+    "quote": "1417년(태종 17)",
+    "note": "세조의 출생 연도",
+    "fromSource": "src-ency-sejo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

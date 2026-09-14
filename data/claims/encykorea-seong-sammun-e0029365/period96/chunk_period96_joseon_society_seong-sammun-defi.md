@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-sy-seongdef",
+    "subject": "person-encykorea-seong-sammun-e0029365",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-sayuksin"
+    },
+    "citesChunk": "chunk_period96_joseon_society_seong-sammun-defi",
+    "quote": "사육신 중 한 명",
+    "note": "성삼문이 사육신의 한 사람",
+    "fromSource": "src-encykorea-seong-sammun-e0029365",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

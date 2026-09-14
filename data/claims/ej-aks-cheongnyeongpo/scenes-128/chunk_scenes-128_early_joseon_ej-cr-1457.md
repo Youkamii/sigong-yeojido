@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-dj-exile",
+    "subject": "person-encykorea-danjong-e0013661",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-cheongnyeongpo"
+    },
+    "citesChunk": "chunk_scenes-128_early_joseon_ej-cr-1457",
+    "quote": "강봉된 단종 의 유배지로",
+    "note": "청령포가 단종의 유배지였다",
+    "fromSource": "src-ej-aks-cheongnyeongpo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

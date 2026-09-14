@@ -28,6 +28,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-jang-1434",
+    "subject": "person-encykorea-jang-yeongsil-e0048697",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "thing-hs-jagyeongnu"
+    },
+    "citesChunk": "chunk_period96_joseon_society_jang-yeongsil-act1434",
+    "quote": "1434년에 완성된 자격루(自擊漏)",
+    "note": "1434년 자격루를 완성했다.",
+    "fromSource": "src-encykorea-jang-yeongsil-e0048697",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```

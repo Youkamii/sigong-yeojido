@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-5-je5-yii-birth",
+    "subject": "person-encykorea-yi-i-e0045546",
+    "predicate": "syj:bornIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1536년",
+      "year": 1536,
+      "precision": "year",
+      "earliest": 1536,
+      "latest": 1536,
+      "id": "ts-curriculum-joseon-early-joseon-early-5-je5-yii-birth"
+    },
+    "citesChunk": "chunk_period96_joseon_society_yi-i-born",
+    "quote": "출생 연도1536년(중종 31)",
+    "note": "이이의 출생 연도",
+    "fromSource": "src-encykorea-yi-i-e0045546",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

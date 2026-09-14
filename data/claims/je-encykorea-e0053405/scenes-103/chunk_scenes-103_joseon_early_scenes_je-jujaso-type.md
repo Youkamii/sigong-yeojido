@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-gyemija-name",
+    "subject": "work-hs-gyemija",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "institution-hs-jujaso"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-jujaso-type",
+    "quote": "이 활자가 계미자이다",
+    "note": "주조된 활자의 이름이 계미자다.",
+    "fromSource": "src-je-encykorea-e0053405",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

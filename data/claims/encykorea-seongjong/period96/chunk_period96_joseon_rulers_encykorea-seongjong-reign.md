@@ -62,6 +62,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-sarim-seongjong-reign",
+    "subject": "group-hs-sarim",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "재위: 1469년~1494년",
+      "year": 1469,
+      "precision": "year",
+      "earliest": 1469,
+      "latest": 1494,
+      "id": "ts-curriculum-joseon-early-joseon-early-4-hs-sarim-seongjong-reign"
+    },
+    "citesChunk": "chunk_period96_joseon_rulers_encykorea-seongjong-reign",
+    "quote": "조선의 제9대(재위: 1469년~1494년) 왕.",
+    "note": "사림의 중앙 진출 시기를 성종 재위로 잡는다. 연도 자체는 성종의 재위 기간이다.",
+    "fromSource": "src-encykorea-seongjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-sj-reign",
+    "subject": "person-encykorea-sejo-e0029849",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "1455년(세조 1)",
+      "year": 1455,
+      "precision": "year",
+      "earliest": 1455,
+      "latest": 1455,
+      "id": "ts-curriculum-joseon-early-joseon-early-3-be3-sj-reign"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_middle_sejo-reign-name",
+    "quote": "재위 1455년(세조 1)∼1468년(세조 14)",
+    "note": "세조의 재위",
+    "fromSource": "src-ency-sejo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-seongjong-death",
+    "subject": "person-encykorea-seongjong-e0029554",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "사망 연도 1494년(성종 25)",
+      "year": 1494,
+      "precision": "year",
+      "earliest": 1494,
+      "latest": 1494,
+      "id": "ts-curriculum-joseon-early-joseon-early-4-hs-seongjong-death"
+    },
+    "citesChunk": "chunk_period96_joseon_rulers_encykorea-seongjong-death",
+    "quote": "사망 연도 1494년(성종 25)",
+    "note": "사망 연도 표.",
+    "fromSource": "src-encykorea-seongjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

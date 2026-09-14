@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-gyemija-cast",
+    "subject": "work-hs-gyemija",
+    "predicate": "syj:producedAt",
+    "object": {
+      "kind": "entity",
+      "id": "institution-hs-jujaso"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-jujaso-cast",
+    "quote": "활자주조는 1403년 2월 19일에 시작",
+    "note": "활자 주조 착수일.",
+    "fromSource": "src-je-encykorea-e0053405",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

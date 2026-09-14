@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-doseong-labor",
+    "subject": "facility-hs-hanyang-doseong",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-joseon"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-doseong-labor",
+    "quote": "축성 공사에 동원된 인원수는 총 11만 8,490명에 달한다",
+    "note": "동원 인원 규모.",
+    "fromSource": "src-je-encykorea-e0028013",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

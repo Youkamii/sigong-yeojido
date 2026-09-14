@@ -57,6 +57,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-cheondo-move",
+    "subject": "polity-joseon",
+    "predicate": "syj:capitalMovedTo",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-hanyang"
+    },
+    "citesChunk": "chunk_activity-96_later_capital_activity_hanseong-1394",
+    "quote": "1394년 개경(開京)에서 한양부(漢陽府)로 수도를 옮기고",
+    "note": "개경에서 한양으로 수도를 옮겼다.",
+    "fromSource": "src-encykorea-hanseongbu",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

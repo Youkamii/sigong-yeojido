@@ -62,6 +62,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-yeonsan-reign",
+    "subject": "person-encykorea-yeonsangun-e0036803",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "재위: 1494~1506",
+      "year": 1494,
+      "precision": "year",
+      "earliest": 1494,
+      "latest": 1506,
+      "id": "ts-curriculum-joseon-early-joseon-early-4-hs-yeonsan-reign"
+    },
+    "citesChunk": "chunk_period96_joseon_rulers_encykorea-yeonsangun-reign",
+    "quote": "조선시대 제10대 국왕(재위: 1494~1506).",
+    "note": "민족문화대백과 연산군 항목의 재위.",
+    "fromSource": "src-encykorea-yeonsangun",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

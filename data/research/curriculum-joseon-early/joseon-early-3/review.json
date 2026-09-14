@@ -1,0 +1,156 @@
+{
+ "job": "joseon-early-3",
+ "checker": "claude-opus-5 high",
+ "checkerOutput": "python scripts/check_fact_research.py data/research/curriculum-joseon-early --job joseon-early-3 -> exit 0. 'PASS: failures=0 warnings=0'. job 집계: facts=23, scenes=23, claims=110, chunkClaims=24, excerptClaims=86. category x 10년: culture 10, administration 4, war 3, economy 2, person 2, foreign 1, settlement 1 (facility/disaster/transport 0). region x 10년: central 21, south 2 (capital/north/island 0). run.json(modelRequested=claude-opus-5, modelsObserved=[claude-opus-5], effort=high, runner=workflow, exitCode 0, isError false, started 1789352909)과 manifest 44건(sha256·byteLength·httpStatus 200·fetchedUtc 2026-09-14)도 모두 통과.",
+ "verdict": "fix",
+ "issues": [
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-mongyudowon",
+   "sceneId": "scene-be3-mongyudowon",
+   "problem": "persistence {kind:'facility', from:1447, to:null} 이 '현존'을 주장하지만, 이 장면이 인용한 바로 그 출처(raw/kowiki-mugyejeongsa.html)가 무계정사는 1453년 안평대군 사사 이후 폐허가 되어 지금은 터만 남았다고 적는다. fact-be3-mongyudowon.persistence 도 같다. 현 상태로는 무계정사 건물이 1447년부터 2100년까지 같은 외형으로 서 있는 것으로 표시된다.",
+   "fix": "scene·fact 의 persistence.to 를 1453 으로 고치고 폐허 서술을 발췌한 claim 을 basisClaimIds 에 넣는다. 또는 persistence 를 빼고 1447년 제작 장면만 남긴다.",
+   "evidence": "raw/kowiki-mugyejeongsa.html: '그러나 대군이 역모로 몰려서 사약을 받고 죽은 단종 1년(1453) 이후에는 이곳도 폐허가 되어 지금은 터만 남아 있다.' (문서 분류에도 '한국의 없어진 건축물')"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-singijeon",
+   "sceneId": "scene-be3-singijeon",
+   "problem": "persistence {kind:'facility', from:1448, to:null} 이 군기감(군기시) 터 좌표에서 현존을 주장한다. basisClaimIds 로 쓴 claim-be3-sg-1466 의 출처(raw/kowiki-gungisi.html)는 군기시가 1884년 폐지되었다고 적고, 신기전 자체도 15세기 실물이 전하지 않는다. fact-be3-singijeon.persistence 도 같다.",
+   "fix": "persistence.to 를 1884(군기시 폐지)로 고치거나, 유물인 신기전에는 persistence 를 두지 않고 1448년 제작 장면만 남긴다. 어느 쪽이든 근거 발췌를 basisClaimIds 로 건다.",
+   "evidence": "raw/kowiki-gungisi.html: '1466년(세조 12년)에 군기감을 고친 이름이다. 1884년(고종 21년)에 폐지하고 그 일은 기기국으로 옮겼다.'"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-jikjeonbeop",
+   "factId": "fact-be3-jikjeonbeop",
+   "problem": "fact.placeLabel 이 '한양 육조거리 호조'인데 좌표(lon 126.991175, lat 37.5794833)는 창덕궁이다. 약 1.2km 떨어져 있고, 같은 result.json 의 claim-be3-gb-loc 은 호조·육조거리를 lon 126.97692 / lat 37.576942 로 잡아 두어 같은 관청이 두 곳에 놓인다. 장면 라벨('한양 호조(궁궐 일원)')도 창덕궁을 호조로 부르게 된다.",
+   "fix": "좌표를 육조거리 쪽 발췌 좌표로 바꾸거나, 창덕궁 좌표를 유지하려면 fact.placeLabel·scene.place.label 에서 '호조'를 빼고 '한양 궁궐(창덕궁)'처럼 좌표가 가리키는 곳만 적는다.",
+   "evidence": "result.json claim-be3-jj-loc(창덕궁 표시 좌표) vs claim-be3-gb-loc(흥례문 표시 좌표, note '호조는 육조거리 동편'). items.json 의 항목 place 도 '한양 육조 거리 호조' lon 126.9778 lat 37.5745."
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-owi",
+   "factId": "fact-be3-owi",
+   "problem": "fact.placeLabel '한양 오위도총부', modernPlace '서울특별시 종로구 세종대로'인데 좌표(lon 126.97528, lat 37.55972)는 숭례문(서울 중구 세종대로 40)이다. 자치구가 틀리고, 같은 패킷의 scene.place.label 은 '한양 도성 숭례문'이라 사실 카드와 장면이 서로 다른 장소를 말한다.",
+   "fix": "fact.placeLabel·modernPlace 를 좌표에 맞춰 '한양 도성 숭례문 / 서울특별시 중구 세종대로'로 고치거나, 오위도총부 이름을 유지하려면 그 자리를 뒷받침하는 좌표 발췌를 새로 찾는다.",
+   "evidence": "result.json fact-be3-owi(placeLabel·modernPlace) vs claim-be3-ow-loc·scene-be3-owi.place(숭례문 표시 좌표, coordinateNote '오위도총부의 자리가 확인되지 않아')"
+  },
+  {
+   "severity": "major",
+   "itemId": "hs-joseon-early-gyeyu-jeongnan",
+   "claimId": "claim-be3-gy-night",
+   "problem": "주어와 목적어가 같다: subject 'event-hs-gyeyu-jeongnan', predicate 'syj:tookPlaceAt', object {kind:'entity', id:'event-hs-gyeyu-jeongnan'}. 사건이 자기 자신에서 일어났다는 주장이 되어 적재하면 자기 참조 트리플이 들어간다. 검증기는 entity id 존재만 보므로 잡지 못했다. 이 주장은 장면의 actionClaimIds 첫 항목이기도 하다.",
+   "fix": "object 를 김종서의 집(예: 새 Place 껍데기 'place-hs-kim-jongseo-house')으로 바꾸거나, predicate 를 행위 주장(syj:participatedIn / syj:relatedTo)으로 바꿔 '수양대군이 김종서의 집으로 찾아갔다'는 인용 내용과 맞춘다.",
+   "evidence": "result.json claim-be3-gy-night. 인용 발췌 ex-be3-gy-night('등을 데리고 김종서의 집으로 찾아가')는 장소를 가리키는데 object 는 사건 자신이다."
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-cheugugi",
+   "factId": "fact-be3-cheugugi",
+   "problem": "fact.persistence {facility, 1441, null} 이 측우기를 1441년부터 현존하는 시설로 둔다. 인용 출처는 1441년 왕세자의 시험과 1442년 제도 확정만 말하고, 1441년 측우기 실물의 존속 근거는 없다(현존 국보는 1837년 금영측우기).",
+   "fix": "persistence 를 빼거나, 관측·보고 제도의 지속을 뜻한다면 kind 와 기간을 근거 있는 값으로 바꾸고 근거 claim 을 붙인다.",
+   "evidence": "raw/enc-cheugugi.html: '하지만 1441년(세종 23) 4월 29일(음력) … 왕세자 이향이 … 그릇에 빗물을 받아 그 양을 재는 방식을 시험하고 있었다', '이듬해 1442년(세종 24) 5월 8일 … 전국적인 우량 관측 및 보고 제도가 확정되었다'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-chiljeongsan",
+   "claimId": "claim-be3-cj-act",
+   "problem": "object 가 person-hs-yi-sunji 인데 인용 발췌 ex-be3-cj-susi('원나라의 수시력의 원리와 방법을 이해하기 쉽게 해설하여')에는 이순지가 나오지 않는다. 사람 이름은 같은 문장의 앞부분과 도판 해설(ex-be3-cj-1444)에 있다.",
+   "fix": "citesExcerpt 를 ex-be3-cj-1444('칠정산내편 1444년에 이순지와 김담이 편찬한 역서')로 바꾸거나, 이순지·김담이 들어가도록 발췌를 다시 뜬다.",
+   "evidence": "raw/enc-chiljeongsan-nae.html 정의문: '조선전기 문신·천문학자 이순지와 김담이 왕명으로 원나라의 수시력의 원리와 방법을 이해하기 쉽게 해설하여 1442년(세종 24)에 편찬한 역법서'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-yukjo-jikgye-restore",
+   "factId": "fact-be3-yukjo-jikgye-restore",
+   "problem": "fact.placeLabel '한양 육조거리'·modernPlace '서울특별시 종로구 세종대로'인데 좌표는 경복궁 안 자선당 일원(lon 126.977945, lat 37.579015)으로 육조거리에서 약 450m 북쪽이다. 장면 라벨은 '한양 궁궐 편전 일곽(경복궁 자선당 일원)'이라 두 값이 어긋난다.",
+   "fix": "fact.placeLabel 을 장면 라벨과 맞춰 '한양 궁궐 편전 일원'으로 고치고 modernPlace 도 사직로 계열로 바꾼다.",
+   "evidence": "result.json fact-be3-yukjo-jikgye-restore vs scene-be3-yukjo-jikgye-restore.place.coordinateNote"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-chiljeongsan",
+   "sceneId": "scene-be3-chiljeongsan",
+   "problem": "같은 기관 '서운관'이 두 좌표로 갈린다: 측우기 장면은 경회루(126.975889/37.57975), 칠정산 장면은 국립고궁박물관 일원(126.975278/37.576667). 항목이 한 점에 겹치지 않게 하려는 조치이나 결과적으로 한 기관이 두 곳에 표시된다.",
+   "fix": "한 곳을 서운관(간의대)으로 고정하고 다른 장면 라벨은 '경복궁 안 다른 지점'으로 적거나, coordinateNote 에 두 점이 같은 기관의 다른 기능 공간임을 명시한다.",
+   "evidence": "result.json claim-be3-cu-loc / claim-be3-cj-loc, 두 note 모두 '자리가 확인되지 않아 … 표시 좌표를 쓴다'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-singijeon",
+   "factId": "fact-be3-singijeon",
+   "problem": "brief 의 항목→category 대응표와 어긋나는 분류가 3건이다. 신기전(type heritage → 표에서는 facility 또는 culture)과 진관 체제·5위(type institution → 표에서는 administration)를 모두 war 로 넣었다. 그 결과 이 칸에 facility 카테고리가 0건이다.",
+   "fix": "표대로 신기전은 culture(유물), 진관·5위는 administration 으로 바꾸거나, 군사 제도를 war 로 두는 예외를 brief 에 명시하고 45칸 전체에 일관되게 적용한다. cell.categories 목표 수치도 함께 맞춘다.",
+   "evidence": "docs/research/curriculum-items-brief.md 항목→사실·장면 대응표, result.json cell.categories {war:3}"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-gyehae-treaty",
+   "factId": "fact-be3-gyehae-treaty",
+   "problem": "대마도(북위 34.2)를 region 'south' 로 넣었다. brief 는 해외를 north(만주)·foreign(그 밖)으로 적지만 검증기 어휘(capital|north|central|south|island)에 foreign 이 없어 규칙 자체가 성립하지 않는다. 섬이므로 island 도 후보다.",
+   "fix": "해외 항목 region 을 다른 칸과 함께 하나로 정하고(예: 국외는 모두 south, 또는 섬은 island) 그 규칙을 brief 에 적어 45칸이 갈리지 않게 한다.",
+   "evidence": "scripts/check_fact_research.py REGIONS = ('capital','north','central','south','island') vs brief 의 '해외(overseas)는 north(만주)·foreign(그 밖)'"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-worin",
+   "sceneId": "scene-be3-worin",
+   "problem": "summary 의 '수양대군이 지어 올린 석보상절을 보고 세종이 …' 부분은 이 패킷의 어떤 인용에도 없다(ex-be3-wr-1447 은 간행 시기, ex-be3-wr-def 는 시가집 정의만 말한다).",
+   "fix": "근거 발췌를 하나 더 뜨거나(민족문화대백과 '석보상절'·'월인천강지곡' 편찬 경위) 문장을 인용 범위 안으로 줄인다.",
+   "evidence": "result.json scene-be3-worin.summary vs src-be3-enc-worin 의 발췌 2건"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-sejo",
+   "claimId": "claim-be3-sj-birth",
+   "problem": "인물의 출생 연도에 설립 술어 syj:foundedIn 을 썼고, 그 1417년 주장이 scene-be3-sejo 의 dateClaimIds 에 들어가 장면 기간(1455~1468) 밖 연도가 날짜 근거로 잡힌다.",
+   "fix": "출생 주장은 dateClaimIds 에서 빼고 fact.claimIds 나 relatedClaimIds 로만 쓴다. 장면 날짜 근거는 재위 시작(claim-be3-sj-reign)만 남긴다.",
+   "evidence": "result.json claim-be3-sj-birth(predicate syj:foundedIn, year 1417), scene-be3-sejo.dateClaimIds"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-hunminjeongeum-creation",
+   "sceneId": "scene-be3-hunminjeongeum-creation",
+   "problem": "경복궁 안 항목 10건(훈민정음 창제·반포, 의방유취, 용비어천가, 월인천강지곡, 칠정산, 측우기, 고려사, 세조, 6조 직계제)이 반경 약 120m 안에 몰려 있다. 창제(126.97722/37.57861)와 반포(126.97694/37.57861)는 25m 차이라 화면에서 사실상 겹친다.",
+   "fix": "겹치는 쌍만이라도 이미 확보한 경복궁 전각 발췌(근정전·경회루·교태전 등)로 벌리거나, 조립기가 같은 지점의 여러 장면을 묶어 보여 주는지 적재 뒤 확인한다.",
+   "evidence": "result.json facts 좌표 거리 계산: 창제-반포 25m, 용비어천가-월인천강지곡 39m, 해례본-세조 51m"
+  },
+  {
+   "severity": "minor",
+   "itemId": "hs-joseon-early-gyeyu-jeongnan",
+   "sceneId": "scene-be3-gyeyu-jeongnan",
+   "problem": "장면 라벨 '한양 돈의문 밖 김종서의 집 일대'의 '돈의문 밖'이 인용 근거 밖 서술이다. 계유정난 발췌는 '김종서의 집으로 찾아가'까지만 말하고 위치는 coordinateNote 의 전언으로만 적혀 있다.",
+   "fix": "김종서 집터 위치를 밝히는 발췌를 새로 뜨거나, 라벨에서 '돈의문 밖'을 빼고 '한양 도성 서편(집터 미상)'처럼 확정하지 않은 표기로 바꾼다.",
+   "evidence": "raw/enc-gyeyu.html: '같은 해 10월 10일 밤, 마침내 유숙 · 양정 · 어을운 등을 데리고 김종서의 집으로 찾아가 간계를 써서 철퇴로 쓰러뜨렸다' (돈의문 언급 없음)"
+  }
+ ],
+ "checkedItems": [
+  "hs-joseon-early-uijeongbu-seosa",
+  "hs-joseon-early-cheugugi",
+  "hs-joseon-early-gyehae-treaty",
+  "hs-joseon-early-hunminjeongeum-creation",
+  "hs-joseon-early-chiljeongsan",
+  "hs-joseon-early-gongbeop",
+  "hs-joseon-early-uibang-yuchwi",
+  "hs-joseon-early-yongbi",
+  "hs-joseon-early-hunminjeongeum-haerye",
+  "hs-joseon-early-mongyudowon",
+  "hs-joseon-early-worin",
+  "hs-joseon-early-singijeon",
+  "hs-joseon-early-buncheong",
+  "hs-joseon-early-goryeosa",
+  "hs-joseon-early-danjong",
+  "hs-joseon-early-gyeyu-jeongnan",
+  "hs-joseon-early-hungu",
+  "hs-joseon-early-sejo",
+  "hs-joseon-early-yukjo-jikgye-restore",
+  "hs-joseon-early-sayuksin",
+  "hs-joseon-early-jingwan",
+  "hs-joseon-early-owi",
+  "hs-joseon-early-jikjeonbeop"
+ ],
+ "summary": "검증기는 PASS(failures 0, warnings 0)다. 항목 23건이 모두 fact·scene·claim(평균 4.8건)으로 만들어졌고 missing 은 없다. 표본은 core 7건 전부를 포함해 23건 전부를 출처에서 다시 확인했다. 웹 발췌는 22개 출처의 raw HTML 을 열어 앞뒤 문맥까지 읽어 연도·행위·장소가 왜곡되지 않았는지 보았고, 로컬 chunk 인용 12건은 search_chunks --id 로 원문과 sourceId 를 맞췄다. 교과서 문장 전재는 없고, fact.what 은 항목 meaning 과 23건 모두 글자 그대로 일치하며 note 의 성취기준 코드·우선순위, images.json 23건(접두어와 인물 얼굴 창작 문구 포함)도 빠짐이 없다. 기존 개체 id(세종·세조·단종·정인지·신숙주·성삼문·김종서·한명회) 재사용은 data/entities/person 파일과 대조해 확인했고, 새로 만든 껍데기(안견·안평대군·이순지·김담)는 기존 개체가 없어 타당하다. 세종대 핵심 항목(훈민정음 창제·반포, 측우기, 칠정산, 공법)은 모두 들어 있다. 고칠 것은 다섯이다. (1)(2) 몽유도원도·신기전의 persistence to:null 이 각자 인용한 출처(무계정사는 1453년 이후 폐허, 군기시는 1884년 폐지)와 정면으로 어긋난다. (3)(4) 직전법·5위는 fact 의 장소 이름과 현대 주소가 좌표가 가리키는 곳(창덕궁·숭례문)과 다르고, 직전법의 호조는 같은 파일의 공법 좌표와도 충돌한다. (5) 계유정난 claim-be3-gy-night 은 주어와 목적어가 같은 자기 참조 주장이다. 나머지 10건은 근거와 주장의 연결, 카테고리 매핑, 해외 region 규칙, 경복궁 안 좌표 밀집 같은 손질이다. 한양 항목 좌표 다수가 '자리가 확인되지 않아 인근 전각의 표시 좌표를 쓴다'는 대용 좌표인 점은 coordinateNote 에 일관되게 공개되어 있어 결함으로 보지 않았으나, 화면 카드에서 이 단서가 함께 보이는지는 적재 뒤 확인이 필요하다.",
+ "majorCount": 5,
+ "minorCount": 10
+}

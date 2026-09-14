@@ -49,6 +49,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-4-hs-seongjong-reign",
+    "subject": "person-encykorea-seongjong-e0029554",
+    "predicate": "syj:reignedFrom",
+    "object": {
+      "kind": "time",
+      "verbatim": "재위 1469년(성종 즉위년)∼1494년(성종 25)",
+      "year": 1469,
+      "precision": "year",
+      "earliest": 1469,
+      "latest": 1494,
+      "id": "ts-curriculum-joseon-early-joseon-early-4-hs-seongjong-reign"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_middle_seongjong-reign-name",
+    "quote": "재위 1469년(성종 즉위년)∼1494년(성종 25). 본관은 전주(全州).",
+    "note": "민족문화대백과 성종 항목의 재위·본관.",
+    "fromSource": "src-ency-seongjong",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

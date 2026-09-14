@@ -62,6 +62,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-sj-order",
+    "subject": "person-encykorea-sejo-e0029849",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "polity-hs-joseon"
+    },
+    "citesChunk": "chunk_period96_joseon_rulers_encykorea-sejo-reign",
+    "quote": "조선의 제7대(재위: 1455년~1468년) 왕.",
+    "note": "조선 제7대 왕",
+    "fromSource": "src-encykorea-sejo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

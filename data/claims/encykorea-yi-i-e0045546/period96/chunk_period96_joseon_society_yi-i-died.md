@@ -24,6 +24,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-5-je5-yii-death",
+    "subject": "person-encykorea-yi-i-e0045546",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1584년",
+      "year": 1584,
+      "precision": "year",
+      "earliest": 1584,
+      "latest": 1584,
+      "id": "ts-curriculum-joseon-early-joseon-early-5-je5-yii-death"
+    },
+    "citesChunk": "chunk_period96_joseon_society_yi-i-died",
+    "quote": "사망 연도1584년(선조 17)",
+    "note": "이이의 사망 연도",
+    "fromSource": "src-encykorea-yi-i-e0045546",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

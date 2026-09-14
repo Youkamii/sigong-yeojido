@@ -58,6 +58,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-hj-authors",
+    "subject": "person-encykorea-jeong-inji-e0065805",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "work-hs-hunminjeongeum-haerye"
+    },
+    "citesChunk": "chunk_period96_joseon_society_hunminjeongeum-haerye-authors",
+    "quote": "집필자들은 정인지 · 신숙주(申叔舟) · 성삼문(成三問)",
+    "note": "해례본 집필자",
+    "fromSource": "src-encykorea-hunminjeongeum-haerye-e0065805",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

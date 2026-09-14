@@ -28,6 +28,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-07"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-jang-1423",
+    "subject": "person-encykorea-jang-yeongsil-e0048697",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1423년(세종 5)",
+      "year": 1423,
+      "precision": "year",
+      "earliest": 1423,
+      "latest": 1423,
+      "id": "ts-curriculum-joseon-early-joseon-early-2-hs-jang-1423"
+    },
+    "citesChunk": "chunk_period96_joseon_society_jang-yeongsil-act1423",
+    "quote": "1423년(세종 5) 상의원별좌(尙衣院別坐)에 임명되어 궁중기술자로서의 활동이 시작되었다",
+    "note": "상의원 별좌에 임명되어 궁중 기술자로 일을 시작했다.",
+    "fromSource": "src-encykorea-jang-yeongsil-e0048697",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```

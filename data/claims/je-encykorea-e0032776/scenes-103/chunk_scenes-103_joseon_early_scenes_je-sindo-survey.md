@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-jd-survey",
+    "subject": "person-encykorea-jeong-dojeon",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-hanyang"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-sindo-survey",
+    "quote": "정도전(鄭道傳) 등과 함께 한양을 답사하면서",
+    "note": "정도전이 새 도읍 터를 답사했다.",
+    "fromSource": "src-je-encykorea-e0032776",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

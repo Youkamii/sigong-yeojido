@@ -1,0 +1,4747 @@
+{
+ "collection": "curriculum-joseon-early",
+ "job": "joseon-early-3",
+ "cell": {
+  "polity": "조선",
+  "from": 1436,
+  "to": 1466,
+  "regions": [
+   "central",
+   "island",
+   "south"
+  ],
+  "categories": {
+   "administration": 6,
+   "culture": 11,
+   "economy": 2,
+   "foreign": 1,
+   "person": 2,
+   "settlement": 1
+  }
+ },
+ "sources": [
+  {
+   "id": "src-be3-kowiki-gwanghwamun",
+   "title": "경복궁 광화문 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%EA%B4%91%ED%99%94%EB%AC%B8",
+   "rawFile": "raw/kowiki-gwanghwamun.html",
+   "sha256": "7f2e2615002247d13b71a5f6f071ae6b29999bcbcf4332fb7b6effa5abee4da1",
+   "httpStatus": 200,
+   "byteLength": 276809,
+   "fetchedUtc": "2026-09-14T02:03:31Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-gwanghwamun",
+     "text": "37.5760444; 126.9770194",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-gyeonghoeru",
+   "title": "경회루 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%ED%9A%8C%EB%A3%A8",
+   "rawFile": "raw/kowiki-gyeonghoeru.html",
+   "sha256": "e03f518b7eab23f423e2f332842b753ab8596e60f14a4ee6cdeddc3646ed9354",
+   "httpStatus": 200,
+   "byteLength": 277721,
+   "fetchedUtc": "2026-09-14T02:03:32Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-gyeonghoeru",
+     "text": "37.579750; 126.975889",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-izuhara",
+   "title": "이즈하라정 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A6%88%ED%95%98%EB%9D%BC%EC%A0%95",
+   "rawFile": "raw/kowiki-izuhara.html",
+   "sha256": "5b1951c116e252d450c3e52cb8b761489fb547ba20543238014b8f03a7fab9ff",
+   "httpStatus": 200,
+   "byteLength": 85734,
+   "fetchedUtc": "2026-09-14T02:03:33Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-izuhara",
+     "text": "34.20264; 129.28753",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-sujeongjeon",
+   "title": "경복궁 수정전 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%EC%88%98%EC%A0%95%EC%A0%84",
+   "rawFile": "raw/kowiki-sujeongjeon.html",
+   "sha256": "15a40b9b3d2dcce10b36a9d903097c11e0a6f442bc0d2c1a1664410a362cf7f4",
+   "httpStatus": 200,
+   "byteLength": 93500,
+   "fetchedUtc": "2026-09-14T02:03:34Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-sujeongjeon",
+     "text": "37.578964; 126.975954",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-heungnyemun",
+   "title": "경복궁 흥례문 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%ED%9D%A5%EB%A1%80%EB%AC%B8",
+   "rawFile": "raw/kowiki-heungnyemun.html",
+   "sha256": "28542f48e2351149f8a0f5bc7bff50662bff11ee5ffc10259d14ac27c736f3d3",
+   "httpStatus": 200,
+   "byteLength": 133775,
+   "fetchedUtc": "2026-09-14T02:03:35Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-heungnyemun",
+     "text": "37.576942; 126.976920",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-changdeokgung",
+   "title": "창덕궁 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%B0%BD%EB%8D%95%EA%B6%81",
+   "rawFile": "raw/kowiki-changdeokgung.html",
+   "sha256": "cec36c6f65d130e22a102815f2027e938be21474675fc7ad7f6b4c43c402efd1",
+   "httpStatus": 200,
+   "byteLength": 451210,
+   "fetchedUtc": "2026-09-14T02:03:36Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-changdeokgung",
+     "text": "37.5794833; 126.9911750",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-gyotaejeon",
+   "title": "경복궁 교태전 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%EA%B5%90%ED%83%9C%EC%A0%84",
+   "rawFile": "raw/kowiki-gyotaejeon.html",
+   "sha256": "30ad11aeeacc5743ae0758559c7cfc25861e1edc5fcbe66df8a194f2f46b08fa",
+   "httpStatus": 200,
+   "byteLength": 83451,
+   "fetchedUtc": "2026-09-14T02:03:37Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-gyotaejeon",
+     "text": "37.579908; 126.977054",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-geunjeongjeon",
+   "title": "경복궁 근정전 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%EA%B7%BC%EC%A0%95%EC%A0%84",
+   "rawFile": "raw/kowiki-geunjeongjeon.html",
+   "sha256": "7701131e467c78942693cc73e24359d996c0b1af631f8b8e547295ad5f80b84a",
+   "httpStatus": 200,
+   "byteLength": 230679,
+   "fetchedUtc": "2026-09-14T02:03:37Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-geunjeongjeon",
+     "text": "37.57861; 126.97694",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-mugyejeongsa",
+   "title": "무계정사지 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EB%AC%B4%EA%B3%84%EC%A0%95%EC%82%AC",
+   "rawFile": "raw/kowiki-mugyejeongsa.html",
+   "sha256": "5a0b3f5e67a489aae7e5116ca2d90331a827958f1d82b41af2cd2450880e7126",
+   "httpStatus": 200,
+   "byteLength": 77614,
+   "fetchedUtc": "2026-09-14T02:03:38Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-mugyejeongsa",
+     "text": "37.59167; 126.96306",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    },
+    {
+     "id": "ex-be3-mugye-1447",
+     "text": "조선 세종 29년(1447년, 추정)에 만들어진 세종의 셋째 왕자인 안평대군(安平大君) 이용(李瑢)의 별장 터이다",
+     "locator": "문서 머리 설명"
+    },
+    {
+     "id": "ex-be3-mugye-ruin",
+     "text": "단종 1년(1453) 이후에는 이곳도 폐허가 되어 지금은 터만 남아 있다",
+     "locator": "무계정사 개요"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-hamwonjeon",
+   "title": "경복궁 함원전 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%ED%95%A8%EC%9B%90%EC%A0%84",
+   "rawFile": "raw/kowiki-hamwonjeon.html",
+   "sha256": "15638d883e9d3bd2c7982d9f4fb91fb42f02ec828e7013c92b681eec9e449c7c",
+   "httpStatus": 200,
+   "byteLength": 71184,
+   "fetchedUtc": "2026-09-14T02:03:39Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-hamwonjeon",
+     "text": "37.579972; 126.976614",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-seoul-cityhall",
+   "title": "서울특별시청 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%EC%B2%AD",
+   "rawFile": "raw/kowiki-seoul-cityhall.html",
+   "sha256": "539d4639053176f2b4503c6b1e7dc49bf1a01247ff6a689a71e16adbb0bcd436",
+   "httpStatus": 200,
+   "byteLength": 315292,
+   "fetchedUtc": "2026-09-14T02:03:40Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-cityhall",
+     "text": "37.566381; 126.977717",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-hakbongri-yoji",
+   "title": "공주 학봉리 요지 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%A3%BC_%ED%95%99%EB%B4%89%EB%A6%AC_%EC%9A%94%EC%A7%80",
+   "rawFile": "raw/kowiki-hakbongri-yoji.html",
+   "sha256": "250b8a23bae7cc5b027b797f116a24a3589d67080eaa95a064adfc4dbc5a5c7b",
+   "httpStatus": 200,
+   "byteLength": 74249,
+   "fetchedUtc": "2026-09-14T02:03:41Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-hakbongri",
+     "text": "36.34750; 127.24194",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-jagyeongjeon",
+   "title": "경복궁 자경전 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%EC%9E%90%EA%B2%BD%EC%A0%84",
+   "rawFile": "raw/kowiki-jagyeongjeon.html",
+   "sha256": "7d9e99b1134bcb3edffd59f5d1b32a35433f9c7ea283e3f956c13615852c0b03",
+   "httpStatus": 200,
+   "byteLength": 85936,
+   "fetchedUtc": "2026-09-14T02:03:41Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-jagyeongjeon",
+     "text": "37.5796167; 126.9776889",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-donuimun",
+   "title": "돈의문 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EB%8F%88%EC%9D%98%EB%AC%B8",
+   "rawFile": "raw/kowiki-donuimun.html",
+   "sha256": "06b62d003db87a5510333818d034e3ec62f96d4a9ea55015df1655ec8c99fa46",
+   "httpStatus": 200,
+   "byteLength": 123972,
+   "fetchedUtc": "2026-09-14T02:03:42Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-donuimun",
+     "text": "37.56861; 126.96944",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-jongmyo",
+   "title": "종묘 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%A2%85%EB%AC%98",
+   "rawFile": "raw/kowiki-jongmyo.html",
+   "sha256": "ec237f82520f677d941c5300499d6a58c6057e81f0cf46f39874c58f58164abf",
+   "httpStatus": 200,
+   "byteLength": 439057,
+   "fetchedUtc": "2026-09-14T02:03:43Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-jongmyo",
+     "text": "37.57444; 126.99417",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-sajeongjeon",
+   "title": "경복궁 사정전 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%EC%82%AC%EC%A0%95%EC%A0%84",
+   "rawFile": "raw/kowiki-sajeongjeon.html",
+   "sha256": "e18f9862b7a189beb9f441f1e52069881ec0af41630150e43b0db2c8b18a0e76",
+   "httpStatus": 200,
+   "byteLength": 81127,
+   "fetchedUtc": "2026-09-14T02:03:44Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-sajeongjeon",
+     "text": "37.579068; 126.977003",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-gogung-museum",
+   "title": "국립고궁박물관 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EA%B3%A0%EA%B6%81%EB%B0%95%EB%AC%BC%EA%B4%80",
+   "rawFile": "raw/kowiki-gogung-museum.html",
+   "sha256": "50e9d1d93f4f83b41b592f064861a453b3df4d07be2c071790a4e8a175900c06",
+   "httpStatus": 200,
+   "byteLength": 207593,
+   "fetchedUtc": "2026-09-14T02:03:45Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-gogung",
+     "text": "37.576667; 126.975278",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-sayuksinmyo",
+   "title": "사육신묘 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9C%A1%EC%8B%A0%EB%AC%98",
+   "rawFile": "raw/kowiki-sayuksinmyo.html",
+   "sha256": "dbb4bc77d13cb73134a32c6c67866dbf906753a603159895e2e776ec50b8b1b1",
+   "httpStatus": 200,
+   "byteLength": 89755,
+   "fetchedUtc": "2026-09-14T02:03:46Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-sayuksin",
+     "text": "37.51333; 126.94972",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-dongnae-eupseong",
+   "title": "동래읍성 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EB%8F%99%EB%9E%98%EC%9D%8D%EC%84%B1",
+   "rawFile": "raw/kowiki-dongnae-eupseong.html",
+   "sha256": "b88d2efc7f0e92ca2d220b66cbca3338b7bb7ac54307e994d325b9d7a907aa8d",
+   "httpStatus": 200,
+   "byteLength": 140891,
+   "fetchedUtc": "2026-09-14T02:03:47Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-dongnae",
+     "text": "35.20389; 129.09389",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    },
+    {
+     "id": "ex-be3-dongnae-form",
+     "text": "동래읍성은 마안산을 거쳐 구릉지와 동래 시가지의 평탄한 지역을 포함하여 쌓은 읍성으로",
+     "locator": "현지 안내문 인용 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-sungnyemun",
+   "title": "숭례문 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EC%88%AD%EB%A1%80%EB%AC%B8",
+   "rawFile": "raw/kowiki-sungnyemun.html",
+   "sha256": "c4faf744c22ee8bb35a4bc9868e06ce626436ef8d5ac842e27a1b03ca0da3b8f",
+   "httpStatus": 200,
+   "byteLength": 427111,
+   "fetchedUtc": "2026-09-14T02:03:48Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-sungnyemun",
+     "text": "37.55972; 126.97528",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-jaseondang",
+   "title": "경복궁 자선당 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B2%BD%EB%B3%B5%EA%B6%81_%EC%9E%90%EC%84%A0%EB%8B%B9",
+   "rawFile": "raw/kowiki-jaseondang.html",
+   "sha256": "04871b1deed7adcde0da087d862cb1a22b35dd13598d66baa739435b0177900c",
+   "httpStatus": 200,
+   "byteLength": 82008,
+   "fetchedUtc": "2026-09-14T02:03:49Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-geo-jaseondang",
+     "text": "37.579015; 126.977945",
+     "locator": "문서 머리 표시 좌표(class=\"geo\")"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-kowiki-gungisi",
+   "title": "군기시 — 위키백과",
+   "publisher": "위키백과(한국어)",
+   "url": "https://ko.wikipedia.org/wiki/%EA%B5%B0%EA%B8%B0%EC%8B%9C",
+   "rawFile": "raw/kowiki-gungisi.html",
+   "sha256": "2333af393f33408b67f6456411a5e25dfa3e1931d5c6f07879eaa5aa9ec5bbee",
+   "httpStatus": 200,
+   "byteLength": 96517,
+   "fetchedUtc": "2026-09-14T02:08:03Z",
+   "license": "CC BY-SA 4.0 (위키백과)",
+   "excerpts": [
+    {
+     "id": "ex-be3-gungisi-site",
+     "text": "오늘날의 서울시청 자리에 있었다",
+     "locator": "문서 머리 설명"
+    },
+    {
+     "id": "ex-be3-gungisi-1466",
+     "text": "1466년(세조 12년)에 군기감을 고친 이름이다",
+     "locator": "문서 머리 설명"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-uijeongbu",
+   "title": "의정부 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0043379",
+   "rawFile": "raw/enc-uijeongbu.html",
+   "sha256": "110d3eb0b58bb072cc4982113e0d9ed40b029ed6b97697c75ba0a95eaf784069",
+   "httpStatus": 200,
+   "byteLength": 134597,
+   "fetchedUtc": "2026-09-14T02:03:49Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-ujb-1436",
+     "text": "그러다가 1436년부터 1455년(단종 3) 윤6월까지와",
+     "locator": "본문 '변천' 문단"
+    },
+    {
+     "id": "ex-be3-ujb-revive",
+     "text": "의정부서사제가 다시 부활되면서 의정부가 국정운영을 주도하였다",
+     "locator": "본문 '변천' 문단"
+    },
+    {
+     "id": "ex-be3-ujb-1455",
+     "text": "1455년(세조 1) 윤6월부터 1516년(중종 11)까지는 육조직계제가 부활됨에",
+     "locator": "본문 '변천' 문단"
+    },
+    {
+     "id": "ex-be3-ujb-def",
+     "text": "조선시대 백관(百官)의 통솔과 서정(庶政)을 총괄하던 최고의 행정기관",
+     "locator": "항목 머리 정의문"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-cheugugi",
+   "title": "측우기 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0058337",
+   "rawFile": "raw/enc-cheugugi.html",
+   "sha256": "65bf627a8b40d3220fdd705b0dc193eddccabf37332a8e2690107007c717e886",
+   "httpStatus": 200,
+   "byteLength": 130668,
+   "fetchedUtc": "2026-09-14T02:03:49Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-cu-1441",
+     "text": "하지만 1441년(세종 23) 4월 29일(음력)",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-cu-1442",
+     "text": "이듬해 1442년(세종 24) 5월 8일",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-cu-act",
+     "text": "측우기를 이용한 전국적인 우량 관측 및 보고 제도가 확정되었다",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-cu-seoungwan",
+     "text": "이미 1442년 서울의 서운관과 지방관들에게",
+     "locator": "본문 '관측 및 보고 규칙' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-gyehae",
+   "title": "계해약조 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0003273",
+   "rawFile": "raw/enc-gyehae.html",
+   "sha256": "43baee05b4e1a318b173109822c356bc59412cffb05bdd0dad282dc14bddabd9",
+   "httpStatus": 200,
+   "byteLength": 78257,
+   "fetchedUtc": "2026-09-14T02:03:50Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-gh-def",
+     "text": "1443년(세종 25) 대마도주(對馬島主)와 세견선(歲遣船) 등 무역에 관해 맺은 조약",
+     "locator": "항목 머리 정의문"
+    },
+    {
+     "id": "ex-be3-gh-sign",
+     "text": "대마도주 소(宗貞盛)와 구체적인 조약을 체결하였다",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-gh-ships",
+     "text": "① 세견선은 50척으로 한다.",
+     "locator": "본문 '내용' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-chiljeongsan-nae",
+   "title": "칠정산내편 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0058537",
+   "rawFile": "raw/enc-chiljeongsan-nae.html",
+   "sha256": "d11216a058e10552b671dce742cf3e8be7c8656908432bd244f1f33de94aa90b",
+   "httpStatus": 200,
+   "byteLength": 121991,
+   "fetchedUtc": "2026-09-14T02:03:50Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-cj-1444",
+     "text": "칠정산내편 1444년에 이순지와 김담이 편찬한 역서",
+     "locator": "도판 해설문"
+    },
+    {
+     "id": "ex-be3-cj-1442",
+     "text": "1442년(세종 24)에 편찬한 역법서",
+     "locator": "항목 머리 정의문"
+    },
+    {
+     "id": "ex-be3-cj-susi",
+     "text": "원나라의 수시력의 원리와 방법을 이해하기 쉽게 해설하여",
+     "locator": "항목 머리 정의문"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-gongbeop",
+   "title": "공법 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0004304",
+   "rawFile": "raw/enc-gongbeop.html",
+   "sha256": "f3b83c116f5f5dc7f10c4afb9f7d00c40f0558ad56927f7dca77a169b3052050",
+   "httpStatus": 200,
+   "byteLength": 109474,
+   "fetchedUtc": "2026-09-14T02:03:51Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-gb-1444",
+     "text": "공법(貢法)은 1444년(세종 26)에 시행된 조선 전기의 전세제도로서 전분6등과 연분9등을 주요 골자로 하는 것이다",
+     "locator": "본문 요약문"
+    },
+    {
+     "id": "ex-be3-gb-hojo",
+     "text": "시행 시기1444년(세종 26) 폐지 시기1635년(인조 13) 시행처호조",
+     "locator": "항목 정보 표"
+    },
+    {
+     "id": "ex-be3-gb-1436",
+     "text": "1436년(세종 18)에는 공법상정소(貢法詳定所)를 설치해",
+     "locator": "본문 '내용' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-uibang",
+   "title": "의방유취 권201 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0043229",
+   "rawFile": "raw/enc-uibang.html",
+   "sha256": "91b7677ef6261c93cd40ae24971d0141aec8def37389f652b1261c5d47546ad3",
+   "httpStatus": 200,
+   "byteLength": 110023,
+   "fetchedUtc": "2026-09-14T02:03:51Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-ub-1445",
+     "text": "3년이 지난 1445년에 모두 365권을 편성하여 완료하였다",
+     "locator": "본문 '개설' 문단"
+    },
+    {
+     "id": "ex-be3-ub-1477",
+     "text": "1477년(성종 8) 5월에 을해자(乙亥字)로 겨우 30질을 인출(印出)하였다",
+     "locator": "본문 '편찬/발간 경위' 문단"
+    },
+    {
+     "id": "ex-be3-ub-jip",
+     "text": "집현전 부교리 김예몽",
+     "locator": "본문 '개설' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-yongbi",
+   "title": "용비어천가 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0039509",
+   "rawFile": "raw/enc-yongbi.html",
+   "sha256": "b9621414a13a0f866f4f6b1c77d94efb914eaa46a09930601e046ce8066d095f",
+   "httpStatus": 200,
+   "byteLength": 133872,
+   "fetchedUtc": "2026-09-14T02:03:52Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-yb-1445",
+     "text": "1445년에 노래의 본문과 한시가 만들어졌고",
+     "locator": "본문 요약문"
+    },
+    {
+     "id": "ex-be3-yb-1447",
+     "text": "역사적 사실을 한문으로 기록한 글이 1447년에 완성되어 간행으로 이어졌다",
+     "locator": "본문 요약문"
+    },
+    {
+     "id": "ex-be3-yb-authors",
+     "text": "권제(權踶) · 정인지(鄭麟趾) · 안지(安止) 등이",
+     "locator": "본문 '내용' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-mongyudowon",
+   "title": "몽유도원도 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0018824",
+   "rawFile": "raw/enc-mongyudowon.html",
+   "sha256": "9d327f10f968a6cdd57d80f9162f2a99ff45c69c926b7cad3c196330ab79adc5",
+   "httpStatus": 200,
+   "byteLength": 115482,
+   "fetchedUtc": "2026-09-14T02:03:52Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-md-1447",
+     "text": "안견이 1447년(세종 29)에 그린 산수화로",
+     "locator": "본문 '개설' 문단"
+    },
+    {
+     "id": "ex-be3-md-dream",
+     "text": "1447년 4월 20일 안견의 독실한 후원자였던",
+     "locator": "본문 '개설' 문단"
+    },
+    {
+     "id": "ex-be3-md-3days",
+     "text": "안견이 이 걸작을 단 3일 만에 완성하였다고",
+     "locator": "본문 '개설' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-worin",
+   "title": "월인천강지곡 권상 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0041049",
+   "rawFile": "raw/enc-worin.html",
+   "sha256": "887c4a90ac59e94fce16d327bae99df6962df40c2c22b1ed8e40856615a4649e",
+   "httpStatus": 200,
+   "byteLength": 106399,
+   "fetchedUtc": "2026-09-14T02:03:53Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-wr-1447",
+     "text": "『석보상절』이 이루어진 1447년(세종 29)에서 그 다음해인 1448년 사이에 완성하여 간행된 것으로 보인다",
+     "locator": "본문 '서지적 사항' 문단"
+    },
+    {
+     "id": "ex-be3-wr-def",
+     "text": "세종이 석가모니의 공덕을 찬양하는 노래를 모아 한글로 편찬한 시가집",
+     "locator": "본문 요약문"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-singijeon",
+   "title": "신기전 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0032719",
+   "rawFile": "raw/enc-singijeon.html",
+   "sha256": "a3cee914895c5bf722733472f9dd102c0f63e40cbf070517a083e095fa2bddc8",
+   "httpStatus": 200,
+   "byteLength": 77952,
+   "fetchedUtc": "2026-09-14T02:03:53Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-sg-1448",
+     "text": "주화(走火)가 1448년(세종 30) 개량되어 신기전으로 바뀌었다",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-sg-kinds",
+     "text": "대신기전(大神機箭)·산화신기전(散火神機箭)·중신기전(中神機箭)·소신기전(小神機箭) 등이 있다",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-sg-make",
+     "text": "제작 시기1448년",
+     "locator": "항목 정보 표"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-buncheong",
+   "title": "분청사기 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0024868",
+   "rawFile": "raw/enc-buncheong.html",
+   "sha256": "4ac5e11d782e2e6fea27ffd5663e914c3f27325486fdd22ea6f3accc800651cf",
+   "httpStatus": 200,
+   "byteLength": 148465,
+   "fetchedUtc": "2026-09-14T02:03:54Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-bc-1440",
+     "text": "1440년 작품인 분청상감정통5년명연어문대반은",
+     "locator": "본문 '상감기법' 문단"
+    },
+    {
+     "id": "ex-be3-bc-15c",
+     "text": "15세기 중엽에 이르면 인화기법·상감기법·박지기법·음각기법 등이 더욱 세련되어 갔고 철화기법·귀얄기법·분장기법은 15세기 후반에 성행했다",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-bc-16c",
+     "text": "16세기에 들어오면 인화기법과 귀얄기법이 함께 사용되고",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-bc-1536",
+     "text": "성화23년(1487)·홍치3년(1490)·가정15년(1536) 등인데",
+     "locator": "본문 '철화기법' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-hakbongri",
+   "title": "공주 학봉리 요지 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0004509",
+   "rawFile": "raw/enc-hakbongri.html",
+   "sha256": "a08c75480d9d4b37f268588ad89ae3dd3b51fed9dd005b377e4b499c662ac9eb",
+   "httpStatus": 200,
+   "byteLength": 143629,
+   "fetchedUtc": "2026-09-14T02:03:54Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-hb-place",
+     "text": "충청남도 공주시 반포면 학봉리 일대에 있는 조선시대 철회분청사기와 백자를 굽던 가마터",
+     "locator": "항목 머리 정의문"
+    },
+    {
+     "id": "ex-be3-hb-addr",
+     "text": "소재지 충남 공주시 반포면 학봉리 산22-1번지 외",
+     "locator": "국가문화유산 정보 표"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-goryeosa",
+   "title": "고려사 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0003456",
+   "rawFile": "raw/enc-goryeosa.html",
+   "sha256": "cde57890410c16a59c382293467aca95e3171ff2e78f8d2a96d406842be744ae",
+   "httpStatus": 200,
+   "byteLength": 162781,
+   "fetchedUtc": "2026-09-14T02:03:55Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-gs-1451",
+     "text": "1451년(문종 원년) 8월 김종서 등에 의해",
+     "locator": "본문 '편찬 경위' 문단"
+    },
+    {
+     "id": "ex-be3-gs-authors",
+     "text": "김종서·정인지·이선제 등이 왕명으로 고려시대 전반에 관한 내용을 정리하여 편찬한 역사서",
+     "locator": "항목 머리 정의문"
+    },
+    {
+     "id": "ex-be3-gs-gijeon",
+     "text": "새로이 기전체로 편찬하기로 허락을 받았다",
+     "locator": "본문 '편찬 경위' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-gyeyu",
+   "title": "계유정난 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0003220",
+   "rawFile": "raw/enc-gyeyu.html",
+   "sha256": "46d58ced632bd72ce5374cc18d6cd3181f33a50162f789c0498afdfe4637dab0",
+   "httpStatus": 200,
+   "byteLength": 96417,
+   "fetchedUtc": "2026-09-14T02:03:55Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-gy-def",
+     "text": "1453년(단종 1) 수양대군이 단종의 보좌 세력이자 원로대신인 황보인·김종서 등",
+     "locator": "항목 머리 정의문"
+    },
+    {
+     "id": "ex-be3-gy-night",
+     "text": "등을 데리고 김종서의 집으로 찾아가",
+     "locator": "본문 '경과' 문단"
+    },
+    {
+     "id": "ex-be3-gy-gongsin",
+     "text": "정난에 협력한 43인을 정난공신으로 책봉했다",
+     "locator": "본문 요약문"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-hungupa",
+   "title": "훈구파 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0065785",
+   "rawFile": "raw/enc-hungupa.html",
+   "sha256": "6df66b085fb531f8c445d0ea2797cb408265a54bee5d558ab3e5033666124da9",
+   "httpStatus": 200,
+   "byteLength": 104925,
+   "fetchedUtc": "2026-09-14T02:03:56Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-hg-def",
+     "text": "여러 차례 공신에 책봉되고 고위 관직을 역임한 인물들이 형성한 지배층",
+     "locator": "항목 머리 정의문"
+    },
+    {
+     "id": "ex-be3-hg-sejo",
+     "text": "조선 세조 때부터 성종 때까지 공신과 대신을 역임한 인물들을 중심으로 형성된 세력",
+     "locator": "본문 요약문"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-danjong-boguui",
+   "title": "단종복위운동 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0013663",
+   "rawFile": "raw/enc-danjong-boguui.html",
+   "sha256": "204cde62b492b249847f8a1a34b85e17b0dfddd718944a886a4fd131b7f099ea",
+   "httpStatus": 200,
+   "byteLength": 97516,
+   "fetchedUtc": "2026-09-14T02:03:56Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-db-def",
+     "text": "성삼문(成三問)·박팽년(朴彭年) 등 사육신(死六臣)이 주동이 되어 복위를 시도했던 거사",
+     "locator": "항목 머리 정의문"
+    },
+    {
+     "id": "ex-be3-db-1456",
+     "text": "1456년 6월 초하루 창덕궁의 명사신 초대연의 자리에서 실행하기로 결정하였다",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-db-1455",
+     "text": "단종 복위거사를 모의한 것은 1455년(세조 1) 10월경이었다",
+     "locator": "본문 '내용' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-jingwan",
+   "title": "진관 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0054586",
+   "rawFile": "raw/enc-jingwan.html",
+   "sha256": "5ac6da53f23153bcf6f17ea1defb3dd03d3700ebe0776807d5b85e25eb82b3d0",
+   "httpStatus": 200,
+   "byteLength": 104142,
+   "fetchedUtc": "2026-09-14T02:03:57Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-jg-1457",
+     "text": "1457년 진관체제로 개편하여 병마절도사나 수군절도사의 주진(主鎭) 아래에 거진을 설치하였다",
+     "locator": "본문 요약문"
+    },
+    {
+     "id": "ex-be3-jg-1456",
+     "text": "1456년 군익도체제를 전국에 확장하였고",
+     "locator": "본문 요약문"
+    },
+    {
+     "id": "ex-be3-jg-def",
+     "text": "진관은 조선 전기의 지방 군사조직이다",
+     "locator": "본문 요약문"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-owi",
+   "title": "오위 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0038448",
+   "rawFile": "raw/enc-owi.html",
+   "sha256": "e3a2a8d207d1553c6cd34a430f62f8f6885cca922e71713080b949cec47e1bcb",
+   "httpStatus": 200,
+   "byteLength": 92013,
+   "fetchedUtc": "2026-09-14T02:03:57Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-ow-1457",
+     "text": "1451년에 5사로 개편하였고 1457년에 5위로 개칭하여 『경국대전』에 법제화되었다",
+     "locator": "본문 요약문"
+    },
+    {
+     "id": "ex-be3-ow-units",
+     "text": "의흥위(義興衛 : 中衛) · 용양위(龍驤衛 : 左衛) · 호분위(虎賁衛 : 右衛)",
+     "locator": "본문 '내용' 문단"
+    },
+    {
+     "id": "ex-be3-ow-def",
+     "text": "조선시대, 초기와 중기의 중앙 군사조직",
+     "locator": "항목 머리 정의문"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-jikjeon",
+   "title": "직전 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0054533",
+   "rawFile": "raw/enc-jikjeon.html",
+   "sha256": "464b9800776125697d57d21dc4df44e7cf2dfa8eae22e40bb5153097c2c35fac",
+   "httpStatus": 200,
+   "byteLength": 105195,
+   "fetchedUtc": "2026-09-14T02:03:58Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-jj-1466",
+     "text": "1466년(세조 12), 현직 관리만을 대상으로 분급한 수조지(收租地)",
+     "locator": "항목 머리 정의문"
+    },
+    {
+     "id": "ex-be3-jj-abolish",
+     "text": "과전을 혁파하고 직전을 설치하는 조치가 시행되어 퇴직 관리와 산관에 대한 토지 지급이 중지되고, 수신전·휼양전도 함께 폐지되었다",
+     "locator": "본문 요약문"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-jiphyeonjeon",
+   "title": "집현전 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0055081",
+   "rawFile": "raw/enc-jiphyeonjeon.html",
+   "sha256": "bf30517a61278e1bacc3a4bfac1342f60b70693651d1986c6d8c79173e862313",
+   "httpStatus": 200,
+   "byteLength": 139592,
+   "fetchedUtc": "2026-09-14T02:03:58Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-jp-1456",
+     "text": "1456년(세조 2) 6월에 일부 집현전 학사와 그 출신자들이 주동이 되어 집현전에 모여서 단종 복위를 도모한 이른바 사육신 사건이 일어나자, 이를 계기로 집현전이 혁파되었다",
+     "locator": "본문 '변천' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-anpyeong",
+   "title": "안평대군 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0035085",
+   "rawFile": "raw/enc-anpyeong.html",
+   "sha256": "ac9481b6f26bb178885fafc1b25319bc5d830ecc84566a799e592e33d65cffaf",
+   "httpStatus": 200,
+   "byteLength": 145365,
+   "fetchedUtc": "2026-09-14T02:03:59Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-ap-life",
+     "text": "출생 연도1418년(세종 즉위년) 사망 연도1453년(단종 1)",
+     "locator": "인물 정보 표"
+    },
+    {
+     "id": "ex-be3-ap-mugye",
+     "text": "세워 글을 짓고 활을 쏘던 무계정사(武溪精舍) 터로 알려진 곳이다",
+     "locator": "본문 '주요 활동' 문단"
+    }
+   ]
+  },
+  {
+   "id": "src-be3-enc-cheongnyeongpo",
+   "title": "청령포 — 한국민족문화대백과사전",
+   "publisher": "한국학중앙연구원 한국민족문화대백과사전",
+   "url": "https://encykorea.aks.ac.kr/Article/E0056404",
+   "rawFile": "raw/enc-cheongnyeongpo.html",
+   "sha256": "36fd59fa5ed8949914e6472a182a0fa0d49d12562b3b0ae421ed90f8377a9cec",
+   "httpStatus": 200,
+   "byteLength": 128856,
+   "fetchedUtc": "2026-09-14T02:03:59Z",
+   "license": "공공누리 제1유형(출처 표시) 표기 항목 — 짧은 인용",
+   "excerpts": [
+    {
+     "id": "ex-be3-cp-1457",
+     "text": "1457년(세조 3) 세조에 의하여 노산군으로 강봉된 단종이 유배되었던 곳",
+     "locator": "도판 해설문"
+    },
+    {
+     "id": "ex-be3-cp-place",
+     "text": "강원도 영월군 남면 광천리의 남한강 상류에 있는 명승지",
+     "locator": "항목 머리 정의문"
+    }
+   ]
+  }
+ ],
+ "entities": [
+  {
+   "id": "polity-hs-joseon",
+   "type": "Polity",
+   "label": "조선"
+  },
+  {
+   "id": "person-encykorea-sejong-e0029857",
+   "type": "Person",
+   "label": "세종"
+  },
+  {
+   "id": "person-encykorea-sejo-e0029849",
+   "type": "Person",
+   "label": "세조"
+  },
+  {
+   "id": "person-encykorea-danjong-e0013661",
+   "type": "Person",
+   "label": "단종"
+  },
+  {
+   "id": "person-encykorea-jeong-inji-e0065805",
+   "type": "Person",
+   "label": "정인지"
+  },
+  {
+   "id": "person-encykorea-sin-sukju-e0065805",
+   "type": "Person",
+   "label": "신숙주"
+  },
+  {
+   "id": "person-encykorea-seong-sammun-e0029365",
+   "type": "Person",
+   "label": "성삼문"
+  },
+  {
+   "id": "person-encykorea-kim-jongseo-e0010494",
+   "type": "Person",
+   "label": "김종서"
+  },
+  {
+   "id": "ent-wia-han-myeonghoe",
+   "type": "Person",
+   "label": "한명회"
+  },
+  {
+   "id": "person-hs-an-gyeon",
+   "type": "Person",
+   "label": "안견"
+  },
+  {
+   "id": "person-hs-anpyeong-daegun",
+   "type": "Person",
+   "label": "안평대군 이용"
+  },
+  {
+   "id": "person-hs-yi-sunji",
+   "type": "Person",
+   "label": "이순지"
+  },
+  {
+   "id": "person-hs-kim-dam",
+   "type": "Person",
+   "label": "김담"
+  },
+  {
+   "id": "inst-hs-uijeongbu-seosa",
+   "type": "Institution",
+   "label": "의정부 서사제"
+  },
+  {
+   "id": "place-hs-uijeongbu",
+   "type": "Place",
+   "label": "한양 의정부"
+  },
+  {
+   "id": "inst-hs-yukjo-jikgye",
+   "type": "Institution",
+   "label": "6조 직계제"
+  },
+  {
+   "id": "thing-hs-cheugugi",
+   "type": "Thing",
+   "label": "측우기"
+  },
+  {
+   "id": "place-hs-seoungwan",
+   "type": "Place",
+   "label": "서운관"
+  },
+  {
+   "id": "event-hs-cheugugi-system",
+   "type": "Event",
+   "label": "측우기 우량 관측·보고 제도 확정"
+  },
+  {
+   "id": "event-hs-gyehae-treaty",
+   "type": "Event",
+   "label": "계해약조"
+  },
+  {
+   "id": "place-hs-daemado",
+   "type": "Place",
+   "label": "대마도(쓰시마)"
+  },
+  {
+   "id": "event-hs-hunminjeongeum-creation",
+   "type": "Event",
+   "label": "훈민정음 창제"
+  },
+  {
+   "id": "work-hs-hunminjeongeum-haerye",
+   "type": "Work",
+   "label": "훈민정음 해례본"
+  },
+  {
+   "id": "work-hs-chiljeongsan",
+   "type": "Work",
+   "label": "칠정산"
+  },
+  {
+   "id": "inst-hs-gongbeop",
+   "type": "Institution",
+   "label": "공법"
+  },
+  {
+   "id": "work-hs-uibang-yuchwi",
+   "type": "Work",
+   "label": "의방유취"
+  },
+  {
+   "id": "inst-hs-jiphyeonjeon",
+   "type": "Institution",
+   "label": "집현전"
+  },
+  {
+   "id": "work-hs-yongbi",
+   "type": "Work",
+   "label": "용비어천가"
+  },
+  {
+   "id": "work-hs-mongyudowon",
+   "type": "Work",
+   "label": "몽유도원도"
+  },
+  {
+   "id": "place-hs-mugyejeongsa",
+   "type": "Place",
+   "label": "무계정사 터"
+  },
+  {
+   "id": "work-hs-worin",
+   "type": "Work",
+   "label": "월인천강지곡"
+  },
+  {
+   "id": "thing-hs-singijeon",
+   "type": "Thing",
+   "label": "신기전"
+  },
+  {
+   "id": "place-hs-gungigam",
+   "type": "Place",
+   "label": "한양 군기감(뒤의 군기시) 터"
+  },
+  {
+   "id": "thing-hs-buncheong",
+   "type": "Thing",
+   "label": "분청사기"
+  },
+  {
+   "id": "place-hs-hakbongri-yoji",
+   "type": "Place",
+   "label": "공주 학봉리 요지"
+  },
+  {
+   "id": "work-hs-goryeosa",
+   "type": "Work",
+   "label": "고려사"
+  },
+  {
+   "id": "place-hs-chunchugwan",
+   "type": "Place",
+   "label": "한양 춘추관"
+  },
+  {
+   "id": "place-hs-cheongnyeongpo",
+   "type": "Place",
+   "label": "영월 청령포"
+  },
+  {
+   "id": "event-hs-gyeyu-jeongnan",
+   "type": "Event",
+   "label": "계유정난"
+  },
+  {
+   "id": "group-hs-hungu",
+   "type": "Group",
+   "label": "훈구(훈구파)"
+  },
+  {
+   "id": "event-hs-sayuksin",
+   "type": "Event",
+   "label": "단종 복위 운동(사육신)"
+  },
+  {
+   "id": "inst-hs-jingwan",
+   "type": "Institution",
+   "label": "진관 체제"
+  },
+  {
+   "id": "place-hs-dongnaejin",
+   "type": "Place",
+   "label": "경상도 동래진(동래읍성)"
+  },
+  {
+   "id": "inst-hs-owi",
+   "type": "Institution",
+   "label": "5위"
+  },
+  {
+   "id": "place-hs-sungnyemun",
+   "type": "Place",
+   "label": "한양 도성 숭례문"
+  },
+  {
+   "id": "inst-hs-jikjeonbeop",
+   "type": "Institution",
+   "label": "직전법"
+  },
+  {
+   "id": "place-hs-hanyang-yukjo",
+   "type": "Place",
+   "label": "한양 육조거리"
+  },
+  {
+   "id": "place-hs-kim-jongseo-house",
+   "type": "Place",
+   "label": "김종서의 집"
+  }
+ ],
+ "claims": [
+  {
+   "id": "claim-be3-ujb-t1436",
+   "subject": "inst-hs-uijeongbu-seosa",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1436년",
+    "year": 1436,
+    "precision": "year",
+    "earliest": 1436,
+    "latest": 1436
+   },
+   "sourceId": "src-be3-enc-uijeongbu",
+   "citesExcerpt": "ex-be3-ujb-1436",
+   "note": "1436년부터 1455년 윤6월까지 의정부서사제가 다시 시행되었다는 서술"
+  },
+  {
+   "id": "claim-be3-ujb-act",
+   "subject": "place-hs-uijeongbu",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "inst-hs-uijeongbu-seosa"
+   },
+   "sourceId": "src-be3-enc-uijeongbu",
+   "citesExcerpt": "ex-be3-ujb-revive",
+   "note": "의정부가 국정 운영을 주도하게 된 변화"
+  },
+  {
+   "id": "claim-be3-ujb-role",
+   "subject": "place-hs-uijeongbu",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "최고의 행정기관"
+   },
+   "sourceId": "src-be3-enc-uijeongbu",
+   "citesExcerpt": "ex-be3-ujb-def",
+   "note": "의정부의 성격"
+  },
+  {
+   "id": "claim-be3-ujb-loc",
+   "subject": "place-hs-uijeongbu",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.5760444,
+    "lon": 126.9770194,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-gwanghwamun",
+   "citesExcerpt": "ex-be3-geo-gwanghwamun",
+   "note": "의정부 터는 광화문 앞 육조거리 동편이었다. 좌표는 경복궁 광화문 표시 좌표"
+  },
+  {
+   "id": "claim-be3-cu-t1441",
+   "subject": "thing-hs-cheugugi",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1441년(세종 23)",
+    "year": 1441,
+    "precision": "year",
+    "earliest": 1441,
+    "latest": 1441
+   },
+   "sourceId": "src-be3-enc-cheugugi",
+   "citesExcerpt": "ex-be3-cu-1441",
+   "note": "1441년 왕세자가 그릇에 빗물을 받아 재는 방식을 시험했다는 기록"
+  },
+  {
+   "id": "claim-be3-cu-t1442",
+   "subject": "event-hs-cheugugi-system",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1442년(세종 24)",
+    "year": 1442,
+    "precision": "year",
+    "earliest": 1442,
+    "latest": 1442
+   },
+   "sourceId": "src-be3-enc-cheugugi",
+   "citesExcerpt": "ex-be3-cu-1442",
+   "note": "이듬해 규격이 확정된 날짜"
+  },
+  {
+   "id": "claim-be3-cu-act",
+   "subject": "event-hs-cheugugi-system",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "thing-hs-cheugugi"
+   },
+   "sourceId": "src-be3-enc-cheugugi",
+   "citesExcerpt": "ex-be3-cu-act",
+   "note": "전국 우량 관측·보고 제도의 확정"
+  },
+  {
+   "id": "claim-be3-cu-seoungwan",
+   "subject": "place-hs-seoungwan",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "thing-hs-cheugugi"
+   },
+   "sourceId": "src-be3-enc-cheugugi",
+   "citesExcerpt": "ex-be3-cu-seoungwan",
+   "note": "서울의 서운관과 지방관이 우량을 보고하도록 한 규정"
+  },
+  {
+   "id": "claim-be3-cu-loc",
+   "subject": "place-hs-seoungwan",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.57975,
+    "lon": 126.975889,
+    "precision": "area"
+   },
+   "sourceId": "src-be3-kowiki-gyeonghoeru",
+   "citesExcerpt": "ex-be3-geo-gyeonghoeru",
+   "note": "궁궐 안 천문 관측 구역은 경회루 북쪽 간의대 일대였다. 좌표는 경회루 표시 좌표 (칠정산 장면의 궐내각사 점과 같은 기관의 다른 기능 공간)"
+  },
+  {
+   "id": "claim-be3-gh-t1443",
+   "subject": "event-hs-gyehae-treaty",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1443년(세종 25)",
+    "year": 1443,
+    "precision": "year",
+    "earliest": 1443,
+    "latest": 1443
+   },
+   "sourceId": "src-be3-enc-gyehae",
+   "citesExcerpt": "ex-be3-gh-def",
+   "note": "계해약조 체결 연도"
+  },
+  {
+   "id": "claim-be3-gh-sign",
+   "subject": "event-hs-gyehae-treaty",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-daemado"
+   },
+   "sourceId": "src-be3-enc-gyehae",
+   "citesExcerpt": "ex-be3-gh-sign",
+   "note": "대마도주 소 사다모리와 조약을 맺었다"
+  },
+  {
+   "id": "claim-be3-gh-ships",
+   "subject": "event-hs-gyehae-treaty",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "세견선 50척"
+   },
+   "sourceId": "src-be3-enc-gyehae",
+   "citesExcerpt": "ex-be3-gh-ships",
+   "note": "조약 제1조"
+  },
+  {
+   "id": "claim-be3-gh-loc",
+   "subject": "place-hs-daemado",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 34.20264,
+    "lon": 129.28753,
+    "precision": "area"
+   },
+   "sourceId": "src-be3-kowiki-izuhara",
+   "citesExcerpt": "ex-be3-geo-izuhara",
+   "note": "대마도주의 거처가 있던 이즈하라의 표시 좌표"
+  },
+  {
+   "id": "claim-be3-hun-t1443",
+   "subject": "event-hs-hunminjeongeum-creation",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1443년(세종 25)",
+    "year": 1443,
+    "precision": "year",
+    "earliest": 1443,
+    "latest": 1443
+   },
+   "sourceId": "src-encykorea-hunminjeongeum",
+   "citesChunk": "chunk_period92_joseon-modern_hunmin-1443",
+   "quote": "세종이 1443년(세종 25) 겨울에 훈민정음을 창제하였다",
+   "note": "정인지 서문에 근거한 창제 연도"
+  },
+  {
+   "id": "claim-be3-hun-act",
+   "subject": "person-encykorea-sejong-e0029857",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "event-hs-hunminjeongeum-creation"
+   },
+   "sourceId": "src-encykorea-sejong",
+   "citesChunk": "chunk_period92_joseon-modern_sejong-hunmin",
+   "quote": "훈민정음의 창제는 세종이 남긴 문화유산 가운데 가장 빛나는 업적이다",
+   "note": "세종의 업적으로 든 서술"
+  },
+  {
+   "id": "claim-be3-hun-je",
+   "subject": "event-hs-hunminjeongeum-creation",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "work-hs-hunminjeongeum-haerye"
+   },
+   "sourceId": "src-je-encykorea-e0065805",
+   "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-hun-1443",
+   "quote": "세종이 1443년(세종 25) 겨울에 훈민정음을 창제하였다는 것",
+   "note": "해례본 서문 해설"
+  },
+  {
+   "id": "claim-be3-hun-loc",
+   "subject": "event-hs-hunminjeongeum-creation",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.57861,
+    "lon": 126.97722,
+    "precision": "area"
+   },
+   "sourceId": "src-scenes-103-modern_scenes-kowiki-gyeongbokgung",
+   "citesChunk": "chunk_scenes-103_modern_scenes_geo-gyeongbokgung",
+   "quote": "37.57861; 126.97722",
+   "note": "경복궁 표시 좌표. 창제 작업의 정확한 전각은 확인되지 않는다"
+  },
+  {
+   "id": "claim-be3-cj-t1444",
+   "subject": "work-hs-chiljeongsan",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1444년",
+    "year": 1444,
+    "precision": "year",
+    "earliest": 1444,
+    "latest": 1444
+   },
+   "sourceId": "src-be3-enc-chiljeongsan-nae",
+   "citesExcerpt": "ex-be3-cj-1444",
+   "note": "도판 해설의 1444년 편찬 표기"
+  },
+  {
+   "id": "claim-be3-cj-t1442",
+   "subject": "work-hs-chiljeongsan",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1442년(세종 24)",
+    "year": 1442,
+    "precision": "year",
+    "earliest": 1442,
+    "latest": 1442
+   },
+   "sourceId": "src-be3-enc-chiljeongsan-nae",
+   "citesExcerpt": "ex-be3-cj-1442",
+   "note": "본문은 내편을 1442년 편찬으로 적는다. 1442년설과 1444년설이 함께 쓰인다"
+  },
+  {
+   "id": "claim-be3-cj-act",
+   "subject": "work-hs-chiljeongsan",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "person-hs-yi-sunji"
+   },
+   "sourceId": "src-be3-enc-chiljeongsan-nae",
+   "citesExcerpt": "ex-be3-cj-1444",
+   "note": "이순지와 김담이 편찬한 역서"
+  },
+  {
+   "id": "claim-be3-cj-loc",
+   "subject": "work-hs-chiljeongsan",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.576667,
+    "lon": 126.975278,
+    "precision": "area"
+   },
+   "sourceId": "src-be3-kowiki-gogung-museum",
+   "citesExcerpt": "ex-be3-geo-gogung",
+   "note": "서운관의 자리가 확인되지 않아 경복궁 서남쪽 궐내각사 일원(현 국립고궁박물관) 표시 좌표를 쓴다 (측우기 장면의 간의대 점과 같은 기관의 다른 기능 공간)"
+  },
+  {
+   "id": "claim-be3-gb-t1444",
+   "subject": "inst-hs-gongbeop",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1444년(세종 26)",
+    "year": 1444,
+    "precision": "year",
+    "earliest": 1444,
+    "latest": 1444
+   },
+   "sourceId": "src-be3-enc-gongbeop",
+   "citesExcerpt": "ex-be3-gb-1444",
+   "note": "전분6등·연분9등을 골자로 1444년 시행"
+  },
+  {
+   "id": "claim-be3-gb-hojo",
+   "subject": "inst-hs-gongbeop",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "시행처 호조"
+   },
+   "sourceId": "src-be3-enc-gongbeop",
+   "citesExcerpt": "ex-be3-gb-hojo",
+   "note": "항목 정보 표의 시행처"
+  },
+  {
+   "id": "claim-be3-gb-t1436",
+   "subject": "inst-hs-gongbeop",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1436년(세종 18)",
+    "year": 1436,
+    "precision": "year",
+    "earliest": 1436,
+    "latest": 1436
+   },
+   "sourceId": "src-be3-enc-gongbeop",
+   "citesExcerpt": "ex-be3-gb-1436",
+   "note": "공법상정소 설치"
+  },
+  {
+   "id": "claim-be3-gb-loc",
+   "subject": "place-hs-hanyang-yukjo",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.576942,
+    "lon": 126.97692,
+    "precision": "area"
+   },
+   "sourceId": "src-be3-kowiki-heungnyemun",
+   "citesExcerpt": "ex-be3-geo-heungnyemun",
+   "note": "호조는 육조거리 동편에 있었다. 좌표는 경복궁 흥례문 표시 좌표"
+  },
+  {
+   "id": "claim-be3-ub-t1445",
+   "subject": "work-hs-uibang-yuchwi",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1445년",
+    "year": 1445,
+    "precision": "year",
+    "earliest": 1445,
+    "latest": 1445
+   },
+   "sourceId": "src-be3-enc-uibang",
+   "citesExcerpt": "ex-be3-ub-1445",
+   "note": "3년 만에 365권으로 편성 완료"
+  },
+  {
+   "id": "claim-be3-ub-t1477",
+   "subject": "work-hs-uibang-yuchwi",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1477년(성종 8)",
+    "year": 1477,
+    "precision": "year",
+    "earliest": 1477,
+    "latest": 1477
+   },
+   "sourceId": "src-be3-enc-uibang",
+   "citesExcerpt": "ex-be3-ub-1477",
+   "note": "실제 간행은 1477년"
+  },
+  {
+   "id": "claim-be3-ub-jip",
+   "subject": "work-hs-uibang-yuchwi",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "inst-hs-jiphyeonjeon"
+   },
+   "sourceId": "src-be3-enc-uibang",
+   "citesExcerpt": "ex-be3-ub-jip",
+   "note": "집현전 부교리 김예몽 등이 편성에 참여"
+  },
+  {
+   "id": "claim-be3-ub-loc",
+   "subject": "inst-hs-jiphyeonjeon",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.578964,
+    "lon": 126.975954,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-sujeongjeon",
+   "citesExcerpt": "ex-be3-geo-sujeongjeon",
+   "note": "집현전 터로 알려진 경복궁 수정전의 표시 좌표"
+  },
+  {
+   "id": "claim-be3-yb-t1445",
+   "subject": "work-hs-yongbi",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1445년",
+    "year": 1445,
+    "precision": "year",
+    "earliest": 1445,
+    "latest": 1445
+   },
+   "sourceId": "src-be3-enc-yongbi",
+   "citesExcerpt": "ex-be3-yb-1445",
+   "note": "본문과 한시가 만들어진 해"
+  },
+  {
+   "id": "claim-be3-yb-t1447",
+   "subject": "work-hs-yongbi",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1447년",
+    "year": 1447,
+    "precision": "year",
+    "earliest": 1447,
+    "latest": 1447
+   },
+   "sourceId": "src-be3-enc-yongbi",
+   "citesExcerpt": "ex-be3-yb-1447",
+   "note": "주해가 완성되어 간행된 해"
+  },
+  {
+   "id": "claim-be3-yb-authors",
+   "subject": "person-encykorea-jeong-inji-e0065805",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "work-hs-yongbi"
+   },
+   "sourceId": "src-be3-enc-yongbi",
+   "citesExcerpt": "ex-be3-yb-authors",
+   "note": "권제·정인지·안지가 125장의 노래를 지었다"
+  },
+  {
+   "id": "claim-be3-yb-loc",
+   "subject": "work-hs-yongbi",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.579908,
+    "lon": 126.977054,
+    "precision": "area"
+   },
+   "sourceId": "src-be3-kowiki-gyotaejeon",
+   "citesExcerpt": "ex-be3-geo-gyotaejeon",
+   "note": "편찬·간행 장소가 확인되지 않아 경복궁 안(교태전 일원) 표시 좌표를 쓴다"
+  },
+  {
+   "id": "claim-be3-hj-t1446",
+   "subject": "work-hs-hunminjeongeum-haerye",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1446",
+    "year": 1446,
+    "precision": "year",
+    "earliest": 1446,
+    "latest": 1446
+   },
+   "sourceId": "src-encykorea-hunminjeongeum",
+   "citesChunk": "chunk_period92_joseon-modern_hunmin-1446",
+   "quote": "11년(1446) 9월 상한",
+   "note": "해례본에 적힌 정통 11년 9월 상한의 반포일"
+  },
+  {
+   "id": "claim-be3-hj-authors",
+   "subject": "person-encykorea-jeong-inji-e0065805",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "work-hs-hunminjeongeum-haerye"
+   },
+   "sourceId": "src-encykorea-hunminjeongeum-haerye-e0065805",
+   "citesChunk": "chunk_period96_joseon_society_hunminjeongeum-haerye-authors",
+   "quote": "집필자들은 정인지 · 신숙주(申叔舟) · 성삼문(成三問)",
+   "note": "해례본 집필자"
+  },
+  {
+   "id": "claim-be3-hj-je",
+   "subject": "person-encykorea-seong-sammun-e0029365",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "work-hs-hunminjeongeum-haerye"
+   },
+   "sourceId": "src-je-encykorea-e0065805",
+   "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-hun-authors",
+   "quote": "1446년 세종의 명으로 정인지, 신숙주, 성삼문, 최항, 박팽년, 강희안, 이개, 이선로 등 집현전의 8학자가 집필하였다",
+   "note": "집현전 8학자가 집필"
+  },
+  {
+   "id": "claim-be3-hj-loc",
+   "subject": "work-hs-hunminjeongeum-haerye",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.57861,
+    "lon": 126.97694,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-geunjeongjeon",
+   "citesExcerpt": "ex-be3-geo-geunjeongjeon",
+   "note": "반포 장소의 기록이 없어 경복궁 정전인 근정전 표시 좌표를 쓴다"
+  },
+  {
+   "id": "claim-be3-md-t1447",
+   "subject": "work-hs-mongyudowon",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1447년(세종 29)",
+    "year": 1447,
+    "precision": "year",
+    "earliest": 1447,
+    "latest": 1447
+   },
+   "sourceId": "src-be3-enc-mongyudowon",
+   "citesExcerpt": "ex-be3-md-1447",
+   "note": "안견이 그린 해"
+  },
+  {
+   "id": "claim-be3-md-dream",
+   "subject": "person-hs-anpyeong-daegun",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "work-hs-mongyudowon"
+   },
+   "sourceId": "src-be3-enc-mongyudowon",
+   "citesExcerpt": "ex-be3-md-dream",
+   "note": "안평대군이 꿈 내용을 안견에게 설명해 그리게 했다"
+  },
+  {
+   "id": "claim-be3-md-3days",
+   "subject": "person-hs-an-gyeon",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "work-hs-mongyudowon"
+   },
+   "sourceId": "src-be3-enc-mongyudowon",
+   "citesExcerpt": "ex-be3-md-3days",
+   "note": "안견이 3일 만에 완성했다는 발문"
+  },
+  {
+   "id": "claim-be3-md-mugye",
+   "subject": "place-hs-mugyejeongsa",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1447년",
+    "year": 1447,
+    "precision": "year",
+    "earliest": 1447,
+    "latest": 1447
+   },
+   "sourceId": "src-be3-kowiki-mugyejeongsa",
+   "citesExcerpt": "ex-be3-mugye-1447",
+   "note": "안평대군의 별장 무계정사 터. 조성 연도는 추정"
+  },
+  {
+   "id": "claim-be3-md-loc",
+   "subject": "place-hs-mugyejeongsa",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.59167,
+    "lon": 126.96306,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-mugyejeongsa",
+   "citesExcerpt": "ex-be3-geo-mugyejeongsa",
+   "note": "안평대군 이용 집터(무계정사지)의 표시 좌표"
+  },
+  {
+   "id": "claim-be3-wr-t1447",
+   "subject": "work-hs-worin",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1447년(세종 29)",
+    "year": 1447,
+    "precision": "year",
+    "earliest": 1447,
+    "latest": 1448
+   },
+   "sourceId": "src-be3-enc-worin",
+   "citesExcerpt": "ex-be3-wr-1447",
+   "note": "석보상절이 이루어진 1447년에서 이듬해 1448년 사이에 간행된 것으로 본다"
+  },
+  {
+   "id": "claim-be3-wr-def",
+   "subject": "person-encykorea-sejong-e0029857",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "work-hs-worin"
+   },
+   "sourceId": "src-be3-enc-worin",
+   "citesExcerpt": "ex-be3-wr-def",
+   "note": "세종이 한글로 엮은 찬불 시가집"
+  },
+  {
+   "id": "claim-be3-wr-sejong",
+   "subject": "person-encykorea-sejong-e0029857",
+   "predicate": "syj:reignedTo",
+   "object": {
+    "kind": "time",
+    "verbatim": "1450년(세종 32)",
+    "year": 1450,
+    "precision": "year",
+    "earliest": 1450,
+    "latest": 1450
+   },
+   "sourceId": "src-enc-sejong",
+   "citesChunk": "chunk_people-96_person_dates_joseon_early_sejong-life",
+   "quote": "출생 연도 1397년(태조 6) 사망 연도 1450년(세종 32)",
+   "note": "세종의 생몰 연도"
+  },
+  {
+   "id": "claim-be3-wr-loc",
+   "subject": "work-hs-worin",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.579972,
+    "lon": 126.976614,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-hamwonjeon",
+   "citesExcerpt": "ex-be3-geo-hamwonjeon",
+   "note": "세종이 궁궐 안에서 불사를 행하던 함원전의 표시 좌표. 간행 장소는 확인되지 않는다"
+  },
+  {
+   "id": "claim-be3-sg-t1448",
+   "subject": "thing-hs-singijeon",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1448년(세종 30)",
+    "year": 1448,
+    "precision": "year",
+    "earliest": 1448,
+    "latest": 1448
+   },
+   "sourceId": "src-be3-enc-singijeon",
+   "citesExcerpt": "ex-be3-sg-1448",
+   "note": "고려 말 주화를 개량해 신기전이 되었다"
+  },
+  {
+   "id": "claim-be3-sg-make",
+   "subject": "thing-hs-singijeon",
+   "predicate": "syj:builtIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1448년",
+    "year": 1448,
+    "precision": "year",
+    "earliest": 1448,
+    "latest": 1448
+   },
+   "sourceId": "src-be3-enc-singijeon",
+   "citesExcerpt": "ex-be3-sg-make",
+   "note": "항목 정보 표의 제작 시기"
+  },
+  {
+   "id": "claim-be3-sg-kinds",
+   "subject": "thing-hs-singijeon",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "대신기전·산화신기전·중신기전·소신기전"
+   },
+   "sourceId": "src-be3-enc-singijeon",
+   "citesExcerpt": "ex-be3-sg-kinds",
+   "note": "신기전의 종류"
+  },
+  {
+   "id": "claim-be3-sg-site",
+   "subject": "place-hs-gungigam",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "thing-hs-singijeon"
+   },
+   "sourceId": "src-be3-kowiki-gungisi",
+   "citesExcerpt": "ex-be3-gungisi-site",
+   "note": "군기시는 오늘날 서울시청 자리에 있었다"
+  },
+  {
+   "id": "claim-be3-sg-1466",
+   "subject": "place-hs-gungigam",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1466년(세조 12년)",
+    "year": 1466,
+    "precision": "year",
+    "earliest": 1466,
+    "latest": 1466
+   },
+   "sourceId": "src-be3-kowiki-gungisi",
+   "citesExcerpt": "ex-be3-gungisi-1466",
+   "note": "군기감을 군기시로 고쳐 부른 해"
+  },
+  {
+   "id": "claim-be3-sg-loc",
+   "subject": "place-hs-gungigam",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.566381,
+    "lon": 126.977717,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-seoul-cityhall",
+   "citesExcerpt": "ex-be3-geo-cityhall",
+   "note": "군기시 터로 전하는 서울특별시청 자리의 표시 좌표"
+  },
+  {
+   "id": "claim-be3-bc-t1440",
+   "subject": "thing-hs-buncheong",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1440년",
+    "year": 1440,
+    "precision": "year",
+    "earliest": 1440,
+    "latest": 1440
+   },
+   "sourceId": "src-be3-enc-buncheong",
+   "citesExcerpt": "ex-be3-bc-1440",
+   "note": "연대가 적힌 1440년 상감 분청 대반"
+  },
+  {
+   "id": "claim-be3-bc-t1536",
+   "subject": "thing-hs-buncheong",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "가정15년(1536)",
+    "year": 1536,
+    "precision": "year",
+    "earliest": 1536,
+    "latest": 1536
+   },
+   "sourceId": "src-be3-enc-buncheong",
+   "citesExcerpt": "ex-be3-bc-1536",
+   "note": "계룡산 가마터 묘지편의 연대"
+  },
+  {
+   "id": "claim-be3-bc-15c",
+   "subject": "thing-hs-buncheong",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-hakbongri-yoji"
+   },
+   "sourceId": "src-be3-enc-buncheong",
+   "citesExcerpt": "ex-be3-bc-15c",
+   "note": "15세기 중엽 이후 기법 변화"
+  },
+  {
+   "id": "claim-be3-bc-16c",
+   "subject": "thing-hs-buncheong",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "16세기 인화·귀얄기법"
+   },
+   "sourceId": "src-be3-enc-buncheong",
+   "citesExcerpt": "ex-be3-bc-16c",
+   "note": "16세기의 기법"
+  },
+  {
+   "id": "claim-be3-bc-place",
+   "subject": "place-hs-hakbongri-yoji",
+   "predicate": "syj:producedAt",
+   "object": {
+    "kind": "entity",
+    "id": "thing-hs-buncheong"
+   },
+   "sourceId": "src-be3-enc-hakbongri",
+   "citesExcerpt": "ex-be3-hb-place",
+   "note": "공주 반포면 학봉리의 철회분청사기·백자 가마터"
+  },
+  {
+   "id": "claim-be3-bc-addr",
+   "subject": "place-hs-hakbongri-yoji",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "충남 공주시 반포면 학봉리 산22-1번지 외"
+   },
+   "sourceId": "src-be3-enc-hakbongri",
+   "citesExcerpt": "ex-be3-hb-addr",
+   "note": "국가유산 소재지"
+  },
+  {
+   "id": "claim-be3-bc-loc",
+   "subject": "place-hs-hakbongri-yoji",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 36.3475,
+    "lon": 127.24194,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-hakbongri-yoji",
+   "citesExcerpt": "ex-be3-geo-hakbongri",
+   "note": "공주 학봉리 요지의 표시 좌표"
+  },
+  {
+   "id": "claim-be3-gs-t1451",
+   "subject": "work-hs-goryeosa",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1451년(문종 원년)",
+    "year": 1451,
+    "precision": "year",
+    "earliest": 1451,
+    "latest": 1451
+   },
+   "sourceId": "src-be3-enc-goryeosa",
+   "citesExcerpt": "ex-be3-gs-1451",
+   "note": "1451년 8월 김종서 등이 편찬을 마쳤다"
+  },
+  {
+   "id": "claim-be3-gs-authors",
+   "subject": "person-encykorea-kim-jongseo-e0010494",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "work-hs-goryeosa"
+   },
+   "sourceId": "src-be3-enc-goryeosa",
+   "citesExcerpt": "ex-be3-gs-authors",
+   "note": "김종서·정인지·이선제 등이 왕명으로 편찬"
+  },
+  {
+   "id": "claim-be3-gs-gijeon",
+   "subject": "work-hs-goryeosa",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "기전체 관찬 사서"
+   },
+   "sourceId": "src-be3-enc-goryeosa",
+   "citesExcerpt": "ex-be3-gs-gijeon",
+   "note": "편년체에서 기전체로 바꾸어 편찬"
+  },
+  {
+   "id": "claim-be3-gs-jeon",
+   "subject": "person-encykorea-jeong-inji-e0065805",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "work-hs-goryeosa"
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_$s01",
+   "quote": "臣鄭麟趾等",
+   "note": "고려사를 올리는 전(進高麗史箋)의 첫머리"
+  },
+  {
+   "id": "claim-be3-gs-loc",
+   "subject": "place-hs-chunchugwan",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.5796167,
+    "lon": 126.9776889,
+    "precision": "area"
+   },
+   "sourceId": "src-be3-kowiki-jagyeongjeon",
+   "citesExcerpt": "ex-be3-geo-jagyeongjeon",
+   "note": "춘추관 자리가 확인되지 않아 경복궁 안(자경전 일원) 표시 좌표를 쓴다"
+  },
+  {
+   "id": "claim-be3-dj-reign",
+   "subject": "person-encykorea-danjong-e0013661",
+   "predicate": "syj:reignedFrom",
+   "object": {
+    "kind": "time",
+    "verbatim": "1452년",
+    "year": 1452,
+    "precision": "year",
+    "earliest": 1452,
+    "latest": 1452
+   },
+   "sourceId": "src-enc-danjong",
+   "citesChunk": "chunk_people-96_person_dates_joseon_early_danjong-reign",
+   "quote": "조선의 제6대(재위: 1452년~1455년) 왕",
+   "note": "단종의 재위"
+  },
+  {
+   "id": "claim-be3-dj-life",
+   "subject": "person-encykorea-danjong-e0013661",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1457년(세조 3)",
+    "year": 1457,
+    "precision": "year",
+    "earliest": 1457,
+    "latest": 1457
+   },
+   "sourceId": "src-enc-danjong",
+   "citesChunk": "chunk_people-96_person_dates_joseon_early_danjong-life",
+   "quote": "출생 연도 1441년(세종 23) 사망 연도 1457년(세조 3)",
+   "note": "단종의 생몰 연도"
+  },
+  {
+   "id": "claim-be3-dj-exile",
+   "subject": "person-encykorea-danjong-e0013661",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-cheongnyeongpo"
+   },
+   "sourceId": "src-ej-aks-cheongnyeongpo",
+   "citesChunk": "chunk_scenes-128_early_joseon_ej-cr-1457",
+   "quote": "강봉된 단종 의 유배지로",
+   "note": "청령포가 단종의 유배지였다"
+  },
+  {
+   "id": "claim-be3-dj-loc",
+   "subject": "place-hs-cheongnyeongpo",
+   "predicate": "syj:locatedAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.175028,
+    "lon": 128.444056,
+    "precision": "site"
+   },
+   "sourceId": "src-ej-kowiki-cheongnyeongpo-coord",
+   "citesChunk": "chunk_scenes-128_early_joseon_ej-coord-cr",
+   "quote": "북위 37.175028° 동경 128.444056°",
+   "note": "청령포의 표시 좌표"
+  },
+  {
+   "id": "claim-be3-dj-place",
+   "subject": "place-hs-cheongnyeongpo",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "영월군 남면 광천리"
+   },
+   "sourceId": "src-ej-aks-cheongnyeongpo",
+   "citesChunk": "chunk_scenes-128_early_joseon_ej-cr-loc",
+   "quote": "영월군 남면 광천리의",
+   "note": "청령포의 소재지"
+  },
+  {
+   "id": "claim-be3-dj-cp",
+   "subject": "person-encykorea-danjong-e0013661",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1457년(세조 3)",
+    "year": 1457,
+    "precision": "year",
+    "earliest": 1457,
+    "latest": 1457
+   },
+   "sourceId": "src-be3-enc-cheongnyeongpo",
+   "citesExcerpt": "ex-be3-cp-1457",
+   "note": "1457년 노산군으로 강봉되어 유배되었다"
+  },
+  {
+   "id": "claim-be3-gy-t1453",
+   "subject": "event-hs-gyeyu-jeongnan",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1453년(단종 1)",
+    "year": 1453,
+    "precision": "year",
+    "earliest": 1453,
+    "latest": 1453
+   },
+   "sourceId": "src-be3-enc-gyeyu",
+   "citesExcerpt": "ex-be3-gy-def",
+   "note": "수양대군이 황보인·김종서 등을 제거한 해"
+  },
+  {
+   "id": "claim-be3-gy-night",
+   "subject": "event-hs-gyeyu-jeongnan",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "entity",
+    "id": "place-hs-kim-jongseo-house"
+   },
+   "sourceId": "src-be3-enc-gyeyu",
+   "citesExcerpt": "ex-be3-gy-night",
+   "note": "수양대군이 심복을 데리고 김종서의 집으로 찾아갔다"
+  },
+  {
+   "id": "claim-be3-gy-gongsin",
+   "subject": "person-encykorea-sejo-e0029849",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "event-hs-gyeyu-jeongnan"
+   },
+   "sourceId": "src-be3-enc-gyeyu",
+   "citesExcerpt": "ex-be3-gy-gongsin",
+   "note": "정난에 협력한 43인을 정난공신으로 책봉했다"
+  },
+  {
+   "id": "claim-be3-gy-kim",
+   "subject": "person-encykorea-kim-jongseo-e0010494",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1453년(단종 1)",
+    "year": 1453,
+    "precision": "year",
+    "earliest": 1453,
+    "latest": 1453
+   },
+   "sourceId": "src-encykorea-kim-jongseo-e0010494",
+   "citesChunk": "chunk_period96_joseon_society_kim-jongseo-died",
+   "quote": "사망 연도1453년(단종 1)",
+   "note": "김종서의 사망 연도"
+  },
+  {
+   "id": "claim-be3-gy-loc",
+   "subject": "event-hs-gyeyu-jeongnan",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.56861,
+    "lon": 126.96944,
+    "precision": "area"
+   },
+   "sourceId": "src-be3-kowiki-donuimun",
+   "citesExcerpt": "ex-be3-geo-donuimun",
+   "note": "김종서의 집터가 확인되지 않아 도성 서쪽 돈의문 터의 표시 좌표를 쓴다"
+  },
+  {
+   "id": "claim-be3-hg-t1455",
+   "subject": "group-hs-hungu",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1455년(세조 1)",
+    "year": 1455,
+    "precision": "year",
+    "earliest": 1455,
+    "latest": 1455
+   },
+   "sourceId": "src-enc-jwaik-gongsin",
+   "citesChunk": "chunk_people-96_person_dates_joseon_early_jwaik-1455",
+   "quote": "1455년(세조 1) 세조 즉위 이후",
+   "note": "좌익공신 책봉의 배경"
+  },
+  {
+   "id": "claim-be3-hg-list",
+   "subject": "group-hs-hungu",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "person-encykorea-sejo-e0029849"
+   },
+   "sourceId": "src-enc-jwaik-gongsin",
+   "citesChunk": "chunk_people-96_person_dates_joseon_early_jwaik-list",
+   "quote": "1등공신은 계양군(桂陽君) 이증(李璔)",
+   "note": "좌익 1등공신 명단"
+  },
+  {
+   "id": "claim-be3-hg-def",
+   "subject": "group-hs-hungu",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "공신에 책봉된 지배층"
+   },
+   "sourceId": "src-be3-enc-hungupa",
+   "citesExcerpt": "ex-be3-hg-def",
+   "note": "훈구파의 정의"
+  },
+  {
+   "id": "claim-be3-hg-sejo",
+   "subject": "group-hs-hungu",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-hs-joseon"
+   },
+   "sourceId": "src-be3-enc-hungupa",
+   "citesExcerpt": "ex-be3-hg-sejo",
+   "note": "세조에서 성종까지 공신·대신이 이룬 세력"
+  },
+  {
+   "id": "claim-be3-hg-han",
+   "subject": "ent-wia-han-myeonghoe",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "group-hs-hungu"
+   },
+   "sourceId": "src-ency-han-myeonghoe",
+   "citesChunk": "chunk_people-96_person_dates_joseon_middle_hanmyeonghoe-sangdang",
+   "quote": "1457년 이조판서에 올라 상당군(上黨君)에 봉해졌으며",
+   "note": "한명회의 봉군"
+  },
+  {
+   "id": "claim-be3-hg-loc",
+   "subject": "group-hs-hungu",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.57444,
+    "lon": 126.99417,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-jongmyo",
+   "citesExcerpt": "ex-be3-geo-jongmyo",
+   "note": "공신을 배향한 종묘의 표시 좌표. 훈구는 특정 건물이 아니라 세력을 가리킨다"
+  },
+  {
+   "id": "claim-be3-sj-reign",
+   "subject": "person-encykorea-sejo-e0029849",
+   "predicate": "syj:reignedFrom",
+   "object": {
+    "kind": "time",
+    "verbatim": "1455년(세조 1)",
+    "year": 1455,
+    "precision": "year",
+    "earliest": 1455,
+    "latest": 1455
+   },
+   "sourceId": "src-ency-sejo",
+   "citesChunk": "chunk_people-96_person_dates_joseon_middle_sejo-reign-name",
+   "quote": "재위 1455년(세조 1)∼1468년(세조 14)",
+   "note": "세조의 재위"
+  },
+  {
+   "id": "claim-be3-sj-birth",
+   "subject": "person-encykorea-sejo-e0029849",
+   "predicate": "syj:bornIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1417년(태종 17)",
+    "year": 1417,
+    "precision": "year",
+    "earliest": 1417,
+    "latest": 1417
+   },
+   "sourceId": "src-ency-sejo",
+   "citesChunk": "chunk_people-96_person_dates_joseon_middle_sejo-birth",
+   "quote": "1417년(태종 17)",
+   "note": "세조의 출생 연도"
+  },
+  {
+   "id": "claim-be3-sj-death",
+   "subject": "person-encykorea-sejo-e0029849",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1468년(세조 14)",
+    "year": 1468,
+    "precision": "year",
+    "earliest": 1468,
+    "latest": 1468
+   },
+   "sourceId": "src-ency-sejo",
+   "citesChunk": "chunk_people-96_person_dates_joseon_middle_sejo-death",
+   "quote": "1468년(세조 14)",
+   "note": "세조의 사망 연도"
+  },
+  {
+   "id": "claim-be3-sj-order",
+   "subject": "person-encykorea-sejo-e0029849",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-hs-joseon"
+   },
+   "sourceId": "src-encykorea-sejo",
+   "citesChunk": "chunk_period96_joseon_rulers_encykorea-sejo-reign",
+   "quote": "조선의 제7대(재위: 1455년~1468년) 왕.",
+   "note": "조선 제7대 왕"
+  },
+  {
+   "id": "claim-be3-sj-loc",
+   "subject": "person-encykorea-sejo-e0029849",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.579068,
+    "lon": 126.977003,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-sajeongjeon",
+   "citesExcerpt": "ex-be3-geo-sajeongjeon",
+   "note": "임금이 정무를 보던 경복궁 편전 사정전의 표시 좌표"
+  },
+  {
+   "id": "claim-be3-yj-t1455",
+   "subject": "inst-hs-yukjo-jikgye",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1455년(세조 1)",
+    "year": 1455,
+    "precision": "year",
+    "earliest": 1455,
+    "latest": 1455
+   },
+   "sourceId": "src-be3-enc-uijeongbu",
+   "citesExcerpt": "ex-be3-ujb-1455",
+   "note": "1455년 윤6월부터 육조직계제가 부활했다"
+  },
+  {
+   "id": "claim-be3-yj-def",
+   "subject": "place-hs-uijeongbu",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "inst-hs-yukjo-jikgye"
+   },
+   "sourceId": "src-be3-enc-uijeongbu",
+   "citesExcerpt": "ex-be3-ujb-def",
+   "note": "의정부의 성격과 대비되는 변화"
+  },
+  {
+   "id": "claim-be3-yj-jip",
+   "subject": "inst-hs-jiphyeonjeon",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1456년(세조 2)",
+    "year": 1456,
+    "precision": "year",
+    "earliest": 1456,
+    "latest": 1456
+   },
+   "sourceId": "src-be3-enc-jiphyeonjeon",
+   "citesExcerpt": "ex-be3-jp-1456",
+   "note": "사육신 사건을 계기로 집현전이 혁파되었다"
+  },
+  {
+   "id": "claim-be3-yj-loc",
+   "subject": "inst-hs-yukjo-jikgye",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.579015,
+    "lon": 126.977945,
+    "precision": "area"
+   },
+   "sourceId": "src-be3-kowiki-jaseondang",
+   "citesExcerpt": "ex-be3-geo-jaseondang",
+   "note": "6조가 왕에게 직접 아뢰던 편전 일곽의 자리가 확인되지 않아 경복궁 안(자선당) 표시 좌표를 쓴다"
+  },
+  {
+   "id": "claim-be3-sy-t1456",
+   "subject": "event-hs-sayuksin",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1456년",
+    "year": 1456,
+    "precision": "year",
+    "earliest": 1456,
+    "latest": 1456
+   },
+   "sourceId": "src-be3-enc-danjong-boguui",
+   "citesExcerpt": "ex-be3-db-1456",
+   "note": "1456년 6월 창덕궁 연회에서 거사하기로 했다"
+  },
+  {
+   "id": "claim-be3-sy-def",
+   "subject": "person-encykorea-seong-sammun-e0029365",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "event-hs-sayuksin"
+   },
+   "sourceId": "src-be3-enc-danjong-boguui",
+   "citesExcerpt": "ex-be3-db-def",
+   "note": "성삼문·박팽년 등 사육신이 주동했다"
+  },
+  {
+   "id": "claim-be3-sy-t1455",
+   "subject": "event-hs-sayuksin",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1455년(세조 1)",
+    "year": 1455,
+    "precision": "year",
+    "earliest": 1455,
+    "latest": 1455
+   },
+   "sourceId": "src-be3-enc-danjong-boguui",
+   "citesExcerpt": "ex-be3-db-1455",
+   "note": "1455년 10월경 거사를 모의했다"
+  },
+  {
+   "id": "claim-be3-sy-jip",
+   "subject": "event-hs-sayuksin",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "inst-hs-jiphyeonjeon"
+   },
+   "sourceId": "src-be3-enc-jiphyeonjeon",
+   "citesExcerpt": "ex-be3-jp-1456",
+   "note": "집현전 학사 출신이 주동했고 집현전이 혁파되었다"
+  },
+  {
+   "id": "claim-be3-sy-seong",
+   "subject": "person-encykorea-seong-sammun-e0029365",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1456년(세조 2)",
+    "year": 1456,
+    "precision": "year",
+    "earliest": 1456,
+    "latest": 1456
+   },
+   "sourceId": "src-encykorea-seong-sammun-e0029365",
+   "citesChunk": "chunk_period96_joseon_society_seong-sammun-died",
+   "quote": "사망 연도1456년(세조 2)",
+   "note": "성삼문의 사망 연도"
+  },
+  {
+   "id": "claim-be3-sy-seongdef",
+   "subject": "person-encykorea-seong-sammun-e0029365",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "event-hs-sayuksin"
+   },
+   "sourceId": "src-encykorea-seong-sammun-e0029365",
+   "citesChunk": "chunk_period96_joseon_society_seong-sammun-defi",
+   "quote": "사육신 중 한 명",
+   "note": "성삼문이 사육신의 한 사람"
+  },
+  {
+   "id": "claim-be3-sy-loc",
+   "subject": "event-hs-sayuksin",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.51333,
+    "lon": 126.94972,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-sayuksinmyo",
+   "citesExcerpt": "ex-be3-geo-sayuksin",
+   "note": "사육신을 모신 노량진 사육신묘의 표시 좌표"
+  },
+  {
+   "id": "claim-be3-jg-t1457",
+   "subject": "inst-hs-jingwan",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1457년",
+    "year": 1457,
+    "precision": "year",
+    "earliest": 1457,
+    "latest": 1457
+   },
+   "sourceId": "src-be3-enc-jingwan",
+   "citesExcerpt": "ex-be3-jg-1457",
+   "note": "1457년 군익도체제를 진관체제로 개편"
+  },
+  {
+   "id": "claim-be3-jg-t1456",
+   "subject": "inst-hs-jingwan",
+   "predicate": "syj:occurredIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1456년",
+    "year": 1456,
+    "precision": "year",
+    "earliest": 1456,
+    "latest": 1456
+   },
+   "sourceId": "src-be3-enc-jingwan",
+   "citesExcerpt": "ex-be3-jg-1456",
+   "note": "1456년 군익도체제를 전국으로 확장"
+  },
+  {
+   "id": "claim-be3-jg-def",
+   "subject": "inst-hs-jingwan",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "지방 군사조직"
+   },
+   "sourceId": "src-be3-enc-jingwan",
+   "citesExcerpt": "ex-be3-jg-def",
+   "note": "진관의 성격"
+  },
+  {
+   "id": "claim-be3-jg-dongnae",
+   "subject": "place-hs-dongnaejin",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "inst-hs-jingwan"
+   },
+   "sourceId": "src-be3-kowiki-dongnae-eupseong",
+   "citesExcerpt": "ex-be3-dongnae-form",
+   "note": "동래읍성의 형태와 위치"
+  },
+  {
+   "id": "claim-be3-jg-loc",
+   "subject": "place-hs-dongnaejin",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 35.20389,
+    "lon": 129.09389,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-dongnae-eupseong",
+   "citesExcerpt": "ex-be3-geo-dongnae",
+   "note": "경상도 동래진이 있던 동래읍성의 표시 좌표"
+  },
+  {
+   "id": "claim-be3-ow-t1457",
+   "subject": "inst-hs-owi",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1457년",
+    "year": 1457,
+    "precision": "year",
+    "earliest": 1457,
+    "latest": 1457
+   },
+   "sourceId": "src-be3-enc-owi",
+   "citesExcerpt": "ex-be3-ow-1457",
+   "note": "1451년 5사를 1457년 5위로 개편해 경국대전에 법제화"
+  },
+  {
+   "id": "claim-be3-ow-units",
+   "subject": "inst-hs-owi",
+   "predicate": "syj:administeredAs",
+   "object": {
+    "kind": "literal",
+    "value": "의흥위·용양위·호분위 등 5위"
+   },
+   "sourceId": "src-be3-enc-owi",
+   "citesExcerpt": "ex-be3-ow-units",
+   "note": "5위의 부대 이름"
+  },
+  {
+   "id": "claim-be3-ow-def",
+   "subject": "inst-hs-owi",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-hs-joseon"
+   },
+   "sourceId": "src-be3-enc-owi",
+   "citesExcerpt": "ex-be3-ow-def",
+   "note": "조선 초·중기의 중앙 군사조직"
+  },
+  {
+   "id": "claim-be3-ow-loc",
+   "subject": "place-hs-sungnyemun",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.55972,
+    "lon": 126.97528,
+    "precision": "site"
+   },
+   "sourceId": "src-be3-kowiki-sungnyemun",
+   "citesExcerpt": "ex-be3-geo-sungnyemun",
+   "note": "중앙군이 지킨 한양 도성 숭례문의 표시 좌표. 오위도총부 자리는 확인되지 않는다"
+  },
+  {
+   "id": "claim-be3-jj-t1466",
+   "subject": "inst-hs-jikjeonbeop",
+   "predicate": "syj:establishedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "1466년(세조 12)",
+    "year": 1466,
+    "precision": "year",
+    "earliest": 1466,
+    "latest": 1466
+   },
+   "sourceId": "src-be3-enc-jikjeon",
+   "citesExcerpt": "ex-be3-jj-1466",
+   "note": "현직 관리에게만 수조지를 준 제도"
+  },
+  {
+   "id": "claim-be3-jj-abolish",
+   "subject": "inst-hs-jikjeonbeop",
+   "predicate": "syj:relatedTo",
+   "object": {
+    "kind": "entity",
+    "id": "polity-hs-joseon"
+   },
+   "sourceId": "src-be3-enc-jikjeon",
+   "citesExcerpt": "ex-be3-jj-abolish",
+   "note": "과전을 혁파하고 수신전·휼양전을 폐지했다"
+  },
+  {
+   "id": "claim-be3-jj-sejo",
+   "subject": "person-encykorea-sejo-e0029849",
+   "predicate": "syj:participatedIn",
+   "object": {
+    "kind": "entity",
+    "id": "inst-hs-jikjeonbeop"
+   },
+   "sourceId": "src-be3-enc-jikjeon",
+   "citesExcerpt": "ex-be3-jj-1466",
+   "note": "세조 12년의 조치"
+  },
+  {
+   "id": "claim-be3-jj-loc",
+   "subject": "inst-hs-jikjeonbeop",
+   "predicate": "syj:tookPlaceAt",
+   "object": {
+    "kind": "location",
+    "lat": 37.5794833,
+    "lon": 126.991175,
+    "precision": "area"
+   },
+   "sourceId": "src-be3-kowiki-changdeokgung",
+   "citesExcerpt": "ex-be3-geo-changdeokgung",
+   "note": "호조 청사의 자리가 확인되지 않아 한양 궁궐(창덕궁) 표시 좌표를 쓴다"
+  },
+  {
+   "id": "claim-be3-md-ruin",
+   "subject": "place-hs-mugyejeongsa",
+   "predicate": "syj:destroyedIn",
+   "object": {
+    "kind": "time",
+    "verbatim": "단종 1년(1453)",
+    "year": 1453,
+    "precision": "year",
+    "earliest": 1453,
+    "latest": 1453
+   },
+   "sourceId": "src-be3-kowiki-mugyejeongsa",
+   "citesExcerpt": "ex-be3-mugye-ruin",
+   "note": "안평대군이 죽은 1453년 이후 무계정사는 폐허가 되어 터만 남았다"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "scene-be3-uijeongbu-seosa",
+   "itemId": "hs-joseon-early-uijeongbu-seosa",
+   "eventId": "inst-hs-uijeongbu-seosa",
+   "title": "의정부 서사제 부활",
+   "startYear": 1436,
+   "endYear": 1436,
+   "kind": "court",
+   "summary": "세종 18년, 6조가 왕에게 바로 아뢰던 방식을 바꾸어 의정부가 먼저 의논한 뒤 왕에게 올리게 했다. 육조거리 동편 의정부가 국정 운영의 중심이 되었다.",
+   "dateClaimIds": [
+    "claim-be3-ujb-t1436"
+   ],
+   "actionClaimIds": [
+    "claim-be3-ujb-act",
+    "claim-be3-ujb-role"
+   ],
+   "place": {
+    "label": "한양 의정부(육조거리 동편)",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.9770194,
+    "lat": 37.5760444,
+    "claimIds": [
+     "claim-be3-ujb-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-gwanghwamun"
+    ],
+    "coordinateNote": "의정부 터는 광화문 앞 육조거리 동편이었다. 좌표는 경복궁 광화문의 위키백과 표시 좌표로 대신한다.",
+    "setting": "office"
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-ujb-t1436"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "administration",
+   "region": "central",
+   "decade": 1430
+  },
+  {
+   "id": "scene-be3-cheugugi",
+   "itemId": "hs-joseon-early-cheugugi",
+   "eventId": "thing-hs-cheugugi",
+   "title": "측우기로 비의 양을 재다",
+   "startYear": 1441,
+   "endYear": 1442,
+   "kind": "survey",
+   "summary": "세종 23년 그릇에 빗물을 받아 재는 방식을 시험했고, 이듬해 규격과 보고 절차가 정해졌다. 서울의 서운관과 지방 관아가 같은 기구로 비의 양을 재어 올렸다.",
+   "dateClaimIds": [
+    "claim-be3-cu-t1441",
+    "claim-be3-cu-t1442"
+   ],
+   "actionClaimIds": [
+    "claim-be3-cu-act",
+    "claim-be3-cu-seoungwan"
+   ],
+   "place": {
+    "label": "경복궁 서운관 관측 구역(경회루 북쪽 간의대 일원)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.975889,
+    "lat": 37.57975,
+    "claimIds": [
+     "claim-be3-cu-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-gyeonghoeru"
+    ],
+    "coordinateNote": "궁궐 안 천문 관측 시설은 경회루 북쪽 간의대 일대에 있었다. 좌표는 경회루의 위키백과 표시 좌표다. 측우기 장면의 간의대 일원과 칠정산 장면의 궐내각사 일원은 같은 서운관의 서로 다른 기능 공간을 가리키는 표시 좌표다.",
+    "setting": "palace"
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-cu-t1441",
+      "claim-be3-cu-t1442"
+     ]
+    }
+   },
+   "priority": "core",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440
+  },
+  {
+   "id": "scene-be3-gyehae-treaty",
+   "itemId": "hs-joseon-early-gyehae-treaty",
+   "eventId": "event-hs-gyehae-treaty",
+   "title": "계해약조를 맺다",
+   "startYear": 1443,
+   "endYear": 1443,
+   "kind": "assembly",
+   "summary": "세종 25년 통신사 변효문이 돌아오는 길에 대마도주와 조약을 맺었다. 해마다 오는 배를 50척으로 정하는 등 무역의 규모를 문서로 못 박았다.",
+   "dateClaimIds": [
+    "claim-be3-gh-t1443"
+   ],
+   "actionClaimIds": [
+    "claim-be3-gh-sign",
+    "claim-be3-gh-ships"
+   ],
+   "place": {
+    "label": "대마도 이즈하라(대마도주 거처)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.28753,
+    "lat": 34.20264,
+    "claimIds": [
+     "claim-be3-gh-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-izuhara"
+    ],
+    "coordinateNote": "대마도주가 있던 이즈하라의 위키백과 표시 좌표. 조약을 맺은 정확한 지점은 확인되지 않는다."
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-gh-t1443"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "foreign",
+   "region": "island",
+   "decade": 1440,
+   "sceneFunction": "harbor"
+  },
+  {
+   "id": "scene-be3-hunminjeongeum-creation",
+   "itemId": "hs-joseon-early-hunminjeongeum-creation",
+   "eventId": "event-hs-hunminjeongeum-creation",
+   "title": "훈민정음을 만들다",
+   "startYear": 1443,
+   "endYear": 1443,
+   "kind": "court",
+   "summary": "세종 25년 겨울, 백성이 쉽게 배우고 쓸 수 있는 새 글자가 만들어졌다. 해례본의 정인지 서문이 이 해를 창제 연도로 적었다.",
+   "dateClaimIds": [
+    "claim-be3-hun-t1443"
+   ],
+   "actionClaimIds": [
+    "claim-be3-hun-act",
+    "claim-be3-hun-je"
+   ],
+   "place": {
+    "label": "경복궁",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.97722,
+    "lat": 37.57861,
+    "claimIds": [
+     "claim-be3-hun-loc"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "경복궁의 표시 좌표(로컬 원문 조각). 창제 작업이 이루어진 전각은 기록으로 확인되지 않는다.",
+    "setting": "palace"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-sejong-e0029857",
+     "role": "ruler",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-hun-act"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-hun-t1443"
+     ]
+    }
+   },
+   "priority": "core",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440
+  },
+  {
+   "id": "scene-be3-chiljeongsan",
+   "itemId": "hs-joseon-early-chiljeongsan",
+   "eventId": "work-hs-chiljeongsan",
+   "title": "칠정산을 펴내다",
+   "startYear": 1444,
+   "endYear": 1444,
+   "kind": "publication",
+   "summary": "이순지와 김담이 원나라 수시력을 풀어 한양의 하늘에 맞춘 역법서를 만들었다. 내편의 편찬 연도는 1442년설과 1444년설이 함께 쓰인다.",
+   "dateClaimIds": [
+    "claim-be3-cj-t1444"
+   ],
+   "actionClaimIds": [
+    "claim-be3-cj-act",
+    "claim-be3-cj-t1442"
+   ],
+   "place": {
+    "label": "한양 서운관(경복궁 서남쪽 궐내각사 일원)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.975278,
+    "lat": 37.576667,
+    "claimIds": [
+     "claim-be3-cj-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-gogung-museum"
+    ],
+    "coordinateNote": "서운관 청사의 자리가 확인되지 않아 경복궁 서남쪽 궐내각사 일원(현 국립고궁박물관) 표시 좌표를 쓴다. 측우기 장면의 간의대 일원과 칠정산 장면의 궐내각사 일원은 같은 서운관의 서로 다른 기능 공간을 가리키는 표시 좌표다.",
+    "setting": "office"
+   },
+   "participants": [
+    {
+     "entityId": "person-hs-yi-sunji",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-cj-t1444",
+      "claim-be3-cj-act"
+     ]
+    },
+    {
+     "entityId": "person-hs-kim-dam",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-cj-t1444"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-cj-t1444"
+     ]
+    }
+   },
+   "priority": "core",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440
+  },
+  {
+   "id": "scene-be3-gongbeop",
+   "itemId": "hs-joseon-early-gongbeop",
+   "eventId": "inst-hs-gongbeop",
+   "title": "공법을 시행하다",
+   "startYear": 1444,
+   "endYear": 1444,
+   "kind": "survey",
+   "summary": "1436년 공법상정소를 두고 논의한 끝에 세종 26년 전분 6등과 연분 9등을 뼈대로 한 새 전세 제도가 시행되었다. 시행은 호조가 맡았다.",
+   "dateClaimIds": [
+    "claim-be3-gb-t1444"
+   ],
+   "actionClaimIds": [
+    "claim-be3-gb-hojo",
+    "claim-be3-gb-t1436"
+   ],
+   "place": {
+    "label": "한양 육조거리 호조",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.97692,
+    "lat": 37.576942,
+    "claimIds": [
+     "claim-be3-gb-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-heungnyemun"
+    ],
+    "coordinateNote": "호조는 광화문 앞 육조거리 동편에 있었다. 좌표는 경복궁 흥례문의 위키백과 표시 좌표로 대신한다.",
+    "setting": "office"
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-gb-t1444"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "economy",
+   "region": "central",
+   "decade": 1440
+  },
+  {
+   "id": "scene-be3-uibang-yuchwi",
+   "itemId": "hs-joseon-early-uibang-yuchwi",
+   "eventId": "work-hs-uibang-yuchwi",
+   "title": "의방유취를 엮다",
+   "startYear": 1445,
+   "endYear": 1445,
+   "kind": "publication",
+   "summary": "집현전 학사와 의관이 3년에 걸쳐 동아시아 의서를 종류별로 모아 365권으로 엮었다. 간행은 한참 뒤인 1477년에야 이루어졌다.",
+   "dateClaimIds": [
+    "claim-be3-ub-t1445"
+   ],
+   "actionClaimIds": [
+    "claim-be3-ub-jip",
+    "claim-be3-ub-t1477"
+   ],
+   "place": {
+    "label": "경복궁 집현전(수정전) 터",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.975954,
+    "lat": 37.578964,
+    "claimIds": [
+     "claim-be3-ub-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-sujeongjeon"
+    ],
+    "coordinateNote": "집현전 터로 알려진 경복궁 수정전의 위키백과 표시 좌표.",
+    "setting": "office"
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-ub-t1445"
+     ]
+    }
+   },
+   "priority": "extended",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440
+  },
+  {
+   "id": "scene-be3-yongbi",
+   "itemId": "hs-joseon-early-yongbi",
+   "eventId": "work-hs-yongbi",
+   "title": "용비어천가를 짓다",
+   "startYear": 1445,
+   "endYear": 1447,
+   "kind": "publication",
+   "summary": "권제·정인지·안지가 조상 여섯 대의 행적을 125장의 노래로 지어 올렸다. 새 글자로 적은 가장 이른 글이며, 주해를 붙여 1447년에 간행되었다.",
+   "dateClaimIds": [
+    "claim-be3-yb-t1445",
+    "claim-be3-yb-t1447"
+   ],
+   "actionClaimIds": [
+    "claim-be3-yb-authors"
+   ],
+   "place": {
+    "label": "한양 궁궐(경복궁 교태전 일원)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.977054,
+    "lat": 37.579908,
+    "claimIds": [
+     "claim-be3-yb-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-gyotaejeon"
+    ],
+    "coordinateNote": "편찬·간행 장소가 확인되지 않아 경복궁 안 한 점(교태전)의 위키백과 표시 좌표를 쓴다.",
+    "setting": "palace"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-jeong-inji-e0065805",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-yb-authors"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-yb-t1445",
+      "claim-be3-yb-t1447"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "sceneFunction": "print_workshop"
+  },
+  {
+   "id": "scene-be3-hunminjeongeum-haerye",
+   "itemId": "hs-joseon-early-hunminjeongeum-haerye",
+   "eventId": "work-hs-hunminjeongeum-haerye",
+   "title": "훈민정음을 반포하다",
+   "startYear": 1446,
+   "endYear": 1446,
+   "kind": "publication",
+   "summary": "세종 28년 9월, 글자의 원리와 쓰는 법을 풀이한 해례본이 나왔다. 정인지·신숙주·성삼문 등 집현전 학자들이 해설을 썼다.",
+   "dateClaimIds": [
+    "claim-be3-hj-t1446"
+   ],
+   "actionClaimIds": [
+    "claim-be3-hj-authors",
+    "claim-be3-hj-je"
+   ],
+   "place": {
+    "label": "경복궁 근정전",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.97694,
+    "lat": 37.57861,
+    "claimIds": [
+     "claim-be3-hj-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-geunjeongjeon"
+    ],
+    "coordinateNote": "반포 장소의 기록이 없어 경복궁 정전인 근정전의 위키백과 표시 좌표를 쓴다.",
+    "setting": "palace"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-jeong-inji-e0065805",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-hj-authors"
+     ]
+    },
+    {
+     "entityId": "person-encykorea-seong-sammun-e0029365",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-hj-je"
+     ]
+    },
+    {
+     "entityId": "person-encykorea-sin-sukju-e0065805",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-hj-authors"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-hj-t1446"
+     ]
+    }
+   },
+   "priority": "core",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "sceneFunction": "print_workshop"
+  },
+  {
+   "id": "scene-be3-mongyudowon",
+   "itemId": "hs-joseon-early-mongyudowon",
+   "eventId": "work-hs-mongyudowon",
+   "title": "몽유도원도를 그리다",
+   "startYear": 1447,
+   "endYear": 1447,
+   "kind": "heritage",
+   "summary": "안평대군이 꿈에서 본 복숭아꽃 마을을 안견에게 이야기하자 안견이 사흘 만에 그려냈다. 그림은 지금 일본 덴리대학에 있고, 안평대군의 별장 무계정사는 1453년 뒤 터만 남았다.",
+   "dateClaimIds": [
+    "claim-be3-md-t1447"
+   ],
+   "actionClaimIds": [
+    "claim-be3-md-dream",
+    "claim-be3-md-3days"
+   ],
+   "place": {
+    "label": "한양 무계정사 터(안평대군 집터)",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.96306,
+    "lat": 37.59167,
+    "claimIds": [
+     "claim-be3-md-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-mugyejeongsa"
+    ],
+    "coordinateNote": "안평대군 이용 집터(무계정사지)의 위키백과 표시 좌표. 무계정사는 1453년 안평대군이 죽은 뒤 폐허가 되어 지금은 터만 남아 있다.",
+    "setting": "village"
+   },
+   "participants": [
+    {
+     "entityId": "person-hs-an-gyeon",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-md-3days"
+     ]
+    },
+    {
+     "entityId": "person-hs-anpyeong-daegun",
+     "role": "ruler",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-md-dream"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-md-t1447"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "heritageType": "artifact",
+   "persistence": {
+    "kind": "facility",
+    "basisClaimIds": [
+     "claim-be3-md-mugye",
+     "claim-be3-md-ruin"
+    ],
+    "from": 1447,
+    "to": 1453
+   },
+   "relatedClaimIds": [
+    "claim-be3-md-mugye",
+    "claim-be3-md-ruin"
+   ]
+  },
+  {
+   "id": "scene-be3-worin",
+   "itemId": "hs-joseon-early-worin",
+   "eventId": "work-hs-worin",
+   "title": "월인천강지곡을 펴내다",
+   "startYear": 1447,
+   "endYear": 1448,
+   "kind": "publication",
+   "summary": "세종이 석가모니의 공덕을 기리는 노래를 한글로 엮어 책으로 펴냈다. 석보상절이 이루어진 1447년에서 이듬해 사이에 간행된 것으로 본다.",
+   "dateClaimIds": [
+    "claim-be3-wr-t1447"
+   ],
+   "actionClaimIds": [
+    "claim-be3-wr-def",
+    "claim-be3-wr-sejong"
+   ],
+   "place": {
+    "label": "경복궁 함원전 일원",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.976614,
+    "lat": 37.579972,
+    "claimIds": [
+     "claim-be3-wr-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-hamwonjeon"
+    ],
+    "coordinateNote": "세종이 궁궐 안에서 불사를 행하던 함원전의 위키백과 표시 좌표. 간행 장소는 확인되지 않는다.",
+    "setting": "palace"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-sejong-e0029857",
+     "role": "ruler",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-wr-def"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-wr-t1447"
+     ]
+    }
+   },
+   "priority": "extended",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "sceneFunction": "print_workshop"
+  },
+  {
+   "id": "scene-be3-singijeon",
+   "itemId": "hs-joseon-early-singijeon",
+   "eventId": "thing-hs-singijeon",
+   "title": "신기전을 만들다",
+   "startYear": 1448,
+   "endYear": 1448,
+   "kind": "heritage",
+   "summary": "고려 말 최무선이 만든 주화를 세종 30년에 고쳐 신기전으로 삼았다. 크기에 따라 대·산화·중·소 신기전으로 나뉘었고 군기감에서 만들었다.",
+   "dateClaimIds": [
+    "claim-be3-sg-t1448"
+   ],
+   "actionClaimIds": [
+    "claim-be3-sg-make",
+    "claim-be3-sg-kinds",
+    "claim-be3-sg-site"
+   ],
+   "place": {
+    "label": "한양 군기감(뒤의 군기시) 터",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.977717,
+    "lat": 37.566381,
+    "claimIds": [
+     "claim-be3-sg-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-seoul-cityhall"
+    ],
+    "coordinateNote": "군기시가 있던 자리로 전하는 서울특별시청의 위키백과 표시 좌표. 군기감(뒤의 군기시)은 1884년 폐지되었고 1448년의 신기전 실물은 전하지 않아 존속 표시를 두지 않는다.",
+    "setting": "office"
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-sg-t1448"
+     ]
+    }
+   },
+   "priority": "extended",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "heritageType": "artifact",
+   "relatedClaimIds": [
+    "claim-be3-sg-1466"
+   ]
+  },
+  {
+   "id": "scene-be3-buncheong",
+   "itemId": "hs-joseon-early-buncheong",
+   "eventId": "thing-hs-buncheong",
+   "title": "분청사기를 굽다",
+   "startYear": 1450,
+   "endYear": 1550,
+   "kind": "excavation",
+   "summary": "청자 바탕에 흰 흙을 입혀 꾸민 그릇이 15~16세기에 널리 쓰였다. 공주 학봉리 가마터는 철화 분청사기를 굽던 대표적인 자리다.",
+   "dateClaimIds": [
+    "claim-be3-bc-t1440",
+    "claim-be3-bc-t1536"
+   ],
+   "actionClaimIds": [
+    "claim-be3-bc-15c",
+    "claim-be3-bc-16c",
+    "claim-be3-bc-place",
+    "claim-be3-bc-addr"
+   ],
+   "place": {
+    "label": "공주 학봉리 요지(계룡산 가마터)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 127.24194,
+    "lat": 36.3475,
+    "claimIds": [
+     "claim-be3-bc-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-hakbongri-yoji"
+    ],
+    "coordinateNote": "공주 학봉리 요지의 위키백과 표시 좌표."
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-bc-t1440",
+      "claim-be3-bc-t1536"
+     ]
+    }
+   },
+   "priority": "core",
+   "category": "culture",
+   "region": "central",
+   "decade": 1450,
+   "sceneFunction": "kiln"
+  },
+  {
+   "id": "scene-be3-goryeosa",
+   "itemId": "hs-joseon-early-goryeosa",
+   "eventId": "work-hs-goryeosa",
+   "title": "고려사를 바치다",
+   "startYear": 1451,
+   "endYear": 1451,
+   "kind": "publication",
+   "summary": "문종 원년 8월, 김종서·정인지 등이 앞 왕조의 역사를 기전체 139권으로 정리해 올렸다. 편년체를 기전체로 바꾸자는 건의가 받아들여진 결과였다.",
+   "dateClaimIds": [
+    "claim-be3-gs-t1451"
+   ],
+   "actionClaimIds": [
+    "claim-be3-gs-authors",
+    "claim-be3-gs-gijeon",
+    "claim-be3-gs-jeon"
+   ],
+   "place": {
+    "label": "한양 춘추관(경복궁 안)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.9776889,
+    "lat": 37.5796167,
+    "claimIds": [
+     "claim-be3-gs-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-jagyeongjeon"
+    ],
+    "coordinateNote": "춘추관의 자리가 확인되지 않아 경복궁 안 한 점(자경전 일원)의 위키백과 표시 좌표를 쓴다.",
+    "setting": "office"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-kim-jongseo-e0010494",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-gs-authors"
+     ]
+    },
+    {
+     "entityId": "person-encykorea-jeong-inji-e0065805",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-gs-jeon"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-gs-t1451"
+     ]
+    }
+   },
+   "priority": "core",
+   "category": "culture",
+   "region": "central",
+   "decade": 1450,
+   "sceneFunction": "print_workshop"
+  },
+  {
+   "id": "scene-be3-danjong",
+   "itemId": "hs-joseon-early-danjong",
+   "eventId": "person-encykorea-danjong-e0013661",
+   "title": "단종, 영월 청령포에 갇히다",
+   "startYear": 1452,
+   "endYear": 1457,
+   "kind": "portrait",
+   "summary": "열두 살에 왕위에 올랐다가 숙부에게 자리를 넘기고 노산군으로 낮춰졌다. 1457년 영월 청령포에 유배되어 그해 세상을 떠났다.",
+   "dateClaimIds": [
+    "claim-be3-dj-reign",
+    "claim-be3-dj-life"
+   ],
+   "actionClaimIds": [
+    "claim-be3-dj-exile",
+    "claim-be3-dj-place",
+    "claim-be3-dj-cp"
+   ],
+   "place": {
+    "label": "영월 청령포",
+    "medium": "land",
+    "precision": "site",
+    "lon": 128.444056,
+    "lat": 37.175028,
+    "claimIds": [
+     "claim-be3-dj-loc"
+    ],
+    "coordinateSourceIds": [],
+    "coordinateNote": "청령포의 표시 좌표(로컬 원문 조각 인용). 세 면이 강으로 막힌 유배지다.",
+    "setting": "village"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-danjong-e0013661",
+     "role": "ruler",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-dj-reign",
+      "claim-be3-dj-exile"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-dj-reign",
+      "claim-be3-dj-life"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "person",
+   "region": "central",
+   "decade": 1450
+  },
+  {
+   "id": "scene-be3-gyeyu-jeongnan",
+   "itemId": "hs-joseon-early-gyeyu-jeongnan",
+   "eventId": "event-hs-gyeyu-jeongnan",
+   "title": "계유정난",
+   "startYear": 1453,
+   "endYear": 1453,
+   "kind": "battle",
+   "summary": "단종 1년 10월 밤, 수양대군이 심복을 데리고 좌의정 김종서의 집을 찾아가 그를 쓰러뜨렸다. 황보인 등 원로대신도 함께 제거되었고 협력자 43인이 정난공신이 되었다.",
+   "dateClaimIds": [
+    "claim-be3-gy-t1453",
+    "claim-be3-gy-kim"
+   ],
+   "actionClaimIds": [
+    "claim-be3-gy-night",
+    "claim-be3-gy-gongsin"
+   ],
+   "place": {
+    "label": "한양 도성 서편 김종서의 집 일대(집터 미상)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.96944,
+    "lat": 37.56861,
+    "claimIds": [
+     "claim-be3-gy-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-donuimun"
+    ],
+    "coordinateNote": "김종서의 집터가 확인되지 않아 도성 서쪽 돈의문 터의 위키백과 표시 좌표를 쓴다.",
+    "setting": "village"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-sejo-e0029849",
+     "role": "commander",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-gy-gongsin"
+     ]
+    },
+    {
+     "entityId": "person-encykorea-kim-jongseo-e0010494",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "b",
+     "claimIds": [
+      "claim-be3-gy-kim"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-gy-t1453",
+      "claim-be3-gy-kim"
+     ]
+    }
+   },
+   "priority": "core",
+   "category": "administration",
+   "region": "central",
+   "decade": 1450,
+   "sceneFunction": "civil_conflict"
+  },
+  {
+   "id": "scene-be3-hungu",
+   "itemId": "hs-joseon-early-hungu",
+   "eventId": "group-hs-hungu",
+   "title": "훈구 세력이 자리 잡다",
+   "startYear": 1455,
+   "endYear": 1455,
+   "kind": "assembly",
+   "summary": "세조가 즉위한 뒤 좌익공신이 책봉되면서, 여러 차례 공신이 되고 높은 벼슬을 이어간 사람들이 하나의 세력을 이루었다. 한명회처럼 봉군된 이들이 중심이었다.",
+   "dateClaimIds": [
+    "claim-be3-hg-t1455"
+   ],
+   "actionClaimIds": [
+    "claim-be3-hg-list",
+    "claim-be3-hg-def",
+    "claim-be3-hg-sejo",
+    "claim-be3-hg-han"
+   ],
+   "place": {
+    "label": "한양 종묘",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.99417,
+    "lat": 37.57444,
+    "claimIds": [
+     "claim-be3-hg-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-jongmyo"
+    ],
+    "coordinateNote": "훈구는 건물이 아니라 세력을 가리킨다. 공신을 배향한 종묘의 위키백과 표시 좌표로 자리를 잡았다.",
+    "setting": "temple"
+   },
+   "participants": [
+    {
+     "entityId": "ent-wia-han-myeonghoe",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-hg-han"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-hg-t1455"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "settlement",
+   "region": "central",
+   "decade": 1450
+  },
+  {
+   "id": "scene-be3-sejo",
+   "itemId": "hs-joseon-early-sejo",
+   "eventId": "person-encykorea-sejo-e0029849",
+   "title": "세조의 치세",
+   "startYear": 1455,
+   "endYear": 1468,
+   "kind": "portrait",
+   "summary": "조카 단종의 자리를 넘겨받아 왕이 되었다. 6조를 직접 부려 왕권을 세우고 직전법을 시행했으며 경국대전 편찬을 시작했다.",
+   "dateClaimIds": [
+    "claim-be3-sj-reign",
+    "claim-be3-sj-death"
+   ],
+   "actionClaimIds": [
+    "claim-be3-sj-order",
+    "claim-be3-gy-gongsin"
+   ],
+   "place": {
+    "label": "경복궁 사정전",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.977003,
+    "lat": 37.579068,
+    "claimIds": [
+     "claim-be3-sj-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-sajeongjeon"
+    ],
+    "coordinateNote": "임금이 정무를 보던 경복궁 편전 사정전의 위키백과 표시 좌표.",
+    "setting": "palace"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-sejo-e0029849",
+     "role": "ruler",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-sj-reign",
+      "claim-be3-sj-order"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-sj-reign",
+      "claim-be3-sj-death"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "person",
+   "region": "central",
+   "decade": 1450,
+   "relatedClaimIds": [
+    "claim-be3-sj-birth"
+   ]
+  },
+  {
+   "id": "scene-be3-yukjo-jikgye-restore",
+   "itemId": "hs-joseon-early-yukjo-jikgye-restore",
+   "eventId": "inst-hs-yukjo-jikgye",
+   "title": "6조 직계제를 되돌리다",
+   "startYear": 1455,
+   "endYear": 1455,
+   "kind": "court",
+   "summary": "세조는 즉위한 그해 윤6월부터 6조가 왕에게 곧바로 아뢰도록 되돌렸다. 이듬해에는 집현전마저 혁파되어 왕권을 견제하던 장치가 줄었다.",
+   "dateClaimIds": [
+    "claim-be3-yj-t1455"
+   ],
+   "actionClaimIds": [
+    "claim-be3-yj-def",
+    "claim-be3-yj-jip"
+   ],
+   "place": {
+    "label": "한양 궁궐 편전 일곽(경복궁 자선당 일원)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.977945,
+    "lat": 37.579015,
+    "claimIds": [
+     "claim-be3-yj-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-jaseondang"
+    ],
+    "coordinateNote": "6조가 왕에게 직접 아뢰던 편전 일곽의 자리가 확인되지 않아 경복궁 안 한 점(자선당)의 표시 좌표를 쓴다.",
+    "setting": "office"
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-yj-t1455"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "administration",
+   "region": "central",
+   "decade": 1450
+  },
+  {
+   "id": "scene-be3-sayuksin",
+   "itemId": "hs-joseon-early-sayuksin",
+   "eventId": "event-hs-sayuksin",
+   "title": "단종 복위 운동(사육신)",
+   "startYear": 1456,
+   "endYear": 1456,
+   "kind": "court",
+   "summary": "집현전 출신 문신들이 1455년 가을부터 모의해 1456년 6월 창덕궁 연회에서 세조를 없애려 했다. 계획이 어그러져 성삼문 등이 목숨을 잃고 집현전도 혁파되었다.",
+   "dateClaimIds": [
+    "claim-be3-sy-t1456",
+    "claim-be3-sy-seong"
+   ],
+   "actionClaimIds": [
+    "claim-be3-sy-def",
+    "claim-be3-sy-t1455",
+    "claim-be3-sy-jip",
+    "claim-be3-sy-seongdef"
+   ],
+   "place": {
+    "label": "노량진 사육신묘",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.94972,
+    "lat": 37.51333,
+    "claimIds": [
+     "claim-be3-sy-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-sayuksinmyo"
+    ],
+    "coordinateNote": "사육신을 모신 노량진 사육신묘의 위키백과 표시 좌표. 거사를 꾸민 자리는 창덕궁이었다.",
+    "setting": "village"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-seong-sammun-e0029365",
+     "role": "scholar",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-sy-def",
+      "claim-be3-sy-seong"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-sy-t1456",
+      "claim-be3-sy-seong"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "administration",
+   "region": "central",
+   "decade": 1450,
+   "sceneFunction": "persecution"
+  },
+  {
+   "id": "scene-be3-jingwan",
+   "itemId": "hs-joseon-early-jingwan",
+   "eventId": "inst-hs-jingwan",
+   "title": "진관 체제로 고치다",
+   "startYear": 1457,
+   "endYear": 1457,
+   "kind": "construction",
+   "summary": "1456년 전국으로 넓힌 군익도 체제를 이듬해 진관 체제로 바꾸었다. 절도사의 주진 아래 거진을 두고 둘레 고을을 붙여 제 고장을 스스로 지키게 했다.",
+   "dateClaimIds": [
+    "claim-be3-jg-t1457"
+   ],
+   "actionClaimIds": [
+    "claim-be3-jg-t1456",
+    "claim-be3-jg-def",
+    "claim-be3-jg-dongnae"
+   ],
+   "place": {
+    "label": "경상도 동래진(동래읍성)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 129.09389,
+    "lat": 35.20389,
+    "claimIds": [
+     "claim-be3-jg-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-dongnae-eupseong"
+    ],
+    "coordinateNote": "동래읍성의 위키백과 표시 좌표. 동래는 경상도의 거진 가운데 하나였다."
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-jg-t1457"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "administration",
+   "region": "south",
+   "decade": 1450,
+   "sceneFunction": "fortress"
+  },
+  {
+   "id": "scene-be3-owi",
+   "itemId": "hs-joseon-early-owi",
+   "eventId": "inst-hs-owi",
+   "title": "중앙군을 5위로 묶다",
+   "startYear": 1457,
+   "endYear": 1457,
+   "kind": "assembly",
+   "summary": "문종 때 12사를 5사로 줄인 데 이어 세조 3년에 5위로 고쳤다. 의흥위·용양위·호분위 등 다섯 부대가 도성을 지켰고 경국대전에 법으로 실렸다.",
+   "dateClaimIds": [
+    "claim-be3-ow-t1457"
+   ],
+   "actionClaimIds": [
+    "claim-be3-ow-units",
+    "claim-be3-ow-def"
+   ],
+   "place": {
+    "label": "한양 도성 숭례문",
+    "medium": "land",
+    "precision": "site",
+    "lon": 126.97528,
+    "lat": 37.55972,
+    "claimIds": [
+     "claim-be3-ow-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-sungnyemun"
+    ],
+    "coordinateNote": "오위도총부의 자리가 확인되지 않아, 중앙군이 지킨 도성문인 숭례문의 표시 좌표를 쓴다.",
+    "setting": "office"
+   },
+   "participants": [],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-ow-t1457"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "administration",
+   "region": "central",
+   "decade": 1450
+  },
+  {
+   "id": "scene-be3-jikjeonbeop",
+   "itemId": "hs-joseon-early-jikjeonbeop",
+   "eventId": "inst-hs-jikjeonbeop",
+   "title": "직전법을 시행하다",
+   "startYear": 1466,
+   "endYear": 1466,
+   "kind": "survey",
+   "summary": "나누어 줄 땅이 모자라자 세조 12년에 과전을 없애고 현직 관리에게만 수조지를 주었다. 수신전과 휼양전도 함께 폐지되었다.",
+   "dateClaimIds": [
+    "claim-be3-jj-t1466"
+   ],
+   "actionClaimIds": [
+    "claim-be3-jj-abolish",
+    "claim-be3-jj-sejo"
+   ],
+   "place": {
+    "label": "한양 궁궐(창덕궁)",
+    "medium": "land",
+    "precision": "area",
+    "lon": 126.991175,
+    "lat": 37.5794833,
+    "claimIds": [
+     "claim-be3-jj-loc"
+    ],
+    "coordinateSourceIds": [
+     "src-be3-kowiki-changdeokgung"
+    ],
+    "coordinateNote": "직전법을 맡은 호조 청사의 자리가 확인되지 않아 한양 궁궐(창덕궁)의 표시 좌표를 쓴다. 이 점은 호조 청사의 위치가 아니라 한양 궁궐을 가리키는 표시 좌표다.",
+    "setting": "office"
+   },
+   "participants": [
+    {
+     "entityId": "person-encykorea-sejo-e0029849",
+     "role": "ruler",
+     "presence": "on-site",
+     "side": "a",
+     "claimIds": [
+      "claim-be3-jj-sejo"
+     ]
+    }
+   ],
+   "effects": {
+    "priority": {
+     "enabled": true,
+     "claimIds": [
+      "claim-be3-jj-t1466"
+     ]
+    }
+   },
+   "priority": "standard",
+   "category": "economy",
+   "region": "central",
+   "decade": 1460
+  }
+ ],
+ "facts": [
+  {
+   "id": "fact-be3-uijeongbu-seosa",
+   "itemId": "hs-joseon-early-uijeongbu-seosa",
+   "category": "administration",
+   "region": "central",
+   "decade": 1430,
+   "year": 1436,
+   "yearVerbatim": "1436년(세종 18)",
+   "placeLabel": "한양 의정부",
+   "modernPlace": "서울특별시 종로구 세종대로",
+   "what": "재상들이 먼저 의논하게 해 신하와 함께 다스렸다",
+   "claimIds": [
+    "claim-be3-ujb-t1436",
+    "claim-be3-ujb-act",
+    "claim-be3-ujb-role",
+    "claim-be3-ujb-loc"
+   ],
+   "sceneId": "scene-be3-uijeongbu-seosa",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-01-03] · 우선순위 standard",
+   "lon": 126.9770194,
+   "lat": 37.5760444,
+   "coordinateBasis": "location claim-be3-ujb-loc"
+  },
+  {
+   "id": "fact-be3-cheugugi",
+   "itemId": "hs-joseon-early-cheugugi",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "year": 1441,
+   "yearVerbatim": "1441년(세종 23)",
+   "placeLabel": "한양 서운관 관측 구역(경복궁 간의대 일원)",
+   "modernPlace": "서울특별시 종로구",
+   "what": "비의 양을 재어 농사와 세금에 쓴 세계 최초급 기구",
+   "claimIds": [
+    "claim-be3-cu-t1441",
+    "claim-be3-cu-t1442",
+    "claim-be3-cu-act",
+    "claim-be3-cu-seoungwan",
+    "claim-be3-cu-loc"
+   ],
+   "sceneId": "scene-be3-cheugugi",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-02] · 우선순위 core · 1441년 측우기 실물의 존속 근거가 없어 존속 표시를 두지 않는다",
+   "lon": 126.975889,
+   "lat": 37.57975,
+   "coordinateBasis": "location claim-be3-cu-loc"
+  },
+  {
+   "id": "fact-be3-gyehae-treaty",
+   "itemId": "hs-joseon-early-gyehae-treaty",
+   "category": "foreign",
+   "region": "island",
+   "decade": 1440,
+   "year": 1443,
+   "yearVerbatim": "1443년(세종 25)",
+   "placeLabel": "대마도",
+   "modernPlace": "일본 나가사키현 쓰시마시",
+   "what": "해마다 오는 배와 쌀의 양을 정한 일본과의 약속",
+   "claimIds": [
+    "claim-be3-gh-t1443",
+    "claim-be3-gh-sign",
+    "claim-be3-gh-ships",
+    "claim-be3-gh-loc"
+   ],
+   "sceneId": "scene-be3-gyehae-treaty",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-01] · 우선순위 standard",
+   "lon": 129.28753,
+   "lat": 34.20264,
+   "coordinateBasis": "location claim-be3-gh-loc"
+  },
+  {
+   "id": "fact-be3-hunminjeongeum-creation",
+   "itemId": "hs-joseon-early-hunminjeongeum-creation",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "year": 1443,
+   "yearVerbatim": "1443년(세종 25)",
+   "placeLabel": "경복궁",
+   "modernPlace": "서울특별시 종로구 사직로 161",
+   "what": "백성이 쉽게 쓸 수 있는 우리 글자를 만들었다",
+   "claimIds": [
+    "claim-be3-hun-t1443",
+    "claim-be3-hun-act",
+    "claim-be3-hun-je",
+    "claim-be3-hun-loc"
+   ],
+   "sceneId": "scene-be3-hunminjeongeum-creation",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 core",
+   "lon": 126.97722,
+   "lat": 37.57861,
+   "coordinateBasis": "location claim-be3-hun-loc"
+  },
+  {
+   "id": "fact-be3-chiljeongsan",
+   "itemId": "hs-joseon-early-chiljeongsan",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "year": 1444,
+   "yearVerbatim": "1444년(세종 26)",
+   "placeLabel": "한양 서운관 청사(경복궁 궐내각사 일원)",
+   "modernPlace": "서울특별시 종로구",
+   "what": "한양을 기준으로 계산한 우리 역법",
+   "claimIds": [
+    "claim-be3-cj-t1444",
+    "claim-be3-cj-t1442",
+    "claim-be3-cj-act",
+    "claim-be3-cj-loc"
+   ],
+   "sceneId": "scene-be3-chiljeongsan",
+   "confidence": "medium",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 core",
+   "lon": 126.975278,
+   "lat": 37.576667,
+   "coordinateBasis": "location claim-be3-cj-loc"
+  },
+  {
+   "id": "fact-be3-gongbeop",
+   "itemId": "hs-joseon-early-gongbeop",
+   "category": "economy",
+   "region": "central",
+   "decade": 1440,
+   "year": 1444,
+   "yearVerbatim": "1444년(세종 26)",
+   "placeLabel": "한양 육조거리 호조",
+   "modernPlace": "서울특별시 종로구",
+   "what": "땅의 질과 그해 작황에 따라 세금을 매긴 제도",
+   "claimIds": [
+    "claim-be3-gb-t1444",
+    "claim-be3-gb-hojo",
+    "claim-be3-gb-t1436",
+    "claim-be3-gb-loc"
+   ],
+   "sceneId": "scene-be3-gongbeop",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-02] · 우선순위 standard",
+   "lon": 126.97692,
+   "lat": 37.576942,
+   "coordinateBasis": "location claim-be3-gb-loc"
+  },
+  {
+   "id": "fact-be3-uibang-yuchwi",
+   "itemId": "hs-joseon-early-uibang-yuchwi",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "year": 1445,
+   "yearVerbatim": "1445년(세종 27)",
+   "placeLabel": "한양 집현전",
+   "modernPlace": "서울특별시 종로구",
+   "what": "동아시아 의학 지식을 집대성한 거대한 의학 백과",
+   "claimIds": [
+    "claim-be3-ub-t1445",
+    "claim-be3-ub-t1477",
+    "claim-be3-ub-jip",
+    "claim-be3-ub-loc"
+   ],
+   "sceneId": "scene-be3-uibang-yuchwi",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 extended",
+   "lon": 126.975954,
+   "lat": 37.578964,
+   "coordinateBasis": "location claim-be3-ub-loc"
+  },
+  {
+   "id": "fact-be3-yongbi",
+   "itemId": "hs-joseon-early-yongbi",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "year": 1445,
+   "yearVerbatim": "1445년(세종 27)",
+   "placeLabel": "한양",
+   "modernPlace": "서울특별시 종로구",
+   "what": "새 글자로 처음 지어 조선 건국을 노래한 시",
+   "claimIds": [
+    "claim-be3-yb-t1445",
+    "claim-be3-yb-t1447",
+    "claim-be3-yb-authors",
+    "claim-be3-yb-loc"
+   ],
+   "sceneId": "scene-be3-yongbi",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 standard",
+   "lon": 126.977054,
+   "lat": 37.579908,
+   "coordinateBasis": "location claim-be3-yb-loc"
+  },
+  {
+   "id": "fact-be3-hunminjeongeum-haerye",
+   "itemId": "hs-joseon-early-hunminjeongeum-haerye",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "year": 1446,
+   "yearVerbatim": "정통 11년(1446) 9월",
+   "placeLabel": "한양",
+   "modernPlace": "서울특별시 종로구",
+   "what": "글자의 원리와 쓰는 법을 담은 해례본을 펴냈다",
+   "claimIds": [
+    "claim-be3-hj-t1446",
+    "claim-be3-hj-authors",
+    "claim-be3-hj-je",
+    "claim-be3-hj-loc"
+   ],
+   "sceneId": "scene-be3-hunminjeongeum-haerye",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 core",
+   "lon": 126.97694,
+   "lat": 37.57861,
+   "coordinateBasis": "location claim-be3-hj-loc"
+  },
+  {
+   "id": "fact-be3-mongyudowon",
+   "itemId": "hs-joseon-early-mongyudowon",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "year": 1447,
+   "yearVerbatim": "1447년(세종 29)",
+   "placeLabel": "한양 안평대군 사저 일대",
+   "modernPlace": "서울특별시 종로구",
+   "what": "안평대군의 꿈을 안견이 그린 조선 전기 대표 그림",
+   "claimIds": [
+    "claim-be3-md-t1447",
+    "claim-be3-md-dream",
+    "claim-be3-md-3days",
+    "claim-be3-md-mugye",
+    "claim-be3-md-loc",
+    "claim-be3-md-ruin"
+   ],
+   "sceneId": "scene-be3-mongyudowon",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 standard · 존속 표시는 그림이 아니라 안평대군의 별장 무계정사 터이며 1453년 폐허가 되었다",
+   "lon": 126.96306,
+   "lat": 37.59167,
+   "coordinateBasis": "location claim-be3-md-loc",
+   "persistence": {
+    "kind": "facility",
+    "from": 1447,
+    "to": 1453
+   }
+  },
+  {
+   "id": "fact-be3-worin",
+   "itemId": "hs-joseon-early-worin",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "year": 1447,
+   "yearVerbatim": "1447년(세종 29)",
+   "placeLabel": "한양",
+   "modernPlace": "서울특별시 종로구",
+   "what": "한글로 부처의 일생을 노래한 세종의 찬불가",
+   "claimIds": [
+    "claim-be3-wr-t1447",
+    "claim-be3-wr-def",
+    "claim-be3-wr-sejong",
+    "claim-be3-wr-loc"
+   ],
+   "sceneId": "scene-be3-worin",
+   "confidence": "medium",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 extended",
+   "lon": 126.976614,
+   "lat": 37.579972,
+   "coordinateBasis": "location claim-be3-wr-loc"
+  },
+  {
+   "id": "fact-be3-singijeon",
+   "itemId": "hs-joseon-early-singijeon",
+   "category": "culture",
+   "region": "central",
+   "decade": 1440,
+   "year": 1448,
+   "yearVerbatim": "1448년(세종 30)",
+   "placeLabel": "한양 군기감 터",
+   "modernPlace": "서울특별시 중구 세종대로 110",
+   "what": "화약을 달아 한 번에 쏘아 올린 조선의 로켓 화살",
+   "claimIds": [
+    "claim-be3-sg-t1448",
+    "claim-be3-sg-make",
+    "claim-be3-sg-kinds",
+    "claim-be3-sg-site",
+    "claim-be3-sg-loc"
+   ],
+   "sceneId": "scene-be3-singijeon",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 extended · 15세기 신기전 실물이 전하지 않아 존속 표시를 두지 않는다",
+   "lon": 126.977717,
+   "lat": 37.566381,
+   "coordinateBasis": "location claim-be3-sg-loc"
+  },
+  {
+   "id": "fact-be3-buncheong",
+   "itemId": "hs-joseon-early-buncheong",
+   "category": "culture",
+   "region": "central",
+   "decade": 1450,
+   "year": 1450,
+   "yearVerbatim": "15세기~16세기 전반",
+   "placeLabel": "공주 학봉리 분청사기 가마터",
+   "modernPlace": "충청남도 공주시 반포면 학봉리",
+   "what": "청자에 흰 흙을 입혀 꾸민 자유분방한 조선 전기 그릇",
+   "claimIds": [
+    "claim-be3-bc-t1440",
+    "claim-be3-bc-t1536",
+    "claim-be3-bc-15c",
+    "claim-be3-bc-16c",
+    "claim-be3-bc-place",
+    "claim-be3-bc-addr",
+    "claim-be3-bc-loc"
+   ],
+   "sceneId": "scene-be3-buncheong",
+   "confidence": "medium",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 core",
+   "lon": 127.24194,
+   "lat": 36.3475,
+   "coordinateBasis": "location claim-be3-bc-loc",
+   "persistence": {
+    "kind": "facility",
+    "from": 1450,
+    "to": 1550
+   }
+  },
+  {
+   "id": "fact-be3-goryeosa",
+   "itemId": "hs-joseon-early-goryeosa",
+   "category": "culture",
+   "region": "central",
+   "decade": 1450,
+   "year": 1451,
+   "yearVerbatim": "1451년(문종 1)",
+   "placeLabel": "한양 춘추관",
+   "modernPlace": "서울특별시 종로구",
+   "what": "앞 왕조 고려의 역사를 기전체로 정리한 관찬 역사서",
+   "claimIds": [
+    "claim-be3-gs-t1451",
+    "claim-be3-gs-authors",
+    "claim-be3-gs-gijeon",
+    "claim-be3-gs-jeon",
+    "claim-be3-gs-loc"
+   ],
+   "sceneId": "scene-be3-goryeosa",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-04] · 우선순위 core",
+   "lon": 126.9776889,
+   "lat": 37.5796167,
+   "coordinateBasis": "location claim-be3-gs-loc"
+  },
+  {
+   "id": "fact-be3-danjong",
+   "itemId": "hs-joseon-early-danjong",
+   "category": "person",
+   "region": "central",
+   "decade": 1450,
+   "year": 1452,
+   "yearVerbatim": "1452년(문종 2)",
+   "placeLabel": "영월 청령포",
+   "modernPlace": "강원특별자치도 영월군 남면 광천리",
+   "what": "어린 나이에 왕위를 빼앗기고 영월로 쫓겨난 임금",
+   "claimIds": [
+    "claim-be3-dj-reign",
+    "claim-be3-dj-life",
+    "claim-be3-dj-exile",
+    "claim-be3-dj-loc",
+    "claim-be3-dj-place",
+    "claim-be3-dj-cp"
+   ],
+   "sceneId": "scene-be3-danjong",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-01-03] · 우선순위 standard",
+   "lon": 128.444056,
+   "lat": 37.175028,
+   "coordinateBasis": "location claim-be3-dj-loc"
+  },
+  {
+   "id": "fact-be3-gyeyu-jeongnan",
+   "itemId": "hs-joseon-early-gyeyu-jeongnan",
+   "category": "administration",
+   "region": "central",
+   "decade": 1450,
+   "year": 1453,
+   "yearVerbatim": "1453년(단종 1)",
+   "placeLabel": "한양 도성 서편(김종서의 집터 미상)",
+   "modernPlace": "서울특별시 종로구",
+   "what": "수양대군이 김종서를 죽이고 권력을 잡은 정변",
+   "claimIds": [
+    "claim-be3-gy-t1453",
+    "claim-be3-gy-night",
+    "claim-be3-gy-gongsin",
+    "claim-be3-gy-kim",
+    "claim-be3-gy-loc"
+   ],
+   "sceneId": "scene-be3-gyeyu-jeongnan",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-01-03] · 우선순위 core",
+   "lon": 126.96944,
+   "lat": 37.56861,
+   "coordinateBasis": "location claim-be3-gy-loc"
+  },
+  {
+   "id": "fact-be3-hungu",
+   "itemId": "hs-joseon-early-hungu",
+   "category": "settlement",
+   "region": "central",
+   "decade": 1450,
+   "year": 1455,
+   "yearVerbatim": "1455년(세조 1)",
+   "placeLabel": "한양",
+   "modernPlace": "서울특별시 종로구",
+   "what": "공신으로 땅과 벼슬을 받아 권력을 쥔 세력",
+   "claimIds": [
+    "claim-be3-hg-t1455",
+    "claim-be3-hg-list",
+    "claim-be3-hg-def",
+    "claim-be3-hg-sejo",
+    "claim-be3-hg-han",
+    "claim-be3-hg-loc"
+   ],
+   "sceneId": "scene-be3-hungu",
+   "confidence": "medium",
+   "note": "성취기준 [10한사1-01-03] · 우선순위 standard",
+   "lon": 126.99417,
+   "lat": 37.57444,
+   "coordinateBasis": "location claim-be3-hg-loc"
+  },
+  {
+   "id": "fact-be3-sejo",
+   "itemId": "hs-joseon-early-sejo",
+   "category": "person",
+   "region": "central",
+   "decade": 1450,
+   "year": 1455,
+   "yearVerbatim": "1455년(세조 1)",
+   "placeLabel": "경복궁 사정전",
+   "modernPlace": "서울특별시 종로구 사직로 161",
+   "what": "조카의 자리를 빼앗았지만 법전 편찬을 시작한 임금",
+   "claimIds": [
+    "claim-be3-sj-reign",
+    "claim-be3-sj-birth",
+    "claim-be3-sj-death",
+    "claim-be3-sj-order",
+    "claim-be3-sj-loc"
+   ],
+   "sceneId": "scene-be3-sejo",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-01-03] · 우선순위 standard",
+   "lon": 126.977003,
+   "lat": 37.579068,
+   "coordinateBasis": "location claim-be3-sj-loc"
+  },
+  {
+   "id": "fact-be3-yukjo-jikgye-restore",
+   "itemId": "hs-joseon-early-yukjo-jikgye-restore",
+   "category": "administration",
+   "region": "central",
+   "decade": 1450,
+   "year": 1455,
+   "yearVerbatim": "1455년(세조 1)",
+   "placeLabel": "한양 궁궐 편전 일원",
+   "modernPlace": "서울특별시 종로구 사직로",
+   "what": "세조가 다시 6조를 직접 부려 왕권을 강하게 했다",
+   "claimIds": [
+    "claim-be3-yj-t1455",
+    "claim-be3-yj-def",
+    "claim-be3-yj-jip",
+    "claim-be3-yj-loc"
+   ],
+   "sceneId": "scene-be3-yukjo-jikgye-restore",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-01-03] · 우선순위 standard",
+   "lon": 126.977945,
+   "lat": 37.579015,
+   "coordinateBasis": "location claim-be3-yj-loc"
+  },
+  {
+   "id": "fact-be3-sayuksin",
+   "itemId": "hs-joseon-early-sayuksin",
+   "category": "administration",
+   "region": "central",
+   "decade": 1450,
+   "year": 1456,
+   "yearVerbatim": "1456년(세조 2)",
+   "placeLabel": "노량진 사육신묘",
+   "modernPlace": "서울특별시 동작구 노량진로",
+   "what": "성삼문 등이 단종을 되살리려다 목숨을 잃었다",
+   "claimIds": [
+    "claim-be3-sy-t1456",
+    "claim-be3-sy-def",
+    "claim-be3-sy-t1455",
+    "claim-be3-sy-jip",
+    "claim-be3-sy-seong",
+    "claim-be3-sy-seongdef",
+    "claim-be3-sy-loc"
+   ],
+   "sceneId": "scene-be3-sayuksin",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-01-03] · 우선순위 standard",
+   "lon": 126.94972,
+   "lat": 37.51333,
+   "coordinateBasis": "location claim-be3-sy-loc"
+  },
+  {
+   "id": "fact-be3-jingwan",
+   "itemId": "hs-joseon-early-jingwan",
+   "category": "administration",
+   "region": "south",
+   "decade": 1450,
+   "year": 1457,
+   "yearVerbatim": "1457년(세조 3)",
+   "placeLabel": "경상도 동래진",
+   "modernPlace": "부산광역시 동래구",
+   "what": "고을마다 진을 두어 제 고장을 스스로 지키게 한 방어 체계",
+   "claimIds": [
+    "claim-be3-jg-t1457",
+    "claim-be3-jg-t1456",
+    "claim-be3-jg-def",
+    "claim-be3-jg-dongnae",
+    "claim-be3-jg-loc"
+   ],
+   "sceneId": "scene-be3-jingwan",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-01-03] · 우선순위 standard",
+   "lon": 129.09389,
+   "lat": 35.20389,
+   "coordinateBasis": "location claim-be3-jg-loc"
+  },
+  {
+   "id": "fact-be3-owi",
+   "itemId": "hs-joseon-early-owi",
+   "category": "administration",
+   "region": "central",
+   "decade": 1450,
+   "year": 1457,
+   "yearVerbatim": "1457년(세조 3)",
+   "placeLabel": "한양 도성 숭례문",
+   "modernPlace": "서울특별시 중구 세종대로",
+   "what": "도성을 지키던 중앙군을 다섯 부대로 묶은 제도",
+   "claimIds": [
+    "claim-be3-ow-t1457",
+    "claim-be3-ow-units",
+    "claim-be3-ow-def",
+    "claim-be3-ow-loc"
+   ],
+   "sceneId": "scene-be3-owi",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-01-03] · 우선순위 standard · 오위도총부 자리가 확인되지 않아 중앙군이 지킨 숭례문 표시 좌표를 쓴다",
+   "lon": 126.97528,
+   "lat": 37.55972,
+   "coordinateBasis": "location claim-be3-ow-loc"
+  },
+  {
+   "id": "fact-be3-jikjeonbeop",
+   "itemId": "hs-joseon-early-jikjeonbeop",
+   "category": "economy",
+   "region": "central",
+   "decade": 1460,
+   "year": 1466,
+   "yearVerbatim": "1466년(세조 12)",
+   "placeLabel": "한양 궁궐(창덕궁)",
+   "modernPlace": "서울특별시 종로구",
+   "what": "현직 관리에게만 수조지를 주어 토지 부족을 메웠다",
+   "claimIds": [
+    "claim-be3-jj-t1466",
+    "claim-be3-jj-abolish",
+    "claim-be3-jj-sejo",
+    "claim-be3-jj-loc"
+   ],
+   "sceneId": "scene-be3-jikjeonbeop",
+   "confidence": "high",
+   "note": "성취기준 [10한사1-02-02] · 우선순위 standard · 호조 청사 자리가 확인되지 않아 한양 궁궐(창덕궁) 표시 좌표를 쓴다",
+   "lon": 126.991175,
+   "lat": 37.5794833,
+   "coordinateBasis": "location claim-be3-jj-loc"
+  }
+ ],
+ "missing": []
+}

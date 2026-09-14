@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-gbg-time",
+    "subject": "place-hs-gyeongbokgung",
+    "predicate": "syj:builtIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1395년(태조 4) 9월",
+      "year": 1395,
+      "precision": "month",
+      "earliest": 1395,
+      "latest": 1395,
+      "id": "ts-curriculum-joseon-early-joseon-early-1-je1-gbg-time"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-sindo-done",
+    "quote": "1395년(태조 4) 9월에 경복궁이 완공되었다",
+    "note": "경복궁 완공 시점.",
+    "fromSource": "src-je-encykorea-e0032776",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

@@ -75,6 +75,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-cheondo-time",
+    "subject": "polity-joseon",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1394년 10월 25일",
+      "year": 1394,
+      "precision": "day",
+      "earliest": 1394,
+      "latest": 1394,
+      "id": "ts-curriculum-joseon-early-joseon-early-1-je1-cheondo-time"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-sindo-move",
+    "quote": "1394년 10월 25일에 한양으로 천도를 단행하여",
+    "note": "천도 날짜.",
+    "fromSource": "src-je-encykorea-e0032776",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

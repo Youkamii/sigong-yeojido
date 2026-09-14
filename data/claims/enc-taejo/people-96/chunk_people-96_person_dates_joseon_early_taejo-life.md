@@ -41,6 +41,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-taejo-life",
+    "subject": "person-encykorea-taejo-e0059033",
+    "predicate": "syj:endedIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1408년(태종 8)",
+      "year": 1408,
+      "precision": "year",
+      "earliest": 1408,
+      "latest": 1408,
+      "id": "ts-curriculum-joseon-early-joseon-early-1-je1-taejo-life"
+    },
+    "citesChunk": "chunk_people-96_person_dates_joseon_early_taejo-life",
+    "quote": "출생 연도 1335년(충숙왕 복위 4) 10월 11일 사망 연도 1408년(태종 8)",
+    "note": "태조는 1335년에 태어나 1408년에 세상을 떠났다.",
+    "fromSource": "src-enc-taejo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

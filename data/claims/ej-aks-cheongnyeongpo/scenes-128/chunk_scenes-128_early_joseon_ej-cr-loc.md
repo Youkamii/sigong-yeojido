@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-3-be3-dj-place",
+    "subject": "place-hs-cheongnyeongpo",
+    "predicate": "syj:administeredAs",
+    "object": {
+      "kind": "literal",
+      "value": "영월군 남면 광천리"
+    },
+    "citesChunk": "chunk_scenes-128_early_joseon_ej-cr-loc",
+    "quote": "영월군 남면 광천리의",
+    "note": "청령포의 소재지",
+    "fromSource": "src-ej-aks-cheongnyeongpo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

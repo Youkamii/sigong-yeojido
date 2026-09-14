@@ -58,6 +58,28 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-sampo-1426",
+    "subject": "event-hs-sampo",
+    "predicate": "syj:occurredIn",
+    "object": {
+      "kind": "time",
+      "verbatim": "1426년(세종 8)",
+      "year": 1426,
+      "precision": "year",
+      "earliest": 1426,
+      "latest": 1426,
+      "id": "ts-curriculum-joseon-early-joseon-early-2-hs-sampo-1426"
+    },
+    "citesChunk": "chunk_scenes-122_joseon_localities_jl2-yeompo-1426",
+    "quote": "1426년(세종 8) 부산포(富山浦)ㆍ제포(薺浦)와 함께 삼포에 왜관(倭館)을 설치할 때 염포에도 일본인의 거주가 허락되었다.",
+    "note": "염포를 더해 삼포가 갖추어졌다.",
+    "fromSource": "src-jl2-aks-yeompo",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```

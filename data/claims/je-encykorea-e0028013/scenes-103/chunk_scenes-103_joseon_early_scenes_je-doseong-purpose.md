@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-1-je1-doseong-purpose",
+    "subject": "facility-hs-hanyang-doseong",
+    "predicate": "syj:tookPlaceAt",
+    "object": {
+      "kind": "entity",
+      "id": "place-hs-hanyang"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-doseong-purpose",
+    "quote": "한양을 방어하기 위하여 쌓은 성곽이다",
+    "note": "도성의 목적과 위치.",
+    "fromSource": "src-je-encykorea-e0028013",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

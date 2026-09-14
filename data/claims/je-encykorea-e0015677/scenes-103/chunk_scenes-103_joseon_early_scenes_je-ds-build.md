@@ -41,6 +41,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-5-je5-dss-build",
+    "subject": "facility-hs-dosan-seowon",
+    "predicate": "syj:relatedTo",
+    "object": {
+      "kind": "entity",
+      "id": "person-encykorea-yi-hwang-e0046626"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-ds-build",
+    "quote": "이황의 학문과 덕행을 추모하기 위하여 도산서당(陶山書堂)의 뒤편에 창건하여 위패를 모셨다",
+    "note": "창건 배경",
+    "fromSource": "src-je-encykorea-e0015677",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-14"
   }
 ]
 ```

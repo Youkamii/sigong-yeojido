@@ -24,6 +24,23 @@ status: "draft"
     "status": "draft",
     "generatedBy": "claude-opus-5",
     "generatedAt": "2026-09-08"
+  },
+  {
+    "id": "claim-curriculum-joseon-early-joseon-early-2-hs-tsushima-cmd",
+    "subject": "person-je-yi-jongmu",
+    "predicate": "syj:participatedIn",
+    "object": {
+      "kind": "entity",
+      "id": "event-hs-tsushima"
+    },
+    "citesChunk": "chunk_scenes-103_joseon_early_scenes_je-dm-cmd",
+    "quote": "이종무(李從茂) 를 3군도체찰사(三軍都體察使)로 임명하고",
+    "note": "이종무가 정벌군을 지휘했다.",
+    "fromSource": "src-je-encykorea-e0014343",
+    "origin": "ai",
+    "status": "draft",
+    "generatedBy": "claude-opus-5",
+    "generatedAt": "2026-09-16"
   }
 ]
 ```
