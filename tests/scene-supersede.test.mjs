@@ -60,14 +60,16 @@ test('supersede로 숨긴 기존 장면 대신 근거가 로드되지 않은 항
   assert.deepEqual(context.allEvents.map(e=>e.sceneId),['new']);
 });
 
-test('항목 참여자도 로드된 근거와 현재 인물 존재 조건을 모두 지킨다',()=>{
+test('항목 현장 참여자는 근거나 현재 인물이 없으면 unloaded로 보완한다',()=>{
   const participant={entityId:'person',role:'장인',presence:'on-site',claimIds:['relation']};
   const next={...item,participants:[participant]};
   const claim={id:'relation',subject:item.eventId,predicate:'syj:hasParticipant',object:{kind:'entity',id:'person'}};
   const entity={id:'person',type:'Person',label:'장인'};
-  for(const [entities,claims,count] of [[[],[],0],[[entity],[],0],[[],[claim],0],[[entity],[claim],1]]){
+  for(const [entities,claims,unloaded] of [[[],[],true],[[entity],[],true],[[],[claim],true],[[entity],[claim],false]]){
     const data={entities,claims,scenePackets:[next]},context=contextAt(data,553);
-    assert.equal(planChronicleAssets(context,data,[],[],[next]).events[0].participants.length,count);
+    const participants=planChronicleAssets(context,data,[],[],[next]).events[0].participants;
+    assert.equal(participants.length,1);
+    assert.equal(Boolean(participants[0].unloaded),unloaded);
   }
 });
 

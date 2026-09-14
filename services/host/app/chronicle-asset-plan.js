@@ -27,7 +27,7 @@ export function eventArchetype(event){
 }
 
 // #186: 항목 패킷의 역할어는 영어다. 조형은 영어 역할어로 고르고, 화면에는 한글로 보인다.
-export const ROLE_KO={ruler:'군주',commander:'지휘관',scholar:'학자',monk:'승려',commoner:'백성',soldier:'군사',worker:'일꾼'};
+export const ROLE_KO={ruler:'군주',commander:'지휘관',scholar:'학자',monk:'승려',commoner:'백성',soldier:'군사',worker:'일꾼',militia:'의병',envoy:'사신',printer:'인쇄공',civilian:'백성',police:'경찰'};
 export const roleLabel=role=>ROLE_KO[role]||role;
 export function activityFigure(id,role,year,claims){
   if(Object.hasOwn(ROLE_KO,role))return figureArchetype(role,year);
@@ -133,12 +133,18 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
     const participants=activeParticipants.filter(p=>supported(p.claimIds)&&present.has(p.entityId)).map(p=>({
       ...present.get(p.entityId),...p,archetype:activityFigure(p.entityId,p.role,context.year,data.claims),role:roleLabel(p.role),
       relationClaims:p.claimIds,detail:roleLabel(p.role)+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
-    // #186: 항목 인물 장면(portrait)의 주인공은 사료 선택과 무관하게 조형한다. 로드되지 않은 인물은 장면 제목을 이름으로 쓴다.
-    if(scene.itemId&&scene.kind==='portrait'&&!participants.length){
-      const lead=activeParticipants.find(p=>p.presence!=='related')||activeParticipants[0];
-      if(lead)participants.push({id:lead.entityId,entityId:lead.entityId,kind:'person',label:entities.has(lead.entityId)?entityLabel(entities.get(lead.entityId)):scene.title,
+    // #186: 항목 현장 인물을 최대 2명(portrait는 1명)까지 보완하고, 이름이 없으면 역할을 표시한다.
+    if(scene.itemId){
+      const limit=scene.kind==='portrait'?1:2;
+      for(const lead of activeParticipants){
+        if(participants.filter(p=>p.presence==='on-site'||scene.kind==='portrait').length>=limit)break;  // 그려질 참여자만 센다(로드된 관련 인물이 자리를 차지하지 않게)
+        // portrait 는 관련 인물이 아니면 주인공으로, 그 밖의 kind 는 현장(on-site) 인물만 세운다(off-site·remote 는 카드 칩으로만).
+        if((scene.kind==='portrait'?lead.presence==='related':lead.presence!=='on-site')||participants.some(p=>p.entityId===lead.entityId))continue;
+        // 이름: 개체가 있으면 그 이름, 없으면 portrait 는 장면 제목(= 인물 이름), 그 밖의 kind 는 역할 이름(사건 제목을 사람 이름처럼 보이지 않게)
+        participants.push({id:lead.entityId,entityId:lead.entityId,kind:'person',label:entities.has(lead.entityId)?entityLabel(entities.get(lead.entityId)):scene.kind==='portrait'?scene.title:roleLabel(lead.role),
         ...lead,archetype:activityFigure(lead.entityId,lead.role,context.year,data.claims),role:roleLabel(lead.role),locations:[],locationReference:null,unloaded:true,
-        relationClaims:lead.claimIds,detail:roleLabel(lead.role)+' · '+scene.title,claimIds:[...lead.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]});
+        relationClaims:lead.claimIds||[],detail:roleLabel(lead.role)+' · '+scene.title,claimIds:[...(lead.claimIds||[]),...(scene.dateClaimIds||[]),...(place?.claimIds||[])]});
+      }
     }
     events.push({id:scene.id,entityId:scene.eventId,kind:'event',year:context.year,label:scene.title,title:scene.title,setting:isHistoricalSetting(scene),
       ...(scene.itemId?{itemId:scene.itemId}:{}),

@@ -61,7 +61,7 @@ test('항목 portrait와 heritage는 빈 사료에서도 실제 모형과 양쪽
       // 로드되지 않은 인물 조형을 눌러도 인물 카드가 뜨고 역할은 한글이다.
       const lead=plan.events[0].participants[0];
       assert.equal(lead.role,'군주');
-      card.showEntity(lead.entityId);assert.ok(card.host.innerHTML.includes(packet.title));
+      card.showEntity(lead.entityId);assert.ok(card.host.innerHTML.includes('<h2>'+packet.title+'</h2>'));  // portrait 는 장면 제목이 곧 인물 이름
       assert.ok(!assets.rows.some(r=>r.role==='ruler'));
       card.showEntity(plan.events[0].entityId);  // 사건 카드로 되돌려 아래 누락 안내 검사를 잇는다
     }
@@ -76,6 +76,78 @@ test('항목 portrait와 heritage는 빈 사료에서도 실제 모형과 양쪽
     for(const claim of data.claims)assert.ok(story.pane.innerHTML.includes(`data-story-claim="${claim.id}"`));
     sceneView.chronicle.data={claims:[...new Set([...packet.dateClaimIds,...packet.actionClaimIds,...packet.place.claimIds])].map(id=>({id}))};
     assert.equal(sceneView.activity(plan.events[0].entityId).missingClaimsNote,'');
+  }
+});
+test('항목 현장 인물은 빈 사료에서 최대 2명, portrait는 1명이며 역할 이름으로 인물 카드를 연다',()=>{
+  const original=sample.scenes[0],lead={...original.participants[0],role:'ruler'};
+  for(const kind of ['battle','court','publication','portrait']){
+    const packet={...original,itemId:'hs-test',kind,participants:[
+      {...lead,entityId:'related',presence:'related'},
+      {...lead,entityId:'past',endYear:original.startYear-1},
+      {...lead,entityId:'future',startYear:original.startYear+1},
+      lead,lead,{...lead,entityId:'second',role:'commander'},{...lead,entityId:'third'}]};
+    const data={entities:[],claims:[],scenePackets:[packet]},context=contextAt(data,packet.startYear);
+    const plan=planChronicleAssets(context,data,[],[],[packet]),event=plan.events[0];
+    const count=kind==='portrait'?1:2,scale=kind==='portrait'?1.1:1.3;
+    assert.deepEqual(event.participants.map(p=>p.entityId),[lead.entityId,'second'].slice(0,count));
+    assert.ok(event.participants.every(p=>p.unloaded));
+    const scene=compose(event),models=scene.models.filter(m=>m.person);
+    assert.equal(models.length,count);
+    for(const model of models)assert.equal(model.scale,scale*scene.displayScale);
+    const assets=assetsFor(plan),rows=assets.rows.filter(r=>r.kind==='person');
+    assert.equal(rows.length,count);
+    const view=Object.assign(Object.create(ChronicleScene.prototype),{assets,world,chronicle:{data}});
+    let presented;
+    const card=Object.assign(Object.create(Chronicle.prototype),{data,context,year:packet.startYear,host:{},stopPlay(){},relations:()=>[],
+      callbacks:{entity(){},activity:id=>view.activity(id),presentEntity(entity){presented=entity;return false;}}});
+    for(const row of rows){
+      assert.ok(pickableRow(row));assert.ok(assets.picks.includes(row.pick));
+      card.showEntity(row.entityId);
+      const expectedLabel=kind==='portrait'?packet.title:row.role;  // portrait 는 장면 제목이 곧 인물 이름, 그 밖은 역할 이름
+      assert.equal(presented.type,'Person');assert.equal(presented.label,expectedLabel);
+      assert.ok(card.host.innerHTML.includes(`<h2>${expectedLabel}</h2>`));
+    }
+    const relatedOnly={...packet,participants:[packet.participants[0]]};
+    assert.equal(planChronicleAssets(context,data,[],[],[relatedOnly]).events[0].participants.length,0);
+  }
+});
+test('항목 참여자는 로드된 인물과 중복되지 않고 entities의 이름을 우선한다',()=>{
+  const original=sample.scenes[0],lead={...original.participants[0],role:'ruler'};
+  const packet={...original,itemId:'hs-test',kind:'battle',participants:[lead,
+    {...lead,entityId:'second',claimIds:['unloaded-second']},{...lead,entityId:'third',claimIds:['unloaded-third']}]};
+  const data={...sample,entities:[...sample.entities,{id:'second',type:'Person',label:'둘째 인물'}],scenePackets:[packet]};
+  const event=planChronicleAssets(contextAt(data,packet.startYear),data,[],[],[packet]).events[0];
+  assert.deepEqual(event.participants.map(p=>p.entityId),[lead.entityId,'second']);
+  assert.ok(!event.participants[0].unloaded);assert.equal(event.participants[1].unloaded,true);
+  assert.equal(event.participants[1].label,'둘째 인물');
+  const scene=compose(event);
+  assert.deepEqual(scene.models.filter(m=>m.person).map(m=>m.scale),[2.4,1.3].map(s=>s*scene.displayScale));
+});
+test('항목이 아닌 옛 장면은 참여 근거가 로드되지 않으면 인물을 보완하지 않는다',()=>{
+  for(const kind of ['battle','portrait']){
+    const packet={...sample.scenes[0],kind};
+    delete packet.itemId;
+    const empty={entities:[],claims:[],scenePackets:[packet]};
+    assert.equal(planChronicleAssets(contextAt(empty,packet.startYear),empty,[],[],[packet]).events.length,0);
+    const data={...sample,claims:sample.claims.filter(c=>!packet.participants[0].claimIds.includes(c.id)),scenePackets:[packet]};
+    const event=planChronicleAssets(contextAt(data,packet.startYear),data,[],[],[packet]).events[0];
+    assert.ok(event);assert.deepEqual(event.participants,[]);
+    assert.equal(compose(event).models.filter(m=>m.person).length,0);
+  }
+});
+test('미로드 인물도 배 위에서는 1.05, 음악 무대에서는 1.3 크기를 쓴다',()=>{
+  const original=sample.scenes[0];
+  for(const sea of [false,true]){
+    const packet={...original,itemId:'hs-test',kind:sea?'naval':'tradition',title:sea?'해전':'가야금 음악 전습',summary:'',
+      place:{...original.place,medium:sea?'sea':'land'},
+      participants:original.participants.map(p=>({...p,side:sea?'naval':'civilian',role:'commander'}))};
+    const data={entities:[],claims:[],scenePackets:[packet]};
+    const event=planChronicleAssets(contextAt(data,packet.startYear),data,[],[],[packet]).events[0];
+    const scene=composeHistoricalEvent(event,new THREE.Vector3(0,10,0),sea?{...world,contains:()=>false,seaLevel:0}:world);
+    const models=scene.models.filter(m=>m.person);assert.equal(models.length,1);
+    assert.equal(models[0].scale,(sea?1.05:1.3)*scene.displayScale);
+    if(sea)assert.equal(models[0].shipSide,'naval');
+    else assert.equal(scene.compositionKind,'music');
   }
 });
 test('문화재 실루엣은 유형과 제목으로 고른다',()=>{
@@ -381,4 +453,24 @@ test('a scene sharing its point with another scene (maxRadius 0) keeps a finite 
     assert.ok(scene.models.every(m=>Number.isFinite(m.scale)&&m.scale>0&&[m.position.x,m.position.y,m.position.z].every(Number.isFinite)),kind);
     assert.ok(scene.displayScale>0);
   }
+});
+
+test('item lead figures: different sides get distinct spots, item participants board ships, off-site people stay off stage',()=>{
+  const two=[{id:'p1',entityId:'p1',role:'군주',presence:'on-site',side:'a',archetype:'figure_goryeo_ruler',unloaded:true},
+             {id:'p2',entityId:'p2',role:'지휘관',presence:'on-site',side:'b',archetype:'figure_goryeo_commander',unloaded:true}];
+  const court=compose(stageEvent('court',1392,'항목',{participants:two}));
+  const spots=court.models.filter(m=>m.person).map(m=>[m.position.x,m.position.z].join(','));
+  assert.equal(spots.length,2);assert.equal(new Set(spots).size,2);
+  assert.ok(court.models.filter(m=>m.person).every(m=>m.scale===1.3));
+  const coast={...world,contains:(x,z)=>z<10,seaLevel:0};
+  const sea=composeHistoricalEvent({...stageEvent('naval',1592,'한산도 대첩',{participants:[{...two[1],role:'commander'}]}),scenePlace:{setting:'battle',medium:'sea',coordinates:[0,0]}},new THREE.Vector3(0,10,0),coast);
+  assert.equal(sea.models.filter(m=>m.person).length,1,'item commander boards a ship even though sides differ');
+  const compactSea=composeHistoricalEvent({...stageEvent('naval',1592,'한산도 대첩',{participants:[{...two[1],role:'commander'}],compact:true}),scenePlace:{setting:'battle',medium:'sea',coordinates:[0,0]}},new THREE.Vector3(0,10,0),coast);
+  assert.equal(compactSea.models.filter(m=>m.person).length,1,'compact item scenes keep the lead figure');
+  const packet={...sample.scenes[0],itemId:'hs-test-court',kind:'court'};  // 픽스처 장면을 항목 court 장면으로 바꿔 쓴다
+  packet.participants=[{entityId:'x1',role:'scholar',presence:'off-site',claimIds:['c1']},{entityId:'x2',role:'ruler',presence:'on-site',claimIds:['c2']}];
+  const data={entities:[],claims:[],scenePackets:[packet]};
+  const planned=planChronicleAssets(contextAt(data,packet.startYear,0),data,[],[],[packet]).events.find(e=>e.id===packet.id);
+  assert.deepEqual(planned.participants.map(p=>p.entityId),['x2']);
+  assert.equal(planned.participants[0].label,'군주');
 });

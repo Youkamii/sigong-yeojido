@@ -616,14 +616,19 @@ export function composeHistoricalEvent(event,position,world){
       group.children.at(-1).userData.targetSide=target.side||null;
     }
   }
-  const actorCounts={};
-  for(const person of compositionKind==='heritage'?[]:compositionKind==='portrait'?event.participants.filter(p=>p.presence!=='related').slice(0,1):event.compact?[]:event.participants.filter(p=>p.presence==='on-site')){
+  // #186: compact(이웃 장면과 겹침) 항목 장면도 주인공 1명은 세운다(한산도 대첩의 이순신처럼 배 위·무대 옆).
+  const actorCounts={};let unloadedPlaced=0;
+  for(const person of compositionKind==='heritage'?[]:compositionKind==='portrait'?event.participants.filter(p=>p.presence!=='related').slice(0,1):event.compact?event.participants.filter(p=>p.unloaded&&p.presence==='on-site').slice(0,1):event.participants.filter(p=>p.presence==='on-site')){
     const side=person.side||'civilian',index=actorCounts[side]||0;actorCounts[side]=index+1;
     if(compositionKind==='portrait'){
       model(person.archetype||figureArchetype(person.role,event.year),0,0,1.1,{person,side,primary:true,action:'idle'});  // #186: 1.8 이면 집 3채 높이로 주변 문화재를 가린다
     }else if(sea){
       const affiliation=alliedFleet&&side==='naval'?(/명나라 수군|명 수군/.test(person.role)?'ming':'joseon'):null;
-      const fleet=models.filter(m=>m.archetype===shipType&&m.side===side&&(!affiliation||m.fleet===affiliation)),ship=fleet[index%fleet.length];
+      let fleet=models.filter(m=>m.archetype===shipType&&m.side===side&&(!affiliation||m.fleet===affiliation));
+      // #186: 항목 패킷 참여자의 side(a/b/c)는 함대 side(naval/invader)와 다르므로 아군 배, 없으면 아무 배에 태운다(로드 여부 무관 — 한산도 대첩의 이순신이 배에 못 타던 원인).
+      if(!fleet.length)fleet=models.filter(m=>m.archetype===shipType&&m.side!=='invader');
+      if(!fleet.length)fleet=models.filter(m=>m.archetype===shipType);
+      const ship=fleet[index%fleet.length];
       if(!ship)continue;
       const berth=Math.floor(index/fleet.length),dx=berth?(berth%2?-.5:.5)*ship.scale/displayScale:0,dz=berth?(Math.floor((berth-1)/2)+1)*.65*ship.scale/displayScale:0;
       const row=model(person.archetype,(ship.position.x-position.x)/displayScale+dx,(ship.position.z-position.z)/displayScale+dz,1.05,{person,side,lift:(modern?1.9:2.2)*ship.scale/displayScale});
@@ -631,10 +636,12 @@ export function composeHistoricalEvent(event,position,world){
     }else if(kindIs('music',music)){
       const teacher=/가르친|악사/.test(person.role),instrument=/가얏고|가야금/.test(person.role),dance=/춤/.test(person.role);
       const [dx,dz]=teacher?[-8,-3]:instrument?[2,4]:dance?[12,11]:[10,-3];
-      model(person.archetype,dx,dz,2.4,{person,side,action:teacher||instrument?'working':dance?'walking':'idle'});
+      model(person.archetype,dx,dz,person.unloaded?1.3:2.4,{person,side,action:teacher||instrument?'working':dance?'walking':'idle'});
     }else{
-      const dx=-7+index*6,dz=event.archetype==='publication'?4:side==='invader'?22:side==='civilian'?4:-6;
-      model(person.archetype,dx,dz,2.4,{person,side,action:event.archetype==='publication'?'working':'idle'});
+      // #186: 항목 패킷 참여자(side a/b/c)와 미로드 참여자는 side 와 무관하게 순서대로 6 단위씩 띄운다(side 별 index 면 a·b 두 인물이 같은 자리에 겹친다).
+      const slot=person.unloaded||['a','b','c'].includes(side)?unloadedPlaced++:index;
+      const dx=-7+slot*6,dz=event.archetype==='publication'?4:side==='invader'?22:side==='civilian'?4:-6;
+      model(person.archetype,dx,dz,person.unloaded?1.3:2.4,{person,side,action:event.archetype==='publication'?'working':'idle'});
     }
   }
   const anonymousRoles={human:'commoner',period_figure:'commoner',modern_figure:'commoner',spearman:'soldier',rifle_soldier:'soldier',period_commander:'commander',period_scholar:'scholar',scribe:'scholar',period_monk:'monk',period_ruler:'ruler'};
