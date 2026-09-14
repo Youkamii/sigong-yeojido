@@ -12,6 +12,8 @@ import {hash32} from './util.js';
 export const SCENE_FUNCTIONS=['rail_station','temple','print_workshop','migration','persecution','naval_expedition','civil_conflict','uprising_battle','market','relief','construction_site','fortress','harbor','kiln','irrigation'];
 const CONFLICT_FUNCTIONS=['civil_conflict','uprising_battle'];
 const STANCE_ACTIONS={attacker:'attacking',defender:'defending',bystander:'idle',victim:'idle',marching:'walking',worker:'working'};
+const SETTING_STAGES={palace:'palace',office:'academy_hall',academy:'academy_hall',temple:'pagoda',village:'house',battle:'banner'};
+const settingStage=setting=>Object.hasOwn(SETTING_STAGES,setting)?SETTING_STAGES[setting]:undefined;
 
 function fireAt(group,position,scale,animated){
   const fire=new THREE.Group();fire.position.copy(position);fire.scale.setScalar(scale);group.add(fire);
@@ -42,8 +44,14 @@ export function composeHistoricalEvent(event,position,world){
     effects:{...event.effects,fire:{enabled:false},attack:{enabled:false}}};
   const group=new THREE.Group(),animated=[],models=[],occupied=[];
   group.userData.sceneId=event.id;
-  const sea=event.scenePlace?event.scenePlace.medium==='sea':event.archetype==='naval';
+  const seaMedium=event.scenePlace?event.scenePlace.medium==='sea':event.archetype==='naval';
+  // #186: 바다 장면인데 기준점이 육지(항구·해안)면 순수 바다 분기(배가 기준점 주변 물에만 섬)가 아니라 배를 해안 밖 바다에 두는 원정 무대로 조립한다.
+  // 기준점이 육지일 때 바다 분기를 타면 배가 전부 생략되고 축척도 0 에 가까워져 장면이 사라진다(왜구의 침입·노량 해전 등 12건).
+  const landAnchoredSea=seaMedium&&!facility&&world.contains(position.x,position.z);
+  const sea=seaMedium&&!landAnchoredSea;
+  const navalStage=!facility&&!event.sceneFunction&&(landAnchoredSea||!sea&&event.archetype==='naval'&&Boolean(event.itemId));
   const actions=[facility?event.title||event.label:event.label,event.summary,JSON.stringify(event.visualActions||'')].join(' ');
+  const stageText=[event.title||event.label,event.summary].join(' ');  // visualActions 서술문은 제외한다(정규식 오탐)
   const modern=event.year>=1876,shipType=modern?'motor_ship':'ship';
   const alliedFleet=event.participants.some(p=>p.presence==='on-site'&&p.side==='naval'&&/명나라 수군|명 수군/.test(p.role));
   const soldier=modern?'rifle_soldier':'spearman';
@@ -54,21 +62,31 @@ export function composeHistoricalEvent(event,position,world){
   const industry=facility?facilityLook==='industry'&&!facilityHarbor:modern&&/제철|고로|공업단지|공업센터|원자력발전소/.test(actions);
   const groundbreaking=!facility&&industry&&/기공식/.test(actions),power=industry&&(facility?/발전소/:/원자력발전소/).test(actions);
   const music=!facility&&!sea&&/가얏고|가야금|음악 전습/.test(actions)&&/가르|배우|배운|전습/.test(actions);
-  const relief=!facility&&!sea&&/구휼/.test(actions)&&/곡식|구휼미/.test(actions);
+  const relief=!facility&&!sea&&(/구휼/.test(actions)&&/곡식|구휼미/.test(actions)||!event.sceneFunction&&event.archetype==='relief');
   const road=!facility&&modern&&/고속도로/.test(actions),personalFire=!facility&&/분신|자해/.test(actions),blockFire=!facility&&/대장경판|경판|판목/.test(actions)&&event.effects.fire?.enabled;
   const paperFire=blockFire||personalFire&&/화형식|법전.*태/.test(actions);
-  const kiln=!facility&&/백자|관요|사기제조장|분원리/.test(actions),irrigation=!facility&&/벽골제|청못|청제|수리 시설|관개/.test(actions);
+  const kiln=!facility&&(/백자|관요|사기제조장|분원리/.test(actions)||!event.sceneFunction&&event.archetype==='excavation'&&event.year>=-500&&/요지|가마|자기|청자|백자|분청|도자|굽/.test(stageText)),irrigation=!facility&&/벽골제|청못|청제|수리 시설|관개/.test(actions);
   // participantGroups 가 있으면 sides 기반 invaders 플래그는 무시한다 (집단이 stance 로 배치를 정한다).
   const groups=Array.isArray(event.participantGroups)&&event.participantGroups.length?event.participantGroups:null;
   const functionGroups=groups&&!facility&&['market','relief','construction_site','fortress','harbor','kiln','irrigation'].includes(event.sceneFunction);
   const invaders=!groups&&(event.effects.attack?.enabled||[...(event.sides||[]),...event.participants].some(p=>p.side==='invader'&&p.presence==='on-site'));
   const harbor=facility?facilityHarbor:!sea&&['construction','naval'].includes(event.archetype)&&event.effects.ships?.enabled;
   const teaching=!facility&&!sea&&/강학|강의|교육|서당|서원|성균관|학교|학사/.test(actions)&&['court','publication','assembly'].includes(event.archetype);
-  const market=!facility&&!sea&&/장시|시장|교역|무역|상업/.test(actions)&&['court','construction'].includes(event.archetype);
+  const market=!facility&&!sea&&(/장시|시장|교역|무역|상업/.test(actions)&&['court','construction'].includes(event.archetype)||!event.sceneFunction&&event.archetype==='market');
   const fortress=!facility&&event.visualActions?.fortress;
   const sceneFunction=(facility?['temple','rail_station']:SCENE_FUNCTIONS).includes(event.sceneFunction)&&(!facility||['temple','rail_station'].includes(facilityLook))?event.sceneFunction:null;
-  const compositionKind=['portrait','heritage'].includes(event.archetype)?event.archetype:facilityLook==='palace'?'palace':(sceneFunction==='construction_site'?'construction':sceneFunction)||(fortress?'fortress':music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':event.archetype);
+  // #186: 항목 공사 장면만 제목·요약으로 무대를 고른다(옛 장면은 한 글자 매칭 오탐이 있어 제외). 한 글자 대안(성·사·절·궁)은 쓰지 않는다.
+  const constructionStage=!facility&&!event.sceneFunction&&!sea&&event.archetype==='construction'&&event.itemId
+    ?/고인돌|지석묘|거석|선돌/.test(stageText)?'megalith':/성곽|산성|읍성|도성|토성|나성|축성/.test(stageText)?'fortress'
+      :(event.scenePlace?.setting==='palace'||/궁궐|궁성|경복궁|창덕궁|창경궁|덕수궁|경희궁/.test(stageText))?'palace_construction'
+      :(event.scenePlace?.setting==='temple'||/사찰|사원|법당|석탑|목탑|불사/.test(stageText))?'temple'
+      :modern&&/정책|계획|운동|기지화|공업|산업|개발/.test(stageText)?'industry':null:null;
+  const fallbackKind=constructionStage||(navalStage?'naval_expedition':event.archetype);
+  const compositionKind=['portrait','heritage'].includes(event.archetype)?event.archetype:facilityLook==='palace'?'palace':(sceneFunction==='construction_site'?'construction':sceneFunction)||(fortress?'fortress':music?'music':relief?'relief':kiln?'kiln':irrigation?'irrigation':launch?'launch':temple?'temple':rail?'rail':groundbreaking?'groundbreaking':power?'power':industry?'industry':road?'road':harbor?'harbor':teaching?'teaching':market?'market':fallbackKind);
   const kindIs=(kind,fallback)=>sceneFunction?compositionKind===kind:fallback;
+  const newStage=kind=>!facility&&!event.sceneFunction&&compositionKind===kind;
+  // 현장 군주 참여자: asset-plan 은 role 을 한글('군주')로 바꿔 넘기고 옛 장면은 서술 역할('국왕'·'임금'·'…왕')을 쓴다. 왕비·왕자는 군주가 아니다.
+  const isRuler=p=>p.presence==='on-site'&&(/ruler$/.test(p.archetype||'')||['ruler','군주'].includes(p.role)||/국왕|임금|대왕/.test(p.role||'')||(/왕/.test(p.role||'')&&!/왕비|왕자|왕후|왕세자|왕족|왕실/.test(p.role)));
   const singleModel=['portrait','heritage'].includes(event.archetype);
   let displayScale=singleModel?HERITAGE_DISPLAY.scale:event.scenePlace?.displayScale||1;
   const urbanRegion=event.archetype==='settlement'&&event.scenePlace?.coordinates
@@ -82,7 +100,8 @@ export function composeHistoricalEvent(event,position,world){
     displayScale=Math.min(displayScale,clearance/48);
   }
   if(facility&&!singleModel)displayScale=facilityDisplayScale(displayScale,position,world);
-  if(event.compact&&!singleModel)displayScale*=.16;
+  // #186: 항목 해군 장면은 배가 바다에 놓이므로 compact 여도 축소하지 않는다(축소하면 먼바다의 점으로만 보인다).
+  if(event.compact&&!singleModel&&!navalStage)displayScale*=.16;
   const radius=sceneRadius(event,facility,sea);
   if((singleModel||!event.compact)&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,event.maxRadius/radius);
   const model=(archetype,dx,dz,scale=1,extra={})=>{
@@ -97,7 +116,11 @@ export function composeHistoricalEvent(event,position,world){
         x=position.x;z=position.z;
       }else{
         x=position.x+dx*.4;z=position.z+dz*.4;
-        if(!world.contains(x,z))return;
+        if(!world.contains(x,z)){
+          // #186: 무대 건물(primary)이 물에 빠지면 기준점에 세워 장면 전체가 사라지지 않게 한다.
+          if(!extra.primary||!world.contains(position.x,position.z))return;
+          x=position.x;z=position.z;
+        }
       }
     }
     if(onWater&&world.contains(x,z))return;
@@ -114,8 +137,8 @@ export function composeHistoricalEvent(event,position,world){
   const flagColor=side=>side==='invader'||side==='b'?'#9a4435':side==='a'||side==='naval'||side==='defender'?'#346978':null;
   const construction=!facility&&(event.visualActions?.constructionYears?.includes(event.year)||event.visualActions?.construction===true
     ||(event.archetype==='construction'&&(event.endYear==null||event.year<=event.endYear)));
-  const shoreward=()=>{
-    for(let r=1;r<48;r+=1)for(let i=0;i<48;i++){
+  const shoreward=(range=48)=>{
+    for(let r=1;r<range;r+=1)for(let i=0;i<48;i++){
       const angle=i*Math.PI/24,dx=Math.cos(angle)*r,dz=Math.sin(angle)*r;
       if(!world.contains(position.x+dx*displayScale,position.z+dz*displayScale))return {dx,dz,angle};
     }
@@ -156,8 +179,7 @@ export function composeHistoricalEvent(event,position,world){
   if(compositionKind==='portrait'){
     // #186: 무대(사건 행)와 인물 조형(인물 행, 아래 참여자 루프)이 함께 선다. 항목 인물 장면의 주인공은 사료 선택과 무관하게 asset-plan 이 넘긴다.
     // 전장 무대는 성벽이 아니라 군기다(성벽만 서고 인물이 빠지면 인물이 성벽으로 보였다).
-    const stages={palace:'palace',office:'academy_hall',temple:'pagoda',battle:'banner',village:'house',academy:'academy_hall'};
-    const stage=Object.hasOwn(stages,event.scenePlace?.setting)?stages[event.scenePlace.setting]:'heritage_site';
+    const stage=settingStage(event.scenePlace?.setting)||'heritage_site';
     model(stage,0,-4,stage==='banner'?1.4:.65,{primary:true});
     if(!event.compact&&groups){
       let count=0;
@@ -207,7 +229,7 @@ export function composeHistoricalEvent(event,position,world){
         for(let i=0;i<6;i++)model(printer,-11+(i%3)*9,i<3?4:-4,1.5,{action:'working',role:'printer'});
       }
     }
-  }else if(sceneFunction==='migration'){
+  }else if(sceneFunction==='migration'||newStage('migration')){
     model('handcart',0,0,1.3,{primary:true});
     if(!event.compact){
       const civilian=figureArchetype('civilian',event.year);
@@ -229,14 +251,15 @@ export function composeHistoricalEvent(event,position,world){
         for(const [x,z] of [[-10,4],[10,4],[0,-10]])model(soldier,x,z,1.5,{action:'defending',role:'soldier',stance:'defender'});
       }
     }
-  }else if(sceneFunction==='naval_expedition'){
+  }else if(sceneFunction==='naval_expedition'||newStage('naval_expedition')){
     // place 가 육지면 해안 방향(없으면 +z 18)으로 배 3척, 해안에 사람 4명
     const shore=sea?null:shoreward(),dir=shore||{dx:0,dz:18,angle:Math.PI/2};
     const fleetSide=groups?.find(g=>g.stance==='attacker'||g.stance==='marching')?.side||'naval';
-    for(let i=0;i<3;i++){
+    for(let i=0;i<(event.compact&&!sceneFunction?1:3);i++){
       const dx=sea?-13+i*13:dir.dx+Math.cos(dir.angle)*(6+i*8),dz=sea?(i-1)*10:dir.dz+Math.sin(dir.angle)*(6+i*8);
       standard(model(shipType,dx,dz,i?1.1:1.5,{medium:'sea',side:fleetSide,primary:i===0}),fleetSide,modern?3:7);
     }
+    if(!models.some(m=>m.primary))model('boat_slip',0,0,1,{primary:true});  // 닿는 물이 없으면 선착장으로 장면을 남긴다
     if(!event.compact&&!sea)for(let i=0;i<4;i++)model('human',dir.dx*.6-6+i*4,dir.dz*.6,1.5,{medium:'land',action:'idle'});
     if(!event.compact&&groups)composeGroups();
   }else if(CONFLICT_FUNCTIONS.includes(sceneFunction)||(!sceneFunction&&groups&&event.archetype==='battle')){
@@ -280,6 +303,17 @@ export function composeHistoricalEvent(event,position,world){
       if(motif==='ondal')model('period_commander',3,5,1.5);
       if(motif==='gwaneumsa')model('period_monk',-7,4,1.5);
       if(motif==='mangbuseok')model('korean_house',-9,-6,.7);
+      if(!motif&&newStage('tradition')){
+        if(modern){
+          model('civic_hall',0,-14,1.4);model('banner',10,2,1.4);
+          for(let i=0;i<4;i++)model('modern_figure',-6+i*4,8,1.5,{role:'civilian',action:'idle'});
+        }else{
+          model('korean_house',-8,-6,.85);
+          const performance=/탈춤|놀이|음악|악|춤|판소리|풍속|풍물|농악/.test(stageText);
+          if(performance)model('string_instrument',6,2,1.4);
+          for(let i=0;i<(performance?4:2);i++)model('period_figure',-6+i*4,8,1.5,{role:'civilian',action:'idle'});
+        }
+      }
     }
   }else if(kindIs('music',music)){
     model('string_instrument',-8,0,2,{primary:true});
@@ -290,21 +324,37 @@ export function composeHistoricalEvent(event,position,world){
       model('grain_stack',-9,-2,1.8);model('handcart',-13,6,1.2);model('table',5,4,1.5);
       if(!functionGroups)for(const [x,z] of [[4,8],[10,11],[7,16],[-1,13]])model(modern?'modern_figure':'period_figure',x,z,1.6,{action:'working'});
     }
-  }else if(kindIs('excavation',event.archetype==='excavation')){
+  }else if(!facility&&!event.sceneFunction&&event.year<-500&&['excavation','settlement'].includes(event.archetype)){
+    model('rural_hut',0,-6,1.1,{primary:true});
+    if(!event.compact){
+      const houses=event.archetype==='settlement'?[[-9,2],[8,3],[-12,-9],[11,-10]]:[[-9,2],[8,3]];
+      for(const [x,z] of houses)model('rural_hut',x,z,1.1);
+      for(let i=0;i<4;i++)model('rural_figure',-6+i*4,12,1.5,{role:'civilian',action:'idle'});
+      model('grain_stack',6,8,.8);
+      if((event.archetype==='settlement'?/고인돌|청동/:/고인돌|무덤|묘|거석|매장/).test(stageText))model('standing_stone',-6,-10,1);
+      if(event.archetype==='excavation')model('dig_site',12,-8,.6);
+    }
+  }else if(newStage('excavation')&&(/고분|무덤|왕릉|릉|총/.test(stageText)||/묘/.test(event.title||event.label||''))){
+    model('heritage_tomb',0,0,1,{primary:true});
+    if(!event.compact){
+      for(const [x,z] of [[-10,-6],[10,-6],[-12,7],[12,7]])model('pine',x,z,1.2);
+      model('dig_site',12,-8,.6);
+    }
+  }else if(kindIs('excavation',event.archetype==='excavation'&&!kiln)){
     model('dig_site',0,0,2,{primary:true});
     if(!event.compact){
       model('dig_site',-15,-9,1.2);model('table',13,2,1.2);model('book',13,2,1,{lift:2});
       model('groundbreaking',-10,10,.9);
       for(const [x,z] of [[-8,3],[5,-7],[12,6]])model('modern_figure',x,z,1.6,{action:'working'});
     }
-  }else if(kindIs('fortress',fortress)){
+  }else if(kindIs('fortress',fortress)||newStage('fortress')){
     model('gatehouse',0,10,1.4,{primary:true});
     if(!event.compact){
       const width=18+((event.scenePlace?.label||event.label||'').length%3)*3;
       for(const x of [-width,-9,9,width]){model('wall',x,10,1);model('wall',x,-17,1);}
       for(const x of [-width-4,width+4])for(const z of [-10,-1,6])model('fort_wall_side',x,z,1);
       model('rural_store',-9,-6,1.4);model('korean_house',10,-5,1.2);
-      if(!facility&&event.visualActions?.construction){
+      if(!facility&&(event.visualActions?.construction||!event.sceneFunction&&construction)){
         model('handcart',-12,18,1.3);model('groundbreaking',8,17,1.2);
         if(!functionGroups)for(const [x,z] of [[-14,6],[12,15],[18,-12]])model('period_figure',x,z,1.5,{action:'working'});
       }else if(event.archetype==='court'){model('table',0,-4,1.5);model('book',0,-4,1.2,{lift:2.5});}
@@ -355,7 +405,7 @@ export function composeHistoricalEvent(event,position,world){
     model('rocket',0,0,1.7,{primary:true});
     if(!event.compact){model('civic_hall',18,-14,1);model('car',16,6,1.2);
       for(let i=0;i<4;i++)model('human',12+i*4,13,1.5);}
-  }else if(kindIs('temple',temple)){
+  }else if(kindIs('temple',temple)||newStage('temple')){
     model('pagoda',0,0,1.8,{primary:true});
     if(!event.compact){model('academy_hall',0,-16,1.8);
       if(facility){model('period_monk',-6,9,1.5);model('period_monk',6,9,1.5);}
@@ -376,7 +426,7 @@ export function composeHistoricalEvent(event,position,world){
     const building=event.year<event.endYear?'building_frame':'power_facility';
     model(building,0,0,2,{primary:true});
     if(!event.compact&&building==='building_frame')model('groundbreaking',-13,8,1.3);
-  }else if(kindIs('industry',industry)){
+  }else if(kindIs('industry',industry)||newStage('industry')){
     model('steelworks',0,0,1.6,{primary:true});
     if(!event.compact){model('civic_hall',18,-7,1.0);model('car',14,13,1.2);
       for(let i=0;i<6;i++)model('human',-12+i*5,12,1.5,{action:'working'});}
@@ -439,6 +489,13 @@ export function composeHistoricalEvent(event,position,world){
       model('table',0,5,1.6);model('book',0,5,1.5,{lift:2.5});
       for(let i=0;i<9;i++)model('scribe',-9+(i%3)*8,12+Math.floor(i/3)*6,1.4,{action:'working'});
     }
+  }else if(newStage('market')&&event.archetype==='market'&&modern&&/회사|경제|호황|위기|산업|원조|개방|수출|자본|은행|화폐|금융|계획/.test(stageText)){
+    model('civic_hall',0,-14,1.4,{primary:true});
+    if(!event.compact){
+      for(const x of [-12,12])model('car',x,2,1.2);
+      model('table',0,4,1.5);model('handcart',-10,8,1.1);
+      for(let i=0;i<6;i++)model('modern_figure',-6+(i%3)*6,10+Math.floor(i/3)*6,1.5,{role:'civilian',action:'idle'});
+    }
   }else if(kindIs('market',market)){
     model('market',0,0,1.8,{primary:true});
     if(!event.compact){
@@ -456,16 +513,82 @@ export function composeHistoricalEvent(event,position,world){
         paper.scale.setScalar(displayScale);paper.position.set(position.x+(5+i%2*3)*displayScale,world.surfaceAt(position.x,position.z)+(3+i*.5)*displayScale,position.z+2*displayScale);group.add(paper);
       }
     }
+  }else if(newStage('court')){
+    model(settingStage(event.scenePlace?.setting)||'palace',0,-14,1.8,{primary:true});
+    if(!event.compact){
+      model('table',0,4,1.5);model('book',0,4,1.2,{lift:2.5});
+      if(!event.participants.some(isRuler))model(figureArchetype('ruler',event.year),0,7,1.2,{role:'ruler',action:'idle'});
+      for(let i=0;i<6;i++)model(modern?'human':figureArchetype('scholar',event.year),-8+(i%3)*8,12+Math.floor(i/3)*6,1.5,{role:modern?'civilian':'scholar',action:'idle'});
+    }
+  }else if(newStage('assembly')&&event.id!=='scene-jl-donghak-yongdam-1860'){
+    model(modern?'banner':settingStage(event.scenePlace?.setting)||'academy_hall',0,modern?0:-14,1.6,{primary:true});
+    if(!event.compact){
+      if(modern){model('civic_hall',0,-14,1.4);model('banner',10,2,1.4);}
+      else{model('table',0,3,1.5);model('book',0,3,1.2,{lift:2.5});}
+      const count=modern?16:8;
+      for(let i=0;i<count;i++){
+        const angle=(i+.5)/count*Math.PI,r=modern?8+i%3*2:9;
+        model(modern?'human':figureArchetype('scholar',event.year),Math.cos(angle)*r,Math.sin(angle)*r,1.5,{role:modern?'civilian':'scholar',action:'idle'});
+      }
+    }
+  }else if(newStage('survey')){
+    model('hanging_scroll',0,0,1.6,{primary:true});
+    if(!event.compact){
+      model('table',6,4,1.5);model('book',6,4,1.2,{lift:2.5});
+      model(settingStage(event.scenePlace?.setting)||'academy_hall',0,-14,1.4);model('handcart',-10,6,1.1);
+      for(let i=0;i<3;i++)model(modern?'modern_figure':figureArchetype('scholar',event.year),-4+i*5,9,1.5,{role:modern?'civilian':'scholar',action:'working'});
+    }
+  }else if(newStage('ritual')){
+    const buddhist=/사찰|불교|법회|연등|팔관회|승려|종파|천태|화엄|선종|교종|불상|법화|향도|미륵/.test(stageText)&&!/종묘|사직|신사|서원|향교/.test(stageText);
+    const ceremony=!buddhist&&modern&&/올림픽|월드컵|대회|축제|기념|행사/.test(stageText);
+    model(buddhist?'pagoda':ceremony?'civic_hall':'table',0,ceremony?-14:0,buddhist?1.8:ceremony?1.4:2,{primary:true});
+    if(!event.compact){
+      if(buddhist){
+        model('academy_hall',0,-16,1.8);
+        for(let i=0;i<4;i++)model('period_monk',-6+i*4,8,1.5,{role:'monk',action:'idle'});
+      }else if(ceremony){
+        for(const x of [-10,10])model('banner',x,2,1.5);
+        for(let i=0;i<12;i++){const angle=(i+.5)/12*Math.PI;model('human',Math.cos(angle)*10,Math.sin(angle)*10,1.5,{role:'civilian',action:'idle'});}
+      }else{
+        model(event.scenePlace?.setting==='temple'?'academy_hall':settingStage(event.scenePlace?.setting)||'academy_hall',0,-14,1.4);  // 종묘·사직·신사는 탑이 아니라 사당 전각
+        for(const x of [-14,14])for(const z of [-7,7])model('pine',x,z,1.2);
+        for(let i=0;i<6;i++)model(modern?'human':figureArchetype('scholar',event.year),-8+(i%3)*8,8+Math.floor(i/3)*6,1.5,{role:modern?'civilian':'scholar',action:'idle'});
+      }
+    }
+  }else if(newStage('megalith')){
+    // #186: 고인돌·지석묘 축조는 선돌(standing_stone)이 상징물이다.
+    model('standing_stone',0,0,1.6,{primary:true});
+    if(!event.compact){
+      for(const x of [-12,12])model('handcart',x,6,1.2);
+      for(let i=0;i<6;i++)model('human',-10+(i%3)*10,10+Math.floor(i/3)*6,1.5,{role:'worker',action:'working'});
+    }
+  }else if(newStage('palace_construction')){
+    model('palace',0,-14,.9,{primary:true});
+    if(!event.compact){
+      for(const x of [-12,12])model('handcart',x,4,1.2);
+      model('groundbreaking',0,4,1.2);
+      for(let i=0;i<6;i++)model('field_worker',-10+(i%3)*10,10+Math.floor(i/3)*6,1.5,{role:'worker',action:'working'});
+    }
+  }else if(newStage('fire')){
+    model(settingStage(event.scenePlace?.setting)||'house',0,-14,1.4,{primary:true});
+    if(!event.compact)for(let i=0;i<4;i++)model(figureArchetype('civilian',event.year),-6+i*4,8,1.5,{role:'civilian',action:'walking'});
+  }else if(newStage('disaster')){
+    model('rural_store',-8,-10,1.4,{primary:true});
+    if(!event.compact){
+      const seed=hash32(event.id+'|disaster');
+      for(let i=0;i<8;i++){
+        const h=hash32(seed+':'+i),angle=(h%3600)/3600*Math.PI*2,rad=Math.sqrt(((h>>>12)%1000)/1000)*6;
+        model(figureArchetype('civilian',event.year),Math.cos(angle)*rad,8+Math.sin(angle)*rad,1.5,{role:'civilian',stance:'victim',action:'idle'});
+      }
+    }
   }else{
-    model(modern?'civic_hall':kindIs('court',event.archetype==='court')?'palace':'courtyard_house',0,0,1.8,{primary:true});
+    model(modern?'civic_hall':'courtyard_house',0,0,1.8,{primary:true});
     if(!event.compact){
     for(const [x,z] of [[-16,-9],[16,-10],[-19,11],[17,15]])model('house',x,z,.9,{path:true});
-    if(!sceneFunction&&event.archetype==='assembly'&&event.id!=='scene-jl-donghak-yongdam-1860')for(let i=0;i<15;i++)model('human',-11+(i%5)*5,12+Math.floor(i/5)*5,1.5);
     if(!facility&&kindIs('construction',event.archetype==='construction')){
       model('handcart',10,9,1.3);model('table',-10,10,1.3);
       if(!functionGroups)for(let i=0;i<6;i++)model('human',-12+i*5,14,1.5,{action:'working'});
     }
-    if(kindIs('court',event.archetype==='court'))for(let i=0;i<8;i++)model(modern?'human':'scribe',-12+(i%4)*8,10+Math.floor(i/4)*6,1.5);
     }
   }
   if(!event.compact&&functionGroups&&!['portrait','heritage'].includes(compositionKind))composeGroups();
@@ -482,8 +605,11 @@ export function composeHistoricalEvent(event,position,world){
       standard(ship,side,modern?3:7);
     }
   }
-  if(!event.compact&&event.effects.fire?.enabled&&(!personalFire||paperFire)){
-    for(const target of models.filter(m=>event.visualActions?.fireTargets?event.visualActions.fireTargets.includes(m.archetype):paperFire?m.archetype==='book':sea?m.archetype===shipType&&m.side==='invader':['house','korean_house','courtyard_house','korean_courtyard','palace','korean_hall','civic_hall'].includes(m.archetype)).slice(0,3)){
+  const kindFire=!facility&&!event.sceneFunction&&event.archetype==='fire'&&(event.effects.fire===undefined||Boolean(event.itemId));
+  const burning=event.effects.fire?.enabled||kindFire;
+  const fireTargets=kindFire&&!event.visualActions?.fireTargets?.length?null:event.visualActions?.fireTargets;
+  if(!event.compact&&burning&&(!personalFire||paperFire)){
+    for(const target of models.filter(m=>fireTargets?fireTargets.includes(m.archetype):paperFire?m.archetype==='book':kindFire?m.primary:sea?m.archetype===shipType&&m.side==='invader':['house','korean_house','courtyard_house','korean_courtyard','palace','korean_hall','civic_hall'].includes(m.archetype)).slice(0,3)){
       const p=target.position.clone();p.y+=(paperFire?.4:sea?2:3)*displayScale;
       fireAt(group,p,(paperFire?.2:sea?1.2:1.5)*displayScale,animated);
       group.children.at(-1).userData.targetSide=target.side||null;

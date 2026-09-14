@@ -33,7 +33,7 @@ export function sceneVisualKey(event,position,compact,maxRadius,world){
     cityStyle:event.archetype==='settlement'?settlementStyle(event):null,
     cityRegion:urbanRegion?[urbanRegion.id,urbanRegion.radius]:null,
     figureStyle:figureArchetype('commoner',event.year),buildingStyle:buildingArchetype('house',event.year),
-    archetype:event.archetype,heritageType:event.heritageType,heritageFloors:event.heritageFloors,setting:event.scenePlace?.setting,modern:event.year>=1876,building:/원자력발전소/.test(actions)&&event.year<event.endYear,
+    archetype:event.archetype,heritageType:event.heritageType,heritageFloors:event.heritageFloors,setting:event.scenePlace?.setting,modern:event.year>=1876,prehistoric:event.year<-500,item:Boolean(event.itemId),building:/원자력발전소/.test(actions)&&event.year<event.endYear,
     medium:event.scenePlace?.medium,scale,
     fortressWidth:visualActions.fortress?event.scenePlace.label.length%3:null,
     actions:actionPatterns.map(pattern=>pattern.test(actions)),landing:/상륙/.test(event.label),

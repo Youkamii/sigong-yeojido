@@ -8,7 +8,7 @@ const {figureArchetype}=await import('../services/host/app/period-figures.js');
 test('court scribes use era scholars in actual composition',()=>{
  for(const year of [600,1200,1500]){
   const scene=composeHistoricalEvent({id:'court',archetype:'court',label:'',summary:'',year,participants:[],effects:{}},new THREE.Vector3(),{contains:()=>true,surfaceAt:()=>0});
-  assert.equal(scene.models.filter(row=>row.archetype===figureArchetype('scholar',year)).length,8);
+  assert.equal(scene.models.filter(row=>row.archetype===figureArchetype('scholar',year)).length,6);
   assert.equal(scene.models.filter(row=>row.archetype==='scribe').length,0);
  }
 });
