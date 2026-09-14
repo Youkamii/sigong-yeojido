@@ -258,7 +258,8 @@ export function composeHistoricalEvent(event,position,world){
       if(shore)for(let i=0;i<6;i++)model(modern?'human':'spearman',shore.dx+(i%3)*2,shore.dz+Math.floor(i/3)*2,1.2,{medium:'land',side:'naval',action:'walking'});
     }
   }else if(kindIs('tradition',event.archetype==='tradition')){
-    const motif=event.narrative.id.replace('nar-syj136-','');
+    // #186: 교과서 항목의 풍속·제도 장면(kind tradition)은 전승 이야기(narrative)가 없다 → 책 무대로 조립한다.
+    const motif=(event.narrative?.id||'').replace('nar-syj136-','');
     const primary={gujibong:'story_egg',cheoyong:'hanging_scroll',seodong:'period_figure',samseong:'story_hollows',
       nakhwaam:'story_rock',ondal:'wall',gwaneumsa:'pagoda',mangbuseok:'standing_stone',arang:'korean_house'}[motif]||'book';
     model(primary,0,0,2,{primary:true});

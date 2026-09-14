@@ -68,6 +68,13 @@ test('항목 portrait와 heritage는 빈 사료에서도 실제 모형과 양쪽
     assert.equal(sceneView.activity(row.entityId).missingClaimsNote,'');
   }
 });
+test('전승 이야기가 없는 항목 tradition 장면은 책 무대로 조립된다',()=>{
+  const packet={...sample.scenes[0],id:'scene-hs-test-women',itemId:'hs-test-women',kind:'tradition',narrativeType:null,participants:[],participantGroups:null,sides:null};
+  delete packet.narrative;
+  const event=eventFor(packet);assert.ok(event);assert.equal(event.archetype,'tradition');
+  const scene=compose(event);
+  assert.equal(scene.models.find(m=>m.primary)?.archetype,'book');
+});
 for(const packet of sample.scenes.slice(0,2))test(`${packet.title}: packet → row → mesh → pick → existing card`,()=>{
   const event=eventFor(packet);assert.ok(event);
   const scene=compose(event);assert.equal(scene.compositionKind,packet.kind);assert.ok(scene.models.some(m=>m.primary));
