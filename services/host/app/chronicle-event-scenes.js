@@ -103,8 +103,8 @@ export function composeHistoricalEvent(event,position,world){
   // #186: 항목 해군 장면은 배가 바다에 놓이므로 compact 여도 축소하지 않는다(축소하면 먼바다의 점으로만 보인다).
   if(event.compact&&!singleModel&&!navalStage)displayScale*=.16;
   const radius=sceneRadius(event,facility,sea);
-  // #186: 다른 장면과 같은 점에 서면 maxRadius 가 0 이 되어 축척 0 → 조형 좌표가 전부 NaN(콘솔 computeBoundingSphere 경고). 최소 3 단위는 남긴다.
-  if((singleModel||!event.compact)&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,Math.max(event.maxRadius,3)/radius);
+  // #186: 다른 장면과 같은 점에 서면 maxRadius 가 0 이 되어 축척 0 → 조형 좌표가 전부 NaN(콘솔 computeBoundingSphere 경고). 최소 1 단위는 남긴다.
+  if((singleModel||!event.compact)&&Number.isFinite(event.maxRadius))displayScale=Math.min(displayScale,Math.max(event.maxRadius,1)/radius);
   const model=(archetype,dx,dz,scale=1,extra={})=>{
     if(facility&&(/worker|handcart|groundbreaking|building_frame|human|figure|monk|scribe|spearman|soldier|commander|ruler|scholar/.test(archetype)||extra.person||extra.role||extra.action==='working'))return;
     if(!modern)archetype=({palace:'korean_hall',house:'korean_house',gatehouse:'korean_gate',academy_hall:'korean_academy',courtyard_house:'korean_courtyard'})[archetype]||archetype;
