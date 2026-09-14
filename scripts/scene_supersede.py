@@ -8,6 +8,10 @@ prefix of two or more characters (황룡사/황룡사, 백제의/백제, 광개�
 import math
 import re
 
+# Pairs whose titles share no word but describe the same event at the same place (#186):
+# 탑골공원 독립선언서 낭독(옛 장면) 은 항목 3·1 운동 이 덮는다 — 260 m, 같은 해, 같은 kind.
+MANUAL_PAIRS = {'scene-tapgol-1919': 'scene-c2-samil'}
+
 # Words too generic to prove two titles describe the same event.
 GENERIC_WORDS = {'창건', '설립', '건립', '완공', '준공', '조성', '제작', '전투', '해전', '사건', '즉위', '소실', '화재', '이설', '있음',
                  '연대', '경주', '한성', '서울', '개경', '평양', '전개', '시작', '기록', '운동', '싸움'}
@@ -58,7 +62,7 @@ def supersede_scenes(scenes):
                 continue
             if not (new['kind'] == old['kind'] or {new['kind'], old['kind']} <= {'construction', 'heritage'}):
                 continue
-            if not titles_overlap(old.get('title', ''), new.get('title', '')):
+            if MANUAL_PAIRS.get(old['id']) != new['id'] and not titles_overlap(old.get('title', ''), new.get('title', '')):
                 continue
             distance = distance_meters(old['place'], new['place'])
             # Ignore sub-nanometer floating-point noise at the strict boundary.
