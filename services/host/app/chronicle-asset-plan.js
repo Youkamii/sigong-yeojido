@@ -26,7 +26,11 @@ export function eventArchetype(event){
   return 'court';
 }
 
+// #186: 항목 패킷의 역할어는 영어다. 조형은 영어 역할어로 고르고, 화면에는 한글로 보인다.
+export const ROLE_KO={ruler:'군주',commander:'지휘관',scholar:'학자',monk:'승려',commoner:'백성',soldier:'군사',worker:'일꾼'};
+export const roleLabel=role=>ROLE_KO[role]||role;
 export function activityFigure(id,role,year,claims){
+  if(Object.hasOwn(ROLE_KO,role))return figureArchetype(role,year);
   const texts=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate)
     &&c.validFrom!=null&&c.validTo!=null&&within(c,year));
   const text=[role,...texts.map(c=>c.object.value||'')].join(' ');
@@ -127,9 +131,16 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
     const {coordinates,region,regionalPlacement}=itemCoordinates?{coordinates:[place.lon,place.lat]}:locate(place);
     const activeParticipants=scene.participants.filter(p=>(p.startYear==null||p.startYear<=context.year)&&(p.endYear==null||p.endYear>=context.year));
     const participants=activeParticipants.filter(p=>supported(p.claimIds)&&present.has(p.entityId)).map(p=>({
-      ...present.get(p.entityId),...p,archetype:activityFigure(p.entityId,p.role,context.year,data.claims),
-      relationClaims:p.claimIds,detail:p.role+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
-    events.push({id:scene.id,entityId:scene.eventId,kind:'event',year:context.year,label:scene.title,setting:isHistoricalSetting(scene),
+      ...present.get(p.entityId),...p,archetype:activityFigure(p.entityId,p.role,context.year,data.claims),role:roleLabel(p.role),
+      relationClaims:p.claimIds,detail:roleLabel(p.role)+' · '+scene.title,claimIds:[...p.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]}));
+    // #186: 항목 인물 장면(portrait)의 주인공은 사료 선택과 무관하게 조형한다. 로드되지 않은 인물은 장면 제목을 이름으로 쓴다.
+    if(scene.itemId&&scene.kind==='portrait'&&!participants.length){
+      const lead=activeParticipants.find(p=>p.presence!=='related')||activeParticipants[0];
+      if(lead)participants.push({id:lead.entityId,entityId:lead.entityId,kind:'person',label:entities.has(lead.entityId)?entityLabel(entities.get(lead.entityId)):scene.title,
+        ...lead,archetype:activityFigure(lead.entityId,lead.role,context.year,data.claims),role:roleLabel(lead.role),locations:[],locationReference:null,unloaded:true,
+        relationClaims:lead.claimIds,detail:roleLabel(lead.role)+' · '+scene.title,claimIds:[...lead.claimIds,...scene.dateClaimIds,...(place?.claimIds||[])]});
+    }
+    events.push({id:scene.id,entityId:scene.eventId,kind:'event',year:context.year,label:scene.title,title:scene.title,setting:isHistoricalSetting(scene),
       ...(scene.itemId?{itemId:scene.itemId}:{}),
       archetype:scene.kind,startYear:scene.startYear,endYear:scene.endYear,detail:yearLabel(scene.startYear),summary:scene.summary,
       scenePlace:coordinates?{...place,coordinates,precision:place.displayPrecision||place.precision,...(regionalPlacement?{

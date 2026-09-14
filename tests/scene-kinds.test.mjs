@@ -17,7 +17,7 @@ const {compileAssetCatalog}=await import('../services/host/app/assetcatalog.js')
 const {buildAssetField}=await import('../services/host/app/assetforge.js');
 const {extendFigureCatalog}=await import('../services/host/app/period-figures.js');
 const {extendBuildingCatalog,buildingArchetype}=await import('../services/host/app/period-buildings.js');
-const {HERITAGE_TYPES,HERITAGE_DISPLAY}=await import('../services/host/app/heritage-models.js');
+const {HERITAGE_TYPES,HERITAGE_DISPLAY,heritageLook}=await import('../services/host/app/heritage-models.js');
 const {planContinuingFacilities}=await import('../services/host/app/facility-persistence.js');
 const {sceneVisualKey}=await import('../services/host/app/chronicle-persistence.js');
 const read=p=>JSON.parse(fs.readFileSync(new URL(p,import.meta.url),'utf8'));
@@ -39,34 +39,60 @@ const compose=e=>composeHistoricalEvent(e,new THREE.Vector3(0,10,0),world);
 
 test('항목 portrait와 heritage는 빈 사료에서도 실제 모형과 양쪽 카드에 좌표와 누락 안내를 표시한다',()=>{
   for(const original of sample.scenes.slice(0,2))for(const partial of [false,true]){
-    const packet={...original,itemId:'hs-test',place:{...original.place,coordinateNote:partial?'항목 좌표 조사':undefined}};
+    const packet={...original,itemId:'hs-test',participants:(original.participants||[]).map(p=>({...p,role:'ruler'})),place:{...original.place,coordinateNote:partial?'항목 좌표 조사':undefined}};
     const data={entities:[],claims:partial?sample.claims.filter(c=>packet.dateClaimIds.includes(c.id)):[],scenePackets:[packet]};
     const context=contextAt(data,packet.startYear),plan=planChronicleAssets(context,data,[],[],[packet]);
-    const assets=assetsFor(plan),row=assets.rows.find(r=>r.itemId);
+    // #186: 항목 인물 장면은 근거가 로드되지 않아도 주인공 조형(person 행)이 서고, 문화재는 사건 행이 선다.
+    const assets=assetsFor(plan),row=assets.rows.find(r=>r.sceneId===packet.id&&['event','person'].includes(r.kind));
     assert.ok(row);assert.ok(assets.picks.includes(row.pick));
-    assert.equal(plan.events[0].participants.length,0);
+    assert.equal(plan.events[0].participants.length,packet.kind==='portrait'?1:0);
+    if(packet.kind==='portrait')assert.ok(assets.rows.some(r=>r.sceneId===packet.id&&r.kind==='person'));
     const sceneView=Object.assign(Object.create(ChronicleScene.prototype),{assets,world,chronicle:{data}});
     const card=Object.assign(Object.create(Chronicle.prototype),{data,context,year:packet.startYear,host:{},stopPlay(){},relations:()=>[],
       callbacks:{entity(){},activity:id=>sceneView.activity(id)}});
-    const activity=sceneView.activity(row.entityId);
+    const activity=sceneView.activity(plan.events[0].entityId);
     const missing=[...new Set([...packet.dateClaimIds,...packet.actionClaimIds,...packet.place.claimIds])].filter(id=>!data.claims.some(c=>c.id===id));
     assert.deepEqual(activity.missingClaimIds,missing);
     assert.equal(activity.placement,'항목 조사에서 확인한 좌표');
     if(partial)assert.equal(activity.coordinateNote,'항목 좌표 조사');
-    card.showEntity(row.entityId);
+    card.showEntity(plan.events[0].entityId);
     assert.ok(card.host.innerHTML.includes(packet.title));
+    if(packet.kind==='portrait'){
+      // 로드되지 않은 인물 조형을 눌러도 인물 카드가 뜨고 역할은 한글이다.
+      const lead=plan.events[0].participants[0];
+      assert.equal(lead.role,'군주');
+      card.showEntity(lead.entityId);assert.ok(card.host.innerHTML.includes(packet.title));
+      assert.ok(!assets.rows.some(r=>r.role==='ruler'));
+      card.showEntity(plan.events[0].entityId);  // 사건 카드로 되돌려 아래 누락 안내 검사를 잇는다
+    }
     assert.ok(card.host.innerHTML.includes('항목 조사에서 확인한 좌표'));
     assert.ok(card.host.innerHTML.includes(`근거 ${missing.length}건은 현재 선택한 사료 밖`));
     const atlas=new AtlasData();atlas.update(data,context,[packet]);
-    const story=Object.assign(Object.create(AtlasStory.prototype),{entity:{id:row.entityId,type:'Event',label:packet.title},activity,history:[],pane:{},
+    const story=Object.assign(Object.create(AtlasStory.prototype),{entity:{id:plan.events[0].entityId,type:'Event',label:packet.title},activity,history:[],pane:{},
       ui:{data:atlas,chronicle:card,scene:sceneView}});
     story.render();
     assert.ok(story.pane.innerHTML.includes('항목 조사에서 확인한 좌표'));
     assert.ok(story.pane.innerHTML.includes(`근거 ${missing.length}건은 현재 선택한 사료 밖`));
     for(const claim of data.claims)assert.ok(story.pane.innerHTML.includes(`data-story-claim="${claim.id}"`));
     sceneView.chronicle.data={claims:[...new Set([...packet.dateClaimIds,...packet.actionClaimIds,...packet.place.claimIds])].map(id=>({id}))};
-    assert.equal(sceneView.activity(row.entityId).missingClaimsNote,'');
+    assert.equal(sceneView.activity(plan.events[0].entityId).missingClaimsNote,'');
   }
+});
+test('문화재 실루엣은 유형과 제목으로 고른다',()=>{
+  for(const [type,title,look] of [['artifact','거북선','ship'],['artifact','칠지도 — 백제가 왜에 보낸 일곱 가지 칼','heritage_blade'],['artifact','대동여지도','hanging_scroll'],
+    ['artifact','난중일기','book'],['artifact','성덕대왕 신종','heritage_bell'],['artifact','논산 관촉사 석조미륵보살입상','heritage_statue'],['artifact','고려청자','heritage_jar'],
+    ['artifact','발해 상경성 석등','heritage_lantern'],['artifact','혼천의','heritage_instrument'],['artifact','신라 금관','heritage_pedestal'],
+    ['site','첨성대','heritage_tower'],['site','독립문','gatehouse'],['site','탑골 공원','memorial'],['site','서대문 형무소','prison'],['site','독도 영유권 문제','heritage_site'],
+    ['tomb','문무대왕릉(대왕암)','heritage_tomb'],['pagoda','x','pagoda'],['hall','x','hall'],['fortress','x','fortress']])assert.equal(heritageLook(type,title),look,title);
+});
+test('옮길 수 있는 유물은 닫힌 기간이나 돌 붙박이일 때만 존속한다',()=>{
+  const base={...sample.scenes[1],persistence:{kind:'facility',from:1441,to:null,basisClaimIds:['recorded']}};
+  const rows=(packet,year)=>planContinuingFacilities([packet],{year,events:[]}).length;
+  assert.equal(rows(base,1500),0);
+  assert.equal(rows({...base,persistence:{...base.persistence,to:1592}},1500),1);
+  assert.equal(rows({...base,persistence:{...base.persistence,to:1592}},1600),0);
+  assert.equal(rows({...base,title:'논산 관촉사 석조미륵보살입상'},1500),1);
+  assert.equal(rows({...base,heritageType:'stele'},1500),1);
 });
 test('전승 이야기가 없는 항목 tradition 장면은 책 무대로 조립된다',()=>{
   const packet={...sample.scenes[0],id:'scene-hs-test-women',itemId:'hs-test-women',kind:'tradition',narrativeType:null,participants:[],participantGroups:null,sides:null};
@@ -114,7 +140,8 @@ test('all nine heritage types build pickable meshes with no people or dropped re
   }
 });
 test('explicit heritage facility interval preserves the model and excludes people and out-of-range years',()=>{
-  const packet={...sample.scenes[1],persistence:{kind:'facility',from:1441,to:1946,basisClaimIds:['recorded']}};
+  // #186: 옮길 수 있는 유물(artifact)은 존속 행을 만들지 않으므로 붙박이 유형(stele)으로 검사한다.
+  const packet={...sample.scenes[1],heritageType:'stele',persistence:{kind:'facility',from:1441,to:1946,basisClaimIds:['recorded']}};
   const rows=year=>planContinuingFacilities([packet],{year,events:[]});
   assert.equal(rows(1441).length,0);assert.equal(rows(1947).length,0);
   for(const year of [1442,1946]){
@@ -149,7 +176,7 @@ test('unknown heritage type falls back to the site model',()=>{
 });
 test('portrait setting table ignores sceneFunction and keeps the event card without people',()=>{
   const event=eventFor(sample.scenes[0]);
-  for(const [setting,archetype] of Object.entries({palace:'palace',office:'academy_hall',temple:'pagoda',battle:'wall',village:'house',academy:'academy_hall'})){
+  for(const [setting,archetype] of Object.entries({palace:'palace',office:'academy_hall',temple:'pagoda',battle:'banner',village:'house',academy:'academy_hall'})){
     const expected=compose({...event,scenePlace:{...event.scenePlace,setting}}).models[0];
     const mapped={palace:'korean_hall',academy_hall:'korean_academy',house:'korean_house'}[archetype]||archetype;
     assert.equal(expected.archetype,buildingArchetype(mapped,event.year,{seed:0,latitude:event.scenePlace.coordinates[1]}));

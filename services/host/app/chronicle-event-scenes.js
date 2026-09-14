@@ -4,7 +4,7 @@ import {buildingArchetype} from './period-buildings.js';
 import {settlementLayout,SETTLEMENT_RADIUS} from './historical-regions.js';
 import {urbanRegionAt} from './urban-regions.js';
 import {facilityDisplayScale} from './facility-scale.js';
-import {HERITAGE_TYPES,HERITAGE_DISPLAY} from './heritage-models.js';
+import {HERITAGE_TYPES,HERITAGE_DISPLAY,heritageLook} from './heritage-models.js';
 import {sceneRadius} from './chronicle-persistence.js';
 import {hash32} from './util.js';
 
@@ -154,9 +154,11 @@ export function composeHistoricalEvent(event,position,world){
     });
   };
   if(compositionKind==='portrait'){
-    const stages={palace:'palace',office:'academy_hall',temple:'pagoda',battle:'wall',village:'house',academy:'academy_hall'};
+    // #186: 무대(사건 행)와 인물 조형(인물 행, 아래 참여자 루프)이 함께 선다. 항목 인물 장면의 주인공은 사료 선택과 무관하게 asset-plan 이 넘긴다.
+    // 전장 무대는 성벽이 아니라 군기다(성벽만 서고 인물이 빠지면 인물이 성벽으로 보였다).
+    const stages={palace:'palace',office:'academy_hall',temple:'pagoda',battle:'banner',village:'house',academy:'academy_hall'};
     const stage=Object.hasOwn(stages,event.scenePlace?.setting)?stages[event.scenePlace.setting]:'heritage_site';
-    model(stage,0,-4,.65,{primary:true});
+    model(stage,0,-4,stage==='banner'?1.4:.65,{primary:true});
     if(!event.compact&&groups){
       let count=0;
       for(const g of groups)for(let i=0;i<Math.max(0,Math.trunc(Number(g.count)||0))&&count<4;i++){
@@ -165,11 +167,18 @@ export function composeHistoricalEvent(event,position,world){
     }
   }else if(compositionKind==='heritage'){
     const type=HERITAGE_TYPES.includes(event.heritageType)?event.heritageType:'site';
-    if(type==='fortress'){
+    const look=heritageLook(type,event.title||event.label);
+    if(look==='fortress'){
       model('gatehouse',0,0,.8,{primary:true});
       for(const x of [-4,4])model('wall',x,0,.65);
-    }else model(type==='hall'?buildingArchetype('korean_hall',Math.min(event.year,1875)):
-      type==='pagoda'?'heritage_pagoda_'+(event.heritageFloors===5?5:3):'heritage_'+type,0,0,1,{primary:true});
+    }else if(look==='prison'){
+      model('wall',0,0,.8,{primary:true});
+      for(const [x,z] of [[-5,3],[5,3]])model('house',x,z,.5);
+    }else if(look==='memorial'){
+      model('heritage_stele',0,0,.9,{primary:true});
+      for(const [x,z] of [[-5,-3],[5,-3],[-6,4],[6,4]])model('pine',x,z,1.1);
+    }else model(look==='hall'?buildingArchetype('korean_hall',Math.min(event.year,1875)):
+      look==='pagoda'?'heritage_pagoda_'+(event.heritageFloors===5?5:3):look,0,0,1,{primary:true});
   }else if(facilityLook==='palace'){
     model(modern?'civic_hall':'palace',0,0,1.8,{primary:true});
   }else if(sceneFunction==='rail_station'){
@@ -484,7 +493,7 @@ export function composeHistoricalEvent(event,position,world){
   for(const person of compositionKind==='heritage'?[]:compositionKind==='portrait'?event.participants.filter(p=>p.presence!=='related').slice(0,1):event.compact?[]:event.participants.filter(p=>p.presence==='on-site')){
     const side=person.side||'civilian',index=actorCounts[side]||0;actorCounts[side]=index+1;
     if(compositionKind==='portrait'){
-      model(person.archetype||figureArchetype(person.role,event.year),0,0,1.8,{person,side,primary:true,action:'idle'});
+      model(person.archetype||figureArchetype(person.role,event.year),0,0,1.1,{person,side,primary:true,action:'idle'});  // #186: 1.8 이면 집 3채 높이로 주변 문화재를 가린다
     }else if(sea){
       const affiliation=alliedFleet&&side==='naval'?(/명나라 수군|명 수군/.test(person.role)?'ming':'joseon'):null;
       const fleet=models.filter(m=>m.archetype===shipType&&m.side===side&&(!affiliation||m.fleet===affiliation)),ship=fleet[index%fleet.length];

@@ -87,6 +87,8 @@ export class ChronicleScene {
     this.host.replaceChildren();this.markers=[];
     for(const row of this.assets.rows){
       if(row.kind==='building'||!pickableRow(row))continue;
+      // #186: 인물 장면의 무대(사건 행)에는 이름표를 달지 않는다 — 인물 조형이 같은 이름을 단다.
+      if(row.kind==='event'&&row.archetype==='portrait'&&this.assets.rows.some(r=>r.kind==='person'&&r.sceneId===row.sceneId))continue;
       const button=document.createElement('button');button.className=row.kind==='event'?'scene-event':'scene-person';
       if(row.narrative){button.classList.add('scene-tradition');button.dataset.narrative=row.narrative.id;}
       button.dataset.sceneEntity=row.entityId;

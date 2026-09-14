@@ -68,6 +68,9 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
     if(scene.supersededBy&&byId.get(scene.supersededBy)?.persistence)continue;
     const persistence=scene.persistence?.kind==='facility'?scene.persistence:null;
     const heritage=scene.kind==='heritage'&&scene.persistence?.kind==='facility';
+    // #186: 옮길 수 있는 유물(artifact)을 지금 보관처 좌표로 무기한 '존속'시키면 7세기 반가사유상이 1418년 한성에 선다.
+    // 기간이 닫힌 존속(자격루 1434~1592, 거북선 1592~1598 같은 역사적 자리)은 두고, 무기한(to:null)은 돌로 된 붙박이만 남긴다.
+    if(heritage&&scene.heritageType==='artifact'&&!Number.isFinite(scene.persistence?.to)&&!/석조|마애|석등|석불|석상|석인/.test(scene.title||''))continue;
     if((scene.kind!=='construction'&&!heritage)||scene.narrativeType!=null||scene.title?.includes('전승')
       ||!coordinates(scene.place)||!Number.isFinite(scene.endYear))continue;
     if(heritage&&!Number.isFinite(scene.persistence.from))continue;

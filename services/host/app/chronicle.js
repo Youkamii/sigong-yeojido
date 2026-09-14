@@ -236,7 +236,8 @@ export class Chronicle {
     this.stopPlay();
     const background=this.callbacks.activity?.(id);
     const entity=this.data.entities.find(e=>e.id===id)
-      ||(background?.itemId?{id,type:'Event',label:background.label}:null)
+      ||(background?.itemId?(()=>{const person=(background.participants||[]).find(p=>p.entityId===id);  // #186: 로드되지 않은 항목 인물
+        return person?{id,type:'Person',label:person.label||background.label}:{id,type:'Event',label:background.label};})():null)
       ||(['anonymous-city','facility'].includes(background?.siteBackground?.scope)?{id,type:'Place',labels:[]}:null);
     if(!entity)return;
     const dates=datedClaims(this.data).filter(d=>d.claim.subject===id);
