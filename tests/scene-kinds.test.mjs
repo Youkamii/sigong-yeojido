@@ -373,3 +373,12 @@ test('review fixes: item-only construction/naval stages, ruler omission by Korea
   const jongmyo=compose(stageEvent('ritual',1395,'종묘 — 종묘 (1395)',{scenePlace:{setting:'temple',medium:'land'}}));
   assert.equal(primaryOf(jongmyo),'table');assert.ok(!hasModel(jongmyo,/^pagoda$/));assert.ok(hasModel(jongmyo,/_hall_/));
 });
+
+test('a scene sharing its point with another scene (maxRadius 0) keeps a finite positive scale',()=>{
+  for(const [kind,extra] of [['heritage',{heritageType:'statue',title:'연가 7년명 금동여래입상',label:'연가 7년명 금동여래입상'}],['portrait',{scenePlace:{setting:'battle',medium:'land'}}],['court',{compact:false}]]){
+    const scene=compose({...stageEvent(kind,1593,'항목',extra),maxRadius:0});
+    assert.ok(scene.models.length>0,kind);
+    assert.ok(scene.models.every(m=>Number.isFinite(m.scale)&&m.scale>0&&[m.position.x,m.position.y,m.position.z].every(Number.isFinite)),kind);
+    assert.ok(scene.displayScale>0);
+  }
+});
