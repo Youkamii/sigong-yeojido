@@ -46,6 +46,9 @@ git pull --ff-only
 
 # Python 서버 코드가 바뀐 경우에만 단일 뷰어를 재시작한다.
 systemctl --user restart sigong-viewer
+
+# services/build_ttl.py 나 validate.py 가 바뀐 경우 sync 도 재시작한다 — --watch 프로세스가 시작 때 import 한 옛 코드로 계속 빌드한다(#192 에서 확인).
+systemctl --user restart sigong-sync
 ```
 
 현재 전체 원문 색인은 뷰어 메모리 약 3.3 GiB를 사용하고 시작에 약 8분이 걸린다(#139).
