@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {AtlasData} from '../services/host/app/atlas-data.js';
 import {AtlasStory} from '../services/host/app/atlas-story.js';
+import {loadChronicle} from '../services/host/app/chronicle-load.js';
 
 const canonical='person-encykorea-sejong-e0029857',old='ent-wea-sejong';
 function fixture(){
@@ -82,3 +83,40 @@ test('별칭이 없으면 줄을 생략하고 별칭 문자열은 HTML로 해석
   story.entity.aliases=[];story.render();
   assert.ok(!story.pane.innerHTML.includes('atlas-story-aliases'));
 });
+
+for(const split of ['limit','url'])for(const reverse of [false,true]){
+  test(`나뉜 응답의 병합 정보를 보존해 정본만 검색한다 (${split}, reverse=${reverse})`,async()=>{
+    const rich={id:canonical,type:'Person',label:'세종',aliases:['세종장헌왕','世宗莊憲王'],mergedIds:[old]};
+    const spelling={id:old,type:'Person',label:'세종장헌왕',mergedInto:canonical};
+    const parts=[
+      {entities:[rich,{id:old,type:'Person',label:'세종장헌왕'}],claims:[],hasMore:false},
+      {entities:[{id:canonical,type:'Person',label:'세종'},spelling],claims:[
+        {id:'identity',subject:old,predicate:'syj:sameEntityAs',object:{kind:'entity',id:canonical}},
+      ],hasMore:false},
+    ];
+    if(reverse)parts.reverse();
+    const original=structuredClone(parts),calls=[],controller=new AbortController();
+    const sources=['source-a','source-b'].map(id=>id+(split==='url'?'x'.repeat(24000):''));
+    const request=async(url,options)=>{
+      const params=new URL(url,'https://example.org').searchParams;
+      assert.equal(params.get('origin'),'human');
+      assert.equal(options.signal,controller.signal);
+      const selected=params.get('sources');calls.push(selected);
+      const data=selected===sources.join(',')?{entities:[],claims:[],hasMore:true}:parts[sources.indexOf(selected)];
+      assert.ok(data);
+      return {ok:true,json:async()=>data};
+    };
+    const result=await loadChronicle(sources,'human',controller.signal,request);
+    assert.equal(calls.length,split==='url'?2:3);
+    assert.equal(result.hasMore,false);
+    assert.equal(result.entities.length,2);
+    assert.deepEqual(result.entities.find(e=>e.id===canonical),rich);
+    assert.deepEqual(result.entities.find(e=>e.id===old),spelling);
+    assert.deepEqual(parts,original);
+    const data=new AtlasData();data.update(result,{year:1418,allEvents:[]},[]);
+    for(const query of ['세종','세종장헌왕','世宗莊憲王']){
+      assert.deepEqual(data.search(query,'Person').map(r=>r.entity.id),[canonical]);
+    }
+    assert.ok(data.subjects.get(canonical).some(c=>c.id==='identity'));
+  });
+}

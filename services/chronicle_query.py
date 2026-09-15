@@ -7,10 +7,21 @@ from graph_query import NS, query_rows
 from time_query import selected_filter, _claim
 
 
-def merge_same_entities(result):
-    # 선택한 사료의 응답만 복사해 원본 개체와 동일성 주장을 보존한다.
-    result = deepcopy(result)
-    entities = {entity['id']: entity for entity in result['entities']}
+def build_same_entity_map(result, identity_rows=None):
+    entities = {}
+    identities = []
+    for row in identity_rows or []:
+        if row['predicate'] != NS + 'sameEntityAs':
+            continue
+        subject, target = (row[key].removeprefix(NS) for key in ('subject', 'object'))
+        for entity_id, prefix in ((subject, 'subject'), (target, 'object')):
+            entities[entity_id] = {
+                'id': entity_id, 'type': row.get(prefix + 'Type', '').removeprefix(NS),
+                'label': row.get(prefix + 'Label', entity_id),
+            }
+        identities.append({'subject': subject, 'predicate': 'syj:sameEntityAs',
+                           'object': {'kind': 'entity', 'id': target}})
+    entities.update((entity['id'], deepcopy(entity)) for entity in result['entities'])
     parents = {entity_id: entity_id for entity_id in entities}
 
     def find(entity_id):
@@ -19,7 +30,7 @@ def merge_same_entities(result):
             entity_id = parents[entity_id]
         return entity_id
 
-    for claim in result['claims']:
+    for claim in identities + result['claims']:
         obj = claim['object']
         if claim['predicate'] != 'syj:sameEntityAs' or obj.get('kind') != 'entity':
             continue
@@ -47,9 +58,9 @@ def merge_same_entities(result):
     canonical_ids = {}
     for members in groups.values():
         canonical = entities[min(members, key=priority)]
-        canonical_ids.update((entity_id, canonical['id']) for entity_id in members)
         if len(members) < 2:
             continue
+        canonical_ids.update((entity_id, canonical['id']) for entity_id in members)
         canonical['mergedIds'] = sorted(entity_id for entity_id in members if entity_id != canonical['id'])
         aliases = list(canonical.get('aliases', []))
         for entity_id in sorted(members):
@@ -58,6 +69,19 @@ def merge_same_entities(result):
             if entity_id != canonical['id']:
                 entity['mergedInto'] = canonical['id']
         canonical['aliases'] = list(dict.fromkeys(label for label in aliases if label and label != canonical.get('label')))
+    return canonical_ids, entities
+
+
+def apply_same_entity_map(result, canonical_ids, entities):
+    # 응답 밖의 정본도 넣어야 나뉜 응답의 참조가 같은 개체로 모인다.
+    result = deepcopy(result)
+    present = {entity['id']: entity for entity in result['entities']}
+    for entity_id in list(present):
+        if entity_id in canonical_ids:
+            canonical = canonical_ids[entity_id]
+            present[entity_id] = deepcopy(entities[entity_id])
+            present[canonical] = deepcopy(entities[canonical])
+    result['entities'] = list(present.values())
 
     claims = {}
     for claim in result['claims']:
@@ -66,7 +90,7 @@ def merge_same_entities(result):
             if subject:
                 claim['subject'] = subject
                 claim['subjectLabel'] = entities[subject]['label']
-            if claim['object'].get('kind') == 'entity':
+            if 'id' in claim['object']:
                 target = claim['object']['id']
                 claim['object']['id'] = canonical_ids.get(target, target)
         source = claim.get('sourceId', claim.get('fromSource', claim.get('chunk', {}).get('sourceId')))
@@ -77,13 +101,52 @@ def merge_same_entities(result):
     return result
 
 
-def chronicle(sources=None, origin='all'):
+def merge_same_entities(result, identity_rows=None):
+    identity_rows = list(identity_rows or [])
+    canonical_ids, entities = build_same_entity_map(result, identity_rows)
+    result = apply_same_entity_map(result, canonical_ids, entities)
+    present = {entity['id'] for entity in result['entities']}
+    claim_ids = {claim['id'] for claim in result['claims']}
+    # 한도 밖의 동일성 주장도 카드에서 근거를 열 수 있도록 보충한다.
+    for row in identity_rows:
+        if row['predicate'] != NS + 'sameEntityAs':
+            continue
+        subject, target = (row[key].removeprefix(NS) for key in ('subject', 'object'))
+        if subject not in present and target not in present:
+            continue
+        claim = _claim(row, subject, 'syj:sameEntityAs', {'kind': 'entity', 'id': target})
+        claim['subjectLabel'] = row.get('subjectLabel', subject)
+        if claim['id'] not in claim_ids:
+            result['claims'].append(claim)
+            claim_ids.add(claim['id'])
+    result['claims'].sort(key=lambda claim: claim['id'])
+    return result
+
+
+def chronicle(sources=None, origin='all', *, query=None):
     if origin not in ('all', 'ai', 'human'):
         raise ValueError('origin must be all, human or ai')
     result = {'entities': [], 'claims': [], 'hasMore': False}
     if sources is not None and not sources:
         return result
-    rows = query_rows(f'''
+    query = query or query_rows
+    # 본 응답의 한도에 밀린 연결도 선택 사료 안에서는 정본 지도에 포함한다.
+    identity_rows = query(f'''
+SELECT DISTINCT ?claim ?subject ?subjectType ?subjectLabel ?predicate ?object ?objectType ?objectLabel
+       ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink ?note
+WHERE {{
+  ?claim a syj:Claim; syj:subject ?subject; syj:predicate syj:sameEntityAs; syj:objectEntity ?object;
+         syj:fromSource ?source; syj:citesChunk ?chunk; syj:quote ?quote;
+         syj:origin ?origin; syj:status ?status.
+  BIND(syj:sameEntityAs AS ?predicate)
+  ?subject a ?subjectType. ?object a ?objectType.
+  {selected_filter(sources, origin)}
+  OPTIONAL {{?subject rdfs:label ?subjectLabel}} OPTIONAL {{?object rdfs:label ?objectLabel}}
+  OPTIONAL {{?source rdfs:label ?sourceLabel}} OPTIONAL {{?chunk syj:locator ?locator}}
+  OPTIONAL {{?chunk syj:permalink ?permalink}} OPTIONAL {{?claim syj:note ?note}}
+}} ORDER BY ?claim
+''')
+    rows = query(f'''
 SELECT DISTINCT ?claim ?subject ?subjectType ?subjectLabel ?predicate ?objectKind ?object
        ?objectType ?objectLabel ?verbatim ?precision ?year ?earliest ?latest
        ?source ?sourceLabel ?chunk ?quote ?origin ?status ?locator ?permalink ?note
@@ -142,4 +205,4 @@ WHERE {{
         claim['subjectLabel'] = entities[subject]['label']
         result['claims'].append(claim)
     result['entities'] = list(entities.values())
-    return merge_same_entities(result)
+    return merge_same_entities(result, identity_rows)
