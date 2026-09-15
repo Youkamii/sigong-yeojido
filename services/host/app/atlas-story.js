@@ -31,6 +31,7 @@ export class AtlasStory{
   }
   reset(){this.entity=null;this.activity=null;this.history=[];}
   show(entity,activity){
+    entity=this.ui.data.entities.get(this.ui.data.canonicalId(entity.id))||entity;
     if(this.entity&&this.entity.id!==entity.id&&!this.goingBack)this.history.push({id:this.entity.id,year:this.ui.chronicle.year,mode:this.mode});
     this.entity=entity;this.activity=activity;this.mode='summary';this.ui.openPanel('story');this.render();
   }
@@ -49,15 +50,15 @@ export class AtlasStory{
     const data=this.ui.data,event=this.sceneEvent(),scene=data.scenes.get(this.activity?.sceneId||event?.sceneId);
     const rows=new Map(data.relations(this.entity.id).map(r=>[r.entity.id,{...r,relationClaims:r.claims,role:'',presence:''}]));
     if(this.entity.type==='Event')for(const p of scene?.participants||[]){
-      const entity=data.entities.get(p.entityId),claims=(p.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean);
+      const entity=data.entities.get(data.canonicalId(p.entityId)),claims=(p.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean);
       if(!entity||!claims.length)continue;
       const row=rows.get(entity.id)||{entity,claims:[]};row.claims=[...new Map([...row.claims,...claims].map(c=>[c.id,c])).values()];row.role=p.role;row.roleYear=scene?.startYear;row.presence=p.presence;rows.set(entity.id,row);
     }
     if(this.entity.type==='Person')for(const e of data.eventsFor(this.entity.id)){
       const packet=data.scenes.get(e.sceneId);
-      if(!packet?.participants?.some(p=>p.entityId===this.entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id))))continue;
+      if(!packet?.participants?.some(p=>data.canonicalId(p.entityId)===this.entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id))))continue;
       for(const p of packet.participants){
-        const entity=data.entities.get(p.entityId),claims=(p.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean);
+        const entity=data.entities.get(data.canonicalId(p.entityId)),claims=(p.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean);
         if(entity?.type!=='Person'||entity.id===this.entity.id||!claims.length)continue;
         const row=rows.get(entity.id)||{entity,claims:[]};
         row.claims=[...new Map([...row.claims,...claims].map(c=>[c.id,c])).values()];
@@ -142,7 +143,7 @@ export class AtlasStory{
     if(!this.entity)return;
     const ui=this.ui,data=ui.data,entity=this.entity,activity=this.activity,event=this.sceneEvent(),scene=data.scenes.get(activity?.sceneId||event?.sceneId),name=activity?.setting?activity.label:data.label(entity);
     const related=this.relatedRows(),sections=this.sections(related),dates=data.datesLabel(entity.id),claims=data.subjects.get(entity.id)||[];
-    const role=scene?.participants?.find(p=>p.entityId===entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id)));
+    const role=scene?.participants?.find(p=>data.canonicalId(p.entityId)===entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id)));
     const description=activity?.summary||data.description(entity.id)||(entity.type==='Event'?scene?.summary:'');
     const personRole=roleLabel(activity?.role||role?.role,scene?.startYear??activity?.year??ui.chronicle?.year);
     const relationMode=this.mode==='relations';
@@ -157,6 +158,7 @@ export class AtlasStory{
       <h2>${esc(name)}${relationMode?'과 연결':''}</h2>
       ${imageFigure}
       ${description?`<p class="atlas-description">${esc(description)}</p>`:'<p class="atlas-muted">이 항목에 연결된 기록과 관계를 살펴보세요.</p>'}
+      ${['Person','Place'].includes(entity.type)&&entity.aliases?.length?`<p class="atlas-story-aliases">다른 표기 · ${entity.aliases.map(esc).join(' · ')}</p>`:''}
       ${entity.type==='Person'?`<p class="atlas-muted">출생 – 사망 · ${esc(dates)}</p>`:''}
       ${personRole?`<p class="atlas-role">${esc(personRole)}</p>`:''}
       ${relationMode?'<p class="atlas-muted">관계를 따라 탐색해 보세요.</p>':''}

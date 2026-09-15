@@ -28,26 +28,30 @@ export class AtlasData{
       this.subjects=new Map();this.links=new Map();this.dates=new Map();
       const add=(map,key,value)=>{if(!map.has(key))map.set(key,[]);map.get(key).push(value);};
       for(const claim of data.claims){
-        add(this.subjects,claim.subject,claim);
-        if(claim.object.kind==='entity'){
+        add(this.subjects,this.canonicalId(claim.subject),claim);
+        // 원래 이름을 남긴 동일성 주장이 관계 목록에 인물을 다시 만들지 않게 한다.
+        if(claim.object.kind==='entity'&&!this.entities.get(claim.subject)?.mergedInto&&!this.entities.get(claim.object.id)?.mergedInto){
           add(this.links,claim.subject,{claim,id:claim.object.id});add(this.links,claim.object.id,{claim,id:claim.subject});
         }
       }
       for(const date of datedClaims(data))add(this.dates,date.claim.subject,date);
-      this.searchable=data.entities.filter(e=>['Person','Event'].includes(e.type)).map(e=>({entity:e,text:normalize([e.label,e.labelHanja,...(e.aliases||[])].join(' '))}));
+      this.searchable=data.entities.filter(e=>!e.mergedInto&&['Person','Event'].includes(e.type)).map(e=>({entity:e,text:normalize([e.label,e.labelHanja,...(e.aliases||[])].join(' '))}));
     }
     this.context=context;this.events=context?.allEvents||[];
     const active=new Set(this.events.map(e=>e.sceneId));
     this.scenes=new Map((packets||[]).filter(p=>active.has(p.id)).map(p=>[p.id,p]));
   }
+  canonicalId(id){return this.entities.get(id)?.mergedInto||id;}
   label(entity){
     const scene=entity.type==='Event'&&this.eventsFor(entity.id).find(e=>e.id===entity.id&&e.sceneId);
     return cleanTitle(scene?.title||entityLabel(entity)).replace(/\s*·\s*현재 기관 좌표$/,'');
   }
   description(id){
+    id=this.canonicalId(id);
     return (this.subjects.get(id)||[]).find(c=>c.predicate==='syj:describedAs'&&c.object.value)?.object.value||'';
   }
   datesLabel(id){
+    id=this.canonicalId(id);
     const dates=this.dates.get(id)||[],life=dates.find(d=>d.claim.predicate==='syj:livedIn');
     const born=dates.find(d=>d.claim.predicate==='syj:bornIn'),died=dates.find(d=>d.claim.predicate==='syj:diedIn');
     const range=born&&died?[born.lo,died.hi]:life?[life.lo,life.hi]:null;
@@ -57,14 +61,16 @@ export class AtlasData{
     return dates[0]?yearLabel(dates[0].lo):'연대 미확인';
   }
   eventsFor(id){
+    id=this.canonicalId(id);
     const related=new Set((this.links.get(id)||[]).filter(r=>this.entities.get(r.id)?.type==='Event').map(r=>r.id));
-    return this.events.filter(e=>e.id===id||related.has(e.id)||this.scenes.get(e.sceneId)?.participants?.some(p=>p.entityId===id&&(p.claimIds||[]).some(c=>this.claims.has(c))))
+    return this.events.filter(e=>!this.entities.get(e.id)?.mergedInto&&(e.id===id||related.has(e.id)||this.scenes.get(e.sceneId)?.participants?.some(p=>this.canonicalId(p.entityId)===id&&(p.claimIds||[]).some(c=>this.claims.has(c)))))
       .sort((a,b)=>Math.abs(a.lo-this.context.year)-Math.abs(b.lo-this.context.year)||a.lo-b.lo);
   }
   relations(id){
+    id=this.canonicalId(id);
     const found=new Map();
     for(const link of this.links.get(id)||[]){
-      const entity=this.entities.get(link.id);if(!entity||entity.id===id)continue;
+      const entity=this.entities.get(link.id);if(!entity||entity.mergedInto||entity.id===id)continue;
       if(!found.has(entity.id))found.set(entity.id,{entity,claims:[]});found.get(entity.id).claims.push(link.claim);
     }
     return [...found.values()];
