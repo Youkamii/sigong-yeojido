@@ -474,3 +474,14 @@ test('item lead figures: different sides get distinct spots, item participants b
   assert.deepEqual(planned.participants.map(p=>p.entityId),['x2']);
   assert.equal(planned.participants[0].label,'군주');
 });
+
+test('sea scenes in narrow waters keep a visible minimum scale',()=>{
+  // 기준점 반경 6 안에만 물이 있는 좁은 물길(하한 없이는 축척 약 .1 → 배가 점만큼 작다)
+  for(const radius of [6,3]){
+    const narrow={...world,contains:(x,z)=>Math.hypot(x,z)>radius,seaLevel:0};
+    const scene=composeHistoricalEvent({...stageEvent('naval',1592,'한산도 대첩'),scenePlace:{setting:'battle',medium:'sea',coordinates:[0,0]}},new THREE.Vector3(0,0,0),narrow);
+    assert.ok(scene.displayScale>=.3,String(scene.displayScale));
+    // 반경 3 이면 (-13×.3) 자리가 뭍이라 대표 배는 기준점으로 되돌아온다
+    assert.ok(scene.models.some(m=>m.archetype==='ship'&&m.primary),'primary ship radius '+radius);
+  }
+});

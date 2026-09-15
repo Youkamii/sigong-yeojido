@@ -97,7 +97,8 @@ export function composeHistoricalEvent(event,position,world){
     for(let r=.1;r<35;r*=1.25){
       if(Array.from({length:24},(_,i)=>i*Math.PI/12).some(a=>world.contains(position.x+Math.cos(a)*r,position.z+Math.sin(a)*r))){clearance=r/1.25;break;}
     }
-    displayScale=Math.min(displayScale,clearance/48);
+    // #186: 좁은 물길(한산도·명량)에서는 배가 점만큼 줄어 보이지 않는다 → 하한 .3(뭍에 조금 걸치더라도 장면이 보이게)
+    displayScale=Math.min(displayScale,Math.max(clearance/48,.3));
   }
   if(facility&&!singleModel)displayScale=facilityDisplayScale(displayScale,position,world);
   // #186: 항목 해군 장면은 배가 바다에 놓이므로 compact 여도 축소하지 않는다(축소하면 먼바다의 점으로만 보인다).
@@ -124,7 +125,11 @@ export function composeHistoricalEvent(event,position,world){
         }
       }
     }
-    if(onWater&&world.contains(x,z))return;
+    if(onWater&&world.contains(x,z)){
+      // #186: 좁은 물길에서 대표 배가 뭍에 걸리면 기준점(물)에 세워 장면이 사라지지 않게 한다.
+      if(!extra.primary||world.contains(position.x,position.z))return;
+      x=position.x;z=position.z;
+    }
     const p=new THREE.Vector3(x,onWater?world.seaLevel:world.surfaceAt(x,z),z);
     const row={archetype,position:p,scale,...extra,lift:(extra.lift||0)*displayScale};models.push(row);occupied.push({...p,radius:(archetype==='spearman'?1.7:3)*displayScale});
     return row;
