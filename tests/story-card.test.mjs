@@ -143,5 +143,6 @@ test('ruler 역할 호칭은 시대를 따른다 — 4·19 카드의 이승만�
   assert.equal(roleLabel('ruler',1930),'지도자');
   assert.equal(roleLabel('ruler',1960),'국가 지도자');
   assert.equal(roleLabel('ruler'),'군주');
+  assert.equal(roleLabel('군주',1948),'국가 지도자');  // 조형 계획이 번역해 넘긴 역할
   assert.equal(roleLabel('commander',1960),'지휘관');
 });

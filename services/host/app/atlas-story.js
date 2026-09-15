@@ -144,7 +144,7 @@ export class AtlasStory{
     const related=this.relatedRows(),sections=this.sections(related),dates=data.datesLabel(entity.id),claims=data.subjects.get(entity.id)||[];
     const role=scene?.participants?.find(p=>p.entityId===entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id)));
     const description=activity?.summary||data.description(entity.id)||(entity.type==='Event'?scene?.summary:'');
-    const personRole=roleLabel(activity?.role||role?.role,scene?.startYear??activity?.year);
+    const personRole=roleLabel(activity?.role||role?.role,scene?.startYear??activity?.year??ui.chronicle?.year);
     const relationMode=this.mode==='relations';
     const image=aiImageFor({entityId:entity.id,sceneId:activity?.sceneId||(entity.type==='Event'?event?.sceneId:null)});
     const imageFigure=image?`<figure class="atlas-ai-image">

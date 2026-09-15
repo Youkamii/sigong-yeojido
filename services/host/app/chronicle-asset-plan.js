@@ -29,7 +29,7 @@ export function eventArchetype(event){
 // #186: 항목 패킷의 역할어는 영어다. 조형은 영어 역할어로 고르고, 화면에는 한글로 보인다.
 export const ROLE_KO={ruler:'군주',commander:'지휘관',scholar:'학자',monk:'승려',commoner:'백성',soldier:'군사',worker:'일꾼',militia:'의병',envoy:'사신',printer:'인쇄공',civilian:'백성',police:'경찰'};
 // 화면 호칭: 장면 데이터는 국가 원수를 모두 'ruler' 로 두므로 연도가 있으면 시대에 맞게 부른다(대한제국 황제 → 1910 이후 지도자 → 1948 이후 국가 지도자). 연도 없이 부르면 옛 호칭.
-export const roleLabel=(role,year)=>role==='ruler'&&Number.isInteger(year)?(year>=1948?'국가 지도자':year>=1910?'지도자':year>=1897?'황제':'군주'):(ROLE_KO[role]||role);
+export const roleLabel=(role,year)=>(role==='ruler'||role==='군주')&&Number.isInteger(year)?(year>=1948?'국가 지도자':year>=1910?'지도자':year>=1897?'황제':'군주'):(ROLE_KO[role]||role);  // 조형 계획이 이미 '군주'로 바꿔 넘긴 역할도 같은 규칙
 export function activityFigure(id,role,year,claims){
   if(Object.hasOwn(ROLE_KO,role))return figureArchetype(role,year);
   const texts=claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate)
