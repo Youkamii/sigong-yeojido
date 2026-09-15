@@ -51,7 +51,7 @@ export class AtlasStory{
     if(this.entity.type==='Event')for(const p of scene?.participants||[]){
       const entity=data.entities.get(p.entityId),claims=(p.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean);
       if(!entity||!claims.length)continue;
-      const row=rows.get(entity.id)||{entity,claims:[]};row.claims=[...new Map([...row.claims,...claims].map(c=>[c.id,c])).values()];row.role=p.role;row.presence=p.presence;rows.set(entity.id,row);
+      const row=rows.get(entity.id)||{entity,claims:[]};row.claims=[...new Map([...row.claims,...claims].map(c=>[c.id,c])).values()];row.role=p.role;row.roleYear=scene?.startYear;row.presence=p.presence;rows.set(entity.id,row);
     }
     if(this.entity.type==='Person')for(const e of data.eventsFor(this.entity.id)){
       const packet=data.scenes.get(e.sceneId);
@@ -133,7 +133,7 @@ export class AtlasStory{
       const names=[...new Set((row.relationClaims||[]).map(c=>relationName(c,this.entity.id)).filter(Boolean))];
       if(row.sharedYears)names.push('함께 참여');
       const dates=[...new Set([...(row.relationClaims||[]).map(relationDates).filter(Boolean),...[...(row.sharedYears||[])].sort((a,b)=>a-b).map(yearLabel)])].join(' · ');
-      const detail=[names.join(' · ')||(section.id==='people'?'관련 인물':'관련 나라·집단'),roleLabel(row.role)].filter(Boolean).join(' · ');
+      const detail=[names.join(' · ')||(section.id==='people'?'관련 인물':'관련 나라·집단'),roleLabel(row.role,row.roleYear)].filter(Boolean).join(' · ');
       return `<button class="atlas-story-row" data-story-entity="${esc(row.entity.id)}">${icon(section.id==='people'?'person':'castle')}<span class="atlas-story-text"><strong>${esc(data.label(row.entity))}</strong><small>${esc(detail)}</small></span>${dates?`<span class="atlas-relation-year">${esc(dates)}</span>`:''}</button>`;
     };
     return `<section class="atlas-story-section" data-story-section="${section.id}"><h3>${section.title} <span class="atlas-section-count">${section.rows.length}</span></h3>${rows.map(rowHtml).join('')}${rows.length<section.rows.length?`<button class="atlas-section-more" data-story-relations>${section.title} 전체 ${section.rows.length}개 보기 ${icon('right')}</button>`:''}</section>`;
@@ -144,7 +144,7 @@ export class AtlasStory{
     const related=this.relatedRows(),sections=this.sections(related),dates=data.datesLabel(entity.id),claims=data.subjects.get(entity.id)||[];
     const role=scene?.participants?.find(p=>p.entityId===entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id)));
     const description=activity?.summary||data.description(entity.id)||(entity.type==='Event'?scene?.summary:'');
-    const personRole=roleLabel(activity?.role||role?.role);
+    const personRole=roleLabel(activity?.role||role?.role,scene?.startYear??activity?.year);
     const relationMode=this.mode==='relations';
     const image=aiImageFor({entityId:entity.id,sceneId:activity?.sceneId||(entity.type==='Event'?event?.sceneId:null)});
     const imageFigure=image?`<figure class="atlas-ai-image">

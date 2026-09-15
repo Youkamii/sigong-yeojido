@@ -4,6 +4,7 @@ import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import {AtlasData,cleanTitle,relationName,relationDates} from '../services/host/app/atlas-data.js';
 import {AtlasStory} from '../services/host/app/atlas-story.js';
 import {contextAt,yearLabel} from '../services/host/app/chronicle.js';
+import {roleLabel} from '../services/host/app/chronicle-asset-plan.js';
 
 const json=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),'utf8'));
 // 실제 조사에서 등록한 개체, claims-json, 운영 장면을 함께 읽는다.
@@ -134,4 +135,13 @@ test('인물·사건·장소·출처 버튼과 관계/뒤로 동작을 유지한
     click('[data-story-relations]');assert.equal(story.mode,'relations');click('[data-story-back]');assert.equal(story.mode,'summary');
     await Promise.resolve();
   }finally{globalThis.document=previousDocument;globalThis.fetch=previousFetch;}
+});
+
+test('ruler 역할 호칭은 시대를 따른다 — 4·19 카드의 이승만이 군주로 불리지 않는다',()=>{
+  assert.equal(roleLabel('ruler',1400),'군주');
+  assert.equal(roleLabel('ruler',1900),'황제');
+  assert.equal(roleLabel('ruler',1930),'지도자');
+  assert.equal(roleLabel('ruler',1960),'국가 지도자');
+  assert.equal(roleLabel('ruler'),'군주');
+  assert.equal(roleLabel('commander',1960),'지휘관');
 });
