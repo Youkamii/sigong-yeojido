@@ -1,5 +1,5 @@
 ---
 id: "event-hs-song-trade"
 type: "Event"
-label: "event-hs-song-trade"
+label: "송과의 국교 재개와 교역(1071)"
 ---

@@ -129,6 +129,9 @@ class BuildFixtureTest(unittest.TestCase):
                 "Office": 0,
                 "Organization": 0,
                 "Narrative": 0,
+                # #192: 교과서 항목 조사의 껍데기 폴더도 클래스가 된다(고정 자료에는 없음)
+                "Work": 0, "Thing": 0, "Institution": 0, "Group": 0, "Facility": 0, "Heritage": 0,
+                "Artifact": 0, "Document": 0, "Concept": 0, "Period": 0,
                 "TimeSpan": 1,
                 "Location": 3,
                 "Claim": 9,

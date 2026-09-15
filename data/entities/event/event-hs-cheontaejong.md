@@ -1,5 +1,5 @@
 ---
 id: "event-hs-cheontaejong"
 type: "Event"
-label: "event-hs-cheontaejong"
+label: "천태종 개창(1097)"
 ---

@@ -72,8 +72,13 @@ PREFIXES = (
     ("rdfs", "http://www.w3.org/2000/01/rdf-schema#"),
     ("xsd", "http://www.w3.org/2001/XMLSchema#"),
 )
-ENTITY_DIRS = {"person": "Person", "place": "Place", "polity": "Polity", "event": "Event", "office": "Office", "organization":"Organization", "narrative":"Narrative"}
-CLASSES = ("Source", "Chunk", "Person", "Place", "Polity", "Event", "Office", "Organization", "Narrative", "TimeSpan", "Location", "Claim", "Conflict")
+ENTITY_DIRS = {"person": "Person", "place": "Place", "polity": "Polity", "event": "Event", "office": "Office", "organization":"Organization", "narrative":"Narrative",
+               # 교과서 항목 조사가 만드는 껍데기 폴더(#192) — 빠지면 그래프에 유형·이름이 없어 화면에 id 가 그대로 뜬다
+               "work": "Work", "thing": "Thing", "institution": "Institution", "group": "Group", "facility": "Facility", "heritage": "Heritage",
+               "artifact": "Artifact", "document": "Document", "concept": "Concept", "period": "Period"}
+CLASSES = ("Source", "Chunk", "Person", "Place", "Polity", "Event", "Office", "Organization", "Narrative",
+           "Work", "Thing", "Institution", "Group", "Facility", "Heritage", "Artifact", "Document", "Concept", "Period",
+           "TimeSpan", "Location", "Claim", "Conflict")
 CLASS_LABELS = {
     "Source": "사료",
     "Chunk": "원문 조각",
@@ -84,6 +89,16 @@ CLASS_LABELS = {
     "Narrative": "설화·전승",
     "Office": "관직·지위",
     "Organization": "관서·조직",
+    "Work": "저작·기록물",
+    "Thing": "물건·기물",
+    "Institution": "제도",
+    "Group": "집단",
+    "Facility": "시설",
+    "Heritage": "문화유산",
+    "Artifact": "유물",
+    "Document": "문서",
+    "Concept": "개념",
+    "Period": "시대",
     "TimeSpan": "시간 구간",
     "Location": "좌표",
     "Claim": "주장",
@@ -98,6 +113,16 @@ SEE_ALSO = {
     "Place": (CRM + "E53_Place",),
     "Polity": (CRM + "E74_Group",),
     "Organization": (CRM + "E74_Group",),
+    "Work": (CRM + "E73_Information_Object",),
+    "Thing": (CRM + "E22_Human-Made_Object",),
+    "Institution": (CRM + "E29_Design_or_Procedure",),
+    "Group": (CRM + "E74_Group",),
+    "Facility": (CRM + "E24_Physical_Human-Made_Thing",),
+    "Heritage": (CRM + "E24_Physical_Human-Made_Thing",),
+    "Artifact": (CRM + "E22_Human-Made_Object",),
+    "Document": (CRM + "E31_Document",),
+    "Concept": (CRM + "E28_Conceptual_Object",),
+    "Period": (CRM + "E4_Period",),
     "Event": (CRM + "E5_Event",),
     "Narrative": (CRM + "E33_Linguistic_Object",),
     "TimeSpan": (CRM + "E52_Time-Span", "http://www.w3.org/2006/time#TemporalEntity"),

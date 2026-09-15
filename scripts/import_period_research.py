@@ -262,8 +262,12 @@ def main():
     for entity in draft['entities']:
         path = args.data / 'entities' / entity['type'].lower() / (entity['id'] + '.md')
         if path.exists():
-            meta, _ = parse_front_matter(path.read_text(encoding='utf-8'))
+            meta, body = parse_front_matter(path.read_text(encoding='utf-8'))
             assert meta['type'] == entity['type'] and meta['id'] == entity['id']
+            # 앞선 잡이 id 만으로 만든 껍데기에 이번 조사가 이름을 주면 이름을 채운다(#192). 이미 이름이 있으면 건드리지 않는다.
+            if (not meta.get('label') or meta.get('label') == entity['id']) and entity.get('label') and entity['label'] != entity['id']:
+                meta['label'] = entity['label']
+                files[path] = markdown({k: meta[k] for k in ('id', 'type', 'label') if k in meta}, body.strip()).rstrip() + '\n'
         else:
             files[path] = markdown({k:entity[k] for k in ('id','type','label')}, entity.get('ambiguity','')).rstrip() + '\n'
     for sid, claims in by_source.items():

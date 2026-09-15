@@ -1,5 +1,5 @@
 ---
 id: "event-hs-hyeonjong-naju"
 type: "Event"
-label: "event-hs-hyeonjong-naju"
+label: "현종의 나주 피난(1011)"
 ---
