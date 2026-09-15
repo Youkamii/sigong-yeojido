@@ -1,8 +1,25 @@
-import {datedClaims,entityLabel,yearLabel} from './chronicle.js';
+import {datedClaims,entityLabel,yearLabel,RELATION_WORDS} from './chronicle.js';
 
 export const cleanTitle=text=>String(text||'').replace(/\s*\(\d{3,4}(?:년)?\)\s*$/,'');
 export const typeName=type=>({Person:'인물',Event:'사건',Place:'장소',Polity:'나라',Narrative:'전승'}[type]||'기록');
 const normalize=text=>String(text||'').normalize('NFKC').toLocaleLowerCase('ko').replace(/\s/g,'');
+
+export function relationName(claim,id){
+  const predicate=claim.predicate.replace('syj:','');
+  const inverse={hasParent:'자녀',childOf:'자녀',parentOf:'부모',hasTeacher:'제자',teacherOf:'스승'};
+  return (claim.subject!==id&&inverse[predicate])||RELATION_WORDS[predicate]||'';
+}
+export function relationTime(claim){
+  const time=claim.time||(claim.object.kind==='time'?claim.object:null);
+  const lo=time?.earliest??time?.year??(time?.kind==='year'?time.value:undefined)??claim.validFrom;
+  const hi=time?.latest??time?.year??(time?.kind==='year'?time.value:undefined)??claim.validTo;
+  return {lo:Number.isInteger(lo)?lo:null,hi:Number.isInteger(hi)?hi:null};
+}
+export function relationDates(claim){
+  const {lo,hi}=relationTime(claim);
+  if(lo!==null&&hi!==null)return yearLabel(lo)+(lo!==hi?' – '+yearLabel(hi):'');
+  return lo!==null?yearLabel(lo)+'부터':hi!==null?yearLabel(hi)+'까지':'';
+}
 
 export class AtlasData{
   update(data,context,packets){

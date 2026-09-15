@@ -31,10 +31,11 @@ const shortPredicate = p=>p.replace('syj:','');
 const ACTIVITY = new Map([['livedIn','생존'],['reignedIn','재위'],['activeIn','활동'],['appearsIn','등장']]);
 const activityLabel=(predicate,claim)=>predicate==='appearsIn'&&claim.note?.startsWith('전승 연대')?'전승 연대':ACTIVITY.get(predicate);
 const EVENT_WORDS = {foundedIn:'건국',establishedIn:'설립',proclaimedIn:'선포',accededIn:'즉위'};
-const RELATION_WORDS = {hasParticipant:'참여',participatedIn:'참여 사건',tookPlaceAt:'장소',occurredAt:'장소',
+export const RELATION_WORDS = {hasParticipant:'참여',participatedIn:'참여 사건',tookPlaceAt:'장소',occurredAt:'장소',
   hasSetting:'전승의 무대',hasCharacter:'전승 속 등장인물',
   isKingOf:'나라',memberOf:'소속',affiliatedWith:'소속',hasParent:'부모',childOf:'부모',parentOf:'자녀',
-  foundedBy:'건국자',ledBy:'이끈 인물',hasFounder:'설립자',sameEntityAs:'같다고 보는 이름'};
+  foundedBy:'건국자',ledBy:'이끈 인물',hasFounder:'설립자',sameEntityAs:'같다고 보는 이름',
+  relatedTo:'관련',capitalOf:'수도',hasTeacher:'스승',teacherOf:'제자',alliedWith:'동맹',enemyOf:'적대'};
 const bounded = p=>Number.isInteger(p.lo)&&Number.isInteger(p.hi)&&p.lo!==0&&p.hi!==0;
 
 export function datedClaims(data){
