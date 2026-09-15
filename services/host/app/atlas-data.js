@@ -35,7 +35,7 @@ export class AtlasData{
         }
       }
       for(const date of datedClaims(data))add(this.dates,date.claim.subject,date);
-      this.searchable=data.entities.filter(e=>!e.mergedInto&&['Person','Event'].includes(e.type)).map(e=>({entity:e,text:normalize([e.label,e.labelHanja,...(e.aliases||[])].join(' '))}));
+      this.searchable=data.entities.filter(e=>!e.mergedInto&&['Person','Event'].includes(e.type)).map(e=>{const terms=[e.label,e.labelHanja,...(e.aliases||[])].filter(Boolean).map(normalize).filter(Boolean);return {entity:e,terms,text:terms.join(' ')};});
     }
     this.context=context;this.events=context?.allEvents||[];
     const active=new Set(this.events.map(e=>e.sceneId));
@@ -78,7 +78,9 @@ export class AtlasData{
   search(query,type='all'){
     const text=normalize(query);if(!text)return [];
     // 이름이 검색어를 품거나(세종 ⊂ 세종대왕), 검색어가 이름을 품으면(세종대왕 ⊃ 세종) 맞는다 — 존칭·직함이 붙은 검색어도 찾히게.
-    const direct=this.searchable.filter(row=>row.text.includes(text)||(row.text.length>=2&&text.includes(row.text))).sort((a,b)=>Number(b.text===text)-Number(a.text===text)||Number(b.text.includes(text))-Number(a.text.includes(text))||a.text.length-b.text.length);
+    // 표기(이름·한자·다른 표기)마다 따로 재서 가장 잘 맞는 것으로 순위를 매긴다 — 다른 표기를 이어 붙인 문자열로 재면 '세종'의 정확 일치가 깨져 사건이 인물 위로 올라온다.
+    const score=row=>{let best=[3,1e9];for(const term of row.terms){const s=term===text?0:term.includes(text)?1:(term.length>=2&&text.includes(term))?2:3;if(s<best[0]||(s===best[0]&&term.length<best[1]))best=[s,term.length];}return best;};
+    const direct=this.searchable.filter(row=>score(row)[0]<3).sort((a,b)=>{const x=score(a),y=score(b);return x[0]-y[0]||x[1]-y[1];});
     const rows=new Map(direct.map(row=>[row.entity.id,{entity:row.entity,related:false}]));
     for(const match of direct.slice(0,10))for(const event of this.eventsFor(match.entity.id)){
       const entity=this.entities.get(event.id);if(entity&&!rows.has(entity.id))rows.set(entity.id,{entity,related:true});

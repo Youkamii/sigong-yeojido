@@ -241,3 +241,14 @@ test('정본으로 바꾼 중복 주장은 출처별로 가장 작은 id를 남�
   assert.deepEqual(result.claims.map(c=>c.id),['a','c','d','identity']);
   assert.deepEqual(data,original);
 });
+
+test('검색 순위는 다른 표기가 붙어도 정확히 맞는 이름을 먼저 둔다 (#192)',()=>{
+  const data=new AtlasData();data.update({entities:[
+    {id:'person-a',type:'Person',label:'세종',aliases:['세종장헌왕','세종장헌대왕']},
+    {id:'event-b',type:'Event',label:'세종대 경연 운영'},
+  ],claims:[]},{year:1418,allEvents:[]},[]);
+  const rows=data.search('세종');
+  assert.equal(rows[0].entity.id,'person-a');
+  assert.equal(rows[1].entity.id,'event-b');
+  assert.equal(data.search('장헌대왕')[0].entity.id,'person-a');
+});
