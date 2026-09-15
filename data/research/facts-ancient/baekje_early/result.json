@@ -1223,6 +1223,19 @@
    "citesChunk": "chunk_period96_early_states_baekje-span",
    "quote": "백제는 삼국의 하나로서 한반도 중서부에 위치했으며 660년에 멸망한 고대국가이다.",
    "note": "국가 소멸: 6좌평·16관등은 백제의 중앙 관제이므로 나라와 운명을 같이한다. 폐지 기록은 없고, 660년 의자왕이 웅진성에서 나와 항복하면서 백제가 멸망하고 당이 5도독부를 두어 관제를 대체했으므로 endYear 660, endKind '국가 소멸'. 대안 해석: 660~663년 부흥운동 때 좌평 직함이 잠시 쓰였으므로 663년(주류성 함락)까지 늘려 잡을 수도 있으나, 국가 관제로서의 끝은 660년이 표준이다."
+  },
+  {
+   "id": "claim-end-bj-daedan-243",
+   "subject": "event-bj-daedan-243",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 243
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_024_0030_0130",
+   "quote": "十年, 春正月, 設大壇, 祀天地·山川.",
+   "note": "제사 때마다 새로 차린 일회성 제단 — 당해 소멸: 정정 의견이 옳다. 백제의 大壇은 상설 시설이 아니라 제사 때마다 새로 設·築한 일회성 단이다 — 온조 20년(2) 設大壇, 온조 38년(20) 築大壇, 고이 10년(243) 設大壇, 불과 4년 뒤 247년에는 다른 단인 南壇에서 祭天地, 한성 함락 뒤 489년 웅진에서도 '王設壇 祭天地'. 즉 243년의 그 구조물이 475년까지 서 있었다는 근거도, 천지제사 기능이 475년에 끊겼다는 근거도 없다. 기록이 뒷받침하는 유일한 시점은 설단·제사가 이루어진 243년뿐이므로 끝 연도를 "
   }
  ],
  "scenes": [
@@ -1816,10 +1829,11 @@
    "persistence": {
     "kind": "facility",
     "basisClaimIds": [
-     "claim-altar-243-build"
+     "claim-altar-243-build",
+     "claim-end-bj-daedan-243"
     ],
     "from": 243,
-    "to": null
+    "to": 243
    },
    "participants": [],
    "effects": {

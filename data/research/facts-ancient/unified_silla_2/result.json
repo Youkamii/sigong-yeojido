@@ -1299,6 +1299,32 @@
    "citesChunk": "chunk_goryeosa-jeolyo_kj_016_0010_0090_0010_0020",
    "quote": "○蒙兵至東京, 燒皇龍寺塔.",
    "note": "몽골군 방화로 전소 (중건되지 않고 터만 남음): 경문왕이 871~873년에 고쳐 세운 황룡사 구층목탑은 고려 고종 25년(1238) 윤4월 몽골군이 동경에 이르러 황룡사 탑을 불태우면서 사라졌다. 이후 중건되지 않아 오늘날에는 절터와 심초석만 남아 있다. 대안 해석: 873년 준공된 개조 탑은 이전에도 벼락·화재로 여러 차례 보수되었으나, 구조물이 완전히 소멸한 해는 1238년이 확실하다."
+  },
+  {
+   "id": "claim-end-us2-dangseongjin-829",
+   "subject": "event-us2-dangseongjin-829",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 900
+   },
+   "sourceId": "src-goryeosa",
+   "citesChunk": "chunk_goryeosa_kr_001_0010_0060",
+   "quote": "裔命太祖, 伐廣·忠·靑三州, 及唐城·槐壤等郡縣, 皆平之",
+   "note": "궁예 세력(왕건)의 당성 점령으로 신라 군진 기능 상실: 정정 의견을 받아들인다. 935년은 경주 왕실의 항복 연도일 뿐이고, 인용됐던 고려사 지리지 당성군조('高麗初, 復古名')는 오히려 당성이 고려 건국 이전에 이미 신라 지배에서 이탈했음을 보여준다. 실제 점령 시점은 고려사 태조 총서에 연도와 함께 남아 있다 — 광화 3년 경신(900) 궁예가 왕건에게 명해 광주·충주·청주와 당성·괴양 등을 모두 평정했다. 서해 항로를 지키던 신라 수군 기지로서의 당성진은 이때 기능이 끝났다고 보는 편이 근거에 부합한다. 폐진 기사 자체는 없"
+  },
+  {
+   "id": "claim-end-us2-hyeolgujin-844",
+   "subject": "event-us2-hyeolgujin-844",
+   "predicate": "syj:endedIn",
+   "object": {
+    "kind": "year",
+    "value": 897
+   },
+   "sourceId": "src-samguksagi",
+   "citesChunk": "chunk_samguksagi_sg_050_0020_0220",
+   "quote": "撃破孔巖·黔浦·穴口等城.",
+   "note": "궁예에게 혈구성 함락 — 신라 군진으로서 소멸: 정정 의견이 옳다. '폐지 기록 없음'은 키워드를 穴口鎭으로만 건 탓이며, 같은 코퍼스의 삼국사기 궁예 열전에 '撃破孔巖·黔浦·穴口等城.'(기사 연도 897)이 있다. 앞뒤 조각이 896년 승령·임강, 897년 인물현 항복, 898년 송악성 수리로 이어져 혈구성 함락은 897년 기사 흐름 안에 확정된다. 즉 신라의 군진 혈구진은 897년 궁예에게 넘어가 끝났고 935년까지 존속했다는 근거는 없다. 고려사 지리지 강화현조도 '新羅景德王 改爲海口郡, 高麗初 更今名'만 적고 진의 존속을 언"
   }
  ],
  "scenes": [
@@ -1523,10 +1549,11 @@
    "persistence": {
     "kind": "institution",
     "basisClaimIds": [
-     "claim-us2-829-jin"
+     "claim-us2-829-jin",
+     "claim-end-us2-dangseongjin-829"
     ],
     "from": 829,
-    "to": null
+    "to": 900
    }
   },
   {
@@ -1580,10 +1607,11 @@
    "persistence": {
     "kind": "institution",
     "basisClaimIds": [
-     "claim-us2-844-jin"
+     "claim-us2-844-jin",
+     "claim-end-us2-hyeolgujin-844"
     ],
     "from": 844,
-    "to": null
+    "to": 897
    }
   },
   {
