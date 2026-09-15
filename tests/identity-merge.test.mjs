@@ -2,9 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {AtlasData} from '../services/host/app/atlas-data.js';
 import {AtlasStory} from '../services/host/app/atlas-story.js';
-import {loadChronicle} from '../services/host/app/chronicle-load.js';
+import {loadChronicle,mergeSameEntities} from '../services/host/app/chronicle-load.js';
 
 const canonical='person-encykorea-sejong-e0029857',old='ent-wea-sejong';
+const identity=(id,subject,target)=>({id,subject,predicate:'syj:sameEntityAs',object:{kind:'entity',id:target}});
 function fixture(){
   const entities=[
     {id:canonical,type:'Person',label:'세종',aliases:['세종장헌왕','世宗莊憲王'],mergedIds:[old]},
@@ -120,3 +121,123 @@ for(const split of ['limit','url'])for(const reverse of [false,true]){
     assert.ok(data.subjects.get(canonical).some(c=>c.id==='identity'));
   });
 }
+
+for(const split of ['limit','url','single'])for(const reverse of [false,true]){
+  test(`응답을 모두 모은 뒤 같은 인물을 묶고 정본 하나만 검색한다 (${split}, reverse=${reverse})`,async()=>{
+    const spelling='person-joseon-sejong';
+    const parts=[
+      {entities:[{id:spelling,type:'Person',label:'세종대왕',labelHanja:'世宗',aliases:['충녕대군']}],claims:[
+        {id:'description',subject:spelling,subjectLabel:'세종대왕',predicate:'syj:describedAs',object:{kind:'literal',value:'조선의 왕'},sourceId:'sillok'},
+        {id:'reference',subject:'event',predicate:'syj:hasParticipant',object:{kind:'entity',id:spelling}},
+      ],hasMore:false},
+      {entities:[{id:canonical,type:'Person',label:'세종',aliases:['세종장헌왕']}],claims:[identity('identity',spelling,canonical)],hasMore:false},
+    ];
+    if(reverse)parts.reverse();
+    const original=structuredClone(parts),calls=[];
+    const sources=split==='single'?['source-all']:['source-a','source-b'].map(id=>id+(split==='url'?'x'.repeat(24000):''));
+    const request=async url=>{
+      const selected=new URL(url,'https://example.org').searchParams.get('sources');calls.push(selected);
+      const data=split==='single'?{entities:parts.flatMap(p=>p.entities),claims:parts.flatMap(p=>p.claims),hasMore:false}:
+        selected===sources.join(',')?{entities:[],claims:[],hasMore:true}:parts[sources.indexOf(selected)];
+      assert.ok(data);
+      return {ok:true,json:async()=>data};
+    };
+    const result=await loadChronicle(sources,'human',undefined,request);
+    assert.equal(calls.length,split==='single'?1:split==='url'?2:3);
+    assert.equal(result.entities.find(e=>e.id===spelling).mergedInto,canonical);
+    const merged=result.entities.find(e=>e.id===canonical);
+    assert.deepEqual(merged.aliases,['세종장헌왕','세종대왕','世宗','충녕대군']);
+    assert.deepEqual(merged.mergedIds,[spelling]);
+    assert.equal(result.claims.find(c=>c.id==='description').subject,canonical);
+    assert.equal(result.claims.find(c=>c.id==='description').subjectLabel,'세종');
+    assert.equal(result.claims.find(c=>c.id==='reference').object.id,canonical);
+    assert.deepEqual(result.claims.find(c=>c.id==='identity'),identity('identity',spelling,canonical));
+    assert.deepEqual(parts,original);
+    assert.deepEqual(mergeSameEntities(result),result);
+    const data=new AtlasData();data.update(result,{year:1418,allEvents:[]},[]);
+    assert.deepEqual(data.searchable.map(row=>row.entity.id),[canonical]);
+    for(const query of ['세종','세종대왕','世宗','충녕대군']){
+      assert.deepEqual(data.search(query,'Person').map(row=>row.entity.id),[canonical]);
+    }
+  });
+}
+
+test('동일성 주장은 양쪽 개체가 있고 종류가 같을 때만 묶는다',()=>{
+  const data={entities:[
+    {id:canonical,type:'Person',label:'세종'},
+    {id:'place-sejong',type:'Place',label:'세종'},
+    {id:old,type:'Person',label:'옛 세종'},
+    {id:'unknown-a',label:'미상'},
+    {id:'unknown-b',label:'미상'},
+  ],claims:[
+    identity('different',canonical,'place-sejong'),
+    identity('missing-subject','absent',canonical),
+    identity('missing-object',canonical,'absent'),
+    identity('unknown-type','unknown-a','unknown-b'),
+    {id:'literal',subject:old,predicate:'syj:sameEntityAs',object:{kind:'literal',id:canonical,value:canonical}},
+    {id:'related',subject:old,predicate:'syj:relatedTo',object:{kind:'entity',id:canonical}},
+  ]};
+  const result=mergeSameEntities(data);
+  assert.deepEqual(result.entities,data.entities);
+  assert.equal(result.claims.find(c=>c.id==='related').subject,old);
+});
+
+test('서버의 정본 방향과 새 동일성 간선을 함께 따라 하나의 정본으로 모은다',()=>{
+  const serverCanonical='person-hs-sejong',latest='person-joseon-sejong';
+  const data={entities:[
+    {id:canonical,type:'Person',label:'백과 세종',mergedInto:serverCanonical},
+    {id:serverCanonical,type:'Person',label:'세종',aliases:['기존 별칭'],mergedIds:[canonical]},
+    {id:old,type:'Person',label:'세종 옛 이름',mergedInto:canonical},
+    {id:latest,type:'Person',label:'세종대왕'},
+  ],claims:[identity('new-edge',old,latest),
+    {id:'description',subject:latest,subjectLabel:'세종대왕',predicate:'syj:describedAs',object:{kind:'entity',id:old}},
+  ],hasMore:false};
+  const original=structuredClone(data);
+  const result=mergeSameEntities(data),root=result.entities.find(e=>!e.mergedInto);
+  assert.equal(root.id,serverCanonical);
+  assert.deepEqual(root.mergedIds,[old,canonical,latest].sort());
+  for(const entity of result.entities.filter(e=>e.id!==root.id))assert.equal(entity.mergedInto,root.id);
+  for(const alias of ['기존 별칭','백과 세종','세종 옛 이름','세종대왕'])assert.ok(root.aliases.includes(alias));
+  const claim=result.claims.find(c=>c.id==='description');
+  assert.equal(claim.subject,root.id);
+  assert.equal(claim.subjectLabel,root.label);
+  assert.equal(claim.object.id,root.id);
+  assert.deepEqual(result.claims.find(c=>c.id==='new-edge'),data.claims[0]);
+  assert.deepEqual(data,original);
+  assert.deepEqual(mergeSameEntities(result),result);
+});
+
+test('정본은 AKS 번호, 백과 접두사, hs, 주체 주장 수, id 순서로 고른다',()=>{
+  const cases=[
+    ['person-encykorea-sejong-e0029857','person-encykorea-a','Person'],
+    ['place-encykorea-hanseong-e0000001','place-encykorea-a','Place'],
+    ['person-encykorea-sejong','person-hs-sejong','Person'],
+    ['place-encykorea-hanseong','place-hs-hanseong','Place'],
+    ['person-hs-sejong','person-a','Person'],
+    ['person-z','person-a','Person',true],
+    ['person-a','person-z','Person'],
+  ];
+  for(const [winner,loser,type,moreClaims] of cases){
+    const claims=[identity('forward',winner,loser),identity('backward',loser,winner)];
+    const subject=moreClaims?winner:loser;
+    if(moreClaims||winner.includes('encykorea')||winner.includes('-hs-'))claims.push(
+      {id:'extra',subject,predicate:'syj:describedAs',object:{kind:'literal',value:'설명'}});
+    const result=mergeSameEntities({entities:[{id:loser,type,label:'다른 이름'},{id:winner,type,label:'정본'}],claims});
+    assert.equal(result.entities.find(e=>!e.mergedInto).id,winner);
+  }
+});
+
+test('정본으로 바꾼 중복 주장은 출처별로 가장 작은 id를 남긴다',()=>{
+  const claim=(id,subject,object,source)=>({id,subject,predicate:'syj:relatedTo',object,...source});
+  const data={entities:[{id:canonical,type:'Person',label:'세종'},{id:old,type:'Person',label:'옛 이름'}],claims:[
+    identity('identity',old,canonical),
+    claim('z',old,{kind:'entity',id:old,extra:{b:2,a:[1,2]}},{sourceId:'source-a'}),
+    claim('a',canonical,{extra:{a:[1,2],b:2},id:canonical,kind:'entity'},{fromSource:'source-a'}),
+    claim('b',old,{kind:'entity',id:old,extra:{a:[1,2],b:2}},{chunk:{sourceId:'source-a'}}),
+    claim('c',old,{kind:'entity',id:old,extra:{b:2,a:[1,2]}},{sourceId:'source-b'}),
+    claim('d',old,{kind:'entity',id:old,extra:{b:2,a:[2,1]}},{sourceId:'source-a'}),
+  ]};
+  const original=structuredClone(data),result=mergeSameEntities(data);
+  assert.deepEqual(result.claims.map(c=>c.id),['a','c','d','identity']);
+  assert.deepEqual(data,original);
+});
