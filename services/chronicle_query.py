@@ -1,7 +1,80 @@
 """Cited people, events and polities for one time-driven 3D view (#91)."""
 import json
+import re
+from collections import Counter
+from copy import deepcopy
 from graph_query import NS, query_rows
 from time_query import selected_filter, _claim
+
+
+def merge_same_entities(result):
+    # 선택한 사료의 응답만 복사해 원본 개체와 동일성 주장을 보존한다.
+    result = deepcopy(result)
+    entities = {entity['id']: entity for entity in result['entities']}
+    parents = {entity_id: entity_id for entity_id in entities}
+
+    def find(entity_id):
+        while parents[entity_id] != entity_id:
+            parents[entity_id] = parents[parents[entity_id]]
+            entity_id = parents[entity_id]
+        return entity_id
+
+    for claim in result['claims']:
+        obj = claim['object']
+        if claim['predicate'] != 'syj:sameEntityAs' or obj.get('kind') != 'entity':
+            continue
+        subject, target = claim['subject'], obj.get('id')
+        if subject in entities and target in entities and entities[subject].get('type') \
+                and entities[subject]['type'] == entities[target].get('type'):
+            parents[find(subject)] = find(target)
+
+    counts = Counter(claim['subject'] for claim in result['claims'])
+
+    def priority(entity_id):
+        if re.fullmatch(r'person-encykorea-.+-e0\d+', entity_id):
+            rank = 0
+        elif entity_id.startswith(('person-encykorea-', 'place-encykorea-')):
+            rank = 1
+        elif '-hs-' in entity_id:
+            rank = 2
+        else:
+            rank = 3
+        return rank, -counts[entity_id], entity_id
+
+    groups = {}
+    for entity_id in entities:
+        groups.setdefault(find(entity_id), []).append(entity_id)
+    canonical_ids = {}
+    for members in groups.values():
+        canonical = entities[min(members, key=priority)]
+        canonical_ids.update((entity_id, canonical['id']) for entity_id in members)
+        if len(members) < 2:
+            continue
+        canonical['mergedIds'] = sorted(entity_id for entity_id in members if entity_id != canonical['id'])
+        aliases = list(canonical.get('aliases', []))
+        for entity_id in sorted(members):
+            entity = entities[entity_id]
+            aliases.extend([entity.get('label'), entity.get('labelHanja'), *entity.get('aliases', [])])
+            if entity_id != canonical['id']:
+                entity['mergedInto'] = canonical['id']
+        canonical['aliases'] = list(dict.fromkeys(label for label in aliases if label and label != canonical.get('label')))
+
+    claims = {}
+    for claim in result['claims']:
+        if claim['predicate'] != 'syj:sameEntityAs':
+            subject = canonical_ids.get(claim['subject'])
+            if subject:
+                claim['subject'] = subject
+                claim['subjectLabel'] = entities[subject]['label']
+            if claim['object'].get('kind') == 'entity':
+                target = claim['object']['id']
+                claim['object']['id'] = canonical_ids.get(target, target)
+        source = claim.get('sourceId', claim.get('fromSource', claim.get('chunk', {}).get('sourceId')))
+        key = (claim['subject'], claim['predicate'], json.dumps(claim['object'], sort_keys=True), source)
+        if key not in claims or claim['id'] < claims[key]['id']:
+            claims[key] = claim
+    result['claims'] = sorted(claims.values(), key=lambda claim: claim['id'])
+    return result
 
 
 def chronicle(sources=None, origin='all'):
@@ -68,4 +141,4 @@ WHERE {{
         claim['subjectLabel'] = entities[subject]['label']
         result['claims'].append(claim)
     result['entities'] = list(entities.values())
-    return result
+    return merge_same_entities(result)
