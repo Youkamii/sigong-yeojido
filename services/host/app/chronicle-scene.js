@@ -160,8 +160,8 @@ export class ChronicleScene {
       placement:selected.itemId&&selected.scenePlace?.placementType==='item-packet'?'항목 조사에서 확인한 좌표'
         :row?.placementLabel||'활동은 확인됐으며 지도 위치는 아직 연결되지 않았습니다.',
       claimIds,missingClaimIds,
-      // #186: 항목 장면의 근거(위키백과 좌표 등)는 기본 사료 선택에 없을 수 있다. 기존 장면은 종전대로 근거를 요구하므로 안내하지 않는다.
-      missingClaimsNote:selected.itemId&&missingClaimIds.length?`근거 ${missingClaimIds.length}건은 현재 선택한 사료 밖(위키백과 등)의 기록이라 이 화면에는 나오지 않습니다.`:'',
+      // #186: 항목 장면의 출처(위키백과 좌표 등)는 기본 사료 선택에 없을 수 있다. 기존 장면은 종전대로 출처를 요구하므로 안내하지 않는다.
+      missingClaimsNote:selected.itemId&&missingClaimIds.length?`출처 ${missingClaimIds.length}건은 현재 선택한 사료 밖(위키백과 등)의 기록이라 이 화면에는 나오지 않습니다.`:'',
       coordinates:formatCoordinates(selected.scenePlace?.coordinates||(selected.locationReference
         ?[selected.locationReference.candidate.lon,selected.locationReference.candidate.lat]:null)),
       coordinateNote:selected.scenePlace?.coordinateNote||selected.locationReference?.coordinateNote,displayBasis:selected.scenePlace?.displayBasis,

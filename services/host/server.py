@@ -298,6 +298,27 @@ def build_year_index(chunks: list[dict]) -> tuple[dict[int, list[int]], dict[str
     return by_year, density
 
 
+def default_reference(source: dict) -> bool:
+    """뷰어 chronicle.js REFERENCE_GROUPS 와 같은 기본 사료 묶음 판정."""
+    sid = source.get("id", "")
+    resource = source.get("resource") or ""
+    return (source.get("sourceGroup") == "한국민족문화대백과사전" or "encykorea.aks.ac.kr" in resource
+            or "encykorea" in sid or sid.startswith("src-aks-") or sid in ("src-samguksagi", "src-goryeosa")
+            or sid.startswith("src-sillok-")
+            or any(sid.startswith(prefix) for prefix in ("src-khs-", "src-presidential-", "src-kto-", "src-i815-")))
+
+
+def expand_sources(srcs):
+    """sources 질의값을 집합으로. '@default' 토큰은 기본 사료(카드의 defaultLens 또는 기본 묶음)로 펼친다 — 2,700개 id 를 URL 에 싣지 않기 위해."""
+    if srcs is None:
+        return None
+    tokens = set(x for x in str(srcs).split(",") if x)
+    if "@default" in tokens:
+        tokens.discard("@default")
+        tokens |= {s["id"] for s in index()["sources"] if s.get("defaultLens") or default_reference(s)}
+    return tokens
+
+
 def year_records(y: int, sources: set[str] | None, limit: int) -> dict:
     idx = index()
     rows = [idx["chunks"][i] for i in idx["byYear"].get(y, [])]
@@ -477,6 +498,8 @@ class Handler(BaseHTTPRequestHandler):
             sources=body.get('sources')
             if sources is not None and (not isinstance(sources,list) or any(not isinstance(s,str) for s in sources)):
                 raise ValueError('sources must be a list of source identifiers')
+            if sources is not None:
+                sources=sorted(expand_sources(','.join(sources)) or [])  # '@default' 토큰 허용
             idx=index()
             def read_chunk(cid):
                 row=idx['chunkById'].get(cid)
@@ -495,8 +518,7 @@ class Handler(BaseHTTPRequestHandler):
         q = parse_qs(u.query, keep_blank_values=True)
 
         if path=='/api/comparison-differences':
-            srcs=q.get('sources',[None])[0]
-            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            sources=expand_sources(q.get('sources',[None])[0])
             try:self._json(differences(sources,q.get('origin',['all'])[0],{s['id']:s for s in index()['sources']},
                                       q.get('limit',[10])[0],q.get('offset',[0])[0],q.get('sourceA',[None])[0],q.get('sourceB',[None])[0]))
             except ValueError as exc:self._json({'error':str(exc)},400)
@@ -513,8 +535,7 @@ class Handler(BaseHTTPRequestHandler):
             if case is None:
                 self._json({'error':'비교 사례를 찾지 못했다.'},404)
                 return
-            srcs=q.get('sources',[None])[0]
-            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            sources=expand_sources(q.get('sources',[None])[0])
             try:self._json(comparison(case,sources,q.get('origin',['all'])[0],{s['id']:s for s in index()['sources']}))
             except ValueError as exc:self._json({'error':str(exc)},400)
             except GraphUnavailable as exc:self._json({'error':str(exc)},503)
@@ -527,8 +548,7 @@ class Handler(BaseHTTPRequestHandler):
             self._json(places_with_mentions())
             return
         if path == '/api/history-map':
-            srcs=q.get('sources',[None])[0]
-            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            sources=expand_sources(q.get('sources',[None])[0])
             try:self._json(historical_features(DATA,sources,q.get('origin',['all'])[0],q.get('year',[None])[0],q.get('level',['1'])[0]))
             except ValueError as exc:self._json({'error':str(exc)},400)
             return
@@ -538,8 +558,7 @@ class Handler(BaseHTTPRequestHandler):
             except ValueError:
                 self._json({"error": "y must be an integer year (negative = BC)"}, 400)
                 return
-            srcs = q.get("sources", [None])[0]
-            sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
+            sources = expand_sources(q.get("sources", [None])[0])
             try:
                 limit = max(0, min(500, int(q.get("limit", ["150"])[0])))
             except ValueError:
@@ -557,8 +576,7 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"entities": index()["entities"]})
             return
         if path == "/api/graph":
-            srcs = q.get("sources", [None])[0]
-            sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
+            sources = expand_sources(q.get("sources", [None])[0])
             try:
                 result = neighborhood(q.get("entity", ["person-gwanggaeto"])[0], sources,
                                       q.get("origin", ["all"])[0], q.get("limit", ["30"])[0], q.get("offset", ["0"])[0],
@@ -572,8 +590,7 @@ class Handler(BaseHTTPRequestHandler):
             self._json(result)
             return
         if path == '/api/time':
-            srcs=q.get('sources',[None])[0]
-            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            sources=expand_sources(q.get('sources',[None])[0])
             try:
                 result=time_claims(sources,q.get('origin',['all'])[0],q.get('entity',[None])[0],q.get('limit',[500])[0])
                 self._json(result)
@@ -583,8 +600,7 @@ class Handler(BaseHTTPRequestHandler):
                 self._json({'error':str(exc)},503)
             return
         if path == '/api/chronicle':
-            srcs = q.get('sources', [None])[0]
-            sources = None if srcs is None else set(filter(None, srcs.split(',')))
+            sources = expand_sources(q.get('sources', [None])[0])
             try:
                 self._json(chronicle(sources, q.get('origin', ['all'])[0]))
             except ValueError as exc:
@@ -593,8 +609,7 @@ class Handler(BaseHTTPRequestHandler):
                 self._json({'error': str(exc)}, 503)
             return
         if path == '/api/people':
-            srcs=q.get('sources',[None])[0]
-            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            sources=expand_sources(q.get('sources',[None])[0])
             try:
                 self._json(people(q.get('polity',['polity-silla'])[0],q.get('from',[501])[0],q.get('to',[600])[0],
                                   sources,q.get('origin',['all'])[0],q.get('limit',[50])[0],q.get('offset',[0])[0]))
@@ -602,8 +617,7 @@ class Handler(BaseHTTPRequestHandler):
             except GraphUnavailable as exc:self._json({'error':str(exc)},503)
             return
         if path == '/api/locations':
-            srcs=q.get('sources',[None])[0]
-            sources=None if srcs is None else set(filter(None,srcs.split(',')))
+            sources=expand_sources(q.get('sources',[None])[0])
             try:
                 result=locations(q.get('place',[None])[0],sources,q.get('origin',['all'])[0],q.get('year',[None])[0],
                                  q.get('limit',[1000])[0],q.get('offset',[0])[0],unattributed_places=unattributed_places(sources))
@@ -615,8 +629,8 @@ class Handler(BaseHTTPRequestHandler):
             cid = q.get("id", [""])[0]
             idx = index()
             row = idx["chunkById"].get(cid)
-            srcs = q.get("sources", [None])[0]
-            if row and (srcs is None or row.get("sourceId") in srcs.split(",")):
+            sources = expand_sources(q.get("sources", [None])[0])
+            if row and (sources is None or row.get("sourceId") in sources):
                 self._json({"found":True,"chunk":full_chunk(row)})
             else:
                 self._json({"found":False,"id":cid})
@@ -628,8 +642,7 @@ class Handler(BaseHTTPRequestHandler):
                 return
             ent = (q.get("subject", [""])[0] or "").strip()
             about = q.get("about", ["0"])[0] not in ("0", "", "false")
-            srcs = q.get("sources", [None])[0]
-            sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
+            sources = expand_sources(q.get("sources", [None])[0])
             self._json(claims_for(ent, about, sources, origin) if ent else {"entity": None, "claims": [], "total": 0})
             return
         if path == "/api/mentions":
@@ -637,8 +650,7 @@ class Handler(BaseHTTPRequestHandler):
             if len(names) > 8 or any(len(n) > 32 for n in names):
                 self._json({"error": "names must contain at most 8 names, each at most 32 characters"}, 400)
                 return
-            srcs = q.get("sources", [None])[0]
-            sources = set(x for x in srcs.split(",") if x) if srcs is not None else None
+            sources = expand_sources(q.get("sources", [None])[0])
             try:
                 limit = max(1, min(500, int(q.get("limit", ["120"])[0])))
             except ValueError:
@@ -652,8 +664,7 @@ class Handler(BaseHTTPRequestHandler):
             except ValueError:
                 self._json({"error": "offset and limit must be integers"}, 400)
                 return
-            srcs = q.get("sources", [None])[0]
-            sources = set(srcs.split(",")) if srcs is not None else None
+            sources = expand_sources(q.get("sources", [None])[0])
             rows = index()["chunks"]
             if sources is not None:
                 rows = [c for c in rows if c.get("sourceId") in sources]

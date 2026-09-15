@@ -54,7 +54,8 @@ export class AtlasData{
   }
   search(query,type='all'){
     const text=normalize(query);if(!text)return [];
-    const direct=this.searchable.filter(row=>row.text.includes(text)).sort((a,b)=>Number(b.text===text)-Number(a.text===text)||a.text.length-b.text.length);
+    // 이름이 검색어를 품거나(세종 ⊂ 세종대왕), 검색어가 이름을 품으면(세종대왕 ⊃ 세종) 맞는다 — 존칭·직함이 붙은 검색어도 찾히게.
+    const direct=this.searchable.filter(row=>row.text.includes(text)||(row.text.length>=2&&text.includes(row.text))).sort((a,b)=>Number(b.text===text)-Number(a.text===text)||Number(b.text.includes(text))-Number(a.text.includes(text))||a.text.length-b.text.length);
     const rows=new Map(direct.map(row=>[row.entity.id,{entity:row.entity,related:false}]));
     for(const match of direct.slice(0,10))for(const event of this.eventsFor(match.entity.id)){
       const entity=this.entities.get(event.id);if(entity&&!rows.has(entity.id))rows.set(entity.id,{entity,related:true});

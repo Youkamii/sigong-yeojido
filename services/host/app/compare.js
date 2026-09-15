@@ -1,3 +1,4 @@
+import {sourcesParam} from './chronicle-load.js';
 import {escapeHtml as esc} from './html.js';
 
 export class SourceComparison {
@@ -30,7 +31,7 @@ export class SourceComparison {
       const id=this.host.querySelector('select').value;
       if(!id){status.textContent='수록한 비교 사례가 없다.';return;}
       const filters=this.callbacks.filters();
-      const response=await fetch('/api/compare?'+new URLSearchParams({id,origin:filters.origin,sources:[...filters.sources].join(',')}));
+      const response=await fetch('/api/compare?'+new URLSearchParams({id,origin:filters.origin,sources:sourcesParam(filters.sources,filters.primary)}));
       const data=await response.json();if(seq!==this.sequence)return;
       if(!response.ok)throw new Error(data.error||'비교 조회 실패');
       this.render(data);
@@ -48,7 +49,7 @@ export class SourceComparison {
     message.textContent='그래프에서 연도 차이를 찾는 중…';
     discovery.querySelectorAll('button').forEach(b=>b.disabled=true);
     try{
-      const response=await fetch('/api/comparison-differences?'+new URLSearchParams({sources:[...filters.sources].join(','),origin:filters.origin,offset,limit:10}));
+      const response=await fetch('/api/comparison-differences?'+new URLSearchParams({sources:sourcesParam(filters.sources,filters.primary),origin:filters.origin,offset,limit:10}));
       const data=await response.json();if(seq!==this.sequence)return;
       if(!response.ok)throw new Error(data.error||'연도 차이 조회 실패');
       message.textContent=data.comparisons.length?`연도 차이가 있는 수록 사건 ${offset+1}~${offset+data.comparisons.length}`:'현재 선택에서 연도 차이를 확인할 수 있는 사건 연결이 없다.';

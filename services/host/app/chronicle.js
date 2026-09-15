@@ -17,7 +17,10 @@ export const REFERENCE_GROUPS = [
   {label:'고려사', matches:s=>s.id==='src-goryeosa'},
   {label:'조선왕조실록', matches:s=>s.id.startsWith('src-sillok-')},
   {label:'국가유산·공공기록', matches:s=>publicRecord(s)||['src-khs-','src-presidential-','src-kto-','src-i815-'].some(prefix=>s.id.startsWith(prefix))},
+  // 교과서 항목 조사에서 적재한 출처(위키백과·박물관·기관 해설)는 카드에 defaultLens 가 켜져 있다 — 이 출처가 꺼져 있으면 항목의 인물 관계·출처가 "선택한 사료 밖"으로만 보인다.
+  {label:'항목 조사 출처', matches:s=>s.defaultLens===true},
 ];
+export {sourcesParam} from './chronicle-load.js';
 export const yearLabel = y => y < 0 ? `기원전 ${-y}년` : `${y}년`;
 export const sceneContextLabel = (context,estimatedSites=0) =>
   `동시대 인물 ${context.people.length} · 주변 사건 ${context.events.length} · 추정 배경 마을 ${estimatedSites}(사료 없음)`;
@@ -95,7 +98,7 @@ export function contextAt(data,year,span=50){
     if(entity?.type!=='Person')continue;
     for(const death of dates.filter(d=>d.claim.predicate==='syj:diedIn'&&d.claim.subject===entity.id
       &&d.claim.fromSource===birth.claim.fromSource)){
-      if(birth.hi<=year&&death.lo>=year)addPerson(entity,{lo:birth.lo,hi:death.hi,label:'생몰',
+      if(birth.hi<=year&&death.lo>=year)addPerson(entity,{lo:birth.lo,hi:death.hi,label:'출생–사망',
         dateLabel:`${yearLabel(birth.lo)}${birth.lo!==birth.hi?'~'+yearLabel(birth.hi):''} – ${yearLabel(death.lo)}${death.lo!==death.hi?'~'+yearLabel(death.hi):''}`,
         claim:birth.claim,basis:[...birth.basis,...death.basis]});
     }
@@ -262,7 +265,7 @@ export class Chronicle {
         ${activity.missingClaimsNote?`<p class="activity-missing-claims">${esc(activity.missingClaimsNote)}</p>`:''}
         ${activity.coordinates?`<p class="activity-coordinates">${esc(activity.coordinates)}</p>`:''}
         ${activity.sides.map(s=>`<p class="activity-side"><strong>${esc(s.label)}</strong> · ${esc(s.role)}</p>`).join('')}
-        <details><summary>활동·장소의 근거 ${activityClaims.length}개</summary>${activityClaims.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.quote)} ↗</button>`).join('')}
+        <details><summary>활동·장소의 출처 ${activityClaims.length}개</summary>${activityClaims.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.quote)} ↗</button>`).join('')}
         ${activity.coordinateNote?`<p>${esc(activity.coordinateNote)}</p>`:''}${activity.displayBasis?`<p>${esc(activity.displayBasis)}</p>`:''}
         ${activity.sources.map(s=>`<a class="context-proof" href="${esc(s.url)}" target="_blank" rel="noopener">위치 자료 · ${esc(s.title)} ↗</a>`).join('')}</details>
         ${activity.events.length?`<div class="activity-episodes">${activity.events.map(e=>`<button data-chronicle-entity="${esc(e.entityId)}">${esc(e.label)} →</button>`).join('')}</div>`:''}
@@ -272,9 +275,9 @@ export class Chronicle {
       ${activity?.narrative?'':descriptions.slice(0,2).map(c=>`<p class="entity-description">${esc(c.object.value||'')}</p>`).join('')}
       ${activity?.narrative||activity?.siteBackground?'':`<div class="context-section"><h3>시간</h3>${dates.map(d=>`<div class="entity-date"><button data-jump-year="${d.lo}">${yearLabel(d.lo)}${d.lo!==d.hi?' – '+yearLabel(d.hi):''}</button>
         <span>${esc(activityLabel(shortPredicate(d.claim.predicate),d.claim)||({bornIn:'출생',diedIn:'사망',occurredIn:'사건',foundedIn:'건국'})[shortPredicate(d.claim.predicate)]||'기록')}</span>
-        ${d.basis.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.sourceLabel)} ↗</button>`).join('')}</div>`).join('')||'<p class="context-empty">날짜 근거가 아직 연결되지 않았습니다.</p>'}</div>`}
-      <div class="context-section"><h3>관련 인물·사건·장소</h3><p class="context-empty">이 항목의 전체 기록입니다. 관계가 있었던 시기는 각 근거에서 확인할 수 있습니다.</p>${this.relations(id).map(({claim,target})=>`<div class="relation-row"><button data-chronicle-entity="${esc(target.id)}">${esc(entityLabel(target))}</button>
-        <small>${esc(RELATION_WORDS[shortPredicate(claim.predicate)]||'관련 기록')}</small><button class="context-proof" data-chronicle-claim="${esc(claim.id)}">근거 ↗</button></div>`).join('')||'<p class="context-empty">연결 근거가 아직 없습니다.</p>'}</div>`;
+        ${d.basis.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.sourceLabel)} ↗</button>`).join('')}</div>`).join('')||'<p class="context-empty">날짜 출처가 아직 연결되지 않았습니다.</p>'}</div>`}
+      <div class="context-section"><h3>관련 인물·사건·장소</h3><p class="context-empty">이 항목의 전체 기록입니다. 관계가 있었던 시기는 각 출처에서 확인할 수 있습니다.</p>${this.relations(id).map(({claim,target})=>`<div class="relation-row"><button data-chronicle-entity="${esc(target.id)}">${esc(entityLabel(target))}</button>
+        <small>${esc(RELATION_WORDS[shortPredicate(claim.predicate)]||'관련 기록')}</small><button class="context-proof" data-chronicle-claim="${esc(claim.id)}">출처 ↗</button></div>`).join('')||'<p class="context-empty">연결 출처가 아직 없습니다.</p>'}</div>`;
   }
   render(){
     const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
@@ -293,17 +296,17 @@ export class Chronicle {
       ${c.events.some(e=>e.current)?`<section class="current-events"><h3>이 해의 사건</h3>${c.events.filter(e=>e.current).map(e=>`<button data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId||'')}">${esc(e.title)} <span>→</span></button>`).join('')}</section>`:''}
       ${c.settings.length?`<details class="context-section era-sites"><summary>이때의 도시·시설 ${c.settings.length}곳</summary>${c.settings.map(e=>`<button class="period-site" data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId)}">${esc(e.title)}</button>`).join('')}</details>`:''}
       <details class="context-section era-people"><summary>동시대 인물 ${c.people.length}명 · 생존·재위·활동</summary><div class="section-heading"><h3>이때의 사람들</h3></div>
-      ${c.people.map(p=>this.personCard(p,c)).join('')||(!status?'<p class="context-empty">선택한 사료에 이 해의 생존·활동 근거가 연결된 인물이 없습니다.</p>':'')}
+      ${c.people.map(p=>this.personCard(p,c)).join('')||(!status?'<p class="context-empty">선택한 사료에 이 해의 생존·활동 출처가 연결된 인물이 없습니다.</p>':'')}
       </details><section class="context-section"><div class="section-heading"><h3>이 시기의 사건</h3><span>${yearLabel(c.from)} – ${yearLabel(c.to)}</span></div>
       <div class="event-sequence">${c.events.map(e=>`<article class="period-event${e.current?' current':''}"><button class="event-year" data-jump-year="${e.lo}">${yearLabel(e.lo)}${e.lo!==e.hi?' – '+yearLabel(e.hi):''}</button>
         <button class="event-title" data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId||'')}">${esc(e.title)}</button>
         ${this.relations(e.id).filter(x=>['Person','Polity','Place'].includes(x.target.type)).slice(0,6).map(x=>`<button class="relation-chip" data-chronicle-entity="${esc(x.target.id)}">${esc(entityLabel(x.target))}</button>`).join('')}
         ${[...new Map(e.basis.map(b=>[b.fromSource,b])).values()].map(b=>`<button class="context-proof" data-chronicle-claim="${esc(b.id)}">${esc(b.sourceLabel)} ↗</button>`).join('')}</article>`).join('')||(!status?'<p class="context-empty">이 범위에 연결된 사건이 없습니다. 이전·다음 사건으로 이동할 수 있습니다.</p>':'')}</div></section>
-      <p class="context-footnote">선택한 사료에 근거가 연결된 항목입니다. 생몰년과 재위·활동 기간을 구별합니다.${this.data.hasMore?' 조회 한도에 도달해 일부만 표시합니다.':''}</p>`;
+      <p class="context-footnote">선택한 사료에 출처가 연결된 항목입니다. 출생–사망 연도와 재위·활동 기간을 구별합니다.${this.data.hasMore?' 조회 한도에 도달해 일부만 표시합니다.':''}</p>`;
     this.callbacks.context?.(c);
   }
   personCard(person,context){
-    const p=person.periods.find(p=>p.label==='생몰')||person.periods[0];
+    const p=person.periods.find(p=>p.label==='출생–사망')||person.periods[0];
     const left=Math.max(0,(p.lo-context.from)/this.span*100),right=Math.min(100,(p.hi-context.from)/this.span*100);
     const memberships=[...new Set(person.relations.map(c=>context.entities.get(c.object.id)).filter(Boolean).map(entityLabel))];
     const activity=person.periods.find(p=>p.claim.predicate==='syj:activeIn');

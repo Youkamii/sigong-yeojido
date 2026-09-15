@@ -1,3 +1,4 @@
+import {sourcesParam} from './chronicle-load.js';
 import {escapeHtml as esc} from './html.js';
 
 export class GraphExplorer {
@@ -29,7 +30,7 @@ export class GraphExplorer {
     canvas.replaceChildren();
     this.nodes.clear();
     const filters=this.callbacks.filters();
-    const query=new URLSearchParams({entity,origin:filters.origin,sources:[...filters.sources].join(','),limit:12,offset:this.offset});
+    const query=new URLSearchParams({entity,origin:filters.origin,sources:sourcesParam(filters.sources,filters.primary),limit:12,offset:this.offset});
     try{
       const response=await fetch('/api/graph?'+query);
       const data=await response.json();

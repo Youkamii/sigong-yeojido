@@ -66,13 +66,13 @@ test('항목 portrait와 heritage는 빈 사료에서도 실제 모형과 양쪽
       card.showEntity(plan.events[0].entityId);  // 사건 카드로 되돌려 아래 누락 안내 검사를 잇는다
     }
     assert.ok(card.host.innerHTML.includes('항목 조사에서 확인한 좌표'));
-    assert.ok(card.host.innerHTML.includes(`근거 ${missing.length}건은 현재 선택한 사료 밖`));
+    assert.ok(card.host.innerHTML.includes(`출처 ${missing.length}건은 현재 선택한 사료 밖`));
     const atlas=new AtlasData();atlas.update(data,context,[packet]);
     const story=Object.assign(Object.create(AtlasStory.prototype),{entity:{id:plan.events[0].entityId,type:'Event',label:packet.title},activity,history:[],pane:{},
       ui:{data:atlas,chronicle:card,scene:sceneView}});
     story.render();
     assert.ok(story.pane.innerHTML.includes('항목 조사에서 확인한 좌표'));
-    assert.ok(story.pane.innerHTML.includes(`근거 ${missing.length}건은 현재 선택한 사료 밖`));
+    assert.ok(story.pane.innerHTML.includes(`출처 ${missing.length}건은 현재 선택한 사료 밖`));
     for(const claim of data.claims)assert.ok(story.pane.innerHTML.includes(`data-story-claim="${claim.id}"`));
     sceneView.chronicle.data={claims:[...new Set([...packet.dateClaimIds,...packet.actionClaimIds,...packet.place.claimIds])].map(id=>({id}))};
     assert.equal(sceneView.activity(plan.events[0].entityId).missingClaimsNote,'');

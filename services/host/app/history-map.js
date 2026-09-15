@@ -1,3 +1,4 @@
+import {sourcesParam} from './chronicle-load.js';
 import {lensStrength} from './place-state.js';
 
 export function featureLines(feature){
@@ -14,7 +15,7 @@ export class HistoricalMap {
     const label=Number(filters.level)===5?'역로·옛길':Number(filters.level)===4?'사건 장소':'역사 경계';
     this.button.textContent=label+' 조회 중…';
     try{
-      const response=await fetch('/api/history-map?'+new URLSearchParams({year:filters.year,sources:[...filters.sources].join(','),origin:filters.origin,level:filters.level}));
+      const response=await fetch('/api/history-map?'+new URLSearchParams({year:filters.year,sources:sourcesParam(filters.sources,filters.primary),origin:filters.origin,level:filters.level}));
       if(!response.ok)throw Error(label+' 조회 실패');
       const data=await response.json();if(seq!==this.sequence)return;
       this.features=data.features;this.button.textContent=`${label} ${this.features.length}개 · 근거`;
