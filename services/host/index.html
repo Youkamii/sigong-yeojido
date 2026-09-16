@@ -409,6 +409,7 @@ import { ChronicleScene } from './app/chronicle-scene.js';
 import { EvidenceChat } from './app/chat.js';
 import { SourceComparison } from './app/compare.js';
 import { HistoricalMap } from './app/history-map.js';
+import {createYearCommit,historicalFeaturesKey} from './app/year-scrub.js';
 import { escapeHtml as escH, externalLink, highlightText, scanImage } from './app/html.js';
 import { activeAt as placeActiveAt, candActive as candidateActive, originMatches, sourceMatches, lensStrength, outsideCandidates } from './app/place-state.js';
 const BOX = {lon0:118, lon1:145, lat0:30, lat1:48};
@@ -420,18 +421,21 @@ const state = {
 document.body.classList.add('mode3d');
 let atlasUI=null;
 const chronicleScene=new ChronicleScene(document.getElementById('sceneEvents'),id=>chronicleView.showEntity(id));
+let yearCommit=null;
 const chronicleView = new Chronicle(document.getElementById('chronicle'), document.getElementById('historyTime'), {
   year:changeYear, filters:()=>({sources:state.on,primary:state.primary,origin:state.origin}), claim:showGraphClaim,
+  busy:()=>yearCommit?.busy||false,
+  lastCompleted:()=>yearCommit?.completedAt??-Infinity,
   entity:selectSceneEntity,
   scene:id=>{chronicleScene.preferredRow=id;},
   placement:id=>chronicleScene.assets?.rowFor(id)?.placementLabel,
   activity:id=>chronicleScene.activity(id),
   presentEntity:(entity,activity)=>atlasUI?.showEntity(entity,activity),
-  scenePackets:()=>chronicleScene.world?.scenePackets||[],
+  scenePackets:()=>chronicleScene.world?.scenePackets,
   context:context=>{
     const host=document.getElementById('sceneContext');
     host.querySelector('h2').textContent=yearLabel(context.year);
-    if(window.__sigong)chronicleScene.refresh(window.__sigong.world,chronicleView);
+    if(window.__sigong&&!yearCommit?.busy)chronicleScene.refresh(window.__sigong.world,chronicleView);
     updateSceneContext(context);
     atlasUI?.update(context);
   }
@@ -443,9 +447,7 @@ function updateSceneContext(context=chronicleView.context){
   if(paragraph.textContent!==text)paragraph.textContent=text;
 }
 function changeYear(year){
-  chronicleScene.assets?.setSelected(null);
-  state.sel=null;state.year=year;setYearUI(year);tl?.setYear(year);draw();
-  if(state.mode==='3d')draw3d();scheduleYearCount();refreshHistoryMap();
+  return yearCommit.run(year);
 }
 function selectSceneEntity(id){
   state.sel=id;
@@ -502,11 +504,30 @@ let chatView = null;
 let compareView = null;
 const historyMap=new HistoricalMap(document.getElementById('historyMapBtn'),{
   list:showHistoricalList,
-  changed:features=>{R?.world.setHistoricalFeatures(features);draw();if(R){draw3d();chronicleScene.refresh(R.world,chronicleView);if(state.sel)selectSceneEntity(state.sel);}if(['history','history-feature'].includes(state.panel))showHistoricalList(false);}
+  changed:features=>{R?.world.setHistoricalFeatures(features,state.year);draw();if(R){draw3d();chronicleScene.refresh(R.world,chronicleView);if(state.sel)selectSceneEntity(state.sel);}if(['history','history-feature'].includes(state.panel))showHistoricalList(false);}
 });
 const historyLevel=document.getElementById('historyLevel');
 historyLevel.onchange=()=>refreshHistoryMap();
-function refreshHistoryMap(){historyMap.refresh({sources:state.on,primary:state.primary,origin:state.origin,year:state.year,level:historyLevel.value});}
+const historyFilters=()=>({sources:new Set(state.on),primary:new Set(state.primary),origin:state.origin,year:state.year,level:historyLevel.value});
+function refreshHistoryMap(){
+  if(yearCommit?.busy)return yearCommit.run(state.year);
+  return historyMap.refresh(historyFilters());
+}
+yearCommit=createYearCommit({
+  preview:year=>{
+    state.sel=null;state.year=year;chronicleView.year=year;
+    document.getElementById('yearV').textContent=Math.abs(year);
+    document.getElementById('yearL').textContent=year<0?'기원전':'서기';
+    chronicleView.showYearPreview(year);
+    document.querySelector('#sceneContext h2').textContent=yearLabel(year);
+  },
+  context:()=>{chronicleScene.assets?.setSelected(null);chronicleView.render();tl?.setYear(state.year);},
+  features:()=>historyMap.refresh(historyFilters(),{notify:false}),
+  applyFeatures:data=>{historyMap.apply(data);R?.world.setHistoricalFeatures(data.features,data.year);},
+  refresh:year=>{if(R)chronicleScene.refresh(R.world,chronicleView);updateSceneContext();return historicalFeaturesKey(historyMap.features,year);},
+  draw:()=>{draw();if(state.mode==='3d')draw3d();if(['history','history-feature'].includes(state.panel))showHistoricalList(false);},
+  done:()=>{scheduleYearCount();historyMap.prefetchNeighbors(historyFilters());}
+});
 function showHistoricalList(reveal=true){
   if(reveal)openEvidence();++panelSeq;state.panel='history';state.sel=null;
   const el=document.getElementById('evi');
@@ -1057,9 +1078,11 @@ function activeAt(p){
 // ── 2D 지도 ──
 const cv = document.getElementById('map');
 const ctx = cv.getContext('2d');
-let hits = [];
+let hits = [],mapDirty=true;
 
 function draw(){
+  if(state.mode!=='2d'){mapDirty=true;return;}
+  mapDirty=false;
   const dpr = Math.min(devicePixelRatio||1, 2);
   const w = cv.clientWidth, h = cv.clientHeight;
   cv.width = w*dpr; cv.height = h*dpr;
@@ -1338,7 +1361,7 @@ const b2d = document.getElementById('b2d'), b3d = document.getElementById('b3d')
 b2d.onclick = () => { state.mode='2d'; document.body.classList.remove('mode3d','modegraph','modechat');
   document.getElementById('bchat').classList.remove('on');
   document.getElementById('bgraph').classList.remove('on');
-  b2d.classList.add('on'); b3d.classList.remove('on'); draw();
+  b2d.classList.add('on'); b3d.classList.remove('on'); if(mapDirty)draw();
   document.getElementById('hint').textContent='지명을 누르면 출처가 열려요'; };
 b3d.onclick = () => { state.mode='3d'; document.body.classList.add('mode3d');
   document.body.classList.remove('modechat');document.getElementById('bchat').classList.remove('on');
@@ -1463,11 +1486,7 @@ function resize3d(){ if(R) R.engine.resize(); }
 function draw3d(){
   renderOutside();
   if(!R) return;
-  R.world.setYear(state.year);
-  R.world.setOrigin(state.origin);
-  R.world.setPrimarySources(state.primary);
-  if(R.world.setSourcesOn) R.world.setSourcesOn(state.on);
-  R.world.setSelected(state.sel);
+  R.world.setLiveState({year:state.year,origin:state.origin,primary:state.primary,on:state.on,selected:state.sel});
   chronicleScene.syncPicks();
 }
 

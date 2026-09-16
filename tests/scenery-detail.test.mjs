@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {register} from 'node:module';
 import {readFile} from 'node:fs/promises';
+import {sceneryPeriodKey} from '../services/host/app/year-scrub.js';
 // Geometry is real; the texture-only canvas is inert in Node.
 globalThis.document={createElement:()=>({getContext:()=>new Proxy({getImageData:()=>({data:new Uint8ClampedArray(512*512*4)}),createImageData:()=>({data:new Uint8ClampedArray(512*512*4)})},{get:(o,k)=>o[k]||(()=>({addColorStop(){}}))})})};
 const three=new URL('../services/host/vendor/three.module.min.js',import.meta.url).href;
@@ -31,6 +32,7 @@ test('urban near facades preserve the same tall bodies and same-period scrubs re
   roofs.geometry.computeBoundingBox();assert.ok(roofs.geometry.boundingBox.max.y>7,'far skyline keeps building heights');
   const c=Object.create(ChronicleScenery.prototype);
   Object.assign(c,{world,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),period,periodKey:period.id+'|'+site.id+':urban:'+period.id,sites:[site],detailCache:new Map(),stats:{modelBuilds:0,year:2010}});
+  c.periodKey=sceneryPeriodKey(period.id,[{id:site.id,kind:'urban',periodId:period.id,density:.6,scale:1,layoutKey:[true,true,true,true]}]);
   const detail=c.buildDetail({site,layout});assert.deepEqual(detail.indices,[]);assert.ok(detail.animated.length>0);
   setOverviewDetails(overview,[detail]);assert.deepEqual(roofs.geometry.attributes.position.array,original);
   c.setYear(2011);assert.equal(c.detailCache.get(site.id),detail);assert.equal(c.stats.modelBuilds,1);

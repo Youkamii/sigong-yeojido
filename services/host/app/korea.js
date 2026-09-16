@@ -1,5 +1,6 @@
 import { activeAt, candActive, originMatches, sourceMatches, lensStrength, DIORAMA_BOUNDS, inDiorama } from './place-state.js';
 import {featureLines} from './history-map.js';
+import {historicalFeaturesKey} from './year-scrub.js';
 // app/korea.js — 실제 한반도를 판톨로지 아트 바이블의 언어로 세운다.
 //
 // 판톨로지의 terrain.js 는 절차 생성 판타지 대륙이다. 우리는 지형이 실측이므로
@@ -565,7 +566,10 @@ export class KoreaWorld {
   }
 
   /** 연대에 따라 살고 죽는다 — 2D 지도와 같은 규칙 */
-  setHistoricalFeatures(features){
+  setHistoricalFeatures(features,year=this._year){
+    const key=historicalFeaturesKey(features,year);
+    if(this.historyKey===key)return;
+    this.historyKey=key;
     for(const line of [...this.history.children]){
       this.history.remove(line);line.geometry.dispose();line.material.dispose();
     }
@@ -602,6 +606,12 @@ export class KoreaWorld {
   setYear(year) {
     this._year = year;
     this._applyLive();
+  }
+
+  setLiveState({year,origin,primary,on,selected}){
+    this._year=year;this._origin=origin;this._primary=new Set(primary);this._on=on?new Set(on):null;
+    this._selected=selected;
+    this.setHistoricalStrength(this._primary);this.setSelected(selected);
   }
 
   /** 켜진 사료 집합 — 그 지명을 말하는 사료(mentions)가 전부 꺼지면 지명도 흐려진다 */

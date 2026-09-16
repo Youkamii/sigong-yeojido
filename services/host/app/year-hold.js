@@ -57,34 +57,59 @@ export function bindYearHold(root,hold){
   return stop;
 }
 
-export function bindYearSlider(slider,hold,onStart=()=>{}){
-  let pointer=null,lastX=0,key=null;
+export function yearAtPointer(clientX,left,width,min=-2500,max=2100){
+  const ratio=width>0?Math.max(0,Math.min(1,(clientX-left)/width)):0;
+  const year=Math.round(min+(max-min)*ratio);
+  return year===0?(min+(max-min)*ratio<0?-1:1):year;
+}
+
+export function bindYearSlider(slider,{read,preview,commit},onStart=()=>{}){
+  let pointer=null,pending=false;
   const stop=()=>{
-    const id=pointer;pointer=null;key=null;hold.stop();
+    const id=pointer;pointer=null;
+    if(pending){pending=false;commit();}
     if(id!==null&&slider.hasPointerCapture(id))slider.releasePointerCapture(id);
+  };
+  const move=event=>{
+    const rect=slider.getBoundingClientRect();pending=true;
+    preview(yearAtPointer(event.clientX,rect.left,rect.width,+slider.min,+slider.max),true);
   };
   slider.onpointerdown=event=>{
     if(event.button!==0||!event.isPrimary)return;
-    event.preventDefault();stop();onStart();pointer=event.pointerId;lastX=event.clientX;
-    slider.focus();slider.setPointerCapture(pointer);
+    event.preventDefault();stop();onStart();pointer=event.pointerId;
+    slider.focus();slider.setPointerCapture(pointer);move(event);
   };
   slider.onpointermove=event=>{
     if(event.pointerId!==pointer)return;
-    event.preventDefault();const delta=event.clientX-lastX;
-    if(Math.abs(delta)<3)return;
-    lastX=event.clientX;hold.start(Math.sign(delta));
+    event.preventDefault();move(event);
   };
   slider.onpointerup=slider.onpointercancel=event=>{if(event.pointerId===pointer)stop();};
   slider.onlostpointercapture=()=>{if(pointer!==null)stop();};
   slider.onkeydown=event=>{
     if(!['ArrowLeft','ArrowRight','ArrowDown','ArrowUp'].includes(event.key))return;
-    event.preventDefault();if(event.repeat)return;
-    stop();onStart();key=event.key;
-    hold.start(['ArrowLeft','ArrowDown'].includes(key)?-1:1);
+    event.preventDefault();onStart();
+    preview(stepYear(read(),['ArrowLeft','ArrowDown'].includes(event.key)?-1:1),false);
   };
-  slider.onkeyup=event=>{if(event.key===key){event.preventDefault();stop();}};
-  slider.onblur=stop;
-  window.addEventListener('blur',stop);
+  slider.addEventListener('wheel',event=>{
+    if(!event.deltaY&&!event.deltaX)return;
+    event.preventDefault();onStart();preview(stepYear(read(),Math.sign(event.deltaY||event.deltaX)),false);
+  },{passive:false});
+  const blur=()=>{if(pointer!==null)stop();else commit();};
+  slider.onblur=blur;
+  window.addEventListener('blur',blur);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
   return stop;
+}
+
+export function createYearPlayback({advance,busy=()=>false,lastCompleted=()=>-Infinity,now=()=>performance.now(),schedule=setTimeout,cancel=clearTimeout,delay=1200}){
+  let playing=false,timer=null,running=false;
+  const queue=()=>{if(playing){cancel(timer);timer=schedule(()=>{timer=null;return tick();},delay);}};
+  const tick=async()=>{
+    if(!playing||running)return;
+    if(busy()||now()-lastCompleted()<delay){queue();return;}
+    running=true;
+    try{await advance();}finally{running=false;queue();}
+  };
+  return {tick,get playing(){return playing;},start(){if(playing)return;playing=true;if(!running)queue();},
+    stop(){playing=false;cancel(timer);timer=null;}};
 }

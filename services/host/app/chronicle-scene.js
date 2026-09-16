@@ -6,6 +6,7 @@ import {planHistoricalSites,planContinuingCities} from './chronicle-sites.js';
 import {planContinuingFacilities} from './facility-persistence.js';
 import {buildSettlementZones} from './inhabited-zones.js';
 import {pickableRow} from './chronicle-assets.js';
+import {scenePlanKey,historicalFeaturesKey} from './year-scrub.js';
 
 export function sceneDestinationOptions(rows){
   const listed=new Set();
@@ -80,7 +81,7 @@ export class ChronicleScene {
     if(this.display.siteBackground)plan.events.push(...planHistoricalSites(chronicle.data,world.scenePackets||[],plan));
     plan.events.push(...stories.filter(s=>s.id===this.traditionId));
     if(!plan.events.some(e=>e.id===this.assets.activeScene))this.assets.activeScene=null;
-    const signature=JSON.stringify([plan,this.assets.activeScene]);
+    const signature=scenePlanKey(plan,this.assets.activeScene,world.historyKey??historicalFeaturesKey(features,plan.year));
     if(signature===this.signature){this.syncPicks();this.renderFocus();this.applyDisplay();return;}
     this.assets.rebuild(plan);this.signature=signature;
     this.layoutKey=null;

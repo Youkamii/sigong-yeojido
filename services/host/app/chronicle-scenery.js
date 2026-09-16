@@ -10,6 +10,19 @@ import {buildSettlementZones} from './inhabited-zones.js';
 import {sceneBudget} from './scene-quality.js';
 import {occupancyGrid} from './occupancy-grid.js';
 import {isEstimatedSite,setEstimatedMesh,markEstimatedGroup} from './scenery-estimated-dim.js';
+import {estimatedSiteThreshold} from './settlement-regions.js';
+import {sceneryPeriodKey} from './year-scrub.js';
+
+export function siteDensityState(site,year,world,scale=1){
+  const period=sitePeriod(site,year),context={year,world,x:site.x,z:site.z};
+  const density=estimatedSiteThreshold(period.id,site.latitude,context);
+  const scaled=estimatedSiteThreshold(period.id,site.latitude,{...context,scale});
+  const p=site.profile;
+  return {id:site.id,kind:site.kind,periodId:period.id,density,scale,
+    selected:site.estimated?site.seed%100<scaled*100:undefined,
+    unscaledSelected:site.estimated?site.seed%100<density*100:undefined,
+    layoutKey:p?[year>=p.growthYear,year>=1970,year>=1980,year>=(p.industryYear??1945)]:undefined};
+}
 
 export async function loadWorldFactLayers(world){
   if(!world.factLayers){
@@ -103,7 +116,7 @@ export class ChronicleScenery{
   nearPath(x,z,margin){return this.paths.near(x,z,margin);}
   start(forest,year){this.setYear(year);if(this.ready)return;this.ready=this.populate(forest).then(()=>{this.initialized=true;this.refreshPeriod();}).catch(e=>this.failed(e));}
   failed(error){this.stats.error=error.message;console.error('[scenery]',error);}
-  setYear(year){this.stats.year=year;const period=sceneryPeriod(year),key=period.id+(this.world?.factLayers?.density?.length?'|'+year:'')+'|'+this.activeSites().map(s=>s.id+':'+s.kind+':'+sitePeriod(s,year).id).join('|');if(this.periodKey===key)return;this.periodKey=key;this.period=period;this.stats.ready=false;
+  setYear(year){this.stats.year=year;const period=sceneryPeriod(year),key=sceneryPeriodKey(period.id,this.activeSites().map(s=>siteDensityState(s,year,this.world,sceneBudget(this.quality).estimatedScale)));if(this.periodKey===key)return;this.periodKey=key;this.period=period;this.stats.ready=false;
     if(this.initialized)this.refreshPeriod(true);this.sync(this.occupied,this.areaOccupied);
   }
   refreshPeriod(preserve=false){
@@ -124,7 +137,8 @@ export class ChronicleScenery{
     const freeRoad=occupancyGrid(this.areaOccupied,{cellSize:16,margin:.15});
     const active=selected.filter(s=>this.available(s)&&!(s.kind==='urban'&&this.occupied.some(o=>o.urbanRegionId===s.profile.id))).map(site=>{
       const period=sitePeriod(site,this.stats.year),old=previous.get(site.id);
-      if(old?.period.id===period.id)return old;
+      const densityKey=sceneryPeriodKey(period.id,[siteDensityState(site,this.stats.year,this.world,sceneBudget(this.quality).estimatedScale)]);
+      if(old?.densityKey===densityKey)return old;
       changedSites.push(site);
       const layout=settlementLayout(site,site.kind==='urban'?this.stats.year:period);
       const ground=(x,z,margin=0)=>this.world.rings.some(r=>insideCoastline(x,z,r))&&(!this.world.contains||this.world.contains(x,z,margin));
@@ -142,7 +156,7 @@ export class ChronicleScenery{
         for(let j=0;j<count;j++){const points=[j/count,(j+1)/count].map(t=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]);
           if(points.every(p=>{const [x,z]=this.point(site,...p);return owns(x,z)&&ground(x,z,road.width)&&freeRoad(x,z,road.width/2)&&ruralFree(x,z);}))segments.push({...road,points});}return segments;
       }));
-      return {site,layout,period};
+      return {site,layout,period,densityKey};
     }).filter(c=>c.layout.houses.length);
     const activeIds=new Set(active.map(c=>c.site.id));
     for(const [id,c] of previous)if(!activeIds.has(id))changedSites.push(c.site);

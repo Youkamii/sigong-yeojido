@@ -131,10 +131,19 @@ test('failed fact fetch reports the failure and keeps legacy scenery available',
 });
 
 test('same-era year changes refresh density selection across the record window',()=>{
+  loadFactLayers(layers);
   const scenery=Object.create(ChronicleScenery.prototype);let refreshes=0;
-  Object.assign(scenery,{stats:{},world:{factLayers:layers},initialized:true,activeSites:()=>[],
+  const site={id:'estimated',kind:'village',seed:35,x:0,z:0,latitude:37,estimated:true};
+  Object.assign(scenery,{stats:{},world:{...world,factLayers:layers},initialized:true,activeSites:()=>[site],
     refreshPeriod:()=>refreshes++,sync(){}});
-  scenery.setYear(671);const first=refreshes;
+  scenery.setYear(670);const first=refreshes;
+  scenery.setYear(671);assert.equal(refreshes,first,'same effective density must reuse selection');
   scenery.setYear(672);assert.equal(refreshes,first+1);
   scenery.setYear(672);assert.equal(refreshes,first+1);
+});
+
+test('density records do not rebuild scenery without active sites',()=>{
+  const scenery=Object.create(ChronicleScenery.prototype);let refreshes=0;
+  Object.assign(scenery,{stats:{},world:{...world,factLayers:layers},initialized:true,activeSites:()=>[],refreshPeriod:()=>refreshes++,sync(){}});
+  scenery.setYear(671);scenery.setYear(672);assert.equal(refreshes,1);
 });
