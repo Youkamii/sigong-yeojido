@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {planSettlementSites,settlementLayout} from '../services/host/app/settlement-regions.js';
 import {sceneryPeriod,sceneryHouseRecipe} from '../services/host/app/scenery-period.js';
 import {compileAssetCatalog,normalizeAssetRecipe} from '../services/host/app/assetcatalog.js';
-const source=(await readFile(new URL('../services/host/app/scenery-overview.js',import.meta.url),'utf8')).replace("'three'",JSON.stringify(new URL('../services/host/vendor/three.module.min.js',import.meta.url).href)).replace(/'([.][/]scenery-[^']+)'/g,(_,path)=>JSON.stringify(new URL('../services/host/app/'+path,import.meta.url).href));
+const source=(await readFile(new URL('../services/host/app/scenery-overview.js',import.meta.url),'utf8')).replace("'three'",JSON.stringify(new URL('../services/host/vendor/three.module.min.js',import.meta.url).href)).replace(/'([.][/][^']+\.js)'/g,(_,path)=>JSON.stringify(new URL('../services/host/app/'+path,import.meta.url).href));
 const {sceneryOverview,setOverviewDetails}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const world={rings:[[[-220,-450],[220,-450],[220,450],[-220,450]]],bounds:{minX:-220,maxX:220,minZ:-450,maxZ:450},seaLevel:7,surfaceAt:()=>8,coordinatesAt:(x,z)=>[127,38-z/100]};
 world.toWorld=(lon,lat)=>[(lon-127)*100,(38-lat)*100];

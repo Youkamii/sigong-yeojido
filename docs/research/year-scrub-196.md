@@ -98,3 +98,135 @@
 최종 결과: **352개 중 351개 통과, 기존 실패 1개, 새 실패 0개**. 종료 코드는 기존 실패 때문에 1이다. 브라우저 화면과 긴 작업 수·시간 검증은 이 결과에 포함하지 않는다.
 
 후속 수정 1 이후: **361개 중 360개 통과, 기존 실패 1개(`tests/test_place_state.mjs`), 새 실패 0개**. 9·12·14번의 새 검사(확정 중 밀린 context refresh 1회, 1199ms 재생 간격과 확정 직후 재예약, 제목 없는 패널의 전체 렌더 폴백)와 1번 동치 검사를 더했다. `scene-kinds`·`branch-review-regressions`의 풍경 대역은 새 `setState` 시그니처를 따르도록 고쳤고 단언은 그대로 두었다.
+
+
+## #201 장면 조립·풍경 배치 워커 분리
+
+### 무엇을 했나
+
+계산과 그리기를 갈랐다. 마을 자리를 고르고 집·밭·길을 배치해 정점 좌표까지 뽑는 일은 three 도 DOM 도 쓰지 않는 순수 계산이라 워커로 옮겼고, 메인 스레드에는 받은 배열로 geometry 와 InstancedMesh 를 만드는 일만 남겼다.
+
+| 옮긴 것 | 원래 있던 곳 | 지금 있는 곳 |
+| --- | --- | --- |
+| `siteDensityState` | `chronicle-scenery.js` | `scene-layout.js` (구 위치에서 재수출) |
+| `selectEstimatedSites` | `chronicle-scenery.js` | `scene-layout.js` (구 위치에서 재수출) |
+| `selectSceneSites` | `chronicle-scenery.js` | `scene-layout.js` (구 위치에서 재수출) |
+| `refreshPeriod` 의 계산부(`settlementLayout` 적용·`fits`/`owns`/`ruralFree`/`ground`·밭·빈터 거르기·도로 세분화) | `chronicle-scenery.js` | `scene-layout.js` `computeLandscape` |
+| `point(site,x,z)` | `chronicle-scenery.js`·`scenery-overview.js` | `scene-layout.js` `pointOn` |
+| `sceneryOverview` 의 정점·색 계산 | `scenery-overview.js` | `scene-layout.js` `overviewBuckets` |
+| three.Color 의 sRGB→선형 변환 | three | `scene-layout.js` `linearColor` |
+| `BufferGeometry.computeVertexNormals` | three | `scene-layout.js` `computeVertexNormals` |
+
+새로 생긴 파일은 셋이다.
+
+- `services/host/app/scene-layout.js` — 위 표의 순수 함수 모음. 워커와 메인이 같은 이 파일을 부른다. 계산이 한 곳에만 있으므로 두 경로의 결과가 갈라질 수 없다.
+- `services/host/app/workers/scene-layout.worker.js` — 모듈 워커. 메시지 규약(`init`/`layout`)과 이어붙이기만 맡는다. `three` 를 부르지 않으므로 페이지의 importmap 없이 그대로 돈다. node 단위 검사는 `worker_threads` 없이 `createSceneLayoutCore()` 를 직접 부른다.
+- `services/host/app/scene-layout-client.js` — 메인 쪽 손잡이. 워커 생성·토큰·감시 시간·폴백 전환을 맡는다.
+
+`scenery-overview.js` 는 정점 배열을 three 로 조립하는 `overviewFromBuckets` 로 줄었다. 기존 `sceneryOverview(world,cells,...)` 는 `overviewBuckets` + `overviewFromBuckets` 의 얇은 껍데기로 남겨 기존 검사와 호출처를 그대로 뒀다.
+
+워커가 지형 높이를 메인과 똑같이 읽어야 해서, `world.surfaceAt`·`contains`·`toWorld` 를 워커에서 되살리는 길도 함께 만들었다(`serializeWorld` / `createWorldView`). 높이는 실제로 그려진 `peninsula-surface` 삼각형 배열에서 뽑고, 링 밖은 메인과 같은 해수면/이웃 땅 높이로 떨어진다.
+
+### 폴백 경로
+
+1. `Worker` 가 없거나(file://·구형) `serializeWorld` 가 지형을 못 찾으면 `createSceneLayoutClient` 가 `null` 을 돌려주고, `ChronicleScenery.requestRefresh` 는 곧바로 `refreshPeriod`(메인 동기)로 간다.
+2. 워커 생성 실패, `postMessage` 실패, `onerror`/`onmessageerror`, 워커가 보낸 `error`, 감시 시간(6초) 초과, 결과 반영 중 예외 — 이 중 무엇이든 한 번 걸리면 워커를 끄고 그 뒤로는 계속 동기 경로를 쓴다.
+3. 콘솔 경고는 세션에 한 번만 남긴다(`[scene-layout worker] 워커를 쓰지 못해 메인 스레드에서 계산합니다.`).
+4. 두 경로가 부르는 함수가 같으므로 폴백해도 화면 결과는 같다. 단위 검사가 정점·색·법선까지 맞춰 고정한다.
+
+### 늦은 응답과 화질 변경
+
+- 요청마다 토큰이 올라간다. 연속 확정에서 옛 토큰의 응답이 늦게 와도 버린다(`data.token!==inflight`).
+- 워커는 "메인이 실제로 화면에 반영했다"고 알려 온 응답(`ack`)만 다음 재사용 기준으로 삼는다. 버려진 응답은 `ack` 가 오지 않으므로 기준이 밀리지 않는다.
+- 화질이 바뀌면 `setQuality` 가 `requestRefresh(true)` 로 다시 요청한다. 예산(`quality`)이 요청에 실려 가고, 밀도 키(`sceneryPeriodKey`)에 배율이 들어 있어 모든 셀이 새로 계산된다.
+
+### 숲 부분 갱신
+
+후보 나무(최대 18,000그루)는 한 번만 만들고 96칸 구역별 `InstancedMesh` 로 고정한다. 점유 원·장면·길목이 달라진 반경 안의 인스턴스만 행렬을 고치고, 가릴 때는 스케일 0 으로 숨긴다(메시 재생성 없음). edge/grove 나무는 매번 달라지므로 `fan-trees:dynamic` 하나로 따로 뺐다.
+
+- 바뀐 원은 `circleDifference` 가 이전/이번 목록의 차집합으로 구한다. 남아 있는 원은 판정을 바꾸지 않는다.
+- 바뀐 길목은 `CountrysidePaths.sync` 가 구간 단위로 모아 두고 숲이 `takeChanges()` 로 한 번 읽고 비운다. 길 점 간격은 1.5, 나무 판정 여유는 1.1 이므로 끝점 반경 1.85 면 구간 전체가 덮인다.
+- 바뀐 원이 3,000개를 넘거나 길 변화 점이 4,096개를 넘으면 전수 재검사가 더 싸므로 그쪽으로 돌아간다(`takeChanges()` 가 `null`).
+
+### 전송 데이터 크기
+
+`tests/scene-layout-worker.test.mjs` 의 표본(지형 정점 10,584개, 사이트 18곳, 1700년, 마을 15곳·집 289채·밭 132구획)에서 잰 값이다. 실제 뷰어 수치는 지형 삼각형 수와 연도에 따라 달라지므로 아래 '측정 절차'로 리더가 잰다.
+
+| 구간 | 언제 | 크기 | 방식 |
+| --- | --- | ---: | --- |
+| `init` 지형·링 | 워커 생성 시 1회 | 127,072 B | transferable(복사 없음) |
+| `init` 사이트 목록 | 워커 생성 시 1회 | 3,793 B (JSON 기준) | 구조화 복제 |
+| `layout` 요청 | 확정 1회마다 | 1 KB 미만 | 구조화 복제 |
+| `layout` 응답 — 정점·색·법선 | 확정 1회마다 | 731,160 B (버킷 9개) | transferable(복사 없음) |
+| `layout` 응답 — 바뀐 셀의 layout | 확정 1회마다 | 120,004 B (JSON 기준) | 구조화 복제 |
+
+지형 전송은 `정점 수 × 12 B` 다. 응답의 정점·색·법선은 버퍼를 넘기므로(transfer) 복사 비용이 없다. 셀 layout 은 가까이서 집을 세울 때 필요해 구조화 복제로 가지만, **바뀐 마을만** 실린다 — 재사용된 마을은 id 만 온다(위 표본에서 재사용이 걸리면 이 칸은 0 B 로 떨어진다).
+
+### 리더 실측 표 (#201)
+
+앞 열은 #196 후 리더 실측값이다. 뒤 열은 리더가 채운다.
+
+| 지표 | #196 후 | 워커 분리 후 |
+| --- | ---: | ---: |
+| 연도 1회 확정: 긴 작업 수 | 35건 | |
+| 연도 1회 확정: 긴 작업 합계 | 9,941ms | |
+| 연도 1회 확정: 최장 긴 작업 | 705ms | |
+| 연도 1회 확정: 워커 왕복 시간 | — | |
+| input 8회, 120ms 간격: 긴 작업 수 | 37건 | |
+| input 8회, 120ms 간격: 긴 작업 합계 | 11,482ms | |
+| 숲 재배치: 갱신한 인스턴스 수 / 전체 후보 | 전체 | |
+
+목표는 지시서대로 **메인 스레드 긴 작업 합계 절반 이하, 최장 300ms 이하**다.
+
+### 측정 절차
+
+1. 조건은 #196 과 같게 맞춘다 — 로컬 뷰어 `:8887`, 낮음 화질, headless Chromium 1440×900, 1610년 부근, 같은 카메라·출처. 최초 로딩과 이미 로딩된 상태를 나눠 기록한다.
+2. `PerformanceObserver({entryTypes:['longtask']})` 로 확정 1회의 긴 작업 수·합계·최장을 잰다. #196 과 같은 잣대를 쓴다.
+3. 워커가 실제로 켜졌는지 먼저 확인한다. 콘솔에 `[scene-layout worker]` 경고가 없고 DevTools 의 스레드 목록에 `scene-layout.worker.js` 가 보이면 워커 경로다. 경고가 보이면 그 실측은 폴백(동기) 수치이므로 따로 적는다.
+4. 전송 크기는 페이지 로드 **전에** 아래를 주입해 잰다(`Page.addScriptToEvaluateOnNewDocument`).
+
+   ```js
+   const post = Worker.prototype.postMessage;
+   globalThis.__layoutWire = {toWorker: [], fromWorker: []};
+   const size = o => ['positions','colors','normals'].reduce((n,k)=>n+(o?.[k]?.byteLength||0),0);
+   Worker.prototype.postMessage = function (message, transfer) {
+     globalThis.__layoutWire.toWorker.push({type: message?.type, token: message?.token,
+       transferred: (transfer||[]).reduce((n,b)=>n+(b.byteLength||0),0),
+       cloned: message?.type==='init' ? JSON.stringify(message.sites||[]).length : 0});
+     if (!this.__wired) {
+       this.__wired = true;
+       this.addEventListener('message', e => globalThis.__layoutWire.fromWorker.push({
+         token: e.data?.token, buckets: (e.data?.buckets||[]).reduce((n,b)=>n+size(b),0),
+         cells: JSON.stringify(e.data?.cells||{}).length,
+         retained: (e.data?.retainedIds||[]).length}));
+     }
+     return post.apply(this, arguments);
+   };
+   ```
+
+   확정 몇 번 뒤 `__layoutWire` 를 읽어 요청당 평균과 최대를 적는다.
+5. 숲 부분 갱신은 확정 전후로 `fan-trees:*` 인스턴스 메시 수가 그대로인지, `fan-trees:dynamic` 만 바뀌는지 본다. 메시 수가 매번 달라지면 부분 갱신이 아니라 전수 재배치로 떨어진 것이다.
+6. 결과가 바뀌지 않았는지 눈으로 본다 — 같은 연도에서 마을·집·밭·길·숲의 배치가 워커 경로와 폴백 경로에서 같아야 한다. 폴백 경로는 콘솔에서 `delete window.Worker` 를 페이지 로드 전에 주입해 강제할 수 있다.
+7. 늦은 응답 처리를 확인한다 — 빠르게 연속 확정한 뒤 화면이 마지막 연도로 한 번만 정착하는지, 중간 연도로 되돌아가지 않는지 본다.
+8. 기원전/서기 경계, 671→672 밀도 자료 경계, 도시 성장·산업 문턱, 화질 전환(낮음↔보통), 3D→2D 전환에서도 같은 확인을 되풀이한다.
+9. 주의 — `scripts/measure_first_screen.py` 는 `ChronicleScenery.prototype.refreshPeriod` 를 감싸 `estimatedBackground` 구간을 잰다. 워커 경로에서는 `refreshPeriod` 가 불리지 않으므로 그 구간이 0 으로 보인다. 워커 경로의 같은 구간을 재려면 `applyLandscape` 를 함께 감싸거나, `delete window.Worker` 로 폴백을 강제해 비교한다. 이번 변경에서 그 스크립트는 건드리지 않았다.
+
+브라우저 실측: NOT_RUN(리더 몫). 서버 API·데이터·파이썬·의존성은 이번에도 바꾸지 않았다.
+
+### 단위 검사 (#201)
+
+실행 명령은 `node --test tests/*.mjs` 만 쓴다. 결과는 **371개 중 370개 통과, 기존 실패 1개(`tests/test_place_state.mjs` 의 `outside candidates retain dates, sources and authorship instead of vanishing`), 새 실패 0개**다.
+
+새로 더한 검사는 둘이다.
+
+- `tests/scene-layout-worker.test.mjs` — 같은 입력에서 워커 핸들러 결과가 메인 동기 결과와 같은지 마을 차례·집/밭 수·셀 layout·정점·색·법선까지 맞춘다. 정점은 three 가 만든 `BufferGeometry` 의 실제 배열과 직접 비교하고, 색은 `THREE.Color` 의 sRGB→선형 변환과 float32 한 값까지 맞춘다. `ack` 기반 재사용, 토큰으로 옛 응답 버리기, 실패 시 경고 1회와 폴백, 감시 시간 초과 폴백, 워커 없는 환경도 함께 고정한다.
+- `tests/forest-incremental.test.mjs` — 점유·길·장면이 바뀐 반경만 고친 숲이 전수 재배치와 같은 나무를 같은 자리에 두는지(인스턴스 행렬 전체 비교), 가려진 후보가 스케일 0 으로 남는지, edge/grove 나무만 다시 만들어지는지, 같은 입력이면 아무것도 다시 만들지 않는지 고정한다.
+
+`tests/scene-quality.test.mjs` 와 `tests/scenery-overview.test.mjs` 는 바뀐 진입점(`requestRefresh`)과 모듈 경로 치환에 맞춰 대역만 고쳤고 단언은 그대로 뒀다.
+
+### 남은 병목 (추정)
+
+1. 확정 응답의 셀 layout 구조화 복제 — 표본에서 마을 15곳에 120 KB 다. 재사용이 걸리면 바뀐 마을만 실리지만, 시대가 통째로 바뀌는 확정에서는 전체가 실린다. 줄이려면 집 목록도 정점처럼 평평한 배열로 바꿔야 한다.
+2. 마커 reflow 와 `flyTo` 중 라벨 재배치 — 이번 변경 밖이다.
+3. `Chronicle.render` 의 innerHTML — 이번 변경 밖이다.
+4. 워커가 메인과 같은 `settlementLayout` 을 부르므로 계산량 자체는 줄지 않았다. 메인 스레드에서 비켰을 뿐이다. 워커 안에서도 한 번에 6초를 넘기면 감시 시간에 걸려 폴백하므로, 아주 큰 연도에서 워커 자체가 느린지 리더 실측으로 봐야 한다.
