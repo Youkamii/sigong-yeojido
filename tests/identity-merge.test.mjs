@@ -65,22 +65,22 @@ test('장면 참여자 관계 목록에도 같은 사람이 한 번만 나온다
 
 test('인물·장소 카드 설명 아래에 다른 표기를 표시하고 옛 id도 정본 카드를 연다',()=>{
   const data=fixture();
-  for(const [id,aliases] of [[canonical,'세종장헌왕 · 世宗莊憲王'],['place','漢城 · 한양']]){
+  for(const [id,aliases] of [[canonical,'세종장헌왕, 世宗莊憲王'],['place','漢城, 한양']]){
     const story=storyFor(data,id);story.render();
-    assert.ok(story.pane.innerHTML.includes(`<p class="atlas-story-aliases">다른 표기 · ${aliases}</p>`));
-    if(id===canonical)assert.ok(story.pane.innerHTML.indexOf('조선의 왕')<story.pane.innerHTML.indexOf('다른 표기'));
+    assert.ok(story.pane.innerHTML.includes(`<p class="atlas-story-aliases">다른 이름: ${aliases}</p>`));
+    if(id===canonical)assert.ok(story.pane.innerHTML.indexOf('조선의 왕')<story.pane.innerHTML.indexOf('다른 이름:'));
   }
   const story=storyFor(data,old);story.show(data.entities.get(old));
   assert.equal(story.entity.id,canonical);
   assert.ok(story.pane.innerHTML.includes('<h2>세종</h2>'));
-  assert.ok(story.pane.innerHTML.includes('다른 표기 · 세종장헌왕 · 世宗莊憲王'));
+  assert.ok(story.pane.innerHTML.includes('다른 이름: 세종장헌왕, 世宗莊憲王'));
   assert.ok(story.pane.innerHTML.includes('data-story-claim="identity"'));
 });
 
 test('별칭이 없으면 줄을 생략하고 별칭 문자열은 HTML로 해석하지 않는다',()=>{
   const data=fixture(),story=storyFor(data,canonical);
   story.entity.aliases=['<옛 이름>'];story.render();
-  assert.ok(story.pane.innerHTML.includes('다른 표기 · &lt;옛 이름&gt;'));
+  assert.ok(story.pane.innerHTML.includes('다른 이름: &lt;옛 이름&gt;'));
   story.entity.aliases=[];story.render();
   assert.ok(!story.pane.innerHTML.includes('atlas-story-aliases'));
 });

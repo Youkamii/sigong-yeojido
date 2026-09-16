@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import {AtlasData,cleanTitle,relationName,relationDates} from '../services/host/app/atlas-data.js';
-import {AtlasStory} from '../services/host/app/atlas-story.js';
+import {AtlasStory,normalize,mergeEvents,mergePlaces,displayTitle,shortLabel} from '../services/host/app/atlas-story.js';
 import {contextAt,yearLabel} from '../services/host/app/chronicle.js';
 import {roleLabel} from '../services/host/app/chronicle-asset-plan.js';
 
@@ -24,45 +24,45 @@ const sceneIds=new Set(research.flatMap(r=>(r.scenes||[]).map(s=>s.id)));
 const packets=json('../services/host/app/history-scenes.json').scenes.filter(s=>sceneIds.has(s.id));
 const liveData={entities,claims:[...new Map(claims.map(c=>[c.id,c])).values()],scenePackets:packets};
 const yi='person-encykorea-yi-sunsin',noryang='event-yinav-noryang-1598';
-function storyFor(id,mode='summary',source=liveData){
+function storyFor(id,tab='summary',source=liveData){
   const data=new AtlasData();data.update(source,contextAt(source,1598),source.scenePackets);
-  return Object.assign(Object.create(AtlasStory.prototype),{entity:data.entities.get(id),mode,history:[],pane:{},
+  return Object.assign(Object.create(AtlasStory.prototype),{entity:data.entities.get(id),tab,more:new Set(),history:[],pane:{},
     ui:{data,chronicle:{year:1598},scene:{assets:{activeScene:'scene-noryang-1598'}}}});
 }
 const sectionHtml=(html,id)=>html.match(new RegExp(`<section[^>]*data-story-section="${id}"[\\s\\S]*?</section>`))?.[0];
 
-test('실제 이순신·고하도 주둔 카드는 네 구역과 개수, 사건의 연도·제목·장소를 구분한다',()=>{
-  for(const [id,title] of [[yi,'겪은 사건 연표'],['event-syj103-gohado-jujun-1597-1598','앞뒤 사건']])for(const mode of ['summary','relations']){
-    const story=storyFor(id,mode),data=story.ui.data;
-    assert.ok(story.entity,id);
-    if(id===yi){
-      assert.ok(data.eventsFor(id).length>=2);
-      for(const type of ['Person','Place','Event'])assert.ok(story.relatedRows().some(r=>r.entity.type===type),type);
-    }
-    const groups=story.sections(story.relatedRows());story.render();const html=story.pane.innerHTML;
-    for(const [key,label] of [['people','인물 관계'],['events',title],['places','장소'],['era','시대 배경']]){
-      const section=sectionHtml(html,key);assert.ok(section,`${id}: ${key}`);
-      assert.ok(section.includes(`<h3>${label} <span class="atlas-section-count">${groups.find(g=>g.id===key).rows.length}</span></h3>`));
-    }
-    const events=groups.find(g=>g.id==='events').rows;
+test('실제 인물·사건 카드는 요약과 세 목록을 나누고 연도 레일을 표시한다',()=>{
+  for(const id of [yi,'event-syj103-gohado-jujun-1597-1598']){
+    const story=storyFor(id),sections=story.sections(story.relatedRows());story.render();
+    const summary=story.pane.innerHTML;
+    assert.match(summary,/atlas-story-hero/);assert.match(summary,/출처와 지도 위치/);assert.match(summary,/data-story-claim=/);
+    assert.match(sectionHtml(summary,'events'),/<h3>연표 /);
+    assert.match(sectionHtml(summary,'era'),/class="atlas-story-era-row"><span>조선/);
+    assert.doesNotMatch(sectionHtml(summary,'era'),/<h3>/);
+    assert.equal((summary.match(/<details/g)||[]).length,1);
+    assert.ok(!summary.includes('data-story-relations'));
+    const people=sections.find(s=>s.id==='people').rows,events=sections.find(s=>s.id==='events').rows;
+    const compact=sections.filter(s=>s.id!=='era').reduce((sum,s)=>sum+s.rows.length,0)<=6;
     assert.ok(events.length>0);assert.ok(events.every(e=>e.id!==id));
-    for(let i=1;i<events.length;i++)assert.ok((events[i-1].lo??Infinity)<=(events[i].lo??Infinity));
-    const buttons=[...sectionHtml(html,'events').matchAll(/<button class="atlas-story-row atlas-story-event"[\s\S]*?<\/button>/g)].map(m=>m[0]);
-    assert.equal(buttons.length,mode==='relations'?events.length:Math.min(8,events.length));
-    for(const [index,button] of buttons.entries()){
-      assert.ok(button.includes(`<span class="atlas-event-year">${yearLabel(events[index].lo)}</span>`));
-      assert.match(button,/<strong class="atlas-event-title">[\s\S]+?<\/strong>/);
-      assert.ok(button.includes(cleanTitle(events[index].title)));
-      assert.match(button,/<small class="atlas-event-place">[^<]+<\/small>/);
-      const scene=data.scenes.get(events[index].sceneId);
-      if(scene)assert.ok(button.includes(`<small class="atlas-event-place">${scene.place.label}</small>`));
+    assert.equal((sectionHtml(summary,'people')?.match(/data-story-entity=/g)||[]).length,compact?people.length:Math.min(people.length,5));
+    assert.equal((sectionHtml(summary,'events').match(/atlas-story-event"/g)||[]).length,compact?events.length:Math.min(events.length,3));
+    const current=story.sceneEvent();
+    if(events.some(e=>e.sceneId===current.sceneId))assert.ok(sectionHtml(summary,'events').includes(`data-story-event="${current.sceneId}"`));
+    if(id===yi)assert.ok(summary.includes('인물 · 1545년–1598년'));
+    if(compact){assert.ok(!summary.includes('class="atlas-story-tabs"'));continue;}
+    for(const tab of ['events','people','places']){
+      if(!sections.find(s=>s.id===tab).rows.length)continue;
+      story.tab=tab;story.render();const html=story.pane.innerHTML;
+      assert.ok(sectionHtml(html,tab));assert.ok(sectionHtml(html,'era'));
+      assert.doesNotMatch(sectionHtml(html,tab),/<h3>/);
+      for(const other of ['events','people','places'].filter(key=>key!==tab))assert.equal(sectionHtml(html,other),undefined);
     }
-    const places=groups.find(g=>g.id==='places').rows;
-    assert.equal(new Set(places.map(p=>p.label.normalize('NFKC').trim())).size,places.length);
-    assert.ok(places.some(p=>p.titles.size>0));
-    assert.ok(html.includes('이야기의 출처 보기'));assert.match(html,/data-story-claim="[^"]+"/);
-    assert.ok(!/근거|생몰|함께 살펴볼 사건/.test(html));
-    if(id===yi){assert.ok(html.includes('출생 – 사망 · 1545년 – 1598년'));assert.ok(html.indexOf('출생 – 사망')<html.indexOf('class="atlas-role"'));}
+    story.tab='events';story.render();
+    const visible=events.length>12?events.slice(0,10):events;
+    const timeline=sectionHtml(story.pane.innerHTML,'events');
+    assert.equal((timeline.match(/class="atlas-event-year"/g)||[]).length,new Set(visible.map(e=>e.lo??null)).size);
+    for(const row of visible){assert.ok(timeline.includes(displayTitle(row.title)));assert.ok(timeline.includes(yearLabel(row.lo)));}
+    story.tab='places';story.render();assert.match(sectionHtml(story.pane.innerHTML,'places'),/사건 \d+/);
   }
 });
 
@@ -76,9 +76,9 @@ test('관계 이름은 방향을 반영하고 관계 자체에 기록된 시간�
   assert.ok(target);
   const dated={...parent,subject:yi,object:{kind:'entity',id:target.id},predicate:'syj:hasTeacher'};
   const html=story.sectionHtml({id:'people',title:'인물 관계',rows:[{entity:target,claims:[dated],relationClaims:[dated]}]});
-  assert.match(html,/<small>스승<\/small>/);assert.match(html,/<span class="atlas-relation-year">1545년 – 1550년<\/span>/);
+  assert.match(html,/<h4>스승 /);assert.match(html,/<small class="atlas-relation-year"[^>]*>1545년 – 1550년<\/small>/);
   const unknown={...dated,predicate:'syj:unlistedRelation',time:undefined};
-  assert.ok(story.sectionHtml({id:'people',title:'인물 관계',rows:[{entity:target,claims:[unknown],relationClaims:[unknown]}]}).includes('관련 인물'));
+  assert.ok(story.sectionHtml({id:'people',title:'인물 관계',rows:[{entity:target,claims:[unknown],relationClaims:[unknown]}]}).includes('<h4>관계 '));
 });
 
 test('사건의 앞뒤 목록은 같은 장소 ±5년과 직접 관계만 포함하며 다른 활성 장면에 흔들리지 않는다',()=>{
@@ -97,12 +97,12 @@ test('사건의 앞뒤 목록은 같은 장소 ±5년과 직접 관계만 포함
   assert.ok(rows.some(e=>e.id===linked.id),'직접 연결 사건');
 });
 
-test('관계 모드는 30개 이후도 표시하고 빈 구역은 생략하며 나라가 없으면 시대를 표시한다',()=>{
+test('관계 그룹은 더 보기로 30개 이후도 표시하고 빈 구역은 생략하며 나라가 없으면 시대를 표시한다',()=>{
   const story=storyFor(yi),rows=Array.from({length:35},(_,i)=>({entity:{id:`p${i}`,label:`인물 ${i}`,type:'Person'},claims:[]}));
   const group={id:'people',title:'인물 관계',rows};
   assert.equal((story.sectionHtml(group).match(/data-story-entity=/g)||[]).length,8);
-  assert.ok(story.sectionHtml(group).includes('전체 35개 보기'));
-  story.mode='relations';assert.equal((story.sectionHtml(group).match(/data-story-entity=/g)||[]).length,35);
+  assert.ok(story.sectionHtml(group).includes('27명 더'));
+  story.more.add('people-0');assert.equal((story.sectionHtml(group).match(/data-story-entity=/g)||[]).length,35);
   assert.equal(story.sectionHtml({...group,rows:[]}), '');
   const empty={entities:[{id:'empty',type:'Person',label:'기록 없는 인물'}],claims:[],scenePackets:[]};
   const sparse=storyFor('empty','summary',empty);sparse.render();
@@ -111,20 +111,20 @@ test('관계 모드는 30개 이후도 표시하고 빈 구역은 생략하며 �
   assert.equal(sectionHtml(sparse.pane.innerHTML,'places'),undefined);
 });
 
-test('장소 중복을 합치고 해당 사건 이름을 보존한다',()=>{
+test('장소 중복을 합치고 해당 사건 수와 연결을 보존한다',()=>{
   const story=storyFor(yi),data=story.ui.data,event=story.sceneEvent(),scene=data.scenes.get(event.sceneId);
   const place={entity:{id:'duplicate-place',type:'Place',label:scene.place.label},claims:[]};
   const rows=story.sections([...story.relatedRows(),place]).find(s=>s.id==='places').rows;
-  const matches=rows.filter(p=>p.label===scene.place.label);assert.equal(matches.length,1);
-  assert.equal(matches[0].entityId,'duplicate-place');assert.ok(matches[0].titles.has(cleanTitle(scene.title)));
+  const matches=rows.filter(p=>normalize(p.label)===normalize(scene.place.label));assert.equal(matches.length,1);
+  assert.ok(matches[0].entityId);assert.ok([...matches[0].events.values()].some(e=>normalize(e.title)===normalize(scene.title)));
 });
 
 test('인물·사건·장소·출처 버튼과 관계/뒤로 동작을 유지한다',async()=>{
   const previousDocument=globalThis.document,previousFetch=globalThis.fetch,calls=[];
-  globalThis.document={createElement:()=>({setAttribute(){}})};
+  globalThis.document={createElement:()=>({setAttribute(){},querySelector(){return null;}})};
   globalThis.fetch=async()=>({ok:true,json:async()=>({images:[]})});
   try{
-    const sample=storyFor(yi),ui={...sample.ui,registerPanel(){},openPanel(){},evidence:c=>calls.push(['claim',c.id]),
+    const sample=storyFor(yi),ui={...sample.ui,registerPanel(){},openPanel(){},closePanel:()=>calls.push(['close']),chat:{show:id=>calls.push(['chat',id])},evidence:c=>calls.push(['claim',c.id]),
       chronicle:{...sample.ui.chronicle,showEntity:id=>calls.push(['entity',id]),showEvent:e=>calls.push(['event',e.sceneId])}};
     const story=new AtlasStory(ui);story.show(sample.entity);
     const click=(selector,dataset={})=>story.pane.onclick({target:{closest:s=>s===selector?{dataset}:null}});
@@ -132,7 +132,13 @@ test('인물·사건·장소·출처 버튼과 관계/뒤로 동작을 유지한
     click('[data-story-entity]',{storyEntity:noryang});click('[data-story-event]',{storyEvent:event.sceneId});
     click('[data-story-place]',{storyPlace:event.sceneId});click('[data-story-claim]',{storyClaim:claim.id});
     assert.deepEqual(calls,[['entity',noryang],['event',event.sceneId],['event',event.sceneId],['claim',claim.id]]);
-    click('[data-story-relations]');assert.equal(story.mode,'relations');click('[data-story-back]');assert.equal(story.mode,'summary');
+    click('[data-story-tab]',{storyTab:'events'});assert.equal(story.tab,'events');
+    click('[data-story-more]',{storyMore:'events'});assert.ok(story.more.has('events'));
+    click('[data-story-expand]');assert.equal(story.expanded,true);
+    click('[data-story-chat]');assert.deepEqual(calls.at(-1),['chat',yi]);
+    click('[data-story-back]');assert.deepEqual(calls.at(-1),['close']);
+    story.show(ui.data.entities.get(noryang));assert.equal(story.tab,'summary');assert.equal(story.more.size,0);assert.equal(story.expanded,false);
+    click('[data-story-back]');assert.deepEqual(calls.at(-1),['entity',yi]);
     await Promise.resolve();
   }finally{globalThis.document=previousDocument;globalThis.fetch=previousFetch;}
 });
@@ -145,4 +151,119 @@ test('ruler 역할 호칭은 시대를 따른다 — 4·19 카드의 이승만�
   assert.equal(roleLabel('ruler'),'군주');
   assert.equal(roleLabel('군주',1948),'국가 지도자');  // 조형 계획이 번역해 넘긴 역할
   assert.equal(roleLabel('commander',1960),'지휘관');
+});
+
+test('이름 정규화와 제목·라벨 정리는 원문을 바꾸지 않는다',()=>{
+  assert.equal(normalize(' Ａ · B–c—d- (설명 (안쪽)) '),'abcd');
+  assert.equal(normalize('한산도 대첩'),normalize('한산도대첩'));
+  assert.equal(displayTitle('한산도 본영 운영 — 전함 제작과 수리 (1593~1597)'), '한산도 본영 운영');
+  for(const dash of ['—','–','-'])assert.equal(displayTitle(`출항 ${dash} 준비 (1593)`),'출항');
+  assert.equal(displayTitle('한산도 (상륙지)'),'한산도 (상륙지)');
+  assert.equal(displayTitle('한산도 (1593년–1597년)'),'한산도');
+  assert.equal(shortLabel('일본군 (임진왜란 침입군, 사료 표기 일본군·왜군·적군) · 집단 행위자'),'일본군');
+  assert.equal(shortLabel('일본군 (임진왜란 침입군 · 사료 표기 왜군) · 집단 행위자'),'일본군');
+  assert.equal(shortLabel('수군 (조선) · 집단 행위자'),'수군 (조선)');
+});
+
+test('사건은 이름과 시작 연도로 병합하고 장면·긴 장소·양쪽 출처를 남긴다',()=>{
+  const rows=[{id:'a',title:'한산도 대첩',lo:1592,placeLabel:'한산도',basis:[{id:'c1'}]},
+    {id:'b',title:'한산도대첩 (1592)',lo:1592,sceneId:'battle',placeLabel:'한산도 앞바다',basis:[{id:'c2'}]},
+    {id:'c',title:'한산도대첩',lo:1593}, {id:'d',title:'한산도 대첩'}];
+  const original=structuredClone(rows);
+  for(const input of [rows,[...rows].reverse()]){
+    const merged=mergeEvents(input);assert.equal(merged.length,3);
+    const battle=merged.find(e=>e.lo===1592);assert.equal(battle.id,'b');assert.equal(battle.sceneId,'battle');assert.equal(battle.placeLabel,'한산도 앞바다');
+    assert.deepEqual(new Set(battle.basis.map(c=>c.id)),new Set(['c1','c2']));
+  }
+  assert.deepEqual(rows,original);
+});
+
+test('같은 해 한산도 대첩은 부제가 달린 장면과 한 행으로 합친다',()=>{
+  const rows=[{id:'a',title:'한산도 대첩',lo:1592,placeLabel:'한산도'},
+    {id:'b',title:'한산도대첩 — 한산섬 앞바다',lo:1592,sceneId:'battle',placeLabel:'한산섬 앞바다'}];
+  for(const input of [rows,[...rows].reverse()]){
+    const merged=mergeEvents(input);
+    assert.equal(merged.length,1);assert.equal(merged[0].sceneId,'battle');
+    assert.equal(merged[0].placeLabel,'한산섬 앞바다');
+    assert.equal((storyFor(yi).timelineHtml(merged).match(/atlas-story-event"/g)||[]).length,1);
+  }
+});
+
+test('사건 카드의 다른 ID 중복은 연표·장소에서 빼고 출처는 남긴다',()=>{
+  for(const [cardYear,rowYear,sceneYear] of [[1592,1592],[1592,undefined],[undefined,1592],[null,null],[1591,1592,1592]]){
+    const entity={id:'event-hs-jl1-hansando',type:'Event',label:'한산도 대첩(1592)'};
+    const story=storyFor(entity.id,'summary',{entities:[entity],claims:[],scenePackets:[]}),data=story.ui.data;
+    const current={id:entity.id,title:entity.label,lo:cardYear,sceneId:'battle',placeLabel:'한산도'};
+    const duplicate={id:'event-encykorea-hansando-daecheop-1592',title:'한산도대첩',lo:rowYear,placeLabel:'중복 장소',basis:[{id:'duplicate-source',quote:'중복 사건의 출처'}]};
+    const differentYear={id:'different-year',title:'한산도 대첩',lo:1593,placeLabel:'한산도'};
+    const differentTitle={id:'different-title',title:'다른 사건',lo:1592,placeLabel:'한산도'};
+    data.events=[current,duplicate,differentYear,differentTitle];
+    if(sceneYear!=null)data.scenes.set('battle',{startYear:sceneYear,place:{label:'한산도'}});
+    story.sceneEvent=()=>current;
+    story.relatedRows=()=>[duplicate,differentYear,differentTitle].map(e=>({entity:{id:e.id,type:'Event',label:e.title},claims:[]}));
+    const sections=story.sections(story.relatedRows()),events=sections.find(s=>s.id==='events').rows;
+    assert.ok(!events.some(e=>e.id===duplicate.id));
+    assert.ok(events.some(e=>e.id===differentTitle.id));
+    assert.equal(events.some(e=>e.id===differentYear.id),(sceneYear??cardYear)!=null);
+    const places=sections.find(s=>s.id==='places').rows;
+    assert.ok(!places.some(p=>p.label===duplicate.placeLabel));
+    assert.ok(places.every(p=>[...p.events.values()].every(e=>e.id!==duplicate.id)));
+    story.render();
+    assert.equal((story.pane.innerHTML.match(/data-story-claim="duplicate-source"/g)||[]).length,1);
+    assert.ok(!story.pane.innerHTML.includes(`data-story-entity="${duplicate.id}"`));
+  }
+});
+
+test('장소와 연표는 긴 괄호 설명을 title에 남기고 짧은 이름을 표시한다',()=>{
+  const story=storyFor(yi),label='한산도 수군 본영 (한산도 북서부 해안선 깊숙한 곳, 통영시 한산면 두억리)';
+  const event={id:'base',title:'본영 운영',lo:1593,sceneId:'base-scene',placeLabel:label};
+  assert.ok(story.eventHtml(event).includes(`class="atlas-event-place" title="${label}">한산도 수군 본영</small>`));
+  const html=story.sectionHtml({id:'places',title:'장소',rows:[{label,sceneId:event.sceneId,events:new Map([['base',event]])}]});
+  assert.ok(html.includes(`<strong title="${label}">한산도 수군 본영</strong>`));
+  assert.ok(html.includes('data-story-place="base-scene"'));
+});
+
+test('장소는 괄호 밖 이름이 같을 때만 합치며 사건 수로 정렬한다',()=>{
+  const event={title:'주둔',lo:1587},rows=[
+    {label:'녹둔도 (두만강 하류)',sceneId:'north',events:new Map([['one',event]])},
+    {label:'녹둔도',entityId:'island',events:new Map([['one',event],['two',{title:'전투',lo:1588}]])},
+    {label:'한산도',events:new Map()}, {label:'한산도 통제영(제승당)',events:new Map()}];
+  const original=structuredClone(rows);
+  for(const input of [rows,[...rows].reverse()]){
+    const places=mergePlaces(input);assert.equal(places.length,3);assert.equal(places[0].label,'녹둔도');assert.equal(places[0].events.size,2);
+    assert.equal(places[0].sceneId,'north');assert.equal(places[0].entityId,'island');
+    assert.ok(places.some(p=>p.label==='한산도 통제영(제승당)'));
+  }
+  assert.deepEqual(rows,original);
+});
+
+test('작은 카드는 탭 없이 모든 목록을 표시하고 빈 탭은 숨긴다',()=>{
+  const source={entities:[{id:'p',type:'Person',label:'사람'}],claims:[],scenePackets:[]},story=storyFor('p','summary',source);
+  const events=Array.from({length:6},(_,i)=>({id:`e${i}`,title:`사건 ${i}`,lo:1500+i}));
+  story.sections=()=>[{id:'people',title:'관계',rows:[]},{id:'events',title:'연표',rows:events},{id:'places',title:'장소',rows:[]},{id:'era',title:'시대',rows:[{label:'조선'}]}];
+  story.render();assert.ok(!story.pane.innerHTML.includes('class="atlas-story-tabs"'));assert.equal((story.pane.innerHTML.match(/atlas-story-event"/g)||[]).length,6);
+  events.push({id:'seventh',title:'일곱째 사건',lo:1507});story.render();
+  assert.ok(story.pane.innerHTML.includes('class="atlas-story-tabs"'));assert.ok(!story.pane.innerHTML.includes('data-story-tab="people"'));assert.ok(!story.pane.innerHTML.includes('data-story-tab="places"'));
+  assert.equal((story.pane.innerHTML.match(/atlas-story-event"/g)||[]).length,3);
+});
+
+test('연표와 장소는 12건까지 펼치고 13건부터 10건과 더 보기를 표시한다',()=>{
+  const story=storyFor(yi);
+  for(const id of ['events','places'])for(const count of [12,13]){
+    const rows=Array.from({length:count},(_,i)=>id==='events'?{id:`e${i}`,title:`사건 ${i}`,lo:1592}:{label:`장소 ${i}`,sceneId:`s${i}`,events:new Map()});
+    const section={id,title:id==='events'?'연표':'장소',rows};story.more.clear();
+    const html=story.sectionHtml(section);assert.equal((html.match(/class="atlas-story-row/g)||[]).length,count===12?12:10);
+    assert.equal(html.includes('data-story-more'),count===13);
+    story.more.add(id);assert.equal((story.sectionHtml(section).match(/class="atlas-story-row/g)||[]).length,count);
+  }
+});
+
+test('설명은 넘칠 때만 더 보기를 표시하고 펼친 뒤 접을 수 있다',()=>{
+  const classes=new Set(),button={setAttribute(key,value){this[key]=value;}};
+  const paragraph={clientHeight:90,scrollHeight:90,classList:{remove:value=>classes.delete(value),toggle(value,on){if(on)classes.add(value);else classes.delete(value);}}};
+  const story=storyFor(yi);story.pane.querySelector=selector=>selector==='[data-story-expand]'?button:paragraph;
+  story.updateDescription();assert.equal(button.hidden,true);
+  paragraph.scrollHeight=120;story.updateDescription();assert.equal(button.hidden,false);assert.equal(button.textContent,'더 보기');
+  story.expanded=true;story.updateDescription();assert.equal(button.textContent,'접기');assert.ok(classes.has('is-expanded'));assert.equal(button['aria-expanded'],'true');
+  story.expanded=false;story.updateDescription();assert.ok(!classes.has('is-expanded'));
 });
