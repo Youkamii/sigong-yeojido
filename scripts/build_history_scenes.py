@@ -41,6 +41,8 @@ if args.supersede_only:
 if args.research is None:
     parser.error('--research is required unless --supersede-only is used')
 scenes=[];sources={};missing=[]
+# 이 실행에서 읽은 출처 이름(제목·발행처). 묶음 사이 충돌을 잡는 데만 쓴다.
+source_names={};conflicts=[]
 if args.merge:
     previous=json.loads(args.out.read_text(encoding='utf-8'))
     scenes=previous['scenes'];sources={s['id']:s for s in previous['sources']};missing=previous.get('missing',[])
@@ -56,7 +58,18 @@ for job in args.job or ['invasion_events','yi_naval']:
     for source in result['sources']:
         assert sha256((folder/source['rawFile']).read_bytes()).hexdigest()==source['sha256']
         sid=source_aliases.get(source['id'],source['id'])
-        sources[sid]={**{k:source[k] for k in ['id','title','publisher','url']},'id':sid}
+        entry={**{k:source[k] for k in ['id','title','publisher','url']},'id':sid}
+        # 같은 출처 id 가 묶음마다 다른 이름으로 들어오면 이 실행에서 먼저 읽은 값을 지키고 알린다(#199 round 2, B-8).
+        # 조용히 덮어쓰면 --job 순서만 바뀌어도 화면에 나가는 출처 이름이 뒤집힌다.
+        kept=source_names.get(sid)
+        if kept and kept!=(entry['title'],entry['publisher']):
+            print(f"WARNING source metadata conflict {sid}: keeping {kept[0]!r} / {kept[1]!r};"
+                  f" ignoring {entry['title']!r} / {entry['publisher']!r} from {args.collection}/{job}",file=sys.stderr)
+            conflicts.append({'id':sid,'kept':list(kept),'ignored':[entry['title'],entry['publisher']],
+                              'job':args.collection+'/'+job})
+            continue
+        source_names[sid]=(entry['title'],entry['publisher'])
+        sources[sid]=entry
     for original in result['scenes']:
         scene=deepcopy(original)
         for field, message in scene_kind_errors(scene):
@@ -226,4 +239,4 @@ output={'scenes':scenes,'sources':list(sources.values()),'missing':missing,
         'renderingNote':'해당 연도에 있었던 사건을 각각 표현합니다. 모형의 간격·수량은 실제 진형이나 병력 수가 아닙니다.'}
 superseded=apply_supersede(scenes)
 args.out.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-print(json.dumps({'scenes':len(scenes),'sources':len(sources),'missing':len(missing),'superseded':superseded},ensure_ascii=False))
+print(json.dumps({'scenes':len(scenes),'sources':len(sources),'missing':len(missing),'superseded':superseded,'sourceConflicts':len(conflicts)},ensure_ascii=False))

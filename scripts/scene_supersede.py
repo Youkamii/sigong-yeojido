@@ -10,7 +10,10 @@ import re
 
 # Pairs whose titles share no word but describe the same event at the same place (#186):
 # 탑골공원 독립선언서 낭독(옛 장면) 은 항목 3·1 운동 이 덮는다 — 260 m, 같은 해, 같은 kind.
-MANUAL_PAIRS = {'scene-tapgol-1919': 'scene-c2-samil'}
+# 하얼빈역 저격(옛 장면) 은 항목 안중근 의거 가 덮는다 — #195 가 '안중근 의거 — 하얼빈역' 의 부제를
+# 지우면서 제목 낱말 겹침이 사라졌다. 제목은 v2 규칙대로 두고 짝만 여기에 고정한다(#199 round 2, B-9).
+MANUAL_PAIRS = {'scene-tapgol-1919': 'scene-c2-samil',
+                'scene-harbin-1909': 'scene-hs-mt4-harbin-assassination'}
 
 # Words too generic to prove two titles describe the same event.
 GENERIC_WORDS = {'창건', '설립', '건립', '완공', '준공', '조성', '제작', '전투', '해전', '사건', '즉위', '소실', '화재', '이설', '있음',
