@@ -435,7 +435,10 @@ const chronicleView = new Chronicle(document.getElementById('chronicle'), docume
   context:context=>{
     const host=document.getElementById('sceneContext');
     host.querySelector('h2').textContent=yearLabel(context.year);
-    if(window.__sigong&&!yearCommit?.busy)chronicleScene.refresh(window.__sigong.world,chronicleView);
+    if(window.__sigong){
+      if(yearCommit)yearCommit.requestRefresh(context.year);
+      else chronicleScene.refresh(window.__sigong.world,chronicleView);
+    }
     updateSceneContext(context);
     atlasUI?.update(context);
   }
@@ -510,23 +513,24 @@ const historyLevel=document.getElementById('historyLevel');
 historyLevel.onchange=()=>refreshHistoryMap();
 const historyFilters=()=>({sources:new Set(state.on),primary:new Set(state.primary),origin:state.origin,year:state.year,level:historyLevel.value});
 function refreshHistoryMap(){
-  if(yearCommit?.busy)return yearCommit.run(state.year);
+  if(yearCommit?.busy)return yearCommit.run(state.year,{keepSelection:true});
   return historyMap.refresh(historyFilters());
 }
 yearCommit=createYearCommit({
-  preview:year=>{
-    state.sel=null;state.year=year;chronicleView.year=year;
-    document.getElementById('yearV').textContent=Math.abs(year);
-    document.getElementById('yearL').textContent=year<0?'기원전':'서기';
+  preview:(year,{keepSelection})=>{
+    if(!keepSelection)state.sel=null;
+    state.year=year;chronicleView.year=year;
+    setYearLabel(year);
     chronicleView.showYearPreview(year);
     document.querySelector('#sceneContext h2').textContent=yearLabel(year);
   },
-  context:()=>{chronicleScene.assets?.setSelected(null);chronicleView.render();tl?.setYear(state.year);},
+  context:()=>{chronicleScene.assets?.setSelected(state.sel);chronicleView.render();tl?.setYear(state.year);},
   features:()=>historyMap.refresh(historyFilters(),{notify:false}),
   applyFeatures:data=>{historyMap.apply(data);R?.world.setHistoricalFeatures(data.features,data.year);},
   refresh:year=>{if(R)chronicleScene.refresh(R.world,chronicleView);updateSceneContext();return historicalFeaturesKey(historyMap.features,year);},
   draw:()=>{draw();if(state.mode==='3d')draw3d();if(['history','history-feature'].includes(state.panel))showHistoricalList(false);},
-  done:()=>{scheduleYearCount();historyMap.prefetchNeighbors(historyFilters());}
+  done:()=>{scheduleYearCount();historyMap.prefetchNeighbors(historyFilters());},
+  settled:()=>chronicleView.playback?.completed()
 });
 function showHistoricalList(reveal=true){
   if(reveal)openEvidence();++panelSeq;state.panel='history';state.sel=null;
@@ -801,9 +805,12 @@ function searchAll(text){
 // 막대 = 사료가 다루는 기간(coversFrom~coversTo), 점 = 쓰여진 해(composedYear).
 // 커서를 끌면 연도가 바뀌고, 체크박스로 사료를 켜고 끈다. 왼쪽 레일의 사료 버튼과 같은 상태(state.on)를 본다.
 let tl = null;
+function setYearLabel(v){
+  document.getElementById('yearV').textContent=Math.abs(v);
+  document.getElementById('yearL').textContent=v<0?'기원전':'서기';
+}
 function setYearUI(v){
-  document.getElementById('yearV').textContent = v < 0 ? Math.abs(v) : v;
-  document.getElementById('yearL').textContent = v < 0 ? '기원전' : '서기';
+  setYearLabel(v);
   chronicleView.setYear(v);
 }
 function mountTimeline(){
@@ -860,8 +867,7 @@ async function refreshTimeClaims(){
 }
 function openTimeProjection(claim,projection){
   const year=projection.earliest??projection.latest;
-  if(year!=null){state.year=year;setYearUI(year);tl.setYear(year);draw();if(state.mode==='3d')draw3d();scheduleYearCount();}
-  refreshHistoryMap();
+  if(year!=null)changeYear(year);
   showGraphClaim(claim.conversions.find(c=>c.id===projection.claimId)||claim);
 }
 function showTimeClaims(reveal=true){
@@ -1455,11 +1461,7 @@ async function init3d(){
   chronicleScene.refresh(world,chronicleView);
   chronicleView.render();
   chronicleScene.attach(engine,world);
-  world.setYear(state.year);
-  world.setOrigin(state.origin);
-  world.setPrimarySources(state.primary);
-  if(world.setSourcesOn) world.setSourcesOn(state.on);
-  if(state.sel) world.setSelected(state.sel);
+  world.setLiveState({year:state.year,origin:state.origin,primary:state.primary,on:state.on,selected:state.sel});
   engine.setPickTargets([...world.pickTargets.filter(target => target.parent.visible),...world.historyTargets]);
 
   world.configureEngine(engine);

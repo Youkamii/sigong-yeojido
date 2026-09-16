@@ -10,13 +10,14 @@ import {buildSettlementZones} from './inhabited-zones.js';
 import {sceneBudget} from './scene-quality.js';
 import {occupancyGrid} from './occupancy-grid.js';
 import {isEstimatedSite,setEstimatedMesh,markEstimatedGroup} from './scenery-estimated-dim.js';
-import {estimatedSiteThreshold} from './settlement-regions.js';
+import {estimatedThresholdAt} from './settlement-regions.js';
 import {sceneryPeriodKey} from './year-scrub.js';
 
 export function siteDensityState(site,year,world,scale=1){
   const period=sitePeriod(site,year),context={year,world,x:site.x,z:site.z};
-  const density=estimatedSiteThreshold(period.id,site.latitude,context);
-  const scaled=estimatedSiteThreshold(period.id,site.latitude,{...context,scale});
+  // 배율만 다른 두 문턱이므로 호구 기록 탐색은 한 번만 한다(#196).
+  const threshold=estimatedThresholdAt(period.id,site.latitude,context);
+  const density=threshold(1),scaled=threshold(scale);
   const p=site.profile;
   return {id:site.id,kind:site.kind,periodId:period.id,density,scale,
     selected:site.estimated?site.seed%100<scaled*100:undefined,
@@ -90,10 +91,10 @@ export class ChronicleScenery{
     if(sceneBudget(quality)===sceneBudget(this.quality)){this.quality=quality;this.stats.quality=quality;return;}
     this.quality=quality;this.assets.treeCandidates=null;
     if(!this.initialized)return;
-    this.stats.ready=false;this.refreshPeriod();this.rebuildForest();
+    this.stats.ready=false;this.refreshPeriod(true);this.rebuildForest();
   }
   rebuildForest(){
-    this.sync(this.occupied,this.areaOccupied);
+    this.setState({occupied:this.occupied,areaOccupied:this.areaOccupied});
     this.assets.buildForest([...this.assets.forestOccupied,...this.clearings],this.assets.forestScenes);
     this.assets.forest.visible=this.world.geography?.display?.forest!==false;
   }
@@ -104,21 +105,30 @@ export class ChronicleScenery{
     this.group.visible=visible;this.showPaths=paths;this.estimatedDim=estimatedDim;
     this.group.traverse(o=>{if(o.name==='scenery-lanes')o.visible=paths;if(o.userData.estimatedBackground)setEstimatedMesh(o,estimatedDim);});
   }
-  sync(occupied,areaOccupied=occupied){
-    this.occupied=occupied;this.areaOccupied=areaOccupied;this.clearings=[...this.activeSites(),...this.wildlife].filter(s=>this.available(s));
-    // Keep the original scene radii in the refresh key and in forest/path clearances.
-    const key=areaOccupied.map(o=>`${o.x}:${o.z}:${o.radius}:${o.urbanRegionId||''}`).sort().join('|');
-    if(this.initialized&&key!==this.occupancyKey)this.refreshPeriod();this.occupancyKey=key;
+  sync(occupied,areaOccupied=occupied){this.setState({occupied,areaOccupied});}
+  setState({year=this.stats.year,occupied=this.occupied,areaOccupied=this.areaOccupied}){
+    this.stats.year=year;this.occupied=occupied;this.areaOccupied=areaOccupied;
+    const sites=this.activeSites(),period=sceneryPeriod(year);
+    const periodKey=sceneryPeriodKey(period.id,sites.map(s=>siteDensityState(s,year,this.world,sceneBudget(this.quality).estimatedScale)));
+    // Both parcel and road clearances must invalidate layouts when occupancy changes.
+    const keyOf=rows=>rows.map(o=>`${o.x}:${o.z}:${o.radius}:${o.urbanRegionId||''}`).sort().join('|');
+    const occupancyKey=keyOf(areaOccupied),parcelKey=keyOf(occupied);
+    const changed=periodKey!==this.periodKey||occupancyKey!==this.occupancyKey||parcelKey!==this.parcelKey;
+    this.period=period;this.periodKey=periodKey;this.occupancyKey=occupancyKey;this.parcelKey=parcelKey;
+    this.clearings=[...sites,...this.wildlife].filter(s=>this.available(s));
+    if(changed){this.stats.ready=false;if(this.initialized)this.refreshPeriod(true);}
     for(const c of this.cells)if(c.group)c.group.visible=this.available(c.site)&&this.period?.tigers!==false;
     for(const c of this.detailCache.values())c.group.visible=c.group.visible&&this.available(c.site);
-    this.stats.tigers=this.period?.tigers===false?0:this.wildlife.length;this.paths.sync(s=>this.available(s)&&settlementSiteActive(s,this.stats.year)&&(!s.estimated||this.estimatedIds.has(s.id)),areaOccupied,this.activeSites().filter(s=>s.kind==='urban'));
+    this.stats.tigers=this.period?.tigers===false?0:this.wildlife.length;this.paths.sync(s=>this.available(s)&&settlementSiteActive(s,this.stats.year)&&(!s.estimated||this.estimatedIds.has(s.id)),areaOccupied,sites.filter(s=>s.kind==='urban'));
   }
   nearPath(x,z,margin){return this.paths.near(x,z,margin);}
-  start(forest,year){this.setYear(year);if(this.ready)return;this.ready=this.populate(forest).then(()=>{this.initialized=true;this.refreshPeriod();}).catch(e=>this.failed(e));}
-  failed(error){this.stats.error=error.message;console.error('[scenery]',error);}
-  setYear(year){this.stats.year=year;const period=sceneryPeriod(year),key=sceneryPeriodKey(period.id,this.activeSites().map(s=>siteDensityState(s,year,this.world,sceneBudget(this.quality).estimatedScale)));if(this.periodKey===key)return;this.periodKey=key;this.period=period;this.stats.ready=false;
-    if(this.initialized)this.refreshPeriod(true);this.sync(this.occupied,this.areaOccupied);
+  start(forest,year=this.stats.year){
+    if(year!==this.stats.year||!this.ready)this.setState({year});
+    if(this.ready)return;
+    this.ready=this.populate(forest).then(()=>{this.initialized=true;this.refreshPeriod(true);}).catch(e=>this.failed(e));
   }
+  failed(error){this.stats.error=error.message;console.error('[scenery]',error);}
+  setYear(year){this.setState({year});}
   refreshPeriod(preserve=false){
     const started=performance.now();
     const suppressedProfileIds=new Set(this.occupied.map(o=>o.urbanRegionId).filter(Boolean));
@@ -137,7 +147,7 @@ export class ChronicleScenery{
     const freeRoad=occupancyGrid(this.areaOccupied,{cellSize:16,margin:.15});
     const active=selected.filter(s=>this.available(s)&&!(s.kind==='urban'&&this.occupied.some(o=>o.urbanRegionId===s.profile.id))).map(site=>{
       const period=sitePeriod(site,this.stats.year),old=previous.get(site.id);
-      const densityKey=sceneryPeriodKey(period.id,[siteDensityState(site,this.stats.year,this.world,sceneBudget(this.quality).estimatedScale)]);
+      const densityKey=sceneryPeriodKey(period.id,[siteDensityState(site,this.stats.year,this.world,sceneBudget(this.quality).estimatedScale)])+(this.occupancyKey||'')+';'+(this.parcelKey||'');
       if(old?.densityKey===densityKey)return old;
       changedSites.push(site);
       const layout=settlementLayout(site,site.kind==='urban'?this.stats.year:period);

@@ -63,16 +63,30 @@ export function yearAtPointer(clientX,left,width,min=-2500,max=2100){
   return year===0?(min+(max-min)*ratio<0?-1:1):year;
 }
 
-export function bindYearSlider(slider,{read,preview,commit},onStart=()=>{}){
-  let pointer=null,pending=false;
+export function bindYearSlider(slider,{read,preview,commit,schedule=setTimeout,cancel=clearTimeout},onStart=()=>{}){
+  let pointer=null,pending=false,edge=0,edgeTimer=null,clientX=0;
   const stop=()=>{
-    const id=pointer;pointer=null;
+    const id=pointer;pointer=null;edge=0;cancel(edgeTimer);edgeTimer=null;
     if(pending){pending=false;commit();}
     if(id!==null&&slider.hasPointerCapture(id))slider.releasePointerCapture(id);
   };
+  const queueEdge=()=>{
+    if(!edge||edgeTimer!==null)return;
+    edgeTimer=schedule(()=>{
+      edgeTimer=null;if(pointer===null)return;
+      const before=slider.min+':'+slider.max;
+      slider.dispatchEvent?.(new CustomEvent('yearedge',{detail:edge}));
+      if(before===slider.min+':'+slider.max)return;
+      move({clientX});
+    },300);
+  };
   const move=event=>{
+    clientX=event.clientX;
     const rect=slider.getBoundingClientRect();pending=true;
-    preview(yearAtPointer(event.clientX,rect.left,rect.width,+slider.min,+slider.max),true);
+    preview(yearAtPointer(clientX,rect.left,rect.width,+slider.min,+slider.max),true);
+    const direction=clientX<=rect.left&&+slider.min>-2500?-1:clientX>=rect.left+rect.width&&+slider.max<2100?1:0;
+    if(direction!==edge){cancel(edgeTimer);edgeTimer=null;edge=direction;}
+    queueEdge();
   };
   slider.onpointerdown=event=>{
     if(event.button!==0||!event.isPrimary)return;
@@ -103,13 +117,15 @@ export function bindYearSlider(slider,{read,preview,commit},onStart=()=>{}){
 
 export function createYearPlayback({advance,busy=()=>false,lastCompleted=()=>-Infinity,now=()=>performance.now(),schedule=setTimeout,cancel=clearTimeout,delay=1200}){
   let playing=false,timer=null,running=false;
-  const queue=()=>{if(playing){cancel(timer);timer=schedule(()=>{timer=null;return tick();},delay);}};
+  const queue=(wait=delay)=>{if(playing){cancel(timer);timer=schedule(()=>{timer=null;return tick();},wait);}};
   const tick=async()=>{
     if(!playing||running)return;
-    if(busy()||now()-lastCompleted()<delay){queue();return;}
+    if(busy())return;
+    const remaining=delay-(now()-lastCompleted());
+    if(remaining>5){queue(remaining);return;}
     running=true;
     try{await advance();}finally{running=false;queue();}
   };
-  return {tick,get playing(){return playing;},start(){if(playing)return;playing=true;if(!running)queue();},
+  return {tick,completed(){if(!running)queue();},get playing(){return playing;},start(){if(playing)return;playing=true;if(!running)queue();},
     stop(){playing=false;cancel(timer);timer=null;}};
 }

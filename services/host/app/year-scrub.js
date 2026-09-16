@@ -22,8 +22,7 @@ const rowFields=['id','entityId','kind','year','archetype','label','title','deta
 const rowKey=row=>valueKey(rowFields.map(field=>row[field]));
 export function scenePlanKey(plan,activeScene,featuresKey=''){
   return valueKey([plan.year,activeScene,featuresKey])+plan.events.map(event=>
-    rowKey(event)+valueKey(event.participants?.length||0)+(event.participants||[]).map(rowKey).join('')
-      +historicalFeaturesKey(event.sites||[],plan.year)).join('')+plan.people.map(rowKey).join('');
+    rowKey(event)+valueKey(event.participants?.length||0)+(event.participants||[]).map(rowKey).join('')).join('')+plan.people.map(rowKey).join('');
 }
 
 export function sceneryPeriodKey(periodId,sites){
@@ -31,36 +30,52 @@ export function sceneryPeriodKey(periodId,sites){
     Number(s.density).toFixed(2),Number(s.scale).toFixed(2),s.selected,s.unscaledSelected,s.layoutKey])]);
 }
 
-export function createYearCommit({preview,context,features,applyFeatures,refresh,draw,done=()=>{},
-  frame=()=>new Promise(resolve=>requestAnimationFrame(resolve)),schedule=setTimeout,cancel=clearTimeout,now=()=>performance.now(),waitMs=400}){
-  let sequence=0,busy=false,completedAt=-Infinity;
-  return {get busy(){return busy;},get completedAt(){return completedAt;},invalidate(){sequence++;busy=false;},async run(year){
-    const token=++sequence,current=()=>token===sequence;busy=true;
-    preview(year);
-    let timeout;
-    const request=features(year);
-    const ready=Promise.race([request,new Promise(resolve=>{timeout=schedule(()=>resolve(null),waitMs);})]);
-    try{
-      // Two frame boundaries let the preview paint before synchronous context work.
-      await frame();if(!current())return;
-      await frame();if(!current())return;
-      context(year);
-      await frame();if(!current())return;
-      const result=await ready;
-      cancel(timeout);if(!current())return;
-      applyFeatures(result||{features:[],year,key:historicalFeaturesKey([],year)});
-      const refreshedKey=refresh(year);
-      await frame();if(!current())return;
-      draw(year);
-      if(!result){
-        const late=await request;
-        if(!late||!current())return;
+export function createYearCommit({preview,context,features,applyFeatures,refresh,draw,done=()=>{},settled=()=>{},
+  frame=()=>new Promise(resolve=>requestAnimationFrame(resolve)),schedule=setTimeout,cancel=clearTimeout,now=()=>performance.now(),waitMs=400,lateWaitMs=8000}){
+  let sequence=0,busy=false,completedAt=-Infinity,pendingRefresh=false;
+  const refreshNow=year=>{pendingRefresh=false;return refresh(year);};
+  return {get busy(){return busy;},get completedAt(){return completedAt;},
+    requestRefresh(year){if(busy)pendingRefresh=true;else refreshNow(year);},
+    async run(year,options={}){
+      const token=++sequence,current=()=>token===sequence;busy=true;
+      let timeout,lateTimeout;
+      try{
+        preview(year,options);
+        const request=Promise.resolve(features(year)).catch(()=>null);
+        const ready=Promise.race([request,new Promise(resolve=>{timeout=schedule(()=>resolve(null),waitMs);})]);
+        // Two frame boundaries let the preview paint before synchronous context work.
         await frame();if(!current())return;
-        applyFeatures(late);
-        if(late.key!==refreshedKey)refresh(year);
+        await frame();if(!current())return;
+        context(year,options);
+        await frame();if(!current())return;
+        const result=await ready;
+        cancel(timeout);if(!current())return;
+        applyFeatures(result||{features:[],year,key:historicalFeaturesKey([],year)});
+        let refreshedKey=refreshNow(year);
+        await frame();if(!current())return;
         draw(year);
+        if(!result){
+          const applyLate=async late=>{
+            if(!late||!current())return;
+            await frame();if(!current())return;
+            applyFeatures(late);
+            if(late.key!==refreshedKey)refreshedKey=refreshNow(year);
+            draw(year);
+          };
+          const expired=Symbol('late timeout');
+          const late=await Promise.race([request,new Promise(resolve=>{lateTimeout=schedule(()=>resolve(expired),lateWaitMs);})]);
+          cancel(lateTimeout);if(!current())return;
+          if(late===expired)request.then(applyLate).catch(error=>console.error('[year history]',error));
+          else await applyLate(late);
+        }
+        if(current())done(year);
+      }finally{
+        cancel(timeout);cancel(lateTimeout);
+        if(current()){
+          try{if(pendingRefresh)refreshNow(year);}
+          finally{busy=false;completedAt=now();settled(year);}
+        }
       }
-      done(year);
-    }finally{cancel(timeout);if(current()){busy=false;completedAt=now();}}
-  }};
+    }
+  };
 }

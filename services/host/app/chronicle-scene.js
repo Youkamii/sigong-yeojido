@@ -69,7 +69,10 @@ export class ChronicleScene {
     const stories=planTraditions(chronicle.data,world.traditions?.narratives||[]);
     if(!stories.some(s=>s.id===this.traditionId))this.traditionId='';
     const storyMenu=document.getElementById('traditionDestination');
-    storyMenu.replaceChildren(new Option('이야기를 골라 보기',''),...stories.map(s=>new Option(s.label,s.id)));
+    const storyKey=stories.map(s=>s.id).join();
+    if(this.storyKey!==storyKey){
+      this.storyKey=storyKey;storyMenu.replaceChildren(new Option('이야기를 골라 보기',''),...stories.map(s=>new Option(s.label,s.id)));
+    }
     storyMenu.value=this.traditionId;storyMenu.disabled=!stories.length;
     const features=world.historyTargets.map(t=>t.userData.feature);
     const plan=planChronicleAssets(chronicle.context,chronicle.data,features,world.places,world.scenePackets||[],world.coordinateRegistry);
@@ -216,6 +219,10 @@ export class ChronicleScene {
       ||Number(!!(a.row.setting||a.row.siteBackground))-Number(!!(b.row.setting||b.row.siteBackground))
       ||Number(b.row.kind==='person')-Number(a.row.kind==='person')
       ||Number(b.row.kind==='event')-Number(a.row.kind==='event'));
+    // Reveal all uncached labels, read sizes together, then write positions.
+    const unmeasured=ordered.filter(marker=>!marker.size);
+    for(const {button} of unmeasured)button.hidden=false;
+    for(const marker of unmeasured)marker.size=[marker.button.offsetWidth,marker.button.offsetHeight];
     let peopleShown=0;
     const named=new Set();
     for(const marker of ordered){
@@ -226,9 +233,7 @@ export class ChronicleScene {
         ||((row.setting||row.siteBackground)&&!this.display.siteNames&&row.entityId!==this.assets?.selected)
         ||(row.kind==='person'&&(named.has(row.entityId)||(peopleShown>=(width<600?3:6)&&row.entityId!==this.assets?.selected)));
       if(button.hidden)continue;
-      button.style.left=(p.x+1)*width/2+'px';button.style.top=(1-p.y)*height/2+'px';
       const x=(p.x+1)*width/2,y=(1-p.y)*height/2;
-      marker.size||=[button.offsetWidth,button.offsetHeight];
       const [w,h]=marker.size;
       button.hidden=true;
       for(const [dx,dy] of [[0,0],[-22,-12],[22,-12],[0,-30],[-38,-30],[38,-30],[0,-52],[-56,-48],[56,-48]]){

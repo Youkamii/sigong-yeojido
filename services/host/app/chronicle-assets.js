@@ -294,10 +294,10 @@ export class ChronicleAssets{
     }
     next.add(pathMesh);this.pathMesh=pathMesh;this.pathKey=pathKey;
     this.scenery||=new ChronicleScenery(this);
-    this.scenery.sync(occupied,areaOccupied);
+    this.scenery.setState({year:plan.year,occupied,areaOccupied});
     this.forestOccupied=areaOccupied;this.forestScenes=sceneWoods;
     this.buildForest([...areaOccupied,...this.scenery.clearings],sceneWoods);
-    this.scenery.start(this.forestPositions,plan.year);
+    this.scenery.start(this.forestPositions);
     const byRecipe=new Map(rows.map(r=>[r.id,r]));
     field.group.updateMatrixWorld(true);
     for(const pick of field.picks){

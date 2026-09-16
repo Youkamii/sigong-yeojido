@@ -80,8 +80,9 @@ export class ChronicleTerritories{
       for(const old of [...this.group.children]){old.geometry.dispose();old.material.dispose();old.removeFromParent();}
       for(const feature of features){this.context.fillStyle=this.color(feature);this.context.fill(this.path(feature),'evenodd');this.border(feature);}
       this.texture.needsUpdate=true;this.stats.redraws++;
+      this.renderLegend();
     }
-    this.renderLegend();
+    this.updateNote();
   }
   update(camera,canvas,occupied){this.labels.update(camera,canvas,occupied);}
   setDisplay(visible){this.labels.setDisplay(visible);this.visible=visible;this.group.visible=visible;this.uniforms.territoryEnabled.value=visible?1:0;this.legend.hidden=!visible;this.note.hidden=!visible||!this.note.textContent;}
@@ -101,12 +102,14 @@ export class ChronicleTerritories{
       if(!this.features.some(f=>f.properties.fromSource===source))continue;
       const link=document.createElement('a');link.href=href;link.target='_blank';link.rel='noopener';link.textContent=label;this.legend.append(link);
     }
+    const omitted=document.createElement('p');omitted.textContent='가야 시기까지 변한 이름을 이어 쓴 경계와 668년 뒤의 고구려 경계는 제외했어요. 1260–1362년은 이 자료가 모두 비어 있어요.';this.legend.append(omitted);
+  }
+  updateNote(){
     const notes=[[500,681,'이 시기 영역은 참고용이에요. 일부 확장·정복 시점이 맞지 않아요.'],
       [1911,1947,'1911–1947년은 행정구역 경계 13도를 합친 참고도예요. 1945–1947년은 38도선으로 나눈 미·소 군정 구역이에요. 실제 국경·통치 범위와는 달라요.'],
       [1950,1953,'국가 영역을 보여주는 참고도예요. 한국전쟁의 전선은 아니에요.']];
     this.note.textContent=this.features.length?(notes.find(([start,end])=>start<=this.year&&this.year<=end)?.[2]||''):'';
     if(this.year>=669&&this.year<=681)this.note.textContent+=' 멸망 이후의 고구려 경계는 제외했어요.';
-    const omitted=document.createElement('p');omitted.textContent='가야 시기까지 변한 이름을 이어 쓴 경계와 668년 뒤의 고구려 경계는 제외했어요. 1260–1362년은 이 자료가 모두 비어 있어요.';this.legend.append(omitted);
     this.note.hidden=!this.visible||!this.note.textContent;
     this.legend.hidden=!this.visible;
   }

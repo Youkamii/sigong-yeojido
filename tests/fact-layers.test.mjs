@@ -14,6 +14,7 @@ const layers={version:1,generatedFrom:['fixture-collection'],...Object.fromEntri
 const world={toWorld:(lon,lat)=>[(lon-127)*100,(37-lat)*100],surfaceAt:()=>0,
   rings:[[[-500,-500],[500,-500],[500,500],[-500,500]]]};
 const context={x:0,z:0,year:521,world};
+const stateFields=()=>({occupied:[],areaOccupied:[],wildlife:[],cells:[],detailCache:new Map(),paths:{sync(){}}});
 const base=estimatedSiteThreshold('three-kingdoms',37);
 test.afterEach(()=>loadFactLayers(null));
 
@@ -134,8 +135,8 @@ test('same-era year changes refresh density selection across the record window',
   loadFactLayers(layers);
   const scenery=Object.create(ChronicleScenery.prototype);let refreshes=0;
   const site={id:'estimated',kind:'village',seed:35,x:0,z:0,latitude:37,estimated:true};
-  Object.assign(scenery,{stats:{},world:{...world,factLayers:layers},initialized:true,activeSites:()=>[site],
-    refreshPeriod:()=>refreshes++,sync(){}});
+  Object.assign(scenery,{...stateFields(),stats:{},world:{...world,factLayers:layers},initialized:true,activeSites:()=>[site],
+    refreshPeriod:()=>refreshes++});
   scenery.setYear(670);const first=refreshes;
   scenery.setYear(671);assert.equal(refreshes,first,'same effective density must reuse selection');
   scenery.setYear(672);assert.equal(refreshes,first+1);
@@ -144,6 +145,6 @@ test('same-era year changes refresh density selection across the record window',
 
 test('density records do not rebuild scenery without active sites',()=>{
   const scenery=Object.create(ChronicleScenery.prototype);let refreshes=0;
-  Object.assign(scenery,{stats:{},world:{...world,factLayers:layers},initialized:true,activeSites:()=>[],refreshPeriod:()=>refreshes++,sync(){}});
+  Object.assign(scenery,{...stateFields(),stats:{},world:{...world,factLayers:layers},initialized:true,activeSites:()=>[],refreshPeriod:()=>refreshes++});
   scenery.setYear(671);scenery.setYear(672);assert.equal(refreshes,1);
 });

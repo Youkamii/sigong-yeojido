@@ -181,7 +181,7 @@ export class Chronicle {
       <div class="time-actions"><button data-previous aria-label="이전 사건으로 이동하기">← 이전 사건 보기</button>
       <button data-play aria-label="시간 재생하기">▶ 재생하기</button><button data-next aria-label="다음 사건으로 이동하기">다음 사건 보기 →</button></div>
       <label class="time-span">주변 사건 <select aria-label="사건 탐색 범위"><option value="20">20년</option><option value="50" selected>50년</option><option value="100">100년</option></select></label></div>
-      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2100" value="1593" aria-label="연도 이동. 원하는 연도로 끌어 놓으세요" title="끌어서 연도를 고르세요. 화살표와 휠로는 1년씩 움직여요"><span>2100</span></div>
+      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2100" value="1593" aria-label="연도 이동. 원하는 연도로 끌어 놓으세요" title="끌어서 연도를 고르세요. 방향키나 마우스 휠로는 1년씩 움직여요"><span>2100</span></div>
       <div class="event-strip"></div>`;
     this.timeline=new EventTimeline(controls.querySelector('.event-strip'),{yearLabel,
       preview:(year,holding)=>this.previewYear(year,holding),commit:()=>this.finishScrub(),select:entry=>this.showEvent(entry)});
@@ -332,9 +332,12 @@ export class Chronicle {
     this.controls.querySelectorAll('[data-era]').forEach(b=>b.classList.toggle('on',Math.abs(+b.dataset.era-this.year)<10));
     const status=this.error||(this.loading?'이 시대의 인물과 사건을 불러오고 있어요…':'');
     const counts=`인물 ${c.people.length}, 주변 사건 ${c.events.length}`;
-    const panelKey=valueKey([status,this.data.hasMore,c.people,c.polities,
+    const panelKey=valueKey([status,this.data.hasMore,
+      c.people.map(p=>[p.id,entityLabel(p),p.periods.map(d=>[d.lo,d.hi,d.label,d.claim.id]),p.relations.map(r=>r.object.id)]),
+      c.polities.map(p=>[p.id,entityLabel(p),p.ruler?.id,p.ruler&&entityLabel(p.ruler)]),
       c.events.map(e=>[e.id,e.sceneId,e.lo,e.hi,e.current]),c.settings.map(e=>[e.id,e.sceneId])]);
-    if(this.panelKey!==panelKey){
+    const title=this.host.querySelector('.context-title h2'),range=this.host.querySelector('[data-context-range]');
+    if(this.panelKey!==panelKey||!title||!range){
       this.panelKey=panelKey;
       this.host.innerHTML=`<div class="context-kicker">시간 속으로</div><div class="context-title"><h2>${yearLabel(this.year)}</h2><span>${counts}</span></div>
       ${status?`<p role="status" class="context-empty">${esc(status)}</p>`:''}
@@ -350,8 +353,8 @@ export class Chronicle {
         ${[...new Map(e.basis.map(b=>[b.fromSource,b])).values()].map(b=>`<button class="context-proof" data-chronicle-claim="${esc(b.id)}">${esc(b.sourceLabel)} ↗</button>`).join('')}</article>`).join('')||(!status?'<p class="context-empty">이 기간에 연결된 사건이 없어요. 이전·다음 사건으로 이동해 보세요.</p>':'')}</div></section>
       <p class="context-footnote">고른 자료에 출처가 연결된 항목이에요. 출생–사망 연도와 재위·활동 기간은 따로 표시해요.${this.data.hasMore?' 한 번에 불러올 양을 넘어 일부만 보여줘요.':''}</p>`;
     }else{
-      this.host.querySelector('.context-title h2').textContent=yearLabel(this.year);
-      this.host.querySelector('[data-context-range]').textContent=`${yearLabel(c.from)} – ${yearLabel(c.to)}`;
+      title.textContent=yearLabel(this.year);
+      range.textContent=`${yearLabel(c.from)} – ${yearLabel(c.to)}`;
       for(const [i,track] of [...this.host.querySelectorAll('.life-track i')].entries()){
         const person=c.people[i],p=person.periods.find(p=>p.label==='출생–사망')||person.periods[0];
         const left=Math.max(0,(p.lo-c.from)/this.span*100),right=Math.min(100,(p.hi-c.from)/this.span*100);

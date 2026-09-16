@@ -76,16 +76,22 @@ export class AtlasUI{
     this.ticks=document.createElement('div');this.ticks.className='atlas-time-ticks';this.time.querySelector('.atlas-slider-slot').append(this.ticks);
     this.currentTick=document.createElement('span');this.currentTick.className='atlas-current-tick';this.time.querySelector('.atlas-slider-slot').append(this.currentTick);
     controls.addEventListener('yearpreview',event=>this.syncTime(event.detail,true));
+    this.slider.addEventListener('yearedge',event=>this.syncTime(this.chronicle.pendingYear??this.chronicle.year,true,event.detail));
     this.slider.addEventListener('change',()=>{this.rangeWindow=null;this.syncTime(this.chronicle.year);});
     controls.querySelector('[data-previous]').title='이전 사건';controls.querySelector('[data-next]').title='다음 사건';
     controls.querySelector('[data-previous]').innerHTML=icon('left');controls.querySelector('[data-next]').innerHTML=icon('right');
   }
-  syncTime(year,preview=false){
+  syncTime(year,preview=false,direction=0){
     if(!Number.isInteger(year))return;
     const span=+this.root.querySelector('#atlasTimeWindow').value;
     if(!this.rangeWindow||year<this.rangeWindow[0]||year>this.rangeWindow[1]){
       const low=span>=4600?-2500:Math.max(-2500,Math.min(2100-span,Math.floor(year/(span/2))*(span/2)-span/2));
       this.rangeWindow=[low,span>=4600?2100:low+span];
+    }
+    if(direction&&span<4600){
+      const width=this.rangeWindow[1]-this.rangeWindow[0];
+      const low=Math.max(-2500,Math.min(2100-width,this.rangeWindow[0]+direction*width/4));
+      this.rangeWindow=[low,low+width];
     }
     const [min,max]=this.rangeWindow||[-2500,2100];this.slider.min=min;this.slider.max=max;this.slider.value=year;
     this.slider.setAttribute('aria-valuetext',yearLabel(year));

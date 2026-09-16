@@ -87,8 +87,8 @@ test('playback waits for completion then 1200ms, skipping busy or running ticks'
   const clock=jobs(),work=deferred();let busy=true,count=0;
   const play=createYearPlayback({...clock,busy:()=>busy,advance:()=>{count++;return work.promise;}});
   play.start();assert.equal([...clock.tasks.values()][0].delay,1200);
-  await clock.next();assert.equal(count,0);assert.equal(clock.tasks.size,1);
-  busy=false;const tick=clock.next();assert.equal(count,1);assert.equal(clock.tasks.size,0);
+  await clock.next();assert.equal(count,0);assert.equal(clock.tasks.size,0);
+  busy=false;play.completed();const tick=clock.next();assert.equal(count,1);assert.equal(clock.tasks.size,0);
   await play.tick();assert.equal(count,1);
   work.resolve();await tick;assert.equal(clock.tasks.size,1);assert.equal([...clock.tasks.values()][0].delay,1200);
   play.stop();assert.equal(clock.tasks.size,0);
@@ -127,8 +127,11 @@ test('late equal features skip rebuild; superseded commits cannot apply context 
     context:y=>calls.push(['new-context',y]),features:()=>late.promise,applyFeatures:()=>calls.push(['new-features']),refresh:()=>'',draw:()=>{}});
   const first=next.run(1600),second=next.run(1601);frames[0].resolve();await first;
   assert.equal(calls.some(c=>c[0]==='new-context'),false);
-  next.invalidate();frames[1].resolve();await second;late.resolve(null);
-  assert.equal(calls.some(c=>c[0]==='new-features'),false);
+  late.resolve(null);
+  for(let i=1;i<5;i++){while(!frames[i])await Promise.resolve();frames[i].resolve();}
+  await second;
+  assert.deepEqual(calls.filter(c=>c[0]==='new-context'),[['new-context',1601]]);
+  assert.equal(calls.filter(c=>c[0]==='new-features').length,1);
 });
 
 test('interval index includes long overlapping lifespans and preserves source order',()=>{
@@ -197,4 +200,76 @@ test('a new year cancels a previous late response without changing the latest sc
   while(!calls.length)await Promise.resolve();
   await pipeline.run(1594);old.resolve({features:[feature('old')],year:1593,key:'old'});await first;
   assert.deepEqual(calls,[1593,1594]);
+});
+
+test('two context renders while waiting for history produce one pending refresh at completion',async()=>{
+  const clock=jobs(),network=deferred();let refreshes=0,draws=0;
+  const key=historicalFeaturesKey([],1593);
+  const pipeline=createYearCommit({...clock,frame:async()=>{},preview(){},context(){},features:()=>network.promise,
+    applyFeatures(){},refresh:()=>{refreshes++;return key;},draw:()=>draws++});
+  const run=pipeline.run(1593);await clock.next();
+  while(!draws)await Promise.resolve();
+  pipeline.requestRefresh(1593);pipeline.requestRefresh(1593);
+  assert.equal(refreshes,1);
+  network.resolve({features:[],year:1593,key});await run;
+  assert.equal(refreshes,2);assert.equal(pipeline.busy,false);
+});
+
+test('filter-only commits forward keepSelection to preview and context',async()=>{
+  let selected='person';const seen=[];
+  const pipeline=createYearCommit({frame:async()=>{},preview:(year,{keepSelection})=>{if(!keepSelection)selected=null;},
+    context:()=>seen.push(selected),features:async year=>({features:[],year,key:'empty'}),applyFeatures(){},refresh(){},draw(){}});
+  await pipeline.run(1593,{keepSelection:true});assert.deepEqual(seen,['person']);
+  await pipeline.run(1594);assert.deepEqual(seen,['person',null]);
+});
+
+test('late history timeout releases busy and applies arriving responses only for the latest year',async()=>{
+  for(const changedYear of [false,true]){
+    const clock=jobs(),network=deferred(),applied=[];let draws=0,refreshes=0,completions=0;
+    const pipeline=createYearCommit({...clock,frame:async()=>{},preview(){},context(){},
+      features:year=>year===1593?network.promise:Promise.resolve({features:[],year,key:'next'}),
+      applyFeatures:data=>applied.push(data.year),refresh:()=>{refreshes++;return 'empty';},draw:()=>draws++,settled:()=>completions++});
+    const run=pipeline.run(1593);await clock.next();
+    while(![...clock.tasks.values()].some(t=>t.delay===8000))await Promise.resolve();
+    assert.equal(pipeline.busy,true);await clock.next();await run;
+    assert.equal(pipeline.busy,false);assert.equal(completions,1);assert.equal(clock.tasks.size,0);
+    if(changedYear)await pipeline.run(1594);
+    network.resolve({features:[feature()],year:1593,key:'late'});
+    for(let i=0;i<10;i++)await Promise.resolve();
+    assert.deepEqual(applied,changedYear?[1593,1594]:[1593,1593]);
+    assert.equal(refreshes,2);assert.equal(draws,2);
+  }
+});
+
+test('superseded finally does not flush a newer pending context refresh',async()=>{
+  const clock=jobs(),old=deferred(),latest=deferred();let draws=0,refreshes=0;
+  const pipeline=createYearCommit({...clock,frame:async()=>{},preview(){},context(){},
+    features:year=>year===1593?old.promise:latest.promise,applyFeatures(){},
+    refresh:year=>{refreshes++;return historicalFeaturesKey([],year);},draw:()=>draws++});
+  const first=pipeline.run(1593);await clock.next();while(draws<1)await Promise.resolve();
+  const second=pipeline.run(1594);
+  const early=[...clock.tasks.entries()].find(([,task])=>task.delay===400);clock.tasks.delete(early[0]);early[1].fn();
+  while(draws<2)await Promise.resolve();
+  pipeline.requestRefresh(1594);pipeline.requestRefresh(1594);
+  old.resolve(null);await first;assert.equal(refreshes,2);assert.equal(pipeline.busy,true);
+  latest.resolve({features:[],year:1594,key:historicalFeaturesKey([],1594)});await second;
+  assert.equal(refreshes,3);assert.equal(pipeline.busy,false);
+});
+
+test('playback accepts a 1199ms interval and resumes scheduling exactly on commit completion',async()=>{
+  const clock=jobs();let time=1199,completed=0,count=0,busy=false;
+  const play=createYearPlayback({...clock,now:()=>time,lastCompleted:()=>completed,busy:()=>busy,advance:()=>count++});
+  play.start();await clock.next();assert.equal(count,1);
+  busy=true;await clock.next();assert.equal(clock.tasks.size,0);
+  completed=time=5000;busy=false;play.completed();assert.equal([...clock.tasks.values()][0].delay,1200);
+  time=6199;await clock.next();assert.equal(count,2);play.stop();
+});
+
+test('context panel falls back to a full render after an entity page removes the title',()=>{
+  const view=Object.create(Chronicle.prototype);let contextNodes=true,writes=0;
+  Object.assign(view,{host:{set innerHTML(value){writes++;contextNodes=true;},querySelector:()=>contextNodes?{}:null,querySelectorAll:()=>[]},
+    controls:{querySelector:()=>({}),querySelectorAll:()=>[]},callbacks:{},timeline:{setEvents(){},setYear(){}},
+    year:150,span:50,loading:false,data:{entities:[],claims:[]}});
+  view.render();contextNodes=false;view.year=151;
+  assert.doesNotThrow(()=>view.render());assert.equal(writes,2);
 });

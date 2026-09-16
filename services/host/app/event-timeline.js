@@ -42,7 +42,7 @@ export class EventTimeline{
     const end=()=>{if(!this.drag)return;const id=this.drag.id;this.drag=null;if(this.viewport.hasPointerCapture(id))this.viewport.releasePointerCapture(id);this.host.classList.remove('scrubbing');if(this.dragged)this.commit();};
     this.viewport.onpointerup=end;this.viewport.onpointercancel=end;
     this.viewport.onlostpointercapture=end;
-    const finishWheel=()=>{if(this.wheelTimer!==null&&this.wheelTimer!==undefined){clearTimeout(this.wheelTimer);this.wheelTimer=null;this.commit();}};
+    const finishWheel=()=>{if(this.wheelTimer!=null){clearTimeout(this.wheelTimer);this.wheelTimer=null;this.commit();}};
     this.viewport.onblur=()=>{end();finishWheel();};
     window.addEventListener('blur',()=>{end();finishWheel();});
     this.viewport.addEventListener('wheel',e=>{if(!this.entries.length)return;e.preventDefault();const delta=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;

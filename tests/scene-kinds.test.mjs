@@ -27,7 +27,7 @@ const world={contains:()=>true,surfaceAt:()=>10,toWorld:(x,z)=>[x,z],ground:[],s
 function assetsFor(plan){
   const assets=Object.create(ChronicleAssets.prototype);
   Object.assign(assets,{world,catalog,engine:{camera:new THREE.PerspectiveCamera(),add(){},remove(){},_tagShadows(){}},group:new THREE.Group(),revision:0,
-    scenery:{sync(){},start(){},clearings:[]},buildForest(){},setSelected(){},
+    scenery:{setState(){},start(){},clearings:[]},buildForest(){},setSelected(){},
     field:(recipes,anchors)=>buildAssetField({world:{...world,anchorOf:id=>anchors.get(id)},catalog,recipes,seed:'190'})});
   assets.rebuild(plan);return assets;
 }
