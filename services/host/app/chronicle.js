@@ -260,8 +260,8 @@ export class Chronicle {
       <div class="context-kicker">${{Person:'인물',Event:'사건',Narrative:'설화·전승',Polity:'나라',Place:'장소'}[entity.type]||'관련 항목'}</div><h2>${esc(activity?.setting?activity.label:activity?.siteBackground?activity.place:entityLabel(entity))}</h2>
       ${activity?`<section class="selected-activity"><h3>${activity.narrative?'이야기의 무대':activity.siteBackground?.scope==='anonymous-city'?'도시 생활 배경 · 추정':activity.siteBackground?.scope==='facility'?'시설 · 추정 존속':activity.siteBackground?'성곽 배경 · 추정':yearLabel(this.year)}${activity.place?' · '+esc(activity.place):''}</h3>
         ${activity.role?`<p class="activity-role">${esc(activity.role)}</p>`:''}
-        <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동이다.')}</p>
-        ${activity.narrative?`<dl class="narrative-times"><dt>이야기 속 시기</dt><dd>${esc(activity.narrative.storyTime.label)}</dd><dt>관련 문헌·기록 시기</dt><dd>${esc(activity.narrative.recordingTime.label)}</dd></dl><p class="activity-location">이야기 속 시기와 기록된 시기는 달라요. 고른 연도에 실제로 일어났다는 뜻은 아니에요.</p>`:''}
+        <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동이에요.')}</p>
+        ${activity.narrative?`<dl class="narrative-times"><dt>이야기 속 시기</dt><dd>${esc(activity.narrative.storyTime.label)}</dd><dt>기록된 시기</dt><dd>${esc(activity.narrative.recordingTime.label)}</dd></dl><p class="activity-location">이야기 속 시기와 기록된 시기는 달라요. 고른 연도에 실제로 일어났다는 뜻은 아니에요.</p>`:''}
         ${activity.narrative?'':`<p class="activity-location">${esc(activity.placement)}</p>`}
         ${activity.missingClaimsNote?`<p class="activity-missing-claims">${esc(activity.missingClaimsNote)}</p>`:''}
         ${activity.coordinates?`<p class="activity-coordinates">${esc(activity.coordinates)}</p>`:''}

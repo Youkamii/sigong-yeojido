@@ -41,7 +41,7 @@ def main():
         page.wait_for_function("document.querySelector('#evi h3')?.textContent==='인용한 원문'")
         assert first['quote'] in page.locator('#evi').inner_text()
         page.locator('#humanOnly').check()
-        page.wait_for_function("document.querySelector('#timeClaimsBtn').textContent==='연대 주장 0'")
+        page.wait_for_function("document.querySelector('#timeClaimsBtn').textContent==='연도 기록 보기 0'")
         assert page.locator('.tl-time-claim').count()==0
         page.locator('#humanOnly').uncheck()
         page.wait_for_function("document.querySelectorAll('.tl-time-claim').length>=10")

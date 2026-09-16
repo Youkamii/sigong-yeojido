@@ -280,7 +280,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
     <div class="eyebrow">大東輿地圖 · 1861 · 金正浩</div>
     <h1>시공여지도</h1>
     <div class="rom">SIGONG YEOJIDO</div>
-    <p>김정호는 자기 시대의 조선을 목판에 새겼다. 대동여지도는 한 시점의 공간이다.
+    <p>김정호는 자기 시대의 조선을 목판에 새겼어요. 대동여지도는 한 시점의 공간이에요.
        이 지도에서는 시간도 살펴봐요. 각 선을 그린 근거도 자료에서 확인해요.</p>
     <div class="quality-choice" role="group" aria-label="시작 화질" aria-describedby="qualityRecommendation">
       <div class="quality-options">
@@ -319,13 +319,13 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div id="qList" class="qlist"></div>
       <details id="peopleSearch" hidden></details>
       <div hidden>
-      <div class="sect">기준 자료</div>
-      <select id="lensSelect" class="q" aria-label="기준 자료"></select>
+      <div class="sect">주로 볼 자료</div>
+      <select id="lensSelect" class="q" aria-label="주로 볼 자료"></select>
       <p id="lensNote" class="empty"></p>
       <label class="empty" for="historyLevel">역사 지도 종류</label>
       <select id="historyLevel" class="q" aria-label="역사 지도 종류"><option value="0">나라·세력 경계</option><option value="1" selected>도 경계</option><option value="2">군·부 등 경계</option><option value="3">읍·면 등 경계</option><option value="4">사건 관련 장소</option><option value="5">옛 역로·현재 옛길</option></select>
       <button id="historyMapBtn" class="card-btn">역사 경계 0개 · 출처 보기</button>
-      <p class="empty">기준 자료는 진하게 보여요. 비교할 자료는 옅게 겹쳐 보여요.</p>
+      <p class="empty">주로 볼 자료는 진하게 보여요. 비교할 자료는 옅게 겹쳐 보여요.</p>
       </div>
       <button id="allSources" class="card-btn">5종 모두 켜기</button>
       <button id="noSources" class="card-btn">모두 끄기</button>
@@ -517,7 +517,7 @@ function showHistoricalList(reveal=true){
   const render=()=>{list.replaceChildren();for(const feature of historyMap.features){
     const p=feature.properties;if(!p.label.includes(search.value.trim()))continue;
     const button=document.createElement('button');button.className='card-btn';button.dataset.feature=feature.id;
-    button.textContent=`${p.label} · ${p.begin}~${p.end} · 출처`;button.onclick=()=>showHistoricalFeature(feature);list.append(button);}};
+    button.textContent=`${p.label} · ${p.begin}~${p.end} · 출처 보기`;button.onclick=()=>showHistoricalFeature(feature);list.append(button);}};
   search.oninput=render;render();
   if(!historyMap.features.length)el.insertAdjacentHTML('beforeend','<p class="empty">고른 연도와 자료, 작성자에 맞는 결과가 없어요.</p>');
 }
@@ -529,7 +529,7 @@ function showHistoricalFeature(feature){
       <p class="empty">국사편찬위원회 1910~1945 행정구역 13도를 합친 참고 경계예요. 실제 국경·통치 범위와는 달라요. 1945~1947년은 위도 38도선으로 나눈 구역이에요.</p>`;
     p.derivedFrom.forEach((id,i)=>{
       const row=document.createElement('p'),button=document.createElement('button');button.className='card-btn';
-      row.append(document.createTextNode(p.derivedLabels[i]+' '));button.textContent='출처';
+      row.append(document.createTextNode(p.derivedLabels[i]+' '));button.textContent='출처 보기';
       button.onclick=()=>showChunk('chunk_'+id);row.append(button);el.append(row);
     });
     const source=document.createElement('button'),list=document.createElement('button');
@@ -1209,7 +1209,7 @@ async function select(id, reveal = true, graphNode = null){
   const cands = p.entityType ? '' : candidates.length
     ? candidates.map(c => `<div class="cand${candActive(c) ? '' : ' off'}${c === state.mapFocus ? ' focused' : ''}">
         <div class="co">${c.lat.toFixed(4)}, ${c.lon.toFixed(4)} · ${esc0(c.precision)}${c.view ? ' · ' + esc0(c.view) : ''}${escH(span(c))}</div>
-        <div class="bs">${esc0(c.basis)} ${externalLink(c.sourceUrl, '출처')}${c.origin === 'ai' ? ' <span class="badge ai">AI 연결 · 미확인</span>' : ''}</div>
+        <div class="bs">${esc0(c.basis)} ${externalLink(c.sourceUrl, '출처 보기')}${c.origin === 'ai' ? ' <span class="badge ai">AI 연결 · 사람 확인 전</span>' : ''}</div>
         ${c.citesChunk?`<button class="card-btn" data-candidate-chunk="${escH(c.citesChunk)}">위치 설명 보기</button>`:''}
         ${c.coordinateChunkId?`<button class="card-btn" data-candidate-chunk="${escH(c.coordinateChunkId)}">대표 위치 출처 보기</button>`:''}
         ${c.fromSource||c.sourceId?`<button class="card-btn" data-candidate-source="${escH(c.fromSource||c.sourceId)}">자료 설명 보기</button>`:''}</div>`).join('')
@@ -1225,7 +1225,7 @@ async function select(id, reveal = true, graphNode = null){
       p.entityType ? (TYPE_KO[p.entityType]||p.entityType) :
       p.origin === 'ai' ? (p.candidates.length ? '좌표 후보' : '위치 미확인') :
       ({established:'위치 확정',majority:'널리 인정된 위치',disputed:'위치 해석이 갈림',unlocated:'위치 미확인'}[p.status]||p.status))}</span>${
-      p.origin === 'ai' ? '<span class="badge ai">조사(자동) · 미확인</span>' : ''}
+      p.origin === 'ai' ? '<span class="badge ai">조사(자동) · 사람 확인 전</span>' : ''}
     ${cands}
     ${p.note ? `<p class="note">${escH(p.note)}</p>` : ''}`;
   el.innerHTML = head + `<div class="sect" style="margin-top:20px">원문 출처</div><p class="empty" style="margin-top:12px">찾고 있어요…</p>`;
@@ -1345,7 +1345,7 @@ b3d.onclick = () => { state.mode='3d'; document.body.classList.add('mode3d');
   document.body.classList.remove('modegraph');document.getElementById('bgraph').classList.remove('on');
   b3d.classList.add('on'); b2d.classList.remove('on'); init3d();
   renderOutside();
-  document.getElementById('hint').textContent='끌어서 이동하세요. 마우스 휠로 확대하고 오른쪽 버튼으로 끌어 회전하세요.'; };
+  document.getElementById('hint').textContent='끌어서 이동, 휠로 확대, 오른쪽 버튼으로 회전'; };
 document.getElementById('bgraph').onclick=()=>{
   document.body.classList.remove('modechat');document.getElementById('bchat').classList.remove('on');
   state.mode='graph';document.body.classList.remove('mode3d');document.body.classList.add('modegraph');
@@ -1383,7 +1383,7 @@ addEventListener('resize', () => { draw(); if(state.mode==='3d') resize3d(); });
 let R = null;
 
 async function init3d(){
-  document.getElementById('hint').textContent='끌어서 이동하세요. 마우스 휠로 확대하고 연도를 바꿔 살펴보세요.';
+  document.getElementById('hint').textContent='끌어서 이동, 휠로 확대, 오른쪽 버튼으로 회전';
   if(R){ R.engine.resize(); draw3d(); return; }
   const host = document.getElementById('three');
   host.innerHTML = '';

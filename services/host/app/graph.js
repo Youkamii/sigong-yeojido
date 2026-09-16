@@ -71,7 +71,7 @@ export class GraphExplorer {
       const pos=positions.get(node.id);
       const text=String(node.label);
       const label=text.length>16?text.slice(0,15)+'…':text;
-      const detail=node.type==='Claim'?(node.origin==='human'?'사람':'AI 추출'):node.location?(node.location.grounded?'위치 출처 연결':'위치 후보 · 미확인'):node.type;
+      const detail=node.type==='Claim'?(node.origin==='human'?'사람':'AI 추출'):node.location?(node.location.grounded?'위치 출처 연결':'위치 후보 · 확인 전'):node.type;
       return `<g data-node="${esc(node.id)}" role="button" tabindex="0" aria-label="${esc(text+' · '+detail)}" transform="translate(${pos.x},${pos.y})" class="graph-node ${node.id===this.entity?'selected':''}">
         <title>${esc(text+' · '+node.id)}</title><rect width="212" height="48" rx="4"/>
         <text x="10" y="19">${esc(label)}</text><text class="graph-kind" x="10" y="36">${esc(detail)}</text></g>`;

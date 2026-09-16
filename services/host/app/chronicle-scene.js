@@ -119,7 +119,7 @@ export class ChronicleScene {
       this.assets.focusPeriod();this.initiallyFramed=true;
     }
     const note=document.getElementById('sceneAssetNote');
-    note.textContent='끌어서 이동하세요. 마우스 휠로 확대하고 오른쪽 버튼으로 끌어 회전하세요.';
+    note.textContent='';
     note.hidden=!note.textContent;
     this.renderFocus();
     this.applyDisplay();

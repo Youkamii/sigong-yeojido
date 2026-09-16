@@ -68,7 +68,7 @@ test('항목 portrait와 heritage는 빈 사료에서도 실제 모형과 양쪽
     assert.ok(card.host.innerHTML.includes('항목 조사에서 확인한 좌표'));
     assert.ok(card.host.innerHTML.includes(`출처 ${missing.length}건은 고르지 않은 자료에 있어요.`));
     const atlas=new AtlasData();atlas.update(data,context,[packet]);
-    const story=Object.assign(Object.create(AtlasStory.prototype),{entity:{id:plan.events[0].entityId,type:'Event',label:packet.title},activity,history:[],pane:{},
+    const story=Object.assign(Object.create(AtlasStory.prototype),{entity:{id:plan.events[0].entityId,type:'Event',label:packet.title},activity,history:[],tab:'summary',more:new Set(),pane:{},
       ui:{data:atlas,chronicle:card,scene:sceneView}});
     story.render();
     assert.ok(story.pane.innerHTML.includes('항목 조사에서 확인한 좌표'));

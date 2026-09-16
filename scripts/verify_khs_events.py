@@ -48,7 +48,7 @@ def main():
 
         page.goto(args.base + '/?q=low', wait_until='networkidle', timeout=180000)
         page.locator('#enter').click(); page.locator('#lensSelect').select_option('khs-events')
-        page.wait_for_function("document.querySelector('#historyMapBtn').textContent==='사건 장소 1개 · 근거'")
+        page.wait_for_function("document.querySelector('#historyMapBtn').textContent==='사건 장소 1개 · 출처 보기'")
         assert page.locator('#historyLevel').input_value() == '4'
         assert page.evaluate('window.__historyStrokes') > 0
 
@@ -94,7 +94,7 @@ def main():
         page.wait_for_function("document.querySelector('#historyMapBtn').textContent.includes('26개')")
         assert page.locator('#historyLevel').input_value() == '1'
         page.locator('#lensSelect').select_option('khs-events')
-        page.wait_for_function("document.querySelector('#historyMapBtn').textContent==='사건 장소 1개 · 근거'")
+        page.wait_for_function("document.querySelector('#historyMapBtn').textContent==='사건 장소 1개 · 출처 보기'")
         page.set_viewport_size({'width': 480, 'height': 900})
         if page.locator('#sourcesBtn').get_attribute('aria-expanded') != 'true':
             page.locator('#sourcesBtn').click()

@@ -672,9 +672,9 @@
 | services/host/app/chronicle.js | showEntity / 문자열 (수정 전 261행) | 도시 생활 배경 · 추정 | 도시 생활 배경 · 추정 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 |
 | services/host/app/chronicle.js | showEntity / 문자열 (수정 전 261행) | 시설 · 추정 존속 | 시설 · 추정 존속 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 |
 | services/host/app/chronicle.js | showEntity / 문자열 (수정 전 261행) | 성곽 배경 · 추정 | 성곽 배경 · 추정 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 |
-| services/host/app/chronicle.js | showEntity / 문자열 (수정 전 263행) | 이 시기에 기록된 활동입니다. | 이 시기에 기록된 활동이다. | 기준서 §2 안내 말투 / E-7 |
+| services/host/app/chronicle.js | showEntity / 문자열 (수정 전 263행) | 이 시기에 기록된 활동입니다. | 이 시기에 기록된 활동이에요. | 기준서 §2 안내 말투 / E-7 |
 | services/host/app/chronicle.js | showEntity / dt (수정 전 264행) | 이야기 속 시기 | 이야기 속 시기 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 |
-| services/host/app/chronicle.js | showEntity / dt (수정 전 264행) | 관련 문헌·기록 시기 | 관련 문헌·기록 시기 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 |
+| services/host/app/chronicle.js | showEntity / dt (수정 전 264행) | 관련 문헌·기록 시기 | 기록된 시기 | 같은 값의 라벨 통일 |
 | services/host/app/chronicle.js | showEntity / p (수정 전 264행) | 이야기와 기록 시기는 다릅니다. 이 표시가 선택한 연도의 실제 사건을 뜻하지는 않습니다. | 이야기 속 시기와 기록된 시기는 달라요. 고른 연도에 실제로 일어났다는 뜻은 아니에요. | 기준서 §2 안내 말투 / E-7 |
 | services/host/app/chronicle.js | showEntity / summary (수정 전 268행) | 활동·장소의 출처 | 활동·장소의 출처 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 |
 | services/host/app/chronicle.js | showEntity / 화면 문구 (수정 전 269행) | 개 | 개 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 |

@@ -105,7 +105,7 @@ with sync_playwright() as pw:
         check('152_scene_in_view', page.evaluate('''()=>{const a=__sigong.chronicleScene.assets,r=a.rowFor(a.selected,a.selectedRow),p=r.position.clone().project(__sigong.engine.camera);return Math.abs(p.x)<.1&&Math.abs(p.y)<.25;}'''))
         shot('story')
         report['localPerformance'] = page.evaluate(sample)
-        page.locator('[data-story-relations]').click();shot('relations')
+        page.locator('.atlas-story-tabs [data-story-tab="people"]').click();shot('relations')
         page.locator('[data-story-entity*="gwon-yul"]').first.click()
         check('152_related_person', page.locator('#atlasStory h2').inner_text() == '권율')
         page.locator('[data-story-back]').click()

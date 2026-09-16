@@ -36,7 +36,7 @@ async def verify(args):
             assert set(selected) == expected, (name, len(selected), len(expected))
             query = urlencode({'y': 414, 'sources': ','.join(sorted(expected)), 'limit': 0})
             count = (await (await page.request.get(args.base + '/api/year?' + query)).json())['total']
-            await page.wait_for_function('(n)=>document.querySelector("#yearBtn").textContent==="이 해의 기록 "+n', arg=count, timeout=30000)
+            await page.wait_for_function('(n)=>document.querySelector("#yearBtn").textContent==="이 해의 기록 보기 "+n', arg=count, timeout=30000)
             assert not errors, errors
             results.append({'case': name, 'selected': len(selected), 'expected': len(expected),
                             'yearRecordCount': count, 'pageErrors': errors})

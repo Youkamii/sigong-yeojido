@@ -26,7 +26,7 @@ async def run(args):
         await page.click('#qList button[data-id="person-gwanggaeto"]')
         await page.wait_for_function('n=>document.querySelectorAll("#evi .claim").length===n',arg=full['total'])
         await page.check('#humanOnly')
-        await page.locator('#evi .empty').filter(has_text='사람이 작성한 것으로 기록된 주장이 없다').wait_for()
+        await page.locator('#evi .empty').filter(has_text='사람이 작성했다고 표시된 기록이 없어요').wait_for()
         assert await page.locator('#evi .claim').count()==0
         await page.click('#b3d')
         await page.wait_for_function('window.__sigong?.world',timeout=60000)

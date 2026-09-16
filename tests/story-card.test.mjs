@@ -48,7 +48,9 @@ test('실제 인물·사건 카드는 요약과 세 목록을 나누고 연도 �
     assert.equal((sectionHtml(summary,'events').match(/atlas-story-event"/g)||[]).length,compact?events.length:Math.min(events.length,3));
     const current=story.sceneEvent();
     if(events.some(e=>e.sceneId===current.sceneId))assert.ok(sectionHtml(summary,'events').includes(`data-story-event="${current.sceneId}"`));
-    if(id===yi)assert.ok(summary.includes('인물 · 1545년–1598년'));
+    const summaryYears=[...sectionHtml(summary,'events').matchAll(/class="atlas-event-year">(\d+)년/g)].map(match=>Number(match[1]));
+    assert.deepEqual(summaryYears,[...summaryYears].sort((a,b)=>a-b));
+    if(id===yi)assert.ok(summary.includes('인물 · 1545년 – 1598년'));
     if(compact){assert.ok(!summary.includes('class="atlas-story-tabs"'));continue;}
     for(const tab of ['events','people','places']){
       if(!sections.find(s=>s.id===tab).rows.length)continue;
@@ -106,6 +108,7 @@ test('관계 그룹은 더 보기로 30개 이후도 표시하고 빈 구역은 
   assert.equal(story.sectionHtml({...group,rows:[]}), '');
   const empty={entities:[{id:'empty',type:'Person',label:'기록 없는 인물'}],claims:[],scenePackets:[]};
   const sparse=storyFor('empty','summary',empty);sparse.render();
+  assert.ok(sparse.pane.innerHTML.includes('인물 · 연도 미확인'));
   assert.ok(sectionHtml(sparse.pane.innerHTML,'era').includes('조선'));
   assert.equal(sectionHtml(sparse.pane.innerHTML,'people'),undefined);
   assert.equal(sectionHtml(sparse.pane.innerHTML,'places'),undefined);
@@ -127,6 +130,7 @@ test('인물·사건·장소·출처 버튼과 관계/뒤로 동작을 유지한
     const sample=storyFor(yi),ui={...sample.ui,registerPanel(){},openPanel(){},closePanel:()=>calls.push(['close']),chat:{show:id=>calls.push(['chat',id])},evidence:c=>calls.push(['claim',c.id]),
       chronicle:{...sample.ui.chronicle,showEntity:id=>calls.push(['entity',id]),showEvent:e=>calls.push(['event',e.sceneId])}};
     const story=new AtlasStory(ui);story.show(sample.entity);
+    assert.ok(story.pane.innerHTML.includes('<span>지도로 가기</span>'));
     const click=(selector,dataset={})=>story.pane.onclick({target:{closest:s=>s===selector?{dataset}:null}});
     const event=story.sceneEvent(),claim=ui.data.claims.values().next().value;
     click('[data-story-entity]',{storyEntity:noryang});click('[data-story-event]',{storyEvent:event.sceneId});
@@ -138,6 +142,7 @@ test('인물·사건·장소·출처 버튼과 관계/뒤로 동작을 유지한
     click('[data-story-chat]');assert.deepEqual(calls.at(-1),['chat',yi]);
     click('[data-story-back]');assert.deepEqual(calls.at(-1),['close']);
     story.show(ui.data.entities.get(noryang));assert.equal(story.tab,'summary');assert.equal(story.more.size,0);assert.equal(story.expanded,false);
+    assert.ok(story.pane.innerHTML.includes('<span>이전으로</span>'));
     click('[data-story-back]');assert.deepEqual(calls.at(-1),['entity',yi]);
     await Promise.resolve();
   }finally{globalThis.document=previousDocument;globalThis.fetch=previousFetch;}
@@ -165,27 +170,57 @@ test('이름 정규화와 제목·라벨 정리는 원문을 바꾸지 않는다
   assert.equal(shortLabel('수군 (조선) · 집단 행위자'),'수군 (조선)');
 });
 
-test('사건은 이름과 시작 연도로 병합하고 장면·긴 장소·양쪽 출처를 남긴다',()=>{
-  const rows=[{id:'a',title:'한산도 대첩',lo:1592,placeLabel:'한산도',basis:[{id:'c1'}]},
-    {id:'b',title:'한산도대첩 (1592)',lo:1592,sceneId:'battle',placeLabel:'한산도 앞바다',basis:[{id:'c2'}]},
+test('같은 제목·연도·장소만 병합하고 대표 행의 장면·장소·제목과 양쪽 출처를 남긴다',()=>{
+  const rows=[{id:'a',title:'한산도 대첩',lo:1592,placeLabel:'한산섬 앞바다 (전투 장소)',basis:[{id:'c1'}]},
+    {id:'b',title:'한산도대첩 (1592)',lo:1592,sceneId:'battle',placeLabel:'한산섬 앞바다',basis:[{id:'c2'},{id:'c1'}]},
     {id:'c',title:'한산도대첩',lo:1593}, {id:'d',title:'한산도 대첩'}];
   const original=structuredClone(rows);
   for(const input of [rows,[...rows].reverse()]){
     const merged=mergeEvents(input);assert.equal(merged.length,3);
-    const battle=merged.find(e=>e.lo===1592);assert.equal(battle.id,'b');assert.equal(battle.sceneId,'battle');assert.equal(battle.placeLabel,'한산도 앞바다');
+    const battle=merged.find(e=>e.lo===1592);assert.equal(battle.id,'b');assert.equal(battle.sceneId,'battle');assert.equal(battle.placeLabel,'한산섬 앞바다');assert.equal(battle.title,rows[1].title);
     assert.deepEqual(new Set(battle.basis.map(c=>c.id)),new Set(['c1','c2']));
+    assert.equal(battle.basis.length,2);
   }
   assert.deepEqual(rows,original);
 });
 
 test('같은 해 한산도 대첩은 부제가 달린 장면과 한 행으로 합친다',()=>{
-  const rows=[{id:'a',title:'한산도 대첩',lo:1592,placeLabel:'한산도'},
+  const rows=[{id:'a',title:'한산도 대첩',lo:1592,placeLabel:'한산섬 앞바다'},
     {id:'b',title:'한산도대첩 — 한산섬 앞바다',lo:1592,sceneId:'battle',placeLabel:'한산섬 앞바다'}];
   for(const input of [rows,[...rows].reverse()]){
     const merged=mergeEvents(input);
     assert.equal(merged.length,1);assert.equal(merged[0].sceneId,'battle');
     assert.equal(merged[0].placeLabel,'한산섬 앞바다');
     assert.equal((storyFor(yi).timelineHtml(merged).match(/atlas-story-event"/g)||[]).length,1);
+  }
+});
+
+test('빈 장소는 같은 제목·연도 그룹의 첫 장소에만 흡수하고 다른 장소는 남긴다',()=>{
+  for(const [title,lo,places] of [
+    ['삼포왜란',1510,['부산포','제포']],['인조반정',1623,['홍제원','창덕궁']],
+    ['정묘호란',1627,['안주성','강화도']],['망이·망소이의 난',1176,['공산성','명학소']]]){
+    const empty={id:'empty',title,lo,basis:[{id:'empty-source'}]};
+    const located=places.map((placeLabel,i)=>({id:`e${i}`,title,lo,placeLabel,sceneId:`scene${i}`,basis:[{id:`c${i}`}]}));
+    for(const input of [[empty,...located],[...located,empty],[empty,...located.toReversed()]]){
+      const merged=mergeEvents(input);assert.equal(merged.length,2);
+      const first=input.find(row=>row.placeLabel);
+      for(const original of located){
+        const row=merged.find(row=>row.sceneId===original.sceneId);
+        assert.equal(row.placeLabel,original.placeLabel);assert.equal(row.title,original.title);
+        assert.deepEqual(new Set(row.basis.map(c=>c.id)),new Set([original.basis[0].id,...(first===original?['empty-source']:[])]));
+      }
+    }
+  }
+  const empty={id:'unknown',title:'임진왜란',lo:1592,basis:[{id:'unknown-source'}]};
+  const located={id:'busan',title:'임진왜란',lo:1592,placeLabel:'부산진 일대',basis:[{id:'busan-source'}]};
+  for(const input of [[empty,located],[located,empty]]){
+    const merged=mergeEvents(input);assert.equal(merged.length,1);assert.equal(merged[0].placeLabel,'부산진 일대');
+    assert.equal(merged[0].id,'busan');assert.equal(merged[0].basis.length,2);
+  }
+  const scene={...empty,sceneId:'unknown-place-scene'};
+  for(const input of [[scene,located],[located,scene]]){
+    const [merged]=mergeEvents(input);
+    assert.equal(merged.sceneId,scene.sceneId);assert.equal(merged.placeLabel,scene.placeLabel);assert.equal(merged.title,scene.title);
   }
 });
 
@@ -218,7 +253,7 @@ test('장소와 연표는 긴 괄호 설명을 title에 남기고 짧은 이름�
   const story=storyFor(yi),label='한산도 수군 본영 (한산도 북서부 해안선 깊숙한 곳, 통영시 한산면 두억리)';
   const event={id:'base',title:'본영 운영',lo:1593,sceneId:'base-scene',placeLabel:label};
   assert.ok(story.eventHtml(event).includes(`class="atlas-event-place" title="${label}">한산도 수군 본영</small>`));
-  const html=story.sectionHtml({id:'places',title:'장소',rows:[{label,sceneId:event.sceneId,events:new Map([['base',event]])}]});
+  const html=story.sectionHtml({id:'places',title:'장소',rows:mergePlaces([{label,sceneId:event.sceneId,events:new Map([['base',event]])},{label:'한산도 수군 본영'}])});
   assert.ok(html.includes(`<strong title="${label}">한산도 수군 본영</strong>`));
   assert.ok(html.includes('data-story-place="base-scene"'));
 });
@@ -231,6 +266,7 @@ test('장소는 괄호 밖 이름이 같을 때만 합치며 사건 수로 정�
   const original=structuredClone(rows);
   for(const input of [rows,[...rows].reverse()]){
     const places=mergePlaces(input);assert.equal(places.length,3);assert.equal(places[0].label,'녹둔도');assert.equal(places[0].events.size,2);
+    assert.equal(places[0].fullLabel,'녹둔도 (두만강 하류)');
     assert.equal(places[0].sceneId,'north');assert.equal(places[0].entityId,'island');
     assert.ok(places.some(p=>p.label==='한산도 통제영(제승당)'));
   }

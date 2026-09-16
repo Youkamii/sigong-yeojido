@@ -70,7 +70,7 @@ def main():
         assert page.locator('[data-scan-next]').is_disabled()
         checks.append({'check': 'real first, intermediate and last images load; previous/next/jump are correct', 'status': 'PASS', 'originalWidth': 5658})
         page.locator('#noSources').click()
-        page.wait_for_function('!document.querySelector("#evi .scan-image") && document.querySelector("#evi").textContent.includes("현재 사료 선택")')
+        page.wait_for_function('!document.querySelector("#evi .scan-image") && document.querySelector("#evi").textContent.includes("고른 자료에는 표시할 원문 사진이 없어요. 이 자료를 켜면 저장된 사진을 볼 수 있어요.")')
         button.click()
         expect_image(319)
         checks.append({'check': 'clearing sources removes the scan and selecting the source restores the same page', 'status': 'PASS'})

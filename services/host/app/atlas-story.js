@@ -16,13 +16,18 @@ export const displayTitle=title=>cleanTitle(String(title||'')).replace(/\s*\((?:
 export const shortLabel=label=>String(label||'').replace(/\(([^()]*)\)/g,(match,detail)=>detail.length>10?'':match).split(' · ')[0].trim();
 const eventKey=row=>JSON.stringify([normalize(displayTitle(row.title)),row.lo??null]);
 export function mergeEvents(rows){
-  const merged=new Map();
+  const merged=new Map(),firstPlaces=new Map();
   for(const row of rows){
-    const key=eventKey(row),previous=merged.get(key);
+    const group=eventKey(row),place=normalize(row.placeLabel);
+    if(place&&!firstPlaces.has(group))firstPlaces.set(group,place);
+  }
+  for(const row of rows){
+    const group=eventKey(row),place=normalize(row.placeLabel)||firstPlaces.get(group)||'';
+    const key=JSON.stringify([group,place]),previous=merged.get(key);
     if(!previous){merged.set(key,{...row,basis:[...(row.basis||[])]});continue;}
-    const preferred=!previous.sceneId&&row.sceneId?row:previous;
+    const priority=entry=>Number(!!entry.sceneId)*2+Number(!!normalize(entry.placeLabel));
+    const preferred=priority(row)>priority(previous)?row:previous;
     merged.set(key,{...preferred,
-      placeLabel:(row.placeLabel||'').length>(previous.placeLabel||'').length?row.placeLabel:previous.placeLabel,
       basis:[...new Map([...previous.basis,...(row.basis||[])].map(c=>[c.id,c])).values()]});
   }
   return [...merged.values()].sort((a,b)=>(a.lo??Infinity)-(b.lo??Infinity)||a.title.localeCompare(b.title,'ko'));
@@ -32,8 +37,9 @@ export function mergePlaces(rows){
   for(const row of rows){
     if(!row.label)continue;
     const key=normalize(row.label),previous=merged.get(key);
-    if(!previous){merged.set(key,{...row,events:new Map(row.events||[])});continue;}
+    if(!previous){merged.set(key,{...row,fullLabel:row.label,events:new Map(row.events||[])});continue;}
     if(row.label.length<previous.label.length)previous.label=row.label;
+    if(row.label.length>previous.fullLabel.length)previous.fullLabel=row.label;
     previous.entityId||=row.entityId;previous.sceneId||=row.sceneId;
     for(const [id,event] of row.events||[])previous.events.set(id,event);
   }
@@ -67,7 +73,7 @@ export class AtlasStory{
   reset(){this.entity=null;this.activity=null;this.history=[];this.tab='summary';this.more=new Set();this.expanded=false;this.descriptionObserver?.disconnect();}
   show(entity,activity){
     entity=this.ui.data.entities.get(this.ui.data.canonicalId(entity.id))||entity;
-    if(this.entity&&this.entity.id!==entity.id&&!this.goingBack)this.history.push({id:this.entity.id,year:this.ui.chronicle.year});
+    if(this.entity&&this.entity.id!==entity.id&&!this.goingBack)this.history.push({id:this.entity.id});
     const changed=this.entity?.id!==entity.id;
     if(changed){this.tab='summary';this.more=new Set();this.expanded=false;}
     this.entity=entity;this.activity=activity;this.ui.openPanel('story');this.render();
@@ -85,11 +91,11 @@ export class AtlasStory{
   }
   relatedRows(){
     const data=this.ui.data,event=this.sceneEvent(),scene=data.scenes.get(this.activity?.sceneId||event?.sceneId);
-    const rows=new Map(data.relations(this.entity.id).map(r=>[r.entity.id,{...r,relationClaims:r.claims,role:'',presence:''}]));
+    const rows=new Map(data.relations(this.entity.id).map(r=>[r.entity.id,{...r,relationClaims:r.claims}]));
     if(this.entity.type==='Event')for(const p of scene?.participants||[]){
       const entity=data.entities.get(data.canonicalId(p.entityId)),claims=(p.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean);
       if(!entity||!claims.length)continue;
-      const row=rows.get(entity.id)||{entity,claims:[]};row.claims=[...new Map([...row.claims,...claims].map(c=>[c.id,c])).values()];row.role=p.role;row.roleYear=scene?.startYear;row.presence=p.presence;rows.set(entity.id,row);
+      const row=rows.get(entity.id)||{entity,claims:[]};row.claims=[...new Map([...row.claims,...claims].map(c=>[c.id,c])).values()];rows.set(entity.id,row);
     }
     if(this.entity.type==='Person')for(const e of data.eventsFor(this.entity.id)){
       const packet=data.scenes.get(e.sceneId);
@@ -161,7 +167,7 @@ export class AtlasStory{
   relationGroups(rows){
     const groups=new Map();
     for(const row of rows){
-      const names=new Set((row.relationClaims||[]).map(c=>relationName(c,this.entity.id)).filter(Boolean).map(name=>name==='함께 참여'?'같은 사건':name));
+      const names=new Set((row.relationClaims||[]).map(c=>relationName(c,this.entity.id)).filter(Boolean));
       if(row.sharedYears)names.add('같은 사건');
       if(!names.size)names.add('관계');
       for(const name of names){if(!groups.has(name))groups.set(name,[]);groups.get(name).push(row);}
@@ -196,7 +202,7 @@ export class AtlasStory{
     if(id==='people'){
       if(summary)content=`<div class="atlas-story-chips">${rows.slice(0,compact?rows.length:5).map(row=>this.personHtml(row,true)).join('')}</div>`;
       else content=this.relationGroups(rows).map(({name,rows},index)=>{
-        const key=`people-${index}`,visible=this.more?.has(key)?rows:rows.slice(0,8);
+        const key=`people-${index}`,visible=this.more.has(key)?rows:rows.slice(0,8);
         return `<div class="atlas-story-group"><h4>${esc(name)} <span class="atlas-section-count">${rows.length}</span></h4>${visible.map(row=>this.personHtml(row)).join('')}${visible.length<rows.length?this.moreHtml(key,rows.length-visible.length,'명'):''}</div>`;
       }).join('');
     }else if(id==='events'){
@@ -204,17 +210,17 @@ export class AtlasStory{
       if(summary&&!compact){
         const current=this.sceneEvent(),year=current?.lo??this.ui.chronicle.year;
         visible=[...rows].sort((a,b)=>Number(b.sceneId===current?.sceneId&&!!b.sceneId)-Number(a.sceneId===current?.sceneId&&!!a.sceneId)||
-          Math.abs((a.lo??Infinity)-year)-Math.abs((b.lo??Infinity)-year)).slice(0,3);
-      }else if(!summary&&rows.length>12&&!this.more?.has(id))visible=rows.slice(0,10);
+          Math.abs((a.lo??Infinity)-year)-Math.abs((b.lo??Infinity)-year)).slice(0,3).sort((a,b)=>(a.lo??Infinity)-(b.lo??Infinity));
+      }else if(!summary&&rows.length>12&&!this.more.has(id))visible=rows.slice(0,10);
       content=this.timelineHtml(visible);
       if(!summary&&visible.length<rows.length)content+=this.moreHtml(id,rows.length-visible.length,'건');
     }else if(id==='places'){
-      const visible=!summary&&rows.length>12&&!this.more?.has(id)?rows.slice(0,10):rows;
+      const visible=!summary&&rows.length>12&&!this.more.has(id)?rows.slice(0,10):rows;
       content=visible.map(row=>{
         const action=row.entityId?`data-story-entity="${esc(row.entityId)}"`:`data-story-place="${esc(row.sceneId||'')}"`;
         const years=[...row.events.values()].map(e=>e.lo).filter(Number.isInteger),year=this.ui.chronicle.year;
         const nearest=years.sort((a,b)=>Math.abs(a-year)-Math.abs(b-year)||a-b)[0];
-        return `<button class="atlas-story-row" ${action}>${icon('pin')}<span class="atlas-story-text"><strong title="${esc(row.label)}">${esc(shortLabel(row.label))}</strong><small>사건 ${row.events.size}${nearest!==undefined?` · ${esc(yearLabel(nearest))}`:''}</small></span></button>`;
+        return `<button class="atlas-story-row" ${action}>${icon('pin')}<span class="atlas-story-text"><strong title="${esc(row.fullLabel)}">${esc(shortLabel(row.label))}</strong><small>사건 ${row.events.size}${nearest!==undefined?` · ${esc(yearLabel(nearest))}`:''}</small></span></button>`;
       }).join('');
       if(visible.length<rows.length)content+=this.moreHtml(id,rows.length-visible.length,'곳');
     }else if(id==='era'){
@@ -225,7 +231,7 @@ export class AtlasStory{
     }
     const limit=id==='people'?5:3;
     if(summary&&!compact&&['people','events'].includes(id)&&rows.length>limit)content+=`<button class="atlas-story-more" data-story-tab="${id}">${title} ${rows.length} 모두 보기 ${icon('right')}</button>`;
-    return `<section class="atlas-story-section" data-story-section="${id}">${summary&&id!=='era'?`<h3>${title} <span class="atlas-section-count">${rows.length}</span></h3>`:''}${content}</section>`;
+    return `<section class="atlas-story-section" data-story-section="${id}">${summary?`<h3>${title} <span class="atlas-section-count">${rows.length}</span></h3>`:''}${content}</section>`;
   }
   updateDescription(){
     const description=this.pane.querySelector?.('.atlas-story-description'),button=this.pane.querySelector?.('[data-story-expand]');
@@ -243,21 +249,18 @@ export class AtlasStory{
     const role=scene?.participants?.find(p=>data.canonicalId(p.entityId)===entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id)));
     const description=activity?.summary||data.description(entity.id)||(entity.type==='Event'?scene?.summary:'');
     const personRole=roleLabel(activity?.role||role?.role,scene?.startYear??activity?.year??ui.chronicle?.year);
-    const life=data.dates.get(entity.id)||[],born=life.find(d=>d.claim.predicate==='syj:bornIn'),died=life.find(d=>d.claim.predicate==='syj:diedIn'),lived=life.find(d=>d.claim.predicate==='syj:livedIn');
-    const lifespan=born&&died?`${yearLabel(born.lo)}–${yearLabel(died.hi)}`:lived?`${yearLabel(lived.lo)}–${yearLabel(lived.hi)}`:born?`${yearLabel(born.lo)} 출생`:died?`${yearLabel(died.hi)} 사망`:'생몰 미확인';
-    const breadcrumb=entity.type==='Person'?lifespan:activity?.narrative?'설화·전승':activity?.setting?yearLabel(ui.chronicle.year):event?yearLabel(event.lo):data.datesLabel(entity.id);
+    const breadcrumb=entity.type==='Person'?data.datesLabel(entity.id):activity?.narrative?'설화·전승':activity?.setting?yearLabel(ui.chronicle.year):event?yearLabel(event.lo):data.datesLabel(entity.id);
     const image=aiImageFor({entityId:entity.id,sceneId:activity?.sceneId||(entity.type==='Event'?event?.sceneId:null)});
-    const imageFigure=image?`<figure class="atlas-ai-image"><a class="atlas-ai-image-link" href="${esc(image.src)}" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="${esc(ui.runtime?.()?.engine?.quality==='low'?image.preview:image.src)}" alt="${esc(image.alt)}" width="${esc(image.width)}" height="${esc(image.height)}"><span class="atlas-ai-badge atlas-ai-overlay">AI 상상도</span></a></figure>`:'';
+    const imageFigure=image?`<figure class="atlas-ai-image"><a class="atlas-ai-image-link" href="${esc(image.src)}" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="${esc(ui.runtime?.()?.engine?.quality==='low'?image.preview:image.src)}" alt="${esc(image.alt)}" width="${esc(image.width)}" height="${esc(image.height)}"><span class="atlas-ai-badge atlas-ai-overlay" title="${esc(image.notice)}">AI 상상도</span></a></figure>`:'';
     const lists=sections.filter(s=>s.id!=='era'),compact=lists.reduce((sum,s)=>sum+s.rows.length,0)<=6;
-    this.tab||='summary';this.more||=new Set();
     if(compact||!lists.some(s=>s.id===this.tab&&s.rows.length))this.tab='summary';
     const tabs=compact?'':`<nav class="atlas-story-tabs" aria-label="이야기 목록">${[{id:'summary',title:'요약'},...lists.filter(s=>s.rows.length).sort((a,b)=>['events','people','places'].indexOf(a.id)-['events','people','places'].indexOf(b.id))].map(s=>`<button class="atlas-story-tab" data-story-tab="${s.id}" aria-pressed="${this.tab===s.id}">${s.title}${s.rows?` <span>${s.rows.length}</span>`:''}</button>`).join('')}</nav>`;
     const eventSection=lists.find(s=>s.id==='events');
     const evidence=[...new Map([...related.flatMap(r=>r.claims),...(activity?.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean),...claims,...(eventSection.basis||[]),...eventSection.rows.flatMap(e=>e.basis||[])].map(c=>[c.id,c])).values()];
-    const details=`<details class="atlas-story-evidence"><summary>${icon('event')}출처와 지도 위치</summary>${evidence.map(c=>`<button data-story-claim="${esc(c.id)}"><span>${esc(c.quote||c.sourceLabel||'출처 기록')}</span><small>${esc(c.sourceLabel||'원문 보기')} ↗</small></button>`).join('')||'<p class="atlas-muted">이어진 출처가 없어요.</p>'}${activity?.placement||activity?.coordinateNote?`<div class="atlas-placement-note"><h4>지도 위치</h4>${activity.placement?`<p>${esc(activity.placement)}</p>`:''}${activity.coordinateNote?`<p>${esc(activity.coordinateNote)}</p>`:''}</div>`:''}</details>`;
-    this.pane.innerHTML=`<header><button class="atlas-story-back" data-story-back>${icon('left')}<span>${this.history.length?'이전':'지도로'}</span></button><button class="atlas-icon" data-close aria-label="이야기 닫기">${icon('close')}</button></header>
+    const details=`<details class="atlas-story-evidence"><summary>${icon('event')}출처와 지도 위치</summary>${evidence.map(c=>`<button data-story-claim="${esc(c.id)}"><span>${esc(c.quote||c.sourceLabel||'출처 기록')}</span><small>${esc(c.sourceLabel||'원문 보기')} ↗</small></button>`).join('')||'<p class="atlas-muted">연결된 출처가 없어요.</p>'}${activity?.placement||activity?.coordinateNote?`<div class="atlas-placement-note"><h4>지도 위치</h4>${activity.placement?`<p>${esc(activity.placement)}</p>`:''}${activity.coordinateNote?`<p>${esc(activity.coordinateNote)}</p>`:''}</div>`:''}</details>`;
+    this.pane.innerHTML=`<header><button class="atlas-story-back" data-story-back>${icon('left')}<span>${this.history.length?'이전으로':'지도로 가기'}</span></button><button class="atlas-icon" data-close aria-label="이야기 닫기">${icon('close')}</button></header>
       <div class="atlas-story-body"><div class="atlas-story-hero">${imageFigure}<div><p class="atlas-breadcrumb">${typeName(entity.type)} · ${esc(breadcrumb)}</p><h2>${esc(entity.type==='Event'?displayTitle(name):name)}</h2>${personRole?`<p class="atlas-role" title="${esc(personRole)}">${esc(personRole)}</p>`:''}</div></div>
-      ${description?`<p id="atlasStoryDescription" class="atlas-description atlas-story-description">${esc(description)}</p><button class="atlas-story-more" data-story-expand aria-controls="atlasStoryDescription" aria-expanded="false" hidden>더 보기</button>`:'<p class="atlas-muted">이 항목에 이어진 기록과 관계를 보세요.</p>'}
+      ${description?`<p id="atlasStoryDescription" class="atlas-description atlas-story-description">${esc(description)}</p><button class="atlas-story-more" data-story-expand aria-controls="atlasStoryDescription" aria-expanded="false" hidden>더 보기</button>`:'<p class="atlas-muted">이 항목에 연결된 기록과 관계를 보세요.</p>'}
       ${['Person','Place'].includes(entity.type)&&entity.aliases?.length?`<p class="atlas-story-aliases">다른 이름: ${entity.aliases.map(esc).join(', ')}</p>`:''}
       ${activity?.narrative?`<p class="atlas-muted">이야기 속 시기: ${esc(activity.narrative.storyTime.label)}<br>기록된 시기: ${esc(activity.narrative.recordingTime.label)}</p>`:''}
       ${this.sectionHtml(sections.find(s=>s.id==='era'))}${tabs}

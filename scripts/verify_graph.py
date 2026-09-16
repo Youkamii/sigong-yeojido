@@ -39,14 +39,14 @@ async def run(args):
         await page.locator(f'#graph [data-node="{claim["id"]}"]').wait_for(state='visible')
         await page.screenshot(path=str(args.out/'graph-evidence.png'))
         await page.check('#humanOnly')
-        await page.locator('#graph [role=status]').filter(has_text='맞는 연결이 없다').wait_for()
+        await page.locator('#graph [role=status]').filter(has_text='고른 자료와 작성자에 맞는 연결이 없어요.').wait_for()
         assert await page.locator('#graph .graph-node').count()==0
         await page.uncheck('#humanOnly')
         await page.locator('#graph .graph-node').first.wait_for(state='visible')
         source=page.locator(f'#srcList .card-btn[data-id="{claim["fromSource"]}"]').locator('..').locator('.src')
         if await source.count():
             await source.click()
-            await page.locator('#graph [role=status]').filter(has_text='맞는 연결이 없다').wait_for()
+            await page.locator('#graph [role=status]').filter(has_text='고른 자료와 작성자에 맞는 연결이 없어요.').wait_for()
         else:
             raise AssertionError('Actual source toggle was not found')
         await browser.close()

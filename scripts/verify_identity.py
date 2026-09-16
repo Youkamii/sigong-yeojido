@@ -20,7 +20,7 @@ async def run(url, out):
         await page.locator('#q').fill('단군')
         for entity,other in [('person-dangun-samgukyusa','단군(檀君)'),('person-dangun','단군(삼국유사)')]:
             await page.locator(f'#qList button[data-id="{entity}"]').click()
-            await page.wait_for_function('document.querySelector("#evi .claim .pred")?.textContent === "같은 대상으로 보는 주장"')
+            await page.wait_for_function('document.querySelector("#evi .claim .pred")?.textContent === "같은 대상으로 본 기록"')
             text=await page.locator('#evi .claim').inner_text()
             assert other in text and 'AI 추출' in text,text
             await page.screenshot(path=str(out/f'{entity}.png'))

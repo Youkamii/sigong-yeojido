@@ -115,8 +115,9 @@ def check_items(page, report):
         notice = page.locator('#atlasStory .activity-missing-claims')
         if card['missingClaimIds']:
             assert str(len(card['missingClaimIds'])) in notice.inner_text()
-        placement = page.locator('#atlasStory .atlas-placement-note').filter(has_text='지도 위치 안내')
-        placement.locator('summary').click()
+        page.locator('#atlasStory .atlas-story-evidence > summary').click()
+        placement = page.locator('#atlasStory .atlas-placement-note')
+        assert placement.locator('h4').inner_text() == '지도 위치'
         placement.scroll_into_view_if_needed()
         assert '항목 조사에서 확인한 좌표' in placement.inner_text()
         card['text'] = page.locator('#atlasStory').inner_text()
