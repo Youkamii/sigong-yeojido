@@ -1,4 +1,4 @@
-import {entityLabel,yearLabel} from './chronicle.js';
+import {entityLabel,displayLabel,yearLabel} from './chronicle.js';
 import {inDiorama} from './place-state.js';
 import {regionalCoordinate} from './history-coordinates.js';
 import {isHistoricalSetting} from './chronicle-sites.js';
@@ -83,7 +83,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
           coordinateNote:candidates[0].basis,coordinateSourceIds:[candidates[0].fromSource].filter(Boolean)};
       }
       const reference=!person&&sceneReference(c.object.id);
-      if(reference)return {...reference,placeId:c.object.id,label:target?entityLabel(target):c.object.id,claimIds:[c.id,...reference.claimIds]};
+      if(reference)return {...reference,placeId:c.object.id,label:target?displayLabel(target):c.object.id,claimIds:[c.id,...reference.claimIds]};
     }
     return null;
   };
@@ -96,7 +96,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
           :c.validFrom!=null&&c.validTo!=null;
       });
     return {id:'person:'+person.id,entityId:person.id,kind:'person',placement:'unlocated',
-      label:entityLabel(person),archetype:activityFigure(person.id,'',context.year,data.claims),locations,locationReference:referenceFor(person.id,true),
+      label:displayLabel(person),archetype:activityFigure(person.id,'',context.year,data.claims),locations,locationReference:referenceFor(person.id,true),
       detail:period.label==='활동'?period.claim.quote:`${yearLabel(period.lo)} – ${yearLabel(period.hi)} · ${period.label}`,
       claimIds:[...new Set(person.periods.flatMap(p=>p.basis.map(c=>c.id)))]};
   });
@@ -109,7 +109,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
     const sites=features.filter(f=>f.geometry?.type==='Point'&&f.properties.eventId===event.id
       &&within(f.properties,context.year)&&inDiorama({lon:f.geometry.coordinates[0],lat:f.geometry.coordinates[1]}));
     const locationReference=referenceFor(event.id);
-    return {id:'event:'+event.id,entityId:event.id,kind:'event',year:context.year,label:entityLabel(event),
+    return {id:'event:'+event.id,entityId:event.id,kind:'event',year:context.year,label:displayLabel(event),
       archetype:eventArchetype(event),detail:yearLabel(event.lo),summary:'',sites,
       locationReference,participants:[],effects:{},
       claimIds:[...new Set([...event.basis.map(c=>c.id),...(locationReference?.claimIds||[])])]};
@@ -142,7 +142,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
         // portrait 는 관련 인물이 아니면 주인공으로, 그 밖의 kind 는 현장(on-site) 인물만 세운다(off-site·remote 는 카드 칩으로만).
         if((scene.kind==='portrait'?lead.presence==='related':lead.presence!=='on-site')||participants.some(p=>p.entityId===lead.entityId))continue;
         // 이름: 개체가 있으면 그 이름, 없으면 portrait 는 장면 제목(= 인물 이름), 그 밖의 kind 는 역할 이름(사건 제목을 사람 이름처럼 보이지 않게)
-        participants.push({id:lead.entityId,entityId:lead.entityId,kind:'person',label:entities.has(lead.entityId)?entityLabel(entities.get(lead.entityId)):scene.kind==='portrait'?scene.title:roleLabel(lead.role,scene.startYear),
+        participants.push({id:lead.entityId,entityId:lead.entityId,kind:'person',label:entities.has(lead.entityId)?displayLabel(entities.get(lead.entityId)):scene.kind==='portrait'?scene.title:roleLabel(lead.role,scene.startYear),
         ...lead,archetype:activityFigure(lead.entityId,lead.role,context.year,data.claims),role:roleLabel(lead.role),locations:[],locationReference:null,unloaded:true,
         relationClaims:lead.claimIds||[],detail:roleLabel(lead.role,scene.startYear)+' · '+scene.title,claimIds:[...(lead.claimIds||[]),...(scene.dateClaimIds||[]),...(place?.claimIds||[])]});
       }
@@ -160,12 +160,12 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       ...(scene.heritageType?{heritageType:scene.heritageType}:{}),
       ...(scene.heritageFloors?{heritageFloors:scene.heritageFloors}:{}),
       ...(Array.isArray(scene.participantGroups)&&scene.participantGroups.length?{participantGroups:scene.participantGroups.map(g=>({...g,
-        label:g.label||(g.entityId&&entities.get(g.entityId)?entityLabel(entities.get(g.entityId)):g.role)}))}:{}),
+        label:g.label||(g.entityId&&entities.get(g.entityId)?displayLabel(entities.get(g.entityId)):g.role)}))}:{}),
       participants,effects:Object.fromEntries(Object.entries(scene.effects||{}).map(([key,effect])=>
         [key,{...effect,enabled:effect.enabled&&supported(effect.claimIds)
           &&(effect.startYear==null||effect.startYear<=context.year)&&(effect.endYear==null||effect.endYear>=context.year)}])),
       sides:[...activeParticipants.filter(p=>supported(p.claimIds)&&entities.get(p.entityId)?.type==='Polity')
-        .map(p=>({...p,label:entityLabel(entities.get(p.entityId))})),...(scene.sides||[]).filter(p=>supported(p.claimIds))],
+        .map(p=>({...p,label:displayLabel(entities.get(p.entityId))})),...(scene.sides||[]).filter(p=>supported(p.claimIds))],
       claimIds:[...new Set([...scene.dateClaimIds,...scene.actionClaimIds,...(place?.claimIds||[])])],
       actionClaimIds:scene.actionClaimIds,placeClaimIds:place?.claimIds||[]});
   }
