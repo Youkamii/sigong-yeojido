@@ -2,7 +2,6 @@
 id: "event-us1-jujang"
 type: "Event"
 label: "한산주 주장성 축조 — 오늘날 남한산성"
-labelNote: "672"
 aliases:
   - "한산주 주장성 축조 — 오늘날 남한산성 (672)"
 ---

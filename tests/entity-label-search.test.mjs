@@ -7,11 +7,12 @@ import {displayLabel, labelNote, isGroupEntity} from '../services/host/app/chron
 
 // [id, 유형, 정리 전 이름, 정리 후 이름, 떼어낸 설명]
 const ROWS = [
-  ['event-hs-jl1-hansando', 'Event', '한산도 대첩(1592)', '한산도 대첩', '1592'],
+  // 연도·날짜뿐인 괄호는 labelNote 로도 남기지 않는다 — 검색 줄이 연도를 따로 보여 준다 (#203 감사 2)
+  ['event-hs-jl1-hansando', 'Event', '한산도 대첩(1592)', '한산도 대첩', ''],
   ['event-bulguksa-changgeon-751', 'Event', '불국사 창건 (751, 창건 연대 이설 있음)', '불국사 창건', '751, 창건 연대 이설 있음'],
-  ['event-hs-sampo', 'Event', '삼포 개항(1423·1426)', '삼포 개항', '1423·1426'],
-  ['event-hs-c5-518-law', 'Event', '5·18 특별법 제정(1995)', '5·18 특별법 제정', '1995'],
-  ['event-yinav-hansando-fire-1597', 'Event', '한산도 본영 방화·소실 (1597)', '한산도 본영 방화·소실', '1597'],
+  ['event-hs-sampo', 'Event', '삼포 개항(1423·1426)', '삼포 개항', ''],
+  ['event-hs-c5-518-law', 'Event', '5·18 특별법 제정(1995)', '5·18 특별법 제정', ''],
+  ['event-yinav-hansando-fire-1597', 'Event', '한산도 본영 방화·소실 (1597)', '한산도 본영 방화·소실', ''],
   ['person-kim-suhwan-1987', 'Person', '김수환 추기경 (1987년 명동대성당 추모미사 집전)', '김수환 추기경', '1987년 명동대성당 추모미사 집전'],
   ['person-encykorea-gwanggaeto', 'Person', '광개토왕 (민족문화대백과)', '광개토왕', '민족문화대백과'],
   ['person-encykorea-jangbogo', 'Person', '장보고 (민족문화대백과)', '장보고', '민족문화대백과'],
@@ -58,6 +59,13 @@ test('화면 이름은 그대로고, 떼어낸 설명은 데이터의 labelNote 
     assert.equal(displayLabel(row), cleaned);
     assert.equal(labelNote(row), note);
   }
+});
+
+test('연도·날짜뿐인 labelNote 는 화면에서 빈 값이다 (#203 감사 2)', () => {
+  for (const note of ['1592', '713', '1423·1426', '1592년 4월 14일', '918~936'])
+    assert.equal(labelNote({id: 'e', type: 'Event', label: '사건', labelNote: note}), '', note);
+  for (const note of ['751, 창건 연대 이설 있음', '1987년 명동대성당 추모미사 집전'])
+    assert.equal(labelNote({id: 'e', type: 'Event', label: '사건', labelNote: note}), note);
 });
 
 test('집단은 label 꼬리 대신 kind 로 알아본다', () => {

@@ -12,6 +12,7 @@ PERSON_YEAR_TAIL = re.compile(r"\s*·\s*\d+년.*$")
 YEAR_ONLY = re.compile(r"^[\s\d년월일경~∼～·,.\-–]+$")
 YEAR_RANGE = re.compile(r"^(?:기원전\s*)?\d{1,4}년?(?:\s*[~∼～–-]\s*\d{1,4}년?)?(?:\s*(?:경|무렵))?$")
 UNKNOWN = re.compile(r"미상|미확인|미기재|불명")
+UNKNOWN_WORD = re.compile(r"(?<![가-힣])미상(?![가-힣])")
 GROUP_TAIL = "집단 행위자"
 SEPARATOR = " · "
 # 이름 설명에 섞여 들어온 자료 식별자 — 사람에게 보일 말이 아니므로 sourceRef 로 옮긴다 (#200 2차).
@@ -70,6 +71,24 @@ def split_source_refs(note: str) -> tuple[str, list[str]]:
     text = re.sub(r"\s{2,}", " ", text)
     text = re.sub(r"\s*([,·])(?:\s*[,·])+\s*", r"\1 ", text)
     return text.strip().strip(" ,·").strip(), list(dict.fromkeys(refs))
+
+
+def clean_note(note: str) -> tuple[str, list[str]]:
+    """labelNote 로 쓸 (설명, 자료 식별자 목록). 연도·날짜뿐인 설명은 빈 값으로 떨어뜨린다.
+
+    검색 줄이 연도를 따로 보여 주므로 '사건 · 713 · 713년' 이 된다 — chronicle.js labelNote 와 같은 판정 (#203 감사 2).
+    다시 넣어도 그대로 나온다(멱등).
+    """
+    text, refs = split_source_refs(note)
+    return ("" if text and is_year_paren(text) else text), refs
+
+
+def replace_unknown(text: str) -> str:
+    """'(값) 미상' 처럼 홀로 선 '미상'만 '미확인'으로 바꾼다 — chronicle.js replaceUnknown 과 같다.
+
+    앞뒤가 한글이면 이름의 일부다. 경계를 안 보던 옛 규칙이 '다미상면'을 '다미확인면'으로 망가뜨렸다 (#203 감사 11).
+    """
+    return UNKNOWN_WORD.sub("미확인", str(text or ""))
 
 
 def is_year_paren(inner: str) -> bool:
@@ -138,11 +157,11 @@ def clean_label(label: str, type_: str) -> dict:
     note_parts.extend(paren_notes)
     note_parts.extend(encykorea_notes)
     cleaned = re.sub(r"\s{2,}", " ", stripped.replace(GROUP_TAIL, "").replace("정본", "")).strip()
-    cleaned = cleaned.replace("미상", "미확인")
+    cleaned = replace_unknown(cleaned)
     # 결과가 비거나 괄호 짝이 깨지면(' · ' 가 괄호 안에 있는 이름) 원본을 지킨다 — 이름을 망가뜨리지 않는다
     if not cleaned or cleaned.count("(") != cleaned.count(")"):
         return {"label": original, "note": "", "sourceRef": [], "group": group, "changed": False}
-    notes = (re.sub(r"\s{2,}", " ", part.replace(GROUP_TAIL, "").replace("미상", "미확인")).strip(" ·")
+    notes = (re.sub(r"\s{2,}", " ", replace_unknown(part.replace(GROUP_TAIL, ""))).strip(" ·")
              for part in note_parts)
-    note, refs = split_source_refs(SEPARATOR.join(dict.fromkeys(part for part in notes if part)))
+    note, refs = clean_note(SEPARATOR.join(dict.fromkeys(part for part in notes if part)))
     return {"label": cleaned, "note": note, "sourceRef": refs, "group": group, "changed": cleaned != original}

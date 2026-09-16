@@ -2,7 +2,6 @@
 id: "event-gg-relief-419"
 type: "Event"
 label: "나라 동쪽에 큰 재해가 나자 사신을 보내 위문하다"
-labelNote: "419"
 aliases:
   - "나라 동쪽에 큰 재해가 나자 사신을 보내 위문하다 (419)"
 ---

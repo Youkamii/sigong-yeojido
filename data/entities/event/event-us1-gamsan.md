@@ -2,7 +2,6 @@
 id: "event-us1-gamsan"
 type: "Event"
 label: "감산사 조성과 석조 미륵·아미타상 발원 — 경주"
-labelNote: "719"
 aliases:
   - "감산사 조성과 석조 미륵·아미타상 발원 — 경주 (719)"
 ---

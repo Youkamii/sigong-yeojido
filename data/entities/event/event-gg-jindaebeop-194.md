@@ -2,7 +2,6 @@
 id: "event-gg-jindaebeop-194"
 type: "Event"
 label: "진대법을 상례로 삼다 — 질양"
-labelNote: "194"
 aliases:
   - "진대법을 상례로 삼다 — 질양 (194)"
 ---

@@ -2,7 +2,6 @@
 id: "event-hs-c5-yundongju-1941"
 type: "Event"
 label: "윤동주 연희전문학교 졸업"
-labelNote: "1941"
 aliases:
   - "윤동주 연희전문학교 졸업(1941)"
 ---

@@ -2,7 +2,6 @@
 id: "event-sm-487-uyeok"
 type: "Event"
 label: "사방에 우역을 두고 관도를 고치다"
-labelNote: "487"
 aliases:
   - "사방에 우역을 두고 관도를 고치다 (487)"
 ---

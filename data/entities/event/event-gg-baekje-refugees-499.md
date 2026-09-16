@@ -2,7 +2,6 @@
 id: "event-gg-baekje-refugees-499"
 type: "Event"
 label: "굶주린 백제 백성 2천 명이 투항하다"
-labelNote: "499"
 aliases:
   - "굶주린 백제 백성 2천 명이 투항하다 (499)"
 ---

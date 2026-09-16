@@ -2,7 +2,6 @@
 id: "event-us1-gwallyojeon"
 type: "Event"
 label: "문무 관료전 지급"
-labelNote: "687"
 aliases:
   - "문무 관료전 지급(687)"
 ---

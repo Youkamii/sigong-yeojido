@@ -2,7 +2,6 @@
 id: "polity-syj122-yeowon-fleet-1274"
 type: "Polity"
 label: "합포를 떠난 여원연합군 선단"
-labelNote: "1274"
 aliases:
   - "합포를 떠난 여원연합군 선단 (1274)"
 ---

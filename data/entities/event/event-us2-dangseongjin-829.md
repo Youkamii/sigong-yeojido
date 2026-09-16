@@ -2,7 +2,6 @@
 id: "event-us2-dangseongjin-829"
 type: "Event"
 label: "당은군을 당성진으로 고치다"
-labelNote: "829"
 aliases:
   - "당은군을 당성진으로 고치다 (829)"
 ---

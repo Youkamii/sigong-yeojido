@@ -2,7 +2,6 @@
 id: "event-gg-sumyoin-414"
 type: "Event"
 label: "광개토왕릉 수묘인 330가를 정하다"
-labelNote: "414"
 aliases:
   - "광개토왕릉 수묘인 330가를 정하다 (414)"
 ---

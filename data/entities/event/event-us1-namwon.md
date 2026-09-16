@@ -2,7 +2,6 @@
 id: "event-us1-namwon"
 type: "Event"
 label: "남원소경 설치와 여러 주·군 백성의 이주 — 남원"
-labelNote: "685"
 aliases:
   - "남원소경 설치와 여러 주·군 백성의 이주 — 남원 (685)"
 ---

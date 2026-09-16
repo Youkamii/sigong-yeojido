@@ -2,7 +2,6 @@
 id: "event-gg-buyeo-494"
 type: "Event"
 label: "부여왕이 나라를 들어 항복하다"
-labelNote: "494"
 aliases:
   - "부여왕이 나라를 들어 항복하다 (494)"
 ---

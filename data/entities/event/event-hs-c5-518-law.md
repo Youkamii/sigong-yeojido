@@ -2,7 +2,6 @@
 id: "event-hs-c5-518-law"
 type: "Event"
 label: "5·18 특별법 제정"
-labelNote: "1995"
 aliases:
   - "5·18 특별법 제정(1995)"
 ---

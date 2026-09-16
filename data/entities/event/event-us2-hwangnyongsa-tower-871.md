@@ -2,7 +2,6 @@
 id: "event-us2-hwangnyongsa-tower-871"
 type: "Event"
 label: "황룡사 구층목탑 개조 공사"
-labelNote: "871~873"
 aliases:
   - "황룡사 구층목탑 개조 공사 (871~873)"
 ---

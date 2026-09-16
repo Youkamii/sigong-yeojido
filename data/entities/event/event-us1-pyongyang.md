@@ -2,7 +2,6 @@
 id: "event-us1-pyongyang"
 type: "Event"
 label: "평양·우두 두 주의 지세 검찰 — 평양"
-labelNote: "736"
 aliases:
   - "평양·우두 두 주의 지세 검찰 — 평양 (736)"
 ---

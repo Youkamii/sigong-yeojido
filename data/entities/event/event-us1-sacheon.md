@@ -2,7 +2,6 @@
 id: "event-us1-sacheon"
 type: "Event"
 label: "사천왕사 완성 — 경주 낭산"
-labelNote: "679"
 aliases:
   - "사천왕사 완성 — 경주 낭산 (679)"
 ---

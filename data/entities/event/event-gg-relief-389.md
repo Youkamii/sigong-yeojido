@@ -2,7 +2,6 @@
 id: "event-gg-relief-389"
 type: "Event"
 label: "창고를 열어 굶주린 백성을 진휼하다"
-labelNote: "389"
 aliases:
   - "창고를 열어 굶주린 백성을 진휼하다 (389)"
 ---

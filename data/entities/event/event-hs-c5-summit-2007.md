@@ -2,7 +2,6 @@
 id: "event-hs-c5-summit-2007"
 type: "Event"
 label: "제2차 남북 정상 회담"
-labelNote: "2007"
 aliases:
   - "제2차 남북 정상 회담(2007)"
 ---

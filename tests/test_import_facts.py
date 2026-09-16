@@ -10,6 +10,9 @@ import sys
 import tempfile
 import unittest
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'services'))
+from frontmatter import parse_front_matter  # noqa: E402
+
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / 'tests/fixtures/facts-ingest'
@@ -150,6 +153,32 @@ class FactsIngestTests(unittest.TestCase):
         self.assertEqual(len(claims_in(path)), 2)
         self.assertEqual(claims_in(path)[1]['note'], '같은 ID의 수정된 메모')
         self.assertEqual(hashlib.sha256(self.source_path.read_bytes()).hexdigest(), self.source_digest)
+
+    def test_shell_label_fill_keeps_the_name_cleanup_fields(self):
+        """#203 감사 12: 껍데기에 이름만 채워 다시 쓸 때 #200 이 넣은 값을 지우지 않는다."""
+        path = self.data / 'entities/place/place-pyeongyang.md'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text('---\n'
+                        'id: "place-pyeongyang"\n'
+                        'type: "Place"\n'
+                        'label: "place-pyeongyang"\n'
+                        'labelHanja: "平壤"\n'
+                        'labelNote: "고구려 도읍"\n'
+                        'sourceRef:\n'
+                        '  - "HGIS 12345"\n'
+                        'kind: "group"\n'
+                        'aliases:\n'
+                        '  - "평양성 (HGIS 12345)"\n'
+                        '---\n\n앞선 잡이 만든 껍데기다.\n', encoding='utf-8')
+        self.import_job()
+        meta, body = parse_front_matter(path.read_text(encoding='utf-8'))
+        self.assertEqual(meta['label'], '평양')
+        self.assertEqual(meta['labelHanja'], '平壤')
+        self.assertEqual(meta['labelNote'], '고구려 도읍')
+        self.assertEqual(meta['sourceRef'], ['HGIS 12345'])
+        self.assertEqual(meta['kind'], 'group')
+        self.assertEqual(meta['aliases'], ['평양성 (HGIS 12345)'])
+        self.assertIn('앞선 잡이 만든 껍데기다.', body)
 
     def test_rejects_bad_local_evidence_before_writing(self):
         cases = [('quote', '없는 원문', 'quote mismatch'), ('sourceId', 'src-wrong', 'sourceId mismatch'),

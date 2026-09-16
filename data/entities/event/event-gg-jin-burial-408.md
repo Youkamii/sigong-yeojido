@@ -2,7 +2,6 @@
 id: "event-gg-jin-burial-408"
 type: "Event"
 label: "유주자사를 지낸 진을 덕흥리에 장사하다"
-labelNote: "408"
 aliases:
   - "유주자사를 지낸 진을 덕흥리에 장사하다 (408)"
 ---

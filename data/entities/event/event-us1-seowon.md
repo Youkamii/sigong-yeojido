@@ -2,7 +2,6 @@
 id: "event-us1-seowon"
 type: "Event"
 label: "서원소경 설치 — 오늘날 청주"
-labelNote: "685"
 aliases:
   - "서원소경 설치 — 오늘날 청주 (685)"
 ---

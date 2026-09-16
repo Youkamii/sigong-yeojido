@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'services'))
 sys.path.insert(0, str(ROOT / 'scripts'))
-from entity_labels import clean_label, split_outside_parens, split_source_refs, strip_label_notes  # noqa: E402
+from entity_labels import clean_label, replace_unknown, split_outside_parens, split_source_refs, strip_label_notes  # noqa: E402
 from clean_entity_labels import plan, render, rewrite, scalar  # noqa: E402
 
 
@@ -31,7 +31,10 @@ class CleanLabelTests(unittest.TestCase):
 
     def test_keeps_the_dropped_text_as_a_note(self):
         self.assertEqual(clean_label('안동부 · 지방 행정 중심지', 'Place')['note'], '지방 행정 중심지')
-        self.assertEqual(clean_label('아관파천 (1896년 2월 11일)', 'Event')['note'], '1896년 2월 11일')
+        # 연도·날짜뿐인 설명은 labelNote 로 남기지 않는다 — 검색 줄이 연도를 따로 보여 준다 (#203 감사 2)
+        self.assertEqual(clean_label('아관파천 (1896년 2월 11일)', 'Event')['note'], '')
+        self.assertEqual(clean_label('한산도 대첩(1592)', 'Event')['note'], '')
+        self.assertEqual(clean_label('불국사 창건 (751, 창건 연대 이설 있음)', 'Event')['note'], '751, 창건 연대 이설 있음')
         self.assertEqual(clean_label('효종 (조선 제17대, 민족문화대백과 E0065706)', 'Person'),
                          {'label': '효종 (조선)', 'note': '조선 제17대',
                           'sourceRef': ['민족문화대백과 E0065706'], 'group': False, 'changed': True})
@@ -44,6 +47,16 @@ class CleanLabelTests(unittest.TestCase):
 
     def test_unknown_becomes_the_plain_word(self):
         self.assertEqual(clean_label('연대 미상 기록', 'Event')['label'], '연대 미확인 기록')
+
+    def test_unknown_only_replaces_a_standalone_word(self):
+        """#203 감사 11: 경계를 안 보던 치환이 행정구역 이름 '다미상면'을 망가뜨렸다."""
+        self.assertEqual(replace_unknown('연도 미상'), '연도 미확인')
+        self.assertEqual(replace_unknown('(미상)'), '(미확인)')
+        self.assertEqual(replace_unknown('평안남도/용강군/다미상면'), '평안남도/용강군/다미상면')
+        self.assertEqual(replace_unknown('미상면'), '미상면')
+        cleaned = clean_label('평안남도/용강군/다미상면 (HGIS 92966)', 'Place')
+        self.assertEqual(cleaned['label'], '평안남도/용강군/다미상면 (HGIS 92966)')
+        self.assertFalse(cleaned['changed'])
 
     def test_separator_inside_parentheses_is_part_of_the_name(self):
         """' · ' 는 괄호 밖에서만 자른다 — 괄호 안의 구분자로 이름을 깨뜨리지 않는다 (#200 2차)."""

@@ -2,7 +2,6 @@
 id: "event-hs-c5-aging"
 type: "Event"
 label: "고령화 사회 진입"
-labelNote: "2000"
 aliases:
   - "고령화 사회 진입(2000)"
 ---

@@ -2,7 +2,6 @@
 id: "event-us1-757"
 type: "Event"
 label: "9주 이름 개정과 군현 편제 — 왕경"
-labelNote: "757"
 aliases:
   - "9주 이름 개정과 군현 편제 — 왕경 (757)"
 ---

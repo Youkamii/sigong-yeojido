@@ -2,7 +2,6 @@
 id: "event-us1-rain715"
 type: "Event"
 label: "큰 가뭄과 임천사 못가의 기우"
-labelNote: "715"
 aliases:
   - "큰 가뭄과 임천사 못가의 기우 (715)"
 ---

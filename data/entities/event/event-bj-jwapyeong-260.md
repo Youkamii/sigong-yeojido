@@ -2,7 +2,6 @@
 id: "event-bj-jwapyeong-260"
 type: "Event"
 label: "6좌평과 16관등 설치 — 한성"
-labelNote: "260"
 aliases:
   - "6좌평과 16관등 설치 — 한성 (260)"
 ---

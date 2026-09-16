@@ -21,7 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "services"))
-from entity_labels import clean_label, split_source_refs  # noqa: E402
+from entity_labels import clean_label, clean_note  # noqa: E402
 from frontmatter import parse_front_matter  # noqa: E402
 from validate import parse_claims_text  # noqa: E402
 
@@ -151,7 +151,7 @@ def plan(rows: list[dict], pairs: list[tuple[str, str]]) -> tuple[list[dict], li
         was_note, was_refs = str(r.get("labelNote") or ""), list(r.get("sourceRef") or [])
         if r["id"] in held or not c["changed"]:
             # 이름은 그대로 두고, 이미 적어 둔 설명에서 자료 식별자만 sourceRef 로 옮긴다 (#200 2차).
-            note, refs = split_source_refs(was_note)
+            note, refs = clean_note(was_note)
             refs = list(dict.fromkeys([*was_refs, *refs]))
             if note == was_note and refs == was_refs:
                 continue

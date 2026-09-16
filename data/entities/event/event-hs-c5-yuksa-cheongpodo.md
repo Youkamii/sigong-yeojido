@@ -2,7 +2,6 @@
 id: "event-hs-c5-yuksa-cheongpodo"
 type: "Event"
 label: "이육사 「청포도」 발표"
-labelNote: "1939"
 aliases:
   - "이육사 「청포도」 발표(1939)"
 ---

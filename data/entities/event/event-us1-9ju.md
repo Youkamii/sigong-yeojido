@@ -2,7 +2,6 @@
 id: "event-us1-9ju"
 type: "Event"
 label: "완산주 복치와 9주 완비 — 완산주(전주)"
-labelNote: "685"
 aliases:
   - "완산주 복치와 9주 완비 — 완산주(전주) (685)"
 ---

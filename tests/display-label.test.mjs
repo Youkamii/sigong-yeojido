@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {displayLabel,stripLabelNotes,labelNote,isGroupEntity,predicateLabel,precisionLabel,typeWord,splitOutsideParens,visibleAliases} from '../services/host/app/chronicle.js';
+import {displayLabel,stripLabelNotes,labelNote,isGroupEntity,predicateLabel,precisionLabel,typeWord,splitOutsideParens,visibleAliases,replaceUnknown} from '../services/host/app/chronicle.js';
+import {withComparisonParticle} from '../services/host/app/atlas-chat.js';
 import {typeName} from '../services/host/app/atlas-data.js';
 import {shortLabel,sourceName,mergeEvents} from '../services/host/app/atlas-story.js';
 
@@ -122,4 +123,24 @@ test('술어와 정밀도는 대조표를 거치고 없는 값은 흘리지 않�
   assert.equal(precisionLabel('day'),'일 단위');
   assert.equal(precisionLabel('mixed'),'');      // 표에 없으면 아무것도 표시하지 않는다
   assert.equal(precisionLabel(undefined),'');
+});
+
+// ── #203 합류본 재감사 ──
+test("'미상'은 홀로 설 때만 '미확인'으로 바꾼다 — '다미상면'은 그대로 (#203 감사 11)",()=>{
+  assert.equal(replaceUnknown('연도 미상'),'연도 미확인');
+  assert.equal(replaceUnknown('미상'),'미확인');
+  assert.equal(replaceUnknown('(미상)'),'(미확인)');
+  assert.equal(replaceUnknown('저자 미상, 편년 미상'),'저자 미확인, 편년 미확인');
+  assert.equal(replaceUnknown('평안남도/용강군/다미상면'),'평안남도/용강군/다미상면');
+  assert.equal(replaceUnknown('미상면'),'미상면');
+  assert.equal(replaceUnknown('다미상'),'다미상');
+  assert.equal(displayLabel({label:'평안남도/용강군/다미상면 (HGIS 92966)',type:'Place'}),'평안남도/용강군/다미상면 (HGIS 92966)');
+  assert.equal(displayLabel({label:'성리학(주자학) 도입 (연도 미상)',type:'Event'}),'성리학(주자학) 도입');
+});
+
+test("추천 질문의 조사는 받침에 따라 '와/과'를 고른다 (#203 감사 7)",()=>{
+  for(const name of ['장보고','최제우','노태우','온조','이성계','김구'])assert.equal(withComparisonParticle(name),name+'와',name);
+  for(const name of ['이순신','안중근','전태일','세종','김유신'])assert.equal(withComparisonParticle(name),name+'과',name);
+  assert.equal(withComparisonParticle(''),'과');       // 이름이 비어도 터지지 않는다
+  assert.equal(withComparisonParticle('Cliopatria'),'Cliopatria과');  // 한글이 아니면 읽는 법을 모르므로 그대로
 });

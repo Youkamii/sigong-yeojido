@@ -2,7 +2,6 @@
 id: "event-gg-frost-335"
 type: "Event"
 label: "7월 서리로 곡식이 죽음"
-labelNote: "335"
 aliases:
   - "7월 서리로 곡식이 죽음(335)"
 ---

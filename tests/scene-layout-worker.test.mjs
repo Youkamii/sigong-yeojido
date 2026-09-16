@@ -93,6 +93,20 @@ test('워커가 재사용 기준으로 삼는 것은 메인이 실제로 반영(
   assert.deepEqual(reused.dirty,[]);
 });
 
+test('토큰이 지나간 배치 스냅샷은 워커에 쌓이지 않는다 (#203 감사 9)',()=>{
+  const core=createSceneLayoutCore();
+  core.handle({type:'init',world:workerWorldPayload(),sites:structuredClone(sites)});
+  // 스크럽을 멈추지 않아 응답이 계속 버려져도(ack 없음) 워커가 들고 있는 배치본은 하나뿐이다.
+  for(let token=1;token<=5;token++){
+    core.handle({...request,type:'layout',token,ack:null,preserve:true});
+    assert.equal(core.pendingCount,1,'요청 '+token);
+  }
+  // 마지막 응답을 반영하면 그것이 재사용 기준이 되고, 그 뒤에도 하나만 남는다.
+  const reused=core.handle({...request,type:'layout',token:6,ack:5,preserve:true}).response;
+  assert.equal(reused.retainedIds.length,reused.order.length);
+  assert.equal(core.pendingCount,1);
+});
+
 test('팔레트 색은 three.Color 의 sRGB→선형 변환과 한 값도 다르지 않다',()=>{
   const styles=['#aa9570','#aa9773','#697977','#719369','#b8b2a2','#7b8280','#819258','#9a9d64','#b1a26a',
     '#87915b','#939868','#a99b78','#bbb7a6','#c4c8c5','#7e999f','#d0c7b1','#919f9f','#79613e','#887049','#666d68'];

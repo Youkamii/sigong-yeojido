@@ -9,6 +9,7 @@ export function createSceneLayoutCore(){
   const pending=new Map();
   return {
     get ready(){return !!world;},
+    get pendingCount(){return pending.size;},  // 검사용: 쌓인 배치 스냅샷 수
     handle(message){
       if(!message||typeof message!=='object')return null;
       if(message.type==='init'){
@@ -25,6 +26,9 @@ export function createSceneLayoutCore(){
         if(pending.has(message.ack))base=pending.get(message.ack);
         for(const key of [...pending.keys()])if(key<=message.ack)pending.delete(key);
       }
+      // 메인은 마지막으로 보낸 토큰의 응답만 반영하므로(scene-layout-client.js), 이보다 앞선 요청의
+      // 배치본은 다시 기준이 될 수 없다. 연속 스크럽에서 워커 힙이 계속 커지던 자리다 (#203 감사 9).
+      for(const key of [...pending.keys()])if(key<message.token)pending.delete(key);
       if(!world)return {response:{type:'layout',token:message.token,error:'not-initialised'},transfer:[]};
       const result=computeLandscape({...message,sites,previousCells:base.cells,previousUrbanKey:base.urbanKey},world);
       const {buckets,dirty}=overviewBuckets(world,result.cells,message.year,result.reuseBase?result.changedSites:null);
