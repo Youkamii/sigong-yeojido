@@ -40,16 +40,44 @@ export const displayLabel = e => {
   const cleaned=stripLabelNotes(base).replace(/집단 행위자|정본/g,'').replace(/미상/g,'미확인').replace(/\s{2,}/g,' ').trim();
   return cleaned||entityLabel(e)||e.label;
 };
-export const isGroupEntity = e => /집단 행위자/.test(String(e?.label||''))||['group','organization'].includes(String(e?.kind||e?.subtype||'').toLowerCase());
+// 집단 판정: 서버가 주는 개체에는 kind·subtype 이 없다(#198 감사). 유형 Group 과 라벨 꼬리를 함께 본다 —
+// 라벨에서 '집단 행위자' 꼬리를 떼는 데이터 정리(v2 §1)가 끝나도 판정이 살아남게.
+export const isGroupEntity = e => e?.type==='Group'||/집단 행위자/.test(String(e?.label||''));
 const shortPredicate = p=>p.replace('syj:','');
 const ACTIVITY = new Map([['livedIn','생존'],['reignedIn','재위'],['activeIn','활동'],['appearsIn','등장']]);
 const activityLabel=(predicate,claim)=>predicate==='appearsIn'&&claim.note?.startsWith('전승 연대')?'전승 연대':ACTIVITY.get(predicate);
-const EVENT_WORDS = {foundedIn:'건국',establishedIn:'설립',proclaimedIn:'선포',accededIn:'즉위'};
+export const EVENT_WORDS = {foundedIn:'건국',establishedIn:'설립',proclaimedIn:'선포',accededIn:'즉위'};
 export const RELATION_WORDS = {hasParticipant:'참여',participatedIn:'참여 사건',tookPlaceAt:'장소',occurredAt:'장소',
   hasSetting:'전승의 무대',hasCharacter:'전승 속 등장인물',
   isKingOf:'나라',memberOf:'소속',affiliatedWith:'소속',hasParent:'부모',childOf:'부모',parentOf:'자녀',
   foundedBy:'건국자',ledBy:'이끈 인물',hasFounder:'설립자',sameEntityAs:'같다고 보는 이름',
   relatedTo:'관련',capitalOf:'수도',hasTeacher:'스승',teacherOf:'제자',alliedWith:'동맹',enemyOf:'적대'};
+// 화면 카드·연결 보기에 쓰는 술어 이름. 관계 이름표(RELATION_WORDS)에 없는 술어를 여기서 받는다.
+export const RECORD_WORDS = {hasBoundaryRecord:'경계 기록',locatedAt:'위치',locatedIn:'속한 곳',occurredIn:'일어난 때',
+  describedAs:'설명',bornIn:'태어난 해',diedIn:'죽은 해',endedIn:'끝난 해',builtIn:'세운 해',reignedIn:'재위',
+  reignedFrom:'재위 시작',reignedTo:'재위 끝',activeIn:'활동 시기',livedIn:'생존 시기',administeredAs:'행정 구분',
+  householdCount:'호구 수',populationCount:'인구 수',mentionedIn:'언급된 기록',hasTitle:'직함',producedAt:'만든 곳',
+  destroyedIn:'무너진 해',appearsIn:'등장한 기록',convertsTo:'환산한 연도',routeConnects:'이어진 길',
+  capitalMovedTo:'옮긴 수도',hasCapital:'수도',existedIn:'존속 시기',hasOutcome:'결과',sameEventAs:'같다고 보는 사건',
+  heldOffice:'맡은 자리',appointedTo:'임명된 자리',hasAppointee:'임명한 사람',hasEventSite:'사건 장소',
+  hasName:'이름',hasStateName:'나라 이름',dated:'적힌 날짜',hasReferenceDate:'기준 날짜'};
+// 화면에 쓰는 술어 이름. 표에 없으면 '관련 기록' 으로 떨어뜨린다(원시 키를 절대 그대로 내보내지 않는다).
+export const predicateLabel = predicate => {
+  const key=shortPredicate(String(predicate||''));
+  return RELATION_WORDS[key]||EVENT_WORDS[key]||RECORD_WORDS[key]||'관련 기록';
+};
+// 유형 이름. 서버가 주는 개체 유형(17종)과 연결 보기의 그래프 노드 유형을 함께 담는다.
+export const TYPE_WORDS = {Person:'인물',Event:'사건',Place:'장소',Polity:'나라',Narrative:'전승',
+  Group:'집단',Organization:'단체',Institution:'제도',Office:'관직',Work:'기록물',Thing:'물건',
+  Facility:'시설',Heritage:'문화유산',Artifact:'유물',Document:'문서',Concept:'개념',Period:'시대',
+  Chunk:'원문 대목',Source:'사료',Claim:'기록',TimeSpan:'시점',Location:'좌표',Value:'값'};
+export const typeWord = type => TYPE_WORDS[type]||'기록';
+// 정밀도 코드. 표에 없는 값은 빈 문자열로 두고 화면에 아무것도 내보내지 않는다.
+export const PRECISION_WORDS = {approx:'대략 위치',region:'일대 기준',area:'일대 기준',site:'유적 지점',
+  year:'연 단위',month:'월 단위',day:'일 단위',century:'세기 단위',decade:'10년 단위','year-range':'연 단위 범위',
+  'historical-gis-reconstruction-point':'옛 지도 복원 지점','modern-region-representative-point':'현재 지역 대표 지점',
+  'heritage-catalog-point-crs-unspecified':'국가유산 목록 지점','site-point-from-institution':'기관이 준 지점'};
+export const precisionLabel = value => PRECISION_WORDS[String(value||'')]||'';
 const bounded = p=>Number.isInteger(p.lo)&&Number.isInteger(p.hi)&&p.lo!==0&&p.hi!==0;
 
 export function datedClaims(data){
@@ -165,7 +193,7 @@ export class Chronicle {
     this.host=host;this.controls=controls;this.callbacks=callbacks;
     this.data={entities:[],claims:[]};this.year=1593;this.span=50;this.sequence=0;this.loading=true;
     controls.innerHTML=`<div class="time-heading"><div class="time-year"><label for="historyYear" data-calendar>연도 입력</label>
-      <input id="historyYear" aria-label="탐색 연도" aria-describedby="yearInputHelp" type="number" value="1593" min="-2500" max="2100" step="1" required><span>년</span><div class="year-nudge" role="group" aria-label="1년씩 이동합니다. 길게 누르면 빨라집니다"><button data-year-step="-1" aria-label="이전 해. 길게 누르면 빨라집니다" title="1년 전. 길게 누르면 빨라집니다">−</button><button data-year-step="1" aria-label="다음 해. 길게 누르면 빨라집니다" title="1년 후. 길게 누르면 빨라집니다">+</button></div><button data-go-year>이동하기</button><small id="yearInputHelp">입력 후 이동을 누르십시오. 기원전은 −500처럼 적으십시오</small></div>
+      <input id="historyYear" aria-label="연도" aria-describedby="yearInputHelp" type="number" value="1593" min="-2500" max="2100" step="1" required><span>년</span><div class="year-nudge" role="group" aria-label="1년씩 이동합니다. 길게 누르면 빨라집니다"><button data-year-step="-1" aria-label="이전 해. 길게 누르면 빨라집니다" title="1년 전. 길게 누르면 빨라집니다">−</button><button data-year-step="1" aria-label="다음 해. 길게 누르면 빨라집니다" title="1년 후. 길게 누르면 빨라집니다">+</button></div><button data-go-year>이동하기</button><small id="yearInputHelp">숫자를 적고 엔터를 누릅니다. 기원전은 −500처럼 적습니다</small></div>
       <div class="time-actions"><button data-previous aria-label="이전 사건으로 이동하기">← 이전 사건 보기</button>
       <button data-play aria-label="시간 재생하기">▶ 재생하기</button><button data-next aria-label="다음 사건으로 이동하기">다음 사건 보기 →</button></div>
       <label class="time-span">주변 사건 <select aria-label="사건 탐색 범위"><option value="20">20년</option><option value="50" selected>50년</option><option value="100">100년</option></select></label></div>

@@ -74,9 +74,12 @@ export class ChronicleGeography{
   showCard({row,region}){
     const card=document.getElementById('geographyCard');card.hidden=false;
     card.querySelector('strong').textContent=row.label;
-    card.querySelector('p').textContent=[row.lon!=null?formatCoordinates([row.lon,row.lat]):'',
-      region&&row.precision==='area'?'지역을 나타내는 기준점입니다. 인물의 실제 위치를 뜻하지는 않습니다.':'',
-      region?row.year+'년 · '+row.activities.map(a=>a.label).join(' / '):row.displayNote||''].filter(Boolean).join(', ');
+    // 좌표·활동·설명문을 한 문단에 쉼표로 이어 붙이면 "…않습니다., 1593년 · 활동" 이 된다 — 줄을 셋으로 나눈다(#198 감사 C-14).
+    const lines=card.querySelectorAll('p');
+    lines[0].textContent=row.lon!=null?formatCoordinates([row.lon,row.lat]):'';
+    lines[1].textContent=region?row.year+'년 · '+row.activities.map(a=>a.label).join(' / '):row.displayNote||'';
+    lines[2].textContent=region&&row.precision==='area'?'지역을 나타내는 기준점입니다. 인물의 실제 위치를 뜻하지는 않습니다.':'';
+    for(const line of lines)line.hidden=!line.textContent;
     const refs=card.querySelector('div');refs.replaceChildren();
     const more=document.createElement('details'),summary=document.createElement('summary');
     summary.textContent='위치 자료 더 보기';more.append(summary);

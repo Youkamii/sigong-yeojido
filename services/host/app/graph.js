@@ -1,5 +1,6 @@
 import {sourcesParam} from './chronicle-load.js';
 import {escapeHtml as esc} from './html.js';
+import {predicateLabel,typeWord} from './chronicle.js';
 
 export class GraphExplorer {
   constructor(host, callbacks){
@@ -69,11 +70,12 @@ export class GraphExplorer {
     }).join('');
     const nodes=[...this.nodes.values()].map(node=>{
       const pos=positions.get(node.id);
-      const text=String(node.label);
+      // 기록 노드의 이름은 서버가 준 영문 술어다 — 화면에서만 우리말로 바꾼다(서버 값은 id·타입 계약이라 그대로 둔다, #198 감사 C-11).
+      const text=node.type==='Claim'?predicateLabel(node.label):String(node.label);
       const label=text.length>16?text.slice(0,15)+'…':text;
-      const detail=node.type==='Claim'?(node.origin==='human'?'사람':'AI 추출'):node.location?(node.location.grounded?'위치 출처 연결':'위치 후보 · 확인 전'):node.type;
+      const detail=node.type==='Claim'?(node.origin==='human'?'사람':'AI 추출'):node.location?(node.location.grounded?'위치 출처 연결':'위치 후보 · 확인 전'):typeWord(node.type);
       return `<g data-node="${esc(node.id)}" role="button" tabindex="0" aria-label="${esc(text+' · '+detail)}" transform="translate(${pos.x},${pos.y})" class="graph-node ${node.id===this.entity?'selected':''}">
-        <title>${esc(text+' · '+node.id)}</title><rect width="212" height="48" rx="4"/>
+        <title>${esc(text+' · '+detail)}</title><rect width="212" height="48" rx="4"/>
         <text x="10" y="19">${esc(label)}</text><text class="graph-kind" x="10" y="36">${esc(detail)}</text></g>`;
     }).join('');
     const labels=['관련 항목','기록','인용한 원문','사료'].map((label,i)=>`<text class="graph-column" x="${i*240+12}" y="24">${label}</text>`).join('');

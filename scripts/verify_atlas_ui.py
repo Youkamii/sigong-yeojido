@@ -142,7 +142,8 @@ with sync_playwright() as pw:
         year(1592);check('154_year_sync', '1592' in page.locator('.atlas-event-caption').inner_text())
         year(1593);page.locator('[data-scene-id="scene-haengju-1593"]').click();page.wait_for_function(settled)
         check('154_event_to_scene', page.locator('#atlasStory').is_visible() and page.locator('#atlasEvents').is_hidden())
-        year(1594);check('152_year_expires_story', page.locator('#atlasStory').is_hidden())
+        # 연도만 바뀌면 이야기 패널을 닫지 않는다 — 닫으면 연표를 눌러 이동할 때마다 '이전으로'가 사라진다(#198 감사 C-1).
+        year(1594);check('152_year_keeps_story', page.locator('#atlasStory').is_visible() and '행주대첩' in page.locator('#atlasStory h2').inner_text())
         year(1593)
         page.locator('#atlasSettingsButton').click();page.locator('#wholeMapBtn').click();close()
         page.wait_for_function('!__sigong.engine.fly')

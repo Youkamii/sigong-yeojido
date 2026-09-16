@@ -45,7 +45,7 @@ def main():
         bad=next(f for f in rows if not f['properties']['originalGeometryValid'])
         page.locator('#historyMapBtn').click()
         page.locator('[data-feature="'+bad['id']+'"]').click()
-        assert '원 도형에 자기 교차' in page.locator('#evi').inner_text()
+        assert '원 경계선이 서로 엇갈립니다' in page.locator('#evi').inner_text()
         page.locator('#b3d').click()
         page.wait_for_function('window.__sigong?.world.historyTargets.length===560',timeout=120000)
         ids=page.evaluate('window.__sigong.world.historyTargets.map(x=>x.userData.feature.id)')

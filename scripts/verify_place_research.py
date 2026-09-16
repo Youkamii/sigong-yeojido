@@ -45,7 +45,7 @@ async def run(url, out):
             await page.locator('#evi .srcname').first.wait_for()
             assert await page.locator('#evi h3').inner_text() == target['labelKo']
             assert '이 사료에서 원문을 찾습니다' in await page.locator('#evi').inner_text()
-            assert await page.locator('#evi > .badge').first.inner_text() == '좌표 후보'
+            assert await page.locator('#evi > .badge').first.inner_text() == '위치 후보'
             await page.screenshot(path=str(out/f'{source}-evidence.png'))
             async with page.expect_response(lambda response: '/api/mentions?' in response.url
                     and parse_qs(urlparse(response.url).query, keep_blank_values=True).get('sources') == ['']) as pending:

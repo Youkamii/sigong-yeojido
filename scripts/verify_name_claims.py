@@ -51,12 +51,13 @@ def main():
         page.goto(args.base + '/?q=low', wait_until='networkidle', timeout=180000)
         page.locator('#enter').click(); page.locator('#allSources').click()
         page.locator('#srcList .src').first.wait_for(state='attached', timeout=180000)
-        for entity, predicate in [('polity-silla', 'hasName'), ('polity-taebong', 'hasStateName')]:
+        # 기록 카드의 술어는 chronicle.js 의 한글 대조표를 거친다 — 영문 키가 아니라 화면 글자로 찾는다(#198 감사 C-7).
+        for entity, predicate, pred_ko in [('polity-silla', 'hasName', '이름'), ('polity-taebong', 'hasStateName', '나라 이름')]:
             page.locator('#q').fill(entity)
             page.locator('#qList [data-id="' + entity + '"]').click()
             page.wait_for_function('([p,n])=>[...document.querySelectorAll("#evi .claim .pred")].filter(e=>e.textContent===p).length===n',
-                                   arg=[predicate, 2], timeout=30000)
-            selected = page.locator('#evi .claim').filter(has=page.locator('.pred', has_text=re.compile('^' + predicate + '$')))
+                                   arg=[pred_ko, 2], timeout=30000)
+            selected = page.locator('#evi .claim').filter(has=page.locator('.pred', has_text=re.compile('^' + pred_ko + '$')))
             assert selected.count() == 2 and selected.locator('.cf').count() == 0
             ui_counts[entity] = selected.count()
             if entity == 'polity-silla':

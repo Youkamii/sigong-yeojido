@@ -196,6 +196,8 @@ body.mode3d #map{display:none}
   font-family:var(--mono);font-size:10px;letter-spacing:.06em;padding:3px 7px;border-radius:2px;cursor:pointer;white-space:nowrap}
 .yearbtn:hover{border-color:var(--celadon-dim)}
 input[type=range]{flex:1;appearance:none;height:3px;background:var(--line-2);border-radius:2px;outline:none}
+/* 위 줄의 outline:none 이 특이도 (0,1,1) 이라 공용 :focus-visible (0,1,0) 을 이긴다 — 키보드 포커스 테두리를 되살린다(#198 감사 C-20) */
+input[type=range]:focus-visible{outline:2px solid var(--celadon);outline-offset:3px}
 input[type=range]::-webkit-slider-thumb{appearance:none;width:15px;height:15px;border-radius:50%;
   background:var(--celadon);cursor:pointer;border:2px solid var(--ink)}
 input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:var(--celadon);
@@ -227,7 +229,6 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
 .claim .pred{font-family:var(--mono);font-size:10.5px;color:var(--celadon);letter-spacing:.06em;margin-right:6px}
 .claim .role{font-family:var(--mono);font-size:10px;color:var(--paper-3)}
 .claim .quote.small{font-size:13px;padding:8px 10px;margin-top:6px}
-.claim .cl-note{color:var(--paper-3)}
 .badge.human{background:var(--celadon-dim);color:#0E1512;margin-left:6px}
 .badge.st{background:transparent;color:var(--paper-3);border:1px solid var(--line-2);margin-left:4px}
 .evi .srcname{font-family:var(--mono);font-size:10px;color:var(--celadon);letter-spacing:.08em;margin-bottom:4px}
@@ -367,7 +368,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <div id="sceneGeography" class="scene-events" aria-label="산맥과 섬"></div>
       <div class="geography-navigation"><select id="geographyDestination" aria-label="지역과 산맥, 섬으로 이동"></select>
         <label title="북위 38도인 위도선입니다. 현재의 군사분계선과는 다릅니다."><input type="checkbox" id="showParallel38">북위 38°</label></div>
-      <aside id="geographyCard" class="geography-card" hidden><button id="geographyClose" aria-label="지리 설명 닫기">×</button><strong></strong><p></p><div></div></aside>
+      <aside id="geographyCard" class="geography-card" hidden><button id="geographyClose" aria-label="지리 설명 닫기">×</button><strong></strong><p></p><p></p><p class="empty"></p><div></div></aside>
       <div id="graph" aria-label="출처 연결"></div>
       <div id="chat" aria-label="사료를 읽고 답하는 AI"></div>
       <div id="compare" aria-label="사료별 사건 비교"></div>
@@ -401,7 +402,7 @@ import { Timeline } from './app/timeline.js';
 import { groupSources } from './app/source-groups.js';
 import { GraphExplorer } from './app/graph.js';
 import { PeopleSearch } from './app/people.js';
-import { Chronicle, REFERENCE_GROUPS, yearLabel, sceneContextLabel, sourcesParam } from './app/chronicle.js';
+import { Chronicle, REFERENCE_GROUPS, yearLabel, sceneContextLabel, sourcesParam, predicateLabel, precisionLabel, displayLabel } from './app/chronicle.js';
 import { AtlasUI } from './app/atlas-ui.js';
 import { mountQualityChoice } from './app/quality-gate.js';
 import { qualityNames } from './app/quality-choice.js';
@@ -599,8 +600,13 @@ function showGraphClaim(claim){
   const value=object.kind==='entity'?(graphView?.nodes.get(object.id)?.label||object.id):
     object.kind==='time'?object.verbatim:object.kind==='location'?`${object.lat}, ${object.lon}`:
     object.kind==='year'?`${object.value<0?'기원전 '+(-object.value):object.value}년`:object.value;
-  el.innerHTML=`<h3>${escH(claim.subjectLabel)}</h3><div class="sect">${escH(claim.predicate.replace('syj:',''))}</div>
-    <p>${escH(value)}</p>${object.kind==='time'?`<p class="empty">${escH(object.precision)} · ${object.calendar?escH(object.calendar)+' · ':''}${object.earliest??object.year??'시작 미확인'} ~ ${object.latest??object.year??'끝 미확인'}</p>`:''}
+  // 제목은 다듬은 이름, 술어는 한글 대조표를 거친다 — 학생이 'tookPlaceAt' 을 보지 않게(#198 감사 C-12).
+  const subject=state.entities.find(e=>e.id===claim.subject);
+  const title=(subject&&displayLabel(subject))||claim.subjectLabel;
+  const timeNote=object.kind==='time'?[precisionLabel(object.precision),object.calendar,
+    `${object.earliest??object.year??'시작 미확인'}~${object.latest??object.year??'끝 미확인'}`].filter(Boolean).join(' · '):'';
+  el.innerHTML=`<h3 title="${escH(claim.subjectLabel||'')}">${escH(title)}</h3><div class="sect">${escH(predicateLabel(claim.predicate))}</div>
+    <p>${escH(value)}</p>${timeNote?`<p class="empty">${escH(timeNote)}</p>`:''}
     <span class="badge ${claim.origin==='ai'?'ai':'human'}">${claim.origin==='ai'?'AI 추출':'사람'}</span>
     <div class="quote">${escH(claim.quote)}</div><div class="srcline">${escH(claim.sourceLabel)} · ${escH(claim.chunk.locator||claim.citesChunk)}</div>
     ${claim.note?`<p class="empty">${escH(claim.note)}</p>`:''}
@@ -748,6 +754,14 @@ document.getElementById('noSources').onclick=()=>selectAllSources(false);
 
 // ── 찾기 — 지명은 지도에서, 인물·나라·사건·관직은 주장(Claim)으로 이어진다 ──
 const TYPE_KO = {Place:'지명', Person:'인물', Polity:'나라', Event:'사건', Office:'관직', Organization:'관서·조직', TimeSpan:'시점', Location:'좌표', Conflict:'충돌'};
+// 사료 설명 카드의 코드값 대조표. 표에 없는 값은 '미확인' — 영어 코드를 그대로 내보내지 않는다(#198 감사 C-8).
+const STATUS_KO = {draft:'정리 중', review:'검토 중', published:'정리 끝'};
+const LICENSE_KO = {'short-excerpt-only':'짧은 인용만', 'structured-facts-and-short-excerpt':'사실 정리와 짧은 인용',
+  'public-domain':'저작권 제한 없음', 'Public Domain Mark':'저작권 제한 없음 표시', open:'자유 이용',
+  'open-data-catalog-unrestricted':'공공데이터 자유 이용', restricted:'이용 제한', unverified:'미확인',
+  'CC-BY-SA-4.0':'CC BY-SA 4.0', 'CC-BY-4.0':'CC BY 4.0', 'CC-BY-NC-4.0':'CC BY-NC 4.0', 'CC-BY':'CC BY', 'KOGL-1':'공공누리 제1유형'};
+// 표에 없는 값: 영어 코드면 '미확인', 이미 우리말로 적힌 설명이면 그대로 보여 준다.
+const licenseWord = value => !value ? '미확인' : (LICENSE_KO[value] || (/[A-Za-z]/.test(value) ? '미확인' : value));
 const peopleSearch=new PeopleSearch(document.getElementById('peopleSearch'),{
   filters:()=>({sources:state.on,primary:state.primary,origin:state.origin}),select:id=>select(id),
 });
@@ -854,7 +868,7 @@ function showTimeClaims(reveal=true){
     card.querySelector('button').onclick=()=>showGraphClaim(claim);
     for(const projection of claim.projections||[]){
       const button=document.createElement('button');button.className='card-btn time-projection';button.dataset.claim=projection.claimId;
-      button.textContent=`${projection.earliest??'시작 미확인'} ~ ${projection.latest??'끝 미확인'} · ${srcLabelOf(projection.fromSource)}`;
+      button.textContent=`${projection.earliest??'시작 미확인'}~${projection.latest??'끝 미확인'} · ${srcLabelOf(projection.fromSource)} 연도 출처 보기`;
       button.onclick=()=>openTimeProjection(claim,projection);card.append(button);
     }
     if(claim.object.kind==='time'&&!claim.projections.length)card.insertAdjacentHTML('beforeend','<p class="empty">고른 조건에 맞는 서기 날짜가 없습니다</p>');
@@ -986,9 +1000,9 @@ async function showSource(id){
     ['쓰인 때', f.composedYear != null ? yr(f.composedYear) : '미확인'],
     ['엮은이', f.compiler || '미확인'],
     ['원문 대목', (f.chunkCount || 0).toLocaleString('ko-KR')],
-    ['이용허락', f.licenseDetail || f.license || '미확인'],
+    ['이용허락', f.licenseDetail || licenseWord(f.license)],
     ['확인', f.licenseVerifiedAt || '미확인'],
-    ['상태', `${f.status || ''}${f.defaultLens ? ' · 기본 사료' : ''}`],
+    ['상태', `${STATUS_KO[f.status] || '미확인'}${f.defaultLens ? ' · 기본 사료' : ''}`],
   ];
   el.innerHTML = `
     <h3>${escH(f.label || id)}</h3>
@@ -1194,7 +1208,8 @@ async function select(id, reveal = true, graphNode = null){
   state.sel = id; draw(); if(state.mode==='3d') draw3d();
   let p = state.places.find(x=>x.id===id);
   const ent = !p && (state.entities.find(x=>x.id===id) || graphNode);
-  if(!p && ent) p = { id, label: ent.labelHanja, labelKo: ent.label, kind: ent.type, status: 'entity', candidates: [], aliases: [], entityType: ent.type };
+  // 화면 제목은 다듬은 이름을 쓰고 원본 라벨은 툴팁(rawLabel)에만 남긴다. 검색·동일성 매칭은 names/aliases 로 그대로 간다(#198 감사 C-13).
+  if(!p && ent) p = { id, label: ent.labelHanja, labelKo: displayLabel(ent) || ent.label, rawLabel: ent.label, kind: ent.type, status: 'entity', candidates: [], aliases: [], entityType: ent.type };
   const el = document.getElementById('evi');
   if(!p){ el.innerHTML = ''; return; }
 
@@ -1204,11 +1219,11 @@ async function select(id, reveal = true, graphNode = null){
 
   const esc0 = escH;
   const span = c => (c.validFrom==null && c.validTo==null) ? '' :
-    ` · ${c.validFrom==null ? '' : (c.validFrom < 0 ? '기원전 '+(-c.validFrom) : c.validFrom)}~${c.validTo==null ? '' : (c.validTo < 0 ? '기원전 '+(-c.validTo) : c.validTo)}`;
+    `${c.validFrom==null ? '' : (c.validFrom < 0 ? '기원전 '+(-c.validFrom) : c.validFrom)}~${c.validTo==null ? '' : (c.validTo < 0 ? '기원전 '+(-c.validTo) : c.validTo)}`;
   const candidates = visibleCandidates(p);
   const cands = p.entityType ? '' : candidates.length
     ? candidates.map(c => `<div class="cand${candActive(c) ? '' : ' off'}${c === state.mapFocus ? ' focused' : ''}">
-        <div class="co">${c.lat.toFixed(4)}, ${c.lon.toFixed(4)} · ${esc0(c.precision)}${c.view ? ' · ' + esc0(c.view) : ''}${escH(span(c))}</div>
+        <div class="co">${[`${c.lat.toFixed(4)}, ${c.lon.toFixed(4)}`, precisionLabel(c.precision), c.view].filter(Boolean).map(esc0).join(' · ')}</div>${span(c) ? `<div class="co">${escH(span(c))}</div>` : ''}
         <div class="bs">${esc0(c.basis)} ${externalLink(c.sourceUrl, '출처 보기')}${c.origin === 'ai' ? ' <span class="badge ai">AI 연결 · 사람 확인 전</span>' : ''}</div>
         ${c.citesChunk?`<button class="card-btn" data-candidate-chunk="${escH(c.citesChunk)}">위치 설명 보기</button>`:''}
         ${c.coordinateChunkId?`<button class="card-btn" data-candidate-chunk="${escH(c.coordinateChunkId)}">대표 위치 출처 보기</button>`:''}
@@ -1218,12 +1233,12 @@ async function select(id, reveal = true, graphNode = null){
        위치 해석이 여럿이거나 확인된 위치가 없습니다. 여기서 어느 쪽이 맞는지 정하지 않고 지도에도 점을 찍지 않습니다.</p>`;
 
   const head = `
-    <h3>${escH(p.labelKo)}</h3>
+    <h3 title="${escH(p.rawLabel || p.labelKo || '')}">${escH(p.labelKo)}</h3>
     <div class="han">${escH(names.join(', '))}</div>
     ${sourceName ? `<div class="auto">${escH(sourceName)}에 나온 지명 · 이 사료에서 원문을 찾습니다.</div>` : ''}
     <span class="badge ${escH(p.status)}">${escH(
       p.entityType ? (TYPE_KO[p.entityType]||p.entityType) :
-      p.origin === 'ai' ? (p.candidates.length ? '좌표 후보' : '위치 미확인') :
+      p.origin === 'ai' ? (p.candidates.length ? '위치 후보' : '위치 미확인') :
       ({established:'위치 확정',majority:'널리 인정된 위치',disputed:'위치 해석이 갈림',unlocated:'위치 미확인'}[p.status]||p.status))}</span>${
       p.origin === 'ai' ? '<span class="badge ai">조사(자동) · 사람 확인 전</span>' : ''}
     ${cands}
@@ -1249,14 +1264,14 @@ async function select(id, reveal = true, graphNode = null){
   const esc1 = escH;
   const labelOf = eid => {
     const q = state.places.find(x=>x.id===eid); if(q) return q.labelKo;
-    const e = state.entities.find(x=>x.id===eid); return e ? `${e.label}${e.labelHanja ? ' ' + e.labelHanja : ''}` : eid;
+    const e = state.entities.find(x=>x.id===eid); return e ? `${displayLabel(e) || e.label}${e.labelHanja ? ' ' + e.labelHanja : ''}` : eid;
   };
   const objText = o => {
     if(o == null) return '';
     if(typeof o !== 'object') return esc1(o);
     if(o.kind === 'literal') return `“${esc1(o.value)}”`;
     if(o.kind === 'year') return `<b>${escH(o.value < 0 ? '기원전 ' + (-o.value) : o.value)}년</b>`;
-    if(o.kind === 'time') return `<b>${esc1(o.verbatim || o.id)}</b>${o.precision ? ` <span class="role">${esc1(o.precision)}</span>` : ''}`;
+    if(o.kind === 'time') { const unit = precisionLabel(o.precision); return `<b>${esc1(o.verbatim || o.id)}</b>${unit ? ` <span class="role">${esc1(unit)}</span>` : ''}`; }
     if(o.kind === 'entity' || o.kind === 'ref' || o.id) return `<b>${esc1(labelOf(o.id || o.value))}</b>`;
     return esc1(JSON.stringify(o));
   };
@@ -1270,7 +1285,8 @@ async function select(id, reveal = true, graphNode = null){
   const conflictPreds = new Set([...byPred].filter(([k, vs]) => vs.size > 1).map(([k]) => k));
   const claimsHtml = claimsOn.length ? claimsOn.map(c => {
       const key = String(c.predicate || '').replace(/^syj:/,'');
-      const pred = key === 'sameEntityAs' ? '같은 대상으로 본 기록' : key;
+      // 술어는 공용 한글 대조표를 거친다. 표에 없으면 '관련 기록' — 원시 키를 화면에 내보내지 않는다(#198 감사 C-7).
+      const pred = key === 'sameEntityAs' ? '같은 대상으로 본 기록' : predicateLabel(key);
       const object = key === 'sameEntityAs' && c.role === 'object' ? {kind:'entity', id:c.subject} : c.object;
       const conflict = c.role === 'subject' && conflictPreds.has(c.predicate);
       const q = c.quote ? `<div class="quote small">${esc1(c.quote)}</div>` : '';
@@ -1281,7 +1297,7 @@ async function select(id, reveal = true, graphNode = null){
           <span class="badge ${c.origin === 'ai' ? 'ai' : 'human'}">${c.origin === 'ai' ? 'AI 추출' : '사람'}</span>
           ${c.status && c.status !== 'draft' ? `<span class="badge st">${esc1(c.status)}</span>` : ''}</div>
         ${q}
-        <div class="srcline">${where}${c.note ? `<br><span class="cl-note">${esc1(c.note)}</span>` : ''}</div>
+        <div class="srcline">${where}</div>
         <button class="card-btn" data-claim-chunk="${esc1(c.citesChunk)}">인용한 원문 열기</button>
       </div>`;
     }).join('') : `<p class="empty" style="margin-top:10px">${state.origin === 'human' ? '사람이 작성했다고 표시된 기록이 없습니다' : '고른 사료에 맞는 기록이 없습니다'}${cl.allClaims ? ` (전체 기록 ${cl.allClaims}건)` : ''}.</p>`;

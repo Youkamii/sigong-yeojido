@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import {AtlasData,cleanTitle,relationName,relationDates} from '../services/host/app/atlas-data.js';
-import {AtlasStory,normalize,mergeEvents,mergePlaces,displayTitle,shortLabel} from '../services/host/app/atlas-story.js';
+import {AtlasUI} from '../services/host/app/atlas-ui.js';
+import {AtlasStory,normalize,mergeEvents,mergePlaces,collapseEvents,displayTitle,shortLabel} from '../services/host/app/atlas-story.js';
 import {contextAt,yearLabel} from '../services/host/app/chronicle.js';
 import {roleLabel} from '../services/host/app/chronicle-asset-plan.js';
 
@@ -103,7 +104,7 @@ test('관계 그룹은 더 보기로 30개 이후도 표시하고 빈 구역은 
   const story=storyFor(yi),rows=Array.from({length:35},(_,i)=>({entity:{id:`p${i}`,label:`인물 ${i}`,type:'Person'},claims:[]}));
   const group={id:'people',title:'인물 관계',rows};
   assert.equal((story.sectionHtml(group).match(/data-story-entity=/g)||[]).length,8);
-  assert.ok(story.sectionHtml(group).includes('27명 더'));
+  assert.ok(story.sectionHtml(group).includes('27명 더 보기'));
   story.more.add('people-0');assert.equal((story.sectionHtml(group).match(/data-story-entity=/g)||[]).length,35);
   assert.equal(story.sectionHtml({...group,rows:[]}), '');
   const empty={entities:[{id:'empty',type:'Person',label:'기록 없는 인물'}],claims:[],scenePackets:[]};
@@ -303,4 +304,153 @@ test('설명은 넘칠 때만 더 보기를 표시하고 펼친 뒤 접을 수 �
   paragraph.scrollHeight=120;story.updateDescription();assert.equal(button.hidden,false);assert.equal(button.textContent,'더 보기');
   story.expanded=true;story.updateDescription();assert.equal(button.textContent,'접기');assert.ok(classes.has('is-expanded'));assert.equal(button['aria-expanded'],'true');
   story.expanded=false;story.updateDescription();assert.ok(!classes.has('is-expanded'));
+});
+
+// ── #198 적대 리뷰 반영(C-1~C-6, C-25) ─────────────────────────────────────────
+const fakeNode=name=>({name,hidden:false,attrs:{},tabIndex:0,focused:0,innerHTML:'',
+  setAttribute(key,value){this.attrs[key]=value;},getAttribute(key){return this.attrs[key];},
+  contains(){return false;},focus(){this.focused++;globalThis.document.activeElement=this;},querySelector(){return null;}});
+const fakeUi=data=>{
+  const ui=Object.create(AtlasUI.prototype);
+  Object.assign(ui,{data,panel:'story',panes:new Map(),scene:{assets:{activeScene:'scene-noryang-1598'}},
+    chronicle:{data:liveData,year:1598,callbacks:{scenePackets:()=>liveData.scenePackets},error:null,loading:false},
+    root:{querySelector:()=>fakeNode('status')},registerPanel(){},openPanel(){this.panel='story';},
+    closePanel(){this.panel=null;},closeEvidence(){},syncTime(){}});
+  return ui;
+};
+
+test('changing only the year keeps the story history',async()=>{
+  const previousDocument=globalThis.document,previousFetch=globalThis.fetch;
+  globalThis.document={createElement:()=>fakeNode('pane'),body:{dataset:{}},activeElement:null,contains:()=>false};
+  globalThis.fetch=async()=>({ok:true,json:async()=>({images:[]})});
+  try{
+    const data=new AtlasData();data.update(liveData,contextAt(liveData,1598),liveData.scenePackets);
+    const ui=fakeUi(data);
+    const story=new AtlasStory(ui);ui.story=story;
+    story.show(data.entities.get(yi));
+    assert.equal(story.history.length,0);
+    AtlasUI.prototype.update.call(ui,contextAt(liveData,1598));
+    AtlasUI.prototype.update.call(ui,contextAt(liveData,1592));  // 연도만 이동 — 카드도 히스토리도 남는다
+    assert.equal(ui.panel,'story');
+    assert.ok(story.entity,'연도 이동으로 카드가 사라지지 않는다');
+    story.show(data.entities.get(noryang));
+    assert.equal(story.history.length,1);
+    assert.ok(story.pane.innerHTML.includes('<span>이전으로</span>'));
+    await Promise.resolve();
+  }finally{globalThis.document=previousDocument;globalThis.fetch=previousFetch;}
+});
+
+test('changing the source filter clears the story history',async()=>{
+  const previousDocument=globalThis.document,previousFetch=globalThis.fetch;
+  globalThis.document={createElement:()=>fakeNode('pane'),body:{dataset:{}},activeElement:null,contains:()=>false};
+  globalThis.fetch=async()=>({ok:true,json:async()=>({images:[]})});
+  try{
+    const data=new AtlasData();data.update(liveData,contextAt(liveData,1598),liveData.scenePackets);
+    const ui=fakeUi(data);
+    const story=new AtlasStory(ui);ui.story=story;
+    story.show(data.entities.get(yi));story.show(data.entities.get(noryang));
+    assert.equal(story.history.length,1);
+    ui.chronicle.data={...liveData};  // 자료 필터 변경 — 카드의 근거 자체가 달라진다
+    AtlasUI.prototype.update.call(ui,contextAt(liveData,1598));
+    assert.equal(story.history.length,0);
+    assert.equal(story.entity,null);
+    assert.equal(ui.panel,null);
+    await Promise.resolve();
+  }finally{globalThis.document=previousDocument;globalThis.fetch=previousFetch;}
+});
+
+test('timeline badge count matches rendered rows after collapsing',()=>{
+  const rows=[{id:'h1',title:'행주대첩',lo:1593,sceneId:'scene-haengju',placeLabel:'고양 행주산성',basis:[{id:'b1'}]},
+    {id:'h2',title:'행주 대첩',lo:1593,sceneId:'scene-hs-jl1-haengju-battle',placeLabel:'행주산성 대첩비 일대',basis:[{id:'b2'}]},
+    {id:'m',title:'명량 해전',lo:1597,sceneId:'scene-myeongnyang',placeLabel:'울돌목'},
+    {id:'n',title:'노량 해전',lo:1598,sceneId:'scene-noryang',placeLabel:'노량 앞바다'}];
+  const collapsed=collapseEvents(mergeEvents(rows));
+  assert.equal(collapsed.length,3);
+  assert.deepEqual(new Set(collapsed.find(e=>e.lo===1593).basis.map(c=>c.id)),new Set(['b1','b2']));
+  const story=storyFor(yi);story.ui.chronicle.year=1593;story.sceneEvent=()=>({lo:1593,sceneId:null});
+  const html=story.sectionHtml({id:'events',title:'연표',rows:collapsed},true);
+  assert.ok(html.includes('<h3>연표 <span class="atlas-section-count">3</span></h3>'));
+  assert.equal((html.match(/atlas-story-event"/g)||[]).length,3);
+  assert.ok(html.includes('노량 해전'),'1598 노량이 요약에서 밀려나지 않는다');
+  const haengju=collapsed.find(row=>row.lo===1593);
+  assert.ok(html.includes(`data-story-event="${haengju.sceneId}"`),'병합된 행도 장면으로 갈 수 있다');
+  assert.ok(haengju.extraPlaces.length===1,'합쳐진 쪽 장소 표기를 버리지 않는다');
+  assert.ok(html.includes('고양 행주산성')&&html.includes('행주산성 대첩비 일대'));
+});
+
+test('a label that is only a long parenthetical falls back to 장소 미확인',()=>{
+  const label='(장소 미상 — 인용 출처에 광복 당일 장소와 건준 결성 장소가 없음)';
+  assert.equal(shortLabel(label),'');
+  const story=storyFor(yi);
+  const html=story.eventHtml({id:'g',title:'광복',lo:1945,sceneId:'scene-gwangbok-geonjun-1945',placeLabel:label});
+  assert.ok(html.includes(`class="atlas-event-place" title="${label}">장소 미확인</small>`));
+  const places=mergePlaces([{label,sceneId:'scene-gwangbok-geonjun-1945',events:new Map()},
+    {label:'(다른 긴 괄호 설명만 남은 장소 이름)',sceneId:'other',events:new Map()}]);
+  assert.equal(places.length,2,'정규화 결과가 빈 라벨끼리 뭉치지 않는다');
+  assert.ok(story.sectionHtml({id:'places',title:'장소',rows:places}).includes('>장소 미확인</strong>'));
+});
+
+test('a person with a concrete relation is not also listed under 같은 사건',()=>{
+  const story=storyFor(yi),target=story.ui.data.entities.get('person-yinav-jin-rin');
+  assert.ok(target);
+  const claim={subject:yi,predicate:'syj:hasTeacher',object:{kind:'entity',id:target.id}};
+  const row={entity:target,claims:[claim],relationClaims:[claim],sharedYears:new Set([1598])};
+  assert.deepEqual(story.relationGroups([row]).map(group=>group.name),['스승']);
+  const html=story.sectionHtml({id:'people',title:'관계',rows:[row]});
+  assert.equal((html.match(/data-story-entity=/g)||[]).length,1);
+  assert.ok(!html.includes('같은 사건'));
+  const plain={entity:target,claims:[],relationClaims:[],sharedYears:new Set([1598])};
+  assert.deepEqual(story.relationGroups([plain]).map(group=>group.name),['같은 사건']);
+});
+
+test('a related place with no events shows 연결된 사건 없음',()=>{
+  const story=storyFor(yi);
+  const rows=[{label:'통영 한산도 이충무공 유적',fullLabel:'통영 한산도 이충무공 유적',entityId:'place-yi',events:new Map()}];
+  const html=story.sectionHtml({id:'places',title:'장소',rows});
+  assert.ok(html.includes('<small>연결된 사건 없음</small>'));
+  assert.ok(!html.includes('사건 0'));
+});
+
+test('switching tabs resets the body scroll to the top',async()=>{
+  const previousDocument=globalThis.document,previousFetch=globalThis.fetch;
+  const body={scrollTop:0};
+  globalThis.document={createElement:()=>({setAttribute(){},querySelector(selector){return selector==='.atlas-story-body'?body:null;}})};
+  globalThis.fetch=async()=>({ok:true,json:async()=>({images:[]})});
+  try{
+    const sample=storyFor(yi),ui={...sample.ui,registerPanel(){},openPanel(){},closePanel(){}};
+    const story=new AtlasStory(ui);story.show(sample.entity);
+    assert.equal(body.scrollTop,0);
+    body.scrollTop=400;
+    story.pane.onclick({target:{closest:selector=>selector==='[data-story-tab]'?{dataset:{storyTab:'events'}}:null}});
+    assert.equal(body.scrollTop,0,'탭을 바꾸면 첫 행부터 보인다');
+    body.scrollTop=250;
+    story.pane.onclick({target:{closest:selector=>selector==='[data-story-more]'?{dataset:{storyMore:'events'}}:null}});
+    assert.equal(body.scrollTop,250,'더 보기는 보던 자리를 지킨다');
+    await Promise.resolve();
+  }finally{globalThis.document=previousDocument;globalThis.fetch=previousFetch;}
+});
+
+test('opening a panel moves focus into it and closing restores it',()=>{
+  const previousDocument=globalThis.document;
+  const trigger=fakeNode('trigger'),pane=fakeNode('story'),settingsButton=fakeNode('settingsButton');
+  globalThis.document={body:{dataset:{}},activeElement:trigger,contains:target=>target===trigger};
+  try{
+    const ui=Object.create(AtlasUI.prototype);
+    Object.assign(ui,{panes:new Map([['story',pane]]),root:{querySelector:()=>settingsButton},scene:{},panel:null,
+      closeEvidence(){},events:{hide(){}}});
+    ui.openPanel('story');
+    assert.equal(pane.focused,1);
+    assert.equal(pane.attrs.role,'region');
+    assert.equal(pane.tabIndex,-1);
+    assert.equal(ui.returnFocus,trigger);
+    ui.openPanel('story');
+    assert.equal(pane.focused,1,'이미 열린 패널을 다시 열어도 포커스를 빼앗지 않는다');
+    ui.closePanel();
+    assert.equal(trigger.focused,1);
+    assert.equal(ui.returnFocus,null);
+    // 돌아갈 요소가 그 사이 사라졌으면 조용히 넘어간다
+    ui.openPanel('story');globalThis.document.contains=()=>false;
+    ui.closePanel();
+    assert.equal(trigger.focused,1);
+  }finally{globalThis.document=previousDocument;}
 });

@@ -46,11 +46,21 @@
 
 ## 문구 표
 
+**기준**: 브랜치 `feat/ui-register-198` 워킹트리, 2026-09-16(#198 2차 적대 리뷰 반영 뒤).
+
+**표 읽는 법 — 지금 화면에 있는 문구는 이렇게 읽는다.** '전'은 #194 이전 값, '후'는 #194 작업의 결과값이다. 그 뒤 #198 이 문체를 -ㅂ니다체로 바꾸고 적대 리뷰 반영이 얹혔으므로 **현재 값은 '#198 재조정' 열이 정한다**: 이 열이 `유지` 로 시작하면 '후' 가 곧 현재 코드 값이고, 그 밖에는 `값 — 사유` 형태로 **맨 앞 값이 현재 코드 값**이다. 현재 코드에 그 문구 자체가 없으면 '후' 를 `(코드에 없음)` 으로 적고 '#198 재조정' 에 사유를 남겼다.
+
+**기계 대조**: 위 규칙으로 뽑은 현재 값 804행을 워킹트리 소스와 문자열 대조했다 — **불일치 0건**(2026-09-16, #198 감사 C-33). `(코드에 없음)` 으로 적은 6행은 반대로 '전' 문구가 정말 소스에 없는지까지 확인했다. 파일이 옮겨간 문구는 '파일' 열을 옮겨간 곳으로 고쳤다. 서버·브라우저는 띄우지 않았다 — 대조는 소스 문자열까지다.
+
+각주 ㄱ. `atlas-story.js` 의 `함께 참여`·`출생`·`사망`·`생몰 미확인` 네 행과 `ai-images.js` 의 AI 고지 문장은 #197 카드 개편·#198 고지문 삭제(Q5=a)로 문구 자체가 없어졌다. 행을 지우지 않고 '후' 를 `(코드에 없음)`, '#198 재조정' 을 사유로 남긴다.
+각주 ㄴ. `chronicle-scene.js` 의 조작 안내는 현재 `index.html` 의 3D 전환 경로에서만 설정한다.
+각주 ㄷ. `scripts/ai_images/finalize_image.py` 의 `NOTICE` 상수는 `index.json` 호환으로만 남아 있고 화면 경로가 없다(Q5=a).
+
 | 파일 | 위치(함수/요소) | 전 | 후 | 바꾼 이유 | #198 재조정 |
 |---|---|---|---|---|---|
 | services/host/index.html | title / 문자열 (수정 전 6행) | 시공여지도 | 시공여지도 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/index.html | body / h1 (수정 전 274행) | 시공여지도 | 시공여지도 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/index.html | body / div (수정 전 274행) | SIGONG YEOJIDO | 유지(브랜드 로마자, 리더 결정) | 기준서 §1 / B-2 우리말 표기 | 유지 |
+| services/host/index.html | body / div (수정 전 274행) | SIGONG YEOJIDO | SIGONG YEOJIDO | 기준서 §1 / B-2 우리말 표기 | 유지 |
 | services/host/index.html | body / p (수정 전 274행) | 김정호는 자기 시대의 조선을 목판에 새겼다. 대동여지도는 한 시점의 공간이다. ⏎        여기서는 거기에 시간을 얹는다 — 그리고 모든 선에 어느 사료가 그렇게 말했는지를 달아둔다. | 김정호는 자기 시대의 조선을 목판에 새겼다. 대동여지도는 한 시점의 공간이다. ⏎        이 지도에서는 시간도 살펴봐요. 각 선을 그린 근거도 자료에서 확인해요. | 기준서 §1 쉬운 용어 | 김정호는 자기 시대의 조선을 목판에 새겼습니다. 대동여지도는 한 시점의 공간입니다. ⏎       이 지도에서는 시간도 살펴봅니다. 각 선을 그린 근거도 사료(역사 기록)에서 확인합니다. — 문장 유지·문체만 -ㅂ니다체 (Q10=b·Q3=b) · '사료' 첫 등장 풀이 1회 (Q9=a) |
 | services/host/index.html | body / div / aria-label (수정 전 274행) | 시작 화질 | 시작 화질 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/index.html | body / strong (수정 전 274행) | 낮음 | 낮음 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
@@ -62,7 +72,7 @@
 | services/host/index.html | body / button#enter (수정 전 274행) | 들어가기 | 들어가기 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/index.html | body / div (수정 전 274행) | 대동여지도 (규장각 소장본) · Public domain · commons.wikimedia.org | 대동여지도 (규장각 소장본) · 저작권 제한 없음 · commons.wikimedia.org | 기준서 §1 나열 축소 | 유지 |
 | services/host/index.html | body / span (수정 전 274행) | 시공여지도 | 시공여지도 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/index.html | body / small (수정 전 274행) | SIGONG YEOJIDO | 유지(브랜드 로마자, 리더 결정) | 기준서 §1 / B-2 우리말 표기 | 유지 |
+| services/host/index.html | body / small (수정 전 274행) | SIGONG YEOJIDO | SIGONG YEOJIDO | 기준서 §1 / B-2 우리말 표기 | 유지 |
 | services/host/index.html | body / button#b2d (수정 전 274행) | 지도 | 지도 보기 | 기준서 §2 버튼·안내 | 지도 — 짧은 모드 이름 (Q4=b) · aria-label "평면 지도로 보기" |
 | services/host/index.html | body / button#b3d (수정 전 274행) | 3D | 입체로 보기 | 기준서 §2 버튼·안내; 기준서 §1 / B-2 우리말 표기 | 3D — 짧은 모드 이름 (Q4=b) · 영어 예외 3D · aria-label "입체 지도로 보기" |
 | services/host/index.html | body / button#bgraph (수정 전 274행) | 그래프 | 연결 보기 | 기준서 §2 버튼·안내 | 연결 — 짧은 모드 이름 (Q4=b) · aria-label "출처 연결 보기" |
@@ -310,7 +320,7 @@
 | services/host/index.html | span / 문자열 (수정 전 1207행) | 기원전  | 기원전  | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/index.html | span / 문자열 (수정 전 1207행) | 기원전  | 기원전  | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/index.html | select / 문자열 (수정 전 1212행) | 출처 | 출처 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/index.html | select / span (수정 전 1212행) | AI 연결 · 미검토 | AI 연결 · 미확인 | 기준서 §1 짧고 자연스러운 표현 | 유지 |
+| services/host/index.html | select / span (수정 전 1212행) | AI 연결 · 미검토 | AI 연결 · 사람 확인 전 | 기준서 §1 짧고 자연스러운 표현 | 유지 |
 | services/host/index.html | select / 화면 문구 (수정 전 1213행) | "&gt;위치 서술 출처 | "&gt;위치 설명 보기 | 기준서 §2 버튼·안내 | 유지 |
 | services/host/index.html | select / 화면 문구 (수정 전 1214행) | "&gt;대표점 좌표 출처 | "&gt;대표 위치 출처 보기 | 기준서 §2 버튼·안내 | 유지 |
 | services/host/index.html | select / 화면 문구 (수정 전 1215행) | "&gt;사료 카드 | "&gt;자료 설명 보기 | 기준서 §1 쉬운 용어; 기준서 §2 버튼·안내 | ">사료 설명 보기 — '사료' 되살림 (Q9=a) |
@@ -319,13 +329,13 @@
 | services/host/index.html | select / b (수정 전 1217행) | 비정안이 여럿이거나 확정된 것이 없다. 이 시스템은 판정하지 않으므로 지도에 점을 찍지 않는다. | 위치 해석이 여럿이거나 확인된 위치가 없어요. 여기서 어느 쪽이 맞는지 정하지 않고 지도에도 점을 찍지 않아요. | 기준서 §1 쉬운 용어; 기준서 §2 안내 말투 / E-7 | 위치 해석이 여럿이거나 확인된 위치가 없습니다. 여기서 어느 쪽이 맞는지 정하지 않고 지도에도 점을 찍지 않습니다. — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/index.html | select / 문자열 (수정 전 1222행) |  ·  | ,  | 기준서 §1 동적 목록의 3개 이상 가운뎃점 나열 방지 | 유지 |
 | services/host/index.html | select / 화면 문구 (수정 전 1223행) | 에 나온 지명 · 이 사료 안에서 원문을 찾는다. | 에 나온 지명 · 이 자료에서 원문을 찾아요. | 기준서 §1 쉬운 용어 | 에 나온 지명 · 이 사료에서 원문을 찾습니다. — 문체 -ㅂ니다/-십시오 (Q3=b) · '사료' 되살림 (Q9=a) |
-| services/host/index.html | select / 문자열 (수정 전 1226행) | 좌표 후보 | 좌표 후보 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
+| services/host/index.html | select / 문자열 (수정 전 1226행) | 좌표 후보 | 위치 후보 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 위치 후보 — 같은 뜻을 두 말로 부르던 것을 통일 (#198 감사 C-17) · scripts/verify_place_research.py 단언 함께 갱신 |
 | services/host/index.html | select / 문자열 (수정 전 1226행) | 위치 미정 | 위치 미확인 | 기준서 §1 짧고 자연스러운 표현 | 유지 |
 | services/host/index.html | select / 문자열 (수정 전 1227행) | 위치 확정 | 위치 확정 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/index.html | select / 문자열 (수정 전 1227행) | 통설 | 널리 인정된 위치 | 기준서 §1 짧고 자연스러운 표현 | 유지 |
 | services/host/index.html | select / 문자열 (수정 전 1227행) | 비정이 갈림 | 위치 해석이 갈림 | 기준서 §1 쉬운 용어 | 유지 |
 | services/host/index.html | select / 문자열 (수정 전 1227행) | 위치 미정 | 위치 미확인 | 기준서 §1 짧고 자연스러운 표현 | 유지 |
-| services/host/index.html | select / span (수정 전 1228행) | 조사(자동) · 미확인 | 조사(자동) · 미확인 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
+| services/host/index.html | select / span (수정 전 1228행) | 조사(자동) · 미확인 | 조사(자동) · 사람 확인 전 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/index.html | select / div (수정 전 1231행) | 원문 출처 | 원문 출처 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/index.html | select / p (수정 전 1231행) | 찾는 중… | 찾고 있어요… | 기준서 §2 안내 말투 / E-7 | 찾고 있습니다… — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/index.html | objText / 문자열 (수정 전 1258행) | 기원전  | 기원전  | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
@@ -355,13 +365,13 @@
 | services/host/index.html | select / div (수정 전 1307행) | 두 글자 이상 이름 또는 국명 색인의 정확 일치로 찾음(자동) · 사람이 확인한 연결 아님 | 두 글자 이상 이름이나 나라 이름 색인에서 똑같은 이름을 자동으로 찾았어요. 사람이 확인한 연결은 아니에요 | 기준서 §1 짧고 자연스러운 표현 | 두 글자 이상 이름이나 나라 이름 색인에서 똑같은 이름을 자동으로 찾았습니다. 사람이 확인한 연결은 아닙니다 — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/index.html | select / div (수정 전 1309행) | 한 글자 이름은 원문 자동 검색 안 함 · 국명 색인이 있는 사료에서 정확히 같은 국명만 찾는다. | 한 글자 이름은 원문에서 자동으로 찾지 않아요. 나라 이름 색인이 있는 자료에서 똑같은 나라 이름만 찾아요. | 기준서 §1 쉬운 용어 | 한 글자 이름은 원문에서 자동으로 찾지 않습니다. 나라 이름 색인이 있는 사료에서 똑같은 나라 이름만 찾습니다. — 문체 -ㅂ니다/-십시오 (Q3=b) · '사료' 되살림 (Q9=a) |
 | services/host/index.html | module / 문자열 (수정 전 1342행) | 지명을 클릭하면 출처가 열린다 | 지명을 누르면 출처가 열려요 | 기준서 §1 짧고 자연스러운 표현 | 지명을 누르면 출처가 열립니다 — 문체 -ㅂ니다/-십시오 (Q3=b) |
-| services/host/index.html | module / 문자열 (수정 전 1348행) | 끌어서 이동 · 휠로 확대 · 오른쪽 드래그로 회전 | 끌어서 이동하세요. 마우스 휠로 확대하고 오른쪽 버튼으로 끌어 회전하세요. | 기준서 §1 나열 축소; 기준서 §2 버튼·안내 | 유지 — #195 이후 명사 나열(끌어서 이동, 휠로 확대, 오른쪽 버튼으로 회전)이라 -요체가 없다 |
-| services/host/index.html | init3d / 문자열 (수정 전 1386행) | 끌어서 이동 · 휠로 확대 · 연도로 탐색 | 끌어서 이동하세요. 마우스 휠로 확대하고 연도를 바꿔 살펴보세요. | 기준서 §1 나열 축소; 기준서 §2 버튼·안내 | 유지 — #195 이후 명사 나열이라 -요체가 없다 |
+| services/host/index.html | module / 문자열 (수정 전 1348행) | 끌어서 이동 · 휠로 확대 · 오른쪽 드래그로 회전 | 끌어서 이동, 휠로 확대, 오른쪽 버튼으로 회전 | 기준서 §1 나열 축소; 기준서 §2 버튼·안내 | 유지 — #195 이후 명사 나열(끌어서 이동, 휠로 확대, 오른쪽 버튼으로 회전)이라 -요체가 없다 |
+| services/host/index.html | init3d / 문자열 (수정 전 1386행) | 끌어서 이동 · 휠로 확대 · 연도로 탐색 | 끌어서 이동, 휠로 확대, 오른쪽 버튼으로 회전 | 기준서 §1 나열 축소; 기준서 §2 버튼·안내 | 유지 — #195 이후 명사 나열이라 -요체가 없다 |
 | services/host/index.html | init3d / 문자열 (수정 전 1412행) | 지도 자료를 불러오지 못했습니다. | 지도 자료를 불러오지 못했어요. | 기준서 §2 안내 말투 / E-7 | 지도 자료를 불러오지 못했습니다. — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/index.html | init3d / 문자열 (수정 전 1415행) | 국가 영역 자료를 불러오지 못했습니다. | 국가 영역 자료를 불러오지 못했어요. | 기준서 §2 안내 말투 / E-7 | 국가 영역 자료를 불러오지 못했습니다. — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/app/ai-images.js | loadAiImages / 문자열 (수정 전 8행) | AI 이미지 목록을 불러오지 못했습니다. | AI 상상도 목록을 불러오지 못했어요. | 기준서 §2 안내 말투 / E-7; 기준서 §3 배지 통일 | AI 상상도 목록을 불러오지 못했습니다. — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/app/ai-images.js | loadAiImages / 문자열 (수정 전 17행) | AI 생성 상상도 | AI 상상도 | 기준서 §3 배지 통일 | 유지 |
-| services/host/app/ai-images.js | loadAiImages / 문자열 (수정 전 18행) | 실제 사료·유물 사진이 아니라 AI가 만든 상상도입니다. | 실제 사료·유물 사진이 아니라 AI가 만든 상상도입니다. | 유지 — 작업 지시의 NOTICE 보존 | 삭제 — AI 고지 문장 완전 삭제 (Q5=a) · notice 기본값·필드 노출 제거 |
+| services/host/app/ai-images.js | loadAiImages / 문자열 (수정 전 18행) | 실제 사료·유물 사진이 아니라 AI가 만든 상상도입니다. | (코드에 없음) | 유지 — 작업 지시의 NOTICE 보존 | 삭제 — AI 고지 문장 완전 삭제 (Q5=a) · notice 기본값·필드 노출 제거 |
 | services/host/app/atlas-chat.js | constructor / 문자열 (수정 전 10행) | AI와 역사 이야기 | AI와 역사 이야기 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/atlas-chat.js | constructor / 화면 문구 (수정 전 11행) | AI와 역사 이야기 | AI와 역사 이야기 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/atlas-chat.js | constructor / button / aria-label (수정 전 11행) | AI 대화 닫기 | AI 대화 닫기 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
@@ -372,12 +382,12 @@
 | services/host/app/atlas-chat.js | renderContext / 문자열 (수정 전 43행) | 에 대해 기록은 어떻게 설명하나요? | 에 대해 기록은 어떻게 설명하나요? | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/atlas-chat.js | renderContext / 문자열 (수정 전 44행) | 과 관련된 사건을 알려주세요. | 과 관련된 사건을 알려주세요. | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 과 관련된 사건을 알려주십시오. — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/app/atlas-chat.js | renderContext / p (수정 전 45행) | 이런 질문도 해보세요 | 이런 질문도 해 보세요 | 기준서 §2 버튼·안내 | 이런 질문도 해 보십시오 — 문체 -ㅂ니다/-십시오 (Q3=b) |
-| services/host/app/atlas-data.js | typeName / 문자열 (수정 전 4행) | 인물 | 인물 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/app/atlas-data.js | typeName / 문자열 (수정 전 4행) | 사건 | 사건 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/app/atlas-data.js | typeName / 문자열 (수정 전 4행) | 장소 | 장소 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/app/atlas-data.js | typeName / 문자열 (수정 전 4행) | 나라 | 나라 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/app/atlas-data.js | typeName / 문자열 (수정 전 4행) | 전승 | 전승 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/app/atlas-data.js | typeName / 문자열 (수정 전 4행) | 기록 | 기록 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
+| services/host/app/chronicle.js | TYPE_WORDS (수정 전 atlas-data.js:4 typeName) | 인물 | 인물 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 — 값은 그대로, 대조표만 chronicle.js 의 `TYPE_WORDS` 로 옮겨 여러 화면이 함께 쓴다 (#198 감사 C-18) |
+| services/host/app/chronicle.js | TYPE_WORDS (수정 전 atlas-data.js:4 typeName) | 사건 | 사건 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 — 값은 그대로, 대조표만 chronicle.js 의 `TYPE_WORDS` 로 옮겨 여러 화면이 함께 쓴다 (#198 감사 C-18) |
+| services/host/app/chronicle.js | TYPE_WORDS (수정 전 atlas-data.js:4 typeName) | 장소 | 장소 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 — 값은 그대로, 대조표만 chronicle.js 의 `TYPE_WORDS` 로 옮겨 여러 화면이 함께 쓴다 (#198 감사 C-18) |
+| services/host/app/chronicle.js | TYPE_WORDS (수정 전 atlas-data.js:4 typeName) | 나라 | 나라 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 — 값은 그대로, 대조표만 chronicle.js 의 `TYPE_WORDS` 로 옮겨 여러 화면이 함께 쓴다 (#198 감사 C-18) |
+| services/host/app/chronicle.js | TYPE_WORDS (수정 전 atlas-data.js:4 typeName) | 전승 | 전승 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 — 값은 그대로, 대조표만 chronicle.js 의 `TYPE_WORDS` 로 옮겨 여러 화면이 함께 쓴다 (#198 감사 C-18) |
+| services/host/app/chronicle.js | TYPE_WORDS (수정 전 atlas-data.js:4 typeName) | 기록 | 기록 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 — 값은 그대로, 대조표만 chronicle.js 의 `TYPE_WORDS` 로 옮겨 여러 화면이 함께 쓴다 (#198 감사 C-18) |
 | services/host/app/atlas-data.js | relationName / 문자열 (수정 전 9행) | 자녀 | 자녀 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/atlas-data.js | relationName / 문자열 (수정 전 9행) | 자녀 | 자녀 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/atlas-data.js | relationName / 문자열 (수정 전 9행) | 부모 | 부모 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
@@ -432,13 +442,13 @@
 | services/host/app/atlas-story.js | sections / 문자열 (수정 전 156행) | 연표 | 연표 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | sections / 문자열 (수정 전 157행) | 장소 | 장소 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | sections / 문자열 (수정 전 159행) | 시대 | 시대 | 유지 — #193 패널 기준 | 유지 |
-| services/host/app/atlas-story.js | relationGroups / 문자열 (수정 전 164행) | 함께 참여 | 함께 참여 | 유지 — #193 패널 기준 | 해당 없음 — #197 카드 개편에서 사라진 문구 |
+| services/host/app/atlas-story.js | relationGroups / 문자열 (수정 전 164행) | 함께 참여 | (코드에 없음) | 유지 — #193 패널 기준 | 해당 없음 — #197 카드 개편에서 사라진 문구 |
 | services/host/app/atlas-story.js | relationGroups / 문자열 (수정 전 164행) | 같은 사건 | 같은 사건 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | relationGroups / 문자열 (수정 전 165행) | 같은 사건 | 같은 사건 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | relationGroups / 문자열 (수정 전 166행) | 관계 | 관계 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | eventHtml / 문자열 (수정 전 181행) | 장소 미확인 | 장소 미확인 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | timelineHtml / 문자열 (수정 전 186행) | 연도 미확인 | 연도 미확인 | 유지 — #193 패널 기준 | 유지 |
-| services/host/app/atlas-story.js | moreHtml / 화면 문구 (수정 전 190행) | 더 | 더 | 유지 — #193 패널 기준 | 유지 |
+| services/host/app/atlas-story.js | moreHtml / 화면 문구 (수정 전 190행) | 더 | 더 보기 | 유지 — #193 패널 기준 | 더 보기 — 같은 화면의 다른 버튼과 형태를 맞춤 (#198 감사 C-15) |
 | services/host/app/atlas-story.js | sectionHtml / 문자열 (수정 전 200행) | 명 | 명 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | sectionHtml / 문자열 (수정 전 210행) | 건 | 건 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | sectionHtml / small (수정 전 217행) | 사건 | 사건 | 유지 — #193 패널 기준 | 유지 |
@@ -446,9 +456,9 @@
 | services/host/app/atlas-story.js | sectionHtml / 문자열 (수정 전 227행) |  모두 보기  |  모두 보기  | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | updateDescription / 문자열 (수정 전 236행) | 접기 | 접기 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | updateDescription / 문자열 (수정 전 236행) | 더 보기 | 더 보기 | 유지 — #193 패널 기준 | 유지 |
-| services/host/app/atlas-story.js | render / 문자열 (수정 전 247행) |  출생 |  출생 | 유지 — #193 패널 기준 | 해당 없음 — #197 카드 개편에서 사라진 문구 |
-| services/host/app/atlas-story.js | render / 문자열 (수정 전 247행) |  사망 |  사망 | 유지 — #193 패널 기준 | 해당 없음 — #197 카드 개편에서 사라진 문구 |
-| services/host/app/atlas-story.js | render / 문자열 (수정 전 247행) | 생몰 미확인 | 생몰 미확인 | 유지 — #193 패널 기준 | 해당 없음 — #197 카드 개편에서 사라진 문구 |
+| services/host/app/atlas-story.js | render / 문자열 (수정 전 247행) |  출생 | (코드에 없음) | 유지 — #193 패널 기준 | 해당 없음 — #197 카드 개편에서 사라진 문구 |
+| services/host/app/atlas-story.js | render / 문자열 (수정 전 247행) |  사망 | (코드에 없음) | 유지 — #193 패널 기준 | 해당 없음 — #197 카드 개편에서 사라진 문구 |
+| services/host/app/atlas-story.js | render / 문자열 (수정 전 247행) | 생몰 미확인 | (코드에 없음) | 유지 — #193 패널 기준 | 해당 없음 — #197 카드 개편에서 사라진 문구 |
 | services/host/app/atlas-story.js | render / 문자열 (수정 전 248행) | 설화·전승 | 설화·전승 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | render / span (수정 전 250행) | AI 상상도 | AI 상상도 | 유지 — #193 패널 기준 | 유지 |
 | services/host/app/atlas-story.js | render / nav / aria-label (수정 전 254행) | 이야기 목록 | 이야기 목록 | 유지 — #193 패널 기준 | 유지 |
@@ -549,7 +559,7 @@
 | services/host/app/chronicle-scene.js | sceneDestinationOptions / 문자열 (수정 전 14행) | 도시·시설 ·  | 도시·시설 ·  | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/chronicle-scene.js | refresh / 문자열 (수정 전 71행) | 이야기를 골라 보기 | 이야기를 골라 보기 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/chronicle-scene.js | refresh / 문자열 (수정 전 106행) | 인물·사건을 골라 이동 | 인물·사건을 골라 이동 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/app/chronicle-scene.js | refresh / 문자열 (수정 전 122행) | 끌어서 이동 · 휠로 확대 · 오른쪽 드래그로 회전 | 끌어서 이동하세요. 마우스 휠로 확대하고 오른쪽 버튼으로 끌어 회전하세요. | 기준서 §1 나열 축소; 기준서 §2 버튼·안내 | 유지 — #195 이후 명사 나열이라 -요체가 없다 |
+| services/host/app/chronicle-scene.js | refresh / 문자열 (수정 전 122행) | 끌어서 이동 · 휠로 확대 · 오른쪽 드래그로 회전 | (코드에 없음) | 기준서 §1 나열 축소; 기준서 §2 버튼·안내 | 해당 없음 — 이 문구는 index.html 의 3D 전환 쪽에만 남아 있다 (각주 ㄴ) |
 | services/host/app/chronicle-scene.js | renderFocus / 문자열 (수정 전 133행) | 설화·전승의 무대 | 설화·전승의 무대 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/chronicle-scene.js | renderFocus / 문자열 (수정 전 133행) | 시설 · 추정 존속 | 시설 · 추정 존속 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/chronicle-scene.js | renderFocus / 문자열 (수정 전 133행) | 성곽 배경 · 추정 | 성곽 배경 · 추정 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
@@ -634,7 +644,7 @@
 | services/host/app/chronicle.js | contextAt / 문자열 (수정 전 102행) | 출생–사망 | 출생–사망 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 출생~사망 — 연도 범위 물결표 |
 | services/host/app/chronicle.js | contextAt / 문자열 (수정 전 116행) | 사건 참여 | 사건 참여 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/chronicle.js | constructor / label (수정 전 153행) | 연도 입력 | 연도 입력 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
-| services/host/app/chronicle.js | constructor / input#historyYear / aria-label (수정 전 153행) | 탐색 연도 | 탐색 연도 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
+| services/host/app/chronicle.js | constructor / input#historyYear / aria-label (수정 전 153행) | 탐색 연도 | 연도 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 연도 — 라벨은 짧게 (v2 §1, #198 감사 C-24) |
 | services/host/app/chronicle.js | constructor / span (수정 전 153행) | 년 | 년 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/chronicle.js | constructor / div / aria-label (수정 전 153행) | 1년씩 이동, 길게 누르면 빨라집니다 | 1년씩 이동해요. 길게 누르면 빨라져요 | 기준서 §1 짧고 자연스러운 표현 | 1년씩 이동합니다. 길게 누르면 빨라집니다 — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/app/chronicle.js | constructor / button / aria-label (수정 전 153행) | 이전 연도, 길게 누르면 빨라집니다 | 이전 해. 길게 누르면 빨라져요 | 기준서 §1 짧고 자연스러운 표현 | 이전 해. 길게 누르면 빨라집니다 — 문체 -ㅂ니다/-십시오 (Q3=b) |
@@ -642,7 +652,7 @@
 | services/host/app/chronicle.js | constructor / button / aria-label (수정 전 153행) | 다음 연도, 길게 누르면 빨라집니다 | 다음 해. 길게 누르면 빨라져요 | 기준서 §1 짧고 자연스러운 표현 | 다음 해. 길게 누르면 빨라집니다 — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/app/chronicle.js | constructor / button / title (수정 전 153행) | 1년 후 · 길게 누르면 빨라집니다 | 1년 후. 길게 누르면 빨라져요 | 기준서 §1 짧고 자연스러운 표현 | 1년 후. 길게 누르면 빨라집니다 — 문체 -ㅂ니다/-십시오 (Q3=b) |
 | services/host/app/chronicle.js | constructor / button (수정 전 153행) | 이동 | 이동하기 | 기준서 §2 버튼·안내 | 유지 |
-| services/host/app/chronicle.js | constructor / small#yearInputHelp (수정 전 153행) | Enter로 이동 · 기원전은 −500처럼 입력 | 입력 후 이동을 누르세요. 기원전은 −500처럼 적으세요 | 기준서 §2 버튼·안내; 기준서 §1 / B-2 우리말 표기 | 입력 후 이동을 누르십시오. 기원전은 −500처럼 적으십시오 — 문체 -ㅂ니다/-십시오 (Q3=b) |
+| services/host/app/chronicle.js | constructor / small#yearInputHelp (수정 전 153행) | Enter로 이동 · 기원전은 −500처럼 입력 | 숫자를 적고 엔터를 누릅니다. 기원전은 −500처럼 적습니다 | 기준서 §2 버튼·안내; 기준서 §1 / B-2 우리말 표기 | 숫자를 적고 엔터를 누릅니다. 기원전은 −500처럼 적습니다 — 아틀라스에는 '이동하기' 버튼이 없는데 스크린리더가 그 버튼을 누르라고 읽었다 (#198 감사 C-24) |
 | services/host/app/chronicle.js | constructor / button / aria-label (수정 전 153행) | 이전 사건 연도로 | 이전 사건으로 이동하기 | 기준서 §2 버튼·안내 | 유지 |
 | services/host/app/chronicle.js | constructor / button (수정 전 153행) | ← 이전 사건 | ← 이전 사건 보기 | 기준서 §2 버튼·안내 | 유지 |
 | services/host/app/chronicle.js | constructor / button / aria-label (수정 전 153행) | 시간 재생 | 시간 재생하기 | 기준서 §2 버튼·안내 | 유지 |
@@ -789,7 +799,7 @@
 | services/host/app/graph.js | draw / 문자열 (수정 전 74행) | 사람 | 사람 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/graph.js | draw / 문자열 (수정 전 74행) | AI 추출 | AI 추출 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
 | services/host/app/graph.js | draw / 문자열 (수정 전 74행) | 좌표 근거 연결 | 위치 출처 연결 | 기준서 §1 짧고 자연스러운 표현 | 유지 |
-| services/host/app/graph.js | draw / 문자열 (수정 전 74행) | 조사 후보 · 미확정 | 위치 후보 · 미확인 | 기준서 §1 짧고 자연스러운 표현 | 유지 |
+| services/host/app/graph.js | draw / 문자열 (수정 전 74행) | 조사 후보 · 미확정 | 위치 후보 · 확인 전 | 기준서 §1 짧고 자연스러운 표현 | 유지 |
 | services/host/app/graph.js | draw / 문자열 (수정 전 79행) | 인물·장소·대상 | 관련 항목 | 기준서 §1 나열 축소 | 유지 |
 | services/host/app/graph.js | draw / 문자열 (수정 전 79행) | 주장 | 기록 | 기준서 §1 쉬운 용어 | 유지 |
 | services/host/app/graph.js | draw / 문자열 (수정 전 79행) | 인용한 원문 | 인용한 원문 | 유지 — 기준서 §2·§4, 이름·수치·역할·짧은 문구 보존 | 유지 |
@@ -858,7 +868,7 @@
 | services/host/app/timeline.js | _track / 문자열 (수정 전 535행) | 시작 미상 | 시작 미확인 | 기준서 §2 안내 말투 / E-7 | 유지 |
 | services/host/app/timeline.js | _track / 문자열 (수정 전 535행) | 끝 미상 | 끝 미확인 | 기준서 §2 안내 말투 / E-7 | 유지 |
 | scripts/ai_images/finalize_image.py | LABEL / 문자열 (수정 전 14행) | AI 생성 상상도 | AI 상상도 | 기준서 §3 배지 통일 | 유지 |
-| scripts/ai_images/finalize_image.py | NOTICE / 문자열 (수정 전 15행) | 실제 사료·유물 사진이 아니라 AI 가 만든 상상도입니다. | 실제 사료·유물 사진이 아니라 AI 가 만든 상상도입니다. | 유지 — 작업 지시의 NOTICE 보존 | 상수만 유지 — index.json 호환 (Q5=a) · 화면 경로 없음을 주석으로 남김 |
+| scripts/ai_images/finalize_image.py | NOTICE / 문자열 (수정 전 15행) | 실제 사료·유물 사진이 아니라 AI 가 만든 상상도입니다. | 실제 사료·유물 사진이 아니라 AI 가 만든 상상도입니다. | 유지 — 작업 지시의 NOTICE 보존 | 유지 — 상수는 `index.json` 호환으로 남아 있고 이 문자열을 화면에 띄우는 경로는 없다 (Q5=a, 각주 ㄷ) |
 
 ## 제외 범위와 확인 경로
 
@@ -909,3 +919,38 @@
 - 문구를 비교하는 테스트 `ai-images` · `branch-review-regressions` · `continuing-cities` · `facility-persistence` · `scene-kinds` · `story-card` 의 기대 문구만 맞췄다.
 - 화면 문구를 그대로 기다리는 `scripts/verify_*.py`(graph · ndl_scan · origin_filter · panel_responses · place_research · viewer · ai_images)의 문자열도 함께 맞췄다. 서버·브라우저는 실행하지 않았다(NOT_RUN).
 - 데이터 파일(json/md)·`README.md`·`index.json` 은 건드리지 않았다. 커밋하지 않았다.
+
+## #198 2차 — 적대 리뷰 반영으로 바뀐 화면 문구 (2026-09-16)
+
+`work-orders.md` C-5·C-7~C-18·C-24 반영분이다. 위 표의 행이 없던 새 문구는 여기에 적는다.
+
+| 파일 | 위치 | 전 | 후 | 근거 |
+|---|---|---|---|---|
+| services/host/app/atlas-story.js | sectionHtml / places small | 사건 0 | 연결된 사건 없음 | C-5 — 연결된 사건이 없는 관계 장소에 '사건 0'은 뜻이 통하지 않는다 |
+| services/host/app/atlas-story.js | eventHtml·places / 장소 축약 결과가 빈 문자열일 때 | (빈 줄) | 장소 미확인 | C-3 — 괄호 설명만 남은 라벨이 이름 없는 버튼을 만들었다 |
+| services/host/index.html | 기록 카드 / span.pred | hasBoundaryRecord·locatedAt 등 영문 술어 | 경계 기록·위치 등 한글 이름, 표에 없으면 관련 기록 | C-7 — `chronicle.js` 의 공용 대조표(`predicateLabel`) |
+| services/host/index.html | 사료 설명 카드 / 상태 | draft | 정리 중 | C-8 |
+| services/host/index.html | 사료 설명 카드 / 이용허락 | short-excerpt-only 등 영문 코드 | 짧은 인용만 등 한글, 표에 없으면 미확인 | C-8 |
+| services/host/index.html | 위치 후보·시점 카드 / precision | approx·site·day 등 | 대략 위치·유적 지점·일 단위, 표에 없으면 표시 안 함 | C-9 — `precisionLabel` |
+| services/host/index.html | 기록 카드 / span.cl-note | EPSG:4326·Shapely·schema.md 가 섞인 개발자 메모 | (화면에서 뺌) | C-10 — 데이터는 그대로 두고 표시만 없앤다 |
+| services/host/app/graph.js | draw / 노드 이름·설명 | Chunk·Source·Person / 영문 술어 | 원문 대목·사료·인물 / 한글 술어 | C-11 — `typeWord`·`predicateLabel` |
+| services/host/index.html | showGraphClaim / h3·술어 | 원본 라벨 · tookPlaceAt | 다듬은 이름 · 장소 | C-12 |
+| services/host/index.html | select / h3 | 원본 라벨(예: 고구려 · Goguryeo (Cliopatria 1262)) | 다듬은 이름, 원본은 title 툴팁 | C-13 — 검색·동일성 매칭에 쓰는 names/aliases 는 그대로 |
+| services/host/app/chronicle-geography.js | showCard / p | 좌표, 설명문., 연도 · 활동 (한 문단) | 좌표 / 연도 · 활동 / 설명문 (세 문단) | C-14 — 마침표 뒤 쉼표가 붙던 문장 |
+| services/host/index.html | showTimeClaims / 연도 기록 버튼 | 1592 ~ 1598 · 삼국사기 | 1592~1598 · 삼국사기 연도 출처 보기 | C-16 — 동사로 끝맺고 물결표 공백 제거 |
+| services/host/app/atlas-data.js | typeName | Work·Thing·Institution 등이 모두 '기록' | 기록물·물건·제도·집단·시설·문화유산·유물·문서·개념·시대 | C-18 |
+
+### 함께 고친 검증 스크립트 (#198 2차, 서버는 띄우지 않았다 — 문자열 대조까지)
+
+| 스크립트 | 옛 단언 | 새 단언 | 사유 |
+|---|---|---|---|
+| `scripts/verify_comparison_discovery.py` | 사건 연결이 없다 | 사건 연결이 없습니다 | C-27 |
+| `scripts/verify_quality_gate.py` | 검증용 화질(q=낮음)이 적용됩니다 | 주소에서 고른 화질: 낮음 | C-28 |
+| `scripts/verify_historical_sites.py` | 확정 기록은 아니며 | 확정 기록은 아닙니다 | C-29 |
+| `scripts/verify_historical_districts.py` | 원 도형에 자기 교차 | 원 경계선이 서로 엇갈립니다 | C-30 |
+| `scripts/verify_historical_townships.py` | 표시용 도형에도 오류 | 표시한 경계에도 오류가 있습니다 | C-31 |
+| `scripts/verify_chronicle_assets.py` | 조회 중(앱에 없는 문자열 — 대기가 늘 통과) | 불러오고 있습니다 | C-32, 문구 의존임을 주석으로 남김 |
+| `scripts/verify_place_research.py` | 좌표 후보 | 위치 후보 | C-17 |
+| `scripts/verify_name_claims.py` | `.pred` == hasName / hasStateName | `.pred` == 이름 / 나라 이름 | C-7 로 술어가 한글 대조표를 거친다 |
+| `scripts/verify_period_geography.py` | `#geographyCard p` 첫 줄에 연도 | 카드 전체 글자에 연도 | C-14 로 본문이 `<p>` 세 줄로 나뉘어 첫 줄이 좌표가 됐다 |
+| `scripts/verify_atlas_ui.py` | `152_year_expires_story` — 연도가 바뀌면 이야기 패널이 닫힌다 | `152_year_keeps_story` — 열린 채 남는다 | C-1 로 동작 자체가 바뀌었다 |

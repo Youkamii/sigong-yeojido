@@ -1,9 +1,9 @@
-import {datedClaims,entityLabel,displayLabel,labelNote,isGroupEntity,yearLabel,RELATION_WORDS} from './chronicle.js';
+import {datedClaims,entityLabel,displayLabel,labelNote,isGroupEntity,yearLabel,typeWord,RELATION_WORDS} from './chronicle.js';
 export {displayLabel,labelNote,isGroupEntity} from './chronicle.js';
 
 export const cleanTitle=text=>String(text||'').replace(/\s*\(\d{3,4}(?:년)?\)\s*$/,'');
-// 유형 이름. 집단 행위자(군대·단체)는 나라가 아니라 '집단'으로 보인다(#197).
-export const typeName=(type,entity)=>entity&&type==='Polity'&&isGroupEntity(entity)?'집단':({Person:'인물',Event:'사건',Place:'장소',Polity:'나라',Narrative:'전승'}[type]||'기록');
+// 유형 이름. 집단 행위자(군대·단체)는 나라가 아니라 '집단'으로 보인다(#197). 나머지는 공용 대조표(TYPE_WORDS)를 쓴다.
+export const typeName=(type,entity)=>entity&&isGroupEntity(entity)?'집단':typeWord(type);
 const normalize=text=>String(text||'').normalize('NFKC').toLocaleLowerCase('ko').replace(/\s/g,'');
 
 export function relationName(claim,id){

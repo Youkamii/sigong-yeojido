@@ -97,20 +97,35 @@ export class AtlasUI{
     if(this.tickKey!==key){this.tickKey=key;this.ticks.innerHTML=Array.from({length:5},(_,i)=>Math.round(min+(max-min)*i/4)).map(y=>`<span data-tick-year="${y}">${y===0?'':y<0?'BC '+Math.abs(y):y}</span>`).join('');}
     for(const tick of this.ticks.children)tick.classList.toggle('near-current',Math.abs(+tick.dataset.tickYear-year)<(max-min)*.13);
   }
-  registerPanel(name,element){this.panes.set(name,element);this.root.querySelector('#atlasPanelMount').append(element);element.hidden=true;}
+  registerPanel(name,element){
+    this.panes.set(name,element);this.root.querySelector('#atlasPanelMount').append(element);element.hidden=true;
+    // 모달이 아니라 지역이다 — 배경 지도를 계속 만질 수 있어야 하므로 dialog 를 쓰지 않는다(#198 감사 C-25).
+    element.setAttribute('role','region');element.tabIndex=-1;
+  }
   openPanel(name){
     this.closeEvidence();
+    const opening=this.panel!==name,pane=this.panes.get(name),active=document.activeElement;
     this.panel=name;document.body.dataset.atlasPanel=name;
-    for(const [key,pane] of this.panes)pane.hidden=key!==name;
+    for(const [key,other] of this.panes)other.hidden=key!==name;
     this.root.querySelector('#atlasSettingsButton').setAttribute('aria-expanded',String(name==='settings'));
     if(name!=='events')this.events?.hide();this.scene.layoutKey=null;
+    // 패널을 열면 방금 누른 버튼이 display:none 이 되어 포커스가 body 로 떨어진다 — 패널 안으로 옮기고 돌아갈 자리를 적어 둔다.
+    if(!opening||!pane)return;
+    if(!pane.getAttribute('role'))pane.setAttribute('role','region');
+    pane.tabIndex=-1;
+    if(active&&active!==document.body&&!pane.contains?.(active))this.returnFocus=active;
+    pane.focus?.();
   }
   togglePanel(name){if(this.panel===name)this.closePanel();else this.openPanel(name);}
   closePanel(focus=false){
-    const previous=this.panel;this.panel=null;delete document.body.dataset.atlasPanel;
+    const previous=this.panel,target=this.returnFocus;
+    this.panel=null;this.returnFocus=null;delete document.body.dataset.atlasPanel;
     for(const pane of this.panes.values())pane.hidden=true;
     this.events?.hide();this.root.querySelector('#atlasSettingsButton').setAttribute('aria-expanded','false');
-    if(focus&&previous==='settings')this.root.querySelector('#atlasSettingsButton').focus();this.scene.layoutKey=null;
+    // 패널 종류와 무관하게 열기 전 자리로 포커스를 되돌린다. 그 사이 사라진 요소면 조용히 넘어간다.
+    if(focus&&previous==='settings')this.root.querySelector('#atlasSettingsButton').focus();
+    else if(target&&document.contains?.(target))target.focus?.();
+    this.scene.layoutKey=null;
   }
   closeEvidence(){document.querySelector('.stage').classList.remove('evidence-open');document.getElementById('evidenceBtn').setAttribute('aria-expanded','false');}
   showEntity(entity,activity){this.story.show(entity,activity);return true;}
@@ -119,7 +134,10 @@ export class AtlasUI{
     const filtersChanged=this.data.data&&this.data.data!==this.chronicle.data;
     this.data.update(this.chronicle.data,context,this.chronicle.callbacks.scenePackets?.());
     const changed=this.lastYear!==undefined&&this.lastYear!==context.year;
-    if(changed||filtersChanged){this.story?.reset();if(this.panel==='story')this.closePanel();this.closeEvidence();}
+    // 자료 필터가 바뀌면 카드의 근거가 통째로 달라지므로 이야기를 접는다. 연도만 바뀌면 카드도 히스토리도 그대로 두고
+    // 새 연도 맥락으로 다시 그린다 — 그러지 않으면 연표를 눌러 이동할 때마다 '이전으로'가 사라진다(#198 감사 C-1).
+    if(filtersChanged){this.story?.reset();if(this.panel==='story')this.closePanel();this.closeEvidence();}
+    else if(changed){this.story?.resetCaches();if(this.panel==='story')this.story.render(true);this.closeEvidence();}
     this.lastYear=context.year;this.syncTime(context.year);
     const status=this.root.querySelector('#atlasStatus');status.textContent=this.chronicle.error||(this.chronicle.loading?'인물과 사건을 불러오고 있습니다…':'');status.hidden=!status.textContent;
     this.search?.update();

@@ -28,7 +28,7 @@ with sync_playwright() as pw:
   check('Two forts remain between dated events on actual land',len(rows)==2 and all(x['land'] and x['kind']=='fortress' for x in rows),rows)
   check('Inferred sites do not become historical events',page.evaluate('__sigong.chronicleScene.chronicle.context.allEvents.every(e=>!e.id.startsWith("background-"))'))
   page.locator('#sceneDestination').select_option('syj135-place-samnyeonsanseong');page.wait_for_function('!__sigong.engine.fly')
-  check('Selecting the fort stays at 500 and explains the display inference',page.locator('#historyYear').input_value()=='500' and '추정' in page.locator('#sceneFocus').inner_text() and '확정 기록은 아니며' in page.locator('.activity-summary').inner_text())
+  check('Selecting the fort stays at 500 and explains the display inference',page.locator('#historyYear').input_value()=='500' and '추정' in page.locator('#sceneFocus').inner_text() and '확정 기록은 아닙니다' in page.locator('.activity-summary').inner_text())
   check('Fort is a Place with three real event links',page.locator('.context-kicker').inner_text()=='장소' and page.locator('.activity-episodes [data-chronicle-entity]').count()==3)
   check('No construction workers or invented named participants between events',page.evaluate('''()=>{const s=__sigong.chronicleScene;return s.assets.rows.filter(r=>r.sceneId==='background-syj135-place-samnyeonsanseong').every(r=>r.kind!=='person'&&r.archetype!=='groundbreaking');}'''))
   page.screenshot(path=str(a.out/'samnyeon-500.png'))
