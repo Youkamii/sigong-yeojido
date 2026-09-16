@@ -45,7 +45,7 @@ test('medium/high and automatic downgrade skip rebuilds; low invalidates once',(
   let refresh=0,forest=0;
   const candidates=[],scenery={quality:'medium',stats:{},initialized:true,
     assets:{engine:{quality:'high'},treeCandidates:candidates,forestKey:'existing'},
-    refreshPeriod(){refresh++;},rebuildForest(){forest++;}};
+    requestRefresh(){refresh++;},rebuildForest(){forest++;}};
   for(const quality of ['high','medium','high','medium']){
     scenery.assets.engine.quality=quality;ChronicleScenery.prototype.setQuality.call(scenery);
   }

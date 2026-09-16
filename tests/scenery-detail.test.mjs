@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {register} from 'node:module';
 import {readFile} from 'node:fs/promises';
+import {sceneryPeriodKey} from '../services/host/app/year-scrub.js';
 // Geometry is real; the texture-only canvas is inert in Node.
 globalThis.document={createElement:()=>({getContext:()=>new Proxy({getImageData:()=>({data:new Uint8ClampedArray(512*512*4)}),createImageData:()=>({data:new Uint8ClampedArray(512*512*4)})},{get:(o,k)=>o[k]||(()=>({addColorStop(){}}))})})};
 const three=new URL('../services/host/vendor/three.module.min.js',import.meta.url).href;
@@ -11,6 +12,7 @@ const catalog=compileAssetCatalog(extendBuildingCatalog(extendFigureCatalog(JSON
 const {URBAN_REGIONS,urbanLayout}=await import('../services/host/app/urban-regions.js');
 const {sceneryOverview,setOverviewDetails}=await import('../services/host/app/scenery-overview.js');
 const world={ground:[],sky:[],anchorOf:()=>new THREE.Vector3(),surfaceAt:()=>0,time:null,cata:null};
+const stateFields=()=>({occupied:[],areaOccupied:[],wildlife:[],cells:[],paths:{sync(){}}});
 const area=group=>{group.updateWorldMatrix(true,true);const box=new THREE.Box3();group.traverse(o=>{if(o.isMesh&&o.material.visible!==false)box.expandByObject(o);});const s=box.getSize(new THREE.Vector3());return s.x*s.z;};
 test('near homes match coarse footprint area using measured era geometry, with cached measurements',()=>{
  for(const year of [-1000,600,1200,1500,1900,1960,2000])for(let seed=0;seed<3;seed++){
@@ -30,7 +32,8 @@ test('urban near facades preserve the same tall bodies and same-period scrubs re
   const roofs=overview.children.find(m=>m.name==='settlement-roofs'),original=roofs.geometry.attributes.position.array.slice();
   roofs.geometry.computeBoundingBox();assert.ok(roofs.geometry.boundingBox.max.y>7,'far skyline keeps building heights');
   const c=Object.create(ChronicleScenery.prototype);
-  Object.assign(c,{world,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),period,periodKey:period.id+'|'+site.id+':urban:'+period.id,sites:[site],detailCache:new Map(),stats:{modelBuilds:0,year:2010}});
+  Object.assign(c,{...stateFields(),world,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),period,periodKey:period.id+'|'+site.id+':urban:'+period.id,sites:[site],detailCache:new Map(),stats:{modelBuilds:0,year:2010}});
+  c.periodKey=sceneryPeriodKey(period.id,[{id:site.id,kind:'urban',periodId:period.id,density:.6,scale:1,layoutKey:[true,true,true,true]}]);
   const detail=c.buildDetail({site,layout});assert.deepEqual(detail.indices,[]);assert.ok(detail.animated.length>0);
   setOverviewDetails(overview,[detail]);assert.deepEqual(roofs.geometry.attributes.position.array,original);
   c.setYear(2011);assert.equal(c.detailCache.get(site.id),detail);assert.equal(c.stats.modelBuilds,1);
@@ -50,7 +53,7 @@ test('one event occupancy clips individual city parcels without erasing its neig
 
 test('documented zone activation uses its actual year and reuses geometry between boundaries',()=>{
   const c=Object.create(ChronicleScenery.prototype),site={id:'settlement-region:dated',kind:'town',startYear:1234,endYear:1250};
-  let builds=0;Object.assign(c,{sites:[site],stats:{},detailCache:new Map(),initialized:true,occupied:[],assets:{release(){}},refreshPeriod(){builds++;},sync(){}});
+  let builds=0;Object.assign(c,{...stateFields(),world,sites:[site],stats:{},detailCache:new Map(),initialized:true,assets:{release(){}},refreshPeriod(){builds++;}});
   c.setYear(1233);assert.equal(c.activeSites().length,0);
   c.setYear(1234);assert.equal(c.activeSites().length,1);const count=builds;
   c.setYear(1235);assert.equal(builds,count,'same era and same active zone retains geometry');
@@ -66,8 +69,8 @@ test('year scrubs rebuild only changed site layouts, details and affected far ba
   const assets={engine:{_tagShadows(){}},release:g=>{g.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});g.removeFromParent();},
     field:(recipes,anchors)=>buildAssetField({world:{...terrain,anchorOf:id=>anchors.get(id)},catalog,recipes,seed:'sigong-history'})};
   const c=Object.create(ChronicleScenery.prototype);
-  Object.assign(c,{world:terrain,assets,group:new THREE.Group(),sites,urbanSites:[],occupied:[],areaOccupied:[],detailCache:new Map(),houseScales:new Map(),
-    stats:{modelBuilds:0},initialized:true,showPaths:true,sync(){}});
+  Object.assign(c,{...stateFields(),world:terrain,assets,group:new THREE.Group(),sites,urbanSites:[],occupied:[],areaOccupied:[],detailCache:new Map(),houseScales:new Map(),
+    stats:{modelBuilds:0},initialized:true,showPaths:true});
   c.setYear(1400);
   const before=new Map(c.landscapeCells.map(cell=>[cell.site.id,cell]));
   for(const cell of c.landscapeCells)c.buildDetail(cell);
@@ -115,4 +118,23 @@ test('filtered and distance-sorted detail houses keep their far variant, yaw and
     assert.equal(last[2].archetype,seed===0?'figure_joseon_commoner':'figure_goryeo_commoner');
     assert.equal(detail.group.rotation.y,site.angle);
   }
+});
+
+test('combined year and occupancy updates refresh only once with the new year and invalidate affected details',()=>{
+  const terrain={...world,rings:[[[-100,-100],[100,-100],[100,100],[-100,100]]],contains:()=>true};
+  const site={id:'urban-region:seoul',kind:'urban',profile:URBAN_REGIONS[0],radius:20,seed:1822,x:0,z:0,angle:0,latitude:37.56};
+  const c=Object.create(ChronicleScenery.prototype),calls=[];
+  Object.assign(c,{...stateFields(),world:terrain,assets:{release:g=>g.removeFromParent()},group:new THREE.Group(),sites:[site],
+    urbanSites:[site],detailCache:new Map(),stats:{modelBuilds:0},initialized:true,showPaths:true,
+    refreshPeriod(preserve){calls.push([this.stats.year,preserve]);ChronicleScenery.prototype.refreshPeriod.call(this,preserve);}});
+  c.setState({year:2010,occupied:[],areaOccupied:[]});
+  const before=c.stats.houses,cell=c.landscapeCells[0],detail=c.buildDetail(cell),house=cell.layout.houses[0];
+  const occupied=[{x:house.x,z:house.z,radius:1}];calls.length=0;
+  c.setState({year:2011,occupied,areaOccupied:occupied});
+  assert.deepEqual(calls,[[2011,true]]);assert.ok(c.stats.houses<before);
+  assert.equal(c.detailCache.has(site.id),false);assert.equal(detail.group.parent,null);
+  c.sync(occupied,occupied);c.setYear(2011);assert.equal(calls.length,1);
+  const cellAfter=c.landscapeCells[0];
+  c.setState({year:2011,occupied:[],areaOccupied:occupied});
+  assert.equal(calls.length,2);assert.notEqual(c.landscapeCells[0],cellAfter,'parcel changes invalidate even with unchanged road occupancy');
 });

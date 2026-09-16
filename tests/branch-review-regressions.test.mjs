@@ -26,7 +26,7 @@ function assetsFor(world){
   const assets=new ChronicleAssets({scene,camera:new THREE.PerspectiveCamera(),add:g=>scene.add(g),remove:g=>scene.remove(g)},world,catalog);
   // 실제 rebuild·장면 조립·모델 생성·캐시를 실행하고 무관한 숲과 비동기 풍경만 생략한다.
   assets.buildForest=()=>{};
-  assets.scenery={clearings:[],sync(){},start(){}};
+  assets.scenery={clearings:[],setState(){},start(){}};
   return assets;
 }
 const rebuild=(assets,events)=>assets.rebuild({year:1801,events,people:[]});

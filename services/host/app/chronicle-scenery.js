@@ -2,14 +2,19 @@ import * as THREE from 'three';
 import {stableSeed} from './chronicle-world.js';
 import {insideCoastline} from './coastline-index.js';
 import {CountrysidePaths} from './chronicle-paths.js';
-import {sceneryOverview,setOverviewDetails} from './scenery-overview.js';
+import {setOverviewDetails,overviewFromBuckets} from './scenery-overview.js';
 import {sceneryPeriod,sitePeriod,sceneryRecipe,sceneryHouseRecipe} from './scenery-period.js';
-import {loadFactLayers,planSettlementSites,planEstimatedSites,estimatedSitePasses,estimatedIslandSettings,settlementLayout,settlementSiteActive,settlementSiteForYear} from './settlement-regions.js';
+import {loadFactLayers,planSettlementSites,planEstimatedSites,settlementSiteActive,settlementSiteForYear} from './settlement-regions.js';
 import {planUrbanSites} from './urban-regions.js';
 import {buildSettlementZones} from './inhabited-zones.js';
 import {sceneBudget} from './scene-quality.js';
-import {occupancyGrid} from './occupancy-grid.js';
 import {isEstimatedSite,setEstimatedMesh,markEstimatedGroup} from './scenery-estimated-dim.js';
+import {sceneryPeriodKey} from './year-scrub.js';
+import {computeLandscape,overviewBuckets,siteDensityState,selectEstimatedSites,selectSceneSites,pointOn} from './scene-layout.js';
+import {createSceneLayoutClient} from './scene-layout-client.js';
+
+// 계산부는 scene-layout.js 한 곳에 있다(워커와 공유). 옛 사용처를 위해 다시 내보낸다.
+export {siteDensityState,selectEstimatedSites,selectSceneSites};
 
 export async function loadWorldFactLayers(world){
   if(!world.factLayers){
@@ -21,44 +26,6 @@ export async function loadWorldFactLayers(world){
   }
   loadFactLayers(world.factLayers);
   return world.factLayers;
-}
-
-// 문서화·도시·사건에 양보한 뒤 시대 문턱 적용. 작은 섬은 최소 보장 없이 집 몇 채만 남긴다.
-export function selectEstimatedSites(estimated,documented,urban,periodId,available=()=>true,context={}){
-  // 섬 대체 후보와 격자 상한도 보통의 부분집합 안에서 적용한다.
-  if((context.scale??1)<1)estimated=selectEstimatedSites(estimated,documented,urban,periodId,available,{...context,scale:1});
-  const eligible=estimated.filter(s=>documented.every(d=>Math.hypot(s.x-d.x,s.z-d.z)>s.radius+d.radius+6)
-    &&urban.every(u=>Math.hypot(s.x-u.x,s.z-u.z)>u.radius)
-    &&available(s));
-  const selected=new Set(eligible.filter(s=>estimatedSitePasses(s,typeof periodId==='function'?periodId(s):periodId,{...context,x:s.x,z:s.z}))),rings=new Map();
-  for(const site of eligible){
-    if(!Number.isInteger(site.ringIndex)||site.islandArea<estimatedIslandSettings.mediumArea)continue;
-    if(!rings.has(site.ringIndex))rings.set(site.ringIndex,[]);
-    rings.get(site.ringIndex).push(site);
-  }
-  for(const sites of rings.values())if(!sites.some(s=>selected.has(s)))
-    selected.add(sites.reduce((a,b)=>a.seed<b.seed||a.seed===b.seed&&a.id<b.id?a:b));
-  // 카메라 이동으로 마을이 바뀌지 않도록 world 격자별 상한을 적용한다.
-  // 큰 섬을 먼저 보존하고 나머지는 seed 순으로 고른다. 지역 상한은 최소 보장보다 우선한다.
-  const cells=new Map(),{cellSize,cellLimit,largeArea}=estimatedIslandSettings;
-  const islands=[...selected].filter(s=>Number.isFinite(s.islandArea)).sort((a,b)=>Number(b.islandArea>=largeArea)-Number(a.islandArea>=largeArea)||a.seed-b.seed||a.id.localeCompare(b.id));
-  for(const site of islands){
-    const key=`${Math.floor(site.x/cellSize)}:${Math.floor(site.z/cellSize)}`,count=cells.get(key)||0;
-    if(count>=cellLimit)selected.delete(site);else cells.set(key,count+1);
-  }
-  return eligible.filter(s=>selected.has(s));
-}
-
-// 같은 자리(0.1 미만)의 urban은 반경과 무관하게 원 구역을 우선하되, 장면 마커로 쉬는 원 구역에는 자리를 내주지 않는다.
-// 다른 자리의 문서화 urban은 이웃 반경 안에서도 남겨 서울 소실을 막고, 집 소유는 기존 owns()가 정한다.
-export function selectSceneSites(activeSites,estimatedIds,suppressedProfileIds=new Set()){
-  const candidates=activeSites.filter(s=>!(s.documented&&s.kind==='urban'&&activeSites.some(other=>
-    other.kind==='urban'&&!other.documented&&other.id.startsWith('urban-region:')&&!suppressedProfileIds.has(other.profile?.id)&&Math.hypot(other.x-s.x,other.z-s.z)<.1)))
-    .sort((a,b)=>b.radius-a.radius||a.id.localeCompare(b.id));
-  const current=candidates.filter((s,i)=>!candidates.slice(0,i).some(other=>other.kind===s.kind&&Math.hypot(other.x-s.x,other.z-s.z)<.1));
-  const major=current.filter(s=>s.kind==='urban'&&!s.documented);
-  const selected=current.filter(s=>s.estimated?estimatedIds.has(s.id):!s.documented||s.kind!=='urban'||major.every(m=>Math.hypot(s.x-m.x,s.z-m.z)>=.1));
-  return {current,major,selected};
 }
 
 // Anonymous scenery provides context; historical places and people remain separate.
@@ -77,83 +44,110 @@ export class ChronicleScenery{
     if(sceneBudget(quality)===sceneBudget(this.quality)){this.quality=quality;this.stats.quality=quality;return;}
     this.quality=quality;this.assets.treeCandidates=null;
     if(!this.initialized)return;
-    this.stats.ready=false;this.refreshPeriod();this.rebuildForest();
+    // 화질이 바뀌면 워커에 다시 요청한다(예산이 요청에 실려 간다).
+    this.stats.ready=false;this.requestRefresh(true);this.rebuildForest();
   }
   rebuildForest(){
-    this.sync(this.occupied,this.areaOccupied);
+    this.setState({occupied:this.occupied,areaOccupied:this.areaOccupied});
     this.assets.buildForest([...this.assets.forestOccupied,...this.clearings],this.assets.forestScenes);
     this.assets.forest.visible=this.world.geography?.display?.forest!==false;
   }
-  point(site,x,z){const c=Math.cos(site.angle),s=Math.sin(site.angle);return [site.x+x*c+z*s,site.z-x*s+z*c];}
+  point(site,x,z){return pointOn(site,x,z);}
   activeSites(){const year=this.stats.year;return this.sites.filter(s=>settlementSiteActive(s,year)).map(s=>settlementSiteForYear(s,year));}
   available(site){return site.id?.startsWith('settlement-region:')||site.kind==='urban'||this.occupied.every(o=>Math.hypot(site.x-o.x,site.z-o.z)>o.radius);}
   setDisplay(visible,paths,estimatedDim=this.estimatedDim){
     this.group.visible=visible;this.showPaths=paths;this.estimatedDim=estimatedDim;
     this.group.traverse(o=>{if(o.name==='scenery-lanes')o.visible=paths;if(o.userData.estimatedBackground)setEstimatedMesh(o,estimatedDim);});
   }
-  sync(occupied,areaOccupied=occupied){
-    this.occupied=occupied;this.areaOccupied=areaOccupied;this.clearings=[...this.activeSites(),...this.wildlife].filter(s=>this.available(s));
-    // Keep the original scene radii in the refresh key and in forest/path clearances.
-    const key=areaOccupied.map(o=>`${o.x}:${o.z}:${o.radius}:${o.urbanRegionId||''}`).sort().join('|');
-    if(this.initialized&&key!==this.occupancyKey)this.refreshPeriod();this.occupancyKey=key;
+  sync(occupied,areaOccupied=occupied){this.setState({occupied,areaOccupied});}
+  setState({year=this.stats.year,occupied=this.occupied,areaOccupied=this.areaOccupied}){
+    this.stats.year=year;this.occupied=occupied;this.areaOccupied=areaOccupied;
+    const sites=this.activeSites(),period=sceneryPeriod(year);
+    const periodKey=sceneryPeriodKey(period.id,sites.map(s=>siteDensityState(s,year,this.world,sceneBudget(this.quality).estimatedScale)));
+    // Both parcel and road clearances must invalidate layouts when occupancy changes.
+    const keyOf=rows=>rows.map(o=>`${o.x}:${o.z}:${o.radius}:${o.urbanRegionId||''}`).sort().join('|');
+    const occupancyKey=keyOf(areaOccupied),parcelKey=keyOf(occupied);
+    const changed=periodKey!==this.periodKey||occupancyKey!==this.occupancyKey||parcelKey!==this.parcelKey;
+    this.period=period;this.periodKey=periodKey;this.occupancyKey=occupancyKey;this.parcelKey=parcelKey;
+    this.clearings=[...sites,...this.wildlife].filter(s=>this.available(s));
+    if(changed){this.stats.ready=false;if(this.initialized)this.requestRefresh(true);}
     for(const c of this.cells)if(c.group)c.group.visible=this.available(c.site)&&this.period?.tigers!==false;
     for(const c of this.detailCache.values())c.group.visible=c.group.visible&&this.available(c.site);
-    this.stats.tigers=this.period?.tigers===false?0:this.wildlife.length;this.paths.sync(s=>this.available(s)&&settlementSiteActive(s,this.stats.year)&&(!s.estimated||this.estimatedIds.has(s.id)),areaOccupied,this.activeSites().filter(s=>s.kind==='urban'));
+    this.stats.tigers=this.period?.tigers===false?0:this.wildlife.length;this.syncPaths(sites);
+  }
+  syncPaths(sites=this.activeSites()){
+    this.paths.sync(s=>this.available(s)&&settlementSiteActive(s,this.stats.year)&&(!s.estimated||this.estimatedIds.has(s.id)),
+      this.areaOccupied,sites.filter(s=>s.kind==='urban'));
   }
   nearPath(x,z,margin){return this.paths.near(x,z,margin);}
-  start(forest,year){this.setYear(year);if(this.ready)return;this.ready=this.populate(forest).then(()=>{this.initialized=true;this.refreshPeriod();}).catch(e=>this.failed(e));}
+  start(forest,year=this.stats.year){
+    if(year!==this.stats.year||!this.ready)this.setState({year});
+    if(this.ready)return;
+    this.ready=this.populate(forest).then(()=>{this.initialized=true;this.requestRefresh(true);}).catch(e=>this.failed(e));
+  }
   failed(error){this.stats.error=error.message;console.error('[scenery]',error);}
-  setYear(year){this.stats.year=year;const period=sceneryPeriod(year),key=period.id+(this.world?.factLayers?.density?.length?'|'+year:'')+'|'+this.activeSites().map(s=>s.id+':'+s.kind+':'+sitePeriod(s,year).id).join('|');if(this.periodKey===key)return;this.periodKey=key;this.period=period;this.stats.ready=false;
-    if(this.initialized)this.refreshPeriod(true);this.sync(this.occupied,this.areaOccupied);
+  setYear(year){this.setState({year});}
+  // 워커가 있으면 계산을 넘기고, 없거나 실패하면 같은 함수를 메인에서 동기로 돌린다.
+  ensureLayoutWorker(){
+    if(this.layoutClient!==undefined)return this.layoutClient;
+    this.layoutClient=createSceneLayoutClient({world:this.world,sites:this.sites,
+      onResult:data=>this.applyWorkerResult(data),
+      onFallback:()=>this.handleWorkerFallback()})||null;
+    return this.layoutClient;
+  }
+  layoutRequest(preserve){
+    return {year:this.stats.year,quality:this.quality,occupied:this.occupied,areaOccupied:this.areaOccupied,
+      estimatedIds:[...(this.estimatedIds||[])],preserve,occupancyKey:this.occupancyKey,parcelKey:this.parcelKey};
+  }
+  requestRefresh(preserve=false){
+    // 손잡이를 만드는 도중에도 폴백이 날 수 있으므로, 여기서 한 번만 동기 계산하도록 막아 둔다.
+    this.pendingPreserve=preserve;this.workerRequestInline=true;
+    let sent=false;
+    try{
+      const client=this.ensureLayoutWorker();
+      if(client)sent=client.request(this.layoutRequest(preserve));
+    }finally{this.workerRequestInline=false;}
+    if(sent){this.refreshStarted=performance.now();return;}
+    this.refreshPeriod(preserve);
+  }
+  handleWorkerFallback(){
+    this.layoutClient=null;
+    if(this.workerRequestInline)return;
+    this.refreshPeriod(this.pendingPreserve??true);
+    this.settleRefresh();
+  }
+  applyWorkerResult(data){
+    const previous=new Map((this.landscapeCells||[]).map(c=>[c.site.id,c]));
+    const cells=data.order.map(id=>data.cells[id]||previous.get(id)).filter(Boolean);
+    this.applyLandscape({...data,cells},this.refreshStarted??performance.now());
+    this.settleRefresh();
+  }
+  // 워커 응답을 반영한 뒤에는 길과 숲도 새 마을 선택으로 다시 맞춘다.
+  settleRefresh(){
+    this.syncPaths();
+    if(this.initialized&&typeof this.assets?.buildForest==='function')
+      this.assets.buildForest([...(this.assets.forestOccupied||[]),...this.clearings],this.assets.forestScenes||[]);
   }
   refreshPeriod(preserve=false){
     const started=performance.now();
-    const suppressedProfileIds=new Set(this.occupied.map(o=>o.urbanRegionId).filter(Boolean));
-    const sites=this.activeSites(),{current}=selectSceneSites(sites,this.estimatedIds,suppressedProfileIds);
-    const estimated=selectEstimatedSites(current.filter(s=>s.estimated),current.filter(s=>s.documented&&s.kind!=='urban'),current.filter(s=>s.kind==='urban'),s=>sitePeriod(s,this.stats.year).id,s=>this.available(s),{year:this.stats.year,world:this.world,scale:sceneBudget(this.quality).estimatedScale});
-    this.estimatedIds=new Set(estimated.map(s=>s.id));
-    const {selected}=selectSceneSites(sites,this.estimatedIds,suppressedProfileIds);
-    const urban=selected.filter(s=>s.kind==='urban');
-    // Urban ownership can clip neighbouring parcels. Rural additions/removals
-    // only invalidate their own cells and the far batches containing them.
-    const urbanKey=urban.map(s=>s.id).join('|');
-    const previous=new Map(preserve&&urbanKey===this.urbanKey?(this.landscapeCells||[]).map(c=>[c.site.id,c]):[]);
-    this.urbanKey=urbanKey;
-    const changedSites=[];
-    const freeHouse=occupancyGrid(this.occupied,{cellSize:16,margin:.15});
-    const freeRoad=occupancyGrid(this.areaOccupied,{cellSize:16,margin:.15});
-    const active=selected.filter(s=>this.available(s)&&!(s.kind==='urban'&&this.occupied.some(o=>o.urbanRegionId===s.profile.id))).map(site=>{
-      const period=sitePeriod(site,this.stats.year),old=previous.get(site.id);
-      if(old?.period.id===period.id)return old;
-      changedSites.push(site);
-      const layout=settlementLayout(site,site.kind==='urban'?this.stats.year:period);
-      const ground=(x,z,margin=0)=>this.world.rings.some(r=>insideCoastline(x,z,r))&&(!this.world.contains||this.world.contains(x,z,margin));
-      const ruralFree=(x,z)=>site.kind==='urban'||urban.every(s=>Math.hypot(x-s.x,z-s.z)>s.radius);
-      const owns=(x,z)=>site.kind!=='urban'||urban.every(s=>s.id===site.id||Math.hypot(x-site.x,z-site.z)<=Math.hypot(x-s.x,z-s.z));
-      const fits=h=>{const [x,z]=this.point(site,h.x,h.z),r=Math.hypot(h.width??2.4*h.scale,h.depth??1.9*h.scale)/2;
-        return freeHouse(x,z,r)&&ruralFree(x,z)&&owns(x,z)&&ground(x,z,r)&&(!h.width||Math.max(...[[-r,-r],[r,-r],[r,r],[-r,r]].map(([dx,dz])=>this.world.surfaceAt(x+dx,z+dz)))-Math.min(...[[-r,-r],[r,-r],[r,r],[-r,r]].map(([dx,dz])=>this.world.surfaceAt(x+dx,z+dz)))<1.8);};
-      layout.houses=layout.houses.filter(fits);
-      layout.fields=layout.fields.filter(f=>f.corners.every(p=>{const [x,z]=this.point(site,...p);return freeHouse(x,z)&&ruralFree(x,z);}));
-      layout.spaces=(layout.spaces||[]).filter(s=>{const [x,z]=this.point(site,s.x,s.z);return owns(x,z)&&ground(x,z,Math.hypot(s.width,s.depth)/2)&&freeHouse(x,z,Math.hypot(s.width,s.depth)/2);});
-      // Subdivide at the same ground sample spacing used by houses. Coastal lanes
-      // stop on land instead of crossing a bay to reach another land endpoint.
-      layout.roads=layout.roads.flatMap(road=>road.points.slice(1).flatMap((b,i)=>{
-        const a=road.points[i],count=Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/1.5),segments=[];
-        for(let j=0;j<count;j++){const points=[j/count,(j+1)/count].map(t=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]);
-          if(points.every(p=>{const [x,z]=this.point(site,...p);return owns(x,z)&&ground(x,z,road.width)&&freeRoad(x,z,road.width/2)&&ruralFree(x,z);}))segments.push({...road,points});}return segments;
-      }));
-      return {site,layout,period};
-    }).filter(c=>c.layout.houses.length);
-    const activeIds=new Set(active.map(c=>c.site.id));
-    for(const [id,c] of previous)if(!activeIds.has(id))changedSites.push(c.site);
-    const retained=new Set(active.filter(c=>previous.get(c.site.id)===c).map(c=>c.site.id));
+    const result=computeLandscape({...this.layoutRequest(preserve),sites:this.sites,
+      previousCells:this.landscapeCells||[],previousUrbanKey:this.urbanKey},this.world);
+    const {buckets,dirty}=overviewBuckets(this.world,result.cells,this.stats.year,
+      result.reuseBase?result.changedSites:null,{normals:false});
+    this.applyLandscape({...result,buckets,dirty,changedSiteIds:result.changedSites.map(s=>s.id)},started);
+  }
+  applyLandscape(result,started=performance.now()){
+    this.estimatedIds=new Set(result.estimatedIds);this.urbanKey=result.urbanKey;
+    const retained=new Set(result.retainedIds);
     for(const [id,c] of this.detailCache)if(!retained.has(id)){this.assets.release(c.group);this.detailCache.delete(id);}
-    const overview=sceneryOverview(this.world,active,this.stats.year,this.overview,previous.size?changedSites:null);if(this.overview)this.assets.release(this.overview);this.overview=overview;this.detailKey=null;this.group.add(overview);this.landscapeCells=active;
+    const overview=overviewFromBuckets(result.buckets,result.dirty,this.overview);
+    if(this.overview)this.assets.release(this.overview);
+    this.overview=overview;this.detailKey=null;this.group.add(overview);this.landscapeCells=result.cells;
     setOverviewDetails(overview,[...this.detailCache.values()].filter(c=>c.group.visible));
-    this.stats.houses=active.reduce((n,c)=>n+c.layout.houses.length,0);this.stats.fields=active.reduce((n,c)=>n+c.layout.fields.length,0);this.stats.villages=active.length;
-    this.stats.estimatedSites=estimated.length;this.stats.documentedZones=current.filter(s=>s.documented).length;this.stats.zoneIds=current.filter(s=>s.documented).map(s=>s.id);
+    this.stats.houses=result.houses;this.stats.fields=result.fields;this.stats.villages=result.cells.length;
+    this.stats.estimatedSites=result.estimatedCount;this.stats.documentedZones=result.documentedIds.length;this.stats.zoneIds=result.documentedIds;
     this.stats.farDraws=overview.children.length;this.stats.farTriangles=overview.children.reduce((n,m)=>n+m.geometry.attributes.position.count/3,0);this.stats.period=this.period.id;this.stats.ready=true;
-    this.stats.refreshedSites=changedSites.length;this.stats.reusedSites=retained.size;this.stats.refreshMs=performance.now()-started;
+    this.stats.refreshedSites=result.changedSiteIds.length;this.stats.reusedSites=retained.size;this.stats.refreshMs=performance.now()-started;
     this.stats.quality=this.quality;
     this.setDisplay(this.group.visible,this.showPaths);
   }

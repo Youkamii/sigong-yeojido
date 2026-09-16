@@ -108,24 +108,28 @@ const estimatedPeriodRatio={'early-settlement':.10,'early-farming':.18,'three-ki
   'late-joseon':.55,'opening-period':.55,'early-modern':.55,'postwar':.60,'modern-farming':.60,'early-roof-transition':.60,'roof-transition':.60,'mechanized':.60};
 let factLayers=null;
 export function loadFactLayers(json){factLayers=json;}
-export function estimatedSiteThreshold(periodId,latitude,context={}){
+// #196: 같은 자리·같은 해에서 여러 배율의 문턱이 필요하면 근접 호구 기록 탐색을 한 번만 하고 배율만 바꿔 다시 쓴다.
+export function estimatedThresholdAt(periodId,latitude,context={}){
   const period=estimatedPeriodRatio[periodId]??.45;
   // 지역 계수: 제주(34.2 미만) 0.6, 북부(38.5 초과) 0.7 — 역시 표현용 추정치.
   const region=!Number.isFinite(latitude)?1:latitude<34.2?.6:latitude>38.5?.7:1;
-  const base=period*region*(context.scale??1),{x,z,year,world}=context;
-  if(!world?.toWorld||![x,z,year].every(Number.isFinite))return base;
-  let nearest=null,distance=Infinity;
-  for(const record of factLayers?.density||[]){
-    if(![record.lon,record.lat,record.year].every(Number.isFinite)||Math.abs(year-record.year)>150)continue;
-    const [rx,rz]=world.toWorld(record.lon,record.lat),d=Math.hypot(x-rx,z-rz);
-    if(d<=40&&d<distance){nearest=record;distance=d;}
+  const {x,z,year,world}=context;
+  let nearest=null;
+  if(world?.toWorld&&[x,z,year].every(Number.isFinite)){
+    let distance=Infinity;
+    for(const record of factLayers?.density||[]){
+      if(![record.lon,record.lat,record.year].every(Number.isFinite)||Math.abs(year-record.year)>150)continue;
+      const [rx,rz]=world.toWorld(record.lon,record.lat),d=Math.hypot(x-rx,z-rz);
+      if(d<=40&&d<distance){nearest=record;distance=d;}
+    }
   }
-  if(!nearest)return base;
+  if(!nearest)return scale=>period*region*(scale??1);
   // #184: 호구 기록 주변 40단위·±150년의 표현용 보정. 인구/5는 가구 환산 가정이며 복원이 아니다.
   const count=Math.max(nearest.households??0,(nearest.population??0)/5,100);
   const factor=Math.max(.6,Math.min(1.8,.6+Math.log10(count)/4));
-  return Math.max(.05,Math.min(.95,base*factor));
+  return scale=>Math.max(.05,Math.min(.95,period*region*(scale??1)*factor));
 }
+export function estimatedSiteThreshold(periodId,latitude,context={}){return estimatedThresholdAt(periodId,latitude,context)(context.scale);}
 export function estimatedSitePasses(site,periodId,context={}){return site.seed%100<estimatedSiteThreshold(periodId,site.latitude,context)*100;}
 
 export function settlementSiteActive(site,year){return site.kind==='urban'?year>=site.profile.startYear:site.startYear<=year&&year<=site.endYear;}

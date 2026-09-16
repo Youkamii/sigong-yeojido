@@ -13,6 +13,8 @@ export function pathSegmentClear(a,b,occupied){
 export class CountrysidePaths{
   constructor(world,sites){
     this.world=world;this.routes=[];this.cells=new Map();
+    // #201: 숲이 "달라진 구간 둘레만" 다시 보도록 바뀐 길목을 모아 둔다.
+    this.changed=[];this.changedAll=true;
     this.mesh=new THREE.Mesh(new THREE.BufferGeometry(),new THREE.MeshStandardMaterial({color:'#a18b62',roughness:1,side:THREE.DoubleSide}));
     this.mesh.name='scenery-lanes';this.mesh.receiveShadow=true;
     this.estimatedMesh=new THREE.Mesh(new THREE.BufferGeometry(),this.mesh.material);
@@ -44,8 +46,13 @@ export class CountrysidePaths{
     const obstacles=[...occupied.filter(o=>!o.urbanRegionId),...urbanCores];
     for(const route of this.routes){
       const enabled=available(route.a)&&available(route.b);
-      route.segments=route.points.slice(1).map((p,i)=>enabled&&pathSegmentClear(route.points[i],p,obstacles));
-      route.active=route.segments.some(Boolean);
+      const next=route.points.slice(1).map((p,i)=>enabled&&pathSegmentClear(route.points[i],p,obstacles));
+      const previous=route.segments;
+      if(!this.changedAll){
+        if(!previous)this.markChanged(route.points);
+        else for(let i=0;i<next.length;i++)if(next[i]!==previous[i])this.markChanged([route.points[i],route.points[i+1]]);
+      }
+      route.segments=next;route.active=next.some(Boolean);
     }
     const key=this.routes.map(r=>r.segments.map(v=>v?'1':'0').join('')).join('|');if(key===this.key)return;this.key=key;
     for(const [estimated,mesh] of [[false,this.mesh],[true,this.estimatedMesh]]){
@@ -54,6 +61,18 @@ export class CountrysidePaths{
       const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.computeVertexNormals();
       mesh.geometry.dispose();mesh.geometry=g;
     }
+  }
+  // 목록이 너무 길어지면 전수 재검사가 더 싸다. 그때는 모아 두지 않고 표시만 남긴다.
+  markChanged(points){
+    if(this.changedAll)return;
+    for(const p of points)this.changed.push(p);
+    if(this.changed.length>4096){this.changedAll=true;this.changed.length=0;}
+  }
+  // 숲이 한 번 읽고 비운다. 전수 표시가 서 있으면 부분 갱신을 쓰지 않는다.
+  takeChanges(){
+    const all=this.changedAll,points=this.changed;
+    this.changedAll=false;this.changed=[];
+    return all?null:points;
   }
   near(x,z,margin){
     const cx=Math.floor(x/8),cz=Math.floor(z/8);

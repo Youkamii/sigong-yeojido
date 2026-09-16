@@ -54,6 +54,39 @@ function makeTreeGeometry() {
   return g;
 }
 
+// #201 숲 부분 갱신에 쓰는 상수와 인스턴스 쓰기 도우미.
+const TREE_CELL=3,FOREST_GRID=24,PATH_REACH=1.85,FOREST_PATCH_LIMIT=3000;
+const treeMatrix=new THREE.Matrix4(),treeQuaternion=new THREE.Quaternion(),treeScaleVector=new THREE.Vector3(),treeEuler=new THREE.Euler();
+const treeBiome=biomeByName('forest');
+const treeVariant=position=>(stableSeed('tree:'+position.x+':'+position.z)%1000)/1000;
+function writeTreeInstance(mesh,slot,position,scale){
+  const t=treeVariant(position),s=(.4+t*.22)*(scale||0);
+  treeEuler.set(0,t*6.28,0);treeQuaternion.setFromEuler(treeEuler);
+  treeScaleVector.set(s,s*(.85+t*.5),s);
+  treeMatrix.compose(position,treeQuaternion,treeScaleVector);
+  mesh.setMatrixAt(slot,treeMatrix);
+}
+function setTreeColor(mesh,slot,position){
+  const t=treeVariant(position);
+  mesh.setColorAt(slot,mixColor(treeBiome.low,treeBiome.high,.25+t*.6).multiplyScalar(.92+t*.22));
+}
+const circleKey=o=>`${o.x}:${o.z}:${o.radius??''}:${o.scale??''}`;
+// 사라진 원과 새로 생긴 원만 돌려준다. 남아 있는 원은 판정을 바꾸지 않는다.
+function circleDifference(previous,next){
+  const before=new Map(previous.map(o=>[circleKey(o),o])),after=new Map(next.map(o=>[circleKey(o),o])),out=[];
+  for(const [key,o] of before)if(!after.has(key))out.push(o);
+  for(const [key,o] of after)if(!before.has(key))out.push(o);
+  return out;
+}
+function collectCandidates(grid,circles){
+  const out=new Set();
+  for(const c of circles)
+    for(let x=Math.floor((c.x-c.radius)/FOREST_GRID);x<=Math.floor((c.x+c.radius)/FOREST_GRID);x++)
+      for(let z=Math.floor((c.z-c.radius)/FOREST_GRID);z<=Math.floor((c.z+c.radius)/FOREST_GRID);z++)
+        for(const index of grid.get(x+':'+z)||[])out.add(index);
+  return out;
+}
+
 export class ChronicleAssets{
   release(group){release(group);}
   constructor(engine,world,catalog){
@@ -84,14 +117,12 @@ export class ChronicleAssets{
     for(const key of ['built','requested','meshes','triangles'])result.stats[key]??=0;
     return result;
   }
-  buildForest(occupied,scenes=[]){
-    const budget=sceneBudget(this.engine.quality);
-    const forestKey=JSON.stringify([occupied.map(o=>[o.x,o.z,o.radius]),scenes,this.scenery.paths.key,budget.treeTrials]);
-    if(this.forestKey===forestKey)return;
-    const group=new THREE.Group();group.name='peninsula-woods';
-    const b=this.world.bounds,candidates=this.treeCandidates||[];
-    const cells=new Map(),cellSize=1.5;
-    if(!this.treeCandidates)for(let i=0;i<budget.treeTrials&&candidates.length<budget.trees;i++){
+  // #201: 후보 나무는 한 번만 인스턴스로 만들고, 점유·길·장면이 달라진 반경 안의
+  // 인스턴스만 행렬을 고친다(가릴 때는 스케일 0). edge/grove 나무만 작은 동적 메시로 다시 만든다.
+  treeCandidatePositions(budget){
+    if(this.treeCandidates)return this.treeCandidates;
+    const b=this.world.bounds,candidates=[],cells=new Map(),cellSize=1.5;
+    for(let i=0;i<budget.treeTrials&&candidates.length<budget.trees;i++){
       const seed=stableSeed('wood:'+i),x=b.minX+(b.maxX-b.minX)*(seed%10000)/10000;
       const z=b.minZ+(b.maxZ-b.minZ)*(Math.floor(seed/10000)%10000)/10000;
       if(!this.world.contains(x,z,1.2))continue;
@@ -106,26 +137,93 @@ export class ChronicleAssets{
       const key=cx+':'+cz;if(!cells.has(key))cells.set(key,[]);cells.get(key).push({x,z});
     }
     this.treeCandidates=candidates;
-    const treeScale=p=>Math.min(1,...scenes.filter(s=>Math.hypot(p.x-s.x,p.z-s.z)<Math.max(12,90*s.scale)).map(s=>s.scale));
-    const positions=candidates.filter(p=>{
-      p.treeScale=treeScale(p);
-      return occupied.every(o=>(p.x-o.x)**2+(p.z-o.z)**2>=(o.radius+.8*p.treeScale)**2)&&!this.scenery.nearPath?.(p.x,p.z,1.1);
+    return candidates;
+  }
+  disposeForestBase(){
+    const base=this.forestBase;if(!base)return;
+    if(base.dynamic){base.group.remove(base.dynamic);base.dynamic.dispose();}
+    for(const mesh of base.meshes)mesh.dispose();
+    base.geometry.dispose();base.material.dispose();
+    this.engine.remove(base.group);
+    this.forestBase=null;this.forest=null;
+  }
+  ensureForestBase(budget){
+    const candidates=this.treeCandidatePositions(budget);
+    if(this.forestBase?.candidates===candidates)return this.forestBase;
+    this.disposeForestBase();
+    const geometry=makeTreeGeometry(),material=makeSurface({preset:'MAT_FOLIAGE',vertexColors:true,color:WHITE},{wind:.9,windAxis:'y',key:'tree'});
+    const group=new THREE.Group();group.name='peninsula-woods';
+    const slots=new Array(candidates.length),meshes=[],regions=new Map(),cells=new Map(),grid=new Map();
+    const push=(map,key,value)=>{if(!map.has(key))map.set(key,[]);map.get(key).push(value);};
+    candidates.forEach((p,i)=>{
+      push(regions,Math.floor(p.x/96)+':'+Math.floor(p.z/96),i);
+      push(cells,Math.floor(p.x/TREE_CELL)+':'+Math.floor(p.z/TREE_CELL),i);
+      push(grid,Math.floor(p.x/FOREST_GRID)+':'+Math.floor(p.z/FOREST_GRID),i);
     });
-    const treeCells=new Map(),treeCellSize=3;
-    const register=p=>{const key=Math.floor(p.x/treeCellSize)+':'+Math.floor(p.z/treeCellSize);if(!treeCells.has(key))treeCells.set(key,[]);treeCells.get(key).push(p);};
+    for(const [key,indices] of regions){
+      const mesh=new THREE.InstancedMesh(geometry,material,indices.length);
+      mesh.name='fan-trees:'+key;
+      indices.forEach((index,slot)=>{slots[index]={mesh,slot};writeTreeInstance(mesh,slot,candidates[index],0);setTreeColor(mesh,slot,candidates[index]);});
+      mesh.instanceMatrix.needsUpdate=true;if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;
+      meshes.push(mesh);group.add(mesh);
+    }
+    const base={candidates,slots,meshes,cells,grid,group,geometry,material,dynamic:null,ready:false,
+      visible:new Uint8Array(candidates.length),scale:new Float32Array(candidates.length),occupied:[],scenes:[]};
+    this.forestBase=base;this.forest=group;this.engine.add(group);
+    return base;
+  }
+  buildForest(occupied,scenes=[]){
+    const budget=sceneBudget(this.engine.quality);
+    const forestKey=JSON.stringify([occupied.map(o=>[o.x,o.z,o.radius]),scenes,this.scenery.paths.key,budget.treeTrials]);
+    if(this.forestKey===forestKey){this.scenery.paths.takeChanges?.();return;}
+    this.forestKey=forestKey;
+    const base=this.ensureForestBase(budget);
+    const changedPaths=this.scenery.paths.takeChanges?.();
+    const treeScale=p=>Math.min(1,...scenes.filter(s=>Math.hypot(p.x-s.x,p.z-s.z)<Math.max(12,90*s.scale)).map(s=>s.scale));
+    const dirty=new Set();
+    const update=index=>{
+      const p=base.candidates[index],scale=treeScale(p);
+      p.treeScale=scale;
+      const visible=occupied.every(o=>(p.x-o.x)**2+(p.z-o.z)**2>=(o.radius+.8*scale)**2)&&!this.scenery.nearPath?.(p.x,p.z,1.1);
+      const flag=visible?1:0;
+      if(base.ready&&base.visible[index]===flag&&base.scale[index]===scale)return;
+      base.visible[index]=flag;base.scale[index]=scale;
+      const {mesh,slot}=base.slots[index];
+      writeTreeInstance(mesh,slot,p,visible?scale:0);dirty.add(mesh);
+    };
+    // 바뀐 원(점유·장면)과 길목 둘레만 다시 본다. 범위가 넓으면 전수가 더 싸다.
+    let touched=null;
+    if(base.ready&&changedPaths){
+      const circles=[...circleDifference(base.occupied,occupied).map(o=>({x:o.x,z:o.z,radius:o.radius+1})),
+        ...circleDifference(base.scenes,scenes).map(s=>({x:s.x,z:s.z,radius:Math.max(12,90*s.scale)})),
+        ...changedPaths.map(p=>({x:p.x,z:p.z,radius:PATH_REACH}))];
+      if(circles.length<=FOREST_PATCH_LIMIT)touched=collectCandidates(base.grid,circles);
+    }
+    if(touched)for(const index of touched)update(index);
+    else for(let i=0;i<base.candidates.length;i++)update(i);
+    base.ready=true;base.occupied=occupied;base.scenes=scenes;
+    for(const mesh of dirty){mesh.instanceMatrix.needsUpdate=true;if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;mesh.computeBoundingSphere();}
+    const dynamic=[],dynamicCells=new Map();
+    const register=p=>{const key=Math.floor(p.x/TREE_CELL)+':'+Math.floor(p.z/TREE_CELL);
+      if(!dynamicCells.has(key))dynamicCells.set(key,[]);dynamicCells.get(key).push(p);};
     const crowded=(x,z,radius)=>{
-      const cx=Math.floor(x/treeCellSize),cz=Math.floor(z/treeCellSize),reach=Math.ceil(radius/treeCellSize);
-      for(let dx=-reach;dx<=reach;dx++)for(let dz=-reach;dz<=reach;dz++)
-        if((treeCells.get((cx+dx)+':'+(cz+dz))||[]).some(p=>(x-p.x)**2+(z-p.z)**2<radius**2))return true;
+      const cx=Math.floor(x/TREE_CELL),cz=Math.floor(z/TREE_CELL),reach=Math.ceil(radius/TREE_CELL),limit=radius*radius;
+      for(let dx=-reach;dx<=reach;dx++)for(let dz=-reach;dz<=reach;dz++){
+        const key=(cx+dx)+':'+(cz+dz);
+        for(const index of base.cells.get(key)||[]){
+          if(!base.visible[index])continue;
+          const p=base.candidates[index];if((x-p.x)**2+(z-p.z)**2<limit)return true;
+        }
+        for(const p of dynamicCells.get(key)||[])if((x-p.x)**2+(z-p.z)**2<limit)return true;
+      }
       return false;
     };
-    positions.forEach(register);
     for(const site of this.scenery.sites)for(let i=0;i<budget.edgeTrees;i++){
       const seed=stableSeed(site.id+':edge:'+i),angle=(seed%1000)/1000*Math.PI*2,radius=12+(Math.floor(seed/1000)%1000)/100;
       const x=site.x+Math.cos(angle)*radius,z=site.z+Math.sin(angle)*radius;
       if(seed%3||!this.world.contains(x,z,1)||this.world.ridgeAt(x,z)>.8||this.scenery.nearPath?.(x,z,1.1)
         ||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+.8)||crowded(x,z,1.45))continue;
-      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=treeScale(p);positions.push(p);register(p);
+      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=treeScale(p);dynamic.push(p);register(p);
     }
     for(const scene of scenes.filter(s=>s.scale<.5))for(let i=0;i<budget.groveTrees;i++){
       const seed=stableSeed(scene.id+':grove:'+i),angle=(seed%10000)/10000*Math.PI*2;
@@ -133,27 +231,17 @@ export class ChronicleAssets{
       const x=scene.x+Math.cos(angle)*radius,z=scene.z+Math.sin(angle)*radius;
       if(!this.world.contains(x,z,.3*scene.scale)||occupied.some(o=>Math.hypot(x-o.x,z-o.z)<o.radius+1.4*scene.scale))continue;
       if(crowded(x,z,2.8*scene.scale))continue;
-      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=scene.scale;positions.push(p);register(p);
+      const p=new THREE.Vector3(x,this.world.surfaceAt(x,z),z);p.treeScale=scene.scale;dynamic.push(p);register(p);
     }
-    const geometry=makeTreeGeometry(),material=makeSurface({preset:'MAT_FOLIAGE',vertexColors:true,color:WHITE},{wind:.9,windAxis:'y',key:'tree'});
-    const regions=new Map();
-    for(const p of positions){const key=Math.floor(p.x/96)+':'+Math.floor(p.z/96);
-      if(!regions.has(key))regions.set(key,[]);regions.get(key).push(p);}
-    const matrix=new THREE.Matrix4(),q=new THREE.Quaternion(),scale=new THREE.Vector3(),biome=biomeByName('forest');
-    for(const [key,region] of regions){
-      const trees=new THREE.InstancedMesh(geometry,material,region.length);
-      region.forEach((position,i)=>{
-        const seed=stableSeed('tree:'+position.x+':'+position.z),t=(seed%1000)/1000,s=(.4+t*.22)*(position.treeScale||1);
-        q.setFromEuler(new THREE.Euler(0,t*6.28,0));scale.set(s,s*(.85+t*.5),s);
-        matrix.compose(position,q,scale);trees.setMatrixAt(i,matrix);
-        trees.setColorAt(i,mixColor(biome.low,biome.high,.25+t*.6).multiplyScalar(.92+t*.22));
-      });
-      trees.instanceMatrix.needsUpdate=true;if(trees.instanceColor)trees.instanceColor.needsUpdate=true;
-      trees.name='fan-trees:'+key;trees.computeBoundingSphere();group.add(trees);
+    if(base.dynamic){base.group.remove(base.dynamic);base.dynamic.dispose();base.dynamic=null;}
+    if(dynamic.length){
+      const mesh=new THREE.InstancedMesh(base.geometry,base.material,dynamic.length);
+      mesh.name='fan-trees:dynamic';
+      dynamic.forEach((p,i)=>{writeTreeInstance(mesh,i,p,p.treeScale||1);setTreeColor(mesh,i,p);});
+      mesh.instanceMatrix.needsUpdate=true;if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;
+      mesh.computeBoundingSphere();base.group.add(mesh);base.dynamic=mesh;
     }
-    if(!positions.length){geometry.dispose();material.dispose();}
-    if(this.forest){this.engine.remove(this.forest);release(this.forest);}
-    this.forest=group;this.forestPositions=positions;this.engine.add(group);this.forestKey=forestKey;
+    this.forestPositions=[...base.candidates.filter((p,i)=>base.visible[i]),...dynamic];
   }
   rebuild(plan){
     const next=new THREE.Group();next.name='chronicle-assets';
@@ -294,10 +382,10 @@ export class ChronicleAssets{
     }
     next.add(pathMesh);this.pathMesh=pathMesh;this.pathKey=pathKey;
     this.scenery||=new ChronicleScenery(this);
-    this.scenery.sync(occupied,areaOccupied);
+    this.scenery.setState({year:plan.year,occupied,areaOccupied});
     this.forestOccupied=areaOccupied;this.forestScenes=sceneWoods;
     this.buildForest([...areaOccupied,...this.scenery.clearings],sceneWoods);
-    this.scenery.start(this.forestPositions,plan.year);
+    this.scenery.start(this.forestPositions);
     const byRecipe=new Map(rows.map(r=>[r.id,r]));
     field.group.updateMatrixWorld(true);
     for(const pick of field.picks){

@@ -76,3 +76,24 @@ test('1795 Jeju retains estimated villages with actual Kim Mandeok scene occupan
   assert.deepEqual(scenery.landscapeCells.map(c=>({id:c.site.id,layout:c.layout})),before);
   assert.equal(assets.reuse.builtScenes,0);assert.equal(assets.reuse.scenes,1);
 });
+
+// #196: rebuild 가 setState 한 번으로 연도와 점유를 함께 넣는다. 옛 경로는 옛 연도로 먼저 배치한 뒤
+// 연도 변경으로 다시 배치했으므로, 같은 입력에서 두 경로의 최종 화면 상태가 같아야 한다.
+test('연도·점유를 한 번에 넣은 setState 결과는 옛 2회 호출(점유 먼저, 연도 나중) 결과와 같다',()=>{
+  const occupied=[{x:5,z:0,radius:3}],areas=[{x:5,z:0,radius:24}];
+  const shape=s=>({period:s.period.id,periodKey:s.periodKey,occupancyKey:s.occupancyKey,parcelKey:s.parcelKey,
+    clearings:s.clearings.map(c=>c.id),estimatedIds:[...s.estimatedIds].sort(),
+    cells:s.landscapeCells.map(c=>({id:c.site.id,period:c.period.id,densityKey:c.densityKey,layout:c.layout})),
+    stats:{houses:s.stats.houses,fields:s.stats.fields,villages:s.stats.villages,
+      estimatedSites:s.stats.estimatedSites,period:s.stats.period,ready:s.stats.ready,year:s.stats.year}});
+  const counted=s=>{let n=0;const refresh=s.refreshPeriod.bind(s);s.refreshPeriod=preserve=>{n++;refresh(preserve);};return ()=>n;};
+  const twoStep=makeScenery();twoStep.initialized=true;const twoStepRefreshes=counted(twoStep);
+  twoStep.setState({occupied,areaOccupied:areas});// 옛 sync(): 아직 1795년
+  twoStep.setState({year:1985});// 옛 setYear(): 새 연도로 다시 배치
+  const oneStep=makeScenery();oneStep.initialized=true;const oneStepRefreshes=counted(oneStep);
+  oneStep.setState({year:1985,occupied,areaOccupied:areas});
+  assert.equal(twoStepRefreshes(),2);assert.equal(oneStepRefreshes(),1);
+  assert.ok(shape(oneStep).cells.length>0,'비교할 마을이 있어야 한다');
+  assert.ok(shape(oneStep).stats.houses>0,'비교할 집이 있어야 한다');
+  assert.deepEqual(shape(oneStep),shape(twoStep));
+});

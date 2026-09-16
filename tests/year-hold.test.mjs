@@ -49,26 +49,63 @@ test('pointer cancellation, lost capture, key release, blur and hidden tab stop 
   delete globalThis.window;delete globalThis.document;
 });
 
-test('slider uses relative movement, starts with one year, accelerates and resets on reversal',async()=>{
+test('slider maps absolute position and release commits once without hold acceleration',async()=>{
   const {bindYearSlider}=await import('../services/host/app/year-hold.js');
   const windowListeners={},documentListeners={};
   globalThis.window={addEventListener:(name,fn)=>windowListeners[name]=fn};
   globalThis.document={hidden:false,addEventListener:(name,fn)=>documentListeners[name]=fn};
-  const f=fixture(),captures=new Set();
-  const slider={focus(){},setPointerCapture:id=>captures.add(id),hasPointerCapture:id=>captures.has(id),releasePointerCapture:id=>captures.delete(id)};
-  bindYearSlider(slider,f.hold);
-  const event=x=>({button:0,isPrimary:true,pointerId:7,clientX:x,preventDefault(){}});
-  slider.onpointerdown(event(900));assert.equal(f.year,100,'distant track press must not jump');
-  slider.onpointermove(event(902));assert.equal(f.year,100,'ignore sub-threshold pointer jitter');
-  slider.onpointermove(event(903));assert.equal(f.year,101,'first small move is exactly one year');
-  f.advance(1300);assert.equal(f.values.at(-1)-f.values.at(-2),2);
-  const year=f.year;slider.onpointermove(event(899));assert.equal(f.year,year-1,'reversal resets speed immediately');
-  f.advance(399);assert.equal(f.year,year-1);
-  slider.onpointerup(event(899));f.advance(10000);assert.equal(f.year,year-1);assert.equal(captures.size,0);
-  for(const finish of [()=>slider.onpointercancel(event(900)),()=>slider.onlostpointercapture(),()=>slider.onblur(),()=>windowListeners.blur(),()=>{document.hidden=true;documentListeners.visibilitychange();}]){
-    slider.onpointerdown(event(900));slider.onpointermove(event(904));const value=f.year;finish();f.advance(10000);assert.equal(f.year,value);assert.equal(captures.size,0);
-  }
-  slider.onkeydown({key:'ArrowRight',repeat:false,preventDefault(){}});const value=f.year;
-  slider.onkeyup({key:'ArrowRight',preventDefault(){}});f.advance(10000);assert.equal(f.year,value);
-  delete globalThis.window;delete globalThis.document;
+  try{
+    let year=100,commits=0;const values=[],captures=new Set(),listeners={};
+    const slider={min:'-2500',max:'2100',getBoundingClientRect:()=>({left:100,width:460}),focus(){},
+      addEventListener:(name,fn)=>listeners[name]=fn,setPointerCapture:id=>captures.add(id),
+      hasPointerCapture:id=>captures.has(id),releasePointerCapture:id=>captures.delete(id)};
+    bindYearSlider(slider,{read:()=>year,preview:(value,holding)=>{year=value;values.push([value,holding]);},commit:()=>commits++});
+    const event=x=>({button:0,isPrimary:true,pointerId:7,clientX:x,preventDefault(){}});
+    slider.onpointerdown(event(100));assert.equal(year,-2500);
+    slider.onpointermove(event(560));assert.equal(year,2100);
+    assert.deepEqual(values,[[-2500,true],[2100,true]]);
+    slider.onpointerup(event(560));slider.onpointercancel(event(560));slider.onlostpointercapture();
+    assert.equal(commits,1);assert.equal(captures.size,0);
+    for(const finish of [()=>slider.onpointercancel(event(100)),()=>slider.onlostpointercapture(),()=>slider.onblur(),()=>windowListeners.blur(),()=>{document.hidden=true;documentListeners.visibilitychange();}]){
+      const before=commits;slider.onpointerdown(event(100));finish();assert.equal(commits,before+1);assert.equal(captures.size,0);
+    }
+    slider.onkeydown({key:'ArrowRight',repeat:false,preventDefault(){}});assert.deepEqual(values.at(-1),[-2499,false]);
+    slider.onkeydown({key:'ArrowRight',repeat:true,preventDefault(){}});assert.deepEqual(values.at(-1),[-2498,false]);
+    listeners.wheel({deltaY:8,preventDefault(){}});assert.deepEqual(values.at(-1),[-2497,false]);
+  }finally{delete globalThis.window;delete globalThis.document;}
+});
+
+test('atlas edge holds move a quarter window every 300ms and release commits once',async()=>{
+  const {bindYearSlider}=await import('../services/host/app/year-hold.js');
+  const {AtlasUI}=await import('../services/host/app/atlas-ui.js');
+  const previousWindow=globalThis.window,previousDocument=globalThis.document;
+  globalThis.window={addEventListener(){}};globalThis.document={hidden:false,addEventListener(){}};
+  try{
+    for(const direction of [-1,1]){
+      let year=1200,commits=0,id=0;const tasks=new Map(),listeners={},captures=new Set();
+      const slider={min:1000,max:1400,style:{},setAttribute(){},getBoundingClientRect:()=>({left:0,width:400}),focus(){},
+        addEventListener:(name,fn)=>listeners[name]=fn,dispatchEvent:event=>listeners[event.type]?.(event),
+        setPointerCapture:id=>captures.add(id),hasPointerCapture:id=>captures.has(id),releasePointerCapture:id=>captures.delete(id)};
+      const atlas=Object.create(AtlasUI.prototype);
+      Object.assign(atlas,{rangeWindow:[1000,1400],slider,root:{querySelector:()=>({value:400})},time:{querySelector:()=>({})},
+        currentTick:{style:{}},ticks:{children:[]}});
+      listeners.yearedge=event=>atlas.syncTime(year,true,event.detail);
+      bindYearSlider(slider,{read:()=>year,preview:value=>{year=value;atlas.syncTime(value,true);},commit:()=>commits++,
+        schedule:(fn,delay)=>{tasks.set(++id,{fn,delay});return id;},cancel:id=>tasks.delete(id)});
+      const event={button:0,isPrimary:true,pointerId:1,clientX:direction<0?0:400,preventDefault(){}};
+      slider.onpointerdown(event);assert.equal(year,direction<0?1000:1400);assert.equal(commits,0);
+      for(let i=1;i<=2;i++){
+        const [id,task]=tasks.entries().next().value;assert.equal(task.delay,300);tasks.delete(id);task.fn();
+        assert.deepEqual(atlas.rangeWindow,[1000+direction*100*i,1400+direction*100*i]);
+        assert.equal(year,(direction<0?1000:1400)+direction*100*i);assert.equal(commits,0);
+      }
+      slider.onpointermove({...event,clientX:200});assert.equal(tasks.size,0,'leaving edge cancels window movement');
+      slider.onpointermove(event);assert.equal(tasks.size,1);
+      slider.onpointerup(event);assert.equal(commits,1);assert.equal(tasks.size,0);assert.equal(captures.size,0);
+      atlas.rangeWindow=direction<0?[-2500,-2100]:[1700,2100];atlas.syncTime(direction<0?-2500:2100);
+      slider.onpointerdown(event);assert.equal(tasks.size,0,'global bounds stop edge timers');slider.onpointercancel(event);
+      assert.equal(commits,2);
+    }
+  }finally{if(previousWindow===undefined)delete globalThis.window;else globalThis.window=previousWindow;
+    if(previousDocument===undefined)delete globalThis.document;else globalThis.document=previousDocument;}
 });

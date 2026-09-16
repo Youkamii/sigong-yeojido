@@ -1,0 +1,232 @@
+# 연도 조작 반응성 (#196)
+
+코드와 단위 테스트 변경 기록이다. 서버는 기동하지 않았고 커밋하지 않았다. 브라우저 성능과 화면 비교는 리더가 로컬 뷰어에서 실측한다. 아래 변경 후 수치는 그때 채운다.
+
+## 변경 내용과 이유
+
+| 항목 | 변경 | 이유·근거 |
+| --- | --- | --- |
+| 1 | `year-hold.js`에서 포인터 위치를 현재 range의 min/max에 직접 매핑한다. 화살표와 휠은 1년씩 이동하고 `Chronicle`에서 250ms 후 확정한다. | 움직인 거리와 연도 폭이 비례한다. 가속 타이머는 −/+ 버튼에만 남는다. 기원전/서기 사이에 0년을 만들지 않는다. |
+| 2 | 드래그는 holding 미리보기, pointerup/cancel·capture 해제·blur에서 확정한다. | 숫자·시대 이름·사건 카드 창만 먼저 움직이고, 드래그 중 장면 재조립을 피한다. |
+| 3 | 완료를 기다리는 재생 타이머를 사용한다. | 진행 중 틱은 건너뛰고 이전 확정의 늦은 지도 반영까지 끝난 뒤 1200ms를 기다린다. |
+| 4 | 사건 카드 드래그·휠에도 holding을 전달한다. | 드래그 종료 또는 휠 입력이 250ms 동안 없을 때 한 번 확정한다. |
+| 5 | 연도 확정은 일반 context/지도 changed 콜백의 중복 refresh를 우회한다. 지도 응답을 최대 400ms 기다리고 한 번 refresh한다. | 응답이 늦으면 빈 현재 연도 features로 먼저 그리고, 늦은 응답 키가 달라졌을 때만 추가 refresh한다. 이전 연도의 장소를 새 연도에 섞지 않는다. |
+| 6 | `KoreaWorld.setLiveState`에서 연도·출처·출처 강조·원본 필터·선택을 함께 설정한다. | `_applyLive` 한 번으로 계산하고 선택 표시 크기도 유지한다. 기존 draw3d는 선택 처리까지 합치면 다섯 번 호출했다. |
+| 7 | 2D가 아닌 모드에서는 draw가 dirty 표시만 남긴다. | 숨겨진 캔버스의 재계산을 건너뛰고 2D로 돌아올 때 그린다. |
+| 8 | 풍경 키에서 매년 바뀌던 연도를 빼고 활성 사이트별 시대·density·scale과 실제 선택 결과를 쓴다. | 밀도와 시대가 같은 해에는 재배치하지 않는다. 도시 성장·산업 전환과 반올림 경계의 선택 변화는 보존한다. |
+| 9 | 전체 plan stringify 대신 조립기·표시 코드가 읽는 필드를 골라 장면 키를 만든다. | 아래 키 구성 근거 참조. 단순 참여자 수뿐 아니라 같은 수의 다른 인물·역할·효과도 구분한다. |
+| 10 | 데이터/장면 패킷이 바뀔 때 구간 인덱스와 사건 목록·관계 인덱스를 만든다. 패널은 내용 키가 같으면 DOM을 재사용한다. | 연도 조회는 겹치는 구간만 읽는다. 긴 생애·재위가 조회 창을 가로지르는 경우도 포함한다. 연도 제목·범위·생애 막대는 별도로 갱신한다. |
+| 11 | 지도 요청 AbortController, 최대 60개 LRU 캐시, idle의 이웃 연도 선반입을 추가한다. | 연속 확정의 오래된 응답은 버린다. 캐시 키에는 연도뿐 아니라 출처·원본 필터·level을 포함한다. |
+| 12 | `setHistoricalFeatures`가 같은 키에서는 기존 geometry/material을 유지한다. | 경계선의 불필요한 dispose와 재생성을 피한다. |
+| 13 | 즉시 미리보기 → 프레임 경계 → context → 프레임 경계 → 장면 → 프레임 경계 → 지도 갱신 순서로 실행한다. | 첫 숫자가 실제로 그려질 시간을 주고, 새 확정이 들어오면 이전 작업의 남은 단계와 늦은 응답을 토큰으로 무효화한다. |
+
+## 키 구성 근거
+
+- 장면: `ChronicleAssets.rebuild`의 위치 선택 순서(scenePlace, 역사 지도 장소, locationReference, 사람의 locations)를 모두 포함한다. ID·연도·kind·archetype·위치·참여자 수에 더해 인물 ID/역할/현장 여부/편/모형, visualActions, effects, participantGroups, sceneFunction, heritageType/Floors, continuing, 설정·전승·배경 정보를 포함한다. `composeHistoricalEvent`가 제목·설명으로 모형을 고르는 경우가 있어 label/title/summary도 포함한다. 표시·출처가 오래된 값으로 남지 않도록 claim ID와 표시 문구도 포함한다. 배열 순서는 배치 순서에 영향을 주므로 보존한다.
+- features: feature ID 목록과 연도에 geometry·properties를 더한다. 같은 ID의 좌표나 근거가 바뀌어도 놓치지 않는다. 응답 배열은 읽기 전용으로 취급하고 WeakMap에 한 번 계산한 키를 보관한다. 새 응답은 새 배열이므로 다시 계산한다.
+- 풍경: 활성 사이트 ID·kind·sitePeriod와 밀도/화질 scale의 소수 둘째 자리 값을 사용한다. 반올림한 밀도가 같아도 seed 문턱을 넘어 마을이 달라질 수 있으므로 실제 선택 여부(원래 배율과 화질 배율 모두)를 추가한다. 도시의 성장 연도, 1970·1980, 산업 시작 문턱도 포함해 같은 시대 안의 외형 변화를 보존한다.
+- context: 출처가 반영된 데이터 객체와 장면 패킷 배열이 바뀔 때 인덱스를 새로 만든다. 연도별 사건 창은 구간 트리에서 조회하며, 전체 사건 목록은 이전·다음 사건과 카드 창을 위해 유지한다. 원래 span의 의미(좌우 절반씩)를 바꾸지 않는다.
+- 패널: 사건 ID/장면 ID/기간/현재 여부 외에도 사람·재위·나라·도시·로딩·오류 상태를 포함한다. 사건 목록만 같고 사람이 바뀌는 경우에는 갱신한다.
+
+## 후속 수정 1 (적대 리뷰 반영)
+
+리뷰에서 CONFIRMED 된 15개 항목을 반영한 기록이다. 서버는 기동하지 않았고 커밋하지 않았다.
+
+| 항목 | 반영 | 내용 |
+| --- | --- | --- |
+| 1 | 반영 | 풍경에 `setState({year,occupied,areaOccupied})` 하나를 두고 `sync`/`setYear`/`start`/`rebuildForest`가 모두 이것을 부른다. 새 연도를 먼저 넣고 시대 키·구역 키·필지 키를 함께 비교해 `refreshPeriod(true)`를 확정 1회당 최대 한 번만 돌린다. 전에는 rebuild 한 번에 두 번 돌았고 첫 번째는 옛 연도로 배치했다. |
+| 2 | 반영 | `index.html`의 `openTimeProjection`이 옛 확정 경로 대신 `changeYear(year)`를 쓴다. 지도 갱신이 두 번 돌지 않는다. |
+| 3 | 반영 | 장면 키에서 `historicalFeaturesKey(event.sites, year)` 항을 뺐다. 매번 새 배열이라 WeakMap 이 적중하지 않았고, features 는 이미 `featuresKey` 로 덮인다. 호출처가 없던 `invalidate()`도 지웠다. |
+| 4 | 반영 | 연도 라벨 갱신을 `setYearLabel(v)` 하나로 모으고, 3D 초기화의 5회 설정을 `setLiveState` 1회로 합쳤으며, 사건 띠의 `!==null&&!==undefined`를 `!=null`로 줄였다. |
+| 5 | 반영 | 패널 키가 인물·나라 객체 전체(인용문·근거 포함) 대신 화면에 쓰는 값(id·기간·라벨·claim id·관계 대상 id)만 본다. |
+| 6 | 반영 | 마커는 크기를 먼저 한꺼번에 읽고 나서 위치를 쓴다. 이야기 메뉴는 목록 id 가, 영역 범례는 `this.key`가 바뀔 때만 다시 만든다(연도별 안내문은 `updateNote()`로 분리). |
+| 7 | 반영 | 슬라이더 안내 문구를 "방향키나 마우스 휠로는 1년씩 움직여요"로 고쳤다. |
+| 9 | 반영 | 확정 진행 중 들어온 context 렌더는 `requestRefresh`가 플래그로 기억했다가 확정이 끝나는 `finally`에서 한 번만 refresh 한다. 토큰이 최신일 때만 반영한다. |
+| 10 | 반영 | 지도 필터만 바꿔 다시 확정할 때는 `{keepSelection:true}`로 3D 선택을 유지한다. |
+| 11 | 반영 | 늦은 지도 응답 대기에 상한 8초를 뒀다. 넘기면 busy 를 풀고, 응답이 도착하면 토큰·키 비교로만 반영한다. |
+| 12 | 반영 | 재생 틱 비교에 5ms 여유를 두고 남은 시간만큼만 다시 예약한다. 확정이 끝나면 `settled`가 재생에 알려 다음 틱을 바로 잇는다. |
+| 13 | 반영 | 드래그 중 썸이 양 끝에 머물면 아틀라스 시간 창을 그 방향으로 옮긴다(동작 변화는 아래 참조). |
+| 14 | 반영 | 패널 키가 같아도 `.context-title h2` 나 범위 요소가 없으면 전체 렌더로 되돌아간다. Chronicle 패널을 아틀라스 없이 쓸 때의 TypeError 를 없앤다. |
+| 15 | 반영 | `estimatedThresholdAt(periodId, latitude, context)`가 근접 호구 기록을 한 번만 찾고 배율만 받는 함수를 돌려준다. `siteDensityState`는 이걸로 원래 배율과 화질 배율 두 값을 한 번의 탐색으로 얻는다. `estimatedSiteThreshold`는 이 함수를 감싼 형태라 결과값은 그대로다. |
+
+8번은 리더가 정합성 렌즈(9~15번)를 덧붙인 자리이며 따로 고칠 코드가 없다.
+
+### 13번 동작 변화 — 드래그로 시간 창 밖까지 이동
+
+- 전: 포인터 위치를 현재 range 의 min/max 에 [0,1]로 직접 매핑했다. 아틀라스 시간 창이 400년이면 한 번의 드래그로 그 400년 밖으로 나갈 수 없었다. 옛 가속 hold 는 창을 밀어냈으므로 이 점이 뒷걸음이었다.
+- 후: 드래그 중 썸이 왼쪽 끝(또는 오른쪽 끝)에 머물면 300ms 마다 `yearedge` 이벤트가 나가고, 아틀라스가 현재 창 폭의 1/4 만큼 그 방향으로 창을 옮긴다. 창이 실제로 옮겨지면 같은 포인터 위치로 미리보기를 다시 계산한다. 창은 −2500~2100 에서 멈춘다. 확정은 손을 뗄 때 한 번만 일어난다.
+- 범위: 시간 창이 전체(4600년 이상)일 때는 옮기지 않는다. 미리보기만 움직이므로 드래그 도중 장면 재조립은 없다.
+- 브라우저 실측: NOT_RUN. 단위 검사로는 창 이동 요청·재계산 경로만 확인했다.
+
+### 1번 결과 동치
+
+`tests/scenery-coexist.test.mjs`의 `연도·점유를 한 번에 넣은 setState 결과는 옛 2회 호출(점유 먼저, 연도 나중) 결과와 같다`가 같은 입력에서 두 경로의 최종 상태(시대·키·마을 배치·집·밭 수·빈터)를 비교한다. 옛 경로는 `refreshPeriod` 2회, 새 경로는 1회이며 결과는 같다. 화면에 보이는 마을·시설·숲은 달라지지 않고, 첫 배치가 옛 연도로 됐다가 바로잡히던 낭비만 사라진다.
+
+## 리더 실측 표
+
+전 수치는 작업 지시서의 낮음 화질·headless 실측값이다. 단위 테스트 실행 시간은 브라우저 성능 개선 수치로 사용하지 않는다.
+
+| 지표 | 변경 전 | 변경 후 |
+| --- | ---: | ---: |
+| 연도 1회 확정: 긴 작업 수 | 120건 | 35건 |
+| 연도 1회 확정: 긴 작업 합계 | 30,264ms | 9,941ms |
+| 연도 1회 확정: 최장 긴 작업 | 639ms | 705ms |
+| input 8회, 120ms 간격: 확정 횟수 | 8회 | 1회(놓을 때) |
+| input 8회, 120ms 간격: 긴 작업 수 | 99건 | 37건 |
+| input 8회, 120ms 간격: 긴 작업 합계 | 34,775ms | 11,482ms(최장 1,332ms) |
+| 슬라이더 드래그 1회로 도달 가능한 연도 폭 | 가속 틱에 의존(100ms당 1→25년) | 썸 위치만큼 즉시(1611→1619 한 번에). 후속 수정: 양 끝에 머물면 300ms마다 현재 창 폭의 1/4씩 창을 옮겨 한 번의 드래그로 창 밖까지 이동하고, 놓을 때 확정한다(추가 동작 브라우저 실측: NOT_RUN). |
+
+리더 실측(2026-09-16, 로컬 뷰어 :8887, 낮음 화질, headless Chromium 1440×900, 1610년 부근, c2 Fuseki 터널): 확정 1회 비용은 약 1/3, 8년 드래그는 확정 1회로 줄었다. 남은 긴 작업(약 10초/헤드리스)은 장면 조립·풍경 배치이며 워커 분리는 후속 후보다.
+
+## 실측 시 주의점
+
+1. 같은 연도·출처·화질·카메라와 같은 대기 조건에서 비교한다. 최초 로딩과 이미 로딩된 상태, 지도 캐시 적중/미적중을 나눠 기록한다.
+2. 실제 pointerdown/move/up 드래그와 기존의 input 이벤트 8회 재생을 각각 잰다. Atlas의 시간 범위 설정이 range min/max를 바꾸므로 범위와 슬라이더 폭도 함께 기록한다. 0년을 제외한다.
+3. 400ms 안의 응답은 refresh 1회, 늦고 다른 응답은 추가 1회가 정상이다. 늦은 빈 응답은 추가 refresh가 없어야 한다. 새 연도로 이동한 뒤 예전 응답이 화면을 되돌리지 않는지 확인한다.
+4. 재생 도중 느린 응답·긴 조립이 생겨도 틱이 쌓이지 않는지, 완료 후 최소 1200ms 간격인지 확인한다.
+5. 기원전/서기 경계, 671→672 밀도 자료 범위 경계, 도시 성장·산업 문턱, 출처/level 전환, 사건 선택 뒤 이동, 3D→2D 전환을 비교한다. 숫자뿐 아니라 장면·마을·숲·영역의 표시가 맞는지 확인한다.
+6. 키보드·휠 연속 입력, pointercancel, 창 초점 이탈에서도 마지막 미리보기 연도가 한 번만 확정되는지 확인한다.
+
+브라우저 실측: NOT_RUN. 워커 분리는 향후 후보이며 이번 변경에는 포함하지 않았다. 서버 API·데이터·파이썬·의존성은 변경하지 않았다.
+
+## 단위 검사
+
+실행 명령은 `node --test tests/*.mjs`만 사용한다. 변경 전에는 333개 중 332개 통과, 기존 실패 1개였다. 기존 실패는 `tests/test_place_state.mjs:69`의 `outside candidates retain dates, sources and authorship instead of vanishing`이며 기대값 1, 실제값 0이다.
+
+새 검사는 직접 위치 매핑, 밀도 재사용/경계, 장면 키의 시각 필드 변화, 지도 캐시·취소·오래된 응답 무시, 재생 완료 간격, 빠른/느린 지도 응답과 확정 취소, 생애·재위·사건 참여, 패널 DOM 재사용, 3D 일괄 적용 및 실제 geometry 재사용을 다룬다. 기존의 상대 드래그·매년 풍경 재배치 전제는 새 요구에 맞게 갱신했다.
+
+최종 결과: **352개 중 351개 통과, 기존 실패 1개, 새 실패 0개**. 종료 코드는 기존 실패 때문에 1이다. 브라우저 화면과 긴 작업 수·시간 검증은 이 결과에 포함하지 않는다.
+
+후속 수정 1 이후: **361개 중 360개 통과, 기존 실패 1개(`tests/test_place_state.mjs`), 새 실패 0개**. 9·12·14번의 새 검사(확정 중 밀린 context refresh 1회, 1199ms 재생 간격과 확정 직후 재예약, 제목 없는 패널의 전체 렌더 폴백)와 1번 동치 검사를 더했다. `scene-kinds`·`branch-review-regressions`의 풍경 대역은 새 `setState` 시그니처를 따르도록 고쳤고 단언은 그대로 두었다.
+
+
+## #201 장면 조립·풍경 배치 워커 분리
+
+### 무엇을 했나
+
+계산과 그리기를 갈랐다. 마을 자리를 고르고 집·밭·길을 배치해 정점 좌표까지 뽑는 일은 three 도 DOM 도 쓰지 않는 순수 계산이라 워커로 옮겼고, 메인 스레드에는 받은 배열로 geometry 와 InstancedMesh 를 만드는 일만 남겼다.
+
+| 옮긴 것 | 원래 있던 곳 | 지금 있는 곳 |
+| --- | --- | --- |
+| `siteDensityState` | `chronicle-scenery.js` | `scene-layout.js` (구 위치에서 재수출) |
+| `selectEstimatedSites` | `chronicle-scenery.js` | `scene-layout.js` (구 위치에서 재수출) |
+| `selectSceneSites` | `chronicle-scenery.js` | `scene-layout.js` (구 위치에서 재수출) |
+| `refreshPeriod` 의 계산부(`settlementLayout` 적용·`fits`/`owns`/`ruralFree`/`ground`·밭·빈터 거르기·도로 세분화) | `chronicle-scenery.js` | `scene-layout.js` `computeLandscape` |
+| `point(site,x,z)` | `chronicle-scenery.js`·`scenery-overview.js` | `scene-layout.js` `pointOn` |
+| `sceneryOverview` 의 정점·색 계산 | `scenery-overview.js` | `scene-layout.js` `overviewBuckets` |
+| three.Color 의 sRGB→선형 변환 | three | `scene-layout.js` `linearColor` |
+| `BufferGeometry.computeVertexNormals` | three | `scene-layout.js` `computeVertexNormals` |
+
+새로 생긴 파일은 셋이다.
+
+- `services/host/app/scene-layout.js` — 위 표의 순수 함수 모음. 워커와 메인이 같은 이 파일을 부른다. 계산이 한 곳에만 있으므로 두 경로의 결과가 갈라질 수 없다.
+- `services/host/app/workers/scene-layout.worker.js` — 모듈 워커. 메시지 규약(`init`/`layout`)과 이어붙이기만 맡는다. `three` 를 부르지 않으므로 페이지의 importmap 없이 그대로 돈다. node 단위 검사는 `worker_threads` 없이 `createSceneLayoutCore()` 를 직접 부른다.
+- `services/host/app/scene-layout-client.js` — 메인 쪽 손잡이. 워커 생성·토큰·감시 시간·폴백 전환을 맡는다.
+
+`scenery-overview.js` 는 정점 배열을 three 로 조립하는 `overviewFromBuckets` 로 줄었다. 기존 `sceneryOverview(world,cells,...)` 는 `overviewBuckets` + `overviewFromBuckets` 의 얇은 껍데기로 남겨 기존 검사와 호출처를 그대로 뒀다.
+
+워커가 지형 높이를 메인과 똑같이 읽어야 해서, `world.surfaceAt`·`contains`·`toWorld` 를 워커에서 되살리는 길도 함께 만들었다(`serializeWorld` / `createWorldView`). 높이는 실제로 그려진 `peninsula-surface` 삼각형 배열에서 뽑고, 링 밖은 메인과 같은 해수면/이웃 땅 높이로 떨어진다.
+
+### 폴백 경로
+
+1. `Worker` 가 없거나(file://·구형) `serializeWorld` 가 지형을 못 찾으면 `createSceneLayoutClient` 가 `null` 을 돌려주고, `ChronicleScenery.requestRefresh` 는 곧바로 `refreshPeriod`(메인 동기)로 간다.
+2. 워커 생성 실패, `postMessage` 실패, `onerror`/`onmessageerror`, 워커가 보낸 `error`, 감시 시간(6초) 초과, 결과 반영 중 예외 — 이 중 무엇이든 한 번 걸리면 워커를 끄고 그 뒤로는 계속 동기 경로를 쓴다.
+3. 콘솔 경고는 세션에 한 번만 남긴다(`[scene-layout worker] 워커를 쓰지 못해 메인 스레드에서 계산합니다.`).
+4. 두 경로가 부르는 함수가 같으므로 폴백해도 화면 결과는 같다. 단위 검사가 정점·색·법선까지 맞춰 고정한다.
+
+### 늦은 응답과 화질 변경
+
+- 요청마다 토큰이 올라간다. 연속 확정에서 옛 토큰의 응답이 늦게 와도 버린다(`data.token!==inflight`).
+- 워커는 "메인이 실제로 화면에 반영했다"고 알려 온 응답(`ack`)만 다음 재사용 기준으로 삼는다. 버려진 응답은 `ack` 가 오지 않으므로 기준이 밀리지 않는다.
+- 화질이 바뀌면 `setQuality` 가 `requestRefresh(true)` 로 다시 요청한다. 예산(`quality`)이 요청에 실려 가고, 밀도 키(`sceneryPeriodKey`)에 배율이 들어 있어 모든 셀이 새로 계산된다.
+
+### 숲 부분 갱신
+
+후보 나무(최대 18,000그루)는 한 번만 만들고 96칸 구역별 `InstancedMesh` 로 고정한다. 점유 원·장면·길목이 달라진 반경 안의 인스턴스만 행렬을 고치고, 가릴 때는 스케일 0 으로 숨긴다(메시 재생성 없음). edge/grove 나무는 매번 달라지므로 `fan-trees:dynamic` 하나로 따로 뺐다.
+
+- 바뀐 원은 `circleDifference` 가 이전/이번 목록의 차집합으로 구한다. 남아 있는 원은 판정을 바꾸지 않는다.
+- 바뀐 길목은 `CountrysidePaths.sync` 가 구간 단위로 모아 두고 숲이 `takeChanges()` 로 한 번 읽고 비운다. 길 점 간격은 1.5, 나무 판정 여유는 1.1 이므로 끝점 반경 1.85 면 구간 전체가 덮인다.
+- 바뀐 원이 3,000개를 넘거나 길 변화 점이 4,096개를 넘으면 전수 재검사가 더 싸므로 그쪽으로 돌아간다(`takeChanges()` 가 `null`).
+
+### 전송 데이터 크기
+
+`tests/scene-layout-worker.test.mjs` 의 표본(지형 정점 10,584개, 사이트 18곳, 1700년, 마을 15곳·집 289채·밭 132구획)에서 잰 값이다. 실제 뷰어 수치는 지형 삼각형 수와 연도에 따라 달라지므로 아래 '측정 절차'로 리더가 잰다.
+
+| 구간 | 언제 | 크기 | 방식 |
+| --- | --- | ---: | --- |
+| `init` 지형·링 | 워커 생성 시 1회 | 127,072 B | transferable(복사 없음) |
+| `init` 사이트 목록 | 워커 생성 시 1회 | 3,793 B (JSON 기준) | 구조화 복제 |
+| `layout` 요청 | 확정 1회마다 | 1 KB 미만 | 구조화 복제 |
+| `layout` 응답 — 정점·색·법선 | 확정 1회마다 | 731,160 B (버킷 9개) | transferable(복사 없음) |
+| `layout` 응답 — 바뀐 셀의 layout | 확정 1회마다 | 120,004 B (JSON 기준) | 구조화 복제 |
+
+지형 전송은 `정점 수 × 12 B` 다. 응답의 정점·색·법선은 버퍼를 넘기므로(transfer) 복사 비용이 없다. 셀 layout 은 가까이서 집을 세울 때 필요해 구조화 복제로 가지만, **바뀐 마을만** 실린다 — 재사용된 마을은 id 만 온다(위 표본에서 재사용이 걸리면 이 칸은 0 B 로 떨어진다).
+
+### 리더 실측 표 (#201)
+
+앞 열은 #196 후 리더 실측값이다. 뒤 열은 리더가 채운다.
+
+| 지표 | #196 후 | 워커 분리 후 |
+| --- | ---: | ---: |
+| 연도 1회 확정: 긴 작업 수 | 35건 | |
+| 연도 1회 확정: 긴 작업 합계 | 9,941ms | |
+| 연도 1회 확정: 최장 긴 작업 | 705ms | |
+| 연도 1회 확정: 워커 왕복 시간 | — | |
+| input 8회, 120ms 간격: 긴 작업 수 | 37건 | |
+| input 8회, 120ms 간격: 긴 작업 합계 | 11,482ms | |
+| 숲 재배치: 갱신한 인스턴스 수 / 전체 후보 | 전체 | |
+
+목표는 지시서대로 **메인 스레드 긴 작업 합계 절반 이하, 최장 300ms 이하**다.
+
+### 측정 절차
+
+1. 조건은 #196 과 같게 맞춘다 — 로컬 뷰어 `:8887`, 낮음 화질, headless Chromium 1440×900, 1610년 부근, 같은 카메라·출처. 최초 로딩과 이미 로딩된 상태를 나눠 기록한다.
+2. `PerformanceObserver({entryTypes:['longtask']})` 로 확정 1회의 긴 작업 수·합계·최장을 잰다. #196 과 같은 잣대를 쓴다.
+3. 워커가 실제로 켜졌는지 먼저 확인한다. 콘솔에 `[scene-layout worker]` 경고가 없고 DevTools 의 스레드 목록에 `scene-layout.worker.js` 가 보이면 워커 경로다. 경고가 보이면 그 실측은 폴백(동기) 수치이므로 따로 적는다.
+4. 전송 크기는 페이지 로드 **전에** 아래를 주입해 잰다(`Page.addScriptToEvaluateOnNewDocument`).
+
+   ```js
+   const post = Worker.prototype.postMessage;
+   globalThis.__layoutWire = {toWorker: [], fromWorker: []};
+   const size = o => ['positions','colors','normals'].reduce((n,k)=>n+(o?.[k]?.byteLength||0),0);
+   Worker.prototype.postMessage = function (message, transfer) {
+     globalThis.__layoutWire.toWorker.push({type: message?.type, token: message?.token,
+       transferred: (transfer||[]).reduce((n,b)=>n+(b.byteLength||0),0),
+       cloned: message?.type==='init' ? JSON.stringify(message.sites||[]).length : 0});
+     if (!this.__wired) {
+       this.__wired = true;
+       this.addEventListener('message', e => globalThis.__layoutWire.fromWorker.push({
+         token: e.data?.token, buckets: (e.data?.buckets||[]).reduce((n,b)=>n+size(b),0),
+         cells: JSON.stringify(e.data?.cells||{}).length,
+         retained: (e.data?.retainedIds||[]).length}));
+     }
+     return post.apply(this, arguments);
+   };
+   ```
+
+   확정 몇 번 뒤 `__layoutWire` 를 읽어 요청당 평균과 최대를 적는다.
+5. 숲 부분 갱신은 확정 전후로 `fan-trees:*` 인스턴스 메시 수가 그대로인지, `fan-trees:dynamic` 만 바뀌는지 본다. 메시 수가 매번 달라지면 부분 갱신이 아니라 전수 재배치로 떨어진 것이다.
+6. 결과가 바뀌지 않았는지 눈으로 본다 — 같은 연도에서 마을·집·밭·길·숲의 배치가 워커 경로와 폴백 경로에서 같아야 한다. 폴백 경로는 콘솔에서 `delete window.Worker` 를 페이지 로드 전에 주입해 강제할 수 있다.
+7. 늦은 응답 처리를 확인한다 — 빠르게 연속 확정한 뒤 화면이 마지막 연도로 한 번만 정착하는지, 중간 연도로 되돌아가지 않는지 본다.
+8. 기원전/서기 경계, 671→672 밀도 자료 경계, 도시 성장·산업 문턱, 화질 전환(낮음↔보통), 3D→2D 전환에서도 같은 확인을 되풀이한다.
+9. 주의 — `scripts/measure_first_screen.py` 는 `ChronicleScenery.prototype.refreshPeriod` 를 감싸 `estimatedBackground` 구간을 잰다. 워커 경로에서는 `refreshPeriod` 가 불리지 않으므로 그 구간이 0 으로 보인다. 워커 경로의 같은 구간을 재려면 `applyLandscape` 를 함께 감싸거나, `delete window.Worker` 로 폴백을 강제해 비교한다. 이번 변경에서 그 스크립트는 건드리지 않았다.
+
+브라우저 실측: NOT_RUN(리더 몫). 서버 API·데이터·파이썬·의존성은 이번에도 바꾸지 않았다.
+
+### 단위 검사 (#201)
+
+실행 명령은 `node --test tests/*.mjs` 만 쓴다. 결과는 **371개 중 370개 통과, 기존 실패 1개(`tests/test_place_state.mjs` 의 `outside candidates retain dates, sources and authorship instead of vanishing`), 새 실패 0개**다.
+
+새로 더한 검사는 둘이다.
+
+- `tests/scene-layout-worker.test.mjs` — 같은 입력에서 워커 핸들러 결과가 메인 동기 결과와 같은지 마을 차례·집/밭 수·셀 layout·정점·색·법선까지 맞춘다. 정점은 three 가 만든 `BufferGeometry` 의 실제 배열과 직접 비교하고, 색은 `THREE.Color` 의 sRGB→선형 변환과 float32 한 값까지 맞춘다. `ack` 기반 재사용, 토큰으로 옛 응답 버리기, 실패 시 경고 1회와 폴백, 감시 시간 초과 폴백, 워커 없는 환경도 함께 고정한다.
+- `tests/forest-incremental.test.mjs` — 점유·길·장면이 바뀐 반경만 고친 숲이 전수 재배치와 같은 나무를 같은 자리에 두는지(인스턴스 행렬 전체 비교), 가려진 후보가 스케일 0 으로 남는지, edge/grove 나무만 다시 만들어지는지, 같은 입력이면 아무것도 다시 만들지 않는지 고정한다.
+
+`tests/scene-quality.test.mjs` 와 `tests/scenery-overview.test.mjs` 는 바뀐 진입점(`requestRefresh`)과 모듈 경로 치환에 맞춰 대역만 고쳤고 단언은 그대로 뒀다.
+
+### 남은 병목 (추정)
+
+1. 확정 응답의 셀 layout 구조화 복제 — 표본에서 마을 15곳에 120 KB 다. 재사용이 걸리면 바뀐 마을만 실리지만, 시대가 통째로 바뀌는 확정에서는 전체가 실린다. 줄이려면 집 목록도 정점처럼 평평한 배열로 바꿔야 한다.
+2. 마커 reflow 와 `flyTo` 중 라벨 재배치 — 이번 변경 밖이다.
+3. `Chronicle.render` 의 innerHTML — 이번 변경 밖이다.
+4. 워커가 메인과 같은 `settlementLayout` 을 부르므로 계산량 자체는 줄지 않았다. 메인 스레드에서 비켰을 뿐이다. 워커 안에서도 한 번에 6초를 넘기면 감시 시간에 걸려 폴백하므로, 아주 큰 연도에서 워커 자체가 느린지 리더 실측으로 봐야 한다.

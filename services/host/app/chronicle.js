@@ -1,9 +1,11 @@
 import {escapeHtml as esc} from './html.js';
 import {loadChronicle} from './chronicle-load.js';
-import {createYearHold,bindYearHold,bindYearSlider,stepYear} from './year-hold.js';
+import {createYearHold,bindYearHold,bindYearSlider,stepYear,createYearPlayback} from './year-hold.js';
 import {EventTimeline} from './event-timeline.js';
 import {isHistoricalSetting} from './chronicle-sites.js';
 import {visiblePackets,visiblePacketEvents} from './scene-packets.js';
+import {createYearIndex} from './year-index.js';
+import {valueKey} from './year-scrub.js';
 
 const sourceHost=source=>{try{return new URL(source.resource||'').hostname;}catch{return '';}};
 const publicRecord=source=>{
@@ -100,24 +102,27 @@ export function datedClaims(data){
   return result.filter(bounded);
 }
 
-export function contextAt(data,year,span=50){
-  const entities=new Map(data.entities.map(e=>[e.id,e]));
-  const dates=datedClaims(data),people=new Map(),polities=new Map(),events=[];
-  const from=year-Math.floor(span/2),to=year+Math.ceil(span/2);
-  const addPerson=(entity,period)=>{
-    const row=people.get(entity.id)||{...entity,periods:[],relations:[]};
-    row.periods.push(period);people.set(entity.id,row);
-  };
-  for(const d of dates){
-    const entity=entities.get(d.claim.subject),predicate=shortPredicate(d.claim.predicate);
-    if(entity?.type==='Person'&&ACTIVITY.has(predicate)&&d.lo<=year&&d.hi>=year)
-      addPerson(entity,{...d,label:activityLabel(predicate,d.claim)});
-    if(entity?.type==='Polity'&&predicate==='activeIn'&&d.lo<=year&&d.hi>=year)
-      polities.set(entity.id,{...entity,period:d,basis:d.basis});
-    if(entity?.type==='Event'||entity?.type==='Polity'&&EVENT_WORDS[predicate]){
-      events.push({...entity,...d,title:entity.label+(entity.type==='Polity'?` · ${EVENT_WORDS[predicate]}`:''),
-        current:d.lo<=year&&d.hi>=year});
+const EMPTY_PACKETS=[];
+const contextIndexes=new WeakMap();
+export function buildContextIndex(data){
+  const entities=new Map(data.entities.map(e=>[e.id,e])),dates=datedClaims(data),events=[];
+  const bySubject=new Map(),participation=new Map(),deaths=new Map(),relations=new Map();
+  for(const claim of data.claims){
+    const list=bySubject.get(claim.subject)||[];list.push(claim);bySubject.set(claim.subject,list);
+    if(claim.object.kind==='entity')for(const id of new Set([claim.subject,claim.object.id])){
+      const rows=relations.get(id)||[];rows.push(claim);relations.set(id,rows);
     }
+    const eventId=['syj:hasParticipant','syj:ledBy'].includes(claim.predicate)?claim.subject
+      :claim.predicate==='syj:participatedIn'?claim.object.id:null;
+    if(eventId&&claim.object.kind==='entity'){const rows=participation.get(eventId)||[];rows.push(claim);participation.set(eventId,rows);}
+  }
+  for(const d of dates){
+    if(d.claim.predicate==='syj:diedIn'){
+      const key=valueKey([d.claim.subject,d.claim.fromSource]),rows=deaths.get(key)||[];rows.push(d);deaths.set(key,rows);
+    }
+    const entity=entities.get(d.claim.subject),predicate=shortPredicate(d.claim.predicate);
+    if(entity?.type==='Event'||entity?.type==='Polity'&&EVENT_WORDS[predicate])
+      events.push({...entity,...d,title:entity.label+(entity.type==='Polity'?` · ${EVENT_WORDS[predicate]}`:''),current:false});
   }
   const byClaim=new Map(data.claims.map(claim=>[claim.id,claim]));
   const curatedEvents=[];
@@ -129,47 +134,17 @@ export function contextAt(data,year,span=50){
     const setting=isHistoricalSetting(scene);
     curatedEvents.push({...entity,sceneId:scene.id,placeLabel:scene.place?.label,lo:scene.startYear,hi:scene.endYear,claim:byClaim.get(scene.dateClaimIds[0]),
       basis:[...new Set(ids)].map(id=>byClaim.get(id)).filter(Boolean),title:scene.title,setting,
-      current:setting?scene.startYear===year:scene.startYear<=year&&scene.endYear>=year});
+      current:false});
   }
   const correctedEntities=new Set((data.scenePackets||[]).filter(scene=>scene.roleCorrection&&scene.actionClaimIds.every(id=>byClaim.has(id))).map(scene=>scene.eventId));
   for(let i=events.length-1;i>=0;i--)if(correctedEntities.has(events[i].id)||curatedEvents.some(s=>s.id===events[i].id&&s.lo<=events[i].lo&&s.hi>=events[i].hi))events.splice(i,1);
   events.push(...curatedEvents);
-  // A lifespan must have both ends from the same source. Reign is a separate period.
-  const births=dates.filter(d=>d.claim.predicate==='syj:bornIn');
-  for(const birth of births){
-    const entity=entities.get(birth.claim.subject);
-    if(entity?.type!=='Person')continue;
-    for(const death of dates.filter(d=>d.claim.predicate==='syj:diedIn'&&d.claim.subject===entity.id
-      &&d.claim.fromSource===birth.claim.fromSource)){
-      if(birth.hi<=year&&death.lo>=year)addPerson(entity,{lo:birth.lo,hi:death.hi,label:'출생~사망',
-        dateLabel:`${yearLabel(birth.lo)}${birth.lo!==birth.hi?'(~'+yearLabel(birth.hi)+')':''}~${yearLabel(death.lo)}${death.lo!==death.hi?'(~'+yearLabel(death.hi)+')':''}`,
-        claim:birth.claim,basis:[...birth.basis,...death.basis]});
-    }
-  }
-  // Participation makes a person discoverable; only an activity's evidence can place them.
-  for(const event of events.filter(e=>e.type==='Event'&&e.current)){
-    for(const claim of data.claims){
-      if(claim.object.kind!=='entity')continue;
-      const lo=Math.max(event.lo,claim.validFrom??event.lo),hi=Math.min(event.hi,claim.validTo??event.hi);
-      if(year<lo||year>hi)continue;
-      const id=claim.subject===event.id&&['syj:hasParticipant','syj:ledBy'].includes(claim.predicate)?claim.object.id
-        :claim.object.id===event.id&&claim.predicate==='syj:participatedIn'?claim.subject:null;
-      const person=entities.get(id);if(person?.type!=='Person')continue;
-      addPerson(person,{lo,hi,label:'사건 참여',claim,basis:[claim,...event.basis],eventId:event.id});
-    }
-  }
-  for(const person of people.values()){
-    // A lifetime cannot date a later office or membership.
-    person.relations=data.claims.filter(c=>c.subject===person.id&&c.object.kind==='entity'
-      &&c.predicate==='syj:isKingOf'&&person.periods.some(p=>p.claim.predicate==='syj:reignedIn'
-        &&p.claim.fromSource===c.fromSource)).filter(c=>{
-          const periods=dates.filter(d=>d.claim.subject===c.object.id&&d.claim.predicate==='syj:activeIn');
-          return !periods.length||periods.some(d=>d.lo<=year&&d.hi>=year);
-        });
-    for(const relation of person.relations){
-      const polity=entities.get(relation.object.id);
-      if(polity&&!polities.has(polity.id))polities.set(polity.id,{...polity,basis:[relation],ruler:person});
-    }
+
+  const lifespans=[];
+  for(const birth of dates.filter(d=>d.claim.predicate==='syj:bornIn')){
+    if(entities.get(birth.claim.subject)?.type!=='Person')continue;
+    for(const death of deaths.get(valueKey([birth.claim.subject,birth.claim.fromSource]))||[])
+      lifespans.push({lo:birth.hi,hi:death.lo,birth,death});
   }
   const unique=new Map();
   for(const event of visiblePacketEvents(events,data.scenePackets)){
@@ -180,11 +155,62 @@ export function contextAt(data,year,span=50){
     &&other.claim?.fromSource===e.claim?.fromSource&&other.claim?.predicate===e.claim?.predicate
     &&other.lo<=e.lo&&other.hi>=e.hi&&(other.lo<e.lo||other.hi>e.hi)));
   grouped.sort((a,b)=>a.lo-b.lo||a.title.localeCompare(b.title,'ko'));
-  const nearby=grouped.filter(e=>e.lo<=to&&(e.setting?e.lo:e.hi)>=from);
-  const settings=grouped.filter(e=>e.setting&&e.lo<=year&&e.hi>=year);
-  const eventYears=[...new Set(grouped.flatMap(e=>e.setting?[e.lo]:[e.lo,e.hi]))].sort((a,b)=>a-b);
+
+  const polityDates=new Map();
+  for(const d of dates.filter(d=>d.claim.predicate==='syj:activeIn')){const rows=polityDates.get(d.claim.subject)||[];rows.push(d);polityDates.set(d.claim.subject,rows);}
+  const index={polityDates,entities,dates,bySubject,participation,relations,events:grouped,
+    datesIndex:createYearIndex(dates),lifeIndex:createYearIndex(lifespans),
+    eventIndex:createYearIndex(grouped),participationIndex:createYearIndex(events),nearbyIndex:createYearIndex(grouped.map(event=>({lo:event.lo,hi:event.setting?event.lo:event.hi,event}))),
+    eventYears:[...new Set(grouped.flatMap(e=>e.setting?[e.lo]:[e.lo,e.hi]))].sort((a,b)=>a-b)};
+  contextIndexes.set(data,index);return index;
+}
+
+export function contextAt(data,year,span=50){
+  const index=contextIndexes.get(data)||buildContextIndex(data);
+  const {entities,bySubject,participation,eventYears}=index,people=new Map(),polities=new Map();
+  const from=year-Math.floor(span/2),to=year+Math.ceil(span/2);
+  const addPerson=(entity,period)=>{
+    const row=people.get(entity.id)||{...entity,periods:[],relations:[]};
+    row.periods.push(period);people.set(entity.id,row);
+  };
+  for(const d of index.datesIndex.between(year,year)){
+    const entity=entities.get(d.claim.subject),predicate=shortPredicate(d.claim.predicate);
+    if(entity?.type==='Person'&&ACTIVITY.has(predicate))addPerson(entity,{...d,label:activityLabel(predicate,d.claim)});
+    if(entity?.type==='Polity'&&predicate==='activeIn')polities.set(entity.id,{...entity,period:d,basis:d.basis});
+  }
+  for(const {birth,death} of index.lifeIndex.between(year,year)){
+    addPerson(entities.get(birth.claim.subject),{lo:birth.lo,hi:death.hi,label:'출생~사망',
+      dateLabel:`${yearLabel(birth.lo)}${birth.lo!==birth.hi?'(~'+yearLabel(birth.hi)+')':''}~${yearLabel(death.lo)}${death.lo!==death.hi?'(~'+yearLabel(death.hi)+')':''}`,
+      claim:birth.claim,basis:[...birth.basis,...death.basis]});
+  }
+  const currentEvents=index.eventIndex.between(year,year).filter(e=>!e.setting||e.lo===year);
+  for(const event of index.participationIndex.between(year,year).filter(e=>e.type==='Event'&&(!e.setting||e.lo===year))){
+    for(const claim of participation.get(event.id)||[]){
+      const lo=Math.max(event.lo,claim.validFrom??event.lo),hi=Math.min(event.hi,claim.validTo??event.hi);
+      if(year<lo||year>hi)continue;
+      const id=claim.subject===event.id&&['syj:hasParticipant','syj:ledBy'].includes(claim.predicate)?claim.object.id
+        :claim.object.id===event.id&&claim.predicate==='syj:participatedIn'?claim.subject:null;
+      const person=entities.get(id);if(person?.type!=='Person')continue;
+      addPerson(person,{lo,hi,label:'사건 참여',claim,basis:[claim,...event.basis],eventId:event.id});
+    }
+  }
+  for(const person of people.values()){
+    person.relations=(bySubject.get(person.id)||[]).filter(c=>c.object.kind==='entity'
+      &&c.predicate==='syj:isKingOf'&&person.periods.some(p=>p.claim.predicate==='syj:reignedIn'
+        &&p.claim.fromSource===c.fromSource)).filter(c=>{
+          const periods=index.polityDates.get(c.object.id)||[];
+          return !periods.length||periods.some(d=>d.lo<=year&&d.hi>=year);
+        });
+    for(const relation of person.relations){
+      const polity=entities.get(relation.object.id);
+      if(polity&&!polities.has(polity.id))polities.set(polity.id,{...polity,basis:[relation],ruler:person});
+    }
+  }
+  const current=new Set(currentEvents),fresh=e=>({...e,current:current.has(e)});
+  const nearby=index.nearbyIndex.between(from,to).map(row=>fresh(row.event));
+  const settings=index.eventIndex.between(year,year).filter(e=>e.setting).map(fresh);
   return {year,from,to,entities,people:[...people.values()].sort((a,b)=>a.label.localeCompare(b.label,'ko')),
-    polities:[...polities.values()],events:nearby,settings,eventYears,allEvents:grouped,
+    polities:[...polities.values()],events:nearby,settings,eventYears,allEvents:index.events.map(fresh),
     previous:eventYears.filter(y=>y<year).at(-1),next:eventYears.find(y=>y>year)};
 }
 
@@ -197,10 +223,10 @@ export class Chronicle {
       <div class="time-actions"><button data-previous aria-label="이전 사건으로 이동하기">← 이전 사건 보기</button>
       <button data-play aria-label="시간 재생하기">▶ 재생하기</button><button data-next aria-label="다음 사건으로 이동하기">다음 사건 보기 →</button></div>
       <label class="time-span">주변 사건 <select aria-label="사건 탐색 범위"><option value="20">20년</option><option value="50" selected>50년</option><option value="100">100년</option></select></label></div>
-      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2100" value="1593" aria-label="연도 이동. 좌우로 밀면 1년씩 움직이다 빨라집니다" title="좌우로 밀면 1년씩 움직이다 빨라집니다. 놓으면 멈춥니다"><span>2100</span></div>
+      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2100" value="1593" aria-label="연도 이동. 원하는 연도로 끌어 놓습니다" title="끌어서 연도를 고릅니다. 방향키나 마우스 휠로는 1년씩 움직입니다"><span>2100</span></div>
       <div class="event-strip"></div>`;
     this.timeline=new EventTimeline(controls.querySelector('.event-strip'),{yearLabel,
-      preview:year=>this.previewYear(year),commit:()=>this.finishScrub(),select:entry=>this.showEvent(entry)});
+      preview:(year,holding)=>this.previewYear(year,holding),commit:()=>this.finishScrub(),select:entry=>this.showEvent(entry)});
     this.yearHold=createYearHold({read:()=>this.pendingYear??this.year,preview:year=>this.previewYear(year,true),commit:()=>this.finishScrub()});
     bindYearHold(controls,this.yearHold);
     const yearInput=controls.querySelector('[type=number]');
@@ -209,7 +235,7 @@ export class Chronicle {
     yearInput.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();goYear();}};
     controls.querySelector('[data-go-year]').onclick=goYear;
     const slider=controls.querySelector('[type=range]');
-    bindYearSlider(slider,this.yearHold,()=>this.stopPlay());
+    bindYearSlider(slider,{read:()=>this.pendingYear??this.year,preview:(year,holding)=>this.previewYear(year,holding),commit:()=>this.finishScrub()},()=>this.stopPlay());
     slider.oninput=e=>this.previewYear(+e.target.value);
     slider.onchange=()=>this.finishScrub();
     controls.querySelector('select').onchange=e=>{this.span=+e.target.value;this.render();};
@@ -235,32 +261,40 @@ export class Chronicle {
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
     if(year===0)year=this.year<0?1:-1;
     if(year===this.year)return;
-    this.callbacks.year(year);
+    return this.callbacks.year(year);
   }
   previewYear(year,holding=false){
     if(!holding)this.yearHold?.stop(false);
     if(!Number.isInteger(year)||year<-2500||year>2100)return;
     if(year===0)year=this.year<0?1:-1;
     this.stopPlay();clearTimeout(this.scrubTimer);this.pendingYear=year;
+    this.showYearPreview(year);
+    if(!holding)this.scrubTimer=setTimeout(()=>this.finishScrub(),250);
+  }
+  showYearPreview(year){
     this.controls.querySelector('[type=number]').value=year;this.controls.querySelector('[type=range]').value=year;
     this.timeline.setYear(year);
     this.controls.dispatchEvent(new CustomEvent('yearpreview',{detail:year}));
-    if(!holding)this.scrubTimer=setTimeout(()=>this.finishScrub(),120);
   }
   finishScrub(){const year=this.pendingYear;clearTimeout(this.scrubTimer);this.pendingYear=null;if(year!==this.year)this.chooseYear(year);}
-  showEvent(event){
-    this.stopPlay();this.chooseYear(this.year>=event.lo&&this.year<=event.hi?this.year:event.lo);
+  async showEvent(event){
+    const year=this.year>=event.lo&&this.year<=event.hi?this.year:event.lo;
+    this.stopPlay();await this.chooseYear(year);
+    if(this.year!==year)return;
     this.callbacks.scene?.(event.sceneId);this.showEntity(event.id);
   }
   setYear(year){this.year=year;this.render();}
-  stopPlay(){clearInterval(this.timer);this.timer=null;const button=this.controls.querySelector('[data-play]');button.textContent='▶ 재생하기';button.setAttribute('aria-pressed','false');button.setAttribute('aria-label','시간 재생하기');}
+  stopPlay(){this.playback?.stop();const button=this.controls.querySelector('[data-play]');button.textContent='▶ 재생하기';button.setAttribute('aria-pressed','false');button.setAttribute('aria-label','시간 재생하기');}
   togglePlay(){
     this.yearHold.stop();this.finishScrub();
-    if(this.timer){this.stopPlay();return;}
+    if(this.playback?.playing){this.stopPlay();return;}
     this.controls.querySelector('[data-play]').textContent='Ⅱ 멈추기';
     this.controls.querySelector('[data-play]').setAttribute('aria-pressed','true');
     this.controls.querySelector('[data-play]').setAttribute('aria-label','시간 재생 멈추기');
-    this.timer=setInterval(()=>{if(this.year>=2100){this.stopPlay();return;}this.chooseYear(stepYear(this.year,1));},1200);
+    this.playback??=createYearPlayback({busy:()=>this.callbacks.busy?.()||false,
+      lastCompleted:()=>this.callbacks.lastCompleted?.()??-Infinity,
+      advance:()=>{if(this.year>=2100){this.stopPlay();return;}return this.chooseYear(stepYear(this.year,1));}});
+    this.playback.start();
   }
   async refresh(){
     const seq=++this.sequence,filters=this.callbacks.filters();this.loading=true;this.error='';
@@ -274,11 +308,12 @@ export class Chronicle {
     this.loading=false;this.render();
   }
   relations(id){
-    const entities=new Map(this.data.entities.map(e=>[e.id,e]));
-    return this.data.claims.filter(c=>c.object.kind==='entity'&&(c.subject===id||c.object.id===id))
+    const {entities,relations}=contextIndexes.get(this.contextData)||buildContextIndex(this.data);
+    return (relations.get(id)||[])
       .map(c=>({claim:c,target:entities.get(c.subject===id?c.object.id:c.subject)})).filter(x=>x.target);
   }
-  showEntity(id){
+  async showEntity(id){
+    this.panelKey=null;
     this.stopPlay();
     const background=this.callbacks.activity?.(id);
     const entity=this.data.entities.find(e=>e.id===id)
@@ -291,7 +326,8 @@ export class Chronicle {
     const currentSetting=this.callbacks.activity?.(id)?.setting;
     if(entity.type==='Event'&&dates.length&&!currentEvent&&!currentSetting&&!dates.some(d=>d.lo<=this.year&&d.hi>=this.year)){
       const nearest=[...dates].sort((a,b)=>Math.abs(a.lo-this.year)-Math.abs(b.lo-this.year))[0];
-      this.chooseYear(nearest.lo);
+      await this.chooseYear(nearest.lo);
+      if(this.year!==nearest.lo)return;
     }
     this.callbacks.entity(id);
     const activity=this.callbacks.activity?.(id);
@@ -323,7 +359,12 @@ export class Chronicle {
         <small>${esc(RELATION_WORDS[shortPredicate(claim.predicate)]||'관련 기록')}</small><button class="context-proof" data-chronicle-claim="${esc(claim.id)}">출처 보기 ↗</button></div>`).join('')||'<p class="context-empty">연결된 출처가 아직 없습니다.</p>'}</div>`;
   }
   render(){
-    const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
+    const packets=this.callbacks.scenePackets?.()||this.data.scenePackets||EMPTY_PACKETS;
+    if(this.contextSource!==this.data||this.contextPackets!==packets){
+      this.contextSource=this.data;this.contextPackets=packets;this.contextData={...this.data,scenePackets:packets};
+      buildContextIndex(this.contextData);this.panelKey=null;
+    }
+    const c=contextAt(this.contextData,this.year,this.span);this.context=c;
     this.timeline.setEvents(this.callbacks.timelineEvents?.(c.allEvents)||c.allEvents);this.timeline.setYear(this.year);
     this.controls.querySelector('[type=number]').value=this.year;
     this.controls.querySelector('[type=range]').value=this.year;
@@ -333,19 +374,35 @@ export class Chronicle {
     this.controls.querySelectorAll('[data-era]').forEach(b=>b.classList.toggle('on',Math.abs(+b.dataset.era-this.year)<10));
     const status=this.error||(this.loading?'이 시대의 인물과 사건을 불러오고 있습니다…':'');
     const counts=`인물 ${c.people.length}, 주변 사건 ${c.events.length}`;
-    this.host.innerHTML=`<div class="context-kicker">시간 속으로</div><div class="context-title"><h2>${yearLabel(this.year)}</h2><span>${counts}</span></div>
+    const panelKey=valueKey([status,this.data.hasMore,
+      c.people.map(p=>[p.id,entityLabel(p),p.periods.map(d=>[d.lo,d.hi,d.label,d.claim.id]),p.relations.map(r=>r.object.id)]),
+      c.polities.map(p=>[p.id,entityLabel(p),p.ruler?.id,p.ruler&&entityLabel(p.ruler)]),
+      c.events.map(e=>[e.id,e.sceneId,e.lo,e.hi,e.current]),c.settings.map(e=>[e.id,e.sceneId])]);
+    const title=this.host.querySelector('.context-title h2'),range=this.host.querySelector('[data-context-range]');
+    if(this.panelKey!==panelKey||!title||!range){
+      this.panelKey=panelKey;
+      this.host.innerHTML=`<div class="context-kicker">시간 속으로</div><div class="context-title"><h2>${yearLabel(this.year)}</h2><span>${counts}</span></div>
       ${status?`<p role="status" class="context-empty">${esc(status)}</p>`:''}
       ${c.polities.length?`<section class="context-polities" aria-label="이때의 나라와 집단">${c.polities.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.id)}">${esc(entityLabel(p))}${p.ruler?' · '+esc(entityLabel(p.ruler))+' 재위':''}</button>`).join('')}</section>`:''}
       ${c.events.some(e=>e.current)?`<section class="current-events"><h3>이 해의 사건</h3>${c.events.filter(e=>e.current).map(e=>`<button data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId||'')}">${esc(e.title)} <span>→</span></button>`).join('')}</section>`:''}
       ${c.settings.length?`<details class="context-section era-sites"><summary>이때의 도시·시설 ${c.settings.length}곳</summary>${c.settings.map(e=>`<button class="period-site" data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId)}">${esc(e.title)}</button>`).join('')}</details>`:''}
       <details class="context-section era-people"><summary>동시대 인물 ${c.people.length}명 (생존, 재위, 활동)</summary><div class="section-heading"><h3>이때의 사람들</h3></div>
       ${c.people.map(p=>this.personCard(p,c)).join('')||(!status?'<p class="context-empty">고른 사료에는 이 해의 생존·활동 출처가 연결된 인물이 없습니다.</p>':'')}
-      </details><section class="context-section"><div class="section-heading"><h3>이 시기의 사건</h3><span>${yearLabel(c.from)}~${yearLabel(c.to)}</span></div>
+      </details><section class="context-section"><div class="section-heading"><h3>이 시기의 사건</h3><span data-context-range>${yearLabel(c.from)}~${yearLabel(c.to)}</span></div>
       <div class="event-sequence">${c.events.map(e=>`<article class="period-event${e.current?' current':''}"><button class="event-year" data-jump-year="${e.lo}">${yearLabel(e.lo)}${e.lo!==e.hi?'~'+yearLabel(e.hi):''}</button>
         <button class="event-title" data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId||'')}">${esc(e.title)}</button>
         ${this.relations(e.id).filter(x=>['Person','Polity','Place'].includes(x.target.type)).slice(0,6).map(x=>`<button class="relation-chip" data-chronicle-entity="${esc(x.target.id)}">${esc(entityLabel(x.target))}</button>`).join('')}
         ${[...new Map(e.basis.map(b=>[b.fromSource,b])).values()].map(b=>`<button class="context-proof" data-chronicle-claim="${esc(b.id)}">${esc(b.sourceLabel)} ↗</button>`).join('')}</article>`).join('')||(!status?'<p class="context-empty">이 기간에 연결된 사건이 없습니다. 이전·다음 사건으로 이동해 보십시오.</p>':'')}</div></section>
       <p class="context-footnote">고른 사료에 출처가 연결된 항목입니다. 출생~사망 연도와 재위·활동 기간은 따로 표시합니다.${this.data.hasMore?' 한 번에 불러올 양을 넘어 일부만 보여줍니다.':''}</p>`;
+    }else{
+      title.textContent=yearLabel(this.year);
+      range.textContent=`${yearLabel(c.from)}~${yearLabel(c.to)}`;
+      for(const [i,track] of [...this.host.querySelectorAll('.life-track i')].entries()){
+        const person=c.people[i],p=person.periods.find(p=>p.label==='출생~사망')||person.periods[0];
+        const left=Math.max(0,(p.lo-c.from)/this.span*100),right=Math.min(100,(p.hi-c.from)/this.span*100);
+        track.style.left=left+'%';track.style.width=Math.max(1,right-left)+'%';
+      }
+    }
     this.callbacks.context?.(c);
   }
   personCard(person,context){
