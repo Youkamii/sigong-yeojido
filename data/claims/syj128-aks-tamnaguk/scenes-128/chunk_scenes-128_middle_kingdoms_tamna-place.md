@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "지금의 제주도에 자리했던 옛 나라."
+      "value": "지금의 제주도에 자리하였던 옛 나라."
     },
     "note": "항목 정의의 현대 지역 비정이다.",
     "fromSource": "src-syj128-aks-tamnaguk",

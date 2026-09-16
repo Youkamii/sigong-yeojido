@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1683년 동래부사와 대마도주가 왜관 운영을 위한 금제조항 다섯 가지를 제정하고 이를 알리려 비석을 세웠다."
+      "value": "1683년 동래부사와 대마도주가 왜관 운영을 위한 금제조항 다섯 가지를 제정하였다. 이를 알리려 비석을 세웠다."
     },
     "note": "행위: 약조 제정과 비석 건립.",
     "fromSource": "src-jl2-aks-yakjojechalbi",

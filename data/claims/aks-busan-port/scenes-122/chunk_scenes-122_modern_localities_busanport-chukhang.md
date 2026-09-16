@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1876년 부산포라는 이름으로 개항했고, 일본의 상륙항으로서 축항 공사가 실시되었다."
+      "value": "1876년 부산포라는 이름으로 개항하였고, 일본의 상륙항으로서 축항 공사가 실시되었다."
     },
     "note": "행위 서술은 인용문의 표현을 그대로 옮긴 것이다. 공사 주체를 개인으로 특정하지 않는다.",
     "fromSource": "src-aks-busan-port",

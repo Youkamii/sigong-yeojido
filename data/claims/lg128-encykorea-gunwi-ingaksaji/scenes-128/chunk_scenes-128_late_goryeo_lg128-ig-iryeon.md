@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "일연이 이곳에 머물면서 『삼국유사』를 저술했다"
+      "value": "일연이 이곳에 머물면서 『삼국유사』를 저술하였다"
     },
     "note": "저술 행위와 장소가 한 문장에 함께 적혀 있다.",
     "fromSource": "src-lg128-encykorea-gunwi-ingaksaji",

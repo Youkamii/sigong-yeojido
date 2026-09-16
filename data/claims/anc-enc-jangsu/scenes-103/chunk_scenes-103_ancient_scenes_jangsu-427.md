@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "국내성에서 평양성으로 천도를 단행했다"
+      "value": "국내성에서 평양성으로 천도를 단행하였다"
     },
     "note": "출발지·도착지가 함께 적힌 서술.",
     "fromSource": "src-anc-enc-jangsu",

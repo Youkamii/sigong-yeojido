@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "법흥왕이 흥륜사 건립 공사를 강행한 책임을 물어 이차돈을 처형했다"
+      "value": "법흥왕이 흥륜사 건립 공사를 강행한 책임을 물어 이차돈을 처형하였다"
     },
     "note": "처형 행위 서술.",
     "fromSource": "src-anc-enc-ichadon",

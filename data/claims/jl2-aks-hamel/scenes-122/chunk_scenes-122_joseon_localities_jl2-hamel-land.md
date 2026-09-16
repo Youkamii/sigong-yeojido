@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "난파한 배의 선원 64명 중 36명이 중상을 입은 채 제주도 대정현 차귀진 아래 대야수 연변에 상륙했다."
+      "value": "난파한 배의 선원 64명 중 36명이 중상을 입은 채 제주도 대정현 차귀진 아래 대야수 연변에 상륙하였다."
     },
     "note": "행위: 난파선 생존자의 상륙.",
     "fromSource": "src-jl2-aks-hamel",

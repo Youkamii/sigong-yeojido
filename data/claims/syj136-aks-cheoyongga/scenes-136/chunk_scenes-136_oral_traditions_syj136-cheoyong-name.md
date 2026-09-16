@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "전승은 구름과 안개가 걷힌 일로 그곳 이름을 개운포라 했다고 말한다."
+      "value": "전승은 구름과 안개가 걷힌 일로 그곳 이름을 개운포라 하였다고 말한다."
     },
     "note": "지명 유래담이다.",
     "fromSource": "src-syj136-aks-cheoyongga",

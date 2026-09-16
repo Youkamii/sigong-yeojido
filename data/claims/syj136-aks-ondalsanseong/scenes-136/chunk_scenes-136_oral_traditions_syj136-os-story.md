@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "설화/전승 기록이다. 산성 이름이 온달 이야기에서 비롯되었다고 전하며, 발굴 결과는 신라 축성으로 본다고 항목이 밝힌다."
+      "value": "설화/전승 기록이다. 산성 이름이 온달 이야기에서 비롯되었다고 전한다. 발굴 결과는 신라 축성으로 본다고 항목이 밝힌다."
     },
     "note": "전설과 고고 결과를 구분한 서술을 그대로 옮긴다. 전승의 내용·무대·등장인물을 연결한 Claim이며 실제 사건이나 현장 출석의 확인이 아니다.",
     "fromSource": "src-syj136-aks-ondalsanseong",
@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "전승이 말하는 때: 고구려 평원왕의 사위 온달이 신라가 쳐들어오자 싸우다 전사했다고 서술된 시기다. 연도는 원문에 없다."
+      "value": "전승이 말하는 때: 고구려 평원왕의 사위 온달이 신라가 쳐들어오자 싸우다 전사하였다고 서술된 시기다. 연도는 원문에 없다."
     },
     "note": "이야기 속 시점이며 기록 시점이 아니다. 전승의 내용·무대·등장인물을 연결한 Claim이며 실제 사건이나 현장 출석의 확인이 아니다.",
     "fromSource": "src-syj136-aks-ondalsanseong",

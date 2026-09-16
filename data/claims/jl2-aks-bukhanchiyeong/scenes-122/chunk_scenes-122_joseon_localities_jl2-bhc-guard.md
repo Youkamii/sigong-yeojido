@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "성이 완공되자 의승군에게 성을 수비하도록 했다."
+      "value": "성이 완공되자 의승군에게 성을 수비하도록 하였다."
     },
     "note": "완공 뒤의 수비 배치.",
     "fromSource": "src-jl2-aks-bukhanchiyeong",

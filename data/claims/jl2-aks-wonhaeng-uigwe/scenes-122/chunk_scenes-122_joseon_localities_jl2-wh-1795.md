@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1795년 윤2월 9일 정조가 회갑을 맞은 혜경궁 홍씨를 모시고 현륭원과 화성행궁에 행차해 진연을 올렸다."
+      "value": "1795년 윤2월 9일 정조가 회갑을 맞은 혜경궁 홍씨를 모시고 현륭원과 화성행궁에 행차하였다. 진연을 올렸다."
     },
     "note": "행위: 행차와 진연.",
     "fromSource": "src-jl2-aks-wonhaeng-uigwe",

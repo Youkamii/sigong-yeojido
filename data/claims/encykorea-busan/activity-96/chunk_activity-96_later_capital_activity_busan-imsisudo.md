@@ -64,7 +64,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1950년 8월 18일부터 1953년 8월 15일까지 임시수도였고 피난민이 몰려들어 인구가 급증했다."
+      "value": "1950년 8월 18일부터 1953년 8월 15일까지 임시수도였다. 피난민이 몰려들어 인구가 급증하였다."
     },
     "fromSource": "src-encykorea-busan",
     "citesChunk": "chunk_activity-96_later_capital_activity_busan-imsisudo",

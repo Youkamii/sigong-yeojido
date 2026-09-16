@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "전선 건조와 군량 모집을 계속했다."
+      "value": "전선 건조와 군량 모집을 계속하였다."
     },
     "note": "주둔 기간의 활동. 척수·건조 장소 지점은 출처에 없다.",
     "fromSource": "src-syj103-encykorea-gohado-yujeok",

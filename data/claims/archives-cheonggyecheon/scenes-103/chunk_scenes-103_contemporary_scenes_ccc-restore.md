@@ -35,7 +35,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "청계천의 고가도로는 헐리고, 도로 밑으로 흐르던 청계천은 2005년 47년 만에 그 모습을 드러냈다."
+      "value": "청계천의 고가도로는 헐렸다. 도로 밑으로 흐르던 청계천은 2005년 47년 만에 그 모습을 드러냈다."
     },
     "note": "고가도로 철거와 하천 복원이라는 공사 행위.",
     "fromSource": "src-archives-cheonggyecheon",

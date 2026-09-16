@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "그해 7월 초하루를 기하여 장영실(蔣英實)이 새로 만든 자격루(自擊漏)를 표준시계로 사용하기 시작했는데"
+      "value": "그해 7월 초하루를 기하여 장영실(蔣英實)이 새로 만든 자격루(自擊漏)를 표준시계로 사용하기 시작하였는데"
     },
     "note": "보루각에서 표준시계 사용을 시작한 행위.",
     "fromSource": "src-je-encykorea-e0023286",

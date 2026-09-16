@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "이날 청량리 지하철역에서 개통식을 한 뒤, 108호 열차가 청량리에서 서울역 사이를 운행 예정이었다."
+      "value": "이날 청량리 지하철역에서 개통식을 하였다. 108호 열차가 청량리에서 서울역 사이를 운행 예정이었다."
     },
     "note": "개통식과 첫 열차 운행이라는 행위.",
     "fromSource": "src-archives-subway",

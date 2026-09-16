@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "강화도의 해안방위를 위해 1679년(숙종 5)에 돈대를 축조했다."
+      "value": "강화도의 해안방위를 위해 1679년(숙종 5)에 돈대를 축조하였다."
     },
     "note": "행위: 해안 돈대 축조.",
     "fromSource": "src-jl2-aks-taekji-dondae",

@@ -35,7 +35,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "누리호 비행모델 1호기는 오후 5시 정각에 이륙했다."
+      "value": "누리호 비행모델 1호기는 오후 5시 정각에 이륙하였다."
     },
     "note": "이륙이라는 행위. 이 문장에는 발사 장소가 적혀 있지 않다.",
     "fromSource": "src-koreakr-nuri",

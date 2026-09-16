@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "2009년 8월 25일 지구온난화와 기후변동을 관측하는 인공위성을 탑재한 2단식 로켓 '나로호'가 나로우주센터에서 발사됐으나 실패하고,"
+      "value": "2009년 8월 25일 지구온난화와 기후변동을 관측하는 인공위성을 탑재한 2단식 로켓 '나로호'가 나로우주센터에서 발사되었으나 실패하고,"
     },
     "note": "같은 해 8월 25일 발사와 실패. 설립과 발사를 한 순간으로 합치지 않는다.",
     "fromSource": "src-archives-satellite",

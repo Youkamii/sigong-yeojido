@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "정의구현사제단이 “박종철 군의 고문치사사건의 진상이 조작되었다”는 성명을 발표했다."
+      "value": "정의구현사제단이 “박종철 군의 고문치사사건의 진상이 조작되었다”는 성명을 발표하였다."
     },
     "note": "미사 뒤 발표된 성명이라는 행위.",
     "fromSource": "src-archives-myeongdong",

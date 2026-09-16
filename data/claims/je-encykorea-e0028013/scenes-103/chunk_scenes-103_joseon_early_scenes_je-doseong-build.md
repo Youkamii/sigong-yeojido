@@ -35,7 +35,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1396년(조선 태조 5) 축성을 시작해 2년 뒤인 1398년에 완공했다"
+      "value": "1396년(조선 태조 5) 축성을 시작해 2년 뒤인 1398년에 완공하였다"
     },
     "note": "축성 행위 원문.",
     "fromSource": "src-je-encykorea-e0028013",

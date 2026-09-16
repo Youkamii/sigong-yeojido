@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "왜선 20여 척이 동쪽 강구로 쳐들어와 적 200여 명이 성을 포위하고 만호 유택과 접전했다."
+      "value": "왜선 20여 척이 동쪽 강구로 쳐들어왔다. 적 200여 명이 성을 포위하고 만호 유택과 접전하였다."
     },
     "note": "기사 서술 범위 안에서만 요약했다. 진영 구조와 전투 경로는 기사에 없다.",
     "fromSource": "src-ej-aks-saryangjin-waebyeon",

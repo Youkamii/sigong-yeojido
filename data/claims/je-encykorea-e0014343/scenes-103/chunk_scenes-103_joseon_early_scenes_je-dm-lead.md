@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "이종무는 9명의 절제사를 거느리고 출정했다"
+      "value": "이종무는 9명의 절제사를 거느리고 출정하였다"
     },
     "note": "출정 행위와 지휘 관계 서술.",
     "fromSource": "src-je-encykorea-e0014343",

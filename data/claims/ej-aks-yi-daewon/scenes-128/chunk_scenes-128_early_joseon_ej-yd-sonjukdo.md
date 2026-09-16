@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "왜구가 흥양에 침입하자 이대원이 심암의 명으로 군사 100여 명을 이끌고 출병해 손죽도 해상에서 싸우다 붙잡혀 살해되었다."
+      "value": "왜구가 흥양에 침입하자 이대원이 심암의 명으로 군사 100여 명을 이끌고 출병하였다. 손죽도 해상에서 싸우다 붙잡혀 살해되었다."
     },
     "note": "배의 수와 진형은 이 대목에 없다.",
     "fromSource": "src-ej-aks-yi-daewon",

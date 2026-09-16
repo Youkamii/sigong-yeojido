@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "경주에 성을 쌓아 금성(金城)이라 했다"
+      "value": "경주에 성을 쌓아 금성(金城)이라 하였다"
     },
     "note": "축성 행위 서술.",
     "fromSource": "src-anc-enc-hyeokgeose",

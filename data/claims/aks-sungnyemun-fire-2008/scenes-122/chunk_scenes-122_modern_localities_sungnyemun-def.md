@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "2008년 2월 10일 저녁 70대 채종기가 국보인 숭례문에 방화를 저질러 숭례문이 소실되었다."
+      "value": "2008년 2월 10일 저녁 70대 채종기가 국보인 숭례문에 방화를 저질렀다. 숭례문이 소실되었다."
     },
     "note": "행위 서술은 인용문 표현을 옮긴 것이다. 이 장면의 fire 근거다.",
     "fromSource": "src-aks-sungnyemun-fire-2008",

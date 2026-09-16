@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "초간본을 1518년 경상도 김산군에서 간행했다."
+      "value": "초간본을 1518년 경상도 김산군에서 간행하였다."
     },
     "note": "행위: 목판 간행.",
     "fromSource": "src-jl2-aks-iryunhaengsildo",

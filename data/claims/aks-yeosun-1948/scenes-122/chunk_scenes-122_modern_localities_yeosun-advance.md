@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "즉시 여수로 진격했다."
+      "value": "즉시 여수로 진격하였다."
     },
     "note": "출처는 이 구절 앞에서 부대가 지창수를 신임 연대장으로 추대한 뒤 여수로 진격했다고 적는다. 인용 낱말 수 제한으로 인명 부분은 인용하지 않았다.",
     "fromSource": "src-aks-yeosun-1948",

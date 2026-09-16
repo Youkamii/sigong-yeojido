@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1844년에는 봄과 가을에 한 번씩 관찰사에게 제사를 지내게 했다."
+      "value": "1844년에는 봄과 가을에 한 번씩 관찰사에게 제사를 지내게 하였다."
     },
     "note": "행위: 봄·가을 정례 제향. 1703년과 1844년은 서로 다른 시점의 기록이다.",
     "fromSource": "src-jl2-aks-mandongmyo",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "주력부대 1만여 명을 이끌고 공주를 공격했으나 11월 초 우금치싸움에서 대패"
+      "value": "주력부대 1만여 명을 이끌고 공주를 공격하였으나 11월 초 우금치싸움에서 대패"
     },
     "note": "병력 표기 1만여 명은 출처 문면 그대로다.",
     "fromSource": "src-ek-jeon-bongjun",

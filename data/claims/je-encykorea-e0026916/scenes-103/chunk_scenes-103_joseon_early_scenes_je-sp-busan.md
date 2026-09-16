@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "부산을 공격해 첨사(僉使) 이우증(李友曾)을 살해했다"
+      "value": "부산을 공격해 첨사(僉使) 이우증(李友曾)을 살해하였다"
     },
     "note": "공격 행위 원문.",
     "fromSource": "src-je-encykorea-e0026916",

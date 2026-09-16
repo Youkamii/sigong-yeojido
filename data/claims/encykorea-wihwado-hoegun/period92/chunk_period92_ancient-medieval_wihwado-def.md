@@ -65,7 +65,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "명나라의 요동(遼東)을 공략하기 위해 출정했던 이성계(李成桂) 등이 위화도에서 회군해 우왕을 폐위하고 정권을 장악한 사건"
+      "value": "명나라의 요동(遼東)을 공략하기 위해 출정하였던 이성계(李成桂) 등이 위화도에서 회군해 우왕을 폐위하고 정권을 장악한 사건"
     },
     "fromSource": "src-encykorea-wihwado-hoegun",
     "citesChunk": "chunk_period92_ancient-medieval_wihwado-def",

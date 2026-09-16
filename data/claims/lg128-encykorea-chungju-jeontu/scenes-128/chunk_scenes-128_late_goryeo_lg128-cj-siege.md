@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "몽골 군대가 70여 일 동안 충주성을 포위하고 공격했다"
+      "value": "몽골 군대가 70여 일 동안 충주성을 포위하고 공격하였다"
     },
     "note": "포위 기간과 공격 사실을 원문대로 옮겼다. 날짜별 전개는 항목에 없다.",
     "fromSource": "src-lg128-encykorea-chungju-jeontu",

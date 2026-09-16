@@ -69,7 +69,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "국립중앙박물관 조사단이 4차에 걸쳐 조사해 신석기시대 집자리가 취락을 이루고 있음을 알게 되었다."
+      "value": "국립중앙박물관 조사단이 4차에 걸쳐 조사하였다. 신석기시대 집자리가 취락을 이루고 있음을 알게 되었다."
     },
     "note": "조사 행위와 그 결과까지가 항목 서술이다. 집자리 개수는 다른 회차 수치라 여기서 주장하지 않는다.",
     "fromSource": "src-syj135-aks-amsadong",

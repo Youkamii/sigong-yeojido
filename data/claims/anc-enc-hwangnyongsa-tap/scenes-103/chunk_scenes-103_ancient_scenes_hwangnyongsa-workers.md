@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "백제의 장인 아비지를 초청해 기술지도를 받고 용춘이 공사감독관이 되어 구층목탑을 세웠다"
+      "value": "백제의 장인 아비지를 초청해 기술지도를 받았다. 용춘이 공사감독관이 되어 구층목탑을 세웠다"
     },
     "note": "공사 조직 서술.",
     "fromSource": "src-anc-enc-hwangnyongsa-tap",

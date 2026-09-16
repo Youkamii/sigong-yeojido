@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "궁예를 내쫓고 철원의 포정전에서 즉위해 국호를 고려라 했다"
+      "value": "궁예를 내쫓고 철원의 포정전에서 즉위해 국호를 고려라 하였다"
     },
     "note": "행위(축출·즉위·국호 선포)를 원문에서 그대로 요약.",
     "fromSource": "src-ency-taejo",

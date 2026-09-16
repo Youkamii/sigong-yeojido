@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1929년 10월 30일 오후 5시반경 광주발 통학열차가 나주에 도착했을 때 한·일 학생 대립이 폭발"
+      "value": "1929년 10월 30일 오후 5시반경 광주발 통학열차가 나주에 도착하였을 때 한·일 학생 대립이 폭발"
     },
     "note": "발단 시각·장소를 적은 문장이다.",
     "fromSource": "src-ek-gwangju-student",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "웅진기에는 공산성(당시 웅진성)이 백제의 왕성이었고, 사비기에는 북방성으로 성격이 바뀌었다"
+      "value": "웅진기에는 공산성(당시 웅진성)이 백제의 왕성이었다. 사비기에는 북방성으로 성격이 바뀌었다"
     },
     "note": "웅진기 동안 왕성 기능이 유지되다가 사비기에 지방 거점(북방성)으로 성격이 바뀌었다는 서술이 구간이 닫힌다는 점을 뒷받침한다.",
     "fromSource": "src-ency-gongsanseong",

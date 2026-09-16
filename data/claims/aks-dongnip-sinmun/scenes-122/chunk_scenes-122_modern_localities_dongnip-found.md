@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "정동의 정부 소유 건물을 사옥으로 빌려 독립신문사를 설립하고 1896년 4월 7일에 창간호를 발행했다."
+      "value": "정동의 정부 소유 건물을 사옥으로 빌려 독립신문사를 설립하였다. 1896년 4월 7일에 창간호를 발행하였다."
     },
     "note": "행위 서술은 인용문 표현을 옮긴 것이다.",
     "fromSource": "src-aks-dongnip-sinmun",

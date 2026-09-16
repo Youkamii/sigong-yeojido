@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "진주 대안동에서 회원 80여 명과 더불어 창립총회를 열어 형평사를 설립했다."
+      "value": "진주 대안동에서 회원 80여 명과 더불어 창립총회를 열어 형평사를 설립하였다."
     },
     "note": "행위 서술은 인용문 표현을 옮긴 것이다.",
     "fromSource": "src-aks-hyeongpyeong",

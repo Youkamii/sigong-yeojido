@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "고려 후기 무신 정변을 일으킨 주동 인물이며 무신정권 초기의 정국을 주도했던 무신."
+      "value": "고려 후기 무신 정변을 일으킨 주동 인물이며 무신정권 초기의 정국을 주도하였던 무신."
     },
     "fromSource": "src-encykorea-jeongjungbu",
     "citesChunk": "chunk_period96_goryeo_late_jeongjungbu-def",
