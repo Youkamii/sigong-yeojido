@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "이서국이 신라를 침공하였다고 기록됨"
+      "value": "이서국이 신라를 침공했다고 기록됨"
     },
     "note": "297년 기사에는 전장의 지명이 없다.",
     "fromSource": "src-syj122-aks-iseoguk",

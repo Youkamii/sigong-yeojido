@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "조선 후기에 형조참의 · 병조참판 · 우의정 · 좌의정 · 영의정 등을 역임하였으며"
+      "value": "조선 후기에 형조참의 · 병조참판 · 우의정 · 좌의정 · 영의정 등을 역임했으며"
     },
     "note": "항목 '정의' 문장(발췌 그대로).",
     "fromSource": "src-encykorea-kim-yuk-e0010098",
