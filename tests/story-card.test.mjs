@@ -176,7 +176,8 @@ test('같은 제목·연도·장소만 병합하고 대표 행의 장면·장소
     {id:'c',title:'한산도대첩',lo:1593}, {id:'d',title:'한산도 대첩'}];
   const original=structuredClone(rows);
   for(const input of [rows,[...rows].reverse()]){
-    const merged=mergeEvents(input);assert.equal(merged.length,3);
+    const merged=mergeEvents(input);assert.equal(merged.length,2);  // #197: 연도 없는 'd' 는 가장 이른 같은 제목 행(1592)에 흡수
+    assert.ok(merged.some(e=>e.lo===1593));
     const battle=merged.find(e=>e.lo===1592);assert.equal(battle.id,'b');assert.equal(battle.sceneId,'battle');assert.equal(battle.placeLabel,'한산섬 앞바다');assert.equal(battle.title,rows[1].title);
     assert.deepEqual(new Set(battle.basis.map(c=>c.id)),new Set(['c1','c2']));
     assert.equal(battle.basis.length,2);

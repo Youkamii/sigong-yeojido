@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {displayLabel,stripLabelNotes,labelNote,isGroupEntity} from '../services/host/app/chronicle.js';
 import {typeName} from '../services/host/app/atlas-data.js';
-import {shortLabel,sourceName} from '../services/host/app/atlas-story.js';
+import {shortLabel,sourceName,mergeEvents} from '../services/host/app/atlas-story.js';
 
 test('displayLabel 은 설명 꼬리·연도 괄호·긴 설명 괄호를 떼고 짧은 구분 괄호는 남긴다 (#197)',()=>{
   const label=(text,type='Polity')=>displayLabel({label:text,type});
@@ -42,4 +42,15 @@ test('shortLabel 은 연도 괄호를 떼고 sourceName 은 대시를 「」로 
   assert.equal(sourceName('거북선 — 한국민족문화대백과사전'),'한국민족문화대백과사전 「거북선」');
   assert.equal(sourceName('한국사데이터베이스'),'한국사데이터베이스');
   assert.equal(sourceName(''),'원문 보기');
+});
+
+test('연도 없는 같은 제목의 행은 연도 있는 행에 흡수되고 출처는 합쳐진다 (#197)',()=>{
+  const rows=[{id:'e1',title:'주화론과 척화론',lo:1636,sceneId:'s1',placeLabel:'남한산성 행궁 일대',basis:[{id:'c1'}]},
+    {id:'e2',title:'주화론과 척화론',basis:[{id:'c2'}]},
+    {id:'e3',title:'다른 사건',basis:[]}];
+  const merged=mergeEvents(rows);
+  assert.equal(merged.length,2);
+  const main=merged.find(e=>e.id==='e1');
+  assert.deepEqual(new Set(main.basis.map(c=>c.id)),new Set(['c1','c2']));
+  assert.ok(merged.some(e=>e.id==='e3'));
 });

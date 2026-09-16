@@ -19,13 +19,17 @@ const eventKey=row=>JSON.stringify([normalize(displayTitle(row.title)),row.lo??n
 // 출처 라벨 '거북선 — 한국민족문화대백과사전' → '한국민족문화대백과사전 「거북선」'(대시 없이)
 export const sourceName=label=>{const text=String(label||'').trim();if(!text)return '원문 보기';const parts=text.split(/\s+[—–]\s+/);return parts.length>=2?`${parts[parts.length-1].trim()} 「${parts.slice(0,-1).join(' ').trim()}」`:text;};
 export function mergeEvents(rows){
-  const merged=new Map(),firstPlaces=new Map();
+  const merged=new Map(),firstPlaces=new Map(),datedKeys=new Map();
   for(const row of rows){
     const group=eventKey(row),place=normalize(row.placeLabel);
     if(place&&!firstPlaces.has(group))firstPlaces.set(group,place);
+    // 연도 없는 같은 제목의 행(장면 없는 사건 개체)은 연도 있는 행에 흡수한다(#197: "주화론과 척화론 · 연도 미확인" 중복)
+    if(Number.isInteger(row.lo)){const t=normalize(displayTitle(row.title)),prior=datedKeys.get(t);if(!prior||row.lo<prior.lo)datedKeys.set(t,{group,lo:row.lo});}
   }
   for(const row of rows){
-    const group=eventKey(row),place=normalize(row.placeLabel)||firstPlaces.get(group)||'';
+    const titleKey=normalize(displayTitle(row.title));
+    const group=Number.isInteger(row.lo)?eventKey(row):(datedKeys.get(titleKey)?.group||eventKey(row));
+    const place=normalize(row.placeLabel)||firstPlaces.get(group)||'';
     const key=JSON.stringify([group,place]),previous=merged.get(key);
     if(!previous){merged.set(key,{...row,basis:[...(row.basis||[])]});continue;}
     const priority=entry=>Number(!!entry.sceneId)*2+Number(!!normalize(entry.placeLabel));
@@ -154,7 +158,8 @@ export class AtlasStory{
       for(const row of data.relations(e.id).filter(r=>r.entity.type==='Place'))addPlace(data.label(row.entity),row.entity.id,e.sceneId,e);
     }
     addPlace(this.activity?.place||scene?.place?.label,null,this.activity?.sceneId||event?.sceneId,event);
-    const year=scene?.startYear??event?.lo??data.dates.get(entity.id)?.[0]?.lo??this.ui.chronicle.year;
+    // 시대 줄의 연도: 장면 → 사건 → 생몰 → 연표 첫 사건 → 현재 연도 (1742년 집단 카드가 현재 연도 1593을 보이던 문제, #197)
+    const year=scene?.startYear??event?.lo??data.dates.get(entity.id)?.[0]?.lo??eventRows.find(e=>Number.isInteger(e.lo))?.lo??this.ui.chronicle.year;
     const polities=related.filter(row=>row.entity.type==='Polity'&&row.claims.some(claim=>{
       const {lo,hi}=relationTime(claim);return (lo===null||lo<=year)&&(hi===null||hi>=year);
     })&&(!(data.dates.get(row.entity.id)||[]).some(d=>d.claim.predicate==='syj:activeIn')||
