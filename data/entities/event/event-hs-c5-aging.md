@@ -1,7 +1,10 @@
 ---
 id: "event-hs-c5-aging"
 type: "Event"
-label: "고령화 사회 진입(2000)"
+label: "고령화 사회 진입"
+labelNote: "2000"
+aliases:
+  - "고령화 사회 진입(2000)"
 ---
 
 사실 조사(facts) 주장의 주체로 쓰인 id 에 자동으로 만든 껍데기 개체다. 이름은 장면 제목이나 id 다.

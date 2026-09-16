@@ -1,5 +1,7 @@
 ---
 id: "person-hs-kim-siseup"
 type: "Person"
-label: "김시습(金時習)"
+label: "김시습"
+aliases:
+  - "김시습(金時習)"
 ---

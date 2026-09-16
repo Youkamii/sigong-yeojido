@@ -1,5 +1,7 @@
 ---
 id: "person-encykorea-mandeok"
 type: "Person"
-label: "만덕(萬德)"
+label: "만덕"
+aliases:
+  - "만덕(萬德)"
 ---

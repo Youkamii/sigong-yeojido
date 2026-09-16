@@ -1,5 +1,8 @@
 ---
 id: "event-hs-s3-ox-plowing"
 type: "Event"
-label: "신라 우경 시행(502)"
+label: "신라 우경 시행"
+labelNote: "502"
+aliases:
+  - "신라 우경 시행(502)"
 ---

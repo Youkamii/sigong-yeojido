@@ -3,6 +3,12 @@ type: Polity
 id: polity-wa
 label: 왜
 labelHanja: 倭
+labelNote: 사료 표기 왜국
+kind: group
+sourceRef:
+  - HGIS 144106
+aliases:
+  - 왜 (倭, 사료 표기 왜국) · 집단 행위자
 ---
 
 # 왜

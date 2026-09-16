@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {displayLabel,stripLabelNotes,labelNote,isGroupEntity,predicateLabel,precisionLabel,typeWord} from '../services/host/app/chronicle.js';
+import {displayLabel,stripLabelNotes,labelNote,isGroupEntity,predicateLabel,precisionLabel,typeWord,splitOutsideParens,visibleAliases} from '../services/host/app/chronicle.js';
 import {typeName} from '../services/host/app/atlas-data.js';
 import {shortLabel,sourceName,mergeEvents} from '../services/host/app/atlas-story.js';
 
@@ -27,6 +27,25 @@ test('labelNote 와 isGroupEntity, typeName 집단',()=>{
   assert.equal(typeName('Polity',group),'집단');
   assert.equal(typeName('Polity',{label:'조선',type:'Polity'}),'나라');
   assert.equal(typeName('Person'),'인물');
+});
+
+test('괄호 안의 " · " 로는 이름을 자르지 않는다 (#200)',()=>{
+  assert.deepEqual(splitOutsideParens('부산대학교 박물관 (발굴 조사 기관 · 집단 행위자)'),['부산대학교 박물관 (발굴 조사 기관 · 집단 행위자)']);
+  assert.deepEqual(splitOutsideParens('수군 (조선) · 집단 행위자'),['수군 (조선)','집단 행위자']);
+  assert.equal(displayLabel({label:'부산대학교 박물관 (발굴 조사 기관 · 집단 행위자)',type:'Organization'}),'부산대학교 박물관');
+  assert.equal(displayLabel({label:'국립중앙박물관 (발굴 조사 기관 · 집단 행위자)',type:'Organization'}),'국립중앙박물관');
+  assert.equal(labelNote({label:'부산대학교 박물관 (발굴 조사 기관 · 집단 행위자)'}),'');
+});
+
+test('카드의 다른 이름 줄은 정리 전 표기를 숨기고 진짜 다른 이름만 남긴다 (#200)',()=>{
+  assert.deepEqual(visibleAliases({label:'광개토왕',type:'Person',
+    aliases:['광개토왕 (민족문화대백과)','광개토대왕','광개토왕']}),['광개토대왕']);
+  assert.deepEqual(visibleAliases({label:'강원도/춘천군/신남면',type:'Place',
+    aliases:['강원도/춘천군/신남면 (HGIS 176301)']}),[]);
+  assert.deepEqual(visibleAliases({label:'태봉',type:'Place',aliases:['태봉 · Taebong (Cliopatria 4052)']}),[]);
+  assert.deepEqual(visibleAliases({label:'효종 (조선)',type:'Person',
+    aliases:['효종 (조선 제17대, 민족문화대백과 E0065706)','효종대왕']}),['효종대왕']);
+  assert.deepEqual(visibleAliases({label:'세종',type:'Person'}),[]);
 });
 
 test('stripLabelNotes 는 연도만 있는 괄호와 11자 이상 설명을 뗀다',()=>{
@@ -73,7 +92,8 @@ test('집단 판정은 라벨 꼬리가 사라져도 유형으로 살아남는�
   assert.ok(isGroupEntity({type:'Group',label:'처인부곡민'}));            // 꼬리를 뗀 뒤
   assert.ok(isGroupEntity({type:'Polity',label:'수군 · 집단 행위자'}));  // 꼬리가 남은 동안
   assert.ok(!isGroupEntity({type:'Polity',label:'조선'}));
-  assert.ok(!isGroupEntity({kind:'group',label:'조선',type:'Polity'}));   // 서버가 주지 않는 필드는 보지 않는다
+  assert.ok(isGroupEntity({kind:'group',label:'수군',type:'Polity'}));     // #200 뒤로는 서버가 kind 를 준다
+  assert.ok(!isGroupEntity({kind:'',label:'조선',type:'Polity'}));
   assert.equal(typeName('Group',{type:'Group',label:'처인부곡민'}),'집단');
   assert.equal(typeName('Organization',{type:'Organization',label:'국립중앙박물관 · 집단 행위자'}),'집단');
 });

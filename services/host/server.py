@@ -368,9 +368,23 @@ def collect_entities() -> list[dict]:
         fm = parse_frontmatter(md)
         if not fm.get("id"):
             continue
+        aliases = fm.get("aliases")
+        source_ref = fm.get("sourceRef")
         out.append({"id": fm["id"], "type": fm.get("type"), "label": fm.get("label"), "labelHanja": fm.get("labelHanja"),
+                    # 이름 정리(#200)로 옮겨 둔 값 — labelNote 는 떼어낸 설명, kind 는 집단 표시, aliases 는 원래 이름,
+                    # sourceRef 는 자료 식별자(화면에 보이지 않는다)
+                    "labelNote": fm.get("labelNote"), "kind": fm.get("kind"),
+                    "aliases": [a for a in aliases if isinstance(a, str) and a] if isinstance(aliases, list) else [],
+                    "sourceRef": [r for r in source_ref if isinstance(r, str) and r] if isinstance(source_ref, list) else [],
                     "_file": md.relative_to(ROOT).as_posix()})
     return out
+
+
+def entity_shells() -> dict:
+    """/api/chronicle 응답에 붙일 껍데기 이름 정보 {id: {aliases, labelNote, kind, sourceRef}} (#200)."""
+    return {e["id"]: {"aliases": e["aliases"], "labelNote": e["labelNote"], "kind": e["kind"],
+                      "sourceRef": e["sourceRef"]}
+            for e in index()["entities"] if e["aliases"] or e["labelNote"] or e["kind"] or e["sourceRef"]}
 
 
 def collect_claims() -> list[dict]:
@@ -602,7 +616,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/chronicle':
             sources = expand_sources(q.get('sources', [None])[0])
             try:
-                self._json(chronicle(sources, q.get('origin', ['all'])[0]))
+                self._json(chronicle(sources, q.get('origin', ['all'])[0], shells=entity_shells()))
             except ValueError as exc:
                 self._json({'error': str(exc)}, 400)
             except GraphUnavailable as exc:

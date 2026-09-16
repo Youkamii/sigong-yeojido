@@ -1,7 +1,10 @@
 ---
 id: "event-sm-490-gyeongsi-market"
 type: "Event"
-label: "서울에 시장을 처음 열다 (490)"
+label: "서울에 시장을 처음 열다"
+labelNote: "490"
+aliases:
+  - "서울에 시장을 처음 열다 (490)"
 ---
 
 사실 조사(facts) 주장의 주체로 쓰인 id 에 자동으로 만든 껍데기 개체다. 이름은 장면 제목이나 id 다.

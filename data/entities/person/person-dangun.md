@@ -1,8 +1,10 @@
 ---
 type: Person
 id: person-dangun
-label: 단군(檀君)
+label: "단군"
 labelHanja: 檀君
+aliases:
+  - "단군(檀君)"
 ---
 
 # 단군(檀君)

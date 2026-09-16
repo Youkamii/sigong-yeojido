@@ -1,5 +1,8 @@
 ---
 id: "place-syj135-wolpyeongni"
 type: "Place"
-label: "월평리 · 1894년 동학농민군이 점심을 먹던 곳"
+label: "월평리"
+labelNote: "1894년 동학농민군이 점심을 먹던 곳"
+aliases:
+  - "월평리 · 1894년 동학농민군이 점심을 먹던 곳"
 ---

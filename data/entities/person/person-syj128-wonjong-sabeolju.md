@@ -1,5 +1,7 @@
 ---
 id: "person-syj128-wonjong-sabeolju"
 type: "Person"
-label: "원종(元宗) — 889년 사벌주 봉기 인물"
+label: "원종 — 889년 사벌주 봉기 인물"
+aliases:
+  - "원종(元宗) — 889년 사벌주 봉기 인물"
 ---

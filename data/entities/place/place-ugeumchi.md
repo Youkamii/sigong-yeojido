@@ -1,5 +1,7 @@
 ---
 id: "place-ugeumchi"
 type: "Place"
-label: "우금치(牛金峙)"
+label: "우금치"
+aliases:
+  - "우금치(牛金峙)"
 ---

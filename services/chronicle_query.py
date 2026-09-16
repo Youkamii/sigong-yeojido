@@ -123,7 +123,33 @@ def merge_same_entities(result, identity_rows=None):
     return result
 
 
-def chronicle(sources=None, origin='all', *, query=None):
+def apply_shell_names(result, shells):
+    """개체 껍데기(data/entities)의 다른 이름·이름 설명·집단 표시를 응답에 붙인다 (#200).
+
+    이름을 정리하면서 원래 이름을 aliases 로 옮겼으므로, 이것을 붙여야 찾기가 옛 이름도 계속 잡는다.
+    Fuseki 가 아니라 서버가 이미 읽어 둔 껍데기 목록에서 가져온다 — 질의를 늘리지 않는다.
+    """
+    if not shells:
+        return result
+    for entity in result['entities']:
+        shell = shells.get(entity['id'])
+        if not shell:
+            continue
+        aliases = [*entity.get('aliases', []), *(shell.get('aliases') or [])]
+        aliases = list(dict.fromkeys(name for name in aliases if name and name != entity.get('label')))
+        if aliases:
+            entity['aliases'] = aliases
+        for key in ('labelNote', 'kind'):
+            if shell.get(key) and not entity.get(key):
+                entity[key] = shell[key]
+        # sourceRef 는 자료 식별자다 — 화면에 쓰지 않고 응답에만 둔다 (#200 2차).
+        source_ref = list(dict.fromkeys([*entity.get('sourceRef', []), *(shell.get('sourceRef') or [])]))
+        if source_ref:
+            entity['sourceRef'] = source_ref
+    return result
+
+
+def chronicle(sources=None, origin='all', *, query=None, shells=None):
     if origin not in ('all', 'ai', 'human'):
         raise ValueError('origin must be all, human or ai')
     result = {'entities': [], 'claims': [], 'hasMore': False}
@@ -205,4 +231,5 @@ WHERE {{
         claim['subjectLabel'] = entities[subject]['label']
         result['claims'].append(claim)
     result['entities'] = list(entities.values())
-    return merge_same_entities(result, identity_rows)
+    # 병합보다 먼저 붙여야 합쳐지는 개체의 옛 이름도 정본의 다른 이름으로 모인다.
+    return merge_same_entities(apply_shell_names(result, shells), identity_rows)

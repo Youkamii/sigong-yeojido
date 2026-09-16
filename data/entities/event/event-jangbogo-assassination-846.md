@@ -1,5 +1,8 @@
 ---
 id: "event-jangbogo-assassination-846"
 type: "Event"
-label: "장보고 암살 (846)"
+label: "장보고 암살"
+labelNote: "846"
+aliases:
+  - "장보고 암살 (846)"
 ---

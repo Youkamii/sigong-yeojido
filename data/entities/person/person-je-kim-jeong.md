@@ -1,5 +1,7 @@
 ---
 id: "person-je-kim-jeong"
 type: "Person"
-label: "김정(金淨)"
+label: "김정"
+aliases:
+  - "김정(金淨)"
 ---

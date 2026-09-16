@@ -1,5 +1,8 @@
 ---
 id: "event-syj135-daeyaseong-jeontu-642"
 type: "Event"
-label: "대야성전투 (642)"
+label: "대야성전투"
+labelNote: "642"
+aliases:
+  - "대야성전투 (642)"
 ---

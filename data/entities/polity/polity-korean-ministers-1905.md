@@ -1,5 +1,8 @@
 ---
 id: "polity-korean-ministers-1905"
 type: "Polity"
-label: "을사늑약 어전회의 참석 대신들 (1905)"
+label: "을사늑약 어전회의 참석 대신들"
+labelNote: "1905"
+aliases:
+  - "을사늑약 어전회의 참석 대신들 (1905)"
 ---

@@ -1,5 +1,8 @@
 ---
 id: "event-hs-jl1-jeongyu"
 type: "Event"
-label: "정유재란(1597~1598)"
+label: "정유재란"
+labelNote: "1597~1598"
+aliases:
+  - "정유재란(1597~1598)"
 ---

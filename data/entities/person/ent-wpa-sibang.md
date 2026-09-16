@@ -1,7 +1,10 @@
 ---
 id: "ent-wpa-sibang"
-label: "이시방 (인조실록 표기 '시방')"
+label: "이시방"
 labelHanja: "李時昉"
+labelNote: "인조실록 표기 '시방'"
+aliases:
+  - "이시방 (인조실록 표기 '시방')"
 type: "Person"
 ---
 

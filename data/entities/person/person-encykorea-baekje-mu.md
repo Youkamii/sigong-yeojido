@@ -1,5 +1,8 @@
 ---
 id: "person-encykorea-baekje-mu"
 type: "Person"
-label: "무왕 (민족문화대백과, 백제 제30대 왕)"
+label: "무왕 (백제)"
+labelNote: "민족문화대백과, 백제 제30대 왕"
+aliases:
+  - "무왕 (민족문화대백과, 백제 제30대 왕)"
 ---

@@ -1,5 +1,8 @@
 ---
 id: "person-encykorea-jinseong"
 type: "Person"
-label: "진성여왕 (민족문화대백과)"
+label: "진성여왕"
+labelNote: "민족문화대백과"
+aliases:
+  - "진성여왕 (민족문화대백과)"
 ---

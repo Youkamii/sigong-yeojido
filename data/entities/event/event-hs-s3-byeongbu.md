@@ -1,5 +1,8 @@
 ---
 id: "event-hs-s3-byeongbu"
 type: "Event"
-label: "신라 병부 설치(517)"
+label: "신라 병부 설치"
+labelNote: "517"
+aliases:
+  - "신라 병부 설치(517)"
 ---

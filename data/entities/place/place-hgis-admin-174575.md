@@ -1,7 +1,11 @@
 ---
 type: "Place"
 id: "place-hgis-admin-174575"
-label: "경상북도/대구군 (HGIS 174575)"
+label: "경상북도/대구군"
+sourceRef:
+  - "HGIS 174575"
+aliases:
+  - "경상북도/대구군 (HGIS 174575)"
 ---
 
 기관 데이터의 시기별 행정구역 레코드를 가리키는 이름이다. 다른 시대 지명과 합치지 않는다.

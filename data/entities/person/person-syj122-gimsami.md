@@ -1,5 +1,7 @@
 ---
 id: "person-syj122-gimsami"
 type: "Person"
-label: "김사미(金沙彌)"
+label: "김사미"
+aliases:
+  - "김사미(金沙彌)"
 ---

@@ -1,5 +1,8 @@
 ---
 id: "event-gwangju-student-1929"
 type: "Event"
-label: "광주학생운동 제1차 가두 투쟁 (1929년 11월 3일)"
+label: "광주학생운동 제1차 가두 투쟁"
+labelNote: "1929년 11월 3일"
+aliases:
+  - "광주학생운동 제1차 가두 투쟁 (1929년 11월 3일)"
 ---

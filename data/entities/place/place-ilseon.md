@@ -1,5 +1,7 @@
 ---
 id: "place-ilseon"
 type: "Place"
-label: "일선(一善)"
+label: "일선"
+aliases:
+  - "일선(一善)"
 ---

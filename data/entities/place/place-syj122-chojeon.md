@@ -1,5 +1,8 @@
 ---
 id: "place-syj122-chojeon"
 type: "Place"
-label: "초전(草田, 지금의 울산광역시)"
+label: "초전"
+labelNote: "草田, 지금의 울산광역시"
+aliases:
+  - "초전(草田, 지금의 울산광역시)"
 ---

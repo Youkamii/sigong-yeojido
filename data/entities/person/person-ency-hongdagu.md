@@ -1,5 +1,8 @@
 ---
 id: "person-ency-hongdagu"
 type: "Person"
-label: "홍다구 (1271년 진도 공격 몽골군 지휘)"
+label: "홍다구"
+labelNote: "1271년 진도 공격 몽골군 지휘"
+aliases:
+  - "홍다구 (1271년 진도 공격 몽골군 지휘)"
 ---

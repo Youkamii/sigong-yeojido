@@ -303,6 +303,11 @@ def main():
                 write(saved / name, content)
     write(args.out, json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k:v for k,v in report.items() if k not in ('rawFilesChecked','missing','collection')},ensure_ascii=False))
+    if not args.check_only:
+        # 적재기는 조사 결과의 이름을 그대로 쓴다 — 정리(#200)는 따로 돌려야 되살아나지 않는다.
+        print('다음: python services/validate.py --write-digests → scripts/build_history_scenes.py --merge → '
+              'python scripts/clean_entity_labels.py --apply → python services/build_ttl.py (scripts/README-pipeline.md)',
+              file=sys.stderr)
 
 
 if __name__ == '__main__':

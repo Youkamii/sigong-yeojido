@@ -1,5 +1,8 @@
 ---
 id: "person-jl2-hyegyeonggung-hong"
 type: "Person"
-label: "혜경궁 홍씨 · 1795년 화성 행차의 회갑 당사자"
+label: "혜경궁 홍씨"
+labelNote: "1795년 화성 행차의 회갑 당사자"
+aliases:
+  - "혜경궁 홍씨 · 1795년 화성 행차의 회갑 당사자"
 ---

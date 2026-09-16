@@ -1,5 +1,7 @@
 ---
 id: "person-syj122-gimgyeongson"
 type: "Person"
-label: "김경손(金慶孫)"
+label: "김경손"
+aliases:
+  - "김경손(金慶孫)"
 ---

@@ -35,16 +35,41 @@ const NOTE_PAREN=/\s*\(([^()]*)\)/g;
 const isYearParen=text=>/^[\s\d년월일경~∼～·,.\-–]+$/.test(text)||/^(?:기원전\s*)?\d{1,4}년?(?:\s*[~∼～–-]\s*\d{1,4}년?)?(?:\s*(?:경|무렵))?$/.test(text);
 export const stripLabelNotes = text => String(text||'').replace(NOTE_PAREN,(match,inner)=>isYearParen(inner)||inner.trim().length>=11||/미상|미확인|미기재|불명/.test(inner)?'':match)
   .replace(/\s{2,}/g,' ').trim();
-export const labelNote = e => {const parts=String(e?.label||'').split(' · ');return parts.length>1?parts.slice(1).join(' · ').replace(/집단 행위자/g,'').replace(/\s*·\s*$/,'').trim():'';};
+// ' · ' 는 괄호 밖에서만 자른다 — '(발굴 조사 기관 · 집단 행위자)' 처럼 괄호 안에 있으면 이름의 일부다 (#200).
+export const splitOutsideParens = (text,separator=' · ') => {
+  const value=String(text||''),parts=[];let depth=0,start=0;
+  for(let i=0;i<value.length;i++){
+    const char=value[i];
+    if(char==='(')depth++;
+    else if(char===')')depth=Math.max(0,depth-1);
+    else if(depth===0&&value.startsWith(separator,i)){parts.push(value.slice(start,i));i+=separator.length-1;start=i+1;}
+  }
+  parts.push(value.slice(start));
+  return parts;
+};
+// 데이터에 labelNote 가 있으면 그것을 쓴다 — 원본 이름을 정리하며 떼어낸 설명을 옮겨 둔 자리다 (#200).
+export const labelNote = e => {if(e?.labelNote)return String(e.labelNote);const parts=splitOutsideParens(String(e?.label||''));return parts.length>1?parts.slice(1).join(' · ').replace(/집단 행위자/g,'').replace(/\s*·\s*$/,'').trim():'';};
 export const displayLabel = e => {
   if(!e||!e.label)return '';
-  const base=entityLabel(e).split(' · ')[0];
+  const base=splitOutsideParens(entityLabel(e))[0];
   const cleaned=stripLabelNotes(base).replace(/집단 행위자|정본/g,'').replace(/미상/g,'미확인').replace(/\s{2,}/g,' ').trim();
   return cleaned||entityLabel(e)||e.label;
 };
-// 집단 판정: 서버가 주는 개체에는 kind·subtype 이 없다(#198 감사). 유형 Group 과 라벨 꼬리를 함께 본다 —
-// 라벨에서 '집단 행위자' 꼬리를 떼는 데이터 정리(v2 §1)가 끝나도 판정이 살아남게.
-export const isGroupEntity = e => e?.type==='Group'||/집단 행위자/.test(String(e?.label||''));
+// 카드의 '다른 이름' 줄에 쓸 값 — 정리 전 표기(같은 규칙으로 정리하면 표시 이름이 되는 것)는 뺀다.
+// 검색은 entity.aliases 를 그대로 쓰므로 옛 이름으로도 계속 찾힌다 (#200).
+export const visibleAliases = e => {
+  const shown=displayLabel(e);
+  const seen=new Set();
+  return (e?.aliases||[]).map(a=>String(a||'').trim()).filter(alias=>{
+    if(!alias||alias===shown||alias===String(e?.label||'')||seen.has(alias))return false;
+    seen.add(alias);
+    return displayLabel({label:alias,type:e?.type})!==shown;
+  });
+};
+// 집단 판정: 유형 Group·라벨 꼬리·kind 를 함께 본다(#198 감사 C-18). 라벨에서 '집단 행위자' 꼬리를 떼는
+// 데이터 정리가 끝나도 판정이 살아남게. kind 는 #200 이 서버 응답에 새로 실어 주는 집단 표시다.
+export const isGroupEntity = e => e?.type==='Group'||/집단 행위자/.test(String(e?.label||''))
+  ||['group','organization'].includes(String(e?.kind||e?.subtype||'').toLowerCase());
 const shortPredicate = p=>p.replace('syj:','');
 const ACTIVITY = new Map([['livedIn','생존'],['reignedIn','재위'],['activeIn','활동'],['appearsIn','등장']]);
 const activityLabel=(predicate,claim)=>predicate==='appearsIn'&&claim.note?.startsWith('전승 연대')?'전승 연대':ACTIVITY.get(predicate);

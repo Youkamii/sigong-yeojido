@@ -1,5 +1,8 @@
 ---
 id: "polity-syj122-goryeo-army-1380"
 type: "Polity"
-label: "이성계 휘하 고려군 (1380)"
+label: "이성계 휘하 고려군"
+labelNote: "1380"
+aliases:
+  - "이성계 휘하 고려군 (1380)"
 ---

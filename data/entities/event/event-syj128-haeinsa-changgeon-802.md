@@ -1,5 +1,8 @@
 ---
 id: "event-syj128-haeinsa-changgeon-802"
 type: "Event"
-label: "해인사 창건 착수 (802)"
+label: "해인사 창건 착수"
+labelNote: "802"
+aliases:
+  - "해인사 창건 착수 (802)"
 ---
