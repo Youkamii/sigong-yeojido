@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1543년 주자가 세운 백록동서원을 모방한 백운동서원을 건립하여 안향을 배향하였다"
+      "value": "1543년 주자가 세운 백록동서원을 모방한 백운동서원을 건립해 안향을 배향했다"
     },
     "note": "건립과 배향 행위 원문.",
     "fromSource": "src-je-encykorea-e0053318",

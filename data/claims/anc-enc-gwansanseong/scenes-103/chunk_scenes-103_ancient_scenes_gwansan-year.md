@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "관산성에서 백제와 신라가 싸워 백제가 대패하였다"
+      "value": "관산성에서 백제와 신라가 싸워 백제가 대패했다"
     },
     "note": "전투 서술.",
     "fromSource": "src-anc-enc-gwansanseong",

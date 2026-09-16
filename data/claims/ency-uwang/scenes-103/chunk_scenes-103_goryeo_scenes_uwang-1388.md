@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "위화도에서 회군한 이성계 등에 의해 폐위되었다가"
+      "value": "위화도에서 회군한 이성계 등에게 폐위되었다가"
     },
     "note": "회군과 폐위 행위.",
     "fromSource": "src-ency-uwang",

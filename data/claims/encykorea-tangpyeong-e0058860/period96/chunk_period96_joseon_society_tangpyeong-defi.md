@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "조선 후기 영·정조대에 당쟁을 막기 위해 당파간의 정치세력에 균형을 꾀하려한 정책."
+      "value": "조선 후기 영·정조대에 당쟁을 막기 위해 당파 간 정치세력의 균형을 꾀한 정책."
     },
     "note": "항목 '정의' 문장(발췌 그대로).",
     "fromSource": "src-encykorea-tangpyeong-e0058860",

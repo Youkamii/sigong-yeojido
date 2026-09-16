@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "삭주 · 이성 · 무주 · 안주가 함락되고"
+      "value": "삭주와 이성, 무주, 안주가 함락되고"
     },
     "note": "개경 함락 이전 북계 성들의 함락 서술.",
     "fromSource": "src-ency-honggeonjeok",

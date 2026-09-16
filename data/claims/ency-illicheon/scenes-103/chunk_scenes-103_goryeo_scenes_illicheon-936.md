@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "고려와 후백제 사이에 있었던 대규모 전투"
+      "value": "고려와 후백제 사이에 벌어진 대규모 전투"
     },
     "note": "전투 행위 서술.",
     "fromSource": "src-ency-illicheon",

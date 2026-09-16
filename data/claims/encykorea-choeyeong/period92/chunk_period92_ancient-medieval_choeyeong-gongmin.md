@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "공민왕을 시해하려던 흥왕사의 난, 덕흥군 옹립 시도 등을 평정하였다"
+      "value": "공민왕을 시해하려던 흥왕사의 난, 덕흥군 옹립 시도 등을 평정했다"
     },
     "note": "person-encykorea-gongmin과 연결되는 서술. 연도는 이 발췌에 명시되어 있지 않음.",
     "fromSource": "src-encykorea-choeyeong",

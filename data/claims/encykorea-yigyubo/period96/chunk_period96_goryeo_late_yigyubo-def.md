@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "고려시대 때, 동지공거, 수태보 문하시랑평장사 등을 역임한 문신."
+      "value": "고려시대, 동지공거, 수태보 문하시랑평장사 등을 역임한 문신."
     },
     "fromSource": "src-encykorea-yigyubo",
     "citesChunk": "chunk_period96_goryeo_late_yigyubo-def",

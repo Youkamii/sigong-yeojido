@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1446년 세종의 명으로 정인지, 신숙주, 성삼문, 최항, 박팽년, 강희안, 이개, 이선로 등 집현전의 8학자가 집필하였다"
+      "value": "1446년 세종의 명으로 정인지, 신숙주, 성삼문, 최항, 박팽년, 강희안, 이개, 이선로 등 집현전의 8학자가 집필했다"
     },
     "note": "집필 행위와 집필자 서술.",
     "fromSource": "src-je-encykorea-e0065805",

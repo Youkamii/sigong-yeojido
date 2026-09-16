@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "열병식을 구실로 귀족들을 부른 뒤 정변을 일으켜 이들을 죽이고 왕궁에 돌입해 왕을 시해하였다"
+      "value": "열병식을 구실로 귀족들을 부른 뒤 정변을 일으켜 이들을 죽이고 왕궁에 돌입해 왕을 시해했다"
     },
     "note": "정변 행위 서술.",
     "fromSource": "src-anc-enc-yeongaesomun",

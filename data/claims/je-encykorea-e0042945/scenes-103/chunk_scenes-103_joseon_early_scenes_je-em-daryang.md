@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "달량포(達梁浦)로 계속 침입해 성을 포위하였다"
+      "value": "달량포(達梁浦)로 계속 침입해 성을 포위했다"
     },
     "note": "성을 포위한 행위 원문.",
     "fromSource": "src-je-encykorea-e0042945",

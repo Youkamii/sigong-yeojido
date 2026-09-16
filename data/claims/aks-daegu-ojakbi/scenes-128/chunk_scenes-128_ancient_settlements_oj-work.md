@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "312인의 인부를 일으켜 13일에 완성하였다."
+      "value": "312인의 인부를 일으켜 13일에 완성했다."
     },
     "note": "출처가 옮긴 비문 해석이다. 인원과 일수를 임의로 바꾸지 않았다.",
     "fromSource": "src-aks-daegu-ojakbi",

@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1782년 2월 정조가 왕실 관련 서적을 보관할 목적으로 강화도에 외규장각을 설치하였다."
+      "value": "1782년 2월 정조가 왕실 관련 서적을 보관할 목적으로 강화도에 외규장각을 설치했다."
     },
     "note": "행위: 서적 보관용 규장각 설치.",
     "fromSource": "src-jl2-aks-oegyujanggak",

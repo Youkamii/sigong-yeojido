@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "권5에 한글로 적힌 ＜동동＞·＜정읍＞·＜처용가＞·＜진작＞의 노래가 실려 있다."
+      "value": "권5에 한글로 적힌 ＜동동＞과 ＜정읍＞, ＜처용가＞, ＜진작＞의 노래가 실려 있다."
     },
     "note": "「정읍사」 수록 근거.",
     "fromSource": "src-syj136-aks-akhak-gwebeom",

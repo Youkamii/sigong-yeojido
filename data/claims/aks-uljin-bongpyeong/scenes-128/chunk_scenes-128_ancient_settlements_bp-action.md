@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "이 지역에 모종의 조처를 취하고, 소(斑牛)를 죽이는 등 일정한 의식을 행하였다."
+      "value": "이 지역에 모종의 조처를 취하고, 소(斑牛)를 죽이는 등 일정한 의식을 행했다."
     },
     "note": "출처 문장을 그대로 옮겼다. 조처의 구체 내용은 출처도 '모종의'라고만 적는다.",
     "fromSource": "src-aks-uljin-bongpyeong",

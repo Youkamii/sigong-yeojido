@@ -51,7 +51,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1932년 4월 29일 상해 훙커우공원 전승기념 및 천장절 기념식에서의 투탄의거"
+      "value": "1932년 4월 29일 상해 훙커우공원 전승기념 및 천장절 기념식에서 벌인 투탄의거"
     },
     "fromSource": "src-encykorea-hongkou-uigeo",
     "citesChunk": "chunk_period96_modern_hk-1932",

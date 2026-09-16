@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "청주목 흥덕사에서 비구니 묘덕의 시주에 의해서 주자로 인쇄하였음은 알려진 사실이다"
+      "value": "청주목 흥덕사에서 비구니 묘덕의 시주로 주자로 인쇄했음은 알려진 사실이다"
     },
     "note": "금속활자 인쇄 행위.",
     "fromSource": "src-ency-jikji",

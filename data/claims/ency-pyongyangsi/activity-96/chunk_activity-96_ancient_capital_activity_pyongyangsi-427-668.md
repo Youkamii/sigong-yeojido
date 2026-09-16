@@ -35,7 +35,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "427년 평양 천도 이후 고구려 멸망 때까지 240여 년간 수도로 번성하였다"
+      "value": "427년 평양 천도 이후 고구려 멸망 때까지 240여 년간 수도로 번성했다"
     },
     "note": "천도 시점과 멸망 시점을 잇는 연속성을 출처가 한 문장에서 직접 진술한다. 첫 언급과 마지막 언급을 임의로 이은 것이 아니다.",
     "fromSource": "src-ency-pyongyangsi",

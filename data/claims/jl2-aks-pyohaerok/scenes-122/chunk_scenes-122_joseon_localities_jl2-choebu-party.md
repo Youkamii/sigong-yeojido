@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "일행 42인을 거느리고 표류하였다."
+      "value": "일행 42인을 거느리고 표류했다."
     },
     "note": "동행 인원 서술. 배의 수는 적혀 있지 않다.",
     "fromSource": "src-jl2-aks-pyohaerok",

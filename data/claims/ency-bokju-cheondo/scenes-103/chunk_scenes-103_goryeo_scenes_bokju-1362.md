@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "고려군 20만 병력이 집결하여 개경을 탈환하였고 공민왕은 환도하였다"
+      "value": "고려군 20만 병력이 집결해 개경을 탈환했고 공민왕은 환도했다"
     },
     "note": "탈환과 환도 행위. 병력 수치는 출처 표기를 그대로 옮긴 것이다.",
     "fromSource": "src-ency-bokju-cheondo",

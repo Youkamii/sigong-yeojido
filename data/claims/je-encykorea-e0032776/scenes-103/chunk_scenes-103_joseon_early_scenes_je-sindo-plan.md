@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "도로의 터를 정하였다"
+      "value": "도로의 터를 정했다"
     },
     "note": "새 도읍의 터를 정한 행위.",
     "fromSource": "src-je-encykorea-e0032776",

@@ -52,7 +52,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1808년에 이 초당으로 처소를 옮겨 1818년 귀양에서 풀릴 때까지 생활하면서 《목민심서》 등을 저술하였다."
+      "value": "1808년에 이 초당으로 처소를 옮겨 1818년 귀양에서 풀릴 때까지 생활하면서 《목민심서》 등을 저술했다."
     },
     "note": "행위: 거처와 저술.",
     "fromSource": "src-jl2-aks-dasanchodang",

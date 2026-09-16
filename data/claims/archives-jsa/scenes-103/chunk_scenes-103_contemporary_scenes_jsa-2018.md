@@ -69,7 +69,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "김정은 북한 국무위원장이 판문점 군사분계선을 넘어 남측의 ‘평화의 집’에서 정상회담에 참석하였다."
+      "value": "김정은 북한 국무위원장이 판문점 군사분계선을 넘어 남측의 ‘평화의 집’에서 정상회담에 참석했다."
     },
     "note": "군사분계선을 걸어서 넘는 행위와 회담 참석.",
     "fromSource": "src-archives-jsa",

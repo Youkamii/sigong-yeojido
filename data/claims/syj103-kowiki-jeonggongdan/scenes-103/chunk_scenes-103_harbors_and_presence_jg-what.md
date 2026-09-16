@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "부산광역시 동구 좌천동 에 있는 제단 이다"
+      "value": "부산광역시 동구 좌천동에 있는 제단이다"
     },
     "note": "정공단은 좌천동에 있는 제단이다.",
     "fromSource": "src-syj103-kowiki-jeonggongdan",

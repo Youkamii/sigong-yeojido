@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "지역별로 쌀·베·돈으로 납부하게 한 세금 및 재정 제도"
+      "value": "지역별로 쌀과 베, 돈으로 납부하게 한 세금 및 재정 제도"
     },
     "note": "제도 성격.",
     "fromSource": "src-ek-daedongbeop-e0014246",

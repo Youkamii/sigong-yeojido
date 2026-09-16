@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "동모산에 성을 쌓고 도읍을 정한 뒤 국호를 진, 연호를 천통이라 하였다"
+      "value": "동모산에 성을 쌓고 도읍을 정한 뒤 국호를 진, 연호를 천통이라 했다"
     },
     "note": "축성·도읍 행위 서술.",
     "fromSource": "src-anc-enc-daejoyeong",

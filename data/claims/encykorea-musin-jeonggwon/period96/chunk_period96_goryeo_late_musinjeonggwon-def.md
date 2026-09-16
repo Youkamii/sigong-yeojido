@@ -34,7 +34,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1170년부터 1270년 사이에 무신 세력에 의해 주도된 고려 왕조의 정권. 무인정권."
+      "value": "1170년부터 1270년 사이에 무신 세력이 주도한 고려 왕조의 정권. 무인정권."
     },
     "note": "왕조가 아니라 고려 내부의 정권(regime). 스키마 타입 제약상 Polity로 근사 분류함.",
     "fromSource": "src-encykorea-musin-jeonggwon",

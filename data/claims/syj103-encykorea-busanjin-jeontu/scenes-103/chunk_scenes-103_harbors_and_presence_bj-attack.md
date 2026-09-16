@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "세 방면에서 성을 공격하였다"
+      "value": "세 방면에서 성을 공격했다"
     },
     "note": "이튿날 상륙 뒤 공격 방향 서술.",
     "fromSource": "src-syj103-encykorea-busanjin-jeontu",

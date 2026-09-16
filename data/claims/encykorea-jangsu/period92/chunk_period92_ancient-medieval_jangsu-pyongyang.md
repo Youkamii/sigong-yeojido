@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "427년에는 평양성으로 천도를 단행했다"
+      "value": "427년에는 평양성으로 도읍을 옮겼다"
     },
     "note": "'내용 요약' 문단의 문장으로, 같은 문단 첫 문장(ex-jangsu-headline)이 주어를 장수왕으로 명시함.",
     "fromSource": "src-encykorea-jangsu",
@@ -82,7 +82,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "427년에는 평양성으로 천도를 단행했다"
+      "value": "427년에는 평양성으로 도읍을 옮겼다"
     },
     "fromSource": "src-encykorea-jangsu",
     "citesChunk": "chunk_period92_ancient-medieval_jangsu-pyongyang",

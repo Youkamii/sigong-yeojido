@@ -52,7 +52,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1488년 윤1월 3일 제주를 떠나 고향 나주로 가다가 풍랑을 만나 표류하였다."
+      "value": "1488년 윤1월 3일 제주를 떠나 고향 나주로 가다가 풍랑을 만나 표류했다."
     },
     "note": "행위: 제주 출항과 표류.",
     "fromSource": "src-jl2-aks-pyohaerok",

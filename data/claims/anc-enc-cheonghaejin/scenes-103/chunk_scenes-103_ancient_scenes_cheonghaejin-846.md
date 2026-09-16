@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "중앙정부가 자객 염장을 보내 장보고를 암살하였다"
+      "value": "중앙정부가 자객 염장을 보내 장보고를 암살했다"
     },
     "note": "암살 서술.",
     "fromSource": "src-anc-enc-cheonghaejin",

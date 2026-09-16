@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "지금의 경상북도 김천시 개령면 지역에 있었던 것으로 비정된다"
+      "value": "지금의 경상북도 김천시 개령면 지역에 자리했던 것으로 비정된다"
     },
     "note": "비정(比定)이라는 출처의 표현을 그대로 둔다.",
     "fromSource": "src-anc-enc-gammunguk",

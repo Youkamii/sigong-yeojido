@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "보화도(寶花島: 목포의 高下島)를 본거로 삼았다가, 다음해 2월에 고금도(古今島) 로 영(營)을 옮긴"
+      "value": "보화도(寶花島: 목포의 高下島)를 본거로 삼았다가, 다음해 2월에 고금도(古今島)로 영(營)을 옮긴"
     },
     "note": "고하도를 본거로 삼았다가 이듬해 2월 고금도로 옮겼다는 서술. 주둔 종료 시점 근거.",
     "fromSource": "src-syj103-encykorea-yi-sunsin",

@@ -35,7 +35,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "평화시장에서 유명무실한 ‘근로기준법 화형식’을 거행하고 분신 항거하였고, 그 날 밤 숨을 거두었다."
+      "value": "평화시장에서 유명무실한 ‘근로기준법 화형식’을 거행하고 분신 항거했고, 그날 밤 숨을 거두었다."
     },
     "note": "화형식과 분신이라는 불을 쓴 행위가 출처에 명시된다.",
     "fromSource": "src-encykorea-jeon-taeil",

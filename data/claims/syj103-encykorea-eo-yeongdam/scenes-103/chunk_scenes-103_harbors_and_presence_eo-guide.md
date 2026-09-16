@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1592년(선조 25) 5월 광양현감으로서 이순신(李舜臣)의 수로를 인도하였다"
+      "value": "1592년(선조 25) 5월 광양현감으로서 이순신(李舜臣)의 수로를 인도했다"
     },
     "note": "어영담이 물길 안내를 맡았던 인물이라는 배경. 1594년 당항포 행동과는 다른 해의 일이다.",
     "fromSource": "src-syj103-encykorea-eo-yeongdam",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "지금의 경상북도 고령군 일대에 있었던 것으로 추정된다."
+      "value": "지금의 경상북도 고령군 일대에 자리했던 것으로 추정된다."
     },
     "note": "대가야의 위치에 대한 출처 서술이며 지역 표시의 근거다.",
     "fromSource": "src-aks-daegaya",

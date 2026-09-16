@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "제주시에 있는 고씨·양씨·부씨 시조 관련 탄생지로, 세 신인이 솟아났다는 구멍이다."
+      "value": "제주시에 있는 고씨와 양씨, 부씨 시조 관련 탄생지로, 세 신인이 솟아났다는 구멍이다."
     },
     "note": "장소 항목의 정의.",
     "fromSource": "src-syj136-aks-samseonghyeol",

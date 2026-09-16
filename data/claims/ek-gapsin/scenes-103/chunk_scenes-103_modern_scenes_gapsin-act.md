@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "우정국에서 4영사 처단에 실패하자 김옥균·박영효·서광범이 고종 침실로 들어가 우정국 변란을 알림"
+      "value": "우정국에서 4영사 처단에 실패하자 김옥균과 박영효, 서광범이 고종 침실로 들어가 우정국 변란을 알림"
     },
     "note": "우정국 현장 행동과 그 직후 이동을 함께 적은 문장이다.",
     "fromSource": "src-ek-gapsin",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1695년 송시열을 제향하기 위하여 유생들이 힘을 합쳐 서원을 세웠다."
+      "value": "1695년 송시열을 제향하려고 유생들이 힘을 합쳐 서원을 세웠다."
     },
     "note": "행위: 서원 건립.",
     "fromSource": "src-jl2-aks-hwayangdong-seowon",
