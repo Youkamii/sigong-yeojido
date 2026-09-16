@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157177"
 label: "경상북도/성주군/두릉면"
-labelNote: "HGIS 157177"
+sourceRef:
+  - "HGIS 157177"
 aliases:
   - "경상북도/성주군/두릉면 (HGIS 157177)"
 ---

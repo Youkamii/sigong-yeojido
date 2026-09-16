@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136714"
 label: "평안북도/의주군/옥상면"
-labelNote: "HGIS 136714"
+sourceRef:
+  - "HGIS 136714"
 aliases:
   - "평안북도/의주군/옥상면 (HGIS 136714)"
 ---

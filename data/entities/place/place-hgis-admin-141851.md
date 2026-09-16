@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141851"
 label: "평안북도/정주군/서원면"
-labelNote: "HGIS 141851"
+sourceRef:
+  - "HGIS 141851"
 aliases:
   - "평안북도/정주군/서원면 (HGIS 141851)"
 ---

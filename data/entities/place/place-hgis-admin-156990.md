@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156990"
 label: "경상북도/대구부/하동면"
-labelNote: "HGIS 156990"
+sourceRef:
+  - "HGIS 156990"
 aliases:
   - "경상북도/대구부/하동면 (HGIS 156990)"
 ---

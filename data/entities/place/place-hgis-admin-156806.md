@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156806"
 label: "경상북도/경산군/고산면"
-labelNote: "HGIS 156806"
+sourceRef:
+  - "HGIS 156806"
 aliases:
   - "경상북도/경산군/고산면 (HGIS 156806)"
 ---

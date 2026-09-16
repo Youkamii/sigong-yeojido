@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136931"
 label: "평안북도/가산군/군내면"
-labelNote: "HGIS 136931"
+sourceRef:
+  - "HGIS 136931"
 aliases:
   - "평안북도/가산군/군내면 (HGIS 136931)"
 ---

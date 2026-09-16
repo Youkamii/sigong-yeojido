@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157346"
 label: "경상북도/영천군/모사면"
-labelNote: "HGIS 157346"
+sourceRef:
+  - "HGIS 157346"
 aliases:
   - "경상북도/영천군/모사면 (HGIS 157346)"
 ---

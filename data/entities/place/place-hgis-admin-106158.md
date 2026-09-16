@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-106158"
 label: "전라북도/흥덕군/북면"
-labelNote: "HGIS 106158"
+sourceRef:
+  - "HGIS 106158"
 aliases:
   - "전라북도/흥덕군/북면 (HGIS 106158)"
 ---

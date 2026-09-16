@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157482"
 label: "경상북도/청도군/하남면"
-labelNote: "HGIS 157482"
+sourceRef:
+  - "HGIS 157482"
 aliases:
   - "경상북도/청도군/하남면 (HGIS 157482)"
 ---

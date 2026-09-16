@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157271"
 label: "경상북도/영덕군/지품면"
-labelNote: "HGIS 157271"
+sourceRef:
+  - "HGIS 157271"
 aliases:
   - "경상북도/영덕군/지품면 (HGIS 157271)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123693"
 label: "전라남도/해남군/해남면"
-labelNote: "HGIS 123693"
+sourceRef:
+  - "HGIS 123693"
 aliases:
   - "전라남도/해남군/해남면 (HGIS 123693)"
 ---

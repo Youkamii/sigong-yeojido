@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111956"
 label: "전라남도/광주군/본촌면"
-labelNote: "HGIS 111956"
+sourceRef:
+  - "HGIS 111956"
 aliases:
   - "전라남도/광주군/본촌면 (HGIS 111956)"
 ---

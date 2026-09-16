@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144377"
 label: "경상남도/안의군/현내면"
-labelNote: "HGIS 144377"
+sourceRef:
+  - "HGIS 144377"
 aliases:
   - "경상남도/안의군/현내면 (HGIS 144377)"
 ---

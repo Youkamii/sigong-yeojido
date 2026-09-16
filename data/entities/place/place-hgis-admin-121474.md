@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121474"
 label: "전라남도/지도군/군내면"
-labelNote: "HGIS 121474"
+sourceRef:
+  - "HGIS 121474"
 aliases:
   - "전라남도/지도군/군내면 (HGIS 121474)"
 ---

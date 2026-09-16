@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156771"
 label: "경상북도/성주군/법산면"
-labelNote: "HGIS 156771"
+sourceRef:
+  - "HGIS 156771"
 aliases:
   - "경상북도/성주군/법산면 (HGIS 156771)"
 ---

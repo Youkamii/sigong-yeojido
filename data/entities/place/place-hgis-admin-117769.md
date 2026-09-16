@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117769"
 label: "전라남도/무안군/현화면"
-labelNote: "HGIS 117769"
+sourceRef:
+  - "HGIS 117769"
 aliases:
   - "전라남도/무안군/현화면 (HGIS 117769)"
 ---

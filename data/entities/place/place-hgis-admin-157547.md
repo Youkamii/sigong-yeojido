@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157547"
 label: "경상북도/함창군/동면"
-labelNote: "HGIS 157547"
+sourceRef:
+  - "HGIS 157547"
 aliases:
   - "경상북도/함창군/동면 (HGIS 157547)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157055"
 label: "경상북도/문경군/신남면"
-labelNote: "HGIS 157055"
+sourceRef:
+  - "HGIS 157055"
 aliases:
   - "경상북도/문경군/신남면 (HGIS 157055)"
 ---

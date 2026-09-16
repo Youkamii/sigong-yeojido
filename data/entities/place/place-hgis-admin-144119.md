@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144119"
 label: "경상남도/고성군/영이곡면"
-labelNote: "HGIS 144119"
+sourceRef:
+  - "HGIS 144119"
 aliases:
   - "경상남도/고성군/영이곡면 (HGIS 144119)"
 ---

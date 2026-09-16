@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144374"
 label: "경상남도/안의군/서상면"
-labelNote: "HGIS 144374"
+sourceRef:
+  - "HGIS 144374"
 aliases:
   - "경상남도/안의군/서상면 (HGIS 144374)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111704"
 label: "전라남도/광주군/대지면"
-labelNote: "HGIS 111704"
+sourceRef:
+  - "HGIS 111704"
 aliases:
   - "전라남도/광주군/대지면 (HGIS 111704)"
 ---

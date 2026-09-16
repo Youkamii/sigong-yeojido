@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120512"
 label: "전라남도/장흥군/부평면"
-labelNote: "HGIS 120512"
+sourceRef:
+  - "HGIS 120512"
 aliases:
   - "전라남도/장흥군/부평면 (HGIS 120512)"
 ---

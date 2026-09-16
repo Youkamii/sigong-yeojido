@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157566"
 label: "경상북도/흥해군/동하면"
-labelNote: "HGIS 157566"
+sourceRef:
+  - "HGIS 157566"
 aliases:
   - "경상북도/흥해군/동하면 (HGIS 157566)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157025"
 label: "경상북도/예천군/지보면"
-labelNote: "HGIS 157025"
+sourceRef:
+  - "HGIS 157025"
 aliases:
   - "경상북도/예천군/지보면 (HGIS 157025)"
 ---

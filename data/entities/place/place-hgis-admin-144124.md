@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144124"
 label: "경상남도/고성군/철성면"
-labelNote: "HGIS 144124"
+sourceRef:
+  - "HGIS 144124"
 aliases:
   - "경상남도/고성군/철성면 (HGIS 144124)"
 ---

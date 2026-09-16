@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156902"
 label: "경상북도/김산군/황남면"
-labelNote: "HGIS 156902"
+sourceRef:
+  - "HGIS 156902"
 aliases:
   - "경상북도/김산군/황남면 (HGIS 156902)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144613"
 label: "경상남도/창녕군/도천면"
-labelNote: "HGIS 144613"
+sourceRef:
+  - "HGIS 144613"
 aliases:
   - "경상남도/창녕군/도천면 (HGIS 144613)"
 ---

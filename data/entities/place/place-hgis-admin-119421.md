@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119421"
 label: "전라남도/완도군/생일면"
-labelNote: "HGIS 119421"
+sourceRef:
+  - "HGIS 119421"
 aliases:
   - "전라남도/완도군/생일면 (HGIS 119421)"
 ---

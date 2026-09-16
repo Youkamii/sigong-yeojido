@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110857"
 label: "전라남도/곡성군/고달면"
-labelNote: "HGIS 110857"
+sourceRef:
+  - "HGIS 110857"
 aliases:
   - "전라남도/곡성군/고달면 (HGIS 110857)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157205"
 label: "경상북도/신녕군/고현면"
-labelNote: "HGIS 157205"
+sourceRef:
+  - "HGIS 157205"
 aliases:
   - "경상북도/신녕군/고현면 (HGIS 157205)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116560"
 label: "전라남도/영암군/신북면"
-labelNote: "HGIS 116560"
+sourceRef:
+  - "HGIS 116560"
 aliases:
   - "전라남도/영암군/신북면 (HGIS 116560)"
 ---

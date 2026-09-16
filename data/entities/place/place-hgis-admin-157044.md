@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157044"
 label: "경상북도/문경군/가은면"
-labelNote: "HGIS 157044"
+sourceRef:
+  - "HGIS 157044"
 aliases:
   - "경상북도/문경군/가은면 (HGIS 157044)"
 ---

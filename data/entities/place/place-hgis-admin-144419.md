@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144419"
 label: "경상남도/영산군/읍내면"
-labelNote: "HGIS 144419"
+sourceRef:
+  - "HGIS 144419"
 aliases:
   - "경상남도/영산군/읍내면 (HGIS 144419)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144622"
 label: "경상남도/창녕군/오야면"
-labelNote: "HGIS 144622"
+sourceRef:
+  - "HGIS 144622"
 aliases:
   - "경상남도/창녕군/오야면 (HGIS 144622)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-103465"
 label: "전라북도/전주군/부북면"
-labelNote: "HGIS 103465"
+sourceRef:
+  - "HGIS 103465"
 aliases:
   - "전라북도/전주군/부북면 (HGIS 103465)"
 ---

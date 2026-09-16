@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174926"
 label: "경상북도/대구군/하수남면"
-labelNote: "HGIS 174926"
+sourceRef:
+  - "HGIS 174926"
 aliases:
   - "경상북도/대구군/하수남면 (HGIS 174926)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154501"
 label: "경상남도/창원부/천가면"
-labelNote: "HGIS 154501"
+sourceRef:
+  - "HGIS 154501"
 aliases:
   - "경상남도/창원부/천가면 (HGIS 154501)"
 ---

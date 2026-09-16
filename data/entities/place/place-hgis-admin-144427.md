@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144427"
 label: "경상남도/용남군/사량면"
-labelNote: "HGIS 144427"
+sourceRef:
+  - "HGIS 144427"
 aliases:
   - "경상남도/용남군/사량면 (HGIS 144427)"
 ---

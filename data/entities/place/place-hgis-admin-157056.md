@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157056"
 label: "경상북도/문경군/신동면"
-labelNote: "HGIS 157056"
+sourceRef:
+  - "HGIS 157056"
 aliases:
   - "경상북도/문경군/신동면 (HGIS 157056)"
 ---

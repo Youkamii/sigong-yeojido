@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157021"
 label: "경상북도/문경군/가남면"
-labelNote: "HGIS 157021"
+sourceRef:
+  - "HGIS 157021"
 aliases:
   - "경상북도/문경군/가남면 (HGIS 157021)"
 ---

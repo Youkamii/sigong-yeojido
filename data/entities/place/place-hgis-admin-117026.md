@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117026"
 label: "전라남도/목포부/금동면"
-labelNote: "HGIS 117026"
+sourceRef:
+  - "HGIS 117026"
 aliases:
   - "전라남도/목포부/금동면 (HGIS 117026)"
 ---

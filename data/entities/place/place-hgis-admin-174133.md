@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174133"
 label: "경상북도/예천군/예천읍"
-labelNote: "HGIS 174133"
+sourceRef:
+  - "HGIS 174133"
 aliases:
   - "경상북도/예천군/예천읍 (HGIS 174133)"
 ---

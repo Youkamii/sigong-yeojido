@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123198"
 label: "전라남도/해남군/군일면"
-labelNote: "HGIS 123198"
+sourceRef:
+  - "HGIS 123198"
 aliases:
   - "전라남도/해남군/군일면 (HGIS 123198)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144796"
 label: "경상남도/합천군/야로면"
-labelNote: "HGIS 144796"
+sourceRef:
+  - "HGIS 144796"
 aliases:
   - "경상남도/합천군/야로면 (HGIS 144796)"
 ---

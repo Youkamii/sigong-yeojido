@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136932"
 label: "평안북도/가산군"
-labelNote: "HGIS 136932"
+sourceRef:
+  - "HGIS 136932"
 aliases:
   - "평안북도/가산군 (HGIS 136932)"
 ---

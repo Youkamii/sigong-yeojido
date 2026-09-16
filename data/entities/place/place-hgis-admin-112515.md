@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112515"
 label: "전라남도/구례군/용방면"
-labelNote: "HGIS 112515"
+sourceRef:
+  - "HGIS 112515"
 aliases:
   - "전라남도/구례군/용방면 (HGIS 112515)"
 ---

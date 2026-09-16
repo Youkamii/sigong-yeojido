@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157069"
 label: "경상북도/봉화군/군내면"
-labelNote: "HGIS 157069"
+sourceRef:
+  - "HGIS 157069"
 aliases:
   - "경상북도/봉화군/군내면 (HGIS 157069)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111170"
 label: "전라남도/광산군/동곡면"
-labelNote: "HGIS 111170"
+sourceRef:
+  - "HGIS 111170"
 aliases:
   - "전라남도/광산군/동곡면 (HGIS 111170)"
 ---

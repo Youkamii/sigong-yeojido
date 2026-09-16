@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157099"
 label: "경상북도/비안군/단서면"
-labelNote: "HGIS 157099"
+sourceRef:
+  - "HGIS 157099"
 aliases:
   - "경상북도/비안군/단서면 (HGIS 157099)"
 ---

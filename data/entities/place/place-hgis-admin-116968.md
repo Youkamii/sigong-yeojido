@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116968"
 label: "전라남도/능주군/호암면"
-labelNote: "HGIS 116968"
+sourceRef:
+  - "HGIS 116968"
 aliases:
   - "전라남도/능주군/호암면 (HGIS 116968)"
 ---

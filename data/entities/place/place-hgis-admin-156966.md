@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156966"
 label: "경상북도/예안군/북면"
-labelNote: "HGIS 156966"
+sourceRef:
+  - "HGIS 156966"
 aliases:
   - "경상북도/예안군/북면 (HGIS 156966)"
 ---

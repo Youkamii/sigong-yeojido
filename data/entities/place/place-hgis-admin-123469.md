@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123469"
 label: "전라남도/해남군/삼촌면"
-labelNote: "HGIS 123469"
+sourceRef:
+  - "HGIS 123469"
 aliases:
   - "전라남도/해남군/삼촌면 (HGIS 123469)"
 ---

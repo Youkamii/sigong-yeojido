@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116808"
 label: "전라남도/능주군/서면"
-labelNote: "HGIS 116808"
+sourceRef:
+  - "HGIS 116808"
 aliases:
   - "전라남도/능주군/서면 (HGIS 116808)"
 ---

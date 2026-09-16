@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154467"
 label: "경상남도/창원부/내서면"
-labelNote: "HGIS 154467"
+sourceRef:
+  - "HGIS 154467"
 aliases:
   - "경상남도/창원부/내서면 (HGIS 154467)"
 ---

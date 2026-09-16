@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156863"
 label: "경상북도/고령군/왕지면"
-labelNote: "HGIS 156863"
+sourceRef:
+  - "HGIS 156863"
 aliases:
   - "경상북도/고령군/왕지면 (HGIS 156863)"
 ---

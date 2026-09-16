@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110541"
 label: "전라남도/강진군/도암면"
-labelNote: "HGIS 110541"
+sourceRef:
+  - "HGIS 110541"
 aliases:
   - "전라남도/강진군/도암면 (HGIS 110541)"
 ---

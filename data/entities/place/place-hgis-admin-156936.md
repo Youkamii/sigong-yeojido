@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156936"
 label: "경상북도/달성군/성북면"
-labelNote: "HGIS 156936"
+sourceRef:
+  - "HGIS 156936"
 aliases:
   - "경상북도/달성군/성북면 (HGIS 156936)"
 ---

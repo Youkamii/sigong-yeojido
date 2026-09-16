@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111292"
 label: "전라남도/광주군/고내상면"
-labelNote: "HGIS 111292"
+sourceRef:
+  - "HGIS 111292"
 aliases:
   - "전라남도/광주군/고내상면 (HGIS 111292)"
 ---

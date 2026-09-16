@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157312"
 label: "경상북도/영주군/순흥면"
-labelNote: "HGIS 157312"
+sourceRef:
+  - "HGIS 157312"
 aliases:
   - "경상북도/영주군/순흥면 (HGIS 157312)"
 ---

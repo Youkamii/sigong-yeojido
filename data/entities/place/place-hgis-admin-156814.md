@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156814"
 label: "경상북도/경산군/안심면"
-labelNote: "HGIS 156814"
+sourceRef:
+  - "HGIS 156814"
 aliases:
   - "경상북도/경산군/안심면 (HGIS 156814)"
 ---

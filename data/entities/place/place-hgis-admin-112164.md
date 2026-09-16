@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112164"
 label: "전라남도/광주군/와곡면"
-labelNote: "HGIS 112164"
+sourceRef:
+  - "HGIS 112164"
 aliases:
   - "전라남도/광주군/와곡면 (HGIS 112164)"
 ---

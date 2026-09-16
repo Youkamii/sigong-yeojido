@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117756"
 label: "전라남도/무안군/자은면"
-labelNote: "HGIS 117756"
+sourceRef:
+  - "HGIS 117756"
 aliases:
   - "전라남도/무안군/자은면 (HGIS 117756)"
 ---

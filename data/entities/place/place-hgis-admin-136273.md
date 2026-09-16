@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136273"
 label: "평안북도/초산군/약산면"
-labelNote: "HGIS 136273"
+sourceRef:
+  - "HGIS 136273"
 aliases:
   - "평안북도/초산군/약산면 (HGIS 136273)"
 ---

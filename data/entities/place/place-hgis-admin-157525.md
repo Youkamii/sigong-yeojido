@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157525"
 label: "경상북도/칠곡군/지천면"
-labelNote: "HGIS 157525"
+sourceRef:
+  - "HGIS 157525"
 aliases:
   - "경상북도/칠곡군/지천면 (HGIS 157525)"
 ---

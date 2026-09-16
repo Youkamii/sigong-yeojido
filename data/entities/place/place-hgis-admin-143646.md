@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143646"
 label: "경상남도/김해군/수남면"
-labelNote: "HGIS 143646"
+sourceRef:
+  - "HGIS 143646"
 aliases:
   - "경상남도/김해군/수남면 (HGIS 143646)"
 ---

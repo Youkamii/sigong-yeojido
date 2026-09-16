@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156810"
 label: "경상북도/경산군/동면"
-labelNote: "HGIS 156810"
+sourceRef:
+  - "HGIS 156810"
 aliases:
   - "경상북도/경산군/동면 (HGIS 156810)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-163395"
 label: "경상북도/성주군/수륜면"
-labelNote: "HGIS 163395"
+sourceRef:
+  - "HGIS 163395"
 aliases:
   - "경상북도/성주군/수륜면 (HGIS 163395)"
 ---

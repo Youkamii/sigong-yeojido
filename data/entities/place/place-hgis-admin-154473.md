@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154473"
 label: "경상남도/창원부/부내면"
-labelNote: "HGIS 154473"
+sourceRef:
+  - "HGIS 154473"
 aliases:
   - "경상남도/창원부/부내면 (HGIS 154473)"
 ---

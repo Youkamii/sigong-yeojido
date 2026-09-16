@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157476"
 label: "경상북도/청도군/이서면"
-labelNote: "HGIS 157476"
+sourceRef:
+  - "HGIS 157476"
 aliases:
   - "경상북도/청도군/이서면 (HGIS 157476)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144329"
 label: "경상남도/산청군/서상면"
-labelNote: "HGIS 144329"
+sourceRef:
+  - "HGIS 144329"
 aliases:
   - "경상남도/산청군/서상면 (HGIS 144329)"
 ---

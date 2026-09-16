@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157009"
 label: "경상북도/예천군/용궁면"
-labelNote: "HGIS 157009"
+sourceRef:
+  - "HGIS 157009"
 aliases:
   - "경상북도/예천군/용궁면 (HGIS 157009)"
 ---

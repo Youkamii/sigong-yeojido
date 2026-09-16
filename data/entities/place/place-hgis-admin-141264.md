@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141264"
 label: "평안북도/의주부"
-labelNote: "HGIS 141264"
+sourceRef:
+  - "HGIS 141264"
 aliases:
   - "평안북도/의주부 (HGIS 141264)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154026"
 label: "경상남도/사천군/정동면"
-labelNote: "HGIS 154026"
+sourceRef:
+  - "HGIS 154026"
 aliases:
   - "경상남도/사천군/정동면 (HGIS 154026)"
 ---

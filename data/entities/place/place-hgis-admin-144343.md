@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144343"
 label: "경상남도/산청군/오부면"
-labelNote: "HGIS 144343"
+sourceRef:
+  - "HGIS 144343"
 aliases:
   - "경상남도/산청군/오부면 (HGIS 144343)"
 ---

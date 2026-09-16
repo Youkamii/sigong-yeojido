@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156980"
 label: "경상북도/대구부/수동면"
-labelNote: "HGIS 156980"
+sourceRef:
+  - "HGIS 156980"
 aliases:
   - "경상북도/대구부/수동면 (HGIS 156980)"
 ---

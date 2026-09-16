@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157079"
 label: "경상북도/봉화군/상남면"
-labelNote: "HGIS 157079"
+sourceRef:
+  - "HGIS 157079"
 aliases:
   - "경상북도/봉화군/상남면 (HGIS 157079)"
 ---

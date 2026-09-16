@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-175090"
 label: "경상북도/고령군/운라면"
-labelNote: "HGIS 175090"
+sourceRef:
+  - "HGIS 175090"
 aliases:
   - "경상북도/고령군/운라면 (HGIS 175090)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157283"
 label: "경상북도/영양군/청이면"
-labelNote: "HGIS 157283"
+sourceRef:
+  - "HGIS 157283"
 aliases:
   - "경상북도/영양군/청이면 (HGIS 157283)"
 ---

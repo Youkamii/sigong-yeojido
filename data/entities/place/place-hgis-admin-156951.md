@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156951"
 label: "경상북도/대구군/옥포면"
-labelNote: "HGIS 156951"
+sourceRef:
+  - "HGIS 156951"
 aliases:
   - "경상북도/대구군/옥포면 (HGIS 156951)"
 ---

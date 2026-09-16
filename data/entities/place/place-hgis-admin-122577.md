@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122577"
 label: "전라남도/함평군/기성면"
-labelNote: "HGIS 122577"
+sourceRef:
+  - "HGIS 122577"
 aliases:
   - "전라남도/함평군/기성면 (HGIS 122577)"
 ---

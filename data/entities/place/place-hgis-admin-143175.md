@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143175"
 label: "경상남도/거창군/적화면"
-labelNote: "HGIS 143175"
+sourceRef:
+  - "HGIS 143175"
 aliases:
   - "경상남도/거창군/적화면 (HGIS 143175)"
 ---

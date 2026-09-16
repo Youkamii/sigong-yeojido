@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144363"
 label: "경상남도/삼가군/유인면"
-labelNote: "HGIS 144363"
+sourceRef:
+  - "HGIS 144363"
 aliases:
   - "경상남도/삼가군/유인면 (HGIS 144363)"
 ---

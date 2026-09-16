@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136386"
 label: "평안북도/삭주군/외동면"
-labelNote: "HGIS 136386"
+sourceRef:
+  - "HGIS 136386"
 aliases:
   - "평안북도/삭주군/외동면 (HGIS 136386)"
 ---

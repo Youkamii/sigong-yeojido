@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122982"
 label: "전라남도/함평군/장본면"
-labelNote: "HGIS 122982"
+sourceRef:
+  - "HGIS 122982"
 aliases:
   - "전라남도/함평군/장본면 (HGIS 122982)"
 ---

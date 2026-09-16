@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123776"
 label: "전라남도/해남군/화이면"
-labelNote: "HGIS 123776"
+sourceRef:
+  - "HGIS 123776"
 aliases:
   - "전라남도/해남군/화이면 (HGIS 123776)"
 ---

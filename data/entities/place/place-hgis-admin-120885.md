@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120885"
 label: "전라남도/정의군/서중면"
-labelNote: "HGIS 120885"
+sourceRef:
+  - "HGIS 120885"
 aliases:
   - "전라남도/정의군/서중면 (HGIS 120885)"
 ---

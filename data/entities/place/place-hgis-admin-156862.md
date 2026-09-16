@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156862"
 label: "경상북도/고령군/쌍림면"
-labelNote: "HGIS 156862"
+sourceRef:
+  - "HGIS 156862"
 aliases:
   - "경상북도/고령군/쌍림면 (HGIS 156862)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144257"
 label: "경상남도/함양군/덕곡면"
-labelNote: "HGIS 144257"
+sourceRef:
+  - "HGIS 144257"
 aliases:
   - "경상남도/함양군/덕곡면 (HGIS 144257)"
 ---

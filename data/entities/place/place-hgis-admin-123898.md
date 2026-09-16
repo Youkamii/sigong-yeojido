@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123898"
 label: "전라남도/화순군/외북면"
-labelNote: "HGIS 123898"
+sourceRef:
+  - "HGIS 123898"
 aliases:
   - "전라남도/화순군/외북면 (HGIS 123898)"
 ---

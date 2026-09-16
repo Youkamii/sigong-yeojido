@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114435"
 label: "전라남도/나주군/지죽면"
-labelNote: "HGIS 114435"
+sourceRef:
+  - "HGIS 114435"
 aliases:
   - "전라남도/나주군/지죽면 (HGIS 114435)"
 ---

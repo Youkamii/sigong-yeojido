@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141690"
 label: "평안북도/자성군/서해면"
-labelNote: "HGIS 141690"
+sourceRef:
+  - "HGIS 141690"
 aliases:
   - "평안북도/자성군/서해면 (HGIS 141690)"
 ---

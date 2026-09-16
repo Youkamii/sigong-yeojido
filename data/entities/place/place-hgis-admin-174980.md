@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174980"
 label: "경상북도/영해군/남면"
-labelNote: "HGIS 174980"
+sourceRef:
+  - "HGIS 174980"
 aliases:
   - "경상북도/영해군/남면 (HGIS 174980)"
 ---

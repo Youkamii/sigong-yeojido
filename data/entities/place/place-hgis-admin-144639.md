@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144639"
 label: "경상남도/창원군/대산면"
-labelNote: "HGIS 144639"
+sourceRef:
+  - "HGIS 144639"
 aliases:
   - "경상남도/창원군/대산면 (HGIS 144639)"
 ---

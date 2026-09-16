@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157379"
 label: "경상북도/의성군/구천면"
-labelNote: "HGIS 157379"
+sourceRef:
+  - "HGIS 157379"
 aliases:
   - "경상북도/의성군/구천면 (HGIS 157379)"
 ---

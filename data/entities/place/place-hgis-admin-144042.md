@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144042"
 label: "경상남도/거창군/청림면"
-labelNote: "HGIS 144042"
+sourceRef:
+  - "HGIS 144042"
 aliases:
   - "경상남도/거창군/청림면 (HGIS 144042)"
 ---

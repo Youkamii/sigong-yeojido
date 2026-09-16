@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144224"
 label: "경상남도/마산부/하남면"
-labelNote: "HGIS 144224"
+sourceRef:
+  - "HGIS 144224"
 aliases:
   - "경상남도/마산부/하남면 (HGIS 144224)"
 ---

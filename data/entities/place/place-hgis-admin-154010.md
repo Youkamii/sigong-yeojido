@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154010"
 label: "경상남도/사천군/삼천포읍"
-labelNote: "HGIS 154010"
+sourceRef:
+  - "HGIS 154010"
 aliases:
   - "경상남도/사천군/삼천포읍 (HGIS 154010)"
 ---

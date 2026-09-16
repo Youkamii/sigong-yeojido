@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157458"
 label: "경상북도/진보군/서면"
-labelNote: "HGIS 157458"
+sourceRef:
+  - "HGIS 157458"
 aliases:
   - "경상북도/진보군/서면 (HGIS 157458)"
 ---

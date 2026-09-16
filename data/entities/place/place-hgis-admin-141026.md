@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141026"
 label: "평안북도/위원군/북면"
-labelNote: "HGIS 141026"
+sourceRef:
+  - "HGIS 141026"
 aliases:
   - "평안북도/위원군/북면 (HGIS 141026)"
 ---

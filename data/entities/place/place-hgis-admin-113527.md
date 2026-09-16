@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113527"
 label: "전라남도/동복군/외남면"
-labelNote: "HGIS 113527"
+sourceRef:
+  - "HGIS 113527"
 aliases:
   - "전라남도/동복군/외남면 (HGIS 113527)"
 ---

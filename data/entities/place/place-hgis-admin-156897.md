@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156897"
 label: "경상북도/김산군/위량면"
-labelNote: "HGIS 156897"
+sourceRef:
+  - "HGIS 156897"
 aliases:
   - "경상북도/김산군/위량면 (HGIS 156897)"
 ---

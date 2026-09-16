@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110876"
 label: "전라남도/곡성군/입면"
-labelNote: "HGIS 110876"
+sourceRef:
+  - "HGIS 110876"
 aliases:
   - "전라남도/곡성군/입면 (HGIS 110876)"
 ---

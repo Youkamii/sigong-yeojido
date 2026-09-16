@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157374"
 label: "경상북도/울도군/남면"
-labelNote: "HGIS 157374"
+sourceRef:
+  - "HGIS 157374"
 aliases:
   - "경상북도/울도군/남면 (HGIS 157374)"
 ---

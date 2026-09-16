@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113015"
 label: "전라남도/담양군/담양면"
-labelNote: "HGIS 113015"
+sourceRef:
+  - "HGIS 113015"
 aliases:
   - "전라남도/담양군/담양면 (HGIS 113015)"
 ---

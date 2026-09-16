@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157513"
 label: "경상북도/칠곡군/동명면"
-labelNote: "HGIS 157513"
+sourceRef:
+  - "HGIS 157513"
 aliases:
   - "경상북도/칠곡군/동명면 (HGIS 157513)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144424"
 label: "경상남도/용남군/도남면"
-labelNote: "HGIS 144424"
+sourceRef:
+  - "HGIS 144424"
 aliases:
   - "경상남도/용남군/도남면 (HGIS 144424)"
 ---

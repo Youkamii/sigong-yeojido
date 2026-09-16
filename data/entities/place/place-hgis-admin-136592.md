@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136592"
 label: "평안북도/초산군/송면"
-labelNote: "HGIS 136592"
+sourceRef:
+  - "HGIS 136592"
 aliases:
   - "평안북도/초산군/송면 (HGIS 136592)"
 ---

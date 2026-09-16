@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157319"
 label: "경상북도/영주군/풍기면"
-labelNote: "HGIS 157319"
+sourceRef:
+  - "HGIS 157319"
 aliases:
   - "경상북도/영주군/풍기면 (HGIS 157319)"
 ---

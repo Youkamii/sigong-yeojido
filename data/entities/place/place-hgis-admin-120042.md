@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120042"
 label: "전라남도/장성군/서이면"
-labelNote: "HGIS 120042"
+sourceRef:
+  - "HGIS 120042"
 aliases:
   - "전라남도/장성군/서이면 (HGIS 120042)"
 ---

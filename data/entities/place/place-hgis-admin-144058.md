@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144058"
 label: "경상남도/거제군/외포면"
-labelNote: "HGIS 144058"
+sourceRef:
+  - "HGIS 144058"
 aliases:
   - "경상남도/거제군/외포면 (HGIS 144058)"
 ---

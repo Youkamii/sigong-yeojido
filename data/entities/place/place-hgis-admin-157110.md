@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157110"
 label: "경상북도/상주군/공동면"
-labelNote: "HGIS 157110"
+sourceRef:
+  - "HGIS 157110"
 aliases:
   - "경상북도/상주군/공동면 (HGIS 157110)"
 ---

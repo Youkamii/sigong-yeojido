@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111241"
 label: "전라남도/광산군/송정읍"
-labelNote: "HGIS 111241"
+sourceRef:
+  - "HGIS 111241"
 aliases:
   - "전라남도/광산군/송정읍 (HGIS 111241)"
 ---

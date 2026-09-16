@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157289"
 label: "경상북도/영양군/청기면"
-labelNote: "HGIS 157289"
+sourceRef:
+  - "HGIS 157289"
 aliases:
   - "경상북도/영양군/청기면 (HGIS 157289)"
 ---

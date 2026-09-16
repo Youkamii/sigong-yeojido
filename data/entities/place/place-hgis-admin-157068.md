@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157068"
 label: "경상북도/문경군/호현면"
-labelNote: "HGIS 157068"
+sourceRef:
+  - "HGIS 157068"
 aliases:
   - "경상북도/문경군/호현면 (HGIS 157068)"
 ---

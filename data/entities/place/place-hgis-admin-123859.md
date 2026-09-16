@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123859"
 label: "전라남도/화순군/동복면"
-labelNote: "HGIS 123859"
+sourceRef:
+  - "HGIS 123859"
 aliases:
   - "전라남도/화순군/동복면 (HGIS 123859)"
 ---

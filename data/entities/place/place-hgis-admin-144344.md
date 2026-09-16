@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144344"
 label: "경상남도/산청군/월동면"
-labelNote: "HGIS 144344"
+sourceRef:
+  - "HGIS 144344"
 aliases:
   - "경상남도/산청군/월동면 (HGIS 144344)"
 ---

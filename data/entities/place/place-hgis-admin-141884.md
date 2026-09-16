@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141884"
 label: "평안북도/정주군/염방면"
-labelNote: "HGIS 141884"
+sourceRef:
+  - "HGIS 141884"
 aliases:
   - "평안북도/정주군/염방면 (HGIS 141884)"
 ---

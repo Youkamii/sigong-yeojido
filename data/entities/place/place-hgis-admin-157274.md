@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157274"
 label: "경상북도/영양군/동면"
-labelNote: "HGIS 157274"
+sourceRef:
+  - "HGIS 157274"
 aliases:
   - "경상북도/영양군/동면 (HGIS 157274)"
 ---

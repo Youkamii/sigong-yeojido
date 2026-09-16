@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119689"
 label: "전라남도/장성군/남일면"
-labelNote: "HGIS 119689"
+sourceRef:
+  - "HGIS 119689"
 aliases:
   - "전라남도/장성군/남일면 (HGIS 119689)"
 ---

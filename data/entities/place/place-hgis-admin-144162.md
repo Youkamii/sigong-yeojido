@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144162"
 label: "경상남도/김해군/대하면"
-labelNote: "HGIS 144162"
+sourceRef:
+  - "HGIS 144162"
 aliases:
   - "경상남도/김해군/대하면 (HGIS 144162)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118723"
 label: "전라남도/순천군/순천면"
-labelNote: "HGIS 118723"
+sourceRef:
+  - "HGIS 118723"
 aliases:
   - "전라남도/순천군/순천면 (HGIS 118723)"
 ---

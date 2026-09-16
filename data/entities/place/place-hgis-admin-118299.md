@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118299"
 label: "전라남도/보성군/회천면"
-labelNote: "HGIS 118299"
+sourceRef:
+  - "HGIS 118299"
 aliases:
   - "전라남도/보성군/회천면 (HGIS 118299)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113329"
 label: "전라남도/대정군/중면"
-labelNote: "HGIS 113329"
+sourceRef:
+  - "HGIS 113329"
 aliases:
   - "전라남도/대정군/중면 (HGIS 113329)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156811"
 label: "경상북도/경산군/용성면"
-labelNote: "HGIS 156811"
+sourceRef:
+  - "HGIS 156811"
 aliases:
   - "경상북도/경산군/용성면 (HGIS 156811)"
 ---

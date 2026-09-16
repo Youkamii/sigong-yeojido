@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157448"
 label: "경상북도/지례군/상현면"
-labelNote: "HGIS 157448"
+sourceRef:
+  - "HGIS 157448"
 aliases:
   - "경상북도/지례군/상현면 (HGIS 157448)"
 ---

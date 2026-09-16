@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144120"
 label: "경상남도/고성군/영오면"
-labelNote: "HGIS 144120"
+sourceRef:
+  - "HGIS 144120"
 aliases:
   - "경상남도/고성군/영오면 (HGIS 144120)"
 ---

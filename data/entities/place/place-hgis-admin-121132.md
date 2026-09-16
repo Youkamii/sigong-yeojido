@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121132"
 label: "전라남도/제주도/구좌면"
-labelNote: "HGIS 121132"
+sourceRef:
+  - "HGIS 121132"
 aliases:
   - "전라남도/제주도/구좌면 (HGIS 121132)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157442"
 label: "경상북도/지례군/상서면"
-labelNote: "HGIS 157442"
+sourceRef:
+  - "HGIS 157442"
 aliases:
   - "경상북도/지례군/상서면 (HGIS 157442)"
 ---

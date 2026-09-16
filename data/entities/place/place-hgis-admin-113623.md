@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113623"
 label: "전라남도/나주군/거평면"
-labelNote: "HGIS 113623"
+sourceRef:
+  - "HGIS 113623"
 aliases:
   - "전라남도/나주군/거평면 (HGIS 113623)"
 ---

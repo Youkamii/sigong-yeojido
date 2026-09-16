@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157437"
 label: "경상북도/지례군/내증산면"
-labelNote: "HGIS 157437"
+sourceRef:
+  - "HGIS 157437"
 aliases:
   - "경상북도/지례군/내증산면 (HGIS 157437)"
 ---

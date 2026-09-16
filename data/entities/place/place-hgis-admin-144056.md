@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144056"
 label: "경상남도/단성군/도산면"
-labelNote: "HGIS 144056"
+sourceRef:
+  - "HGIS 144056"
 aliases:
   - "경상남도/단성군/도산면 (HGIS 144056)"
 ---

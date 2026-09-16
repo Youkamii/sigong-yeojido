@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157178"
 label: "경상북도/성주군/용두면"
-labelNote: "HGIS 157178"
+sourceRef:
+  - "HGIS 157178"
 aliases:
   - "경상북도/성주군/용두면 (HGIS 157178)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116630"
 label: "전라남도/영암군/종남면"
-labelNote: "HGIS 116630"
+sourceRef:
+  - "HGIS 116630"
 aliases:
   - "전라남도/영암군/종남면 (HGIS 116630)"
 ---

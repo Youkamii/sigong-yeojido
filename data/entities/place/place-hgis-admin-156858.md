@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156858"
 label: "경상북도/고령군/벌지면"
-labelNote: "HGIS 156858"
+sourceRef:
+  - "HGIS 156858"
 aliases:
   - "경상북도/고령군/벌지면 (HGIS 156858)"
 ---

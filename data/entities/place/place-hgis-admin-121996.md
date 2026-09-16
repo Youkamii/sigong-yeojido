@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121996"
 label: "전라남도/진도군/임회면"
-labelNote: "HGIS 121996"
+sourceRef:
+  - "HGIS 121996"
 aliases:
   - "전라남도/진도군/임회면 (HGIS 121996)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156942"
 label: "경상북도/대구군/성평곡면"
-labelNote: "HGIS 156942"
+sourceRef:
+  - "HGIS 156942"
 aliases:
   - "경상북도/대구군/성평곡면 (HGIS 156942)"
 ---

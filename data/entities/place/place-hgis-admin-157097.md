@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157097"
 label: "경상북도/비안군/단동면"
-labelNote: "HGIS 157097"
+sourceRef:
+  - "HGIS 157097"
 aliases:
   - "경상북도/비안군/단동면 (HGIS 157097)"
 ---

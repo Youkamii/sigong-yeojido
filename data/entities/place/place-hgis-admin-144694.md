@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144694"
 label: "경상남도/하동군/남면"
-labelNote: "HGIS 144694"
+sourceRef:
+  - "HGIS 144694"
 aliases:
   - "경상남도/하동군/남면 (HGIS 144694)"
 ---

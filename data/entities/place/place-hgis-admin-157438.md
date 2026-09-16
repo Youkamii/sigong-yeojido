@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157438"
 label: "경상북도/장기군/서면"
-labelNote: "HGIS 157438"
+sourceRef:
+  - "HGIS 157438"
 aliases:
   - "경상북도/장기군/서면 (HGIS 157438)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157336"
 label: "경상북도/영천군/거여면"
-labelNote: "HGIS 157336"
+sourceRef:
+  - "HGIS 157336"
 aliases:
   - "경상북도/영천군/거여면 (HGIS 157336)"
 ---

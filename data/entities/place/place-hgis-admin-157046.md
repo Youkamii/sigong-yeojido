@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157046"
 label: "경상북도/문경군/농암면"
-labelNote: "HGIS 157046"
+sourceRef:
+  - "HGIS 157046"
 aliases:
   - "경상북도/문경군/농암면 (HGIS 157046)"
 ---

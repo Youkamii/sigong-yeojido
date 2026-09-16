@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141357"
 label: "평안북도/의주부/관리면"
-labelNote: "HGIS 141357"
+sourceRef:
+  - "HGIS 141357"
 aliases:
   - "평안북도/의주부/관리면 (HGIS 141357)"
 ---

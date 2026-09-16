@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141885"
 label: "평안북도/정주군/안흥면"
-labelNote: "HGIS 141885"
+sourceRef:
+  - "HGIS 141885"
 aliases:
   - "평안북도/정주군/안흥면 (HGIS 141885)"
 ---

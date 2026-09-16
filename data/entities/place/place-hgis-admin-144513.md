@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144513"
 label: "경상남도/의령군/지산면"
-labelNote: "HGIS 144513"
+sourceRef:
+  - "HGIS 144513"
 aliases:
   - "경상남도/의령군/지산면 (HGIS 144513)"
 ---

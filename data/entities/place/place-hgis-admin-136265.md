@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136265"
 label: "평안북도/초산군/서상면"
-labelNote: "HGIS 136265"
+sourceRef:
+  - "HGIS 136265"
 aliases:
   - "평안북도/초산군/서상면 (HGIS 136265)"
 ---

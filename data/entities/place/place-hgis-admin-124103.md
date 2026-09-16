@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-124103"
 label: "전라남도/흥양군/도화면"
-labelNote: "HGIS 124103"
+sourceRef:
+  - "HGIS 124103"
 aliases:
   - "전라남도/흥양군/도화면 (HGIS 124103)"
 ---

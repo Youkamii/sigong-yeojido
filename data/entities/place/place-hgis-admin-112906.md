@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112906"
 label: "전라남도/남평군/저포면"
-labelNote: "HGIS 112906"
+sourceRef:
+  - "HGIS 112906"
 aliases:
   - "전라남도/남평군/저포면 (HGIS 112906)"
 ---

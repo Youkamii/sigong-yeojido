@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115006"
 label: "전라남도/영광군/내동면"
-labelNote: "HGIS 115006"
+sourceRef:
+  - "HGIS 115006"
 aliases:
   - "전라남도/영광군/내동면 (HGIS 115006)"
 ---

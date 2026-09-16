@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118209"
 label: "전라남도/보성군/봉덕면"
-labelNote: "HGIS 118209"
+sourceRef:
+  - "HGIS 118209"
 aliases:
   - "전라남도/보성군/봉덕면 (HGIS 118209)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157570"
 label: "경상북도/흥해군/북하면"
-labelNote: "HGIS 157570"
+sourceRef:
+  - "HGIS 157570"
 aliases:
   - "경상북도/흥해군/북하면 (HGIS 157570)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156890"
 label: "경상북도/김산군/고가대면"
-labelNote: "HGIS 156890"
+sourceRef:
+  - "HGIS 156890"
 aliases:
   - "경상북도/김산군/고가대면 (HGIS 156890)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144492"
 label: "경상남도/의령군/덕암면"
-labelNote: "HGIS 144492"
+sourceRef:
+  - "HGIS 144492"
 aliases:
   - "경상남도/의령군/덕암면 (HGIS 144492)"
 ---

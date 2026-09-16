@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117775"
 label: "전라남도/보성군/겸백면"
-labelNote: "HGIS 117775"
+sourceRef:
+  - "HGIS 117775"
 aliases:
   - "전라남도/보성군/겸백면 (HGIS 117775)"
 ---

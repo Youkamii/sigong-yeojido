@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157390"
 label: "경상북도/의성군/북부면"
-labelNote: "HGIS 157390"
+sourceRef:
+  - "HGIS 157390"
 aliases:
   - "경상북도/의성군/북부면 (HGIS 157390)"
 ---

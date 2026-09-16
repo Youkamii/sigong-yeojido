@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110855"
 label: "전라남도/고흥군"
-labelNote: "HGIS 110855"
+sourceRef:
+  - "HGIS 110855"
 aliases:
   - "전라남도/고흥군 (HGIS 110855)"
 ---

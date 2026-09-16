@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157405"
 label: "경상북도/의성군/억곡면"
-labelNote: "HGIS 157405"
+sourceRef:
+  - "HGIS 157405"
 aliases:
   - "경상북도/의성군/억곡면 (HGIS 157405)"
 ---

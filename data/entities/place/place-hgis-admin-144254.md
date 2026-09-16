@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144254"
 label: "경상남도/밀양군/청도면"
-labelNote: "HGIS 144254"
+sourceRef:
+  - "HGIS 144254"
 aliases:
   - "경상남도/밀양군/청도면 (HGIS 144254)"
 ---

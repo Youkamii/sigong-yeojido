@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157084"
 label: "경상북도/봉화군/와단면"
-labelNote: "HGIS 157084"
+sourceRef:
+  - "HGIS 157084"
 aliases:
   - "경상북도/봉화군/와단면 (HGIS 157084)"
 ---

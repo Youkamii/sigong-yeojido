@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140995"
 label: "평안북도/위원군/밀산면"
-labelNote: "HGIS 140995"
+sourceRef:
+  - "HGIS 140995"
 aliases:
   - "평안북도/위원군/밀산면 (HGIS 140995)"
 ---

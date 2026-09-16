@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141090"
 label: "평안북도/위원군/숭정면"
-labelNote: "HGIS 141090"
+sourceRef:
+  - "HGIS 141090"
 aliases:
   - "평안북도/위원군/숭정면 (HGIS 141090)"
 ---

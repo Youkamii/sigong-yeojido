@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143319"
 label: "경상남도/합천군/이사역면"
-labelNote: "HGIS 143319"
+sourceRef:
+  - "HGIS 143319"
 aliases:
   - "경상남도/합천군/이사역면 (HGIS 143319)"
 ---

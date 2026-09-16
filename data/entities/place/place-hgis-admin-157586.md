@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157586"
 label: "경상북도/흥해군/신광면"
-labelNote: "HGIS 157586"
+sourceRef:
+  - "HGIS 157586"
 aliases:
   - "경상북도/흥해군/신광면 (HGIS 157586)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143953"
 label: "경상남도/창원군/진해읍"
-labelNote: "HGIS 143953"
+sourceRef:
+  - "HGIS 143953"
 aliases:
   - "경상남도/창원군/진해읍 (HGIS 143953)"
 ---

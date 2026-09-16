@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144090"
 label: "경상남도/거창군/읍내면"
-labelNote: "HGIS 144090"
+sourceRef:
+  - "HGIS 144090"
 aliases:
   - "경상남도/거창군/읍내면 (HGIS 144090)"
 ---

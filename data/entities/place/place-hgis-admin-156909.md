@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156909"
 label: "경상북도/김천군/남면"
-labelNote: "HGIS 156909"
+sourceRef:
+  - "HGIS 156909"
 aliases:
   - "경상북도/김천군/남면 (HGIS 156909)"
 ---

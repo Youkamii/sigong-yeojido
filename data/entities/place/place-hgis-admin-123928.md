@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123928"
 label: "전라남도/화순군"
-labelNote: "HGIS 123928"
+sourceRef:
+  - "HGIS 123928"
 aliases:
   - "전라남도/화순군 (HGIS 123928)"
 ---

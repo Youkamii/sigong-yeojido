@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157203"
 label: "경상북도/연일군/일월면"
-labelNote: "HGIS 157203"
+sourceRef:
+  - "HGIS 157203"
 aliases:
   - "경상북도/연일군/일월면 (HGIS 157203)"
 ---

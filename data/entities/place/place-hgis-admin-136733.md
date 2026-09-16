@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136733"
 label: "평안북도/후창군/남신면"
-labelNote: "HGIS 136733"
+sourceRef:
+  - "HGIS 136733"
 aliases:
   - "평안북도/후창군/남신면 (HGIS 136733)"
 ---

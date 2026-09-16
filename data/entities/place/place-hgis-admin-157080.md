@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157080"
 label: "경상북도/봉화군/상동면"
-labelNote: "HGIS 157080"
+sourceRef:
+  - "HGIS 157080"
 aliases:
   - "경상북도/봉화군/상동면 (HGIS 157080)"
 ---

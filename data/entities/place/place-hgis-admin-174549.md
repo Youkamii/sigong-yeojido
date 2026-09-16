@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174549"
 label: "경상북도/개령군/남면"
-labelNote: "HGIS 174549"
+sourceRef:
+  - "HGIS 174549"
 aliases:
   - "경상북도/개령군/남면 (HGIS 174549)"
 ---

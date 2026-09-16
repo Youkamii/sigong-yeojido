@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113171"
 label: "전라남도/담양군/무정면"
-labelNote: "HGIS 113171"
+sourceRef:
+  - "HGIS 113171"
 aliases:
   - "전라남도/담양군/무정면 (HGIS 113171)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140946"
 label: "평안북도/위원군/군하면"
-labelNote: "HGIS 140946"
+sourceRef:
+  - "HGIS 140946"
 aliases:
   - "평안북도/위원군/군하면 (HGIS 140946)"
 ---

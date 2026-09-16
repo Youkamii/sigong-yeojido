@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117256"
 label: "전라남도/목포부/석진면"
-labelNote: "HGIS 117256"
+sourceRef:
+  - "HGIS 117256"
 aliases:
   - "전라남도/목포부/석진면 (HGIS 117256)"
 ---

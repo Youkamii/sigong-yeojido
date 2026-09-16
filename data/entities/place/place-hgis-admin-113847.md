@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113847"
 label: "전라남도/나주군/두동면"
-labelNote: "HGIS 113847"
+sourceRef:
+  - "HGIS 113847"
 aliases:
   - "전라남도/나주군/두동면 (HGIS 113847)"
 ---

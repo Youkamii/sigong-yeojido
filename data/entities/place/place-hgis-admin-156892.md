@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156892"
 label: "경상북도/김산군/과내면"
-labelNote: "HGIS 156892"
+sourceRef:
+  - "HGIS 156892"
 aliases:
   - "경상북도/김산군/과내면 (HGIS 156892)"
 ---

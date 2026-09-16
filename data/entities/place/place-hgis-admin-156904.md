@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156904"
 label: "경상북도/김천군/곡송면"
-labelNote: "HGIS 156904"
+sourceRef:
+  - "HGIS 156904"
 aliases:
   - "경상북도/김천군/곡송면 (HGIS 156904)"
 ---

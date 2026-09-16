@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118269"
 label: "전라남도/보성군/옥암면"
-labelNote: "HGIS 118269"
+sourceRef:
+  - "HGIS 118269"
 aliases:
   - "전라남도/보성군/옥암면 (HGIS 118269)"
 ---

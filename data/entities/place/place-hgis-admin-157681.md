@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157681"
 label: "경상북도/진보군"
-labelNote: "HGIS 157681"
+sourceRef:
+  - "HGIS 157681"
 aliases:
   - "경상북도/진보군 (HGIS 157681)"
 ---

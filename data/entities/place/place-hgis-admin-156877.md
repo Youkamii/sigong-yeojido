@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156877"
 label: "경상북도/군위군/남면"
-labelNote: "HGIS 156877"
+sourceRef:
+  - "HGIS 156877"
 aliases:
   - "경상북도/군위군/남면 (HGIS 156877)"
 ---

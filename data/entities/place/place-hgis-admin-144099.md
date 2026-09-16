@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144099"
 label: "경상남도/고성군/고성면"
-labelNote: "HGIS 144099"
+sourceRef:
+  - "HGIS 144099"
 aliases:
   - "경상남도/고성군/고성면 (HGIS 144099)"
 ---

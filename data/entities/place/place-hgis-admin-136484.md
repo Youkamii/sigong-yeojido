@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136484"
 label: "평안북도/후창군/부성면"
-labelNote: "HGIS 136484"
+sourceRef:
+  - "HGIS 136484"
 aliases:
   - "평안북도/후창군/부성면 (HGIS 136484)"
 ---

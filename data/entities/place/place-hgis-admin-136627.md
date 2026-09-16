@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136627"
 label: "평안북도/박천군/가동면"
-labelNote: "HGIS 136627"
+sourceRef:
+  - "HGIS 136627"
 aliases:
   - "평안북도/박천군/가동면 (HGIS 136627)"
 ---

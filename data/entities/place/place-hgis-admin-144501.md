@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144501"
 label: "경상남도/의령군/용덕면"
-labelNote: "HGIS 144501"
+sourceRef:
+  - "HGIS 144501"
 aliases:
   - "경상남도/의령군/용덕면 (HGIS 144501)"
 ---

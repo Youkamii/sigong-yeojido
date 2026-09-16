@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144376"
 label: "경상남도/안의군/지대면"
-labelNote: "HGIS 144376"
+sourceRef:
+  - "HGIS 144376"
 aliases:
   - "경상남도/안의군/지대면 (HGIS 144376)"
 ---

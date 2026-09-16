@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113005"
 label: "전라남도/담양군/광면"
-labelNote: "HGIS 113005"
+sourceRef:
+  - "HGIS 113005"
 aliases:
   - "전라남도/담양군/광면 (HGIS 113005)"
 ---

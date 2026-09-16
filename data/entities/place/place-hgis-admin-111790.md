@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111790"
 label: "전라남도/광주군/내정면"
-labelNote: "HGIS 111790"
+sourceRef:
+  - "HGIS 111790"
 aliases:
   - "전라남도/광주군/내정면 (HGIS 111790)"
 ---

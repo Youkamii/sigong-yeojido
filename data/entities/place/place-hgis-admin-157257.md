@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157257"
 label: "경상북도/연일군/읍내면"
-labelNote: "HGIS 157257"
+sourceRef:
+  - "HGIS 157257"
 aliases:
   - "경상북도/연일군/읍내면 (HGIS 157257)"
 ---

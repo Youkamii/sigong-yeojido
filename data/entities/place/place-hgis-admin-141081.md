@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141081"
 label: "평안북도/위원군/송면"
-labelNote: "HGIS 141081"
+sourceRef:
+  - "HGIS 141081"
 aliases:
   - "평안북도/위원군/송면 (HGIS 141081)"
 ---

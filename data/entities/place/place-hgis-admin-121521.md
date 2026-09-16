@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121521"
 label: "전라남도/지도군/낙월면"
-labelNote: "HGIS 121521"
+sourceRef:
+  - "HGIS 121521"
 aliases:
   - "전라남도/지도군/낙월면 (HGIS 121521)"
 ---

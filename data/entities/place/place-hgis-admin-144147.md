@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144147"
 label: "경상남도/기장군/동면"
-labelNote: "HGIS 144147"
+sourceRef:
+  - "HGIS 144147"
 aliases:
   - "경상남도/기장군/동면 (HGIS 144147)"
 ---

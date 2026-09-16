@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136309"
 label: "평안북도/강계군/어뢰방"
-labelNote: "HGIS 136309"
+sourceRef:
+  - "HGIS 136309"
 aliases:
   - "평안북도/강계군/어뢰방 (HGIS 136309)"
 ---

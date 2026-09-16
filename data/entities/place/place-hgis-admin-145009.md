@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145009"
 label: "경상남도/삼가군"
-labelNote: "HGIS 145009"
+sourceRef:
+  - "HGIS 145009"
 aliases:
   - "경상남도/삼가군 (HGIS 145009)"
 ---

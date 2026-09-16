@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144546"
 label: "경상남도/진주군/대여촌면"
-labelNote: "HGIS 144546"
+sourceRef:
+  - "HGIS 144546"
 aliases:
   - "경상남도/진주군/대여촌면 (HGIS 144546)"
 ---

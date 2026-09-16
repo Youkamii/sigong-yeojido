@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-165048"
 label: "경상북도/영덕군/강구면"
-labelNote: "HGIS 165048"
+sourceRef:
+  - "HGIS 165048"
 aliases:
   - "경상북도/영덕군/강구면 (HGIS 165048)"
 ---

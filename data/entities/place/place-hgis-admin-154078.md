@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154078"
 label: "경상남도/산청군/지곡면"
-labelNote: "HGIS 154078"
+sourceRef:
+  - "HGIS 154078"
 aliases:
   - "경상남도/산청군/지곡면 (HGIS 154078)"
 ---

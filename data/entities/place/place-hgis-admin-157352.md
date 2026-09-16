@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157352"
 label: "경상북도/영천군/비소면"
-labelNote: "HGIS 157352"
+sourceRef:
+  - "HGIS 157352"
 aliases:
   - "경상북도/영천군/비소면 (HGIS 157352)"
 ---

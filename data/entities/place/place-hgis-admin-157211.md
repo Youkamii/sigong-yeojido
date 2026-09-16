@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157211"
 label: "경상북도/신녕군/현내면"
-labelNote: "HGIS 157211"
+sourceRef:
+  - "HGIS 157211"
 aliases:
   - "경상북도/신녕군/현내면 (HGIS 157211)"
 ---

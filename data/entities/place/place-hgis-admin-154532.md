@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154532"
 label: "경상남도/하동군/대야면"
-labelNote: "HGIS 154532"
+sourceRef:
+  - "HGIS 154532"
 aliases:
   - "경상남도/하동군/대야면 (HGIS 154532)"
 ---

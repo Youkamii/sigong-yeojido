@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157383"
 label: "경상북도/의성군/다인면"
-labelNote: "HGIS 157383"
+sourceRef:
+  - "HGIS 157383"
 aliases:
   - "경상북도/의성군/다인면 (HGIS 157383)"
 ---

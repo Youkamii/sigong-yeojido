@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-105365"
 label: "전라북도/진안군/일북면"
-labelNote: "HGIS 105365"
+sourceRef:
+  - "HGIS 105365"
 aliases:
   - "전라북도/진안군/일북면 (HGIS 105365)"
 ---

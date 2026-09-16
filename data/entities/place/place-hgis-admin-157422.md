@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157422"
 label: "경상북도/의흥군/하리면"
-labelNote: "HGIS 157422"
+sourceRef:
+  - "HGIS 157422"
 aliases:
   - "경상북도/의흥군/하리면 (HGIS 157422)"
 ---

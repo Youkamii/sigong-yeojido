@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121217"
 label: "전라남도/제주도/신우면"
-labelNote: "HGIS 121217"
+sourceRef:
+  - "HGIS 121217"
 aliases:
   - "전라남도/제주도/신우면 (HGIS 121217)"
 ---

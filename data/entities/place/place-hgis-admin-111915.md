@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111915"
 label: "전라남도/광주군/마곡면"
-labelNote: "HGIS 111915"
+sourceRef:
+  - "HGIS 111915"
 aliases:
   - "전라남도/광주군/마곡면 (HGIS 111915)"
 ---

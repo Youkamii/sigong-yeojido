@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122518"
 label: "전라남도/창평군"
-labelNote: "HGIS 122518"
+sourceRef:
+  - "HGIS 122518"
 aliases:
   - "전라남도/창평군 (HGIS 122518)"
 ---

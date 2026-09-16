@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142657"
 label: "평안북도/초산군/고면"
-labelNote: "HGIS 142657"
+sourceRef:
+  - "HGIS 142657"
 aliases:
   - "평안북도/초산군/고면 (HGIS 142657)"
 ---

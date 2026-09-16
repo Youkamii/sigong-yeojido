@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113755"
 label: "전라남도/나주군/다도면"
-labelNote: "HGIS 113755"
+sourceRef:
+  - "HGIS 113755"
 aliases:
   - "전라남도/나주군/다도면 (HGIS 113755)"
 ---

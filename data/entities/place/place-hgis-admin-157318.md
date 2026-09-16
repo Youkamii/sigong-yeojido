@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157318"
 label: "경상북도/영주군/평은면"
-labelNote: "HGIS 157318"
+sourceRef:
+  - "HGIS 157318"
 aliases:
   - "경상북도/영주군/평은면 (HGIS 157318)"
 ---

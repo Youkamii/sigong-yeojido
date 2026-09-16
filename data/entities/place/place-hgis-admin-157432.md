@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157432"
 label: "경상북도/인동군/장곡면"
-labelNote: "HGIS 157432"
+sourceRef:
+  - "HGIS 157432"
 aliases:
   - "경상북도/인동군/장곡면 (HGIS 157432)"
 ---

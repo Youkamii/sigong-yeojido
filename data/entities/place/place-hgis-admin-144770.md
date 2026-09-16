@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144770"
 label: "경상남도/함양군/위성면"
-labelNote: "HGIS 144770"
+sourceRef:
+  - "HGIS 144770"
 aliases:
   - "경상남도/함양군/위성면 (HGIS 144770)"
 ---

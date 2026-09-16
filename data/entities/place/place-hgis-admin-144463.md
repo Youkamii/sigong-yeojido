@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144463"
 label: "경상남도/울산군/온남면"
-labelNote: "HGIS 144463"
+sourceRef:
+  - "HGIS 144463"
 aliases:
   - "경상남도/울산군/온남면 (HGIS 144463)"
 ---

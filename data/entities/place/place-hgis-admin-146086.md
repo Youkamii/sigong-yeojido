@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-146086"
 label: "경상남도/밀양군/무안면"
-labelNote: "HGIS 146086"
+sourceRef:
+  - "HGIS 146086"
 aliases:
   - "경상남도/밀양군/무안면 (HGIS 146086)"
 ---

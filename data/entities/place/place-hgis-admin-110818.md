@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110818"
 label: "전라남도/고흥군/고읍면"
-labelNote: "HGIS 110818"
+sourceRef:
+  - "HGIS 110818"
 aliases:
   - "전라남도/고흥군/고읍면 (HGIS 110818)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111638"
 label: "전라남도/광양군/진하면"
-labelNote: "HGIS 111638"
+sourceRef:
+  - "HGIS 111638"
 aliases:
   - "전라남도/광양군/진하면 (HGIS 111638)"
 ---

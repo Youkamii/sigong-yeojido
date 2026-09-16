@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157005"
 label: "경상북도/예천군/남읍면"
-labelNote: "HGIS 157005"
+sourceRef:
+  - "HGIS 157005"
 aliases:
   - "경상북도/예천군/남읍면 (HGIS 157005)"
 ---

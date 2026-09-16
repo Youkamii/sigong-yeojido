@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157498"
 label: "경상북도/청송군/현남면"
-labelNote: "HGIS 157498"
+sourceRef:
+  - "HGIS 157498"
 aliases:
   - "경상북도/청송군/현남면 (HGIS 157498)"
 ---

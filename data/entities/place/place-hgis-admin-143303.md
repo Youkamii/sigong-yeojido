@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143303"
 label: "경상남도/함안군/백사면"
-labelNote: "HGIS 143303"
+sourceRef:
+  - "HGIS 143303"
 aliases:
   - "경상남도/함안군/백사면 (HGIS 143303)"
 ---

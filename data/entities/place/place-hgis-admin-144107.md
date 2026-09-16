@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144107"
 label: "경상남도/고성군/삼산면"
-labelNote: "HGIS 144107"
+sourceRef:
+  - "HGIS 144107"
 aliases:
   - "경상남도/고성군/삼산면 (HGIS 144107)"
 ---

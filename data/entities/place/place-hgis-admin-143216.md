@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143216"
 label: "경상남도/산청군/군월면"
-labelNote: "HGIS 143216"
+sourceRef:
+  - "HGIS 143216"
 aliases:
   - "경상남도/산청군/군월면 (HGIS 143216)"
 ---

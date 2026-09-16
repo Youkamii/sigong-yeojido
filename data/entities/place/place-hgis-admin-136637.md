@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136637"
 label: "평안북도/박천군/양가면"
-labelNote: "HGIS 136637"
+sourceRef:
+  - "HGIS 136637"
 aliases:
   - "평안북도/박천군/양가면 (HGIS 136637)"
 ---

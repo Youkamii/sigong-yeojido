@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157507"
 label: "경상북도/칠곡군/가산면"
-labelNote: "HGIS 157507"
+sourceRef:
+  - "HGIS 157507"
 aliases:
   - "경상북도/칠곡군/가산면 (HGIS 157507)"
 ---

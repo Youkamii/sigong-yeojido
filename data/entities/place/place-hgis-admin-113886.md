@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113886"
 label: "전라남도/나주군/마산면"
-labelNote: "HGIS 113886"
+sourceRef:
+  - "HGIS 113886"
 aliases:
   - "전라남도/나주군/마산면 (HGIS 113886)"
 ---

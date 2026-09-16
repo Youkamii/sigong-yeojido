@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136628"
 label: "평안북도/박천군/가산면"
-labelNote: "HGIS 136628"
+sourceRef:
+  - "HGIS 136628"
 aliases:
   - "평안북도/박천군/가산면 (HGIS 136628)"
 ---

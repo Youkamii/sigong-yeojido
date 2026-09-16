@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140763"
 label: "평안북도/용천부/양상면"
-labelNote: "HGIS 140763"
+sourceRef:
+  - "HGIS 140763"
 aliases:
   - "평안북도/용천부/양상면 (HGIS 140763)"
 ---

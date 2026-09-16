@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-138529"
 label: "평안북도/자성군/자상면"
-labelNote: "HGIS 138529"
+sourceRef:
+  - "HGIS 138529"
 aliases:
   - "평안북도/자성군/자상면 (HGIS 138529)"
 ---

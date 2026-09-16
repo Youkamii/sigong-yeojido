@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157541"
 label: "경상북도/함창군/상서면"
-labelNote: "HGIS 157541"
+sourceRef:
+  - "HGIS 157541"
 aliases:
   - "경상북도/함창군/상서면 (HGIS 157541)"
 ---

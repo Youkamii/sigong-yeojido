@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113488"
 label: "전라남도/동복군/내북면"
-labelNote: "HGIS 113488"
+sourceRef:
+  - "HGIS 113488"
 aliases:
   - "전라남도/동복군/내북면 (HGIS 113488)"
 ---

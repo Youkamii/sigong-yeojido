@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117740"
 label: "전라남도/무안군/엄다면"
-labelNote: "HGIS 117740"
+sourceRef:
+  - "HGIS 117740"
 aliases:
   - "전라남도/무안군/엄다면 (HGIS 117740)"
 ---

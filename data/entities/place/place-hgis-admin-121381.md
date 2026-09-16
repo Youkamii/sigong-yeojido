@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121381"
 label: "전라남도/제주도/중문면"
-labelNote: "HGIS 121381"
+sourceRef:
+  - "HGIS 121381"
 aliases:
   - "전라남도/제주도/중문면 (HGIS 121381)"
 ---

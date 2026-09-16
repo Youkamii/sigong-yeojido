@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144486"
 label: "경상남도/의령군/궁류면"
-labelNote: "HGIS 144486"
+sourceRef:
+  - "HGIS 144486"
 aliases:
   - "경상남도/의령군/궁류면 (HGIS 144486)"
 ---

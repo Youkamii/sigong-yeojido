@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157244"
 label: "경상북도/안동군/와룡면"
-labelNote: "HGIS 157244"
+sourceRef:
+  - "HGIS 157244"
 aliases:
   - "경상북도/안동군/와룡면 (HGIS 157244)"
 ---

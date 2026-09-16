@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120803"
 label: "전라남도/장흥군/장흥읍"
-labelNote: "HGIS 120803"
+sourceRef:
+  - "HGIS 120803"
 aliases:
   - "전라남도/장흥군/장흥읍 (HGIS 120803)"
 ---

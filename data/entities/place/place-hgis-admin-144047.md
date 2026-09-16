@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144047"
 label: "경상남도/고성군/광일면"
-labelNote: "HGIS 144047"
+sourceRef:
+  - "HGIS 144047"
 aliases:
   - "경상남도/고성군/광일면 (HGIS 144047)"
 ---

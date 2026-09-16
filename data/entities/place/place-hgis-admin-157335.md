@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157335"
 label: "경상북도/영천군/호문면"
-labelNote: "HGIS 157335"
+sourceRef:
+  - "HGIS 157335"
 aliases:
   - "경상북도/영천군/호문면 (HGIS 157335)"
 ---

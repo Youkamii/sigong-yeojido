@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110572"
 label: "전라남도/강진군/이지면"
-labelNote: "HGIS 110572"
+sourceRef:
+  - "HGIS 110572"
 aliases:
   - "전라남도/강진군/이지면 (HGIS 110572)"
 ---

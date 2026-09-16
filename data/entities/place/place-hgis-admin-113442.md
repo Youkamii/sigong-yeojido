@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113442"
 label: "전라남도/돌산군"
-labelNote: "HGIS 113442"
+sourceRef:
+  - "HGIS 113442"
 aliases:
   - "전라남도/돌산군 (HGIS 113442)"
 ---

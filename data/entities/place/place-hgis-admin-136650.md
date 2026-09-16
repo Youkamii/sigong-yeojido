@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136650"
 label: "평안북도/삭주군/군내면"
-labelNote: "HGIS 136650"
+sourceRef:
+  - "HGIS 136650"
 aliases:
   - "평안북도/삭주군/군내면 (HGIS 136650)"
 ---

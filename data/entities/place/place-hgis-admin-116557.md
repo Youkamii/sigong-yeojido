@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116557"
 label: "전라남도/영암군/서호면"
-labelNote: "HGIS 116557"
+sourceRef:
+  - "HGIS 116557"
 aliases:
   - "전라남도/영암군/서호면 (HGIS 116557)"
 ---

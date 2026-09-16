@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157518"
 label: "경상북도/칠곡군/상지면"
-labelNote: "HGIS 157518"
+sourceRef:
+  - "HGIS 157518"
 aliases:
   - "경상북도/칠곡군/상지면 (HGIS 157518)"
 ---

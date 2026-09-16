@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154470"
 label: "경상남도/창원부/동면"
-labelNote: "HGIS 154470"
+sourceRef:
+  - "HGIS 154470"
 aliases:
   - "경상남도/창원부/동면 (HGIS 154470)"
 ---

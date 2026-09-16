@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120488"
 label: "전라남도/장흥군/부서면"
-labelNote: "HGIS 120488"
+sourceRef:
+  - "HGIS 120488"
 aliases:
   - "전라남도/장흥군/부서면 (HGIS 120488)"
 ---

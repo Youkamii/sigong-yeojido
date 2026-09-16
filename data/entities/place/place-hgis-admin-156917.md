@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156917"
 label: "경상북도/김천군/아포면"
-labelNote: "HGIS 156917"
+sourceRef:
+  - "HGIS 156917"
 aliases:
   - "경상북도/김천군/아포면 (HGIS 156917)"
 ---

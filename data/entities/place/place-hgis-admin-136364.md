@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136364"
 label: "평안북도/벽동군/시면"
-labelNote: "HGIS 136364"
+sourceRef:
+  - "HGIS 136364"
 aliases:
   - "평안북도/벽동군/시면 (HGIS 136364)"
 ---

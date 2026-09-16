@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144789"
 label: "경상남도/합천군/산어면"
-labelNote: "HGIS 144789"
+sourceRef:
+  - "HGIS 144789"
 aliases:
   - "경상남도/합천군/산어면 (HGIS 144789)"
 ---

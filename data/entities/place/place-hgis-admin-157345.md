@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157345"
 label: "경상북도/영천군/명산면"
-labelNote: "HGIS 157345"
+sourceRef:
+  - "HGIS 157345"
 aliases:
   - "경상북도/영천군/명산면 (HGIS 157345)"
 ---

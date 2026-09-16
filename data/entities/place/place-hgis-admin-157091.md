@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157091"
 label: "경상북도/봉화군/하남면"
-labelNote: "HGIS 157091"
+sourceRef:
+  - "HGIS 157091"
 aliases:
   - "경상북도/봉화군/하남면 (HGIS 157091)"
 ---

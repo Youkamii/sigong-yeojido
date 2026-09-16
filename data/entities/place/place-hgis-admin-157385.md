@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157385"
 label: "경상북도/의성군/단북면"
-labelNote: "HGIS 157385"
+sourceRef:
+  - "HGIS 157385"
 aliases:
   - "경상북도/의성군/단북면 (HGIS 157385)"
 ---

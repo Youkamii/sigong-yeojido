@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-100851"
 label: "전라북도/순창군/적성면"
-labelNote: "HGIS 100851"
+sourceRef:
+  - "HGIS 100851"
 aliases:
   - "전라북도/순창군/적성면 (HGIS 100851)"
 ---

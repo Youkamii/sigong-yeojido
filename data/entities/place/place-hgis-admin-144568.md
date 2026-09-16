@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144568"
 label: "경상남도/진주군/송곡면"
-labelNote: "HGIS 144568"
+sourceRef:
+  - "HGIS 144568"
 aliases:
   - "경상남도/진주군/송곡면 (HGIS 144568)"
 ---

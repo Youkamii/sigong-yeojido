@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143231"
 label: "경상남도/삼가군/대평면"
-labelNote: "HGIS 143231"
+sourceRef:
+  - "HGIS 143231"
 aliases:
   - "경상남도/삼가군/대평면 (HGIS 143231)"
 ---

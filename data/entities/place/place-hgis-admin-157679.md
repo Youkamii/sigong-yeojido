@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157679"
 label: "경상북도/지례군"
-labelNote: "HGIS 157679"
+sourceRef:
+  - "HGIS 157679"
 aliases:
   - "경상북도/지례군 (HGIS 157679)"
 ---

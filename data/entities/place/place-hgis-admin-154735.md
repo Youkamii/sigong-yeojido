@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154735"
 label: "경상남도/합천군/거산면"
-labelNote: "HGIS 154735"
+sourceRef:
+  - "HGIS 154735"
 aliases:
   - "경상남도/합천군/거산면 (HGIS 154735)"
 ---

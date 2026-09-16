@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156886"
 label: "경상북도/군위군/현내면"
-labelNote: "HGIS 156886"
+sourceRef:
+  - "HGIS 156886"
 aliases:
   - "경상북도/군위군/현내면 (HGIS 156886)"
 ---

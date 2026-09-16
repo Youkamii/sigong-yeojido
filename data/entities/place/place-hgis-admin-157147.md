@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157147"
 label: "경상북도/선산군/구미면"
-labelNote: "HGIS 157147"
+sourceRef:
+  - "HGIS 157147"
 aliases:
   - "경상북도/선산군/구미면 (HGIS 157147)"
 ---

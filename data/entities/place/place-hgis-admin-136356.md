@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136356"
 label: "평안북도/벽동군/동부면"
-labelNote: "HGIS 136356"
+sourceRef:
+  - "HGIS 136356"
 aliases:
   - "평안북도/벽동군/동부면 (HGIS 136356)"
 ---

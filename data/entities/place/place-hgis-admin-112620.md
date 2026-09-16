@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112620"
 label: "전라남도/구례군/중방면"
-labelNote: "HGIS 112620"
+sourceRef:
+  - "HGIS 112620"
 aliases:
   - "전라남도/구례군/중방면 (HGIS 112620)"
 ---

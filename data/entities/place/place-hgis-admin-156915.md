@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156915"
 label: "경상북도/김천군/석현면"
-labelNote: "HGIS 156915"
+sourceRef:
+  - "HGIS 156915"
 aliases:
   - "경상북도/김천군/석현면 (HGIS 156915)"
 ---

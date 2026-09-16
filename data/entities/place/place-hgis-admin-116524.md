@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116524"
 label: "전라남도/영암군/서시면"
-labelNote: "HGIS 116524"
+sourceRef:
+  - "HGIS 116524"
 aliases:
   - "전라남도/영암군/서시면 (HGIS 116524)"
 ---

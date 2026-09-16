@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113212"
 label: "전라남도/담양군/수북면"
-labelNote: "HGIS 113212"
+sourceRef:
+  - "HGIS 113212"
 aliases:
   - "전라남도/담양군/수북면 (HGIS 113212)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157565"
 label: "경상북도/흥해군/남면"
-labelNote: "HGIS 157565"
+sourceRef:
+  - "HGIS 157565"
 aliases:
   - "경상북도/흥해군/남면 (HGIS 157565)"
 ---

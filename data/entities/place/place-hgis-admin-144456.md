@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144456"
 label: "경상남도/울산군/상남면"
-labelNote: "HGIS 144456"
+sourceRef:
+  - "HGIS 144456"
 aliases:
   - "경상남도/울산군/상남면 (HGIS 144456)"
 ---

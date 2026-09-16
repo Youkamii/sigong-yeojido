@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157366"
 label: "경상북도/영천군/청경면"
-labelNote: "HGIS 157366"
+sourceRef:
+  - "HGIS 157366"
 aliases:
   - "경상북도/영천군/청경면 (HGIS 157366)"
 ---

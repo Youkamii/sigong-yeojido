@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144209"
 label: "경상남도/마산부/대산면"
-labelNote: "HGIS 144209"
+sourceRef:
+  - "HGIS 144209"
 aliases:
   - "경상남도/마산부/대산면 (HGIS 144209)"
 ---

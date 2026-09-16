@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157351"
 label: "경상북도/영천군/환귀면"
-labelNote: "HGIS 157351"
+sourceRef:
+  - "HGIS 157351"
 aliases:
   - "경상북도/영천군/환귀면 (HGIS 157351)"
 ---

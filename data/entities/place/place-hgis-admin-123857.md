@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123857"
 label: "전라남도/화순군/도암면"
-labelNote: "HGIS 123857"
+sourceRef:
+  - "HGIS 123857"
 aliases:
   - "전라남도/화순군/도암면 (HGIS 123857)"
 ---

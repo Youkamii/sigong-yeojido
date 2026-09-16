@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119551"
 label: "전라남도/완도군/추자면"
-labelNote: "HGIS 119551"
+sourceRef:
+  - "HGIS 119551"
 aliases:
   - "전라남도/완도군/추자면 (HGIS 119551)"
 ---

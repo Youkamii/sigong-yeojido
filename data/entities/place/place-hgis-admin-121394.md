@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121394"
 label: "전라남도/제주도/표선면"
-labelNote: "HGIS 121394"
+sourceRef:
+  - "HGIS 121394"
 aliases:
   - "전라남도/제주도/표선면 (HGIS 121394)"
 ---

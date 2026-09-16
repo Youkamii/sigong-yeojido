@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156716"
 label: "경상북도/영해군/묘곡면"
-labelNote: "HGIS 156716"
+sourceRef:
+  - "HGIS 156716"
 aliases:
   - "경상북도/영해군/묘곡면 (HGIS 156716)"
 ---

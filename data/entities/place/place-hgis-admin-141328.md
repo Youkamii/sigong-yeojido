@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141328"
 label: "평안북도/의주부/고읍면"
-labelNote: "HGIS 141328"
+sourceRef:
+  - "HGIS 141328"
 aliases:
   - "평안북도/의주부/고읍면 (HGIS 141328)"
 ---

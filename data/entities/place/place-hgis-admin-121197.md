@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121197"
 label: "전라남도/제주도/성산면"
-labelNote: "HGIS 121197"
+sourceRef:
+  - "HGIS 121197"
 aliases:
   - "전라남도/제주도/성산면 (HGIS 121197)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174523"
 label: "경상북도/개령군/아포면"
-labelNote: "HGIS 174523"
+sourceRef:
+  - "HGIS 174523"
 aliases:
   - "경상북도/개령군/아포면 (HGIS 174523)"
 ---

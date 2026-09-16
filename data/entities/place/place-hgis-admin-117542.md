@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117542"
 label: "전라남도/목포부/좌촌면"
-labelNote: "HGIS 117542"
+sourceRef:
+  - "HGIS 117542"
 aliases:
   - "전라남도/목포부/좌촌면 (HGIS 117542)"
 ---

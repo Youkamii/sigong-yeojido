@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157650"
 label: "경상북도/예안군"
-labelNote: "HGIS 157650"
+sourceRef:
+  - "HGIS 157650"
 aliases:
   - "경상북도/예안군 (HGIS 157650)"
 ---

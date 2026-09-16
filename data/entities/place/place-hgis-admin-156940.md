@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156940"
 label: "경상북도/대구군/성서면"
-labelNote: "HGIS 156940"
+sourceRef:
+  - "HGIS 156940"
 aliases:
   - "경상북도/대구군/성서면 (HGIS 156940)"
 ---

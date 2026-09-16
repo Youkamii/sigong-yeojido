@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144299"
 label: "경상남도/사천군/읍남면"
-labelNote: "HGIS 144299"
+sourceRef:
+  - "HGIS 144299"
 aliases:
   - "경상남도/사천군/읍남면 (HGIS 144299)"
 ---

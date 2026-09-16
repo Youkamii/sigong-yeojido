@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144660"
 label: "경상남도/초계군/백암면"
-labelNote: "HGIS 144660"
+sourceRef:
+  - "HGIS 144660"
 aliases:
   - "경상남도/초계군/백암면 (HGIS 144660)"
 ---

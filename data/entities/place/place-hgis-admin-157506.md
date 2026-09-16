@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157506"
 label: "경상북도/청하군/내북면"
-labelNote: "HGIS 157506"
+sourceRef:
+  - "HGIS 157506"
 aliases:
   - "경상북도/청하군/내북면 (HGIS 157506)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156819"
 label: "경상북도/경산군/하양면"
-labelNote: "HGIS 156819"
+sourceRef:
+  - "HGIS 156819"
 aliases:
   - "경상북도/경산군/하양면 (HGIS 156819)"
 ---

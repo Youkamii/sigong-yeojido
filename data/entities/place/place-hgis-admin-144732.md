@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144732"
 label: "경상남도/함안군/병곡면"
-labelNote: "HGIS 144732"
+sourceRef:
+  - "HGIS 144732"
 aliases:
   - "경상남도/함안군/병곡면 (HGIS 144732)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123521"
 label: "전라남도/해남군/송지종면"
-labelNote: "HGIS 123521"
+sourceRef:
+  - "HGIS 123521"
 aliases:
   - "전라남도/해남군/송지종면 (HGIS 123521)"
 ---

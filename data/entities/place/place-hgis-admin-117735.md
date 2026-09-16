@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117735"
 label: "전라남도/무안군/안창면"
-labelNote: "HGIS 117735"
+sourceRef:
+  - "HGIS 117735"
 aliases:
   - "전라남도/무안군/안창면 (HGIS 117735)"
 ---

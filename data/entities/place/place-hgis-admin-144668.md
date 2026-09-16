@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144668"
 label: "경상남도/초계군/택정면"
-labelNote: "HGIS 144668"
+sourceRef:
+  - "HGIS 144668"
 aliases:
   - "경상남도/초계군/택정면 (HGIS 144668)"
 ---

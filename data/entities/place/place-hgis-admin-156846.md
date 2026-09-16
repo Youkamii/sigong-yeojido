@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156846"
 label: "경상북도/고령군/고령면"
-labelNote: "HGIS 156846"
+sourceRef:
+  - "HGIS 156846"
 aliases:
   - "경상북도/고령군/고령면 (HGIS 156846)"
 ---

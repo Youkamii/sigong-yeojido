@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122294"
 label: "전라남도/창평군/내남면"
-labelNote: "HGIS 122294"
+sourceRef:
+  - "HGIS 122294"
 aliases:
   - "전라남도/창평군/내남면 (HGIS 122294)"
 ---

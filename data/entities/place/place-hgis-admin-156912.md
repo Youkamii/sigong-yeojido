@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156912"
 label: "경상북도/김천군/대항면"
-labelNote: "HGIS 156912"
+sourceRef:
+  - "HGIS 156912"
 aliases:
   - "경상북도/김천군/대항면 (HGIS 156912)"
 ---

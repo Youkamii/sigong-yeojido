@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157690"
 label: "경상북도/흥해군"
-labelNote: "HGIS 157690"
+sourceRef:
+  - "HGIS 157690"
 aliases:
   - "경상북도/흥해군 (HGIS 157690)"
 ---

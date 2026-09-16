@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136731"
 label: "평안북도/태천군/태천면"
-labelNote: "HGIS 136731"
+sourceRef:
+  - "HGIS 136731"
 aliases:
   - "평안북도/태천군/태천면 (HGIS 136731)"
 ---

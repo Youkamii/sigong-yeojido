@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144739"
 label: "경상남도/함안군/상사면"
-labelNote: "HGIS 144739"
+sourceRef:
+  - "HGIS 144739"
 aliases:
   - "경상남도/함안군/상사면 (HGIS 144739)"
 ---

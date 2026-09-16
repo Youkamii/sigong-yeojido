@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144647"
 label: "경상남도/창원군/웅남면"
-labelNote: "HGIS 144647"
+sourceRef:
+  - "HGIS 144647"
 aliases:
   - "경상남도/창원군/웅남면 (HGIS 144647)"
 ---

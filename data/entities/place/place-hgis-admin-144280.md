@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144280"
 label: "경상남도/사천군/곤양면"
-labelNote: "HGIS 144280"
+sourceRef:
+  - "HGIS 144280"
 aliases:
   - "경상남도/사천군/곤양면 (HGIS 144280)"
 ---

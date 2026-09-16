@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157269"
 label: "경상북도/영덕군/읍내면"
-labelNote: "HGIS 157269"
+sourceRef:
+  - "HGIS 157269"
 aliases:
   - "경상북도/영덕군/읍내면 (HGIS 157269)"
 ---

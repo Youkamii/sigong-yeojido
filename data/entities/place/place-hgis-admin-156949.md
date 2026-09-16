@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156949"
 label: "경상북도/달성군/화원면"
-labelNote: "HGIS 156949"
+sourceRef:
+  - "HGIS 156949"
 aliases:
   - "경상북도/달성군/화원면 (HGIS 156949)"
 ---

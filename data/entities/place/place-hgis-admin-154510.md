@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154510"
 label: "경상남도/통영군/장승포읍"
-labelNote: "HGIS 154510"
+sourceRef:
+  - "HGIS 154510"
 aliases:
   - "경상남도/통영군/장승포읍 (HGIS 154510)"
 ---

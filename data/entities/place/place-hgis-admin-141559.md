@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141559"
 label: "평안북도/의주부/위화면"
-labelNote: "HGIS 141559"
+sourceRef:
+  - "HGIS 141559"
 aliases:
   - "평안북도/의주부/위화면 (HGIS 141559)"
 ---

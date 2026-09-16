@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117518"
 label: "전라남도/목포부/일서면"
-labelNote: "HGIS 117518"
+sourceRef:
+  - "HGIS 117518"
 aliases:
   - "전라남도/목포부/일서면 (HGIS 117518)"
 ---

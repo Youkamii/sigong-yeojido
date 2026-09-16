@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111766"
 label: "전라남도/광주군/군분면"
-labelNote: "HGIS 111766"
+sourceRef:
+  - "HGIS 111766"
 aliases:
   - "전라남도/광주군/군분면 (HGIS 111766)"
 ---

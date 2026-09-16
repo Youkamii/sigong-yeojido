@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150656"
 label: "경상남도/동래군/동래읍"
-labelNote: "HGIS 150656"
+sourceRef:
+  - "HGIS 150656"
 aliases:
   - "경상남도/동래군/동래읍 (HGIS 150656)"
 ---

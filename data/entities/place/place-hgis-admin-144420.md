@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144420"
 label: "경상남도/영산군/장가면"
-labelNote: "HGIS 144420"
+sourceRef:
+  - "HGIS 144420"
 aliases:
   - "경상남도/영산군/장가면 (HGIS 144420)"
 ---

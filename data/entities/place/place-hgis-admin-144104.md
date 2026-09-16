@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144104"
 label: "경상남도/고성군/동읍면"
-labelNote: "HGIS 144104"
+sourceRef:
+  - "HGIS 144104"
 aliases:
   - "경상남도/고성군/동읍면 (HGIS 144104)"
 ---

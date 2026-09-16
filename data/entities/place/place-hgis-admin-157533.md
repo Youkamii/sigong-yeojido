@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157533"
 label: "경상북도/풍기군/동촌면"
-labelNote: "HGIS 157533"
+sourceRef:
+  - "HGIS 157533"
 aliases:
   - "경상북도/풍기군/동촌면 (HGIS 157533)"
 ---

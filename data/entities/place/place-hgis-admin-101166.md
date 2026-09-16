@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-101166"
 label: "전라북도/운봉군/동면"
-labelNote: "HGIS 101166"
+sourceRef:
+  - "HGIS 101166"
 aliases:
   - "전라북도/운봉군/동면 (HGIS 101166)"
 ---

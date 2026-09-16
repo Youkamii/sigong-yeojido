@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121175"
 label: "전라남도/제주도/서귀면"
-labelNote: "HGIS 121175"
+sourceRef:
+  - "HGIS 121175"
 aliases:
   - "전라남도/제주도/서귀면 (HGIS 121175)"
 ---

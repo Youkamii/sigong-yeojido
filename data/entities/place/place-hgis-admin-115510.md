@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115510"
 label: "전라남도/영광군/서부면"
-labelNote: "HGIS 115510"
+sourceRef:
+  - "HGIS 115510"
 aliases:
   - "전라남도/영광군/서부면 (HGIS 115510)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113788"
 label: "전라남도/나주군/동강면"
-labelNote: "HGIS 113788"
+sourceRef:
+  - "HGIS 113788"
 aliases:
   - "전라남도/나주군/동강면 (HGIS 113788)"
 ---

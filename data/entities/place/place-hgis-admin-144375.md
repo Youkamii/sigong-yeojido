@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144375"
 label: "경상남도/안의군/서하면"
-labelNote: "HGIS 144375"
+sourceRef:
+  - "HGIS 144375"
 aliases:
   - "경상남도/안의군/서하면 (HGIS 144375)"
 ---

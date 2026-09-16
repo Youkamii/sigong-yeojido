@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157485"
 label: "경상북도/청도군/차북면"
-labelNote: "HGIS 157485"
+sourceRef:
+  - "HGIS 157485"
 aliases:
   - "경상북도/청도군/차북면 (HGIS 157485)"
 ---

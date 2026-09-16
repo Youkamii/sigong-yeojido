@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156944"
 label: "경상북도/달성군/월배면"
-labelNote: "HGIS 156944"
+sourceRef:
+  - "HGIS 156944"
 aliases:
   - "경상북도/달성군/월배면 (HGIS 156944)"
 ---

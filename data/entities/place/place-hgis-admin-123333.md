@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123333"
 label: "전라남도/해남군/북평종면"
-labelNote: "HGIS 123333"
+sourceRef:
+  - "HGIS 123333"
 aliases:
   - "전라남도/해남군/북평종면 (HGIS 123333)"
 ---

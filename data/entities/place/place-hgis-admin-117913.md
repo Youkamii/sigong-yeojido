@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117913"
 label: "전라남도/보성군/도촌면"
-labelNote: "HGIS 117913"
+sourceRef:
+  - "HGIS 117913"
 aliases:
   - "전라남도/보성군/도촌면 (HGIS 117913)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136479"
 label: "평안북도/태천군/북면"
-labelNote: "HGIS 136479"
+sourceRef:
+  - "HGIS 136479"
 aliases:
   - "평안북도/태천군/북면 (HGIS 136479)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143843"
 label: "경상남도/울도군/남면"
-labelNote: "HGIS 143843"
+sourceRef:
+  - "HGIS 143843"
 aliases:
   - "경상남도/울도군/남면 (HGIS 143843)"
 ---

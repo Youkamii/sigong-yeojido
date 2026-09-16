@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136682"
 label: "평안북도/선천군/선천읍"
-labelNote: "HGIS 136682"
+sourceRef:
+  - "HGIS 136682"
 aliases:
   - "평안북도/선천군/선천읍 (HGIS 136682)"
 ---

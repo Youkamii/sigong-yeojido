@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117669"
 label: "전라남도/무안군/기좌면"
-labelNote: "HGIS 117669"
+sourceRef:
+  - "HGIS 117669"
 aliases:
   - "전라남도/무안군/기좌면 (HGIS 117669)"
 ---

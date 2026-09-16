@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117670"
 label: "전라남도/무안군/금동면"
-labelNote: "HGIS 117670"
+sourceRef:
+  - "HGIS 117670"
 aliases:
   - "전라남도/무안군/금동면 (HGIS 117670)"
 ---

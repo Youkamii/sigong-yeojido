@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118275"
 label: "전라남도/보성군/웅치면"
-labelNote: "HGIS 118275"
+sourceRef:
+  - "HGIS 118275"
 aliases:
   - "전라남도/보성군/웅치면 (HGIS 118275)"
 ---

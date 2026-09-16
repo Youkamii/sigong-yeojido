@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156975"
 label: "경상북도/대구부/상수서면"
-labelNote: "HGIS 156975"
+sourceRef:
+  - "HGIS 156975"
 aliases:
   - "경상북도/대구부/상수서면 (HGIS 156975)"
 ---

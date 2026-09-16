@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157067"
 label: "경상북도/문경군/화장면"
-labelNote: "HGIS 157067"
+sourceRef:
+  - "HGIS 157067"
 aliases:
   - "경상북도/문경군/화장면 (HGIS 157067)"
 ---

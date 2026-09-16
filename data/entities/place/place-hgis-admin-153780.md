@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-153780"
 label: "경상남도/마산부/웅중면"
-labelNote: "HGIS 153780"
+sourceRef:
+  - "HGIS 153780"
 aliases:
   - "경상남도/마산부/웅중면 (HGIS 153780)"
 ---

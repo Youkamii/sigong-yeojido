@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113211"
 label: "전라남도/담양군/서면"
-labelNote: "HGIS 113211"
+sourceRef:
+  - "HGIS 113211"
 aliases:
   - "전라남도/담양군/서면 (HGIS 113211)"
 ---

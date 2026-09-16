@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110830"
 label: "전라남도/고흥군/과역면"
-labelNote: "HGIS 110830"
+sourceRef:
+  - "HGIS 110830"
 aliases:
   - "전라남도/고흥군/과역면 (HGIS 110830)"
 ---

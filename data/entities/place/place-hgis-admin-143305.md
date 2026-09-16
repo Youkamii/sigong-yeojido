@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143305"
 label: "경상남도/함안군/우곡면"
-labelNote: "HGIS 143305"
+sourceRef:
+  - "HGIS 143305"
 aliases:
   - "경상남도/함안군/우곡면 (HGIS 143305)"
 ---

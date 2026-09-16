@@ -13,6 +13,63 @@ YEAR_ONLY = re.compile(r"^[\s\d년월일경~∼～·,.\-–]+$")
 YEAR_RANGE = re.compile(r"^(?:기원전\s*)?\d{1,4}년?(?:\s*[~∼～–-]\s*\d{1,4}년?)?(?:\s*(?:경|무렵))?$")
 UNKNOWN = re.compile(r"미상|미확인|미기재|불명")
 GROUP_TAIL = "집단 행위자"
+SEPARATOR = " · "
+# 이름 설명에 섞여 들어온 자료 식별자 — 사람에게 보일 말이 아니므로 sourceRef 로 옮긴다 (#200 2차).
+SOURCE_REF_PATTERNS = (
+    re.compile(r"(?:한국)?민족문화대백과\s*E\d{7}"),
+    re.compile(r"HGIS[\s-]?\d+", re.IGNORECASE),
+    re.compile(r"hgis-admin-\d+", re.IGNORECASE),
+    re.compile(r"(?:Cliopatria|GeoNames|GeoName)\s*\d+", re.IGNORECASE),
+    re.compile(r"\bE\d{7}\b"),
+)
+EMPTY_BRACKETS = re.compile(r"\(\s*\)|\[\s*\]|（\s*）")
+
+
+def split_outside_parens(text: str, separator: str = SEPARATOR) -> list[str]:
+    """괄호 밖에 있는 구분자로만 나눈다 — chronicle.js splitOutsideParens 와 같다.
+
+    '(발굴 조사 기관 · 집단 행위자)' 처럼 괄호 안에 있는 ' · ' 는 이름의 일부이므로 자르지 않는다.
+    """
+    value = str(text or "")
+    parts: list[str] = []
+    depth = start = index = 0
+    while index < len(value):
+        char = value[index]
+        if char == "(":
+            depth += 1
+        elif char == ")":
+            depth = max(0, depth - 1)
+        elif depth == 0 and value.startswith(separator, index):
+            parts.append(value[start:index])
+            index += len(separator)
+            start = index
+            continue
+        index += 1
+    parts.append(value[start:])
+    return parts
+
+
+def split_source_refs(note: str) -> tuple[str, list[str]]:
+    """이름 설명에서 자료 식별자를 떼어 (사람이 읽을 설명, 식별자 목록) 을 준다.
+
+    'HGIS 176301' → ('', ['HGIS 176301']), '조선 제25대, 민족문화대백과 E0056172' → ('조선 제25대', ['민족문화대백과 E0056172']).
+    이미 정리된 설명을 다시 넣어도 그대로 나온다(멱등).
+    """
+    refs: list[str] = []
+    text = str(note or "")
+
+    def take(match: "re.Match[str]") -> str:
+        ref = re.sub(r"\s+", " ", match.group(0)).strip()
+        if ref:
+            refs.append(ref)
+        return ""
+
+    for pattern in SOURCE_REF_PATTERNS:
+        text = pattern.sub(take, text)
+    text = EMPTY_BRACKETS.sub("", text)
+    text = re.sub(r"\s{2,}", " ", text)
+    text = re.sub(r"\s*([,·])(?:\s*[,·])+\s*", r"\1 ", text)
+    return text.strip().strip(" ,·").strip(), list(dict.fromkeys(refs))
 
 
 def is_year_paren(inner: str) -> bool:
@@ -64,19 +121,19 @@ def entity_label(label: str, type_: str) -> tuple[str, list[str]]:
 def clean_label(label: str, type_: str) -> dict:
     """머리말 한 줄을 정리한다.
 
-    {'label': 새 이름, 'note': labelNote, 'group': 집단 행위자였나, 'changed': 바뀌었나} 를 준다.
+    {'label': 새 이름, 'note': labelNote, 'sourceRef': 자료 식별자 목록, 'group': 집단 행위자였나, 'changed': 바뀌었나} 를 준다.
     비면(규칙을 다 적용해 남는 글자가 없으면) 원본을 그대로 쓴다.
     """
     original = str(label or "")
-    parts = original.split(" · ")
-    tail = " · ".join(parts[1:]) if len(parts) > 1 else ""
+    parts = split_outside_parens(original)
+    tail = SEPARATOR.join(parts[1:]) if len(parts) > 1 else ""
     group = GROUP_TAIL in original
     note_parts: list[str] = []
     tail_note = tail.replace(GROUP_TAIL, "").strip(" ·").strip()
     if tail_note:
         note_parts.append(tail_note)
     base, encykorea_notes = entity_label(original, type_)
-    base = base.split(" · ")[0]
+    base = split_outside_parens(base)[0]
     stripped, paren_notes = strip_label_notes(base)
     note_parts.extend(paren_notes)
     note_parts.extend(encykorea_notes)
@@ -84,8 +141,8 @@ def clean_label(label: str, type_: str) -> dict:
     cleaned = cleaned.replace("미상", "미확인")
     # 결과가 비거나 괄호 짝이 깨지면(' · ' 가 괄호 안에 있는 이름) 원본을 지킨다 — 이름을 망가뜨리지 않는다
     if not cleaned or cleaned.count("(") != cleaned.count(")"):
-        return {"label": original, "note": "", "group": group, "changed": False}
+        return {"label": original, "note": "", "sourceRef": [], "group": group, "changed": False}
     notes = (re.sub(r"\s{2,}", " ", part.replace(GROUP_TAIL, "").replace("미상", "미확인")).strip(" ·")
              for part in note_parts)
-    note = " · ".join(dict.fromkeys(part for part in notes if part))
-    return {"label": cleaned, "note": note, "group": group, "changed": cleaned != original}
+    note, refs = split_source_refs(SEPARATOR.join(dict.fromkeys(part for part in notes if part)))
+    return {"label": cleaned, "note": note, "sourceRef": refs, "group": group, "changed": cleaned != original}

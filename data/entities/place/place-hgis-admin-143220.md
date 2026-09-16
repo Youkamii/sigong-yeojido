@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143220"
 label: "경상남도/산청군/백곡면"
-labelNote: "HGIS 143220"
+sourceRef:
+  - "HGIS 143220"
 aliases:
   - "경상남도/산청군/백곡면 (HGIS 143220)"
 ---

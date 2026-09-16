@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144992"
 label: "경상남도/기장군"
-labelNote: "HGIS 144992"
+sourceRef:
+  - "HGIS 144992"
 aliases:
   - "경상남도/기장군 (HGIS 144992)"
 ---

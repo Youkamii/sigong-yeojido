@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156849"
 label: "경상북도/고령군/구음면"
-labelNote: "HGIS 156849"
+sourceRef:
+  - "HGIS 156849"
 aliases:
   - "경상북도/고령군/구음면 (HGIS 156849)"
 ---

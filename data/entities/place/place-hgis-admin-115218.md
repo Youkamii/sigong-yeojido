@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115218"
 label: "전라남도/영광군/마촌면"
-labelNote: "HGIS 115218"
+sourceRef:
+  - "HGIS 115218"
 aliases:
   - "전라남도/영광군/마촌면 (HGIS 115218)"
 ---

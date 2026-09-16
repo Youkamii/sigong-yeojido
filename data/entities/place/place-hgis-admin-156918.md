@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156918"
 label: "경상북도/김천군/위량면"
-labelNote: "HGIS 156918"
+sourceRef:
+  - "HGIS 156918"
 aliases:
   - "경상북도/김천군/위량면 (HGIS 156918)"
 ---

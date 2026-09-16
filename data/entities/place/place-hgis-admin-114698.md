@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114698"
 label: "전라남도/여수군/소라면"
-labelNote: "HGIS 114698"
+sourceRef:
+  - "HGIS 114698"
 aliases:
   - "전라남도/여수군/소라면 (HGIS 114698)"
 ---

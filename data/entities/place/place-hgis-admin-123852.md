@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123852"
 label: "전라남도/화순군/내남면"
-labelNote: "HGIS 123852"
+sourceRef:
+  - "HGIS 123852"
 aliases:
   - "전라남도/화순군/내남면 (HGIS 123852)"
 ---

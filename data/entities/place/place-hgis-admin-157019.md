@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157019"
 label: "경상북도/예천군/신당면"
-labelNote: "HGIS 157019"
+sourceRef:
+  - "HGIS 157019"
 aliases:
   - "경상북도/예천군/신당면 (HGIS 157019)"
 ---

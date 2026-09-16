@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157372"
 label: "경상북도/영천군/화북면"
-labelNote: "HGIS 157372"
+sourceRef:
+  - "HGIS 157372"
 aliases:
   - "경상북도/영천군/화북면 (HGIS 157372)"
 ---

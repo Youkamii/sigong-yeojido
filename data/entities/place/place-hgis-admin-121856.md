@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121856"
 label: "전라남도/진도군/가사도면"
-labelNote: "HGIS 121856"
+sourceRef:
+  - "HGIS 121856"
 aliases:
   - "전라남도/진도군/가사도면 (HGIS 121856)"
 ---

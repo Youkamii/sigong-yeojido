@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144524"
 label: "경상남도/의령군/화곡면"
-labelNote: "HGIS 144524"
+sourceRef:
+  - "HGIS 144524"
 aliases:
   - "경상남도/의령군/화곡면 (HGIS 144524)"
 ---

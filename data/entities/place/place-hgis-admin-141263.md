@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141263"
 label: "평안북도/의주부/가산면"
-labelNote: "HGIS 141263"
+sourceRef:
+  - "HGIS 141263"
 aliases:
   - "평안북도/의주부/가산면 (HGIS 141263)"
 ---

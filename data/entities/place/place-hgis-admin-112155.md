@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112155"
 label: "전라남도/광주군/오치면"
-labelNote: "HGIS 112155"
+sourceRef:
+  - "HGIS 112155"
 aliases:
   - "전라남도/광주군/오치면 (HGIS 112155)"
 ---

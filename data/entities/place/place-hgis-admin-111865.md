@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111865"
 label: "전라남도/광주군/동곡면"
-labelNote: "HGIS 111865"
+sourceRef:
+  - "HGIS 111865"
 aliases:
   - "전라남도/광주군/동곡면 (HGIS 111865)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144079"
 label: "경상남도/거창군/동부면"
-labelNote: "HGIS 144079"
+sourceRef:
+  - "HGIS 144079"
 aliases:
   - "경상남도/거창군/동부면 (HGIS 144079)"
 ---

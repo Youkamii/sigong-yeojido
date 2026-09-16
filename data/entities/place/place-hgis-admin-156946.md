@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156946"
 label: "경상북도/달성군/하빈면"
-labelNote: "HGIS 156946"
+sourceRef:
+  - "HGIS 156946"
 aliases:
   - "경상북도/달성군/하빈면 (HGIS 156946)"
 ---

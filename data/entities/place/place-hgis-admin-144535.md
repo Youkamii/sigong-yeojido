@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144535"
 label: "경상남도/진주군/금곡면"
-labelNote: "HGIS 144535"
+sourceRef:
+  - "HGIS 144535"
 aliases:
   - "경상남도/진주군/금곡면 (HGIS 144535)"
 ---

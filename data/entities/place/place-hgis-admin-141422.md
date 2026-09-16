@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141422"
 label: "평안북도/의주부/소곶면"
-labelNote: "HGIS 141422"
+sourceRef:
+  - "HGIS 141422"
 aliases:
   - "평안북도/의주부/소곶면 (HGIS 141422)"
 ---

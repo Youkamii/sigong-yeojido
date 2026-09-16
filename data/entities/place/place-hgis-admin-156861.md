@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156861"
 label: "경상북도/고령군/쌍동면"
-labelNote: "HGIS 156861"
+sourceRef:
+  - "HGIS 156861"
 aliases:
   - "경상북도/고령군/쌍동면 (HGIS 156861)"
 ---

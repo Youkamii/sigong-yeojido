@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144780"
 label: "경상남도/합천군/가야면"
-labelNote: "HGIS 144780"
+sourceRef:
+  - "HGIS 144780"
 aliases:
   - "경상남도/합천군/가야면 (HGIS 144780)"
 ---

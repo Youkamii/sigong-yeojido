@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156767"
 label: "경상북도/현풍군/서부면"
-labelNote: "HGIS 156767"
+sourceRef:
+  - "HGIS 156767"
 aliases:
   - "경상북도/현풍군/서부면 (HGIS 156767)"
 ---

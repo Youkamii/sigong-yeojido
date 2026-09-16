@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143247"
 label: "경상남도/진양군/수곡면"
-labelNote: "HGIS 143247"
+sourceRef:
+  - "HGIS 143247"
 aliases:
   - "경상남도/진양군/수곡면 (HGIS 143247)"
 ---

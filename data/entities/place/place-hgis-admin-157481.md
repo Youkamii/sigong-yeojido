@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157481"
 label: "경상북도/청도군/종도면"
-labelNote: "HGIS 157481"
+sourceRef:
+  - "HGIS 157481"
 aliases:
   - "경상북도/청도군/종도면 (HGIS 157481)"
 ---

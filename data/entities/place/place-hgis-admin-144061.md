@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144061"
 label: "경상남도/거제군/장목면"
-labelNote: "HGIS 144061"
+sourceRef:
+  - "HGIS 144061"
 aliases:
   - "경상남도/거제군/장목면 (HGIS 144061)"
 ---

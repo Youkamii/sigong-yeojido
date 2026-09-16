@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144441"
 label: "경상남도/울산군/내현면"
-labelNote: "HGIS 144441"
+sourceRef:
+  - "HGIS 144441"
 aliases:
   - "경상남도/울산군/내현면 (HGIS 144441)"
 ---

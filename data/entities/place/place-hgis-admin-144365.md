@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144365"
 label: "경상남도/삼가군/중촌면"
-labelNote: "HGIS 144365"
+sourceRef:
+  - "HGIS 144365"
 aliases:
   - "경상남도/삼가군/중촌면 (HGIS 144365)"
 ---

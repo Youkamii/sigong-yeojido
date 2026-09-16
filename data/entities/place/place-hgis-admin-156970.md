@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156970"
 label: "경상북도/대구부/동하면"
-labelNote: "HGIS 156970"
+sourceRef:
+  - "HGIS 156970"
 aliases:
   - "경상북도/대구부/동하면 (HGIS 156970)"
 ---

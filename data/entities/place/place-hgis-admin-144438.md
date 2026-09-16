@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144438"
 label: "경상남도/울산군/농동면"
-labelNote: "HGIS 144438"
+sourceRef:
+  - "HGIS 144438"
 aliases:
   - "경상남도/울산군/농동면 (HGIS 144438)"
 ---

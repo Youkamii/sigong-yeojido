@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120093"
 label: "전라남도/장성군/읍동면"
-labelNote: "HGIS 120093"
+sourceRef:
+  - "HGIS 120093"
 aliases:
   - "전라남도/장성군/읍동면 (HGIS 120093)"
 ---

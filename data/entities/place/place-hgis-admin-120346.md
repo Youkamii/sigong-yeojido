@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120346"
 label: "전라남도/장흥군/대덕면"
-labelNote: "HGIS 120346"
+sourceRef:
+  - "HGIS 120346"
 aliases:
   - "전라남도/장흥군/대덕면 (HGIS 120346)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156749"
 label: "경상북도/청도군/고이면"
-labelNote: "HGIS 156749"
+sourceRef:
+  - "HGIS 156749"
 aliases:
   - "경상북도/청도군/고이면 (HGIS 156749)"
 ---

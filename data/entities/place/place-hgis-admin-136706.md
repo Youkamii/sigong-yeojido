@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136706"
 label: "평안북도/용천군/용암포읍"
-labelNote: "HGIS 136706"
+sourceRef:
+  - "HGIS 136706"
 aliases:
   - "평안북도/용천군/용암포읍 (HGIS 136706)"
 ---

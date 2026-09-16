@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157579"
 label: "경상북도/비안군/현서면"
-labelNote: "HGIS 157579"
+sourceRef:
+  - "HGIS 157579"
 aliases:
   - "경상북도/비안군/현서면 (HGIS 157579)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157550"
 label: "경상북도/함창군/수하면"
-labelNote: "HGIS 157550"
+sourceRef:
+  - "HGIS 157550"
 aliases:
   - "경상북도/함창군/수하면 (HGIS 157550)"
 ---

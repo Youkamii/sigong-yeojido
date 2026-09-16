@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123084"
 label: "전라남도/함평군/학교면"
-labelNote: "HGIS 123084"
+sourceRef:
+  - "HGIS 123084"
 aliases:
   - "전라남도/함평군/학교면 (HGIS 123084)"
 ---

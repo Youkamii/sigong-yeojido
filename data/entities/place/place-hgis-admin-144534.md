@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144534"
 label: "경상남도/진주군/갈곡면"
-labelNote: "HGIS 144534"
+sourceRef:
+  - "HGIS 144534"
 aliases:
   - "경상남도/진주군/갈곡면 (HGIS 144534)"
 ---

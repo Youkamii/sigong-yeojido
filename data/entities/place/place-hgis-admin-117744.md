@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117744"
 label: "전라남도/무안군/이서면"
-labelNote: "HGIS 117744"
+sourceRef:
+  - "HGIS 117744"
 aliases:
   - "전라남도/무안군/이서면 (HGIS 117744)"
 ---

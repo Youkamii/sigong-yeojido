@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157251"
 label: "경상북도/연일군/동면"
-labelNote: "HGIS 157251"
+sourceRef:
+  - "HGIS 157251"
 aliases:
   - "경상북도/연일군/동면 (HGIS 157251)"
 ---

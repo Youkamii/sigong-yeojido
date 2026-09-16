@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156871"
 label: "경상북도/고령군/하동면"
-labelNote: "HGIS 156871"
+sourceRef:
+  - "HGIS 156871"
 aliases:
   - "경상북도/고령군/하동면 (HGIS 156871)"
 ---

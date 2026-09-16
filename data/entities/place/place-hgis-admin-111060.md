@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111060"
 label: "전라남도/곡성군/옥과면"
-labelNote: "HGIS 111060"
+sourceRef:
+  - "HGIS 111060"
 aliases:
   - "전라남도/곡성군/옥과면 (HGIS 111060)"
 ---

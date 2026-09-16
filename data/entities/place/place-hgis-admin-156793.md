@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156793"
 label: "경상북도/김산군/미곡면"
-labelNote: "HGIS 156793"
+sourceRef:
+  - "HGIS 156793"
 aliases:
   - "경상북도/김산군/미곡면 (HGIS 156793)"
 ---

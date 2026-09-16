@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157520"
 label: "경상북도/칠곡군/석적면"
-labelNote: "HGIS 157520"
+sourceRef:
+  - "HGIS 157520"
 aliases:
   - "경상북도/칠곡군/석적면 (HGIS 157520)"
 ---

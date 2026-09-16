@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143844"
 label: "경상남도/진양군/정촌면"
-labelNote: "HGIS 143844"
+sourceRef:
+  - "HGIS 143844"
 aliases:
   - "경상남도/진양군/정촌면 (HGIS 143844)"
 ---

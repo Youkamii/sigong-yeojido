@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156777"
 label: "경상북도/영일군/구룡포읍"
-labelNote: "HGIS 156777"
+sourceRef:
+  - "HGIS 156777"
 aliases:
   - "경상북도/영일군/구룡포읍 (HGIS 156777)"
 ---

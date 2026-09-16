@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144551"
 label: "경상남도/진주군/동물곡면"
-labelNote: "HGIS 144551"
+sourceRef:
+  - "HGIS 144551"
 aliases:
   - "경상남도/진주군/동물곡면 (HGIS 144551)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141030"
 label: "평안북도/위원군/봉산면"
-labelNote: "HGIS 141030"
+sourceRef:
+  - "HGIS 141030"
 aliases:
   - "평안북도/위원군/봉산면 (HGIS 141030)"
 ---

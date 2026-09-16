@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144143"
 label: "경상남도/곤양군/서면"
-labelNote: "HGIS 144143"
+sourceRef:
+  - "HGIS 144143"
 aliases:
   - "경상남도/곤양군/서면 (HGIS 144143)"
 ---

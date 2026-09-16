@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144216"
 label: "경상남도/마산부/양전면"
-labelNote: "HGIS 144216"
+sourceRef:
+  - "HGIS 144216"
 aliases:
   - "경상남도/마산부/양전면 (HGIS 144216)"
 ---

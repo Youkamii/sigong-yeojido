@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136452"
 label: "평안북도/정주군/덕암면"
-labelNote: "HGIS 136452"
+sourceRef:
+  - "HGIS 136452"
 aliases:
   - "평안북도/정주군/덕암면 (HGIS 136452)"
 ---

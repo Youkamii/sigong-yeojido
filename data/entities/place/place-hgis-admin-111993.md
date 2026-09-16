@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111993"
 label: "전라남도/광주군/비아면"
-labelNote: "HGIS 111993"
+sourceRef:
+  - "HGIS 111993"
 aliases:
   - "전라남도/광주군/비아면 (HGIS 111993)"
 ---

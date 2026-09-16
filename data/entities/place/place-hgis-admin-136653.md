@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136653"
 label: "평안북도/삭주군/양산면"
-labelNote: "HGIS 136653"
+sourceRef:
+  - "HGIS 136653"
 aliases:
   - "평안북도/삭주군/양산면 (HGIS 136653)"
 ---

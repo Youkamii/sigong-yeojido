@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157030"
 label: "경상북도/용궁군/신상면"
-labelNote: "HGIS 157030"
+sourceRef:
+  - "HGIS 157030"
 aliases:
   - "경상북도/용궁군/신상면 (HGIS 157030)"
 ---

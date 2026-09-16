@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157223"
 label: "경상북도/안동군/예안면"
-labelNote: "HGIS 157223"
+sourceRef:
+  - "HGIS 157223"
 aliases:
   - "경상북도/안동군/예안면 (HGIS 157223)"
 ---

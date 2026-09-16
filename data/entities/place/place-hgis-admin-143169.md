@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143169"
 label: "경상남도/사천군/삼천포면"
-labelNote: "HGIS 143169"
+sourceRef:
+  - "HGIS 143169"
 aliases:
   - "경상남도/사천군/삼천포면 (HGIS 143169)"
 ---

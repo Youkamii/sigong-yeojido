@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117154"
 label: "전라남도/목포부/부내면"
-labelNote: "HGIS 117154"
+sourceRef:
+  - "HGIS 117154"
 aliases:
   - "전라남도/목포부/부내면 (HGIS 117154)"
 ---

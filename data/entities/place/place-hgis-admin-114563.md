@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114563"
 label: "전라남도/여수군/두남면"
-labelNote: "HGIS 114563"
+sourceRef:
+  - "HGIS 114563"
 aliases:
   - "전라남도/여수군/두남면 (HGIS 114563)"
 ---

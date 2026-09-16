@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112268"
 label: "전라남도/광주군/하대곡면"
-labelNote: "HGIS 112268"
+sourceRef:
+  - "HGIS 112268"
 aliases:
   - "전라남도/광주군/하대곡면 (HGIS 112268)"
 ---

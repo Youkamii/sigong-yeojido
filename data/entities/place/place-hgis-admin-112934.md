@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112934"
 label: "전라남도/남평군/죽곡면"
-labelNote: "HGIS 112934"
+sourceRef:
+  - "HGIS 112934"
 aliases:
   - "전라남도/남평군/죽곡면 (HGIS 112934)"
 ---

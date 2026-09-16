@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156926"
 label: "경상북도/대구군/해서부면"
-labelNote: "HGIS 156926"
+sourceRef:
+  - "HGIS 156926"
 aliases:
   - "경상북도/대구군/해서부면 (HGIS 156926)"
 ---

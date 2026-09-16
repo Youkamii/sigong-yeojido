@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136383"
 label: "평안북도/삭주군/수우면"
-labelNote: "HGIS 136383"
+sourceRef:
+  - "HGIS 136383"
 aliases:
   - "평안북도/삭주군/수우면 (HGIS 136383)"
 ---

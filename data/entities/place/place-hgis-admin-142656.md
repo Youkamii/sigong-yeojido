@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142656"
 label: "평안북도/초산군/고성면"
-labelNote: "HGIS 142656"
+sourceRef:
+  - "HGIS 142656"
 aliases:
   - "평안북도/초산군/고성면 (HGIS 142656)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144208"
 label: "경상남도/마산부/내서면"
-labelNote: "HGIS 144208"
+sourceRef:
+  - "HGIS 144208"
 aliases:
   - "경상남도/마산부/내서면 (HGIS 144208)"
 ---

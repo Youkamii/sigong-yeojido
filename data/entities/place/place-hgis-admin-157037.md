@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157037"
 label: "경상북도/문경군/가동면"
-labelNote: "HGIS 157037"
+sourceRef:
+  - "HGIS 157037"
 aliases:
   - "경상북도/문경군/가동면 (HGIS 157037)"
 ---

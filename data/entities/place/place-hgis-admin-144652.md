@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144652"
 label: "경상남도/창원군/진전면"
-labelNote: "HGIS 144652"
+sourceRef:
+  - "HGIS 144652"
 aliases:
   - "경상남도/창원군/진전면 (HGIS 144652)"
 ---

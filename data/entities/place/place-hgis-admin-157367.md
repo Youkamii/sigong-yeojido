@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157367"
 label: "경상북도/영천군/청통면"
-labelNote: "HGIS 157367"
+sourceRef:
+  - "HGIS 157367"
 aliases:
   - "경상북도/영천군/청통면 (HGIS 157367)"
 ---

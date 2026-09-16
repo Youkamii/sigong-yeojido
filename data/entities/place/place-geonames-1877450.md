@@ -2,7 +2,9 @@
 type: "Place"
 id: "place-geonames-1877450"
 label: "함경남도"
-labelNote: "South Hamgyong (GeoNames 1877450)"
+labelNote: "South Hamgyong"
+sourceRef:
+  - "GeoNames 1877450"
 aliases:
   - "함경남도 · South Hamgyong (GeoNames 1877450)"
 ---

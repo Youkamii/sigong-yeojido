@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120871"
 label: "전라남도/정의군/동중면"
-labelNote: "HGIS 120871"
+sourceRef:
+  - "HGIS 120871"
 aliases:
   - "전라남도/정의군/동중면 (HGIS 120871)"
 ---

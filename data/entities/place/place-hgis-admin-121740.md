@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121740"
 label: "전라남도/지도군/임자면"
-labelNote: "HGIS 121740"
+sourceRef:
+  - "HGIS 121740"
 aliases:
   - "전라남도/지도군/임자면 (HGIS 121740)"
 ---

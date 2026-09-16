@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156813"
 label: "경상북도/경산군/서면"
-labelNote: "HGIS 156813"
+sourceRef:
+  - "HGIS 156813"
 aliases:
   - "경상북도/경산군/서면 (HGIS 156813)"
 ---

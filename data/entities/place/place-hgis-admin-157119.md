@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157119"
 label: "경상북도/상주군/대평면"
-labelNote: "HGIS 157119"
+sourceRef:
+  - "HGIS 157119"
 aliases:
   - "경상북도/상주군/대평면 (HGIS 157119)"
 ---

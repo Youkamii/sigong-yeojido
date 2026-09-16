@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156971"
 label: "경상북도/예안군/의동면"
-labelNote: "HGIS 156971"
+sourceRef:
+  - "HGIS 156971"
 aliases:
   - "경상북도/예안군/의동면 (HGIS 156971)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144655"
 label: "경상남도/창원부/진서면"
-labelNote: "HGIS 144655"
+sourceRef:
+  - "HGIS 144655"
 aliases:
   - "경상남도/창원부/진서면 (HGIS 144655)"
 ---

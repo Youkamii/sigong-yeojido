@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122948"
 label: "전라남도/함평군/월악면"
-labelNote: "HGIS 122948"
+sourceRef:
+  - "HGIS 122948"
 aliases:
   - "전라남도/함평군/월악면 (HGIS 122948)"
 ---

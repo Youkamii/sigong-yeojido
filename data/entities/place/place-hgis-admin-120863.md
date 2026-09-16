@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120863"
 label: "전라남도/장흥군/회령면"
-labelNote: "HGIS 120863"
+sourceRef:
+  - "HGIS 120863"
 aliases:
   - "전라남도/장흥군/회령면 (HGIS 120863)"
 ---

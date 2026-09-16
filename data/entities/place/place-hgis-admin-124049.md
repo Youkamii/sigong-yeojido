@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-124049"
 label: "전라남도/흥양군/대서면"
-labelNote: "HGIS 124049"
+sourceRef:
+  - "HGIS 124049"
 aliases:
   - "전라남도/흥양군/대서면 (HGIS 124049)"
 ---

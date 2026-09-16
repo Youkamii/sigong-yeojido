@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123901"
 label: "전라남도/화순군/춘양면"
-labelNote: "HGIS 123901"
+sourceRef:
+  - "HGIS 123901"
 aliases:
   - "전라남도/화순군/춘양면 (HGIS 123901)"
 ---

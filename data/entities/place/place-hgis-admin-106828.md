@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-106828"
 label: "전라북도/남원군/견소곡면"
-labelNote: "HGIS 106828"
+sourceRef:
+  - "HGIS 106828"
 aliases:
   - "전라북도/남원군/견소곡면 (HGIS 106828)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150336"
 label: "경상남도/동래부/남면"
-labelNote: "HGIS 150336"
+sourceRef:
+  - "HGIS 150336"
 aliases:
   - "경상남도/동래부/남면 (HGIS 150336)"
 ---

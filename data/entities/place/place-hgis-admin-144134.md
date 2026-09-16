@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144134"
 label: "경상남도/고성군/회화면"
-labelNote: "HGIS 144134"
+sourceRef:
+  - "HGIS 144134"
 aliases:
   - "경상남도/고성군/회화면 (HGIS 144134)"
 ---

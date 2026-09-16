@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157267"
 label: "경상북도/영덕군/오보면"
-labelNote: "HGIS 157267"
+sourceRef:
+  - "HGIS 157267"
 aliases:
   - "경상북도/영덕군/오보면 (HGIS 157267)"
 ---

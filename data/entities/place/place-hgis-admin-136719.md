@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136719"
 label: "평안북도/정주군/고안면"
-labelNote: "HGIS 136719"
+sourceRef:
+  - "HGIS 136719"
 aliases:
   - "평안북도/정주군/고안면 (HGIS 136719)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102477"
 label: "전라북도/임실군/하동면"
-labelNote: "HGIS 102477"
+sourceRef:
+  - "HGIS 102477"
 aliases:
   - "전라북도/임실군/하동면 (HGIS 102477)"
 ---

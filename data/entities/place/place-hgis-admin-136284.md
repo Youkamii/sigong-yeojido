@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136284"
 label: "평안북도/초산군/충상면"
-labelNote: "HGIS 136284"
+sourceRef:
+  - "HGIS 136284"
 aliases:
   - "평안북도/초산군/충상면 (HGIS 136284)"
 ---

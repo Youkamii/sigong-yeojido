@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-148824"
 label: "경상남도/동래군/서면"
-labelNote: "HGIS 148824"
+sourceRef:
+  - "HGIS 148824"
 aliases:
   - "경상남도/동래군/서면 (HGIS 148824)"
 ---

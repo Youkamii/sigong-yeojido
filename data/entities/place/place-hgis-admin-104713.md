@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-104713"
 label: "전라북도/고부군/장순면"
-labelNote: "HGIS 104713"
+sourceRef:
+  - "HGIS 104713"
 aliases:
   - "전라북도/고부군/장순면 (HGIS 104713)"
 ---

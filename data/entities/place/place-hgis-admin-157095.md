@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157095"
 label: "경상북도/선산군/고아면"
-labelNote: "HGIS 157095"
+sourceRef:
+  - "HGIS 157095"
 aliases:
   - "경상북도/선산군/고아면 (HGIS 157095)"
 ---

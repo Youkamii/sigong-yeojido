@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157302"
 label: "경상북도/영일군/죽북면"
-labelNote: "HGIS 157302"
+sourceRef:
+  - "HGIS 157302"
 aliases:
   - "경상북도/영일군/죽북면 (HGIS 157302)"
 ---

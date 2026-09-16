@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119670"
 label: "전라남도/장성군/남이면"
-labelNote: "HGIS 119670"
+sourceRef:
+  - "HGIS 119670"
 aliases:
   - "전라남도/장성군/남이면 (HGIS 119670)"
 ---

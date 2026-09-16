@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136654"
 label: "평안북도/삭주군/외남면"
-labelNote: "HGIS 136654"
+sourceRef:
+  - "HGIS 136654"
 aliases:
   - "평안북도/삭주군/외남면 (HGIS 136654)"
 ---

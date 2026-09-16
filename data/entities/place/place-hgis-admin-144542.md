@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144542"
 label: "경상남도/진주군/대각면"
-labelNote: "HGIS 144542"
+sourceRef:
+  - "HGIS 144542"
 aliases:
   - "경상남도/진주군/대각면 (HGIS 144542)"
 ---

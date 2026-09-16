@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144046"
 label: "경상남도/고성군/거류면"
-labelNote: "HGIS 144046"
+sourceRef:
+  - "HGIS 144046"
 aliases:
   - "경상남도/고성군/거류면 (HGIS 144046)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156998"
 label: "경상북도/대구부/해서촌면"
-labelNote: "HGIS 156998"
+sourceRef:
+  - "HGIS 156998"
 aliases:
   - "경상북도/대구부/해서촌면 (HGIS 156998)"
 ---

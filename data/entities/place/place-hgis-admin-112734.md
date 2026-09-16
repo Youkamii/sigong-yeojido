@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112734"
 label: "전라남도/남평군/다소면"
-labelNote: "HGIS 112734"
+sourceRef:
+  - "HGIS 112734"
 aliases:
   - "전라남도/남평군/다소면 (HGIS 112734)"
 ---

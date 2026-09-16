@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-146707"
 label: "경상남도/마산부/각국거류지"
-labelNote: "HGIS 146707"
+sourceRef:
+  - "HGIS 146707"
 aliases:
   - "경상남도/마산부/각국거류지 (HGIS 146707)"
 ---

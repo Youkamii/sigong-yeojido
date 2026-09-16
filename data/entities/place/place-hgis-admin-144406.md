@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144406"
 label: "경상남도/언양군/하북면"
-labelNote: "HGIS 144406"
+sourceRef:
+  - "HGIS 144406"
 aliases:
   - "경상남도/언양군/하북면 (HGIS 144406)"
 ---

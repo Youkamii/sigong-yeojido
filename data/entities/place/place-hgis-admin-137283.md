@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137283"
 label: "평안북도/의주군/월화면"
-labelNote: "HGIS 137283"
+sourceRef:
+  - "HGIS 137283"
 aliases:
   - "평안북도/의주군/월화면 (HGIS 137283)"
 ---

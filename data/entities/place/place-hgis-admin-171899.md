@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-171899"
 label: "경상북도/개령군/농소면"
-labelNote: "HGIS 171899"
+sourceRef:
+  - "HGIS 171899"
 aliases:
   - "경상북도/개령군/농소면 (HGIS 171899)"
 ---

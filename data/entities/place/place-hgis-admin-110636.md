@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110636"
 label: "전라남도/강진군/성전면"
-labelNote: "HGIS 110636"
+sourceRef:
+  - "HGIS 110636"
 aliases:
   - "전라남도/강진군/성전면 (HGIS 110636)"
 ---

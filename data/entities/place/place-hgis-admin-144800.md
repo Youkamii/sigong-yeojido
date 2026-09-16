@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144800"
 label: "경상남도/합천군/율진면"
-labelNote: "HGIS 144800"
+sourceRef:
+  - "HGIS 144800"
 aliases:
   - "경상남도/합천군/율진면 (HGIS 144800)"
 ---

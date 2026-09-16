@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111811"
 label: "전라남도/광주군/대촌면"
-labelNote: "HGIS 111811"
+sourceRef:
+  - "HGIS 111811"
 aliases:
   - "전라남도/광주군/대촌면 (HGIS 111811)"
 ---

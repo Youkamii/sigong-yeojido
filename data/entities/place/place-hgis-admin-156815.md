@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156815"
 label: "경상북도/경산군/압량면"
-labelNote: "HGIS 156815"
+sourceRef:
+  - "HGIS 156815"
 aliases:
   - "경상북도/경산군/압량면 (HGIS 156815)"
 ---

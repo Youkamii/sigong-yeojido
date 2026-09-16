@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157104"
 label: "경상북도/비안군/우곡면"
-labelNote: "HGIS 157104"
+sourceRef:
+  - "HGIS 157104"
 aliases:
   - "경상북도/비안군/우곡면 (HGIS 157104)"
 ---

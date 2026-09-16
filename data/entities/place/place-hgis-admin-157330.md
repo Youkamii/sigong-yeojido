@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157330"
 label: "경상북도/영천군/어화면"
-labelNote: "HGIS 157330"
+sourceRef:
+  - "HGIS 157330"
 aliases:
   - "경상북도/영천군/어화면 (HGIS 157330)"
 ---

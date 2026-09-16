@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143634"
 label: "경상남도/밀양군/이동면"
-labelNote: "HGIS 143634"
+sourceRef:
+  - "HGIS 143634"
 aliases:
   - "경상남도/밀양군/이동면 (HGIS 143634)"
 ---

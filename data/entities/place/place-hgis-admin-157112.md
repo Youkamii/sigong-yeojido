@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157112"
 label: "경상북도/상주군/공성면"
-labelNote: "HGIS 157112"
+sourceRef:
+  - "HGIS 157112"
 aliases:
   - "경상북도/상주군/공성면 (HGIS 157112)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117672"
 label: "전라남도/무안군/도초면"
-labelNote: "HGIS 117672"
+sourceRef:
+  - "HGIS 117672"
 aliases:
   - "전라남도/무안군/도초면 (HGIS 117672)"
 ---

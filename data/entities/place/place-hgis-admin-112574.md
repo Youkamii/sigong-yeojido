@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112574"
 label: "전라남도/구례군/방광면"
-labelNote: "HGIS 112574"
+sourceRef:
+  - "HGIS 112574"
 aliases:
   - "전라남도/구례군/방광면 (HGIS 112574)"
 ---

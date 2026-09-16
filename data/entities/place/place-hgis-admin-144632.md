@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144632"
 label: "경상남도/창녕군/지포면"
-labelNote: "HGIS 144632"
+sourceRef:
+  - "HGIS 144632"
 aliases:
   - "경상남도/창녕군/지포면 (HGIS 144632)"
 ---

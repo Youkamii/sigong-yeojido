@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144680"
 label: "경상남도/통영군/이운면"
-labelNote: "HGIS 144680"
+sourceRef:
+  - "HGIS 144680"
 aliases:
   - "경상남도/통영군/이운면 (HGIS 144680)"
 ---

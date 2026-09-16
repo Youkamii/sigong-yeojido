@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-151673"
 label: "경상남도/창원부/북면"
-labelNote: "HGIS 151673"
+sourceRef:
+  - "HGIS 151673"
 aliases:
   - "경상남도/창원부/북면 (HGIS 151673)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140821"
 label: "평안북도/운산군/북면"
-labelNote: "HGIS 140821"
+sourceRef:
+  - "HGIS 140821"
 aliases:
   - "평안북도/운산군/북면 (HGIS 140821)"
 ---

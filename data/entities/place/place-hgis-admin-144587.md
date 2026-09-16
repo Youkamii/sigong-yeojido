@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144587"
 label: "경상남도/진주군/조동면"
-labelNote: "HGIS 144587"
+sourceRef:
+  - "HGIS 144587"
 aliases:
   - "경상남도/진주군/조동면 (HGIS 144587)"
 ---

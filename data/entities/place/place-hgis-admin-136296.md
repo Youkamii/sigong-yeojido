@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136296"
 label: "평안북도/강계군/곡하방"
-labelNote: "HGIS 136296"
+sourceRef:
+  - "HGIS 136296"
 aliases:
   - "평안북도/강계군/곡하방 (HGIS 136296)"
 ---

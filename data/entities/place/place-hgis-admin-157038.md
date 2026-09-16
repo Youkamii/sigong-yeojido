@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157038"
 label: "경상북도/문경군/가현면"
-labelNote: "HGIS 157038"
+sourceRef:
+  - "HGIS 157038"
 aliases:
   - "경상북도/문경군/가현면 (HGIS 157038)"
 ---

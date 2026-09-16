@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144805"
 label: "경상남도/합천군/합천면"
-labelNote: "HGIS 144805"
+sourceRef:
+  - "HGIS 144805"
 aliases:
   - "경상남도/합천군/합천면 (HGIS 144805)"
 ---

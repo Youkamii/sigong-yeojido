@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113304"
 label: "전라남도/대정군/우면"
-labelNote: "HGIS 113304"
+sourceRef:
+  - "HGIS 113304"
 aliases:
   - "전라남도/대정군/우면 (HGIS 113304)"
 ---

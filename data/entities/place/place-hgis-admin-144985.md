@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144985"
 label: "경상남도/진양군"
-labelNote: "HGIS 144985"
+sourceRef:
+  - "HGIS 144985"
 aliases:
   - "경상남도/진양군 (HGIS 144985)"
 ---

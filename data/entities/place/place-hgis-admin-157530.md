@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157530"
 label: "경상북도/칠곡군/하북면"
-labelNote: "HGIS 157530"
+sourceRef:
+  - "HGIS 157530"
 aliases:
   - "경상북도/칠곡군/하북면 (HGIS 157530)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114812"
 label: "전라남도/여수군/현내면"
-labelNote: "HGIS 114812"
+sourceRef:
+  - "HGIS 114812"
 aliases:
   - "전라남도/여수군/현내면 (HGIS 114812)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143268"
 label: "경상남도/진주군/성태동면"
-labelNote: "HGIS 143268"
+sourceRef:
+  - "HGIS 143268"
 aliases:
   - "경상남도/진주군/성태동면 (HGIS 143268)"
 ---

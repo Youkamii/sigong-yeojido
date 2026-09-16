@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117349"
 label: "전라남도/목포부/외읍면"
-labelNote: "HGIS 117349"
+sourceRef:
+  - "HGIS 117349"
 aliases:
   - "전라남도/목포부/외읍면 (HGIS 117349)"
 ---

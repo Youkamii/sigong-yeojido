@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157509"
 label: "경상북도/청하군/서면"
-labelNote: "HGIS 157509"
+sourceRef:
+  - "HGIS 157509"
 aliases:
   - "경상북도/청하군/서면 (HGIS 157509)"
 ---

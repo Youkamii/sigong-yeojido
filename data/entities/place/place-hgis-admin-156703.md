@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156703"
 label: "황해도"
-labelNote: "HGIS 156703"
+sourceRef:
+  - "HGIS 156703"
 aliases:
   - "황해도 (HGIS 156703)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116251"
 label: "전라남도/영암군/명산면"
-labelNote: "HGIS 116251"
+sourceRef:
+  - "HGIS 116251"
 aliases:
   - "전라남도/영암군/명산면 (HGIS 116251)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144123"
 label: "경상남도/고성군/오읍곡면"
-labelNote: "HGIS 144123"
+sourceRef:
+  - "HGIS 144123"
 aliases:
   - "경상남도/고성군/오읍곡면 (HGIS 144123)"
 ---

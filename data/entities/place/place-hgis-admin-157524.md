@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157524"
 label: "경상북도/칠곡군/인동면"
-labelNote: "HGIS 157524"
+sourceRef:
+  - "HGIS 157524"
 aliases:
   - "경상북도/칠곡군/인동면 (HGIS 157524)"
 ---

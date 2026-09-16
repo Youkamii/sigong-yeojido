@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115037"
 label: "전라남도/영광군/대안면"
-labelNote: "HGIS 115037"
+sourceRef:
+  - "HGIS 115037"
 aliases:
   - "전라남도/영광군/대안면 (HGIS 115037)"
 ---

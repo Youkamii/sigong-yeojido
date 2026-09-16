@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144215"
 label: "경상남도/함양군/서하면"
-labelNote: "HGIS 144215"
+sourceRef:
+  - "HGIS 144215"
 aliases:
   - "경상남도/함양군/서하면 (HGIS 144215)"
 ---

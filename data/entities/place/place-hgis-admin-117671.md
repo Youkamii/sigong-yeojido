@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117671"
 label: "전라남도/무안군/다경면"
-labelNote: "HGIS 117671"
+sourceRef:
+  - "HGIS 117671"
 aliases:
   - "전라남도/무안군/다경면 (HGIS 117671)"
 ---

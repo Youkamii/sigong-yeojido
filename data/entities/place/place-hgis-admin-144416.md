@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144416"
 label: "경상남도/울도군/북면"
-labelNote: "HGIS 144416"
+sourceRef:
+  - "HGIS 144416"
 aliases:
   - "경상남도/울도군/북면 (HGIS 144416)"
 ---

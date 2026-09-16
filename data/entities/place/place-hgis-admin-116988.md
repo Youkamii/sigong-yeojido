@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116988"
 label: "전라남도/능주군/회덕면"
-labelNote: "HGIS 116988"
+sourceRef:
+  - "HGIS 116988"
 aliases:
   - "전라남도/능주군/회덕면 (HGIS 116988)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111288"
 label: "전라남도/광산군"
-labelNote: "HGIS 111288"
+sourceRef:
+  - "HGIS 111288"
 aliases:
   - "전라남도/광산군 (HGIS 111288)"
 ---

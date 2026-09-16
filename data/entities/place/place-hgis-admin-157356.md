@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157356"
 label: "경상북도/영천군/완산면"
-labelNote: "HGIS 157356"
+sourceRef:
+  - "HGIS 157356"
 aliases:
   - "경상북도/영천군/완산면 (HGIS 157356)"
 ---

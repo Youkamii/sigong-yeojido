@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157578"
 label: "경상북도/대구부/서상면"
-labelNote: "HGIS 157578"
+sourceRef:
+  - "HGIS 157578"
 aliases:
   - "경상북도/대구부/서상면 (HGIS 157578)"
 ---

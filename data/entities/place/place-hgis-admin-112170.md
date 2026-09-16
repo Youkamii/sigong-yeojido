@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112170"
 label: "전라남도/광주군/우산면"
-labelNote: "HGIS 112170"
+sourceRef:
+  - "HGIS 112170"
 aliases:
   - "전라남도/광주군/우산면 (HGIS 112170)"
 ---

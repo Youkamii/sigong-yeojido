@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141123"
 label: "평안북도/위원군/한상면"
-labelNote: "HGIS 141123"
+sourceRef:
+  - "HGIS 141123"
 aliases:
   - "평안북도/위원군/한상면 (HGIS 141123)"
 ---

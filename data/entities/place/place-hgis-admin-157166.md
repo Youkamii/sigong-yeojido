@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157166"
 label: "경상북도/선산군/평성면"
-labelNote: "HGIS 157166"
+sourceRef:
+  - "HGIS 157166"
 aliases:
   - "경상북도/선산군/평성면 (HGIS 157166)"
 ---

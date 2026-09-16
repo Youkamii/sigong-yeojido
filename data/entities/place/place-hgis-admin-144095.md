@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144095"
 label: "경상남도/거창군/지상곡면"
-labelNote: "HGIS 144095"
+sourceRef:
+  - "HGIS 144095"
 aliases:
   - "경상남도/거창군/지상곡면 (HGIS 144095)"
 ---

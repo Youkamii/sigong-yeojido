@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157531"
 label: "경상북도/풍기군/생현면"
-labelNote: "HGIS 157531"
+sourceRef:
+  - "HGIS 157531"
 aliases:
   - "경상북도/풍기군/생현면 (HGIS 157531)"
 ---

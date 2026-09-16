@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156883"
 label: "경상북도/군위군/우보면"
-labelNote: "HGIS 156883"
+sourceRef:
+  - "HGIS 156883"
 aliases:
   - "경상북도/군위군/우보면 (HGIS 156883)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157341"
 label: "경상북도/영천군/내동면"
-labelNote: "HGIS 157341"
+sourceRef:
+  - "HGIS 157341"
 aliases:
   - "경상북도/영천군/내동면 (HGIS 157341)"
 ---

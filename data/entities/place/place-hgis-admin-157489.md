@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157489"
 label: "경상북도/청도군/현내면"
-labelNote: "HGIS 157489"
+sourceRef:
+  - "HGIS 157489"
 aliases:
   - "경상북도/청도군/현내면 (HGIS 157489)"
 ---

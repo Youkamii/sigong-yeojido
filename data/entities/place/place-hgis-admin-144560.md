@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144560"
 label: "경상남도/진주군/부화곡면"
-labelNote: "HGIS 144560"
+sourceRef:
+  - "HGIS 144560"
 aliases:
   - "경상남도/진주군/부화곡면 (HGIS 144560)"
 ---

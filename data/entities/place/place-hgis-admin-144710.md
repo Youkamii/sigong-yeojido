@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144710"
 label: "경상남도/하동군/운곡면"
-labelNote: "HGIS 144710"
+sourceRef:
+  - "HGIS 144710"
 aliases:
   - "경상남도/하동군/운곡면 (HGIS 144710)"
 ---

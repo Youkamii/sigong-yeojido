@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156953"
 label: "경상북도/대구군/감물천면"
-labelNote: "HGIS 156953"
+sourceRef:
+  - "HGIS 156953"
 aliases:
   - "경상북도/대구군/감물천면 (HGIS 156953)"
 ---

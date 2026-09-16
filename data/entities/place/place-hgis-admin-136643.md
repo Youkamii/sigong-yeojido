@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136643"
 label: "평안북도/벽동군/군부면"
-labelNote: "HGIS 136643"
+sourceRef:
+  - "HGIS 136643"
 aliases:
   - "평안북도/벽동군/군부면 (HGIS 136643)"
 ---

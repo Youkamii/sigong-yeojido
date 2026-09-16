@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144636"
 label: "경상남도/창녕군/합산면"
-labelNote: "HGIS 144636"
+sourceRef:
+  - "HGIS 144636"
 aliases:
   - "경상남도/창녕군/합산면 (HGIS 144636)"
 ---

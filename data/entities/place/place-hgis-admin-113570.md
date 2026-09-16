@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113570"
 label: "전라남도/동복군/외서면"
-labelNote: "HGIS 113570"
+sourceRef:
+  - "HGIS 113570"
 aliases:
   - "전라남도/동복군/외서면 (HGIS 113570)"
 ---

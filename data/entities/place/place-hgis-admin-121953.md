@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121953"
 label: "전라남도/진도군/도초도면"
-labelNote: "HGIS 121953"
+sourceRef:
+  - "HGIS 121953"
 aliases:
   - "전라남도/진도군/도초도면 (HGIS 121953)"
 ---

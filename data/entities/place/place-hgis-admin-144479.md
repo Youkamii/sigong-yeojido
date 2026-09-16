@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144479"
 label: "경상남도/울산군/하상면"
-labelNote: "HGIS 144479"
+sourceRef:
+  - "HGIS 144479"
 aliases:
   - "경상남도/울산군/하상면 (HGIS 144479)"
 ---

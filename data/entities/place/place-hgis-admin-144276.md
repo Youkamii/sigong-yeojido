@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144276"
 label: "경상남도/부산부/읍내면"
-labelNote: "HGIS 144276"
+sourceRef:
+  - "HGIS 144276"
 aliases:
   - "경상남도/부산부/읍내면 (HGIS 144276)"
 ---

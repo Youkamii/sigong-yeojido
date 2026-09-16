@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117212"
 label: "전라남도/목포부/삼향면"
-labelNote: "HGIS 117212"
+sourceRef:
+  - "HGIS 117212"
 aliases:
   - "전라남도/목포부/삼향면 (HGIS 117212)"
 ---

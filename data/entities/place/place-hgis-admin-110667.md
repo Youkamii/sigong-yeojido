@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110667"
 label: "전라남도/강진군/안주면"
-labelNote: "HGIS 110667"
+sourceRef:
+  - "HGIS 110667"
 aliases:
   - "전라남도/강진군/안주면 (HGIS 110667)"
 ---

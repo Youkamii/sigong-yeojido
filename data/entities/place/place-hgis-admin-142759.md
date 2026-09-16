@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142759"
 label: "평안북도/초산군/백면"
-labelNote: "HGIS 142759"
+sourceRef:
+  - "HGIS 142759"
 aliases:
   - "평안북도/초산군/백면 (HGIS 142759)"
 ---

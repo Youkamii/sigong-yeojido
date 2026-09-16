@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157380"
 label: "경상북도/의성군/금뢰면"
-labelNote: "HGIS 157380"
+sourceRef:
+  - "HGIS 157380"
 aliases:
   - "경상북도/의성군/금뢰면 (HGIS 157380)"
 ---

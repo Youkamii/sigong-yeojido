@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144184"
 label: "경상남도/김해군/진영면"
-labelNote: "HGIS 144184"
+sourceRef:
+  - "HGIS 144184"
 aliases:
   - "경상남도/김해군/진영면 (HGIS 144184)"
 ---

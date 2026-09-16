@@ -186,3 +186,33 @@
 6. **`labelNote` 에 개발 용어가 남는다.** `HGIS 144106` 같은 값이 2,000건 넘게 `labelNote` 로 들어갔다. 이름에서는
    빠졌지만 카드의 이름 옆 설명으로는 보인다. copy-style-v2 §1 의 개발 용어 규칙은 `coordinateNote` 만 다루므로
    이번엔 그대로 뒀다 — 보일 자리가 아니라면 표시 쪽에서 거르는 편이 낫다.
+
+## 2차 — 남은 결함 중 고친 것
+
+위 '남은 결함' 1·2·5·6 을 2차에서 정리했다. 3(중복 기록 121묶음)은 그대로 두고, 4(실제 서버 왕복)는 여전히
+서버 기동 금지라 단위 검사로만 확인했다.
+
+| 결함 | 한 것 |
+| --- | --- |
+| 5. 카드 '다른 이름' 줄의 정리 전 표기 | `chronicle.js` 에 `visibleAliases` 추가 — alias 를 `displayLabel` 규칙으로 정리한 값이 표시 이름과 같으면 카드에서 뺀다. 검색(`atlas-data.js`)은 `entity.aliases` 를 그대로 쓰므로 옛 이름으로도 계속 찾힌다 |
+| 6. `labelNote` 의 개발 용어 | 새 머리말 키 `sourceRef`(문자열 배열)로 자료 식별자를 옮겼다. `labelNote` 3,092 → 853, `sourceRef` 2,267. `labelNote` 전수에 `[A-Z]{2,}\s?\d+\|\bE\d{7}\b\|hgis` 0건 |
+| 1. 괄호 안의 `' · '` | `displayLabel`·`clean_label` 이 괄호 밖의 `' · '` 만 자른다(`splitOutsideParens`/`split_outside_parens`). 데이터 2건(부산대학교 박물관·국립중앙박물관)도 정리 — 이름에서 `(발굴 조사 기관 · 집단 행위자)` 를 떼고 `labelNote: 발굴 조사 기관`·`kind: group` 으로 |
+| 2. 재임포트 시 되살아남 | `scripts/README-pipeline.md`(신규)에 재적재 5단계를 적고, `import_period_research.py` 가 끝날 때 그 순서를 표준 오류로 알린다. 적재기가 `clean_entity_labels --apply` 를 자동 호출하지는 않는다(아래) |
+
+### `sourceRef` 로 옮긴 값
+
+| 모양 | 건수 | `labelNote` | `sourceRef` |
+| --- | ---: | --- | --- |
+| `HGIS 176301` | 2,241 | (지움) | `HGIS 176301` |
+| `조선 제25대, 민족문화대백과 E0056172` | 24 | `조선 제25대` | `민족문화대백과 E0056172` |
+| `Taebong (Cliopatria 4052)` | 1 | `Taebong` | `Cliopatria 4052` |
+| `South Hamgyong (GeoNames 1877450)` | 1 | `South Hamgyong` | `GeoNames 1877450` |
+
+`sourceRef` 는 `server.entity_shells` → `chronicle_query.apply_shell_names` 로 응답에 실리고
+`build_ttl` 이 `syj:sourceRef` 로 내보내지만, 화면 어디에서도 읽지 않는다.
+
+### 적재기에 자동 훅을 넣지 않은 이유
+
+`clean_entity_labels.py` 는 `data/entities` 전체(13,323개)를 훑어 충돌 판정을 다시 한다. 칸 하나를 적재할 때마다
+저장소 전체 이름을 손대면 적재 diff 에 무관한 파일이 섞여 사람이 검토하기 어렵다. 그래서 적재기는 다음 단계를
+알려 주기만 하고, 순서는 `scripts/README-pipeline.md` 에 적었다.

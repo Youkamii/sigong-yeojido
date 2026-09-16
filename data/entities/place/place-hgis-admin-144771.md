@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144771"
 label: "경상남도/함양군/유등면"
-labelNote: "HGIS 144771"
+sourceRef:
+  - "HGIS 144771"
 aliases:
   - "경상남도/함양군/유등면 (HGIS 144771)"
 ---

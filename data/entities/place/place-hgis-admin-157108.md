@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157108"
 label: "경상북도/비안군/현남면"
-labelNote: "HGIS 157108"
+sourceRef:
+  - "HGIS 157108"
 aliases:
   - "경상북도/비안군/현남면 (HGIS 157108)"
 ---

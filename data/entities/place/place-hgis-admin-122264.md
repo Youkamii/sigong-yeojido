@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122264"
 label: "전라남도/창평군/고현내면"
-labelNote: "HGIS 122264"
+sourceRef:
+  - "HGIS 122264"
 aliases:
   - "전라남도/창평군/고현내면 (HGIS 122264)"
 ---

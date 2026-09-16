@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144132"
 label: "경상남도/고성군/화양면"
-labelNote: "HGIS 144132"
+sourceRef:
+  - "HGIS 144132"
 aliases:
   - "경상남도/고성군/화양면 (HGIS 144132)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157033"
 label: "경상북도/용궁군/내상면"
-labelNote: "HGIS 157033"
+sourceRef:
+  - "HGIS 157033"
 aliases:
   - "경상북도/용궁군/내상면 (HGIS 157033)"
 ---

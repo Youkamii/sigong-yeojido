@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-153918"
 label: "경상남도/밀양군/밀양읍"
-labelNote: "HGIS 153918"
+sourceRef:
+  - "HGIS 153918"
 aliases:
   - "경상남도/밀양군/밀양읍 (HGIS 153918)"
 ---

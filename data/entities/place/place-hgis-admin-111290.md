@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111290"
 label: "전라남도/광주군/거치면"
-labelNote: "HGIS 111290"
+sourceRef:
+  - "HGIS 111290"
 aliases:
   - "전라남도/광주군/거치면 (HGIS 111290)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144210"
 label: "경상남도/마산부/동면"
-labelNote: "HGIS 144210"
+sourceRef:
+  - "HGIS 144210"
 aliases:
   - "경상남도/마산부/동면 (HGIS 144210)"
 ---

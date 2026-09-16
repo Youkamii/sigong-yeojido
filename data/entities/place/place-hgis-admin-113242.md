@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113242"
 label: "전라남도/담양군/월산면"
-labelNote: "HGIS 113242"
+sourceRef:
+  - "HGIS 113242"
 aliases:
   - "전라남도/담양군/월산면 (HGIS 113242)"
 ---

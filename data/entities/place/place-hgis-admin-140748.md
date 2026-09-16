@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140748"
 label: "평안북도/용천부/광화면"
-labelNote: "HGIS 140748"
+sourceRef:
+  - "HGIS 140748"
 aliases:
   - "평안북도/용천부/광화면 (HGIS 140748)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156879"
 label: "경상북도/군위군/산성면"
-labelNote: "HGIS 156879"
+sourceRef:
+  - "HGIS 156879"
 aliases:
   - "경상북도/군위군/산성면 (HGIS 156879)"
 ---

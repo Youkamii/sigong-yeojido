@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157034"
 label: "경상북도/용궁군/내하면"
-labelNote: "HGIS 157034"
+sourceRef:
+  - "HGIS 157034"
 aliases:
   - "경상북도/용궁군/내하면 (HGIS 157034)"
 ---

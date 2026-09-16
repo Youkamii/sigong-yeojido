@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112816"
 label: "전라남도/남평군/등포면"
-labelNote: "HGIS 112816"
+sourceRef:
+  - "HGIS 112816"
 aliases:
   - "전라남도/남평군/등포면 (HGIS 112816)"
 ---

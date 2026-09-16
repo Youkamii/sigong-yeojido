@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156712"
 label: "경상북도/경주군/경주면"
-labelNote: "HGIS 156712"
+sourceRef:
+  - "HGIS 156712"
 aliases:
   - "경상북도/경주군/경주면 (HGIS 156712)"
 ---

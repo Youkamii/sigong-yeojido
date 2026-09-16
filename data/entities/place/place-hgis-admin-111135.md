@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111135"
 label: "전라남도/곡성군/화면"
-labelNote: "HGIS 111135"
+sourceRef:
+  - "HGIS 111135"
 aliases:
   - "전라남도/곡성군/화면 (HGIS 111135)"
 ---

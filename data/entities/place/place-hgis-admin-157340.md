@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157340"
 label: "경상북도/영천군/금호면"
-labelNote: "HGIS 157340"
+sourceRef:
+  - "HGIS 157340"
 aliases:
   - "경상북도/영천군/금호면 (HGIS 157340)"
 ---

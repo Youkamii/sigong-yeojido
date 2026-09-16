@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156764"
 label: "경상북도/경주군/경주읍"
-labelNote: "HGIS 156764"
+sourceRef:
+  - "HGIS 156764"
 aliases:
   - "경상북도/경주군/경주읍 (HGIS 156764)"
 ---

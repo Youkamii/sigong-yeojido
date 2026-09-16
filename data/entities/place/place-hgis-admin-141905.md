@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141905"
 label: "평안북도/정주군/옥천면"
-labelNote: "HGIS 141905"
+sourceRef:
+  - "HGIS 141905"
 aliases:
   - "평안북도/정주군/옥천면 (HGIS 141905)"
 ---

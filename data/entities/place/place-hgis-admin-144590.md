@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144590"
 label: "경상남도/진주군/진성면"
-labelNote: "HGIS 144590"
+sourceRef:
+  - "HGIS 144590"
 aliases:
   - "경상남도/진주군/진성면 (HGIS 144590)"
 ---

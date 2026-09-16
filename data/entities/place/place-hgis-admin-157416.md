@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157416"
 label: "경상북도/인동군/약목면"
-labelNote: "HGIS 157416"
+sourceRef:
+  - "HGIS 157416"
 aliases:
   - "경상북도/인동군/약목면 (HGIS 157416)"
 ---

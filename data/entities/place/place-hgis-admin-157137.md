@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157137"
 label: "경상북도/상주군/중북면"
-labelNote: "HGIS 157137"
+sourceRef:
+  - "HGIS 157137"
 aliases:
   - "경상북도/상주군/중북면 (HGIS 157137)"
 ---

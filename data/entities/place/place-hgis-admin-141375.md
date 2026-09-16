@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141375"
 label: "평안북도/의주부/광성면"
-labelNote: "HGIS 141375"
+sourceRef:
+  - "HGIS 141375"
 aliases:
   - "평안북도/의주부/광성면 (HGIS 141375)"
 ---

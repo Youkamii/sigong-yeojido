@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144362"
 label: "경상남도/삼가군/옥계면"
-labelNote: "HGIS 144362"
+sourceRef:
+  - "HGIS 144362"
 aliases:
   - "경상남도/삼가군/옥계면 (HGIS 144362)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117570"
 label: "전라남도/목포부/진하산면"
-labelNote: "HGIS 117570"
+sourceRef:
+  - "HGIS 117570"
 aliases:
   - "전라남도/목포부/진하산면 (HGIS 117570)"
 ---

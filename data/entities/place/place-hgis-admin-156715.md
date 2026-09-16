@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156715"
 label: "경상북도/김산군/대항면"
-labelNote: "HGIS 156715"
+sourceRef:
+  - "HGIS 156715"
 aliases:
   - "경상북도/김산군/대항면 (HGIS 156715)"
 ---

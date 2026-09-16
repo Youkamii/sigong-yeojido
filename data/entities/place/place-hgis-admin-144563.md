@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144563"
 label: "경상남도/진주군/섭천면"
-labelNote: "HGIS 144563"
+sourceRef:
+  - "HGIS 144563"
 aliases:
   - "경상남도/진주군/섭천면 (HGIS 144563)"
 ---

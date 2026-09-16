@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157557"
 label: "경상북도/현풍군/동부면"
-labelNote: "HGIS 157557"
+sourceRef:
+  - "HGIS 157557"
 aliases:
   - "경상북도/현풍군/동부면 (HGIS 157557)"
 ---

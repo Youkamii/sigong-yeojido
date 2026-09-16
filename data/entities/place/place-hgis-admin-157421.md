@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157421"
 label: "경상북도/의흥군/파립면"
-labelNote: "HGIS 157421"
+sourceRef:
+  - "HGIS 157421"
 aliases:
   - "경상북도/의흥군/파립면 (HGIS 157421)"
 ---

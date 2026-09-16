@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144315"
 label: "경상남도/산청군/금석면"
-labelNote: "HGIS 144315"
+sourceRef:
+  - "HGIS 144315"
 aliases:
   - "경상남도/산청군/금석면 (HGIS 144315)"
 ---

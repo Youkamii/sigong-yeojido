@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136551"
 label: "평안북도/벽동군/벽동면"
-labelNote: "HGIS 136551"
+sourceRef:
+  - "HGIS 136551"
 aliases:
   - "평안북도/벽동군/벽동면 (HGIS 136551)"
 ---

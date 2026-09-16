@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144561"
 label: "경상남도/진주군/사봉면"
-labelNote: "HGIS 144561"
+sourceRef:
+  - "HGIS 144561"
 aliases:
   - "경상남도/진주군/사봉면 (HGIS 144561)"
 ---

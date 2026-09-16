@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157155"
 label: "경상북도/선산군/몽대면"
-labelNote: "HGIS 157155"
+sourceRef:
+  - "HGIS 157155"
 aliases:
   - "경상북도/선산군/몽대면 (HGIS 157155)"
 ---

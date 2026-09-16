@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144759"
 label: "경상남도/합천군/천곡면"
-labelNote: "HGIS 144759"
+sourceRef:
+  - "HGIS 144759"
 aliases:
   - "경상남도/합천군/천곡면 (HGIS 144759)"
 ---

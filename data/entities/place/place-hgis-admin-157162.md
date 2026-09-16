@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157162"
 label: "경상북도/선산군/옥성면"
-labelNote: "HGIS 157162"
+sourceRef:
+  - "HGIS 157162"
 aliases:
   - "경상북도/선산군/옥성면 (HGIS 157162)"
 ---

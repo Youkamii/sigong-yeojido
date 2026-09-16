@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110832"
 label: "전라남도/고흥군/남면"
-labelNote: "HGIS 110832"
+sourceRef:
+  - "HGIS 110832"
 aliases:
   - "전라남도/고흥군/남면 (HGIS 110832)"
 ---

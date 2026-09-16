@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157449"
 label: "경상북도/지례군/외남면"
-labelNote: "HGIS 157449"
+sourceRef:
+  - "HGIS 157449"
 aliases:
   - "경상북도/지례군/외남면 (HGIS 157449)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114211"
 label: "전라남도/나주군/영산포읍"
-labelNote: "HGIS 114211"
+sourceRef:
+  - "HGIS 114211"
 aliases:
   - "전라남도/나주군/영산포읍 (HGIS 114211)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123858"
 label: "전라남도/화순군/동면"
-labelNote: "HGIS 123858"
+sourceRef:
+  - "HGIS 123858"
 aliases:
   - "전라남도/화순군/동면 (HGIS 123858)"
 ---

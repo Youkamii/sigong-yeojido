@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156919"
 label: "경상북도/김천군/조마면"
-labelNote: "HGIS 156919"
+sourceRef:
+  - "HGIS 156919"
 aliases:
   - "경상북도/김천군/조마면 (HGIS 156919)"
 ---

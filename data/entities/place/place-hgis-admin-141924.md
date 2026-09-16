@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141924"
 label: "평안북도/정주군/읍부면"
-labelNote: "HGIS 141924"
+sourceRef:
+  - "HGIS 141924"
 aliases:
   - "평안북도/정주군/읍부면 (HGIS 141924)"
 ---

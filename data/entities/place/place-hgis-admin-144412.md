@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144412"
 label: "경상남도/영산군/계성면"
-labelNote: "HGIS 144412"
+sourceRef:
+  - "HGIS 144412"
 aliases:
   - "경상남도/영산군/계성면 (HGIS 144412)"
 ---

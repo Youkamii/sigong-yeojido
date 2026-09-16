@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156804"
 label: "경상북도/개령군/연명면"
-labelNote: "HGIS 156804"
+sourceRef:
+  - "HGIS 156804"
 aliases:
   - "경상북도/개령군/연명면 (HGIS 156804)"
 ---

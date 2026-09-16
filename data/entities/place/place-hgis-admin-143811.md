@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143811"
 label: "경상남도/진양군/대곡면"
-labelNote: "HGIS 143811"
+sourceRef:
+  - "HGIS 143811"
 aliases:
   - "경상남도/진양군/대곡면 (HGIS 143811)"
 ---

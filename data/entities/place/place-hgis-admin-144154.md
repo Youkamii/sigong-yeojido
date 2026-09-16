@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144154"
 label: "경상남도/기장군/하서면"
-labelNote: "HGIS 144154"
+sourceRef:
+  - "HGIS 144154"
 aliases:
   - "경상남도/기장군/하서면 (HGIS 144154)"
 ---

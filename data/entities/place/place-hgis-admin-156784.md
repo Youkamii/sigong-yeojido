@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156784"
 label: "경상북도/진보군/북면"
-labelNote: "HGIS 156784"
+sourceRef:
+  - "HGIS 156784"
 aliases:
   - "경상북도/진보군/북면 (HGIS 156784)"
 ---

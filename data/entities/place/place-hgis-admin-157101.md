@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157101"
 label: "경상북도/비안군/신동면"
-labelNote: "HGIS 157101"
+sourceRef:
+  - "HGIS 157101"
 aliases:
   - "경상북도/비안군/신동면 (HGIS 157101)"
 ---

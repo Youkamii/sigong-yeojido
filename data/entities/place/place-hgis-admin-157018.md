@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157018"
 label: "경상북도/예천군/승도면"
-labelNote: "HGIS 157018"
+sourceRef:
+  - "HGIS 157018"
 aliases:
   - "경상북도/예천군/승도면 (HGIS 157018)"
 ---

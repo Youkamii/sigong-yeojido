@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111612"
 label: "전라남도/광양군/진월면"
-labelNote: "HGIS 111612"
+sourceRef:
+  - "HGIS 111612"
 aliases:
   - "전라남도/광양군/진월면 (HGIS 111612)"
 ---

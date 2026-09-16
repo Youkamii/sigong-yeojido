@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156774"
 label: "경상북도/영일군/지행면"
-labelNote: "HGIS 156774"
+sourceRef:
+  - "HGIS 156774"
 aliases:
   - "경상북도/영일군/지행면 (HGIS 156774)"
 ---

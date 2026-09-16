@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157542"
 label: "경상북도/풍기군/창락면"
-labelNote: "HGIS 157542"
+sourceRef:
+  - "HGIS 157542"
 aliases:
   - "경상북도/풍기군/창락면 (HGIS 157542)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119340"
 label: "전라남도/완도군/득량면"
-labelNote: "HGIS 119340"
+sourceRef:
+  - "HGIS 119340"
 aliases:
   - "전라남도/완도군/득량면 (HGIS 119340)"
 ---

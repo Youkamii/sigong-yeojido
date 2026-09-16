@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144725"
 label: "경상남도/함안군/남산면"
-labelNote: "HGIS 144725"
+sourceRef:
+  - "HGIS 144725"
 aliases:
   - "경상남도/함안군/남산면 (HGIS 144725)"
 ---

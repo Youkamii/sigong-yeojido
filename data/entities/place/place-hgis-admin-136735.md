@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136735"
 label: "평안북도/후창군/후창면"
-labelNote: "HGIS 136735"
+sourceRef:
+  - "HGIS 136735"
 aliases:
   - "평안북도/후창군/후창면 (HGIS 136735)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144206"
 label: "경상남도/동래군/동래면"
-labelNote: "HGIS 144206"
+sourceRef:
+  - "HGIS 144206"
 aliases:
   - "경상남도/동래군/동래면 (HGIS 144206)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157093"
 label: "경상북도/비안군/내북면"
-labelNote: "HGIS 157093"
+sourceRef:
+  - "HGIS 157093"
 aliases:
   - "경상북도/비안군/내북면 (HGIS 157093)"
 ---

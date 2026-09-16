@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119093"
 label: "전라남도/순천군/해룡면"
-labelNote: "HGIS 119093"
+sourceRef:
+  - "HGIS 119093"
 aliases:
   - "전라남도/순천군/해룡면 (HGIS 119093)"
 ---

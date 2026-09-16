@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157493"
 label: "경상북도/청송군/부서면"
-labelNote: "HGIS 157493"
+sourceRef:
+  - "HGIS 157493"
 aliases:
   - "경상북도/청송군/부서면 (HGIS 157493)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144691"
 label: "경상남도/하동군/고전면"
-labelNote: "HGIS 144691"
+sourceRef:
+  - "HGIS 144691"
 aliases:
   - "경상남도/하동군/고전면 (HGIS 144691)"
 ---

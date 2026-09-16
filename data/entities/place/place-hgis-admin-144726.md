@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144726"
 label: "경상남도/함안군/내대산면"
-labelNote: "HGIS 144726"
+sourceRef:
+  - "HGIS 144726"
 aliases:
   - "경상남도/함안군/내대산면 (HGIS 144726)"
 ---

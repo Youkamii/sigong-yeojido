@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136446"
 label: "평안북도/정주군/갈지면"
-labelNote: "HGIS 136446"
+sourceRef:
+  - "HGIS 136446"
 aliases:
   - "평안북도/정주군/갈지면 (HGIS 136446)"
 ---

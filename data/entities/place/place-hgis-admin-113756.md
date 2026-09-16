@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113756"
 label: "전라남도/나주군/다시면"
-labelNote: "HGIS 113756"
+sourceRef:
+  - "HGIS 113756"
 aliases:
   - "전라남도/나주군/다시면 (HGIS 113756)"
 ---

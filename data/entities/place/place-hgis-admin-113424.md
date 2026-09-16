@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113424"
 label: "전라남도/돌산군/옥정면"
-labelNote: "HGIS 113424"
+sourceRef:
+  - "HGIS 113424"
 aliases:
   - "전라남도/돌산군/옥정면 (HGIS 113424)"
 ---

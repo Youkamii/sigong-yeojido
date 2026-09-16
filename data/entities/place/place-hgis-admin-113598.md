@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113598"
 label: "전라남도/동복군/읍내면"
-labelNote: "HGIS 113598"
+sourceRef:
+  - "HGIS 113598"
 aliases:
   - "전라남도/동복군/읍내면 (HGIS 113598)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121358"
 label: "전라남도/제주도/좌면"
-labelNote: "HGIS 121358"
+sourceRef:
+  - "HGIS 121358"
 aliases:
   - "전라남도/제주도/좌면 (HGIS 121358)"
 ---

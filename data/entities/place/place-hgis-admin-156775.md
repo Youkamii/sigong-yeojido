@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156775"
 label: "경상북도/안동군/풍천면"
-labelNote: "HGIS 156775"
+sourceRef:
+  - "HGIS 156775"
 aliases:
   - "경상북도/안동군/풍천면 (HGIS 156775)"
 ---

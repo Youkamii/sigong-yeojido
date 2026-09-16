@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156860"
 label: "경상북도/고령군/송천면"
-labelNote: "HGIS 156860"
+sourceRef:
+  - "HGIS 156860"
 aliases:
   - "경상북도/고령군/송천면 (HGIS 156860)"
 ---

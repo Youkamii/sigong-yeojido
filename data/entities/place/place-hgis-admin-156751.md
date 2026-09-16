@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156751"
 label: "경상북도/청하군/동면"
-labelNote: "HGIS 156751"
+sourceRef:
+  - "HGIS 156751"
 aliases:
   - "경상북도/청하군/동면 (HGIS 156751)"
 ---

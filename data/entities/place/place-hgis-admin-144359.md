@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144359"
 label: "경상남도/삼가군/상곡면"
-labelNote: "HGIS 144359"
+sourceRef:
+  - "HGIS 144359"
 aliases:
   - "경상남도/삼가군/상곡면 (HGIS 144359)"
 ---

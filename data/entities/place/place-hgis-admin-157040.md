@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157040"
 label: "경상북도/용궁군/신하면"
-labelNote: "HGIS 157040"
+sourceRef:
+  - "HGIS 157040"
 aliases:
   - "경상북도/용궁군/신하면 (HGIS 157040)"
 ---

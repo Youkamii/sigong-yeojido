@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143102"
 label: "경상남도/산청군/신안면"
-labelNote: "HGIS 143102"
+sourceRef:
+  - "HGIS 143102"
 aliases:
   - "경상남도/산청군/신안면 (HGIS 143102)"
 ---

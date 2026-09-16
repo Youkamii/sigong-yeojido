@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144138"
 label: "경상남도/곤양군/곤명면"
-labelNote: "HGIS 144138"
+sourceRef:
+  - "HGIS 144138"
 aliases:
   - "경상남도/곤양군/곤명면 (HGIS 144138)"
 ---

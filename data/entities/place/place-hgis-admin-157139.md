@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157139"
 label: "경상북도/상주군/청동면"
-labelNote: "HGIS 157139"
+sourceRef:
+  - "HGIS 157139"
 aliases:
   - "경상북도/상주군/청동면 (HGIS 157139)"
 ---

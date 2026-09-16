@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157322"
 label: "경상북도/의흥군/부동면"
-labelNote: "HGIS 157322"
+sourceRef:
+  - "HGIS 157322"
 aliases:
   - "경상북도/의흥군/부동면 (HGIS 157322)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156958"
 label: "경상북도/대구군/상수남면"
-labelNote: "HGIS 156958"
+sourceRef:
+  - "HGIS 156958"
 aliases:
   - "경상북도/대구군/상수남면 (HGIS 156958)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122327"
 label: "전라남도/창평군/덕면"
-labelNote: "HGIS 122327"
+sourceRef:
+  - "HGIS 122327"
 aliases:
   - "전라남도/창평군/덕면 (HGIS 122327)"
 ---

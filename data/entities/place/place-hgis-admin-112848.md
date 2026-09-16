@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112848"
 label: "전라남도/남평군/어천면"
-labelNote: "HGIS 112848"
+sourceRef:
+  - "HGIS 112848"
 aliases:
   - "전라남도/남평군/어천면 (HGIS 112848)"
 ---

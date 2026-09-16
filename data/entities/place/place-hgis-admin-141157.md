@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141157"
 label: "평안북도/의주군/고령삭면"
-labelNote: "HGIS 141157"
+sourceRef:
+  - "HGIS 141157"
 aliases:
   - "평안북도/의주군/고령삭면 (HGIS 141157)"
 ---

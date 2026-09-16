@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157140"
 label: "경상북도/상주군/함창면"
-labelNote: "HGIS 157140"
+sourceRef:
+  - "HGIS 157140"
 aliases:
   - "경상북도/상주군/함창면 (HGIS 157140)"
 ---

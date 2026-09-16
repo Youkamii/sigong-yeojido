@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117706"
 label: "전라남도/무안군/부내면"
-labelNote: "HGIS 117706"
+sourceRef:
+  - "HGIS 117706"
 aliases:
   - "전라남도/무안군/부내면 (HGIS 117706)"
 ---

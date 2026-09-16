@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144372"
 label: "경상남도/안의군/북상면"
-labelNote: "HGIS 144372"
+sourceRef:
+  - "HGIS 144372"
 aliases:
   - "경상남도/안의군/북상면 (HGIS 144372)"
 ---

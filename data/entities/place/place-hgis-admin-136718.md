@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136718"
 label: "평안북도/정주군/고덕면"
-labelNote: "HGIS 136718"
+sourceRef:
+  - "HGIS 136718"
 aliases:
   - "평안북도/정주군/고덕면 (HGIS 136718)"
 ---

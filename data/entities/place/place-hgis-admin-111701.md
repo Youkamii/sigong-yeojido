@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111701"
 label: "전라남도/광주군/공수방면"
-labelNote: "HGIS 111701"
+sourceRef:
+  - "HGIS 111701"
 aliases:
   - "전라남도/광주군/공수방면 (HGIS 111701)"
 ---

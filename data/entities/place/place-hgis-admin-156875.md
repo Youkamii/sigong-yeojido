@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156875"
 label: "경상북도/김산군/김천면"
-labelNote: "HGIS 156875"
+sourceRef:
+  - "HGIS 156875"
 aliases:
   - "경상북도/김산군/김천면 (HGIS 156875)"
 ---

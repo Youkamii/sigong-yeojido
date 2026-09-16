@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136750"
 label: "평안북도/의주군/위원면"
-labelNote: "HGIS 136750"
+sourceRef:
+  - "HGIS 136750"
 aliases:
   - "평안북도/의주군/위원면 (HGIS 136750)"
 ---

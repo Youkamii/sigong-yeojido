@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141653"
 label: "평안북도/자성군/관동면"
-labelNote: "HGIS 141653"
+sourceRef:
+  - "HGIS 141653"
 aliases:
   - "평안북도/자성군/관동면 (HGIS 141653)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144117"
 label: "경상남도/고성군/서읍면"
-labelNote: "HGIS 144117"
+sourceRef:
+  - "HGIS 144117"
 aliases:
   - "경상남도/고성군/서읍면 (HGIS 144117)"
 ---

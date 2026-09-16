@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144417"
 label: "경상남도/영산군/마고면"
-labelNote: "HGIS 144417"
+sourceRef:
+  - "HGIS 144417"
 aliases:
   - "경상남도/영산군/마고면 (HGIS 144417)"
 ---

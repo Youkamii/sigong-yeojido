@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156726"
 label: "경상북도/성주군/북산면"
-labelNote: "HGIS 156726"
+sourceRef:
+  - "HGIS 156726"
 aliases:
   - "경상북도/성주군/북산면 (HGIS 156726)"
 ---

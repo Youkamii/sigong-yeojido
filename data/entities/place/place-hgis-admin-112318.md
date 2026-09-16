@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112318"
 label: "전라남도/광주군/효지면"
-labelNote: "HGIS 112318"
+sourceRef:
+  - "HGIS 112318"
 aliases:
   - "전라남도/광주군/효지면 (HGIS 112318)"
 ---

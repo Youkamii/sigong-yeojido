@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117758"
 label: "전라남도/무안군/좌촌면"
-labelNote: "HGIS 117758"
+sourceRef:
+  - "HGIS 117758"
 aliases:
   - "전라남도/무안군/좌촌면 (HGIS 117758)"
 ---

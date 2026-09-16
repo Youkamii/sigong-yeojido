@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116147"
 label: "전라남도/영암군/군종면"
-labelNote: "HGIS 116147"
+sourceRef:
+  - "HGIS 116147"
 aliases:
   - "전라남도/영암군/군종면 (HGIS 116147)"
 ---

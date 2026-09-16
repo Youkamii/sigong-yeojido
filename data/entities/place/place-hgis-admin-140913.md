@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140913"
 label: "평안북도/운산군/위연면"
-labelNote: "HGIS 140913"
+sourceRef:
+  - "HGIS 140913"
 aliases:
   - "평안북도/운산군/위연면 (HGIS 140913)"
 ---

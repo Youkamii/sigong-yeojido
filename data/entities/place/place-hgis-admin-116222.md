@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116222"
 label: "전라남도/영암군/영암면"
-labelNote: "HGIS 116222"
+sourceRef:
+  - "HGIS 116222"
 aliases:
   - "전라남도/영암군/영암면 (HGIS 116222)"
 ---

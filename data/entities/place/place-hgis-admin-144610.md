@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144610"
 label: "경상남도/창녕군/대지면"
-labelNote: "HGIS 144610"
+sourceRef:
+  - "HGIS 144610"
 aliases:
   - "경상남도/창녕군/대지면 (HGIS 144610)"
 ---

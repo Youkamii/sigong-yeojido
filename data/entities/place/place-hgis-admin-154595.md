@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154595"
 label: "경상남도/하동군/팔조면"
-labelNote: "HGIS 154595"
+sourceRef:
+  - "HGIS 154595"
 aliases:
   - "경상남도/하동군/팔조면 (HGIS 154595)"
 ---

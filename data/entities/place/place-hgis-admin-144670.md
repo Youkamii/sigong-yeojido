@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144670"
 label: "경상남도/통영군/광도면"
-labelNote: "HGIS 144670"
+sourceRef:
+  - "HGIS 144670"
 aliases:
   - "경상남도/통영군/광도면 (HGIS 144670)"
 ---

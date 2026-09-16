@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114507"
 label: "전라남도/여수군/남면"
-labelNote: "HGIS 114507"
+sourceRef:
+  - "HGIS 114507"
 aliases:
   - "전라남도/여수군/남면 (HGIS 114507)"
 ---

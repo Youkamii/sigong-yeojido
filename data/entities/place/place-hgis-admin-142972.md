@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142972"
 label: "평안북도/철산군/철산면"
-labelNote: "HGIS 142972"
+sourceRef:
+  - "HGIS 142972"
 aliases:
   - "평안북도/철산군/철산면 (HGIS 142972)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121271"
 label: "전라남도/제주도/우면"
-labelNote: "HGIS 121271"
+sourceRef:
+  - "HGIS 121271"
 aliases:
   - "전라남도/제주도/우면 (HGIS 121271)"
 ---

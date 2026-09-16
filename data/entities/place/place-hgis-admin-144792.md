@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144792"
 label: "경상남도/합천군/상북면"
-labelNote: "HGIS 144792"
+sourceRef:
+  - "HGIS 144792"
 aliases:
   - "경상남도/합천군/상북면 (HGIS 144792)"
 ---

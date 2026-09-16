@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122401"
 label: "전라남도/창평군/서면"
-labelNote: "HGIS 122401"
+sourceRef:
+  - "HGIS 122401"
 aliases:
   - "전라남도/창평군/서면 (HGIS 122401)"
 ---

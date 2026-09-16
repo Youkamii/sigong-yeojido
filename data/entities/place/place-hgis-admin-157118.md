@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157118"
 label: "경상북도/성주군/유곡면"
-labelNote: "HGIS 157118"
+sourceRef:
+  - "HGIS 157118"
 aliases:
   - "경상북도/성주군/유곡면 (HGIS 157118)"
 ---

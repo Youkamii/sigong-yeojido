@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144322"
 label: "경상남도/산청군/사월면"
-labelNote: "HGIS 144322"
+sourceRef:
+  - "HGIS 144322"
 aliases:
   - "경상남도/산청군/사월면 (HGIS 144322)"
 ---

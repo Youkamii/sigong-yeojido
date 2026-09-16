@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157588"
 label: "경상북도/연일군"
-labelNote: "HGIS 157588"
+sourceRef:
+  - "HGIS 157588"
 aliases:
   - "경상북도/연일군 (HGIS 157588)"
 ---

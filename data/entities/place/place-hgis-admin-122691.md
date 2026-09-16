@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122691"
 label: "전라남도/함평군/나산면"
-labelNote: "HGIS 122691"
+sourceRef:
+  - "HGIS 122691"
 aliases:
   - "전라남도/함평군/나산면 (HGIS 122691)"
 ---

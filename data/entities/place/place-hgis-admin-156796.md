@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156796"
 label: "경상북도/상주군/장천면"
-labelNote: "HGIS 156796"
+sourceRef:
+  - "HGIS 156796"
 aliases:
   - "경상북도/상주군/장천면 (HGIS 156796)"
 ---

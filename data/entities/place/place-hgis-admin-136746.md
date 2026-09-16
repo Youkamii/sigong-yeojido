@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136746"
 label: "평안북도/초산군/판면"
-labelNote: "HGIS 136746"
+sourceRef:
+  - "HGIS 136746"
 aliases:
   - "평안북도/초산군/판면 (HGIS 136746)"
 ---

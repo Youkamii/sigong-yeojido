@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156732"
 label: "경상북도/안동군/월곡면"
-labelNote: "HGIS 156732"
+sourceRef:
+  - "HGIS 156732"
 aliases:
   - "경상북도/안동군/월곡면 (HGIS 156732)"
 ---

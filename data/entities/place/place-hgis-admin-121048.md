@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121048"
 label: "전라남도/제주군/제주면"
-labelNote: "HGIS 121048"
+sourceRef:
+  - "HGIS 121048"
 aliases:
   - "전라남도/제주군/제주면 (HGIS 121048)"
 ---

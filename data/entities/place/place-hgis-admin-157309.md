@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157309"
 label: "경상북도/영주군/봉현면"
-labelNote: "HGIS 157309"
+sourceRef:
+  - "HGIS 157309"
 aliases:
   - "경상북도/영주군/봉현면 (HGIS 157309)"
 ---

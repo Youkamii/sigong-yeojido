@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137216"
 label: "평안북도/강계군/외귀방"
-labelNote: "HGIS 137216"
+sourceRef:
+  - "HGIS 137216"
 aliases:
   - "평안북도/강계군/외귀방 (HGIS 137216)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117140"
 label: "전라남도/목포부/박곡면"
-labelNote: "HGIS 117140"
+sourceRef:
+  - "HGIS 117140"
 aliases:
   - "전라남도/목포부/박곡면 (HGIS 117140)"
 ---

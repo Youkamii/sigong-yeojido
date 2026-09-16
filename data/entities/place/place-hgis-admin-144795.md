@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144795"
 label: "경상남도/합천군/쌍책면"
-labelNote: "HGIS 144795"
+sourceRef:
+  - "HGIS 144795"
 aliases:
   - "경상남도/합천군/쌍책면 (HGIS 144795)"
 ---

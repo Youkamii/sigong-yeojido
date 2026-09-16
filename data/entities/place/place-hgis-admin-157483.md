@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157483"
 label: "경상북도/청도군/중남면"
-labelNote: "HGIS 157483"
+sourceRef:
+  - "HGIS 157483"
 aliases:
   - "경상북도/청도군/중남면 (HGIS 157483)"
 ---

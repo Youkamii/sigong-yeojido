@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157543"
 label: "경상북도/하양군/마양면"
-labelNote: "HGIS 157543"
+sourceRef:
+  - "HGIS 157543"
 aliases:
   - "경상북도/하양군/마양면 (HGIS 157543)"
 ---

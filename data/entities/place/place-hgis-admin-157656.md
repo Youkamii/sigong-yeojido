@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157656"
 label: "경상북도/비안군"
-labelNote: "HGIS 157656"
+sourceRef:
+  - "HGIS 157656"
 aliases:
   - "경상북도/비안군 (HGIS 157656)"
 ---

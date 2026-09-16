@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157300"
 label: "경상북도/영일군/장기면"
-labelNote: "HGIS 157300"
+sourceRef:
+  - "HGIS 157300"
 aliases:
   - "경상북도/영일군/장기면 (HGIS 157300)"
 ---

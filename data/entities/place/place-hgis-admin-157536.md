@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157536"
 label: "경상북도/풍기군/용산면"
-labelNote: "HGIS 157536"
+sourceRef:
+  - "HGIS 157536"
 aliases:
   - "경상북도/풍기군/용산면 (HGIS 157536)"
 ---

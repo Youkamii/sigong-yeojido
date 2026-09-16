@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144611"
 label: "경상남도/창녕군/대초면"
-labelNote: "HGIS 144611"
+sourceRef:
+  - "HGIS 144611"
 aliases:
   - "경상남도/창녕군/대초면 (HGIS 144611)"
 ---

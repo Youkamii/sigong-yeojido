@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144528"
 label: "경상남도/진양군/내동면"
-labelNote: "HGIS 144528"
+sourceRef:
+  - "HGIS 144528"
 aliases:
   - "경상남도/진양군/내동면 (HGIS 144528)"
 ---

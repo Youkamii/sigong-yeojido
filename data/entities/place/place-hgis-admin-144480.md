@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144480"
 label: "경상남도/울산군/현남면"
-labelNote: "HGIS 144480"
+sourceRef:
+  - "HGIS 144480"
 aliases:
   - "경상남도/울산군/현남면 (HGIS 144480)"
 ---

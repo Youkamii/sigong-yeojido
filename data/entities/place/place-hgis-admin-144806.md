@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144806"
 label: "경상남도/거제군"
-labelNote: "HGIS 144806"
+sourceRef:
+  - "HGIS 144806"
 aliases:
   - "경상남도/거제군 (HGIS 144806)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137098"
 label: "평안북도/태천군/서성면"
-labelNote: "HGIS 137098"
+sourceRef:
+  - "HGIS 137098"
 aliases:
   - "평안북도/태천군/서성면 (HGIS 137098)"
 ---

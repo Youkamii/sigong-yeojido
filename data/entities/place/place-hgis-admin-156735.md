@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156735"
 label: "경상북도/영일군/죽장면"
-labelNote: "HGIS 156735"
+sourceRef:
+  - "HGIS 156735"
 aliases:
   - "경상북도/영일군/죽장면 (HGIS 156735)"
 ---

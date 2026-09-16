@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157105"
 label: "경상북도/비안군/정동면"
-labelNote: "HGIS 157105"
+sourceRef:
+  - "HGIS 157105"
 aliases:
   - "경상북도/비안군/정동면 (HGIS 157105)"
 ---

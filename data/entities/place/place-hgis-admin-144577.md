@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144577"
 label: "경상남도/진주군/외진성면"
-labelNote: "HGIS 144577"
+sourceRef:
+  - "HGIS 144577"
 aliases:
   - "경상남도/진주군/외진성면 (HGIS 144577)"
 ---

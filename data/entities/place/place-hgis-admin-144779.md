@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144779"
 label: "경상남도/함양군/휴천면"
-labelNote: "HGIS 144779"
+sourceRef:
+  - "HGIS 144779"
 aliases:
   - "경상남도/함양군/휴천면 (HGIS 144779)"
 ---

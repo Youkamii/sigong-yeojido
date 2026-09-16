@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157447"
 label: "경상북도/진보군/남면"
-labelNote: "HGIS 157447"
+sourceRef:
+  - "HGIS 157447"
 aliases:
   - "경상북도/진보군/남면 (HGIS 157447)"
 ---

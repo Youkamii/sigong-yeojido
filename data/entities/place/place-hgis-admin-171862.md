@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-171862"
 label: "경상북도/현풍군/모로면"
-labelNote: "HGIS 171862"
+sourceRef:
+  - "HGIS 171862"
 aliases:
   - "경상북도/현풍군/모로면 (HGIS 171862)"
 ---

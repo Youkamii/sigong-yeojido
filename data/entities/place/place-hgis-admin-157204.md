@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157204"
 label: "경상북도/순흥군/화천면"
-labelNote: "HGIS 157204"
+sourceRef:
+  - "HGIS 157204"
 aliases:
   - "경상북도/순흥군/화천면 (HGIS 157204)"
 ---

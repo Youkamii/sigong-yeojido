@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140762"
 label: "평안북도/용천부/신도면"
-labelNote: "HGIS 140762"
+sourceRef:
+  - "HGIS 140762"
 aliases:
   - "평안북도/용천부/신도면 (HGIS 140762)"
 ---

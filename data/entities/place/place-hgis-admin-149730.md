@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-149730"
 label: "경상남도/동래군/철마면"
-labelNote: "HGIS 149730"
+sourceRef:
+  - "HGIS 149730"
 aliases:
   - "경상남도/동래군/철마면 (HGIS 149730)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-148117"
 label: "경상남도/동래군/기장면"
-labelNote: "HGIS 148117"
+sourceRef:
+  - "HGIS 148117"
 aliases:
   - "경상남도/동래군/기장면 (HGIS 148117)"
 ---

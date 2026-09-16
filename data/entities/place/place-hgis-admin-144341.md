@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144341"
 label: "경상남도/산청군/신등면"
-labelNote: "HGIS 144341"
+sourceRef:
+  - "HGIS 144341"
 aliases:
   - "경상남도/산청군/신등면 (HGIS 144341)"
 ---

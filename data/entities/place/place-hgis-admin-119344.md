@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119344"
 label: "전라남도/완도군/여서면"
-labelNote: "HGIS 119344"
+sourceRef:
+  - "HGIS 119344"
 aliases:
   - "전라남도/완도군/여서면 (HGIS 119344)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144700"
 label: "경상남도/하동군/마전면"
-labelNote: "HGIS 144700"
+sourceRef:
+  - "HGIS 144700"
 aliases:
   - "경상남도/하동군/마전면 (HGIS 144700)"
 ---

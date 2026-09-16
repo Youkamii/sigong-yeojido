@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157303"
 label: "경상북도/영일군/창주면"
-labelNote: "HGIS 157303"
+sourceRef:
+  - "HGIS 157303"
 aliases:
   - "경상북도/영일군/창주면 (HGIS 157303)"
 ---

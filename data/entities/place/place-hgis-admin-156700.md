@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156700"
 label: "강원도/이천군"
-labelNote: "HGIS 156700"
+sourceRef:
+  - "HGIS 156700"
 aliases:
   - "강원도/이천군 (HGIS 156700)"
 ---

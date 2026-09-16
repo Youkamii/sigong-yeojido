@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136642"
 label: "평안북도/벽동군/관회면"
-labelNote: "HGIS 136642"
+sourceRef:
+  - "HGIS 136642"
 aliases:
   - "평안북도/벽동군/관회면 (HGIS 136642)"
 ---

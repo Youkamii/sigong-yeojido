@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137073"
 label: "평안북도/삭주군/청수읍"
-labelNote: "HGIS 137073"
+sourceRef:
+  - "HGIS 137073"
 aliases:
   - "평안북도/삭주군/청수읍 (HGIS 137073)"
 ---

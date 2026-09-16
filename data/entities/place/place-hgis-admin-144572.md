@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144572"
 label: "경상남도/초계군/덕곡면"
-labelNote: "HGIS 144572"
+sourceRef:
+  - "HGIS 144572"
 aliases:
   - "경상남도/초계군/덕곡면 (HGIS 144572)"
 ---

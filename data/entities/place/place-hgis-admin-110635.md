@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110635"
 label: "전라남도/강진군/보암면"
-labelNote: "HGIS 110635"
+sourceRef:
+  - "HGIS 110635"
 aliases:
   - "전라남도/강진군/보암면 (HGIS 110635)"
 ---

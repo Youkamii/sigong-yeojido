@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144646"
 label: "경상남도/창원군/상남면"
-labelNote: "HGIS 144646"
+sourceRef:
+  - "HGIS 144646"
 aliases:
   - "경상남도/창원군/상남면 (HGIS 144646)"
 ---

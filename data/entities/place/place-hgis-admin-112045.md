@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112045"
 label: "전라남도/광주군/석곡면"
-labelNote: "HGIS 112045"
+sourceRef:
+  - "HGIS 112045"
 aliases:
   - "전라남도/광주군/석곡면 (HGIS 112045)"
 ---

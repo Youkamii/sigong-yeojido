@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156853"
 label: "경상북도/고령군/답곡면"
-labelNote: "HGIS 156853"
+sourceRef:
+  - "HGIS 156853"
 aliases:
   - "경상북도/고령군/답곡면 (HGIS 156853)"
 ---

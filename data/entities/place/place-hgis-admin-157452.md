@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157452"
 label: "경상북도/하양군/읍내면"
-labelNote: "HGIS 157452"
+sourceRef:
+  - "HGIS 157452"
 aliases:
   - "경상북도/하양군/읍내면 (HGIS 157452)"
 ---

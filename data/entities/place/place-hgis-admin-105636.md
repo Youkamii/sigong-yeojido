@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-105636"
 label: "전라북도/고산군/동상면"
-labelNote: "HGIS 105636"
+sourceRef:
+  - "HGIS 105636"
 aliases:
   - "전라북도/고산군/동상면 (HGIS 105636)"
 ---

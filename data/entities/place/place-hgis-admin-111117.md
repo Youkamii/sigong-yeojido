@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111117"
 label: "전라남도/광산군/임곡면"
-labelNote: "HGIS 111117"
+sourceRef:
+  - "HGIS 111117"
 aliases:
   - "전라남도/광산군/임곡면 (HGIS 111117)"
 ---

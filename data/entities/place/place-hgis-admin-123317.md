@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123317"
 label: "전라남도/해남군/북평시면"
-labelNote: "HGIS 123317"
+sourceRef:
+  - "HGIS 123317"
 aliases:
   - "전라남도/해남군/북평시면 (HGIS 123317)"
 ---

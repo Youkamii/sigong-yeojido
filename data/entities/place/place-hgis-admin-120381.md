@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120381"
 label: "전라남도/장흥군/대흥면"
-labelNote: "HGIS 120381"
+sourceRef:
+  - "HGIS 120381"
 aliases:
   - "전라남도/장흥군/대흥면 (HGIS 120381)"
 ---

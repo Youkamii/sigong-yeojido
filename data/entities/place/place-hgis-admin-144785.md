@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144785"
 label: "경상남도/합천군/묘산면"
-labelNote: "HGIS 144785"
+sourceRef:
+  - "HGIS 144785"
 aliases:
   - "경상남도/합천군/묘산면 (HGIS 144785)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111849"
 label: "전라남도/광주군/도천면"
-labelNote: "HGIS 111849"
+sourceRef:
+  - "HGIS 111849"
 aliases:
   - "전라남도/광주군/도천면 (HGIS 111849)"
 ---

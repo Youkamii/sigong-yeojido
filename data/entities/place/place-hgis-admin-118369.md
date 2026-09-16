@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118369"
 label: "전라남도/순천군/동초면"
-labelNote: "HGIS 118369"
+sourceRef:
+  - "HGIS 118369"
 aliases:
   - "전라남도/순천군/동초면 (HGIS 118369)"
 ---

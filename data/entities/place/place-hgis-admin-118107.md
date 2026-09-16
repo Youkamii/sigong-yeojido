@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118107"
 label: "전라남도/보성군/백야면"
-labelNote: "HGIS 118107"
+sourceRef:
+  - "HGIS 118107"
 aliases:
   - "전라남도/보성군/백야면 (HGIS 118107)"
 ---

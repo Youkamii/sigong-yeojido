@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141305"
 label: "평안북도/의주부/고성면"
-labelNote: "HGIS 141305"
+sourceRef:
+  - "HGIS 141305"
 aliases:
   - "평안북도/의주부/고성면 (HGIS 141305)"
 ---

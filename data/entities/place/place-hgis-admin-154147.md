@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154147"
 label: "경상남도/양산군/원동면"
-labelNote: "HGIS 154147"
+sourceRef:
+  - "HGIS 154147"
 aliases:
   - "경상남도/양산군/원동면 (HGIS 154147)"
 ---

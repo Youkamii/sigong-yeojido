@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122926"
 label: "전라남도/함평군/영풍면"
-labelNote: "HGIS 122926"
+sourceRef:
+  - "HGIS 122926"
 aliases:
   - "전라남도/함평군/영풍면 (HGIS 122926)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156870"
 label: "경상북도/고령군/진촌면"
-labelNote: "HGIS 156870"
+sourceRef:
+  - "HGIS 156870"
 aliases:
   - "경상북도/고령군/진촌면 (HGIS 156870)"
 ---

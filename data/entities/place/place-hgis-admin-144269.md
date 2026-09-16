@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144269"
 label: "경상남도/부산부/사중면"
-labelNote: "HGIS 144269"
+sourceRef:
+  - "HGIS 144269"
 aliases:
   - "경상남도/부산부/사중면 (HGIS 144269)"
 ---

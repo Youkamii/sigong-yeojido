@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144648"
 label: "경상남도/창원군/웅동면"
-labelNote: "HGIS 144648"
+sourceRef:
+  - "HGIS 144648"
 aliases:
   - "경상남도/창원군/웅동면 (HGIS 144648)"
 ---

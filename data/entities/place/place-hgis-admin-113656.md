@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113656"
 label: "전라남도/나주군/공산면"
-labelNote: "HGIS 113656"
+sourceRef:
+  - "HGIS 113656"
 aliases:
   - "전라남도/나주군/공산면 (HGIS 113656)"
 ---

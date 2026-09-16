@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156778"
 label: "경상북도/영일군/형산면"
-labelNote: "HGIS 156778"
+sourceRef:
+  - "HGIS 156778"
 aliases:
   - "경상북도/영일군/형산면 (HGIS 156778)"
 ---

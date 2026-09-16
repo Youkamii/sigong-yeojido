@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144663"
 label: "경상남도/초계군/중방면"
-labelNote: "HGIS 144663"
+sourceRef:
+  - "HGIS 144663"
 aliases:
   - "경상남도/초계군/중방면 (HGIS 144663)"
 ---

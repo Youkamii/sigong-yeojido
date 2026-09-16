@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144496"
 label: "경상남도/의령군/부림면"
-labelNote: "HGIS 144496"
+sourceRef:
+  - "HGIS 144496"
 aliases:
   - "경상남도/의령군/부림면 (HGIS 144496)"
 ---

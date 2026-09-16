@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144401"
 label: "경상남도/언양군/삼동면"
-labelNote: "HGIS 144401"
+sourceRef:
+  - "HGIS 144401"
 aliases:
   - "경상남도/언양군/삼동면 (HGIS 144401)"
 ---

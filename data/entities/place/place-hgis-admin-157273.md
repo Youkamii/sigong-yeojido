@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157273"
 label: "경상북도/영덕군/축산면"
-labelNote: "HGIS 157273"
+sourceRef:
+  - "HGIS 157273"
 aliases:
   - "경상북도/영덕군/축산면 (HGIS 157273)"
 ---

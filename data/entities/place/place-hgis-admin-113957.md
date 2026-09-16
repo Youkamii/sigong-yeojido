@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113957"
 label: "전라남도/나주군/산포면"
-labelNote: "HGIS 113957"
+sourceRef:
+  - "HGIS 113957"
 aliases:
   - "전라남도/나주군/산포면 (HGIS 113957)"
 ---

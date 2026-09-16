@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157172"
 label: "경상북도/성주군/당소면"
-labelNote: "HGIS 157172"
+sourceRef:
+  - "HGIS 157172"
 aliases:
   - "경상북도/성주군/당소면 (HGIS 157172)"
 ---

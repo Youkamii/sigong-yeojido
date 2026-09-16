@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144467"
 label: "경상남도/진양군/집현면"
-labelNote: "HGIS 144467"
+sourceRef:
+  - "HGIS 144467"
 aliases:
   - "경상남도/진양군/집현면 (HGIS 144467)"
 ---

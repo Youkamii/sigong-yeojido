@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157175"
 label: "경상북도/성주군/대동면"
-labelNote: "HGIS 157175"
+sourceRef:
+  - "HGIS 157175"
 aliases:
   - "경상북도/성주군/대동면 (HGIS 157175)"
 ---

@@ -142,6 +142,10 @@ def apply_shell_names(result, shells):
         for key in ('labelNote', 'kind'):
             if shell.get(key) and not entity.get(key):
                 entity[key] = shell[key]
+        # sourceRef 는 자료 식별자다 — 화면에 쓰지 않고 응답에만 둔다 (#200 2차).
+        source_ref = list(dict.fromkeys([*entity.get('sourceRef', []), *(shell.get('sourceRef') or [])]))
+        if source_ref:
+            entity['sourceRef'] = source_ref
     return result
 
 

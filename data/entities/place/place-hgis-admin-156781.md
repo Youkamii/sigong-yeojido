@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156781"
 label: "경상북도/청도군/청도면"
-labelNote: "HGIS 156781"
+sourceRef:
+  - "HGIS 156781"
 aliases:
   - "경상북도/청도군/청도면 (HGIS 156781)"
 ---

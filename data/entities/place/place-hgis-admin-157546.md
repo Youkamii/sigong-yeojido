@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157546"
 label: "경상북도/함창군/남면"
-labelNote: "HGIS 157546"
+sourceRef:
+  - "HGIS 157546"
 aliases:
   - "경상북도/함창군/남면 (HGIS 157546)"
 ---

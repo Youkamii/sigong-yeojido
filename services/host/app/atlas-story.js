@@ -1,7 +1,7 @@
 import {escapeHtml as esc} from './html.js';
 import {icon} from './atlas-icons.js';
 import {cleanTitle,typeName,relationName,relationDates,relationTime} from './atlas-data.js';
-import {yearLabel} from './chronicle.js';
+import {yearLabel,visibleAliases} from './chronicle.js';
 import {eraAt} from './atlas-eras.js';
 import {roleLabel} from './chronicle-asset-plan.js';
 import {loadAiImages,aiImageFor} from './ai-images.js';
@@ -256,6 +256,7 @@ export class AtlasStory{
     const scrollTop=this.pane.querySelector?.('.atlas-story-body')?.scrollTop||0;
     const ui=this.ui,data=ui.data,entity=this.entity,activity=this.activity,event=this.sceneEvent(),scene=data.scenes.get(activity?.sceneId||event?.sceneId),name=activity?.setting?activity.label:data.label(entity);
     const related=this.relatedRows(),sections=this.sections(related),claims=data.subjects.get(entity.id)||[];
+    const aliases=visibleAliases(entity);  // 정리 전 표기는 빼고 사람이 부르던 다른 이름만 (#200)
     const role=scene?.participants?.find(p=>data.canonicalId(p.entityId)===entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id)));
     const description=activity?.summary||data.description(entity.id)||(entity.type==='Event'?scene?.summary:'');
     const personRole=roleLabel(activity?.role||role?.role,scene?.startYear??activity?.year??ui.chronicle?.year);
@@ -271,7 +272,7 @@ export class AtlasStory{
     this.pane.innerHTML=`<header><button class="atlas-story-back" data-story-back>${icon('left')}<span>${this.history.length?'이전으로':'지도로 가기'}</span></button><button class="atlas-icon" data-close aria-label="이야기 닫기">${icon('close')}</button></header>
       <div class="atlas-story-body"><div class="atlas-story-hero">${imageFigure}<div><p class="atlas-breadcrumb">${typeName(entity.type,entity)}${breadcrumb&&breadcrumb!=='연도 미확인'?' · '+esc(breadcrumb):''}</p><h2>${esc(entity.type==='Event'?displayTitle(name):name)}</h2>${personRole?`<p class="atlas-role" title="${esc(personRole)}">${esc(personRole)}</p>`:''}</div></div>
       ${description?`<p id="atlasStoryDescription" class="atlas-description atlas-story-description">${esc(description)}</p><button class="atlas-story-more" data-story-expand aria-controls="atlasStoryDescription" aria-expanded="false" hidden>더 보기</button>`:'<p class="atlas-muted">이 항목에 연결된 기록과 관계를 보세요.</p>'}
-      ${['Person','Place'].includes(entity.type)&&entity.aliases?.length?`<p class="atlas-story-aliases">다른 이름: ${entity.aliases.map(esc).join(', ')}</p>`:''}
+      ${['Person','Place'].includes(entity.type)&&aliases.length?`<p class="atlas-story-aliases">다른 이름: ${aliases.map(esc).join(', ')}</p>`:''}
       ${activity?.narrative?`<p class="atlas-muted">이야기 속 시기: ${esc(activity.narrative.storyTime.label)}<br>기록된 시기: ${esc(activity.narrative.recordingTime.label)}</p>`:''}
       ${this.sectionHtml(sections.find(s=>s.id==='era'))}${tabs}
       ${this.tab==='summary'?lists.filter(s=>compact||s.id!=='places').map(s=>this.sectionHtml(s,true,compact)).join('')+details:this.sectionHtml(lists.find(s=>s.id===this.tab))}

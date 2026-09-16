@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157198"
 label: "경상북도/순흥군/수민단면"
-labelNote: "HGIS 157198"
+sourceRef:
+  - "HGIS 157198"
 aliases:
   - "경상북도/순흥군/수민단면 (HGIS 157198)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115112"
 label: "전라남도/영광군/영광면"
-labelNote: "HGIS 115112"
+sourceRef:
+  - "HGIS 115112"
 aliases:
   - "전라남도/영광군/영광면 (HGIS 115112)"
 ---

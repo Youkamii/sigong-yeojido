@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157272"
 label: "경상북도/영덕군/창수면"
-labelNote: "HGIS 157272"
+sourceRef:
+  - "HGIS 157272"
 aliases:
   - "경상북도/영덕군/창수면 (HGIS 157272)"
 ---

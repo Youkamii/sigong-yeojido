@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121259"
 label: "전라남도/제주도/애월면"
-labelNote: "HGIS 121259"
+sourceRef:
+  - "HGIS 121259"
 aliases:
   - "전라남도/제주도/애월면 (HGIS 121259)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119329"
 label: "전라남도/완도군/금당면"
-labelNote: "HGIS 119329"
+sourceRef:
+  - "HGIS 119329"
 aliases:
   - "전라남도/완도군/금당면 (HGIS 119329)"
 ---

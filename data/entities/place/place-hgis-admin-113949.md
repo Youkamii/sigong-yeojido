@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113949"
 label: "전라남도/나주군/복암면"
-labelNote: "HGIS 113949"
+sourceRef:
+  - "HGIS 113949"
 aliases:
   - "전라남도/나주군/복암면 (HGIS 113949)"
 ---

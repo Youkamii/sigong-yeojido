@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120745"
 label: "전라남도/장흥군/장평면"
-labelNote: "HGIS 120745"
+sourceRef:
+  - "HGIS 120745"
 aliases:
   - "전라남도/장흥군/장평면 (HGIS 120745)"
 ---

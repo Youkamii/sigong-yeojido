@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140993"
 label: "평안북도/위원군/동하면"
-labelNote: "HGIS 140993"
+sourceRef:
+  - "HGIS 140993"
 aliases:
   - "평안북도/위원군/동하면 (HGIS 140993)"
 ---

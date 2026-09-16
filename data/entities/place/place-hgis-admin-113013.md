@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113013"
 label: "전라남도/담양군/금성면"
-labelNote: "HGIS 113013"
+sourceRef:
+  - "HGIS 113013"
 aliases:
   - "전라남도/담양군/금성면 (HGIS 113013)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118295"
 label: "전라남도/보성군/조성면"
-labelNote: "HGIS 118295"
+sourceRef:
+  - "HGIS 118295"
 aliases:
   - "전라남도/보성군/조성면 (HGIS 118295)"
 ---

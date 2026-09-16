@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102230"
 label: "전라북도/임실군/상동면"
-labelNote: "HGIS 102230"
+sourceRef:
+  - "HGIS 102230"
 aliases:
   - "전라북도/임실군/상동면 (HGIS 102230)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143210"
 label: "경상남도/김해군/진영읍"
-labelNote: "HGIS 143210"
+sourceRef:
+  - "HGIS 143210"
 aliases:
   - "경상남도/김해군/진영읍 (HGIS 143210)"
 ---

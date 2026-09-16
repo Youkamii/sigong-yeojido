@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144225"
 label: "경상남도/함양군/대지면"
-labelNote: "HGIS 144225"
+sourceRef:
+  - "HGIS 144225"
 aliases:
   - "경상남도/함양군/대지면 (HGIS 144225)"
 ---

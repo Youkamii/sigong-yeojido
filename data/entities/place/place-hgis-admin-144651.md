@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144651"
 label: "경상남도/창원군/진북면"
-labelNote: "HGIS 144651"
+sourceRef:
+  - "HGIS 144651"
 aliases:
   - "경상남도/창원군/진북면 (HGIS 144651)"
 ---

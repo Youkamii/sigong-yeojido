@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117703"
 label: "전라남도/무안군/몽탄면"
-labelNote: "HGIS 117703"
+sourceRef:
+  - "HGIS 117703"
 aliases:
   - "전라남도/무안군/몽탄면 (HGIS 117703)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144262"
 label: "경상남도/부산부/동하면"
-labelNote: "HGIS 144262"
+sourceRef:
+  - "HGIS 144262"
 aliases:
   - "경상남도/부산부/동하면 (HGIS 144262)"
 ---

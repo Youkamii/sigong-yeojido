@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144814"
 label: "경상남도/거제군/둔덕면"
-labelNote: "HGIS 144814"
+sourceRef:
+  - "HGIS 144814"
 aliases:
   - "경상남도/거제군/둔덕면 (HGIS 144814)"
 ---

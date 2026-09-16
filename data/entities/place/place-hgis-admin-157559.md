@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157559"
 label: "경상북도/현풍군/말역면"
-labelNote: "HGIS 157559"
+sourceRef:
+  - "HGIS 157559"
 aliases:
   - "경상북도/현풍군/말역면 (HGIS 157559)"
 ---

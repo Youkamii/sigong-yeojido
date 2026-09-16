@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144536"
 label: "경상남도/진주군/금동어면"
-labelNote: "HGIS 144536"
+sourceRef:
+  - "HGIS 144536"
 aliases:
   - "경상남도/진주군/금동어면 (HGIS 144536)"
 ---

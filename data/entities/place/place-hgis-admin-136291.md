@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136291"
 label: "평안북도/강계군/간상면"
-labelNote: "HGIS 136291"
+sourceRef:
+  - "HGIS 136291"
 aliases:
   - "평안북도/강계군/간상면 (HGIS 136291)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121228"
 label: "전라남도/제주도/신좌면"
-labelNote: "HGIS 121228"
+sourceRef:
+  - "HGIS 121228"
 aliases:
   - "전라남도/제주도/신좌면 (HGIS 121228)"
 ---

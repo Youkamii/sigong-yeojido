@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157183"
 label: "경상북도/성주군/사천면"
-labelNote: "HGIS 157183"
+sourceRef:
+  - "HGIS 157183"
 aliases:
   - "경상북도/성주군/사천면 (HGIS 157183)"
 ---

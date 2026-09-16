@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156845"
 label: "경상북도/고령군/고곡면"
-labelNote: "HGIS 156845"
+sourceRef:
+  - "HGIS 156845"
 aliases:
   - "경상북도/고령군/고곡면 (HGIS 156845)"
 ---

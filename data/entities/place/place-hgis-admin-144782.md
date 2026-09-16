@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144782"
 label: "경상남도/합천군/대양면"
-labelNote: "HGIS 144782"
+sourceRef:
+  - "HGIS 144782"
 aliases:
   - "경상남도/합천군/대양면 (HGIS 144782)"
 ---

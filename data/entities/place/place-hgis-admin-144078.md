@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144078"
 label: "경상남도/거창군/남하면"
-labelNote: "HGIS 144078"
+sourceRef:
+  - "HGIS 144078"
 aliases:
   - "경상남도/거창군/남하면 (HGIS 144078)"
 ---

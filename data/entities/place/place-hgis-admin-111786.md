@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111786"
 label: "전라남도/광주군/기례방면"
-labelNote: "HGIS 111786"
+sourceRef:
+  - "HGIS 111786"
 aliases:
   - "전라남도/광주군/기례방면 (HGIS 111786)"
 ---

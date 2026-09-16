@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117707"
 label: "전라남도/무안군/비금면"
-labelNote: "HGIS 117707"
+sourceRef:
+  - "HGIS 117707"
 aliases:
   - "전라남도/무안군/비금면 (HGIS 117707)"
 ---

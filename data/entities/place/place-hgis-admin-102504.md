@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102504"
 label: "전라북도/임실군/하북면"
-labelNote: "HGIS 102504"
+sourceRef:
+  - "HGIS 102504"
 aliases:
   - "전라북도/임실군/하북면 (HGIS 102504)"
 ---

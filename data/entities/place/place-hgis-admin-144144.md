@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144144"
 label: "경상남도/곤양군/서부면"
-labelNote: "HGIS 144144"
+sourceRef:
+  - "HGIS 144144"
 aliases:
   - "경상남도/곤양군/서부면 (HGIS 144144)"
 ---

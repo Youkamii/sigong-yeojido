@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144077"
 label: "경상남도/거창군/남상면"
-labelNote: "HGIS 144077"
+sourceRef:
+  - "HGIS 144077"
 aliases:
   - "경상남도/거창군/남상면 (HGIS 144077)"
 ---

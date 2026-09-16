@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121624"
 label: "전라남도/지도군/안창면"
-labelNote: "HGIS 121624"
+sourceRef:
+  - "HGIS 121624"
 aliases:
   - "전라남도/지도군/안창면 (HGIS 121624)"
 ---

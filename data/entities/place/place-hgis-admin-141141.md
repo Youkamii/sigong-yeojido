@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141141"
 label: "평안북도/위원군/화창면"
-labelNote: "HGIS 141141"
+sourceRef:
+  - "HGIS 141141"
 aliases:
   - "평안북도/위원군/화창면 (HGIS 141141)"
 ---

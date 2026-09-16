@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144361"
 label: "경상남도/삼가군/신지면"
-labelNote: "HGIS 144361"
+sourceRef:
+  - "HGIS 144361"
 aliases:
   - "경상남도/삼가군/신지면 (HGIS 144361)"
 ---

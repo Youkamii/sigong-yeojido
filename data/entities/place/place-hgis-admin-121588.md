@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121588"
 label: "전라남도/지도군/사옥면"
-labelNote: "HGIS 121588"
+sourceRef:
+  - "HGIS 121588"
 aliases:
   - "전라남도/지도군/사옥면 (HGIS 121588)"
 ---

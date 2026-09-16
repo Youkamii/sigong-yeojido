@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157127"
 label: "경상북도/상주군/상주면"
-labelNote: "HGIS 157127"
+sourceRef:
+  - "HGIS 157127"
 aliases:
   - "경상북도/상주군/상주면 (HGIS 157127)"
 ---

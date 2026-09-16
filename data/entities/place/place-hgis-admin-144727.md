@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144727"
 label: "경상남도/함안군/대곡면"
-labelNote: "HGIS 144727"
+sourceRef:
+  - "HGIS 144727"
 aliases:
   - "경상남도/함안군/대곡면 (HGIS 144727)"
 ---

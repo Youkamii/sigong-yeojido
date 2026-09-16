@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144531"
 label: "경상남도/진주군/가차례면"
-labelNote: "HGIS 144531"
+sourceRef:
+  - "HGIS 144531"
 aliases:
   - "경상남도/진주군/가차례면 (HGIS 144531)"
 ---

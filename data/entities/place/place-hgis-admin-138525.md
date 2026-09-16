@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-138525"
 label: "평안북도/용천부/부남면"
-labelNote: "HGIS 138525"
+sourceRef:
+  - "HGIS 138525"
 aliases:
   - "평안북도/용천부/부남면 (HGIS 138525)"
 ---

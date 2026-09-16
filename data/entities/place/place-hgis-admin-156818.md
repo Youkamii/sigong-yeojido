@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156818"
 label: "경상북도/경산군/진량면"
-labelNote: "HGIS 156818"
+sourceRef:
+  - "HGIS 156818"
 aliases:
   - "경상북도/경산군/진량면 (HGIS 156818)"
 ---

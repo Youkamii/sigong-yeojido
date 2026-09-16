@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141595"
 label: "평안북도/의주부/진리면"
-labelNote: "HGIS 141595"
+sourceRef:
+  - "HGIS 141595"
 aliases:
   - "평안북도/의주부/진리면 (HGIS 141595)"
 ---

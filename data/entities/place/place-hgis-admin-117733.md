@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117733"
 label: "전라남도/무안군/선도면"
-labelNote: "HGIS 117733"
+sourceRef:
+  - "HGIS 117733"
 aliases:
   - "전라남도/무안군/선도면 (HGIS 117733)"
 ---

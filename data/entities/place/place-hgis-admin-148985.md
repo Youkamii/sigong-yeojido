@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-148985"
 label: "경상남도/동래군/정관면"
-labelNote: "HGIS 148985"
+sourceRef:
+  - "HGIS 148985"
 aliases:
   - "경상남도/동래군/정관면 (HGIS 148985)"
 ---

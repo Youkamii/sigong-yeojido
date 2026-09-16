@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156985"
 label: "경상북도/대구부/인흥면"
-labelNote: "HGIS 156985"
+sourceRef:
+  - "HGIS 156985"
 aliases:
   - "경상북도/대구부/인흥면 (HGIS 156985)"
 ---

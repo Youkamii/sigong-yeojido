@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144791"
 label: "경상남도/합천군/상백면"
-labelNote: "HGIS 144791"
+sourceRef:
+  - "HGIS 144791"
 aliases:
   - "경상남도/합천군/상백면 (HGIS 144791)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157477"
 label: "경상북도/청송군/부내면"
-labelNote: "HGIS 157477"
+sourceRef:
+  - "HGIS 157477"
 aliases:
   - "경상북도/청송군/부내면 (HGIS 157477)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156967"
 label: "경상북도/대구부/동중면"
-labelNote: "HGIS 156967"
+sourceRef:
+  - "HGIS 156967"
 aliases:
   - "경상북도/대구부/동중면 (HGIS 156967)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112005"
 label: "전라남도/광주군/삼소지면"
-labelNote: "HGIS 112005"
+sourceRef:
+  - "HGIS 112005"
 aliases:
   - "전라남도/광주군/삼소지면 (HGIS 112005)"
 ---

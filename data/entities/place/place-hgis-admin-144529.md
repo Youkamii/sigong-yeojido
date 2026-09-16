@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144529"
 label: "경상남도/진주군/가수개면"
-labelNote: "HGIS 144529"
+sourceRef:
+  - "HGIS 144529"
 aliases:
   - "경상남도/진주군/가수개면 (HGIS 144529)"
 ---

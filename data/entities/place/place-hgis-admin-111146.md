@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111146"
 label: "전라남도/광산군/극락면"
-labelNote: "HGIS 111146"
+sourceRef:
+  - "HGIS 111146"
 aliases:
   - "전라남도/광산군/극락면 (HGIS 111146)"
 ---

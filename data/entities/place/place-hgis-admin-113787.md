@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113787"
 label: "전라남도/나주군/도림면"
-labelNote: "HGIS 113787"
+sourceRef:
+  - "HGIS 113787"
 aliases:
   - "전라남도/나주군/도림면 (HGIS 113787)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121972"
 label: "전라남도/진도군/임이면"
-labelNote: "HGIS 121972"
+sourceRef:
+  - "HGIS 121972"
 aliases:
   - "전라남도/진도군/임이면 (HGIS 121972)"
 ---

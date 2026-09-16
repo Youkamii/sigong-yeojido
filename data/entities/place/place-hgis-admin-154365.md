@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154365"
 label: "경상남도/의령군/화정면"
-labelNote: "HGIS 154365"
+sourceRef:
+  - "HGIS 154365"
 aliases:
   - "경상남도/의령군/화정면 (HGIS 154365)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144443"
 label: "경상남도/울산군/농서면"
-labelNote: "HGIS 144443"
+sourceRef:
+  - "HGIS 144443"
 aliases:
   - "경상남도/울산군/농서면 (HGIS 144443)"
 ---

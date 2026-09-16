@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117708"
 label: "전라남도/무안군/사옥면"
-labelNote: "HGIS 117708"
+sourceRef:
+  - "HGIS 117708"
 aliases:
   - "전라남도/무안군/사옥면 (HGIS 117708)"
 ---

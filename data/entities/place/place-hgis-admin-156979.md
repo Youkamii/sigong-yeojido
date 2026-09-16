@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156979"
 label: "경상북도/대구부/성평곡면"
-labelNote: "HGIS 156979"
+sourceRef:
+  - "HGIS 156979"
 aliases:
   - "경상북도/대구부/성평곡면 (HGIS 156979)"
 ---

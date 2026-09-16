@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144578"
 label: "경상남도/진주군/이곡면"
-labelNote: "HGIS 144578"
+sourceRef:
+  - "HGIS 144578"
 aliases:
   - "경상남도/진주군/이곡면 (HGIS 144578)"
 ---

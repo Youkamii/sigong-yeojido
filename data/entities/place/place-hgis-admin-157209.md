@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157209"
 label: "경상북도/신녕군/아촌면"
-labelNote: "HGIS 157209"
+sourceRef:
+  - "HGIS 157209"
 aliases:
   - "경상북도/신녕군/아촌면 (HGIS 157209)"
 ---

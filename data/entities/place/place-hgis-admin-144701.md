@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144701"
 label: "경상남도/하동군/북천면"
-labelNote: "HGIS 144701"
+sourceRef:
+  - "HGIS 144701"
 aliases:
   - "경상남도/하동군/북천면 (HGIS 144701)"
 ---

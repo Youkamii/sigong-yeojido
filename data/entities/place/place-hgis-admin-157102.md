@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157102"
 label: "경상북도/비안군/외북면"
-labelNote: "HGIS 157102"
+sourceRef:
+  - "HGIS 157102"
 aliases:
   - "경상북도/비안군/외북면 (HGIS 157102)"
 ---

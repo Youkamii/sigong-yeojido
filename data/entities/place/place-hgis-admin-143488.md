@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143488"
 label: "경상남도/거창군/남흥면"
-labelNote: "HGIS 143488"
+sourceRef:
+  - "HGIS 143488"
 aliases:
   - "경상남도/거창군/남흥면 (HGIS 143488)"
 ---

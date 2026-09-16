@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156999"
 label: "경상북도/대구부/화현내면"
-labelNote: "HGIS 156999"
+sourceRef:
+  - "HGIS 156999"
 aliases:
   - "경상북도/대구부/화현내면 (HGIS 156999)"
 ---

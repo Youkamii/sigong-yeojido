@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144265"
 label: "경상남도/부산부/사상면"
-labelNote: "HGIS 144265"
+sourceRef:
+  - "HGIS 144265"
 aliases:
   - "경상남도/부산부/사상면 (HGIS 144265)"
 ---

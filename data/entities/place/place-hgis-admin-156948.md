@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156948"
 label: "경상북도/달성군/현풍면"
-labelNote: "HGIS 156948"
+sourceRef:
+  - "HGIS 156948"
 aliases:
   - "경상북도/달성군/현풍면 (HGIS 156948)"
 ---

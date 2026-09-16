@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144082"
 label: "경상남도/거창군/북상면"
-labelNote: "HGIS 144082"
+sourceRef:
+  - "HGIS 144082"
 aliases:
   - "경상남도/거창군/북상면 (HGIS 144082)"
 ---

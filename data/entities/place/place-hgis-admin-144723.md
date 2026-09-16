@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144723"
 label: "경상남도/함안군/가야면"
-labelNote: "HGIS 144723"
+sourceRef:
+  - "HGIS 144723"
 aliases:
   - "경상남도/함안군/가야면 (HGIS 144723)"
 ---

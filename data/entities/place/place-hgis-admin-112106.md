@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112106"
 label: "전라남도/광주군/소고룡면"
-labelNote: "HGIS 112106"
+sourceRef:
+  - "HGIS 112106"
 aliases:
   - "전라남도/광주군/소고룡면 (HGIS 112106)"
 ---

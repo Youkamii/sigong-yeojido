@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156702"
 label: "황해도/신계군"
-labelNote: "HGIS 156702"
+sourceRef:
+  - "HGIS 156702"
 aliases:
   - "황해도/신계군 (HGIS 156702)"
 ---

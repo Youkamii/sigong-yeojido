@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144157"
 label: "경상남도/김해군/대상면"
-labelNote: "HGIS 144157"
+sourceRef:
+  - "HGIS 144157"
 aliases:
   - "경상남도/김해군/대상면 (HGIS 144157)"
 ---

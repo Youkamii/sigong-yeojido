@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174575"
 label: "경상북도/대구군"
-labelNote: "HGIS 174575"
+sourceRef:
+  - "HGIS 174575"
 aliases:
   - "경상북도/대구군 (HGIS 174575)"
 ---

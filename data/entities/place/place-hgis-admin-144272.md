@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144272"
 label: "경상남도/부산부/사하면"
-labelNote: "HGIS 144272"
+sourceRef:
+  - "HGIS 144272"
 aliases:
   - "경상남도/부산부/사하면 (HGIS 144272)"
 ---

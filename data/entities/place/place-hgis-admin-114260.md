@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114260"
 label: "전라남도/나주군/용문면"
-labelNote: "HGIS 114260"
+sourceRef:
+  - "HGIS 114260"
 aliases:
   - "전라남도/나주군/용문면 (HGIS 114260)"
 ---

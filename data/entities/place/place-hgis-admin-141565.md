@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141565"
 label: "평안북도/의주부/주내면"
-labelNote: "HGIS 141565"
+sourceRef:
+  - "HGIS 141565"
 aliases:
   - "평안북도/의주부/주내면 (HGIS 141565)"
 ---

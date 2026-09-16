@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157029"
 label: "경상북도/용궁군/서면"
-labelNote: "HGIS 157029"
+sourceRef:
+  - "HGIS 157029"
 aliases:
   - "경상북도/용궁군/서면 (HGIS 157029)"
 ---

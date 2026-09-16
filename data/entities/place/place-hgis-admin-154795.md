@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154795"
 label: "경상남도/동래군/장안면"
-labelNote: "HGIS 154795"
+sourceRef:
+  - "HGIS 154795"
 aliases:
   - "경상남도/동래군/장안면 (HGIS 154795)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-148093"
 label: "경상남도/동래군/구포읍"
-labelNote: "HGIS 148093"
+sourceRef:
+  - "HGIS 148093"
 aliases:
   - "경상남도/동래군/구포읍 (HGIS 148093)"
 ---

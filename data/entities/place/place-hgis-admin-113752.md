@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113752"
 label: "전라남도/나주군/금안면"
-labelNote: "HGIS 113752"
+sourceRef:
+  - "HGIS 113752"
 aliases:
   - "전라남도/나주군/금안면 (HGIS 113752)"
 ---

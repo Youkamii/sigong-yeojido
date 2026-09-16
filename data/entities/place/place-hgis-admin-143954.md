@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143954"
 label: "경상남도/창원부/진동면"
-labelNote: "HGIS 143954"
+sourceRef:
+  - "HGIS 143954"
 aliases:
   - "경상남도/창원부/진동면 (HGIS 143954)"
 ---

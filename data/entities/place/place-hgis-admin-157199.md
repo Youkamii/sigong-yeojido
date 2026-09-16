@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157199"
 label: "경상북도/순흥군/동원면"
-labelNote: "HGIS 157199"
+sourceRef:
+  - "HGIS 157199"
 aliases:
   - "경상북도/순흥군/동원면 (HGIS 157199)"
 ---

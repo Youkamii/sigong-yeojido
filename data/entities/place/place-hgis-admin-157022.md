@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157022"
 label: "경상북도/예천군/위라면"
-labelNote: "HGIS 157022"
+sourceRef:
+  - "HGIS 157022"
 aliases:
   - "경상북도/예천군/위라면 (HGIS 157022)"
 ---

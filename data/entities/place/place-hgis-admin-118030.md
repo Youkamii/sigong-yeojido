@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118030"
 label: "전라남도/보성군/문덕면"
-labelNote: "HGIS 118030"
+sourceRef:
+  - "HGIS 118030"
 aliases:
   - "전라남도/보성군/문덕면 (HGIS 118030)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157365"
 label: "경상북도/영천군/창수면"
-labelNote: "HGIS 157365"
+sourceRef:
+  - "HGIS 157365"
 aliases:
   - "경상북도/영천군/창수면 (HGIS 157365)"
 ---

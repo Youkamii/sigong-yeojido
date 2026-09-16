@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112035"
 label: "전라남도/광주군/서양면"
-labelNote: "HGIS 112035"
+sourceRef:
+  - "HGIS 112035"
 aliases:
   - "전라남도/광주군/서양면 (HGIS 112035)"
 ---

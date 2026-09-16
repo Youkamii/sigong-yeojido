@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144318"
 label: "경상남도/산청군/도산면"
-labelNote: "HGIS 144318"
+sourceRef:
+  - "HGIS 144318"
 aliases:
   - "경상남도/산청군/도산면 (HGIS 144318)"
 ---

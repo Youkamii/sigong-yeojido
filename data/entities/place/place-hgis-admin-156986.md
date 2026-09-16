@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156986"
 label: "경상북도/대구부/조암면"
-labelNote: "HGIS 156986"
+sourceRef:
+  - "HGIS 156986"
 aliases:
   - "경상북도/대구부/조암면 (HGIS 156986)"
 ---

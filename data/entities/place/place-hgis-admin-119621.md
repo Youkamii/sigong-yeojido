@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119621"
 label: "전라남도/장성군/남면"
-labelNote: "HGIS 119621"
+sourceRef:
+  - "HGIS 119621"
 aliases:
   - "전라남도/장성군/남면 (HGIS 119621)"
 ---

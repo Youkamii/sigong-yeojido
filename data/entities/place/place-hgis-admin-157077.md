@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157077"
 label: "경상북도/봉화군/법전면"
-labelNote: "HGIS 157077"
+sourceRef:
+  - "HGIS 157077"
 aliases:
   - "경상북도/봉화군/법전면 (HGIS 157077)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156762"
 label: "경상북도/영해군"
-labelNote: "HGIS 156762"
+sourceRef:
+  - "HGIS 156762"
 aliases:
   - "경상북도/영해군 (HGIS 156762)"
 ---

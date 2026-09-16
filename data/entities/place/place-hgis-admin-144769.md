@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144769"
 label: "경상남도/함양군/원수면"
-labelNote: "HGIS 144769"
+sourceRef:
+  - "HGIS 144769"
 aliases:
   - "경상남도/함양군/원수면 (HGIS 144769)"
 ---

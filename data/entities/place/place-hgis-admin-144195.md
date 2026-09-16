@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144195"
 label: "경상남도/김해군/활천면"
-labelNote: "HGIS 144195"
+sourceRef:
+  - "HGIS 144195"
 aliases:
   - "경상남도/김해군/활천면 (HGIS 144195)"
 ---

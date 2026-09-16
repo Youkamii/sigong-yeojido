@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144277"
 label: "경상남도/부산부/좌이면"
-labelNote: "HGIS 144277"
+sourceRef:
+  - "HGIS 144277"
 aliases:
   - "경상남도/부산부/좌이면 (HGIS 144277)"
 ---

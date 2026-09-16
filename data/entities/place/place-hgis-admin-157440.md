@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157440"
 label: "경상북도/장기군/내북면"
-labelNote: "HGIS 157440"
+sourceRef:
+  - "HGIS 157440"
 aliases:
   - "경상북도/장기군/내북면 (HGIS 157440)"
 ---

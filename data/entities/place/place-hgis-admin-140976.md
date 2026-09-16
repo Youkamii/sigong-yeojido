@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140976"
 label: "평안북도/위원군/동상면"
-labelNote: "HGIS 140976"
+sourceRef:
+  - "HGIS 140976"
 aliases:
   - "평안북도/위원군/동상면 (HGIS 140976)"
 ---

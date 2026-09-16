@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113753"
 label: "전라남도/나주군/금천면"
-labelNote: "HGIS 113753"
+sourceRef:
+  - "HGIS 113753"
 aliases:
   - "전라남도/나주군/금천면 (HGIS 113753)"
 ---

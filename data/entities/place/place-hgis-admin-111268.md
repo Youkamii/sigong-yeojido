@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111268"
 label: "전라남도/광산군/하남면"
-labelNote: "HGIS 111268"
+sourceRef:
+  - "HGIS 111268"
 aliases:
   - "전라남도/광산군/하남면 (HGIS 111268)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123832"
 label: "전라남도/해남군/황원면"
-labelNote: "HGIS 123832"
+sourceRef:
+  - "HGIS 123832"
 aliases:
   - "전라남도/해남군/황원면 (HGIS 123832)"
 ---

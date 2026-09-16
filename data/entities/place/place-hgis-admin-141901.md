@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141901"
 label: "평안북도/정주군/오산면"
-labelNote: "HGIS 141901"
+sourceRef:
+  - "HGIS 141901"
 aliases:
   - "평안북도/정주군/오산면 (HGIS 141901)"
 ---

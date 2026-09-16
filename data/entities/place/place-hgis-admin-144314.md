@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144314"
 label: "경상남도/산청군/금서면"
-labelNote: "HGIS 144314"
+sourceRef:
+  - "HGIS 144314"
 aliases:
   - "경상남도/산청군/금서면 (HGIS 144314)"
 ---

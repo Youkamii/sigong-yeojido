@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145088"
 label: "경상남도/김해군/유하면"
-labelNote: "HGIS 145088"
+sourceRef:
+  - "HGIS 145088"
 aliases:
   - "경상남도/김해군/유하면 (HGIS 145088)"
 ---

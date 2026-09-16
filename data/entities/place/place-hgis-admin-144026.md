@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144026"
 label: "경상남도/울산군/삼동면"
-labelNote: "HGIS 144026"
+sourceRef:
+  - "HGIS 144026"
 aliases:
   - "경상남도/울산군/삼동면 (HGIS 144026)"
 ---

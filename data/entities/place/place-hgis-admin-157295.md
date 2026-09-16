@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157295"
 label: "경상북도/영일군/봉산면"
-labelNote: "HGIS 157295"
+sourceRef:
+  - "HGIS 157295"
 aliases:
   - "경상북도/영일군/봉산면 (HGIS 157295)"
 ---

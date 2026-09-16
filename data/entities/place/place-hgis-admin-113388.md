@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113388"
 label: "전라남도/돌산군/두남면"
-labelNote: "HGIS 113388"
+sourceRef:
+  - "HGIS 113388"
 aliases:
   - "전라남도/돌산군/두남면 (HGIS 113388)"
 ---

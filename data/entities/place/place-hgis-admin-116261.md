@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116261"
 label: "전라남도/영암군/미암면"
-labelNote: "HGIS 116261"
+sourceRef:
+  - "HGIS 116261"
 aliases:
   - "전라남도/영암군/미암면 (HGIS 116261)"
 ---

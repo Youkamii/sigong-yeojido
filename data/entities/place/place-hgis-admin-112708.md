@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112708"
 label: "전라남도/남평군/금마산면"
-labelNote: "HGIS 112708"
+sourceRef:
+  - "HGIS 112708"
 aliases:
   - "전라남도/남평군/금마산면 (HGIS 112708)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157676"
 label: "경상북도/의흥군"
-labelNote: "HGIS 157676"
+sourceRef:
+  - "HGIS 157676"
 aliases:
   - "경상북도/의흥군 (HGIS 157676)"
 ---

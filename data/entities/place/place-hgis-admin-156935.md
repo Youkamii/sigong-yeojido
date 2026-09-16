@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156935"
 label: "경상북도/달성군/논공면"
-labelNote: "HGIS 156935"
+sourceRef:
+  - "HGIS 156935"
 aliases:
   - "경상북도/달성군/논공면 (HGIS 156935)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156927"
 label: "경상북도/대구군/해서촌면"
-labelNote: "HGIS 156927"
+sourceRef:
+  - "HGIS 156927"
 aliases:
   - "경상북도/대구군/해서촌면 (HGIS 156927)"
 ---

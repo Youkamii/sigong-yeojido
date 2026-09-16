@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143192"
 label: "경상남도/김해군/이북면"
-labelNote: "HGIS 143192"
+sourceRef:
+  - "HGIS 143192"
 aliases:
   - "경상남도/김해군/이북면 (HGIS 143192)"
 ---

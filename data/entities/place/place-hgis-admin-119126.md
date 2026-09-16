@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119126"
 label: "전라남도/순천군/해촌면"
-labelNote: "HGIS 119126"
+sourceRef:
+  - "HGIS 119126"
 aliases:
   - "전라남도/순천군/해촌면 (HGIS 119126)"
 ---

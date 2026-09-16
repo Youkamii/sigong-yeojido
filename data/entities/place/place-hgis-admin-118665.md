@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118665"
 label: "전라남도/순천군/소안면"
-labelNote: "HGIS 118665"
+sourceRef:
+  - "HGIS 118665"
 aliases:
   - "전라남도/순천군/소안면 (HGIS 118665)"
 ---

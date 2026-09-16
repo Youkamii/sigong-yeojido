@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-124082"
 label: "전라남도/흥양군/도양면"
-labelNote: "HGIS 124082"
+sourceRef:
+  - "HGIS 124082"
 aliases:
   - "전라남도/흥양군/도양면 (HGIS 124082)"
 ---

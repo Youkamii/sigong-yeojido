@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157325"
 label: "경상북도/영천군/말암면"
-labelNote: "HGIS 157325"
+sourceRef:
+  - "HGIS 157325"
 aliases:
   - "경상북도/영천군/말암면 (HGIS 157325)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156756"
 label: "경상북도/대구군/해동촌면"
-labelNote: "HGIS 156756"
+sourceRef:
+  - "HGIS 156756"
 aliases:
   - "경상북도/대구군/해동촌면 (HGIS 156756)"
 ---

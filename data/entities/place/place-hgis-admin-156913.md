@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156913"
 label: "경상북도/김천군/봉산면"
-labelNote: "HGIS 156913"
+sourceRef:
+  - "HGIS 156913"
 aliases:
   - "경상북도/김천군/봉산면 (HGIS 156913)"
 ---

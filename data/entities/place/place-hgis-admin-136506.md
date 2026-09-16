@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136506"
 label: "평안북도/운산군/고면"
-labelNote: "HGIS 136506"
+sourceRef:
+  - "HGIS 136506"
 aliases:
   - "평안북도/운산군/고면 (HGIS 136506)"
 ---

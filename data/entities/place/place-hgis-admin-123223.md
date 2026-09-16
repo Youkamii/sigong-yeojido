@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123223"
 label: "전라남도/해남군/마포면"
-labelNote: "HGIS 123223"
+sourceRef:
+  - "HGIS 123223"
 aliases:
   - "전라남도/해남군/마포면 (HGIS 123223)"
 ---

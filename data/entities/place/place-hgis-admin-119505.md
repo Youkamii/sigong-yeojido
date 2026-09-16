@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119505"
 label: "전라남도/완도군/조약면"
-labelNote: "HGIS 119505"
+sourceRef:
+  - "HGIS 119505"
 aliases:
   - "전라남도/완도군/조약면 (HGIS 119505)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121698"
 label: "전라남도/지도군/압해면"
-labelNote: "HGIS 121698"
+sourceRef:
+  - "HGIS 121698"
 aliases:
   - "전라남도/지도군/압해면 (HGIS 121698)"
 ---

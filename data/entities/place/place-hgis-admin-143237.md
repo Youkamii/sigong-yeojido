@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143237"
 label: "경상남도/삼가군/병목면"
-labelNote: "HGIS 143237"
+sourceRef:
+  - "HGIS 143237"
 aliases:
   - "경상남도/삼가군/병목면 (HGIS 143237)"
 ---

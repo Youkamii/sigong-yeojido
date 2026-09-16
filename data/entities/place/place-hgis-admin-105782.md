@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-105782"
 label: "전라북도/태인군/서촌면"
-labelNote: "HGIS 105782"
+sourceRef:
+  - "HGIS 105782"
 aliases:
   - "전라북도/태인군/서촌면 (HGIS 105782)"
 ---

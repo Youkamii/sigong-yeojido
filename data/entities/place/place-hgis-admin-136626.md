@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136626"
 label: "평안북도/박천군/가남면"
-labelNote: "HGIS 136626"
+sourceRef:
+  - "HGIS 136626"
 aliases:
   - "평안북도/박천군/가남면 (HGIS 136626)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143215"
 label: "경상남도/산청군/고읍면"
-labelNote: "HGIS 143215"
+sourceRef:
+  - "HGIS 143215"
 aliases:
   - "경상남도/산청군/고읍면 (HGIS 143215)"
 ---

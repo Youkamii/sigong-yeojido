@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144353"
 label: "경상남도/삼가군/감한면"
-labelNote: "HGIS 144353"
+sourceRef:
+  - "HGIS 144353"
 aliases:
   - "경상남도/삼가군/감한면 (HGIS 144353)"
 ---

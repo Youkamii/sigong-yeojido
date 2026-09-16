@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141403"
 label: "평안북도/의주부/광평면"
-labelNote: "HGIS 141403"
+sourceRef:
+  - "HGIS 141403"
 aliases:
   - "평안북도/의주부/광평면 (HGIS 141403)"
 ---

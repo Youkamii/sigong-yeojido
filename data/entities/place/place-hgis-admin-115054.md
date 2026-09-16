@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115054"
 label: "전라남도/영광군/도내면"
-labelNote: "HGIS 115054"
+sourceRef:
+  - "HGIS 115054"
 aliases:
   - "전라남도/영광군/도내면 (HGIS 115054)"
 ---

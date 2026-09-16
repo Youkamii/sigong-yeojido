@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157435"
 label: "경상북도/지례군/외증산면"
-labelNote: "HGIS 157435"
+sourceRef:
+  - "HGIS 157435"
 aliases:
   - "경상북도/지례군/외증산면 (HGIS 157435)"
 ---

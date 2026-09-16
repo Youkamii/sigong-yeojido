@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144506"
 label: "경상남도/의령군/이정동면"
-labelNote: "HGIS 144506"
+sourceRef:
+  - "HGIS 144506"
 aliases:
   - "경상남도/의령군/이정동면 (HGIS 144506)"
 ---

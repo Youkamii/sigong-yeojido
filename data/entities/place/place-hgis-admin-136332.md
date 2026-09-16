@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136332"
 label: "평안북도/구성군/성내면"
-labelNote: "HGIS 136332"
+sourceRef:
+  - "HGIS 136332"
 aliases:
   - "평안북도/구성군/성내면 (HGIS 136332)"
 ---

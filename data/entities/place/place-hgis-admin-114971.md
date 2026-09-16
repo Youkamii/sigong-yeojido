@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114971"
 label: "전라남도/영광군/금마면"
-labelNote: "HGIS 114971"
+sourceRef:
+  - "HGIS 114971"
 aliases:
   - "전라남도/영광군/금마면 (HGIS 114971)"
 ---

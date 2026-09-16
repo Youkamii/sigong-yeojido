@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144432"
 label: "경상남도/합천군/숭산면"
-labelNote: "HGIS 144432"
+sourceRef:
+  - "HGIS 144432"
 aliases:
   - "경상남도/합천군/숭산면 (HGIS 144432)"
 ---

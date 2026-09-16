@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144238"
 label: "경상남도/밀양군/산내면"
-labelNote: "HGIS 144238"
+sourceRef:
+  - "HGIS 144238"
 aliases:
   - "경상남도/밀양군/산내면 (HGIS 144238)"
 ---

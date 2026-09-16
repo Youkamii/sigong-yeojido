@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150337"
 label: "경상남도/동래부"
-labelNote: "HGIS 150337"
+sourceRef:
+  - "HGIS 150337"
 aliases:
   - "경상남도/동래부 (HGIS 150337)"
 ---

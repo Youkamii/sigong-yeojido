@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144555"
 label: "경상남도/진주군/모태곡면"
-labelNote: "HGIS 144555"
+sourceRef:
+  - "HGIS 144555"
 aliases:
   - "경상남도/진주군/모태곡면 (HGIS 144555)"
 ---

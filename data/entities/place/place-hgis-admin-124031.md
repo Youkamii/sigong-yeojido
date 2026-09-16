@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-124031"
 label: "전라남도/흥양군/대강면"
-labelNote: "HGIS 124031"
+sourceRef:
+  - "HGIS 124031"
 aliases:
   - "전라남도/흥양군/대강면 (HGIS 124031)"
 ---

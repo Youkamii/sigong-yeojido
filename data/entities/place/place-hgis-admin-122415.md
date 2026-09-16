@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122415"
 label: "전라남도/창평군/수면"
-labelNote: "HGIS 122415"
+sourceRef:
+  - "HGIS 122415"
 aliases:
   - "전라남도/창평군/수면 (HGIS 122415)"
 ---

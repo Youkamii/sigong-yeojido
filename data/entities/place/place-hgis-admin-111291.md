@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111291"
 label: "전라남도/광주군/계촌면"
-labelNote: "HGIS 111291"
+sourceRef:
+  - "HGIS 111291"
 aliases:
   - "전라남도/광주군/계촌면 (HGIS 111291)"
 ---

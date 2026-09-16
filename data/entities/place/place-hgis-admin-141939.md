@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141939"
 label: "평안북도/정주군/임포면"
-labelNote: "HGIS 141939"
+sourceRef:
+  - "HGIS 141939"
 aliases:
   - "평안북도/정주군/임포면 (HGIS 141939)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123860"
 label: "전라남도/화순군/능주면"
-labelNote: "HGIS 123860"
+sourceRef:
+  - "HGIS 123860"
 aliases:
   - "전라남도/화순군/능주면 (HGIS 123860)"
 ---

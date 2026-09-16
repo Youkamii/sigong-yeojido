@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157196"
 label: "경상북도/안동군/풍현내면"
-labelNote: "HGIS 157196"
+sourceRef:
+  - "HGIS 157196"
 aliases:
   - "경상북도/안동군/풍현내면 (HGIS 157196)"
 ---

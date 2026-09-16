@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114016"
 label: "전라남도/나주군/상곡면"
-labelNote: "HGIS 114016"
+sourceRef:
+  - "HGIS 114016"
 aliases:
   - "전라남도/나주군/상곡면 (HGIS 114016)"
 ---

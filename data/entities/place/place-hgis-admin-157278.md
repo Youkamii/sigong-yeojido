@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157278"
 label: "경상북도/영양군/북초면"
-labelNote: "HGIS 157278"
+sourceRef:
+  - "HGIS 157278"
 aliases:
   - "경상북도/영양군/북초면 (HGIS 157278)"
 ---

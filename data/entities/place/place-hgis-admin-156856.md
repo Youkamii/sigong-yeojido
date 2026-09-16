@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156856"
 label: "경상북도/고령군/도장면"
-labelNote: "HGIS 156856"
+sourceRef:
+  - "HGIS 156856"
 aliases:
   - "경상북도/고령군/도장면 (HGIS 156856)"
 ---

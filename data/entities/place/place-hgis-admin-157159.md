@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157159"
 label: "경상북도/선산군/서내면"
-labelNote: "HGIS 157159"
+sourceRef:
+  - "HGIS 157159"
 aliases:
   - "경상북도/선산군/서내면 (HGIS 157159)"
 ---

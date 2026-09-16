@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144490"
 label: "경상남도/의령군/대의면"
-labelNote: "HGIS 144490"
+sourceRef:
+  - "HGIS 144490"
 aliases:
   - "경상남도/의령군/대의면 (HGIS 144490)"
 ---

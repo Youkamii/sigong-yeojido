@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144650"
 label: "경상남도/창원군/진동면"
-labelNote: "HGIS 144650"
+sourceRef:
+  - "HGIS 144650"
 aliases:
   - "경상남도/창원군/진동면 (HGIS 144650)"
 ---

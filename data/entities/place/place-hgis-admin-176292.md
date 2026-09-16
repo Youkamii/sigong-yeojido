@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-176292"
 label: "전라북도/남원군/남원읍"
-labelNote: "HGIS 176292"
+sourceRef:
+  - "HGIS 176292"
 aliases:
   - "전라북도/남원군/남원읍 (HGIS 176292)"
 ---

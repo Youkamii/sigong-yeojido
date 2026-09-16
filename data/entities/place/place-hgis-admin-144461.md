@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144461"
 label: "경상남도/울산군/언양면"
-labelNote: "HGIS 144461"
+sourceRef:
+  - "HGIS 144461"
 aliases:
   - "경상남도/울산군/언양면 (HGIS 144461)"
 ---

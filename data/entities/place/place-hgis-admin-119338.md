@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119338"
 label: "전라남도/완도군/금일면"
-labelNote: "HGIS 119338"
+sourceRef:
+  - "HGIS 119338"
 aliases:
   - "전라남도/완도군/금일면 (HGIS 119338)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136505"
 label: "평안북도/용천부/외하면"
-labelNote: "HGIS 136505"
+sourceRef:
+  - "HGIS 136505"
 aliases:
   - "평안북도/용천부/외하면 (HGIS 136505)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157297"
 label: "경상북도/영일군/신광면"
-labelNote: "HGIS 157297"
+sourceRef:
+  - "HGIS 157297"
 aliases:
   - "경상북도/영일군/신광면 (HGIS 157297)"
 ---

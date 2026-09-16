@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116705"
 label: "전라남도/능주군/도림면"
-labelNote: "HGIS 116705"
+sourceRef:
+  - "HGIS 116705"
 aliases:
   - "전라남도/능주군/도림면 (HGIS 116705)"
 ---

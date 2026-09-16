@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144817"
 label: "경상남도/거제군/사등면"
-labelNote: "HGIS 144817"
+sourceRef:
+  - "HGIS 144817"
 aliases:
   - "경상남도/거제군/사등면 (HGIS 144817)"
 ---

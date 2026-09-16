@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110462"
 label: "전라남도/강진군/군동면"
-labelNote: "HGIS 110462"
+sourceRef:
+  - "HGIS 110462"
 aliases:
   - "전라남도/강진군/군동면 (HGIS 110462)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113989"
 label: "전라남도/나주군/삼가면"
-labelNote: "HGIS 113989"
+sourceRef:
+  - "HGIS 113989"
 aliases:
   - "전라남도/나주군/삼가면 (HGIS 113989)"
 ---

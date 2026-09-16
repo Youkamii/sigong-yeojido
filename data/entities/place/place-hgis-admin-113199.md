@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113199"
 label: "전라남도/담양군/산면"
-labelNote: "HGIS 113199"
+sourceRef:
+  - "HGIS 113199"
 aliases:
   - "전라남도/담양군/산면 (HGIS 113199)"
 ---

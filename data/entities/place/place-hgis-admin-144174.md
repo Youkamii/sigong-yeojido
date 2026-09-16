@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144174"
 label: "경상남도/함양군/서상면"
-labelNote: "HGIS 144174"
+sourceRef:
+  - "HGIS 144174"
 aliases:
   - "경상남도/함양군/서상면 (HGIS 144174)"
 ---

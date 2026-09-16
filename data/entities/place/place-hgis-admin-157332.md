@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157332"
 label: "경상북도/의흥군/신남면"
-labelNote: "HGIS 157332"
+sourceRef:
+  - "HGIS 157332"
 aliases:
   - "경상북도/의흥군/신남면 (HGIS 157332)"
 ---

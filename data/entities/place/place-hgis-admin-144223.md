@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144223"
 label: "경상남도/마산부/진서면"
-labelNote: "HGIS 144223"
+sourceRef:
+  - "HGIS 144223"
 aliases:
   - "경상남도/마산부/진서면 (HGIS 144223)"
 ---

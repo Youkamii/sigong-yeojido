@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144488"
 label: "경상남도/의령군/능인면"
-labelNote: "HGIS 144488"
+sourceRef:
+  - "HGIS 144488"
 aliases:
   - "경상남도/의령군/능인면 (HGIS 144488)"
 ---

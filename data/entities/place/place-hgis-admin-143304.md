@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143304"
 label: "경상남도/함안군/상봉면"
-labelNote: "HGIS 143304"
+sourceRef:
+  - "HGIS 143304"
 aliases:
   - "경상남도/함안군/상봉면 (HGIS 143304)"
 ---

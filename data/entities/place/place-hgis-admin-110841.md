@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110841"
 label: "전라남도/고흥군/포두면"
-labelNote: "HGIS 110841"
+sourceRef:
+  - "HGIS 110841"
 aliases:
   - "전라남도/고흥군/포두면 (HGIS 110841)"
 ---

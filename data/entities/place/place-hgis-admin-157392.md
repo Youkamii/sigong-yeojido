@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157392"
 label: "경상북도/의성군/사곡면"
-labelNote: "HGIS 157392"
+sourceRef:
+  - "HGIS 157392"
 aliases:
   - "경상북도/의성군/사곡면 (HGIS 157392)"
 ---

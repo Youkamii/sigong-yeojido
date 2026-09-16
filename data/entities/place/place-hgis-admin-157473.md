@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157473"
 label: "경상북도/청도군/외서면"
-labelNote: "HGIS 157473"
+sourceRef:
+  - "HGIS 157473"
 aliases:
   - "경상북도/청도군/외서면 (HGIS 157473)"
 ---

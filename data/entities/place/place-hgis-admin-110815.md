@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110815"
 label: "전라남도/강진군/호라면"
-labelNote: "HGIS 110815"
+sourceRef:
+  - "HGIS 110815"
 aliases:
   - "전라남도/강진군/호라면 (HGIS 110815)"
 ---

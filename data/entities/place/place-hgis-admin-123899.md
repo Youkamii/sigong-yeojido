@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123899"
 label: "전라남도/화순군/이서면"
-labelNote: "HGIS 123899"
+sourceRef:
+  - "HGIS 123899"
 aliases:
   - "전라남도/화순군/이서면 (HGIS 123899)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144168"
 label: "경상남도/김해군/율리면"
-labelNote: "HGIS 144168"
+sourceRef:
+  - "HGIS 144168"
 aliases:
   - "경상남도/김해군/율리면 (HGIS 144168)"
 ---

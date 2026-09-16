@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112370"
 label: "전라남도/구례군/간문면"
-labelNote: "HGIS 112370"
+sourceRef:
+  - "HGIS 112370"
 aliases:
   - "전라남도/구례군/간문면 (HGIS 112370)"
 ---

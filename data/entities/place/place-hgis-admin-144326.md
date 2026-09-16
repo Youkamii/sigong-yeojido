@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144326"
 label: "경상남도/산청군/생림면"
-labelNote: "HGIS 144326"
+sourceRef:
+  - "HGIS 144326"
 aliases:
   - "경상남도/산청군/생림면 (HGIS 144326)"
 ---

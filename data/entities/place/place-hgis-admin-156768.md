@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156768"
 label: "경상북도/김천군/감문면"
-labelNote: "HGIS 156768"
+sourceRef:
+  - "HGIS 156768"
 aliases:
   - "경상북도/김천군/감문면 (HGIS 156768)"
 ---

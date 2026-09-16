@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157583"
 label: "경상북도/영천군/고경면"
-labelNote: "HGIS 157583"
+sourceRef:
+  - "HGIS 157583"
 aliases:
   - "경상북도/영천군/고경면 (HGIS 157583)"
 ---

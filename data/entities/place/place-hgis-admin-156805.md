@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156805"
 label: "경상북도/경산군/경산면"
-labelNote: "HGIS 156805"
+sourceRef:
+  - "HGIS 156805"
 aliases:
   - "경상북도/경산군/경산면 (HGIS 156805)"
 ---

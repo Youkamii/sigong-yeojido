@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144102"
 label: "경상남도/고성군/대둔면"
-labelNote: "HGIS 144102"
+sourceRef:
+  - "HGIS 144102"
 aliases:
   - "경상남도/고성군/대둔면 (HGIS 144102)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-138518"
 label: "평안북도/영변군/어룡면"
-labelNote: "HGIS 138518"
+sourceRef:
+  - "HGIS 138518"
 aliases:
   - "평안북도/영변군/어룡면 (HGIS 138518)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112081"
 label: "전라남도/광주군/선도면"
-labelNote: "HGIS 112081"
+sourceRef:
+  - "HGIS 112081"
 aliases:
   - "전라남도/광주군/선도면 (HGIS 112081)"
 ---

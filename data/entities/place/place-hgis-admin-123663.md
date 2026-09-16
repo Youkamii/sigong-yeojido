@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123663"
 label: "전라남도/해남군/장서면"
-labelNote: "HGIS 123663"
+sourceRef:
+  - "HGIS 123663"
 aliases:
   - "전라남도/해남군/장서면 (HGIS 123663)"
 ---

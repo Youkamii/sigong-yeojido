@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118361"
 label: "전라남도/순천군/동상면"
-labelNote: "HGIS 118361"
+sourceRef:
+  - "HGIS 118361"
 aliases:
   - "전라남도/순천군/동상면 (HGIS 118361)"
 ---

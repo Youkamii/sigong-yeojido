@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119069"
 label: "전라남도/순천군/초하면"
-labelNote: "HGIS 119069"
+sourceRef:
+  - "HGIS 119069"
 aliases:
   - "전라남도/순천군/초하면 (HGIS 119069)"
 ---

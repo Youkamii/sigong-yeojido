@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118342"
 label: "전라남도/순천군/도사면"
-labelNote: "HGIS 118342"
+sourceRef:
+  - "HGIS 118342"
 aliases:
   - "전라남도/순천군/도사면 (HGIS 118342)"
 ---

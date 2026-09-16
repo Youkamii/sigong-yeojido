@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157490"
 label: "경상북도/청도군/화양면"
-labelNote: "HGIS 157490"
+sourceRef:
+  - "HGIS 157490"
 aliases:
   - "경상북도/청도군/화양면 (HGIS 157490)"
 ---

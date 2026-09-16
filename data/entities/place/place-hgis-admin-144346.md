@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144346"
 label: "경상남도/산청군/차현면"
-labelNote: "HGIS 144346"
+sourceRef:
+  - "HGIS 144346"
 aliases:
   - "경상남도/산청군/차현면 (HGIS 144346)"
 ---

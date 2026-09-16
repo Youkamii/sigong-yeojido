@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102682"
 label: "전라북도/장수군/계북면"
-labelNote: "HGIS 102682"
+sourceRef:
+  - "HGIS 102682"
 aliases:
   - "전라북도/장수군/계북면 (HGIS 102682)"
 ---

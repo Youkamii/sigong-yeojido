@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122387"
 label: "전라남도/창평군/북면"
-labelNote: "HGIS 122387"
+sourceRef:
+  - "HGIS 122387"
 aliases:
   - "전라남도/창평군/북면 (HGIS 122387)"
 ---

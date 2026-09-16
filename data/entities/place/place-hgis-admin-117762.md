@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117762"
 label: "전라남도/무안군/진하산면"
-labelNote: "HGIS 117762"
+sourceRef:
+  - "HGIS 117762"
 aliases:
   - "전라남도/무안군/진하산면 (HGIS 117762)"
 ---

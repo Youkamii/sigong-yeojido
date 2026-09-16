@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156965"
 label: "경상북도/대구부/동상면"
-labelNote: "HGIS 156965"
+sourceRef:
+  - "HGIS 156965"
 aliases:
   - "경상북도/대구부/동상면 (HGIS 156965)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114546"
 label: "전라남도/여수군/덕안면"
-labelNote: "HGIS 114546"
+sourceRef:
+  - "HGIS 114546"
 aliases:
   - "전라남도/여수군/덕안면 (HGIS 114546)"
 ---

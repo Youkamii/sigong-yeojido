@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113956"
 label: "전라남도/나주군/봉황면"
-labelNote: "HGIS 113956"
+sourceRef:
+  - "HGIS 113956"
 aliases:
   - "전라남도/나주군/봉황면 (HGIS 113956)"
 ---

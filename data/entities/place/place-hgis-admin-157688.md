@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157688"
 label: "경상북도/하양군"
-labelNote: "HGIS 157688"
+sourceRef:
+  - "HGIS 157688"
 aliases:
   - "경상북도/하양군 (HGIS 157688)"
 ---

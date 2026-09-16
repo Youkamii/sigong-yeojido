@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144279"
 label: "경상남도/사천군/곤명면"
-labelNote: "HGIS 144279"
+sourceRef:
+  - "HGIS 144279"
 aliases:
   - "경상남도/사천군/곤명면 (HGIS 144279)"
 ---

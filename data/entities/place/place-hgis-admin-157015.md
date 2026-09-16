@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157015"
 label: "경상북도/예천군/지서면"
-labelNote: "HGIS 157015"
+sourceRef:
+  - "HGIS 157015"
 aliases:
   - "경상북도/예천군/지서면 (HGIS 157015)"
 ---

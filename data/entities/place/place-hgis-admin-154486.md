@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154486"
 label: "경상남도/창원부/웅서면"
-labelNote: "HGIS 154486"
+sourceRef:
+  - "HGIS 154486"
 aliases:
   - "경상남도/창원부/웅서면 (HGIS 154486)"
 ---

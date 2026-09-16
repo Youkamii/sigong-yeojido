@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120155"
 label: "전라남도/장성군/황룡면"
-labelNote: "HGIS 120155"
+sourceRef:
+  - "HGIS 120155"
 aliases:
   - "전라남도/장성군/황룡면 (HGIS 120155)"
 ---

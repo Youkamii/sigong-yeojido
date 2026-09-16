@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157031"
 label: "경상북도/용궁군/남상면"
-labelNote: "HGIS 157031"
+sourceRef:
+  - "HGIS 157031"
 aliases:
   - "경상북도/용궁군/남상면 (HGIS 157031)"
 ---

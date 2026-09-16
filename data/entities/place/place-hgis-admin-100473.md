@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-100473"
 label: "전라북도/순창군/구림면"
-labelNote: "HGIS 100473"
+sourceRef:
+  - "HGIS 100473"
 aliases:
   - "전라북도/순창군/구림면 (HGIS 100473)"
 ---

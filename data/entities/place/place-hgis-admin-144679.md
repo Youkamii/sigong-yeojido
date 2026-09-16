@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144679"
 label: "경상남도/통영군/원량면"
-labelNote: "HGIS 144679"
+sourceRef:
+  - "HGIS 144679"
 aliases:
   - "경상남도/통영군/원량면 (HGIS 144679)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112282"
 label: "전라남도/광주군/황계면"
-labelNote: "HGIS 112282"
+sourceRef:
+  - "HGIS 112282"
 aliases:
   - "전라남도/광주군/황계면 (HGIS 112282)"
 ---

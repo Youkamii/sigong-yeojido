@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136287"
 label: "평안북도/가산군/동북면"
-labelNote: "HGIS 136287"
+sourceRef:
+  - "HGIS 136287"
 aliases:
   - "평안북도/가산군/동북면 (HGIS 136287)"
 ---

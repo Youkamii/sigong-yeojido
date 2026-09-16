@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156991"
 label: "경상북도/대구부/하북면"
-labelNote: "HGIS 156991"
+sourceRef:
+  - "HGIS 156991"
 aliases:
   - "경상북도/대구부/하북면 (HGIS 156991)"
 ---

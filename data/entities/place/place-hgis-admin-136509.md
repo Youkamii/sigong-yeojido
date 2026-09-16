@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136509"
 label: "평안북도/위원군/남면"
-labelNote: "HGIS 136509"
+sourceRef:
+  - "HGIS 136509"
 aliases:
   - "평안북도/위원군/남면 (HGIS 136509)"
 ---

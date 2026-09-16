@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156914"
 label: "경상북도/김천군/부항면"
-labelNote: "HGIS 156914"
+sourceRef:
+  - "HGIS 156914"
 aliases:
   - "경상북도/김천군/부항면 (HGIS 156914)"
 ---

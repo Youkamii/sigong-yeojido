@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112785"
 label: "전라남도/남평군/동촌면"
-labelNote: "HGIS 112785"
+sourceRef:
+  - "HGIS 112785"
 aliases:
   - "전라남도/남평군/동촌면 (HGIS 112785)"
 ---

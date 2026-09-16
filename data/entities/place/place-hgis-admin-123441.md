@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123441"
 label: "전라남도/해남군/산일면"
-labelNote: "HGIS 123441"
+sourceRef:
+  - "HGIS 123441"
 aliases:
   - "전라남도/해남군/산일면 (HGIS 123441)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157653"
 label: "경상북도/용궁군"
-labelNote: "HGIS 157653"
+sourceRef:
+  - "HGIS 157653"
 aliases:
   - "경상북도/용궁군 (HGIS 157653)"
 ---

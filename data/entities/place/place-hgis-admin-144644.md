@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144644"
 label: "경상남도/창원군/부내면"
-labelNote: "HGIS 144644"
+sourceRef:
+  - "HGIS 144644"
 aliases:
   - "경상남도/창원군/부내면 (HGIS 144644)"
 ---

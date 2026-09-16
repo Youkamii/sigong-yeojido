@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136488"
 label: "평안북도/후창군/하산면"
-labelNote: "HGIS 136488"
+sourceRef:
+  - "HGIS 136488"
 aliases:
   - "평안북도/후창군/하산면 (HGIS 136488)"
 ---

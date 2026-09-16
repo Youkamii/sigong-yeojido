@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156924"
 label: "경상북도/영해군/서면"
-labelNote: "HGIS 156924"
+sourceRef:
+  - "HGIS 156924"
 aliases:
   - "경상북도/영해군/서면 (HGIS 156924)"
 ---

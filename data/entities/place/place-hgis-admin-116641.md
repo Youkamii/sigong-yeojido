@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116641"
 label: "전라남도/영암군/학산면"
-labelNote: "HGIS 116641"
+sourceRef:
+  - "HGIS 116641"
 aliases:
   - "전라남도/영암군/학산면 (HGIS 116641)"
 ---

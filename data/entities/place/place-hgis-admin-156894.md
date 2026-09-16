@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156894"
 label: "경상북도/김산군/구소요면"
-labelNote: "HGIS 156894"
+sourceRef:
+  - "HGIS 156894"
 aliases:
   - "경상북도/김산군/구소요면 (HGIS 156894)"
 ---

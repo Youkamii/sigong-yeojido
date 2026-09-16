@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143311"
 label: "경상남도/함안군/하봉면"
-labelNote: "HGIS 143311"
+sourceRef:
+  - "HGIS 143311"
 aliases:
   - "경상남도/함안군/하봉면 (HGIS 143311)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113990"
 label: "전라남도/나주군/삼도면"
-labelNote: "HGIS 113990"
+sourceRef:
+  - "HGIS 113990"
 aliases:
   - "전라남도/나주군/삼도면 (HGIS 113990)"
 ---

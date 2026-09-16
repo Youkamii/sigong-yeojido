@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122309"
 label: "전라남도/창평군/대면"
-labelNote: "HGIS 122309"
+sourceRef:
+  - "HGIS 122309"
 aliases:
   - "전라남도/창평군/대면 (HGIS 122309)"
 ---

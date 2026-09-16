@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144730"
 label: "경상남도/함안군/마륜면"
-labelNote: "HGIS 144730"
+sourceRef:
+  - "HGIS 144730"
 aliases:
   - "경상남도/함안군/마륜면 (HGIS 144730)"
 ---

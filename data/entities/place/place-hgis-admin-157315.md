@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157315"
 label: "경상북도/영주군/이산면"
-labelNote: "HGIS 157315"
+sourceRef:
+  - "HGIS 157315"
 aliases:
   - "경상북도/영주군/이산면 (HGIS 157315)"
 ---

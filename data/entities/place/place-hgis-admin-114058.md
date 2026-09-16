@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114058"
 label: "전라남도/나주군/세지면"
-labelNote: "HGIS 114058"
+sourceRef:
+  - "HGIS 114058"
 aliases:
   - "전라남도/나주군/세지면 (HGIS 114058)"
 ---

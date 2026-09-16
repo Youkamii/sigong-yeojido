@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117813"
 label: "전라남도/보성군/고상면"
-labelNote: "HGIS 117813"
+sourceRef:
+  - "HGIS 117813"
 aliases:
   - "전라남도/보성군/고상면 (HGIS 117813)"
 ---

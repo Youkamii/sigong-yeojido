@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123851"
 label: "전라남도/화순군/남면"
-labelNote: "HGIS 123851"
+sourceRef:
+  - "HGIS 123851"
 aliases:
   - "전라남도/화순군/남면 (HGIS 123851)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156941"
 label: "경상북도/달성군/옥포면"
-labelNote: "HGIS 156941"
+sourceRef:
+  - "HGIS 156941"
 aliases:
   - "경상북도/달성군/옥포면 (HGIS 156941)"
 ---

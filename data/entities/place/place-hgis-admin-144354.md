@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144354"
 label: "경상남도/삼가군/아곡면"
-labelNote: "HGIS 144354"
+sourceRef:
+  - "HGIS 144354"
 aliases:
   - "경상남도/삼가군/아곡면 (HGIS 144354)"
 ---

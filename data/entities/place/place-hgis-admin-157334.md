@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157334"
 label: "경상북도/의흥군/우산면"
-labelNote: "HGIS 157334"
+sourceRef:
+  - "HGIS 157334"
 aliases:
   - "경상북도/의흥군/우산면 (HGIS 157334)"
 ---

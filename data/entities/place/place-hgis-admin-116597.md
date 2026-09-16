@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116597"
 label: "전라남도/영암군/원정면"
-labelNote: "HGIS 116597"
+sourceRef:
+  - "HGIS 116597"
 aliases:
   - "전라남도/영암군/원정면 (HGIS 116597)"
 ---

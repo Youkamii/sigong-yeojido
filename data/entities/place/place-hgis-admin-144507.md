@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144507"
 label: "경상남도/의령군/일가례면"
-labelNote: "HGIS 144507"
+sourceRef:
+  - "HGIS 144507"
 aliases:
   - "경상남도/의령군/일가례면 (HGIS 144507)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119712"
 label: "전라남도/장성군/내동면"
-labelNote: "HGIS 119712"
+sourceRef:
+  - "HGIS 119712"
 aliases:
   - "전라남도/장성군/내동면 (HGIS 119712)"
 ---

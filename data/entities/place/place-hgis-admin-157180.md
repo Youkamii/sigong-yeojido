@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157180"
 label: "경상북도/성주군/망성면"
-labelNote: "HGIS 157180"
+sourceRef:
+  - "HGIS 157180"
 aliases:
   - "경상북도/성주군/망성면 (HGIS 157180)"
 ---

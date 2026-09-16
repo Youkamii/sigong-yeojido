@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156753"
 label: "경상북도/현풍군/노장면"
-labelNote: "HGIS 156753"
+sourceRef:
+  - "HGIS 156753"
 aliases:
   - "경상북도/현풍군/노장면 (HGIS 156753)"
 ---

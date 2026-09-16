@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157258"
 label: "경상북도/영덕군/영해면"
-labelNote: "HGIS 157258"
+sourceRef:
+  - "HGIS 157258"
 aliases:
   - "경상북도/영덕군/영해면 (HGIS 157258)"
 ---

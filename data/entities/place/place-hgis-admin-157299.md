@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157299"
 label: "경상북도/영일군/오천면"
-labelNote: "HGIS 157299"
+sourceRef:
+  - "HGIS 157299"
 aliases:
   - "경상북도/영일군/오천면 (HGIS 157299)"
 ---

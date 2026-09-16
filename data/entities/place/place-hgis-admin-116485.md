@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116485"
 label: "전라남도/영암군/삼호면"
-labelNote: "HGIS 116485"
+sourceRef:
+  - "HGIS 116485"
 aliases:
   - "전라남도/영암군/삼호면 (HGIS 116485)"
 ---

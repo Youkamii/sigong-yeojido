@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144819"
 label: "경상남도/부산부/남면"
-labelNote: "HGIS 144819"
+sourceRef:
+  - "HGIS 144819"
 aliases:
   - "경상남도/부산부/남면 (HGIS 144819)"
 ---

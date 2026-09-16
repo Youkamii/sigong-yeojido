@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156709"
 label: "경상북도/의성군/금성면"
-labelNote: "HGIS 156709"
+sourceRef:
+  - "HGIS 156709"
 aliases:
   - "경상북도/의성군/금성면 (HGIS 156709)"
 ---

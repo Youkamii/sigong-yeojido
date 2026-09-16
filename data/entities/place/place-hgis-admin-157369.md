@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157369"
 label: "경상북도/영천군/칠백면"
-labelNote: "HGIS 157369"
+sourceRef:
+  - "HGIS 157369"
 aliases:
   - "경상북도/영천군/칠백면 (HGIS 157369)"
 ---

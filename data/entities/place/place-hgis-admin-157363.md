@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157363"
 label: "경상북도/영천군/자천면"
-labelNote: "HGIS 157363"
+sourceRef:
+  - "HGIS 157363"
 aliases:
   - "경상북도/영천군/자천면 (HGIS 157363)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144423"
 label: "경상남도/용남군/광이면"
-labelNote: "HGIS 144423"
+sourceRef:
+  - "HGIS 144423"
 aliases:
   - "경상남도/용남군/광이면 (HGIS 144423)"
 ---

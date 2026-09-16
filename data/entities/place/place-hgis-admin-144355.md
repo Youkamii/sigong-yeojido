@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144355"
 label: "경상남도/삼가군/계산면"
-labelNote: "HGIS 144355"
+sourceRef:
+  - "HGIS 144355"
 aliases:
   - "경상남도/삼가군/계산면 (HGIS 144355)"
 ---

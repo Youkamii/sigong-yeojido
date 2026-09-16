@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157495"
 label: "경상북도/청송군/진보면"
-labelNote: "HGIS 157495"
+sourceRef:
+  - "HGIS 157495"
 aliases:
   - "경상북도/청송군/진보면 (HGIS 157495)"
 ---

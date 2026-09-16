@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144761"
 label: "경상남도/합천군/하삼리면"
-labelNote: "HGIS 144761"
+sourceRef:
+  - "HGIS 144761"
 aliases:
   - "경상남도/합천군/하삼리면 (HGIS 144761)"
 ---

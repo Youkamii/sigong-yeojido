@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122210"
 label: "전라남도/진도군/진도면"
-labelNote: "HGIS 122210"
+sourceRef:
+  - "HGIS 122210"
 aliases:
   - "전라남도/진도군/진도면 (HGIS 122210)"
 ---

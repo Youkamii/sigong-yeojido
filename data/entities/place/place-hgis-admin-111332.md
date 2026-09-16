@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111332"
 label: "전라남도/광양군/광양면"
-labelNote: "HGIS 111332"
+sourceRef:
+  - "HGIS 111332"
 aliases:
   - "전라남도/광양군/광양면 (HGIS 111332)"
 ---

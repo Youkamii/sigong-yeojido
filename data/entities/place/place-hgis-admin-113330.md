@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113330"
 label: "전라남도/대정군"
-labelNote: "HGIS 113330"
+sourceRef:
+  - "HGIS 113330"
 aliases:
   - "전라남도/대정군 (HGIS 113330)"
 ---

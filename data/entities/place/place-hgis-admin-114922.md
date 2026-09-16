@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114922"
 label: "전라남도/영광군/구수면"
-labelNote: "HGIS 114922"
+sourceRef:
+  - "HGIS 114922"
 aliases:
   - "전라남도/영광군/구수면 (HGIS 114922)"
 ---

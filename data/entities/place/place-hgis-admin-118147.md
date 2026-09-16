@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118147"
 label: "전라남도/보성군/보성읍"
-labelNote: "HGIS 118147"
+sourceRef:
+  - "HGIS 118147"
 aliases:
   - "전라남도/보성군/보성읍 (HGIS 118147)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144433"
 label: "경상남도/용남군/한산면"
-labelNote: "HGIS 144433"
+sourceRef:
+  - "HGIS 144433"
 aliases:
   - "경상남도/용남군/한산면 (HGIS 144433)"
 ---

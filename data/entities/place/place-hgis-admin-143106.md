@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143106"
 label: "경상남도/양산군/물금면"
-labelNote: "HGIS 143106"
+sourceRef:
+  - "HGIS 143106"
 aliases:
   - "경상남도/양산군/물금면 (HGIS 143106)"
 ---

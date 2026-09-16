@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119973"
 label: "전라남도/장성군/삼서면"
-labelNote: "HGIS 119973"
+sourceRef:
+  - "HGIS 119973"
 aliases:
   - "전라남도/장성군/삼서면 (HGIS 119973)"
 ---

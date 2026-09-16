@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113344"
 label: "전라남도/돌산군/금산면"
-labelNote: "HGIS 113344"
+sourceRef:
+  - "HGIS 113344"
 aliases:
   - "전라남도/돌산군/금산면 (HGIS 113344)"
 ---

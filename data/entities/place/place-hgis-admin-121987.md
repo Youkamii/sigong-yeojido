@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121987"
 label: "전라남도/진도군/임일면"
-labelNote: "HGIS 121987"
+sourceRef:
+  - "HGIS 121987"
 aliases:
   - "전라남도/진도군/임일면 (HGIS 121987)"
 ---

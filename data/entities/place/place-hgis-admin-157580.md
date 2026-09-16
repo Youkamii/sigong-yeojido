@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157580"
 label: "경상북도/안동군/안동읍"
-labelNote: "HGIS 157580"
+sourceRef:
+  - "HGIS 157580"
 aliases:
   - "경상북도/안동군/안동읍 (HGIS 157580)"
 ---

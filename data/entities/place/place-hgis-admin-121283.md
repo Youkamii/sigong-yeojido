@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121283"
 label: "전라남도/제주도/정의면"
-labelNote: "HGIS 121283"
+sourceRef:
+  - "HGIS 121283"
 aliases:
   - "전라남도/제주도/정의면 (HGIS 121283)"
 ---

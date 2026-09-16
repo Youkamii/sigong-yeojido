@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144758"
 label: "경상남도/함양군/모간면"
-labelNote: "HGIS 144758"
+sourceRef:
+  - "HGIS 144758"
 aliases:
   - "경상남도/함양군/모간면 (HGIS 144758)"
 ---

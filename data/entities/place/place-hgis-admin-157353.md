@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157353"
 label: "경상북도/영천군/산저면"
-labelNote: "HGIS 157353"
+sourceRef:
+  - "HGIS 157353"
 aliases:
   - "경상북도/영천군/산저면 (HGIS 157353)"
 ---

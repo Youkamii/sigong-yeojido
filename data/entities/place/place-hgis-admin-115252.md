@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115252"
 label: "전라남도/영광군/묘장면"
-labelNote: "HGIS 115252"
+sourceRef:
+  - "HGIS 115252"
 aliases:
   - "전라남도/영광군/묘장면 (HGIS 115252)"
 ---

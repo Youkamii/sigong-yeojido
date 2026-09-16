@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136420"
 label: "평안북도/용천군/내하면"
-labelNote: "HGIS 136420"
+sourceRef:
+  - "HGIS 136420"
 aliases:
   - "평안북도/용천군/내하면 (HGIS 136420)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157185"
 label: "경상북도/성주군/오도면"
-labelNote: "HGIS 157185"
+sourceRef:
+  - "HGIS 157185"
 aliases:
   - "경상북도/성주군/오도면 (HGIS 157185)"
 ---

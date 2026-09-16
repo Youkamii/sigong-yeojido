@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142493"
 label: "평안북도/후창군/동흥면"
-labelNote: "HGIS 142493"
+sourceRef:
+  - "HGIS 142493"
 aliases:
   - "평안북도/후창군/동흥면 (HGIS 142493)"
 ---

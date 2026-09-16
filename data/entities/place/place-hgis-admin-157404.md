@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157404"
 label: "경상북도/의흥군/내화면"
-labelNote: "HGIS 157404"
+sourceRef:
+  - "HGIS 157404"
 aliases:
   - "경상북도/의흥군/내화면 (HGIS 157404)"
 ---

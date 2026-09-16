@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143217"
 label: "경상남도/고성군/남양면"
-labelNote: "HGIS 143217"
+sourceRef:
+  - "HGIS 143217"
 aliases:
   - "경상남도/고성군/남양면 (HGIS 143217)"
 ---

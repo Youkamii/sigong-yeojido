@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143271"
 label: "경상남도/진주군/원당면"
-labelNote: "HGIS 143271"
+sourceRef:
+  - "HGIS 143271"
 aliases:
   - "경상남도/진주군/원당면 (HGIS 143271)"
 ---

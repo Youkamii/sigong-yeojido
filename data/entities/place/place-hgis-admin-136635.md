@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136635"
 label: "평안북도/박천군/북면"
-labelNote: "HGIS 136635"
+sourceRef:
+  - "HGIS 136635"
 aliases:
   - "평안북도/박천군/북면 (HGIS 136635)"
 ---

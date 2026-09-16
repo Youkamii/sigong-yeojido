@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157190"
 label: "경상북도/성주군/초곡면"
-labelNote: "HGIS 157190"
+sourceRef:
+  - "HGIS 157190"
 aliases:
   - "경상북도/성주군/초곡면 (HGIS 157190)"
 ---

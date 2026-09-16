@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143255"
 label: "경상남도/의령군/보림면"
-labelNote: "HGIS 143255"
+sourceRef:
+  - "HGIS 143255"
 aliases:
   - "경상남도/의령군/보림면 (HGIS 143255)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157219"
 label: "경상북도/안동군/도산면"
-labelNote: "HGIS 157219"
+sourceRef:
+  - "HGIS 157219"
 aliases:
   - "경상북도/안동군/도산면 (HGIS 157219)"
 ---

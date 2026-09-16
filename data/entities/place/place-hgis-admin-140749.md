@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140749"
 label: "평안북도/용천부/구읍면"
-labelNote: "HGIS 140749"
+sourceRef:
+  - "HGIS 140749"
 aliases:
   - "평안북도/용천부/구읍면 (HGIS 140749)"
 ---

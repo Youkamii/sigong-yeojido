@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144621"
 label: "경상남도/창녕군/영산면"
-labelNote: "HGIS 144621"
+sourceRef:
+  - "HGIS 144621"
 aliases:
   - "경상남도/창녕군/영산면 (HGIS 144621)"
 ---

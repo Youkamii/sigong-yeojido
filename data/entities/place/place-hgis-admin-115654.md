@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115654"
 label: "전라남도/영광군/위도면"
-labelNote: "HGIS 115654"
+sourceRef:
+  - "HGIS 115654"
 aliases:
   - "전라남도/영광군/위도면 (HGIS 115654)"
 ---

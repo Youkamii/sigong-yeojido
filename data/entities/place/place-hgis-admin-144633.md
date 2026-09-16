@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144633"
 label: "경상남도/창녕군/창녕면"
-labelNote: "HGIS 144633"
+sourceRef:
+  - "HGIS 144633"
 aliases:
   - "경상남도/창녕군/창녕면 (HGIS 144633)"
 ---

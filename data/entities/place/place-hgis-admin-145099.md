@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145099"
 label: "경상남도/남해군/남해면"
-labelNote: "HGIS 145099"
+sourceRef:
+  - "HGIS 145099"
 aliases:
   - "경상남도/남해군/남해면 (HGIS 145099)"
 ---

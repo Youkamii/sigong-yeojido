@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144321"
 label: "경상남도/산청군/북동면"
-labelNote: "HGIS 144321"
+sourceRef:
+  - "HGIS 144321"
 aliases:
   - "경상남도/산청군/북동면 (HGIS 144321)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111287"
 label: "전라남도/광산군/효지면"
-labelNote: "HGIS 111287"
+sourceRef:
+  - "HGIS 111287"
 aliases:
   - "전라남도/광산군/효지면 (HGIS 111287)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116221"
 label: "전라남도/영암군/도포면"
-labelNote: "HGIS 116221"
+sourceRef:
+  - "HGIS 116221"
 aliases:
   - "전라남도/영암군/도포면 (HGIS 116221)"
 ---

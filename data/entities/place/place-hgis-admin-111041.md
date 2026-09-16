@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111041"
 label: "전라남도/곡성군/예산면"
-labelNote: "HGIS 111041"
+sourceRef:
+  - "HGIS 111041"
 aliases:
   - "전라남도/곡성군/예산면 (HGIS 111041)"
 ---

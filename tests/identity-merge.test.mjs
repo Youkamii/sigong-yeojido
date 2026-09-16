@@ -85,6 +85,14 @@ test('별칭이 없으면 줄을 생략하고 별칭 문자열은 HTML로 해석
   assert.ok(!story.pane.innerHTML.includes('atlas-story-aliases'));
 });
 
+test('정리 전 표기는 다른 이름 줄에 적지 않는다 (#200)',()=>{
+  const data=fixture(),story=storyFor(data,canonical);
+  story.entity.aliases=['세종 (민족문화대백과 E0029556)','세종 (1397~1450)'];story.render();
+  assert.ok(!story.pane.innerHTML.includes('atlas-story-aliases'));
+  story.entity.aliases=['세종 (민족문화대백과 E0029556)','세종장헌왕'];story.render();
+  assert.ok(story.pane.innerHTML.includes('<p class="atlas-story-aliases">다른 이름: 세종장헌왕</p>'));
+});
+
 for(const split of ['limit','url'])for(const reverse of [false,true]){
   test(`나뉜 응답의 병합 정보를 보존해 정본만 검색한다 (${split}, reverse=${reverse})`,async()=>{
     const rich={id:canonical,type:'Person',label:'세종',aliases:['세종장헌왕','世宗莊憲王'],mergedIds:[old]};

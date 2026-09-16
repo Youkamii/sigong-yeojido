@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118060"
 label: "전라남도/보성군/문전면"
-labelNote: "HGIS 118060"
+sourceRef:
+  - "HGIS 118060"
 aliases:
   - "전라남도/보성군/문전면 (HGIS 118060)"
 ---

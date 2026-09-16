@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123494"
 label: "전라남도/해남군/송지시면"
-labelNote: "HGIS 123494"
+sourceRef:
+  - "HGIS 123494"
 aliases:
   - "전라남도/해남군/송지시면 (HGIS 123494)"
 ---

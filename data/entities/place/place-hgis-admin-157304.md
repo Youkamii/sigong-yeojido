@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157304"
 label: "경상북도/영일군/청하면"
-labelNote: "HGIS 157304"
+sourceRef:
+  - "HGIS 157304"
 aliases:
   - "경상북도/영일군/청하면 (HGIS 157304)"
 ---

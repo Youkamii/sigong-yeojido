@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144545"
 label: "경상남도/진주군/대안면"
-labelNote: "HGIS 144545"
+sourceRef:
+  - "HGIS 144545"
 aliases:
   - "경상남도/진주군/대안면 (HGIS 144545)"
 ---

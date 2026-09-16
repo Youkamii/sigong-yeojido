@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157527"
 label: "경상북도/칠곡군/퇴천면"
-labelNote: "HGIS 157527"
+sourceRef:
+  - "HGIS 157527"
 aliases:
   - "경상북도/칠곡군/퇴천면 (HGIS 157527)"
 ---

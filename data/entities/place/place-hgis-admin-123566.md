@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123566"
 label: "전라남도/해남군/옥천시면"
-labelNote: "HGIS 123566"
+sourceRef:
+  - "HGIS 123566"
 aliases:
   - "전라남도/해남군/옥천시면 (HGIS 123566)"
 ---

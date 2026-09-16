@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156765"
 label: "경상북도/경주군/감포읍"
-labelNote: "HGIS 156765"
+sourceRef:
+  - "HGIS 156765"
 aliases:
   - "경상북도/경주군/감포읍 (HGIS 156765)"
 ---

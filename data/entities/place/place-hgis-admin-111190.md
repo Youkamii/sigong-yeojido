@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111190"
 label: "전라남도/광산군/비아면"
-labelNote: "HGIS 111190"
+sourceRef:
+  - "HGIS 111190"
 aliases:
   - "전라남도/광산군/비아면 (HGIS 111190)"
 ---

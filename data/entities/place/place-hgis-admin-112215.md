@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112215"
 label: "전라남도/광주군/지산면"
-labelNote: "HGIS 112215"
+sourceRef:
+  - "HGIS 112215"
 aliases:
   - "전라남도/광주군/지산면 (HGIS 112215)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144627"
 label: "경상남도/초계군/양동면"
-labelNote: "HGIS 144627"
+sourceRef:
+  - "HGIS 144627"
 aliases:
   - "경상남도/초계군/양동면 (HGIS 144627)"
 ---

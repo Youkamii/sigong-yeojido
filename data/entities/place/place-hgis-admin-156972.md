@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156972"
 label: "경상북도/대구부/법화면"
-labelNote: "HGIS 156972"
+sourceRef:
+  - "HGIS 156972"
 aliases:
   - "경상북도/대구부/법화면 (HGIS 156972)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156974"
 label: "경상북도/성주군/금파면"
-labelNote: "HGIS 156974"
+sourceRef:
+  - "HGIS 156974"
 aliases:
   - "경상북도/성주군/금파면 (HGIS 156974)"
 ---

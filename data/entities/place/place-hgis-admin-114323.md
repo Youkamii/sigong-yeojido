@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114323"
 label: "전라남도/나주군/이로면"
-labelNote: "HGIS 114323"
+sourceRef:
+  - "HGIS 114323"
 aliases:
   - "전라남도/나주군/이로면 (HGIS 114323)"
 ---

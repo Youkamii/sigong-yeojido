@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156873"
 label: "경상북도/고령군/흑수면"
-labelNote: "HGIS 156873"
+sourceRef:
+  - "HGIS 156873"
 aliases:
   - "경상북도/고령군/흑수면 (HGIS 156873)"
 ---

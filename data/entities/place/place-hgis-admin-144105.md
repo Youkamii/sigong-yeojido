@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144105"
 label: "경상남도/고성군/동해면"
-labelNote: "HGIS 144105"
+sourceRef:
+  - "HGIS 144105"
 aliases:
   - "경상남도/고성군/동해면 (HGIS 144105)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121713"
 label: "전라남도/지도군/위도면"
-labelNote: "HGIS 121713"
+sourceRef:
+  - "HGIS 121713"
 aliases:
   - "전라남도/지도군/위도면 (HGIS 121713)"
 ---

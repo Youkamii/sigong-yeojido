@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113813"
 label: "전라남도/나주군/동부면"
-labelNote: "HGIS 113813"
+sourceRef:
+  - "HGIS 113813"
 aliases:
   - "전라남도/나주군/동부면 (HGIS 113813)"
 ---

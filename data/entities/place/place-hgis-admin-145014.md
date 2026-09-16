@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145014"
 label: "경상남도/언양군"
-labelNote: "HGIS 145014"
+sourceRef:
+  - "HGIS 145014"
 aliases:
   - "경상남도/언양군 (HGIS 145014)"
 ---

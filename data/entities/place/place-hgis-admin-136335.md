@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136335"
 label: "평안북도/구성군/용두면"
-labelNote: "HGIS 136335"
+sourceRef:
+  - "HGIS 136335"
 aliases:
   - "평안북도/구성군/용두면 (HGIS 136335)"
 ---

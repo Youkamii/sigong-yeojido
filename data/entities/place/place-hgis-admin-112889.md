@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112889"
 label: "전라남도/남평군/욱곡면"
-labelNote: "HGIS 112889"
+sourceRef:
+  - "HGIS 112889"
 aliases:
   - "전라남도/남평군/욱곡면 (HGIS 112889)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154481"
 label: "경상남도/창원부/양전면"
-labelNote: "HGIS 154481"
+sourceRef:
+  - "HGIS 154481"
 aliases:
   - "경상남도/창원부/양전면 (HGIS 154481)"
 ---

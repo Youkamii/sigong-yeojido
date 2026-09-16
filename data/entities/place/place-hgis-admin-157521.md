@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157521"
 label: "경상북도/칠곡군/약목면"
-labelNote: "HGIS 157521"
+sourceRef:
+  - "HGIS 157521"
 aliases:
   - "경상북도/칠곡군/약목면 (HGIS 157521)"
 ---

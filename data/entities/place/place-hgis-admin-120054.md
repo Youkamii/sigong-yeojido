@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120054"
 label: "전라남도/장성군/서일면"
-labelNote: "HGIS 120054"
+sourceRef:
+  - "HGIS 120054"
 aliases:
   - "전라남도/장성군/서일면 (HGIS 120054)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115176"
 label: "전라남도/영광군/마산면"
-labelNote: "HGIS 115176"
+sourceRef:
+  - "HGIS 115176"
 aliases:
   - "전라남도/영광군/마산면 (HGIS 115176)"
 ---

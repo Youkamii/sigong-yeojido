@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157020"
 label: "경상북도/예천군/양산면"
-labelNote: "HGIS 157020"
+sourceRef:
+  - "HGIS 157020"
 aliases:
   - "경상북도/예천군/양산면 (HGIS 157020)"
 ---

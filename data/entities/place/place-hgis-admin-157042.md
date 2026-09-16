@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157042"
 label: "경상북도/문경군/가북면"
-labelNote: "HGIS 157042"
+sourceRef:
+  - "HGIS 157042"
 aliases:
   - "경상북도/문경군/가북면 (HGIS 157042)"
 ---

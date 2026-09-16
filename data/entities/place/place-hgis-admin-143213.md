@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143213"
 label: "경상남도/사천군/사천면"
-labelNote: "HGIS 143213"
+sourceRef:
+  - "HGIS 143213"
 aliases:
   - "경상남도/사천군/사천면 (HGIS 143213)"
 ---

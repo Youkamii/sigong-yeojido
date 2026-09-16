@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144608"
 label: "경상남도/창녕군/대곡면"
-labelNote: "HGIS 144608"
+sourceRef:
+  - "HGIS 144608"
 aliases:
   - "경상남도/창녕군/대곡면 (HGIS 144608)"
 ---

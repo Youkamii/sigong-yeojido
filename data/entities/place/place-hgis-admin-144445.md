@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144445"
 label: "경상남도/울산군/대현면"
-labelNote: "HGIS 144445"
+sourceRef:
+  - "HGIS 144445"
 aliases:
   - "경상남도/울산군/대현면 (HGIS 144445)"
 ---

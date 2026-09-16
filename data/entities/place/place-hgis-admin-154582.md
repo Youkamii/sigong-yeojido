@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154582"
 label: "경상남도/하동군/옥종면"
-labelNote: "HGIS 154582"
+sourceRef:
+  - "HGIS 154582"
 aliases:
   - "경상남도/하동군/옥종면 (HGIS 154582)"
 ---

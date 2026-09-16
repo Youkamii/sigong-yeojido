@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116989"
 label: "전라남도/능주군"
-labelNote: "HGIS 116989"
+sourceRef:
+  - "HGIS 116989"
 aliases:
   - "전라남도/능주군 (HGIS 116989)"
 ---

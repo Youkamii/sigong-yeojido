@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117736"
 label: "전라남도/무안군/암태면"
-labelNote: "HGIS 117736"
+sourceRef:
+  - "HGIS 117736"
 aliases:
   - "전라남도/무안군/암태면 (HGIS 117736)"
 ---

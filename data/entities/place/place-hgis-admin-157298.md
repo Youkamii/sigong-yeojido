@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157298"
 label: "경상북도/영일군/연일면"
-labelNote: "HGIS 157298"
+sourceRef:
+  - "HGIS 157298"
 aliases:
   - "경상북도/영일군/연일면 (HGIS 157298)"
 ---

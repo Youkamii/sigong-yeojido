@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156744"
 label: "경상북도/울릉도/서면"
-labelNote: "HGIS 156744"
+sourceRef:
+  - "HGIS 156744"
 aliases:
   - "경상북도/울릉도/서면 (HGIS 156744)"
 ---

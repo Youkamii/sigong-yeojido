@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-176290"
 label: "강원도/정선군"
-labelNote: "HGIS 176290"
+sourceRef:
+  - "HGIS 176290"
 aliases:
   - "강원도/정선군 (HGIS 176290)"
 ---

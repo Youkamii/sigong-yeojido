@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157479"
 label: "경상북도/청도군/이위면"
-labelNote: "HGIS 157479"
+sourceRef:
+  - "HGIS 157479"
 aliases:
   - "경상북도/청도군/이위면 (HGIS 157479)"
 ---

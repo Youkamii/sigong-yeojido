@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121156"
 label: "전라남도/제주도/대정면"
-labelNote: "HGIS 121156"
+sourceRef:
+  - "HGIS 121156"
 aliases:
   - "전라남도/제주도/대정면 (HGIS 121156)"
 ---

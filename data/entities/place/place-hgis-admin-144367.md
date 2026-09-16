@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144367"
 label: "경상남도/안의군/고현면"
-labelNote: "HGIS 144367"
+sourceRef:
+  - "HGIS 144367"
 aliases:
   - "경상남도/안의군/고현면 (HGIS 144367)"
 ---

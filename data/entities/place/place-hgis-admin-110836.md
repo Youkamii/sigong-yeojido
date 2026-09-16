@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110836"
 label: "전라남도/고흥군/도화면"
-labelNote: "HGIS 110836"
+sourceRef:
+  - "HGIS 110836"
 aliases:
   - "전라남도/고흥군/도화면 (HGIS 110836)"
 ---

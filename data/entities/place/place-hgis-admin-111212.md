@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111212"
 label: "전라남도/광산군/서창면"
-labelNote: "HGIS 111212"
+sourceRef:
+  - "HGIS 111212"
 aliases:
   - "전라남도/광산군/서창면 (HGIS 111212)"
 ---

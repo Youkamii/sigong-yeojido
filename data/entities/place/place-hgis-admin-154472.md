@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154472"
 label: "경상남도/합천군/각사면"
-labelNote: "HGIS 154472"
+sourceRef:
+  - "HGIS 154472"
 aliases:
   - "경상남도/합천군/각사면 (HGIS 154472)"
 ---

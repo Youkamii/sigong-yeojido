@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157466"
 label: "경상북도/청도군/대성면"
-labelNote: "HGIS 157466"
+sourceRef:
+  - "HGIS 157466"
 aliases:
   - "경상북도/청도군/대성면 (HGIS 157466)"
 ---

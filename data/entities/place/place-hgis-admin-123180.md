@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123180"
 label: "전라남도/해남군/군이면"
-labelNote: "HGIS 123180"
+sourceRef:
+  - "HGIS 123180"
 aliases:
   - "전라남도/해남군/군이면 (HGIS 123180)"
 ---

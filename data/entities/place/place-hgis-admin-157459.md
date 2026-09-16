@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157459"
 label: "경상북도/진보군/하리면"
-labelNote: "HGIS 157459"
+sourceRef:
+  - "HGIS 157459"
 aliases:
   - "경상북도/진보군/하리면 (HGIS 157459)"
 ---

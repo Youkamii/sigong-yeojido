@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110856"
 label: "전라남도/곡성군/겸면"
-labelNote: "HGIS 110856"
+sourceRef:
+  - "HGIS 110856"
 aliases:
   - "전라남도/곡성군/겸면 (HGIS 110856)"
 ---

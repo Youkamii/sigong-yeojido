@@ -2,7 +2,9 @@
 type: "Place"
 id: "place-cliopatria-04052"
 label: "태봉"
-labelNote: "Taebong (Cliopatria 4052)"
+labelNote: "Taebong"
+sourceRef:
+  - "Cliopatria 4052"
 aliases:
   - "태봉 · Taebong (Cliopatria 4052)"
 ---

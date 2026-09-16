@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144051"
 label: "경상남도/창원군/천가면"
-labelNote: "HGIS 144051"
+sourceRef:
+  - "HGIS 144051"
 aliases:
   - "경상남도/창원군/천가면 (HGIS 144051)"
 ---

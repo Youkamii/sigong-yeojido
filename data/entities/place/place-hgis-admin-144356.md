@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144356"
 label: "경상남도/삼가군/고현면"
-labelNote: "HGIS 144356"
+sourceRef:
+  - "HGIS 144356"
 aliases:
   - "경상남도/삼가군/고현면 (HGIS 144356)"
 ---

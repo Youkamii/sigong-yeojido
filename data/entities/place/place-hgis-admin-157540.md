@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157540"
 label: "경상북도/풍기군/와룡면"
-labelNote: "HGIS 157540"
+sourceRef:
+  - "HGIS 157540"
 aliases:
   - "경상북도/풍기군/와룡면 (HGIS 157540)"
 ---

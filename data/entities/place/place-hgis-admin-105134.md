@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-105134"
 label: "전라북도/고산군/군내면"
-labelNote: "HGIS 105134"
+sourceRef:
+  - "HGIS 105134"
 aliases:
   - "전라북도/고산군/군내면 (HGIS 105134)"
 ---

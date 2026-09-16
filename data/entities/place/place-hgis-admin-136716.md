@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136716"
 label: "평안북도/자성군/중강면"
-labelNote: "HGIS 136716"
+sourceRef:
+  - "HGIS 136716"
 aliases:
   - "평안북도/자성군/중강면 (HGIS 136716)"
 ---

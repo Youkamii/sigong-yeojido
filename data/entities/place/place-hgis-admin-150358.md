@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150358"
 label: "경상남도/동래부/동평면"
-labelNote: "HGIS 150358"
+sourceRef:
+  - "HGIS 150358"
 aliases:
   - "경상남도/동래부/동평면 (HGIS 150358)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144571"
 label: "경상남도/진주군/신풍면"
-labelNote: "HGIS 144571"
+sourceRef:
+  - "HGIS 144571"
 aliases:
   - "경상남도/진주군/신풍면 (HGIS 144571)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142985"
 label: "경기도/인천부/중국전관거류지"
-labelNote: "HGIS 142985"
+sourceRef:
+  - "HGIS 142985"
 aliases:
   - "경기도/인천부/중국전관거류지 (HGIS 142985)"
 ---

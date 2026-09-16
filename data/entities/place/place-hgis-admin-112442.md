@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112442"
 label: "전라남도/구례군/광의면"
-labelNote: "HGIS 112442"
+sourceRef:
+  - "HGIS 112442"
 aliases:
   - "전라남도/구례군/광의면 (HGIS 112442)"
 ---

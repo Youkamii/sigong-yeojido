@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117056"
 label: "전라남도/목포부/다경면"
-labelNote: "HGIS 117056"
+sourceRef:
+  - "HGIS 117056"
 aliases:
   - "전라남도/목포부/다경면 (HGIS 117056)"
 ---

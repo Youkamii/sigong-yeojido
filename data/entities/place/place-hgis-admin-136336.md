@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136336"
 label: "평안북도/구성군/용연면"
-labelNote: "HGIS 136336"
+sourceRef:
+  - "HGIS 136336"
 aliases:
   - "평안북도/구성군/용연면 (HGIS 136336)"
 ---

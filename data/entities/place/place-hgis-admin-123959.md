@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123959"
 label: "전라남도/흥양군/고읍면"
-labelNote: "HGIS 123959"
+sourceRef:
+  - "HGIS 123959"
 aliases:
   - "전라남도/흥양군/고읍면 (HGIS 123959)"
 ---

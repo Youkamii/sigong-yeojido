@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120574"
 label: "전라남도/장흥군/용산면"
-labelNote: "HGIS 120574"
+sourceRef:
+  - "HGIS 120574"
 aliases:
   - "전라남도/장흥군/용산면 (HGIS 120574)"
 ---

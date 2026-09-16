@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113648"
 label: "전라남도/나주군/곡강면"
-labelNote: "HGIS 113648"
+sourceRef:
+  - "HGIS 113648"
 aliases:
   - "전라남도/나주군/곡강면 (HGIS 113648)"
 ---

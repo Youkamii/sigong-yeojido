@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-152278"
 label: "경상남도/하동군/금남면"
-labelNote: "HGIS 152278"
+sourceRef:
+  - "HGIS 152278"
 aliases:
   - "경상남도/하동군/금남면 (HGIS 152278)"
 ---

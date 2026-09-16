@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157528"
 label: "경상북도/칠곡군/파미면"
-labelNote: "HGIS 157528"
+sourceRef:
+  - "HGIS 157528"
 aliases:
   - "경상북도/칠곡군/파미면 (HGIS 157528)"
 ---

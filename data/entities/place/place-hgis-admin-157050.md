@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157050"
 label: "경상북도/문경군/산동면"
-labelNote: "HGIS 157050"
+sourceRef:
+  - "HGIS 157050"
 aliases:
   - "경상북도/문경군/산동면 (HGIS 157050)"
 ---

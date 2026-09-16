@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157260"
 label: "경상북도/영덕군/동면"
-labelNote: "HGIS 157260"
+sourceRef:
+  - "HGIS 157260"
 aliases:
   - "경상북도/영덕군/동면 (HGIS 157260)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112128"
 label: "전라남도/광주군/소지면"
-labelNote: "HGIS 112128"
+sourceRef:
+  - "HGIS 112128"
 aliases:
   - "전라남도/광주군/소지면 (HGIS 112128)"
 ---

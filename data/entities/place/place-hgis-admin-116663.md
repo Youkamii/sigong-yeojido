@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116663"
 label: "전라남도/능주군/단양면"
-labelNote: "HGIS 116663"
+sourceRef:
+  - "HGIS 116663"
 aliases:
   - "전라남도/능주군/단양면 (HGIS 116663)"
 ---

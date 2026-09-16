@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144743"
 label: "경상남도/함안군/외대산면"
-labelNote: "HGIS 144743"
+sourceRef:
+  - "HGIS 144743"
 aliases:
   - "경상남도/함안군/외대산면 (HGIS 144743)"
 ---

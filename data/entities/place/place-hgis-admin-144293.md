@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144293"
 label: "경상남도/사천군/북면"
-labelNote: "HGIS 144293"
+sourceRef:
+  - "HGIS 144293"
 aliases:
   - "경상남도/사천군/북면 (HGIS 144293)"
 ---

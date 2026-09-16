@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157008"
 label: "경상북도/예천군/예천면"
-labelNote: "HGIS 157008"
+sourceRef:
+  - "HGIS 157008"
 aliases:
   - "경상북도/예천군/예천면 (HGIS 157008)"
 ---

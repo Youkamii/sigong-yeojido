@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143592"
 label: "경상남도/거창군/무등곡면"
-labelNote: "HGIS 143592"
+sourceRef:
+  - "HGIS 143592"
 aliases:
   - "경상남도/거창군/무등곡면 (HGIS 143592)"
 ---

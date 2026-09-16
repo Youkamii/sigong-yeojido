@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157384"
 label: "경상북도/의성군/단밀면"
-labelNote: "HGIS 157384"
+sourceRef:
+  - "HGIS 157384"
 aliases:
   - "경상북도/의성군/단밀면 (HGIS 157384)"
 ---

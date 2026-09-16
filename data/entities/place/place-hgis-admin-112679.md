@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112679"
 label: "전라남도/구례군/현내면"
-labelNote: "HGIS 112679"
+sourceRef:
+  - "HGIS 112679"
 aliases:
   - "전라남도/구례군/현내면 (HGIS 112679)"
 ---

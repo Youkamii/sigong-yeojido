@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121609"
 label: "전라남도/지도군/선도면"
-labelNote: "HGIS 121609"
+sourceRef:
+  - "HGIS 121609"
 aliases:
   - "전라남도/지도군/선도면 (HGIS 121609)"
 ---

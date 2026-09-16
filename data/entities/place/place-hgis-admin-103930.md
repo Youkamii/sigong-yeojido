@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-103930"
 label: "전라북도/고부군/우덕면"
-labelNote: "HGIS 103930"
+sourceRef:
+  - "HGIS 103930"
 aliases:
   - "전라북도/고부군/우덕면 (HGIS 103930)"
 ---

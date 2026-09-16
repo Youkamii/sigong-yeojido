@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144562"
 label: "경상남도/진주군/사죽면"
-labelNote: "HGIS 144562"
+sourceRef:
+  - "HGIS 144562"
 aliases:
   - "경상남도/진주군/사죽면 (HGIS 144562)"
 ---

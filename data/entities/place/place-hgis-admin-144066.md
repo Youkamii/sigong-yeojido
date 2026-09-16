@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144066"
 label: "경상남도/거창군/천외면"
-labelNote: "HGIS 144066"
+sourceRef:
+  - "HGIS 144066"
 aliases:
   - "경상남도/거창군/천외면 (HGIS 144066)"
 ---

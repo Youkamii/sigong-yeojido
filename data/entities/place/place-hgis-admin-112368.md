@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112368"
 label: "전라남도/광주부"
-labelNote: "HGIS 112368"
+sourceRef:
+  - "HGIS 112368"
 aliases:
   - "전라남도/광주부 (HGIS 112368)"
 ---

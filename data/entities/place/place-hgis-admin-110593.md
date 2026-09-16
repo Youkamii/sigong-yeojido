@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110593"
 label: "전라남도/강진군/백도면"
-labelNote: "HGIS 110593"
+sourceRef:
+  - "HGIS 110593"
 aliases:
   - "전라남도/강진군/백도면 (HGIS 110593)"
 ---

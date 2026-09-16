@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144221"
 label: "경상남도/마산부/진동면"
-labelNote: "HGIS 144221"
+sourceRef:
+  - "HGIS 144221"
 aliases:
   - "경상남도/마산부/진동면 (HGIS 144221)"
 ---

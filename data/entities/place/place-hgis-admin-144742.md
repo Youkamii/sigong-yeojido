@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144742"
 label: "경상남도/함안군/여항면"
-labelNote: "HGIS 144742"
+sourceRef:
+  - "HGIS 144742"
 aliases:
   - "경상남도/함안군/여항면 (HGIS 144742)"
 ---

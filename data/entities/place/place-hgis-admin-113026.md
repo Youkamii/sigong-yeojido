@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113026"
 label: "전라남도/담양군/대덕면"
-labelNote: "HGIS 113026"
+sourceRef:
+  - "HGIS 113026"
 aliases:
   - "전라남도/담양군/대덕면 (HGIS 113026)"
 ---

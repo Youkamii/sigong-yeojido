@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144158"
 label: "경상남도/김해군/대저면"
-labelNote: "HGIS 144158"
+sourceRef:
+  - "HGIS 144158"
 aliases:
   - "경상남도/김해군/대저면 (HGIS 144158)"
 ---

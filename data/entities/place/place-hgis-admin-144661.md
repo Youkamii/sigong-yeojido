@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144661"
 label: "경상남도/초계군/이책면"
-labelNote: "HGIS 144661"
+sourceRef:
+  - "HGIS 144661"
 aliases:
   - "경상남도/초계군/이책면 (HGIS 144661)"
 ---

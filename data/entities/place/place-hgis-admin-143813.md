@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143813"
 label: "경상남도/진양군/대평면"
-labelNote: "HGIS 143813"
+sourceRef:
+  - "HGIS 143813"
 aliases:
   - "경상남도/진양군/대평면 (HGIS 143813)"
 ---

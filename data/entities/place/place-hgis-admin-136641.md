@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136641"
 label: "평안북도/벽동군/가별면"
-labelNote: "HGIS 136641"
+sourceRef:
+  - "HGIS 136641"
 aliases:
   - "평안북도/벽동군/가별면 (HGIS 136641)"
 ---

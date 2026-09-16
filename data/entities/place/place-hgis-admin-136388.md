@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136388"
 label: "평안북도/삭주군/하남면"
-labelNote: "HGIS 136388"
+sourceRef:
+  - "HGIS 136388"
 aliases:
   - "평안북도/삭주군/하남면 (HGIS 136388)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144576"
 label: "경상남도/진주군/오산면"
-labelNote: "HGIS 144576"
+sourceRef:
+  - "HGIS 144576"
 aliases:
   - "경상남도/진주군/오산면 (HGIS 144576)"
 ---

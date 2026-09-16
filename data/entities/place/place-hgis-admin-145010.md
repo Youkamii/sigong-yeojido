@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145010"
 label: "경상남도/안의군"
-labelNote: "HGIS 145010"
+sourceRef:
+  - "HGIS 145010"
 aliases:
   - "경상남도/안의군 (HGIS 145010)"
 ---

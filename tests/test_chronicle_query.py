@@ -60,10 +60,21 @@ class ShellNameTests(unittest.TestCase):
         self.assertEqual(entity['labelNote'],'1896년 2월 11일')
         self.assertNotIn('kind',entity)
 
+    def test_source_refs_reach_the_entity_without_touching_the_note(self):
+        """자료 식별자는 sourceRef 로만 실린다 — 화면은 이 값을 쓰지 않는다 (#200 2차)."""
+        shells={'event-agwan':{'aliases':[],'labelNote':'1896년 2월 11일','kind':None,
+                               'sourceRef':['HGIS 176301','HGIS 176301']}}
+        with patch('chronicle_query.query_rows',return_value=[self.ROW]):
+            result=chronicle({'src-x'},shells=shells)
+        entity=next(e for e in result['entities'] if e['id']=='event-agwan')
+        self.assertEqual(entity['sourceRef'],['HGIS 176301'])
+        self.assertEqual(entity['labelNote'],'1896년 2월 11일')
+
     def test_without_shells_nothing_is_added(self):
         with patch('chronicle_query.query_rows',return_value=[self.ROW]):
             result=chronicle({'src-x'})
         self.assertNotIn('aliases',result['entities'][0])
+        self.assertNotIn('sourceRef',result['entities'][0])
 
     def test_an_alias_equal_to_the_label_is_dropped(self):
         shells={'event-agwan':{'aliases':['아관파천','아관파천 (1896년)'],'labelNote':None,'kind':'group'}}

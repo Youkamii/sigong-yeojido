@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144139"
 label: "경상남도/곤양군/금양면"
-labelNote: "HGIS 144139"
+sourceRef:
+  - "HGIS 144139"
 aliases:
   - "경상남도/곤양군/금양면 (HGIS 144139)"
 ---

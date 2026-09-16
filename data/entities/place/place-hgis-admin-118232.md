@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118232"
 label: "전라남도/보성군/송곡면"
-labelNote: "HGIS 118232"
+sourceRef:
+  - "HGIS 118232"
 aliases:
   - "전라남도/보성군/송곡면 (HGIS 118232)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157100"
 label: "경상북도/비안군/현내면"
-labelNote: "HGIS 157100"
+sourceRef:
+  - "HGIS 157100"
 aliases:
   - "경상북도/비안군/현내면 (HGIS 157100)"
 ---

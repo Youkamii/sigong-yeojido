@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141919"
 label: "평안북도/정주군/운전면"
-labelNote: "HGIS 141919"
+sourceRef:
+  - "HGIS 141919"
 aliases:
   - "평안북도/정주군/운전면 (HGIS 141919)"
 ---

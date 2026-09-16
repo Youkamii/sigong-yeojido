@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157170"
 label: "경상북도/김천군/어모면"
-labelNote: "HGIS 157170"
+sourceRef:
+  - "HGIS 157170"
 aliases:
   - "경상북도/김천군/어모면 (HGIS 157170)"
 ---

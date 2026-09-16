@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157648"
 label: "경상북도/김천군"
-labelNote: "HGIS 157648"
+sourceRef:
+  - "HGIS 157648"
 aliases:
   - "경상북도/김천군 (HGIS 157648)"
 ---

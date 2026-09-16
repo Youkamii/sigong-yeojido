@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156982"
 label: "경상북도/대구부/수현내면"
-labelNote: "HGIS 156982"
+sourceRef:
+  - "HGIS 156982"
 aliases:
   - "경상북도/대구부/수현내면 (HGIS 156982)"
 ---

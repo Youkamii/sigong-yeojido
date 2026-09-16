@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121791"
 label: "전라남도/지도군/장산면"
-labelNote: "HGIS 121791"
+sourceRef:
+  - "HGIS 121791"
 aliases:
   - "전라남도/지도군/장산면 (HGIS 121791)"
 ---

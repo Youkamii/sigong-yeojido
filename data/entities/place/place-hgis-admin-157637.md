@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157637"
 label: "경상북도/영주군"
-labelNote: "HGIS 157637"
+sourceRef:
+  - "HGIS 157637"
 aliases:
   - "경상북도/영주군 (HGIS 157637)"
 ---

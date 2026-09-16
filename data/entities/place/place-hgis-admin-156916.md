@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156916"
 label: "경상북도/김천군/아천면"
-labelNote: "HGIS 156916"
+sourceRef:
+  - "HGIS 156916"
 aliases:
   - "경상북도/김천군/아천면 (HGIS 156916)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136969"
 label: "평안북도/가산군/남면"
-labelNote: "HGIS 136969"
+sourceRef:
+  - "HGIS 136969"
 aliases:
   - "평안북도/가산군/남면 (HGIS 136969)"
 ---

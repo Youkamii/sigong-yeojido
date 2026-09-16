@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136307"
 label: "평안북도/강계군/시상면"
-labelNote: "HGIS 136307"
+sourceRef:
+  - "HGIS 136307"
 aliases:
   - "평안북도/강계군/시상면 (HGIS 136307)"
 ---

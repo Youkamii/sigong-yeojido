@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157418"
 label: "경상북도/의흥군/소수면"
-labelNote: "HGIS 157418"
+sourceRef:
+  - "HGIS 157418"
 aliases:
   - "경상북도/의흥군/소수면 (HGIS 157418)"
 ---

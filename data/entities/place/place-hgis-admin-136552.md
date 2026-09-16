@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136552"
 label: "평안북도/영변군/영변면"
-labelNote: "HGIS 136552"
+sourceRef:
+  - "HGIS 136552"
 aliases:
   - "평안북도/영변군/영변면 (HGIS 136552)"
 ---

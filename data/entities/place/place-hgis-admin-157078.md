@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157078"
 label: "경상북도/봉화군/봉성면"
-labelNote: "HGIS 157078"
+sourceRef:
+  - "HGIS 157078"
 aliases:
   - "경상북도/봉화군/봉성면 (HGIS 157078)"
 ---

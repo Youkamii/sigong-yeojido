@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120913"
 label: "전라남도/정의군"
-labelNote: "HGIS 120913"
+sourceRef:
+  - "HGIS 120913"
 aliases:
   - "전라남도/정의군 (HGIS 120913)"
 ---

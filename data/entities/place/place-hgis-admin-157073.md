@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157073"
 label: "경상북도/봉화군/명호면"
-labelNote: "HGIS 157073"
+sourceRef:
+  - "HGIS 157073"
 aliases:
   - "경상북도/봉화군/명호면 (HGIS 157073)"
 ---

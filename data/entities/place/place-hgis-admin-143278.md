@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143278"
 label: "경상남도/진주군/축곡면"
-labelNote: "HGIS 143278"
+sourceRef:
+  - "HGIS 143278"
 aliases:
   - "경상남도/진주군/축곡면 (HGIS 143278)"
 ---

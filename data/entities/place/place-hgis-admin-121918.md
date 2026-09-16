@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121918"
 label: "전라남도/진도군/군이면"
-labelNote: "HGIS 121918"
+sourceRef:
+  - "HGIS 121918"
 aliases:
   - "전라남도/진도군/군이면 (HGIS 121918)"
 ---

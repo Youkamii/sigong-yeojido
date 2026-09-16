@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156996"
 label: "경상북도/대구부/해북촌면"
-labelNote: "HGIS 156996"
+sourceRef:
+  - "HGIS 156996"
 aliases:
   - "경상북도/대구부/해북촌면 (HGIS 156996)"
 ---

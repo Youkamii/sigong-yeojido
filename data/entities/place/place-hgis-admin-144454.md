@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144454"
 label: "경상남도/울산군/부내면"
-labelNote: "HGIS 144454"
+sourceRef:
+  - "HGIS 144454"
 aliases:
   - "경상남도/울산군/부내면 (HGIS 144454)"
 ---

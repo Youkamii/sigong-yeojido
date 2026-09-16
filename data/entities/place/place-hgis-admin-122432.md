@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122432"
 label: "전라남도/창평군/옥산면"
-labelNote: "HGIS 122432"
+sourceRef:
+  - "HGIS 122432"
 aliases:
   - "전라남도/창평군/옥산면 (HGIS 122432)"
 ---

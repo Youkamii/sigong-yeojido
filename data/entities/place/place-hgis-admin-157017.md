@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157017"
 label: "경상북도/예천군/서읍면"
-labelNote: "HGIS 157017"
+sourceRef:
+  - "HGIS 157017"
 aliases:
   - "경상북도/예천군/서읍면 (HGIS 157017)"
 ---

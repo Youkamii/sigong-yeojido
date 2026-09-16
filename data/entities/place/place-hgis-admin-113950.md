@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113950"
 label: "전라남도/나주군/본량면"
-labelNote: "HGIS 113950"
+sourceRef:
+  - "HGIS 113950"
 aliases:
   - "전라남도/나주군/본량면 (HGIS 113950)"
 ---

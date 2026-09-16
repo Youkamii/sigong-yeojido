@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136389"
 label: "평안북도/선천군/고부면"
-labelNote: "HGIS 136389"
+sourceRef:
+  - "HGIS 136389"
 aliases:
   - "평안북도/선천군/고부면 (HGIS 136389)"
 ---

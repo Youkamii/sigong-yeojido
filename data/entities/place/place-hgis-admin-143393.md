@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143393"
 label: "경상남도/거창군/월천면"
-labelNote: "HGIS 143393"
+sourceRef:
+  - "HGIS 143393"
 aliases:
   - "경상남도/거창군/월천면 (HGIS 143393)"
 ---

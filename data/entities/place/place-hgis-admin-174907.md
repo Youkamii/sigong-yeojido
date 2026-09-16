@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174907"
 label: "경상북도/대구군/하남면"
-labelNote: "HGIS 174907"
+sourceRef:
+  - "HGIS 174907"
 aliases:
   - "경상북도/대구군/하남면 (HGIS 174907)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113268"
 label: "전라남도/담양군/창평면"
-labelNote: "HGIS 113268"
+sourceRef:
+  - "HGIS 113268"
 aliases:
   - "전라남도/담양군/창평면 (HGIS 113268)"
 ---

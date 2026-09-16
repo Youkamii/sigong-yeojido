@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136638"
 label: "평안북도/박천군/용계면"
-labelNote: "HGIS 136638"
+sourceRef:
+  - "HGIS 136638"
 aliases:
   - "평안북도/박천군/용계면 (HGIS 136638)"
 ---

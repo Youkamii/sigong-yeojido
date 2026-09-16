@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136728"
 label: "평안북도/정주군/덕언면"
-labelNote: "HGIS 136728"
+sourceRef:
+  - "HGIS 136728"
 aliases:
   - "평안북도/정주군/덕언면 (HGIS 136728)"
 ---

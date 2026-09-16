@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144642"
 label: "경상남도/합천군/가회면"
-labelNote: "HGIS 144642"
+sourceRef:
+  - "HGIS 144642"
 aliases:
   - "경상남도/합천군/가회면 (HGIS 144642)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113119"
 label: "전라남도/담양군/목면"
-labelNote: "HGIS 113119"
+sourceRef:
+  - "HGIS 113119"
 aliases:
   - "전라남도/담양군/목면 (HGIS 113119)"
 ---

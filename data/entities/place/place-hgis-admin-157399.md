@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157399"
 label: "경상북도/의성군/신평면"
-labelNote: "HGIS 157399"
+sourceRef:
+  - "HGIS 157399"
 aliases:
   - "경상북도/의성군/신평면 (HGIS 157399)"
 ---

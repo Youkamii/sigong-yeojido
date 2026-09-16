@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112747"
 label: "전라남도/남평군/덕곡면"
-labelNote: "HGIS 112747"
+sourceRef:
+  - "HGIS 112747"
 aliases:
   - "전라남도/남평군/덕곡면 (HGIS 112747)"
 ---

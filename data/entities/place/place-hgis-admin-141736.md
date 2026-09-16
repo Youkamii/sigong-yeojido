@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141736"
 label: "평안북도/자성군/자성면"
-labelNote: "HGIS 141736"
+sourceRef:
+  - "HGIS 141736"
 aliases:
   - "평안북도/자성군/자성면 (HGIS 141736)"
 ---

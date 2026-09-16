@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144656"
 label: "경상남도/창원부/하남면"
-labelNote: "HGIS 144656"
+sourceRef:
+  - "HGIS 144656"
 aliases:
   - "경상남도/창원부/하남면 (HGIS 144656)"
 ---

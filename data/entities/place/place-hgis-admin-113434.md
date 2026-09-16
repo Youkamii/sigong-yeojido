@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113434"
 label: "전라남도/돌산군/태인면"
-labelNote: "HGIS 113434"
+sourceRef:
+  - "HGIS 113434"
 aliases:
   - "전라남도/돌산군/태인면 (HGIS 113434)"
 ---

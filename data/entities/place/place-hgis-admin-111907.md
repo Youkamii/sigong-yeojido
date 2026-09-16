@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111907"
 label: "전라남도/광주군/임곡면"
-labelNote: "HGIS 111907"
+sourceRef:
+  - "HGIS 111907"
 aliases:
   - "전라남도/광주군/임곡면 (HGIS 111907)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136621"
 label: "평안북도/구성군/부내면"
-labelNote: "HGIS 136621"
+sourceRef:
+  - "HGIS 136621"
 aliases:
   - "평안북도/구성군/부내면 (HGIS 136621)"
 ---

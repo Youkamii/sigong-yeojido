@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144437"
 label: "경상남도/울산군/내상면"
-labelNote: "HGIS 144437"
+sourceRef:
+  - "HGIS 144437"
 aliases:
   - "경상남도/울산군/내상면 (HGIS 144437)"
 ---

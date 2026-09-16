@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-176298"
 label: "충청북도/청주군/사주면"
-labelNote: "HGIS 176298"
+sourceRef:
+  - "HGIS 176298"
 aliases:
   - "충청북도/청주군/사주면 (HGIS 176298)"
 ---

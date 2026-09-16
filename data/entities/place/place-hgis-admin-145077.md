@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145077"
 label: "경상남도/기장군/남면"
-labelNote: "HGIS 145077"
+sourceRef:
+  - "HGIS 145077"
 aliases:
   - "경상남도/기장군/남면 (HGIS 145077)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157150"
 label: "경상북도/선산군/무래면"
-labelNote: "HGIS 157150"
+sourceRef:
+  - "HGIS 157150"
 aliases:
   - "경상북도/선산군/무래면 (HGIS 157150)"
 ---

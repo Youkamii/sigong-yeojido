@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174921"
 label: "경상북도/대구군/하서면"
-labelNote: "HGIS 174921"
+sourceRef:
+  - "HGIS 174921"
 aliases:
   - "경상북도/대구군/하서면 (HGIS 174921)"
 ---

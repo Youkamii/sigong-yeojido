@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142774"
 label: "평안북도/초산군/서면"
-labelNote: "HGIS 142774"
+sourceRef:
+  - "HGIS 142774"
 aliases:
   - "평안북도/초산군/서면 (HGIS 142774)"
 ---

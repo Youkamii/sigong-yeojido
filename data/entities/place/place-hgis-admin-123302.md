@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123302"
 label: "전라남도/해남군/북평면"
-labelNote: "HGIS 123302"
+sourceRef:
+  - "HGIS 123302"
 aliases:
   - "전라남도/해남군/북평면 (HGIS 123302)"
 ---

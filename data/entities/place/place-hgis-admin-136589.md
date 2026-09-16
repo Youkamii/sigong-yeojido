@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136589"
 label: "평안북도/초산군/성면"
-labelNote: "HGIS 136589"
+sourceRef:
+  - "HGIS 136589"
 aliases:
   - "평안북도/초산군/성면 (HGIS 136589)"
 ---

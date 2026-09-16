@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114866"
 label: "전라남도/여수군/화정면"
-labelNote: "HGIS 114866"
+sourceRef:
+  - "HGIS 114866"
 aliases:
   - "전라남도/여수군/화정면 (HGIS 114866)"
 ---

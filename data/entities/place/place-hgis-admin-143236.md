@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143236"
 label: "경상남도/삼가군/백산면"
-labelNote: "HGIS 143236"
+sourceRef:
+  - "HGIS 143236"
 aliases:
   - "경상남도/삼가군/백산면 (HGIS 143236)"
 ---

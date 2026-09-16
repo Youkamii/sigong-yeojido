@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144145"
 label: "경상남도/곤양군/성방면"
-labelNote: "HGIS 144145"
+sourceRef:
+  - "HGIS 144145"
 aliases:
   - "경상남도/곤양군/성방면 (HGIS 144145)"
 ---

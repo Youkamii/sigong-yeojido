@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156754"
 label: "경상북도/현풍군/우만면"
-labelNote: "HGIS 156754"
+sourceRef:
+  - "HGIS 156754"
 aliases:
   - "경상북도/현풍군/우만면 (HGIS 156754)"
 ---

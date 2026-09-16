@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111162"
 label: "전라남도/광산군/대촌면"
-labelNote: "HGIS 111162"
+sourceRef:
+  - "HGIS 111162"
 aliases:
   - "전라남도/광산군/대촌면 (HGIS 111162)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-146620"
 label: "경상남도/단성군/원당면"
-labelNote: "HGIS 146620"
+sourceRef:
+  - "HGIS 146620"
 aliases:
   - "경상남도/단성군/원당면 (HGIS 146620)"
 ---

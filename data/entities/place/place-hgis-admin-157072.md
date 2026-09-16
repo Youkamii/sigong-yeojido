@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157072"
 label: "경상북도/봉화군/임지면"
-labelNote: "HGIS 157072"
+sourceRef:
+  - "HGIS 157072"
 aliases:
   - "경상북도/봉화군/임지면 (HGIS 157072)"
 ---

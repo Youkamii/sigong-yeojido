@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141415"
 label: "평안북도/후창군/동신면"
-labelNote: "HGIS 141415"
+sourceRef:
+  - "HGIS 141415"
 aliases:
   - "평안북도/후창군/동신면 (HGIS 141415)"
 ---

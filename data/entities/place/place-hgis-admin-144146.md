@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144146"
 label: "경상남도/곤양군/초량면"
-labelNote: "HGIS 144146"
+sourceRef:
+  - "HGIS 144146"
 aliases:
   - "경상남도/곤양군/초량면 (HGIS 144146)"
 ---

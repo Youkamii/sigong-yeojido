@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115449"
 label: "전라남도/영광군/삼남면"
-labelNote: "HGIS 115449"
+sourceRef:
+  - "HGIS 115449"
 aliases:
   - "전라남도/영광군/삼남면 (HGIS 115449)"
 ---

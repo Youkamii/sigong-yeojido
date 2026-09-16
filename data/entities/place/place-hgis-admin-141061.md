@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141061"
 label: "평안북도/위원군/서상면"
-labelNote: "HGIS 141061"
+sourceRef:
+  - "HGIS 141061"
 aliases:
   - "평안북도/위원군/서상면 (HGIS 141061)"
 ---

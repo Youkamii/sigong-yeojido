@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156801"
 label: "경상북도/연일군/고현면"
-labelNote: "HGIS 156801"
+sourceRef:
+  - "HGIS 156801"
 aliases:
   - "경상북도/연일군/고현면 (HGIS 156801)"
 ---

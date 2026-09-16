@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144624"
 label: "경상남도/창녕군/유장면"
-labelNote: "HGIS 144624"
+sourceRef:
+  - "HGIS 144624"
 aliases:
   - "경상남도/창녕군/유장면 (HGIS 144624)"
 ---

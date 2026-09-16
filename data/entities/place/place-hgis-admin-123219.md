@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123219"
 label: "전라남도/해남군/녹산면"
-labelNote: "HGIS 123219"
+sourceRef:
+  - "HGIS 123219"
 aliases:
   - "전라남도/해남군/녹산면 (HGIS 123219)"
 ---

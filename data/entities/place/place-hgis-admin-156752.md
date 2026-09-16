@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156752"
 label: "경상북도/현풍군/묘동면"
-labelNote: "HGIS 156752"
+sourceRef:
+  - "HGIS 156752"
 aliases:
   - "경상북도/현풍군/묘동면 (HGIS 156752)"
 ---

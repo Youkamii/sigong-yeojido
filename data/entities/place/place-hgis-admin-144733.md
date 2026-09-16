@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144733"
 label: "경상남도/함안군/비곡면"
-labelNote: "HGIS 144733"
+sourceRef:
+  - "HGIS 144733"
 aliases:
   - "경상남도/함안군/비곡면 (HGIS 144733)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112263"
 label: "전라남도/광주군/칠석면"
-labelNote: "HGIS 112263"
+sourceRef:
+  - "HGIS 112263"
 aliases:
   - "전라남도/광주군/칠석면 (HGIS 112263)"
 ---

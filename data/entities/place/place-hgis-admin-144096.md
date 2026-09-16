@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144096"
 label: "경상남도/고성군/가동면"
-labelNote: "HGIS 144096"
+sourceRef:
+  - "HGIS 144096"
 aliases:
   - "경상남도/고성군/가동면 (HGIS 144096)"
 ---

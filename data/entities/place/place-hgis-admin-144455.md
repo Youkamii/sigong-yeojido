@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144455"
 label: "경상남도/울산군/삼남면"
-labelNote: "HGIS 144455"
+sourceRef:
+  - "HGIS 144455"
 aliases:
   - "경상남도/울산군/삼남면 (HGIS 144455)"
 ---

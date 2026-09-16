@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114374"
 label: "전라남도/나주군/죽포면"
-labelNote: "HGIS 114374"
+sourceRef:
+  - "HGIS 114374"
 aliases:
   - "전라남도/나주군/죽포면 (HGIS 114374)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157373"
 label: "경상북도/영천군/화산면"
-labelNote: "HGIS 157373"
+sourceRef:
+  - "HGIS 157373"
 aliases:
   - "경상북도/영천군/화산면 (HGIS 157373)"
 ---

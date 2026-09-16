@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144373"
 label: "경상남도/안의군/북하면"
-labelNote: "HGIS 144373"
+sourceRef:
+  - "HGIS 144373"
 aliases:
   - "경상남도/안의군/북하면 (HGIS 144373)"
 ---

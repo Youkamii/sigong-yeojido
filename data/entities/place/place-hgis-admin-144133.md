@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144133"
 label: "경상남도/고성군/회현면"
-labelNote: "HGIS 144133"
+sourceRef:
+  - "HGIS 144133"
 aliases:
   - "경상남도/고성군/회현면 (HGIS 144133)"
 ---

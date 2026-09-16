@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102580"
 label: "전라북도/고부군/수금면"
-labelNote: "HGIS 102580"
+sourceRef:
+  - "HGIS 102580"
 aliases:
   - "전라북도/고부군/수금면 (HGIS 102580)"
 ---

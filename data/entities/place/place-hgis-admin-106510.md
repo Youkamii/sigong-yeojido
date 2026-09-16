@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-106510"
 label: "전라북도/고산군/운서하면"
-labelNote: "HGIS 106510"
+sourceRef:
+  - "HGIS 106510"
 aliases:
   - "전라북도/고산군/운서하면 (HGIS 106510)"
 ---

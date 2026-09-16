@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111936"
 label: "전라남도/광주군/마지면"
-labelNote: "HGIS 111936"
+sourceRef:
+  - "HGIS 111936"
 aliases:
   - "전라남도/광주군/마지면 (HGIS 111936)"
 ---

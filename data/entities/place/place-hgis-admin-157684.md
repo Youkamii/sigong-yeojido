@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157684"
 label: "경상북도/청하군"
-labelNote: "HGIS 157684"
+sourceRef:
+  - "HGIS 157684"
 aliases:
   - "경상북도/청하군 (HGIS 157684)"
 ---

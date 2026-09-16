@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-171057"
 label: "경상북도/성주군/운곡면"
-labelNote: "HGIS 171057"
+sourceRef:
+  - "HGIS 171057"
 aliases:
   - "경상북도/성주군/운곡면 (HGIS 171057)"
 ---

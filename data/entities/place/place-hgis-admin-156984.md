@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156984"
 label: "경상북도/대구부/월배면"
-labelNote: "HGIS 156984"
+sourceRef:
+  - "HGIS 156984"
 aliases:
   - "경상북도/대구부/월배면 (HGIS 156984)"
 ---

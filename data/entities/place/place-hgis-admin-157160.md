@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157160"
 label: "경상북도/선산군/선산면"
-labelNote: "HGIS 157160"
+sourceRef:
+  - "HGIS 157160"
 aliases:
   - "경상북도/선산군/선산면 (HGIS 157160)"
 ---

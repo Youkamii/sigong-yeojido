@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123165"
 label: "전라남도/해남군/관저면"
-labelNote: "HGIS 123165"
+sourceRef:
+  - "HGIS 123165"
 aliases:
   - "전라남도/해남군/관저면 (HGIS 123165)"
 ---

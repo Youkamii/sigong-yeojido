@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174908"
 label: "경상북도/대구군/하동면"
-labelNote: "HGIS 174908"
+sourceRef:
+  - "HGIS 174908"
 aliases:
   - "경상북도/대구군/하동면 (HGIS 174908)"
 ---

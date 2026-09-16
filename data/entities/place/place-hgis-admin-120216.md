@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120216"
 label: "전라남도/장흥군/고하면"
-labelNote: "HGIS 120216"
+sourceRef:
+  - "HGIS 120216"
 aliases:
   - "전라남도/장흥군/고하면 (HGIS 120216)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157240"
 label: "경상북도/안동군/서선면"
-labelNote: "HGIS 157240"
+sourceRef:
+  - "HGIS 157240"
 aliases:
   - "경상북도/안동군/서선면 (HGIS 157240)"
 ---

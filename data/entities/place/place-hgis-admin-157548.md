@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157548"
 label: "경상북도/함창군/북면"
-labelNote: "HGIS 157548"
+sourceRef:
+  - "HGIS 157548"
 aliases:
   - "경상북도/함창군/북면 (HGIS 157548)"
 ---

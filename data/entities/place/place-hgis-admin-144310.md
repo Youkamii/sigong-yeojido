@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144310"
 label: "경상남도/사천군/하남면"
-labelNote: "HGIS 144310"
+sourceRef:
+  - "HGIS 144310"
 aliases:
   - "경상남도/사천군/하남면 (HGIS 144310)"
 ---

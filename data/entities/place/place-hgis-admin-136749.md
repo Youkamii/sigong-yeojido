@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136749"
 label: "평안북도/삭주군/삭주면"
-labelNote: "HGIS 136749"
+sourceRef:
+  - "HGIS 136749"
 aliases:
   - "평안북도/삭주군/삭주면 (HGIS 136749)"
 ---

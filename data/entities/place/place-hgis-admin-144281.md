@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144281"
 label: "경상남도/사천군/군내면"
-labelNote: "HGIS 144281"
+sourceRef:
+  - "HGIS 144281"
 aliases:
   - "경상남도/사천군/군내면 (HGIS 144281)"
 ---

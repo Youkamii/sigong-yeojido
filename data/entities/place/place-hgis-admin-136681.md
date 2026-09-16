@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136681"
 label: "평안북도/선천군/선천면"
-labelNote: "HGIS 136681"
+sourceRef:
+  - "HGIS 136681"
 aliases:
   - "평안북도/선천군/선천면 (HGIS 136681)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144552"
 label: "경상남도/진주군/마동면"
-labelNote: "HGIS 144552"
+sourceRef:
+  - "HGIS 144552"
 aliases:
   - "경상남도/진주군/마동면 (HGIS 144552)"
 ---

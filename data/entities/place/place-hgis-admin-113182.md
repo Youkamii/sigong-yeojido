@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113182"
 label: "전라남도/담양군/봉산면"
-labelNote: "HGIS 113182"
+sourceRef:
+  - "HGIS 113182"
 aliases:
   - "전라남도/담양군/봉산면 (HGIS 113182)"
 ---

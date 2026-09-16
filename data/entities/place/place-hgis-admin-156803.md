@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156803"
 label: "경상북도/개령군/서면"
-labelNote: "HGIS 156803"
+sourceRef:
+  - "HGIS 156803"
 aliases:
   - "경상북도/개령군/서면 (HGIS 156803)"
 ---

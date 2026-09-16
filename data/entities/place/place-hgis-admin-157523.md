@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157523"
 label: "경상북도/칠곡군/이언면"
-labelNote: "HGIS 157523"
+sourceRef:
+  - "HGIS 157523"
 aliases:
   - "경상북도/칠곡군/이언면 (HGIS 157523)"
 ---

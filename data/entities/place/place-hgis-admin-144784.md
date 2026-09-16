@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144784"
 label: "경상남도/합천군/두상면"
-labelNote: "HGIS 144784"
+sourceRef:
+  - "HGIS 144784"
 aliases:
   - "경상남도/합천군/두상면 (HGIS 144784)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157310"
 label: "경상북도/영주군/부석면"
-labelNote: "HGIS 157310"
+sourceRef:
+  - "HGIS 157310"
 aliases:
   - "경상북도/영주군/부석면 (HGIS 157310)"
 ---

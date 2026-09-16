@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144348"
 label: "경상남도/산청군/초곡면"
-labelNote: "HGIS 144348"
+sourceRef:
+  - "HGIS 144348"
 aliases:
   - "경상남도/산청군/초곡면 (HGIS 144348)"
 ---

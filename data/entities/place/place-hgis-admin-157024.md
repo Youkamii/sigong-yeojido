@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157024"
 label: "경상북도/예천군/제고면"
-labelNote: "HGIS 157024"
+sourceRef:
+  - "HGIS 157024"
 aliases:
   - "경상북도/예천군/제고면 (HGIS 157024)"
 ---

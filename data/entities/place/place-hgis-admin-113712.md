@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113712"
 label: "전라남도/나주군/관동면"
-labelNote: "HGIS 113712"
+sourceRef:
+  - "HGIS 113712"
 aliases:
   - "전라남도/나주군/관동면 (HGIS 113712)"
 ---

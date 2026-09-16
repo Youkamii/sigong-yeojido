@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157263"
 label: "경상북도/영덕군/서면"
-labelNote: "HGIS 157263"
+sourceRef:
+  - "HGIS 157263"
 aliases:
   - "경상북도/영덕군/서면 (HGIS 157263)"
 ---

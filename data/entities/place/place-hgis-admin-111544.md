@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111544"
 label: "전라남도/광양군/월포면"
-labelNote: "HGIS 111544"
+sourceRef:
+  - "HGIS 111544"
 aliases:
   - "전라남도/광양군/월포면 (HGIS 111544)"
 ---

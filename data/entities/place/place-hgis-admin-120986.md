@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120986"
 label: "전라남도/제주군/대정면"
-labelNote: "HGIS 120986"
+sourceRef:
+  - "HGIS 120986"
 aliases:
   - "전라남도/제주군/대정면 (HGIS 120986)"
 ---

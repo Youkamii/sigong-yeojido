@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113864"
 label: "전라남도/나주군/노안면"
-labelNote: "HGIS 113864"
+sourceRef:
+  - "HGIS 113864"
 aliases:
   - "전라남도/나주군/노안면 (HGIS 113864)"
 ---

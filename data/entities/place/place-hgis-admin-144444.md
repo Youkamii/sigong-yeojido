@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144444"
 label: "경상남도/울산군/농소면"
-labelNote: "HGIS 144444"
+sourceRef:
+  - "HGIS 144444"
 aliases:
   - "경상남도/울산군/농소면 (HGIS 144444)"
 ---

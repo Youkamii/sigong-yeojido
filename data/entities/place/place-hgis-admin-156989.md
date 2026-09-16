@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156989"
 label: "경상북도/예안군/읍내면"
-labelNote: "HGIS 156989"
+sourceRef:
+  - "HGIS 156989"
 aliases:
   - "경상북도/예안군/읍내면 (HGIS 156989)"
 ---

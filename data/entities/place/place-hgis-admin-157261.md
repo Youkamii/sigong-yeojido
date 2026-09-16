@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157261"
 label: "경상북도/영덕군/병곡면"
-labelNote: "HGIS 157261"
+sourceRef:
+  - "HGIS 157261"
 aliases:
   - "경상북도/영덕군/병곡면 (HGIS 157261)"
 ---

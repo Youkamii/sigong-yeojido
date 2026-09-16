@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157288"
 label: "경상북도/영양군/일월면"
-labelNote: "HGIS 157288"
+sourceRef:
+  - "HGIS 157288"
 aliases:
   - "경상북도/영양군/일월면 (HGIS 157288)"
 ---

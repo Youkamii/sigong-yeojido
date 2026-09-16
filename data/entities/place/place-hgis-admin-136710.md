@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136710"
 label: "평안북도/용천군/북중면"
-labelNote: "HGIS 136710"
+sourceRef:
+  - "HGIS 136710"
 aliases:
   - "평안북도/용천군/북중면 (HGIS 136710)"
 ---

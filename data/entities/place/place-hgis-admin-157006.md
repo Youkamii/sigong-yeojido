@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157006"
 label: "경상북도/예천군/당동면"
-labelNote: "HGIS 157006"
+sourceRef:
+  - "HGIS 157006"
 aliases:
   - "경상북도/예천군/당동면 (HGIS 157006)"
 ---

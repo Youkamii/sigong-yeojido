@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157253"
 label: "경상북도/영덕군/남정면"
-labelNote: "HGIS 157253"
+sourceRef:
+  - "HGIS 157253"
 aliases:
   - "경상북도/영덕군/남정면 (HGIS 157253)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123683"
 label: "전라남도/해남군/청계면"
-labelNote: "HGIS 123683"
+sourceRef:
+  - "HGIS 123683"
 aliases:
   - "전라남도/해남군/청계면 (HGIS 123683)"
 ---

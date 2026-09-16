@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143134"
 label: "경상남도/하동군/하동읍"
-labelNote: "HGIS 143134"
+sourceRef:
+  - "HGIS 143134"
 aliases:
   - "경상남도/하동군/하동읍 (HGIS 143134)"
 ---

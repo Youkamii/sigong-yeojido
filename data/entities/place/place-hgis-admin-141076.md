@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141076"
 label: "평안북도/위원군/서하면"
-labelNote: "HGIS 141076"
+sourceRef:
+  - "HGIS 141076"
 aliases:
   - "평안북도/위원군/서하면 (HGIS 141076)"
 ---

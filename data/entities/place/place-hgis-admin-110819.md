@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110819"
 label: "전라남도/고흥군/고흥면"
-labelNote: "HGIS 110819"
+sourceRef:
+  - "HGIS 110819"
 aliases:
   - "전라남도/고흥군/고흥면 (HGIS 110819)"
 ---

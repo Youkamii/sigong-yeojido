@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111042"
 label: "전라남도/곡성군/오곡면"
-labelNote: "HGIS 111042"
+sourceRef:
+  - "HGIS 111042"
 aliases:
   - "전라남도/곡성군/오곡면 (HGIS 111042)"
 ---

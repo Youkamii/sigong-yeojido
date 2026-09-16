@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119088"
 label: "전라남도/순천군/하사면"
-labelNote: "HGIS 119088"
+sourceRef:
+  - "HGIS 119088"
 aliases:
   - "전라남도/순천군/하사면 (HGIS 119088)"
 ---

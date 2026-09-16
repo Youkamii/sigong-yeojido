@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112072"
 label: "전라남도/광주군/석제면"
-labelNote: "HGIS 112072"
+sourceRef:
+  - "HGIS 112072"
 aliases:
   - "전라남도/광주군/석제면 (HGIS 112072)"
 ---

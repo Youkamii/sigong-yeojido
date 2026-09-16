@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144527"
 label: "경상남도/진양군/금산면"
-labelNote: "HGIS 144527"
+sourceRef:
+  - "HGIS 144527"
 aliases:
   - "경상남도/진양군/금산면 (HGIS 144527)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120153"
 label: "전라남도/장성군/장성읍"
-labelNote: "HGIS 120153"
+sourceRef:
+  - "HGIS 120153"
 aliases:
   - "전라남도/장성군/장성읍 (HGIS 120153)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145794"
 label: "경상남도/단성군/오동면"
-labelNote: "HGIS 145794"
+sourceRef:
+  - "HGIS 145794"
 aliases:
   - "경상남도/단성군/오동면 (HGIS 145794)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156817"
 label: "경상북도/경산군/자인면"
-labelNote: "HGIS 156817"
+sourceRef:
+  - "HGIS 156817"
 aliases:
   - "경상북도/경산군/자인면 (HGIS 156817)"
 ---

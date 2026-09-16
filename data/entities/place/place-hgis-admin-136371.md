@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136371"
 label: "평안북도/벽동군/평하면"
-labelNote: "HGIS 136371"
+sourceRef:
+  - "HGIS 136371"
 aliases:
   - "평안북도/벽동군/평하면 (HGIS 136371)"
 ---

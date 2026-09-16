@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-171874"
 label: "경상북도/현풍군/오설면"
-labelNote: "HGIS 171874"
+sourceRef:
+  - "HGIS 171874"
 aliases:
   - "경상북도/현풍군/오설면 (HGIS 171874)"
 ---

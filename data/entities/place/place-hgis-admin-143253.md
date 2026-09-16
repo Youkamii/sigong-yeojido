@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143253"
 label: "경상남도/진양군/지수면"
-labelNote: "HGIS 143253"
+sourceRef:
+  - "HGIS 143253"
 aliases:
   - "경상남도/진양군/지수면 (HGIS 143253)"
 ---

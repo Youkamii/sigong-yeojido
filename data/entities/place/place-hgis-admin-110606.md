@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110606"
 label: "전라남도/강진군/병영면"
-labelNote: "HGIS 110606"
+sourceRef:
+  - "HGIS 110606"
 aliases:
   - "전라남도/강진군/병영면 (HGIS 110606)"
 ---

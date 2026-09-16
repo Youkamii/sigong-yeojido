@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156977"
 label: "경상북도/예안군/서면"
-labelNote: "HGIS 156977"
+sourceRef:
+  - "HGIS 156977"
 aliases:
   - "경상북도/예안군/서면 (HGIS 156977)"
 ---

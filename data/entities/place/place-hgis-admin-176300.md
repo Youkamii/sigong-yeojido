@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-176300"
 label: "강원도/춘천군/동내면"
-labelNote: "HGIS 176300"
+sourceRef:
+  - "HGIS 176300"
 aliases:
   - "강원도/춘천군/동내면 (HGIS 176300)"
 ---

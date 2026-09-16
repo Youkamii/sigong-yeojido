@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141229"
 label: "평안북도/의주군/의주읍"
-labelNote: "HGIS 141229"
+sourceRef:
+  - "HGIS 141229"
 aliases:
   - "평안북도/의주군/의주읍 (HGIS 141229)"
 ---

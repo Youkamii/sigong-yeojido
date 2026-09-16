@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144311"
 label: "경상남도/사천군/하서면"
-labelNote: "HGIS 144311"
+sourceRef:
+  - "HGIS 144311"
 aliases:
   - "경상남도/사천군/하서면 (HGIS 144311)"
 ---

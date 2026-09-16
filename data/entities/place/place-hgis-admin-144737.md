@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144737"
 label: "경상남도/함안군/산족면"
-labelNote: "HGIS 144737"
+sourceRef:
+  - "HGIS 144737"
 aliases:
   - "경상남도/함안군/산족면 (HGIS 144737)"
 ---

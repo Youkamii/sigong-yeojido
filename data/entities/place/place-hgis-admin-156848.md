@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156848"
 label: "경상북도/고령군/구곡면"
-labelNote: "HGIS 156848"
+sourceRef:
+  - "HGIS 156848"
 aliases:
   - "경상북도/고령군/구곡면 (HGIS 156848)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136399"
 label: "평안북도/선천군/신미면"
-labelNote: "HGIS 136399"
+sourceRef:
+  - "HGIS 136399"
 aliases:
   - "평안북도/선천군/신미면 (HGIS 136399)"
 ---

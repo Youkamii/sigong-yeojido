@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117764"
 label: "전라남도/무안군/팔금면"
-labelNote: "HGIS 117764"
+sourceRef:
+  - "HGIS 117764"
 aliases:
   - "전라남도/무안군/팔금면 (HGIS 117764)"
 ---

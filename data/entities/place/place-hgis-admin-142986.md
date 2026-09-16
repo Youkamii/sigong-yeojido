@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142986"
 label: "경기도/인천부/각국거류지"
-labelNote: "HGIS 142986"
+sourceRef:
+  - "HGIS 142986"
 aliases:
   - "경기도/인천부/각국거류지 (HGIS 142986)"
 ---

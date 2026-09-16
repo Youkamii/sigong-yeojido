@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157700"
 label: "경상북도/개령군"
-labelNote: "HGIS 157700"
+sourceRef:
+  - "HGIS 157700"
 aliases:
   - "경상북도/개령군 (HGIS 157700)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144777"
 label: "경상남도/함양군/함양면"
-labelNote: "HGIS 144777"
+sourceRef:
+  - "HGIS 144777"
 aliases:
   - "경상남도/함양군/함양면 (HGIS 144777)"
 ---

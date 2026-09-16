@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157270"
 label: "경상북도/영양군/청초면"
-labelNote: "HGIS 157270"
+sourceRef:
+  - "HGIS 157270"
 aliases:
   - "경상북도/영양군/청초면 (HGIS 157270)"
 ---

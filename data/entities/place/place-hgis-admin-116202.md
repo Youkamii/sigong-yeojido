@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116202"
 label: "전라남도/영암군/금정면"
-labelNote: "HGIS 116202"
+sourceRef:
+  - "HGIS 116202"
 aliases:
   - "전라남도/영암군/금정면 (HGIS 116202)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157329"
 label: "경상북도/영천군/봉향면"
-labelNote: "HGIS 157329"
+sourceRef:
+  - "HGIS 157329"
 aliases:
   - "경상북도/영천군/봉향면 (HGIS 157329)"
 ---

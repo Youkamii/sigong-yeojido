@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156844"
 label: "경상북도/고령군/개진면"
-labelNote: "HGIS 156844"
+sourceRef:
+  - "HGIS 156844"
 aliases:
   - "경상북도/고령군/개진면 (HGIS 156844)"
 ---

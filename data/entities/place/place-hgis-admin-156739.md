@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156739"
 label: "경상북도/영천군/아천면"
-labelNote: "HGIS 156739"
+sourceRef:
+  - "HGIS 156739"
 aliases:
   - "경상북도/영천군/아천면 (HGIS 156739)"
 ---

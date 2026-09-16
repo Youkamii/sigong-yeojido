@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156907"
 label: "경상북도/김천군/금릉면"
-labelNote: "HGIS 156907"
+sourceRef:
+  - "HGIS 156907"
 aliases:
   - "경상북도/김천군/금릉면 (HGIS 156907)"
 ---

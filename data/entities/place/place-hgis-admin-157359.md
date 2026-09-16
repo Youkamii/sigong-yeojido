@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157359"
 label: "경상북도/영천군/원곡면"
-labelNote: "HGIS 157359"
+sourceRef:
+  - "HGIS 157359"
 aliases:
   - "경상북도/영천군/원곡면 (HGIS 157359)"
 ---

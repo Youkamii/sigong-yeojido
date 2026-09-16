@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157529"
 label: "경상북도/칠곡군/팔거면"
-labelNote: "HGIS 157529"
+sourceRef:
+  - "HGIS 157529"
 aliases:
   - "경상북도/칠곡군/팔거면 (HGIS 157529)"
 ---

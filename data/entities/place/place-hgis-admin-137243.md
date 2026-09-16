@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137243"
 label: "평안북도/위원군/위송면"
-labelNote: "HGIS 137243"
+sourceRef:
+  - "HGIS 137243"
 aliases:
   - "평안북도/위원군/위송면 (HGIS 137243)"
 ---

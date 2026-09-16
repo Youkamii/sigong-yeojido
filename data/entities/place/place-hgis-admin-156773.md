@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156773"
 label: "경상북도/성주군/용암면"
-labelNote: "HGIS 156773"
+sourceRef:
+  - "HGIS 156773"
 aliases:
   - "경상북도/성주군/용암면 (HGIS 156773)"
 ---

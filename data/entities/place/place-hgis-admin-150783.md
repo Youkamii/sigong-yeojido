@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150783"
 label: "경상남도/동래군/사상면"
-labelNote: "HGIS 150783"
+sourceRef:
+  - "HGIS 150783"
 aliases:
   - "경상남도/동래군/사상면 (HGIS 150783)"
 ---

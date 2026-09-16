@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157307"
 label: "경상북도/영주군/단산면"
-labelNote: "HGIS 157307"
+sourceRef:
+  - "HGIS 157307"
 aliases:
   - "경상북도/영주군/단산면 (HGIS 157307)"
 ---

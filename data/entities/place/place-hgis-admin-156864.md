@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156864"
 label: "경상북도/고령군/우곡면"
-labelNote: "HGIS 156864"
+sourceRef:
+  - "HGIS 156864"
 aliases:
   - "경상북도/고령군/우곡면 (HGIS 156864)"
 ---

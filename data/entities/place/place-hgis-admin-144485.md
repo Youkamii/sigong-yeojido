@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144485"
 label: "경상남도/의령군/경산면"
-labelNote: "HGIS 144485"
+sourceRef:
+  - "HGIS 144485"
 aliases:
   - "경상남도/의령군/경산면 (HGIS 144485)"
 ---

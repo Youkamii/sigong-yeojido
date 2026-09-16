@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157007"
 label: "경상북도/예천군/동읍면"
-labelNote: "HGIS 157007"
+sourceRef:
+  - "HGIS 157007"
 aliases:
   - "경상북도/예천군/동읍면 (HGIS 157007)"
 ---

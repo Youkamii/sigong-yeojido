@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157225"
 label: "경상북도/안동군/임남면"
-labelNote: "HGIS 157225"
+sourceRef:
+  - "HGIS 157225"
 aliases:
   - "경상북도/안동군/임남면 (HGIS 157225)"
 ---

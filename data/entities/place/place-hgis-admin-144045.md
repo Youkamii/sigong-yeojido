@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144045"
 label: "경상남도/거창군/하가남면"
-labelNote: "HGIS 144045"
+sourceRef:
+  - "HGIS 144045"
 aliases:
   - "경상남도/거창군/하가남면 (HGIS 144045)"
 ---

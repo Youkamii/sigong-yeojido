@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157505"
 label: "경상북도/칠곡군/도촌면"
-labelNote: "HGIS 157505"
+sourceRef:
+  - "HGIS 157505"
 aliases:
   - "경상북도/칠곡군/도촌면 (HGIS 157505)"
 ---

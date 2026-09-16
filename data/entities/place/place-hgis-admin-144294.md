@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144294"
 label: "경상남도/사천군/상주내면"
-labelNote: "HGIS 144294"
+sourceRef:
+  - "HGIS 144294"
 aliases:
   - "경상남도/사천군/상주내면 (HGIS 144294)"
 ---

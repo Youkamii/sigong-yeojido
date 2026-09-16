@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136318"
 label: "평안북도/곽산군/관면"
-labelNote: "HGIS 136318"
+sourceRef:
+  - "HGIS 136318"
 aliases:
   - "평안북도/곽산군/관면 (HGIS 136318)"
 ---

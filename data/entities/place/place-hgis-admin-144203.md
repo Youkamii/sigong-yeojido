@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144203"
 label: "경상남도/단성군/법물면"
-labelNote: "HGIS 144203"
+sourceRef:
+  - "HGIS 144203"
 aliases:
   - "경상남도/단성군/법물면 (HGIS 144203)"
 ---

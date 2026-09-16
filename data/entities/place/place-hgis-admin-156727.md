@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156727"
 label: "경상북도/성주군/성암면"
-labelNote: "HGIS 156727"
+sourceRef:
+  - "HGIS 156727"
 aliases:
   - "경상북도/성주군/성암면 (HGIS 156727)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117915"
 label: "전라남도/보성군/득량면"
-labelNote: "HGIS 117915"
+sourceRef:
+  - "HGIS 117915"
 aliases:
   - "전라남도/보성군/득량면 (HGIS 117915)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144218"
 label: "경상남도/마산부/웅읍면"
-labelNote: "HGIS 144218"
+sourceRef:
+  - "HGIS 144218"
 aliases:
   - "경상남도/마산부/웅읍면 (HGIS 144218)"
 ---

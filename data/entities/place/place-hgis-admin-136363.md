@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136363"
 label: "평안북도/벽동군/성면"
-labelNote: "HGIS 136363"
+sourceRef:
+  - "HGIS 136363"
 aliases:
   - "평안북도/벽동군/성면 (HGIS 136363)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122652"
 label: "전라남도/함평군/대야면"
-labelNote: "HGIS 122652"
+sourceRef:
+  - "HGIS 122652"
 aliases:
   - "전라남도/함평군/대야면 (HGIS 122652)"
 ---

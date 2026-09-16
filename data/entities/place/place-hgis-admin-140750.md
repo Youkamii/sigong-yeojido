@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140750"
 label: "평안북도/용천부/내상면"
-labelNote: "HGIS 140750"
+sourceRef:
+  - "HGIS 140750"
 aliases:
   - "평안북도/용천부/내상면 (HGIS 140750)"
 ---

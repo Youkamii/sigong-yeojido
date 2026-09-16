@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157208"
 label: "경상북도/신녕군/신촌면"
-labelNote: "HGIS 157208"
+sourceRef:
+  - "HGIS 157208"
 aliases:
   - "경상북도/신녕군/신촌면 (HGIS 157208)"
 ---

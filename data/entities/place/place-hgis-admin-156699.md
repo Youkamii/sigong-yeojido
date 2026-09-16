@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156699"
 label: "강원도/이천군/낙양면"
-labelNote: "HGIS 156699"
+sourceRef:
+  - "HGIS 156699"
 aliases:
   - "강원도/이천군/낙양면 (HGIS 156699)"
 ---

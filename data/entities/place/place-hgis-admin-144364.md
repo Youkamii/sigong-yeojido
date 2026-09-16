@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144364"
 label: "경상남도/삼가군/율원면"
-labelNote: "HGIS 144364"
+sourceRef:
+  - "HGIS 144364"
 aliases:
   - "경상남도/삼가군/율원면 (HGIS 144364)"
 ---

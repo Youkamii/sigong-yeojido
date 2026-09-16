@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111058"
 label: "전라남도/곡성군/오지면"
-labelNote: "HGIS 111058"
+sourceRef:
+  - "HGIS 111058"
 aliases:
   - "전라남도/곡성군/오지면 (HGIS 111058)"
 ---

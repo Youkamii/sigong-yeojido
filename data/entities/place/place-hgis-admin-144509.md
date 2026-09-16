@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144509"
 label: "경상남도/합천군/현내면"
-labelNote: "HGIS 144509"
+sourceRef:
+  - "HGIS 144509"
 aliases:
   - "경상남도/합천군/현내면 (HGIS 144509)"
 ---

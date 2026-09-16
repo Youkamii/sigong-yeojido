@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112935"
 label: "전라남도/남평군"
-labelNote: "HGIS 112935"
+sourceRef:
+  - "HGIS 112935"
 aliases:
   - "전라남도/남평군 (HGIS 112935)"
 ---

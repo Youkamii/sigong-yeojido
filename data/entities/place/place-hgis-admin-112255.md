@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112255"
 label: "전라남도/광주군/천곡면"
-labelNote: "HGIS 112255"
+sourceRef:
+  - "HGIS 112255"
 aliases:
   - "전라남도/광주군/천곡면 (HGIS 112255)"
 ---

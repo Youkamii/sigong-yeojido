@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157377"
 label: "경상북도/울도군/서면"
-labelNote: "HGIS 157377"
+sourceRef:
+  - "HGIS 157377"
 aliases:
   - "경상북도/울도군/서면 (HGIS 157377)"
 ---

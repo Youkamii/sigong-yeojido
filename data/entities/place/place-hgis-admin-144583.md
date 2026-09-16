@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144583"
 label: "경상남도/진주군/장재곡면"
-labelNote: "HGIS 144583"
+sourceRef:
+  - "HGIS 144583"
 aliases:
   - "경상남도/진주군/장재곡면 (HGIS 144583)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120521"
 label: "전라남도/장흥군/안양면"
-labelNote: "HGIS 120521"
+sourceRef:
+  - "HGIS 120521"
 aliases:
   - "전라남도/장흥군/안양면 (HGIS 120521)"
 ---

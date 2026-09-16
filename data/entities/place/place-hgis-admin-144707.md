@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144707"
 label: "경상남도/하동군/양보면"
-labelNote: "HGIS 144707"
+sourceRef:
+  - "HGIS 144707"
 aliases:
   - "경상남도/하동군/양보면 (HGIS 144707)"
 ---

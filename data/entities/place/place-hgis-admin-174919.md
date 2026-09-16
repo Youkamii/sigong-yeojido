@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174919"
 label: "경상북도/대구군/하북면"
-labelNote: "HGIS 174919"
+sourceRef:
+  - "HGIS 174919"
 aliases:
   - "경상북도/대구군/하북면 (HGIS 174919)"
 ---

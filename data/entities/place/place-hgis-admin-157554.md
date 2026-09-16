@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157554"
 label: "경상북도/함창군/현내면"
-labelNote: "HGIS 157554"
+sourceRef:
+  - "HGIS 157554"
 aliases:
   - "경상북도/함창군/현내면 (HGIS 157554)"
 ---

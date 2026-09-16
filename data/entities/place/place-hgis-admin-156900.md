@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156900"
 label: "경상북도/김산군/천하면"
-labelNote: "HGIS 156900"
+sourceRef:
+  - "HGIS 156900"
 aliases:
   - "경상북도/김산군/천하면 (HGIS 156900)"
 ---

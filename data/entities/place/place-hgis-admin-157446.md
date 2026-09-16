@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157446"
 label: "경상북도/지례군/상북면"
-labelNote: "HGIS 157446"
+sourceRef:
+  - "HGIS 157446"
 aliases:
   - "경상북도/지례군/상북면 (HGIS 157446)"
 ---

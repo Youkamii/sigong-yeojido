@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141954"
 label: "평안북도/정주군/임해면"
-labelNote: "HGIS 141954"
+sourceRef:
+  - "HGIS 141954"
 aliases:
   - "평안북도/정주군/임해면 (HGIS 141954)"
 ---

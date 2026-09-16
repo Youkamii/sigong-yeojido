@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114231"
 label: "전라남도/나주군/오산면"
-labelNote: "HGIS 114231"
+sourceRef:
+  - "HGIS 114231"
 aliases:
   - "전라남도/나주군/오산면 (HGIS 114231)"
 ---

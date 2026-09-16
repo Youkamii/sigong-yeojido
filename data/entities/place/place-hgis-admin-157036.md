@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157036"
 label: "경상북도/용궁군/북상면"
-labelNote: "HGIS 157036"
+sourceRef:
+  - "HGIS 157036"
 aliases:
   - "경상북도/용궁군/북상면 (HGIS 157036)"
 ---

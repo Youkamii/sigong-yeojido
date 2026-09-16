@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114279"
 label: "전라남도/나주군/욱곡면"
-labelNote: "HGIS 114279"
+sourceRef:
+  - "HGIS 114279"
 aliases:
   - "전라남도/나주군/욱곡면 (HGIS 114279)"
 ---

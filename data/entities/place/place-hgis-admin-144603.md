@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144603"
 label: "경상남도/창녕군/길곡면"
-labelNote: "HGIS 144603"
+sourceRef:
+  - "HGIS 144603"
 aliases:
   - "경상남도/창녕군/길곡면 (HGIS 144603)"
 ---

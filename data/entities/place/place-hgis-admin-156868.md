@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156868"
 label: "경상북도/고령군/읍내면"
-labelNote: "HGIS 156868"
+sourceRef:
+  - "HGIS 156868"
 aliases:
   - "경상북도/고령군/읍내면 (HGIS 156868)"
 ---

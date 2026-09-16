@@ -2,7 +2,9 @@
 id: "person-encykorea-sunjong-e0031947"
 type: "Person"
 label: "순종 (조선)"
-labelNote: "조선 제27대, 민족문화대백과 E0031947"
+labelNote: "조선 제27대"
+sourceRef:
+  - "민족문화대백과 E0031947"
 aliases:
   - "순종 (조선 제27대, 민족문화대백과 E0031947)"
 ---

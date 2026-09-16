@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156878"
 label: "경상북도/군위군/부계면"
-labelNote: "HGIS 156878"
+sourceRef:
+  - "HGIS 156878"
 aliases:
   - "경상북도/군위군/부계면 (HGIS 156878)"
 ---

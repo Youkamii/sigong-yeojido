@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157186"
 label: "경상북도/성주군/월항면"
-labelNote: "HGIS 157186"
+sourceRef:
+  - "HGIS 157186"
 aliases:
   - "경상북도/성주군/월항면 (HGIS 157186)"
 ---

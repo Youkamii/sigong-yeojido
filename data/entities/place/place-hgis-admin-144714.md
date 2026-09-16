@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144714"
 label: "경상남도/하동군/정수면"
-labelNote: "HGIS 144714"
+sourceRef:
+  - "HGIS 144714"
 aliases:
   - "경상남도/하동군/정수면 (HGIS 144714)"
 ---

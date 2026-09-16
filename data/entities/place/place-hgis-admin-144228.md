@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144228"
 label: "경상남도/밀양군/밀양면"
-labelNote: "HGIS 144228"
+sourceRef:
+  - "HGIS 144228"
 aliases:
   - "경상남도/밀양군/밀양면 (HGIS 144228)"
 ---

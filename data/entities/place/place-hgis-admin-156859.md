@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156859"
 label: "경상북도/고령군/상동면"
-labelNote: "HGIS 156859"
+sourceRef:
+  - "HGIS 156859"
 aliases:
   - "경상북도/고령군/상동면 (HGIS 156859)"
 ---

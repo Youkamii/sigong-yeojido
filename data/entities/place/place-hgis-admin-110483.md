@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110483"
 label: "전라남도/강진군/금천면"
-labelNote: "HGIS 110483"
+sourceRef:
+  - "HGIS 110483"
 aliases:
   - "전라남도/강진군/금천면 (HGIS 110483)"
 ---

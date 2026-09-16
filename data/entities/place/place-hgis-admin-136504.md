@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136504"
 label: "평안북도/용천부/외상면"
-labelNote: "HGIS 136504"
+sourceRef:
+  - "HGIS 136504"
 aliases:
   - "평안북도/용천부/외상면 (HGIS 136504)"
 ---

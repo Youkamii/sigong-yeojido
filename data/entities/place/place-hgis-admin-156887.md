@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156887"
 label: "경상북도/군위군/화곡면"
-labelNote: "HGIS 156887"
+sourceRef:
+  - "HGIS 156887"
 aliases:
   - "경상북도/군위군/화곡면 (HGIS 156887)"
 ---

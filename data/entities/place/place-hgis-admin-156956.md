@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156956"
 label: "경상북도/대구군/동중면"
-labelNote: "HGIS 156956"
+sourceRef:
+  - "HGIS 156956"
 aliases:
   - "경상북도/대구군/동중면 (HGIS 156956)"
 ---

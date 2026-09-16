@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144113"
 label: "경상남도/고성군/상남면"
-labelNote: "HGIS 144113"
+sourceRef:
+  - "HGIS 144113"
 aliases:
   - "경상남도/고성군/상남면 (HGIS 144113)"
 ---

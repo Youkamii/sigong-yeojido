@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111864"
 label: "전라남도/광주군/동각면"
-labelNote: "HGIS 111864"
+sourceRef:
+  - "HGIS 111864"
 aliases:
   - "전라남도/광주군/동각면 (HGIS 111864)"
 ---

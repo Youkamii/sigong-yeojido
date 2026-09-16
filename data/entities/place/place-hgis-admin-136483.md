@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136483"
 label: "평안북도/후창군/부남면"
-labelNote: "HGIS 136483"
+sourceRef:
+  - "HGIS 136483"
 aliases:
   - "평안북도/후창군/부남면 (HGIS 136483)"
 ---

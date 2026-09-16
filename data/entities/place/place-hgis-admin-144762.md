@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144762"
 label: "경상남도/함양군/백토면"
-labelNote: "HGIS 144762"
+sourceRef:
+  - "HGIS 144762"
 aliases:
   - "경상남도/함양군/백토면 (HGIS 144762)"
 ---

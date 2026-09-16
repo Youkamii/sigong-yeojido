@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122471"
 label: "전라남도/창평군/장북면"
-labelNote: "HGIS 122471"
+sourceRef:
+  - "HGIS 122471"
 aliases:
   - "전라남도/창평군/장북면 (HGIS 122471)"
 ---

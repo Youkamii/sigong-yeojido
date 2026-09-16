@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157032"
 label: "경상북도/용궁군/남하면"
-labelNote: "HGIS 157032"
+sourceRef:
+  - "HGIS 157032"
 aliases:
   - "경상북도/용궁군/남하면 (HGIS 157032)"
 ---

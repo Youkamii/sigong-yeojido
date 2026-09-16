@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136378"
 label: "평안북도/삭주군/내동면"
-labelNote: "HGIS 136378"
+sourceRef:
+  - "HGIS 136378"
 aliases:
   - "평안북도/삭주군/내동면 (HGIS 136378)"
 ---

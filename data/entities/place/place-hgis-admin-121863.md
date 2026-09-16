@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121863"
 label: "전라남도/진도군/고군면"
-labelNote: "HGIS 121863"
+sourceRef:
+  - "HGIS 121863"
 aliases:
   - "전라남도/진도군/고군면 (HGIS 121863)"
 ---

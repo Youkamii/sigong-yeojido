@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157308"
 label: "경상북도/영주군/문수면"
-labelNote: "HGIS 157308"
+sourceRef:
+  - "HGIS 157308"
 aliases:
   - "경상북도/영주군/문수면 (HGIS 157308)"
 ---

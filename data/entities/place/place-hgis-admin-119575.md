@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119575"
 label: "전라남도/완도군/팔금면"
-labelNote: "HGIS 119575"
+sourceRef:
+  - "HGIS 119575"
 aliases:
   - "전라남도/완도군/팔금면 (HGIS 119575)"
 ---

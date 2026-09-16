@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144317"
 label: "경상남도/산청군/단성면"
-labelNote: "HGIS 144317"
+sourceRef:
+  - "HGIS 144317"
 aliases:
   - "경상남도/산청군/단성면 (HGIS 144317)"
 ---

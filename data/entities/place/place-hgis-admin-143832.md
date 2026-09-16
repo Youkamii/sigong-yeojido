@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143832"
 label: "경상남도/양산군/외남면"
-labelNote: "HGIS 143832"
+sourceRef:
+  - "HGIS 143832"
 aliases:
   - "경상남도/양산군/외남면 (HGIS 143832)"
 ---

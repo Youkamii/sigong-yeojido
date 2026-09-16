@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144156"
 label: "경상남도/김해군/김해면"
-labelNote: "HGIS 144156"
+sourceRef:
+  - "HGIS 144156"
 aliases:
   - "경상남도/김해군/김해면 (HGIS 144156)"
 ---

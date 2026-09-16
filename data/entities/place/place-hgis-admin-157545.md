@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157545"
 label: "경상북도/하양군/중림면"
-labelNote: "HGIS 157545"
+sourceRef:
+  - "HGIS 157545"
 aliases:
   - "경상북도/하양군/중림면 (HGIS 157545)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111663"
 label: "전라남도/광주군/갈전면"
-labelNote: "HGIS 111663"
+sourceRef:
+  - "HGIS 111663"
 aliases:
   - "전라남도/광주군/갈전면 (HGIS 111663)"
 ---

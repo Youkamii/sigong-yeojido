@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144458"
 label: "경상남도/울산군/상북면"
-labelNote: "HGIS 144458"
+sourceRef:
+  - "HGIS 144458"
 aliases:
   - "경상남도/울산군/상북면 (HGIS 144458)"
 ---

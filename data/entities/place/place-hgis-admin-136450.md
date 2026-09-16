@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136450"
 label: "평안북도/정주군/대명면"
-labelNote: "HGIS 136450"
+sourceRef:
+  - "HGIS 136450"
 aliases:
   - "평안북도/정주군/대명면 (HGIS 136450)"
 ---

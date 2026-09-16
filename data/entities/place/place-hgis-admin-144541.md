@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144541"
 label: "경상남도/진주군/내진성면"
-labelNote: "HGIS 144541"
+sourceRef:
+  - "HGIS 144541"
 aliases:
   - "경상남도/진주군/내진성면 (HGIS 144541)"
 ---

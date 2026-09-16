@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119059"
 label: "전라남도/순천군/초상면"
-labelNote: "HGIS 119059"
+sourceRef:
+  - "HGIS 119059"
 aliases:
   - "전라남도/순천군/초상면 (HGIS 119059)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136709"
 label: "평안북도/용천군/부라면"
-labelNote: "HGIS 136709"
+sourceRef:
+  - "HGIS 136709"
 aliases:
   - "평안북도/용천군/부라면 (HGIS 136709)"
 ---

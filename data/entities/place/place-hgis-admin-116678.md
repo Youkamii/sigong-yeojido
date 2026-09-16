@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116678"
 label: "전라남도/능주군/대곡면"
-labelNote: "HGIS 116678"
+sourceRef:
+  - "HGIS 116678"
 aliases:
   - "전라남도/능주군/대곡면 (HGIS 116678)"
 ---

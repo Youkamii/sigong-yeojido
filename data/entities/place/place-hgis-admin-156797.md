@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156797"
 label: "경상북도/상주군/청리면"
-labelNote: "HGIS 156797"
+sourceRef:
+  - "HGIS 156797"
 aliases:
   - "경상북도/상주군/청리면 (HGIS 156797)"
 ---

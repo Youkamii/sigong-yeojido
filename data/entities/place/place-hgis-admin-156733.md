@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156733"
 label: "경상북도/영양군/남면"
-labelNote: "HGIS 156733"
+sourceRef:
+  - "HGIS 156733"
 aliases:
   - "경상북도/영양군/남면 (HGIS 156733)"
 ---

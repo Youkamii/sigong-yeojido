@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174476"
 label: "경상북도/성주군/본아면"
-labelNote: "HGIS 174476"
+sourceRef:
+  - "HGIS 174476"
 aliases:
   - "경상북도/성주군/본아면 (HGIS 174476)"
 ---

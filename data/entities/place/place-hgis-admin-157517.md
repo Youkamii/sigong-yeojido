@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157517"
 label: "경상북도/칠곡군/북삼면"
-labelNote: "HGIS 157517"
+sourceRef:
+  - "HGIS 157517"
 aliases:
   - "경상북도/칠곡군/북삼면 (HGIS 157517)"
 ---

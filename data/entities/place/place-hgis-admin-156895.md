@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156895"
 label: "경상북도/김산군/군내면"
-labelNote: "HGIS 156895"
+sourceRef:
+  - "HGIS 156895"
 aliases:
   - "경상북도/김산군/군내면 (HGIS 156895)"
 ---

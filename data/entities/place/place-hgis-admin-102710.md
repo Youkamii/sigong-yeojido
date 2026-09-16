@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102710"
 label: "전라북도/고부군/오금면"
-labelNote: "HGIS 102710"
+sourceRef:
+  - "HGIS 102710"
 aliases:
   - "전라북도/고부군/오금면 (HGIS 102710)"
 ---

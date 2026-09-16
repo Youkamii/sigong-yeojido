@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144192"
 label: "경상남도/김해군/하북면"
-labelNote: "HGIS 144192"
+sourceRef:
+  - "HGIS 144192"
 aliases:
   - "경상남도/김해군/하북면 (HGIS 144192)"
 ---

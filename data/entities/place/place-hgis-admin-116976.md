@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116976"
 label: "전라남도/능주군/화남면"
-labelNote: "HGIS 116976"
+sourceRef:
+  - "HGIS 116976"
 aliases:
   - "전라남도/능주군/화남면 (HGIS 116976)"
 ---

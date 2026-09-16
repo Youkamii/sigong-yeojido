@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112583"
 label: "전라남도/구례군/소의면"
-labelNote: "HGIS 112583"
+sourceRef:
+  - "HGIS 112583"
 aliases:
   - "전라남도/구례군/소의면 (HGIS 112583)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117476"
 label: "전라남도/목포부/일로면"
-labelNote: "HGIS 117476"
+sourceRef:
+  - "HGIS 117476"
 aliases:
   - "전라남도/목포부/일로면 (HGIS 117476)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144686"
 label: "경상남도/통영군/하청면"
-labelNote: "HGIS 144686"
+sourceRef:
+  - "HGIS 144686"
 aliases:
   - "경상남도/통영군/하청면 (HGIS 144686)"
 ---

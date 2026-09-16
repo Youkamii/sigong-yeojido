@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143280"
 label: "경상남도/창녕군/개복면"
-labelNote: "HGIS 143280"
+sourceRef:
+  - "HGIS 143280"
 aliases:
   - "경상남도/창녕군/개복면 (HGIS 143280)"
 ---

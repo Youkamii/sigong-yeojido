@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144797"
 label: "경상남도/합천군/양산면"
-labelNote: "HGIS 144797"
+sourceRef:
+  - "HGIS 144797"
 aliases:
   - "경상남도/합천군/양산면 (HGIS 144797)"
 ---

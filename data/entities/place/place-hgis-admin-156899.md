@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156899"
 label: "경상북도/김산군/천상면"
-labelNote: "HGIS 156899"
+sourceRef:
+  - "HGIS 156899"
 aliases:
   - "경상북도/김산군/천상면 (HGIS 156899)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144048"
 label: "경상남도/고성군/대가면"
-labelNote: "HGIS 144048"
+sourceRef:
+  - "HGIS 144048"
 aliases:
   - "경상남도/고성군/대가면 (HGIS 144048)"
 ---

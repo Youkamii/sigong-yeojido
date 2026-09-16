@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144503"
 label: "경상남도/의령군/유곡면"
-labelNote: "HGIS 144503"
+sourceRef:
+  - "HGIS 144503"
 aliases:
   - "경상남도/의령군/유곡면 (HGIS 144503)"
 ---

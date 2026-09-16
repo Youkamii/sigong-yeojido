@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156725"
 label: "경상북도/성주군/명암면"
-labelNote: "HGIS 156725"
+sourceRef:
+  - "HGIS 156725"
 aliases:
   - "경상북도/성주군/명암면 (HGIS 156725)"
 ---

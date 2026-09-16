@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113441"
 label: "전라남도/돌산군/화개면"
-labelNote: "HGIS 113441"
+sourceRef:
+  - "HGIS 113441"
 aliases:
   - "전라남도/돌산군/화개면 (HGIS 113441)"
 ---

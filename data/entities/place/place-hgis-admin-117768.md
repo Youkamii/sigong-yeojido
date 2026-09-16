@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117768"
 label: "전라남도/무안군/현경면"
-labelNote: "HGIS 117768"
+sourceRef:
+  - "HGIS 117768"
 aliases:
   - "전라남도/무안군/현경면 (HGIS 117768)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144312"
 label: "경상남도/산청군/군내면"
-labelNote: "HGIS 144312"
+sourceRef:
+  - "HGIS 144312"
 aliases:
   - "경상남도/산청군/군내면 (HGIS 144312)"
 ---

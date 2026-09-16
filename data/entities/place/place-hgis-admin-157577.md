@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157577"
 label: "경상북도/대구군/해북촌면"
-labelNote: "HGIS 157577"
+sourceRef:
+  - "HGIS 157577"
 aliases:
   - "경상북도/대구군/해북촌면 (HGIS 157577)"
 ---

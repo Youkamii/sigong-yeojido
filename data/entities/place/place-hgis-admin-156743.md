@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156743"
 label: "경상북도/울릉도/북면"
-labelNote: "HGIS 156743"
+sourceRef:
+  - "HGIS 156743"
 aliases:
   - "경상북도/울릉도/북면 (HGIS 156743)"
 ---

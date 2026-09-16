@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123751"
 label: "전라남도/해남군/화산면"
-labelNote: "HGIS 123751"
+sourceRef:
+  - "HGIS 123751"
 aliases:
   - "전라남도/해남군/화산면 (HGIS 123751)"
 ---

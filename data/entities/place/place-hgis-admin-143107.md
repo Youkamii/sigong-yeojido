@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143107"
 label: "경상남도/진양군/문산면"
-labelNote: "HGIS 143107"
+sourceRef:
+  - "HGIS 143107"
 aliases:
   - "경상남도/진양군/문산면 (HGIS 143107)"
 ---

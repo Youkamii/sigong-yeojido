@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114908"
 label: "전라남도/영광군/관산면"
-labelNote: "HGIS 114908"
+sourceRef:
+  - "HGIS 114908"
 aliases:
   - "전라남도/영광군/관산면 (HGIS 114908)"
 ---

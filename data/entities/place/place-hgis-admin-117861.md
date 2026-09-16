@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117861"
 label: "전라남도/보성군/남하면"
-labelNote: "HGIS 117861"
+sourceRef:
+  - "HGIS 117861"
 aliases:
   - "전라남도/보성군/남하면 (HGIS 117861)"
 ---

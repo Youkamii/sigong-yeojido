@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-101241"
 label: "전라북도/운봉군/서면"
-labelNote: "HGIS 101241"
+sourceRef:
+  - "HGIS 101241"
 aliases:
   - "전라북도/운봉군/서면 (HGIS 101241)"
 ---

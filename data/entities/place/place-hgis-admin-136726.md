@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136726"
 label: "평안북도/정주군/대전면"
-labelNote: "HGIS 136726"
+sourceRef:
+  - "HGIS 136726"
 aliases:
   - "평안북도/정주군/대전면 (HGIS 136726)"
 ---

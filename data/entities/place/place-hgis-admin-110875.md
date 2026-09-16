@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110875"
 label: "전라남도/곡성군/도상면"
-labelNote: "HGIS 110875"
+sourceRef:
+  - "HGIS 110875"
 aliases:
   - "전라남도/곡성군/도상면 (HGIS 110875)"
 ---

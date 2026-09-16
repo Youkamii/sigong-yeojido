@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156843"
 label: "경상북도/고령군/가현면"
-labelNote: "HGIS 156843"
+sourceRef:
+  - "HGIS 156843"
 aliases:
   - "경상북도/고령군/가현면 (HGIS 156843)"
 ---

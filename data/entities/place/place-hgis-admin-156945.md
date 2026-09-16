@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156945"
 label: "경상북도/달성군/유가면"
-labelNote: "HGIS 156945"
+sourceRef:
+  - "HGIS 156945"
 aliases:
   - "경상북도/달성군/유가면 (HGIS 156945)"
 ---

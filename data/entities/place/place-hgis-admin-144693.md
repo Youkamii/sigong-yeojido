@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144693"
 label: "경상남도/하동군/금양면"
-labelNote: "HGIS 144693"
+sourceRef:
+  - "HGIS 144693"
 aliases:
   - "경상남도/하동군/금양면 (HGIS 144693)"
 ---

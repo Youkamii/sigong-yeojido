@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114235"
 label: "전라남도/나주군/왕곡면"
-labelNote: "HGIS 114235"
+sourceRef:
+  - "HGIS 114235"
 aliases:
   - "전라남도/나주군/왕곡면 (HGIS 114235)"
 ---

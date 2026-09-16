@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154484"
 label: "경상남도/창원부/웅동면"
-labelNote: "HGIS 154484"
+sourceRef:
+  - "HGIS 154484"
 aliases:
   - "경상남도/창원부/웅동면 (HGIS 154484)"
 ---

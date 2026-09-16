@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122228"
 label: "전라남도/창평군/가면"
-labelNote: "HGIS 122228"
+sourceRef:
+  - "HGIS 122228"
 aliases:
   - "전라남도/창평군/가면 (HGIS 122228)"
 ---

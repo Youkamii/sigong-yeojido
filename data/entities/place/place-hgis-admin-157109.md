@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157109"
 label: "경상북도/상주군/공검면"
-labelNote: "HGIS 157109"
+sourceRef:
+  - "HGIS 157109"
 aliases:
   - "경상북도/상주군/공검면 (HGIS 157109)"
 ---

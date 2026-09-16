@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156910"
 label: "경상북도/김천군/농소면"
-labelNote: "HGIS 156910"
+sourceRef:
+  - "HGIS 156910"
 aliases:
   - "경상북도/김천군/농소면 (HGIS 156910)"
 ---

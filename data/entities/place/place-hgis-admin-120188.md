@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120188"
 label: "전라남도/장흥군/고읍면"
-labelNote: "HGIS 120188"
+sourceRef:
+  - "HGIS 120188"
 aliases:
   - "전라남도/장흥군/고읍면 (HGIS 120188)"
 ---

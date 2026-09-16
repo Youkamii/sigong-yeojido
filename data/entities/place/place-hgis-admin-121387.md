@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121387"
 label: "전라남도/제주도/추자면"
-labelNote: "HGIS 121387"
+sourceRef:
+  - "HGIS 121387"
 aliases:
   - "전라남도/제주도/추자면 (HGIS 121387)"
 ---

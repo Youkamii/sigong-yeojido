@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-105466"
 label: "전라북도/고산군/남면"
-labelNote: "HGIS 105466"
+sourceRef:
+  - "HGIS 105466"
 aliases:
   - "전라북도/고산군/남면 (HGIS 105466)"
 ---

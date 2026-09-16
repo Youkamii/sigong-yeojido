@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157028"
 label: "경상북도/용궁군/구읍면"
-labelNote: "HGIS 157028"
+sourceRef:
+  - "HGIS 157028"
 aliases:
   - "경상북도/용궁군/구읍면 (HGIS 157028)"
 ---

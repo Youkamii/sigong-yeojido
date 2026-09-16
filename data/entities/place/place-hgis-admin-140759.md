@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140759"
 label: "평안북도/용천부/부내면"
-labelNote: "HGIS 140759"
+sourceRef:
+  - "HGIS 140759"
 aliases:
   - "평안북도/용천부/부내면 (HGIS 140759)"
 ---

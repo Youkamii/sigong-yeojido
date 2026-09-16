@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150380"
 label: "경상남도/동래부/수면"
-labelNote: "HGIS 150380"
+sourceRef:
+  - "HGIS 150380"
 aliases:
   - "경상남도/동래부/수면 (HGIS 150380)"
 ---

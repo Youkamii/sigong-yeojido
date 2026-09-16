@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157443"
 label: "경상북도/장기군/현내면"
-labelNote: "HGIS 157443"
+sourceRef:
+  - "HGIS 157443"
 aliases:
   - "경상북도/장기군/현내면 (HGIS 157443)"
 ---

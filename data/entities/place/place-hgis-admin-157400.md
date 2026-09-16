@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157400"
 label: "경상북도/의성군/안계면"
-labelNote: "HGIS 157400"
+sourceRef:
+  - "HGIS 157400"
 aliases:
   - "경상북도/의성군/안계면 (HGIS 157400)"
 ---

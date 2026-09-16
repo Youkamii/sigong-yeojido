@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157321"
 label: "경상북도/영천군/가흥면"
-labelNote: "HGIS 157321"
+sourceRef:
+  - "HGIS 157321"
 aliases:
   - "경상북도/영천군/가흥면 (HGIS 157321)"
 ---

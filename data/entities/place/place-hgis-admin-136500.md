@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136500"
 label: "평안북도/곽산군/북면"
-labelNote: "HGIS 136500"
+sourceRef:
+  - "HGIS 136500"
 aliases:
   - "평안북도/곽산군/북면 (HGIS 136500)"
 ---

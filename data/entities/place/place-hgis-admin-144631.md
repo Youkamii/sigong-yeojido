@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144631"
 label: "경상남도/창녕군/장마면"
-labelNote: "HGIS 144631"
+sourceRef:
+  - "HGIS 144631"
 aliases:
   - "경상남도/창녕군/장마면 (HGIS 144631)"
 ---

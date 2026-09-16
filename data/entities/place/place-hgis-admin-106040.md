@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-106040"
 label: "전라북도/함열군/북일면"
-labelNote: "HGIS 106040"
+sourceRef:
+  - "HGIS 106040"
 aliases:
   - "전라북도/함열군/북일면 (HGIS 106040)"
 ---

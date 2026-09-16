@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156921"
 label: "경상북도/김천군/지례면"
-labelNote: "HGIS 156921"
+sourceRef:
+  - "HGIS 156921"
 aliases:
   - "경상북도/김천군/지례면 (HGIS 156921)"
 ---

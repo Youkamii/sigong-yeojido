@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144609"
 label: "경상남도/고성군/포도면"
-labelNote: "HGIS 144609"
+sourceRef:
+  - "HGIS 144609"
 aliases:
   - "경상남도/고성군/포도면 (HGIS 144609)"
 ---

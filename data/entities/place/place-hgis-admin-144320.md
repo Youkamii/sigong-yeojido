@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144320"
 label: "경상남도/산청군/부곡면"
-labelNote: "HGIS 144320"
+sourceRef:
+  - "HGIS 144320"
 aliases:
   - "경상남도/산청군/부곡면 (HGIS 144320)"
 ---

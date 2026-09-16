@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112465"
 label: "전라남도/구례군/산동면"
-labelNote: "HGIS 112465"
+sourceRef:
+  - "HGIS 112465"
 aliases:
   - "전라남도/구례군/산동면 (HGIS 112465)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157039"
 label: "경상북도/성주군/용산면"
-labelNote: "HGIS 157039"
+sourceRef:
+  - "HGIS 157039"
 aliases:
   - "경상북도/성주군/용산면 (HGIS 157039)"
 ---

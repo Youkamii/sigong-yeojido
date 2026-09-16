@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141293"
 label: "평안북도/의주부/고령삭면"
-labelNote: "HGIS 141293"
+sourceRef:
+  - "HGIS 141293"
 aliases:
   - "평안북도/의주부/고령삭면 (HGIS 141293)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113027"
 label: "전라남도/담양군/대전면"
-labelNote: "HGIS 113027"
+sourceRef:
+  - "HGIS 113027"
 aliases:
   - "전라남도/담양군/대전면 (HGIS 113027)"
 ---

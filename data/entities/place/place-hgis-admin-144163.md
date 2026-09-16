@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144163"
 label: "경상남도/김해군/덕도면"
-labelNote: "HGIS 144163"
+sourceRef:
+  - "HGIS 144163"
 aliases:
   - "경상남도/김해군/덕도면 (HGIS 144163)"
 ---

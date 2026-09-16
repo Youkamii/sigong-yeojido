@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144084"
 label: "경상남도/거창군/상가남면"
-labelNote: "HGIS 144084"
+sourceRef:
+  - "HGIS 144084"
 aliases:
   - "경상남도/거창군/상가남면 (HGIS 144084)"
 ---

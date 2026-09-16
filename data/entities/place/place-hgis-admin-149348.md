@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-149348"
 label: "경상남도/동래군/좌이면"
-labelNote: "HGIS 149348"
+sourceRef:
+  - "HGIS 149348"
 aliases:
   - "경상남도/동래군/좌이면 (HGIS 149348)"
 ---

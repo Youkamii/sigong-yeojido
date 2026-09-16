@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144421"
 label: "경상남도/용남군/광남면"
-labelNote: "HGIS 144421"
+sourceRef:
+  - "HGIS 144421"
 aliases:
   - "경상남도/용남군/광남면 (HGIS 144421)"
 ---

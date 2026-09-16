@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144713"
 label: "경상남도/함안군/함안면"
-labelNote: "HGIS 144713"
+sourceRef:
+  - "HGIS 144713"
 aliases:
   - "경상남도/함안군/함안면 (HGIS 144713)"
 ---

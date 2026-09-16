@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141114"
 label: "평안북도/위원군/위성면"
-labelNote: "HGIS 141114"
+sourceRef:
+  - "HGIS 141114"
 aliases:
   - "평안북도/위원군/위성면 (HGIS 141114)"
 ---

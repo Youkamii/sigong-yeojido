@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156923"
 label: "경상북도/영해군/북초면"
-labelNote: "HGIS 156923"
+sourceRef:
+  - "HGIS 156923"
 aliases:
   - "경상북도/영해군/북초면 (HGIS 156923)"
 ---

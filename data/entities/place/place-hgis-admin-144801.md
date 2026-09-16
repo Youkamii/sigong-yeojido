@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144801"
 label: "경상남도/합천군/적중면"
-labelNote: "HGIS 144801"
+sourceRef:
+  - "HGIS 144801"
 aliases:
   - "경상남도/합천군/적중면 (HGIS 144801)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136712"
 label: "평안북도/의주군/송장면"
-labelNote: "HGIS 136712"
+sourceRef:
+  - "HGIS 136712"
 aliases:
   - "평안북도/의주군/송장면 (HGIS 136712)"
 ---

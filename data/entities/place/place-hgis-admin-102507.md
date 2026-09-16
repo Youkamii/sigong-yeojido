@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102507"
 label: "전라북도/고부군/소정면"
-labelNote: "HGIS 102507"
+sourceRef:
+  - "HGIS 102507"
 aliases:
   - "전라북도/고부군/소정면 (HGIS 102507)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157202"
 label: "경상북도/신녕군/남면"
-labelNote: "HGIS 157202"
+sourceRef:
+  - "HGIS 157202"
 aliases:
   - "경상북도/신녕군/남면 (HGIS 157202)"
 ---

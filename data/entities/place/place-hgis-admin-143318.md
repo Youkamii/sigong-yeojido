@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143318"
 label: "경상남도/거창군/가조면"
-labelNote: "HGIS 143318"
+sourceRef:
+  - "HGIS 143318"
 aliases:
   - "경상남도/거창군/가조면 (HGIS 143318)"
 ---

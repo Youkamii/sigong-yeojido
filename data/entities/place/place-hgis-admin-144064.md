@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144064"
 label: "경상남도/거제군/하청면"
-labelNote: "HGIS 144064"
+sourceRef:
+  - "HGIS 144064"
 aliases:
   - "경상남도/거제군/하청면 (HGIS 144064)"
 ---

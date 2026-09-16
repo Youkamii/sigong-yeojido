@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156869"
 label: "경상북도/고령군/일량면"
-labelNote: "HGIS 156869"
+sourceRef:
+  - "HGIS 156869"
 aliases:
   - "경상북도/고령군/일량면 (HGIS 156869)"
 ---

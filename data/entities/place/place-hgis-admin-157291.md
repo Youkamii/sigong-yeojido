@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157291"
 label: "경상북도/영일군/기계면"
-labelNote: "HGIS 157291"
+sourceRef:
+  - "HGIS 157291"
 aliases:
   - "경상북도/영일군/기계면 (HGIS 157291)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-109796"
 label: "전라북도/전주군/우림면"
-labelNote: "HGIS 109796"
+sourceRef:
+  - "HGIS 109796"
 aliases:
   - "전라북도/전주군/우림면 (HGIS 109796)"
 ---

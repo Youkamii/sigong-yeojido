@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121935"
 label: "전라남도/진도군/군일면"
-labelNote: "HGIS 121935"
+sourceRef:
+  - "HGIS 121935"
 aliases:
   - "전라남도/진도군/군일면 (HGIS 121935)"
 ---

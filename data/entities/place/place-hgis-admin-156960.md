@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156960"
 label: "경상북도/대구군/서상면"
-labelNote: "HGIS 156960"
+sourceRef:
+  - "HGIS 156960"
 aliases:
   - "경상북도/대구군/서상면 (HGIS 156960)"
 ---

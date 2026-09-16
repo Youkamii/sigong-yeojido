@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-146838"
 label: "경상남도/단성군/현내면"
-labelNote: "HGIS 146838"
+sourceRef:
+  - "HGIS 146838"
 aliases:
   - "경상남도/단성군/현내면 (HGIS 146838)"
 ---

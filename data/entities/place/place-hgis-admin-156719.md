@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156719"
 label: "경상북도/예천군/저곡면"
-labelNote: "HGIS 156719"
+sourceRef:
+  - "HGIS 156719"
 aliases:
   - "경상북도/예천군/저곡면 (HGIS 156719)"
 ---

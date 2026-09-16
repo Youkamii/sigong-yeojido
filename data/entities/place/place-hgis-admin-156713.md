@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156713"
 label: "경상북도/고령군/소야면"
-labelNote: "HGIS 156713"
+sourceRef:
+  - "HGIS 156713"
 aliases:
   - "경상북도/고령군/소야면 (HGIS 156713)"
 ---

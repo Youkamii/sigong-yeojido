@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144678"
 label: "경상남도/통영군/연초면"
-labelNote: "HGIS 144678"
+sourceRef:
+  - "HGIS 144678"
 aliases:
   - "경상남도/통영군/연초면 (HGIS 144678)"
 ---

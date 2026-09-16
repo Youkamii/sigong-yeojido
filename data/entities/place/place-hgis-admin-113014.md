@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113014"
 label: "전라남도/담양군/남면"
-labelNote: "HGIS 113014"
+sourceRef:
+  - "HGIS 113014"
 aliases:
   - "전라남도/담양군/남면 (HGIS 113014)"
 ---

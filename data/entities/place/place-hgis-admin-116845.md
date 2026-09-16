@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116845"
 label: "전라남도/능주군/송석면"
-labelNote: "HGIS 116845"
+sourceRef:
+  - "HGIS 116845"
 aliases:
   - "전라남도/능주군/송석면 (HGIS 116845)"
 ---

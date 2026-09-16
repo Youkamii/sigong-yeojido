@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143261"
 label: "경상남도/진양군/금곡면"
-labelNote: "HGIS 143261"
+sourceRef:
+  - "HGIS 143261"
 aliases:
   - "경상남도/진양군/금곡면 (HGIS 143261)"
 ---

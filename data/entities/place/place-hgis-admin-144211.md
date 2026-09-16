@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144211"
 label: "경상남도/마산부/부내면"
-labelNote: "HGIS 144211"
+sourceRef:
+  - "HGIS 144211"
 aliases:
   - "경상남도/마산부/부내면 (HGIS 144211)"
 ---

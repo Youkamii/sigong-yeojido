@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143080"
 label: "경상남도/사천군/사남면"
-labelNote: "HGIS 143080"
+sourceRef:
+  - "HGIS 143080"
 aliases:
   - "경상남도/사천군/사남면 (HGIS 143080)"
 ---

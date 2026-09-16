@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136365"
 label: "평안북도/벽동군/오면"
-labelNote: "HGIS 136365"
+sourceRef:
+  - "HGIS 136365"
 aliases:
   - "평안북도/벽동군/오면 (HGIS 136365)"
 ---

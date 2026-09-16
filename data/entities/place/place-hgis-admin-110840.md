@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110840"
 label: "전라남도/고흥군/점암면"
-labelNote: "HGIS 110840"
+sourceRef:
+  - "HGIS 110840"
 aliases:
   - "전라남도/고흥군/점암면 (HGIS 110840)"
 ---

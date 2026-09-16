@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157344"
 label: "경상북도/영천군/임고면"
-labelNote: "HGIS 157344"
+sourceRef:
+  - "HGIS 157344"
 aliases:
   - "경상북도/영천군/임고면 (HGIS 157344)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157197"
 label: "경상북도/순흥군/대평면"
-labelNote: "HGIS 157197"
+sourceRef:
+  - "HGIS 157197"
 aliases:
   - "경상북도/순흥군/대평면 (HGIS 157197)"
 ---

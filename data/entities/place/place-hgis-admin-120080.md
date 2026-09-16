@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120080"
 label: "전라남도/장성군/외동면"
-labelNote: "HGIS 120080"
+sourceRef:
+  - "HGIS 120080"
 aliases:
   - "전라남도/장성군/외동면 (HGIS 120080)"
 ---

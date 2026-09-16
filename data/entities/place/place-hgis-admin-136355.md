@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136355"
 label: "평안북도/벽동군/대평면"
-labelNote: "HGIS 136355"
+sourceRef:
+  - "HGIS 136355"
 aliases:
   - "평안북도/벽동군/대평면 (HGIS 136355)"
 ---

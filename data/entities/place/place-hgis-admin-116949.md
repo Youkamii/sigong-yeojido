@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116949"
 label: "전라남도/능주군/한천면"
-labelNote: "HGIS 116949"
+sourceRef:
+  - "HGIS 116949"
 aliases:
   - "전라남도/능주군/한천면 (HGIS 116949)"
 ---

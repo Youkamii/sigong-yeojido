@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157161"
 label: "경상북도/선산군/신곡면"
-labelNote: "HGIS 157161"
+sourceRef:
+  - "HGIS 157161"
 aliases:
   - "경상북도/선산군/신곡면 (HGIS 157161)"
 ---

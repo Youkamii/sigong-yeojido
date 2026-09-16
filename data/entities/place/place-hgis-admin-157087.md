@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157087"
 label: "경상북도/비안군/현동면"
-labelNote: "HGIS 157087"
+sourceRef:
+  - "HGIS 157087"
 aliases:
   - "경상북도/비안군/현동면 (HGIS 157087)"
 ---

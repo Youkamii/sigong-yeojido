@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157424"
 label: "경상북도/인동군/기산면"
-labelNote: "HGIS 157424"
+sourceRef:
+  - "HGIS 157424"
 aliases:
   - "경상북도/인동군/기산면 (HGIS 157424)"
 ---

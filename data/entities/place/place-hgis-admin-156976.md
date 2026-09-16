@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156976"
 label: "경상북도/대구부/서중면"
-labelNote: "HGIS 156976"
+sourceRef:
+  - "HGIS 156976"
 aliases:
   - "경상북도/대구부/서중면 (HGIS 156976)"
 ---

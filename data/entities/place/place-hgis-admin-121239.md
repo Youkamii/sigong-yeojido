@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121239"
 label: "전라남도/제주도/안덕면"
-labelNote: "HGIS 121239"
+sourceRef:
+  - "HGIS 121239"
 aliases:
   - "전라남도/제주도/안덕면 (HGIS 121239)"
 ---

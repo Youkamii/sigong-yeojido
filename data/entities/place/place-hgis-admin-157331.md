@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157331"
 label: "경상북도/영천군/적포면"
-labelNote: "HGIS 157331"
+sourceRef:
+  - "HGIS 157331"
 aliases:
   - "경상북도/영천군/적포면 (HGIS 157331)"
 ---

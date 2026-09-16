@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150368"
 label: "경상남도/동래부/동하면"
-labelNote: "HGIS 150368"
+sourceRef:
+  - "HGIS 150368"
 aliases:
   - "경상남도/동래부/동하면 (HGIS 150368)"
 ---

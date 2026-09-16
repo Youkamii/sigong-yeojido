@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157417"
 label: "경상북도/의흥군/부서면"
-labelNote: "HGIS 157417"
+sourceRef:
+  - "HGIS 157417"
 aliases:
   - "경상북도/의흥군/부서면 (HGIS 157417)"
 ---

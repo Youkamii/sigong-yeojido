@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150372"
 label: "경상남도/동래부/사상면"
-labelNote: "HGIS 150372"
+sourceRef:
+  - "HGIS 150372"
 aliases:
   - "경상남도/동래부/사상면 (HGIS 150372)"
 ---

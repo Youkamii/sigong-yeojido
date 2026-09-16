@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156961"
 label: "경상북도/대구부/감물천면"
-labelNote: "HGIS 156961"
+sourceRef:
+  - "HGIS 156961"
 aliases:
   - "경상북도/대구부/감물천면 (HGIS 156961)"
 ---

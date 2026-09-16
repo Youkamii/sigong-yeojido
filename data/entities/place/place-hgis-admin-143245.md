@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143245"
 label: "경상남도/용남군/가좌면"
-labelNote: "HGIS 143245"
+sourceRef:
+  - "HGIS 143245"
 aliases:
   - "경상남도/용남군/가좌면 (HGIS 143245)"
 ---

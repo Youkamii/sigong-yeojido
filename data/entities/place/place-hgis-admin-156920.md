@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156920"
 label: "경상북도/김천군/증산면"
-labelNote: "HGIS 156920"
+sourceRef:
+  - "HGIS 156920"
 aliases:
   - "경상북도/김천군/증산면 (HGIS 156920)"
 ---

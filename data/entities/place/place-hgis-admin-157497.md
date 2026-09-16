@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157497"
 label: "경상북도/청송군/파천면"
-labelNote: "HGIS 157497"
+sourceRef:
+  - "HGIS 157497"
 aliases:
   - "경상북도/청송군/파천면 (HGIS 157497)"
 ---

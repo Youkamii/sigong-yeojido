@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144657"
 label: "경상남도/초계군/갑산면"
-labelNote: "HGIS 144657"
+sourceRef:
+  - "HGIS 144657"
 aliases:
   - "경상남도/초계군/갑산면 (HGIS 144657)"
 ---

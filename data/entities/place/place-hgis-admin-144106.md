@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144106"
 label: "경상남도/고성군/마암면"
-labelNote: "HGIS 144106"
+sourceRef:
+  - "HGIS 144106"
 aliases:
   - "경상남도/고성군/마암면 (HGIS 144106)"
 ---

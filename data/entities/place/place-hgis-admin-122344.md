@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122344"
 label: "전라남도/창평군/동서면"
-labelNote: "HGIS 122344"
+sourceRef:
+  - "HGIS 122344"
 aliases:
   - "전라남도/창평군/동서면 (HGIS 122344)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157232"
 label: "경상북도/안동군/임하면"
-labelNote: "HGIS 157232"
+sourceRef:
+  - "HGIS 157232"
 aliases:
   - "경상북도/안동군/임하면 (HGIS 157232)"
 ---

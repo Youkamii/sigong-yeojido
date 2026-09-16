@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157364"
 label: "경상북도/영천군/지곡면"
-labelNote: "HGIS 157364"
+sourceRef:
+  - "HGIS 157364"
 aliases:
   - "경상북도/영천군/지곡면 (HGIS 157364)"
 ---

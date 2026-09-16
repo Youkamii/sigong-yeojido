@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156978"
 label: "경상북도/대구부/성서면"
-labelNote: "HGIS 156978"
+sourceRef:
+  - "HGIS 156978"
 aliases:
   - "경상북도/대구부/성서면 (HGIS 156978)"
 ---

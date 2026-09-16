@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112558"
 label: "전라남도/구례군/문척면"
-labelNote: "HGIS 112558"
+sourceRef:
+  - "HGIS 112558"
 aliases:
   - "전라남도/구례군/문척면 (HGIS 112558)"
 ---

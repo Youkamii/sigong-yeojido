@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144928"
 label: "경상남도/거창군/음석면"
-labelNote: "HGIS 144928"
+sourceRef:
+  - "HGIS 144928"
 aliases:
   - "경상남도/거창군/음석면 (HGIS 144928)"
 ---

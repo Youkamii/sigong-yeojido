@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144059"
 label: "경상남도/거제군/이운면"
-labelNote: "HGIS 144059"
+sourceRef:
+  - "HGIS 144059"
 aliases:
   - "경상남도/거제군/이운면 (HGIS 144059)"
 ---

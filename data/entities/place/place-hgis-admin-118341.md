@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118341"
 label: "전라남도/순천군/도리면"
-labelNote: "HGIS 118341"
+sourceRef:
+  - "HGIS 118341"
 aliases:
   - "전라남도/순천군/도리면 (HGIS 118341)"
 ---

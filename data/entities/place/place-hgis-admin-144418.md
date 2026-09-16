@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144418"
 label: "경상남도/영산군/부곡면"
-labelNote: "HGIS 144418"
+sourceRef:
+  - "HGIS 144418"
 aliases:
   - "경상남도/영산군/부곡면 (HGIS 144418)"
 ---

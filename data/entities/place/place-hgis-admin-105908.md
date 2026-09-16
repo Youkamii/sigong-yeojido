@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-105908"
 label: "전라북도/함열군/남이면"
-labelNote: "HGIS 105908"
+sourceRef:
+  - "HGIS 105908"
 aliases:
   - "전라북도/함열군/남이면 (HGIS 105908)"
 ---

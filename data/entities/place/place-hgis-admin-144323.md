@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144323"
 label: "경상남도/산청군/산청면"
-labelNote: "HGIS 144323"
+sourceRef:
+  - "HGIS 144323"
 aliases:
   - "경상남도/산청군/산청면 (HGIS 144323)"
 ---

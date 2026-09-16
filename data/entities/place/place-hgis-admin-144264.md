@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144264"
 label: "경상남도/부산부/북면"
-labelNote: "HGIS 144264"
+sourceRef:
+  - "HGIS 144264"
 aliases:
   - "경상남도/부산부/북면 (HGIS 144264)"
 ---

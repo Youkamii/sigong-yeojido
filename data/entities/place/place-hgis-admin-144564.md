@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144564"
 label: "경상남도/진주군/성내면"
-labelNote: "HGIS 144564"
+sourceRef:
+  - "HGIS 144564"
 aliases:
   - "경상남도/진주군/성내면 (HGIS 144564)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156721"
 label: "경상북도/선산군/상고면"
-labelNote: "HGIS 156721"
+sourceRef:
+  - "HGIS 156721"
 aliases:
   - "경상북도/선산군/상고면 (HGIS 156721)"
 ---

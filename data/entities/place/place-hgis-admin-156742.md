@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156742"
 label: "경상북도/영천군/원림면"
-labelNote: "HGIS 156742"
+sourceRef:
+  - "HGIS 156742"
 aliases:
   - "경상북도/영천군/원림면 (HGIS 156742)"
 ---

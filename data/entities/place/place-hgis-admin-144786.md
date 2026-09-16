@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144786"
 label: "경상남도/합천군/백산면"
-labelNote: "HGIS 144786"
+sourceRef:
+  - "HGIS 144786"
 aliases:
   - "경상남도/합천군/백산면 (HGIS 144786)"
 ---

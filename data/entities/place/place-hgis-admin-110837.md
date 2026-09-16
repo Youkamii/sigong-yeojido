@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110837"
 label: "전라남도/고흥군/동강면"
-labelNote: "HGIS 110837"
+sourceRef:
+  - "HGIS 110837"
 aliases:
   - "전라남도/고흥군/동강면 (HGIS 110837)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119414"
 label: "전라남도/완도군/보길면"
-labelNote: "HGIS 119414"
+sourceRef:
+  - "HGIS 119414"
 aliases:
   - "전라남도/완도군/보길면 (HGIS 119414)"
 ---

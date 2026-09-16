@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157316"
 label: "경상북도/영주군/장수면"
-labelNote: "HGIS 157316"
+sourceRef:
+  - "HGIS 157316"
 aliases:
   - "경상북도/영주군/장수면 (HGIS 157316)"
 ---

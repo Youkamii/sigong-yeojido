@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113863"
 label: "전라남도/나주군/양곡면"
-labelNote: "HGIS 113863"
+sourceRef:
+  - "HGIS 113863"
 aliases:
   - "전라남도/나주군/양곡면 (HGIS 113863)"
 ---

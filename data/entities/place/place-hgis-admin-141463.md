@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141463"
 label: "평안북도/의주부/수진면"
-labelNote: "HGIS 141463"
+sourceRef:
+  - "HGIS 141463"
 aliases:
   - "평안북도/의주부/수진면 (HGIS 141463)"
 ---

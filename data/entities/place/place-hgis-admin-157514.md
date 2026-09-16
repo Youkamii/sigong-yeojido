@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157514"
 label: "경상북도/칠곡군/동북면"
-labelNote: "HGIS 157514"
+sourceRef:
+  - "HGIS 157514"
 aliases:
   - "경상북도/칠곡군/동북면 (HGIS 157514)"
 ---

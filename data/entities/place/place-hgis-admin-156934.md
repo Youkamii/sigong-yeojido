@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156934"
 label: "경상북도/달성군/달서면"
-labelNote: "HGIS 156934"
+sourceRef:
+  - "HGIS 156934"
 aliases:
   - "경상북도/달성군/달서면 (HGIS 156934)"
 ---

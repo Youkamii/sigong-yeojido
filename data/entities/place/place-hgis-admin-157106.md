@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157106"
 label: "경상북도/비안군/정북면"
-labelNote: "HGIS 157106"
+sourceRef:
+  - "HGIS 157106"
 aliases:
   - "경상북도/비안군/정북면 (HGIS 157106)"
 ---

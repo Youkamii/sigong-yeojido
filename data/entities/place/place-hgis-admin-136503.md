@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136503"
 label: "평안북도/용천군/미라면"
-labelNote: "HGIS 136503"
+sourceRef:
+  - "HGIS 136503"
 aliases:
   - "평안북도/용천군/미라면 (HGIS 136503)"
 ---

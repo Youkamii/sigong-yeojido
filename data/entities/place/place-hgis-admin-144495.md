@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144495"
 label: "경상남도/의령군/봉수면"
-labelNote: "HGIS 144495"
+sourceRef:
+  - "HGIS 144495"
 aliases:
   - "경상남도/의령군/봉수면 (HGIS 144495)"
 ---

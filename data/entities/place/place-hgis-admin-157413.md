@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157413"
 label: "경상북도/인동군/석적면"
-labelNote: "HGIS 157413"
+sourceRef:
+  - "HGIS 157413"
 aliases:
   - "경상북도/인동군/석적면 (HGIS 157413)"
 ---

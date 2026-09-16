@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121418"
 label: "전라남도/제주도/한림면"
-labelNote: "HGIS 121418"
+sourceRef:
+  - "HGIS 121418"
 aliases:
   - "전라남도/제주도/한림면 (HGIS 121418)"
 ---

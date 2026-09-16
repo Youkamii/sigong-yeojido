@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117757"
 label: "전라남도/무안군/장산면"
-labelNote: "HGIS 117757"
+sourceRef:
+  - "HGIS 117757"
 aliases:
   - "전라남도/무안군/장산면 (HGIS 117757)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150378"
 label: "경상남도/동래부/서상면"
-labelNote: "HGIS 150378"
+sourceRef:
+  - "HGIS 150378"
 aliases:
   - "경상남도/동래부/서상면 (HGIS 150378)"
 ---

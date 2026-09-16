@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143645"
 label: "경상남도/부산부/일본전관거류지"
-labelNote: "HGIS 143645"
+sourceRef:
+  - "HGIS 143645"
 aliases:
   - "경상남도/부산부/일본전관거류지 (HGIS 143645)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156866"
 label: "경상북도/고령군/유천면"
-labelNote: "HGIS 156866"
+sourceRef:
+  - "HGIS 156866"
 aliases:
   - "경상북도/고령군/유천면 (HGIS 156866)"
 ---

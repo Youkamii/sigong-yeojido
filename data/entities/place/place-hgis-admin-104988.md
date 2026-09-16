@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-104988"
 label: "전라북도/진산군/북면"
-labelNote: "HGIS 104988"
+sourceRef:
+  - "HGIS 104988"
 aliases:
   - "전라북도/진산군/북면 (HGIS 104988)"
 ---

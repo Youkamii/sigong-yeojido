@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115228"
 label: "전라남도/영광군/묘량면"
-labelNote: "HGIS 115228"
+sourceRef:
+  - "HGIS 115228"
 aliases:
   - "전라남도/영광군/묘량면 (HGIS 115228)"
 ---

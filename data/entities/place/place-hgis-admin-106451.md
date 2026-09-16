@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-106451"
 label: "전라북도/흥덕군/현내면"
-labelNote: "HGIS 106451"
+sourceRef:
+  - "HGIS 106451"
 aliases:
   - "전라북도/흥덕군/현내면 (HGIS 106451)"
 ---

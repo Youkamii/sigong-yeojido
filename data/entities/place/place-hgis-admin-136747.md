@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136747"
 label: "평안북도/박천군/동남면"
-labelNote: "HGIS 136747"
+sourceRef:
+  - "HGIS 136747"
 aliases:
   - "평안북도/박천군/동남면 (HGIS 136747)"
 ---

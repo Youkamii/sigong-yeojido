@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157428"
 label: "경상북도/인동군/북삼면"
-labelNote: "HGIS 157428"
+sourceRef:
+  - "HGIS 157428"
 aliases:
   - "경상북도/인동군/북삼면 (HGIS 157428)"
 ---

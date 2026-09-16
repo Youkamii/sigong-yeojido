@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157355"
 label: "경상북도/영천군/신촌면"
-labelNote: "HGIS 157355"
+sourceRef:
+  - "HGIS 157355"
 aliases:
   - "경상북도/영천군/신촌면 (HGIS 157355)"
 ---

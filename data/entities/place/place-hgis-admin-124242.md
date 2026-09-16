@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-124242"
 label: "전라남도/흥양군/포두면"
-labelNote: "HGIS 124242"
+sourceRef:
+  - "HGIS 124242"
 aliases:
   - "전라남도/흥양군/포두면 (HGIS 124242)"
 ---

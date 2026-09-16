@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144366"
 label: "경상남도/삼가군/현내면"
-labelNote: "HGIS 144366"
+sourceRef:
+  - "HGIS 144366"
 aliases:
   - "경상남도/삼가군/현내면 (HGIS 144366)"
 ---

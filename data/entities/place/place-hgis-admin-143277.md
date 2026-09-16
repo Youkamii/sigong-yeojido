@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143277"
 label: "경상남도/진주군/집현동면"
-labelNote: "HGIS 143277"
+sourceRef:
+  - "HGIS 143277"
 aliases:
   - "경상남도/진주군/집현동면 (HGIS 143277)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110724"
 label: "전라남도/강진군/초곡면"
-labelNote: "HGIS 110724"
+sourceRef:
+  - "HGIS 110724"
 aliases:
   - "전라남도/강진군/초곡면 (HGIS 110724)"
 ---

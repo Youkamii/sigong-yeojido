@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144185"
 label: "경상남도/김해군/태야면"
-labelNote: "HGIS 144185"
+sourceRef:
+  - "HGIS 144185"
 aliases:
   - "경상남도/김해군/태야면 (HGIS 144185)"
 ---

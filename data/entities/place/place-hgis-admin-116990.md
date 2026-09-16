@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116990"
 label: "전라남도/목포부/각국거류지"
-labelNote: "HGIS 116990"
+sourceRef:
+  - "HGIS 116990"
 aliases:
   - "전라남도/목포부/각국거류지 (HGIS 116990)"
 ---

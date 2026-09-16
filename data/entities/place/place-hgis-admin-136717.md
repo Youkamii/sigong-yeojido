@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136717"
 label: "평안북도/정주군/갈산면"
-labelNote: "HGIS 136717"
+sourceRef:
+  - "HGIS 136717"
 aliases:
   - "평안북도/정주군/갈산면 (HGIS 136717)"
 ---

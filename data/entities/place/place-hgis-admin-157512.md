@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157512"
 label: "경상북도/청하군/현내면"
-labelNote: "HGIS 157512"
+sourceRef:
+  - "HGIS 157512"
 aliases:
   - "경상북도/청하군/현내면 (HGIS 157512)"
 ---

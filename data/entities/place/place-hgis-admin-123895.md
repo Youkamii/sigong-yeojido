@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123895"
 label: "전라남도/화순군/서면"
-labelNote: "HGIS 123895"
+sourceRef:
+  - "HGIS 123895"
 aliases:
   - "전라남도/화순군/서면 (HGIS 123895)"
 ---

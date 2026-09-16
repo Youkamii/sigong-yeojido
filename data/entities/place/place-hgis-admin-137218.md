@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137218"
 label: "평안북도/강계군/외귀면"
-labelNote: "HGIS 137218"
+sourceRef:
+  - "HGIS 137218"
 aliases:
   - "평안북도/강계군/외귀면 (HGIS 137218)"
 ---

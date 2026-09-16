@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145024"
 label: "경상남도/초계군"
-labelNote: "HGIS 145024"
+sourceRef:
+  - "HGIS 145024"
 aliases:
   - "경상남도/초계군 (HGIS 145024)"
 ---

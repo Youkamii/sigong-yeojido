@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117763"
 label: "전라남도/무안군/청계면"
-labelNote: "HGIS 117763"
+sourceRef:
+  - "HGIS 117763"
 aliases:
   - "전라남도/무안군/청계면 (HGIS 117763)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116102"
 label: "전라남도/영암군/군시면"
-labelNote: "HGIS 116102"
+sourceRef:
+  - "HGIS 116102"
 aliases:
   - "전라남도/영암군/군시면 (HGIS 116102)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118745"
 label: "전라남도/순천군/순천읍"
-labelNote: "HGIS 118745"
+sourceRef:
+  - "HGIS 118745"
 aliases:
   - "전라남도/순천군/순천읍 (HGIS 118745)"
 ---

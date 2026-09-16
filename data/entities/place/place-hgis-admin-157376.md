@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157376"
 label: "경상북도/울릉도"
-labelNote: "HGIS 157376"
+sourceRef:
+  - "HGIS 157376"
 aliases:
   - "경상북도/울릉도 (HGIS 157376)"
 ---

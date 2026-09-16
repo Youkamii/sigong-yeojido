@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110801"
 label: "전라남도/강진군/파대면"
-labelNote: "HGIS 110801"
+sourceRef:
+  - "HGIS 110801"
 aliases:
   - "전라남도/강진군/파대면 (HGIS 110801)"
 ---

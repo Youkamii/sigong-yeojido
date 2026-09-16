@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-100027"
 label: "전라북도/고부군/북부면"
-labelNote: "HGIS 100027"
+sourceRef:
+  - "HGIS 100027"
 aliases:
   - "전라북도/고부군/북부면 (HGIS 100027)"
 ---

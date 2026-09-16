@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-103054"
 label: "전라북도/전주군/난전면"
-labelNote: "HGIS 103054"
+sourceRef:
+  - "HGIS 103054"
 aliases:
   - "전라북도/전주군/난전면 (HGIS 103054)"
 ---

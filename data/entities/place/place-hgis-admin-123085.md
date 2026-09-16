@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123085"
 label: "전라남도/함평군/함평면"
-labelNote: "HGIS 123085"
+sourceRef:
+  - "HGIS 123085"
 aliases:
   - "전라남도/함평군/함평면 (HGIS 123085)"
 ---

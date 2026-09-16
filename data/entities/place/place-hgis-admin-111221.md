@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111221"
 label: "전라남도/광산군/석곡면"
-labelNote: "HGIS 111221"
+sourceRef:
+  - "HGIS 111221"
 aliases:
   - "전라남도/광산군/석곡면 (HGIS 111221)"
 ---

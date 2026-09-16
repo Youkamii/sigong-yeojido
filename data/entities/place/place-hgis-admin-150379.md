@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150379"
 label: "경상남도/동래부/서하면"
-labelNote: "HGIS 150379"
+sourceRef:
+  - "HGIS 150379"
 aliases:
   - "경상남도/동래부/서하면 (HGIS 150379)"
 ---

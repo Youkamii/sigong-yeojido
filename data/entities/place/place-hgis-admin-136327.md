@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136327"
 label: "평안북도/구성군/북면"
-labelNote: "HGIS 136327"
+sourceRef:
+  - "HGIS 136327"
 aliases:
   - "평안북도/구성군/북면 (HGIS 136327)"
 ---

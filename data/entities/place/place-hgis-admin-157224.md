@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157224"
 label: "경상북도/안동군/녹전면"
-labelNote: "HGIS 157224"
+sourceRef:
+  - "HGIS 157224"
 aliases:
   - "경상북도/안동군/녹전면 (HGIS 157224)"
 ---

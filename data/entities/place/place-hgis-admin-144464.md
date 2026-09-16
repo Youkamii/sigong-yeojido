@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144464"
 label: "경상남도/울산군/온북면"
-labelNote: "HGIS 144464"
+sourceRef:
+  - "HGIS 144464"
 aliases:
   - "경상남도/울산군/온북면 (HGIS 144464)"
 ---

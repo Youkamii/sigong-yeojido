@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144692"
 label: "경상남도/하동군/고현면"
-labelNote: "HGIS 144692"
+sourceRef:
+  - "HGIS 144692"
 aliases:
   - "경상남도/하동군/고현면 (HGIS 144692)"
 ---

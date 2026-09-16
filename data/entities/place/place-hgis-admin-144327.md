@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144327"
 label: "경상남도/산청군/생비량면"
-labelNote: "HGIS 144327"
+sourceRef:
+  - "HGIS 144327"
 aliases:
   - "경상남도/산청군/생비량면 (HGIS 144327)"
 ---

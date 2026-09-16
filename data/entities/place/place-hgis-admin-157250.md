@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157250"
 label: "경상북도/연일군/남면"
-labelNote: "HGIS 157250"
+sourceRef:
+  - "HGIS 157250"
 aliases:
   - "경상북도/연일군/남면 (HGIS 157250)"
 ---

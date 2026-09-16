@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157016"
 label: "경상북도/예천군/북읍면"
-labelNote: "HGIS 157016"
+sourceRef:
+  - "HGIS 157016"
 aliases:
   - "경상북도/예천군/북읍면 (HGIS 157016)"
 ---

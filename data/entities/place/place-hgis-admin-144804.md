@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144804"
 label: "경상남도/합천군/하북면"
-labelNote: "HGIS 144804"
+sourceRef:
+  - "HGIS 144804"
 aliases:
   - "경상남도/합천군/하북면 (HGIS 144804)"
 ---

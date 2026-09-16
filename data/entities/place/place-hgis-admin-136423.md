@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136423"
 label: "평안북도/용천군/부남면"
-labelNote: "HGIS 136423"
+sourceRef:
+  - "HGIS 136423"
 aliases:
   - "평안북도/용천군/부남면 (HGIS 136423)"
 ---

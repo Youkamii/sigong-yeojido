@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136354"
 label: "평안북도/벽동군/남면"
-labelNote: "HGIS 136354"
+sourceRef:
+  - "HGIS 136354"
 aliases:
   - "평안북도/벽동군/남면 (HGIS 136354)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144207"
 label: "경상남도/마산부/구산면"
-labelNote: "HGIS 144207"
+sourceRef:
+  - "HGIS 144207"
 aliases:
   - "경상남도/마산부/구산면 (HGIS 144207)"
 ---

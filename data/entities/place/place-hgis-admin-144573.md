@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144573"
 label: "경상남도/진주군/안간면"
-labelNote: "HGIS 144573"
+sourceRef:
+  - "HGIS 144573"
 aliases:
   - "경상남도/진주군/안간면 (HGIS 144573)"
 ---

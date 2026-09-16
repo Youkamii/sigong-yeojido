@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157059"
 label: "경상북도/성주군/유동면"
-labelNote: "HGIS 157059"
+sourceRef:
+  - "HGIS 157059"
 aliases:
   - "경상북도/성주군/유동면 (HGIS 157059)"
 ---

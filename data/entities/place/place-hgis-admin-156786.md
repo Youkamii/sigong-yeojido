@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156786"
 label: "경상북도/하양군/와촌면"
-labelNote: "HGIS 156786"
+sourceRef:
+  - "HGIS 156786"
 aliases:
   - "경상북도/하양군/와촌면 (HGIS 156786)"
 ---

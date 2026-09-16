@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156714"
 label: "경상북도/군위군/소본면"
-labelNote: "HGIS 156714"
+sourceRef:
+  - "HGIS 156714"
 aliases:
   - "경상북도/군위군/소본면 (HGIS 156714)"
 ---

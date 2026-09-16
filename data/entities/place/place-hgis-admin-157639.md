@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157639"
 label: "경상북도/현풍군"
-labelNote: "HGIS 157639"
+sourceRef:
+  - "HGIS 157639"
 aliases:
   - "경상북도/현풍군 (HGIS 157639)"
 ---

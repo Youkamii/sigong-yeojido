@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144612"
 label: "경상남도/창녕군/대합면"
-labelNote: "HGIS 144612"
+sourceRef:
+  - "HGIS 144612"
 aliases:
   - "경상남도/창녕군/대합면 (HGIS 144612)"
 ---

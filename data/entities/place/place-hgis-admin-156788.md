@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156788"
 label: "경상북도/고령군/성산면"
-labelNote: "HGIS 156788"
+sourceRef:
+  - "HGIS 156788"
 aliases:
   - "경상북도/고령군/성산면 (HGIS 156788)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144565"
 label: "경상남도/진주군/성을산면"
-labelNote: "HGIS 144565"
+sourceRef:
+  - "HGIS 144565"
 aliases:
   - "경상남도/진주군/성을산면 (HGIS 144565)"
 ---

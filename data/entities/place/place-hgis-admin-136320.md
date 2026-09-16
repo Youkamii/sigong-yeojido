@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136320"
 label: "평안북도/곽산군/남면"
-labelNote: "HGIS 136320"
+sourceRef:
+  - "HGIS 136320"
 aliases:
   - "평안북도/곽산군/남면 (HGIS 136320)"
 ---

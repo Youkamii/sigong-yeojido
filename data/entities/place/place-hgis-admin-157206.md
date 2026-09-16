@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157206"
 label: "경상북도/신녕군/지곡면"
-labelNote: "HGIS 157206"
+sourceRef:
+  - "HGIS 157206"
 aliases:
   - "경상북도/신녕군/지곡면 (HGIS 157206)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143259"
 label: "경상남도/의령군/일류곡면"
-labelNote: "HGIS 143259"
+sourceRef:
+  - "HGIS 143259"
 aliases:
   - "경상남도/의령군/일류곡면 (HGIS 143259)"
 ---

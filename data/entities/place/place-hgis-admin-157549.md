@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157549"
 label: "경상북도/함창군/수상면"
-labelNote: "HGIS 157549"
+sourceRef:
+  - "HGIS 157549"
 aliases:
   - "경상북도/함창군/수상면 (HGIS 157549)"
 ---

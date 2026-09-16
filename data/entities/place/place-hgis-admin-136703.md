@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136703"
 label: "평안북도/용천군/내중면"
-labelNote: "HGIS 136703"
+sourceRef:
+  - "HGIS 136703"
 aliases:
   - "평안북도/용천군/내중면 (HGIS 136703)"
 ---

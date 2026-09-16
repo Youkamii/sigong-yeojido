@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157453"
 label: "경상북도/지례군/하서면"
-labelNote: "HGIS 157453"
+sourceRef:
+  - "HGIS 157453"
 aliases:
   - "경상북도/지례군/하서면 (HGIS 157453)"
 ---

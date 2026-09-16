@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144708"
 label: "경상남도/하동군/옥동면"
-labelNote: "HGIS 144708"
+sourceRef:
+  - "HGIS 144708"
 aliases:
   - "경상남도/하동군/옥동면 (HGIS 144708)"
 ---

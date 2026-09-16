@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144313"
 label: "경상남도/산청군/금만면"
-labelNote: "HGIS 144313"
+sourceRef:
+  - "HGIS 144313"
 aliases:
   - "경상남도/산청군/금만면 (HGIS 144313)"
 ---

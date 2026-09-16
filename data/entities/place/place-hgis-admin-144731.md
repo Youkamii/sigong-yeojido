@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144731"
 label: "경상남도/함안군/법수면"
-labelNote: "HGIS 144731"
+sourceRef:
+  - "HGIS 144731"
 aliases:
   - "경상남도/함안군/법수면 (HGIS 144731)"
 ---

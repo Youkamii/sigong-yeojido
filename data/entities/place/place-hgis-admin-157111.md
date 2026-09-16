@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157111"
 label: "경상북도/상주군/공서면"
-labelNote: "HGIS 157111"
+sourceRef:
+  - "HGIS 157111"
 aliases:
   - "경상북도/상주군/공서면 (HGIS 157111)"
 ---

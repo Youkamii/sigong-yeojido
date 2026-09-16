@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157381"
 label: "경상북도/의성군/남부면"
-labelNote: "HGIS 157381"
+sourceRef:
+  - "HGIS 157381"
 aliases:
   - "경상북도/의성군/남부면 (HGIS 157381)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-124122"
 label: "전라남도/흥양군/동면"
-labelNote: "HGIS 124122"
+sourceRef:
+  - "HGIS 124122"
 aliases:
   - "전라남도/흥양군/동면 (HGIS 124122)"
 ---

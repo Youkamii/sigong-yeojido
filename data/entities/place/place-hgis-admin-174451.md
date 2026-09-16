@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174451"
 label: "경상북도/봉화군/동면"
-labelNote: "HGIS 174451"
+sourceRef:
+  - "HGIS 174451"
 aliases:
   - "경상북도/봉화군/동면 (HGIS 174451)"
 ---

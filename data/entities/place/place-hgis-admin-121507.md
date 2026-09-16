@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121507"
 label: "전라남도/지도군/기좌면"
-labelNote: "HGIS 121507"
+sourceRef:
+  - "HGIS 121507"
 aliases:
   - "전라남도/지도군/기좌면 (HGIS 121507)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144662"
 label: "경상남도/초계군/적동면"
-labelNote: "HGIS 144662"
+sourceRef:
+  - "HGIS 144662"
 aliases:
   - "경상남도/초계군/적동면 (HGIS 144662)"
 ---

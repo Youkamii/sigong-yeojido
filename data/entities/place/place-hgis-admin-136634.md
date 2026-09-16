@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136634"
 label: "평안북도/박천군/박천읍"
-labelNote: "HGIS 136634"
+sourceRef:
+  - "HGIS 136634"
 aliases:
   - "평안북도/박천군/박천읍 (HGIS 136634)"
 ---

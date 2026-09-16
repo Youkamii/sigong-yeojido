@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102615"
 label: "전라북도/장수군/계남면"
-labelNote: "HGIS 102615"
+sourceRef:
+  - "HGIS 102615"
 aliases:
   - "전라북도/장수군/계남면 (HGIS 102615)"
 ---

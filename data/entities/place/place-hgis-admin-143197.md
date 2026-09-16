@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143197"
 label: "경상남도/합천군/대목면"
-labelNote: "HGIS 143197"
+sourceRef:
+  - "HGIS 143197"
 aliases:
   - "경상남도/합천군/대목면 (HGIS 143197)"
 ---

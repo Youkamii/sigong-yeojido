@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144740"
 label: "경상남도/함안군/안도면"
-labelNote: "HGIS 144740"
+sourceRef:
+  - "HGIS 144740"
 aliases:
   - "경상남도/함안군/안도면 (HGIS 144740)"
 ---

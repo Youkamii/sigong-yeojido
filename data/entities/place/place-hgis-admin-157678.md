@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157678"
 label: "경상북도/장기군"
-labelNote: "HGIS 157678"
+sourceRef:
+  - "HGIS 157678"
 aliases:
   - "경상북도/장기군 (HGIS 157678)"
 ---

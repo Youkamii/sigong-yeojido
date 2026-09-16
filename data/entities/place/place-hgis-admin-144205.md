@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144205"
 label: "경상남도/동래군/남면"
-labelNote: "HGIS 144205"
+sourceRef:
+  - "HGIS 144205"
 aliases:
   - "경상남도/동래군/남면 (HGIS 144205)"
 ---

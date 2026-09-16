@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144825"
 label: "경상남도/창원부"
-labelNote: "HGIS 144825"
+sourceRef:
+  - "HGIS 144825"
 aliases:
   - "경상남도/창원부 (HGIS 144825)"
 ---

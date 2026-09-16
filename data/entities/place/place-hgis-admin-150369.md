@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150369"
 label: "경상남도/동래부/용주면"
-labelNote: "HGIS 150369"
+sourceRef:
+  - "HGIS 150369"
 aliases:
   - "경상남도/동래부/용주면 (HGIS 150369)"
 ---

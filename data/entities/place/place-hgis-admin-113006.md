@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113006"
 label: "전라남도/담양군/구암면"
-labelNote: "HGIS 113006"
+sourceRef:
+  - "HGIS 113006"
 aliases:
   - "전라남도/담양군/구암면 (HGIS 113006)"
 ---

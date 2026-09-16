@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143232"
 label: "경상남도/삼가군/덕지면"
-labelNote: "HGIS 143232"
+sourceRef:
+  - "HGIS 143232"
 aliases:
   - "경상남도/삼가군/덕지면 (HGIS 143232)"
 ---

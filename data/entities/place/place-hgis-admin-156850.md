@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156850"
 label: "경상북도/고령군/내곡면"
-labelNote: "HGIS 156850"
+sourceRef:
+  - "HGIS 156850"
 aliases:
   - "경상북도/고령군/내곡면 (HGIS 156850)"
 ---

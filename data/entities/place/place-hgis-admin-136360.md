@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136360"
 label: "평안북도/벽동군/서부면"
-labelNote: "HGIS 136360"
+sourceRef:
+  - "HGIS 136360"
 aliases:
   - "평안북도/벽동군/서부면 (HGIS 136360)"
 ---

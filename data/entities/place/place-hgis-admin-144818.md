@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144818"
 label: "경상남도/거제군/서부면"
-labelNote: "HGIS 144818"
+sourceRef:
+  - "HGIS 144818"
 aliases:
   - "경상남도/거제군/서부면 (HGIS 144818)"
 ---

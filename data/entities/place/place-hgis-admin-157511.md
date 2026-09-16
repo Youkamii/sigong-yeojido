@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157511"
 label: "경상북도/청하군/죽북면"
-labelNote: "HGIS 157511"
+sourceRef:
+  - "HGIS 157511"
 aliases:
   - "경상북도/청하군/죽북면 (HGIS 157511)"
 ---

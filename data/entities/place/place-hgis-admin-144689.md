@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144689"
 label: "경상남도/하동군/가종면"
-labelNote: "HGIS 144689"
+sourceRef:
+  - "HGIS 144689"
 aliases:
   - "경상남도/하동군/가종면 (HGIS 144689)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144357"
 label: "경상남도/삼가군/둔내면"
-labelNote: "HGIS 144357"
+sourceRef:
+  - "HGIS 144357"
 aliases:
   - "경상남도/삼가군/둔내면 (HGIS 144357)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156770"
 label: "경상북도/대구군/수동면"
-labelNote: "HGIS 156770"
+sourceRef:
+  - "HGIS 156770"
 aliases:
   - "경상북도/대구군/수동면 (HGIS 156770)"
 ---

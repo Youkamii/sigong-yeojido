@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121419"
 label: "전라남도/제주도"
-labelNote: "HGIS 121419"
+sourceRef:
+  - "HGIS 121419"
 aliases:
   - "전라남도/제주도 (HGIS 121419)"
 ---

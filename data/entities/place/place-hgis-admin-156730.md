@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156730"
 label: "경상북도/순흥군/도강면"
-labelNote: "HGIS 156730"
+sourceRef:
+  - "HGIS 156730"
 aliases:
   - "경상북도/순흥군/도강면 (HGIS 156730)"
 ---

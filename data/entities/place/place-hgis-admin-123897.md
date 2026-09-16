@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123897"
 label: "전라남도/화순군/외남면"
-labelNote: "HGIS 123897"
+sourceRef:
+  - "HGIS 123897"
 aliases:
   - "전라남도/화순군/외남면 (HGIS 123897)"
 ---

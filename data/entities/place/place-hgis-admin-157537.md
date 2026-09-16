@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157537"
 label: "경상북도/풍기군/상리면"
-labelNote: "HGIS 157537"
+sourceRef:
+  - "HGIS 157537"
 aliases:
   - "경상북도/풍기군/상리면 (HGIS 157537)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156963"
 label: "경상북도/예안군/동하면"
-labelNote: "HGIS 156963"
+sourceRef:
+  - "HGIS 156963"
 aliases:
   - "경상북도/예안군/동하면 (HGIS 156963)"
 ---

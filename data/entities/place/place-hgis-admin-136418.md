@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136418"
 label: "평안북도/용천군/구읍면"
-labelNote: "HGIS 136418"
+sourceRef:
+  - "HGIS 136418"
 aliases:
   - "평안북도/용천군/구읍면 (HGIS 136418)"
 ---

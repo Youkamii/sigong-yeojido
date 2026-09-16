@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113060"
 label: "전라남도/담양군/두면"
-labelNote: "HGIS 113060"
+sourceRef:
+  - "HGIS 113060"
 aliases:
   - "전라남도/담양군/두면 (HGIS 113060)"
 ---

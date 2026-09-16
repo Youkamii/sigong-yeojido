@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156932"
 label: "경상북도/달성군/구지면"
-labelNote: "HGIS 156932"
+sourceRef:
+  - "HGIS 156932"
 aliases:
   - "경상북도/달성군/구지면 (HGIS 156932)"
 ---

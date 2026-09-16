@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116070"
 label: "전라남도/영암군/군서면"
-labelNote: "HGIS 116070"
+sourceRef:
+  - "HGIS 116070"
 aliases:
   - "전라남도/영암군/군서면 (HGIS 116070)"
 ---

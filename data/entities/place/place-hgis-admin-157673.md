@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157673"
 label: "경상북도/울도군"
-labelNote: "HGIS 157673"
+sourceRef:
+  - "HGIS 157673"
 aliases:
   - "경상북도/울도군 (HGIS 157673)"
 ---

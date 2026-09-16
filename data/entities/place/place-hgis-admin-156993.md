@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156993"
 label: "경상북도/대구부/하수남면"
-labelNote: "HGIS 156993"
+sourceRef:
+  - "HGIS 156993"
 aliases:
   - "경상북도/대구부/하수남면 (HGIS 156993)"
 ---

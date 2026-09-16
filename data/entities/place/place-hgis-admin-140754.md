@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140754"
 label: "평안북도/용천부"
-labelNote: "HGIS 140754"
+sourceRef:
+  - "HGIS 140754"
 aliases:
   - "평안북도/용천부 (HGIS 140754)"
 ---

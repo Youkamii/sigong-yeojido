@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136496"
 label: "평안북도/초산군/충하면"
-labelNote: "HGIS 136496"
+sourceRef:
+  - "HGIS 136496"
 aliases:
   - "평안북도/초산군/충하면 (HGIS 136496)"
 ---

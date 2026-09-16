@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157107"
 label: "경상북도/비안군/정서면"
-labelNote: "HGIS 157107"
+sourceRef:
+  - "HGIS 157107"
 aliases:
   - "경상북도/비안군/정서면 (HGIS 157107)"
 ---

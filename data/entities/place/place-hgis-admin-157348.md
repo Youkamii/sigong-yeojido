@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157348"
 label: "경상북도/영천군/북습면"
-labelNote: "HGIS 157348"
+sourceRef:
+  - "HGIS 157348"
 aliases:
   - "경상북도/영천군/북습면 (HGIS 157348)"
 ---

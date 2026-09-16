@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110433"
 label: "전라남도/강진군/고읍면"
-labelNote: "HGIS 110433"
+sourceRef:
+  - "HGIS 110433"
 aliases:
   - "전라남도/강진군/고읍면 (HGIS 110433)"
 ---

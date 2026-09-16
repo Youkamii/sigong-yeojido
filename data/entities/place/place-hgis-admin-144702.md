@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144702"
 label: "경상남도/하동군/북평면"
-labelNote: "HGIS 144702"
+sourceRef:
+  - "HGIS 144702"
 aliases:
   - "경상남도/하동군/북평면 (HGIS 144702)"
 ---

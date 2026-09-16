@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117683"
 label: "전라남도/무안군/면성면"
-labelNote: "HGIS 117683"
+sourceRef:
+  - "HGIS 117683"
 aliases:
   - "전라남도/무안군/면성면 (HGIS 117683)"
 ---

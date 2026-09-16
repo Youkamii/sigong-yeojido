@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157053"
 label: "경상북도/문경군/산서면"
-labelNote: "HGIS 157053"
+sourceRef:
+  - "HGIS 157053"
 aliases:
   - "경상북도/문경군/산서면 (HGIS 157053)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121883"
 label: "전라남도/진도군/고이면"
-labelNote: "HGIS 121883"
+sourceRef:
+  - "HGIS 121883"
 aliases:
   - "전라남도/진도군/고이면 (HGIS 121883)"
 ---

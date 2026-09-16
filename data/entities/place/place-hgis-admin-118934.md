@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118934"
 label: "전라남도/순천군/읍내면"
-labelNote: "HGIS 118934"
+sourceRef:
+  - "HGIS 118934"
 aliases:
   - "전라남도/순천군/읍내면 (HGIS 118934)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156785"
 label: "경상북도/하양군/북면"
-labelNote: "HGIS 156785"
+sourceRef:
+  - "HGIS 156785"
 aliases:
   - "경상북도/하양군/북면 (HGIS 156785)"
 ---

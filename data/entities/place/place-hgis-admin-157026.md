@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157026"
 label: "경상북도/예천군/풍양면"
-labelNote: "HGIS 157026"
+sourceRef:
+  - "HGIS 157026"
 aliases:
   - "경상북도/예천군/풍양면 (HGIS 157026)"
 ---

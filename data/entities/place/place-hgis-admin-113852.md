@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113852"
 label: "전라남도/나주군/나주면"
-labelNote: "HGIS 113852"
+sourceRef:
+  - "HGIS 113852"
 aliases:
   - "전라남도/나주군/나주면 (HGIS 113852)"
 ---

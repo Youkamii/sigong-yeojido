@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136644"
 label: "평안북도/벽동군/성남면"
-labelNote: "HGIS 136644"
+sourceRef:
+  - "HGIS 136644"
 aliases:
   - "평안북도/벽동군/성남면 (HGIS 136644)"
 ---

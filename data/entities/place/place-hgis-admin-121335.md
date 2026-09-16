@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121335"
 label: "전라남도/제주도/제주읍"
-labelNote: "HGIS 121335"
+sourceRef:
+  - "HGIS 121335"
 aliases:
   - "전라남도/제주도/제주읍 (HGIS 121335)"
 ---

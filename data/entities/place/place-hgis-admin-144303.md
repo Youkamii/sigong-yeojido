@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144303"
 label: "경상남도/사천군/축동면"
-labelNote: "HGIS 144303"
+sourceRef:
+  - "HGIS 144303"
 aliases:
   - "경상남도/사천군/축동면 (HGIS 144303)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144746"
 label: "경상남도/곤양군/소곡면"
-labelNote: "HGIS 144746"
+sourceRef:
+  - "HGIS 144746"
 aliases:
   - "경상남도/곤양군/소곡면 (HGIS 144746)"
 ---

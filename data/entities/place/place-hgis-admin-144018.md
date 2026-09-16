@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144018"
 label: "경상남도/거창군/위천면"
-labelNote: "HGIS 144018"
+sourceRef:
+  - "HGIS 144018"
 aliases:
   - "경상남도/거창군/위천면 (HGIS 144018)"
 ---

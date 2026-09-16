@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157689"
 label: "경상북도/함창군"
-labelNote: "HGIS 157689"
+sourceRef:
+  - "HGIS 157689"
 aliases:
   - "경상북도/함창군 (HGIS 157689)"
 ---

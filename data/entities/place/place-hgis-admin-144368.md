@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144368"
 label: "경상남도/안의군/남리면"
-labelNote: "HGIS 144368"
+sourceRef:
+  - "HGIS 144368"
 aliases:
   - "경상남도/안의군/남리면 (HGIS 144368)"
 ---

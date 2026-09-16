@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117418"
 label: "전라남도/목포부/이서면"
-labelNote: "HGIS 117418"
+sourceRef:
+  - "HGIS 117418"
 aliases:
   - "전라남도/목포부/이서면 (HGIS 117418)"
 ---

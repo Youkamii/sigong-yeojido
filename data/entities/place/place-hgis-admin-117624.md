@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117624"
 label: "전라남도/목포부/해제면"
-labelNote: "HGIS 117624"
+sourceRef:
+  - "HGIS 117624"
 aliases:
   - "전라남도/목포부/해제면 (HGIS 117624)"
 ---

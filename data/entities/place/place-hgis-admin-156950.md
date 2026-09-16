@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156950"
 label: "경상북도/대구군/수북면"
-labelNote: "HGIS 156950"
+sourceRef:
+  - "HGIS 156950"
 aliases:
   - "경상북도/대구군/수북면 (HGIS 156950)"
 ---

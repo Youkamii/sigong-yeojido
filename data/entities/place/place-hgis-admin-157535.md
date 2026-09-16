@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157535"
 label: "경상북도/풍기군/하리면"
-labelNote: "HGIS 157535"
+sourceRef:
+  - "HGIS 157535"
 aliases:
   - "경상북도/풍기군/하리면 (HGIS 157535)"
 ---

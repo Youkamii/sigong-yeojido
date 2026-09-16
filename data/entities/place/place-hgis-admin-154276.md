@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154276"
 label: "경상남도/동래군/일광면"
-labelNote: "HGIS 154276"
+sourceRef:
+  - "HGIS 154276"
 aliases:
   - "경상남도/동래군/일광면 (HGIS 154276)"
 ---

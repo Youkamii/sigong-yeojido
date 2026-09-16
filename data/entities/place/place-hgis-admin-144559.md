@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144559"
 label: "경상남도/진주군/봉곡면"
-labelNote: "HGIS 144559"
+sourceRef:
+  - "HGIS 144559"
 aliases:
   - "경상남도/진주군/봉곡면 (HGIS 144559)"
 ---

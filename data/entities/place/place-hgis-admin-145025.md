@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145025"
 label: "경상남도/통영군"
-labelNote: "HGIS 145025"
+sourceRef:
+  - "HGIS 145025"
 aliases:
   - "경상남도/통영군 (HGIS 145025)"
 ---

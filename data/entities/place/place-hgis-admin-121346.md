@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121346"
 label: "전라남도/제주도/조천면"
-labelNote: "HGIS 121346"
+sourceRef:
+  - "HGIS 121346"
 aliases:
   - "전라남도/제주도/조천면 (HGIS 121346)"
 ---

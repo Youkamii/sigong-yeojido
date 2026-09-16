@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122023"
 label: "전라남도/진도군/명금면"
-labelNote: "HGIS 122023"
+sourceRef:
+  - "HGIS 122023"
 aliases:
   - "전라남도/진도군/명금면 (HGIS 122023)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115094"
 label: "전라남도/영광군/동부면"
-labelNote: "HGIS 115094"
+sourceRef:
+  - "HGIS 115094"
 aliases:
   - "전라남도/영광군/동부면 (HGIS 115094)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118949"
 label: "전라남도/순천군/장평면"
-labelNote: "HGIS 118949"
+sourceRef:
+  - "HGIS 118949"
 aliases:
   - "전라남도/순천군/장평면 (HGIS 118949)"
 ---

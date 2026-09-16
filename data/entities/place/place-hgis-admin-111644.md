@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111644"
 label: "전라남도/광양군/칠성면"
-labelNote: "HGIS 111644"
+sourceRef:
+  - "HGIS 111644"
 aliases:
   - "전라남도/광양군/칠성면 (HGIS 111644)"
 ---

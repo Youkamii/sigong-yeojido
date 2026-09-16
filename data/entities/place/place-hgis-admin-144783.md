@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144783"
 label: "경상남도/합천군/덕곡면"
-labelNote: "HGIS 144783"
+sourceRef:
+  - "HGIS 144783"
 aliases:
   - "경상남도/합천군/덕곡면 (HGIS 144783)"
 ---

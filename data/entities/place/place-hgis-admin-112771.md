@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112771"
 label: "전라남도/남평군/도천면"
-labelNote: "HGIS 112771"
+sourceRef:
+  - "HGIS 112771"
 aliases:
   - "전라남도/남평군/도천면 (HGIS 112771)"
 ---

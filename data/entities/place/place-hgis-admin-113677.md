@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113677"
 label: "전라남도/나주군/공수면"
-labelNote: "HGIS 113677"
+sourceRef:
+  - "HGIS 113677"
 aliases:
   - "전라남도/나주군/공수면 (HGIS 113677)"
 ---

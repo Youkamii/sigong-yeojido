@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157047"
 label: "경상북도/문경군/마성면"
-labelNote: "HGIS 157047"
+sourceRef:
+  - "HGIS 157047"
 aliases:
   - "경상북도/문경군/마성면 (HGIS 157047)"
 ---

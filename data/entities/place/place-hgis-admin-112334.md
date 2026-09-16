@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112334"
 label: "전라남도/광주군/흑석면"
-labelNote: "HGIS 112334"
+sourceRef:
+  - "HGIS 112334"
 aliases:
   - "전라남도/광주군/흑석면 (HGIS 112334)"
 ---

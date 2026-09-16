@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111886"
 label: "전라남도/광주군/두방면"
-labelNote: "HGIS 111886"
+sourceRef:
+  - "HGIS 111886"
 aliases:
   - "전라남도/광주군/두방면 (HGIS 111886)"
 ---

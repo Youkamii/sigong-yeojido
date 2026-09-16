@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157420"
 label: "경상북도/의흥군/중리면"
-labelNote: "HGIS 157420"
+sourceRef:
+  - "HGIS 157420"
 aliases:
   - "경상북도/의흥군/중리면 (HGIS 157420)"
 ---

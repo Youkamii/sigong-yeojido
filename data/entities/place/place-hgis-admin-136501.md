@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136501"
 label: "평안북도/삭주군/풍면"
-labelNote: "HGIS 136501"
+sourceRef:
+  - "HGIS 136501"
 aliases:
   - "평안북도/삭주군/풍면 (HGIS 136501)"
 ---

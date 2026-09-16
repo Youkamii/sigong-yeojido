@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136382"
 label: "평안북도/삭주군/성상면"
-labelNote: "HGIS 136382"
+sourceRef:
+  - "HGIS 136382"
 aliases:
   - "평안북도/삭주군/성상면 (HGIS 136382)"
 ---

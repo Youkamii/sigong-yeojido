@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156807"
 label: "경상북도/경산군/남면"
-labelNote: "HGIS 156807"
+sourceRef:
+  - "HGIS 156807"
 aliases:
   - "경상북도/경산군/남면 (HGIS 156807)"
 ---

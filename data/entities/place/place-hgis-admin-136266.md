@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136266"
 label: "평안북도/초산군/서하면"
-labelNote: "HGIS 136266"
+sourceRef:
+  - "HGIS 136266"
 aliases:
   - "평안북도/초산군/서하면 (HGIS 136266)"
 ---

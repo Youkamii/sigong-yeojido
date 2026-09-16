@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143178"
 label: "경상남도/거창군/천내면"
-labelNote: "HGIS 143178"
+sourceRef:
+  - "HGIS 143178"
 aliases:
   - "경상남도/거창군/천내면 (HGIS 143178)"
 ---

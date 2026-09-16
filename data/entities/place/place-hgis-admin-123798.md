@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123798"
 label: "전라남도/해남군/화일면"
-labelNote: "HGIS 123798"
+sourceRef:
+  - "HGIS 123798"
 aliases:
   - "전라남도/해남군/화일면 (HGIS 123798)"
 ---

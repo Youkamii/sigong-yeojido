@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-171952"
 label: "경상북도/개령군/부곡면"
-labelNote: "HGIS 171952"
+sourceRef:
+  - "HGIS 171952"
 aliases:
   - "경상북도/개령군/부곡면 (HGIS 171952)"
 ---

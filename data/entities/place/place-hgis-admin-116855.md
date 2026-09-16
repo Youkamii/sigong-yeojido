@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116855"
 label: "전라남도/능주군/신풍면"
-labelNote: "HGIS 116855"
+sourceRef:
+  - "HGIS 116855"
 aliases:
   - "전라남도/능주군/신풍면 (HGIS 116855)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144510"
 label: "경상남도/의령군/일정동면"
-labelNote: "HGIS 144510"
+sourceRef:
+  - "HGIS 144510"
 aliases:
   - "경상남도/의령군/일정동면 (HGIS 144510)"
 ---

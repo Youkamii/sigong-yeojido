@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144734"
 label: "경상남도/함안군/산내면"
-labelNote: "HGIS 144734"
+sourceRef:
+  - "HGIS 144734"
 aliases:
   - "경상남도/함안군/산내면 (HGIS 144734)"
 ---

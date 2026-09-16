@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143294"
 label: "경상남도/초계군/청원면"
-labelNote: "HGIS 143294"
+sourceRef:
+  - "HGIS 143294"
 aliases:
   - "경상남도/초계군/청원면 (HGIS 143294)"
 ---

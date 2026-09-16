@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156891"
 label: "경상북도/자인군/하북면"
-labelNote: "HGIS 156891"
+sourceRef:
+  - "HGIS 156891"
 aliases:
   - "경상북도/자인군/하북면 (HGIS 156891)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136605"
 label: "평안북도/강계군/곡하면"
-labelNote: "HGIS 136605"
+sourceRef:
+  - "HGIS 136605"
 aliases:
   - "평안북도/강계군/곡하면 (HGIS 136605)"
 ---

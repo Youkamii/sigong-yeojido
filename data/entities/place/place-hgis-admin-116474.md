@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116474"
 label: "전라남도/영암군/비음면"
-labelNote: "HGIS 116474"
+sourceRef:
+  - "HGIS 116474"
 aliases:
   - "전라남도/영암군/비음면 (HGIS 116474)"
 ---

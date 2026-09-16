@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144430"
 label: "경상남도/용남군/산양면"
-labelNote: "HGIS 144430"
+sourceRef:
+  - "HGIS 144430"
 aliases:
   - "경상남도/용남군/산양면 (HGIS 144430)"
 ---

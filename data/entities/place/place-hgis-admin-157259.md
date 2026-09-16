@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157259"
 label: "경상북도/영덕군/달산면"
-labelNote: "HGIS 157259"
+sourceRef:
+  - "HGIS 157259"
 aliases:
   - "경상북도/영덕군/달산면 (HGIS 157259)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136311"
 label: "평안북도/강계군/읍동면"
-labelNote: "HGIS 136311"
+sourceRef:
+  - "HGIS 136311"
 aliases:
   - "평안북도/강계군/읍동면 (HGIS 136311)"
 ---

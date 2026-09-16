@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157343"
 label: "경상북도/영천군/대창면"
-labelNote: "HGIS 157343"
+sourceRef:
+  - "HGIS 157343"
 aliases:
   - "경상북도/영천군/대창면 (HGIS 157343)"
 ---

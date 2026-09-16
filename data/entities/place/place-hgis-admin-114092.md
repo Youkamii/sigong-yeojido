@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114092"
 label: "전라남도/나주군/세화면"
-labelNote: "HGIS 114092"
+sourceRef:
+  - "HGIS 114092"
 aliases:
   - "전라남도/나주군/세화면 (HGIS 114092)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144497"
 label: "경상남도/의령군/부산면"
-labelNote: "HGIS 144497"
+sourceRef:
+  - "HGIS 144497"
 aliases:
   - "경상남도/의령군/부산면 (HGIS 144497)"
 ---

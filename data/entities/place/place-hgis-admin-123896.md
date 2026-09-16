@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123896"
 label: "전라남도/화순군/송석면"
-labelNote: "HGIS 123896"
+sourceRef:
+  - "HGIS 123896"
 aliases:
   - "전라남도/화순군/송석면 (HGIS 123896)"
 ---

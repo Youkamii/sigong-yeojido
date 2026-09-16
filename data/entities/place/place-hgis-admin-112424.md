@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112424"
 label: "전라남도/구례군/계사면"
-labelNote: "HGIS 112424"
+sourceRef:
+  - "HGIS 112424"
 aliases:
   - "전라남도/구례군/계사면 (HGIS 112424)"
 ---

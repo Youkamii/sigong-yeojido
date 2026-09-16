@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154422"
 label: "경상남도/진주군/중안면"
-labelNote: "HGIS 154422"
+sourceRef:
+  - "HGIS 154422"
 aliases:
   - "경상남도/진주군/중안면 (HGIS 154422)"
 ---

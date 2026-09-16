@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156952"
 label: "경상북도/대구군/월배면"
-labelNote: "HGIS 156952"
+sourceRef:
+  - "HGIS 156952"
 aliases:
   - "경상북도/대구군/월배면 (HGIS 156952)"
 ---

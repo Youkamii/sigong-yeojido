@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143267"
 label: "경상남도/진주군/설매곡면"
-labelNote: "HGIS 143267"
+sourceRef:
+  - "HGIS 143267"
 aliases:
   - "경상남도/진주군/설매곡면 (HGIS 143267)"
 ---

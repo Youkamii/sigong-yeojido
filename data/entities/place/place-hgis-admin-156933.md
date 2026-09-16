@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156933"
 label: "경상북도/달성군/다사면"
-labelNote: "HGIS 156933"
+sourceRef:
+  - "HGIS 156933"
 aliases:
   - "경상북도/달성군/다사면 (HGIS 156933)"
 ---

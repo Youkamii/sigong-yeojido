@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143308"
 label: "경상남도/함안군/죽산면"
-labelNote: "HGIS 143308"
+sourceRef:
+  - "HGIS 143308"
 aliases:
   - "경상남도/함안군/죽산면 (HGIS 143308)"
 ---

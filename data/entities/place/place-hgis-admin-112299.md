@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112299"
 label: "전라남도/광주군/효우동면"
-labelNote: "HGIS 112299"
+sourceRef:
+  - "HGIS 112299"
 aliases:
   - "전라남도/광주군/효우동면 (HGIS 112299)"
 ---

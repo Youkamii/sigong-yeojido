@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144709"
 label: "경상남도/함안군/산익면"
-labelNote: "HGIS 144709"
+sourceRef:
+  - "HGIS 144709"
 aliases:
   - "경상남도/함안군/산익면 (HGIS 144709)"
 ---

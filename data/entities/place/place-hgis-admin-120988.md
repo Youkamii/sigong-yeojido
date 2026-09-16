@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120988"
 label: "전라남도/제주군/서중면"
-labelNote: "HGIS 120988"
+sourceRef:
+  - "HGIS 120988"
 aliases:
   - "전라남도/제주군/서중면 (HGIS 120988)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118294"
 label: "전라남도/보성군/조내면"
-labelNote: "HGIS 118294"
+sourceRef:
+  - "HGIS 118294"
 aliases:
   - "전라남도/보성군/조내면 (HGIS 118294)"
 ---

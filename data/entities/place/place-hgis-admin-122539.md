@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122539"
 label: "전라남도/함평군/갈동면"
-labelNote: "HGIS 122539"
+sourceRef:
+  - "HGIS 122539"
 aliases:
   - "전라남도/함평군/갈동면 (HGIS 122539)"
 ---

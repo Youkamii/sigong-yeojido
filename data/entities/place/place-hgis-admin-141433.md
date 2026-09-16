@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141433"
 label: "평안북도/의주부/송장면"
-labelNote: "HGIS 141433"
+sourceRef:
+  - "HGIS 141433"
 aliases:
   - "평안북도/의주부/송장면 (HGIS 141433)"
 ---

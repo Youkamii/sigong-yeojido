@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118327"
 label: "전라남도/순천군/내서면"
-labelNote: "HGIS 118327"
+sourceRef:
+  - "HGIS 118327"
 aliases:
   - "전라남도/순천군/내서면 (HGIS 118327)"
 ---

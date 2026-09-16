@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157337"
 label: "경상북도/영천군/고견면"
-labelNote: "HGIS 157337"
+sourceRef:
+  - "HGIS 157337"
 aliases:
   - "경상북도/영천군/고견면 (HGIS 157337)"
 ---

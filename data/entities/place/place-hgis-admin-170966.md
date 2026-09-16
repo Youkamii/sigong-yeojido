@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-170966"
 label: "경상북도/성주군/산남면"
-labelNote: "HGIS 170966"
+sourceRef:
+  - "HGIS 170966"
 aliases:
   - "경상북도/성주군/산남면 (HGIS 170966)"
 ---

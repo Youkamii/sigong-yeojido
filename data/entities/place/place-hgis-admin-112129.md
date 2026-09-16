@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112129"
 label: "전라남도/광주군/송정면"
-labelNote: "HGIS 112129"
+sourceRef:
+  - "HGIS 112129"
 aliases:
   - "전라남도/광주군/송정면 (HGIS 112129)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143633"
 label: "경상남도/밀양군/초동면"
-labelNote: "HGIS 143633"
+sourceRef:
+  - "HGIS 143633"
 aliases:
   - "경상남도/밀양군/초동면 (HGIS 143633)"
 ---

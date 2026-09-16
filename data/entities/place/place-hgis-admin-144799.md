@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144799"
 label: "경상남도/합천군/율곡면"
-labelNote: "HGIS 144799"
+sourceRef:
+  - "HGIS 144799"
 aliases:
   - "경상남도/합천군/율곡면 (HGIS 144799)"
 ---

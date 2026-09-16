@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116864"
 label: "전라남도/능주군/오도면"
-labelNote: "HGIS 116864"
+sourceRef:
+  - "HGIS 116864"
 aliases:
   - "전라남도/능주군/오도면 (HGIS 116864)"
 ---

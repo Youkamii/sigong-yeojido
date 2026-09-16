@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144278"
 label: "경상남도/거창군/지산면"
-labelNote: "HGIS 144278"
+sourceRef:
+  - "HGIS 144278"
 aliases:
   - "경상남도/거창군/지산면 (HGIS 144278)"
 ---

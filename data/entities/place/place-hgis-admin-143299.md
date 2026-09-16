@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143299"
 label: "경상남도/하동군/외횡보면"
-labelNote: "HGIS 143299"
+sourceRef:
+  - "HGIS 143299"
 aliases:
   - "경상남도/하동군/외횡보면 (HGIS 143299)"
 ---

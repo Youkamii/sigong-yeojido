@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136322"
 label: "평안북도/곽산군/서면"
-labelNote: "HGIS 136322"
+sourceRef:
+  - "HGIS 136322"
 aliases:
   - "평안북도/곽산군/서면 (HGIS 136322)"
 ---

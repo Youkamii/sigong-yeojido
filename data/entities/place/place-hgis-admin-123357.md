@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123357"
 label: "전라남도/해남군/비곡면"
-labelNote: "HGIS 123357"
+sourceRef:
+  - "HGIS 123357"
 aliases:
   - "전라남도/해남군/비곡면 (HGIS 123357)"
 ---

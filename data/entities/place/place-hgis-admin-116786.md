@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116786"
 label: "전라남도/능주군/부춘면"
-labelNote: "HGIS 116786"
+sourceRef:
+  - "HGIS 116786"
 aliases:
   - "전라남도/능주군/부춘면 (HGIS 116786)"
 ---

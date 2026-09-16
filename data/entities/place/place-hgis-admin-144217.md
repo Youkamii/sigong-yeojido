@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144217"
 label: "경상남도/마산부/외서면"
-labelNote: "HGIS 144217"
+sourceRef:
+  - "HGIS 144217"
 aliases:
   - "경상남도/마산부/외서면 (HGIS 144217)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137519"
 label: "평안북도/구성군/관서면"
-labelNote: "HGIS 137519"
+sourceRef:
+  - "HGIS 137519"
 aliases:
   - "평안북도/구성군/관서면 (HGIS 137519)"
 ---

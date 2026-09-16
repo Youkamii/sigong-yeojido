@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115543"
 label: "전라남도/영광군/염소면"
-labelNote: "HGIS 115543"
+sourceRef:
+  - "HGIS 115543"
 aliases:
   - "전라남도/영광군/염소면 (HGIS 115543)"
 ---

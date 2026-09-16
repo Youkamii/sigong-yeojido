@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157054"
 label: "경상북도/문경군/산양면"
-labelNote: "HGIS 157054"
+sourceRef:
+  - "HGIS 157054"
 aliases:
   - "경상북도/문경군/산양면 (HGIS 157054)"
 ---

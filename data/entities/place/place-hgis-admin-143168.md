@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143168"
 label: "경상남도/거창군/갈지면"
-labelNote: "HGIS 143168"
+sourceRef:
+  - "HGIS 143168"
 aliases:
   - "경상남도/거창군/갈지면 (HGIS 143168)"
 ---

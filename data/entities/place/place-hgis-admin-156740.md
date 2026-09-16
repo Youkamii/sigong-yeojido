@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156740"
 label: "경상북도/영천군/예곡면"
-labelNote: "HGIS 156740"
+sourceRef:
+  - "HGIS 156740"
 aliases:
   - "경상북도/영천군/예곡면 (HGIS 156740)"
 ---

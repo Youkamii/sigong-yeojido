@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111985"
 label: "전라남도/광주군/부동방면"
-labelNote: "HGIS 111985"
+sourceRef:
+  - "HGIS 111985"
 aliases:
   - "전라남도/광주군/부동방면 (HGIS 111985)"
 ---

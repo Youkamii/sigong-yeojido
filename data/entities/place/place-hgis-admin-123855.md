@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123855"
 label: "전라남도/화순군/도림면"
-labelNote: "HGIS 123855"
+sourceRef:
+  - "HGIS 123855"
 aliases:
   - "전라남도/화순군/도림면 (HGIS 123855)"
 ---

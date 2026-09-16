@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140777"
 label: "평안북도/운산군/곡면"
-labelNote: "HGIS 140777"
+sourceRef:
+  - "HGIS 140777"
 aliases:
   - "평안북도/운산군/곡면 (HGIS 140777)"
 ---

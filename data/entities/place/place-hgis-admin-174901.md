@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174901"
 label: "경상북도/대구군/인흥면"
-labelNote: "HGIS 174901"
+sourceRef:
+  - "HGIS 174901"
 aliases:
   - "경상북도/대구군/인흥면 (HGIS 174901)"
 ---

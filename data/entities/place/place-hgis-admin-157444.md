@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157444"
 label: "경상북도/장기군/양남면"
-labelNote: "HGIS 157444"
+sourceRef:
+  - "HGIS 157444"
 aliases:
   - "경상북도/장기군/양남면 (HGIS 157444)"
 ---

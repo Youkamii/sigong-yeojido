@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123982"
 label: "전라남도/흥양군/남면"
-labelNote: "HGIS 123982"
+sourceRef:
+  - "HGIS 123982"
 aliases:
   - "전라남도/흥양군/남면 (HGIS 123982)"
 ---

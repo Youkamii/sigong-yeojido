@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157114"
 label: "경상북도/상주군/내동면"
-labelNote: "HGIS 157114"
+sourceRef:
+  - "HGIS 157114"
 aliases:
   - "경상북도/상주군/내동면 (HGIS 157114)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156947"
 label: "경상북도/달성군/해안면"
-labelNote: "HGIS 156947"
+sourceRef:
+  - "HGIS 156947"
 aliases:
   - "경상북도/달성군/해안면 (HGIS 156947)"
 ---

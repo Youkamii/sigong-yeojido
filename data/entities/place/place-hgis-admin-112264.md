@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112264"
 label: "전라남도/광주군/하남면"
-labelNote: "HGIS 112264"
+sourceRef:
+  - "HGIS 112264"
 aliases:
   - "전라남도/광주군/하남면 (HGIS 112264)"
 ---

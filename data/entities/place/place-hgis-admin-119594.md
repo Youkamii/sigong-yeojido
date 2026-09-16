@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119594"
 label: "전라남도/완도군/평일면"
-labelNote: "HGIS 119594"
+sourceRef:
+  - "HGIS 119594"
 aliases:
   - "전라남도/완도군/평일면 (HGIS 119594)"
 ---

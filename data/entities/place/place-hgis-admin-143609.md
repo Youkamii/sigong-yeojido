@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143609"
 label: "경상남도/밀양군/산외면"
-labelNote: "HGIS 143609"
+sourceRef:
+  - "HGIS 143609"
 aliases:
   - "경상남도/밀양군/산외면 (HGIS 143609)"
 ---

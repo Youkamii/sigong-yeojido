@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113236"
 label: "전라남도/담양군/우면"
-labelNote: "HGIS 113236"
+sourceRef:
+  - "HGIS 113236"
 aliases:
   - "전라남도/담양군/우면 (HGIS 113236)"
 ---

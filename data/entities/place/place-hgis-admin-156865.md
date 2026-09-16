@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156865"
 label: "경상북도/고령군/우촌면"
-labelNote: "HGIS 156865"
+sourceRef:
+  - "HGIS 156865"
 aliases:
   - "경상북도/고령군/우촌면 (HGIS 156865)"
 ---

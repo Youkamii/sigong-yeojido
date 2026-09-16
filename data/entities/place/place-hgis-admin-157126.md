@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157126"
 label: "경상북도/상주군/사벌면"
-labelNote: "HGIS 157126"
+sourceRef:
+  - "HGIS 157126"
 aliases:
   - "경상북도/상주군/사벌면 (HGIS 157126)"
 ---

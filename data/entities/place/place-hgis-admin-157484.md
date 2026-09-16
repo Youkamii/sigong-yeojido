@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157484"
 label: "경상북도/청도군/중동면"
-labelNote: "HGIS 157484"
+sourceRef:
+  - "HGIS 157484"
 aliases:
   - "경상북도/청도군/중동면 (HGIS 157484)"
 ---

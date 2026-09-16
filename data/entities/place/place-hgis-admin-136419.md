@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136419"
 label: "평안북도/용천군/내상면"
-labelNote: "HGIS 136419"
+sourceRef:
+  - "HGIS 136419"
 aliases:
   - "평안북도/용천군/내상면 (HGIS 136419)"
 ---

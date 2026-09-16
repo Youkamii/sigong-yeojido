@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136482"
 label: "평안북도/후창군/무창면"
-labelNote: "HGIS 136482"
+sourceRef:
+  - "HGIS 136482"
 aliases:
   - "평안북도/후창군/무창면 (HGIS 136482)"
 ---

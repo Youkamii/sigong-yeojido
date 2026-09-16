@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112013"
 label: "전라남도/광주군/상대곡면"
-labelNote: "HGIS 112013"
+sourceRef:
+  - "HGIS 112013"
 aliases:
   - "전라남도/광주군/상대곡면 (HGIS 112013)"
 ---

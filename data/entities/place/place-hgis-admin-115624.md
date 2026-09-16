@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115624"
 label: "전라남도/영광군/외서면"
-labelNote: "HGIS 115624"
+sourceRef:
+  - "HGIS 115624"
 aliases:
   - "전라남도/영광군/외서면 (HGIS 115624)"
 ---

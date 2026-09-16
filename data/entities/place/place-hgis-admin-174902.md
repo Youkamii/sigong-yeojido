@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174902"
 label: "경상북도/대구군/조암면"
-labelNote: "HGIS 174902"
+sourceRef:
+  - "HGIS 174902"
 aliases:
   - "경상북도/대구군/조암면 (HGIS 174902)"
 ---

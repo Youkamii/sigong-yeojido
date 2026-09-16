@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121142"
 label: "전라남도/제주도/남원면"
-labelNote: "HGIS 121142"
+sourceRef:
+  - "HGIS 121142"
 aliases:
   - "전라남도/제주도/남원면 (HGIS 121142)"
 ---

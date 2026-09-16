@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121047"
 label: "전라남도/제주군/정의면"
-labelNote: "HGIS 121047"
+sourceRef:
+  - "HGIS 121047"
 aliases:
   - "전라남도/제주군/정의면 (HGIS 121047)"
 ---

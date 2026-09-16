@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144298"
 label: "경상남도/사천군/중남면"
-labelNote: "HGIS 144298"
+sourceRef:
+  - "HGIS 144298"
 aliases:
   - "경상남도/사천군/중남면 (HGIS 144298)"
 ---

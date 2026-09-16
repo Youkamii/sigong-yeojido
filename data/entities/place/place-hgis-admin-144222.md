@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144222"
 label: "경상남도/마산부/진북면"
-labelNote: "HGIS 144222"
+sourceRef:
+  - "HGIS 144222"
 aliases:
   - "경상남도/마산부/진북면 (HGIS 144222)"
 ---

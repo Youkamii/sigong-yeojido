@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110559"
 label: "전라남도/강진군/열수면"
-labelNote: "HGIS 110559"
+sourceRef:
+  - "HGIS 110559"
 aliases:
   - "전라남도/강진군/열수면 (HGIS 110559)"
 ---

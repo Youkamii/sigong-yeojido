@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144342"
 label: "경상남도/산청군/오곡면"
-labelNote: "HGIS 144342"
+sourceRef:
+  - "HGIS 144342"
 aliases:
   - "경상남도/산청군/오곡면 (HGIS 144342)"
 ---

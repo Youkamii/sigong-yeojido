@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144673"
 label: "경상남도/통영군/둔덕면"
-labelNote: "HGIS 144673"
+sourceRef:
+  - "HGIS 144673"
 aliases:
   - "경상남도/통영군/둔덕면 (HGIS 144673)"
 ---

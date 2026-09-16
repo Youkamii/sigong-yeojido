@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136723"
 label: "평안북도/정주군/관주면"
-labelNote: "HGIS 136723"
+sourceRef:
+  - "HGIS 136723"
 aliases:
   - "평안북도/정주군/관주면 (HGIS 136723)"
 ---

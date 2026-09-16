@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157544"
 label: "경상북도/하양군/안심면"
-labelNote: "HGIS 157544"
+sourceRef:
+  - "HGIS 157544"
 aliases:
   - "경상북도/하양군/안심면 (HGIS 157544)"
 ---

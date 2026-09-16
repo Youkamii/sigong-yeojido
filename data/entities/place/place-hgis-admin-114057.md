@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114057"
 label: "전라남도/나주군/서부면"
-labelNote: "HGIS 114057"
+sourceRef:
+  - "HGIS 114057"
 aliases:
   - "전라남도/나주군/서부면 (HGIS 114057)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122894"
 label: "전라남도/함평군/여황면"
-labelNote: "HGIS 122894"
+sourceRef:
+  - "HGIS 122894"
 aliases:
   - "전라남도/함평군/여황면 (HGIS 122894)"
 ---

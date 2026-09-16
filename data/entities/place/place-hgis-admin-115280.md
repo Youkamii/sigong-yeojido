@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115280"
 label: "전라남도/영광군/법성면"
-labelNote: "HGIS 115280"
+sourceRef:
+  - "HGIS 115280"
 aliases:
   - "전라남도/영광군/법성면 (HGIS 115280)"
 ---

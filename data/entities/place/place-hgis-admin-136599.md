@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136599"
 label: "평안북도/초산군/초산면"
-labelNote: "HGIS 136599"
+sourceRef:
+  - "HGIS 136599"
 aliases:
   - "평안북도/초산군/초산면 (HGIS 136599)"
 ---

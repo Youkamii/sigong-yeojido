@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141483"
 label: "평안북도/의주부/옥상면"
-labelNote: "HGIS 141483"
+sourceRef:
+  - "HGIS 141483"
 aliases:
   - "평안북도/의주부/옥상면 (HGIS 141483)"
 ---

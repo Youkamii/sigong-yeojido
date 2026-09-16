@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110835"
 label: "전라남도/고흥군/도양면"
-labelNote: "HGIS 110835"
+sourceRef:
+  - "HGIS 110835"
 aliases:
   - "전라남도/고흥군/도양면 (HGIS 110835)"
 ---

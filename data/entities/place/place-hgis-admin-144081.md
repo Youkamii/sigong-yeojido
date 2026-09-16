@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144081"
 label: "경상남도/거창군/모곡면"
-labelNote: "HGIS 144081"
+sourceRef:
+  - "HGIS 144081"
 aliases:
   - "경상남도/거창군/모곡면 (HGIS 144081)"
 ---

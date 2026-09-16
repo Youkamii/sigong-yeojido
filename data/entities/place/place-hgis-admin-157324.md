@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157324"
 label: "경상북도/영천군/두전면"
-labelNote: "HGIS 157324"
+sourceRef:
+  - "HGIS 157324"
 aliases:
   - "경상북도/영천군/두전면 (HGIS 157324)"
 ---

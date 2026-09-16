@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116332"
 label: "전라남도/영암군/북이종면"
-labelNote: "HGIS 116332"
+sourceRef:
+  - "HGIS 116332"
 aliases:
   - "전라남도/영암군/북이종면 (HGIS 116332)"
 ---

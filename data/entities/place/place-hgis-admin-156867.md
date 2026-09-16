@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156867"
 label: "경상북도/고령군/운수면"
-labelNote: "HGIS 156867"
+sourceRef:
+  - "HGIS 156867"
 aliases:
   - "경상북도/고령군/운수면 (HGIS 156867)"
 ---

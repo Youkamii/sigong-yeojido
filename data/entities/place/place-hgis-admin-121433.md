@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121433"
 label: "전라남도/지도군/고군산면"
-labelNote: "HGIS 121433"
+sourceRef:
+  - "HGIS 121433"
 aliases:
   - "전라남도/지도군/고군산면 (HGIS 121433)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119620"
 label: "전라남도/장성군/갑향면"
-labelNote: "HGIS 119620"
+sourceRef:
+  - "HGIS 119620"
 aliases:
   - "전라남도/장성군/갑향면 (HGIS 119620)"
 ---

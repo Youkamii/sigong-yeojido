@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157450"
 label: "경상북도/지례군/하남면"
-labelNote: "HGIS 157450"
+sourceRef:
+  - "HGIS 157450"
 aliases:
   - "경상북도/지례군/하남면 (HGIS 157450)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117796"
 label: "전라남도/보성군/겸어면"
-labelNote: "HGIS 117796"
+sourceRef:
+  - "HGIS 117796"
 aliases:
   - "전라남도/보성군/겸어면 (HGIS 117796)"
 ---

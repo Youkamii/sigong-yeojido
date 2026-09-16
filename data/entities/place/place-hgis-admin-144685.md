@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144685"
 label: "경상남도/통영군/장목면"
-labelNote: "HGIS 144685"
+sourceRef:
+  - "HGIS 144685"
 aliases:
   - "경상남도/통영군/장목면 (HGIS 144685)"
 ---

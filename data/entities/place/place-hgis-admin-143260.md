@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143260"
 label: "경상남도/진주군/가귀곡면"
-labelNote: "HGIS 143260"
+sourceRef:
+  - "HGIS 143260"
 aliases:
   - "경상남도/진주군/가귀곡면 (HGIS 143260)"
 ---

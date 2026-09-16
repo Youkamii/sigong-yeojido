@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157391"
 label: "경상북도/의성군/비안면"
-labelNote: "HGIS 157391"
+sourceRef:
+  - "HGIS 157391"
 aliases:
   - "경상북도/의성군/비안면 (HGIS 157391)"
 ---

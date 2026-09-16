@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112410"
 label: "전라남도/구례군/간전면"
-labelNote: "HGIS 112410"
+sourceRef:
+  - "HGIS 112410"
 aliases:
   - "전라남도/구례군/간전면 (HGIS 112410)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144703"
 label: "경상남도/하동군/서량곡면"
-labelNote: "HGIS 144703"
+sourceRef:
+  - "HGIS 144703"
 aliases:
   - "경상남도/하동군/서량곡면 (HGIS 144703)"
 ---

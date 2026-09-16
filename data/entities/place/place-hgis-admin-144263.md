@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144263"
 label: "경상남도/부산부/부산면"
-labelNote: "HGIS 144263"
+sourceRef:
+  - "HGIS 144263"
 aliases:
   - "경상남도/부산부/부산면 (HGIS 144263)"
 ---

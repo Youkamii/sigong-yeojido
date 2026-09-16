@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144091"
 label: "경상남도/거창군/읍외면"
-labelNote: "HGIS 144091"
+sourceRef:
+  - "HGIS 144091"
 aliases:
   - "경상남도/거창군/읍외면 (HGIS 144091)"
 ---

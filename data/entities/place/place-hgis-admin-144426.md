@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144426"
 label: "경상남도/용남군/동면"
-labelNote: "HGIS 144426"
+sourceRef:
+  - "HGIS 144426"
 aliases:
   - "경상남도/용남군/동면 (HGIS 144426)"
 ---

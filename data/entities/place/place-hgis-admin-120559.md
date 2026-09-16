@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120559"
 label: "전라남도/장흥군/안하면"
-labelNote: "HGIS 120559"
+sourceRef:
+  - "HGIS 120559"
 aliases:
   - "전라남도/장흥군/안하면 (HGIS 120559)"
 ---

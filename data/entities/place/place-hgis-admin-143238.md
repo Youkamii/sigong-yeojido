@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143238"
 label: "경상남도/삼가군/모태면"
-labelNote: "HGIS 143238"
+sourceRef:
+  - "HGIS 143238"
 aliases:
   - "경상남도/삼가군/모태면 (HGIS 143238)"
 ---

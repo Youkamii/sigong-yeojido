@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110833"
 label: "전라남도/고흥군/남양면"
-labelNote: "HGIS 110833"
+sourceRef:
+  - "HGIS 110833"
 aliases:
   - "전라남도/고흥군/남양면 (HGIS 110833)"
 ---

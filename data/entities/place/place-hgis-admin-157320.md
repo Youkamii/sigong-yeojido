@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157320"
 label: "경상북도/영주군/하리면"
-labelNote: "HGIS 157320"
+sourceRef:
+  - "HGIS 157320"
 aliases:
   - "경상북도/영주군/하리면 (HGIS 157320)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116727"
 label: "전라남도/능주군/도장면"
-labelNote: "HGIS 116727"
+sourceRef:
+  - "HGIS 116727"
 aliases:
   - "전라남도/능주군/도장면 (HGIS 116727)"
 ---

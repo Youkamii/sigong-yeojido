@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156847"
 label: "경상북도/고령군/관동면"
-labelNote: "HGIS 156847"
+sourceRef:
+  - "HGIS 156847"
 aliases:
   - "경상북도/고령군/관동면 (HGIS 156847)"
 ---

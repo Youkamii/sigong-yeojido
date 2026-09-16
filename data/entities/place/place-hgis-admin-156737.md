@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156737"
 label: "경상북도/영천군/산이면"
-labelNote: "HGIS 156737"
+sourceRef:
+  - "HGIS 156737"
 aliases:
   - "경상북도/영천군/산이면 (HGIS 156737)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-105084"
 label: "전라북도/진안군/군내면"
-labelNote: "HGIS 105084"
+sourceRef:
+  - "HGIS 105084"
 aliases:
   - "전라북도/진안군/군내면 (HGIS 105084)"
 ---

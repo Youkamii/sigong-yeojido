@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157264"
 label: "경상북도/영덕군/중남면"
-labelNote: "HGIS 157264"
+sourceRef:
+  - "HGIS 157264"
 aliases:
   - "경상북도/영덕군/중남면 (HGIS 157264)"
 ---

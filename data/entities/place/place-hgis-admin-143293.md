@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143293"
 label: "경상남도/창원부/진북면"
-labelNote: "HGIS 143293"
+sourceRef:
+  - "HGIS 143293"
 aliases:
   - "경상남도/창원부/진북면 (HGIS 143293)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111231"
 label: "전라남도/광산군/송정면"
-labelNote: "HGIS 111231"
+sourceRef:
+  - "HGIS 111231"
 aliases:
   - "전라남도/광산군/송정면 (HGIS 111231)"
 ---

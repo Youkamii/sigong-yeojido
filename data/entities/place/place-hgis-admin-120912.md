@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120912"
 label: "전라남도/정의군/좌면"
-labelNote: "HGIS 120912"
+sourceRef:
+  - "HGIS 120912"
 aliases:
   - "전라남도/정의군/좌면 (HGIS 120912)"
 ---

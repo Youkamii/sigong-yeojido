@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157255"
 label: "경상북도/연일군/북면"
-labelNote: "HGIS 157255"
+sourceRef:
+  - "HGIS 157255"
 aliases:
   - "경상북도/연일군/북면 (HGIS 157255)"
 ---

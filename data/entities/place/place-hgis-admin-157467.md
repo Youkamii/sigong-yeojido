@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157467"
 label: "경상북도/청도군/동상면"
-labelNote: "HGIS 157467"
+sourceRef:
+  - "HGIS 157467"
 aliases:
   - "경상북도/청도군/동상면 (HGIS 157467)"
 ---

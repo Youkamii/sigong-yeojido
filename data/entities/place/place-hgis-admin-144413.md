@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144413"
 label: "경상남도/영산군/길곡면"
-labelNote: "HGIS 144413"
+sourceRef:
+  - "HGIS 144413"
 aliases:
   - "경상남도/영산군/길곡면 (HGIS 144413)"
 ---

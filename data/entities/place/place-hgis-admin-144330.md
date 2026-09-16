@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144330"
 label: "경상남도/산청군/서하면"
-labelNote: "HGIS 144330"
+sourceRef:
+  - "HGIS 144330"
 aliases:
   - "경상남도/산청군/서하면 (HGIS 144330)"
 ---

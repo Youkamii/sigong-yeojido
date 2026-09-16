@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157396"
 label: "경상북도/의성군/석전면"
-labelNote: "HGIS 157396"
+sourceRef:
+  - "HGIS 157396"
 aliases:
   - "경상북도/의성군/석전면 (HGIS 157396)"
 ---

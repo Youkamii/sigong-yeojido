@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-105494"
 label: "전라북도/태인군/고현내면"
-labelNote: "HGIS 105494"
+sourceRef:
+  - "HGIS 105494"
 aliases:
   - "전라북도/태인군/고현내면 (HGIS 105494)"
 ---

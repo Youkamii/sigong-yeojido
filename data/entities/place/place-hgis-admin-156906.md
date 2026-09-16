@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156906"
 label: "경상북도/김천군/구소요면"
-labelNote: "HGIS 156906"
+sourceRef:
+  - "HGIS 156906"
 aliases:
   - "경상북도/김천군/구소요면 (HGIS 156906)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156745"
 label: "경상북도/자인군/상북면"
-labelNote: "HGIS 156745"
+sourceRef:
+  - "HGIS 156745"
 aliases:
   - "경상북도/자인군/상북면 (HGIS 156745)"
 ---

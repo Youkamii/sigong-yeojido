@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157327"
 label: "경상북도/영천군/천상면"
-labelNote: "HGIS 157327"
+sourceRef:
+  - "HGIS 157327"
 aliases:
   - "경상북도/영천군/천상면 (HGIS 157327)"
 ---

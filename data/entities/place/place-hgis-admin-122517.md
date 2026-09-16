@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122517"
 label: "전라남도/창평군/화면"
-labelNote: "HGIS 122517"
+sourceRef:
+  - "HGIS 122517"
 aliases:
   - "전라남도/창평군/화면 (HGIS 122517)"
 ---

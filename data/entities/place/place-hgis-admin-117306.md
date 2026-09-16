@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117306"
 label: "전라남도/목포부/엄다면"
-labelNote: "HGIS 117306"
+sourceRef:
+  - "HGIS 117306"
 aliases:
   - "전라남도/목포부/엄다면 (HGIS 117306)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144481"
 label: "경상남도/의령군/가례면"
-labelNote: "HGIS 144481"
+sourceRef:
+  - "HGIS 144481"
 aliases:
   - "경상남도/의령군/가례면 (HGIS 144481)"
 ---

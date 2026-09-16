@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117655"
 label: "전라남도/목포부/현화면"
-labelNote: "HGIS 117655"
+sourceRef:
+  - "HGIS 117655"
 aliases:
   - "전라남도/목포부/현화면 (HGIS 117655)"
 ---

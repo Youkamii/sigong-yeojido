@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110831"
 label: "전라남도/고흥군/금산면"
-labelNote: "HGIS 110831"
+sourceRef:
+  - "HGIS 110831"
 aliases:
   - "전라남도/고흥군/금산면 (HGIS 110831)"
 ---

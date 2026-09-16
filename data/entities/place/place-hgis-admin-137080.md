@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137080"
 label: "평안북도/강계군/고산면"
-labelNote: "HGIS 137080"
+sourceRef:
+  - "HGIS 137080"
 aliases:
   - "평안북도/강계군/고산면 (HGIS 137080)"
 ---

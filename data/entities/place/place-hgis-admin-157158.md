@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157158"
 label: "경상북도/선산군/산양면"
-labelNote: "HGIS 157158"
+sourceRef:
+  - "HGIS 157158"
 aliases:
   - "경상북도/선산군/산양면 (HGIS 157158)"
 ---

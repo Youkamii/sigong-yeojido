@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117760"
 label: "전라남도/무안군/지도면"
-labelNote: "HGIS 117760"
+sourceRef:
+  - "HGIS 117760"
 aliases:
   - "전라남도/무안군/지도면 (HGIS 117760)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144589"
 label: "경상남도/진주군/지수면"
-labelNote: "HGIS 144589"
+sourceRef:
+  - "HGIS 144589"
 aliases:
   - "경상남도/진주군/지수면 (HGIS 144589)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116764"
 label: "전라남도/능주군/동면"
-labelNote: "HGIS 116764"
+sourceRef:
+  - "HGIS 116764"
 aliases:
   - "전라남도/능주군/동면 (HGIS 116764)"
 ---

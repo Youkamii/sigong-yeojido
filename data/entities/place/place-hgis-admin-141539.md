@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141539"
 label: "평안북도/의주부/위원면"
-labelNote: "HGIS 141539"
+sourceRef:
+  - "HGIS 141539"
 aliases:
   - "평안북도/의주부/위원면 (HGIS 141539)"
 ---

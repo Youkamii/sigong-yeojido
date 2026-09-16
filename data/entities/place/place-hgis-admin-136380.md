@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136380"
 label: "평안북도/삭주군/산전면"
-labelNote: "HGIS 136380"
+sourceRef:
+  - "HGIS 136380"
 aliases:
   - "평안북도/삭주군/산전면 (HGIS 136380)"
 ---

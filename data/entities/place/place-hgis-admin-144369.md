@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144369"
 label: "경상남도/안의군/대대면"
-labelNote: "HGIS 144369"
+sourceRef:
+  - "HGIS 144369"
 aliases:
   - "경상남도/안의군/대대면 (HGIS 144369)"
 ---

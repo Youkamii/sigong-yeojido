@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157677"
 label: "경상북도/인동군"
-labelNote: "HGIS 157677"
+sourceRef:
+  - "HGIS 157677"
 aliases:
   - "경상북도/인동군 (HGIS 157677)"
 ---

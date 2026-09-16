@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136722"
 label: "평안북도/정주군/곽산면"
-labelNote: "HGIS 136722"
+sourceRef:
+  - "HGIS 136722"
 aliases:
   - "평안북도/정주군/곽산면 (HGIS 136722)"
 ---

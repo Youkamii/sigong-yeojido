@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156973"
 label: "경상북도/대구부/상수남면"
-labelNote: "HGIS 156973"
+sourceRef:
+  - "HGIS 156973"
 aliases:
   - "경상북도/대구부/상수남면 (HGIS 156973)"
 ---

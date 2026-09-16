@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117770"
 label: "전라남도/무안군/흑산면"
-labelNote: "HGIS 117770"
+sourceRef:
+  - "HGIS 117770"
 aliases:
   - "전라남도/무안군/흑산면 (HGIS 117770)"
 ---

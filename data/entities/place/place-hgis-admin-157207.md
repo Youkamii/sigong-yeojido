@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157207"
 label: "경상북도/신녕군/대량면"
-labelNote: "HGIS 157207"
+sourceRef:
+  - "HGIS 157207"
 aliases:
   - "경상북도/신녕군/대량면 (HGIS 157207)"
 ---

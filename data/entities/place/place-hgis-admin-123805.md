@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123805"
 label: "전라남도/해남군/황산면"
-labelNote: "HGIS 123805"
+sourceRef:
+  - "HGIS 123805"
 aliases:
   - "전라남도/해남군/황산면 (HGIS 123805)"
 ---

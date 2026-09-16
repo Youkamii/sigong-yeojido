@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144261"
 label: "경상남도/부산부/동평면"
-labelNote: "HGIS 144261"
+sourceRef:
+  - "HGIS 144261"
 aliases:
   - "경상남도/부산부/동평면 (HGIS 144261)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156905"
 label: "경상북도/김천군/과곡면"
-labelNote: "HGIS 156905"
+sourceRef:
+  - "HGIS 156905"
 aliases:
   - "경상북도/김천군/과곡면 (HGIS 156905)"
 ---

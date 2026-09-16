@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115007"
 label: "전라남도/영광군/대마면"
-labelNote: "HGIS 115007"
+sourceRef:
+  - "HGIS 115007"
 aliases:
   - "전라남도/영광군/대마면 (HGIS 115007)"
 ---

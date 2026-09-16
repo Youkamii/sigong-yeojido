@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156943"
 label: "경상북도/성주군/신곡면"
-labelNote: "HGIS 156943"
+sourceRef:
+  - "HGIS 156943"
 aliases:
   - "경상북도/성주군/신곡면 (HGIS 156943)"
 ---

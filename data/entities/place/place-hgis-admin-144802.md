@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144802"
 label: "경상남도/합천군/청덕면"
-labelNote: "HGIS 144802"
+sourceRef:
+  - "HGIS 144802"
 aliases:
   - "경상남도/합천군/청덕면 (HGIS 144802)"
 ---

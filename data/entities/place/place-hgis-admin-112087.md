@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112087"
 label: "전라남도/광주군/성내면"
-labelNote: "HGIS 112087"
+sourceRef:
+  - "HGIS 112087"
 aliases:
   - "전라남도/광주군/성내면 (HGIS 112087)"
 ---

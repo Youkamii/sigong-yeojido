@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156928"
 label: "경상북도/대구군/화현내면"
-labelNote: "HGIS 156928"
+sourceRef:
+  - "HGIS 156928"
 aliases:
   - "경상북도/대구군/화현내면 (HGIS 156928)"
 ---

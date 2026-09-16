@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156789"
 label: "경상북도/고령군/안림면"
-labelNote: "HGIS 156789"
+sourceRef:
+  - "HGIS 156789"
 aliases:
   - "경상북도/고령군/안림면 (HGIS 156789)"
 ---

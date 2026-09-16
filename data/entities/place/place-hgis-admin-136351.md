@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136351"
 label: "평안북도/벽동군/가면"
-labelNote: "HGIS 136351"
+sourceRef:
+  - "HGIS 136351"
 aliases:
   - "평안북도/벽동군/가면 (HGIS 136351)"
 ---

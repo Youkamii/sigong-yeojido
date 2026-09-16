@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-172064"
 label: "경상북도/개령군/북면"
-labelNote: "HGIS 172064"
+sourceRef:
+  - "HGIS 172064"
 aliases:
   - "경상북도/개령군/북면 (HGIS 172064)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144790"
 label: "경상남도/합천군/삼가면"
-labelNote: "HGIS 144790"
+sourceRef:
+  - "HGIS 144790"
 aliases:
   - "경상남도/합천군/삼가면 (HGIS 144790)"
 ---

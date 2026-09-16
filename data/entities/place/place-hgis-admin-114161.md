@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114161"
 label: "전라남도/나주군/신촌면"
-labelNote: "HGIS 114161"
+sourceRef:
+  - "HGIS 114161"
 aliases:
   - "전라남도/나주군/신촌면 (HGIS 114161)"
 ---

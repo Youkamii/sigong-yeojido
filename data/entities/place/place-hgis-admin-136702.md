@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136702"
 label: "평안북도/의주군/고진면"
-labelNote: "HGIS 136702"
+sourceRef:
+  - "HGIS 136702"
 aliases:
   - "평안북도/의주군/고진면 (HGIS 136702)"
 ---

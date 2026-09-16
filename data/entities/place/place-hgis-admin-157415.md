@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157415"
 label: "경상북도/의흥군/부남면"
-labelNote: "HGIS 157415"
+sourceRef:
+  - "HGIS 157415"
 aliases:
   - "경상북도/의흥군/부남면 (HGIS 157415)"
 ---

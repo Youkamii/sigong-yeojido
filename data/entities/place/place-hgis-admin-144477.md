@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144477"
 label: "경상남도/울산군/하부면"
-labelNote: "HGIS 144477"
+sourceRef:
+  - "HGIS 144477"
 aliases:
   - "경상남도/울산군/하부면 (HGIS 144477)"
 ---

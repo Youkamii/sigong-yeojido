@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156929"
 label: "경상북도/영해군/읍내면"
-labelNote: "HGIS 156929"
+sourceRef:
+  - "HGIS 156929"
 aliases:
   - "경상북도/영해군/읍내면 (HGIS 156929)"
 ---

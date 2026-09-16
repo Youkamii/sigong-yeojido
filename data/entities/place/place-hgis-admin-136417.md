@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136417"
 label: "평안북도/용천군/광화면"
-labelNote: "HGIS 136417"
+sourceRef:
+  - "HGIS 136417"
 aliases:
   - "평안북도/용천군/광화면 (HGIS 136417)"
 ---

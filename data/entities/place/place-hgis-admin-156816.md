@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156816"
 label: "경상북도/경산군/와촌면"
-labelNote: "HGIS 156816"
+sourceRef:
+  - "HGIS 156816"
 aliases:
   - "경상북도/경산군/와촌면 (HGIS 156816)"
 ---

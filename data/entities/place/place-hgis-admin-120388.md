@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120388"
 label: "전라남도/장흥군/내덕면"
-labelNote: "HGIS 120388"
+sourceRef:
+  - "HGIS 120388"
 aliases:
   - "전라남도/장흥군/내덕면 (HGIS 120388)"
 ---

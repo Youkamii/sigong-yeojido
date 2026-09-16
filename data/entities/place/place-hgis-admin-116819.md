@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116819"
 label: "전라남도/능주군/세청면"
-labelNote: "HGIS 116819"
+sourceRef:
+  - "HGIS 116819"
 aliases:
   - "전라남도/능주군/세청면 (HGIS 116819)"
 ---

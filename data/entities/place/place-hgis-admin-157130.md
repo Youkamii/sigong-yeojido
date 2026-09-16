@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157130"
 label: "경상북도/상주군/외동면"
-labelNote: "HGIS 157130"
+sourceRef:
+  - "HGIS 157130"
 aliases:
   - "경상북도/상주군/외동면 (HGIS 157130)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145015"
 label: "경상남도/용남군"
-labelNote: "HGIS 145015"
+sourceRef:
+  - "HGIS 145015"
 aliases:
   - "경상남도/용남군 (HGIS 145015)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144204"
 label: "경상남도/단성군/생비량면"
-labelNote: "HGIS 144204"
+sourceRef:
+  - "HGIS 144204"
 aliases:
   - "경상남도/단성군/생비량면 (HGIS 144204)"
 ---

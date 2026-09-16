@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143241"
 label: "경상남도/안의군/초호면"
-labelNote: "HGIS 143241"
+sourceRef:
+  - "HGIS 143241"
 aliases:
   - "경상남도/안의군/초호면 (HGIS 143241)"
 ---

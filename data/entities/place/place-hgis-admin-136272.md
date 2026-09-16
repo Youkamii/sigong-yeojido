@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136272"
 label: "평안북도/초산군/송하면"
-labelNote: "HGIS 136272"
+sourceRef:
+  - "HGIS 136272"
 aliases:
   - "평안북도/초산군/송하면 (HGIS 136272)"
 ---

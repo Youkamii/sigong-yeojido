@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157515"
 label: "경상북도/칠곡군/노곡면"
-labelNote: "HGIS 157515"
+sourceRef:
+  - "HGIS 157515"
 aliases:
   - "경상북도/칠곡군/노곡면 (HGIS 157515)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156898"
 label: "경상북도/김산군/조마남면"
-labelNote: "HGIS 156898"
+sourceRef:
+  - "HGIS 156898"
 aliases:
   - "경상북도/김산군/조마남면 (HGIS 156898)"
 ---

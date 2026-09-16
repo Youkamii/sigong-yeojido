@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157568"
 label: "경상북도/흥해군/동상면"
-labelNote: "HGIS 157568"
+sourceRef:
+  - "HGIS 157568"
 aliases:
   - "경상북도/흥해군/동상면 (HGIS 157568)"
 ---

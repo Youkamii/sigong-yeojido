@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144615"
 label: "경상남도/창녕군/성산면"
-labelNote: "HGIS 144615"
+sourceRef:
+  - "HGIS 144615"
 aliases:
   - "경상남도/창녕군/성산면 (HGIS 144615)"
 ---

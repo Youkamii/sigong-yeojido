@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144640"
 label: "경상남도/창원군/동면"
-labelNote: "HGIS 144640"
+sourceRef:
+  - "HGIS 144640"
 aliases:
   - "경상남도/창원군/동면 (HGIS 144640)"
 ---

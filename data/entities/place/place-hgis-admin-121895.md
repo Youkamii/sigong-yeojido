@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121895"
 label: "전라남도/진도군/고일면"
-labelNote: "HGIS 121895"
+sourceRef:
+  - "HGIS 121895"
 aliases:
   - "전라남도/진도군/고일면 (HGIS 121895)"
 ---

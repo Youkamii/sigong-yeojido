@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123854"
 label: "전라남도/화순군/도곡면"
-labelNote: "HGIS 123854"
+sourceRef:
+  - "HGIS 123854"
 aliases:
   - "전라남도/화순군/도곡면 (HGIS 123854)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157121"
 label: "경상북도/상주군/이안면"
-labelNote: "HGIS 157121"
+sourceRef:
+  - "HGIS 157121"
 aliases:
   - "경상북도/상주군/이안면 (HGIS 157121)"
 ---

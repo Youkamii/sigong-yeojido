@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113754"
 label: "전라남도/나주군/남평면"
-labelNote: "HGIS 113754"
+sourceRef:
+  - "HGIS 113754"
 aliases:
   - "전라남도/나주군/남평면 (HGIS 113754)"
 ---

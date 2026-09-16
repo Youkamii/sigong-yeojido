@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157154"
 label: "경상북도/선산군/망장면"
-labelNote: "HGIS 157154"
+sourceRef:
+  - "HGIS 157154"
 aliases:
   - "경상북도/선산군/망장면 (HGIS 157154)"
 ---

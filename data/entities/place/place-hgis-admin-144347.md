@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144347"
 label: "경상남도/산청군/차황면"
-labelNote: "HGIS 144347"
+sourceRef:
+  - "HGIS 144347"
 aliases:
   - "경상남도/산청군/차황면 (HGIS 144347)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144370"
 label: "경상남도/안의군/동리면"
-labelNote: "HGIS 144370"
+sourceRef:
+  - "HGIS 144370"
 aliases:
   - "경상남도/안의군/동리면 (HGIS 144370)"
 ---

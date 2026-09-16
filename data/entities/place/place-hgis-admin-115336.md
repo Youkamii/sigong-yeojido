@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115336"
 label: "전라남도/영광군/봉산면"
-labelNote: "HGIS 115336"
+sourceRef:
+  - "HGIS 115336"
 aliases:
   - "전라남도/영광군/봉산면 (HGIS 115336)"
 ---

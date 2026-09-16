@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157569"
 label: "경상북도/흥해군/북상면"
-labelNote: "HGIS 157569"
+sourceRef:
+  - "HGIS 157569"
 aliases:
   - "경상북도/흥해군/북상면 (HGIS 157569)"
 ---

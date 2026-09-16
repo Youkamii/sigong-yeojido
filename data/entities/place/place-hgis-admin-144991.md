@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144991"
 label: "경상남도/곤양군"
-labelNote: "HGIS 144991"
+sourceRef:
+  - "HGIS 144991"
 aliases:
   - "경상남도/곤양군 (HGIS 144991)"
 ---

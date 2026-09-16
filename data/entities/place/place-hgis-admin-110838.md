@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110838"
 label: "전라남도/고흥군/두원면"
-labelNote: "HGIS 110838"
+sourceRef:
+  - "HGIS 110838"
 aliases:
   - "전라남도/고흥군/두원면 (HGIS 110838)"
 ---

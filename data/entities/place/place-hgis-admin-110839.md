@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110839"
 label: "전라남도/고흥군/봉래면"
-labelNote: "HGIS 110839"
+sourceRef:
+  - "HGIS 110839"
 aliases:
   - "전라남도/고흥군/봉래면 (HGIS 110839)"
 ---

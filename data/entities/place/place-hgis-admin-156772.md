@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156772"
 label: "경상북도/봉화군/서면"
-labelNote: "HGIS 156772"
+sourceRef:
+  - "HGIS 156772"
 aliases:
   - "경상북도/봉화군/서면 (HGIS 156772)"
 ---

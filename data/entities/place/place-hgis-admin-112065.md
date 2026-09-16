@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112065"
 label: "전라남도/광주군/석저면"
-labelNote: "HGIS 112065"
+sourceRef:
+  - "HGIS 112065"
 aliases:
   - "전라남도/광주군/석저면 (HGIS 112065)"
 ---

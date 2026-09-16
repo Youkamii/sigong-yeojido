@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157354"
 label: "경상북도/영천군/신녕면"
-labelNote: "HGIS 157354"
+sourceRef:
+  - "HGIS 157354"
 aliases:
   - "경상북도/영천군/신녕면 (HGIS 157354)"
 ---

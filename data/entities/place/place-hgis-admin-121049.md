@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121049"
 label: "전라남도/제주군/좌면"
-labelNote: "HGIS 121049"
+sourceRef:
+  - "HGIS 121049"
 aliases:
   - "전라남도/제주군/좌면 (HGIS 121049)"
 ---

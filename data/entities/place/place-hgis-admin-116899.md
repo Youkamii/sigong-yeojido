@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116899"
 label: "전라남도/능주군/읍내면"
-labelNote: "HGIS 116899"
+sourceRef:
+  - "HGIS 116899"
 aliases:
   - "전라남도/능주군/읍내면 (HGIS 116899)"
 ---

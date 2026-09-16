@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144820"
 label: "경상남도/마산부/천가면"
-labelNote: "HGIS 144820"
+sourceRef:
+  - "HGIS 144820"
 aliases:
   - "경상남도/마산부/천가면 (HGIS 144820)"
 ---

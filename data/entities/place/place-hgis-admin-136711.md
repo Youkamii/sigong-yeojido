@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136711"
 label: "평안북도/위원군/대덕면"
-labelNote: "HGIS 136711"
+sourceRef:
+  - "HGIS 136711"
 aliases:
   - "평안북도/위원군/대덕면 (HGIS 136711)"
 ---

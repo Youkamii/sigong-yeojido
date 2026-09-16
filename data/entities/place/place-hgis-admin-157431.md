@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157431"
 label: "경상북도/인동군/읍내면"
-labelNote: "HGIS 157431"
+sourceRef:
+  - "HGIS 157431"
 aliases:
   - "경상북도/인동군/읍내면 (HGIS 157431)"
 ---

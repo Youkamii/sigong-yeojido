@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111953"
 label: "전라남도/광주군/방하동면"
-labelNote: "HGIS 111953"
+sourceRef:
+  - "HGIS 111953"
 aliases:
   - "전라남도/광주군/방하동면 (HGIS 111953)"
 ---

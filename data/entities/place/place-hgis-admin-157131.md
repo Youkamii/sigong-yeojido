@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157131"
 label: "경상북도/상주군/외북면"
-labelNote: "HGIS 157131"
+sourceRef:
+  - "HGIS 157131"
 aliases:
   - "경상북도/상주군/외북면 (HGIS 157131)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136744"
 label: "평안북도/희천군/희천면"
-labelNote: "HGIS 136744"
+sourceRef:
+  - "HGIS 136744"
 aliases:
   - "평안북도/희천군/희천면 (HGIS 136744)"
 ---

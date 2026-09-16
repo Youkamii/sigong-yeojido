@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156954"
 label: "경상북도/대구군/달서면"
-labelNote: "HGIS 156954"
+sourceRef:
+  - "HGIS 156954"
 aliases:
   - "경상북도/대구군/달서면 (HGIS 156954)"
 ---

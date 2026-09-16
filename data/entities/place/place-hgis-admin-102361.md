@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102361"
 label: "전라북도/임실군/신안면"
-labelNote: "HGIS 102361"
+sourceRef:
+  - "HGIS 102361"
 aliases:
   - "전라북도/임실군/신안면 (HGIS 102361)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136651"
 label: "평안북도/삭주군/남서면"
-labelNote: "HGIS 136651"
+sourceRef:
+  - "HGIS 136651"
 aliases:
   - "평안북도/삭주군/남서면 (HGIS 136651)"
 ---

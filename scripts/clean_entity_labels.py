@@ -2,6 +2,7 @@
 
 data/entities/<type>/<id>.md 머리말의 label 을 화면 규칙(services/entity_labels.py)으로 정리하고
  - 떼어낸 설명은 labelNote 에
+ - 설명에 섞인 자료 식별자('HGIS 176301' 같은 것)는 sourceRef 에
  - '집단 행위자' 꼬리는 kind: "group" 으로
  - 원래 이름은 aliases 에(검색이 계속 잡히도록)
 남긴다. 정리 뒤 같은 유형·같은 이름이 서로 다른 개체에 생기면(sameEntityAs 로 묶이지 않은 채)
@@ -20,7 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "services"))
-from entity_labels import clean_label  # noqa: E402
+from entity_labels import clean_label, split_source_refs  # noqa: E402
 from frontmatter import parse_front_matter  # noqa: E402
 from validate import parse_claims_text  # noqa: E402
 
@@ -37,11 +38,14 @@ def _key(line: str) -> str | None:
 
 
 def render(meta_lines: list[str], updates: dict) -> list[str]:
-    """label/labelHanja 뒤에 labelNote·kind·aliases 를 끼워 넣은 머리말 줄 목록. 나머지 줄은 그대로 둔다."""
+    """label/labelHanja 뒤에 labelNote·sourceRef·kind·aliases 를 끼워 넣은 머리말 줄 목록. 나머지 줄은 그대로 둔다."""
     anchor = max((i for i, line in enumerate(meta_lines) if _key(line) in ("label", "labelHanja")), default=-1)
     if anchor < 0:
         raise ValueError("front matter has no label line")
     added = [f'labelNote: {scalar(updates["labelNote"])}'] if updates.get("labelNote") else []
+    if updates.get("sourceRef"):
+        added.append("sourceRef:")
+        added.extend(f"  - {scalar(ref)}" for ref in updates["sourceRef"])
     if updates.get("kind"):
         added.append(f'kind: {scalar(updates["kind"])}')
     if updates.get("aliases"):
@@ -53,7 +57,7 @@ def render(meta_lines: list[str], updates: dict) -> list[str]:
     while i < len(meta_lines):
         line, key = meta_lines[i], _key(meta_lines[i])
         i += 1
-        if key in ("labelNote", "kind", "aliases"):  # 이미 있던 값은 새로 쓴다
+        if key in ("labelNote", "sourceRef", "kind", "aliases"):  # 이미 있던 값은 새로 쓴다
             while i < len(meta_lines) and _key(meta_lines[i]) is None:
                 i += 1
             continue
@@ -80,7 +84,9 @@ def load_entities(data: Path) -> list[dict]:
     for path in sorted((data / "entities").glob("*/*.md")):
         meta, _ = parse_front_matter(path.read_text(encoding="utf-8"))
         rows.append({"id": path.stem, "path": path, "type": meta.get("type"),
-                     "label": meta.get("label") or "", "aliases": list(meta.get("aliases") or [])})
+                     "label": meta.get("label") or "", "aliases": list(meta.get("aliases") or []),
+                     "labelNote": str(meta.get("labelNote") or ""), "kind": str(meta.get("kind") or ""),
+                     "sourceRef": [str(ref) for ref in (meta.get("sourceRef") or [])]})
     return rows
 
 
@@ -142,13 +148,23 @@ def plan(rows: list[dict], pairs: list[tuple[str, str]]) -> tuple[list[dict], li
     actions = []
     for r in rows:
         c = cleaned[r["id"]]
+        was_note, was_refs = str(r.get("labelNote") or ""), list(r.get("sourceRef") or [])
         if r["id"] in held or not c["changed"]:
+            # 이름은 그대로 두고, 이미 적어 둔 설명에서 자료 식별자만 sourceRef 로 옮긴다 (#200 2차).
+            note, refs = split_source_refs(was_note)
+            refs = list(dict.fromkeys([*was_refs, *refs]))
+            if note == was_note and refs == was_refs:
+                continue
+            actions.append({"id": r["id"], "path": r["path"], "type": r["type"], "from": r["label"],
+                            "label": r["label"], "labelNote": note, "sourceRef": refs,
+                            "kind": str(r.get("kind") or ""), "aliases": list(r["aliases"])})
             continue
         aliases = [a for a in r["aliases"] if a != c["label"]]
         if r["label"] != c["label"] and r["label"] not in aliases:
             aliases.append(r["label"])
         actions.append({"id": r["id"], "path": r["path"], "type": r["type"], "from": r["label"],
                         "label": c["label"], "labelNote": c["note"],
+                        "sourceRef": list(dict.fromkeys([*was_refs, *c["sourceRef"]])),
                         "kind": "group" if c["group"] else "", "aliases": aliases})
     return actions, conflicts
 
@@ -165,8 +181,9 @@ def main() -> int:
     for action in actions:
         text = rewrite(action["path"], action)
         meta, _ = parse_front_matter(text)  # 되읽어 같은 값인지 확인한다 — 따옴표가 값을 바꾸면 여기서 멈춘다
-        wrote = (meta.get("label"), meta.get("labelNote") or "", meta.get("kind") or "", list(meta.get("aliases") or []))
-        if wrote != (action["label"], action["labelNote"], action["kind"], action["aliases"]):
+        wrote = (meta.get("label"), meta.get("labelNote") or "", meta.get("kind") or "",
+                 list(meta.get("aliases") or []), [str(ref) for ref in (meta.get("sourceRef") or [])])
+        if wrote != (action["label"], action["labelNote"], action["kind"], action["aliases"], action["sourceRef"]):
             raise SystemExit(f"{action['path']}: front matter round trip changed the value: {wrote!r}")
         if args.apply:
             with io.open(action["path"], "w", encoding="utf-8", newline="") as handle:
@@ -175,6 +192,7 @@ def main() -> int:
     by_type = collections.Counter(a["type"] for a in actions)
     summary = {"entities": len(rows), "cleaned": len(actions),
                "labelNote": sum(1 for a in actions if a["labelNote"]),
+               "sourceRef": sum(len(a["sourceRef"]) for a in actions),
                "group": sum(1 for a in actions if a["kind"]),
                "aliases": sum(len(a["aliases"]) for a in actions),
                "held": sum(len(c["held"]) for c in conflicts),
@@ -182,7 +200,8 @@ def main() -> int:
     print(json.dumps(summary, ensure_ascii=False, sort_keys=True))
     if args.report:
         payload = {"summary": summary, "conflicts": conflicts,
-                   "samples": [{k: a[k] for k in ("id", "type", "from", "label", "labelNote", "kind")} for a in actions]}
+                   "samples": [{k: a[k] for k in ("id", "type", "from", "label", "labelNote", "sourceRef", "kind")}
+                               for a in actions]}
         args.report.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
     return 0
 

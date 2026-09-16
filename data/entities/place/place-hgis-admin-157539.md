@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157539"
 label: "경상북도/풍기군/서부면"
-labelNote: "HGIS 157539"
+sourceRef:
+  - "HGIS 157539"
 aliases:
   - "경상북도/풍기군/서부면 (HGIS 157539)"
 ---

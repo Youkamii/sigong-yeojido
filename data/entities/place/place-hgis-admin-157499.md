@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157499"
 label: "경상북도/청송군/현내면"
-labelNote: "HGIS 157499"
+sourceRef:
+  - "HGIS 157499"
 aliases:
   - "경상북도/청송군/현내면 (HGIS 157499)"
 ---

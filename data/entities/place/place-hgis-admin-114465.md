@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114465"
 label: "전라남도/나주군/평리면"
-labelNote: "HGIS 114465"
+sourceRef:
+  - "HGIS 114465"
 aliases:
   - "전라남도/나주군/평리면 (HGIS 114465)"
 ---

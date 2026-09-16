@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157194"
 label: "경상북도/순흥군/내죽면"
-labelNote: "HGIS 157194"
+sourceRef:
+  - "HGIS 157194"
 aliases:
   - "경상북도/순흥군/내죽면 (HGIS 157194)"
 ---

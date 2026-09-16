@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156957"
 label: "경상북도/대구군/동하면"
-labelNote: "HGIS 156957"
+sourceRef:
+  - "HGIS 156957"
 aliases:
   - "경상북도/대구군/동하면 (HGIS 156957)"
 ---

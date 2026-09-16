@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156872"
 label: "경상북도/고령군/하미면"
-labelNote: "HGIS 156872"
+sourceRef:
+  - "HGIS 156872"
 aliases:
   - "경상북도/고령군/하미면 (HGIS 156872)"
 ---

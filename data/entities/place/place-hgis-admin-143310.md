@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143310"
 label: "경상남도/곤양군/양포면"
-labelNote: "HGIS 143310"
+sourceRef:
+  - "HGIS 143310"
 aliases:
   - "경상남도/곤양군/양포면 (HGIS 143310)"
 ---

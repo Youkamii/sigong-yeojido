@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112449"
 label: "전라남도/구례군/구례면"
-labelNote: "HGIS 112449"
+sourceRef:
+  - "HGIS 112449"
 aliases:
   - "전라남도/구례군/구례면 (HGIS 112449)"
 ---

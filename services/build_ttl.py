@@ -294,6 +294,7 @@ class Shell:
     label_note: str | None = None   # 이름에서 떼어낸 설명 (#200)
     kind: str | None = None         # 'group' 이면 화면에서 나라가 아니라 집단으로 보인다 (#200)
     aliases: tuple[str, ...] = ()   # 정리 전 원래 이름 — 검색이 계속 잡히게 한다 (#200)
+    source_ref: tuple[str, ...] = ()  # 'HGIS 176301' 같은 자료 식별자 — 화면에 보이지 않는다 (#200)
 
 
 def load_shells(entities_dir: Path, warnings: list[str]) -> dict[str, Shell]:
@@ -319,9 +320,11 @@ def load_shells(entities_dir: Path, warnings: list[str]) -> dict[str, Shell]:
             warnings.append(f"{where}: duplicate entity id {eid}; first one wins")
             continue
         aliases = meta.get("aliases")
+        source_ref = meta.get("sourceRef")
         shells[eid] = Shell(eid, dir_cls, meta.get("label") or None, meta.get("labelHanja") or None,
                             meta.get("labelNote") or None, meta.get("kind") or None,
-                            tuple(str(a) for a in aliases if isinstance(a, str) and a) if isinstance(aliases, list) else ())
+                            tuple(str(a) for a in aliases if isinstance(a, str) and a) if isinstance(aliases, list) else (),
+                            tuple(str(r) for r in source_ref if isinstance(r, str) and r) if isinstance(source_ref, list) else ())
     return shells
 
 
@@ -531,6 +534,8 @@ def add_shell(graph: Graph, shell: Shell) -> None:
     n.add("syj:kind", lit(shell.kind) if shell.kind else None)
     for alias in shell.aliases:
         n.add("syj:alias", lit(alias, "ko"))
+    for ref in shell.source_ref:
+        n.add("syj:sourceRef", lit(ref))
 
 
 def add_chunk(graph: Graph, cid: str, chunk: dict, cards: dict) -> None:

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157010"
 label: "경상북도/예천군/용문면"
-labelNote: "HGIS 157010"
+sourceRef:
+  - "HGIS 157010"
 aliases:
   - "경상북도/예천군/용문면 (HGIS 157010)"
 ---

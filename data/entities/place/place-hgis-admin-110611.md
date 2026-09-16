@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110611"
 label: "전라남도/여수군/여수읍"
-labelNote: "HGIS 110611"
+sourceRef:
+  - "HGIS 110611"
 aliases:
   - "전라남도/여수군/여수읍 (HGIS 110611)"
 ---

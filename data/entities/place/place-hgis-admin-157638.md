@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157638"
 label: "경상북도/자인군"
-labelNote: "HGIS 157638"
+sourceRef:
+  - "HGIS 157638"
 aliases:
   - "경상북도/자인군 (HGIS 157638)"
 ---

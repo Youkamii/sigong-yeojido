@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157519"
 label: "경상북도/칠곡군/서북면"
-labelNote: "HGIS 157519"
+sourceRef:
+  - "HGIS 157519"
 aliases:
   - "경상북도/칠곡군/서북면 (HGIS 157519)"
 ---

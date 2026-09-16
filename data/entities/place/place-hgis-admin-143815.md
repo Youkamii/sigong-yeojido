@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143815"
 label: "경상남도/진양군/명석면"
-labelNote: "HGIS 143815"
+sourceRef:
+  - "HGIS 143815"
 aliases:
   - "경상남도/진양군/명석면 (HGIS 143815)"
 ---

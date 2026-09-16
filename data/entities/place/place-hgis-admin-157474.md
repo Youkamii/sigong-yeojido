@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157474"
 label: "경상북도/청도군/운문면"
-labelNote: "HGIS 157474"
+sourceRef:
+  - "HGIS 157474"
 aliases:
   - "경상북도/청도군/운문면 (HGIS 157474)"
 ---

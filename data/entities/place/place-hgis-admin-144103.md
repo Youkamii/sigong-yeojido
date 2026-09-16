@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144103"
 label: "경상남도/고성군/동마면"
-labelNote: "HGIS 144103"
+sourceRef:
+  - "HGIS 144103"
 aliases:
   - "경상남도/고성군/동마면 (HGIS 144103)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154693"
 label: "경상남도/함양군/관변면"
-labelNote: "HGIS 154693"
+sourceRef:
+  - "HGIS 154693"
 aliases:
   - "경상남도/함양군/관변면 (HGIS 154693)"
 ---

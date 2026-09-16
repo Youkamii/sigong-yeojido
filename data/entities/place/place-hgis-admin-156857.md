@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156857"
 label: "경상북도/고령군/임천면"
-labelNote: "HGIS 156857"
+sourceRef:
+  - "HGIS 156857"
 aliases:
   - "경상북도/고령군/임천면 (HGIS 156857)"
 ---

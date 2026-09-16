@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156884"
 label: "경상북도/군위군/의흥면"
-labelNote: "HGIS 156884"
+sourceRef:
+  - "HGIS 156884"
 aliases:
   - "경상북도/군위군/의흥면 (HGIS 156884)"
 ---

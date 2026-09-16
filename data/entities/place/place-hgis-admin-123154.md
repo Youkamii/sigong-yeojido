@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123154"
 label: "전라남도/해남군/계곡면"
-labelNote: "HGIS 123154"
+sourceRef:
+  - "HGIS 123154"
 aliases:
   - "전라남도/해남군/계곡면 (HGIS 123154)"
 ---

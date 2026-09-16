@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156911"
 label: "경상북도/김천군/대덕면"
-labelNote: "HGIS 156911"
+sourceRef:
+  - "HGIS 156911"
 aliases:
   - "경상북도/김천군/대덕면 (HGIS 156911)"
 ---

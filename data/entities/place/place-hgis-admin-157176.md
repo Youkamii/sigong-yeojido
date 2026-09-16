@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157176"
 label: "경상북도/성주군/대리면"
-labelNote: "HGIS 157176"
+sourceRef:
+  - "HGIS 157176"
 aliases:
   - "경상북도/성주군/대리면 (HGIS 157176)"
 ---

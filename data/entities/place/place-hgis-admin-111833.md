@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111833"
 label: "전라남도/광주군/대치면"
-labelNote: "HGIS 111833"
+sourceRef:
+  - "HGIS 111833"
 aliases:
   - "전라남도/광주군/대치면 (HGIS 111833)"
 ---

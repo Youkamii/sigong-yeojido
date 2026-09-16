@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156722"
 label: "경상북도/선산군/신당면"
-labelNote: "HGIS 156722"
+sourceRef:
+  - "HGIS 156722"
 aliases:
   - "경상북도/선산군/신당면 (HGIS 156722)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144087"
 label: "경상남도/거창군/신원면"
-labelNote: "HGIS 144087"
+sourceRef:
+  - "HGIS 144087"
 aliases:
   - "경상남도/거창군/신원면 (HGIS 144087)"
 ---

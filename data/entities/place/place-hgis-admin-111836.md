@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111836"
 label: "전라남도/광주군/덕산면"
-labelNote: "HGIS 111836"
+sourceRef:
+  - "HGIS 111836"
 aliases:
   - "전라남도/광주군/덕산면 (HGIS 111836)"
 ---

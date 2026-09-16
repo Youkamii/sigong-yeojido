@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144282"
 label: "경상남도/사천군/근남면"
-labelNote: "HGIS 144282"
+sourceRef:
+  - "HGIS 144282"
 aliases:
   - "경상남도/사천군/근남면 (HGIS 144282)"
 ---

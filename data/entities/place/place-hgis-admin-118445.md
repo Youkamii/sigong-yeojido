@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118445"
 label: "전라남도/순천군/용두면"
-labelNote: "HGIS 118445"
+sourceRef:
+  - "HGIS 118445"
 aliases:
   - "전라남도/순천군/용두면 (HGIS 118445)"
 ---

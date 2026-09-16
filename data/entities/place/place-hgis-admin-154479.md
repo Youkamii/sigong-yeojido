@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154479"
 label: "경상남도/창원부/상남면"
-labelNote: "HGIS 154479"
+sourceRef:
+  - "HGIS 154479"
 aliases:
   - "경상남도/창원부/상남면 (HGIS 154479)"
 ---

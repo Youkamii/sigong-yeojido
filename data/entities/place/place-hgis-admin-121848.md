@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121848"
 label: "전라남도/지도군/흑산면"
-labelNote: "HGIS 121848"
+sourceRef:
+  - "HGIS 121848"
 aliases:
   - "전라남도/지도군/흑산면 (HGIS 121848)"
 ---

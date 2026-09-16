@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157647"
 label: "경상북도/김산군"
-labelNote: "HGIS 157647"
+sourceRef:
+  - "HGIS 157647"
 aliases:
   - "경상북도/김산군 (HGIS 157647)"
 ---

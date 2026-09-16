@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157243"
 label: "경상북도/안동군/안동면"
-labelNote: "HGIS 157243"
+sourceRef:
+  - "HGIS 157243"
 aliases:
   - "경상북도/안동군/안동면 (HGIS 157243)"
 ---

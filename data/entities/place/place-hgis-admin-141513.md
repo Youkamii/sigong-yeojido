@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141513"
 label: "평안북도/의주부/월화면"
-labelNote: "HGIS 141513"
+sourceRef:
+  - "HGIS 141513"
 aliases:
   - "평안북도/의주부/월화면 (HGIS 141513)"
 ---

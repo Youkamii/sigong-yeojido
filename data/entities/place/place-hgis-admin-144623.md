@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144623"
 label: "경상남도/창녕군/유어면"
-labelNote: "HGIS 144623"
+sourceRef:
+  - "HGIS 144623"
 aliases:
   - "경상남도/창녕군/유어면 (HGIS 144623)"
 ---

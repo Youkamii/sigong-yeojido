@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113550"
 label: "전라남도/동복군/외북면"
-labelNote: "HGIS 113550"
+sourceRef:
+  - "HGIS 113550"
 aliases:
   - "전라남도/동복군/외북면 (HGIS 113550)"
 ---

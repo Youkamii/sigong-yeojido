@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122998"
 label: "전라남도/함평군/적량면"
-labelNote: "HGIS 122998"
+sourceRef:
+  - "HGIS 122998"
 aliases:
   - "전라남도/함평군/적량면 (HGIS 122998)"
 ---

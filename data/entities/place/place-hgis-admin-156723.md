@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156723"
 label: "경상북도/선산군/하고면"
-labelNote: "HGIS 156723"
+sourceRef:
+  - "HGIS 156723"
 aliases:
   - "경상북도/선산군/하고면 (HGIS 156723)"
 ---

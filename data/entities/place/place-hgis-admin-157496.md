@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157496"
 label: "경상북도/청송군/청송면"
-labelNote: "HGIS 157496"
+sourceRef:
+  - "HGIS 157496"
 aliases:
   - "경상북도/청송군/청송면 (HGIS 157496)"
 ---

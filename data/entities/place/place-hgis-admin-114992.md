@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114992"
 label: "전라남도/영광군/남죽면"
-labelNote: "HGIS 114992"
+sourceRef:
+  - "HGIS 114992"
 aliases:
   - "전라남도/영광군/남죽면 (HGIS 114992)"
 ---

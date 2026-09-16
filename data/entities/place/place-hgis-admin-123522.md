@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123522"
 label: "전라남도/해남군/옥천면"
-labelNote: "HGIS 123522"
+sourceRef:
+  - "HGIS 123522"
 aliases:
   - "전라남도/해남군/옥천면 (HGIS 123522)"
 ---

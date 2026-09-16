@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144094"
 label: "경상남도/거창군/주상면"
-labelNote: "HGIS 144094"
+sourceRef:
+  - "HGIS 144094"
 aliases:
   - "경상남도/거창군/주상면 (HGIS 144094)"
 ---

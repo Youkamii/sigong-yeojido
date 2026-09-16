@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122280"
 label: "전라남도/창평군/군내면"
-labelNote: "HGIS 122280"
+sourceRef:
+  - "HGIS 122280"
 aliases:
   - "전라남도/창평군/군내면 (HGIS 122280)"
 ---

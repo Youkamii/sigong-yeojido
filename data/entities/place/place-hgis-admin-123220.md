@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123220"
 label: "전라남도/해남군/마산면"
-labelNote: "HGIS 123220"
+sourceRef:
+  - "HGIS 123220"
 aliases:
   - "전라남도/해남군/마산면 (HGIS 123220)"
 ---

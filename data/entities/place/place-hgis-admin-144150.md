@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144150"
 label: "경상남도/기장군/상서면"
-labelNote: "HGIS 144150"
+sourceRef:
+  - "HGIS 144150"
 aliases:
   - "경상남도/기장군/상서면 (HGIS 144150)"
 ---

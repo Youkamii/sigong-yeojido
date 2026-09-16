@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157333"
 label: "경상북도/영천군/진혈면"
-labelNote: "HGIS 157333"
+sourceRef:
+  - "HGIS 157333"
 aliases:
   - "경상북도/영천군/진혈면 (HGIS 157333)"
 ---

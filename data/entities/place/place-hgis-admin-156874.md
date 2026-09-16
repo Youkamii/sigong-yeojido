@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156874"
 label: "경상북도/군위군/고로면"
-labelNote: "HGIS 156874"
+sourceRef:
+  - "HGIS 156874"
 aliases:
   - "경상북도/군위군/고로면 (HGIS 156874)"
 ---

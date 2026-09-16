@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157181"
 label: "경상북도/성주군/벽진면"
-labelNote: "HGIS 157181"
+sourceRef:
+  - "HGIS 157181"
 aliases:
   - "경상북도/성주군/벽진면 (HGIS 157181)"
 ---

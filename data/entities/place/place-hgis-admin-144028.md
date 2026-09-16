@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144028"
 label: "경상남도/사천군/서포면"
-labelNote: "HGIS 144028"
+sourceRef:
+  - "HGIS 144028"
 aliases:
   - "경상남도/사천군/서포면 (HGIS 144028)"
 ---

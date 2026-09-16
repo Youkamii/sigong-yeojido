@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144414"
 label: "경상남도/영산군/도사면"
-labelNote: "HGIS 144414"
+sourceRef:
+  - "HGIS 144414"
 aliases:
   - "경상남도/영산군/도사면 (HGIS 144414)"
 ---

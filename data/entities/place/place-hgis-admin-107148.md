@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-107148"
 label: "전라북도/남원군/통한면"
-labelNote: "HGIS 107148"
+sourceRef:
+  - "HGIS 107148"
 aliases:
   - "전라북도/남원군/통한면 (HGIS 107148)"
 ---

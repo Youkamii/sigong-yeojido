@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157573"
 label: "경상북도/흥해군/서부면"
-labelNote: "HGIS 157573"
+sourceRef:
+  - "HGIS 157573"
 aliases:
   - "경상북도/흥해군/서부면 (HGIS 157573)"
 ---

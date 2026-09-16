@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-100123"
 label: "전라북도/부안군/서도면"
-labelNote: "HGIS 100123"
+sourceRef:
+  - "HGIS 100123"
 aliases:
   - "전라북도/부안군/서도면 (HGIS 100123)"
 ---

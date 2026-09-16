@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142771"
 label: "평안북도/초산군/별하면"
-labelNote: "HGIS 142771"
+sourceRef:
+  - "HGIS 142771"
 aliases:
   - "평안북도/초산군/별하면 (HGIS 142771)"
 ---

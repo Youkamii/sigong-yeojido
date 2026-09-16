@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157480"
 label: "경상북도/청도군/일위면"
-labelNote: "HGIS 157480"
+sourceRef:
+  - "HGIS 157480"
 aliases:
   - "경상북도/청도군/일위면 (HGIS 157480)"
 ---

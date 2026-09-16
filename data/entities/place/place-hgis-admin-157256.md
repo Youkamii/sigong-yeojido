@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157256"
 label: "경상북도/연일군/서면"
-labelNote: "HGIS 157256"
+sourceRef:
+  - "HGIS 157256"
 aliases:
   - "경상북도/연일군/서면 (HGIS 157256)"
 ---

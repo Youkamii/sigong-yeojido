@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144468"
 label: "경상남도/울산군/온양면"
-labelNote: "HGIS 144468"
+sourceRef:
+  - "HGIS 144468"
 aliases:
   - "경상남도/울산군/온양면 (HGIS 144468)"
 ---

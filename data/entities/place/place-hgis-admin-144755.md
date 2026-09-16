@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144755"
 label: "경상남도/함양군/도북면"
-labelNote: "HGIS 144755"
+sourceRef:
+  - "HGIS 144755"
 aliases:
   - "경상남도/함양군/도북면 (HGIS 144755)"
 ---

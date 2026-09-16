@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144776"
 label: "경상남도/함양군/지내면"
-labelNote: "HGIS 144776"
+sourceRef:
+  - "HGIS 144776"
 aliases:
   - "경상남도/함양군/지내면 (HGIS 144776)"
 ---

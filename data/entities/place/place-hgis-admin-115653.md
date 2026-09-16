@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115653"
 label: "전라남도/영광군/원산면"
-labelNote: "HGIS 115653"
+sourceRef:
+  - "HGIS 115653"
 aliases:
   - "전라남도/영광군/원산면 (HGIS 115653)"
 ---

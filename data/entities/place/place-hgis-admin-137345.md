@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137345"
 label: "평안북도/정주군/정주읍"
-labelNote: "HGIS 137345"
+sourceRef:
+  - "HGIS 137345"
 aliases:
   - "평안북도/정주군/정주읍 (HGIS 137345)"
 ---

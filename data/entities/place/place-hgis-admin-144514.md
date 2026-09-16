@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144514"
 label: "경상남도/의령군/지정면"
-labelNote: "HGIS 144514"
+sourceRef:
+  - "HGIS 144514"
 aliases:
   - "경상남도/의령군/지정면 (HGIS 144514)"
 ---

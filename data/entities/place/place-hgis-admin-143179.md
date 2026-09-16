@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143179"
 label: "경상남도/합천군/궁소면"
-labelNote: "HGIS 143179"
+sourceRef:
+  - "HGIS 143179"
 aliases:
   - "경상남도/합천군/궁소면 (HGIS 143179)"
 ---

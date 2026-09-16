@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157035"
 label: "경상북도/용궁군/신읍면"
-labelNote: "HGIS 157035"
+sourceRef:
+  - "HGIS 157035"
 aliases:
   - "경상북도/용궁군/신읍면 (HGIS 157035)"
 ---

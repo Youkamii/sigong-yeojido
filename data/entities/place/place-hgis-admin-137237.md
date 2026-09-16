@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137237"
 label: "평안북도/운산군/북진읍"
-labelNote: "HGIS 137237"
+sourceRef:
+  - "HGIS 137237"
 aliases:
   - "평안북도/운산군/북진읍 (HGIS 137237)"
 ---

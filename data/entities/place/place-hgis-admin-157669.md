@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157669"
 label: "경상북도/영일군"
-labelNote: "HGIS 157669"
+sourceRef:
+  - "HGIS 157669"
 aliases:
   - "경상북도/영일군 (HGIS 157669)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-106452"
 label: "전라북도/흥덕군"
-labelNote: "HGIS 106452"
+sourceRef:
+  - "HGIS 106452"
 aliases:
   - "전라북도/흥덕군 (HGIS 106452)"
 ---

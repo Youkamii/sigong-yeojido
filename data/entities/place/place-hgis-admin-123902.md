@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123902"
 label: "전라남도/화순군/한천면"
-labelNote: "HGIS 123902"
+sourceRef:
+  - "HGIS 123902"
 aliases:
   - "전라남도/화순군/한천면 (HGIS 123902)"
 ---

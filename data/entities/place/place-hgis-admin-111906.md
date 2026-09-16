@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111906"
 label: "전라남도/광주군/유등곡면"
-labelNote: "HGIS 111906"
+sourceRef:
+  - "HGIS 111906"
 aliases:
   - "전라남도/광주군/유등곡면 (HGIS 111906)"
 ---

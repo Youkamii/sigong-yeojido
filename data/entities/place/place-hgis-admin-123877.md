@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123877"
 label: "전라남도/화순군/이양면"
-labelNote: "HGIS 123877"
+sourceRef:
+  - "HGIS 123877"
 aliases:
   - "전라남도/화순군/이양면 (HGIS 123877)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110370"
 label: "전라남도/강진군/강진읍"
-labelNote: "HGIS 110370"
+sourceRef:
+  - "HGIS 110370"
 aliases:
   - "전라남도/강진군/강진읍 (HGIS 110370)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136453"
 label: "평안북도/정주군/동부면"
-labelNote: "HGIS 136453"
+sourceRef:
+  - "HGIS 136453"
 aliases:
   - "평안북도/정주군/동부면 (HGIS 136453)"
 ---

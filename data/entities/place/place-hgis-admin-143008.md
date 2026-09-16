@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143008"
 label: "경상남도/거창군/거창읍"
-labelNote: "HGIS 143008"
+sourceRef:
+  - "HGIS 143008"
 aliases:
   - "경상남도/거창군/거창읍 (HGIS 143008)"
 ---

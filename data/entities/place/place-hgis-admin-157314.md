@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157314"
 label: "경상북도/영주군/영주면"
-labelNote: "HGIS 157314"
+sourceRef:
+  - "HGIS 157314"
 aliases:
   - "경상북도/영주군/영주면 (HGIS 157314)"
 ---

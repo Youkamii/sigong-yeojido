@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140484"
 label: "평안북도/용천군/양상면"
-labelNote: "HGIS 140484"
+sourceRef:
+  - "HGIS 140484"
 aliases:
   - "평안북도/용천군/양상면 (HGIS 140484)"
 ---

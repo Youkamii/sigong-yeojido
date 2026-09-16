@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144092"
 label: "경상남도/거창군/주곡면"
-labelNote: "HGIS 144092"
+sourceRef:
+  - "HGIS 144092"
 aliases:
   - "경상남도/거창군/주곡면 (HGIS 144092)"
 ---

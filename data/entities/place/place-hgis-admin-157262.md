@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157262"
 label: "경상북도/영덕군/북면"
-labelNote: "HGIS 157262"
+sourceRef:
+  - "HGIS 157262"
 aliases:
   - "경상북도/영덕군/북면 (HGIS 157262)"
 ---

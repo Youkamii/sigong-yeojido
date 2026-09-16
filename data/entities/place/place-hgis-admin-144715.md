@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144715"
 label: "경상남도/하동군/종화면"
-labelNote: "HGIS 144715"
+sourceRef:
+  - "HGIS 144715"
 aliases:
   - "경상남도/하동군/종화면 (HGIS 144715)"
 ---

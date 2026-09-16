@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-102176"
 label: "전라북도/임실군/영계면"
-labelNote: "HGIS 102176"
+sourceRef:
+  - "HGIS 102176"
 aliases:
   - "전라북도/임실군/영계면 (HGIS 102176)"
 ---

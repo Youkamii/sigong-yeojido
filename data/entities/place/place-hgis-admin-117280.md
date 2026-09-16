@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117280"
 label: "전라남도/목포부/신로면"
-labelNote: "HGIS 117280"
+sourceRef:
+  - "HGIS 117280"
 aliases:
   - "전라남도/목포부/신로면 (HGIS 117280)"
 ---

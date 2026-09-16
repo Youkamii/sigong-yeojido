@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144491"
 label: "경상남도/의령군/덕곡면"
-labelNote: "HGIS 144491"
+sourceRef:
+  - "HGIS 144491"
 aliases:
   - "경상남도/의령군/덕곡면 (HGIS 144491)"
 ---

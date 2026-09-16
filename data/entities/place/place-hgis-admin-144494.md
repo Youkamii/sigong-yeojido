@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144494"
 label: "경상남도/의령군/봉산면"
-labelNote: "HGIS 144494"
+sourceRef:
+  - "HGIS 144494"
 aliases:
   - "경상남도/의령군/봉산면 (HGIS 144494)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157296"
 label: "경상북도/영일군/송라면"
-labelNote: "HGIS 157296"
+sourceRef:
+  - "HGIS 157296"
 aliases:
   - "경상북도/영일군/송라면 (HGIS 157296)"
 ---

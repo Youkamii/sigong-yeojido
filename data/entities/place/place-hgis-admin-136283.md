@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136283"
 label: "평안북도/초산군/유면"
-labelNote: "HGIS 136283"
+sourceRef:
+  - "HGIS 136283"
 aliases:
   - "평안북도/초산군/유면 (HGIS 136283)"
 ---

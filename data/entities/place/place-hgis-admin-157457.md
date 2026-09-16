@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157457"
 label: "경상북도/진보군/상리면"
-labelNote: "HGIS 157457"
+sourceRef:
+  - "HGIS 157457"
 aliases:
   - "경상북도/진보군/상리면 (HGIS 157457)"
 ---

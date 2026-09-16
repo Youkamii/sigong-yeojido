@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112695"
 label: "전라남도/남평군/군내면"
-labelNote: "HGIS 112695"
+sourceRef:
+  - "HGIS 112695"
 aliases:
   - "전라남도/남평군/군내면 (HGIS 112695)"
 ---

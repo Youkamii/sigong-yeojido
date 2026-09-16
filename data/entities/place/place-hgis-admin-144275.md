@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144275"
 label: "경상남도/부산부/용주면"
-labelNote: "HGIS 144275"
+sourceRef:
+  - "HGIS 144275"
 aliases:
   - "경상남도/부산부/용주면 (HGIS 144275)"
 ---

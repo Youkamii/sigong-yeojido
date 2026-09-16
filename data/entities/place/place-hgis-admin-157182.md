@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157182"
 label: "경상북도/성주군/성주면"
-labelNote: "HGIS 157182"
+sourceRef:
+  - "HGIS 157182"
 aliases:
   - "경상북도/성주군/성주면 (HGIS 157182)"
 ---

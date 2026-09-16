@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156802"
 label: "경상북도/개령군/동면"
-labelNote: "HGIS 156802"
+sourceRef:
+  - "HGIS 156802"
 aliases:
   - "경상북도/개령군/동면 (HGIS 156802)"
 ---

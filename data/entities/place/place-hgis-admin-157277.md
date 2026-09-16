@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157277"
 label: "경상북도/영양군/북이면"
-labelNote: "HGIS 157277"
+sourceRef:
+  - "HGIS 157277"
 aliases:
   - "경상북도/영양군/북이면 (HGIS 157277)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143249"
 label: "경상남도/용남군/원삼면"
-labelNote: "HGIS 143249"
+sourceRef:
+  - "HGIS 143249"
 aliases:
   - "경상남도/용남군/원삼면 (HGIS 143249)"
 ---

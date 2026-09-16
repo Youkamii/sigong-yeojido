@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144489"
 label: "경상남도/의령군/대곡면"
-labelNote: "HGIS 144489"
+sourceRef:
+  - "HGIS 144489"
 aliases:
   - "경상남도/의령군/대곡면 (HGIS 144489)"
 ---

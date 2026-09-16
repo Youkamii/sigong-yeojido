@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157471"
 label: "경상북도/청도군/상읍면"
-labelNote: "HGIS 157471"
+sourceRef:
+  - "HGIS 157471"
 aliases:
   - "경상북도/청도군/상읍면 (HGIS 157471)"
 ---

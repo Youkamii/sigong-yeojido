@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156925"
 label: "경상북도/영해군/오서면"
-labelNote: "HGIS 156925"
+sourceRef:
+  - "HGIS 156925"
 aliases:
   - "경상북도/영해군/오서면 (HGIS 156925)"
 ---

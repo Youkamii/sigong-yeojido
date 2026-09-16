@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-124180"
 label: "전라남도/흥양군/읍내면"
-labelNote: "HGIS 124180"
+sourceRef:
+  - "HGIS 124180"
 aliases:
   - "전라남도/흥양군/읍내면 (HGIS 124180)"
 ---

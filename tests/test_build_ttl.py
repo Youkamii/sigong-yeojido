@@ -341,8 +341,9 @@ class BuildFixtureTest(unittest.TestCase):
 
     # §0-1 — 엔티티는 껍데기다
     def test_14_shells_are_bare(self):
-        # 이름 관련 값만 나온다 — labelNote·kind·alias 는 이름 정리(#200)로 옮겨 둔 값이다
-        allowed = {RDF_TYPE, RDFS_LABEL, syj("labelHanja"), syj("labelNote"), syj("kind"), syj("alias")}
+        # 이름 관련 값만 나온다 — labelNote·kind·alias·sourceRef 는 이름 정리(#200)로 옮겨 둔 값이다
+        allowed = {RDF_TYPE, RDFS_LABEL, syj("labelHanja"), syj("labelNote"), syj("kind"), syj("alias"),
+                   syj("sourceRef")}
         for cls in ("Person", "Place", "Polity", "Event", "Office"):
             for node in self.idx.of_type(syj(cls)):
                 self.assertEqual(set(self.idx.spo[node]) - allowed, set(), node)
@@ -359,6 +360,10 @@ class BuildFixtureTest(unittest.TestCase):
         self.assertEqual([T.literal_value(v) for v in self.idx.objects(wa, syj("alias"))],
                          ["왜 (倭, 사료 표기 왜국) · 집단 행위자"])
         self.assertEqual(self.idx.spo[SYJ + "polity-baekje"].get(syj("alias")), None)
+        # 자료 식별자는 syj:sourceRef 로만 나온다 — 이름·설명에 섞이지 않는다 (#200 2차)
+        self.assertEqual([T.literal_value(v) for v in self.idx.objects(wa, syj("sourceRef"))], ["HGIS 144106"])
+        self.assertNotIn("HGIS", self.idx.value(wa, syj("labelNote")))
+        self.assertEqual(self.idx.spo[SYJ + "polity-baekje"].get(syj("sourceRef")), None)
 
     # §7.3 — provenance 1급
     def test_15_provenance_on_every_claim(self):

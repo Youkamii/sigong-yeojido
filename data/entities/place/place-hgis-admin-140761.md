@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140761"
 label: "평안북도/용천부/북하면"
-labelNote: "HGIS 140761"
+sourceRef:
+  - "HGIS 140761"
 aliases:
   - "평안북도/용천부/북하면 (HGIS 140761)"
 ---

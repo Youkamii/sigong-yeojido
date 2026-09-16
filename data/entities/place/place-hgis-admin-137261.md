@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-137261"
 label: "평안북도/의주군/가산면"
-labelNote: "HGIS 137261"
+sourceRef:
+  - "HGIS 137261"
 aliases:
   - "평안북도/의주군/가산면 (HGIS 137261)"
 ---

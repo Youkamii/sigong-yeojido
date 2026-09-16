@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144474"
 label: "경상남도/울산군/중남면"
-labelNote: "HGIS 144474"
+sourceRef:
+  - "HGIS 144474"
 aliases:
   - "경상남도/울산군/중남면 (HGIS 144474)"
 ---

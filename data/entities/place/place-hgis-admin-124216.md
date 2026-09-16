@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-124216"
 label: "전라남도/흥양군/점암면"
-labelNote: "HGIS 124216"
+sourceRef:
+  - "HGIS 124216"
 aliases:
   - "전라남도/흥양군/점암면 (HGIS 124216)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157534"
 label: "경상북도/풍기군/노좌면"
-labelNote: "HGIS 157534"
+sourceRef:
+  - "HGIS 157534"
 aliases:
   - "경상북도/풍기군/노좌면 (HGIS 157534)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142984"
 label: "경기도/인천부/일본전관거류지"
-labelNote: "HGIS 142984"
+sourceRef:
+  - "HGIS 142984"
 aliases:
   - "경기도/인천부/일본전관거류지 (HGIS 142984)"
 ---

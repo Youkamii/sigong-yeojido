@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144803"
 label: "경상남도/합천군/초계면"
-labelNote: "HGIS 144803"
+sourceRef:
+  - "HGIS 144803"
 aliases:
   - "경상남도/합천군/초계면 (HGIS 144803)"
 ---

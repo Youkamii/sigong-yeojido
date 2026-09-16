@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144593"
 label: "경상남도/진주군/침곡면"
-labelNote: "HGIS 144593"
+sourceRef:
+  - "HGIS 144593"
 aliases:
   - "경상남도/진주군/침곡면 (HGIS 144593)"
 ---

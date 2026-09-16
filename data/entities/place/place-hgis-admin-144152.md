@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144152"
 label: "경상남도/기장군/중북면"
-labelNote: "HGIS 144152"
+sourceRef:
+  - "HGIS 144152"
 aliases:
   - "경상남도/기장군/중북면 (HGIS 144152)"
 ---

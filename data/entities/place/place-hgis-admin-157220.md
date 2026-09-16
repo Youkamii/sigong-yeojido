@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157220"
 label: "경상북도/안동군/동선면"
-labelNote: "HGIS 157220"
+sourceRef:
+  - "HGIS 157220"
 aliases:
   - "경상북도/안동군/동선면 (HGIS 157220)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157210"
 label: "경상북도/신녕군/치산면"
-labelNote: "HGIS 157210"
+sourceRef:
+  - "HGIS 157210"
 aliases:
   - "경상북도/신녕군/치산면 (HGIS 157210)"
 ---

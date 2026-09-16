@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156809"
 label: "경상북도/경산군/남천면"
-labelNote: "HGIS 156809"
+sourceRef:
+  - "HGIS 156809"
 aliases:
   - "경상북도/경산군/남천면 (HGIS 156809)"
 ---

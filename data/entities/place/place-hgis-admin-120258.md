@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120258"
 label: "전라남도/장흥군/군내면"
-labelNote: "HGIS 120258"
+sourceRef:
+  - "HGIS 120258"
 aliases:
   - "전라남도/장흥군/군내면 (HGIS 120258)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156876"
 label: "경상북도/군위군/군위면"
-labelNote: "HGIS 156876"
+sourceRef:
+  - "HGIS 156876"
 aliases:
   - "경상북도/군위군/군위면 (HGIS 156876)"
 ---

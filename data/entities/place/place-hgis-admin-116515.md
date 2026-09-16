@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116515"
 label: "전라남도/영암군/서종면"
-labelNote: "HGIS 116515"
+sourceRef:
+  - "HGIS 116515"
 aliases:
   - "전라남도/영암군/서종면 (HGIS 116515)"
 ---

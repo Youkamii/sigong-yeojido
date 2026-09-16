@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150371"
 label: "경상남도/동래부/북면"
-labelNote: "HGIS 150371"
+sourceRef:
+  - "HGIS 150371"
 aliases:
   - "경상남도/동래부/북면 (HGIS 150371)"
 ---

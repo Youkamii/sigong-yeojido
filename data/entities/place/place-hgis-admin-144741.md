@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144741"
 label: "경상남도/함안군/안인면"
-labelNote: "HGIS 144741"
+sourceRef:
+  - "HGIS 144741"
 aliases:
   - "경상남도/함안군/안인면 (HGIS 144741)"
 ---

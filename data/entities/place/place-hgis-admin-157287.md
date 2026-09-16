@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157287"
 label: "경상북도/영양군/읍내면"
-labelNote: "HGIS 157287"
+sourceRef:
+  - "HGIS 157287"
 aliases:
   - "경상북도/영양군/읍내면 (HGIS 157287)"
 ---

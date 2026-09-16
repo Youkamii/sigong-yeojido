@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157371"
 label: "경상북도/영천군/화동면"
-labelNote: "HGIS 157371"
+sourceRef:
+  - "HGIS 157371"
 aliases:
   - "경상북도/영천군/화동면 (HGIS 157371)"
 ---

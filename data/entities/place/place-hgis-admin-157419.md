@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157419"
 label: "경상북도/의흥군/우보면"
-labelNote: "HGIS 157419"
+sourceRef:
+  - "HGIS 157419"
 aliases:
   - "경상북도/의흥군/우보면 (HGIS 157419)"
 ---

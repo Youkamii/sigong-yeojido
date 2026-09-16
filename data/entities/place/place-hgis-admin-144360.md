@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144360"
 label: "경상남도/삼가군/서산면"
-labelNote: "HGIS 144360"
+sourceRef:
+  - "HGIS 144360"
 aliases:
   - "경상남도/삼가군/서산면 (HGIS 144360)"
 ---

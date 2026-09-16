@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157426"
 label: "경상북도/인동군/문량면"
-labelNote: "HGIS 157426"
+sourceRef:
+  - "HGIS 157426"
 aliases:
   - "경상북도/인동군/문량면 (HGIS 157426)"
 ---

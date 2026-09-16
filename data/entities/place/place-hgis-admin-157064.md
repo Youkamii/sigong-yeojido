@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157064"
 label: "경상북도/문경군/호계면"
-labelNote: "HGIS 157064"
+sourceRef:
+  - "HGIS 157064"
 aliases:
   - "경상북도/문경군/호계면 (HGIS 157064)"
 ---

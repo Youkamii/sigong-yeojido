@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121566"
 label: "전라남도/지도군/비금면"
-labelNote: "HGIS 121566"
+sourceRef:
+  - "HGIS 121566"
 aliases:
   - "전라남도/지도군/비금면 (HGIS 121566)"
 ---

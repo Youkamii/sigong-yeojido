@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121849"
 label: "전라남도/지도군"
-labelNote: "HGIS 121849"
+sourceRef:
+  - "HGIS 121849"
 aliases:
   - "전라남도/지도군 (HGIS 121849)"
 ---

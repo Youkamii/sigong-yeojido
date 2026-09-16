@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157494"
 label: "경상북도/청송군/안덕면"
-labelNote: "HGIS 157494"
+sourceRef:
+  - "HGIS 157494"
 aliases:
   - "경상북도/청송군/안덕면 (HGIS 157494)"
 ---

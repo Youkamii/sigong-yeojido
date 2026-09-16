@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111258"
 label: "전라남도/광산군/지산면"
-labelNote: "HGIS 111258"
+sourceRef:
+  - "HGIS 111258"
 aliases:
   - "전라남도/광산군/지산면 (HGIS 111258)"
 ---

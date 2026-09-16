@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-174456"
 label: "경상북도/봉화군/북면"
-labelNote: "HGIS 174456"
+sourceRef:
+  - "HGIS 174456"
 aliases:
   - "경상북도/봉화군/북면 (HGIS 174456)"
 ---

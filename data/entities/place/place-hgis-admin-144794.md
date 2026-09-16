@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144794"
 label: "경상남도/합천군/심묘면"
-labelNote: "HGIS 144794"
+sourceRef:
+  - "HGIS 144794"
 aliases:
   - "경상남도/합천군/심묘면 (HGIS 144794)"
 ---

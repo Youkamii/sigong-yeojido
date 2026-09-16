@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117761"
 label: "전라남도/무안군/진례면"
-labelNote: "HGIS 117761"
+sourceRef:
+  - "HGIS 117761"
 aliases:
   - "전라남도/무안군/진례면 (HGIS 117761)"
 ---

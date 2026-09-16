@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143327"
 label: "경상남도/창녕군/남지면"
-labelNote: "HGIS 143327"
+sourceRef:
+  - "HGIS 143327"
 aliases:
   - "경상남도/창녕군/남지면 (HGIS 143327)"
 ---

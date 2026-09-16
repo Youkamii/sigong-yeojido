@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118135"
 label: "전라남도/보성군/벌교읍"
-labelNote: "HGIS 118135"
+sourceRef:
+  - "HGIS 118135"
 aliases:
   - "전라남도/보성군/벌교읍 (HGIS 118135)"
 ---

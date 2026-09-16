@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140758"
 label: "평안북도/용천부/미라면"
-labelNote: "HGIS 140758"
+sourceRef:
+  - "HGIS 140758"
 aliases:
   - "평안북도/용천부/미라면 (HGIS 140758)"
 ---

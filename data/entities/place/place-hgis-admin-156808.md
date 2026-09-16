@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156808"
 label: "경상북도/경산군/남산면"
-labelNote: "HGIS 156808"
+sourceRef:
+  - "HGIS 156808"
 aliases:
   - "경상북도/경산군/남산면 (HGIS 156808)"
 ---

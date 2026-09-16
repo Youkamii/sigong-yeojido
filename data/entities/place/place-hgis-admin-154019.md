@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154019"
 label: "경상남도/사천군/용현면"
-labelNote: "HGIS 154019"
+sourceRef:
+  - "HGIS 154019"
 aliases:
   - "경상남도/사천군/용현면 (HGIS 154019)"
 ---

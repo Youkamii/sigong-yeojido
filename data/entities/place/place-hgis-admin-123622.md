@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123622"
 label: "전라남도/해남군/은소면"
-labelNote: "HGIS 123622"
+sourceRef:
+  - "HGIS 123622"
 aliases:
   - "전라남도/해남군/은소면 (HGIS 123622)"
 ---

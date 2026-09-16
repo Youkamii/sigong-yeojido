@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140760"
 label: "평안북도/용천부/북상면"
-labelNote: "HGIS 140760"
+sourceRef:
+  - "HGIS 140760"
 aliases:
   - "평안북도/용천부/북상면 (HGIS 140760)"
 ---

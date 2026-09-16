@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-104447"
 label: "전라북도/고부군/우일면"
-labelNote: "HGIS 104447"
+sourceRef:
+  - "HGIS 104447"
 aliases:
   - "전라북도/고부군/우일면 (HGIS 104447)"
 ---

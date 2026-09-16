@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119477"
 label: "전라남도/완도군/완도면"
-labelNote: "HGIS 119477"
+sourceRef:
+  - "HGIS 119477"
 aliases:
   - "전라남도/완도군/완도면 (HGIS 119477)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157699"
 label: "경상북도/개령군/곡송면"
-labelNote: "HGIS 157699"
+sourceRef:
+  - "HGIS 157699"
 aliases:
   - "경상북도/개령군/곡송면 (HGIS 157699)"
 ---

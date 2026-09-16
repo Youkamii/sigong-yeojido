@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144453"
 label: "경상남도/함양군/수동면"
-labelNote: "HGIS 144453"
+sourceRef:
+  - "HGIS 144453"
 aliases:
   - "경상남도/함양군/수동면 (HGIS 144453)"
 ---

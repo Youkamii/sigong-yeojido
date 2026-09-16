@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157488"
 label: "경상북도/청도군/풍각면"
-labelNote: "HGIS 157488"
+sourceRef:
+  - "HGIS 157488"
 aliases:
   - "경상북도/청도군/풍각면 (HGIS 157488)"
 ---

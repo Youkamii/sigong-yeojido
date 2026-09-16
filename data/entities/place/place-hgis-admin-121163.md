@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121163"
 label: "전라남도/제주도/동중면"
-labelNote: "HGIS 121163"
+sourceRef:
+  - "HGIS 121163"
 aliases:
   - "전라남도/제주도/동중면 (HGIS 121163)"
 ---

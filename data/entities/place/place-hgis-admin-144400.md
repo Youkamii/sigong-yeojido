@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144400"
 label: "경상남도/합천군/대병면"
-labelNote: "HGIS 144400"
+sourceRef:
+  - "HGIS 144400"
 aliases:
   - "경상남도/합천군/대병면 (HGIS 144400)"
 ---

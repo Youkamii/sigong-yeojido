@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-100333"
 label: "전라북도/부안군/좌산내면"
-labelNote: "HGIS 100333"
+sourceRef:
+  - "HGIS 100333"
 aliases:
   - "전라북도/부안군/좌산내면 (HGIS 100333)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143269"
 label: "경상남도/진주군/옥봉면"
-labelNote: "HGIS 143269"
+sourceRef:
+  - "HGIS 143269"
 aliases:
   - "경상남도/진주군/옥봉면 (HGIS 143269)"
 ---

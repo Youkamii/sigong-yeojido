@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117889"
 label: "전라남도/보성군/대곡면"
-labelNote: "HGIS 117889"
+sourceRef:
+  - "HGIS 117889"
 aliases:
   - "전라남도/보성군/대곡면 (HGIS 117889)"
 ---

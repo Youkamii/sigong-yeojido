@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144614"
 label: "경상남도/창녕군/부곡면"
-labelNote: "HGIS 144614"
+sourceRef:
+  - "HGIS 144614"
 aliases:
   - "경상남도/창녕군/부곡면 (HGIS 144614)"
 ---

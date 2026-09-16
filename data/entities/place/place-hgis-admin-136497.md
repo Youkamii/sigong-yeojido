@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136497"
 label: "평안북도/초산군/판상면"
-labelNote: "HGIS 136497"
+sourceRef:
+  - "HGIS 136497"
 aliases:
   - "평안북도/초산군/판상면 (HGIS 136497)"
 ---

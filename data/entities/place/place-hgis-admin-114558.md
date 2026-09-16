@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114558"
 label: "전라남도/여수군/돌산면"
-labelNote: "HGIS 114558"
+sourceRef:
+  - "HGIS 114558"
 aliases:
   - "전라남도/여수군/돌산면 (HGIS 114558)"
 ---

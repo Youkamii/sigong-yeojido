@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143252"
 label: "경상남도/울산군/두북면"
-labelNote: "HGIS 143252"
+sourceRef:
+  - "HGIS 143252"
 aliases:
   - "경상남도/울산군/두북면 (HGIS 143252)"
 ---

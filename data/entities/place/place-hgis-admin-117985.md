@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117985"
 label: "전라남도/보성군/용문면"
-labelNote: "HGIS 117985"
+sourceRef:
+  - "HGIS 117985"
 aliases:
   - "전라남도/보성군/용문면 (HGIS 117985)"
 ---

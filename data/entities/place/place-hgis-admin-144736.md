@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144736"
 label: "경상남도/함안군/산인면"
-labelNote: "HGIS 144736"
+sourceRef:
+  - "HGIS 144736"
 aliases:
   - "경상남도/함안군/산인면 (HGIS 144736)"
 ---

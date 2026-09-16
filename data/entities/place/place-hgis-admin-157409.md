@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157409"
 label: "경상북도/의성군/외사면"
-labelNote: "HGIS 157409"
+sourceRef:
+  - "HGIS 157409"
 aliases:
   - "경상북도/의성군/외사면 (HGIS 157409)"
 ---

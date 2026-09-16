@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144765"
 label: "경상남도/함양군/사근면"
-labelNote: "HGIS 144765"
+sourceRef:
+  - "HGIS 144765"
 aliases:
   - "경상남도/함양군/사근면 (HGIS 144765)"
 ---

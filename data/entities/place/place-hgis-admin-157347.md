@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157347"
 label: "경상북도/의성군/구산면"
-labelNote: "HGIS 157347"
+sourceRef:
+  - "HGIS 157347"
 aliases:
   - "경상북도/의성군/구산면 (HGIS 157347)"
 ---

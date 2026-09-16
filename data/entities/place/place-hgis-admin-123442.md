@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123442"
 label: "전라남도/해남군/삼산면"
-labelNote: "HGIS 123442"
+sourceRef:
+  - "HGIS 123442"
 aliases:
   - "전라남도/해남군/삼산면 (HGIS 123442)"
 ---

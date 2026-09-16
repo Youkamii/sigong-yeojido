@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-142772"
 label: "평안북도/초산군/부숭면"
-labelNote: "HGIS 142772"
+sourceRef:
+  - "HGIS 142772"
 aliases:
   - "평안북도/초산군/부숭면 (HGIS 142772)"
 ---

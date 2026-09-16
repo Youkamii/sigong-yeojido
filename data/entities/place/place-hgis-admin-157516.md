@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157516"
 label: "경상북도/칠곡군/문주면"
-labelNote: "HGIS 157516"
+sourceRef:
+  - "HGIS 157516"
 aliases:
   - "경상북도/칠곡군/문주면 (HGIS 157516)"
 ---

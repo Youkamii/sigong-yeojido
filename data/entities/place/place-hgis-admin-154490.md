@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154490"
 label: "경상남도/창원부/웅중면"
-labelNote: "HGIS 154490"
+sourceRef:
+  - "HGIS 154490"
 aliases:
   - "경상남도/창원부/웅중면 (HGIS 154490)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141101"
 label: "평안북도/위원군/위면"
-labelNote: "HGIS 141101"
+sourceRef:
+  - "HGIS 141101"
 aliases:
   - "평안북도/위원군/위면 (HGIS 141101)"
 ---

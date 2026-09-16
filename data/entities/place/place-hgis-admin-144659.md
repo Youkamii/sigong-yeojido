@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144659"
 label: "경상남도/초계군/덕진면"
-labelNote: "HGIS 144659"
+sourceRef:
+  - "HGIS 144659"
 aliases:
   - "경상남도/초계군/덕진면 (HGIS 144659)"
 ---

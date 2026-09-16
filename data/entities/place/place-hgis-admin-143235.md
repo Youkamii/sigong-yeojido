@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143235"
 label: "경상남도/삼가군/백동면"
-labelNote: "HGIS 143235"
+sourceRef:
+  - "HGIS 143235"
 aliases:
   - "경상남도/삼가군/백동면 (HGIS 143235)"
 ---

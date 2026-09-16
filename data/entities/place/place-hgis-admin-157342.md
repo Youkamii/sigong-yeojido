@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157342"
 label: "경상북도/영천군/내서면"
-labelNote: "HGIS 157342"
+sourceRef:
+  - "HGIS 157342"
 aliases:
   - "경상북도/영천군/내서면 (HGIS 157342)"
 ---

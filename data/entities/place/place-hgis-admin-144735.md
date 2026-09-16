@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144735"
 label: "경상남도/함안군/산외면"
-labelNote: "HGIS 144735"
+sourceRef:
+  - "HGIS 144735"
 aliases:
   - "경상남도/함안군/산외면 (HGIS 144735)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144388"
 label: "경상남도/양산군/양산면"
-labelNote: "HGIS 144388"
+sourceRef:
+  - "HGIS 144388"
 aliases:
   - "경상남도/양산군/양산면 (HGIS 144388)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144331"
 label: "경상남도/산청군/수곡면"
-labelNote: "HGIS 144331"
+sourceRef:
+  - "HGIS 144331"
 aliases:
   - "경상남도/산청군/수곡면 (HGIS 144331)"
 ---

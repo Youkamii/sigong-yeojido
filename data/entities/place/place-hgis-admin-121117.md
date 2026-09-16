@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121117"
 label: "전라남도/제주도/구우면"
-labelNote: "HGIS 121117"
+sourceRef:
+  - "HGIS 121117"
 aliases:
   - "전라남도/제주도/구우면 (HGIS 121117)"
 ---

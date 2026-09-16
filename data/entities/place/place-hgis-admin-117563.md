@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117563"
 label: "전라남도/목포부/진례면"
-labelNote: "HGIS 117563"
+sourceRef:
+  - "HGIS 117563"
 aliases:
   - "전라남도/목포부/진례면 (HGIS 117563)"
 ---

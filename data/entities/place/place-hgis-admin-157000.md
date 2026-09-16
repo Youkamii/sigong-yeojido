@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157000"
 label: "경상북도/예안군/동상면"
-labelNote: "HGIS 157000"
+sourceRef:
+  - "HGIS 157000"
 aliases:
   - "경상북도/예안군/동상면 (HGIS 157000)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113599"
 label: "전라남도/동복군"
-labelNote: "HGIS 113599"
+sourceRef:
+  - "HGIS 113599"
 aliases:
   - "전라남도/동복군 (HGIS 113599)"
 ---

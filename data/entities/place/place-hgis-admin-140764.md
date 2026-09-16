@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140764"
 label: "평안북도/용천부/양서면"
-labelNote: "HGIS 140764"
+sourceRef:
+  - "HGIS 140764"
 aliases:
   - "평안북도/용천부/양서면 (HGIS 140764)"
 ---

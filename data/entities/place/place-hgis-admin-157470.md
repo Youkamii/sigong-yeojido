@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157470"
 label: "경상북도/청도군/상남면"
-labelNote: "HGIS 157470"
+sourceRef:
+  - "HGIS 157470"
 aliases:
   - "경상북도/청도군/상남면 (HGIS 157470)"
 ---

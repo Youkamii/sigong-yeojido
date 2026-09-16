@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117730"
 label: "전라남도/무안군/석곡면"
-labelNote: "HGIS 117730"
+sourceRef:
+  - "HGIS 117730"
 aliases:
   - "전라남도/무안군/석곡면 (HGIS 117730)"
 ---

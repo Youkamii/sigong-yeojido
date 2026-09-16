@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144431"
 label: "경상남도/용남군/서면"
-labelNote: "HGIS 144431"
+sourceRef:
+  - "HGIS 144431"
 aliases:
   - "경상남도/용남군/서면 (HGIS 144431)"
 ---

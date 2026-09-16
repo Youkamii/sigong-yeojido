@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144600"
 label: "경상남도/창녕군/계성면"
-labelNote: "HGIS 144600"
+sourceRef:
+  - "HGIS 144600"
 aliases:
   - "경상남도/창녕군/계성면 (HGIS 144600)"
 ---

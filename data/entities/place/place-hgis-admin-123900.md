@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123900"
 label: "전라남도/화순군/청풍면"
-labelNote: "HGIS 123900"
+sourceRef:
+  - "HGIS 123900"
 aliases:
   - "전라남도/화순군/청풍면 (HGIS 123900)"
 ---

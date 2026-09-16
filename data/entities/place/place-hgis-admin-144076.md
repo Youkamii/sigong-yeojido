@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144076"
 label: "경상남도/단성군/북동면"
-labelNote: "HGIS 144076"
+sourceRef:
+  - "HGIS 144076"
 aliases:
   - "경상남도/단성군/북동면 (HGIS 144076)"
 ---

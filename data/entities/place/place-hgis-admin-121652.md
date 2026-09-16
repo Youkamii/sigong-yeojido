@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121652"
 label: "전라남도/지도군/암태면"
-labelNote: "HGIS 121652"
+sourceRef:
+  - "HGIS 121652"
 aliases:
   - "전라남도/지도군/암태면 (HGIS 121652)"
 ---

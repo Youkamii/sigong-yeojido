@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140812"
 label: "평안북도/운산군/동신면"
-labelNote: "HGIS 140812"
+sourceRef:
+  - "HGIS 140812"
 aliases:
   - "평안북도/운산군/동신면 (HGIS 140812)"
 ---

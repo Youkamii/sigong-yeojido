@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157407"
 label: "경상북도/의성군/의성면"
-labelNote: "HGIS 157407"
+sourceRef:
+  - "HGIS 157407"
 aliases:
   - "경상북도/의성군/의성면 (HGIS 157407)"
 ---

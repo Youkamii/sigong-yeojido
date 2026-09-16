@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144015"
 label: "경상남도/김해군/칠산면"
-labelNote: "HGIS 144015"
+sourceRef:
+  - "HGIS 144015"
 aliases:
   - "경상남도/김해군/칠산면 (HGIS 144015)"
 ---

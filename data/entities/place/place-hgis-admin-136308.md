@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136308"
 label: "평안북도/강계군/시하면"
-labelNote: "HGIS 136308"
+sourceRef:
+  - "HGIS 136308"
 aliases:
   - "평안북도/강계군/시하면 (HGIS 136308)"
 ---

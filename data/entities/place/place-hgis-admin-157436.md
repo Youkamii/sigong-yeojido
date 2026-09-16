@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157436"
 label: "경상북도/장기군/내남면"
-labelNote: "HGIS 157436"
+sourceRef:
+  - "HGIS 157436"
 aliases:
   - "경상북도/장기군/내남면 (HGIS 157436)"
 ---

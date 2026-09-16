@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136611"
 label: "평안북도/강계군/성간면"
-labelNote: "HGIS 136611"
+sourceRef:
+  - "HGIS 136611"
 aliases:
   - "평안북도/강계군/성간면 (HGIS 136611)"
 ---

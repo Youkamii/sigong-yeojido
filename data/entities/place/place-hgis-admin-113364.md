@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113364"
 label: "전라남도/돌산군/남면"
-labelNote: "HGIS 113364"
+sourceRef:
+  - "HGIS 113364"
 aliases:
   - "전라남도/돌산군/남면 (HGIS 113364)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157328"
 label: "경상북도/의흥군/소야면"
-labelNote: "HGIS 157328"
+sourceRef:
+  - "HGIS 157328"
 aliases:
   - "경상북도/의흥군/소야면 (HGIS 157328)"
 ---

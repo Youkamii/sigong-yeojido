@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-118385"
 label: "전라남도/순천군/동하면"
-labelNote: "HGIS 118385"
+sourceRef:
+  - "HGIS 118385"
 aliases:
   - "전라남도/순천군/동하면 (HGIS 118385)"
 ---

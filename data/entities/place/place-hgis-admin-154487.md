@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154487"
 label: "경상남도/창원부/웅읍면"
-labelNote: "HGIS 154487"
+sourceRef:
+  - "HGIS 154487"
 aliases:
   - "경상남도/창원부/웅읍면 (HGIS 154487)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112514"
 label: "전라남도/구례군/용강면"
-labelNote: "HGIS 112514"
+sourceRef:
+  - "HGIS 112514"
 aliases:
   - "전라남도/구례군/용강면 (HGIS 112514)"
 ---

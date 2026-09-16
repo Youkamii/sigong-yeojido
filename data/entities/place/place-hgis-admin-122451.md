@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122451"
 label: "전라남도/창평군/외남면"
-labelNote: "HGIS 122451"
+sourceRef:
+  - "HGIS 122451"
 aliases:
   - "전라남도/창평군/외남면 (HGIS 122451)"
 ---

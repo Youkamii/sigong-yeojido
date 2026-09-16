@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144530"
 label: "경상남도/진주군/가좌촌면"
-labelNote: "HGIS 144530"
+sourceRef:
+  - "HGIS 144530"
 aliases:
   - "경상남도/진주군/가좌촌면 (HGIS 144530)"
 ---

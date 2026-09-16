@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110854"
 label: "전라남도/고흥군/풍양면"
-labelNote: "HGIS 110854"
+sourceRef:
+  - "HGIS 110854"
 aliases:
   - "전라남도/고흥군/풍양면 (HGIS 110854)"
 ---

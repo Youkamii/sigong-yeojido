@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144393"
 label: "경상남도/양산군/중북면"
-labelNote: "HGIS 144393"
+sourceRef:
+  - "HGIS 144393"
 aliases:
   - "경상남도/양산군/중북면 (HGIS 144393)"
 ---

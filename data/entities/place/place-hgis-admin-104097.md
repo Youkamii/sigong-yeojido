@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-104097"
 label: "전라북도/전주군/전주읍"
-labelNote: "HGIS 104097"
+sourceRef:
+  - "HGIS 104097"
 aliases:
   - "전라북도/전주군/전주읍 (HGIS 104097)"
 ---

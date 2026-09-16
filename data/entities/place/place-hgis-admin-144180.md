@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144180"
 label: "경상남도/김해군/중북면"
-labelNote: "HGIS 144180"
+sourceRef:
+  - "HGIS 144180"
 aliases:
   - "경상남도/김해군/중북면 (HGIS 144180)"
 ---

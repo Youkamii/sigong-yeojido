@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141610"
 label: "평안북도/의주부/피현면"
-labelNote: "HGIS 141610"
+sourceRef:
+  - "HGIS 141610"
 aliases:
   - "평안북도/의주부/피현면 (HGIS 141610)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156728"
 label: "경상북도/성주군/조곡면"
-labelNote: "HGIS 156728"
+sourceRef:
+  - "HGIS 156728"
 aliases:
   - "경상북도/성주군/조곡면 (HGIS 156728)"
 ---

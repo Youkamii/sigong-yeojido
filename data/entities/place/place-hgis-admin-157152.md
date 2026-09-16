@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157152"
 label: "경상북도/선산군/독동면"
-labelNote: "HGIS 157152"
+sourceRef:
+  - "HGIS 157152"
 aliases:
   - "경상북도/선산군/독동면 (HGIS 157152)"
 ---

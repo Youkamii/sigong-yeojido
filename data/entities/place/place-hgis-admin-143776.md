@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143776"
 label: "경상남도/고성군/고성읍"
-labelNote: "HGIS 143776"
+sourceRef:
+  - "HGIS 143776"
 aliases:
   - "경상남도/고성군/고성읍 (HGIS 143776)"
 ---

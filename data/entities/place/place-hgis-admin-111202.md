@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111202"
 label: "전라남도/광산군/서방면"
-labelNote: "HGIS 111202"
+sourceRef:
+  - "HGIS 111202"
 aliases:
   - "전라남도/광산군/서방면 (HGIS 111202)"
 ---

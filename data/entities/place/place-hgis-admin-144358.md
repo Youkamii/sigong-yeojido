@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144358"
 label: "경상남도/삼가군/문송면"
-labelNote: "HGIS 144358"
+sourceRef:
+  - "HGIS 144358"
 aliases:
   - "경상남도/삼가군/문송면 (HGIS 144358)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144645"
 label: "경상남도/창원군/북면"
-labelNote: "HGIS 144645"
+sourceRef:
+  - "HGIS 144645"
 aliases:
   - "경상남도/창원군/북면 (HGIS 144645)"
 ---

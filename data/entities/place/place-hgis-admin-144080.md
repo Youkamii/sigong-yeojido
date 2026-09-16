@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144080"
 label: "경상남도/거창군/마리면"
-labelNote: "HGIS 144080"
+sourceRef:
+  - "HGIS 144080"
 aliases:
   - "경상남도/거창군/마리면 (HGIS 144080)"
 ---

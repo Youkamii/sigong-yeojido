@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116918"
 label: "전라남도/능주군/주내면"
-labelNote: "HGIS 116918"
+sourceRef:
+  - "HGIS 116918"
 aliases:
   - "전라남도/능주군/주내면 (HGIS 116918)"
 ---

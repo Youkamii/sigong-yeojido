@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157313"
 label: "경상북도/영주군/안정면"
-labelNote: "HGIS 157313"
+sourceRef:
+  - "HGIS 157313"
 aliases:
   - "경상북도/영주군/안정면 (HGIS 157313)"
 ---

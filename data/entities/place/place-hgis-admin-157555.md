@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157555"
 label: "경상북도/현풍군/걸산면"
-labelNote: "HGIS 157555"
+sourceRef:
+  - "HGIS 157555"
 aliases:
   - "경상북도/현풍군/걸산면 (HGIS 157555)"
 ---

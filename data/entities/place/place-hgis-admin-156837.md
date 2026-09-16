@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156837"
 label: "경상북도/경주군/양남면"
-labelNote: "HGIS 156837"
+sourceRef:
+  - "HGIS 156837"
 aliases:
   - "경상북도/경주군/양남면 (HGIS 156837)"
 ---

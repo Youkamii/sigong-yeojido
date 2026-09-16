@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144669"
 label: "경상남도/통영군/거제면"
-labelNote: "HGIS 144669"
+sourceRef:
+  - "HGIS 144669"
 aliases:
   - "경상남도/통영군/거제면 (HGIS 144669)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144462"
 label: "경상남도/진양군/진성면"
-labelNote: "HGIS 144462"
+sourceRef:
+  - "HGIS 144462"
 aliases:
   - "경상남도/진양군/진성면 (HGIS 144462)"
 ---

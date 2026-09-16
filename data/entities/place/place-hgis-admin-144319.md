@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144319"
 label: "경상남도/산청군/모호면"
-labelNote: "HGIS 144319"
+sourceRef:
+  - "HGIS 144319"
 aliases:
   - "경상남도/산청군/모호면 (HGIS 144319)"
 ---

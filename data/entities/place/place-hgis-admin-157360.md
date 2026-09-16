@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157360"
 label: "경상북도/영천군/원당면"
-labelNote: "HGIS 157360"
+sourceRef:
+  - "HGIS 157360"
 aliases:
   - "경상북도/영천군/원당면 (HGIS 157360)"
 ---

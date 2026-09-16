@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110698"
 label: "전라남도/강진군/작천면"
-labelNote: "HGIS 110698"
+sourceRef:
+  - "HGIS 110698"
 aliases:
   - "전라남도/강진군/작천면 (HGIS 110698)"
 ---

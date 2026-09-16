@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144428"
 label: "경상남도/용남군/산내면"
-labelNote: "HGIS 144428"
+sourceRef:
+  - "HGIS 144428"
 aliases:
   - "경상남도/용남군/산내면 (HGIS 144428)"
 ---

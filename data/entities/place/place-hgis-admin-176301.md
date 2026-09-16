@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-176301"
 label: "강원도/춘천군/신남면"
-labelNote: "HGIS 176301"
+sourceRef:
+  - "HGIS 176301"
 aliases:
   - "강원도/춘천군/신남면 (HGIS 176301)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157193"
 label: "경상북도/성주군/화곡면"
-labelNote: "HGIS 157193"
+sourceRef:
+  - "HGIS 157193"
 aliases:
   - "경상북도/성주군/화곡면 (HGIS 157193)"
 ---

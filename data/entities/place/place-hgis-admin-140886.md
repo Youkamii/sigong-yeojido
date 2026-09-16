@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140886"
 label: "평안북도/운산군/신면"
-labelNote: "HGIS 140886"
+sourceRef:
+  - "HGIS 140886"
 aliases:
   - "평안북도/운산군/신면 (HGIS 140886)"
 ---

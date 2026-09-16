@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156885"
 label: "경상북도/군위군/중리면"
-labelNote: "HGIS 156885"
+sourceRef:
+  - "HGIS 156885"
 aliases:
   - "경상북도/군위군/중리면 (HGIS 156885)"
 ---

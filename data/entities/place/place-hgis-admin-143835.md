@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143835"
 label: "경상남도/진양군/미천면"
-labelNote: "HGIS 143835"
+sourceRef:
+  - "HGIS 143835"
 aliases:
   - "경상남도/진양군/미천면 (HGIS 143835)"
 ---

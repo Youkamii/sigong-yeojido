@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144017"
 label: "경상남도/거창군/고모현면"
-labelNote: "HGIS 144017"
+sourceRef:
+  - "HGIS 144017"
 aliases:
   - "경상남도/거창군/고모현면 (HGIS 144017)"
 ---

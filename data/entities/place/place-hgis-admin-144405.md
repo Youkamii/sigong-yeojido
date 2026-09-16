@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144405"
 label: "경상남도/언양군/중북면"
-labelNote: "HGIS 144405"
+sourceRef:
+  - "HGIS 144405"
 aliases:
   - "경상남도/언양군/중북면 (HGIS 144405)"
 ---

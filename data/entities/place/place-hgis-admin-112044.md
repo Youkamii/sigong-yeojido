@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112044"
 label: "전라남도/광주군/서창면"
-labelNote: "HGIS 112044"
+sourceRef:
+  - "HGIS 112044"
 aliases:
   - "전라남도/광주군/서창면 (HGIS 112044)"
 ---

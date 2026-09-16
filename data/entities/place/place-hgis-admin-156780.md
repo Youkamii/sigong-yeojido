@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156780"
 label: "경상북도/울릉도/남면"
-labelNote: "HGIS 156780"
+sourceRef:
+  - "HGIS 156780"
 aliases:
   - "경상북도/울릉도/남면 (HGIS 156780)"
 ---

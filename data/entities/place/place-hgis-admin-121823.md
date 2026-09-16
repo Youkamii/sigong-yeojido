@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121823"
 label: "전라남도/지도군/하의면"
-labelNote: "HGIS 121823"
+sourceRef:
+  - "HGIS 121823"
 aliases:
   - "전라남도/지도군/하의면 (HGIS 121823)"
 ---

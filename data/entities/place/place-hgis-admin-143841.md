@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143841"
 label: "경상남도/진양군/이반성면"
-labelNote: "HGIS 143841"
+sourceRef:
+  - "HGIS 143841"
 aliases:
   - "경상남도/진양군/이반성면 (HGIS 143841)"
 ---

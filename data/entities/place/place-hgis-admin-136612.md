@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136612"
 label: "평안북도/강계군/시중면"
-labelNote: "HGIS 136612"
+sourceRef:
+  - "HGIS 136612"
 aliases:
   - "평안북도/강계군/시중면 (HGIS 136612)"
 ---

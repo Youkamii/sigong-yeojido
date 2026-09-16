@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120898"
 label: "전라남도/정의군/우면"
-labelNote: "HGIS 120898"
+sourceRef:
+  - "HGIS 120898"
 aliases:
   - "전라남도/정의군/우면 (HGIS 120898)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122958"
 label: "전라남도/함평군/월야면"
-labelNote: "HGIS 122958"
+sourceRef:
+  - "HGIS 122958"
 aliases:
   - "전라남도/함평군/월야면 (HGIS 122958)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157451"
 label: "경상북도/지례군/하북면"
-labelNote: "HGIS 157451"
+sourceRef:
+  - "HGIS 157451"
 aliases:
   - "경상북도/지례군/하북면 (HGIS 157451)"
 ---

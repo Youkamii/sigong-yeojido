@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112441"
 label: "전라남도/구례군/고달면"
-labelNote: "HGIS 112441"
+sourceRef:
+  - "HGIS 112441"
 aliases:
   - "전라남도/구례군/고달면 (HGIS 112441)"
 ---

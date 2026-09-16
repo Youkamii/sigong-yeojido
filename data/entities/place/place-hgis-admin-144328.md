@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144328"
 label: "경상남도/산청군/생초면"
-labelNote: "HGIS 144328"
+sourceRef:
+  - "HGIS 144328"
 aliases:
   - "경상남도/산청군/생초면 (HGIS 144328)"
 ---

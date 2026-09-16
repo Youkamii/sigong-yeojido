@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110461"
 label: "전라남도/강진군/군내면"
-labelNote: "HGIS 110461"
+sourceRef:
+  - "HGIS 110461"
 aliases:
   - "전라남도/강진군/군내면 (HGIS 110461)"
 ---

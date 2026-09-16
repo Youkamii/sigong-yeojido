@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122866"
 label: "전라남도/함평군/엄다면"
-labelNote: "HGIS 122866"
+sourceRef:
+  - "HGIS 122866"
 aliases:
   - "전라남도/함평군/엄다면 (HGIS 122866)"
 ---

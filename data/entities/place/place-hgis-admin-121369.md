@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121369"
 label: "전라남도/제주도/중면"
-labelNote: "HGIS 121369"
+sourceRef:
+  - "HGIS 121369"
 aliases:
   - "전라남도/제주도/중면 (HGIS 121369)"
 ---

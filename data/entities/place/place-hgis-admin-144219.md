@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144219"
 label: "경상남도/마산부/웅동면"
-labelNote: "HGIS 144219"
+sourceRef:
+  - "HGIS 144219"
 aliases:
   - "경상남도/마산부/웅동면 (HGIS 144219)"
 ---

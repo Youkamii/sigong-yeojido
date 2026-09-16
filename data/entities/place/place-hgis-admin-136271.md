@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136271"
 label: "평안북도/초산군/송상면"
-labelNote: "HGIS 136271"
+sourceRef:
+  - "HGIS 136271"
 aliases:
   - "평안북도/초산군/송상면 (HGIS 136271)"
 ---

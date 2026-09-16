@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117100"
 label: "전라남도/목포부/망운면"
-labelNote: "HGIS 117100"
+sourceRef:
+  - "HGIS 117100"
 aliases:
   - "전라남도/목포부/망운면 (HGIS 117100)"
 ---

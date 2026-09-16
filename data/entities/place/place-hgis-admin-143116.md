@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143116"
 label: "경상남도/진주부"
-labelNote: "HGIS 143116"
+sourceRef:
+  - "HGIS 143116"
 aliases:
   - "경상남도/진주부 (HGIS 143116)"
 ---

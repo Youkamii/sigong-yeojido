@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156724"
 label: "경상북도/선산군/주아면"
-labelNote: "HGIS 156724"
+sourceRef:
+  - "HGIS 156724"
 aliases:
   - "경상북도/선산군/주아면 (HGIS 156724)"
 ---

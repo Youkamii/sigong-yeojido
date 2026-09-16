@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157368"
 label: "경상북도/영천군/추곡면"
-labelNote: "HGIS 157368"
+sourceRef:
+  - "HGIS 157368"
 aliases:
   - "경상북도/영천군/추곡면 (HGIS 157368)"
 ---

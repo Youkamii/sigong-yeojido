@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144672"
 label: "경상남도/통영군/동부면"
-labelNote: "HGIS 144672"
+sourceRef:
+  - "HGIS 144672"
 aliases:
   - "경상남도/통영군/동부면 (HGIS 144672)"
 ---

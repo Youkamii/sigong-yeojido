@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143288"
 label: "경상남도/창녕군/월미면"
-labelNote: "HGIS 143288"
+sourceRef:
+  - "HGIS 143288"
 aliases:
   - "경상남도/창녕군/월미면 (HGIS 143288)"
 ---

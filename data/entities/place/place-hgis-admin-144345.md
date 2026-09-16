@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144345"
 label: "경상남도/산청군/지수면"
-labelNote: "HGIS 144345"
+sourceRef:
+  - "HGIS 144345"
 aliases:
   - "경상남도/산청군/지수면 (HGIS 144345)"
 ---

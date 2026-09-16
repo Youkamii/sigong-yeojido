@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157553"
 label: "경상북도/현풍군/산전면"
-labelNote: "HGIS 157553"
+sourceRef:
+  - "HGIS 157553"
 aliases:
   - "경상북도/현풍군/산전면 (HGIS 157553)"
 ---

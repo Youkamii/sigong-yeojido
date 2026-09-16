@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144484"
 label: "경상남도/의령군/가수면"
-labelNote: "HGIS 144484"
+sourceRef:
+  - "HGIS 144484"
 aliases:
   - "경상남도/의령군/가수면 (HGIS 144484)"
 ---

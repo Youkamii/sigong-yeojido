@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117842"
 label: "전라남도/보성군/남상면"
-labelNote: "HGIS 117842"
+sourceRef:
+  - "HGIS 117842"
 aliases:
   - "전라남도/보성군/남상면 (HGIS 117842)"
 ---

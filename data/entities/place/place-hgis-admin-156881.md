@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156881"
 label: "경상북도/군위군/석본면"
-labelNote: "HGIS 156881"
+sourceRef:
+  - "HGIS 156881"
 aliases:
   - "경상북도/군위군/석본면 (HGIS 156881)"
 ---

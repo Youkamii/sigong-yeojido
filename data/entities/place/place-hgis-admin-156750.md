@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156750"
 label: "경상북도/청도군/각남면"
-labelNote: "HGIS 156750"
+sourceRef:
+  - "HGIS 156750"
 aliases:
   - "경상북도/청도군/각남면 (HGIS 156750)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144352"
 label: "경상남도/산청군/황산면"
-labelNote: "HGIS 144352"
+sourceRef:
+  - "HGIS 144352"
 aliases:
   - "경상남도/산청군/황산면 (HGIS 144352)"
 ---

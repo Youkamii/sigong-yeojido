@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123894"
 label: "전라남도/화순군/북면"
-labelNote: "HGIS 123894"
+sourceRef:
+  - "HGIS 123894"
 aliases:
   - "전라남도/화순군/북면 (HGIS 123894)"
 ---

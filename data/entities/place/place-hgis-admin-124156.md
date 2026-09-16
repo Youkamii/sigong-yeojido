@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-124156"
 label: "전라남도/흥양군/두원면"
-labelNote: "HGIS 124156"
+sourceRef:
+  - "HGIS 124156"
 aliases:
   - "전라남도/흥양군/두원면 (HGIS 124156)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-106472"
 label: "전라북도/고산군/동하면"
-labelNote: "HGIS 106472"
+sourceRef:
+  - "HGIS 106472"
 aliases:
   - "전라북도/고산군/동하면 (HGIS 106472)"
 ---

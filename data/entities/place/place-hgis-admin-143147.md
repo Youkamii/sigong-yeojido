@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143147"
 label: "경상남도/함양군/사전면"
-labelNote: "HGIS 143147"
+sourceRef:
+  - "HGIS 143147"
 aliases:
   - "경상남도/함양군/사전면 (HGIS 143147)"
 ---

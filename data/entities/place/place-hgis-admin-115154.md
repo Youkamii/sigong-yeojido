@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115154"
 label: "전라남도/영광군/육창면"
-labelNote: "HGIS 115154"
+sourceRef:
+  - "HGIS 115154"
 aliases:
   - "전라남도/영광군/육창면 (HGIS 115154)"
 ---

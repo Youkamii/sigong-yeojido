@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136368"
 label: "평안북도/벽동군/우면"
-labelNote: "HGIS 136368"
+sourceRef:
+  - "HGIS 136368"
 aliases:
   - "평안북도/벽동군/우면 (HGIS 136368)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136498"
 label: "평안북도/초산군/판하면"
-labelNote: "HGIS 136498"
+sourceRef:
+  - "HGIS 136498"
 aliases:
   - "평안북도/초산군/판하면 (HGIS 136498)"
 ---

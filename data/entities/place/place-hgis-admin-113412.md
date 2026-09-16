@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113412"
 label: "전라남도/돌산군/삼산면"
-labelNote: "HGIS 113412"
+sourceRef:
+  - "HGIS 113412"
 aliases:
   - "전라남도/돌산군/삼산면 (HGIS 113412)"
 ---

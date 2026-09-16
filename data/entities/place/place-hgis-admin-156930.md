@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156930"
 label: "경상북도/달성군/가창면"
-labelNote: "HGIS 156930"
+sourceRef:
+  - "HGIS 156930"
 aliases:
   - "경상북도/달성군/가창면 (HGIS 156930)"
 ---

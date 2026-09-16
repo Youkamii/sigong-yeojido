@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136288"
 label: "평안북도/가산군/서면"
-labelNote: "HGIS 136288"
+sourceRef:
+  - "HGIS 136288"
 aliases:
   - "평안북도/가산군/서면 (HGIS 136288)"
 ---

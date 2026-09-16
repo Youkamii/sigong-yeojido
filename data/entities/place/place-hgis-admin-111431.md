@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111431"
 label: "전라남도/광양군/사곡면"
-labelNote: "HGIS 111431"
+sourceRef:
+  - "HGIS 111431"
 aliases:
   - "전라남도/광양군/사곡면 (HGIS 111431)"
 ---

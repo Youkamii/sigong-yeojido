@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157563"
 label: "경상북도/흥해군/기계면"
-labelNote: "HGIS 157563"
+sourceRef:
+  - "HGIS 157563"
 aliases:
   - "경상북도/흥해군/기계면 (HGIS 157563)"
 ---

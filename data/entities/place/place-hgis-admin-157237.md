@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157237"
 label: "경상북도/안동군/북선면"
-labelNote: "HGIS 157237"
+sourceRef:
+  - "HGIS 157237"
 aliases:
   - "경상북도/안동군/북선면 (HGIS 157237)"
 ---

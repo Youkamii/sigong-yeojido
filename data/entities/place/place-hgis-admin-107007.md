@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-107007"
 label: "전라북도/남원군/생조벌면"
-labelNote: "HGIS 107007"
+sourceRef:
+  - "HGIS 107007"
 aliases:
   - "전라북도/남원군/생조벌면 (HGIS 107007)"
 ---

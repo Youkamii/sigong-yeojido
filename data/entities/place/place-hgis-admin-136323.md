@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136323"
 label: "평안북도/곽산군/우면"
-labelNote: "HGIS 136323"
+sourceRef:
+  - "HGIS 136323"
 aliases:
   - "평안북도/곽산군/우면 (HGIS 136323)"
 ---

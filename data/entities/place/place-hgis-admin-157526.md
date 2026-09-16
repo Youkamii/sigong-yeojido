@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157526"
 label: "경상북도/칠곡군/칠곡면"
-labelNote: "HGIS 157526"
+sourceRef:
+  - "HGIS 157526"
 aliases:
   - "경상북도/칠곡군/칠곡면 (HGIS 157526)"
 ---

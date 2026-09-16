@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136485"
 label: "평안북도/후창군/연성면"
-labelNote: "HGIS 136485"
+sourceRef:
+  - "HGIS 136485"
 aliases:
   - "평안북도/후창군/연성면 (HGIS 136485)"
 ---

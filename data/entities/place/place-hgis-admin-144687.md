@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144687"
 label: "경상남도/통영군/한산면"
-labelNote: "HGIS 144687"
+sourceRef:
+  - "HGIS 144687"
 aliases:
   - "경상남도/통영군/한산면 (HGIS 144687)"
 ---

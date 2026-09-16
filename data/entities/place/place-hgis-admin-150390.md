@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-150390"
 label: "경상남도/동래부/좌이면"
-labelNote: "HGIS 150390"
+sourceRef:
+  - "HGIS 150390"
 aliases:
   - "경상남도/동래부/좌이면 (HGIS 150390)"
 ---

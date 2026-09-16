@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-100319"
 label: "전라북도/부안군/일도면"
-labelNote: "HGIS 100319"
+sourceRef:
+  - "HGIS 100319"
 aliases:
   - "전라북도/부안군/일도면 (HGIS 100319)"
 ---

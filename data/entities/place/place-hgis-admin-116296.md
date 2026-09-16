@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-116296"
 label: "전라남도/영암군/북이시면"
-labelNote: "HGIS 116296"
+sourceRef:
+  - "HGIS 116296"
 aliases:
   - "전라남도/영암군/북이시면 (HGIS 116296)"
 ---

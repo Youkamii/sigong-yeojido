@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136426"
 label: "평안북도/용천군/북하면"
-labelNote: "HGIS 136426"
+sourceRef:
+  - "HGIS 136426"
 aliases:
   - "평안북도/용천군/북하면 (HGIS 136426)"
 ---

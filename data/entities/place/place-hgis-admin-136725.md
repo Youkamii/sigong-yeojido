@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136725"
 label: "평안북도/정주군/남서면"
-labelNote: "HGIS 136725"
+sourceRef:
+  - "HGIS 136725"
 aliases:
   - "평안북도/정주군/남서면 (HGIS 136725)"
 ---

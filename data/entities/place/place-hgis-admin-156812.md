@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156812"
 label: "경상북도/경산군/북면"
-labelNote: "HGIS 156812"
+sourceRef:
+  - "HGIS 156812"
 aliases:
   - "경상북도/경산군/북면 (HGIS 156812)"
 ---

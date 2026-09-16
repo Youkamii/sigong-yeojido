@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136321"
 label: "평안북도/곽산군/동면"
-labelNote: "HGIS 136321"
+sourceRef:
+  - "HGIS 136321"
 aliases:
   - "평안북도/곽산군/동면 (HGIS 136321)"
 ---

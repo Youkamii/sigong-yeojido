@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111289"
 label: "전라남도/광주군/갑마보면"
-labelNote: "HGIS 111289"
+sourceRef:
+  - "HGIS 111289"
 aliases:
   - "전라남도/광주군/갑마보면 (HGIS 111289)"
 ---

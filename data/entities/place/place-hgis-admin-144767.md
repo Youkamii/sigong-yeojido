@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144767"
 label: "경상남도/함양군/엄천면"
-labelNote: "HGIS 144767"
+sourceRef:
+  - "HGIS 144767"
 aliases:
   - "경상남도/함양군/엄천면 (HGIS 144767)"
 ---

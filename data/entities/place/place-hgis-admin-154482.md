@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-154482"
 label: "경상남도/창원부/외서면"
-labelNote: "HGIS 154482"
+sourceRef:
+  - "HGIS 154482"
 aliases:
   - "경상남도/창원부/외서면 (HGIS 154482)"
 ---

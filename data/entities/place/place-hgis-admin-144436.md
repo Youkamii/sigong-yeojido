@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144436"
 label: "경상남도/진양군/일반성면"
-labelNote: "HGIS 144436"
+sourceRef:
+  - "HGIS 144436"
 aliases:
   - "경상남도/진양군/일반성면 (HGIS 144436)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156901"
 label: "경상북도/김산군/파미면"
-labelNote: "HGIS 156901"
+sourceRef:
+  - "HGIS 156901"
 aliases:
   - "경상북도/김산군/파미면 (HGIS 156901)"
 ---

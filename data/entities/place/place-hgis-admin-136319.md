@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136319"
 label: "평안북도/곽산군/군면"
-labelNote: "HGIS 136319"
+sourceRef:
+  - "HGIS 136319"
 aliases:
   - "평안북도/곽산군/군면 (HGIS 136319)"
 ---

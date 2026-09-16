@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-115561"
 label: "전라남도/영광군/외간면"
-labelNote: "HGIS 115561"
+sourceRef:
+  - "HGIS 115561"
 aliases:
   - "전라남도/영광군/외간면 (HGIS 115561)"
 ---

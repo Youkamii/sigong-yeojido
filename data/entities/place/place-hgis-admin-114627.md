@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114627"
 label: "전라남도/여수군/삼산면"
-labelNote: "HGIS 114627"
+sourceRef:
+  - "HGIS 114627"
 aliases:
   - "전라남도/여수군/삼산면 (HGIS 114627)"
 ---

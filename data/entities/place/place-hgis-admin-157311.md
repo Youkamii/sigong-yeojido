@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157311"
 label: "경상북도/영주군/상리면"
-labelNote: "HGIS 157311"
+sourceRef:
+  - "HGIS 157311"
 aliases:
   - "경상북도/영주군/상리면 (HGIS 157311)"
 ---

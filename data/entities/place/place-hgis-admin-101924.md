@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-101924"
 label: "전라북도/익산군/지석면"
-labelNote: "HGIS 101924"
+sourceRef:
+  - "HGIS 101924"
 aliases:
   - "전라북도/익산군/지석면 (HGIS 101924)"
 ---

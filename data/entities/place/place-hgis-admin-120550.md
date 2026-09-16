@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-120550"
 label: "전라남도/장흥군/안상면"
-labelNote: "HGIS 120550"
+sourceRef:
+  - "HGIS 120550"
 aliases:
   - "전라남도/장흥군/안상면 (HGIS 120550)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-151591"
 label: "경상남도/창원부/구산면"
-labelNote: "HGIS 151591"
+sourceRef:
+  - "HGIS 151591"
 aliases:
   - "경상남도/창원부/구산면 (HGIS 151591)"
 ---

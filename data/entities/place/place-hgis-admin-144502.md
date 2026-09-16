@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144502"
 label: "경상남도/의령군/용암면"
-labelNote: "HGIS 144502"
+sourceRef:
+  - "HGIS 144502"
 aliases:
   - "경상남도/의령군/용암면 (HGIS 144502)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-145543"
 label: "경상남도/단성군/신등면"
-labelNote: "HGIS 145543"
+sourceRef:
+  - "HGIS 145543"
 aliases:
   - "경상남도/단성군/신등면 (HGIS 145543)"
 ---

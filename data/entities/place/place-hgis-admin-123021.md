@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123021"
 label: "전라남도/함평군/오산면"
-labelNote: "HGIS 123021"
+sourceRef:
+  - "HGIS 123021"
 aliases:
   - "전라남도/함평군/오산면 (HGIS 123021)"
 ---

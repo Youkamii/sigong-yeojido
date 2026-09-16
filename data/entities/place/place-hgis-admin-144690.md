@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144690"
 label: "경상남도/하동군/북면"
-labelNote: "HGIS 144690"
+sourceRef:
+  - "HGIS 144690"
 aliases:
   - "경상남도/하동군/북면 (HGIS 144690)"
 ---

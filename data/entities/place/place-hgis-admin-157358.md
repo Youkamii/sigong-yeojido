@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157358"
 label: "경상북도/영천군/영천읍"
-labelNote: "HGIS 157358"
+sourceRef:
+  - "HGIS 157358"
 aliases:
   - "경상북도/영천군/영천읍 (HGIS 157358)"
 ---

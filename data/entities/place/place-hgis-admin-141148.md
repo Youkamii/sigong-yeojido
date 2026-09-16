@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141148"
 label: "평안북도/의주군/고관면"
-labelNote: "HGIS 141148"
+sourceRef:
+  - "HGIS 141148"
 aliases:
   - "평안북도/의주군/고관면 (HGIS 141148)"
 ---

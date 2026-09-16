@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-111801"
 label: "전라남도/광주군/당부면"
-labelNote: "HGIS 111801"
+sourceRef:
+  - "HGIS 111801"
 aliases:
   - "전라남도/광주군/당부면 (HGIS 111801)"
 ---

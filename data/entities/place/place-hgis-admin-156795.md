@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156795"
 label: "경상북도/성주군/남산면"
-labelNote: "HGIS 156795"
+sourceRef:
+  - "HGIS 156795"
 aliases:
   - "경상북도/성주군/남산면 (HGIS 156795)"
 ---

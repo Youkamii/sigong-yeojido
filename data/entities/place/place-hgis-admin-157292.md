@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157292"
 label: "경상북도/영일군/달전면"
-labelNote: "HGIS 157292"
+sourceRef:
+  - "HGIS 157292"
 aliases:
   - "경상북도/영일군/달전면 (HGIS 157292)"
 ---

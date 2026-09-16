@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-119713"
 label: "전라남도/장성군/동화면"
-labelNote: "HGIS 119713"
+sourceRef:
+  - "HGIS 119713"
 aliases:
   - "전라남도/장성군/동화면 (HGIS 119713)"
 ---

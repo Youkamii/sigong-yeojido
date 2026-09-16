@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156711"
 label: "경상북도/경산군/읍면"
-labelNote: "HGIS 156711"
+sourceRef:
+  - "HGIS 156711"
 aliases:
   - "경상북도/경산군/읍면 (HGIS 156711)"
 ---

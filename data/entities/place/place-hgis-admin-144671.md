@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144671"
 label: "경상남도/통영군/도산면"
-labelNote: "HGIS 144671"
+sourceRef:
+  - "HGIS 144671"
 aliases:
   - "경상남도/통영군/도산면 (HGIS 144671)"
 ---

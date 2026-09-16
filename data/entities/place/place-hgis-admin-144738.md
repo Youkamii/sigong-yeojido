@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144738"
 label: "경상남도/함안군/상리면"
-labelNote: "HGIS 144738"
+sourceRef:
+  - "HGIS 144738"
 aliases:
   - "경상남도/함안군/상리면 (HGIS 144738)"
 ---

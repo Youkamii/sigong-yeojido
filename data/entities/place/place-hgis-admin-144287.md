@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144287"
 label: "경상남도/사천군/동면"
-labelNote: "HGIS 144287"
+sourceRef:
+  - "HGIS 144287"
 aliases:
   - "경상남도/사천군/동면 (HGIS 144287)"
 ---

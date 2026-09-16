@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157522"
 label: "경상북도/칠곡군/왜관면"
-labelNote: "HGIS 157522"
+sourceRef:
+  - "HGIS 157522"
 aliases:
   - "경상북도/칠곡군/왜관면 (HGIS 157522)"
 ---

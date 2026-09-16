@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140787"
 label: "평안북도/운산군/남면"
-labelNote: "HGIS 140787"
+sourceRef:
+  - "HGIS 140787"
 aliases:
   - "평안북도/운산군/남면 (HGIS 140787)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157454"
 label: "경상북도/지례군/하현면"
-labelNote: "HGIS 157454"
+sourceRef:
+  - "HGIS 157454"
 aliases:
   - "경상북도/지례군/하현면 (HGIS 157454)"
 ---

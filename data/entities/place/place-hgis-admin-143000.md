@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143000"
 label: "경상남도/마산부/진해면"
-labelNote: "HGIS 143000"
+sourceRef:
+  - "HGIS 143000"
 aliases:
   - "경상남도/마산부/진해면 (HGIS 143000)"
 ---

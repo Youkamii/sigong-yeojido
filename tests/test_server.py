@@ -140,7 +140,16 @@ class EntityShellTests(unittest.TestCase):
         self.assertEqual(rows[0]["labelNote"], "1896년 2월 11일")
         self.assertEqual(rows[0]["aliases"], ["아관파천 (1896년 2월 11일)"])
         self.assertEqual(shells["event-agwan"],
-                         {"aliases": ["아관파천 (1896년 2월 11일)"], "labelNote": "1896년 2월 11일", "kind": None})
+                         {"aliases": ["아관파천 (1896년 2월 11일)"], "labelNote": "1896년 2월 11일", "kind": None,
+                          "sourceRef": []})
+
+    def test_collect_entities_reads_source_refs(self):
+        """자료 식별자는 sourceRef 로 읽히고 labelNote 에는 남지 않는다 (#200 2차)."""
+        rows, shells = self.shells('---\nid: "event-agwan"\ntype: "Event"\nlabel: "아관파천"\n'
+                                   'sourceRef:\n  - "HGIS 176301"\n---\n')
+        self.assertEqual(rows[0]["sourceRef"], ["HGIS 176301"])
+        self.assertEqual(shells["event-agwan"]["sourceRef"], ["HGIS 176301"])
+        self.assertIsNone(shells["event-agwan"]["labelNote"])
 
     def test_a_plain_shell_carries_no_extra_names(self):
         rows, shells = self.shells('---\nid: "event-agwan"\ntype: "Event"\nlabel: "아관파천"\n---\n')

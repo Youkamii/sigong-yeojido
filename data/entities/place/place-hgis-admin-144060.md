@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144060"
 label: "경상남도/거제군/일운면"
-labelNote: "HGIS 144060"
+sourceRef:
+  - "HGIS 144060"
 aliases:
   - "경상남도/거제군/일운면 (HGIS 144060)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-121762"
 label: "전라남도/지도군/자은면"
-labelNote: "HGIS 121762"
+sourceRef:
+  - "HGIS 121762"
 aliases:
   - "전라남도/지도군/자은면 (HGIS 121762)"
 ---

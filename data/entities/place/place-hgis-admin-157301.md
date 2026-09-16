@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157301"
 label: "경상북도/영일군/죽남면"
-labelNote: "HGIS 157301"
+sourceRef:
+  - "HGIS 157301"
 aliases:
   - "경상북도/영일군/죽남면 (HGIS 157301)"
 ---

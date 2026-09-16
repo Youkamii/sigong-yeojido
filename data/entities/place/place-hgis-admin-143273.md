@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-143273"
 label: "경상남도/진주군/지공면"
-labelNote: "HGIS 143273"
+sourceRef:
+  - "HGIS 143273"
 aliases:
   - "경상남도/진주군/지공면 (HGIS 143273)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-112803"
 label: "전라남도/남평군/두산면"
-labelNote: "HGIS 112803"
+sourceRef:
+  - "HGIS 112803"
 aliases:
   - "전라남도/남평군/두산면 (HGIS 112803)"
 ---

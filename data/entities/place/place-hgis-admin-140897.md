@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-140897"
 label: "평안북도/운산군/운산면"
-labelNote: "HGIS 140897"
+sourceRef:
+  - "HGIS 140897"
 aliases:
   - "평안북도/운산군/운산면 (HGIS 140897)"
 ---

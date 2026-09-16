@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113887"
 label: "전라남도/나주군/문평면"
-labelNote: "HGIS 113887"
+sourceRef:
+  - "HGIS 113887"
 aliases:
   - "전라남도/나주군/문평면 (HGIS 113887)"
 ---

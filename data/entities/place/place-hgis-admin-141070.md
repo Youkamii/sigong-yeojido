@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-141070"
 label: "평안북도/위원군/서태면"
-labelNote: "HGIS 141070"
+sourceRef:
+  - "HGIS 141070"
 aliases:
   - "평안북도/위원군/서태면 (HGIS 141070)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156790"
 label: "경상북도/고령군/인곡면"
-labelNote: "HGIS 156790"
+sourceRef:
+  - "HGIS 156790"
 aliases:
   - "경상북도/고령군/인곡면 (HGIS 156790)"
 ---

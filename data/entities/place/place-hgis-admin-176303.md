@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-176303"
 label: "강원도/통천군"
-labelNote: "HGIS 176303"
+sourceRef:
+  - "HGIS 176303"
 aliases:
   - "강원도/통천군 (HGIS 176303)"
 ---

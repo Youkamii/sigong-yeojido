@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-114185"
 label: "전라남도/나주군/아계면"
-labelNote: "HGIS 114185"
+sourceRef:
+  - "HGIS 114185"
 aliases:
   - "전라남도/나주군/아계면 (HGIS 114185)"
 ---

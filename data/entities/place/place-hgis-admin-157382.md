@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157382"
 label: "경상북도/의성군/내사면"
-labelNote: "HGIS 157382"
+sourceRef:
+  - "HGIS 157382"
 aliases:
   - "경상북도/의성군/내사면 (HGIS 157382)"
 ---

@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157395"
 label: "경상북도/의성군/상천면"
-labelNote: "HGIS 157395"
+sourceRef:
+  - "HGIS 157395"
 aliases:
   - "경상북도/의성군/상천면 (HGIS 157395)"
 ---

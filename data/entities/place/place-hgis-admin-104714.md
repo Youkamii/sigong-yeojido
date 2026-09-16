@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-104714"
 label: "전라북도/고부군"
-labelNote: "HGIS 104714"
+sourceRef:
+  - "HGIS 104714"
 aliases:
   - "전라북도/고부군 (HGIS 104714)"
 ---

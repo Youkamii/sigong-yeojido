@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123587"
 label: "전라남도/해남군/옥천종면"
-labelNote: "HGIS 123587"
+sourceRef:
+  - "HGIS 123587"
 aliases:
   - "전라남도/해남군/옥천종면 (HGIS 123587)"
 ---

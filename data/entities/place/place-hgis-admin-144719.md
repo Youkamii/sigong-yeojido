@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144719"
 label: "경상남도/하동군/하동면"
-labelNote: "HGIS 144719"
+sourceRef:
+  - "HGIS 144719"
 aliases:
   - "경상남도/하동군/하동면 (HGIS 144719)"
 ---

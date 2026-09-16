@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-110834"
 label: "전라남도/고흥군/대서면"
-labelNote: "HGIS 110834"
+sourceRef:
+  - "HGIS 110834"
 aliases:
   - "전라남도/고흥군/대서면 (HGIS 110834)"
 ---

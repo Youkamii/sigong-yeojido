@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-149336"
 label: "경상남도/울산군/방어진읍"
-labelNote: "HGIS 149336"
+sourceRef:
+  - "HGIS 149336"
 aliases:
   - "경상남도/울산군/방어진읍 (HGIS 149336)"
 ---

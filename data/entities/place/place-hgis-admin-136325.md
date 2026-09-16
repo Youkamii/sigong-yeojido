@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136325"
 label: "평안북도/구성군/내동면"
-labelNote: "HGIS 136325"
+sourceRef:
+  - "HGIS 136325"
 aliases:
   - "평안북도/구성군/내동면 (HGIS 136325)"
 ---

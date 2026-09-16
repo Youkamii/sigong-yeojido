@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113318"
 label: "전라남도/대정군/좌면"
-labelNote: "HGIS 113318"
+sourceRef:
+  - "HGIS 113318"
 aliases:
   - "전라남도/대정군/좌면 (HGIS 113318)"
 ---

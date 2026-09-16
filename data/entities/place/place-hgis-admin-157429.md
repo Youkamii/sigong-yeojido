@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157429"
 label: "경상북도/자인군/중북면"
-labelNote: "HGIS 157429"
+sourceRef:
+  - "HGIS 157429"
 aliases:
   - "경상북도/자인군/중북면 (HGIS 157429)"
 ---

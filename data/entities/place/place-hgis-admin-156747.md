@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156747"
 label: "경상북도/지례군/상남면"
-labelNote: "HGIS 156747"
+sourceRef:
+  - "HGIS 156747"
 aliases:
   - "경상북도/지례군/상남면 (HGIS 156747)"
 ---

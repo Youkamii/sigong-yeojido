@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156903"
 label: "경상북도/김천군/개령면"
-labelNote: "HGIS 156903"
+sourceRef:
+  - "HGIS 156903"
 aliases:
   - "경상북도/김천군/개령면 (HGIS 156903)"
 ---

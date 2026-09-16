@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157275"
 label: "경상북도/영양군/입암면"
-labelNote: "HGIS 157275"
+sourceRef:
+  - "HGIS 157275"
 aliases:
   - "경상북도/영양군/입암면 (HGIS 157275)"
 ---

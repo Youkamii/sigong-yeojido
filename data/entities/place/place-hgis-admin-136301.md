@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136301"
 label: "평안북도/강계군/군내면"
-labelNote: "HGIS 136301"
+sourceRef:
+  - "HGIS 136301"
 aliases:
   - "평안북도/강계군/군내면 (HGIS 136301)"
 ---

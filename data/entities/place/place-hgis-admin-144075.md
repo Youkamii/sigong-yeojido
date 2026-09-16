@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144075"
 label: "경상남도/거창군/고천면"
-labelNote: "HGIS 144075"
+sourceRef:
+  - "HGIS 144075"
 aliases:
   - "경상남도/거창군/고천면 (HGIS 144075)"
 ---

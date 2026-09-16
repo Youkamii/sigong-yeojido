@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144379"
 label: "경상남도/안의군/황곡면"
-labelNote: "HGIS 144379"
+sourceRef:
+  - "HGIS 144379"
 aliases:
   - "경상남도/안의군/황곡면 (HGIS 144379)"
 ---

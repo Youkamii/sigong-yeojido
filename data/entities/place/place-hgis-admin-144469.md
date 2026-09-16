@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144469"
 label: "경상남도/울산군/외남면"
-labelNote: "HGIS 144469"
+sourceRef:
+  - "HGIS 144469"
 aliases:
   - "경상남도/울산군/외남면 (HGIS 144469)"
 ---

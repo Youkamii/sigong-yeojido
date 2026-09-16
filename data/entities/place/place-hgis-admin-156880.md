@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156880"
 label: "경상북도/군위군/서리면"
-labelNote: "HGIS 156880"
+sourceRef:
+  - "HGIS 156880"
 aliases:
   - "경상북도/군위군/서리면 (HGIS 156880)"
 ---

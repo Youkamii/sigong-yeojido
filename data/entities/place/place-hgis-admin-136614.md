@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-136614"
 label: "평안북도/강계군/어뢰면"
-labelNote: "HGIS 136614"
+sourceRef:
+  - "HGIS 136614"
 aliases:
   - "평안북도/강계군/어뢰면 (HGIS 136614)"
 ---

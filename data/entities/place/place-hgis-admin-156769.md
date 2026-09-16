@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156769"
 label: "경상북도/김천군/구성면"
-labelNote: "HGIS 156769"
+sourceRef:
+  - "HGIS 156769"
 aliases:
   - "경상북도/김천군/구성면 (HGIS 156769)"
 ---

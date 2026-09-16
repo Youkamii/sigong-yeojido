@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-105781"
 label: "전라북도/태인군/산외일변면"
-labelNote: "HGIS 105781"
+sourceRef:
+  - "HGIS 105781"
 aliases:
   - "전라북도/태인군/산외일변면 (HGIS 105781)"
 ---

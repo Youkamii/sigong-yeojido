@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-113405"
 label: "전라남도/돌산군/봉래면"
-labelNote: "HGIS 113405"
+sourceRef:
+  - "HGIS 113405"
 aliases:
   - "전라남도/돌산군/봉래면 (HGIS 113405)"
 ---

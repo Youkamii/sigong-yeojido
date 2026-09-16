@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144744"
 label: "경상남도/함안군/읍내면"
-labelNote: "HGIS 144744"
+sourceRef:
+  - "HGIS 144744"
 aliases:
   - "경상남도/함안군/읍내면 (HGIS 144744)"
 ---

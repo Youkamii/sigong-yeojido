@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-156718"
 label: "경상북도/예천군/유리면"
-labelNote: "HGIS 156718"
+sourceRef:
+  - "HGIS 156718"
 aliases:
   - "경상북도/예천군/유리면 (HGIS 156718)"
 ---

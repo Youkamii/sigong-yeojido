@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157088"
 label: "경상북도/봉화군/중춘양면"
-labelNote: "HGIS 157088"
+sourceRef:
+  - "HGIS 157088"
 aliases:
   - "경상북도/봉화군/중춘양면 (HGIS 157088)"
 ---

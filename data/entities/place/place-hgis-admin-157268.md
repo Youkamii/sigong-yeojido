@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157268"
 label: "경상북도/영덕군/외남면"
-labelNote: "HGIS 157268"
+sourceRef:
+  - "HGIS 157268"
 aliases:
   - "경상북도/영덕군/외남면 (HGIS 157268)"
 ---

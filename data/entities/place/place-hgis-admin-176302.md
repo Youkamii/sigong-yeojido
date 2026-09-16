@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-176302"
 label: "강원도/춘천군/신북면"
-labelNote: "HGIS 176302"
+sourceRef:
+  - "HGIS 176302"
 aliases:
   - "강원도/춘천군/신북면 (HGIS 176302)"
 ---

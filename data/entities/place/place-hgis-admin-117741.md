@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117741"
 label: "전라남도/무안군/일서면"
-labelNote: "HGIS 117741"
+sourceRef:
+  - "HGIS 117741"
 aliases:
   - "전라남도/무안군/일서면 (HGIS 117741)"
 ---

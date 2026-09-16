@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-117765"
 label: "전라남도/무안군/하의면"
-labelNote: "HGIS 117765"
+sourceRef:
+  - "HGIS 117765"
 aliases:
   - "전라남도/무안군/하의면 (HGIS 117765)"
 ---

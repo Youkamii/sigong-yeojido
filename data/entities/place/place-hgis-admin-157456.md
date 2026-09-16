@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157456"
 label: "경상북도/하양군/낙산면"
-labelNote: "HGIS 157456"
+sourceRef:
+  - "HGIS 157456"
 aliases:
   - "경상북도/하양군/낙산면 (HGIS 157456)"
 ---

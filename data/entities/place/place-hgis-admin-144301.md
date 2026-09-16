@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144301"
 label: "경상남도/사천군/읍동면"
-labelNote: "HGIS 144301"
+sourceRef:
+  - "HGIS 144301"
 aliases:
   - "경상남도/사천군/읍동면 (HGIS 144301)"
 ---

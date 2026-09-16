@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-101837"
 label: "전라북도/고부군/성포면"
-labelNote: "HGIS 101837"
+sourceRef:
+  - "HGIS 101837"
 aliases:
   - "전라북도/고부군/성포면 (HGIS 101837)"
 ---

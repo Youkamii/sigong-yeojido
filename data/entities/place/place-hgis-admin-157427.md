@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-157427"
 label: "경상북도/인동군/북면"
-labelNote: "HGIS 157427"
+sourceRef:
+  - "HGIS 157427"
 aliases:
   - "경상북도/인동군/북면 (HGIS 157427)"
 ---

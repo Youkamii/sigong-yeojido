@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-144493"
 label: "경상남도/의령군/모의면"
-labelNote: "HGIS 144493"
+sourceRef:
+  - "HGIS 144493"
 aliases:
   - "경상남도/의령군/모의면 (HGIS 144493)"
 ---

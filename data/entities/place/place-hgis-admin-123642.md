@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-123642"
 label: "전라남도/해남군/장동면"
-labelNote: "HGIS 123642"
+sourceRef:
+  - "HGIS 123642"
 aliases:
   - "전라남도/해남군/장동면 (HGIS 123642)"
 ---

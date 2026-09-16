@@ -2,7 +2,8 @@
 type: "Place"
 id: "place-hgis-admin-122676"
 label: "전라남도/함평군/대화면"
-labelNote: "HGIS 122676"
+sourceRef:
+  - "HGIS 122676"
 aliases:
   - "전라남도/함평군/대화면 (HGIS 122676)"
 ---
