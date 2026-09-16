@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1897년 2월 환궁하였으며, 10월 대한제국(大韓帝國)의 수립을 선포하고 황제위에 올라"
+      "value": "1897년 2월 환궁했으며, 10월 대한제국(大韓帝國)의 수립을 선포하고 황제위에 올라"
     },
     "note": "고종 항목 쪽 서술. 선포 월(10월)만 표기되고 일자는 대한제국 항목에서 수집.",
     "fromSource": "src-encykorea-gojong",

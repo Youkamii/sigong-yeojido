@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "세종이 1443년(세종 25) 겨울에 훈민정음을 창제하였다는 것"
+      "value": "세종이 1443년(세종 25) 겨울에 훈민정음을 창제했다는 것"
     },
     "note": "창제 행위 서술 원문.",
     "fromSource": "src-je-encykorea-e0065805",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "전승은 이 바위를 타사암(墮死巖)이라 하였다고 전한다."
+      "value": "전승은 이 바위를 타사암(墮死巖)이라 했다고 전한다."
     },
     "note": "지명 유래담이다. 사건의 사실 확인이 아니다.",
     "fromSource": "src-syj136-aks-nakhwaam",
