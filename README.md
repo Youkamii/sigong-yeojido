@@ -1,143 +1,97 @@
-# 시공여지도 — SIGONG YEOJIDO, A Spacetime Atlas of History
+<div align="center">
 
-한반도를 중심으로 한 역사 온톨로지. 사료(원문)를 조각(chunk)으로 쪼개고, 그 조각을 근거로 세운 주장(Claim)으로
-사람·장소·나라·사건을 잇는다. **근거 없으면 답하지 않고, 판정하지 않고, 어긋나는 기록은 나란히 보인다.**
-기본 화면은 넓은 3D 지도에서 연도를 움직이며 인물·사건·생활 풍경·전승의 무대를 탐색한다.
+<a href="https://sigong.rabbion.info/"><img src="docs/assets/hero.jpg" width="95%" alt="시공여지도 표지 그림. 옛 지도 위를 걷는 선비 뒤로 고인돌, 광개토대왕, 거북선, 훈민정음, 독립운동, 현대 도시가 한 장면에 이어진다."></a>
 
-- 원칙과 그림: `docs/00-vision.md`
-- 사료 목록·라이선스: `docs/01-sources.md`, 사료 카드 `data/sources/*.md`
-- 스키마 정본(3층: 엔티티 / Claim / Source·chunk): `docs/02-schema.md`
-- 조사 기록(사료 조사 1·2차, codex 교차검증, 국편 벌크 XML 구조): `docs/research/`
-- 현재 운영 상태·완료 이슈·다음 작업: [인수인계](docs/HANDOVER.md)
-- 전체 요구사항·완료 범위·빠진 기능: [전체 작업 목록](docs/TASKS.md)
-- 현재 운영 화면: [시공여지도 열기](https://sigong.rabbion.info/)
+# 시공여지도
 
-사료 적재·주장 검증·Fuseki, 2D·3D 지도, 그래프 탐색과 Claude Max 근거 챗봇이 동작한다.
-현대 연구 기본 렌즈·AI 제외·인물 검색·사료 비교·시간 환산·역사 경계 표시도 구현했다.
-2026-09-09 현재 Claim12,769개·Source카드1,841개·장면패킷294개·별도전승9개다. 역사 사건과 전승·추정 배경을 구분해 관련 인물·장소·문헌·출처로 연결한다.
-통사 자료의 빈 구간·한사군 위치 근거·실제 역로·공식 날짜 코드 확인은 남아 있다.
-전체 작업과 미검증 범위는 [TASKS.md](docs/TASKS.md)를 따른다.
+**연도를 끌면 그 해의 한국사가 지도 위에 펼쳐져요. 모든 이야기에는 어느 기록이 그렇게 말했는지가 붙어 있어요.**
 
-## 이전 데이터 스냅샷 (2026-09-07)
+SIGONG YEOJIDO · A Spacetime Atlas of Korean History
 
-| 사료 묶음 | Source | chunk | 재현·검증 |
-|---|---:|---:|---|
-| 광개토왕릉비·삼국사기·삼국유사·고려사 | 4 | 37,003 | [사료 목록](docs/01-sources.md) |
-| 조선왕조실록 | 30 | 389,483 | [실록 적재](docs/research/sillok-ingestion.md) |
-| 한국고대금석문 | 823 | 3,195 | [금석문 적재](docs/research/geumseokmun-ingestion.md) |
-| 한국고대사료집성 | 92 | 8,689 | [집성 적재](docs/research/jipseong-ingestion.md) |
-| 단군 표기 설명(백과사전 짧은 인용) | 1 | 1 | [사료 카드](data/sources/encykorea-dangun.md) |
-| 승정원일기 | 1 | 2,001,115 | [승정원일기 적재](docs/research/seungjeongwon-ilgi-ingestion.md) |
-| 비변사등록 | 1 | 93,801 | [비변사등록 적재](docs/research/bibyeonsa-deungnok-ingestion.md) |
-| 고종실록·순종실록·순종실록부록 | 3 | 33,633 | [고순종실록 적재](docs/research/gosunjong-sillok-ingestion.md) |
-| 추가 위치·인물·연대·근현대 발췌·역사 경계 | 44 | 837 | [전체 작업·근거](docs/TASKS.md) |
-| 고려사절요 | 1 | 11,226 | [35권·소개와 원 XML 대조](docs/research/goryeosa-jeolyo-76.md) |
-| 한국독립운동사자료 42권 | 42 | 13,366 | [kd036 결손·빈 항목 보존](docs/research/independence-77.md) |
-| 고운당필기 | 1 | 255 | [254기사·범례](docs/research/itkc-gowundang-78.md) |
-| 위키문헌 고전 전사 6종 | 6 | 113 | [실제 HTML·저본·결손](docs/research/wikisource-corpus-80.md) |
-| HGIS 읍·면 등(기존 Source 확장) | 0 | 8,176 | [원 기간·도형·반복 대조](docs/research/hgis-townships-75.md) |
-| Cliopatria 한국사 국가 경계 | 1 | 94 | [원 기록·기간·표시 한계](docs/research/cliopatria-79.md) |
-| 시대별 해설·평양 견해·사건 장소 | 22 | 43 | [시대별 범위](docs/research/claim-periods-51.md) |
-| 경국대전 1934년판 원해상도 스캔 | 1 | 319 | [319코마·전사문 0](docs/research/ndl-scan-87.md) |
-| 현재 대관령옛길·별도 기관 설명 | 2 | 2 | [932점의 현재 코스·과거 노선 미확인](docs/research/preserved-route-88.md) |
-| **c2 합계** | **1,075** | **2,601,351** | [운영 기록](docs/research/preserved-route-deployed-88.json) |
+[**지도 열기**](https://sigong.rabbion.info/) · [사용법](#이렇게-써요) · [무엇을 볼 수 있나](#무엇을-볼-수-있나) · [자료 출처](#바탕이-된-기록) · [직접 실행](#내-컴퓨터에서-실행하기)
 
-**새 Git 클론에는 카드 1,075개와 chunks 83,348개가 있다.** 실록 30종과 후대 사료의 전체 JSONL은 Git 밖의 c2
-`data/sources/sillok-*/`, `seungjeongwon-ilgi/`, `bibyeonsa-deungnok/`에 보관한다.
-새 환경에서는 각 적재 문서의 명령으로 생성한다. 파일별 SHA256·독립 XML 집계·두 번 추출한 결과는 Git에 있다.
-금석문·집성의 원문 JSONL은 Git에 있다.
-경국대전은 텍스트가 빈 이미지 참조 319개다. 원 스캔 319장(956,756,379바이트)은 c2 `data/scans/ndl-gyeongguk-1934/`에 보관하고, 사료 카드에서 면별로 열람한다. 전사문·OCR·번역은 수록하지 않았다.
+</div>
 
-독립신문(서재필) 19,635기사는 추출·검사 후 c2의 별도 작업 폴더에 보관했다. 공개 적재 조건 확인이 남아 위 표와 공개 뷰어에는 포함하지 않았다. [수집 상태](docs/research/newspaper-lod-90.md).
-집성은 ZIP에 있는 92종의 한국 관련 기사 발췌이며 원 사서 전체가 아니다. 포털 설명의 95종과 차이는 적재 문서에 기록했다.
-실록에서 실제 인용한 29개 JSON 객체는 `citation-chunks.jsonl`로 Git에 넣어 새 클론에서도 검증한다.
-전체 적재본이 있으면 모든 필드가 같은지 대조하고 한 번만 센다. [실제 새 복사본 검사](docs/research/goal-clean-clone.json)
+---
 
-Claim 9,418개·인용 chunk 9,242개·Location 230개·Conflict 6개다. 모두 AI 초안이며 사람 검토 완료 기록은 없다.
-직접 유적 좌표·현대 대표점·CHGIS 학술 재구성 점·근거가 부족한 조사 후보를 구별한다. 이름이 같다고 엔티티를 자동으로 합치지 않는다.
-역사 지도는 HGIS 도 32개·군·부 등 726개·읍면 등 8,176개, Cliopatria 국가 경계 기록 94개, 사건 관련 장소 5개다.
-종류·행정 단계 선택과 이름 검색을 지원한다. 데이터셋의 재구성 경계와 기관의 현재 좌표를 역사적 확정 위치·전투 범위로 바꾸지 않는다.
-열린 역로·떨어진 선을 그리는 경로도 구현했으나, 대관령옛길의 현재 안내 트랙 1개를 수록했다. 2023년 기준 자료이며 과거 노선과의 동일성은 미확인이다.
-근현대 자료는 문서 전사·연설·기관 해설·북한 작성 보고서의 짧은 발췌다. 전문 수집과 구별한다.
+김정호는 1861년에 자기 시대의 조선을 목판에 새겼어요. 대동여지도는 한 시점의 공간이에요.
+시공여지도는 거기에 시간을 얹어요. 고조선부터 현대까지 연도를 옮기면 그때의 나라 경계와 사람, 사건이 3D 지도 위에서 바뀌고, 화면의 모든 이름표는 삼국사기나 조선왕조실록 같은 원 기록으로 이어져요.
 
-## 구조
+## 무엇을 볼 수 있나
 
-```
-data/
-  sources/<src>.md            사료 카드 (frontmatter: composedYear·coversFrom·coversTo·license …)
-  sources/<src>/chunks.jsonl  원문 조각 — 단일 진실 원천. RDF 에는 id 만 들어간다
-  sources/<src>/citation-chunks.jsonl  대용량 원문 중 실제 인용 객체의 동일 복사본
-  claims/<src>/<chunk>.md     주장 — ```claims-json 펜스, quote 는 chunk text 의 부분 문자열
-  entities/<class>/<id>.md    엔티티 껍데기 (이름뿐 — 속성은 전부 Claim)
-  places.json, places-candidates*.json   지명 좌표 후보 (후보 여러 점, 유효기간, 출처)
-  lenses.json, comparisons.json        사료 묶음과 근거가 있는 비교 사례
-  maps/                       원 레코드 출처가 붙은 역사 경계
-  geo/                        해안선·하천(Natural Earth), 고도 격자(ETOPO 2022)
-services/
-  host/server.py              뷰어 서버 (표준 라이브러리, 읽기 전용 API)
-  host/index.html, app/       2D 지도 · 타임라인 · 근거/주장 패널 · 3D(korea.js) — app/engine·artbible·materials·style·util 은 판톨로지 이식본(손대지 않음)
-  ingestion/                  국편 벌크 XML 추출기(extract_nikh_xml.py), 광개토왕비 판독문 추출기
-  validate.py                 F4 검증기 — quote·citesChunk·엔티티·digest·Conflict
-  build_ttl.py                검증한 주장과 공용 위치 목록을 RDF로 생성
-  graph_query.py, time_query.py, people_query.py, comparison_query.py   실제 Fuseki 질의
-scripts/                      fetch_datago_bulk.py(공공데이터포털 벌크), fetch_elevation.py, fill_card_counts.py, fuseki.sh, verify_viewer.py, diag_3d.py …
-```
+<p align="center">
+<a href="https://sigong.rabbion.info/"><img src="docs/assets/readme/peninsula.jpg" width="95%" alt="1593년 한반도 전체 화면. 조선의 영역 위에 권율, 곽재우, 김천일, 유정 같은 인물 이름표와 평양성 탈환, 임진왜란 같은 사건 이름표가 놓여 있고, 아래에 연도 슬라이더가 있다."></a>
+</p>
 
-## 실행
+위 화면은 1593년, 임진왜란 한가운데예요. 조선의 영역과 수도 한성부가 보이고, 그 해에 살았던 권율과 곽재우, 그 해에 벌어진 평양성 탈환이 실제 장소 위에 이름표로 떠 있어요. 연도를 바꾸면 이 모든 것이 그 해의 것으로 바뀌어요.
 
-Python 3.11 이상. 뷰어·추출기는 표준 라이브러리를 사용한다.
+<p align="center">
+<img src="docs/assets/readme/scene.jpg" width="49%" alt="1593년 진주성 장면을 가까이 본 화면. 성문과 성벽, 병사들, 기와집과 초가집, 시장 좌판이 3D로 세워져 있고 김천일과 최경회 이름표가 붙어 있다.">
+<img src="docs/assets/readme/story-panel.jpg" width="49%" alt="김천일 이야기 패널. 제2차 진주성 전투 설명, 출생과 사망, 함께 참여한 인물 관계, 겪은 사건 연표, 이 이야기 더 물어보기 버튼이 보인다.">
+</p>
+
+**가까이 가면 마을이 보여요.** 확대하면 그 시대의 집과 길, 성곽이 나타나고 사람들이 오가요. 기록에 있는 장소는 진하게 그려요. 기록이 없어 추정으로 채운 배경은 흐리게요.
+
+**이름표를 누르면 이야기가 열려요.** 왼쪽 패널에 설명과 살았던 기간, 함께한 사람과 겪은 사건 연표를 정리해서 보여줘요. 문장마다 출처가 있어서 어느 기록에서 온 말인지 바로 확인돼요.
+
+<p align="center">
+<img src="docs/assets/readme/search.jpg" width="49%" alt="검색 결과 화면. 세종을 검색하면 인물 세종, 사건 경연, 관련 기록 월인천강지곡이 나오고 아래에 세종 설명과 한국민족문화대백과사전 출처 링크가 있다.">
+<img src="docs/assets/readme/chat.jpg" width="49%" alt="AI와 역사 이야기 패널. 선택한 이야기 김천일 1593년이 표시되고, 추천 질문 두 개와 질문 입력창이 있다.">
+</p>
+
+**검색.** 이름을 넣으면 인물과 사건, 관련 기록으로 나눠 보여 주고 하나를 고르면 그 연도와 장소로 지도가 이동해요.
+
+**AI와 역사 이야기.** 보고 있는 이야기와 연결된 기록 안에서만 답하는 대화창이에요. 답변의 각 문장을 누르면 인용과 원문이 열려요. 기록에 없는 것은 없다고 말해요.
+
+**설화와 전승은 따로 봐요.** 처용이나 아랑 전설처럼 역사 사건과 갈래가 다른 이야기는 별도 목록에서 한 편씩 무대와 함께 봐요.
+
+## 이렇게 써요
+
+1. **들어가기.** [sigong.rabbion.info](https://sigong.rabbion.info/)를 열고 기기에 맞는 화질을 고른 뒤 들어가기를 눌러요. 패드나 오래된 기기는 낮음이 빨라요.
+2. **시간을 옮기기.** 아래 막대를 좌우로 끌거나, 연도를 직접 입력하거나, 시대 메뉴에서 고려·조선처럼 시대를 골라요. 재생 버튼을 누르면 시간이 흘러가고 양옆 화살표는 사건이 있는 연도로 건너뛰어요. 기원전은 −500처럼 입력해요.
+3. **지도 둘러보기.** 끌어서 이동하고, 휠로 확대하고, 오른쪽 버튼을 누른 채 끌면 회전해요. 지도 설정에서 시야를 이 시대 가까이, 한반도 전체, 주변국까지 셋 중 하나로 바꿔요.
+4. **이야기 읽기.** 지도의 이름표나 사건 목록에서 하나를 누르면 왼쪽에 이야기 패널이 열려요. 출처를 누르면 인용된 원문이 나와요.
+5. **더 알아보기.** 위쪽 검색창에서 인물이나 사건을 찾거나, 이야기 패널의 "이 이야기 더 물어보기"로 AI에게 질문해요.
+
+지도 설정에서는 수도와 산, 인물과 사건 이름표, 국가 영역, 마을 같은 배경을 하나씩 켜고 꺼요. 북위 38도선을 표시하거나 AI 기능을 아예 끄는 것, 시간 막대 범위와 화질도 여기서 바꿔요.
+
+## 믿을 수 있는 이유와 한계
+
+- **기록 없이는 말하지 않아요.** 화면의 설명과 AI의 답변에는 수록된 기록에서 뽑은 인용이 붙어 있어요. 근거가 없으면 "기록이 없다"고 말해요.
+- **어긋나는 기록은 나란히 둬요.** 기록끼리 다르게 말하면 어느 쪽이 맞는지 정하지 않고 둘 다 보여 줘요. 지도 위의 점이 유적의 좌표인지, 오늘날의 대표 지점인지도 위치 안내에 적어요.
+- **추정은 추정이라고 써요.** 기록이 없는 마을, 밭, 동물은 "추정 배경 · 사료 없음"으로 표시하고 흐리게 그려요. AI가 그린 상상도에는 "AI 생성 상상도" 표시가 붙어요.
+- **한계도 있어요.** 나라 경계선은 연구자들이 재구성한 자료(HGIS, Cliopatria)를 옮겨 그린 선이라 당시의 확정된 국경은 아니에요. 기록에서 뽑은 설명은 AI가 초안을 만들고 기계 검사를 거쳤지만 사람이 전부 검토했다는 기록은 아직 없어요. 논문이나 수업 자료에 쓰기 전에는 출처를 눌러 원문과 대조해 주세요.
+
+## 바탕이 된 기록
+
+옛 기록의 원문은 국사편찬위원회가 공공데이터포털에 공개한 자료를 그대로 넣었어요.
+
+- 삼국사기, 삼국유사, 고려사, 고려사절요
+- 조선왕조실록 전체, 승정원일기, 비변사등록, 고종·순종실록
+- 광개토왕릉비와 한국고대금석문, 한국고대사료집성, 한국독립운동사자료
+- 인물과 사건 설명의 짧은 인용은 한국민족문화대백과사전에서 가져왔고 원 페이지로 링크를 걸어 뒀어요
+- 나라 경계와 옛 행정구역은 HGIS와 Cliopatria, 해안선과 지형은 Natural Earth와 ETOPO 2022를 사용해요
+- 시작 화면의 지도는 규장각 소장 대동여지도(퍼블릭 도메인)예요
+
+자료별 입수처와 이용 조건, 확인한 날짜는 [사료 목록](docs/01-sources.md)에 있어요.
+
+## 내 컴퓨터에서 실행하기
+
+Python 3.11 이상이면 별도 설치 없이 뷰어가 떠요.
 
 ```bash
-python3 services/host/server.py --port 8870      # 뷰어 http://127.0.0.1:8870  (시작 때 색인을 만든다)
-python3 services/validate.py                     # claims 검증 (--write-digests 로 .digests.json 기록)
-scripts/fuseki.sh install && scripts/fuseki.sh start   # Fuseki 포터블(.fuseki/), 127.0.0.1:3030, 데이터셋 /sigong
-python3 scripts/sync_fuseki.py                        # 검증·TTL 빌드 → 기본 그래프 교체 → 개수 대조
-python3 scripts/sync_fuseki.py --watch                # 5초마다 데이터 변경·인메모리 데이터 소실을 확인하고 재적재
+git clone https://github.com/Youkamii/sigong-yeojido.git
+cd sigong-yeojido
+python3 services/host/server.py --port 8870
 ```
 
-c2에서 자동 재적재를 계속 실행하려면 저장소 루트에서
-`setsid nohup python3 -u scripts/sync_fuseki.py --watch > /tmp/sigong-sync.log 2>&1 < /dev/null &`를 쓴다.
-검증에 실패하면 기존 Fuseki 그래프를 유지하고 다음 확인 때 재시도한다. 일반 실행은 digest를 기록하지 않는다.
-Fuseki 저장 방식은 인메모리를 유지한다. 서버나 감시 명령을 다시 띄우면 데이터에서 재적재한다.
-빌더 코드를 변경했을 때는 감시 명령도 다시 시작한다. 재부팅 후 자동 기동은 아직 설정하지 않았다.
-2026-09-09 전체 데이터의 c2 뷰어 준비는 약8분, 준비 후 RSS약3.3GiB였다. 기존 뷰어를 유지한 채 준비용 뷰어의 전체 색인을 올리다가 OOM 종료가 발생했다. 지금은 뷰어 하나로 복구했고, 두 전체 색인을 겹쳐 기동하지 않는다. [복구·실행 근거](docs/research/runtime-recovery-137.md). 원문을 디스크에서 필요한 만큼 읽는 구조 개선은 #139에 남아 있다.
-API 준비를 확인한 뒤 접속한다. 검증·TTL 빌더는 인용된 원문만 읽어 최대 RSS 약 558 MiB로 전체 자료를 처리했다.
-이는 해당 실행의 관측값이다. [측정 기록](docs/research/chunk-index-memory.md)
+브라우저에서 `http://127.0.0.1:8870` 을 열어요. 시작할 때 색인을 만드느라 잠시 기다려야 해요.
+저장소에는 사료 카드와 인용된 원문이 들어 있고 실록과 승정원일기 전체 원문 같은 큰 파일은 따로 만들어야 해요. 전체 자료 준비, 그래프 검색(Fuseki), AI 대화 설정, 사료 추가 방법은 [개발·운영 안내](docs/DEVELOPMENT.md)에 있어요.
 
-API: `/api/sources` `/api/places` `/api/entities` `/api/mentions?names=平壤,平穰` `/api/claims?subject=<id>&about=1`
-`/api/year?y=918` `/api/density` `/api/elevation` `/api/geo`
-`/api/chunk?id=<id>` `/api/graph?entity=<id>` `/api/time` `/api/people` `/api/locations`
-`/api/lenses` `/api/comparisons` `/api/compare?id=<id>` `/api/comparison-differences`
-`/api/history-map?level=0`(국가 경계)·`level=1`(도)·`level=2`(군·부 등)·`level=3`(읍면 등)·`level=4`(사건 장소)·`level=5`(역로·현재 옛길, 과거 노선 미확보).
-근거 챗봇은 `POST /api/chat`에서 Claude CLI의 Max 구독을 사용한다.
+## 더 알아보기
 
-원문 목록은 `/api/chunks?offset=0&limit=120`으로 나눠 읽는다(`limit` 최대 500).
-사료를 고르는 API에는 `sources=src-samguksagi,src-goryeosa`를 붙인다. `sources`를 생략하면 전체,
-`sources=`는 전체 해제다. 화면의 사료가 30개를 넘으면 종류별로 접고, 묶음을 펼쳐 개별 사료를 고를 수 있다.
+- [왜 이렇게 만드나](docs/00-vision.md): 기록을 사실이 아니라 "누가 그렇게 말했나"로 다루는 이유
+- [사료 목록](docs/01-sources.md) · [데이터 구조](docs/02-schema.md) · [개발·운영 안내](docs/DEVELOPMENT.md)
+- 오류나 제안은 [GitHub 이슈](https://github.com/Youkamii/sigong-yeojido/issues)로 알려 주세요
 
-## 사료를 더 넣는 순서
-
-1. `python3 scripts/fetch_datago_bulk.py --dataset <번호>` — 국편 벌크(공공데이터포털). 상세 페이지의 이용허락범위를 meta 에 기록한다.
-2. `python3 services/ingestion/extract_nikh_xml.py --source <slug> --dataset <번호>` — 계층을 재귀로 내려가며 본문을 가진 요소마다 chunk. 두 번 돌려 sha256 이 같아야 한다.
-3. `data/sources/<slug>.md` 카드를 쓴다(연도 근거를 본문에). 수치는 `python3 scripts/fill_card_counts.py --source <slug>` 가 채운다.
-4. 뷰어에서 `/api/sources` 와 타임라인 막대를 확인한다.
-
-큰 산출물(45 MB 초과)은 커밋하지 않고 재현 방법만 남긴다. 국편 사이트(db.history.go.kr)는 robots.txt 로 수집을 막으므로 긁지 않는다.
-
-## 검증
-
-- 뷰어: `scripts/verify_viewer.py --url "http://127.0.0.1:8870/?q=low" --out /tmp/verify` — 진입·지도·근거·찾기·사료 카드·타임라인·연력·3D·콘솔 12항목, PNG 를 사람이 본다. WebGL 은 헤드리스 스크린샷이 검게 나오므로 composer.render → toDataURL 로 뽑는다.
-- 3D 진단: `scripts/diag_3d.py` (컴포저/직접 렌더 비교, 픽셀 샘플).
-- 데이터: `services/validate.py --self-test`, 추출기 두 번 실행 해시 비교.
-- 후대 사료: `scripts/verify_later_corpus.py` — 신규 5개 카드·사료 선택·연도별 원문·상위 날짜 보존 검사.
-- 패널 응답: `scripts/verify_panel_responses.py` — 원문 검색 응답을 늦춰도 실제 주장은 먼저 뜨고, 늦은 카드 응답이 최신 선택을 덮지 않는지 검사.
-- 전체 질의: `scripts/verify_core_questions.py --out /tmp/core-questions.json` — 실제 API·Fuseki, 모든 인용·사료 대조. 현재 8 PASS·Q6 PARTIAL.
-- 사료 비교·인물·시간·위치·역사 지도: `verify_comparison_discovery.py`, `verify_people.py`, `verify_time.py`, `verify_location_filters.py`, `verify_historical_map.py`, `verify_historical_districts.py`, `verify_hansagun_sites.py`.
-- 새 역사 지도·초기 선택·인용: `verify_historical_townships.py`, `verify_cliopatria.py`, `verify_khs_events.py`, `verify_initial_source_selection.py`, `verify_name_claims.py`, `verify_goal_data.py`.
-- 현재 옛길: `verify_preserved_route.py` — 실제 932점·2D/3D·두 근거·기간/사료/AI·480px 검사. [범위](docs/research/preserved-route-88.md).
-- 스캔 열람: `verify_ndl_scan.py` — 원 스캔 319장 해시·실제 API·면 이동·사료 해제/복구·480px 검사 5개. [현재 외부 주소 검사](docs/research/ndl-scan-87-production.json).
-- [실제 c2 운영 수용](docs/research/goal-production-acceptance.json), [이름·인용 수정 검사](docs/research/name-quotes-production-84-85.json), [역로 표시의 인공 시험 범위](docs/research/route-rendering-86.md). Python 111개·JavaScript 14개와 전체 TTL 검사 통과, GitHub Actions·별도 riot는 NOT_RUN.
-
-## 작업 규약
-
-기능마다 GitHub 이슈를 연결하고 구현·필요한 검사·이슈 번호를 붙인 커밋·서버 반영을 진행한다. 개발·총괄은 Codex, 조사·수집은 Claude Opus 5 / Max effort이며 터미널 창을 열지 않는다. 커밋 메시지는 다음 세션이 그것만 읽고 무엇을/왜 했는지 알 수 있게 쓴다.
+옛 기록의 한문 원문은 저작권이 소멸한 자료이고, 그 밖의 자료는 각 출처의 이용 조건을 따라요. 코드의 라이선스는 아직 정해지지 않았어요.
