@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1990년 부산대학교 박물관이 약 3개월간 발굴조사하였다."
+      "value": "1990년 부산대학교 박물관이 약 3개월간 발굴 조사했다."
     },
     "note": "조사 기간은 \"약 3개월\"로만 적혀 있어 시작·종료 월을 만들지 않았다.",
     "fromSource": "src-syj135-aks-geomdanri",

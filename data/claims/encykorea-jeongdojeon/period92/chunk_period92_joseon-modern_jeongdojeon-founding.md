@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "이성계 휘하에 들어가 조선의 건국을 기획하고 구현해냈다"
+      "value": "이성계 휘하에 들어가 조선의 건국을 기획하고 이뤄냈다"
     },
     "note": "이성계와의 관계 및 조선 건국 기획을 직접 서술한 문장.",
     "fromSource": "src-encykorea-jeongdojeon",

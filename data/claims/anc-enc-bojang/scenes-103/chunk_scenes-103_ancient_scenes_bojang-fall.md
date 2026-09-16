@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "668년 9월에 평양성이 함락되어 고구려가 멸망하였다"
+      "value": "668년 9월에 평양성이 함락되어 고구려가 멸망했다"
     },
     "note": "함락·멸망 서술.",
     "fromSource": "src-anc-enc-bojang",

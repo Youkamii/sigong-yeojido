@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "화약·화기의 제조를 맡아보던 임시 관청이다. 1377년(우왕 3)에 최무선의 건의로 설치된 것이다"
+      "value": "화약·화기의 제조를 맡아보던 임시 관청이다. 1377년(우왕 3)에 최무선의 건의로 설치되었다"
     },
     "note": "설치 행위와 기능.",
     "fromSource": "src-ency-hwatongdogam",

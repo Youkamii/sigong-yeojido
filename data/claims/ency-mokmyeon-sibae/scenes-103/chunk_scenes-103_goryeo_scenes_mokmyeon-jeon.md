@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "그의 장인 정천익에게 부탁하여 처음으로 목화를 재배하였던 곳이다"
+      "value": "그의 장인 정천익에게 부탁하여 처음으로 목화를 재배했던 곳이다"
     },
     "note": "재배 행위.",
     "fromSource": "src-ency-mokmyeon-sibae",

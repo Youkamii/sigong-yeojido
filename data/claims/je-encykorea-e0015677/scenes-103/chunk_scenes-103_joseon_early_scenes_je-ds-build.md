@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "이황의 학문과 덕행을 추모하기 위하여 도산서당(陶山書堂)의 뒤편에 창건하여 위패를 모셨다"
+      "value": "이황의 학문과 덕행을 추모하려고 도산서당(陶山書堂)의 뒤편에 창건해 위패를 모셨다"
     },
     "note": "창건과 위패 봉안 행위 원문.",
     "fromSource": "src-je-encykorea-e0015677",

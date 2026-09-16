@@ -1054,7 +1054,7 @@
   {
    "id": "scene-busanjin-1592",
    "eventId": "event-busanjin-jeontu-1592",
-   "title": "부산진 전투 (1592)",
+   "title": "부산진 전투",
    "startYear": 1592,
    "endYear": 1592,
    "kind": "siege",
@@ -1079,12 +1079,12 @@
      "claim-busanjin-place"
     ],
     "coordinateSourceIds": [],
-    "coordinateNote": "출처는 전투지를 '부산진'으로만 밝힌다. 부산진성 자체의 실측 좌표는 이번에 내려받지 못했고(국가유산청 khs.go.kr 접속 불가), 기존 anchor 'hgis-admin-145002'(부산)의 표시 중심을 area 정밀도로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 place anchor 파일의 화면 배치용 좌표다. 20세기 행정구역 중심이므로 16세기 성터의 실제 위치가 아니며 precision='area'로만 쓴다."
+    "coordinateNote": "출처는 전투지를 '부산진'으로만 밝힌다. 부산진성 자체의 실측 좌표는 이번에 내려받지 못했고(국가유산청 khs.go.kr 접속 불가), 기존 기준점 'hgis-admin-145002'(부산)의 표시 중심을 일대 기준으로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 장소 기준점 파일의 화면 배치용 좌표다. 20세기 행정구역 중심이므로 16세기 성터의 실제 위치가 아니며 일대 기준으로만 쓴다."
    },
    "participants": [
     {
      "entityId": "person-jeong-bal-busanjin",
-     "role": "부산진첨사로 진성에서 전투를 지휘",
+     "role": "부산진첨사",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -1104,7 +1104,7 @@
     },
     {
      "entityId": "polity-imjin-fortress-people",
-     "role": "성안 남녀노소로 함께 분전",
+     "role": "성안 남녀노소",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -1134,7 +1134,7 @@
   {
    "id": "scene-dongnae-1592",
    "eventId": "event-dongnae-jeontu-1592",
-   "title": "동래성 전투 (1592)",
+   "title": "동래성 전투",
    "startYear": 1592,
    "endYear": 1592,
    "kind": "siege",
@@ -1158,12 +1158,12 @@
      "claim-dongnae-place"
     ],
     "coordinateSourceIds": [],
-    "coordinateNote": "출처는 장소를 '동래·동래성'으로 밝힌다. 동래읍성 실측 좌표는 이번에 내려받지 못했고(국가유산청 khs.go.kr 접속 불가), 기존 anchor 'hgis-admin-147793'(동래)의 표시 중심을 area 정밀도로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 place anchor 파일의 화면 배치용 좌표다. 20세기 행정구역 중심이므로 16세기 성터의 실제 위치가 아니며 precision='area'로만 쓴다."
+    "coordinateNote": "출처는 장소를 '동래·동래성'으로 밝힌다. 동래읍성 실측 좌표는 이번에 내려받지 못했고(국가유산청 khs.go.kr 접속 불가), 기존 기준점 'hgis-admin-147793'(동래)의 표시 중심을 일대 기준으로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 장소 기준점 파일의 화면 배치용 좌표다. 20세기 행정구역 중심이므로 16세기 성터의 실제 위치가 아니며 일대 기준으로만 쓴다."
    },
    "participants": [
     {
      "entityId": "person-song-sanghyeon-dongnae",
-     "role": "동래부사로 성을 지킴",
+     "role": "동래부사",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -1172,7 +1172,7 @@
     },
     {
      "entityId": "polity-imjin-japanese-force",
-     "role": "성을 3중으로 포위하고 공격",
+     "role": "성을 3중 포위",
      "side": "invader",
      "presence": "on-site",
      "claimIds": [
@@ -1182,7 +1182,7 @@
     },
     {
      "entityId": "polity-imjin-fortress-people",
-     "role": "동래성 백성으로 싸움에 참가",
+     "role": "동래성 백성",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -1210,11 +1210,11 @@
   {
    "id": "scene-jinju-second-siege-1593",
    "eventId": "event-encykorea-jinju-jeontu-1593",
-   "title": "제2차 진주성 전투 (1593)",
+   "title": "제2차 진주성 전투",
    "startYear": 1593,
    "endYear": 1593,
    "kind": "siege",
-   "summary": "1593년 6월 20일부터 29일까지 열흘 간 이어진 농성이다. 적은 6월 21일 진주성을 포위했고 성 안에서는 주민들이 협조해 맞섰다. 황진은 탄환에 맞아 전사했고, 김천일·고종후·최경회 등은 촉석루에 있었다.",
+   "summary": "1593년 6월 20일부터 29일까지 열흘 간 이어진 농성이다. 적은 6월 21일 진주성을 포위했고 성 안에서는 주민들이 협조해 맞섰다. 황진은 탄환에 맞아 전사했고, 김천일과 고종후, 최경회 등은 촉석루에 있었다.",
    "dateClaimIds": [
     "claim-jinju1593-year",
     "claim-jinju1593-time"
@@ -1242,7 +1242,7 @@
    "participants": [
     {
      "entityId": "person-kim-cheonil-jinju1593",
-     "role": "창의사로 성 안 촉석루에 있었음",
+     "role": "창의사",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -1251,7 +1251,7 @@
     },
     {
      "entityId": "person-hwang-jin-jinju1593",
-     "role": "농성 중 탄환에 맞아 전사",
+     "role": "농성 중 전사",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -1279,7 +1279,7 @@
     },
     {
      "entityId": "polity-imjin-fortress-people",
-     "role": "성 안 주민으로 방어에 협조",
+     "role": "성 안 주민",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -1307,7 +1307,7 @@
   {
    "id": "scene-haengju-1593",
    "eventId": "event-khs-haengju",
-   "title": "행주대첩 (1593)",
+   "title": "행주대첩",
    "startYear": 1593,
    "endYear": 1593,
    "kind": "battle",
@@ -1335,7 +1335,7 @@
    "participants": [
     {
      "entityId": "person-encykorea-gwon-yul-e0007022",
-     "role": "전라도관찰사로 행주산성에서 왜군을 무찌름",
+     "role": "전라도관찰사",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -1344,7 +1344,7 @@
     },
     {
      "entityId": "person-cheoyeong-haengju",
-     "role": "승장으로 승의군을 이끌고 맞섬",
+     "role": "승장",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -1353,7 +1353,7 @@
     },
     {
      "entityId": "polity-imjin-japanese-force",
-     "role": "부대를 나누어 행주산성으로 진군",
+     "role": "행주산성으로 진군",
      "side": "invader",
      "presence": "on-site",
      "claimIds": [
@@ -1363,7 +1363,7 @@
     },
     {
      "entityId": "polity-imjin-fortress-people",
-     "role": "부녀자를 포함한 관민으로 함께 싸움",
+     "role": "관민",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -1464,7 +1464,7 @@
   {
    "id": "scene-boseongsa-printing-1919",
    "eventId": "event-declaration-printing-1919",
-   "title": "보성사 독립선언서 인쇄 (1919)",
+   "title": "보성사 독립선언서 인쇄",
    "startYear": 1919,
    "endYear": 1919,
    "kind": "publication",
@@ -1492,12 +1492,12 @@
     "coordinateSourceIds": [
      "src-i815-boseongsa"
     ],
-    "coordinateNote": "좌표는 이번에 내려받은 독립기념관 사적지 페이지 raw/i815-sajeok-boseongsa-1344.html 안의 지도 스크립트 값(var lat = \" 37.573706\"; var lng = \" 126.981833\";)을 그대로 옮겼다. 같은 페이지가 '현재 조계사 경내 서편 극락전 앞마당이 보성사 터로 비정된다'고 밝히므로 비정 지점이며, 건물은 멸실 상태다."
+    "coordinateNote": "좌표는 이번에 내려받은 독립기념관 사적지 페이지 raw/i815-sajeok-boseongsa-1344.html 안의 지도 스크립트 값(var 위도 = \" 37.573706\"; var lng = \" 126.981833\";)을 그대로 옮겼다. 같은 페이지가 '현재 조계사 경내 서편 극락전 앞마당이 보성사 터로 비정된다'고 밝히므로 비정 지점이며, 건물은 멸실 상태다."
    },
    "participants": [
     {
      "entityId": "person-yi-jongil-boseongsa",
-     "role": "보성사 사장으로 인쇄를 완료",
+     "role": "보성사 사장",
      "side": "printer",
      "presence": "on-site",
      "claimIds": [
@@ -1506,7 +1506,7 @@
     },
     {
      "entityId": "person-kim-honggyu-boseongsa",
-     "role": "공장감독으로 인쇄에 참여",
+     "role": "공장감독",
      "side": "printer",
      "presence": "on-site",
      "claimIds": [
@@ -1515,7 +1515,7 @@
     },
     {
      "entityId": "person-jang-hyogeun-boseongsa",
-     "role": "총무로 인쇄에 참여",
+     "role": "총무",
      "side": "printer",
      "presence": "on-site",
      "claimIds": [

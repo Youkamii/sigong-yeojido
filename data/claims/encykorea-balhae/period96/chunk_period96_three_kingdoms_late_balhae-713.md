@@ -30,7 +30,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "713년에 당나라에서 발해군왕을 받은 뒤 국명을 발해로 변경하였다."
+      "value": "713년에 당나라에서 발해군왕을 받은 뒤 국명을 발해로 바꿨다."
     },
     "fromSource": "src-encykorea-balhae",
     "citesChunk": "chunk_period96_three_kingdoms_late_balhae-713",

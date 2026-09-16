@@ -65,7 +65,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "연합군이 합단적을 추격해 정좌산에서 기습 공격을 감행하여 큰 승리를 거두었다"
+      "value": "연합군이 합단적을 추격해 정좌산에서 기습 공격해 큰 승리를 거두었다"
     },
     "note": "행위 서술을 원문 어구대로 옮겼다. 부대 편성·병력 수는 이 문장에 없다.",
     "fromSource": "src-lg128-encykorea-hadan",

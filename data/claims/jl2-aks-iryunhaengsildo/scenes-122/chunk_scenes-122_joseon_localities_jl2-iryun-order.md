@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "왕명으로 편찬하게 된 것이다."
+      "value": "왕명으로 편찬하게 되었다."
     },
     "note": "편찬이 왕명에 따른 것이라는 서술.",
     "fromSource": "src-jl2-aks-iryunhaengsildo",

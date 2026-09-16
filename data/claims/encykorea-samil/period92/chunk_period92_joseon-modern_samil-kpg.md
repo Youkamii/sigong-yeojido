@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "중국 상하이에서의 대한민국임시정부 수립으로 이어졌다"
+      "value": "중국 상하이의 대한민국임시정부 수립으로 이어졌다"
     },
     "note": "3·1운동과 임시정부 수립의 연결을 직접 서술.",
     "fromSource": "src-encykorea-samil",

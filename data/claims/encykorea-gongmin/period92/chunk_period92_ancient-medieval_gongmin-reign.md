@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1351년(충정왕 3) 10월에 즉위하여 1374년(공민왕 23) 9월에 시해되기까지 23년간 재위하였다"
+      "value": "1351년(충정왕 3) 10월에 즉위하여 1374년(공민왕 23) 9월에 시해되기까지 23년간 재위했다"
     },
     "note": "즉위·시해 시점을 월 단위로 명시한 서술.",
     "fromSource": "src-encykorea-gongmin",

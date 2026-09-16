@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "해로로 남하하던 설인귀의 군대를 시득이 기벌포에서 격파하여 신라가 서해의 해상권을 장악하였다"
+      "value": "해로로 남하하던 설인귀의 군대를 시득이 기벌포에서 격파해 신라가 서해의 해상권을 장악했다"
     },
     "note": "해상 전투와 결과 서술.",
     "fromSource": "src-anc-enc-munmu",

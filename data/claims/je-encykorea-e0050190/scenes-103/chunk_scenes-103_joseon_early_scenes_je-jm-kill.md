@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "귀가하던 도중 선죽교(善竹橋) 에서 이방원의 문객 조영규(趙英珪) 등에게 살해되었다"
+      "value": "귀가하던 도중 선죽교(善竹橋)에서 이방원의 문객 조영규(趙英珪) 등에게 살해되었다"
     },
     "note": "행위 서술 원문(HTML 제거 뒤 표기 그대로).",
     "fromSource": "src-je-encykorea-e0050190",

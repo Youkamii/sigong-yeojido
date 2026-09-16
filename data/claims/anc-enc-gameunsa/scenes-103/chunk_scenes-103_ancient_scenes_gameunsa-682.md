@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "신문왕이 부왕 문무왕의 뜻을 이어 감은사를 창건하였다"
+      "value": "신문왕이 부왕 문무왕의 뜻을 이어 감은사를 창건했다"
     },
     "note": "창건 행위 서술.",
     "fromSource": "src-anc-enc-gameunsa",

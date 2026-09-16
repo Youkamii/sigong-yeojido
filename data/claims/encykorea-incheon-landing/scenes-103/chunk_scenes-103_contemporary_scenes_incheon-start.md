@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "9월 15일 02:00에 인천에 대한 상륙작전을 개시하였다."
+      "value": "9월 15일 02:00에 인천에 대한 상륙작전을 시작했다."
     },
     "note": "개시 일시와 행위. 연도는 별도 claim이 뒷받침한다.",
     "fromSource": "src-encykorea-incheon-landing",

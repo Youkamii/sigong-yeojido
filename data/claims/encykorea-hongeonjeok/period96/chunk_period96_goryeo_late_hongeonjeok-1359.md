@@ -30,7 +30,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1359년 4만 명이 쳐들어와 의주·정주·인주가 함락되었고, 철주와 서경까지 함락되었다."
+      "value": "1359년 4만 명이 쳐들어와 의주와 정주, 인주가 함락되었고, 철주와 서경까지 함락되었다."
     },
     "fromSource": "src-encykorea-hongeonjeok",
     "citesChunk": "chunk_period96_goryeo_late_hongeonjeok-1359",

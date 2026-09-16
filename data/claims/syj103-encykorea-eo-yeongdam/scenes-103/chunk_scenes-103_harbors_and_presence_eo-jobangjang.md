@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "이듬해 삼도수군통제사 이순신에 의하여 조방장(助防將)에 임명되었다"
+      "value": "이듬해 삼도수군통제사 이순신에게 조방장(助防將)에 임명되었다"
     },
     "note": "1593년 조방장 임명.",
     "fromSource": "src-syj103-encykorea-eo-yeongdam",
@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "이듬해 삼도수군통제사 이순신에 의하여 조방장(助防將)에 임명되었다"
+      "value": "이듬해 삼도수군통제사 이순신에게 조방장(助防將)에 임명되었다"
     },
     "note": "당항포 때 직함(조방장)의 근거. 임명자는 삼도수군통제사 이순신.",
     "fromSource": "src-syj103-encykorea-eo-yeongdam",

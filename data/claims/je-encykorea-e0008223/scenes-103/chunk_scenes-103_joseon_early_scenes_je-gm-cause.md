@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "반정공신 위훈삭제사건(反正功臣僞勳削除事件)을 계기로 폭발하였다"
+      "value": "반정공신 위훈삭제사건(反正功臣僞勳削除事件)을 계기로 폭발했다"
     },
     "note": "발단 서술.",
     "fromSource": "src-je-encykorea-e0008223",

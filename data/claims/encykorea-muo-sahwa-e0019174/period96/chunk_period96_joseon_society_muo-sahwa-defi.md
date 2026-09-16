@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1498년(연산군 4) 김일손(金馹孫) 등 신진사류(新進士類)가 유자광(柳子光)을 중심으로 한 훈구파(勳舊派)에 의해 화를 입은 사건."
+      "value": "1498년(연산군 4) 김일손(金馹孫) 등 신진사류(新進士類)가 유자광(柳子光)을 중심으로 한 훈구파(勳舊派)에게 화를 입은 사건."
     },
     "note": "항목 '정의' 문장(발췌 그대로).",
     "fromSource": "src-encykorea-muo-sahwa-e0019174",

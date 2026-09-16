@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "조선 후기에, 농촌 생활에서의 체험과 농촌 경제의 안정책 등을 제시한 『반계수록』을 저술한 학자."
+      "value": "조선 후기에, 농촌 생활의 체험과 농촌 경제의 안정책 등을 제시한 『반계수록』을 저술한 학자."
     },
     "note": "항목 '정의' 문장(발췌 그대로).",
     "fromSource": "src-encykorea-yu-hyeongwon-e0042005",

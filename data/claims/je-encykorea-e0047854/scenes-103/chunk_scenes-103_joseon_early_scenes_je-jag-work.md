@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "자동으로 종·북·징을 쳐서 시보를 알리도록 되어 있다"
+      "value": "자동으로 종과 북, 징을 쳐서 시보를 알리도록 되어 있다"
     },
     "note": "장치의 작동 방식.",
     "fromSource": "src-je-encykorea-e0047854",

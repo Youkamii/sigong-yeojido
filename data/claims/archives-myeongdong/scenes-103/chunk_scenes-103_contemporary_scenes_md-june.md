@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "6월 항쟁 도중 학생과 시민시위대의 ’해방구‘ 역할을 하였다."
+      "value": "6월 항쟁 도중 학생과 시민시위대의 ’해방구‘ 역할을 했다."
     },
     "note": "6월항쟁 때 명동성당이 시위대의 '해방구'였다는 서술.",
     "fromSource": "src-archives-myeongdong",

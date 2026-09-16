@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "10여 명의 조선 어민과 함께 울릉도에 가서 어로 중이던 일본 어민을 송도(독도)까지 추격해 문책하였다."
+      "value": "10여 명의 조선 어민과 함께 울릉도에 가서 어로 중이던 일본 어민을 송도(독도)까지 추격해 문책했다."
     },
     "note": "행위: 도해와 추격·문책.",
     "fromSource": "src-jl2-aks-anyongbok",

@@ -1432,7 +1432,7 @@
    "predicate": "syj:describedAs",
    "object": {
     "kind": "literal",
-    "value": "우정국에서 4영사 처단에 실패하자 김옥균·박영효·서광범이 고종 침실로 들어가 우정국 변란을 알림"
+    "value": "우정국에서 4영사 처단에 실패하자 김옥균과 박영효, 서광범이 고종 침실로 들어가 우정국 변란을 알림"
    },
    "sourceId": "src-ek-gapsin",
    "citesExcerpt": "ex-gapsin-act",
@@ -1612,7 +1612,7 @@
    "predicate": "syj:describedAs",
    "object": {
     "kind": "literal",
-    "value": "주력부대 1만여 명을 이끌고 공주를 공격하였으나 11월 초 우금치싸움에서 대패"
+    "value": "주력부대 1만여 명을 이끌고 공주를 공격했으나 11월 초 우금치싸움에서 대패"
    },
    "sourceId": "src-ek-jeon-bongjun",
    "citesExcerpt": "ex-jeonbongjun-ugeumchi",
@@ -2819,11 +2819,11 @@
   {
    "id": "scene-ganghwa-treaty-1876",
    "eventId": "event-ganghwado-treaty-1876",
-   "title": "조일수호조규(강화도조약) 조인 — 강화 연무당 (1876)",
+   "title": "조일수호조규(강화도조약) 조인",
    "startYear": 1876,
    "endYear": 1876,
    "kind": "court",
-   "summary": "1876년 2월 3일(음력) 강화 연무당에서 조선 전권대신 신헌과 일본 특명전권판리대신 구로다 기요타카가 12조로 된 조일수호조규를 체결하였다. 출처는 장소를 강화부·강화 연무당으로 적는다.",
+   "summary": "1876년 2월 3일(음력) 강화 연무당에서 조선 전권대신 신헌과 일본 특명전권판리대신 구로다 기요타카가 12조로 된 조일수호조규를 체결했다. 출처는 장소를 강화부·강화 연무당으로 적는다.",
    "dateClaimIds": [
     "claim-mod-ganghwa-year",
     "claim-mod-ganghwa-act"
@@ -2845,12 +2845,12 @@
      "claim-mod-ganghwa-place-bu"
     ],
     "coordinateSourceIds": [],
-    "coordinateNote": "연무당 터의 실측 좌표는 이번에 확보하지 못했다. 기존 anchor hgis-admin-557(강화군) 표시 중심을 지역 기준 추정 배치로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 place anchor 파일의 화면 배치용 좌표다. 행정구역 표시 중심이므로 사건 현장의 실제 위치가 아니며 precision=area 로만 쓴다."
+    "coordinateNote": "연무당 터의 실측 좌표는 이번에 확보하지 못했다. 기존 기준점 hgis-admin-557(강화군) 표시 중심을 지역 기준 추정 배치로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 장소 기준점 파일의 화면 배치용 좌표다. 행정구역 표시 중심이므로 사건 현장의 실제 위치가 아니며 일대 기준으로만 쓴다."
    },
    "participants": [
     {
      "entityId": "person-encykorea-sinheon",
-     "role": "조선 전권대신으로 연무당에서 조약에 조인",
+     "role": "조선 전권대신",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -2859,7 +2859,7 @@
     },
     {
      "entityId": "person-kuroda-kiyotaka",
-     "role": "일본 특명전권판리대신으로 연무당에서 조약을 체결",
+     "role": "일본 특명전권판리대신",
      "side": "invader",
      "presence": "on-site",
      "claimIds": [
@@ -2886,11 +2886,11 @@
   {
    "id": "scene-imo-gullan-1882",
    "eventId": "event-imo-gullan-1882",
-   "title": "임오군란 — 한성 궐내 난입 (1882)",
+   "title": "임오군란, 한성 궐내 난입",
    "startYear": 1882,
    "endYear": 1882,
    "kind": "battle",
-   "summary": "1882년 6월 9일 훈국병들의 군료분쟁에서 시작된 소요가 폭동으로 번져, 군병들이 궐내로 난입해 민겸호와 김보현을 살해하였다. 고종은 대원군에게 사태 수습을 맡겼다.",
+   "summary": "1882년 6월 9일 훈국병들의 군료분쟁에서 시작된 소요가 폭동으로 번져, 군병들이 궐내로 난입해 민겸호와 김보현을 살해했다. 고종은 대원군에게 사태 수습을 맡겼다.",
    "dateClaimIds": [
     "claim-mod-imo-year",
     "claim-mod-imo-cause"
@@ -2916,7 +2916,7 @@
    "participants": [
     {
      "entityId": "polity-hungukbyeong-1882",
-     "role": "군료분쟁에서 봉기해 궐내로 난입한 훈국병·무위영 군병(봉기 측)",
+     "role": "훈국병·무위영 군병",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -2926,7 +2926,7 @@
     },
     {
      "entityId": "person-min-gyeomho",
-     "role": "선혜청 당상으로 궐내에서 살해된 척신 관료(정부 측)",
+     "role": "선혜청 당상",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -2935,7 +2935,7 @@
     },
     {
      "entityId": "person-encykorea-gojong-e0003939",
-     "role": "궁궐에서 사태 수습을 대원군에게 맡긴 국왕",
+     "role": "국왕",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -2944,7 +2944,7 @@
     },
     {
      "entityId": "person-encykorea-yi-haeung-e0046384",
-     "role": "사태 수습을 맡아 정권을 장악한 흥선대원군(현장 행동 서술 없음)",
+     "role": "흥선대원군",
      "side": "civilian",
      "presence": "related",
      "claimIds": [
@@ -2973,11 +2973,11 @@
   {
    "id": "scene-hanseong-sunbo-1883",
    "eventId": "event-hanseong-sunbo-founded-1883",
-   "title": "『한성순보』 창간 — 서울 저동 박문국 (1883)",
+   "title": "『한성순보』 창간",
    "startYear": 1883,
    "endYear": 1883,
    "kind": "publication",
-   "summary": "1883년 10월 1일(음력) 서울 저동의 통리아문 박문국에서 『한성순보』를 발행하였다. 국민대중의 계몽을 목적으로 월 3회 간행되었다.",
+   "summary": "1883년 10월 1일(음력) 서울 저동의 통리아문 박문국에서 『한성순보』를 발행했다. 국민대중의 계몽을 목적으로 월 3회 간행되었다.",
    "dateClaimIds": [
     "claim-mod-sunbo-year",
     "claim-mod-sunbo-act"
@@ -3003,7 +3003,7 @@
    "participants": [
     {
      "entityId": "polity-bakmunguk-1883",
-     "role": "통리아문 박문국으로서 순보를 편집·발행한 관영 인쇄 주체",
+     "role": "통리아문 박문국",
      "side": "printer",
      "presence": "on-site",
      "claimIds": [
@@ -3031,11 +3031,11 @@
   {
    "id": "scene-gapsin-1884",
    "eventId": "event-gapsin-jeongbyeon-1884",
-   "title": "갑신정변 — 우정국 개청 축하 연회 (1884)",
+   "title": "갑신정변",
    "startYear": 1884,
    "endYear": 1884,
    "kind": "assembly",
-   "summary": "1884년 12월 4일(음력 10월 17일) 급진개화파는 우정국 개청 축하 연회를 거사 시점으로 삼았다. 별궁 방화와 우정국에서의 4영사 처단이 실패하자 김옥균·박영효·서광범은 고종 침실로 들어가 우정국 변란을 알렸다.",
+   "summary": "1884년 12월 4일(음력 10월 17일) 급진개화파는 우정국 개청 축하 연회를 거사 시점으로 삼았다. 별궁 방화와 우정국에서 4영사를 처단하려던 일이 실패하자 김옥균과 박영효, 서광범은 고종 침실로 들어가 우정국 변란을 알렸다.",
    "dateClaimIds": [
     "claim-mod-gapsin-date"
    ],
@@ -3056,12 +3056,12 @@
     "coordinateSourceIds": [
      "src-kowiki-ujeongchongguk"
     ],
-    "coordinateNote": "좌표는 현재 남아 있는 우정총국 건물 위치로 위키백과 문서 지리좌표에서 가져왔다. 좌표는 위키백과 문서에 표기된 지리좌표(geo)로, 사건 당시 측량값이 아니라 현재 위치 표시다."
+    "coordinateNote": "좌표는 현재 남아 있는 우정총국 건물 위치로 위키백과 문서 지리좌표에서 가져왔다. 좌표는 위키백과 문서에 표기된 지리좌표로, 사건 당시 측량값이 아니라 현재 위치 표시다."
    },
    "participants": [
     {
      "entityId": "polity-gaehwadang-1884",
-     "role": "우정국 연회를 거사 시점으로 잡은 급진개화파(개화당) 주도 세력",
+     "role": "급진개화파",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3071,7 +3071,7 @@
     },
     {
      "entityId": "person-kim-okgyun",
-     "role": "우정국 거사 실패 뒤 국왕에게 변란을 알린 개화당 인물",
+     "role": "개화당 인물",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3081,7 +3081,7 @@
     },
     {
      "entityId": "person-pak-yeonghyo",
-     "role": "같은 행동에 함께 이름이 적힌 개화당 인물",
+     "role": "개화당 인물",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3091,7 +3091,7 @@
     },
     {
      "entityId": "person-seo-gwangbeom",
-     "role": "같은 행동에 함께 이름이 적힌 개화당 인물",
+     "role": "개화당 인물",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3101,7 +3101,7 @@
     },
     {
      "entityId": "person-encykorea-gojong-e0003939",
-     "role": "침실에서 변란 보고를 받은 국왕(우정국 현장 아님)",
+     "role": "국왕",
      "side": "civilian",
      "presence": "related",
      "claimIds": [
@@ -3130,11 +3130,11 @@
   {
    "id": "scene-hwangtohyeon-1894",
    "eventId": "event-hwangtohyeon-1894",
-   "title": "황토현 접전 — 동학농민군과 관군 (1894)",
+   "title": "황토현 접전, 동학농민군과 관군",
    "startYear": 1894,
    "endYear": 1894,
    "kind": "battle",
-   "summary": "5월 10일에서 11일 새벽에 걸쳐 도교산에 근거를 둔 동학농민군이 황토현에서 관군과 접전해 관군을 대파하였고, 그 기세로 정읍으로 진격해 점거하였다.",
+   "summary": "5월 10일에서 11일 새벽에 걸쳐 도교산에 근거를 둔 동학농민군이 황토현에서 관군과 접전해 관군을 대파했고 그 기세로 정읍으로 진격해 점거했다.",
    "dateClaimIds": [
     "claim-mod-hwangtohyeon-year",
     "claim-mod-hwangtohyeon-battle"
@@ -3156,12 +3156,12 @@
      "claim-mod-hwangtohyeon-advance"
     ],
     "coordinateSourceIds": [],
-    "coordinateNote": "황토현 전적의 실측 좌표는 확보하지 못했다(위키데이터 황토현 전적 항목에 P625 없음). 승전 직후 점거지로 적힌 정읍의 anchor hgis-admin-95335 표시 중심을 지역 기준 추정 배치로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 place anchor 파일의 화면 배치용 좌표다. 행정구역 표시 중심이므로 사건 현장의 실제 위치가 아니며 precision=area 로만 쓴다."
+    "coordinateNote": "황토현 전적의 실측 좌표는 확보하지 못했다(위키데이터 황토현 전적 항목에 P625 없음). 승전 직후 점거지로 적힌 정읍의 기준점 hgis-admin-95335 표시 중심을 지역 기준 추정 배치로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 장소 기준점 파일의 화면 배치용 좌표다. 행정구역 표시 중심이므로 사건 현장의 실제 위치가 아니며 일대 기준으로만 쓴다."
    },
    "participants": [
     {
      "entityId": "polity-donghak-nongmingun-1894",
-     "role": "도교산에 근거를 두고 황토현에서 접전한 동학농민군(봉기 측)",
+     "role": "동학농민군",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3171,7 +3171,7 @@
     },
     {
      "entityId": "polity-gwangun-1894",
-     "role": "황토현에서 동학농민군과 접전해 대패한 정부 관군(진압 측)",
+     "role": "정부 관군",
      "side": "invader",
      "presence": "on-site",
      "claimIds": [
@@ -3204,11 +3204,11 @@
   {
    "id": "scene-ugeumchi-1894",
    "eventId": "event-ugeumchi-1894",
-   "title": "우금치 싸움 — 전봉준 주력부대의 공주 공격 (1894)",
+   "title": "우금치 싸움, 전봉준 주력부대의 공주 공격",
    "startYear": 1894,
    "endYear": 1894,
    "kind": "battle",
-   "summary": "전봉준이 주력부대 1만여 명을 이끌고 공주를 공격했으나 몇 차례의 전투를 거쳐 11월 초 우금치싸움에서 대패하였다.",
+   "summary": "전봉준이 주력부대 1만여 명을 이끌고 공주를 공격했으나 몇 차례의 전투를 거쳐 11월 초 우금치싸움에서 대패했다.",
    "dateClaimIds": [
     "claim-mod-ugeumchi-year",
     "claim-mod-ugeumchi-act"
@@ -3229,7 +3229,7 @@
     "coordinateSourceIds": [
      "src-kowiki-ugeumchi"
     ],
-    "coordinateNote": "좌표는 위키백과 우금치 문서의 지리좌표다. 고개 지점 표시이며 전투 대열 위치가 아니다. 좌표는 위키백과 문서에 표기된 지리좌표(geo)로, 사건 당시 측량값이 아니라 현재 위치 표시다."
+    "coordinateNote": "좌표는 위키백과 우금치 문서의 지리좌표다. 고개 지점 표시이며 전투 대열 위치가 아니다. 좌표는 위키백과 문서에 표기된 지리좌표로, 사건 당시 측량값이 아니라 현재 위치 표시다."
    },
    "participants": [
     {
@@ -3244,7 +3244,7 @@
     },
     {
      "entityId": "polity-donghak-nongmingun-1894",
-     "role": "공주 공격에 동원된 동학농민군 주력부대(봉기 측)",
+     "role": "동학농민군 주력부대",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3276,11 +3276,11 @@
   {
    "id": "scene-eulmi-sabyeon-1895",
    "eventId": "event-eulmi-sabyeon-1895",
-   "title": "을미사변 — 경복궁 기습 (1895)",
+   "title": "을미사변",
    "startYear": 1895,
    "endYear": 1895,
    "kind": "battle",
-   "summary": "1895년 10월 8일(음력 8월 20일) 새벽 일본공사 미우라의 지휘 아래 서울에 주둔하던 일본군 수비대와 공사관원·낭인배 등이 경복궁을 기습하여 왕후를 살해하였다.",
+   "summary": "1895년 10월 8일(음력 8월 20일) 새벽 일본공사 미우라의 지휘 아래 서울에 주둔하던 일본군 수비대와 공사관원·낭인배 등이 경복궁을 기습해 왕후를 살해했다.",
    "dateClaimIds": [
     "claim-mod-eulmi-date",
     "claim-mod-eulmi-def"
@@ -3301,12 +3301,12 @@
     "coordinateSourceIds": [
      "src-kowiki-gyeongbokgung"
     ],
-    "coordinateNote": "좌표는 위키백과 경복궁 문서의 지리좌표로 궁역 표시점이다. 살해 장소로 알려진 건청궁 옥호루는 인용 절에 없어 전각 단위 좌표를 쓰지 않았다. 좌표는 위키백과 문서에 표기된 지리좌표(geo)로, 사건 당시 측량값이 아니라 현재 위치 표시다."
+    "coordinateNote": "좌표는 위키백과 경복궁 문서의 지리좌표로 궁역 표시점이다. 살해 장소로 알려진 건청궁 옥호루는 인용 절에 없어 전각 단위 좌표를 쓰지 않았다. 좌표는 위키백과 문서에 표기된 지리좌표로, 사건 당시 측량값이 아니라 현재 위치 표시다."
    },
    "participants": [
     {
      "entityId": "polity-japanese-force-eulmi-1895",
-     "role": "경복궁을 기습한 일본군 수비대·공사관원·낭인배 행동대(일본 측)",
+     "role": "일본군 행동대",
      "side": "invader",
      "presence": "on-site",
      "claimIds": [
@@ -3316,7 +3316,7 @@
     },
     {
      "entityId": "person-miura-goro",
-     "role": "기습을 지휘한 일본공사(현장 진입 여부는 인용에 없음)",
+     "role": "일본공사",
      "side": "invader",
      "presence": "related",
      "claimIds": [
@@ -3325,7 +3325,7 @@
     },
     {
      "entityId": "person-queen-1895",
-     "role": "경복궁에서 살해된 조선 왕후",
+     "role": "조선 왕후",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3354,11 +3354,11 @@
   {
    "id": "scene-agwan-pacheon-1896",
    "eventId": "event-agwan-pacheon-1896",
-   "title": "아관파천 — 러시아공사관 이어 (1896)",
+   "title": "아관파천",
    "startYear": 1896,
    "endYear": 1896,
    "kind": "court",
-   "summary": "1896년 2월 11일 고종과 측근 인사들의 요청에 러시아공사가 동의하여, 고종과 왕세자가 비밀리에 러시아공사관으로 거처를 옮겼다.",
+   "summary": "1896년 2월 11일 고종과 측근 인사들의 요청에 러시아공사가 동의해 고종과 왕세자가 비밀리에 러시아공사관으로 거처를 옮겼다.",
    "dateClaimIds": [
     "claim-mod-agwan-date"
    ],
@@ -3383,7 +3383,7 @@
    "participants": [
     {
      "entityId": "person-encykorea-gojong-e0003939",
-     "role": "왕세자와 함께 러시아공사관으로 거처를 옮긴 국왕(조선 측)",
+     "role": "국왕",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3393,7 +3393,7 @@
     },
     {
      "entityId": "polity-russian-legation-1896",
-     "role": "요청에 동의해 공사관에 거처를 제공한 러시아공사 측",
+     "role": "러시아공사",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -3420,11 +3420,11 @@
   {
    "id": "scene-hwangudan-1897",
    "eventId": "event-gojong-imperial-enthronement-1897",
-   "title": "환구단 황제 즉위식 — 대한제국 선포 (1897)",
+   "title": "환구단 황제 즉위식, 대한제국 선포",
    "startYear": 1897,
    "endYear": 1897,
    "kind": "court",
-   "summary": "1897년 10월 11일 새 국호를 ‘대한’으로 정하고, 다음날인 10월 12일 고종이 환구단에서 황제 즉위식을 거행하였다.",
+   "summary": "1897년 10월 11일 새 국호를 ‘대한’으로 정하고, 다음날인 10월 12일 고종이 환구단에서 황제 즉위식을 거행했다.",
    "dateClaimIds": [
     "claim-mod-hwangudan-year",
     "claim-mod-hwangudan-act",
@@ -3446,12 +3446,12 @@
     "coordinateSourceIds": [
      "src-kowiki-hwangudan"
     ],
-    "coordinateNote": "좌표는 위키백과 환구단 문서의 지리좌표로, 현재 남아 있는 환구단 유적 위치 표시다. 좌표는 위키백과 문서에 표기된 지리좌표(geo)로, 사건 당시 측량값이 아니라 현재 위치 표시다."
+    "coordinateNote": "좌표는 위키백과 환구단 문서의 지리좌표로, 현재 남아 있는 환구단 유적 위치 표시다. 좌표는 위키백과 문서에 표기된 지리좌표로, 사건 당시 측량값이 아니라 현재 위치 표시다."
    },
    "participants": [
     {
      "entityId": "person-encykorea-gojong-e0003939",
-     "role": "환구단에서 황제 즉위식을 거행하고 국호를 대한으로 고친 군주",
+     "role": "군주",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -3482,7 +3482,7 @@
   {
    "id": "scene-manmin-1898",
    "eventId": "event-manmin-gongdonghoe-1898",
-   "title": "만민공동회 — 종로 민중 대회 (1898)",
+   "title": "만민공동회",
    "startYear": 1898,
    "endYear": 1898,
    "kind": "assembly",
@@ -3523,7 +3523,7 @@
     },
     {
      "entityId": "polity-manmin-crowd-1898",
-     "role": "종로 대회에 모인 민중",
+     "role": "민중",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -3550,11 +3550,11 @@
   {
    "id": "scene-eulsa-1905",
    "eventId": "event-eulsa-treaty-1905",
-   "title": "을사늑약 — 궁중 어전회의 (1905)",
+   "title": "을사늑약",
    "startYear": 1905,
    "endYear": 1905,
    "kind": "court",
-   "summary": "1905년 일본이 한국의 외교권을 박탈하려고 강제로 조약을 체결하였다. 이날 궁궐 주위와 시내에는 무장한 일본군이 경계를 섰고, 궁중에서 어전회의가 열렸다.",
+   "summary": "1905년 일본이 한국의 외교권을 박탈하려고 강제로 조약을 체결했다. 이날 궁궐 주위와 시내에는 무장한 일본군이 경계를 섰고, 궁중에서 어전회의가 열렸다.",
    "dateClaimIds": [
     "claim-mod-eulsa-year",
     "claim-mod-eulsa-def"
@@ -3576,12 +3576,12 @@
     "coordinateSourceIds": [
      "src-kowiki-jungmyeongjeon"
     ],
-    "coordinateNote": "인용한 백과 본문은 회의 장소를 “궁중”으로만 적는다. 표시 좌표는 위키백과 중명전 문서의 지리좌표로, 체결 장소로 널리 알려진 정동 중명전 건물 위치를 가리킨다. 인용 출처가 확인해 준 장소가 아니므로 precision=area 로 두었다."
+    "coordinateNote": "인용한 백과 본문은 회의 장소를 “궁중”으로만 적는다. 표시 좌표는 위키백과 중명전 문서의 지리좌표로, 체결 장소로 널리 알려진 정동 중명전 건물 위치를 가리킨다. 인용 출처가 확인해 준 장소가 아니므로 일대 기준으로 두었다."
    },
    "participants": [
     {
      "entityId": "polity-korean-ministers-1905",
-     "role": "궁중 어전회의에 참석한 대한제국 각부 대신들(한국 측)",
+     "role": "대한제국 대신들",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3591,7 +3591,7 @@
     },
     {
      "entityId": "polity-japanese-force-1905",
-     "role": "궁궐 주위와 시내를 무장 경계한 일본군(일본 측)",
+     "role": "일본군",
      "side": "invader",
      "presence": "on-site",
      "claimIds": [
@@ -3619,11 +3619,11 @@
   {
    "id": "scene-gukchae-bosang-1907",
    "eventId": "event-gukchae-bosang-1907",
-   "title": "국채보상운동 제창 — 대구 광문사 (1907)",
+   "title": "국채보상운동 제창",
    "startYear": 1907,
    "endYear": 1907,
    "kind": "assembly",
-   "summary": "1907년 2월 중순 대구 광문사 사장 김광제와 부사장 서상돈이 단연으로 국채를 갚자는 국채보상운동을 제창하였고, 민회소(단연회)를 세워 직접 모금에 나섰다.",
+   "summary": "1907년 2월 중순 대구 광문사 사장 김광제와 부사장 서상돈이 단연으로 국채를 갚자는 국채보상운동을 제창했고 민회소(단연회)를 세워 직접 모금에 나섰다.",
    "dateClaimIds": [
     "claim-mod-gukchae-year",
     "claim-mod-gukchae-act"
@@ -3644,12 +3644,12 @@
      "claim-mod-gukchae-place"
     ],
     "coordinateSourceIds": [],
-    "coordinateNote": "광문사 터의 실측 좌표는 확보하지 못했다. 기존 anchor hgis-admin-174575(대구) 표시 중심을 지역 기준 추정 배치로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 place anchor 파일의 화면 배치용 좌표다. 행정구역 표시 중심이므로 사건 현장의 실제 위치가 아니며 precision=area 로만 쓴다."
+    "coordinateNote": "광문사 터의 실측 좌표는 확보하지 못했다. 기존 기준점 hgis-admin-174575(대구) 표시 중심을 지역 기준 추정 배치로 쓴다. 국사편찬위원회 1910~1945 행정구역 경계 자료에서 뽑은 구역 범위 중심점으로, 기존 장소 기준점 파일의 화면 배치용 좌표다. 행정구역 표시 중심이므로 사건 현장의 실제 위치가 아니며 일대 기준으로만 쓴다."
    },
    "participants": [
     {
      "entityId": "person-kim-gwangje",
-     "role": "광문사 사장으로 단연 국채보상을 제창",
+     "role": "광문사 사장",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -3659,7 +3659,7 @@
     },
     {
      "entityId": "person-seo-sangdon",
-     "role": "광문사 부사장으로 함께 제창",
+     "role": "광문사 부사장",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -3669,7 +3669,7 @@
     },
     {
      "entityId": "polity-daegu-gwangmunsa",
-     "role": "민회소(단연회)를 세워 모금을 조직한 대구 광문사·대동광문회",
+     "role": "광문사·대동광문회",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -3721,7 +3721,7 @@
     "coordinateSourceIds": [
      "src-kowiki-harbin-station"
     ],
-    "coordinateNote": "좌표는 위키백과 하얼빈역 문서의 지리좌표(현재 역 위치)다. 한반도 캔버스 밖 지점이므로 반도 안으로 옮기지 않는다. 좌표는 위키백과 문서에 표기된 지리좌표(geo)로, 사건 당시 측량값이 아니라 현재 위치 표시다.",
+    "coordinateNote": "좌표는 위키백과 하얼빈역 문서의 지리좌표(현재 역 위치)다. 한반도 캔버스 밖 지점이므로 반도 안으로 옮기지 않는다. 좌표는 위키백과 문서에 표기된 지리좌표로, 사건 당시 측량값이 아니라 현재 위치 표시다.",
     "outsidePeninsula": true
    },
    "participants": [
@@ -3766,7 +3766,7 @@
   {
    "id": "scene-annexation-1910",
    "eventId": "event-korea-japan-annexation-treaty",
-   "title": "한일병합 어전회의 — 서울 (1910)",
+   "title": "한일병합 어전회의",
    "startYear": 1910,
    "endYear": 1910,
    "kind": "court",
@@ -3796,7 +3796,7 @@
    "participants": [
     {
      "entityId": "person-encykorea-sunjong-e0031947",
-     "role": "형식상의 어전회의가 열린 자리의 황제(대한제국 측)",
+     "role": "대한제국 황제",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -3805,7 +3805,7 @@
     },
     {
      "entityId": "person-yi-wanyong",
-     "role": "병합 안건을 결의하는 형식을 갖춘 내각의 총리대신",
+     "role": "총리대신",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -3841,7 +3841,7 @@
   {
    "id": "scene-taehwagwan-1919",
    "eventId": "event-encykorea-samil-movement-1919",
-   "title": "민족대표의 태화관 집결 — 3·1운동 (1919)",
+   "title": "민족대표의 태화관 집결, 3·1운동",
    "startYear": 1919,
    "endYear": 1919,
    "kind": "assembly",
@@ -3871,7 +3871,7 @@
    "participants": [
     {
      "entityId": "polity-minjok-daepyo-1919",
-     "role": "태화관에 모여 독립선언 시각을 기다린 민족대표 29인(선언 측)",
+     "role": "민족대표 29인",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -3899,7 +3899,7 @@
   {
    "id": "scene-tapgol-1919",
    "eventId": "event-tapgol-declaration-1919",
-   "title": "탑골공원 독립선언서 낭독 (1919)",
+   "title": "탑골공원 독립선언서 낭독",
    "startYear": 1919,
    "endYear": 1919,
    "kind": "assembly",
@@ -3925,12 +3925,12 @@
     "coordinateSourceIds": [
      "src-kowiki-tapgol"
     ],
-    "coordinateNote": "좌표는 위키백과 탑골공원 문서의 지리좌표(현재 공원 위치)다. 좌표는 위키백과 문서에 표기된 지리좌표(geo)로, 사건 당시 측량값이 아니라 현재 위치 표시다."
+    "coordinateNote": "좌표는 위키백과 탑골공원 문서의 지리좌표(현재 공원 위치)다. 좌표는 위키백과 문서에 표기된 지리좌표로, 사건 당시 측량값이 아니라 현재 위치 표시다."
    },
    "participants": [
     {
      "entityId": "polity-tapgol-crowd-1919",
-     "role": "공원에 모여 기다리다 낭독을 듣고 만세를 부른 학생·군중(시위 측)",
+     "role": "학생·군중",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -3961,11 +3961,11 @@
   {
    "id": "scene-aunae-1919",
    "eventId": "event-cheonan-aunae-1919",
-   "title": "아우내 장터 독립만세운동 — 천안 갈전면 (1919)",
+   "title": "아우내 장터 독립만세운동",
    "startYear": 1919,
    "endYear": 1919,
    "kind": "assembly",
-   "summary": "1919년 4월 1일 천안 갈전면 아우내 장터에서 독립만세운동이 일어났다. 조인원을 중심으로 장날에 맞춰 준비되었고, 이화학당 여학생 유관순이 참가하였다.",
+   "summary": "1919년 4월 1일 천안 갈전면 아우내 장터에서 독립만세운동이 일어났다. 조인원을 중심으로 장날에 맞춰 준비되었고, 이화학당 여학생 유관순이 참가했다.",
    "dateClaimIds": [
     "claim-mod-aunae-year",
     "claim-mod-aunae-act"
@@ -4002,7 +4002,7 @@
     },
     {
      "entityId": "person-encykorea-yu-gwansun",
-     "role": "이 만세운동에 참가한 이화학당 여학생",
+     "role": "이화학당 여학생",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -4011,7 +4011,7 @@
     },
     {
      "entityId": "polity-aunae-crowd-1919",
-     "role": "장날 장터에 모여 만세를 부른 주민들(시위 측)",
+     "role": "주민들",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -4041,7 +4041,7 @@
   {
    "id": "scene-jeamri-1919",
    "eventId": "event-khs-jeamri",
-   "title": "제암리 학살과 방화 (1919)",
+   "title": "제암리 학살과 방화",
    "startYear": 1919,
    "endYear": 1919,
    "kind": "fire",
@@ -4074,7 +4074,7 @@
    "participants": [
     {
      "entityId": "person-arita-toshio",
-     "role": "검거반을 이끌고 제암리에 도착한 일본군 보병 중위(일본 측)",
+     "role": "일본군 보병 중위",
      "side": "invader",
      "presence": "on-site",
      "claimIds": [
@@ -4084,7 +4084,7 @@
     },
     {
      "entityId": "polity-japanese-force-jeamri-1919",
-     "role": "제암리에 들어와 학살과 방화를 저지른 보병·순사 검거반(일본 측)",
+     "role": "보병·순사 검거반",
      "side": "invader",
      "presence": "on-site",
      "claimIds": [
@@ -4094,7 +4094,7 @@
     },
     {
      "entityId": "polity-jeamri-victims-1919",
-     "role": "교회당에 모이게 된 뒤 학살된 제암리 기독교·천도교 신자 주민",
+     "role": "제암리 신자 주민",
      "side": "civilian",
      "presence": "on-site",
      "claimIds": [
@@ -4130,7 +4130,7 @@
    "startYear": 1920,
    "endYear": 1920,
    "kind": "battle",
-   "summary": "1920년 10월 김좌진·나중소·이범석이 지휘한 북로군정서군과 홍범도가 이끈 대한독립군 등을 주력으로 한 독립군부대가, 간도에 출병한 일본군을 청산리 일대에서 10여 회의 전투 끝에 대파하였다.",
+   "summary": "1920년 10월 김좌진과 나중소, 이범석이 지휘한 북로군정서군과 홍범도가 이끈 대한독립군 등을 주력으로 한 독립군부대가 간도에 출병한 일본군을 청산리 일대에서 10여 회의 전투 끝에 대파했다.",
    "dateClaimIds": [
     "claim-mod-cheongsanri-year"
    ],
@@ -4154,7 +4154,7 @@
    "participants": [
     {
      "entityId": "person-encykorea-kim-jwajin",
-     "role": "북로군정서군을 지휘한 독립군 지휘관(독립군 측)",
+     "role": "독립군 지휘관",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -4164,7 +4164,7 @@
     },
     {
      "entityId": "person-encykorea-hong-beomdo",
-     "role": "대한독립군을 이끈 독립군 지휘관(독립군 측)",
+     "role": "독립군 지휘관",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -4174,7 +4174,7 @@
     },
     {
      "entityId": "polity-independence-army-1920",
-     "role": "북로군정서군·대한독립군 등을 주력으로 한 독립군부대",
+     "role": "독립군부대",
      "side": "defender",
      "presence": "on-site",
      "claimIds": [
@@ -4183,7 +4183,7 @@
     },
     {
      "entityId": "polity-japanese-army-gando-1920",
-     "role": "독립군 토벌을 위해 간도에 출병한 일본군(일본 측)",
+     "role": "일본군",
      "side": "invader",
      "presence": "on-site",
      "claimIds": [
@@ -4212,7 +4212,7 @@
   {
    "id": "scene-gwangju-student-1929",
    "eventId": "event-gwangju-student-1929",
-   "title": "광주학생운동 제1차 가두 투쟁 (1929)",
+   "title": "광주학생운동 제1차 가두 투쟁",
    "startYear": 1929,
    "endYear": 1929,
    "kind": "assembly",
@@ -4273,11 +4273,11 @@
   {
    "id": "scene-gwangbok-geonjun-1945",
    "eventId": "event-encykorea-gwangbok-1945",
-   "title": "8·15광복과 건국준비위원회 결성 (1945)",
+   "title": "8·15광복과 건국준비위원회 결성",
    "startYear": 1945,
    "endYear": 1945,
    "kind": "assembly",
-   "summary": "1945년 8월 15일 일제의 식민통치에서 벗어나 독립을 되찾았고, 광복이 되자 여운형이 조선건국준비위원회 결성을 주도하고 위원장으로 활동하였다.",
+   "summary": "1945년 8월 15일 일제의 식민통치에서 벗어나 독립을 되찾았고, 광복이 되자 여운형이 조선건국준비위원회 결성을 주도하고 위원장으로 활동했다.",
    "dateClaimIds": [
     "claim-mod-gwangbok-year",
     "claim-mod-gwangbok-def",
@@ -4300,7 +4300,7 @@
    "participants": [
     {
      "entityId": "person-encykorea-yeo-unhyeong",
-     "role": "광복 직후 조선건국준비위원회 결성을 주도하고 위원장을 맡음",
+     "role": "위원장",
      "side": "civilian",
      "presence": "related",
      "claimIds": [
@@ -4310,7 +4310,7 @@
     },
     {
      "entityId": "polity-geonjun-1945",
-     "role": "광복 직후 건국 준비를 위해 결성된 위원회",
+     "role": "위원회",
      "side": "civilian",
      "presence": "related",
      "claimIds": [

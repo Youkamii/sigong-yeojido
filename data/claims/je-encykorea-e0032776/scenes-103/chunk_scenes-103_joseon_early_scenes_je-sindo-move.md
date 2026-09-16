@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1394년 10월 25일에 한양으로 천도를 단행하여"
+      "value": "1394년 10월 25일에 한양으로 도읍을 옮겨"
     },
     "note": "천도 행위 원문.",
     "fromSource": "src-je-encykorea-e0032776",

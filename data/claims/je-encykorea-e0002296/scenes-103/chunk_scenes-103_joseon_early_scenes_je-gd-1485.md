@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1485년 1월 1일부터 시행하였다"
+      "value": "1485년 1월 1일부터 시행했다"
     },
     "note": "시행 행위 원문.",
     "fromSource": "src-je-encykorea-e0002296",

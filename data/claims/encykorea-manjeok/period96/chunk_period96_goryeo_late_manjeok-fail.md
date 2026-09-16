@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "하지만 같은 노비 출신인 순정(順貞)의 배신으로 실패하고 말았다."
+      "value": "하지만 같은 노비 출신인 순정(順貞)의 배신으로 실패했다."
     },
     "note": "결말 서술.",
     "fromSource": "src-encykorea-manjeok",

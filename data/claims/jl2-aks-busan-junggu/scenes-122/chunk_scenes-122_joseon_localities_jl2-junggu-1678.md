@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1678년 초량으로 옮겨지면서 초량왜관이 설치되어 국가 교역의 중심지로 성장하였다."
+      "value": "1678년 초량으로 옮겨지면서 초량왜관이 설치되어 국가 교역의 중심지로 성장했다."
     },
     "note": "이전 뒤의 기능 서술.",
     "fromSource": "src-jl2-aks-busan-junggu",

@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1703년 권상하가 민정중·정호·이선직과 함께 부근 유생들의 협력을 얻어 만동묘를 창건하였다."
+      "value": "1703년 권상하가 민정중과 정호, 이선직과 함께 부근 유생들의 협력을 얻어 만동묘를 창건했다."
     },
     "note": "행위: 사당 창건.",
     "fromSource": "src-jl2-aks-mandongmyo",

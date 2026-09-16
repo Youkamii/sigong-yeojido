@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1791년 전라도 진산에서 조상 제사 문제로 박해가 발생하였다."
+      "value": "1791년 전라도 진산에서 조상 제사 문제로 박해가 일어났다."
     },
     "note": "사건의 성격.",
     "fromSource": "src-jl2-aks-sinhae-bakhae",

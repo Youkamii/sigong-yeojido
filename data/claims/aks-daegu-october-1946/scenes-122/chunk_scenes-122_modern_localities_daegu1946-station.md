@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "10월 1일 대구역 앞에서 경찰이 전평 계열 노동자들의 시위를 진압하는 과정에서 발포하여 노동자가 사망하였다."
+      "value": "10월 1일 대구역 앞에서 경찰이 전평 계열 노동자들의 시위를 진압하는 과정에서 발포해 노동자가 사망했다."
     },
     "note": "행위 서술은 인용문 표현을 옮긴 것이다. 발포 경위의 다른 해석은 이 항목에 없다.",
     "fromSource": "src-aks-daegu-october-1946",

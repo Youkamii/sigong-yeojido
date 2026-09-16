@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "길이 660m의 남해대교 가 있다"
+      "value": "길이 660m의 남해대교가 있다"
     },
     "note": "최협부에 길이 660 m의 다리가 있다는 설명. 폭이 좁아 저해상도 격자로는 물로 분해되지 않을 수 있다.",
     "fromSource": "src-syj103-kowiki-noryang-strait",

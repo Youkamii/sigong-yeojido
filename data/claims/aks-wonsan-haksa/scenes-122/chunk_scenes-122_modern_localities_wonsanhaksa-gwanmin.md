@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "민간에 의해 설립된 중등학교이며, 관민이 합심하여 1883년부터 세웠다."
+      "value": "민간이 설립한 중등학교이며, 관민이 힘을 합쳐 1883년부터 세웠다."
     },
     "note": "설립 행위와 주체를 인용문 표현대로 적었다.",
     "fromSource": "src-aks-wonsan-haksa",

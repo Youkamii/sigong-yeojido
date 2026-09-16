@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "순천 경찰은 응전하였으나 패퇴하였고, 20일 오후 순천도 함락되었다."
+      "value": "순천 경찰은 응전했으나 패퇴했고, 20일 오후 순천도 함락되었다."
     },
     "note": "원문 표기를 그대로 옮겼다. '20일'의 해와 달은 같은 항목이 사건을 1948년 10월 19일부터로 적는 데서 온다.",
     "fromSource": "src-aks-yeosun-1948",

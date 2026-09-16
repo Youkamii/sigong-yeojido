@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "임진왜란 때 이순신 장군에 의해 전략지로 활용되어"
+      "value": "임진왜란 때 이순신 장군이 전략지로 활용해"
     },
     "note": "섬 항목의 서술.",
     "fromSource": "src-syj103-encykorea-gohado-island",

@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "두 나라의 군대가 합류하여 7월 12일 사비성을 포위하였다"
+      "value": "두 나라의 군대가 합류해 7월 12일 사비성을 포위했다"
     },
     "note": "포위 행위 서술.",
     "fromSource": "src-anc-enc-uija",

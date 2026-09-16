@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1434년(세종 16) 왕명을 받아 장영실(蔣英實) · 이천(李蕆) · 김조(金銚) 등이 처음으로 물시계를 만들었는데"
+      "value": "1434년(세종 16) 왕명을 받아 장영실(蔣英實)과 이천(李蕆), 김조(金銚) 등이 처음으로 물시계를 만들었는데"
     },
     "note": "제작 행위와 참여자 서술.",
     "fromSource": "src-je-encykorea-e0047854",

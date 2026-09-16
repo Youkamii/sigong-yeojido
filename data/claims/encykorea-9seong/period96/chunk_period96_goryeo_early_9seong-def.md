@@ -55,7 +55,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "윤관이 별무반을 동원하여 고려 동북쪽의 변경 지역을 개척하기 위하여 축성한 성곽"
+      "value": "윤관이 별무반을 동원해 고려 동북쪽의 변경 지역을 개척하려고 축성한 성곽"
     },
     "fromSource": "src-encykorea-9seong",
     "citesChunk": "chunk_period96_goryeo_early_9seong-def",
