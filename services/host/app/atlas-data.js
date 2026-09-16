@@ -1,7 +1,9 @@
-import {datedClaims,entityLabel,yearLabel,RELATION_WORDS} from './chronicle.js';
+import {datedClaims,entityLabel,displayLabel,labelNote,isGroupEntity,yearLabel,RELATION_WORDS} from './chronicle.js';
+export {displayLabel,labelNote,isGroupEntity} from './chronicle.js';
 
 export const cleanTitle=text=>String(text||'').replace(/\s*\(\d{3,4}(?:년)?\)\s*$/,'');
-export const typeName=type=>({Person:'인물',Event:'사건',Place:'장소',Polity:'나라',Narrative:'전승'}[type]||'기록');
+// 유형 이름. 집단 행위자(군대·단체)는 나라가 아니라 '집단'으로 보인다(#197).
+export const typeName=(type,entity)=>entity&&type==='Polity'&&isGroupEntity(entity)?'집단':({Person:'인물',Event:'사건',Place:'장소',Polity:'나라',Narrative:'전승'}[type]||'기록');
 const normalize=text=>String(text||'').normalize('NFKC').toLocaleLowerCase('ko').replace(/\s/g,'');
 
 export function relationName(claim,id){
@@ -44,8 +46,12 @@ export class AtlasData{
   canonicalId(id){return this.entities.get(id)?.mergedInto||id;}
   label(entity){
     const scene=entity.type==='Event'&&this.eventsFor(entity.id).find(e=>e.id===entity.id&&e.sceneId);
-    return cleanTitle(scene?.title||entityLabel(entity)).replace(/\s*·\s*현재 기관 좌표$/,'');
+    if(scene?.title)return cleanTitle(scene.title).replace(/\s*·\s*현재 기관 좌표$/,'');
+    return displayLabel(entity)||cleanTitle(entityLabel(entity));
   }
+  // 원본 라벨(검색 매칭·툴팁용)과 설명 꼬리("지방 행정 중심지")
+  rawLabel(entity){return cleanTitle(entityLabel(entity)).replace(/\s*·\s*현재 기관 좌표$/,'');}
+  labelNote(entity){return labelNote(entity);}
   description(id){
     id=this.canonicalId(id);
     return (this.subjects.get(id)||[]).find(c=>c.predicate==='syj:describedAs'&&c.object.value)?.object.value||'';

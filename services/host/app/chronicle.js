@@ -27,6 +27,20 @@ export const sceneContextLabel = (context,estimatedSites=0) =>
 export const entityLabel = e => e.label.replace(/\s*\([\u3400-\u9fff\s]+\)/g,'').replace(e.type==='Person'?/\s*·\s*\d+년.*$/:/$^/,'').replace(/\s*\([^)]*민족문화대백과[^)]*\)/g,part=>{
   const polity=part.match(/조선|고려|백제|신라|발해/);return polity?` (${polity[0]})`:'';
 }).trim();
+// #197 화면용 이름: 데이터 라벨의 설명 꼬리(" · 지방 행정 중심지", " · 집단 행위자")와 연도·긴 설명 괄호를 뗀다.
+// 짧은 구분 괄호("(조선)", "(양주)")는 남긴다. 원본은 entityLabel/e.label 로 남아 검색·매칭에 쓴다.
+const NOTE_PAREN=/\s*\(([^()]*)\)/g;
+const isYearParen=text=>/^[\s\d년월일경~∼～·,.\-–]+$/.test(text)||/^(?:기원전\s*)?\d{1,4}년?(?:\s*[~∼～–-]\s*\d{1,4}년?)?(?:\s*(?:경|무렵))?$/.test(text);
+export const stripLabelNotes = text => String(text||'').replace(NOTE_PAREN,(match,inner)=>isYearParen(inner)||inner.trim().length>=11||/미상|미확인|미기재|불명/.test(inner)?'':match)
+  .replace(/\s{2,}/g,' ').trim();
+export const labelNote = e => {const parts=String(e?.label||'').split(' · ');return parts.length>1?parts.slice(1).join(' · ').replace(/집단 행위자/g,'').replace(/\s*·\s*$/,'').trim():'';};
+export const displayLabel = e => {
+  if(!e||!e.label)return '';
+  const base=entityLabel(e).split(' · ')[0];
+  const cleaned=stripLabelNotes(base).replace(/집단 행위자|정본/g,'').replace(/미상/g,'미확인').replace(/\s{2,}/g,' ').trim();
+  return cleaned||entityLabel(e)||e.label;
+};
+export const isGroupEntity = e => /집단 행위자/.test(String(e?.label||''))||['group','organization'].includes(String(e?.kind||e?.subtype||'').toLowerCase());
 const shortPredicate = p=>p.replace('syj:','');
 const ACTIVITY = new Map([['livedIn','생존'],['reignedIn','재위'],['activeIn','활동'],['appearsIn','등장']]);
 const activityLabel=(predicate,claim)=>predicate==='appearsIn'&&claim.note?.startsWith('전승 연대')?'전승 연대':ACTIVITY.get(predicate);

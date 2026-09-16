@@ -108,7 +108,7 @@ test('관계 그룹은 더 보기로 30개 이후도 표시하고 빈 구역은 
   assert.equal(story.sectionHtml({...group,rows:[]}), '');
   const empty={entities:[{id:'empty',type:'Person',label:'기록 없는 인물'}],claims:[],scenePackets:[]};
   const sparse=storyFor('empty','summary',empty);sparse.render();
-  assert.ok(sparse.pane.innerHTML.includes('인물 · 연도 미확인'));
+  assert.ok(sparse.pane.innerHTML.includes('class="atlas-breadcrumb">인물</p>'))  // #197 날짜가 없으면 유형만;
   assert.ok(sectionHtml(sparse.pane.innerHTML,'era').includes('조선'));
   assert.equal(sectionHtml(sparse.pane.innerHTML,'people'),undefined);
   assert.equal(sectionHtml(sparse.pane.innerHTML,'places'),undefined);
@@ -176,7 +176,8 @@ test('같은 제목·연도·장소만 병합하고 대표 행의 장면·장소
     {id:'c',title:'한산도대첩',lo:1593}, {id:'d',title:'한산도 대첩'}];
   const original=structuredClone(rows);
   for(const input of [rows,[...rows].reverse()]){
-    const merged=mergeEvents(input);assert.equal(merged.length,3);
+    const merged=mergeEvents(input);assert.equal(merged.length,2);  // #197: 연도 없는 'd' 는 가장 이른 같은 제목 행(1592)에 흡수
+    assert.ok(merged.some(e=>e.lo===1593));
     const battle=merged.find(e=>e.lo===1592);assert.equal(battle.id,'b');assert.equal(battle.sceneId,'battle');assert.equal(battle.placeLabel,'한산섬 앞바다');assert.equal(battle.title,rows[1].title);
     assert.deepEqual(new Set(battle.basis.map(c=>c.id)),new Set(['c1','c2']));
     assert.equal(battle.basis.length,2);

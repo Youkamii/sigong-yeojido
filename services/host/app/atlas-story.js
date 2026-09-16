@@ -13,16 +13,23 @@ const withoutParentheses=text=>{
 };
 export const normalize=text=>withoutParentheses(text).toLowerCase().replace(/[\s·ㆍ・\-‐‑‒–—―]/g,'');
 export const displayTitle=title=>cleanTitle(String(title||'')).replace(/\s*\((?:기원전\s*)?\d{1,4}년?(?:\s*[~～–—-]\s*\d{1,4}년?)?\)\s*$/,'').split(/ [—–-] /)[0].trim();
-export const shortLabel=label=>String(label||'').replace(/\(([^()]*)\)/g,(match,detail)=>detail.length>10?'':match).split(' · ')[0].trim();
+const yearOnly=text=>/^[\s\d년월일경~∼～·,.\-–]+$/.test(text);
+export const shortLabel=label=>String(label||'').replace(/\s*\(([^()]*)\)/g,(match,detail)=>detail.length>10||yearOnly(detail)?'':match).split(' · ')[0].replace(/집단 행위자/g,'').replace(/\s{2,}/g,' ').trim();
 const eventKey=row=>JSON.stringify([normalize(displayTitle(row.title)),row.lo??null]);
+// 출처 라벨 '거북선 — 한국민족문화대백과사전' → '한국민족문화대백과사전 「거북선」'(대시 없이)
+export const sourceName=label=>{const text=String(label||'').trim();if(!text)return '원문 보기';const parts=text.split(/\s+[—–]\s+/);return parts.length>=2?`${parts[parts.length-1].trim()} 「${parts.slice(0,-1).join(' ').trim()}」`:text;};
 export function mergeEvents(rows){
-  const merged=new Map(),firstPlaces=new Map();
+  const merged=new Map(),firstPlaces=new Map(),datedKeys=new Map();
   for(const row of rows){
     const group=eventKey(row),place=normalize(row.placeLabel);
     if(place&&!firstPlaces.has(group))firstPlaces.set(group,place);
+    // 연도 없는 같은 제목의 행(장면 없는 사건 개체)은 연도 있는 행에 흡수한다(#197: "주화론과 척화론 · 연도 미확인" 중복)
+    if(Number.isInteger(row.lo)){const t=normalize(displayTitle(row.title)),prior=datedKeys.get(t);if(!prior||row.lo<prior.lo)datedKeys.set(t,{group,lo:row.lo});}
   }
   for(const row of rows){
-    const group=eventKey(row),place=normalize(row.placeLabel)||firstPlaces.get(group)||'';
+    const titleKey=normalize(displayTitle(row.title));
+    const group=Number.isInteger(row.lo)?eventKey(row):(datedKeys.get(titleKey)?.group||eventKey(row));
+    const place=normalize(row.placeLabel)||firstPlaces.get(group)||'';
     const key=JSON.stringify([group,place]),previous=merged.get(key);
     if(!previous){merged.set(key,{...row,basis:[...(row.basis||[])]});continue;}
     const priority=entry=>Number(!!entry.sceneId)*2+Number(!!normalize(entry.placeLabel));
@@ -151,7 +158,8 @@ export class AtlasStory{
       for(const row of data.relations(e.id).filter(r=>r.entity.type==='Place'))addPlace(data.label(row.entity),row.entity.id,e.sceneId,e);
     }
     addPlace(this.activity?.place||scene?.place?.label,null,this.activity?.sceneId||event?.sceneId,event);
-    const year=scene?.startYear??event?.lo??data.dates.get(entity.id)?.[0]?.lo??this.ui.chronicle.year;
+    // 시대 줄의 연도: 장면 → 사건 → 생몰 → 연표 첫 사건 → 현재 연도 (1742년 집단 카드가 현재 연도 1593을 보이던 문제, #197)
+    const year=scene?.startYear??event?.lo??data.dates.get(entity.id)?.[0]?.lo??eventRows.find(e=>Number.isInteger(e.lo))?.lo??this.ui.chronicle.year;
     const polities=related.filter(row=>row.entity.type==='Polity'&&row.claims.some(claim=>{
       const {lo,hi}=relationTime(claim);return (lo===null||lo<=year)&&(hi===null||hi>=year);
     })&&(!(data.dates.get(row.entity.id)||[]).some(d=>d.claim.predicate==='syj:activeIn')||
@@ -183,14 +191,16 @@ export class AtlasStory{
     return `<button class="${chip?'atlas-chip':'atlas-story-row'}" data-story-entity="${esc(row.entity.id)}" title="${esc(label)}"><strong>${esc(shortLabel(label))}</strong>${dates?`<small class="atlas-relation-year" title="${esc(dates)}">${esc(dates)}</small>`:''}</button>`;
   }
   eventHtml(row){
-    const data=this.ui.data,place=row.placeLabel||data.scenes.get(row.sceneId)?.place?.label||
+    const data=this.ui.data,basePlace=row.placeLabel||data.scenes.get(row.sceneId)?.place?.label||
       data.relations(row.id).filter(r=>r.entity.type==='Place').map(r=>data.label(r.entity)).join(', ')||'장소 미확인';
+    const place=[basePlace,...(row.extraPlaces||[]).map(shortLabel)].filter((p,i,a)=>p&&a.indexOf(p)===i).join(', ');
     return `<button class="atlas-story-row atlas-story-event" ${row.sceneId?`data-story-event="${esc(row.sceneId)}"`:`data-story-entity="${esc(row.id)}"`}><strong class="atlas-event-title" title="${esc(row.title)}">${esc(displayTitle(row.title))}</strong><small class="atlas-event-place" title="${esc(place)}">${esc(shortLabel(place))}</small></button>`;
   }
   timelineHtml(rows){
     const groups=new Map();
     for(const row of rows){const year=Number.isInteger(row.lo)?yearLabel(row.lo):'연도 미확인';if(!groups.has(year))groups.set(year,[]);groups.get(year).push(row);}
-    return `<div class="atlas-story-timeline">${[...groups].map(([year,events])=>`<div class="atlas-event-year">${esc(year)}</div><div>${events.map(row=>this.eventHtml(row)).join('')}</div>`).join('')}</div>`;
+    const collapse=events=>{const seen=new Map();for(const row of events){const key=normalize(displayTitle(row.title));const prior=seen.get(key);if(prior){prior.extraPlaces=[...(prior.extraPlaces||[]),row.placeLabel].filter(Boolean);continue;}seen.set(key,{...row});}return [...seen.values()];};
+    return `<div class="atlas-story-timeline">${[...groups].map(([year,events])=>`<div class="atlas-event-year">${esc(year)}</div><div>${collapse(events).map(row=>this.eventHtml(row)).join('')}</div>`).join('')}</div>`;
   }
   moreHtml(key,count,unit){
     return `<button class="atlas-story-more" data-story-more="${esc(key)}">${count}${unit} 더</button>`;
@@ -257,9 +267,9 @@ export class AtlasStory{
     const tabs=compact?'':`<nav class="atlas-story-tabs" aria-label="이야기 목록">${[{id:'summary',title:'요약'},...lists.filter(s=>s.rows.length).sort((a,b)=>['events','people','places'].indexOf(a.id)-['events','people','places'].indexOf(b.id))].map(s=>`<button class="atlas-story-tab" data-story-tab="${s.id}" aria-pressed="${this.tab===s.id}">${s.title}${s.rows?` <span>${s.rows.length}</span>`:''}</button>`).join('')}</nav>`;
     const eventSection=lists.find(s=>s.id==='events');
     const evidence=[...new Map([...related.flatMap(r=>r.claims),...(activity?.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean),...claims,...(eventSection.basis||[]),...eventSection.rows.flatMap(e=>e.basis||[])].map(c=>[c.id,c])).values()];
-    const details=`<details class="atlas-story-evidence"><summary>${icon('event')}출처와 지도 위치</summary>${evidence.map(c=>`<button data-story-claim="${esc(c.id)}"><span>${esc(c.quote||c.sourceLabel||'출처 기록')}</span><small>${esc(c.sourceLabel||'원문 보기')} ↗</small></button>`).join('')||'<p class="atlas-muted">연결된 출처가 없어요.</p>'}${activity?.placement||activity?.coordinateNote?`<div class="atlas-placement-note"><h4>지도 위치</h4>${activity.placement?`<p>${esc(activity.placement)}</p>`:''}${activity.coordinateNote?`<p>${esc(activity.coordinateNote)}</p>`:''}</div>`:''}</details>`;
+    const details=`<details class="atlas-story-evidence"><summary>${icon('event')}출처와 지도 위치</summary>${evidence.map(c=>`<button data-story-claim="${esc(c.id)}"><span>${esc(c.quote||c.sourceLabel||'출처 기록')}</span><small>${esc(sourceName(c.sourceLabel))} ↗</small></button>`).join('')||'<p class="atlas-muted">연결된 출처가 없어요.</p>'}${activity?.placement?`<div class="atlas-placement-note"><h4>지도 위치</h4><p>${esc(activity.placement)}</p></div>`:''}</details>`;
     this.pane.innerHTML=`<header><button class="atlas-story-back" data-story-back>${icon('left')}<span>${this.history.length?'이전으로':'지도로 가기'}</span></button><button class="atlas-icon" data-close aria-label="이야기 닫기">${icon('close')}</button></header>
-      <div class="atlas-story-body"><div class="atlas-story-hero">${imageFigure}<div><p class="atlas-breadcrumb">${typeName(entity.type)} · ${esc(breadcrumb)}</p><h2>${esc(entity.type==='Event'?displayTitle(name):name)}</h2>${personRole?`<p class="atlas-role" title="${esc(personRole)}">${esc(personRole)}</p>`:''}</div></div>
+      <div class="atlas-story-body"><div class="atlas-story-hero">${imageFigure}<div><p class="atlas-breadcrumb">${typeName(entity.type,entity)}${breadcrumb&&breadcrumb!=='연도 미확인'?' · '+esc(breadcrumb):''}</p><h2>${esc(entity.type==='Event'?displayTitle(name):name)}</h2>${personRole?`<p class="atlas-role" title="${esc(personRole)}">${esc(personRole)}</p>`:''}</div></div>
       ${description?`<p id="atlasStoryDescription" class="atlas-description atlas-story-description">${esc(description)}</p><button class="atlas-story-more" data-story-expand aria-controls="atlasStoryDescription" aria-expanded="false" hidden>더 보기</button>`:'<p class="atlas-muted">이 항목에 연결된 기록과 관계를 보세요.</p>'}
       ${['Person','Place'].includes(entity.type)&&entity.aliases?.length?`<p class="atlas-story-aliases">다른 이름: ${entity.aliases.map(esc).join(', ')}</p>`:''}
       ${activity?.narrative?`<p class="atlas-muted">이야기 속 시기: ${esc(activity.narrative.storyTime.label)}<br>기록된 시기: ${esc(activity.narrative.recordingTime.label)}</p>`:''}
