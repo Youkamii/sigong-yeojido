@@ -1,5 +1,8 @@
 ---
 id: "event-encykorea-gujudaecheop-1019"
 type: "Event"
-label: "구주대첩 (1019)"
+label: "구주대첩"
+labelNote: "1019"
+aliases:
+  - "구주대첩 (1019)"
 ---

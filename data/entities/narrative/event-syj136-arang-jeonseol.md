@@ -1,5 +1,8 @@
 ---
 id: "event-syj136-arang-jeonseol"
 type: "Narrative"
-label: "밀양 아랑 전설 (「밀양아리랑」 유래담)"
+label: "밀양 아랑 전설"
+labelNote: "「밀양아리랑」 유래담"
+aliases:
+  - "밀양 아랑 전설 (「밀양아리랑」 유래담)"
 ---

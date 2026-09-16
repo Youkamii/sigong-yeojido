@@ -1,5 +1,8 @@
 ---
 id: "event-mod128-joseoneohakhoe-1942"
 type: "Event"
-label: "조선어학회 사건 (1942)"
+label: "조선어학회 사건"
+labelNote: "1942"
+aliases:
+  - "조선어학회 사건 (1942)"
 ---

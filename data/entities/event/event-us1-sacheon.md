@@ -1,7 +1,10 @@
 ---
 id: "event-us1-sacheon"
 type: "Event"
-label: "사천왕사 완성 — 경주 낭산 (679)"
+label: "사천왕사 완성 — 경주 낭산"
+labelNote: "679"
+aliases:
+  - "사천왕사 완성 — 경주 낭산 (679)"
 ---
 
 사실 조사(facts) 주장의 주체로 쓰인 id 에 자동으로 만든 껍데기 개체다. 이름은 장면 제목이나 id 다.

@@ -1,5 +1,7 @@
 ---
 id: "place-seonjukgyo"
 type: "Place"
-label: "선죽교(善竹橋)"
+label: "선죽교"
+aliases:
+  - "선죽교(善竹橋)"
 ---

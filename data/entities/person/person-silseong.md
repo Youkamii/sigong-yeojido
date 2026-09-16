@@ -1,5 +1,7 @@
 ---
 id: "person-silseong"
 type: "Person"
-label: "실성(實聖)"
+label: "실성"
+aliases:
+  - "실성(實聖)"
 ---

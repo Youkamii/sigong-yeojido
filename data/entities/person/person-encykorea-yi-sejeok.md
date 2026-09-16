@@ -1,5 +1,8 @@
 ---
 id: "person-encykorea-yi-sejeok"
 type: "Person"
-label: "이세적 (민족문화대백과 삼국통일 항목)"
+label: "이세적"
+labelNote: "민족문화대백과 삼국통일 항목"
+aliases:
+  - "이세적 (민족문화대백과 삼국통일 항목)"
 ---

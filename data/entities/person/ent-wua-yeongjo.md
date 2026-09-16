@@ -1,7 +1,10 @@
 ---
 id: "ent-wua-yeongjo"
-label: "영조 (영조실록 총서 '대왕')"
+label: "영조"
 labelHanja: "英祖"
+labelNote: "영조실록 총서 '대왕'"
+aliases:
+  - "영조 (영조실록 총서 '대왕')"
 type: "Person"
 ---
 

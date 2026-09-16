@@ -1,5 +1,7 @@
 ---
 id: "person-syj122-gimtongjeong"
 type: "Person"
-label: "김통정(金通精)"
+label: "김통정"
+aliases:
+  - "김통정(金通精)"
 ---

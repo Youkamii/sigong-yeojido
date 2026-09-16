@@ -1,5 +1,8 @@
 ---
 id: "event-syj128-odaesan-sago-1606"
 type: "Event"
-label: "오대산사고 설치 (1606)"
+label: "오대산사고 설치"
+labelNote: "1606"
+aliases:
+  - "오대산사고 설치 (1606)"
 ---

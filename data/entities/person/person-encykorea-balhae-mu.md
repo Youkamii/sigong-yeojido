@@ -1,5 +1,8 @@
 ---
 id: "person-encykorea-balhae-mu"
 type: "Person"
-label: "무왕 (민족문화대백과 발해 항목, 발해 제2대 왕)"
+label: "무왕 (발해)"
+labelNote: "민족문화대백과 발해 항목, 발해 제2대 왕"
+aliases:
+  - "무왕 (민족문화대백과 발해 항목, 발해 제2대 왕)"
 ---

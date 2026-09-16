@@ -1,5 +1,7 @@
 ---
 id: "person-syj128-jingam-hyeso"
 type: "Person"
-label: "진감선사 혜소(慧昭)"
+label: "진감선사 혜소"
+aliases:
+  - "진감선사 혜소(慧昭)"
 ---

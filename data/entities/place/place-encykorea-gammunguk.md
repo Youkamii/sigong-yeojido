@@ -1,5 +1,7 @@
 ---
 id: "place-encykorea-gammunguk"
 type: "Place"
-label: "감문국(甘文國)"
+label: "감문국"
+aliases:
+  - "감문국(甘文國)"
 ---

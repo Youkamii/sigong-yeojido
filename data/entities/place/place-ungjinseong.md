@@ -1,5 +1,7 @@
 ---
 id: "place-ungjinseong"
 type: "Place"
-label: "웅진성(熊津城)"
+label: "웅진성"
+aliases:
+  - "웅진성(熊津城)"
 ---

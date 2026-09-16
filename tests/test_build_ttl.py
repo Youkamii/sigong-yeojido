@@ -341,13 +341,24 @@ class BuildFixtureTest(unittest.TestCase):
 
     # §0-1 — 엔티티는 껍데기다
     def test_14_shells_are_bare(self):
-        allowed = {RDF_TYPE, RDFS_LABEL, syj("labelHanja")}
+        # 이름 관련 값만 나온다 — labelNote·kind·alias 는 이름 정리(#200)로 옮겨 둔 값이다
+        allowed = {RDF_TYPE, RDFS_LABEL, syj("labelHanja"), syj("labelNote"), syj("kind"), syj("alias")}
         for cls in ("Person", "Place", "Polity", "Event", "Office"):
             for node in self.idx.of_type(syj(cls)):
                 self.assertEqual(set(self.idx.spo[node]) - allowed, set(), node)
         self.assertEqual(self.idx.of_type(syj("Person")), [SYJ + "person-gwanggaeto"])  # 인용되지 않아도 껍데기는 나온다
         self.assertEqual(self.idx.value(SYJ + "place-yeomsu", RDFS_LABEL), "염수")
         self.assertEqual(self.idx.value(SYJ + "place-yeomsu", syj("labelHanja")), "鹽水")
+
+    def test_14b_shell_names_carry_note_kind_and_aliases(self):
+        """정리 전 이름(alias)과 떼어낸 설명이 그래프에도 남는다 (#200)."""
+        wa = SYJ + "polity-wa"
+        self.assertEqual(self.idx.value(wa, RDFS_LABEL), "왜")
+        self.assertEqual(self.idx.value(wa, syj("labelNote")), "사료 표기 왜국")
+        self.assertEqual(self.idx.value(wa, syj("kind")), "group")
+        self.assertEqual([T.literal_value(v) for v in self.idx.objects(wa, syj("alias"))],
+                         ["왜 (倭, 사료 표기 왜국) · 집단 행위자"])
+        self.assertEqual(self.idx.spo[SYJ + "polity-baekje"].get(syj("alias")), None)
 
     # §7.3 — provenance 1급
     def test_15_provenance_on_every_claim(self):

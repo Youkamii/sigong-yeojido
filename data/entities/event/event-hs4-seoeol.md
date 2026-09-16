@@ -1,5 +1,8 @@
 ---
 id: "event-hs4-seoeol"
 type: "Event"
-label: "서얼 통청 운동과 정유절목(1777)"
+label: "서얼 통청 운동과 정유절목"
+labelNote: "1777"
+aliases:
+  - "서얼 통청 운동과 정유절목(1777)"
 ---

@@ -1,5 +1,8 @@
 ---
 id: "person-syj136-bueulla"
 type: "Person"
-label: "부을나(夫乙那) · 삼성신화의 세 신인 중 하나"
+label: "부을나"
+labelNote: "삼성신화의 세 신인 중 하나"
+aliases:
+  - "부을나(夫乙那) · 삼성신화의 세 신인 중 하나"
 ---

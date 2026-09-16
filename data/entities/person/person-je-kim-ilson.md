@@ -1,5 +1,7 @@
 ---
 id: "person-je-kim-ilson"
 type: "Person"
-label: "김일손(金馹孫)"
+label: "김일손"
+aliases:
+  - "김일손(金馹孫)"
 ---

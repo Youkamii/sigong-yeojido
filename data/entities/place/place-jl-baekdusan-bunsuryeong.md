@@ -1,5 +1,8 @@
 ---
 id: "place-jl-baekdusan-bunsuryeong"
 type: "Place"
-label: "백두산 부근 (조선·청 국경 정계비 건립지)"
+label: "백두산 부근"
+labelNote: "조선·청 국경 정계비 건립지"
+aliases:
+  - "백두산 부근 (조선·청 국경 정계비 건립지)"
 ---

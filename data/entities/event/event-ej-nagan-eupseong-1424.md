@@ -1,5 +1,8 @@
 ---
 id: "event-ej-nagan-eupseong-1424"
 type: "Event"
-label: "낙안군 읍성 개축 (1424년 9월)"
+label: "낙안군 읍성 개축"
+labelNote: "1424년 9월"
+aliases:
+  - "낙안군 읍성 개축 (1424년 9월)"
 ---

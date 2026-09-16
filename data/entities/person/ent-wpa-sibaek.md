@@ -1,7 +1,10 @@
 ---
 id: "ent-wpa-sibaek"
-label: "이시백 (인조실록 표기 '시백')"
+label: "이시백"
 labelHanja: "李時白"
+labelNote: "인조실록 표기 '시백'"
+aliases:
+  - "이시백 (인조실록 표기 '시백')"
 type: "Person"
 ---
 

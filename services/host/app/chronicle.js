@@ -33,7 +33,8 @@ const NOTE_PAREN=/\s*\(([^()]*)\)/g;
 const isYearParen=text=>/^[\s\d년월일경~∼～·,.\-–]+$/.test(text)||/^(?:기원전\s*)?\d{1,4}년?(?:\s*[~∼～–-]\s*\d{1,4}년?)?(?:\s*(?:경|무렵))?$/.test(text);
 export const stripLabelNotes = text => String(text||'').replace(NOTE_PAREN,(match,inner)=>isYearParen(inner)||inner.trim().length>=11||/미상|미확인|미기재|불명/.test(inner)?'':match)
   .replace(/\s{2,}/g,' ').trim();
-export const labelNote = e => {const parts=String(e?.label||'').split(' · ');return parts.length>1?parts.slice(1).join(' · ').replace(/집단 행위자/g,'').replace(/\s*·\s*$/,'').trim():'';};
+// 데이터에 labelNote 가 있으면 그것을 쓴다 — 원본 이름을 정리하며 떼어낸 설명을 옮겨 둔 자리다 (#200).
+export const labelNote = e => {if(e?.labelNote)return String(e.labelNote);const parts=String(e?.label||'').split(' · ');return parts.length>1?parts.slice(1).join(' · ').replace(/집단 행위자/g,'').replace(/\s*·\s*$/,'').trim():'';};
 export const displayLabel = e => {
   if(!e||!e.label)return '';
   const base=entityLabel(e).split(' · ')[0];

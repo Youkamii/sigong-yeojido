@@ -1,5 +1,7 @@
 ---
 id: "place-siljik"
 type: "Place"
-label: "실직주(悉直州) — 지금의 삼척"
+label: "실직주 — 지금의 삼척"
+aliases:
+  - "실직주(悉直州) — 지금의 삼척"
 ---

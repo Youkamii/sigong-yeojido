@@ -1,5 +1,7 @@
 ---
 id: "place-mireuksa"
 type: "Place"
-label: "미륵사(彌勒寺)"
+label: "미륵사"
+aliases:
+  - "미륵사(彌勒寺)"
 ---

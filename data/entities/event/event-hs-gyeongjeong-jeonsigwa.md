@@ -1,5 +1,8 @@
 ---
 id: "event-hs-gyeongjeong-jeonsigwa"
 type: "Event"
-label: "경정 전시과 개정(1076)"
+label: "경정 전시과 개정"
+labelNote: "1076"
+aliases:
+  - "경정 전시과 개정(1076)"
 ---

@@ -1,5 +1,7 @@
 ---
 id: "person-sojeongbang"
 type: "Person"
-label: "소정방(蘇定方)"
+label: "소정방"
+aliases:
+  - "소정방(蘇定方)"
 ---

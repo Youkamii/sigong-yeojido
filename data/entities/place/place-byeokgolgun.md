@@ -1,5 +1,7 @@
 ---
 id: "place-byeokgolgun"
 type: "Place"
-label: "벽골군(碧骨郡)"
+label: "벽골군"
+aliases:
+  - "벽골군(碧骨郡)"
 ---

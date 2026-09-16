@@ -1,5 +1,7 @@
 ---
 id: "person-encykorea-sadaham"
 type: "Person"
-label: "사다함(斯多含)"
+label: "사다함"
+aliases:
+  - "사다함(斯多含)"
 ---

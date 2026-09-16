@@ -1,5 +1,8 @@
 ---
 id: "event-jl2-sinhae-jinsan-1791"
 type: "Event"
-label: "신해박해(진산사건) (1791, 전라도 진산)"
+label: "신해박해(진산사건)"
+labelNote: "1791, 전라도 진산"
+aliases:
+  - "신해박해(진산사건) (1791, 전라도 진산)"
 ---

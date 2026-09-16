@@ -1,5 +1,8 @@
 ---
 id: "person-syj136-wonryang"
 type: "Person"
-label: "원량(元良) · 관음사 연기설화 속 맹인"
+label: "원량"
+labelNote: "관음사 연기설화 속 맹인"
+aliases:
+  - "원량(元良) · 관음사 연기설화 속 맹인"
 ---

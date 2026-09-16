@@ -1,5 +1,8 @@
 ---
 id: "event-je-daemado-1419"
 type: "Event"
-label: "기해동정 정벌군 주원방포 출항 (1419)"
+label: "기해동정 정벌군 주원방포 출항"
+labelNote: "1419"
+aliases:
+  - "기해동정 정벌군 주원방포 출항 (1419)"
 ---

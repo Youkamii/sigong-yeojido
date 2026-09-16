@@ -1,5 +1,8 @@
 ---
 id: "event-ced-d397"
 type: "Event"
-label: "하슬라의 가뭄·황충과 흉년 구제 (397)"
+label: "하슬라의 가뭄·황충과 흉년 구제"
+labelNote: "397"
+aliases:
+  - "하슬라의 가뭄·황충과 흉년 구제 (397)"
 ---

@@ -1,7 +1,10 @@
 ---
 type: "Place"
 id: "place-hgis-admin-144806"
-label: "경상남도/거제군 (HGIS 144806)"
+label: "경상남도/거제군"
+labelNote: "HGIS 144806"
+aliases:
+  - "경상남도/거제군 (HGIS 144806)"
 ---
 
 기관 데이터의 시기별 행정구역 레코드를 가리키는 이름이다. 다른 시대 지명과 합치지 않는다.

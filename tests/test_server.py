@@ -120,6 +120,34 @@ class NameMatchingTests(unittest.TestCase):
         self.assertEqual(counts, {"src-a": 1})
 
 
+class EntityShellTests(unittest.TestCase):
+    """이름 정리(#200)로 옮겨 둔 값이 껍데기 목록과 연대기 응답에 실린다."""
+
+    def shells(self, front_matter: str):
+        with tempfile.TemporaryDirectory() as tmp:
+            data = Path(tmp)
+            path = data / "entities/event/event-agwan.md"
+            path.parent.mkdir(parents=True)
+            path.write_text(front_matter, encoding="utf-8")
+            with patch.object(server, "DATA", data), patch.object(server, "ROOT", data):
+                rows = server.collect_entities()
+            with patch.object(server, "index", return_value={"entities": rows}):
+                return rows, server.entity_shells()
+
+    def test_collect_entities_reads_the_new_name_keys(self):
+        rows, shells = self.shells('---\nid: "event-agwan"\ntype: "Event"\nlabel: "아관파천"\n'
+                                   'labelNote: "1896년 2월 11일"\naliases:\n  - "아관파천 (1896년 2월 11일)"\n---\n')
+        self.assertEqual(rows[0]["labelNote"], "1896년 2월 11일")
+        self.assertEqual(rows[0]["aliases"], ["아관파천 (1896년 2월 11일)"])
+        self.assertEqual(shells["event-agwan"],
+                         {"aliases": ["아관파천 (1896년 2월 11일)"], "labelNote": "1896년 2월 11일", "kind": None})
+
+    def test_a_plain_shell_carries_no_extra_names(self):
+        rows, shells = self.shells('---\nid: "event-agwan"\ntype: "Event"\nlabel: "아관파천"\n---\n')
+        self.assertEqual(rows[0]["aliases"], [])
+        self.assertEqual(shells, {})
+
+
 class ApiTests(unittest.TestCase):
     def test_file_signature_detects_additions_changes_and_removals(self):
         with tempfile.TemporaryDirectory() as tmp:
