@@ -49,7 +49,10 @@ export class HistoricalMap {
       return data;
     }catch(error){
       if(seq!==this.sequence)return null;
-      this.button.textContent=error.message;
+      // 오프라인·DNS 실패처럼 fetch 가 직접 throw 하면 error.message 가 브라우저의 영어 문장이다.
+      // 화면에는 우리 문구만 쓰고, 원인은 개발자 콘솔에만 남긴다 (#203 감사 3).
+      this.button.textContent=label+' 자료를 불러오지 못했습니다.';
+      console.warn('[history-map]',error);
       const data={features:[],year:filters.year,key:historicalFeaturesKey([],filters.year)};
       if(notify){this.apply(data);this.callbacks.changed([]);}return data;
     }

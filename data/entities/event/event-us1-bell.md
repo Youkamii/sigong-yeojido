@@ -2,7 +2,6 @@
 id: "event-us1-bell"
 type: "Event"
 label: "성덕대왕신종 주조 완성 — 봉덕사"
-labelNote: "771"
 aliases:
   - "성덕대왕신종 주조 완성 — 봉덕사 (771)"
 ---

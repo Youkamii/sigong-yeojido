@@ -2,7 +2,6 @@
 id: "event-sm-490-gyeongsi-market"
 type: "Event"
 label: "서울에 시장을 처음 열다"
-labelNote: "490"
 aliases:
   - "서울에 시장을 처음 열다 (490)"
 ---

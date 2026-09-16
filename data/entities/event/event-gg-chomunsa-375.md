@@ -2,7 +2,6 @@
 id: "event-gg-chomunsa-375"
 type: "Event"
 label: "초문사와 이불란사를 창건하다 — 해동 불법의 시작"
-labelNote: "375"
 aliases:
   - "초문사와 이불란사를 창건하다 — 해동 불법의 시작 (375)"
 ---

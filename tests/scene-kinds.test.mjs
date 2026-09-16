@@ -48,31 +48,37 @@ test('항목 portrait와 heritage는 빈 사료에서도 실제 모형과 양쪽
     assert.equal(plan.events[0].participants.length,packet.kind==='portrait'?1:0);
     if(packet.kind==='portrait')assert.ok(assets.rows.some(r=>r.sceneId===packet.id&&r.kind==='person'));
     const sceneView=Object.assign(Object.create(ChronicleScene.prototype),{assets,world,chronicle:{data}});
+    // 실제로 보이는 카드는 atlas-story.js 다. chronicle 의 옛 카드 분기는 presentEntity 에 막혀 죽어 있어 #203 에서 지웠다.
+    let shown;
     const card=Object.assign(Object.create(Chronicle.prototype),{data,context,year:packet.startYear,host:{},stopPlay(){},relations:()=>[],
-      callbacks:{entity(){},activity:id=>sceneView.activity(id)}});
+      callbacks:{entity(){},activity:id=>sceneView.activity(id),presentEntity(entity,activity){shown={entity,activity};return true;}}});
     const activity=sceneView.activity(plan.events[0].entityId);
     const missing=[...new Set([...packet.dateClaimIds,...packet.actionClaimIds,...packet.place.claimIds])].filter(id=>!data.claims.some(c=>c.id===id));
     assert.deepEqual(activity.missingClaimIds,missing);
     assert.equal(activity.placement,'항목 조사에서 확인한 좌표');
     if(partial)assert.equal(activity.coordinateNote,'항목 좌표 조사');
     card.showEntity(plan.events[0].entityId);
-    assert.ok(card.host.innerHTML.includes(packet.title));
+    assert.equal(shown.entity.type,'Event');assert.deepEqual(shown.activity,activity);
     if(packet.kind==='portrait'){
       // 로드되지 않은 인물 조형을 눌러도 인물 카드가 뜨고 역할은 한글이다.
       const lead=plan.events[0].participants[0];
       assert.equal(lead.role,'군주');
-      card.showEntity(lead.entityId);assert.ok(card.host.innerHTML.includes('<h2>'+packet.title+'</h2>'));  // portrait 는 장면 제목이 곧 인물 이름
+      card.showEntity(lead.entityId);
+      assert.equal(shown.entity.type,'Person');assert.equal(shown.entity.label,packet.title);  // portrait 는 장면 제목이 곧 인물 이름
       assert.ok(!assets.rows.some(r=>r.role==='ruler'));
       card.showEntity(plan.events[0].entityId);  // 사건 카드로 되돌려 아래 누락 안내 검사를 잇는다
     }
-    assert.ok(card.host.innerHTML.includes('항목 조사에서 확인한 좌표'));
-    assert.ok(card.host.innerHTML.includes(`출처 ${missing.length}건은 고르지 않은 사료에 있습니다.`));
     const atlas=new AtlasData();atlas.update(data,context,[packet]);
     const story=Object.assign(Object.create(AtlasStory.prototype),{entity:{id:plan.events[0].entityId,type:'Event',label:packet.title},activity,history:[],tab:'summary',more:new Set(),pane:{},
       ui:{data:atlas,chronicle:card,scene:sceneView}});
     story.render();
     assert.ok(story.pane.innerHTML.includes('항목 조사에서 확인한 좌표'));
     assert.ok(story.pane.innerHTML.includes(`출처 ${missing.length}건은 고르지 않은 사료에 있습니다.`));
+    // #203 감사 1·5: 좌표 근거 메모는 '지도 위치' 블록 안, 배치 문구 아래에 나온다.
+    const placement=story.pane.innerHTML.match(/<div class="atlas-placement-note">[\s\S]*?<\/div>/)?.[0];
+    assert.ok(placement?.includes('항목 조사에서 확인한 좌표'));
+    assert.equal(placement.includes('항목 좌표 조사'),partial);
+    if(partial)assert.ok(placement.indexOf('항목 조사에서 확인한 좌표')<placement.indexOf('항목 좌표 조사'));
     for(const claim of data.claims)assert.ok(story.pane.innerHTML.includes(`data-story-claim="${claim.id}"`));
     sceneView.chronicle.data={claims:[...new Set([...packet.dateClaimIds,...packet.actionClaimIds,...packet.place.claimIds])].map(id=>({id}))};
     assert.equal(sceneView.activity(plan.events[0].entityId).missingClaimsNote,'');
@@ -99,13 +105,12 @@ test('항목 현장 인물은 빈 사료에서 최대 2명, portrait는 1명이�
     const view=Object.assign(Object.create(ChronicleScene.prototype),{assets,world,chronicle:{data}});
     let presented;
     const card=Object.assign(Object.create(Chronicle.prototype),{data,context,year:packet.startYear,host:{},stopPlay(){},relations:()=>[],
-      callbacks:{entity(){},activity:id=>view.activity(id),presentEntity(entity){presented=entity;return false;}}});
+      callbacks:{entity(){},activity:id=>view.activity(id),presentEntity(entity){presented=entity;return true;}}});
     for(const row of rows){
       assert.ok(pickableRow(row));assert.ok(assets.picks.includes(row.pick));
       card.showEntity(row.entityId);
       const expectedLabel=kind==='portrait'?packet.title:row.role;  // portrait 는 장면 제목이 곧 인물 이름, 그 밖은 역할 이름
       assert.equal(presented.type,'Person');assert.equal(presented.label,expectedLabel);
-      assert.ok(card.host.innerHTML.includes(`<h2>${expectedLabel}</h2>`));
     }
     const relatedOnly={...packet,participants:[packet.participants[0]]};
     assert.equal(planChronicleAssets(context,data,[],[],[relatedOnly]).events[0].participants.length,0);
@@ -181,11 +186,18 @@ for(const packet of sample.scenes.slice(0,2))test(`${packet.title}: packet → r
   assert.ok(row);assert.ok(pickableRow(row));assert.ok(assets.picks.includes(row.pick));
   assert.ok(assets.group.children.length);assert.equal(assets.stats.dropped.length,0);
   const sceneView=Object.assign(Object.create(ChronicleScene.prototype),{assets,world});
+  let shown;
   const card=Object.assign(Object.create(Chronicle.prototype),{data:sample,year:event.year,host:{},stopPlay(){},relations:()=>[],
-    callbacks:{entity(){},activity:id=>sceneView.activity(id)}});
+    callbacks:{entity(){},activity:id=>sceneView.activity(id),presentEntity(entity,activity){shown={entity,activity};return true;}}});
   card.showEntity(row.entityId);
-  assert.ok(card.host.innerHTML.includes(packet.title));assert.ok(card.host.innerHTML.includes(`${packet.startYear}년`));
-  assert.ok(card.host.innerHTML.includes(packet.summary));
+  // 카드를 그리는 쪽은 atlas-story.js 다 (#203 감사 1·5). 여기서 제목·연도·요약이 나오는지 본다.
+  const context=contextAt({...sample,scenePackets:[packet]},packet.startYear,0);
+  const atlas=new AtlasData();atlas.update(sample,context,[packet]);
+  const story=Object.assign(Object.create(AtlasStory.prototype),{entity:shown.entity,activity:shown.activity,history:[],tab:'summary',more:new Set(),pane:{},
+    ui:{data:atlas,chronicle:card,scene:sceneView}});
+  story.render();
+  assert.ok(story.pane.innerHTML.includes(packet.title));assert.ok(story.pane.innerHTML.includes(`${packet.startYear}년`));
+  assert.ok(story.pane.innerHTML.includes(packet.summary));
 });
 test('portrait has one main person, at most four attendants, shared radius and survives compact mode',()=>{
   const event=eventFor(sample.scenes[0]);
@@ -266,8 +278,11 @@ test('portrait setting table ignores sceneFunction and keeps the event card with
     assert.ok(row,missing);assert.ok(row.compact);assert.ok(assets.picks.includes(row.pick));
     assert.equal(assets.unlocated.some(r=>r.id===event.id),false);
     const view=Object.assign(Object.create(ChronicleScene.prototype),{assets,world});
-    const card=Object.assign(Object.create(Chronicle.prototype),{data:sample,year:event.year,host:{},stopPlay(){},relations:()=>[],callbacks:{entity(){},activity:id=>view.activity(id)}});
-    card.showEntity(row.entityId);assert.ok(card.host.innerHTML.includes(packet.title));
+    let shown;
+    const card=Object.assign(Object.create(Chronicle.prototype),{data:sample,year:event.year,host:{},stopPlay(){},relations:()=>[],
+      callbacks:{entity(){},activity:id=>view.activity(id),presentEntity(entity,activity){shown={entity,activity};return true;}}});
+    card.showEntity(row.entityId);
+    assert.ok(shown,missing);assert.equal(shown.activity.label,packet.title);
   }
   const assets=assetsFor({year:event.year,events:[event],people:[]});
   assert.equal(assets.rows.filter(r=>r.sceneId===event.id&&r.kind==='event').length,1);

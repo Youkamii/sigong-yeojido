@@ -2,7 +2,6 @@
 id: "event-us1-quake779"
 type: "Event"
 label: "왕경 지진으로 민가가 무너지다 — 경주"
-labelNote: "779"
 aliases:
   - "왕경 지진으로 민가가 무너지다 — 경주 (779)"
 ---

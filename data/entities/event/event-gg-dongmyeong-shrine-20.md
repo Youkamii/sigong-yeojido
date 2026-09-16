@@ -2,7 +2,6 @@
 id: "event-gg-dongmyeong-shrine-20"
 type: "Event"
 label: "동명왕 사당을 세우다"
-labelNote: "20"
 aliases:
   - "동명왕 사당을 세우다 (20)"
 ---

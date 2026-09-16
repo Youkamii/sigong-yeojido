@@ -2,7 +2,6 @@
 id: "event-hs-c5-wianbu-agreement"
 type: "Event"
 label: "한일 위안부 합의"
-labelNote: "2015"
 aliases:
   - "한일 위안부 합의(2015)"
 ---

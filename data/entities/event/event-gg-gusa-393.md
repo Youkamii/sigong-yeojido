@@ -2,7 +2,6 @@
 id: "event-gg-gusa-393"
 type: "Event"
 label: "평양에 절 아홉을 창건하다"
-labelNote: "393"
 aliases:
   - "평양에 절 아홉을 창건하다 (393)"
 ---

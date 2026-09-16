@@ -108,7 +108,10 @@ export class ChronicleScenery{
       if(client)sent=client.request(this.layoutRequest(preserve));
     }finally{this.workerRequestInline=false;}
     if(sent){this.refreshStarted=performance.now();return;}
+    // 워커가 아예 없는 환경(file://·모듈 워커 미지원)에서도 길·숲을 새 마을 선택으로 맞춘다 —
+    // 이걸 빼면 워커 있는 화면과 첫 화면이 갈린다 (#203 감사 8).
     this.refreshPeriod(preserve);
+    this.settleRefresh();
   }
   handleWorkerFallback(){
     this.layoutClient=null;

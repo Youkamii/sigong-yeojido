@@ -2,7 +2,6 @@
 id: "event-hs-c5-impeachment"
 type: "Event"
 label: "헌법재판소의 대통령 탄핵 인용"
-labelNote: "2017"
 aliases:
   - "헌법재판소의 대통령 탄핵 인용(2017)"
 ---

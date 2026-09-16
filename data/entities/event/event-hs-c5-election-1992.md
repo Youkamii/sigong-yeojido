@@ -2,7 +2,6 @@
 id: "event-hs-c5-election-1992"
 type: "Event"
 label: "제14대 대통령 선거"
-labelNote: "1992"
 aliases:
   - "제14대 대통령 선거(1992)"
 ---

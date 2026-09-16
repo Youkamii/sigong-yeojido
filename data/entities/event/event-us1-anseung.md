@@ -2,7 +2,6 @@
 id: "event-us1-anseung"
 type: "Event"
 label: "안승과 고구려 유민을 금마저에 살게 하다 — 익산"
-labelNote: "670"
 aliases:
   - "안승과 고구려 유민을 금마저에 살게 하다 — 익산 (670)"
 ---

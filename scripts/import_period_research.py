@@ -16,6 +16,23 @@ from import_pyongyang_identity import Text
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'services'))
 from frontmatter import parse_front_matter
 
+# 껍데기에 이름만 채워 다시 쓸 때도 지키는 머리말 키 — #200 이 넣은 labelNote·sourceRef·kind·aliases 를
+# 지우면 화면의 설명 줄과 옛 이름 검색이 사라진다 (#203 감사 12).
+ENTITY_KEYS = ('id', 'type', 'label', 'labelHanja', 'labelNote', 'sourceRef', 'kind', 'aliases')
+
+
+def entity_markdown(meta, body):
+    """개체 머리말. 목록 값은 블록 시퀀스로 쓴다 — services/frontmatter.py 는 한 줄 JSON 배열을 문자열로 읽는다."""
+    lines = []
+    for key, value in meta.items():
+        if isinstance(value, list):
+            lines.append(f'{key}:')
+            lines.extend('  - ' + json.dumps(str(item), ensure_ascii=False) for item in value)
+        else:
+            lines.append(f'{key}: ' + json.dumps(value, ensure_ascii=False))
+    return '---\n' + '\n'.join(lines) + '\n---\n\n' + body + '\n'
+
+
 ENTITY_ID_ALIASES = {
     'person-encykorea-yi-seonggye-e0059033': 'person-encykorea-yi-seonggye',
     'event-encykorea-joseon-founding-1392': 'event-joseon-founding-1392',
@@ -267,7 +284,8 @@ def main():
             # 앞선 잡이 id 만으로 만든 껍데기에 이번 조사가 이름을 주면 이름을 채운다(#192). 이미 이름이 있으면 건드리지 않는다.
             if (not meta.get('label') or meta.get('label') == entity['id']) and entity.get('label') and entity['label'] != entity['id']:
                 meta['label'] = entity['label']
-                files[path] = markdown({k: meta[k] for k in ('id', 'type', 'label') if k in meta}, body.strip()).rstrip() + '\n'
+                kept = {k: meta[k] for k in ENTITY_KEYS if meta.get(k) not in (None, '', [])}
+                files[path] = entity_markdown(kept, body.strip()).rstrip() + '\n'
         else:
             files[path] = markdown({k:entity[k] for k in ('id','type','label')}, entity.get('ambiguity','')).rstrip() + '\n'
     for sid, claims in by_source.items():

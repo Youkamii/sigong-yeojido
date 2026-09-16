@@ -2,7 +2,6 @@
 id: "event-gg-guknamseong-394"
 type: "Event"
 label: "백제에 대비해 나라 남쪽에 7성을 쌓다"
-labelNote: "394"
 aliases:
   - "백제에 대비해 나라 남쪽에 7성을 쌓다 (394)"
 ---

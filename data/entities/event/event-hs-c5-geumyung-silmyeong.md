@@ -2,7 +2,6 @@
 id: "event-hs-c5-geumyung-silmyeong"
 type: "Event"
 label: "금융 실명제 실시"
-labelNote: "1993"
 aliases:
   - "금융 실명제 실시(1993)"
 ---

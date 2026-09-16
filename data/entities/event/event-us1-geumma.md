@@ -2,7 +2,6 @@
 id: "event-us1-geumma"
 type: "Event"
 label: "금마저 반란 진압 뒤 주민을 나라 남쪽으로 옮기다 — 익산"
-labelNote: "684"
 aliases:
   - "금마저 반란 진압 뒤 주민을 나라 남쪽으로 옮기다 — 익산 (684)"
 ---

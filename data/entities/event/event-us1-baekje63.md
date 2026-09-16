@@ -2,7 +2,6 @@
 id: "event-us1-baekje63"
 type: "Event"
 label: "백제 잔여 세력에 대한 대응"
-labelNote: "670"
 aliases:
   - "백제 잔여 세력에 대한 대응(670)"
 ---

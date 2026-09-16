@@ -138,3 +138,28 @@ test('combined year and occupancy updates refresh only once with the new year an
   c.setState({year:2011,occupied:[],areaOccupied:occupied});
   assert.equal(calls.length,2);assert.notEqual(c.landscapeCells[0],cellAfter,'parcel changes invalidate even with unchanged road occupancy');
 });
+
+test('워커가 없어도 길·숲 재동기화가 워커 있는 경로와 똑같이 돈다 (#203 감사 8)',()=>{
+  const build=()=>{
+    const steps=[],c=Object.create(ChronicleScenery.prototype);
+    Object.assign(c,{...stateFields(),world,group:new THREE.Group(),sites:[],urbanSites:[],detailCache:new Map(),
+      stats:{modelBuilds:0,year:1500},initialized:true,clearings:[],landscapeCells:[],
+      assets:{forestOccupied:[],forestScenes:[],buildForest(){steps.push('forest');}},
+      refreshPeriod(){steps.push('period');},syncPaths(){steps.push('paths');}});
+    return [c,steps];
+  };
+  // createSceneLayoutClient 가 null 을 준 환경(file://·모듈 워커 미지원)
+  const [inline,inlineSteps]=build();
+  inline.layoutClient=null;
+  inline.requestRefresh(true);
+  assert.deepEqual(inlineSteps,['period','paths','forest'],'인라인 폴백도 settleRefresh 로 끝난다');
+  // 워커 응답을 반영하는 경로
+  const [worker,workerSteps]=build();
+  worker.applyLandscape=()=>workerSteps.push('landscape');
+  worker.applyWorkerResult({order:[],cells:{}});
+  assert.deepEqual(workerSteps,['landscape','paths','forest']);
+  // 워커가 실패해 폴백으로 넘어간 경로
+  const [failed,failedSteps]=build();
+  failed.handleWorkerFallback();
+  assert.deepEqual(failedSteps,['period','paths','forest']);
+});

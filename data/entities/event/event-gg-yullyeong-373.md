@@ -2,7 +2,6 @@
 id: "event-gg-yullyeong-373"
 type: "Event"
 label: "율령을 처음 반포하다"
-labelNote: "373"
 aliases:
   - "율령을 처음 반포하다 (373)"
 ---

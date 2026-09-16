@@ -2,7 +2,6 @@
 id: "event-us1-jeongjeon"
 type: "Event"
 label: "백성에게 정전 지급"
-labelNote: "722"
 aliases:
   - "백성에게 정전 지급(722)"
 ---

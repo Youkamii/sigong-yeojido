@@ -2,7 +2,6 @@
 id: "event-sl-siljikju-505"
 type: "Event"
 label: "실직주 설치와 첫 군주 이사부 — 삼척"
-labelNote: "505"
 aliases:
   - "실직주 설치와 첫 군주 이사부 — 삼척 (505)"
 ---

@@ -2,7 +2,6 @@
 id: "event-gg-dapbu-funeral-179"
 type: "Event"
 label: "국상 명림답부의 장례와 수묘 20가 — 질산"
-labelNote: "179"
 aliases:
   - "국상 명림답부의 장례와 수묘 20가 — 질산 (179)"
 ---

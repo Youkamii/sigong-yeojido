@@ -2,7 +2,6 @@
 id: "event-gg-neungbi-414"
 type: "Event"
 label: "광개토왕릉비를 세우다"
-labelNote: "414"
 aliases:
   - "광개토왕릉비를 세우다 (414)"
 ---

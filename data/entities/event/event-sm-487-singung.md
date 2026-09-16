@@ -2,7 +2,6 @@
 id: "event-sm-487-singung"
 type: "Event"
 label: "나을에 신궁을 세우다"
-labelNote: "487"
 aliases:
   - "나을에 신궁을 세우다 (487)"
 ---

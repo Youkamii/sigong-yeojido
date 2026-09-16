@@ -2,7 +2,6 @@
 id: "event-hs-c5-lowbirth-law"
 type: "Event"
 label: "저출산·고령사회 기본법 제정"
-labelNote: "2005"
 aliases:
   - "저출산·고령사회 기본법 제정(2005)"
 ---

@@ -2,7 +2,6 @@
 id: "event-us1-hyangdeok"
 type: "Event"
 label: "웅천주 향덕의 효행 포상"
-labelNote: "755"
 aliases:
   - "웅천주 향덕의 효행 포상(755)"
 ---

@@ -2,7 +2,6 @@
 id: "event-us1-bridge"
 type: "Event"
 label: "월정교·춘양교 가설 — 궁 남쪽 문천"
-labelNote: "760"
 aliases:
   - "월정교·춘양교 가설 — 궁 남쪽 문천 (760)"
 ---

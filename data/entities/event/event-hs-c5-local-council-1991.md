@@ -2,7 +2,6 @@
 id: "event-hs-c5-local-council-1991"
 type: "Event"
 label: "지방의회 부활"
-labelNote: "1991"
 aliases:
   - "지방의회 부활(1991)"
 ---

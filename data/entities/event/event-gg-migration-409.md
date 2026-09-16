@@ -2,7 +2,6 @@
 id: "event-gg-migration-409"
 type: "Event"
 label: "나라 동쪽에 6성을 쌓고 평양 민호를 옮기다"
-labelNote: "409"
 aliases:
   - "나라 동쪽에 6성을 쌓고 평양 민호를 옮기다 (409)"
 ---

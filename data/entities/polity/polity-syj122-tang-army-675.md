@@ -2,7 +2,6 @@
 id: "polity-syj122-tang-army-675"
 type: "Polity"
 label: "매소성 주둔 당군"
-labelNote: "675"
 aliases:
   - "매소성 주둔 당군 (675)"
 ---

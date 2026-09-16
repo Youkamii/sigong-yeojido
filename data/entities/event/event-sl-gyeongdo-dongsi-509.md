@@ -2,7 +2,6 @@
 id: "event-sl-gyeongdo-dongsi-509"
 type: "Event"
 label: "경도 동시 개설 — 경주 왕경"
-labelNote: "509"
 aliases:
   - "경도 동시 개설 — 경주 왕경 (509)"
 ---

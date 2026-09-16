@@ -48,11 +48,15 @@ export const splitOutsideParens = (text,separator=' · ') => {
   return parts;
 };
 // 데이터에 labelNote 가 있으면 그것을 쓴다 — 원본 이름을 정리하며 떼어낸 설명을 옮겨 둔 자리다 (#200).
-export const labelNote = e => {if(e?.labelNote)return String(e.labelNote);const parts=splitOutsideParens(String(e?.label||''));return parts.length>1?parts.slice(1).join(' · ').replace(/집단 행위자/g,'').replace(/\s*·\s*$/,'').trim():'';};
+// 연도·날짜뿐인 설명은 빈 값으로 본다 — 검색 줄이 이미 연도를 따로 보여 주므로 '사건 · 713 · 713년' 이 된다 (#203 감사 2).
+export const labelNote = e => {if(e?.labelNote){const note=String(e.labelNote).trim();return isYearParen(note)?'':note;}const parts=splitOutsideParens(String(e?.label||''));return parts.length>1?parts.slice(1).join(' · ').replace(/집단 행위자/g,'').replace(/\s*·\s*$/,'').trim():'';};
+// '(값) 미상' 처럼 홀로 선 '미상'만 '미확인'으로 바꾼다. 앞뒤가 한글이면 이름의 일부다 —
+// 경계를 안 보던 옛 규칙이 '다미상면'을 '다미확인면'으로 망가뜨렸다 (#203 감사 11).
+export const replaceUnknown = text => String(text||'').replace(/(^|[^가-힣])미상(?=[^가-힣]|$)/g,'$1미확인');
 export const displayLabel = e => {
   if(!e||!e.label)return '';
   const base=splitOutsideParens(entityLabel(e))[0];
-  const cleaned=stripLabelNotes(base).replace(/집단 행위자|정본/g,'').replace(/미상/g,'미확인').replace(/\s{2,}/g,' ').trim();
+  const cleaned=replaceUnknown(stripLabelNotes(base).replace(/집단 행위자|정본/g,'')).replace(/\s{2,}/g,' ').trim();
   return cleaned||entityLabel(e)||e.label;
 };
 // 카드의 '다른 이름' 줄에 쓸 값 — 정리 전 표기(같은 규칙으로 정리하면 표시 이름이 되는 것)는 뺀다.
@@ -356,32 +360,9 @@ export class Chronicle {
     }
     this.callbacks.entity(id);
     const activity=this.callbacks.activity?.(id);
-    if(this.callbacks.presentEntity?.(entity,activity))return;
-    const activityClaims=(activity?.claimIds||[]).map(id=>this.data.claims.find(c=>c.id===id)).filter(Boolean);
-    const descriptions=this.data.claims.filter(c=>c.subject===id&&['syj:describedAs','syj:hasTitle'].includes(c.predicate));
-    this.host.innerHTML=`<button class="context-back" data-context-back>← ${yearLabel(this.year)}로 돌아가기</button>
-      <div class="context-kicker">${{Person:'인물',Event:'사건',Narrative:'설화·전승',Polity:'나라',Place:'장소'}[entity.type]||'관련 항목'}</div><h2>${esc(activity?.setting?activity.label:activity?.siteBackground?activity.place:entityLabel(entity))}</h2>
-      ${activity?`<section class="selected-activity"><h3>${activity.narrative?'이야기의 무대':activity.siteBackground?.scope==='anonymous-city'?'도시 생활 배경 · 추정':activity.siteBackground?.scope==='facility'?'시설 · 추정 존속':activity.siteBackground?'성곽 배경 · 추정':yearLabel(this.year)}${activity.place?' · '+esc(activity.place):''}</h3>
-        ${activity.role?`<p class="activity-role">${esc(activity.role)}</p>`:''}
-        <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동입니다.')}</p>
-        ${activity.narrative?`<dl class="narrative-times"><dt>이야기 속 시기</dt><dd>${esc(activity.narrative.storyTime.label)}</dd><dt>기록된 시기</dt><dd>${esc(activity.narrative.recordingTime.label)}</dd></dl><p class="activity-location">이야기 속 시기와 기록된 시기는 다릅니다. 고른 연도에 실제로 일어났다는 뜻은 아닙니다.</p>`:''}
-        ${activity.narrative?'':`<p class="activity-location">${esc(activity.placement)}</p>`}
-        ${activity.missingClaimsNote?`<p class="activity-missing-claims">${esc(activity.missingClaimsNote)}</p>`:''}
-        ${activity.coordinates?`<p class="activity-coordinates">${esc(activity.coordinates)}</p>`:''}
-        ${activity.sides.map(s=>`<p class="activity-side"><strong>${esc(s.label)}</strong> · ${esc(s.role)}</p>`).join('')}
-        <details><summary>활동·장소의 출처 ${activityClaims.length}개</summary>${activityClaims.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.quote)} ↗</button>`).join('')}
-        ${activity.coordinateNote?`<p>${esc(activity.coordinateNote)}</p>`:''}${activity.displayBasis?`<p>${esc(activity.displayBasis)}</p>`:''}
-        ${activity.sources.map(s=>`<a class="context-proof" href="${esc(s.url)}" target="_blank" rel="noopener">위치 자료 · ${esc(s.title)} ↗</a>`).join('')}</details>
-        ${activity.events.length?`<div class="activity-episodes">${activity.events.map(e=>`<button data-chronicle-entity="${esc(e.entityId)}">${esc(e.label)} →</button>`).join('')}</div>`:''}
-        ${(activity.participants||[]).length?`<div class="activity-participants">${activity.participants.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.entityId)}">${esc(p.label)} · ${esc(p.role)}${p.presence!=='on-site'?' (관련)':''}</button>`).join('')}</div>`:''}
-      </section>`:''}
-      ${!activity?.narrative&&!activity?.siteBackground&&this.callbacks.placement?.(id)?`<p class="scene-placement">${esc(this.callbacks.placement(id))} · 건물과 길, 인물의 모습은 간단히 표현한 모형입니다.</p>`:''}
-      ${activity?.narrative?'':descriptions.slice(0,2).map(c=>`<p class="entity-description">${esc(c.object.value||'')}</p>`).join('')}
-      ${activity?.narrative||activity?.siteBackground?'':`<div class="context-section"><h3>시간</h3>${dates.map(d=>`<div class="entity-date"><button data-jump-year="${d.lo}">${yearLabel(d.lo)}${d.lo!==d.hi?'~'+yearLabel(d.hi):''}</button>
-        <span>${esc(activityLabel(shortPredicate(d.claim.predicate),d.claim)||({bornIn:'출생',diedIn:'사망',occurredIn:'사건',foundedIn:'건국'})[shortPredicate(d.claim.predicate)]||'기록')}</span>
-        ${d.basis.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.sourceLabel)} ↗</button>`).join('')}</div>`).join('')||'<p class="context-empty">날짜의 출처가 아직 연결되지 않았습니다.</p>'}</div>`}
-      <div class="context-section"><h3>관련 항목</h3><p class="context-empty">이 항목의 전체 기록입니다. 관계가 있었던 시기는 각 출처에서 확인하십시오.</p>${this.relations(id).map(({claim,target})=>`<div class="relation-row"><button data-chronicle-entity="${esc(target.id)}">${esc(entityLabel(target))}</button>
-        <small>${esc(RELATION_WORDS[shortPredicate(claim.predicate)]||'관련 기록')}</small><button class="context-proof" data-chronicle-claim="${esc(claim.id)}">출처 보기 ↗</button></div>`).join('')||'<p class="context-empty">연결된 출처가 아직 없습니다.</p>'}</div>`;
+    // 카드를 그리는 일은 atlasUI(atlas-story.js)가 맡는다. 예전에는 여기에도 같은 카드를 그리는 가지가 있었지만
+    // presentEntity 가 언제나 카드를 열어 한 번도 실행되지 않았다 — #203 감사 1·5 에서 지웠다.
+    this.callbacks.presentEntity?.(entity,activity);
   }
   render(){
     const packets=this.callbacks.scenePackets?.()||this.data.scenePackets||EMPTY_PACKETS;

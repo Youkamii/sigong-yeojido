@@ -2,7 +2,6 @@
 id: "event-gg-famine-300"
 type: "Event"
 label: "지진과 가뭄으로 큰 흉년"
-labelNote: "300"
 aliases:
   - "지진과 가뭄으로 큰 흉년(300)"
 ---

@@ -4,6 +4,14 @@ import {icon} from './atlas-icons.js';
 import {yearLabel} from './chronicle.js';
 import {cleanTitle} from './atlas-data.js';
 
+// 끝 글자에 받침이 있으면 '과', 없으면 '와' 를 붙인다 — '장보고과 관련된…' 같은 비문을 막는다 (#203 감사 7).
+// 한글이 아닌 글자로 끝나면 읽는 법을 알 수 없으므로 '과' 를 그대로 둔다.
+export const withComparisonParticle=name=>{
+  const text=String(name||'');
+  const code=text.charCodeAt(text.length-1)-0xac00;
+  return text+(code>=0&&code<=11171&&code%28===0?'와':'과');
+};
+
 export class AtlasChat{
   constructor(ui){
     this.ui=ui;
@@ -41,7 +49,7 @@ export class AtlasChat{
     this.context.textContent=`고른 이야기: ${entity?this.ui.data.label(entity)+' · ':''}${yearLabel(this.ui.chronicle.year)}`;
     const events=entity?this.ui.data.eventsFor(entity.id):this.ui.data.context?.events||[];
     const questions=[...new Set(events.slice(0,3).map(e=>`${cleanTitle(e.title)}에 대해 기록은 어떻게 설명하나요?`))];
-    if(entity?.type==='Person')questions.unshift(`${this.ui.data.label(entity)}과 관련된 사건을 알려주십시오.`);
+    if(entity?.type==='Person')questions.unshift(`${withComparisonParticle(this.ui.data.label(entity))} 관련된 사건을 알려주십시오.`);
     this.suggestions.innerHTML=questions.length?`<p>이런 질문도 해 보십시오</p>${questions.slice(0,3).map(q=>`<button data-chat-suggestion="${esc(q)}">${esc(q)}</button>`).join('')}`:'';
   }
   update(changed){if(changed){this.invalidate();this.renderContext();}}

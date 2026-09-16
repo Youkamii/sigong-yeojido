@@ -2,7 +2,6 @@
 id: "event-hs-c5-oecd-join"
 type: "Event"
 label: "OECD 가입"
-labelNote: "1996"
 aliases:
   - "OECD 가입(1996)"
 ---

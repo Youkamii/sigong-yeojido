@@ -2,7 +2,6 @@
 id: "event-us1-bugwon"
 type: "Event"
 label: "북원소경 설치 — 오늘날 원주"
-labelNote: "678"
 aliases:
   - "북원소경 설치 — 오늘날 원주 (678)"
 ---

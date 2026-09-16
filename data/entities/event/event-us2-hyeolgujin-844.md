@@ -2,7 +2,6 @@
 id: "event-us2-hyeolgujin-844"
 type: "Event"
 label: "혈구진 설치 — 강화"
-labelNote: "844"
 aliases:
   - "혈구진 설치 — 강화 (844)"
 ---

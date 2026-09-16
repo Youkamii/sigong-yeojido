@@ -2,7 +2,6 @@
 id: "event-us1-market"
 type: "Event"
 label: "서시·남시 설치 — 왕경"
-labelNote: "695"
 aliases:
   - "서시·남시 설치 — 왕경 (695)"
 ---

@@ -2,7 +2,6 @@
 id: "event-us1-geumgwan"
 type: "Event"
 label: "금관소경 설치 — 가야군(오늘날 김해)"
-labelNote: "680"
 aliases:
   - "금관소경 설치 — 가야군(오늘날 김해) (680)"
 ---

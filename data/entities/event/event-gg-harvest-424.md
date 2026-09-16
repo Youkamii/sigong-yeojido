@@ -2,7 +2,6 @@
 id: "event-gg-harvest-424"
 type: "Event"
 label: "큰 풍년이 들어 궁에서 잔치를 열다"
-labelNote: "424"
 aliases:
   - "큰 풍년이 들어 궁에서 잔치를 열다 (424)"
 ---

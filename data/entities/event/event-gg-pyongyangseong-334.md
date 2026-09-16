@@ -2,7 +2,6 @@
 id: "event-gg-pyongyangseong-334"
 type: "Event"
 label: "평양성을 증축하다"
-labelNote: "334"
 aliases:
   - "평양성을 증축하다 (334)"
 ---

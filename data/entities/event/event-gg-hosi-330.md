@@ -2,7 +2,6 @@
 id: "event-gg-hosi-330"
 type: "Event"
 label: "후조에 사신과 호시를 보냄"
-labelNote: "330"
 aliases:
   - "후조에 사신과 호시를 보냄(330)"
 ---

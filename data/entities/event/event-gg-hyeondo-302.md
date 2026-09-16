@@ -2,7 +2,6 @@
 id: "event-gg-hyeondo-302"
 type: "Event"
 label: "현도군 포로 8천 명을 평양으로 옮기다"
-labelNote: "302"
 aliases:
   - "현도군 포로 8천 명을 평양으로 옮기다 (302)"
 ---

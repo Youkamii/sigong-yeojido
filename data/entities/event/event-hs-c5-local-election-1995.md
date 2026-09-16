@@ -2,7 +2,6 @@
 id: "event-hs-c5-local-election-1995"
 type: "Event"
 label: "6·27 지방선거"
-labelNote: "1995"
 aliases:
   - "6·27 지방선거(1995)"
 ---

@@ -2,7 +2,6 @@
 id: "event-us1-gwanmun"
 type: "Event"
 label: "모벌군성(관문성) 축조 — 경주 동남 경계"
-labelNote: "722"
 aliases:
   - "모벌군성(관문성) 축조 — 경주 동남 경계 (722)"
 ---

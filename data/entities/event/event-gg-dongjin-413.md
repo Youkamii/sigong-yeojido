@@ -2,7 +2,6 @@
 id: "event-gg-dongjin-413"
 type: "Event"
 label: "동진에 사신을 보내 책봉을 받음"
-labelNote: "413"
 aliases:
   - "동진에 사신을 보내 책봉을 받음(413)"
 ---

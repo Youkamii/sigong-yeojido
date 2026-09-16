@@ -2,7 +2,6 @@
 id: "event-us1-relief669"
 type: "Event"
 label: "천정·비열홀·각련 세 군 진휼 — 천정군(오늘날 원산)"
-labelNote: "669"
 aliases:
   - "천정·비열홀·각련 세 군 진휼 — 천정군(오늘날 원산) (669)"
 ---

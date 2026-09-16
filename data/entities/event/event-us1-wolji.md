@@ -2,7 +2,6 @@
 id: "event-us1-wolji"
 type: "Event"
 label: "궁 안에 못을 파고 산을 쌓다 — 왕경"
-labelNote: "674"
 aliases:
   - "궁 안에 못을 파고 산을 쌓다 — 왕경 (674)"
 ---
