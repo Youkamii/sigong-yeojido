@@ -51,7 +51,7 @@ def main():
         page.screenshot(path=str(args.out/'township-record.png'))
         bad=next(f for f in rows if not f['properties']['displayGeometryValid'])
         page.locator('#historyMapBtn').click();page.locator('[data-feature="'+bad['id']+'"]').click()
-        assert '표시용 도형에도 오류' in page.locator('#evi').inner_text()
+        assert '표시한 경계에도 오류가 있습니다' in page.locator('#evi').inner_text()
         started=time.monotonic();page.locator('#b3d').click()
         page.wait_for_function('window.__sigong?.world.historyTargets.length===6882',timeout=180000)
         three_seconds=round(time.monotonic()-started,3)

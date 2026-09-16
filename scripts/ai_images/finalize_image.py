@@ -12,6 +12,7 @@ from PIL import Image, ImageOps
 
 
 LABEL = "AI 상상도"
+# index.json 호환용 상수 — 화면에 쓰이는 경로는 없다 (#198 Q5=a, 고지 문장 삭제).
 NOTICE = "실제 사료·유물 사진이 아니라 AI 가 만든 상상도입니다."
 GENERATOR = "codex gpt-6-astra"
 ROOT = Path(__file__).resolve().parents[2]

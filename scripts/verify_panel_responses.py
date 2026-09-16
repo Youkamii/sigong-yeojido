@@ -28,7 +28,7 @@ async def run(url, out):
         await page.locator('#q').fill('광개토')
         await page.locator('#qList button[data-id="person-gwanggaeto"]').click()
         await page.wait_for_selector('#evi .claim',timeout=5000)
-        assert '찾고 있어요…' in await page.locator('#evi .evidence-results').inner_text()
+        assert '찾고 있습니다…' in await page.locator('#evi .evidence-results').inner_text()
         await page.screenshot(path=str(out/'claims-before-mentions.png'))
 
         release_card=asyncio.Event()

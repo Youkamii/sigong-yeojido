@@ -19,7 +19,7 @@ export class AtlasChat{
     this.thread.append(host.querySelector('.chat-note'),this.question,host.querySelector('.chat-status'),host.querySelector('.chat-answer'));host.append(this.thread);
     this.suggestions=document.createElement('div');this.suggestions.className='atlas-chat-suggestions';host.append(this.suggestions);
     const form=host.querySelector('form');host.append(form);
-    const input=form.querySelector('textarea');input.rows=1;input.placeholder='궁금한 역사를 물어보세요';
+    const input=form.querySelector('textarea');input.rows=1;input.placeholder='궁금한 역사를 물어보십시오';
     form.querySelector('button').innerHTML=icon('send');form.querySelector('button').setAttribute('aria-label','질문 보내기');
     input.onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();form.requestSubmit();}};
     form.addEventListener('submit',()=>{if(!input.value.trim())return;this.question.textContent=input.value.trim();this.question.hidden=false;this.suggestions.hidden=true;this.thread.scrollTop=this.thread.scrollHeight;});
@@ -31,7 +31,7 @@ export class AtlasChat{
     if(this.entityId!==id)this.invalidate();
     this.entityId=id||null;this.renderContext();this.ui.openPanel('chat');
   }
-  invalidate(reason='고른 이야기나 자료가 바뀌었어요. 현재 기록으로 다시 물어보세요.'){
+  invalidate(reason='고른 이야기나 사료가 바뀌었습니다. 현재 기록으로 다시 물어보십시오.'){
     this.entityId=null;this.chat.filtersChanged();
     this.pane.querySelector('.chat-status').textContent=reason;
     this.question.hidden=true;this.suggestions.hidden=false;
@@ -41,8 +41,8 @@ export class AtlasChat{
     this.context.textContent=`고른 이야기: ${entity?this.ui.data.label(entity)+' · ':''}${yearLabel(this.ui.chronicle.year)}`;
     const events=entity?this.ui.data.eventsFor(entity.id):this.ui.data.context?.events||[];
     const questions=[...new Set(events.slice(0,3).map(e=>`${cleanTitle(e.title)}에 대해 기록은 어떻게 설명하나요?`))];
-    if(entity?.type==='Person')questions.unshift(`${this.ui.data.label(entity)}과 관련된 사건을 알려주세요.`);
-    this.suggestions.innerHTML=questions.length?`<p>이런 질문도 해 보세요</p>${questions.slice(0,3).map(q=>`<button data-chat-suggestion="${esc(q)}">${esc(q)}</button>`).join('')}`:'';
+    if(entity?.type==='Person')questions.unshift(`${this.ui.data.label(entity)}과 관련된 사건을 알려주십시오.`);
+    this.suggestions.innerHTML=questions.length?`<p>이런 질문도 해 보십시오</p>${questions.slice(0,3).map(q=>`<button data-chat-suggestion="${esc(q)}">${esc(q)}</button>`).join('')}`:'';
   }
   update(changed){if(changed){this.invalidate();this.renderContext();}}
 }

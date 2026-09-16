@@ -39,14 +39,33 @@ export function mergeEvents(rows){
   }
   return [...merged.values()].sort((a,b)=>(a.lo??Infinity)-(b.lo??Infinity)||a.title.localeCompare(b.title,'ko'));
 }
-export function mergePlaces(rows){
+// 같은 해·같은 제목 행을 한 줄로 합친다(#198 감사 C-2). 목록을 자르기 전에 부르므로 뱃지·'모두 보기' 숫자가 실제 행 수와 맞는다.
+// 장소만 extraPlaces 로 모으고 장면 연결(sceneId)과 출처(basis)는 버리지 않는다.
+export function collapseEvents(rows){
   const merged=new Map();
   for(const row of rows){
+    const key=JSON.stringify([normalize(displayTitle(row.title)),Number.isInteger(row.lo)?row.lo:null]);
+    const previous=merged.get(key);
+    if(!previous){merged.set(key,{...row,basis:[...(row.basis||[])],extraPlaces:[...(row.extraPlaces||[])]});continue;}
+    // 대표 행: 장면 연결이 있는 쪽을 남기고, 둘 다 있으면 먼저 온 쪽(들어올 때 이미 연도 순으로 정렬돼 있다)
+    const keepPrevious=!!previous.sceneId||!row.sceneId;
+    const kept=keepPrevious?previous:row,dropped=keepPrevious?row:previous;
+    const places=[...(previous.extraPlaces||[]),...(row.extraPlaces||[]),dropped.placeLabel].filter(Boolean);
+    const basis=[...new Map([...(previous.basis||[]),...(row.basis||[])].map(c=>[c.id,c])).values()];
+    merged.set(key,{...kept,basis,extraPlaces:[...new Set(places)].filter(place=>place!==kept.placeLabel)});
+  }
+  return [...merged.values()];
+}
+export function mergePlaces(rows){
+  const merged=new Map();let unnamed=0;
+  for(const row of rows){
     if(!row.label)continue;
-    const key=normalize(row.label),previous=merged.get(key);
-    if(!previous){merged.set(key,{...row,fullLabel:row.label,events:new Map(row.events||[])});continue;}
+    // 괄호 설명만으로 된 라벨은 정규화 결과가 비어 있다 — 빈 키끼리 뭉치지 않게 각자 남긴다(#198 감사 C-3).
+    const key=normalize(row.label)||`(이름 없음):${unnamed++}`,previous=merged.get(key);
+    const full=row.raw||row.label;
+    if(!previous){merged.set(key,{...row,fullLabel:full,events:new Map(row.events||[])});continue;}
     if(row.label.length<previous.label.length)previous.label=row.label;
-    if(row.label.length>previous.fullLabel.length)previous.fullLabel=row.label;
+    if(full.length>previous.fullLabel.length)previous.fullLabel=full;
     previous.entityId||=row.entityId;previous.sceneId||=row.sceneId;
     for(const [id,event] of row.events||[])previous.events.set(id,event);
   }
@@ -61,7 +80,8 @@ export class AtlasStory{
     loadAiImages().then(data=>{if(data&&this.entity)this.render();});
     this.pane.onclick=e=>{
       if(e.target.closest('[data-story-back]')){this.back();return;}
-      const tab=e.target.closest('[data-story-tab]');if(tab){this.tab=tab.dataset.storyTab;this.render();this.pane.querySelector('.atlas-story-tabs')?.scrollIntoView({block:'start'});this.pane.querySelector(`.atlas-story-tab[data-story-tab="${this.tab}"]`)?.focus({preventScroll:true});return;}
+      // 탭을 바꾸면 본문을 맨 위로 되돌린다. 탭 줄이 sticky 라 scrollIntoView 는 아무 일도 하지 않았다(#198 감사 C-6).
+      const tab=e.target.closest('[data-story-tab]');if(tab){this.tab=tab.dataset.storyTab;this.render(true);this.pane.querySelector(`.atlas-story-tab[data-story-tab="${this.tab}"]`)?.focus({preventScroll:true});return;}
       const more=e.target.closest('[data-story-more]');if(more){this.more.add(more.dataset.storyMore);this.render();return;}
       if(e.target.closest('[data-story-expand]')){this.expanded=!this.expanded;this.updateDescription();return;}
       const related=e.target.closest('[data-story-entity]');if(related){this.ui.chronicle.showEntity(related.dataset.storyEntity);return;}
@@ -77,14 +97,15 @@ export class AtlasStory{
       if(e.target.closest('[data-story-chat]'))ui.chat?.show(this.entity.id);
     };
   }
-  reset(){this.entity=null;this.activity=null;this.history=[];this.tab='summary';this.more=new Set();this.expanded=false;this.descriptionObserver?.disconnect();}
+  // 자료 필터가 바뀌어 카드의 근거 자체가 사라질 때만 쓴다. 연도만 바뀌는 이동은 resetCaches() 로 히스토리를 지키다(#198 감사 C-1).
+  reset(){this.entity=null;this.activity=null;this.history=[];this.resetCaches();}
+  resetCaches(){this.tab='summary';this.more=new Set();this.expanded=false;this.descriptionObserver?.disconnect();}
   show(entity,activity){
     entity=this.ui.data.entities.get(this.ui.data.canonicalId(entity.id))||entity;
     if(this.entity&&this.entity.id!==entity.id&&!this.goingBack)this.history.push({id:this.entity.id});
     const changed=this.entity?.id!==entity.id;
     if(changed){this.tab='summary';this.more=new Set();this.expanded=false;}
-    this.entity=entity;this.activity=activity;this.ui.openPanel('story');this.render();
-    if(changed){const body=this.pane.querySelector?.('.atlas-story-body');if(body)body.scrollTop=0;}
+    this.entity=entity;this.activity=activity;this.ui.openPanel('story');this.render(true);
   }
   back(){
     const previous=this.history.pop();if(!previous){this.ui.closePanel();return;}
@@ -144,18 +165,18 @@ export class AtlasStory{
       }
     }
     const allEvents=[...events.values()].map(e=>({...e,placeLabel:data.scenes.get(e.sceneId)?.place?.label||e.placeLabel}));
-    const eventRows=mergeEvents(allEvents);
+    const eventRows=collapseEvents(mergeEvents(allEvents));
     const places=[];
-    const addPlace=(label,entityId,sceneId,event)=>{
+    const addPlace=(label,entityId,sceneId,event,raw)=>{
       if(!label)return;
-      places.push({label,entityId,sceneId,events:event?new Map([[eventKey(event),event]]):new Map()});
+      places.push({label,raw,entityId,sceneId,events:event?new Map([[eventKey(event),event]]):new Map()});
     };
-    for(const row of related.filter(r=>r.entity.type==='Place'))addPlace(data.label(row.entity),row.entity.id);
+    for(const row of related.filter(r=>r.entity.type==='Place'))addPlace(data.label(row.entity),row.entity.id,null,null,data.rawLabel(row.entity));
     const placeEvents=entity.type==='Event'?(event?[event]:[]):allEvents;
     for(const e of placeEvents){
       const packet=data.scenes.get(e.sceneId);
       addPlace(e.placeLabel||packet?.place?.label,null,e.sceneId,e);
-      for(const row of data.relations(e.id).filter(r=>r.entity.type==='Place'))addPlace(data.label(row.entity),row.entity.id,e.sceneId,e);
+      for(const row of data.relations(e.id).filter(r=>r.entity.type==='Place'))addPlace(data.label(row.entity),row.entity.id,e.sceneId,e,data.rawLabel(row.entity));
     }
     addPlace(this.activity?.place||scene?.place?.label,null,this.activity?.sceneId||event?.sceneId,event);
     // 시대 줄의 연도: 장면 → 사건 → 생몰 → 연표 첫 사건 → 현재 연도 (1742년 집단 카드가 현재 연도 1593을 보이던 문제, #197)
@@ -176,7 +197,8 @@ export class AtlasStory{
     const groups=new Map();
     for(const row of rows){
       const names=new Set((row.relationClaims||[]).map(c=>relationName(c,this.entity.id)).filter(Boolean));
-      if(row.sharedYears)names.add('같은 사건');
+      // '같은 사건'은 구체 관계가 없을 때의 폴백이다 — 둘 다 붙이면 같은 사람이 두 그룹에 나온다(#198 감사 C-4).
+      if(row.sharedYears&&!names.size)names.add('같은 사건');
       if(!names.size)names.add('관계');
       for(const name of names){if(!groups.has(name))groups.set(name,[]);groups.get(name).push(row);}
     }
@@ -187,31 +209,36 @@ export class AtlasStory{
       ...[...(row.sharedYears||[])].filter(Number.isInteger).sort((a,b)=>a-b).map(yearLabel)])].join(', ');
   }
   personHtml(row,chip=false){
-    const label=this.ui.data.label(row.entity),dates=this.relationDates(row);
-    return `<button class="${chip?'atlas-chip':'atlas-story-row'}" data-story-entity="${esc(row.entity.id)}" title="${esc(label)}"><strong>${esc(shortLabel(label))}</strong>${dates?`<small class="atlas-relation-year" title="${esc(dates)}">${esc(dates)}</small>`:''}</button>`;
+    const data=this.ui.data,label=data.label(row.entity),dates=this.relationDates(row);
+    // 화면 글자는 다듬은 이름, 툴팁은 원본 이름(#198 감사 C-18)
+    return `<button class="${chip?'atlas-chip':'atlas-story-row'}" data-story-entity="${esc(row.entity.id)}" title="${esc(data.rawLabel(row.entity)||label)}"><strong>${esc(shortLabel(label))}</strong>${dates?`<small class="atlas-relation-year" title="${esc(dates)}">${esc(dates)}</small>`:''}</button>`;
   }
   eventHtml(row){
     const data=this.ui.data,basePlace=row.placeLabel||data.scenes.get(row.sceneId)?.place?.label||
       data.relations(row.id).filter(r=>r.entity.type==='Place').map(r=>data.label(r.entity)).join(', ')||'장소 미확인';
-    const place=[basePlace,...(row.extraPlaces||[]).map(shortLabel)].filter((p,i,a)=>p&&a.indexOf(p)===i).join(', ');
-    return `<button class="atlas-story-row atlas-story-event" ${row.sceneId?`data-story-event="${esc(row.sceneId)}"`:`data-story-entity="${esc(row.id)}"`}><strong class="atlas-event-title" title="${esc(row.title)}">${esc(displayTitle(row.title))}</strong><small class="atlas-event-place" title="${esc(place)}">${esc(shortLabel(place))}</small></button>`;
+    const labels=[basePlace,...(row.extraPlaces||[])].filter((p,i,a)=>p&&a.indexOf(p)===i);
+    // 괄호 설명만으로 된 라벨은 축약하면 빈 문자열이 된다 — 빈 줄 대신 '장소 미확인'(#198 감사 C-3)
+    const short=[...new Set(labels.map(shortLabel).filter(Boolean))].join(', ')||'장소 미확인';
+    return `<button class="atlas-story-row atlas-story-event" ${row.sceneId?`data-story-event="${esc(row.sceneId)}"`:`data-story-entity="${esc(row.id)}"`}><strong class="atlas-event-title" title="${esc(row.title)}">${esc(displayTitle(row.title))}</strong><small class="atlas-event-place" title="${esc(labels.join(', '))}">${esc(short)}</small></button>`;
   }
   timelineHtml(rows){
     const groups=new Map();
     for(const row of rows){const year=Number.isInteger(row.lo)?yearLabel(row.lo):'연도 미확인';if(!groups.has(year))groups.set(year,[]);groups.get(year).push(row);}
-    const collapse=events=>{const seen=new Map();for(const row of events){const key=normalize(displayTitle(row.title));const prior=seen.get(key);if(prior){prior.extraPlaces=[...(prior.extraPlaces||[]),row.placeLabel].filter(Boolean);continue;}seen.set(key,{...row});}return [...seen.values()];};
-    return `<div class="atlas-story-timeline">${[...groups].map(([year,events])=>`<div class="atlas-event-year">${esc(year)}</div><div>${collapse(events).map(row=>this.eventHtml(row)).join('')}</div>`).join('')}</div>`;
+    return `<div class="atlas-story-timeline">${[...groups].map(([year,events])=>`<div class="atlas-event-year">${esc(year)}</div><div>${events.map(row=>this.eventHtml(row)).join('')}</div>`).join('')}</div>`;
   }
   moreHtml(key,count,unit){
-    return `<button class="atlas-story-more" data-story-more="${esc(key)}">${count}${unit} 더</button>`;
+    return `<button class="atlas-story-more" data-story-more="${esc(key)}">${count}${unit} 더 보기</button>`;
   }
   sectionHtml(section,summary=false,compact=false){
     const {id,title,rows}=section;
     if(!rows.length)return '';
     let content='';
+    // 관계는 한 사람이 여러 그룹에 들 수 있다 — 뱃지 숫자를 그룹 합계로 맞춘다(#198 감사 C-4).
+    const groups=id==='people'?this.relationGroups(rows):null;
+    const count=groups?groups.reduce((sum,group)=>sum+group.rows.length,0):rows.length;
     if(id==='people'){
       if(summary)content=`<div class="atlas-story-chips">${rows.slice(0,compact?rows.length:5).map(row=>this.personHtml(row,true)).join('')}</div>`;
-      else content=this.relationGroups(rows).map(({name,rows},index)=>{
+      else content=groups.map(({name,rows},index)=>{
         const key=`people-${index}`,visible=this.more.has(key)?rows:rows.slice(0,8);
         return `<div class="atlas-story-group"><h4>${esc(name)} <span class="atlas-section-count">${rows.length}</span></h4>${visible.map(row=>this.personHtml(row)).join('')}${visible.length<rows.length?this.moreHtml(key,rows.length-visible.length,'명'):''}</div>`;
       }).join('');
@@ -230,7 +257,9 @@ export class AtlasStory{
         const action=row.entityId?`data-story-entity="${esc(row.entityId)}"`:`data-story-place="${esc(row.sceneId||'')}"`;
         const years=[...row.events.values()].map(e=>e.lo).filter(Number.isInteger),year=this.ui.chronicle.year;
         const nearest=years.sort((a,b)=>Math.abs(a-year)-Math.abs(b-year)||a-b)[0];
-        return `<button class="atlas-story-row" ${action}>${icon('pin')}<span class="atlas-story-text"><strong title="${esc(row.fullLabel)}">${esc(shortLabel(row.label))}</strong><small>사건 ${row.events.size}${nearest!==undefined?` · ${esc(yearLabel(nearest))}`:''}</small></span></button>`;
+        // 사건이 하나도 연결되지 않은 관계 장소는 '사건 0' 대신 뜻이 통하는 말로(#198 감사 C-5)
+        const note=row.events.size?`사건 ${row.events.size}${nearest!==undefined?` · ${esc(yearLabel(nearest))}`:''}`:'연결된 사건 없음';
+        return `<button class="atlas-story-row" ${action}>${icon('pin')}<span class="atlas-story-text"><strong title="${esc(row.fullLabel)}">${esc(shortLabel(row.label)||'장소 미확인')}</strong><small>${note}</small></span></button>`;
       }).join('');
       if(visible.length<rows.length)content+=this.moreHtml(id,rows.length-visible.length,'곳');
     }else if(id==='era'){
@@ -240,8 +269,8 @@ export class AtlasStory{
       }).join('')}</div>`;
     }
     const limit=id==='people'?5:3;
-    if(summary&&!compact&&['people','events'].includes(id)&&rows.length>limit)content+=`<button class="atlas-story-more" data-story-tab="${id}">${title} ${rows.length} 모두 보기 ${icon('right')}</button>`;
-    return `<section class="atlas-story-section" data-story-section="${id}">${summary?`<h3>${title} <span class="atlas-section-count">${rows.length}</span></h3>`:''}${content}</section>`;
+    if(summary&&!compact&&['people','events'].includes(id)&&rows.length>limit)content+=`<button class="atlas-story-more" data-story-tab="${id}">${title} ${count} 모두 보기 ${icon('right')}</button>`;
+    return `<section class="atlas-story-section" data-story-section="${id}">${summary?`<h3>${title} <span class="atlas-section-count">${count}</span></h3>`:''}${content}</section>`;
   }
   updateDescription(){
     const description=this.pane.querySelector?.('.atlas-story-description'),button=this.pane.querySelector?.('[data-story-expand]');
@@ -251,9 +280,10 @@ export class AtlasStory{
     description.classList.toggle('is-expanded',!!this.expanded);
     button.hidden=!overflows;button.textContent=this.expanded?'접기':'더 보기';button.setAttribute('aria-expanded',String(!!this.expanded));
   }
-  render(){
+  // resetScroll=true 는 탭 전환·카드 교체처럼 목록 첫 행부터 보여야 하는 렌더다. '더 보기'는 보던 자리를 지킨다(#198 감사 C-6).
+  render(resetScroll=false){
     if(!this.entity)return;
-    const scrollTop=this.pane.querySelector?.('.atlas-story-body')?.scrollTop||0;
+    const scrollTop=resetScroll?0:(this.pane.querySelector?.('.atlas-story-body')?.scrollTop||0);
     const ui=this.ui,data=ui.data,entity=this.entity,activity=this.activity,event=this.sceneEvent(),scene=data.scenes.get(activity?.sceneId||event?.sceneId),name=activity?.setting?activity.label:data.label(entity);
     const related=this.relatedRows(),sections=this.sections(related),claims=data.subjects.get(entity.id)||[];
     const role=scene?.participants?.find(p=>data.canonicalId(p.entityId)===entity.id&&(p.claimIds||[]).some(id=>data.claims.has(id)));
@@ -261,16 +291,16 @@ export class AtlasStory{
     const personRole=roleLabel(activity?.role||role?.role,scene?.startYear??activity?.year??ui.chronicle?.year);
     const breadcrumb=entity.type==='Person'?data.datesLabel(entity.id):activity?.narrative?'설화·전승':activity?.setting?yearLabel(ui.chronicle.year):event?yearLabel(event.lo):data.datesLabel(entity.id);
     const image=aiImageFor({entityId:entity.id,sceneId:activity?.sceneId||(entity.type==='Event'?event?.sceneId:null)});
-    const imageFigure=image?`<figure class="atlas-ai-image"><a class="atlas-ai-image-link" href="${esc(image.src)}" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="${esc(ui.runtime?.()?.engine?.quality==='low'?image.preview:image.src)}" alt="${esc(image.alt)}" width="${esc(image.width)}" height="${esc(image.height)}"><span class="atlas-ai-badge atlas-ai-overlay" title="${esc(image.notice)}">AI 상상도</span></a></figure>`:'';
+    const imageFigure=image?`<figure class="atlas-ai-image"><a class="atlas-ai-image-link" href="${esc(image.src)}" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="${esc(ui.runtime?.()?.engine?.quality==='low'?image.preview:image.src)}" alt="${esc(image.alt)}" width="${esc(image.width)}" height="${esc(image.height)}"><span class="atlas-ai-badge atlas-ai-overlay">AI 상상도</span></a></figure>`:'';
     const lists=sections.filter(s=>s.id!=='era'),compact=lists.reduce((sum,s)=>sum+s.rows.length,0)<=6;
     if(compact||!lists.some(s=>s.id===this.tab&&s.rows.length))this.tab='summary';
     const tabs=compact?'':`<nav class="atlas-story-tabs" aria-label="이야기 목록">${[{id:'summary',title:'요약'},...lists.filter(s=>s.rows.length).sort((a,b)=>['events','people','places'].indexOf(a.id)-['events','people','places'].indexOf(b.id))].map(s=>`<button class="atlas-story-tab" data-story-tab="${s.id}" aria-pressed="${this.tab===s.id}">${s.title}${s.rows?` <span>${s.rows.length}</span>`:''}</button>`).join('')}</nav>`;
     const eventSection=lists.find(s=>s.id==='events');
     const evidence=[...new Map([...related.flatMap(r=>r.claims),...(activity?.claimIds||[]).map(id=>data.claims.get(id)).filter(Boolean),...claims,...(eventSection.basis||[]),...eventSection.rows.flatMap(e=>e.basis||[])].map(c=>[c.id,c])).values()];
-    const details=`<details class="atlas-story-evidence"><summary>${icon('event')}출처와 지도 위치</summary>${evidence.map(c=>`<button data-story-claim="${esc(c.id)}"><span>${esc(c.quote||c.sourceLabel||'출처 기록')}</span><small>${esc(sourceName(c.sourceLabel))} ↗</small></button>`).join('')||'<p class="atlas-muted">연결된 출처가 없어요.</p>'}${activity?.placement?`<div class="atlas-placement-note"><h4>지도 위치</h4><p>${esc(activity.placement)}</p></div>`:''}</details>`;
+    const details=`<details class="atlas-story-evidence"><summary>${icon('event')}출처와 지도 위치</summary>${evidence.map(c=>`<button data-story-claim="${esc(c.id)}"><span>${esc(c.quote||c.sourceLabel||'출처 기록')}</span><small>${esc(sourceName(c.sourceLabel))} ↗</small></button>`).join('')||'<p class="atlas-muted">연결된 출처가 없습니다.</p>'}${activity?.placement?`<div class="atlas-placement-note"><h4>지도 위치</h4><p>${esc(activity.placement)}</p></div>`:''}</details>`;
     this.pane.innerHTML=`<header><button class="atlas-story-back" data-story-back>${icon('left')}<span>${this.history.length?'이전으로':'지도로 가기'}</span></button><button class="atlas-icon" data-close aria-label="이야기 닫기">${icon('close')}</button></header>
       <div class="atlas-story-body"><div class="atlas-story-hero">${imageFigure}<div><p class="atlas-breadcrumb">${typeName(entity.type,entity)}${breadcrumb&&breadcrumb!=='연도 미확인'?' · '+esc(breadcrumb):''}</p><h2>${esc(entity.type==='Event'?displayTitle(name):name)}</h2>${personRole?`<p class="atlas-role" title="${esc(personRole)}">${esc(personRole)}</p>`:''}</div></div>
-      ${description?`<p id="atlasStoryDescription" class="atlas-description atlas-story-description">${esc(description)}</p><button class="atlas-story-more" data-story-expand aria-controls="atlasStoryDescription" aria-expanded="false" hidden>더 보기</button>`:'<p class="atlas-muted">이 항목에 연결된 기록과 관계를 보세요.</p>'}
+      ${description?`<p id="atlasStoryDescription" class="atlas-description atlas-story-description">${esc(description)}</p><button class="atlas-story-more" data-story-expand aria-controls="atlasStoryDescription" aria-expanded="false" hidden>더 보기</button>`:'<p class="atlas-muted">이 항목에 연결된 기록과 관계를 보십시오.</p>'}
       ${['Person','Place'].includes(entity.type)&&entity.aliases?.length?`<p class="atlas-story-aliases">다른 이름: ${entity.aliases.map(esc).join(', ')}</p>`:''}
       ${activity?.narrative?`<p class="atlas-muted">이야기 속 시기: ${esc(activity.narrative.storyTime.label)}<br>기록된 시기: ${esc(activity.narrative.recordingTime.label)}</p>`:''}
       ${this.sectionHtml(sections.find(s=>s.id==='era'))}${tabs}

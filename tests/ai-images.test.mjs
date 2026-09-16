@@ -27,7 +27,7 @@ test('display metadata, image dimensions and date are preserved',async t=>{
   assert.deepEqual(aiImageFor({entityId:'entity'}),{
     src:new URL('assets/ai-images/entity.jpg',root).href,
     preview:new URL('assets/ai-images/entity-512.jpg',root).href,
-    alt:'entity',label:'AI 상상도',notice:index.notice,width:683,height:1024,
+    alt:'entity',label:'AI 상상도',width:683,height:1024,
     basis:'basis',caveats:'caveats',generatedAt:'2026-09-13',generator:'codex',
   });
 });

@@ -66,8 +66,7 @@ with sync_playwright() as pw:
         check('low quality never requests full portrait', not any(url.endswith('/je-sejong.jpg') for url in report['requests']))
         figure = page.locator('#atlasStory .atlas-ai-image')
         check('single overlay uses index label', figure.locator('.atlas-ai-badge').count() == 1 and figure.locator('.atlas-ai-overlay').inner_text() == 'AI 상상도')
-        notice = json.loads((Path(__file__).resolve().parents[1] / 'services/host/assets/ai-images/index.json').read_text(encoding='utf-8'))['notice']
-        check('AI notice is in badge title', notice in (figure.locator('.atlas-ai-badge').get_attribute('title') or ''))
+        check('badge carries no notice text', not figure.locator('.atlas-ai-badge').get_attribute('title'))
         check('intrinsic image dimensions', figure.locator('img').get_attribute('width') == '683' and figure.locator('img').get_attribute('height') == '1024')
         check('full-size link', figure.locator('a').get_attribute('href').endswith('je-sejong.jpg') and figure.locator('a').get_attribute('rel') == 'noopener')
         before = figure.inner_html()

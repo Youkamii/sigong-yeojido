@@ -25,7 +25,9 @@ def main():
         def ready():
             page.wait_for_function('!document.querySelector("#chronicle [role=status]")',timeout=90000)
             page.wait_for_function('window.__sigong.chronicleScene.assets?.revision>0',timeout=90000)
-            page.wait_for_function('!document.querySelector("#historyMapBtn").textContent.includes("조회 중")',timeout=90000)
+            # 문구 의존 대기. '조회 중'은 앱에 없는 문자열이라 이 단언이 늘 참이 되어 무력화돼 있었다(#198 감사 C-32).
+            # 제대로 고치려면 history-map.js 가 적재 완료 플래그를 window.__sigong 에 내놓아야 한다(이번 브랜치 대상 파일 밖 — 후속).
+            page.wait_for_function('!document.querySelector("#historyMapBtn").textContent.includes("불러오고 있습니다")',timeout=90000)
         def year(value):
             field=page.locator('#historyTime [type=number]');field.fill(str(value));field.press('Enter');ready()
             page.wait_for_function('(y)=>window.__sigong.chronicleScene.assets.plan.year===y',arg=value)

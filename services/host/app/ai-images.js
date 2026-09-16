@@ -5,7 +5,7 @@ let catalog=null,loading=null;
 export function loadAiImages(){
   // 실패도 저장해 이 페이지에서는 재시도하지 않는다.
   if(!loading)loading=fetch(indexUrl).then(async response=>{
-    if(!response.ok)throw new Error('AI 상상도 목록을 불러오지 못했어요.');
+    if(!response.ok)throw new Error('AI 상상도 목록을 불러오지 못했습니다.');
     const index=await response.json();
     if(!Array.isArray(index?.images))return null;
     catalog=new Map();
@@ -15,7 +15,6 @@ export function loadAiImages(){
       const entry={
         src:imageRoot+image.file,preview:imageRoot+image.preview,
         alt:image.title,label:'AI 상상도',
-        notice:index.notice||'실제 사료·유물 사진이 아니라 AI가 만든 상상도입니다.',
         width:image.width,height:image.height,
         basis:image.basis||'',caveats:image.caveats||'',
         generatedAt:typeof image.generatedAt==='string'?image.generatedAt.slice(0,10):'',generator:image.generator||'',

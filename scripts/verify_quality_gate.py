@@ -67,7 +67,7 @@ def main():
             context, page = page_for(saved, '?q=low')
             raw = page.evaluate('localStorage.getItem("fantology.quality.v1")')
             check('query disables all three buttons', page.locator('[data-gate-quality]:disabled').count(), 3)
-            check('query message', page.locator('#qualityRecommendation').inner_text(), '검증용 화질(q=낮음)이 적용됩니다')
+            check('query message', page.locator('#qualityRecommendation').inner_text(), '주소에서 고른 화질: 낮음')
             page.locator('#enter').click()
             ready(page)
             check('query applies low', page.evaluate('__sigong.engine.quality'), 'low')

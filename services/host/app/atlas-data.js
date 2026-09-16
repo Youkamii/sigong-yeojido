@@ -1,9 +1,9 @@
-import {datedClaims,entityLabel,displayLabel,labelNote,isGroupEntity,yearLabel,RELATION_WORDS} from './chronicle.js';
+import {datedClaims,entityLabel,displayLabel,labelNote,isGroupEntity,yearLabel,typeWord,RELATION_WORDS} from './chronicle.js';
 export {displayLabel,labelNote,isGroupEntity} from './chronicle.js';
 
 export const cleanTitle=text=>String(text||'').replace(/\s*\(\d{3,4}(?:년)?\)\s*$/,'');
-// 유형 이름. 집단 행위자(군대·단체)는 나라가 아니라 '집단'으로 보인다(#197).
-export const typeName=(type,entity)=>entity&&type==='Polity'&&isGroupEntity(entity)?'집단':({Person:'인물',Event:'사건',Place:'장소',Polity:'나라',Narrative:'전승'}[type]||'기록');
+// 유형 이름. 집단 행위자(군대·단체)는 나라가 아니라 '집단'으로 보인다(#197). 나머지는 공용 대조표(TYPE_WORDS)를 쓴다.
+export const typeName=(type,entity)=>entity&&isGroupEntity(entity)?'집단':typeWord(type);
 const normalize=text=>String(text||'').normalize('NFKC').toLocaleLowerCase('ko').replace(/\s/g,'');
 
 export function relationName(claim,id){
@@ -19,7 +19,7 @@ export function relationTime(claim){
 }
 export function relationDates(claim){
   const {lo,hi}=relationTime(claim);
-  if(lo!==null&&hi!==null)return yearLabel(lo)+(lo!==hi?' – '+yearLabel(hi):'');
+  if(lo!==null&&hi!==null)return yearLabel(lo)+(lo!==hi?'~'+yearLabel(hi):'');
   return lo!==null?yearLabel(lo)+'부터':hi!==null?yearLabel(hi)+'까지':'';
 }
 
@@ -61,9 +61,9 @@ export class AtlasData{
     const dates=this.dates.get(id)||[],life=dates.find(d=>d.claim.predicate==='syj:livedIn');
     const born=dates.find(d=>d.claim.predicate==='syj:bornIn'),died=dates.find(d=>d.claim.predicate==='syj:diedIn');
     const range=born&&died?[born.lo,died.hi]:life?[life.lo,life.hi]:null;
-    if(range)return `${yearLabel(range[0])} – ${yearLabel(range[1])}`;
+    if(range)return `${yearLabel(range[0])}~${yearLabel(range[1])}`;
     const event=this.eventsFor(id)[0];
-    if(event)return yearLabel(event.lo)+(event.lo!==event.hi?' – '+yearLabel(event.hi):'');
+    if(event)return yearLabel(event.lo)+(event.lo!==event.hi?'~'+yearLabel(event.hi):'');
     return dates[0]?yearLabel(dates[0].lo):'연도 미확인';
   }
   eventsFor(id){

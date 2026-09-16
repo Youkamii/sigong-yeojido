@@ -32,10 +32,10 @@ def main():
         page.locator('[data-difference]').nth(1).click();assert '기원전 18년' in page.locator('#compare').inner_text()
         page.screenshot(path=str(args.out/'comparison-discovery.png'))
         page.locator('#humanOnly').check()
-        page.wait_for_function("document.querySelector('[data-discovery-status]').textContent.includes('사건 연결이 없다')")
+        page.wait_for_function("document.querySelector('[data-discovery-status]').textContent.includes('사건 연결이 없습니다')")
         assert page.locator('[data-difference]').count()==0 and page.locator('.comparison-card').count()==0
         page.locator('#humanOnly').uncheck();page.wait_for_function("document.querySelectorAll('[data-difference]').length===2")
-        page.locator('#noSources').click();page.wait_for_function("document.querySelector('[data-discovery-status]').textContent.includes('사건 연결이 없다')")
+        page.locator('#noSources').click();page.wait_for_function("document.querySelector('[data-discovery-status]').textContent.includes('사건 연결이 없습니다')")
         assert page.locator('.comparison-card').count()==0
         assert not errors,errors;browser.close()
     report={'base':args.base,'result':result,'pageErrors':errors,'checks':{'rdf_discovery_two_pairs':True,

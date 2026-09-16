@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {displayLabel,stripLabelNotes,labelNote,isGroupEntity} from '../services/host/app/chronicle.js';
+import {displayLabel,stripLabelNotes,labelNote,isGroupEntity,predicateLabel,precisionLabel,typeWord} from '../services/host/app/chronicle.js';
 import {typeName} from '../services/host/app/atlas-data.js';
 import {shortLabel,sourceName,mergeEvents} from '../services/host/app/atlas-story.js';
 
@@ -53,4 +53,53 @@ test('연도 없는 같은 제목의 행은 연도 있는 행에 흡수되고 �
   const main=merged.find(e=>e.id==='e1');
   assert.deepEqual(new Set(main.basis.map(c=>c.id)),new Set(['c1','c2']));
   assert.ok(merged.some(e=>e.id==='e3'));
+});
+
+// ── #198 적대 리뷰 반영(C-7·C-9·C-11·C-12·C-18): 화면에 나가는 코드값 대조표 ──
+test('유형 이름은 서버가 주는 17가지를 모두 우리말로 옮긴다 (#198 C-18)',()=>{
+  const expected={Person:'인물',Event:'사건',Place:'장소',Polity:'나라',Narrative:'전승',Group:'집단',
+    Organization:'단체',Institution:'제도',Office:'관직',Work:'기록물',Thing:'물건',Facility:'시설',
+    Heritage:'문화유산',Artifact:'유물',Document:'문서',Concept:'개념',Period:'시대'};
+  for(const [type,word] of Object.entries(expected))assert.equal(typeName(type),word,type);
+  // data/entities 의 유형 가운데 '기록' 으로 뭉개지는 것이 없다
+  assert.equal(Object.keys(expected).filter(type=>typeName(type)==='기록').length,0);
+  assert.equal(typeName('Unknown'),'기록');
+  assert.equal(typeWord('Chunk'),'원문 대목');
+  assert.equal(typeWord('Source'),'사료');
+  assert.equal(typeWord('Claim'),'기록');
+});
+
+test('집단 판정은 라벨 꼬리가 사라져도 유형으로 살아남는다 (#198 C-18)',()=>{
+  assert.ok(isGroupEntity({type:'Group',label:'처인부곡민'}));            // 꼬리를 뗀 뒤
+  assert.ok(isGroupEntity({type:'Polity',label:'수군 · 집단 행위자'}));  // 꼬리가 남은 동안
+  assert.ok(!isGroupEntity({type:'Polity',label:'조선'}));
+  assert.ok(!isGroupEntity({kind:'group',label:'조선',type:'Polity'}));   // 서버가 주지 않는 필드는 보지 않는다
+  assert.equal(typeName('Group',{type:'Group',label:'처인부곡민'}),'집단');
+  assert.equal(typeName('Organization',{type:'Organization',label:'국립중앙박물관 · 집단 행위자'}),'집단');
+});
+
+test('술어와 정밀도는 대조표를 거치고 없는 값은 흘리지 않는다 (#198 C-7·C-9·C-11·C-12)',()=>{
+  assert.equal(predicateLabel('syj:hasBoundaryRecord'),'경계 기록');
+  assert.equal(predicateLabel('syj:tookPlaceAt'),'장소');
+  assert.equal(predicateLabel('locatedAt'),'위치');
+  assert.equal(predicateLabel('syj:describedAs'),'설명');
+  assert.equal(predicateLabel('syj:foundedIn'),'건국');
+  assert.equal(predicateLabel('syj:sameEntityAs'),'같다고 보는 이름');
+  assert.equal(predicateLabel('syj:statesTerritoryAs'),'관련 기록');  // 표에 없으면 기본값
+  assert.equal(predicateLabel(''),'관련 기록');
+  for(const predicate of ['syj:hasBoundaryRecord','syj:relatedTo','syj:occurredIn','syj:locatedAt','syj:describedAs',
+    'syj:tookPlaceAt','syj:hasParticipant','syj:participatedIn','syj:endedIn','syj:bornIn','syj:diedIn',
+    'syj:establishedIn','syj:builtIn','syj:reignedIn','syj:activeIn','syj:administeredAs','syj:isKingOf',
+    'syj:foundedIn','syj:sameEntityAs','syj:reignedFrom','syj:reignedTo','syj:memberOf','syj:capitalMovedTo',
+    'syj:householdCount','syj:mentionedIn','syj:hasTitle','syj:producedAt','syj:destroyedIn','syj:appearsIn','syj:locatedIn'])
+    assert.doesNotMatch(predicateLabel(predicate),/[A-Za-z]/,predicate);
+  assert.equal(precisionLabel('approx'),'대략 위치');
+  assert.equal(precisionLabel('region'),'일대 기준');
+  assert.equal(precisionLabel('area'),'일대 기준');
+  assert.equal(precisionLabel('site'),'유적 지점');
+  assert.equal(precisionLabel('year'),'연 단위');
+  assert.equal(precisionLabel('month'),'월 단위');
+  assert.equal(precisionLabel('day'),'일 단위');
+  assert.equal(precisionLabel('mixed'),'');      // 표에 없으면 아무것도 표시하지 않는다
+  assert.equal(precisionLabel(undefined),'');
 });

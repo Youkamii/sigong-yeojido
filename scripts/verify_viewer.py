@@ -210,7 +210,7 @@ async def run(url: str, out: Path) -> int:
                const yv=document.getElementById('yearV').textContent;
                document.getElementById('yearBtn').click();
                const started=performance.now();
-               while(document.querySelector('#evi .empty')?.textContent==='찾고 있어요…' && performance.now()-started<10000) {
+               while(document.querySelector('#evi .empty')?.textContent==='찾고 있습니다…' && performance.now()-started<10000) {
                  await new Promise(r=>setTimeout(r,50));
                }
                const h3=document.querySelector('#evi h3');
