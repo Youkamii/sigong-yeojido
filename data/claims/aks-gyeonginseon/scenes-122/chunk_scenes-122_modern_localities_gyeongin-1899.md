@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1899년 9월 18일 노량진~인천 간 최초의 영업을 시작했다."
+      "value": "1899년 9월 18일 노량진~인천 간 최초의 영업을 시작하였다."
     },
     "note": "행위 서술은 인용문 표현을 옮긴 것이다.",
     "fromSource": "src-aks-gyeonginseon",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "정족산성에서 프랑스 군대를 격퇴했다"
+      "value": "정족산성에서 프랑스 군대를 격퇴하였다"
     },
     "note": "전투 결과.",
     "fromSource": "src-ek-byeongin-yangyo-e0023142",

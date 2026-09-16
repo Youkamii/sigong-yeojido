@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "고려 후기 삼별초의 난을 진압하고 몽골군과 함께 일본 정벌을 지휘했던 무신."
+      "value": "고려 후기 삼별초의 난을 진압하고 몽골군과 함께 일본 정벌을 지휘하였던 무신."
     },
     "fromSource": "src-encykorea-gimbanggyeong",
     "citesChunk": "chunk_period96_goryeo_late_gimbanggyeong-def",

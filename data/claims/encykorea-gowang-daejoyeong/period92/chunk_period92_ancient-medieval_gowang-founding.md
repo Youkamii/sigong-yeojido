@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "698년에 국호를 진(震), 연호를 천통(天統)이라 했다"
+      "value": "698년에 국호를 진(震), 연호를 천통(天統)이라 하였다"
     },
     "fromSource": "src-encykorea-gowang-daejoyeong",
     "citesChunk": "chunk_period92_ancient-medieval_gowang-founding",

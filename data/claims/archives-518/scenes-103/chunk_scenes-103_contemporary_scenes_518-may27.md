@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "5월 27일 계엄군은 도청을 향해 재진입했고,"
+      "value": "5월 27일 계엄군은 도청을 향해 재진입하였고,"
     },
     "note": "5월 27일 재진입. 교전 규모·사망자 수는 이 발췌 범위 밖이다.",
     "fromSource": "src-archives-518",

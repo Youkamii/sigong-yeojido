@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "낙안군의 토성이 낮고 작아 왜변에 지키기 어려우므로, 돌을 섞어 토성 옛터를 넓혀 성을 쌓았다."
+      "value": "낙안군의 토성이 낮고 작아 왜변에 지키기 어려웠다. 돌을 섞어 토성 옛터를 넓혀 성을 쌓았다."
     },
     "note": "공사 기간과 감독자는 이 대목에 없다. 현재 남은 석축성은 기사가 15세기 중엽으로 따로 판단한다.",
     "fromSource": "src-ej-aks-naganeupseong",

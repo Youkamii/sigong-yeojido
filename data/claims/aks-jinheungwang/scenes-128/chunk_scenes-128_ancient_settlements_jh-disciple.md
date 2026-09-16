@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "살게 하고 제자를 양성하게 했다."
+      "value": "살게 하고 제자를 양성하게 하였다."
     },
     "note": "진흥왕 항목은 국원에서 제자를 양성하게 했다고 적는다.",
     "fromSource": "src-aks-jinheungwang",

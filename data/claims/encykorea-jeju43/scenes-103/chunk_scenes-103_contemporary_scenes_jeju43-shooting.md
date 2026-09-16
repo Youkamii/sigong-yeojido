@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "군중들에게 경찰이 총을 발사함으로써 민간인 6명이 숨지는 사건이 발생했다."
+      "value": "군중들에게 경찰이 총을 발사함으로써 민간인 6명이 숨지는 사건이 발생하였다."
     },
     "note": "1947년 3월 1일 발단이 된 발포 행위.",
     "fromSource": "src-encykorea-jeju43",

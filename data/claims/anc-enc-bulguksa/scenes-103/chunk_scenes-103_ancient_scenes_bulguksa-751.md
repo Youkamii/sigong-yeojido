@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "751년 김대성이 창건했다고 기록되었다"
+      "value": "751년 김대성이 창건하였다고 기록되었다"
     },
     "note": "창건 행위 서술(전거는 『삼국유사』).",
     "fromSource": "src-anc-enc-bulguksa",

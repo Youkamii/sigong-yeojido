@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "한강을 건너 남한산성을 포위했다"
+      "value": "한강을 건너 남한산성을 포위하였다"
     },
     "note": "포위 행위.",
     "fromSource": "src-ek-byeongja-horan-e0023151",

@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1467년 5월초에 길주에 와 있던 함길도절도사 강효문(康孝文)을 베고 길주를 근거지로 반란을 일으켰다"
+      "value": "1467년 5월초에 길주에 와 있던 함길도절도사 강효문(康孝文)을 베었다. 길주를 근거지로 반란을 일으켰다"
     },
     "note": "행위 서술 원문(HTML 제거 뒤 표기 그대로).",
     "fromSource": "src-je-encykorea-e0044984",

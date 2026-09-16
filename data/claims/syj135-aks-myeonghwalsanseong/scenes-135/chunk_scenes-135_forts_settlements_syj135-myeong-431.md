@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "왜인이 명활성을 포위하고 점령하려 했다는 기록이 있다고 서술된다."
+      "value": "왜인이 명활성을 포위하고 점령하려 하였다는 기록이 있다고 서술된다."
     },
     "note": "포위·점령 시도까지가 항목 서술이다. 함락 여부·병력 규모는 주장하지 않는다.",
     "fromSource": "src-syj135-aks-myeonghwalsanseong",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "조선 후기에, 『경세유표』, 『흠흠신서』, 『목민심서』 등을 저술했으며"
+      "value": "조선 후기에, 『경세유표』, 『흠흠신서』, 『목민심서』 등을 저술하였으며"
     },
     "note": "항목 '정의' 문장(발췌 그대로).",
     "fromSource": "src-encykorea-jeong-yagyong-e0050549",

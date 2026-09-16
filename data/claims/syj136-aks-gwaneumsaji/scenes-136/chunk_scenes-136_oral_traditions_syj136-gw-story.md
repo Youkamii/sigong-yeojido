@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "설화/전승 기록이다. 성덕산 관음사의 사적을 적은 책에 실린 연기설화이며, 뒷날 「심청전」의 근원설화로 거론된다."
+      "value": "설화/전승 기록이다. 성덕산 관음사의 사적을 적은 책에 실린 연기설화이다. 뒷날 「심청전」의 근원설화로 거론된다."
     },
     "note": "책의 성격과 설화 서두에 근거한다. 전승의 내용·무대·등장인물을 연결한 Claim이며 실제 사건이나 현장 출석의 확인이 아니다.",
     "fromSource": "src-syj136-aks-gwaneumsaji",

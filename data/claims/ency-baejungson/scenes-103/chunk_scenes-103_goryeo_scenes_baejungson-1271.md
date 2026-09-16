@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "홍다구가 이끄는 몽골군이 진도를 함락했고, 배중손도 이때 남도석성에서 전사한 것으로 보인다"
+      "value": "홍다구가 이끄는 몽골군이 진도를 함락하였다. 배중손도 이때 남도석성에서 전사한 것으로 보인다"
     },
     "note": "함락과 전사. 출처가 \"보인다\"로 유보한 표현을 유지한다.",
     "fromSource": "src-ency-baejungson",

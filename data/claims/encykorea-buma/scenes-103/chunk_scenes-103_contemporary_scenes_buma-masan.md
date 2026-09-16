@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "민주화운동은 18일에 마산으로 확산됐다."
+      "value": "민주화운동은 18일에 마산으로 확산되었다."
     },
     "note": "10월 18일 마산 확산. 부산 장면과 같은 시각으로 합치지 않는다.",
     "fromSource": "src-encykorea-buma",

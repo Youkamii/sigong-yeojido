@@ -52,7 +52,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1960년 3·15 부정선거에 항의하는 대규모 시위가 마산에서 일어났고, 경찰은 이를 강경 진압했다."
+      "value": "1960년 3·15 부정선거에 항의하는 대규모 시위가 마산에서 일어났다. 경찰은 이를 강경 진압하였다."
     },
     "note": "시위와 강경진압이라는 두 편의 행위.",
     "fromSource": "src-archives-419",

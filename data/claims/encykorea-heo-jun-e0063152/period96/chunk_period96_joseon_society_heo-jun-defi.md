@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "조선시대 『동의보감』과 『언해태산집요』, 『언해구급방』 등을 저술한 의관. 의학자."
+      "value": "조선시대 『동의보감』·『언해태산집요』·『언해구급방』 등을 저술한 의관. 의학자."
     },
     "note": "항목 '정의' 문장(발췌 그대로).",
     "fromSource": "src-encykorea-heo-jun-e0063152",

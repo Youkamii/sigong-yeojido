@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "정식 학술 조사를 1975년 국립중앙박물관이 시작해 1987년(제7차)까지 실시했다."
+      "value": "정식 학술 조사를 1975년 국립중앙박물관이 시작해 1987년(제7차)까지 실시하였다."
     },
     "note": "기간 장면의 근거다. 해마다 발굴이 있었다는 뜻으로 확장하지 않는다.",
     "fromSource": "src-syj135-aks-songgukri",

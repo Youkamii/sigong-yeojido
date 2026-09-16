@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1603년 제6대 통제사 이경준이 통제영을 두룡포로 정했다."
+      "value": "1603년 제6대 통제사 이경준이 통제영을 두룡포로 정하였다."
     },
     "note": "행위: 통제영 자리 결정과 설영.",
     "fromSource": "src-jl2-aks-tongjeyeong",

@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1948년 10월 19일 여수에 주둔하던 국방경비대 제14연대 소속 군인들이 진압 명령을 거부했다."
+      "value": "1948년 10월 19일 여수에 주둔하던 국방경비대 제14연대 소속 군인들이 진압 명령을 거부하였다."
     },
     "note": "행위 서술은 인용문 표현을 옮긴 것이다. 거부의 배경 해석은 이 서술에 넣지 않는다.",
     "fromSource": "src-aks-yeosun-1948",

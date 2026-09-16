@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "임진왜란이 나자 옥포·노량·당포·당항포에서 연전연승을 거듭했다"
+      "value": "임진왜란이 나자 옥포·노량·당포·당항포에서 연전연승을 거듭하였다"
     },
     "note": "이순신 항목이 임진왜란 참전을 직접 서술.",
     "fromSource": "src-encykorea-yisunsin",

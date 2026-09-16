@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "제주목사 장림이 김녕 읍에 있던 방호소를 이곳으로 옮겨 다시 축성했다."
+      "value": "제주목사 장림이 김녕 읍에 있던 방호소를 이곳으로 옮겨 다시 축성하였다."
     },
     "note": "동원 인원과 공사 방식은 기사에 없다.",
     "fromSource": "src-ej-aks-byeolbangjin",

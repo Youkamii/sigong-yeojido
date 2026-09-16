@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "완도에 청해진을 건설하고 남해 해상권을 장악해 당과 신라, 일본을 잇는 국제무역을 주도했다"
+      "value": "완도에 청해진을 건설하고 남해 해상권을 장악하였다. 당과 신라, 일본을 잇는 국제무역을 주도하였다"
     },
     "note": "기지 건설과 교역 활동 서술.",
     "fromSource": "src-anc-enc-jangbogo",

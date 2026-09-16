@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "노산군으로 강봉된 단종이 청령포에 유배되어, 영월 객사 관풍헌으로 처소를 옮기기 전까지 머물렀다."
+      "value": "노산군으로 강봉된 단종이 청령포에 유배되었다. 영월 객사 관풍헌으로 처소를 옮기기 전까지 머물렀다."
     },
     "note": "처소를 옮긴 시점은 그 해 여름으로만 적혀 있어 별도의 연월 주장을 만들지 않았다.",
     "fromSource": "src-ej-aks-cheongnyeongpo",

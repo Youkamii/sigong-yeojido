@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "647년 비담의 난 당시 반란군이 명활산성을 점거했다고 서술된다."
+      "value": "647년 비담의 난 당시 반란군이 명활산성을 점거하였다고 서술된다."
     },
     "note": "점거까지가 인용 범위다. 진압 과정의 전투 묘사는 이 결과에서 주장하지 않는다.",
     "fromSource": "src-syj135-aks-myeonghwalsanseong",

@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "올적합이 녹둔도를 침범해 사람들을 잡아가고 가축을 약탈했고, 조산보만호 이순신 등 조선군이 맞섰다."
+      "value": "올적합이 녹둔도를 침범해 사람들을 잡아가고 가축을 약탈하였다. 조산보만호 이순신 등 조선군이 맞섰다."
     },
     "note": "피해 규모와 부대 편성은 이 대목에 없다.",
     "fromSource": "src-ej-aks-nokdundo",

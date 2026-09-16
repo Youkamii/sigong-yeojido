@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "8월 17일과 18일에는 3만여 명의 울산 현대그룹노조연합 노동자들이 가두시위를 전개했다."
+      "value": "8월 17일과 18일에는 3만여 명의 울산 현대그룹노조연합 노동자들이 가두시위를 전개하였다."
     },
     "note": "행위 서술은 인용문 표현을 옮긴 것이다.",
     "fromSource": "src-aks-worker-1987",

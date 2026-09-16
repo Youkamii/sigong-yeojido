@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "당항만 · 당동만 등 크고 작은 만(灣)이 발달했다"
+      "value": "당항만 · 당동만 등 크고 작은 만(灣)이 발달하였다"
     },
     "note": "당항만이 고성군에 발달한 만의 하나라는 서술. 해역 좌표는 적혀 있지 않다.",
     "fromSource": "src-syj103-encykorea-goseong",

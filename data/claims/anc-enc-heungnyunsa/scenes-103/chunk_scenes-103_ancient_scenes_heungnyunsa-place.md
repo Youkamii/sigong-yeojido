@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "경상북도 경주시에 자리했던 삼국시대 고구려의 승려 아도가 창건한 사찰"
+      "value": "경상북도 경주시에 자리하였던 삼국시대 고구려의 승려 아도가 창건한 사찰"
     },
     "note": "흥륜사의 소재 지역 서술. 정확한 절터 좌표는 출처에 없다.",
     "fromSource": "src-anc-enc-heungnyunsa",

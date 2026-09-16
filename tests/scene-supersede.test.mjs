@@ -1,6 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdtempSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {spawnSync} from 'node:child_process';
 import {visiblePackets,visiblePacketEvents} from '../services/host/app/scene-packets.js';
 import {contextAt} from '../services/host/app/chronicle.js';
 import {planChronicleAssets} from '../services/host/app/chronicle-asset-plan.js';
@@ -157,4 +161,27 @@ test('실제 전체 패킷에서도 숨긴 카드는 없고 항목 persistence�
   const rows=planContinuingFacilities(scenes,{year:replacement.endYear+1,events:[]});
   assert.ok(rows.some(row=>row.siteBackground.sourceSceneId===replacement.id));
   assert.ok(!rows.some(row=>row.siteBackground.sourceSceneId===station.id));
+});
+
+test('built supersededBy matches a fresh recomputation',()=>{
+  // #199 round 2 (B-9): 제목 윤문이 titles_overlap 을 깨뜨려도 빌드 산출물과 재계산이 갈라지지 않게 잡는다.
+  const packetUrl=new URL('../services/host/app/history-scenes.json',import.meta.url);
+  const packet=JSON.parse(readFileSync(packetUrl,'utf8'));
+  const built=new Map(packet.scenes.filter(scene=>scene.supersededBy).map(scene=>[scene.id,scene.supersededBy]));
+  const dir=mkdtempSync(join(tmpdir(),'supersede-'));
+  const out=join(dir,'history-scenes.json');
+  writeFileSync(out,JSON.stringify(packet));
+  let ran=null;
+  for(const python of ['python','python3','py']){
+    const result=spawnSync(python,[fileURLToPath(new URL('../scripts/build_history_scenes.py',import.meta.url)),
+      '--supersede-only','--out',out,'--supersede-report',join(dir,'pairs.json')],{encoding:'utf8'});
+    if(!result.error){ran=result;break;}
+  }
+  assert.ok(ran,'python is required to recompute supersededBy');
+  assert.equal(ran.status,0,ran.stderr);
+  const fresh=new Map(JSON.parse(readFileSync(out,'utf8')).scenes.filter(scene=>scene.supersededBy)
+    .map(scene=>[scene.id,scene.supersededBy]));
+  rmSync(dir,{recursive:true,force:true});
+  assert.deepEqual([...fresh.entries()].sort(),[...built.entries()].sort(),
+    '재계산 결과가 history-scenes.json 과 다르다 — 재빌드하면 숨긴 장면이 되살아난다');
 });

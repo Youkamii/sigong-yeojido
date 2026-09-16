@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "덕산에 있던 충청도 병마절도사 병영을 해미로 옮기는 논의가 시작되어, 이전이 끝난 1421년까지 사이에 성이 완성되었다."
+      "value": "덕산에 있던 충청도 병마절도사 병영을 해미로 옮기는 논의가 시작되었다. 이전이 끝난 1421년까지 사이에 성이 완성되었다."
     },
     "note": "연차별 공사 내용과 동원 인원은 기사에 없다.",
     "fromSource": "src-ej-aks-haemieupseong",

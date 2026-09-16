@@ -62,7 +62,8 @@
 - `build_fact_layers.py`와 `summarize_facts.py`는 장면의 네 문구를 복사하지 않는다. 사실 레이어 빌드는 생략했고 이전 파일과 바이트가 같다.
 - `check_fix2.py` → `check_fix3.py --run-prefix fix5`: 1,483장면 전체 확인, 대응 원본 1,481장면·5,658필드 비교, 역할 1,215개 entityId 대조. **기존 예외 4건 외 불일치 0건**.
 - 예외 4건: 한산도·명량 coordinateNote 2건은 naval_positions의 빌드 덮어쓰기 값, 장문포와 중인 상소 2건은 대응 result.json 장면이 없다. 삭제·원문 생성·해시 우회는 하지 않았다.
-- 전체 5,289개 대상 값이 rewrites와 일치함을 확인했다. 문구 외 JSON 값·키 순서·엔터티·화면 코드 변경은 없다. 대조 결과는 `fix5-propagation-audit.json`, `fix5-build-value-audit.json`, 범위 검사는 `scope-report.json`에 있다.
+- 전체 5,289개 대상 값이 rewrites와 일치함을 확인했다. 키 순서·엔터티·화면 코드 변경은 없다. 대조 결과는 `fix5-propagation-audit.json`, `fix5-build-value-audit.json`, 범위 검사는 `scope-report.json`에 있다.
+- **정정(#199 round 2, B-8).** 위의 "문구 외 JSON 값 변경은 없다"는 사실이 아니었다. 재빌드가 출처 13~15개의 `title`·`publisher` 약 24개 값도 함께 바꿨다. 같은 출처 id 가 묶음마다 다른 이름으로 들어 있는데 빌더가 나중에 읽은 묶음으로 조용히 덮어썼고, 재빌드 `--job` 순서를 바꾼 것만으로 값이 뒤집혔다. 자세한 내용과 조치는 `full-audit-197.md` 의 "출처 이름이 함께 뒤집힌 건" 절에 적었다.
 
 ### 제목에 의존하는 파생 값
 
@@ -75,6 +76,8 @@
 | scene-bj-garimseong-501 / participantGroups.0.side | a | b |
 | scene-bj-wangheungsa-600 / participantGroups.0.side | a | b |
 | scene-cfc-wangheungsa-600 / participantGroups.0.side | a | b |
+
+**정정(#199 round 2).** `side` 보존 3건은 되살리지 않았다. `scene_vocabulary.normalize_group` 은 장면의 제목·요약·역할에서 대표 정치체를 찾아 편을 정하는데, 현재 코드로 계산하면 세 장면 모두 빌드값 `a` 가 맞다(보존값 `b` 는 옛 어휘표 시절의 값이다). 이번 재빌드로 `scene-bm-gwanbang-386`, `scene-us2-paegang-wall-826` 까지 5건이 `b`→`a` 로 돌아왔다. 옛 값을 계속 보존하면 재빌드할 때마다 같은 수작업이 필요하므로 빌드값을 그대로 둔다.
 
 `docs/research/scene-supersede-186.json`은 지시대로 빌드가 만든 결과를 그대로 두었다. 따라서 보존한 장면의 중복 연결과 빌드 보고서가 다를 수 있다. 이 파일도 리더가 커밋에 포함할 대상이다. 빌드만 재실행하면 위 메타데이터 차이가 다시 생길 수 있으므로 보존 절차와 전수 대조를 함께 실행해야 한다.
 

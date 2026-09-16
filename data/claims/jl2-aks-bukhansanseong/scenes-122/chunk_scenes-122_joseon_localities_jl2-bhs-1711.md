@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "한양 도성을 방어하기 위해 1711년에 북한산성을 축성했다."
+      "value": "한양 도성을 방어하기 위해 1711년에 북한산성을 축성하였다."
     },
     "note": "행위: 산성 축조와 그 목적.",
     "fromSource": "src-jl2-aks-bukhansanseong",

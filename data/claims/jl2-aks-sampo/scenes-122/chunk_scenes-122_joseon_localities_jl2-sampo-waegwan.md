@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "왜인들은 성 밖에 거주하도록 제한된 장소를 왜관으로 정했다."
+      "value": "왜인들은 성 밖에 거주하도록 제한된 장소를 왜관으로 정하였다."
     },
     "note": "왜관이 성 밖의 제한 거주구역이었다는 서술.",
     "fromSource": "src-jl2-aks-sampo",

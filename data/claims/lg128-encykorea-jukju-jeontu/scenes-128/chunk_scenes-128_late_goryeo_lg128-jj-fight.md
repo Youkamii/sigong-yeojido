@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "적이 여러 방면으로 성을 공격했으나 포위 15일 만에 공성 기구를 불태우고 물러갔다"
+      "value": "적이 여러 방면으로 성을 공격하였으나 포위 15일 만에 공성 기구를 불태우고 물러갔다"
     },
     "note": "공방과 철수 서술을 원문 어구대로 옮겼다. 병력 수·성벽 구간은 항목에 없다.",
     "fromSource": "src-lg128-encykorea-jukju-jeontu",

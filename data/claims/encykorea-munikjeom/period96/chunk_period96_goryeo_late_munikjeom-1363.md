@@ -63,7 +63,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1363년(공민왕 12) 서장관으로 원나라에 갔다가 귀국할 때 몰래 목화씨 종자를 붓대 속에 넣어 가지고 돌아왔다."
+      "value": "1363년(공민왕 12) 서장관으로 원나라에 갔다. 귀국할 때 몰래 목화씨 종자를 붓대 속에 넣어 가지고 돌아왔다."
     },
     "fromSource": "src-encykorea-munikjeom",
     "citesChunk": "chunk_period96_goryeo_late_munikjeom-1363",

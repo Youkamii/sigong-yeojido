@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "고구려군이 살수에서 수나라군을 크게 격파했다"
+      "value": "고구려군이 살수에서 수나라군을 크게 격파하였다"
     },
     "note": "전투 서술.",
     "fromSource": "src-anc-enc-salsu",

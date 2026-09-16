@@ -31,7 +31,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "1423년(세종 5) 부산포와 제포를 개항해 왜인들의 거주를 허락했다."
+      "value": "1423년(세종 5) 부산포와 제포를 개항해 왜인들의 거주를 허락하였다."
     },
     "note": "행위: 개항과 거주 허락.",
     "fromSource": "src-jl2-aks-sampo",

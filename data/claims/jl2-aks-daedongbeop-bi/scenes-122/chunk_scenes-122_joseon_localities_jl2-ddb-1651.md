@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "왕이 충청도 대동법 시행을 기념하기 위해 비를 세우도록 했다."
+      "value": "왕이 충청도 대동법 시행을 기념하기 위해 비를 세우도록 하였다."
     },
     "note": "행위: 기념비 건립 명령.",
     "fromSource": "src-jl2-aks-daedongbeop-bi",

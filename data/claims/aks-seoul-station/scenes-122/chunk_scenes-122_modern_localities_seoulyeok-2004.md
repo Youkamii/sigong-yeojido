@@ -48,7 +48,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "2004년 4월 1일 KTX 열차 개통과 함께 서울통합민자역사로 새롭게 단장했다."
+      "value": "2004년 4월 1일 KTX 열차 개통과 함께 서울통합민자역사로 새롭게 단장하였다."
     },
     "note": "행위 서술은 인용문 표현을 옮긴 것이다. 개통식 행사 여부는 이 인용에 없다.",
     "fromSource": "src-aks-seoul-station",

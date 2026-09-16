@@ -14,7 +14,7 @@ status: "draft"
     "predicate": "syj:describedAs",
     "object": {
       "kind": "literal",
-      "value": "192명이 사망했다."
+      "value": "192명이 사망하였다."
     },
     "note": "출처의 사망자 수 표기다. 부상자 수와 재산 피해액은 이 인용에 넣지 않았다.",
     "fromSource": "src-aks-daegu-subway-fire-2003",
