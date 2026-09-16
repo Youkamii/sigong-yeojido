@@ -127,7 +127,7 @@ test('경성역은 원 패킷이 활성인 1925년에는 중복하지 않고 192
   assert.equal(at(station,1925),undefined);
   const row=at(station,1926);assert.ok(row);assert.equal(row.sceneFunction,'rail_station');
   assert.equal(row.archetype,'construction');assert.equal(row.setting,true);assert.equal(row.siteBackground.scope,'facility');
-  assert.match(row.summary,/건립 기록을 근거로 시설이 남아 있다고 추정한 배경이며 이후 변형·훼손 기록은 반영하지 않았다/);
+  assert.match(row.summary,/건립 기록을 보고 시설이 남아 있다고 추정한 배경이에요\. 이후 모습이 바뀌거나 훼손된 기록은 반영하지 않았어요/);
   assert.deepEqual(row.participants,[]);assert.deepEqual(row.participantGroups,[]);
   assert.equal(planContinuingFacilities(packets,{year:1926,events:[packets.find(s=>s.id===station)]}).some(r=>r.siteBackground.sourceSceneId===station),false);
   for(const year of [1926,2020,2100]){

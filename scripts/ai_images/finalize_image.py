@@ -11,7 +11,7 @@ import tempfile
 from PIL import Image, ImageOps
 
 
-LABEL = "AI 생성 상상도"
+LABEL = "AI 상상도"
 NOTICE = "실제 사료·유물 사진이 아니라 AI 가 만든 상상도입니다."
 GENERATOR = "codex gpt-6-astra"
 ROOT = Path(__file__).resolve().parents[2]

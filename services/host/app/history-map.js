@@ -13,12 +13,12 @@ export class HistoricalMap {
   async refresh(filters){
     const seq=++this.sequence;this.features=[];this.paths=[];this.callbacks.changed([]);
     const label=Number(filters.level)===5?'역로·옛길':Number(filters.level)===4?'사건 장소':'역사 경계';
-    this.button.textContent=label+' 조회 중…';
+    this.button.textContent=label+' 불러오고 있어요…';
     try{
       const response=await fetch('/api/history-map?'+new URLSearchParams({year:filters.year,sources:sourcesParam(filters.sources,filters.primary),origin:filters.origin,level:filters.level}));
-      if(!response.ok)throw Error(label+' 조회 실패');
+      if(!response.ok)throw Error(label+' 자료를 불러오지 못했어요.');
       const data=await response.json();if(seq!==this.sequence)return;
-      this.features=data.features;this.button.textContent=`${label} ${this.features.length}개 · 근거`;
+      this.features=data.features;this.button.textContent=`${label} ${this.features.length}개 · 출처 보기`;
       this.callbacks.changed(this.features);
     }catch(error){if(seq===this.sequence)this.button.textContent=error.message;}
   }

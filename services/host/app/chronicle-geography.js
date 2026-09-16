@@ -30,7 +30,7 @@ export class ChronicleGeography{
     this.parallel.name='latitude-38';this.parallel.computeLineDistances();this.parallel.visible=false;world.group.add(this.parallel);
     const toggle=document.getElementById('showParallel38');
     toggle.onchange=()=>{this.parallel.visible=toggle.checked;};
-    menu.replaceChildren(new Option('지역·산맥·섬으로 이동',''));
+    menu.replaceChildren(new Option('지역, 산맥, 섬으로 이동하기',''));
     for(const row of [...data.islands,...data.ridges,...(data.peaks||[])])this.addMarker(row);
     menu.onchange=()=>{if(menu.value)this.focus(menu.value);};
     document.getElementById('geographyClose').onclick=()=>{document.getElementById('geographyCard').hidden=true;};
@@ -75,8 +75,8 @@ export class ChronicleGeography{
     const card=document.getElementById('geographyCard');card.hidden=false;
     card.querySelector('strong').textContent=row.label;
     card.querySelector('p').textContent=[row.lon!=null?formatCoordinates([row.lon,row.lat]):'',
-      region&&row.precision==='area'?'지역 기준점 · 인물의 실제 위치를 뜻하지 않습니다.':'',
-      region?row.year+'년 · '+row.activities.map(a=>a.label).join(' / '):row.displayNote||''].filter(Boolean).join(' · ');
+      region&&row.precision==='area'?'지역을 나타내는 기준점이에요. 인물의 실제 위치를 뜻하지는 않아요.':'',
+      region?row.year+'년 · '+row.activities.map(a=>a.label).join(' / '):row.displayNote||''].filter(Boolean).join(', ');
     const refs=card.querySelector('div');refs.replaceChildren();
     const more=document.createElement('details'),summary=document.createElement('summary');
     summary.textContent='위치 자료 더 보기';more.append(summary);

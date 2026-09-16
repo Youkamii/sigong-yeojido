@@ -25,10 +25,10 @@ export function yearAtPosition(anchors,position){
 export class EventTimeline{
   constructor(host,{select,preview,commit,yearLabel}){
     this.host=host;this.select=select;this.preview=preview;this.commit=commit;this.yearLabel=yearLabel;this.entries=[];this.anchors=[];this.year=1593;
-    host.innerHTML=`<div class="event-strip-heading"><strong>주요 사건</strong><span class="event-strip-hint">좌우로 끌어 탐색</span><span data-event-total></span>
-      <button data-event-prev aria-label="이전 주요 사건">‹</button><button data-event-next aria-label="다음 주요 사건">›</button></div>
+    host.innerHTML=`<div class="event-strip-heading"><strong>주요 사건</strong><span class="event-strip-hint">좌우로 끌어 보세요</span><span data-event-total></span>
+      <button data-event-prev aria-label="이전 주요 사건 보기">‹</button><button data-event-next aria-label="다음 주요 사건 보기">›</button></div>
       <div class="event-strip-window" tabindex="0" role="region" aria-label="연도순 주요 사건"><div class="event-strip-axis"></div>
-      <div class="event-strip-cursor"><span></span></div><div class="event-strip-track"></div><p class="event-strip-empty" hidden>선택한 사료에 연결된 사건이 없습니다.</p></div>`;
+      <div class="event-strip-cursor"><span></span></div><div class="event-strip-track"></div><p class="event-strip-empty" hidden>고른 자료에 연결된 사건이 없어요.</p></div>`;
     this.viewport=host.querySelector('.event-strip-window');this.track=host.querySelector('.event-strip-track');
     host.querySelector('[data-event-prev]').onclick=()=>this.move(-1);host.querySelector('[data-event-next]').onclick=()=>this.move(1);
     this.viewport.onclick=e=>{if(this.dragged)return;const button=e.target.closest('[data-event-key]');if(button){const entry=this.entries.find(x=>x.key===button.dataset.eventKey);if(entry)this.select(entry);}};

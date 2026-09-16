@@ -12,7 +12,7 @@ export function mountQualityChoice(){
   const buttons=[...document.querySelectorAll('[data-gate-quality]')];
   const paint=()=>buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.gateQuality===selected)));
   const recommendation=document.getElementById('qualityRecommendation');
-  if(recommendation)recommendation.textContent=choice.persist?'이 기기 추천: '+labels[choice.recommended]:`검증용 화질(q=${labels[selected]})이 적용됩니다`;
+  if(recommendation)recommendation.textContent=choice.persist?'이 기기 추천: '+labels[choice.recommended]:`주소에서 고른 화질: ${labels[selected]}`;
   for(const button of buttons){
     button.disabled=!choice.persist;
     button.onclick=()=>{if(!choice.persist)return;selected=button.dataset.gateQuality;manual=true;paint();};

@@ -58,7 +58,7 @@ export class AtlasData{
     if(range)return `${yearLabel(range[0])} – ${yearLabel(range[1])}`;
     const event=this.eventsFor(id)[0];
     if(event)return yearLabel(event.lo)+(event.lo!==event.hi?' – '+yearLabel(event.hi):'');
-    return dates[0]?yearLabel(dates[0].lo):'연대 미확인';
+    return dates[0]?yearLabel(dates[0].lo):'연도 미확인';
   }
   eventsFor(id){
     id=this.canonicalId(id);

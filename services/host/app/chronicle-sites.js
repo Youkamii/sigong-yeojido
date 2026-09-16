@@ -31,11 +31,11 @@ export function planHistoricalSites(data,packets,plan){
     if(year<first.startYear||year>last.endYear||episodes.some(s=>plan.events.some(e=>e.id===s.id)))continue;
     const claimIds=[...new Set(episodes.flatMap(s=>[...s.dateClaimIds,...s.place.claimIds]))];
     const label=first.place.label.replace(/\s*\([^)]*\)/g,'');
-    const summary=`${first.startYear}년부터 ${last.endYear}년까지 연결된 기록 사이에 성곽을 이어서 보여줍니다. 계속 같은 모습으로 쓰였다는 확정 기록은 아니며, 마지막 표시 연도가 폐성 연도를 뜻하지도 않습니다.`;
+    const summary=`${first.startYear}년부터 ${last.endYear}년까지 이어지는 기록 사이에 성곽을 보여줘요. 계속 같은 모습으로 쓰였다는 확정 기록은 아니에요. 마지막 표시 연도가 성을 버린 해를 뜻하지도 않아요.`;
     sites.push({id:'background-'+entityId,entityId,kind:'event',year,label:'성곽 · '+label,
       archetype:'place',detail:'기록 사이를 잇는 추정 배경',summary,claimIds,
       siteBackground:{startYear:first.startYear,endYear:last.endYear,episodes:episodes.map(s=>({entityId:s.eventId,label:s.title}))},
-      scenePlace:{...first.place,label,coordinates:[first.place.lon,first.place.lat],displayBasis:'기록 사이를 잇는 추정 배경입니다. 성의 실제 윤곽이나 건물 배치를 복원한 것은 아닙니다.'},
+      scenePlace:{...first.place,label,coordinates:[first.place.lon,first.place.lat],displayBasis:'기록 사이를 잇는 추정 배경이에요. 성의 실제 윤곽이나 건물 배치를 복원한 모습은 아니에요.'},
       visualActions:{fortress:true},sites:[],effects:{},sides:[],participants:[]});
   }
   return sites;
@@ -70,10 +70,10 @@ export function planContinuingCities(packets,plan,claims,settlementZones=[]){
   const later=(a,b)=>a.scene.endYear>b.scene.endYear||(a.scene.endYear===b.scene.endYear&&a.scene.id<b.scene.id);
   const chosen=ended.filter(row=>!ended.some(other=>other!==row&&samePlace(other.place,row.place)&&later(other,row)));
   return chosen.map(({scene,place,claimIds})=>{
-    const label='이름 없는 도시 생활 배경',id='background-city-'+scene.id;
+    const label='이름 없는 도시 배경',id='background-city-'+scene.id;
     return {id,entityId:id,kind:'event',year:plan.year,label,archetype:'settlement',
       setting:true,detail:'과거 도시 기록의 위치를 잇는 추정 배경 · 기록 종료 뒤 존속',
-      summary:'이 위치의 도시 기록을 바탕으로 이름 없는 생활 배경을 이어서 보여줍니다. 이전 도시 명칭과 행정 지위, 사건과 인물의 기간을 연장한 것이 아닙니다. 현재 건물과 거리 배치는 복원도가 아닙니다.\n규모는 축소 표현',
+      summary:'이 위치의 도시 기록을 보고 이름 없는 생활 배경을 이어 보여줘요. 이전 도시 이름과 행정 지위가 계속됐다는 뜻은 아니에요. 사건과 인물의 기간을 늘린 것도 아니에요. 건물과 거리 배치는 복원도가 아니에요.\n규모는 축소 표현',
       claimIds,siteBackground:{scope:'anonymous-city',sourceSceneId:scene.id,
         recordedStartYear:scene.startYear,recordedEndYear:scene.endYear,episodes:[]},
       continuing:{sinceYear:scene.endYear+1,basis:'기록 종료 뒤 존속 추정',sourceSceneId:scene.id},

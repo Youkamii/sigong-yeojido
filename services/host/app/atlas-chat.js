@@ -31,18 +31,18 @@ export class AtlasChat{
     if(this.entityId!==id)this.invalidate();
     this.entityId=id||null;this.renderContext();this.ui.openPanel('chat');
   }
-  invalidate(reason='선택한 이야기나 사료가 바뀌었습니다. 현재 기록으로 다시 질문해 보세요.'){
+  invalidate(reason='고른 이야기나 자료가 바뀌었어요. 현재 기록으로 다시 물어보세요.'){
     this.entityId=null;this.chat.filtersChanged();
     this.pane.querySelector('.chat-status').textContent=reason;
     this.question.hidden=true;this.suggestions.hidden=false;
   }
   renderContext(){
     const entity=this.ui.data.entities.get(this.entityId);
-    this.context.textContent=`선택한 이야기 · ${entity?this.ui.data.label(entity)+' · ':''}${yearLabel(this.ui.chronicle.year)}`;
+    this.context.textContent=`고른 이야기: ${entity?this.ui.data.label(entity)+' · ':''}${yearLabel(this.ui.chronicle.year)}`;
     const events=entity?this.ui.data.eventsFor(entity.id):this.ui.data.context?.events||[];
     const questions=[...new Set(events.slice(0,3).map(e=>`${cleanTitle(e.title)}에 대해 기록은 어떻게 설명하나요?`))];
     if(entity?.type==='Person')questions.unshift(`${this.ui.data.label(entity)}과 관련된 사건을 알려주세요.`);
-    this.suggestions.innerHTML=questions.length?`<p>이런 질문도 해보세요</p>${questions.slice(0,3).map(q=>`<button data-chat-suggestion="${esc(q)}">${esc(q)}</button>`).join('')}`:'';
+    this.suggestions.innerHTML=questions.length?`<p>이런 질문도 해 보세요</p>${questions.slice(0,3).map(q=>`<button data-chat-suggestion="${esc(q)}">${esc(q)}</button>`).join('')}`:'';
   }
   update(changed){if(changed){this.invalidate();this.renderContext();}}
 }

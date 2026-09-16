@@ -281,64 +281,64 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
     <h1>시공여지도</h1>
     <div class="rom">SIGONG YEOJIDO</div>
     <p>김정호는 자기 시대의 조선을 목판에 새겼다. 대동여지도는 한 시점의 공간이다.
-       여기서는 거기에 시간을 얹는다 — 그리고 모든 선에 어느 사료가 그렇게 말했는지를 달아둔다.</p>
+       이 지도에서는 시간도 살펴봐요. 각 선을 그린 근거도 자료에서 확인해요.</p>
     <div class="quality-choice" role="group" aria-label="시작 화질" aria-describedby="qualityRecommendation">
       <div class="quality-options">
-        <button type="button" data-gate-quality="low" aria-pressed="false"><strong>낮음</strong><span>패드·오래된 기기, 빠른 시작</span></button>
+        <button type="button" data-gate-quality="low" aria-pressed="false"><strong>낮음</strong><span>패드나 오래된 기기에서 빠르게</span></button>
         <button type="button" data-gate-quality="medium" aria-pressed="false"><strong>보통</strong><span>노트북</span></button>
-        <button type="button" data-gate-quality="high" aria-pressed="false"><strong>높음</strong><span>데스크톱·고성능</span></button>
+        <button type="button" data-gate-quality="high" aria-pressed="false"><strong>높음</strong><span>성능 좋은 컴퓨터</span></button>
       </div>
       <p id="qualityRecommendation" role="status"></p>
     </div>
     <button class="enter" id="enter">들어가기</button>
   </div>
-  <div class="credit">대동여지도 (규장각 소장본) · Public domain · commons.wikimedia.org</div>
+  <div class="credit">대동여지도 (규장각 소장본) · 저작권 제한 없음 · commons.wikimedia.org</div>
 </div>
 
 <div id="app">
   <div class="bar">
     <span class="brand">시공여지도<small>SIGONG YEOJIDO</small></span>
     <div class="seg">
-      <button id="b2d" class="on">지도</button>
-      <button id="b3d">3D</button>
-      <button id="bgraph">그래프</button>
-      <button id="bchat">질문</button>
-      <button id="bcompare">비교</button>
+      <button id="b2d" class="on">지도 보기</button>
+      <button id="b3d">입체로 보기</button>
+      <button id="bgraph">연결 보기</button>
+      <button id="bchat">물어보기</button>
+      <button id="bcompare">비교하기</button>
     </div>
     <span class="spacer"></span>
-      <button id="sourcesBtn" class="panel-btn" aria-controls="sourceRail" aria-expanded="false">기본 사료 5종</button>
+      <button id="sourcesBtn" class="panel-btn" aria-controls="sourceRail" aria-expanded="false">기본 자료 5종 보기</button>
     <button id="evidenceBtn" class="panel-btn" aria-controls="evi" aria-expanded="false">출처 열기</button>
-    <label class="origin-filter" title="작성자가 사람으로 기록된 연결만 표시한다. 원문은 그대로 볼 수 있다."><input id="humanOnly" type="checkbox"> AI 연결 제외</label>
+    <label class="origin-filter" title="사람이 작성한 연결만 보여줘요. 원문은 그대로 볼 수 있어요."><input id="humanOnly" type="checkbox"> AI 연결 제외</label>
     <span class="back" id="toGate">← 대동여지도</span>
   </div>
 
   <div class="stage">
     <aside class="rail" id="sourceRail">
       <div class="sect">찾기</div>
-      <input id="q" class="q" type="search" placeholder="지명 · 인물 · 나라 · 사건" autocomplete="off" aria-label="찾기">
+      <input id="q" class="q" type="search" placeholder="지명, 인물, 나라, 사건 찾기" autocomplete="off" aria-label="찾기">
       <div id="qList" class="qlist"></div>
       <details id="peopleSearch" hidden></details>
       <div hidden>
-      <div class="sect">주 렌즈</div>
-      <select id="lensSelect" class="q" aria-label="주 렌즈"></select>
+      <div class="sect">기준 자료</div>
+      <select id="lensSelect" class="q" aria-label="기준 자료"></select>
       <p id="lensNote" class="empty"></p>
       <label class="empty" for="historyLevel">역사 지도 종류</label>
-      <select id="historyLevel" class="q" aria-label="역사 지도 종류"><option value="0">국가·정치집단 경계</option><option value="1" selected>도 경계</option><option value="2">군·부 등 경계</option><option value="3">읍·면 등 경계</option><option value="4">사건 관련 장소</option><option value="5">역로·현재 옛길</option></select>
-      <button id="historyMapBtn" class="card-btn">역사 경계 0개 · 출처</button>
-      <p class="empty">주 렌즈는 진하게, 추가로 켠 비교 사료는 옅게 겹쳐 보인다.</p>
+      <select id="historyLevel" class="q" aria-label="역사 지도 종류"><option value="0">나라·세력 경계</option><option value="1" selected>도 경계</option><option value="2">군·부 등 경계</option><option value="3">읍·면 등 경계</option><option value="4">사건 관련 장소</option><option value="5">옛 역로·현재 옛길</option></select>
+      <button id="historyMapBtn" class="card-btn">역사 경계 0개 · 출처 보기</button>
+      <p class="empty">기준 자료는 진하게 보여요. 비교할 자료는 옅게 겹쳐 보여요.</p>
       </div>
       <button id="allSources" class="card-btn">5종 모두 켜기</button>
       <button id="noSources" class="card-btn">모두 끄기</button>
-      <div class="sect">사료</div>
+      <div class="sect">자료</div>
       <div id="srcList"></div>
       <div hidden><div class="sect">범례</div>
       <div class="legend">
         <div><i style="background:#7FBBA8"></i>위치 확정</div>
-        <div><i style="background:#8FBF74"></i>통설</div>
-        <div><i style="background:#D2836A"></i>비정이 갈림</div>
-        <div><i style="background:#4A443A"></i>위치 미정</div>
+        <div><i style="background:#8FBF74"></i>널리 인정된 위치</div>
+        <div><i style="background:#D2836A"></i>위치 해석이 갈림</div>
+        <div><i style="background:#4A443A"></i>위치 미확인</div>
       </div>
-      <div class="sect">데이터</div>
+      <div class="sect">자료 현황</div>
       <div class="legend" id="stats"></div>
       </div>
     </aside>
@@ -347,47 +347,47 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;bac
       <canvas id="map"></canvas>
       <div id="three"></div>
       <div class="scene-context" id="sceneContext"><h2>1593년</h2><p>동시대 인물과 사건</p>
-        <div class="scene-actions"><button id="periodSceneBtn">이 시대 가까이</button><button id="wholeMapBtn">한반도 전체</button><button id="eastAsiaBtn">주변국까지</button></div>
+        <div class="scene-actions"><button id="periodSceneBtn">이 시대 가까이 보기</button><button id="wholeMapBtn">한반도 전체 보기</button><button id="eastAsiaBtn">주변국까지 보기</button></div>
         <div class="scene-navigation"><label for="sceneDestination">장면 이동</label><select id="sceneDestination" aria-label="인물과 사건 장면으로 이동"></select>
-          <button id="sceneZoomIn" aria-label="지도 확대">+</button><button id="sceneZoomOut" aria-label="지도 축소">−</button></div>
+          <button id="sceneZoomIn" aria-label="지도 확대하기">+</button><button id="sceneZoomOut" aria-label="지도 축소하기">−</button></div>
         <details id="mapDisplay" class="map-display"><summary>지도 표시</summary>
           <fieldset><legend>이름표</legend><label><input type="checkbox" data-map-display="regions" checked>당시 수도</label><label><input type="checkbox" data-map-display="geography" checked>대표 산·섬</label><label><input type="checkbox" data-map-display="morePlaces">다른 지명·봉우리</label><label><input type="checkbox" data-map-display="people" checked>인물 이름</label><label><input type="checkbox" data-map-display="events" checked>사건 이름</label><label><input type="checkbox" data-map-display="siteNames">도시·시설 이름</label></fieldset>
-          <fieldset><legend>풍경</legend><label><input type="checkbox" data-map-display="territories" checked>국가 영역</label><label><input type="checkbox" data-map-display="scenery" checked>마을·밭·동물 (추정 배경 · 사료 없음)</label><label><input type="checkbox" data-map-display="estimatedDim" checked>추정 배경 흐리게</label><label><input type="checkbox" data-map-display="forest" checked>숲</label><label><input type="checkbox" data-map-display="paths" checked>길</label><label><input type="checkbox" data-map-display="siteBackground">기록 사이의 추정 성곽</label></fieldset>
+          <fieldset><legend>풍경</legend><label><input type="checkbox" data-map-display="territories" checked>국가 영역</label><label><input type="checkbox" data-map-display="scenery" checked>마을, 밭, 동물 (추정 배경, 자료 없음)</label><label><input type="checkbox" data-map-display="estimatedDim" checked>추정 배경 흐리게</label><label><input type="checkbox" data-map-display="forest" checked>숲</label><label><input type="checkbox" data-map-display="paths" checked>길</label><label><input type="checkbox" data-map-display="siteBackground">기록 사이의 추정 성곽</label></fieldset>
         </details>
         <details class="map-display tradition-browser"><summary>설화·전승 따로 보기</summary>
-          <p>이야기의 무대를 한 편씩 봅니다. 연도를 바꾸면 지도에서 닫힙니다.</p>
+          <p>이야기의 무대를 한 편씩 보세요. 연도를 바꾸면 지도에서 닫혀요.</p>
           <label for="traditionDestination">이야기</label><select id="traditionDestination"><option value="">이야기를 골라 보기</option></select>
         </details>
         <small id="sceneAssetNote" hidden></small>
         <details id="territoryLegend" class="territory-legend"></details>
         <small id="territoryNote" hidden></small>
       </div>
-      <div id="sceneEvents" class="scene-events" aria-label="3D 지도의 사건"></div>
+      <div id="sceneEvents" class="scene-events" aria-label="입체 지도의 사건"></div>
       <aside id="sceneFocus" class="scene-focus" aria-label="현장의 사건과 핵심 인물" hidden></aside>
       <div id="sceneGeography" class="scene-events" aria-label="산맥과 섬"></div>
       <div class="geography-navigation"><select id="geographyDestination" aria-label="지역과 산맥, 섬으로 이동"></select>
-        <label title="북위 38도인 위도선입니다. 현재의 군사분계선과 다릅니다."><input type="checkbox" id="showParallel38">북위 38°</label></div>
+        <label title="북위 38도인 위도선이에요. 현재의 군사분계선과는 달라요."><input type="checkbox" id="showParallel38">북위 38°</label></div>
       <aside id="geographyCard" class="geography-card" hidden><button id="geographyClose" aria-label="지리 설명 닫기">×</button><strong></strong><p></p><div></div></aside>
-      <div id="graph" aria-label="출처 그래프"></div>
-      <div id="chat" aria-label="사료 출처 챗봇"></div>
-      <div id="compare" aria-label="사료별 사건 비교"></div>
-      <div class="hint" id="hint">지명을 클릭하면 출처가 열린다</div>
-      <button id="resetMap" hidden>전체 지도</button>
+      <div id="graph" aria-label="출처 연결"></div>
+      <div id="chat" aria-label="자료를 읽고 답하는 AI"></div>
+      <div id="compare" aria-label="자료별 사건 비교"></div>
+      <div class="hint" id="hint">지명을 누르면 출처가 열려요</div>
+      <button id="resetMap" hidden>전체 지도 보기</button>
       <details id="outside3d" hidden><summary></summary><div></div></details>
       <div class="timebar">
         <div id="historyTime" aria-label="역사 시간 탐색"></div>
         <div class="row">
           <span class="year"><b id="yearV">414</b><span id="yearL">서기</span>
-            <button id="yearBtn" class="yearbtn" type="button" title="이 해로 연대가 붙은 기사를 본다">이 해의 기록</button>
-            <button id="timeClaimsBtn" class="yearbtn" type="button">연대 주장</button></span>
-          <div id="tl" class="tlhost" aria-label="사료별 시간 막대"></div>
+            <button id="yearBtn" class="yearbtn" type="button" title="이 해로 날짜가 붙은 기록을 보세요">이 해의 기록 보기</button>
+            <button id="timeClaimsBtn" class="yearbtn" type="button">연도 기록 보기</button></span>
+          <div id="tl" class="tlhost" aria-label="자료별 시간 막대"></div>
         </div>
       </div>
     </div>
 
     <aside id="chronicle" class="chronicle-panel" aria-label="이 시대의 인물과 사건"></aside>
-    <aside class="evi" id="evi" tabindex="-1" aria-label="사료와 주장 출처">
-      <p class="empty">지도에서 지명을 고르면 그 지명이 어느 사료 어느 대목에서 나왔는지, 위치를 무엇으로 보는지가 여기 열린다.</p>
+    <aside class="evi" id="evi" tabindex="-1" aria-label="자료와 기록 출처">
+      <p class="empty">지도에서 지명을 골라 보세요. 이름이 나온 자료와 위치를 정한 근거가 여기에 열려요.</p>
     </aside>
   </div>
 </div>
@@ -510,8 +510,8 @@ function refreshHistoryMap(){historyMap.refresh({sources:state.on,primary:state.
 function showHistoricalList(reveal=true){
   if(reveal)openEvidence();++panelSeq;state.panel='history';state.sel=null;
   const el=document.getElementById('evi');
-  const description=historyLevel.value==='5'?'출처에 있는 선을 표시한다. 현재 옛길 안내 코스는 제공 자료의 기준연도에만 참고 표시하며 과거 노선과의 동일성은 각 출처에서 확인할 수 있다. 서로 떨어진 선을 잇거나 역참 점으로 길을 만들지 않는다.':historyLevel.value==='4'?'기록의 기준연도에 맞춰 사건 관련 장소를 표시한다. 점은 국가유산청의 현재 목록 좌표이며 전투 범위가 아니다. 사건 전체의 시작·끝을 이 연도로 정하지 않는다.':historyLevel.value==='0'?'Cliopatria v0.1.3의 시기별 경계 견해다. 1911~1947년은 국사편찬위원회 1910~1945 행정구역(13도)을 합친 참고 도형으로 보충하며, 그 출처를 끄면 비어 있다. 도형 적용 기간을 국가의 건국·멸망 연도로 판정하지 않는다.':`${historyLevel.value==='3'?'1883':'1910'}~1945년 기관 레코드 중 선택한 해와 기간이 겹치는 경계를 표시한다. 같은 해에 바뀐 경계는 함께 보이며, 변경일과 기관의 추정 표기는 각 출처에 남아 있다.`;
-  el.innerHTML=`<h3>선택한 해의 ${{0:'국가·정치집단 경계',1:'도 경계',2:'군·부 등 경계',3:'읍·면 등 경계',4:'사건 관련 장소',5:'역로·옛길'}[historyLevel.value]}</h3><p class="empty">${description}</p>`;
+  const description=historyLevel.value==='5'?'출처에 있는 선을 보여줘요. 현재 옛길 안내 코스는 자료의 기준연도에만 참고로 보여줘요. 과거에도 같은 길이었는지는 출처에서 확인하세요. 떨어진 선을 잇거나 역참 위치로 길을 만들지는 않아요.':historyLevel.value==='4'?'기록의 기준연도에 맞춰 사건 장소를 보여줘요. 점은 국가유산청의 현재 목록에 있는 위치예요. 전투 범위나 사건 전체의 시작·끝 연도를 뜻하지는 않아요.':historyLevel.value==='0'?'Cliopatria v0.1.3에서 제시한 시기별 경계예요. 1911~1947년은 국사편찬위원회 1910~1945 행정구역 13도를 합쳐 보충했어요. 그 출처를 끄면 이 기간은 비어 있어요. 경계의 표시 기간이 건국·멸망 연도를 뜻하지는 않아요.':`${historyLevel.value==='3'?'1883':'1910'}~1945년 기관 기록에서 고른 해에 해당하는 경계를 보여줘요. 같은 해에 바뀐 경계는 함께 보여요. 변경일과 기관이 추정한 내용은 각 출처에서 확인하세요.`;
+  el.innerHTML=`<h3>선택한 해의 ${{0:'나라·세력 경계',1:'도 경계',2:'군·부 등 경계',3:'읍·면 등 경계',4:'사건 관련 장소',5:'역로·옛길'}[historyLevel.value]}</h3><p class="empty">${description}</p>`;
   const search=document.createElement('input');search.className='q';search.placeholder=historyLevel.value==='5'?'역로 이름 찾기':'경계 이름 찾기';search.setAttribute('aria-label',historyLevel.value==='5'?'역로 이름 찾기':'역사 경계 이름 찾기');
   el.append(search);const list=document.createElement('div');el.append(list);
   const render=()=>{list.replaceChildren();for(const feature of historyMap.features){
@@ -519,21 +519,21 @@ function showHistoricalList(reveal=true){
     const button=document.createElement('button');button.className='card-btn';button.dataset.feature=feature.id;
     button.textContent=`${p.label} · ${p.begin}~${p.end} · 출처`;button.onclick=()=>showHistoricalFeature(feature);list.append(button);}};
   search.oninput=render;render();
-  if(!historyMap.features.length)el.insertAdjacentHTML('beforeend','<p class="empty">현재 연도·사료·작성자 선택에서 표시할 자료가 없다.</p>');
+  if(!historyMap.features.length)el.insertAdjacentHTML('beforeend','<p class="empty">고른 연도와 자료, 작성자에 맞는 결과가 없어요.</p>');
 }
 function showHistoricalFeature(feature){
   openEvidence();++panelSeq;state.panel='history-feature';state.sel=null;
   const p=feature.properties,r=p.sourceRecord,el=document.getElementById('evi'),polity=p.kind==='polity-boundary',route=['historical-route','current-old-road-track'].includes(p.kind);
   if(polity&&r.derived){
     el.innerHTML=`<h3>${escH(p.label)} · 역사 국가 경계 (참고 도형)</h3><p>${escH(p.begin)} ~ ${escH(p.end)}</p>
-      <p class="empty">국사편찬위원회 1910~1945 행정구역 13도를 합쳐 만든 참고 도형이며 실제 국경·통치 범위가 아닙니다. 1945~1947년은 위도 38도선으로 나눈 구역입니다.</p>`;
+      <p class="empty">국사편찬위원회 1910~1945 행정구역 13도를 합친 참고 경계예요. 실제 국경·통치 범위와는 달라요. 1945~1947년은 위도 38도선으로 나눈 구역이에요.</p>`;
     p.derivedFrom.forEach((id,i)=>{
       const row=document.createElement('p'),button=document.createElement('button');button.className='card-btn';
       row.append(document.createTextNode(p.derivedLabels[i]+' '));button.textContent='출처';
       button.onclick=()=>showChunk('chunk_'+id);row.append(button);el.append(row);
     });
     const source=document.createElement('button'),list=document.createElement('button');
-    source.className=list.className='card-btn';source.textContent='사료 카드';list.textContent='경계 목록';
+    source.className=list.className='card-btn';source.textContent='자료 설명 보기';list.textContent='경계 목록 보기';
     source.onclick=()=>showSource(p.fromSource);list.onclick=()=>showHistoricalList();el.append(source,list);
     return;
   }
@@ -542,23 +542,23 @@ function showHistoricalFeature(feature){
       <p class="empty">${escH(p.basis)}</p><p>${escH(p.siteNature)}</p>
       <p>기관 원 좌표 ${escH(r.longitude)}, ${escH(r.latitude)} · 지정 면적 ${escH(r.ccbaQuan)}</p>
       <div class="quote">${escH(p.eventQuote)}</div><p class="empty">기준연도 출처: ${escH(p.dateQuote)}<br>${escH(p.dateBasis)}</p>
-      <button class="card-btn" data-event-record>좌표 원 레코드</button><button class="card-btn" data-event-evidence>사건 출처</button>
-      <button class="card-btn" data-event-date>연도 출처</button><button class="card-btn" data-event-graph>그래프 연결</button>`;
+      <button class="card-btn" data-event-record>위치 원자료 보기</button><button class="card-btn" data-event-evidence>사건 출처 보기</button>
+      <button class="card-btn" data-event-date>연도 출처 보기</button><button class="card-btn" data-event-graph>연결 보기</button>`;
     el.querySelector('[data-event-record]').onclick=()=>showChunk(p.citesChunk);
     el.querySelector('[data-event-evidence]').onclick=()=>showChunk(p.eventChunk);
     el.querySelector('[data-event-date]').onclick=()=>showChunk(p.dateChunk);
     el.querySelector('[data-event-graph]').onclick=()=>{state.sel=p.eventId;document.getElementById('bgraph').click();};
     return;
   }
-  const detail=route?`<p>${escH(p.basis||'')}</p><p class="empty">${escH(p.periodNote||'')}</p>${p.quote?`<div class="quote">${escH(p.quote)}</div>`:''}`:polity?`<p>원 이름: ${escH(r.Name)} · 원 면적 ${escH(r.Area)} km²</p><p class="empty">한 데이터셋의 경계 견해다. 적용 기간의 양 끝을 포함하며 음수는 제공처의 기원전 표기다. 국가의 실제 건국·멸망 연도를 뜻하지 않는다.</p><p class="empty">원 도형 CRS84 경도·위도. 개별 고지도와의 대조는 미확인이다.</p>${p.outsideDiorama?'<p class="empty">한반도 표시 범위 밖의 일부 경계는 3D에서 생략된다.</p>':''}`:
-    `<p class="empty">원 호칭 ${escH(r.type||'미기재')} · 상위 구역 코드 ${escH(r.up_key||'없음')}</p><div class="quote">${escH(r.begin_sour||'시작 출처 미기재')} → ${escH(r.end_source||'종료 출처 미기재')}</div><p>기관 표기: ${escH(r.geom_ref||'미기재')} · 신뢰도 코드 ${escH(r.trust??'미기재')}</p><p class="empty">${escH(r.reference||'')}</p>`;
+  const detail=route?`<p>${escH(p.basis||'')}</p><p class="empty">${escH(p.periodNote||'')}</p>${p.quote?`<div class="quote">${escH(p.quote)}</div>`:''}`:polity?`<p>원래 이름: ${escH(r.Name)} · 원래 면적 ${escH(r.Area)} km²</p><p class="empty">한 자료에서 제시한 경계예요. 표시 기간은 시작과 끝 연도를 포함해요. 음수는 제공처가 기원전을 적은 방식이에요. 실제 건국·멸망 연도를 뜻하지는 않아요.</p><p class="empty">원 경계는 CRS84 방식의 경도·위도예요. 개별 고지도와 대조했는지는 미확인이에요.</p>${p.outsideDiorama?'<p class="empty">한반도 표시 범위 밖의 일부 경계는 입체 지도에서 생략해요.</p>':''}`:
+    `<p class="empty">원 호칭 ${escH(r.type||'미기재')} · 상위 구역 번호 ${escH(r.up_key||'없음')}</p><div class="quote">${escH(r.begin_sour||'시작 출처 미기재')} → ${escH(r.end_source||'종료 출처 미기재')}</div><p>기관 표기: ${escH(r.geom_ref||'미기재')} · 신뢰도 표시 ${escH(r.trust??'미기재')}</p><p class="empty">${escH(r.reference||'')}</p>`;
   el.innerHTML=`<h3>${escH(p.label)} · ${p.kind==='current-old-road-track'?'현재 옛길 참고':route?'역로':`역사 ${polity?'국가':'행정'} 경계`}</h3><p>${escH(p.begin)} ~ ${escH(p.end)}</p>
     <p class="empty">${escH(srcLabelOf(p.fromSource))} · ${p.origin==='human'?'사람 작성':'AI 변환'} · ${route?'출처의 선 기록':'표시용 경계 단순화'}</p>
     ${detail}
-    ${p.historyChunk?`<p>${escH(srcLabelOf(p.historySource))}</p><div class="quote">${escH(p.historyQuote)}</div><p class="empty">${escH(p.relatedHistoryNote)}</p><button class="card-btn" data-history-description>별도 역사 설명</button>`:''}
-    ${p.originalGeometryValid===false?`<p class="empty">${p.originalGeometryIssue?.startsWith('Too few points')?'원 도형의 꼭짓점 수가 부족하다.':'원 도형에 자기 교차가 있다.'} 원 좌표 해시와 표시용 단순화 결과를 함께 보존한다.</p>`:''}
-    ${p.displayGeometryValid===false?'<p class="empty">표시용 도형에도 오류가 남아 있다. 원 레코드와 도형의 확인이 필요하다.</p>':''}
-    <button class="card-btn" data-history-chunk>원 레코드</button><button class="card-btn" data-history-source>사료 카드</button><button class="card-btn" data-history-list>${route?'역로':'경계'} 목록</button>`;
+    ${p.historyChunk?`<p>${escH(srcLabelOf(p.historySource))}</p><div class="quote">${escH(p.historyQuote)}</div><p class="empty">${escH(p.relatedHistoryNote)}</p><button class="card-btn" data-history-description>역사 설명 보기</button>`:''}
+    ${p.originalGeometryValid===false?`<p class="empty">${p.originalGeometryIssue?.startsWith('Too few points')?'원 경계를 그릴 꼭짓점이 부족해요.':'원 경계선이 서로 엇갈려요.'} 원 좌표의 확인값과 간단히 그린 경계를 함께 보관해요.</p>`:''}
+    ${p.displayGeometryValid===false?'<p class="empty">표시한 경계에도 오류가 있어요. 원자료와 경계를 확인해 주세요.</p>':''}
+    <button class="card-btn" data-history-chunk>원자료 보기</button><button class="card-btn" data-history-source>자료 설명 보기</button><button class="card-btn" data-history-list>${route?'역로':'경계'} 목록 보기</button>`;
   el.querySelector('[data-history-chunk]').onclick=()=>showChunk(p.citesChunk);
   el.querySelector('[data-history-source]').onclick=()=>showSource(p.fromSource);
   el.querySelector('[data-history-list]').onclick=()=>showHistoricalList();
@@ -580,13 +580,13 @@ async function showChunk(id,reveal=true){
   const seq=++panelSeq;
   state.panel='chunk';state.chunkId=id;state.sel=null;
   const el=document.getElementById('evi');
-  el.innerHTML='<p class="empty">원문을 불러오는 중…</p>';
+  el.innerHTML='<p class="empty">원문을 불러오고 있어요…</p>';
   try{
     const response=await fetch('/api/chunk?'+new URLSearchParams({id,sources:sourcesParam(state.on,state.primary)}));
-    if(!response.ok)throw new Error('원문 조회 실패');
+    if(!response.ok)throw new Error('원문을 불러오지 못했어요.');
     const data=await response.json();
     if(seq!==panelSeq)return;
-    el.innerHTML=data.found?`<h3>인용한 원문</h3>${chunkCard(data.chunk,[])}`:'<p class="empty">현재 사료 선택에서 원문을 찾지 못했다.</p>';
+    el.innerHTML=data.found?`<h3>인용한 원문</h3>${chunkCard(data.chunk,[])}`:'<p class="empty">고른 자료에서 원문을 찾지 못했어요.</p>';
   }catch(error){if(seq===panelSeq)el.textContent=error.message;}
 }
 
@@ -600,11 +600,11 @@ function showGraphClaim(claim){
     object.kind==='time'?object.verbatim:object.kind==='location'?`${object.lat}, ${object.lon}`:
     object.kind==='year'?`${object.value<0?'기원전 '+(-object.value):object.value}년`:object.value;
   el.innerHTML=`<h3>${escH(claim.subjectLabel)}</h3><div class="sect">${escH(claim.predicate.replace('syj:',''))}</div>
-    <p>${escH(value)}</p>${object.kind==='time'?`<p class="empty">${escH(object.precision)} · ${object.calendar?escH(object.calendar)+' · ':''}${object.earliest??object.year??'시작 미상'} ~ ${object.latest??object.year??'끝 미상'}</p>`:''}
+    <p>${escH(value)}</p>${object.kind==='time'?`<p class="empty">${escH(object.precision)} · ${object.calendar?escH(object.calendar)+' · ':''}${object.earliest??object.year??'시작 미확인'} ~ ${object.latest??object.year??'끝 미확인'}</p>`:''}
     <span class="badge ${claim.origin==='ai'?'ai':'human'}">${claim.origin==='ai'?'AI 추출':'사람'}</span>
     <div class="quote">${escH(claim.quote)}</div><div class="srcline">${escH(claim.sourceLabel)} · ${escH(claim.chunk.locator||claim.citesChunk)}</div>
     ${claim.note?`<p class="empty">${escH(claim.note)}</p>`:''}
-    <button class="card-btn" data-evidence-action="chunk">인용한 원문 열기</button><button class="card-btn" data-evidence-action="source">사료 카드</button>`;
+    <button class="card-btn" data-evidence-action="chunk">인용한 원문 열기</button><button class="card-btn" data-evidence-action="source">자료 설명 보기</button>`;
   el.querySelector('[data-evidence-action=chunk]').onclick=()=>showChunk(claim.citesChunk);
   el.querySelector('[data-evidence-action=source]').onclick=()=>showSource(claim.fromSource);
 }
@@ -616,7 +616,7 @@ function setDrawer(kind){
   document.getElementById('evidenceBtn').setAttribute('aria-expanded', String(kind === 'evidence'));
   document.getElementById('sourcesBtn').setAttribute('aria-expanded', String(kind === 'sources'));
   document.getElementById('evidenceBtn').textContent = kind === 'evidence' ? '출처 닫기' : '출처 열기';
-  document.getElementById('sourcesBtn').textContent = kind === 'sources' ? '사료 닫기' : '기본 사료 5종';
+  document.getElementById('sourcesBtn').textContent = kind === 'sources' ? '자료 닫기' : '기본 자료 5종 보기';
 }
 function openEvidence(){
     setDrawer('evidence');
@@ -664,7 +664,7 @@ function renderOutside(){
   for(const {place, candidate} of rows){
     const button = document.createElement('button');
     button.dataset.place = place.id;
-    button.textContent = `${place.labelKo || place.label} · ${candidate.view || candidate.basis || '위치 후보'} (${candidate.lat.toFixed(4)}, ${candidate.lon.toFixed(4)}) → 지도·출처`;
+    button.textContent = `${place.labelKo || place.label} · ${candidate.view || candidate.basis || '위치 후보'} (${candidate.lat.toFixed(4)}, ${candidate.lon.toFixed(4)}) → 지도·출처 보기`;
     button.onclick = () => {
       state.mapFocus = candidate;
       document.getElementById('resetMap').hidden = false;
@@ -831,9 +831,9 @@ async function refreshTimeClaims(){
     const response=await fetch('/api/time?'+new URLSearchParams({sources:sourcesParam(state.on,state.primary),origin:state.origin}));
     const data=await response.json();
     if(seq!==timeSeq)return;
-    if(!response.ok)throw new Error(data.error||'연대 조회 실패');
+    if(!response.ok)throw new Error(data.error||'연도 기록을 불러오지 못했어요.');
     timeData=data;tl?.setTimeClaims(data.events);
-    document.getElementById('timeClaimsBtn').textContent=`연대 주장 ${data.events.length}${data.hasMore?'+':''}`;
+    document.getElementById('timeClaimsBtn').textContent=`연도 기록 보기 ${data.events.length}${data.hasMore?'+':''}`;
     if(state.panel==='times')showTimeClaims(false);
   }catch(error){if(seq===timeSeq)document.getElementById('timeClaimsBtn').textContent=error.message;}
 }
@@ -846,21 +846,21 @@ function openTimeProjection(claim,projection){
 function showTimeClaims(reveal=true){
   if(reveal)openEvidence();
   ++panelSeq;state.panel='times';state.sel=null;
-  const el=document.getElementById('evi');el.innerHTML='<h3>선택한 사료의 연대 주장</h3><p class="empty">원표기와 환산 주장은 별도로 남긴다. 연도 버튼은 그 환산의 출처와 시간축을 함께 연다. 범위가 없는 날짜는 미상이다.</p>';
+  const el=document.getElementById('evi');el.innerHTML='<h3>선택한 자료의 연도 기록</h3><p class="empty">원래 날짜와 서기로 바꾼 날짜를 따로 보여줘요. 연도를 누르면 출처와 시간 막대가 함께 열려요. 날짜 범위가 없으면 미확인으로 표시해요.</p>';
   for(const claim of [...timeData.events,...timeData.relations]){
     const card=document.createElement('div');card.className='claim';
     const raw=claim.object.verbatim||claim.object.id;
-    card.innerHTML=`<div class="sect">${escH(claim.subjectLabel)} · ${escH(claim.sourceLabel)}</div><button class="card-btn time-original">${escH(raw)} · 원표기 출처</button>`;
+    card.innerHTML=`<div class="sect">${escH(claim.subjectLabel)} · ${escH(claim.sourceLabel)}</div><button class="card-btn time-original">${escH(raw)} · 원래 날짜 출처 보기</button>`;
     card.querySelector('button').onclick=()=>showGraphClaim(claim);
     for(const projection of claim.projections||[]){
       const button=document.createElement('button');button.className='card-btn time-projection';button.dataset.claim=projection.claimId;
-      button.textContent=`${projection.earliest??'시작 미상'} ~ ${projection.latest??'끝 미상'} · ${srcLabelOf(projection.fromSource)}`;
+      button.textContent=`${projection.earliest??'시작 미확인'} ~ ${projection.latest??'끝 미확인'} · ${srcLabelOf(projection.fromSource)}`;
       button.onclick=()=>openTimeProjection(claim,projection);card.append(button);
     }
-    if(claim.object.kind==='time'&&!claim.projections.length)card.insertAdjacentHTML('beforeend','<p class="empty">선택한 조건의 서기 환산 없음</p>');
+    if(claim.object.kind==='time'&&!claim.projections.length)card.insertAdjacentHTML('beforeend','<p class="empty">고른 조건에 맞는 서기 날짜가 없어요</p>');
     el.append(card);
   }
-  if(!timeData.events.length&&!timeData.relations.length)el.insertAdjacentHTML('beforeend','<p class="empty">선택한 조건의 연대 주장이 없다.</p>');
+  if(!timeData.events.length&&!timeData.relations.length)el.insertAdjacentHTML('beforeend','<p class="empty">고른 조건에 맞는 연도 기록이 없어요.</p>');
 }
 document.getElementById('timeClaimsBtn').onclick=()=>showTimeClaims();
 async function refreshYearCount(){
@@ -868,7 +868,7 @@ async function refreshYearCount(){
   try{
     const r = await fetch(`/api/year?y=${y}&sources=${encodeURIComponent(sourcesParam(state.on,state.primary))}&limit=0`).then(r=>r.json());
     if(seq !== yearSeq) return;
-    document.getElementById('yearBtn').textContent = `이 해의 기록 ${r.total}`;
+    document.getElementById('yearBtn').textContent = `이 해의 기록 보기 ${r.total}`;
   }catch(e){ /* 조용히 */ }
 }
 function scheduleYearCount(){ clearTimeout(yearTimer); yearTimer = setTimeout(refreshYearCount, 250); }
@@ -878,19 +878,19 @@ async function showYear(reveal = true){
   state.panel = 'year';
   state.sel = null; draw(); if(state.mode==='3d') draw3d();
   const el = document.getElementById('evi');
-  el.innerHTML = `<h3>${yearText(y)}</h3><p class="empty" style="margin-top:12px">찾는 중…</p>`;
+  el.innerHTML = `<h3>${yearText(y)}</h3><p class="empty" style="margin-top:12px">찾고 있어요…</p>`;
   let r = {chunks:[], total:0, bySource:{}};
   try{ r = await fetch(`/api/year?y=${y}&sources=${encodeURIComponent(sourcesParam(state.on,state.primary))}&limit=150`).then(r=>r.json()); }
   catch(e){ console.warn('[이 해] 조회 실패', e); }
   if(seq !== panelSeq || state.year !== y || state.sel || state.panel !== 'year') return;
-  const by = Object.entries(r.bySource||{}).map(([sid,n]) => `${srcLabelOf(sid)} ${n}`).join(' · ');
+  const by = Object.entries(r.bySource||{}).map(([sid,n]) => `${srcLabelOf(sid)} ${n}`).join(', ');
   el.innerHTML = `
     <h3>${yearText(y)}</h3>
-    <div class="han">이 해로 연대가 붙은 기사 — 국편 dateOccured 기준. 연대가 없는 기사(비문·삼국유사 대부분)는 여기 없다.</div>
+    <div class="han">국사편찬위원회가 이 해로 날짜를 붙인 기록이에요. 날짜가 없는 기록은 여기에 나오지 않아요. 비문·삼국유사 기록 대부분이 이에 해당해요.</div>
     <div class="sect" style="margin-top:20px">기록 ${r.total}</div>
-    <div class="auto">${escH(by) || '켜진 사료에 이 해의 기사가 없다'}</div>
+    <div class="auto">${escH(by) || '고른 자료에 이 해의 기록이 없어요'}</div>
     ${r.chunks.map(c => chunkCard(c, [])).join('')}
-    ${r.total > r.chunks.length ? `<p class="empty" style="margin-top:10px">${r.total}건 중 앞 ${r.chunks.length}건만 보인다.</p>` : ''}`;
+    ${r.total > r.chunks.length ? `<p class="empty" style="margin-top:10px">${r.total}건 중 앞 ${r.chunks.length}건만 보여요.</p>` : ''}`;
 }
 document.getElementById('yearBtn').addEventListener('click', showYear);
 
@@ -904,17 +904,17 @@ function chunkCard(c, names){
     c.title && !loc.endsWith(c.title) ? escH(c.title) : '',
     dateText ? escH(dateText) : '',
     loc ? escH(loc) : '',
-  ].filter(Boolean).join(' · ');
+  ].filter(Boolean).join(', ');
   const counts = [
-    c.missingCount!=null ? `결자 ${escH(c.missingCount)}` : '',
+    c.missingCount!=null ? `빠진 글자 ${escH(c.missingCount)}` : '',
     c.hanjaCount!=null ? `한자 ${escH(c.hanjaCount)}` : '',
-  ].filter(Boolean).join(' · ');
+  ].filter(Boolean).join(', ');
   const link = externalLink(c.permalink, '원문 보기');
   const scan = c.contentKind === 'page-image' && c.scanImage ? scanImage(c.scanImage.url, c.locator || c.id) : '';
   return `<div style="margin-top:14px">
     <div class="srcname">${escH(srcLabelOf(c.sourceId))}</div>
-    ${scan ? `<p class="empty">제공처 스캔 이미지 · 전사문·번역문 없음. 이미지를 누르면 원래 크기로 열린다.</p>${scan}` : ''}
-    ${t ? `<div class="quote">${t}</div>` : scan ? '' : '<p class="empty">저장된 본문 텍스트가 없다.</p>'}
+    ${scan ? `<p class="empty">제공처가 올린 원문 사진이에요. 옮겨 쓴 글과 번역문은 없어요. 누르면 원래 크기로 열려요.</p>${scan}` : ''}
+    ${t ? `<div class="quote">${t}</div>` : scan ? '' : '<p class="empty">저장된 본문이 없어요.</p>'}
     <div class="srcline">${meta}<br><code>${escH(c.id)}</code>${counts ? ' · ' + counts : ''}${link ? ' · ' + link : ''}</div></div>`;
 }
 
@@ -922,7 +922,7 @@ const openSourceGroups = new Set();
 function renderRail(){
   const el = document.getElementById('srcList');
   el.innerHTML = '';
-  if(!state.sources.length){ el.innerHTML = '<p class="empty">사료 없음</p>'; return; }
+  if(!state.sources.length){ el.innerHTML = '<p class="empty">자료 없음</p>'; return; }
   for(const reference of REFERENCE_GROUPS){
     const sources=state.sources.filter(reference.matches);
     const section=document.createElement('section');section.className='reference-set';
@@ -974,30 +974,30 @@ async function showSource(id){
   state.panel = 'source';
   const el = document.getElementById('evi');
   state.sel = null; draw(); if(state.mode==='3d') draw3d();
-  el.innerHTML = `<p class="empty">카드를 여는 중…</p>`;
+  el.innerHTML = `<p class="empty">카드를 열고 있어요…</p>`;
   let r = null;
   try{ r = await fetch(`/api/source?id=${encodeURIComponent(id)}`).then(x=>x.json()); }catch(e){}
   if(seq !== panelSeq) return;
-  if(!r || !r.found){ el.innerHTML = `<p class="empty">카드가 없다: ${escH(id)}</p>`; return; }
+  if(!r || !r.found){ el.innerHTML = `<p class="empty">자료 설명이 없어요.</p>`; return; }
   const f = r.frontmatter || {};
   const yr = v => v == null ? '?' : (v < 0 ? `기원전 ${-v}` : v);
   const facts = [
-    ['다루는 기간', (f.coversFrom != null || f.coversTo != null) ? `${yr(f.coversFrom)} ~ ${yr(f.coversTo)}` : '미상'],
-    ['쓰인 때', f.composedYear != null ? yr(f.composedYear) : '미상'],
-    ['엮은이', f.compiler || '미상'],
-    ['원문 조각', (f.chunkCount || 0).toLocaleString('ko-KR')],
+    ['다루는 기간', (f.coversFrom != null || f.coversTo != null) ? `${yr(f.coversFrom)} ~ ${yr(f.coversTo)}` : '미확인'],
+    ['쓰인 때', f.composedYear != null ? yr(f.composedYear) : '미확인'],
+    ['엮은이', f.compiler || '미확인'],
+    ['원문 대목', (f.chunkCount || 0).toLocaleString('ko-KR')],
     ['이용허락', f.licenseDetail || f.license || '미확인'],
     ['확인', f.licenseVerifiedAt || '미확인'],
-    ['상태', `${f.status || ''}${f.defaultLens ? ' · 기본 렌즈' : ''}`],
+    ['상태', `${f.status || ''}${f.defaultLens ? ' · 기본 자료' : ''}`],
   ];
   el.innerHTML = `
     <h3>${escH(f.label || id)}</h3>
     <div class="han">${escH(f.labelHanja || '')}${f.sourceKind ? ` · ${escH(f.sourceKind)}` : ''}</div>
-    <span class="badge ent">사료 카드</span>
+    <span class="badge ent">자료 설명</span>
     <table class="facts">${facts.map(([k,v]) => `<tr><th>${k}</th><td>${escH(v)}${k === '확인' ? ' ' + externalLink(f.licenseVerifiedVia, '페이지') : ''}</td></tr>`).join('')}</table>
     <div class="auto">${escH(r.file)}</div>
     <div class="card">${mdLite(r.body || '')}</div>
-    ${f.contentKind === 'page-images' ? '<button class="card-btn" data-scan-open>수록한 스캔 보기</button>' : ''}`;
+    ${f.contentKind === 'page-images' ? '<button class="card-btn" data-scan-open>원문 사진 보기</button>' : ''}`;
   el.querySelector('[data-scan-open]')?.addEventListener('click', () => showScanPage(id, 0));
 }
 
@@ -1005,22 +1005,22 @@ async function showScanPage(id, offset){
   openEvidence();
   const seq = ++panelSeq, el = document.getElementById('evi');
   state.panel = 'scan'; state.scanSource = id; state.scanOffset = offset; state.sel = null;
-  el.innerHTML = '<p class="empty">스캔 면을 불러오는 중…</p>';
+  el.innerHTML = '<p class="empty">원문 사진을 불러오고 있어요…</p>';
   try{
     const response = await fetch('/api/chunks?' + new URLSearchParams({sources:state.on.has(id) ? id : '', offset, limit:1}));
-    if(!response.ok) throw new Error('스캔 목록 조회 실패');
+    if(!response.ok) throw new Error('원문 사진 목록을 불러오지 못했어요.');
     const data = await response.json();
     if(seq !== panelSeq) return;
-    el.innerHTML = `<h3>${escH(srcLabelOf(id))}</h3><button class="card-btn" data-scan-source>사료 카드</button>`;
+    el.innerHTML = `<h3>${escH(srcLabelOf(id))}</h3><button class="card-btn" data-scan-source>자료 설명 보기</button>`;
     el.querySelector('[data-scan-source]').onclick = () => showSource(id);
     if(!data.chunks.length){
-      el.insertAdjacentHTML('beforeend', '<p class="empty">현재 사료 선택에 표시할 스캔이 없다. 이 사료를 켜면 수록한 면을 볼 수 있다.</p>');
+      el.insertAdjacentHTML('beforeend', '<p class="empty">고른 자료에는 표시할 원문 사진이 없어요. 이 자료를 켜면 저장된 사진을 볼 수 있어요.</p>');
       return;
     }
-    el.insertAdjacentHTML('beforeend', `<p data-scan-position>스캔 ${offset+1} / ${data.total}면 · 본문 전사 0</p>
-      <button class="card-btn" data-scan-prev ${offset===0?'disabled':''}>앞면</button>
-      <button class="card-btn" data-scan-next ${offset+1>=data.total?'disabled':''}>뒷면</button>
-      <form data-scan-jump><label>스캔 번호 <input name="page" type="number" min="1" max="${data.total}" value="${offset+1}" required></label><button class="card-btn">이동</button></form>
+    el.insertAdjacentHTML('beforeend', `<p data-scan-position>원문 사진 ${offset+1} / ${data.total}면 · 옮겨 쓴 본문 0</p>
+      <button class="card-btn" data-scan-prev ${offset===0?'disabled':''}>앞면 보기</button>
+      <button class="card-btn" data-scan-next ${offset+1>=data.total?'disabled':''}>뒷면 보기</button>
+      <form data-scan-jump><label>사진 번호 <input name="page" type="number" min="1" max="${data.total}" value="${offset+1}" required></label><button class="card-btn">이동하기</button></form>
       ${chunkCard(data.chunks[0], [])}`);
     el.querySelector('[data-scan-prev]').onclick = () => showScanPage(id, offset-1);
     el.querySelector('[data-scan-next]').onclick = () => showScanPage(id, offset+1);
@@ -1039,9 +1039,9 @@ function renderStats(){
   const dis = state.places.filter(p=>p.status==='disputed').length;
   document.getElementById('stats').innerHTML =
     `<div><i style="background:#7FBBA8"></i>지명 ${n}</div>
-     <div><i style="background:#D2836A"></i>비정 갈림 ${dis}</div>
-     <div><i style="background:#4A443A"></i>위치 미정 ${un}</div>
-     <div><i style="background:#8B8474"></i>원문 조각 ${state.chunkTotal || 0}</div>`;
+     <div><i style="background:#D2836A"></i>위치 해석이 갈림 ${dis}</div>
+     <div><i style="background:#4A443A"></i>위치 미확인 ${un}</div>
+     <div><i style="background:#8B8474"></i>원문 대목 ${state.chunkTotal || 0}</div>`;
 }
 
 const COLOR = {established:'#7FBBA8', majority:'#8FBF74', disputed:'#D2836A', unlocated:'#4A443A'};
@@ -1209,26 +1209,26 @@ async function select(id, reveal = true, graphNode = null){
   const cands = p.entityType ? '' : candidates.length
     ? candidates.map(c => `<div class="cand${candActive(c) ? '' : ' off'}${c === state.mapFocus ? ' focused' : ''}">
         <div class="co">${c.lat.toFixed(4)}, ${c.lon.toFixed(4)} · ${esc0(c.precision)}${c.view ? ' · ' + esc0(c.view) : ''}${escH(span(c))}</div>
-        <div class="bs">${esc0(c.basis)} ${externalLink(c.sourceUrl, '출처')}${c.origin === 'ai' ? ' <span class="badge ai">AI 연결 · 미검토</span>' : ''}</div>
-        ${c.citesChunk?`<button class="card-btn" data-candidate-chunk="${escH(c.citesChunk)}">위치 서술 출처</button>`:''}
-        ${c.coordinateChunkId?`<button class="card-btn" data-candidate-chunk="${escH(c.coordinateChunkId)}">대표점 좌표 출처</button>`:''}
-        ${c.fromSource||c.sourceId?`<button class="card-btn" data-candidate-source="${escH(c.fromSource||c.sourceId)}">사료 카드</button>`:''}</div>`).join('')
-    : state.origin !== 'all' && p.candidates.length ? '<p class="empty">현재 작성자 필터에 맞는 좌표 연결이 없다.</p>'
-    : `<p class="unloc" style="margin-top:12px"><b>위치가 정해지지 않았다.</b>
-       비정안이 여럿이거나 확정된 것이 없다. 이 시스템은 판정하지 않으므로 지도에 점을 찍지 않는다.</p>`;
+        <div class="bs">${esc0(c.basis)} ${externalLink(c.sourceUrl, '출처')}${c.origin === 'ai' ? ' <span class="badge ai">AI 연결 · 미확인</span>' : ''}</div>
+        ${c.citesChunk?`<button class="card-btn" data-candidate-chunk="${escH(c.citesChunk)}">위치 설명 보기</button>`:''}
+        ${c.coordinateChunkId?`<button class="card-btn" data-candidate-chunk="${escH(c.coordinateChunkId)}">대표 위치 출처 보기</button>`:''}
+        ${c.fromSource||c.sourceId?`<button class="card-btn" data-candidate-source="${escH(c.fromSource||c.sourceId)}">자료 설명 보기</button>`:''}</div>`).join('')
+    : state.origin !== 'all' && p.candidates.length ? '<p class="empty">고른 작성자가 연결한 위치가 없어요.</p>'
+    : `<p class="unloc" style="margin-top:12px"><b>위치 미확인</b>
+       위치 해석이 여럿이거나 확인된 위치가 없어요. 여기서 어느 쪽이 맞는지 정하지 않고 지도에도 점을 찍지 않아요.</p>`;
 
   const head = `
     <h3>${escH(p.labelKo)}</h3>
-    <div class="han">${escH(names.join(' · '))}</div>
-    ${sourceName ? `<div class="auto">${escH(sourceName)}에 나온 지명 · 이 사료 안에서 원문을 찾는다.</div>` : ''}
+    <div class="han">${escH(names.join(', '))}</div>
+    ${sourceName ? `<div class="auto">${escH(sourceName)}에 나온 지명 · 이 자료에서 원문을 찾아요.</div>` : ''}
     <span class="badge ${escH(p.status)}">${escH(
       p.entityType ? (TYPE_KO[p.entityType]||p.entityType) :
-      p.origin === 'ai' ? (p.candidates.length ? '좌표 후보' : '위치 미정') :
-      ({established:'위치 확정',majority:'통설',disputed:'비정이 갈림',unlocated:'위치 미정'}[p.status]||p.status))}</span>${
+      p.origin === 'ai' ? (p.candidates.length ? '좌표 후보' : '위치 미확인') :
+      ({established:'위치 확정',majority:'널리 인정된 위치',disputed:'위치 해석이 갈림',unlocated:'위치 미확인'}[p.status]||p.status))}</span>${
       p.origin === 'ai' ? '<span class="badge ai">조사(자동) · 미확인</span>' : ''}
     ${cands}
     ${p.note ? `<p class="note">${escH(p.note)}</p>` : ''}`;
-  el.innerHTML = head + `<div class="sect" style="margin-top:20px">원문 출처</div><p class="empty" style="margin-top:12px">찾는 중…</p>`;
+  el.innerHTML = head + `<div class="sect" style="margin-top:20px">원문 출처</div><p class="empty" style="margin-top:12px">찾고 있어요…</p>`;
 
   const on = [...state.on];
   const mentionSources=on.filter(sid => !p.sourceId || sid === p.sourceId);
@@ -1270,43 +1270,43 @@ async function select(id, reveal = true, graphNode = null){
   const conflictPreds = new Set([...byPred].filter(([k, vs]) => vs.size > 1).map(([k]) => k));
   const claimsHtml = claimsOn.length ? claimsOn.map(c => {
       const key = String(c.predicate || '').replace(/^syj:/,'');
-      const pred = key === 'sameEntityAs' ? '같은 대상으로 보는 주장' : key;
+      const pred = key === 'sameEntityAs' ? '같은 대상으로 본 기록' : key;
       const object = key === 'sameEntityAs' && c.role === 'object' ? {kind:'entity', id:c.subject} : c.object;
       const conflict = c.role === 'subject' && conflictPreds.has(c.predicate);
       const q = c.quote ? `<div class="quote small">${esc1(c.quote)}</div>` : '';
       const where = c.chunk ? `${escH(srcLabel(c.chunk.sourceId))} · ${esc1(c.chunk.locator || c.chunk.id)}` : esc1(c.citesChunk || '');
       return `<div class="claim${conflict ? ' conflict' : ''}">
-        <div class="cl-head"><span class="pred">${esc1(pred)}</span> ${c.role === 'object' ? `<span class="role">이 항목을 가리키는 주장</span> ` : ''}${objText(object)}${
-          conflict ? ' <span class="badge cf">값이 갈림</span>' : ''}
+        <div class="cl-head"><span class="pred">${esc1(pred)}</span> ${c.role === 'object' ? `<span class="role">이 항목을 가리키는 기록</span> ` : ''}${objText(object)}${
+          conflict ? ' <span class="badge cf">기록이 갈림</span>' : ''}
           <span class="badge ${c.origin === 'ai' ? 'ai' : 'human'}">${c.origin === 'ai' ? 'AI 추출' : '사람'}</span>
           ${c.status && c.status !== 'draft' ? `<span class="badge st">${esc1(c.status)}</span>` : ''}</div>
         ${q}
         <div class="srcline">${where}${c.note ? `<br><span class="cl-note">${esc1(c.note)}</span>` : ''}</div>
         <button class="card-btn" data-claim-chunk="${esc1(c.citesChunk)}">인용한 원문 열기</button>
       </div>`;
-    }).join('') : `<p class="empty" style="margin-top:10px">${state.origin === 'human' ? '사람이 작성한 것으로 기록된 주장이 없다' : '현재 사료 선택에 맞는 주장이 없다'}${cl.allClaims ? ` (전체 주장 ${cl.allClaims}건)` : ''}.</p>`;
+    }).join('') : `<p class="empty" style="margin-top:10px">${state.origin === 'human' ? '사람이 작성했다고 표시된 기록이 없어요' : '고른 자료에 맞는 기록이 없어요'}${cl.allClaims ? ` (전체 기록 ${cl.allClaims}건)` : ''}.</p>`;
 
   el.innerHTML = head + `
-    <div class="sect" style="margin-top:20px">주장 ${claimsOn.length}${conflictPreds.size ? ` · 갈리는 술어 ${conflictPreds.size}` : ''}</div>
-    <div class="auto">사료 한 대목에서 세운 주장(Claim). 인용문은 그 대목의 글자 그대로이고, 누가(사람/AI) 세웠는지 딱지가 붙는다.${
-      conflictPreds.size ? ' 붉은 줄은 같은 술어에 값이 갈리는 주장 — 어느 쪽이 맞는지는 판정하지 않는다.' : ''}</div>
+    <div class="sect" style="margin-top:20px">기록 ${claimsOn.length}${conflictPreds.size ? ` · 내용이 다른 항목 ${conflictPreds.size}` : ''}</div>
+    <div class="auto">자료 한 대목에서 찾은 기록이에요. 인용문은 원문 그대로예요. 사람과 AI 중 누가 정리했는지도 표시해요.${
+      conflictPreds.size ? ' 붉은 줄은 같은 항목의 내용이 서로 다른 기록이에요. 어느 쪽이 맞는지는 정하지 않아요.' : ''}</div>
     ${claimsHtml}
-    <div class="evidence-results"><div class="sect" style="margin-top:20px">원문 출처</div><p class="empty">찾는 중…</p></div>`;
+    <div class="evidence-results"><div class="sect" style="margin-top:20px">원문 출처</div><p class="empty">찾고 있어요…</p></div>`;
   const res = await mentionsRequest;
   if(seq !== panelSeq || state.sel !== id) return;
   const results = el.querySelector('.evidence-results');
-  if(res.failed){ results.innerHTML = '<p class="empty">원문 조회에 실패했다. 항목을 다시 선택해 재시도할 수 있다.</p>'; return; }
-  const by = Object.entries(res.bySource||{}).map(([sid,n]) => `${srcLabel(sid)} ${n}`).join(' · ');
+  if(res.failed){ results.innerHTML = '<p class="empty">원문을 불러오지 못했어요. 항목을 다시 골라 보세요.</p>'; return; }
+  const by = Object.entries(res.bySource||{}).map(([sid,n]) => `${srcLabel(sid)} ${n}`).join(', ');
   const ev = res.chunks.length
     ? res.chunks.map(c => chunkCard(c, names)).join('')
-    : `<p class="empty" style="margin-top:12px">켜진 사료의 원문에서 이 이름을 찾지 못했다.</p>`;
+    : `<p class="empty" style="margin-top:12px">고른 자료의 원문에서 이 이름을 찾지 못했어요.</p>`;
   const more = res.total > res.chunks.length
-    ? `<p class="empty" style="margin-top:10px">${res.total}건 중 앞 ${res.chunks.length}건만 보인다.</p>` : '';
+    ? `<p class="empty" style="margin-top:10px">${res.total}건 중 앞 ${res.chunks.length}건만 보여요.</p>` : '';
 
   results.innerHTML = `
     <div class="sect" style="margin-top:20px">원문 출처 ${res.total}</div>
-    <div class="auto">두 글자 이상 이름 또는 국명 색인의 정확 일치로 찾음(자동) · 사람이 확인한 연결 아님${by ? ' · ' + escH(by) : ''}</div>
-    ${names.some(n => n.length === 1) ? '<div class="auto">한 글자 이름은 원문 자동 검색 안 함 · 국명 색인이 있는 사료에서 정확히 같은 국명만 찾는다.</div>' : ''}
+    <div class="auto">두 글자 이상 이름이나 나라 이름 색인에서 똑같은 이름을 자동으로 찾았어요. 사람이 확인한 연결은 아니에요${by ? ' · ' + escH(by) : ''}</div>
+    ${names.some(n => n.length === 1) ? '<div class="auto">한 글자 이름은 원문에서 자동으로 찾지 않아요. 나라 이름 색인이 있는 자료에서 똑같은 나라 이름만 찾아요.</div>' : ''}
     ${ev}${more}`;
 }
 
@@ -1339,13 +1339,13 @@ b2d.onclick = () => { state.mode='2d'; document.body.classList.remove('mode3d','
   document.getElementById('bchat').classList.remove('on');
   document.getElementById('bgraph').classList.remove('on');
   b2d.classList.add('on'); b3d.classList.remove('on'); draw();
-  document.getElementById('hint').textContent='지명을 클릭하면 출처가 열린다'; };
+  document.getElementById('hint').textContent='지명을 누르면 출처가 열려요'; };
 b3d.onclick = () => { state.mode='3d'; document.body.classList.add('mode3d');
   document.body.classList.remove('modechat');document.getElementById('bchat').classList.remove('on');
   document.body.classList.remove('modegraph');document.getElementById('bgraph').classList.remove('on');
   b3d.classList.add('on'); b2d.classList.remove('on'); init3d();
   renderOutside();
-  document.getElementById('hint').textContent='끌어서 이동 · 휠로 확대 · 오른쪽 드래그로 회전'; };
+  document.getElementById('hint').textContent='끌어서 이동하세요. 마우스 휠로 확대하고 오른쪽 버튼으로 끌어 회전하세요.'; };
 document.getElementById('bgraph').onclick=()=>{
   document.body.classList.remove('modechat');document.getElementById('bchat').classList.remove('on');
   state.mode='graph';document.body.classList.remove('mode3d');document.body.classList.add('modegraph');
@@ -1383,7 +1383,7 @@ addEventListener('resize', () => { draw(); if(state.mode==='3d') resize3d(); });
 let R = null;
 
 async function init3d(){
-  document.getElementById('hint').textContent='끌어서 이동 · 휠로 확대 · 연도로 탐색';
+  document.getElementById('hint').textContent='끌어서 이동하세요. 마우스 휠로 확대하고 연도를 바꿔 살펴보세요.';
   if(R){ R.engine.resize(); draw3d(); return; }
   const host = document.getElementById('three');
   host.innerHTML = '';
@@ -1409,10 +1409,10 @@ async function init3d(){
   try{ elev = await fetch('/api/elevation').then(r => r.ok ? r.json() : null); }
   catch(e){ console.warn('[3D] 고도 격자를 못 받았다 — 평판 지형으로', e); }
   const [outline,anchors,geography,scenes,coordinates,neighbors,traditions,regions]=await Promise.all(['korea-outline.json','history-place-anchors.json','history-geography.json','history-scenes.json','history-coordinates.json','neighbor-outline.json','history-traditions.json','historical-regions.json'].map(file=>
-    fetch('./app/'+file).then(r=>{if(!r.ok)throw Error('지도 자료를 불러오지 못했습니다.');return r.json();})));
+    fetch('./app/'+file).then(r=>{if(!r.ok)throw Error('지도 자료를 불러오지 못했어요.');return r.json();})));
   const world = new ChronicleWorld(state.geo, [...state.places,...anchors.places], { elev, outline, geography, neighbors });
   const [{ChronicleTerritories},territories]=await Promise.all([import('./app/chronicle-territories.js'),
-    fetch('/api/history-map?level=0').then(r=>{if(!r.ok)throw Error('국가 영역 자료를 불러오지 못했습니다.');return r.json();})]);
+    fetch('/api/history-map?level=0').then(r=>{if(!r.ok)throw Error('국가 영역 자료를 불러오지 못했어요.');return r.json();})]);
   world.territories=new ChronicleTerritories(world,territories);
   const {coordinateRegistry}=await import('./app/history-coordinates.js');
   world.coordinateRegistry=coordinateRegistry(anchors,coordinates);

@@ -23,7 +23,7 @@ export function pickableRow(row){
 let catalogPromise;
 export function loadHistoryAssets(){
   if(!catalogPromise)catalogPromise=fetch('./app/history-asset-catalog.json')
-    .then(r=>{if(!r.ok)throw Error('인물 조형을 불러오지 못했습니다.');return r.json();})
+    .then(r=>{if(!r.ok)throw Error('인물 모형을 불러오지 못했어요.');return r.json();})
     .then(extendFigureCatalog).then(extendBuildingCatalog).then(compileAssetCatalog).catch(error=>{catalogPromise=null;throw error;});
   return catalogPromise;
 }
@@ -243,7 +243,7 @@ export class ChronicleAssets{
       }
       if(person.locations?.length!==1){unlocated.push(person);continue;}
       const claim=person.locations[0],o=claim.object,[x,z]=this.world.toWorld(o.lon,o.lat);
-      add({...person,placement:'presence',placementLabel:'해당 시기의 출현 근거',claimIds:[...person.claimIds,claim.id]},
+      add({...person,placement:'presence',placementLabel:'이 시기에 등장한 기록',claimIds:[...person.claimIds,claim.id]},
         new THREE.Vector3(x,this.world.surfaceAt(x,z),z),2.1);
     }
     this.unlocated=unlocated;
@@ -270,7 +270,7 @@ export class ChronicleAssets{
       field.stats.dropped.push(...built.stats.dropped);
     }
     for(const name of ['built','requested','meshes','triangles'])field.stats[name]??=0;
-    if(field.stats.built!==recipes.length||field.stats.dropped.length){release(field.group);throw Error('일부 역사 조형을 만들지 못했습니다.');}
+    if(field.stats.built!==recipes.length||field.stats.dropped.length){release(field.group);throw Error('일부 역사 모형을 만들지 못했어요.');}
     next.add(field.group);
     const pathPositions=[];
     for(const row of rows.filter(r=>r.kind==='building'&&r.path)){

@@ -116,8 +116,8 @@ export function planContinuingFacilities(packets,plan,claims,world=null){
     const id='background-facility-'+scene.id;
     rows.push({...scene,id,entityId:id,kind:'event',year:plan.year,archetype:scene.archetype||scene.kind,
       facilityLook:look,...(['temple','rail_station'].includes(look)?{sceneFunction:look}:{}),
-      label:recorded?name+' · 시설 · '+description:name+' · 시설(추정 존속)',setting:true,detail:recorded?description:'건립 기록 뒤 존속 추정',
-      summary:(scene.summary?scene.summary+'\n':'')+(recorded?description:'건립 기록을 근거로 시설이 남아 있다고 추정한 배경이며 이후 변형·훼손 기록은 반영하지 않았다.'),
+      label:recorded?name+' 시설 · '+description:name+' · 시설(추정 존속)',setting:true,detail:recorded?description:'건립 기록 뒤 존속 추정',
+      summary:(scene.summary?scene.summary+'\n':'')+(recorded?description:'건립 기록을 보고 시설이 남아 있다고 추정한 배경이에요. 이후 모습이 바뀌거나 훼손된 기록은 반영하지 않았어요.'),
       continuing:{kind:'facility',facilityLook:look,facilityType:type,sinceYear,untilYear,openEnded:!ending&&untilYear===END_YEAR,
         ...(boundary&&untilYear===boundary-1?{cappedBy:'dynasty-boundary'}:{}),
         basis:recorded?description:'건립 기록과 시설 유형에 따른 존속 추정',endedBy:ending?.id||null},

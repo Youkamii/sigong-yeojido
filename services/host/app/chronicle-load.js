@@ -88,9 +88,9 @@ export async function loadChronicle(sources,origin,signal,request=fetch){
   }
   const response=await request('/api/chronicle?'+new URLSearchParams({sources:sources.join(','),origin}),{signal});
   const data=await response.json();
-  if(!response.ok)throw new Error(data.error||'시대 정보를 불러오지 못했습니다.');
+  if(!response.ok)throw new Error(data.error||'시대 정보를 불러오지 못했어요.');
   if(!data.hasMore)return mergeSameEntities(data);
-  if(sources.length===1)throw new Error('한 사료의 기록이 조회 한도를 넘었습니다. 일부 기록만 표시하지 않고 조회를 멈췄습니다.');
+  if(sources.length===1)throw new Error('한 자료의 기록이 한 번에 불러올 양을 넘었어요. 전체를 보여줄 수 없어 불러오기를 멈췄어요.');
   const middle=Math.ceil(sources.length/2);
   const parts=await Promise.all([loadChronicle(sources.slice(0,middle),origin,signal,request),loadChronicle(sources.slice(middle),origin,signal,request)]);
   return mergeSameEntities(mergeParts(parts));

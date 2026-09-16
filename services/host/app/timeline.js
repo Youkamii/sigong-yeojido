@@ -164,9 +164,9 @@ function titleOf(s){
     parts.push(`다루는 기간 ${fmtYear(Math.min(s.coversFrom, s.coversTo))} ~ ${fmtYear(Math.max(s.coversFrom, s.coversTo))}`);
   }
   if (isNum(s.composedYear)) parts.push(`${fmtYearFull(s.composedYear)}에 쓰임`);
-  if (isNum(s.chunkCount)) parts.push(`원문 조각 ${s.chunkCount}`);
-  if (s.defaultLens) parts.push('주 렌즈');
-  return parts.join(' · ');
+  if (isNum(s.chunkCount)) parts.push(`원문 대목 ${s.chunkCount}`);
+  if (s.defaultLens) parts.push('기준 자료');
+  return parts.join(', ');
 }
 
 export class Timeline {
@@ -187,7 +187,7 @@ export class Timeline {
     this.labelWidth = isNum(opts.labelWidth) ? opts.labelWidth : null;
 
     this.host.classList.add('tl-host');
-    this.svg = el('svg', { class: 'tl-svg', role: 'group', 'aria-label': '사료 타임라인' });
+    this.svg = el('svg', { class: 'tl-svg', role: 'group', 'aria-label': '자료 타임라인' });
     this.host.appendChild(this.svg);
 
     this._geom = null;       // 마지막 렌더의 기하 — 좌표 변환에 쓴다
@@ -336,7 +336,7 @@ export class Timeline {
     // 트랙 — 사료 하나가 한 줄
     const gTracks = el('g', { class: 'tl-tracks' });
     if (!n) {
-      gTracks.appendChild(el('text', { class: 'tl-empty', x: plotL, y: RULER_H + ROW_H / 2, dy: '.36em' }, '사료 없음'));
+      gTracks.appendChild(el('text', { class: 'tl-empty', x: plotL, y: RULER_H + ROW_H / 2, dy: '.36em' }, '자료 없음'));
     }
     rows.forEach((row, i) => gTracks.appendChild(row.group ? this._group(row.group, i) : this._track(row.source, i)));
     svg.appendChild(gTracks);
@@ -377,7 +377,7 @@ export class Timeline {
     open.appendChild(el('rect', {class: 'tl-label-hit', x: 0, y: yTop, width: labelW - 27, height: ROW_H}));
     open.appendChild(el('text', {class: 'tl-group-title tl-label-text', x: 8, y: cy, dy: '.36em'},
       `${this.expanded.has(group.label) ? '▾' : '▸'} ${group.label} (${group.sources.length})`));
-    open.appendChild(el('title', null, `${group.label} · ${group.sources.length}개 사료 펼치기/접기`));
+    open.appendChild(el('title', null, `${group.label} · ${group.sources.length}개 자료 펼치기/접기`));
     const expand = () => {
       this.expanded.has(group.label) ? this.expanded.delete(group.label) : this.expanded.add(group.label);
       this.render();
@@ -411,7 +411,7 @@ export class Timeline {
       bar.appendChild(el('title', null, `다루는 기간 전체 ${fmtYear(from)} ~ ${fmtYear(to)} · 개별 판본은 펼쳐서 보기`));
       g.appendChild(bar);
     } else {
-      g.appendChild(el('text', {class: 'tl-gap', x: plotL + 4, y: cy, dy: '.36em'}, '기간 미상'));
+      g.appendChild(el('text', {class: 'tl-gap', x: plotL + 4, y: cy, dy: '.36em'}, '기간 미확인'));
     }
     return g;
   }
@@ -522,7 +522,7 @@ export class Timeline {
       body.appendChild(dot);
     }
     if (!hasBar && !hasDot) {
-      body.appendChild(el('text', { class: 'tl-gap', x: plotL + 4, y: cy, dy: '.36em' }, '기간 미상'));
+      body.appendChild(el('text', { class: 'tl-gap', x: plotL + 4, y: cy, dy: '.36em' }, '기간 미확인'));
     }
     for(const claim of this.timeClaims) for(const projection of claim.projections) {
       if(projection.fromSource!==s.id)continue;
@@ -532,7 +532,7 @@ export class Timeline {
       const uncertain=lo==null||hi==null||lo!==hi;
       const mark=el('rect',{class:'tl-time-claim'+(uncertain?' uncertain':''),x:x0-3,y:cy+6,
         width:Math.max(6,x1-x0),height:6,role:'button',tabindex:0,'data-claim':projection.claimId});
-      mark.appendChild(el('title',null,`${claim.subjectLabel} · ${claim.object.verbatim} · ${lo==null?'시작 미상':fmtYearFull(lo)} ~ ${hi==null?'끝 미상':fmtYearFull(hi)}`));
+      mark.appendChild(el('title',null,`${claim.subjectLabel} · ${claim.object.verbatim} · ${lo==null?'시작 미확인':fmtYearFull(lo)} ~ ${hi==null?'끝 미확인':fmtYearFull(hi)}`));
       const open=()=>this.onTimeClaim(claim,projection);
       mark.addEventListener('click',event=>{event.stopPropagation();open();});
       mark.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open();}});
