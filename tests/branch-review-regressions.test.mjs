@@ -210,11 +210,11 @@ test('새 함수의 기본 공사 인력과 성곽은 보조 필드 없이도 �
 test('5: 장면 정보 문구에 추정 배경 마을 수와 사료 없음을 표시한다',()=>{
   assert.equal(typeof chronicle.sceneContextLabel,'function');
   const context={people:[{},{}],events:[{}]};
-  assert.equal(chronicle.sceneContextLabel(context,7),'동시대 인물 2, 주변 사건 1, 추정 배경 마을 7(자료 없음)');
-  assert.equal(chronicle.sceneContextLabel(context),'동시대 인물 2, 주변 사건 1, 추정 배경 마을 0(자료 없음)');
+  assert.equal(chronicle.sceneContextLabel(context,7),'동시대 인물 2, 주변 사건 1, 추정 배경 마을 7(사료 없음)');
+  assert.equal(chronicle.sceneContextLabel(context),'동시대 인물 2, 주변 사건 1, 추정 배경 마을 0(사료 없음)');
 });
 
 test('5: 지도 표시 체크박스에 추정 배경과 사료 없음 설명을 표시한다',()=>{
   const label=read('index.html').match(/data-map-display="scenery"[^>]*>([^<]*)<\/label>/)?.[1];
-  assert.equal(label,'마을, 밭, 동물 (추정 배경, 자료 없음)');
+  assert.equal(label,'마을, 밭, 동물 (추정 배경, 사료 없음)');
 });

@@ -23,7 +23,7 @@ export const REFERENCE_GROUPS = [
 export {sourcesParam} from './chronicle-load.js';
 export const yearLabel = y => y < 0 ? `기원전 ${-y}년` : `${y}년`;
 export const sceneContextLabel = (context,estimatedSites=0) =>
-  `동시대 인물 ${context.people.length}, 주변 사건 ${context.events.length}, 추정 배경 마을 ${estimatedSites}(자료 없음)`;
+  `동시대 인물 ${context.people.length}, 주변 사건 ${context.events.length}, 추정 배경 마을 ${estimatedSites}(사료 없음)`;
 export const entityLabel = e => e.label.replace(/\s*\([\u3400-\u9fff\s]+\)/g,'').replace(e.type==='Person'?/\s*·\s*\d+년.*$/:/$^/,'').replace(/\s*\([^)]*민족문화대백과[^)]*\)/g,part=>{
   const polity=part.match(/조선|고려|백제|신라|발해/);return polity?` (${polity[0]})`:'';
 }).trim();
@@ -113,8 +113,8 @@ export function contextAt(data,year,span=50){
     if(entity?.type!=='Person')continue;
     for(const death of dates.filter(d=>d.claim.predicate==='syj:diedIn'&&d.claim.subject===entity.id
       &&d.claim.fromSource===birth.claim.fromSource)){
-      if(birth.hi<=year&&death.lo>=year)addPerson(entity,{lo:birth.lo,hi:death.hi,label:'출생–사망',
-        dateLabel:`${yearLabel(birth.lo)}${birth.lo!==birth.hi?'~'+yearLabel(birth.hi):''} – ${yearLabel(death.lo)}${death.lo!==death.hi?'~'+yearLabel(death.hi):''}`,
+      if(birth.hi<=year&&death.lo>=year)addPerson(entity,{lo:birth.lo,hi:death.hi,label:'출생~사망',
+        dateLabel:`${yearLabel(birth.lo)}${birth.lo!==birth.hi?'(~'+yearLabel(birth.hi)+')':''}~${yearLabel(death.lo)}${death.lo!==death.hi?'(~'+yearLabel(death.hi)+')':''}`,
         claim:birth.claim,basis:[...birth.basis,...death.basis]});
     }
   }
@@ -165,11 +165,11 @@ export class Chronicle {
     this.host=host;this.controls=controls;this.callbacks=callbacks;
     this.data={entities:[],claims:[]};this.year=1593;this.span=50;this.sequence=0;this.loading=true;
     controls.innerHTML=`<div class="time-heading"><div class="time-year"><label for="historyYear" data-calendar>연도 입력</label>
-      <input id="historyYear" aria-label="탐색 연도" aria-describedby="yearInputHelp" type="number" value="1593" min="-2500" max="2100" step="1" required><span>년</span><div class="year-nudge" role="group" aria-label="1년씩 이동해요. 길게 누르면 빨라져요"><button data-year-step="-1" aria-label="이전 해. 길게 누르면 빨라져요" title="1년 전. 길게 누르면 빨라져요">−</button><button data-year-step="1" aria-label="다음 해. 길게 누르면 빨라져요" title="1년 후. 길게 누르면 빨라져요">+</button></div><button data-go-year>이동하기</button><small id="yearInputHelp">입력 후 이동을 누르세요. 기원전은 −500처럼 적으세요</small></div>
+      <input id="historyYear" aria-label="탐색 연도" aria-describedby="yearInputHelp" type="number" value="1593" min="-2500" max="2100" step="1" required><span>년</span><div class="year-nudge" role="group" aria-label="1년씩 이동합니다. 길게 누르면 빨라집니다"><button data-year-step="-1" aria-label="이전 해. 길게 누르면 빨라집니다" title="1년 전. 길게 누르면 빨라집니다">−</button><button data-year-step="1" aria-label="다음 해. 길게 누르면 빨라집니다" title="1년 후. 길게 누르면 빨라집니다">+</button></div><button data-go-year>이동하기</button><small id="yearInputHelp">입력 후 이동을 누르십시오. 기원전은 −500처럼 적으십시오</small></div>
       <div class="time-actions"><button data-previous aria-label="이전 사건으로 이동하기">← 이전 사건 보기</button>
       <button data-play aria-label="시간 재생하기">▶ 재생하기</button><button data-next aria-label="다음 사건으로 이동하기">다음 사건 보기 →</button></div>
       <label class="time-span">주변 사건 <select aria-label="사건 탐색 범위"><option value="20">20년</option><option value="50" selected>50년</option><option value="100">100년</option></select></label></div>
-      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2100" value="1593" aria-label="연도 이동. 좌우로 밀면 1년씩 움직이다 빨라져요" title="좌우로 밀면 1년씩 움직이다 빨라져요. 놓으면 멈춰요"><span>2100</span></div>
+      <div class="time-slider"><span>기원전 2500</span><input type="range" min="-2500" max="2100" value="1593" aria-label="연도 이동. 좌우로 밀면 1년씩 움직이다 빨라집니다" title="좌우로 밀면 1년씩 움직이다 빨라집니다. 놓으면 멈춥니다"><span>2100</span></div>
       <div class="event-strip"></div>`;
     this.timeline=new EventTimeline(controls.querySelector('.event-strip'),{yearLabel,
       preview:year=>this.previewYear(year),commit:()=>this.finishScrub(),select:entry=>this.showEvent(entry)});
@@ -274,8 +274,8 @@ export class Chronicle {
       <div class="context-kicker">${{Person:'인물',Event:'사건',Narrative:'설화·전승',Polity:'나라',Place:'장소'}[entity.type]||'관련 항목'}</div><h2>${esc(activity?.setting?activity.label:activity?.siteBackground?activity.place:entityLabel(entity))}</h2>
       ${activity?`<section class="selected-activity"><h3>${activity.narrative?'이야기의 무대':activity.siteBackground?.scope==='anonymous-city'?'도시 생활 배경 · 추정':activity.siteBackground?.scope==='facility'?'시설 · 추정 존속':activity.siteBackground?'성곽 배경 · 추정':yearLabel(this.year)}${activity.place?' · '+esc(activity.place):''}</h3>
         ${activity.role?`<p class="activity-role">${esc(activity.role)}</p>`:''}
-        <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동이에요.')}</p>
-        ${activity.narrative?`<dl class="narrative-times"><dt>이야기 속 시기</dt><dd>${esc(activity.narrative.storyTime.label)}</dd><dt>기록된 시기</dt><dd>${esc(activity.narrative.recordingTime.label)}</dd></dl><p class="activity-location">이야기 속 시기와 기록된 시기는 달라요. 고른 연도에 실제로 일어났다는 뜻은 아니에요.</p>`:''}
+        <p class="activity-summary">${esc(activity.summary||'이 시기에 기록된 활동입니다.')}</p>
+        ${activity.narrative?`<dl class="narrative-times"><dt>이야기 속 시기</dt><dd>${esc(activity.narrative.storyTime.label)}</dd><dt>기록된 시기</dt><dd>${esc(activity.narrative.recordingTime.label)}</dd></dl><p class="activity-location">이야기 속 시기와 기록된 시기는 다릅니다. 고른 연도에 실제로 일어났다는 뜻은 아닙니다.</p>`:''}
         ${activity.narrative?'':`<p class="activity-location">${esc(activity.placement)}</p>`}
         ${activity.missingClaimsNote?`<p class="activity-missing-claims">${esc(activity.missingClaimsNote)}</p>`:''}
         ${activity.coordinates?`<p class="activity-coordinates">${esc(activity.coordinates)}</p>`:''}
@@ -286,13 +286,13 @@ export class Chronicle {
         ${activity.events.length?`<div class="activity-episodes">${activity.events.map(e=>`<button data-chronicle-entity="${esc(e.entityId)}">${esc(e.label)} →</button>`).join('')}</div>`:''}
         ${(activity.participants||[]).length?`<div class="activity-participants">${activity.participants.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.entityId)}">${esc(p.label)} · ${esc(p.role)}${p.presence!=='on-site'?' (관련)':''}</button>`).join('')}</div>`:''}
       </section>`:''}
-      ${!activity?.narrative&&!activity?.siteBackground&&this.callbacks.placement?.(id)?`<p class="scene-placement">${esc(this.callbacks.placement(id))} · 건물과 길, 인물의 모습은 간단히 표현한 모형이에요.</p>`:''}
+      ${!activity?.narrative&&!activity?.siteBackground&&this.callbacks.placement?.(id)?`<p class="scene-placement">${esc(this.callbacks.placement(id))} · 건물과 길, 인물의 모습은 간단히 표현한 모형입니다.</p>`:''}
       ${activity?.narrative?'':descriptions.slice(0,2).map(c=>`<p class="entity-description">${esc(c.object.value||'')}</p>`).join('')}
-      ${activity?.narrative||activity?.siteBackground?'':`<div class="context-section"><h3>시간</h3>${dates.map(d=>`<div class="entity-date"><button data-jump-year="${d.lo}">${yearLabel(d.lo)}${d.lo!==d.hi?' – '+yearLabel(d.hi):''}</button>
+      ${activity?.narrative||activity?.siteBackground?'':`<div class="context-section"><h3>시간</h3>${dates.map(d=>`<div class="entity-date"><button data-jump-year="${d.lo}">${yearLabel(d.lo)}${d.lo!==d.hi?'~'+yearLabel(d.hi):''}</button>
         <span>${esc(activityLabel(shortPredicate(d.claim.predicate),d.claim)||({bornIn:'출생',diedIn:'사망',occurredIn:'사건',foundedIn:'건국'})[shortPredicate(d.claim.predicate)]||'기록')}</span>
-        ${d.basis.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.sourceLabel)} ↗</button>`).join('')}</div>`).join('')||'<p class="context-empty">날짜의 출처가 아직 연결되지 않았어요.</p>'}</div>`}
-      <div class="context-section"><h3>관련 항목</h3><p class="context-empty">이 항목의 전체 기록이에요. 관계가 있었던 시기는 각 출처에서 확인하세요.</p>${this.relations(id).map(({claim,target})=>`<div class="relation-row"><button data-chronicle-entity="${esc(target.id)}">${esc(entityLabel(target))}</button>
-        <small>${esc(RELATION_WORDS[shortPredicate(claim.predicate)]||'관련 기록')}</small><button class="context-proof" data-chronicle-claim="${esc(claim.id)}">출처 보기 ↗</button></div>`).join('')||'<p class="context-empty">연결된 출처가 아직 없어요.</p>'}</div>`;
+        ${d.basis.map(c=>`<button class="context-proof" data-chronicle-claim="${esc(c.id)}">${esc(c.sourceLabel)} ↗</button>`).join('')}</div>`).join('')||'<p class="context-empty">날짜의 출처가 아직 연결되지 않았습니다.</p>'}</div>`}
+      <div class="context-section"><h3>관련 항목</h3><p class="context-empty">이 항목의 전체 기록입니다. 관계가 있었던 시기는 각 출처에서 확인하십시오.</p>${this.relations(id).map(({claim,target})=>`<div class="relation-row"><button data-chronicle-entity="${esc(target.id)}">${esc(entityLabel(target))}</button>
+        <small>${esc(RELATION_WORDS[shortPredicate(claim.predicate)]||'관련 기록')}</small><button class="context-proof" data-chronicle-claim="${esc(claim.id)}">출처 보기 ↗</button></div>`).join('')||'<p class="context-empty">연결된 출처가 아직 없습니다.</p>'}</div>`;
   }
   render(){
     const c=contextAt({...this.data,scenePackets:this.callbacks.scenePackets?.()||[]},this.year,this.span);this.context=c;
@@ -303,32 +303,32 @@ export class Chronicle {
     this.controls.querySelector('[data-previous]').disabled=c.previous==null;
     this.controls.querySelector('[data-next]').disabled=c.next==null;
     this.controls.querySelectorAll('[data-era]').forEach(b=>b.classList.toggle('on',Math.abs(+b.dataset.era-this.year)<10));
-    const status=this.error||(this.loading?'이 시대의 인물과 사건을 불러오고 있어요…':'');
+    const status=this.error||(this.loading?'이 시대의 인물과 사건을 불러오고 있습니다…':'');
     const counts=`인물 ${c.people.length}, 주변 사건 ${c.events.length}`;
     this.host.innerHTML=`<div class="context-kicker">시간 속으로</div><div class="context-title"><h2>${yearLabel(this.year)}</h2><span>${counts}</span></div>
       ${status?`<p role="status" class="context-empty">${esc(status)}</p>`:''}
-      ${c.polities.length?`<section class="context-polities" aria-label="이때의 나라와 세력">${c.polities.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.id)}">${esc(entityLabel(p))}${p.ruler?' · '+esc(entityLabel(p.ruler))+' 재위':''}</button>`).join('')}</section>`:''}
+      ${c.polities.length?`<section class="context-polities" aria-label="이때의 나라와 집단">${c.polities.map(p=>`<button class="relation-chip" data-chronicle-entity="${esc(p.id)}">${esc(entityLabel(p))}${p.ruler?' · '+esc(entityLabel(p.ruler))+' 재위':''}</button>`).join('')}</section>`:''}
       ${c.events.some(e=>e.current)?`<section class="current-events"><h3>이 해의 사건</h3>${c.events.filter(e=>e.current).map(e=>`<button data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId||'')}">${esc(e.title)} <span>→</span></button>`).join('')}</section>`:''}
       ${c.settings.length?`<details class="context-section era-sites"><summary>이때의 도시·시설 ${c.settings.length}곳</summary>${c.settings.map(e=>`<button class="period-site" data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId)}">${esc(e.title)}</button>`).join('')}</details>`:''}
       <details class="context-section era-people"><summary>동시대 인물 ${c.people.length}명 (생존, 재위, 활동)</summary><div class="section-heading"><h3>이때의 사람들</h3></div>
-      ${c.people.map(p=>this.personCard(p,c)).join('')||(!status?'<p class="context-empty">고른 자료에는 이 해의 생존·활동 출처가 연결된 인물이 없어요.</p>':'')}
-      </details><section class="context-section"><div class="section-heading"><h3>이 시기의 사건</h3><span>${yearLabel(c.from)} – ${yearLabel(c.to)}</span></div>
-      <div class="event-sequence">${c.events.map(e=>`<article class="period-event${e.current?' current':''}"><button class="event-year" data-jump-year="${e.lo}">${yearLabel(e.lo)}${e.lo!==e.hi?' – '+yearLabel(e.hi):''}</button>
+      ${c.people.map(p=>this.personCard(p,c)).join('')||(!status?'<p class="context-empty">고른 사료에는 이 해의 생존·활동 출처가 연결된 인물이 없습니다.</p>':'')}
+      </details><section class="context-section"><div class="section-heading"><h3>이 시기의 사건</h3><span>${yearLabel(c.from)}~${yearLabel(c.to)}</span></div>
+      <div class="event-sequence">${c.events.map(e=>`<article class="period-event${e.current?' current':''}"><button class="event-year" data-jump-year="${e.lo}">${yearLabel(e.lo)}${e.lo!==e.hi?'~'+yearLabel(e.hi):''}</button>
         <button class="event-title" data-chronicle-entity="${esc(e.id)}" data-chronicle-scene="${esc(e.sceneId||'')}">${esc(e.title)}</button>
         ${this.relations(e.id).filter(x=>['Person','Polity','Place'].includes(x.target.type)).slice(0,6).map(x=>`<button class="relation-chip" data-chronicle-entity="${esc(x.target.id)}">${esc(entityLabel(x.target))}</button>`).join('')}
-        ${[...new Map(e.basis.map(b=>[b.fromSource,b])).values()].map(b=>`<button class="context-proof" data-chronicle-claim="${esc(b.id)}">${esc(b.sourceLabel)} ↗</button>`).join('')}</article>`).join('')||(!status?'<p class="context-empty">이 기간에 연결된 사건이 없어요. 이전·다음 사건으로 이동해 보세요.</p>':'')}</div></section>
-      <p class="context-footnote">고른 자료에 출처가 연결된 항목이에요. 출생–사망 연도와 재위·활동 기간은 따로 표시해요.${this.data.hasMore?' 한 번에 불러올 양을 넘어 일부만 보여줘요.':''}</p>`;
+        ${[...new Map(e.basis.map(b=>[b.fromSource,b])).values()].map(b=>`<button class="context-proof" data-chronicle-claim="${esc(b.id)}">${esc(b.sourceLabel)} ↗</button>`).join('')}</article>`).join('')||(!status?'<p class="context-empty">이 기간에 연결된 사건이 없습니다. 이전·다음 사건으로 이동해 보십시오.</p>':'')}</div></section>
+      <p class="context-footnote">고른 사료에 출처가 연결된 항목입니다. 출생~사망 연도와 재위·활동 기간은 따로 표시합니다.${this.data.hasMore?' 한 번에 불러올 양을 넘어 일부만 보여줍니다.':''}</p>`;
     this.callbacks.context?.(c);
   }
   personCard(person,context){
-    const p=person.periods.find(p=>p.label==='출생–사망')||person.periods[0];
+    const p=person.periods.find(p=>p.label==='출생~사망')||person.periods[0];
     const left=Math.max(0,(p.lo-context.from)/this.span*100),right=Math.min(100,(p.hi-context.from)/this.span*100);
     const memberships=[...new Set(person.relations.map(c=>context.entities.get(c.object.id)).filter(Boolean).map(entityLabel))];
     const activity=person.periods.find(p=>p.claim.predicate==='syj:activeIn');
     const events=[...new Map(this.relations(person.id).filter(x=>x.target.type==='Event'
       &&context.events.some(e=>e.id===x.target.id)).map(x=>[x.target.id,x.target])).values()];
     return `<article class="period-person"><div class="person-heading"><button data-chronicle-entity="${esc(person.id)}">${esc(entityLabel(person))}</button><span>${esc(memberships.join(', '))}</span></div>
-      <div class="person-dates">${p.dateLabel||yearLabel(p.lo)+' – '+yearLabel(p.hi)} <span>${p.label}</span></div>
+      <div class="person-dates">${p.dateLabel||yearLabel(p.lo)+'~'+yearLabel(p.hi)} <span>${p.label}</span></div>
       <div class="life-track" aria-label="${esc(person.label)} ${p.label} ${p.lo}~${p.hi}"><i style="left:${left}%;width:${Math.max(1,right-left)}%"></i><b></b></div>
       ${activity?`<button class="person-activity" data-chronicle-claim="${esc(activity.claim.id)}">${esc(activity.claim.quote)} ↗</button>`:''}
       ${events.length?`<div class="person-events">${events.map(e=>`<button class="relation-chip" data-chronicle-entity="${esc(e.id)}">${esc(entityLabel(e))}</button>`).join('')}</div>`:''}

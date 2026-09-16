@@ -16,10 +16,10 @@ export class AtlasUI{
     this.root.innerHTML=`<div class="atlas-brand"><h1>시공여지도</h1><p>시간으로 읽는 한국사</p></div>
       <div class="atlas-tools"><div id="atlasSearchMount"></div><button class="atlas-tool" id="atlasSettingsButton" aria-expanded="false" aria-controls="atlasSettings">${icon('layers')}<span>지도 설정</span></button></div>
       <aside class="atlas-pane atlas-right" id="atlasSettings" hidden aria-label="지도 설정"><header><h2>지도 설정</h2><button class="atlas-icon" data-close aria-label="지도 설정 닫기">${icon('close')}</button></header>
-        <div class="atlas-settings-map"></div><details class="atlas-source-fold"><summary>자료와 출처 설정</summary><div class="atlas-settings-sources"></div></details>
+        <div class="atlas-settings-map"></div><details class="atlas-source-fold"><summary>사료(역사 기록)와 출처 설정</summary><div class="atlas-settings-sources"></div></details>
         <label class="atlas-setting">시간 막대 범위<select id="atlasTimeWindow"><option value="20">20년</option><option value="100">100년</option><option value="4600">전체 시간</option></select></label>
         <label class="atlas-setting">화질<select id="atlasQuality"><option value="auto">자동</option><option value="low">낮음</option><option value="medium">보통</option><option value="high">높음</option></select></label>
-        <p class="atlas-muted">지도 속 건물과 생활 풍경은 역사 장면을 간단히 표현한 모형이에요.</p></aside>
+        <p class="atlas-muted">지도 속 건물과 생활 풍경은 역사 장면을 간단히 표현한 모형입니다.</p></aside>
       <div id="atlasPanelMount"></div>
       <button class="atlas-ask atlas-tool" id="atlasAsk" hidden>${icon('star')}<span>AI와 역사 이야기</span></button>
       <nav class="atlas-navigation" aria-label="지도 조작"><button class="atlas-north" aria-label="북쪽을 위로">북<span>↑</span></button><div><button data-zoom="in" aria-label="지도 확대하기">${icon('plus')}</button><button data-zoom="out" aria-label="지도 축소하기">${icon('minus')}</button></div></nav>
@@ -121,7 +121,7 @@ export class AtlasUI{
     const changed=this.lastYear!==undefined&&this.lastYear!==context.year;
     if(changed||filtersChanged){this.story?.reset();if(this.panel==='story')this.closePanel();this.closeEvidence();}
     this.lastYear=context.year;this.syncTime(context.year);
-    const status=this.root.querySelector('#atlasStatus');status.textContent=this.chronicle.error||(this.chronicle.loading?'인물과 사건을 불러오고 있어요…':'');status.hidden=!status.textContent;
+    const status=this.root.querySelector('#atlasStatus');status.textContent=this.chronicle.error||(this.chronicle.loading?'인물과 사건을 불러오고 있습니다…':'');status.hidden=!status.textContent;
     this.search?.update();
     this.chat?.update(changed||filtersChanged);
     this.events?.update();

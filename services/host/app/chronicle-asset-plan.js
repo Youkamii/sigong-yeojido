@@ -97,7 +97,7 @@ export function planChronicleAssets(context,data,features,places=[],scenePackets
       });
     return {id:'person:'+person.id,entityId:person.id,kind:'person',placement:'unlocated',
       label:displayLabel(person),archetype:activityFigure(person.id,'',context.year,data.claims),locations,locationReference:referenceFor(person.id,true),
-      detail:period.label==='활동'?period.claim.quote:`${yearLabel(period.lo)} – ${yearLabel(period.hi)} · ${period.label}`,
+      detail:period.label==='활동'?period.claim.quote:`${yearLabel(period.lo)}~${yearLabel(period.hi)} · ${period.label}`,
       claimIds:[...new Set(person.periods.flatMap(p=>p.basis.map(c=>c.id)))]};
   });
   const present=new Map(people.map(p=>[p.entityId,p]));

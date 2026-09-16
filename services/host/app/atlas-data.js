@@ -19,7 +19,7 @@ export function relationTime(claim){
 }
 export function relationDates(claim){
   const {lo,hi}=relationTime(claim);
-  if(lo!==null&&hi!==null)return yearLabel(lo)+(lo!==hi?' – '+yearLabel(hi):'');
+  if(lo!==null&&hi!==null)return yearLabel(lo)+(lo!==hi?'~'+yearLabel(hi):'');
   return lo!==null?yearLabel(lo)+'부터':hi!==null?yearLabel(hi)+'까지':'';
 }
 
@@ -61,9 +61,9 @@ export class AtlasData{
     const dates=this.dates.get(id)||[],life=dates.find(d=>d.claim.predicate==='syj:livedIn');
     const born=dates.find(d=>d.claim.predicate==='syj:bornIn'),died=dates.find(d=>d.claim.predicate==='syj:diedIn');
     const range=born&&died?[born.lo,died.hi]:life?[life.lo,life.hi]:null;
-    if(range)return `${yearLabel(range[0])} – ${yearLabel(range[1])}`;
+    if(range)return `${yearLabel(range[0])}~${yearLabel(range[1])}`;
     const event=this.eventsFor(id)[0];
-    if(event)return yearLabel(event.lo)+(event.lo!==event.hi?' – '+yearLabel(event.hi):'');
+    if(event)return yearLabel(event.lo)+(event.lo!==event.hi?'~'+yearLabel(event.hi):'');
     return dates[0]?yearLabel(dates[0].lo):'연도 미확인';
   }
   eventsFor(id){

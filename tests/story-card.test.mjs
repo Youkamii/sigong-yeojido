@@ -50,7 +50,7 @@ test('실제 인물·사건 카드는 요약과 세 목록을 나누고 연도 �
     if(events.some(e=>e.sceneId===current.sceneId))assert.ok(sectionHtml(summary,'events').includes(`data-story-event="${current.sceneId}"`));
     const summaryYears=[...sectionHtml(summary,'events').matchAll(/class="atlas-event-year">(\d+)년/g)].map(match=>Number(match[1]));
     assert.deepEqual(summaryYears,[...summaryYears].sort((a,b)=>a-b));
-    if(id===yi)assert.ok(summary.includes('인물 · 1545년 – 1598년'));
+    if(id===yi)assert.ok(summary.includes('인물 · 1545년~1598년'));
     if(compact){assert.ok(!summary.includes('class="atlas-story-tabs"'));continue;}
     for(const tab of ['events','people','places']){
       if(!sections.find(s=>s.id===tab).rows.length)continue;
@@ -71,14 +71,14 @@ test('실제 인물·사건 카드는 요약과 세 목록을 나누고 연도 �
 test('관계 이름은 방향을 반영하고 관계 자체에 기록된 시간만 표시한다',()=>{
   const parent={subject:'child',predicate:'syj:hasParent',object:{kind:'entity',id:'parent'},time:{earliest:1545,latest:1550}};
   assert.equal(relationName(parent,'child'),'부모');assert.equal(relationName(parent,'parent'),'자녀');
-  assert.equal(relationDates(parent),'1545년 – 1550년');
+  assert.equal(relationDates(parent),'1545년~1550년');
   assert.equal(relationDates({...parent,time:{year:1592}}),'1592년');
   assert.equal(relationDates({...parent,time:undefined}),'');
   const story=storyFor(yi),target=story.ui.data.entities.get('person-yinav-jin-rin');
   assert.ok(target);
   const dated={...parent,subject:yi,object:{kind:'entity',id:target.id},predicate:'syj:hasTeacher'};
   const html=story.sectionHtml({id:'people',title:'인물 관계',rows:[{entity:target,claims:[dated],relationClaims:[dated]}]});
-  assert.match(html,/<h4>스승 /);assert.match(html,/<small class="atlas-relation-year"[^>]*>1545년 – 1550년<\/small>/);
+  assert.match(html,/<h4>스승 /);assert.match(html,/<small class="atlas-relation-year"[^>]*>1545년~1550년<\/small>/);
   const unknown={...dated,predicate:'syj:unlistedRelation',time:undefined};
   assert.ok(story.sectionHtml({id:'people',title:'인물 관계',rows:[{entity:target,claims:[unknown],relationClaims:[unknown]}]}).includes('<h4>관계 '));
 });

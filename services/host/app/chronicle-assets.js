@@ -23,7 +23,7 @@ export function pickableRow(row){
 let catalogPromise;
 export function loadHistoryAssets(){
   if(!catalogPromise)catalogPromise=fetch('./app/history-asset-catalog.json')
-    .then(r=>{if(!r.ok)throw Error('인물 모형을 불러오지 못했어요.');return r.json();})
+    .then(r=>{if(!r.ok)throw Error('인물 모형을 불러오지 못했습니다.');return r.json();})
     .then(extendFigureCatalog).then(extendBuildingCatalog).then(compileAssetCatalog).catch(error=>{catalogPromise=null;throw error;});
   return catalogPromise;
 }
@@ -270,7 +270,7 @@ export class ChronicleAssets{
       field.stats.dropped.push(...built.stats.dropped);
     }
     for(const name of ['built','requested','meshes','triangles'])field.stats[name]??=0;
-    if(field.stats.built!==recipes.length||field.stats.dropped.length){release(field.group);throw Error('일부 역사 모형을 만들지 못했어요.');}
+    if(field.stats.built!==recipes.length||field.stats.dropped.length){release(field.group);throw Error('일부 역사 모형을 만들지 못했습니다.');}
     next.add(field.group);
     const pathPositions=[];
     for(const row of rows.filter(r=>r.kind==='building'&&r.path)){

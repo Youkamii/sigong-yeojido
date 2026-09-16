@@ -75,7 +75,7 @@ export class ChronicleGeography{
     const card=document.getElementById('geographyCard');card.hidden=false;
     card.querySelector('strong').textContent=row.label;
     card.querySelector('p').textContent=[row.lon!=null?formatCoordinates([row.lon,row.lat]):'',
-      region&&row.precision==='area'?'지역을 나타내는 기준점이에요. 인물의 실제 위치를 뜻하지는 않아요.':'',
+      region&&row.precision==='area'?'지역을 나타내는 기준점입니다. 인물의 실제 위치를 뜻하지는 않습니다.':'',
       region?row.year+'년 · '+row.activities.map(a=>a.label).join(' / '):row.displayNote||''].filter(Boolean).join(', ');
     const refs=card.querySelector('div');refs.replaceChildren();
     const more=document.createElement('details'),summary=document.createElement('summary');

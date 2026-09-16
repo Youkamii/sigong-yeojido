@@ -26,7 +26,7 @@ export class GraphExplorer {
     const sequence=++this.sequence;
     const status=this.host.querySelector('[role=status]');
     const canvas=this.host.querySelector('.graph-scroll');
-    status.textContent='출처 연결을 불러오고 있어요…';
+    status.textContent='출처 연결을 불러오고 있습니다…';
     canvas.replaceChildren();
     this.nodes.clear();
     const filters=this.callbacks.filters();
@@ -35,22 +35,22 @@ export class GraphExplorer {
       const response=await fetch('/api/graph?'+query);
       const data=await response.json();
       if(sequence!==this.sequence)return;
-      if(!response.ok)throw new Error(data.error||'출처 연결을 불러오지 못했어요.');
+      if(!response.ok)throw new Error(data.error||'출처 연결을 불러오지 못했습니다.');
       this.data=data;
       this.nodes=new Map(data.nodes.map(node=>[node.id,node]));
       status.textContent=`관련 기록 ${data.claims.length?`${this.offset+1}~${this.offset+data.claims.length}`:'0'}, 위치 ${data.locations?.length||0}${data.moreLocations?'+':''} (전체 시기)`;
       this.host.querySelector('[data-page="-1"]').disabled=this.offset===0;
       this.host.querySelector('[data-page="1"]').disabled=!data.hasMore;
       if(!data.claims.length&&!data.locations?.length){
-        status.textContent='고른 자료와 작성자에 맞는 연결이 없어요.';
-        canvas.innerHTML='<p class="empty">자료 선택을 바꾸거나 다른 항목을 찾아보세요. 기록이 없다고 없었던 일은 아니에요.</p>';
+        status.textContent='고른 사료와 작성자에 맞는 연결이 없습니다.';
+        canvas.innerHTML='<p class="empty">사료 선택을 바꾸거나 다른 항목을 찾아보십시오. 기록이 없다고 없었던 일은 아닙니다.</p>';
         return;
       }
       this.draw();
     }catch(error){
       if(sequence!==this.sequence)return;
       status.textContent=error.message;
-      canvas.innerHTML='<p class="empty">항목을 다시 고르면 한 번 더 불러와요.</p>';
+      canvas.innerHTML='<p class="empty">항목을 다시 고르면 한 번 더 불러옵니다.</p>';
     }
   }
 
@@ -76,8 +76,8 @@ export class GraphExplorer {
         <title>${esc(text+' · '+node.id)}</title><rect width="212" height="48" rx="4"/>
         <text x="10" y="19">${esc(label)}</text><text class="graph-kind" x="10" y="36">${esc(detail)}</text></g>`;
     }).join('');
-    const labels=['관련 항목','기록','인용한 원문','자료'].map((label,i)=>`<text class="graph-column" x="${i*240+12}" y="24">${label}</text>`).join('');
-    this.host.querySelector('.graph-scroll').innerHTML=`<svg width="960" height="${height}" aria-label="항목에서 기록, 원문, 자료로 이어지는 출처 연결">${labels}<g class="graph-edges">${edges}</g>${nodes}</svg>`;
+    const labels=['관련 항목','기록','인용한 원문','사료'].map((label,i)=>`<text class="graph-column" x="${i*240+12}" y="24">${label}</text>`).join('');
+    this.host.querySelector('.graph-scroll').innerHTML=`<svg width="960" height="${height}" aria-label="항목에서 기록, 원문, 사료로 이어지는 출처 연결">${labels}<g class="graph-edges">${edges}</g>${nodes}</svg>`;
   }
 
   activate(id){

@@ -153,7 +153,7 @@ test('rows keep the anonymous-city format used by the scene and context panels',
   assert.equal(row.siteBackground.scope,'anonymous-city');assert.equal(row.scenePlace.settlement.scope,'anonymous-city');
   assert.equal(row.label,'이름 없는 도시 배경');assert.deepEqual(row.participants,[]);assert.equal(row.endYear,undefined);
   assert.ok(row.claimIds.length>0);
-  assert.equal(row.summary,'이 위치의 도시 기록을 보고 이름 없는 생활 배경을 이어 보여줘요. 이전 도시 이름과 행정 지위가 계속됐다는 뜻은 아니에요. 사건과 인물의 기간을 늘린 것도 아니에요. 건물과 거리 배치는 복원도가 아니에요.\n규모는 축소 표현');
+  assert.equal(row.summary,'이 위치의 도시 기록을 보고 이름 없는 생활 배경을 이어 보여줍니다. 이전 도시 이름과 행정 지위가 계속됐다는 뜻은 아닙니다. 사건과 인물의 기간을 늘린 것도 아닙니다. 건물과 거리 배치는 복원도가 아닙니다.\n규모는 축소 표현');
   const before=JSON.stringify([packets,zones]);rowsAt(700);assert.equal(JSON.stringify([packets,zones]),before);
 });
 
