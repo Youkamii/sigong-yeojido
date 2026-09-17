@@ -3,8 +3,8 @@ type: "Source"
 id: "src-c2-ko-gando"
 label: "간도 참변 — 위키백과"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "ko.wikipedia"
-compiler: "ko.wikipedia"
+sourceGroup: "위키백과"
+compiler: "위키백과"
 composedYear: null
 coversFrom: null
 coversTo: null

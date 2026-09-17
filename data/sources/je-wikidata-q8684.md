@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-je-wikidata-q8684"
-label: "Seoul (Q8684) - Wikidata"
+label: "서울 (Seoul, Q8684) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키미디어 재단 · 위키데이터"
 compiler: "위키미디어 재단 · 위키데이터"

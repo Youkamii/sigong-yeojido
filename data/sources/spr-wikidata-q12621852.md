@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-spr-wikidata-q12621852"
-label: "Pyounghwa Market (Q12621852) - Wikidata"
+label: "평화시장 (Pyounghwa Market, Q12621852) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키미디어 재단 · 위키데이터"
 compiler: "위키미디어 재단 · 위키데이터"

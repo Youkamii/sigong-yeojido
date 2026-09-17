@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-syj122-enwiki-songgwangsa"
-label: "Songgwangsa - Wikipedia"
+label: "송광사 (Songgwangsa) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키미디어 재단 · Wikipedia (English)"
 compiler: "위키미디어 재단 · Wikipedia (English)"

@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-enwiki-jeamni"
-label: "Jeamni massacre - Wikipedia"
+label: "제암리 학살 (Jeamni massacre) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키미디어 재단 · Wikipedia (English)"
 compiler: "위키미디어 재단 · Wikipedia (English)"

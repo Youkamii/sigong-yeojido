@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-gl3-en-nmk"
-label: "National Museum of Korea — Wikipedia"
+label: "국립중앙박물관 (National Museum of Korea) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

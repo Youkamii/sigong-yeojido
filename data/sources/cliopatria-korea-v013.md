@@ -4,7 +4,7 @@ id: "src-cliopatria-korea-v013"
 label: "Cliopatria · 한국사 국가 경계 94개"
 sourceKind: "현대 연구 데이터셋 · 역사 정치집단 경계"
 sourceGroup: "역사 공간 자료"
-compiler: "Ed Chalstrey · James Bennett · Seshat Global History Databank"
+compiler: "에드 찰스트리·제임스 베넷 · 세샤트 세계사 데이터뱅크 (Ed Chalstrey · James Bennett · Seshat Global History Databank)"
 composedYear: 2025
 coversFrom: -197
 coversTo: 2024

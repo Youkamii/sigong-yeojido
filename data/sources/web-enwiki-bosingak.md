@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-web-enwiki-bosingak"
-label: "Bosingak — Wikipedia"
+label: "보신각 (Bosingak) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과(영어)"
 compiler: "위키백과(영어)"

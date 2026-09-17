@@ -3,8 +3,8 @@ type: "Source"
 id: "src-kowiki-namhansanseong"
 label: "남한산성 - 위키백과"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "ko.wikipedia.org"
-compiler: "ko.wikipedia.org"
+sourceGroup: "위키백과"
+compiler: "위키백과"
 composedYear: null
 coversFrom: null
 coversTo: null

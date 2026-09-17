@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-hs-jl2-en-sarhu"
-label: "Battle of Sarhu — English Wikipedia"
+label: "사르후 전투 (Battle of Sarhu) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "English Wikipedia"
-compiler: "English Wikipedia"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

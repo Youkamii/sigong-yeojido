@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-hs-c1-en-vladivostok"
-label: "Vladivostok — Wikipedia (en)"
+label: "블라디보스토크 (Vladivostok) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikipedia (en)"
-compiler: "Wikipedia (en)"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-en-gukje-market"
-label: "Gukje Market — Wikipedia"
+label: "국제시장 (Gukje Market) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

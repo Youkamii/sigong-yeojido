@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-curriculum-goryeo-early-goryeo-early-1-hs-en-cheorwon"
-label: "Cheorwon County — Wikipedia"
+label: "철원군 (Cheorwon County) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

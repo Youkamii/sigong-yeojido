@@ -1,13 +1,13 @@
 ---
 type: "Source"
 id: "src-geonames"
-label: "GeoNames geographical database"
+label: "지오네임스 지명 데이터베이스 (GeoNames geographical database)"
 sourceKind: "지명 좌표"
 sourceGroup: "현대 좌표"
 composedYear: null
 coversFrom: null
 coversTo: null
-compiler: "Unxos GmbH (St. Gallen, Switzerland)"
+compiler: "운소스 (Unxos GmbH, 스위스 장크트갈렌)"
 originalLanguage: "und"
 defaultLens: true
 license: "CC-BY-4.0"

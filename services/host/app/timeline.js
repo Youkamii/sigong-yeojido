@@ -26,7 +26,7 @@
 //   연도는 정수. 없으면 null — 그 부분(막대·점)은 그리지 않는다.
 //   defaultLens 가 참인 사료는 진한 막대(기본 렌즈), 나머지는 옅은 막대. 꺼진 사료는 흐리게.
 
-import { groupSources, selectionOf } from './source-groups.js';
+import { groupSources, selectionOf, shortSourceLabel } from './source-groups.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const STYLE_ID = 'syj-timeline-style';
@@ -449,7 +449,7 @@ export class Timeline {
     const { w, labelW, plotL, xs } = this._geom;
     const yTop = RULER_H + i * ROW_H, cy = yTop + ROW_H / 2;
     const on = this.on.has(s.id);
-    const label = s.label || s.id;
+    const label = shortSourceLabel(s);   // 발행처는 묶음 제목이 보여 준다 (#205)
     const g = el('g', { class: 'tl-track' + (on ? ' on' : ' off') + (s.defaultLens ? ' lens' : ''), 'data-id': s.id });
     g.appendChild(el('rect', { class: 'tl-row-bg', x: 0, y: yTop, width: w, height: ROW_H }));
 

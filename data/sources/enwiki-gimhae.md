@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-enwiki-gimhae"
-label: "Gimhae - Wikipedia"
+label: "김해시 (Gimhae) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "en.wikipedia.org"
-compiler: "en.wikipedia.org"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-c4-en-ulsan"
-label: "Dong-gu, Ulsan — English Wikipedia"
+label: "울산 동구 (Dong-gu, Ulsan) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

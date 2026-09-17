@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-hs-en-busan-museum"
-label: "Busan Modern History Museum — Wikipedia"
+label: "부산근대역사관 (Busan Modern History Museum) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikipedia"
-compiler: "Wikipedia"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

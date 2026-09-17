@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-je-wikidata-q5472741"
-label: "Fortress Wall of Seoul (Q5472741) - Wikidata"
+label: "한양도성 (Fortress Wall of Seoul, Q5472741) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키미디어 재단 · 위키데이터"
 compiler: "위키미디어 재단 · 위키데이터"

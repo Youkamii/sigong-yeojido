@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-c2-en-tumen"
-label: "Tumen, Jilin — Wikipedia"
+label: "지린성 투먼시 (Tumen, Jilin) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "en.wikipedia"
-compiler: "en.wikipedia"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

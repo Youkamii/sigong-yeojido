@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-gl3-en-dadu"
-label: "Dadu (Beijing) — Wikipedia"
+label: "원 대도 (Dadu, Beijing) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

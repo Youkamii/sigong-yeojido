@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-en-provisional-capital"
-label: "Provisional Capital Memorial Hall — Wikipedia"
+label: "임시수도기념관 (Provisional Capital Memorial Hall) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-en-koguryo-capitals"
-label: "Capital Cities and Tombs of the Ancient Koguryo Kingdom — Wikipedia"
+label: "고대 고구려 왕국의 수도와 무덤군 (Capital Cities and Tombs of the Ancient Koguryo Kingdom) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

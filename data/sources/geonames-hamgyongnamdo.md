@@ -4,7 +4,7 @@ id: "src-geonames-hamgyongnamdo"
 label: "GeoNames Fulltextsearch 결과 행: South Hamgyong / Hamgyŏng-namdo (GeoNames ID 1877450)"
 sourceKind: "현대 지명 좌표 레코드"
 sourceGroup: "현대 좌표"
-compiler: "GeoNames"
+compiler: "지오네임스 (GeoNames)"
 composedYear: null
 coversFrom: null
 coversTo: null

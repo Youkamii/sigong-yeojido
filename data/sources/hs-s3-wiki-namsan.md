@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-s3-wiki-namsan"
-label: "Namsan (Gyeongju) — Wikipedia"
+label: "경주 남산 (Namsan, Gyeongju) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

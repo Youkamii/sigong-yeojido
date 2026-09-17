@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-enwiki-changnyeong"
-label: "English Wikipedia — Changnyeong County"
+label: "창녕군 (Changnyeong County) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikimedia Foundation"
-compiler: "Wikimedia Foundation"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-hs-en-anak-tomb3"
-label: "Anak Tomb No. 3 — Wikipedia"
+label: "안악 3호분 (Anak Tomb No. 3) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikipedia"
-compiler: "Wikipedia"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

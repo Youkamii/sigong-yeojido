@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-hs-pg1-en-dolmen-sites"
-label: "Gochang, Hwasun and Ganghwa Dolmen Sites — Wikipedia"
+label: "고창·화순·강화 고인돌 유적 (Gochang, Hwasun and Ganghwa Dolmen Sites) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikipedia (English)"
-compiler: "Wikipedia (English)"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

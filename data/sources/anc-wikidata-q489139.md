@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-anc-wikidata-q489139"
-label: "Geum River (Q489139) - Wikidata"
+label: "금강 (Geum River, Q489139) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키데이터(Wikidata)"
 compiler: "위키데이터(Wikidata)"

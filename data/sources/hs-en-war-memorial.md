@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-en-war-memorial"
-label: "War Memorial of Korea — Wikipedia"
+label: "전쟁기념관 (War Memorial of Korea) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

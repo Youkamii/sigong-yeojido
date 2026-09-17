@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-nb2-en-tohamsan"
-label: "Tohamsan — Wikipedia"
+label: "토함산 (Tohamsan) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikipedia(English)"
-compiler: "Wikipedia(English)"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null
