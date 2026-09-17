@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-anc-wikidata-q711386"
-label: "Gungnae Fortress (Q711386) - Wikidata"
+label: "국내성 (Gungnae Fortress, Q711386) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키데이터(Wikidata)"
 compiler: "위키데이터(Wikidata)"

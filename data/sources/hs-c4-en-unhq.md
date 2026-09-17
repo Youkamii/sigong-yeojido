@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-c4-en-unhq"
-label: "Headquarters of the United Nations — English Wikipedia"
+label: "국제연합 본부 (Headquarters of the United Nations) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

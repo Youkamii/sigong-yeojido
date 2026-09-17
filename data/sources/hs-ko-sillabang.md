@@ -3,8 +3,8 @@ type: "Source"
 id: "src-hs-ko-sillabang"
 label: "신라방 — 위키백과"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikimedia Foundation"
-compiler: "Wikimedia Foundation"
+sourceGroup: "위키백과"
+compiler: "위키백과"
 composedYear: null
 coversFrom: null
 coversTo: null

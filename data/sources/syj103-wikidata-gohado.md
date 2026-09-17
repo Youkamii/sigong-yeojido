@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-syj103-wikidata-gohado"
-label: "Gohado (Q12584477)"
+label: "고하도 (Gohado, Q12584477) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키데이터(Wikidata)"
 compiler: "위키데이터(Wikidata)"

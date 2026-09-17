@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-gl2-en-kumya"
-label: "Kumya County — Wikipedia"
+label: "금야군 (Kumya County) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "English Wikipedia"
-compiler: "English Wikipedia"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

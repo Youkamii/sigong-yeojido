@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-gl3-en-dadu-wall"
-label: "Yuan Dadu City Wall Ruins Park — Wikipedia"
+label: "원 대도 성벽 유적공원 (Yuan Dadu City Wall Ruins Park) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-en-wani"
-label: "Wani (scholar) — Wikipedia"
+label: "왕인 (Wani, scholar) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

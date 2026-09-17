@@ -4,7 +4,7 @@ id: "src-chgis-hansagun"
 label: "CHGIS · 한사군 재구성 지점 4개"
 sourceKind: "현대 학술 역사 GIS"
 sourceGroup: "현대 위치 연구"
-compiler: "Harvard University and Fudan University"
+compiler: "하버드대학교·푸단대학교 (Harvard University and Fudan University)"
 composedYear: null
 coversFrom: null
 coversTo: null

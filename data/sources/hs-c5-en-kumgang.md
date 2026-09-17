@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-hs-c5-en-kumgang"
-label: "Kumgangsan Tourist Region — Wikipedia"
+label: "금강산관광지구 (Kumgangsan Tourist Region) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikipedia (English)"
-compiler: "Wikipedia (English)"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

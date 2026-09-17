@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-c4-en-seodaemun"
-label: "Seodaemun-gu — English Wikipedia"
+label: "서대문구 (Seodaemun-gu) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

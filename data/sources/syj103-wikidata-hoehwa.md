@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-syj103-wikidata-hoehwa"
-label: "Hoehwa-myeon (Q12625999)"
+label: "회화면 (Hoehwa-myeon, Q12625999) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키데이터(Wikidata)"
 compiler: "위키데이터(Wikidata)"

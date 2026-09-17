@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-anc-wikidata-q625594"
-label: "Cheonghaejin (Q625594) - Wikidata"
+label: "청해진 (Cheonghaejin, Q625594) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키데이터(Wikidata)"
 compiler: "위키데이터(Wikidata)"

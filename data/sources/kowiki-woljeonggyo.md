@@ -3,8 +3,8 @@ type: "Source"
 id: "src-kowiki-woljeonggyo"
 label: "경주 춘양교지와 월정교지 - 위키백과, 우리 모두의 백과사전"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "ko.wikipedia.org"
-compiler: "ko.wikipedia.org"
+sourceGroup: "위키백과"
+compiler: "위키백과"
 composedYear: null
 coversFrom: null
 coversTo: null

@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-gl3-en-sonjuk"
-label: "Sonjuk Bridge — Wikipedia"
+label: "선죽교 (Sonjuk Bridge) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

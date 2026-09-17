@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-enwiki-pyongyang"
-label: "Pyongyang"
+label: "평양 (Pyongyang) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "English Wikipedia"
-compiler: "English Wikipedia"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

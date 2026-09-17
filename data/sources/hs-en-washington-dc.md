@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-hs-en-washington-dc"
-label: "Washington, D.C. — Wikipedia"
+label: "워싱턴 D.C. (Washington, D.C.) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키백과"
 compiler: "위키백과"

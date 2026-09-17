@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-hs-c1-en-beishan"
-label: "Beishan Park — Wikipedia (en)"
+label: "베이산 공원 (Beishan Park) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikipedia (en)"
-compiler: "Wikipedia (en)"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

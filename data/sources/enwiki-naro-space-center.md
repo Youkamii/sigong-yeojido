@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-enwiki-naro-space-center"
-label: "Naro Space Center - Wikipedia"
+label: "나로우주센터 (Naro Space Center) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikipedia (English) contributors"
-compiler: "Wikipedia (English) contributors"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

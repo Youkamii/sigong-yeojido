@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-syj103-wikidata-donghae"
-label: "Donghae-myeon (Q16183858)"
+label: "동해면 (Donghae-myeon, Q16183858) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키데이터(Wikidata)"
 compiler: "위키데이터(Wikidata)"

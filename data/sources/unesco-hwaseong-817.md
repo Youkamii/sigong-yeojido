@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-unesco-hwaseong-817"
-label: "Hwaseong Fortress - UNESCO World Heritage Centre"
+label: "수원 화성 (Hwaseong Fortress) — 유네스코 세계유산센터 (UNESCO World Heritage Centre)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "UNESCO World Heritage Centre"
-compiler: "UNESCO World Heritage Centre"
+sourceGroup: "유네스코 세계유산센터 (UNESCO World Heritage Centre)"
+compiler: "유네스코 세계유산센터 (UNESCO World Heritage Centre)"
 composedYear: null
 coversFrom: null
 coversTo: null

@@ -1,10 +1,10 @@
 ---
 type: "Source"
 id: "src-hs-c4-en-ggb-seoul"
-label: "Japanese General Government Building, Seoul — Wikipedia"
+label: "조선총독부 청사 (Japanese General Government Building, Seoul) — 영어 위키백과 (English Wikipedia)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
-sourceGroup: "Wikipedia"
-compiler: "Wikipedia"
+sourceGroup: "영어 위키백과 (English Wikipedia)"
+compiler: "영어 위키백과 (English Wikipedia)"
 composedYear: null
 coversFrom: null
 coversTo: null

@@ -1,7 +1,7 @@
 ---
 type: "Source"
 id: "src-anc-wikidata-q499266"
-label: "Ch’ongch’on River (Q499266) - Wikidata"
+label: "청천강 (Ch’ongch’on River, Q499266) — 위키데이터 (Wikidata)"
 sourceKind: "기관 공개 자료의 짧은 발췌"
 sourceGroup: "위키데이터(Wikidata)"
 compiler: "위키데이터(Wikidata)"
