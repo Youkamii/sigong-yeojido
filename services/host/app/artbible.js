@@ -272,6 +272,10 @@ export const STRUCT = Object.freeze({
   ROOF_ALT:       lighten(P.SECOND_SLATE, 0.16),
   STEEL:          lighten(P.SECOND_SLATE, 0.46),
   IRON:           darken(P.SECOND_SLATE, 0.18),
+  // #204 — 철 '재질' 전용 알베도. 역할색 IRON(#3d4248)은 선형 0.047 이라
+  //         금속 부품에 쓰면 화면에서 검게 죽는다. 지붕·창틀의 역할색은 그대로 두고
+  //         MAT_METAL_IRON 로 굽는 부품만 이 값을 쓴다 (선형 0.16).
+  IRON_METAL:     lighten(P.SECOND_SLATE, 0.20),
   GOLD:           P.ACCENT_GOLD,
   BANNER_DEFAULT: darken(P.ACCENT_GOLD, 0.18),
   TRIM:           mix(P.ACCENT_GOLD, P.SECOND_TIMBER, 0.35),
@@ -525,8 +529,10 @@ export const MATERIAL = Object.freeze({
     anisotropy: 0.45, anisotropyRotation: 0.0,
     bumpScale: 0.016, envMapIntensity: 0.75, detail: 'timber', repeat: 3,
   }),
+  // #204 — 순금속(metalness 1.0)은 확산광이 0이라 어두운 알베도와 만나면 검은 덩어리가 된다.
+  // 환경맵(PMREM 절차 하늘)은 이미 있으나 반사만으로는 형태가 안 읽혀 반금속으로 내리고 거칠기를 올렸다.
   MAT_METAL_IRON: Object.freeze({
-    color: STRUCT.IRON, roughness: 0.42, metalness: 1.0,
+    color: STRUCT.IRON, roughness: 0.55, metalness: 0.45,
     anisotropy: 0.25, bumpScale: 0.008, envMapIntensity: 1.25, detail: 'metal', repeat: 4,
   }),
   MAT_METAL_GOLD: Object.freeze({

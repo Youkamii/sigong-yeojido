@@ -63,6 +63,7 @@ const C = {
   roof: new THREE.Color(STRUCT.ROOF),
   roofAlt: new THREE.Color(STRUCT.ROOF_ALT),
   iron: new THREE.Color(STRUCT.IRON),
+  ironMetal: new THREE.Color(STRUCT.IRON_METAL),   // #204: 철 재질로 굽는 부품 전용
   steel: new THREE.Color(STRUCT.STEEL),
   gold: new THREE.Color(STRUCT.GOLD),
   trunk: new THREE.Color(FOLIAGE.TRUNK),
@@ -296,6 +297,10 @@ export class Assembly {
   get mid() { return this.tier === 'A' || this.tier === 'B'; }
 
   push(geo, fam, color, matrix, flat) {
+    // #204 — 같은 iron 역할색이라도 쓰임이 둘이다. 지붕·창틀(m:'stone')에는 어두운 슬레이트가 맞고,
+    // 철 **재질**로 굽는 부품은 그 어두움(선형 0.047) 때문에 화면에서 검은 덩어리가 된다.
+    // 부품이 조립되는 유일한 길목이 여기라 철 재질 부품만 여기서 금속 전용 색으로 바꾼다.
+    if (fam === FAMILY.IRON && color === C.iron) color = C.ironMetal;
     this.parts.push({ geo, fam, color, matrix, flat: !!flat });
     return this;
   }
